@@ -173,9 +173,11 @@ pentagon-coherent associator is a class in `H³`. This is precisely the octonion
   220 (1999) 188–224** ([arXiv:math/9802116](https://arxiv.org/abs/math/9802116);
   `albuquerque-majid1999`). The octonions are the **twisted group algebra**
   `𝕆 = ℝ_F[(ℤ/2)³]`: the group algebra of `(ℤ/2)³` (its `8` elements index the
-  units `e₀,…,e₇`), made non-associative by a 2-cochain `F` whose associator is a
-  **nontrivial 3-cocycle** in `H³((ℤ/2)³; ℤ/2)`. Octonion non-associativity **is**
-  a pentagon deformation.
+  units `e₀,…,e₇`), made non-associative by a sign 2-cochain `F` that is **not a
+  2-cocycle** (`dF ≠ 0`). Octonion non-associativity **is** the pentagon-cochain
+  defect `dF`. (`dF` is cohomologically trivial as a 3-cochain — see the Cohomology
+  note below; the nontrivial `H³` class Albuquerque–Majid identify is the *category*
+  associator `ω` of `Vect_{(ℤ/2)³}^ω`, in which `𝕆` becomes associative.)
 - **Drinfeld, "Quasi-Hopf algebras," Leningrad Math. J. 1 (1990) 1419–1457**
   (`drinfeld1985` in the corpus flags the 1985 quantum-groups note; this is the
   distinct 1989/90 quasi-Hopf paper). A quasi-Hopf algebra carries an associator
@@ -206,22 +208,30 @@ Proved sorry-free: `assoc_pentagon`
 ([`PentagonTwistAssociator.lean`](../../content/quantum-observable-universe/lean/QOU/BringsSurface/PentagonTwistAssociator.lean)),
 generic additive grading + phase group (§7c).
 
-**The concrete octonion cocycle, machine-verified.** The octonion associator on
-`(ℤ/2)³` is the `𝔽₂` **determinant** (trilinear alternating form) `φ(a,b,c) =
-det₂[a b c]` — the sign rule "`−` on `𝔽₂`-independent triples." Sorry-free in
+**The concrete octonion cocycle, machine-verified.** The octonion multiplication
+associator on `(ℤ/2)³` is the `𝔽₂` **determinant** (trilinear alternating form)
+`φ(a,b,c) = det₂[a b c]` — the sign rule "`−` on `𝔽₂`-independent triples." This is
+not a guess: building `𝕆` by Cayley–Dickson (`ℝ→ℂ→ℍ→𝕆`) and reading off the basis
+signs, the index law is XOR (`(ℤ/2)³`) and the associativity defect equals `det₂`
+**exactly as a cochain** (`168` of `512` triples non-associate). Sorry-free in
 [`OctonionCocycle.lean`](../../content/quantum-observable-universe/lean/QOU/BringsSurface/OctonionCocycle.lean):
 * `det3_is_3cocycle` — `φ` satisfies the pentagon, verified exhaustively over all
-  `8⁴ = 4096` tuples (kernel `decide`, ~38 s). The octonion sign rule **is** a
-  genuine group 3-cocycle.
-* `det3_nonzero` — the deformation genuinely fires: on `e₁, e₂, e₄` the associator
-  is `1 ≠ 0`, i.e. `(e₁e₂)e₄ = −e₁(e₂e₄)` (non-associativity).
+  `8⁴ = 4096` tuples (kernel `decide`, ~38 s). A genuine, pentagon-coherent group
+  3-cocycle.
+* `det3_nonzero` — the deformation fires: on `e₁, e₂, e₄`, `φ = 1 ≠ 0`
+  (non-associativity).
 
-**Remaining honest gap:** `φ` is *cohomologically* nontrivial (`[φ] ≠ 0` in
-`H³((ℤ/2)³; ℤ/2)`) — a rank fact over `𝔽₂^{64}` the `decide` does not establish;
-`det3_nonzero` only shows `φ ≠ 0` as a cochain. Full nontriviality is
-Albuquerque–Majid 1999. So the octonion *product's associator* is now an
-exhibited, pentagon-verified 3-cocycle in QOU's Lean; what is cited (not
-machine-checked) is that it cannot be gauged away.
+**Cohomology — correcting an earlier over-claim in this audit.** An earlier draft
+flagged "`[φ] ≠ 0` in `H³`" as a remaining gap. That was a **category error**,
+caught by the Cayley–Dickson check: `φ` is a **coboundary** `φ = dF` (it equals the
+coboundary of the octonion sign cochain, exactly), so `[φ] = 0` in
+`H³((ℤ/2)³; ℤ/2)` — the multiplication associator is cohomologically **trivial**,
+and there is *nothing to prove there*. Non-associativity is `φ ≠ 0` **as a cochain**
+(`F` is not a 2-cocycle), not an `H³` phenomenon; the gauge `e_a ↦ λ_a e_a` changes
+`F` by `dλ` and leaves `φ = dF` fixed, so `𝕆` is non-associative under *every*
+rescaling despite `[φ] = 0`. (The nontrivial `H³` class of Albuquerque–Majid 1999
+is the *category* associator `ω` making `𝕆` associative in `Vect_{(ℤ/2)³}^ω` — a
+distinct object from the multiplication associator, not claimed here.)
 
 ## Formalisation
 
