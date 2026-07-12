@@ -13,11 +13,14 @@ algebra H_n(R, q):
   M1: τ(1) = 1                        (normalisation)
   M2: τ(xy) = τ(yx)                   (cyclicity)
   M3: τ(x · σ_n) = z · τ(x)            (stabilisation by σ_n)
-  M4: τ(x · σ_n^{-1}) = z · τ(x)       (stabilisation by σ_n^{-1})
+  M4: τ(x · σ_n^{-1}) = z₋ · τ(x)      (stabilisation by σ_n^{-1};
+                                        DERIVED, not independent)
 
-with z = 1/(√q + 1/√q) the Markov-Jones parameter. Per
-`prop:markov-trace-frobenius-selection`, M1-M4 uniquely pin τ_M as the
-Frobenius-non-degenerate trace.
+with z = 1/(√q + 1/√q) the Markov-trace loop value and
+z₋ = z − (q − q⁻¹) the negative-crossing loop value. M4 is forced by
+M1+M3 and the Hecke quadratic relation σ⁻¹ = σ − (q − q⁻¹); note
+z₋ ≠ z for q ≠ ±1. Per `prop:markov-trace-frobenius-selection`,
+M1-M3 uniquely pin τ_M as the Frobenius-non-degenerate trace.
 
 This file:
   1. Defines the 4 axioms as a Lean class `MarkovTraceAxioms`.
@@ -86,9 +89,11 @@ noncomputable def markovZax_legacy (q : ℝ) : ℝ :=
   1 / (Real.sqrt q + (Real.sqrt q)⁻¹)
 
 /-- **Primitive Markov-trace axioms** as a Lean class via the
-    explicit-residual pattern. Captures the four axioms M1-M4 from
-    Jones 1985 / Wenzl 1988 that uniquely characterise the Markov
-    trace on `H_n(R, q)`.
+    explicit-residual pattern. Captures the axioms M1 and M3 from
+    Jones 1985 / Wenzl 1988 that (with cyclicity M2, implicit in the
+    trace construction) uniquely characterise the Markov trace on
+    `H_n(R, q)`; M4 is derived from M3 via the Hecke quadratic
+    relation, with the distinct loop value z₋ = z − (q − q⁻¹).
 
     Each axiom is encoded as a scalar invariant (residual / stab
     factor) plus an equation pinning it to the required value.

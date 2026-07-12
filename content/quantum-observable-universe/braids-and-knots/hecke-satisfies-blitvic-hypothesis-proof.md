@@ -2,11 +2,14 @@
 to a pair-partition sum by induction on word length.
 
 **Setup.** Let $\tilde\sigma_i := \sigma_i - z \cdot 1$ where
-$z = 1/(q^{1/2}+q^{-1/2}) = \mathrm{tr}_M(\sigma_i)$. The bar-involution
-adjoint is $\tilde\sigma_i^* = \tilde\sigma_i$ in our convention,
-since $\sigma_i$ is conjugated to $\sigma_i^{-1}$ but
-$\mathrm{tr}_M(\sigma_i) = \mathrm{tr}_M(\sigma_i^{-1}) = z$, so the
-centred element is self-adjoint with respect to the trace.
+$z = 1/(q^{1/2}+q^{-1/2}) = \mathrm{tr}_M(\sigma_i)$, so that
+$\mathrm{tr}_M(\tilde\sigma_i) = 0$. The argument uses only joint
+$\mathrm{tr}_M$-moments of the $\tilde\sigma_i$; no adjoint structure
+is required. (Note that
+$\mathrm{tr}_M(\sigma_i^{-1}) = z - (q - q^{-1}) \neq z$
+([Markov axioms](#rem:markov-axioms-primitive)), so $\tilde\sigma_i$
+is not fixed by the bar-involution $\sigma_i \mapsto \sigma_i^{-1}$;
+Blitvić's hypothesis is a moment condition and does not need it.)
 
 **Odd length vanishes.** For $k$ odd, every reduction of
 $\tilde\sigma_{i_1} \tilde\sigma_{i_2} \cdots \tilde\sigma_{i_k}$
