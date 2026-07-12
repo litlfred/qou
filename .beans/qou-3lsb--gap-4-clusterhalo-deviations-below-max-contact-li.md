@@ -1,10 +1,11 @@
 ---
 # qou-3lsb
 title: 'GAP-4: cluster/halo deviations below max-contact (⁶Li α+d, ⁹Be)'
-status: todo
+status: in-progress
 type: task
+priority: normal
 created_at: 2026-07-11T23:11:26Z
-updated_at: 2026-07-11T23:11:26Z
+updated_at: 2026-07-12T00:58:06Z
 ---
 
 
