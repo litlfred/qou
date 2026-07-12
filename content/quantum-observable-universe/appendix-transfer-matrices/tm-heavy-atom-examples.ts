@@ -3,7 +3,7 @@ import { prose } from "../../schema/builders";
 export default prose({
   label: "tm-heavy-atom-examples",
   title: "Heavy-atom worked examples",
-  uses: ["rem:generator-volume-decomposition"],
+  uses: ["rem:generator-volume-decomposition", "rem:shell-construction-rules"],
   tags: [
     "transfer-matrix",
     "worked-example",
