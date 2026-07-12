@@ -37,6 +37,4 @@ Here $\Phi$ is the quark-content functor. The right-vertical arrow lifts a bare 
 
 The discrete-category framing ensures compatibility with other categorical constructions. Sums over flavors in hadronic mass formulas become natural transformations of functors rather than ad-hoc weighted sums.
 
-We encode the functor as a `FlavorDressingFunctor` typeclass in Lean. It requires a field `μ : Flavor → ℝ` and a positivity hypothesis `μ_pos : ∀ q, 0 < μ q`. Instances at specific substrate parameters are provided in sibling files.
-
 **Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall. It invokes real- or complex-analytic constructs. Any generic categorical identities it draws on remain valid over an abstract coefficient ring. Only their archimedean realisation is specialised here.

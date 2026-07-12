@@ -9,7 +9,7 @@ B(K) \;=\; \sum_{n \geq 2} B_n(K),
 B_n(K) \;=\; m_e\,a_D^{(n)}(K)
 \;=\; m_e\oint_{\mathcal{S}_c}\lambda_{\mathrm{SW}}^{(n)}
 \;=\; m_e\,2\pi i\!\!\sum_{p\,\in\,\mathcal{S}_c^{\mathrm{hyp}}}\!\!
-        \operatorname{Res}_p\,\lambda_{\mathrm{SW}}^{(n)},
+        \mathrm{Res}_p\,\lambda_{\mathrm{SW}}^{(n)},
 $$
 
 in which the **body order $n$ is the vertical (jet) degree** of the prolonged
@@ -18,7 +18,7 @@ Seiberg--Witten differential
 $m_e$ times the $n$-th prolonged SW period, and that period is the algebraic
 residue sum of [`prop:sw-period-residue-sum`](#prop:sw-period-residue-sum) taken
 over the **hyperbolic** components only (non-hyperbolic components contribute
-$\operatorname{Vol}=0$). Equivalently: the many-body binding series **coincides
+$\mathrm{Vol}=0$). Equivalently: the many-body binding series **coincides
 with the jet-order filtration** of $\mathcal{B}_K$, term by term.
 
 The growth of the residue weights with body order — the empirical "$\rho\cdot A$"
@@ -31,7 +31,7 @@ partial differential equation. Under this conjecture $\rho\cdot A$ is an
 **Anchors.** The series is pinned at two body orders already derived without
 fitting: the $n=2$ deuteron term (single inter-nucleon bond) and the $n=4$
 magic-shell term [`magic-A-binding-formula`](#prop:magic-A-binding-formula),
-$B(^{4}\mathrm{He}) = 2\,m_e\,A\,\operatorname{Vol}(\mathrm{L6a4})$, which lands
+$B(^{4}\mathrm{He}) = 2\,m_e\,A\,\mathrm{Vol}(\mathrm{L6a4})$, which lands
 $^{4}\mathrm{He}$ within $+5.87\%$. The conjecture asserts that these are the
 $n=2$ and $n=4$ members of one filtration, with the $n=3$ term the genuine
 three-body contribution (not reducible to pairwise sums).
@@ -41,8 +41,8 @@ anchors are established, but the equality of the full binding to the complete
 jet-order filtration — and the $q$-difference origin of the scale rule — are
 not yet proved.
 
-**Scope note on the weight $w_n(K)$ (2026-07-11).** A derive-or-refute of the
-weight kernel (coordinated with PR #3534) establishes what does *not* close.
+**Scope note on the weight $w_n(K)$.** A derive-or-refute of the
+weight kernel establishes what does *not* close.
 Body-order weights $w_n$ (shared across knots $K$) are **admissible**: the raw
 $^{3}\mathrm{H}$/$^{3}\mathrm{He}$ binding split ($0.76\ \text{MeV}$, $9.9\%$) is
 almost entirely **Coulomb** — on the Coulomb-corrected strong binding
