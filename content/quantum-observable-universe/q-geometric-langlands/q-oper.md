@@ -1,6 +1,4 @@
-For $\check{G}_q = \mathrm{SU}_{q^{-1}}(2)$, a $q$-oper on a brane curve $X$ is a rank-$2$ $q$-flat bundle with an invariant line subbundle $\mathcal{L} \subset \mathcal{V}$ satisfying a transversality condition: $\nabla_q(\mathcal{L}) \not\subset \mathcal{L} \otimes \Omega^1_q$. This geometric data is equivalent to a $q$-deformed Sturm--Liouville operator $\partial_q^2 + t(z)$, where $t(z) \in H^0(X, \Omega_q^{\otimes 2})$. This operator provides the rigid spectral data dual to $q$-Hecke eigensheaves.
-
-We generalize this to arbitrary groups. Let $\check{G}_q$ be the $q$-Langlands dual group ([q-Langlands dual](#def:q-langlands-dual)) and let $\check{\mathfrak{b}}_q \subset \check{\mathfrak{g}}_q$ be a Borel subalgebra. A **$q$-oper** on $X$ is a $q$-flat connection ([q-flat connection](#def:q-flat-connection))
+Let $\check{G}_q$ be the $q$-Langlands dual group ([q-Langlands dual](#def:q-langlands-dual)) and let $\check{\mathfrak{b}}_q \subset \check{\mathfrak{g}}_q$ be a Borel subalgebra. A **$q$-oper** on $X$ is a $q$-flat connection ([q-flat connection](#def:q-flat-connection))
 
 $$
   (\mathcal{P}_{\check{G}_q}, \nabla_q)
@@ -14,3 +12,5 @@ $$
 $$
 
 We denote the moduli stack of $q$-opers by $\mathrm{Op}_{\check{G}_q}(X)$.
+
+For the rank-$2$ case $\check{G}_q = \mathrm{SU}_{q^{-1}}(2)$, a $q$-oper on a brane curve $X$ is a rank-$2$ $q$-flat bundle with an invariant line subbundle $\mathcal{L} \subset \mathcal{V}$ satisfying the transversality condition $\nabla_q(\mathcal{L}) \not\subset \mathcal{L} \otimes \Omega^1_q$. This geometric data is equivalent to a $q$-deformed Sturm--Liouville operator $\partial_q^2 + t(z)$, where $t(z) \in H^0(X, \Omega_q^{\otimes 2})$, providing the rigid spectral data dual to $q$-Hecke eigensheaves.
