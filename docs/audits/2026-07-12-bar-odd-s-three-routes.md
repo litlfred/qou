@@ -62,7 +62,7 @@ alone can carry the sign flip (consistent with the capstone: the flip lives in t
 minus the pure-volume prediction `2π·Vol(u)/(u²+4π²)` (with `Vol(u)` from the
 corpus's validated gluing-Newton solve) decomposes as
 
-  `resid(u) = (1/2)·u + b·u² + O(u³)`,  `b ≈ 0.1703`,
+  `resid(u) = (1/2)·u + b·u² + O(u³)`,  `b ≈ 0.1723`,
 
 with the linear coefficient hitting `1/2` to ~4 digits across the whole grid —
 i.e. `Im S(u) ⊃ π·u`, a framing/meridian normalization term that is **odd under
