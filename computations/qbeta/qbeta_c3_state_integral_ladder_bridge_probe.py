@@ -56,7 +56,6 @@ from qou_substrate.constants import q_at, q_muon_at  # noqa: E402
 mp.mp.dps = 50
 with mp.workdps(50):
     KAPPA1 = +(11 * mp.sqrt(3) * mp.pi / 108)
-    VOL41 = +(2 * mp.clsin(2, mp.pi / 3))
 S_TARGET = {"proton": mp.mpf("-0.03945936"), "muon": mp.mpf("0.00968298")}
 
 
