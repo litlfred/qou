@@ -66,14 +66,51 @@ also *selects the real-u ray* over the imaginary one as the geometric
 embedding that cooperates with S — a new, falsifiable orientation datum for
 the #3562/#3544 argument searches.
 
-## 4. Literature verification status
+## 4. Literature verification (agent report, 2026-07-12)
 
-A background verification agent (NZ85 lemma numbers, published 4₁ NZ
-coefficients, A-polynomial source conventions, parity of odd-in-u quantum
-corrections) is being run; its verdicts will be appended here before merge.
-Everything above is machine-computed from the stated A-polynomial and does
-not depend on the pending citations; the NZ85 attribution of v-oddness is
-corroborated numerically in §2 independent of the citation.
+**Provenance caveat:** the sandbox egress proxy blocks arXiv, MSP,
+Project Euclid, MPIM, Wayback, Knot Atlas, etc.; no primary PDF was
+eyeballed. Verdicts are tiered: CONFIRMED-secondary (attributed
+restatements via search snippets / on-disk cloned sources),
+CONFIRMED-computational (independent exact computation), UNVERIFIED.
+
+- **v odd / Vol even (NZ85): CONFIRMED-secondary + computational.**
+  Restatements attributing to Neumann–Zagier, Topology 24(3) (1985)
+  307–332: "−v = Σ cₙuⁿ with **cₙ = 0 for all even n** and **c₁ = −τ**, the
+  cusp shape" (arXiv:1203.6551, arXiv:1812.04788; also arXiv:2402.04483,
+  math/0604094). NZ85's *internal lemma numbers*: **UNVERIFIED**
+  (full text at MPIM, blocked). The agent verified Vol(u) = Vol(−u)
+  exactly and **Vol(u) = Vol(0) − (1/4)·Im(τ)·|u|² + O(|u|⁴)** numerically
+  (u = 2 log M normalization) — the 1/4 confirmed computationally.
+- **Cross-validation of §2 (strong):** the agent independently computed the
+  4₁ series symbolically (sympy, from the A-polynomial branch, doubled
+  convention v = 2 log(−L)): v = −2√−3·u − (2√−3/3)u³ − (23√−3/90)u⁵
+  − (89√−3/540)u⁷ + O(u⁹), even coefficients exactly 0 through u⁷ —
+  **exactly 2× this probe's contour-extracted coefficients term-by-term**
+  (the log(−L) vs 2log(−L) longitude convention), independently confirming
+  both implementations and the convention-free ratio Φ₄/Φ₂ = 1/6.
+  So v₇ = −89i√3/1080 in this probe's normalization.
+- **Cusp modulus: CONFIRMED-computational.** SnapPy `cusp_info`: shape
+  2√3·i, i.e. τ_cusp = 2√−3 (translation-ratio convention) —
+  = the doubled-convention |v₁|, consistent with §2's v₁ = −i√3.
+- **A-polynomial: CONFIRMED-computational** (vanishes to 50 dps at 5
+  points on the geometric branch solved from SnapPy gluing equations;
+  A(L,1) = −(L+1)² symbolically) + CONFIRMED-secondary (same form in the
+  topological-recursion literature snippets). CCGLS-verbatim: UNVERIFIED.
+- **1-loop invariant of 4₁:** via the Dimofte–Garoufalidis formula as
+  implemented in the cloned Garoufalidis–Sabo `compute-n-loop` code
+  (arXiv:1503.02554 draft TeX on disk), evaluated exactly at 4₁'s NZ
+  datum: **τ₁-loop(4₁) = ±√−3/2**. DG's own verbatim 4₁ sentence:
+  UNVERIFIED (paper unreachable).
+- **Published parity statement for the deformed 1-loop δ(u): UNVERIFIED**
+  (nothing reachable states it). Structural note (agent's analysis, NOT a
+  citation): u ↦ −u is the Weyl involution M ↦ M⁻¹ fixing the character,
+  so branch invariants are forced even in u — consistent with, but not a
+  substitute for, a published statement.
+
+Follow-up for an unblocked environment: eyeball NZ85 (MPIM fulltext) for
+the lemma numbers and the worked 4₁ example, and arXiv:1202.6268 for the
+1-loop normalization sentence.
 
 ## 5. Non-derivation disclaimer
 
