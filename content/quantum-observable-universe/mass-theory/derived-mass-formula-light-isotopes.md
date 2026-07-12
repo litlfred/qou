@@ -3,7 +3,7 @@
 $$
 \begin{aligned}
 \mathcal{M}(Z, N) &= Z \mathfrak{m}_{\mathfrak{p}} + N \mathfrak{m}_{\mathfrak{n}} + Z m_e \\
-                  &\quad + \alpha \bigl(\Phi_1 - 2[3]_q \Phi_2 + H_A^2 \Phi_3\bigr) \\
+                  &\quad + \alpha \bigl(\Phi_1 - 2[3]_q \Phi_2 + h_{\mathrm{A}}^2 \Phi_3\bigr) \\
                   &\quad + \Delta_{W}(Z, N) + \Delta_{T=1}(Z, N)
 \end{aligned}
 $$

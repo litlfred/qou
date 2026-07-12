@@ -11,7 +11,7 @@ $$
 
 $$
   \hat{V}_{\mathrm{pn}}
-  = W_{\mathrm{std}} \cdot \Bigl(z - \frac{H_A}{2}\Bigr).
+  = W_{\mathrm{std}} \cdot \Bigl(z - \frac{h_{\mathrm{A}}}{2}\Bigr).
 $$
 
 *The 2-dimensional standard representation creates non-commuting cross-channel interactions between adjacent generators. This generates the Markov-weighted pair interaction term $\delta_{\times}$.*

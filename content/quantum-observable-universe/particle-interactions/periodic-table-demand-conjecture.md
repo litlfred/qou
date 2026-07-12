@@ -48,7 +48,7 @@ We verify this conjecture computationally by inductive Gröbner--Shirshov reduct
 2. Evaluate $|\mathrm{dem}|$ for each.
 3. Check that the minimizer matches the known stable isotope(s).
 
-The inductive reduction ensures polynomial scaling. Each new nucleon multiplies a bounded-size normal form element by a typed crossing and reduces. For $A \leq 12$, this is computationally tractable. For $A > 12$, the transfer matrix identities $C_{pp}^2 = H_A C_{pp} + \mathbf{1}$ and $C_{nn}^2 = H_A C_{nn} + \mathbf{1}$ compress the calculation.
+The inductive reduction ensures polynomial scaling. Each new nucleon multiplies a bounded-size normal form element by a typed crossing and reduces. For $A \leq 12$, this is computationally tractable. For $A > 12$, the transfer matrix identities $C_{pp}^2 = h_{\mathrm{A}} C_{pp} + \mathbf{1}$ and $C_{nn}^2 = h_{\mathrm{A}} C_{nn} + \mathbf{1}$ compress the calculation.
 
 ## Predicted vs observed for $A \leq 4$
 

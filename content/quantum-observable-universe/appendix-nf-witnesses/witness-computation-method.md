@@ -2,13 +2,13 @@ An inductive Gröbner–Shirshov reduction is the natural vehicle for the Pauli 
 
 ## Crossing convention
 
-All computations use the unimodular $(1, -\mathrm{HA})$ crossing convention, writing $\mathrm{HA} = q - q^{-1}$ for the Hecke relation's discriminant:
+All computations use the unimodular $(1, -h_{\mathrm{A}})$ crossing convention, writing $h_{\mathrm{A}} = q - q^{-1}$ for the Hecke relation's discriminant:
 
 | Crossing type | $(c, d)$ | Source |
 |:---:|:---:|:---|
 | $\mathfrak{p}\mathfrak{p}$ (proton–proton) | $(1, 0)$ | positive crossing $\sigma$ |
-| $\mathfrak{n}\mathfrak{n}$ (neutron–neutron) | $(1, -\mathrm{HA})$ | negative crossing $\sigma^{-1} = \sigma - (q - q^{-1})$ |
-| $\mathfrak{p}\mathfrak{n}$ (mixed) | $(1, -\mathrm{HA}/2)$ | averaged $\tfrac{1}{2}(\sigma + \sigma^{-1})$ |
+| $\mathfrak{n}\mathfrak{n}$ (neutron–neutron) | $(1, -h_{\mathrm{A}})$ | negative crossing $\sigma^{-1} = \sigma - (q - q^{-1})$ |
+| $\mathfrak{p}\mathfrak{n}$ (mixed) | $(1, -h_{\mathrm{A}}/2)$ | averaged $\tfrac{1}{2}(\sigma + \sigma^{-1})$ |
 
 This yields $\det T_{nn} = -1$ (unimodular), consistent with the Iwahori–Hecke inverse relation.
 

@@ -4,18 +4,18 @@ At each inductive step, the product $\mathcal{N}_{\leq k} \cdot C \cdot \mathfra
 The **Hecke square rule** for typed crossings enforces this bound:
 
 $$
-  C_{pp}^2 = H_A \cdot C_{pp} + \mathbf{1}, \qquad C_{nn}^2 = H_A \cdot C_{nn} + \mathbf{1},
+  C_{pp}^2 = h_{\mathrm{A}} \cdot C_{pp} + \mathbf{1}, \qquad C_{nn}^2 = h_{\mathrm{A}} \cdot C_{nn} + \mathbf{1},
 $$
 
-where $H_A = q - q^{-1}$. These equations apply the standard Hecke relation $\sigma_i^2 = H_A\sigma_i + \mathbf{1}$ to typed crossings. They guarantee that consecutive same-type nucleon pairs arrest normal form complexity. Two $pp$ crossings resolve into a linear combination of a single crossing and the identity.
+where $h_{\mathrm{A}} = q - q^{-1}$. These equations apply the standard Hecke relation $\sigma_i^2 = h_{\mathrm{A}}\sigma_i + \mathbf{1}$ to typed crossings. They guarantee that consecutive same-type nucleon pairs arrest normal form complexity. Two $pp$ crossings resolve into a linear combination of a single crossing and the identity.
 
 For mixed crossings:
 
 $$
-  C_{pn}^2 = H_A \cdot C_{pn} + \mathbf{1} - \tfrac{1}{4}H_A^2.
+  C_{pn}^2 = h_{\mathrm{A}} \cdot C_{pn} + \mathbf{1} - \tfrac{1}{4}h_{\mathrm{A}}^2.
 $$
 
-The extra constant $-\tfrac{1}{4}H_A^2$ provides the mixed-crossing correction. The identity channel absorbs it at each step.
+The extra constant $-\tfrac{1}{4}h_{\mathrm{A}}^2$ provides the mixed-crossing correction. The identity channel absorbs it at each step.
 
 ## Complexity bound
 
