@@ -8,10 +8,10 @@ the framework normalisation $\mathrm{tr}_M(\sigma_i) = z$, and a
 $\tau \colon H_n(R, q) \to R$, one for each level $n$ of the tower
 $H_1 \subset H_2 \subset \cdots$, satisfying
 
-1. **(M1, cyclicity)** $\tau(xy) = \tau(yx)$;
-2. **(M2, Markov peel)** $\tau(x \sigma_{n-1}) = z \cdot \tau(x)$ for
-   all $x \in H_{n-1}(R, q)$;
-3. **(M3, normalisation)** $\tau(1) = 1$.
+1. **(M1, normalisation)** $\tau(1) = 1$;
+2. **(M2, cyclicity)** $\tau(xy) = \tau(yx)$;
+3. **(M3, Markov peel)** $\tau(x \sigma_{n-1}) = z \cdot \tau(x)$ for
+   all $x \in H_{n-1}(R, q)$.
 
 **Step 1: trace functionals on a split semisimple algebra.**
 At generic $q$ the Iwahori–Hecke algebra is split semisimple, with
@@ -25,7 +25,7 @@ one matrix block per partition $\lambda \vdash n$, where $d_\lambda$
 is the number of standard Young tableaux of shape $\lambda$ (Wenzl
 \cite{wenzl1988}). The irreducible characters
 $\chi_\lambda$ form a basis of the space of cyclic functionals on a
-split semisimple algebra, so every functional $\tau$ satisfying M1
+split semisimple algebra, so every functional $\tau$ satisfying M2
 admits a unique expansion
 
 $$
@@ -73,7 +73,7 @@ Let $\tau$ be any Markov trace on the tower satisfying M1–M3 with
 the same parameter $z$. We show $\tau = \mathrm{tr}_M$ at every
 level, by induction on $n$.
 
-*Base case.* $H_1(R, q) = R$, and M3 forces
+*Base case.* $H_1(R, q) = R$, and M1 forces
 $\tau(c) = c = \mathrm{tr}_M(c)$ for all $c \in R$.
 
 *Inductive step.* Recall the Iwahori basis
@@ -106,7 +106,7 @@ $$
   \mathrm{tr}_M(x \, \sigma_{n-1} \, y),
 $$
 
-using M1, then M2, then the inductive hypothesis, then M2 and M1
+using M2, then M3, then the inductive hypothesis, then M3 and M2
 again for $\mathrm{tr}_M$. By linearity, $\tau = \mathrm{tr}_M$ on
 $H_n(R, q)$. Note that no separate axiom is needed for negative
 crossings: the quadratic relation
@@ -123,9 +123,10 @@ cyclic axioms equals $\mathrm{tr}_M$ block-wise. Combining the
 steps: the QOU mass identity requires a non-degenerate Frobenius
 pairing on $H_n(R, q)$ (Step 3 of the statement chain); the
 categorical trace induced by the cat-action and the fibre functor
-satisfies M1 (cyclicity of the categorical trace), M2 (invariance
-of the Markov closure under positive stabilisation, normalised so
-that a single positive crossing carries the weight $z$), and M3.
+satisfies M1 (normalisation), M2 (cyclicity of the categorical
+trace), and M3 (invariance of the Markov closure under positive
+stabilisation, normalised so that a single positive crossing carries
+the weight $z$).
 By Steps 1–3 the only such functional is $\mathrm{tr}_M$, and by
 Step 2 it is non-degenerate. Hence $\mathrm{tr}_M$ is the unique
 non-degenerate Frobenius pairing on $H_n(R, q)$ compatible with
