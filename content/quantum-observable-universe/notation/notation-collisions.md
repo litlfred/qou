@@ -137,6 +137,17 @@ third is the observable. (Trace + literature audit:
   $\mathrm{tr}_M(a) \neq \mathrm{tr}(L_a)$: the Markov trace is the *quantum*
   trace, not the regular-representation trace.
 
+> **Open glyph collision — $\mathcal{M}$ (flag, owner decision).** The symbol
+> $\mathcal{M}$ is currently overloaded within this same file: the Skein-module
+> entry above writes the *mass functional* $\mathcal{M}\colon\mathrm{Sk}_q\to\mathbb{R}_{\geq0}$,
+> while the $\mathfrak{V}$ entry and the table above write $\mathcal{M}(K)\in\mathrm{End}_{\mathbf{C}}(X_K)$
+> for the *mass endomorphism*. These are the functional and the endomorphism —
+> the very two the table separates. Recommended resolution: keep $\mathcal{M}$
+> (calligraphic operator) for the **endomorphism** and move the Skein *functional*
+> to $\mathfrak{m}$ (fraktur observable register), i.e. $\mathfrak{m}\colon\mathrm{Sk}_q\to\mathbb{R}_{\geq0}$.
+> Deferred to owner sign-off rather than renamed here, since the Skein $\mathcal{M}$
+> is established usage.
+
 ## Quantum dilogarithm: $\Phi_q$ (compact) vs $\Phi_b$ (Faddeev non-compact)
 
 Two distinct functions were historically both called "Faddeev $\Phi_q$",
