@@ -52,8 +52,11 @@ from qbeta_c3_barodd_gluing_newton_solve import vol_of_m  # noqa: E402
 from qou_substrate.constants import q_at, q_muon_at  # noqa: E402
 
 mp.mp.dps = 50
-VOL41 = 2 * mp.clsin(2, mp.pi / 3)
-KAPPA1 = 11 * mp.sqrt(3) * mp.pi / 108
+# Evaluate the transcendentals inside an explicit high-precision context so they
+# cannot silently truncate to a stale default dps (Gemini review).
+with mp.workdps(50):
+    VOL41 = +(2 * mp.clsin(2, mp.pi / 3))
+    KAPPA1 = +(11 * mp.sqrt(3) * mp.pi / 108)
 S_TARGET = {"proton": mp.mpf("-0.03945936"), "muon": mp.mpf("0.00968298")}
 
 
