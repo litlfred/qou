@@ -904,3 +904,15 @@ primitive-cube-root). Paper: rem:figure-eight-reeb-theta-value. Coordinated:
 intent on #3596/#3573/#3579; flagged the #3573↔#3579 CuspShapeBarParity.lean
 duplication and the θ(braid-operator) vs boost(meridian-holonomy) phase
 distinction. No c_k value; wires nothing; no tier change.
+
+**2026-07-12 (#3648) — KC19×KC20 bridge reconciliation + ℚ(√−19)≠ℚ(√−3) arithmetic separator.**
+Self-correction of merged #3618 (it missed the prior 2026-07-07 hopf-cubic-vs-crossing-weight
+bridge audit): assertion 4 now separates the MEANINGFUL Hopf-sector shadow C_Hopf(2)=−2 (=J_Hopf(1),
+Lean-certified) from the COINCIDENTAL total-C(3)=−2 at golden y=3; #3618's genuinely-new pieces
+(4−h²=6−y kernel-denominator identity; disjoint singularities) delineated from the bridge audit's
+prior coverage. NEW (scope-(a), grep-confirmed not explicit): the odd carrier's quadratic field is
+ℚ(√−19) (disc C_Hopf=−76=−2²·19), DISTINCT from the even/4₁/Φ_b field ℚ(√−3) — channels separated
+by ramified odd prime 19 vs 3. Consequence: the odd algebraic field-of-definition is not contained
+in the 4₁/Φ_b arithmetic; a closure must supply the disc-19 field. STRICT scope guard: does NOT
+exclude Φ_b (transcendental, richer arithmetic possible), does NOT address the anchor-dependent c₃
+swing (w(q) fibre, KC19). Sharpens the search target. No c_k value; nothing wired; no tier change.
