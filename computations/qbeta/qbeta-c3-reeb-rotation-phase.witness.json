@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-11T22:53:44.051156+00:00",
-  "commitSha": "35a89f8287f744e7c3e6f353e294ebf520870634",
+  "computedAt": "2026-07-12T00:20:23.656888+00:00",
+  "commitSha": "492354eda1e971bd1764ddc3b045b79c03b50cc2",
   "assertions": [
     {
       "name": "fig8_eigenvalue_unit_modulus",
@@ -38,11 +38,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 13,
+  "durationMs": 12,
   "computation": "qbeta-c3-reeb-rotation-phase",
   "scriptFile": "qbeta_c3_reeb_rotation_phase_probe.py",
-  "scriptHash": "12d8df4e8b72",
-  "scriptCommitSha": "35a89f8287f744e7c3e6f353e294ebf520870634",
+  "scriptHash": "6351b09e264f",
+  "scriptCommitSha": "492354eda1e971bd1764ddc3b045b79c03b50cc2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
