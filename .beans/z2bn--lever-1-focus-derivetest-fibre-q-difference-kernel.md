@@ -290,3 +290,22 @@ Derived, no fit; Lean `QOU/Mass/TauQuantumIntegerForm.lean` sorry-free:
 **Update 2026-06-28 (Stage 8) — the core R_m is a tower of pairwise-coprime, irreducible, bar-symmetric, substrate-positive polynomials.** Characterized the non-cyclotomic cores R_m (read from Stage-7 witness; exact in q). Findings on m=6..11: (1) ALL R_m palindromic (bar-symmetric q↔1/q) — extends 2026-06-27's single D(7) observation to all m; binding residue is bar-even; (2) each R_m IRREDUCIBLE over ℚ; (3) cores PAIRWISE COPRIME (no nesting, no fixed growing factor — each order brings a genuinely new irreducible core); (4) R_m(1)>0 and R_m(q0)>0 (the (q−1)² carries all q=1 vanishing). Degree seq 8,10,14,28,34,46 and R(1) seq 28,16,34,1232,1328,9024 — no simple closed form. Net Stages 1-8 picture: S(m)=q-involution skeleton + D(m) = (q−1)²·[Φ_d cyclotomic tower, odd-d rule Φ_d|D(d+1)]·[tower of pairwise-coprime irreducible bar-symmetric substrate-positive cores R_m] — the genuine cyclotomic-completion (Habiro) residue. Scope: palindromy/irreducible/coprime/positive are exact derived facts; "grows unboundedly/not a single finite element" is bounded-MMAX, not proved (b); Habiro class not refuted. Next: (i) identify R_m(1) seq combinatorially; (ii) root distribution on/off unit circle. Probe: computations/substrate/lever1_binding_core_characterization.py; witness: …-core-characterization.witness.json; audit: docs/audits/2026-06-28-lever1-binding-core-bar-symmetric-irreducible.md
 
 **Update 2026-06-28 (Stage 9) — cores are GENERIC bar-symmetric residues; algebraic-characterization line CONCLUDED.** Exact on/off-unit-circle root split (Dickson y=q+1/q reduction + Sturm count_roots, no numerics) + R_m(1) factorization. Findings m=6..11: (1) MIXED root distribution — on-circle 4/8,6/10,6/14,14/28,24/34,32/46 (43–71%), substantial off-circle z↔1/z pairs ⇒ cores are NOT cyclotomic-type, NOT Salem, NOT a recognizable q-special-function; generic bar-even residues; (2) R_m(1)=28,16,34,1232,1328,9024 = 2²·7,2⁴,2·17,2⁴·7·11,2⁴·83,2⁶·3·47 — no combinatorial law. NET (Stages 6-9): the real-q algebraic structure of the binding correction is fully mapped — D(m)=(q−1)²·[Φ_d tower, odd-d rule]·[pairwise-coprime irreducible bar-symmetric generic cores], genuine Habiro/cyclotomic-completion content, NO finite special-function closed form. Further algebraic probing has diminishing returns. The genuine DERIVATION (not description) is the OWNER-GATED λ_SW-holonomy keystone on color E_q (tr B side, #2722) — the algebraic side has now handed it a complete exact parameter-free TARGET. Scope: exact derived facts m=6..11; "no finite closed form" is (a)-cumulative, not proved (b). Probe: computations/substrate/lever1_binding_core_root_distribution.py; witness: …-core-root-distribution.witness.json; audit: docs/audits/2026-06-28-lever1-binding-core-root-distribution.md
+
+## Update 2026-07-12 — headline is STALE: fork RESOLVED; open piece is the super-exp kernel, not "derive τ"
+
+The bean's "frontier = derive τ = tr B geometrically" headline is superseded. `sw_period_growth_probe.py`
+(audit) + `prop:sw-period-residue-sum` (Lean `sw_period_eq_residue_sum`) + `Lever1Depth2Exclusion.lean`
+already RESOLVE the SW-period prolongation fork: the explicit jet rule `λ_SW^(n)=X^(n)(z)dz` gives a
+super-exponential period = lw/#1765 (= Σ_λ dim_q residue sum), so the depth-2 τ-recurrence is an n≤4
+EFFECTIVE FIT (Lean (b)-excluded). τ is settled — NOT the live object.
+
+Refined this session (`lever1_sw_period_lw_rate_refine.py`, mpmath-only, audit
+`docs/audits/2026-07-12-lever1-sw-period-lw-rate-refine.md`): fork reproduced in-container (lw ratio
+1.34→3.10 super-exp vs depth-2 → λ₊≈2.184 constant, split n≥5); NEW quantitative finding — the naive
+single-branch rate (n−½)/R OVERSHOOTS the true lw ratio ~2.6× at n=8. The color cubic has 6 branch
+points (3 pairs |z|≈0.943/1.0/1.061); the exact rate is the FULL multi-branch residue sum, and lw
+tracks the involution-class ~√n (q→1 telephone limit).
+
+**Live open object (sharpened):** the exact super-exponential `a_D^(n)` kernel — the q-Bessel-class /
+multi-branch residue sum — NOT the τ derivation (τ is its n≤4 shadow). Coordinated with active keystone
+sibling #3662 (W_λ side).
