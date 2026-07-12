@@ -1,0 +1,65 @@
+{
+  "computation": "qbeta-qstar-experimental-budget",
+  "description": "Route-3 budget: error-propagation of the canonical CAL-3 \u03c3(Q_\u03b2) through dq*/dQ_\u03b2 (#3636) to \u03c3(q*), compared against the \u03bc\u2013p pin spread and each pin's own precision \u2014 the quantitative form of 'a better neutron Q_\u03b2 directly sharpens everything'. Inputs loaded from committed witnesses; no hidden literals.",
+  "audit_only": true,
+  "tier": "error-propagation arithmetic (no new measurement, no fit)",
+  "computedAt": "2026-07-12T15:29:55.112162+00:00",
+  "commitSha": "dbf48c4e6ff1a31abbeefc3565dbebf8a7df5044",
+  "engine": "mpmath",
+  "engineVersion": "1.3.0",
+  "scriptFile": "qbeta_qstar_experimental_budget.py",
+  "scriptHash": "6b924aad0b27",
+  "assertions": [
+    {
+      "name": "inputs_loaded_from_canonical_witnesses",
+      "passed": true
+    },
+    {
+      "name": "qstar_sigma_exceeds_pin_spread_today",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "result": {
+    "Q_beta_MeV_quoted": "0.78233341(61) MeV (PDG 2024 / AME 2020 cross-check)",
+    "sigma_Qbeta_eV": "0.61",
+    "dqstar_dQbeta_per_MeV": "-0.5389653",
+    "q_star": "1.109978593031523288402328",
+    "q_proton_pin": "1.109978582751380807591669",
+    "q_muon_pin": "1.109978595554180575281594",
+    "pin_spread_abs": "1.28028e-8",
+    "pin_spread_ppb": "11.5343",
+    "sigma_qstar_today_abs": "3.2876883e-7",
+    "sigma_qstar_today_ppb": "296.194",
+    "budget": [
+      {
+        "threshold": "arbitrate \u03bc\u2013p tension (\u03c3(q*) \u2264 |\u0394q|)",
+        "target_sigma_q": "1.28028e-8",
+        "improvement_factor_needed": "25.6794",
+        "sigma_Qbeta_needed_eV": "0.0237544"
+      },
+      {
+        "threshold": "competitive with muon pin (22 ppb)",
+        "target_sigma_q": "2.4419529e-8",
+        "improvement_factor_needed": "13.4634",
+        "sigma_Qbeta_needed_eV": "0.0453082"
+      },
+      {
+        "threshold": "competitive with proton pin (0.06 ppb)",
+        "target_sigma_q": "6.6598715e-11",
+        "improvement_factor_needed": "4936.56",
+        "sigma_Qbeta_needed_eV": "0.000123568"
+      }
+    ],
+    "verdict": "Today \u03c3(q*) = 3.288e-7 (296.2 ppb) from \u03c3(Q_\u03b2) = 0.61 eV. A ~25.7\u00d7 sharper neutron Q_\u03b2 makes q* an arbiter of the \u03bc\u2013p substrate tension (needs \u03c3(Q_\u03b2) \u2248 0.0238 eV); ~13.5\u00d7 makes it competitive with the muon pin; the proton pin needs ~4.94e+3\u00d7 (0.000124 eV \u2014 beyond current technique). Pure error propagation on committed values; no fit; no c_k wired."
+  },
+  "context": {
+    "axis": "bar-odd S route 3: experimental Q_\u03b2 lever",
+    "inputs": [
+      "computations/cal-3-q-beta.witness.json",
+      "computations/qbeta/qbeta-c3-imq-qstar-ladder-amplification.witness.json",
+      "qou_substrate.constants.q_at/q_muon_at"
+    ],
+    "falsifiable_lever": "#3636 finding 3, made quantitative"
+  }
+}
