@@ -184,4 +184,54 @@ theorem ohtsukiKappa1_mem_qsqrt3 :
   refine ⟨11 / 108, ?_⟩
   rw [ohtsukiKappa1]; push_cast; ring
 
+/-! ## Higher rungs `κ₂, κ₃, κ₄` — the √3-parity alternation
+
+The higher-rung extraction (PR #3628; `qbeta_ohtsuki_higher_rungs.py`, confirmed at
+N ≤ 6291456 to 19–36 digits per rung) identifies
+
+  `κ₂ = (2/27)·π²`, `κ₃ = (1081/21870)·√3·π³`, `κ₄ = (98/729)·π⁴`,
+
+with the structural **√3-parity alternation**: odd rungs carry `√3` (odd powers of
+the imaginary `ℏ = 2πi/N` refract the `√−3` trace-field generator to real `√3`),
+even rungs are pure rational multiples of `π^n`. Denominators are 3-power-dominated
+(`27 = 3³`, `21870 = 2·3⁷·5`, `729 = 3⁶`) — the ℚ(√−3) torsion-3 signature.
+
+**Epistemic status.** As with `κ₁`, the *values* are the numerical Ohtsuki
+identifications (not proved from the sum here); Lean certifies the **field
+membership** — each rung is a rational multiple of its parity generator — so the
+alternation pattern (`ℚ·√3π^n` odd / `ℚ·π^n` even) is machine-checked arithmetic
+over the named values. Nothing is wired; the 4₁↔Q_β bridge stays open. -/
+
+/-- `κ₂ = (2/27)·π²` — the second even-channel rung (even rung: pure rational,
+    NO `√3`). Numerical Ohtsuki identification, 30 confirmed digits. -/
+noncomputable def ohtsukiKappa2 : ℝ := 2 * π ^ 2 / 27
+
+/-- `κ₃ = (1081/21870)·√3·π³` — the third rung (odd rung: carries `√3`).
+    Numerical Ohtsuki identification, 25 confirmed digits. -/
+noncomputable def ohtsukiKappa3 : ℝ := 1081 * Real.sqrt 3 * π ^ 3 / 21870
+
+/-- `κ₄ = (98/729)·π⁴` — the fourth rung (even rung: pure rational).
+    Numerical Ohtsuki identification, 19 confirmed digits. -/
+noncomputable def ohtsukiKappa4 : ℝ := 98 * π ^ 4 / 729
+
+/-- **`κ₂ ∈ ℚ·π²`** — the even-rung parity: a rational multiple of `π²`,
+    with no `√3` factor. -/
+theorem ohtsukiKappa2_mem_q_pi_sq :
+    ∃ r : ℚ, ohtsukiKappa2 = (r : ℝ) * π ^ 2 := by
+  refine ⟨2 / 27, ?_⟩
+  rw [ohtsukiKappa2]; push_cast; ring
+
+/-- **`κ₃ ∈ ℚ·√3·π³`** — the odd-rung parity: a rational multiple of `√3·π³`,
+    like `κ₁`. -/
+theorem ohtsukiKappa3_mem_qsqrt3_pi_cube :
+    ∃ r : ℚ, ohtsukiKappa3 = (r : ℝ) * (Real.sqrt 3 * π ^ 3) := by
+  refine ⟨1081 / 21870, ?_⟩
+  rw [ohtsukiKappa3]; push_cast; ring
+
+/-- **`κ₄ ∈ ℚ·π⁴`** — the even-rung parity: a rational multiple of `π⁴`. -/
+theorem ohtsukiKappa4_mem_q_pi_four :
+    ∃ r : ℚ, ohtsukiKappa4 = (r : ℝ) * π ^ 4 := by
+  refine ⟨98 / 729, ?_⟩
+  rw [ohtsukiKappa4]; push_cast; ring
+
 end QOU.QBeta.Qsqrt3Saddle
