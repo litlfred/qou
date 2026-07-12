@@ -16,7 +16,7 @@ A handful of common letters carry overloaded meanings in the literature. We enfo
 - **$\mathfrak{S}$** = categorical action (fraktur, Hamilton's $S$). We previously wrote the action two ways — calligraphic $\mathcal{S}_q$ and plain $S_q$. We now unify both to $\mathfrak{S}_q$ throughout the paper. This frees calligraphic $\mathcal{S}$ for the state bundle alone (QOU tuple $(\mathbf{C}, \varTheta, G, \mathcal{S})$). Three other objects deliberately keep $S$ / $\mathrm{Sk}$ and are not the action:
     - the Hopf antipode $S$ (plain $S$, or $S_q$ on the $q$-shuffle Hopf algebra);
     - the q-entropy $S_q(U)$ (`quantum-temperature`, with $\partial S_q/\partial \mathfrak{E}_q = 1/T_q$) and the Bekenstein–Hawking entropy $S_{BH}$ — entropy is a distinct thermodynamic observable, never the action;
-    - the Skein module $\mathrm{Sk}_q(\mathbf{C})$ — the $\mathbb{Z}[q^{\pm 1}]$-algebra of knot classes, with mass functional $\mathcal{M}\colon \mathrm{Sk}_q \to \mathbb{R}_{\geq 0}$. We moved this off calligraphic $\mathcal{S}$ (where it collided with the state bundle) to roman $\mathrm{Sk}$, since single-letter calligraphic was blocked: $\mathcal{S}$ = state bundle, $\mathcal{K}$ = knot.
+    - the Skein module $\mathrm{Sk}_q(\mathbf{C})$ — the $\mathbb{Z}[q^{\pm 1}]$-algebra of knot classes, with mass functional $\mathfrak{m}\colon \mathrm{Sk}_q \to \mathbb{R}_{\geq 0}$ (fraktur; the calligraphic $\mathcal{M}$ is reserved for the mass *endomorphism* $\mathcal{M}(K)\in\mathrm{End}_{\mathbf{C}}(X_K)$ — see the $\mathcal{M}$ ruling below). We moved the Skein *module* off calligraphic $\mathcal{S}$ (where it collided with the state bundle) to roman $\mathrm{Sk}$, since single-letter calligraphic was blocked: $\mathcal{S}$ = state bundle, $\mathcal{K}$ = knot.
 - **$\mathfrak{O}$** = observation / intent morphism — the section $(\mathfrak{O}, \epsilon)$ of $\mathrm{Ad}(J^1\mathcal{S})$ and its germ endomorphism $\mathfrak{O}_p$. We never use this for an ideal. The genus-filtration ideal keeps $\mathfrak{I}$ ($\mathfrak{I}_4 = (u^5)$). We moved intent off $\mathfrak{I}$ to disambiguate the two.
 - **$\mathfrak{W}$** = confinement observable / $q$-Wilson loop $\mathfrak{W}(\mathcal{K}, \mathcal{T})$. We never use this for the observation morphism (now $\mathfrak{O}$). The abstract Wilson-loop functional is plain $W(\gamma)$. This is distinct from $\mathfrak{V}$ (below).
 - **$\mathfrak{V}$** = the complex-volume observable (QOU analogue of the Neumann–Zagier complex volume $\mathbb{V}=\mathrm{Vol}+i\,\mathrm{CS}$): $\mathfrak{V}(K) = E_0\,\mathrm{tr}_M((\Pi_{\text{free}}-\mathbf{1})\circ\mathcal{M})$. Its real part is binding $\mathfrak{E}_{\mathrm{bind}} = \mathrm{Re}\mathfrak{V}$ (bar-even / $\cosh$) and its imaginary part is the $\beta$-decay Q-value $\mathfrak{Q}_\beta = \mathrm{Im}\mathfrak{V}$ (bar-odd / $\sinh$) ([`conj:binding-qbeta-complex-volume`](../mass-endomorphism/binding-qbeta-complex-volume.md)). We do not use $\mathfrak{W}$ (Wilson loop) or $\mathbb{V}$ (the literal NZ symbol, used only as the analogy reference).
@@ -137,16 +137,17 @@ third is the observable. (Trace + literature audit:
   $\mathrm{tr}_M(a) \neq \mathrm{tr}(L_a)$: the Markov trace is the *quantum*
   trace, not the regular-representation trace.
 
-> **Open glyph collision — $\mathcal{M}$ (flag, owner decision).** The symbol
-> $\mathcal{M}$ is currently overloaded within this same file: the Skein-module
-> entry above writes the *mass functional* $\mathcal{M}\colon\mathrm{Sk}_q\to\mathbb{R}_{\geq0}$,
-> while the $\mathfrak{V}$ entry and the table above write $\mathcal{M}(K)\in\mathrm{End}_{\mathbf{C}}(X_K)$
-> for the *mass endomorphism*. These are the functional and the endomorphism —
-> the very two the table separates. Recommended resolution: keep $\mathcal{M}$
-> (calligraphic operator) for the **endomorphism** and move the Skein *functional*
-> to $\mathfrak{m}$ (fraktur observable register), i.e. $\mathfrak{m}\colon\mathrm{Sk}_q\to\mathbb{R}_{\geq0}$.
-> Deferred to owner sign-off rather than renamed here, since the Skein $\mathcal{M}$
-> is established usage.
+**Owner ruling (2026-07-12) — $\mathcal{M}$ = endomorphism; the mass functional is $\mathfrak{m}$.** The glyph $\mathcal{M}$ is currently overloaded **three** ways across the corpus, which is forbidden:
+
+| Sense | Object | Type | Canonical glyph |
+|---|---|---|---|
+| **mass endomorphism** | $\mathcal{M}(K)$ (complex-volume block, $\mathfrak{V}$ entry) | $\mathrm{End}_{\mathbf{C}}(X_K)$ | **$\mathcal{M}$** (keep) |
+| **mass functional** | Skein-module map $\mathrm{Sk}_q\to\mathbb{R}_{\geq0}$ (evaluates a knot class to its mass) | functional | **$\mathfrak{m}$** (migrate ← $\mathcal{M}$) |
+| **scattering amplitude** | transition matrix element $\lvert\mathcal{M}_q\rvert^2$ (e.g. [`trace-ratio-observable`](../observations/trace-ratio-observable.md)) | scalar amplitude | **$\mathcal{M}_q$** (distinct; unaffected) |
+
+Ruling: reserve $\mathcal{M}$ (calligraphic operator) for the **endomorphism**; the Skein **functional** becomes $\mathfrak{m}\colon\mathrm{Sk}_q\to\mathbb{R}_{\geq0}$ (fraktur observable register, matching the mass scalar $\mathfrak{m}$ it outputs); the QFT **amplitude** $\mathcal{M}_q$ keeps its subscripted glyph. The Skein-module entry above is updated to $\mathfrak{m}$ accordingly.
+
+> **Corpus migration — tracked follow-up.** The functional-sense $\mathcal{M}\to\mathfrak{m}$ rename touches ~14 further blocks (`brings-surface/`, `observations/`, `mass-theory/`) and must be done **per file** — the amplitude sense $\lvert\mathcal{M}_q\rvert^2$ and the endomorphism sense $\mathcal{M}(K)$ must be left untouched, so a blanket substitution is unsafe. This authoritative ruling lands now; the mechanical-but-judged sweep is a follow-up (bean, not this PR) to keep the rename reviewable and avoid mislabeling the two non-functional senses.
 
 ## Quantum dilogarithm: $\Phi_q$ (compact) vs $\Phi_b$ (Faddeev non-compact)
 

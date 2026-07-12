@@ -125,6 +125,21 @@ three read-outs (real mass, real binding, imaginary $\mathfrak{Q}_\beta$).
    `End` object; call $\Phi_{\mathrm{mass}}$ the "Hecke mass **element**" and
    $\mathfrak{m}$ the "categorical mass **functional**"; add a notation-register
    row. Fix the opener/title slip.
+
+### $\mathcal{M}$ glyph ruling (owner, 2026-07-12)
+
+The audit surfaced that $\mathcal{M}$ is overloaded **three** ways across the
+corpus: (i) the mass **endomorphism** $\mathcal{M}(K)\in\mathrm{End}_{\mathbf{C}}(X_K)$;
+(ii) the Skein **mass functional** $\mathrm{Sk}_q\to\mathbb{R}_{\geq0}$ (~14
+blocks under `brings-surface/`, `observations/`, `mass-theory/`); (iii) the QFT
+**scattering amplitude** $\lvert\mathcal{M}_q\rvert^2$ (e.g.
+`observations/trace-ratio-observable.md`). Owner ruling **1**: keep $\mathcal{M}$
+for the endomorphism, migrate the functional to $\mathfrak{m}$, leave the
+amplitude $\mathcal{M}_q$ as its own subscripted glyph. The authoritative ruling
+lands in `notation-collisions.md`; the per-file corpus migration (functional
+$\mathcal{M}\to\mathfrak{m}$ only, never the amplitude or endomorphism sense) is a
+**tracked follow-up**, not this PR — a blanket substitution would corrupt the two
+non-functional senses.
 2. **Lean bridge** — `MassLeftMulEndomorphism.lean`: faithful regular
    representation `A → Module.End R A`, so the mass element *is* an
    endomorphism (sense (iii)); docstring records that $\mathrm{tr}_M$ is the
