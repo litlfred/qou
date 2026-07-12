@@ -16,7 +16,7 @@ Then the binding has the closed form
 $$
 B(K) \;=\; m_e\sum_{n} a_D^{(n)}
 \;=\; m_e\sum_{n}\!\!\sum_{p\in\mathcal{S}_c^{\mathrm{hyp}}}\!\!
-        \operatorname{Res}_p\,\lambda_{\mathrm{SW}}^{(n)},
+        \mathrm{Res}_p\,\lambda_{\mathrm{SW}}^{(n)},
 $$
 
 where the second equality is the residue form

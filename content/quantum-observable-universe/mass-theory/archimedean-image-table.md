@@ -39,7 +39,7 @@ physically deepest entries are:
   split: the proton and neutron braids $\beta_p, \beta_n$ differ by
   crossing signs, and $S$ is the map between them. The
   $\tau$-image of $S$ is the real-valued gap
-  $\operatorname{tr}_M(\beta_n) - \operatorname{tr}_M(\beta_p)$,
+  $\mathrm{tr}_M(\beta_n) - \mathrm{tr}_M(\beta_p)$,
   which (after calibration) gives $\mathfrak{Q}_\beta$.
 
 - **Row 5 (HOMFLYPT mirror).** The mirror $P(\bar K) = P(K; a^{-1}, z)$
