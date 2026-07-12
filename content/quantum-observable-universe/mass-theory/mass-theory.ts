@@ -625,6 +625,7 @@ export default chapter({
             "rem-im-q-vs-p-skew",
             "conj-im-q-physical-role",
             "rem-c3-s-imq-decay-projection",
+            "rem-ohtsuki-tower-bar-parity",
           ],
         }),
         section({
