@@ -114,8 +114,10 @@ def main():
     print(f"computing log J_N(4_1) for N={Ns} (dps {mp.mp.dps}) ...")
 
     D = []
+    LJ = []                                   # raw log J_N, for the independent Vol check
     for N in Ns:
         lj = log_kashaev_4_1(N)
+        LJ.append(lj)
         # Strip the two known EXACT pieces: (3/2)logN growth and the N·Vol/2π action.
         d = lj - mp.mpf(3) / 2 * mp.log(N) - N * Vol / (2 * pi)
         D.append(d)
@@ -160,7 +162,12 @@ def main():
     ohtsuki_A = kappa1 * s3 / (2 * pi)
     relA = mp.pslq([ohtsuki_A, mp.mpf(1)], tol=mp.mpf(10) ** (-tol),
                    maxcoeff=10 ** 5, maxsteps=10 ** 5)
-    A_rational = (f"{-relA[1]}/{relA[0]}" if relA and relA[0] != 0 else None)
+    A_rational = None
+    if relA and relA[0] != 0:
+        A_num, A_den = -relA[1], relA[0]        # A = A_num / A_den
+        if A_den < 0:                           # keep the denominator positive
+            A_num, A_den = -A_num, -A_den
+        A_rational = f"{A_num}/{A_den}"
     if hit:
         print(f"\n  κ₁ IDENTIFIED (tol 1e−{tol}): κ₁ = ({hit['p']}/{hit['q']})·√3π"
               f" = 11√3π/108")
@@ -175,7 +182,7 @@ def main():
         f"even-channel leading coefficient κ₁ = [1/N] log J_N(4₁), extracted to "
         f"≈{conf_digits} confident digits (10-point Vandermonde, N≤786432; matches the "
         f"#3571 numerically-fitted c₁≈0.554), is EXACTLY "
-        f"κ₁ = 11·√3·π/108 ∈ ℚ(√3)·π (2-term PSLQ [q,p]={hit['q'],hit['p'] if hit else None}, "
+        f"κ₁ = 11·√3·π/108 ∈ ℚ(√3)·π (2-term PSLQ [q,p]=({hit['q']},{hit['p']}), "
         f"33-digit agreement). Two structural facts: (1) κ₁ = (11/2)·b₁ — the "
         f"Euler–Maclaurin sum-vs-integral correction multiplies the naive integral-"
         f"Laplace saddle b₁=√3π/54 (Lean #3606) by exactly 11/2; (2) the Ohtsuki "
@@ -193,11 +200,14 @@ def main():
     )
     print("\nVERDICT:", verdict)
 
-    # Vol anchor: reconstruct Vol from the linear-in-N slope of log J_N (indep check).
-    vol_from_slope = 2 * pi * (log_kashaev_4_1(1536) - log_kashaev_4_1(768)
-                               - (mp.mpf(3) / 2) * (mp.log(1536) - mp.log(768))) \
-        - 2 * pi * (D[1] - D[0])
-    vol_from_slope /= (1536 - 768)
+    # Vol anchor — INDEPENDENT of the assumed Vol: since
+    # log J_N = (3/2)logN + (Vol/2π)·N + const + O(1/N), the finite N-slope of
+    # (log J_N − (3/2)logN) between the two largest N recovers Vol/2π from the RAW
+    # log J_N values only (no reference to D or to the Vol used to build D).
+    n1, n2 = Ns[-1], Ns[-2]
+    slope = ((LJ[-1] - mp.mpf(3) / 2 * mp.log(n1))
+             - (LJ[-2] - mp.mpf(3) / 2 * mp.log(n2))) / (n1 - n2)
+    vol_from_slope = 2 * pi * slope
     assertions = [
         {"name": "D_converges", "passed": bool(abs(D[-1] - D[-2]) < mp.mpf(10) ** (-4))},
         {"name": "vol41_slope_anchor", "passed": bool(abs(vol_from_slope / Vol - 1) < mp.mpf("1e-6"))},
