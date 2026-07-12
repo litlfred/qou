@@ -135,9 +135,10 @@ $\alpha\,(\Phi_1 - 2[3]_q\,\Phi_2 + H_A^2\,\Phi_3)$ is the weighted
 sum of the three extremal-block invariants of the atomic braid
 established in Steps 1–3, with the weights of Step 4, added to the
 free constituent masses $Z \cdot m_{\mathfrak{p}} + N \cdot
-m_{\mathfrak{n}} + Z \cdot m_e$. Its numerical agreement with
-measured atomic masses across the nuclide table is certified by the
-computational witness below.
-$\square$
+m_{\mathfrak{n}} + Z \cdot m_e$. $\square$
 
-**Witness**: `atom-mass-complete-wedderburn.witness.json`.
+The numerical agreement of this formula with measured atomic masses
+across the nuclide table is an empirical cross-check, not part of the
+proof; the certifying witness previously cited here
+(`atom-mass-complete-wedderburn.witness.json`) is absent from
+`computations/` and its regeneration is tracked as an open follow-up.
