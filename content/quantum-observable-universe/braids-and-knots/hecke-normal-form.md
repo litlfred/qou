@@ -1,4 +1,4 @@
-The Hecke normal form of an element $h \in H_n(R, q)$ is the unique representative obtained by iterated application of three rewriting rules:
+The **Hecke normal form** of an element $h \in H_n(R, q)$ is the unique representative obtained by iterated application of three rewriting rules:
 1. Hecke relation: $\sigma_i^2 \to (q - q^{-1})\sigma_i + \mathbf{1}$.
 2. Far commutativity: $\sigma_i \sigma_j \to \sigma_j \sigma_i$ for $|i - j| \geq 2$.
 3. Yang--Baxter: $\sigma_i \sigma_{i+1} \sigma_i \to \sigma_{i+1} \sigma_i \sigma_{i+1}$ (in the shortlex-decreasing direction).
