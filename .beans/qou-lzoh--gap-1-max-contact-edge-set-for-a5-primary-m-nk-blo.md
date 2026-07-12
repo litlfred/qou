@@ -1,10 +1,11 @@
 ---
 # qou-lzoh
 title: 'GAP-1: max-contact edge set for A≥5 (primary M_n(K) blocker)'
-status: todo
+status: in-progress
 type: task
+priority: normal
 created_at: 2026-07-11T23:11:26Z
-updated_at: 2026-07-11T23:11:26Z
+updated_at: 2026-07-12T00:28:27Z
 ---
 
 
