@@ -14,8 +14,8 @@ CAL-2 determines $\mathfrak{Q}_\beta = m_n - m_p - m_\mathfrak{e}$ from the neut
 
 The $h^1$ jet order is absent. The bar involution $q \mapsto q^{-1}$ forces all Markov traces of writhe-zero braids to be even functions of $h$. The $h^3$ order enters through the flavor-split $X = (q-1)^2(1-q^{-4})/3 = h^3/6 + \cdots$, which is a skein difference (not a single-braid Markov trace).
 
-## Lean formalization
+## Geometric core of the obstruction
 
-The companion Lean `meson_scale_independence` encodes the geometric core of the obstruction. The Hopf-link complement (meson binding topology) has hyperbolic volume $0$. The Borromean complement (baryon) has positive volume. The volume-scaling map $m_\mathfrak{e}\cdot\mathrm{Vol}(K)\cdot\rho/\hbar_q^2$ sends the meson's geometric scale to $0$ independently of $(m_\mathfrak{e}, q_0)$. The absolute scale therefore enters only through the independent calibration CAL-3 ($\mathfrak{D}_\pi$). The Lean is sorry-free.
+The Hopf-link complement (meson binding topology) has hyperbolic volume $0$. The Borromean complement (baryon) has positive volume. The volume-scaling map $m_\mathfrak{e}\cdot\mathrm{Vol}(K)\cdot\rho/\hbar_q^2$ sends the meson's geometric scale to $0$ independently of $(m_\mathfrak{e}, q_0)$. The absolute scale therefore enters only through the independent calibration CAL-3 ($\mathfrak{D}_\pi$).
 
 **Archimedean specialisation (§7c).** The scale statement is evaluated over $\mathbb{R}$ — hyperbolic volumes, the MeV meson scale, and the CAL-3 numerical calibration. This block sits on the archimedean side of the substrate wall.

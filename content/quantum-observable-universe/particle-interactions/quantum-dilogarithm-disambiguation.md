@@ -18,7 +18,3 @@ $$
 The canonical form of the mass-endomorphism tower uses $-\mathrm{Li}_2^q(-|V|)$, never $\Phi_q(|V|)$, for every per-generator amplitude.
 
 The $\Phi_q$ product form explains the $\sim 10^5 \times$ amplification at $|V| \to 1$ that originally caused the $-737$ MeV pathology. The corrected canonical mass formula abandons it entirely.
-
-## Lean anti-regression class
-
-The Lean stub `QOU.BraidKnot.QuantumDilogarithm` provides formal noncomputable definitions of both functions and proves they are not equal. It defines `towerTerm q V := -li2_q q (-|V|)` as the corrected per-generator tower term. A type-level class `HasCorrectedMassEndomorphismTower` ensures any instance must use `towerTerm`, not `phi_q`. This prevents the $\Phi_q$ pathology from re-entering the mass formula.

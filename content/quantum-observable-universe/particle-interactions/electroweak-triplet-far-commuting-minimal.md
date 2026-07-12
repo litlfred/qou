@@ -3,7 +3,7 @@
 1. *(Minimality.) These generators require at least $6$ strands. With $1 \leq a < b < c$, the pairwise gap $\geq 2$ forces $c \geq 5$, yielding $n \geq c+1 \geq 6$. The bound is attained uniquely by the consecutive odd triple $(a,b,c) = (1,3,5)$ in $B_6$.*
 2. *(Enumeration.) The even-twist $2$-component torus links $T(2,2k)$ (braid $\sigma_1^{2k}$, Seifert genus $g = k-1$) with genus strictly between the trivial Hopf endpoint $g=0$ and the genus-$4$ Bring saturation ($1 \leq g \leq 3$) are exactly those with $k \in \{2,3,4\}$: the triplet $T(2,4), T(2,6), T(2,8)$.*
 
-This forms the mathematical core of the electroweak selection principle C1. Both halves rely on elementary $\mathbb{N}$-arithmetic and are verified sorry-free in Lean.
+This forms the mathematical core of the electroweak selection principle C1. Both halves rely on elementary $\mathbb{N}$-arithmetic.
 
 **Far-commuting minimality.**
 
@@ -11,7 +11,7 @@ Each even-twist carrier $T(2,2k)$ acts on a single strand-pair. Three mutually n
 
 **Enumeration.**
 
-The genus filtration places the trivial Hopf link $T(2,2)$ at $g=0$ and the force-carrier saturation $\{T(2,9), T(3,5)\}$ at $g=4 = g(\Sigma_4)$. The open window $0 < g < 4$ contains exactly the genera $1,2,3$ ($k \in \{2,3,4\}$). This forward inclusion matches the arithmetic proved sorry-free.
+The genus filtration places the trivial Hopf link $T(2,2)$ at $g=0$ and the force-carrier saturation $\{T(2,9), T(3,5)\}$ at $g=4 = g(\Sigma_4)$. The open window $0 < g < 4$ contains exactly the genera $1,2,3$ ($k \in \{2,3,4\}$).
 
 **Scope.**
 

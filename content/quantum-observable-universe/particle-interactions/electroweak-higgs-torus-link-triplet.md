@@ -9,7 +9,7 @@ $$
   H \;\longleftrightarrow\; T(2,8).
 $$
 
-This is the top node of the electroweak conjecture lattice. Its provable base — that these three links exist, have Seifert genera $1, 2, 3$, co-embed in Bring's genus-$4$ fiber alongside the saturating carriers, and fit minimally in $B_6$ at the far-commuting triple $(1,3,5)$ — is verified sorry-free. What remains conjectural is the identification itself. Charge and spin are proved consequences of a single sector postulate.
+This is the top node of the electroweak conjecture lattice. Its provable base — that these three links exist, have Seifert genera $1, 2, 3$, co-embed in Bring's genus-$4$ fiber alongside the saturating carriers, and fit minimally in $B_6$ at the far-commuting triple $(1,3,5)$ — is proved. What remains conjectural is the identification itself. Charge and spin are proved consequences of a single sector postulate.
 
 **The conjecture lattice (narrowed).**
 
@@ -17,10 +17,10 @@ This is the top node of the electroweak conjecture lattice. Its provable base �
 |------|------|----------|---------|
 | **C1** selection | primary | — | EW carriers are the nontrivial, strictly sub-saturating even-twist links ($0 < g < 4$). |
 | **C2** enumeration | dependent (C1) | C1 | These carriers are exactly $\{T(2,4), T(2,6), T(2,8)\}$. |
-| **C$_{	ext{sector}}$** sector assignment | primary | — | Which link sits in the singlet $A_+$ versus doublet $A_-$ of the spin involution. |
-| **C$_{	ext{top}}$** identification | dependent (C1, C$_{	ext{sector}}$) | C1, C$_{	ext{sector}}$ | The full map above. |
+| **C$_{\text{sector}}$** sector assignment | primary | — | Which link sits in the singlet $A_+$ versus doublet $A_-$ of the spin involution. |
+| **C$_{\text{top}}$** identification | dependent (C1, C$_{\text{sector}}$) | C1, C$_{\text{sector}}$ | The full map above. |
 
-The former C3 (charge) and C4 (spin) are proved consequences of C$_{	ext{sector}}$.
+The former C3 (charge) and C4 (spin) are proved consequences of C$_{\text{sector}}$.
 
 **C1 — the selection principle.**
 
@@ -30,7 +30,7 @@ The electroweak carriers are the nontrivial, strictly sub-saturating even-twist 
 
 Given C1, the carrier window $0 < g < 4$ contains exactly the genera $1, 2, 3$ ($k \in \{2, 3, 4\}$): the triplet $T(2,4), T(2,6), T(2,8)$. The forward inclusion is a provable enumeration. The conjectural content of C2 is the reverse inclusion: all three genera are realised as carriers.
 
-**C$_{	ext{sector}}$ — the single sector-assignment postulate.**
+**C$_{\text{sector}}$ — the single sector-assignment postulate.**
 
 Charge and spin are unified by one $\mathbb{Z}/2$ datum: the assignment of each carrier to a sector of the spin involution $\sigma$, $A = A_+ \oplus A_-$. Restricted to the sym/alt Hecke block, $\sigma$ is the swap of the eigenvalues $q^{2k} \leftrightarrow q^{-2k}$. Its projections give a bar-even part in $A_+$ (neutral, retained by the Markov trace) and a bar-odd part in $A_-$ (charged, traceless). The Higgs is the bar-even self-dual carrier.
 
@@ -40,11 +40,11 @@ Given the sector assignment ($H$ singlet, $W^\pm, Z$ doublets), spin and charge 
 
 The Weinberg-angle block reads the Hoefsmit slot $\sigma_5^8$ as the $\mathrm{U}(1)_Y$ hypercharge gauge boson $B$. This block reads $\sigma_5^8$ ($= T(2,8)$, strands $5$–$6$) as the Higgs. There is no conflict: $\sigma_5^8$ carries both, bar-graded by the spin involution. The Higgs boson $H$ is the $A_+$ (bar-even, scalar) part. The hypercharge gauge boson $B$ is the $A_-$ (bar-odd, vector) part.
 
-This bar-grading is derived from the two carriers' spins. The sector$	o$spin map is injective and inverts. Spin determines the sector. The Higgs is a scalar and $B$ a vector as independent physical inputs, so $H \in A_+$ and $B \in A_-$ are forced. The residual postulate is that both $H$ and $B$ inhabit the one $\sigma_5^8$ slot. The self-dual figure-eight $4_1$ is the Higgs mass mechanism, not the $125\,$GeV Higgs boson. The boson is the electroweak-slot link $T(2,8) = A_+$ of $\sigma_5^8$.
+This bar-grading is derived from the two carriers' spins. The sector$\to$spin map is injective and inverts. Spin determines the sector. The Higgs is a scalar and $B$ a vector as independent physical inputs, so $H \in A_+$ and $B \in A_-$ are forced. The residual postulate is that both $H$ and $B$ inhabit the one $\sigma_5^8$ slot. The self-dual figure-eight $4_1$ is the Higgs mass mechanism, not the $125\,$GeV Higgs boson. The boson is the electroweak-slot link $T(2,8) = A_+$ of $\sigma_5^8$.
 
 **The $W$ vs $Z$ slot assignment is a free label.**
 
-Spin fixes each carrier's sector (scalar $H 	o A_+$; vectors $W, Z 	o A_-$). It does not fix which of the two $A_-$ vector slots is the charged $W^\pm$ and which is the neutral $Z$. The corpus map $Q = 	frac12\,\mathrm{writhe}$ on the all-positive braid $\sigma_1^{2k}$ gives $Q(T(2,2k)) = k > 0$ for all three carriers. It cannot single out the neutral slot. The assignment $W = \sigma_1^4$ relies on the mass ordering $4 < 6 < 8$. Both $W = \sigma_1^4$ and the mirror $W = \sigma_3^6$ satisfy every proved constraint.
+Spin fixes each carrier's sector (scalar $H \to A_+$; vectors $W, Z \to A_-$). It does not fix which of the two $A_-$ vector slots is the charged $W^\pm$ and which is the neutral $Z$. The corpus map $Q = \tfrac12\,\mathrm{writhe}$ on the all-positive braid $\sigma_1^{2k}$ gives $Q(T(2,2k)) = k > 0$ for all three carriers. It cannot single out the neutral slot. The assignment $W = \sigma_1^4$ relies on the mass ordering $4 < 6 < 8$. Both $W = \sigma_1^4$ and the mirror $W = \sigma_3^6$ satisfy every proved constraint.
 
 **Supporting evidence.**
 
@@ -55,4 +55,4 @@ PSD-feasibility is necessary but not sufficient. It holds for every even-twist $
 
 **Scope of the closure.**
 
-If true, the identification supplies the categorical structure for the weak-scale crossing count $N_v$ in the Fermi-constant decomposition $G_F = 1/(\sqrt{2}\,v^2)$, $v = N_v\,E_	imes\,\mu_0$. The residual to close is C1 (selection) and C$_{	ext{sector}}$ (sector assignment).
+If true, the identification supplies the categorical structure for the weak-scale crossing count $N_v$ in the Fermi-constant decomposition $G_F = 1/(\sqrt{2}\,v^2)$, $v = N_v\,E_\times\,\mu_0$. The residual to close is C1 (selection) and C$_{\text{sector}}$ (sector assignment).

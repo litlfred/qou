@@ -1,5 +1,3 @@
 Hadrons factorise uniquely into knot constituents under the relation algebra. A single family of fundamental strands—the torus knots $T_{m,n}$—generates every hadron under the Skein-relation moves. The resulting dictionary identifies each torus generator with a physical particle. We read the mass directly from the linking number and constituent volume.
 
 This section builds the constructive hierarchy. We exhibit $T_{m,n}$ as the generating family for the hadron monoid. The mass functional on a Skein resolution splits the mass into a topological linking term and an additive constituent volume. This structure assigns a physical colour-tube reading to the constituents. The $q$-Schur--Weyl functor identifies each generator with a physical particle. The resulting dictionary tabulates the matches: torus knots and Hopf links to fundamental fermions, Borromean composites to baryons. A visual inventory collects the small-crossing knots with their braid words and assignments. We then use this correspondence to lift the dictionary to a bundle of state spaces over the brane manifold.
-
-_(draft.)_
