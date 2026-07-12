@@ -46,6 +46,7 @@ import QOU.Glossary
 import QOU.Knot.CuspShapeBarParity
 import QOU.Knot.FigureEightSelfDuality
 import QOU.Knot.FigureEightVolume
+import QOU.Knot.FigureEightVolumeLiterature
 import QOU.Knot.NeumannZagierParity
 import QOU.Knot.PerNeutronLadder
 import QOU.KnotTheory
