@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-07-12T00:28:27.624382+00:00",
-  "commitSha": "8c827ffdfd7120f994fb32bc9a25aabc6a8f4a88",
+  "computedAt": "2026-07-12T00:31:06.605349+00:00",
+  "commitSha": "643426a0a02326c08764f65b916e26326b678008",
   "assertions": [
     {
       "name": "max_contact_bounded_simplex_overshoots",
@@ -18,7 +18,7 @@
   "computation": "gap1-max-contact-a5plus",
   "scriptFile": "gap1_max_contact_a5plus.py",
   "scriptHash": "465318d208da",
-  "scriptCommitSha": "8c827ffdfd7120f994fb32bc9a25aabc6a8f4a88",
+  "scriptCommitSha": "5c56aff6dc071ab4ca9972409d04545d7b41b43d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
