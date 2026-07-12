@@ -204,6 +204,36 @@ descent-set refinement under insertion), not a larger nullspace search. Follow-u
 promote the identification to a content block (proposition + Lean via a finite `decide`
 verification or the classical proofs) once this PR lands.
 
+## Addendum 4 — follow-up tranche landed (PR #3715): transfer operator, content block, residue library
+
+The three owner-queued follow-ups of Addenda 2–3 are executed on
+`claude/pickup-3708-merge-op41gu` ([PR #3715](https://github.com/litlfred/qou/pull/3715)):
+
+- **W6 — the descent-set transfer operator, built and verified**
+  ([`lever1_descent_transfer_operator.py`](../../computations/lever1_descent_transfer_operator.py), exit 0).
+  The statistic `2·maj + content∘RSK` IS Markovian on the lifted states
+  (λ, marked corner row); the level step factorizes `T_k = A_k + q^{2k}·B_k`
+  (A = non-descent, B = descent, entries `q^content-of-added-cell`; only level
+  dependence = the scalar `q^{2k}` on B). Reproduces the statistic sum exactly —
+  vs direct involution enumeration (n ≤ 9), the Stanley hook side (n ≤ 16), the
+  balanced hook formula (n ≤ 12), telephone numbers at q = 1 (n ≤ 24). Measured:
+  states = Σ_λ #corners (5 763 at n = 24 vs I(24) ≈ 1.7·10¹³ paths) —
+  sub-exponential but **unbounded**, so no fixed-basis depth-d q-difference
+  projection closes; mark-sensitive shape edges > 0 for all n ≥ 4 (the (λ, r)
+  lift is genuinely minimal).
+- **W7 — the identification promoted to a content block**:
+  [`prop:binding-period-involution-statistic`](../../content/quantum-observable-universe/mass-theory/binding-period-involution-statistic.md)
+  (+ proof + interpretive remark `rem:binding-period-statistic-reading`,
+  registered in `mass-theory.ts`). Lean sibling **sorry-free**: computable
+  maj/RSK/content with kernel-`decide`d exponent multisets and the identity
+  proved for n = 3, 4 over a generic field; general n by the cited classical
+  composition (narrative proof), honestly scoped.
+- **W8 — residue-of-exact-form library version**:
+  [`QOU/Common/FormalResidue.lean`](../../content/quantum-observable-universe/lean/QOU/Common/FormalResidue.lean)
+  (sorry-free) — the `prop:sw-classical-jet-exactness` core plus linearity API
+  and the char-0 converse `exists_antideriv_iff_fresidue_eq_zero`: the residue
+  is the *complete* obstruction to exactness in the formal model.
+
 ## Discipline
 
 Formalize-first: the Gevrey sandwich was proved (Lean, sorry-free, lean-direct exit 0)
