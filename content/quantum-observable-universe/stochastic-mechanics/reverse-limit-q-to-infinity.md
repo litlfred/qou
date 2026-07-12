@@ -1,4 +1,4 @@
-**Theorem (D13 reverse-limit closure — algebraic fragment).**
+**Conjecture (D13 reverse-limit closure — algebraic fragment).**
 
 *The Kashiwara crystal limit $q \to 0$ ([`prop:crystal-isospin-degeneracy`](#prop:crystal-isospin-degeneracy), D12) has a structural counterpart at $q \to \infty$, related to the $q \to 0$ limit by the bar involution $q \mapsto q^{-1}$ ([`def:bar-involution`](#def:bar-involution), D1).*
 
