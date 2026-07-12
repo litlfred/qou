@@ -60,6 +60,20 @@ def trivialCrystal : CrystalGraph where
 theorem trivialCrystal_unique_vertex (v : trivialCrystal.V) :
     v = () := rfl
 
+/-! ## The standard `sl₂` crystal `B(Λ₁)`
+
+A genuine (non-trivial) crystal, used below to inhabit
+`StembridgeCrystal` with a real reversible pair of operators. -/
+
+/-- The **standard `sl₂` crystal** `B(Λ₁)`: two vertices — `false` = highest
+weight, `true` = lowest weight — joined by the single `f₀`-arrow
+`false ↦ true` (and its `e₀`-inverse `true ↦ false`). All other operators
+are `none`. -/
+def standardSl2Crystal : CrystalGraph where
+  V := Bool
+  f := fun i v => if i = 0 ∧ v = false then some true else none
+  e := fun i v => if i = 0 ∧ v = true then some false else none
+
 /-! ## Crystal morphisms -/
 
 /-- A **morphism of crystal graphs**: a vertex map `toFun` commuting with
@@ -76,8 +90,10 @@ structure CrystalHom (G G' : CrystalGraph) where
 /-! ## Conditional classes for the Stembridge axioms + type-A specialisation -/
 
 /-- Conditional class carrying the foundational crystal axiom.
-NEAR-MATCH tier; instance not constructed (requires upstream
-Mathlib crystal-graph machinery).
+NEAR-MATCH tier.  The reversibility field is inhabitable by a genuine
+crystal — see the `standardSl2Crystal` instance below; the full
+Stembridge S1–S8 instance still requires upstream Mathlib crystal-graph
+machinery.
 
 The single field encodes the Kashiwara **reversibility** law, *not* the
 full Stembridge S1–S8 (whose additional string-length / interplay
@@ -90,6 +106,19 @@ class StembridgeCrystal (G : CrystalGraph) : Prop where
       `f i v = some w ↔ e i w = some v`.  (No longer `True`.) -/
   reversibility :
     ∀ (i : ℕ) (v w : G.V), G.f i v = some w ↔ G.e i w = some v
+
+/-- **`B(Λ₁)` is a genuine `StembridgeCrystal`** — a concrete,
+non-trivial inhabitant of the reversibility axiom (unlike
+`trivialCrystal`, whose operators are all `none`).  The `f₀ : false ↦ true`
+arrow and its `e₀`-inverse are mutually reversible; every other operator
+is `none` on both sides. -/
+instance : StembridgeCrystal standardSl2Crystal where
+  reversibility := by
+    intro i v w
+    by_cases hi : i = 0
+    · subst hi
+      cases v <;> cases w <;> simp [standardSl2Crystal]
+    · simp [standardSl2Crystal, hi]
 
 /-- Conditional class for type-A specialisation: the crystal `G` embeds
 into a tensor-power crystal of the standard `sl_n` representation.  The
