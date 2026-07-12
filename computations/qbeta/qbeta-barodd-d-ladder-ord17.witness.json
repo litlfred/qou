@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-07-12T20:52:48.858557+00:00",
-  "commitSha": "64bb82cc14d0f82ce5123a78c3d23e68955a71e7",
+  "computedAt": "2026-07-12T22:42:14.920487+00:00",
+  "commitSha": "544ef706b8f0983009862b4390b4bf56723b7e47",
   "assertions": [
     {
       "name": "two_variable_form_holds_all_valid_orders",
@@ -27,8 +27,8 @@
   "durationMs": 16,
   "computation": "qbeta-barodd-d-ladder-ord17",
   "scriptFile": "qbeta_barodd_d_ladder_ord17_probe.py",
-  "scriptHash": "5d9dd4d60d28",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "165c7f494bea",
+  "scriptCommitSha": "90d2d398e3e8c52062f9189d6054702917cc7926",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -94,7 +94,7 @@
     },
     "valid_residuals_all_zero": true,
     "overdetermining_checks": 9,
-    "invalid_top_row_value_for_record": "-57250305.5169903",
+    "invalid_top_row_value_for_record": "-45248627.8518815",
     "corrections": {
       "ai81": "verdict 'FAILS at order 11' re-scoped: artifact row; form holds",
       "08ds_B": "margin-1 h3-refutation used the invalid row; question moot (no residual)",

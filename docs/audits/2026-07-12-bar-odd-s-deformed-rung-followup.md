@@ -30,7 +30,38 @@ Three follow-up items off the merged three-routes PR:
 
 ## Route 3 (foundational) — the O/h shift-padding fix
 
-_(pending)_
+**The bug.** Dividing a series `a` by a series `b` when both have s-valuation
+≥ 1 was done inline as `ser_mul(a[1:]+[0], ser_inv(b[1:]+[0]))`. Shifting
+`a` and `b` down by one and padding a `0` at the top means the top coefficient
+of the quotient is computed from a fabricated `a[ORD+1] = 0` — it is garbage
+by construction. A genuine power-series quotient `a/b` with `b` of valuation
+`vb` is determined only through order `ORD − vb`; the rows above need the
+`vb` coefficients the truncation threw away.
+
+**The fix.** Added a valuation-aware `ser_div(a, b) → (quo, valid_top)` to the
+shared helper
+[`qbeta_ck_sseries_exact_rational.py`](../../computations/qbeta/qbeta_ck_sseries_exact_rational.py):
+it computes the valuation `vb` of `b`, checks `a`'s valuation is `≥ vb`,
+strips the common `s^vb`, divides, then **zeroes and reports** the `vb`
+invalid top rows so a caller cannot read past `valid_top`. Also added
+`ser_valuation`.
+
+**Re-audit — three sibling probes read the artifact top row.** Each ran the
+same object as different truncations, and each drew a conclusion off the
+padded top:
+
+| Probe (bean) | Old artifact reading | Corrected |
+|---|---|---|
+| [`qbeta_barodd_d_ladder_ord17_probe.py`](../../computations/qbeta/qbeta_barodd_d_ladder_ord17_probe.py) | (already the correcting probe; now routes O/h through `ser_div`) | d₁…d₉, 9 over-determining orders zero — unchanged |
+| [`qbeta_even_channel_bar_split_probe.py`](../../computations/qbeta/qbeta_even_channel_bar_split_probe.py) (ai81) | "TWO-VARIABLE FORM **FAILS** at order 11" (`firstG` scanned `G[11]`) | **HOLDS** through s^10; `two_variable_form_holds_to_ORD: true` |
+| [`qbeta_bar_split_ord17_probe.py`](../../computations/qbeta/qbeta_bar_split_ord17_probe.py) (08ds) | "margin-1" `h³F` discriminant (the one over-determining row was `G[17]`) | margin-0 after dropping the artifact row → **no discriminating power at ORD 17**; the refutation is moot, not a refutation |
+
+The fourth toucher,
+[`qbeta_zeta4_faithful_odd_probe.py`](../../computations/qbeta/qbeta_zeta4_faithful_odd_probe.py),
+already sidesteps the bug (it solves the single tower directly on `O`, no
+division) and documents it in its docstring — no change needed. This
+re-scoping is all scope-(a): the numerical coefficients were always correct;
+only the top-row *readings* were invalid.
 
 ## Route 2 — the exact D-ladder generating function
 

@@ -20,6 +20,21 @@ only at s^11.  Two questions this probe answers at ORD = 17:
       is not the question; the constrained one-variable-F form is.)
 
 All exact (Q(sqrt3) scalars); scope (a); audit-only; no wiring.
+
+CORRECTION (2026-07-12, follow-up to the merged three-routes PR #3691).
+Test (B)'s "margin-1" discriminant was built on the O/h top-order
+shift-padding ARTIFACT: G[ORD] (from the old ser_mul(O[1:]+[0],
+ser_inv(h[1:]+[0])) idiom) depends on the unknown O[ORD+1] and is garbage
+by construction, yet the joint solve used it as one of its ORD constraints
+— and it was precisely the single over-determining row (margin = ORD -
+unknowns = 1).  This probe now divides through the valuation-aware
+core.ser_div (which zeroes + reports the invalid top row) and solves over
+the valid range s^1..s^(ORD-1) only.  With the artifact row removed the
+(B) system is exactly determined (margin 0) — so ORD 17 has NO
+discriminating power for the h^3*F form; the "margin-1 refutation" is moot,
+not a refutation.  (A) — E(u~) persistence — is unaffected: E carries no
+division, so E[ORD] is a genuine coefficient.  See
+qbeta_barodd_d_ladder_ord17_probe.py for the ORD-19 confirmation.
 """
 from __future__ import annotations
 
@@ -115,11 +130,13 @@ def main() -> int:
           f"(over-determination margin {marginE})"
           + ("" if firstE else "  — E IS a u~-series through s^17 ✓"))
 
-    # (B) O/h = D(u~) + h^2*F(u~) — joint exact solve + DOF accounting
-    h_shift = h_ser[1:] + [sp.Integer(0)]
-    O_shift = O[1:] + [sp.Integer(0)]
+    # (B) O/h = D(u~) + h^2*F(u~) — joint exact solve + DOF accounting.
+    # Valuation-aware division zeroes + reports the invalid top row; the joint
+    # solve below is restricted to the valid orders s^1..s^g_valid_top so it no
+    # longer consumes the shift-padding artifact (which was the sole
+    # over-determining constraint — see the header correction).
     assert sp.simplify(O[0]) == 0
-    G = ser_mul(O_shift, ser_inv(h_shift))     # O/h (bar-even)
+    G, g_valid_top = core.ser_div(O, h_ser)    # O/h (bar-even)
     h2 = ser_mul(h_ser, h_ser)
     # basis: u~^k (k=1..KD) and h^2*u~^k (k=0..KF)
     KD = (ORD - 1) // 2
@@ -135,10 +152,10 @@ def main() -> int:
         basis.append(ser_mul(h2, upow[k])); labels.append(f"f{k}")
     syms = sp.symbols(f"c0:{len(basis)}")
     eqs = []
-    for n in range(1, ORD + 1):
+    for n in range(1, g_valid_top + 1):        # valid orders only (drop artifact top)
         eqs.append(sum(syms[i] * basis[i][n] for i in range(len(basis))) - G[n])
     sol = sp.linsolve(eqs, list(syms))
-    n_constraints = ORD          # orders 1..ORD
+    n_constraints = g_valid_top  # orders 1..g_valid_top (artifact top row excluded)
     n_unknowns = len(basis)
     margin = n_constraints - n_unknowns
     solvable = bool(sol) and len(list(sol)) > 0
@@ -162,14 +179,21 @@ def main() -> int:
         if firstE is None else
         f"E(u~) FAILS first at s^{firstE}"
     )
+    eff_margin = margin - free_params
     b_verdict = (
-        (f"h*D(u~) + h^3*F(u~) CONSISTENT at margin {margin - free_params} "
-         "(honest tier: consistency-at-margin, NOT a derivation — the "
-         "(u~,h^2)-family adds ~2 unknowns per 2 orders, so this margin "
-         "does not grow with ORD)")
+        (f"h*D(u~) + h^3*F(u~): after removing the O/h shift-padding artifact "
+         f"top row the joint solve is under-determined at ORD {ORD} "
+         f"({free_params} free parameters, effective margin {eff_margin}) — so "
+         "this order has NO discriminating power for the h^3*F form; the earlier "
+         "'margin-1 refutation' rested entirely on the artifact row and is moot, "
+         "not a refutation. A genuine (B) test needs ORD high enough that the "
+         "valid orders over-determine (u~,h^2).")
+        if solvable and eff_margin <= 0 else
+        (f"h*D(u~) + h^3*F(u~) CONSISTENT at effective margin {eff_margin} "
+         "(honest tier: consistency-at-margin, NOT a derivation)")
         if solvable else
-        "h*D(u~) + h^3*F(u~) INCONSISTENT — exact refutation of the "
-        "one-variable-F form at this order (scope (a))"
+        "h*D(u~) + h^3*F(u~) INCONSISTENT over the valid orders — exact "
+        "refutation of the one-variable-F form at this order (scope (a))"
     )
     print(f"\n  VERDICT (A): {two_form_verdict}")
     print(f"  VERDICT (B): {b_verdict}")
@@ -186,6 +210,7 @@ def main() -> int:
     wb.add_data("E_rungs_exact", {str(k): str(x) for k, x in eE.items()})
     wb.add_data("E_first_nonzero_residual", firstE)
     wb.add_data("E_margin", marginE)
+    wb.add_data("B_valid_top_order", g_valid_top)
     wb.add_data("B_constraints", n_constraints)
     wb.add_data("B_unknowns", n_unknowns)
     wb.add_data("B_margin", margin)

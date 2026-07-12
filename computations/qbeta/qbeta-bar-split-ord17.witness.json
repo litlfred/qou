@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-07-03T14:09:41.643638+00:00",
-  "commitSha": "46c886077e9d67295e0580709f64fd9046a16e9b",
+  "computedAt": "2026-07-12T22:48:04.961689+00:00",
+  "commitSha": "544ef706b8f0983009862b4390b4bf56723b7e47",
   "assertions": [
     {
       "name": "E_u_series_through_ORD",
@@ -12,11 +12,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 20,
+  "durationMs": 19,
   "computation": "qbeta-bar-split-ord17",
   "scriptFile": "qbeta_bar_split_ord17_probe.py",
-  "scriptHash": "d41eb7334d46",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "8169595464f8",
+  "scriptCommitSha": "be74ea07abc0b4dd3ef9eca855e24f767d5f373f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -43,14 +43,32 @@
     },
     "E_first_nonzero_residual": null,
     "E_margin": 9,
-    "B_constraints": 17,
+    "B_valid_top_order": 16,
+    "B_constraints": 16,
     "B_unknowns": 16,
-    "B_margin": 1,
-    "B_solvable": false,
-    "B_free_params": 0,
-    "B_coefficients": {},
+    "B_margin": 0,
+    "B_solvable": true,
+    "B_free_params": 8,
+    "B_coefficients": {
+      "d1": "1/8 - sqrt(3)",
+      "d2": "-97/6 + 5*sqrt(3)/288",
+      "d3": "373/34560 - 676*sqrt(3)/27",
+      "d4": "-59195/162 + 15055*sqrt(3)/1741824",
+      "d5": "-252241*sqrt(3)/243 - 836891/139345920",
+      "d6": "-48305749/4374 + 9142316411*sqrt(3)/827714764800",
+      "d7": "-1287465032*sqrt(3)/32805 - 1350254778511/51649401323520",
+      "d8": "-40374973312/98415 + 93501718487449*sqrt(3)/3286780084224000",
+      "f0": "0",
+      "f1": "0",
+      "f2": "0",
+      "f3": "0",
+      "f4": "0",
+      "f5": "0",
+      "f6": "0",
+      "f7": "0"
+    },
     "verdict_A": "E(u~) holds through s^17 with margin 9",
-    "verdict_B": "h*D(u~) + h^3*F(u~) INCONSISTENT — exact refutation of the one-variable-F form at this order (scope (a))",
+    "verdict_B": "h*D(u~) + h^3*F(u~): after removing the O/h shift-padding artifact top row the joint solve is under-determined at ORD 17 (8 free parameters, effective margin -8) — so this order has NO discriminating power for the h^3*F form; the earlier 'margin-1 refutation' rested entirely on the artifact row and is moot, not a refutation. A genuine (B) test needs ORD high enough that the valid orders over-determine (u~,h^2).",
     "scope": "(a); consistency-at-margin tier for (B); no wiring"
   }
 }
