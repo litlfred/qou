@@ -13,6 +13,7 @@ export default remark({
     "obstruction",
   ],
   interprets: "def:quantum-observable-universe",
+  uses: ["def:ecalle-borel-resummation"],
   cites: [
     "alling1987",
     "conway1976",

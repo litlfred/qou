@@ -46,7 +46,9 @@ $$ \text{Vol}(4_1) \approx 2.02988\dots $$
 
 ## Resolution of the Asymptotic Bound
 
-The full non-perturbative Kashaev invariant (calculated via rigorous high-precision Borel-Padé extrapolation across $N \in [1000, 2050]$) completely pins the topological action:
+The full non-perturbative Kashaev invariant (calculated via rigorous high-precision
+[Borel–Padé extrapolation](#def:ecalle-borel-resummation)
+across $N \in [1000, 2050]$) completely pins the topological action:
 $$ A = \frac{\text{Vol}(4_1)}{\pi} \approx 0.6461318 $$
 
 The non-compact NA-Stokes integral bridges the initial $c_3$ mass gap to this exact geometric envelope. The true analytical evaluation of $c_3$ in the infinite-order continuum limit is therefore exactly:
