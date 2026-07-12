@@ -30,8 +30,11 @@ namespace QOU.QBeta
   $q \leftrightarrow \tilde{q}$ on the Teichmüller space representation of the Markov trace.
 -/
 class FMapFaddeevModular : Prop where
-  /-- The f-map arises from the modular dual transformation. -/
-  is_modular_dual : True -- Placeholder for the explicit $\Phi_q$ operator functor
+  /-- `@marker` — opaque tag for Pathway 1 (the explicit `Φ_q` operator
+      functor / modular-dual transformation `q ↔ q̃`). Genuinely-open: the
+      construction is not yet in place, so this is a tracked opaque
+      placeholder, not a fabricated content-bearing claim. -/
+  is_modular_dual : True
 
 /-- 
   **Pathway 2: Hexagon Character Extraction** (Option B)
@@ -41,8 +44,11 @@ class FMapFaddeevModular : Prop where
   functorially project the eigenphase expansion onto the precision ladder.
 -/
 class FMapHexagonCharacter : Prop where
-  /-- The f-map is a direct consequence of the Hexagon braiding eigenvalues on $V_{(2,1)}$. -/
-  is_hexagon_derived : True -- Placeholder for Hexagon eigenvalue projection
+  /-- `@marker` — opaque tag for Pathway 2 (the Hexagon-eigenvalue
+      projection extracting `c_k` from the `V_{(2,1)}` braiding eigenvalues).
+      Genuinely-open: the projection is not yet constructed, so this is a
+      tracked opaque placeholder, not a fabricated content-bearing claim. -/
+  is_hexagon_derived : True
 
 /-- 
   **Pathway 3: Direct Cyclotomic Reconstruction** (Option C)
@@ -52,7 +58,10 @@ class FMapHexagonCharacter : Prop where
   $(1+c_k u^k)$ ladder expansion.
 -/
 class FMapCyclotomicDirect : Prop where
-  /-- The f-map is an explicit algebraic reconstruction from $a_m \to c_k$. -/
-  is_cyclotomic_reconstruction : True -- Placeholder for polynomial matching algorithm
+  /-- `@marker` — opaque tag for Pathway 3 (the direct cyclotomic
+      reconstruction / polynomial-matching algorithm `a_m → c_k`).
+      Genuinely-open: the algorithm is not yet constructed, so this is a
+      tracked opaque placeholder, not a fabricated content-bearing claim. -/
+  is_cyclotomic_reconstruction : True
 
 end QOU.QBeta
