@@ -149,10 +149,12 @@ def main() -> int:
     O = [simp((x - y) / 2) for x, y in zip(logR, logR_bar)]
     assert sp.simplify(O[0]) == 0
 
-    # O/h — valid ONLY through s^(ORD-1) (top row padded, see header)
-    h_shift = h_ser[1:] + [sp.Integer(0)]
-    O_shift = O[1:] + [sp.Integer(0)]
-    G = ser_mul(O_shift, ser_inv(h_shift))
+    # O/h via the valuation-aware helper: it strips the common s^1, does the
+    # division, and zeroes + reports the rows it cannot determine (the top row,
+    # which the old ser_mul(O[1:]+[0], ser_inv(h[1:]+[0])) shift-padding left as
+    # garbage depending on the unknown O[ORD+1] — the artifact this probe fixed).
+    G, g_valid_top = core.ser_div(O, h_ser)
+    assert g_valid_top == VALID_TOP, (g_valid_top, VALID_TOP)
 
     # (1)+(2) the D-ladder with valid-order residuals
     KMAX = (ORD - 1) // 2          # = 9
