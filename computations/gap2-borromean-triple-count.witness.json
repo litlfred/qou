@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-07-12T00:44:51.564624+00:00",
-  "commitSha": "86b0f236225fa372df62c0f7f1e572794753f050",
+  "computedAt": "2026-07-12T00:52:50.139440+00:00",
+  "commitSha": "818cc3f7e6866eb33d4226e1136fb7aa44e54235",
   "assertions": [
     {
       "name": "three_clique_overshoots_irreducible_needed",
@@ -18,7 +18,7 @@
   "computation": "gap2-borromean-triple-count",
   "scriptFile": "gap2_borromean_triple_count.py",
   "scriptHash": "ca1a3be0cd8c",
-  "scriptCommitSha": "86b0f236225fa372df62c0f7f1e572794753f050",
+  "scriptCommitSha": "aa9945f95a0b4bd27ce7a099381f28819fbd2d31",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
