@@ -1,0 +1,240 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-12T15:31:53.355680+00:00",
+  "commitSha": "490567d6fadba8da4744b290da7fda7a48587a14",
+  "assertions": [
+    {
+      "name": "mckay_marks_sum_to_coxeter_number_h_E8",
+      "computed": 30,
+      "expected": 30,
+      "passed": true,
+      "tolerance": 0,
+      "source": "The 2I irrep dims {1,2,3,4,5,6,4,2,3} are the affine E8-hat Coxeter marks; their sum is the Coxeter number h(E8)=30=P=2*3*5. Structural anchor of the McKay dictionary."
+    },
+    {
+      "name": "q1_value_anchor_dim_eq_mckay_mark",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "For each of the 4 bwS0 conjugation classes, dim(lambda) at q=1 equals the McKay mark of the corresponding A5-factoring node (1,4,5,6); the electron (3,1,1) dim 6 = A5 3+3' split. DERIVES the colour->lambda value at q=1 with no fit (McKay + A5 subset S5 branching, parameter-free)."
+    },
+    {
+      "name": "value_map_eq_qint_mark_exact_unsplit_nodes",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "EXACT at generic q (machine-zero to 60 dps, both q0 and q=1.37): for the 3 unsplit A5-McKay nodes the Hecke q-dimension d_q(lambda) = [mark]_q exactly -- d_q((5))=[1]_q, d_q((4,1))=[4]_q (standard rep, #3640), d_q((3,2))=[5]_q (new). So the colour->lambda VALUE map is [mark]_q (the McKay Coxeter mark's q-integer), resolving the refuted [exponent]_q as an exponent-vs-mark mis-indexing. The split electron node (3,1,1) is d_q=[5]_q+1=d_q((3,2))+1 (the A5 3+3' split signature), not [6]_q. No fit."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 10,
+  "computation": "keystone-mckay-e8-valuemap",
+  "scriptFile": "keystone_mckay_e8_valuemap.py",
+  "scriptHash": "15ccf1efcb87",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Geometric W_lambda derivation: the colour->partition-lambda value-map DICTIONARY via the McKay correspondence 2I<->affine E8-hat (irrep dims = Coxeter marks; sum marks=30=h(E8)=P, sum dim^2=120=|2I|) composed with A5 subset S5 branching. The 4 bwS0 conjugation classes {lambda,lambda'} map explicitly to the 4 A5-factoring McKay nodes (marks 1,4,5,6), the electron block (3,1,1) being the A5 3+3'=6 SPLIT node and the muon block (3,2) the mark-5 node. q=1 value anchor DERIVED: dim(lambda)=McKay mark. Diagnoses the prior [e]_q refutation (keystone_colored_sigma235_wrt) as exponent-vs-mark mis-indexing. No fit; single global normalizer D. The colored Lawrence-Rozansky amplitude and the archimedean q0-continuation residual are deferred/open.",
+  "data": {
+    "q0": 1.1099785955541805,
+    "mckay_dims": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      4,
+      2,
+      3
+    ],
+    "E8_exponents": [
+      1,
+      7,
+      11,
+      13,
+      17,
+      19,
+      23,
+      29
+    ],
+    "a5_factoring_marks": [
+      1,
+      3,
+      3,
+      4,
+      5
+    ],
+    "faithful_marks": [
+      2,
+      2,
+      4,
+      6
+    ],
+    "dim_eq_mark": [
+      {
+        "class": [
+          [
+            5
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        "a5_mark": 1,
+        "dim_q1": 1,
+        "match": true,
+        "note": "trivial pair"
+      },
+      {
+        "class": [
+          [
+            4,
+            1
+          ],
+          [
+            2,
+            1,
+            1,
+            1
+          ]
+        ],
+        "a5_mark": 4,
+        "dim_q1": 4,
+        "match": true,
+        "note": "standard+sign"
+      },
+      {
+        "class": [
+          [
+            3,
+            2
+          ],
+          [
+            2,
+            2,
+            1
+          ]
+        ],
+        "a5_mark": 5,
+        "dim_q1": 5,
+        "match": true,
+        "note": "muon block (3,2)"
+      },
+      {
+        "class": [
+          [
+            3,
+            1,
+            1
+          ]
+        ],
+        "a5_mark": 6,
+        "dim_q1": 6,
+        "match": true,
+        "note": "electron block, A5 3+3'=6 split"
+      }
+    ],
+    "valuemap": [
+      {
+        "class": [
+          [
+            5
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        "a5_mark": 1,
+        "split": false,
+        "d_q": 1.0,
+        "bwS0": 0.08805229723474409,
+        "qint_mark": 1.0,
+        "d_q_minus_qint_mark": 5.345529420184391e-51,
+        "d_q_eq_qint_mark_exact": true
+      },
+      {
+        "class": [
+          [
+            4,
+            1
+          ],
+          [
+            2,
+            1,
+            1,
+            1
+          ]
+        ],
+        "a5_mark": 4,
+        "split": false,
+        "d_q": 4.109682435637709,
+        "bwS0": 0.3618669793631786,
+        "qint_mark": 4.109682435637709,
+        "d_q_minus_qint_mark": 1.0691058840368783e-50,
+        "d_q_eq_qint_mark_exact": true
+      },
+      {
+        "class": [
+          [
+            3,
+            2
+          ],
+          [
+            2,
+            2,
+            1
+          ]
+        ],
+        "a5_mark": 5,
+        "split": false,
+        "d_q": 5.220441324664574,
+        "bwS0": 0.45967185121590615,
+        "qint_mark": 5.220441324664574,
+        "d_q_minus_qint_mark": 1.0691058840368783e-50,
+        "d_q_eq_qint_mark_exact": true
+      },
+      {
+        "class": [
+          [
+            3,
+            1,
+            1
+          ]
+        ],
+        "a5_mark": 6,
+        "split": true,
+        "d_q": 6.220441324664574,
+        "bwS0": 0.5477241484506502,
+        "qint_mark": 6.388086679547021,
+        "d_q_minus_qint_mark": -0.1676453548824471,
+        "d_q_eq_qint_mark_exact": false
+      }
+    ],
+    "D2": 128.97888496570414,
+    "unsplit_dq_eq_qint_mark_exact": true,
+    "electron_dq_eq_qint5_plus_one_exact": true
+  }
+}

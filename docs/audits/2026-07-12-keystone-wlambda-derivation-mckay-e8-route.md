@@ -69,6 +69,41 @@ and the A₅⊂S₅ branching is fixed. Either the composed value map reproduces
 geometric derivation of the measure) or it does not (a sharp, quantified negative that supersedes the
 refuted `[e]_q` map) — both outcomes are honest and advance the frontier.
 
+## Result — the value map is `[mark]_q`, EXACT (no fit)
+
+[`keystone_mckay_e8_valuemap.py`](../../computations/probes/keystone_mckay_e8_valuemap.py) /
+[witness](../../computations/keystone-mckay-e8-valuemap.witness.json). Structural checks pass
+(Σ marks = 30 = h(E₈) = P; Σ dim² = 120 = |2I|; A₅-factoring marks {1,3,3′,4,5}, Σdim² = 60 = |A₅|).
+The explicit dictionary (McKay node ∘ A₅⊂S₅):
+
+| bwS0 class `{λ,λ′}` | A₅/McKay mark | node | value `d_q(λ)` |
+|---|--:|---|---|
+| `{(5),(1⁵)}` | 1 | trivial | `[1]_q = 1` |
+| `{(4,1),(2,1,1,1)}` | 4 | A₅ standard | `[4]_q` (= standard-rep thm #3640) |
+| `{(3,2),(2,2,1)}` | 5 | A₅ 5-dim | **`[5]_q`** (new exact identity) |
+| `{(3,1,1)}` self-conj | 6 (= 3+3′) | A₅ **split** | **`[5]_q + 1 = [3]_q[4]_q/[2]_q`** (not `[6]_q`) |
+
+**The value map is `d_q(λ) = [mark]_q`, EXACT at generic `q`** (machine-zero to 60 dps at both `q₀`
+and a second generic `q = 1.37` ⇒ a polynomial identity in `q`, not a `q₀` accident) for the **three
+unsplit** A₅-McKay nodes. The **single deviation** is at the self-conjugate **electron** block
+`(3,1,1)` — the A₅ `3⊕3′` split node — where `d_q = [5]_q + 1 = d_q((3,2)) + 1` exactly (the `+1` is
+the split signature), **not** `[6]_q`.
+
+**This resolves the refuted `[e]_q` map** (`keystone_colored_sigma235_wrt`): its error was indexing by
+the wrong E₈ datum. The false-theta support is E₈-**exponent** indexed `{1,7,11,13,…}`; the **value**
+lives on the E₈ **mark** (Coxeter label of the McKay node) `{1,3,4,5,…}`. Exponents ≠ marks. With the
+correct index, `bwS0(λ) = [mark]_q / D` — a single global normalizer `D = √Σd_q²`, no per-block
+tuning, no fit.
+
+The generic-`q` identities `d_q((3,2)) = [5]_q` and `d_q((3,1,1)) = [5]_q + 1` are hook-formula
+consequences (`[5]_q!/([4]_q[3]_q[2]_q[1]_q[1]_q) = [5]_q`; `[5]_q!/([5]_q[2]_q[2]_q[1]_q[1]_q) =
+[3]_q[4]_q/[2]_q`) and are formalize-first Lean targets alongside the proved standard-rep identity.
+
+**Still open** (not touched by this result): the colored Lawrence–Rozansky amplitude itself (deferred —
+formula not rigorously pinned this pass) and the archimedean `q₀`-continuation of the whole vacuum row
+(the #3681 Habiro/Stokes carriers). The value map derived here is at the categorical/`q`-algebraic
+level; the `q₀`-observable passage is the orthogonal residual.
+
 ## Scope (STRICT — anti-laundering)
 
 This branch **explores** the value-map derivation; it does **not** close the gate and wires **no**
