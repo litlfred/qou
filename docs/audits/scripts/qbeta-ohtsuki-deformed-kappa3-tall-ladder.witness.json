@@ -1,0 +1,84 @@
+{
+  "computation": "qbeta-ohtsuki-deformed-kappa3-tall-ladder",
+  "description": "\u03ba\u0303\u2083(u) at the substrate meridian via a tall deformed Habiro ladder (extends #3691's 9-point run; rung resolution is ladder-height-limited). Feeds the odd finite-b series t\u00b7\u03ba\u0303\u2081 \u2212 t\u00b3\u00b7\u03ba\u0303\u2083 + \u2026 for the bar-odd S.",
+  "audit_only": true,
+  "tier": "numerical (deformed higher-rung extraction)",
+  "computedAt": "2026-07-12T17:09:56.560115+00:00",
+  "commitSha": "64bb82cc14d0f82ce5123a78c3d23e68955a71e7",
+  "engine": "mpmath",
+  "engineVersion": "1.3.0",
+  "scriptFile": "qbeta_ohtsuki_deformed_kappa3_tall_ladder.py",
+  "scriptHash": "1234b8cb76a1",
+  "assertions": [
+    {
+      "name": "kappa1_consistent_with_3691_ladder",
+      "passed": true
+    },
+    {
+      "name": "kappa3_resolved_4_digits",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "result": {
+    "u_substrate": "0.2086814406390390246318126",
+    "Ns_kept": [
+      512,
+      1024,
+      2048,
+      4096,
+      8192,
+      16384,
+      32768,
+      65536,
+      131072,
+      262144
+    ],
+    "max_loss_digits": 472.19156363022694,
+    "rungs": {
+      "1": {
+        "re": "0.5873433873112124288453212",
+        "re_conf_digits": 19,
+        "re_coarse2": "0.5873433873112122885169755",
+        "im": "-0.01950724962287247803798849",
+        "im_conf_digits": 16
+      },
+      "2": {
+        "re": "0.9121367216059822317546163",
+        "re_conf_digits": 14,
+        "re_coarse2": "0.9121367216085675182686517",
+        "im": "-0.06065592370250920414904227",
+        "im_conf_digits": 12
+      },
+      "3": {
+        "re": "3.956290802132388210604952",
+        "re_conf_digits": 10,
+        "re_coarse2": "3.956290780269363092506506",
+        "im": "-0.3953604960998154720054959",
+        "im_conf_digits": 8
+      },
+      "4": {
+        "re": "24.78023253548118643220271",
+        "re_conf_digits": 6,
+        "re_coarse2": "24.78031901791071262034063",
+        "im": "-3.310345961593749285782858",
+        "im_conf_digits": 4
+      }
+    },
+    "kappa1_prior_3691": "0.587343387311212",
+    "kappa3_u0_exact": "(1081/21870)*sqrt(3)*pi^3",
+    "finite_b_odd_series": {
+      "t_kappa1": "0.0612838321069584",
+      "minus_t3_kappa3": "-0.0044941720871639",
+      "partial_sum_n_le_3": "0.0567896600197945"
+    },
+    "verdict": "Tall ladder (N\u2264262144, dps 980, 10 pts) at the proton substrate meridian: \u03ba\u0303\u2083(u_sub) = 3.956290802132388210604952 [10d] + i\u00b7-0.3953604960998154720054959 [8d] vs \u03ba\u2083(0) = (1081/21870)\u221a3\u03c0\u00b3 = 2.65452705695. \u03ba\u0303\u2081 reproduces the #3691 value (True). Finite-b bar-odd partial sum t\u00b7\u03ba\u0303\u2081 \u2212 t\u00b3\u00b7\u03ba\u0303\u2083 = 0.05678966002. 4\u2081 facts; no c_k wired; no fit; no tier change."
+  },
+  "context": {
+    "axis": "bar-odd S route 2: odd deformed rungs at the substrate meridian",
+    "builds_on": [
+      "#3691 \u03ba\u0303\u2081(u) 9-pt ladder",
+      "#3628 \u03ba\u2083(0) exact"
+    ]
+  }
+}

@@ -1013,3 +1013,26 @@ needs ~4900×. Route 1 queued (bean qou-gmm6): D₁..D₅ exact in ℚ(√3), ũ
 hypothesis fails exactly at ord 11 — extension deferred for reviewability.
 Audit: `2026-07-12-bar-odd-s-three-routes.md`. No fit; no c_k wired; no tier
 change.
+
+
+**2026-07-12 (#3691, update 2) — route-1 CORRECTION: the "order-11 failure" of
+the two-variable form was an O/h TOP-ORDER ARTIFACT; log R = E(ũ) + h·D(ũ)
+HOLDS exactly (margin 9). Also: κ̃₃(u_sub) landed; π·u meridian term Lean.**
+The route-1 probe (`qbeta_barodd_d_ladder_ord17_probe.py`) found the failing
+order tracks the truncation top exactly (ORD 11→s^11, 17→s^17, 19→s^19);
+series-diff localized the drift to G = O/h's top row, which the shift-padding
+makes depend on the unknown O[ORD+1] — garbage by construction. Scope-(a)
+re-scopes: ai81's FAILS-at-11 verdict corrected (form holds through s^18, 9
+over-determining checks all zero); 08ds's margin-1 h³-refutation moot (its
+distinguishing row was the invalid one; no residual exists to repair); the
+ζ₄-route "failing-residual constraint set" is void (KC18–KC20 untouched);
+the capstone's S = h·D(ũ) STRENGTHENED — D exact ℚ(√3) ladder now d₁..d₉
+(d₅ reproduces ai81; heights →10²⁰). Diagnostic h·D(ũ(q₀)) = −0.003486 is
+anchor-blind (swing stays in the 1/u³ inversion). Route 2 additions:
+**κ̃₃(u_sub) = 3.956290802 − 0.395360496·i** [10d/8d] (tall ladder N≤262144,
+dps 980, 445d cancellation handled) vs κ₃(0)=2.6545; odd finite-b partial sum
+t·κ̃₁ − t³·κ̃₃ = 0.056790. Lean `MeridianLinearBarOdd.lean` (sorry-free,
+lean-direct exit 0): the Im S ⊃ π·u response model 2π²u/(u²+4π²) — bar-odd,
+= u/2 − u³/(2(u²+4π²)), |deviation| ≤ |u|³/(8π²). Heads-up posted on #3692
+(κ-tower resummation sibling): their Borel–Padé can now rerun on DEFORMED
+rungs (κ̃₁, κ̃₃ available). No fit; no c_k wired; no tier change.
