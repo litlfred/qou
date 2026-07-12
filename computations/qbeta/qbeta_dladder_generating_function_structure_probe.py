@@ -6,7 +6,7 @@ D-ladder generating function D(ũ) = Σ_k d_k ũ^k. With the O/h top-order
 artifact removed (route 3), the d_k ∈ ℚ(√3) are exact at every valid order, so
 this looks for exact structure rather than PSLQ-ing floats.
 
-The ladder is rebuilt here (ORD configurable via argv[1], default 31 → d₁…d₁₅;
+The ladder is rebuilt here (ORD configurable via argv[1], default 43 → d₁…d₂₁;
 the merged d-ladder probe runs ORD 19 → d₁…d₉) and the O/h division goes through
 the valuation-aware core.ser_div (route 3). All coefficients are exact.
 
@@ -17,19 +17,25 @@ FINDINGS (scope-(a); no c_k wired; no fit; no tier change):
      has the small denominator and the rational part a_k a large one; for EVEN
      k it is reversed. Holds exactly at every tested k.
 
-  2. **Ohtsuki/Habiro-type smooth denominators.** The simple-denominator
-     interleaved sequence has 3-smooth denominators — powers of 3 with 5
-     entering near k≈7 and 7 near k≈10 (a prime p first divides at index ~p),
-     the signature of a factorial / q-factorial (Ohtsuki–Habiro) normalization.
+  2. **Ohtsuki/Habiro-type factorial-smooth denominators.** The simple-
+     denominator interleaved sequence has factorial-smooth denominators — the
+     largest prime factor of den(s_k) grows ~linearly with k (5 enters near
+     k≈7, 7 near k≈10, 11/13 near k≈16–21; p_max(k) ≲ 2k), the signature of a
+     factorial / q-factorial (Ohtsuki–Habiro) normalization.
 
-  3. **D(ũ) is CONVERGENT with a weak algebraic branch point.** Domb–Sykes
-     extrapolation of the coefficient ratios gives a finite radius
-     ρ ≈ 0.143 (stable across windows; the 21-term ORD-43 run sharpens it to
-     0.1432) and a small exponent α ≈ 0.1 (f ~ (1−ũ/ρ)^{−α}, possibly
-     log-type). This is the sharp contrast with routes 1: the state-integral
-     Ohtsuki κ-tower is *divergent* (Gevrey-1, radius 0), whereas the net-route
-     D-ladder is a genuinely *convergent* object — the two bar-odd-S routes are
-     NOT the same series.
+  3. **D(ũ) is super-exponentially DIVERGENT (radius → 0).** CORRECTED
+     2026-07-12 (was: "convergent radius ρ≈0.143" — a finite-n shadow; see
+     docs/audits/2026-07-12-dladder-divergence-correction.md). A Domb–Sykes
+     1/k radius fit gives a spurious finite ρ≈0.143, but there is NO
+     singularity of log R(q(ũ)) at that |ũ| (nearest is 0.45–0.78), the root
+     test |dₖ|^{1/k} rises without plateau (4.4→6.1 through k=27), and
+     log|dₖ| = A + B·k + C·k·log k fits with C ≈ 0.05–0.08 > 0 (super-
+     exponential, ~50–300× tighter than a constant-radius law). This is the
+     corpus's q-Gevrey / radius→0 class-change at the real substrate q₀
+     (Lean-backed alien-calculus audit). So the D-ladder is in the SAME
+     divergent family as the κ-tower — the two bar-odd-S routes share a
+     resurgent growth class (C drifts with the window ⇒ q-Gevrey, not a fixed
+     classical index).
 
   4. **No low-order holonomic recurrence.** No P-finite recurrence of order ≤ 3
      and polynomial degree ≤ 4 fits a_k or b_k (the ORD-43 21-term run rules out
@@ -37,18 +43,19 @@ FINDINGS (scope-(a); no c_k wired; no fit; no tier change):
      accessible order; its generating function is a non-elementary
      algebraic-branch-point object.
 
-  5. **Singularity origin.** The radius is NOT set by any simple real special
-     value of the underlying R(q): the sqrt branch points q⁴+q²+1=0 and the
-     u'(q)=0 folds all map to ũ=0, and the nearest real singularity (the QA
-     zero q=1+√2) sits at |ũ|=0.775 ≫ ρ. So the branch point at ρ is a *complex*
-     singularity of log R(q(ũ)), left unidentified. ρ lands within ~1% of both
-     √3/12 and 1/7, but the slow Domb–Sykes convergence forbids identifying it
-     — reported as data, not a match (anti-fit).
+  5. **No finite singularity (corroborates radius → 0).** No singularity of
+     log R(q(ũ)) sits near the spurious 0.143: the sqrt branch points q⁴+q²+1=0
+     and the ũ'(q)=0 folds all map to ũ=0, and the nearest singularity of any
+     kind (a QA zero / a complex fold) is at |ũ|=0.45–0.78. The absence of any
+     finite singularity where a radius-0.143 series would demand one is the
+     analytic-side confirmation of the radius→0 growth diagnosis in [3].
 
-CONCLUSION: the D-ladder generating function has an exact parity + smooth-
-denominator arithmetic and is a convergent algebraic-branch-point series
-(radius ≈ 0.143), structurally distinct from the divergent κ-tower — but no
-elementary / P-finite closed form emerges at 15–21 terms. Nothing wired.
+CONCLUSION: the D-ladder generating function has an exact parity + factorial-
+smooth-denominator arithmetic and is super-exponentially DIVERGENT (radius → 0,
+q-Gevrey at q₀) — in the SAME resurgent family as the κ-tower, NOT a convergent
+contrast to it (the earlier "radius ≈ 0.143" was a finite-n shadow, corrected
+2026-07-12). No elementary / P-finite closed form emerges at 15–27 terms.
+Nothing wired.
 """
 from __future__ import annotations
 
@@ -66,7 +73,7 @@ import mpmath as mp  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
 import qbeta_ck_sseries_exact_rational as core  # noqa: E402
-core.ORD = int(sys.argv[1]) if len(sys.argv) > 1 else 31
+core.ORD = int(sys.argv[1]) if len(sys.argv) > 1 else 43
 ORD = core.ORD
 from qbeta_ck_sseries_exact_rational import (  # noqa: E402
     q, simp, ser_add, ser_mul, ser_scale, ser_inv, ser_sqrt,
@@ -153,15 +160,26 @@ def find_prec(seq, order_max, deg_max, hold=3):
     return None
 
 
-def domb_sykes(dk, lo, hi):
+def growth_diagnostic(dk, lo):
+    """Corpus divergence diagnostic (alien-calculus audit): a root test that
+    RISES WITHOUT PLATEAU + a positive k·log k growth term ⇒ super-exponential,
+    radius → 0 (q-Gevrey). Returns (root_test_rising, C, ssr_ratio) where C is
+    the k·log k coefficient of log|dₖ| and ssr_ratio = SSR(super-exp)/SSR(geom)
+    (≪1 ⇒ super-exponential beats a constant-radius law)."""
     df = {k: mp.mpf(str(sp.N(v, 50))) for k, v in dk.items()}
-    r = {k: df[k] / df[k - 1] for k in range(2, max(df) + 1)}
-    ravg = {k: (r[k] + r[k + 1]) / 2 for k in range(2, max(df))}  # damp parity oscillation
-    ks = [k for k in ravg if lo <= k <= hi]
-    X = [1 / mp.mpf(k) for k in ks]; Y = [ravg[k] for k in ks]
-    n = len(ks); sx = sum(X); sy = sum(Y); sxx = sum(x * x for x in X); sxy = sum(x * y for x, y in zip(X, Y))
-    slope = (n * sxy - sx * sy) / (n * sxx - sx * sx); inter = (sy - slope * sx) / n
-    return 1 / inter, slope / inter + 1
+    K = max(df)
+    root = {k: abs(df[k]) ** (mp.mpf(1) / k) for k in df if k >= 4}
+    rk = sorted(root)
+    root_rising = root[rk[-1]] > root[rk[-4]] > root[rk[-8]]   # still climbing at the top
+    ks = list(range(lo, K + 1))
+    y = mp.matrix([mp.log(abs(df[k])) for k in ks])
+    M = mp.matrix([[mp.mpf(1), mp.mpf(k), k * mp.log(k)] for k in ks])
+    c = mp.lu_solve(M.T * M, M.T * y)
+    M0 = mp.matrix([[mp.mpf(1), mp.mpf(k)] for k in ks])
+    c0 = mp.lu_solve(M0.T * M0, M0.T * y)
+    ssr = sum((c[0] + c[1] * k + c[2] * k * mp.log(k) - mp.log(abs(df[k]))) ** 2 for k in ks)
+    ssr0 = sum((c0[0] + c0[1] * k - mp.log(abs(df[k]))) ** 2 for k in ks)
+    return bool(root_rising), c[2], (ssr / ssr0 if ssr0 != 0 else mp.mpf(0)), root
 
 
 def main() -> int:
@@ -187,28 +205,39 @@ def main() -> int:
             parity_ok = False
     print(f"\n  [1] parity structure (odd k → √3-part simple, even k → rational simple): {parity_ok}")
 
-    # ---- 2. smooth (3,5,7)-denominators of the simple sequence ----
+    # ---- 2. factorial-smooth denominators of the simple sequence ----
+    # Signature of a factorial / q-factorial (Ohtsuki–Habiro) normalization: the
+    # largest prime factor of den(s_k) grows ~linearly with k (each prime p first
+    # enters near index ~p), i.e. den(s_k) is "k-smooth-ish" — NOT bounded by a
+    # fixed prime (11,13,… enter as k grows; the earlier "primes ≤ 7" was a
+    # 15-term artifact).
     simple = {k: (b[k] if k % 2 else a[k]) for k in range(1, K + 1)}
     dens = {k: sp.factorint(sp.Rational(simple[k]).q) for k in simple}
     primes = sorted({p for f in dens.values() for p in f})
-    smooth = all(all(p in (2, 3, 5, 7) for p in f) for f in dens.values())
+    pmax = {k: (max(dens[k]) if dens[k] else 1) for k in dens}
+    factorial_smooth = all(pmax[k] <= 2 * k + 3 for k in dens)   # p_max(k) ≲ 2k
     v3 = [dens[k].get(3, 0) for k in range(1, K + 1)]
-    print(f"  [2] simple-denominator primes = {primes}; 3-smooth-ish (≤7): {smooth}")
+    print(f"  [2] denominator primes seen = {primes}; largest prime factor p_max(k) ≤ 2k+3 "
+          f"(factorial-smooth): {factorial_smooth}")
+    print(f"      p_max(s_k) = {[pmax[k] for k in range(1, K + 1)]}")
     print(f"      3-adic valuations v₃(den s_k) = {v3}")
+    smooth = factorial_smooth
 
-    # ---- 3. Domb–Sykes radius + exponent (stability across windows) ----
-    print("\n  [3] Domb–Sykes ratio extrapolation (radius ρ, exponent α):")
-    windows = [(6, K - 1), (8, K - 1)] if K >= 12 else [(4, K - 1)]
-    rho = alpha = None
-    for lo, hi in windows:
-        rho, alpha = domb_sykes(dk, lo, hi)
-        print(f"      window k={lo}..{hi}: ρ = {mp.nstr(rho, 7)}   α = {mp.nstr(alpha, 5)}")
-    convergent = bool(mp.mpf("0.05") < rho < mp.mpf("0.5"))
-    print(f"      => convergent (finite ρ): {convergent}; contrast: κ-tower is divergent (radius 0)")
-    # candidate constants near ρ (reported, NOT identified — anti-fit)
-    for name, val in [("√3/12", R3 / 12), ("1/7", sp.Rational(1, 7))]:
-        vv = mp.mpf(str(sp.N(val, 30)))
-        print(f"      ρ / ({name}={mp.nstr(vv, 8)}) = {mp.nstr(rho / vv, 6)}  (data only, not identified)")
+    # ---- 3. growth class: super-exponentially DIVERGENT (radius → 0) ----
+    # CORRECTED (2026-07-12): a Domb–Sykes 1/k radius fit gives a spurious finite
+    # ρ≈0.143, but the corpus diagnostic (root test rising + C>0) shows radius→0.
+    print("\n  [3] growth class (corpus diagnostic: root test rising + k·log k term):")
+    lo = 10 if K >= 14 else 6
+    root_rising, C, ssr_ratio, root = growth_diagnostic(dk, lo)
+    rk = sorted(root)
+    print(f"      root test |dₖ|^(1/k): {mp.nstr(root[rk[0]], 5)} → {mp.nstr(root[rk[-1]], 5)} "
+          f"(k={rk[0]}..{rk[-1]}); still rising at top: {root_rising}")
+    print(f"      log|dₖ| = A+B·k+C·k·log k fit: C = {mp.nstr(C, 5)} "
+          f"({'>0 super-exponential' if C > 0 else 'not super-exp'}); "
+          f"SSR(super-exp)/SSR(geom) = {mp.nstr(ssr_ratio, 4)} (≪1 ⇒ super-exp wins)")
+    divergent = bool(root_rising and C > 0 and ssr_ratio < mp.mpf("0.3"))
+    print(f"      => super-exponentially DIVERGENT (radius → 0): {divergent}")
+    print("      same resurgent family as the κ-tower; q-Gevrey at q₀ (corpus alien-calculus audit)")
 
     # ---- 4. holonomic recurrence search ----
     print("\n  [4] holonomic P-recurrence search (order ≤ 3, deg ≤ 4):")
@@ -223,9 +252,9 @@ def main() -> int:
         return qq * (mp.sqrt(qq**4 + qq**2 + 1) / (qq**2 + 1)) * ((qq - 1) / qq) ** 2
     u_QAplus = abs(u_of_q(mp.mpf(1) + mp.sqrt(2)))     # nearest real special value
     u_bp = abs(u_of_q(mp.expjpi(sp.Rational(1, 3))))   # sqrt branch point q^4+q^2+1=0
-    print("\n  [5] singularity origin (simple real special values):")
-    print(f"      |ũ(q=1+√2)| = {mp.nstr(u_QAplus, 6)} (≫ ρ);  |ũ(q⁴+q²+1=0)| = {mp.nstr(u_bp, 4)} (→0, folds to origin)")
-    print(f"      ⇒ ρ≈{mp.nstr(rho, 5)} is a COMPLEX singularity of log R(q(ũ)), not a simple real value")
+    print("\n  [5] no finite singularity (corroborates radius → 0):")
+    print(f"      |ũ(q=1+√2)| = {mp.nstr(u_QAplus, 6)};  |ũ(q⁴+q²+1=0)| = {mp.nstr(u_bp, 4)} (→0, folds to origin)")
+    print("      no singularity anywhere near the spurious 0.143 ⇒ consistent with radius → 0")
 
     d5_ai81 = sp.Rational(-252241, 243) * R3 - sp.Rational(836891, 139345920)
     d5_ok = sp.simplify(dk[5] - d5_ai81) == 0
@@ -234,13 +263,14 @@ def main() -> int:
         f"D-ladder generating function D(ũ)=Σd_k ũ^k (d₁…d_{K} exact ℚ(√3)): "
         f"[1] exact parity structure (odd k → √3-part small-denominator, even k → "
         f"rational part); [2] simple-denominator sequence is 3-smooth "
-        f"(Ohtsuki/Habiro factorial normalization; primes {primes}); [3] CONVERGENT "
-        f"with radius ρ≈{mp.nstr(rho, 5)} and weak branch-point exponent α≈{mp.nstr(alpha, 3)} "
-        f"— structurally distinct from the DIVERGENT Gevrey-1 κ-tower (routes 1); "
-        f"[4] no P-finite recurrence (order≤3, deg≤4); [5] the branch point is a "
-        f"complex singularity of log R(q(ũ)), not a simple real special value; ρ is "
-        f"within ~1% of √3/12 and 1/7 but NOT identified (anti-fit). No closed form "
-        f"emerges at {K} terms. Scope-(a); no c_k wired; no fit."
+        f"(Ohtsuki/Habiro factorial normalization; primes {primes}); [3] super-"
+        f"exponentially DIVERGENT (radius → 0): root test rises without plateau "
+        f"(→{mp.nstr(root[rk[-1]], 4)} at k={rk[-1]}) and C={mp.nstr(C, 3)}>0 in "
+        f"log|dₖ|=A+Bk+C·k·log k (SSR {mp.nstr(ssr_ratio, 3)}× the geometric law) — "
+        f"the SAME resurgent family as the κ-tower (q-Gevrey at q₀, corpus alien-"
+        f"calculus audit); the earlier 'convergent ρ≈0.143' was a finite-n shadow; "
+        f"[4] no P-finite recurrence (order≤3, deg≤4); [5] no closed form emerges at "
+        f"{K} terms. Scope-(a); no c_k wired; no fit."
     )
     print(f"\n  VERDICT: {verdict}")
     print(f"  ({time.monotonic() - t0:.1f}s)")
@@ -251,13 +281,14 @@ def main() -> int:
         "D(ũ)=Σ d_k ũ^k (d_k ∈ ℚ(√3), O/h via the route-3 ser_div). Findings: "
         "(1) exact parity structure (odd k → √3-part carries the small "
         "denominator, even k → rational part); (2) 3-smooth simple-denominators "
-        "(Ohtsuki/Habiro factorial normalization); (3) CONVERGENT, Domb–Sykes "
-        f"radius ρ≈{mp.nstr(rho, 5)}, weak branch-point exponent α≈{mp.nstr(alpha, 3)} — "
-        "the sharp contrast with the DIVERGENT Gevrey-1 κ-tower of routes 1; "
+        "(Ohtsuki/Habiro factorial normalization); (3) super-exponentially "
+        f"DIVERGENT (radius → 0): root test rises without plateau, C={mp.nstr(C, 3)}>0 "
+        "in log|dₖ|=A+Bk+C·k·log k (super-exp ≫ geometric) — the SAME resurgent "
+        "family as the κ-tower (q-Gevrey at q₀, corpus alien-calculus audit); the "
+        "earlier 'convergent ρ≈0.143' was a finite-n shadow (corrected 2026-07-12); "
         "(4) no P-finite recurrence (order≤3 deg≤4; ORD-43 rules out order≤4 "
-        "deg≤5); (5) singularity is a complex point of log R(q(ũ)), not a simple "
-        "real special value; ρ within ~1% of √3/12 and 1/7 but not identified "
-        "(anti-fit). No elementary closed form at 15–21 terms. Scope-(a); no wiring."
+        "deg≤5); (5) no finite singularity near 0.143 (corroborates radius → 0). "
+        "No elementary closed form at 15–27 terms. Scope-(a); no wiring."
     )
     wb.add_data("ORD", ORD)
     wb.add_data("n_terms", K)
@@ -267,32 +298,37 @@ def main() -> int:
     wb.add_data("parity_structure_holds", parity_ok)
     wb.add_data("simple_denominator_primes", primes)
     wb.add_data("simple_denominator_3adic_valuations", v3)
-    wb.add_data("smooth_denominators_le7", smooth)
-    wb.add_data("domb_sykes_radius_rho", mp.nstr(rho, 8))
-    wb.add_data("domb_sykes_exponent_alpha", mp.nstr(alpha, 6))
-    wb.add_data("convergent_positive_radius", convergent)
-    wb.add_data("contrast_kappa_tower", "κ-tower is divergent Gevrey-1 (radius 0); D-ladder is convergent")
+    wb.add_data("factorial_smooth_denominators", smooth)
+    wb.add_data("root_test_rises_without_plateau", root_rising)
+    wb.add_data("root_test_values", {str(k): mp.nstr(root[k], 8) for k in sorted(root)})
+    wb.add_data("superexp_C_klogk_coeff", mp.nstr(C, 6))
+    wb.add_data("superexp_vs_geometric_ssr_ratio", mp.nstr(ssr_ratio, 6))
+    wb.add_data("super_exponentially_divergent", divergent)
+    wb.add_data("contrast_kappa_tower",
+                "CORRECTED 2026-07-12: D-ladder is super-exponentially divergent (radius→0), "
+                "SAME resurgent family as the divergent κ-tower — NOT a convergent contrast. "
+                "The earlier 'convergent ρ≈0.143' was a finite-n shadow.")
     wb.add_data("no_low_order_p_recurrence", no_prec)
-    wb.add_data("nearest_real_special_value_u_QAplus", mp.nstr(u_QAplus, 8))
-    wb.add_data("rho_over_sqrt3_over_12", mp.nstr(rho / mp.mpf(str(sp.N(R3 / 12, 30))), 6))
-    wb.add_data("rho_over_one_seventh", mp.nstr(rho * 7, 6))
+    wb.add_data("no_finite_singularity_near_spurious_rho", mp.nstr(u_QAplus, 8))
     wb.add_data("verdict", verdict)
-    wb.add_data("scope", "(a) — exact ℚ(√3) ladder + numerical singularity analysis; no wiring")
+    wb.add_data("scope", "(a) — exact ℚ(√3) ladder + corpus growth-class diagnostic; no wiring")
     wb.add_data("caveats", [
-        "radius/exponent are Domb–Sykes extrapolations; small exponent (~0.1) "
-        "converges slowly — ρ known to ~1%, α to a factor.",
-        "ρ within ~1% of √3/12 and 1/7 is reported as data, NOT an identification.",
+        "C (the k·log k coefficient) drifts down with the fit window (0.077→0.048, "
+        "k up to 27) ⇒ q-Gevrey at q₀, not a fixed classical Gevrey index; report "
+        "'super-exponentially divergent, C≈0.05–0.08 shadow', not a pinned index.",
+        "corrects PR #3716's 'convergent radius 0.143' finite-n shadow; corpus-"
+        "corroborated (Lean-backed alien-calculus Gevrey/q-Gevrey audit).",
         "no c_k wired; no fit; no tier change.",
     ])
     wb.add_assertion("valid_orders_over_determined", odd_ok, True)
     wb.add_assertion("parity_structure_holds", parity_ok, True)
-    wb.add_assertion("smooth_denominators_le7", smooth, True)
-    wb.add_assertion("convergent_positive_radius", convergent, True)
+    wb.add_assertion("factorial_smooth_denominators", smooth, True)
+    wb.add_assertion("super_exponentially_divergent", divergent, True)
     wb.add_assertion("no_low_order_p_recurrence", no_prec, True)
     wb.add_assertion("d5_reproduces_ai81_witness", bool(d5_ok), True)
     out = wb.save()
     print(f"  Witness: {out}")
-    return 0 if (parity_ok and smooth and convergent and no_prec and odd_ok and d5_ok) else 1
+    return 0 if (parity_ok and smooth and divergent and no_prec and odd_ok and d5_ok) else 1
 
 
 if __name__ == "__main__":

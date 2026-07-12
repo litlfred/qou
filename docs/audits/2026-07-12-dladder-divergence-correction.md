@@ -37,16 +37,19 @@ Two things flagged it (owner hints "super-exponential..?" + "checkcorpus"):
 
 The exact d_k are unchanged. Applying the corpus's own diagnostic:
 
-- **Root test rises without plateau.** `|dₖ|^{1/k}`: 4.37 → 5.91 over k=4…21,
-  still climbing at k=21 — the finite-n shadow of radius → 0, exactly as the
-  alien-calculus audit describes.
+- **Root test rises without plateau.** `|dₖ|^{1/k}`: 4.37 → 5.91 → 6.08 over
+  k=4…27, still climbing at k=27 — the finite-n shadow of radius → 0, exactly as
+  the alien-calculus audit describes.
 - **Super-exponential growth law.** Fitting `log|dₖ| = A + B·k + C·k·log k` gives
-  **C ≈ 0.077 > 0** (a positive `k·log k` term ⇒ `|dₖ| ~ (k!)^C`,
-  super-exponential), and the fit is ~58× tighter (SSR) than a pure-geometric
-  `A + B·k` (constant-radius) law. The small C is why 21 terms of the *ratio*
-  looked deceptively flat (~6.5): `(k!)^{0.08}` grows slowly enough over k ≤ 21
-  to mimic a constant ratio, which the Domb–Sykes 1/k-fit then mis-read as a
-  finite radius.
+  **C > 0** on every window (0.077 at k=6…21, 0.062 at k=6…27, 0.048 at k=14…27),
+  and the fit is 50–300× tighter (SSR) than a pure-geometric `A + B·k`
+  (constant-radius) law. The small C is why 27 terms of the *ratio* looked
+  deceptively flat (~6.5): `(k!)^{C}` grows slowly enough to mimic a constant
+  ratio, which the Domb–Sykes 1/k-fit then mis-read as a finite radius. C drifts
+  *down* with the window (0.077→0.048), so it is not a fixed classical Gevrey
+  index — the honest class at `q₀` is **q-Gevrey** (Écalle acceleration chain,
+  per the corpus), reported as "super-exponentially divergent, C ≈ 0.05–0.08
+  shadow," not a pinned index.
 
 So `D(ũ)` is **super-exponentially divergent (radius → 0)** — in the *same*
 resurgent family as the κ-tower, consistent with the corpus's q-Gevrey
