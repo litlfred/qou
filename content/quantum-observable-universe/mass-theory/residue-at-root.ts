@@ -5,9 +5,10 @@ export default proposition({
   title:
     "Cyclotomic residues of $\\Phi_q \\cdot \\mathrm{tr}_{M, \\ell}$ — algebraic definition",
   lean: {
-    ref: "qou:QOU.BraidKnot.ResidueAtRoot",
+    ref: "qou:QOU.BraidKnot.residue_isRingHom_of_residueAtRoot",
     validation: "not_checked",
   },
+  uses: ["conj:gs-residue-at-root-existence"],
   cites: [
     "kassel1995",
     "geckpfeiffer2000",

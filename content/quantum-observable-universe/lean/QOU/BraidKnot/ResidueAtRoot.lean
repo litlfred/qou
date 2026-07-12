@@ -15,7 +15,17 @@ projection induced by quotienting by a cyclotomic polynomial.
 **Formal-chain version.**  Lives under `lean/QOU/` and is compiled
 by `lake build`.
 
-LaTeX label: `prop:residue-at-root`
+**Conditional-class role (AGENTS.md §3b-cond).**  The class
+`ResidueAtRoot` below is the class axiomatisation of
+`conj:gs-residue-at-root-existence`: an instance supplies the
+Habiro-completion cyclotomic projection, whose existence is the
+conjectural input.  The proposition `prop:residue-at-root` is stated
+*conditionally* on this class (content-block sibling
+`mass-theory/residue-at-root.lean`, theorem
+`residue_isRingHom_of_residueAtRoot`).
+
+LaTeX label: `conj:gs-residue-at-root-existence` (the class);
+consumed conditionally by `prop:residue-at-root`.
 -/
 
 namespace QOU.BraidKnot
@@ -25,15 +35,17 @@ universe u
 /-- **Cyclotomic residue at a root of unity (axiomatised class).**
 
     A class instance carries:
-    * `target ζ` — the target ring `ℤ[ζ_n] ≅ ℤ[q]/Φ_n(q)`.
-    * `project ζ` — the cyclotomic projection from the Habiro
-      completion to the target ring.
-    * `project_well_defined` — the projection is a ring
-      homomorphism.
+    * `target n` — the target ring `ℤ[ζ_n] ≅ ℤ[q]/Φ_n(q)`.
+    * `project n` — the cyclotomic projection from the Habiro
+      completion to the target ring, encoded as a ring
+      homomorphism `R →+* target n` (well-definedness is carried
+      by the `RingHom` type).
 
     The conjectural input is the Habiro-completion machinery on
     which `project` depends; concrete instances use the cyclotomic
-    quotient ring as the target. -/
+    quotient ring as the target.  This class is the §3b-cond
+    axiomatisation of `conj:gs-residue-at-root-existence`. -/
+-- @conjecture: primary
 class ResidueAtRoot (R : Type u) [CommRing R] where
   /-- The target ring at a given root index `n`. -/
   target : ℕ → Type u
