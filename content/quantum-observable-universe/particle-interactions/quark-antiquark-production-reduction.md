@@ -10,12 +10,9 @@ The positive Hopf link $L_+ = \sigma_0\sigma_1$ applied to the trefoil $e^- = \s
 $$
   \mathrm{NF}(L_+ \cdot e^-)
   = 
-  \sigma_1
-  + 
-  hL_+
-  + 
-  hL_-
-  + 
+  \sigma_1 +
+  hL_+ +
+  hL_- +
   h^2e^-
 $$
 

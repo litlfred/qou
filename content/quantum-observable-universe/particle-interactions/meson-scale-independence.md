@@ -16,6 +16,6 @@ The $h^1$ jet order is absent. The bar involution $q \mapsto q^{-1}$ forces all 
 
 ## Geometric core of the obstruction
 
-The Hopf-link complement (meson binding topology) has hyperbolic volume $0$. The Borromean complement (baryon) has positive volume. The volume-scaling map $m_\mathfrak{e}\cdot\mathrm{Vol}(K)\cdot\rho/\hbar_q^2$ sends the meson's geometric scale to $0$ independently of $(m_\mathfrak{e}, q_0)$. The absolute scale therefore enters only through the independent calibration CAL-3 ($\mathfrak{D}_\pi$).
+The Hopf-link complement (meson binding topology) has hyperbolic volume $0$. The Borromean complement (baryon) has positive volume. Because $\mathrm{Vol}(\mathrm{Hopf}) = 0$, the volume-proportional geometric contribution to the meson scale vanishes identically, independently of $(m_\mathfrak{e}, q_0)$. The absolute scale therefore enters only through the independent calibration CAL-3 ($\mathfrak{D}_\pi$).
 
 **Archimedean specialisation (§7c).** The scale statement is evaluated over $\mathbb{R}$ — hyperbolic volumes, the MeV meson scale, and the CAL-3 numerical calibration. This block sits on the archimedean side of the substrate wall.

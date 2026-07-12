@@ -5,9 +5,7 @@ The $\mathcal{B}_3$-confined proton NF has residual demand:
 $$
   \mathrm{NF}(\mathfrak{p})
   =
-  \underbrace{-0.100}_{\gamma < 0}\gamma
-  + 0.036\sigma_0 + 0.998\sigma_1 + 0.099 L_+ + 0.009 L_-
-  + \underbrace{-0.043}_{e^- < 0}e^-.
+  \underbrace{-0.100}_{\gamma < 0}\gamma + 0.036\sigma_0 + 0.998\sigma_1 + 0.099 L_+ + 0.009 L_- + \underbrace{-0.043}_{e^- < 0}e^-.
 $$
 
 - $\gamma < 0$: vacuum energy deficit—the source of the nucleon's mass.
