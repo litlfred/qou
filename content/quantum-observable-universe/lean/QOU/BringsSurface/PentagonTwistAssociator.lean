@@ -26,8 +26,9 @@ This file formalises the mechanism: for a graded twist `e_a·e_b = F(a,b)·e_{a+
 the associator is `α = dF` (the coboundary of `F`), and it **automatically
 satisfies the pentagon** because `d² = 0`. That is why a graded twist keeps Mac
 Lane coherence while breaking strict associativity. The specific octonion cochain
-`F` (whose `α` is cohomologically nontrivial) is the remaining datum — a finite
-`(ℤ/2)³` object, the natural next `decide`-target.
+`F` — whose associator `α = dF` is cohomologically **trivial** (a coboundary) yet
+**nonzero as a cochain** (non-associativity) — is realised concretely in
+`OctonionCocycle` (`det3` on `(ℤ/2)³`, `decide`-verified).
 
 The grading group `G` and phase group `k` are written **additively** (cohomology
 is naturally additive; the octonion signs live in `k = ℤ/2`). Generic
