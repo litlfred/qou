@@ -1,4 +1,4 @@
-# QOU MotivicGaloisCharacter instance via Habiro evaluation
+# **QOU MotivicGaloisCharacter instance** via Habiro evaluation
 
 The QOU brane-tower substrate carries a concrete instance of [`def:motivic-galois-character`](#def:motivic-galois-character) constructed by the Habiro evaluation map:
 

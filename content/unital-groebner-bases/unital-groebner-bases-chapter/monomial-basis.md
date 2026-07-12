@@ -22,4 +22,4 @@ $$
   A = R\{x_\beta \mid \beta \in B\}.
 $$
 
-We identify $\beta$ with $x_\beta$ to simplify notation.
+We identify $\beta$ with $x_\beta$ to simplify notation. The admissible subsets $B$ are the **monomial bases** of $A$.

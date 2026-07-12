@@ -3,7 +3,7 @@ is free as an $R$-module and without quasi-zeros, $(B, <)$ an
 [admissible system](#def:admissible-system) on $A$, and $I \subseteq A$
 a subset.
 
-Define the $R$-submodule $O(I)$ of $A$ as the $R$-submodule spanned
+Define the $R$-submodule $O(I)$ of $A$ — the **remainder module** — as the $R$-submodule spanned
 by the set
 
 $$
