@@ -37,7 +37,7 @@ $$
 
 | nucleus | A | hypothesised T(p, k) | α_shift | Phase-3 status |
 |---|---:|---|---:|---|
-| deuteron (D) | 2 | T(2, 3) candidate | 3 | open (#1485) |
+| deuteron (D) | 2 | T(2, 3) candidate | 3 | open |
 | tritium (T) | 3 | T(2, 5) candidate | 5 | open |
 | $^3$He | 3 | T(2, 5) candidate (mirror) | 5 | open |
 | $^4$He | 4 | T(3, 4) candidate | 8 | open |
