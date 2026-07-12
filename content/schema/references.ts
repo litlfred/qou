@@ -6086,7 +6086,7 @@ export const references: CSLData[] = [
     issued: { "date-parts": [[1999]] },
     DOI: "10.1006/jabr.1999.7916",
     URL: "https://arxiv.org/abs/math/9802116",
-    note: "The octonions 𝕆 = ℝ_F[(ℤ/2)³] realised as the group algebra of (ℤ/2)³ twisted by a 2-cochain F whose associator is a nontrivial 3-cocycle — i.e. octonion non-associativity as a pentagon (3-cocycle) deformation, the associativity-side analogue of the braiding/hexagon (quantum-group) deformation. Cited in the genus-4 octonion-recovery audit (docs/audits/2026-07-12-octonion-recovery-from-genus4-analysis.md).",
+    note: "The octonions 𝕆 = ℝ_F[(ℤ/2)³] realised as the group algebra of (ℤ/2)³ twisted by a sign 2-cochain F that is not a 2-cocycle (dF ≠ 0) — octonion non-associativity as a pentagon-cochain deformation, the associativity-side analogue of the braiding/hexagon (quantum-group) deformation. The multiplication associator dF is a coboundary (cohomologically trivial); Albuquerque–Majid's nontrivial H³ class is the category associator of Vect_(ℤ/2)³^ω. Cited in the genus-4 octonion-recovery audit (docs/audits/2026-07-12-octonion-recovery-from-genus4-analysis.md).",
   }),
 
   // ── Murasugi 1996 — Knot Theory and Its Applications ──────────
