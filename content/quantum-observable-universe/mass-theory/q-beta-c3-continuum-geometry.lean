@@ -164,11 +164,22 @@ noncomputable def vol_regular_ideal_tetrahedron : ℝ :=
 noncomputable def vol_4_1 : ℝ :=
   2 * vol_regular_ideal_tetrahedron
 
-/-- The foundational constraint linking the topological continuum limit 
-    (the infinite order non-Archimedean mass gap) to the geometric volume. 
-    The $N=3$ trace approximation $c_3^{\text{emp}} \approx -2.02162$ is 
-    strictly bounded by this exact continuous continuum geometry limit. -/
-theorem c3_continuum_limit_is_hyperbolic_volume :
-  True := by trivial
+/-- **The retained continuum geometry.**  Only the geometry is kept; the
+    earlier physical identification "$c_3$ limits to $-\mathrm{Vol}(4_1)$" is
+    **withdrawn as over-scoped** (anchor-blind — see the ⚠ CORRECTION note
+    above; and $c_3 = -2 = J_{\mathrm{Hopf}}(1)$ is the canonical $q=1$
+    shadow, not $-\mathrm{Vol}(4_1)$).  What *is* true, and is recorded here
+    (replacing the former vacuous `: True` placeholder that carried the false
+    $c_3$ claim only in its name), is the geometric decomposition:
+
+    - the figure-8 volume `Vol(4₁)` is exactly twice the regular-ideal-
+      tetrahedron volume `Λ(π/3)` (built from two ideal tetrahedra), and
+    - that tetrahedron volume sits at the `π/3` cyclotomic saddle point of
+      the continuum action (`deriv classical_potential (π/3) = 0`,
+      `saddle_point_root`). -/
+theorem vol_4_1_is_twice_tetrahedron_at_saddle :
+    vol_4_1 = 2 * classical_potential (π / 3) ∧
+    deriv classical_potential (π / 3) = 0 :=
+  ⟨rfl, saddle_point_root⟩
 
 end QOU.MassTheory.ContinuumGeometry
