@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-07-12T11:16:22.625280+00:00",
-  "commitSha": "9c87e666ab2ef9189f9aebf19df5372ad2c77775",
+  "computedAt": "2026-07-12T11:20:02.014654+00:00",
+  "commitSha": "0e819966e7a43c6c3d9e80e5ac48d2028b5fea21",
   "assertions": [
     {
       "name": "fork_resolved_naive_rate_overshoots",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 3,
   "computation": "lever1-sw-period-lw-rate-refine",
   "scriptFile": "lever1_sw_period_lw_rate_refine.py",
-  "scriptHash": "e7ff8b85336d",
-  "scriptCommitSha": "9c87e666ab2ef9189f9aebf19df5372ad2c77775",
+  "scriptHash": "ef7de698b732",
+  "scriptCommitSha": "0e819966e7a43c6c3d9e80e5ac48d2028b5fea21",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
