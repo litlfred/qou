@@ -1,0 +1,327 @@
+{
+  "computation": "qbeta-kappa-large-order-bridge",
+  "description": "Resurgence large-order (bridge-equation) probe of the 4_1 Ohtsuki rungs kappa_5/kappa_6 past the exact-kappa_4 frontier: solve the leading one-instanton (S, beta) form on exact rung pairs with the C1-stabilized A, predict kappa_5/kappa_6 with A-spread bands, and invert the observed rungs for (A, beta) (audit item 6, G2+C3).",
+  "audit_only": true,
+  "tier": "structural-exact (kappa_1..kappa_4 closed forms) + numerical (leading large-order form; order-limited; hypothesis-class test, no value fit)",
+  "computedAt": "2026-07-12T15:48:21.882741+00:00",
+  "commitSha": "ee3aeeb2e5f1cd08c1df5b66d052a2a1f418fe66",
+  "engine": "mpmath",
+  "engineVersion": "1.4.1",
+  "scriptFile": "qbeta_kappa_large_order_bridge_probe.py",
+  "scriptHash": "19d79771d55a",
+  "assertions": [
+    {
+      "name": "kappa_1_4_exact_match_witness",
+      "passed": true,
+      "computed": {
+        "1": "4.755e-21",
+        "2": "2.988e-21",
+        "3": "3.396e-21",
+        "4": "2.01e-20"
+      },
+      "expected": "rel < 1e-18 each",
+      "tolerance": "1e-18",
+      "source": "closed forms (11/108)sqrt3 pi, (2/27)pi^2, (1081/21870)sqrt3 pi^3, (98/729)pi^4 vs the 20-digit main-witness strings (tolerance at the reference-string precision)."
+    },
+    {
+      "name": "ratio_normalization_matches_predecessor",
+      "passed": true,
+      "computed": {
+        "1": "1.31912681035",
+        "2": "3.63095761618",
+        "3": "4.93299734584",
+        "4": "6.46381217554",
+        "5": "7.99774762525"
+      },
+      "expected": "12-digit main-witness ratio strings; A_k*r_k = k exact",
+      "tolerance": "1e-11 (main-witness ratio-string precision)",
+      "source": "our r_n = kappa_n/kappa_{n-1} vs the main witness ratios and the predecessor's A_k formula (qbeta_borel_pade_action.py) \u2014 SAME 1/N normalization as the C1 A."
+    },
+    {
+      "name": "synthetic_control_recovers_S_beta_kappa5",
+      "passed": true,
+      "expected": "beta, S, kappa_5 recovered to 1e-40 on an exact one-instanton series (A=0.6, beta=0.3, S=2), all 6 pairs",
+      "tolerance": "1e-40",
+      "source": "known-answer control of the pairwise solver \u2014 exact arithmetic, so full working precision applies."
+    },
+    {
+      "name": "consecutive_closed_form_matches_findroot",
+      "passed": true,
+      "tolerance": "1e-30",
+      "source": "beta = A*r - m (analytic, consecutive pair) vs the loggamma root-finder on the real rungs at A_mean."
+    },
+    {
+      "name": "beta_equals_alpha_convention",
+      "passed": true,
+      "expected": "kappa_{n+1}/kappa_n = (n+alpha)/A for the expansion of (1-zeta/A)^(-alpha) \u2014 the large-order beta IS the C1 branch exponent alpha",
+      "tolerance": "1e-45",
+      "source": "binomial-expansion ratio identity, exact arithmetic."
+    },
+    {
+      "name": "pairwise_S_from_both_rungs_consistent",
+      "passed": true,
+      "tolerance": "1e-30",
+      "source": "S computed from rung m and rung n of each pair must agree (construction identity of the 2-parameter solve)."
+    },
+    {
+      "name": "inverse_reproduces_r5_r6",
+      "passed": true,
+      "tolerance": "1e-40",
+      "source": "(A,beta) from the (4,5,6) triple must reproduce the input ratios r_5, r_6 exactly (algebraic inversion identity)."
+    },
+    {
+      "name": "entropy_budget_arithmetic_spot_check",
+      "passed": true,
+      "computed": {
+        "pinned_digits": 1,
+        "admissible_height": 0,
+        "kappa5_height_projected": 4428675,
+        "digits_needed_at_projected_height": "16.9"
+      },
+      "expected": "needed(H=100,n=2,m=3) = 2*log10(200)+3; inversion never over-asks; monotone",
+      "source": "PR #1805 entropy rule, identical machinery to qbeta_qsqrt3_borel_pslq_probe.py."
+    }
+  ],
+  "allPassed": true,
+  "parameters": {
+    "compute_dps": 60,
+    "large_order_form": "kappa_n ~ (S/pi)*Gamma(n+beta)/A^(n+beta) (leading; a_1 subleading REPORTED as diagnostic, never fitted)",
+    "normalization": "A in the 1/N variable (same as C1 and the predecessor ratio formula; /2pi for 2pi/N)",
+    "beta_alpha_convention": "beta (large-order) = alpha (C1 Borel branch exponent); binomial-expansion identity, asserted",
+    "A_input": {
+      "mean": "0.65683953472",
+      "range": [
+        "0.633771388865",
+        "0.68333979378"
+      ],
+      "alpha_mean": "0.24567406",
+      "alpha_per_config_range": [
+        "0.18355244",
+        "0.31435108"
+      ],
+      "source": "qbeta-borel-conformal-pade.witness.json",
+      "source_scriptHash": "91b9a2e688e7"
+    },
+    "kappa_confident_digits": {
+      "1": 36,
+      "2": 30,
+      "3": 25,
+      "4": 19,
+      "5": 14,
+      "6": 10
+    },
+    "A_grid_points": 17,
+    "rung_pairs": [
+      "(1,2)",
+      "(1,3)",
+      "(1,4)",
+      "(2,3)",
+      "(2,4)",
+      "(3,4)"
+    ],
+    "kill_criterion": "predicted kappa_5 outside the A-spread band for EVERY rung pair => NEGATIVE scope-(a); no parameter tuning",
+    "pslq_gate": ">= 12 forward-pinned stable digits of kappa_5 (PR #1805 entropy budget, C2 machinery)"
+  },
+  "result": {
+    "kappa_exact_vs_witness_reldiff": {
+      "1": "4.755e-21",
+      "2": "2.988e-21",
+      "3": "3.396e-21",
+      "4": "2.01e-20"
+    },
+    "kappa_numeric": {
+      "5": "84.642165605038443528",
+      "6": "676.9466789641050315"
+    },
+    "forward_per_pair": {
+      "(1,2)": {
+        "beta_at_A_mean": "-0.13354536",
+        "S_at_A_mean": "1.1024585",
+        "kappa5_pred_at_A_mean": "53.36586531",
+        "kappa5_pred_band": [
+          "49.313203",
+          "57.36382177"
+        ],
+        "kappa5_rel_miss_at_A_mean": "-0.3695",
+        "kappa5_obs_within_band": false,
+        "kappa6_pred_at_A_mean": "395.3820517",
+        "kappa6_pred_band": [
+          "353.7102908",
+          "437.7175608"
+        ],
+        "kappa6_rel_miss_at_A_mean": "-0.4159",
+        "kappa6_obs_within_band": false
+      },
+      "(1,3)": {
+        "beta_at_A_mean": "0.021991011",
+        "S_at_A_mean": "1.1471393",
+        "kappa5_pred_at_A_mean": "74.78299434",
+        "kappa5_pred_band": [
+          "71.31045447",
+          "78.12554534"
+        ],
+        "kappa5_rel_miss_at_A_mean": "-0.1165",
+        "kappa5_obs_within_band": false,
+        "kappa6_pred_at_A_mean": "571.7675406",
+        "kappa6_pred_band": [
+          "529.8021673",
+          "613.1986805"
+        ],
+        "kappa6_rel_miss_at_A_mean": "-0.1554",
+        "kappa6_obs_within_band": false
+      },
+      "(1,4)": {
+        "beta_at_A_mean": "0.061183438",
+        "S_at_A_mean": "1.1512214",
+        "kappa5_pred_at_A_mean": "80.96388882",
+        "kappa5_pred_band": [
+          "79.15139792",
+          "82.67433471"
+        ],
+        "kappa5_rel_miss_at_A_mean": "-0.04346",
+        "kappa5_obs_within_band": false,
+        "kappa6_pred_at_A_mean": "623.8557083",
+        "kappa6_pred_band": [
+          "594.2610303",
+          "652.4155964"
+        ],
+        "kappa6_rel_miss_at_A_mean": "-0.07843",
+        "kappa6_obs_within_band": false
+      },
+      "(2,3)": {
+        "beta_at_A_mean": "0.38495651",
+        "S_at_A_mean": "0.68520985",
+        "kappa5_pred_at_A_mean": "91.32443009",
+        "kappa5_pred_band": [
+          "88.68131395",
+          "93.83885187"
+        ],
+        "kappa5_rel_miss_at_A_mean": "0.07895",
+        "kappa5_obs_within_band": false,
+        "kappa6_pred_at_A_mean": "748.7035394",
+        "kappa6_pred_band": [
+          "711.3270093",
+          "784.9174853"
+        ],
+        "kappa6_rel_miss_at_A_mean": "0.106",
+        "kappa6_obs_within_band": false
+      },
+      "(2,4)": {
+        "beta_at_A_mean": "0.32448344",
+        "S_at_A_mean": "0.73011084",
+        "kappa5_pred_at_A_mean": "86.21304647",
+        "kappa5_pred_band": [
+          "84.98620827",
+          "87.36685872"
+        ],
+        "kappa5_rel_miss_at_A_mean": "0.01856",
+        "kappa5_obs_within_band": false,
+        "kappa6_pred_at_A_mean": "698.8616155",
+        "kappa6_pred_band": [
+          "675.9366391",
+          "720.7541335"
+        ],
+        "kappa6_rel_miss_at_A_mean": "0.03237",
+        "kappa6_obs_within_band": true
+      },
+      "(3,4)": {
+        "beta_at_A_mean": "0.24018768",
+        "S_at_A_mean": "0.84641538",
+        "kappa5_pred_at_A_mean": "84.53252339",
+        "kappa5_pred_band": [
+          "83.75939404",
+          "85.25815938"
+        ],
+        "kappa5_rel_miss_at_A_mean": "-0.001295",
+        "kappa5_obs_within_band": true,
+        "kappa6_pred_at_A_mean": "674.3904171",
+        "kappa6_pred_band": [
+          "658.3319968",
+          "689.6284737"
+        ],
+        "kappa6_rel_miss_at_A_mean": "-0.003776",
+        "kappa6_obs_within_band": true
+      }
+    },
+    "beta_stability": {
+      "all_pairs_range": [
+        "-0.13354536",
+        "0.38495651"
+      ],
+      "spread": "0.518502",
+      "kappa1_free_pairs_range": [
+        "0.24018768",
+        "0.38495651"
+      ],
+      "frontier_pair_34_beta": "0.2401876814"
+    },
+    "consistent_pairs_kappa5": [
+      "(3,4)"
+    ],
+    "consistent_pairs_kappa6": [
+      "(2,4)",
+      "(3,4)"
+    ],
+    "implied_a1_diagnostic_only": "0.00837297",
+    "inverse_triple_ladder": {
+      "(1,2,3)": {
+        "A": "0.4325576065",
+        "beta": "-0.42940166"
+      },
+      "(2,3,4)": {
+        "A": "0.7680257194",
+        "beta": "0.78866884"
+      },
+      "(3,4,5)": {
+        "A": "0.6532468726",
+        "beta": "0.22246509"
+      },
+      "(4,5,6)": {
+        "A": "0.6519179149",
+        "beta": "0.21387496"
+      }
+    },
+    "inverse_implied": {
+      "A": "0.651917914918",
+      "beta": "0.2138749559",
+      "A_within_C1_range": true,
+      "beta_vs_C1_alpha_diff": "-0.0317991",
+      "beta_consistent_with_C1_alpha_configs": true,
+      "input_digit_propagation": {
+        "dA": "3.4e-10",
+        "dbeta": "2.198e-9"
+      },
+      "truncation_systematic_345_vs_456": {
+        "dA": "0.001329",
+        "dbeta": "0.00859"
+      }
+    },
+    "pslq": {
+      "gate": "forward-pinned stable digits 1 (band rel width 0.0177, frontier pair (3,4)) vs required 12",
+      "outcome": "SKIPPED",
+      "budget_arithmetic": {
+        "admissible_height_at_pinned_digits": 0,
+        "kappa5_projected_height": 4428675,
+        "kappa5_digits_needed_at_projected_height": 16.9,
+        "kappa5_witness_digits_available": 14,
+        "kappa5_digit_gap_even_with_witness_numerics": 2.9,
+        "kappa6_projected_height": 19683,
+        "kappa6_digits_needed_at_projected_height": 12.2,
+        "kappa6_witness_digits_available": 10
+      },
+      "reason": "the leading large-order form pins only ~1 stable digits of kappa_5 (A-spread band, frontier pair) \u2014 far below the 12-digit gate; admissible PSLQ height at that budget is 0 < floor 10. Even the 14 witness digits fall ~2.9 digits short of the ~16.9 needed at the height-growth-projected kappa_5 height ~4428675 (heights 108 -> 21870 on the odd sqrt3 line) \u2014 the same entropy wall that produced the #3571-class kappa_6 false positive. Refusing to over-ask."
+    },
+    "pslq_ran": false,
+    "hypothesis_outcome": "CONSISTENT",
+    "verdict": "G2+C3 LARGE-ORDER BRIDGE TEST (scope-(a), leading one-instanton form, 1/N normalization): CONSISTENT (not derived): the frontier pair (3,4) \u2014 the most asymptotic exact pair \u2014 predicts kappa_5 in [83.75939404, 85.25815938] (obs 84.6421656 INSIDE, miss at A_mean -0.001295) and kappa_6 in [658.3319968, 689.6284737] (obs 676.94667 INSIDE). Pairs containing kappa_1 miss low \u2014 the O(1/n) transient the leading form omits, matching the implied a_1 ~ 0.0084. (a) (S, beta) does NOT fully stabilize across rung pairs at n <= 4 (beta spans [-0.1335, 0.385]) but the kappa_1-free pairs cluster and the frontier (3,4) gives beta = 0.24019. INVERSE: fixing observed kappa_5/kappa_6 implies A = 0.6519179 (INSIDE the C1 range [0.633771, 0.68334]) and beta = 0.21387 vs C1 alpha 0.2457 (same object: beta = alpha, proved by the binomial-expansion identity; consecutive triples (3,4,5)->(4,5,6) drift only dA ~ 0.0013, dbeta ~ 0.0086). An exact-arithmetic kappa_5 candidate still requires ~17 trusted digits at the height-projected Q(sqrt3)*pi^5 line (have 14; the large-order form pins only ~1) \u2014 PSLQ gate NOT met, PSLQ skipped with logged budget; the route remains the bridge-equation arithmetic (Ecalle Delta_omega f = A_omega df/dz, Garoufalidis-Gu-Marino Stokes data) or a higher-precision extraction. No fit wired anywhere; no c_k value; no tier change."
+  },
+  "context": {
+    "axis": "z->c_k f-map keystone: G2 bridge equation / C3 transseries past the kappa_4 frontier",
+    "audit_item": "docs/audits/2026-07-12-borel-alien-calculus-utilization-audit.md item 6 (G2+C3)",
+    "A_source": "computations/probes/qbeta_borel_conformal_pade_probe.py (C1, this branch)",
+    "kappa_source": "origin/main docs/audits/scripts/qbeta-even-borel-singularity.witness.json (commit 4c4a936)",
+    "normalization_crosscheck": "docs/audits/scripts/qbeta_borel_pade_action.py (A_k = k*kappa_{k-1}/kappa_k; Richardson A ~ 0.6937 on its own noisier order-11 ladder)",
+    "budget_machinery": "computations/probes/qbeta_qsqrt3_borel_pslq_probe.py (C2)",
+    "next": "bridge-equation arithmetic (Ecalle; Garoufalidis-Gu-Marino 4_1 Stokes structure over Q(sqrt(-3))) to generate kappa_5 exactly, or a higher-precision ladder extraction (~17+ trusted digits) to clear the PSLQ entropy wall"
+  }
+}
