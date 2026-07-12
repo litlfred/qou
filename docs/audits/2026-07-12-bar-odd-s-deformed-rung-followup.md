@@ -89,22 +89,18 @@ k≈10 (prime p first divides near index ~p). The 3-adic valuations
 `v₃(den s_k) = 0,1,3,4,5,7,8,9,12,13,…` climb ≈ `3k/2`. This is the signature
 of a factorial / q-factorial (Ohtsuki–Habiro) normalization.
 
-**3 — D(ũ) is CONVERGENT with a weak algebraic branch point.** Domb–Sykes
-extrapolation of the coefficient ratios (smoothed over the parity oscillation)
-is stable across windows:
-
-| window | radius ρ | exponent α |
-|---|---|---|
-| k=6…14 | 0.1461 | 0.31 |
-| k=8…16 | 0.1437 | 0.15 |
-| k=10…19 | 0.1432 | 0.11 |
-| k=12…19 | 0.1432 | 0.11 |
-
-So `D(ũ) ~ (1 − ũ/ρ)^{−α}` with **ρ ≈ 0.143** and a small exponent **α ≈ 0.1**
-(possibly log-type). This is the sharp structural contrast with routes 1: the
-state-integral **κ-tower is divergent** (Gevrey-1, `κ_n ~ Γ(n+β)/Aⁿ`, radius 0),
-whereas the net-route **D-ladder is convergent**. The two bar-odd-S routes are
-*not* the same series — a fact worth carrying forward.
+**3 — D(ũ) is super-exponentially DIVERGENT (radius → 0).**
+> **CORRECTED 2026-07-12** (PR #3720). This section originally read "D(ũ) is
+> convergent, radius ρ≈0.143, a sharp contrast with the divergent κ-tower." That
+> was a **finite-n shadow artifact** — a Domb–Sykes 1/k radius fit gives a
+> spurious finite ρ, but no singularity of `log R(q(ũ))` exists there (nearest is
+> 0.45–0.78), the root test `|dₖ|^{1/k}` rises without plateau (4.4→6.1 through
+> k=27), and `log|dₖ| = A + B·k + C·k·log k` fits with **C ≈ 0.05–0.08 > 0**
+> (super-exponential, ~50–300× tighter than a constant-radius law). So the
+> D-ladder is super-exponentially **divergent** (radius → 0, q-Gevrey at `q₀`),
+> in the **same** resurgent family as the κ-tower — *not* a convergent contrast.
+> Full correction:
+> [`2026-07-12-dladder-divergence-correction.md`](2026-07-12-dladder-divergence-correction.md).
 
 **4 — no holonomic recurrence.** No P-finite recurrence of order ≤ 3 / degree
 ≤ 4 fits `a_k` or `b_k` (the 21-term run rules out order ≤ 4 / degree ≤ 5 too).

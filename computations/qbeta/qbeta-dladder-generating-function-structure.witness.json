@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-07-12T23:04:55.215457+00:00",
-  "commitSha": "e71b32cd7f729d631f61b72eaf9af625fd89f90e",
+  "computedAt": "2026-07-12T23:46:00.849388+00:00",
+  "commitSha": "998cd87fdeb2b499929a2db65c5983d86a7bc964",
   "assertions": [
     {
       "name": "valid_orders_over_determined",
@@ -17,13 +17,13 @@
       "passed": true
     },
     {
-      "name": "smooth_denominators_le7",
+      "name": "factorial_smooth_denominators",
       "computed": true,
       "expected": true,
       "passed": true
     },
     {
-      "name": "convergent_positive_radius",
+      "name": "super_exponentially_divergent",
       "computed": true,
       "expected": true,
       "passed": true
@@ -42,11 +42,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 19,
+  "durationMs": 20,
   "computation": "qbeta-dladder-generating-function-structure",
   "scriptFile": "qbeta_dladder_generating_function_structure_probe.py",
-  "scriptHash": "c1697195fe32",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "166faaf4f51e",
+  "scriptCommitSha": "cb728ce6e26d14cffcfb30b6dde33b60d7c2b15c",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -58,10 +58,10 @@
     "sympy": "1.14.0",
     "mpmath": "1.3.0"
   },
-  "description": "Route 2: structure hunt of the exact D-ladder generating function D(ũ)=Σ d_k ũ^k (d_k ∈ ℚ(√3), O/h via the route-3 ser_div). Findings: (1) exact parity structure (odd k → √3-part carries the small denominator, even k → rational part); (2) 3-smooth simple-denominators (Ohtsuki/Habiro factorial normalization); (3) CONVERGENT, Domb–Sykes radius ρ≈0.1438, weak branch-point exponent α≈0.156 — the sharp contrast with the DIVERGENT Gevrey-1 κ-tower of routes 1; (4) no P-finite recurrence (order≤3 deg≤4; ORD-43 rules out order≤4 deg≤5); (5) singularity is a complex point of log R(q(ũ)), not a simple real special value; ρ within ~1% of √3/12 and 1/7 but not identified (anti-fit). No elementary closed form at 15–21 terms. Scope-(a); no wiring.",
+  "description": "Route 2: structure hunt of the exact D-ladder generating function D(ũ)=Σ d_k ũ^k (d_k ∈ ℚ(√3), O/h via the route-3 ser_div). Findings: (1) exact parity structure (odd k → √3-part carries the small denominator, even k → rational part); (2) 3-smooth simple-denominators (Ohtsuki/Habiro factorial normalization); (3) super-exponentially DIVERGENT (radius → 0): root test rises without plateau, C=0.0617>0 in log|dₖ|=A+Bk+C·k·log k (super-exp ≫ geometric) — the SAME resurgent family as the κ-tower (q-Gevrey at q₀, corpus alien-calculus audit); the earlier 'convergent ρ≈0.143' was a finite-n shadow (corrected 2026-07-12); (4) no P-finite recurrence (order≤3 deg≤4; ORD-43 rules out order≤4 deg≤5); (5) no finite singularity near 0.143 (corroborates radius → 0). No elementary closed form at 15–27 terms. Scope-(a); no wiring.",
   "data": {
-    "ORD": 31,
-    "n_terms": 15,
+    "ORD": 43,
+    "n_terms": 21,
     "d_k_exact": {
       "1": "1/8 - sqrt(3)",
       "2": "-97/6 + 5*sqrt(3)/288",
@@ -77,7 +77,13 @@
       "12": "-2045407964754019399/3013270470 + 72384615283131212011594417541*sqrt(3)/213767192353964450088222720000",
       "13": "-11486897375649131512*sqrt(3)/4519905705 - 345590592191476741494434438376971/303160745520167765579661312000000",
       "14": "-55623507784289532287/1937102445 + 80765125035221041718170841662391441*sqrt(3)/62426860717512946288163857367040000",
-      "15": "-13248166827580991437814*sqrt(3)/122037454035 - 11266477750889952098998893087143499014329/2534530545131025619299452609101824000000"
+      "15": "-13248166827580991437814*sqrt(3)/122037454035 - 11266477750889952098998893087143499014329/2534530545131025619299452609101824000000",
+      "16": "-284755351614174670666627/230127770466 + 217733576838271788915381155488230347609349931*sqrt(3)/42428041325493368867072836676364533760000000",
+      "17": "-56980922453053435321481587*sqrt(3)/12081707949465 - 178183656548492351542191064655663168330502603883/9956447031049110560806425673386877255680000000",
+      "18": "-7061468935087003144886977781/130482445854222 + 40172286738048318620159201295854444423826235578744113*sqrt(3)/1919403858645647533912262741315522197349990400000000",
+      "19": "-2640915630008871774236150450932*sqrt(3)/12722038470786645 - 125828018099758350644621386004571864895404250852536345179/1704430626477335010114089314288183711246791475200000000",
+      "20": "-91410624429106582212624935850776/38166115412359935 + 440593790964277399693041140851451634808930039127225290012153*sqrt(3)/5051932376878820969978160727550176520135489932492800000000",
+      "21": "-3171617245859442783473208273948661*sqrt(3)/343495038711239415 - 4208403526870786317227595837937505051989898501512923404176160491/13557549433223890457614118607025564624945423891562496000000000"
     },
     "a_k_rational": {
       "1": "1/8",
@@ -94,7 +100,13 @@
       "12": "-2045407964754019399/3013270470",
       "13": "-345590592191476741494434438376971/303160745520167765579661312000000",
       "14": "-55623507784289532287/1937102445",
-      "15": "-11266477750889952098998893087143499014329/2534530545131025619299452609101824000000"
+      "15": "-11266477750889952098998893087143499014329/2534530545131025619299452609101824000000",
+      "16": "-284755351614174670666627/230127770466",
+      "17": "-178183656548492351542191064655663168330502603883/9956447031049110560806425673386877255680000000",
+      "18": "-7061468935087003144886977781/130482445854222",
+      "19": "-125828018099758350644621386004571864895404250852536345179/1704430626477335010114089314288183711246791475200000000",
+      "20": "-91410624429106582212624935850776/38166115412359935",
+      "21": "-4208403526870786317227595837937505051989898501512923404176160491/13557549433223890457614118607025564624945423891562496000000000"
     },
     "b_k_sqrt3_coeff": {
       "1": "-1",
@@ -111,14 +123,22 @@
       "12": "72384615283131212011594417541/213767192353964450088222720000",
       "13": "-11486897375649131512/4519905705",
       "14": "80765125035221041718170841662391441/62426860717512946288163857367040000",
-      "15": "-13248166827580991437814/122037454035"
+      "15": "-13248166827580991437814/122037454035",
+      "16": "217733576838271788915381155488230347609349931/42428041325493368867072836676364533760000000",
+      "17": "-56980922453053435321481587/12081707949465",
+      "18": "40172286738048318620159201295854444423826235578744113/1919403858645647533912262741315522197349990400000000",
+      "19": "-2640915630008871774236150450932/12722038470786645",
+      "20": "440593790964277399693041140851451634808930039127225290012153/5051932376878820969978160727550176520135489932492800000000",
+      "21": "-3171617245859442783473208273948661/343495038711239415"
     },
     "parity_structure_holds": true,
     "simple_denominator_primes": [
       2,
       3,
       5,
-      7
+      7,
+      11,
+      13
     ],
     "simple_denominator_3adic_valuations": [
       0,
@@ -135,22 +155,47 @@
       16,
       17,
       18,
-      20
+      20,
+      21,
+      22,
+      25,
+      26,
+      27,
+      29
     ],
-    "smooth_denominators_le7": true,
-    "domb_sykes_radius_rho": "0.143796",
-    "domb_sykes_exponent_alpha": "0.155712",
-    "convergent_positive_radius": true,
-    "contrast_kappa_tower": "κ-tower is divergent Gevrey-1 (radius 0); D-ladder is convergent",
+    "factorial_smooth_denominators": true,
+    "root_test_rises_without_plateau": true,
+    "root_test_values": {
+      "4": "4.3720795",
+      "5": "4.4766619",
+      "6": "4.7190352",
+      "7": "4.9015857",
+      "8": "5.0307341",
+      "9": "5.1659291",
+      "10": "5.2665782",
+      "11": "5.3628855",
+      "12": "5.4447568",
+      "13": "5.5184613",
+      "14": "5.5847991",
+      "15": "5.6443623",
+      "16": "5.6987739",
+      "17": "5.7482934",
+      "18": "5.7938",
+      "19": "5.8356945",
+      "20": "5.8744327",
+      "21": "5.9103783"
+    },
+    "superexp_C_klogk_coeff": "0.061737",
+    "superexp_vs_geometric_ssr_ratio": "0.00280188",
+    "super_exponentially_divergent": true,
+    "contrast_kappa_tower": "CORRECTED 2026-07-12: D-ladder is super-exponentially divergent (radius→0), SAME resurgent family as the divergent κ-tower — NOT a convergent contrast. The earlier 'convergent ρ≈0.143' was a finite-n shadow.",
     "no_low_order_p_recurrence": true,
-    "nearest_real_special_value_u_QAplus": "0.77492262",
-    "rho_over_sqrt3_over_12": "0.996248",
-    "rho_over_one_seventh": "1.00657",
-    "verdict": "D-ladder generating function D(ũ)=Σd_k ũ^k (d₁…d_15 exact ℚ(√3)): [1] exact parity structure (odd k → √3-part small-denominator, even k → rational part); [2] simple-denominator sequence is 3-smooth (Ohtsuki/Habiro factorial normalization; primes [2, 3, 5, 7]); [3] CONVERGENT with radius ρ≈0.1438 and weak branch-point exponent α≈0.156 — structurally distinct from the DIVERGENT Gevrey-1 κ-tower (routes 1); [4] no P-finite recurrence (order≤3, deg≤4); [5] the branch point is a complex singularity of log R(q(ũ)), not a simple real special value; ρ is within ~1% of √3/12 and 1/7 but NOT identified (anti-fit). No closed form emerges at 15 terms. Scope-(a); no c_k wired; no fit.",
-    "scope": "(a) — exact ℚ(√3) ladder + numerical singularity analysis; no wiring",
+    "no_finite_singularity_near_spurious_rho": "0.77492262",
+    "verdict": "D-ladder generating function D(ũ)=Σd_k ũ^k (d₁…d_21 exact ℚ(√3)): [1] exact parity structure (odd k → √3-part small-denominator, even k → rational part); [2] simple-denominator sequence is 3-smooth (Ohtsuki/Habiro factorial normalization; primes [2, 3, 5, 7, 11, 13]); [3] super-exponentially DIVERGENT (radius → 0): root test rises without plateau (→5.91 at k=21) and C=0.0617>0 in log|dₖ|=A+Bk+C·k·log k (SSR 0.0028× the geometric law) — the SAME resurgent family as the κ-tower (q-Gevrey at q₀, corpus alien-calculus audit); the earlier 'convergent ρ≈0.143' was a finite-n shadow; [4] no P-finite recurrence (order≤3, deg≤4); [5] no closed form emerges at 21 terms. Scope-(a); no c_k wired; no fit.",
+    "scope": "(a) — exact ℚ(√3) ladder + corpus growth-class diagnostic; no wiring",
     "caveats": [
-      "radius/exponent are Domb–Sykes extrapolations; small exponent (~0.1) converges slowly — ρ known to ~1%, α to a factor.",
-      "ρ within ~1% of √3/12 and 1/7 is reported as data, NOT an identification.",
+      "C (the k·log k coefficient) drifts down with the fit window (0.077→0.048, k up to 27) ⇒ q-Gevrey at q₀, not a fixed classical Gevrey index; report 'super-exponentially divergent, C≈0.05–0.08 shadow', not a pinned index.",
+      "corrects PR #3716's 'convergent radius 0.143' finite-n shadow; corpus-corroborated (Lean-backed alien-calculus Gevrey/q-Gevrey audit).",
       "no c_k wired; no fit; no tier change."
     ]
   }
