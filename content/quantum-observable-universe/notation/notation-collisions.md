@@ -108,6 +108,35 @@ These are genuine functors (they act on morphisms). What is **not** a functor is
 $$ B_{\mathrm{sym}} / B_{\mathrm{lin}} \;\approx\; q_0^{\,5(2A-1)}, $$
 i.e. the $\Delta_\lambda = B_{\mathrm{AME}}/B_{\mathrm{lin}}$ residual. We always subscript $B$. A bare $B$ in prose denotes the production $B_{\mathrm{lin}}$.
 
+## Mass: endomorphism $\mathcal{M}$ vs element $\Phi_{\mathrm{mass}}$ vs functional $\mathfrak{m}$
+
+The phrase "mass endomorphism" names **three** distinct objects across the mass
+chapter. They must not be conflated: only the first is an endomorphism, only the
+third is the observable. (Trace + literature audit:
+[`2026-07-12-mass-endomorphism-naming-vs-type.md`](../../../docs/audits/2026-07-12-mass-endomorphism-naming-vs-type.md).)
+
+| Symbol | Object | Type | Name to use |
+|---|---|---|---|
+| $\mathcal{M}(K)$ | the **endomorphism** of the knot object | $\mathrm{End}_{\mathbf{C}}(X_K)$, i.e. $X_K \to X_K$ | **mass endomorphism** |
+| $\Phi_{\mathrm{mass}}(\beta)$ | the **Hecke mass element** | an element of $H_n(R, q)$ | **Hecke mass element** (never "endomorphism") |
+| $\mathfrak{m}(\varrho)$ | the observable mass | a scalar $\lvert\mathrm{tr}_M(\rho(\beta))\rvert\cdot\mathrm{VolDensity} \in \mathbb{R}$ | **categorical mass functional** |
+
+- **Reserve "mass endomorphism" for $\mathcal{M}(K)$.** It is a genuine
+  endomorphism only in the Reshetikhin–Turaev **long-knot (1–1 tangle)** sense
+  \cite{reshetikhin1991, turaev2010}: a long knot is $V \to V$; **closing** it
+  (Markov trace) lands in $\mathrm{End}_{\mathbf{C}}(\mathbf{1}) = k$, a scalar.
+- **$\Phi_{\mathrm{mass}}(\beta) \in H_n(R, q)$ is an element, not a map.** It
+  *is* an endomorphism of $V^{\otimes n}$ via $q$-Schur–Weyl
+  $H_n(q) \cong \mathrm{End}_{U_q\mathfrak{sl}_N}(V^{\otimes n})$
+  \cite{jimbo1986}, or via the faithful left-regular map
+  $a \mapsto L_a \in \mathrm{End}_R(H_n)$ \cite{kock2004} — but say which; do not
+  write "$\Phi_{\mathrm{mass}}$ is the mass endomorphism" bare.
+- **$\mathfrak{m}$ is a functional, not an endomorphism.** The Markov trace
+  $\mathrm{tr}_M \colon H_n \to R$ is a trace functional \cite{jones1987,
+  geck-pfeiffer2000}; the modulus collapses $\mathcal{M}$ to a number. Note
+  $\mathrm{tr}_M(a) \neq \mathrm{tr}(L_a)$: the Markov trace is the *quantum*
+  trace, not the regular-representation trace.
+
 ## Quantum dilogarithm: $\Phi_q$ (compact) vs $\Phi_b$ (Faddeev non-compact)
 
 Two distinct functions were historically both called "Faddeev $\Phi_q$",
