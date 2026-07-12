@@ -333,7 +333,28 @@ statement") but `phi-q-resums-trace-series.md` and
 scratch. Wire both; the "Φ_q factors through Markov traces" argument then
 lives in one place.
 
-## 5. Prioritized cross-axis shortlist
+## 5. Prioritized cross-axis shortlist — EXECUTED (owner selected "all", 2026-07-12)
+
+Execution results, same-day, on this branch:
+
+| # | item | result |
+|---|---|---|
+| 1 | G1 | **DONE** — [`FigureEightVolumeLiterature.lean`](../../content/quantum-observable-universe/lean/QOU/Knot/FigureEightVolumeLiterature.lean): cited instance (sorry = queued bean-el8w formalization, `-- Ref: [andersen-hansen2006]`), sorry-free glue, unconditional `kashaev_saddle_volume`. lean-direct EXIT=0 |
+| 2 | C1 | **DONE — strongest numeric result**: conformal-mapped dlog-Padé stabilizes A = 0.65684, range [0.634, 0.683]; phase = 0 exactly (real-positive); **Vol(4₁)/π = 0.6461 is the only candidate within spread (1.7%)** — consistent-within-spread, not an identification; 2/e excluded; sibling 0.6177 and Richardson 0.6937 downgraded to suggestive-only. [`qbeta_borel_conformal_pade_probe.py`](../../computations/probes/qbeta_borel_conformal_pade_probe.py) |
+| 3 | C2 | **DONE — blocker removed as predicted**: b_m = c_m/m! bounded (max ratio 1.364); κ₁, κ₂ PSLQ-recovered within entropy budget as validated controls where the raw-coefficient predecessor found nothing; frontier m ≥ 5 is trust-limited (extraction digits), not growth-limited. [`qbeta_qsqrt3_borel_pslq_probe.py`](../../computations/probes/qbeta_qsqrt3_borel_pslq_probe.py) |
+| 4 | E1+E2 | **DONE** — [`def:ecalle-borel-resummation`](../../content/quantum-observable-universe/appendix-surreals-archimedean/ecalle-borel-resummation.md) (Lean sibling generic-R, proved, EXIT=0), register Table 10 rows, three-Borels collision entry, dangling mentions wired. Pipeline validate 0 issues. Flag: `q-beta-c3-continuum-geometry` is an orphan md+lean (no .ts) — follow-up to regularize |
+| 5 | C4-note | **DONE** — channel-attribution note in `qbeta_ck_closed_form_candidate_fits_probe.py` docstring |
+| 6 | G2+C3 | **DONE — CONSISTENT**: one-instanton large-order form + C1's A predicts κ₅ ∈ [83.76, 85.26] (obs 84.6422 inside, −0.13%) and κ₆ ∈ [658.3, 689.6] (obs 676.947 inside, −0.38%); inverse-implied A = 0.65192 inside C1's range; β = α identity assert-proved. PSLQ gate not met (~2.9-digit gap) — exact κ₅ still needs bridge arithmetic or ≥17-digit extraction. [`qbeta_kappa_large_order_bridge_probe.py`](../../computations/probes/qbeta_kappa_large_order_bridge_probe.py) |
+| 7 | K1–K4 | executed this branch (fan-ins; see commit) |
+| 8 | G5 | **DONE** — [`kashaev-surreal.md`](../../content/quantum-observable-universe/appendix-surreals/kashaev-surreal.md): st-row named as Écalle median resummation, cites ecalle1981 |
+
+Cross-item synthesis: C1 + G2+C3 together give a self-consistent
+one-instanton resurgent picture of the even channel at n ≤ 6 — a
+stabilized real-positive Borel singularity compatible with Vol(4₁)/π,
+whose large-order shadow reproduces the two unidentified rungs. All
+scope-(a); nothing wired to production; no c_k value proposed.
+
+### Original shortlist (pre-execution)
 
 | # | Action | Axis | Cost | What it buys |
 |---|---|---|---|---|
