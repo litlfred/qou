@@ -1,5 +1,5 @@
 The torus knot $T_{2,n}$ is the closure of $\sigma^n$ in $H_2(q)$.
-Its crossing coefficients $(c_n, d_n)$ in the $2 \times 2$
+Its **crossing coefficients** $(c_n, d_n)$ in the $2 \times 2$
 transfer matrix satisfy the **Chebyshev recurrence**:
 
 $$
