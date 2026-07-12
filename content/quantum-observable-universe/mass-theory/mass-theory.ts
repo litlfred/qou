@@ -260,6 +260,9 @@ export default chapter({
             "two-row-stratum",
             "he4-channel-active-set",
             "he4-two-row-dominance",
+            // Ledger §5 orphan integration (2026-07-12): LR-fusion support
+            // bound conjecture explaining which Wedderburn blocks vanish.
+            "active-set-trace-concentration",
             "markov-trace-frobenius-selection",
             "markov-trace-frobenius-selection-proof",
             // Re-homed orphans: the min-Frobenius-norm collapse T_β = S·1
