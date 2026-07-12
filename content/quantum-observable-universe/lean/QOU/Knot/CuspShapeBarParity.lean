@@ -1,4 +1,5 @@
 import QOU.QBeta.BarParityZeta4Swap
+import QOU.QBeta.CuspShapeBarParity
 
 /-!
 # Cusp-shape bar-parity: the figure-eight modulus split `𝔙 = Vol + i·CS`
@@ -49,27 +50,18 @@ open QOU.QBeta.BarParityZeta4Swap
 
 variable {R : Type*} [Field R]
 
-/-- From `Φ₆(ω) = 0` (`ω² − ω + 1 = 0`), the bar-involution image is
-`ω⁻¹ = 1 − ω`.  (No `ω ≠ 0` hypothesis needed: `ω·(1−ω) = 1` gives the inverse.) -/
-theorem cusp_inv {ω : R} (hω : ω ^ 2 - ω + 1 = 0) : ω⁻¹ = 1 - ω := by
-  have hmul : ω * (1 - ω) = 1 := by linear_combination -hω
-  exact inv_eq_of_mul_eq_one_right hmul
+/-! ## Core cusp-shape lemmas — canonical home is `QOU.QBeta.CuspShapeBarParity`
 
-/-- **Bar-even (Vol) side is rational:** `barEven ω = 1` (`= 2cos(π/3)`).
-The Volume normalisation of the figure-eight cusp shape. -/
-theorem cusp_barEven {ω : R} (hω : ω ^ 2 - ω + 1 = 0) : barEven ω = 1 := by
-  rw [barEven, cusp_inv hω]; ring
-
-/-- **Bar-odd (CS) side squares to `−3`:** `barOdd ω ^ 2 = −3`, the `√−3` cusp
-modulus of the figure-eight (`(2i·sin(π/3))² = −3`).  The Chern–Simons /
-`Im 𝔙` component of the complex volume. -/
-theorem cusp_barOdd_sq {ω : R} (hω : ω ^ 2 - ω + 1 = 0) : barOdd ω ^ 2 = -3 := by
-  rw [barOdd, cusp_inv hω]
-  linear_combination (4 : R) * hω
-
-/-- The bar-odd cusp shape is `2ω − 1` explicitly (the antisymmetric part). -/
-theorem cusp_barOdd_eq {ω : R} (hω : ω ^ 2 - ω + 1 = 0) : barOdd ω = 2 * ω - 1 := by
-  rw [barOdd, cusp_inv hω]; ring
+The four core figure-eight cusp lemmas (`inv`, `barEven = 1`, `barOdd ² = −3`,
+`barOdd = 2ω − 1`) are proved canonically over the `IsCuspShape` predicate in
+[`QOU.QBeta.CuspShapeBarParity`](../QBeta/CuspShapeBarParity.lean)
+(`cuspShape_inv` / `cuspShape_barEven` / `cuspShape_barOdd_sq` / `cuspShape_barOdd`),
+which additionally proves `cuspShape_cube` / `_sixth` / `_reconstruct` and the golden
+shape. This module previously duplicated those four proofs; they are removed and the
+one downstream use below (`cusp_barParity_split`) delegates to the canonical lemmas.
+What remains genuinely new here is the **boost / rapidity-addition** structure
+(`holonomy_hyperbola`, `barEven_mul`, `barOdd_mul`), which the canonical module does
+not carry (`barEven_mul` is consumed by `mass-theory/deuteron-fusion-frame.lean`). -/
 
 /-- **Boost hyperbola.** The meridian holonomy `q` (any nonzero field element)
 satisfies `barEven q ² − barOdd q ² = 4` — the `cosh² − sinh² = 1` identity.
@@ -100,6 +92,7 @@ theorem barOdd_mul (x y : R) :
 `𝔙 = Vol + i·CS` grading of the complex volume, realised algebraically. -/
 theorem cusp_barParity_split {ω : R} (hω : ω ^ 2 - ω + 1 = 0) :
     barEven ω = 1 ∧ barOdd ω ^ 2 = -3 :=
-  ⟨cusp_barEven hω, cusp_barOdd_sq hω⟩
+  ⟨QOU.QBeta.CuspShapeBarParity.cuspShape_barEven hω,
+   QOU.QBeta.CuspShapeBarParity.cuspShape_barOdd_sq hω⟩
 
 end QOU.Knot.CuspShapeBarParity
