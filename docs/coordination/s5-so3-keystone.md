@@ -70,6 +70,22 @@ See the 2026-06-22 update banner below.
 | q-deformed projector-weight as the 210 ppb mechanism | ❌ refuted (#2584: `δ=0.2075` non-null but 6–7 orders too large, bar-mixed) |
 | **OPEN:** `W_λ` geometric origin — colored Σ(2,3,5) WRT / `E_q(2)` q-Bessel q-series (**NOT** a compact Sasakian; see the 2026-06-22 banner) | ⛔ q-series (owner-gated) |
 
+> **🟧 Frontier sharpening (2026-07-12, #3652 three-vector tranche).** The open object is now
+> pinned to a **twist-free / conjugation-symmetric** amplitude, and two routes are pruned:
+> - **Modular T-matrix `θ_λ = q^{c(λ)}` is now a Lean object** with the proved chirality law
+>   `θ_{λ′} = θ_λ⁻¹` ([`KeystoneModularTwist.lean`](../../content/quantum-observable-universe/lean/QOU/BraidKnot/KeystoneModularTwist.lean); the signed content-flip `c(λ′)=−c(λ)`, corpus had only the squared version). This is the **obstruction**: any framed colored-WRT weight `S_{0λ}·θ_λ^{f}` has `W_λ/W_{λ′}=θ_λ^{2f}≠1` while `d_q(λ)=d_q(λ′)` — the twist breaks a symmetry `d_q` has (vector 2, scope-(b) on that narrow hypothesis).
+> - **q-Bessel `latticePt` structural index maps refuted** (vector 1, scope-(a)).
+> - **The framing-cancellation reduces to the archimedean-continuation problem.** The only way to
+>   kill `θ_λ^{f}` is in the squared modulus `|S_{0λ}θ_λ^{f}|²`, which needs `|θ_λ|=1` ⟺ `|q|=1`
+>   (fibre-level root of unity, where `θ` is a phase). But there `|S_{0λ}θ_λ^f|² = S_{0λ}² = W_λ`
+>   is the **Verlinde-measure definition** — so the genuine open content is the **archimedean
+>   continuation** from the fibre root-of-unity to the substrate `q₀>1` (growth regime, `|θ_λ|≠1`).
+>   That is *exactly* `bwS0_eq_hecke` (owner-gated), read through AGENTS.md's fibre-vs-observable-`q`
+>   distinction: the RT/WRT amplitude lives at the fibre (root of unity, framing cancels in `|·|²`),
+>   the mass observable is its archimedean evaluation at real `q₀`. **Do not re-chase
+>   framing-cancellation as if it were new tractable ground — it is the archimedean-continuation
+>   restatement of the standing open object.** Synthesis: [`2026-07-12-keystone-wlambda-construction-three-vectors.md`](../audits/2026-07-12-keystone-wlambda-construction-three-vectors.md).
+
 **The single open object.** Does the SU(3)/SO(3) (Wu-manifold) Sasakian with spatial-SO(3)_colour Reeb
 admit a structure whose S¹-equivariant index reproduces the Ocneanu weights `W_λ = d_q(λ)²/[n]_q!`?
 (dim 5 odd ✓; χ(Wu)=0 ✓ — Boothby–Wang necessary conditions met, not obstructed at that level.) The
@@ -124,6 +140,8 @@ is its *geometric origin*.
 
 | Date | PR | What landed |
 |---|---|---|
+| 2026-07-12 | #3652 | **Geometric `W_λ` three-vector tranche (gate open), no-fit.** (1) q-Bessel `latticePt` structural-index search — REFUTED scope-(a). (2) colored-WRT per-block vs `d_q` — PARTIAL/FAIL scope-(b) narrow: the framed weight `S_{0λ}·θ_λ^{f}` breaks `d_q`'s conjugation symmetry (`θ_{λ′}=θ_λ⁻¹`), only tautological `f=0` proportional. (3) **PROVED sorry-free:** the modular T-matrix `θ_λ=q^{c(λ)}` + chirality law `θ_{λ′}=θ_λ⁻¹` + the signed content-flip `c(λ′)=−c(λ)` (`KeystoneModularTwist.lean`; corpus had only the squared version). **Interlock:** v3 proves the invariant that kills v2. Net: any `W_λ` carrier must be twist-free; framing-cancellation reduces to the archimedean-continuation restatement of `bwS0_eq_hecke` (frontier-sharpening banner above). ([synthesis](../audits/2026-07-12-keystone-wlambda-construction-three-vectors.md)) |
+| 2026-07-12 | #3640 | **`d_q((n−1,1)) = [n−1]_q` proved for ALL n** (`KeystoneStandardRepQDim.lean`, generalizes the n=5-only `shape_41`). Hardens the Step-1 WRT-gate refutation (SU(2) `[2j+1]_q` = `d_q` only on the standard rep) from numeric-at-3,4,5 to a theorem. |
 | 2026-07-11 | #3594 | **SYT de-dup + RSK-target unification + Identity-I status correction.** #3580's `QOU/BraidKnot/YoungTableauStandard.lean` had duplicated the canonical `QOU.Mathlib.StandardYoungTableau` (#2871) — grepped Mathlib but not the QOU tree. Refactored to reuse `numStandardYoungTableaux`/`partitionShape`/`dimSYT`; kept only the genuinely-new skew type + C8 corollary. The three C8 sorries (`branching_two_one`/`skew_le_straight`/`sum_dimSYT_eq_involution`) are now sibling targets of the canonical `RSKBurnsideHolds` (Identity-I axiom (i)) — **both keystone frontiers share one RSK engine** (P1–P5). Also corrected the stale "Identity I held as `def twoM`" note (it is conditional-proved #2709 + unconditional n=3..12 #2760). ([dedup audit](../audits/2026-07-11-keystone-syt-dedup-rsk-unification.md)) |
 | 2026-07-11 | #3580 | **C8 super-exp lower bound PROVED (arithmetic core) + Tier-1 SYT infra.** `KeystoneC8SuperExpBound.lean`: `w_std(k) ≥ k!/(9·I(k))` via Lean-proved Cauchy–Schwarz (`weighted_cs`) + concrete `involutionNumber` + the sorry-free reduction `c8_lower_bound`; only the two SYT identities (A)/(C) carried. `c8_superexp` corollary unconditional modulo three cited RSK sorries. lean-direct EXIT 0. Owner "open s5-so3 gate". No fit, no `W_λ` construction. |
 | 2026-07-11 | #3548 / [C8 note](../audits/2026-07-11-keystone-wlambda-superexp-necessary-condition.md) | **New necessary condition C8 (falsifiable, no fit) + μ/e↔binding cross-link:** the multiplicity-weighted branched sum `w_std(k) = Σ_λ W_λ·mult_(2,1)(λ↓H_3) = E_Planch[f^{λ/(2,1)}]` must grow **super-exponentially** (ratios `1.38→2.88` strictly increasing over `k=3..10`, `w_std/2^k` increasing tail → factorial class; exact at q=1, q₀ preserves class). **Independent of C1/C2/C6** (pointwise/unweighted) and the defect cubic (constrains `1−Z`, the *unweighted* sum) — it constrains how `W_λ` distributes over multiplicity-heavy blocks, which the pointwise gates leave free. Any WRT(S³/2I)/`E_q(2)` q-Bessel candidate must pass it. Cross-link: on the binding side this is the provable core of a **GAP-A-3** result — inverting the super-exp `w_std` vs extensive `B∝A` forces the brane-tower **level-selection `k(A)` logarithmic** (`k∝A`/`k∝`bonds falsified scale-free, R²=0.67/0.49 vs log-type 0.88). So one geometric `W_λ` must jointly meet the μ/e gates *and* super-exp growth. Lean target: super-exp lower bound on `E_Planch[f^{λ/(2,1)}]`. Verified exact k≤10; not a closure. |
