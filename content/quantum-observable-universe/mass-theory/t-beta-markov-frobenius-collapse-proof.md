@@ -1,4 +1,4 @@
-## Proof — Lagrangian / completing-the-square argument
+## Proof — completing the square
 
 Let $X \in H$ satisfy the constraint $\mathrm{tr}_M(X) = S$.  Write the
 decomposition $X = (X - S \cdot 1) + S \cdot 1$ and expand the
@@ -10,10 +10,10 @@ $$
                 + 2 S \, \mathrm{tr}_M(X) - S^2 \, \mathrm{tr}_M(1).
 $$
 
-(This is the algebraic identity $X X = (X - S)(X - S) + 2 S X - S^2$
-inside any commutative ring, lifted to $H$ via the linearity of
-$\mathrm{tr}_M$.  See [`completing_the_square_substrate`](markov-trace-frobenius-selection.lean#L139)
-for the substrate-model statement.)
+(The scalar $S \cdot 1$ is central in $H$, so the square expands as
+$(X - S \cdot 1)(X - S \cdot 1) = X \cdot X - 2 S \cdot X + S^2 \cdot 1$
+even though $H$ is non-commutative; applying the linearity of
+$\mathrm{tr}_M$ term by term and rearranging gives the identity above.)
 
 Substituting the Markov normalisation $\mathrm{tr}_M(1) = 1$ and the
 constraint $\mathrm{tr}_M(X) = S$:
