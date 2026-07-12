@@ -1,7 +1,5 @@
 Let $(\mathbf{C}, \varTheta, G, \mathcal{S})$ be a QOU, let $\mathcal{S}_p \cong \mathbb{P}^1(\mathbb{C})$ be the exceptional divisor at a brane point $p$, and let $\mathcal{R}_p$ be the Reeb bundle over $\mathcal{S}_p$.
 
-In the QOU, the formal variable $z$ of the vertex operator algebra is the affine coordinate $z = v_1/v_2$ on the projective line $\mathcal{S}_p$. This matches the contact affine coordinate $Z = \alpha_H / \iota_\xi\alpha$ restricted to the fibre $\mathcal{S}_p$. On the affine chart $v_2 \neq 0$, $z$ generates $\mathbb{C}[z]$.
-
 The **vertex operator algebra** at $p$ is the triple $(V, Y, |0\rangle)$. The $\mathbb{Z}_{\geq 0}$-graded state space is the brane tower:
 
 $$

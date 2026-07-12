@@ -80,6 +80,8 @@ export default chapter({
             "homological-shell-condensation",
             "homological-shell-condensation-interpretation",
             "qou-motivic-galois-instance",
+            "qou-motivic-galois-instance-verification",
+            "qou-motivic-galois-instance-per-cell",
           ],
         }),
       ],
