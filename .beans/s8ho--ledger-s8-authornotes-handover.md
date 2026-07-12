@@ -1,11 +1,25 @@
 # s8ho
 title: 'HANDOVER: ledger §8 authorNotes drain — agent died mid-A3, WIP preserved on branch'
-status: in-progress
+status: completed
 type: task
 priority: high
 created_at: 2026-07-12T21:35:00Z
-updated_at: 2026-07-12T21:35:00Z
+updated_at: 2026-07-12T22:45:00Z
 ---
+
+## Takeover completion (2026-07-12, PR #3714, branch claude/pr-3711-handover-hpgra3)
+
+- A1/A2 WIP edits reviewed and kept (all 3 cross-ref labels verified in corpus).
+- A3 done: 5 blob URLs → main; `cyclotomic-strand-doubling.md` had moved
+  braids-and-knots/ → mass-theory/ (path fixed).
+- B swept: row 182 was the ONLY mechanical §4d migration (lepton banner
+  migrated; c3 body re-scoped per its own CORRECTION banner). NEW FINDING:
+  `q-beta-c3-continuum-geometry` is an orphan (.md+.lean, no .ts) — §4d
+  blocked on integrate-or-remove. All other B rows are Lean-mention
+  entangled with argument → owner batches (sweep note added to the ledger).
+- C done: one-line proposals appended to all 7 structural rows.
+- PR #3711 superseded by #3714. §6 owner picks (ϴ→ϑ, κ→r, 0-indexed
+  braids) still awaiting the owner's word.
 
 ## Context
 

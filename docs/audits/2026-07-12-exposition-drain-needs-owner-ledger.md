@@ -164,6 +164,17 @@ content.
 
 ### Lean-in-proof-body / lean-mention entangled with argument
 
+> **Mechanical-sweep result (2026-07-12, PR #3714).** All files below were
+> scanned for dated status/CORRECTION prose banners (the mechanical §4d
+> class). Only the `lepton-mass-tower-canonical` / `q-beta-c3-continuum-geometry`
+> row was mechanical — drained in PR #3714 (see that row). The single other
+> blockquote found (`os-reflection-positivity-from-reeb.md`) is a
+> mathematical Axiom statement, i.e. scholarly content, not apparatus.
+> Every remaining row entangles the Lean mention with the argument itself
+> (proof bodies, §3b carrier documentation, honesty-gap tables, rigor-boundary
+> content), so each needs a per-block owner disposition — approvable in
+> batches per the disposition guide, but none is a mechanical migration.
+
 | File | Defect | Source |
 |---|---|---|
 | `appendix-surreals/kashaev-surreal.md`, `spectral-normal-form.md`, `os-reflection-positivity-from-reeb.md`, `q-collatz-interpretation.md`, `hoefsmit-is-surreal-construction-proof.md`, `surreal-appendix-conclusion.md`, `bigbang-heatdeath.md` | Lean-in-prose inside conjecture proof-strategy / proof bodies where the formalizability discussion is arguably scholarly content in a speculative appendix. | [#3589](https://github.com/litlfred/qou/pull/3589) |
