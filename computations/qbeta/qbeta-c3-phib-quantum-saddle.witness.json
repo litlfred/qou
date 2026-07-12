@@ -1,0 +1,50 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-12T11:29:41.890596+00:00",
+  "commitSha": "b89c0d1bcbf9c587e3b6fbcecb559d62f917d2b2",
+  "assertions": [
+    {
+      "name": "v1_g_matches_dL",
+      "computed": 7.463837006313696e-38,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-12,
+      "source": "term-wise product derivative == numeric dL/dphi"
+    },
+    {
+      "name": "v2_reduction_consistent",
+      "computed": 9.124924642758281e-73,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-12,
+      "source": "L(phi+2pi i) == L(phi) - log(1+e^((phi+i pi)/b^2))"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 1332,
+  "computation": "qbeta-c3-phib-quantum-saddle",
+  "scriptFile": "qbeta_c3_phib_quantum_saddle_probe.py",
+  "scriptHash": "22e3cd87c410",
+  "scriptCommitSha": "b89c0d1bcbf9c587e3b6fbcecb559d62f917d2b2",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
+  },
+  "description": "C3 candidate (literature survey): finite-gamma quantum saddle of Hikami's 4_1 state integral (math/0604094 eq 4.2) at the substrate b-map; derived m_eff(q0) from the inverse gluing quadratic; run through the falsification kit (G1 values / G3 derivative / G4 sign). Convention-gated by V1-V3 before substrate evaluation. Derived candidate, no fit; no c_k wired.",
+  "contentBlock": "prop:phi-b-unitary-bar-odd",
+  "data": {
+    "branch_prescription_blocker": "Saddle arguments at |Im phi| ~ 4pi/3 leave the fundamental strip; periodic-series vs quasi-period continuations differ by a winding factor of size O(2pi^2/t) ~ 190 at substrate gamma = i t/2. The correct choice is the state-integral contour prescription (Hikami 4.2 contour deformation) — the argument-identification question in sharpened form. Substrate saddle stage not run (no convention guessing).",
+    "G2_scaling_prognosis": "u=0 quantum-saddle displacement is O(|gamma|) = t/2 ~ 0.052 => |u_h| = O(0.05-0.1) < floor 0.2135: the u=0 C3 candidate fails the feasibility gate by ~2-4x on scaling alone, either prescription. Live continuation: the u/=0 boundary-parametrized state integral (meridian as external datum) and C2 (Murakami RoU-deviation).",
+    "verdict": "STAGE-0 SCAFFOLD VALIDATED, SADDLE STAGE BLOCKED (honestly): the phi-space evaluator (product form + dual quasi-period reduction) passes V1/V2; the finite-gamma saddle stage requires the state-integral branch/contour prescription outside the fundamental strip — a sharpened form of the argument-identification open problem, not a numerics gap. G2 scaling prognosis: the u=0 candidate is ~2-4x under the feasibility floor. No fit; nothing wired."
+  }
+}
