@@ -35,6 +35,15 @@ to higher order (0.0548) AND the exact bar-parity mechanism (odd rungs → Im,
 capstone; nothing here is a fit or a wiring.
 
 Ohtsuki κ₁..κ₄ values cited from #3628 (`qbeta_ohtsuki_higher_rungs.py`).
+
+Superseded-mechanism note (merged #3692): the bar-parity mechanism demonstrated
+numerically here (odd rungs → Im 𝔙, even rungs → Re 𝔙) is now **Lean-proved
+sorry-free** in `OhtsukiTowerBarParity.lean` (`even_rung_real`,
+`odd_rung_imaginary`), and the full divergent tower is **Borel–Padé resummed** to
+the exact smooth Im 𝔙 = 0.05545 in `qbeta_c3_borel_pade_resummation_probe.py`
+(which cites this probe's κ₁..κ₄ truncation value 0.05481 as its baseline). This
+probe stands as the finite-truncation-order scale computation and the #3628
+coordination point; #3692 carries the proof + resummation.
 """
 from __future__ import annotations
 
