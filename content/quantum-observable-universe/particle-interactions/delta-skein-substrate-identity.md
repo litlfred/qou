@@ -7,11 +7,11 @@ $$
   \;=\;
   \frac{\mathfrak{Q}_\beta + m_e}{m_e}
   \;-\;
-  \frac{\mathrm{Vol}(\mathcal{B}_3)}{\hbar_q^2}
-  \cdot \bigl[\lambda_{\mathrm{scale}}(\mathfrak{n}) - \lambda_{\mathrm{scale}}(\mathfrak{p})\bigr].
+  \frac{1}{m_e}
+  \bigl[\mathfrak{m}_{\mathcal{B}_3}^{(\mathfrak{n})} - \mathfrak{m}_{\mathcal{B}_3}^{(\mathfrak{p})}\bigr],
 $$
 
-If the common-scale conjecture holds, the second bracket vanishes. The identity reduces to:
+where $\mathfrak{m}_{\mathcal{B}_3}^{(B)}$ is the a-priori baryon-dependent common Borromean term of the [Borromean baryon mass formula](#conj:borromean-baryon-mass-formula). If the common-scale conjecture holds, the second bracket vanishes. The identity reduces to:
 
 $$
   \boxed{\;
@@ -44,7 +44,7 @@ At the substrate parameter $q_0 = 1.109978595554181\ldots$ (50 dps) and CAL-1 $m
 | $\mathrm{Vol}(\mathcal{B}_3)/\hbar_q^2$ at $q_0$ | $746.4179\ldots$ | substrate compute |
 | $(\mathfrak{Q}_\beta + m_e)/m_e$ at $q_0$ | $2.53388\ldots$ | CAL-3 + CAL-1 |
 | $\widetilde{\Delta S}_{\mathrm{derived}}$ | $0.0033943\ldots$ | ratio |
-| $\widetilde{\Delta S}_{\mathrm{empirical}}$ | $0.0033908\ldots$ | $\lambda_p - \lambda_n$ from CODATA $m_p$, $m_n$ |
+| $\widetilde{\Delta S}_{\mathrm{empirical}}$ | $0.0033908\ldots$ | per-baryon common-term difference implied by CODATA $m_p$, $m_n$ |
 | relative agreement | $1\,015$ ppm | — |
 
 ## Identity of the residual
@@ -52,9 +52,9 @@ At the substrate parameter $q_0 = 1.109978595554181\ldots$ (50 dps) and CAL-1 $m
 The substrate $\mathfrak{Q}_\beta$ ansatz predicts $\mathfrak{Q}_\beta(q_0) = 0.78174\ldots\;\mathrm{MeV}$ against the empirical CAL-3 value $0.78233341\ldots\;\mathrm{MeV}$—a $760$ ppm residual. The $\widetilde{\Delta S}$ relative error of $1\,015$ ppm is the same residual, dominated by:
 
 1. the symmetric $(\mathfrak{Q}_\beta+m_e)/m_e$ numerator;
-2. the common-scale conjecture $\lambda_{\mathrm{scale}}(\mathfrak{p}) - \lambda_{\mathrm{scale}}(\mathfrak{n}) = 0$.
+2. the common-scale conjecture $\mathfrak{m}_{\mathcal{B}_3}^{(\mathfrak{p})} - \mathfrak{m}_{\mathcal{B}_3}^{(\mathfrak{n})} = 0$.
 
-The 1 015 ppm agreement is consistent with the $\mathfrak{Q}_\beta$ closure precision under the common-scale hypothesis. Falsification of the common-scale conjecture requires either a direct closed-form derivation of $\lambda_{\mathrm{scale}}(\mathfrak{p}) \neq \lambda_{\mathrm{scale}}(\mathfrak{n})$ from the substrate, or a substrate-only refinement of $\mathfrak{Q}_\beta$ exposing a non-zero residual after subtraction.
+The 1 015 ppm agreement is consistent with the $\mathfrak{Q}_\beta$ closure precision under the common-scale hypothesis. Falsification of the common-scale conjecture requires either a direct closed-form derivation of $\mathfrak{m}_{\mathcal{B}_3}^{(\mathfrak{p})} \neq \mathfrak{m}_{\mathcal{B}_3}^{(\mathfrak{n})}$ from the substrate, or a substrate-only refinement of $\mathfrak{Q}_\beta$ exposing a non-zero residual after subtraction.
 
 ## Substrate-only character
 
@@ -70,4 +70,4 @@ The identity predicts $\Delta S(n - p)$ from CAL-1, CAL-2, and a topological inv
 
 ## Scope
 
-The Borromean mass ansatz is consistent with CODATA to $\sim 1\,000$ ppm using only CAL-1, CAL-2, and a fixed topological invariant. The common scale $\lambda_{\mathrm{scale}}$ requires further derivation to determine $m_p$ and $m_n$ individually.
+The Borromean mass ansatz is consistent with CODATA to $\sim 1\,000$ ppm using only CAL-1, CAL-2, and a fixed topological invariant. The common Borromean term $\mathfrak{m}_{\mathcal{B}_3}$ requires further derivation to determine $m_p$ and $m_n$ individually.

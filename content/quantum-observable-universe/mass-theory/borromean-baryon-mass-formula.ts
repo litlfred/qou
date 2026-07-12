@@ -3,7 +3,7 @@ import { conjecture } from "../../schema/builders";
 export default conjecture({
   label: "conj:borromean-baryon-mass-formula",
   title:
-    "Borromean baryon mass formula with common scale $\\lambda_{\\mathrm{scale}}$",
+    "Borromean baryon mass formula with common Borromean term $\\mathfrak{m}_{\\mathcal{B}_3}(q_0)$",
   lean: {
     ref: "qou:QOU.Borromean.MassFormula",
     validation: "not_checked",
