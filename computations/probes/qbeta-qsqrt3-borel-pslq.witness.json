@@ -1,0 +1,226 @@
+{
+  "computation": "qbeta-qsqrt3-borel-pslq",
+  "description": "C2 (Borel/alien-calculus audit): re-run of the refuted \u211a(\u221a\u22123) saddle-coefficient PSLQ on Borel-transformed b_m = c_m/m! (bounded, PSLQ-tractable) with per-coefficient entropy budgets and second-extraction cross-checks.",
+  "auditOnly": true,
+  "tier": "numerical (hypothesis-class test; no value fit)",
+  "computedAt": "2026-07-12T15:33:55.756759+00:00",
+  "commitSha": "28d2f19afeb4ea5015138af71c1071b330ab24f6",
+  "engine": "mpmath",
+  "engineVersion": "1.4.1",
+  "scriptFile": "qbeta_qsqrt3_borel_pslq_probe.py",
+  "scriptHash": "c61135887003",
+  "durationMs": 4948,
+  "precisionMetadata": {
+    "extraction_dps": 220,
+    "extraction_A": {
+      "K": 9,
+      "N_range": [
+        300,
+        1180,
+        40
+      ],
+      "note": "predecessor-identical"
+    },
+    "extraction_B": {
+      "K": 11,
+      "N_range": [
+        380,
+        1300,
+        40
+      ],
+      "note": "independent window + truncation order"
+    },
+    "entropy_bound": "digits > n_terms*log10(2*height) + 3 + log10(trials); n_terms=2, trials=4 (PR #1805)"
+  },
+  "assertions": [
+    {
+      "name": "vol41_recovered",
+      "passed": true,
+      "detail": "rel err 1.98e-23"
+    },
+    {
+      "name": "predecessor_extraction_reproduced",
+      "passed": true,
+      "detail": "max rel diff vs committed 12-digit c_m = 2.06e-12"
+    },
+    {
+      "name": "borel_bm_bounded_ratio_test",
+      "passed": true,
+      "detail": "max |b_m/b_(m-1)| (m=2..8) = 1.364 (expected \u2192 1/A \u2248 1.44; factorial growth removed)"
+    },
+    {
+      "name": "entropy_budget_arithmetic_spot_check",
+      "passed": true,
+      "detail": "needed(H=100,n=2,T=1,m=3)=7.60206 ok; inversion+monotonicity ok"
+    },
+    {
+      "name": "known_rungs_m1_m4_match_extraction",
+      "passed": true,
+      "detail": "extraction agrees with #3606/#3628 exact \u03ba\u2081..\u03ba\u2084 at trust level"
+    },
+    {
+      "name": "entropy_budget_never_exceeded",
+      "passed": true,
+      "detail": "every PSLQ maxcoeff satisfied needed_digits(H) <= trusted digits"
+    }
+  ],
+  "allPassed": true,
+  "data": {
+    "c_m_extraction_A": [
+      "0.5542164724049",
+      "0.731081807487834",
+      "2.65452705727338",
+      "13.094774657527",
+      "84.6423214762895",
+      "676.883639216285",
+      "6460.95965922225",
+      "68021.3438891455",
+      "1208656.02860836"
+    ],
+    "b_m": [
+      "0.5542164724049",
+      "0.365540903743917",
+      "0.442421176212229",
+      "0.545615610730291",
+      "0.705352678969079",
+      "0.940116165578174",
+      "1.28193644032188",
+      "1.68703729883793",
+      "3.33073200123556"
+    ],
+    "c_ratios": {
+      "2": 1.319,
+      "3": 3.631,
+      "4": 4.933,
+      "5": 6.464,
+      "6": 7.997,
+      "7": 9.545,
+      "8": 10.528,
+      "9": 17.769
+    },
+    "b_ratios": {
+      "2": 0.6596,
+      "3": 1.2103,
+      "4": 1.2332,
+      "5": 1.2928,
+      "6": 1.3328,
+      "7": 1.3636,
+      "8": 1.316,
+      "9": 1.9743
+    },
+    "borel_radius_ratio_estimate_A": 0.7477,
+    "trusted_digits": {
+      "1": 15,
+      "2": 12,
+      "3": 9,
+      "4": 7,
+      "5": 5,
+      "6": 4,
+      "7": 2,
+      "8": 1,
+      "9": 0
+    },
+    "per_order": [
+      {
+        "order": 1,
+        "b_m": "0.5542164724049",
+        "trusted_digits": 15,
+        "budget_maxcoeff": 249999,
+        "hit_form": "F4 b_m/(sqrt3^(m%2)*pi^m)",
+        "hit_rational": "11/108",
+        "rel_err_A": "2.59e-16",
+        "rel_err_B": "4.06e-20",
+        "crosscheck_passed": true,
+        "outcome": "VALIDATED-CONTROL",
+        "reason": "recovers the known exact rung \u03ba_1/1! = 11/108 (#3606/#3628) within budget"
+      },
+      {
+        "order": 2,
+        "b_m": "0.365540903743917",
+        "trusted_digits": 12,
+        "budget_maxcoeff": 7905,
+        "hit_form": "F3 b_m/pi^m",
+        "hit_rational": "1/27",
+        "rel_err_A": "3.65e-13",
+        "rel_err_B": "8.32e-17",
+        "crosscheck_passed": true,
+        "outcome": "VALIDATED-CONTROL",
+        "reason": "recovers the known exact rung \u03ba_2/2! = 1/27 (#3606/#3628) within budget"
+      },
+      {
+        "order": 3,
+        "b_m": "0.442421176212229",
+        "trusted_digits": 9,
+        "budget_maxcoeff": 249,
+        "outcome": "NEGATIVE",
+        "scope": "scope-(a): no \u211a(\u221a\u22123)-basis relation within the entropy budget (H \u2264 249) at 9 trusted digits \u2014 b_3 stays empirical at this extraction precision; not a structural exclusion",
+        "known_rung_height": 131220,
+        "budget_explained": true,
+        "note": "known rung \u03ba_3/3! = 1081/131220 has height 131220, needing 14.4 digits > 9 trusted \u2014 the negative is budget-explained, NOT a contradiction of #3606/#3628"
+      },
+      {
+        "order": 4,
+        "b_m": "0.545615610730291",
+        "trusted_digits": 7,
+        "budget_maxcoeff": 24,
+        "outcome": "NEGATIVE",
+        "scope": "scope-(a): no \u211a(\u221a\u22123)-basis relation within the entropy budget (H \u2264 24) at 7 trusted digits \u2014 b_4 stays empirical at this extraction precision; not a structural exclusion",
+        "known_rung_height": 8748,
+        "budget_explained": true,
+        "note": "known rung \u03ba_4/4! = 49/8748 has height 8748, needing 12.1 digits > 7 trusted \u2014 the negative is budget-explained, NOT a contradiction of #3606/#3628"
+      },
+      {
+        "order": 5,
+        "b_m": "0.705352678969079",
+        "trusted_digits": 5,
+        "budget_maxcoeff": 2,
+        "outcome": "SKIPPED",
+        "reason": "entropy budget: 5 trusted digits admit height \u2264 2 < floor 10 \u2014 refusing to over-ask (order logged, not silently capped)"
+      },
+      {
+        "order": 6,
+        "b_m": "0.940116165578174",
+        "trusted_digits": 4,
+        "budget_maxcoeff": 0,
+        "outcome": "SKIPPED",
+        "reason": "entropy budget: 4 trusted digits admit height \u2264 0 < floor 10 \u2014 refusing to over-ask (order logged, not silently capped)"
+      },
+      {
+        "order": 7,
+        "b_m": "1.28193644032188",
+        "trusted_digits": 2,
+        "budget_maxcoeff": 0,
+        "outcome": "SKIPPED",
+        "reason": "entropy budget: 2 trusted digits admit height \u2264 0 < floor 10 \u2014 refusing to over-ask (order logged, not silently capped)"
+      },
+      {
+        "order": 8,
+        "b_m": "1.68703729883793",
+        "trusted_digits": 1,
+        "budget_maxcoeff": 0,
+        "outcome": "SKIPPED",
+        "reason": "entropy budget: 1 trusted digits admit height \u2264 0 < floor 10 \u2014 refusing to over-ask (order logged, not silently capped)"
+      },
+      {
+        "order": 9,
+        "b_m": "3.33073200123556",
+        "trusted_digits": 0,
+        "budget_maxcoeff": 0,
+        "outcome": "SKIPPED",
+        "reason": "entropy budget: 0 trusted digits admit height \u2264 0 < floor 10 \u2014 refusing to over-ask (order logged, not silently capped)"
+      }
+    ],
+    "verdict": "C2 RESULT (Borel-transformed \u211a(\u221a\u22123) PSLQ, scope-(a) wording): the Borel transform b_m = c_m/m! is numerically bounded (max ratio 1.36, \u2192 1/A), removing the predecessor's stated entropy blocker. Under per-coefficient entropy budgets: 2 known-answer control(s) re-derived (m \u2264 4 exact rungs), 0 CANDIDATE(s) (reproduced at a second extraction; NOT identified), 0 entropy false positive(s) rejected, 2 NEGATIVE (no relation within budget \u2014 those b_m stay empirical at this extraction precision; scope-(a), not a structural exclusion), 5 SKIPPED (budget below floor, logged). No fit; no c_k value; no wiring; no tier change. The exact route past the frontier remains the Ohtsuki state-integral saddle recursion / bridge equation (audit \u00a72.G2), not deeper PSLQ."
+  },
+  "scope_classification": {
+    "negatives": "scope-(a) \u2014 no relation within the entropy budget at this extraction precision; ingredient NOT structurally excluded",
+    "hits": "CANDIDATE at most \u2014 cross-checked at a second extraction, still requires the exact Ohtsuki saddle recursion for identification",
+    "controls": "m<=4 known exact rungs (#3606/#3628) used as known-answer controls"
+  },
+  "context": {
+    "axis": "z->c_k f-map keystone: even-channel action, \u211a(\u221a\u22123) saddle \u2014 Borel transform side",
+    "audit_item": "docs/audits/2026-07-12-borel-alien-calculus-utilization-audit.md \u00a71.C2",
+    "predecessor": "docs/audits/scripts/qbeta_action_qsqrt3_saddle_probe.py (REFUTED scope-(a): m!-rescale entropy blocked)",
+    "exact_rungs": "\u03ba\u2081=(11/108)\u221a3\u03c0, \u03ba\u2082=(2/27)\u03c0\u00b2, \u03ba\u2083=(1081/21870)\u221a3\u03c0\u00b3, \u03ba\u2084=(98/729)\u03c0\u2074 (#3606/#3628, main)"
+  }
+}
