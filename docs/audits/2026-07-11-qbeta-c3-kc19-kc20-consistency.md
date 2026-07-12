@@ -108,6 +108,37 @@ The lesson: the `−2`/c₃ connection is **not** globally coincidental — it i
 match. My original section 4 debunked the latter without citing the former; both facts stand,
 and they are about different (sector, anchor) pairs.
 
+## 5. Arithmetic separator (new): the odd carrier field ℚ(√−19) ≠ the even/4₁/Φ_b field ℚ(√−3)
+
+Probe [`qbeta_c3_odd_field_arithmetic_separator_probe.py`](../../computations/qbeta/qbeta_c3_odd_field_arithmetic_separator_probe.py)
+→ [witness](../../computations/qbeta/qbeta-c3-odd-field-arithmetic-separator.witness.json) (3/3).
+
+The closed parity↔chirality dictionary
+([`2026-07-07-parity-chirality-dictionary-closed.md`](2026-07-07-parity-chirality-dictionary-closed.md))
+records the discriminant **signs** (even `C_unknot` disc `+17`, real; odd `C_Hopf` disc `−76`,
+complex) but not the odd carrier's quadratic **field** or its relation to the analytic Φ_b
+survivor. Filling that in (grep-confirmed not previously explicit):
+
+- **Odd carrier field = ℚ(√−19).** `disc(C_Hopf) = −76 = −2²·19`, so the Hopf cubic's quadratic
+  resolvent subfield is `ℚ(√−76) = ℚ(√−19)` — ramified odd prime **19**.
+- **The 4₁ / Φ_b even channel is ℚ(√−3)** (Eisenstein trace field of the figure-eight; ramified
+  prime **3**). `ℚ(√−19) ≠ ℚ(√−3)` (`19/3` is not a rational square), and **neither contains the
+  other**.
+
+**Consequence (scope-(a)).** The odd channel's *anchor-invariant algebraic* field-of-definition
+is **not contained in** the 4₁/Φ_b arithmetic. A closure supplying only ℚ(√−3) — e.g. the bare
+figure-eight perturbative expansion — cannot generate the disc-19 Hopf field; a genuine
+odd-channel closure must **supply that field**. This is a sharper search target than "the odd
+channel is open."
+
+**Strict scope guard.** This is scope-(a), *not* a scope-(b) "Φ_b excluded":
+
+- It does **not** exclude the transcendental Φ_b state-integral, which may carry arithmetic
+  beyond its trace field (the actively-worked survivor, #3544/#3596).
+- It does **not** address the anchor-*dependent* c₃ swing, which lives in `w(q)`'s fibre
+  structure (KC19) — a separate open problem; the field distinction is purely algebraic
+  (`C_Hopf` is anchor-rigid, per §2 and the bridge audit).
+
 ## What this buys, and what it does not
 
 - **Buys:** confirmation that the two most-recent Lean-proved c₃ narrowings are **coherent**

@@ -1,0 +1,44 @@
+{
+  "computation": "qbeta-c3-odd-field-arithmetic-separator",
+  "description": "The bar-odd c\u2083 carrier field \u211a(\u221a\u221219) (disc C_Hopf=\u221276) is distinct from the even/4\u2081/\u03a6_b field \u211a(\u221a\u22123); channels separated by ramified odd prime 19 vs 3. Scope-(a): a closure must supply the disc-19 field; does NOT exclude \u03a6_b or address the c\u2083 swing. Nothing wired.",
+  "auditOnly": "docs/audits/2026-07-11-qbeta-c3-kc19-kc20-consistency.md",
+  "tier": "symbolic-exact (sympy; field arithmetic refinement of the closed dictionary)",
+  "computedAt": "2026-07-12T10:43:23.357247+00:00",
+  "commitSha": "7e5a2fe494c3041ae7448ab6586030c899012d14",
+  "engine": "sympy",
+  "engineVersion": "1.14.0",
+  "scriptFile": "qbeta_c3_odd_field_arithmetic_separator_probe.py",
+  "scriptHash": "914637f82cc5",
+  "assertions": [
+    {
+      "name": "odd_carrier_field_is_Qsqrt_minus19",
+      "passed": true,
+      "detail": "disc(C_Hopf)=-76 = -2\u00b2\u00b719 \u21d2 quadratic subfield \u211a(\u221a\u221219); ramified odd prime 19 (the odd/Hopf chiral channel)"
+    },
+    {
+      "name": "separated_from_4_1_phib_field_Qsqrt_minus3",
+      "passed": true,
+      "detail": "odd \u211a(\u221a\u221219) vs even/4\u2081/\u03a6_b \u211a(\u221a\u22123): 19/3 not a rational square \u21d2 neither field contains the other; the 4\u2081/\u03a6_b arithmetic (prime 3) does NOT contain the odd carrier's field"
+    },
+    {
+      "name": "scope_guard_algebraic_not_swing",
+      "passed": true,
+      "detail": "SCOPE-(a): the field distinction is ALGEBRAIC (anchor-invariant; C_Hopf(2)=\u22122 fixed). It does NOT exclude the transcendental \u03a6_b, nor address the anchor-dependent c\u2083 swing (w(q) fibre, KC19) \u2014 it only says the odd algebraic field-of-definition is \u211a(\u221a\u221219), not \u211a(\u221a\u22123); a closure must SUPPLY the disc-19 field"
+    }
+  ],
+  "allPassed": true,
+  "result": {
+    "disc_C_Hopf": -76,
+    "odd_ramified_prime": 19,
+    "odd_field": "Q(sqrt(-19))",
+    "even_4_1_phib_field": "Q(sqrt(-3))",
+    "even_ramified_prime": 3,
+    "disc_C_unknot": 17,
+    "verdict": "ARITHMETIC SEPARATOR (scope-(a), new refinement of the closed parity\u2194chirality dictionary; no c_k value, nothing wired): the bar-ODD c\u2083 carrier's quadratic field is \u211a(\u221a\u221219) (disc(C_Hopf)=\u221276=\u22122\u00b2\u00b719), DISTINCT from the bar-EVEN / 4\u2081 / \u03a6_b field \u211a(\u221a\u22123). The channels are separated by their ramified odd prime \u2014 19 (odd, chiral Hopf) vs 3 (even, amphichiral 4\u2081) \u2014 and neither field contains the other (19/3 not a rational square). CONSEQUENCE (scope-(a)): the odd channel's anchor-invariant algebraic field-of-definition is NOT contained in the 4\u2081/\u03a6_b arithmetic; a closure supplying only \u211a(\u221a\u22123) (e.g. the bare 4\u2081 perturbative expansion) cannot generate the disc-19 Hopf field \u2014 it must supply that field. STRICT SCOPE GUARD: this does NOT exclude the transcendental \u03a6_b state-integral (which may carry richer arithmetic) and does NOT address the anchor-dependent c\u2083 swing (w(q) fibre, KC19, separate). It sharpens the search target, does not close or refute. NO tier change; NOTHING WIRED."
+  },
+  "context": {
+    "refines": "docs/audits/2026-07-07-parity-chirality-dictionary-closed.md (adds the explicit \u211a(\u221a\u221219)\u2260\u211a(\u221a\u22123) field separator, not previously stated)",
+    "scope_a_only": "constrains the algebraic/anchor-invariant field-of-definition; does NOT exclude \u03a6_b, does NOT address the anchor-dependent c\u2083 swing (KC19)",
+    "gate": "registry \u00a78 flip-flop guard \u2014 no c_k value, no wiring, no tier change"
+  }
+}
