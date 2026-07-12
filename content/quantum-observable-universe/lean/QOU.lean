@@ -99,6 +99,7 @@ import QOU.BringsSurface.ColourComplexStructure
 import QOU.BringsSurface.PentagonTwistAssociator
 import QOU.BringsSurface.OctonionCocycle
 import QOU.BringsSurface.OctonionAlgebra
+import QOU.BringsSurface.OctonionFinDim
 import QOU.BringsSurface.OctonionDerivation
 import QOU.BringCone
 import QOU.QuaternionicElectroweak
