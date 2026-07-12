@@ -70,11 +70,21 @@ i.e. `Im S(u) ⊃ π·u`, a framing/meridian normalization term that is **odd un
 Im-S quadratic with a possible Re-S linear term; identifying it would need the
 Im-side of α, which the mod-2π branch structure hides from a doubling ladder).
 
-**What route 2 still needs:** κ̃₃(u) (the next odd rung — the ladder currently
-resolves κ̃₁ to 12 digits and κ̃₂ roughly; κ̃₃ needs either a taller ladder at
-~450+ dps or the state-integral saddle expansion), and the deformed b-dictionary
-normalization (which #3596's Φ_b construction supplies once its saddle expansion
-is pushed to 2-loop at `m = q₀`).
+**κ̃₃(u_sub) — landed (tall ladder).** A follow-up run
+([`qbeta_ohtsuki_deformed_kappa3_tall_ladder.py`](scripts/qbeta_ohtsuki_deformed_kappa3_tall_ladder.py),
+10 points to N = 262144 at dps 980; the deformed-saddle cancellation reached
+445 digits at the top rung) resolves the next odd rung:
+
+  `κ̃₃(u_sub) = 3.956290802 − 0.395360496·i`  (10/8 digits; vs `κ₃(0) = (1081/21870)√3π³ = 2.654527`),
+
+giving the odd finite-b partial sum `t·Re κ̃₁ − t³·Re κ̃₃ = 0.056790` (the
+deformed, all-odd-rung version of #3654's scale). κ̃₁ reproduced the 9-point
+value exactly (consistency check passed).
+
+**What route 2 still needs:** the deformed b-dictionary normalization (which
+#3596's Φ_b construction supplies once its saddle expansion is pushed to
+2-loop at `m = q₀`), and κ̃₅ if the resummation needs it (ladder-height cost
+roughly doubles per rung).
 
 ## Route 3 — the experimental Q_β budget (quantified)
 
@@ -94,12 +104,40 @@ This is #3636's falsifiable lever made quantitative: a next-generation neutron
 `Q_β` (or `Δ_np`) measurement at the few-hundredths-of-an-eV level would let the
 decay sector **independently arbitrate** the μ–p substrate tension.
 
-## Route 1 — exact D(u) ladder (scoped, not attempted)
+## Route 1 — MAJOR CORRECTION: the "order-11 failure" was a top-order artifact; the two-variable form HOLDS
 
-The bar-split witness (`qbeta-even-channel-bar-split`) has `D₁…D₅` exact in
-ℚ(√3) but the two-variable hypothesis `log R = E(ũ) + h·D(ũ)`, `ũ = q·u`, fails
-exactly at order 11. Extending the exact ladder and re-attacking the order-11
-residual is queued (bean `qou-gmm6`) — kept out of this PR for reviewability.
+**Probe:** [`qbeta_barodd_d_ladder_ord17_probe.py`](../../computations/qbeta/qbeta_barodd_d_ladder_ord17_probe.py)
+(+ witness, 3/3 assertions).
+
+Extending the D-ladder exposed a contradiction: at ORD 17 the "failing" orders
+were `[17]` only — s^11, s^13, s^15 exactly zero — and at ORD 19 they were
+`[19]` only. **The failing order tracks the truncation top perfectly**
+(11→11, 17→17, 19→19). Diffing every intermediate series between ORD-11 and
+ORD-15 runs localized the drift to `G = O/h` at its top order only. Root
+cause: division by `h` (s-valuation 1) is implemented as a shift with a
+**zero-padded top**, so `G[ORD]` depends on the unknown `O[ORD+1]` — the top
+row of `O/h` is garbage *by construction*.
+
+Consequences (scope-(a) re-scopes; the numerical values stand, only the
+top-row readings were invalid):
+
+- **ai81's "TWO-VARIABLE FORM FAILS at order 11" is corrected**: the form
+  `log R = E(ũ) + h·D(ũ)` holds **exactly at every valid order through s^18**
+  (9 over-determining odd-order checks, all zero).
+- **08ds's margin-1 refutation of the `h³F` repair is moot** — its one
+  distinguishing row was the invalid top row, and with it removed there is no
+  residual to repair in the first place.
+- The "failing-residual constraint set" previously handed to the ζ₄-residue
+  route is **void** (the KC18–KC20 Hopf-cubic axis itself is untouched).
+- The capstone's ladder decomposition `S = h·D(ũ)` is **strengthened**: `D`
+  is an exact ℚ(√3) power series at all tested orders, now extended to
+  `d₁…d₉` (`d₅` reproduces the ai81 witness exactly; heights grow to ~10²⁰).
+
+Numeric diagnostic (measured, not wired): `h·D(ũ(q₀))|_{k≤9} = −0.003486` at
+**both** anchors (anchor-blind, like every smooth object in this thread) vs
+`S(proton) = −0.03946`, `S(muon) = +0.00968` — the ladder value and the
+observable are related through the `1/u³` ladder inversion, consistent with
+the capstone's finding that the anchor swing lives in the representation.
 
 ## Honest scope (anti-laundering)
 

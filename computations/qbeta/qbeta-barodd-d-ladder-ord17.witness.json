@@ -1,0 +1,145 @@
+{
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-07-12T20:52:48.858557+00:00",
+  "commitSha": "64bb82cc14d0f82ce5123a78c3d23e68955a71e7",
+  "assertions": [
+    {
+      "name": "two_variable_form_holds_all_valid_orders",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "d5_reproduces_ai81_witness",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "partial_sums_converged_1pct",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 16,
+  "computation": "qbeta-barodd-d-ladder-ord17",
+  "scriptFile": "qbeta_barodd_d_ladder_ord17_probe.py",
+  "scriptHash": "5d9dd4d60d28",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Route 1 CORRECTION: the ai81 'order-11 failure' of log R = E(ũ) + h·D(ũ) was the O/h top-order shift-padding artifact (G[ORD] depends on the unknown O[ORD+1]); at ORD 19 every valid order through s^18 vanishes exactly (margin 9) — the two-variable form HOLDS and the exact D-ladder extends to d₁..d₉ ∈ ℚ(√3). Includes the h·D(ũ(q₀)) vs S-target diagnostic. Scope (a); no wiring.",
+  "data": {
+    "ORD": 19,
+    "valid_top_order": 18,
+    "artifact_diagnosis": "G = ser_mul(O[1:]+[0], ser_inv(h[1:]+[0])) pads the top; G[ORD] needs O[ORD+1] => top row invalid by construction. Failing order tracked truncation top across ORD 11/17/19 runs; series-object diff (ORD11 vs ORD15) localized the drift to G[11] only.",
+    "D_ladder_exact": {
+      "1": {
+        "exact": "1/8 - sqrt(3)",
+        "float": "-1.60705080757",
+        "height_digits": 1
+      },
+      "2": {
+        "exact": "-97/6 + 5*sqrt(3)/288",
+        "float": "-16.1365963401",
+        "height_digits": 3
+      },
+      "3": {
+        "exact": "373/34560 - 676*sqrt(3)/27",
+        "float": "-43.3546273951",
+        "height_digits": 5
+      },
+      "4": {
+        "exact": "-59195/162 + 15055*sqrt(3)/1741824",
+        "float": "-365.386264040",
+        "height_digits": 7
+      },
+      "5": {
+        "exact": "-252241*sqrt(3)/243 - 836891/139345920",
+        "float": "-1797.92463858",
+        "height_digits": 9
+      },
+      "6": {
+        "exact": "-48305749/4374 + 9142316411*sqrt(3)/827714764800",
+        "float": "-11043.8192321",
+        "height_digits": 12
+      },
+      "7": {
+        "exact": "-1287465032*sqrt(3)/32805 - 1350254778511/51649401323520",
+        "float": "-67976.0922422",
+        "height_digits": 14
+      },
+      "8": {
+        "exact": "-40374973312/98415 + 93501718487449*sqrt(3)/3286780084224000",
+        "float": "-410252.181708",
+        "height_digits": 16
+      },
+      "9": {
+        "exact": "-4019762699807*sqrt(3)/2657205 - 3544466523791040269/40849114203684864000",
+        "float": "-2620209.37828",
+        "height_digits": 20
+      }
+    },
+    "valid_residuals_all_zero": true,
+    "overdetermining_checks": 9,
+    "invalid_top_row_value_for_record": "-57250305.5169903",
+    "corrections": {
+      "ai81": "verdict 'FAILS at order 11' re-scoped: artifact row; form holds",
+      "08ds_B": "margin-1 h3-refutation used the invalid row; question moot (no residual)",
+      "zeta4_input": "the 'failing residual' constraint set is void; KC18-KC20 axis untouched",
+      "capstone": "S = h*D(u) ladder decomposition STRENGTHENED (exact at all tested orders)"
+    },
+    "numeric_diagnostic_h_D_vs_S": {
+      "proton": {
+        "u_tilde": "0.00945395003124",
+        "h": "0.209060321996",
+        "h_D_partial_sums": [
+          "-0.00317624888",
+          "-0.003477764735",
+          "-0.003485423293",
+          "-0.0034860335",
+          "-0.003486061886",
+          "-0.003486063534",
+          "-0.00348606363",
+          "-0.003486063636",
+          "-0.003486063636"
+        ],
+        "h_D_k9": "-0.00348606363611",
+        "S_target": "-0.03945936",
+        "h_D_over_S": "0.088345671"
+      },
+      "muon": {
+        "u_tilde": "0.00945395003073",
+        "h": "0.20906032199",
+        "h_D_partial_sums": [
+          "-0.003176248879",
+          "-0.003477764735",
+          "-0.003485423292",
+          "-0.003486033499",
+          "-0.003486061886",
+          "-0.003486063534",
+          "-0.00348606363",
+          "-0.003486063635",
+          "-0.003486063636"
+        ],
+        "h_D_k9": "-0.00348606363581",
+        "S_target": "0.00968298",
+        "h_D_over_S": "-0.36001971"
+      }
+    },
+    "verdict": "CORRECTION (scope-(a) re-scope; numbers stand, top-row readings were invalid): the two-variable form log R = E(ũ) + h·D(ũ) HOLDS exactly at every valid order through s^18 (9 over-determining odd-order checks, all zero). The corpus's 'order-11 failure' (ai81) and the margin-1 h³-refutation (08ds) sat on the O/h top row, which the shift-padding makes garbage by construction (G[ORD] needs O[ORD+1]); the failing order tracks the truncation top (11→11, 17→17, 19→19). Exact D-ladder extended to d₁..d₉ ∈ ℚ(√3) (d₅ reproduces ai81). Diagnostic h·D(ũ(q₀))|_(k≤9) = -0.00348606363611 (proton) vs S(proton) = −0.03945936 — related through the ladder inversion (measured, not wired). Scope (a); no fit; no c_k wired.",
+    "scope": "(a) — exact truncation ORD 19, net route; no wiring"
+  }
+}
