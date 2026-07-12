@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-12T10:46:41.167124+00:00",
-  "commitSha": "9634194b77d89bbe5da1b1bc20c15a1f977e84fb",
+  "computedAt": "2026-07-12T10:50:53.732225+00:00",
+  "commitSha": "b45f3c522ae7d8d58a26e13f7828a99e46d2c36c",
   "assertions": [
     {
       "name": "twopib2_equals_i_t",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 11,
   "computation": "qbeta-c3-phib-finite-b-volume-correction",
   "scriptFile": "qbeta_c3_phib_finite_b_volume_correction_probe.py",
-  "scriptHash": "880dd21ca77b",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "252bb05e1915",
+  "scriptCommitSha": "b45f3c522ae7d8d58a26e13f7828a99e46d2c36c",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -52,7 +52,7 @@
       {
         "anchor": "proton",
         "t_ln_q0": "0.10434072031951951232",
-        "twopib2": "(-1.6430941522348787092e-42 + 0.10434072031951951232j)",
+        "twopib2": "(1.2961727402953573961e-72 + 0.10434072031951951232j)",
         "twopib2_is_i_t": true,
         "im_V_leading": "0.057827345943670363948",
         "S_target": "-0.03945936",
@@ -61,7 +61,7 @@
       {
         "anchor": "muon",
         "t_ln_q0": "0.10434073185379584233",
-        "twopib2": "(-1.6430942430522576113e-42 + 0.10434073185379584233j)",
+        "twopib2": "(1.2961728119376371266e-72 + 0.10434073185379584233j)",
         "twopib2_is_i_t": true,
         "im_V_leading": "0.057827352336156303313",
         "S_target": "0.00968298",

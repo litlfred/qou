@@ -51,7 +51,8 @@ from witness_base import WitnessBuilder  # noqa: E402
 from phi_b_substrate_regime import b_substrate  # noqa: E402
 from qou_substrate.constants import q_at, q_muon_at  # noqa: E402
 
-mp.mp.dps = 40
+# dps 70 matches the witness precisionMetadata compute_dps=70 (Gemini review).
+mp.mp.dps = 70
 S_TARGET = {"proton": mp.mpf("-0.03945936"), "muon": mp.mpf("0.00968298")}
 
 
@@ -66,7 +67,7 @@ def main() -> int:
     rows, imV_scale = [], {}
     both_imag, both_scale_ok = True, True
     print("\n finite-b: 2πb² = i·t (imaginary substrate) ⇒ i·t·κ₁ feeds Im 𝔙 = S:")
-    for tag, q0 in (("proton", q_at(40)), ("muon", q_muon_at(40))):
+    for tag, q0 in (("proton", q_at(70)), ("muon", q_muon_at(70))):
         t = mp.log(q0)
         b2 = b_substrate(q0, +1) ** 2
         twopib2 = 2 * mp.pi * b2
