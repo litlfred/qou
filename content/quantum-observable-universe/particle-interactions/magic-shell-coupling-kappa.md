@@ -17,7 +17,7 @@ $$
   \approx -1.0704239\;\text{MeV}
 $$
 
-Against the observed physical value from v6 single-magic anchor data:
+Against the observed physical value at the single-magic anchors:
 
 $$
   \kappa_{\mathrm{observed}} \approx -1.0707908\;\text{MeV}
@@ -43,4 +43,4 @@ The negative sign tracks the orientation convention for the $(n_{pp} - n_{nn})$ 
 
 ## Closure of the κ derivation work-item
 
-This proposition supplies a categorical form for the κ derivation requested in user work-list item #4. The observed $\kappa \approx -1.07\;\text{MeV}/\text{excess}$ is reproduced to $0.034\%$ at the single-magic anchors by a structurally-motivated expression. Its magic-shell quantum $E_0 \cdot \log(1/h)$ was identified at the $(2,2)$ doubly-magic anchor.
+This proposition supplies a categorical form for the κ derivation. The observed $\kappa \approx -1.07\;\text{MeV}/\text{excess}$ is reproduced to $0.034\%$ at the single-magic anchors by a structurally-motivated expression. Its magic-shell quantum $E_0 \cdot \log(1/h)$ was identified at the $(2,2)$ doubly-magic anchor.

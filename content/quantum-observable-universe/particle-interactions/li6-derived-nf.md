@@ -10,12 +10,7 @@ The He-4 core is built by Regime I $\to$ II operators. The fifth nucleon still u
 $$
   \mathrm{NF}(\mathcal{A}(3,3))
   \approx
-  +0.087\gamma
-  + 0.130\sigma_0
-  + 0.455\sigma_1
-  + 0.205 L_+
-  + 1.288 L_-
-  + 0.589 e^-
+  +0.087\gamma + 0.130\sigma_0 + 0.455\sigma_1 + 0.205 L_+ + 1.288 L_- + 0.589 e^-
 $$
 
 $$

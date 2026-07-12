@@ -34,10 +34,7 @@ Collecting terms yields the exact normal form:
 
 $$
   \mathfrak{M}_+ =
-  \underbrace{h}_{\sigma_1}\sigma_1
-  + \underbrace{(h^2 + 1)}_{L_+}\sigma_0\sigma_1
-  + \underbrace{h^2}_{L_-}\sigma_1\sigma_0
-  + \underbrace{(h^3 + h)}_{e^-}\sigma_0\sigma_1\sigma_0
+  \underbrace{h}_{\sigma_1}\sigma_1 + \underbrace{(h^2 + 1)}_{L_+}\sigma_0\sigma_1 + \underbrace{h^2}_{L_-}\sigma_1\sigma_0 + \underbrace{(h^3 + h)}_{e^-}\sigma_0\sigma_1\sigma_0
 $$
 
 At the CODATA root $q_0 \approx 1.1100$ ($h \approx 0.2091$):

@@ -6,7 +6,7 @@ The parity of the mass number $A$ determines which computational regime applies 
 *For all $q > 1$:*
 
 $$
-  \operatorname{sign}(a^Z \cdot b^{N-1}) = (-1)^{A-1}
+  \mathrm{sign}(a^Z \cdot b^{N-1}) = (-1)^{A-1}
 $$
 
 *The Q-value regimes are:*
