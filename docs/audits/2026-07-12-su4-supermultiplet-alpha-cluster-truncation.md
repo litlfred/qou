@@ -22,8 +22,8 @@ A corpus-grep (per the anti-over-claim discipline) confirms the SU(4)-saturation
 link was **not previously explicit** in the corpus, even though it is textbook Wigner
 supermultiplet theory.
 
-Probe [`su4_supermultiplet_alpha_cluster_truncation_probe.py`](../../computations/deltalambda/su4_supermultiplet_alpha_cluster_truncation_probe.py)
-→ [witness](../../computations/deltalambda/su4-supermultiplet-alpha-cluster-truncation.witness.json) (4/4).
+Probe [`su4_supermultiplet_alpha_cluster_truncation_probe.py`](scripts/su4_supermultiplet_alpha_cluster_truncation_probe.py)
+→ [witness](scripts/su4-supermultiplet-alpha-cluster-truncation.witness.json) (4/4).
 
 ## The synthesis
 
