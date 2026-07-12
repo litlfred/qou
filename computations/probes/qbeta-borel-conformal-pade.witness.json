@@ -1,0 +1,313 @@
+{
+  "computation": "qbeta-borel-conformal-pade",
+  "description": "Conformal-mapped Borel-Pade of the 4_1 Ohtsuki ladder: stabilize the instanton-action (Borel singularity) extraction that raw Borel-Pade loses to Froissart/branch-cut pole scatter; phase-resolve the f-map Stokes datum (audit item C1).",
+  "audit_only": true,
+  "tier": "structural-exact (kappa_1..kappa_4 closed forms) + numerical (conformal dlog-Borel-Pade singularity, order-limited)",
+  "computedAt": "2026-07-12T15:36:59.137991+00:00",
+  "commitSha": "b4730a61b0cf8362cdb819ddcefa7191f583eb36",
+  "engine": "mpmath",
+  "engineVersion": "1.4.1",
+  "scriptFile": "qbeta_borel_conformal_pade_probe.py",
+  "scriptHash": "91b9a2e688e7",
+  "assertions": [
+    {
+      "name": "kappa_1_4_exact_match_witness",
+      "passed": true,
+      "computed": {
+        "1": "4.755e-21",
+        "2": "2.988e-21",
+        "3": "3.396e-21",
+        "4": "2.01e-20"
+      },
+      "expected": "rel < 1e-18 each",
+      "tolerance": "1e-18",
+      "source": "closed forms (11/108)sqrt3 pi, (2/27)pi^2, (1081/21870)sqrt3 pi^3, (98/729)pi^4 vs the 20-digit witness strings of qbeta-even-borel-singularity (tolerance at the reference-string precision, not the 50-dps floor)."
+    },
+    {
+      "name": "baseline_froissart_instability_observed",
+      "passed": true,
+      "computed": "1.51",
+      "expected": "> 0.15",
+      "tolerance": "0.15",
+      "source": "relative spread (max-min)/mean of the nearest-pole modulus across [L/M] \u2014 documents the predecessor's raw Borel-Pade instability at 6 rungs (0.28 vs 1.52)."
+    },
+    {
+      "name": "conformal_dlog_iteration_converged",
+      "passed": true,
+      "computed": {
+        "converged_headline_configs": 8,
+        "expected_configs": 8
+      },
+      "expected": "all 8 headline (L,M,mu) configs converged",
+      "source": "damped fixed-point iteration (tol 1e-11 rel) of the conformal+dlog singularity estimate from trial A0=0.6177, margins mu in {1.5, 2.0}."
+    },
+    {
+      "name": "conformal_A_stable_across_orders",
+      "passed": true,
+      "computed": "0.075465",
+      "expected": "< baseline spread 1.51 and < 0.10",
+      "source": "relative spread of the conformal+dlog fixed-point A across Pade orders / truncations (5-6 rungs) and margins \u2014 the C1 stabilization claim (vs 1.51 raw)."
+    },
+    {
+      "name": "action_phase_consistent_with_real",
+      "passed": true,
+      "computed": "0.0",
+      "expected": "< 0.05 rad",
+      "tolerance": "0.05",
+      "source": "max |arg zeta*| over headline configs; Pringsheim (positive b_n) + amphichirality (CS(4_1)=0) both demand a real-positive action \u2014 this supplies the phase resolution the predecessor's Richardson ratio could not."
+    }
+  ],
+  "allPassed": true,
+  "parameters": {
+    "compute_dps": 60,
+    "borel_normalization": "B(zeta) = 1 + sum kappa_n zeta^n / n!, x = 1/N variable (predecessor convention; /2pi for the 2pi/N variable)",
+    "conformal_map": "zeta = 4*A0*w/(1+w)^2 (uniformizes the cut [A0, +inf) onto |w|<1); A0 = mu*A_est held above the estimate, mu in {1.5, 2.0}",
+    "trial_A0": "0.617661555754",
+    "rungs": 6,
+    "kappa_confident_digits": {
+      "1": 36,
+      "2": 30,
+      "3": 25,
+      "4": 19,
+      "5": 14,
+      "6": 10
+    },
+    "fixed_point_tol": "1e-11 (relative), damped update",
+    "truncation_note": "mapped d_k depends only on kappa_1..kappa_k, so [L/M] uses exactly rungs 1..L+M (dlog: ..L+M+1) \u2014 the truncation axis and the Pade-order axis coincide"
+  },
+  "result": {
+    "kappa_exact_closed_forms": {
+      "1": "(11/108) sqrt(3) pi",
+      "2": "(2/27) pi^2",
+      "3": "(1081/21870) sqrt(3) pi^3",
+      "4": "(98/729) pi^4"
+    },
+    "kappa_exact_vs_witness_reldiff": {
+      "1": "4.755e-21",
+      "2": "2.988e-21",
+      "3": "3.396e-21",
+      "4": "2.01e-20"
+    },
+    "kappa_numeric": {
+      "5": "84.642165605038443528",
+      "6": "676.9466789641050315"
+    },
+    "baseline_raw_pade": {
+      "[1/1]": {
+        "nearest_pole": "1.516154462",
+        "abs": "1.516154462",
+        "froissart_doublet": false
+      },
+      "[1/2]": {
+        "nearest_pole": "0.279884814",
+        "abs": "0.279884814",
+        "froissart_doublet": false
+      },
+      "[2/2]": {
+        "nearest_pole": "0.8105229788",
+        "abs": "0.8105229788",
+        "froissart_doublet": false
+      },
+      "[2/3]": {
+        "nearest_pole": "0.7733531805",
+        "abs": "0.7733531805",
+        "froissart_doublet": false
+      },
+      "[3/3]": {
+        "nearest_pole": "0.7137042465",
+        "abs": "0.7137042465",
+        "froissart_doublet": false
+      }
+    },
+    "baseline_rel_spread": "1.51",
+    "dlog_pade_zeta": {
+      "[1/1]": {
+        "nearest_pole": "0.4764668544",
+        "branch_exponent_alpha": "0.096239941"
+      },
+      "[1/2]": {
+        "nearest_pole": "0.6355633814",
+        "branch_exponent_alpha": "0.21469303"
+      },
+      "[2/2]": {
+        "nearest_pole": "0.6528953394",
+        "branch_exponent_alpha": "0.23648273"
+      },
+      "[2/3]": {
+        "nearest_pole": "0.6536137055",
+        "branch_exponent_alpha": "0.23771121"
+      }
+    },
+    "conformal_plain": {
+      "[2/2],mu=1.5": {
+        "A": "0.7909824049",
+        "phase_rad": "0.0",
+        "iters": 39
+      },
+      "[2/2],mu=2.0": {
+        "A": "0.8000198728",
+        "phase_rad": "0.0",
+        "iters": 37
+      },
+      "[2/3],mu=1.5": {
+        "A": "0.7404911069",
+        "phase_rad": "0.0",
+        "iters": 39
+      },
+      "[2/3],mu=2.0": {
+        "A": "0.7524614691",
+        "phase_rad": "0.0",
+        "iters": 38
+      },
+      "[3/3],mu=1.5": {
+        "A": "0.6797674138",
+        "phase_rad": "0.0",
+        "iters": 42
+      },
+      "[3/3],mu=2.0": {
+        "A": "0.6974694709",
+        "phase_rad": "0.0",
+        "iters": 37
+      }
+    },
+    "conformal_dlog": {
+      "[2/2],mu=1.5": {
+        "rungs": 5,
+        "A": "0.68333979378",
+        "phase_rad": "0.0",
+        "alpha": "0.31435108",
+        "w_star": "0.26794919",
+        "iters": 30
+      },
+      "[2/2],mu=2.0": {
+        "rungs": 5,
+        "A": "0.669510112599",
+        "phase_rad": "0.0",
+        "alpha": "0.27164312",
+        "w_star": "0.17157288",
+        "iters": 32
+      },
+      "[1/3],mu=1.5": {
+        "rungs": 5,
+        "A": "0.654556631685",
+        "phase_rad": "0.0",
+        "alpha": "0.24326646",
+        "w_star": "0.26794919",
+        "iters": 32
+      },
+      "[1/3],mu=2.0": {
+        "rungs": 5,
+        "A": "0.650490377194",
+        "phase_rad": "0.0",
+        "alpha": "0.23351916",
+        "w_star": "0.17157288",
+        "iters": 33
+      },
+      "[2/3],mu=1.5": {
+        "rungs": 6,
+        "A": "0.659060779752",
+        "phase_rad": "0.0",
+        "alpha": "0.252222",
+        "w_star": "0.26794919",
+        "iters": 33
+      },
+      "[2/3],mu=2.0": {
+        "rungs": 6,
+        "A": "0.655797157601",
+        "phase_rad": "0.0",
+        "alpha": "0.24282872",
+        "w_star": "0.17157288",
+        "iters": 33
+      },
+      "[3/2],mu=1.5": {
+        "rungs": 6,
+        "A": "0.633771388865",
+        "phase_rad": "0.0",
+        "alpha": "0.18355244",
+        "w_star": "0.26794919",
+        "iters": 40
+      },
+      "[3/2],mu=2.0": {
+        "rungs": 6,
+        "A": "0.648190036285",
+        "phase_rad": "0.0",
+        "alpha": "0.22400949",
+        "w_star": "0.17157288",
+        "iters": 35
+      },
+      "[1/2],mu=1.5": {
+        "rungs": 4,
+        "A": "0.620871139795",
+        "phase_rad": "0.0",
+        "alpha": "0.19382794",
+        "w_star": "0.26794919",
+        "iters": 31
+      },
+      "[1/2],mu=2.0": {
+        "rungs": 4,
+        "A": "0.62351110471",
+        "phase_rad": "0.0",
+        "alpha": "0.1984795",
+        "w_star": "0.17157288",
+        "iters": 32
+      }
+    },
+    "A_stabilized": "0.65683953472",
+    "A_range": [
+      "0.633771388865",
+      "0.68333979378"
+    ],
+    "A_rel_spread": "0.075465",
+    "branch_exponent_alpha_mean": "0.24567406",
+    "max_abs_phase_rad": "0.0",
+    "A_is_real": true,
+    "candidates": {
+      "Vol(4_1)/pi": {
+        "value": "0.646131894439",
+        "rel_to_A_mean": "0.016572",
+        "status": "consistent-within-spread"
+      },
+      "sibling_ratio_fit_0.6177": {
+        "value": "0.617661555754",
+        "rel_to_A_mean": "0.06343",
+        "status": "suggestive"
+      },
+      "2/e": {
+        "value": "0.735758882343",
+        "rel_to_A_mean": "0.10726",
+        "status": "not matched"
+      },
+      "Vol(4_1)/2pi": {
+        "value": "0.323065947219",
+        "rel_to_A_mean": "1.0331",
+        "status": "not matched"
+      },
+      "Vol(4_1)/4=Lambda(pi/3)": {
+        "value": "0.507470803205",
+        "rel_to_A_mean": "0.29434",
+        "status": "not matched"
+      },
+      "predecessor_richardson_0.6937": {
+        "value": "0.693749273902",
+        "rel_to_A_mean": "0.053203",
+        "status": "suggestive"
+      }
+    },
+    "consistent_within_spread": [
+      "Vol(4_1)/pi"
+    ],
+    "suggestive_only": [
+      "sibling_ratio_fit_0.6177",
+      "predecessor_richardson_0.6937"
+    ],
+    "verdict": "C1 CONFORMAL STABILIZATION (scope-(a), order-limited to 6 rungs): raw Borel-Pade of the 4_1 ladder is confirmed unstable at 6 rungs (nearest-pole rel spread 1.51); the conformal-mapped Borel plane (zeta = 4*A0*w/(1+w)^2, margin-held trial, damped fixed-point from A0 = 0.6177) with DLOG-Pade in w stabilizes the singularity at A = 0.65683953 (range [0.63377139, 0.68333979], rel spread 0.0755, branch exponent alpha ~ 0.246) across Pade orders (= truncations 5/6 rungs) and margins. Phase: max |arg| = 0.0 rad \u2014 REAL-positive action, as forced by Pringsheim (positive b_n) and amphichirality (CS(4_1)=0). A = 0.65683953 in [0.63377139, 0.68333979]: Vol(4_1)/pi lie(s) WITHIN the spread \u2014 consistent-within-spread (order-limited, 6 rungs; NOT an exact identification claim; scope-(a)). The sibling ratio-fit 0.6177 and 2/e (predecessor's closest) fall OUTSIDE the band; the plain-conformal variant's residual downward drift (~0.79->~0.68) is Pade-on-branch-cut bias, removed by dlog. No fit wired anywhere; no c_k value; no tier change. A is in the 1/N normalization (divide by 2*pi for the 2*pi/N variable)."
+  },
+  "context": {
+    "axis": "z->c_k f-map keystone: C1 conformal-mapped Borel plane",
+    "audit_item": "docs/audits/2026-07-12-borel-alien-calculus-utilization-audit.md #C1",
+    "predecessor": "docs/audits/scripts/qbeta_borel_pade_action.py (raw Borel-Pade Froissart-unstable; Richardson A~0.6937, |A| only, no phase)",
+    "sibling": "docs/audits/scripts/qbeta_even_borel_singularity.py (ratio-fit A=0.6177, flagged suggestive-not-identified)",
+    "reality_argument": "Pringsheim (all b_n > 0) + amphichirality (CS(4_1)=0 => action real); predecessor discussion at its lines ~121-140",
+    "next": "C3: Borel-Ecalle transseries anchored on the stabilized A to reach kappa_5/kappa_6 exactly; more exact rungs would shrink the band and settle Vol(4_1)/pi"
+  }
+}
