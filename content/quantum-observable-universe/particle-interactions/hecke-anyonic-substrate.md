@@ -1,4 +1,4 @@
-**Theorem (Iwahori–Hecke substrate is the anyon algebra).**
+**Conjecture (Iwahori–Hecke substrate is the anyon algebra).**
 *Let $K$ be a closed braid representing a QOU particle. Let $T_w \in H_n(R, q)$ be its Hecke normal form at a generic deformation parameter $q$. The topological statistics of $K$ are governed by the braid group $B_n$ acting on $T_w$ via the surjection $B_n \twoheadrightarrow H_n(R, q)$ defined by $\sigma_i \mapsto T_{s_i}$ modulo the Hecke quadratic relation:*
 
 $$
