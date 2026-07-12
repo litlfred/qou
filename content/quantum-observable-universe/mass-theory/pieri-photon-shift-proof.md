@@ -15,12 +15,26 @@ $\lambda$-isotypic component of the $\mathrm{SU}_q(2)$ action
 \cite{kassel1995}. The hypothesis on $\beta_m$ says its image lies
 in the $V_\lambda$-isotypic component.
 
+**Support convention.** The element $\gamma \beta_m$ is of mixed
+degree: the identity term of $\gamma$ leaves $\beta_m$ at level $n$
+of the tower, while each generator term couples one further strand
+and lands at level $n + 1$. Support is therefore tracked in the
+Wedderburn labels of the tower algebra $\bigoplus_m H_m(q)$, one
+label set per level. At level $n + 1$ the corpus writes
+$\lambda + \square := (\lambda_1 + 1, \lambda_2) \vdash n+1$ and
+$\lambda - \square := (\lambda_1, \lambda_2 + 1) \vdash n+1$; the
+name of the latter comes from the two-row $\mathrm{SU}_q(2)$
+identification, under which a complete two-box column carries the
+trivial determinant weight and $(\lambda_1, \lambda_2 + 1)$
+column-reduces to $(\lambda_1 - 1, \lambda_2)$. All partitions in a
+given support statement below live at the level indicated.
+
 **Step 1: reduction by linearity.**
 Since $\gamma \beta_m = \beta_m + \sum_i \phi_i \, (\sigma_i \beta_m)$
 and $\mathrm{supp}(x + y) \subseteq \mathrm{supp}(x) \cup \mathrm{supp}(y)$,
 it suffices to bound the support of each summand. The identity term
-contributes $\mathrm{supp}(\beta_m) = \{\lambda\}$, unchanged. It
-remains to show
+contributes the level-$n$ component $\mathrm{supp}(\beta_m) = \{\lambda\}$,
+unchanged. It remains to show, at level $n+1$,
 $\mathrm{supp}(\sigma_i \beta_m) \subseteq \{\lambda + \square\} \cup \{\lambda - \square\}$
 for each generator term.
 
@@ -52,15 +66,15 @@ $$
 $$
 
 with multiplicity one for each summand
-(\cite{fulton1997}, Ch. 2; \cite{kassel1995}, Ch. VII). In the
-two-row spectrum of $\mathrm{SU}_q(2)$ a complete column of two
-boxes carries the trivial determinant weight, so adding a box in
-the second row is equivalent to removing a box from the first: the
-two summands are precisely $\lambda + \square$ and
-$\lambda - \square$ (when $\lambda - \square$ is a valid shape;
-otherwise only $\lambda + \square$ occurs, and the containment
-below holds a fortiori). Hence
-$\mathrm{supp}(\sigma_i \beta_m) \subseteq \{\lambda + \square\} \cup \{\lambda - \square\}$.
+(\cite{fulton1997}, Ch. 2; \cite{kassel1995}, Ch. VII). The two
+summands are the two level-$(n+1)$ blocks
+$\lambda + \square = (\lambda_1 + 1, \lambda_2)$ and
+$\lambda - \square = (\lambda_1, \lambda_2 + 1)$ of the support
+convention (when $(\lambda_1, \lambda_2 + 1)$ is a valid two-row
+shape; otherwise only $\lambda + \square$ occurs, and the
+containment below holds a fortiori). Hence
+$\mathrm{supp}(\sigma_i \beta_m) \subseteq \{\lambda + \square\} \cup \{\lambda - \square\}$
+at level $n+1$.
 
 **Step 4: assembly.**
 Combining Steps 1–3,
