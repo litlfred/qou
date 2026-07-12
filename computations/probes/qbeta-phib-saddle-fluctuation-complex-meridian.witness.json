@@ -1,0 +1,80 @@
+{
+  "computation": "qbeta-phib-saddle-fluctuation-complex-meridian",
+  "description": "C6 follow-up: numeric complex Wick engine for the saddle-fluctuation tower at a tilted (complex-meridian) saddle; mu=0 regression to the exact ladder; leading \ud835\udd19(mu) vs corpus gluing solver; real vs complex-tilt Im.",
+  "audit_only": true,
+  "tier": "numerical (deformed-saddle fluctuation engine)",
+  "computedAt": "2026-07-12T23:30:17.191296+00:00",
+  "commitSha": "963361118548e4fb42cfff1ae789483f65c93105",
+  "engine": "mpmath",
+  "engineVersion": "1.3.0",
+  "scriptFile": "qbeta_phib_saddle_fluctuation_complex_meridian_probe.py",
+  "scriptHash": "02e7afec3ab4",
+  "assertions": [
+    {
+      "name": "numeric_wick_stirling_control",
+      "passed": true
+    },
+    {
+      "name": "mu0_numeric_reproduces_exact_ladder",
+      "passed": true,
+      "computed": "worst rel 1.01596e-96",
+      "expected": "all 5 rungs to < 1e-30",
+      "source": "numeric complex Wick engine vs the exact C6 closed forms at the real saddle \u2014 cross-validation of the engine"
+    },
+    {
+      "name": "real_meridian_both_faces_CS_zero",
+      "passed": true,
+      "source": "tilt-saddle Im \ud835\udd19 and corpus gluing-solver Im \ud835\udd19 both vanish at real meridian (figure-eight amphichirality)"
+    },
+    {
+      "name": "real_tilt_tower_is_real",
+      "passed": true,
+      "computed": "0.0",
+      "source": "real meridian tilt keeps s*(mu) real => real fluctuation tower"
+    },
+    {
+      "name": "envelope_derivative_equals_saddle",
+      "passed": true,
+      "computed": "0.833333333333",
+      "expected": "5/6",
+      "source": "d\ud835\udd19/dmu|_0 = s*(0) = 5/6 (envelope theorem), confirming the linear-tilt parametrization"
+    }
+  ],
+  "allPassed": true,
+  "result": {
+    "mu0_regression_worst_rel": "1.0159586e-96",
+    "real_meridian_faces_CS_zero": true,
+    "real_tilt_max_im_kappa": "0.0",
+    "envelope_dVdmu": "0.83333333333333333333",
+    "complex_tilt_eps": "0.01",
+    "complex_tilt_kappa": {
+      "1": [
+        "0.5541929615250613",
+        "1.530054532123364e-7"
+      ],
+      "2": [
+        "0.7309599727714092",
+        "1.001732139342908e-6"
+      ],
+      "3": [
+        "2.653712164723204",
+        "8.093587247093738e-6"
+      ],
+      "4": [
+        "13.0880865349141",
+        "7.76473511230071e-5"
+      ],
+      "5": [
+        "84.57725822002031",
+        "0.0008620080270132973"
+      ]
+    },
+    "verdict": "VALIDATED: the numeric complex Wick engine reproduces the exact real-saddle ladder kappa_1..kappa_5 to >30 digits, passes the Stirling control, and \u2014 extended to the tilted saddle s*(mu) \u2014 gives a real tower at real meridian (Im \ud835\udd19 = 0, matching the corpus gluing solver and the amphichirality) and a complex tower at mu = i*eps whose leading response d\ud835\udd19/dmu = 5/6 confirms the linear-tilt parametrization. The higher complex fluctuation orders at mu = i*eps are emitted as new output \u2014 the higher-order partners of the i*t*kappa_1 finite-b correction already in the corpus. This wires the deformed saddle into the C6 generator geometrically; the meridian<->Q_beta map stays the OPEN bridge (no mu fixed from QOU data). Anti-laundering: 4_1 geometric facts; NO fit; NO c_k wired; NO tier change."
+  },
+  "context": {
+    "axis": "C6 complex-meridian wiring (bean qou-28c0; PR #3683 pickup follow-up)",
+    "engine_cross_validated_against": "exact C6 sympy ladder (qbeta-phib-saddle-fluctuation-transseries)",
+    "leading_face": "qbeta_c3_barodd_gluing_newton_solve.vol_of_m",
+    "finite_b_rung1": "i*t*kappa_1 in qbeta_c3_phib_saddle_state_integral_probe.py"
+  }
+}
