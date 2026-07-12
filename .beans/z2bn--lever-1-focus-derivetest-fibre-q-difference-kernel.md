@@ -325,3 +325,25 @@ n≤4-effective. The EXACT kernel is now derived at q=1:
 Closes the classical-kernel gap MODULO Identity I (Σf^λ=I(n)) — the SAME keystone P1–P5 RSK input.
 So binding + keystone share ONE open input; classical binding kernel otherwise proved. Probe
 `lever1_binding_classical_kernel_derive.py`; audit `docs/audits/2026-07-12-lever1-sw-period-lw-rate-refine.md`.
+
+## Update 2026-07-12 (c) — alien-calculus review distilled: Gevrey-1/2 Lean-proved; Borel(1/2) singularity ξ=1/√2; q₀ class change to q-Gevrey; Habiro-basis expansion (PR #3694)
+
+Owner-approved distillation of an external alien-calculus/resurgence dialog into utility
+(branch claude/alien-calculus-resurgence-nvvezn). The dialog's Gevrey-1/standard-Borel premise
+is REFUTED-and-corrected: (W1) the classical period a_D^(n)=I(n)/n is GEVREY-1/2 — Lean-proved
+two-sided sandwich n! ≤ 4ⁿ·I(n)² ≤ 8ⁿ·n! (QOU/Mass/BindingGevreyHalf.lean, sorry-free,
+lean-direct exit 0) ⇒ the level-1 Borel plane is entire (no alien derivatives there); level-1/2
+is canonical. (W2) Level-1/2 Borel–Padé (n≤60): dominant singularity at ξ = 1/√2 on the positive
+real axis, NON-POLAR (accumulating Padé poles — mixed-level transseries signature); at q₀ the
+root test rises without plateau under the exact q^{n(n−1)/2} envelope ⇒ the q-deformation CHANGES
+the class to q-GEVREY — the alien-calculus geometry at q₀ is an Écalle acceleration chain, not
+one Borel plane. The (ρ=1/√2, positive axis, non-polar) datum is the derived analytic TARGET the
+open multi-branch super-exp kernel must reproduce (complements the concluded algebraic line,
+Stages 6–9 + #3686 not-Salem). (W3) Stage-6 queued next step executed: exact Habiro
+(q;q)_k-basis expansion of D(4..9) — round-trip exact, c₀=0 universal, depth k_max ≈ n−1 growing,
+height ×8–9/step (basis-side face of no-finite-closed-form). NOT done deliberately: Bridge-eq
+Stokes multipliers (no proved resurgence for a non-q-holonomic series), OP/spectral-network
+construction (already pruned). Probes: lever1_gevrey_order_pin.py,
+lever1_borel_half_singularity_probe.py, lever1_habiro_tail_habiro_basis_expansion.py (+3
+witnesses). Audit: docs/audits/2026-07-12-alien-calculus-review-binding-gevrey-half.md.
+No fit; nothing wired; scope-(a) + Lean-proved core. Owner closes (§4a).

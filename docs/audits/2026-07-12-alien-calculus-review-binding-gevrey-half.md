@@ -1,0 +1,110 @@
+# Alien-calculus / resurgence review for the binding kernel: Gevrey-1/2 pinned (Lean), level-1/2 Borel singularity at ξ = 1/√2, q₀ class change to q-Gevrey
+
+**Date:** 2026-07-12
+**Branch:** `claude/alien-calculus-resurgence-nvvezn`
+**Bean:** `z2bn` (lever-1 fibre q-difference kernel) — session beans `qou-t4r0/y4ha/y386/7xit`
+**Lean:** [`QOU/Mass/BindingGevreyHalf.lean`](../../content/quantum-observable-universe/lean/QOU/Mass/BindingGevreyHalf.lean) (sorry-free, lean-direct exit 0)
+**Probes:**
+[`computations/lever1_gevrey_order_pin.py`](../../computations/lever1_gevrey_order_pin.py),
+[`computations/lever1_borel_half_singularity_probe.py`](../../computations/lever1_borel_half_singularity_probe.py),
+[`computations/lever1_habiro_tail_habiro_basis_expansion.py`](../../computations/lever1_habiro_tail_habiro_basis_expansion.py)
+**Sibling:** [PR #3686](https://github.com/litlfred/qou/pull/3686) (Habiro cofactors not Salem — the arithmetic side of the same object; this note opens the analytic/growth side)
+
+## 1. What was reviewed
+
+An external AI dialog (owner-pasted, 2026-07-12) proposing an Écalle alien-calculus /
+resurgence framing for the lever-1 binding kernel: Borel transform of `a_D^(n)`, alien
+derivatives `Δ_ω` at branch-point singularities, a Bridge equation with quantum Stokes
+multipliers `A_ω(q) ∝ (q−1)²·Φ_m(q)`, saddle-geodesic spectral networks, per-trajectory
+orthogonal polynomials, and a claimed unique rigid reconstruction of a binding kernel
+`K_q(x,y)`.
+
+### Verdict per claim (critical-distance license)
+
+| dialog claim | corpus status |
+|---|---|
+| `D(5)=2(q−1)²Φ₂²Φ₃Φ₆/q`, q-telephone recurrence, Lean q=1 limit | **already derived** ([Habiro-tail closed forms](2026-07-12-lever1-habiro-tail-closed-form.md), `BindingClassicalKernel.lean`) |
+| Puiseux ⇒ `a_D^(n) ∝ (1/2)ₙ/Rⁿ` **factorial (Gevrey-1)** ⇒ standard Borel carries `Δ_ω` | **REFUTED (scope-(a), now Lean-backed):** the single-branch factorial rate overshoots ~2.6× at n=8 ([rate-refine audit](2026-07-12-lever1-sw-period-lw-rate-refine.md)); this session proves the class is **Gevrey-1/2** (§2). The level-1 Borel transform of the period is *entire* — no finite singularities, no alien derivatives live in that plane. |
+| `K_q(x,y)` "exists uniquely, completely rigid" | **over-claimed:** resurgent reconstruction needs proved endless continuability; the standard theorem base (exact WKB / holonomic modules) does not apply — the tail is **not q-holonomic** at low order (Stages 3–6, 2026-06-28). Hypothesis, not conclusion. |
+| saddle-trajectory orthogonal polynomials / Christoffel–Darboux | already pruned as a closure route ([q-involution/q-Hermite id](2026-06-26-binding-period-qinvolution-qhermite-identification.md)); narrative, no new decidable |
+| Bridge equation, `A_ω(q)` vanishing at cyclotomic roots | untestable until the singularities are located in the **correct** plane — which this session does (§3); remains open, now with a concrete target |
+| "works over ℤ": q-Borel `[n]_q!`, cyclotomic completion (Habiro ring) | **agrees with the queued Stage-6 next step**; executed this session as the `(q;q)_k`-basis expansion (§4) |
+
+## 2. Gevrey order pinned: 1/2 at q=1 (Lean-proved sandwich)
+
+[`BindingGevreyHalf.lean`](../../content/quantum-observable-universe/lean/QOU/Mass/BindingGevreyHalf.lean),
+sorry-free, two-step induction from the corpus `involutionNumber` telephone recurrence:
+
+- `factorial_le_four_pow_mul_involution_sq` : `n! ≤ 4ⁿ·I(n)²`
+- `involution_sq_le_two_pow_mul_factorial` : `I(n)² ≤ 2ⁿ·n!`
+
+So `√(n!/4ⁿ) ≤ I(n) ≤ √(2ⁿ·n!)` — the classical binding period `a_D^(n) = I(n)/n` is
+`(n!)^{1/2}` × (exponentially bounded): **Gevrey-1/2 exactly** (super-exponential, but
+strictly below every Gevrey-1 class). Numerics (`lever1_gevrey_order_pin.py`, exit 0):
+sandwich asserted to n=60; `ln I(n)` matches the `(n/e)^{n/2}e^{√n−1/4}/√2` asymptote to
++0.035 at n=60; level-1 Borel root test decays as `√(e/n)` (scaled 1.002 ≈ 1 ⇒ B₁ entire).
+
+## 3. The level-1/2 Borel plane: singularity at ξ = 1/√2; q₀ changes class
+
+`lever1_borel_half_singularity_probe.py` (exit 0), coefficients `b_n = a_D^(n)/Γ(n/2+1)`:
+
+- **q=1 (n ≤ 60):** root test → √2 (two-term extrapolation 1.365, 3.5%); Padé [28/28]
+  nearest pole `ξ = 0.688` (2.6% from `1/√2 = 0.7071`) on the **positive real axis**
+  (Pringsheim, as forced by `b_n > 0`), with **10 real poles accumulating** beyond ρ —
+  a **non-polar** (branch/essential) singularity, the `e^{√n}` subexponential signature
+  of a mixed-level transseries.
+- **q₀ (n ≤ 28):** the level-1/2 root test **rises without plateau** (1.18 → 1.97) —
+  the finite-n shadow of radius → 0. Combined with the exact envelope
+  `dim_q ≤ [n]_q! ⇒ S_q(n) ≤ p(n)·q^{n(n−1)/2}` and the measured exponent ratio rising
+  toward it (0.05 → 0.25, n ≤ 28), the q-deformation **changes the divergence class**:
+  classical Gevrey-1/2 → **q-Gevrey** (Jackson q-Borel territory). At q₀ no single
+  classical Borel level carries the period; the correct alien-calculus geometry is an
+  **Écalle acceleration chain**, not one Borel plane.
+- **Geometric comparison (reported only, numerology guard):** the color-cubic branch
+  moduli (|z| ≈ 0.943, 1.0, 1.061) live in the z-plane, not the ξ-plane; no
+  identification claimed. The measured datum (ρ = 1/√2, positive axis, non-polar) is the
+  structural target any derived multi-branch residue kernel must reproduce.
+
+## 4. Habiro-basis expansion of the tail D(n)
+
+`lever1_habiro_tail_habiro_basis_expansion.py` (exact sympy, exit 0): expand
+`P_n = q^{v(n)}·D(n) ∈ ℤ[q]` in the Habiro / cyclotomic-completion basis
+`{(q;q)_k}` via successive division by `(1−q^{k+1})` (integrality automatic — unit
+leading coefficients). Closed forms of the
+[Habiro-tail audit](2026-07-12-lever1-habiro-tail-closed-form.md) verified bit-for-bit
+(n = 4, 5 + the universal `(q−1)²` root); round-trip exact; `c₀ = 0` universally:
+
+| n | k_max | first k≠0 | height max\|coeff\| |
+|--:|--:|--:|--:|
+| 4 | 2 | 1 | 1 |
+| 5 | 3 | 2 | 4 |
+| 6 | 4 | 1 | 38 |
+| 7 | 5 | 1 | 308 |
+| 8 | 7 | 1 | 2 296 |
+| 9 | 8 | 1 | 21 897 |
+
+Depth grows ≈ `n−1` and height ≈ ×8–9 per step — the basis-side face of the
+"no finite closed form" Stage 6–9 verdict. One structural curiosity (reported, not
+interpreted): n = 5 — the *last all-cyclotomic* tail — is also the only n with
+first-nonzero depth k = 2 instead of 1.
+
+## 5. Net (scope + what is now sharper)
+
+- **Derived + Lean-proved:** the classical binding period is Gevrey-1/2 (two-sided
+  integer sandwich). This *corrects* the dialog's central technical premise.
+- **Measured (scope-(a)):** the canonical (level-1/2) Borel singularity datum at q=1 —
+  `ξ = 1/√2`, positive real axis, non-polar — and the q₀ class change to q-Gevrey.
+- **The open super-exp kernel question is sharpened:** it now has a concrete analytic
+  target (reproduce the `1/√2` datum and the q-Gevrey deformation), complementing the
+  concluded algebraic line (Stages 6–9 + [PR #3686](https://github.com/litlfred/qou/pull/3686)'s
+  not-Salem classification).
+- **Not done, deliberately:** no Bridge-equation / Stokes-multiplier formalism (no proved
+  resurgence for a non-q-holonomic series), no orthogonal-polynomial spectral-network
+  construction (already pruned), no wiring, no fit, no tier change.
+
+## Discipline
+
+Formalize-first: the Gevrey sandwich was proved (Lean, sorry-free, lean-direct exit 0)
+and the ξ = 1/√2 expectation derived from proved asymptotics *before* the numerical
+hunt. Binding `D(n)`/`a_D^(n)` only — **not** the Q_β `c_k` ladder (distinct objects;
+the c_k flip-flop discipline is untouched). All exploratory; owner closes (§4a).
