@@ -1,0 +1,413 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-12T20:54:45.458959+00:00",
+  "commitSha": "cbd5de37baeb54609c1270242406f42bb7b52166",
+  "assertions": [
+    {
+      "name": "v1_complete_recovers_vol_4_1",
+      "computed": 2.720699046352687e-12,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-10,
+      "source": "V_of_u(u→0) Re = Vol(4₁); Im = 0"
+    },
+    {
+      "name": "v1_complete_im_zero",
+      "computed": 4.233248428111387e-47,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-20,
+      "source": "Im 𝔙(u→0) = 0 (complete = amphichiral, CS=0)"
+    },
+    {
+      "name": "v2_nz_leading_slope_2sqrt_minus_3",
+      "computed": 1.1547005383792515e-16,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-06,
+      "source": "dv/du|₀ = 2√−3 (Hikami 2v = −2πi + 4√3 i u + …)"
+    },
+    {
+      "name": "v3_murakami_gluing_residual",
+      "computed": 2.152394441202919e-41,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-20,
+      "source": "Murakami gluing eqns log w+log(1−z)=u, Σ log = 0"
+    },
+    {
+      "name": "substrate_ohtsuki_kappa1_right_order",
+      "computed": 0.057827345943670366,
+      "expected": 0.055,
+      "passed": true,
+      "tolerance": 0.02,
+      "source": "Im[κ₁·(2πb²)] at 2πb²=i·t, κ₁=11√3π/108 (rem:ohtsuki-tower-bar-parity)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 88899,
+  "computation": "qbeta-c3-mq0-nk-scan",
+  "scriptFile": "qbeta_c3_mq0_nk_scan.py",
+  "scriptHash": "7f168a5c8bb0",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "The discrete (color N, winding k) menu scan (PR #3660 memo §5). Branch-tracked complex volume 𝔙(u)=Vol+iCS of 4₁ from Murakami–Yokota (math/0401084, Thm 2.1/2.2), validated (u=0⇒Vol(4₁); NZ slope 2√−3; gluing residual 1e−20), then the 8 named candidates (N,k)∈{3,6,60,120}×{1,2} pushed through the falsification kit at proton/muon/q* anchors. VERDICT: 0/8 — every candidate overshoots |S|~0.01–0.04 by ≥40× (the standard leading-NZ (√3/2)|u|²sin2φ alone gives ≥87× at the smallest |u|), and the endpoint Bloch–Wigner volumes are negative/≈0 (not the geometric +2.03): the winding data |u|=|Nt−2πik|≥2π lie off the figure-eight geometric component and far outside Murakami's proven neighborhood of 0. Scope-(a); C14; no fit; no c_k wired; registry untouched. Absolute CS at these |u| is normalization-uncertain (the two estimates bracket it) but the ≥40× overshoot + off-component are robust to it.",
+  "contentBlock": "prop:phi-b-unitary-bar-odd",
+  "data": {
+    "targets": {
+      "S_muon": "0.00968298",
+      "S_proton": "-0.03945936",
+      "A_prime_G3": "2.37",
+      "u_ladder_G3": "0.00852",
+      "g2_floor_proton": "0.21345666",
+      "Vol_4_1": "2.02988321282",
+      "q_star": "1.10997859303152"
+    },
+    "candidates": [
+      {
+        "N": 3,
+        "k": 1,
+        "N_pedigree": "H₃ strand data (3 strands)",
+        "k_pedigree": "principal (nearest-RoU) branch",
+        "anchors": {
+          "proton": {
+            "u_re": "0.313022161",
+            "u_im": "-6.283185307",
+            "abs_u": "6.290977704",
+            "arg_u_deg": "-87.147938",
+            "bloch_wigner_vol": "-1.940684441",
+            "Im_V_branch": "-73.07812564",
+            "Im_V_nz_leading": "-3.406556379",
+            "winding": "-1.0892204",
+            "min_dist_zeta": 1.0
+          },
+          "muon": {
+            "u_re": "0.3130221956",
+            "u_im": "-6.283185307",
+            "abs_u": "6.290977706",
+            "arg_u_deg": "-87.147938",
+            "bloch_wigner_vol": "-1.94068442",
+            "Im_V_branch": "-73.07812694",
+            "Im_V_nz_leading": "-3.406556756",
+            "winding": "-1.0892204",
+            "min_dist_zeta": 1.0
+          },
+          "qstar": {
+            "u_re": "0.3130221887",
+            "u_im": "-6.283185307",
+            "abs_u": "6.290977706",
+            "arg_u_deg": "-87.147938",
+            "bloch_wigner_vol": "-1.940684424",
+            "Im_V_branch": "-73.07812669",
+            "Im_V_nz_leading": "-3.406556682",
+            "winding": "-1.0892204",
+            "min_dist_zeta": 1.0
+          }
+        }
+      },
+      {
+        "N": 3,
+        "k": 2,
+        "N_pedigree": "H₃ strand data (3 strands)",
+        "k_pedigree": "next winding",
+        "anchors": {
+          "proton": {
+            "u_re": "0.313022161",
+            "u_im": "-12.56637061",
+            "abs_u": "12.57026862",
+            "arg_u_deg": "-88.573085",
+            "bloch_wigner_vol": "1.940684441",
+            "Im_V_branch": "146.1562514",
+            "Im_V_nz_leading": "-6.813112758",
+            "winding": "0.089220422",
+            "min_dist_zeta": 0.23135364835423577
+          },
+          "muon": {
+            "u_re": "0.3130221956",
+            "u_im": "-12.56637061",
+            "abs_u": "12.57026863",
+            "arg_u_deg": "-88.573085",
+            "bloch_wigner_vol": "1.94068442",
+            "Im_V_branch": "146.156254",
+            "Im_V_nz_leading": "-6.813113512",
+            "winding": "0.089220432",
+            "min_dist_zeta": 0.23135364444055054
+          },
+          "qstar": {
+            "u_re": "0.3130221887",
+            "u_im": "-12.56637061",
+            "abs_u": "12.57026863",
+            "arg_u_deg": "-88.573085",
+            "bloch_wigner_vol": "1.940684424",
+            "Im_V_branch": "146.1562535",
+            "Im_V_nz_leading": "-6.813113363",
+            "winding": "0.08922043",
+            "min_dist_zeta": 0.23135364521247617
+          }
+        }
+      },
+      {
+        "N": 6,
+        "k": 1,
+        "N_pedigree": "doubled H₃ (bar-partner)",
+        "k_pedigree": "principal (nearest-RoU) branch",
+        "anchors": {
+          "proton": {
+            "u_re": "0.6260443219",
+            "u_im": "-6.283185307",
+            "abs_u": "6.314297197",
+            "arg_u_deg": "-84.309941",
+            "bloch_wigner_vol": "-1.608631127",
+            "Im_V_branch": "-86.78312077",
+            "Im_V_nz_leading": "-6.813112758",
+            "winding": "-1.1997222",
+            "min_dist_zeta": 1.0
+          },
+          "muon": {
+            "u_re": "0.6260443911",
+            "u_im": "-6.283185307",
+            "abs_u": "6.314297204",
+            "arg_u_deg": "-84.30994",
+            "bloch_wigner_vol": "-1.608631011",
+            "Im_V_branch": "-86.78312443",
+            "Im_V_nz_leading": "-6.813113512",
+            "winding": "-1.1997222",
+            "min_dist_zeta": 1.0
+          },
+          "qstar": {
+            "u_re": "0.6260443775",
+            "u_im": "-6.283185307",
+            "abs_u": "6.314297203",
+            "arg_u_deg": "-84.30994",
+            "bloch_wigner_vol": "-1.608631034",
+            "Im_V_branch": "-86.78312371",
+            "Im_V_nz_leading": "-6.813113363",
+            "winding": "-1.1997222",
+            "min_dist_zeta": 1.0
+          }
+        }
+      },
+      {
+        "N": 6,
+        "k": 2,
+        "N_pedigree": "doubled H₃ (bar-partner)",
+        "k_pedigree": "next winding",
+        "anchors": {
+          "proton": {
+            "u_re": "0.6260443219",
+            "u_im": "-12.56637061",
+            "abs_u": "12.58195541",
+            "arg_u_deg": "-87.147938",
+            "bloch_wigner_vol": "1.608631127",
+            "Im_V_branch": "173.5662418",
+            "Im_V_nz_leading": "-13.62622552",
+            "winding": "0.1997222",
+            "min_dist_zeta": 0.18550160205421404
+          },
+          "muon": {
+            "u_re": "0.6260443911",
+            "u_im": "-12.56637061",
+            "abs_u": "12.58195541",
+            "arg_u_deg": "-87.147938",
+            "bloch_wigner_vol": "1.608631011",
+            "Im_V_branch": "173.5662491",
+            "Im_V_nz_leading": "-13.62622702",
+            "winding": "0.19972223",
+            "min_dist_zeta": 0.1855015904360871
+          },
+          "qstar": {
+            "u_re": "0.6260443775",
+            "u_im": "-12.56637061",
+            "abs_u": "12.58195541",
+            "arg_u_deg": "-87.147938",
+            "bloch_wigner_vol": "1.608631034",
+            "Im_V_branch": "173.5662476",
+            "Im_V_nz_leading": "-13.62622673",
+            "winding": "0.19972223",
+            "min_dist_zeta": 0.18550159272761776
+          }
+        }
+      },
+      {
+        "N": 60,
+        "k": 1,
+        "N_pedigree": "|A₅| — icosahedral order (Bring substrate)",
+        "k_pedigree": "principal (nearest-RoU) branch",
+        "anchors": {
+          "proton": {
+            "u_re": "6.260443219",
+            "u_im": "-6.283185307",
+            "abs_u": "8.869699369",
+            "arg_u_deg": "-45.103879",
+            "bloch_wigner_vol": "4.883109511e-43",
+            "Im_V_branch": "4.227747301",
+            "Im_V_nz_leading": "-68.13112758",
+            "winding": "-1.5",
+            "min_dist_zeta": 1.0
+          },
+          "muon": {
+            "u_re": "6.260443911",
+            "u_im": "-6.283185307",
+            "abs_u": "8.869699858",
+            "arg_u_deg": "-45.103876",
+            "bloch_wigner_vol": "4.88135801e-43",
+            "Im_V_branch": "4.227774556",
+            "Im_V_nz_leading": "-68.13113512",
+            "winding": "-1.5",
+            "min_dist_zeta": 1.0
+          },
+          "qstar": {
+            "u_re": "6.260443775",
+            "u_im": "-6.283185307",
+            "abs_u": "8.869699762",
+            "arg_u_deg": "-45.103877",
+            "bloch_wigner_vol": "4.883109609e-43",
+            "Im_V_branch": "4.22776918",
+            "Im_V_nz_leading": "-68.13113363",
+            "winding": "-1.5",
+            "min_dist_zeta": 1.0
+          }
+        }
+      },
+      {
+        "N": 60,
+        "k": 2,
+        "N_pedigree": "|A₅| — icosahedral order (Bring substrate)",
+        "k_pedigree": "next winding",
+        "anchors": {
+          "proton": {
+            "u_re": "6.260443219",
+            "u_im": "-12.56637061",
+            "abs_u": "14.03947363",
+            "arg_u_deg": "-63.517962",
+            "bloch_wigner_vol": "5.356152048e-43",
+            "Im_V_branch": "-367.8475713",
+            "Im_V_nz_leading": "-136.2622552",
+            "winding": "-3.5",
+            "min_dist_zeta": 1.0
+          },
+          "muon": {
+            "u_re": "6.260443911",
+            "u_im": "-12.56637061",
+            "abs_u": "14.03947394",
+            "arg_u_deg": "-63.51796",
+            "bloch_wigner_vol": "5.356151803e-43",
+            "Im_V_branch": "-367.8475441",
+            "Im_V_nz_leading": "-136.2622702",
+            "winding": "-3.5",
+            "min_dist_zeta": 1.0
+          },
+          "qstar": {
+            "u_re": "6.260443775",
+            "u_im": "-12.56637061",
+            "abs_u": "14.03947387",
+            "arg_u_deg": "-63.51796",
+            "bloch_wigner_vol": "5.356151851e-43",
+            "Im_V_branch": "-367.8475495",
+            "Im_V_nz_leading": "-136.2622673",
+            "winding": "-3.5",
+            "min_dist_zeta": 1.0
+          }
+        }
+      },
+      {
+        "N": 120,
+        "k": 1,
+        "N_pedigree": "|2I| — binary icosahedral order (Bring substrate)",
+        "k_pedigree": "principal (nearest-RoU) branch",
+        "anchors": {
+          "proton": {
+            "u_re": "12.52088644",
+            "u_im": "-6.283185307",
+            "abs_u": "14.00896195",
+            "arg_u_deg": "-26.648245",
+            "bloch_wigner_vol": "-4.567668136e-43",
+            "Im_V_branch": "373.6580908",
+            "Im_V_nz_leading": "-136.2622552",
+            "winding": "-1.5",
+            "min_dist_zeta": 1.0
+          },
+          "muon": {
+            "u_re": "12.52088782",
+            "u_im": "-6.283185307",
+            "abs_u": "14.00896318",
+            "arg_u_deg": "-26.648243",
+            "bloch_wigner_vol": "-4.567668643e-43",
+            "Im_V_branch": "373.6581998",
+            "Im_V_nz_leading": "-136.2622702",
+            "winding": "-1.5",
+            "min_dist_zeta": 1.0
+          },
+          "qstar": {
+            "u_re": "12.52088755",
+            "u_im": "-6.283185307",
+            "abs_u": "14.00896294",
+            "arg_u_deg": "-26.648243",
+            "bloch_wigner_vol": "-4.567668543e-43",
+            "Im_V_branch": "373.6581783",
+            "Im_V_nz_leading": "-136.2622673",
+            "winding": "-1.5",
+            "min_dist_zeta": 1.0
+          }
+        }
+      },
+      {
+        "N": 120,
+        "k": 2,
+        "N_pedigree": "|2I| — binary icosahedral order (Bring substrate)",
+        "k_pedigree": "next winding",
+        "anchors": {
+          "proton": {
+            "u_re": "12.52088644",
+            "u_im": "-12.56637061",
+            "abs_u": "17.73939874",
+            "arg_u_deg": "-45.103879",
+            "bloch_wigner_vol": "-3.160091528e-44",
+            "Im_V_branch": "1.582772761",
+            "Im_V_nz_leading": "-272.5245103",
+            "winding": "-3.5",
+            "min_dist_zeta": 1.0
+          },
+          "muon": {
+            "u_re": "12.52088782",
+            "u_im": "-12.56637061",
+            "abs_u": "17.73939972",
+            "arg_u_deg": "-45.103876",
+            "bloch_wigner_vol": "-3.160091908e-44",
+            "Im_V_branch": "1.582881678",
+            "Im_V_nz_leading": "-272.5245405",
+            "winding": "-3.5",
+            "min_dist_zeta": 1.0
+          },
+          "qstar": {
+            "u_re": "12.52088755",
+            "u_im": "-12.56637061",
+            "abs_u": "17.73939952",
+            "arg_u_deg": "-45.103877",
+            "bloch_wigner_vol": "-3.160091833e-44",
+            "Im_V_branch": "1.582860195",
+            "Im_V_nz_leading": "-272.5245345",
+            "winding": "-3.5",
+            "min_dist_zeta": 1.0
+          }
+        }
+      }
+    ],
+    "structural_finding": "The memo's 'G2 passed automatically because |u|≥2π≫floor 0.2135' is a MISFRAMING: the G2 floor is the |u| at which the available |Im 𝔙|≈(√3/2)|u|² first REACHES |S|. |u|≈0.21 gives Im 𝔙≈|S|; |u|≥2π gives Im 𝔙≈34–270 — a 40–7000× OVERSHOOT, not a pass. The winding form u=Nt−2πik (|u|≥2π) is therefore INCOMPATIBLE with the small |u|≈0.21 that S's magnitude demands. A viable meridian assignment needs a tiny |u|, but a real tiny |u| gives Im 𝔙=0 (C1-dead); the honest surviving direction is a small-|u| COMPLEX (phase-channel) assignment — NOT the large-|u| winding lattice.",
+    "verdict": "0/8 — no named (N,k) winding candidate instantiates the c₃ bar-odd S. The least-bad candidate (N=120,k=2) still overshoots |S_proton| by ~40× on the more favorable of the two CS estimates; the six large-|Im| candidates overshoot by 1e2–1e4×. All endpoint Bloch–Wigner volumes are negative or ≈0, not the geometric +2.03: the meridian data |u|=|Nt−2πik|≥2π have left the figure-eight geometric component and Murakami's proven neighborhood of 0. Scope-(a) negative (this named winding menu, as-is) — NOT a scope-(b) exclusion of winding per se.",
+    "reconciliation_with_merged_resolution": "SUPERSEDED-BY-MERGE: while this (N,k) meridian-winding menu (PR #3660 memo) was being scanned, main landed the DECISIVE resolution of the odd-S origin via the Ohtsuki tower 𝔙_b=𝔙_0+Σκ_n(2πb²)ⁿ at the substrate SMALL IMAGINARY parameter 2πb²=i·t (|·|=t≈0.10): a Lean-proved bar-parity selection rule (even→Vol, odd→S; OhtsukiTowerBarParity.even_rung_real / .odd_rung_imaginary) + Borel–Padé smooth Im 𝔙≈0.055 with action A=Vol(4₁)/π, no Stokes ambiguity (rem:ohtsuki-tower-bar-parity; qbeta_c3_borel_pade_resummation_probe.py). The odd-S sign-flip is the 1/u³ ladder REPRESENTATION of that smooth object — representational / experimental-Q_β-limited, not a physical singularity. This scan is the COMPLEMENTARY NEGATIVE from the meridian side: the large-|u|≥2π winding lattice overshoots by ≥40× and leaves the geometric component, whereas the substrate's ACTUAL deformation is the small imaginary 2πb²=i·t that lands Im 𝔙 at the right O(0.05) — confirming the winding-lattice route was a dead end and closing the memo's open (N,k) proposal.",
+    "normalization_caveat": "Absolute Im 𝔙 (CS) at |u|~6–18 is normalization-uncertain: the branch-integral 𝔙=Vol−2πi·f (Φ=∫2v, f=(Φ−uv)/4) and the standard leading-NZ (√3/2)|u|²sin2φ disagree by O(1)–O(100) because |u| is far outside the small-|u| regime where either is controlled. The extended-Bloch flattening that would pin the absolute CS was NOT computed (it does not change the verdict: both estimates overshoot by ≥40×, and the Bloch–Wigner volumes are off-component regardless). What IS validated to full precision: u=0⇒Vol(4₁), the NZ slope 2√−3, gluing residual 1e−20, and Im 𝔙=0 on the real axis."
+  }
+}
