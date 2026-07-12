@@ -48,10 +48,10 @@ The torus link $T(2,8)$ has genus $3$. Its Seifert surface area is proportional 
 
 $$
   m_H =  \frac{\mathrm{Vol}(\text{Seifert}(T(2,8)))}{\hbar_q^2}
-  \cdot \lambda_{\mathrm{scale}}
+  \cdot c_{\mathcal{B}}
 $$
 
-Here $\lambda_{\mathrm{scale}}$ is the conjectural Borromean scale of [`conj:borromean-baryon-mass-formula`](#conj:borromean-baryon-mass-formula), recorded as an acknowledged-CAL-4 near-form. The canonical production mass shape absorbs it into the per-block density, $m = m_e\,\mathrm{Vol}(K)\,\varrho(K)/\hbar_q^2$ (no standalone $\lambda_{\mathrm{scale}}$ factor). This $\sim 125$ GeV heuristic estimate remains exploratory, conditional on that open closure.
+Here $c_{\mathcal{B}}$ is the historical common-scale factor of the [Borromean baryon mass formula](#conj:borromean-baryon-mass-formula) (the purged $\lambda_{\mathrm{scale}}$ literal, since re-expressed there as the common Borromean term $\mathfrak{m}_{\mathcal{B}_3}(q_0)$), recorded as an acknowledged-CAL-4 near-form. The canonical production mass shape absorbs it into the per-block density, $m = m_e\,\mathrm{Vol}(K)\,\varrho(K)/\hbar_q^2$ (no standalone scale factor). This $\sim 125$ GeV heuristic estimate remains exploratory, conditional on that open closure.
 
 The Higgs mass stems from the genus-$3$ Seifert surface volume, determined by the three color tube volumes of the Bring's surface.
 

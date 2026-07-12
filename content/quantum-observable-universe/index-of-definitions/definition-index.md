@@ -753,7 +753,7 @@
 | [conj:bigbang-heatdeath](#conj:bigbang-heatdeath) | Big Bang and heat-death functors as evaluations at named surreal endpoints | Ch 22 | `qou:QOU.AppendixSurreals.BigbangHeatdeath` |
 | [conj:jones-birthday](#conj:jones-birthday) | Birthday refinement of the Jones polynomial | Ch 22 | `qou:QOU.AppendixSurreals.JonesBirthday` |
 | [conj:bring-hyperbolic-knot-bloch-decomposition](#conj:bring-hyperbolic-knot-bloch-decomposition) | Bloch-group decomposition of $2/(3\pi)$ from $S_5$-equivariantly embeddable hyperbolic knots in Bring's surface | Ch 12 | `qou:QOU.Archimedean.bring_hyperbolic_decomposition` |
-| [conj:borromean-baryon-mass-formula](#conj:borromean-baryon-mass-formula) | Borromean baryon mass formula with common scale $\lambda_{\mathrm{scale}}$ | Ch 10 | `qou:QOU.Borromean.MassFormula` |
+| [conj:borromean-baryon-mass-formula](#conj:borromean-baryon-mass-formula) | Borromean baryon mass formula with common Borromean term $\mathfrak{m}_{\mathcal{B}_3}(q_0)$ | Ch 10 | `qou:QOU.Borromean.MassFormula` |
 | [conj:borromean-bloch-group-element](#conj:borromean-bloch-group-element) | Borromean rings represent a non-trivial element of $K_3(\mathbb{C})$ / Bloch group with regulator $r_2 = 8G$ | Ch 10 | `qou:QOU.BraidsAndKnots.BorromeanBlochGroupElement` |
 | [conj:brane-tower-z-habiro](#conj:brane-tower-z-habiro) | Brane tower lives in the $z$-Habiro ring | Ch 10 | `qou:QOU.BraidKnot.BraneTowerZHabiro` |
 | [conj:n-v-tower-depth-ninety](#conj:n-v-tower-depth-ninety) | Brane-tower depth from m_e to v equals 90 | Ch 13 | `qou:QOU.Observations.tower_depth_m_e_to_v_is_ninety` |
