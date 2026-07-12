@@ -1,6 +1,6 @@
 Let $\mathcal{A}$ and $\mathcal{A}'$ be aeons  with boundaries $\partial\mathcal{A}$ and $\partial\mathcal{A}'$ .
 
-**Definition.** Two aeons $\mathcal{A}$ and $\mathcal{A}'$ are **adjacent** if their boundaries share a common object:
+**Definition.** Two aeons $\mathcal{A}$ and $\mathcal{A}'$ stand in **aeon adjacency** (are **adjacent**) if their boundaries share a common object:
 $$
   \partial\mathcal{A} \cap \partial\mathcal{A}' \neq \varnothing.
 $$

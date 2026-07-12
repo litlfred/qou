@@ -1,7 +1,7 @@
 The spectator normalization captures the contribution of unchanged nucleons to the Q-value character sum. In a beta decay, one neutron converts to a proton. The remaining $Z$ protons and $N - 1$ neutrons act as spectators.
 
 **1. Definition.**
-The spectator factor is
+The **spectator normalization factor** is
 
 $$
   S(Z, N-1) = a^{Z} \cdot b^{N-1}

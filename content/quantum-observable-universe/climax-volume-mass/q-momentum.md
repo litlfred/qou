@@ -1,4 +1,4 @@
-The **$q$-momentum** of a particle is the writhe of its braid representative, weighted by the Hecke deformation parameter.
+The **$q$-momentum** of a particle is the **braid writhe** of its representative, weighted by the Hecke deformation parameter.
 
 **Definition.**
 Let $\beta \in B_n$ be a braid representative of a particle knot $K = \hat{\beta}$ (braid closure), with generators $\sigma_{i_1}^{\epsilon_1} \cdots \sigma_{i_k}^{\epsilon_k}$ where $\epsilon_j = \pm 1$. The **$q$-momentum** is:
