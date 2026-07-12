@@ -43,6 +43,7 @@ export default chapter({
         "transfer-matrix-level-independence-proof",
         "topological-mass-formula",
         "motivic-mass-measure",
+        "motivic-mass-rationale",
         "hecke-mass-element",
         "hecke-mass-trace",
         "hecke-mass-trace-proof",
