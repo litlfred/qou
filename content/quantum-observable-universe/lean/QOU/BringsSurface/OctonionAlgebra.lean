@@ -11,23 +11,36 @@ Mathlib (as restored in the qou olean cache) carries no `Octonion`, no
 `CayleyDickson`, and no `G₂`. This file builds the tower `ℝ → ℂ → ℍ → 𝕆` by hand
 from the Cayley–Dickson doubling `(a,b)·(c,d) = (a·c − conj d·b, d·a + b·conj c)`,
 `conj(a,b) = (conj a, −b)`, so the octonion product is a concrete real-coordinate
-object every downstream lemma can compute with (`ring` / `norm_num`).
+object every downstream lemma can compute with.
 
 The tower is the classical **degradation ladder**: each doubling drops one
 property.
 
-| level | doubling | commutative | associative |
-|---|---|---|---|
-| `ℝ` | — | ✓ | ✓ |
-| `Cplx = CD ℝ` | ✓ | ✓ | ✓ |
-| `Quat = CD Cplx` | ✓ | **✗** | ✓ |
-| `Oct = CD Quat` | ✓ | ✗ | **✗** |
+| level | doubling | commutative | associative | typeclass |
+|---|---|---|---|---|
+| `ℝ` | — | ✓ | ✓ | `CommRing` |
+| `Cplx = CD ℝ` | ✓ | ✓ | ✓ | `CommRing` |
+| `Quat = CD Cplx` | ✓ | **✗** | ✓ | `Ring` |
+| `Oct = CD Quat` | ✓ | ✗ | **✗** | `AddCommGroup` + `Mul` |
 
-This file (commit 1) builds `Cplx` and `Quat` and proves the **non-commutativity
-of `ℍ`** witness `quat_mul_i_j_ne_j_i` (`i·j = k ≠ −k = j·i`). `Oct`, its
-non-associativity witness, the norm / imaginary part / `S⁶` sphere, and the
-`Aut(𝕆)` (`= G₂`) scaffold follow in later commits. Everything over `ℝ` (the
-norm and `S⁶` are archimedean; §7c), sorry-free.
+**Typeclass strategy (per Gemini review on PR #3671).** Each level carries the
+strongest *standard* Mathlib algebraic instance it honestly supports, so `+`,
+`*`, `0`, `1`, `-` are the ordinary notation and `ring` discharges the
+associative/commutative levels: `Cplx` is a `CommRing`, `Quat` is a
+(non-commutative) `Ring`. `Oct` is genuinely **non-associative**, so `Ring` is
+*impossible* — it gets the full additive `AddCommGroup` (this is the `ℝ`-vector
+space structure the Tier-3 `Der(𝕆)` linear algebra needs) plus a bare `Mul`/`One`
+for the product. The instances are built in the standard Mathlib idiom (separate
+`Add`/`Mul`/… instances, `@[simp]` `rfl` component lemmas, then the algebraic
+instance whose axioms fall to `ext <;> simp <;> ring`).
+
+This file (PR #3671, Tier 1) builds the tower with the two ladder witnesses:
+`Quat.quat_noncomm` (ℍ non-commutative, `i·j = k ≠ −k = j·i`) and
+`Oct.oct_nonassoc` (`(e_i·e_j)·e_ℓ ≠ e_i·(e_j·e_ℓ)`, the non-associativity whose
+sign structure is the `det3` cocycle of `OctonionCocycle`). The norm / imaginary
+part / `S⁶` sphere (Tier 2) and the `Aut(𝕆) = G₂` / `Der(𝕆)` linear algebra
+(Tier 3) follow. The norm and `S⁶` are archimedean; everything here is over `ℝ`
+(§7c), sorry-free.
 
 -- Ref: [albuquerque-majid1999] https://arxiv.org/abs/math/9802116
 -- Ref: [manuscript] docs/audits/2026-07-12-octonion-recovery-from-genus4-analysis.md
@@ -39,26 +52,61 @@ namespace QOU.BringsSurface.OctonionAlgebra
 
 /-- Complex numbers as the Cayley–Dickson double of `ℝ` (conjugation on `ℝ` is the
 identity). -/
-structure Cplx where
+@[ext] structure Cplx where
   re : ℝ
   im : ℝ
 
 namespace Cplx
 
-/-- The additive unit `0`. -/
-def zero : Cplx := ⟨0, 0⟩
-/-- The multiplicative unit `1`. -/
-def one : Cplx := ⟨1, 0⟩
 /-- The imaginary unit `i`. -/
 def I : Cplx := ⟨0, 1⟩
-/-- Componentwise addition. -/
-def add (x y : Cplx) : Cplx := ⟨x.re + y.re, x.im + y.im⟩
-/-- Componentwise negation. -/
-def neg (x : Cplx) : Cplx := ⟨-x.re, -x.im⟩
-/-- Cayley–Dickson conjugation: `(a, b) ↦ (a, −b)`. -/
+/-- Cayley–Dickson conjugation `(a, b) ↦ (a, −b)`. -/
 def conj (x : Cplx) : Cplx := ⟨x.re, -x.im⟩
+
+instance : Zero Cplx := ⟨⟨0, 0⟩⟩
+instance : One Cplx := ⟨⟨1, 0⟩⟩
+instance : Add Cplx := ⟨fun x y => ⟨x.re + y.re, x.im + y.im⟩⟩
+instance : Neg Cplx := ⟨fun x => ⟨-x.re, -x.im⟩⟩
+instance : Sub Cplx := ⟨fun x y => ⟨x.re - y.re, x.im - y.im⟩⟩
 /-- Complex multiplication `(a,b)·(c,d) = (ac − bd, ad + bc)`. -/
-def mul (x y : Cplx) : Cplx := ⟨x.re * y.re - x.im * y.im, x.re * y.im + x.im * y.re⟩
+instance : Mul Cplx := ⟨fun x y => ⟨x.re * y.re - x.im * y.im, x.re * y.im + x.im * y.re⟩⟩
+
+@[simp] theorem zero_re : (0 : Cplx).re = 0 := rfl
+@[simp] theorem zero_im : (0 : Cplx).im = 0 := rfl
+@[simp] theorem one_re : (1 : Cplx).re = 1 := rfl
+@[simp] theorem one_im : (1 : Cplx).im = 0 := rfl
+@[simp] theorem add_re (x y : Cplx) : (x + y).re = x.re + y.re := rfl
+@[simp] theorem add_im (x y : Cplx) : (x + y).im = x.im + y.im := rfl
+@[simp] theorem sub_re (x y : Cplx) : (x - y).re = x.re - y.re := rfl
+@[simp] theorem sub_im (x y : Cplx) : (x - y).im = x.im - y.im := rfl
+@[simp] theorem neg_re (x : Cplx) : (-x).re = -x.re := rfl
+@[simp] theorem neg_im (x : Cplx) : (-x).im = -x.im := rfl
+@[simp] theorem mul_re (x y : Cplx) : (x * y).re = x.re * y.re - x.im * y.im := rfl
+@[simp] theorem mul_im (x y : Cplx) : (x * y).im = x.re * y.im + x.im * y.re := rfl
+@[simp] theorem conj_re (x : Cplx) : (conj x).re = x.re := rfl
+@[simp] theorem conj_im (x : Cplx) : (conj x).im = -x.im := rfl
+@[simp] theorem I_re : I.re = 0 := rfl
+@[simp] theorem I_im : I.im = 1 := rfl
+
+/-- `Cplx` is a commutative ring — the base of the tower is fully associative and
+commutative, so `ring` discharges every `Cplx` identity. -/
+instance : CommRing Cplx where
+  add := (· + ·); zero := 0; neg := (- ·); sub := (· - ·); one := 1; mul := (· * ·)
+  nsmul := nsmulRec; zsmul := zsmulRec
+  add_assoc a b c := by ext <;> simp <;> ring
+  zero_add a := by ext <;> simp
+  add_zero a := by ext <;> simp
+  add_comm a b := by ext <;> simp <;> ring
+  neg_add_cancel a := by ext <;> simp
+  sub_eq_add_neg a b := by ext <;> simp <;> ring
+  mul_assoc a b c := by ext <;> simp <;> ring
+  one_mul a := by ext <;> simp
+  mul_one a := by ext <;> simp
+  mul_comm a b := by ext <;> simp <;> ring
+  left_distrib a b c := by ext <;> simp <;> ring
+  right_distrib a b c := by ext <;> simp <;> ring
+  zero_mul a := by ext <;> simp
+  mul_zero a := by ext <;> simp
 
 end Cplx
 
@@ -66,44 +114,141 @@ end Cplx
 
 /-- Quaternions as the Cayley–Dickson double of `Cplx`. An element `⟨x, y⟩`
 represents `x + y·j` with `x, y : Cplx`. -/
-structure Quat where
+@[ext] structure Quat where
   fst : Cplx
   snd : Cplx
 
 namespace Quat
 
-/-- The additive unit. -/
-def zero : Quat := ⟨Cplx.zero, Cplx.zero⟩
-/-- The multiplicative unit `1`. -/
-def one : Quat := ⟨Cplx.one, Cplx.zero⟩
 /-- The quaternion unit `i` (the imaginary unit of the base `Cplx`). -/
-def qi : Quat := ⟨Cplx.I, Cplx.zero⟩
+def qi : Quat := ⟨Cplx.I, 0⟩
 /-- The quaternion unit `j` (the Cayley–Dickson doubling generator). -/
-def qj : Quat := ⟨Cplx.zero, Cplx.one⟩
-/-- The quaternion unit `k = i·j`. -/
-def qk : Quat := ⟨Cplx.zero, Cplx.I⟩
-/-- Componentwise addition. -/
-def add (p q : Quat) : Quat := ⟨Cplx.add p.fst q.fst, Cplx.add p.snd q.snd⟩
-/-- Componentwise negation. -/
-def neg (q : Quat) : Quat := ⟨Cplx.neg q.fst, Cplx.neg q.snd⟩
+def qj : Quat := ⟨0, 1⟩
 /-- Cayley–Dickson conjugation `(x, y) ↦ (conj x, −y)`. -/
-def conj (q : Quat) : Quat := ⟨Cplx.conj q.fst, Cplx.neg q.snd⟩
-/-- Cayley–Dickson multiplication over the base `Cplx`:
-`(x,y)·(z,w) = (x·z − conj w·y, w·x + y·conj z)`. -/
-def mul (p q : Quat) : Quat :=
-  ⟨Cplx.add (Cplx.mul p.fst q.fst) (Cplx.neg (Cplx.mul (Cplx.conj q.snd) p.snd)),
-   Cplx.add (Cplx.mul q.snd p.fst) (Cplx.mul p.snd (Cplx.conj q.fst))⟩
+def conj (p : Quat) : Quat := ⟨Cplx.conj p.fst, -p.snd⟩
 
-/-- **`ℍ` is non-commutative.** `i·j = k` but `j·i = −k`, and `k ≠ −k`; concretely
-the `.snd.im` coordinate is `1` on `i·j` and `−1` on `j·i`. This is the first
-degradation of the Cayley–Dickson ladder (commutativity lost at `ℍ`). -/
-theorem quat_mul_i_j_ne_j_i : mul qi qj ≠ mul qj qi := by
+instance : Zero Quat := ⟨⟨0, 0⟩⟩
+instance : One Quat := ⟨⟨1, 0⟩⟩
+instance : Add Quat := ⟨fun p q => ⟨p.fst + q.fst, p.snd + q.snd⟩⟩
+instance : Neg Quat := ⟨fun p => ⟨-p.fst, -p.snd⟩⟩
+instance : Sub Quat := ⟨fun p q => ⟨p.fst - q.fst, p.snd - q.snd⟩⟩
+/-- Cayley–Dickson multiplication over `Cplx`:
+`(x,y)·(z,w) = (x·z − conj w·y, w·x + y·conj z)`. -/
+instance : Mul Quat :=
+  ⟨fun p q => ⟨p.fst * q.fst - Cplx.conj q.snd * p.snd, q.snd * p.fst + p.snd * Cplx.conj q.fst⟩⟩
+
+@[simp] theorem zero_fst : (0 : Quat).fst = 0 := rfl
+@[simp] theorem zero_snd : (0 : Quat).snd = 0 := rfl
+@[simp] theorem one_fst : (1 : Quat).fst = 1 := rfl
+@[simp] theorem one_snd : (1 : Quat).snd = 0 := rfl
+@[simp] theorem add_fst (p q : Quat) : (p + q).fst = p.fst + q.fst := rfl
+@[simp] theorem add_snd (p q : Quat) : (p + q).snd = p.snd + q.snd := rfl
+@[simp] theorem sub_fst (p q : Quat) : (p - q).fst = p.fst - q.fst := rfl
+@[simp] theorem sub_snd (p q : Quat) : (p - q).snd = p.snd - q.snd := rfl
+@[simp] theorem neg_fst (p : Quat) : (-p).fst = -p.fst := rfl
+@[simp] theorem neg_snd (p : Quat) : (-p).snd = -p.snd := rfl
+@[simp] theorem mul_fst (p q : Quat) :
+    (p * q).fst = p.fst * q.fst - Cplx.conj q.snd * p.snd := rfl
+@[simp] theorem mul_snd (p q : Quat) :
+    (p * q).snd = q.snd * p.fst + p.snd * Cplx.conj q.fst := rfl
+
+/-- `Quat` is a (non-commutative) ring: the Cayley–Dickson double of a commutative
+ring is associative but no longer commutative. -/
+instance : Ring Quat where
+  add := (· + ·); zero := 0; neg := (- ·); sub := (· - ·); one := 1; mul := (· * ·)
+  nsmul := nsmulRec; zsmul := zsmulRec
+  add_assoc a b c := by ext <;> simp <;> ring
+  zero_add a := by ext <;> simp
+  add_zero a := by ext <;> simp
+  add_comm a b := by ext <;> simp <;> ring
+  neg_add_cancel a := by ext <;> simp
+  sub_eq_add_neg a b := by ext <;> simp <;> ring
+  mul_assoc a b c := by ext <;> simp <;> ring
+  one_mul a := by ext <;> simp
+  mul_one a := by ext <;> simp
+  left_distrib a b c := by ext <;> simp <;> ring
+  right_distrib a b c := by ext <;> simp <;> ring
+  zero_mul a := by ext <;> simp
+  mul_zero a := by ext <;> simp
+
+/-- **`ℍ` is non-commutative** (first degradation of the ladder). `i·j = k` but
+`j·i = −k`: the `.snd.im` coordinate is `+1` on `i·j` and `−1` on `j·i`. -/
+theorem quat_noncomm : qi * qj ≠ qj * qi := by
   intro h
-  have hcoord := congrArg (fun q => q.snd.im) h
-  simp only [mul, qi, qj, Cplx.mul, Cplx.conj, Cplx.add, Cplx.neg, Cplx.I,
-    Cplx.zero, Cplx.one] at hcoord
-  norm_num at hcoord
+  have hc := congrArg (fun p => p.snd.im) h
+  simp [qi, qj] at hc
+  norm_num at hc
 
 end Quat
+
+/-! ## Level 3 — `Oct = CD Quat` (the octonions `𝕆`) -/
+
+/-- Octonions as the Cayley–Dickson double of `Quat`. An element `⟨p, q⟩`
+represents `p + q·ℓ` with `p, q : Quat` and `ℓ` the doubling generator. -/
+@[ext] structure Oct where
+  fst : Quat
+  snd : Quat
+
+namespace Oct
+
+/-- `e_i` — the quaternion unit `i` embedded in `𝕆`. -/
+def ei : Oct := ⟨Quat.qi, 0⟩
+/-- `e_j` — the quaternion unit `j` embedded in `𝕆`. -/
+def ej : Oct := ⟨Quat.qj, 0⟩
+/-- `e_ℓ` — the Cayley–Dickson doubling generator (`= (0, 1)`). -/
+def el : Oct := ⟨0, 1⟩
+/-- Cayley–Dickson conjugation `(p, q) ↦ (conj p, −q)`. -/
+def conj (a : Oct) : Oct := ⟨Quat.conj a.fst, -a.snd⟩
+
+instance : Zero Oct := ⟨⟨0, 0⟩⟩
+instance : One Oct := ⟨⟨1, 0⟩⟩
+instance : Add Oct := ⟨fun a b => ⟨a.fst + b.fst, a.snd + b.snd⟩⟩
+instance : Neg Oct := ⟨fun a => ⟨-a.fst, -a.snd⟩⟩
+instance : Sub Oct := ⟨fun a b => ⟨a.fst - b.fst, a.snd - b.snd⟩⟩
+/-- Cayley–Dickson multiplication over `Quat`:
+`(p,q)·(r,s) = (p·r − conj s·q, s·p + q·conj r)`. Non-associative. -/
+instance : Mul Oct :=
+  ⟨fun a b => ⟨a.fst * b.fst - Quat.conj b.snd * a.snd, b.snd * a.fst + a.snd * Quat.conj b.fst⟩⟩
+
+@[simp] theorem zero_fst : (0 : Oct).fst = 0 := rfl
+@[simp] theorem zero_snd : (0 : Oct).snd = 0 := rfl
+@[simp] theorem one_fst : (1 : Oct).fst = 1 := rfl
+@[simp] theorem one_snd : (1 : Oct).snd = 0 := rfl
+@[simp] theorem add_fst (a b : Oct) : (a + b).fst = a.fst + b.fst := rfl
+@[simp] theorem add_snd (a b : Oct) : (a + b).snd = a.snd + b.snd := rfl
+@[simp] theorem sub_fst (a b : Oct) : (a - b).fst = a.fst - b.fst := rfl
+@[simp] theorem sub_snd (a b : Oct) : (a - b).snd = a.snd - b.snd := rfl
+@[simp] theorem neg_fst (a : Oct) : (-a).fst = -a.fst := rfl
+@[simp] theorem neg_snd (a : Oct) : (-a).snd = -a.snd := rfl
+@[simp] theorem mul_fst (a b : Oct) :
+    (a * b).fst = a.fst * b.fst - Quat.conj b.snd * a.snd := rfl
+@[simp] theorem mul_snd (a b : Oct) :
+    (a * b).snd = b.snd * a.fst + a.snd * Quat.conj b.fst := rfl
+
+/-- `𝕆` is an additive commutative group. This is the `ℝ`-vector-space structure
+(`𝕆 ≅ ℝ⁸`) that the Tier-3 `Der(𝕆)` linear algebra will use. `𝕆` is **not** a
+`Ring` — its multiplication is non-associative (`oct_nonassoc`). -/
+instance : AddCommGroup Oct where
+  add := (· + ·); zero := 0; neg := (- ·); sub := (· - ·)
+  nsmul := nsmulRec; zsmul := zsmulRec
+  add_assoc a b c := by ext <;> simp <;> ring
+  zero_add a := by ext <;> simp
+  add_zero a := by ext <;> simp
+  add_comm a b := by ext <;> simp <;> ring
+  neg_add_cancel a := by ext <;> simp
+  sub_eq_add_neg a b := by ext <;> simp <;> ring
+
+/-- **`𝕆` is non-associative** (final degradation of the ladder). On the classic
+triple `e_i, e_j, e_ℓ`: `(e_i·e_j)·e_ℓ` and `e_i·(e_j·e_ℓ)` differ by a sign
+(the `.snd.snd.im` coordinate is `+1` versus `−1`). This is exactly the
+non-associativity whose `(ℤ/2)³` sign structure is the `det3` cocycle of
+`OctonionCocycle`. -/
+theorem oct_nonassoc : (ei * ej) * el ≠ ei * (ej * el) := by
+  intro h
+  have hc := congrArg (fun a => a.snd.snd.im) h
+  simp [ei, ej, el, Quat.qi, Quat.qj] at hc
+  norm_num at hc
+
+end Oct
 
 end QOU.BringsSurface.OctonionAlgebra
