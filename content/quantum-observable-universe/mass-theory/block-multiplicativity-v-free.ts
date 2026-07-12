@@ -1,10 +1,9 @@
-import { remark } from "../../schema/builders";
+import { conjecture } from "../../schema/builders";
 
-export default remark({
-  label: "rem:block-multiplicativity-v-free",
-  interprets: "prop:atomic-mass-gb-nf",
+export default conjecture({
+  label: "conj:block-multiplicativity-v-free",
   title:
-    "Block-multiplicativity of per-generator $\hat{V}$ on the disjoint Hecke product",
+    "Block-multiplicativity of per-generator $\\hat{V}$ on the disjoint Hecke product",
   lean: {
     ref: "qou:QOU.BraidKnot.BlockMultiplicativityVFree",
     validation: "not_checked",
