@@ -31,7 +31,10 @@ each *derived*, not assumed:
   a root of unity", now with the mechanism explicit.
 - **G2 (feasibility floor) is passed automatically**: `|u| ≥ 2πk ≥ 2π`,
   far above the 0.2135 floor — the first candidate family in five rounds
-  that clears G2 structurally rather than failing it.
+  that clears G2 structurally rather than failing it. *[Corrected in §6:
+  this was a misframing — G2 is a magnitude* match, *not a one-sided
+  floor; `|u| ≥ 2π` lands 1–2 orders* above *the `|u| ≈ 0.21` that the
+  measured `|S|` demands, so the lattice overshoots rather than passes.]*
 - **The continuous mystery m(q₀) collapses to a DISCRETE selection**: which
   integers `(N, k)` does the categorical action assign? A color and a
   winding — not a function to fit. This is the entire remaining freedom.
@@ -75,6 +78,30 @@ Discrete menu of 8 — no fit, every member pre-named with a categorical
 pedigree. A kit-pass would be a near-match-tier candidate requiring
 independent-method confirmation; 0/8 would be a clean scope-(a) negative
 narrowing to other (N, k) derivations.
+
+## 6. Postscript (2026-07-12, same day) — the §5 compute ran: 0/8
+
+The deferred compute was executed in [PR #3704](https://github.com/litlfred/qou/pull/3704)
+(`computations/qbeta/qbeta_c3_mq0_nk_scan.py`: branch-tracked
+`𝔙(u)` for 4₁ from Murakami–Yokota math/0401084, machinery validated 5/5
+— `u = 0 ⇒ Vol(4₁)`, NZ slope `2√−3`, gluing residual 1e−20). Verdict on
+the named 8-member menu: **0/8, a clean scope-(a) negative**, exactly the
+second branch anticipated above. The least-bad candidate `(N,k) = (120,2)`
+still overshoots `|S_proton|` by ~40×; the six large-`|Im|` members by
+1e2–1e4×. Root cause: the winding lattice forces `|u| ≥ 2π`, off the 4₁
+geometric component and 1–2 orders above the `|u| ≈ 0.21` the measured
+`|S|` magnitude demands — the §2 "G2 passed automatically" reading was a
+misframing (corrected in place). Scope note: this excludes the *named
+`(N,k)` menu as-is*, not winding per se.
+
+Independently, the decisive resolution of the odd-S origin landed on
+`main` while this memo was in flight: the Ohtsuki tower at the *small
+imaginary* substrate parameter `2πb² = i·t` (`|·| ≈ 0.10`), with the
+Lean-proved bar-parity selection rule and Borel–Padé `Im 𝔙 ≈ 0.055` —
+see [`rem:ohtsuki-tower-bar-parity`](../../content/quantum-observable-universe/mass-theory/rem-ohtsuki-tower-bar-parity.md).
+The small-parameter route supersedes the large-`|u|` winding route this
+memo proposed; the `1/u³` ladder is that smooth object's representation,
+per #3704's reconciliation.
 
 ## Cross-references
 
