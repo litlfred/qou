@@ -57,7 +57,7 @@ theorem shiftT_rowsSorted {Q : List (List ℕ)} (h : RowsSorted Q) : RowsSorted 
   intro row hrow
   simp only [shiftT, List.mem_map] at hrow
   obtain ⟨r, hr, rfl⟩ := hrow
-  exact List.pairwise_map.mpr ((h r hr).imp fun hab => Nat.add_le_add_right hab 1)
+  exact List.pairwise_map.mpr ((h r hr).imp Nat.succ_le_succ)
 
 /-- The shift preserves the `StrictBelow` column relation, entry-wise. -/
 theorem shiftT_strictBelow {u l : List ℕ} (h : StrictBelow u l) :
@@ -68,7 +68,7 @@ theorem shiftT_strictBelow {u l : List ℕ} (h : StrictBelow u l) :
   rw [List.length_map] at hj
   have hju : j < u.length := lt_of_lt_of_le hj hlen
   rw [getD_map_succ hj, getD_map_succ hju]
-  exact Nat.add_lt_add_right (hval j hj) 1
+  exact Nat.succ_lt_succ (hval j hj)
 
 /-- The shift preserves strict-column order. -/
 theorem shiftT_colStrict {Q : List (List ℕ)} (h : ColStrict Q) : ColStrict (shiftT Q) := by
@@ -97,7 +97,7 @@ theorem content_shiftT_recording (w : List ℕ) :
 theorem content_shiftT_recording_nodup (w : List ℕ) :
     (content (shiftT (insertWordRec w).2)).Nodup := by
   rw [content_shiftT_recording, Multiset.map_coe, Multiset.coe_nodup]
-  exact List.nodup_range.map (fun a b h => by omega)
+  exact List.nodup_range.map Nat.succ_injective
 
 /-- **The standard-labelled recording SSYT `Q̃(w)`.**  The shifted recording
     tableau realised as a Mathlib semistandard Young tableau on the recording
