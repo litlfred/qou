@@ -159,23 +159,48 @@ def budget_maxcoeff(digits, n_terms=2):
 
 
 def pslq_rational_multiple(x, base, conf_digits):
-    """STRICT parity test (identical discipline to the κ₂..κ₄ prober): is `x` a
-    rational multiple (p/q)·base within the entropy budget for `conf_digits`?
-    2-term PSLQ, no implicit constant, no wrong-parity generator. Returns
-    (p, q, height) or None."""
-    maxcoeff = budget_maxcoeff(conf_digits)
-    if maxcoeff < 10:
+    """STRICT parity test: is `x` a rational multiple (p/q)·base within the
+    entropy budget for `conf_digits`? 2-term PSLQ, no implicit constant, no
+    wrong-parity generator. Returns (p, q, height) or None.
+
+    Tolerance discipline (UPGRADED over the κ₂..κ₄ prober): a fixed 4-digit
+    slack (tol = 10^-(conf−4)) silently REJECTS true relations of height
+    H ≳ 10⁴, because rounding `x` to conf digits leaves a residual
+    ~H·10^-conf in the relation — the slack must scale with the height being
+    probed. (Caught 2026-07-12: κ₆ = (207892/295245)·π⁶, height 3·10⁵, was
+    inside the entropy budget at 33 digits yet missed by the fixed-slack
+    call; the saddle-fluctuation transseries derivation exposed the miss.)
+    Fix: escalate over height tiers, each with a tier-matched tolerance
+    tol_tier ≈ H_tier·10^-conf·10², tightest-first so low-height hits get
+    the strongest certification. Every hit is post-hoc gated by the entropy
+    budget at its ACTUAL height (needed_digits(H_found) ≤ conf) and must
+    reproduce `x` to the rounding-consistent residual."""
+    if budget_maxcoeff(conf_digits) < 10:
         return None
-    tol = max(8, conf_digits - 4)
-    xr = mp.mpf(mp.nstr(x, min(conf_digits, 45)))
-    rel = mp.pslq([xr, base], tol=mp.mpf(10) ** (-tol),
-                  maxcoeff=maxcoeff, maxsteps=10 ** 5)
-    if rel and rel[0] != 0:
-        p, q = -rel[1], rel[0]
-        if q < 0:
-            p, q = -p, -q
-        if abs(x - mp.mpf(p) / q * base) < mp.mpf(10) ** (-tol):
-            return int(p), int(q), max(abs(p), abs(q))
+    conf = min(conf_digits, 45)
+    xr = mp.mpf(mp.nstr(x, conf))
+    tier = 10 ** 4
+    while tier <= budget_maxcoeff(conf_digits) * 100:
+        H_tier = min(tier, budget_maxcoeff(conf_digits))
+        # tier-matched slack: rounding residual of a true height-H relation
+        # is ~H·10^-conf; certify with 3 extra safety digits.
+        tol_digits = max(8, conf - int(mp.ceil(mp.log10(H_tier))) - 3)
+        rel = mp.pslq([xr, base], tol=mp.mpf(10) ** (-tol_digits),
+                      maxcoeff=H_tier, maxsteps=10 ** 5)
+        if rel and rel[0] != 0:
+            p, q = -rel[1], rel[0]
+            if q < 0:
+                p, q = -p, -q
+            H_found = max(abs(p), abs(q))
+            # post-hoc entropy gate at the ACTUAL height + rounding-consistent
+            # residual check against the exact candidate.
+            resid_gate = mp.mpf(H_found) * mp.mpf(10) ** (2 - conf) * abs(x)
+            if (needed_digits(H_found) <= conf
+                    and abs(x - mp.mpf(p) / q * base) < resid_gate):
+                return int(p), int(q), int(H_found)
+        if H_tier >= budget_maxcoeff(conf_digits):
+            break
+        tier *= 100
     return None
 
 

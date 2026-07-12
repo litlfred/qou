@@ -3,12 +3,12 @@
   "description": "Richardson-grade >=17-digit extraction of kappa_5 (and kappa_6) of the 4_1 Kashaev log-asymptotic with exact kappa_1..kappa_4 stripped; strict parity PSLQ under the C2 entropy budget.",
   "audit_only": true,
   "tier": "numerical (targeted leading-residual extraction)",
-  "computedAt": "2026-07-12T22:49:05.979232+00:00",
-  "commitSha": "72f48f25294688d7048d2753c807f23d6bcb8aac",
+  "computedAt": "2026-07-12T23:11:57.835648+00:00",
+  "commitSha": "8e1733523832fe0570290e43aaf7bbbf2f0be988",
   "engine": "mpmath",
-  "engineVersion": "1.4.1",
+  "engineVersion": "1.3.0",
   "scriptFile": "qbeta_ohtsuki_kappa5_exact.py",
-  "scriptHash": "f050e468aef6",
+  "scriptHash": "fab60b44d671",
   "assertions": [
     {
       "name": "fast_evaluator_matches_reference",
@@ -77,14 +77,14 @@
         "agreement_drop_smallest": "4.685e-40",
         "parity_generator": "\u03c0^6",
         "budget_maxcoeff": 500000000000000,
-        "identified": false,
-        "rational": null,
-        "height": null,
-        "candidate_reproduces_extraction": false
+        "identified": true,
+        "rational": "207892/295245",
+        "height": 295245,
+        "candidate_reproduces_extraction": true
       }
     },
     "gate_digits": 17,
-    "verdict": "Exact-rung stripping + transcendental-free ladder (13 pts, N\u226412582912) extracts \u03ba\u2085 to 40 confident digits (gate \u226517: MET) and \u03ba\u2086 to 33. \u03ba\u2085 IDENTIFIED = (110011/688905)\u00b7\u221a3\u03c0\u2075 within the entropy budget (height 688905 \u2264 1581138830084189665), candidate reproduces the extraction to full confidence. \u03ba\u2086 not identified within budget. Feeds the C2 entropy-budget PSLQ (this closes the #3683 G2+C3 ~2.9-digit gap route). Anti-laundering: 4\u2081-Kashaev/Ohtsuki topological facts; NO fit to QOU data; NO Q_\u03b2 c_k wired; NO tier change."
+    "verdict": "Exact-rung stripping + transcendental-free ladder (13 pts, N\u226412582912) extracts \u03ba\u2085 to 40 confident digits (gate \u226517: MET) and \u03ba\u2086 to 33. \u03ba\u2085 IDENTIFIED = (110011/688905)\u00b7\u221a3\u03c0\u2075 within the entropy budget (height 688905 \u2264 1581138830084189665), candidate reproduces the extraction to full confidence. \u03ba\u2086 IDENTIFIED = (207892/295245)\u00b7\u03c0\u2076 the same way. Feeds the C2 entropy-budget PSLQ (this closes the #3683 G2+C3 ~2.9-digit gap route). Anti-laundering: 4\u2081-Kashaev/Ohtsuki topological facts; NO fit to QOU data; NO Q_\u03b2 c_k wired; NO tier change."
   },
   "context": {
     "axis": "z->c_k f-map keystone: even-channel exact kappa_5 (PR #3683 pickup item 1)",
