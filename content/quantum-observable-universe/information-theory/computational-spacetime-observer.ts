@@ -7,18 +7,20 @@ import { remark } from "../../schema/builders";
  * time, points as morphisms from the terminal object, the time step as
  * an endofunctor, and the proposed four-way dictionary (category theory /
  * knot theory / CFT / information theory) for the discrete Planck step.
- * The categorical setup is formalized in
- * lean/QOU/CategoricalDynamics.lean (PointMorphism, flowPoint,
- * ParticleSection, functorialFlowPoint); the "Rosetta stone" uniqueness
- * of the time functor is a heuristic identification, flagged as such in
- * the prose (and left as a commented-out awaited statement in the Lean
- * file).
+ * The sibling .lean (pre-existing on main) formalizes the
+ * computational-distance structure on Bring's-surface observers
+ * (computationalDistance, symmetry, involution invariance); the wider
+ * categorical setup (PointMorphism, flowPoint, ParticleSection,
+ * functorialFlowPoint) lives in lean/QOU/CategoricalDynamics.lean. The
+ * "Rosetta stone" uniqueness of the time functor is a heuristic
+ * identification, flagged as such in the prose (and left as a
+ * commented-out awaited statement in CategoricalDynamics.lean).
  */
 export default remark({
   label: "rem:computational-spacetime-observer",
   interprets: "def:information-theoretic-time",
   title: "Computational spacetime and the observer",
-  lean: { ref: "qou:QOU.CategoricalDynamics.flowPoint" },
+  lean: { ref: "qou:QOU.computationalDistance" },
   uses: [
     "def:information-theoretic-time",
     "def:brings-surface",
