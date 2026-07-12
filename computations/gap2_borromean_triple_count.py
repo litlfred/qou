@@ -60,6 +60,7 @@ from codata_constants import (  # noqa: E402
     AME_B_HE4_MEV_VALIDATION,
     AME_B_LI5_MEV_VALIDATION, AME_B_LI6_MEV_VALIDATION, AME_B_LI7_MEV_VALIDATION,
 )
+from coulomb_energy import coulomb_energy_mev  # noqa: E402  (canonical Coulomb, αℏc=1.43996)
 try:
     from witness_base import WitnessBuilder
     _HAVE_WB = True
@@ -105,8 +106,9 @@ GRAPHS = {
 
 
 def b_strong(B, Z, A):
-    R = mp.mpf("1.2") * mp.mpf(A) ** (mp.mpf(1) / 3)
-    return mp.mpf(str(B)) + mp.mpf("0.6") * Z * (Z - 1) * mp.mpf("1.44") / R
+    """Strong binding = AME binding + discrete-proton Coulomb (canonical coulomb_energy_mev,
+    αℏc=1.43996, r₀ shared) — adds back the charge energy for the charge-symmetric comparison."""
+    return mp.mpf(str(B)) + mp.mpf(str(coulomb_energy_mev(Z, A)))
 
 
 def cliques(A, edges):
@@ -164,11 +166,16 @@ def main() -> int:
     quad_worse = all(rows[K]["ratio_plus4"] > rows[K]["ratio_2plus3"]
                      for K in a5 if rows[K]["m4"] > 0)
 
+    grows_txt = "monotonically GROWING" if triple_grows else "non-monotone"
+    m4_isos = [K for K in a5 if rows[K]["m4"] > 0]
+    m4_detail = "; ".join(
+        f"{K} {rows[K]['ratio_2plus3']:.3f}→{rows[K]['ratio_plus4']:.3f}" for K in m4_isos)
     print(f"\n### Finding (scope-(a) — REFUTATION + redirect)")
     print(f"  • Bonded-triple (3-clique) count OVERSHOOTS: ratios "
-          f"{', '.join(f'{r:.3f}' for r in over3)} (all >1) — growing miss.")
-    print(f"  • Adding the 4-clique×e₄(⁴He) reading is WORSE: "
-          f"{', '.join(f'{r:.3f}' for r in over4)} — ⁴He 4-body magic is non-transferable.")
+          f"{', '.join(f'{r:.3f}' for r in over3)} (all >1, {grows_txt} miss).")
+    print(f"  • Where a tetrahedron exists (M₄>0: {', '.join(m4_isos) or 'none'}), adding the "
+          f"4-clique×e₄(⁴He) reading is WORSE ({m4_detail}) — ⁴He 4-body magic is "
+          f"non-transferable. (For M₄=0 isotopes +4body ≡ 3body.)")
     print(f"  ⇒ NOT every mutually-bonded triple is a 3-body term. Confirms corpus Part 7:")
     print(f"    only the Milnor-IRREDUCIBLE (Borromean, μ̄₁₂₃≠0) triples count — a bonded triple")
     print(f"    is REDUCIBLE to pairwise (μ̄=0), so the 2-body edges already carry it; counting")
@@ -177,7 +184,7 @@ def main() -> int:
     print(f"  contact-graph → framed-link promotion + the validated μ̄-tower. This probe PRUNES")
     print(f"  the 3-clique reading; the irreducible count is the next step. No fit; no wiring.")
 
-    ok = triple_overshoots and quad_worse
+    ok = triple_overshoots and triple_grows and quad_worse
     if _HAVE_WB:
         try:
             wb = WitnessBuilder("gap2-borromean-triple-count", engine="mpmath")
@@ -198,10 +205,12 @@ def main() -> int:
                 name="three_clique_overshoots_irreducible_needed",
                 computed=str(int(ok)), expected="1", tolerance=0,
                 source=("with eₙ pinned on D/T/⁴He and Mₙ = k-clique counts, the bonded-triple "
-                        "(3-clique) count overshoots A≥5 binding (ratios %s, all >1, growing) and the "
-                        "4-clique reading is worse — so not every bonded triple is a 3-body term; only "
-                        "the Milnor-irreducible (Borromean μ̄≠0) subset counts (reducible triples are "
-                        "carried by the 2-body edges). The overshoot measures the reducible over-count."
+                        "(3-clique) count overshoots A≥5 binding (ratios %s, all >1, monotonically "
+                        "growing) and — only where a tetrahedron exists (M₄>0, ⁵Li) — the 4-clique "
+                        "reading is strictly worse (for M₄=0 isotopes +4body ≡ 3body). So not every "
+                        "bonded triple is a 3-body term; only the Milnor-irreducible (Borromean μ̄≠0) "
+                        "subset counts (reducible triples are carried by the 2-body edges). The "
+                        "overshoot measures the reducible over-count."
                         % ", ".join(f"{r:.3f}" for r in over3)))
             out = wb.save()
             print(f"\nWitness: {out}")
