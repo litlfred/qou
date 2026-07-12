@@ -40,6 +40,7 @@ import QOU.MathlibExt.MonoidalCalcVar
 import QOU.MathlibExt.QGaussianBinomialPascal
 import QOU.MathlibExt.DerivationRankNullity
 import QOU.MathlibExt.OctonionDerivations
+import QOU.MathlibExt.OctonionDerivationsBound
 import QOU.HeckeAlgebra
 import QOU.Glossary
 import QOU.Knot.CuspShapeBarParity

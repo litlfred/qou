@@ -6089,6 +6089,22 @@ export const references: CSLData[] = [
     note: "The octonions 𝕆 = ℝ_F[(ℤ/2)³] realised as the group algebra of (ℤ/2)³ twisted by a sign 2-cochain F that is not a 2-cocycle (dF ≠ 0) — octonion non-associativity as a pentagon-cochain deformation, the associativity-side analogue of the braiding/hexagon (quantum-group) deformation. The multiplication associator dF is a coboundary (cohomologically trivial); Albuquerque–Majid's nontrivial H³ class is the category associator of Vect_(ℤ/2)³^ω. Cited in the genus-4 octonion-recovery audit (docs/audits/2026-07-12-octonion-recovery-from-genus4-analysis.md).",
   }),
 
+  // ── Baez 2002 — The Octonions (Der(𝕆) ≅ 𝔤₂) ──────────────────
+  ref({
+    id: "baez2002",
+    type: "article-journal",
+    title: "The Octonions",
+    author: [{ family: "Baez", given: "John C." }],
+    "container-title": "Bulletin of the American Mathematical Society",
+    volume: "39",
+    issue: "2",
+    page: "145-205",
+    issued: { "date-parts": [[2002]] },
+    DOI: "10.1090/S0273-0979-01-00934-X",
+    URL: "https://arxiv.org/abs/math/0105155",
+    note: "The canonical survey of the octonions. §4.1 identifies the derivation algebra of the octonions with the compact exceptional Lie algebra 𝔤₂: Der(𝕆) ≅ 𝔤₂, a 14-dimensional space. Cited by QOU/MathlibExt/OctonionDerivationsBound.lean for the upper bound dim Der(𝕆) ≤ 14 (the lower bound and the rank-nullity reduction are machine-verified there).",
+  }),
+
   // ── Murasugi 1996 — Knot Theory and Its Applications ──────────
   ref({
     id: "murasugi1996",
