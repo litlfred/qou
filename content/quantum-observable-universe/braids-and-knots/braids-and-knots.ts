@@ -172,6 +172,10 @@ export default chapter({
         "knot-complement-group",
         "kronheimer-mrowka",
         "reducible-reps",
+        // Ledger §5 orphan integration (2026-07-12): JSJ additivity of
+        // nucleon braids — conjecture on the geometric decomposition of
+        // atomic knot complements.
+        "jsj-decomposition-linearity",
       ],
     }),
 
