@@ -92,6 +92,7 @@ export default chapter({
       blocks: [
         "co-computation-intro",
         "co-molecular-braid",
+        "co-molecular-braid-carbon-monoxide",
         "co-lp-dual-binding",
         "embeddable-knot-operator",
         "bond-order-le-three",

@@ -24,8 +24,5 @@ $$
 
 The product contains $\binom{A}{2}$ factors. The result is reduced to Gröbner–Shirshov normal form under the braiding-induced ordering.
 
-**Comparison with adjacent-only construction.**
-The transfer matrix chain computes vertex volumes at each generator by chaining the crossing coefficients. This captures the same pairwise crossing data as the Garside staircase, but factored through scalar vertex volumes rather than the full $H_A(q)$ element. The typed Garside element retains the complete algebraic structure.
-
 **Archimedean specialisation.**
 This block sits on the archimedean side of the substrate wall. It invokes real- or complex-analytic constructs. Any generic categorical identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.
