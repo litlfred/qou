@@ -58,8 +58,14 @@ $i$-th vertex volume $\widehat{V}_i(q)$, determined by the local
 data of the GS coefficient $(a_i, b_i)$.
 
 Specifically, Wenzl 1988 establishes:
-- The Wedderburn-block weight $\tilde w_\lambda = \dim_q^2(\lambda) /
-  [n]_q!$ is the canonical proportionality constant.
+- The Wedderburn-block weight
+  $\tilde w_\lambda = \prod_{x \in \lambda}
+  \bigl(z\,q^{c(x)} - z_{-}\,q^{-c(x)}\bigr)/\bigl(q^{h(x)} - q^{-h(x)}\bigr)$
+  is the canonical proportionality constant, where $c(x)$ and $h(x)$
+  are the content and hook length of the cell $x$ and
+  $z_{-} = z - (q - q^{-1})$
+  ([witness](computations/markov-trace-weights-wenzl.witness.json);
+  exact for every $\lambda \vdash n \leq 5$).
 - Each vertex volume $\widehat{V}_i(q)$ depends only on the
   Bratteli-diagram path traced by the normal-form generator $e_{j_i}$
   through the inductive system $H_1 \subset H_2 \subset \cdots$.

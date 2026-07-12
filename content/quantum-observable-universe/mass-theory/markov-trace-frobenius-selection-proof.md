@@ -46,19 +46,26 @@ $p_\lambda$ of each block, since $\tau(p_\lambda) = w_\lambda$.
 **Step 2: existence and non-degeneracy of $\mathrm{tr}_M$.**
 Jones (\cite{jones1987}, Theorem 6.1) constructs, for the parameter
 $z$, a Markov trace $\mathrm{tr}_M$ on the tower satisfying M1–M3.
-Its block weights are the Wenzl-bridge weights $y_\lambda(q)$, with
-value on a primitive idempotent
+Its block weights admit the hook–content closed form
 
 $$
+  w_\lambda
+  \;=\;
   \mathrm{tr}_M(p_\lambda)
   \;=\;
-  \frac{\dim_q(\lambda) \cdot d_\lambda}{[n]_q!}.
+  \prod_{x \in \lambda}
+  \frac{z\,q^{c(x)} - z_{-}\,q^{-c(x)}}{q^{h(x)} - q^{-h(x)}},
 $$
 
-By the $q$-hook-length formula, $\dim_q(\lambda)$ is a quotient of
-products of quantum integers $[k]_q$ with $1 \leq k \leq n$;
-$d_\lambda$ is a positive integer; and $[n]_q!$ is a product of
-quantum integers. At generic $q$ every factor is non-zero, so
+where $c(x)$ and $h(x)$ are the content and hook length of the cell
+$x$ and $z_{-} = z - (q - q^{-1})$ is the negative-crossing loop
+value ([Markov axioms](#rem:markov-axioms-primitive)). This is the
+Ocneanu weight formula at framing ratio $a^2 = z/z_{-}$, verified
+exactly for every $\lambda \vdash n \leq 5$
+([witness](computations/markov-trace-weights-wenzl.witness.json)).
+A numerator factor vanishes only when $z/z_{-} = q^{-2c(x)}$, an
+algebraic condition on $q$ with finitely many solutions per cell; at
+generic $q$ every factor is non-zero, so
 $\mathrm{tr}_M(p_\lambda) \neq 0$ for every $\lambda \vdash n$. By
 Step 1, the Frobenius pairing
 $\langle x, y \rangle = \mathrm{tr}_M(xy)$ is non-degenerate on

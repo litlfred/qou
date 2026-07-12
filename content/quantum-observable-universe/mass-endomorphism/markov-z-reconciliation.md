@@ -37,4 +37,17 @@ $$
 $$
 at $q_0$ ([Markov axioms](#rem:markov-axioms-primitive)). This is the value the pyhecke normal-form reduction computes for $\mathrm{tr}_M(\sigma_i^{-1})$; it is neither $z_{\mathrm{m}}$ nor $z_{\mathrm{m}}^{-1}$.
 
+**Block weights.** The two loop values jointly determine the Wedderburn block weights of the canonical trace in closed form:
+
+$$
+  w_\lambda
+  \;=\;
+  \mathrm{tr}_M(p_\lambda)
+  \;=\;
+  \prod_{x \in \lambda}
+  \frac{z_{\mathrm{m}}\,q^{c(x)} - z_{-}\,q^{-c(x)}}{q^{h(x)} - q^{-h(x)}},
+$$
+
+with $c(x)$ the content and $h(x)$ the hook length of the cell $x$ — the Ocneanu weight formula at framing ratio $a^2 = z_{\mathrm{m}}/z_{-}$, verified exactly for every $\lambda \vdash n \leq 5$ ([witness](computations/markov-trace-weights-wenzl.witness.json)). The single-cell case recovers $\mathrm{tr}_M(1) = (z_{\mathrm{m}} - z_{-})/(q - q^{-1}) = 1$.
+
 All mass tables, vertex volumes, and nuclear binding computations in this paper use $z = z_{\mathrm{m}} = 1/(q^{1/2} + q^{-1/2})$, with $z_{-}$ entering wherever a negative crossing is stabilised.
