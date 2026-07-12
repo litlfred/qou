@@ -989,3 +989,27 @@ nothing; no tier change; `c₃` stays a q₀-dependent near-match (SETTLED #1580
 Audit:
 [`docs/audits/2026-07-12-c3-meridian-boost-smooth-negative.md`](../audits/2026-07-12-c3-meridian-boost-smooth-negative.md).
 Coordinated: intent on `#3596`/`#3573`.
+
+
+**2026-07-12 (#3691) — bar-odd S three routes: DEFORMED rungs κ̃₁(u)/κ̃₂(u) at
+the substrate meridian (route 2), experimental Q_β budget (route 3), D(u) ladder
+scoped (route 1).** Route 2: new extractor
+(`qbeta_ohtsuki_deformed_meridian_rungs.py`) generalizes the u=0 Kashaev sum to
+the exact deformed Habiro form `Σ_k ∏_j (2cosh u − 2cosh(ξj/N))`, ξ=u+2πi —
+inside H. Murakami's PROVED asymptotic regime (0<u<0.9624), so no
+deformed-volume-conjecture assumption. At u_sub=2ln q₀≈0.2087:
+**κ̃₁ = 0.587343387311 − 0.0195072·i** (12d; vs κ₁(0)=11√3π/108=0.554216, +5.98%),
+anchor-blind to 7.9e-9, smooth dκ̃₁/du — sign-flip stays representational
+(capstone-consistent). Im κ̃₁ ≠ 0 is a new intrinsic bar-odd-channel datum
+(deformation breaks J_N reality). Deformed finite-b lead t·Re κ̃₁ = 0.0613
+(refines #3654's 0.0578 scale). Bonus structural: Re α(u) −
+2πVol(u)/(u²+4π²) = **(1/2)u** + 0.1703·u² (linear meridian term ⇔ Im S ⊃ π·u,
+odd under u↦−u — bar-odd); b·u² unidentified, NOT fitted. Deformed-saddle
+cancellation eats ~u^1.9·N digits — measured, handled adaptively (dps 300).
+Route 3 (`qbeta_qstar_experimental_budget.py`): σ(q*) today = 296 ppb from
+σ(Q_β)=0.61 eV via dq*/dQ_β=−0.539 (#3636); **~26× sharper Q_β (0.024 eV) makes
+q* an arbiter of the μ–p tension**; ~13.5× matches the muon pin; proton pin
+needs ~4900×. Route 1 queued (bean qou-gmm6): D₁..D₅ exact in ℚ(√3), ũ=q·u
+hypothesis fails exactly at ord 11 — extension deferred for reviewability.
+Audit: `2026-07-12-bar-odd-s-three-routes.md`. No fit; no c_k wired; no tier
+change.
