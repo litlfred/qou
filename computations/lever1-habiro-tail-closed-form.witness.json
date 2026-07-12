@@ -1,0 +1,34 @@
+{
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-07-12T11:44:49.744150+00:00",
+  "commitSha": "84014677da9e6ea1ef6fa49696c3171be3b95cbe",
+  "assertions": [
+    {
+      "name": "habiro_tail_double_root_bareven_noncyclotomic",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "D(n) has the universal (q−1)² double root (all n≥4) and is bar-even (all n); the post-(q−1)² cofactor is cyclotomic for n≤5 and non-cyclotomic bar-even for n≥6 (degrees 8,10,14,28…) ⇒ no finite general closed form (non-q-holonomic), the fork's structural cause."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 16,
+  "computation": "lever1-habiro-tail-closed-form",
+  "scriptFile": "lever1_habiro_tail_closed_form.py",
+  "scriptHash": "e0cf658ae94a",
+  "scriptCommitSha": "84014677da9e6ea1ef6fa49696c3171be3b95cbe",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Exact closed forms of the binding q-deformation Habiro tail D(n)=S(n)−S(n−1)−[n−1]_q S(n−2), n=4..9 (extends corpus D(4)=(q−1)²Φ₃). Derived invariants: (H1) universal (q−1)² double root at q=1 (Habiro signature) for all n≥4; (H2) bar-even D(1/q)=D(q) for all n; (H3) cyclotomic head × cofactor that is fully cyclotomic for n≤5 (D(5)=2(q−1)²Φ₂²Φ₃Φ₆/q) but NON-cyclotomic bar-even for n≥6 (deg 8,10,14,28…). No finite general closed form — the non-cyclotomic cofactor is non-q-holonomic, why S(n) forks from any fixed-order recurrence. Binding recurrence D(n), NOT the Q_β ladder c_k; nothing wired. Scope-(a)."
+}
