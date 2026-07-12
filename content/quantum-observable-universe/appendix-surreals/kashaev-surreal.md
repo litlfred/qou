@@ -1,6 +1,6 @@
-The Kashaev volume conjecture [@kashaev1997] (proved for various
-classes of knots by Murakami--Murakami [@murakami-murakami2001] and
-others, but open in full generality) states:
+The [Kashaev volume conjecture](#conj:kashaev-volume-conjecture)
+[@kashaev1997] (open in full generality; provenance and the Lean
+axiomatisation live in that block) states:
 
 $$
   \mathrm{Vol}(S^3 \setminus K)
@@ -78,9 +78,11 @@ Kashaev separable:
 | Identification with $\mathrm{Vol}$ | Genuine hyperbolic geometry |
 
 The first row uses no analysis. The second row uses a *single*
-transseries reduction (Berarducci--Mantova). The third row is
-where hyperbolic geometry enters — and it enters *only* on the
-LHS.
+transseries reduction (Berarducci--Mantova) — an instance of the
+$\mathrm{st}$/$\mathrm{ord}_\omega$ reduction of the
+[surreal blow-up calculus](#def:surreal-blowup-calculus). The third
+row is where hyperbolic geometry enters — and it enters *only* on
+the LHS.
 
 The second row admits a precise name from resurgence theory
 [@ecalle1981]. The Berarducci--Mantova transseries invoked there

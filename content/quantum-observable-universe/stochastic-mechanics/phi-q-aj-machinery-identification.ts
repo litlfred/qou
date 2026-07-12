@@ -10,6 +10,7 @@ export default proposition({
   uses: [
     "conj:quantum-langlands-dual",
     "conj:dim-master-pentagon",
+    "rem:dilog-saddle-regime",
   ],
   cites: [
     "garoufalidis2004",

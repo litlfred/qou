@@ -500,6 +500,7 @@ export default chapter({
         "phi-q-tower-algebraic-stratification",
         "phi-q-tower-algebraic-stratification-proof",
         "kashaev-volume-conjecture",
+        "dilog-saddle-regime",
         "figure-8-archimedean-illustration",
         "gb-depth-period-correspondence",
         "vc-as-depth-2-instance",
