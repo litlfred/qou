@@ -19,6 +19,13 @@ This note **cites both** and adds the observations the corpus does not have: the
 **alignment** with the framework's calibration/keystone structure, and the **rep-theory mechanism**
 that ties the two merged results together.
 
+The closely-named sibling `qou-7xit` (`lever1_habiro_tail_habiro_basis_expansion.py`, "(q;q)_n
+Habiro **cyclotomic-basis** expansion of D(n)") is **complementary, not the same claim**: it expands
+`D(n)` in the `(q;q)_k` Habiro basis and measures the **depth/height growth** of the coefficients
+(the basis-side face of the "no finite closed form" verdict), inheriting the "cyclotomic through n=5"
+fact as *context*. It does **not** connect that boundary to the `S₅` keystone, the E₈ McKay marks, or
+the McKay-ADE alternating ladder — which is exactly the content of this note.
+
 ## Observation (i) — the alignment
 
 The na-Stokes body-order `n` indexes both the Habiro tail `D(n)` and the framework's
