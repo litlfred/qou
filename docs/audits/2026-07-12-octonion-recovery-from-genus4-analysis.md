@@ -220,6 +220,12 @@ signs, the index law is XOR (`(ℤ/2)³`) and the associativity defect equals `d
   3-cocycle.
 * `det3_nonzero` — the deformation fires: on `e₁, e₂, e₄`, `φ = 1 ≠ 0`
   (non-associativity).
+* `det3_cyclic_invariant` — the associator is invariant under the coordinate
+  3-cycle `cyc ∈ GL(3, 𝔽₂)`. This is the machine-checked generator of the
+  general fact `det3(g·a, g·b, g·c) = det(g)·det3(a,b,c) = det3(a,b,c)` for
+  **every** `g ∈ GL(3, 𝔽₂) ≅ PSL(2,7)` (order 168), since `det g = 1` over `𝔽₂`
+  — the Fano-plane / Klein-quartic symmetry of the octonion product realised on
+  the `(ℤ/2)³` sign structure (see Investigation 2 below).
 
 **Cohomology — correcting an earlier over-claim in this audit.** An earlier draft
 flagged "`[φ] ≠ 0` in `H³`" as a remaining gap. That was a **category error**,
@@ -232,6 +238,81 @@ and there is *nothing to prove there*. Non-associativity is `φ ≠ 0` **as a co
 rescaling despite `[φ] = 0`. (The nontrivial `H³` class of Albuquerque–Majid 1999
 is the *category* associator `ω` making `𝕆` associative in `Vect_{(ℤ/2)³}^ω` — a
 distinct object from the multiplication associator, not claimed here.)
+
+## Investigations (while awaiting review) — is `𝕆` useful for the mass/binding formulas?
+
+The user asked the natural follow-up: does the octonion structure supply
+**additional symmetry** the mass and binding formulas can use? Two leads were
+probed. One is a clean formal win; the other is an honest **scope-(a) negative**
+(per AGENTS.md §"Before declaring refuted"). Neither wires to production.
+
+### Investigation 1 — octonion signs vs the `Δ_λ` mixed-sign pattern (scope-(a) NEGATIVE)
+
+**The lead.** The Track-A blocker (AGENTS.md §Δ_λ gate) needs a **mixed-sign**
+per-partition weight `Δ_λ = sgn(w₀^{S_{λ'}})·dim` — `n=3`: `1+/2−`; `n=6`:
+`6+/5−` — and the six closure ansätze all failed. The octonion associator `det3`
+is *also* a sign structure (`(-1)^φ`, `168/512` triples negative). Could the
+octonion/triality signs supply the missing chirality?
+
+**Result: no — the index sets do not align, and there is no canonical map.**
+
+- **`Δ_λ` is indexed by partitions `λ ⊢ n`** (Wedderburn blocks of `H_n(q)`);
+  its sign is `sgn(w₀^{S_{λ'}})`, the longest-element sign of the *conjugate*
+  Young subgroup. This is an `S_n`-representation-theoretic datum.
+- **`det3`'s sign is indexed by ordered triples `(a,b,c) ∈ ((ℤ/2)³)³`** — the
+  octonion *grading group*, not a partition set. Its sign is `𝔽₂`-linear
+  dependence, an `GL(3,𝔽₂)`-datum.
+- There is **no canonical bijection or functor** partitions `λ ⊢ n → (ℤ/2)³`
+  triples: `|{λ ⊢ 3}| = 3`, `|{λ ⊢ 6}| = 11`, neither matches the `8` grading
+  classes or the `168`-strong non-associating set; the symmetry groups (`S_n`
+  vs `GL(3,𝔽₂) ≅ PSL(2,7)`) are unrelated for `n ≠ 7` (and even `S_7 ⊅ PSL(2,7)`
+  as the relevant action). The `det3` chirality is `GL(3,𝔽₂)`-**invariant**
+  (Investigation 2), whereas `Δ_λ` is *not* `S_n`-invariant — it transforms by
+  `sgn` — so a symmetry-respecting map would have to trade an invariant for a
+  sign-character, which cannot be canonical.
+
+**Scope discipline.** This is a **scope-(a)** negative: the octonion sign
+structure, *as-is, alone*, does not supply the `Δ_λ` chirality — the index sets
+are misaligned and no canonical map exists. It is **not** a scope-(b) structural
+exclusion: no proved invariant forbids *some* future construction that routes
+octonion signs through an `S_n`-equivariant intermediary (e.g. via the `n=6`
+Bring `S₅ ↪ S₆` triality, which *is* an exceptional coincidence). That would be
+a genuinely different object; this probe only measures that the naive
+identification fails. Recorded so a later agent does not re-run the naive map.
+
+### Investigation 2 — colour `SU(3)` and the Fano / `PSL(2,7)` symmetry (formal win + honest gap)
+
+**What is established.** The colour `SU(3) ⊂ G₂ = Aut(𝕆)` (Günaydin–Gürsey:
+`7 = 1 ⊕ 3 ⊕ 3̄` under `SU(3)`) is present on the genus-4 substrate via the three
+colour `S₃` subgroups of `Aut(Σ₄) = S₅` (§ colour section above). The **discrete
+skeleton** of the full `G₂` symmetry is now machine-checked: `det3` — the
+octonion associator — is invariant under `GL(3,𝔽₂) ≅ PSL(2,7)` (order 168, the
+Fano-plane / Klein-quartic automorphism group), with the `cyc` 3-cycle generator
+proved in `det3_cyclic_invariant` and the general statement following from
+`det(g) = 1` over `𝔽₂`. `PSL(2,7)` is exactly the automorphism group of the Fano
+plane that indexes the octonion multiplication table, so this is the honest
+discrete tie between QOU's `(ℤ/2)³` sign structure and the octonion product.
+
+**The remaining gap (honest).** The step from colour-`SU(3)` to the **full,
+continuous** `G₂` needs the `6`-dimensional coset `S⁶ = G₂/SU(3)` — the extra
+real-octonion generators beyond the `SU(3)` sub-block. Formalising that requires
+a **real-octonion / `G₂` Lie-group** infrastructure that Mathlib does **not**
+currently provide (no `Octonion`, no `G₂` as a Lie group; only the abstract
+`CayleyDickson`/`QuaternionAlgebra` at the algebra level, without the compact
+exceptional-group facts). So the continuous `G₂` step is **not formalisable
+today** without building that infra from scratch — out of scope for this
+analysis. What is proved is the discrete `PSL(2,7)` symmetry of the sign cocycle;
+the continuous completion is flagged as a Mathlib-gap, not claimed.
+
+**Net answer to the user's question.** Octonions supply a *real additional
+symmetry* — the colour `SU(3) ⊂ G₂`, with its discrete `PSL(2,7)` skeleton now
+machine-checked — which is genuinely relevant to the **colour** sector. They do
+**not** (Investigation 1) supply the `Δ_λ` binding chirality by any naive map.
+So the honest use is: **octonions organise colour, not binding signs.** Any
+mass/binding payoff would route through the colour `SU(3)` representation content
+(`3 ⊕ 3̄`), not through the octonion sign structure directly — and that route is
+already partly present in QOU via the three colour `S₃`'s, without needing the
+non-associative product.
 
 ## Formalisation
 
@@ -247,4 +328,5 @@ distinct object from the multiplication associator, not claimed here.)
 - [`OctonionCocycle.lean`](../../content/quantum-observable-universe/lean/QOU/BringsSurface/OctonionCocycle.lean)
   — the concrete octonion associator `det3` on `(ℤ/2)³`: `det3_is_3cocycle`
   (pentagon-coherent, `decide` over `8⁴`) + `det3_nonzero` (non-associativity
-  fires). Sorry-free.
+  fires) + `det3_cyclic_invariant` (the `PSL(2,7)`/Fano symmetry witness,
+  Investigation 2). Sorry-free.
