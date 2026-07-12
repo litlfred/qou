@@ -72,18 +72,25 @@ The gap is **not** the fibre objects (both exact) — it is the **archimedean
 the even side is exactly `Σ κ_n/N^n` (Gevrey-1, Borel singularity `A`); its output
 on the odd side is the convergent ladder (pole `1/u = 117.41`).
 
-**Necessary condition (a decisive, honest check — not a fit):** the Borel median
-resummation sends the even-channel singularity at `ℏ = A` to a singularity of the
-observable in the `u`-plane. Under `u = b·ℏ_q²` with `ℏ_q ≈ ℏ` near `q=1`, the
-even Borel singularity lands at `u ≈ b·A²`. The bridge *requires*
-`b·A² = u_substrate = 1/117.41` (the ladder pole). With the documented `A ≈ 0.688`
-and the substrate `b`, this is a one-line falsifiable test: a pass is a genuine
-structural signal for the bridge; a fail bounds the change-of-variables and
-localises the missing analytic ingredient. **This test needs `A` to more digits
-than 4 exact κ_n give** (the κ_n ratios estimate `A ≈ 0.7`, consistent with 0.688
-but not yet sharp); extracting `κ₅, κ₆` (research-grade, lower precision) sharpens
-`A` and makes the necessary-condition test conclusive. That extraction is the
-concrete next compute; it is *not* a closure of the bridge.
+**The map is analytic continuation off `|q|=1`, NOT a reparametrisation (an
+anti-laundering correction).** It is tempting to posit a one-line necessary
+condition `b·A² = u_substrate` by treating `u = b·ℏ_q²` as a change of variables
+from the Kashaev `ℏ`. That is *wrong*, and stating it would risk laundering a
+coincidence: the **Kashaev `q` lives on `|q|=1`** (an `N`-th root of unity,
+`ℏ = 2πi/N` imaginary), while the **substrate `q₀ ≈ 1.11` is real, off the unit
+circle** (`ℏ_q = 1−1/q₀` real). This is exactly the fibre-vs-observable /
+"`Im(q₀)=0` only at the archimedean level" distinction (AGENTS.md banner). The even
+Borel singularity `A` and the odd pole `1/u = 117.41` are therefore *both*
+manifestations of the analytic continuation from `|q|=1` to real `q₀>1` — and that
+continuation **is** the state integral (Faddeev `Φ_b` / Borel-median resummation),
+not an algebraic relation between `A` and `u`. So the honest deliverable is `A`
+itself (the even-channel divergence rate, a new datum characterising what the
+resummation must resum) and its *arithmetic* (relation to `Vol(4₁)/2π` and the
+sub-dominant saddle) — **not** a naive `b·A²` test. Extracting `κ₅, κ₆` sharpens `A`
+(the 4 exact rungs give `A ≈ 0.7`, consistent with the documented `0.688`); the
+Borel-singularity probe [`qbeta_even_borel_singularity.py`](scripts/qbeta_even_borel_singularity.py)
+reports it. This is the concrete complement to the Φ_b construction — *not* a
+closure of the bridge.
 
 ## Honest scope (anti-laundering)
 
