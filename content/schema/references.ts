@@ -4272,6 +4272,50 @@ export const references: CSLData[] = [
       "ambient.",
   }),
 
+  // ── Écalle 1981 (resurgent functions, alien calculus) ──
+  ref({
+    id: "ecalle1981",
+    type: "book",
+    title: "Les fonctions résurgentes, Tome I: Les algèbres de fonctions résurgentes",
+    author: [{ family: "Écalle", given: "Jean" }],
+    issued: { "date-parts": [[1981]] },
+    publisher: "Publications Mathématiques d'Orsay 81-05, Université Paris-Sud",
+    note:
+      "Founding text of resurgence theory: the Borel transform, " +
+      "alien derivatives $\\Delta_\\omega$, the bridge equation " +
+      "relating alien and natural derivations, and lateral/median " +
+      "resummation of transseries. Cited for the identification of " +
+      "the standard-part reduction of a transseries on a Stokes " +
+      "ray with median resummation, and as the canonical home of " +
+      "the alien calculus used in the resurgence-utilization audit.",
+  }),
+
+  // ── Andersen–Hansen 2006 (quantum-invariant asymptotics, figure-eight) ──
+  ref({
+    id: "andersen-hansen2006",
+    type: "article",
+    title:
+      "Asymptotics of the quantum invariants for surgeries on the " +
+      "figure 8 knot",
+    author: [
+      { family: "Andersen", given: "Jørgen Ellegaard" },
+      { family: "Hansen", given: "Søren Kold" },
+    ],
+    issued: { "date-parts": [[2006]] },
+    "container-title": "Journal of Knot Theory and Its Ramifications",
+    volume: "15",
+    issue: "4",
+    page: "479-548",
+    DOI: "10.1142/S0218216506004555",
+    note:
+      "Rigorous asymptotic analysis of quantum invariants " +
+      "associated with the figure-eight knot; together with " +
+      "Ohtsuki's saddle-point/Borel-resummation analysis it " +
+      "supplies the literature backing for the figure-eight case " +
+      "of the Kashaev volume conjecture used by the conditional " +
+      "class \\texttt{VolumeConjecture41}.",
+  }),
+
   // ── Costin–Ehrlich–Friedman 2015 (integration on the surreals) ──
   ref({
     id: "costin-ehrlich-friedman2015",
