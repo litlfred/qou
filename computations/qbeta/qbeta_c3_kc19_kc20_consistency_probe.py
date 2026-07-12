@@ -43,13 +43,16 @@ Four consistency facts (all sympy-exact, parameter-free):
      fibre carrier; KC19 localizes at the observable; the affine bridge joins
      them). Consistent, not contradictory.
 
-  4. THE C(3)=−2 NUMEROLOGY IS A WRONG-ANCHOR COINCIDENCE. KC20 §4 flags
-     C(3)=−2 matching the c₃→−2 q=1 shadow (numerology, not wired). Under the
-     KC19 y-bridge the c₃ q=1 shadow lives at y(q=1)=q²+q⁻²→2, where C(2)=−4,
-     NOT −2. The −2 appears at C(3) — the GOLDEN anchor y=3 — a DIFFERENT point.
-     So matching the shadow VALUE requires the WRONG anchor: the coincidence does
-     not survive placing it at the anchor that actually corresponds to the q=1
-     shadow. Confirms & sharpens the corpus flag (does not contradict it).
+  4. TWO DISTINCT −2's — MEANINGFUL Hopf-sector shadow vs COINCIDENTAL total match
+     (corrected 2026-07-12 to cite the prior bridge audit
+     2026-07-07-hopf-cubic-vs-crossing-weight-shadow-bridge, a corpus-grep miss):
+     (a) MEANINGFUL: C_Hopf(2)=−2 at the CLASSICAL anchor y=2 = J_Hopf(1) = the c₃
+         q=1 shadow (Lean-certified in the bridge audit) — the −2/c₃ link is real,
+         not coincidental, and is sourced by the Hopf (2-crossing) sector (KC20 §5).
+     (b) COINCIDENCE: the TOTAL C(3)=−2 at the GOLDEN anchor y=3 (KC20 §4 flag) —
+         the total C at the actual shadow anchor is C(2)=−4≠−2, so this separate
+         match needs the WRONG anchor. Sharpens KC20 §4 WITHOUT conflating it with
+         the meaningful Hopf-sector shadow.
 
 Net: the two most-recent Lean-proved c₃ narrowings are coherent (same variable,
 disjoint singularities), jointly stronger than either alone, and close a flagged
@@ -108,15 +111,24 @@ def main():
           f"disc={sp.discriminant(C, Y)} ⇒ via KC19 (swing∈w) + KC18 (affine bridge), "
           "c₃=[u³]w inherits the degree-3 field ⇒ no quadratic/RoU c₃ closure (unified KC19+KC20)")
 
-    # 4. C(3)=-2 is a wrong-anchor coincidence: q=1 shadow lives at y=2, C(2)=-4
-    y_at_q1 = sp.limit(y, q, 1)          # = 2
-    C_at_shadow_anchor = C.subs(Y, y_at_q1)   # C(2) = -4
-    C_at_golden = C.subs(Y, 3)                # -2 (the flagged coincidence)
-    wrong_anchor = (y_at_q1 == 2) and (C_at_shadow_anchor == -4) and (C_at_golden == -2)
-    check("C3_minus2_is_wrong_anchor_coincidence", wrong_anchor,
-          f"c₃ q=1 shadow anchor y(q→1)={y_at_q1}: C({y_at_q1})={C_at_shadow_anchor} (≠−2); "
-          f"the −2 is C(3)={C_at_golden} at the GOLDEN anchor y=3 — a different point. "
-          "Matching the shadow value needs the WRONG anchor ⇒ coincidence (sharpens KC20 §4)")
+    # 4. TWO distinct −2's — keep them separate (corrected 2026-07-12 to cite the
+    #    prior bridge audit 2026-07-07-hopf-cubic-vs-crossing-weight-shadow-bridge):
+    #    (a) MEANINGFUL: C_Hopf(2)=−2 at the classical anchor y=2 (= J_Hopf(1) = c₃ shadow);
+    #    (b) COINCIDENCE: total C(3)=−2 at the golden anchor y=3 (KC20 §4 numerology).
+    C_Hopf = Y**3 - 6*Y**2 + 10*Y - 6
+    y_at_q1 = sp.limit(y, q, 1)                # = 2 (classical/q=1 trace point)
+    C_hopf_shadow = C_Hopf.subs(Y, y_at_q1)    # C_Hopf(2) = -2  (MEANINGFUL = J_Hopf(1))
+    C_total_shadow = C.subs(Y, y_at_q1)        # C(2) = -4        (total ≠ -2 at the right anchor)
+    C_total_golden = C.subs(Y, 3)              # C(3) = -2        (the coincidental total match)
+    two_minus_twos = ((y_at_q1 == 2) and (C_hopf_shadow == -2)
+                      and (C_total_shadow == -4) and (C_total_golden == -2))
+    check("two_distinct_minus_twos_meaningful_vs_coincidence", two_minus_twos,
+          f"MEANINGFUL: C_Hopf({y_at_q1})={C_hopf_shadow} at the classical anchor y=2 = "
+          f"J_Hopf(1) = c₃ shadow (bridge audit, Lean-certified). COINCIDENCE: total "
+          f"C(3)={C_total_golden} at the GOLDEN anchor y=3, but total C({y_at_q1})={C_total_shadow}≠−2 "
+          "at the actual shadow anchor ⇒ the total-C-at-golden match needs the WRONG anchor "
+          "(sharpens KC20 §4); the −2/c₃ link is NOT globally coincidental — it is the "
+          "Hopf-sector classical shadow")
 
     all_passed = all(a["passed"] for a in assertions)
     verdict = (
@@ -127,10 +139,12 @@ def main():
         "C(6)=88≠0; carrier root y₀≈3.27); (3) composing KC19 (c₃ swing∈w) + KC18 (affine "
         "carrier→w) + KC20 (degree-3 irreducible carrier) gives the UNIFIED exclusion c₃ "
         "inherits the degree-3 field ⇒ no quadratic/RoU closure — stronger than either "
-        "audit alone; (4) the flagged C(3)=−2 numerology is a WRONG-ANCHOR coincidence — "
-        "the c₃ q=1 shadow lives at y=2 where C(2)=−4≠−2, the −2 is at the golden anchor "
-        "y=3. The two most-recent Lean-proved c₃ narrowings are coherent and close a "
-        "flagged numerology. NO tier change; NOTHING WIRED."
+        "audit alone; (4) TWO distinct −2's kept separate — the MEANINGFUL Hopf-sector "
+        "shadow C_Hopf(2)=−2 at the classical anchor y=2 (= J_Hopf(1) = c₃ shadow, bridge "
+        "audit) vs the COINCIDENTAL total C(3)=−2 at the golden anchor y=3 (total C(2)=−4 at "
+        "the actual shadow anchor). The two most-recent Lean-proved c₃ narrowings are "
+        "coherent; adds the 4−h²=6−y kernel-denominator identity + disjoint singularities to "
+        "the prior 2026-07-07 bridge audit. NO tier change; NOTHING WIRED."
         if all_passed else
         "INCONCLUSIVE — an assertion failed; re-derive before citing."
     )

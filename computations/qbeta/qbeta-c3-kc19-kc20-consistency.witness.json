@@ -3,12 +3,12 @@
   "description": "KC19 (eval-map affine kernel) and KC20 (degree-3 carrier cubic) both live in y=q\u00b2+q\u207b\u00b2; consistent (disjoint singularities), jointly sharpen the real-q/quadratic c\u2083 exclusion, and the C(3)=\u22122 flag is a wrong-anchor coincidence (c\u2083 q=1 shadow at y=2 gives C(2)=\u22124). No c_k value; nothing wired.",
   "auditOnly": "docs/audits/2026-07-11-qbeta-c3-kc19-kc20-consistency.md",
   "tier": "symbolic-exact (sympy; consistency cross-check of two proved-lean constraints)",
-  "computedAt": "2026-07-12T00:24:26.566091+00:00",
-  "commitSha": "1f6b5f1d329b59b3a1d13e4a5ef304aad68a5887",
+  "computedAt": "2026-07-12T10:30:16.823572+00:00",
+  "commitSha": "0e6f97ff2eebf9aa39c425a1baad856cef8b92bf",
   "engine": "sympy",
   "engineVersion": "1.14.0",
   "scriptFile": "qbeta_c3_kc19_kc20_consistency_probe.py",
-  "scriptHash": "02608343d351",
+  "scriptHash": "c9aaf8442e9d",
   "assertions": [
     {
       "name": "kc19_kc20_same_trace_variable",
@@ -31,9 +31,9 @@
       "detail": "C irreducible over \u211a (Poly.is_irreducible=True; rational-root candidates {\u00b11,\u00b12} all nonzero: [-2, -10, -4, -32]), disc=-152 \u21d2 via KC19 (swing\u2208w) + KC18 (affine bridge), c\u2083=[u\u00b3]w inherits the degree-3 field \u21d2 no quadratic/RoU c\u2083 closure (unified KC19+KC20)"
     },
     {
-      "name": "C3_minus2_is_wrong_anchor_coincidence",
+      "name": "two_distinct_minus_twos_meaningful_vs_coincidence",
       "passed": true,
-      "detail": "c\u2083 q=1 shadow anchor y(q\u21921)=2: C(2)=-4 (\u2260\u22122); the \u22122 is C(3)=-2 at the GOLDEN anchor y=3 \u2014 a different point. Matching the shadow value needs the WRONG anchor \u21d2 coincidence (sharpens KC20 \u00a74)"
+      "detail": "MEANINGFUL: C_Hopf(2)=-2 at the classical anchor y=2 = J_Hopf(1) = c\u2083 shadow (bridge audit, Lean-certified). COINCIDENCE: total C(3)=-2 at the GOLDEN anchor y=3, but total C(2)=-4\u2260\u22122 at the actual shadow anchor \u21d2 the total-C-at-golden match needs the WRONG anchor (sharpens KC20 \u00a74); the \u22122/c\u2083 link is NOT globally coincidental \u2014 it is the Hopf-sector classical shadow"
     }
   ],
   "allPassed": true,
@@ -46,7 +46,7 @@
       "q1_shadow_y2": -4
     },
     "kc19_pole_y": 6,
-    "verdict": "KC19 \u21d4 KC20 ARE CONSISTENT AND JOINTLY SHARPER (formalize-first, no c\u2083 value, nothing wired): (1) both live in the SAME trace variable y=q\u00b2+q\u207b\u00b2 \u2014 KC19's eval-kernel denominator 4\u2212h\u00b2=6\u2212y is exactly KC20's carrier variable (unstated bridge); (2) their singular structures are DISJOINT (K pole at silver y=6, C(6)=88\u22600; carrier root y\u2080\u22483.27); (3) composing KC19 (c\u2083 swing\u2208w) + KC18 (affine carrier\u2192w) + KC20 (degree-3 irreducible carrier) gives the UNIFIED exclusion c\u2083 inherits the degree-3 field \u21d2 no quadratic/RoU closure \u2014 stronger than either audit alone; (4) the flagged C(3)=\u22122 numerology is a WRONG-ANCHOR coincidence \u2014 the c\u2083 q=1 shadow lives at y=2 where C(2)=\u22124\u2260\u22122, the \u22122 is at the golden anchor y=3. The two most-recent Lean-proved c\u2083 narrowings are coherent and close a flagged numerology. NO tier change; NOTHING WIRED."
+    "verdict": "KC19 \u21d4 KC20 ARE CONSISTENT AND JOINTLY SHARPER (formalize-first, no c\u2083 value, nothing wired): (1) both live in the SAME trace variable y=q\u00b2+q\u207b\u00b2 \u2014 KC19's eval-kernel denominator 4\u2212h\u00b2=6\u2212y is exactly KC20's carrier variable (unstated bridge); (2) their singular structures are DISJOINT (K pole at silver y=6, C(6)=88\u22600; carrier root y\u2080\u22483.27); (3) composing KC19 (c\u2083 swing\u2208w) + KC18 (affine carrier\u2192w) + KC20 (degree-3 irreducible carrier) gives the UNIFIED exclusion c\u2083 inherits the degree-3 field \u21d2 no quadratic/RoU closure \u2014 stronger than either audit alone; (4) TWO distinct \u22122's kept separate \u2014 the MEANINGFUL Hopf-sector shadow C_Hopf(2)=\u22122 at the classical anchor y=2 (= J_Hopf(1) = c\u2083 shadow, bridge audit) vs the COINCIDENTAL total C(3)=\u22122 at the golden anchor y=3 (total C(2)=\u22124 at the actual shadow anchor). The two most-recent Lean-proved c\u2083 narrowings are coherent; adds the 4\u2212h\u00b2=6\u2212y kernel-denominator identity + disjoint singularities to the prior 2026-07-07 bridge audit. NO tier change; NOTHING WIRED."
   },
   "context": {
     "kc19": "PR #3473 CrossingWeightAffine (proved-lean) \u2014 eval map affine, K(q) anchor-rigid",
