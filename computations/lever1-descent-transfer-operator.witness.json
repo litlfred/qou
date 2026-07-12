@@ -1,0 +1,210 @@
+{
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-07-12T22:48:51.695065+00:00",
+  "commitSha": "cae7c4b987e91027e701c989d9cece470f50a23b",
+  "assertions": [
+    {
+      "name": "descent_transfer_operator_reproduces_binding_statistic",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "T_k = A_k + q^(2k)B_k on (partition, marked-corner-row) states reproduces Sigma_{w in Inv} q^(2 maj + content(RSK)) exactly (V1 n<=9, V2 n<=16, V3 n<=12, V4 q=1 n<=24); mark-sensitive shape edges nonzero for all n>=4 (the lift is minimal)."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 15,
+  "computation": "lever1-descent-transfer-operator",
+  "scriptFile": "lever1_descent_transfer_operator.py",
+  "scriptHash": "a6a22f634dd1",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Lever-1 W6 (z2bn follow-up): explicit descent-set transfer operator for the 2*maj + content(RSK) involution statistic of the binding period (S^bal(n)*q^(n(n-1)/2), witness lever1-kernel-maj-involution-identification). States are (partition, marked corner row); level-k step T_k = A_k + q^(2k)*B_k with A = non-descent edges, B = descent edges, entries q^(content of added cell) — the only level dependence is the scalar q^(2k) on the descent block. Verified exactly: V1 vs direct involution enumeration (n<=9), V2 vs the Stanley hook side sum_lambda q^content * fakedeg(q^2) (n<=16), V3 vs the balanced hook formula q^(n(n-1)/2)*S^bal(n) (n<=12), V4 q=1 gives the telephone numbers I(n) (n<=24). Measured: state space grows like sum_lambda #corners (sub-exponential, ~p(n)) yet unboundedly — no fixed finite-basis (depth-d q-difference) projection closes; and every level >=4 has shape edges carrying BOTH descent and non-descent weight depending on the mark, so the (lambda, r) lift is genuinely minimal. This is the exact kernel object the identification points at: an insertion recursion at statistic level. Exact integer/sympy arithmetic; no fit; no wiring; EXPLORATORY.",
+  "data": {
+    "V1_direct_enumeration_max_n": 9,
+    "V2_hook_side_max_n": 16,
+    "V3_balanced_formula_max_n": 12,
+    "V4_telephone_at_q1_max_n": 24,
+    "growth_and_edges_by_n": {
+      "1": {
+        "states": 1,
+        "edges_A": 0,
+        "edges_B": 0,
+        "mark_sensitive_shape_edges": 0,
+        "involutions": 1
+      },
+      "2": {
+        "states": 2,
+        "edges_A": 1,
+        "edges_B": 1,
+        "mark_sensitive_shape_edges": 0,
+        "involutions": 2
+      },
+      "3": {
+        "states": 4,
+        "edges_A": 2,
+        "edges_B": 2,
+        "mark_sensitive_shape_edges": 0,
+        "involutions": 4
+      },
+      "4": {
+        "states": 7,
+        "edges_A": 5,
+        "edges_B": 5,
+        "mark_sensitive_shape_edges": 1,
+        "involutions": 10
+      },
+      "5": {
+        "states": 12,
+        "edges_A": 9,
+        "edges_B": 9,
+        "mark_sensitive_shape_edges": 2,
+        "involutions": 26
+      },
+      "6": {
+        "states": 19,
+        "edges_A": 17,
+        "edges_B": 17,
+        "mark_sensitive_shape_edges": 5,
+        "involutions": 76
+      },
+      "7": {
+        "states": 30,
+        "edges_A": 28,
+        "edges_B": 28,
+        "mark_sensitive_shape_edges": 8,
+        "involutions": 232
+      },
+      "8": {
+        "states": 45,
+        "edges_A": 47,
+        "edges_B": 47,
+        "mark_sensitive_shape_edges": 15,
+        "involutions": 764
+      },
+      "9": {
+        "states": 67,
+        "edges_A": 73,
+        "edges_B": 73,
+        "mark_sensitive_shape_edges": 23,
+        "involutions": 2620
+      },
+      "10": {
+        "states": 97,
+        "edges_A": 114,
+        "edges_B": 114,
+        "mark_sensitive_shape_edges": 37,
+        "involutions": 9496
+      },
+      "11": {
+        "states": 139,
+        "edges_A": 170,
+        "edges_B": 170,
+        "mark_sensitive_shape_edges": 55,
+        "involutions": 35696
+      },
+      "12": {
+        "states": 195,
+        "edges_A": 253,
+        "edges_B": 253,
+        "mark_sensitive_shape_edges": 83,
+        "involutions": 140152
+      },
+      "13": {
+        "states": 272,
+        "edges_A": 365,
+        "edges_B": 365,
+        "mark_sensitive_shape_edges": 118,
+        "involutions": 568504
+      },
+      "14": {
+        "states": 373,
+        "edges_A": 525,
+        "edges_B": 525,
+        "mark_sensitive_shape_edges": 171,
+        "involutions": 2390480
+      },
+      "15": {
+        "states": 508,
+        "edges_A": 738,
+        "edges_B": 738,
+        "mark_sensitive_shape_edges": 238,
+        "involutions": 10349536
+      },
+      "16": {
+        "states": 684,
+        "edges_A": 1033,
+        "edges_B": 1033,
+        "mark_sensitive_shape_edges": 332,
+        "involutions": 46206736
+      },
+      "17": {
+        "states": 915,
+        "edges_A": 1422,
+        "edges_B": 1422,
+        "mark_sensitive_shape_edges": 453,
+        "involutions": 211799312
+      },
+      "18": {
+        "states": 1212,
+        "edges_A": 1948,
+        "edges_B": 1948,
+        "mark_sensitive_shape_edges": 618,
+        "involutions": 997313824
+      },
+      "19": {
+        "states": 1597,
+        "edges_A": 2634,
+        "edges_B": 2634,
+        "mark_sensitive_shape_edges": 827,
+        "involutions": 4809701440
+      },
+      "20": {
+        "states": 2087,
+        "edges_A": 3545,
+        "edges_B": 3545,
+        "mark_sensitive_shape_edges": 1107,
+        "involutions": 23758664096
+      },
+      "21": {
+        "states": 2714,
+        "edges_A": 4721,
+        "edges_B": 4721,
+        "mark_sensitive_shape_edges": 1460,
+        "involutions": 119952692896
+      },
+      "22": {
+        "states": 3506,
+        "edges_A": 6259,
+        "edges_B": 6259,
+        "mark_sensitive_shape_edges": 1922,
+        "involutions": 618884638912
+      },
+      "23": {
+        "states": 4508,
+        "edges_A": 8227,
+        "edges_B": 8227,
+        "mark_sensitive_shape_edges": 2504,
+        "involutions": 3257843882624
+      },
+      "24": {
+        "states": 5763,
+        "edges_A": 10767,
+        "edges_B": 10767,
+        "mark_sensitive_shape_edges": 3253,
+        "involutions": 17492190577600
+      }
+    }
+  }
+}
