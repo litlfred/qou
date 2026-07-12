@@ -1,0 +1,108 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-07-12T00:28:27.624382+00:00",
+  "commitSha": "8c827ffdfd7120f994fb32bc9a25aabc6a8f4a88",
+  "assertions": [
+    {
+      "name": "max_contact_bounded_simplex_overshoots",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "with b* = B_strong(deuteron) (single anchor) and #contacts = 3A−6 (convex deltahedra), B_pred/B_strong is bounded in [0.5,1] at A=5,6,7 (0.694, 0.777, 0.804) — no blow-up — while simplex C(A,2) overshoots by A=7 (C(7,2)=21). The max-contact restriction tames the A≥5 pairwise backbone; residual is the reported many-body/cluster term."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 3,
+  "computation": "gap1-max-contact-a5plus",
+  "scriptFile": "gap1_max_contact_a5plus.py",
+  "scriptHash": "465318d208da",
+  "scriptCommitSha": "8c827ffdfd7120f994fb32bc9a25aabc6a8f4a88",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "mpmath": "1.4.1"
+  },
+  "description": "GAP-1 (qou-lzoh): forward-predict binding from the max-contact deltahedra (3A−6 contacts: tri-bipyramid 9, octahedron 12, pentagonal-bipyramid 15) with per-bond b* pinned by the SINGLE deuteron datum. Max-contact (linear in A) tracks extensive B_strong with a BOUNDED ratio ~0.7–0.8 at A=5,6,7 (no blow-up), while simplex C(A,2) (quadratic) overshoots by A=7 and the a_D^(n)·C(A,n) tower blows up +920% @⁶Li (#3585). So the max-contact restriction 3A−6<C(A,2) is what tames the pairwise backbone at A≥5 — confirms GAP-1. Residual = bounded per-nucleon many-body/cluster term (GAP-2/GAP-4), reported not fitted. Scope-(a), deltahedral geometry, single anchor, no fit, no wiring.",
+  "data": {
+    "per_bond_bstar_MeV": 2.2245662,
+    "per_isotope": {
+      "D": {
+        "A": 2,
+        "max_contacts": 1,
+        "simplex_C_A2": 1,
+        "B_strong": 2.2245662,
+        "B_pred_maxcontact": 2.2245662,
+        "pred_over_strong": 1.0,
+        "residual_manybody": 0.0,
+        "residual_per_nucleon": 0.0
+      },
+      "T": {
+        "A": 3,
+        "max_contacts": 3,
+        "simplex_C_A2": 3,
+        "B_strong": 8.4817962,
+        "B_pred_maxcontact": 6.6736986,
+        "pred_over_strong": 0.7868260970476985,
+        "residual_manybody": 1.8080976,
+        "residual_per_nucleon": 0.6026992
+      },
+      "3He": {
+        "A": 3,
+        "max_contacts": 3,
+        "simplex_C_A2": 3,
+        "B_strong": 8.716481555064915,
+        "B_pred_maxcontact": 6.6736986,
+        "pred_over_strong": 0.7656413379458243,
+        "residual_manybody": 2.042782955064914,
+        "residual_per_nucleon": 0.6809276516883047
+      },
+      "4He": {
+        "A": 4,
+        "max_contacts": 6,
+        "simplex_C_A2": 6,
+        "B_strong": 29.202805555924307,
+        "B_pred_maxcontact": 13.3473972,
+        "pred_over_strong": 0.45705872932103414,
+        "residual_manybody": 15.85540835592431,
+        "residual_per_nucleon": 3.9638520889810773
+      },
+      "5Li": {
+        "A": 5,
+        "max_contacts": 9,
+        "simplex_C_A2": 10,
+        "B_strong": 28.857013825815915,
+        "B_pred_maxcontact": 20.0210958,
+        "pred_over_strong": 0.6938034517656442,
+        "residual_manybody": 8.835918025815916,
+        "residual_per_nucleon": 1.7671836051631833
+      },
+      "6Li": {
+        "A": 6,
+        "max_contacts": 12,
+        "simplex_C_A2": 15,
+        "B_strong": 34.37137481920413,
+        "B_pred_maxcontact": 26.6947944,
+        "pred_over_strong": 0.7766577432650429,
+        "residual_manybody": 7.676580419204127,
+        "residual_per_nucleon": 1.2794300698673544
+      },
+      "7Li": {
+        "A": 7,
+        "max_contacts": 15,
+        "simplex_C_A2": 21,
+        "B_strong": 41.50339508104275,
+        "B_pred_maxcontact": 33.368493,
+        "pred_over_strong": 0.803994298173489,
+        "residual_manybody": 8.134902081042748,
+        "residual_per_nucleon": 1.1621288687203926
+      }
+    }
+  }
+}
