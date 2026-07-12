@@ -69,7 +69,56 @@ _(pending)_
 
 ## Route 1 — meridian-corrected Borel–Padé on the deformed rungs
 
-_(pending)_
+**Probe:**
+[`qbeta_c3_borel_pade_deformed_rungs_probe.py`](../../computations/qbeta/qbeta_c3_borel_pade_deformed_rungs_probe.py)
+(+ witness). Reruns #3692's Borel–Padé + Laplace on the deformed complex rungs
+κ̃₁…κ̃₄ (read from the merged tall-ladder witness) instead of the real u=0 rungs.
+
+**A — meridian-corrected Im 𝔙_b.** The u=0 rungs are real, so only the odd
+rungs fed `Im 𝔙_b = Im Σ κ_n (i·t)ⁿ`. The deformed rungs are complex (u≠0
+breaks the reality of `J_N`), so the *even* rungs now contribute through their
+imaginary parts:
+
+| term | value |
+|---|---|
+| `t·Re κ̃₁` | 0.06128383 |
+| `−t²·Im κ̃₂` | +0.00066036 |
+| `−t³·Re κ̃₃` | −0.00449417 |
+| `t⁴·Im κ̃₄` | −0.00039236 |
+| **Im 𝔙_b (all 4, truncation)** | **0.05705766** |
+| Im 𝔙_b (odd only) | 0.05678966 |
+| **Im 𝔙_b (Borel–Padé[2/2] resummed)** | **0.05854999** |
+| #3692 u=0 (truncation / resummed) | 0.05481 / 0.05545 |
+
+The even-rung imaginary parts add +0.00027 to the odd-only value; the meridian
+correction lifts the resummed `Im 𝔙_b` from #3692's 0.05545 to ≈ 0.0585.
+
+**B — DECISIVE: the deformation does not move the Borel singularity onto the
+imaginary substrate ray.** #3692's decisive point was that the u=0 Borel
+singularity sits at real `ξ = A = Vol(4₁)/π = 0.6461` (arg 0), off the imaginary
+Laplace ray, so the Borel sum is single-valued (no Stokes split, no `e^{−A/x}`
+trans-series) and `Im 𝔙_b` carries no anchor-dependent piece. The deformed
+Padé[2/2] denominator roots:
+
+| ξ_pole (Borel plane) | \|ξ\| | arg ξ | induced s-pole `−i·ξ/t` |
+|---|---|---|---|
+| instanton | 0.6313 | 0.0106·π | arg −0.4894·π |
+| (Padé descendant) | 7.727 | 0.0106·π | arg −0.4894·π |
+
+The deformation rotates the singularity only **0.011·π (≈ 1.9°)** off the real
+axis and shifts its magnitude only ~2.3 % from `Vol(4₁)/π` — the instanton
+action is essentially unchanged. The nearest s-plane pole is **0.489·π** off
+the positive-real Laplace ray (vs the maximally-safe 0.5·π at u=0), i.e. it
+moves toward the dangerous ray by only ~0.011·π. So the Borel sum stays
+single-valued even at the deformed meridian.
+
+**Conclusion.** #3692's result survives the deformation: the meridian-corrected
+`Im 𝔙_b` is the exact smooth value, and there is *no* resummable,
+anchor-dependent Stokes contribution the deformation could have introduced. The
+odd-S sign-flip remains the `1/u³` ladder representation (#3636) —
+representational / experimental-Q_β-limited, not a resummable physical effect.
+**Caveat:** 4 rungs → Padé[2/2] is few, so the resummed `Im 𝔙_b` value is
+indicative; the singularity-arg statement (B) is the robust deliverable.
 
 ## Honest scope (anti-laundering)
 
