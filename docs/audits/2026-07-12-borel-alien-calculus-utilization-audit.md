@@ -37,9 +37,16 @@ cross-linked as if they were one topic.
 | [`docs/audits/scripts/qbeta_resurgence_action_halffig8.py`](scripts/qbeta_resurgence_action_halffig8.py) | Order-6 predecessor (large-order growth ratio) | Superseded by the above; witness says tight value "needs ~20 orders / Borel–Padé" |
 | `QOU/Mathlib/BorelResummation.lean`, `QOU/Infra/BorelRank.lean` | Lean scaffolds (Mathlib-gap tier, bean `el8w`) | Scaffold only |
 | [`computations/qbeta/phi_b_evaluator.py`](../../computations/qbeta/phi_b_evaluator.py) + `phi_b_substrate_regime.py` | Faddeev Φ_b (state integral / modular double) | Landed 2026-07-11 (PR #3540); substrate regime pinned |
+| **#3606/#3628 exact rungs** (main, 2026-07-12) | κ₁ = (11/108)√3π, κ₂ = (2/27)π², κ₃ = (1081/21870)√3π³, κ₄ = (98/729)π⁴ — all exact ℚ(√3)·πⁿ, √3-parity alternation Lean-certified | exact-ID frontier now κ₅/κ₆ (precision-limited, not structural) |
+| Even-channel Borel-singularity probe + `qbeta-even-borel-singularity.witness.json` (main, `dbf48c4e`) | ratio-fit Borel singularity from κ₁..κ₆ | **A = 0.6177 ≈ Vol(4₁)/π to 4.4% — reported suggestive, NOT identified** (5-ratio low-order fit is biased) |
+| [`2026-07-12-fmap-4one-qbeta-bridge-growth-obstruction.md`](2026-07-12-fmap-4one-qbeta-bridge-growth-obstruction.md) (main) | 4₁↔Q_β bridge skeleton + growth-class obstruction | **scope-(b), cited invariant**: even channel Gevrey-1 divergent, odd channel convergent (KC8 pole) ⇒ no term-by-term bridge; "the bridge map is necessarily the **Borel / median resummation** of the even-channel series" |
 
-No conformal-map-of-the-Borel-plane and no transseries reconstruction exists
-anywhere in the corpus.
+The last row is the strongest corpus-internal corroboration of this audit's
+thesis: resurgence is not an optional tool here — the sibling audit proves
+(scope-b) that the archimedean evaluation map E carrying the exact fibre
+data to the observable c_k **is** a Borel/median resummation. What still
+does not exist: a conformal-map-of-the-Borel-plane and a transseries
+reconstruction.
 
 ## 1. Compute axis — speed / accuracy opportunities (ranked)
 
@@ -56,6 +63,13 @@ Borel plane** (uniformize the cut, ζ = 4Aw/(1+w)²-style, Padé in w):
 - resolves real-vs-complex A — i.e. **phase-resolves the f-map Stokes
   datum**, the keystone quantity deciding 𝔙 = Vol ± iCS.
 
+**Update (main, `dbf48c4e`):** the even-channel probe now reports
+A = 0.6177 ≈ Vol(4₁)/π to 4.4% from a 5-ratio fit, explicitly flagged
+*suggestive not identified* because the low-order ratio fit is biased. C1 is
+the direct upgrade path: a conformal-mapped Borel–Padé on the **four exact
+rungs + numeric κ₅/κ₆** is the unbiased estimator that would confirm or
+refute the Vol(4₁)/π identification and supply the phase.
+
 ### C2. Un-block the ℚ(√−3) saddle-coefficient PSLQ: run it on 𝓑-transformed coefficients
 
 [`qbeta_action_qsqrt3_saddle_probe.py`](scripts/qbeta_action_qsqrt3_saddle_probe.py)
@@ -66,27 +80,31 @@ b_m = c_m/m! are O(1/A^m)** — bounded and PSLQ-tractable. Re-running the
 identical probe on b_m removes the stated blocker without touching the
 anti-fit discipline (hypothesis-class test, not a value fit).
 
-### C3. Exact κ₂..κ_K via transseries anchored on A
+### C3. Exact κ₅, κ₆, … via transseries anchored on A — **rescoped by #3628**
 
-[`qbeta_ohtsuki_kappa1_extract.py`](scripts/qbeta_ohtsuki_kappa1_extract.py)
-recovered κ₁ = 11√3π/108 exactly but higher κ_k are
-asymptotic-truncation-limited (the full-ladder sibling run was
-entropy-blocked by the same factorial growth). A Borel-plane fit anchored on
-the C1-stabilized A (or a Borel–Écalle transseries reconstruction) yields
-κ₂, κ₃, … beyond the numerical fit's reach, unblocking the ℚ(√3)·πʲ PSLQ
-that succeeded only at κ₁.
+Originally: recover κ₂+ beyond κ₁. **Superseded through κ₄** — the sibling
+higher-rung probes on main extracted κ₂/κ₃/κ₄ exactly (ℚ(√3)·πⁿ,
+Lean-certified parity). The surviving opportunity is the stated frontier:
+κ₅ (height outgrew 14 digits) and κ₆ (lone PSLQ hit rejected as a #3571-class
+entropy false positive) are "precision-limited, not structural". A
+Borel–Écalle transseries reconstruction anchored on the C1-stabilized A —
+i.e. generate the tail from the Stokes data rather than fit it — is now the
+route past the κ₄ frontier (this is the compute face of §2.G2).
 
-### C4. Decide bounded-vs-factorial for the c_k ladder with a clean Borel ratio test
+### C4. Bounded-vs-factorial for the c_k ladder — **largely settled on main; residual is a channel-attribution note**
 
-Three probes disagree in substance:
-`qbeta_ck_genfunc_bounded_vs_factorial_probe.py` (BOUNDED; "keystone is NOT
-Borel resummation"), `qbeta_ck_closed_form_candidate_fits_probe.py`
-(c_k = −(k−1)! divergent-Borel-summable reading), and
-`qbeta_ck_truncation_order_analysis.py` (convergent-series framing; also the
-KC8 geometric-growth datum `c_{k+1}/c_k → 1/u`). A single Borel-transform
-ratio/Padé test on **symbolic (non-SDP-contaminated)** c_k would adjudicate.
-Analytic-vs-resurgent is the fork the 1 ppQ roadmap hangs on; the genfunc
-probe's residual-boundedness heuristic ran on SDP-contaminated data.
+The three-probe contradiction (genfunc BOUNDED vs closed-form-candidate
+divergent-Borel-summable vs truncation-order convergent) is resolved by the
+bridge growth-obstruction audit as a **channel dichotomy**, scope-(b) with
+cited invariant: the *even* (4₁/Ohtsuki) channel is Gevrey-1 divergent
+(ratios 1.32 → 3.63 → 4.93 rising without bound), the *odd* (Q_β ladder)
+channel is convergent with the KC8 simple pole (`c_{k+1}/c_k → 1/u =
+117.41` plateau). The genfunc probe's "keystone is NOT Borel resummation"
+conclusion survives **only for the odd channel viewed alone**; the bridge
+*into* it is necessarily a Borel/median resummation. Residual action: a
+one-paragraph channel-attribution note on
+`qbeta_ck_closed_form_candidate_fits_probe.py`'s divergent reading (it was
+describing the even-channel object) — bookkeeping, not a new probe.
 
 ### C5. Φ_b near-|q|=1 speed: resurgent/modular resummation of the tail
 
@@ -144,9 +162,9 @@ mechanically discharges `VolumeConjecture41`. **Downstream payoff:**
 
 `QOU/QBeta/Qsqrt3SaddleArithmetic.lean` +
 [`2026-07-11-fmap-action-qsqrt3-saddle-lean.md`](2026-07-11-fmap-action-qsqrt3-saddle-lean.md):
-b₁ = √3π/54 Lean-certified, κ₁ = 11√3π/108 PSLQ-identified, higher `[1/N^k]`
-coefficients "entropy-blocked (#3571)" — PSLQ on divergent-series numerics
-can't reach exact ℚ(√−3) arithmetic. The Écalle **bridge equation**
+b₁ = √3π/54 Lean-certified, κ₁ = 11√3π/108 PSLQ-identified; **post-#3628 the
+entropy block has moved to κ₅/κ₆** (κ₂..κ₄ exact; the block is now diagnosed
+as divergent-tail precision, not structure). The Écalle **bridge equation**
 Δ_ω f̃ = A_ω ∂f̃/∂z generates the higher coefficients *arithmetically* from
 the Stokes constant (already found at 2-loop) instead of recognizing them
 numerically — a derivation route, not a fit, so it passes the anti-fit
@@ -173,9 +191,14 @@ its divergent tail is Borel-summable, and the higher `c_k` are the
 alien-derivative data of that series (the `tau-M` block already calls them
 "higher Ohtsuki invariants of the correction factor" — which *is* the
 resurgence identification). Recognition-level reframing; if it holds, the
-c_k recursion **is** the bridge recursion. Note the §1.C4 fork: the ladder's
-KC8 geometric growth (simple pole) vs the Ohtsuki series' Gevrey-1 growth
-must be reconciled at the f-map — this reframing lives on the fibre side.
+c_k recursion **is** the bridge recursion. **Corroborated on main
+(2026-07-12):** the bridge growth-obstruction audit proves (scope-b) that
+the even→odd channel map cannot be term-by-term and "is necessarily the
+Borel / median resummation of the even-channel series" — i.e. the kernel
+R(q,ξ) question and the resummation question are the same question, on the
+archimedean (Rogers↔Faddeev) evaluation map E, via analytic continuation
+off |q| = 1 (NOT a reparametrisation ℏ ↔ u — the sibling audit's explicit
+anti-laundering correction).
 
 ### G5. Surreal `st` = median resummation (provable identification)
 
@@ -318,8 +341,8 @@ lives in one place.
 | 2 | **C1** — conformal-mapped Borel plane in `qbeta_borel_pade_action.py` | compute accuracy | 1 probe script edit | cures documented Froissart instability; phase-resolves the f-map Stokes datum (Vol ± iCS decision) at existing order 11 |
 | 3 | **C2** — rerun ℚ(√−3) saddle PSLQ on Borel-transformed b_m = c_m/m! | compute accuracy | trivial (flip a failing probe) | removes the probe's own stated factorial-overflow blocker; bounded coefficients fit the entropy budget |
 | 4 | **E1+E2** — `def:ecalle-borel-resummation` block + notation-register rows + three-Borel disambiguation | exposition | 1 block + register edit | closes 2 dangling term uses (one on an overclaim-flagged block); makes the framework vocabulary discoverable |
-| 5 | **C4** — clean Borel ratio/Padé test on symbolic c_k | compute (decider) | 1 probe | adjudicates the bounded-vs-factorial contradiction between three probes — the fork the 1 ppQ roadmap hangs on |
-| 6 | **G2** — bridge-equation generation of κ₂..κ_K (with C3 as numeric cross-check) | proof gap + compute | research-grade, literature-guided | derivation route around the #3571 entropy block; anti-fit compliant |
+| 5 | ~~C4 decider probe~~ → channel-attribution note only | compute (bookkeeping) | 1 paragraph | the fork was settled on main (scope-b channel dichotomy: even Gevrey-1, odd convergent); just re-attribute the divergent reading to the even channel |
+| 6 | **G2+C3** — bridge-equation / transseries generation of κ₅, κ₆, … (κ₂..κ₄ now exact on main) | proof gap + compute | research-grade, literature-guided | derivation route past the κ₄ precision frontier; anti-fit compliant |
 | 7 | **K1–K4** — dilog-saddle block, Kashaev-identity fan-in, Cluster-B fan-in, Φ_q hub wiring | consolidation | mechanical `uses[]` + block edits | ~5× duplicated saddle machinery and ~3× transseries-reduction prose collapse to single homes |
 | 8 | **G5** — surreal `st` = median resummation reframing | proof gap (reframe) | 1 block edit + citation | names the unspecified "transseries reduction" row; provable now |
 
