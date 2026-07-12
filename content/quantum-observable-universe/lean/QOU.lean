@@ -245,6 +245,7 @@ import QOU.Mathlib.StandardYoungTableauBot
 import QOU.Mathlib.SchenstedInsertion
 import QOU.Mathlib.SchenstedTableau
 import QOU.Mathlib.SchenstedRecording
+import QOU.Mathlib.SchenstedRecordingShift
 import QOU.Mathlib.SYTEnumeration
 import QOU.Mathlib.SYTEnumerationBridge
 import QOU.Mathlib.SYTEnumerationFintype
