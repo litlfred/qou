@@ -1,5 +1,3 @@
-> **⚠ Resolution update (2026-06-30).** The muon knot-ID is the torus knot $T(2,5)$, and $4_1$ is the Higgs. Torus-knot leptons carry zero intrinsic hyperbolic volume. The charged lepton mass originates from its coupling to the Higgs. The per-braid tower evaluation presented below tests the lepton's intrinsic isolated tower, not its mass. The material is retained as a scope-limited negative on the isolated-tower hypothesis.
-
 **Conjecture (canonical lepton-mass tower).**
 *Let $\ell \in \{\mathfrak{e}, \mu, \tau\}$ be a charged lepton with canonical braid representative $K_\ell$. The lepton mass evaluates as:*
 

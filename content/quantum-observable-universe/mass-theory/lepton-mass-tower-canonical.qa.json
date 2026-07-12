@@ -8,16 +8,16 @@
     "lean": "content/quantum-observable-universe/mass-theory/lepton-mass-tower-canonical.lean"
   },
   "source_hashes": {
-    "md": "bde55bd24275",
-    "ts": "05a414a32ee5",
+    "md": "140b4690483f",
+    "ts": "cb68932cd9ab",
     "lean": "5ad9087f92d2"
   },
   "criteria": {
     "bib-cite-resolves": [
       {
         "field_hash": {
-          "md": "bde55bd24275",
-          "ts": "05a414a32ee5",
+          "md": "140b4690483f",
+          "ts": "cb68932cd9ab",
           "lean": "5ad9087f92d2"
         },
         "result": "pass",
@@ -27,10 +27,10 @@
           "version": "v1",
           "script_hash": "f8ed8072ea0b",
           "script_commit_sha": "a285d6903e89fd7951b6c293ad21d2d869f685a9",
-          "deps_hash": "d5a24b68ee4d"
+          "deps_hash": "6925f16e96e0"
         },
-        "reviewed_at": "2026-07-12T02:24:13.638Z",
-        "reviewed_sha": "a261b5599858024c2ffcb9a1f91fc8aceb108c50"
+        "reviewed_at": "2026-07-12T22:44:50.484Z",
+        "reviewed_sha": "7c4c9a70d266cce4e1302b7dcf2c6d994de48cf5"
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -454,8 +454,8 @@
     "voice-status-leak": [
       {
         "field_hash": {
-          "md": "bde55bd24275",
-          "ts": "05a414a32ee5",
+          "md": "140b4690483f",
+          "ts": "cb68932cd9ab",
           "lean": "5ad9087f92d2"
         },
         "result": "pass",
@@ -466,15 +466,15 @@
           "script_hash": "308bf5121143",
           "script_commit_sha": "d285a5d6c6e1de182515048975c0f22276ea3da4"
         },
-        "reviewed_at": "2026-07-12T02:24:13.638Z",
-        "reviewed_sha": "a261b5599858024c2ffcb9a1f91fc8aceb108c50"
+        "reviewed_at": "2026-07-12T22:44:50.484Z",
+        "reviewed_sha": "7c4c9a70d266cce4e1302b7dcf2c6d994de48cf5"
       }
     ],
     "voice-probe-narrative": [
       {
         "field_hash": {
-          "md": "bde55bd24275",
-          "ts": "05a414a32ee5",
+          "md": "140b4690483f",
+          "ts": "cb68932cd9ab",
           "lean": "5ad9087f92d2"
         },
         "result": "pass",
@@ -485,15 +485,15 @@
           "script_hash": "f8ed8072ea0b",
           "script_commit_sha": "a285d6903e89fd7951b6c293ad21d2d869f685a9"
         },
-        "reviewed_at": "2026-07-12T02:24:13.638Z",
-        "reviewed_sha": "a261b5599858024c2ffcb9a1f91fc8aceb108c50"
+        "reviewed_at": "2026-07-12T22:44:50.484Z",
+        "reviewed_sha": "7c4c9a70d266cce4e1302b7dcf2c6d994de48cf5"
       }
     ],
     "cite-named-theorem": [
       {
         "field_hash": {
-          "md": "bde55bd24275",
-          "ts": "05a414a32ee5",
+          "md": "140b4690483f",
+          "ts": "cb68932cd9ab",
           "lean": "5ad9087f92d2"
         },
         "result": "pass",
@@ -504,15 +504,15 @@
           "script_hash": "f8ed8072ea0b",
           "script_commit_sha": "a285d6903e89fd7951b6c293ad21d2d869f685a9"
         },
-        "reviewed_at": "2026-07-12T02:24:13.638Z",
-        "reviewed_sha": "a261b5599858024c2ffcb9a1f91fc8aceb108c50"
+        "reviewed_at": "2026-07-12T22:44:50.484Z",
+        "reviewed_sha": "7c4c9a70d266cce4e1302b7dcf2c6d994de48cf5"
       }
     ],
     "voice-agent-speak": [
       {
         "field_hash": {
-          "md": "bde55bd24275",
-          "ts": "05a414a32ee5",
+          "md": "140b4690483f",
+          "ts": "cb68932cd9ab",
           "lean": "5ad9087f92d2"
         },
         "result": "pass",
@@ -523,18 +523,18 @@
           "script_hash": "f8ed8072ea0b",
           "script_commit_sha": "a285d6903e89fd7951b6c293ad21d2d869f685a9"
         },
-        "reviewed_at": "2026-07-12T02:24:13.638Z",
-        "reviewed_sha": "a261b5599858024c2ffcb9a1f91fc8aceb108c50"
+        "reviewed_at": "2026-07-12T22:44:50.484Z",
+        "reviewed_sha": "7c4c9a70d266cce4e1302b7dcf2c6d994de48cf5"
       }
     ],
     "voice-emoji-content": [
       {
         "field_hash": {
-          "md": "bde55bd24275",
-          "ts": "05a414a32ee5",
+          "md": "140b4690483f",
+          "ts": "cb68932cd9ab",
           "lean": "5ad9087f92d2"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/qa-checkers-voice.ts",
@@ -542,17 +542,15 @@
           "script_hash": "308bf5121143",
           "script_commit_sha": "d285a5d6c6e1de182515048975c0f22276ea3da4"
         },
-        "reviewed_at": "2026-07-12T02:24:13.638Z",
-        "reviewed_sha": "a261b5599858024c2ffcb9a1f91fc8aceb108c50",
-        "severity": "major",
-        "evidence": "../qou/.claude/worktrees/agent-acf83146d64b35f0e/content/quantum-observable-universe/mass-theory/lepton-mass-tower-canonical.md:1: > **⚠ Resolution update (2026-06-30).** The muon knot-ID is the torus knot $T(2,5)$, and $4_1$ is the Higgs. Torus-knot leptons carry zero intrinsic hyperbolic volume. The charged lepton mass originat"
+        "reviewed_at": "2026-07-12T22:44:50.484Z",
+        "reviewed_sha": "7c4c9a70d266cce4e1302b7dcf2c6d994de48cf5"
       }
     ],
     "voice-first-person-work": [
       {
         "field_hash": {
-          "md": "bde55bd24275",
-          "ts": "05a414a32ee5",
+          "md": "140b4690483f",
+          "ts": "cb68932cd9ab",
           "lean": "5ad9087f92d2"
         },
         "result": "pass",
@@ -563,15 +561,15 @@
           "script_hash": "308bf5121143",
           "script_commit_sha": "d285a5d6c6e1de182515048975c0f22276ea3da4"
         },
-        "reviewed_at": "2026-07-12T02:24:13.638Z",
-        "reviewed_sha": "a261b5599858024c2ffcb9a1f91fc8aceb108c50"
+        "reviewed_at": "2026-07-12T22:44:50.484Z",
+        "reviewed_sha": "7c4c9a70d266cce4e1302b7dcf2c6d994de48cf5"
       }
     ],
     "voice-time-stamped-notes": [
       {
         "field_hash": {
-          "md": "bde55bd24275",
-          "ts": "05a414a32ee5",
+          "md": "140b4690483f",
+          "ts": "cb68932cd9ab",
           "lean": "5ad9087f92d2"
         },
         "result": "pass",
@@ -582,18 +580,18 @@
           "script_hash": "308bf5121143",
           "script_commit_sha": "d285a5d6c6e1de182515048975c0f22276ea3da4"
         },
-        "reviewed_at": "2026-07-12T02:24:13.638Z",
-        "reviewed_sha": "a261b5599858024c2ffcb9a1f91fc8aceb108c50"
+        "reviewed_at": "2026-07-12T22:44:50.484Z",
+        "reviewed_sha": "7c4c9a70d266cce4e1302b7dcf2c6d994de48cf5"
       }
     ],
     "voice-unicode-crash": [
       {
         "field_hash": {
-          "md": "bde55bd24275",
-          "ts": "05a414a32ee5",
+          "md": "140b4690483f",
+          "ts": "cb68932cd9ab",
           "lean": "5ad9087f92d2"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/qa-checkers-voice.ts",
@@ -601,17 +599,15 @@
           "script_hash": "308bf5121143",
           "script_commit_sha": "d285a5d6c6e1de182515048975c0f22276ea3da4"
         },
-        "reviewed_at": "2026-07-12T02:24:13.638Z",
-        "reviewed_sha": "a261b5599858024c2ffcb9a1f91fc8aceb108c50",
-        "severity": "critical",
-        "evidence": "../qou/.claude/worktrees/agent-acf83146d64b35f0e/content/quantum-observable-universe/mass-theory/lepton-mass-tower-canonical.md:1: > **⚠ Resolution update (2026-06-30).** The muon knot-ID is the torus knot $T(2,5)$, and $4_1$ is the Higgs. Torus-knot leptons carry zero intrinsic hyperbolic volume. The charged lepton mass originat"
+        "reviewed_at": "2026-07-12T22:44:50.484Z",
+        "reviewed_sha": "7c4c9a70d266cce4e1302b7dcf2c6d994de48cf5"
       }
     ],
     "voice-editorializing": [
       {
         "field_hash": {
-          "md": "bde55bd24275",
-          "ts": "05a414a32ee5",
+          "md": "140b4690483f",
+          "ts": "cb68932cd9ab",
           "lean": "5ad9087f92d2"
         },
         "result": "pass",
@@ -622,15 +618,15 @@
           "script_hash": "308bf5121143",
           "script_commit_sha": "d285a5d6c6e1de182515048975c0f22276ea3da4"
         },
-        "reviewed_at": "2026-07-12T02:24:13.638Z",
-        "reviewed_sha": "a261b5599858024c2ffcb9a1f91fc8aceb108c50"
+        "reviewed_at": "2026-07-12T22:44:50.484Z",
+        "reviewed_sha": "7c4c9a70d266cce4e1302b7dcf2c6d994de48cf5"
       }
     ],
     "voice-scholarly-default": [
       {
         "field_hash": {
-          "md": "bde55bd24275",
-          "ts": "05a414a32ee5",
+          "md": "140b4690483f",
+          "ts": "cb68932cd9ab",
           "lean": "5ad9087f92d2"
         },
         "result": "pass",
@@ -641,15 +637,15 @@
           "script_hash": "308bf5121143",
           "script_commit_sha": "d285a5d6c6e1de182515048975c0f22276ea3da4"
         },
-        "reviewed_at": "2026-07-12T02:24:13.638Z",
-        "reviewed_sha": "a261b5599858024c2ffcb9a1f91fc8aceb108c50"
+        "reviewed_at": "2026-07-12T22:44:50.484Z",
+        "reviewed_sha": "7c4c9a70d266cce4e1302b7dcf2c6d994de48cf5"
       }
     ],
     "voice-title-scholarly": [
       {
         "field_hash": {
-          "md": "bde55bd24275",
-          "ts": "05a414a32ee5",
+          "md": "140b4690483f",
+          "ts": "cb68932cd9ab",
           "lean": "5ad9087f92d2"
         },
         "result": "pass",
@@ -660,15 +656,15 @@
           "script_hash": "f8ed8072ea0b",
           "script_commit_sha": "a285d6903e89fd7951b6c293ad21d2d869f685a9"
         },
-        "reviewed_at": "2026-07-12T02:24:13.638Z",
-        "reviewed_sha": "a261b5599858024c2ffcb9a1f91fc8aceb108c50"
+        "reviewed_at": "2026-07-12T22:44:50.484Z",
+        "reviewed_sha": "7c4c9a70d266cce4e1302b7dcf2c6d994de48cf5"
       }
     ],
     "voice-ai-slop": [
       {
         "field_hash": {
-          "md": "bde55bd24275",
-          "ts": "05a414a32ee5",
+          "md": "140b4690483f",
+          "ts": "cb68932cd9ab",
           "lean": "5ad9087f92d2"
         },
         "result": "pass",
@@ -679,18 +675,18 @@
           "script_hash": "308bf5121143",
           "script_commit_sha": "d285a5d6c6e1de182515048975c0f22276ea3da4"
         },
-        "reviewed_at": "2026-07-12T02:24:13.638Z",
-        "reviewed_sha": "a261b5599858024c2ffcb9a1f91fc8aceb108c50"
+        "reviewed_at": "2026-07-12T22:44:50.484Z",
+        "reviewed_sha": "7c4c9a70d266cce4e1302b7dcf2c6d994de48cf5"
       }
     ],
     "voice-author-notes-pollution": [
       {
         "field_hash": {
-          "md": "bde55bd24275",
-          "ts": "05a414a32ee5",
+          "md": "140b4690483f",
+          "ts": "cb68932cd9ab",
           "lean": "5ad9087f92d2"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/qa-checkers-extended.ts",
@@ -698,17 +694,15 @@
           "script_hash": "f8ed8072ea0b",
           "script_commit_sha": "a285d6903e89fd7951b6c293ad21d2d869f685a9"
         },
-        "reviewed_at": "2026-07-12T02:24:13.638Z",
-        "reviewed_sha": "a261b5599858024c2ffcb9a1f91fc8aceb108c50",
-        "severity": "major",
-        "evidence": "../qou/.claude/worktrees/agent-acf83146d64b35f0e/content/quantum-observable-universe/mass-theory/lepton-mass-tower-canonical.md:1: P4:date-ref: > **⚠ Resolution update (2026-06-30).** The muon knot-ID is the torus knot $T(2,5)$, and $4_1$ is the Higgs. Torus-knot leptons carry zero intrinsic hyperbolic volume. The charged lepton mass originat"
+        "reviewed_at": "2026-07-12T22:44:50.484Z",
+        "reviewed_sha": "7c4c9a70d266cce4e1302b7dcf2c6d994de48cf5"
       }
     ],
     "voice-status-section": [
       {
         "field_hash": {
-          "md": "bde55bd24275",
-          "ts": "05a414a32ee5",
+          "md": "140b4690483f",
+          "ts": "cb68932cd9ab",
           "lean": "5ad9087f92d2"
         },
         "result": "pass",
@@ -719,15 +713,15 @@
           "script_hash": "f8ed8072ea0b",
           "script_commit_sha": "a285d6903e89fd7951b6c293ad21d2d869f685a9"
         },
-        "reviewed_at": "2026-07-12T02:24:13.638Z",
-        "reviewed_sha": "a261b5599858024c2ffcb9a1f91fc8aceb108c50"
+        "reviewed_at": "2026-07-12T22:44:50.484Z",
+        "reviewed_sha": "7c4c9a70d266cce4e1302b7dcf2c6d994de48cf5"
       }
     ],
     "framework-canonical": [
       {
         "field_hash": {
-          "md": "bde55bd24275",
-          "ts": "05a414a32ee5",
+          "md": "140b4690483f",
+          "ts": "cb68932cd9ab",
           "lean": "5ad9087f92d2"
         },
         "result": "pass",
@@ -738,15 +732,15 @@
           "script_hash": "308bf5121143",
           "script_commit_sha": "d285a5d6c6e1de182515048975c0f22276ea3da4"
         },
-        "reviewed_at": "2026-07-12T02:24:13.638Z",
-        "reviewed_sha": "a261b5599858024c2ffcb9a1f91fc8aceb108c50"
+        "reviewed_at": "2026-07-12T22:44:50.484Z",
+        "reviewed_sha": "7c4c9a70d266cce4e1302b7dcf2c6d994de48cf5"
       }
     ],
     "wall-side-correct": [
       {
         "field_hash": {
-          "md": "bde55bd24275",
-          "ts": "05a414a32ee5",
+          "md": "140b4690483f",
+          "ts": "cb68932cd9ab",
           "lean": "5ad9087f92d2"
         },
         "result": "pass",
@@ -757,8 +751,8 @@
           "script_hash": "308bf5121143",
           "script_commit_sha": "d285a5d6c6e1de182515048975c0f22276ea3da4"
         },
-        "reviewed_at": "2026-07-12T02:24:13.638Z",
-        "reviewed_sha": "a261b5599858024c2ffcb9a1f91fc8aceb108c50"
+        "reviewed_at": "2026-07-12T22:44:50.484Z",
+        "reviewed_sha": "7c4c9a70d266cce4e1302b7dcf2c6d994de48cf5"
       }
     ],
     "wall-base-ring-minimal": [
@@ -783,8 +777,8 @@
     "q-usage-regime-detected": [
       {
         "field_hash": {
-          "md": "bde55bd24275",
-          "ts": "05a414a32ee5",
+          "md": "140b4690483f",
+          "ts": "cb68932cd9ab",
           "lean": "5ad9087f92d2"
         },
         "result": "pass",
@@ -795,15 +789,15 @@
           "script_hash": "66a4bccc2dc0",
           "script_commit_sha": "1dae4552712bbdd896e265648528b242b4ef627c"
         },
-        "reviewed_at": "2026-07-12T02:24:13.638Z",
-        "reviewed_sha": "a261b5599858024c2ffcb9a1f91fc8aceb108c50"
+        "reviewed_at": "2026-07-12T22:44:50.484Z",
+        "reviewed_sha": "7c4c9a70d266cce4e1302b7dcf2c6d994de48cf5"
       }
     ],
     "q-usage-fixed-q0-leak": [
       {
         "field_hash": {
-          "md": "bde55bd24275",
-          "ts": "05a414a32ee5",
+          "md": "140b4690483f",
+          "ts": "cb68932cd9ab",
           "lean": "5ad9087f92d2"
         },
         "result": "n/a",
@@ -814,15 +808,15 @@
           "script_hash": "66a4bccc2dc0",
           "script_commit_sha": "1dae4552712bbdd896e265648528b242b4ef627c"
         },
-        "reviewed_at": "2026-07-12T02:24:13.638Z",
-        "reviewed_sha": "a261b5599858024c2ffcb9a1f91fc8aceb108c50"
+        "reviewed_at": "2026-07-12T22:44:50.484Z",
+        "reviewed_sha": "7c4c9a70d266cce4e1302b7dcf2c6d994de48cf5"
       }
     ],
     "q-usage-archimedean-in-categorical-chapter": [
       {
         "field_hash": {
-          "md": "bde55bd24275",
-          "ts": "05a414a32ee5",
+          "md": "140b4690483f",
+          "ts": "cb68932cd9ab",
           "lean": "5ad9087f92d2"
         },
         "result": "n/a",
@@ -833,8 +827,8 @@
           "script_hash": "66a4bccc2dc0",
           "script_commit_sha": "1dae4552712bbdd896e265648528b242b4ef627c"
         },
-        "reviewed_at": "2026-07-12T02:24:13.638Z",
-        "reviewed_sha": "a261b5599858024c2ffcb9a1f91fc8aceb108c50"
+        "reviewed_at": "2026-07-12T22:44:50.484Z",
+        "reviewed_sha": "7c4c9a70d266cce4e1302b7dcf2c6d994de48cf5"
       }
     ],
     "q-usage-positivity-implicit": [
@@ -859,8 +853,8 @@
     "q-usage-modulus-vs-real-mismatch": [
       {
         "field_hash": {
-          "md": "bde55bd24275",
-          "ts": "05a414a32ee5",
+          "md": "140b4690483f",
+          "ts": "cb68932cd9ab",
           "lean": "5ad9087f92d2"
         },
         "result": "n/a",
@@ -871,15 +865,15 @@
           "script_hash": "66a4bccc2dc0",
           "script_commit_sha": "1dae4552712bbdd896e265648528b242b4ef627c"
         },
-        "reviewed_at": "2026-07-12T02:24:13.638Z",
-        "reviewed_sha": "a261b5599858024c2ffcb9a1f91fc8aceb108c50"
+        "reviewed_at": "2026-07-12T22:44:50.484Z",
+        "reviewed_sha": "7c4c9a70d266cce4e1302b7dcf2c6d994de48cf5"
       }
     ],
     "q-usage-root-of-unity-undeclared": [
       {
         "field_hash": {
-          "md": "bde55bd24275",
-          "ts": "05a414a32ee5",
+          "md": "140b4690483f",
+          "ts": "cb68932cd9ab",
           "lean": "5ad9087f92d2"
         },
         "result": "pass",
@@ -890,15 +884,15 @@
           "script_hash": "66a4bccc2dc0",
           "script_commit_sha": "1dae4552712bbdd896e265648528b242b4ef627c"
         },
-        "reviewed_at": "2026-07-12T02:24:13.638Z",
-        "reviewed_sha": "a261b5599858024c2ffcb9a1f91fc8aceb108c50"
+        "reviewed_at": "2026-07-12T22:44:50.484Z",
+        "reviewed_sha": "7c4c9a70d266cce4e1302b7dcf2c6d994de48cf5"
       }
     ],
     "q-usage-narrative-chapter-mismatch": [
       {
         "field_hash": {
-          "md": "bde55bd24275",
-          "ts": "05a414a32ee5",
+          "md": "140b4690483f",
+          "ts": "cb68932cd9ab",
           "lean": "5ad9087f92d2"
         },
         "result": "pass",
@@ -909,8 +903,8 @@
           "script_hash": "66a4bccc2dc0",
           "script_commit_sha": "1dae4552712bbdd896e265648528b242b4ef627c"
         },
-        "reviewed_at": "2026-07-12T02:24:13.638Z",
-        "reviewed_sha": "a261b5599858024c2ffcb9a1f91fc8aceb108c50"
+        "reviewed_at": "2026-07-12T22:44:50.484Z",
+        "reviewed_sha": "7c4c9a70d266cce4e1302b7dcf2c6d994de48cf5"
       }
     ],
     "proof-no-bare-sorries": [
@@ -955,8 +949,8 @@
     "proof-lean-compiles": [
       {
         "field_hash": {
-          "md": "bde55bd24275",
-          "ts": "05a414a32ee5",
+          "md": "140b4690483f",
+          "ts": "cb68932cd9ab",
           "lean": "5ad9087f92d2"
         },
         "result": "n/a",
@@ -968,15 +962,16 @@
           "script_commit_sha": "a285d6903e89fd7951b6c293ad21d2d869f685a9",
           "deps_hash": "16d8c7a8984e"
         },
-        "reviewed_at": "2026-07-12T02:24:13.638Z",
-        "reviewed_sha": "a261b5599858024c2ffcb9a1f91fc8aceb108c50"
+        "reviewed_at": "2026-07-12T22:44:50.484Z",
+        "reviewed_sha": "7c4c9a70d266cce4e1302b7dcf2c6d994de48cf5",
+        "notes": "stale: cached lean_sha 31c9bb819373 != current 5ad9087f92d2; re-run content/pipeline/lean-compile-audit.ts to refresh"
       }
     ],
     "canonical-calibration-count": [
       {
         "field_hash": {
-          "md": "bde55bd24275",
-          "ts": "05a414a32ee5",
+          "md": "140b4690483f",
+          "ts": "cb68932cd9ab",
           "lean": "5ad9087f92d2"
         },
         "result": "pass",
@@ -987,15 +982,15 @@
           "script_hash": "f8ed8072ea0b",
           "script_commit_sha": "a285d6903e89fd7951b6c293ad21d2d869f685a9"
         },
-        "reviewed_at": "2026-07-12T02:24:13.638Z",
-        "reviewed_sha": "a261b5599858024c2ffcb9a1f91fc8aceb108c50"
+        "reviewed_at": "2026-07-12T22:44:50.484Z",
+        "reviewed_sha": "7c4c9a70d266cce4e1302b7dcf2c6d994de48cf5"
       }
     ],
     "canonical-no-numerology": [
       {
         "field_hash": {
-          "md": "bde55bd24275",
-          "ts": "05a414a32ee5",
+          "md": "140b4690483f",
+          "ts": "cb68932cd9ab",
           "lean": "5ad9087f92d2"
         },
         "result": "pass",
@@ -1006,15 +1001,15 @@
           "script_hash": "f8ed8072ea0b",
           "script_commit_sha": "a285d6903e89fd7951b6c293ad21d2d869f685a9"
         },
-        "reviewed_at": "2026-07-12T02:24:13.638Z",
-        "reviewed_sha": "a261b5599858024c2ffcb9a1f91fc8aceb108c50"
+        "reviewed_at": "2026-07-12T22:44:50.484Z",
+        "reviewed_sha": "7c4c9a70d266cce4e1302b7dcf2c6d994de48cf5"
       }
     ],
     "canonical-witness-pinned": [
       {
         "field_hash": {
-          "md": "bde55bd24275",
-          "ts": "05a414a32ee5",
+          "md": "140b4690483f",
+          "ts": "cb68932cd9ab",
           "lean": "5ad9087f92d2"
         },
         "result": "pass",
@@ -1025,15 +1020,15 @@
           "script_hash": "f8ed8072ea0b",
           "script_commit_sha": "a285d6903e89fd7951b6c293ad21d2d869f685a9"
         },
-        "reviewed_at": "2026-07-12T02:24:13.638Z",
-        "reviewed_sha": "a261b5599858024c2ffcb9a1f91fc8aceb108c50"
+        "reviewed_at": "2026-07-12T22:44:50.484Z",
+        "reviewed_sha": "7c4c9a70d266cce4e1302b7dcf2c6d994de48cf5"
       }
     ],
     "canonical-script-not-deprecated": [
       {
         "field_hash": {
-          "md": "bde55bd24275",
-          "ts": "05a414a32ee5",
+          "md": "140b4690483f",
+          "ts": "cb68932cd9ab",
           "lean": "5ad9087f92d2"
         },
         "result": "pass",
@@ -1044,15 +1039,15 @@
           "script_hash": "f8ed8072ea0b",
           "script_commit_sha": "a285d6903e89fd7951b6c293ad21d2d869f685a9"
         },
-        "reviewed_at": "2026-07-12T02:24:13.638Z",
-        "reviewed_sha": "a261b5599858024c2ffcb9a1f91fc8aceb108c50"
+        "reviewed_at": "2026-07-12T22:44:50.484Z",
+        "reviewed_sha": "7c4c9a70d266cce4e1302b7dcf2c6d994de48cf5"
       }
     ],
     "canonical-dilogarithm-context": [
       {
         "field_hash": {
-          "md": "bde55bd24275",
-          "ts": "05a414a32ee5",
+          "md": "140b4690483f",
+          "ts": "cb68932cd9ab",
           "lean": "5ad9087f92d2"
         },
         "result": "fail",
@@ -1063,17 +1058,17 @@
           "script_hash": "f8ed8072ea0b",
           "script_commit_sha": "a285d6903e89fd7951b6c293ad21d2d869f685a9"
         },
-        "reviewed_at": "2026-07-12T02:24:13.638Z",
-        "reviewed_sha": "a261b5599858024c2ffcb9a1f91fc8aceb108c50",
+        "reviewed_at": "2026-07-12T22:44:50.484Z",
+        "reviewed_sha": "7c4c9a70d266cce4e1302b7dcf2c6d994de48cf5",
         "severity": "major",
-        "evidence": "../qou/.claude/worktrees/agent-acf83146d64b35f0e/content/quantum-observable-universe/mass-theory/lepton-mass-tower-canonical.md:23: Li_2^q (Rogers) in mass-anchor block — context violation (use Φ_q) | ../qou/.claude/worktrees/agent-acf83146d64b35f0e/content/quantum-observable-universe/mass-theory/lepton-mass-tower-canonical.md:25: Li_2^q (Rogers) in mass-anchor block — context violation (use Φ_q)"
+        "evidence": "content/quantum-observable-universe/mass-theory/lepton-mass-tower-canonical.md:21: Li_2^q (Rogers) in mass-anchor block — context violation (use Φ_q) | content/quantum-observable-universe/mass-theory/lepton-mass-tower-canonical.md:23: Li_2^q (Rogers) in mass-anchor block — context violation (use Φ_q)"
       }
     ],
     "canonical-no-hardcoded-observable": [
       {
         "field_hash": {
-          "md": "bde55bd24275",
-          "ts": "05a414a32ee5",
+          "md": "140b4690483f",
+          "ts": "cb68932cd9ab",
           "lean": "5ad9087f92d2"
         },
         "result": "pass",
@@ -1084,15 +1079,15 @@
           "script_hash": "f8ed8072ea0b",
           "script_commit_sha": "a285d6903e89fd7951b6c293ad21d2d869f685a9"
         },
-        "reviewed_at": "2026-07-12T02:24:13.638Z",
-        "reviewed_sha": "a261b5599858024c2ffcb9a1f91fc8aceb108c50"
+        "reviewed_at": "2026-07-12T22:44:50.484Z",
+        "reviewed_sha": "7c4c9a70d266cce4e1302b7dcf2c6d994de48cf5"
       }
     ],
     "canonical-cal4-acknowledged": [
       {
         "field_hash": {
-          "md": "bde55bd24275",
-          "ts": "05a414a32ee5",
+          "md": "140b4690483f",
+          "ts": "cb68932cd9ab",
           "lean": "5ad9087f92d2"
         },
         "result": "pass",
@@ -1103,15 +1098,15 @@
           "script_hash": "f8ed8072ea0b",
           "script_commit_sha": "a285d6903e89fd7951b6c293ad21d2d869f685a9"
         },
-        "reviewed_at": "2026-07-12T02:24:13.638Z",
-        "reviewed_sha": "a261b5599858024c2ffcb9a1f91fc8aceb108c50"
+        "reviewed_at": "2026-07-12T22:44:50.484Z",
+        "reviewed_sha": "7c4c9a70d266cce4e1302b7dcf2c6d994de48cf5"
       }
     ],
     "canonical-ck-tiered-not-binary": [
       {
         "field_hash": {
-          "md": "bde55bd24275",
-          "ts": "05a414a32ee5",
+          "md": "140b4690483f",
+          "ts": "cb68932cd9ab",
           "lean": "5ad9087f92d2"
         },
         "result": "pass",
@@ -1122,15 +1117,15 @@
           "script_hash": "f8ed8072ea0b",
           "script_commit_sha": "a285d6903e89fd7951b6c293ad21d2d869f685a9"
         },
-        "reviewed_at": "2026-07-12T02:24:13.638Z",
-        "reviewed_sha": "a261b5599858024c2ffcb9a1f91fc8aceb108c50"
+        "reviewed_at": "2026-07-12T22:44:50.484Z",
+        "reviewed_sha": "7c4c9a70d266cce4e1302b7dcf2c6d994de48cf5"
       }
     ],
     "compute-witness-exists": [
       {
         "field_hash": {
-          "md": "bde55bd24275",
-          "ts": "05a414a32ee5",
+          "md": "140b4690483f",
+          "ts": "cb68932cd9ab",
           "lean": "5ad9087f92d2"
         },
         "result": "pass",
@@ -1141,15 +1136,15 @@
           "script_hash": "f8ed8072ea0b",
           "script_commit_sha": "a285d6903e89fd7951b6c293ad21d2d869f685a9"
         },
-        "reviewed_at": "2026-07-12T02:24:13.638Z",
-        "reviewed_sha": "a261b5599858024c2ffcb9a1f91fc8aceb108c50"
+        "reviewed_at": "2026-07-12T22:44:50.484Z",
+        "reviewed_sha": "7c4c9a70d266cce4e1302b7dcf2c6d994de48cf5"
       }
     ],
     "compute-lp-dual-present": [
       {
         "field_hash": {
-          "md": "bde55bd24275",
-          "ts": "05a414a32ee5",
+          "md": "140b4690483f",
+          "ts": "cb68932cd9ab",
           "lean": "5ad9087f92d2"
         },
         "result": "pass",
@@ -1160,15 +1155,15 @@
           "script_hash": "f8ed8072ea0b",
           "script_commit_sha": "a285d6903e89fd7951b6c293ad21d2d869f685a9"
         },
-        "reviewed_at": "2026-07-12T02:24:13.638Z",
-        "reviewed_sha": "a261b5599858024c2ffcb9a1f91fc8aceb108c50"
+        "reviewed_at": "2026-07-12T22:44:50.484Z",
+        "reviewed_sha": "7c4c9a70d266cce4e1302b7dcf2c6d994de48cf5"
       }
     ],
     "detangler-no-forward-ref": [
       {
         "field_hash": {
-          "md": "bde55bd24275",
-          "ts": "05a414a32ee5",
+          "md": "140b4690483f",
+          "ts": "cb68932cd9ab",
           "lean": "5ad9087f92d2"
         },
         "result": "n/a",
@@ -1179,15 +1174,15 @@
           "script_hash": "f8ed8072ea0b",
           "script_commit_sha": "a285d6903e89fd7951b6c293ad21d2d869f685a9"
         },
-        "reviewed_at": "2026-07-12T02:24:13.638Z",
-        "reviewed_sha": "a261b5599858024c2ffcb9a1f91fc8aceb108c50"
+        "reviewed_at": "2026-07-12T22:44:50.484Z",
+        "reviewed_sha": "7c4c9a70d266cce4e1302b7dcf2c6d994de48cf5"
       }
     ],
     "detangler-section-band": [
       {
         "field_hash": {
-          "md": "bde55bd24275",
-          "ts": "05a414a32ee5",
+          "md": "140b4690483f",
+          "ts": "cb68932cd9ab",
           "lean": "5ad9087f92d2"
         },
         "result": "n/a",
@@ -1198,15 +1193,15 @@
           "script_hash": "f8ed8072ea0b",
           "script_commit_sha": "a285d6903e89fd7951b6c293ad21d2d869f685a9"
         },
-        "reviewed_at": "2026-07-12T02:24:13.638Z",
-        "reviewed_sha": "a261b5599858024c2ffcb9a1f91fc8aceb108c50"
+        "reviewed_at": "2026-07-12T22:44:50.484Z",
+        "reviewed_sha": "7c4c9a70d266cce4e1302b7dcf2c6d994de48cf5"
       }
     ],
     "detangler-no-xchapter-fwd": [
       {
         "field_hash": {
-          "md": "bde55bd24275",
-          "ts": "05a414a32ee5",
+          "md": "140b4690483f",
+          "ts": "cb68932cd9ab",
           "lean": "5ad9087f92d2"
         },
         "result": "n/a",
@@ -1217,15 +1212,15 @@
           "script_hash": "f8ed8072ea0b",
           "script_commit_sha": "a285d6903e89fd7951b6c293ad21d2d869f685a9"
         },
-        "reviewed_at": "2026-07-12T02:24:13.638Z",
-        "reviewed_sha": "a261b5599858024c2ffcb9a1f91fc8aceb108c50"
+        "reviewed_at": "2026-07-12T22:44:50.484Z",
+        "reviewed_sha": "7c4c9a70d266cce4e1302b7dcf2c6d994de48cf5"
       }
     ],
     "detangler-archimedean-wall": [
       {
         "field_hash": {
-          "md": "bde55bd24275",
-          "ts": "05a414a32ee5",
+          "md": "140b4690483f",
+          "ts": "cb68932cd9ab",
           "lean": "5ad9087f92d2"
         },
         "result": "n/a",
@@ -1236,15 +1231,15 @@
           "script_hash": "f8ed8072ea0b",
           "script_commit_sha": "a285d6903e89fd7951b6c293ad21d2d869f685a9"
         },
-        "reviewed_at": "2026-07-12T02:24:13.638Z",
-        "reviewed_sha": "a261b5599858024c2ffcb9a1f91fc8aceb108c50"
+        "reviewed_at": "2026-07-12T22:44:50.484Z",
+        "reviewed_sha": "7c4c9a70d266cce4e1302b7dcf2c6d994de48cf5"
       }
     ],
     "detangler-block-tanglement": [
       {
         "field_hash": {
-          "md": "bde55bd24275",
-          "ts": "05a414a32ee5",
+          "md": "140b4690483f",
+          "ts": "cb68932cd9ab",
           "lean": "5ad9087f92d2"
         },
         "result": "n/a",
@@ -1255,15 +1250,15 @@
           "script_hash": "f8ed8072ea0b",
           "script_commit_sha": "a285d6903e89fd7951b6c293ad21d2d869f685a9"
         },
-        "reviewed_at": "2026-07-12T02:24:13.638Z",
-        "reviewed_sha": "a261b5599858024c2ffcb9a1f91fc8aceb108c50"
+        "reviewed_at": "2026-07-12T22:44:50.484Z",
+        "reviewed_sha": "7c4c9a70d266cce4e1302b7dcf2c6d994de48cf5"
       }
     ],
     "detangler-graph-energy": [
       {
         "field_hash": {
-          "md": "bde55bd24275",
-          "ts": "05a414a32ee5",
+          "md": "140b4690483f",
+          "ts": "cb68932cd9ab",
           "lean": "5ad9087f92d2"
         },
         "result": "n/a",
@@ -1274,15 +1269,15 @@
           "script_hash": "f8ed8072ea0b",
           "script_commit_sha": "a285d6903e89fd7951b6c293ad21d2d869f685a9"
         },
-        "reviewed_at": "2026-07-12T02:24:13.638Z",
-        "reviewed_sha": "a261b5599858024c2ffcb9a1f91fc8aceb108c50"
+        "reviewed_at": "2026-07-12T22:44:50.484Z",
+        "reviewed_sha": "7c4c9a70d266cce4e1302b7dcf2c6d994de48cf5"
       }
     ],
     "detangler-topic-coherence": [
       {
         "field_hash": {
-          "md": "bde55bd24275",
-          "ts": "05a414a32ee5",
+          "md": "140b4690483f",
+          "ts": "cb68932cd9ab",
           "lean": "5ad9087f92d2"
         },
         "result": "n/a",
@@ -1293,15 +1288,15 @@
           "script_hash": "f8ed8072ea0b",
           "script_commit_sha": "a285d6903e89fd7951b6c293ad21d2d869f685a9"
         },
-        "reviewed_at": "2026-07-12T02:24:13.638Z",
-        "reviewed_sha": "a261b5599858024c2ffcb9a1f91fc8aceb108c50"
+        "reviewed_at": "2026-07-12T22:44:50.484Z",
+        "reviewed_sha": "7c4c9a70d266cce4e1302b7dcf2c6d994de48cf5"
       }
     ],
     "detangler-no-dependency-cycle": [
       {
         "field_hash": {
-          "md": "bde55bd24275",
-          "ts": "05a414a32ee5",
+          "md": "140b4690483f",
+          "ts": "cb68932cd9ab",
           "lean": "5ad9087f92d2"
         },
         "result": "n/a",
@@ -1312,15 +1307,15 @@
           "script_hash": "f8ed8072ea0b",
           "script_commit_sha": "a285d6903e89fd7951b6c293ad21d2d869f685a9"
         },
-        "reviewed_at": "2026-07-12T02:24:13.638Z",
-        "reviewed_sha": "a261b5599858024c2ffcb9a1f91fc8aceb108c50"
+        "reviewed_at": "2026-07-12T22:44:50.484Z",
+        "reviewed_sha": "7c4c9a70d266cce4e1302b7dcf2c6d994de48cf5"
       }
     ],
     "bib-cited-ref-has-url": [
       {
         "field_hash": {
-          "md": "bde55bd24275",
-          "ts": "05a414a32ee5",
+          "md": "140b4690483f",
+          "ts": "cb68932cd9ab",
           "lean": "5ad9087f92d2"
         },
         "result": "pass",
@@ -1330,17 +1325,17 @@
           "version": "v1",
           "script_hash": "f8ed8072ea0b",
           "script_commit_sha": "a285d6903e89fd7951b6c293ad21d2d869f685a9",
-          "deps_hash": "d5a24b68ee4d"
+          "deps_hash": "6925f16e96e0"
         },
-        "reviewed_at": "2026-07-12T02:24:13.638Z",
-        "reviewed_sha": "a261b5599858024c2ffcb9a1f91fc8aceb108c50"
+        "reviewed_at": "2026-07-12T22:44:50.484Z",
+        "reviewed_sha": "7c4c9a70d266cce4e1302b7dcf2c6d994de48cf5"
       }
     ],
     "bib-cited-ref-metadata-ok": [
       {
         "field_hash": {
-          "md": "bde55bd24275",
-          "ts": "05a414a32ee5",
+          "md": "140b4690483f",
+          "ts": "cb68932cd9ab",
           "lean": "5ad9087f92d2"
         },
         "result": "pass",
@@ -1350,17 +1345,17 @@
           "version": "v1",
           "script_hash": "f8ed8072ea0b",
           "script_commit_sha": "a285d6903e89fd7951b6c293ad21d2d869f685a9",
-          "deps_hash": "d5a24b68ee4d"
+          "deps_hash": "6925f16e96e0"
         },
-        "reviewed_at": "2026-07-12T02:24:13.638Z",
-        "reviewed_sha": "a261b5599858024c2ffcb9a1f91fc8aceb108c50"
+        "reviewed_at": "2026-07-12T22:44:50.484Z",
+        "reviewed_sha": "7c4c9a70d266cce4e1302b7dcf2c6d994de48cf5"
       }
     ],
     "bib-cited-ref-has-screenshot": [
       {
         "field_hash": {
-          "md": "bde55bd24275",
-          "ts": "05a414a32ee5",
+          "md": "140b4690483f",
+          "ts": "cb68932cd9ab",
           "lean": "5ad9087f92d2"
         },
         "result": "pass",
@@ -1370,12 +1365,12 @@
           "version": "v1",
           "script_hash": "f8ed8072ea0b",
           "script_commit_sha": "a285d6903e89fd7951b6c293ad21d2d869f685a9",
-          "deps_hash": "d5a24b68ee4d"
+          "deps_hash": "6925f16e96e0"
         },
-        "reviewed_at": "2026-07-12T02:24:13.638Z",
-        "reviewed_sha": "a261b5599858024c2ffcb9a1f91fc8aceb108c50"
+        "reviewed_at": "2026-07-12T22:44:50.484Z",
+        "reviewed_sha": "7c4c9a70d266cce4e1302b7dcf2c6d994de48cf5"
       }
     ]
   },
-  "updated_at": "2026-07-12T02:24:13.638Z"
+  "updated_at": "2026-07-12T22:44:50.484Z"
 }
