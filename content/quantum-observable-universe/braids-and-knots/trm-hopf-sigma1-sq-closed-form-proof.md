@@ -19,7 +19,8 @@ denominators.
 
 Markov invariance under stabilisation ([`rem:markov-axioms-primitive`](#rem:markov-axioms-primitive)
 axioms 3–4): for $\beta \in H_n(q)$,
-$\mathrm{tr}_M(\beta \cdot \sigma_n^{\pm 1}) = z\, \mathrm{tr}_M(\beta)$
+$\mathrm{tr}_M(\beta \cdot \sigma_n) = z\, \mathrm{tr}_M(\beta)$ and
+$\mathrm{tr}_M(\beta \cdot \sigma_n^{-1}) = z\, \mathrm{tr}_M(\beta)$
 when the new generator $\sigma_n$ is disjoint from $\beta$. Since
 $\sigma_1^2$ involves only the first generator, its trace in $H_n$
 for any $n \geq 2$ coincides with the trace in $H_2$: no
