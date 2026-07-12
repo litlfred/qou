@@ -1,0 +1,148 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-12T16:21:08.063189+00:00",
+  "commitSha": "e671b915243d4ec1b3cbd1696abb0b9f3cb1afc2",
+  "assertions": [
+    {
+      "name": "electron_block_zero_framing_residual_any_f",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "The electron block (3,1,1) is the unique self-conjugate n=5 partition (content sum c=0), so its framing residual theta_lambda^f = q0^{f*c} = 1 for any Seifert framing f. Hence the geometric colored-WRT vacuum row equals the Verlinde value d_q/D at q0 exactly for this block -- no archimedean continuation, discharging the #3681 Habiro-rigidity carrier concretely. No fit; f-independent."
+    },
+    {
+      "name": "content_sum_chirality_c_conj_eq_neg_c",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "c(lambda')=-c(lambda) on every conjugate pair (the proved twist chirality law theta_{lambda'}=theta_lambda^{-1}); the residual q0^{f*c} is opposite on a pair and vanishes exactly on the self-conjugate electron block."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 11,
+  "computation": "keystone-q0-framing-residual",
+  "scriptFile": "keystone_q0_framing_residual.py",
+  "scriptHash": "dd3ccf2bc1d3",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Geometric W_lambda: the fibre->observable q0 residual reduces to the framing monomial theta_lambda^f = q0^{f*c(lambda)} (d_q(lambda)=[mark]_q is a global Laurent polynomial; no Habiro completion needed for it). The content sum c(lambda) satisfies c(lambda')=-c(lambda) and c=0 iff lambda self-conjugate; the ONLY self-conjugate n=5 block is the electron (3,1,1) (A5-split mark-6 McKay node), so it has c=0 => theta^f=1 for ANY framing f => bwS0Concrete((3,1,1))(q0)=([5]_q0+1)/D EXACTLY, no archimedean continuation. Discharges the #3681 Habiro-rigidity carrier concretely for the electron block; every other block carries the explicit residual q0^{f*c(lambda)} (per-block quantified open piece). No fit; the c=0 electron result is f-independent.",
+  "data": {
+    "q0": 1.1099785955541805,
+    "D2": 128.97888496570414,
+    "rows": [
+      {
+        "lambda": [
+          5
+        ],
+        "mark": 1,
+        "content_sum": 10,
+        "self_conjugate": false,
+        "d_q": 1.0,
+        "bwS0": 0.08805229723474409,
+        "framing_residual_exponent_c": 10,
+        "framing_trivial_any_f": false
+      },
+      {
+        "lambda": [
+          4,
+          1
+        ],
+        "mark": 4,
+        "content_sum": 5,
+        "self_conjugate": false,
+        "d_q": 4.109682435637709,
+        "bwS0": 0.3618669793631786,
+        "framing_residual_exponent_c": 5,
+        "framing_trivial_any_f": false
+      },
+      {
+        "lambda": [
+          3,
+          2
+        ],
+        "mark": 5,
+        "content_sum": 2,
+        "self_conjugate": false,
+        "d_q": 5.220441324664574,
+        "bwS0": 0.45967185121590615,
+        "framing_residual_exponent_c": 2,
+        "framing_trivial_any_f": false
+      },
+      {
+        "lambda": [
+          3,
+          1,
+          1
+        ],
+        "mark": 6,
+        "content_sum": 0,
+        "self_conjugate": true,
+        "d_q": 6.220441324664574,
+        "bwS0": 0.5477241484506502,
+        "framing_residual_exponent_c": 0,
+        "framing_trivial_any_f": true
+      },
+      {
+        "lambda": [
+          2,
+          2,
+          1
+        ],
+        "mark": 5,
+        "content_sum": -2,
+        "self_conjugate": false,
+        "d_q": 5.220441324664574,
+        "bwS0": 0.45967185121590615,
+        "framing_residual_exponent_c": -2,
+        "framing_trivial_any_f": false
+      },
+      {
+        "lambda": [
+          2,
+          1,
+          1,
+          1
+        ],
+        "mark": 4,
+        "content_sum": -5,
+        "self_conjugate": false,
+        "d_q": 4.109682435637709,
+        "bwS0": 0.3618669793631786,
+        "framing_residual_exponent_c": -5,
+        "framing_trivial_any_f": false
+      },
+      {
+        "lambda": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "mark": 1,
+        "content_sum": -10,
+        "self_conjugate": false,
+        "d_q": 1.0,
+        "bwS0": 0.08805229723474409,
+        "framing_residual_exponent_c": -10,
+        "framing_trivial_any_f": false
+      }
+    ],
+    "electron_q0_value_bwS0": 0.5477241484506502
+  }
+}
