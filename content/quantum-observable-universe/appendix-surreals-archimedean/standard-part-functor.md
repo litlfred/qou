@@ -1,7 +1,7 @@
-The standard-part map realizes the quotient $\mathbf{No}_{\mathrm{fin}}
-/ \mathbf{No}_{\mathrm{inf}} \cong \mathbb{R}$ and underlies the
-classical limit at $q = 1 + \varepsilon$; its construction begins with
-the finite and infinitesimal surreals.
+The standard-part map realizes the quotient
+$\mathbf{No}_{\mathrm{fin}} / \mathbf{No}_{\mathrm{inf}} \cong \mathbb{R}$
+and underlies the classical limit at $q = 1 + \varepsilon$; its
+construction begins with the finite and infinitesimal surreals.
 
 An element $x \in \mathbf{No}$ is **finite** if there exists
 $n \in \mathbb{N}$ with $|x| \leq n$. Write $\mathbf{No}_{\mathrm{fin}}
