@@ -29,7 +29,7 @@ $A_n \hookrightarrow A_{n+1}$ gives a central extension of gerbes banded by
 the centre $\mathcal{B} = Z(\mathrm{Aut}(A_n))$.  The obstruction class
 $\kappa_n \in H^2(\mathcal{S}, \mathcal{B})$ exists by the standard gerbe
 classification theorem, verifying the Quantum lifting condition
-([Quantum lifting](#prop:yekutieli-lifting)).
+([quantum lifting](#prop:yekutieli-lifting)).
 
 *Item (4).*
 The categorical Euler characteristic equals $-6$ on Bring's surface
