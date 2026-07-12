@@ -53,37 +53,39 @@ class HeckeAlgebra (R : Type*) [CommRing R] (q : R) (n : ℕ) (H : Type*) [Ring 
 /-- A **Markov trace** on `H_n(q)` is a linear functional satisfying
 the Markov reduction property.
 
-**Opaque-marker scaffold (honest framing).** This class is a single
-`True`-valued marker — it does NOT encode the Markov laws (linearity,
-conjugation invariance, `tr (x · σ_{n-1}) = z · tr (x)`) as Lean
-propositions, because doing so requires the full `HeckeAlgebra` module
-structure that Mathlib lacks for `n ≥ 3`. Downstream code that needs
-the actual laws must wait for the real development; this marker only
-records the intent at the type-class layer (§3b-cond pattern). The
-three laws are listed in the field docstring as documentation of what
-the eventual instance must supply — they are NOT currently enforced. -/
+Two of the three Markov laws are now **enforced** as Lean propositions
+over the `(tr : H → R)` parameter (`H` is a `Ring`, `R`-algebra): (M1)
+`R`-linearity of `tr` and (M2) conjugation invariance `tr (x·y) = tr (y·x)`.
+The third law, (M3) Markov reduction `tr (x·σ_{n-1}) = z·tr (x)`, still
+requires the generator `σ_{n-1}` — not a parameter of this class — so it
+remains documentation for the eventual instance, not an enforced field. -/
 class MarkovTrace (R H : Type*) [CommRing R] [Ring H] [Algebra R H]
     (tr : H → R) : Prop where
-  /-- Opaque marker. The eventual real instance must supply: (M1)
-  linearity (`tr` is `R`-linear), (M2) conjugation invariance
-  (`tr (x·y) = tr (y·x)`), (M3) Markov reduction
-  (`tr (x·σ_{n-1}) = z·tr (x)` for `x ∈ H_{n-1}`). None enforced yet. -/
-  markov_properties : True
+  /-- (M2) Conjugation invariance / cyclicity: `tr (x·y) = tr (y·x)`. -/
+  cyclic : ∀ x y : H, tr (x * y) = tr (y * x)
+  /-- (M1a) Additivity — part of `R`-linearity of `tr`. -/
+  map_add : ∀ x y : H, tr (x + y) = tr x + tr y
+  /-- (M1b) `R`-scalar compatibility — the rest of `R`-linearity. -/
+  map_smul : ∀ (r : R) (x : H), tr (r • x) = r * tr x
+  -- (M3) Markov reduction `tr (x·σ_{n-1}) = z·tr (x)` needs the generator
+  -- `σ_{n-1}`, absent from this class's signature — documented, not enforced.
 
 /-! ## Jones-Wenzl projector + Markov-trace evaluation -/
 
 /-- The **Jones-Wenzl projector** `p_n ∈ H_n(q)` is the idempotent
 projecting onto the (n)-irreducible component.
 
-**Opaque-marker scaffold.** Single `True` marker; the real instance
-must supply idempotence (`p·p = p`) and the strand-killing relation
-(`p·σ_i = -q⁻¹·p` for `i < n-1`). Neither is enforced here — they are
-documented as the eventual instance's obligations (§3b-cond). -/
+Idempotence (`p·p = p`) is now **enforced** as a Lean proposition over
+the `(p : H)` parameter.  The strand-killing relation
+(`p·σ_i = -q⁻¹·p` for `i < n-1`) needs the generators `σ_i` — absent from
+this class's signature — so it remains documentation for the eventual
+instance, not an enforced field. -/
 class JonesWenzlProjector (R H : Type*) [CommRing R] [Ring H] [Algebra R H]
     (q : R) (n : ℕ) (p : H) : Prop where
-  /-- Opaque marker. Eventual instance must supply idempotence and the
-  strand-killing relation; neither enforced yet. -/
-  jw_properties : True
+  /-- Idempotence of the projector: `p · p = p`. -/
+  idempotent : p * p = p
+  -- Strand-killing `p·σ_i = -q⁻¹·p` (i < n-1) needs the generators `σ_i`,
+  -- absent from this signature — documented, not enforced.
 
 /-! ## Conditional class: residue A as a Markov-trace residue
 
