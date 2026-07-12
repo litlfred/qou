@@ -33,30 +33,25 @@ open List
 theorem insertRec_snd_content :
     ∀ (P Q : List (List ℕ)) (x s : ℕ), tableauShape P = tableauShape Q →
       content (insertRec P Q x s).2 = content Q + {s}
-  | [], Q, x, s => by
-      intro h
-      have hQ : Q = [] := by
-        cases Q with
-        | nil => rfl
-        | cons q qs => simp [tableauShape] at h
-      subst hQ
+  | [], [], _, _ => fun _ => by
       simp [insertRec]
-  | prow :: prest, Q, x, s => by
+  | [], _ :: _, _, _ => fun h => by
+      simp [tableauShape] at h
+  | _ :: _, [], _, _ => fun h => by
+      simp [tableauShape] at h
+  | prow :: prest, qrow :: qrest, x, s => by
       intro h
-      cases Q with
-      | nil => simp [tableauShape] at h
-      | cons qrow qrest =>
-        simp only [tableauShape_cons] at h
-        obtain ⟨hql, hqs⟩ := List.cons.injEq .. ▸ h
-        rw [insertRec]
-        cases hb : (rowInsert prow x).2 with
-        | none =>
-          simp only [List.headD_cons, List.tail_cons, content_cons]
-          have hcoe : ((qrow ++ [s] : List ℕ) : Multiset ℕ) = (↑qrow : Multiset ℕ) + {s} := rfl
-          rw [hcoe]; abel
-        | some y =>
-          simp only [List.headD_cons, List.tail_cons, content_cons]
-          rw [insertRec_snd_content prest qrest y s hqs]; abel
+      simp only [tableauShape_cons] at h
+      injection h with _ hqs
+      rw [insertRec]
+      cases hb : (rowInsert prow x).2 with
+      | none =>
+        simp only [List.headD_cons, List.tail_cons, content_cons]
+        have hcoe : ((qrow ++ [s] : List ℕ) : Multiset ℕ) = (↑qrow : Multiset ℕ) + {s} := rfl
+        rw [hcoe]; abel
+      | some y =>
+        simp only [List.headD_cons, List.tail_cons, content_cons]
+        rw [insertRec_snd_content prest qrest y s hqs]; abel
 
 /-- **Content of the recording fold.**  Folding the letters of `w` from step `s`
     adds the consecutive indices `s, s+1, …, s+|w|-1` (i.e. `List.range' s |w|`)
