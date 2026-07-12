@@ -14,11 +14,13 @@ Two independent deformations of a monoidal category, from its two coherence laws
 | associative → **non-associative** | associator `α` | **pentagon** (Mac Lane) | 3-cocycle / Drinfeld `Φ` | quasi-Hopf algebras (Drinfeld) |
 
 The octonions realise the *second* row: `𝕆 = ℝ_F[(ℤ/2)³]`, the group algebra of
-`(ℤ/2)³` (its `8` elements index `e₀,…,e₇`) twisted by a 2-cochain `F` whose
-associator is a **nontrivial 3-cocycle** on `(ℤ/2)³` (Albuquerque–Majid 1999). So
-"the non-associative doubling `ℍ → 𝕆`" is precisely "turn on a 3-cocycle
-associator" — a **pentagon deformation**, exactly as deforming the braiding
-(hexagon) turns commutative into non-commutative.
+`(ℤ/2)³` (its `8` elements index `e₀,…,e₇`) twisted by a sign 2-cochain `F` that is
+**not a 2-cocycle** — its associator `α = dF` is a nonzero 3-cochain (a genuine
+3-cocycle, though a *coboundary*, so cohomologically trivial; see `OctonionCocycle`)
+(Albuquerque–Majid 1999). So "the non-associative doubling `ℍ → 𝕆`" is precisely
+"turn on a twist `F` with `dF ≠ 0`" — a **pentagon-cochain deformation**, the
+associativity-side analogue of deforming the braiding (hexagon) to turn commutative
+into non-commutative.
 
 This file formalises the mechanism: for a graded twist `e_a·e_b = F(a,b)·e_{a+b}`,
 the associator is `α = dF` (the coboundary of `F`), and it **automatically
