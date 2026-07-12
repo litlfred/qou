@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-07-12T11:44:49.744150+00:00",
-  "commitSha": "84014677da9e6ea1ef6fa49696c3171be3b95cbe",
+  "computedAt": "2026-07-12T12:05:06.197720+00:00",
+  "commitSha": "ad645f313de23c8ddca7e42f9ce77f36bef70722",
   "assertions": [
     {
       "name": "habiro_tail_double_root_bareven_noncyclotomic",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 16,
+  "durationMs": 15,
   "computation": "lever1-habiro-tail-closed-form",
   "scriptFile": "lever1_habiro_tail_closed_form.py",
   "scriptHash": "e0cf658ae94a",
-  "scriptCommitSha": "84014677da9e6ea1ef6fa49696c3171be3b95cbe",
+  "scriptCommitSha": "2f35057ad052f818e28b8b4e54477e246205678f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
