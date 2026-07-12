@@ -5,7 +5,7 @@ Each exposes different structure:
 
 | Form | Inputs | Status |
 |---|---|---|
-| **(GB-NF)** $\mathcal{M} = m_e \cdot \rho_K \cdot \lvert\!\operatorname{tr}_M\!\bigl(\mathrm{NF}_{\mathrm{GS}}(\mathcal{B}_K)\bigr)\!\rvert$ | $m_e$, $\mathcal{B}_K$, $q_0$, $\rho_K$ | algebraic |
+| **(GB-NF)** $\mathcal{M} = m_e \cdot \rho_K \cdot \lvert\!\mathrm{tr}_M\!\bigl(\mathrm{NF}_{\mathrm{GS}}(\mathcal{B}_K)\bigr)\!\rvert$ | $m_e$, $\mathcal{B}_K$, $q_0$, $\rho_K$ | algebraic |
 | **(constituent)** $\mathcal{M} = Z m_{\mathfrak{p}} + N m_{\mathfrak{n}} + Z m_e + \alpha \sum_i \ln\lvert\hat{V}_i^{\mathrm{full}}\rvert$ | $m_e$, $\mathcal{B}_K$, $q_0$, $m_\mu$ | $0.18\%$ mean error, $Z\!=\!1\!\dots\!20$, utilizing the exact muon-anchored Hecke energy |
 | **(muon-anchored)** $m_{\mathfrak{p}} = 2(m_\mu F_{\mathrm{Bor}} - 6m_e)$ | $m_e$, $q_0$, $m_\mu$ | Exact canonical derivation matching CODATA ([unified mass formula](#thm:knot-mass-formula-unified)) |
 
@@ -17,7 +17,7 @@ calibration data.
 
 By the categorical-mass identity
 ([categorical mass = Markov](#prop:categorical-mass-markov)):
-$\mathfrak{m}_{q,K} = \lvert\!\operatorname{tr}_M(\rho(\mathcal{B}_K))\!\rvert$
+$\mathfrak{m}_{q,K} = \lvert\!\mathrm{tr}_M(\rho(\mathcal{B}_K))\!\rvert$
 provides the dimensionless mass ratio. To obtain MeV, one multiplies
 by a calibration factor with the dimensions of energy. The
 **categorical density** $\rho_K$ packages this calibration as a
@@ -26,10 +26,10 @@ braid-class invariant:
 $$
   \rho_K \;=\;
   \frac{\mathcal{M}(K)}{m_e \cdot
-    \lvert\!\operatorname{tr}_M\!\bigl(\mathrm{NF}_{\mathrm{GS}}(\mathcal{B}_K)\bigr)\!\rvert}.
+    \lvert\!\mathrm{tr}_M\!\bigl(\mathrm{NF}_{\mathrm{GS}}(\mathcal{B}_K)\bigr)\!\rvert}.
 $$
 
-| Atom | $A$ | $\lvert\operatorname{tr}_M(\mathrm{NF}_{\mathrm{GS}})\rvert$ | $\mathcal{M}_{\mathrm{CODATA}}$ (MeV) | $\rho_K^{\mathrm{CODATA}}$ |
+| Atom | $A$ | $\lvert\mathrm{tr}_M(\mathrm{NF}_{\mathrm{GS}})\rvert$ | $\mathcal{M}_{\mathrm{CODATA}}$ (MeV) | $\rho_K^{\mathrm{CODATA}}$ |
 |---|---|---|---|---|
 | $\mathfrak{p}$ | $1$ | $1.0653$ | $938.272$ | $1723.6$ |
 | $\mathfrak{n}$ | $1$ | $0.9232$ | $939.565$ | $1991.6$ |
@@ -49,7 +49,7 @@ data alone. The categorical-density derivation lives in
 [graded ρ_K expansion](#prop:rho-k-graded-expansion):
 
 $$
-  m_e \cdot |\!\operatorname{tr}_M(\mathcal{B}_K)| \cdot \rho_K
+  m_e \cdot |\!\mathrm{tr}_M(\mathcal{B}_K)| \cdot \rho_K
   \;=\;
   \underbrace{Z m_{\mathfrak{p}} + N m_{\mathfrak{n}} + Z m_e}_{\rho_K^{\mathrm{LO}}\text{-piece}}
   \;+\; \underbrace{\tfrac{\alpha}{2} \sum_i \ln\bigl(\hat V_i^{\mathrm{full}} \cdot \overline{\hat V_i^{\mathrm{full}}}\bigr)}_{\rho_K^{\text{single-gen}}\text{-piece}}
@@ -59,14 +59,14 @@ $$
 
 **The LO piece is no longer an ansatz.** It constitutes the categorical
 consequence of \[Wenzl 1988] Markov multiplicativity for disjoint
-braids ($\operatorname{tr}_M(\mathcal{B}_p \otimes \mathcal{B}_n) = \operatorname{tr}_M(\mathcal{B}_p) \operatorname{tr}_M(\mathcal{B}_n)$,
+braids ($\mathrm{tr}_M(\mathcal{B}_p \otimes \mathcal{B}_n) = \mathrm{tr}_M(\mathcal{B}_p) \mathrm{tr}_M(\mathcal{B}_n)$,
 verified to $3.2 \times 10^{-14}$ in `rho-k-markov-multiplicativity.witness.json`)
 plus free-constituent mass additivity:
 
 $$
   \rho_K^{\mathrm{LO}}
   \;=\;
-  \frac{Z m_{\mathfrak{p}} + N m_{\mathfrak{n}} + Z m_e}{m_e \cdot \lvert\!\operatorname{tr}_M(\mathcal{B}_K)\!\rvert}.
+  \frac{Z m_{\mathfrak{p}} + N m_{\mathfrak{n}} + Z m_e}{m_e \cdot \lvert\!\mathrm{tr}_M(\mathcal{B}_K)\!\rvert}.
 $$
 
 The single-gen binding correction $\tfrac{\alpha}{2} \sum_i \ln\bigl(\hat V_i^{\mathrm{full}} \cdot \overline{\hat V_i^{\mathrm{full}}}\bigr)$
@@ -81,11 +81,11 @@ higher pieces require the proper Wedderburn-coupling structure
 
 **Mirror-pair check** (T and ${}^3\mathrm{He}$, both $A=3$, $n=9$
 strands): the categorical density factors $\rho_K(T) / \rho_K({}^3\mathrm{He}) = 1.9853$
-exactly compensate $|\!\operatorname{tr}_M({}^3\mathrm{He})| / |\!\operatorname{tr}_M(T)| = 1.9850$,
+exactly compensate $|\!\mathrm{tr}_M({}^3\mathrm{He})| / |\!\mathrm{tr}_M(T)| = 1.9850$,
 since their CODATA masses agree to $0.02\%$. So $\rho_K$ is **not**
 a function of $(A, n\text{-strands})$ alone. It must depend on the
-specific braid $\mathcal{B}_K$ through $|\!\operatorname{tr}_M(\mathrm{NF}_{\mathrm{GS}}(\mathcal{B}_K))|$
-(and hence $\rho_K \cdot |\!\operatorname{tr}_M\!|$ constructs the
+specific braid $\mathcal{B}_K$ through $|\!\mathrm{tr}_M(\mathrm{NF}_{\mathrm{GS}}(\mathcal{B}_K))|$
+(and hence $\rho_K \cdot |\!\mathrm{tr}_M\!|$ constructs the
 mirror-symmetric quantity, equal to $\mathcal{M}(K)/m_e$).
 
 **Reduction.** The categorical-closure question reduces to deriving
@@ -127,7 +127,7 @@ PBW relations.
 ## Witnesses
 
 * `rho-k-codata-vs-six-term.witness.json` — $\rho_K^{\mathrm{CODATA}}$ vs $\rho_K^{6\text{-term}}$ table for $A = 1, 2, 3$.
-* `rho-k-scaling-structure.witness.json` — leading-order ansatz $\rho_K \approx (Z m_{\mathfrak{p}} + N m_{\mathfrak{n}})/(m_e \cdot |\!\operatorname{tr}_M\!|)$ ($0.14\%$ mean residual); mirror-pair analysis.
-* `atomic-tr-m-mpfr-50dps.witness.json` — canonical $\lvert\!\operatorname{tr}_M(\mathrm{NF}_{\mathrm{GS}}(\mathcal{B}_K))\!\rvert$ at $50$ decimal-place precision.
+* `rho-k-scaling-structure.witness.json` — leading-order ansatz $\rho_K \approx (Z m_{\mathfrak{p}} + N m_{\mathfrak{n}})/(m_e \cdot |\!\mathrm{tr}_M\!|)$ ($0.14\%$ mean residual); mirror-pair analysis.
+* `atomic-tr-m-mpfr-50dps.witness.json` — canonical $\lvert\!\mathrm{tr}_M(\mathrm{NF}_{\mathrm{GS}}(\mathcal{B}_K))\!\rvert$ at $50$ decimal-place precision.
 * `atom-mass-atomic-braid.witness.json` — (constituent) form predictions.
 * `paper-six-term-isotope-sweep.witness.json` — (six-term spectral) predictions across all five tower modes.
