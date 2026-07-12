@@ -61,7 +61,10 @@ from substrate import codata_constants as C  # noqa: E402
 mp.mp.dps = 60
 ME = mp.mpf(str(C.M_E_MEV))
 QCOD = mp.mpf(str(C.Q_BETA_MEV))
-VOL41 = 2 * mp.clsin(2, mp.pi / 3)
+# Evaluate the transcendental inside an explicit high-precision context so the
+# result cannot silently truncate to a stale default dps (Gemini review).
+with mp.workdps(60):
+    VOL41 = +(2 * mp.clsin(2, mp.pi / 3))
 
 
 def S(q):
