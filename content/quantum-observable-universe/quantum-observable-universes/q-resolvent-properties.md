@@ -1,7 +1,7 @@
-$R_q(s)$ is the categorical Laplace transform of the $q$-heat semigroup $\exp(-t \widehat{\Delta_q})$:
+$R_q(s)$ is the categorical Laplace transform, in the time variable $t$, of the $q$-heat semigroup $\exp(-t \widehat{\Delta_q})$:
 
 $$
-  R_q(s) \;=\; \mathrm{tr}_M\bigl(\exp_q(-s \cdot)  \cdot  \exp(-t \widehat{\Delta_q})\bigr).
+  R_q(s) \;=\; \mathcal{L}\bigl[\exp(-t \widehat{\Delta_q})\bigr](s).
 $$
 
 The first resolvent identity $R_q(s_1) - R_q(s_2) = (s_2 - s_1) R_q(s_1) R_q(s_2)$ is the Hopf-algebraic mate of the comultiplication axiom on $\mathcal{H}_q$. Under the categorical Fourier transform with $G = \mathrm{SU}_q(2)$, the resolvent diagonalises over irreducibles:
