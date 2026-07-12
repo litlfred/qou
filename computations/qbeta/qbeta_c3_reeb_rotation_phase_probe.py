@@ -101,7 +101,9 @@ def theta_of(q):
     """
     M = fig8_operator(q)
     tr = M[0, 0] + M[1, 1]
-    assert abs(mp.im(tr)) < mp.mpf("1e-40"), "trace unexpectedly complex at real q"
+    # explicit runtime check (not `assert` — asserts are stripped under `python -O`)
+    if abs(mp.im(tr)) >= mp.mpf("1e-40"):
+        raise ValueError("trace unexpectedly complex at real q")
     x = mp.re(tr) / 2
     x = mp.mpf(-1) if x < -1 else (mp.mpf(1) if x > 1 else x)
     return mp.acos(x)               # 2 cos θ = tr, eigenvalues e^{±iθ}

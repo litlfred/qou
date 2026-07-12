@@ -4,6 +4,8 @@ $$
   \mathrm{tr}M_{4_1}(q) \;=\; q^4 - 2q^2 + 1 - 2q^{-2} + q^{-4}.
 $$
 
+(The write-up uses the $1$-based braid generators $\sigma_1, \sigma_2$ of $B_3$; the companion probe script uses the $0$-based indexing $\sigma_0, \sigma_1$ of the `Braid` type over $\mathrm{Fin}(n-1)$, so its operator $(\sigma_0\sigma_1^{-1})^2$ is the same object.)
+
 At the classical point $q=1$ this trace is $-1$, so $|\mathrm{tr}| = 1 < 2$ and the eigenvalue is a primitive cube root of unity: the classical $q$-Reeb angle is $\theta(1) = 2\pi/3 = 120^\circ$ exactly. This is the amphichiral anchor of the figure-eight knot, where the Chern–Simons invariant vanishes.
 
 At the substrate modulus $q_0 \approx 1.10998$ the same trace evaluates to $\mathrm{tr}M_{4_1}(q_0) \approx -0.91068$, giving
