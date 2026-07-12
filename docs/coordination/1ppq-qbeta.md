@@ -969,3 +969,23 @@ cross-check ≤ 3e-61. Plugs into the cosh/sinh bridge skeleton
 (`3336314582` audit). Audit:
 [`2026-07-12-deformed-one-loop-sinh-carrier.md`](../audits/2026-07-12-deformed-one-loop-sinh-carrier.md).
 No c_k; nothing wired.
+**2026-07-12 (#3639, meridian-boost) — the meridian-holonomy boost is a
+smooth-quantity NEGATIVE for the c₃ seat (scope-(a); 4th confirmation).** Closes
+the one angle `#3600` flagged as unprobed: the boost `ζ = ln q₀` distinct from the
+braid phase `θ`. The target is `dc₃/dq₀ ≈ 4.66×10⁶` (from `Δc₃ = −0.0596` over the
+`11.5 ppb` muon↔proton anchor gap, `c₃: −2.0097 → −2.0693`). The boost's
+sensitivity is `dζ/dq₀ = 1/q₀ ≈ 0.90 = O(1)` — same order as `θ` (`#3600`,
+`dθ/dq ≈ −51°/unit`), **6–7 orders too small** to be the sole seat. So the
+meridian boost, like `θ`, is a **smooth geometric quantity ≠ the hypersensitive
+phase** — the 4th independent confirmation (`#3600` θ, `#3596` pole-seed, `#3573`
+near-singular φ, this). **Corollary (productive direction):** by
+`dc₃/dq₀ = (dc₃/du)(du/dq₀)`, a smooth `u(q₀)` forces `du/dq₀ = O(1)`, so the
+amplification must live in a **near-singular / pole structure** of the `q₀→u`
+dilog map (`conj:algebraic-geometric-dilog-equivalence`) — exactly where `#3596`
+(pole-seed amp `1.4×10⁻⁴`) and `#3573` (near-singular φ) are circling. The
+smooth-holonomy family (boost + braid θ) is now closed as a *sole* mechanism; the
+search concentrates on the pole structure. Anti-laundering: no `c_k` value; wires
+nothing; no tier change; `c₃` stays a q₀-dependent near-match (SETTLED #1580).
+Audit:
+[`docs/audits/2026-07-12-c3-meridian-boost-smooth-negative.md`](../audits/2026-07-12-c3-meridian-boost-smooth-negative.md).
+Coordinated: intent on `#3596`/`#3573`.
