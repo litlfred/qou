@@ -67,12 +67,17 @@ math/0604094 — already the corpus's evaluator-validation source); recent:
 **QOU shape.** `m` read off the saddle of the state integral **at the
 substrate `b = substrateB(t)`** — every ingredient already built and
 validated in-repo (`phi_b_evaluator`, `phiBProd`, battery to 1e−39).
-**Prognosis: the most immediately computable candidate** — a derived,
-fit-free saddle solve; the kit (G1–G4) then decides mechanically. Risk:
-at real z the dual face is 1e−82-suppressed (#3540 S6), so the saddle may
-land on the real-meridian locus (S = 0) unless the contour/argument carries
-the complex datum — which is exactly the "argument identification" question
-the T3 scaffold names.
+**Outcome (probe `qbeta_c3_phib_quantum_saddle_probe.py`, stage-0):** the
+φ-space evaluator machinery validates (V1/V2 to 1e−37/1e−72), but the
+saddle stage is **blocked on a branch prescription**: the saddle arguments
+sit outside the fundamental strip, where the periodic product-series branch
+(Hikami's classical potential) and the quasi-period continuation (the true
+Φ_b) differ by a winding factor of size O(2π²/t) ≈ 190 at substrate γ —
+the argument-identification question in sharpened, localized form. Fast
+G2 prognosis either way: the u = 0 saddle displacement is O(|γ|) = t/2 ≈
+0.05, **~2–4× under the feasibility floor** — the u = 0 candidate is
+expected to fail regardless; the u ≠ 0 boundary-parametrized integral is
+the live continuation.
 
 ### C4 — Quantum A-polynomial / AJ annihilator (recurrence kernel)
 
