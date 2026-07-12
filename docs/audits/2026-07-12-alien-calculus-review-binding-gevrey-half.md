@@ -139,6 +139,38 @@ reproduce bit-for-bit from the independent data.
   are untouched. Lean target (follow-up, small): `coeff₋₁(f') = 0` for Laurent series —
   the residue-of-exact-form lemma.
 
+## Addendum 2 — the exactness proposition (Lean + paper) and the Bridge-equation alien datum (W5)
+
+**Owner-requested Lean + paper for the exactness result:** new content block
+[`prop:sw-classical-jet-exactness`](../../content/quantum-observable-universe/brings-surface/sw-classical-jet-exactness.md)
+(+ proof block, registered in `brings-surface.ts`, sited next to
+`prop:sw-period-residue-sum`). Lean sibling sorry-free, lean-direct exit 0:
+`fresidue_fderiv` (residue of a termwise derivative vanishes — generic `CommRing`,
+§7c wall-safe), `classical_jet_period_zero` (composed with the residue-sum shape as an
+explicit hypothesis, the L1 pattern), `classical_jet_period_ne_lw` (against the nonzero
+`I(m)/m`). Render-QA: pipeline unavailable in this container; manual grep battery +
+expository pass run and clean — **not machine-validated**.
+
+**W5 — the Bridge-equation alien datum at ω₀ = 1/√2, closed form + verified**
+([`lever1_bridge_alien_datum_probe.py`](../../computations/lever1_bridge_alien_datum_probe.py), exit 0).
+Derived *before* measurement from the proved involution asymptotics + the Laguerre
+generating identity, the local singular model of the level-1/2 Borel transform is
+
+    B̂(ξ) ~ A_ω·(1−√2ξ)^{3/2}·exp( 1/(4(1−√2ξ)) )  near ξ = 1/√2,
+
+with the four-component **alien datum**: ω₀ = 1/√2 (level-1/2 action), A₂ = 1/4
+(second-level action — the `e^{√n}` factor, confirming the acceleration-chain
+structure), γ = 3/2 (branch exponent), and Stokes constant **A_ω = 4√2·e^{−3/8}
+≈ 3.8884**. Verified against exact `I(n)` to n = 400: K_c to 2×10⁻⁵ rel, √n-coefficient
+0.99989, power −1.5016, A_ω to 0.43%. **q-rigidity:** the deformation of the datum is
+bar-even (exact under q↔1/q) and O((q−1)²) (measured exponent 1.956) — the alien datum
+is *stationary at the classical point*, the derived and testable form of the dialog's
+"A_ω(q) carries (q−1)²" claim (the Φ_m root-of-unity part needs |q| = 1 evaluation —
+out of real-q scope). **Scope:** at q = 1 the binding EGF `e^{x+x²/2}` is entire, so
+there is no equational Stokes phenomenon; the resurgence is **co-equational**
+(coefficient-plane), and the literal one-parameter-ODE Bridge form `Δ_ω f = A_ω·df/dz`
+does not apply verbatim — A_ω above is the co-equational Stokes constant.
+
 ## Discipline
 
 Formalize-first: the Gevrey sandwich was proved (Lean, sorry-free, lean-direct exit 0)
