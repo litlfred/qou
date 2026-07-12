@@ -1,0 +1,93 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-12T10:35:27.639266+00:00",
+  "computation": "qbeta-nz-even-series-fourone",
+  "scriptFile": "qbeta_nz_even_series_fourone_probe.py",
+  "commitSha": "5bcf3151143150981df6bbf63a4bdcf46dcc8e22",
+  "description": "NZ even-series probe for 4\u2081 from the CCGLS A-polynomial: numeric parity of v(u) (NZ85 oddness, convention-free), Cauchy-extracted series coefficients with \u211a(\u221a\u22123) recognition of \u03c4 and v\u2083, and the convention-free next-order ratio v\u2083/(2\u03c4) evaluated at the #3573 anchor coordinates (report-only). Companion to the Lean parity prune QOU/Knot/NeumannZagierParity.lean (no u\u00b3 rung). No c_k proposed; nothing wired.",
+  "precisionMetadata": {
+    "compute_dps": 60,
+    "contour_radius": "0.06",
+    "fft_points": 64,
+    "u_convention": "u = 2\u00b7log M (meridian eigenvalue M)"
+  },
+  "data": {
+    "tau_numeric": "(2.801959054270282697590991028141497205995e-61 - 1.732050807568877293527446341505872366943j)",
+    "tau_recognized_a_b_d": [
+      0,
+      -1,
+      1
+    ],
+    "v3_numeric": "(-6.013859572314539206733053437389239531007e-59 - 0.5773502691896257645091487805019574556476j)",
+    "v3_recognized_a_b_d": [
+      0,
+      -1,
+      3
+    ],
+    "v5_numeric": "(-1.572825521674205348089703709258719240565e-56 - 0.2213176031893565430618403658590836913316j)",
+    "ratio_v3_over_2tau": "(0.166666666666666666666666666667 - 1.73874790782927220290450690996e-59j)",
+    "anchor_report": {
+      "muon_z_ED_real_u": {
+        "corr_factor": "1.0018161444511807297",
+        "miss_before_pct": "2.54071",
+        "miss_after_pct": "2.36371",
+        "moves_toward_S": true
+      },
+      "muon_z_ED_imag_u": {
+        "corr_factor": "0.99818385554881927031",
+        "miss_before_pct": "2.54071",
+        "miss_after_pct": "2.71771",
+        "moves_toward_S": false
+      },
+      "proton_HA_real_u": {
+        "corr_factor": "1.0072843680887787998",
+        "miss_before_pct": "4.07678",
+        "miss_after_pct": "3.37804",
+        "moves_toward_S": true
+      },
+      "proton_HA_imag_u": {
+        "corr_factor": "0.99271563191122120016",
+        "miss_before_pct": "4.07678",
+        "miss_after_pct": "4.77552",
+        "moves_toward_S": false
+      }
+    }
+  },
+  "assertions": [
+    {
+      "name": "geometric_branch_L_eq_neg1_double_root_at_complete",
+      "computed": 0.0,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-50,
+      "source": "A(L,1) = (L+1)\u00b2 \u2014 CCGLS 4\u2081 A-polynomial, complete structure"
+    },
+    {
+      "name": "tracked_sqrt_branch_closes_single_valued",
+      "computed": 3.045066911770561e-62,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-40,
+      "source": "no branch point of the gluing variety inside |u| = 0.06; v is a single-valued analytic function there"
+    },
+    {
+      "name": "even_v_coefficients_vanish_v_is_odd",
+      "computed": 1.9983858259058005e-54,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-35,
+      "source": "NZ85 oddness on the geometric branch, corroborated from the A-polynomial: v\u2080 = v\u2082 = v\u2084 = v\u2086 = 0 (Cauchy-extracted); no framing-linear even part on this branch"
+    },
+    {
+      "name": "tau_recognized_in_Q_sqrt_minus3",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.0,
+      "source": "tau = v\u2081 = (2.80195905427028269759099102814e-61 - 1.73205080756887729352744634151j); recognition (0, -1, 1) as (a + b\u00b7i\u221a3)/d \u2014 the \u211a(\u221a\u22123) cusp modulus"
+    }
+  ],
+  "allPassed": true,
+  "durationSeconds": 0.060024
+}

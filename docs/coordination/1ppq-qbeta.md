@@ -916,3 +916,16 @@ by ramified odd prime 19 vs 3. Consequence: the odd algebraic field-of-definitio
 in the 4₁/Φ_b arithmetic; a closure must supply the disc-19 field. STRICT scope guard: does NOT
 exclude Φ_b (transcendental, richer arithmetic possible), does NOT address the anchor-dependent c₃
 swing (w(q) fibre, KC19). Sharpens the search target. No c_k value; nothing wired; no tier change.
+**2026-07-12 (PR #3622, in flight) — NZ parity prune + exact 4₁ even series.**
+Lean (sorry-free): the geometric NZ deformation series has NO odd rung
+([`NeumannZagierParity.lean`](../../content/quantum-observable-universe/lean/QOU/Knot/NeumannZagierParity.lean),
+scope-(b), invariant = parity) — kills this session's own #3562 NZ-u³
+proposal (which also conflated `u_ladder` with the NZ deformation u).
+Probe (geometric-exact, from the CCGLS A-polynomial, convention-free):
+τ = −i√3, v₃ = −i√3/3, v₅ = −23i√3/180, ratio Φ₄/Φ₂ = **1/6** ⇒
+`corr(u) = 1 ± u²/6`; at the #3573 anchors the **real-u ray improves both**
+(muon 2.54%→2.36%, proton 4.08%→3.38%, not closing; imag-u worsens) —
+selects the real-u geometric embedding and leaves the ~2.4%/3.4% residual
+to the odd/archimedean channel (KC17). Audit:
+[`2026-07-12-nz-parity-prune-and-fourone-even-series.md`](../audits/2026-07-12-nz-parity-prune-and-fourone-even-series.md).
+No c_k; nothing wired.
