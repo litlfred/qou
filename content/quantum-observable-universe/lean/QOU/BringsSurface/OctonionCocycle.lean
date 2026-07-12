@@ -70,4 +70,20 @@ triple `e₁ = (1,0,0)`, `e₂ = (0,1,0)`, `e₄ = (0,0,1)` the associator is `1
 theorem det3_nonzero : det3 (1, 0, 0) (0, 1, 0) (0, 0, 1) = 1 := by
   decide
 
+/-- Cyclic shift of the three `(ℤ/2)³` coordinates — a `GL(3, 𝔽₂)` element (a
+3-cycle of the coordinates, an even permutation). -/
+def cyc (x : V) : V := (x.2.1, x.2.2, x.1)
+
+/-- **Fano / `PSL(2,7)` symmetry of the octonion associator (witness).** `det3` is
+invariant under the coordinate 3-cycle `cyc ∈ GL(3, 𝔽₂)`. More generally
+`det3 (g·a) (g·b) (g·c) = det(g) · det3 a b c = det3 a b c` for **every**
+`g ∈ GL(3, 𝔽₂) ≅ PSL(2,7)` (order 168 — the Fano-plane / Klein-quartic symmetry),
+since `det g = 1` over `𝔽₂`. This is the concrete tie between the `(ℤ/2)³`
+octonion sign structure and the genus-3 (Klein-quartic, `PSL(2,7) =` Fano) home of
+the octonion product. Here the `cyc` generator is machine-checked; the full
+`GL(3,𝔽₂)`-invariance is determinant multiplicativity. -/
+theorem det3_cyclic_invariant :
+    ∀ a b c : V, det3 (cyc a) (cyc b) (cyc c) = det3 a b c := by
+  decide
+
 end QOU.BringsSurface.OctonionCocycle
