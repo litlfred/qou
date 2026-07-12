@@ -96,4 +96,19 @@ theorem barEven_zeta_sq_mul {ζ : R} (hζ : ζ ^ 2 = -1) (x : R) :
   rw [barEven_zeta_mul hζ, barOdd_zeta_mul hζ, ← mul_assoc, ← pow_two, hζ]
   ring
 
+/-- **Rapidities add (cosh law).** Composing turns multiplies the arguments; the
+bar-even (mass / `cosh`) shape obeys the addition formula. Generic bar-involution
+multiplicativity — lives with `barEven`/`barOdd` (moved here from the cusp module). -/
+theorem barEven_mul (x y : R) :
+    2 * barEven (x * y) = barEven x * barEven y + barOdd x * barOdd y := by
+  simp only [barEven, barOdd, mul_inv]
+  ring
+
+/-- **Rapidities add (sinh law).** The bar-odd (decay–binding / `sinh`) companion
+of `barEven_mul`. -/
+theorem barOdd_mul (x y : R) :
+    2 * barOdd (x * y) = barOdd x * barEven y + barEven x * barOdd y := by
+  simp only [barEven, barOdd, mul_inv]
+  ring
+
 end QOU.QBeta.BarParityZeta4Swap
