@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-11T23:19:03.856841+00:00",
-  "commitSha": "6e3e98c2a2b0fd5a25684c041dc4eac078bcae9d",
+  "computedAt": "2026-07-12T00:23:26.947282+00:00",
+  "commitSha": "10959dd775bf588aa448adc56f30936d4ee829d8",
   "assertions": [
     {
       "name": "quotient_rule_identity_closes",
@@ -10,7 +10,7 @@
       "expected": 0.0,
       "passed": true,
       "tolerance": 1e-08,
-      "source": "dS/dq = A'/u^3 - 3(u'/u)(S - Vol41) exactly (calculus; machine-checked in Lean as QOU.QBeta.LeverLogDerivative)"
+      "source": "finite-difference closure of dS/dq = A'/u^3 - 3(u'/u)(S - Vol41); the identity itself is exact calculus, machine-checked in Lean (QOU.QBeta.LeverLogDerivative); this numeric check verifies the implementation at step h=1e-20/70 dps"
     },
     {
       "name": "static_amplification_dominates",
@@ -30,11 +30,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 16,
+  "durationMs": 25,
   "computation": "qbeta-c3-phib-mq-logderivative-constraint",
   "scriptFile": "qbeta_c3_phib_mq_logderivative_constraint.py",
-  "scriptHash": "5bb281b06aba",
-  "scriptCommitSha": "6e3e98c2a2b0fd5a25684c041dc4eac078bcae9d",
+  "scriptHash": "8c9352dd00c5",
+  "scriptCommitSha": "10959dd775bf588aa448adc56f30936d4ee829d8",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
