@@ -94,6 +94,7 @@ import QOU.PathIntegrals
 import QOU.MobiusEnergy
 import QOU.Torsion
 import QOU.BringsSurface
+import QOU.BringsSurface.OctonionInvariantObstruction
 import QOU.BringCone
 import QOU.QuaternionicElectroweak
 import QOU.ArchimedeanUniverse
