@@ -20,5 +20,6 @@ export default conjecture({
     "kashaev1997",
     "murakami-murakami2001",
     "berarducci-mantova2018",
+    "ecalle1981",
   ],
 });

@@ -82,6 +82,20 @@ transseries reduction (Berarducci--Mantova). The third row is
 where hyperbolic geometry enters — and it enters *only* on the
 LHS.
 
+The second row admits a precise name from resurgence theory
+[@ecalle1981]. The Berarducci--Mantova transseries invoked there
+are transseries in Écalle's sense, and the evaluation sits on a
+Stokes ray of the Kashaev asymptotic series, where the two lateral
+Borel sums of a divergent transseries disagree. The standard-part
+map applied to the finite surreal selects the unique
+real-single-valued value — which is the *median resummation* of
+Écalle's alien calculus. The unspecified "asymptotic transseries
+reduction" is therefore a named operation: $\mathrm{st}$ acts as
+median resummation of the Kashaev transseries at the root of
+unity. This identifies the second row's content with a standard
+resurgence construction; it does not touch the third row, which
+remains the genuine geometric input.
+
 This is the appendix's sharpest expression of "trade analytic
 for surreal": Kashaev becomes one transseries reduction
 plus one $\mathrm{Vol}$-identity, instead of an analytic
