@@ -161,4 +161,36 @@ theorem two_mul_characterSum_eq {ι : Type*} [DecidableEq ι] (q h : R) (S : Fin
   have hkey := two_mul_reducedSum_eq_card q S ρ τ hτS hττ hρτ hq hnd
   linear_combination h * hkey
 
+/-- **Full single-generator character `χ_λ(σ) = c_λ·h` (all three tableau
+    classes).** The seminormal character of `σ` on `S^λ` splits the standard
+    tableaux into three classes by where `1, 2` sit: **same-row** (diagonal
+    eigenvalue `q`), **same-column** (diagonal eigenvalue `−q⁻¹`), and
+    **off-diagonal** (weight `a_ρ`). The two Hecke eigenvalues satisfy
+    `q + (−q⁻¹) = q − q⁻¹ = h`, so the same-column eigenvalue is `−q⁻¹ = h − q`
+    (stated that way here to keep the identity inverse-free). For a
+    **self-conjugate** `λ` the same-row and same-column counts are equal
+    (`Rrow.card = Rcol.card`, conjugation symmetry), so the diagonal contribution
+    `r·q + r·(h − q) = r·h` is an integer multiple of `h`; the off-diagonal part is
+    `(|Soff|/2)·h` by `two_mul_characterSum_eq`. Hence
+
+      2·χ_λ(σ) = (2·|Rrow| + |Soff|)·h,   i.e.  χ_λ(σ) = c_λ·h,  c_λ = |Rrow| + |Soff|/2 ∈ ℤ.
+
+    This is the complete abstract form of `symbolic_character_table` — sorry-free,
+    reducing that block to supplying the concrete tableau partition + the swap
+    involution `τ` on the off-diagonal class (bean `qou-9vvr` / `qou-tqab`). -/
+theorem fullCharacter_two_mul {ι : Type*} [DecidableEq ι] (q h : R)
+    (Rrow Rcol Soff : Finset ι) (ρ : ι → ℤ) (τ : ι → ι)
+    (hcard : Rrow.card = Rcol.card)
+    (hτS : ∀ t ∈ Soff, τ t ∈ Soff) (hττ : ∀ t ∈ Soff, τ (τ t) = t)
+    (hρτ : ∀ t ∈ Soff, ρ (τ t) = -ρ t) (hq : q ≠ 0)
+    (hnd : ∀ t ∈ Soff, q ^ (2 * ρ t) ≠ 1) :
+    (2 : R) * ((Rrow.card : R) * q + (Rcol.card : R) * (h - q)
+          + ∑ t ∈ Soff, seminormalWeight q h (ρ t))
+      = ((2 * Rrow.card + Soff.card : ℕ) : R) * h := by
+  have hoff := two_mul_characterSum_eq q h Soff ρ τ hτS hττ hρτ hq hnd
+  set Q := ∑ t ∈ Soff, seminormalWeight q h (ρ t) with hQ
+  rw [hcard]
+  push_cast
+  linear_combination hoff
+
 end QOU.BraidKnot.SeminormalWeight
