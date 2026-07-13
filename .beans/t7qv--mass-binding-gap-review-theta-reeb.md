@@ -95,3 +95,34 @@ transfer matrix) + #3549/#3551 (coordination/contact binding).
 Verdict: t7qv's quantitative closure is being driven by the #3534/#3545/#3548 cluster;
 prop:jet-filtration-binding-extensive (qualitative) stays the proved core. This session
 reviewed + recorded the frontier; did not add a colliding probe (corpus-grep discipline).
+
+## Cross-ref: Askey/Whipple channel-rotation route also NULLs the algebraic weight (2026-07-13, PR #3749, merged)
+
+The Whipple-rotation identification thread (channel-rotation tie of the even
+(cosh/binding) and odd (sinh/Q_β) channels of 𝔙; blocks
+`whipple-rotation-intertwining`, `binding-qbeta-complex-volume`) reached its
+honest terminus and **independently corroborates the geometric redirect above**:
+
+- **Third algebraic-route NULL.** The bar-even/bar-odd binding split is the most
+  natural place for the Askey/Ismail–Masson channel amplitude to appear, yet the
+  bare Whipple toroidal amplitude `|C(ν,μ)| = √(2/π)/Γ(ν+μ+½)` at the physical
+  forced windings `(μ,ν)=(½,d−½)` does **not** reproduce the observed
+  `B_even/B_odd` deuteron ratio (`whipple-observable-ratio-probe`: 51% off, no
+  parameter-free `{C,1/C,amp,1/amp}` match). This is the toroidal-amplitude
+  analogue of Part 4's Frobenius-dual/na-Stokes kernel refutation — a *different*
+  algebraic object, same failure. Reinforces "the weight is NOT algebraic; the
+  missing piece is geometric" — **do not re-probe the Askey/Whipple amplitude as
+  the binding weight.**
+- **Factor-2 shortcut FALSIFIED.** The tempting deuteron `2/|C| = 3.33 ≈ 3.373`
+  (1.2%) is a coincidence — `B_even/B_odd = A/|C(d=A)|` fails 446%/1644% at A=3/4
+  (the two N=Z cases 2H/⁴He share a fixed 3.33, a numerology artifact). Recorded
+  in the witness `factor2_generalization_falsification`; do not re-chase.
+- **What IS proved (permanent, per §"refuted"-scope discipline).** The even↔odd
+  channel rotation `rotation_step` (sorry-free, categorical R) and the
+  winding-swap reduction `channelIndexed_swaps_windings` stand — the *structural*
+  tie is exact; only its bare *amplitude → MeV binding ratio* map is what NULLs.
+  Consistent with your per-bond anchor `a_D ≈ 2.22 MeV = B_AME(²H)`: the deuteron
+  binding is the anchor, not something the toroidal amplitude re-derives.
+
+Net: the Askey/Whipple algebraic direction for the binding weight is **exhausted**;
+t7qv's geometric M_n(K) frontier (Milnor linking + per-bond a_D) is the live route.
