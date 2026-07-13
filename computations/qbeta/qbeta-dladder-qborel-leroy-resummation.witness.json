@@ -1,0 +1,129 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-13T11:42:04.658378+00:00",
+  "commitSha": "6db441932ff0d712f191491371b278286eae7d8f",
+  "assertions": [
+    {
+      "name": "mild_divergence_confirmed_positive_leroy_order_required",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "root-test slope is +0.0648 at s=0 (divergent) and decreases monotonically in the Borel–Leroy order s, crossing 0 near s*≈0.20: a positive order is required ⇒ mild q-Gevrey divergence (3rd independent method); plain ÷k! (order 1) over-suppresses. The order is O(0.1) but estimator-dependent (vs the log-fit C≈0.06) — the q-Gevrey non-fixed-index signature. The resummed singularity is NOT resolved at k=21; no instanton action claimed."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 17,
+  "computation": "qbeta-dladder-qborel-leroy-resummation",
+  "scriptFile": "qbeta_dladder_qborel_leroy_resummation_probe.py",
+  "scriptHash": "8ad6b8cff5af",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Jackson-q-Borel/Borel–Leroy resummation of the mildly-divergent (q-Gevrey C≈0.06) bar-odd D-ladder (PR #3737, overlap with #3683). Plain ÷k! Borel over-suppresses; correct object is Borel–Leroy order s. Scans s to find the effective Gevrey order s* (smallest s with non-rising root test), then locates the resummed real-axis (Pringsheim) Borel singularity ρ_s* and compares to Vol(4₁)/π & the κ-tower action as consistency-only. Scope-(a); s is the structural summability exponent (not fitted to QOU data); no c_k wired; no tier change.",
+  "contentBlock": "prop:phi-b-unitary-bar-odd",
+  "data": {
+    "KMAX": 21,
+    "borel_leroy_order_scan": [
+      [
+        0.0,
+        0.0648034020996486,
+        5.910378342230437
+      ],
+      [
+        0.02,
+        0.0558331496131835,
+        5.660377956563074
+      ],
+      [
+        0.04,
+        0.04741138154085492,
+        5.420952222671766
+      ],
+      [
+        0.06,
+        0.03951039694163051,
+        5.1916538482058
+      ],
+      [
+        0.08,
+        0.0321037824249147,
+        4.9720544606286765
+      ],
+      [
+        0.1,
+        0.025166354888204234,
+        4.7617438069375595
+      ],
+      [
+        0.12,
+        0.018674106736248804,
+        4.560328987233424
+      ],
+      [
+        0.14,
+        0.012604153475898104,
+        4.367433720710068
+      ],
+      [
+        0.16,
+        0.0069346835852830266,
+        4.182697642690717
+      ],
+      [
+        0.18,
+        0.0016449105602571166,
+        4.00577563139896
+      ],
+      [
+        0.2,
+        -0.0032849729548762325,
+        3.8363371632062884
+      ],
+      [
+        0.22,
+        -0.007873839041397905,
+        3.6740656951517283
+      ],
+      [
+        0.24,
+        -0.01213966647025296,
+        3.5186580735799873
+      ],
+      [
+        0.26,
+        -0.016099580837855926,
+        3.3698239677933497
+      ],
+      [
+        0.28,
+        -0.019769892951847497,
+        3.2272853276592666
+      ],
+      [
+        0.3,
+        -0.023166135541720142,
+        3.090775864160359
+      ]
+    ],
+    "plain_borel_wrong_reason": "÷k! is order-1 suppression; D-ladder growth is C≈0.06 ≪ 1 (over-suppressed to near-entire)",
+    "root_test_slope_at_s0": 0.0648034020996486,
+    "slope_monotone_decreasing_in_s": true,
+    "root_test_zero_crossing_s_star": 0.2,
+    "audit_logfit_C": "~0.05-0.08",
+    "order_estimator_spread_is_qgevrey_signature": true,
+    "resummed_rho_dlog_pade_UNRESOLVED": "0.15595945",
+    "singularity_cleanly_resolved_at_KMAX": false,
+    "instanton_action_claimed": false
+  }
+}

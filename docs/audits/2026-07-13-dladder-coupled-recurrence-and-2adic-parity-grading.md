@@ -113,6 +113,31 @@ This note is the honest scope boundary: the exact-arithmetic negatives (Results
 1, 1b) and the grading (Result 2) stand on their own; the analytic resummation of
 the divergent ladder is a separate, q-Borel undertaking.
 
+**Update — the Borel–Leroy order scan (parallel/overlap with #3683, owner-authorized).**
+The correct transform for a mild q-Gevrey series is **Borel–Leroy of fractional
+order `s`** (`b_k = d_k/(k!)^s`), not the classical `÷k!`. Probe
+[`qbeta_dladder_qborel_leroy_resummation_probe.py`](../../computations/qbeta/qbeta_dladder_qborel_leroy_resummation_probe.py)
+scans `s` and measures the root-test slope of `|b_k|^{1/k}`. Findings (scope-(a)):
+
+- **Third independent confirmation of divergence.** The slope is `+0.065` at
+  `s=0` and **decreases monotonically** in `s` — a positive Borel–Leroy order is
+  required to flatten the root test (after the ratio and log-fit methods, this is
+  the third). Plain `÷k!` (order 1) over-suppresses.
+- **The Gevrey order is not fixed (q-Gevrey confirmed).** The root-test slope
+  crosses 0 near `s*≈0.20`, which **disagrees** with the audit's log-fit
+  `C≈0.06`. The two estimators giving different orders **is** the q-Gevrey
+  "no single Gevrey index" signature — consistent with the divergence-correction's
+  drifting-`C` observation, not a contradiction.
+- **The resummed singularity is not resolvable at k=21.** At `s*` the dlog-Padé
+  radius (`≈0.156`) is inconsistent with the root-test radius (`≈0.32`) — the
+  finite-n shadow again. **No instanton action is claimed.** A clean value needs
+  the genuine q-Borel / Écalle acceleration (#3683's machinery) or more `d_k`.
+
+So the q-Borel pass **sharpens the class** (mildly, non-fixed-order divergent —
+now by three methods) but confirms the singularity itself is beyond reach at
+accessible order — the honest boundary between what the exact `d_k` to k=21 can
+settle and what the resurgent program must.
+
 ## Result 2 — the exact 2-adic parity grading (headline)
 
 Writing `d_k = a_k + b_k√3` and reading the **2-adic valuation of the
