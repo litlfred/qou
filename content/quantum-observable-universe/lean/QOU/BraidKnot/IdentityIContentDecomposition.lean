@@ -989,6 +989,13 @@ theorem idB_verified_le12 :
     ∀ n ∈ List.range 13, identityB_lhs n = identityB_rhs n := by
   decide
 
+/-- **Identity (B), propositional form for `n ≤ 12`**. -/
+theorem idB_verified_le12_prop {n : ℕ} (hn : n ≤ 12) : identityB_lhs n = identityB_rhs n := by
+  have H : ∀ k ∈ List.range 13, identityB_lhs k = identityB_rhs k := idB_verified_le12
+  apply H
+  simp only [List.mem_range]
+  omega
+
 /-!
 **Identity (B), general `n` (status).** The `n ≤ 12` exhaustive verification above
 (`idB_verified_le12`, dimension-certified by `dim_validated_le12`) faithfully realises (B) as a
