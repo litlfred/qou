@@ -28,7 +28,7 @@ $\mathrm{Vol}(S^3 \setminus K)$ from the algebraic data.
 
 The **Kashaev invariant** is the state sum version:
 $\langle K \rangle = \sum_j \prod_{\text{tetrahedra}}
-\Phi_q(x_j)^{\pm 1}$, living in the Habiro ring.  For the
+\Phi_q(x_j)^{± 1}$, living in the Habiro ring.  For the
 Borromean rings, this gives $\langle \mathcal{B}_3 \rangle$
 whose archimedean evaluation yields $8G$.
 

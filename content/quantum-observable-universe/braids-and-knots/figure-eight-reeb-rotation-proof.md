@@ -31,7 +31,7 @@ a c
 = \frac{-1}{[2]_q^2},
 $$
 
-so that $\det \sigma_2 = ac - b^2 = -\bigl(1 + [3]_q\bigr)/[2]_q^2 = -[2]_q^2/[2]_q^2 = -1$ and $\mathrm{tr}\,\sigma_2 = h$: both generators have the Hecke eigenvalues $q$ and $-q^{-1}$. These are Hoefsmit's seminormal matrices for the standard representation, with diagonal entries indexed by the axial distances $\pm 2$ of the two standard tableaux of shape $(2,1)$; they satisfy the braid relation $\sigma_1\sigma_2\sigma_1 = \sigma_2\sigma_1\sigma_2$ by the seminormal construction \cite{hoefsmit1974,wenzl1988c}.
+so that $\det \sigma_2 = ac - b^2 = -\bigl(1 + [3]_q\bigr)/[2]_q^2 = -[2]_q^2/[2]_q^2 = -1$ and $\mathrm{tr}\,\sigma_2 = h$: both generators have the Hecke eigenvalues $q$ and $-q^{-1}$. These are Hoefsmit's seminormal matrices for the standard representation, with diagonal entries indexed by the axial distances $± 2$ of the two standard tableaux of shape $(2,1)$; they satisfy the braid relation $\sigma_1\sigma_2\sigma_1 = \sigma_2\sigma_1\sigma_2$ by the seminormal construction \cite{hoefsmit1974,wenzl1988c}.
 
 **Step 2: Determinant of the knot operator.** Since each generator has eigenvalue product $q \cdot (-q^{-1}) = -1$, we get $\det \sigma_1 = \det \sigma_2 = -1$ and $\det \sigma_2^{-1} = -1$. Hence for $A = \sigma_1 \sigma_2^{-1}$ and $M_{4_1} = A^2$,
 
@@ -82,7 +82,7 @@ $$
 \mathrm{tr}(M_{4_1}) - 2 = \frac{(q^{2} - q - 1)(q^{2} + q - 1)(q^{2} - q + 1)(q^{2} + q + 1)}{q^{4}},
 $$
 
-both verified by expanding. The base $q^{2} - 1 + q^{-2}$ never vanishes for real $q$ (its numerator $q^{4} - q^{2} + 1$ has non-real roots $q^{2} = (1 \pm i\sqrt{3})/2$), so $\mathrm{tr}(M_{4_1}) + 2 > 0$ for every real $q \neq 0$. In the second factorization the cyclotomic factors $q^{2} - q + 1$ and $q^{2} + q + 1$ are positive for all real $q$ (negative discriminants), while for $\varphi^{-1} < q < \varphi$ the golden factors have opposite signs: $q^{2} + q - 1 > 0$ (its positive root is $\varphi^{-1}$) and $q^{2} - q - 1 < 0$ (its positive root is $\varphi$). Hence $\mathrm{tr}(M_{4_1}) - 2 < 0$ on the golden interval, and combining,
+both verified by expanding. The base $q^{2} - 1 + q^{-2}$ never vanishes for real $q$ (its numerator $q^{4} - q^{2} + 1$ has non-real roots $q^{2} = (1 ± i\sqrt{3})/2$), so $\mathrm{tr}(M_{4_1}) + 2 > 0$ for every real $q \neq 0$. In the second factorization the cyclotomic factors $q^{2} - q + 1$ and $q^{2} + q + 1$ are positive for all real $q$ (negative discriminants), while for $\varphi^{-1} < q < \varphi$ the golden factors have opposite signs: $q^{2} + q - 1 > 0$ (its positive root is $\varphi^{-1}$) and $q^{2} - q - 1 < 0$ (its positive root is $\varphi$). Hence $\mathrm{tr}(M_{4_1}) - 2 < 0$ on the golden interval, and combining,
 
 $$
 \bigl|\mathrm{tr}(M_{4_1})\bigr| \;<\; 2
@@ -91,7 +91,7 @@ $$
 
 This interval contains the classical point $q = 1$ and the substrate regime.
 
-**Step 5: Unit-modulus eigenvalues.** $M_{4_1}$ is a real $2 \times 2$ matrix with $\det M_{4_1} = 1$ and real trace $t = \mathrm{tr}(M_{4_1})$, so its eigenvalues are the roots of $\lambda^{2} - t\lambda + 1 = 0$. By Step 4 the discriminant $t^{2} - 4$ is strictly negative on the golden interval, so the roots form a complex-conjugate pair $\lambda_{4_1} = e^{\pm i\theta}$ with
+**Step 5: Unit-modulus eigenvalues.** $M_{4_1}$ is a real $2 \times 2$ matrix with $\det M_{4_1} = 1$ and real trace $t = \mathrm{tr}(M_{4_1})$, so its eigenvalues are the roots of $\lambda^{2} - t\lambda + 1 = 0$. By Step 4 the discriminant $t^{2} - 4$ is strictly negative on the golden interval, so the roots form a complex-conjugate pair $\lambda_{4_1} = e^{± i\theta}$ with
 
 $$
 |\lambda_{4_1}|^{2} = \lambda \bar{\lambda} = \det M_{4_1} = 1,

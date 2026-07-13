@@ -72,7 +72,7 @@ on the EM sector:
 **Step 1 — Per-host two-strand completeness.**
 For each $T(2, 2k)$, the two-strand braiding
 $\sigma_1 \in B_2$ has the standard Hecke decomposition
-$w_+^{(k)} + w_-^{(k)} = \mathbf{1}_{H_2(q)}$ where $w_\pm^{(k)}$
+$w_+^{(k)} + w_-^{(k)} = \mathbf{1}_{H_2(q)}$ where $w_±^{(k)}$
 are the (sym, alt) idempotents acting on $V \otimes V$ for the
 $k$-th host's natural representation $V_k$.
 
@@ -82,14 +82,14 @@ All three carriers live in **the same** $H_2(q)$ over $R$ (one
 host: Bring's surface). They are distinguished by their
 even-twist parameter $k \in \{2, 3, 4\}$, which selects different
 generalized eigenspaces under $\sigma_1^{2k}$ — specifically, the
-six idempotents $e_X^\pm$ are pairwise orthogonal as elements of
+six idempotents $e_X^±$ are pairwise orthogonal as elements of
 $H_2(q)$ because the eigenvalues $(q^{2k}, q^{-2k})$ for $k = 2,
 3, 4$ are pairwise distinct in $R$ (as $q$ is not a root of
 unity). The EW total Hecke action is therefore
 $\bigoplus_{k=2,3,4} H_2(q)|_{T(2, 2k)\text{-spectrum}}$, with
 completeness across the direct sum following from per-link
 completeness in Step 1 + pairwise orthogonality of the six
-$e_X^\pm$ in $H_2(q)$.
+$e_X^±$ in $H_2(q)$.
 
 **Step 3 — Cell-content trace, not Plancherel weight.**
 

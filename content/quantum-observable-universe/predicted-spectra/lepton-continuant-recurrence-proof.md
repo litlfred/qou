@@ -23,9 +23,9 @@ At the substrate parameter $q_0 \approx 1.1100$, the continuant yields the follo
 | $\mu^-$ | $T_{2,5}$ | $5$ | $0.427$ | $1.133$ | $1.560$ |
 | $\tau^-$ | $T_{2,7}$ | $7$ | $0.664$ | $1.272$ | $1.936$ |
 
-The recurrence is exact in $\mathbb{Z}[q^{\pm 1}]$. The decimal values are evaluations at $q = q_0$.
+The recurrence is exact in $\mathbb{Z}[q^{± 1}]$. The decimal values are evaluations at $q = q_0$.
 
-The recurrence relations underlying this lepton tower are elementary identities in $\mathbb{Z}[q^{\pm 1}]$. The Morgan-Voyce sequences $\{a_n\}$ and $\{b_n\}$ satisfy a standard induction over $n$ via the quadratic Hecke relation.
+The recurrence relations underlying this lepton tower are elementary identities in $\mathbb{Z}[q^{± 1}]$. The Morgan-Voyce sequences $\{a_n\}$ and $\{b_n\}$ satisfy a standard induction over $n$ via the quadratic Hecke relation.
 
 ## Structural content
 

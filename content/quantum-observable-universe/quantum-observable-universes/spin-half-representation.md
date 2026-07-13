@@ -7,7 +7,7 @@ $$
 The standard basis $\{e_+, e_-\}$ of $V_{1/2}$ consists of weight vectors for the maximal torus $T \subset \mathrm{SU}(2)$:
 
 $$
-  T \cdot e_{\pm} =  e^{\pm i\theta_q} e_{\pm},
+  T \cdot e_{±} =  e^{± i\theta_q} e_{±},
   \qquad
   T = \left\{\!
     \begin{pmatrix} e^{i\theta_q} & 0 \\ 0 & e^{-i\theta_q} \end{pmatrix}

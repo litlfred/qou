@@ -32,4 +32,4 @@ $$
   \mathfrak{S}_q(K) \;=\; \sum_{j=1}^{k} \mathfrak{E}_\times^{(\epsilon_j)}(q)
 $$
 
-where $\epsilon_j = \pm 1$ represents the crossing sign. For a positive crossing: $\mathfrak{E}_\times^{(+)} = q$. For a negative crossing: $\mathfrak{E}_\times^{(-)} = q^{-1}$. The asymmetry $q \neq q^{-1}$ at the substrate parameter $q$ forces positive crossings to carry more energy than negative ones. This is the energy signature of parity violation.
+where $\epsilon_j = ± 1$ represents the crossing sign. For a positive crossing: $\mathfrak{E}_\times^{(+)} = q$. For a negative crossing: $\mathfrak{E}_\times^{(-)} = q^{-1}$. The asymmetry $q \neq q^{-1}$ at the substrate parameter $q$ forces positive crossings to carry more energy than negative ones. This is the energy signature of parity violation.

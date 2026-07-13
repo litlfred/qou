@@ -9,8 +9,8 @@ $\mathrm{SU}_q(2)$ weight space.*
 |:-----------:|:---------------:|:-------------------:|
 | $+1$ | proton nearest-neighbor | $Z(Z{-}1)/A^{1/3}$ |
 | $-1$ | neutron nearest-neighbor | $N(N{-}1)/A^{1/3}$ |
-| $0$ | balanced (pn mixed) | $A^{2/3}$ or $\pm 1/\sqrt{A}$ |
-| $\pm 2$ | next-nearest same-type | $Z^{4/3}/A^{1/3}$ |
+| $0$ | balanced (pn mixed) | $A^{2/3}$ or $± 1/\sqrt{A}$ |
+| $± 2$ | next-nearest same-type | $Z^{4/3}/A^{1/3}$ |
 | $\lvert c\rvert \geq 3$ | long-range | $T^p(T{+}1)^p/A^p$ |
 
 *Each scaling function counts the number of nucleon pairs at

@@ -62,7 +62,7 @@ $$
 The QOU substrate is pre-archimedean: every block in the
 [motivic substrate](#def:motivic-substrate) and the
 [algebraic quantum volume](#def:algebraic-quantum-volume) lives
-in $R = \mathbb{Z}[q^{\pm 1/2}, (q-q^{-1})^{-1}]$, a ring of
+in $R = \mathbb{Z}[q^{± 1/2}, (q-q^{-1})^{-1}]$, a ring of
 Laurent polynomials with no real-analytic transcendentals. QOU
 observables — masses, binding energies, the fine-structure
 constant — are real numbers, and the only exit from $R$ to
@@ -90,10 +90,10 @@ Within this purely algebraic substrate, the mass evaluation yields the algebraic
 
 $$
   \mathrm{Vol}_q(\beta) \;=\; \prod_{i=0}^{A-2}\hat{V}_i(q),
-  \qquad \hat{V}_i(q) \in \mathbb{Z}[q^{\pm 1/2}],
+  \qquad \hat{V}_i(q) \in \mathbb{Z}[q^{± 1/2}],
 $$
 
-a finite product of Laurent polynomials living strictly in $\mathbb{Z}[q^{\pm 1/2}]$. This domain is categorical and discrete—devoid of $\pi$, $\zeta(3)$, or real-analytic transcendentals.
+a finite product of Laurent polynomials living strictly in $\mathbb{Z}[q^{± 1/2}]$. This domain is categorical and discrete—devoid of $\pi$, $\zeta(3)$, or real-analytic transcendentals.
 
 Transcendental numbers enter the framework exclusively at the boundary of observation. The functor $\tau_{\text{arch}}$ projects categorical data into physical spacetime by taking the absolute logarithm of the algebraic quantum volume. This functor converts the discrete Hecke algebra states into continuous observables.
 
@@ -126,7 +126,7 @@ the existing PSLQ ruling.
 embeds smoothly into Bring's surface as the amphichiral mass
 mechanism. On the pre-archimedean side it has a completely rigorous
 motivic / algebraic representation via its Hecke normal form in
-$\mathbb{Z}[q^{\pm 1/2}]$. Once $\tau_{\text{arch}}$ maps this
+$\mathbb{Z}[q^{± 1/2}]$. Once $\tau_{\text{arch}}$ maps this
 motivic state into the observable continuum, its hyperbolic volume
 realizes as the transcendental
 $\mathrm{Vol}(4_1) = 2\,\mathrm{Cl}_2(\pi/3) \approx :val[Vol_4_1]{precision=6}$. The

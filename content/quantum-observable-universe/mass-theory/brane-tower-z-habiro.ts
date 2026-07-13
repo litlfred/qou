@@ -32,7 +32,7 @@ export default conjecture({
         "block. (1) The algebraic claim — that the brane tower " +
         "Φ_mass^trans(β) = Σ Φ_q(z_i) has a Cauchy limit in the z-Habiro " +
         "topology — remains OPEN (untouched). (2) The companion claim that a " +
-        "level-selection rule n⋆(𝔥) picks the physical truncation depth was " +
+        "level-selection rule n⋆($\\mathfrak{h}$) picks the physical truncation depth was " +
         "REFUTED across six probed families (scalar, operator-valued, " +
         "multiplicity-refined, pair-knot product, pair-knot Markov-trace, and " +
         "the regularization sweep): no uniform n⋆ closes the AME gap — see the " +

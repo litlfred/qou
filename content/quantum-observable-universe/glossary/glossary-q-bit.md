@@ -8,7 +8,7 @@ $$
 
 is the operational entropy.
 
-**The two Hecke eigenvalues.** The name "$q$-bit" reflects the Iwahori--Hecke algebra's two eigenvalues $q$ (symmetric channel) and $-q^{-1}$ (antisymmetric channel). At $q = 1$ the eigenvalues merge to $\pm 1$ and one $q$-bit equals one classical nat.
+**The two Hecke eigenvalues.** The name "$q$-bit" reflects the Iwahori--Hecke algebra's two eigenvalues $q$ (symmetric channel) and $-q^{-1}$ (antisymmetric channel). At $q = 1$ the eigenvalues merge to $± 1$ and one $q$-bit equals one classical nat.
 
 **Values.**
 

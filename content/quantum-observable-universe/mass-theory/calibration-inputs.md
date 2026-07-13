@@ -4,13 +4,13 @@ The QOU framework requires exactly three calibration inputs from experiment: the
 
 | Input (proxy) | CAL | Canonical observable | What it fixes | Rel. precision |
 |-------|:--:|-------|--------------|:-:|
-| $m_e = 0.51099895000 \pm 0.00000000015$ MeV | CAL-1 | $m_e$ (leptonic mass scale) | the MeV unit + cohomological period | $2.9 \times 10^{-10}$ |
-| $m_\mu / m_e = 206.7682830 \pm 0.0000045$ | CAL-2 | $\mathfrak{D}_\beta$ ($n$ $\beta$-decay width) | substrate $q_0$ ($W$-plane modulus) | $2.2 \times 10^{-8}$ |
-| $m_\pi = 139.57039 \pm 0.00018$ MeV | CAL-3 | $\mathfrak{D}_\pi$ (pion decay width) | orthogonal meson scale ($\mathrm{Vol}(\mathrm{Hopf})=0$) | $1.3 \times 10^{-6}$ |
+| $m_e = 0.51099895000 ± 0.00000000015$ MeV | CAL-1 | $m_e$ (leptonic mass scale) | the MeV unit + cohomological period | $2.9 \times 10^{-10}$ |
+| $m_\mu / m_e = 206.7682830 ± 0.0000045$ | CAL-2 | $\mathfrak{D}_\beta$ ($n$ $\beta$-decay width) | substrate $q_0$ ($W$-plane modulus) | $2.2 \times 10^{-8}$ |
+| $m_\pi = 139.57039 ± 0.00018$ MeV | CAL-3 | $\mathfrak{D}_\pi$ (pion decay width) | orthogonal meson scale ($\mathrm{Vol}(\mathrm{Hopf})=0$) | $1.3 \times 10^{-6}$ |
 
 > **CAL-2 cross-check (not a separate input).** The free-neutron
 > $\beta$-decay Q-value $\mathfrak{Q}_\beta(n) = \hbar/\mathfrak{D}_\beta
-> = 0.78233341 \pm 0.00000061$ MeV is the **proxy for CAL-2**. The
+> = 0.78233341 ± 0.00000061$ MeV is the **proxy for CAL-2**. The
 > hadronic energy scale $\mathfrak{E}_0$ is framework-derived from
 > $(m_e, q_0)$; $\mathfrak{Q}_\beta$ reproduced from $q_0$ then validates
 > it to $0.17\%$ (subject to the net-ansatz caveat below). It is a

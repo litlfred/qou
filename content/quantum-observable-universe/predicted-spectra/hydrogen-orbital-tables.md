@@ -12,7 +12,7 @@
 | $n$ | Principal | $1, 2, 3, \ldots$ | Writhe level $w = 2n + 1$ |
 | $\ell$ | Angular momentum | $0, 1, \ldots, n-1$ | Fourier mode on trefoil torus |
 | $m$ | Magnetic | $-\ell, \ldots, +\ell$ | Projection onto Reeb axis |
-| $s$ | Spin | $\pm \tfrac{1}{2}$ | Crossing orientation in Hopf link |
+| $s$ | Spin | $± \tfrac{1}{2}$ | Crossing orientation in Hopf link |
 
 - **$n$**: The writhe level. This counts the R-I curls added at the exceptional divisor.
 - **$\ell$**: The Fourier mode of the curl distribution on the trefoil's torus. This dictates how the writhe excitation oscillates around the $(2,3)$ winding.

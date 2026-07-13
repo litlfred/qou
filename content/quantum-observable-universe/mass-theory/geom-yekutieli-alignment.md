@@ -63,13 +63,13 @@ This is the categorical substitute for the canonical sheaf in the
 non-commutative setting.
 
 **Part 2: Geometric type selects the evaluation mode (algebraic
-side).** The proof works in $\mathbb{Z}[q^{\pm 1/2}]$ throughout;
+side).** The proof works in $\mathbb{Z}[q^{± 1/2}]$ throughout;
 the geometric / 3-manifold reading appears only as the τ-image
 discussed in Part 3. Algebraically, the rigid dualizing evaluation
 $\langle \omega_A^\bullet, S^3 \setminus K \rangle_{\mathrm{Frob}}$
 admits a single closed-form expression in terms of the
 [algebraic quantum volume](#def:algebraic-quantum-volume)
-$\mathrm{Vol}_q(\beta) \in \mathbb{Z}[q^{\pm 1/2}]$ and the
+$\mathrm{Vol}_q(\beta) \in \mathbb{Z}[q^{± 1/2}]$ and the
 [Chern-Simons phase](#rem:chern-simons-as-knot-invariant) $\mathrm{CS}_q(\beta)$:
 
 $$
@@ -86,13 +86,13 @@ required; the Wedderburn-Artin block decomposition of $H_n(R, q)$
 selects which of the two summands dominates for a given braid:
 
 - *Algebraic-hyperbolic regime* ($\mathrm{Vol}_q(\beta) \ne 0$
-  in $\mathbb{Z}[q^{\pm 1/2}]$): the first summand carries the
+  in $\mathbb{Z}[q^{± 1/2}]$): the first summand carries the
   contribution. The fundamental class pairs against the algebraic
   quantum volume, and the Frobenius normalisation introduces
   $1/\hbar_q^2$ as the mass scale.
 
 - *Algebraic-torus regime* ($\mathrm{Vol}_q(\beta) = 0$ in
-  $\mathbb{Z}[q^{\pm 1/2}]$, e.g. $\beta = \beta_{T_{m,n}}$): the
+  $\mathbb{Z}[q^{± 1/2}]$, e.g. $\beta = \beta_{T_{m,n}}$): the
   algebraic quantum volume vanishes identically and the second
   summand carries the contribution. The dualising normalisation
   flips to $\hbar_q^2$ (multiplicative rather than divisive),
@@ -121,7 +121,7 @@ $$
 $$
 
 since $\mathrm{Vol}_q(\beta^*) = \mathrm{Vol}_q(\beta)$ in
-$\mathbb{Z}[q^{\pm 1/2}]$ (algebraic quantum volume is invariant
+$\mathbb{Z}[q^{± 1/2}]$ (algebraic quantum volume is invariant
 under mirror image, by inspection of the Markov-trace product
 formula) and $\mathrm{CS}_q(\beta^*) = -\mathrm{CS}_q(\beta)$
 (the Chern-Simons phase changes sign on mirror — direct

@@ -1,6 +1,6 @@
 The contact boundary ([prop:collatz-contact-boundary](#prop:collatz-contact-boundary)) establishes that the $q$-Collatz orbit contracts if and only if each tripling is followed by at least two halvings on average. This condition has equivalent categorical, arithmetic, and residue faces.
 
-In the Iwahori--Hecke algebra $H_n(q)$, the Collatz step composes Hecke reduction ($T^2 = (q-q^{-1})T + 1$) and Markov destabilization ($\mathrm{tr}_M(xT_n) = z \cdot \mathrm{tr}_M(x)$). The Markov trace $\mathrm{tr}_M \colon H_n(q) \to \mathbb{Z}[q^{\pm 1}]$ sends braid words to Jones polynomials.
+In the Iwahori--Hecke algebra $H_n(q)$, the Collatz step composes Hecke reduction ($T^2 = (q-q^{-1})T + 1$) and Markov destabilization ($\mathrm{tr}_M(xT_n) = z \cdot \mathrm{tr}_M(x)$). The Markov trace $\mathrm{tr}_M \colon H_n(q) \to \mathbb{Z}[q^{± 1}]$ sends braid words to Jones polynomials.
 
 The categorical conjecture asserts that for every $h \in H_n(q)$, the iterated Markov trace converges to the unknot:
 
@@ -10,7 +10,7 @@ $$
 
 The identity braid is the unique attractor of the Hecke--Collatz dynamics. Every braid untangles to the unknot under iterated crossing resolution and destabilization.
 
-The contact boundary translates this into a divisibility condition on the Skein module $\mathcal{S}(q) \cong \mathbb{Z}[q^{\pm 1}]$. Each odd step produces $[3]_q P + 1$. The Skein divisibility identity $[3]_q = q[2]_q + 1$ guarantees one built-in halving. The net contraction per cycle with $v$ total halvings is $[3]_q / [2]_q^v$. This is contractive if and only if $[2]_q^v > [3]_q$. The integer threshold is exactly $v = 2$. Two halvings per tripling are required.
+The contact boundary translates this into a divisibility condition on the Skein module $\mathcal{S}(q) \cong \mathbb{Z}[q^{± 1}]$. Each odd step produces $[3]_q P + 1$. The Skein divisibility identity $[3]_q = q[2]_q + 1$ guarantees one built-in halving. The net contraction per cycle with $v$ total halvings is $[3]_q / [2]_q^v$. This is contractive if and only if $[2]_q^v > [3]_q$. The integer threshold is exactly $v = 2$. Two halvings per tripling are required.
 
 The $[2]_q$-divisor is $q = -1$. Evaluating the Collatz output at this divisor: since $[3]_q|_{q=-1} = 1$ and $[2]_q|_{q=-1} = 0$, the condition $v_{[2]} \geq 2$ becomes $(q+1)^2$-divisibility of $[3]_q P + 1$ at $q = -1$.
 

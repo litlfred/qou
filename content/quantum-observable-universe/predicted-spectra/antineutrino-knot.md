@@ -17,4 +17,4 @@ $$
 
 The electron $T_{2,3}$ carries topological mass via crossing energy. The antineutrino $T_{1,0}^{\sigma}$ carries zero topological mass and exits as a massless particle.
 
-The $L_0^{\pm}$ smoothing strictly produces one fermion knot ($T_{2,3}$ or $T_{2,3}^{\sigma}$) and one (anti)neutrino ($T_{1,0}$ or $T_{1,0}^{\sigma}$). By creating exactly one lepton-antilepton pair, each smoothing conserves lepton number.
+The $L_0^{±}$ smoothing strictly produces one fermion knot ($T_{2,3}$ or $T_{2,3}^{\sigma}$) and one (anti)neutrino ($T_{1,0}$ or $T_{1,0}^{\sigma}$). By creating exactly one lepton-antilepton pair, each smoothing conserves lepton number.

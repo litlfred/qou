@@ -1,7 +1,7 @@
 The classical limit reveals how the QOU categorical trace degenerates to the standard quantum-mechanical formalism.
 
 **The Hecke degeneration.**
-At $q = 1$, the minimal polynomial of the braiding drops from a quadratic with distinct roots $q \neq -q^{-1}$ to a quadratic with roots $\pm 1$. The eigenspaces $S^2 V$ and $\Lambda^2 V$ merge into the $+1$ and $-1$ eigenspaces of the symmetric group transposition. The Hecke algebra $H_n(R, q)$ becomes $k[S_n]$.
+At $q = 1$, the minimal polynomial of the braiding drops from a quadratic with distinct roots $q \neq -q^{-1}$ to a quadratic with roots $± 1$. The eigenspaces $S^2 V$ and $\Lambda^2 V$ merge into the $+1$ and $-1$ eigenspaces of the symmetric group transposition. The Hecke algebra $H_n(R, q)$ becomes $k[S_n]$.
 
 **Loss of knot discrimination.**
 The Jones polynomial satisfies $J_K(1) = 1$ for every knot $K$. The Markov trace becomes constant. All knots become topologically trivial under the symmetric quotient $B_n \twoheadrightarrow S_n$. The irreducible $H_n(R, q)$-modules $S_\lambda$ become Specht modules of $S_n$. This yields the standard angular momentum eigenbasis $|j, m\rangle$ for the $\mathrm{SU}(2)$-coupling of $n$ spin-$\frac{1}{2}$ particles.

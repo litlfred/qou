@@ -1,11 +1,11 @@
-*Let $\hat V_i(q) = z(q)a_i(q) + b_i(q) \in \mathbb{Z}[q^{\pm 1/2}, z]$ be the traced volume of the $i$-th crossing of a closed braid. For any two indices $i, j$:*
+*Let $\hat V_i(q) = z(q)a_i(q) + b_i(q) \in \mathbb{Z}[q^{± 1/2}, z]$ be the traced volume of the $i$-th crossing of a closed braid. For any two indices $i, j$:*
 
 $$
   \hat V_i(q) \cdot \hat V_j(q)
   \;=\;
   \hat V_j(q) \cdot \hat V_i(q)
   \qquad
-  \text{in } \mathbb{Z}[q^{\pm 1/2}, z].
+  \text{in } \mathbb{Z}[q^{± 1/2}, z].
 $$
 
 *Equivalently:*

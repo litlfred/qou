@@ -7,7 +7,7 @@ with three observations:
 
 1. **Descended piece.** The level-$0$ Markov trace
    $|\mathrm{tr}_M(\rho(\beta))|$ is the Jones polynomial
-   $J_K(q) \in \mathbb{Z}[q^{\pm 1/2}]$
+   $J_K(q) \in \mathbb{Z}[q^{± 1/2}]$
    ([`thm:jones-markov-trace`](#thm:jones-markov-trace)), an
    element of $\mathbb{Q}(q)$.
 2. **Singleton tower.** Each $\Phi_q(|\hat V_i|)$ is a quantum

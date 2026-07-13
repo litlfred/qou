@@ -26,7 +26,7 @@ $$
   \bigotimes_{e=1}^{Z} T_{\gamma e}^{(e, i)}
 $$
 
-The eigenvalues of the tensor product are **products** of individual eigenvalues: $\lambda_{\pm}^{(1)} \cdot \lambda_{\pm}^{(2)} \cdots$. The degeneracy structure of these products determines the sub-shells:
+The eigenvalues of the tensor product are **products** of individual eigenvalues: $\lambda_{±}^{(1)} \cdot \lambda_{±}^{(2)} \cdots$. The degeneracy structure of these products determines the sub-shells:
 
 - **$s$ orbital** ($\ell = 0$): Both electrons occupy the same eigenstate $\lambda_+^n$ (no angular node). Capacity: $2$ (spin up/down).
 - **$p$ orbital** ($\ell = 1$): One electron occupies $\lambda_+$, one occupies $\lambda_-$ (one angular node from the alternating eigenvalue). Capacity: $6$ ($m = -1, 0, +1$ times spin).
@@ -42,7 +42,7 @@ Given a Skein polynomial $P(q) = \prod_i \hat{V}_i(q)$ ([Skein polynomial](#prop
 
 1. **Identify the electron-nucleus generators.** These are the generators $\sigma_i$ where electron strands cross nuclear strands.
 2. **Extract the transfer matrix** $M_i(q)$ at each such generator from the chain reduction.
-3. **Diagonalize** $M_i = S \Lambda S^{-1}$ to find the eigenvalues $\lambda_{\pm}^{(i)}$.
+3. **Diagonalize** $M_i = S \Lambda S^{-1}$ to find the eigenvalues $\lambda_{±}^{(i)}$.
 4. **Shell $n$** at generator $i$ is the $n$-th power: $\hat{V}_i(n) = z(S\Lambda^n S^{-1})_{11} + (S\Lambda^n S^{-1})_{21}$.
 5. **Sub-shells** emerge from the tensor product eigenvalue degeneracies for multi-electron atoms.
 6. **Transition energies** follow from $\hat{V}(n+1) - \hat{V}(n)$ via the Chebyshev recurrence.

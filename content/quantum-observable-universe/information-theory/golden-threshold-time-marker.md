@@ -13,4 +13,4 @@ $$
 
 The negative sign indicates that $\hbar_q < 0$ for $q < 1$, which reverses the Reeb flow. The magnitude $1/\varphi$ represents the golden-ratio fraction of the Big Bang Planck time. The degeneration occurs at a time scale that relates to the fundamental step via the golden ratio.
 
-Over $\mathbb{F}_\pp$, the golden ratio $\varphi = (1 + \sqrt{5})/2$ exists if and only if $5$ is a quadratic residue modulo $\pp$, requiring $\pp \equiv \pm 1 \pmod{5}$. The golden degeneration is visible only to these primes. This selection rule determines which finite-field realisations detect the chiral instability.
+Over $\mathbb{F}_\pp$, the golden ratio $\varphi = (1 + \sqrt{5})/2$ exists if and only if $5$ is a quadratic residue modulo $\pp$, requiring $\pp \equiv ± 1 ±od{5}$. The golden degeneration is visible only to these primes. This selection rule determines which finite-field realisations detect the chiral instability.

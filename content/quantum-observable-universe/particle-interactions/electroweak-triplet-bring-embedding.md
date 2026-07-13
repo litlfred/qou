@@ -7,4 +7,4 @@ The canonical Seifert surface of the 2-component torus link $T(2, 2k)$ has genus
 The genus, enumeration, and embedding steps involve elementary $\mathbb{N}$-arithmetic. The Hoefsmit idempotent orthogonality is cited from the prior theorem. $\square$
 
 **Scope.**
-This proposition supplies the structural half of the electroweak torus-link story. It establishes that the triplet fits the genus-$4$ host. It does not fix which link carries $W^\pm$ versus $Z$ versus $H$. That physical identification constitutes the subsequent conjecture. This conjecture relies on the open selection, charge, and spin sub-conjectures.
+This proposition supplies the structural half of the electroweak torus-link story. It establishes that the triplet fits the genus-$4$ host. It does not fix which link carries $W^±$ versus $Z$ versus $H$. That physical identification constitutes the subsequent conjecture. This conjecture relies on the open selection, charge, and spin sub-conjectures.

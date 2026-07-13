@@ -1,4 +1,4 @@
-*Working over $R = \mathbb{Z}[q^{\pm 1/2}, (q-q^{-1})^{-1}]$, let
+*Working over $R = \mathbb{Z}[q^{± 1/2}, (q-q^{-1})^{-1}]$, let
 $\beta_s = T_{2,9}$, $\beta_w = T_{3,5}$ be the unique pair of
 genus-$4$ torus knots
 ([Bring uniqueness](#prop:force-carrier-bring-uniqueness)).  Each

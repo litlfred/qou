@@ -1,5 +1,5 @@
 **Definition (Algebraic Quantum Volume).**
-*Let $W \in H_n(q)$ be a knot operator representing a confined state. The **algebraic quantum volume** of $W$ is its full canonical Markov trace over $\mathbb{Z}[q^{\pm 1/2}]$:*
+*Let $W \in H_n(q)$ be a knot operator representing a confined state. The **algebraic quantum volume** of $W$ is its full canonical Markov trace over $\mathbb{Z}[q^{± 1/2}]$:*
 
 $$
   \mathrm{Vol}_{\mathrm{alg}}(W)

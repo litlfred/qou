@@ -77,7 +77,7 @@ $F_n(z) = \sum_{\lambda \vdash n} \dim_q^{-1}(V_\lambda) \cdot z^{|\lambda|}$,
 and its expansion as an infinite product in $z$ is
 $F_n(z) = \prod_{k \geq 1} (1 - q^{-k} z)^{-c_k(n)} \cdot u_n(q)$
 where $c_k(n) = \#\{\lambda \vdash n : \max\text{-hook}(\lambda) = k\}$
-and $u_n(q) \in \mathbb{Z}[q^{\pm 1/2}]$ is a unit. The exponent
+and $u_n(q) \in \mathbb{Z}[q^{± 1/2}]$ is a unit. The exponent
 $c_k(n)$ counts depth-exactly-$k$ partitions; the factor
 $(1 - q^{-k} z)^{-c_k(n)}$ contributes the depth-$k$ stratum of $Z(A)$.
 
@@ -99,7 +99,7 @@ $\phi_q^{(k)}(z_i)$ from Step 2 (modulo orthogonal strata) gives
 
 $$
   \Phi_q^{[\leq k]}(z_i) - \Phi_q^{[\leq k-1]}(z_i)
-  \;\equiv\; \phi_q^{(k)}(z_i) \pmod{\bigoplus_{\ell \neq k} Z^{(\ell)}(A)}.
+  \;\equiv\; \phi_q^{(k)}(z_i) ±od{\bigoplus_{\ell \neq k} Z^{(\ell)}(A)}.
 $$
 
 *Step 4 (Frobenius truncation for $T_w$).* For $T_w \in H_n(R, q)$
@@ -155,7 +155,7 @@ explicit. The remaining open piece in Step 3 is **(d)'s product
 expansion** $F_n(z) = \prod_k (1 - q^{-k}z)^{-c_k(n)} \cdot u_n(q)$:
 the existence of such an expansion follows from finiteness of
 $\dim_q^{-1}$ as a Laurent polynomial and unique factorisation in
-$\mathbb{Z}[q^{\pm 1/2}][z]$, but the explicit identification of the
+$\mathbb{Z}[q^{± 1/2}][z]$, but the explicit identification of the
 exponents $c_k(n)$ with $\#\{\lambda : \max\text{-hook} = k\}$
 requires verification on small cases (D's $H_6$ and ${}^3\mathrm{He}$'s
 $H_9$ are tractable computations).

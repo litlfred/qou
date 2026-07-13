@@ -25,7 +25,7 @@ Both are cubics in one variable parametrized by another. The color cubic (C) car
 
 The stability cubic (S) is rational. Solving for $p$ yields $p = t^3 / (2 + 2ct^2)$, confirming genus $0$. The color cubic (C) has genus $1$ for generic $z$ (it defines an elliptic curve whose $j$-invariant varies as a rational function of $z$).
 
-The physical stability problem incorporates the pairing energy $\pm \lambda_P / t^{3/2}$, distinguishing even-even, even-odd, odd-even, and odd-odd nuclei. The **degeneracy locus** — the set of $(p, t)$ where the even-even and odd-odd binding energies coincide — satisfies:
+The physical stability problem incorporates the pairing energy $± \lambda_P / t^{3/2}$, distinguishing even-even, even-odd, odd-even, and odd-odd nuclei. The **degeneracy locus** — the set of $(p, t)$ where the even-even and odd-odd binding energies coincide — satisfies:
 
 $$
   t^3 - 2cpt^2 - 2p

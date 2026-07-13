@@ -4,7 +4,7 @@
 
 | Label | Title | Chapter | Lean |
 |-------|-------|---------|------|
-| [def:qz-bicompletion](#def:qz-bicompletion) | $(q, z)$-bicompletion $\widehat{\mathbb{Z}[q^{\pm 1}, z]}_{q,z}$ | Ch 10 | `qou:QOU.HabiroRing.QZBicompletionElement` |
+| [def:qz-bicompletion](#def:qz-bicompletion) | $(q, z)$-bicompletion $\widehat{\mathbb{Z}[q^{± 1}, z]}_{q,z}$ | Ch 10 | `qou:QOU.HabiroRing.QZBicompletionElement` |
 | [def:Q-value-transition](#def:Q-value-transition) | $\mathcal{Q}_q$-Value as Categorical Action Difference | Ch 12 | `qou:QOU.Archimedean.QValueTransition` |
 | [def:su2-basis](#def:su2-basis) | $\mathfrak{su}(2)$ basis | Ch 5 | `qou:QOU.Su2Basis` |
 | [def:so3-generators](#def:so3-generators) | $\mathrm{SO}(3)$ generators | Ch 5 | `qou:QOU.So3Generators` |
@@ -29,7 +29,7 @@
 | [def:q-pochhammer-partial-product](#def:q-pochhammer-partial-product) | $q$-Pochhammer partial product $\Phi_n(x; q)$ | Ch 10 | `qou:QOU.QPochhammer.partialProduct` |
 | [def:q-resolvent](#def:q-resolvent) | $q$-Resolvent (categorical) | Ch 2 | `qou:QOU.QResolvent` |
 | [def:q-yang-mills-levi](#def:q-yang-mills-levi) | $q$-Weighted Yang--Mills--Levi functional | Ch 3 | `qou:QOU.QYangMillsLevi` |
-| [def:z-habiro-ring](#def:z-habiro-ring) | $z$-Habiro ring $\widehat{\mathbb{Z}[q^{\pm 1}][z]}_z$ | Ch 10 | `qou:QOU.HabiroRing.ZHabiroElement` |
+| [def:z-habiro-ring](#def:z-habiro-ring) | $z$-Habiro ring $\widehat{\mathbb{Z}[q^{± 1}][z]}_z$ | Ch 10 | `qou:QOU.HabiroRing.ZHabiroElement` |
 | [def:aeon](#def:aeon) | Aeon | Ch 18 | `qou:QOU.Aeon` |
 | [def:algebraic-quantum-volume](#def:algebraic-quantum-volume) | Algebraic quantum volume $\mathrm{Vol}_q(K)$ | Ch 10 | `qou:QOU.BraidKnot.AlgebraicQuantumVolume` |
 | [def:antineutrino-knot](#def:antineutrino-knot) | Antineutrino as mirror unknot $T_{1,0}^{\sigma}$ | Ch 12 | `qou:QOU.Archimedean.Antineutrino` |
@@ -254,7 +254,7 @@
 
 | Label | Title | Chapter | Lean |
 |-------|-------|---------|------|
-| [prop:silver-ratio-beta-decay-null](#prop:silver-ratio-beta-decay-null) | **Silver-ratio $\beta$-decay null**: at $q = 1 \pm \sqrt{2}$, the categorical $\beta$-decay $Q$-value vanishes; the Hecke generator $\sigma$ has eigenvalues = $1 \pm \sqrt{2}$ (silver-ratio self-referential fixed point); proton and neutron Markov-traces become categorically indistinguishable | Ch 8 | `qou:QOU.ParticleInteractions.SilverRatioBetaDecayNull` |
+| [prop:silver-ratio-beta-decay-null](#prop:silver-ratio-beta-decay-null) | **Silver-ratio $\beta$-decay null**: at $q = 1 ± \sqrt{2}$, the categorical $\beta$-decay $Q$-value vanishes; the Hecke generator $\sigma$ has eigenvalues = $1 ± \sqrt{2}$ (silver-ratio self-referential fixed point); proton and neutron Markov-traces become categorically indistinguishable | Ch 8 | `qou:QOU.ParticleInteractions.SilverRatioBetaDecayNull` |
 | [prop:force-carrier-bring-uniqueness](#prop:force-carrier-bring-uniqueness) | $(T_{2,9}, T_{3,5})$ is the unique pair of genus-$4$ torus knots | Ch 12 | `qou:QOU.Archimedean.force_carrier_bring_uniqueness` |
 | [prop:x5-z5-automorphism](#prop:x5-z5-automorphism) | $\mathbb{Z}_5$ automorphism of the hyperelliptic quintic | Ch 6 | `qou:QOU.HyperellipticQuintic.z5_automorphism` |
 | [prop:x5-bring-weight-identification](#prop:x5-bring-weight-identification) | $\mathbb{Z}_5$-weight identification: $x$ on $\mathcal{X}_5$ matches $w_1$ on Bring | Ch 6 | `qou:QOU.HyperellipticQuintic.bring_weight_match` |
@@ -596,7 +596,7 @@
 | [prop:q-laplacian-spectral-tower](#prop:q-laplacian-spectral-tower) | The $q$-Laplacian spectral tower $[k]_q^2$ and its root-of-unity (Verlinde/ADE) truncation | Ch 2 | `qou:QOU.QuantumObservableUniverses.qIntegerNumerator_vanishes_at_truncRoot` |
 | [prop:ordering-jet-compatibility](#prop:ordering-jet-compatibility) | The admissible ordering extends through the jet tower | Ch 4 | `qou:QOU.Torsion.degLex_wellFounded` |
 | [prop:baryon-product-from-alt](#prop:baryon-product-from-alt) | The baryon integrand $\prod_k dc_k/dz$ is the $\mathrm{Alt}^3$-isotype of the color-tube Jacobian | Ch 12 | `qou:QOU.Archimedean.baryonProductFromAlt` |
-| [prop:categorical-coordinate-ring](#prop:categorical-coordinate-ring) | The categorical-coordinate ring $R[i, q^{\pm 1}]$ of chart-transition data on $\mathbb{P}_q(V)$ | Ch 2 | `qou:QOU.QuantumObservableUniverse.CategoricalCoordinateRing` |
+| [prop:categorical-coordinate-ring](#prop:categorical-coordinate-ring) | The categorical-coordinate ring $R[i, q^{± 1}]$ of chart-transition data on $\mathbb{P}_q(V)$ | Ch 2 | `qou:QOU.QuantumObservableUniverse.CategoricalCoordinateRing` |
 | [prop:ilp-covalent-bond](#prop:ilp-covalent-bond) | The covalent bond is the inverse trefoil $T_{2,3}^{-1}$ | Ch 14 | `qou:QOU.Molecular.covalent_bond_is_ilp_optimal` |
 | [prop:descartes-elliptic-curve](#prop:descartes-elliptic-curve) | The Descartes elliptic curve $\mathcal{E}_q$ | Ch 6 | `qou:QOU.Archimedean.descartes_elliptic_curve` |
 | [prop:figure-eight-reeb-rotation](#prop:figure-eight-reeb-rotation) | The figure-eight knot operator acts unitarily on $V_{(2,1)}$ | Ch 5 | `qou:QOU.BraidsAndKnots.figure_eight_unitary_on_standard` |
@@ -703,7 +703,7 @@
 | [lem:jones-mobius-diagonal](#lem:jones-mobius-diagonal) | Jones polynomial as the diagonal of the categorical Möbius kernel | Ch 9 | `qou:QOU.Braiding.JonesMobiusDiagonal.markov_eq_mobius_contact` |
 | [lem:feynman-markov-identification](#lem:feynman-markov-identification) | Markov-weighted eigenbasis sum equals the Markov trace | Ch 10 | `qou:QOU.FeynmanPathIntegrals.markov_identification` |
 | [lem:nucleon-borromean-topology](#lem:nucleon-borromean-topology) | Nucleon Borromean topology and Hopf-link binding | Ch 13 | `qou:QOU.HadronicMass.nucleon_borromean_topology` |
-| [lem:vhat-pair-commutation-trace](#lem:vhat-pair-commutation-trace) | Pair commutation at the traced-volume level: $\hat V_i \hat V_j = \hat V_j \hat V_i$ in $\mathbb{Z}[q^{\pm 1/2}, z]$ | Ch 10 | `qou:QOU.BraidKnot.VhatPairCommutationTrace` |
+| [lem:vhat-pair-commutation-trace](#lem:vhat-pair-commutation-trace) | Pair commutation at the traced-volume level: $\hat V_i \hat V_j = \hat V_j \hat V_i$ in $\mathbb{Z}[q^{± 1/2}, z]$ | Ch 10 | `qou:QOU.BraidKnot.VhatPairCommutationTrace` |
 | [lem:pair-skein-mass-formula](#lem:pair-skein-mass-formula) | Pair Skein mass and crossing-by-crossing recursion | Ch 13 | `qou:QOU.HadronicMass.pair_skein_mass_formula` |
 | [lem:tower-pair-equality-fixed-level](#lem:tower-pair-equality-fixed-level) | Pair-contribution equality at a fixed jet level: $z^2 \sum_{(i,j) \in \mathcal{P}_n} \Phi_q(|\hat V_i^{(n)} \hat V_j^{(n)}|)$ is an exact identity | Ch 10 | `qou:QOU.BraidKnot.TowerPairEqualityFixedLevel` |
 | [lem:feynman-trace-collapse](#lem:feynman-trace-collapse) | Path integral collapses to a finite sum on the eigenbasis | Ch 10 | `qou:QOU.FeynmanPathIntegrals.trace_collapse` |

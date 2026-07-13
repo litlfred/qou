@@ -1,8 +1,8 @@
 **Conjecture (electroweak/Higgs torus-link identification).**
-*In any QOU built on Bring's surface with EM/strong sector $\{T_{2,9}, T_{3,5}\}$, the standard-model electroweak gauge bosons $W^\pm, Z$ and the Higgs scalar $H$ correspond to the three even-twist $2$-component torus links of the sub-saturating complement:*
+*In any QOU built on Bring's surface with EM/strong sector $\{T_{2,9}, T_{3,5}\}$, the standard-model electroweak gauge bosons $W^±, Z$ and the Higgs scalar $H$ correspond to the three even-twist $2$-component torus links of the sub-saturating complement:*
 
 $$
-  W^{\pm} \;\longleftrightarrow\; T(2,4),
+  W^{±} \;\longleftrightarrow\; T(2,4),
   \qquad
   Z \;\longleftrightarrow\; T(2,6),
   \qquad
@@ -34,7 +34,7 @@ Given C1, the carrier window $0 < g < 4$ contains exactly the genera $1, 2, 3$ (
 
 Charge and spin are unified by one $\mathbb{Z}/2$ datum: the assignment of each carrier to a sector of the spin involution $\sigma$, $A = A_+ \oplus A_-$. Restricted to the sym/alt Hecke block, $\sigma$ is the swap of the eigenvalues $q^{2k} \leftrightarrow q^{-2k}$. Its projections give a bar-even part in $A_+$ (neutral, retained by the Markov trace) and a bar-odd part in $A_-$ (charged, traceless). The Higgs is the bar-even self-dual carrier.
 
-Given the sector assignment ($H$ singlet, $W^\pm, Z$ doublets), spin and charge follow. $H \in A_+$ implies scalar (spin $0$) and neutral. $W^\pm \in A_-$ implies vector (spin $1$) with $T_3 = \pm 1$. $Z \in A_-$ implies vector, neutral with $T_3 = 0$ via the $(W^3, B) \mapsto (Z, \gamma)$ Weinberg mixing. The remaining conjectural input is the sector assignment itself.
+Given the sector assignment ($H$ singlet, $W^±, Z$ doublets), spin and charge follow. $H \in A_+$ implies scalar (spin $0$) and neutral. $W^± \in A_-$ implies vector (spin $1$) with $T_3 = ± 1$. $Z \in A_-$ implies vector, neutral with $T_3 = 0$ via the $(W^3, B) \mapsto (Z, \gamma)$ Weinberg mixing. The remaining conjectural input is the sector assignment itself.
 
 **The $\sigma_5^8$ bar-grading is derived from spin.**
 
@@ -44,11 +44,11 @@ This bar-grading is derived from the two carriers' spins. The sector$\to$spin ma
 
 **The $W$ vs $Z$ slot assignment is a free label.**
 
-Spin fixes each carrier's sector (scalar $H \to A_+$; vectors $W, Z \to A_-$). It does not fix which of the two $A_-$ vector slots is the charged $W^\pm$ and which is the neutral $Z$. The corpus map $Q = \tfrac12\,\mathrm{writhe}$ on the all-positive braid $\sigma_1^{2k}$ gives $Q(T(2,2k)) = k > 0$ for all three carriers. It cannot single out the neutral slot. The assignment $W = \sigma_1^4$ relies on the mass ordering $4 < 6 < 8$. Both $W = \sigma_1^4$ and the mirror $W = \sigma_3^6$ satisfy every proved constraint.
+Spin fixes each carrier's sector (scalar $H \to A_+$; vectors $W, Z \to A_-$). It does not fix which of the two $A_-$ vector slots is the charged $W^±$ and which is the neutral $Z$. The corpus map $Q = \tfrac12\,\mathrm{writhe}$ on the all-positive braid $\sigma_1^{2k}$ gives $Q(T(2,2k)) = k > 0$ for all three carriers. It cannot single out the neutral slot. The assignment $W = \sigma_1^4$ relies on the mass ordering $4 < 6 < 8$. Both $W = \sigma_1^4$ and the mirror $W = \sigma_3^6$ satisfy every proved constraint.
 
 **Supporting evidence.**
 
-1. **Mass ordering.** The standard-model ordering $m_{W^\pm} < m_Z < m_H$ maps monotonically onto the crossing-number ordering $4 < 6 < 8$.
+1. **Mass ordering.** The standard-model ordering $m_{W^±} < m_Z < m_H$ maps monotonically onto the crossing-number ordering $4 < 6 < 8$.
 2. **PSD-feasibility probe.** An exploratory SDP-feasibility probe shows PSD discrimination. Only the even-twist torus-link triplet $\{T(2,4), T(2,6), T(2,8)\}$ produced positive-semidefinite Hecke certificates on every Wedderburn block. 
 
 PSD-feasibility is necessary but not sufficient. It holds for every even-twist $T(2, 2k)$ at any $k \geq 1$.

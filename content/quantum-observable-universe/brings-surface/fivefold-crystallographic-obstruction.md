@@ -2,4 +2,4 @@ A lattice $\Lambda \subset \mathbb{R}^n$ allows rotational symmetry of order $k$
 
 See [Table 1](#tbl:fivefold-symmetry-table1-data).
 
-The $5$-fold symmetry of Bring's surface uniquely breaks periodicity. It is carried by $T_{3,5}$, the weak force mediator, which is the only force violating parity and utilizing massive carriers ($W^{\pm}$, $Z^0$). The weak force remains weak precisely because its $5$-fold symmetry confines it to local, aperiodic interactions.
+The $5$-fold symmetry of Bring's surface uniquely breaks periodicity. It is carried by $T_{3,5}$, the weak force mediator, which is the only force violating parity and utilizing massive carriers ($W^{±}$, $Z^0$). The weak force remains weak precisely because its $5$-fold symmetry confines it to local, aperiodic interactions.

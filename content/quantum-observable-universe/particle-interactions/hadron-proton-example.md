@@ -16,7 +16,7 @@ The Borromean link requires all three components to remain linked. Removing any 
 - Remove $\mathfrak{u}_2$: the pair $(\mathfrak{u}_1, \mathfrak{d})$ unlinks.
 - Remove $\mathfrak{d}$: the pair $(\mathfrak{u}_1, \mathfrak{u}_2)$ unlinks.
 
-The three components form a non-trivial link. Their pairwise linking numbers vanish, but their Milnor triple linking number $\bar{\mu}(123) = \pm 1$ is non-zero. This provides the topological mechanism for quark confinement. No single quark can be extracted without dissolving the entire structure. Any two-body subsystem remains topologically trivial.
+The three components form a non-trivial link. Their pairwise linking numbers vanish, but their Milnor triple linking number $\bar{\mu}(123) = ± 1$ is non-zero. This provides the topological mechanism for quark confinement. No single quark can be extracted without dissolving the entire structure. Any two-body subsystem remains topologically trivial.
 
 **Mass from the linking matrix.**
 The proton mass decomposes into constituent masses and binding energy:

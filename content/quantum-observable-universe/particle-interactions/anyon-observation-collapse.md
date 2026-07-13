@@ -5,7 +5,7 @@
 |---|---|---|
 | Generic $q$ | Abelian anyons in $H_n(R, q)$ | Topological braiding matrices |
 | $q = e^{2\pi i / k}$ | Non-abelian anyons in $\mathrm{MTC}_k$ | Finite fusion / $F$- and $R$-matrices |
-| $q \to 1$ | Symmetric-group representations | Pauli ($\pm 1$) statistics |
+| $q \to 1$ | Symmetric-group representations | Pauli ($± 1$) statistics |
 
 *Reading the ladder downwards represents the observation functor $\tau$ acting on a cooling substrate. Anyonic braiding loses information at each step, yet it never abandons the categorical algebraic substrate. We use Kashiwara crystal traversals to compute pair production and stable masses. These map the fusion rules of the appropriate rung: the generic Hecke fluid for high-energy interactions, $\mathrm{MTC}_k$ for topologically ordered phases, and $\mathbb{Z}[S_n]$ for the classical-statistics regime accessed by macroscopic detectors.*
 

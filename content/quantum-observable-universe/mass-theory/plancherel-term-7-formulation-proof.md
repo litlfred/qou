@@ -63,7 +63,7 @@ q-deformed Wedderburn-block weight, not the Plancherel measure;
 they coincide at $q = 1$.*
 
 **canonical witness.**
-[the formal derivation](#) computes
+the formal derivation computes
 $\Phi_k$ for D, T, ${}^3\mathrm{He}$, ${}^4\mathrm{He}$, evaluating
 $\chi_\lambda(\beta_\mathrm{atom})$ via Hoefsmit seminormal form
 characters at $q_0$ and summing with the q-deformed Wedderburn weights

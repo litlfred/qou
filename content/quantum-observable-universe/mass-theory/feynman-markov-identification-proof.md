@@ -1,7 +1,7 @@
 **Proof.**
 The Jones--Markov trace is the unique trace on $\bigcup_n H_n(R, q)$
 satisfying the Markov property
-$\mathrm{tr}_M(x \sigma_n^{\pm 1}) = z^{\pm 1}\mathrm{tr}_M(x)$
+$\mathrm{tr}_M(x \sigma_n^{± 1}) = z^{± 1}\mathrm{tr}_M(x)$
 ([Jones--Markov trace](#thm:jones-markov-trace)).
 By the Wedderburn-Artin decomposition of the semisimple algebra $H_n(R, q)$,
 every trace decomposes as a weighted sum of irreducible characters:

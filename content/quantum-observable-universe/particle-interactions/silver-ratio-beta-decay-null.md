@@ -10,7 +10,7 @@ $$
 \;}
 $$
 
-*vanishes if and only if $h = 2$ if and only if $q = 1 \pm \sqrt{2}$ (the **silver-mean conjugates**).*
+*vanishes if and only if $h = 2$ if and only if $q = 1 ± \sqrt{2}$ (the **silver-mean conjugates**).*
 
 *At $q = 1 + \sqrt{2}$:*
 

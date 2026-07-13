@@ -115,7 +115,7 @@ The conjecture regarding a "closed-form expression in $H_n(R, q)$" asks a questi
       \;=\; (z q^{-1};\, q^{-1})_n,
   $$
 
-  *whose zero locus is exactly the first $n$ poles of $\Phi_q$. The completion $\widehat{\mathbb{Z}[q^{\pm 1}][z]}_z = \varprojlim_n \mathbb{Z}[q^{\pm 1}][z] / (P_n(q, z))$ has cyclotomic projections $\pi_n^{(z)}$ acting as structural truncations at depth $n$, replacing Yekutieli's ad-hoc cutoff with a quotient by a structural ideal. The [conjecture that the brane tower lives in this ring](#conj:brane-tower-z-habiro) has two independent claims: (a) the algebraic Cauchy-limit (the partial sums converge in the $z$-Habiro topology), and (b) the existence of a canonical level-selection rule $n_\star(\mathfrak{H})$ derivable from substrate data.*
+  *whose zero locus is exactly the first $n$ poles of $\Phi_q$. The completion $\widehat{\mathbb{Z}[q^{± 1}][z]}_z = \varprojlim_n \mathbb{Z}[q^{± 1}][z] / (P_n(q, z))$ has cyclotomic projections $\pi_n^{(z)}$ acting as structural truncations at depth $n$, replacing Yekutieli's ad-hoc cutoff with a quotient by a structural ideal. The [conjecture that the brane tower lives in this ring](#conj:brane-tower-z-habiro) has two independent claims: (a) the algebraic Cauchy-limit (the partial sums converge in the $z$-Habiro topology), and (b) the existence of a canonical level-selection rule $n_\star(\mathfrak{H})$ derivable from substrate data.*
 
 2. *Magic-shell structural term. Add a separate $\Delta_{\text{shell}}(Z, N)$ contribution to the binding formula distinguishing closed-shell stabilization from the brane-tower transient.*
 

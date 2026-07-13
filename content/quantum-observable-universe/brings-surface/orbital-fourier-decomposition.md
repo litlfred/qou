@@ -18,11 +18,11 @@ The $\ell$-th Fourier mode acts as a resonance frequency of the trefoil's transv
 The $\mathrm{SO}(3)$ rotation group acts on $\mathbb{R}^3$ and the normal-bundle sections. Mode-$\ell$ sections transform as the irreducible representation $V_\ell$ of $\mathrm{SO}(3)$. The magnetic quantum number $m = -\ell, \ldots, +\ell$ labels the weight spaces relative to the Reeb axis.
 
 **(4) Spin quantum number $s$.**
-The fiber adjoint involution acts on the normal bundle by exchanging the two orientations of the Hopf link between electron and proton. This involution $\sigma \mapsto -\sigma$ splits each orbital $(n, \ell, m)$ into two eigenspaces ($s = \pm 1/2$), doubling the orbital count to $2n^2$ states per shell.
+The fiber adjoint involution acts on the normal bundle by exchanging the two orientations of the Hopf link between electron and proton. This involution $\sigma \mapsto -\sigma$ splits each orbital $(n, \ell, m)$ into two eigenspaces ($s = ± 1/2$), doubling the orbital count to $2n^2$ states per shell.
 
 | Quantum number | Fourier origin | Representation |
 |:-:|---|---|
 | $n$ | Total framing twist $k = 2(n-1)$ | Energy shell |
 | $\ell$ | Fourier mode on $S^1$ | $\mathrm{SO}(3)$ irreducible $V_\ell$ |
 | $m$ | Weight in $V_\ell$ (Reeb projection) | Spherical harmonic $Y_\ell^m$ |
-| $s$ | Fiber adjoint involution eigenvalue | Spin $\pm 1/2$ |
+| $s$ | Fiber adjoint involution eigenvalue | Spin $± 1/2$ |

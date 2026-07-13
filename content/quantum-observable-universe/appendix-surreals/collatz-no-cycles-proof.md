@@ -26,10 +26,10 @@ $$
   [3]_q^{k_{\mathrm{odd}}}
   \equiv 1^{k_{\mathrm{odd}}}
   \equiv 1
-  \pmod{[2]_q},
+  ±od{[2]_q},
 $$
 
-while $[2]_q^k \equiv 0 \pmod{[2]_q}$ for $k \geq 1$.
+while $[2]_q^k \equiv 0 ±od{[2]_q}$ for $k \geq 1$.
 These are never equal for $k_{\mathrm{odd}} \geq 1$.
 A cycle with $k_{\mathrm{odd}} = 0$ (all even steps) would
 be $P \mapsto P / [2]_q^k = P$, forcing $P = 0$.

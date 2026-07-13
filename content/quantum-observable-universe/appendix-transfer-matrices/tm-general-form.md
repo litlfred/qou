@@ -4,7 +4,7 @@ $$
   T(c, d) = \begin{pmatrix} c(q - q^{-1}) + d & c \\ c & d \end{pmatrix}
 $$
 
-The coefficients $(c, d) \in \mathbb{Z}[q^{\pm 1/2}]$ depend on how the two knots interact. For knots meeting via connected sum, the Jones polynomial satisfies $J_{K_1 \# K_2} = J_{K_1} \cdot J_{K_2}$, giving $c = 1$ and $d = 0$. For knots meeting via the Hecke product (the physically relevant case for nucleon crossings), the coefficients are determined by the representation-theoretic structure of the crossing. They do not reduce to connected-sum formulas. The three nuclear crossing types have specific $(c, d)$ values listed in Section 3.2.
+The coefficients $(c, d) \in \mathbb{Z}[q^{± 1/2}]$ depend on how the two knots interact. For knots meeting via connected sum, the Jones polynomial satisfies $J_{K_1 \# K_2} = J_{K_1} \cdot J_{K_2}$, giving $c = 1$ and $d = 0$. For knots meeting via the Hecke product (the physically relevant case for nucleon crossings), the coefficients are determined by the representation-theoretic structure of the crossing. They do not reduce to connected-sum formulas. The three nuclear crossing types have specific $(c, d)$ values listed in Section 3.2.
 
 The transfer matrix acts on a Iwahori--Hecke algebra element $a\sigma_i + b$ by left multiplication and Hecke reduction ($T^2 = (q - q^{-1})T + 1$):
 
@@ -29,7 +29,7 @@ $$
 **Eigenvalues** (when $c \neq 0$). The eigenvalues give the spectral behavior of the crossing under repeated application:
 
 $$
-  \lambda_{\pm} = \frac{1}{2}\Bigl[c(q - q^{-1}) + 2d \pm \sqrt{\bigl[c(q - q^{-1})\bigr]^2 + 4c^2}\Bigr]
+  \lambda_{±} = \frac{1}{2}\Bigl[c(q - q^{-1}) + 2d ± \sqrt{\bigl[c(q - q^{-1})\bigr]^2 + 4c^2}\Bigr]
 $$
 
 **Special cases.** The two degenerations of interest recover matrices met earlier: $c = 0$ collapses $T$ to the scalar matrix, while $c = 1, d = 0$ gives the connected-sum (fundamental) matrix.

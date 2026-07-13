@@ -1,4 +1,4 @@
-Let $\beta \in B_n$ be a braid and let $\rho(\beta) \in H_n(R, q)$ be its Hecke reduction. The element $\rho(\beta)$ decomposes as a product of generator chains: $a_i \sigma_i + b_i$ with $a_i, b_i \in \mathbb{Z}[q^{\pm 1}]$.
+Let $\beta \in B_n$ be a braid and let $\rho(\beta) \in H_n(R, q)$ be its Hecke reduction. The element $\rho(\beta)$ decomposes as a product of generator chains: $a_i \sigma_i + b_i$ with $a_i, b_i \in \mathbb{Z}[q^{± 1}]$.
 
 **Theorem.** The Markov trace factors as a product over generators:
 

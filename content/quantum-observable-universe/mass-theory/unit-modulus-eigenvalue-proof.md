@@ -21,8 +21,8 @@ giving the degenerate eigenvalue $\lambda = -1$.  $\square$
 | Operator | $(3)$ | $V_{(2,1)}$ eigenvalues | $(1^3)$ |
 |----------|-------|-------------------------|---------|
 | $\sigma_i$ | $q$ | $q,\; -q^{-1}$ (real) | $-q^{-1}$ |
-| $L_+ = \sigma_1\sigma_2$ | $q^2$ | $e^{\pm i\theta_L}$, $\lvert\lambda\rvert = 1$ | $q^{-2}$ |
-| $\mathfrak{M}_+$ (meson) | $q^6$ | $e^{\pm i\theta_M}$, $\lvert\lambda\rvert = 1$ | $q^{-6}$ |
+| $L_+ = \sigma_1\sigma_2$ | $q^2$ | $e^{± i\theta_L}$, $\lvert\lambda\rvert = 1$ | $q^{-2}$ |
+| $\mathfrak{M}_+$ (meson) | $q^6$ | $e^{± i\theta_M}$, $\lvert\lambda\rvert = 1$ | $q^{-6}$ |
 | $\beta_{\mathrm{Bor}}$ (proton) | $1$ | $-1$ (degenerate) | $1$ |
 
 At $q = q_0$: the Hopf link has phase

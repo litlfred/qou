@@ -50,7 +50,7 @@ own knot type.
    contains all six basis elements.  The net $\approx 0.451$ is
    the mirror-trefoil's Jones polynomial at $q_0$.
 
-4. **Gluon** $L_{\pm}$ is already a basis element of $H_3(q)$.
+4. **Gluon** $L_{±}$ is already a basis element of $H_3(q)$.
    The Borromean braid $B_3 = (\sigma_0\sigma_1^{-1})^3$ contains
    both $L_+$ and $L_-$ in its NF.  This is the
    Hopf link $\mathcal{L}_H$ from [Definition](#def:borromean-baryon):

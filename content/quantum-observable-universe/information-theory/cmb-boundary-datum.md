@@ -24,7 +24,7 @@ The jet degrees dictate the physical content.
 | Degree | Jet data | Physical content |
 |:---:|:---|:---|
 | $1$ | $A_1/A_0$: linear transport | Photon polarization modes ($\sigma_0, \sigma_1$), winding numbers, first-order correlations |
-| $2$ | $A_2/A_0$: curvature | Hopf-link cross-terms ($L_{\pm}$), linking numbers, power spectrum |
+| $2$ | $A_2/A_0$: curvature | Hopf-link cross-terms ($L_{±}$), linking numbers, power spectrum |
 
 Because degree-$0$ data ($A_0$) vanishes at the boundary, the CMB lacks photon identity $\mathbf{1}$, particle labels, and knot types. It is strictly thermal. It carries only the **color content** $(\varphi_0, \varphi_1)$ of the boundary photons .
 

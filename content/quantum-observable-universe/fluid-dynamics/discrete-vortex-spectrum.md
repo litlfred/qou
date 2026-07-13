@@ -20,7 +20,7 @@ Then:
 
    where $I_q$ represents the $q$-deformed moment of inertia of the filament cross-section.
 
-3. The ladder modes $E_\pm$ of the weight-space decomposition mediate transitions between intensity levels $j \to j'$ under the strict selection rule $|j - j'| = 1$. The energy exchanged evaluates to
+3. The ladder modes $E_±$ of the weight-space decomposition mediate transitions between intensity levels $j \to j'$ under the strict selection rule $|j - j'| = 1$. The energy exchanged evaluates to
 
    $$
      \Delta E_{j \to j'} = 
@@ -31,6 +31,6 @@ Then:
 4. In the classical limit $q \to 1$:
    - $[k]_q \to k$, returning the classical Kelvin-wave spectrum.
    - $[j]_q[j+1]_q \to j(j+1)$, reducing the energy levels to the rigid-rotor spectrum of standard angular momentum.
-   - The selection rule $\Delta j = \pm 1$ reduces to the classical dipole selection rule.
+   - The selection rule $\Delta j = ± 1$ reduces to the classical dipole selection rule.
 
 **Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall: it invokes real- or complex-analytic constructs — real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.

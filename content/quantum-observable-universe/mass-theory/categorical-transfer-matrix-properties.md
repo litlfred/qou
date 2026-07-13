@@ -89,7 +89,7 @@ A braiding operation on $\mathfrak{H}$ can be described at two levels:
    between $K_i$ and $K_j$ applies the vertex operator
    $Y(\sigma_k, z_k)$ at the relevant generator $\sigma_k$,
    producing a transfer matrix
-   $T_{K_i, K_j}(q) \in \mathrm{M}_2(\mathbb{Z}[q^{\pm 1/2}])$
+   $T_{K_i, K_j}(q) \in \mathrm{M}_2(\mathbb{Z}[q^{± 1/2}])$
    that acts on the Hecke chain at $\sigma_k$.
 
 2. **Composite level.**  Operate on the single insertion point

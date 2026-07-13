@@ -1,4 +1,4 @@
-A transfer matrix records how a single crossing between two knotted strands acts on the Hecke chain. Each knot pair contributes a $2 \times 2$ block determined by its crossing coefficients $c$ and $d$. Every nuclear and electromagnetic crossing reduces to one of just three classes (Section 5). This section lists every transfer matrix for each knot pair over $\mathbb{Z}[q^{\pm 1/2}]$.
+A transfer matrix records how a single crossing between two knotted strands acts on the Hecke chain. Each knot pair contributes a $2 \times 2$ block determined by its crossing coefficients $c$ and $d$. Every nuclear and electromagnetic crossing reduces to one of just three classes (Section 5). This section lists every transfer matrix for each knot pair over $\mathbb{Z}[q^{± 1/2}]$.
 
 ## 1. Trivial transfer matrices
 
@@ -34,7 +34,7 @@ $$
   T_{pp}(q) = \begin{pmatrix} q - q^{-1} & 1 \\ 1 & 0 \end{pmatrix}
 $$
 
-Explicit entries are in [Table 1](#tbl:tm-knot-pairs-table1-data). Eigenvalues are $\lambda_{\pm} = \frac{1}{2}\left((q - q^{-1}) \pm \sqrt{(q-q^{-1})^2 + 4}\right)$.
+Explicit entries are in [Table 1](#tbl:tm-knot-pairs-table1-data). Eigenvalues are $\lambda_{±} = \frac{1}{2}\left((q - q^{-1}) ± \sqrt{(q-q^{-1})^2 + 4}\right)$.
 
 **2b. Neutron--neutron ($\mathfrak{n}$-$\mathfrak{n}$)**
 Knots: $K_1 = T_{2,3}^{\sigma}$ (down quark), $K_2 = T_{2,3}^{\sigma}$ (down quark).

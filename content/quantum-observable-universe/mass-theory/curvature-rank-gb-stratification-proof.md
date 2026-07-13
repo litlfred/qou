@@ -55,8 +55,8 @@ curvature-rank stratum of the GB filtration spectral sequence,
 paired with the Markov-trace functional.*
 
 **Witness.**
-[the formal derivation](#) and
-[the formal derivation](#)
+the formal derivation and
+the formal derivation
 identify hyperbolic-knot ideals at specific GB positions for the
 proton and neutron braids.  The neutron's extra ideal at
 (GB depth 3, jet 1, std channel) — the $6_1$ knot — is the

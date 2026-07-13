@@ -25,4 +25,4 @@ $$
 
 **Step 5: Van den Bergh duality.** For any finitely generated $A$-bimodule $M$, $\mathrm{Ext}^i_A(M, \omega_A^\bullet) \cong \mathrm{Tor}_{3-i}^A(M, A_\sigma)^\vee$.
 
-On Bring's quantum observable universe, the dualizing complex encodes the Serre duality of the genus-$4$ curve. The Nakayama automorphism at $q = q_{\mathrm{Bring}}$ acts on the $8$ differentials by scaling with $q^{\pm 2}$, reflecting the $q$-deformed Hodge structure. The rigidity condition ensures this complex is intrinsic to Bring's curve.
+On Bring's quantum observable universe, the dualizing complex encodes the Serre duality of the genus-$4$ curve. The Nakayama automorphism at $q = q_{\mathrm{Bring}}$ acts on the $8$ differentials by scaling with $q^{± 2}$, reflecting the $q$-deformed Hodge structure. The rigidity condition ensures this complex is intrinsic to Bring's curve.

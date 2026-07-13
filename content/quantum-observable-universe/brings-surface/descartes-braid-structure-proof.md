@@ -6,7 +6,7 @@ $c_{V,V}$ is computed by the $R$-matrix of
 $\mathcal{U}_q(\mathfrak{su}(2))$
 ([$R$-matrix braiding](#rem:r-matrix-braiding)), and faithfulness follows from the
 fact that the eigenvalues of $c_{V,V}$ are $q$ and $-q^{-1}$, which
-are distinct for $q \neq \pm 1$.
+are distinct for $q \neq ± 1$.
 
 For *item (2)*, the fibre functor $\tau$ sends the braiding to the
 matrix $\check{R} = P \circ \mathcal{R}$ acting on

@@ -141,7 +141,7 @@ The two lifts are related by:
  (infinitesimal-corrections in char 0 vs. $p$-ary fusion data
  in char $p$);
 - they are *both* valid algebraic ambients for the same
- underlying $\mathbb{Z}[q^{\pm 1}]$-form of QOU.
+ underlying $\mathbb{Z}[q^{± 1}]$-form of QOU.
 
 We do not pursue speculative physical readings of the char-$p$
 lifts here. The mathematical content — that modular Hecke at

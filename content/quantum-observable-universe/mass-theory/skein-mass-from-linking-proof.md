@@ -11,7 +11,7 @@ $$
   \frac{\mathrm{Vol}(K_i)}{\hbar_q^{2}}}_{\text{constituent mass (zero for torus knots)}}
 $$
 
-where $Q(q) \in \mathbb{Z}[q^{\pm 1}]$ is the Skein polynomial of
+where $Q(q) \in \mathbb{Z}[q^{± 1}]$ is the Skein polynomial of
 the linking configuration and $\hbar_q = 1 - q^{-1}$.
 
 For hadrons composed entirely of fundamental (torus-knot) constituents,

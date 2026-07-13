@@ -25,7 +25,7 @@ $$
 $$
 
 **Even-odd selection.**
-The pairing energy $\pm \lambda_P / A^{1/2}$ breaks the $p \leftrightarrow p + 1$ symmetry at the rounding boundary. The system selects the pair $(p, A - p)$ where both are even. This yields the observed even-even dominance: of the 254 stable nuclides, 166 have even $p$ and even $n$.
+The pairing energy $± \lambda_P / A^{1/2}$ breaks the $p \leftrightarrow p + 1$ symmetry at the rounding boundary. The system selects the pair $(p, A - p)$ where both are even. This yields the observed even-even dominance: of the 254 stable nuclides, 166 have even $p$ and even $n$.
 
 **Regime transitions.**
 The minimiser $p_{\mathrm{stab}}(A)$ increases by $1$ when $p^*(A)$ crosses a half-integer. To leading order, the critical mass numbers for this transition are

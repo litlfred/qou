@@ -32,10 +32,10 @@ Equivalently: no algebraic point is a "regulator zero" of $D_n$.
 $$
   \tau_{\mathrm{arch}}(\mathrm{Li}_n^q(z_K))
   \;=\;
-  \mathrm{Li}_n(z_K) \pmod{\mathcal{P}_{n-1}}
+  \mathrm{Li}_n(z_K) ±od{\mathcal{P}_{n-1}}
   \;\sim\;
   D_n(z_K) \neq 0
-  \pmod{\mathcal{P}_{n-1}}.
+  ±od{\mathcal{P}_{n-1}}.
 $$
 
 The non-vanishing is preserved under the regulator embedding into

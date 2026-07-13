@@ -1,8 +1,8 @@
 *Proof.*
 The Iwahori--Hecke algebra $H_A(q)$ is defined over the ring
-$\mathbb{Z}[q^{\pm 1}]$.  Each crossing factor
+$\mathbb{Z}[q^{± 1}]$.  Each crossing factor
 $C_{ij} = c_j \sigma_i + d_j$ has coefficients $(c_j, d_j)$
-in $\mathbb{Z}[q^{\pm 1}]$:
+in $\mathbb{Z}[q^{± 1}]$:
 
 | Pair type | $c_j$ | $d_j$ | Hecke element |
 |-----------|-------|-------|---------------|
@@ -27,7 +27,7 @@ $$
     c_j(q - q^{-1}) + d_j & c_j \\
     c_j & d_j
   \end{pmatrix}
-   \in  \mathrm{M}_2(\mathbb{Z}[q^{\pm 1}])
+   \in  \mathrm{M}_2(\mathbb{Z}[q^{± 1}])
 $$
 
 has entries that are Laurent polynomials in $q$.  The
@@ -35,7 +35,7 @@ product of $k_i = A - i - 1$ such matrices at generator $\sigma_i$:
 
 $$
   M_i(q) =  \prod_{j=i+1}^{A-1} T_j(q)
-   \in  \mathrm{M}_2(\mathbb{Z}[q^{\pm 1/2}])
+   \in  \mathrm{M}_2(\mathbb{Z}[q^{± 1/2}])
 $$
 
 has entries that are polynomials in $q^{1/2}$ of degree $\leq 2k_i$.

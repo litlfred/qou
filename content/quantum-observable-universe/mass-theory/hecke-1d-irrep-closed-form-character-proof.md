@@ -51,7 +51,7 @@ $$
 $$
 
 The formulas hold for every $n$ because the 1-d Hecke irreps' generator
-eigenvalues $\pm q^{\pm 1}$ are *substrate-derived* — they come from the
+eigenvalues $± q^{± 1}$ are *substrate-derived* — they come from the
 Hecke quadratic relation, not from any $n$-specific representation
 combinatorics. $\blacksquare$
 

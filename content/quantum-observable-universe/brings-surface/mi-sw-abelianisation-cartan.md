@@ -10,7 +10,7 @@ Let $\mathcal{S}_c \cong \mathbb{P}^1(\mathbb{C})$ be the exceptional divisor at
        + A^- \otimes E_-,
    $$
 
-   with $H, E_\pm$ the standard generators of $\mathfrak{su}(2)$ and $A^0$ a $\mathrm{U}(1)$-valued $1$-form.
+   with $H, E_±$ the standard generators of $\mathfrak{su}(2)$ and $A^0$ a $\mathrm{U}(1)$-valued $1$-form.
 3. The Cartan component provides the Seiberg--Witten differential:
 
    $$

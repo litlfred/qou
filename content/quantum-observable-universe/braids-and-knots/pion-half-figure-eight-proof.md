@@ -17,6 +17,6 @@ $$
 $$
 
 The eigenvalues are therefore identical:
-$\lambda = \tfrac{-(h^2+1) \pm \sqrt{(h^2+1)^2 - 4}}{2}$,
+$\lambda = \tfrac{-(h^2+1) ± \sqrt{(h^2+1)^2 - 4}}{2}$,
 giving complex conjugates on the unit circle with the same
 phase $\theta = \arccos\bigl(-(h^2+1)/2\bigr)$.  $\square$

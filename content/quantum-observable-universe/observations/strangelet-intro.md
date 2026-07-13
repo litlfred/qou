@@ -6,7 +6,7 @@ Increasing density in neutron star cores induces three topological thresholds. E
 
 **Stage 1 — Borromean dissolution.** Normal baryons are Borromean links $\mathcal{B}_3$. No two quarks are pairwise linked, yet all three are inseparable. This topology is confinement. The Borromean complement volume $V_B = 7.32772 = 8G$ holds ninety-nine percent of the baryon mass. Under sufficient pressure, the Borromean structure breaks.
 
-**Stage 2 — Hopf diquark condensation.** Freed quarks pair as Hopf-linked diquarks $D_{[ij]}^{[ab]}$. Each pair is linked with linking number $\pm 1$. The antisymmetric tensor $\epsilon^{abc}$ of color-flavor locking arises from the Hopf linking orientation. This is color superconductivity \cite{alford1999}.
+**Stage 2 — Hopf diquark condensation.** Freed quarks pair as Hopf-linked diquarks $D_{[ij]}^{[ab]}$. Each pair is linked with linking number $± 1$. The antisymmetric tensor $\epsilon^{abc}$ of color-flavor locking arises from the Hopf linking orientation. This is color superconductivity \cite{alford1999}.
 
 **Stage 3 — golden ratio wall.** At $q_{\mathrm{gold}} = 1/\varphi^2 \approx 0.382$, the elliptic fiber of Bring's surface acquires a node. The $S_5$ color symmetry breaks. Confinement ends. This first-order quark-gluon plasma deconfinement transition forces the Milnor triple linking invariant $\bar{\mu}(123)$ to jump from $1$ (Borromean) to $0$ (Hopf). There is no continuous path between the phases.
 

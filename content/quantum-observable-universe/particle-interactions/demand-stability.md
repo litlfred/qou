@@ -5,7 +5,7 @@
 $$
   |\mathrm{dem}(\mathcal{A}(Z, N))|
   \;\leq\;
-  |\mathrm{dem}(\mathcal{A}(Z \pm 1, N \mp 1))|.
+  |\mathrm{dem}(\mathcal{A}(Z ± 1, N \mp 1))|.
 $$
 
 *The stable configuration minimizes the demand magnitude at fixed $A$.*

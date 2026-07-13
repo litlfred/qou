@@ -8,7 +8,7 @@ measured fringe spacing.
 **Experimental parameters**:
 $a = 50$ nm, $d = 280$ nm, $\lambda = 50$ pm, $E = 600$ eV.
 
-The digitized data spans $\pm 2.56$ mrad in scattering angle and shows
+The digitized data spans $± 2.56$ mrad in scattering angle and shows
 five resolved interference maxima consistent with the
 double-slit geometry.  The central peak is normalized to unity.
 

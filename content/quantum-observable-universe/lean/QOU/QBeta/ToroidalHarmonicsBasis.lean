@@ -6,7 +6,7 @@ import Mathlib.Data.Complex.Basic
 import Mathlib.Analysis.Calculus.FDeriv.Basic
 import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic
 import Mathlib.Analysis.SpecialFunctions.Trigonometric.Chebyshev
-import Mathlib.Analysis.SpecialFunctions.Integrals
+import Mathlib.Analysis.SpecialFunctions.Integrals.Basic
 import Mathlib.RingTheory.Derivation.Basic
 import QOU.BraidKnot.MarkovParameterRecursion
 
@@ -105,7 +105,7 @@ The phenomenological constants map to A=2, B~12.13, C=-22.
 theorem liouville_green_weber_limit
     (n m : ℝ) (A B C : ℝ) (hA : A = 2) (hC : C = -22) :
     ∃ (T : ℝ → ℝ), ∀ (F : ℝ → ℝ),
-      ToroidalHarmonicODE n m F ↔ WeberODE A B C (F ∘ T) := by
+      ∀ η, ToroidalHarmonicODE n m F η ↔ WeberODE A B C (F ∘ T) η := by
   sorry
 
 /--

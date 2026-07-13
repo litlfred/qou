@@ -10,7 +10,7 @@ requires the quantum-torus relation $uv = q\,vu$ on its operator arguments. This
 ## Within a single jet level — trivial commutation
 
 At a fixed jet level $n$, the traced volumes $\hat V_i^{(n)}
-\in \mathbb{Z}[q^{\pm 1/2}, z]$ are **scalar Laurent polynomials**
+\in \mathbb{Z}[q^{± 1/2}, z]$ are **scalar Laurent polynomials**
 ([def:algebraic-quantum-volume](#def:algebraic-quantum-volume)).
 Two scalars commute, so
 

@@ -60,7 +60,7 @@ irrep $\rho_\lambda$).
 ### Archimedean realization
 
 The Archimedean realization functor
-([prop:archimedean-realization-functor](#prop:archimedean-realization-functor))
+([def:archimedean-realization-functor](#def:archimedean-realization-functor))
 sends $\mathbb{Q}(q) \to \mathbb{R}$ by evaluating at $q_0$ and fixes
 the dimensional bridge so that $m_e \cdot M(\mathfrak{H})|_{q = q_0}$
 has units of MeV:

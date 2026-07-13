@@ -22,7 +22,7 @@ $$
 
 The right-hand side is $E_{\mathfrak{H}}$.  Each crossing
 weight is a *spatial* quantity: it measures the $R$-matrix coupling
-between horizontally adjacent fibres at strength $q^{\pm 1}$.
+between horizontally adjacent fibres at strength $q^{± 1}$.
 
 *Step 2: Categorical mass measures vertical resistance.*
 The categorical mass of a closed vortex
@@ -50,10 +50,10 @@ $q$-connection whose temporal component has weight $\hbar_q$.
 The $q$-connection $A_q = q^{-1}A + \hbar_q\iota_\xi A\varTheta$
 assigns weight $q^{-1}$ to each spatial crossing and weight $\hbar_q$
 to each temporal tick.  The ribbon trace sums spatial crossing
-weights ($q^{\pm 1}$), while the categorical mass sums temporal
+weights ($q^{± 1}$), while the categorical mass sums temporal
 transport costs ($\hbar_q$ per step through $\Delta$).  Each
-crossing contributes $q^{\pm 1}$ to energy and
-$q^{\pm 1} \cdot \hbar_q / q^{-1} = q^{\pm 1} \cdot (q-1)$ to
+crossing contributes $q^{± 1}$ to energy and
+$q^{± 1} \cdot \hbar_q / q^{-1} = q^{± 1} \cdot (q-1)$ to
 mass.  The ratio is:
 
 $$

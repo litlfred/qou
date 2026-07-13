@@ -21,7 +21,7 @@ $$
 These are central in $E$ since $c_{A,A}$ generates the centraliser of
 the diagonal $R$-action by Schur--Weyl-Hecke duality.  Statement (2)
 follows from $H_2(R, q) \cong E$ being free of rank $2$ over $R$: $E$
-has at most two simple summands, and $e_\pm$ realise them.  The
+has at most two simple summands, and $e_±$ realise them.  The
 singlet identification $V_- \cong \mathbf{1}$ is the standard
 Schur-functor decomposition $A \otimes A = S^2 A \oplus \Lambda^2 A$
 with $\Lambda^2 A \cong \mathbf{1}$ when $A$ is the fundamental of

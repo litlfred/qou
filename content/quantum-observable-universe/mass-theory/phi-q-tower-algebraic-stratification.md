@@ -13,6 +13,6 @@ $$
   \sum_{|S| = 2} z^{2} \Phi_q\bigl(\|\hat V_S\|_F\bigr).
 $$
 
-*The Frobenius norm $\|\cdot\|_F$ evaluates entirely within the ground ring $\mathbb{Z}[q^{\pm 1/2}]$. This unconditional stratification identifies exactly with the $J^{|S|}/J^{|S|+1}$ grading of the GS confinement filtration.*
+*The Frobenius norm $\|\cdot\|_F$ evaluates entirely within the ground ring $\mathbb{Z}[q^{± 1/2}]$. This unconditional stratification identifies exactly with the $J^{|S|}/J^{|S|+1}$ grading of the GS confinement filtration.*
 
 The algebraic stratification operates strictly pre-$\tau$. It decomposes the mass endomorphism using only discrete categorical data, isolating the structural descent without invoking any hyperbolic or continuous geometry.

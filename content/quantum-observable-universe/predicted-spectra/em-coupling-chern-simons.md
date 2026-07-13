@@ -23,7 +23,7 @@ $$
 
 *and $\kappa = \det G_{\mathrm{CS}}^{\mathrm{cl}} / \det G_{\mathrm{CS}}^{q}$ is the Gram determinant ratio of the classical and $q$-deformed Chern–Simons pairing on Bring's surface.*
 
-*At $q_0 \approx 1.110$ with the Witten-1988 value $\kappa \approx 1.722$, $1/\alpha$ evaluates to $137.035944$. The CODATA value is $137.035999$. The residual is $399$ ppb. The value $\kappa = 1.722$ derives from the sketched Gram-determinant computation but was admitted as `sorry` in the Lean formalisation ([`em-coupling-chern-simons.lean`](#)). It was never closed. Exact CODATA matching requires $\kappa \approx 1.8878$. This differs from the Witten value by $\sim 10\%$. Either the Gram-determinant identification of $\kappa$ is wrong, or the order-$\delta_{CS}^2$ truncation omits higher-order contributions.*
+*At $q_0 \approx 1.110$ with the Witten-1988 value $\kappa \approx 1.722$, $1/\alpha$ evaluates to $137.035944$. The CODATA value is $137.035999$. The residual is $399$ ppb. The value $\kappa = 1.722$ derives from the sketched Gram-determinant computation but was admitted as `sorry` in the Lean formalisation (`em-coupling-chern-simons.lean`). It was never closed. Exact CODATA matching requires $\kappa \approx 1.8878$. This differs from the Witten value by $\sim 10\%$. Either the Gram-determinant identification of $\kappa$ is wrong, or the order-$\delta_{CS}^2$ truncation omits higher-order contributions.*
 
 *Proof sketch (does not close $\kappa$).*
 The bare coupling $\alpha = q^{-1}/([9]_q \cdot [10]_q)$ arises from the antisymmetric braiding eigenvalue. This is Layer 2 of [EM coupling projection](#prop:em-coupling-projection). It is normalized by the force-carrier $q$-dimensions from Layer 3.

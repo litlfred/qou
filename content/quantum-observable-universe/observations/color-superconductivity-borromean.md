@@ -9,13 +9,13 @@
 **Milnor order parameter.**
 The Borromean link exhibits pairwise linking numbers $\mathrm{lk}(i,j) = 0$ but Milnor triple linking $\bar{\mu}(123) = 1$ ([Borromean baryon](#def:borromean-baryon)). This triple invariant defines confinement via inseparability without pairwise linking.
 
-In the CFL phase, pairs of quarks are Hopf-linked: $\mathrm{lk}(i,j) = \pm 1$ for all $i \neq j$. The Milnor triple linking becomes $\bar{\mu}(123) = 0$. Triple inseparability yields to pairwise binding.
+In the CFL phase, pairs of quarks are Hopf-linked: $\mathrm{lk}(i,j) = ± 1$ for all $i \neq j$. The Milnor triple linking becomes $\bar{\mu}(123) = 0$. Triple inseparability yields to pairwise binding.
 
 The transition features:
 
 | Invariant | Borromean (confined) | CFL (superconducting) |
 |-----------|---------------------|----------------------|
-| $\mathrm{lk}(i,j)$ | $0$ for all $i \neq j$ | $\pm 1$ for all $i \neq j$ |
+| $\mathrm{lk}(i,j)$ | $0$ for all $i \neq j$ | $± 1$ for all $i \neq j$ |
 | $\bar{\mu}(123)$ | $1$ | $0$ |
 | Vol(complement) | $7.32772$ | $0$ (torus link) |
 | Stable diquarks | No | Yes (condensate) |

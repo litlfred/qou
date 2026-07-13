@@ -1,4 +1,4 @@
-Explicit entries of the proton–proton transfer matrix $T_{pp}(q)$ (Section 2a). Its determinant $-1$ is the eigenvalue product $\lambda_+ \lambda_-$ and its trace $q - q^{-1}$ is the eigenvalue sum $\lambda_+ + \lambda_-$, so together they determine the eigenvalues $\lambda_\pm$ of the crossing.
+Explicit entries of the proton–proton transfer matrix $T_{pp}(q)$ (Section 2a). Its determinant $-1$ is the eigenvalue product $\lambda_+ \lambda_-$ and its trace $q - q^{-1}$ is the eigenvalue sum $\lambda_+ + \lambda_-$, so together they determine the eigenvalues $\lambda_±$ of the crossing.
 
 | Entry | Formula |
 |:-----:|---------|

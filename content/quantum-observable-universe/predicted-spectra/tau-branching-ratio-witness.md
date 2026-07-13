@@ -51,7 +51,7 @@ $$
 
 $$
   \frac{\mathrm{BR}(\tau \to e)}{\mathrm{BR}(\tau \to \mu)}
-  = 1.025 \pm 0.003.
+  = 1.025 ± 0.003.
 $$
 
 ## Result

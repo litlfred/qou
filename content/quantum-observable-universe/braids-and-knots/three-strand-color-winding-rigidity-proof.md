@@ -5,7 +5,7 @@ Hoefsmit block for $\sigma_2$, so that
 $$
 M = \begin{pmatrix} q\,a_{-2} & q\,\beta \\ -q^{-1}\beta & -q^{-1} a_{2} \end{pmatrix},
 \qquad
-a_{\pm 2} = \frac{q - q^{-1}}{1 - q^{\mp 4}},
+a_{± 2} = \frac{q - q^{-1}}{1 - q^{\mp 4}},
 \qquad
 \beta^2 = a_2 a_{-2} + 1 .
 $$

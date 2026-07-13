@@ -34,7 +34,7 @@ $$
 }
 $$
 
-This compares to the CODATA value of $0.7823$ MeV ($+0.168\%$ error, $+1.31$ keV). At single wrap, the $L_\pm$ and $e^-$ contributions cancel exactly between proton and neutron. Thus $\Delta(\mathrm{net}) = h(h-2)/2$ with $h = q_0 - q_0^{-1}$. The entire Q-value lies in the $\gamma + \sigma_0 + \sigma_1$ channels.
+This compares to the CODATA value of $0.7823$ MeV ($+0.168\%$ error, $+1.31$ keV). At single wrap, the $L_±$ and $e^-$ contributions cancel exactly between proton and neutron. Thus $\Delta(\mathrm{net}) = h(h-2)/2$ with $h = q_0 - q_0^{-1}$. The entire Q-value lies in the $\gamma + \sigma_0 + \sigma_1$ channels.
 
 The $n$-$p$ mass split follows: $\mathfrak{m}_n - \mathfrak{m}_p = \mathfrak{Q}_\beta + m_e \approx 1.295$ MeV. This compares to the CODATA value of $1.293$ MeV ($0.17\%$ error, no CODATA $m_n - m_p$ input).
 

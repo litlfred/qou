@@ -1,5 +1,5 @@
 The three typed transfer matrices satisfy two exact
-identities in $\mathrm{M}_2(\mathbb{Z}[q^{\pm 1}])$.
+identities in $\mathrm{M}_2(\mathbb{Z}[q^{± 1}])$.
 
 ## Statement
 

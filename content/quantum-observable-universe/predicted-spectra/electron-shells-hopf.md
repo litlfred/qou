@@ -63,6 +63,6 @@ where $n$ denotes the shell number. The atom ionizes when $E_{\mathrm{ion}}$ dro
 
 1. **Shell capacity derivation**: Prove that the maximum number of trefoils in a closed sub-Hopf link at level $n$ strictly equals $2n^2$.
 2. **Photon energy**: Derive the photon energy $E = h\nu$ from the categorical action. The wavefront equation supplies propagation. The frequency $\nu$ should match the winding number of the wavefront around the Reeb flow.
-3. **Selection rules**: Identify the permitted Skein operations on the electron link. These recover the dipole selection rules $\Delta \ell = \pm 1$.
+3. **Selection rules**: Identify the permitted Skein operations on the electron link. These recover the dipole selection rules $\Delta \ell = ± 1$.
 4. **Orbital shapes**: Match electron orbitals to the topological types of the sub-Hopf link. The angular momentum quantum number $\ell$ acts as the Seifert surface genus.
 5. **Noble gas stability**: Prove that atoms whose electron cloud decomposes into a union of closed sub-links achieve maximal ionization energy in each period. The crossing energy of a complete sub-link must represent a local maximum.

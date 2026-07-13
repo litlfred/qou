@@ -1,5 +1,5 @@
 *Proof.*
-Work over $R = \mathbb{Z}[q^{\pm 1/2}]$ at generic $q$, passing to
+Work over $R = \mathbb{Z}[q^{± 1/2}]$ at generic $q$, passing to
 the fraction field where inverses are required; write
 $h_{\mathrm{A}} = q - q^{-1}$ for the Hecke parameter and
 $z = 1/(q^{1/2} + q^{-1/2})$ for the Markov weight, so that the

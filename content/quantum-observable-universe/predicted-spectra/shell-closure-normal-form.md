@@ -68,7 +68,7 @@ $A \geq 1$, by induction on $A$:
  Therefore $\mathcal{N}(A+1)$ is in normal form. $\square$
 
 The normal form has at most $A!$ terms (the dimension of $H_A(q)$
-over $\mathbb{Z}[q^{\pm 1}]$, equal to $|S_A|$). This is a
+over $\mathbb{Z}[q^{± 1}]$, equal to $|S_A|$). This is a
 **finite** representation for any nucleus.
 
 **(ii) Symmetric histogram at shell closures.**

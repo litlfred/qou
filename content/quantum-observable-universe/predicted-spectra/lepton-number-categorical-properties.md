@@ -1,12 +1,12 @@
 The categorical lepton number possesses several structural properties.
 
-Each beta decay applies the Skein relation at one crossing. This produces a smoothing $L_0^{\pm}$. It contains exactly one lepton–antilepton pair. Lepton number counts these smoothings.
+Each beta decay applies the Skein relation at one crossing. This produces a smoothing $L_0^{±}$. It contains exactly one lepton–antilepton pair. Lepton number counts these smoothings.
 
-Each smoothing $L_0^{\pm}$ contributes:
+Each smoothing $L_0^{±}$ contributes:
 - One charged lepton ($T_{2,3}$ or $T_{2,3}^{\sigma}$) with lepton number $+1$.
 - One neutrino or antineutrino ($K_{0_1}$ or $K_{0_1}^{\sigma}$) with lepton number $-1$.
 
-The net lepton number of each $L_0^{\pm}$ pair is zero.
+The net lepton number of each $L_0^{±}$ pair is zero.
 
 **Conservation.**
 Lepton number is conserved by construction:
@@ -29,7 +29,7 @@ The Skein module $\mathcal{K}(S^3; q)$ admits a natural $\mathbb{Z}$-grading by 
 | $\nu_e$ | $K_{0_1}$ (unknot) | $+1$ | $L_0^{+}$ neutral component ($\beta^+$) |
 | $\nu_e^{\sigma}$ | $K_{0_1}^{\sigma}$ (mirror unknot) | $-1$ | $L_0^{-}$ neutral component ($\beta^-$) |
 
-The charged lepton carries $L = \pm 1$. The neutrino carries $L = \mp 1$. Each pair sums to zero.
+The charged lepton carries $L = ± 1$. The neutrino carries $L = \mp 1$. Each pair sums to zero.
 
 **The $\chi = -6$ constraint.**
 In the Descartes universe, the Euler characteristic $\chi(A) = -6$ constrains Bring's surface. The torus knot generators $T(2, n)$ with odd $n \leq 7$ exhaust the fermion spectrum. The electron ($T_{2,3}$) and neutrino ($K_{0_1} = T_{2,1}$) are the lowest torus knots in this sequence. The smoothing $L_0^{-}$ must decompose into exactly these knot types. They are the only single-component closures of a 2-arc resolution at a Borromean crossing.

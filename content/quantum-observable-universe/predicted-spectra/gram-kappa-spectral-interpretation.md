@@ -19,7 +19,7 @@ This matches the 2-jet hand computation. It now derives from the Wedderburn bloc
 
 **Lean handle.**
 
-The formula evaluates symbolically over $R$ to a $q$-rational expression for $\kappa$. It specializes numerically via $\iota \colon R \to \mathbb{R}$ at $q \mapsto q_0$. Character values $\chi_\lambda(T_{m,n})$ for torus knots are polynomial in $q^{\pm 1}$ \cite{jones1987}. The formula reduces to a finite product of Laurent monomials.
+The formula evaluates symbolically over $R$ to a $q$-rational expression for $\kappa$. It specializes numerically via $\iota \colon R \to \mathbb{R}$ at $q \mapsto q_0$. Character values $\chi_\lambda(T_{m,n})$ for torus knots are polynomial in $q^{± 1}$ \cite{jones1987}. The formula reduces to a finite product of Laurent monomials.
 
 **Sensitivity.**
 

@@ -16,7 +16,7 @@ where each $A^{(X)}$ carries a unique irreducible representation of $G$. See [Ta
 The categorical $q$-dimension of each component is determined by its torus-link host:
 
 $$
-  \dim_q\bigl(A^{(W^\pm)}\bigr) \;=\; [4]_q,
+  \dim_q\bigl(A^{(W^±)}\bigr) \;=\; [4]_q,
   \qquad
   \dim_q\bigl(A^{(Z)}\bigr) \;=\; [6]_q,
   \qquad
@@ -57,7 +57,7 @@ $$
 
 Applying the assignments from the first two constraints yields:
 
-- $\dim_q(e_{\rm sym}^{\rm EW}[A^{(W^\pm)}]) = [4]_q$
+- $\dim_q(e_{\rm sym}^{\rm EW}[A^{(W^±)}]) = [4]_q$
 - $\dim_q(e_{\rm sym}^{\rm EW}[A^{(Z)}]) = [6]_q$
 - $\dim_q(e_H \cdot A^{(H)}) = [2]_q$
 

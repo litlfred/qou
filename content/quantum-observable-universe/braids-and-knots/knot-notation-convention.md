@@ -1,4 +1,4 @@
-Particles in this framework are identified with their knots. We write $\mathfrak{K}_x^{\pm}$, where $x$ designates the particle and $\pm$ designates the knot's chirality. The superscript distinguishes a particle from its antiparticle via mirror reflection (charge conjugation).
+Particles in this framework are identified with their knots. We write $\mathfrak{K}_x^{±}$, where $x$ designates the particle and ± designates the knot's chirality. The superscript distinguishes a particle from its antiparticle via mirror reflection (charge conjugation).
 
 See [Table 1](#tbl:knot-notation-convention-table1-data).
 

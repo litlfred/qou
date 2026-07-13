@@ -18,7 +18,7 @@ $$
 $$
 
 In Hecke language, $[N]_q$ is the Markov-trace normalisation that
-ensures invariance under stabilisation $\beta \mapsto \beta\sigma_n^{\pm 1}$
+ensures invariance under stabilisation $\beta \mapsto \beta\sigma_n^{± 1}$
 ([axiomatic Markov closed form](#prop:markov-trace-axiomatic-closed-form)).
 Physically, it acts as a vacuum subtraction: $P_K(q)$ measures the
 *excess* topological complexity of the knot $K$ relative to the

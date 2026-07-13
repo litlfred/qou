@@ -58,7 +58,7 @@ These primitive eighth roots of unity lie outside $G_8$, but inhabit the same $D
 |------------|---------------|------------|------------|
 | Real golden | $\varphi$ | trivial | 8 (= $G_8$) |
 | Unit-circle $\zeta_8$ | $\zeta_8$ | $\langle\sigma\tau\rangle$ | 4 |
-| Real $\pm 1$ | $1$ | $\langle\tau\rangle$ | 4 (= 4th roots) |
+| Real $± 1$ | $1$ | $\langle\tau\rangle$ | 4 (= 4th roots) |
 | Origin / infinity | $0$, $\infty$ | $D_4$ | 1 each |
 
 The coordinates $q$ and $i$ govern the structure: $q$ generates radial motion, while $i$ generates the $\sigma$-rotation connecting rays.

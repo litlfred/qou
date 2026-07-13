@@ -77,7 +77,7 @@ makes multi-nucleon Path A tractable.
 
 The cancellation count enumerates the $\sigma^2$-relation reductions
 ($\sigma^2 = h\sigma + 1$ in the Hecke quadratic) in the new
-nucleon's intrinsic $\sigma^{\pm 1}$-adjacencies plus its incoming
+nucleon's intrinsic $\sigma^{± 1}$-adjacencies plus its incoming
 interface contribution. Detailed $\sigma^2$-adjacency analysis is given in
 the audit doc
 ([`docs/audits/-per-nucleon-shift-derivation.md`](../../docs/audits/-per-nucleon-shift-derivation.md)).
