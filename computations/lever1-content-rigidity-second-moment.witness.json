@@ -1,0 +1,43 @@
+{
+  "engine": "sympy+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-07-13T11:12:59.426373+00:00",
+  "commitSha": "19646252ff9379934347ac8f42dd30cbbed82b2e",
+  "assertions": [
+    {
+      "name": "content_rigidity_strength_is_plancherel_variance_n_choose_2",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "μ₂ = Σ w_λ content² is the O((q-1)²) Δ_ω rigidity coefficient (μ1=0); Plancherel variance = n(n-1)/2 exactly = deg_q C_n; involution variance grows slower. Alien actions ω₀=1/√2, A₂=ω₀²/2=1/4 are archimedean, compared not identified (numerology guard)."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 11,
+  "computation": "lever1-content-rigidity-second-moment",
+  "scriptFile": "lever1_content_rigidity_second_moment.py",
+  "scriptHash": "7aaadc1b240e",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Lever-1 item 4 (twist-completion): quantify the Δ_ω q-rigidity via the content second moment μ₂ = Σ_λ w_λ content(λ)². Since the first moment vanishes (proved, AntiInvolutionPalindrome.lean), μ₂/2 IS the bar-even O((q-1)²) coefficient of the content sector. EXACT: (R1) μ1 = 0 both measures; (R2) the Plancherel content variance μ₂/n! = n(n-1)/2 EXACTLY (n≤8) — the clean quantification, the rigidity strength = the cell-pair count C(n,2) = deg_q C_n. Growth: Plancherel var exponent 2 (exact), involution var exponent < 2 (measured). Alien-datum comparison (numerology-guarded, report-only): actions ω₀=1/√2, A₂=1/4 with exact relation A₂=ω₀²/2 are archimedean (q=1); the rigidity is fibre-level (q-deformation) — compared, NOT identified, per the Im(q) fibre-vs-observable discipline. The structural fact is that the Plancherel rigidity strength n(n-1)/2 = deg_q C_n sets both the O((q-1)²) coefficient and the q-Gevrey growth bound. Exact sympy + mpmath; no fit; no wiring; EXPLORATORY.",
+  "data": {
+    "R1_first_moments_zero": true,
+    "R2_plancherel_variance_eq_n_choose_2": true,
+    "plancherel_var_exponent": "2.0208523",
+    "involution_var_exponent": "2.0382913",
+    "omega0": "0.707106781187",
+    "A2": "0.25",
+    "A2_eq_omega0_sq_over_2": true
+  }
+}
