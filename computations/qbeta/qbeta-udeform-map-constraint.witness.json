@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-07-13T20:51:02.601040+00:00",
-  "commitSha": "15283efc03c3b8a9344fc2af4c79bceaeb8ed1f2",
+  "computedAt": "2026-07-13T20:59:19.034838+00:00",
+  "commitSha": "2ec388a11a55c4ee3c017c586a7ad245f7156896",
   "assertions": [
     {
       "name": "anchors_reproduce",
@@ -48,8 +48,8 @@
   "durationMs": 4,
   "computation": "qbeta-udeform-map-constraint",
   "scriptFile": "qbeta_udeform_map_constraint_probe.py",
-  "scriptHash": "a0e0d8b9cedd",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "f2cef12ff326",
+  "scriptCommitSha": "2ec388a11a55c4ee3c017c586a7ad245f7156896",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
