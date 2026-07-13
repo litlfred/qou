@@ -1,12 +1,15 @@
 import Mathlib.Algebra.BigOperators.Ring.Finset
 import Mathlib.Algebra.Field.Basic
 import Mathlib.Tactic.Ring
+import Mathlib.Tactic.FieldSimp
+import Mathlib.Tactic.LinearCombination
 
 /-!
 # Rational fibre object ⇒ C-finite ladder coefficients (residue-A kernel grounding)
 
-Step 3 of the residue-A unblock kernel work
-(`docs/audits/2026-06-04-residue-a-unblock-kernel-scope.md`). The fibre object
+Residue-A unblock kernel work
+(`docs/audits/2026-06-04-residue-a-unblock-kernel-scope.md` +
+`docs/audits/2026-06-04-residue-a-kernel-deepening-plan.md`). The fibre object
 `F(u) = Q_β/[Q_A·cos α_eff]` satisfies a `q`-difference equation
 `F(qξ) = R(q,ξ)·F(ξ)`; if `F` is a *rational* function `P/Q`, its ladder
 coefficients `c_k` are **C-finite** — they satisfy a constant-coefficient linear
@@ -23,9 +26,13 @@ higher-order, and the productive direction is the canonical `c_11+` extraction
 (or a categorical derivation of `Q_A·cos α_eff`'s zero), not more real-q /
 root-of-unity forms.
 
-The lemma below is the load-bearing algebraic fact: a root `u₀` of the
-denominator gives a root `u₀⁻¹` of the reversed (characteristic) polynomial.
-Verified sorry-free against mathlib (pinned `f897ebcf`, lean v4.24.0).
+* `pole_reciprocal_is_char_root` — a denominator root `u₀` gives a root `u₀⁻¹`
+  of the reversed (characteristic) polynomial.
+* `CFinite` — the order-`d` recurrence itself.
+* `CFinite.recurrence_step` — the recurrence *solves for the leading term*: the
+  "kernel produces `c_k` from the seed" engine in math form.
+
+All verified sorry-free against mathlib (pinned `f897ebcf`, lean v4.24.0).
 -/
 
 open scoped BigOperators
@@ -63,5 +70,27 @@ theorem pole_reciprocal_is_char_root {K : Type*} [Field K] (d : ℕ) (q : ℕ �
     rw [Finset.mul_sum]
     exact Finset.sum_congr rfl key
   rw [step, hroot, mul_zero]
+
+/-- `c` is **C-finite of order `d`** with denominator coefficients `q`
+(`q 0 ≠ 0`): the defining constant-coefficient linear recurrence of the
+coefficients of a proper rational `P/Q`. -/
+def CFinite {K : Type*} [Field K] (d : ℕ) (q c : ℕ → K) : Prop :=
+  q 0 ≠ 0 ∧ ∀ n, d ≤ n → ∑ j ∈ Finset.range (d + 1), q j * c (n - j) = 0
+
+/-- The C-finite recurrence **solves for the leading term**: for `n ≥ d`, the
+coefficient `c n` is determined by the previous `d` values via the kernel
+`-(q 0)⁻¹ · q (j+1)`. This is the "kernel produces `c_k` from the seed" engine —
+it makes rigorous the Step-2 statement that the kernel fixes `c_{n}` from the
+last `d` coefficients. -/
+theorem CFinite.recurrence_step {K : Type*} [Field K] {d : ℕ} {q c : ℕ → K}
+    (h : CFinite d q c) {n : ℕ} (hn : d ≤ n) :
+    c n = -(q 0)⁻¹ * ∑ j ∈ Finset.range d, q (j + 1) * c (n - (j + 1)) := by
+  obtain ⟨hq0, hrec⟩ := h
+  have hsum := hrec n hn
+  -- split the `j = 0` term off the front: `(∑_{j<d} q(j+1) c(n-(j+1))) + q 0 * c n = 0`
+  rw [Finset.sum_range_succ'] at hsum
+  simp only [Nat.sub_zero] at hsum
+  field_simp
+  linear_combination hsum
 
 end QOU.QBeta
