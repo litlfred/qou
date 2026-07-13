@@ -22,6 +22,13 @@ deuteron candidate is `B = m_e·M_2·P(x) = m_e·P(x)` at the substrate-fixed
 coupling `x` (**no tuning**). Constants are derived: singularity at `ξ=1/√2`,
 level 1/2 (both Lean-proved).
 
+> **Correction (2026-07-13, later the same day):** the statement below that the
+> median sum "reaches `B_D` only as `x → 1/√2`" was an extrapolation from an
+> `x ≤ 0.5` table. A full coupling-axis scan shows the median resummation
+> **plateaus at ~21% of `B_D` (≈0.463 MeV near `x ≈ 0.6`) and never reaches
+> `B_D` at any coupling** — so no coupling derivation could close this route.
+> See [`2026-07-13-deuteron-coupling-candidates-derive-or-refute.md`](2026-07-13-deuteron-coupling-candidates-derive-or-refute.md).
+
 ## The result — undershoots ~37×
 
 | coupling `x` | `m_e·ReP` | % of `B_D` | alien jump |
