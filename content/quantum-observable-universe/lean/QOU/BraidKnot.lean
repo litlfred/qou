@@ -169,6 +169,9 @@ import QOU.BraidsAndKnots.YLambdaQSchur
 -- block decomposition. First QOU import of Mathlib.RepresentationTheory.* — CI must build it.
 import QOU.BraidKnot.MaschkeSnSemisimple
 import QOU.BraidKnot.WedderburnSn
+-- ⟨Res^{S₃}_{S₂} V_(2,1), V_(2)⟩ = 1 proved by finite computation (GAP-1 closure
+-- path 2, docs/audits/2026-07-13-pion-radius-and-vol-to-radius-gaps.md).
+import QOU.BraidKnot.SpechtBranchingMultiplicityOne
 
 /-!
 # BraidKnot — Module Index
