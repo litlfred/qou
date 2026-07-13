@@ -22,20 +22,28 @@ P^{-\mu}_{\nu-1/2}(\coth a)
 $$
 
   with $a$-independent $C$ whose shift laws
-  $C(\nu, \mu+1)/C(\nu,\mu) = 1/(\nu+\mu+\tfrac12)$ and
-  $C(\nu+1, \mu)/C(\nu,\mu) = -1/(\nu+\mu+\tfrac12)$ carry a single
-  $\Gamma(\nu+\mu+\tfrac12)$ with an alternating $\nu$-sign
+  $C(\nu, \mu+1)/C(\nu,\mu) = 1/(\nu+\mu+\tfrac{1}{2})$ and
+  $C(\nu+1, \mu)/C(\nu,\mu) = -1/(\nu+\mu+\tfrac{1}{2})$ carry a single
+  $\Gamma(\nu+\mu+\tfrac{1}{2})$ with an alternating $\nu$-sign
   \cite{whipple1917};
 - the constant's full Gamma structure is a symbolic-exact structural
   identity, grid-verified (not one-point): solving the two shift
   recurrences forces
-  $C(\nu,\mu) = \sqrt{2/\pi}\;e^{-i\pi\nu}/\Gamma(\nu+\mu+\tfrac12)$,
+  $C(\nu,\mu) = \sqrt{2/\pi}\;e^{-i\pi\nu}/\Gamma(\nu+\mu+\tfrac{1}{2})$,
   which matches the direct $60$-digit compute to $\sim 10^{-40}$ across a
   grid of generic non-integer, non-half-integer $(\nu,\mu)$ points (witness
   `computations/substrate/whipple-gamma-constant-gridverify.witness.json`);
-- the order $\mu = \tfrac12$ and the half-integer degree are forced by the
+- the order $\mu = \tfrac{1}{2}$ and the half-integer degree are forced by the
   Hoefsmit mixing structure
-  ([prop:hoefsmit-toroidal-ladder-locus](../braids-and-knots/hoefsmit-toroidal-ladder-locus.md)).
+  ([prop:hoefsmit-toroidal-ladder-locus](../braids-and-knots/hoefsmit-toroidal-ladder-locus.md));
+- the exchange holds *at the physical forced windings themselves*: at
+  $(\mu, \nu) = (\tfrac{1}{2}, d - \tfrac{1}{2})$ for axial distances $d \in \{2, 3, 4\}$
+  (the meson is $d = 2$) the same $\Gamma$-constant identity is exact to
+  $\sim 10^{-50}$ — not only at the generic grid points, which deliberately
+  avoided the $\mu = \tfrac{1}{2}$ order — and the order-ladder factor reproduces
+  the mixing numerator $d^2 - 1$ at each $d$ (witness
+  `computations/substrate/whipple-physical-windings-probe.witness.json`). This
+  is numerical evidence for the modeling layer, not a proof.
 
 **Open** is the identification itself: that the channel rotation of the
 Ismail–Masson pair \cite{ismail-masson1994} — the map carrying the bar-even
@@ -66,3 +74,18 @@ The archimedean *amplitude* of that exchange is fixed independently of the
 open identification: the grid-verified constant
 $C(\nu,\mu) = \sqrt{2/\pi}\,e^{-i\pi\nu}/\Gamma(\nu+\mu+\tfrac{1}{2})$ above is
 the symbolic-exact shadow the intertwining must carry.
+
+The grading-swap field is moreover *not primitive*: `channelIndexed_swaps_windings`
+**derives** it from the even↔odd channel flip that
+[prop on the channel rotation](binding-qbeta-complex-volume.md)
+(`rotation_step`) proves. A `ChannelIndexedLadder` carries the two
+recurrence-channel indices, the rotation that flips them, and a single shared
+winding function $\mathrm{windOf}$; the swap
+$\mathrm{windOf}(\mathrm{evenIdx}(\mathrm{rot}\,x)) =
+\mathrm{windOf}(\mathrm{oddIdx}\,x)$ then follows from the flip, not from an
+assumption. This does not close the conjecture (no instance is produced): it
+moves the open content off the swap and onto (i) identifying the abstract
+channel flip with `rotation_step`'s $\mathrm{oddStep} \leftrightarrow
+\mathrm{evenStep}$ carry, and (ii) the residual involutivity — the order-2
+Whipple $\cosh\eta \leftrightarrow \coth\eta$ exchange, a *different* map from
+the order-4 ζ₄ recurrence rotation, hence genuinely open.
