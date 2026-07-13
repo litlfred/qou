@@ -43,21 +43,39 @@ eigenvalue `c(cell of k in T) = col − row`.  Hence the central element
   there is no strand below `0`; recorded as `jucysMurphy_succ_zero` for `Fin (n+2)` where the
   index `1` genuinely exists, giving `X_1 = single (swap 0 1) 1`).
 
-## What is stated with `sorry` + `-- Ref:` (the genuine OV theorems)
+## What is proved sorry-free beyond the definitional layer
 
-* `jucysMurphy_commute` — the JM elements pairwise commute (the GZ algebra is commutative).
-  `-- Ref: [vershik-kerov1977]`.
-* `jucysMurphy_eigenvalue` — on a GZ/seminormal eigenvector of `S^λ` for the tableau `T`, `X_k`
-  acts by the scalar `cellContent (T's cell of k)`.  Stated against an *abstract packaging* of
-  the seminormal eigenbasis (see the design note below).  `-- Ref: [vershik-kerov1977]`.
-* `centralC2_acts_by_contentSqSum` — the punchline: the central element `C₂ = ∑_k X_k²` acts on
-  the Specht submodule `S^λ ≤ M^λ` (via `Specht.Mtab.rep` extended to the group algebra) as the
-  scalar `contentSqSum μ`.  `-- Ref: [vershik-kerov1977]`.  This discharges the `ω = Σc²` field of
-  the keystone's `SnWedderburnSpectralData`.
+* `jucysMurphy_commute` — the JM elements pairwise commute (the GZ algebra is commutative);
+  Jucys's classical double-sum computation.
+* `conj_jucysMurphy_self` / `conj_jucysMurphy_other` / `pair_shift_comm` (§4b) — the JM
+  **conjugation recursion** `s·X_a·s = X_{a+1} − s` (adjacent swap `s`), fixing every other
+  `X_m`; generic `[CommRing k]`.
+* `end_conj_shift_eigenvector_pair` / `end_conj_fix_eigenvector` /
+  `end_involution_eigenvector_ne` (§4c) — the classical **2×2 seminormal block**: on a joint
+  eigenvector `v` of the recursion pair, `w = S v − (c_b − c_a)⁻¹ • v` is again a joint
+  eigenvector with the swapped eigenvalues, nonzero when `(c_b − c_a)² ≠ 1`.
+* `rep_polytabloid` / `rep_mem_spechtSubmodule` (§4d) — `σ · e_t = e_{σ·t}`; the Specht
+  submodule is a **subrepresentation**.
+* `seminormalVector_data_step` — the seminormal **induction step**: transport of the full
+  seminormal eigenvector datum along any admissible adjacent swap (`AdjacentSwapStep`).
+* `seminormalVector_data_exists` — the all-`T` eigenvector existence, **assembled sorry-free**
+  from the two cited cores below by walking the swap chain from the base tableau.
+* `jucysMurphy_eigenvalue`, `exists_indep_seminormal_family`, `seminormalVectors_span`,
+  `centralC2_acts_by_contentSqSum` — the completeness chain and the `ω = Σc²` punchline,
+  sorry-free modulo the cores below.
 
-All three are theorems of the Okounkov–Vershik / Jucys–Murphy literature; their full Lean proofs
-are the content of the OV paper and out of scope for one brick.  They are honestly stubbed per
-AGENTS.md §1 (`theorem … := by sorry  -- Ref: …`), never `: True`, never `native_decide`.
+## What is stated with `sorry` + `-- Ref:` (the residual OV cores)
+
+* `seminormalVector_base_exists` — existence of the seminormal eigenvector for **one**
+  distinguished (base) tableau.  `-- Ref: [vershik-kerov1977]`.
+* `syt_adjacentSwap_connected` — any two standard tableaux of a shape are connected by
+  admissible adjacent swaps (pure combinatorics).  `-- Ref: [sagan2001]`.
+* `syt_content_tuple_injective` — the content tuple determines the standard tableau (the GZ
+  spectrum is simple; pure combinatorics).  `-- Ref: [vershik-kerov1977]`.
+
+All three are strictly smaller than the previously carried all-`T` existence `sorry`; they are
+honestly stubbed per AGENTS.md §1 (`theorem … := by sorry  -- Ref: …`), never `: True`, never
+`native_decide`.
 
 ## Base ring (§7c)
 
@@ -305,6 +323,286 @@ theorem jucysMurphy_commute (n : ℕ) (i j : Fin n) :
     exact Commute.refl _
   · exact (jm_commute_lt n j i h).symm
 
+/-! ## 4b. The Jucys–Murphy conjugation recursion (sorry-free, generic `CommRing`)
+
+The engine of every inductive seminormal argument: conjugating by the adjacent
+transposition `s = (a, a+1)` sends `X_a ↦ X_{a+1} − s` (`conj_jucysMurphy_self`)
+and fixes every other `X_k` (`conj_jucysMurphy_other`).  Together with the pure
+noncommutative-ring cancellation `pair_shift_comm`, these are the classical
+Jucys relations.  All sorry-free, over the file-wide generic `[CommRing k]`. -/
+
+/-- Conjugating one transposition by another: `(ab)·(ij)·(ab) = (σi, σj)` with `σ = (ab)`. -/
+private theorem swap_conj_swap {n : ℕ} (a b i j : Fin n) :
+    Equiv.swap a b * Equiv.swap i j * Equiv.swap a b
+      = Equiv.swap (Equiv.swap a b i) (Equiv.swap a b j) := by
+  have h := Equiv.swap_apply_apply (Equiv.swap a b) i j
+  rw [Equiv.swap_inv] at h
+  exact h.symm
+
+private theorem conj_single_swap {n : ℕ} (a b i j : Fin n) :
+    single (Equiv.swap a b) (1 : k) * single (Equiv.swap i j) 1 * single (Equiv.swap a b) 1
+      = single (Equiv.swap (Equiv.swap a b i) (Equiv.swap a b j)) 1 := by
+  rw [single_mul_single, single_mul_single, one_mul, one_mul, swap_conj_swap]
+
+/-- **The Jucys–Murphy recursion (algebra form).** `s·X_a·s = X_b − s` for the adjacent swap
+`s = (a b)`, `b = a + 1`: conjugation sends each `(j a)` (`j < a`) to `(j b)`, and
+`X_b = ∑_{j<a} (j b) + (a b)`.  Sorry-free, generic `[CommRing k]`. -/
+theorem conj_jucysMurphy_self {n : ℕ} (a b : Fin n) (hab : (a : ℕ) + 1 = (b : ℕ)) :
+    single (Equiv.swap a b) (1 : k) * jucysMurphy (k := k) n a * single (Equiv.swap a b) 1
+      = jucysMurphy (k := k) n b - single (Equiv.swap a b) 1 := by
+  have hFb : Finset.univ.filter (fun j : Fin n => j.val < b.val)
+      = insert a (Finset.univ.filter (fun j : Fin n => j.val < a.val)) := by
+    ext j
+    simp only [Finset.mem_insert, Finset.mem_filter, Finset.mem_univ, true_and,
+      ← Fin.val_eq_val]
+    omega
+  have haF : a ∉ Finset.univ.filter (fun j : Fin n => j.val < a.val) := by simp
+  simp only [jucysMurphy]
+  rw [Finset.mul_sum, Finset.sum_mul, hFb, Finset.sum_insert haF, add_sub_cancel_left]
+  refine Finset.sum_congr rfl (fun j hj => ?_)
+  rw [Finset.mem_filter] at hj
+  have hja : j ≠ a := Fin.ne_of_val_ne (by omega)
+  have hjb : j ≠ b := Fin.ne_of_val_ne (by omega)
+  rw [conj_single_swap, Equiv.swap_apply_of_ne_of_ne hja hjb, Equiv.swap_apply_left]
+
+/-- **The other Jucys–Murphy elements are fixed** by conjugation with an adjacent swap:
+`s·X_m·s = X_m` for `m ∉ {a, b}` — the swap permutes the index set `{j : j < m}`.
+Sorry-free, generic `[CommRing k]`. -/
+theorem conj_jucysMurphy_other {n : ℕ} (a b m : Fin n) (hab : (a : ℕ) + 1 = (b : ℕ))
+    (hma : m ≠ a) (hmb : m ≠ b) :
+    single (Equiv.swap a b) (1 : k) * jucysMurphy (k := k) n m * single (Equiv.swap a b) 1
+      = jucysMurphy (k := k) n m := by
+  have hma' : (m : ℕ) ≠ (a : ℕ) := fun h => hma (Fin.ext h)
+  have hmb' : (m : ℕ) ≠ (b : ℕ) := fun h => hmb (Fin.ext h)
+  have hmem : ∀ j : Fin n, (j : ℕ) < (m : ℕ) → ((Equiv.swap a b j : Fin n) : ℕ) < (m : ℕ) := by
+    intro j hjm
+    rcases eq_or_ne j a with rfl | hja
+    · rw [Equiv.swap_apply_left]; omega
+    · rcases eq_or_ne j b with rfl | hjb
+      · rw [Equiv.swap_apply_right]; omega
+      · rw [Equiv.swap_apply_of_ne_of_ne hja hjb]; exact hjm
+  simp only [jucysMurphy]
+  rw [Finset.mul_sum, Finset.sum_mul]
+  have hstep : ∀ j ∈ Finset.univ.filter (fun j : Fin n => j.val < m.val),
+      single (Equiv.swap a b) (1 : k) * single (Equiv.swap j m) 1 * single (Equiv.swap a b) 1
+        = single (Equiv.swap (Equiv.swap a b j) m) 1 := by
+    intro j _
+    rw [conj_single_swap, Equiv.swap_apply_of_ne_of_ne hma hmb]
+  rw [Finset.sum_congr rfl hstep]
+  refine Finset.sum_nbij' (fun j => Equiv.swap a b j) (fun j => Equiv.swap a b j)
+    ?_ ?_ ?_ ?_ ?_
+  · intro x hx
+    rw [Finset.mem_filter] at hx ⊢
+    exact ⟨Finset.mem_univ _, hmem x hx.2⟩
+  · intro x hx
+    rw [Finset.mem_filter] at hx ⊢
+    exact ⟨Finset.mem_univ _, hmem x hx.2⟩
+  · intro x _; exact Equiv.swap_apply_self a b x
+  · intro x _; exact Equiv.swap_apply_self a b x
+  · intro x _; rfl
+
+/-- Abstract ring fact: if `s² = 1` and `s·Y·s = Z − s`, then `s` commutes with `Y² + Z²`.
+The pure noncommutative-ring core of the Jucys–Murphy centrality argument: from the
+hypotheses, `s·Y = Z·s − 1` and `s·Z = Y·s + 1`, and the cross terms cancel. -/
+theorem pair_shift_comm {A : Type*} [Ring A] (s Y Z : A) (hs : s * s = 1)
+    (hA : s * Y * s = Z - s) :
+    s * (Y ^ 2 + Z ^ 2) = (Y ^ 2 + Z ^ 2) * s := by
+  have h1 : s * Y = Z * s - 1 := by
+    calc s * Y = s * Y * (s * s) := by rw [hs, mul_one]
+    _ = s * Y * s * s := by rw [← mul_assoc]
+    _ = (Z - s) * s := by rw [hA]
+    _ = Z * s - 1 := by rw [sub_mul, hs]
+  have h2 : s * Z = Y * s + 1 := by
+    have hZ : s * Y * s + s = Z := by rw [hA, sub_add_cancel]
+    calc s * Z = s * (s * Y * s + s) := by rw [hZ]
+    _ = s * s * Y * s + s * s := by noncomm_ring
+    _ = Y * s + 1 := by rw [hs, one_mul]
+  calc s * (Y ^ 2 + Z ^ 2)
+      = s * Y * Y + s * Z * Z := by noncomm_ring
+    _ = (Z * s - 1) * Y + (Y * s + 1) * Z := by rw [h1, h2]
+    _ = Z * (s * Y) + Y * (s * Z) - Y + Z := by noncomm_ring
+    _ = Z * (Z * s - 1) + Y * (Y * s + 1) - Y + Z := by rw [h1, h2]
+    _ = (Y ^ 2 + Z ^ 2) * s := by noncomm_ring
+
+/-! ## 4c. The classical 2×2 seminormal block (sorry-free linear algebra)
+
+The module-level engine of Young's seminormal form: on a simultaneous eigenvector
+`v` of two operators `A, B` intertwined by an involution `S` via the JM recursion
+`S·A·S = B − S`, the vector `w = S v − (c_B − c_A)⁻¹ • v` is again a simultaneous
+eigenvector — with the **swapped** eigenvalues (`end_conj_shift_eigenvector_pair`);
+operators fixed by the conjugation keep their eigenvalue (`end_conj_fix_eigenvector`);
+and `w ≠ 0` whenever `(c_B − c_A)² ≠ 1` (`end_involution_eigenvector_ne`).  No Specht
+content — pure `Module.End` algebra. -/
+
+/-- **The 2×2 seminormal block, eigenvalue-swap half.** If `S² = 1`, `S·A·S = B − S`
+(the Jucys–Murphy recursion, abstractly), and `v` is an `A`-eigenvector with value `ca`
+and a `B`-eigenvector with value `cb ≠ ca`, then `w = S v − (cb − ca)⁻¹ • v` is an
+`A`-eigenvector with value `cb` and a `B`-eigenvector with value `ca` (the swapped pair).
+Sorry-free. -/
+theorem end_conj_shift_eigenvector_pair {k : Type} [Field k] {V : Type*}
+    [AddCommGroup V] [Module k V]
+    (S A B : Module.End k V) (hS2 : S * S = 1) (hconj : S * A * S = B - S)
+    {v : V} {ca cb : k} (hA : A v = ca • v) (hB : B v = cb • v) (hne : cb - ca ≠ 0) :
+    A (S v - (cb - ca)⁻¹ • v) = cb • (S v - (cb - ca)⁻¹ • v)
+      ∧ B (S v - (cb - ca)⁻¹ • v) = ca • (S v - (cb - ca)⁻¹ • v) := by
+  have hAS : A * S = S * B - 1 := by
+    calc A * S = (S * S) * (A * S) := by rw [hS2, one_mul]
+      _ = S * (S * A * S) := by noncomm_ring
+      _ = S * (B - S) := by rw [hconj]
+      _ = S * B - 1 := by rw [mul_sub, hS2]
+  have hBS : B * S = S * A + 1 := by
+    have hB' : B = S * A * S + S := by rw [hconj, sub_add_cancel]
+    calc B * S = (S * A * S + S) * S := by rw [← hB']
+      _ = (S * A) * (S * S) + S * S := by noncomm_ring
+      _ = S * A + 1 := by rw [hS2, mul_one]
+  have hASv : A (S v) = cb • S v - v := by
+    have h := congrArg (fun f : Module.End k V => f v) hAS
+    simp only [Module.End.mul_apply, LinearMap.sub_apply, Module.End.one_apply] at h
+    rw [h, hB, map_smul]
+  have hBSv : B (S v) = ca • S v + v := by
+    have h := congrArg (fun f : Module.End k V => f v) hBS
+    simp only [Module.End.mul_apply, LinearMap.add_apply, Module.End.one_apply] at h
+    rw [h, hA, map_smul]
+  constructor
+  · have hsc : cb * (cb - ca)⁻¹ = (cb - ca)⁻¹ * ca + 1 := by
+      field_simp
+      ring
+    rw [map_sub, map_smul, hA, hASv, smul_sub, smul_smul, smul_smul, hsc, add_smul, one_smul]
+    abel
+  · have hsc : ca * (cb - ca)⁻¹ = (cb - ca)⁻¹ * cb - 1 := by
+      field_simp
+      ring
+    rw [map_sub, map_smul, hB, hBSv, smul_sub, smul_smul, smul_smul, hsc, sub_smul, one_smul]
+    abel
+
+/-- **The 2×2 seminormal block, fixed-operator half.** An operator `C` fixed by the
+conjugation (`S·C·S = C`, `S² = 1`) commutes with `S`, so it keeps its eigenvalue on
+`w = S v − r • v` for any shift `r`.  Sorry-free, generic `[CommRing k]`. -/
+theorem end_conj_fix_eigenvector {k : Type} [CommRing k] {V : Type*}
+    [AddCommGroup V] [Module k V]
+    (S C : Module.End k V) (hS2 : S * S = 1) (hfix : S * C * S = C)
+    {v : V} {c : k} (hC : C v = c • v) (r : k) :
+    C (S v - r • v) = c • (S v - r • v) := by
+  have hCS : C * S = S * C := by
+    calc C * S = (S * S) * (C * S) := by rw [hS2, one_mul]
+      _ = S * (S * C * S) := by noncomm_ring
+      _ = S * C := by rw [hfix]
+  have hCSv : C (S v) = c • S v := by
+    have h := congrArg (fun f : Module.End k V => f v) hCS
+    simp only [Module.End.mul_apply] at h
+    rw [h, hC, map_smul]
+  rw [map_sub, map_smul, hC, hCSv, smul_sub, smul_smul, smul_smul, mul_comm r c]
+
+/-- **The 2×2 seminormal block, non-vanishing half.** If `S² = 1`, `v ≠ 0`, and
+`(cb − ca)² ≠ 1`, then `w = S v − (cb − ca)⁻¹ • v ≠ 0`: from `w = 0` the vector `v`
+would be an `S`-eigenvector with eigenvalue `r = (cb − ca)⁻¹`, forcing `r² = 1` by the
+involution — i.e. `(cb − ca)² = 1` (with the degenerate `cb = ca` giving `r = 0`,
+`r² = 0 ≠ 1`, also excluded).  Sorry-free. -/
+theorem end_involution_eigenvector_ne {k : Type} [Field k] {V : Type*}
+    [AddCommGroup V] [Module k V]
+    (S : Module.End k V) (hS2 : S * S = 1) {v : V} (hv : v ≠ 0)
+    {ca cb : k} (hsq : (cb - ca) ^ 2 ≠ 1) :
+    S v - (cb - ca)⁻¹ • v ≠ 0 := by
+  intro hw
+  have hSv : S v = (cb - ca)⁻¹ • v := by rwa [sub_eq_zero] at hw
+  have hSS : S (S v) = v := by
+    have h := congrArg (fun f : Module.End k V => f v) hS2
+    simpa only [Module.End.mul_apply, Module.End.one_apply] using h
+  have hv2 : ((cb - ca)⁻¹ * (cb - ca)⁻¹) • v = v := by
+    calc ((cb - ca)⁻¹ * (cb - ca)⁻¹) • v = (cb - ca)⁻¹ • (cb - ca)⁻¹ • v := by rw [mul_smul]
+      _ = (cb - ca)⁻¹ • S v := by rw [← hSv]
+      _ = S ((cb - ca)⁻¹ • v) := (map_smul S _ v).symm
+      _ = S (S v) := by rw [← hSv]
+      _ = v := hSS
+  have hz : ((cb - ca)⁻¹ * (cb - ca)⁻¹ - 1) • v = 0 := by
+    rw [sub_smul, one_smul, hv2, sub_self]
+  have hrr : (cb - ca)⁻¹ * (cb - ca)⁻¹ = 1 := by
+    rcases smul_eq_zero.mp hz with h | h
+    · exact sub_eq_zero.mp h
+    · exact absurd h hv
+  apply hsq
+  have hinv : ((cb - ca) * (cb - ca))⁻¹ = 1 := by
+    rw [mul_inv]
+    exact hrr
+  rw [sq]
+  exact inv_eq_one.mp hinv
+
+/-! ## 4d. The Specht submodule is a subrepresentation (sorry-free)
+
+`σ · e_t = e_{σ·t}`: the group action permutes the polytabloids, so the span `S^λ`
+is invariant under every `rep μ σ`.  This is the membership leg of the seminormal
+transport (the swapped vector `S v − r • v` stays inside `S^λ`). -/
+
+/-- The conjugation equivalence `C_t ≃ C_{σ·t}` between column stabilizers,
+`π ↦ σ π σ⁻¹`.  Membership transports along `colPattern (σ • t) = σ • colPattern t`. -/
+private def colStabConj {μ : YoungDiagram} (σ : Equiv.Perm (Fin (Specht.nOf μ)))
+    (t : Specht.Tableau μ) : ↥(Specht.colStab t) ≃ ↥(Specht.colStab (σ • t)) where
+  toFun π := ⟨σ * (π : Equiv.Perm (Fin (Specht.nOf μ))) * σ⁻¹, by
+    have hπ := Specht.mem_colStab.mp π.2
+    rw [Specht.mem_colStab, Specht.colPattern_smul]
+    simp [mul_smul, hπ]⟩
+  invFun π := ⟨σ⁻¹ * (π : Equiv.Perm (Fin (Specht.nOf μ))) * σ, by
+    have hπ := Specht.mem_colStab.mp π.2
+    rw [Specht.colPattern_smul] at hπ
+    rw [Specht.mem_colStab]
+    simp only [mul_smul]
+    rw [hπ]
+    simp⟩
+  left_inv π := by
+    ext
+    simp [mul_assoc]
+  right_inv π := by
+    ext
+    simp [mul_assoc]
+
+/-- **The group action permutes polytabloids**: `rep σ (e_t) = e_{σ·t}`.  Reindex the
+column-stabilizer sum along the conjugation `π ↦ σπσ⁻¹` (`colStabConj`); signs are
+conjugation-invariant and `(σπσ⁻¹)·(σ·t) = σ·(π·t)`.  Sorry-free. -/
+theorem rep_polytabloid {μ : YoungDiagram} (σ : Equiv.Perm (Fin (Specht.nOf μ)))
+    (t : Specht.Tableau μ) :
+    Specht.Mtab.rep (k := k) μ σ (Specht.polytabloid (k := k) t)
+      = Specht.polytabloid (k := k) (σ • t) := by
+  classical
+  rw [Specht.polytabloid, Specht.polytabloid, map_sum]
+  refine Fintype.sum_equiv (colStabConj σ t) _ _ (fun π => ?_)
+  rw [map_zsmul, Specht.Mtab.rep_of]
+  have hsg : Equiv.Perm.sign (σ * (π : Equiv.Perm (Fin (Specht.nOf μ))) * σ⁻¹)
+      = Equiv.Perm.sign (π : Equiv.Perm (Fin (Specht.nOf μ))) := by
+    rw [map_mul, map_mul, map_inv, mul_comm (Equiv.Perm.sign σ), mul_assoc,
+      mul_inv_cancel, mul_one]
+  have harg : (σ * (π : Equiv.Perm (Fin (Specht.nOf μ))) * σ⁻¹) • (σ • t)
+      = σ • (π : Equiv.Perm (Fin (Specht.nOf μ))) • t := by
+    simp [mul_smul]
+  show (Equiv.Perm.sign (π : Equiv.Perm (Fin (Specht.nOf μ))) : ℤ)
+        • Specht.Mtab.of (k := k) (σ • (π : Equiv.Perm (Fin (Specht.nOf μ))) • t)
+      = (Equiv.Perm.sign ((colStabConj σ t π : Equiv.Perm (Fin (Specht.nOf μ)))) : ℤ)
+        • Specht.Mtab.of (k := k)
+            ((colStabConj σ t π : Equiv.Perm (Fin (Specht.nOf μ))) • σ • t)
+  rw [show ((colStabConj σ t π : Equiv.Perm (Fin (Specht.nOf μ))))
+        = σ * (π : Equiv.Perm (Fin (Specht.nOf μ))) * σ⁻¹ from rfl, hsg, harg]
+
+/-- **`S^λ` is invariant under the `S_n`-action** (a subrepresentation): `rep μ σ`
+maps the Specht submodule into itself.  Span induction over the polytabloid
+generators via `rep_polytabloid`.  Sorry-free, generic `[CommRing k]`. -/
+theorem rep_mem_spechtSubmodule {μ : YoungDiagram} (σ : Equiv.Perm (Fin (Specht.nOf μ)))
+    {v : Specht.Mtab (k := k) μ} (hv : v ∈ Specht.SpechtSubmodule (k := k) μ) :
+    Specht.Mtab.rep (k := k) μ σ v ∈ Specht.SpechtSubmodule (k := k) μ := by
+  have hv' : v ∈ Submodule.span k (Set.range (Specht.polytabloid (k := k) (μ := μ))) := hv
+  refine Submodule.span_induction
+    (p := fun w _ => Specht.Mtab.rep (k := k) μ σ w ∈ Specht.SpechtSubmodule (k := k) μ)
+    ?_ ?_ ?_ ?_ hv'
+  · rintro w ⟨t, rfl⟩
+    rw [rep_polytabloid]
+    exact Specht.polytabloid_mem_specht _
+  · simp only [map_zero]
+    exact zero_mem _
+  · intro x y _ _ hx hy
+    rw [map_add]
+    exact add_mem hx hy
+  · intro c x _ hx
+    rw [map_smul]
+    exact Submodule.smul_mem _ _ hx
+
 /-! ## 5. The remaining deep Okounkov–Vershik theorems (stated, `sorry` + `-- Ref:`) -/
 
 /-- A **seminormal (Gelfand–Zetlin) eigenvector** of the Specht module `S^λ`, packaged abstractly
@@ -407,17 +705,172 @@ noncomputable def tableauCellEquiv (μ : YoungDiagram) (T : QOU.BraidKnot.Standa
     Fin (Specht.nOf μ) ≃ μ.cells :=
   QOU.BraidKnot.SpechtStandardBasis.sytToTableau T
 
-/-- **The genuine Okounkov–Vershik existence core (Young's seminormal vector).** For every standard
-Young tableau `T` of shape `μ`, there exists a nonzero vector `v` in the Specht submodule `S^λ` on
-which **each** Jucys–Murphy element `X_s` acts diagonally with eigenvalue `cellContent (c)`, where
-`c = tableauCellEquiv μ T s` is the cell of `μ` holding label `s` in `T`.
+/-- **An admissible adjacent-swap step between standard tableaux**, recorded at the level of
+their content vectors (all the seminormal transport needs).  `T'` is obtained from `T` by an
+adjacent swap `(a, b)` (`b = a + 1`) when: the content vectors of `T'` and `T` agree away from
+`{a, b}` and are swapped at `{a, b}`; and the content gap `d = c_T(b) − c_T(a)` satisfies
+`d ≠ 0` and `d² ≠ 1`.  The two gap conditions are the classical admissibility: for a standard
+tableau, consecutive labels never sit on the same diagonal (`d ≠ 0`), and `|d| = 1` exactly when
+they are row- or column-adjacent — the case in which the swapped filling is *not* standard.  So
+an `AdjacentSwapStep` is precisely "swap `a, a+1` in `T`, landing on another standard tableau". -/
+def AdjacentSwapStep (μ : YoungDiagram)
+    (T T' : QOU.BraidKnot.StandardYoungTableau μ) : Prop :=
+  ∃ a b : Fin (Specht.nOf μ), (a : ℕ) + 1 = (b : ℕ) ∧
+    cellContent ((tableauCellEquiv μ T' a : ℕ × ℕ))
+      = cellContent ((tableauCellEquiv μ T b : ℕ × ℕ)) ∧
+    cellContent ((tableauCellEquiv μ T' b : ℕ × ℕ))
+      = cellContent ((tableauCellEquiv μ T a : ℕ × ℕ)) ∧
+    (∀ s : Fin (Specht.nOf μ), s ≠ a → s ≠ b →
+      cellContent ((tableauCellEquiv μ T' s : ℕ × ℕ))
+        = cellContent ((tableauCellEquiv μ T s : ℕ × ℕ))) ∧
+    cellContent ((tableauCellEquiv μ T b : ℕ × ℕ))
+      - cellContent ((tableauCellEquiv μ T a : ℕ × ℕ)) ≠ 0 ∧
+    (cellContent ((tableauCellEquiv μ T b : ℕ × ℕ))
+      - cellContent ((tableauCellEquiv μ T a : ℕ × ℕ))) ^ 2 ≠ 1
 
-This is the *irreducible* content of `jucysMurphy_eigenvalue` and remains a single cited `sorry`:
-it is Young's seminormal form (the construction of the GZ/seminormal eigenbasis), the content of the
-Okounkov–Vershik paper.  Note what has been **factored out** of it (and is therefore *not* cited):
-the indexing bijection `cellOf` is pinned to the explicitly-constructed `tableauCellEquiv μ T`
-(brick 4's sorry-free `sytToTableau`), so this lemma asserts only the existence of the eigenvector,
-not of its cell-labelling.
+/-- **Seminormal transport along an admissible adjacent swap (sorry-free).** If a nonzero
+`v ∈ S^λ` is a simultaneous JM eigenvector with the content tuple of `T`, and
+`AdjacentSwapStep μ T T'`, then `w = ρ(s)·v − (c_b − c_a)⁻¹ • v` (with `s = (a, a+1)` and
+`c_a, c_b` the contents of `a, a+1` in `T`) is a nonzero simultaneous JM eigenvector in `S^λ`
+with the content tuple of `T'`.
+
+This is the classical induction step of Young's seminormal form, machine-checked end-to-end:
+* the JM recursion `s·X_a·s = X_b − s` / `s·X_m·s = X_m` (`conj_jucysMurphy_self` /
+  `conj_jucysMurphy_other`) is pushed through `asAlgebraHom` to `Module.End`;
+* the eigenvalue swap is `end_conj_shift_eigenvector_pair`, the fixed operators are
+  `end_conj_fix_eigenvector`, non-vanishing is `end_involution_eigenvector_ne`
+  (using `d ≠ 0`, `d² ≠ 1` cast into `k` by `CharZero`);
+* membership is the subrepresentation property `rep_mem_spechtSubmodule`. -/
+theorem seminormalVector_data_step {k : Type} [Field k] [CharZero k] (μ : YoungDiagram)
+    {T T' : QOU.BraidKnot.StandardYoungTableau μ}
+    (hstep : AdjacentSwapStep μ T T')
+    (h : ∃ v : Specht.Mtab (k := k) μ,
+        v ∈ Specht.SpechtSubmodule (k := k) μ ∧ v ≠ 0 ∧
+          ∀ s : Fin (Specht.nOf μ),
+            (Specht.Mtab.rep μ).asAlgebraHom (jucysMurphy (k := k) (Specht.nOf μ) s) v
+              = (cellContent ((tableauCellEquiv μ T s : ℕ × ℕ))) • v) :
+    ∃ v : Specht.Mtab (k := k) μ,
+      v ∈ Specht.SpechtSubmodule (k := k) μ ∧ v ≠ 0 ∧
+        ∀ s : Fin (Specht.nOf μ),
+          (Specht.Mtab.rep μ).asAlgebraHom (jucysMurphy (k := k) (Specht.nOf μ) s) v
+            = (cellContent ((tableauCellEquiv μ T' s : ℕ × ℕ))) • v := by
+  classical
+  obtain ⟨a, b, hab, hca', hcb', hother, hne, hsq⟩ := hstep
+  obtain ⟨v, hmem, hnz, heig⟩ := h
+  -- the k-cast eigen equations
+  have heigk : ∀ s : Fin (Specht.nOf μ),
+      (Specht.Mtab.rep μ).asAlgebraHom (jucysMurphy (k := k) (Specht.nOf μ) s) v
+        = ((cellContent ((tableauCellEquiv μ T s : ℕ × ℕ)) : ℤ) : k) • v := by
+    intro s
+    rw [heig s]
+    exact (Int.cast_smul_eq_zsmul k _ _).symm
+  -- the representation of the adjacent swap, as an endomorphism
+  have hS2 : ((Specht.Mtab.rep (k := k) μ).asAlgebraHom (single (Equiv.swap a b) (1 : k)))
+      * ((Specht.Mtab.rep (k := k) μ).asAlgebraHom (single (Equiv.swap a b) (1 : k))) = 1 := by
+    rw [← map_mul, single_mul_single, one_mul, Equiv.swap_mul_self, ← MonoidAlgebra.one_def,
+      map_one]
+  -- the JM recursion at the endomorphism level
+  have hconjE : ((Specht.Mtab.rep (k := k) μ).asAlgebraHom (single (Equiv.swap a b) (1 : k)))
+        * ((Specht.Mtab.rep μ).asAlgebraHom (jucysMurphy (k := k) (Specht.nOf μ) a))
+        * ((Specht.Mtab.rep (k := k) μ).asAlgebraHom (single (Equiv.swap a b) (1 : k)))
+      = ((Specht.Mtab.rep μ).asAlgebraHom (jucysMurphy (k := k) (Specht.nOf μ) b))
+        - ((Specht.Mtab.rep (k := k) μ).asAlgebraHom (single (Equiv.swap a b) (1 : k))) := by
+    rw [← map_mul, ← map_mul, conj_jucysMurphy_self a b hab, map_sub]
+  have hfixE : ∀ s : Fin (Specht.nOf μ), s ≠ a → s ≠ b →
+      ((Specht.Mtab.rep (k := k) μ).asAlgebraHom (single (Equiv.swap a b) (1 : k)))
+          * ((Specht.Mtab.rep μ).asAlgebraHom (jucysMurphy (k := k) (Specht.nOf μ) s))
+          * ((Specht.Mtab.rep (k := k) μ).asAlgebraHom (single (Equiv.swap a b) (1 : k)))
+        = (Specht.Mtab.rep μ).asAlgebraHom (jucysMurphy (k := k) (Specht.nOf μ) s) := by
+    intro s hsa hsb
+    rw [← map_mul, ← map_mul, conj_jucysMurphy_other a b s hab hsa hsb]
+  -- the content gap, cast into k
+  have hcast : ((cellContent ((tableauCellEquiv μ T b : ℕ × ℕ)) : ℤ) : k)
+      - ((cellContent ((tableauCellEquiv μ T a : ℕ × ℕ)) : ℤ) : k)
+      = ((cellContent ((tableauCellEquiv μ T b : ℕ × ℕ))
+          - cellContent ((tableauCellEquiv μ T a : ℕ × ℕ)) : ℤ) : k) := by
+    push_cast
+    ring
+  have hnek : ((cellContent ((tableauCellEquiv μ T b : ℕ × ℕ)) : ℤ) : k)
+      - ((cellContent ((tableauCellEquiv μ T a : ℕ × ℕ)) : ℤ) : k) ≠ 0 := by
+    rw [hcast]
+    exact_mod_cast hne
+  have hsqk : (((cellContent ((tableauCellEquiv μ T b : ℕ × ℕ)) : ℤ) : k)
+      - ((cellContent ((tableauCellEquiv μ T a : ℕ × ℕ)) : ℤ) : k)) ^ 2 ≠ 1 := by
+    rw [hcast]
+    exact_mod_cast hsq
+  -- the transported vector
+  refine ⟨((Specht.Mtab.rep (k := k) μ).asAlgebraHom (single (Equiv.swap a b) (1 : k))) v
+      - (((cellContent ((tableauCellEquiv μ T b : ℕ × ℕ)) : ℤ) : k)
+          - ((cellContent ((tableauCellEquiv μ T a : ℕ × ℕ)) : ℤ) : k))⁻¹ • v, ?_, ?_, ?_⟩
+  · -- membership: ρ(s)·v ∈ S^λ (subrepresentation) and S^λ is a submodule
+    refine sub_mem ?_ (Submodule.smul_mem _ _ hmem)
+    have hSv_eq : ((Specht.Mtab.rep (k := k) μ).asAlgebraHom (single (Equiv.swap a b) (1 : k))) v
+        = Specht.Mtab.rep (k := k) μ (Equiv.swap a b) v := by
+      rw [Representation.asAlgebraHom_single, one_smul]
+    rw [hSv_eq]
+    exact rep_mem_spechtSubmodule _ hmem
+  · -- non-vanishing
+    exact end_involution_eigenvector_ne _ hS2 hnz hsqk
+  · -- the swapped eigen equations
+    intro s
+    have hblock := end_conj_shift_eigenvector_pair _ _ _ hS2 hconjE (heigk a) (heigk b) hnek
+    rcases eq_or_ne s a with rfl | hsa
+    · rw [hca', ← Int.cast_smul_eq_zsmul k]
+      exact hblock.1
+    · rcases eq_or_ne s b with rfl | hsb
+      · rw [hcb', ← Int.cast_smul_eq_zsmul k]
+        exact hblock.2
+      · rw [hother s hsa hsb, ← Int.cast_smul_eq_zsmul k]
+        exact end_conj_fix_eigenvector _ _ hS2 (hfixE s hsa hsb) (heigk s) _
+
+/-- **OV existence core 1 (base seminormal vector — the residual cited debt).** For *some*
+standard tableau `T₀` of shape `μ` there is a nonzero simultaneous JM eigenvector in `S^λ`
+with the content tuple of `T₀`.  Classically this is the explicit seminormal vector of the
+column-superstandard tableau (or, in Okounkov–Vershik, the highest weight of the GZ chain);
+its construction needs the polytabloid straightening machinery not yet built here.  Strictly
+smaller than the previous all-`T` existence core: existence for a *single* tableau, with the
+propagation to every `T` now machine-checked (`seminormalVector_data_step` +
+`syt_adjacentSwap_connected`).
+
+**Base ring `[Field k] [CharZero k]`** — see `seminormalVector_data_exists`. -/
+theorem seminormalVector_base_exists {k : Type} [Field k] [CharZero k] (μ : YoungDiagram) :
+    ∃ T₀ : QOU.BraidKnot.StandardYoungTableau μ,
+      ∃ v : Specht.Mtab (k := k) μ,
+        v ∈ Specht.SpechtSubmodule (k := k) μ ∧ v ≠ 0 ∧
+          ∀ s : Fin (Specht.nOf μ),
+            (Specht.Mtab.rep μ).asAlgebraHom (jucysMurphy (k := k) (Specht.nOf μ) s) v
+              = (cellContent ((tableauCellEquiv μ T₀ s : ℕ × ℕ))) • v := by
+  -- Ref: [vershik-kerov1977] (Young's seminormal form, base vector: the explicit seminormal
+  -- eigenvector of one distinguished — e.g. column-superstandard — tableau; the OV highest
+  -- weight of the Gelfand–Zetlin chain).
+  sorry
+
+/-- **OV existence core 2 (adjacent-swap connectivity of standard tableaux — combinatorial).**
+Any two standard Young tableaux of the same shape are connected by a chain of admissible
+adjacent swaps (`AdjacentSwapStep`).  Pure tableau combinatorics — no modules: any standard
+tableau can be walked to the row-superstandard one by repeatedly swapping some `(k, k+1)` whose
+labels are neither row- nor column-adjacent (contents differ by `≥ 2`, giving the `d ≠ 0`,
+`d² ≠ 1` gap conditions).  Needs the diagram/tableau restriction machinery not yet built here. -/
+theorem syt_adjacentSwap_connected (μ : YoungDiagram)
+    (T T' : QOU.BraidKnot.StandardYoungTableau μ) :
+    Relation.ReflTransGen (AdjacentSwapStep μ) T T' := by
+  -- Ref: [sagan2001] (The Symmetric Group, §3.10 / the exchange argument: SYT(μ) is connected
+  -- under admissible adjacent transpositions).
+  sorry
+
+/-- **The Okounkov–Vershik existence theorem (Young's seminormal vector), de-abstracted.** For
+every standard Young tableau `T` of shape `μ`, there exists a nonzero vector `v` in the Specht
+submodule `S^λ` on which **each** Jucys–Murphy element `X_s` acts diagonally with eigenvalue
+`cellContent (c)`, where `c = tableauCellEquiv μ T s` is the cell of `μ` holding label `s` in `T`.
+
+**De-abstraction (this proof is sorry-free; its inputs are the two named cores).** Take the base
+seminormal vector (`seminormalVector_base_exists`, core 1), walk the admissible-adjacent-swap
+chain from its tableau to `T` (`syt_adjacentSwap_connected`, core 2), transporting the
+eigenvector along each step by the machine-checked classical 2×2 seminormal block
+(`seminormalVector_data_step`: the JM recursion `s·X_a·s = X_b − s` + the eigenvalue-swap /
+fixed-operator / non-vanishing linear algebra + `S^λ`-invariance — all sorry-free).  The cited
+debt is thus reduced from "all-`T` eigenvector existence" to {base-tableau existence,
+adjacent-swap connectivity} — each strictly more atomic.
 
 **Base ring `[Field k] [CharZero k]` (§7c over-generality fix).** Stated over a char-0 field, NOT
 the file-wide `[CommRing k]`: over a general commutative ring the integer cell-contents can collide
@@ -425,7 +878,7 @@ modulo the characteristic (e.g. `ℤ/pℤ` with `c_i ≡ c_j` but `c_i ≠ c_j`)
 `↑c_s` stop being distinct, the eigenspaces merge, and a simultaneous eigenvector with the
 *prescribed* content tuple need not exist in `S^λ` — the `[CommRing k]` form is over-general (false at
 `ℤ/pℤ`).  Young's seminormal form is genuinely a char-0 fact (it inverts the content differences
-`c_i − c_j`).  `-- Ref: [vershik-kerov1977]`. -/
+`c_i − c_j`, exactly as the transport step does). -/
 theorem seminormalVector_data_exists {k : Type} [Field k] [CharZero k] (μ : YoungDiagram)
     (T : QOU.BraidKnot.StandardYoungTableau μ) :
     ∃ v : Specht.Mtab (k := k) μ,
@@ -433,11 +886,12 @@ theorem seminormalVector_data_exists {k : Type} [Field k] [CharZero k] (μ : You
         ∀ s : Fin (Specht.nOf μ),
           (Specht.Mtab.rep μ).asAlgebraHom (jucysMurphy (k := k) (Specht.nOf μ) s) v
             = (cellContent ((tableauCellEquiv μ T s : ℕ × ℕ))) • v := by
-  -- Ref: [vershik-kerov1977] (Young's seminormal form: the GZ/seminormal eigenvector of S^λ for the
-  -- tableau T, on which each JM element X_s acts by the content of s's cell).  The indexing
-  -- bijection has already been constructed (`tableauCellEquiv`); this is the eigenvector existence
-  -- only — the brick-5 OV existence core.
-  sorry
+  obtain ⟨T₀, hbase⟩ := seminormalVector_base_exists (k := k) μ
+  have hchain : Relation.ReflTransGen (AdjacentSwapStep μ) T₀ T :=
+    syt_adjacentSwap_connected μ T₀ T
+  induction hchain with
+  | refl => exact hbase
+  | tail _ hstep ih => exact seminormalVector_data_step μ hstep ih
 
 /-- **Jucys–Murphy eigenvalue theorem (Okounkov–Vershik).** The Specht module `S^λ` admits a
 Gelfand–Zetlin / seminormal basis indexed by the standard Young tableaux of shape `μ`, on which
