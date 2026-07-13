@@ -48,7 +48,8 @@ here = os.path.dirname(__file__)
 beo_path = os.path.join(here, "..", "binding-bar-even-odd-probe.witness.json")
 observed = {}
 try:
-    beo = json.load(open(beo_path))
+    with open(beo_path, encoding="utf-8") as f:
+        beo = json.load(f)
 
     def walk(o):
         if isinstance(o, dict):
