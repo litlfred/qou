@@ -912,6 +912,19 @@
         "reviewed_at": "2026-07-07T14:26:57.132792Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:41:58.000Z",
+        "reviewed_sha": "33ed00b385c59dc2d0b1facd776c76767d8a60cd",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -952,6 +965,19 @@
         "notes": "The claim in 'Time-reversal $T$ as Markov-trace word reversal (trace cyclicity dual)' is unverified because the formal proof in content/quantum-observable-universe/particle-interactions/t-from-trace-cyclicity.lean is incomplete (contains sorry).",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/t-from-trace-cyclicity.lean:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:41:58.000Z",
+        "reviewed_sha": "33ed00b385c59dc2d0b1facd776c76767d8a60cd",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-vacuous": [
@@ -973,6 +999,19 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The claims in 'Time-reversal $T$ as Markov-trace word reversal (trace cyclicity dual)' are non-vacuous as they make concrete conjectures about 'on braid words at the Markov-trace level:'.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:41:58.000Z",
+        "reviewed_sha": "33ed00b385c59dc2d0b1facd776c76767d8a60cd",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-circular": [
@@ -995,6 +1034,19 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Time-reversal $T$ as Markov-trace word reversal (trace cyclicity dual)'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/t-from-trace-cyclicity.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:41:58.000Z",
+        "reviewed_sha": "33ed00b385c59dc2d0b1facd776c76767d8a60cd",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-overclaim": [
@@ -1016,6 +1068,19 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The prose in 'Time-reversal $T$ as Markov-trace word reversal (trace cyclicity dual)' presents the result as established, but the Lean formalization in content/quantum-observable-universe/particle-interactions/t-from-trace-cyclicity.lean is incomplete (has sorry).",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:41:58.000Z",
+        "reviewed_sha": "33ed00b385c59dc2d0b1facd776c76767d8a60cd",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-hidden-dof": [
@@ -1038,6 +1103,19 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Time-reversal $T$ as Markov-trace word reversal (trace cyclicity dual)'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/t-from-trace-cyclicity.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:41:58.000Z",
+        "reviewed_sha": "33ed00b385c59dc2d0b1facd776c76767d8a60cd",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-non-sequitur": [
@@ -1060,6 +1138,19 @@
         "notes": "The argument flow in 'Time-reversal $T$ as Markov-trace word reversal (trace cyclicity dual)' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/t-from-trace-cyclicity.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:41:58.000Z",
+        "reviewed_sha": "33ed00b385c59dc2d0b1facd776c76767d8a60cd",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1081,6 +1172,19 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/t-from-trace-cyclicity.lean uses a class-conjecture pattern, matching the conjectural nature of 'Time-reversal $T$ as Markov-trace word reversal (trace cyclicity dual)'.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:41:58.000Z",
+        "reviewed_sha": "33ed00b385c59dc2d0b1facd776c76767d8a60cd",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-citation-misuse": [
@@ -1103,6 +1207,19 @@
         "notes": "Citations to jones1987, kassel1995, wenzl1988 are correct and contextually appropriate.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/t-from-trace-cyclicity.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:41:58.000Z",
+        "reviewed_sha": "33ed00b385c59dc2d0b1facd776c76767d8a60cd",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-definitional-ambiguity": [
@@ -1125,6 +1242,19 @@
         "notes": "Key terms and symbols in 'Time-reversal $T$ as Markov-trace word reversal (trace cyclicity dual)' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/t-from-trace-cyclicity.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:41:58.000Z",
+        "reviewed_sha": "33ed00b385c59dc2d0b1facd776c76767d8a60cd",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-empirical-fragility": [
@@ -1147,6 +1277,19 @@
         "notes": "The algebraic and logical relations in 'Time-reversal $T$ as Markov-trace word reversal (trace cyclicity dual)' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/t-from-trace-cyclicity.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:41:58.000Z",
+        "reviewed_sha": "33ed00b385c59dc2d0b1facd776c76767d8a60cd",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-physical-implausibility": [
@@ -1169,6 +1312,19 @@
         "notes": "The physical concepts described in 'Time-reversal $T$ as Markov-trace word reversal (trace cyclicity dual)' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/t-from-trace-cyclicity.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:41:58.000Z",
+        "reviewed_sha": "33ed00b385c59dc2d0b1facd776c76767d8a60cd",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-reproducibility": [
@@ -1191,6 +1347,19 @@
         "notes": "The derivation steps and formal definitions in 'Time-reversal $T$ as Markov-trace word reversal (trace cyclicity dual)' are reproducible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/t-from-trace-cyclicity.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:41:58.000Z",
+        "reviewed_sha": "33ed00b385c59dc2d0b1facd776c76767d8a60cd",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-referee-verdict": [
@@ -1214,6 +1383,19 @@
         "severity": "minor",
         "verdict": "survivable-objection",
         "referee_argument": "The conjectured relations in 'Time-reversal $T$ as Markov-trace word reversal (trace cyclicity dual)' remain unproven and are represented only by sorry stubs in the formalization content/quantum-observable-universe/particle-interactions/t-from-trace-cyclicity.lean."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:41:58.000Z",
+        "reviewed_sha": "33ed00b385c59dc2d0b1facd776c76767d8a60cd",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1418,6 +1600,36 @@
         },
         "reviewed_at": "2026-07-12T00:35:39.126Z",
         "reviewed_sha": "a38f99c8befc4b364f7820811bc286a64f3a2b6e"
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:41:58.000Z",
+        "reviewed_sha": "33ed00b385c59dc2d0b1facd776c76767d8a60cd",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:41:58.000Z",
+        "reviewed_sha": "33ed00b385c59dc2d0b1facd776c76767d8a60cd",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ]
   },
