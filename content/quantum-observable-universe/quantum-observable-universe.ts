@@ -133,5 +133,6 @@ export default paper({
     chapterRef({ dir: "appendix-surreals-archimedean" }),      // Surreal-number lift (archimedean lobe) — substrate-q_0-pinned content split out per q-usage audit
     chapterRef({ dir: "index-of-definitions" }),
     chapterRef({ dir: "notation" }),                          // Symbol register — moved out of the front matter to its own appendix (too long for the front). Forward refs ignored by the detangler (preview chapter).
+
   ],
 });
