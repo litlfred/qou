@@ -17,7 +17,7 @@ import Mathlib.Data.Real.Basic
 
 namespace QOU.AppendixSurreals
 
--- The standard-part functor `st : No_fin → ℝ` is formalised in the
+-- The standard-part map `st : No_fin → ℝ` is formalised in the
 -- library at `QOU.AppendixSurreals.standardPart` (StandardPart.lean);
 -- the content block `def:standard-part-functor` resolves its `lean.ref`
 -- there. This sibling carries only the Archimedean mass-limit corollary

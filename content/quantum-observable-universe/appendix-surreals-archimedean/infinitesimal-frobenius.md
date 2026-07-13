@@ -31,9 +31,9 @@ arbitrary $K$-linear endomorphism (the *deviation*).
 
 The conjecture asserts:
 
-1. **Standard-part recovery**: applying the standard-part functor
+1. **Standard-part recovery**: applying the standard-part map
  $\mathrm{St}$
- ([standard-part functor](#def:standard-part-functor)) to a
+ ([standard-part map](#def:standard-part-functor)) to a
  relaxed Frobenius axiom yields a strict Frobenius axiom on the
  archimedean image. Concretely, $\mathrm{St}(\delta) = 0$ is
  automatic if and only if the deviation is birthday-shifted.

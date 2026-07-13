@@ -5,7 +5,7 @@ $$
   \;=\; f(x_{\mathfrak n}) - f(x_{\mathfrak p}).
 $$
 
-*By contrast, the archimedean functor $\tau$ is a nonlinear $\mathrm{Li}_2^q$-tower. Thus, in general:*
+*By contrast, the archimedean realisation $\tau$ is a nonlinear $\mathrm{Li}_2^q$-tower. Thus, in general:*
 
 $$
   \tau(x_{\mathfrak n}) - \tau(x_{\mathfrak p})

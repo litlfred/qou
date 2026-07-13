@@ -45,7 +45,7 @@ namespace QOU.FeynmanClassicalLimit.ConditionalAudit
     Markov-trace link invariant. The full categorical degeneration is
     formalised in `QOU.FeynmanPathIntegrals.ClassicalLimitDegeneration`;
     this class carries the open conjectural input (existence of the
-    standard-part functor realising it) as a Prop. -/
+    standard-part map realising it) as a Prop. -/
 -- Ref: [manuscript] conj:classical-limit-stpart
 class ClassicalLimitStpart : Prop where
   /-- In the `q → 1` limit every knot's Jones value collapses to `1`:

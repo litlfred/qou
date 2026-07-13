@@ -4,7 +4,7 @@ export default proposition({
   label: "prop:delta-pre-archimedean",
   title:
     "Difference observables are formed pre-archimedean: fold commutes " +
-    "with the delta, the archimedean functor does not",
+    "with the delta, the archimedean realisation does not",
   lean: {
     ref: "qou:QOU.ParticleInteractions.fold_commutes_sub",
   },

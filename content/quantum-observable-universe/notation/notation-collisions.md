@@ -79,7 +79,7 @@ Convention: $\mathfrak{D}_K = \hbar / (\text{lifetime of } K)$. Subscripts: $\ma
 | **Forgetful functor** $U$ | $\mathbf{Arch} \to \mathbf{Vec}_{\mathbb{R}}$ | Drops the archimedean enrichment, leaving the underlying real vector space. |
 | **Archimedean realisation** (informal "Arch") | $\mathbf{C}(R) \to \mathbf{C}(\mathbb{R})$ | Base-ring substitution (`R ↦ ℝ`) at the archimedean wall; **not** a functor between QOU categories. |
 
-The category $\mathbf{Arch}$ is the target of $\tau$, not the name of a functor. When authoring, we say which one: "$\tau$ specialised to $\mathbf{Arch}$" or "the $R \mapsto \mathbb{R}$ realisation". We never write "the archimedean functor" without context.
+The category $\mathbf{Arch}$ is the target of $\tau$, not the name of a functor. When authoring, we say which one: "$\tau$ specialised to $\mathbf{Arch}$" or "the $R \mapsto \mathbb{R}$ realisation". We never write "the archimedean realisation" without context.
 
 **Pinning $\tau$'s codomain — one functor, several de-enriched levels.** The canonical fibre functor is $\tau \colon \mathbf{C} \to \mathbf{Arch}$. Where the corpus writes $\tau$ into a *different* target, it means a **composite** with $\tau$, not a rival functor:
 

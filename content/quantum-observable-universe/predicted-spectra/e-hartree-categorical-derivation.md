@@ -20,7 +20,7 @@ $$
 
 ## Status: a conditional theorem
 
-Every mechanism question is resolved. The coupling-parity routes are refuted. The $\alpha_{EM}^{2}$ scaling is exact in $R$. The archimedean functor is the known $q_0$-evaluation / Bloch–Suslin pairing. The $(2,2) = \mathrm{EM}$ channel is grounded in the covalent-pair structure. The statement is not closed. By the framework's three-calibration design, the statement cannot be unconditional. The energy unit $m_e c^{2}$ is CAL-1. The residual contains exactly three named items:
+Every mechanism question is resolved. The coupling-parity routes are refuted. The $\alpha_{EM}^{2}$ scaling is exact in $R$. The archimedean realisation is the known $q_0$-evaluation / Bloch–Suslin pairing. The $(2,2) = \mathrm{EM}$ channel is grounded in the covalent-pair structure. The statement is not closed. By the framework's three-calibration design, the statement cannot be unconditional. The energy unit $m_e c^{2}$ is CAL-1. The residual contains exactly three named items:
 
 1. **The $(2,2) = \mathrm{EM}$ identification.** The channel $(2,2)$ is the unique self-transpose summand of $\mathrm{Ind}_{S_2\times S_2}^{S_4}(\mathrm{sgn}\boxtimes\mathrm{sgn})$. This rests on the physical input that a covalent bond equals two EM singlets.
 2. **The $m_e c^{2}$ CAL-1 unit.** This is not provable by design.

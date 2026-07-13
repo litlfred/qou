@@ -29,7 +29,7 @@ The Gröbner–Shirshov basis algorithms rewrite braid words to their canonical 
 The slice-traversal matches the jet order. Convergence confirms the finite-slice evaluation remains algebraically consistent with the expected semiclassical limit at $q \to 1$.
 
 **Step 9: Mass evaluation**
-The Archimedean functor evaluates the rational trace at $q_0$ and multiplies by the electron scale. This converts the symbolic invariant into a physical mass. The real part of the categorical volume computes the binding energy, while the imaginary part determines the decay Q-value.
+The Archimedean realisation evaluates the rational trace at $q_0$ and multiplies by the electron scale. This converts the symbolic invariant into a physical mass. The real part of the categorical volume computes the binding energy, while the imaginary part determines the decay Q-value.
 
 **Step 10: Canonical knot identification**
 A semidefinite program selects the canonical Hecke element. Minimizing the Frobenius residual over Gröbner–Shirshov normal forms identifies the ground state. The dual shadow prices explicitly recover the binding energy block saturation.

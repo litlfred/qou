@@ -1,4 +1,4 @@
-# Physical Interpretation of the Standard-Part Functor
+# Physical Interpretation of the standard-part map
 
 ## Significance for QOU
 
@@ -13,9 +13,9 @@ first-order quantum correction.
 The functorial standard-part is the bridge between the surreal-
 ambient reformulation and the archimedean paper.
 
-## Archimedean Functor & Trace Commutativity
+## Archimedean realisation & Trace Commutativity
 
-The standard-part functor acts as the **Archimedean Functor** $\mathcal{F}_{Arch}$, transforming algebraic traces into physical macroscopic observables. The evaluation of nuclear binding traces rigorously commutes as the scale $A \to \infty$:
+The standard-part map acts as the **Archimedean realisation** $\mathcal{F}_{Arch}$, transforming algebraic traces into physical macroscopic observables. The evaluation of nuclear binding traces rigorously commutes as the scale $A \to \infty$:
 
 ```mermaid
 flowchart TD
@@ -38,7 +38,7 @@ flowchart TD
     
     B_sym -.->|"Q-CLT Limit (A → ∞)"| B_qCLT
     
-    B_sym == "Archimedean Functor F_Arch (Standard-Part)" ==> M_sym
+    B_sym == "Archimedean realisation F_Arch (Standard-Part)" ==> M_sym
     B_qCLT == "Asymptotic Convergence" ==> M_qclt
     
     M_sym -.->|"Perfect mapping in algebraic limit"| M_obs
