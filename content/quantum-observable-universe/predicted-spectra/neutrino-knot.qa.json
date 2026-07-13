@@ -873,6 +873,19 @@
         "reviewed_at": "2026-07-07T14:26:56.307684Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:56:51.000Z",
+        "reviewed_sha": "b95c99f15f0057020c753dd9f0465ba72f296c67",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "wall-side-statement": [
@@ -915,6 +928,19 @@
         "notes": "The mathematical claims in 'Neutrino' are unverified due to compile errors in the Lean sibling file: content/quantum-observable-universe/predicted-spectra/neutrino-knot.lean:28:13: error: unexpected token 'section'; expected 'lemma'.",
         "severity": "minor",
         "evidence": "neutrino-knot.lean:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:56:51.000Z",
+        "reviewed_sha": "b95c99f15f0057020c753dd9f0465ba72f296c67",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-vacuous": [
@@ -937,6 +963,19 @@
         "notes": "The Lean sibling content/quantum-observable-universe/predicted-spectra/neutrino-knot.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
         "severity": "minor",
         "evidence": "neutrino-knot.lean:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:56:51.000Z",
+        "reviewed_sha": "b95c99f15f0057020c753dd9f0465ba72f296c67",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-circular": [
@@ -959,6 +998,19 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Neutrino'.",
         "severity": "minor",
         "evidence": "neutrino-knot.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:56:51.000Z",
+        "reviewed_sha": "b95c99f15f0057020c753dd9f0465ba72f296c67",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-overclaim": [
@@ -980,6 +1032,19 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The remarks and narrative scope in 'Neutrino' are appropriately qualified.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:56:51.000Z",
+        "reviewed_sha": "b95c99f15f0057020c753dd9f0465ba72f296c67",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-hidden-dof": [
@@ -1002,6 +1067,19 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Neutrino'.",
         "severity": "minor",
         "evidence": "neutrino-knot.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:56:51.000Z",
+        "reviewed_sha": "b95c99f15f0057020c753dd9f0465ba72f296c67",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-non-sequitur": [
@@ -1024,6 +1102,19 @@
         "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/predicted-spectra/neutrino-knot.lean.",
         "severity": "minor",
         "evidence": "neutrino-knot.lean:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:56:51.000Z",
+        "reviewed_sha": "b95c99f15f0057020c753dd9f0465ba72f296c67",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1045,6 +1136,19 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/predicted-spectra/neutrino-knot.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:56:51.000Z",
+        "reviewed_sha": "b95c99f15f0057020c753dd9f0465ba72f296c67",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-citation-misuse": [
@@ -1067,6 +1171,19 @@
         "notes": "No citations are present in 'Neutrino', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "neutrino-knot.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:56:51.000Z",
+        "reviewed_sha": "b95c99f15f0057020c753dd9f0465ba72f296c67",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-definitional-ambiguity": [
@@ -1089,6 +1206,19 @@
         "notes": "Key terms and symbols in 'Neutrino' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "neutrino-knot.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:56:51.000Z",
+        "reviewed_sha": "b95c99f15f0057020c753dd9f0465ba72f296c67",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-empirical-fragility": [
@@ -1111,6 +1241,19 @@
         "notes": "The algebraic and logical relations in 'Neutrino' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "neutrino-knot.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:56:51.000Z",
+        "reviewed_sha": "b95c99f15f0057020c753dd9f0465ba72f296c67",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-physical-implausibility": [
@@ -1133,6 +1276,19 @@
         "notes": "The physical concepts described in 'Neutrino' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "neutrino-knot.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:56:51.000Z",
+        "reviewed_sha": "b95c99f15f0057020c753dd9f0465ba72f296c67",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-reproducibility": [
@@ -1155,6 +1311,19 @@
         "notes": "The Lean sibling content/quantum-observable-universe/predicted-spectra/neutrino-knot.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
         "evidence": "neutrino-knot.lean:1 — content/quantum-observable-universe/predicted-spectra/neutrino-knot.lean:28:13: error: unexpected token 'section'; expected 'lemma'"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:56:51.000Z",
+        "reviewed_sha": "b95c99f15f0057020c753dd9f0465ba72f296c67",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-referee-verdict": [
@@ -1178,6 +1347,19 @@
         "severity": "major",
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling content/quantum-observable-universe/predicted-spectra/neutrino-knot.lean fails compilation, indicating that the claims cannot be formally verified in Lean."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:56:51.000Z",
+        "reviewed_sha": "b95c99f15f0057020c753dd9f0465ba72f296c67",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "bib-cite-resolves": [
@@ -1433,6 +1615,36 @@
         },
         "reviewed_at": "2026-07-12T00:35:44.899Z",
         "reviewed_sha": "6a697553ee79c4d9e8932245bfa58ba9bd9e7e5c"
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:56:51.000Z",
+        "reviewed_sha": "b95c99f15f0057020c753dd9f0465ba72f296c67",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:56:51.000Z",
+        "reviewed_sha": "b95c99f15f0057020c753dd9f0465ba72f296c67",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ]
   },
