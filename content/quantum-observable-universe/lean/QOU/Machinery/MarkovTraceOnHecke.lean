@@ -236,7 +236,13 @@ this file does not yet carry:
 
 2. **The `Ind_{H₃}^{H₄}` Markov stabilization.** The general-`n` trace is built
    from the H₃ trace by the Markov induction/stabilization the (M3) law
-   encodes; the `trM_markov_σ₁` reduction here is the `n = 3` base case.
+   encodes; the `trM_markov_σ₁` reduction here is the `n = 3` base case. The
+   `n = 4` case is numerically confirmed — `tr_M⁴(x·σ₂) = z·tr_M³(x)` and
+   `tr_M⁴(x) = tr_M³(x)` hold for H₃ words *beyond* the weight-pinning
+   constraints (over-determination test, float64) by
+   `computations/probes/markov_reduction_h3_to_h4_verify.py`, via the same
+   seminormal machinery as `alpha_k_jones_markov_h4.py`. That is evidence for
+   ingredient (2); the Lean-grade proof still awaits ingredient (1).
 
 Separately, `markov_trace_origin` also needs **Step 4** — naming the specific
 Wenzl–Hoefsmit operator whose trace is `ℏ_rⁿ` (an *identification*, not a
