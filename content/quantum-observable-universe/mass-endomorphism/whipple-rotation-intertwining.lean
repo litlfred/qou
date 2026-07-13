@@ -85,4 +85,64 @@ theorem gradingPair_intertwines_swap {M : Type} (L : WindingLadderData M)
   rw [hmu, hnu]
   rfl
 
+/-! ## Conditional reduction: the winding-swap factors through the channel flip
+
+The grading-swap field of `WhippleRotationIntertwining` is not primitive: it
+*follows from* the even↔odd **channel flip** that
+`QOU.MassEndomorphism.rotation_step` proves (the ζ₄ recurrence rotation carries
+`oddStep` ↔ `evenStep`). The reduction below isolates exactly this. A
+`ChannelIndexedLadder` carries the two recurrence-channel indices, the rotation
+that flips them (the abstract shadow of `rotation_step`), and the single shared
+winding function `windOf` sending a channel index to its winding grading. The
+swap is then a *derived* consequence — `windOf (evenIdx (rot x)) = windOf (oddIdx
+x)` because `rot` flips the indices — **not** an assumed field.
+
+This does not close the conjecture: no instance of `WhippleRotationIntertwining`
+is produced. It moves the open content off the swap and onto (i) the
+identification of `rot_flips_channels` with `rotation_step`'s even↔odd carry, and
+(ii) the residual involutivity field (the order-2 Whipple `cosh ↔ coth` argument
+exchange — a *different* map from the order-4 ζ₄ recurrence rotation, so genuinely
+open). Dependency-free: only `Int`, structures, and core tactics. -/
+
+/-- Channel-indexed ladder data: the two recurrence-channel indices, the
+    channel-flipping rotation (shadow of `rotation_step`), and the shared
+    winding function assigning a grading to a channel index. -/
+structure ChannelIndexedLadder (M : Type) where
+  /-- even (compact / binding / `cosh`) recurrence-channel index. -/
+  evenIdx : M → Int
+  /-- odd (non-compact / `𝔔_β` / `sinh`) recurrence-channel index. -/
+  oddIdx : M → Int
+  /-- the ζ₄ channel rotation (abstract shadow of `rotation_step`). -/
+  rot : M → M
+  /-- winding grading assigned to a channel index (the SAME map for both
+      channels — this is what makes the swap derivable). -/
+  windOf : Int → Int
+  /-- `rot` flips the even and odd channel indices: the faithful abstraction of
+      `rotation_step`'s `oddStep ↔ evenStep` carry. -/
+  rot_flips_channels :
+    ∀ x : M, evenIdx (rot x) = oddIdx x ∧ oddIdx (rot x) = evenIdx x
+
+/-- The winding-graded ladder induced by a channel-indexed ladder: each grading
+    is `windOf` of the corresponding channel index. -/
+def ChannelIndexedLadder.toWindingLadder {M : Type} (L : ChannelIndexedLadder M) :
+    WindingLadderData M where
+  rot := L.rot
+  muGrade := fun x => L.windOf (L.evenIdx x)
+  nuGrade := fun x => L.windOf (L.oddIdx x)
+
+/-- **The reduction.** For a channel-indexed ladder, the winding-swap field of
+    `WhippleRotationIntertwining` is *derived* from the channel flip — no swap is
+    assumed. Because both gradings are the same `windOf` of their channel index,
+    flipping the indices flips the gradings. -/
+theorem channelIndexed_swaps_windings {M : Type} (L : ChannelIndexedLadder M)
+    (x : M) :
+    L.toWindingLadder.muGrade (L.rot x) = L.toWindingLadder.nuGrade x ∧
+      L.toWindingLadder.nuGrade (L.rot x) = L.toWindingLadder.muGrade x := by
+  obtain ⟨he, ho⟩ := L.rot_flips_channels x
+  refine ⟨?_, ?_⟩
+  · show L.windOf (L.evenIdx (L.rot x)) = L.windOf (L.oddIdx x)
+    rw [he]
+  · show L.windOf (L.oddIdx (L.rot x)) = L.windOf (L.evenIdx x)
+    rw [ho]
+
 end QOU.MassEndomorphism

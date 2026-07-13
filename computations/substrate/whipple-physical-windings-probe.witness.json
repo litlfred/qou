@@ -1,0 +1,69 @@
+{
+  "computation": "whipple_physical_windings_probe",
+  "description": "Whipple degree<->order exchange + Hoefsmit forcing verified AT the physical forced windings (mu, nu) = (1/2, d-1/2) for axial distances d in {2,3,4} (meson d=2), at 50 dps. Evidence for the modeling layer of the Whipple-rotation identification; auditOnly.",
+  "discipline": "canonical-derivation / modeling-evidence (not a proof)",
+  "auditOnly": true,
+  "results": {
+    "per_d": {
+      "2": {
+        "windings_mu_nu": [
+          "0.5",
+          "1.5"
+        ],
+        "forcing_ladder_value": "3.0",
+        "forcing_target_d2_minus_1": 3,
+        "forcing_ok": true,
+        "a_independence_spread": "1.7373e-50",
+        "max_dev_from_gamma_constant": "1.471e-50",
+        "gamma_constant": "(5.46489213931093284778021465851e-52 + 0.600210877438070713036799460671j)",
+        "whipple_ratio_point0": "(0.0 + 0.600210877438070713036799460671j)",
+        "exchange_ok": true
+      },
+      "3": {
+        "windings_mu_nu": [
+          "0.5",
+          "2.5"
+        ],
+        "forcing_ladder_value": "8.0",
+        "forcing_target_d2_minus_1": 8,
+        "forcing_ok": true,
+        "a_independence_spread": "7.3501e-51",
+        "max_dev_from_gamma_constant": "6.8166e-51",
+        "gamma_constant": "(1.34851553771853794348564995556e-51 - 0.240084350975228285214719784268j)",
+        "whipple_ratio_point0": "(0.0 - 0.240084350975228285214719784268j)",
+        "exchange_ok": true
+      },
+      "4": {
+        "windings_mu_nu": [
+          "0.5",
+          "3.5"
+        ],
+        "forcing_ladder_value": "15.0",
+        "forcing_target_d2_minus_1": 15,
+        "forcing_ok": true,
+        "a_independence_spread": "2.3387e-51",
+        "max_dev_from_gamma_constant": "2.1708e-51",
+        "gamma_constant": "(-8.33036217431289485966430999275e-52 + 0.0685955288500652243470627955053j)",
+        "whipple_ratio_point0": "(0.0 + 0.0685955288500652243470627955053j)",
+        "exchange_ok": true
+      }
+    },
+    "gamma_constant_formula": "sqrt(2/pi) * e^{-i pi nu} / Gamma(nu + mu + 1/2)",
+    "lean_cert_forcing": "QOU.BraidsAndKnots.toroidal_locus_forced (sorry-free)",
+    "conjecture": "QOU.MassEndomorphism.WhippleRotationIntertwining (open)"
+  },
+  "assertions": {
+    "physical_forcing_ladder_eq_d2_minus_1_all_d": true,
+    "whipple_exchange_holds_at_physical_half_integer_order_all_d": true
+  },
+  "allPassed": true,
+  "verdict": "The toroidal degree<->order exchange with the exact Gamma-constant C(nu,mu) = sqrt(2/pi) e^{-i pi nu}/Gamma(nu+mu+1/2) holds to 1e-30 at the PHYSICAL forced windings (mu, nu) = (1/2, d-1/2) for d in {2,3,4} -- not only at the generic grid points -- and the order-ladder factor reproduces the Hoefsmit mixing numerator d^2-1 at each d. This is numerical EVIDENCE that the even<->odd channel rotation descends to the physical toroidal windings as the Whipple exchange; it does NOT prove the modeling identification (a model validated by observables, not a theorem).",
+  "scriptHash": "c38da24dcb86",
+  "scriptCommitSha": "unknown",
+  "commitSha": "be5ccd2f9963b657f3b46dfd00a610c5cc4f79ec",
+  "engine": "mpmath",
+  "computedAt": "2026-07-13T11:50:21.533851+00:00",
+  "durationMs": 0,
+  "engineVersion": "mpmath 1.3.0",
+  "scriptFile": "whipple_physical_windings_probe.py"
+}
