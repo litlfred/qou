@@ -1,6 +1,6 @@
-## Beta decay emerges from the confined demand
+## Beta decay emerges from the confined deficit
 
-The $\mathcal{B}_3$-confined proton NF has residual demand:
+The $\mathcal{B}_3$-confined proton NF has residual deficit:
 
 $$
   \mathrm{NF}(\mathfrak{p})
@@ -9,9 +9,9 @@ $$
 $$
 
 - $\gamma < 0$: vacuum energy deficit—the source of the nucleon's mass.
-- $e^- < 0$: **trefoil demand**—the nucleon demands an electron. This is the categorical beta decay channel.
+- $e^- < 0$: **trefoil deficit**—the nucleon possesses a topological deficit corresponding to an electron. This is the categorical beta decay channel.
 
-For the neutron, the demand is larger: $\gamma = -0.202$, $L_+ = -0.010$, $e^- = -0.044$. The additional $L_+$ deficit and larger $\gamma$ deficit provide the energy that drives $\mathfrak{n} \to \mathfrak{p} + e^- + \bar\nu$.
+For the neutron, the deficit is larger: $\gamma = -0.202$, $L_+ = -0.010$, $e^- = -0.044$. The additional $L_+$ deficit and larger $\gamma$ deficit provide the energy that drives $\mathfrak{n} \to \mathfrak{p} + e^- + \bar\nu$.
 
 ## Confinement universality
 
