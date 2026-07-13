@@ -68,3 +68,24 @@ mass/binding conjecture classes. The remaining §3b classes are open for good re
 Genuine (large) paths to actually chip them: build `Real.dilog` + the analytic
 five-term (⇒ discharges `QRogersAnalyticContinuation`); build RSK / `Σ(f^λ)²=n!`
 (⇒ discharges the `burnside` sorry + Specht chain). Neither is faked here.
+
+## Honest §3b chips LANDED (move B — extend the conditional cone, no fabricated instance)
+
+1. **`FollowsRogersSzego` even-sector tower** (`Mass/BindingQHermiteOscillator.lean`,
+   `rogers_szego_even_at_neg_one`) — the file already proved the ODD sector vanishes
+   at `t=−1` (bar-odd/sinh collapse); added the EVEN closed form
+   `H_{2j}(−1;q) = ∏_{i<j}(1−q^{2i+1})·H_0` (bar-even/cosh tower), completing the
+   q-Hermite even/odd parity. Direct application of this session's bar-parity insight.
+   Verified lean-direct sorry-free (`#print axioms` = propext/Classical/Quot only). ✓
+
+## Deferred honest chip (flagged so no one closes it dishonestly)
+
+2. **`TowerGeometricLowerBound.no_linear_selection`** (`Mass/LevelSelectionLogarithmic.lean`)
+   — converting the file's "linear selection excluded" prose into a `: False` theorem.
+   **TRAP:** the naive `∀ A, w A ≤ M·A → False` is provable trivially at **A=0** (the
+   class forces `w 0 ≥ c > 0`, extensivity forces `w 0 ≤ 0` — instant contradiction),
+   which would *look* like the exponential-beats-linear exclusion while exploiting a
+   boundary artifact. The **honest** statement must restrict extensivity to `A ≥ 1`
+   (or asymptotic) and then genuinely needs the Mathlib exponential-dominates-linear
+   lemma (`Tendsto (fun A => c·r^A − M·A) atTop atTop`, or `A/r^A → 0`). Real work;
+   **not** to be closed via the A=0 artifact.
