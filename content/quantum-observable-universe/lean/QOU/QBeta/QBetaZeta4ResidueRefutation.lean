@@ -248,4 +248,47 @@ theorem cubicC_Hopf_classical_shadow : cubicC_Hopf (2 : R) = -2 := by
 theorem cubicC_unknot_classical : cubicC_unknot (2 : R) = -2 := by
   unfold cubicC_unknot; norm_num
 
+/-! ## §8. Discriminants (upgrade of the KC20 symbolic-exact tier)
+
+Registry row KC20 recorded the two discriminants — `disc C = −152 = −2³·19`
+and `disc C_Hopf = −76 = −2²·19` — at symbolic-exact tier (witness, not
+Lean). The certificates below close that gap: the coefficient readings tie
+the generic monic-cubic discriminant to `cubicC` / `cubicC_Hopf`, the
+evaluations are `norm_num`-exact over any `CommRing`, and the shared prime
+`19` (the arithmetic fingerprint the two sectors have in common) is
+certified over `ℤ`. -/
+
+/-- Discriminant of a monic cubic `y³ + p·y² + q·y + r`. -/
+def cubicDisc (p q r : R) : R :=
+  18 * p * q * r - 4 * p ^ 3 * r + p ^ 2 * q ^ 2 - 4 * q ^ 3 - 27 * r ^ 2
+
+/-- Coefficient reading of the total carrier cubic: `C = y³ − 4y² + 3y − 2`
+    is monic with `(p, q, r) = (−4, 3, −2)`. -/
+theorem cubicC_coeffs (y : R) :
+    cubicC y = y ^ 3 + (-4) * y ^ 2 + 3 * y + (-2) := by
+  unfold cubicC; ring
+
+/-- Coefficient reading of the Hopf-sector cubic: `(p, q, r) = (−6, 10, −6)`. -/
+theorem cubicC_Hopf_coeffs (y : R) :
+    cubicC_Hopf y = y ^ 3 + (-6) * y ^ 2 + 10 * y + (-6) := by
+  unfold cubicC_Hopf; ring
+
+/-- **`disc C = −152`.** With the `cubicC_coeffs` reading, the discriminant
+    of the total carrier cubic evaluates exactly. -/
+theorem cubicC_disc : cubicDisc (-4 : R) 3 (-2) = -152 := by
+  unfold cubicDisc; norm_num
+
+/-- **`disc C_Hopf = −76`.** With the `cubicC_Hopf_coeffs` reading, the
+    discriminant of the Hopf-sector cubic evaluates exactly. -/
+theorem cubicC_Hopf_disc : cubicDisc (-6 : R) 10 (-6) = -76 := by
+  unfold cubicDisc; norm_num
+
+/-- **Shared prime `19`.** `−152 = −(2³·19)` and `−76 = −(2²·19)`: the two
+    sector discriminants differ by a factor of `2` and share the prime `19` —
+    the arithmetic fingerprint recorded in the 2026-07-07 audit, now
+    certified over `ℤ`. -/
+theorem disc_shared_prime_19 :
+    (-152 : ℤ) = -(2 ^ 3 * 19) ∧ (-76 : ℤ) = -(2 ^ 2 * 19) := by
+  norm_num
+
 end QOU.QBeta.Zeta4Residue
