@@ -1,0 +1,150 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-13T15:46:12.664354+00:00",
+  "commitSha": "1ad166cc8b1870f60d4b8b041f9731d3d2ba1eab",
+  "assertions": [
+    {
+      "name": "pair_combinatorics_exact",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "dZ(Z-1)/2 = Z_lo exactly (ints) for all 8 T_z mirror pairs — the general-A orbit form of the S2-closed charge bilinear"
+    },
+    {
+      "name": "scaling_flat_across_A",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "RMS/mean of split/pred = 0.070 < 0.15 across A=3-39 — the Z(Z-1)/A^(1/3) scaling is matched (the criterion fixed 1/3 fails)"
+    },
+    {
+      "name": "coefficient_one_pion_compton",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "|mean ratio - 1| = 0.015 < 0.05 with zero fitted constants (packing coefficient predicted 1 by the Yukawa selection — the selection itself is the underived step)"
+    },
+    {
+      "name": "supersedes_fixed_one_third_and_tanh",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "at 7Li/7Be: fixed 1/3 errs 2.16x (>2) while the continuum ratio 0.857 is within 15%; tanh route has no A-dependence at all"
+    },
+    {
+      "name": "derived_alpha_insensitive",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "bare derived alpha within 0.5% of CODATA and pred consistent with the canonical coulomb_energy path under the algebraic rescale (r0/lambda_pi)·(alpha_der/alpha_codata)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 26,
+  "computation": "mirror-split-continuum-em",
+  "scriptFile": "mirror_split_continuum_em_probe.py",
+  "scriptHash": "b6f3ad7eeddf",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "kappa closure via the continuum categorical EM: split_pred = (3/5)·alpha·dZ(Z-1)·m_pi/A^(1/3) with ZERO fitted constants — alpha from the derived trace-ratio 1/(q0[9]_q[10]_q), exact discrete-proton pair count, and the pion-Compton radius law R(A)=lambda_pi·A^(1/3) (CAL-3 length; hbar·c/R = m_pi/A^(1/3), no empirical r0). Across the 8 T_z mirror pairs A=3-39: split_AME/split_pred = 0.985 ± 0.069 — scaling flat (supersedes the A=3-only fixed 1/3, which fails 7Li/7Be by 2.2x, and the A-independent tanh(ln q0) route) and the coefficient is consistent with the predicted 1. PARTIAL: the packing identification R = 1·lambda_pi·A^(1/3) (Yukawa selection among the 4 framework mass scales) and the volume->radius extensivity step are underived; the 3/5 is the uniform-sphere model factor. Exploratory scope-(a), no wiring.",
+  "data": {
+    "pairs": [
+      {
+        "pair": "3H/3He",
+        "A": 3,
+        "split_AME_MeV": 0.76375488,
+        "pred_MeV": 0.8487393706040641,
+        "ratio": 0.8998697438253878,
+        "ratio_canonical_r0": 0.7649692682436916
+      },
+      {
+        "pair": "7Li/7Be",
+        "A": 7,
+        "split_AME_MeV": 1.6442398,
+        "pred_MeV": 1.919714629957508,
+        "ratio": 0.8565021979524083,
+        "ratio_canonical_r0": 0.7281029994757809
+      },
+      {
+        "pair": "11B/11C",
+        "A": 11,
+        "split_AME_MeV": 2.76403599999999,
+        "pred_MeV": 2.752034511791283,
+        "ratio": 1.004360951200752,
+        "ratio_canonical_r0": 0.8537960823379573
+      },
+      {
+        "pair": "13C/13N",
+        "A": 13,
+        "split_AME_MeV": 3.0028193,
+        "pred_MeV": 3.123572324133715,
+        "ratio": 0.9613413708398109,
+        "ratio_canonical_r0": 0.8172256151846065
+      },
+      {
+        "pair": "15N/15O",
+        "A": 15,
+        "split_AME_MeV": 3.53653199999999,
+        "pred_MeV": 3.47442056467227,
+        "ratio": 1.0178767751835416,
+        "ratio_canonical_r0": 0.8652857340934141
+      },
+      {
+        "pair": "23Na/23Mg",
+        "A": 23,
+        "split_AME_MeV": 4.8385261,
+        "pred_MeV": 4.734762214098499,
+        "ratio": 1.0219153320081267,
+        "ratio_canonical_r0": 0.8687188663662369
+      },
+      {
+        "pair": "27Al/27Si",
+        "A": 27,
+        "split_AME_MeV": 5.5947051,
+        "pred_MeV": 5.304407301078998,
+        "ratio": 1.0547276599332693,
+        "ratio_canonical_r0": 0.8966122616653882
+      },
+      {
+        "pair": "39K/39Ca",
+        "A": 39,
+        "split_AME_MeV": 7.3068333,
+        "pred_MeV": 6.858252942761134,
+        "ratio": 1.0654073801276664,
+        "ratio_canonical_r0": 0.905690973110253
+      }
+    ],
+    "ratio_mean": 0.9852501763838704,
+    "ratio_rms_scatter": 0.06933959865155886,
+    "alpha_derived": 0.007308701560055657,
+    "alpha_rel_diff_vs_codata": 0.0015552202890163687,
+    "lambda_pi_fm": 1.4138169306541308,
+    "scale_selection_required_coefficients": {
+      "m_e (CAL-1)": 269.10378422457416,
+      "m_mu (CAL-2 proxy)": 1.301475161952169,
+      "m_pi (CAL-3)": 0.9852501763838704,
+      "m_p (phys-obs pin)": 0.14655850143533944
+    },
+    "B_pp_MeV": 2.286087512404399,
+    "superseded_fixed_one_third_A7_ratio": 2.1577124118105164,
+    "superseded_tanh_A3_ratio": 3.2135079411683227,
+    "benchmark_canonical_r0": "split/dE_C = 0.838 ± 0.059 (mirror-nuclei-coulomb-systematics)"
+  }
+}
