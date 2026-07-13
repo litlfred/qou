@@ -27,7 +27,16 @@ namespace QOU.BraidKnot.TableauContent
 
 /-- **Content of a cell** `(i, j)`: column index minus row index, `c(i,j) = j − i`.
     Cells on the same diagonal share a content; it is the seminormal-form
-    coordinate of a box. -/
+    coordinate of a box.
+
+    Overlap note (reuse audit): `QOU.IwahoriHecke.Hoefsmit.content (i j : ℕ)` carries
+    the same `j − i` formula in two-argument shape. This file keeps the *pair*-shaped
+    version deliberately — it is a lightweight foundational brick (imports only
+    `Mathlib.Tactic` + the weight layer), whereas `Hoefsmit` sits on the heavy
+    `Wedderburn`/`Matrix.Charpoly` cone. The correct consolidation direction is to
+    extract this pair primitive here and have `Hoefsmit` depend on it, not to pull
+    the heavy cone into the combinatorial base; tracked as a follow-up, not done in
+    this PR to avoid coupling the brick to `Hoefsmit`'s dependencies. -/
 def content (cell : ℕ × ℕ) : ℤ := (cell.2 : ℤ) - (cell.1 : ℤ)
 
 /-- **Axial distance** between two cells: the difference of their contents. For the
