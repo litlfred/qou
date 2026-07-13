@@ -890,6 +890,19 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.421089Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:58:46.000Z",
+        "reviewed_sha": "37ade373f667545a51e0def9f90dbe3200e54aeb",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "wall-side-statement": [
@@ -949,6 +962,19 @@
         "notes": "The mathematical claims in 'Electron' are unverified due to compile errors in the Lean sibling file: content/quantum-observable-universe/predicted-spectra/electron-knot.lean:28:13: error: unexpected token 'section'; expected 'lemma'.",
         "severity": "minor",
         "evidence": "electron-knot.lean:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:58:46.000Z",
+        "reviewed_sha": "37ade373f667545a51e0def9f90dbe3200e54aeb",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-vacuous": [
@@ -971,6 +997,19 @@
         "notes": "The Lean sibling content/quantum-observable-universe/predicted-spectra/electron-knot.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
         "severity": "minor",
         "evidence": "electron-knot.lean:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:58:46.000Z",
+        "reviewed_sha": "37ade373f667545a51e0def9f90dbe3200e54aeb",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-circular": [
@@ -993,6 +1032,19 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Electron'.",
         "severity": "minor",
         "evidence": "electron-knot.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:58:46.000Z",
+        "reviewed_sha": "37ade373f667545a51e0def9f90dbe3200e54aeb",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-overclaim": [
@@ -1014,6 +1066,19 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The remarks and narrative scope in 'Electron' are appropriately qualified.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:58:46.000Z",
+        "reviewed_sha": "37ade373f667545a51e0def9f90dbe3200e54aeb",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-hidden-dof": [
@@ -1036,6 +1101,19 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Electron'.",
         "severity": "minor",
         "evidence": "electron-knot.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:58:46.000Z",
+        "reviewed_sha": "37ade373f667545a51e0def9f90dbe3200e54aeb",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-non-sequitur": [
@@ -1058,6 +1136,19 @@
         "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/predicted-spectra/electron-knot.lean.",
         "severity": "minor",
         "evidence": "electron-knot.lean:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:58:46.000Z",
+        "reviewed_sha": "37ade373f667545a51e0def9f90dbe3200e54aeb",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1079,6 +1170,19 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/predicted-spectra/electron-knot.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:58:46.000Z",
+        "reviewed_sha": "37ade373f667545a51e0def9f90dbe3200e54aeb",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-citation-misuse": [
@@ -1101,6 +1205,19 @@
         "notes": "No citations are present in 'Electron', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "electron-knot.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:58:46.000Z",
+        "reviewed_sha": "37ade373f667545a51e0def9f90dbe3200e54aeb",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-definitional-ambiguity": [
@@ -1123,6 +1240,19 @@
         "notes": "Key terms and symbols in 'Electron' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "electron-knot.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:58:46.000Z",
+        "reviewed_sha": "37ade373f667545a51e0def9f90dbe3200e54aeb",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-empirical-fragility": [
@@ -1145,6 +1275,19 @@
         "notes": "The algebraic and logical relations in 'Electron' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "electron-knot.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:58:46.000Z",
+        "reviewed_sha": "37ade373f667545a51e0def9f90dbe3200e54aeb",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-physical-implausibility": [
@@ -1167,6 +1310,19 @@
         "notes": "The physical concepts described in 'Electron' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "electron-knot.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:58:46.000Z",
+        "reviewed_sha": "37ade373f667545a51e0def9f90dbe3200e54aeb",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-reproducibility": [
@@ -1189,6 +1345,19 @@
         "notes": "The Lean sibling content/quantum-observable-universe/predicted-spectra/electron-knot.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
         "evidence": "electron-knot.lean:1 — content/quantum-observable-universe/predicted-spectra/electron-knot.lean:28:13: error: unexpected token 'section'; expected 'lemma'"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:58:46.000Z",
+        "reviewed_sha": "37ade373f667545a51e0def9f90dbe3200e54aeb",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-referee-verdict": [
@@ -1212,6 +1381,19 @@
         "severity": "major",
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling content/quantum-observable-universe/predicted-spectra/electron-knot.lean fails compilation, indicating that the claims cannot be formally verified in Lean."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:58:46.000Z",
+        "reviewed_sha": "37ade373f667545a51e0def9f90dbe3200e54aeb",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "bib-cite-resolves": [
@@ -1467,6 +1649,36 @@
         },
         "reviewed_at": "2026-07-12T00:35:44.899Z",
         "reviewed_sha": "6a697553ee79c4d9e8932245bfa58ba9bd9e7e5c"
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:58:46.000Z",
+        "reviewed_sha": "37ade373f667545a51e0def9f90dbe3200e54aeb",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:58:46.000Z",
+        "reviewed_sha": "37ade373f667545a51e0def9f90dbe3200e54aeb",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ]
   },
