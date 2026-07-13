@@ -201,6 +201,37 @@ So **G3 = compute `A_ω` via `Δ_ω`**. This is the constructive route, and it i
 literally the resurgent program — coordinated with #3683 (even face) applied to
 the odd face.
 
+### 4e. TWO-ROUTE RIGIDITY — quantum modularity / the Habiro ring (the strongest lever)
+
+The keystone has been attacked from **two independent routes that construct the
+same fibre-branch Φ_b**: the **analytic** route (#3773 — the contour-integral
+`phiB`, transcendental, carrying the resurgent Stokes phase) and the
+**combinatorial** route (#3768 — the finite `∏(1−xζ^k)=1−x^N`, exact algebraic at
+roots of unity). Their agreement where they overlap is **not a redundancy — it is
+a rigidity constraint**, and it is exactly **quantum modularity**
+(Garoufalidis–Zagier): the Kashaev / quantum-dilog object has both a *perturbative*
+(`Vol + iCS` + resurgent) expansion **and** an *algebraic root-of-unity*
+evaluation, whose compatibility **pins the Stokes constants `{A_ω}`**.
+
+**Consequence for G3.** The combinatorial route makes the monodromy datum
+**algebraic at `ζ_N`**; the analytic route makes it **transcendental at `q₀`**.
+Quantum modularity identifies them, converting *"compute the resurgent `A_ω`"*
+(§4c, hard) into *"the algebraic `ζ_N` values + analyticity + pentagon rigidity
+(§4b) **force** `A_ω`"* — an **anti-fit** determination (the datum is derived from
+arithmetic rigidity, not inverted from an anchor).
+
+**Corpus home — the Habiro ring.** This two-face structure *is* the Habiro ring
+(functions defined at all roots of unity with compatible Taylor expansions), the
+same structure as the **AJ identification** (`Φ_q`/`Li₂^q` = one `Â_K` at real vs
+root-of-unity saddles, `phi-q-aj-machinery-identification.md`) and the **Q_β
+Habiro element** (α_EM PR #1511 `[2]_q·(1−h²α)`; the Q_β Habiro chain,
+`docs/coordination/2026-06-03-qbeta-habiro-chain-1-scope.md`). So G3 reframes from
+"resurgent computation (with #3683)" to "**quantum-modularity / Habiro-ring
+rigidity**" — for which the corpus already carries partial machinery. **This is
+the most promising forward lever**, and it is only visible *because* both routes
+were built: the combinatorial route (this PR) is what makes the datum algebraic,
+which is what makes quantum-modularity rigidity applicable.
+
 ### 4d. The narrowing, assembled
 
 - **Existence** (that a Φ_b lives on the fibre branch): heat-kernel theta ratio.
