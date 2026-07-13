@@ -69,6 +69,17 @@ try:
         if abs(ame - 2.2245662) < 1e-3:
             observed["2"] = {"B_even": ev, "B_odd": od, "B_AME": ame}
             break
+    # all labelled isotopes, for the factor-2 generalization falsification below
+    _labels = {
+        2.2245662: ("2H", 2), 8.4817962: ("3H", 3),
+        7.71804132: ("3He", 3), 28.2956624: ("4He", 4),
+    }
+    for ev, od, ame in rows:
+        for key, (iso, A) in _labels.items():
+            if abs(ame - key) < 1e-2:
+                observed.setdefault("_isotopes", {})[iso] = {
+                    "A": A, "B_even": ev, "B_odd": od, "B_AME": ame,
+                }
 except Exception as e:  # noqa: BLE001
     observed["_error"] = str(e)
 
@@ -107,11 +118,37 @@ for d in (2, 3, 4):
         match_found = match_found or bool(best_rel < 0.05)
     per_d[str(d)] = row
 
+# Factor-2 generalization falsification: the deuteron's 2/|C| ≈ observed ratio
+# is a COINCIDENCE. Test the derived-factor hypothesis B_even/B_odd = A/|C(d=A)|
+# across every isotope; it fails badly for A ≥ 3, so the factor-2 is not a
+# structural law (do NOT wire — anti-fit discipline).
+factor2_generalization = {}
+_iso = observed.get("_isotopes", {})
+for iso, o in _iso.items():
+    A = o["A"]
+    obs_ratio = o["B_even"] / o["B_odd"]
+    A_over_C = A / float(gamma_constant_mag(mp.mpf(A) - HALF, HALF))
+    rel = abs(A_over_C - obs_ratio) / abs(obs_ratio)
+    factor2_generalization[iso] = {
+        "A": A,
+        "observed_B_even_over_B_odd": f"{obs_ratio:.4f}",
+        "A_over_C_d_eq_A": f"{A_over_C:.3f}",
+        "rel_err": f"{rel:.4f}",
+        "matches_within_5pct": bool(rel < 0.05),
+    }
+factor2_is_derived = all(
+    v["matches_within_5pct"] for v in factor2_generalization.values()
+) and len(factor2_generalization) >= 2
+
 assertions = {
     "whipple_amplitude_computed_all_d": True,
     "observed_deuteron_ratio_loaded": "2" in observed,
+    "factor2_is_a_derived_law_not_coincidence": factor2_is_derived,
 }
-all_passed = bool(all(assertions.values()))
+# The factor-2 assertion is EXPECTED to be False (coincidence); allPassed tracks
+# only the compute/load assertions, not the physics hypothesis.
+all_passed = bool(assertions["whipple_amplitude_computed_all_d"]
+                  and assertions["observed_deuteron_ratio_loaded"])
 
 if match_found:
     verdict = (
@@ -131,7 +168,10 @@ else:
         "ratio -- the binding-closure gap must supply the E0-scaled, "
         "many-body dressing between the dimensionless toroidal amplitude and "
         "the MeV even/odd split. This sharpens (does not close) the gap; "
-        "nothing is fitted or wired."
+        "nothing is fitted or wired. FURTHER: the tempting deuteron 2/|C| match "
+        "is FALSIFIED as a derived factor — ratio = A/|C(d=A)| fails 446%/1644% "
+        "at A=3/4 (see factor2_generalization_falsification); the factor-2 is a "
+        "coincidence, explicitly NOT wired."
     )
 
 witness = {
@@ -147,9 +187,22 @@ witness = {
     "results": {
         "per_d": per_d,
         "observed": {k: v for k, v in observed.items() if not k.startswith("_")},
+        "factor2_generalization_falsification": factor2_generalization,
+        "factor2_finding": (
+            "The deuteron 2/|C(d=2)| = 3.33 ≈ observed 3.373 (1.2%) is a "
+            "COINCIDENCE, not a derived factor. The hypothesis "
+            "B_even/B_odd = A/|C(d=A)| fails badly for A≥3 (446% off at A=3, "
+            "1644% at A=4) because |C| collapses (0.60, 0.24, 0.069) while the "
+            "observed ratios stay O(2-7). The fixed constant 3.33 also matches "
+            "⁴He (0.3%) but not ³H/³He — i.e. it hits the two N=Z cases only, a "
+            "fixed number matching 2 of 4 points, not a law. NOT wired "
+            "(anti-fit / no-seventh-ansatz discipline)."
+        ),
         "note": (
             "Only the deuteron (d=2, single pn bond) has a clean axial distance; "
-            "heavier isotopes lack a single d and are reported unscored."
+            "heavier isotopes lack a single d and are reported unscored for the "
+            "amplitude test. The factor-2 falsification uses the falsifiable "
+            "hypothesis ratio = A/|C(d=A)| regardless of whether d=A is exact."
         ),
     },
     "assertions": assertions,
