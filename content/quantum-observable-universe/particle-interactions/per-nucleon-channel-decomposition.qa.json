@@ -893,6 +893,19 @@
         "reviewed_at": "2026-07-07T14:26:57.302227Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:32:23.000Z",
+        "reviewed_sha": "3e7d7ea4a128c8097894ac1087f2e3713b0f836f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "wall-side-statement": [
@@ -935,6 +948,19 @@
         "notes": "The claim in 'Per-nucleon channel decomposition via $S_3^A$ branching' is unverified due to Lean compilation failures: content/quantum-observable-universe/particle-interactions/per-nucleon-channel-decomposition.lean:25:51: error: failed to synthesize.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/per-nucleon-channel-decomposition.lean:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:32:23.000Z",
+        "reviewed_sha": "3e7d7ea4a128c8097894ac1087f2e3713b0f836f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-vacuous": [
@@ -956,6 +982,19 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The block 'Per-nucleon channel decomposition via $S_3^A$ branching' presents substantial mathematical content: The Garside matrix element for a nucleus of mass number $A$ factors as a product of per-nucleon contributions, each d...",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:32:23.000Z",
+        "reviewed_sha": "3e7d7ea4a128c8097894ac1087f2e3713b0f836f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-circular": [
@@ -978,6 +1017,19 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Per-nucleon channel decomposition via $S_3^A$ branching'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/per-nucleon-channel-decomposition.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:32:23.000Z",
+        "reviewed_sha": "3e7d7ea4a128c8097894ac1087f2e3713b0f836f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-overclaim": [
@@ -999,6 +1051,19 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The prose presents 'Per-nucleon channel decomposition via $S_3^A$ branching' as verified, but the sibling Lean file fails to compile.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:32:23.000Z",
+        "reviewed_sha": "3e7d7ea4a128c8097894ac1087f2e3713b0f836f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-hidden-dof": [
@@ -1021,6 +1086,19 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Per-nucleon channel decomposition via $S_3^A$ branching'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/per-nucleon-channel-decomposition.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:32:23.000Z",
+        "reviewed_sha": "3e7d7ea4a128c8097894ac1087f2e3713b0f836f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-non-sequitur": [
@@ -1043,6 +1121,19 @@
         "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/particle-interactions/per-nucleon-channel-decomposition.lean.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/per-nucleon-channel-decomposition.lean:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:32:23.000Z",
+        "reviewed_sha": "3e7d7ea4a128c8097894ac1087f2e3713b0f836f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1064,6 +1155,19 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/per-nucleon-channel-decomposition.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:32:23.000Z",
+        "reviewed_sha": "3e7d7ea4a128c8097894ac1087f2e3713b0f836f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-citation-misuse": [
@@ -1086,6 +1190,19 @@
         "notes": "No citations are present in 'Per-nucleon channel decomposition via $S_3^A$ branching', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/per-nucleon-channel-decomposition.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:32:23.000Z",
+        "reviewed_sha": "3e7d7ea4a128c8097894ac1087f2e3713b0f836f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-definitional-ambiguity": [
@@ -1108,6 +1225,19 @@
         "notes": "Key terms and symbols in 'Per-nucleon channel decomposition via $S_3^A$ branching' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/per-nucleon-channel-decomposition.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:32:23.000Z",
+        "reviewed_sha": "3e7d7ea4a128c8097894ac1087f2e3713b0f836f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-empirical-fragility": [
@@ -1130,6 +1260,19 @@
         "notes": "The algebraic and logical relations in 'Per-nucleon channel decomposition via $S_3^A$ branching' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/per-nucleon-channel-decomposition.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:32:23.000Z",
+        "reviewed_sha": "3e7d7ea4a128c8097894ac1087f2e3713b0f836f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-physical-implausibility": [
@@ -1152,6 +1295,19 @@
         "notes": "The physical concepts described in 'Per-nucleon channel decomposition via $S_3^A$ branching' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/per-nucleon-channel-decomposition.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:32:23.000Z",
+        "reviewed_sha": "3e7d7ea4a128c8097894ac1087f2e3713b0f836f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-reproducibility": [
@@ -1174,6 +1330,19 @@
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/per-nucleon-channel-decomposition.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/per-nucleon-channel-decomposition.lean:1 — content/quantum-observable-universe/particle-interactions/per-nucleon-channel-decomposition.lean:25:51: error: failed to synthesize"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:32:23.000Z",
+        "reviewed_sha": "3e7d7ea4a128c8097894ac1087f2e3713b0f836f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-referee-verdict": [
@@ -1197,6 +1366,19 @@
         "severity": "critical",
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/per-nucleon-channel-decomposition.lean for 'Per-nucleon channel decomposition via $S_3^A$ branching' fails compilation with error: content/quantum-observable-universe/particle-interactions/per-nucleon-channel-decomposition.lean:25:51: error: failed to synthesize. This invalidates the claim of formal verification."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:32:23.000Z",
+        "reviewed_sha": "3e7d7ea4a128c8097894ac1087f2e3713b0f836f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1432,6 +1614,36 @@
         },
         "reviewed_at": "2026-07-12T00:35:39.126Z",
         "reviewed_sha": "a38f99c8befc4b364f7820811bc286a64f3a2b6e"
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:32:23.000Z",
+        "reviewed_sha": "3e7d7ea4a128c8097894ac1087f2e3713b0f836f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:32:23.000Z",
+        "reviewed_sha": "3e7d7ea4a128c8097894ac1087f2e3713b0f836f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ]
   },

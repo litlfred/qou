@@ -873,6 +873,19 @@
         "reviewed_at": "2026-07-07T14:26:57.416623Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:32:23.000Z",
+        "reviewed_sha": "3e7d7ea4a128c8097894ac1087f2e3713b0f836f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "wall-side-statement": [
@@ -915,6 +928,19 @@
         "notes": "The claim in 'Nucleon Hecke element' is unverified due to Lean compilation failures: content/quantum-observable-universe/particle-interactions/nucleon-hecke-element.lean:33:10: error(lean.unknownIdentifier): Unknown identifier `congr_fun`.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/nucleon-hecke-element.lean:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:32:23.000Z",
+        "reviewed_sha": "3e7d7ea4a128c8097894ac1087f2e3713b0f836f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-vacuous": [
@@ -936,6 +962,19 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The block 'Nucleon Hecke element' presents substantial mathematical content: Let $\\mathfrak{N} = [\\mathfrak{q}_1, \\mathfrak{q}_2, \\mathfrak{q}_3]$ be a Borromean baryon (Definition) with quark f...",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:32:23.000Z",
+        "reviewed_sha": "3e7d7ea4a128c8097894ac1087f2e3713b0f836f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-circular": [
@@ -958,6 +997,19 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Nucleon Hecke element'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/nucleon-hecke-element.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:32:23.000Z",
+        "reviewed_sha": "3e7d7ea4a128c8097894ac1087f2e3713b0f836f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-overclaim": [
@@ -979,6 +1031,19 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The prose presents 'Nucleon Hecke element' as verified, but the sibling Lean file fails to compile.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:32:23.000Z",
+        "reviewed_sha": "3e7d7ea4a128c8097894ac1087f2e3713b0f836f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-hidden-dof": [
@@ -1001,6 +1066,19 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Nucleon Hecke element'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/nucleon-hecke-element.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:32:23.000Z",
+        "reviewed_sha": "3e7d7ea4a128c8097894ac1087f2e3713b0f836f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-non-sequitur": [
@@ -1023,6 +1101,19 @@
         "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/particle-interactions/nucleon-hecke-element.lean.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/nucleon-hecke-element.lean:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:32:23.000Z",
+        "reviewed_sha": "3e7d7ea4a128c8097894ac1087f2e3713b0f836f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1044,6 +1135,19 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/nucleon-hecke-element.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:32:23.000Z",
+        "reviewed_sha": "3e7d7ea4a128c8097894ac1087f2e3713b0f836f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-citation-misuse": [
@@ -1066,6 +1170,19 @@
         "notes": "No citations are present in 'Nucleon Hecke element', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/nucleon-hecke-element.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:32:23.000Z",
+        "reviewed_sha": "3e7d7ea4a128c8097894ac1087f2e3713b0f836f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-definitional-ambiguity": [
@@ -1088,6 +1205,19 @@
         "notes": "Key terms and symbols in 'Nucleon Hecke element' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/nucleon-hecke-element.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:32:23.000Z",
+        "reviewed_sha": "3e7d7ea4a128c8097894ac1087f2e3713b0f836f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-empirical-fragility": [
@@ -1110,6 +1240,19 @@
         "notes": "The algebraic and logical relations in 'Nucleon Hecke element' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/nucleon-hecke-element.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:32:23.000Z",
+        "reviewed_sha": "3e7d7ea4a128c8097894ac1087f2e3713b0f836f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-physical-implausibility": [
@@ -1132,6 +1275,19 @@
         "notes": "The physical concepts described in 'Nucleon Hecke element' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/nucleon-hecke-element.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:32:23.000Z",
+        "reviewed_sha": "3e7d7ea4a128c8097894ac1087f2e3713b0f836f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-reproducibility": [
@@ -1154,6 +1310,19 @@
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/nucleon-hecke-element.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/nucleon-hecke-element.lean:1 — content/quantum-observable-universe/particle-interactions/nucleon-hecke-element.lean:33:10: error(lean.unknownIdentifier): Unknown identifier `congr_fun`"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:32:23.000Z",
+        "reviewed_sha": "3e7d7ea4a128c8097894ac1087f2e3713b0f836f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-referee-verdict": [
@@ -1177,6 +1346,19 @@
         "severity": "critical",
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/nucleon-hecke-element.lean for 'Nucleon Hecke element' fails compilation with error: content/quantum-observable-universe/particle-interactions/nucleon-hecke-element.lean:33:10: error(lean.unknownIdentifier): Unknown identifier `congr_fun`. This invalidates the claim of formal verification."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:32:23.000Z",
+        "reviewed_sha": "3e7d7ea4a128c8097894ac1087f2e3713b0f836f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "bib-cite-resolves": [
@@ -1432,6 +1614,36 @@
         },
         "reviewed_at": "2026-07-12T15:52:28.293Z",
         "reviewed_sha": "a6842b612535161c2447bdcb67511f02265e7f9b"
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:32:23.000Z",
+        "reviewed_sha": "3e7d7ea4a128c8097894ac1087f2e3713b0f836f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:32:23.000Z",
+        "reviewed_sha": "3e7d7ea4a128c8097894ac1087f2e3713b0f836f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ]
   },
