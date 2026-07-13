@@ -299,6 +299,8 @@ export default chapter({
             "binding-period-involution-statistic",
             "binding-period-involution-statistic-proof",
             "binding-period-statistic-reading",
+            "content-genfun-palindromic",
+            "content-genfun-palindromic-proof",
             "binding-closure-conditional",
             "binding-closure-conditional-proof",
             "universal-binding-architecture",
