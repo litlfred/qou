@@ -8,8 +8,8 @@
     "lean": "../qou/content/quantum-observable-universe/lifting-and-descent/quantum-dilogarithm.lean"
   },
   "source_hashes": {
-    "md": "1926d9b25b97",
     "ts": "1a3750ee35a4",
+    "md": "1926d9b25b97",
     "lean": "882fbc1419cc"
   },
   "criteria": {
@@ -47,6 +47,21 @@
         "reviewed_sha": "5b033da1796b282f340988521da97793124f4faa",
         "severity": "major",
         "evidence": "content/quantum-observable-universe/lifting-and-descent/quantum-dilogarithm.lean:55: archimedean tactic in categorical chapter — linarith | content/quantum-observable-universe/lifting-and-descent/quantum-dilogarithm.lean:56: archimedean tactic in categorical chapter — · linarith"
+      },
+      {
+        "field_hash": {
+          "ts": "1a3750ee35a4",
+          "md": "1926d9b25b97",
+          "lean": "882fbc1419cc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "human",
+          "id": "litlfred"
+        },
+        "reviewed_at": "2026-07-13T12:14:53Z",
+        "reviewed_sha": "d539da73180d5888f4a9dc765b90a0efbf32510d",
+        "notes": "Owner-directed dispensation (directive \"can we address those QA issues\", 2026-07-13); transcribed by agent from source inspection, owner to confirm in PR review. `qInteger_pos` is an explicit archimedean specialisation (`1 < q` => `0 < [n]_q`), flagged as such in the block's own comment; `linarith` closes real order side-goals. Intrinsically archimedean. Re-affirms prior owner dispensation c0488b478cdbd79629bd6bcb88b5174c2f2375a7 (files drifted; rationale unchanged)."
       }
     ],
     "voice-status-leak": [

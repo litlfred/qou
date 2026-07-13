@@ -8,9 +8,9 @@
     "lean": "../qou/content/quantum-observable-universe/lean/QOU/AppendixSurreals.lean"
   },
   "source_hashes": {
-    "md": "becd2df5b267",
     "ts": "5e755efe58b9",
-    "lean": "e1d0d7c64d9f"
+    "md": "becd2df5b267",
+    "lean": "af2ac0b0f575"
   },
   "criteria": {
     "bib-cite-resolves": [
@@ -812,6 +812,21 @@
         },
         "reviewed_at": "2026-07-13T00:59:15.685Z",
         "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554"
+      },
+      {
+        "field_hash": {
+          "ts": "5e755efe58b9",
+          "md": "becd2df5b267",
+          "lean": "af2ac0b0f575"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "human",
+          "id": "litlfred"
+        },
+        "reviewed_at": "2026-07-13T12:23:06Z",
+        "reviewed_sha": "d539da73180d5888f4a9dc765b90a0efbf32510d",
+        "notes": "Owner-directed dispensation (directive \"can we address those QA issues\", 2026-07-13); transcribed by agent from source inspection, owner to confirm in PR review. The archimedean standard-part conjecture resolves (via lean.ref) to the shared AppendixSurreals/Conjectures.lean whose `ofReal compose Real.exp compose st` transseries content is intrinsically post-Archimedean (the surreal standard part lands in R by definition). Real.* IS the construction, not a gratuitous specialisation."
       }
     ],
     "q-usage-positivity-implicit": [

@@ -8,9 +8,9 @@
     "lean": "../qou/content/quantum-observable-universe/lean/QOU/AppendixSurreals.lean"
   },
   "source_hashes": {
-    "md": "f38d36fb31ec",
     "ts": "b82467db91e4",
-    "lean": "e1d0d7c64d9f"
+    "md": "df2963cf6a55",
+    "lean": "af2ac0b0f575"
   },
   "criteria": {
     "bib-cite-resolves": [
@@ -812,6 +812,21 @@
         "reviewed_sha": "b9e9b8dc3bf50fec6e2da3979d66ebef49fffe61",
         "severity": "major",
         "evidence": "content/quantum-observable-universe/lean/QOU/AppendixSurreals/Conjectures.lean:105: archimedean Real.* in categorical chapter — `ofReal ∘ Real.exp ∘ st`, not the Berarducci–Mantova transseries | content/quantum-observable-universe/lean/QOU/AppendixSurreals/Conjectures.lean:206: archimedean Real.* in categorical chapter — projection: `surrealExp x := ofReal (Real.exp (st x))`.  This | content/quantum-observable-universe/lean/QOU/AppendixSurreals/Conjectures.lean:208: archimedean Real.* in categorical chapter — = ofReal (Real.exp r)`) but loses the infinitesimal / | content/quantum-observable-universe/lean/QOU/AppendixSurreals/Conjectures.lean:214: archimedean Real.* in categorical chapter — `Real.exp` lemmas and `standardPart_zero`. -/ | content/quantum-observable-universe/lean/QOU/AppendixSurreals/Conjectures.lean:216: archimedean Real.* in categorical chapter — SurrealField.ofReal (Real.exp (standardPart x))"
+      },
+      {
+        "field_hash": {
+          "ts": "b82467db91e4",
+          "md": "df2963cf6a55",
+          "lean": "af2ac0b0f575"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "human",
+          "id": "litlfred"
+        },
+        "reviewed_at": "2026-07-13T12:14:53Z",
+        "reviewed_sha": "d539da73180d5888f4a9dc765b90a0efbf32510d",
+        "notes": "Owner-directed dispensation (directive \"can we address those QA issues\", 2026-07-13); transcribed by agent from source inspection, owner to confirm in PR review. Shared AppendixSurreals Lean; surreal standard-part / Real.* is intrinsic. Archimedean by construction."
       }
     ],
     "q-usage-positivity-implicit": [

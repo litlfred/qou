@@ -8,8 +8,8 @@
     "lean": "../qou/content/quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete.lean"
   },
   "source_hashes": {
-    "md": "7a3f1d79d0b5",
     "ts": "805f33892b54",
+    "md": "7a3f1d79d0b5",
     "lean": "3d5757c4aa3c"
   },
   "criteria": {
@@ -47,6 +47,21 @@
         "reviewed_sha": "d425b4347e9353ba8ea2a35048d0b289e62d9594",
         "severity": "major",
         "evidence": "content/quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete.lean:120: archimedean tactic in categorical chapter — (0 : ℚ) ≤ (a : ℚ) / 2 := by positivity | content/quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete.lean:139: archimedean tactic in categorical chapter — have := bp.size_eq; simp [hr, List.sum_cons] at this; linarith | content/quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete.lean:145: archimedean tactic in categorical chapter — have hab : (a : ℚ) - (b : ℚ) ≤ (bp.n : ℚ) := by linarith | content/quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete.lean:146: archimedean tactic in categorical chapter — linarith"
+      },
+      {
+        "field_hash": {
+          "ts": "805f33892b54",
+          "md": "7a3f1d79d0b5",
+          "lean": "3d5757c4aa3c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "human",
+          "id": "litlfred"
+        },
+        "reviewed_at": "2026-07-13T12:14:53Z",
+        "reviewed_sha": "d539da73180d5888f4a9dc765b90a0efbf32510d",
+        "notes": "Owner-directed dispensation (directive \"can we address those QA issues\", 2026-07-13); transcribed by agent from source inspection, owner to confirm in PR review. Spin labels are half-integers valued in Q; `spin_nonneg_single` is an order fact `0 <= a/2` closed by `positivity`. Ordering of rational spin values is intrinsic to the statement. Re-affirms prior owner dispensation c0488b478cdbd79629bd6bcb88b5174c2f2375a7 (files drifted; rationale unchanged)."
       }
     ],
     "voice-status-leak": [

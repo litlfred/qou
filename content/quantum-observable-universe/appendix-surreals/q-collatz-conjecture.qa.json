@@ -8,9 +8,9 @@
     "lean": "../qou/content/quantum-observable-universe/lean/QOU/AppendixSurreals.lean"
   },
   "source_hashes": {
-    "md": "d0bbb160ee69",
     "ts": "dca4ac77df81",
-    "lean": "e1d0d7c64d9f"
+    "md": "20642e0d9f43",
+    "lean": "d53370175015"
   },
   "criteria": {
     "voice-status-leak": [
@@ -336,6 +336,21 @@
         "reviewed_sha": "b9e9b8dc3bf50fec6e2da3979d66ebef49fffe61",
         "severity": "major",
         "evidence": "content/quantum-observable-universe/lean/QOU/QCollatz.lean:129: archimedean Real.* in categorical chapter — Real.sqrt (qInt q 3 / qInt q 2 ^ 2) < 1 := by | content/quantum-observable-universe/lean/QOU/QCollatz.lean:227: archimedean Real.* in categorical chapter — -- §6. Contact threshold (supplementary — uses Real.log) | content/quantum-observable-universe/lean/QOU/QCollatz.lean:237: archimedean Real.* in categorical chapter — Real.log (qInt q 3) / Real.log (qInt q 2) < 2 := by | content/quantum-observable-universe/lean/QOU/QCollatz.lean:242: archimedean Real.* in categorical chapter — have hlog2pos : Real.log (qInt q 2) > 0 := Real.log_pos h2gt1 | content/quantum-observable-universe/lean/QOU/QCollatz.lean:244: archimedean Real.* in categorical chapter — have h2cast : (2 : ℝ) * Real.log (qInt q 2) = Real.log ((qInt q 2) ^ 2) := by"
+      },
+      {
+        "field_hash": {
+          "ts": "dca4ac77df81",
+          "md": "20642e0d9f43",
+          "lean": "d53370175015"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "human",
+          "id": "litlfred"
+        },
+        "reviewed_at": "2026-07-13T12:14:53Z",
+        "reviewed_sha": "d539da73180d5888f4a9dc765b90a0efbf32510d",
+        "notes": "Owner-directed dispensation (directive \"can we address those QA issues\", 2026-07-13); transcribed by agent from source inspection, owner to confirm in PR review. Real.sqrt on q-integer ratios in the shared AppendixSurreals Lean; surreal-analytic content is intrinsically archimedean (standard part). Not a gratuitous R."
       }
     ],
     "q-usage-positivity-implicit": [
