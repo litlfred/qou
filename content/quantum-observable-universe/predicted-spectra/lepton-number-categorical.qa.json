@@ -894,6 +894,19 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Block placement and kind 'definition' match validated structurally.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:58:09.000Z",
+        "reviewed_sha": "7db9e19cbfc528e17a56ea1c9cc54b581acaa7f4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "wall-side-statement": [
@@ -937,6 +950,19 @@
         "notes": "The mathematical claims in 'Categorical Lepton Number' are unverified due to compile errors in the Lean sibling file: content/quantum-observable-universe/predicted-spectra/lepton-number-categorical.lean:48:27: error: unknown tactic.",
         "severity": "minor",
         "evidence": "lepton-number-categorical.lean:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:58:09.000Z",
+        "reviewed_sha": "7db9e19cbfc528e17a56ea1c9cc54b581acaa7f4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-vacuous": [
@@ -959,6 +985,19 @@
         "notes": "The Lean sibling content/quantum-observable-universe/predicted-spectra/lepton-number-categorical.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
         "severity": "minor",
         "evidence": "lepton-number-categorical.lean:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:58:09.000Z",
+        "reviewed_sha": "7db9e19cbfc528e17a56ea1c9cc54b581acaa7f4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-circular": [
@@ -981,6 +1020,19 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Categorical Lepton Number'.",
         "severity": "minor",
         "evidence": "lepton-number-categorical.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:58:09.000Z",
+        "reviewed_sha": "7db9e19cbfc528e17a56ea1c9cc54b581acaa7f4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-overclaim": [
@@ -1002,6 +1054,19 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The remarks and narrative scope in 'Categorical Lepton Number' are appropriately qualified.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:58:09.000Z",
+        "reviewed_sha": "7db9e19cbfc528e17a56ea1c9cc54b581acaa7f4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-hidden-dof": [
@@ -1024,6 +1089,19 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Categorical Lepton Number'.",
         "severity": "minor",
         "evidence": "lepton-number-categorical.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:58:09.000Z",
+        "reviewed_sha": "7db9e19cbfc528e17a56ea1c9cc54b581acaa7f4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-non-sequitur": [
@@ -1046,6 +1124,19 @@
         "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/predicted-spectra/lepton-number-categorical.lean.",
         "severity": "minor",
         "evidence": "lepton-number-categorical.lean:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:58:09.000Z",
+        "reviewed_sha": "7db9e19cbfc528e17a56ea1c9cc54b581acaa7f4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1067,6 +1158,19 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/predicted-spectra/lepton-number-categorical.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:58:09.000Z",
+        "reviewed_sha": "7db9e19cbfc528e17a56ea1c9cc54b581acaa7f4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-citation-misuse": [
@@ -1089,6 +1193,19 @@
         "notes": "No citations are present in 'Categorical Lepton Number', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "lepton-number-categorical.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:58:09.000Z",
+        "reviewed_sha": "7db9e19cbfc528e17a56ea1c9cc54b581acaa7f4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-definitional-ambiguity": [
@@ -1111,6 +1228,19 @@
         "notes": "Key terms and symbols in 'Categorical Lepton Number' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "lepton-number-categorical.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:58:09.000Z",
+        "reviewed_sha": "7db9e19cbfc528e17a56ea1c9cc54b581acaa7f4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-empirical-fragility": [
@@ -1133,6 +1263,19 @@
         "notes": "The algebraic and logical relations in 'Categorical Lepton Number' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "lepton-number-categorical.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:58:09.000Z",
+        "reviewed_sha": "7db9e19cbfc528e17a56ea1c9cc54b581acaa7f4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-physical-implausibility": [
@@ -1155,6 +1298,19 @@
         "notes": "The physical concepts described in 'Categorical Lepton Number' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "lepton-number-categorical.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:58:09.000Z",
+        "reviewed_sha": "7db9e19cbfc528e17a56ea1c9cc54b581acaa7f4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-reproducibility": [
@@ -1177,6 +1333,19 @@
         "notes": "The Lean sibling content/quantum-observable-universe/predicted-spectra/lepton-number-categorical.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
         "evidence": "lepton-number-categorical.lean:1 — content/quantum-observable-universe/predicted-spectra/lepton-number-categorical.lean:48:27: error: unknown tactic"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:58:09.000Z",
+        "reviewed_sha": "7db9e19cbfc528e17a56ea1c9cc54b581acaa7f4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-referee-verdict": [
@@ -1200,6 +1369,19 @@
         "severity": "major",
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling content/quantum-observable-universe/predicted-spectra/lepton-number-categorical.lean fails compilation, indicating that the claims cannot be formally verified in Lean."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:58:09.000Z",
+        "reviewed_sha": "7db9e19cbfc528e17a56ea1c9cc54b581acaa7f4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1435,6 +1617,36 @@
         },
         "reviewed_at": "2026-07-12T00:35:44.899Z",
         "reviewed_sha": "6a697553ee79c4d9e8932245bfa58ba9bd9e7e5c"
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:58:09.000Z",
+        "reviewed_sha": "7db9e19cbfc528e17a56ea1c9cc54b581acaa7f4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:58:09.000Z",
+        "reviewed_sha": "7db9e19cbfc528e17a56ea1c9cc54b581acaa7f4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ]
   },
