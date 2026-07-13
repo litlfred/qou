@@ -1,0 +1,1 @@
+The $q$-Tate--Shafarevich group $\mathrm{Sha}_q(\mathcal{E}_q)$ measures the failure of the local-global principle at the $q$-scale: torsors trivial at every spectral localization but globally non-trivial.

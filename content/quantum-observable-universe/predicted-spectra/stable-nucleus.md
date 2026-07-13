@@ -30,9 +30,4 @@ $$
   \mathcal{N}(Z, N)  \oplus  Z \cdot T_{2,3}.
 $$
 
-**Restricting the hadron definition.**
-The abstract hadron ([hadron](#def:hadron)) permits arbitrary multi-component composites. The stability condition restricts the physically realised nuclei to the **valley of stability**. Only configurations $(Z, N)$ satisfying the beta-stability equation above are long-lived. Nuclei outside this valley undergo beta decay ($\mathfrak{n} \to \mathfrak{p} + e^- + \bar{\nu}_e$ or $\mathfrak{p} \to \mathfrak{n} + e^+ + \nu_e$) until they reach the stable configuration.
-
-This is not an additional axiom. It is a strict *consequence* of the Skein binding Lagrangian. The parameter $q$ determines both the strong binding (via $(q + q^{-1})/2$) and the Coulomb repulsion (via $(q - q^{-1})/2$). Their balance selects the unique stable $(Z, N)$ for each mass number $A$.
-
 **Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall. We invoke real- and complex-analytic constructs, including real-valued physical observables, real-analytic bounds, transcendental constants, and numerical evaluation at the substrate parameter $q_0$. Any generic categorical or $q$-deformation identities we draw upon remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.

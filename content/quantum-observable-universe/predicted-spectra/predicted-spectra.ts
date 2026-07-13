@@ -98,6 +98,7 @@ export default chapter({
       blocks: [
         "intro-stable-nucleus-torus-knots",
         "stable-nucleus",
+        "stable-nucleus-valley",
         "torus-hopf-stability",
         "torus-hopf-stability-proof",
         "unmapped-torus-knots",

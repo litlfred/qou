@@ -18,5 +18,5 @@ export default definition({
   lean: { ref: "qou:QOU.Archimedean.QMomentum",
     validation: "not_checked",
   },
-  uses: ["rem:building-block-knots"],
+  uses: [],
 });

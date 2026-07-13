@@ -1,0 +1,2 @@
+**Example: The atomic chain.**
+*The chain $\mathrm{quark} \xrightarrow{\downarrow_1} \mathrm{nucleon} \xrightarrow{\downarrow_2} \mathrm{atom} \xrightarrow{\mathrm{dress}} \mathrm{neutral\ atom} \xrightarrow{\downarrow_3} \mathrm{molecule}$ is a composite morphism in $\mathbf{Conf}$ taking free quarks to a bonded molecule by successive foldings and one dressing. Each arrow preserves or extends the Markov trace.*

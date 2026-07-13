@@ -318,6 +318,8 @@ export default chapter({
         // — Phase diagram: deconfinement, CFL, equation of state
         "deconfinement-golden-threshold",
         "hopf-diquark",
+        "hopf-diquark-physical",
+        "hopf-diquark-crossing-energy",
         "borromean-hopf-energy-crossover",
         "borromean-hopf-energy-crossover-proof",
         "borromean-hopf-energy-crossover-factor-250",

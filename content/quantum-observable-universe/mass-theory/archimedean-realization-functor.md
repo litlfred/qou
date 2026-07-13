@@ -11,26 +11,11 @@ $$
   \mathbb{R}
 $$
 
-*sending the motivic class $[X]$ to its topological Euler characteristic $\chi_{\mathrm{top}}(X)$ followed by the **archimedean projection** $\pi_\infty \colon \mathbb{A} \to \mathbb{R}$. This map evaluates motivic geometric shapes into real-valued physical observables.* (The word "functor" in the name and label is **legacy**: as explained under *Level of the construction* below, $\mathcal{R}_{\mathrm{top}}$ is a realization / evaluation — a ring homomorphism out of $K_0(\mathrm{Var})$ — not a functor between categories.)
+*sending the motivic class $[X]$ to its topological Euler characteristic $\chi_{\mathrm{top}}(X)$ followed by the **archimedean projection** $\pi_\infty \colon \mathbb{A} \to \mathbb{R}$. This map evaluates motivic geometric shapes into real-valued physical observables.* (The word "functor" in the name and label is **legacy**: as explained in [the follow-on remark](#rem:archimedean-realization-functor-interpretation), $\mathcal{R}_{\mathrm{top}}$ is a realization / evaluation — a ring homomorphism out of $K_0(\mathrm{Var})$ — not a functor between categories.)
 
-**Realization and projection.**
-A motivic integral $\int_{\mathcal{L}(X)} d\mu \in \widehat{\mathcal{M}}$ defines a geometric shape. The topological realization $\chi_{\mathrm{top}}$ maps this shape to an integer (Euler characteristic) or a refined Hodge-theoretic invariant like hyperbolic volume. The adelic projection $\pi_\infty$ discards non-archimedean components, returning the real-valued laboratory measurement.
-
-**Level of the construction (functor vs. motivic measure).**
-As written, $\mathcal{R}_{\mathrm{top}}$ has domain the Grothendieck *ring* $\widehat{\mathcal{M}} = K_0(\mathrm{Var})^{\wedge}$, and $\chi_{\mathrm{top}} \colon K_0(\mathrm{Var}) \to \mathbb{Z}$ is a *ring homomorphism* — a **motivic measure** in the sense of Denef–Loeser — while $\pi_\infty$ is an archimedean place. A map out of a ring is not a functor between categories: "functor" is literally accurate only for the fibre functor $\tau$ (below), or when the domain is lifted to the category of motives $\mathrm{DM}(k)$, where Betti/Hodge realization is a bona fide functor. On $\widehat{\mathcal{M}}$ itself, $\mathcal{R}_{\mathrm{top}}$ is the archimedean **realization / evaluation** into $\mathbb{R}$, not a functor between QOU categories — consistent with the notation register, which reserves "functor" for $\tau$ and treats the $R \mapsto \mathbb{R}$ realization as an evaluation. The block label is retained for stability.
-
-**Identification with the fibre functor.**
-The QOU fibre functor $\tau \colon \mathbf{C} \to \mathbf{Arch}$ is the exclusive exit from the categorical substrate to the real numbers. On motivic QOU inputs, $\mathcal{R}_{\mathrm{top}}$ coincides exactly with the archimedean component of $\tau$:
-
-$$
-  \mathcal{R}_{\mathrm{top}}
-  \;=\;
-  \tau_{\mathrm{arch}}
-  \;:=\;
-  \pi_\infty \circ \tau
-  \quad\text{on } \widehat{\mathcal{M}}_{\mathrm{QOU}}
-  \;\subseteq\; \widehat{\mathcal{M}}.
-$$
-
-**Synthesis.**
-The framework processes discrete categorical data along a single chain: adelic stitching, motivic integration, and archimedean projection. It requires no continuous differential equations or Lebesgue measures. The Kashaev limit of the algebraic quantum volume exemplifies this mechanism.
+The action of $\chi_{\mathrm{top}}$ and $\pi_\infty$, the precise
+sense in which $\mathcal{R}_{\mathrm{top}}$ is a motivic measure
+rather than a functor, and its identification with the archimedean
+component $\tau_{\mathrm{arch}} = \pi_\infty \circ \tau$ of the fibre
+functor, are developed in
+[the follow-on remark](#rem:archimedean-realization-functor-interpretation).

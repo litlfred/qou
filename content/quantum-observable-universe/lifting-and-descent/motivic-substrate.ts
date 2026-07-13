@@ -12,7 +12,7 @@ export default definition({
     "realization-tower",
     "axiom",
   ],
-  uses: ["def:arc-space"],
+  uses: ["def:frobenius-hopf-substrate", "def:adelic-substrate"],
   cites: ["kontsevich1995", "denef-loeser2001", "tate1967"],
   lean: {
     ref: "qou:QOU.AlgebraicSubstrate.MotivicSubstrate",

@@ -1,0 +1,1 @@
+In the QOU, the formal variable $z$ of the [vertex operator](#def:vertex-operator) algebra is the affine coordinate $z = v_1/v_2$ on the projective line $\mathcal{S}_p$. This matches the contact affine coordinate $Z = \alpha_H / \iota_\xi\alpha$ restricted to the fibre $\mathcal{S}_p$. On the affine chart $v_2 \neq 0$, $z$ generates $\mathbb{C}[z]$.

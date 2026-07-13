@@ -64,6 +64,7 @@ export default chapter({
         "lagrange-q-kinematics-intro",
         "lagrange-resolvents",
         "q-momentum",
+        "q-momentum-building-block-values",
         "q-momentum-properties",
         "q-angular-momentum",
         "q-angular-momentum-interpretation",

@@ -10,5 +10,5 @@ export default definition({
   lean: { ref: "qou:QOU.BigBangState",
     validation: "not_checked",
   },
-  uses: ["def:jet-horizon"],
+  uses: [],
 });

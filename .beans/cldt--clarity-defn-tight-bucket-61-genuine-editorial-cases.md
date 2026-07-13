@@ -51,3 +51,52 @@ minimal setup, interpretation moved to a follow-on `remark`), re-verified
 `clarity-defn-tight pass`. Route through `scientific-accuracy` (claim integrity) +
 `readability-editing` (prose) per block; do NOT delete mathematical content to
 satisfy the word count.
+
+## Full 46-block triage (2026-07-12, 3 parallel agents) + checker FP fixes (PR #3679)
+
+Reviewed EACH remaining fail. FP classes fixed in the checker (PR #3679, 46→34):
+first-bold anchor (math-term-leading defs), table-text-not-prose, §7c/`:`-component
+sub-section exclusion, algorithm-spec exemption.
+
+**Agent-confirmed FALSE POSITIVES (do NOT hand-edit):**
+- cleared by #3679: frobenius-hopf-substrate, yekutieli-triple, division-algorithm,
+  gs-quotient-ideals, phi-q-piece(core), q-angular-momentum, z-habiro-ring,
+  universal-ilp-algorithm, jet-stratified-reduction.
+- RESIDUAL FP (checker can't distinguish w/o over-correcting genuine; leave as-is):
+  substrate-line-bundle, q-navier-stokes, q-momentum, molecular-hopf-chain,
+  confinement-category, typed-garside-element (tuple/construction defs);
+  categorical-mordell-weil, co-molecular-braid (dense/multi-stage intrinsic length).
+
+**Agent-confirmed GENUINE (hand-fix, per-block extraction to follow-on remark/example):**
+| block | fix |
+|---|---|
+| hopf-diquark | 4 property/interpretation sections → remarks |
+| planck-time | Interpretation/Regime/Field-realisations → remarks; split **Planck length** to own def |
+| observable-subcategory | Observability/Complement/Connected-components → remarks; aeons its own def |
+| big-bang-state (mild) | Relation-to-jet-horizon + Existence-not-assumed → remarks |
+| threading-link (mild) | Component-structure + Alexander-polynomial → remark/example |
+| arc-space | Identification-with-brane-tower + Role-of-arc-spaces → remarks |
+| algebraic-quantum-volume (mild) | Structure-of-sum + Substrate-isolation → remarks |
+| per-nucleon-channel-decomposition | proton/neutron tables → example; S3^A + four-channels → remarks |
+| stable-atom (mild) | Independence + Connection-to-LP(proton ex) → remarks |
+| isotope-knot (mild) | two consequence sections → remarks |
+| nucleon-hecke-element | Proton/Neutron evals → example; Normal-form → remark/prop |
+| dressed-particle | Examples → example; Composition/Stability/Markov-functoriality → remarks |
+| quantum-bloch-group | connection-list/why/Kashaev/pre-archimedean → remarks |
+| qou-motivic-galois-instance | verification/downstream/coherence → remarks; keep frobenius map + Lean instance |
+| stable-nucleus | Restricting-hadron + not-an-axiom → remark |
+| categorical-meson | worked Hecke reduction → example; particle-content → remark |
+| confinement-level | split k_max to own def; magic/categorical/q-dep → remarks |
+| birthday-grading | cut preamble; q=1+ε example → example; Rep_ℝ/relaxed-axiom → remark; split b(x) + graded-hom |
+| confined-particle | 8 examples → example block |
+| sign-sequence-of-braid | bold+front the surr(β,t) construction; motivation+Jones-refinement → remarks |
+| adelic-substrate | Motivation + Tate-integral development → remarks |
+| archimedean-realization-functor | naming caveat → authorNotes; Realization/Synthesis → remarks |
+| motivic-mass-measure | Motivic-rationale + R_top pointer → remark |
+| motivic-substrate (mild) | Canonicity + Relation-to-existing → remarks |
+| unstable-atom | (multi-flag; parallel to stable-atom) extract examples/consequences |
+
+These need per-block extraction to NEW follow-on `remark`/`example` blocks (.ts+.md +
+manifest) — real structural content work, best done carefully in batches with fresh
+context, NOT a rushed sweep. sign-sequence-of-braid + the "front/bold the buried
+construction" ones are the cleanest in-block starters.

@@ -28,4 +28,4 @@ $$
 \mathrm{Sha}_q(\mathcal{E}_q) := \ker\!\left( H^1_{\otimes}(\mathbf{C}, E_q) \longrightarrow \prod_{\rho \in \mathrm{Spec}(\xi_q)} H^1_{\otimes}(\mathbf{C}_\rho, E_q) \right),
 $$
 
-where $H^1_{\otimes}$ denotes the first cohomology of the :refterm[monoidal category]{#monoidal-category} (classifying torsors under $\mathcal{E}_q$ in $\mathbf{C}$). This measures the failure of the local-global principle at the $q$-scale: torsors trivial at every spectral localization but globally non-trivial.
+where $H^1_{\otimes}$ denotes the first cohomology of the :refterm[monoidal category]{#monoidal-category} (classifying torsors under $\mathcal{E}_q$ in $\mathbf{C}$).

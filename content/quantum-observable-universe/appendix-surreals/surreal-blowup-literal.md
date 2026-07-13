@@ -1,0 +1,1 @@
+The field $\mathbf{No}$ makes every step of the blow-up literal. The cutoff $\Lambda$ is a specific element. The counterterm is a specific surreal-valued function. The standard part is a specific real number.

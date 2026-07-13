@@ -89,9 +89,12 @@ export default chapter({
       blocks: [
         "surreal-construction-grading-intro",
         "birthday-grading",
+        "birthday-grading-archimedean",
+        "birthday-grading-substrate",
         "hoefsmit-is-surreal-construction",
         "hoefsmit-is-surreal-construction-proof",
         "sign-sequence-of-braid",
+        "sign-sequence-of-braid-invariant",
         "jones-birthday",
       ],
     },
@@ -124,6 +127,7 @@ export default chapter({
       blocks: [
         "surreal-blowup-calculus",
         "surreal-blowup-calculus-table-data",
+        "surreal-blowup-literal",
         "surreal-blowup-examples",
         // Möbius energy renormalization as a difference of infinite surreals
         // (the surreal-essential showcase; interprets prop:mobius-energy).
@@ -189,6 +193,7 @@ export default chapter({
           blocks: [
             // BSD
             "categorical-mordell-weil",
+            "categorical-sha-local-global",
             "q-birch-swinnerton-dyer",
             "q-bsd-rank-zero",
             "q-bsd-classical-limit",
