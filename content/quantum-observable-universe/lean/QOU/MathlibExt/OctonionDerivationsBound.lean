@@ -100,21 +100,9 @@ theorem octDer_finrank_ge : 14 ≤ Module.finrank ℚ Der𝕆 := by
   have hle := L14.finrank_le_finrank_of_injective hinj
   simpa using hle
 
-/-- **Upper bound:** `dim Der(𝕆) ≤ 14`. Equivalent to injectivity of `proj𝕆` on `Der𝕆` — a
-derivation is determined by its 14 free entries, the other 50 being forced by the Leibniz
-constraints (the classical `Der(𝕆) ≅ 𝔤₂`). The reduction and lower bound above are proved;
-this direction's explicit 50-constraint certificate is the remaining formalization step. -/
-theorem octDer_finrank_le : Module.finrank ℚ Der𝕆 ≤ 14 := by
-  -- Reduces to `Function.Injective projDer` via `LinearMap.finrank_le_finrank_of_injective`
-  -- (the 50 pivot entries of a derivation are the row-space certificate of the rank-50
-  -- Leibniz-defect matrix; injectivity of `projDer` is the classical `Der(𝕆) ≅ 𝔤₂`).
-  -- Ref: [baez2002] "The Octonions" §4.1 (Der(𝕆) ≅ 𝔤₂, dim 14).
-  sorry
-
-/-- **`dim Der(𝕆) = 14`** — the octonion derivation algebra is the 14-dimensional compact
-`𝔤₂`. The lower bound and the rank–nullity reduction are machine-verified; the upper bound is
-conditional on the classical `Der(𝕆) ≅ 𝔤₂` (`octDer_finrank_le`). -/
-theorem octonion_derivation_dim : Module.finrank ℚ Der𝕆 = 14 :=
-  le_antisymm octDer_finrank_le octDer_finrank_ge
+-- The matching **upper bound** `octDer_finrank_le : dim Der(𝕆) ≤ 14` and the assembled
+-- equality `octonion_derivation_dim : dim Der(𝕆) = 14` are proved in
+-- `QOU.MathlibExt.OctonionDerivationsUpperBound` (50 explicit range witnesses; the classical
+-- `Der(𝕆) ≅ 𝔤₂`), now sorry-free.
 
 end QOU.MathlibExt.OctonionDerivations
