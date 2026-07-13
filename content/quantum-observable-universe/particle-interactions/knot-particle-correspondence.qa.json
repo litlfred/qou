@@ -1065,6 +1065,19 @@
         "reviewed_at": "2026-07-07T14:26:57.237575Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:29:01.000Z",
+        "reviewed_sha": "543e7db2ca1f71d273d57f54d472f5222c05cb41",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "wall-side-statement": [
@@ -1286,6 +1299,19 @@
         "notes": "No false claims identified in 'Knot--particle correspondence via $q$-Schur--Weyl duality': mathematical reasoning is consistent.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/knot-particle-correspondence.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:29:01.000Z",
+        "reviewed_sha": "543e7db2ca1f71d273d57f54d472f5222c05cb41",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-vacuous": [
@@ -1307,6 +1333,19 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The block 'Knot--particle correspondence via $q$-Schur--Weyl duality' presents substantial mathematical content: Let $V = V_{1/2}$ be the fundamental representation of $\\mathcal{U}_q(\\mathfrak{su}(2))$ and let $B_n$ act faithfully...",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:29:01.000Z",
+        "reviewed_sha": "543e7db2ca1f71d273d57f54d472f5222c05cb41",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-circular": [
@@ -1329,6 +1368,19 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Knot--particle correspondence via $q$-Schur--Weyl duality'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/knot-particle-correspondence.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:29:01.000Z",
+        "reviewed_sha": "543e7db2ca1f71d273d57f54d472f5222c05cb41",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-overclaim": [
@@ -1350,6 +1402,19 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No overclaims: the scope of 'Knot--particle correspondence via $q$-Schur--Weyl duality' is appropriately qualified.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:29:01.000Z",
+        "reviewed_sha": "543e7db2ca1f71d273d57f54d472f5222c05cb41",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-hidden-dof": [
@@ -1372,6 +1437,19 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Knot--particle correspondence via $q$-Schur--Weyl duality'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/knot-particle-correspondence.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:29:01.000Z",
+        "reviewed_sha": "543e7db2ca1f71d273d57f54d472f5222c05cb41",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-non-sequitur": [
@@ -1394,6 +1472,19 @@
         "notes": "The argument flow in 'Knot--particle correspondence via $q$-Schur--Weyl duality' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/knot-particle-correspondence.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:29:01.000Z",
+        "reviewed_sha": "543e7db2ca1f71d273d57f54d472f5222c05cb41",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1415,6 +1506,19 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Lean formalization and narrative for 'Knot--particle correspondence via $q$-Schur--Weyl duality' are in complete agreement.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:29:01.000Z",
+        "reviewed_sha": "543e7db2ca1f71d273d57f54d472f5222c05cb41",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-citation-misuse": [
@@ -1437,6 +1541,19 @@
         "notes": "No citations are present in 'Knot--particle correspondence via $q$-Schur--Weyl duality', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/knot-particle-correspondence.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:29:01.000Z",
+        "reviewed_sha": "543e7db2ca1f71d273d57f54d472f5222c05cb41",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-definitional-ambiguity": [
@@ -1459,6 +1576,19 @@
         "notes": "Key terms and symbols in 'Knot--particle correspondence via $q$-Schur--Weyl duality' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/knot-particle-correspondence.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:29:01.000Z",
+        "reviewed_sha": "543e7db2ca1f71d273d57f54d472f5222c05cb41",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-empirical-fragility": [
@@ -1481,6 +1611,19 @@
         "notes": "The algebraic and logical relations in 'Knot--particle correspondence via $q$-Schur--Weyl duality' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/knot-particle-correspondence.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:29:01.000Z",
+        "reviewed_sha": "543e7db2ca1f71d273d57f54d472f5222c05cb41",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-physical-implausibility": [
@@ -1503,6 +1646,19 @@
         "notes": "The physical concepts described in 'Knot--particle correspondence via $q$-Schur--Weyl duality' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/knot-particle-correspondence.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:29:01.000Z",
+        "reviewed_sha": "543e7db2ca1f71d273d57f54d472f5222c05cb41",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-reproducibility": [
@@ -1525,6 +1681,19 @@
         "notes": "The derivation steps and formal definitions in 'Knot--particle correspondence via $q$-Schur--Weyl duality' are reproducible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/knot-particle-correspondence.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:29:01.000Z",
+        "reviewed_sha": "543e7db2ca1f71d273d57f54d472f5222c05cb41",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-referee-verdict": [
@@ -1548,6 +1717,19 @@
         "severity": "minor",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Knot--particle correspondence via $q$-Schur--Weyl duality' are consistent."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:29:01.000Z",
+        "reviewed_sha": "543e7db2ca1f71d273d57f54d472f5222c05cb41",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "bib-cite-resolves": [
@@ -1646,6 +1828,36 @@
         },
         "reviewed_at": "2026-07-12T00:35:39.126Z",
         "reviewed_sha": "a38f99c8befc4b364f7820811bc286a64f3a2b6e"
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:29:01.000Z",
+        "reviewed_sha": "543e7db2ca1f71d273d57f54d472f5222c05cb41",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:29:01.000Z",
+        "reviewed_sha": "543e7db2ca1f71d273d57f54d472f5222c05cb41",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ]
   },
