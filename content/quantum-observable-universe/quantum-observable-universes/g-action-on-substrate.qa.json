@@ -907,6 +907,19 @@
         "reviewed_at": "2026-07-07T14:26:55.900049Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -946,6 +959,19 @@
         "severity": "minor",
         "evidence": "g-action-on-substrate.ts:1",
         "notes": "No false claims identified in the prose of 'Categorical $G = \\\\mathrm{SU}(2)_L \\\\times \\\\mathrm{U}(1)_Y$ action on the Frobenius–Hopf substrate'; the mathematical reasoning concerning 'Conjecture (categorical $G$-action on the Frobenius–Hopf substrate).' is consistent."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-vacuous": [
@@ -967,6 +993,19 @@
         "severity": "minor",
         "evidence": "g-action-on-substrate.ts:1",
         "notes": "The block 'Categorical $G = \\\\mathrm{SU}(2)_L \\\\times \\\\mathrm{U}(1)_Y$ action on the Frobenius–Hopf substrate' presents substantial mathematical content: 'Conjecture (categorical $G$-action on the Frobenius–Hopf substrate).'."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-circular": [
@@ -988,6 +1027,19 @@
         "severity": "minor",
         "evidence": "g-action-on-substrate.ts:1",
         "notes": "No circular reasoning or self-assuming definitions are detected in the statement or proof of 'Categorical $G = \\\\mathrm{SU}(2)_L \\\\times \\\\mathrm{U}(1)_Y$ action on the Frobenius–Hopf substrate' (which asserts 'Conjecture (categorical $G$-action on the Frobenius–Hopf substrate).')."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-overclaim": [
@@ -1009,6 +1061,19 @@
         "severity": "minor",
         "evidence": "g-action-on-substrate.ts:1",
         "notes": "The remarks and narrative scope in 'Categorical $G = \\\\mathrm{SU}(2)_L \\\\times \\\\mathrm{U}(1)_Y$ action on the Frobenius–Hopf substrate' concerning 'Conjecture (categorical $G$-action on the Frobenius–Hopf substrate).' are appropriately qualified."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-hidden-dof": [
@@ -1030,6 +1095,19 @@
         "severity": "minor",
         "evidence": "g-action-on-substrate.ts:1",
         "notes": "No hidden degrees of freedom, unstated constants, or arbitrary parameters are introduced in the formulation of 'Categorical $G = \\\\mathrm{SU}(2)_L \\\\times \\\\mathrm{U}(1)_Y$ action on the Frobenius–Hopf substrate'."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-non-sequitur": [
@@ -1051,6 +1129,19 @@
         "severity": "minor",
         "evidence": "g-action-on-substrate.ts:1",
         "notes": "The prose arguments in 'Categorical $G = \\\\mathrm{SU}(2)_L \\\\times \\\\mathrm{U}(1)_Y$ action on the Frobenius–Hopf substrate' proceed logically through the stated steps: 'Conjecture (categorical $G$-action on the Frobenius–Hopf substrate).'."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1072,6 +1163,19 @@
         "severity": "minor",
         "evidence": "g-action-on-substrate.ts:1",
         "notes": "No Lean sibling required; the narrative of 'Categorical $G = \\\\mathrm{SU}(2)_L \\\\times \\\\mathrm{U}(1)_Y$ action on the Frobenius–Hopf substrate' matches the expected configuration."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-citation-misuse": [
@@ -1093,6 +1197,19 @@
         "severity": "minor",
         "evidence": "g-action-on-substrate.ts:1",
         "notes": "No citations are present in 'Categorical $G = \\\\mathrm{SU}(2)_L \\\\times \\\\mathrm{U}(1)_Y$ action on the Frobenius–Hopf substrate', hence no citation misuse is possible."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-definitional-ambiguity": [
@@ -1114,6 +1231,19 @@
         "severity": "minor",
         "evidence": "g-action-on-substrate.ts:1",
         "notes": "Key terms and symbols in 'Categorical $G = \\\\mathrm{SU}(2)_L \\\\times \\\\mathrm{U}(1)_Y$ action on the Frobenius–Hopf substrate' (e.g. from 'Conjecture (categorical $G$-action on the Frobenius–Hopf substrate).') are mathematically defined and unambiguous."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-empirical-fragility": [
@@ -1135,6 +1265,19 @@
         "severity": "minor",
         "evidence": "g-action-on-substrate.ts:1",
         "notes": "The algebraic and logical relations in 'Categorical $G = \\\\mathrm{SU}(2)_L \\\\times \\\\mathrm{U}(1)_Y$ action on the Frobenius–Hopf substrate' are independent of empirical tuning parameters."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-physical-implausibility": [
@@ -1156,6 +1299,19 @@
         "severity": "minor",
         "evidence": "g-action-on-substrate.ts:1",
         "notes": "The physical concepts described in 'Categorical $G = \\\\mathrm{SU}(2)_L \\\\times \\\\mathrm{U}(1)_Y$ action on the Frobenius–Hopf substrate' are consistent with quantum observable mechanics."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-reproducibility": [
@@ -1177,6 +1333,19 @@
         "severity": "minor",
         "evidence": "g-action-on-substrate.ts:1",
         "notes": "The derivation steps and formal definitions in 'Categorical $G = \\\\mathrm{SU}(2)_L \\\\times \\\\mathrm{U}(1)_Y$ action on the Frobenius–Hopf substrate' are reproducible."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-referee-verdict": [
@@ -1199,6 +1368,19 @@
         "notes": "Referee verdict: clean.",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Categorical $G = \\\\mathrm{SU}(2)_L \\\\times \\\\mathrm{U}(1)_Y$ action on the Frobenius–Hopf substrate' (concerning 'Conjecture (categorical $G$-action on the Frobenius–Hopf substrate).') are consistent and formally verified."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "milnor-amalgamated-flow": [
@@ -1412,6 +1594,36 @@
         },
         "reviewed_at": "2026-07-12T02:27:16.832Z",
         "reviewed_sha": "a261b5599858024c2ffcb9a1f91fc8aceb108c50"
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ]
   },
