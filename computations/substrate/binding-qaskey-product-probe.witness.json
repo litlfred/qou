@@ -1,8 +1,29 @@
 {
-  "computation": "binding_qaskey_product_probe",
-  "description": "q-Askey placement of the binding q-Gaussian element: tests whether its generating function is a closed-form q-Pochhammer product (refuted in both normalizations), records the q-Hermite/Rogers\u2013Szeg\u0151 family map (binding = moments, W_\u03bb = Plancherel measure, arena = Hahn\u2013Exton q-Bessel), and the \ud835\udd19 = Re(binding)+i\u00b7Im(Q_\u03b2) complex-volume framing.",
-  "discipline": "no fit; sympy symbolic exact in q; (a)/(b)-scoped.",
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-07-03T00:39:12.188963+00:00",
+  "commitSha": "7826c3d95daac3d608286c8e05212f986dc1e61e",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 12528,
+  "computation": "binding-qaskey-product-probe",
+  "scriptFile": "binding_qaskey_product_probe.py",
+  "scriptHash": "b4fca80b6287",
+  "scriptCommitSha": "7826c3d95daac3d608286c8e05212f986dc1e61e",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "q-Askey placement of the binding q-Gaussian element: tests whether its generating function is a closed-form q-Pochhammer product (refuted in both normalizations), records the q-Hermite/Rogers–Szegő family map (binding = moments, W_λ = Plancherel measure, arena = Hahn–Exton q-Bessel), and the 𝔙 = Re(binding)+i·Im(Q_β) complex-volume framing.",
   "auditOnly": "docs/audits/2026-06-28-wlambda-identity-i-rescope-no-hlf.md",
+  "discipline": "no fit; sympy symbolic exact in q; (a)/(b)-scoped.",
   "results": {
     "product_test": {
       "symmetric_[m]_q_fact": {
@@ -48,18 +69,18 @@
     },
     "simple_qAskey_product_form": false,
     "family_map": {
-      "binding_period_S(m)": "q-Hermite / Rogers\u2013Szeg\u0151 MOMENT sequence (q=1 \u2192 involution numbers)",
-      "W_lambda": "q-Hermite PLANCHEREL / orthogonality MEASURE (= d_q\u00b2/D\u00b2) of the same family",
-      "W_lambda_arena": "Hahn\u2013Exton q-Bessel (E_q(2) contraction) \u2014 one q-Askey degeneration away",
+      "binding_period_S(m)": "q-Hermite / Rogers–Szegő MOMENT sequence (q=1 → involution numbers)",
+      "W_lambda": "q-Hermite PLANCHEREL / orthogonality MEASURE (= d_q²/D²) of the same family",
+      "W_lambda_arena": "Hahn–Exton q-Bessel (E_q(2) contraction) — one q-Askey degeneration away",
       "connecting_structure": "three-term recurrence / orthogonality (main's FollowsRogersSzego), NOT a product generating function"
     },
     "frakV_framing": {
-      "object": "\ud835\udd19(K) = E\u2080\u00b7tr_M((\u03a0_free\u22121)\u2218\u2133) \u2208 \u2102 \u2014 complex-volume observable (Neumann\u2013Zagier \ud835\udd4d = Vol + i\u00b7CS)",
-      "Re_V": "\ud835\udd08_bind (binding, BAR-EVEN cosh) \u2014 the binding side characterized in PR #2899; the q-Hermite moment",
-      "Im_V": "\ud835\udd14_\u03b2 (\u03b2-decay Q-value, BAR-ODD sinh) \u2014 the c_k Habiro element",
-      "qAskey_grading": "q = e^\u03b7 gives the cosh/sinh (bar-even/bar-odd) grading = Re/Im = binding/Q_\u03b2 = Vol/CS split of \ud835\udd19",
+      "object": "𝔙(K) = E₀·tr_M((Π_free−1)∘ℳ) ∈ ℂ — complex-volume observable (Neumann–Zagier 𝕍 = Vol + i·CS)",
+      "Re_V": "𝔈_bind (binding, BAR-EVEN cosh) — the binding side characterized in PR #2899; the q-Hermite moment",
+      "Im_V": "𝔔_β (β-decay Q-value, BAR-ODD sinh) — the c_k Habiro element",
+      "qAskey_grading": "q = e^η gives the cosh/sinh (bar-even/bar-odd) grading = Re/Im = binding/Q_β = Vol/CS split of 𝔙",
       "ref": "conj:binding-qbeta-complex-volume; notation-register-table7-data.md"
     }
   },
-  "verdict": "SIMPLE q-ASKEY PRODUCT FORM REFUTED (scope (a)). The binding generating function \u011c(z)=\u03a3 S(m) z^m/N(m) is NOT a closed-form q-Pochhammer product \u220f(z q\u1d43;q)_\u221e^{c\u1d43}: in BOTH the symmetric [m]_q! and the q-Askey (q;q)_m normalizations, L_m\u00b7(1\u2212q\u1d50) retains residual cyclotomic factors (not Laurent), consistent with the not-low-order-q-holonomic result (PR #2899 Stages 3\u20134). POSITIVE family map stands: the binding side is the q-HERMITE / Rogers\u2013Szeg\u0151 MOMENT sequence and W_\u03bb = d_q\u00b2/D\u00b2 is the same family's PLANCHEREL MEASURE; their bridge is the three-term recurrence / orthogonality (FollowsRogersSzego), not a product GF. \ud835\udd19 framing: the binding side is Re \ud835\udd19 = \ud835\udd08_bind (bar-even cosh) of the complex-volume observable \ud835\udd19 = Vol + i\u00b7CS; Im \ud835\udd19 = \ud835\udd14_\u03b2 is the bar-odd sinh c_k Habiro element. The q-Askey q = e^\u03b7 cosh/sinh grading IS the Re/Im split \u2014 so the binding q-Hermite moment describes Re \ud835\udd19, and the full \ud835\udd19 is the COMPLEX q-Hermite/Askey object whose real part is binding, imaginary part Q_\u03b2."
+  "verdict": "SIMPLE q-ASKEY PRODUCT FORM REFUTED (scope (a)). The binding generating function Ĝ(z)=Σ S(m) z^m/N(m) is NOT a closed-form q-Pochhammer product ∏(z qᵃ;q)_∞^{cᵃ}: in BOTH the symmetric [m]_q! and the q-Askey (q;q)_m normalizations, L_m·(1−qᵐ) retains residual cyclotomic factors (not Laurent), consistent with the not-low-order-q-holonomic result (PR #2899 Stages 3–4). POSITIVE family map stands: the binding side is the q-HERMITE / Rogers–Szegő MOMENT sequence and W_λ = d_q²/D² is the same family's PLANCHEREL MEASURE; their bridge is the three-term recurrence / orthogonality (FollowsRogersSzego), not a product GF. 𝔙 framing: the binding side is Re 𝔙 = 𝔈_bind (bar-even cosh) of the complex-volume observable 𝔙 = Vol + i·CS; Im 𝔙 = 𝔔_β is the bar-odd sinh c_k Habiro element. The q-Askey q = e^η cosh/sinh grading IS the Re/Im split — so the binding q-Hermite moment describes Re 𝔙, and the full 𝔙 is the COMPLEX q-Hermite/Askey object whose real part is binding, imaginary part Q_β."
 }

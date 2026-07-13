@@ -18,6 +18,8 @@ This probe contributes a rigorous, NON-FITTED constraint that narrows the open o
 q-DEPENDENT anchors ⇒ (b)-exclusion of the classical-jet identification ⇒ the prolongation operator
 MUST be q-DIFFERENCE (the bean's "fibre q-difference kernel R(q,x)"). No fit; no value tuned.
 """
+import time as _time  # noqa: E402 — wall-clock anchor for witness durationMs
+_T0 = _time.monotonic()
 import json
 import sympy as sp
 
@@ -63,7 +65,9 @@ out = {
                      "OPEN keystone; a_D^(4)=Family-A is a CODATA-implied near-match"),
   "verdict": verdict,
 }
-wpath = "computations/substrate/z2bn-prolongation-qdifference-constraint.witness.json"
-with open(wpath, "w") as fh:
-    json.dump(out, fh, indent=2, ensure_ascii=False)
-print("\nwitness ->", wpath)
+from witness_base import WitnessBuilder  # noqa: E402 — P30 rollup (bean cmiy)
+wpath = WitnessBuilder.wrap_legacy(
+    "z2bn-prolongation-qdifference-constraint", out,
+    script_path=__file__, engine="sympy", start_time=_T0,
+).save()
+print("witness ->", wpath)

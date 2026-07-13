@@ -1,8 +1,29 @@
 {
-  "computation": "lever1_qholonomic_order3_fit",
-  "description": "Stage 4: raises the q-shift order to 3 for the binding period S(m)=\u03a3_{\u03bb\u22a2m} dim_q(\u03bb), \u03a3_{j=0..3} P_j(q,q^m) S(m-j)=0, bar-symmetric bounded-bidegree guess-and-verify with held-out falsification (order-2 re-run as regression). Follows the order-2 negative (Stage 3).",
-  "discipline": "no fit; sympy symbolic exact in q to S(11); held-out m never used in the fit; (a)/(b)-scoped per AGENTS.md.",
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-07-03T00:43:03.843720+00:00",
+  "commitSha": "7826c3d95daac3d608286c8e05212f986dc1e61e",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 64153,
+  "computation": "lever1-qholonomic-order3-fit",
+  "scriptFile": "lever1_qholonomic_order3_fit.py",
+  "scriptHash": "b76c175c2654",
+  "scriptCommitSha": "7826c3d95daac3d608286c8e05212f986dc1e61e",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Stage 4: raises the q-shift order to 3 for the binding period S(m)=Σ_{λ⊢m} dim_q(λ), Σ_{j=0..3} P_j(q,q^m) S(m-j)=0, bar-symmetric bounded-bidegree guess-and-verify with held-out falsification (order-2 re-run as regression). Follows the order-2 negative (Stage 3).",
   "auditOnly": "docs/audits/2026-06-27-lever1-qinvolution-cyclotomic-kernel.md",
+  "discipline": "no fit; sympy symbolic exact in q to S(11); held-out m never used in the fit; (a)/(b)-scoped per AGENTS.md.",
   "results": {
     "order2_regression": {
       "attempts": [
@@ -80,5 +101,5 @@
     }
   },
   "certified_order3": false,
-  "verdict": "ORDER-3 ALSO NEGATIVE (scope-limited (a)). No order-2 OR order-3 q-holonomic recurrence up to q-deg \u00b13, X-deg 3 predicts the held-out m. The binding period S(m)=\u03a3 dim_q(\u03bb) is not q-holonomic of small order/bidegree at all \u2014 consistent with the Q_\u03b2 c_k ladder, which likewise admits no low-order (q-)holonomic recurrence (ck-dk-canonical-registry; 2026-06-04 holonomic-c11 verdict). The kernel is genuinely high-complexity in the Habiro ring; the cyclotomic (q-1)\u00b2\u00b7\u03a6_d tower (Stage 1) is the structural handle, not a finite q-difference operator of small order. Does NOT refute the Habiro class; rules out low-order q-holonomicity for BOTH rungs."
+  "verdict": "ORDER-3 ALSO NEGATIVE (scope-limited (a)). No order-2 OR order-3 q-holonomic recurrence up to q-deg ±3, X-deg 3 predicts the held-out m. The binding period S(m)=Σ dim_q(λ) is not q-holonomic of small order/bidegree at all — consistent with the Q_β c_k ladder, which likewise admits no low-order (q-)holonomic recurrence (ck-dk-canonical-registry; 2026-06-04 holonomic-c11 verdict). The kernel is genuinely high-complexity in the Habiro ring; the cyclotomic (q-1)²·Φ_d tower (Stage 1) is the structural handle, not a finite q-difference operator of small order. Does NOT refute the Habiro class; rules out low-order q-holonomicity for BOTH rungs."
 }

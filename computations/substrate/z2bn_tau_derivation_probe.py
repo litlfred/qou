@@ -14,6 +14,8 @@ Spectral curve (color cubic, X = color coord, z = √q − 1/√q):
 Anchors (lever1_lambda_sw_no_shortcut.py): a_D²=1, a_D³=(q+1)²/(3q), a_D⁴=(3q²+4+3q⁻²)/4
 Target: τ=(a_D²+a_D⁴)/a_D³ ;  θ=acosh(τ/2)=0.78145 ;  λ=e^θ=2.18465.  No fit; q₀ never tuned.
 """
+import time as _time  # noqa: E402 — wall-clock anchor for witness durationMs
+_T0 = _time.monotonic()
 import mpmath as mp
 import sympy as sp
 
@@ -160,7 +162,9 @@ witness = {
               "λ_SW^(n)→anchors (the q-family Gauss–Manin monodromy) is the genuine deep residual. No fit; "
               "q0 never tuned."),
 }
-wpath = "computations/substrate/z2bn-tau-derivation-probe.witness.json"
-with open(wpath, "w") as fh:
-    json.dump(witness, fh, indent=2, ensure_ascii=False)
-print(f"\nwitness -> {wpath}")
+from witness_base import WitnessBuilder  # noqa: E402 — P30 rollup (bean cmiy)
+wpath = WitnessBuilder.wrap_legacy(
+    "z2bn-tau-derivation-probe", witness,
+    script_path=__file__, engine="sympy", start_time=_T0,
+).save()
+print("witness ->", wpath)

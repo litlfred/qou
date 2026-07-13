@@ -137,3 +137,15 @@ NOTE: bring-coordinate-linking-weight-probe.witness.json is an ORPHAN (no
 producer script in tree) — needs a disposition pass, not a wrap.
 
 > **Investigated 2026-07-05 (swarm 2, PR #3344) — deferred, kept OPEN.** WitnessBuilder ports need running the producer (regen witness w/ provenance); WitnessBuilder imports mpmath → unimportable in sandbox (compute-blocked). Easy tail drained (batches 1–10); hard tail (qaskey/qholonomic/z2bn) needs canonical env.
+
+## 2026-07-03 — batch 11 (6 scripts, wrap_legacy) — substrate/ raw-emit DRAINED
+The last 6 substrate/ raw-emit scripts, all assertion-free, via wrap_legacy:
+binding_qaskey_product_probe, lever1_qholonomic_kernel_fit,
+lever1_qholonomic_order3_fit, z2bn_pf_monodromy_synthesis,
+z2bn_prolongation_qdifference_constraint, z2bn_tau_derivation_probe.
+Each: exit 0, PROV_OK, original keys kept (only wrap_legacy-standard meta
+added); cwd-relative paths eliminated via save(). Followed sibling gotcha #5
+(delete stale witness first). PROV_MISSING 249→243. computations/substrate/
+now has ZERO raw json.dump witness emitters — remaining rollup work is the
+root-computations tail (~30+ scripts, per-script triage: many-consumer,
+multi-emit, canonical-env, NOFILE classes).
