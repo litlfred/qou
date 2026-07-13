@@ -44,8 +44,9 @@ algebraic identity `h·z + 1 = (q^{5/2}−q^{1/2}+q²+q)/(q²+q)` is **sympy-ver
 framework's Markov normalisation; the three closed forms above are cross-checked
 in `computations/deltalambda/nuclear_quotient_jones_torus_link_probe.py`
 (+ witness). The formal `rpow`-normalisation bridge lemma
-`jonesTorusLink 2 = jonesHopf` is deferred (needs the LSP; the `Real.sqrt`↔`rpow`
-rewriting is not machine-checkable this session — see the audit doc).
+`jonesHopfLink_eq_jonesHopf` (`h·z + 1 = jonesHopf`) is now **proved sorry-free**
+below — the `Real.sqrt`↔`rpow` rewriting is discharged via `Real.sqrt_eq_rpow`
++ `Real.sq_sqrt`, both sides reducing to `√q − 1/√q + 1`.
 
 Base ring (§7c): the Markov parameter and trace values are archimedean
 (`Real.sqrt q`, `q > 1` Wenzl regime), so this file is legitimately `ℝ`-valued.
@@ -78,6 +79,30 @@ noncomputable def jonesHopfLink (q : ℝ) : ℝ := heckeH q * markovZ q + 1
 /-- **Jones value of the trefoil** `= (2,3)` torus link
     `= tr_M(σ₁³) = (h²+1)·z + h`. -/
 noncomputable def jonesTrefoil (q : ℝ) : ℝ := (heckeH q ^ 2 + 1) * markovZ q + heckeH q
+
+/-- **The `rpow`-normalisation bridge** (previously deferred pending the LSP):
+    the `(h·z + 1)` Hopf value here equals the canonical Wenzl-regime closed form
+    `jonesHopf` of [`JonesViaMarkovTrace`]. Both reduce to `√q − 1/√q + 1`; the
+    proof converts `Real.sqrt q ↔ q ^ (1/2 : ℝ)` and clears denominators. -/
+theorem jonesHopfLink_eq_jonesHopf (q : ℝ) (hq : 1 < q) :
+    jonesHopfLink q = jonesHopf q (T := markovTraceTower_canonical q hq) := by
+  rw [jonesHopf_canonical q hq]
+  have hq0 : (0 : ℝ) < q := lt_trans zero_lt_one hq
+  have hs : (0 : ℝ) < Real.sqrt q := Real.sqrt_pos.mpr hq0
+  have hsq : Real.sqrt q ^ 2 = q := Real.sq_sqrt hq0.le
+  have e1 : q ^ ((1 : ℝ) / 2) = Real.sqrt q := (Real.sqrt_eq_rpow q).symm
+  have e5 : q ^ ((5 : ℝ) / 2) = q ^ 2 * Real.sqrt q := by
+    rw [Real.sqrt_eq_rpow, ← Real.rpow_natCast q 2, ← Real.rpow_add hq0]
+    norm_num
+  unfold jonesHopfLink heckeH markovZ
+  rw [e1, e5]
+  have hsne : Real.sqrt q ≠ 0 := ne_of_gt hs
+  have hq' : q ≠ 0 := ne_of_gt hq0
+  have hden : Real.sqrt q + 1 / Real.sqrt q ≠ 0 := by positivity
+  have hqq : q ^ 2 + q ≠ 0 := by positivity
+  field_simp
+  rw [hsq]
+  ring
 
 /-- The nuclear magic numbers (closed-shell nucleon counts). -/
 def magicNumbers : List ℕ := [2, 8, 20, 28, 50, 82, 126]
