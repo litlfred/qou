@@ -41,14 +41,14 @@ sub-class on the faithful arm. The surviving f-space is non-monomial and remains
 open (merged into the keystone `W_λ` axis per the refuted-class map §3 / C14). No
 c_k is proposed; nothing is wired; the registry is untouched.
 
-**Verification status (2026-07-13).** Proofs are sorry-free and hand-audited
-term-by-term. They were **not** machine-checked in the authoring sandbox: the
-restored `lake-cache/qou-v4-24-0` oleans carry only a partial Mathlib (the
-`Mathlib.Tactic` / `Ring` / `LinearCombination` / `NormNum` closure that
-`ComplexVolumeZeta4Partner` transitively needs is absent), the network cache is
-firewalled (`lake exe cache get` → exit 1), and a from-source rebuild would wipe
-the restored cache. A CI / full-cache `lean`-direct pass is required to certify
-sorry-free before this file is cited as machine-checked.
+**Verification status (2026-07-13).** Proofs are sorry-free and
+**machine-verified** via `lean`-direct (exit 0) against the restored
+`lake-cache/qou-v4-24-0` Mathlib oleans plus a freshly-rebuilt
+`ComplexVolumeZeta4Partner.olean` (the cached dep olean was two days stale —
+predating this file's `exp_zeta4_eigen` / `IsZeta4Faithful` dependencies — so
+the dep was recompiled from current source before the check). The hand-audit
+was confirmed correct: the only earlier obstacle was the stale dep olean, not
+the proofs.
 
 -- Ref: [manuscript] docs/scope/2026-07-06-qbeta-fmap-power-class-pincer-scope.md §4.2–4.3
 -/
