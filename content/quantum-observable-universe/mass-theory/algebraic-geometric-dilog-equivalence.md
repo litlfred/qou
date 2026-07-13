@@ -161,12 +161,15 @@ defined object unconditionally. By the rigidity clause of
 fibre-branch $\Phi_b$ is an intrinsically bar-odd carrier.
 
 Of the two analytic identifications behind the construction, the
-**integrability** of the Faddeev kernel is settled on the tail: the
+**integrability** of the Faddeev kernel is settled: the near-$0$ piece
+is proved outright (`integrableOn_kernel_Ioc_zero_one` — the $-2z/t^2$
+subtraction cancels the pole, via the two-sided cubic $\sinh$ estimates
+and a global $\lvert \sin y - y \rvert \le 2\lvert y \rvert^3$ bound), the
 exponential-domination chain on $[1, \infty)$ is proved
-(`integrableOn_kernel_Ioi_one`, with the two standard majorant
-integrability facts carried as explicit named hypotheses), and full
-integrability on $(0, \infty)$ is reduced to the bounded near-$0$ piece
-(`integrableOn_kernel_Ioi_zero`). The **definition-to-contour
+(`integrableOn_kernel_Ioi_one`), and full integrability on $(0, \infty)$
+(`integrableOn_kernel_Ioi_zero`) holds modulo only the two standard
+majorant integrability facts, carried as explicit named hypotheses. The
+**definition-to-contour
 identity** — that the real-integral `phiB` equals the Faddeev contour
 integral — remains a numerical pin ($8 \times 10^{-29}$ against the
 validated contour evaluator) and is assumed nowhere in the Lean.
