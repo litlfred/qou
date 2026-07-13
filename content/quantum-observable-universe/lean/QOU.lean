@@ -87,6 +87,7 @@ import QOU.Mass.JetFiltrationExtensive
 import QOU.Mass.LinearChainBondCount
 import QOU.Mass.KappaWritheAsymptote
 import QOU.Mass.LinearChainBondFactorization
+import QOU.Mass.MilnorSignRepObstruction
 -- GAP-A-3 level-selection: §3b conjecture class for the super-exponential tower
 -- growth (verified k≤10, faithful proof = Mathlib-gap) + the proved downstream
 -- conditional theorem that logarithmic k(A) follows (k∝A / k∝bond-count excluded).
