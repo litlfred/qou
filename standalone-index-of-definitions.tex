@@ -603,9 +603,13 @@
 % Keeping only \newif here (shared, static) leaves this preamble fully dumpable
 % into a precompiled .fmt format; the flag must be set live per render, not
 % frozen at format-dump time.
+% 𝔙 removed to prevent pdflatex errors
+\newunicodechar{’}{'}
+\newunicodechar{É}{\'E}
+\newunicodechar{⥤}{\rightrightarrows}
 
 % ── Paper macros (generated from manifest) ────────────────────────────────
-\newcommand{\nn}{\mathfrak{n}}  % 𝔫
+\newcommand{\nn}{\mathfrak{n}}  % $\mathfrak{n}$
 \newcommand{\frakr}{\mathfrak{r}}  % 𝔯
 \newcommand{\frakg}{\mathfrak{g}}  % 𝔤
 \newcommand{\frakb}{\mathfrak{b}}  % 𝔟

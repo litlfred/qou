@@ -603,9 +603,13 @@
 % Keeping only \newif here (shared, static) leaves this preamble fully dumpable
 % into a precompiled .fmt format; the flag must be set live per render, not
 % frozen at format-dump time.
+% 𝔙 removed to prevent pdflatex errors
+\newunicodechar{’}{'}
+\newunicodechar{É}{\'E}
+\newunicodechar{⥤}{\rightrightarrows}
 
 % ── Paper macros (generated from manifest) ────────────────────────────────
-\newcommand{\nn}{\mathfrak{n}}  % 𝔫
+\newcommand{\nn}{\mathfrak{n}}  % $\mathfrak{n}$
 \newcommand{\frakr}{\mathfrak{r}}  % 𝔯
 \newcommand{\frakg}{\mathfrak{g}}  % 𝔤
 \newcommand{\frakb}{\mathfrak{b}}  % 𝔟
@@ -699,7 +703,6 @@ This paper develops the mathematical framework of the Quantum Observable Univers
 \input{chapters/measurement-observation}
 \input{chapters/q-geometric-langlands}
 \input{chapters/glossary}
-\input{chapters/notation}
 \input{chapters/appendix-knot-periodic-table}
 \input{chapters/appendix-knot-operations}
 \input{chapters/appendix-knot-operations-archimedean}
@@ -721,5 +724,19 @@ This paper develops the mathematical framework of the Quantum Observable Univers
 % the main paper body. Phantom declarations prevent hyperref warnings.
 \phantomsection\label{app:index-definitions}
 \phantomsection\label{sec:definition-index}
+\phantomsection\label{chap:notation}
+\phantomsection\label{sec:notation-register-section}
+\phantomsection\label{sec:notation-register-section-intro}
+\phantomsection\label{tbl:notation-register-table1-data}
+\phantomsection\label{tbl:notation-register-table2-data}
+\phantomsection\label{tbl:notation-register-table3-data}
+\phantomsection\label{tbl:notation-register-table4-data}
+\phantomsection\label{tbl:notation-register-table5-data}
+\phantomsection\label{tbl:notation-register-table6-data}
+\phantomsection\label{tbl:notation-register-table7-data}
+\phantomsection\label{tbl:notation-register-table8-data}
+\phantomsection\label{tbl:notation-register-table9-data}
+\phantomsection\label{tbl:notation-register-table10-data}
+\phantomsection\label{sec:notation-collisions-section}
 
 \end{document}

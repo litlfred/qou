@@ -72,7 +72,7 @@ Five distribute symmetrically on the unit circle; the last lies at infinity. By 
   g(\mathcal{X}_5)  =  \frac{6 - 2}{2}  =  2.
 \]
 
-Thus $\mathcal{X}_5$ is a hyperelliptic Riemann surface of genus $2$ in the Bolza family \cite{bolza1887}. Its hyperelliptic involution is $\iota \colon (x, y) \mapsto (x, -y)$.
+Thus $\mathcal{X}_5$ is a \textbf{hyperelliptic} Riemann surface of genus $2$ in the Bolza family \cite{bolza1887}. Its hyperelliptic involution is $\iota \colon (x, y) \mapsto (x, -y)$.
 
 \textbf{Relation to Bring's surface.} The coordinate $x$ on $\mathcal{X}_5$ is a $\mathbb{Z}_5$-equivariant observable. We identify it with the first Lagrange resolvent $w_1$ of \hyperref[prop:lagrange-resolvent-transform]{prop}, restricted to the cyclic subgroup $\mathbb{Z}_5 \subset S_5$ of \hyperref[def:brings-surface]{Bring's surface}. Under this identification, the five branch points $\zeta_5^k$ are the cyclic images of a single $\mathbb{Z}_5$-orbit.
 \end{definition}
@@ -895,7 +895,7 @@ graded-sum identity. $\qquad\blacksquare$
   \label{def:color-sector-coords}
   \blockannot[compiled]{def:color-sector-coords}{QOU.ColorSectorCoords}{quantum-observable-universe/brings-surface/color-sector-coords.md}
   \uses{def:exceptional-divisor, def:substrate-parameter, rem:chirality-trefoil}
-With notation as in \hyperref[def:exceptional-divisor]{exceptional divisor}, fix the substrate parameter $q$ (\hyperref[def:substrate-parameter]{substrate parameter}) and set $\phi \in [0,\pi]$, $\psi \in [0, 2\pi/3]$. We define the \textbf{red}, \textbf{green}, and \textbf{blue} sector embeddings by
+With notation as in \hyperref[def:exceptional-divisor]{exceptional divisor}, fix the substrate parameter $q$ (\hyperref[def:substrate-parameter]{substrate parameter}) and set $\phi \in [0,\pi]$, $\psi \in [0, 2\pi/3]$. We define the \textbf{color sector coordinates} — the \textbf{red}, \textbf{green}, and \textbf{blue} sector embeddings — by
 
 \begin{align*}
   \mathfrak{r}(\phi,\psi)
@@ -1648,21 +1648,21 @@ Matter is defined as the failure of the Frobenius structure. At a point $p$ in t
   \label{def:maximal-ideal-defect}
   \blockannot[compiled]{def:maximal-ideal-defect}{QOU.AlgebraicSubstrate.MaximalIdealDefect}{quantum-observable-universe/brings-surface/maximal-ideal-defect.md}
   \uses{def:levi-form-defect}
-The maximal ideal $\mathfrak{m}_1 \subset A$ corresponds to the coordinate $z = 1$ in the spectral fiber, defined as the kernel of the evaluation homomorphism $\mathrm{ev}_1 : A \to k$. The point $z = 1$ is the fixed point of the antipode $S$, marking the unique location where the Hopf and Frobenius structures interact maximally. The local ring $A_{\mathfrak{m}_1}$ captures the algebraic behavior near this singularity.
+The \textbf{maximal ideal} $\mathfrak{m}_1 \subset A$ corresponds to the coordinate $z = 1$ in the spectral fiber, defined as the kernel of the evaluation homomorphism $\mathrm{ev}_1 : A \to k$. The point $z = 1$ is the fixed point of the antipode $S$, marking the unique location where the Hopf and Frobenius structures interact maximally. The local ring $A_{\mathfrak{m}_1}$ captures the algebraic behavior near this singularity.
 \end{definition}
 
 \begin{definition}[{Local cohomology at the unit defect}]
   \label{def:local-cohomology-group}
   \blockannot[compiled]{def:local-cohomology-group}{QOU.AlgebraicSubstrate.LocalCohomologyGroup}{quantum-observable-universe/brings-surface/local-cohomology-group.md}
   \uses{def:maximal-ideal-defect}
-The local cohomology group $H^1_{\mathfrak{m}_1}(A) =\allowbreak{} R^1\Gamma_{\mathfrak{m}_1}(A)$ measures the algebraic obstruction to extending sections across the defect at $z = 1$. In this non-commutative setting, the derived category framework generalizes the commutative concept of principal parts supported at the singularity.
+The \textbf{local cohomology group} $H^1_{\mathfrak{m}_1}(A) =\allowbreak{} R^1\Gamma_{\mathfrak{m}_1}(A)$ measures the algebraic obstruction to extending sections across the defect at $z = 1$. In this non-commutative setting, the derived category framework generalizes the commutative concept of principal parts supported at the singularity.
 \end{definition}
 
 \begin{definition}[{The unit particle state $\mathrm{Li}_q(z)$}]
   \label{def:unit-particle-state}
   \blockannot[compiled]{def:unit-particle-state}{QOU.AlgebraicSubstrate.UnitParticleState}{quantum-observable-universe/brings-surface/unit-particle-state.md}
   \uses{def:local-cohomology-group}
-The unit particle state $\mathrm{Li}_q(z)$ is the fundamental generator of $H^1_{\mathfrak{m}_1}(A)$. It uniquely satisfies the $q$-differential equation:
+The \textbf{unit particle state} $\mathrm{Li}_q(z)$ is the fundamental generator of $H^1_{\mathfrak{m}_1}(A)$. It uniquely satisfies the $q$-differential equation:
 
 \[
   d_q \mathrm{Li}_q(z) = \frac{1}{\log_q z} dz
