@@ -136,4 +136,198 @@ theorem phiB_zero (b : ℝ) :
   push_cast
   ring
 
+/-! ## The fibre branch is the `|q| = 1` regime, and `Φ_b` is σ-unitary there
+
+At real `b` the modular parameter `q_b = e^{iπb²}` sits ON the unit circle —
+the fibre / root-of-unity regime where the modular-double product diverges
+(`QOU.MathlibExt.PhiBProd` covers only `Im b² > 0`, where `|q_b| < 1`) and the
+real integral above is the construction.  The defined `phiB` is a genuine
+phase there: `Φ_b · conj(Φ_b) = 1`.  This is the archimedean instance of the
+σ-unitarity hypothesis of `prop:phi-b-unitary-bar-odd` (σ = complex
+conjugation): by that proposition's rigidity clause, any such phase with
+`Φ² ≠ 1` carries a nontrivial bar-odd part — the fibre-branch `Φ_b` is an
+intrinsically **bar-odd** carrier. -/
+
+/-- The fibre modular parameter `q_b = e^{iπb²}` at real `b`. -/
+noncomputable def fibreQParam (b : ℝ) : ℂ :=
+  Complex.exp (Complex.ofReal (π * b ^ 2) * Complex.I)
+
+/-- **`|q_b| = 1` at every real `b`** — the fibre branch is exactly the
+`|q| = 1` regime (contrast `Im b² > 0`, where `|q_b| < 1` and the
+modular-double product converges). -/
+theorem norm_fibreQParam (b : ℝ) : ‖fibreQParam b‖ = 1 := by
+  unfold fibreQParam
+  rw [Complex.norm_exp, Complex.mul_I_re, Complex.ofReal_im]
+  simp
+
+/-- **σ-unitarity** `Φ_b(z) · conj(Φ_b(z)) = 1` — the ring-involution form of
+`|Φ_b| = 1`, instantiating the σ-unitarity hypothesis of
+`prop:phi-b-unitary-bar-odd` at σ = complex conjugation. -/
+theorem phiB_mul_conj (b z : ℝ) :
+    phiB b z * (starRingEnd ℂ) (phiB b z) = 1 := by
+  unfold phiB
+  rw [← Complex.exp_conj, ← Complex.exp_add]
+  have h : (phase b z : ℂ) * Complex.I
+      + (starRingEnd ℂ) ((phase b z : ℂ) * Complex.I) = 0 := by
+    rw [map_mul, Complex.conj_ofReal, Complex.conj_I]
+    ring
+  rw [h, Complex.exp_zero]
+
+/-! ## Integrability: the exponential-tail domination is a THEOREM
+
+`sin` is bounded, the double-`sinh` denominator grows like `e^{(b+1/b)t}`, and
+the subtracted `2z/t²` is a `t^{-2}` tail — so the kernel is dominated on
+`[1, ∞)` by `C·e^{−bt} + 2|z|·t^{−2}`, and integrable there.  All the
+kernel-specific analysis (the `sinh` lower bound, the domination chain,
+continuity/measurability) is proved sorry-free below.
+
+**Hypothesis discipline (the `PhiBProd` precedent).**  The two *majorant*
+integrability facts — `e^{−bt}` and `t^{−2}` are integrable on `[1, ∞)` —
+are standard Mathlib theorems (`exp_neg_integrableOn_Ioi`,
+`integrableOn_Ioi_rpow_of_lt`) whose modules
+(`Mathlib.MeasureTheory.Integral.ExpDecay`,
+`Mathlib.Analysis.SpecialFunctions.Integrals`) are outside the current
+sandbox olean cone.  They are therefore carried as **explicit named
+hypotheses** (`hexp`, `hinv`) on `integrableOn_kernel_Ioi_one` — not
+axiomatized, not `sorry`'d; on a full Mathlib each discharges in one line.
+What remains genuinely open for integrability on all of `(0, ∞)` is only the
+bounded near-`0` piece (`Ioc 0 1`, where the `−2z/t²` subtraction cancels the
+pole); `integrableOn_kernel_Ioi_zero` reduces the full statement to exactly
+that hypothesis.  The def↔contour identification of `phiB` with the Faddeev
+contour integral remains the `8e-29` numerical pin (module docstring) — it is
+NOT assumed anywhere in this file. -/
+
+/-- `sinh` is positive on positives (local; the Mathlib lemma lives in the
+`Trigonometric.Deriv` cone, outside the sandbox oleans). -/
+private lemma sinh_pos_of_pos {x : ℝ} (hx : 0 < x) : 0 < Real.sinh x := by
+  rw [Real.sinh_eq]
+  have h : Real.exp (-x) < Real.exp x := Real.exp_lt_exp.mpr (by linarith)
+  linarith
+
+/-- `sinh` is monotone (local; see `sinh_pos_of_pos`). -/
+private lemma sinh_le_sinh_of_le {x y : ℝ} (h : x ≤ y) :
+    Real.sinh x ≤ Real.sinh y := by
+  rw [Real.sinh_eq, Real.sinh_eq]
+  have h1 : Real.exp x ≤ Real.exp y := Real.exp_le_exp.mpr h
+  have h2 : Real.exp (-y) ≤ Real.exp (-x) := Real.exp_le_exp.mpr (by linarith)
+  linarith
+
+/-- Tail lower bound for `sinh`: for `t ≥ 1`,
+`sinh(bt) ≥ (1 − e^{−2b})/2 · e^{bt}`. -/
+private lemma sinh_tail_lower {b t : ℝ} (hb : 0 < b) (ht : 1 ≤ t) :
+    (1 - Real.exp (-(2 * b))) / 2 * Real.exp (b * t) ≤ Real.sinh (b * t) := by
+  have key : Real.exp (-(b * t)) ≤ Real.exp (-(2 * b)) * Real.exp (b * t) := by
+    rw [← Real.exp_add]
+    exact Real.exp_le_exp.mpr (by nlinarith)
+  rw [Real.sinh_eq]
+  nlinarith
+
+/-- **Tail integrability.**  The Faddeev kernel is integrable on `[1, ∞)` for
+every `b > 0`: the oscillatory piece is dominated by `C·e^{−bt}`, the
+subtraction by `2|z|·t^{−2}`.  All kernel-specific analysis is proved here;
+the two hypotheses are the standard majorant facts (see the section
+docstring), each a one-line Mathlib theorem outside the sandbox olean cone. -/
+theorem integrableOn_kernel_Ioi_one (b z : ℝ) (hb : 0 < b)
+    (hexp : IntegrableOn (fun t => Real.exp (-b * t)) (Set.Ioi 1))
+    (hinv : IntegrableOn (fun t : ℝ => (t ^ 2)⁻¹) (Set.Ioi 1)) :
+    IntegrableOn (kernel b z) (Set.Ioi 1) := by
+  -- the two pieces of the kernel
+  set f : ℝ → ℝ := fun t => Real.sin (2 * z * t)
+      / (t * Real.sinh (b * t) * Real.sinh (t / b)) with hf_def
+  set g : ℝ → ℝ := fun t => 2 * z / t ^ 2 with hg_def
+  -- positivity bookkeeping
+  have hE : Real.exp (-(2 * b)) < 1 := by
+    calc Real.exp (-(2 * b)) < Real.exp 0 := Real.exp_lt_exp.mpr (by linarith)
+      _ = 1 := Real.exp_zero
+  have hs0 : 0 < Real.sinh (1 / b) := sinh_pos_of_pos (by positivity)
+  -- the subtraction piece: `2z/t²` is integrable on `[1, ∞)`
+  have hg : IntegrableOn g (Set.Ioi 1) := by
+    have h : IntegrableOn (fun t : ℝ => 2 * z * (t ^ 2)⁻¹) (Set.Ioi 1) :=
+      hinv.const_mul (2 * z)
+    refine h.congr_fun (fun t ht => ?_) measurableSet_Ioi
+    simp [hg_def, div_eq_mul_inv]
+  -- the oscillatory piece: dominated by `C·e^{−bt}`
+  have hfcont : ContinuousOn f (Set.Ioi 1) := by
+    apply ContinuousOn.div (by fun_prop) (by fun_prop)
+    intro t ht
+    have ht0 : (0 : ℝ) < t := lt_trans one_pos ht
+    have h1 : 0 < Real.sinh (b * t) := sinh_pos_of_pos (by positivity)
+    have h2 : 0 < Real.sinh (t / b) := sinh_pos_of_pos (by positivity)
+    exact ne_of_gt (mul_pos (mul_pos ht0 h1) h2)
+  have hbound : ∀ t ∈ Set.Ioi (1 : ℝ),
+      ‖f t‖ ≤ (2 / ((1 - Real.exp (-(2 * b))) * Real.sinh (1 / b)))
+        * Real.exp (-b * t) := by
+    intro t ht
+    have ht1 : (1 : ℝ) ≤ t := le_of_lt ht
+    have ht0 : (0 : ℝ) < t := lt_trans one_pos ht
+    have hS1 : 0 < Real.sinh (b * t) := sinh_pos_of_pos (by positivity)
+    have hS2 : 0 < Real.sinh (t / b) := sinh_pos_of_pos (by positivity)
+    have hD : 0 < t * Real.sinh (b * t) * Real.sinh (t / b) :=
+      mul_pos (mul_pos ht0 hS1) hS2
+    have hP : 0 < (1 - Real.exp (-(2 * b))) / 2 * Real.exp (b * t) :=
+      mul_pos (by linarith) (Real.exp_pos _)
+    -- chain: `P·s₀ ≤ S₁·s₀ ≤ S₁·S₂ ≤ t·S₁·S₂`
+    have hchain : (1 - Real.exp (-(2 * b))) / 2 * Real.exp (b * t)
+        * Real.sinh (1 / b) ≤ t * Real.sinh (b * t) * Real.sinh (t / b) := by
+      have step1 : (1 - Real.exp (-(2 * b))) / 2 * Real.exp (b * t)
+          * Real.sinh (1 / b) ≤ Real.sinh (b * t) * Real.sinh (1 / b) :=
+        mul_le_mul_of_nonneg_right (sinh_tail_lower hb ht1) hs0.le
+      have step2 : Real.sinh (b * t) * Real.sinh (1 / b)
+          ≤ Real.sinh (b * t) * Real.sinh (t / b) :=
+        mul_le_mul_of_nonneg_left
+          (sinh_le_sinh_of_le (by gcongr)) hS1.le
+      have step3 : Real.sinh (b * t) * Real.sinh (t / b)
+          ≤ t * (Real.sinh (b * t) * Real.sinh (t / b)) :=
+        le_mul_of_one_le_left (mul_pos hS1 hS2).le ht1
+      calc (1 - Real.exp (-(2 * b))) / 2 * Real.exp (b * t) * Real.sinh (1 / b)
+          ≤ Real.sinh (b * t) * Real.sinh (1 / b) := step1
+        _ ≤ Real.sinh (b * t) * Real.sinh (t / b) := step2
+        _ ≤ t * (Real.sinh (b * t) * Real.sinh (t / b)) := step3
+        _ = t * Real.sinh (b * t) * Real.sinh (t / b) := by ring
+    have habs : ‖f t‖ ≤ 1 / ((1 - Real.exp (-(2 * b))) / 2 * Real.exp (b * t)
+        * Real.sinh (1 / b)) := by
+      rw [hf_def]
+      simp only [Real.norm_eq_abs, abs_div, abs_of_pos hD]
+      have hnum : |Real.sin (2 * z * t)| ≤ 1 := Real.abs_sin_le_one _
+      have hP0 : 0 < (1 - Real.exp (-(2 * b))) / 2 * Real.exp (b * t)
+          * Real.sinh (1 / b) := mul_pos hP hs0
+      calc |Real.sin (2 * z * t)| / (t * Real.sinh (b * t) * Real.sinh (t / b))
+          ≤ 1 / (t * Real.sinh (b * t) * Real.sinh (t / b)) := by gcongr
+        _ ≤ 1 / ((1 - Real.exp (-(2 * b))) / 2 * Real.exp (b * t)
+            * Real.sinh (1 / b)) := by
+            apply one_div_le_one_div_of_le hP0 hchain
+    refine habs.trans (le_of_eq ?_)
+    have hE0 : (1 - Real.exp (-(2 * b))) ≠ 0 := by linarith
+    have hexp0 : Real.exp (b * t) ≠ 0 := (Real.exp_pos _).ne'
+    have hneg : Real.exp (-b * t) = (Real.exp (b * t))⁻¹ := by
+      rw [neg_mul]; exact Real.exp_neg _
+    rw [hneg]
+    field_simp
+  have hf : IntegrableOn f (Set.Ioi 1) := by
+    have hmaj : IntegrableOn
+        (fun t => (2 / ((1 - Real.exp (-(2 * b))) * Real.sinh (1 / b)))
+          * Real.exp (-b * t)) (Set.Ioi 1) :=
+      hexp.const_mul _
+    refine hmaj.mono' (hfcont.aestronglyMeasurable measurableSet_Ioi) ?_
+    refine (ae_restrict_iff' measurableSet_Ioi).mpr (Filter.Eventually.of_forall ?_)
+    exact hbound
+  have : IntegrableOn (fun t => f t - g t) (Set.Ioi 1) := hf.sub hg
+  refine this.congr_fun (fun t _ => ?_) measurableSet_Ioi
+  rw [hf_def, hg_def]
+  rfl
+
+/-- **Reduction of full integrability to the bounded near-`0` piece.**  Given
+integrability on `(0, 1]` (where the `−2z/t²` subtraction cancels the pole —
+the remaining open analytic input), the kernel is integrable on all of
+`(0, ∞)`; the tail is the theorem above. -/
+theorem integrableOn_kernel_Ioi_zero (b z : ℝ) (hb : 0 < b)
+    (hexp : IntegrableOn (fun t => Real.exp (-b * t)) (Set.Ioi 1))
+    (hinv : IntegrableOn (fun t : ℝ => (t ^ 2)⁻¹) (Set.Ioi 1))
+    (h0 : IntegrableOn (kernel b z) (Set.Ioc 0 1)) :
+    IntegrableOn (kernel b z) (Set.Ioi 0) := by
+  have hset : Set.Ioc (0 : ℝ) 1 ∪ Set.Ioi 1 = Set.Ioi 0 :=
+    Set.Ioc_union_Ioi_eq_Ioi (by norm_num)
+  rw [← hset]
+  exact h0.union (integrableOn_kernel_Ioi_one b z hb hexp hinv)
+
 end QOU.MathlibExt.FaddeevPhiBRealIntegral
