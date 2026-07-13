@@ -106,6 +106,11 @@ theorem liouville_green_weber_limit
     (n m : ℝ) (A B C : ℝ) (hA : A = 2) (hC : C = -22) :
     ∃ (T : ℝ → ℝ), ∀ (F : ℝ → ℝ),
       ∀ η, ToroidalHarmonicODE n m F η ↔ WeberODE A B C (F ∘ T) η := by
+  -- Ref: [manuscript] quantum-observable-universe/qbeta — the Liouville–Green
+  --   (WKB) reduction of the toroidal-harmonic ODE to the parabolic-cylinder
+  --   (Weber) equation. `WeberODE` above is the opaque operator stub pending
+  --   the Mathlib ODE-formalism bridge, so this asymptotic limit is stated,
+  --   not yet derived in Lean.
   sorry
 
 /--
@@ -116,7 +121,7 @@ theorem f_map_mode_projection (n : ℝ) (m : ℝ) (h_gap : m = 1/2) :
     ∀ η > 0, (m^2 - (1/4 : ℝ)) / (Real.sinh η)^2 = 0 := by
   intro η hη
   rw [h_gap]
-  -- (1/2)^2 - 1/4 = 0
-  sorry
+  -- (1/2)^2 - 1/4 = 0, so the numerator vanishes and 0 / _ = 0.
+  norm_num
 
 end QOU.QBeta
