@@ -1,4 +1,4 @@
-We define the $Q$-value of a nuclear transition directly from the categorical action. This $q$-deformed transition energy replaces classical energy conservation.
+We define the $Q$-value of a nuclear transition directly from the **categorical action**. This $q$-deformed transition energy replaces classical energy conservation.
 
 **Definition (mass difference, primary).**
 For a $\beta^-$ decay $\mathcal{N}(Z,N) \to \mathcal{N}(Z{+}1,N{-}1) + e^- + \bar{\nu}_e$, the $Q$-value is the mass difference of neutral atoms:

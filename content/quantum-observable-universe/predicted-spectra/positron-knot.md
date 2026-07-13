@@ -1,4 +1,4 @@
-The positron corresponds to the mirror trefoil $T_{2,3}^{\sigma}$ in the lepton sector. It serves as the antiparticle of the electron:
+The **positron** corresponds to the mirror trefoil $T_{2,3}^{\sigma}$ in the lepton sector. It serves as the antiparticle of the electron:
 
 $$
   e^+ =  T_{2,3}^{\sigma}. \qquad \text{(mirror trefoil)}

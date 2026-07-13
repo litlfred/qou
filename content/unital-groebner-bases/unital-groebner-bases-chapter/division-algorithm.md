@@ -4,7 +4,7 @@ which is free as an $R$-module and without quasi-zeros, $(B, <)$ an
 $I \subseteq A$, and $f \in A$.
 
 **Output:** $\tilde{f} \in I$ and $r \in O(I)$ (the *remainder* of
-$f$ on division by $I$) so that $f = r + \tilde{f}$.
+$f$ on **division** by $I$) so that $f = r + \tilde{f}$.
 
 1. Set $i := 0$, $f_0 := f$.
 2. **While** $f_i \neq 0$:
