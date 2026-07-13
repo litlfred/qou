@@ -1,0 +1,58 @@
+{
+ "computation": "vol4-4he-snappy-falsification",
+ "description": "Pre-registered falsifiable test of the bond-count law's 4He prediction Vol4=8.048 against SnapPy volumes of IN-ADVANCE-named structural candidates (anti-numerology: no census scan). NEGATIVE: no candidate matches; 4-chains at 10.149; naive single-link n=4 reading fails at 4He. A=3 bond-count results untouched. Scope-(a).",
+ "audit_only": true,
+ "computedAt": "2026-07-13T12:16:09.754646+00:00",
+ "engine": "snappy",
+ "predicted_vol4": 8.048,
+ "corpus_validation": {
+  "L6a4": {
+   "expected": 7.327724753417752,
+   "reproduced": true
+  },
+  "8_11": {
+   "expected": 8.286316817806593,
+   "reproduced": true
+  }
+ },
+ "candidates": {
+  "L8n8": {
+   "volume": 5.242565885828568e-07,
+   "delta_vs_pred": -8.047999475743412,
+   "role": "4-component brunnian (Borromean analogue)"
+  },
+  "L8a21": {
+   "volume": 10.149416064096537,
+   "delta_vs_pred": 2.1014160640965365,
+   "role": "4-chain (linear-chain closure)"
+  },
+  "L8a20": {
+   "volume": 10.149416064096535,
+   "delta_vs_pred": 2.1014160640965347,
+   "role": "4-chain variant"
+  },
+  "L8a19": {
+   "volume": 10.666979133796232,
+   "delta_vs_pred": 2.6189791337962323,
+   "role": "4-component alternating"
+  },
+  "L8n7": {
+   "volume": 7.327724753417754,
+   "delta_vs_pred": -0.7202752465822462,
+   "role": "4-component non-alternating"
+  }
+ },
+ "verdict": "Scope-(a) NEGATIVE (pre-registered falsifiable test executed): no pre-named 4-component candidate matches the bond-count residual prediction Vol4=8.048 (4-chains 10.149 = +26%; brunnian analogue non-hyperbolic; L8n7 = Vol(Borromean) 7.3277). The naive 'n=4 term = a single chain-link volume' reading FAILS at 4He; the prediction 8.048 < Vol(8_11)=8.286 was already against the volume-complexity trend. Constrains the single-link form only \u2014 the Lean-proved bond-count multiplicity and the A=3 results are untouched. Honest routes: the SDP canonical knot-ID at H12 for the true 4He link, or a non-single-volume n=4 term. SnapPy validated against the corpus L6a4/8_11 to 1e-11. No fit; nothing wired.",
+ "scope": "(a) \u2014 constrains the single-link n=4 form; multiplicity + A=3 untouched",
+ "assertions": [
+  {
+   "label": "snappy reproduces corpus L6a4/8_11 volumes to 1e-9",
+   "passed": true
+  },
+  {
+   "label": "no pre-named candidate matches Vol4=8.048 (negative registered)",
+   "passed": true
+  }
+ ],
+ "allPassed": true
+}

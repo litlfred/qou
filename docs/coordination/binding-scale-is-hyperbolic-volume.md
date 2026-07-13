@@ -46,11 +46,17 @@ The magnitude is **not** a universal missing scale — it is `m_e·Vol` wherever
 sub-link is hyperbolic (derived modulo the volume conjecture). The genuine open
 items are narrow and specific:
 
-1. **⁴He 4-body `Vol₄`** — the bond-count route predicts `Vol₄ = 8.05` for the
-   ⁴He 4-component link (from `B_AME − (n=2,3 terms) = m_e·3·Vol₄`). **Falsifiable
-   prediction:** compute the hyperbolic volume of the canonical ⁴He link with
-   SnapPy and compare to 8.05 (in-family with 8₁₁=8.29, L6a4=7.33). *Not run here
-   — SnapPy unavailable in this sandbox.*
+1. **⁴He 4-body `Vol₄`** — **falsifiable test EXECUTED (2026-07-13,
+   `vol4_4he_snappy_falsification_probe.py`): NEGATIVE.** SnapPy (validated
+   against the corpus L6a4/8₁₁ to 1e-11) shows no in-advance-named structural
+   candidate matches the residual-implied `Vol₄ = 8.048`: the linear 4-chains
+   (L8a21/L8a20) sit at 10.149 (+26%), the brunnian Borromean-analogue is
+   non-hyperbolic, L8n7 carries exactly Vol(Borromean). The prediction
+   `8.048 < Vol(8₁₁)=8.286` was already against the volume-complexity trend. So
+   the naive "n=4 term = one chain-link volume" reading **fails at ⁴He**
+   (scope-(a); the Lean-proved multiplicity and the A=3 results are untouched).
+   Honest routes: the SDP canonical knot-ID at H₁₂ for the true ⁴He link, or a
+   non-single-volume n=4 term.
 2. **deuteron** — NOT an open wall. It is derived via `m_e·Vol(𝓑₃)·Δtr` at
    **+0.19%** (the single-nucleon Borromean knot 𝓑₃, scalar-trace collapse). The
    "Hopf `Vol=0`" is only the *bond-count multi-body-chain* route being
