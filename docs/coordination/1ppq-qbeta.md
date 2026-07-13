@@ -2522,3 +2522,28 @@ values (incl. the sign-flip); the only independent scales (11.5–22 ppb
 value measurement-limited. No fit; NO residual inverted to define Im(q);
 nothing wired; conj:algebraic-geometric-dilog-equivalence OPEN. Audit:
 docs/audits/2026-07-26-q0-varies-imq-c3.md.
+## Φ_b bar-odd keystone carriers + S = Im 𝔙 channel (PR #3773, 2026-07-13)
+
+Lean carriers for the two-conjecture composition, all sorry-free (lean-direct
+exit 0), no instance fabricated, no c_k wired:
+
+- **`QOU/QBeta/PhiBSArgumentIdentification.lean`** — `SArgumentIdentification`
+  (§3b, parametrized by the argument map zArg to avoid choice-function
+  vacuity: readout `phase (fibreB q₀) (zArg q₀) = S q₀` on the |q|=1 fibre
+  branch, `fibreB = √(ln q₀/2π)`); `SDeformedVolumeChannel` (u(q₀) map +
+  deformed 𝔙 + `S = Im 𝔙(u(q₀))` — the binding-conjecture S channel per the
+  2026-07-11 conditional audit). Derived: `readout_phiB`,
+  `exists_zero_crossing` (IVT: measured sign flip ⇒ q* with c₃ = −Vol(4₁)
+  exactly), `exists_pure_bar_even`, `phase_eq_im_deformed_volume`,
+  `phiB_eq_cs_phase` (Φ_b readout = e^{i·CS(u(q₀))}), `exists_cs_vanishing`
+  (Im 𝔙(u(q*)) = 0 — deformed complex volume purely real at q*; falsifiable).
+- **`QOU/MathlibExt/FaddeevPhiBRealIntegral.lean` additions** — G0 as a
+  theorem (`norm_fibreQParam`: real b ⇔ |q_b|=1; `fibreQParam_fibreB`:
+  q_b = e^{i·ln q₀/2}); σ-unitarity `phiB_mul_conj`; G1 re-scoped:
+  `integrableOn_kernel_Ioi_one` (tail, sorry-free; majorant facts as named
+  hypotheses per the PhiBProd precedent) + `_Ioi_zero` (full (0,∞) reduced
+  to the bounded near-0 piece, bean `qou-dihs`).
+- **Coordination:** complementary to #3768's cyclic-dilog L1–L5 (G2 closed
+  algebraically; this PR is the ℂ-analytic face), #3769's KC21/q* registry
+  rows (IVT carrier = machine-checked q* zero-crossing), #3683's κ-tower A_ω
+  (the resurgent instance of the monodromy datum). Intent posted on all three.
