@@ -1,7 +1,4 @@
-The preceding results establish that the Frobenius eigenvalues satisfy
-$|\alpha_i| = q^{1/2}$ unconditionally.  The question is:
-*why* does the geometry force this? The answer traces back through the
-entire chain of categorical machinery to a single geometric constraint.
+The Frobenius eigenvalues must satisfy $|\alpha_i| = q^{1/2}$. We establish the geometric origin of this constraint.
 
 **Concrete example: $\mathrm{SU}(2)$.** In the archimedean
 realisation $\mathbf{C} = \mathbf{Rep}(\mathrm{SU}(2))$, the
@@ -21,58 +18,15 @@ With this concrete picture in mind, the general mechanism unfolds
 in three steps.
 
 **Step 1: Global coherence demands vanishing Chern classes.**
-The multiplicative integral \cite{yekutieli2015} computes a path-ordered product
-of holonomy matrices along the Reeb flow. For this product to be
-globally well-defined --- yielding the same answer regardless of how
-one triangulates the bounding surface --- the connection on the
-adjoint bundle $\mathrm{Ad}(A)$ must be *flat*. This is a standard
-consequence of the nonabelian Stokes theorem
-([nonabelian Stokes](#rem:yekutieli-stokes)): if the curvature
-$F_\nabla$ of the connection were nonzero, different triangulations
-of a surface $\Sigma$ bounding the same curve would produce different
-path-ordered products, because the surface integral
-$\prod^{\to}_\Sigma \exp(F_\nabla)$ would contribute a
-triangulation-dependent factor. Consistency therefore requires
-$F_\nabla = 0$, which in cohomological terms is the measurability
-condition $c_1(\mathrm{Ad}(A)) = 0$, $c_2(\mathrm{Ad}(A)) = 0$.
-The first Chern class vanishing ensures path-independence of the
-parallel transport; the second ensures the absence of topological
-phases around non-contractible cycles.
+The multiplicative integral computes a path-ordered product of holonomy matrices along the Reeb flow. This product must be globally well-defined. The nonabelian Stokes theorem dictates that if the curvature $F_\nabla$ of the connection on the adjoint bundle $\mathrm{Ad}(A)$ were nonzero, different triangulations of a bounding surface would yield different path-ordered products. Consistency requires $F_\nabla = 0$, implying the Chern classes vanish: $c_1(\mathrm{Ad}(A)) = 0$ and $c_2(\mathrm{Ad}(A)) = 0$. The first Chern class controls path-independence; the second precludes topological phases around non-contractible cycles.
 
 **Step 2: Flatness forces unitarity.**
-A flat connection on a vector bundle over a compact base has holonomy
-valued in the structure group of that bundle. The adjoint bundle
-$\mathrm{Ad}(A)$ inherits a *Hermitian structure* from the Frobenius
-form $\lambda \colon A \to \mathbf{1}$: the pairing
-$\langle x, y \rangle = \lambda(\mu(x \otimes S(y)))$ (where $S$ is
-the antipode) defines a positive-definite inner product preserved by
-the adjoint action. Since the connection is flat and the bundle carries
-this Hermitian structure, the holonomy around any closed curve ---
-including the prime orbits of the Reeb flow --- must lie in the
-*unitary group* $\mathrm{U}(V)$ rather than the full
-$\mathrm{GL}(V)$.
+A flat connection over a compact base has holonomy in the structure group. The adjoint bundle $\mathrm{Ad}(A)$ inherits a Hermitian structure from the Frobenius form $\lambda \colon A \to \mathbf{1}$. The pairing $\langle x, y \rangle = \lambda(\mu(x \otimes S(y)))$ defines a positive-definite inner product preserved by the adjoint action. Because the connection is flat and the bundle carries this Hermitian structure, the holonomy around any closed curve lies in the unitary group $\mathrm{U}(V)$ rather than $\mathrm{GL}(V)$.
 
-On the algebraic-geometric side, this translates directly to the
-Castelnuovo--Severi argument
-([Hasse--Weil bound](#thm:hasse-weil-bound)): the Frobenius
-endomorphism $\varphi$ acts on $H^1(\mathcal{B}, \mathbb{Q}_\ell)$
-as a unitary operator with respect to the Weil pairing (which is the
-$\ell$-adic avatar of the Frobenius Hermitian structure). The
-Castelnuovo--Severi inequality on the self-product
-$\mathcal{B} \times \mathcal{B}$ then gives $|\alpha_i|^2 = q$ for
-all 8 eigenvalues, i.e. $|\alpha_i| = q^{1/2}$.
+Algebraically, this corresponds to the Castelnuovo--Severi argument. The Frobenius endomorphism $\varphi$ acts on $H^1(\mathcal{B}, \mathbb{Q}_\ell)$ as a unitary operator with respect to the Weil pairing. The Castelnuovo--Severi inequality on $\mathcal{B} \times \mathcal{B}$ yields $|\alpha_i|^2 = q$ for all eight eigenvalues.
 
 **Step 3: Unitarity locks the zeros to the critical line.**
-The eigenvalues $\alpha_i$ of the Frobenius endomorphism are the
-reciprocal roots of the local zeta function $Z_q(t)$. The condition
-$|\alpha_i| = q^{1/2}$ translates, under the standard change of
-variable $t = q^{-s}$, to the statement that all zeros of $Z_q(s)$
-satisfy $\mathrm{Re}(s) = 1/2$: if $\alpha_i = q^{1/2} e^{i\phi}$
-then $q^{-s} = \alpha_i^{-1}$ gives $s = 1/2 - i\phi/\ln q$, which
-has real part exactly $1/2$
-([spectral half-line](#cor:spectral-half-line)). This is the Riemann
-hypothesis for Bring's curve over $\mathbb{F}_q$ --- an
-*unconditional theorem*, not a conjecture.
+The eigenvalues $\alpha_i$ of the Frobenius endomorphism are the reciprocal roots of the local zeta function $Z_q(t)$. Under $t = q^{-s}$, the condition $|\alpha_i| = q^{1/2}$ forces all zeros of $Z_q(s)$ to satisfy $\mathrm{Re}(s) = 1/2$. If $\alpha_i = q^{1/2} e^{i\phi}$, then $q^{-s} = \alpha_i^{-1}$ gives $s = 1/2 - i\phi/\ln q$. This establishes the Riemann hypothesis for Bring's curve over $\mathbb{F}_q$.
 
 **The physical picture.** The non-trivial zeros of the zeta function
 are eigenvalues of the Reeb flow, each corresponding to a fundamental

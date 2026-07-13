@@ -1,38 +1,26 @@
-Let $\varrho$ be a stable vortex filament of length $L$ in the
-brane fluid with [substrate parameter](#def:substrate-parameter)
-$q > 1$, and let $\Delta_q$ be the $q$-Laplacian acting on
-sections of the normal bundle $N_\varrho$.
+Let $\varrho$ denote a stable vortex filament of length $L$ in the brane fluid with [substrate parameter](#def:substrate-parameter) $q > 1$. Let $\Delta_q$ denote the $q$-Laplacian acting on sections of the normal bundle $N_\varrho$.
 
 Then:
 
-1. The eigenvalues of $\Delta_q$ restricted to $\varrho$ form a
-   discrete spectrum $\{\lambda_k^{(q)}\}_{k \geq 1}$ with
+1. The eigenvalues of $\Delta_q$ restricted to $\varrho$ form a discrete spectrum $\{\lambda_k^{(q)}\}_{k \geq 1}$ scaling as
 
    $$
      \lambda_k^{(q)} = 
      [k]_q^2 \cdot \frac{\hbar_q}{L_q^2},
    $$
 
-   where $[k]_q = (q^k - q^{-k})/(q - q^{-1})$ is the
-   $q$-integer and $L_q$ is the $q$-deformed filament length.
+   where $[k]_q = (q^k - q^{-k})/(q - q^{-1})$ is the $q$-integer and $L_q$ is the $q$-deformed filament length.
 
-2. The **intensity levels** of the vortex are indexed by the
-   spin label $j \in \frac{1}{2}\mathbb{Z}_{\geq 0}$ of the
-   $\mathrm{SU}_q(2)$ representation carried by the holonomy
-   around $\varrho$.  The vortex energy at level $j$ is
+2. The spin label $j \in \frac{1}{2}\mathbb{Z}_{\geq 0}$ of the $\mathrm{SU}_q(2)$ representation carried by the holonomy around $\varrho$ indexes the **intensity levels** of the vortex. The vortex energy at level $j$ equals
 
    $$
      E_j^{(q)} = 
      \frac{\hbar_q}{2I_q}[j]_q[j+1]_q,
    $$
 
-   where $I_q$ is the $q$-deformed moment of inertia of the
-   filament cross-section.
+   where $I_q$ represents the $q$-deformed moment of inertia of the filament cross-section.
 
-3. Transitions between intensity levels $j \to j'$ are
-   mediated by the ladder modes $E_\pm$ of the weight-space
-   decomposition, with selection rule $|j - j'| = 1$.  The
-   energy released or absorbed is
+3. The ladder modes $E_\pm$ of the weight-space decomposition mediate transitions between intensity levels $j \to j'$ under the strict selection rule $|j - j'| = 1$. The energy exchanged evaluates to
 
    $$
      \Delta E_{j \to j'} = 
@@ -41,10 +29,8 @@ Then:
    $$
 
 4. In the classical limit $q \to 1$:
-   - $[k]_q \to k$ and the Kelvin-wave spectrum is recovered.
-   - $[j]_q[j+1]_q \to j(j+1)$ and the energy levels reduce to
-     the rigid-rotor spectrum of angular momentum theory.
-   - The selection rule $\Delta j = \pm 1$ reduces to the
-     standard dipole selection rule.
+   - $[k]_q \to k$, returning the classical Kelvin-wave spectrum.
+   - $[j]_q[j+1]_q \to j(j+1)$, reducing the energy levels to the rigid-rotor spectrum of standard angular momentum.
+   - The selection rule $\Delta j = \pm 1$ reduces to the classical dipole selection rule.
 
 **Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall: it invokes real- or complex-analytic constructs — real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.

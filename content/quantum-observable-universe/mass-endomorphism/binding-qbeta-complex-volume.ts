@@ -5,12 +5,16 @@ export default conjecture({
   title:
     "Complex-volume unification: binding $\\mathfrak{E}_{\\mathrm{bind}}$ and $\\beta$-decay $\\mathfrak{Q}_\\beta$ are $\\operatorname{Re}$/$\\operatorname{Im}$ of one $\\mathfrak{V}=E_0\\,\\mathrm{tr}_M((\\Pi_{\\text{free}}-\\mathbf{1})\\circ\\mathcal{M})$",
   lean: {
+    // Primary Lean ref (schema `LeanRefSchema.ref` is a single string).
+    // The two secondary formalisation artifacts —
+    // `QOU.Mass.ComplexVolumeZeta4Partner.SingleFrakVAssembly` and
+    // `QOU.QBeta.StageC.StageCSigma3Lift` — are named in the authorNotes below.
     ref: "qou:QOU.MassEndomorphism.ComplexVolumeMatch",
     validation: "not_checked",
   },
   uses: [
     "prop:categorical-mass-markov",
-    "rem:block-multiplicativity-v-free",
+    "conj:block-multiplicativity-v-free",
   ],
   cites: [
     "neumann-zagier1985",
@@ -36,6 +40,16 @@ export default conjecture({
     "fibre-level",
   ],
   authorNotes: [
+    {
+      kind: "refined-framing",
+      date: "2026-07-06",
+      body: "**Stage-C Casoratian kill-test.** The single-recurrence holomorphic tie hypothesis (that one Askey-Wilson recurrence carries both the even and odd ladders) forces a constant sign on the rung Casoratian. A categorical $\sigma_3$-lift must provide genuine level-4 rungs that respect this sign constraint, as codified by `QOU.QBeta.StageC.StageCSigma3Lift` (which refutes any lift yielding an incompatible Casoratian $W_3$).",
+    },
+    {
+      kind: "refined-framing",
+      date: "2026-07-06",
+      body: "**Open single-𝔙 assembly constraint.** The assembly of the observable binding/Q_β into a single complex fibre object `frakV` is constrained by the $\zeta_4$-partner relation. A candidate assembly must be $\zeta_4$-faithful (supported entirely on the $\pm i$ characters); a nonzero orbit sum or sign isotype falsifies it. This constraint is carried by `QOU.Mass.ComplexVolumeZeta4Partner.SingleFrakVAssembly`, advancing the formalization of the physical match gap.",
+    },
     {
       kind: "refined-framing",
       date: "2026-06-16",

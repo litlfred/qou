@@ -250,7 +250,7 @@ but a measurement input.
 
 ### Sprint F — sub-ppm refinements (after canonicalization)
 
-- Pentagon-defect $\mathcal{O}(\hbar_q^2)$ Faddeev resummation
+- Pentagon-defect $\mathcal{O}(\hbar_q^2)$ compact-q-dilog resummation
   → light atoms 1% → ~100 ppm.
 - Markov-equivalence knot ID (replaces SnapPy census search)
   → 100 ppm → 1 ppm.

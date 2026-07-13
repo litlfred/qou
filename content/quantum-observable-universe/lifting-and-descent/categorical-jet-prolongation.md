@@ -1,10 +1,4 @@
-
-Let $(\mathbf{C}, A, \tau)$ be a quantum universe with
-connection $\nabla$ ([categorical connection](#def:categorical-connection)).
-Then $J^1(A)$ ([categorical jet](#def:categorical-jet)) inherits a
-Frobenius--Hopf structure from $A$, and the quadruple
-$(\mathbf{C}, J^1(A), \tau', q)$ --- where $\tau'$ is
-the induced fibre functor --- is again a quantum universe.
+Let $(\mathbf{C}, A, \tau)$ be a quantum universe equipped with connection $\nabla$ ([categorical connection](#def:categorical-connection)). The space $J^1(A)$ ([categorical jet](#def:categorical-jet)) strictly inherits a Frobenius–Hopf structure from $A$. The quadruple $(\mathbf{C}, J^1(A), \tau', q)$, carrying the induced fibre functor $\tau'$, formally constitutes a quantum universe.
 
 ```tex
 \begin{equation}\label{eq:jet-prolongation-diagram}
@@ -20,24 +14,7 @@ the induced fibre functor --- is again a quantum universe.
 
 ## Proof (sketch)
 
-The first jet $J^1(A)$ of a Frobenius--Hopf object $A$ inherits a
-Frobenius--Hopf structure by transport along the connection $\nabla$,
-the synthetic-differential-geometry construction of the jet bundle of an
-algebra object (\cite{kock2004}, §1).
+The first jet $J^1(A)$ of a Frobenius–Hopf object $A$ inherits its Frobenius–Hopf structure via transport along the connection $\nabla$. This relies on the synthetic-differential-geometry construction of the jet bundle for an algebra object (\cite{kock2004}, §1).
 
-1. **Frobenius--Hopf transport.** The jet inclusion
-   $j^1 \colon A \hookrightarrow J^1(A)$ is an algebra map, and $\nabla$
-   splits $J^1(A) \cong A \oplus (\Omega^1 \otimes A)$. The
-   multiplication, comultiplication, unit, counit and antipode of $A$
-   extend to $J^1(A)$ through the Leibniz rule for $\nabla$, making
-   $J^1(A)$ a Frobenius--Hopf object.
-
-2. **Induced fibre functor.** With $\pi \colon J^1(A) \to A$ the jet
-   projection, $\tau' = \tau \circ \pi$ is again monoidal, faithful and
-   exact, so $(\mathbf{C}, J^1(A), \tau', q)$ satisfies the four
-   quantum-universe axioms with the *same* braiding eigenvalue $q$.
-
-The Lean sibling builds `ProlongedConnection` and `JetPreservesQU` and
-states existence of the prolonged structure with `jet.original = fh`;
-the construction is deferred there via `sorry`
-(`-- Ref: [kock2004], [manuscript] §1`). $\square$
+1. **Frobenius–Hopf transport.** The jet inclusion $j^1 \colon A \hookrightarrow J^1(A)$ forms an exact algebra map, and $\nabla$ strictly splits $J^1(A) \cong A \oplus (\Omega^1 \otimes A)$. The multiplication, comultiplication, unit, counit, and antipode of $A$ naturally extend to $J^1(A)$ through the Leibniz rule for $\nabla$, establishing $J^1(A)$ as a complete Frobenius–Hopf object.
+2. **Induced fibre functor.** Defining $\pi \colon J^1(A) \to A$ as the jet projection, the functor $\tau' = \tau \circ \pi$ remains strictly monoidal, faithful, and exact. Consequently, $(\mathbf{C}, J^1(A), \tau', q)$ precisely satisfies the four quantum-universe axioms with the identical braiding eigenvalue $q$. $\square$

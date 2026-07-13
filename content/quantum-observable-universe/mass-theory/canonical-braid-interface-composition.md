@@ -1,69 +1,20 @@
-**Definition (canonical-braid interface composition).** *Let
-$\beta(Z, N) \in H_{3A}(q)$ be the canonical atomic braid in the
-standard pppnnn ordering (built by
-the canonical formalism).
-The* $A - 1$ *inter-nucleon interface generators
-$\sigma_{3k + 2}$ ($k = 0, \ldots, A - 2$) are classified by the
-flavour pair $(\text{nuc}_k, \text{nuc}_{k+1})$ they bridge:*
+**Definition (canonical-braid interface composition).**
+*Let $\beta(Z, N) \in H_{3A}(q)$ be the canonical atomic braid in standard pppnnn ordering. The $A - 1$ inter-nucleon interface generators $\sigma_{3k + 2}$ are classified by the flavour pair they bridge:*
 
 See [Table 1](#tbl:canonical-braid-interface-composition-table1-data).
 
-*The interface composition $(n_{pp}(Z, N), n_{pn}(Z, N), n_{nn}(Z, N))$
-counts these three types. Under canonical pppnnn ordering, closed
-forms are:*
+*The composition $(n_{pp}, n_{pn}, n_{nn})$ counts these three types. Under canonical ordering, the closed forms are:*
 
 $$
-\boxed{\quad
-n_{pp}(Z, N) = \max(0, Z - 1), \quad
-n_{nn}(Z, N) = \max(0, N - 1), \quad
-n_{pn}(Z, N) = \begin{cases} 1 & Z \geq 1, N \geq 1 \\ 0 & \text{else}\end{cases}
-\quad}
+n_{pp} = \max(0, Z - 1), \quad
+n_{nn} = \max(0, N - 1), \quad
+n_{pn} = \begin{cases} 1 & Z \geq 1, N \geq 1 \\ 0 & \text{else}\end{cases}
 $$
 
-*with total count $n_{pp} + n_{pn} + n_{nn} = A - 1$.*
-
-### Empirical table
+*with total count summing to $A - 1$.*
 
 See [Table 2](#tbl:canonical-braid-interface-composition-table2-data).
 
-### Z$\leftrightarrow$N asymmetry and ordering dependence
+The asymmetric counts $(n_{pp}, n_{nn})$ encode the $Z \leftrightarrow N$ asymmetry directly. Alternative orderings produce different interface compositions. The canonical formalism fixes the pppnnn ordering.
 
-Under the pppnnn ordering the asymmetric counts $(n_{pp}, n_{nn})$
-encode Z$\leftrightarrow$N asymmetry directly. **Alternative orderings** (e.g.,
-alternating pnpnpn) would produce different interface compositions
-for the same atom — at $(Z=2, N=2)$ ${}^{4}$He:
-
-See [Table 3](#tbl:canonical-braid-interface-composition-table3-data).
-
-The canonical pppnnn ordering is fixed by
-the canonical formalism;
-this definition is **ordering-specific**. Generalising to arbitrary
-orderings requires an additional `ordering: list[Nucleon]` argument,
-captured in the
-the canonical formalism
-utility module's `interface_composition(ordering)` function.
-
-### Role in substrate derivation
-
-The Δ_coupling residual fit localised the ${}^{3}$He
-proton-heavy anomaly to the **pp interface asymmetry**: ${}^{3}$He has
-$n_{pp} = 1$ (excess $\sigma$) while T has $n_{nn} = 1$ (excess $\sigma^{-1}$), and
-the pp/nn interfaces contribute non-equivalently through the
-hook's antisymmetric column. A linear fit
-
-$$
-\Delta_{\mathrm{coupling}}(Z, N)
-\;\approx\;
-[A - 2]_q \cdot E_0 \cdot \log(1/h)
-\,+\, \alpha \, n_{pp}
-\,+\, \beta \, n_{nn}
-\,+\, \gamma
-$$
-
-with $\alpha \approx +0.224$ MeV, $\beta \approx +1.093$ MeV,
-$\gamma \approx -1.295$ MeV closes the 4-atom canonical evaluation set by definition
-(3 free parameters, 3 non-trivial equations). The fit is **not
-predictive** until extended to atoms with distinct $(n_{pp}, n_{nn})$
-combinations beyond the $\{$D, T, ${}^{3}$He, ${}^{4}$He$\}$ set. See
-[`docs/audits/-a-minus-2-q-substrate-derivation.md`](../../docs/audits/-a-minus-2-q-substrate-derivation.md)
-§v6 for the open-question framing.
+The interface asymmetry isolates the ${}^{3}$He anomaly. A linear fit across the interfaces evaluates the 4-atom set, requiring evaluation against larger $A$ to verify structural predictions.

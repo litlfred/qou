@@ -63,7 +63,4 @@ regression suite.*
 
 ### Notes
 
-*The Frobenius pairing is what makes $H_n(q)$ a **rigid**
-Frobenius algebra — the categorical self-duality is dual to it
-under decategorification. Both are required for the Wedderburn
-decomposition (Step 5) to land in the correct basis.*
+*The Frobenius pairing makes $H_n(q)$ a **rigid** Frobenius algebra. Categorical self-duality is dual to it under decategorification. Both ensure the Wedderburn decomposition (Step 5) lands in the correct basis.*

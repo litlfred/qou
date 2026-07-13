@@ -65,7 +65,7 @@ Predicted variance closure (qualitative):
 3. **Sign-correct via convolution** (tensor-product baseline gives wrong sign on T/³He)
 4. **Block-multiplicativity conjecture** (V̂ A-independent at H_{3A}; classical-limit proven)
 5. **LR-decomposition equivalence** (free-config χ factorises via iterated LR from H_3)
-6. **Symmetric Li_2^q** mass tower (NOT Faddeev Φ_q — avoids −737 MeV mirror-nucleus pathology)
+6. **Symmetric Li_2^q** mass tower (NOT compact q-dilog Φ_q — avoids −737 MeV mirror-nucleus pathology)
 
 None of these are in the existing Kashaev mass-table-ppb pipeline. The two compute pathways are **complementary**:
 - **Kashaev**: empirical/topological — Vol_hyp(K_closure) at ppb precision via volume-match

@@ -1,0 +1,57 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-11T17:08:33.340944+00:00",
+  "commitSha": "78466383000c933c9fc02a42181d5f2c1522e9a2",
+  "assertions": [
+    {
+      "name": "wn_link_volume_refuted_or_closes",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "1 = link-volume route does not supply w_n (n=2 non-hyperbolic, scope-(b)); 0 = volumes reproduce w_n → promote."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 12,
+  "computation": "binding-wn-link-volume-probe",
+  "scriptFile": "binding_wn_link_volume_probe.py",
+  "scriptHash": "7529a2b00607",
+  "scriptCommitSha": "78466383000c933c9fc02a42181d5f2c1522e9a2",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "EXPLORATORY: tests option #1 — is the jet-filtration residue weight w_n the hyperbolic volume of the n-body inter-nucleon sub-link? Structurally REFUTED at n=2 (the 2-body Borromean sub-link is the unlink / the deuteron bond is Hopf, Vol=0, but w_2>0); the Whitehead:Borromean 1:2 Catalan ratio is a 7.2% near-miss that conflicts with the SDP Hopf assignment. No fit; no wiring.",
+  "data": {
+    "link_volumes": {
+      "Hopf L2a1": "0.0",
+      "2-unlink": "0.0",
+      "Whitehead L5a1": "3.663862376708876060218414059729536443096597497126688537065992478487052",
+      "Borromean L6a4": "7.327724753417752120436828119459072886193194994253377074131984956974104",
+      "8_11": "8.286316155818656",
+      "fig-8 4_1": "2.029883212819307250042405108549040571883378615060599584034978213553195"
+    },
+    "w_universal": {
+      "2": "4.35337",
+      "3": "9.33061",
+      "4": "15.9194"
+    },
+    "test1_literal_sublink_refuted_scope_b": true,
+    "test2_whitehead_borromean_ratio": {
+      "predicted_1to2": "2.0",
+      "observed_w3_over_w2": "2.143307368774076175468659911746531997050560829885812600353289520532369",
+      "rel_err": "0.0716536843870380877343299558732659985252804149429063001766447602661846",
+      "note": "7.2% near-miss; Catalan-multiple coincidence; conflicts with Hopf registry"
+    },
+    "verdict": "REFUTED. (b) The LITERAL option #1 (w_n = hyperbolic volume of the n-body sub-link of the Borromean atom 𝓑_K) is STRUCTURALLY EXCLUDED at n=2: the 2-body sub-link is non-hyperbolic (Vol=0) — the Borromean rings are Brunnian, so removing any one component leaves the 2-component unlink, and the SDP binding-link registry independently assigns the deuteron bond to the Hopf link (Seifert-fibred, Vol=0). Either way the n=2 volume vanishes, but the extracted w_2 = 4.353 > 0. Cited invariant: Brunnian / Seifert-fibred non-hyperbolicity (Vol=0). (a) Re-choosing the links (Whitehead for n=2, Borromean for n=3) gives the parameter-free 1:2 Catalan ratio vs observed w_3/w_2 = 2.143 — a 7.2% NEAR-MISS, not a closure, AND it contradicts the registry's Hopf assignment for the deuteron bond, so the match is a numerical coincidence of Catalan multiples, not a derivation. Net: the volume route does not supply w_n. Consistent with the companion probe (w_n is the gated W_λ multiplier, sub-geometric); the na-Stokes kernel a_D^(n) stays permanent. No production touch; no value wired; no tier change."
+  }
+}

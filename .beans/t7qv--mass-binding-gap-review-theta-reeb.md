@@ -5,7 +5,7 @@ status: in-progress
 type: milestone
 priority: high
 created_at: 2026-07-03T19:40:00Z
-updated_at: 2026-07-03T20:10:00Z
+updated_at: 2026-07-11T22:05:00Z
 ---
 
 Branch `claude/mass-binding-gap-review-2026-07-03`. Owner: "lots new on main +
@@ -61,3 +61,37 @@ Owner said: ignore collision / duplicate ok.
 - Milestone parents in corpus: zgat (9b approaches), 830y (Δ_λ-gate FOCUS), w9uk
   (currency → #3247). This bean coordinates with them, does not replace.
 - CI billing-gated; Lean via lake-cache restore + lean-direct.
+
+## Frontier update (2026-07-11, later — corpus-grep before re-probing)
+
+The w_n(K) closure was massively advanced by siblings **today** — do NOT re-probe
+the naive routes. Authoritative: [`docs/audits/2026-07-11-eigenfunction-weight-kernel-link-and-wn-derive-or-refute.md`](../docs/audits/2026-07-11-eigenfunction-weight-kernel-link-and-wn-derive-or-refute.md)
+(PR #3545, 13 parts) + #3534 (numerical w_n derive-or-refute) + #3548 (W_λ connected
+transfer matrix) + #3549/#3551 (coordination/contact binding).
+
+**Resolved redirect (was: "derive R(q,x) weight kernel"):**
+- The weight is NOT an algebraic kernel R(q,x). Part 4 refuted the Frobenius-dual/
+  na-Stokes kernel (y_λ normalize tr_M to a trace ⇒ constant ratios, can't supply the
+  extensive weight). Part 5 refuted summing a_D^(n)×amplifying-weight to A
+  (⁶Li +920%…¹²C +2.3e6% — super-exp period × bounded/amplifying weight can't be
+  linear in A).
+- **The missing piece is GEOMETRIC:** per-cluster energy = a_D^(n) (deuteron-anchored
+  ≈2.22 MeV/bond); the knot topology supplies the CLUSTER COUNT M_n(K):
+  M_2 = pairwise linking, M_3 = triple Milnor μ̄₁₂₃ (Part 7, validated: Hopf 1,
+  Borromean μ̄=1, chain μ̄=0). Edge set = **max-contact sphere packing** (Part 13;
+  A≤4 simplex = C(A,2), A≥5 saturates below). Per-bond b* = **#3548's connected tr_M
+  part** = centered ghost Gram-quadratic norm (Part 12, exact identity; deuteron 0.193).
+- **NOTE for future me:** the "C(A,n) body-order combinatorial weighting" (⁴He gets
+  6·a_D²+4·a_D³+1·a_D⁴ ≈ 13.88× vs 12.72× exp — a tempting fit-free light-nucleus
+  match) is exactly Part-13's A≤4 simplex bond-count AND the Part-5-refuted full tower;
+  it overshoots catastrophically at A≥5. Verified against baseline
+  binding_manybody_jet_filtration.py (unit-weight 4.87×). Do not write it up as new.
+
+**Remaining open (both contested/gated — coordinate, don't solo):**
+- b* value = H₆ seminormal-Gram build = #3548 PROBE 2 ("coordinate before solo").
+- A≥5 max-contact packing geometry + cluster/halo (⁶Li=α+d, ⁹Be) deviations =
+  owner-gated s5-so3 keystone territory.
+
+Verdict: t7qv's quantitative closure is being driven by the #3534/#3545/#3548 cluster;
+prop:jet-filtration-binding-extensive (qualitative) stays the proved core. This session
+reviewed + recorded the frontier; did not add a colliding probe (corpus-grep discipline).

@@ -91,7 +91,7 @@ Phases 1-3 of the original roadmap are complete.
 
 | PR | Status | What it delivered |
 |---|---|---|
-| #1276 | **closed** (data cherry-picked as #1382) | Bring+Faddeev probes |
+| #1276 | **closed** (data cherry-picked as #1382) | Bring + compact-q-dilog probes |
 | #1224 | **closed** (superseded) | Δ_λ closure — superseded by #1305 |
 | #1244 | **closed** (stale) | — |
 | #1367 | merged | deuteron +0.91%; meson tower m_K/m_π 0.56 ppm |

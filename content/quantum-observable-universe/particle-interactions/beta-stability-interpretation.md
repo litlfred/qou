@@ -1,8 +1,5 @@
 **Derivation.**
-At fixed $A$, beta decay converts
-$\mathfrak{n} \to \mathfrak{p}$ (or vice versa) while preserving
-$A$.  The mass $M(p, A) = p \cdot m_{\mathfrak{p}} + (A-p) \cdot m_{\mathfrak{n}} - \mathcal{L}_{\mathrm{bind}}(p, A-p)$ is minimized
-when $\partial M / \partial p \big|_A = 0$:
+At fixed $A$, beta decay converts $\mathfrak{n} \to \mathfrak{p}$ (or vice versa) while preserving $A$. We minimize the mass $M(p, A) = p \cdot m_{\mathfrak{p}} + (A-p) \cdot m_{\mathfrak{n}} - \mathcal{L}_{\mathrm{bind}}(p, A-p)$ by setting $\partial M / \partial p \big|_A = 0$:
 
 $$
   (m_{\mathfrak{p}} - m_{\mathfrak{n}})
@@ -11,8 +8,7 @@ $$
   = 0.
 $$
 
-Solving for $p$ (dropping the $-1$ and mass-difference correction,
-which are small):
+Solving for $p$:
 
 $$
   a_A  \frac{A - 2p}{A}
@@ -22,10 +18,7 @@ $$
 $$
 
 **Verification.**
-At $q = q_0$ with $a_C = (q - q^{-1}) \times 3.334 \approx 0.697$ MeV and $a_A \approx 23.29$ MeV, the formula reproduces
-observed stable neutron numbers across the periodic table with
-mean error $|\Delta n| \approx 1.4$ neutrons (see
-[knot-periodic table](#prose:knot-periodic-table)).
+At $q = q_0$, with $a_C = (q - q^{-1}) \times 3.334 \approx 0.697$ MeV and $a_A \approx 23.29$ MeV, the formula reproduces the observed stable neutron numbers across the periodic table. The mean error is $|\Delta n| \approx 1.4$ neutrons.
 
 **Limiting behaviour.**
 
@@ -35,5 +28,4 @@ mean error $|\Delta n| \approx 1.4$ neutrons (see
 | Our universe | $q = q_0$ | $0.70$ | $1.0$--$1.6$ | Valley of stability |
 | Deep quantum | $q \to \infty$ | $\to \infty$ | $\to \infty$ | Coulomb overwhelms; no heavy nuclei |
 
-The entire nuclear chart --- which isotope is stable for each
-element --- is a consequence of the single parameter $q$.
+The entire nuclear chart follows from the single parameter $q$.

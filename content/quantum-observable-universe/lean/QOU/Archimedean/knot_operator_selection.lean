@@ -9,7 +9,7 @@ import Mathlib.Data.Real.Basic
 
 Let `(C, A, τ)` be a QOU with archimedean realisation `Hᵣ(q)`. Then
 
-(i) **Spectral decomposition.** The physics endomorphism `Φ`
+(i) **Spectral decomposition.** The Lagrangian endomorphism `Φ`
     decomposes via Schur orthogonality as `tr(Φ) = Σ_λ d_λ(q)·tr(Φ_λ)`.
 (ii) **Multi-channel pair production.** The categorical action of two
     photons equals the per-channel sum `Σ_λ d_λ·tr_λ(…)`.
@@ -42,7 +42,7 @@ namespace QOU.Archimedean
 class KnotOperatorSelectionContext where
   /-- The categorical object `A` of the QOU `(C, A, τ)`. -/
   CategoricalObj : Type
-  /-- The physics endomorphism `Φ ∈ End_C(A)`. -/
+  /-- The Lagrangian endomorphism `Φ ∈ End_C(A)`. -/
   Phi : CategoricalObj → CategoricalObj
   /-- Number of partitions of `r` (size of the Schur–Weyl decomposition). -/
   n_partitions : ℕ

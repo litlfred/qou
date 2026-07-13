@@ -1,14 +1,8 @@
-**Lemma (Jones polynomial = Möbius contact term).**
 *Let*
 $$
   K_q(s,t) \;=\; \operatorname{tr}\bigl(\Delta(\varrho(s)) \otimes \Delta(\varrho(t))\bigr)
 $$
-*be the categorical Möbius two-point kernel of
-[$\operatorname{prop:mobius-energy}$](#prop:mobius-energy), which collapses to
-the repulsive $1/\lvert\varrho(s)-\varrho(t)\rvert^2$ as $q \to 1$
-([Frobenius–Hopf kernel](#lem:mobius-energy-frobenius-kernel)). Write the
-Hadamard finite-part decomposition of the categorical Möbius energy obtained by
-excising the diagonal,*
+*be the categorical Möbius two-point kernel of [$\operatorname{prop:mobius-energy}$](#prop:mobius-energy), which collapses to the repulsive $1/\lvert\varrho(s)-\varrho(t)\rvert^2$ as $q \to 1$ ([Frobenius–Hopf kernel](#lem:mobius-energy-frobenius-kernel)). We write the Hadamard finite-part decomposition of the categorical Möbius energy obtained by excising the diagonal,*
 $$
   E_{\mathrm{cat}}(\varrho)
   \;=\;
@@ -16,9 +10,7 @@ $$
   \;-\;
   \underbrace{C(\varrho)}_{\text{diagonal contact}} ,
 $$
-*excising the singular diagonal. Then the contact coefficient $C(\varrho)$ is the
-fundamental ($N=2$) Markov trace, whose braid closure is the Jones polynomial
-([Jones–Markov trace](#thm:jones-markov-trace))*
+*excising the singular diagonal. Then the contact coefficient $C(\varrho)$ is the fundamental ($N=2$) Markov trace, whose braid closure is the Jones polynomial ([Jones–Markov trace](#thm:jones-markov-trace))*
 $$
   C(\varrho) \;=\; \operatorname{tr}_M(\rho(\beta_K)) \;=\; J_K(q).
 $$
@@ -26,8 +18,4 @@ $$
 $$
   J_K(q) \;=\; T_{\mathrm{reg}}(\varrho) \;-\; E_{\mathrm{cat}}(\varrho):
 $$
-*the fundamental Jones polynomial is exactly the self-energy that the Möbius
-renormalization subtracts. The fundamental Jones data embeds into the Möbius
-two-point data as its contact / diagonal term; the converse map loses the
-off-diagonal fusion content $\Delta(e_\lambda) = \sum_{\mu\nu} N^\lambda_{\mu\nu}\,
-e_\mu \otimes e_\nu$.*
+*The fundamental Jones polynomial is exactly the self-energy that the Möbius renormalization subtracts. The fundamental Jones data embeds into the Möbius two-point data as its contact / diagonal term; the converse map loses the off-diagonal fusion content $\Delta(e_\lambda) = \sum_{\mu\nu} N^\lambda_{\mu\nu}\, e_\mu \otimes e_\nu$.*

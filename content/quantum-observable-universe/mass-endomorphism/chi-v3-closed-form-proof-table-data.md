@@ -1,4 +1,4 @@
-| theorem | content |
+| theorem | statement |
 |---|---|
 | `chi_V3_difference_eq_factored` | $\chi_n - \chi_p = -(q^2+1)^2 (q^2-1) / (4q)$ |
 | `chi_V3_difference_factored_eq_polynomial` | factored $\leftrightarrow$ polynomial form |
@@ -9,4 +9,3 @@
 | `chi_V3_difference_at_two` | numerical: $-75/8$ at $q = 2$ |
 | `chi_V3_difference_at_one` | vanishes at $q = 1$ (isospin invariance) |
 | `chi_V3_decomposition_at_two` | decomposition verified at $q = 2$ |
-

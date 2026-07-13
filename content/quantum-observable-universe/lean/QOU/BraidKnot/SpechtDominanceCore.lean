@@ -76,7 +76,7 @@ order axioms + decidability are all discharged. Everything else is `sorry`-free:
 | `support_subset_colStab_image` (Layer 1) | **sorry-free** |
 | `exists_linearOrder_of_partialOrder` (Szpilrajn-for-Fintypes lever) | **sorry-free** |
 | `tabloidRowPattern`, `tabloidRowPattern_injective` (tabloid↔row-pattern) | **sorry-free** |
-| `row_lt_card`, `rowPattern_lt_nOf`, `tabloidRowPattern_lt_nOf` (cell row bound) | **sorry-free** |
+| `tabloidRowPattern_lt_nOf` (cell row bound; `row_lt_card` / `rowPattern_lt_nOf` now inherited from `SpechtStandardBasis`) | **sorry-free** |
 | `domCount`, `domCount_succ`, `singleton_filter_card`, `domCount_marginal`, `domCount_inj` (count + antisymm engine) | **sorry-free** |
 | `domCount_sat_m`, `domCount_sat_i`, `domCount_clamp` (saturation for decidability) | **sorry-free** |
 | `domRel`, `domRel_refl`, `domRel_trans`, `domRel_antisymm`, `domRel_iff_bounded`, `domRel_decidable` (the concrete partial order) | **sorry-free** |
@@ -249,31 +249,12 @@ is then a genuine partial order, all three order axioms discharged `sorry`-free:
 
 All of this is `ℕ`-valued (§7c-clean: no `ℝ`, no ordering on `q`). -/
 
-/-- The row index of any cell of a Young diagram is `< ν.card`: the `i+1` cells
-`(0,0), …, (i,0)` lie in `ν` by down-closure, so `i + 1 ≤ ν.card`. -/
-theorem row_lt_card (ν : YoungDiagram) (i j : ℕ) (h : (i, j) ∈ ν) : i < ν.card := by
-  classical
-  have hsub : (Finset.range (i + 1)).image (fun i' => (i', 0)) ⊆ ν.cells := by
-    intro c hc
-    rw [Finset.mem_image] at hc
-    obtain ⟨i', hi', rfl⟩ := hc
-    rw [Finset.mem_range] at hi'
-    rw [YoungDiagram.mem_cells]
-    exact YoungDiagram.up_left_mem ν (Nat.lt_succ_iff.mp hi') (Nat.zero_le _) h
-  have hcard : ((Finset.range (i + 1)).image (fun i' => (i', 0))).card = i + 1 := by
-    rw [Finset.card_image_of_injective]
-    · rw [Finset.card_range]
-    · intro a b hab; simpa using hab
-  have hle : i + 1 ≤ ν.card := by
-    show i + 1 ≤ ν.cells.card
-    rw [← hcard]; exact Finset.card_le_card hsub
-  omega
-
-/-- The row pattern of a tableau is bounded by `nOf μ`. -/
-theorem rowPattern_lt_nOf (t : Specht.Tableau μ) (l : Fin (Specht.nOf μ)) :
-    Specht.rowPattern t l < Specht.nOf μ := by
-  have hmem : ((t l : ℕ × ℕ).1, (t l : ℕ × ℕ).2) ∈ μ := (t l).2
-  exact row_lt_card μ _ _ hmem
+-- `row_lt_card` (cell-row bound) and `rowPattern_lt_nOf` (tableau row-pattern
+-- bound) were duplicated verbatim here and in `SpechtStandardBasisCore`
+-- (Copilot #3427 dedup, bean 3ly2).  They now live solely in
+-- `QOU.BraidKnot.SpechtStandardBasis` (the base module this file imports); the
+-- `open QOU.BraidKnot.SpechtStandardBasis` above brings them into scope, so the
+-- uses below (and `tabloidRowPattern_lt_nOf`) resolve to the single base copy.
 
 /-- The row pattern of a tabloid is bounded by `nOf μ` (descends from tableaux). -/
 theorem tabloidRowPattern_lt_nOf (a : Specht.Tabloid μ) (l : Fin (Specht.nOf μ)) :

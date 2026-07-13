@@ -47,7 +47,7 @@ $$J_N(K; e^{2\pi i / N}) \sim e^{N \cdot \mathrm{Li}_2(L_*) / (2\pi i)} \cdot (\
 
 where $L_*$ is the "preferred" longitude eigenvalue from the geometric component.
 
-**This is where Φ_q (Faddeev) and $\mathrm{Li}_2^q$ (Rogers) live in the framework.** The cheat sheet's distinction between them is the distinction between two different asymptotic regimes of $J_N$, both controlled by the A-polynomial.
+**This is where Φ_q (compact q-dilog) and $\mathrm{Li}_2^q$ (Rogers) live in the framework.** The cheat sheet's distinction between them is the distinction between two different asymptotic regimes of $J_N$, both controlled by the A-polynomial.
 
 **Framework wiring:** Φ_q is present in `_deprecated/thimble/` work + Pre-Archimedean derivation chain content blocks. The explicit A-polynomial / AJ-conjecture machinery is NOT wired to production.
 

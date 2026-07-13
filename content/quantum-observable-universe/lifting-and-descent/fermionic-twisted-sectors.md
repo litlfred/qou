@@ -1,11 +1,1 @@
-When the Yekutieli obstruction class $\kappa_n$ does not vanish, the
-lift $\mathcal{S}_n \to \mathcal{S}_{n+1}$ is obstructed and the transition between brane
-levels acquires a non-trivial twist.  In the
-([algebraic filter](#rem:algebraic-filter)), fermionic-type matter --- those
-$q$-harmonic forms satisfying $[F_A, \alpha] \neq 0$ --- exists
-precisely at the loci where $\kappa_n \neq 0$.  The non-vanishing
-obstruction class creates "twisted" sectors in the gauge flow: the
-holonomy around these sectors acquires a phase in
-$H^2(M, \mathcal{O}_M^{\times})$ that prevents the vortex filament
-from lifting smoothly, forcing the localisation of fermionic excitations
-at the monodromy fixed points of the brane tower.
+A non-vanishing obstruction class $\kappa_n$ obstructs the lift $\mathcal{S}_n \to \mathcal{S}_{n+1}$. The transition between brane levels acquires a non-trivial twist. Under the [algebraic filter](#rem:algebraic-filter), fermionic-type matter (the $q$-harmonic forms satisfying $[F_A, \alpha] \neq 0$) exists precisely at the loci where $\kappa_n \neq 0$. This obstruction class creates "twisted" sectors in the gauge flow. The holonomy around these sectors acquires a phase in $H^2(M, \mathcal{O}_M^{\times})$ that prevents the vortex filament from lifting smoothly. This forces the localisation of fermionic excitations at the monodromy fixed points of the brane tower.

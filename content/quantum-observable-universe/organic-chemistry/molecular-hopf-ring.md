@@ -1,14 +1,7 @@
-A **molecular Hopf ring** is not a chain with its ends joined —
-it is a fundamentally different topological object.  Where the
-chain bonds atoms pairwise via Hopf links
-([molecular Hopf chain](#def:molecular-hopf-chain)), the ring
-binds all atoms simultaneously via a single **threading link**
-([threading link](#def:threading-link)).
+A **molecular Hopf ring** binds all atoms simultaneously via a single threading link.
 
 **Definition.**
-Let $\mathcal{A}_1, \ldots, \mathcal{A}_N$ be atoms arranged in
-a cycle.  A **molecular Hopf ring** of length $N$ is the
-composite
+Let $\mathcal{A}_1, \ldots, \mathcal{A}_N$ be atoms arranged in a cycle. A **molecular Hopf ring** of length $N$ is the composite
 
 $$
   \mathcal{R}_N
@@ -18,17 +11,4 @@ $$
   \mathcal{T}_N,
 $$
 
-where $[\mathcal{A}_1, \ldots, \mathcal{A}_N]$ denotes the $N$
-atoms held in their fixed cyclic arrangement, and $\oplus$
-superposes that arrangement with the single threading link
-$\mathcal{T}_N = T(2, N)$ — a single torus link that passes
-through all $N$ atoms.  The threading
-link's braid word in $B_N$ is
-
-$$
-  \hat{\beta}_N
-  = 
-  (\sigma_1  \sigma_2  \cdots  \sigma_{N-1})^2,
-$$
-
-with $2(N-1)$ crossings, all of the same sign.
+where $[\mathcal{A}_1, \ldots, \mathcal{A}_N]$ denotes the $N$ atoms in cyclic arrangement, and $\oplus$ superposes that arrangement with the threading link $\mathcal{T}_N = T(2, N)$.

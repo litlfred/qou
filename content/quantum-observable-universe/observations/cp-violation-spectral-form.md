@@ -1,11 +1,5 @@
 **Conjecture (spectral form of $\delta_{\mathrm{CP}}$).**
-*Let $A = H_n(R_\mathbb{C}, q)$ with $R_\mathbb{C} = R \otimes
-\mathbb{Z}[i]$ the complexified ground ring, allowing
-$q = |q| \exp(i\theta)$ as in
-([complex chirality rotation](#conj:complex-chirality-rotation)).
-For a hadronic braid $\beta_\mathcal{K} \in B_n$ the CP-violating
-discriminant is the imaginary part of the alternating/symmetric
-Wedderburn-block trace ratio*
+*Let $A = H_n(R_\mathbb{C}, q)$ with complexified ground ring $R_\mathbb{C} = R \otimes \mathbb{Z}[i]$, accommodating $q = |q| \exp(i\theta)$ ([complex chirality rotation](#conj:complex-chirality-rotation)). For a hadronic braid $\beta_\mathcal{K} \in B_n$, the CP-violating discriminant equals the imaginary part of the alternating/symmetric Wedderburn-block trace ratio:*
 
 $$
   \delta_{\mathrm{CP}}(\beta_\mathcal{K})
@@ -18,17 +12,10 @@ $$
   \right) \,\in\, R_\mathbb{C}.
 $$
 
-*The real part recovers the Pauli statistical weight
-([Pauli factor](#prop:pauli-factor-wedderburn)); the imaginary part
-captures CP violation.  CP-symmetric configurations
-(amphicheiral or real-$q$) have $\mathrm{Im}(\chi_\lambda) = 0$ and
-$\delta_{\mathrm{CP}} = 0$.*
+*The real part supplies the Pauli statistical weight ([Pauli factor](#prop:pauli-factor-wedderburn)). The imaginary part isolates CP violation. Amphicheiral or real-$q$ configurations have $\mathrm{Im}(\chi_\lambda) = 0$ and $\delta_{\mathrm{CP}} = 0$.*
 
 **Phase accumulation.**
-*For multi-crossing composites the residual phase $\theta_{\mathrm{res}}$
-of $q$ accumulates linearly in the crossing count.  Writing
-$\chi_\lambda(q) = \chi_\lambda(|q|) \exp(i\, n_\lambda \theta)$ for
-the leading character behaviour,*
+*For multi-crossing composites, $\theta_{\mathrm{res}}$ accumulates linearly. With $\chi_\lambda(q) = \chi_\lambda(|q|) \exp(i\, n_\lambda \theta)$:*
 
 $$
   \mathrm{Im}\!\left(
@@ -38,38 +25,14 @@ $$
   \;\sim\; \bigl(n_{(1^n)} - n_{(n)}\bigr) \cdot \theta_{\mathrm{res}}
 $$
 
-*to leading order in $\theta_{\mathrm{res}}$.  The factor
-$n_{(1^n)} - n_{(n)}$ is the difference of phase exponents on the
-two extremal blocks; for kaons (multi-crossing $\mathcal{K}$) it
-scales with the total crossing number, recovering the empirical
-$\delta_{\mathrm{CP}} \sim n_c \theta_{\mathrm{res}}$ ansatz of
-([CP violation](#sec:cp-violation-evidence)).*
+*to leading order. The difference $n_{(1^n)} - n_{(n)}$ scales with total crossing number, recovering $\delta_{\mathrm{CP}} \sim n_c \theta_{\mathrm{res}}$.*
 
 **Sketch.**
-Spectral completeness over $R_\mathbb{C}$ (the complexified analogue
-of the real spectral completeness for $\alpha_{\mathrm{EM}}$) decomposes
-$F_{\mathrm{Pauli}}$ into central-idempotent characters.  The
-alternating block $V_{(1^n)}$ is the unique source of phase
-asymmetry: its character carries $(-q)^{-w}$ on a writhe-$w$
-crossing
-([antiparticle crossing reversal](#prop:antiparticle-crossing-reversal)),
-while the symmetric block carries $q^w$.  The ratio's imaginary part
-is therefore the CP-violating amplitude.
+Spectral completeness over $R_\mathbb{C}$ decomposes $F_{\mathrm{Pauli}}$. The alternating block $V_{(1^n)}$ provides phase asymmetry, carrying $(-q)^{-w}$ on a writhe-$w$ crossing ([antiparticle crossing reversal](#prop:antiparticle-crossing-reversal)). The symmetric block carries $q^w$. Their ratio's imaginary part isolates the CP-violating amplitude.
 
 **Falsifiability.**
-A direct prediction: amphicheiral knots have
-$\delta_{\mathrm{CP}} = 0$ exactly.  Any observed CP violation in a
-single amphicheiral hadron would falsify the spectral characterisation.
-The kaon system ($K_L \to \pi\pi$ at $\sim 2 \times 10^{-3}$,
-non-amphicheiral $\bar{u}s$ configuration) is the empirical test
-case.
+Amphicheiral knots must yield exactly $\delta_{\mathrm{CP}} = 0$. Any amphicheiral hadron exhibiting CP violation falsifies this characterization.
 
-*Remark.* This conjecture is downstream of
-([complex chirality rotation](#conj:complex-chirality-rotation)),
-which is itself conjectural.  Promotion to a proposition requires:
-(a) a categorical proof that $R_\mathbb{C}$-enrichment is the
-unique CP-violating extension, (b) a quantitative match between
-$\theta_{\mathrm{res}}$ and the Wolfenstein parametrisation of the
-CKM matrix.
+*Remark.* This relies on ([complex chirality rotation](#conj:complex-chirality-rotation)). Proof requires demonstrating $R_\mathbb{C}$-enrichment uniqueness and matching $\theta_{\mathrm{res}}$ to the Wolfenstein parameterization.
 
-**Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall: it invokes real- or complex-analytic constructs — real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.
+**Archimedean specialisation (§7c).** This block depends on archimedean components: real-valued observables and numerical evaluation at $q_0$. Categorical identities hold over abstract rings.

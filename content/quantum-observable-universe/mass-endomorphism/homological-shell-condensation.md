@@ -3,9 +3,9 @@ The Białynicki-Birula stratification of the brane tower
 [brane-tower-levels](#ex:brane-tower-levels)) under the :refterm[descent]{#descent}
 involution $\hat\tau$
 ([:refterm[descent]{#descent}-involution](#def:descent-involution)) yields a spectral
-sequence whose $E_\infty$ page records the *failure* of categorical
+sequence whose $E_\infty$ page records the failure of categorical
 neutrality at each level. This block names the **homological
-condensation** at saturated $n$: the higher pages collapse to zero,
+condensation** at saturated $n$. The higher pages collapse to zero,
 encoding shell closure as an algebraic-geometry condition on the
 brane-tower stratification.
 
@@ -33,9 +33,9 @@ $$
   H^{p+q}\bigl(A_n\bigr).
 $$
 
-The **strict-positive part** $E_\infty^{p, >0}(n)$ measures the
-non-trivial cohomology supported above the $E_2$-collapse line —
-operationally, the obstruction to reading the :refterm[descent]{#descent}-graded trace
+The strict-positive part $E_\infty^{p, >0}(n)$ measures the
+non-trivial cohomology supported above the $E_2$-collapse line.
+Operationally, it measures the obstruction to reading the :refterm[descent]{#descent}-graded trace
 purely from the diagonal
 ([prop:graded-trace-residue-split](#prop:graded-trace-residue-split)).
 

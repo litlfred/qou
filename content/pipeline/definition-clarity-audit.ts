@@ -536,6 +536,31 @@ function firstDisplayIdx(md: string): number {
   return idxs.length ? Math.min(...idxs) : -1;
 }
 
+/** index of the first explicit definition anchor, or -1 — a `**Definition…`
+ *  bold lead, a `## Definition` heading, a `:defterm[…]` directive, or the first
+ *  fenced code/tex block (a Lean-class or displayed definition). Complements
+ *  `firstDisplayIdx` + `firstMarkedTermIdx` in the preamble measure: a block
+ *  that LEADS with its definition (marker near the top) and then carries trailing
+ *  exposition must not have that exposition miscounted as "preamble". Without
+ *  this, a Lean-class definition (fence is ```lean, not ```tex — invisible to
+ *  `firstDisplayIdx`) or a lead term that differs from the title (invisible to
+ *  the title-token `firstMarkedTermIdx`) yields anchor = -1 ⇒ the whole block is
+ *  counted as preamble (false positive). Only ADDS earlier anchors, so a
+ *  genuinely rambling block (definition after a long preamble) still fails. */
+const DEFN_BOLD_RX = /(?:\*\*|__)Definition\b/i;
+const DEFN_HEADER_RX = /^#{2,4}\s+Definition\b/im;
+const FENCED_CODE_RX = /```[a-zA-Z]/;
+
+function firstDefnAnchorIdx(md: string): number {
+  const idxs = [
+    md.search(DEFN_BOLD_RX),
+    md.search(DEFN_HEADER_RX),
+    md.indexOf(":defterm["),
+    md.search(FENCED_CODE_RX),
+  ].filter((i) => i >= 0);
+  return idxs.length ? Math.min(...idxs) : -1;
+}
+
 /** index of the first marked principal-term occurrence, or -1. */
 function firstMarkedTermIdx(md: string, pt: string[]): number {
   if (!pt.length) return -1;
@@ -586,13 +611,34 @@ function checkDeftermBold(b: Block): Finding {
   if (best >= T.termOverlap) {
     base.result = "pass";
     base.evidence = `term marked via "${bestSpan.slice(0, 60)}"`;
-  } else {
-    base.result = "fail";
-    base.severity = "minor";
-    base.evidence = spans.length
-      ? `term "${pt.join(" ")}" never bolded/defterm'd (${spans.length} bold spans, none match)`
-      : `term "${pt.join(" ")}" never bolded/defterm'd (no bold spans at all)`;
+    return base;
   }
+  // Would-be fail: the term source is the TITLE (not defines[]), so two title
+  // shapes produce a degenerate token set the checker cannot reliably match —
+  // downgrade to n/a rather than emit a false positive. (Applied only here, so a
+  // block that DID mark its term still passes above.)
+  //   (a) math-fragment titles — `principalTokens` splits at the first "(", so a
+  //       group name like "SU(2) basis" / "SO(3) generators" collapses to a
+  //       2-letter fragment ("su" / "so") with no plain-text presence to match
+  //       (the body writes it as `$\mathfrak{su}(2)$`).
+  //   (b) descriptive titles — > 4 principal tokens is a phrase, not one crisp
+  //       defined term; a bold span of the real term overlaps the over-specified
+  //       token set below threshold by construction.
+  if (pt.every((t) => t.length <= 2)) {
+    base.result = "n/a";
+    base.evidence = `title term is a math fragment ("${pt.join(" ")}") — no reliable plain-text term to match`;
+    return base;
+  }
+  if (pt.length > 4) {
+    base.result = "n/a";
+    base.evidence = `title is descriptive (${pt.length} principal tokens) — principal defined term ambiguous`;
+    return base;
+  }
+  base.result = "fail";
+  base.severity = "minor";
+  base.evidence = spans.length
+    ? `term "${pt.join(" ")}" never bolded/defterm'd (${spans.length} bold spans, none match)`
+    : `term "${pt.join(" ")}" never bolded/defterm'd (no bold spans at all)`;
   return base;
 }
 
@@ -637,10 +683,9 @@ function checkDefnTight(b: Block): Finding {
   const pt = principalTokens(b.title);
   const dispIdx = firstDisplayIdx(b.md);
   const termIdx = firstMarkedTermIdx(b.md, pt);
-  const anchor =
-    [dispIdx, termIdx].filter((i) => i >= 0).length === 0
-      ? -1
-      : Math.min(...[dispIdx, termIdx].filter((i) => i >= 0));
+  const markerIdx = firstDefnAnchorIdx(b.md);
+  const cands = [dispIdx, termIdx, markerIdx].filter((i) => i >= 0);
+  const anchor = cands.length === 0 ? -1 : Math.min(...cands);
   const preamble = anchor < 0 ? words : wordCount(prose(b.md.slice(0, anchor)));
   const base = mkFinding(b, "clarity-defn-tight");
   base.metrics = { words, boldHeaders: headers, preambleWords: preamble };

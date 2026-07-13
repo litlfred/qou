@@ -1,18 +1,5 @@
-The Jones–Wenzl Markov trace $\tau_M : \mathbf{B}_\infty \to \mathbb{R}$
-on the inductive limit of braid groups is uniquely characterised by the
-M1–M4 axioms (Jones 1985 / Wenzl 1988). Its realization as a single
-operator on the von Neumann inductive-limit hyperfinite $\mathrm{II}_1$
-factor proceeds in five stages: a per-$n$ Hilbert representation, an
-inductive embedding $\iota_n : V_n \hookrightarrow V_{n+1}$, the inductive
-limit $V_\infty = \varinjlim V_n$, the trace state on $\bigcup_n H_n$,
-and the bicommutant closure $\mathcal{M} := (\bigcup_n H_n)''$, on which
-$\tau_M$ is the unique faithful normal trace up to scaling.
+The Jones–Wenzl Markov trace $\mathrm{tr}_M : \mathbf{B}_\infty \to \mathbb{R}$ on the inductive limit of braid groups is uniquely characterised by the M1–M4 axioms (Jones 1985 / Wenzl 1988). We realise it as a single operator on the von Neumann inductive-limit hyperfinite $\mathrm{II}_1$ factor in five stages: a per-$n$ Hilbert representation, an inductive embedding $\iota_n : V_n \hookrightarrow V_{n+1}$, the inductive limit $V_\infty = \varinjlim V_n$, the trace state on $\bigcup_n H_n$, and the bicommutant closure $\mathcal{M} := (\bigcup_n H_n)''$. On $\mathcal{M}$, the trace $\mathrm{tr}_M$ provides the unique faithful normal trace up to scaling.
 
-The Lean class scaffold (`HnHilbertRep n q`, `HnInductiveEmbedding n q`,
-`MarkovTraceVNFactor q`) encodes the per-$n$ Hilbert representation, the
-inductive embedding, and the GNS / bicommutant von Neumann factor that
-hosts $\tau_M$. Downstream Lean files import these classes as hypotheses;
-the operator-algebra steps — the GNS state and the bicommutant closure
-of the inductive-limit algebra — supply the per-$n$ instances.
+The Lean classes `HnHilbertRep n q`, `HnInductiveEmbedding n q`, and `MarkovTraceVNFactor q` encode the per-$n$ representation, the inductive embedding, and the GNS bicommutant factor hosting $\mathrm{tr}_M$. Downstream files import these classes as hypotheses. The operator-algebra steps—the GNS state and the bicommutant closure—supply the per-$n$ instances.
 
-**Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall: it invokes real- or complex-analytic constructs — real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.
+**Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall. It invokes analytic constructs: real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. Generic categorical $q$-deformation identities remain valid over an abstract coefficient ring; we specialise only their archimedean realisation here.

@@ -1,29 +1,11 @@
 **Properties.**
 
-1. **Algebraic dissipation spectrum.** The viscous term
- $\nu_q\Delta_q v$ damps mode $k$ at rate
- $\nu_q[k]_q^2 / L_q^2$. Because the $q$-integers
- grow as $[k]_q \sim q^k / (q - q^{-1})$ for large $k$,
- high-wavenumber modes are damped **exponentially** rather than
- polynomially, providing a natural UV regularisation absent from
- classical Navier--Stokes.
-
-2. **Gauge-covariant diffusion.** The connection $A$ appears in
- every derivative. Viscous diffusion transports not only momentum
- but also colour charge: a vortex filament that decays by viscous
- damping radiates its $\mathrm{SU}_q(2)$ quantum numbers into
- neighbouring filaments via the connection.
-
-3. **Quantum pressure as negative viscosity.** The $Q_q$ term
- acts as a negative viscosity at short wavelengths: it
- **opposes** compression of the fluid below the scale
- $\ell_q = (q-1)/q$. The balance between $\nu_q\Delta_q v$
- (dissipation) and $\nabla_A Q_q$ (quantum repulsion) determines
- the minimum vortex core radius.
+1. **Algebraic dissipation spectrum.** The term $\nu_q\Delta_q v$ damps mode $k$ at the rate $\nu_q[k]_q^2 / L_q^2$. The $q$-integers increase as $[k]_q \sim q^k / (q - q^{-1})$, causing high-wavenumber modes to undergo **exponential** rather than polynomial damping. This serves as a structural UV regularisation.
+2. **Gauge-covariant diffusion.** The connection $A$ governs every derivative. Viscous diffusion thus transports colour charge alongside momentum: as a vortex filament decays, it radiates its $\mathrm{SU}_q(2)$ quantum numbers into nearby filaments via the connection.
+3. **Quantum pressure as negative viscosity.** At short wavelengths, $Q_q$ acts as negative viscosity, **opposing** fluid compression below the length scale $\ell_q = (q-1)/q$. The equilibrium between dissipation ($\nu_q\Delta_q v$) and quantum repulsion ($\nabla_A Q_q$) sets the minimum vortex core radius.
 
 **Energy dissipation rate.**
-The global energy dissipation rate of the $q$-Navier--Stokes
-equation is
+The global energy dissipation rate for the $q$-Navier--Stokes equation is
 
 $$
   \varepsilon_q
@@ -35,27 +17,15 @@ $$
   [k]_q^2|v_k|^2,
 $$
 
-where $v_k$ are the Fourier coefficients in the $q$-integer
-eigenbasis. For $q > 1$, the sum converges absolutely
-(exponential damping of high modes), resolving the classical
-difficulty of proving energy estimates for 3d Navier--Stokes.
+where $v_k$ denotes the Fourier coefficients in the $q$-integer eigenbasis. For $q > 1$, the exponential damping guarantees the sum converges absolutely, circumventing the standard barriers to proving classical 3D energy estimates.
 
 **Classical and quantum limits.**
 
 | Limit | $\nu_q$ | $Q_q$ | Equation reduces to |
 |---|---|---|---|
-| $q \to 1$ | $0$ | $0$ | Euler equation (inviscid, no quantum pressure) |
-| $q \to 1^+$ with $\hbar_q$ held | $\hbar_q/2$ | $-\hbar^2\Delta\sqrt{\rho}/(2\sqrt{\rho})$ | Ordinary Navier--Stokes + Bohm potential |
-| $q \gg 1$ | $(1 - 1/q)/2$ | Dominant | Quantum pressure dominates; flow frozen to ground state |
+| $q \to 1$ | $0$ | $0$ | Euler equation (inviscid, zero quantum pressure) |
+| $q \to 1^+$ (fixed $\hbar_q$) | $\hbar_q/2$ | $-\hbar^2\Delta\sqrt{\rho}/(2\sqrt{\rho})$ | Navier--Stokes + Bohm potential |
+| $q \gg 1$ | $(1 - 1/q)/2$ | Dominant | Flow freezes to ground state due to extreme pressure |
 
 **Well-posedness.**
-The exponential damping of high-wavenumber modes by the
-$q$-Laplacian ensures that the $q$-Navier--Stokes equation is
-globally well-posed in 3d for any $q > 1$ (see
-[the well-posedness theorem](#thm:q-ns-wellposedness)): the energy estimate
-$\frac{d}{dt}\lVert v\rVert^2 \leq -\nu_q[1]_q^2\lVert v\rVert^2$
-gives exponential decay of the total kinetic energy, and the
-$q$-integer growth prevents the enstrophy blowup that obstructs
-classical regularity proofs. The classical 3d Navier--Stokes
-regularity problem is thus an artefact of the $q \to 1$
-degeneration.
+The exponential decay of high-wavenumber modes globally bounds the 3D $q$-Navier--Stokes equation for any $q > 1$ ([thm:q-ns-wellposedness](#thm:q-ns-wellposedness)). The energy estimate $\frac{d}{dt}\lVert v\rVert^2 \leq -\nu_q[1]_q^2\lVert v\rVert^2$ yields exponential decay of the total kinetic energy, and the exponential $q$-growth halts the enstrophy blowup that sabotages classical proofs. The classical 3D Navier--Stokes regularity problem is strictly an artefact of the $q \to 1$ singularity.

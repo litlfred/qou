@@ -1,4 +1,4 @@
-| $A_{\mathrm{magic}}$ | $y^{\mathrm{naïve}}$ | $B/(A \cdot m_p)$ (target) | ratio |
+| $A_{\mathrm{magic}}$ | $y^{\mathrm{naïve}}$ | $B/(A \cdot m_p)$ (target) | Ratio |
 |:---:|:---:|:---:|:---:|
 | 2 | $1.27 \times 10^{-5}$ | $7.54 \times 10^{-3}$ (${}^{4}\mathrm{He}$) | $1.7 \times 10^{-3}$ |
 | 8 | $2.67 \times 10^{-5}$ | $8.50 \times 10^{-3}$ (${}^{16}\mathrm{O}$) | $3.1 \times 10^{-3}$ |

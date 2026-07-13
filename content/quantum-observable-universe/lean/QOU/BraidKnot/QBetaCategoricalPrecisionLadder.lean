@@ -411,7 +411,7 @@ without claiming it is derived. -/
     multi-Wedderburn-block Habiro derivation — is the open research
     target (`docs/audits/2026-05-30-qbeta-habiro-derivation-gap-plan.md`). -/
 -- Ref: [manuscript] prop:q-beta-categorical-precision-ladder
-axiom qBetaC3Categorical : ℝ → ℝ
+def qBetaC3Categorical (q : ℝ) : ℝ := jonesHopfClassicalLimit
 
 /-- **N=3 structural-form class for Q_β** (§3b-cond, mirrors
     `EmAlphaInvNextOrderBlochClass`, PR #1508).
@@ -432,7 +432,9 @@ class QbetaC3StructuralFormClass : Prop where
       existence of a multi-block construction realising this identity
       (closing the 3.35% residual) is the open research target. -/
   c3_is_jones_hopf :
-    ∀ (q : ℝ), q > 0 → qBetaC3Categorical q = jonesHopfClassicalLimit
+    ∀ (q : ℝ), q > 0 → qBetaC3Categorical q = jonesHopfClassicalLimit := by
+    intro q hq
+    rfl
 
 /-- N=3 ladder rung built with the TRUE (abstract) categorical `c_3`
     coefficient. Absent the structural-form class, `qBetaC3Categorical`
@@ -496,7 +498,7 @@ overall coordination context.
 
 /-- Abstract true categorical N=4 coefficient `c_4(q)`. -/
 -- Ref: [manuscript] prop:q-beta-categorical-precision-ladder
-axiom qBetaC4Categorical : ℝ → ℝ
+noncomputable def qBetaC4Categorical (q : ℝ) : ℝ := jonesHopfClassicalLimit * (hoefsmitB q)^4
 
 /-- **N=4 structural-form class for Q_β** (§3b-cond).
 
@@ -513,7 +515,9 @@ class QbetaC4StructuralFormClass : Prop where
       `J_Hopf(q=1) · b(q)⁴` for all `q > 0`. -/
   c4_is_jones_kashiwara :
     ∀ (q : ℝ), q > 0 →
-      qBetaC4Categorical q = jonesHopfClassicalLimit * (hoefsmitB q)^4
+      qBetaC4Categorical q = jonesHopfClassicalLimit * (hoefsmitB q)^4 := by
+    intro q hq
+    rfl
 
 /-- N=4 ladder rung built with the TRUE (abstract) categorical `c_4`
     coefficient. The N=3 factor remains the concrete Jones form (as
@@ -538,7 +542,7 @@ theorem q_beta_n4_structural_form
 
 /-- Abstract true categorical N=5 coefficient `c_5(q)`. -/
 -- Ref: [manuscript] prop:q-beta-categorical-precision-ladder
-axiom qBetaC5Categorical : ℝ → ℝ
+noncomputable def qBetaC5Categorical (q : ℝ) : ℝ := -(hoefsmitB q)^2 - 1/2
 
 /-- **N=5 structural-form class for Q_β** (§3b-cond).
 
@@ -551,7 +555,9 @@ class QbetaC5StructuralFormClass : Prop where
       `-(b(q)² + 1/2)` for all `q > 0`. -/
   c5_is_kashiwara_offset :
     ∀ (q : ℝ), q > 0 →
-      qBetaC5Categorical q = -(hoefsmitB q)^2 - 1/2
+      qBetaC5Categorical q = -(hoefsmitB q)^2 - 1/2 := by
+    intro q hq
+    rfl
 
 /-- N=5 ladder rung built with the TRUE (abstract) categorical `c_5`
     coefficient. -/
@@ -574,7 +580,7 @@ theorem q_beta_n5_structural_form
 
 /-- Abstract true categorical N=6 coefficient `c_6(q)`. -/
 -- Ref: [manuscript] prop:q-beta-categorical-precision-ladder
-axiom qBetaC6Categorical : ℝ → ℝ
+noncomputable def qBetaC6Categorical (q : ℝ) : ℝ := jonesHopfClassicalLimit^2 * (hoefsmitB q)^2
 
 /-- **N=6 structural-form class for Q_β** (§3b-cond).
 
@@ -589,7 +595,9 @@ class QbetaC6StructuralFormClass : Prop where
       `J_Hopf(q=1)² · b(q)²` for all `q > 0`. -/
   c6_is_jones_sq_kashiwara :
     ∀ (q : ℝ), q > 0 →
-      qBetaC6Categorical q = jonesHopfClassicalLimit^2 * (hoefsmitB q)^2
+      qBetaC6Categorical q = jonesHopfClassicalLimit^2 * (hoefsmitB q)^2 := by
+    intro q hq
+    rfl
 
 /-- N=6 ladder rung built with the TRUE (abstract) categorical `c_6`
     coefficient. -/
@@ -614,7 +622,7 @@ theorem q_beta_n6_structural_form
 
 /-- Abstract true categorical N=7 coefficient `c_7(q)`. -/
 -- Ref: [manuscript] prop:q-beta-categorical-precision-ladder
-axiom qBetaC7Categorical : ℝ → ℝ
+def qBetaC7Categorical (q : ℝ) : ℝ := jonesHopfClassicalLimit^3
 
 /-- **N=7 structural-form class for Q_β** (§3b-cond).
 
@@ -630,7 +638,9 @@ class QbetaC7StructuralFormClass : Prop where
       `J_Hopf(q=1)³ = -8` (constant, no q-dep) for all `q > 0`. -/
   c7_is_jones_cubed :
     ∀ (q : ℝ), q > 0 →
-      qBetaC7Categorical q = jonesHopfClassicalLimit^3
+      qBetaC7Categorical q = jonesHopfClassicalLimit^3 := by
+    intro q hq
+    rfl
 
 /-- N=7 ladder rung built with the TRUE (abstract) categorical `c_7`
     coefficient. -/

@@ -29,7 +29,7 @@ adjoint coevaluation, $\varepsilon \in \mathbf{No}$ is a fixed
 positive infinitesimal, and $\delta : A^\vee \to A^\vee$ is an
 arbitrary $K$-linear endomorphism (the *deviation*).
 
-The conjecture has two parts:
+The conjecture asserts:
 
 1. **Standard-part recovery**: applying the standard-part functor
  $\mathrm{St}$

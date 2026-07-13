@@ -1,0 +1,94 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-11T12:25:40.857997+00:00",
+  "commitSha": "d986f99615bf9e458a450cad044e3ea35a844b0d",
+  "assertions": [
+    {
+      "name": "wn_kernel_derives_or_refutes",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "1 = no parameter-free derived recursion reproduces w_n (refuted, w_n = Δ_λ gate); 0 = a kernel closes → promote."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 11,
+  "computation": "binding-wn-kernel-derive-refute",
+  "scriptFile": "binding_wn_kernel_derive_refute.py",
+  "scriptHash": "102948c8662d",
+  "scriptCommitSha": "39d3d3730387aba93add427699bf66a68cd98230",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "EXPLORATORY: derive-or-refute the jet-filtration residue-weight q-difference kernel R(q,x). Coulomb-corrects AME binding, checks ³H/³He A=3 universality, extracts universal w_2,w_3,w_4, tests them against ad-hoc parameter-free kernels (all refuted), and derives the na-Stokes kernel a_D^(n)'s OWN eigenfunction relation: the q-involution S(n)=Σ dim_q obeys a q-Hermite / Rogers–Szegő three-term recurrence (c_3=[2]_q exact), identifying the correct orthogonal basis for w_n. No fit.",
+  "parameters": {
+    "q0_50dps": "1.109978582751380807591669095610768879874499121873578736072814240181799",
+    "compute_dps": 70
+  },
+  "data": {
+    "a_D_periods": {
+      "2": "1.0",
+      "3": "1.336965622235707433250830659363954271963080249494710972254644141968207",
+      "4": "2.532779656399391492051514501758041232326160470535129581776963097641468"
+    },
+    "B_strong_coulomb_corrected": {
+      "D": "2.224566199999999999999999999999999999999999999999997340954056611765576",
+      "T": "8.481796200000000000000000000000000000000000000000009585209925309324894",
+      "3He": "8.716453820613939999999999999999999999999999999999995711041411183331376",
+      "4He": "29.2027803575033107999999999999999999999999999999999915823563342238137"
+    },
+    "csb_A3_mirror_residual": "0.02728854625705263877254327198994777630256194299801074922690148469977233",
+    "w_universal": {
+      "2": "4.353367452117419141544186719629289186319835806784550482323907313301673",
+      "3": "9.330606699365086519749447811437026096689226107993968330442355278944704",
+      "4": "15.9194060016324157715334807922993331833932899063647336736708054563695"
+    },
+    "w_ratios": {
+      "w3_over_w2": "2.14330786500156457506772861753956223753752125884726712686269602517698",
+      "w4_over_w3": "1.70614907632058618647021625599950390861844668305103734099621000365547"
+    },
+    "qinvolution_recurrence": {
+      "S_n": {
+        "1": "1.0",
+        "2": "2.0",
+        "3": "4.010896866707122299752491978091862815889240748484132916763932425904622",
+        "4": "10.13111862559756596820605800703216492930464188214051832710785239056587",
+        "5": "26.88068864839657705840243733717436484042600106384221805624949519883663",
+        "6": "81.35896275073707913105501551000172082253830593582642565480605064399586",
+        "7": "261.5746516582212375588369584156021153497885926948706926506653387664573",
+        "8": "926.609793591428659712352483212855549376691472218805804924460638400524"
+      },
+      "c_n": {
+        "3": "2.010896866707122299752491978091862815889240748484132916763932425904622",
+        "4": "3.060110879445221834226783014470151056707700566828192705171959982330624",
+        "5": "4.176016132907980127178612980763163122798609889873390449688761261663895",
+        "6": "5.377320720013501787443853270783806583301868610178067709685009567316321",
+        "7": "6.704280952944780911133732212002089952766238287140445925760909635797975",
+        "8": "8.174085797660718998001318775495516058964189140932330220456729076712761"
+      },
+      "c3_eq_2q_exact": true,
+      "basis": "q-Hermite / Rogers–Szegő (q-oscillator; QOU.Mass.RogersSzegoInhabited)"
+    },
+    "wn_qhermite_expansion": {
+      "testA_aD_recurrence_err": "0.4229421499451357327488444052743344901706222524849371587333482636764779",
+      "testB_rogers_szego_best": {
+        "x": "x=1/q",
+        "err": "0.1323604359102040191231082404587526774692573889103963512322101434976768"
+      },
+      "wn_is_qhermite_clean": false,
+      "ratio_decelerates_subgeometric": true,
+      "note": "w_n neither obeys the a_D recurrence nor matches a Rogers–Szegő ratio-shape; sub-geometric deceleration = the gated W_λ fingerprint"
+    },
+    "verdict": "THREE-PART. (i) REFUTED (scope-(a)) — the extracted universal residue weights w_2,w_3,w_4 = 4.353,9.331,15.92 (ratios 2.143,1.706) satisfy NO CONSTANT-RATIO / ad-hoc parameter-free kernel to 5% ([n]_q² lone 6.9% near-miss, echoing the √C_λ near-miss of PR #3518). (ii) DERIVED BASIS (owner steer) — the na-Stokes kernel a_D^(n)=S(n)/n has an eigenfunction relation: the q-involution S(n)=Σ_{λ⊢n} dim_q V_λ obeys S(n)=S(n-1)+c_n·S(n-2) with c_3=[2]_q EXACT and c_n/[n-1]_q rising — the q-Hermite / Rogers–Szegő recurrence (q-oscillator / q-hyperbolic categorical action; corpus QOU.Mass.RogersSzegoInhabited). (iii) w_n IS NOT q-HERMITE-CLEAN (scope-(a)) — w_n neither obeys the a_D recurrence (Test A 42.3% off) nor matches any Rogers–Szegő H_n(x;q) ratio-shape (Test B closest x=1/q 13.2%). Its ratio DECELERATES (2.143→1.706, sub-geometric) whereas every q-Hermite family is near-geometric. So the q-Hermite basis is the right language for the KERNEL a_D^(n), but the MULTIPLIER w_n is the genuinely gated W_λ content — and its sub-geometric deceleration is the new fingerprint the s5-so3 W_λ projector must reproduce. a_D^(n) stays a permanent correct contribution; next is the hyperbolic-link-volume route (option #1). No production touch; no value wired; no tier change."
+  }
+}

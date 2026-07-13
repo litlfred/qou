@@ -23,7 +23,7 @@ and report each $c_k$ with its **tiered classification**.*
 | $\geq 4$ | $q_0$-dependent | **near-match** | N=4→N=5 non-monotonicity is the experimental signature |
 | any | empirical fit | **fitted** | flagged as discipline violation |
 
-*Per AGENTS.md "$\mathfrak{Q}_\beta$ c_k is a TRUNCATION ORDER, not a wire/un-wire
+*Per AGENTS.md "$\mathfrak{Q}_\beta$ c_k is a TRUNCATION ORDER, not an inclusion/exclusion
 gate", **never** report tiers as binary wired / dropped — always
 tiered.*
 
@@ -59,13 +59,13 @@ Higher-precision regenerations use
 [`q-beta-predicted.witness.json`](../../../computations/q-beta-predicted.witness.json).
 **Must** record each $c_k$ alongside its tier. The $\mathfrak{Q}_\beta$ subdir
 ledger ([`docs/coordination/1ppq-qbeta.md`](../../../docs/coordination/1ppq-qbeta.md))
-maintains the flip-flop history table; any wire/un-wire decision
+maintains the reversal-history table; any inclusion/exclusion decision
 must update both.*
 
 ### Notes
 
 *Permanent fix path is the $\mathfrak{Q}_\beta$ Habiro element parallel to
 $\alpha_{\mathrm{EM}}$'s $[2]_q \cdot (1 - h^2 \alpha)$
-(PR #1511). The $c_3$ flip-flop history (six entries as of
+(PR #1511). The $c_3$ reversal history (six entries as of
 2026-05-31) is the canonical example of why tiered classification
 is mandatory.*

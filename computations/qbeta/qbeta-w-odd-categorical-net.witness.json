@@ -1,0 +1,61 @@
+{
+  "engine": "python-exact",
+  "engineVersion": "python 3.13.12",
+  "computedAt": "2026-07-07T17:27:05.315940+00:00",
+  "commitSha": "ccd94358cff4d943c4f20be54c2dfd2b081d583a",
+  "assertions": [
+    {
+      "name": "net_odd_is_h_over_4_times_C",
+      "computed": 0.0,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 0.0,
+      "unit": "bool (0 = holds)",
+      "source": "exact Q-Laurent arithmetic"
+    },
+    {
+      "name": "Hopf_odd_is_h_over_4_times_C_Hopf",
+      "computed": 0.0,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 0.0,
+      "unit": "bool (0 = holds)",
+      "source": "exact Q-Laurent arithmetic"
+    },
+    {
+      "name": "unknot_odd_is_h_over_4_times_C_unknot",
+      "computed": 0.0,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 0.0,
+      "unit": "bool (0 = holds)",
+      "source": "exact Q-Laurent arithmetic"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 12,
+  "computation": "qbeta-w-odd-categorical-net",
+  "scriptFile": "qbeta_w_odd_categorical_net_probe.py",
+  "scriptHash": "77ba1cfcb44d",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
+  },
+  "description": "Verifies the W-odd tranche of the H3 GS categorical net. The bar-odd projection of the net (neutron - proton) exactly matches (h/4) * C(y), reproducing KC20's irreducible odd-channel cubic where h = q - q^-1 and y = q^2 + q^-2. Also verifies that the sector split C = C_Hopf + C_unknot naturally extends to the bar-odd projections.",
+  "data": {
+    "match_total": true,
+    "match_Hopf": true,
+    "match_unknot": true
+  }
+}

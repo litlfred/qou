@@ -1,18 +1,3 @@
-The braid-group action on the resolvents leaves three
-$S_5$-invariants that the previous section already named in
-passing. We now make those invariants the working coordinate system.
-Definition: Color tube coordinates introduces the variables
-$c_r, c_g, c_b$ together with their aggregates, and Remark: Aggregate color quantities records the named combinations
-($\hat c$, total charge, etc.) used throughout the chapter.
-Remark: Constraint equations in color tube coordinates rewrites
-the Bring quadric and cubic as identities among these aggregates,
-which is what makes the change of coordinates useful.
+The braid-group action on the resolvents isolates three $S_5$-invariants. We now adopt those invariants as the coordinate system. We introduce the variables $c_r, c_g, c_b$ and their aggregates. We identify named combinations ($\hat c$, total charge) required for the subsequent analysis. We then reformulate the Bring quadric and cubic as identities among these aggregates. This change of coordinates clarifies the underlying structure.
 
-Remark: Interpretation of the color tube is the structural payoff:
-the three tubes correspond to the three color charges, and pure-color
-loci correspond to confinement. Remark: $C_5$ action in color tube coordinates records the residual cyclic symmetry that
-survives after the $S_5$ quotient, and Remark: Intrinsic color cubic: pairing structure extracts the pairing that the next section
-on color fibration and elliptic curves treats as the defining datum
-of the elliptic structure $\mathcal{E}_q$.
-
-_(draft.)_
+The structural payoff emerges through the color tube interpretation. The three tubes correspond to the three color charges. Pure-color loci correspond to confinement. We specify the residual $C_5$ symmetry that survives the $S_5$ quotient. We then extract the intrinsic color cubic pairing. This pairing furnishes the defining datum of the elliptic structure $\mathcal{E}_q$ constructed in the next section.

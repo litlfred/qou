@@ -93,4 +93,13 @@ class ShellTransitionKnot [BorromeanQuark] where
   closures_match :
     (List.range 7).map correctedClosure = stabilityPairs
 
+-- No instance: both `conj:borromean-quark` (upstream) and
+-- `conj:shell-transition-knot` are OPEN (AGENTS.md §3b-tax).  A
+-- `mockCorrectedClosure` that hardcodes `{2,8,20,28,50,82,126}` and
+-- discharges `closures_match` by `decide` is FITTING the answer into a
+-- lookup table, not deriving the spin–orbit correction from the three
+-- Borromean crossings — precisely the anti-laundering pattern the rule
+-- forbids.  The genuine HO content above (`hoClosure`, the closure
+-- theorems) is proved; the corrected-closure identity remains open.
+
 end QOU.Conjectures

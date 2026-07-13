@@ -1,12 +1,4 @@
-The point of this survey is to license the appendix's central
-move: the substrate parameter $q$ may be taken in $\mathbf{No}$,
-in the infinitesimal neighbourhood of $1$, without disturbing
-any of the algebraic machinery of the main paper. A systematic
-survey of the QOU content objects finds that the bulk of the
-formal structure is **purely algebraic**: it depends only on the
-ground ring being a field (frequently a field of characteristic
-zero), not on any analytic or topological property of
-$\mathbb{R}$ or $\mathbb{C}$.
+We present this survey to justify our central move: we may take the substrate parameter $q \in \mathbf{No}$ in the infinitesimal neighbourhood of $1$, without disturbing any algebraic machinery of this paper. The bulk of the formal structure is **purely algebraic**. It depends only on the ground ring being a field (typically of characteristic zero), independent of any analytic or topological property of $\mathbb{R}$ or $\mathbb{C}$.
 
 ## Blocks that lift verbatim
 

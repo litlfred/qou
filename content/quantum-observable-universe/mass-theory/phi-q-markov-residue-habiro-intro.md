@@ -1,15 +1,3 @@
-The preceding sub-section developed the $\phi_q$ + Markov +
-Schur-Weyl foundations (Markov-trace factorisation, $\phi_q$
-resums of the trace series, per-braid mass tower, Schur-Weyl mass
-decomposition, GB-residue spectral sum, categorical mass
-positivity, mass-spectrum generating function, the graded Markov
-trace, residue at root). This sub-section pulls in the residue +
-Habiro identifications that pin the mass tower: $\widehat{V}$-pair
-commutation trace + tower-pair equality at fixed level + jet-tower
-uniform $\Delta_{\max}$ + the topological-mass formula's algebraic
-form + residue-as-braid-holonomy + the graded-trace residue split +
-the 6-term binding density + the full pole structure of the mass
-trace + the Habiro residue-sum equivalence that closes the
-foundations.
+This sub-section bridges the algebraic foundations to the substrate-level Habiro evaluation. It establishes the $\hat{V}$-pair commutation trace, validates the exact pair equality at fixed jet levels, and states the uniform $\Delta_{\max}$ geometric bound.
 
-The output is the substrate-level Habiro residue formula together with the substrate-flow data the term-6 binding-density block consumes.
+The sequence connects the algebraic topological mass formula to the Habiro residue expansion. It interprets the residue as braid holonomy around singular fibres, explicitly splits the graded trace from the residue sum, and applies this split to the 6-term binding density. The closing blocks detail the full pole structure of the mass trace, securing the substrate-flow inputs for the binding density evaluation.

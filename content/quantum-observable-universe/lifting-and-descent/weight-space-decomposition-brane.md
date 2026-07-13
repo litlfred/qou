@@ -1,26 +1,7 @@
-The adjoint bundle $\mathrm{ad} \mathcal{S}_n$ has fibre $\mathfrak{su}(2)$.  Via the
-weight-space decomposition of $\mathrm{SU}(2)$, the harmonic basis of
-$\mathcal{H}^1(\mathcal{S}_n, \mathrm{ad} \mathcal{S}_n)$ splits into two families.
+The adjoint bundle $\mathrm{ad} \mathcal{S}_n$ has fibre $\mathfrak{su}(2)$. Via the weight-space decomposition of $\mathrm{SU}(2)$, the harmonic basis of $\mathcal{H}^1(\mathcal{S}_n, \mathrm{ad} \mathcal{S}_n)$ splits into two families.
 
-*Longitudinal modes.*
-These forms constitute the $\mathrm{U}(1)$ backbone of the decomposition.
-They take values in the Cartan subalgebra of $\mathfrak{su}(2)$ and have the
-geometric form $\vartheta^0 \otimes H$, where $H$ is the diagonal generator.
-They represent steady-state laminar flows aligned with the $\mathrm{U}(1)$
-subgroup.  If the bundle splits at a monodromy fixed point, these are the only
-modes that survive; they correspond to the magnetic flux of the stable
-vortices.
+**Longitudinal modes.** These forms constitute the $\mathrm{U}(1)$ backbone. They take values in the Cartan subalgebra of $\mathfrak{su}(2)$ and have the geometric form $\vartheta^0 \otimes H$, where $H$ is the diagonal generator. They represent steady-state laminar flows aligned with the $\mathrm{U}(1)$ subgroup. If the bundle splits at a monodromy fixed point, these are the only modes that survive; they correspond to the magnetic flux of the stable vortices.
 
-*Ladder modes.*
-These are the raising and lowering vortices of the decomposition.  They take
-values in the off-diagonal generators $E_\pm$ of $\mathfrak{su}(2)$ and have
-the geometric form $\vartheta^\pm \otimes E_\pm$.  They describe the entangling
-flows that twist the $\mathbb{P}^1(\mathbb{C})$ fibre as one moves along the brane.
-These modes are responsible for the non-commutativity in the
-$\mathrm{SU}_q(2)$ algebra ([direct limit algebra](#def:direct-limit-algebra)).
+**Ladder modes.** These are the raising and lowering vortices. They take values in the off-diagonal generators $E_\pm$ of $\mathfrak{su}(2)$ and have the geometric form $\vartheta^\pm \otimes E_\pm$. They describe entangling flows that twist the $\mathbb{P}^1(\mathbb{C})$ fibre along the brane. These modes generate the non-commutativity in the $\mathrm{SU}_q(2)$ algebra ([direct limit algebra](#def:direct-limit-algebra)).
 
-In the $1$-jet bundle $J^1 \mathcal{S}_n$
-([$J^1\mathcal{S}$ local states](#rem:j1e-local-states)), each basis element $\alpha$ is a pair
-consisting of a *value* (the direction of the $\mathrm{SU}(2)$ flow in
-the fibre) and a *momentum* (the gradient of that flow relative to the
-complex structure of the brane).
+In the $1$-jet bundle $J^1 \mathcal{S}_n$ ([$J^1\mathcal{S}$ local states](#rem:j1e-local-states)), each basis element $\alpha$ is a pair consisting of a value (the direction of the $\mathrm{SU}(2)$ flow in the fibre) and a momentum (the gradient of that flow relative to the complex structure of the brane).

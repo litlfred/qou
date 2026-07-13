@@ -11,4 +11,4 @@
 
 **Potential new experiments.**
 
-- Electron--muon scattering experiments (e.g. MUonE at CERN) to directly test the $q$-dependent corrections to the electromagnetic vertex.
+- Electron--muon scattering experiments (e.g. MUonE at CERN) to test $q$-dependent corrections to the electromagnetic vertex directly.

@@ -75,4 +75,45 @@ theorem trMNP_q (q z : R) (hq : q ≠ 0) (htwo : (2 : R) ≠ 0) :
     trMNP (q - q⁻¹) z = (q ^ 2 - 1) * (q ^ 2 - 2 * q * z - 1) / (2 * q ^ 2) := by
   unfold trMNP; field_simp; ring
 
+/-! ## Bar-decomposition of the evaluation map (the standing reading, realized)
+
+The Hecke parameter `h = q − q⁻¹` is the fundamental **bar-odd** object:
+under the fibre bar involution `q ↦ q⁻¹` it flips sign, `h ↦ −h`. The Markov
+loop parameter `z = √q/(1+q)` is **bar-even** (`QOU.QBeta.z_bar_invariant`,
+fixed under `q ↦ q⁻¹`, i.e. under `h ↦ −h`). So the evaluation map splits
+cleanly, and the split IS the standing reading (owner-granted 2026-07-07,
+registry KC6/KC10): the **bar-even part is the identity/mass term `h²/2`**
+(carries the shadow), the **bar-odd part is the crossing/loop term** (`−h` for
+the counit, `−h·z` for the Markov trace) — the odd channel.
+
+The lemmas below realize this over any field by expressing the bar involution
+on `h` as the sign flip `h ↦ −h` (`z` held fixed, being bar-even). -/
+
+/-- **Counit bar-decomposition.** `ε = h²/2 + (−h)`: an even part `h²/2` plus
+    an odd part `−h`. Under `h ↦ −h` the even part is invariant and the odd
+    part flips sign, so the odd channel of `Q_β` (built on `ε`) is exactly the
+    unweighted crossing term `−h`. -/
+theorem epsNP_decomp (h : R) : epsNP h = h ^ 2 / 2 + (-h) := by
+  unfold epsNP; ring
+
+/-- **Markov-trace bar-decomposition.** `tr_M = h²/2 + (−h·z)` — even identity
+    term plus odd loop term. -/
+theorem trMNP_decomp (h z : R) : trMNP h z = h ^ 2 / 2 + (-(h * z)) := by
+  unfold trMNP; ring
+
+/-- **Counit bar-image.** Under the bar flip `h ↦ −h`, `ε(−h) = h²/2 + h`:
+    the even part `h²/2` is invariant and the odd part `−h` flips to `+h`.
+    Read against `epsNP_decomp` (`ε(h) = h²/2 − h`), this exhibits the split
+    `ε = (bar-even h²/2) + (bar-odd −h)`. -/
+theorem epsNP_bar_image (h : R) : epsNP (-h) = h ^ 2 / 2 + h := by
+  unfold epsNP; ring
+
+/-- **Markov-trace bar-decomposition.** `tr_M = h²/2 + (−h·z)` with `z`
+    bar-even (`z ↦ z`). Under `h ↦ −h`: `tr_M(−h, z) = h²/2 + h·z` — even
+    identity part invariant, odd **loop/crossing** part `−h·z` flips sign. So
+    the odd channel of the observable is the Markov loop term; the bar-odd
+    carrier (KC15 `D(q)`) feeds it through this term, not the identity term. -/
+theorem trMNP_bar_image (h z : R) : trMNP (-h) z = h ^ 2 / 2 + h * z := by
+  unfold trMNP; ring
+
 end QOU.Interactions.QBetaCounitTrace

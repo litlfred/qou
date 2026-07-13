@@ -1,65 +1,30 @@
 ## Thurston volume additivity
 
-Every hyperbolic knot or link complement $S^3 \setminus \mathcal{K}$
-admits an ideal triangulation — a decomposition into finitely many
-ideal tetrahedra $\Delta_1, \ldots, \Delta_N$ whose vertices lie on
-the sphere at infinity $\partial \mathbb{H}^3$.  Each ideal
-tetrahedron is determined up to isometry by a single complex **shape
-parameter** $z_i \in \mathbb{C} \setminus \{0, 1\}$ — the cross-ratio
-of its four ideal vertices.
+Every hyperbolic knot complement admits an ideal triangulation by tetrahedra with vertices on the sphere at infinity. A single complex shape parameter $z_i$ determines each tetrahedron up to isometry.
 
-## Statement
-
-**Proposition.** \cite{thurston1978}
-*Let $\mathcal{K} \subset S^3$ be a hyperbolic knot or link, and
-fix an ideal triangulation of $S^3 \setminus \mathcal{K}$ with
-shape parameters $z_1, \ldots, z_N$ determined by the hyperbolic
-gluing equations.  The hyperbolic volume is the sum of tetrahedral
-volumes:*
+**Proposition.**
+*The hyperbolic volume of the knot complement $S^3 \setminus \mathcal{K}$ is the sum of its tetrahedral volumes:*
 
 $$
   V(\mathcal{K})
   \;=\;
   \sum_{i = 1}^N D(z_i),
-  \qquad
-  D(z) \;=\; \Im\,\mathrm{Li}_2(z) + \arg(1 - z)\,\log\lvert z \rvert,
 $$
 
-*where $D$ is the **Bloch–Wigner dilogarithm**.  Degenerate (flat)
-tetrahedra with $z_i \in \mathbb{R}$ contribute $D(z_i) = 0$.*
+*where $D(z_i)$ is the Bloch-Wigner dilogarithm evaluated at the shape parameter. Flat tetrahedra ($z_i \in \mathbb{R}$) contribute zero volume.*
 
 ## Braid-theoretic consequence
 
-A knot diagram with $c$ crossings induces an ideal triangulation of
-$S^3 \setminus \mathcal{K}$ with one ideal tetrahedron per crossing
-(possibly merged or degenerate under simplification).  The volume
-is therefore **additive over crossings**:
+A knot diagram induces an ideal triangulation containing one tetrahedron per crossing. Consequently, the volume sums additively over crossings:
 
 $$
   V(\mathcal{K}) \;=\; \sum_{\text{crossings } c} D(z_c).
 $$
 
-Torus knots have all crossings pressed onto a torus surface — every
-$z_c$ is real — so $V(T_{m,n}) = 0$.  This is the categorical
-explanation of why Seifert-fibered nucleons contribute zero hyperbolic
-volume in the [JSJ decomposition of the atomic braid](#thm:wedderburn-mass-formula).
+Torus knots project entirely onto a surface, forcing every $z_c$ to be real. Their hyperbolic volume vanishes identically.
 
 ## Extremality
 
-Among all $z \in \mathbb{C}$, the Bloch–Wigner function attains its
-maximum at the regular shape $z = e^{i\pi/3}$:
+The Bloch-Wigner function reaches its maximum at the regular shape $z = e^{i\pi/3}$, yielding the Lobachevsky constant $v_3 \approx 1.01494$. The figure-eight knot $4_1$ comprises exactly two such tetrahedra, producing the minimum hyperbolic volume $V(4_1) = 2 v_3 \approx 2.02988$. This extremality pins the substrate parameter $q_0$ by calibrating the quantum of action $\hbar_q^2$.
 
-$$
-  D(e^{i\pi/3}) \;=\; \mathrm{Cl}_2(\pi/3) \;=\;
-  \sum_{n \geq 1} \frac{\sin(n\pi/3)}{n^2}
-  \;\approx\; 1.01494 \;=:\; v_3,
-$$
-
-the **Lobachevsky constant**.  The figure-eight knot $4_1$ has two
-ideal tetrahedra both of shape $e^{i\pi/3}$, giving
-$V(4_1) = 2 v_3 \approx :val[Vol_4_1]{precision=6}$ — the minimum volume among
-hyperbolic knots.  This is the normalization used to pin the
-substrate parameter $q_0$ via
-[$\hbar_q^2 = V(4_1) / (m_\mu / m_e)$](#prop:local-substrate-q).
-
-**Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall: it invokes real- or complex-analytic constructs — real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.
+**Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall. It applies $q$-deformation identities over an abstract coefficient ring and specializes them to real-valued observables at $q_0$.

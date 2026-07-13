@@ -1,5 +1,5 @@
 The [motivic perpetual obstruction](#conj:motivic-perpetual-obstruction)
-asserts that the Yekutieli obstruction $\kappa_n$ is non-trivial at
+asserts that the obstruction $\kappa_n$ is non-trivial at
 *every* finite tower level $n$. Under the surreal lift, this infinite
 family of non-vanishing statements is the shadow of a single graded
 coefficient.

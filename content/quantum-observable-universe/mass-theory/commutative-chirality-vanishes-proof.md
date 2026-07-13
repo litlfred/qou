@@ -1,13 +1,13 @@
 *Proof.*
 By [Frobenius S-classification](#prop:frobenius-s-classification),
-$H_A = q - q^{-1}$ has $S$-eigenvalue $-1$, so
-$H_A^2$ has eigenvalue $+1$. As $q \to 1$, $H_A \to 0$ continuously,
-hence $H_A^2 \to 0$. The chirality functional
+$h_{\mathrm{A}} = q - q^{-1}$ has $S$-eigenvalue $-1$, so
+$h_{\mathrm{A}}^2$ has eigenvalue $+1$. As $q \to 1$, $h_{\mathrm{A}} \to 0$ continuously,
+hence $h_{\mathrm{A}}^2 \to 0$. The chirality functional
 $\Phi_3 = \sum_i \log\lvert\chi^{\mathrm{sym}}_i / \chi^{\mathrm{alt}}_i\rvert$
 remains finite (each per-factor ratio approaches $\pm 1$ classically;
 the sum of logs approaches $0$ for any chain whose primitive factors
 include at least one ud crossing, and it approaches a finite limit
-otherwise). The product $H_A^2 \Phi_3 \to 0 \cdot \Phi_3 = 0$.
+otherwise). The product $h_{\mathrm{A}}^2 \Phi_3 \to 0 \cdot \Phi_3 = 0$.
 
 For the quantum 3-integer:
 $\lim_{q \to 1}[3]_q = \lim_{q \to 1}(q^2 + 1 + q^{-2}) = 3$.
@@ -16,7 +16,7 @@ $\square$
 **Companion reading.**
 The crossing-energy interpretation of the commutative limit
 ([commutative crossing energy](#rem:commutative-crossing-energy))
-shows that the same vanishing $H_A \to 0$ corresponds geometrically
+shows that the same vanishing $h_{\mathrm{A}} \to 0$ corresponds geometrically
 to the unit-circle parameterisation $q = e^{i\varTheta}$, where the
 crossing weight $q - q^{-1} = 2i\sin\varTheta$ becomes pure imaginary.
 The two readings agree: the chirality channel collapses to zero in

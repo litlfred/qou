@@ -1,6 +1,4 @@
-The substrate parameter $q$ is the variable of the nuclear Skein
-polynomial.  The transfer matrix product computes this polynomial
-in factored form without expansion.
+The substrate parameter $q$ acts as the variable of the nuclear Skein polynomial. The transfer matrix product computes this polynomial in factored form without expansion.
 
 **Proposition.**
 *Let $\mathcal{N}(Z, N)$ be a nucleus with $A = Z + N$ nucleons.

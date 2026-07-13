@@ -33,12 +33,12 @@ names two reconciliation candidates:
 > "the ρ_K closure path of `prop:atomic-mass-gb-nf` and the Faddeev
 > Φ_q archimedean tower are the two reconciliation candidates."
 
-## Testing the Faddeev Φ_q tower (Route b)
+## Testing the compact q-dilog Φ_q tower (Route b)
 
 The 137× factor is precisely what the framework calls "the
 dimensional mass scale killed by the bar-symmetric projection of
 Li_2^q" (`atom-knot-mass-derivation.md` line 89-91). Replacing
-Li_2^q with Φ_q (Faddeev's bar-asymmetric quantum dilog) should
+Li_2^q with Φ_q (compact-q-dilog bar-asymmetric quantum dilog) should
 restore it.
 
 Probe at the proton (this session, with proton's |V̂_i| ∈
@@ -84,7 +84,7 @@ Unlike the earlier "find a substrate-form for Δ_λ" or "derive ρ_K
 from scratch" framings, the regularization-of-Φ_{q⁻¹} problem is:
 
 1. **Well-defined**: a specific divergence at a specific boundary.
-2. **Mathematically tractable**: Faddeev's quantum dilog has known
+2. **Mathematically tractable**: compact quantum dilogarithm has known
    analytic-continuation tools (modular companion `Φ_{q̃}`, the
    q-pentagon identity, matched asymptotic at the boundary).
 3. **Existence-guaranteed**: the answer MUST exist — CODATA m_p
@@ -128,7 +128,7 @@ To formalise the closure (once a regularization scheme lands):
 | Object | Currently in Lean? | Needed |
 |---|---|---|
 | Li_2^q definition + convergence | nil | full closure conditions |
-| Φ_q definition | nil | needed (Faddeev pentagon, modular pair) |
+| Φ_q definition | nil | needed (compact-q-dilog pentagon, modular pair) |
 | `prop:li2q-phiq-bar-symmetrization` (bar-pair identity) | nil | THE load-bearing identity |
 | Regularization scheme (1, 2, or 3 above) | nil | needed |
 | Archimedean realization functor as categorical operator | nil | needed (currently informally defined) |
@@ -152,7 +152,7 @@ that lands, the closure derivation becomes a Lean computation.
 | "92% of gap at h² coefficient → Reading-A" | RETRACTED (Markov-trace normalization bug) |
 | "ρ_K closure is the universal open piece" | TRUE but too abstract — restated as the regularization problem |
 | "linking_weight and ρ_K are the same closure problem under different names" | TRUE — and BOTH reduce to the Φ_{q⁻¹} regularization |
-| "Sibling's Bring+Faddeev formula is closest at +108 ppm" | EXPLAINED — sibling's `1/(1−h·q¹⁰)` is the k=1 leading Faddeev kernel of an unregularized Φ_q; the +108 ppm match is a partial Faddeev capture |
+| "Sibling's Bring+compact-q-dilog formula is closest at +108 ppm" | EXPLAINED — sibling's `1/(1−h·q¹⁰)` is the k=1 leading compact-q-dilog kernel of an unregularized Φ_q; the +108 ppm match is a partial compact-q-dilog capture |
 | "Crystal weights c_λ gave WRONG_SIGN" | UNCHANGED — Option E remains the substrate-categorical-route alternative if regularization fails |
 
 ## See also

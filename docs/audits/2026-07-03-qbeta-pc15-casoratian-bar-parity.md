@@ -105,7 +105,11 @@ genuine bar-symmetric object before the expensive H₄ Hoefsmit computation is u
 
 This probe was run as part of a full **reanalysis of the path to 1 ppQ** (2026-07-03,
 main @ `746a5091`). Headline corrections recorded for siblings:
-- **L2 = 3/7** (m_e, m_p anchors + m_K/m_π); the four failing genuine predictions
+- **L2 = 3/7** (m_e, m_p anchors + m_K/m_π) at this doc's date — **2/7 since
+  2026-07-04** (m_p dropped: its fitted Habiro tower was removed; de-fitted
+  round-trip +1.35 ppb, ~437× miss, per
+  [`2026-07-04-c4-mu-p-tension-pin-dependence.md`](2026-07-04-c4-mu-p-tension-pin-dependence.md));
+  the failing genuine predictions
   (m_μ ×964, Q_β ×160, m_n ×181, Δ_pn ×159) all funnel into the **s5-so3 keystone**.
 - **Identity I ≠ keystone unlock.** The RSK/SYT surge drove Identity I to **one remaining
   OV `sorry`** (unconditional for all physical n) — but it is a rigor input to a

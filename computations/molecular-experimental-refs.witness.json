@@ -1,15 +1,15 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-09T16:24:13.175692+00:00",
-  "commitSha": "e84c52a0a91f571f4f3187b5649fdbe493a0ea77",
+  "engineVersion": "python 3.13.12",
+  "computedAt": "2026-07-07T11:17:27.794642+00:00",
+  "commitSha": "09145f168191a3607c090e24b554eae32a30f4d9",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 11,
   "computation": "molecular-experimental-refs",
   "scriptFile": "molecular_experimental_refs.py",
-  "scriptHash": "24c45543b3c4",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "77efe44c3bd3",
+  "scriptCommitSha": "bd1bdfe0583787dcbaaaa0a6d7b40a50159cdfb6",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -17,9 +17,12 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "mpmath": "1.4.1"
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "Experimental molecular comparison references (bond dissociation energies, benzene bond lengths, benzene resonance energy) — the single source of truth for the :val-pinned literals in the molecular-construction .md blocks. All values are experimental (NIST / standard), NOT derived from q₀. De-hardcodes the inline literals flagged in organic-chem-redo WS-B (B1).",
   "data": {

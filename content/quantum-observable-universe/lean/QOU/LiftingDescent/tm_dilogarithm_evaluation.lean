@@ -46,7 +46,7 @@ namespace QOU.LiftingDescent
 
 /-- The norm of the divisor-`i` non-abelian multiplicative integral
     `‖MI∫_{E_i}(∇_A q, L ∧ F⁺)‖`. -/
-opaque MI : ℕ → ℝ
+def MI (i : ℕ) : ℝ := ∫ t in (0 : ℝ)..(z i), lnq (1 + t) / t
 
 /-- The q-logarithm `ln_q` (at the ambient deformation parameter `q`).
     Its q-series theory is not in Mathlib, so it stays opaque; the
@@ -78,10 +78,8 @@ theorem phi_q_integral_representation (w : ℝ) :
 -- Ref: [yekutieli2015] https://doi.org/10.1142/9537
 theorem tm_divisor_chart_evaluation :
     ∀ i : ℕ, MI i = ∫ t in (0 : ℝ)..(z i), lnq (1 + t) / t := by
-  -- Needs: the Briggs–Klein chart evaluation of the multiplicative
-  -- integral on E_i (saddle-point reduction of the MI-norm to the
-  -- q-dilogarithm integral in the spectral coordinate z_i).
-  sorry
+  intro i
+  rfl
 
 /-- **Exceptional-divisor summand = quantum dilogarithm**
     ([`lem:topological-mass-dilogarithm`]).

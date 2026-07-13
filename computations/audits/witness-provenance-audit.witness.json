@@ -1,12 +1,12 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-03T00:16:39.877746+00:00",
-  "commitSha": "44cd40e58bfd9ad590d6eed856b996feb741f21c",
+  "engineVersion": "python 3.13.12",
+  "computedAt": "2026-07-07T13:58:52.938313+00:00",
+  "commitSha": "85da4f43133d9d70ca3582f4fa4f31771b5ec3f1",
   "assertions": [
     {
       "name": "no_missing_provenance",
-      "computed": 254,
+      "computed": 261,
       "expected": 0,
       "passed": false,
       "tolerance": 0,
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 12,
+  "durationMs": 8,
   "computation": "witness-provenance-audit",
   "scriptFile": "witness_provenance_audit.py",
   "scriptHash": "1abb80bb6c90",
-  "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
+  "scriptCommitSha": "bd1bdfe0583787dcbaaaa0a6d7b40a50159cdfb6",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -26,9 +26,12 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "I14 audit per repo-owner directive 2026-05-19: every witness JSON must declare engine, scriptFile, commitSha (WitnessBuilder convention) so it can be reproduced and traced. Witnesses ending in -audit/-scan/-compliance are exempt by glob (state-tracking outputs). Files listed under methodology-deprecation's removed_legacy_compute_artifacts.removed_witnesses are skipped (deleted by design).",
   "parameters": {
@@ -46,12 +49,12 @@
   },
   "data": {
     "counts": {
-      "total_scanned": 1560,
-      "prov_ok": 1250,
-      "prov_audit_exempt": 55,
-      "prov_missing": 254,
+      "total_scanned": 1680,
+      "prov_ok": 1362,
+      "prov_audit_exempt": 56,
+      "prov_missing": 261,
       "prov_parse_error": 1,
-      "completeness_ratio": 0.8365384615384616
+      "completeness_ratio": 0.844047619047619
     },
     "by_verdict": {
       "PROV_OK": [
@@ -69,6 +72,10 @@
         },
         {
           "witness": "a-K-via-lp-dual.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "a3-mirror-residual-reconciliation.witness.json",
           "missing_fields": []
         },
         {
@@ -117,6 +124,30 @@
         },
         {
           "witness": "affine-light-cone-figure.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "aj-borromean-colored-jones-tower.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "aj-figure-eight-certificate.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "aj-figure-eight-operator-construct-verify.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "aj-masbaum-crosscheck.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "aj-operator-aw-shape-probe.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "aj-trefoil-operator-construct-verify.witness.json",
           "missing_fields": []
         },
         {
@@ -356,6 +387,10 @@
           "missing_fields": []
         },
         {
+          "witness": "balanced-head-dominance-binding-period-probe.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "bar-symmetry-three-candidates.witness.json",
           "missing_fields": []
         },
@@ -508,6 +543,10 @@
           "missing_fields": []
         },
         {
+          "witness": "binding-manybody-jet-filtration.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "binding-mayer-linked-cluster-decomposition.witness.json",
           "missing_fields": []
         },
@@ -600,7 +639,19 @@
           "missing_fields": []
         },
         {
+          "witness": "borromean-diagonal-recurrence-hunt.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "borromean-diagonal-recurrence-reconstruct.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "borromean-markov-trace-h-expansion-50dps.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "borromean-qzeil-fixedq.witness.json",
           "missing_fields": []
         },
         {
@@ -1460,7 +1511,19 @@
           "missing_fields": []
         },
         {
+          "witness": "defect-info-a-trend-probe.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "defect-weighted-zero-point-probe.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "definitive-q0-shift.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "deligne-stable-range-binding-period-probe.witness.json",
           "missing_fields": []
         },
         {
@@ -1632,6 +1695,10 @@
           "missing_fields": []
         },
         {
+          "witness": "deuteron-from-scratch-ledger.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "dirac-yekutieli-combinations-50dps.witness.json",
           "missing_fields": []
         },
@@ -1673,6 +1740,10 @@
         },
         {
           "witness": "electron-m_e-derivation.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "em-linking-cusp-geometry-probe.witness.json",
           "missing_fields": []
         },
         {
@@ -1736,6 +1807,10 @@
           "missing_fields": []
         },
         {
+          "witness": "frobenius-gram-delta-lambda.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "full-twist-delta-n2-verification.witness.json",
           "missing_fields": []
         },
@@ -1773,6 +1848,10 @@
         },
         {
           "witness": "gram-matrix-dual.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "gram-transfer-quadratic.witness.json",
           "missing_fields": []
         },
         {
@@ -1944,6 +2023,10 @@
           "missing_fields": []
         },
         {
+          "witness": "habiro-borromean-colored-jones.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "habiro-coefficients-beryllium-10.witness.json",
           "missing_fields": []
         },
@@ -2076,6 +2159,10 @@
           "missing_fields": []
         },
         {
+          "witness": "he4-link-volume-braid-closure.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "he4-qreeb-phase-falsification.witness.json",
           "missing_fields": []
         },
@@ -2129,6 +2216,10 @@
         },
         {
           "witness": "hyperbolic-volumes.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "i6-trace-convention-pin.witness.json",
           "missing_fields": []
         },
         {
@@ -2305,6 +2396,10 @@
         },
         {
           "witness": "lambda-scale-refinements-composed-predictions.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "landauer-crossing-energy-probe.witness.json",
           "missing_fields": []
         },
         {
@@ -2820,6 +2915,10 @@
           "missing_fields": []
         },
         {
+          "witness": "parabolic-cylinder-channel-mixing-probe.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "path-b-evacuation.witness.json",
           "missing_fields": []
         },
@@ -2996,6 +3095,14 @@
           "missing_fields": []
         },
         {
+          "witness": "probe-9b-gate-interface-algebra.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "probe-9b-h-power-asymmetry.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "probe-9b-laurent-degree-10a5.witness.json",
           "missing_fields": []
         },
@@ -3104,6 +3211,50 @@
           "missing_fields": []
         },
         {
+          "witness": "b4-1four-complete-graph-writhe-signs.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "b4-1four-pairtype-magnitude-profile.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "b4-1four-reeb-flow-magnitude.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "b4-antisym-hecke-exchange-derivation.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "b4-connected-bar-parity.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "b4-exchange-perron-frobenius-constraint.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "b4-framework-connected-cumulant-deficit.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "b4-iceil-norm-ceiling.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "b4-iconn-irreducibly-connected.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "b4-slater-dictionary-functional-form.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "b4-value-cumulant-target.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "binding-depth-stratified-derived-alpha-probe.witness.json",
           "missing_fields": []
         },
@@ -3172,6 +3323,10 @@
           "missing_fields": []
         },
         {
+          "witness": "categorical_linking_reeb_flow_attack.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "charge-symmetry-bond-probe.witness.json",
           "missing_fields": []
         },
@@ -3236,6 +3391,10 @@
           "missing_fields": []
         },
         {
+          "witness": "em-coupling-projection-probe.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "ew-higgs-sdp-probe.witness.json",
           "missing_fields": []
         },
@@ -3265,6 +3424,10 @@
         },
         {
           "witness": "flavor-split-geometric-closure-probe.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "flavor-split-substrate-probe.witness.json",
           "missing_fields": []
         },
         {
@@ -3388,6 +3551,14 @@
           "missing_fields": []
         },
         {
+          "witness": "gram-norm-binding-probe.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "gram-qtrace-hutchinson-probe.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "gt-matrix-pslq-probe.witness.json",
           "missing_fields": []
         },
@@ -3472,7 +3643,31 @@
           "missing_fields": []
         },
         {
+          "witness": "keystone-qbessel-tricomi-c0q-nodes.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "keystone-qhankel-eq2-vacuum-row.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "keystone-valuemap-genuine-smatrix-s013.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "keystone-valuemap-qbessel-gate-s013.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "keystone-valuemap-screen-s013.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "keystone-valuemap-sigma345-dm6.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "keystone-valuemap-target-is-compact-hecke.witness.json",
           "missing_fields": []
         },
         {
@@ -3508,7 +3703,11 @@
           "missing_fields": []
         },
         {
-          "witness": "m-p-bring-plus-faddeev-h4-probe.witness.json",
+          "witness": "light-series-open-loop-decomposition.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "m-p-bring-plus-phi-q-h4-probe.witness.json",
           "missing_fields": []
         },
         {
@@ -3533,6 +3732,10 @@
         },
         {
           "witness": "meson-typed-crossing-probe.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "mirror-parity-linear-trace-probe.witness.json",
           "missing_fields": []
         },
         {
@@ -3596,11 +3799,67 @@
           "missing_fields": []
         },
         {
+          "witness": "pn-pair-two-sector-split.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "probe-convention-d-vs-c-borromean.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "probe-d-barparity-binding.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "probe-d-cocasimir-barparity.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "probe-d-delta-lambda-terms.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "probe-d-dressing-cross-a.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "probe-d-dressing-is-proton-net.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "probe-d-qbeta-h-invariant.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "probe-d-symbolic-prospects.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "probe-h3-central-idempotents-exact.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "probe-markov-trace-recursive-reducer.witness.json",
           "missing_fields": []
         },
         {
+          "witness": "probe-mup-dressing-attribution.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "probe-mup-dressing-vs-even-kernel.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "probe-path-a-net-vs-trm-leading-order.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "probe-qbeta-over-e0-classical-vanishing.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "probe-trace-convention-production-impact.witness.json",
           "missing_fields": []
         },
         {
@@ -3672,6 +3931,10 @@
           "missing_fields": []
         },
         {
+          "witness": "reeb-g-structural-identity.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "rho-k-markov-multiplicativity.witness.json",
           "missing_fields": []
         },
@@ -3681,6 +3944,10 @@
         },
         {
           "witness": "su4-occupancy-binding-sweep-probe.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "su4-supermultiplet-locality.witness.json",
           "missing_fields": []
         },
         {
@@ -3852,7 +4119,23 @@
           "missing_fields": []
         },
         {
+          "witness": "qbeta-b1-fourone-cyclotomic-rebasing.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "qbeta-b3-ladder-basis-parity.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "qbeta-b3u-uside-transfer.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "qbeta-bar-even-kernel-invariant-probe.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "qbeta-bar-split-ord17.witness.json",
           "missing_fields": []
         },
         {
@@ -3897,6 +4180,10 @@
         },
         {
           "witness": "qbeta-c3even-exact-sseries.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "qbeta-c4qz-fourone-operator-q1-shadow.witness.json",
           "missing_fields": []
         },
         {
@@ -3984,6 +4271,10 @@
           "missing_fields": []
         },
         {
+          "witness": "qbeta-ck-sseries-exact-rational.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "qbeta-ck-sseries-operator-match.witness.json",
           "missing_fields": []
         },
@@ -4052,7 +4343,35 @@
           "missing_fields": []
         },
         {
+          "witness": "qbeta-eta-singularity.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "qbeta-eta-square-fibre-probe.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "qbeta-eval-map-bar-decomposition.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "qbeta-even-channel-bar-split.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "qbeta-exotic-lusztig-magnitude-preflight.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "qbeta-fmap-phi-b-root-of-unity-reference.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "qbeta-fsc-g-pattern-comparison.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "qbeta-h4-gram-barchannel-split.witness.json",
           "missing_fields": []
         },
         {
@@ -4136,6 +4455,10 @@
           "missing_fields": []
         },
         {
+          "witness": "qbeta-isospin-barodd-mechanism.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "qbeta-jacobi-anger-tower-general.witness.json",
           "missing_fields": []
         },
@@ -4188,6 +4511,10 @@
           "missing_fields": []
         },
         {
+          "witness": "qbeta-pc15-casoratian-bar-parity.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "qbeta-per-block-paper-closed-forms.witness.json",
           "missing_fields": []
         },
@@ -4209,6 +4536,14 @@
         },
         {
           "witness": "qbeta-qdifference-recurrence-datablock-probe.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "qbeta-r12-knot-invariant.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "qbeta-r12-trace-variable.witness.json",
           "missing_fields": []
         },
         {
@@ -4241,6 +4576,10 @@
         },
         {
           "witness": "qbeta-residue-followup-sl6-demazure.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "qbeta-route-alpha-lift-prediction.witness.json",
           "missing_fields": []
         },
         {
@@ -4328,6 +4667,14 @@
           "missing_fields": []
         },
         {
+          "witness": "qbeta-t1-barpair-symmetrization.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "qbeta-t3-carrier-q1-order-preflight.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "qbeta-transfer-eigenvalue-proof.witness.json",
           "missing_fields": []
         },
@@ -4341,6 +4688,22 @@
         },
         {
           "witness": "qbeta-wenzl-habiro-chain-alpha.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "qbeta-z-bar-parity-fmap-class.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "qbeta-zeta4-eta-descent.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "qbeta-zeta4-faithful-odd.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "qbeta-zeta4-fibre-cyclotomic.witness.json",
           "missing_fields": []
         },
         {
@@ -4424,7 +4787,23 @@
           "missing_fields": []
         },
         {
+          "witness": "rho-k-counit-defect-form.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "rho-k-counit-isotope-systematics.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "rho-k-counit-vortex-writhe.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "rho-k-full-via-wenzl-lr.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "rho-k-graded-atomic-mass.witness.json",
           "missing_fields": []
         },
         {
@@ -4432,7 +4811,7 @@
           "missing_fields": []
         },
         {
-          "witness": "rho-k-h3a-crystal.witness.json",
+          "witness": "rho-k-h3a-counit-canonical-integral.witness.json",
           "missing_fields": []
         },
         {
@@ -4445,10 +4824,6 @@
         },
         {
           "witness": "rho-k-h3a-lp-dual.witness.json",
-          "missing_fields": []
-        },
-        {
-          "witness": "rho-k-h3a-refinement.witness.json",
           "missing_fields": []
         },
         {
@@ -4628,6 +5003,14 @@
           "missing_fields": []
         },
         {
+          "witness": "alternating-tower-borromean-winding-probe.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "bar-parity-delta-lambda-prune-probe.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "binding-manybody-series.witness.json",
           "missing_fields": []
         },
@@ -4640,6 +5023,22 @@
           "missing_fields": []
         },
         {
+          "witness": "deformation-selection-5g-probe.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "deuteron-tower-fusion-frame-probe.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "e-unit-decay-width-reconcile-probe.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "e-unit-parity-constraint-probe.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "frakV-askey-wilson-recurrence-tie-probe.witness.json",
           "missing_fields": []
         },
@@ -4649,6 +5048,14 @@
         },
         {
           "witness": "frakV-zeta4-fibre-vs-observable-probe.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "gauss-linking-channel-slope-probe.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "hoefsmit-toroidal-ladder-probe.witness.json",
           "missing_fields": []
         },
         {
@@ -4740,11 +5147,27 @@
           "missing_fields": []
         },
         {
+          "witness": "toroidal-level-selection-hopf-probe.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "toroidal-level-selection-three-strand-probe.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "unified-tau-odd-partner-solve.witness.json",
           "missing_fields": []
         },
         {
+          "witness": "whipple-rotation-involution-probe.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "wlambda-identity-i-structure-probe.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "zeropoint-unit-candidate-gate-probe.witness.json",
           "missing_fields": []
         },
         {
@@ -4780,7 +5203,7 @@
           "missing_fields": []
         },
         {
-          "witness": "mass-table-bring-faddeev-h4-sweep.witness.json",
+          "witness": "mass-table-bring-phi-q-h4-sweep.witness.json",
           "missing_fields": []
         },
         {
@@ -4860,6 +5283,26 @@
           "missing_fields": []
         },
         {
+          "witness": "theta-mn-bondcount-linearchain.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "theta-mn-linearchain-vs-allpairs.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "theta-mn-multiplicity.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "theta-wn-jetfilt-linkvolume.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "theta-wn-kernel-derive-or-refute.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "three-body-joint-trace-a3.witness.json",
           "missing_fields": []
         },
@@ -4921,6 +5364,10 @@
         },
         {
           "witness": "tritium-h5-psd-feasibility.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "two-filtration-bridge-small-cases.witness.json",
           "missing_fields": []
         },
         {
@@ -5053,6 +5500,10 @@
         },
         {
           "witness": "yekutieli-per-cell-dim-h3-normalisation-probe.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "zero-point-channel-energy-probe.witness.json",
           "missing_fields": []
         }
       ],
@@ -6431,6 +6882,18 @@
           ]
         },
         {
+          "witness": "su4-1111-markov-trace.witness.json",
+          "missing_fields": [
+            "commitSha"
+          ]
+        },
+        {
+          "witness": "su4-connected-1111-magnitude.witness.json",
+          "missing_fields": [
+            "commitSha"
+          ]
+        },
+        {
           "witness": "theta-poisson-mass-resummation-prune.witness.json",
           "missing_fields": [
             "engine",
@@ -6515,6 +6978,22 @@
           ]
         },
         {
+          "witness": "qbeta-chain4-demazure.witness.json",
+          "missing_fields": [
+            "engine",
+            "scriptFile",
+            "commitSha"
+          ]
+        },
+        {
+          "witness": "qbeta-chain4-wenzl-qpoch.witness.json",
+          "missing_fields": [
+            "engine",
+            "scriptFile",
+            "commitSha"
+          ]
+        },
+        {
           "witness": "qbeta-coherent-collapse-sinh-cosh.witness.json",
           "missing_fields": [
             "engine",
@@ -6525,6 +7004,14 @@
         {
           "witness": "qbeta-composite4-fibre-root-of-unity-probe.witness.json",
           "missing_fields": [
+            "commitSha"
+          ]
+        },
+        {
+          "witness": "qbeta-daha-macdonald.witness.json",
+          "missing_fields": [
+            "engine",
+            "scriptFile",
             "commitSha"
           ]
         },
@@ -6631,6 +7118,18 @@
           "witness": "qou-mass-canonical-wiring-example.witness.json",
           "missing_fields": [
             "scriptFile"
+          ]
+        },
+        {
+          "witness": "rho-k-h3a-crystal.witness.json",
+          "missing_fields": [
+            "commitSha"
+          ]
+        },
+        {
+          "witness": "rho-k-h3a-refinement.witness.json",
+          "missing_fields": [
+            "commitSha"
           ]
         },
         {
@@ -6912,7 +7411,7 @@
           ]
         },
         {
-          "witness": "xi-ell-faddeev-phi-q-probe.witness.json",
+          "witness": "xi-ell-phi-q-probe.witness.json",
           "missing_fields": [
             "engine",
             "scriptFile",
@@ -7158,6 +7657,10 @@
         },
         {
           "witness": "probe-4c-li6-large-d-scan.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "reeb-5g-unit-anchor-scan.witness.json",
           "missing_fields": []
         },
         {

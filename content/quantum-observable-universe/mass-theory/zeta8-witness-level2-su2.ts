@@ -7,7 +7,7 @@ export default proposition({
     "$(\\zeta_8;\\zeta_8)_7 = 8$, $\\mathrm{ord}(\\sigma_i) = 8$, " +
     "$[4]_q = 0$, and the Wenzl annihilator",
   lean: {
-    ref: "qou:QOU.BraidKnot.Zeta8Witness.qInt_four_at_zeta8",
+    ref: "qou:QOU.BraidKnot.Zeta8Witness.qInt_four_eq_zero",
   },
   uses: [
     "prop:cyclotomic-strand-doubling",

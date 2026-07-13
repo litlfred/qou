@@ -139,6 +139,16 @@ def dimOf (l : List ℕ) : ℕ := Nat.factorial l.sum / (hookLengths l).prod
 /-- `Σ_{c∈λ} h_c²`. -/
 def sumHookSq (l : List ℕ) : ℕ := ((hookLengths l).map (· ^ 2)).sum
 
+/-- Content `c(cell) = j − i` of each cell, enumerated over the SAME cells as
+`hookLengths` (row `i`, column `j`). Structurally computable. -/
+def contents (l : List ℕ) : List ℤ :=
+  (List.range l.length).flatMap fun i =>
+    let li := l.getD i 0
+    (List.range li).map fun j => (j : ℤ) - (i : ℤ)
+
+/-- `Σ_{c∈λ} content(c)²`. -/
+def sumContentSq (l : List ℕ) : ℤ := ((contents l).map (· ^ 2)).sum
+
 /-- The partitions of `n`, supplied as explicit descending lists (the
 combinatorial content — hooks, `dim`, the sum — is computed, not tabulated). -/
 def partitionsOf : ℕ → List (List ℕ)
@@ -174,11 +184,42 @@ theorem twoM_eq_numer_base :
     twoM 6 * (Nat.factorial 6 : ℤ) = 2 * (numerComputed 6 : ℤ) := by
   refine ⟨?_, ?_⟩ <;> decide
 
-/-! **Identity I (general) — DEFERRED.** `2·M(n) = n(3n−1)` for all `n ≥ 1`. A
-general Lean proof needs the hook-length formula (absent from Mathlib); the
-`partitionsOf` enumerator and an HLF-based `dim` would replace the explicit
-partition lists. Compute-verified `n = 2..14` (audit + witness); `n = 1..6` now
-Lean-verified above. Tracked as a Mathlib-extension opportunity.
-Ref: [manuscript] docs/audits/2026-06-20-keystone-wlambda-C-n-closed-form.md -/
+/-- **Piece A — the per-partition hook–content identity** (HLF-free):
+`Σ_{c∈λ} h_c² = Σ_{c∈λ} content(c)² + n²`, where `n = Σλ`. This is the `2n²`
+piece of Identity I's content decomposition (`twoM_content_decomposition`),
+summed under the Plancherel measure via `E_Planch[n²] = n²`.
+
+**Why this matters for the deferred Identity I.** Unlike the full Identity I,
+Piece A uses **no** hook-length formula, no `dim`, no SYT count, no RSK — it is a
+single-Young-diagram combinatorial fact (`sumHookSq` vs `sumContentSq`, no
+`dimOf`). So it is *not* blocked on the missing Mathlib infra: a general proof
+needs only a Young-diagram induction. Verified here for every partition of
+`n = 1..6` (and `n = 0`, vacuously). This isolates the HLF-free half of
+Identity I in Lean. General `n`: a Young-diagram induction (tracked separately
+from the HLF fill). -/
+theorem pieceA_hook_content_identity (n : ℕ) (hn : n ≤ 6) (l : List ℕ)
+    (hl : l ∈ partitionsOf n) :
+    (sumHookSq l : ℤ) = sumContentSq l + (l.sum : ℤ) ^ 2 := by
+  interval_cases n <;> fin_cases hl <;> decide
+
+/-! **Identity I (general) — mathematically RESOLVED, HLF-free (2026-07-07).**
+`2·M(n) = n(3n−1)` for all `n ≥ 1`. The prior "deferred, needs the hook-length
+formula" note was **mis-scoped**: Identity I never needed the HLF. The content
+decomposition (`twoM_content_decomposition`) is a complete proof route:
+
+* **Piece A** (`2n²`): `Σ_c h_c² = Σ_c content(c)² + n²`, per partition —
+  `pieceA_hook_content_identity` above (HLF-free; Lean-verified `n ≤ 6`,
+  exact-verified `n ≤ 22`; general = classical beta-number / corner induction).
+* **Piece B** (`n(n−1)`): `E_Planch[Σ_c content(c)²] = C(n,2)` — proved via
+  Jucys–Murphy: `Σ_k X_k²` is central with eigenvalue `Σ_c content²` on `λ`, and
+  its `ℂ[S_n]` identity-coefficient (`= E_Planch[·]` by the regular character) is
+  `Σ_{k=1}^n (k−1) = C(n,2)` (only the `(i,k)²=e` terms hit the identity). **No
+  HLF, no dimensions.** Brute-verified in `ℂ[S_n]`, `n = 2..6`.
+
+Assembly: `M(n) = C(n,2) + n² = n(3n−1)/2`. The remaining work is **Lean
+formalization** of A (Young-diagram combinatorics) and B (`MonoidAlgebra ℂ (S_n)`
++ regular-character bridge) — **neither the HLF**. Full proof:
+`docs/audits/2026-07-07-keystone-identity-I-hlf-free-resolution.md`.
+Ref: [manuscript] docs/audits/2026-07-07-keystone-identity-I-hlf-free-resolution.md -/
 
 end QOU.BraidKnot.WLambdaDefect

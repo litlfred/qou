@@ -1,32 +1,9 @@
-QOU's algebraic side is a non-commutative probability space in
-Voiculescu's sense [`biane1998`]: the inductive-limit Hecke algebra
-$H_\infty(q)$ under the Markov trace $\mathrm{tr}_M$ forms a type
-II$_1$ factor with faithful trace. The braid transfer matrices
-$\sigma_i$ are the non-commuting random variables; their joint
-moments $\mathrm{tr}_M(\sigma_{i_1} \cdots \sigma_{i_k})$ are exactly
-the Jones polynomial values of the closed braid; the hyperbolic
-volume $\mathrm{Vol}(S^3 \setminus K)$ is free entropy in the
-asymptotic-log-moment sense.
+The algebraic sector forms a non-commutative probability space [`biane1998`]. The inductive-limit Hecke algebra $H_\infty(q)$ under the Markov trace $\mathrm{tr}_M$ yields a type II$_1$ factor. Braid transfer matrices $\sigma_i$ operate as non-commuting random variables. Their joint moments $\mathrm{tr}_M(\sigma_{i_1} \cdots \sigma_{i_k})$ evaluate the Jones polynomial. The hyperbolic volume $\mathrm{Vol}(S^3 \setminus K)$ defines free entropy.
 
-This section develops three QOU-internal results that follow from
-the non-commutative probability framing, all useful independently of
-any external comparison:
+We develop three framework-internal results:
 
-- The **q-deformed Central Limit Theorem** explaining why
-  macroscopic observations register continuous q-Gaussian
-  distributions on a deterministic discrete substrate.
-- A **locality / non-locality reconciliation** of the apparent
-  tension between Markov-property single-generator locality and
-  Gröbner–Shirshov composite non-locality.
-- An explicit **brane-tower convergence bound** controlling the
-  $\hbar_q^{2n}$ Yekutieli tower sum via q-Laplacian exponential
-  decay.
+- A **$q$-deformed Central Limit Theorem**. We explain how continuous $q$-Gaussian distributions emerge macroscopically.
+- A **locality / non-locality reconciliation**. We resolve the tension between Markov-property single-generator locality and Gröbner--Shirshov composite non-locality.
+- An explicit **brane-tower convergence bound**. We control the $\hbar_q^{2n}$ brane tower sum via $q$-Laplacian exponential decay.
 
-Each rests on Hecke-algebra inputs (Hecke quadratic relation, Markov
-property, Wenzl bridge) and well-established literature
-(Voiculescu–Biane free probability, Kerov–Vershik / Féray–Méliot
-asymptotic Plancherel, Blitvić's $(q,t)$-Gaussian CLT, Marsh–Tsallis
-q-Gaussian attractor for systems with global correlations).
-
-The subsequent section then uses this framework to compare QOU to
-Finster's causal fermion systems.
+These proofs combine Hecke-algebra inputs with non-commutative probability literature. We subsequently compare this framework with causal fermion systems.

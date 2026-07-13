@@ -1,0 +1,56 @@
+{
+  "computation": "deltalambda-sign-pivotal-grading-capstone",
+  "description": "The \u0394_\u03bb chirality sign (-1)^{n(\u03bb)}=q^{2n(\u03bb)}|_{q=i} is the principal (\u03c1) Z-grading, NOT an intrinsic ribbon/pivotal/FS invariant (not FS indicator, not twist ratio, not self-twist). \u0394_\u03bb is a \u03c1-graded dimension. Closes the sign-operator identification; magnitude |\u0394_\u03bb|=dim open.",
+  "auditOnly": "docs/audits/2026-07-11-deltalambda-sign-pivotal-grading-capstone.md",
+  "tier": "symbolic-exact (sympy; exact identities at q=i + FS-realness theorem)",
+  "computedAt": "2026-07-11T12:05:03.346683+00:00",
+  "commitSha": "370086cbac5cc1d78626e4f8cd48547196cc9c05",
+  "engine": "sympy",
+  "engineVersion": "1.14.0",
+  "scriptFile": "deltalambda_sign_pivotal_grading_capstone_probe.py",
+  "scriptHash": "a495343b87c2",
+  "assertions": [
+    {
+      "name": "not_frobenius_schur_indicator",
+      "passed": true,
+      "detail": "\u03bd_2(V_\u03bb)=+1 for ALL \u03bb (S_n reps real over \u211a); target (-1)^{n(\u03bb)} is mixed (5+/2-) => not the FS indicator"
+    },
+    {
+      "name": "not_a_sgn_twist_ratio",
+      "passed": true,
+      "detail": "\u03b8_{\u03bb'}/\u03b8_\u03bb|_{q=i} = i^{-4(n(\u03bb')-n(\u03bb))} = +1 \u2200\u03bb \u2260 (-1)^{n(\u03bb)} => not a twist ratio"
+    },
+    {
+      "name": "not_the_ribbon_self_twist",
+      "passed": true,
+      "detail": "\u03b8_\u03bb|_{q=i}=i^{2(n(\u03bb')-n(\u03bb))} \u2260 (-1)^{n(\u03bb)} => not the ribbon twist"
+    },
+    {
+      "name": "is_principal_rho_grading",
+      "passed": true,
+      "detail": "n(\u03bb)=\u03a3_box row(box) (principal-spec exponent, s_\u03bb(1,q,q\u00b2,\u2026)=q^{n(\u03bb)}\u00b7\u220f\u2026); q^{2n(\u03bb)}|_{q=i}=(-1)^{n(\u03bb)} for all \u03bb\u22a26 => the principal (\u03c1) Z-grading"
+    },
+    {
+      "name": "delta_lambda_is_rho_graded_dimension",
+      "passed": true,
+      "detail": "\u0394_\u03bb = sgn(w_0^{S_{\u03bb'}})\u00b7dim(\u03bb) = (q^{2n(\u03bb)}|_{q=i})\u00b7dim(\u03bb): principal-graded sign \u00d7 ungraded dimension. Magnitude |\u0394_\u03bb|=dim open (Track A)."
+    }
+  ],
+  "allPassed": true,
+  "result": {
+    "sign_is_principal_rho_grading": true,
+    "not_intrinsic_invariant": [
+      "FS-indicator",
+      "sgn-twist-ratio",
+      "ribbon-self-twist"
+    ],
+    "delta_lambda_characterization": "\u03c1-graded dimension: (q^{2n(\u03bb)}|_{q=i})\u00b7dim(\u03bb)",
+    "verdict": "CLOSED (sign-operator identification): the \u0394_\u03bb chirality sign (-1)^{n(\u03bb)} = q^{2n(\u03bb)}|_{q=i} is NOT an intrinsic ribbon/pivotal/Frobenius-Schur invariant of V_\u03bb \u2014 not the FS indicator (\u03bd_2=+1 \u2200\u03bb, target mixed), not a sgn-twist ratio (=+1 \u2200\u03bb), not the ribbon self-twist (content-graded, misses). It IS the PRINCIPAL (\u03c1) Z-grading n(\u03bb)=\u03a3 row (s_\u03bb(1,q,q\u00b2,\u2026)=q^{n(\u03bb)}\u00b7\u220f\u2026), an EXTERNAL grading of the category, distinct from the content grading c=col-row that framings/JM see. Hence \u0394_\u03bb = (\u03c1-graded sign at \u03b6\u2084)\u00b7dim(\u03bb) is a \u03c1-GRADED DIMENSION: the sign is the principal grading, the magnitude is the ordinary dimension. This closes the SIGN-operator question (a grading, not a twist). OPEN (Track A, gated): the magnitude |\u0394_\u03bb|=dim as a categorical closure. NOTHING wired."
+  },
+  "context": {
+    "closes": "the \u0394_\u03bb SIGN-operator identification (whole arc: knot\u2192framing\u2192JM\u2192invariant)",
+    "prior": "computations/deltalambda/deltalambda-sign-operator-narrowing.witness.json (#3523)",
+    "open": "magnitude |\u0394_\u03bb|=dim as a categorical closure (Track A / Subgoal-2, gated)",
+    "gate": "\u0394_\u03bb gate \u2014 structural closure of the sign question, no fit, nothing wired"
+  }
+}

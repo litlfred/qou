@@ -1,14 +1,7 @@
-Let $(\mathbf{C}, A, \tau)$ be a
-[QOU](#def:quantum-observable-universe) with substrate parameter
-$q > 1$.  Let $v$ be a divergence-free solution of the
-[q-NS system](#def:q-navier-stokes) with initial energy
-$E_0 = \lVert v_0 \rVert_A^2$ and let
-$C_q = (\sum_k [k]_q^{-2})^{1/2}$ be the
-[Sobolev constant](#prop:q-spectral-sobolev).
+Let $(\mathbf{C}, A, \tau)$ define a [QOU](#def:quantum-observable-universe) anchored at substrate parameter $q > 1$. Let $v$ represent a divergence-free solution to the [q-NS system](#def:q-navier-stokes) spanning initial energy $E_0 = \lVert v_0 \rVert_A^2$, and set $C_q = (\sum_k [k]_q^{-2})^{1/2}$ as the categorical [Sobolev constant](#prop:q-spectral-sobolev).
 
 **(a) q-Ladyzhenskaya inequality.**
-The advection term $B(v) = \mu \circ (v \otimes \nabla_q v)$
-satisfies
+The advection operator $B(v) = \mu \circ (v \otimes \nabla_q v)$ obeys
 
 $$
   \lVert B(v) \rVert_A
@@ -27,9 +20,7 @@ $$
   \Lambda_q = \frac{C_q^2E_0}{\nu_q} - \nu_q  <  \infty.
 $$
 
-In particular, $\Omega(t) \leq \Omega(0)e^{\Lambda_q t}$ for
-all $t \geq 0$: the enstrophy never blows up in finite time.
+In particular, $\Omega(t) \leq \Omega(0)e^{\Lambda_q t}$ unconditionally for all $t \geq 0$. Enstrophy physically cannot blow up in finite time.
 
 **(c) Uniqueness.**
-If $v_1, v_2$ are two solutions with $v_1(0) = v_2(0)$, then
-$v_1(t) = v_2(t)$ for all $t \geq 0$.
+If $v_1, v_2$ represent two exact solutions with $v_1(0) = v_2(0)$, then $v_1(t) = v_2(t)$ uniformly for all $t \geq 0$.

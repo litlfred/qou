@@ -1,0 +1,65 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-12T15:31:34.395067+00:00",
+  "commitSha": "766f180fa1ea1bf003b6e54a694d7d823b3d713b",
+  "assertions": [
+    {
+      "name": "action_A_equals_Vol_over_pi",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "large-order kappa ratio -> A ~ Vol(4_1)/pi=0.646 (geometric<->conjugate saddle gap, literature)"
+    },
+    {
+      "name": "borel_sum_singlevalued_smooth",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "Borel-Pade resummed Im V=0.0555 stable vs truncation; singularity off imaginary ray => no Stokes, exact smooth, no anchor-dependent transseries"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 10,
+  "computation": "qbeta-c3-borel-pade-resummation",
+  "scriptFile": "qbeta_c3_borel_pade_resummation_probe.py",
+  "scriptHash": "e7171404f095",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Borel–Padé resummation of the divergent 4₁ Ohtsuki κ-tower to the exact smooth Im 𝔙, with literature Stokes/action cross-check. (1) Large-order ratio gives action A=Vol(4₁)/π=0.646 (geometric↔conjugate saddle gap, Garoufalidis–Gu–Mariño). (2) Borel–Padé[3/3] + Laplace at the imaginary substrate x=i·t gives resummed Im 𝔙_b=0.05545 (stable vs κ₁..κ₄ truncation 0.05481). (3) DECISIVE: the Borel singularity at real ξ=A is OFF the imaginary integration ray, so the Borel sum is single-valued — no Stokes median split, no e^{−A/x} trans-series on the imaginary ray. So resurgence delivers the exact smooth Im 𝔙 + the action, but NO anchor-dependent piece: the odd-S sign-flip is the 1/u³ ladder representation (merged #3636), representational/experimental-Q_β-limited, not a resummable physical effect. Caveat: only κ₁..κ₆ (exact 1..4 from #3628); 6 terms is few for Padé. Scope-(a); C14; no c_k wired; no fit.",
+  "contentBlock": "conj:im-q-physical-role",
+  "data": {
+    "action": {
+      "A_literature_Vol_over_pi": "0.646131894439",
+      "A_largeorder_n4": "0.6244527862",
+      "cross_check_ok": true,
+      "source": "geometric<->conjugate saddle gap; #3628 kappa, fmap-resurgence audit"
+    },
+    "resummation": {
+      "Im_V_resummed": "0.0554500521689",
+      "Im_V_kappa1_4_truncation": "0.0548119201318",
+      "stable": true
+    },
+    "stokes": {
+      "singularity_arg": "0 (real xi=A)",
+      "substrate_ray_arg": "pi/2 (imaginary x=i*t)",
+      "crosses": false,
+      "single_valued": true,
+      "verdict": "no Stokes ambiguity / no trans-series on imaginary ray => Im V smooth exact, no anchor-dependent nonperturbative piece; odd-S sign-flip is representational (#3636)"
+    }
+  }
+}

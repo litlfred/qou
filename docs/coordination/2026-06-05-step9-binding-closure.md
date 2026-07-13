@@ -226,3 +226,267 @@ probe `delta_lambda_z_coefficient_and_slope.py`). Audit
   bar-even baseline cancels exactly in a mirror difference given the additive
   `baseline(A)+zCorr(Z-N)` form (the only ansatz). Paper:
   `prop:mirror-baseline-cancellation` (mba sidecar). Not wired (near-match tier).
+
+## 2026-07-11 — 𝓑_K coordination-number reading of M_n(A) (PR #3549)
+
+- **Open multiplicity `M_n(A)` in `w_n(K)=M_n(A)·Vol_n(K)` = the coordination
+  number of 𝓑_K (scope-(a), fit-free for A=3).** Reading `M_need=B_AME/(m_e·Vol)`
+  off AME: non-magic A=3 pair gives `M_need(³H)=2.003`, `M_need(³He)=2.061` =
+  the per-nucleon coordination number `z=A−1=2` (<3%, no fit). Doubly-magic ⁴He
+  needs an extra `a_D^(4)≈2.53` (magic-shell only: `z·a_D^A` closes ⁴He +0.6%
+  but overshoots A=3 +30%). Crossing number is the `Vol=0` deuteron (Hopf) survivor.
+- **α-cluster extension (A>4):** ¹⁶O/⁴⁰Ca have no single hyperbolic link →
+  `B(n_α)≈n_α·B(⁴He)+C(n_α,2)·b_αα`; per-bond `b_αα≈2.41 MeV` constant for
+  simplex clusters ⁸Be/¹²C/¹⁶O, saturates n_α≥5 (⁴⁰Ca needs geometric packing).
+  `b_αα` empirical (Hafstad–Teller), NOT derived — open.
+- **Coordinated with #3534** (same `w_n` object, q-Hermite basis route): the
+  single-term `M·Vol` `a_D`-magic-only finding vs their summed `Σa_D^(n)·w_n`
+  extraction are different decompositions, not contradictory — logged so neither
+  restates the other as refuted.
+- **Coordinated with #3548** (W_λ connected multi-bond transfer matrix): my
+  coordination bond-count `C(n_α,2)` and per-bond `b_αα≈2.41 MeV` are the fit-free
+  empirical target their connected braid `tr_M` (PROBE 2) must reproduce; their
+  deuteron connected gap 0.193 is the 2-body instance.
+- Paper: `rem:bk-coordination-multiplicity` (interprets
+  `conj:binding-manybody-eq-jet-filtration`). Not wired (exploratory tier).
+
+## 2026-07-11 (cont.) — coordination-degree derivation status + α-contact forward (PR #3551)
+
+- **z=A−1 derivation status (honest):** z=A−1 is the vertex degree of the complete
+  cluster graph K_A — an EXACT graph fact, already verified in Mathlib
+  (`complete_graph_degree`, `card_edgeFinset_top_eq_card_choose_two`,
+  `sum_degrees_eq_twice_card_edges`). The identification "single-link multiplier =
+  coordination number" is the BOND-EXTENSIVE hypothesis (a conditional class), NOT
+  derived from the 13 drivers. So z=A−1 is proved-as-graph-fact / conditional-as-
+  physics. QOU-library formalization deferred (ProofWidgets JS network-blocked in
+  sandbox; follow-up, not shipped unverified).
+- **α-cluster contact coordination FORWARD (A>4):** fix b_αα≈2.416 MeV from ¹²C/¹⁶O,
+  predict from standard Brink deltahedral contact geometries — ²⁰Ne (sq-pyramid, 8)
+  +0.10%, ²⁴Mg (octahedron, 12) +0.25%, ⁴⁰Ca (fcc-10, 24) −0.33%. One constant, <0.5%
+  across A=12–40. ⁸Be = unbound-pair exception (single bond ≈0, triple-α gateway).
+  C(n_α,2) overcounts for n_α≥5 → contact-graph edge count (kissing-number bounded).
+- **#3548 coordination:** the forward contact-graph result is the concrete A=12–40
+  target their connected two-α braid tr_M (PROBE 2) should reproduce; b_αα derivation
+  remains their scope, not duplicated here.
+
+## 2026-07-11 (cont.2) — α-geometry selection + bond-extensivity coordination (PR #3555)
+
+- **α-geometry selection = contact-maximisation, PARTIALLY (scope-(a)):** N_need
+  vs C_max(n_α) — ²⁴Mg (octahedron 12, exact) Δ+0.2, ²⁸Si +0.1, ⁴⁰Ca +0.5 MATCH
+  the maximal-contact geometry (derived, not fit); ²⁰Ne DEVIATES (binds as 8, not
+  max 9 — its prolate α+¹⁶O structure). CAVEAT: merged PR #3551 Part-2 ²⁰Ne
+  geometry (sq-pyramid 8) was hand-assigned → one-bond DOF (recorded, not hidden).
+- **Bond-extensivity (Task 2) is #3548/#3534 scope, NOT duplicated here:** the
+  derivation of "binding = Σ_edges ε" (extensive) is #3548's connected multi-bond
+  tr_M (PROBE 2) and #3534's linked-cluster w_n. My coordination-number angle only
+  adds the graph handshake bookkeeping (Σ deg = 2|E|, in bean qou-4tj9's Lean).
+  Coordinated on #3548 rather than building a parallel compute.
+
+## 2026-07-11 (cont.3) — bond-extensivity: multiplier=coordination is the equal-weight limit (PR #3557)
+
+- **"Why multiplier=coordination number" ANSWERED (scope-(a)):** bond-extensivity
+  B=E₀·Σ log(1/f_bond) is DERIVED (#2089 log-trace); the coordination-number
+  multiplier is its EQUAL-WEIGHT limit (equal bonds ⇒ B=(coordination)·const).
+  EXACT for identical α–α bonds (α-cluster contact counting derived); FAILS at the
+  nucleon level (derived ε_pp:ε_pn:ε_nn = 0.69:0.93:1.24, spread 1.78×) ⇒ nucleon
+  z=A−1 is a composition coincidence (symmetric A=3 mirror only).
+- **w_n=M·Vol decomposed:** M = equal-weight coordination skeleton; Vol = the
+  isospin bond-energy asymmetry ε_nn−ε_pp=0.542 that equal-weight drops (the T₃
+  carrier). Both grounded in the one derived log-trace.
+- **Open → #3548/#3534:** the ε magnitudes (f_αα, E₀) + α-geometry remain open;
+  ε-magnitude derivation is #3548 connected-tr_M / #3534 linked-cluster — not
+  attempted here (uses #2089 f_bond, no new fit).
+
+## 2026-07-11 (cont.4) — mirror split is Coulomb; #2089 kernel over-breaks charge symmetry 3× (PR #3564)
+
+- **A=3 mirror split diagnosed as COULOMB (scope-(a)):** AME B(³H)−B(³He)=0.764 MeV
+  = pp Coulomb displacement e²/(4πε₀r) at r≈1.9 fm (0.758 MeV); strong CSB residual
+  ≈+0.006 MeV (charge symmetry holds ~1%; consistent with #3534's 2.73% Coulomb-
+  corrected agreement). The #2089 log-trace kernel's pure-strong split
+  E₀(ε_nn−ε_pp)=2.27 MeV is 3.0× the total / ~386× the strong residual — it
+  OVER-BREAKS charge symmetry (f_pp=0.499 vs f_nn=0.290).
+- **Fix direction:** charge-symmetric strong bond (f_pp≈f_nn) + separate Coulomb
+  (Z(Z−1)/2 pairs). BONUS: collapses the 1.78× nucleon ε-spread ⇒ restores the
+  equal-weight limit ⇒ coordination-number counting valid at nucleon level (#3557).
+- **Two framings (owner call):** (A) spurious strong CSB vs (B) categorical EM
+  overshoots Coulomb 3×. Not decided. Kernel re-derivation = #3548/#3534 scope.
+
+## 2026-07-11 (cont.5) — mirror split is Coulomb across the chain; charge-symmetry constraint (PR #3570)
+
+- **Generalises #3564 (scope-(a)):** the mirror binding split is Coulomb across A=3–39.
+  Using the canonical shared Coulomb (Z(Z−1) discrete-proton self-energy, r₀=1.2 fm,
+  coulomb_energy.mirror_displacement_mev — NO free parameter), split/ΔE_C=0.838±0.059
+  (7% scatter) across 8 mirror pairs ³H/³He…³⁹K/³⁹Ca ⇒ split PROPORTIONAL to Coulomb
+  (the ~0.84 factor is the known uniform-sphere over-estimate).
+- **Constraint on the kernel (→ #3548/#3534):** any strong kernel (#2089 f_bond, #3548
+  connected tr_M) must be charge-symmetric SYSTEMATICALLY; the #2089 kernel's 2.27 MeV
+  A=3 strong split is 3× the whole observed A=3 split, at all A, not an A=3 accident.
+  f_pp≠f_nn must be removed (or reinterpreted as categorical EM, framing (B)). Not a
+  binding fit.
+## 2026-07-11 — na-Stokes eigenfunction two-tier + wₙ derive-or-refute (#3545, #3534)
+
+Branch `claude/q-stokes-kernel-eigenfunction-y0pso2` (#3545) + parallel
+`claude/binding-wn-kernel-derive-refute-2026-07-11` (#3534, bean t7qv) — same
+owner steer ("na-Stokes kernel informs the weight kernel via its eigenfunction
+relation").
+
+- **Two-tier eigenfunction, Lean sorry-free (#3545):** `a_D^(n)=S(n)/n`,
+  `S(n)=Σ_λ dim_q` (q-involution #). `c₃=[2]_q` exact; deviation
+  `q²·D(4)=(q−1)²Φ₃` (Habiro cyclotomic leading factor). File
+  `QOU.Mass.BindingEigenfunctionTwoTier` (lean-direct exit 0). Cherry-pickable by
+  #3534 (which states the same numerically, no Lean).
+- **Adversarial (#3545):** `[n−1]_q` is 2 points not a pattern; "Habiro"=leading
+  factor only (D(6..8) non-cyclotomic cofactors); `S(n)` **forks** from clean
+  Rogers–Szegő / crossing moment `μ_q` (+0.3%→+7.9%) — clean q-Hermite/q-Fourier
+  basis is μ_q's, not S(n)'s. So "eigenfunction informs kernel" = shared Habiro
+  **ring**, not shared element (kehn c_k is a different ζ₄ localization).
+- **wₙ(K) derive-or-refute (#3534 + #3545 correction):** raw T/³He split (9.9%) is
+  **Coulomb** (= the ledger's writhe/Z-correction channel above) — on `B_strong`
+  the mirror agrees ~2.7% (CSB), so body-order wₙ **admissible** (corrects my
+  #3545 over-claimed (b) exclusion → (a)). No constant-ratio kernel closes to 5%
+  ([n]_q² 6.9% lone near-miss); tuned recursion = banned 7th ansatz. Non-fit
+  routes: q-Hermite-basis expansion (Habiro-dressed) / hyperbolic link-volume.
+- **conj:binding-manybody-eq-jet-filtration: not provable now** (3 open inputs).
+
+## 2026-07-11 (cont.) — #3545 ↔ #3548 connected-binding convergence (two lenses)
+
+- **#3545 Part 10–11 ↔ #3548 same object.** Both compute the connected/cross-term
+  (extensive) binding. #3548: connected `tr_M`(W_λ per block) = 0 for disjoint
+  bonds, 0.855 for braided σ². #3545: negative-norm ghost Gram-quadratic
+  `⟨g_i,g_j⟩_G` = 0 for split (traceless) ghosts, ≠0 when bonded. Independent
+  convergence on "disjoint→0, bonded→nonzero"; ties to main `a44296db`
+  (decay=binding-quadratic: mass=linear tr_M, binding=quadratic Gram).
+- **#3545 derives bond-extensivity** (`B ~ self + (#bonds)·b*`, constant `b*`) from
+  bond translation-invariance — upgrades #3549's conditional coordination-number
+  hypothesis to structural. Justifies #3548 PROBE-2's constant multi-bond term.
+- **Open bridge:** is #3548's deuteron connected 0.193 == #3545's
+  `⟨g_A,σ_bond,g_B⟩_G`? If yes the two lenses unify + `b*` pinned (no duplicate H₆
+  build). #3548 owns connected-`tr_M`/PROBE-2; #3545 owns the Gram-quadratic +
+  bond-extensive derivation. Posted #3548#issuecomment-4948202747.
+
+## 2026-07-11 (cont.6) — charge-symm + Coulomb benchmark FIXES the mirror split (PR #3575)
+
+- **Diagnosis payoff realized (scope-(a)):** built charge-symmetric strong (all bonds =
+  isoscalar f_pn) + separate Coulomb on D/T/³He/⁴He. FIXES the ³H/³He mirror split →
+  0.998 MeV (Coulomb, uniform-sphere) vs AME 0.764 (1.3×), from the broken #2089 kernel's
+  2.27 (no C) / 3.27 (double-count) MeV (3×). ~3× accuracy gain + removes EM double-count.
+- **Absolute binding NOT closed:** D +75%, T/³He +38%, ⁴He −21% — the edge-set/E₀/
+  connected magnitude (#2089 form bug), unchanged by charge symmetry.
+- **ACTIONABLE OPEN STEP (ε-magnitude answer):** #3548 (merged 9c62f785) pinned the
+  connected-(2,1)/SU(4) magnitude MECHANISM but is no-fit/no-closure AND still on the
+  charge-BREAKING kernel (f_pp=z, f_nn=z−h). ⇒ re-run #3548's connected magnitude probe
+  on the CHARGE-SYMMETRIC kernel (f_pp=f_nn=f_pn) + separate Coulomb. That is the path to
+  absolute binding: charge structure (this PR) × connected magnitude (#3548 re-run).
+
+## 2026-07-11 (cont.7) — charge symmetry ⊥ connected magnitude: the two levers DECOUPLE (PR #3577)
+
+- **Re-ran #3548's connected magnitude on the charge-symmetric kernel (answers #3575's
+  open step, scope-(a)):** the connected Ursell/Mayer |b_Ac| is charge-symmetry-
+  INVARIANT — ⁴He 1.9614 (broken) → 1.9719 (symm), +0.5%; D +0.00%, ⁶Li +1.35%. Needed
+  super-pairwise 2.093→2.120 (ceiling shift only); ~74% magnitude gap PERSISTS; SU(4)
+  A=6 vanishing unchanged.
+- **⇒ The two open binding levers are ORTHOGONAL:** charge structure (mirror split →
+  fixed by charge-symm+Coulomb, #3564/#3570/#3575) vs connected magnitude (×2.09 /
+  edge-set → #3548, unchanged by charge symmetry, still open). Absolute binding needs
+  both; neither is the other. Clean structural separation of the remaining closure
+  problem — the two can be closed independently.
+
+## 2026-07-11 (cont.8) — CONVERGENCE: coordination-number thread ↔ #3545; shared keystone = qou-v0yw
+
+The coordination-number binding thread (merged #3549/#3551/#3555/#3557/#3564/#3570/
+#3575/#3577) and the na-Stokes/ghost-Gram thread (#3545, bean **qou-v0yw**) have
+independently arrived at the **same single open keystone**: the nuclear coordination
+graph **M_n(K)** — *which pairs bond*. Cross-recognition (§6 convergence, not conflict):
+
+- **bond-extensivity — #3545 UPGRADES my conditional to derived.** My #3557 framed
+  "multiplier = coordination number" as the equal-weight limit of the log-trace, carried
+  as a CONDITIONAL hypothesis. #3545 (`86ea593e`) DERIVES it from bond
+  translation-invariance. ⇒ use #3545's derivation as authoritative; my #3557 is the
+  equal-weight / isospin decomposition on top (`w_n = M·Vol` = coordination skeleton ×
+  isospin bond asymmetry `ε_nn−ε_pp`).
+- **selection principle — converged.** My #3555 contact-maximisation (²⁴Mg octahedron,
+  ²⁰Ne exception) == #3545's (`dbe5246a`) "binding-max ⇒ max-contact packing."
+- **per-bond strength — same object.** My `ε_bond = log(1/f_bond)` == #3545's
+  `L_pp/L_pn/L_nn = log(tr_M ratios)`.
+- **NEW sharpening (#3577):** the coordination/connected magnitude is CHARGE-SYMMETRY-
+  INVARIANT (⁴He |b_Ac| 1.9614→1.9719, +0.5%). ⇒ **M_n(K) can be derived without
+  resolving charge structure** — the two are orthogonal levers. The charge structure is
+  resolved at the OBSERVABLE level (mirror split is Coulomb-dominated, #3564/#3570/#3575);
+  the KERNEL-level (A)/(B) framing (cont.4) + uniform-sphere residual (cont.6) remain
+  open on the charge side. Regardless, **the graph M_n(K) is the remaining open lever
+  independent of charge structure** (qou-v0yw). Live routes: Milnor M_n(K) (μ̄-tower,
+  validated) + max-contact selection.
+
+## 2026-07-11 (cont.9) — qou-v0yw REFRAMED: M_n(K) is a body-order TOWER, not one graph (PR #3582)
+
+- **Took on qou-v0yw** (derive the coordination graph). Tested a max-binding "richest
+  Milnor tower" single-graph selection rule using #3545's validated Milnor machinery —
+  and **REFUTED it (scope-(a))**: the reducible chain (M_2=1, M_3=0) and the Brunnian
+  Borromean (M_2=0, M_3=1) have EQUAL tower rank; the Borromean trades pairwise for the
+  irreducible triple, so neither carries both orders and the choice is weight-dependent.
+- **Correct reading:** the coordination is NOT one graph but the body-order TOWER
+  B=Σ_n B_n (§0) — M_2 from pairwise links, M_3 from Borromean triples, each order using
+  its own Brunnian-n sub-link. "chain vs Borromean" is a false dichotomy. Explains #3545
+  Part 8's chain undercount (pure chain = only M_2, missing M_3).
+- **qou-v0yw REFRAMED (still open):** from "which single graph" to a per-order sub-link
+  COUNTING problem (how many Borromean triples in ⁶Li/¹²C…) + M_n→w_n weights. Bean set
+  back to todo with the sharper framing.
+
+## 2026-07-11 (cont.10) — per-order count M_n=C(A,n): deuteron-pinned pairwise backbone (PR #3583)
+
+- **Sharpened qou-v0yw's per-order count.** Tested `M_n(K)=C(A,n)` (all n-subsets)
+  parameter-lean: the n=2 term is pinned by the SINGLE deuteron datum (a_D^(2)=1,
+  M_2(D)=C(2,2)=1 ⇒ w_2=B(D)/m_e≈4.353), so the pairwise backbone `B_2(A)=B(D)·C(A,2)`
+  carries NO new parameter.
+- **Result (scope-(a)):** the C(A,2) backbone reproduces A=3 binding to a small ~1–2 MeV
+  M_3 residual (³H 1.81, ³He 1.04); ⁴He residual 14.95 MeV (doubly-magic 4-body).
+- **Cross-check recovered:** the ³H−³He residual difference is +0.764 MeV ≈ the AME
+  mirror split ≈ the Coulomb term (cont.4/cont.5) — exact BY CONSTRUCTION (the A=3
+  pairwise backbone cancels in the mirror difference), verified to <1e-6 on floats. The
+  per-order count inherits this session's charge-structure result for free — the pairwise
+  backbone is charge-symmetric.
+- **Localises the open work:** the 2-body count is FIXED; what remains open is the
+  M_3/M_4 weights (a_D^(n)·w_n, the deuteron pins only w_2). **Cross-ref #3585:** the
+  naive EQUAL-weight a_D^(n)·C(A,n) tower blows up at A≥5 (#3545 Part 5), so the
+  higher-order weights must SUPPRESS the raw C(A,n) growth, and the large-A edge set is
+  the max-contact α-cluster deltahedra (#3549/#3555), not all-subsets. qou-v0yw stays
+  open with a fixed 2-body anchor to build the suppressed higher orders on.
+  Compute [`computations/mnk_per_order_counting.py`](../../computations/mnk_per_order_counting.py),
+  audit [docs/audits/2026-07-11-mnk-per-order-counting.md](../audits/2026-07-11-mnk-per-order-counting.md).
+
+### cont.11 — Δ_λ magnitude side (#3569, 2026-07-11)
+
+- **A-stability selects `Δ_λ = sgn·dim` (classical q=1 dim, #3542).** Cross-isotope
+  spread of `B(dim)/target` is minimized at `p=1` (2.8x) and grows monotonically
+  away (p=1.5 8.7x, p=2 block-dim² 119x). Structural selection, not a fit. The
+  #3558 block-dim²≈101% deuteron match is doubly refuted (blows up + wrong power).
+- **The residual O(1) is the missing ≥4-body term, NOT a coefficient.** `target/B(dim)`
+  = D 5.9 / T 4.4 / ³He 3.3 / ⁴He 9.3; not topological (T/³He share braid topology,
+  differ 35%), maximal at doubly-magic ⁴He (α-saturation). Same open term as the
+  #3588 `M_n(K)` residual (⁴He 14.95 MeV) and the #3585 geometric max-contact frontier.
+- **Tied to the already-decomposed line:** b₄ connected-cumulant deficit +
+  sorry-free SU(4) `[1⁴]` gate + measured 2.093x locality
+  (`2026-07-05-delta-lambda-gate-status.md`). PROBE 2 magnitude leg = PARTIAL
+  (A>4 vanishing clean; ⁴He magnitude units-mismatched). Open = Slater↔trace
+  dictionary / geometric `W_λ` — research-level, gated. No fit; nothing wired.
+
+## 2026-07-11 (cont.12) — 🟧 OWNER RULING: Subgoal-2 opened for ALL agents (gate lifted)
+
+- **The M₃/M₄ binding-weight closure is no longer owner-gated.** The owner reversed the
+  2026-05-08 Subgoal-2 decline **generally**: the geometric / substrate-derivation routes —
+  absolute m_p/m_n/m_⁴He, substrate q_0, the per-isotope `M_n(K)` edge-set / coordination-
+  graph closure (the M₃/M₄ weights of `conj:binding-manybody-eq-jet-filtration`), and the
+  s5-so3 keystone — are now **in scope for all agents**, no per-item sign-off. Broadens the
+  narrow 2026-06-19 s5-so3-only reversal.
+- **What this unblocks for this thread:** the geometric bond-count / derived `R(q,x)` route
+  that #3545 Part 3/13 + #3534 identified as the only honest closure path (every constant-
+  ratio kernel misses ≥6.9%; anchor-inversion is a fit) is now open to work directly, rather
+  than deferred behind the gate. The #3588 fit-free 2-body backbone (`M_2=C(A,2)`) stands as
+  the anchor; the M₃/M₄ geometric weights are the open, now-ungated target.
+- **Anti-fit discipline UNCHANGED (orthogonal to the gate):** the Δ_λ "no seventh fit-based
+  ansatz", anti-laundering, and "sorry-free ≠ derived" rules all stand. A `wₙ(K)` from
+  anchor inversion is still a fit and must not be wired to production as canonical; only a
+  *derived* bond-count / `R(q,x)` / substrate q_0 may be. Ruling recorded in AGENTS.md
+  §Precision-goals, [`docs/precision-goals.md`](../precision-goals.md),
+  [`s5-so3-keystone.md`](s5-so3-keystone.md), audit
+  [2026-07-11-subgoal2-owner-reversal-open-for-all.md](../audits/2026-07-11-subgoal2-owner-reversal-open-for-all.md).

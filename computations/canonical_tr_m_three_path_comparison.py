@@ -172,7 +172,6 @@ def main() -> int:
             pass
 
     witness = {
-        "computation": "canonical-tr-m-three-path-comparison",
         "description": (
             "Compares the three tr_M(q_0) computation paths in the repo "
             "against the canonical Hoefsmit+Wenzl bridge witness.  "
@@ -181,7 +180,6 @@ def main() -> int:
             "wrong.  T ≠ ³He on the canonical path (ratio 1.985), "
             "refuting PR #524's 'isospin forces equality' claim."
         ),
-        "computedAt": datetime.now(timezone.utc).isoformat(),
         "rows": rows,
         "verdict": {
             "canonical_path": "Hoefsmit+Wenzl bridge ≡ markov_peel",
@@ -191,8 +189,13 @@ def main() -> int:
             "T_3He_canonical_ratio": "1.985",
         },
     }
-    out = HERE / "canonical-tr-m-three-path-comparison.witness.json"
-    out.write_text(json.dumps(witness, indent=2, default=str))
+    import sys
+    sys.path.insert(0, str(HERE / "substrate"))
+    from witness_base import WitnessBuilder
+    out = WitnessBuilder.wrap_legacy(
+        "canonical-tr-m-three-path-comparison", witness,
+        script_path=__file__, engine="mpmath",
+    ).save()
     print(f"\n  Witness: {out}")
     return 0
 

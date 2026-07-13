@@ -1,12 +1,1 @@
-The Reeb vector field $\xi$ on the CR manifold $M$ carries a natural
-orientation: the sign of the contact form $\varTheta(\xi) = 1$ singles out a
-preferred direction along the vertical distribution.  Left-handed and
-The right-handed chiralities correspond to the two orientations of $\xi$ relative
-to the complex structure of $M$.  For fermions
-([fermion](#def:fermion-boson-decomposition)), the vertical component $\alpha_V$ transforms
-with a definite sign under reversal of $\xi$, so chirality is encoded in the
-$\pm$-eigenspaces of the Reeb involution $\xi \mapsto -\xi$.  Bosons
-([boson](#def:fermion-boson-decomposition)), being purely horizontal, are chirality-blind ---
-consistent with the observed parity invariance of the electromagnetic and
-strong interactions.
-Cf.\ \cite{nicolaescu2005, petit-2005}.
+The Reeb vector field $\xi$ on the CR manifold $M$ carries a natural orientation. The sign of the contact form $\varTheta(\xi) = 1$ singles out a preferred direction along the vertical distribution. Left-handed and right-handed chiralities correspond to the two orientations of $\xi$ relative to the complex structure of $M$. For fermions ([fermion](#def:fermion-boson-decomposition)), the vertical component $\alpha_V$ transforms with a definite sign under reversal of $\xi$. Chirality is therefore encoded in the $\pm$-eigenspaces of the Reeb involution $\xi \mapsto -\xi$. Bosons ([boson](#def:fermion-boson-decomposition)), being purely horizontal, are chirality-blind. This is consistent with the observed parity invariance of the electromagnetic and strong interactions. Cf. \cite{nicolaescu2005, petit-2005}.

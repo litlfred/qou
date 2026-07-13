@@ -1,12 +1,12 @@
-The interpolation between the bound and free projections of [`conj:binding-qbeta-complex-volume`](#conj:binding-qbeta-complex-volume) is a *path*, and the bar-odd channel is its *holonomy*. No structure beyond the deformation itself is needed to "rotate between bound and free".
+The interpolation between the bound and free projections of [`conj:binding-qbeta-complex-volume`](#conj:binding-qbeta-complex-volume) constitutes a path. The bar-odd channel provides its holonomy. No structure beyond the deformation itself is required to rotate between the bound and free states.
 
-## The two endpoints are two representations
+## Endpoints as representations
 
-The free projection $\Pi_{\text{free}}$ — the inter-constituent confining crossings dropped, only linking data surviving — is the **abelian** representation of the knot group. The bound object — the full braiding — is the **discrete-faithful** side. These are the two distinguished points of the character variety of $K$.
+The free projection $\Pi_{\text{free}}$ drops inter-constituent confining crossings, retaining only linking data. It constructs the abelian representation of the knot group. The bound object—the full braiding—constructs the discrete-faithful side. These define the two distinguished points of the character variety of $K$.
 
-## The path integral reading
+## Path integral reading
 
-Neumann–Zagier read the complex volume as the integral of a holomorphic 1-form along the path in the character variety joining these two representations \cite{neumann-zagier1985}. Transported to $\mathfrak{V}$:
+Neumann and Zagier defined the complex volume as the integral of a holomorphic $1$-form along the path in the character variety connecting these representations \cite{neumann-zagier1985}. Transported to $\mathfrak{V}$:
 
 $$
 \mathfrak{V} \;=\; \Phi(\text{bound}) - \Phi(\text{free}),
@@ -16,12 +16,18 @@ $$
 \mathfrak{Q}_\beta = \mathrm{Im}\mathfrak{V},
 $$
 
-for a potential $\Phi$ on the deformation path: the endpoint difference of $\Phi$ *is* the projection defect $\mathrm{tr}_M((\Pi_{\text{free}} - \mathbf{1}) \circ \mathcal{M})$, its bar-even part is the volume (binding) channel, and its bar-odd part is the phase picked up along the path — exactly as $\mathrm{CS}$ is the phase companion of the hyperbolic volume, and consistent with the state-integral factorization picture \cite{garoufalidis-zagier-2024}.
+where $\Phi$ acts as a potential on the deformation path. The endpoint difference of $\Phi$ equals the projection defect $\mathrm{tr}_M\bigl((\Pi_{\text{free}} - \mathbf{1}) \circ \mathcal{M}\bigr)$. Its bar-even part represents the volume (binding) channel. Its bar-odd part captures the phase accumulated along the path. This matches how the Chern–Simons invariant acts as the phase companion to hyperbolic volume, consistent with the state-integral factorization picture \cite{garoufalidis-zagier-2024}.
 
-## The categorical carrier, and where Askey enters
+## Categorical carrier
 
-Pre-$\tau$ (base-ring convention: generic $R$ with bar involution, never $\mathbb{R}$ or $\mathbb{C}$), the path is carried by the deformation parameter $t$ of **one Askey–Wilson tridiagonal family**: at $t = 0$ the family sits at the $q$-Hermite bottom of the scheme — all Askey–Wilson parameters off, orthogonality measure the $q$-Plancherel weight $W_\lambda$, the free side — and at $t = 1$ it is the bound channel data. This is formalized as the conjecture class `AWDeformationPath` (Lean sibling of the conjecture), whose fields carry exactly these inputs: the family, the $q$-Hermite free endpoint, the potential with $\mathfrak{V}$ as endpoint difference, and one three-term ladder recurrence with a **bar-even multiplier**. The two-channel descent — the binding and $\mathfrak{Q}_\beta$ ladders each satisfying the *same* recurrence — is then a derived theorem (`AWDeformationPath.channel_ladders` via `recurrence_invol_descent`), not an assumption.
+Prior to archimedean evaluation (over a generic ring $R$ with a bar involution), the deformation parameter $t$ of a single Askey–Wilson tridiagonal family carries the path. At $t = 0$, the family sits at the $q$-Hermite bottom of the scheme. Here, all Askey–Wilson parameters vanish, and the orthogonality measure uses the $q$-Plancherel weight $W_\lambda$, representing the free side. At $t = 1$, it supplies the bound channel data.
 
-## Falsifiable consequence, and its current status
+This is formalized in the conjecture class `AWDeformationPath`. The class specifies the family, the $q$-Hermite free endpoint, the potential yielding $\mathfrak{V}$, and a single three-term ladder recurrence with a bar-even multiplier. The two-channel descent—where both the binding and $\mathfrak{Q}_\beta$ ladders satisfy the exact same recurrence—is a derived theorem (`AWDeformationPath.channel_ladders` via `recurrence_invol_descent`), rather than an assumption.
 
-The class predicts one decidable numerical signature: the binding and $\mathfrak{Q}_\beta$ channel ladders share **one** bar-even three-term multiplier — equivalently, the multiplier solved from the complex ladder $\mathfrak{V}_A$ has vanishing bar-odd part. This is a probe of the holomorphic tie (not a parity projection, which is already known not to move the binding error). The *mechanism* half is compute-confirmed: the Hopf-power tower $\mathfrak{V}_n = \mathrm{tr}_M((\sigma_1^2)^n)$ rides one three-term recurrence with the bar-even multiplier $q^2 + q^{-2}$ (continuous $q$-ultraspherical class), exercising `recurrence_invol_descent` end-to-end. The *physical* identification — that the measured $c_k$-ladder is an Askey–Wilson instance of this mechanism — remains under-determined and gated on the even-channel $c_3$. On the observable side, the naive candidate is scope-limited-refuted: along the isotope triples $(^2\mathrm{H}, {}^3\mathrm{H}, {}^4\mathrm{He})$ and $(^2\mathrm{H}, {}^3\mathrm{He}, {}^4\mathrm{He})$, the parity split of the log-trace binding proxy does **not** share one bar-even multiplier (relative even/odd gap up to $0.66$; probe witness `binding-qbeta-aw-recurrence-probe`) — this constrains that particular ladder construction, not the mechanism, whose fibre-level realization is the confirmed Hopf tower.
+## Falsifiable consequences
+
+The class predicts one decidable numerical signature: the binding and $\mathfrak{Q}_\beta$ channel ladders share a single bar-even three-term multiplier. Equivalently, the multiplier solved from the complex ladder $\mathfrak{V}_A$ has a vanishing bar-odd part. This probes the holomorphic connection.
+
+The mechanism remains computationally confirmed. The Hopf-power tower $\mathfrak{V}_n = \mathrm{tr}_M\bigl((\sigma_1^2)^n\bigr)$ strictly follows a three-term recurrence with the bar-even multiplier $q^2 + q^{-2}$ (the continuous $q$-ultraspherical class). This exercises `recurrence_invol_descent` end-to-end. 
+
+The physical identification—that the measured $c_k$-ladder exemplifies this mechanism—remains open, gated on the even-channel $c_3$. Along the isotope triples $({}^2\mathrm{H}, {}^3\mathrm{H}, {}^4\mathrm{He})$ and $({}^2\mathrm{H}, {}^3\mathrm{He}, {}^4\mathrm{He})$, the parity split of the log-trace binding proxy does not share one bar-even multiplier. This refutes that specific ladder construction, but leaves the underlying mechanism—confirmed at the fibre level by the Hopf tower—intact.

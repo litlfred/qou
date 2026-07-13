@@ -1,59 +1,30 @@
-The categorical [braid-group action](#prop:braid-action-tensor)
-acquires a hydrodynamic interpretation in the brane fluid.
+The categorical [braid-group action](#prop:braid-action-tensor) possesses a direct hydrodynamic interpretation on the brane fluid.
 
 **Arnold's geodesic framework.**
-Arnold (1966) showed that the Euler equation on $(M, g)$ is the
-geodesic equation on $\mathrm{SDiff}(M)$ with the $L^2$ metric:
-$\nabla_{\dot\phi}\dot\phi = 0$.  The velocity
-$v = \dot\phi \circ \phi^{-1}$ solves
-$\partial_t v + \nabla_v v = -\nabla p$.
+Arnold demonstrated that the Euler equation on $(M, g)$ behaves exactly as the geodesic equation over $\mathrm{SDiff}(M)$ acting under the $L^2$ metric: $\nabla_{\dot\phi}\dot\phi = 0$. The velocity vector $v = \dot\phi \circ \phi^{-1}$ reliably solves $\partial_t v + \nabla_v v = -\nabla p$.
 
 **$q$-deformed diffeomorphisms.**
-The classical $\mathrm{SDiff}(M)$ is replaced by
-$\mathrm{SDiff}_q(\mathcal{S})$ on the
-[state bundle](#ex:c-quantum-observable-universe), with two consequences:
+The [state bundle](#ex:c-quantum-observable-universe) promotes the classical $\mathrm{SDiff}(M)$ group to $\mathrm{SDiff}_q(\mathcal{S})$. This imposes two structural shifts:
 
-1. The $L^2$ metric becomes the
-   [Webster inner product](#sec:webster-inner-product).
-   Geodesics solve the [quantum Euler
-   equation](#rem:madelung-fluid) with pressure $Q_q$.
-
-2. Restricting to flows with vorticity on $n$ filaments gives
-   a quotient onto $B_n$: the configuration space
-   $\mathrm{Conf}_n(M)/S_n$ has fundamental group $B_n$.
+1. The $L^2$ metric upgrades to the [Webster inner product](#sec:webster-inner-product). The resulting geodesics solve the [quantum Euler equation](#rem:madelung-fluid) subject to pressure $Q_q$.
+2. Confining the state space to flows exhibiting concentrated vorticity across $n$ filaments forces a strict topological quotient onto $B_n$. The fundamental group of the configuration space $\mathrm{Conf}_n(M)/S_n$ resolves uniquely to $B_n$.
 
 **Braid generators as vortex exchanges.**
-Each Artin generator $\sigma_i$ is a half-twist exchange of
-filaments $i$ and $i+1$.  The
-[representation](#prop:braid-action-tensor)
-$\rho_n(\sigma_i) = \mathrm{id}^{\otimes(i-1)} \otimes c_{V,V}
-\otimes \mathrm{id}^{\otimes(n-i-1)}$
-is realised as holonomy of the $\mathrm{SU}(2)$ connection around
-the exchange path.  The [Yang--Baxter
-equation](#prop:r-matrix-braiding-structure) ensures braiding
-three vortices is path-independent (Reidemeister III).
+The Artin generator $\sigma_i$ dictates the half-twist spatial exchange of filaments $i$ and $i+1$. The representation $\rho_n(\sigma_i) = \mathrm{id}^{\otimes(i-1)} \otimes c_{V,V} \otimes \mathrm{id}^{\otimes(n-i-1)}$ ([prop:braid-action-tensor](#prop:braid-action-tensor)) manifests physically as the $\mathrm{SU}(2)$ holonomy traversing the exchange path. The [Yang--Baxter equation](#prop:r-matrix-braiding-structure) enforces Reidemeister III, ensuring three-vortex braiding stays rigorously path-independent.
 
 **The dictionary.**
 
 See [Table](#tbl:braid-fluid-table-data).
 
 **Hecke relation as scattering.**
-$(T - q)(T + q^{-1}) = 0$ means two vortex tubes interact with
-exactly two eigenvalues: $q$ (symmetric pass-through) and
-$-q^{-1}$ (antisymmetric reconnection).  The universal ratio
+The quadratic rule $(T - q)(T + q^{-1}) = 0$ restricts two-vortex interactions to exactly two terminal eigenvalues: $q$ (symmetric unperturbed pass-through) and $-q^{-1}$ (antisymmetric core reconnection). The universal intensity ratio
 
 $$
   \frac{\text{reconnection}}{\text{pass-through}}
   = q^{-2}
 $$
 
-depends only on the substrate parameter.  This is the
-fluid-dynamical origin of the
-[skein crossing asymmetry](#rem:skein-crossing-asymmetry).
+relies entirely on the substrate parameter. This ratio establishes the fluid-dynamical source mechanism for the [skein crossing asymmetry](#rem:skein-crossing-asymmetry).
 
 **Helicity as Markov trace.**
-The [Jones polynomial](#thm:jones-markov-trace) $J_L(q)$ is
-the **topological helicity** of the vortex tangle — a refinement
-of classical helicity $H = \int v \cdot \omegadV$ that
-distinguishes configurations invisible to $H$ (e.g. trefoil
-from unknot).
+The [Jones polynomial](#thm:jones-markov-trace) $J_L(q)$ operates as the **topological helicity** governing the vortex tangle. This categorical metric comprehensively refines classical helicity $H = \int v \cdot \omega \, dV$, successfully distinguishing topological states utterly invisible to $H$ (separating the trefoil from the unknot).

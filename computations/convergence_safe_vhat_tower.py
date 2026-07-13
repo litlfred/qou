@@ -21,7 +21,7 @@ functional F(V̂_i) that (a) accepts |V̂_i| > q₀, (b) converges, (c)
 reduces to the working tower in overlap, (d) preserves the p/n signal,
 with ZERO free parameters:
 
-  1. Faddeev Φ_q (the bar-ASYMMETRIC mass-channel dilog).
+  1. compact q-dilog Φ_q (the bar-ASYMMETRIC mass-channel dilog).
   2. Analytic continuation of Li_2^q past |z| = q₀ (pole vs series-boundary).
   3. Bar-symmetrization (q ↔ q⁻¹) of the argument.
   4. Reciprocal/inversion V̂ ↦ 1/V̂ for |V̂| > 1 (Hecke σ ↔ σ⁻¹ antipode).
@@ -157,7 +157,7 @@ def li_2_q_continued(z, q, qi):
 
 
 def cand1_phi_q(v, q, qi):
-    """Candidate 1: Faddeev Φ_q(|V̂|). cheat-sheet §4 sorts Φ_q=MASS channel."""
+    """Candidate 1: compact q-dilog Φ_q(|V̂|). cheat-sheet §4 sorts Φ_q=MASS channel."""
     return phi_q(mp.fabs(v), qi)
 
 

@@ -28,6 +28,18 @@ h-odd component — log R = E(u~) + h*D(u~), u~ = q*u bar-even — and the hones
 are read from E alone (reported, tiered).  If either fails, the exact
 failing order + residual is the sharpened constraint for the next
 candidate (zeta4-residue route).  All scope (a); audit-only; no wiring.
+
+CORRECTION (2026-07-12, follow-up to the merged three-routes PR #3691).
+The original ai81 run reported O/h "failing at order 11".  That was an
+O/h top-order shift-padding ARTIFACT, not data: dividing O by h (both
+s-valuation 1) via the old ser_mul(O[1:]+[0], ser_inv(h[1:]+[0])) idiom
+pads the top with 0, so G[ORD] silently depends on the unknown O[ORD+1]
+and is garbage by construction — and the failing order tracked the
+truncation top exactly (see qbeta_barodd_d_ladder_ord17_probe.py, which
+runs the same object at ORD 19 with all 9 over-determining orders zero).
+This probe now divides through the valuation-aware core.ser_div, which
+zeroes and reports the invalid top row, and scans failing orders only
+over the valid range s^1..s^(ORD-1).  The two-variable form HOLDS.
 """
 from __future__ import annotations
 
@@ -45,7 +57,7 @@ import mpmath as mp  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
 from qbeta_ck_sseries_exact_rational import (  # noqa: E402
-    q, ORD, simp, ser_add, ser_mul, ser_scale, ser_inv, ser_sqrt,
+    q, ORD, simp, ser_add, ser_mul, ser_scale, ser_inv, ser_sqrt, ser_div,
     ser_log1, ser_cos0, rat_series, load_net_symbolic,
 )
 
@@ -145,17 +157,20 @@ def main() -> int:
 
     # (b) O/h in Q(sqrt3)[[u]] ?  (h has s-valuation 1)
     assert h_ser[0] == 0 and h_ser[1] != 0
-    # divide series by h: O = h * G  =>  G = O shifted /(h/s)
-    h_shift = h_ser[1:] + [sp.Integer(0)]          # h/s
-    O_shift = O[1:] + [sp.Integer(0)]              # O/s  (O[0] must be 0)
     assert sp.simplify(O[0]) == 0
-    G = ser_mul(O_shift, ser_inv(h_shift))         # O/h, bar-even
+    # Valuation-aware division: ser_div strips the common s^1, divides, and
+    # zeroes + reports the invalid top row (the old shift-padding made G[ORD]
+    # depend on the unknown O[ORD+1] — the "order-11 artifact"; see the header
+    # correction).  Scan failing orders only over the valid range s^1..s^valid.
+    G, g_valid_top = ser_div(O, h_ser)             # O/h, bar-even
     eG, residG = u_adic_match(G, u_ser, KMAX)
-    firstG = next((n for n in range(1, ORD + 1) if sp.simplify(residG[n]) != 0), None)
+    firstG = next((n for n in range(1, g_valid_top + 1)
+                   if sp.simplify(residG[n]) != 0), None)
     print(f"\n  (b) O/h = sum d_k u^k: coefficients d_k = "
           f"{ {k: str(sp.N(v_, 10)) for k, v_ in eG.items()} }")
-    print(f"      first nonzero residual order: {firstG}"
-          + (f"  value {sp.N(residG[firstG], 12)}" if firstG else "  — O/h IS a u-series ✓"))
+    print(f"      first nonzero residual order (valid s^1..s^{g_valid_top}): {firstG}"
+          + (f"  value {sp.N(residG[firstG], 12)}" if firstG
+             else f"  — O/h IS a u-series through s^{g_valid_top} ✓"))
 
     two_var_form = (firstE is None) and (firstG is None)
     verdict = (
@@ -194,9 +209,10 @@ def main() -> int:
                  if sp.simplify(v_) != 0})
     wb.add_data("D_u_coefficients_exact", {str(k): str(v_) for k, v_ in eG.items()})
     wb.add_data("OoverH_first_nonzero_residual_order", firstG)
+    wb.add_data("OoverH_valid_top_order", g_valid_top)
     wb.add_data("OoverH_residuals_nonzero",
                 {str(n): str(sp.N(v_, 15)) for n, v_ in residG.items()
-                 if sp.simplify(v_) != 0})
+                 if n <= g_valid_top and sp.simplify(v_) != 0})
     wb.add_data("two_variable_form_holds_to_ORD", bool(two_var_form))
     wb.add_data("verdict", verdict)
     wb.add_data("scope", "(a) — truncation order ORD, net route; no wiring")

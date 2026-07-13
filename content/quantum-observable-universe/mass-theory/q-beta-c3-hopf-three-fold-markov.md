@@ -20,7 +20,7 @@ $$
 
 The reason is **not** that the Markov closure of the full typed braid
 is the Hopf link — it isn't. Rather, the third-order coefficient
-in the perturbative expansion of $\tau_M$ around $q = 1$ (in powers
+in the perturbative expansion of $\mathrm{tr}_M$ around $q = 1$ (in powers
 of $\hbar_q^2$) **factors** through the contribution of **2-strand
 sub-braid windings**, whose Markov closure is the Hopf link.
 
@@ -38,8 +38,8 @@ $h \sim \hbar_q$.
 ### Fact 2 — Markov cyclicity at $k$-fold closure
 
 The Markov closure $\widehat{\beta} \in S^3$ of a braid $\beta \in B_n$
-respects cyclicity: $\tau_M(xy) = \tau_M(yx)$. At the $k$-th order
-in the perturbative expansion of $\tau_M(\beta)$ around $q = 1$, the
+respects cyclicity: $\mathrm{tr}_M(xy) = \mathrm{tr}_M(yx)$. At the $k$-th order
+in the perturbative expansion of $\mathrm{tr}_M(\beta)$ around $q = 1$, the
 combinatorial contribution gathers cyclic permutations of $k$
 crossings — equivalently, $k$-fold cyclic substructures of the
 underlying braid graph.
@@ -47,7 +47,7 @@ underlying braid graph.
 ### Fact 3 — 2-strand sub-braid extraction at order 3
 
 At order $\hbar_q^6$ (the third perturbative order), the dominant
-contribution to $\tau_M(\mathcal{B}_p) - \tau_M(\mathcal{B}_n)$ comes from
+contribution to $\mathrm{tr}_M(\mathcal{B}_p) - \mathrm{tr}_M(\mathcal{B}_n)$ comes from
 **all $\binom{n}{2}$ choices of 2-strand sub-braids** of $\beta$.
 For each such 2-strand sub-braid, the Markov closure is the **Hopf
 link** (or the unknot, for trivial sub-braids).
@@ -68,7 +68,7 @@ $$
 $$
 
 Combining Facts 1–4: the third-order $\hbar_q^6$ coefficient in
-$\tau_M(\mathcal{B}_p) - \tau_M(\mathcal{B}_n)$ factors as
+$\mathrm{tr}_M(\mathcal{B}_p) - \mathrm{tr}_M(\mathcal{B}_n)$ factors as
 
 $$
   c_3 \cdot b^3 \cdot \hbar_q^6
@@ -85,40 +85,7 @@ giving $c_3 = -2$ as a **structural prediction**, not an empirical fit.
 Per the canonical formalism,
 the prediction is empirically observable:
 
-- N=2 (Kashiwara $b^2$ alone): residual $+1.25$ ppm (above CODATA's
-  $0.4$ ppm floor)
-- N=3 (+ structural $c_3 = -2$): residual $+0.011$ ppm (within floor)
-- **112$\times$ tightening** at N=3 from the structural identification.
+The N=2 step (Kashiwara $b^2$ alone) gives a residual of $+1.25$ ppm, well above CODATA's $0.4$ ppm floor. The N=3 step (structural $c_3 = -2$) yields $+0.011$ ppm, inside the floor. This represents a 112$\times$ tightening at N=3, observable above CODATA noise, verifying the categorical-chain prediction empirically.
 
-This 112$\times$ residual reduction is **observable above CODATA noise**,
-empirically validating the categorical-chain prediction.
-
-**Near-match tier (not Taylor-exact).** The identification
-$c_3 = J_{\text{Hopf}}(q=1) = -2$ is a **classical-limit near-match**, not
-a Taylor-exact coefficient — only $c_2 = -1$ is proved exact (per the
-$c_k$ truncation-order framing). Measured against the empirical $c_3$
-extracted from the operator-valued $N=3$ tower
-([`q-beta-operator-valued-N3.witness.json`](../../computations/q-beta-operator-valued-N3.witness.json),
-$c_3^{\text{emp}} \approx -2.0216$), the best simple model
-$c_3 = J_{\text{Hopf}}(q=1) - \hbar_q^2$ now sits at a residual
-$\approx 0.58\%$ (witness
-[`c3-hopf-habiro-analysis.witness.json`](../../computations/c3-hopf-habiro-analysis.witness.json)).
-This residual was $\approx 0.004\%$ against the pre-drift upstream input;
-the $\approx 0.58\%$ value reflects the refreshed $N=3$ operator-valued
-$c_3$, and is the size of the near-match gap — not evidence of exactness.
-
-## Open formalization steps
-
-The Lean stub
-[`q-beta-c3-hopf-three-fold-markov.lean`](q-beta-c3-hopf-three-fold-markov.lean)
-encodes the chain at three levels:
-
-1. **Axiomatic input class** `ThreeFoldMarkovHopfExtraction` capturing
-   Fact 3 (2-strand sub-braid extraction at order 3). This is the
-   substantive combinatorial input requiring further development.
-2. **Classical-limit identity** $J_{\text{Hopf}}(1) = -2$ as a
-   pure-arithmetic theorem (closed by `ring` / `norm_num`).
-3. **Top-level export** $c_3 = -2$ conditional on (1) and (2).
-
-The class-axiomatization pattern follows AGENTS.md §3b's conditional-
-class rule for results downstream of an unproved structural input.
+**Near-match tier (not Taylor-exact).**
+The identification $c_3 = J_{\text{Hopf}}(q=1) = -2$ forms a classical-limit near-match, not a Taylor-exact coefficient. Only $c_2 = -1$ is proved exact. Evaluated against the empirical $c_3$ extracted from the operator-valued $N=3$ tower ($c_3^{\text{emp}} \approx -2.0216$), the simple model $c_3 = J_{\text{Hopf}}(q=1) - \hbar_q^2$ has a residual of $\approx 0.58\%$. This residual measures the near-match gap.

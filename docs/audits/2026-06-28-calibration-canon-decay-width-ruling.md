@@ -57,7 +57,13 @@ accuracy result:
 | **Experimental / Physical-Observations** | proton-anchored ≈`1.10998` | **209.8 ppb / 963.6× FAIL** | the genuine 9.5σ prediction — the μ–p substrate tension. |
 
 **The L2 100× dashboard reports the EXPERIMENTAL value** (209.8 ppb FAIL,
-L2 = 3/7). Reporting the ideal ~0 ppb as "m_μ MET" is the recurring bug
+L2 = 3/7 at this doc's date — **now 2/7 since 2026-07-04**: m_p was
+dropped when its fitted Habiro tower `(1+46u⁴)(1+4u⁵)(1−29u⁶)` — the same
+purged fit flagged in the solver caveat below — was removed from
+production; de-fitted round-trip +1.35 ppb, ~437× miss. See
+[`2026-07-04-c4-mu-p-tension-pin-dependence.md`](2026-07-04-c4-mu-p-tension-pin-dependence.md).
+The calibration ruling itself is unaffected). Reporting the ideal ~0 ppb
+as "m_μ MET" is the recurring bug
 (AGENTS.md §"q₀ anchor convention" STRICT rule 1; bean `tnjb`).
 
 ## L2-dashboard data integrity (bean `tnjb`, resolved)
@@ -74,7 +80,8 @@ L2 = 3/7). Reporting the ideal ~0 ppb as "m_μ MET" is the recurring bug
 - **Q_β/m_n/Δ_pn refreshed (#2902).** Canonical-env regen (Python 3.11.15,
   mpmath 1.3.0, numpy 2.4.6, sympy 1.14.0 — exact match, zero engine churn)
   refreshing the stale upstream rows: Q_β 164.0×→160.1×, m_n 185.4×→181.0×,
-  Δ_pn 163.3×→159.4×. Summary unchanged 3/7.
+  Δ_pn 163.3×→159.4×. Summary unchanged 3/7 at that date (now 2/7 —
+  m_p de-fit 2026-07-04, see currency note above).
 
 ## Caveat — the proton-q₀ solver embeds a purged fit
 

@@ -1,1 +1,1 @@
-**Remark.** Re-framing the conventional scalar uniqueness corollary explicitly within the context of spectral completeness provides a mathematically novel uniqueness constraint for the QOU gauge sector, bounding possible gauge couplings strictly by algebraic singlets.
+**Remark.** Spectral completeness constrains the gauge sector. It bounds possible gauge couplings strictly by algebraic singlets.

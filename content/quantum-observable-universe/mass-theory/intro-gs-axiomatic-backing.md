@@ -1,14 +1,3 @@
-The Gröbner–Shirshov framework used throughout the chapter to
-reduce braid words to canonical form rests on a single
-axiomatic backing: the existence of a graded Markov trace
-compatible with the Hecke composition.  This section records the
-existence conjecture and its consequences, isolating the formal
-input that the chapter's reduction engine consumes.
+The Gröbner–Shirshov (GS) framework reduces braid words to their canonical form. This framework relies on a single axiomatic backing: the existence of a graded Markov trace compatible with the Hecke composition. This section records the existence conjecture and its formal consequences, isolating the inputs consumed by the reduction engine.
 
-The arc starts with the existence conjecture itself, surveys the
-GS-reduction lemmas that depend on it, and tracks the
-conditional theorems that become unconditional once the
-conjecture is discharged.  The closing blocks note the proof
-status of the conjecture in the literature and identify the
-specific obstruction (the Wenzl-bridge convention) that the
-present paper resolves.
+We begin with the existence conjecture, survey the GS-reduction lemmas depending on it, and track the conditionally proved theorems. We identify the proof status in the literature and highlight the specific obstruction (the Wenzl-bridge convention) that the present formalism resolves.

@@ -3,7 +3,7 @@ import { remark } from "../../schema/builders";
 export default remark({
   label: "rem:conway-normal-form",
   title:
-    "Conway normal form unifies Big-O / little-o / Θ / $\\sim$",
+    "Conway normal form unifies Big-O / little-o / $\\Theta$ / $\\sim$",
   tags: [
     "surreal-numbers",
     "conway-normal-form",

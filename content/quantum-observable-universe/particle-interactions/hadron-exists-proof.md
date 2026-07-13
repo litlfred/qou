@@ -1,7 +1,2 @@
-Witness: the proton $\mathfrak{p} = \mathcal{B}_3(\mathfrak{u}, \mathfrak{u}, \mathfrak{d})$
-([categorical proton](#def:categorical-proton)) is a hadron — its
-crossing energy is negative at the substrate value $q_0$, confirmed
-by the LP-stability analysis on the Hecke basis.  The Borromean
-braid $\mathcal{B}_3$ plus Hopf-link gluon stabilisation ensures
-$\mathfrak{E}_{\mathrm{cross}}(\mathfrak{p}) < 0$.  Similar constructions
-yield $\mathfrak{n}$ (neutron) and other hadrons.
+**Proof.**
+The proton $\mathfrak{p} = \mathcal{B}_3(\mathfrak{u}, \mathfrak{u}, \mathfrak{d})$ ([categorical proton](#def:categorical-proton)) provides a witness hadron. Its crossing energy is negative at the substrate value $q_0$. LP-stability analysis on the Hecke basis confirms this. The Borromean braid $\mathcal{B}_3$ combined with Hopf-link gluon stabilization ensures $\mathfrak{E}_{\mathrm{cross}}(\mathfrak{p}) < 0$. Similar constructions yield the neutron $\mathfrak{n}$ and other hadrons. $\square$

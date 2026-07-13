@@ -1,1 +1,1 @@
-Glossary entries for geometric and topological terminology.
+We define geometric and topological terminology used throughout this paper.

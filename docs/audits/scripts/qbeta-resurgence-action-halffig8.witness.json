@@ -1,0 +1,60 @@
+{
+  "computation": "qbeta-resurgence-action-halffig8",
+  "description": "Resurgence instanton action of 4_1 (f-map Stokes datum, preliminary) + pion=half-figure-eight even-channel knot id.",
+  "audit_only": true,
+  "tier": "structural-exact (knot id, volumes) + preliminary-numerical (action A)",
+  "computedAt": "2026-07-07T15:03:42.255514+00:00",
+  "commitSha": "523c800c06a8ce689d207983a0fdfb73e3c46306",
+  "engine": "mpmath",
+  "engineVersion": "1.3.0",
+  "scriptFile": "qbeta_resurgence_action_halffig8.py",
+  "scriptHash": "6c268ab9e3ab",
+  "assertions": [
+    {
+      "name": "vol41_recovered_highorder",
+      "passed": true
+    },
+    {
+      "name": "instanton_action_is_positive_order_half",
+      "passed": true
+    },
+    {
+      "name": "kappa_all_positive",
+      "passed": true
+    },
+    {
+      "name": "even_channel_signs_incompatible_with_positive_kappa",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "result": {
+    "vol41_recovered": "2.029883212819307",
+    "kappa_order6": [
+      "0.554216472397",
+      "0.731081816721",
+      "2.65452051238",
+      "13.0976536275",
+      "83.8769895836",
+      "788.268317807"
+    ],
+    "instanton_action_A_preliminary": "0.53203324",
+    "A_estimates_per_order": [
+      "0.75807722",
+      "0.55082024",
+      "0.60801436",
+      "0.62461248",
+      "0.53203324"
+    ],
+    "A_closest_candidate": "\u039b(\u03c0/3)=Vol/4",
+    "pion_half_vol": "1.01494160641",
+    "verdict": "(TASK 1) 4_1 Ohtsuki ladder to order 6 (Vol rec rel 2.35e-18); the divergent series' instanton action |A|\u22480.532 (large-order \u03ba_{n+1}/\u03ba_n~n/A) OSCILLATES across orders (0.76,0.55,0.61,0.62,0.53) \u2014 the signature of a COMPLEX/paired action (\u00b1Vol geometric connections), PRELIMINARY (6 orders; near \u039b(\u03c0/3)=Vol/4\u22480.507 but NOT established \u2014 needs ~20 orders/Borel-Pad\u00e9). A is the resurgence Stokes datum = the geometric-trivial saddle gap \u2014 the f-map's actual content (NOT a coefficient re-basing). (TASK 2) The even-channel knot is the pion = HALF-figure-eight (\u03c3\u2081\u03c3\u2082\u207b\u00b9; 4_1 op = its square): even channel sits at Vol(4_1)/2=1.0149416, and the 4_1 prefactor 3^(-1/4) square-rooted lands it in \u211a(\u221a3) \u2014 matching e\u2081=3\u221a3/4. But a knot-INDEPENDENT SIGN obstruction settles it: the 4_1 \u03ba_k are all POSITIVE (half-ladder \u03ba/2 too), while the even e_k are (+,\u2212,\u2212,\u2212); no real one-scale \u03ba\u00b7\u03bb^k flips sign, so neither full nor half knot re-bases to the even channel \u2014 reinforcing resurgence, not re-basing. na-Stokes note: the Yekutieli non-abelian-Stokes classes \u03ba_n\u22600 (perpetual obstruction) are the FIBRE origin of the two flat-connection saddles the resurgence Stokes connects \u2014 distinct theorem, same connection structure; not needed for the numerical A. No fit; no c_k; no wiring; no tier change."
+  },
+  "context": {
+    "axis": "z->c_k f-map keystone: resurgence action + even-channel knot",
+    "fmap_is_resurgence": "PR #3474; A = geometric-trivial saddle gap",
+    "even_channel_knot": "pion = half-figure-eight (pion-half-figure-eight.md); 4_1 = its square",
+    "na_stokes_role": "Yekutieli \u03ba_n\u22600 = fibre origin of the two saddles; distinct from resurgence Stokes; not needed for A",
+    "preliminary": "A needs ~20 orders / Borel-Pad\u00e9 for a tight value"
+  }
+}

@@ -1,4 +1,4 @@
-| reduced word    | $\operatorname{tr}_M$ value           | derivation              |
+| reduced word    | $\mathrm{tr}_M$ value           | derivation              |
 |-----------------|-------------------------------------|-------------------------|
 | $1$             | $1$                                 | normalisation           |
 | $\sigma_1$       | $z$                                 | Markov axiom (2-strand) |

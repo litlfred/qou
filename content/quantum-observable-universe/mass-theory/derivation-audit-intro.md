@@ -1,5 +1,1 @@
-This section surveys how the framework derives a mass and a binding
-energy, tracing the construction from the categorical action through the
-Markov trace to a number in MeV. The blocks below give the step-by-step
-chain together with the canonical knot-identification program and the
-binding-energy analysis that follow from it.
+We survey the mass and binding energy derivation. We trace the framework from the categorical action down to a numerical evaluation in MeV. The sequence details the derivation steps, the canonical knot identification, and the binding energy analysis.

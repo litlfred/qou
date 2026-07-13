@@ -18,17 +18,12 @@ $$
   \mathbb{L}_q \colon
   \mathcal{D}_q\text{-}\mathrm{mod}(\mathrm{Bun}_{G_q}(X))
   \xrightarrow{ \sim }
-  \mathrm{QCoh}(\mathrm{LocSys}_{\check{G}_q}(X)),
+  \mathrm{QCoh}(\mathrm{LocSys}_{\check{G}_q}(X)).
 $$
 
-parametrised by $q \in \mathbb{G}_m^{\mathrm{nt}}(k)$ (the
-non-torsion locus of the substrate), satisfying:
+This equivalence is parametrised by the non-torsion locus $q \in \mathbb{G}_m^{\mathrm{nt}}(k)$ and satisfies five properties:
 
-1. **Hecke compatibility**: for every $q$-Hecke operator
-   $\mathbf{T}_{x,\lambda}^{(q)}$
-   ([q-Hecke operator](#def:q-hecke-operator)) on the left-hand
-   side, the functor $\mathbb{L}_q$ intertwines it with the action
-   of $V_\lambda^{(q)}$ on $\mathrm{LocSys}_{\check{G}_q}(X)$:
+1. **Hecke compatibility**: For every $q$-Hecke operator $\mathbf{T}_{x,\lambda}^{(q)}$ ([q-Hecke operator](#def:q-hecke-operator)), $\mathbb{L}_q$ intertwines the action on the left with the action of $V_\lambda^{(q)}$ on $\mathrm{LocSys}_{\check{G}_q}(X)$:
    $$
      \mathbb{L}_q \circ \mathbf{T}_{x,\lambda}^{(q)}
      \simeq
@@ -42,7 +37,7 @@ non-torsion locus of the substrate), satisfying:
 2. **Fibre-functor factorisation**: the equivalence factors through
    the fibre functor $\tau$:
    $$
-     \mathbb{L}_q = \tau^* \circ \mathbb{L}_q^{\mathrm{Tannakian}},
+     \mathbb{L}_q = \tau^* \circ \mathbb{L}_q^{\mathrm{Tannakian}}.
    $$
    where $\mathbb{L}_q^{\mathrm{Tannakian}}$ is determined by
    Tannaka--Krein reconstruction for $\check{G}_q$.  Routing the

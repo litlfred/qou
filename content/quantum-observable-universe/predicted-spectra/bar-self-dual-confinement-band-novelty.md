@@ -1,1 +1,1 @@
-**Remark.** This formulation collapses three historically disjoint asymmetric phase regimes into a single unified bar-self-dual confinement band. While utilizing standard involution bounds, the structural consolidation is highly novel, offering a rigid phase boundary for the QOU framework.
+**Remark.** To define a rigid phase boundary, this formulation unifies three disjoint asymmetric phase regimes into a single bar-self-dual confinement band using standard involution bounds.

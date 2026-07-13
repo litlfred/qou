@@ -58,6 +58,4 @@ certificate.*
 
 ### Notes
 
-*$E_2$-collapse is what justifies treating the GS filtration as
-**exact**: any higher differential would re-mix length levels and
-break the jet-order matching used by Step 8.*
+*$E_2$-collapse justifies treating the GS filtration as **exact**. Any higher differential would re-mix length levels and break the jet-order matching of Step 8.*

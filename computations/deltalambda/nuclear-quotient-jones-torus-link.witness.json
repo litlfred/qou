@@ -1,0 +1,56 @@
+{
+  "schema": "witness/v1",
+  "computation": "nuclear-quotient-jones-torus-link",
+  "engine": "python",
+  "engineVersion": "3.11.15",
+  "scriptFile": "nuclear_quotient_jones_torus_link_probe.py",
+  "commitSha": "5c06b5dd1db88f454650c31a92111424f42fd59f",
+  "scriptHash": "20f2d46e826c",
+  "description": "(2,k) torus-link Jones values (Markov trace tr_M(sigma_1^k)) for the nuclear quotient braid: unknot/Hopf/trefoil closed forms wired into QOU/BraidKnot/JonesNuclearQuotient.lean; RHS of the OPEN Part-4 conjecture conj:jet-filtered-knot-factor (a(Z,N)=J_beta_bar(q)). Infra provenance only; does NOT prove the conjecture.",
+  "generated": "2026-07-11T00:00:00+00:00",
+  "assertions": [
+    {
+      "name": "unknot_(2,1)_is_z",
+      "passed": true,
+      "got": "sqrt(q)/(q + 1)",
+      "want": "sqrt(q)/(q + 1)"
+    },
+    {
+      "name": "hopf_(2,2)_is_hz_plus_1",
+      "passed": true,
+      "got": "(sqrt(q)*(q + 1) + q**2 - 1)/(sqrt(q)*(q + 1))",
+      "want": "(sqrt(q)*(q + 1) + q**2 - 1)/(sqrt(q)*(q + 1))"
+    },
+    {
+      "name": "trefoil_(2,3)_is_h2p1_z_plus_h",
+      "passed": true,
+      "got": "(q**(9/2) + q**(7/2) - q**(5/2) - q**(3/2) + q**5 - q**3 + q)/(q**(5/2)*(q + 1))",
+      "want": "(q**(9/2) + q**(7/2) - q**(5/2) - q**(3/2) + q**5 - q**3 + q)/(q**(5/2)*(q + 1))"
+    },
+    {
+      "name": "hopf_matches_jonesviamarkovtrace_closed_form",
+      "passed": true,
+      "got": "(sqrt(q)*(q + 1) + q**2 - 1)/(sqrt(q)*(q + 1))",
+      "want": "(q**(5/2) - sqrt(q) + q**2 + q)/(q*(q + 1))"
+    }
+  ],
+  "allPassed": true,
+  "result": {
+    "unknot_2_1": "sqrt(q)/(q + 1)",
+    "hopf_2_2": "(sqrt(q)*(q + 1) + q**2 - 1)/(sqrt(q)*(q + 1))",
+    "trefoil_2_3": "(q**(9/2) + q**(7/2) - q**(5/2) - q**(3/2) + q**5 - q**3 + q)/(q**(5/2)*(q + 1))",
+    "hopf_matches_existing_lean_jonesHopf": true,
+    "numeric_q4": {
+      "tr_sigma1_pow_1_at_q4": 0.4,
+      "tr_sigma1_pow_2_at_q4": 2.5,
+      "tr_sigma1_pow_3_at_q4": 9.775
+    }
+  },
+  "context": {
+    "consumes": "QOU/BraidKnot/JonesNuclearQuotient.lean (jonesUnknot / jonesHopfLink / jonesTrefoil)",
+    "conjecture": "conj:jet-filtered-knot-factor Part-4 (OPEN): a(Z,N) = J_beta_bar(q)",
+    "hecke_relation": "sigma^2 = h*sigma + 1, h = q - q^{-1} (AGENTS.md Sec 7a)",
+    "markov_parameter": "z = 1/(sqrt(q) + 1/sqrt(q))",
+    "scope": "infra RHS construction; NOT a closure of the conjecture"
+  }
+}

@@ -1,7 +1,4 @@
-**Proposition (Three-calibration discipline).**
-*The QOU framework admits **categorically exactly three** external
-calibration inputs — the three real degrees of freedom of the first
-cohomology of Bring's curve, $H^1 = 2W$:*
+*The QOU framework admits exactly three external calibration inputs. These are the three real degrees of freedom of the first cohomology of Bring's curve, $H^1 = 2W$:*
 
 | DOF of $H^1(\text{Bring}) = 2W$ | Canonical observable | What it fixes | Numerical proxy (source) |
 | ------------------------------- | -------------- | ------------- | ------ |
@@ -9,35 +6,11 @@ cohomology of Bring's curve, $H^1 = 2W$:*
 | $W$-plane **modulus** ($h^2$)   | $\mathfrak{D}_\beta$ (neutron $\beta$-decay width) | $q_0$ via $m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_q^2$ | $\mathfrak{Q}_\beta = \hbar/\mathfrak{D}_\beta$; modulus pinned most precisely by $m_\mu/m_e$ (CODATA muon mass) |
 | **orthogonal class** (meson sector, $h^3$) | $\mathfrak{D}_\pi$ (pion decay width) | the $\mathrm{Vol}(\mathrm{Hopf})=0$ meson scale (independent of $m_e, q_0$) | $m_\pi$, PDG (charged-pion mass) |
 
-All three are the three real degrees of freedom of the single first
-cohomology $H^1(\text{Bring}) = 2W$ — **not** three distinct degrees
-$H^0/H^1/H^2$. The Hodge structure of shape $2W$ has exactly $2+1=3$
-real DOF (the rank-2 $W$-plane's scale and modulus, plus one orthogonal
-class), matching the three calibrations
-([calibration-cohomology-alignment](../mass-theory/calibration-cohomology-alignment.md),
-Lean witness `QOU.Mass.calibrations_eq_cohomology`).
+These three degrees of freedom belong to the single first cohomology $H^1(\text{Bring}) = 2W$. They are not three distinct degrees $H^0/H^1/H^2$. The Hodge structure of shape $2W$ has $2+1=3$ real DOF (the rank-2 $W$-plane's scale and modulus, plus one orthogonal class). This matches the three calibrations ([calibration-cohomology-alignment](../mass-theory/calibration-cohomology-alignment.md), Lean witness `QOU.Mass.calibrations_eq_cohomology`).
 
-The three canonical inputs are **weak-sector observables** — a leptonic
-mass scale and two decay widths $(m_e, \mathfrak{D}_\beta, \mathfrak{D}_\pi)$,
-entering at successive orders $h^0, h^2, h^3$. They are read off their
-most precise **proxies** — the masses $m_e, m_\pi$ and the $Q$-value
-$\mathfrak{Q}_\beta = \hbar/\mathfrak{D}_\beta$. $m_e$ sets the unit; since
-$q_0$ is dimensionless it is pinned by $m_\mu$ *relative to that unit* —
-i.e. by the ratio $m_\mu/m_e$ through the figure-eight identity
-$m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_q^2$ with $\hbar_q = 1 - q_0^{-1}$
-(inverted for $q_0 \approx 1.10998$), the most precise anchor for CAL-2
-($\mathfrak{D}_\beta$); $m_\pi$ is the proxy for the orthogonal meson scale
-($\mathfrak{D}_\pi$). $\mathfrak{Q}_\beta$ is the **measured proxy for CAL-2**
-(see below), not a fourth input.
+The three canonical inputs are weak-sector observables: a leptonic mass scale and two decay widths $(m_e, \mathfrak{D}_\beta, \mathfrak{D}_\pi)$. They enter at successive orders $h^0, h^2, h^3$. We read them off their most precise proxies: the masses $m_e, m_\pi$ and the $Q$-value $\mathfrak{Q}_\beta = \hbar/\mathfrak{D}_\beta$. The electron mass $m_e$ sets the unit. Since $q_0$ is dimensionless, we pin it relative to that unit using the ratio $m_\mu/m_e$ through the figure-eight identity $m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_q^2$ with $\hbar_q = 1 - q_0^{-1}$. Inverted for $q_0 \approx 1.10998$, this provides the most precise anchor for CAL-2 ($\mathfrak{D}_\beta$). The pion mass $m_\pi$ is the proxy for the orthogonal meson scale ($\mathfrak{D}_\pi$). The value $\mathfrak{Q}_\beta$ is the measured proxy for CAL-2, not a fourth input.
 
-*For every confined hadronic state $X$ the mass functional defined
-by the algebraic-side chain
-([categorical action](#def:categorical-action),
-[Frobenius pairing](#def:frobenius-pairing),
-[mass identity](#def:mass-identity),
-[mass-endomorphism tower](#prop:mass-endomorphism-tower),
-[Jones–Markov trace](#thm:jones-markov-trace))
-factors as*
+*For every confined hadronic state $X$, the mass functional defined by the algebraic-side chain ([categorical action](#def:categorical-action), [Frobenius pairing](#def:frobenius-pairing), [mass identity](#def:mass-identity), [mass-endomorphism tower](#prop:mass-endomorphism-tower), [Jones–Markov trace](#thm:jones-markov-trace)) factors as*
 
 $$
   \mathfrak{m}(X) \;=\;
@@ -46,94 +19,27 @@ $$
   Q_X(q) \in \mathbb{Q}(q),
 $$
 
-*with non-negative integer exponents $a(X), c(X)$ determined by the
-(co)homological grading the observable $X$ supplies. Concretely:
-$a$ counts mass-scale insertions ($H^0$ — the $W$-plane scale), $c$
-counts meson-sector insertions (the orthogonal $m_\pi$ class; $c = 0$
-in the baryon sector), and $q_0$ is fixed by the lepton ratio
-$m_\mu/m_e$ (the $H^1$ $W$-plane modulus, CAL-2 = $\mathfrak{D}_\beta$).
-$\mathfrak{Q}_\beta$ is the **CAL-2 proxy** — the bar-odd ($\sinh$) partner
-of the bar-even ($\cosh$) meson scale $m_\pi$ under the bar-involution
-$q \mapsto q^{-1}$
-([substrate cohomology calibration story](../mass-theory/substrate-cohomology-calibration-story.md)),
-the experimental face of the modulus CAL-2 pins — not a separate
-dimensional mass-formula factor like $m_e$ or $m_\pi$.*
+*with non-negative integer exponents $a(X), c(X)$ determined by the (co)homological grading of the observable $X$. Concretely: $a$ counts mass-scale insertions ($H^0$ — the $W$-plane scale), $c$ counts meson-sector insertions (the orthogonal $m_\pi$ class; $c = 0$ in the baryon sector), and $q_0$ is fixed by the lepton ratio $m_\mu/m_e$ (the $H^1$ $W$-plane modulus, CAL-2 = $\mathfrak{D}_\beta$). The parameter $\mathfrak{Q}_\beta$ is the CAL-2 proxy. It is the bar-odd ($\sinh$) partner of the bar-even ($\cosh$) meson scale $m_\pi$ under the bar-involution $q \mapsto q^{-1}$ ([substrate cohomology calibration story](../mass-theory/substrate-cohomology-calibration-story.md)). It represents the experimental face of the modulus that CAL-2 pins. It is not a separate dimensional mass-formula factor.*
 
 ## Discussion
 
-This proposition crystallises a discipline that is implicit
-elsewhere in the paper:
+This proposition formalizes the calibration discipline.
 
-1. **Three calibration inputs, no more, no less.** The QOU
-   framework reads three CODATA / PDG values ($m_e$, the lepton
-   ratio $m_\mu/m_e$, and $m_\pi$) and spends them on three distinct
-   (co)homological data of the substrate. Every other physical
-   prediction in the paper is the product of these three with a
-   $\mathbb{Q}(q_0)$-valued algebraic expression — a Markov trace,
-   a Wedderburn-block sum, a $\Phi_q$-tower contribution, etc.
-2. **(Co)homological alignment.** The three calibrations are not
-   interchangeable: they are precisely the three real degrees of
-   freedom of the Bring Hodge structure $H^1 = 2W$
-   ([calibration-cohomology-alignment](../mass-theory/calibration-cohomology-alignment.md)).
-   The rank-2 $W$-Hodge plane carries two invariants — a **scale**
-   (the $h^0$ prefactor *channel*, pinned by $m_e$) and a **modulus** (the
-   $\mathrm{SL}_2$ trace $\tau = 2\cosh\theta$, pinned by $q_0$ via
-   the lepton ratio $m_\mu/m_e$). The meson sector — whose Hopf-link complement
-   has $\mathrm{Vol}(\mathrm{Hopf}) = 0$, hence no geometric scale
-   derivable from $(m_e, q_0)$ — contributes a third, **orthogonal**
-   scale, pinned by $m_\pi$. The count $2 + 1 = 3$ matches the three
-   calibrations exactly.
-3. **Overdetermination (and the physical-observations anchor).** The
-   canonical $H^1$ modulus is pinned by the lepton ratio $m_\mu/m_e$
-   through the figure-eight volume identity
+1. **Three calibration inputs.** The QOU framework reads three experimental values ($m_e$, the lepton ratio $m_\mu/m_e$, and $m_\pi$). It assigns them to three distinct (co)homological data of the substrate. Every other physical prediction is the product of these three with a $\mathbb{Q}(q_0)$-valued algebraic expression.
+2. **(Co)homological alignment.** The three calibrations correspond exactly to the three real degrees of freedom of the Bring Hodge structure $H^1 = 2W$ ([calibration-cohomology-alignment](../mass-theory/calibration-cohomology-alignment.md)). The rank-2 $W$-Hodge plane carries a scale (pinned by $m_e$) and a modulus (pinned by $q_0$ via $m_\mu/m_e$). The meson sector contributes a third, orthogonal scale (pinned by $m_\pi$).
+3. **Overdetermination.** The canonical $H^1$ modulus is pinned by the lepton ratio $m_\mu/m_e$ through the figure-eight volume identity
 
    $$
      \frac{m_\mu}{m_e} \;=\; \frac{\mathrm{Vol}(4_1)}{\hbar_q^2},
      \qquad \hbar_q = 1 - q_0^{-1},
-     \qquad \mathrm{Vol}(4_1) = 2\Lambda(\pi/3) \approx 2.0299,
+     \qquad \mathrm{Vol}(4_1) = 2\Lambda(\pi/3) \approx 2.0299.
    $$
 
-   inverted for $q_0$ — so CAL-1 and CAL-2 together *coordinatize* the
-   single modulus $q_0$ one-to-one (the ratio **determines** $q_0$; note
-   $q_0 \approx 1.110$ while $m_\mu/m_e \approx 206.77$, so $q_0$ is the
-   *root* of the identity, not the ratio itself). This is why CAL-1 +
-   CAL-2 are **one** dimensionless $H^1$ datum, not two. The modulus is
-   itself overdetermined: it can equally be
-   fixed by $\alpha_{\mathrm{EM}}^{-1}$ or by tritium $t_{1/2}$, which
-   agree on $q_0$ to within 0.3% (per
-   [substrate-consistency window](#prop:substrate-consistency-window)).
-   In the **Physical-Observations** chapter one may instead anchor
-   $q_0$ on a *derived* quantity with smaller experimental error —
-   the proton ratio $m_p/m_e$ (0.06 ppb vs the muon ratio's 22 ppb;
-   the re-pin). This is a precision substitution within
-   the same overdetermined $H^1$ datum, **not** a change to the
-   canonical calibration: $m_\mu/m_e$ remains CAL-2; $m_p/m_e$ is the
-   numerical anchor, with $m_\mu/m_e$ then a $9.5\sigma$ cross-check
-   prediction (the $\mu$–$p$ substrate tension). They re-determine the
-   **same** $H^1$ datum — consistency cross-checks, not additional
-   calibrations.
-4. **Audit consequence.** Any content block or compute output that
-   quotes a numerical mass / binding energy / Q-value not of the
-   form $m_e^a m_\pi^c \cdot \text{rational}(q_0)$ has either (a)
-   introduced a fourth calibration — a discipline violation that
-   must be flagged and either derived or named — or (b) is
-   reporting a $\tau$-image quantity from the Archimedean side
-   (volume, length, etc.), which is an honest cross-domain
-   comparison but does not participate in algebraic-side
-   derivations.
+   Inverted for $q_0$, CAL-1 and CAL-2 coordinatize the single modulus $q_0$ one-to-one. The modulus is overdetermined. It can be fixed by $\alpha_{\mathrm{EM}}^{-1}$ or by tritium $t_{1/2}$, which agree on $q_0$ to within 0.3% ([substrate-consistency window](#prop:substrate-consistency-window)). In the observations chapter, one may anchor $q_0$ on the proton ratio $m_p/m_e$ for higher precision. This is a substitution within the same overdetermined $H^1$ datum. It does not introduce a new calibration.
+4. **Audit consequence.** Any predicted mass, binding energy, or Q-value not of the form $m_e^a m_\pi^c \cdot \text{rational}(q_0)$ violates this discipline. It must either introduce a fourth calibration or report a $\tau$-image quantity from the Archimedean side.
+
 ## Audit hook
 
-This proposition serves as the **calibration-discipline hook** for
-audits. Companion task **P1.5** in the
-[ math-framework workplan](../../../docs/audits/-math-framework-workplan.md)
-sweeps the paper for blocks that violate this discipline (e.g.
-compound-shell calibration, atlas base cases). Companion task
-**P0.1** sweeps proof blocks for Archimedean-side derivation
-inputs (Vol(K), hyperbolic, Mostow, $\ldots$) — the
-$\mathbb{Q}(q_0)$-rationality clause forbids such inputs in
-algebraic-side derivations.
+This proposition serves as the calibration-discipline hook for audits. Task P1.5 in the [math-framework workplan](../../../docs/audits/-math-framework-workplan.md) sweeps the paper for discipline violations. Task P0.1 sweeps proof blocks for Archimedean-side derivation inputs. The $\mathbb{Q}(q_0)$-rationality clause forbids such inputs in algebraic-side derivations.
 
-A **fourth** dimensional input anywhere in the paper is a hard
-audit failure. The three calibrations are categorical: they sit in
-distinct cohomological degrees and cannot be replaced by other
-choices without violating the (co)homological alignment.
+A fourth dimensional input constitutes a hard audit failure. The three calibrations are categorical. They sit in distinct cohomological degrees and cannot be replaced without violating the (co)homological alignment.

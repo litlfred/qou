@@ -1,60 +1,11 @@
-*Proof.* All four ingredients are standard; we collect them.
+*Proof.* We assemble four standard components.
 
-**(1) Tower of inclusions.** The Hecke algebra $H_n(R, q)$ has
-presentation by braid generators $\sigma_1, \ldots, \sigma_{n-1}$
-modulo the Hecke quadratic relation
-$\sigma_i^2 = (q - q^{-1})\sigma_i + 1$ and the braid relations. The
-inclusion $H_n(q) \hookrightarrow H_{n+1}(q)$ adjoins $\sigma_n$;
-this is unital, $R$-linear, and respects the bar-involution
-$\sigma_i \leftrightarrow \sigma_i^{-1}$. Hence $\{H_n(q)\}_{n \geq 1}$
-is a filtered inductive system in the category of unital
-$*$-algebras over $R$, with colimit $H_\infty(q) = \bigcup_n H_n(q)$
-[`jones1985`].
+**Tower of inclusions.** The Hecke algebra $H_n(R, q)$ has presentation by braid generators $\sigma_1, \ldots, \sigma_{n-1}$ modulo the braid relations and the quadratic relation $\sigma_i^2 = (q - q^{-1})\sigma_i + 1$. The inclusion $H_n(q) \hookrightarrow H_{n+1}(q)$ adjoins $\sigma_n$. This inclusion is unital, $R$-linear, and respects the bar-involution $\sigma_i \leftrightarrow \sigma_i^{-1}$. The sequence $\{H_n(q)\}_{n \geq 1}$ forms a filtered inductive system of unital $*$-algebras over $R$, with colimit $H_\infty(q) = \bigcup_n H_n(q)$ [`jones1985`].
 
-**(2) Markov property.** The Markov trace
-$\mathrm{tr}_{M,n} \colon H_n(q) \to R$ satisfies, for any
-$x \in H_n(q)$, the recursion
-$\mathrm{tr}_{M,n+1}(x \cdot \sigma_n) = z \cdot \mathrm{tr}_{M,n}(x)$,
-where $z = 1/(q^{1/2}+q^{-1/2})$
-([Jones–Markov trace](#thm:jones-markov-trace)).
-Equivalently, $\mathrm{tr}_{M,n+1}|_{H_n(q)} = \mathrm{tr}_{M,n}$,
-The family is compatible with the inclusions of step (1). By the
-universal property of the colimit, there is a unique
-$R\otimes\mathbb{Q}$-linear trace
-$\mathrm{tr}_M \colon H_\infty(q) \to R\otimes\mathbb{Q}$ extending
-all $\mathrm{tr}_{M,n}$.
+**Markov property.** The Markov trace $\mathrm{tr}_{M,n} \colon H_n(q) \to R$ satisfies the recursion $\mathrm{tr}_{M,n+1}(x \cdot \sigma_n) = z \cdot \mathrm{tr}_{M,n}(x)$ for any $x \in H_n(q)$, where $z = 1/(q^{1/2}+q^{-1/2})$ ([Jones–Markov trace](#thm:jones-markov-trace)). Equivalently, $\mathrm{tr}_{M,n+1}|_{H_n(q)} = \mathrm{tr}_{M,n}$. This compatibility with the inclusions defines a unique $R\otimes\mathbb{Q}$-linear trace $\mathrm{tr}_M \colon H_\infty(q) \to R\otimes\mathbb{Q}$ extending all $\mathrm{tr}_{M,n}$ by the universal property of the colimit.
 
-**(3) Positivity.** Wenzl 1988 showed that for $q$ in the regime
-$q^{1/2}+q^{-1/2} > 2$ (equivalently, $q \in (0, q_-) \cup (q_+, \infty)$
-for the two real roots $q_\pm$ of $q + q^{-1} = 2$), the Markov trace
-is a *positive* linear functional: for every $x \in H_n(q)$,
-$\mathrm{tr}_{M,n}(x^* x) \geq 0$, with equality iff $x = 0$ in the
-quotient by the trace ideal. The QOU substrate $q_0 \approx 1.11$
-satisfies $q_0^{1/2}+q_0^{-1/2} \approx 1.054 + 0.949 = 2.003 > 2$
-(narrowly — the binding regime sits right above the positivity
-threshold). Hence Wenzl's positivity applies, and
-$\mathrm{tr}_M$ is a positive trace on $H_\infty(q)$.
+**Positivity.** Wenzl 1988 established that for $q^{1/2}+q^{-1/2} > 2$, the Markov trace acts as a positive linear functional. For every $x \in H_n(q)$, $\mathrm{tr}_{M,n}(x^* x) \geq 0$, with equality if and only if $x = 0$ in the trace ideal quotient. The QOU substrate $q_0 \approx 1.11$ yields $q_0^{1/2}+q_0^{-1/2} \approx 2.003 > 2$. This value sits narrowly above the positivity threshold, ensuring $\mathrm{tr}_M$ is a positive trace on $H_\infty(q)$.
 
-**(4) GNS construction.** Let
-$\mathcal{N} := \{x \in H_\infty(q) : \mathrm{tr}_M(x^* x) = 0\}$.
-By positivity and the Cauchy–Schwarz inequality
-$|\mathrm{tr}_M(x^* y)|^2 \leq \mathrm{tr}_M(x^* x)\,\mathrm{tr}_M(y^* y)$,
-$\mathcal{N}$ is a left ideal of $H_\infty(q)$. The quotient
-$V := H_\infty(q) / \mathcal{N}$ is therefore an $H_\infty(q)$-module
-under left multiplication, and the bilinear form
-$\langle [x], [y] \rangle := \mathrm{tr}_M(x^* y)$ is well-defined,
-sesquilinear (with respect to $*$), and positive definite on $V$.
-Its completion $\mathcal{H}$ is a separable Hilbert space (separability
-follows from countability of the basis of $H_\infty(q)$ as an
-$R\otimes\mathbb{Q}$-module under any chosen presentation).
+**GNS construction.** Define the left ideal $\mathcal{N} := \{x \in H_\infty(q) : \mathrm{tr}_M(x^* x) = 0\}$. Positivity and the Cauchy–Schwarz inequality $|\mathrm{tr}_M(x^* y)|^2 \leq \mathrm{tr}_M(x^* x)\,\mathrm{tr}_M(y^* y)$ guarantee $\mathcal{N}$ is a well-defined ideal. The quotient $V := H_\infty(q) / \mathcal{N}$ forms an $H_\infty(q)$-module under left multiplication. The bilinear form $\langle [x], [y] \rangle := \mathrm{tr}_M(x^* y)$ is sesquilinear and positive definite on $V$. Its completion $\mathcal{H}$ is a separable Hilbert space. Separability follows because $H_\infty(q)$ admits a countable basis as an $R\otimes\mathbb{Q}$-module.
 
-The left-multiplication action $\pi_{\mathrm{GNS}}(a)[x] := [a x]$
-extends to a bounded operator on $\mathcal{H}$: the bound
-$\|\pi_{\mathrm{GNS}}(a)\| \leq \|a\|_2$ uses the trace
-Cauchy–Schwarz again. Faithfulness:
-$\pi_{\mathrm{GNS}}(a) = 0 \implies \pi_{\mathrm{GNS}}(a)[1] = [a] = 0
-\implies a \in \mathcal{N} \implies \mathrm{tr}_M(a^* a) = 0
-\implies a = 0$ in the trace-quotient sense. The $*$-property
-$\pi_{\mathrm{GNS}}(a^*) = \pi_{\mathrm{GNS}}(a)^*$ holds on the
-dense subspace $V \subset \mathcal{H}$ by direct computation and
-extends to all of $\mathcal{H}$ by continuity. $\square$
+The left-multiplication action $\pi_{\mathrm{GNS}}(a)[x] := [a x]$ extends to a bounded operator on $\mathcal{H}$. The trace Cauchy–Schwarz inequality yields the bound $\|\pi_{\mathrm{GNS}}(a)\| \leq \|a\|_2$. The representation is faithful: $\pi_{\mathrm{GNS}}(a) = 0$ implies $\pi_{\mathrm{GNS}}(a)[1] = [a] = 0$, requiring $a \in \mathcal{N}$, which means $\mathrm{tr}_M(a^* a) = 0$, and thus $a = 0$ in the trace-quotient. The $*$-property $\pi_{\mathrm{GNS}}(a^*) = \pi_{\mathrm{GNS}}(a)^*$ holds on the dense subspace $V \subset \mathcal{H}$ and extends to $\mathcal{H}$ by continuity. $\square$

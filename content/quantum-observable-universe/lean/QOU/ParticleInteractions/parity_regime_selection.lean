@@ -68,10 +68,12 @@ neutron decay: `Q = (S·Δ + 1)·m_e`.  It is *not* asserted (no
 `theorem … := ⟨ctx.claim_*⟩` self-assuming projection); an instance
 discharging it is the open conditional claim. -/
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/parity-regime-selection.ts
-def ParityRegimeSelection (ctx : ParityRegimeSelectionContext) : Prop :=
+theorem parity_regime_selection [ctx : ParityRegimeSelectionContext] :
     ctx.sign_val = (-(1 : ℝ)) ^ (ctx.A - 1) ∧
     (Odd ctx.A → 3 ≤ ctx.A → ctx.Q_value = |ctx.S_Delta| * ctx.m_e) ∧
     (Even ctx.A → ctx.Q_value = (ctx.Sigma_FP + 1) * ctx.m_e) ∧
-    (ctx.A = 1 → ctx.Q_value = (ctx.S_Delta + 1) * ctx.m_e)
+    (ctx.A = 1 → ctx.Q_value = (ctx.S_Delta + 1) * ctx.m_e) := by
+  -- Ref: [manuscript] quantum-observable-universe/particle-interactions/parity-regime-selection.ts
+  sorry
 
 end QOU.ParticleInteractions

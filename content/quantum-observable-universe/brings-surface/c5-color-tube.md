@@ -1,5 +1,4 @@
-The cyclic symmetry $w_k \mapsto \zeta^{-k} w_k$
-([Lagrange resolvents](#rem:lagrange-resolvents)) becomes, in color tube coordinates:
+The cyclic symmetry $w_k \mapsto \zeta^{-k} w_k$ ([Lagrange resolvents](#rem:lagrange-resolvents)) becomes, in color tube coordinates:
 
 ```tex
 \begin{align}
@@ -14,7 +13,4 @@ The cyclic symmetry $w_k \mapsto \zeta^{-k} w_k$
 \end{align}
 ```
 
-The $C_5$ action is no longer diagonal: each coordinate acquires an
-additive correction proportional to $z$, reflecting the cost of
-breaking projective homogeneity by subtracting the affine
-quantity $z$ from each resolvent.
+The $C_5$ action is no longer diagonal. Each coordinate acquires an additive correction proportional to $z$. This reflects the cost of breaking projective homogeneity by subtracting the affine quantity $z$ from each resolvent.

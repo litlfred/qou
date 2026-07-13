@@ -1,4 +1,3 @@
-**Proposition.**
 *The coefficient of $\Phi_2$ in the Wedderburn mass formula is*
 
 $$

@@ -1,6 +1,6 @@
 The [topological mass formula](#prop:topological-mass-formula) assigns mass
-$\mathfrak{m}(K) = \mathrm{Vol}(K)/\hbar_q^2$, where $q$ is the
-[substrate parameter](#def:substrate-parameter).  Three non-zero
+$\mathfrak{m}(K) = \mathrm{Vol}(K)/\hbar_q^2$. Here $q$ denotes the
+[substrate parameter](#def:substrate-parameter). Three non-zero
 hyperbolic volumes drive the Descartes universe mass spectrum:
 
 | Knot/Link | Volume | QOU identity |
@@ -9,13 +9,13 @@ hyperbolic volumes drive the Descartes universe mass spectrum:
 | Three-twist $5_2$ | $\mathrm{Vol}(5_2) \approx 2.82812$ | Down quark |
 | Borromean rings $\mathcal{B}_3$ | $\mathrm{Vol}(\mathcal{B}_3) \approx 7.32772$ | Nucleon |
 
-All torus knots (trefoil, cinquefoil, septafoil) have zero hyperbolic
-volume and contribute no bare mass from this channel.
+All torus knots (trefoil, cinquefoil, septafoil) possess zero hyperbolic
+volume. They contribute no bare mass from this channel.
 
 **Conjecture.**
 The set $\{\mathrm{Vol}(4_1),\; \mathrm{Vol}(5_2),\;
 \mathrm{Vol}(\mathcal{B}_3)\}$ is algebraically independent over
-$\mathbb{Q}[q, q^{-1}]$.  That is, there exists no non-zero polynomial
+$\mathbb{Q}[q, q^{-1}]$. There exists no non-zero polynomial
 $P \in \mathbb{Q}[q, q^{-1}][x, y, z]$ satisfying
 
 $$
@@ -23,28 +23,27 @@ $$
     \mathrm{Vol}(\mathcal{B}_3)\bigr) = 0.
 $$
 
-If the conjecture holds, the *physical coefficient ring* of the Descartes
-universe is $\mathbb{Q}[q, q^{-1}][\mathrm{Vol}(4_1), \mathrm{Vol}(5_2),
-\mathrm{Vol}(\mathcal{B}_3)]$ --- a polynomial ring in three
-transcendentals over the ground ring.  The specialisation map
+If the conjecture holds, the physical coefficient ring of the Descartes
+universe forms $\mathbb{Q}[q, q^{-1}][\mathrm{Vol}(4_1), \mathrm{Vol}(5_2),
+\mathrm{Vol}(\mathcal{B}_3)]$. This defines a polynomial ring in three
+transcendentals over the ground ring. The specialisation map
 $\iota \colon \mathbb{Z}[q, q^{-1}] \to \mathbb{R}$ sending
 $q \mapsto q_0$ extends to an embedding of this ring into $\mathbb{R}$.
-In particular, the three volumes are algebraically independent over
+The three volumes remain algebraically independent over
 $\mathbb{Q}(q_0)$.
 
-*Remark.* Even the irrationality of a single hyperbolic 3-manifold volume is open.  The Borel--Zagier conjecture concerns only
+*Remark.* The irrationality of a single hyperbolic 3-manifold volume remains an open problem. The Borel--Zagier conjecture concerns only
 $\mathbb{Q}$-linear independence of volumes of non-commensurable
-manifolds --- a strictly weaker claim that is itself unresolved.
-Reid (1991) proved that $4_1$ is the unique arithmetic hyperbolic knot,
-commensurable with $\mathrm{PSL}_2(\mathcal{O}_3)$.  The three-twist
-$5_2$ is non-arithmetic; the Borromean rings $\mathcal{B}_3$, as a
-3-component link, fall outside Reid's classification entirely.  The
-three complements are pairwise non-commensurable, so the Borel--Zagier
-conjecture would at least yield their $\mathbb{Q}$-linear independence.
+manifolds. This presents a strictly weaker, yet unresolved, claim.
+Reid (1991) established $4_1$ as the unique arithmetic hyperbolic knot,
+commensurable with $\mathrm{PSL}_2(\mathcal{O}_3)$. The three-twist
+$5_2$ is non-arithmetic. The Borromean rings $\mathcal{B}_3$, as a
+3-component link, fall outside Reid's classification. The
+three complements are pairwise non-commensurable. The Borel--Zagier
+conjecture would thus guarantee their $\mathbb{Q}$-linear independence.
 
 **Scope: external open problem, partial categorical approach.**
-This conjecture is *not* internal to the framework.  In all three of its
-forms
+This conjecture remains external to the framework. Its three forms
 
 $$
   \text{irrationality}
@@ -54,44 +53,29 @@ $$
   \text{algebraic independence}
 $$
 
-it is a special case of recognised open problems in transcendental
-number theory: [single-volume irrationality](#conj:single-volume-irrationality)
-(open --- no hyperbolic 3-manifold volume has ever been proved
-irrational), [Borel--Zagier](#conj:borel-zagier-qou-volumes), and, in the
-present algebraic-independence form, the Kontsevich--Zagier period
-conjecture and Grothendieck's period conjecture (algebraic independence
-of periods is governed by the motivic Galois group).  Only the *choice*
-of the three knots $4_1, 5_2, \mathcal{B}_3$ is framework-specific; the
-hardness is entirely external.
+represent recognised open problems in transcendental
+number theory. These include [single-volume irrationality](#conj:single-volume-irrationality)
+(no hyperbolic 3-manifold volume is known to be irrational), [Borel--Zagier](#conj:borel-zagier-qou-volumes), and the Kontsevich--Zagier and Grothendieck period conjectures. The framework specifies only the choice of the three knots $4_1, 5_2, \mathcal{B}_3$. The mathematical hardness is entirely external.
 
-The framework does not close the conjecture --- it offers a *partial,
-conditional* approach by two complementary reductions, each leaving the
-deep statement open.  The sharper one is the
-[jet-order reduction](#conj:three-knot-jet-order-independence): it
-replaces the Grothendieck-period machinery (no path) with a finite
-per-order Gröbner--Shirshov independence computation the skein engine
-already runs, plus a single QOU-native *surreal bridge lemma* (still
-open) --- converting an external dead end into an internal, incremental
-research target on the framework's own jet-order filtration.  The other
-is the [transcendence shadow](#rem:yekutieli-transcendence-shadow),
-which reduces algebraic independence to non-collapse of the brane tower
-plus a Nesterenko-type arithmetic control of the quantum dilogarithm.
-Either way the difficulty is relocated, not removed.  The Lean
-formalisation proves only the *structural* half --- the tower
+The framework approaches the conjecture via two complementary, partial reductions. The deeper statement remains open. The sharper reduction is the
+[jet-order reduction](#conj:three-knot-jet-order-independence). It
+replaces Grothendieck-period machinery with a finite
+per-order Gröbner--Shirshov independence computation. The skein engine
+executes this computation natively. This pairs with a single QOU-native surreal bridge lemma. This reduction converts an external problem into an incremental
+research target natively structured on the framework's jet-order filtration. The second reduction is the [transcendence shadow](#rem:yekutieli-transcendence-shadow). It
+reduces algebraic independence to the non-collapse of the brane tower
+and Nesterenko-type arithmetic control of the quantum dilogarithm.
+Both paths relocate the difficulty. The Lean
+formalisation proves the structural half: the tower
 decomposition, Chern--Simons faithfulness, and the downstream
 implications (algebraic independence $\Rightarrow$ Borel--Zagier
-$\Rightarrow$ irrationality) --- while the transcendence core is
-axiomatised as the Lean class `HyperbolicVolumeIndependence` following
-the conditional-class convention (the conjecture's content *is* the class
-instance, so downstream results stay rigorous-conditional rather than
-asserting an unproved theorem).
+$\Rightarrow$ irrationality). The transcendence core is
+axiomatised as the Lean class `HyperbolicVolumeIndependence`. Following
+the conditional-class convention, the downstream results remain conditionally rigorous.
 
-The conjecture is retained not because the paper depends on it, but as
-the *ideal* statement: the guarantee that the predicted spectrum is no
-algebraic coincidence.  As the [formal-chain
+The conjecture serves as an ideal statement. It guarantees the predicted spectrum arises from no
+algebraic coincidence. As the [formal-chain
 remark](#rem:formal-chain-transcendence) records, the mass predictions
-and the categorical derivation live entirely over $\mathbb{Z}[q, q^{-1}]$
-and are unaffected whether the volumes are transcendental, algebraic, or
-rational.  The framework operates only with the *proved* numerical
-[distinctness](#prf:knot-volumes-verification) of the three volumes,
-which is all the predictions require.
+and the categorical derivation live entirely over $\mathbb{Z}[q, q^{-1}]$. They function independently of whether the volumes are transcendental, algebraic, or
+rational. The framework operates strictly on the proved numerical
+[distinctness](#prf:knot-volumes-verification) of the three volumes. This distinctness suffices for all mass predictions.

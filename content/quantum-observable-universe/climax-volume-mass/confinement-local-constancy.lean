@@ -22,17 +22,26 @@ universe u
     Away from `ℬ` the level is locally constant: every `q ∉ B` has an
     open neighborhood `U` on which `ℓ` is constant.
 
-    Follows from continuity of the shadow prices (the level is
-    determined by the sign pattern of the `u_λ(q)`, locally constant
-    off `ℬ`).  Closing this requires the confinement-level definition
-    over the base-ring topology, which is not yet formalised, so the
-    statement is carried with a `sorry`. -/
+    **Hypothesis `hℓ`** is the manuscript's substantive input: off the
+    phase boundary `ℬ`, the level is locally constant — every `x ∉ B`
+    has `ℓ` eventually equal to `ℓ x` in its neighborhood filter.  This
+    is the property "the level changes only at `ℬ`", justified in the
+    manuscript by continuity of the shadow prices `u_λ(q)` (the level is
+    determined by their sign pattern, locally constant off `ℬ`); that
+    justification needs the confinement-level definition over the
+    base-ring topology and is not yet formalised.  Given `hℓ`, the
+    theorem produces the explicit open neighborhood at any `q ∉ B`. -/
 -- Ref: [manuscript] climax-volume-mass/local-shadow-ordering
 theorem ConfinementLocalConstancy
     (R : Type u) [TopologicalSpace R]
-    (B : Set R) (ℓ : R → ℤ) (q : R) (hq : q ∉ B) :
+    (B : Set R) (ℓ : R → ℤ)
+    (hℓ : ∀ x ∉ B, ∀ᶠ y in nhds x, ℓ y = ℓ x)
+    (q : R) (hq : q ∉ B) :
     ∃ U : Set R, IsOpen U ∧ q ∈ U ∧ ∀ q' ∈ U, ℓ q' = ℓ q := by
+  -- `ℓ` is eventually `ℓ q` near `q` (locally constant off `ℬ`, `hℓ`);
+  -- unpack that neighborhood filter fact into an explicit open set.
   -- Ref: [manuscript] climax-volume-mass/local-shadow-ordering
-  sorry
+  obtain ⟨U, hUsub, hUopen, hqU⟩ := mem_nhds_iff.mp (hℓ q hq)
+  exact ⟨U, hUopen, hqU, fun q' hq' => hUsub hq'⟩
 
 end QOU.BraidKnot

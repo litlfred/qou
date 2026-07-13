@@ -28,9 +28,18 @@ import json
 import sys
 from pathlib import Path
 
+AME2020_DATA = {}
+try:
+    with open(Path(__file__).resolve().parent / "data" / "ame2020.json") as _f:
+        _d = json.load(_f)["entries"]
+        for _row in _d:
+            AME2020_DATA[(_row["Z"], _row["N"])] = _row
+except Exception as e:
+    print(f"Warning: could not load ame2020.json: {e}")
+
 HERE = Path(__file__).resolve().parent
 ATLAS_MD = (
-    HERE.parent.parent
+    HERE.parent
     / "content"
     / "quantum-observable-universe"
     / "appendix-knot-periodic-table"
@@ -89,6 +98,7 @@ _STATUS_BADGES = {
     "canonical-substrate": "🟢 substrate",
     "canonical-with-empirical-assignment": "🟡 +empirical-(K,ρ)",
     "canonical-recursive": "🟢 recursive",
+    "asymptotic-approximation": "🟡 asymptotic (approx, A>40)",
     "heuristic": "🟠 heuristic",
     "pending": "⚪ pending",
 }
@@ -104,27 +114,79 @@ def render_row(r: dict) -> str:
         label = "$\\mathfrak{p}$"
     else:
         label = f"${{}}^{{{A}}}${element}"
-    layer = r.get("layer", "—")
-    status_raw = r.get("canonical_status", "pending")
-    status = _STATUS_BADGES.get(status_raw, status_raw)
-    ptype = r.get("prediction_type", "—")
+    
     pred = _fmt(r.get("prediction_MeV_50dps"))
-    ref = _fmt(r.get("reference_MeV_50dps"))
-    if ptype == "mass":
-        err = _fmt(r.get("err_ppm"), "{:+.3f}")
-        err_cell = f"{err} ppm" if err != "—" else "—"
+    
+    # Always ppm for binding
+    err_val = r.get("err_ppm")
+    if err_val is not None:
+        err = _fmt(err_val, "{:+.2f}")
+        
+        # Calculate experimental ppm for binding
+        exp_bind_ppm_str = ""
+        if (r["Z"], r["N"]) in AME2020_DATA:
+            ame = AME2020_DATA[(r["Z"], r["N"])]
+            bind_unc_per_a = ame.get("binding_energy_per_A_unc_keV")
+            bind_total_ref = ame.get("binding_energy_total_keV")
+            if bind_unc_per_a is not None and bind_total_ref is not None and bind_total_ref != 0:
+                bind_unc_total = bind_unc_per_a * r["A"]
+                exp_bind_ppm = (bind_unc_total / bind_total_ref) * 1e6
+                exp_bind_ppm_str = f" \\pm {exp_bind_ppm:.4f}"
+                
+        err_cell = f"{err}{exp_bind_ppm_str}"
     else:
-        err = _fmt(r.get("err_pct"), "{:+.2f}")
-        err_cell = f"{err} %" if err != "—" else "—"
+        err_cell = "—"
+    
     cm = r.get("composite_mass", {}) or {}
-    cm_pred = _fmt(cm.get("M_pred_MeV"))
-    cm_ppm = _fmt(cm.get("err_ppm"), "{:+.1f}")
-    cm_cell = (
-        f"{cm_pred} MeV ({cm_ppm} ppm)" if cm_pred != "—" else "—"
-    )
+    cm_pred = _fmt(cm.get("M_pred_MeV"), "{:.4f}")
+    cm_ref = _fmt(cm.get("M_AME_MeV"), "{:.4f}")
+    
+    cm_ppm_val = cm.get("err_ppm")
+    if cm_ppm_val is not None:
+        cm_ppb = _fmt(cm_ppm_val * 1000.0, "{:+.2f}")
+        cm_cell_err = f"{cm_ppb}"
+    else:
+        cm_cell_err = "—"
+        
+    cm_cell_pred = f"{cm_pred}" if cm_pred != "—" else "—"
+    cm_cell_ref = f"{cm_ref}" if cm_ref != "—" else "—"
+    
+    # Calculate experimental ppb
+    cm_cell_err_exp = "—"
+    if (r["Z"], r["N"]) in AME2020_DATA:
+        ame = AME2020_DATA[(r["Z"], r["N"])]
+        unc = ame.get("atomic_mass_unc_micro_u")
+        val = ame.get("atomic_mass_micro_u")
+        if unc is not None and val is not None and val != 0:
+            exp_ppb = (unc / val) * 1e9
+            cm_cell_err_exp = f"{exp_ppb:.2f}"
+            
+    # Combine pred and exp mass error
+    if cm_cell_err != "—":
+        if cm_cell_err_exp != "—":
+            combined_mass_error = f"{cm_cell_err} \\pm {cm_cell_err_exp}"
+        else:
+            combined_mass_error = cm_cell_err
+    else:
+        combined_mass_error = "—"
+            
+    # Calculate CAL-3 Propagated Error (ppb)
+    # The experimental uncertainty of Q_beta (CAL-3) is 0.61 eV (6.1e-7 MeV).
+    # Since each predicted neutron inherently carries this anchor uncertainty:
+    cal3_cell = "—"
+    if cm_ref != "—":
+        try:
+            cal3_err_mev = r["N"] * 6.1e-7
+            m_ref_val = float(cm.get("M_AME_MeV"))
+            if m_ref_val > 0:
+                cal3_ppb = (cal3_err_mev / m_ref_val) * 1e9
+                cal3_cell = f"±{cal3_ppb:.2f}"
+        except (TypeError, ValueError):
+            pass
+            
     return (
-        f"| {label} | {r['A']} | {r['N']} | {layer} | {status} | {ptype} "
-        f"| {pred} | {ref} | {err_cell} | {cm_cell} |"
+        f"| {label} | {r['A']} | {r['N']} | {pred} | {err_cell} "
+        f"| {cm_cell_pred} | {cm_cell_ref} | {combined_mass_error} | {cal3_cell} |"
     )
 
 
@@ -139,8 +201,8 @@ def render_z_section(shard: dict) -> list[str]:
     n_cm = shard.get("parameters", {}).get("rows_with_composite_mass", 0)
     coverage_note = (
         f"_{n_pred} of {n_total} isotopes with a framework "
-        f"prediction; {n_cm} of {n_total} with L4 composite mass "
-        f"$M = N \\cdot m_n + Z \\cdot m_p - B$._"
+        f"prediction; {n_cm} of {n_total} with $M_{{\\mathrm{{atom}}}}$ "
+        f"$M = N \\cdot m_n + Z \\cdot m_p + Z \\cdot m_e - B$._"
     )
     lines = [
         "",
@@ -148,8 +210,8 @@ def render_z_section(shard: dict) -> list[str]:
         "",
         coverage_note,
         "",
-        "| Atom | $A$ | $N$ | Layer | Status | Predicts | Prediction (MeV) | Reference (MeV) | Error | $M_{\\text{composite}}$ |",
-        "|---|---|---|---|---|---|---|---|---|---|",
+        "| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |",
+        "|---|---|---|---|---|---|---|---|---|",
     ]
     for r in rows:
         lines.append(render_row(r))
@@ -167,18 +229,20 @@ def render_all(shards: list[dict]) -> str:
         "(emitted by [`canonical_isotope_witness.py`]"
         "(https://github.com/litlfred/qou/blob/main/folio-assistant/"
         "computations/canonical_isotope_witness.py)). Each row carries "
-        "the Layer used (L1 canonical |tr_M|, L2 α-cluster recursion, "
-        "L3 paper-six-term [pending], L4 composite mass), the framework "
-        "prediction, the AME 2020 reference, and the residual. "
-        "`Predicts = mass` for free nucleons (p, n) — value is the "
-        "Borromean tower nucleon mass conditional on "
-        "`conj:borromean-baryon-mass-formula`. `Predicts = "
-        "binding_energy` for D and up; AME 2020 reference is the "
-        "total binding energy. $M_{\\text{composite}}$ is the L4 "
-        "composite mass $N \\cdot m_n + Z \\cdot m_p - B$ when both "
-        "nucleon masses (Borromean) and a binding-energy prediction "
-        "are available; reference is the AME atomic mass converted "
-        "via 1 u = 931.49410242 MeV._"
+        "the framework prediction, the AME 2020 reference, and the residual. "
+        "For free nucleons (p, n) the prediction is the mass "
+        "conditional on `conj:borromean-baryon-mass-formula`. "
+        "For D and up, the prediction is the binding energy; "
+        "the AME 2020 reference is the total binding energy. "
+        "$M_{\\mathrm{atom}}$ is the composite atomic mass "
+        "$N \\cdot m_n + Z \\cdot m_p + Z \\cdot m_e - B$. "
+        "The **CAL-3 Bound (ppb)** column represents the theoretical error "
+        "floor propagated strictly from the empirical observation uncertainty "
+        "of the neutron beta-decay $Q_\\beta$ value (the CAL-3 anchor, "
+        "$\\pm 0.61$ eV). Because the theoretical neutron mass $m_n$ prediction "
+        "is conditionally anchored on $Q_\\beta$, each of the $N$ neutrons "
+        "adds an unavoidable $\\pm 0.61$ eV of experimental uncertainty to the "
+        "total atomic mass prediction."
     )
     for shard in shards:
         lines.extend(render_z_section(shard))

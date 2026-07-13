@@ -1,1 +1,1 @@
-**Remark.** Although consistent with standard spin-statistics, formulating the parity content strictly via $\mathrm{SU}_q(2)$/tensor-product categorical rules provides a novel synthesis, embedding empirical parity constraints algebraically within the quantum observable universe without invoking ad-hoc external postulates.
+Formulating parity strictly via $\mathrm{SU}_q(2)$ tensor-product rules algebraically embeds empirical parity constraints within the theory. This reproduces standard spin-statistics without external postulates.

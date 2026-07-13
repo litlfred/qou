@@ -1,25 +1,5 @@
-**Proposition (q-Gaussian obstruction at the substrate value).** *At the
-substrate parameter $q_0 \approx 1.10998 > 1$, the Bożejko–Speicher
-non-commutative $q$-Gaussian does not exist as a probability measure.
-As a quantitative witness, the would-be even moments*
-$$
-  T_n(q_0) \;=\; \sum_{\pi \in \mathcal{P}_2(2n)} q_0^{\,\mathrm{cr}(\pi)}
-$$
-*(the sum over perfect matchings $\pi$ of $[2n]$, weighted by crossing number
-$\mathrm{cr}(\pi)$) diverge super-exponentially in $n$.*
-## Corollary
+*At the substrate parameter $q_0 \approx 1.10998 > 1$, the Bożejko-Speicher non-commutative $q$-Gaussian does not exist as a probability measure. The sequence of even moments $T_n(q_0) = \sum q_0^{\,\mathrm{cr}(\pi)}$ diverges super-exponentially.*
 
-Braid-word fluctuation statistics at $q_0$ **cannot** be modelled by the BS
-$q$-Gaussian. The convergent substitutes are the *inner* Perron–Frobenius
-dominant eigenvalue (a deterministic law-of-large-numbers limit) and the
-*outer* Féray–Méliot $q$-Plancherel CLT (a genuine Gaussian-fluctuation limit
-on the partition chain). This is the rigorous backing for the framing in
-[`rem:markov-chain-fluctuations`](#rem:markov-chain-fluctuations): any
-"$q$-Gaussian limit" invoked for braid observables at $q_0$ is mis-applying
-the $|q| \le 1$ Bożejko–Speicher theory.
+Braid-word fluctuations at $q_0$ cannot be modeled by the $q$-Gaussian. The valid substitutes are the inner Perron-Frobenius dominant eigenvalue and the outer Féray-Méliot $q$-Plancherel CLT.
 
-## Lean formalization
-
-The companion Lean `qGaussianObstructionAtQ0` states the obstruction and defers its proof via `sorry` (`-- Ref: [bozejko-speicher1991]`).
-
-**Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall: it invokes real- or complex-analytic constructs — real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.
+**Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall. It applies $q$-deformation identities over an abstract coefficient ring and specializes them to real-valued observables at $q_0$.

@@ -1,6 +1,1 @@
-The integer-stability mechanism picks out the stable proton/neutron
-counts as the points of a *Diophantine valley*: a lattice of
-$(Z, N)$ pairs that minimise the categorical mass functional under
-the substrate-flow.  The three blocks below state the mechanism,
-exhibit the valley, and prove its stability under perturbations of
-the substrate parameter.
+Stable proton and neutron counts appear as points in a *Diophantine valley*. These $(Z, N)$ pairs minimise the categorical mass functional under substrate flow. We state the integer-stability mechanism, construct the valley, and prove its stability against substrate-parameter perturbations.

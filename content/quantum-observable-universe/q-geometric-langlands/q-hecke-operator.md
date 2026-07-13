@@ -1,9 +1,4 @@
-Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe with
-brane curve $X$ and quantum gauge group $G_q$
-([quantum gauge group](#def:quantum-gauge-group)).  For a closed
-point $x \in X$ and a dominant coweight $\lambda$ of $G_q$, the
-**$q$-Hecke operator** $\mathbf{T}_{x,\lambda}^{(q)}$ is the
-integral transform
+Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe with brane curve $X$ and quantum gauge group $G_q$ ([quantum gauge group](#def:quantum-gauge-group)). Let $x \in X$ be a closed point and $\lambda$ a dominant coweight of $G_q$. The **$q$-Hecke operator** $\mathbf{T}_{x,\lambda}^{(q)}$ is the integral transform
 
 $$
   \mathbf{T}_{x,\lambda}^{(q)} \colon
@@ -21,18 +16,13 @@ defined by the $q$-Hecke correspondence:
 \end{tikzcd}
 ```
 
-where $\mathrm{Hecke}_{x,\lambda}^{(q)}$ parametrises pairs
-$(\mathcal{P}, \mathcal{P}')$ of $G_q$-bundles on $X$ together with
-an isomorphism $\mathcal{P}|_{X \setminus x} \xrightarrow{\sim}
-\mathcal{P}'|_{X \setminus x}$ of relative position $\lambda$.
+Here, $\mathrm{Hecke}_{x,\lambda}^{(q)}$ parametrises pairs $(\mathcal{P}, \mathcal{P}')$ of $G_q$-bundles on $X$ equipped with an isomorphism $\mathcal{P}|_{X \setminus x} \xrightarrow{\sim} \mathcal{P}'|_{X \setminus x}$ of relative position $\lambda$.
 
-The $q$-Hecke operators satisfy the Iwahori--Hecke algebra relation
-([braiding eigenvalues](#prop:braid-action-tensor)):
+The $q$-Hecke operators satisfy the Iwahori--Hecke algebra relation ([braiding eigenvalues](#prop:braid-action-tensor)):
 
 $$
   (\mathbf{T}_{x,\lambda}^{(q)} - q)
-  (\mathbf{T}_{x,\lambda}^{(q)} + q^{-1}) = 0,
+  (\mathbf{T}_{x,\lambda}^{(q)} + q^{-1}) = 0.
 $$
 
-acting with eigenvalues $q$ and $-q^{-1}$ on the symmetric and
-antisymmetric channels respectively.
+They act with eigenvalues $q$ and $-q^{-1}$ on the symmetric and antisymmetric channels, respectively.

@@ -58,7 +58,8 @@ import mpmath as mp  # noqa: E402
 import sympy as sp  # noqa: E402
 
 from markov.markov_trace_canonical import tr_M_word  # noqa: E402
-from qou_substrate import Q_50_DIGIT_STR, WitnessBuilder  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402 (bean yfvb: muon under ideal anchor)
+from qou_substrate import WitnessBuilder  # noqa: E402
 from qou_substrate.precision import COMPUTE_DPS, OUTPUT_DPS  # noqa: E402
 
 # 50-dps compute floor + guard digits.

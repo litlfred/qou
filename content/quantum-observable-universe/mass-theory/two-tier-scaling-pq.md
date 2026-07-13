@@ -1,16 +1,5 @@
-> **SUPERSEDED-$\rho_q$ note .** Any use of the
-> scalar substrate density $\rho_q = 1/\hbar_q^2$ in this block is the
-> structurally-wrong leading-order ansatz per
-> [`mass-endomorphism-tower.md` §SUPERSEDED](mass-endomorphism-tower.md);
-> the canonical replacement is the operator-valued $A^\lambda_{\mu, \nu}(I)$
-> graded expansion [`prop:rho-k-graded-expansion`](rho-k-graded-expansion.md).
-> Full purge tracking: [`docs/audits/-superseded-rho-q-purge.md`](../../../docs/audits/-superseded-rho-q-purge.md).
-
 **Remark (two-tier scaling of the confined Laurent polynomial $P_K(q)$).**
-*The map from a braid word to a physical mass passes through two
-logically separate scaling factors. Conflating them obscures which
-constants are topological (intrinsic to the Hecke trace) and which are
-dimensional (set by the choice of physical anchor).*
+*The map from a braid word to a physical mass passes through two logically separate scaling factors. We separate topological constants (intrinsic to the Hecke trace) from dimensional constants (set by the choice of physical anchor).*
 
 ## Tier 1: topological scaling — quantum dimension $[N]_q$
 

@@ -42,7 +42,7 @@ parameter `t`?  The gap-narrowing plan (P1.1) lists four candidates:
 
   C1  f₁(t) = log(1/t)
   C2  f₂(t) = 1/t − 1
-  C3  f₃(t) = log Φ_q^{(∞)}(t)        (log of full Faddeev dilogarithm)
+  C3  f₃(t) = log Φ_q^{(∞)}(t)        (log of full compact-q-dilog dilogarithm)
   C4  f₄(t) = KLR canonical-basis dim count at the relevant shell
 
 evaluated at three natural substrate values of `t`:
@@ -177,7 +177,7 @@ def f2_inv_minus_1(t):
 
 
 def f3_log_phi_q_full(t):
-    """C3:  f₃(t) = log Φ_q^{(∞)}(t)  where Φ_q is the full Faddeev
+    """C3:  f₃(t) = log Φ_q^{(∞)}(t)  where Φ_q is the full compact-q-dilog
     quantum dilogarithm (infinite product form).  Numerically:
 
         Φ_q^{(∞)}(t) = Σ_{n≥0} t^n / (q;q)_n

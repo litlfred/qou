@@ -1,98 +1,45 @@
-**Open items after this derivation.**
+**Open formalization requirements.**
 
-*The $d \circ d = 0$ and $E_\infty$ convergence are now **derived**
-from standard Hochschild-complex theory.  What remains open:*
+Standard Hochschild-complex theory yields $d \circ d = 0$ and $E_\infty$ convergence. The open requirements are:
 
-1. *Term-by-term identification of $E_\infty^{p, *}$ with the six
-   mass-formula pieces.  For $p = 0$ (descended $\mathrm{tr}_M$)
-   and the Frobenius co-Casimir
-   ([Frobenius universal](#thm:frobenius-codim-universal)) this
-   is clear; for $p \geq 1$ the identification with $\Phi_q$ poles
-   and chirality requires explicit page computation.*
-2. *Explicit $E_1$ page computation for $H_3(R, q)$ —
-   $\dim H^k(H_n(R, q), H_n(R, q))$ is known from
-   Burciu–Scheimbauer (2019) to grow like a specific partition
-   generating function, but the pairing with
-   $\mathrm{tr}_M$ isolates only the cyclic part.  Matching this
-   to the six terms is a **computational** task.*
+1. Term-by-term identification of $E_\infty^{p, *}$ with the six mass-formula components. At $p = 0$ (descended $\mathrm{tr}_M$), this yields the Frobenius co-Casimir ([`thm:frobenius-codim-universal`](#thm:frobenius-codim-universal)). For $p \geq 1$, identifying $\Phi_q$ poles and chirality demands explicit page computation.
+2. Explicit $E_1$ page computation for $H_3(R, q)$. Burciu and Scheimbauer (2019) establish that $\dim H^k(H_n(R, q), H_n(R, q))$ grows via a specific partition generating function. The pairing with $\mathrm{tr}_M$ isolates the cyclic part. Matching this to the six terms requires a computational derivation.
 
-*So the **existence of the spectral sequence** is derived (via
-Hochschild complex standard theory); the **matching of its pages
-to the six mass-formula terms** remains the open identification
-problem.*
+The Hochschild complex guarantees the existence of the spectral sequence. Matching its pages to the mass-formula terms remains open.
 
-**Partiality of the rigorisation.**
+## Rigorous derivation path
 
-*A complete rigorous derivation would require:*
+A rigorous derivation requires four steps:
 
-- *Construct the Hochschild cochain complex
-  $C^*(H_n(R, q), H_n(R, q))$ equipped with the filtration induced by
-  $J^\bullet(q)$.*
-- *Show $\mathrm{tr}_M$ is a Hochschild cocycle (follows from
-  cyclicity of Markov trace).*
-- *Compute the spectral sequence pages $E_r$ explicitly for small
-  $n$ (say $n = 3$) and verify the decomposition.*
-- *Match each page to the corresponding mass term via the
-  $\Phi_q$/Frobenius/chirality identifications above.*
+- Construct the Hochschild cochain complex $C^*(H_n(R, q), H_n(R, q))$ with the filtration induced by $J^\bullet(q)$.
+- Prove $\mathrm{tr}_M$ forms a Hochschild cocycle, exploiting the cyclicity of the Markov trace.
+- Compute the spectral sequence pages $E_r$ explicitly for $n = 3$ and verify the decomposition.
+- Match each page to the corresponding mass term via $\Phi_q$ poles, Frobenius invariants, and chirality components.
 
-*This is a **research-level formalisation task** — likely a
-multi-week project in cohomological algebra / deformation theory.
-The proposition flags the target; the work is open.*
+This represents a research-level project in cohomological algebra and deformation theory. We flag the target; the work remains open.
 
-**Structural value.**
+## Structural value
 
-*Even as a conjecture, the spectral-sequence framing clarifies:*
+The spectral-sequence framing enforces architectural rigidity:
 
-1. *The **six terms are not arbitrary** — they are the non-trivial
-   pages of a canonical spectral sequence.*
-2. *The **sum is total cohomology** of the filtered Hecke algebra
-   paired with $T_w$ — a well-defined algebraic invariant.*
-3. *The **regime switching**
-   ([mass formula regime switching](#prop:mass-formula-regime-switching))
-   is not ad-hoc but reflects **which pages dominate** for different
-   $A$ — a feature of the spectral sequence, not a failure of
-   additivity.*
+1. The six mass terms are structurally constrained. They constitute the non-trivial pages of a canonical spectral sequence.
+2. The mass sum equals the total cohomology of the filtered Hecke algebra paired with $T_w$.
+3. Regime switching ([`prop:mass-formula-regime-switching`](#prop:mass-formula-regime-switching)) occurs because different pages dominate for different $A$. This reflects the spectral sequence structure, not an ad-hoc failure of additivity.
 
-**Relation to other formalisations.**
+## Relation to standard formalisms
 
-- *Hochschild cohomology of Hecke algebras $HH^*(H_n(R, q))$ is
-  computed in Kosmann-Schwarzbach, Lambe–Stasheff, and extended
-  by Burciu–Scheimbauer.  These give **deformation-theoretic**
-  input: $HH^2$ controls deformations, $HH^3$ controls obstructions.*
-- *Our filtration $J^\bullet(q)$ is **specific to the substrate
-  parameter $q$** and finer than the standard length filtration;
-  the resulting spectral sequence has $q$-dependent differentials.*
-- *Reshetikhin–Turaev invariants at roots of unity are the
-  **residues** of the $E_\infty$ pages at filtration-collapsing
-  $q = \zeta_\ell$ — the RT evaluation is the spectral-sequence
-  specialisation.*
+Hochschild cohomology $HH^*(H_n(R, q))$ is established by Kosmann-Schwarzbach, Lambe–Stasheff, and Burciu–Scheimbauer. These supply deformation-theoretic data: $HH^2$ controls deformations, $HH^3$ controls obstructions.
 
-*This connects the paper's mass formula to the broader machinery
-of quantum topology and deformation theory — the unification
-target is to show that the six-term mass is a specific
-**spectral-sequence cohomology class** paired with the atomic
-braid, computable from the Hecke algebra alone.*
+Our filtration $J^\bullet(q)$ incorporates the specific substrate parameter $q$, forming a finer grading than standard length. This yields $q$-dependent differentials. 
 
-**Archimedean realisation: the $\mathbb{C}$-side of the
-$E_\infty$-pairing is a Picard–Lefschetz period.**
-*Strict archimedean split: the spectral sequence above lives
-entirely over the categorical base ring $R$ — pairings
-$\langle \mathrm{tr}_M, E_\infty^{p,*}(T_w)\rangle$ land in $R$,
-not $\mathbb{C}$.  Applying the archimedean fibre functor
-$\tau \colon R \hookrightarrow \mathbb{C}$ promotes the
-$E_\infty$-pairing to a contour integral on the Descartes elliptic
-curve $\mathcal{E}_q(\mathbb{C})$.  Specifically, the level-$p$
-stratum corresponds via
-(jet-GB-PL correspondence)
-to the geometric jet bundle $J^p\mathcal{S}$, on which the
-Seiberg–Witten differential $\lambda_{\mathrm{SW}}^{(p)}$ is the
-tautological section.  The pairing's $\mathbb{C}$-realisation is
-the Picard–Lefschetz thimble period $\Pi^{(p)}$
-(SW-period thimble equivalence),
-which equals $\tau\bigl\langle\mathrm{tr}_M,
-E_\infty^{p,*}(T_w)\bigr\rangle$ up to the integer intersection
-numbers $n_\sigma^{(p)}$ of the Lefschetz decomposition.  The
-spectral sequence and the PL thimble decomposition are therefore
-two presentations of the same data on opposite sides of $\tau$;
-their agreement is the content of
-(SW-period thimble equivalence).*
+Reshetikhin–Turaev invariants at roots of unity emerge as residues of the $E_\infty$ pages when $q = \zeta_\ell$ collapses the filtration. The RT evaluation operates strictly as a spectral-sequence specialization.
+
+This grounds the mass formula in quantum topology and deformation theory. The unification objective seeks to prove the six-term mass evaluates a specific spectral-sequence cohomology class paired against the atomic braid, relying exclusively on the Hecke algebra.
+
+## Archimedean realization
+
+The $E_\infty$-pairing operates strictly over the categorical base ring $R$. Pairings $\langle \mathrm{tr}_M, E_\infty^{p,*}(T_w)\rangle$ evaluate in $R$, not $\mathbb{C}$. 
+
+Applying the archimedean fibre functor $\tau \colon R \hookrightarrow \mathbb{C}$ promotes the $E_\infty$-pairing to a contour integral on the Descartes elliptic curve $\mathcal{E}_q(\mathbb{C})$. The level-$p$ stratum maps to the geometric jet bundle $J^p\mathcal{S}$. The Seiberg–Witten differential $\lambda_{\mathrm{SW}}^{(p)}$ serves as the tautological section.
+
+The pairing's $\mathbb{C}$-realization gives the Picard–Lefschetz thimble period $\Pi^{(p)}$, equaling $\tau\bigl\langle\mathrm{tr}_M, E_\infty^{p,*}(T_w)\bigr\rangle$ up to the integer intersection numbers $n_\sigma^{(p)}$ of the Lefschetz decomposition. The spectral sequence and the PL thimble decomposition provide two presentations of identical data across the archimedean wall.

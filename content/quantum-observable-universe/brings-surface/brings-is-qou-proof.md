@@ -28,8 +28,8 @@ the brane tower $\{A_n\}$ is well-defined.  Each transition
 $A_n \hookrightarrow A_{n+1}$ gives a central extension of gerbes banded by
 the centre $\mathcal{B} = Z(\mathrm{Aut}(A_n))$.  The obstruction class
 $\kappa_n \in H^2(\mathcal{S}, \mathcal{B})$ exists by the standard gerbe
-classification theorem, verifying the Yekutieli lifting condition
-([Yekutieli lifting](#prop:yekutieli-lifting)).
+classification theorem, verifying the Quantum lifting condition
+([quantum lifting](#prop:yekutieli-lifting)).
 
 *Item (4).*
 The categorical Euler characteristic equals $-6$ on Bring's surface

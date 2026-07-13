@@ -289,3 +289,79 @@ the two ⁴He-magnitude attacks (class-C geometric vs class-D interface operator
 now share a proved A=4-local / A>4-vanishing signature any candidate index can be
 cross-checked against, alongside the existing defect-cubic / `f_pn`-bracket gates.
 Earlier same-day: I-6 trace-convention unblock posted on #3205 (per-knot axis).
+
+## 2026-07-06 — [1⁴] value-leg writhe derivation + Wigner phys-lit (coordination)
+
+The ⁴He magnitude value leg narrowed to a single object across ~10 PRs
+(#3395 I-par … #3420 Perron–Frobenius … #3422 antisym-Hecke): `b₄` = the
+connected 4-body cumulant (9.243 MeV, exact) of a nucleon-flavor `Λ⁴(4)`
+operator (gate-verified), Lean-proved orthogonal to existing forms, functional
+form `−ln det(I+G)` (sign-unique), `G` a **sign-carrying (bar-odd) exchange**
+(Perron–Frobenius excludes the positive binding factors). PR #3423 adds the
+**lit anchor** (the α binding IS the Wigner SU(4) supermultiplet closed-shell
+energy — nuclear physics *fits* it; `b₄` derives it), a phys-lit **remark**
+(`rem:alpha-wigner-supermultiplet-context` on `conj:wigner-su4-from-spin-isospin`),
+and the **§4a structural finding** (the committed atom word is a linear CHAIN,
+not the [1⁴] complete graph — why `B_sym` under-binds ⁴He). The one open object
+is the **per-pair writhe sign** `sgn(w_{ij})` of the six [1⁴] block crossings,
+read from the [1⁴] link-diagram framing (never fitted).
+
+**Coordination posted:**
+- **#3417** (Elliott SU(3) + q-deformed nuclear) — overlaps on
+  `wigner-su4-from-spin-isospin`; flagged the new phys-lit remark so bean 1ict
+  builds on it rather than duplicating (Wigner SU(4) ⊃ Elliott SU(3), complementary).
+- **#3407** (Reeb-flow `Lk_R^{(k)}` categorical linking operation) — possible
+  **dependency**: their bar-odd-A₋ linking operation may supply the `w_{ij}`
+  linking numbers my writhe leg reads as open. Both independently land in the
+  bar-odd sector. Watching #3407; will consume `Lk_R^{(k)}` if it closes.
+
+### 2026-07-06 (later) — [1⁴] writhe signs read off; the open sharpens to sign **+** magnitude (#3426)
+
+Built the [1⁴] complete-graph exchange matrix explicitly
+([`b4_1four_complete_graph_writhe_signs.py`](../../computations/probes/b4_1four_complete_graph_writhe_signs.py),
+PR #3426). **Two of the three pair-signs are DERIVED** off the framework's own
+crossing convention (`atom_braid_word_3A`): **pp → σ = +1**, **nn → σ⁻¹ = −1**
+(nn = bar-mirror of pp — the p↔n bar-odd asymmetry). Only the **pn** sign is
+open. Enumerating `w_pn ∈ {−1,0,+1}` at the derived bond-factor magnitude
+`z ≈ 0.499`: pn=±1 give det<0 (unphysical), pn=0 gives 2.40 MeV (0.26×) **and**
+block-diagonally decouples the pn-dominated shell (excluded). **Decisive bound
+(not a fit):** the read-off sign pattern's most-negative eigenvalue is exactly
+**−√5**, capping the physical per-pair magnitude at `g < 1/√5 ≈ 0.447`; the naive
+`z ≈ 0.499` exceeds it by ~12% (why the mixed-sign det went negative). Since
+`−ln det → +∞` at the ceiling, the value **form** `b₄ = −ln det(I+G)` is **not
+refuted (scope-(a))** — the failure is the *naive uniform magnitude z*, not the
+form. **Open object sharpened:** the [1⁴] framing must supply the pn sign **and**
+a sub-`1/√5` per-pair magnitude. Posted the exact spec on **#3407**
+([comment](https://github.com/litlfred/qou/pull/3407#issuecomment-4892386760)):
+their `Lk_R^{(k)}` must land the pn linking amplitude below `1/√5`, mixed-sign,
+in the bar-odd A₋ sector — supplying both open inputs at once.
+
+### 2026-07-11 — binding w_n = the Δ_λ/W_λ gate; kernel basis = q-Hermite (#3534)
+
+The jet-filtration residue-weight kernel derive-or-refute (#3534, bean t7qv)
+lands the **binding-side** view of the same Δ_λ/W_λ gate the sign capstone
+(`164153f40d`, merged) and the magnitude reduction (#3537) work from the
+partition side. Three-part result:
+
+1. **Ad-hoc constant-ratio kernels REFUTED (scope-(a)).** Coulomb-corrected AME
+   → universal `w_2,w_3,w_4 = 4.353, 9.331, 15.919` (ratios 2.143, 1.706); no
+   parameter-free geometric/[n]_q/a_D-self/linear kernel closes to 5% (`[n]_q²`
+   lone 6.9% near-miss, echoing the √C_λ near-miss of merged #3518).
+2. **Kernel basis DERIVED = q-Hermite / Rogers–Szegő.** The na-Stokes kernel
+   `a_D^(n)=S(n)/n`, `S(n)=Σ_{λ⊢n} dim_q V_λ` (q-involution number), obeys a
+   three-term recurrence `S(n)=S(n−1)+c_n·S(n−2)` with **`c_3=[2]_q` exact** and
+   `c_n/[n−1]_q` rising — the q-oscillator / q-hyperbolic orthogonal basis
+   (`QOU.Mass.RogersSzegoInhabited`). Owner steer 2026-07-11.
+3. **w_n is NOT q-Hermite-clean → the gated W_λ content.** w_n neither obeys the
+   `a_D` recurrence (42% off) nor matches any Rogers–Szegő ratio-shape (closest
+   13.2%); it **decelerates** (2.14→1.71, sub-geometric) vs the near-geometric
+   q-Hermite. So the q-dim structure lives in the **kernel**, the magnitude in
+   the **multiplier** — the exact split #3537 finds ("magnitude = classical q=1
+   `dim(λ)`, not substrate q-dim"). Complementary, no §6 escalation.
+
+**New falsifiable constraint on the gated W_λ:** the trace `tr(g_ρ)` (or any
+W_λ realisation) must, summed per body-order, reproduce w_n's **sub-geometric
+deceleration** (2.14→1.71). Posted as the one ask on
+[#3537](https://github.com/litlfred/qou/pull/3537#issuecomment-4945856508).
+Un-refuted forward route stays option #1 (hyperbolic link-volume `w_n`).
+Cherry-pick pointer: [`binding_wn_kernel_derive_refute.py`](../../computations/binding_wn_kernel_derive_refute.py) §5–6.

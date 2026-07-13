@@ -1,4 +1,4 @@
-| Prediction | QOU origin | Empirical status |
+| Prediction | Theoretical origin | Empirical status |
 |---|---|---|
 | Non-Riemannian metric | $q \neq q^{-1}$ in the Skein relation | ✓ confirmed by \cite{bujack2022} |
 | Sub-additive (concave) scaling $f$ | $\operatorname{arsinh}(x)$ is concave for $x \geq 0$ | ✓ confirmed (diminishing returns) |

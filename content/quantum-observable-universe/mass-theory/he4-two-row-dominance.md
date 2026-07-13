@@ -1,28 +1,16 @@
 ## Statement
 
-Let $\beta_{{}^4\mathrm{He}}$ denote the canonical
-atomic braid word for $^4\mathrm{He}$ on
-$H_{12}(q)$ — 47 crossings on 12 strands with three operator-valued
-inter-nucleon interfaces (pp at gen 2, pn at gen 5, nn at gen 8), as
-emitted by
-the canonical formalism.
-Define the per-partition contribution
+Let $\beta_{{}^4\mathrm{He}}$ be the canonical atomic braid word for $^4\mathrm{He}$ on $H_{12}(q)$. It has 47 crossings on 12 strands with three operator-valued inter-nucleon interfaces (pp at gen 2, pn at gen 5, nn at gen 8). We define the per-partition contribution:
 $$
-  c_\lambda(q_0) \;:=\; y_\lambda(q_0) \cdot \chi^\lambda_q\!\bigl(\beta_{{}^4\mathrm{He}}\bigr)
+  c_\lambda(q_0) \;:=\; y_\lambda(q_0) \cdot \chi^\lambda_q\!\bigl(\beta_{{}^4\mathrm{He}}\bigr),
 $$
-with $y_\lambda$ the Wenzl weight
-from [`prop:wedderburn-weight-canonical`](#prop:wedderburn-weight-canonical)
-and $\chi^\lambda_q$ the Hoefsmit per-irrep character. Then
+where $y_\lambda$ is the Wenzl weight ([`prop:wedderburn-weight-canonical`](#prop:wedderburn-weight-canonical)) and $\chi^\lambda_q$ is the Hoefsmit character. We have:
 $$
   \sum_{\lambda \vdash 12} c_\lambda(q_0) \;=\; \mathrm{tr}_M\!\bigl(\beta_{{}^4\mathrm{He}}\bigr)(q_0).
 $$
 
-**Proposition (conditional on
-[`he4-canonical-tr-m-block-fingerprint.witness.json`](computations/he4-canonical-tr-m-block-fingerprint.witness.json)).**
-The two-row stratum
-$\Lambda^2(12) = \{(12), (11,1), (10,2), (9,3), (8,4), (7,5), (6,6)\}$
-of [`def:two-row-stratum`](#def:two-row-stratum) carries at least
-$80\,\%$ of the canonical Markov trace at the substrate parameter:
+**Proposition (conditional on [`he4-canonical-tr-m-block-fingerprint.witness.json`](computations/he4-canonical-tr-m-block-fingerprint.witness.json)).**
+The two-row stratum $\Lambda^2(12)$ ([`def:two-row-stratum`](#def:two-row-stratum)) carries at least $80\,\%$ of the canonical Markov trace at the substrate parameter:
 $$
   \frac{\bigl|\sum_{\lambda \in \Lambda^2(12)} c_\lambda(q_0)\bigr|}
        {\bigl|\mathrm{tr}_M(\beta_{{}^4\mathrm{He}})(q_0)\bigr|}
@@ -31,10 +19,7 @@ $$
 
 ## Empirical verification
 
-The witness reports $\mathrm{tr}_M(\beta_{{}^4\mathrm{He}})(q_0) = 0.05534835$
-(dimensionless raw trace). The two-row-stratum ratio is
-**$86.6\,\%$**. Top-5 binding-receptive Wedderburn blocks — all in
-$\Lambda^2(12)$:
+The trace is $\mathrm{tr}_M(\beta_{{}^4\mathrm{He}})(q_0) = 0.05534835$. The two-row-stratum ratio is **$86.6\,\%$**. The top five Wedderburn blocks lie entirely in $\Lambda^2(12)$:
 
 | rank | $\lambda \vdash 12$ | $\dim_\lambda$ | $y_\lambda(q_0)$ | $\chi^\lambda_q(\beta_{{}^4\mathrm{He}})$ | $c_\lambda$ | $\%$ of $\lvert$total$\rvert$ |
 |---:|---|---:|---:|---:|---:|---:|
@@ -45,24 +30,10 @@ $\Lambda^2(12)$:
 | 5 | $(11, 1)$ | 11  | $+7.67\,e{-4}$ | $+7.39$  | $+5.67\,e{-3}$  | $10.2$ |
 |   |           |     |                |          | top-5 cum         | $\mathbf{86.5}$ |
 
-The trivial rep $(12)$ contributes only $2.9\,\%$; the sign rep
-$(1^{12})$ contributes $4.7 \times 10^{-10}$ (sub-1e-9).
+The trivial representation $(12)$ contributes $2.9\,\%$. The sign representation $(1^{12})$ contributes $4.7 \times 10^{-10}$.
 
 ## Structural interpretation
 
-The two-row stratum carries the
-SU(2) Schur-Weyl image. Partitions
-with $\ell(\lambda) > 2$ correspond to higher-rank symmetry
-components absent from the spin-$\tfrac{1}{2}$ pairing observable.
-The dominance of $\Lambda^2(12)$ at $86.6\,\%$ is the algebraic
-fingerprint of $^4\mathrm{He}$ as a $q$-symmetric spin-pairing
-bound state — a substrate-derived characterisation of the
-magic-shell coupling.
+The two-row stratum carries the SU(2) Schur-Weyl image. Partitions with $\ell(\lambda) > 2$ correspond to higher-rank symmetry components absent from the spin-$\tfrac{1}{2}$ pairing observable. The dominance of $\Lambda^2(12)$ is the algebraic fingerprint of $^4\mathrm{He}$ as a $q$-symmetric spin-pairing bound state.
 
-The top block $\lambda^* = (9, 3)$ matches the prediction from
-the canonical formalism,
-which arrived at the same dominant-partition fingerprint via the
-$\Delta_\lambda$ empirical-tabulation route. The two derivations
-are independent: $\Delta_\lambda$ from per-partition mass-anchor
-residuals, this proposition from the canonical
-$\Sigma_\lambda y_\lambda \cdot \chi^\lambda_q$ Wedderburn sum.
+The canonical formalism predicts the top block $\lambda^* = (9, 3)$ via the $\Delta_\lambda$ empirical-tabulation route. This proposition derives the identical fingerprint from the $\Sigma_\lambda y_\lambda \cdot \chi^\lambda_q$ Wedderburn sum.

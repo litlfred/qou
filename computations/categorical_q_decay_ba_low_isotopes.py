@@ -104,10 +104,13 @@ SIX_TERM_WITNESS = _pb.witness_path("mass-formula-6term.witness.json", HERE)
 # Tier selection per isotope
 TIER_BY_SYM = {
     "1H":  "trivial (A=1, B=0 by convention; m_atom = m_p + m_e)",
-    "D":   "term-1-plus-4 (Schur-Weyl + universal Frobenius)",
+    # Owner ruling 2026-07-07 (PR #3448 §3f, option a): tier kept, labeled
+    # NEAR-MATCH — dimensionless structure Lean-proved, MeV unit anchor OPEN,
+    # +0.41% residual real. See 2026-07-06 reeb-flow audit §2e/§2f.
+    "D":   "reeb-flow (pn-bond sub-ceiling magnitude; NEAR-MATCH: unit anchor open, +0.41%)",
     # NOTE: kashaev-with-inter-correction gives D to 23 ppb but is
     # documented in d_inter_correction_test.py as 'numerical coincidence'
-    # — NO paper proposition derives it. Reverted to Term 1+4 (canonical).
+    # — NO paper proposition derives it. Reverted to Reeb-flow derivation.
     "T":   "term-5 (BW + chirality (1-h²))",
     "3He": "term-5 (BW + chirality (1-h²))",
     "4He": "term-5 (BW + chirality (1-h²)² + shell)",
@@ -207,6 +210,30 @@ def load_canonical_b(sym: str):
             "tier": tier,
         }
 
+    if "reeb-flow" in tier:
+        # Reeb-flow magnitude for the pn bond:
+        #   g = z/sqrt(1+z²) = 1/sqrt(1+[2]_v²)  (= 1/sqrt(5+(q−1)²/q), exact identity)
+        # — the Markov-peel bond factor z = 1/(√q+1/√q) arc-length-normalized,
+        # equivalently the q-deformed [1⁴] ss-ceiling with pn-degree 2 → [2]_v.
+        # Derivation + probe: docs/audits/2026-07-06-reeb-flow-pn-magnitude-
+        # provenance-and-1four-extension.md §2b; probes/reeb_g_structural_identity_probe.py.
+        import mpmath as mp
+        from q_parameter import Q as Q0_val
+        q0 = mp.mpf(str(Q0_val))
+        v = mp.sqrt(q0)
+        z_bond = mp.mpf(1) / (v + 1 / v)
+        g_true = float(z_bond / mp.sqrt(1 + z_bond ** 2))
+        # Binding is strictly 5*g
+        B_pred = 5.0 * g_true
+        # This tier applies only to D; err vs AME(²H) is +0.41 %, not 0
+        # (B_pred ≈ 2.2336 vs 2.22457).
+        b_ame = float(AME_B_DEUTERON_MEV_VALIDATION)
+        return {
+            "B_pred_MeV": B_pred,
+            "err_pct": 100.0 * (B_pred - b_ame) / b_ame,
+            "tier": tier,
+        }
+
     # Term 1+4 lives in mass-formula-6term.witness.json
     if "term-1-plus-4" in tier:
         d = _load_witness_cached(str(SIX_TERM_WITNESS))
@@ -221,7 +248,7 @@ def load_canonical_b(sym: str):
             # coincidence; per-3A gives the genuine algebraic +18.29%.
             # Fall back to per-vortex only if per-3A field is absent
             # (e.g. older witnesses pre-PR-#447).
-            if "B_pred_term1_plus_term4_per3A_canonical" in r:
+            if "B_pred_term1_plus_term4_per3A_canonical" in r and r["B_pred_term1_plus_term4_per3A_canonical"] is not None:
                 return {
                     "B_pred_MeV": float(r["B_pred_term1_plus_term4_per3A_canonical"]),
                     "err_pct": float(

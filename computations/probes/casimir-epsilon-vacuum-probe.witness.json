@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-06-01T13:23:55.224528+00:00",
-  "commitSha": "417e511ad96a7416b3b52d2f93704cd0eee0d8f7",
+  "computedAt": "2026-07-07T13:41:55.402028+00:00",
+  "commitSha": "85da4f43133d9d70ca3582f4fa4f31771b5ec3f1",
   "assertions": [
     {
       "name": "symbolic_derivative_matches_pi2_over_240_d4",
@@ -15,11 +15,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 59,
+  "durationMs": 26,
   "computation": "casimir-epsilon-vacuum-probe",
   "scriptFile": "casimir_epsilon_vacuum_probe.py",
-  "scriptHash": "36004588dc80",
-  "scriptCommitSha": "cce9436d753779edd6cdccfe04a293b0e3d81d4f",
+  "scriptHash": "8482944af140",
+  "scriptCommitSha": "bd1bdfe0583787dcbaaaa0a6d7b40a50159cdfb6",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -27,11 +27,12 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.12.3",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "Conditional verification of conj:casimir-epsilon-vacuum.  Step 1: sympy-symbolic verification that d/dd[-π²/(720 d³)] = π²/(240 d⁴), discharging the calculus step of the §3b-cond conditional theorem.  Step 2: numerical evaluation of the standard-physics Casimir force per area at four sample plate separations (0.1–5 µm), matching Mohideen–Roy 1998 / Lamoreaux 1997 experimental geometries.  Step 3: explicit enumeration of the three open sub-problems that the conjecture's actual content requires (existence + scaling + prefactor of N_⊙(A, d) as a categorical object).  The conditional implication is rigorous modulo the PlateModeCount class hypothesis; the witness exists to document the rigorous chain and tabulate the numerical targets that any closure must reproduce.",
   "contentBlock": "conj:casimir-epsilon-vacuum",

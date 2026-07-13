@@ -1,0 +1,65 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-11T18:46:32.142495+00:00",
+  "commitSha": "faa944dd542b03b5538cf64ad1e5840edfaeaa24",
+  "assertions": [
+    {
+      "name": "edge_set_is_max_contact_packing",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "binding-max ⇒ max #bonds subject to 3D hard-core ⇒ max-contact packing; pairwise edges ≈ simplex for A≤4 (D=1, A=3≈triangle); ⁴He surplus = 3-body M_3 not edges. Resolves #2089 chain-vs-complete. Cluster/halo deviation open."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 10,
+  "computation": "binding-edge-set-selection",
+  "scriptFile": "binding_edge_set_selection.py",
+  "scriptHash": "77de5b2aa745",
+  "scriptCommitSha": "1b5924873b227fe493c63a039d5d7e5d80323460",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "EXPLORATORY: the nuclear edge set is variationally selected by binding-maximization (B~Σ_bonds b*, b* const) ⇒ the max-contact 3D sphere packing (between chain A−1 and complete C(A,2)). Resolves #2089's chain-vs-complete: neither, max-contact. Pairwise edges ≈ simplex C(A,2) for A≤4; ⁴He magic surplus = 3-body Milnor M_3, not extra edges. Cluster/halo deviate below (open, s5-so3; α-level = #3551 Brink deltahedra). No fit.",
+  "data": {
+    "per_bond_bstar_MeV": 2.224566,
+    "bonds_vs_topologies": {
+      "D": {
+        "A": 2,
+        "bonds_implied": 1.0,
+        "chain": 1,
+        "simplex": 1
+      },
+      "T": {
+        "A": 3,
+        "bonds_implied": 3.8127980918525233,
+        "chain": 2,
+        "simplex": 3
+      },
+      "3He": {
+        "A": 3,
+        "bonds_implied": 3.91829158364594,
+        "chain": 2,
+        "simplex": 3
+      },
+      "4He": {
+        "A": 4,
+        "bonds_implied": 13.127416384105622,
+        "chain": 3,
+        "simplex": 6
+      }
+    }
+  }
+}

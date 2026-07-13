@@ -1,0 +1,67 @@
+{
+  "schema": "witness/v1",
+  "computation": "wlambda-wstd-growth-bound",
+  "engine": "python",
+  "engineVersion": "3.11.15",
+  "scriptFile": "wlambda_wstd_growth_bound_probe.py",
+  "commitSha": "06079c596131af15e8fb0de69e0eee33ce4450b3",
+  "scriptHash": "34f9d3b08d90",
+  "description": "Provable core of the log-type k(A): w_std(k)=E_Planch[f^{lambda/(2,1)}] grows SUPER-EXPONENTIALLY (strictly increasing ratios + w_std/2^k increasing tail, factorial class; q0 preserves the class). Inverting it against extensive B~A forces k~log A (at most log A/log log A), excluding k~A and k~bond-count. No scale, no closure; conditional on the connected-tower picture.",
+  "generated": "2026-07-11T18:14:28.112711+00:00",
+  "assertions": [
+    {
+      "name": "wstd_ratios_strictly_increasing_super_geometric",
+      "passed": true,
+      "detail": "w_std(k)/w_std(k-1) = [1.375, 1.855, 2.265, 2.281, 2.414, 2.62, 2.875] strictly up -> SUPER-geometric (exceeds every fixed c*r^k)"
+    },
+    {
+      "name": "wstd_super_exponential",
+      "passed": true,
+      "detail": "w_std(k)/2^k for k=3..10: [0.0833, 0.0573, 0.0531, 0.0602, 0.0686, 0.0828, 0.1085, 0.1559] \u2014 increasing in the tail (k>=6) -> beats 2^k; with the growing ratio (check 1) it beats every fixed C^k -> SUPER-EXPONENTIAL (factorial class)"
+    },
+    {
+      "name": "q0_same_growth_class_as_q1",
+      "passed": true,
+      "detail": "w_std(q0)/w_std(q=1) in (0.3,3) for all k -> the q0 deformation preserves the super-geometric growth class (the bound is robust)"
+    }
+  ],
+  "allPassed": true,
+  "result": {
+    "w_std_q1": {
+      "3": 0.6666666666666666,
+      "4": 0.9166666666666666,
+      "5": 1.7,
+      "6": 3.85,
+      "7": 8.780952380952382,
+      "8": 21.195039682539683,
+      "9": 55.533377425044094,
+      "10": 159.66312610229278
+    },
+    "w_std_q0": {
+      "3": 0.6606737736611729,
+      "4": 0.9026539593512517,
+      "5": 1.6767467389749,
+      "6": 3.8412550786824773,
+      "7": 8.944757152582724,
+      "8": 22.405977585130515,
+      "9": 62.19342066011387,
+      "10": 193.91783309766083
+    },
+    "ratios_q1": {
+      "4": 1.375,
+      "5": 1.8545454545454545,
+      "6": 2.264705882352941,
+      "7": 2.280766852195424,
+      "8": 2.4137518076644975,
+      "9": 2.6201119817101395,
+      "10": 2.875084021637209
+    },
+    "verdict": "PROVABLE CORE VERIFIED (no closure): w_std(k) = E_Planch[f^{lambda/(2,1)}] (exact at q=1) has STRICTLY INCREASING successive ratios (1.38->2.88 over k=3..10) and w_std(k)/2^k increasing in the tail -> SUPER-EXPONENTIAL (factorial growth class, ratio itself unbounded), and the q0 deformation preserves this class. This is the clean combinatorial lemma behind the log-type k(A): inverting a super-EXPONENTIALLY growing w_std against an EXTENSIVE (linear-in-A) binding target structurally forces the jet level to grow only ~log A (in fact at most log A / log log A for factorial growth), EXCLUDING k~A and k~bond-count without any fit. Sets no scale; the connected-tower picture (B ~ scale*w_std(k(A))) + extensivity remain the conjectural inputs."
+  },
+  "context": {
+    "builds_on": "wlambda_level_selection_kA_probe.py (log-type k(A))",
+    "identity": "w_std(k)|_{q=1} = E_Planch[f^{lambda/(2,1)}] (Sigma W_lambda = 1 at q=1)",
+    "lean_target": "super-geometric lower bound on E_Planch[f^{lambda/(2,1)}] => k(A)=O(log A) under extensivity",
+    "scope": "provable-core verification; conditional structural argument; no fit; no scale; no closure"
+  }
+}

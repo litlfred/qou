@@ -27,7 +27,7 @@ Both anchors identical to 9 figs (q-independent in this regime). 2 assertions pa
 The sign positivity of standard Demazure characters is a **fundamental property** (Joseph/Andersen): they are sums of positive q-monomials with non-negative weights. This is convention-robust:
 
 - **The Y_k renormalisation from §3c does NOT rescue**: `Y_k = q^{−k(k+1)/4}·(q;q)_k` inherits the sign of `(q;q)_k` (the prefactor `q^{−k(k+1)/4} > 0` for q > 0). So sign analysis is unchanged.
-- **No global rescaling rescues**: a single constant `C` such that `C·[u²]F = -1` would be `C < 0`, but `c_3 ≈ -2.07 < 0` and `[u³]F = (q;q)_3·Σ_{ℓ(w)=3} D_w` is `(-) · (+) = -` (since `(q;q)_3` flips sign at q > 1 for odd k). So `c_3` already matches sign without rescaling; a global `C < 0` would flip c_3 too. **Contradiction.**
+- **No global rescaling rescues**: a single constant `C` such that `C·[u²]F = -1` would be `C < 0`, but `c_3 ≈ −2.07 < 0` (cal-anchored near-match, not exact `−2`) and `[u³]F = (q;q)_3·Σ_{ℓ(w)=3} D_w` is `(-) · (+) = -` (since `(q;q)_3` flips sign at q > 1 for odd k). So `c_3` already matches sign without rescaling; a global `C < 0` would flip c_3 too. **Contradiction.**
 
 ## What the magnitude side adds (for the record)
 

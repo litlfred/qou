@@ -1,0 +1,9 @@
+<!-- FILE_START: q-gl-intro.md -->
+The substrate parameter $q \in \mathbb{G}_m^{\mathrm{nt}}(k) = k^\times \setminus \mu_\infty$ ([substrate parameter](#def:substrate-parameter)) endows the differential calculus of a quantum observable universe with a one-parameter deformation. Two consequences govern this chapter:
+
+1. The $q$-deformed exterior derivative satisfies $d_q^2 \neq 0$ ([non-vanishing of $d_q^2$](#prop:categorical-dq-squared)). This non-vanishing canonically obstructs the flatness of $q$-connections.
+2. The obstruction classes $\kappa_n \in H^2(\mathcal{S}, \mathbb{G}_m)$ ([quantum characteristic classes](#def:quantum-characteristic-classes)) control the lifting of Frobenius--Hopf objects through the brane tower. Their Kummer filtration ([Kummer filtration](#rem:kummer-filtration-obstruction)) isolates the arithmetic locus where $q$-flatness holds.
+
+These structures assemble into a $q$-deformed Geometric Langlands correspondence. We construct this equivalence as a $\mathbb{G}_m$-family of functors. The automorphic side consists of $q$-$\mathcal{D}$-modules on the moduli of $G_q$-bundles. The spectral side consists of quasi-coherent sheaves on the moduli of $q$-local systems for the Langlands dual $\check{G}_q$. The rigid fibre functor $\tau$ ([fibre-functor rigidity](#rem:fibre-functor-rigidity)) mediates the equivalence via Tannaka--Krein reconstruction. This family is well-defined on the non-torsion locus $\mathbb{G}_m^{\mathrm{nt}}$ but degenerates at roots of unity where $[n]_q = 0$. The perpetual obstruction ([Kummer filtration](#rem:kummer-filtration-obstruction)) ensures the correspondence remains intrinsically non-torsion.
+<!-- FILE_END: q-gl-intro.md -->
+

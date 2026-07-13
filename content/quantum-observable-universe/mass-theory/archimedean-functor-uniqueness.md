@@ -42,7 +42,7 @@ $$
 $$
 
 > **Theorem (conditional on [`conj:dilogarithm-archimedean-limit`](#conj:dilogarithm-archimedean-limit)).**
-> Per AGENTS.md §3b-cond: the upstream conjecture is axiomatised in
+> The upstream conjecture is axiomatised in
 > Lean as the typeclass
 > [`QOU.QPochhammer.ArchimedeanLimit`](../braids-and-knots/dilogarithm-archimedean-limit.lean);
 > the Bloch-Suslin pentagon-uniqueness theorem [`suslin1991`,
@@ -84,57 +84,20 @@ illustrates the second point: the $2/(3\pi) = 2g/(4\pi(g-1))$
 correction at $g = 4$ is the archimedean shadow of pentagon
 data on Bring's surface, not a $\pi$-import outside $R$.
 
-## The algebraic / archimedean dichotomy
+The algebraic / archimedean dichotomy establishes a clean separation between categorical structure and continuum measurement. The mass formula evaluates a closed cycle on the Frobenius-Hopf substrate. The non-degenerate Frobenius pairing $\int_A \circ \mu$ identifies $A \cong A^\vee$, making the substrate algebra self-dual. This self-duality drives the descent involution $\hat{\tau}_n$ on the endomorphism algebra, which splits the categorical mass endomorphism into a descended baseline component and a transient component localized at the exceptional divisors of the brane tower.
 
-The mass formula evaluates a closed cycle on the
-[Frobenius-Hopf substrate](#def:frobenius-hopf-substrate). The
-non-degenerate Frobenius pairing $\int_A \circ \mu$ identifies
-$A \cong A^\vee$, making the substrate algebra self-dual; this
-self-duality drives the descent involution
-$\hat{\tau}_n$ on the endomorphism algebra
-([mass endomorphism](#conj:mass-endomorphism)),
-which splits the categorical mass endomorphism into a
-**descended** baseline component and a **transient** component
-localized at the exceptional divisors of the brane tower.
-
-Within this purely algebraic substrate, the mass evaluation yields
-the [algebraic quantum volume](#def:algebraic-quantum-volume)
+Within this purely algebraic substrate, the mass evaluation yields the algebraic quantum volume:
 
 $$
   \mathrm{Vol}_q(\beta) \;=\; \prod_{i=0}^{A-2}\hat{V}_i(q),
   \qquad \hat{V}_i(q) \in \mathbb{Z}[q^{\pm 1/2}],
 $$
 
-a finite product of Laurent polynomials living strictly in
-$\mathbb{Z}[q^{\pm 1/2}]$. Everything to this point is categorical
-and discrete — no $\pi$, no $\zeta(3)$, no real-analytic
-transcendentals.
+a finite product of Laurent polynomials living strictly in $\mathbb{Z}[q^{\pm 1/2}]$. This domain is categorical and discrete—devoid of $\pi$, $\zeta(3)$, or real-analytic transcendentals.
 
-Transcendental numbers enter the framework **exclusively** at the
-boundary of observation. When $\tau_{\text{arch}}$ is applied to
-project the categorical data into physical spacetime, it takes
-the absolute logarithm of the algebraic quantum volume
-([quantum dilogarithm volume](#prop:quantum-dilogarithm-volume)).
-This functor converts the discrete, combinatorial Hecke algebra
-states into continuous, transcendental observables.
+Transcendental numbers enter the framework exclusively at the boundary of observation. The functor $\tau_{\text{arch}}$ projects categorical data into physical spacetime by taking the absolute logarithm of the algebraic quantum volume. This functor converts the discrete Hecke algebra states into continuous observables.
 
-To satisfy the Descartes condition $\chi = -6$, the physical
-state space is restricted to Bring's surface, a genus-$4$ curve
-with maximal $S_5$ automorphism. The observable particle spectrum
-consists entirely of knots that embed within this genus-$4$
-handlebody. After $\tau_{\text{arch}}$ is applied, the
-[Kashaev volume conjecture](#conj:kashaev-volume-conjecture)
-identifies the limit of the algebraic state sum with the classical
-hyperbolic volume of these specific knot complements. In this
-limit, the quantum dilogarithm $\Phi_q(z_i)$
-([quantum dilogarithm volume](#prop:quantum-dilogarithm-volume))
-evaluated at each exceptional divisor degenerates into the
-Bloch-Wigner dilogarithm $D(z_i)$
-([dilogarithm archimedean limit](#conj:dilogarithm-archimedean-limit)).
-The Bloch-Wigner dilogarithm is uniquely characterized as the
-function satisfying the 5-term pentagon identity
-[`suslin1991`, `bloch2000`], providing the exact geometric measure
-of the ideal tetrahedra that triangulate the knot complement.
+To satisfy the Descartes condition $\chi = -6$, the physical state space restricts to Bring's surface, a genus-$4$ curve with maximal $S_5$ automorphism. The observable particle spectrum consists entirely of knots that embed within this genus-$4$ handlebody. After applying $\tau_{\text{arch}}$, the Kashaev volume conjecture identifies the limit of the algebraic state sum with the classical hyperbolic volume of these specific knot complements. In this limit, the quantum dilogarithm $\Phi_q(z_i)$ evaluated at each exceptional divisor degenerates into the Bloch-Wigner dilogarithm $D(z_i)$. The Bloch-Wigner dilogarithm is uniquely characterized as the function satisfying the 5-term pentagon identity, providing the exact geometric measure of the ideal tetrahedra that triangulate the knot complement.
 ## Corollaries
 
 **(a) Resolves the pre-archimedean concern in

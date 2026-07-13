@@ -1,62 +1,8 @@
-**Proposition (locality–non-locality reconciliation).**
-*The two seemingly contradictory operational stances in the QOU
-manuscript — that single Hecke crossings obey a Markov locality
-property (memoryless of upstream history) while composite braid
-evaluation is non-local (Gröbner–Shirshov reduction sweeps the
-whole braid word) — are not contradictory but
-complementary statements about different operations on the same
-object. They are reconciled by Wenzl's product factorisation of
-the Markov trace.*
+Two computational operations seemingly contradict: single Hecke crossings obey Markov locality, yet composite braid evaluation via Gröbner–Shirshov reduction is non-local. Wenzl's product factorisation reconciles them.
 
-**Statement.** Let $\beta = \sigma_{i_1} \sigma_{i_2} \cdots \sigma_{i_N}$
-be a braid word in $B_n$, and let $\mathrm{NF}_{\mathrm{GS}}(\beta)
-= e_{j_1} \cdot e_{j_2} \cdots e_{j_M}$ be its Gröbner–Shirshov
-normal form in $H_n(R, q)$. Then:
+Let $\beta = \sigma_{i_1} \cdots \sigma_{i_N}$ have Gröbner–Shirshov normal form $\mathrm{NF}_{\mathrm{GS}}(\beta) = e_{j_1} \cdots e_{j_M}$. 
+1. **Markov locality.** For every $x$, $\mathrm{tr}_{M, n+1}(x \sigma_n) = z\, \mathrm{tr}_{M, n}(x)$ and $\mathrm{tr}_{M, n+1}(x \sigma_n^{-1}) = z_{-}\, \mathrm{tr}_{M, n}(x)$, where $z_{-} = z - (q - q^{-1})$. A single newly-added crossing contributes a scalar — depending only on the crossing sign — independent of the upstream history.
+2. **GS non-locality.** $\mathrm{NF}_{\mathrm{GS}}(\beta)$ depends on the full word. Rewriting rules act non-locally across $\beta$.
+3. **Product factorisation.** The Markov trace of the normal form decomposes locally: $\mathrm{tr}_M(\rho_{\mathrm{NF}}(\beta)) = \prod_{i = 1}^{M} \widehat{V}_i(q)$. Each vertex volume $\widehat{V}_i$ depends only on its own normal-form generator and modified coefficients produced by the GS algorithm.
 
-1. *(Markov locality, single-generator step.)* For every $x \in
-   H_n(R, q)$,
-   $$
-     \mathrm{tr}_{M, n+1}(x \cdot \sigma_n^{\pm 1})
-     \;=\;
-     z^{\pm 1} \cdot \mathrm{tr}_{M, n}(x),
-     \qquad z = 1/(q^{1/2} + q^{-1/2}).
-   $$
-   *The contribution of a single newly-added generator $\sigma_n$ is
-   a fixed scalar $z^{\pm 1}$ — independent of $x$. The new crossing
-   "doesn't look back."*
-
-2. *(GS non-locality, composite braid.)* The normal form
-   $\mathrm{NF}_{\mathrm{GS}}(\beta)$ depends on the full braid
-   word; rewriting rules (Hecke quadratic relation, braid relation,
-   far-commutativity) act non-locally across $\beta$ during reduction.
-
-3. *(Product factorisation bridge.)* The Markov trace of the normal
-   form decomposes as a product of local vertex volumes:
-   $$
-     \mathrm{tr}_M\bigl(\rho_{\mathrm{NF}}(\beta)\bigr)
-     \;=\;
-     \prod_{i = 1}^{M} \widehat{V}_i(q),
-   $$
-   *where the vertex volumes $\widehat{V}_i(q)$ are local in the
-   normal-form word — each depends only on its own normal-form
-   generator $e_{j_i}$ and the modified Markov-parameter
-   coefficients $(a_i, b_i)$ produced by the GS algorithm
-   (Wenzl 1988 [`wenzl1988`]).*
-
-**Reconciliation.** The Gröbner–Shirshov algorithm "digests" the
-global, non-local braid entanglement into modified local coefficients
-at each normal-form generator. After digestion, the Markov trace
-factorises locally over the normal form — recovering
-single-generator locality on the *post-reduction* word. The two
-stances are sequential, not contradictory:
-
-- *Step 1 (non-local):* Apply Gröbner–Shirshov reduction to
-  $\beta$. This sweeps the whole braid word and produces local
-  coefficients that absorb the global entanglement.
-- *Step 2 (local):* Evaluate $\mathrm{tr}_M$ on the normal form.
-  Markov locality applies: the trace factorises over the normal-form
-  generators.
-
-The composite operation (input: braid word $\beta$; output:
-$\mathrm{tr}_M(\rho(\beta))$) is therefore *local after
-normalisation*, even though normalisation itself is non-local.
+The GS algorithm digests global entanglement into local coefficients. After digestion, the Markov trace factorises locally over the normal form. The process is therefore local after normalisation.

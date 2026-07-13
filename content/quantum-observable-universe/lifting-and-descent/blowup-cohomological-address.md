@@ -1,24 +1,16 @@
 **Location of a counter-example: the cohomological address.**
-A counter-example to NS regularity is a quintuple
-
+A counter-example to NS regularity is a quintuple:
 $$
   (v_0, T^*, \Sigma, n^*, \kappa_{n^*})
 $$
-
 consisting of:
-
-1. **Initial data** $v_0 \in C^\infty(\mathbb{R}^3)$,
-   divergence-free, finite energy.
+1. **Initial data** $v_0 \in C^\infty(\mathbb{R}^3)$, divergence-free, finite energy.
 2. **Blowup time** $T^* < \infty$.
-3. **Singular set** $\Sigma \subset \mathbb{R}^3$ — the spatial
-   locus where regularity fails.
-4. **Obstruction level** $n^* \in \mathbb{N}$ — the brane tower
-   level where lifting fails.
-5. **Obstruction class** $\kappa_{n^*} \in H^2(\Sigma, \mathcal{B})$
-   — the nonzero cohomology class that prevents lifting.
+3. **Singular set** $\Sigma \subset \mathbb{R}^3$ — the spatial locus where regularity fails.
+4. **Obstruction level** $n^* \in \mathbb{N}$ — the brane tower level where lifting fails.
+5. **Obstruction class** $\kappa_{n^*} \in H^2(\Sigma, \mathcal{B})$ — the nonzero cohomology class preventing the lift.
 
-The Hausdorff dimension $d_H(\Sigma)$ and the obstruction level
-$n^*$ are related by Sobolev embedding:
+Sobolev embedding relates the Hausdorff dimension $d_H(\Sigma)$ and the obstruction level $n^*$:
 
 | $d_H(\Sigma)$ | Blowup geometry | $n^*$    | Singular $H^s$ |
 | ------------- | --------------- | -------- | -------------- |

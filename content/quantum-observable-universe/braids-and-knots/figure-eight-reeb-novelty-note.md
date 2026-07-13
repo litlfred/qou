@@ -1,1 +1,1 @@
-**Mathematical Novelty:** The q-Reeb-rotation-phase reading of the figure-eight eigenvalue on $V_{2,1}$, which connects to $\mathrm{Vol}(4_1)$ and the muon anchor, is a genuinely framework-specific and novel conceptual idea. (Note that this connection is asserted conceptually rather than fully established in the formalization).
+**Mathematical Novelty:** Reading the figure-eight eigenvalue on $V_{(2,1)}$ as a q-Reeb-rotation phase that connects to $\mathrm{Vol}(4_1)$ and the muon anchor.

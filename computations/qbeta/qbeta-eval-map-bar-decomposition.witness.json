@@ -1,0 +1,61 @@
+{
+  "computation": "qbeta-eval-map-bar-decomposition",
+  "description": "Archimedean evaluation map (counit/Markov-trace) bar-decomposition: even identity term h^2/2 + odd crossing/loop term (-h / -h*z). Realizes the standing reading (KC6/KC10) on the actual map. Confirms QBetaCounitTrace Lean lemmas.",
+  "audit_only": true,
+  "tier": "structural-exact (symbolic bar-parity; no fit, no anchors)",
+  "computedAt": "2026-07-07T12:02:47.710998+00:00",
+  "commitSha": "c38a2fd4906c62b1fbfb6706874d2651b2bbe730",
+  "engine": "sympy",
+  "engineVersion": "1.14.0",
+  "scriptFile": "qbeta_eval_map_bar_decomposition_probe.py",
+  "scriptHash": "d2be6df7a394",
+  "assertions": [
+    {
+      "name": "h_bar_odd",
+      "passed": true
+    },
+    {
+      "name": "z_bar_even_KC13",
+      "passed": true
+    },
+    {
+      "name": "h2_over_2_bar_even",
+      "passed": true
+    },
+    {
+      "name": "eps_decomp_identity_plus_crossing",
+      "passed": true
+    },
+    {
+      "name": "trM_decomp_identity_plus_loop",
+      "passed": true
+    },
+    {
+      "name": "eps_odd_part_bar_odd",
+      "passed": true
+    },
+    {
+      "name": "trM_odd_part_bar_odd",
+      "passed": true
+    },
+    {
+      "name": "eval_map_even_part_carries_shadow",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "result": {
+    "eps": "h^2/2 - h",
+    "trM": "h^2/2 - h*z",
+    "even_part": "h^2/2 (identity term; bar-even; shadow/mass channel)",
+    "odd_part": "-h (counit) / -h*z (Markov loop; bar-odd; the odd channel)",
+    "verdict": "CONFIRMED: the archimedean evaluation map (counit e / Markov trace tr_M) splits EXACTLY into a bar-EVEN identity term h^2/2 and a bar-ODD crossing/loop term (-h for e, -h*z for tr_M), because h = q - 1/q is bar-odd and z is bar-even (KC13). This realizes the standing reading (KC6/KC10) on the actual evaluation map: the even identity term carries the shadow/mass channel, the odd loop term is THE odd channel -- the bar-odd carrier (KC15 D(q)) feeds the observable through the Markov crossing term, not the identity term. Matches the sorry-free Lean lemmas epsNP_decomp / epsNP_bar_image / trMNP_decomp / trMNP_bar_image. NO c_k value; nothing wired."
+  },
+  "context": {
+    "axis": "z->c_k f-map keystone: archimedean evaluation map",
+    "lean": "QOU.Interactions.QBetaCounitTrace (epsNP_decomp/bar_image, trMNP_decomp/bar_image)",
+    "b3u_obstruction": "docs/audits/2026-07-07-z-ck-fmap-b3u-uside-transfer-obstruction.md",
+    "standing_reading": "registry KC6/KC10 (owner-granted 2026-07-07)",
+    "z_bar_even": "QOU.QBeta.z_bar_invariant (KC13)"
+  }
+}

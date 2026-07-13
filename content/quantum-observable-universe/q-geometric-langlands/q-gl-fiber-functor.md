@@ -9,7 +9,7 @@ $$
   \simeq
   \mathrm{Hom}_{\mathbf{Rep}(\check{G}_q)}
   \big(\tau(-),
-  \mathrm{Hecke}_q(\mathcal{M}, \mathcal{L}_q)\big),
+  \mathrm{Hecke}_q(\mathcal{M}, \mathcal{L}_q)\big).
 $$
 
 where $\mathrm{Hecke}_q(\mathcal{M}, \mathcal{L}_q)$ is the tensor

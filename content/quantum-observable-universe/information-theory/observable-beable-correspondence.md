@@ -5,14 +5,14 @@ commuting subalgebra of observables whose simultaneous eigenstates
 constitute the ontological basis of the underlying deterministic
 substrate. The framework's observable subcategory
 $\mathrm{Bun}^{\circ}(\mathbb{P}(V))$
-([observable subcategory](#def:observable-subcategory)) realises
+ realises
 this notion structurally, with the following dictionary:
 
 | 't Hooft (:refterm[CAI]{#cai}) | QOU (this framework) |
 |---|---|
 | beable algebra $\mathcal{A}_{\mathrm{beable}}$ | degree-$0$ algebra $\Gamma(\mathcal{S}, A_0)$ |
 | ontological basis | simultaneous eigenstates of the algebra $\Gamma(\mathcal{S}, A_0)$ |
-| "elements of reality" | degree-$0$ observables ([observation](#def:observation)) |
+| "elements of reality" | degree-$0$ observables  |
 | beable axiom (maximal commuting) | non-degeneracy of the Frobenius pairing on $A_0$ |
 | epistemological / templated states | degree-$> 0$ floors of the brane tower |
 
@@ -54,7 +54,7 @@ $A_0$ is the QOU realisation of 't Hooft's
 coherent superpositions across beable sectors. In QOU this
 follows automatically from the categorical structure: the
 connected components $\pi_0(\mathrm{Bun}^{\circ})$ — the **aeons**
-([aeon](#def:aeon)) — are precisely the superselection sectors,
+ — are precisely the superselection sectors,
 and morphisms between distinct aeons are forbidden by the
-jet-horizon structure ([jet horizon](#def:jet-horizon)) rather
+jet-horizon structure  rather
 than by an additional axiom.

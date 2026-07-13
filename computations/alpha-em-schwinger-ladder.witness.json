@@ -1,0 +1,59 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-12T00:27:41.398779+00:00",
+  "commitSha": "352bdd3adea5f138df1c2b74094a21258c056d95",
+  "assertions": [
+    {
+      "name": "schwinger_brings_alpha_within_3sigma",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "form B (proton + derived Schwinger) resid +0.313 ppb < 3σ (=0.45 ppb)"
+    },
+    {
+      "name": "schwinger_improves_over_form_A",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "Schwinger term reduces |resid| 1.67 -> 0.313 ppb"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 13,
+  "computation": "alpha-em-schwinger-ladder",
+  "scriptFile": "alpha_em_schwinger_ladder_probe.py",
+  "scriptHash": "a9e1a16c6468",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "The alpha_EM ladder at the proton pin: form A (quadratic, no Schwinger) resid +1.67 ppb -> form B (+derived Schwinger (1-h^2 alpha), RT phase 3) resid +0.313 ppb ~ 2x sigma_a. Corrects the earlier form-ladder (form A only, understated). Remaining 2-loop c2 ~ 8.1e-4 (uncomputed, NOT Ohtsuki kappa1=0.554). alpha_EM misses its 100x target by only ~2x at the correct anchor. Schwinger factor derived (not fitted); q0 = documented proton pin; scope-(a).",
+  "contentBlock": "prop:em-coupling-bring-zero-mode",
+  "data": {
+    "ladder_proton": {
+      "form_A_no_schwinger_ppb": 1.6723270482102428,
+      "form_B_schwinger_ppb": 0.31342795361624903,
+      "schwinger_shift_ppb": 1.3588990945939938,
+      "form_A_sigma": 11.148846988068286,
+      "form_B_sigma": 2.0895196907749938
+    },
+    "two_loop": {
+      "c2": "0.000806569394871",
+      "kappa1_ohtsuki": "0.554216472405",
+      "c2_vs_kappa1": "c2 ~ 687x smaller — different object",
+      "status": "uncomputed (RT phase-2 EmFermionLoop)"
+    }
+  }
+}

@@ -66,7 +66,4 @@ in Step 2). Property tests live in `tools/hecke-engine/tests/`.*
 
 ### Notes
 
-*The categorical action is **fibre-independent**: it depends only
-on the rigid-monoidal structure of $\mathbf{C}$, not on the choice
-of fibre functor $\tau$. The archimedean specialisation enters at
-Step 9 (mass identity) via the Markov trace evaluation at $q_0$.*
+*The categorical action is **fibre-independent**. It depends strictly on the rigid-monoidal structure of $\mathbf{C}$, independent of the fibre functor $\tau$. Archimedean specialisation enters at Step 9 (mass identity) via Markov trace evaluation at $q_0$.*

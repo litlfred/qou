@@ -406,7 +406,7 @@ def paper_six_term_mass(Z, N, include_inter=True,
                             `kashaev-integration-identity` probe).
         "brane-legacy" (deprecated; alias "brane" emits DeprecationWarning):
                             T2 = Σ Φ_q(|V̂_i|), T3 = z² · Σ Φ_q(|V̂_i V̂_j|).
-                            Faddeev quantum dilogarithm form, NOT
+                            compact quantum dilogarithm form, NOT
                             Markov-invariant at q_0 (PR #524).
                             Empirical T − ³He = −737 MeV pathology.
                             Retained for back-compat / regression
@@ -499,7 +499,7 @@ def paper_six_term_mass(Z, N, include_inter=True,
         if tower_mode == "brane":
             warnings.warn(
                 "tower_mode='brane' is deprecated; use 'brane-legacy' "
-                "for the Faddeev-Φ_q legacy form, or 'li2q' (default) "
+                "for the compact q-dilog Φ_q legacy form, or 'li2q' (default) "
                 "for the corrected Kashaev limit per "
                 "prop:mass-endomorphism-tower (a43d7f1fa).",
                 DeprecationWarning,

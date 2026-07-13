@@ -1,112 +1,28 @@
-The scalar [confinement LP](#prop:confinement-lp) is the
-diagonal projection of a richer **semidefinite program** over
-matrix-valued operators.  The SDP is the actual selection
-principle computed by the multi-level pipeline
-(the formal derivation,
-the formal derivation, the formal derivation); the LP
-obtains only when every Wedderburn block decouples.
-
-## Primal SDP (matrix operator selection)
-
-**Proposition.**
-*Let $n$ be the Hecke strand count at confinement level $\ell$
-and let $(\pi_\lambda)_{\lambda \vdash k, k \le n}$ be the
-central idempotents projecting onto the Wedderburn blocks of
-$H_n(q)$.  Let $T \in \mathrm{End}_R(H_n(R, q))$ be the cost
-operator (Markov-trace weighting, or the $q$-Laplacian
-resolvent).  The confined operator at $q$ is the solution
-$\Phi^* \succeq 0$ of:*
+*Let $n$ be the Hecke strand count at confinement level $\ell$. Let $(\pi_\lambda)_{\lambda \vdash k, k \le n}$ be the central idempotents projecting onto the Wedderburn blocks of $H_n(q)$. Let $T$ be the cost operator. The confined operator at $q$ is the solution $\Phi^* \succeq 0$ of the primal matrix program:*
 
 $$
-  \min_{\Phi} \quad \langle T, \Phi \rangle
-  \qquad (\text{matrix action})
+  \min_{\Phi \succeq 0} \quad \langle T, \Phi \rangle
 $$
 
 *subject to:*
 
-$$
-  \Phi \;\succeq\; 0
-  \qquad (\text{global PSD cone})
-$$
+1. *(Per-block Frobenius positivity)* $\langle \pi_\lambda, \Phi \rangle \ge 0$ for all $\lambda \vdash k, k \le n$.
+2. *(Adjacent-pair PSD)* Every $2 \times 2$ block corresponding to an adjacent generator pair $(\sigma_i, \sigma_{i+1})$ is positive semi-definite.
+3. *(Normalisation)* $\mathrm{tr}(\Phi) = n_{\mathrm{target}}$.
+
+*The dual program determines the matrix shadow prices:*
 
 $$
-  \langle \pi_\lambda, \Phi \rangle \;\ge\; 0
-  \quad \forall\, \lambda \vdash k,\ k \le n
-  \qquad (\text{per-block Frobenius positivity})
+  \max_{y_0, (y_\lambda \ge 0)} \quad n_{\mathrm{target}} \cdot y_0
 $$
 
-$$
-  \begin{pmatrix}
-    \Phi_{ii} & \Phi_{ij} \\
-    \Phi_{ji} & \Phi_{jj}
-  \end{pmatrix}
-  \;\succeq\; 0
-  \quad \forall\, \text{adjacent generator pairs } (i, j)
-  \qquad (\text{$2 \times 2$ pair PSD})
-$$
-
-$$
-  \mathrm{tr}(\Phi) \;=\; n_{\mathrm{target}}
-  \qquad (\text{normalisation})
-$$
-
-*where the 2$\times$2 blocks range over adjacent pairs $(\sigma_i, \sigma_{i+1})$
-in the Hecke generator chain — one block per confinement level from
-$\ell = 3$ (baryonic) up to $\ell = 7$ (molecular), as tabulated in
-the multi-level SDP infrastructure.*
-
-## Dual SDP (matrix shadow prices)
-
-*The dual program is:*
-
-$$
-  \max_{y_0, (y_\lambda)} \quad n_{\mathrm{target}} \cdot y_0
-$$
-
-*subject to the **matrix inequality**:*
+*subject to the matrix inequality:*
 
 $$
   y_0 \cdot I \;+\; \sum_\lambda y_\lambda \cdot \pi_\lambda \;-\; T
-  \;\preceq\; 0
+  \;\preceq\; 0.
 $$
 
-$$
-  y_\lambda \ge 0 \quad \forall\, \lambda
-$$
+*At the generic $q$ optimum, strong duality holds and complementary slackness applies as a matrix equation.*
 
-*The dual variable $y_0$ is the shadow price of the normalisation
-constraint; $(y_\lambda)$ are the per-block shadow prices.
-Strong duality holds under Slater's condition (a strictly
-feasible $\Phi \succ 0$ exists at generic $q$), and at optimum:*
-
-$$
-  \Phi^* \cdot \bigl(y_0^* I + \textstyle\sum_\lambda y_\lambda^* \pi_\lambda - T\bigr) \;=\; 0
-$$
-
-*as a matrix equation.*
-
-## Companion interpretive remarks
-
-The exposition of *why* this SDP is the right object — feasibility
-as a Hecke spectral-gap, the active-support reading of the dual,
-the relation to the scalar LP, and the integer-restricted MISDP
-variant — has been split into four companion remarks so that the
-proposition statement above stays minimal:
-
-* [Spectral-gap feasibility](#rem:confinement-sdp-spectral-gap):
-  feasibility iff $|q + q^{-1}| > 0$; deconfinement = gap closure.
-* [Multi-operator binding](#rem:confinement-sdp-multi-operator):
-  active support $\mathcal{S}^*$, binding multiplicity, and why
-  complementary slackness is a *matrix* equation.
-* [Relation to the scalar LP](#rem:confinement-sdp-vs-lp):
-  the LP as the diagonal restriction of the SDP; when each is
-  exact.
-* [MISDP variant](#rem:confinement-misdp): integer-constrained
-  confinement levels.
-
-The geometric face of this proposition — SDP optimality as
-Picard--Lefschetz steepest descent, dual variables as thimble
-depths — is developed in
-the SDP-as-thimble-flow remark below.
-
-**Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall: it invokes real- or complex-analytic constructs — real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.
+**Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall. It invokes real-analytic constructs. Any generic categorical identities remain valid over an abstract coefficient ring.

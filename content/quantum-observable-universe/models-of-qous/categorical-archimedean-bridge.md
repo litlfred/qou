@@ -1,14 +1,6 @@
-Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe with
-weight decomposition $\pi_H, \pi_V$
-([weight decomposition](#def:weight-decomposition)) and categorical
-$q$-exterior derivative $d_q$
-([categorical $q$-exterior derivative](#def:categorical-q-ext-deriv)).
-Under the fibre functor $\tau$, the categorical and geometric
-formulations of $d_q$ coincide. Concretely, applying the categorical
-vertical derivative $\pi_V \circ d$ and then realizing it geometrically
-through $\tau$ is the same as contracting with the Reeb vector field
-$\xi$ and wedging with the contact form $\varTheta$ — this
-is the content of the commuting square:
+Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe with weight decomposition $\pi_H, \pi_V$ and categorical $q$-exterior derivative $d_q$. 
+
+Under the fibre functor $\tau$, the categorical and geometric definitions of $d_q$ coincide. The categorical vertical derivative $\pi_V \circ d$ corresponds to the geometric operation of contracting with the Reeb vector field $\xi$ and wedging with the contact form $\varTheta$. This correspondence forms a commuting square:
 
 ```tex
 \begin{equation}\label{eq:categorical-archimedean-bridge-diagram}
@@ -22,6 +14,4 @@ is the content of the commuting square:
 \end{equation}
 ```
 
-That is, $\tau(\pi_V \circ d) = \varTheta \wedge \mathcal{L}_\xi$,
-where $\varTheta$ is the contact form and $\mathcal{L}_\xi$ is the
-Lie derivative along the Reeb vector field.
+This states that $\tau(\pi_V \circ d) = \varTheta \wedge \mathcal{L}_\xi$, where $\varTheta$ is the contact form and $\mathcal{L}_\xi$ is the Lie derivative along the Reeb vector field.

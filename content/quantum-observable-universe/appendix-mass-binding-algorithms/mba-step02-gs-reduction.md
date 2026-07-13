@@ -42,10 +42,7 @@ representative $\mathrm{NF}(w) \in H_n(q)$.*
    relation (the categorical specialisation that makes $\rho_n$
    factor through $H_n(q)$).*
 
-*Confluence of the rewriter is structural: any two reduction
-orders end at the same normal form by the Diamond Lemma applied
-to the Hecke and braid relations (both are linear quadratic and
-mutually compatible).*
+*The rewriter's confluence is structural. The Diamond Lemma guarantees that any reduction order reaches the same normal form, since the Hecke and braid relations are linear quadratic and mutually compatible.*
 
 ### Complexity
 
@@ -83,8 +80,4 @@ reproducibility. Per-particle assemblies are captured in
 
 ### Notes
 
-*The reducer is the **single source** of Hecke normal forms in the
-QOU pipeline; every downstream algorithm consumes `NF(w)`, not the
-raw braid word. Treating the normal form as the canonical object
-(rather than the braid) is what makes the rest of the chain
-$q$-rational.*
+*The reducer is the **single source** of Hecke normal forms in the pipeline. Every downstream algorithm consumes `NF(w)`, not the raw braid. Treating the normal form as the canonical object makes the subsequent chain $q$-rational.*

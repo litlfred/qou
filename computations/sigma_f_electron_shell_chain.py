@@ -45,7 +45,7 @@ from pathlib import Path
 import mpmath
 
 import pyhecke  # only for the OBSERVED constant in Part E
-from qou_substrate import Q_50_DIGIT_STR
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402 (bean yfvb: muon under ideal anchor)
 
 mpmath.mp.dps = 60  # 50-dps target + 10 guard digits (compute-author §1)
 Q0 = mpmath.mpf(Q_50_DIGIT_STR)

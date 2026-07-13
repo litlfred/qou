@@ -1,0 +1,105 @@
+{
+  "engine": "mpmath+sympy",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-07-11T22:56:57.703454+00:00",
+  "commitSha": "4e32d7757488de281b1d4884134a315d4d313dfd",
+  "assertions": [
+    {
+      "name": "locus_is_O1_far_from_canonical_paths",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.1,
+      "source": "min distance 0.35587 >> anchor separation 1.3e-08 => no branch-point graze"
+    },
+    {
+      "name": "complete_structure_not_on_locus",
+      "computed": 0.6604590185851419,
+      "expected": 0.6604590185851419,
+      "passed": true,
+      "tolerance": 1e-30,
+      "source": "recorded exact-locus distance from m=1 (informational)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 101,
+  "computation": "qbeta-c3-phib-gluing-discriminant",
+  "scriptFile": "qbeta_c3_phib_gluing_discriminant_probe.py",
+  "scriptHash": "65e4baa02ad4",
+  "scriptCommitSha": "4e32d7757488de281b1d4884134a315d4d313dfd",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
+  },
+  "description": "Exact discriminant locus of the m-deformed 4_1 gluing polynomial g(z,m) = m^2 z^2 (z-1)(m^2 z - 1) - 1 (sympy resultant, factored over Q), with distances from m=1, the real-m axis, and the canonical substrate candidate paths. Locates (or excludes) a branch-point graze as the geometric home of the u^3-lever hypersensitivity. Exploratory; no fit; no c_k wired.",
+  "contentBlock": "prop:phi-b-unitary-bar-odd",
+  "data": {
+    "gluing_polynomial": "m**4*z**4 - m**4*z**3 - m**2*z**3 + m**2*z**2 - 1",
+    "discriminant_factors": [
+      [
+        "27*m**8 - 40*m**6 + 266*m**4 - 40*m**2 + 27",
+        1
+      ]
+    ],
+    "discriminant_points_m": [
+      {
+        "m": "(0.443616396740591785456694 - 0.3558699218176863631231897j)",
+        "abs_m_minus_1": "0.660459018585",
+        "abs_im": "0.355869921818"
+      },
+      {
+        "m": "(0.443616396740591785456694 + 0.3558699218176863631231897j)",
+        "abs_m_minus_1": "0.660459018585",
+        "abs_im": "0.355869921818"
+      },
+      {
+        "m": "(1.371561629698997670696452 + 1.100269362258356077893038j)",
+        "abs_m_minus_1": "1.16131421854",
+        "abs_im": "1.10026936226"
+      },
+      {
+        "m": "(1.371561629698997670696452 - 1.100269362258356077893038j)",
+        "abs_m_minus_1": "1.16131421854",
+        "abs_im": "1.10026936226"
+      },
+      {
+        "m": "(-0.443616396740591785456694 + 0.3558699218176863631231897j)",
+        "abs_m_minus_1": "1.48683277546",
+        "abs_im": "0.355869921818"
+      },
+      {
+        "m": "(-0.443616396740591785456694 - 0.3558699218176863631231897j)",
+        "abs_m_minus_1": "1.48683277546",
+        "abs_im": "0.355869921818"
+      },
+      {
+        "m": "(-1.371561629698997670696452 - 1.100269362258356077893038j)",
+        "abs_m_minus_1": "2.61436363825",
+        "abs_im": "1.10026936226"
+      },
+      {
+        "m": "(-1.371561629698997670696452 + 1.100269362258356077893038j)",
+        "abs_m_minus_1": "2.61436363825",
+        "abs_im": "1.10026936226"
+      }
+    ],
+    "distances": {
+      "to_complete_m1": "0.660459018585142",
+      "to_real_axis": "0.355869921817686",
+      "m = e^{t/2} (real u = t)": "0.70616482386743",
+      "m = e^{t e^{i pi/4}/2} (b-aligned near-match)": "0.672922420349451",
+      "m = e^{u_min(p) i /2} (floor, imaginary dir)": "0.604512904363527",
+      "anchor_separation_dq": 1.2802799767689925e-08
+    },
+    "verdict": "NO BRANCH-POINT GRAZE: the exact discriminant locus of the m-deformed 4_1 gluing system sits O(1)-far (min 0.3559) from the complete structure, the real-m axis, and every canonical candidate path — 10^5+ times the anchor separation. Combined with the three prior negatives, the u^3-lever hypersensitivity is now excluded from (i) smooth substrate phases, (ii) the pole-seeding stage, (iii) the gluing-variety branch points. Scope-(a): the near-singularity lives in the substrate->m ASSIGNMENT (the archimedean-realization functor of conj:algebraic-geometric-dilog-equivalence) upstream of the geometry — the map itself, not the variety. No ingredient excluded structurally; no fit; nothing wired."
+  }
+}

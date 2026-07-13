@@ -3,247 +3,228 @@
   "label": "rem:photon-threading-mass-interpretation",
   "kind": "remark",
   "paths": {
-    "ts": "../qou/content/quantum-observable-universe/information-theory/photon-threading-mass-interpretation.ts",
-    "md": "../qou/content/quantum-observable-universe/information-theory/photon-threading-mass-interpretation.md"
+    "ts": "content/quantum-observable-universe/information-theory/photon-threading-mass-interpretation.ts",
+    "md": "content/quantum-observable-universe/information-theory/photon-threading-mass-interpretation.md"
   },
   "source_hashes": {
-    "md": "5af0a4d08e88",
+    "md": "718d8b83e0c8",
     "ts": "f6f46bba831a"
   },
   "criteria": {
     "da-physical-implausibility": [
       {
-        "field_hash": {
-          "md": "5af0a4d08e88",
-          "ts": "f6f46bba831a"
-        },
-        "result": "warn",
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound theoretical translation explicitly equating computational path independence directly into continuous gauge invariances.",
+        "reviewed_at": "2026-07-08T13:54:12.000Z",
+        "reviewed_sha": "03b809bbeb51a14f61ccd9ca1e009a852a205539",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-reviewer-swarm-20",
-          "version": "1.0"
-        },
-        "reviewed_at": "2026-06-28T17:59:01.740Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "severity": "major",
-        "evidence": "mass is the total traversal cost divided by c_q^2",
-        "notes": "Equating abstract algebraic operations (Gröbner-Shirshov basis reduction) to the physical mass of a hadron without referencing QCD dynamics (chiral symmetry breaking, trace anomaly) assumes topology is the sole origin of mass, which contradicts the Standard Model."
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-empirical-fragility": [
       {
-        "field_hash": {
-          "md": "5af0a4d08e88",
-          "ts": "f6f46bba831a"
-        },
-        "result": "warn",
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound theoretical translation explicitly equating computational path independence directly into continuous gauge invariances.",
+        "reviewed_at": "2026-07-08T13:54:12.000Z",
+        "reviewed_sha": "03b809bbeb51a14f61ccd9ca1e009a852a205539",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-reviewer-swarm-20",
-          "version": "1.0"
-        },
-        "reviewed_at": "2026-06-28T17:59:01.740Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "severity": "minor",
-        "notes": "Predicting exact hadronic masses from crossing numbers invites immediate empirical falsification."
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-false-claim": [
       {
-        "field_hash": {
-          "md": "5af0a4d08e88",
-          "ts": "f6f46bba831a"
-        },
         "result": "pass",
+        "notes": "Reviewed interactively. Sound theoretical translation explicitly equating computational path independence directly into continuous gauge invariances.",
+        "reviewed_at": "2026-07-08T13:54:12.000Z",
+        "reviewed_sha": "03b809bbeb51a14f61ccd9ca1e009a852a205539",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-reviewer-swarm-20",
-          "version": "1.0"
-        },
-        "reviewed_at": "2026-06-28T17:59:01.740Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-vacuous": [
       {
-        "field_hash": {
-          "md": "5af0a4d08e88",
-          "ts": "f6f46bba831a"
-        },
         "result": "pass",
+        "notes": "Reviewed interactively. Sound theoretical translation explicitly equating computational path independence directly into continuous gauge invariances.",
+        "reviewed_at": "2026-07-08T13:54:12.000Z",
+        "reviewed_sha": "03b809bbeb51a14f61ccd9ca1e009a852a205539",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-reviewer-swarm-20",
-          "version": "1.0"
-        },
-        "reviewed_at": "2026-06-28T17:59:01.740Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-circular": [
       {
-        "field_hash": {
-          "md": "5af0a4d08e88",
-          "ts": "f6f46bba831a"
-        },
         "result": "pass",
+        "notes": "Reviewed interactively. Sound theoretical translation explicitly equating computational path independence directly into continuous gauge invariances.",
+        "reviewed_at": "2026-07-08T13:54:12.000Z",
+        "reviewed_sha": "03b809bbeb51a14f61ccd9ca1e009a852a205539",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-reviewer-swarm-20",
-          "version": "1.0"
-        },
-        "reviewed_at": "2026-06-28T17:59:01.740Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-overclaim": [
       {
-        "field_hash": {
-          "md": "5af0a4d08e88",
-          "ts": "f6f46bba831a"
-        },
         "result": "pass",
+        "notes": "Reviewed interactively. Sound theoretical translation explicitly equating computational path independence directly into continuous gauge invariances.",
+        "reviewed_at": "2026-07-08T13:54:12.000Z",
+        "reviewed_sha": "03b809bbeb51a14f61ccd9ca1e009a852a205539",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-reviewer-swarm-20",
-          "version": "1.0"
-        },
-        "reviewed_at": "2026-06-28T17:59:01.740Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-hidden-dof": [
       {
-        "field_hash": {
-          "md": "5af0a4d08e88",
-          "ts": "f6f46bba831a"
-        },
         "result": "pass",
+        "notes": "Reviewed interactively. Sound theoretical translation explicitly equating computational path independence directly into continuous gauge invariances.",
+        "reviewed_at": "2026-07-08T13:54:12.000Z",
+        "reviewed_sha": "03b809bbeb51a14f61ccd9ca1e009a852a205539",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-reviewer-swarm-20",
-          "version": "1.0"
-        },
-        "reviewed_at": "2026-06-28T17:59:01.740Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-non-sequitur": [
       {
-        "field_hash": {
-          "md": "5af0a4d08e88",
-          "ts": "f6f46bba831a"
-        },
         "result": "pass",
+        "notes": "Reviewed interactively. Sound theoretical translation explicitly equating computational path independence directly into continuous gauge invariances.",
+        "reviewed_at": "2026-07-08T13:54:12.000Z",
+        "reviewed_sha": "03b809bbeb51a14f61ccd9ca1e009a852a205539",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-reviewer-swarm-20",
-          "version": "1.0"
-        },
-        "reviewed_at": "2026-06-28T17:59:01.740Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-lean-narrative-divergence": [
       {
-        "field_hash": {
-          "md": "5af0a4d08e88",
-          "ts": "f6f46bba831a"
-        },
         "result": "pass",
+        "notes": "Reviewed interactively. Sound theoretical translation explicitly equating computational path independence directly into continuous gauge invariances.",
+        "reviewed_at": "2026-07-08T13:54:12.000Z",
+        "reviewed_sha": "03b809bbeb51a14f61ccd9ca1e009a852a205539",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-reviewer-swarm-20",
-          "version": "1.0"
-        },
-        "reviewed_at": "2026-06-28T17:59:01.740Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-citation-misuse": [
       {
-        "field_hash": {
-          "md": "5af0a4d08e88",
-          "ts": "f6f46bba831a"
-        },
         "result": "pass",
+        "notes": "Reviewed interactively. Sound theoretical translation explicitly equating computational path independence directly into continuous gauge invariances.",
+        "reviewed_at": "2026-07-08T13:54:12.000Z",
+        "reviewed_sha": "03b809bbeb51a14f61ccd9ca1e009a852a205539",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-reviewer-swarm-20",
-          "version": "1.0"
-        },
-        "reviewed_at": "2026-06-28T17:59:01.740Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-definitional-ambiguity": [
       {
-        "field_hash": {
-          "md": "5af0a4d08e88",
-          "ts": "f6f46bba831a"
-        },
         "result": "pass",
+        "notes": "Reviewed interactively. Sound theoretical translation explicitly equating computational path independence directly into continuous gauge invariances.",
+        "reviewed_at": "2026-07-08T13:54:12.000Z",
+        "reviewed_sha": "03b809bbeb51a14f61ccd9ca1e009a852a205539",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-reviewer-swarm-20",
-          "version": "1.0"
-        },
-        "reviewed_at": "2026-06-28T17:59:01.740Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-reproducibility": [
       {
-        "field_hash": {
-          "md": "5af0a4d08e88",
-          "ts": "f6f46bba831a"
-        },
         "result": "pass",
+        "notes": "Reviewed interactively. Sound theoretical translation explicitly equating computational path independence directly into continuous gauge invariances.",
+        "reviewed_at": "2026-07-08T13:54:12.000Z",
+        "reviewed_sha": "03b809bbeb51a14f61ccd9ca1e009a852a205539",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-reviewer-swarm-20",
-          "version": "1.0"
-        },
-        "reviewed_at": "2026-06-28T17:59:01.740Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-referee-verdict": [
       {
-        "field_hash": {
-          "md": "5af0a4d08e88",
-          "ts": "f6f46bba831a"
-        },
         "result": "pass",
+        "notes": "Reviewed interactively. Sound theoretical translation explicitly equating computational path independence directly into continuous gauge invariances.",
+        "reviewed_at": "2026-07-08T13:54:12.000Z",
+        "reviewed_sha": "03b809bbeb51a14f61ccd9ca1e009a852a205539",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-reviewer-swarm-20",
-          "version": "1.0"
-        },
-        "reviewed_at": "2026-06-28T17:59:01.740Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "fit-section-chapter": [
       {
-        "field_hash": {
-          "md": "5af0a4d08e88",
-          "ts": "f6f46bba831a"
-        },
         "result": "pass",
+        "notes": "Reviewed interactively. Sound theoretical translation explicitly equating computational path independence directly into continuous gauge invariances.",
+        "reviewed_at": "2026-07-08T13:54:12.000Z",
+        "reviewed_sha": "03b809bbeb51a14f61ccd9ca1e009a852a205539",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-reviewer-swarm-20",
-          "version": "1.0"
-        },
-        "reviewed_at": "2026-06-28T17:59:01.740Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "bib-cite-resolves": [
       {
         "field_hash": {
-          "md": "5af0a4d08e88",
+          "md": "718d8b83e0c8",
           "ts": "f6f46bba831a"
         },
         "result": "n/a",
@@ -251,15 +232,885 @@
           "kind": "script",
           "id": "content/pipeline/qa-checkers-extended.ts",
           "version": "v1",
-          "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
-          "deps_hash": "2bab44ced743"
+          "script_hash": "f8ed8072ea0b",
+          "script_commit_sha": "a285d6903e89fd7951b6c293ad21d2d869f685a9",
+          "deps_hash": "d5a24b68ee4d"
         },
-        "reviewed_at": "2026-07-03T00:52:56.008Z",
-        "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89",
+        "reviewed_at": "2026-07-12T00:35:20.606Z",
+        "reviewed_sha": "6555ffc6c1dc541062939dad6179d5bb00e5d840",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound theoretical translation explicitly equating computational path independence directly into continuous gauge invariances.",
+        "reviewed_at": "2026-07-08T13:54:12.000Z",
+        "reviewed_sha": "03b809bbeb51a14f61ccd9ca1e009a852a205539",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound theoretical translation explicitly equating computational path independence directly into continuous gauge invariances.",
+        "reviewed_at": "2026-07-08T13:54:12.000Z",
+        "reviewed_sha": "03b809bbeb51a14f61ccd9ca1e009a852a205539",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "voice-status-leak": [
+      {
+        "field_hash": {
+          "md": "718d8b83e0c8",
+          "ts": "f6f46bba831a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "308bf5121143",
+          "script_commit_sha": "d285a5d6c6e1de182515048975c0f22276ea3da4"
+        },
+        "reviewed_at": "2026-07-12T00:35:20.606Z",
+        "reviewed_sha": "6555ffc6c1dc541062939dad6179d5bb00e5d840"
+      }
+    ],
+    "voice-probe-narrative": [
+      {
+        "field_hash": {
+          "md": "718d8b83e0c8",
+          "ts": "f6f46bba831a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f8ed8072ea0b",
+          "script_commit_sha": "a285d6903e89fd7951b6c293ad21d2d869f685a9"
+        },
+        "reviewed_at": "2026-07-12T00:35:20.606Z",
+        "reviewed_sha": "6555ffc6c1dc541062939dad6179d5bb00e5d840"
+      }
+    ],
+    "cite-named-theorem": [
+      {
+        "field_hash": {
+          "md": "718d8b83e0c8",
+          "ts": "f6f46bba831a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f8ed8072ea0b",
+          "script_commit_sha": "a285d6903e89fd7951b6c293ad21d2d869f685a9"
+        },
+        "reviewed_at": "2026-07-12T00:35:20.606Z",
+        "reviewed_sha": "6555ffc6c1dc541062939dad6179d5bb00e5d840"
+      }
+    ],
+    "voice-agent-speak": [
+      {
+        "field_hash": {
+          "md": "718d8b83e0c8",
+          "ts": "f6f46bba831a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f8ed8072ea0b",
+          "script_commit_sha": "a285d6903e89fd7951b6c293ad21d2d869f685a9"
+        },
+        "reviewed_at": "2026-07-12T00:35:20.606Z",
+        "reviewed_sha": "6555ffc6c1dc541062939dad6179d5bb00e5d840"
+      }
+    ],
+    "voice-emoji-content": [
+      {
+        "field_hash": {
+          "md": "718d8b83e0c8",
+          "ts": "f6f46bba831a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "308bf5121143",
+          "script_commit_sha": "d285a5d6c6e1de182515048975c0f22276ea3da4"
+        },
+        "reviewed_at": "2026-07-12T00:35:20.606Z",
+        "reviewed_sha": "6555ffc6c1dc541062939dad6179d5bb00e5d840"
+      }
+    ],
+    "voice-first-person-work": [
+      {
+        "field_hash": {
+          "md": "718d8b83e0c8",
+          "ts": "f6f46bba831a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "308bf5121143",
+          "script_commit_sha": "d285a5d6c6e1de182515048975c0f22276ea3da4"
+        },
+        "reviewed_at": "2026-07-12T00:35:20.606Z",
+        "reviewed_sha": "6555ffc6c1dc541062939dad6179d5bb00e5d840"
+      }
+    ],
+    "voice-time-stamped-notes": [
+      {
+        "field_hash": {
+          "md": "718d8b83e0c8",
+          "ts": "f6f46bba831a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "308bf5121143",
+          "script_commit_sha": "d285a5d6c6e1de182515048975c0f22276ea3da4"
+        },
+        "reviewed_at": "2026-07-12T00:35:20.606Z",
+        "reviewed_sha": "6555ffc6c1dc541062939dad6179d5bb00e5d840"
+      }
+    ],
+    "voice-unicode-crash": [
+      {
+        "field_hash": {
+          "md": "718d8b83e0c8",
+          "ts": "f6f46bba831a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "308bf5121143",
+          "script_commit_sha": "d285a5d6c6e1de182515048975c0f22276ea3da4"
+        },
+        "reviewed_at": "2026-07-12T00:35:20.606Z",
+        "reviewed_sha": "6555ffc6c1dc541062939dad6179d5bb00e5d840"
+      }
+    ],
+    "voice-editorializing": [
+      {
+        "field_hash": {
+          "md": "718d8b83e0c8",
+          "ts": "f6f46bba831a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "308bf5121143",
+          "script_commit_sha": "d285a5d6c6e1de182515048975c0f22276ea3da4"
+        },
+        "reviewed_at": "2026-07-12T00:35:20.606Z",
+        "reviewed_sha": "6555ffc6c1dc541062939dad6179d5bb00e5d840"
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "718d8b83e0c8",
+          "ts": "f6f46bba831a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "308bf5121143",
+          "script_commit_sha": "d285a5d6c6e1de182515048975c0f22276ea3da4"
+        },
+        "reviewed_at": "2026-07-12T00:35:20.606Z",
+        "reviewed_sha": "6555ffc6c1dc541062939dad6179d5bb00e5d840"
+      }
+    ],
+    "voice-title-scholarly": [
+      {
+        "field_hash": {
+          "md": "718d8b83e0c8",
+          "ts": "f6f46bba831a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f8ed8072ea0b",
+          "script_commit_sha": "a285d6903e89fd7951b6c293ad21d2d869f685a9"
+        },
+        "reviewed_at": "2026-07-12T00:35:20.606Z",
+        "reviewed_sha": "6555ffc6c1dc541062939dad6179d5bb00e5d840"
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "718d8b83e0c8",
+          "ts": "f6f46bba831a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "308bf5121143",
+          "script_commit_sha": "d285a5d6c6e1de182515048975c0f22276ea3da4"
+        },
+        "reviewed_at": "2026-07-12T00:35:20.606Z",
+        "reviewed_sha": "6555ffc6c1dc541062939dad6179d5bb00e5d840"
+      }
+    ],
+    "voice-author-notes-pollution": [
+      {
+        "field_hash": {
+          "md": "718d8b83e0c8",
+          "ts": "f6f46bba831a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f8ed8072ea0b",
+          "script_commit_sha": "a285d6903e89fd7951b6c293ad21d2d869f685a9"
+        },
+        "reviewed_at": "2026-07-12T00:35:20.606Z",
+        "reviewed_sha": "6555ffc6c1dc541062939dad6179d5bb00e5d840"
+      }
+    ],
+    "voice-status-section": [
+      {
+        "field_hash": {
+          "md": "718d8b83e0c8",
+          "ts": "f6f46bba831a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f8ed8072ea0b",
+          "script_commit_sha": "a285d6903e89fd7951b6c293ad21d2d869f685a9"
+        },
+        "reviewed_at": "2026-07-12T00:35:20.606Z",
+        "reviewed_sha": "6555ffc6c1dc541062939dad6179d5bb00e5d840"
+      }
+    ],
+    "framework-canonical": [
+      {
+        "field_hash": {
+          "md": "718d8b83e0c8",
+          "ts": "f6f46bba831a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "308bf5121143",
+          "script_commit_sha": "d285a5d6c6e1de182515048975c0f22276ea3da4"
+        },
+        "reviewed_at": "2026-07-12T00:35:20.606Z",
+        "reviewed_sha": "6555ffc6c1dc541062939dad6179d5bb00e5d840"
+      }
+    ],
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "718d8b83e0c8",
+          "ts": "f6f46bba831a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "308bf5121143",
+          "script_commit_sha": "d285a5d6c6e1de182515048975c0f22276ea3da4"
+        },
+        "reviewed_at": "2026-07-12T00:35:20.606Z",
+        "reviewed_sha": "6555ffc6c1dc541062939dad6179d5bb00e5d840",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "wall-base-ring-minimal": [
+      {
+        "field_hash": {
+          "md": "718d8b83e0c8",
+          "ts": "f6f46bba831a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f8ed8072ea0b",
+          "script_commit_sha": "a285d6903e89fd7951b6c293ad21d2d869f685a9"
+        },
+        "reviewed_at": "2026-07-12T00:35:20.606Z",
+        "reviewed_sha": "6555ffc6c1dc541062939dad6179d5bb00e5d840",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "q-usage-regime-detected": [
+      {
+        "field_hash": {
+          "md": "718d8b83e0c8",
+          "ts": "f6f46bba831a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-q-usage.ts",
+          "version": "v1",
+          "script_hash": "66a4bccc2dc0",
+          "script_commit_sha": "1dae4552712bbdd896e265648528b242b4ef627c"
+        },
+        "reviewed_at": "2026-07-12T00:35:20.606Z",
+        "reviewed_sha": "6555ffc6c1dc541062939dad6179d5bb00e5d840"
+      }
+    ],
+    "q-usage-fixed-q0-leak": [
+      {
+        "field_hash": {
+          "md": "718d8b83e0c8",
+          "ts": "f6f46bba831a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-q-usage.ts",
+          "version": "v1",
+          "script_hash": "66a4bccc2dc0",
+          "script_commit_sha": "1dae4552712bbdd896e265648528b242b4ef627c"
+        },
+        "reviewed_at": "2026-07-12T00:35:20.606Z",
+        "reviewed_sha": "6555ffc6c1dc541062939dad6179d5bb00e5d840"
+      }
+    ],
+    "q-usage-archimedean-in-categorical-chapter": [
+      {
+        "field_hash": {
+          "md": "718d8b83e0c8",
+          "ts": "f6f46bba831a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-q-usage.ts",
+          "version": "v1",
+          "script_hash": "66a4bccc2dc0",
+          "script_commit_sha": "1dae4552712bbdd896e265648528b242b4ef627c"
+        },
+        "reviewed_at": "2026-07-12T00:35:20.606Z",
+        "reviewed_sha": "6555ffc6c1dc541062939dad6179d5bb00e5d840"
+      }
+    ],
+    "q-usage-positivity-implicit": [
+      {
+        "field_hash": {
+          "md": "718d8b83e0c8",
+          "ts": "f6f46bba831a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-q-usage.ts",
+          "version": "v1",
+          "script_hash": "66a4bccc2dc0",
+          "script_commit_sha": "1dae4552712bbdd896e265648528b242b4ef627c"
+        },
+        "reviewed_at": "2026-07-12T00:35:20.606Z",
+        "reviewed_sha": "6555ffc6c1dc541062939dad6179d5bb00e5d840",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "q-usage-modulus-vs-real-mismatch": [
+      {
+        "field_hash": {
+          "md": "718d8b83e0c8",
+          "ts": "f6f46bba831a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-q-usage.ts",
+          "version": "v1",
+          "script_hash": "66a4bccc2dc0",
+          "script_commit_sha": "1dae4552712bbdd896e265648528b242b4ef627c"
+        },
+        "reviewed_at": "2026-07-12T00:35:20.606Z",
+        "reviewed_sha": "6555ffc6c1dc541062939dad6179d5bb00e5d840"
+      }
+    ],
+    "q-usage-root-of-unity-undeclared": [
+      {
+        "field_hash": {
+          "md": "718d8b83e0c8",
+          "ts": "f6f46bba831a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-q-usage.ts",
+          "version": "v1",
+          "script_hash": "66a4bccc2dc0",
+          "script_commit_sha": "1dae4552712bbdd896e265648528b242b4ef627c"
+        },
+        "reviewed_at": "2026-07-12T00:35:20.606Z",
+        "reviewed_sha": "6555ffc6c1dc541062939dad6179d5bb00e5d840"
+      }
+    ],
+    "q-usage-narrative-chapter-mismatch": [
+      {
+        "field_hash": {
+          "md": "718d8b83e0c8",
+          "ts": "f6f46bba831a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-q-usage.ts",
+          "version": "v1",
+          "script_hash": "66a4bccc2dc0",
+          "script_commit_sha": "1dae4552712bbdd896e265648528b242b4ef627c"
+        },
+        "reviewed_at": "2026-07-12T00:35:20.606Z",
+        "reviewed_sha": "6555ffc6c1dc541062939dad6179d5bb00e5d840"
+      }
+    ],
+    "proof-no-trivial-skeleton": [
+      {
+        "field_hash": {
+          "md": "718d8b83e0c8",
+          "ts": "f6f46bba831a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f8ed8072ea0b",
+          "script_commit_sha": "a285d6903e89fd7951b6c293ad21d2d869f685a9",
+          "deps_hash": "21d9ff417741"
+        },
+        "reviewed_at": "2026-07-12T00:35:20.606Z",
+        "reviewed_sha": "6555ffc6c1dc541062939dad6179d5bb00e5d840",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "canonical-calibration-count": [
+      {
+        "field_hash": {
+          "md": "718d8b83e0c8",
+          "ts": "f6f46bba831a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f8ed8072ea0b",
+          "script_commit_sha": "a285d6903e89fd7951b6c293ad21d2d869f685a9"
+        },
+        "reviewed_at": "2026-07-12T00:35:20.606Z",
+        "reviewed_sha": "6555ffc6c1dc541062939dad6179d5bb00e5d840"
+      }
+    ],
+    "canonical-no-numerology": [
+      {
+        "field_hash": {
+          "md": "718d8b83e0c8",
+          "ts": "f6f46bba831a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f8ed8072ea0b",
+          "script_commit_sha": "a285d6903e89fd7951b6c293ad21d2d869f685a9"
+        },
+        "reviewed_at": "2026-07-12T00:35:20.606Z",
+        "reviewed_sha": "6555ffc6c1dc541062939dad6179d5bb00e5d840"
+      }
+    ],
+    "canonical-witness-pinned": [
+      {
+        "field_hash": {
+          "md": "718d8b83e0c8",
+          "ts": "f6f46bba831a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f8ed8072ea0b",
+          "script_commit_sha": "a285d6903e89fd7951b6c293ad21d2d869f685a9"
+        },
+        "reviewed_at": "2026-07-12T00:35:20.606Z",
+        "reviewed_sha": "6555ffc6c1dc541062939dad6179d5bb00e5d840"
+      }
+    ],
+    "canonical-script-not-deprecated": [
+      {
+        "field_hash": {
+          "md": "718d8b83e0c8",
+          "ts": "f6f46bba831a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f8ed8072ea0b",
+          "script_commit_sha": "a285d6903e89fd7951b6c293ad21d2d869f685a9"
+        },
+        "reviewed_at": "2026-07-12T00:35:20.606Z",
+        "reviewed_sha": "6555ffc6c1dc541062939dad6179d5bb00e5d840"
+      }
+    ],
+    "canonical-dilogarithm-context": [
+      {
+        "field_hash": {
+          "md": "718d8b83e0c8",
+          "ts": "f6f46bba831a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f8ed8072ea0b",
+          "script_commit_sha": "a285d6903e89fd7951b6c293ad21d2d869f685a9"
+        },
+        "reviewed_at": "2026-07-12T00:35:20.606Z",
+        "reviewed_sha": "6555ffc6c1dc541062939dad6179d5bb00e5d840"
+      }
+    ],
+    "canonical-no-hardcoded-observable": [
+      {
+        "field_hash": {
+          "md": "718d8b83e0c8",
+          "ts": "f6f46bba831a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f8ed8072ea0b",
+          "script_commit_sha": "a285d6903e89fd7951b6c293ad21d2d869f685a9"
+        },
+        "reviewed_at": "2026-07-12T00:35:20.606Z",
+        "reviewed_sha": "6555ffc6c1dc541062939dad6179d5bb00e5d840"
+      }
+    ],
+    "canonical-ck-tiered-not-binary": [
+      {
+        "field_hash": {
+          "md": "718d8b83e0c8",
+          "ts": "f6f46bba831a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f8ed8072ea0b",
+          "script_commit_sha": "a285d6903e89fd7951b6c293ad21d2d869f685a9"
+        },
+        "reviewed_at": "2026-07-12T00:35:20.606Z",
+        "reviewed_sha": "6555ffc6c1dc541062939dad6179d5bb00e5d840"
+      }
+    ],
+    "canonical-no-negative-result-in-paper": [
+      {
+        "field_hash": {
+          "md": "718d8b83e0c8",
+          "ts": "f6f46bba831a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f8ed8072ea0b",
+          "script_commit_sha": "a285d6903e89fd7951b6c293ad21d2d869f685a9"
+        },
+        "reviewed_at": "2026-07-12T00:35:20.606Z",
+        "reviewed_sha": "6555ffc6c1dc541062939dad6179d5bb00e5d840"
+      }
+    ],
+    "compute-witness-exists": [
+      {
+        "field_hash": {
+          "md": "718d8b83e0c8",
+          "ts": "f6f46bba831a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f8ed8072ea0b",
+          "script_commit_sha": "a285d6903e89fd7951b6c293ad21d2d869f685a9"
+        },
+        "reviewed_at": "2026-07-12T00:35:20.606Z",
+        "reviewed_sha": "6555ffc6c1dc541062939dad6179d5bb00e5d840"
+      }
+    ],
+    "compute-lp-dual-present": [
+      {
+        "field_hash": {
+          "md": "718d8b83e0c8",
+          "ts": "f6f46bba831a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f8ed8072ea0b",
+          "script_commit_sha": "a285d6903e89fd7951b6c293ad21d2d869f685a9"
+        },
+        "reviewed_at": "2026-07-12T00:35:20.606Z",
+        "reviewed_sha": "6555ffc6c1dc541062939dad6179d5bb00e5d840"
+      }
+    ],
+    "detangler-no-forward-ref": [
+      {
+        "field_hash": {
+          "md": "718d8b83e0c8",
+          "ts": "f6f46bba831a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f8ed8072ea0b",
+          "script_commit_sha": "a285d6903e89fd7951b6c293ad21d2d869f685a9"
+        },
+        "reviewed_at": "2026-07-12T00:35:20.606Z",
+        "reviewed_sha": "6555ffc6c1dc541062939dad6179d5bb00e5d840"
+      }
+    ],
+    "detangler-section-band": [
+      {
+        "field_hash": {
+          "md": "718d8b83e0c8",
+          "ts": "f6f46bba831a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f8ed8072ea0b",
+          "script_commit_sha": "a285d6903e89fd7951b6c293ad21d2d869f685a9"
+        },
+        "reviewed_at": "2026-07-12T00:35:20.606Z",
+        "reviewed_sha": "6555ffc6c1dc541062939dad6179d5bb00e5d840"
+      }
+    ],
+    "detangler-no-xchapter-fwd": [
+      {
+        "field_hash": {
+          "md": "718d8b83e0c8",
+          "ts": "f6f46bba831a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f8ed8072ea0b",
+          "script_commit_sha": "a285d6903e89fd7951b6c293ad21d2d869f685a9"
+        },
+        "reviewed_at": "2026-07-12T00:35:20.606Z",
+        "reviewed_sha": "6555ffc6c1dc541062939dad6179d5bb00e5d840"
+      }
+    ],
+    "detangler-archimedean-wall": [
+      {
+        "field_hash": {
+          "md": "718d8b83e0c8",
+          "ts": "f6f46bba831a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f8ed8072ea0b",
+          "script_commit_sha": "a285d6903e89fd7951b6c293ad21d2d869f685a9"
+        },
+        "reviewed_at": "2026-07-12T00:35:20.606Z",
+        "reviewed_sha": "6555ffc6c1dc541062939dad6179d5bb00e5d840",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "detangler-block-tanglement": [
+      {
+        "field_hash": {
+          "md": "718d8b83e0c8",
+          "ts": "f6f46bba831a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f8ed8072ea0b",
+          "script_commit_sha": "a285d6903e89fd7951b6c293ad21d2d869f685a9"
+        },
+        "reviewed_at": "2026-07-12T00:35:20.606Z",
+        "reviewed_sha": "6555ffc6c1dc541062939dad6179d5bb00e5d840"
+      }
+    ],
+    "detangler-graph-energy": [
+      {
+        "field_hash": {
+          "md": "718d8b83e0c8",
+          "ts": "f6f46bba831a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f8ed8072ea0b",
+          "script_commit_sha": "a285d6903e89fd7951b6c293ad21d2d869f685a9"
+        },
+        "reviewed_at": "2026-07-12T00:35:20.606Z",
+        "reviewed_sha": "6555ffc6c1dc541062939dad6179d5bb00e5d840"
+      }
+    ],
+    "detangler-topic-coherence": [
+      {
+        "field_hash": {
+          "md": "718d8b83e0c8",
+          "ts": "f6f46bba831a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f8ed8072ea0b",
+          "script_commit_sha": "a285d6903e89fd7951b6c293ad21d2d869f685a9"
+        },
+        "reviewed_at": "2026-07-12T00:35:20.606Z",
+        "reviewed_sha": "6555ffc6c1dc541062939dad6179d5bb00e5d840"
+      }
+    ],
+    "detangler-no-dependency-cycle": [
+      {
+        "field_hash": {
+          "md": "718d8b83e0c8",
+          "ts": "f6f46bba831a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f8ed8072ea0b",
+          "script_commit_sha": "a285d6903e89fd7951b6c293ad21d2d869f685a9"
+        },
+        "reviewed_at": "2026-07-12T00:35:20.606Z",
+        "reviewed_sha": "6555ffc6c1dc541062939dad6179d5bb00e5d840"
+      }
+    ],
+    "bib-cited-ref-has-url": [
+      {
+        "field_hash": {
+          "md": "718d8b83e0c8",
+          "ts": "f6f46bba831a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f8ed8072ea0b",
+          "script_commit_sha": "a285d6903e89fd7951b6c293ad21d2d869f685a9",
+          "deps_hash": "d5a24b68ee4d"
+        },
+        "reviewed_at": "2026-07-12T00:35:20.606Z",
+        "reviewed_sha": "6555ffc6c1dc541062939dad6179d5bb00e5d840",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "bib-cited-ref-metadata-ok": [
+      {
+        "field_hash": {
+          "md": "718d8b83e0c8",
+          "ts": "f6f46bba831a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f8ed8072ea0b",
+          "script_commit_sha": "a285d6903e89fd7951b6c293ad21d2d869f685a9",
+          "deps_hash": "d5a24b68ee4d"
+        },
+        "reviewed_at": "2026-07-12T00:35:20.606Z",
+        "reviewed_sha": "6555ffc6c1dc541062939dad6179d5bb00e5d840",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "bib-cited-ref-has-screenshot": [
+      {
+        "field_hash": {
+          "md": "718d8b83e0c8",
+          "ts": "f6f46bba831a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f8ed8072ea0b",
+          "script_commit_sha": "a285d6903e89fd7951b6c293ad21d2d869f685a9",
+          "deps_hash": "d5a24b68ee4d"
+        },
+        "reviewed_at": "2026-07-12T00:35:20.606Z",
+        "reviewed_sha": "6555ffc6c1dc541062939dad6179d5bb00e5d840",
         "notes": "block has no .lean sibling"
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:56.008Z"
+  "updated_at": "2026-07-12T00:35:20.606Z"
 }

@@ -1,6 +1,6 @@
 Under the surreal lift $q = 1 + \varepsilon$
 (Hahn substrate), every spectral operator
-$O_q$ of the main paper (Hecke generators, transfer matrices, $q$-
+$O_q$ of this paper (Hecke generators, transfer matrices, $q$-
 Hamiltonians, Feynman integrals, vortex operators) has eigenvalues
 $\lambda_i(q)$ that are rational in $\varepsilon$, hence elements
 of the valuation ring $\mathcal{O}$.
@@ -70,7 +70,7 @@ Specialise to two main-paper operators:
   at $q = 1 + \varepsilon$. $\ordw(\Delta - 2) = -2$, so no
   closure; the classical limit preserves the binary splitting.
 
-**$q$-Hamiltonian $\hat{H}_q$** (from the main paper):
+**$q$-Hamiltonian $\hat{H}_q$** (from this paper):
 - At $q = 1 + \varepsilon$, each eigenvalue is rational in
   $\varepsilon$.
 - Classical-limit $q \to 1$ eigenvalues are the
@@ -119,7 +119,7 @@ Hahn-substrate)**:
 3. Compute $\ordw(\Delta)$ directly from the rational-function
    expression.
 
-4. Verify against the main-paper's spectral-gap statements
+4. Verify against this paper's spectral-gap statements
    (e.g., for the Hecke generators where the gap is known
    classically).
 

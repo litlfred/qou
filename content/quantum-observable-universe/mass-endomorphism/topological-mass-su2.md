@@ -10,22 +10,22 @@ $$
 $$
 
 where $\mathfrak{m}_{\mathrm{desc}} = \lVert \mathrm{tr}_{\mathrm{desc}}(\varrho) \rVert$
-is the descended (persistent) contribution and
+gives the descended (persistent) contribution and
 $\mathfrak{m}_{\mathrm{trans}} = \lVert \mathrm{tr}_{\mathrm{trans}}(\varrho) \rVert$
-is the transient contribution.
+gives the transient contribution.
 
 **Descended mass.** The descended trace $\mathrm{tr}_{\mathrm{desc}}$
 factors through the projection $\hat{\tau}$ onto
 $\mathfrak{A}^{\mathrm{desc}} \cong \mathfrak{su}(2)$. For the Hopf
 fibration $\mathrm{SU}(2) \to \mathbb{CP}^1$, the descended mass of
-the fundamental cycle is
+the fundamental cycle evaluates to:
 
 $$
   \mathfrak{m}_{\mathrm{desc}} =  \chi(\mathbb{CP}^1) =  2,
 $$
 
-the Euler characteristic of $\mathbb{CP}^1 \cong S^2$. This is the
-topologically protected part: it is invariant under continuous
+which is the Euler characteristic of $\mathbb{CP}^1 \cong S^2$. This provides the
+topologically protected part. It remains invariant under continuous
 deformations of the cycle and the metric.
 
 **Transient mass.** The transient trace

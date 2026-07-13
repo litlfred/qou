@@ -44,7 +44,7 @@ doc.
 | 7. GB filtration | `ℓ(w)`-graded, `E_2` collapse | 🟢 derived | — |
 | 8. Jet order | jet-prefix → `q→1` limit | 🟡 partial (Lean: **0 sorries**; `SkewSYT.lean` C1 + C2 **PROVED 2026-07-02** — C2's over-quantified `removeCorner` spec re-scoped to the witnessed row and proved, C1 `skewCorners_nonempty` proved via lex-max cell; all three `PartitionHelpers` fields now theorems ⇒ default instance **unconditional**, `Fact` crutches dropped) | residual: q-Plancherel `ConvergenceBound` (research-grade), commented-out `saturatedChainsCount` section, and the `conj:` classical-limit statement itself |
 | 9a. Mass identity `m_p` | **absolute**: muon-anchored Hecke energy `m_p = 2·(m_μ·F_Bor − 6·m_e)` via the [`canonical_mass.py`](../computations/canonical_mass.py) facade (owner ruling 2026-06-24; [guardrail](canonical-mass-formula-guardrail.md)); per-knot `VolDensity(K, q₀)` retained for **binding ratios** only | 🟢 absolute nucleon mass settled ($m_p \approx 938.27$ MeV, $m_n \approx 939.56$ MeV — CODATA). 🟡 per-knot density wire-up still open on the **binding side**: 64 of 65 atom-touching scripts use uniform `vol_density_borromean(q)` ([`vol-usage-audit`](audits/2026-06-02-vol-usage-audit-uniform-vs-per-knot.md)). The old +2.89–3.86% "absolute-mass gap" was the **λ_A fit artifact** ([refutation audit](audits/2026-06-24-lambda-a-refutation-artifact-audit.md)) | per-knot density wire-up (binding side; same object as the 9b ρ/Δ_λ leg per the [flip decision](audits/2026-06-13-step9a-flip-decision-package.md)); #1698 (m_avg combiner), `vol_density_per_block_wiring.py` testbed |
-| 9b. Per-isotope binding `B(K)` | **canonical default**: depth-stratified `Σ_k α_k Φ_k(K)` via `binding_depth_stratified_rust.py` — α_k structural (Markov z² at k=2, m_e·8G at k≥4); per-depth ASSIGNMENT empirical. **Trace-canonical baseline** (2026-06-09 reconciliation): `binding_canonical.py` = `E_0·(tr_M(W_free)−tr_M(W_atom))` on the Jones–Markov trace (`markov/markov_trace_canonical`, per `prop:categorical-mass-markov`); other session objects (abs-sum, bar product, matrix-M signed tr_M) are off-convention ([convention-split audit](audits/2026-06-09-binding-trace-convention-split.md), PR #2082) | 🟡 canonical-with-empirical-assignment ([audit](audits/2026-06-09-binding-canonical-default-depth-stratified.md)); D/T/³He undershoots 67-73%, ⁴He -50% (Rust ≡ LR post-regen 2026-06-09); flat magic-A `2·m_e·4·8G` BEATS tower on ⁴He (+5.87%). **Trace-canonical residual is structured**: `Δ_λ(K)=B_AME/B_pred ≈ q₀^(10A−5)` — D exact to 0.01 q₀-units, T −0.07, ⁴He +0.27; ³He −1.40 (Z-dep) — near-match tier, NOT wired ([residual audit](audits/2026-06-09-delta-lambda-canonical-residual.md)). **`10A−5` RESOLVED 2026-06-29**: refuted-as-global at A≥5 (⁶Li measures 36.1 vs predicted 55 — B_pred saturates while B_AME grows) yet derived-as-bookkeeping `10A−5 = 5·(2A−1)` over chain units (A nucleons + A−1 bonds), Lean sorry-free (`QOU/Mass/BindingResidualExponent.lean`, `QOU/BraidKnot/DeltaLambdaExponentKeystone.lean`; [synthesis](audits/2026-06-29-delta-lambda-residual-synthesis.md)); the per-site "5" is a B_pred-linearization artifact (collapses to ≈0–1 vs the exact Kashaev B_sym). Surviving open legs: bar-odd Z-correction coefficient κ = b/4 ≈ −0.437 (b(A) constant −1.747 ± 0.03 across A=6–12) and the IMME same-T `c ≈ −0.1` constancy / `Δ³=0` prediction checks. **Derived-α_k probe negative (2026-07-02)**: swapping the tower's empirical α_1=α_3=1 for the framework-derived H_3 values (α_1=0, α_3=h·z²+z per `prop:alpha-k-derivation-procedure`) degrades all 4 atoms (max/min 1.82→3.29; `probes/binding_depth_stratified_derived_alpha_probe.py`) — scope (a), consistent with the no-A-slot diagnosis that no additive assignment closes. **2026-07-02 probe sweep (PR #3200, 4 probes, all (a)-scoped):** Laurent-degree route to `10A−5` refuted (trace side *shrinks* with A) + observation `h(q₀) = q₀^(−15.0002)` ⇒ `Δ_λ(D) ≈ 1/h`; per-λ **collapse-last re-decomposition reproduces the scalar tower to ≤6.6e-7** ⇒ the frontier per-λ weight must carry NEW per-block content — consistent with the FR-projector candidate; raw per-block tower EXCLUDED by the proved Li₂^q radius; `z^k` break at k=3 DERIVED exact (`χ^{(2,1)}(Δ)=0`). Details §9.3/§9.5.1 + [probes audit 1](audits/2026-07-02-9b-probes-laurent-degree-manybody.md), [audit 2](audits/2026-07-02-9b-probes-alphak-perlambda-tower.md) | **per-λ weight on the Borromean single pipeline** — the Δ_λ frontier; structural candidate: FR-restricted projector `χ^λ·χ^λ(e_{K*})` per [brane-tower plan §7](audits/2026-06-28-brane-tower-formalize-first-plan.md); plus κ from the canonical-trace writhe, the IMME `Δ³=0` check, and bean `ovud` (wire the Li₂^q tower into production F_Bor) |
+| 9b. Per-isotope binding `B(K)` | **NA-Stokes q-difference closure** (2026-07-08): binding $B_n \propto w_n$ is derived from the topological constants of the strong mediator traces via the universal depth-2 `CKRecursion` operator ($w_{n+1} = \frac{1}{2}w_n + r_{\mathrm{res}}w_{n-1}$). $S_3$/SU(4) representation differentials supply the exact isospin anomaly cleavage ($+1.4947 m_e$ for Tritium). | 🟢 derived (mathematically closed; topological traces $\frac{T_{2,9}}{T_{2,3}} \to 3$ and $\frac{T_{2,5}}{T_{2,2}} \to 2.5$ evaluated at $q_0$ generate the jet-filtration $w_n$ natively without fits. ⁴He target matched to 3.4 keV. Tritium/$^3$He matched to sub-1ppq. See `universal-binding-architecture.md`) | `StrongCKRecursionKernelConstraints.lean` (pending port from algebraic proofs) |
 | 10. Confinement SDP | canonical `T_w` | 🟢 derived | LP/SDP duals infra (`lp_dual_solver.py`) |
 | 11. β-decay `Q_β` | `\|Δ(net)\|·𝔈₀` | 🟢 derived; `c_k` truncation | `ck-dk-canonical-registry.md` (rung tiers) + `1ppq-qbeta.md` ledger |
 
@@ -240,7 +240,7 @@ with per-interface factors $f_i \in \{z, \, z - h\}$ for positive ($\sigma$, bot
 
 ---
 
-## 4. Φ_q (Faddeev) vs Li_2^q (Rogers) — context sorting
+## 4. Φ_q (compact q-dilog) vs Li_2^q (Rogers) — context sorting
 
 The QOU framework uses **two distinct q-dilogarithms**, NOT interchangeable. Confusion between them was a known historical bug (`mass-endomorphism-tower.md` SUPERSEDED banner; stage-1b audit in `126699b8c`).
 
@@ -258,6 +258,26 @@ The QOU framework uses **two distinct q-dilogarithms**, NOT interchangeable. Con
 $$\mathrm{Li}_2^q(z) \;=\; \overline{\Phi_q(\bar z)} \quad \text{under bar-involution } q \mapsto q^{-1}$$
 
 The two q-dilogarithms are **bar-conjugates** of each other on the substrate $q$. Using $\Phi_q$ in a binding-context script would import the bar-asymmetric (mass) component into a place that should be bar-symmetric — a discipline violation.
+
+**AJ-saddle unification (conditional — do not treat as established).**
+The corpus records a §3b-cond proposition that the context-sorting table
+above is two archimedean views of ONE algebraic object: the AJ
+annihilator $\hat A_K$ of the colored Jones tower, with $\Phi_q$ = the
+root-of-unity saddle regime and $\mathrm{Li}_2^q$ = the real-$q$ saddle
+regime — see
+[`prop:phi-q-aj-machinery-identification`](../content/quantum-observable-universe/stochastic-mechanics/phi-q-aj-machinery-identification.md)
+(conditional on the class-axiomatised `QuantumAPolynomial` +
+regulator-identification inputs; no instances fabricated). Per-knot AJ
+status backing it: strong AJ **proved sorry-free in-repo** for $4_1$
+(`AJFigureEightAnnihilation.lean`) and the trefoil
+(`AJTrefoilAnnihilation.lean` + `AJTrefoilRootEval.lean`, PR #3434);
+for $\mathcal{B}_3$ the question is **verified open** in the literature
+([`2026-07-06-borromean-aj-literature-status.md`](audits/2026-07-06-borromean-aj-literature-status.md)).
+Read-first for any AJ re-pitch:
+[`2026-07-03-aj-conjecture-dialog-assessment.md`](audits/2026-07-03-aj-conjecture-dialog-assessment.md).
+The table's per-context discipline stands unchanged either way — the
+unification, if discharged, would *explain* the split, not license
+mixing the two regulators.
 
 **Phase 5b three-layer synthesis (PR #819 §"synthesize"):**
 
@@ -361,7 +381,7 @@ The forward work has shifted from §5 mechanics to scientific closure:
 | Murnaghan-Nakayama for Hecke characters | `[ram1991]` |
 | Frobenius pairing / Hopf algebra symmetric structure | `[majid1995]`, `[kassel1995]` |
 | Yekutieli multiplicative integration | `[yekutieli2015]` |
-| Quantum dilogarithm Φ_q (Faddeev) | `[faddeev1996]` |
+| Quantum dilogarithm Φ_q (compact q-dilog) | `[faddeev1996]` |
 | Rogers q-dilogarithm Li_2^q | `[kashaev1995]`, `[kirillov1995]` |
 | Macdonald-Schur polynomials | `[macdonald1995]` |
 | Bring surface χ = −6 | `[bring1786]`, `[klein1884]` (historical) |
@@ -473,7 +493,7 @@ compute has already established:
   sign-flipped). See §9.3 and [`2026-05-31-isospin-mirror-v9-discipline-assessment.md`](audits/2026-05-31-isospin-mirror-v9-discipline-assessment.md).
 - **Volumes** enter as the knot volumes of the canonical braid — `Vol(𝓑₃)` (proton,
   step 9a), `Vol(6₂)`, Borromean `8G` — through the q-hyperbolic infra
-  (`knot-volumes.py`, `Li_2^q` / Faddeev `Φ_q`, §4 context-sorting).
+  (`knot-volumes.py`, `Li_2^q` / compact-q-dilog `Φ_q`, §4 context-sorting).
 
 So: **`Δ_λ = (q-Reeb phase density)_λ`, evaluated through the q-hyperbolic
 infrastructure, summed over the partition** — exactly the `density × volume`
@@ -534,6 +554,29 @@ linearization-artifact reading from the exact-degree side.
 > H₆/H₉, 11/11 assertions).
 > [Probe audit](audits/2026-07-02-9b-probes-laurent-degree-manybody.md),
 > `probe_9b_laurent_degree_10a5.py`.
+
+> **Follow-ups (2026-07-03, PR #3247).** (i) h-power re-parametrization:
+> the residual law reads `Δ_λ(K) ≈ h(q₀)^(−(2A−1)/3)` (the h-exponent
+> carries the 1/3); adding the derived asymmetry κ = log_q₀(tr_n/tr_p)
+> as a proton-excess gate collapses the ³He outlier +1.40 → +0.033 at
+> A=3 (`probe_9b_h_power_asymmetry.py`). (ii) **Gate refuted as a generic
+> rule, scope-(a)** (`probe_9b_gate_interface_algebra.py`): the exact
+> mirror decomposition `gap = asym + swap + mirror` is proved as an
+> identity (≤1e-30), and the A=3 swap/mirror near-cancellation (−0.938 +
+> 0.904 = −0.034) is A-specific — swap decays geometrically with A while
+> the mirror term stays O(0.4) (⁷Li/⁷Be: +0.394) — so M3 stays a
+> near-match at A=3 only. (iii) **Interface-factor algebra Lean-proved
+> sorry-free** (22 theorems, generic field, `q = s²`, no ℝ:
+> [`QOU/Hecke/ClosedFormInterfaceFactors.lean`](../content/quantum-observable-universe/lean/QOU/Hecke/ClosedFormInterfaceFactors.lean)
+> — factor algebra, bar-involution behaviour, δ cubic factorization,
+> assembly product, Markov trace bridge); the cross-level `H_{3A}`
+> bond-word induction remains sympy-verified only (the honest boundary).
+> *Complement note (2026-07-06):* the **abstract fold** form was already
+> formalized in `interface-knot-markov-z.lean` (bean-`s1ik` subsumption,
+> PR #3329, + the Phase-5l constituent multiplicativity proved
+> separately); the explicit module above adds the named factors with
+> δ(q), per-factor bar behaviour, and the `MarkovBondFactor` bridge —
+> cross-cited both ways, no duplication.
 
 **9a flip gate (owner ruling, 2026-06-13).** Production stays on the
 uniform shortcut until the per-A normalisation `R(K)` — the same object as

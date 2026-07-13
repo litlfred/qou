@@ -48,7 +48,7 @@ for $V \in \{0.1, 0.3, 0.5, 0.7, 0.85, 0.95, 0.989\}$
 (`kashaev-integration-identity.witness.json`).*
 
 *Earlier versions of this proof identified the integral with the
-Faddeev quantum dilogarithm $\Phi_q(V) = \prod_{k\geq 1}(1 - q^{-k}V)^{-1}$,
+compact quantum dilogarithm $\Phi_q(V) = \prod_{k\geq 1}(1 - q^{-k}V)^{-1}$,
 whose logarithm uses asymmetric q-integers $(q^n - 1)$.  Both
 $\mathrm{Li}_2^q$ and $\log\Phi_q$ are q-deformations of the
 classical dilogarithm, but they use different q-integer conventions;

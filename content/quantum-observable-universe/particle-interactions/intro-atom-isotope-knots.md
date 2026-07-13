@@ -1,15 +1,3 @@
-An atom is, on the substrate side, a categorical knot whose
-braid word encodes its proton/neutron counts; an isotope is the
-same atomic-number knot with a different braid-word presentation
-of the neutron component.  This section assigns each
-$(Z, N)$ pair a canonical knot in the categorical knot category
-and proves the assignment is faithful.
+An atom constitutes a categorical knot in the substrate. Its defining braid word encodes exact proton and neutron counts. An isotope represents the same atomic-number knot but employs an altered braid-word presentation for the neutron component. This section assigns each $(Z, N)$ pair a canonical knot in the categorical knot category and proves this assignment is faithful.
 
-The arc moves from definition to taxonomy.  We define the atom-knot
-and isotope-knot, prove uniqueness of the assignment, and survey
-the small-$Z$ cases (hydrogen, helium, lithium) against the
-explicit braid words computed in the appendix.  The output is a
-total mapping
-$\{(Z, N)\} \to \{\text{atom-knots}\}$ that the atomic-mass
-appendix consumes wholesale to assign empirical CODATA values to
-substrate-level categorical predictions.
+We define atom-knots and isotope-knots, and we prove the uniqueness of their assignment. We survey small-$Z$ cases (hydrogen, helium, lithium) by comparing them to explicit braid words. This yields a total mapping $\{(Z, N)\} \to \{\text{atom-knots}\}$. The atomic-mass appendix consumes this mapping wholesale, connecting substrate-level categorical predictions directly to empirical CODATA values.

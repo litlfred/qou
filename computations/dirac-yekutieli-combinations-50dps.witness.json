@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.13.12",
-  "computedAt": "2026-06-28T23:06:01.852501+00:00",
-  "commitSha": "69f7ec22fef86f1af72bf3de80b1d5994ffe52b4",
+  "computedAt": "2026-07-07T13:47:35.435680+00:00",
+  "commitSha": "85da4f43133d9d70ca3582f4fa4f31771b5ec3f1",
   "assertions": [
     {
       "name": "probe_completed",
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 1795,
+  "durationMs": 150,
   "computation": "dirac-yekutieli-combinations-50dps",
   "scriptFile": "dirac_yekutieli_combinations_50dps.py",
   "scriptHash": "ac51de066f3f",
@@ -87,12 +87,12 @@
       "delta_vs_target": "0.9789913985443047537636509"
     },
     "m_p_predictions_ppm": {
-      "Family A": "29604.991",
-      "Reading B (FA+Yek)": "13330.942",
-      "Dirac form alone": "636.7253",
-      "Dirac + Yek": "-31988.22",
-      "Linear a·FA+b·Dirac (exact)": "5.6193593",
-      "FA + per-cell Yek": "17399.454"
+      "Family A": "29605.204",
+      "Reading B (FA+Yek)": "13331.155",
+      "Dirac form alone": "636.93871",
+      "Dirac + Yek": "-31988.006",
+      "Linear a·FA+b·Dirac (exact)": "5.8327791",
+      "FA + per-cell Yek": "17399.667"
     },
     "verdict": "None of the tested combinations naturally produce -G·h² exactly without fitting. Linear combination requires (a, b) = (-0.0217861, 2.0484) — not recognizable. Reading B (FA + Yek additive) gives -0.166 (Δ = 0.75). Dirac + Yek over-corrects. The structural identity for Reading-A remains unidentified; categorical proof still open."
   }

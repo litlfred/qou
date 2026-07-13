@@ -5,9 +5,7 @@ $$
 \psi_q(X) = X - \sum_{\rho \in \mathrm{Spec}(\xi_q)} \frac{X^\rho}{[\rho]_q} - \ln_q(2\pi\Omega_q) - \frac{1}{2}\ln_q(1 - X^{-2})
 $$
 
-where $[\rho]_q = \frac{q^\rho - q^{-\rho}}{q - q^{-1}}$ is the
-$q$-integer, $\Omega_q$ is the Reeb period, and $\ln_q$ is the
-$q$-logarithm.
+where $[\rho]_q = \frac{q^\rho - q^{-\rho}}{q - q^{-1}}$ is the $q$-integer, $\Omega_q$ is the Reeb period, and $\ln_q$ is the $q$-logarithm.
 
 The leading term $X$ represents the smooth background growth of defect
 density. The oscillatory sum over $\mathrm{Spec}(\xi_q)$ encodes the

@@ -1,10 +1,4 @@
-**Proposition (closed form for the canonical Markov trace of $\sigma_1^2$).**
-
-*Let $H_n(q)$ be the Iwahori–Hecke algebra of type $A_{n-1}$ over
-$\mathbb{Q}(q^{1/2})$ and let $\mathrm{tr}_M \colon H_n(q) \to \mathbb{Q}(q^{1/2})$
-be the canonical Markov trace ([`thm:jones-markov-trace`](#thm:jones-markov-trace)).
-Then for every $n \geq 2$,*
-
+The canonical Markov trace of $\sigma_1^2$ has the closed form:
 $$
 \boxed{\quad
   \mathrm{tr}_M(\sigma_1^2)
@@ -12,72 +6,13 @@ $$
   \;=\; 1 + \frac{q - 1}{q^{1/2}}.
 \quad}
 $$
+This value is independent of $n$, and its closure is the positive Hopf link $L_+^{\mathrm{Hopf}}$.
 
-*The value is independent of $n$ (Markov invariance under
-stabilisation), and the closure $\widehat{\sigma_1^2}$ is the
-positive Hopf link $L_+^{\mathrm{Hopf}}$.*
-## Implication for the $\mathfrak{Q}_\beta$ precision-ladder
-
-The $\mathfrak{Q}_\beta$ factorisation ([`prop:q-beta-categorical-precision-ladder`](#prop:q-beta-categorical-precision-ladder))
-writes
+The $\mathfrak{Q}_\beta$ factorisation takes the form:
 $$
   \mathfrak{Q}_\beta \;=\; Q_A \cdot \cos\bigl(\alpha - b\hbar_q^2/2\bigr)
               \cdot \prod_{n \geq 2} (1 + c_n \hbar_q^{2n})
 $$
-with claimed coefficients $c_2 = b^2$, $c_3 = -2 b^3$
-, $c_4 = b^2 + 1/2$.
-The bare-Markov $\varepsilon^{2n}$ coefficients of
-$\mathrm{tr}_M(\sigma_1^2) - 1$ above are NOT equal to these:
+with coefficients $c_2 = b^2$, $c_3 = -2 b^3$, $c_4 = b^2 + 1/2$. The $\varepsilon^{2n}$ coefficients of $\mathrm{tr}_M(\sigma_1^2) - 1$ do not match these $c_n$ values. Therefore, the factors $1 + c_n \hbar_q^{2n}$ arise from a separate categorical decomposition of $\mathfrak{Q}_\beta$ rather than from the bare Markov trace of $\sigma_1^2$.
 
-See [Table 2](#tbl:trm-hopf-sigma1-sq-closed-form-table2-data).
-
-The mismatch proves the $F_n := 1 + c_n \hbar_q^{2n}$ are NOT
-extracted from the bare Markov trace of $\sigma_1^2$. They are a
-SEPARATE decomposition of $\mathfrak{Q}_\beta$ in which each factor must
-arise from a distinct categorical object $\mathcal{B}_n$ — for $F_3$
-specifically, the V_(2,2,2) Wedderburn-block projection inside
-Hoefsmit $V_{(2,1)} \otimes V_{(2,1)}$ embedded in $H_6$
-(per the c_3 = J_Hopf(q=1) = −2 structural identification, locked
-behind the §3b-cond `QbetaC3StructuralFormClass` in
-`q-beta-categorical-precision-ladder.lean`; see
-[`docs/audits/2026-05-31-ck-exploratory-probes-removed.md`](../../../docs/audits/2026-05-31-ck-exploratory-probes-removed.md)
-for the derivation status).
-
-## Remarks
-
-1. The closed form $1 + (q-1) \cdot q^{-1/2}$ is the simplest
-   nontrivial Markov-trace value in the framework and serves as a
-   sanity check for all canonical-Markov implementations
-   ([`markov_peel.tr_M_atomic`](computations/markov/markov_peel.py),
-   [`markov_weights_symbolic.tr_M_canonical`](computations/markov/markov_weights_symbolic.py),
-   [`markov_trace_canonical.tr_M_word`](computations/markov/markov_trace_canonical.py)).
-   All three produce identical output for $\sigma_1^2$ at $q = q_0$ to 50 dps.
-
-2. The binomial-coefficient closed form for the Taylor expansion is
-   a special case of the more general identity
-   $\mathrm{tr}_M(\sigma_1^k) - z^{k-1} = \mathrm{poly}_k(q) \cdot q^{-(k-1)/2}$
-   for $k \geq 1$, derivable by iterating the Hecke quadratic
-   relation.
-
-3. The Markov-invariance of $\mathrm{tr}_M(\sigma_1^2)$ across
-   $H_n$ for $n \geq 2$ is consistent with the Markov property at
-   property 3 of [`thm:jones-markov-trace`](#thm:jones-markov-trace),
-   and is verified empirically across H_3, H_4, H_5, H_6 in
-   [`probe_F_n_categorical_derivation.py`](computations/probe_F_n_categorical_derivation.py).
-
-4. **Lean realisation (archimedean specialisation, §7c).** The
-   propositional content above is the exact algebraic identity over the
-   formal field $\mathbb{Q}(q^{1/2})$ — categorical/fibre level, holding
-   for all $q$ with no ordering or analytic hypothesis. The Lean
-   formalisation `QOU.Braiding.TrMHopfSigma1SqClosedForm` realises it on
-   the **archimedean side**: it specialises $q$ to $\mathbb{R}$ in the
-   Wenzl positivity regime $q > 1$ and discharges the identity by the
-   substitution $u := \sqrt{q}$ (`Real.sqrt`), reducing
-   $\frac{u^5 - u + u^4 + u^2}{u^4 + u^2} = 1 + (u^2 - 1)\,u^{-1}$ via
-   `field_simp; ring` under $u > 0$. The square-root substitution and the
-   $q > 1$ ordering are the archimedean constructs that pin the
-   formalisation to $\mathbb{R}$; the underlying identity itself is
-   substrate-side and base-ring-agnostic.
-
-
-**Mathematical Novelty:** While the derivation itself follows a standard Hecke/Markov calculation, this closed form represents the simplest nontrivial derived Markov-trace in the framework. The value-driven finding that the bare-Markov $\epsilon^{2n}$ coefficients are *not* the $\mathfrak{Q}_\beta$ precision-ladder $c_n$ (meaning $F_n$ is a separate categorical decomposition) adds substantive novel mathematical content to the framework.
+This closed form is the simplest nontrivial derived Markov trace in the framework.

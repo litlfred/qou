@@ -1,0 +1,83 @@
+{
+  "computation": "qbeta-ohtsuki-higher-rungs",
+  "description": "Extract \u03ba\u2082/\u03ba\u2083/\u03ba\u2084 of the 4\u2081 Kashaev log-asymptotic and PSLQ over \u211a(\u221a3)\u00b7\u03c0^n; locate the exact-arithmetic frontier vs #3571's block.",
+  "audit_only": true,
+  "tier": "numerical (higher-rung extraction)",
+  "computedAt": "2026-07-12T10:45:56.436637+00:00",
+  "commitSha": "c0dfa74ac44d2b9febb9a4201c07c77cb48984a7",
+  "engine": "mpmath",
+  "engineVersion": "1.3.0",
+  "scriptFile": "qbeta_ohtsuki_higher_rungs.py",
+  "scriptHash": "0fa7090e2666",
+  "assertions": [
+    {
+      "name": "kappa1_reproduces_3606",
+      "passed": true
+    },
+    {
+      "name": "at_least_kappa2_identified",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "result": {
+    "Ns": [
+      1536,
+      3072,
+      6144,
+      12288,
+      24576,
+      49152,
+      98304,
+      196608,
+      393216,
+      786432,
+      1572864
+    ],
+    "kappa1_reproduces_3606": true,
+    "rungs": {
+      "1": {
+        "kappa": "0.554216472404899898792635023168",
+        "confident_digits": 27,
+        "parity_generator": "\u221a3\u00b7\u03c0^1",
+        "identified": true,
+        "rational": "11/108"
+      },
+      "2": {
+        "kappa": "0.73108180748810063843218451851",
+        "confident_digits": 22,
+        "parity_generator": "\u03c0^2",
+        "identified": true,
+        "rational": "2/27"
+      },
+      "3": {
+        "kappa": "2.65452705694954534760901550481",
+        "confident_digits": 17,
+        "parity_generator": "\u221a3\u00b7\u03c0^3",
+        "identified": true,
+        "rational": "1081/21870"
+      },
+      "4": {
+        "kappa": "13.0947749263816719467521562374",
+        "confident_digits": 12,
+        "parity_generator": "\u03c0^4",
+        "identified": true,
+        "rational": "98/729"
+      }
+    },
+    "identified_rungs": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "exact_id_frontier": null,
+    "verdict": "\u03ba\u2081 reproduces 11\u221a3\u03c0/108 (sanity True). Higher-rung exact-arithmetic identification reaches rungs [1, 2, 3, 4]; all tested rungs (\u03ba\u2082,\u03ba\u2083,\u03ba\u2084) identified \u2014 the even-channel expansion has an exact \u211a(\u221a3)\u00b7\u03c0^n Ohtsuki closed form well past the leading rung. Parity confirmed where identified (odd rung \u2208 \u211a\u00b7\u221a3\u00b7\u03c0^n, even \u2208 \u211a\u00b7\u03c0^n). Anti-laundering: 4\u2081-Kashaev/Ohtsuki facts, NOT wired Q_\u03b2 c_k; open keystone is the 4\u2081\u2194Q_\u03b2 bridge. No fit; no c_k value; no tier change."
+  },
+  "context": {
+    "axis": "z->c_k f-map keystone: even-channel Ohtsuki higher rungs",
+    "kappa1_prior": "11\u221a3\u03c0/108 (#3606, merged)",
+    "parity_rule": "odd rung \u2208 \u211a\u00b7\u221a3\u00b7\u03c0^n; even rung \u2208 \u211a\u00b7\u03c0^n",
+    "entropy_block_sibling": "#3571 (full ladder), #3536 P4"
+  }
+}

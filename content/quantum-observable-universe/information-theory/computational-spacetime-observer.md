@@ -1,68 +1,50 @@
-# Computational Spacetime and the Observer
-
 **Time relative to the observer.**
-In the QOU formalism, time is not an absolute background parameter, but is strictly relative to the observer. Specifically, the "time" experienced by an observer is precisely the **computational time** required to evaluate the state space leading to or following from that exact point. This discrete sequence of Planck operations acts as the fundamental metric of temporal distance.
+In the QOU formalism, time is not an absolute background parameter but is relative to the observer. The "time" experienced by an observer is the **computational time** required to evaluate the state space leading to or following from that point. This discrete sequence of Planck operations acts as the metric of temporal distance; the underlying definition is [information-theoretic time](#def:information-theoretic-time).
 
-## Categorical Dynamics
+## Categorical dynamics
 
-At the Planck length, we must abandon geometric coordinates and frame the observer and time-step purely categorically. Let the observable universe $M$ be an object in a category $\mathbf{C}$ with a terminal object $\mathrm{pt}$.
+At the Planck length, geometric coordinates give way to a purely categorical framing of the observer and the time step. Let the observable universe $M$ be an object in a category $\mathbf{C}$ with a terminal object $\mathrm{pt}$.
 
-**Point Morphisms and Particles.** A geometric "point" is formally defined as a morphism $p : \mathrm{pt} \to M$. A particle is not a point, but rather a section over points: a morphism $s : M \to E$ into a bundle $E \to M$ such that composition with the projection is the identity. The state of the particle at a specific point is the composition $p \gg s$.
+**Point morphisms and particles.** A geometric "point" is a morphism $p : \mathrm{pt} \to M$. A particle is not a point but a section over points: a morphism $s : M \to E$ into a bundle $E \to M$ whose composition with the projection is the identity. The state of the particle at a point is the composition of $p$ with $s$.
 
-**Functorial Evolution.** Dynamical evolution is modeled as an endofunctor $\mathcal{F}$ acting on the category, or equivalently as an endomorphism $\mathrm{TimeStep} : M \to M$. The "flowed" state of a point under one Planck time-step is cleanly defined via composition:
+**Functorial evolution.** Dynamical evolution is modeled as an endofunctor on the category, or equivalently as an endomorphism $\mathrm{TimeStep} : M \to M$. The "flowed" state of a point under one Planck time step is the composition
 
-$$ p \mapsto p \gg \mathrm{TimeStep} $$
+$$
+  p \;\mapsto\; p \circ \mathrm{TimeStep} .
+$$
 
-This categorical architecture is formalized in the following Lean definition (`QOU.CategoricalDynamics`):
+## The unification dictionary
 
-```lean
--- from QOU/CategoricalDynamics.lean
-/-- A Point is a morphism from the terminal object (pt) to M.
-    Categorically, we avoid geometric coordinates. -/
-def PointMorphism := ⊤_ C ⟶ M
+The framework treats time-step evolution as a generic endofunctor. One expects — by analogy with the coherence theorems for braided monoidal categories — that a functorial time step preserving the QOU invariants is naturally isomorphic to the fundamental braiding action; this uniqueness is a heuristic identification here, not a proved statement. Under that identification, four conceptual domains would describe the same underlying mechanism of the discrete computational Planck step:
 
-/-- Discrete time step evolution as an endomorphism of the universe object M. -/
-variable (TimeStep : M ⟶ M)
-
-/-- A 'flowed' point is the composition of the original point morphism with the time step. -/
-def flowPoint (p : PointMorphism M) : PointMorphism M :=
-  p ≫ TimeStep
-```
-
-## The Unification Dictionary ("Rosetta Stone")
-
-While the framework treats time-step evolution as a generic endofunctor, the underlying structure of the QOU locks this functor to a single unique mechanism. By Mac Lane's coherence theorem for braided monoidal categories, any functorial time-step that preserves the QOU Lagrangian invariants is uniquely naturally isomorphic to the fundamental braiding action.
-
-Consequently, four distinct conceptual domains describe the exact same underlying mechanism of the discrete computational Planck step. This isomorphism is tabulated below:
-
-| Conceptual Domain | Mechanism / Object | Evolution Action |
+| Conceptual domain | Mechanism / object | Evolution action |
 | --- | --- | --- |
-| **Category Theory** | Point Morphism $p : \mathrm{pt} \to M$ | Endofunctor $F$, Flow $p \gg F$ |
-| **Algebraic / Knot Theory** | State Space Braiding | $R$-matrix operator $\check{R}$, Markov trace |
-| **Conformal Field Theory** | Exceptional Divisor $\mathcal{S}_p$ | Vertex Operator $Y(a, z)$, OPE Singularity |
-| **Information Theory** | Computational Spacetime | Discrete Planck operation, Evaluation step |
+| **Category theory** | Point morphism $p : \mathrm{pt} \to M$ | Endofunctor $F$, flow $p \circ F$ |
+| **Algebraic / knot theory** | State-space braiding | $R$-matrix operator $\check{R}$, Markov trace |
+| **Conformal field theory** | Exceptional divisor $\mathcal{S}_p$ | Vertex operator $Y(a, z)$, OPE singularity |
+| **Information theory** | Computational spacetime | Discrete Planck operation, evaluation step |
 
-This dictionary provides the rigorous link: **The computational time-step functor $T$ acting on point morphisms is explicitly instantiated by the $R$-matrix operator on the state space, which evaluates exactly as a vertex operator insertion on Bring's surface.**
+Read this dictionary as a proposed correspondence: the computational time-step functor acting on point morphisms would be instantiated by the $R$-matrix operator on the state space, which in turn evaluates as a vertex-operator insertion on Bring's surface.
 
-## Bring's surface and the emergence of Spacetime
+## Bring's surface and the emergence of spacetime
 
-This intrinsic relationship between time, algebraic distance, and computational cost is spelled out smoothly in the first two coordinates of Bring's surface. Bring's surface natively possesses $2$ complex dimensions. The action of the natural involution $\tau$ upon this surface effectively generates the $4$-dimensional physical spacetime:
-$$ \text{2 dim (Complex)} + \text{involution } \tau \implies \text{4 dim (Spacetime)} $$
-The first two coordinates of Bring's surface map smoothly into the computational spacetime metric.
+The relationship between time, algebraic distance, and computational cost is carried by the first two coordinates of [Bring's surface](#def:brings-surface). Bring's surface has $2$ complex dimensions; under the action of the natural involution these supply the $4$ real dimensions interpreted as physical spacetime. The first two coordinates of Bring's surface map into the computational spacetime metric.
 
 **Relative distance as computational cost.**
-Because spacetime distance from the observer is derived directly from the coordinates of Bring's surface under involution, physical distance is fundamentally **relative computational time**. The physical separation between two events is simply the number of discrete lattice applications of the $R$-matrix (dependent on the local substrate parameter $q$) that must be computed to connect their state spaces. 
+On this reading, physical distance is relative computational time: the separation between two events is the number of discrete lattice applications of the $R$-matrix (dependent on the local substrate parameter $q$) required to connect their state spaces. While this computational distance is relative to the observer, it remains consistent across observers: the algebraic consistency of the state space (the Yang--Baxter equations on the $R$-matrix) makes the computational distance agree across observers, so macroscopic symmetries such as Lorentz covariance would emerge as information-theoretic agreement. This recovery of Lorentz covariance is an interpretive expectation, not a derivation.
 
-Crucially, while this spacetime computational distance is relative to the observer, it must remain consistent across observers. The algebraic consistency of the state space (guaranteed by the Yang-Baxter equations on the $R$-matrix) ensures that the computational distance agrees across different observers, recovering macroscopic symmetries like Lorentz covariance as an emergent property of information-theoretic agreement.
+## The substrate parameter and the mass ratio
 
-## The Substrate Parameter as the Mass Ratio
+In the trace-based mass channel, particle masses are computed from the Markov trace of their respective topological knots,
 
-In the QOU framework, particle masses are mathematically derived from the Markov trace of their respective topological knots:
-$$ m(K) = \mathrm{tr}_M(K, q) \times E_0 $$
+$$
+  \mathfrak{m}(K) \;\approx\; \mathrm{tr}_M(K, q) \cdot \mathfrak{E}_0 ,
+$$
 
-When we examine the ratio between two fundamental flavor generations (e.g., the muon $m_\mu$ and the electron $m_e$), the scaling energy $E_0$ cancels, leaving an exact algebraic equation:
-$$ \frac{m_\mu}{m_e} = \frac{\mathrm{tr}_M(K_\mu, q)}{\mathrm{tr}_M(K_e, q)} $$
+with $\mathfrak{E}_0$ the scaling energy. For the ratio between two flavor generations (the muon and the electron), the scaling energy cancels, leaving an algebraic relation
 
-This structural identity exposes the physical reality of the substrate parameter $q$: **$q$ is not a hidden, unobservable background parameter; it is mathematically synonymous with the mass ratio itself.** 
+$$
+  \frac{\mathfrak{m}_\mu}{\mathfrak{m}_e} \;=\; \frac{\mathrm{tr}_M(K_\mu, q)}{\mathrm{tr}_M(K_e, q)} .
+$$
 
-Because $q$ is a local field $q(p)$ that evolves dynamically in response to local interactions (e.g., in regions of extreme EMF or gravity), the topological deformation of the local geometry physically manifests as a shift in the local mass ratio $m_\mu(p)/m_e(p)$. Thus, tracking the evolution of $q(p)$ over the spacetime lattice is observationally identical to tracking the dynamic shifting of the fundamental flavor mass hierarchy.
+This identity suggests a physical reading of the substrate parameter $q$: rather than a hidden background parameter, $q$ is tied directly to the mass ratio itself. If $q$ is a local field $q(p)$ that evolves in response to local interactions (for example in regions of extreme electromagnetic field or gravity), then a topological deformation of the local geometry would manifest as a shift in the local mass ratio $\mathfrak{m}_\mu(p)/\mathfrak{m}_e(p)$, and tracking the evolution of $q(p)$ over the spacetime lattice would be observationally equivalent to tracking a drift of the flavor mass hierarchy. Both the local-field promotion of $q$ and the resulting drift are speculative interpretations of the trace identity.

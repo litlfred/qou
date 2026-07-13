@@ -13,7 +13,7 @@ $\mathcal{S}_c$,
 $$
 \oint_{\mathcal{S}_c}\lambda_{\mathrm{SW}}^{(n)}
 \;=\;
-2\pi i \sum_{j=1}^{k}\operatorname{Res}_{p_j}\,\lambda_{\mathrm{SW}}^{(n)},
+2\pi i \sum_{j=1}^{k}\mathrm{Res}_{p_j}\,\lambda_{\mathrm{SW}}^{(n)},
 $$
 
 the right-hand side being a finite sum of local residues. Identifying the

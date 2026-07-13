@@ -1,8 +1,8 @@
 {
   "engine": "python+sympy+mpmath",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-05T11:17:18.243561+00:00",
-  "commitSha": "ce39b659e64f7bb00a5b6c01399cc7f595da16e0",
+  "engineVersion": "python 3.13.12",
+  "computedAt": "2026-07-07T13:58:49.608105+00:00",
+  "commitSha": "85da4f43133d9d70ca3582f4fa4f31771b5ec3f1",
   "assertions": [
     {
       "name": "mixed_plethystic_m_half_fourth_power_refuted_as_expected",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 261,
+  "durationMs": 149,
   "computation": "gap-a3-deuteron-mixed-plethystic-probe",
   "scriptFile": "gap_a3_deuteron_mixed_plethystic_probe.py",
   "scriptHash": "621a7802b18e",
-  "scriptCommitSha": "a13f0066fec64dfc824ffff5690bd3571bcdeb94",
+  "scriptCommitSha": "74d93256a6861178964a03c4928922127afea3c3",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -26,11 +26,12 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "Refined GAP-A-3 deuteron sub-case: tests P_λ_mixed(D) = m_{1/2}(λ)^4 (PR #1870's C1 raised to 4th power via the Phase-4 (q^{1/2}+q^{-1/2})^{4N} exponent) against the closure target −B(D)/m_e. Per docs/audits/2026-06-05-gap-a3-refined-mixed-plethystic-scope.md.",
   "contentBlock": "def:delta-lambda",

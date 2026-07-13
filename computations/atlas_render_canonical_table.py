@@ -29,7 +29,7 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 ATLAS_MD = (
-    HERE.parent.parent
+    HERE.parent
     / "content"
     / "quantum-observable-universe"
     / "appendix-knot-periodic-table"
@@ -39,6 +39,15 @@ WITNESS = _pb.witness_path("canonical-mass-table-extended.witness.json", HERE)
 
 BEGIN_MARKER = "<!-- AUTO:canonical-tr-m-table BEGIN -->"
 END_MARKER = "<!-- AUTO:canonical-tr-m-table END -->"
+
+AME2020_DATA = {}
+try:
+    with open(HERE / "data" / "ame2020.json") as _f:
+        _d = json.load(_f)["entries"]
+        for _row in _d:
+            AME2020_DATA[(_row["Z"], _row["N"])] = _row
+except Exception as e:
+    print(f"Warning: could not load ame2020.json: {e}")
 
 ATOM_LABEL_BY_ZN = {
     (1, 0): r"$\mathfrak{p}$",
@@ -87,31 +96,63 @@ def render_table(witness_data: dict) -> str:
     """
     lines = [
         "",
-        "| Atom | $A$ | $n$ | $\\|\\mathrm{tr}_M(\\beta_{\\text{atom}}, q_0)\\|$ "
-        "| Predicting | Prediction (MeV) | Reference (MeV) | Error |",
+        "| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding $B_{\\text{AME}}$ (MeV) | Binding Error | $M_{\\text{atom}}$ (MeV) | $M_{\\text{atom}}$ Error |",
         "|---|---|---|---|---|---|---|---|",
     ]
     for row in witness_data.get("rows", []):
-        Z = row["Z"]; N = row["N"]; A = row["A"]; n = row["n_strands"]
+        Z = row["Z"]; N = row["N"]; A = row["A"]
         label = ATOM_LABEL_BY_ZN.get((Z, N), f"(Z={Z}, N={N})")
-        tr_m_md = f"${_truncate_dps(row.get('tr_M_q0_canonical_50dps'))}$" \
-                  if row.get("tr_M_q0_canonical_50dps") else "—"
         ptype = row.get("prediction_type") or "binding_energy"
-        ptype_label = "mass" if ptype == "mass" else "B (binding)"
-        pred_md = _fmt_number(row.get("prediction_MeV_50dps"))
-        ref_md = _fmt_number(row.get("B_AME_MeV"))
-        # Error: ppm for mass, % for binding energy — the natural unit
-        # for the typical magnitude in each regime.
+        
+        # Default initialization for columns
+        b_pred = "—"
+        b_ref = "—"
+        b_err = "—"
+        m_pred = "—"
+        m_err = "—"
+        
+        # Look up AME2020 experimental uncertainties
+        exp_m_ppb_str = ""
+        exp_b_pct_str = ""
+        if (Z, N) in AME2020_DATA:
+            ame = AME2020_DATA[(Z, N)]
+            m_unc = ame.get("atomic_mass_unc_micro_u")
+            m_val = ame.get("atomic_mass_micro_u")
+            if m_unc is not None and m_val is not None and m_val != 0:
+                exp_m_ppb_str = f" \\pm {(m_unc / m_val) * 1e9:.2f}"
+            
+            b_unc_per_a = ame.get("binding_energy_per_A_unc_keV")
+            b_total_ref = ame.get("binding_energy_total_keV")
+            if b_unc_per_a is not None and b_total_ref is not None and b_total_ref != 0:
+                b_unc_total = b_unc_per_a * A
+                exp_b_pct_str = f" \\pm {(b_unc_total / b_total_ref) * 100:.4f}"
+        
         if ptype == "mass":
-            err_unit = "ppm"
-            err_md = _fmt_number(row.get("err_ppm"), "{:+.3f}")
+            # For p and n, the prediction IS the mass. Binding is 0.
+            m_pred = _fmt_number(row.get("prediction_MeV_50dps"))
+            err_ppm = row.get("err_ppm")
+            if err_ppm is not None:
+                m_err = f"{_fmt_number(err_ppm * 1000.0, '{:+.2f}')}{exp_m_ppb_str} ppb"
         else:
-            err_unit = "%"
-            err_md = _fmt_number(row.get("err_pct"), "{:+.2f}")
-        err_cell = f"{err_md} {err_unit}" if err_md != "—" else "—"
+            # For D and up, the prediction is binding energy.
+            b_pred = _fmt_number(row.get("prediction_MeV_50dps"))
+            b_ref = _fmt_number(row.get("B_AME_MeV"))
+            err_pct = row.get("err_pct")
+            if err_pct is not None:
+                b_err = f"{_fmt_number(err_pct, '{:+.2f}')}{exp_b_pct_str} %"
+                
+            # And we have a composite mass derived from binding
+            cm = row.get("composite_mass", {}) or {}
+            m_pred_val = cm.get("M_pred_MeV")
+            if m_pred_val is not None:
+                m_pred = _fmt_number(m_pred_val, "{:.4f}")
+            cm_ppm_val = cm.get("err_ppm")
+            if cm_ppm_val is not None:
+                m_err = f"{_fmt_number(cm_ppm_val * 1000.0, '{:+.2f}')}{exp_m_ppb_str} ppb"
+                
         lines.append(
-            f"| {label} | {A} | {n} | {tr_m_md} "
-            f"| {ptype_label} | {pred_md} | {ref_md} | {err_cell} |"
+            f"| {label} | {A} | {N} "
+            f"| {b_pred} | {b_ref} | {b_err} | {m_pred} | {m_err} |"
         )
     lines.append("")
     method = witness_data.get("parameters", {}).get("method", "?")

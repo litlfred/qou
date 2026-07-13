@@ -1,62 +1,19 @@
-**Proposition (color and spacetime are orthogonal factors of the Bring Galois group).**
-*Let $K$ be a Bring-embeddable knot, evaluated through the categorical
-Markov trace $\mathrm{tr}_M$ on the Hecke algebra
-$H_2(q)\oplus H_3(q)$, whose $2+3=5$ irreducible representations are the
-Bring fivefold. Bring's five homogeneous coordinates split as
-$\underbrace{(x_0,x_1)}_{\text{spacetime}}$ and
-$\underbrace{(x_2,x_3,x_4)}_{\text{color}}$, and the substrate Galois group
-$S_5$ contains the block-diagonal product $S_2\times S_3$. Then:*
+*Let $K$ be a Bring-embeddable knot, evaluated through the categorical Markov trace $\mathrm{tr}_M$ on the Hecke algebra $H_2(q) \oplus H_3(q)$. The $2+3=5$ irreducible representations constitute the Bring fivefold. Bring's five homogeneous coordinates split as spacetime $(x_0, x_1)$ and color $(x_2, x_3, x_4)$. The substrate Galois group $S_5$ contains the block-diagonal product $S_2 \times S_3$. Then:*
 
-1. *the factorization $S_2\times S_3\hookrightarrow S_5$ is **faithful**;*
-2. *the color factor $S_3$ fixes every spacetime coordinate and the
-   spacetime factor $S_2$ fixes every color coordinate — the two sectors are
-   **orthogonal**;*
-3. *every additive homomorphism from the connected phase parameter
-   $\mathbb{R}$ to a finite group is trivial.*
+1. *The factorization $S_2 \times S_3 \hookrightarrow S_5$ acts faithfully.*
+2. *The color factor $S_3$ fixes every spacetime coordinate. The spacetime factor $S_2$ fixes every color coordinate. The two sectors remain orthogonal.*
+3. *Every additive homomorphism from the connected phase parameter $\mathbb{R}$ to a finite group is trivial.*
 
-## The one trace object, two sectors
+## A single trace object
 
-The embeddable strand counts give a single trace algebra
-$H_2(q)\oplus H_3(q)$ with $2+3=5$ irreducible representations
-([`prop:cohomological-embedding`](#prop:cohomological-embedding)); these five
-match Bring's five homogeneous coordinates, split into a rank-two
-*spacetime* block $(x_0,x_1)$ and a rank-three *color* block
-$(x_2,x_3,x_4)$ ([`brings-qou-4tuple`](../brings-surface/brings-qou-4tuple.md)).
-The color content of an embedded photon is recorded literally as an element
-of $H_3(q)$, with the two generators $\sigma_0,\sigma_1$ the color axes
-([`knot-basis-color-content`](../brings-surface/knot-basis-color-content.md)),
-so color is a grading **on the trace algebra**, not on a separate object.
+The embeddable strand counts dictate a single trace algebra $H_2(q) \oplus H_3(q)$ carrying $2+3=5$ irreducible representations ([`prop:cohomological-embedding`](#prop:cohomological-embedding)). These match Bring's five homogeneous coordinates, partitioned into a rank-two spacetime block and a rank-three color block ([`brings-qou-4tuple`](../brings-surface/brings-qou-4tuple.md)). We record the color content of an embedded photon as an element of $H_3(q)$, where the generators $\sigma_0, \sigma_1$ serve as the color axes ([`knot-basis-color-content`](../brings-surface/knot-basis-color-content.md)). Color therefore provides a grading on the trace algebra itself, rather than a separate object.
 
-The substrate symmetry $S_5$ acts on all five coordinates. Its block-diagonal
-subgroup $S_2\times S_3$ permutes spacetime and color **separately**: the
-$S_3$ permutes the three color sheets while holding spacetime fixed (the
-three copies of $S_3\subset S_5$ of
-[`color-sector-coords`](../brings-surface/color-sector-coords.md),
-[`rem:chirality-trefoil`](#rem:chirality-trefoil)), and the $S_2$ permutes the
-two spacetime coordinates while holding color fixed. Parts (1)–(2) make this
-precise: the product embeds faithfully and each factor fixes the other
-sector pointwise. Color and the spacetime sector are therefore **independent
-coordinates on one object** — coupled only by the $S_5$ elements *outside*
-$S_2\times S_3$, which rotate spacetime indices into color indices.
+The substrate symmetry $S_5$ acts on all five coordinates. Its block-diagonal subgroup $S_2 \times S_3$ permutes spacetime and color separately. The $S_3$ permutes the three color sheets while preserving spacetime ([`color-sector-coords`](../brings-surface/color-sector-coords.md), [`rem:chirality-trefoil`](#rem:chirality-trefoil)). The $S_2$ permutes the two spacetime coordinates while preserving color. Parts (1) and (2) formalize this. The product embeds faithfully, and each factor fixes the opposing sector pointwise. Color and spacetime function as independent coordinates on a single object. They couple only through $S_5$ elements outside $S_2 \times S_3$, which rotate spacetime indices into color indices.
 
 ## Discreteness
 
-Part (3) is a rigidity statement about the *continuous* sector. The
-connected group $\mathbb{R}$ is divisible, so any homomorphism to a finite
-group $G$ vanishes: for each $x$, $f(x)=f\big(\lvert G\rvert\cdot
-\tfrac{x}{\lvert G\rvert}\big)=\lvert G\rvert\cdot f(\tfrac{x}{\lvert
-G\rvert})=0$, since $\lvert G\rvert\cdot g=0$ for every $g\in G$. A
-continuous winding parameter thus cannot carry a finite-group (e.g.
-$\mu_5$) character. Its consequence for the physical reading — that the
-continuous trace phase is not the discrete color charge — is recorded in
-[`rem:mass-modulus-em-phase-color-grading`](#rem:mass-modulus-em-phase-color-grading).
+Part (3) enforces rigidity on the continuous sector. The connected group $\mathbb{R}$ is divisible, so any homomorphism to a finite group $G$ vanishes. For each $x$, $f(x) = f\big(|G| \cdot \tfrac{x}{|G|}\big) = |G| \cdot f(\tfrac{x}{|G|}) = 0$, because $|G| \cdot g = 0$ for every $g \in G$. A continuous winding parameter cannot carry a finite-group (e.g. $\mu_5$) character. Physically, this dictates that the continuous trace phase does not constitute the discrete color charge ([`rem:mass-modulus-em-phase-color-grading`](#rem:mass-modulus-em-phase-color-grading)).
 
-## Lean
+## Lean formalism
 
-Formalized sorry-free in
-[`QOU.MassEndomorphism`](color-spacetime-s5-factorization.lean):
-`spacetime_color_card` ($2+3=5$), `colorSpacetimeEmbed_injective` (1),
-`color_fixes_spacetime` and `spacetime_fixes_color` (2), and
-`winding_hom_to_finite_trivial` (3). The construction is generic: the
-embedding and the divisibility argument hold over the bare combinatorial
-data, with no archimedean input.
+These claims are formalized without `sorry` in [`QOU.MassEndomorphism`](color-spacetime-s5-factorization.lean) via `spacetime_color_card`, `colorSpacetimeEmbed_injective`, `color_fixes_spacetime`, `spacetime_fixes_color`, and `winding_hom_to_finite_trivial`. The construction is generic. The embedding and divisibility arguments rely strictly on combinatorial data, requiring no archimedean input.

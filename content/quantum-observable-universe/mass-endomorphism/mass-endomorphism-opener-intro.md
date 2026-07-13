@@ -1,33 +1,7 @@
-The mass endomorphism is the structural spine of the framework's
-physical predictions.  Every observable mass — from the electron to
-uranium — factors through a single categorical object: the Hecke
-mass element $\Phi_{\mathrm{mass}}(\beta) \in H_n(R, q)$, whose
-Markov trace gives the categorical mass
-$\mathfrak{m}(\varrho) = |\mathrm{tr}_M(\rho(\beta))| \cdot
-\mathrm{VolDensity}(K, q_0)$.
+The mass endomorphism forms the structural spine of our physical predictions. Three objects share this spine and must be kept distinct (notation ruling: [`notation-collisions`](../notation/notation-collisions.md)). The **mass endomorphism** $\mathcal{M}(K) \in \mathrm{End}_{\mathbf{C}}(X_K)$ is the endomorphism of the knot object $X_K$ — a genuine morphism $X_K \to X_K$ in the Reshetikhin–Turaev long-knot sense. Its braid presentation is the **Hecke mass element** $\Phi_{\mathrm{mass}}(\beta) \in H_n(R, q)$: an *element* of the Hecke algebra, which is itself an endomorphism of $V^{\otimes n}$ under $q$-Schur–Weyl. Closing the endomorphism with the Markov trace yields the **categorical mass functional** $\mathfrak{m}(\varrho) = |\mathrm{tr}_M(\rho(\beta))| \cdot \mathrm{VolDensity}(K, q_0)$ — a scalar. Every observable mass factors through these.
 
-This section states the mass endomorphism conjecture, then develops
-its foundational structure: the categorical mass identity
-([mass identity](#def:mass-identity)) with its existence and
-uniqueness proofs, the topological decomposition theorem
-([topological mass](#thm:topological-mass)) showing how the mass
-integrand splits into eigenspace, holonomy, transient, and
-quantum-dilogarithm contributions, and the archimedean corollary
-that realises the categorical mass as a non-abelian multiplicative
-integral.
+We state the mass endomorphism conjecture before developing its foundational structure: the categorical mass identity ([mass identity](#def:mass-identity)), the topological decomposition theorem ([topological mass](#thm:topological-mass)), and the archimedean corollary. The decomposition theorem specifies how the mass integrand splits into eigenspace, holonomy, transient, and quantum-dilogarithm contributions. The archimedean corollary realises the categorical mass as a non-abelian multiplicative integral.
 
-The three calibration inputs ($m_e$, $m_\mu/m_e$, $m_\pi$) are
-categorical constraints — they fix the substrate parameter $q_0$
-and the chiral scale, not archimedean fitting targets.  Everything
-else is derived.
+Three calibration inputs ($m_e$, $m_\mu/m_e$, $m_\pi$) act as categorical constraints. They fix the substrate parameter $q_0$ and the chiral scale. We do not use them as archimedean fitting targets; they determine the algebraic framework from which we derive all remaining parameters.
 
-A note on scope: this section's closed-form blocks supply the
-substrate-level mass identity used throughout the chapter cycle.
-Subsequent sub-sections specialise the identity to particular
-mass channels (Markov-trace endomorphism, $\chi$-character closed
-forms, Hecke-Baer-star chirality); the substrate-level statement
-established here factorises through each specialisation without
-modification.  Readers focused on a specific channel can take the
-identity as a black box; readers focused on the structural
-content should work through the existence and uniqueness proofs
-that follow.
+This section supplies the substrate-level mass identity used throughout the chapter. Subsequent sections specialise the identity to particular mass channels (Markov-trace endomorphism, $\chi$-character closed forms, Hecke-Baer-star chirality). The substrate-level statement factorises through each specialisation without modification. Readers focused on a specific channel may treat the identity as a black box, while those focused on structural content should examine the existence and uniqueness proofs.

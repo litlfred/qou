@@ -1,4 +1,8 @@
 import Mathlib.Tactic
+import Mathlib.Data.Complex.Basic
+import Mathlib.GroupTheory.Perm.Fin
+import Mathlib.Data.Fintype.Card
+import Mathlib.Tactic.FinCases
 
 /-!
 # QOU.BraidsKnots.RamifiedDiscFusion
@@ -18,34 +22,49 @@ Galois action on the three sectors.
 - [manuscript] content/quantum-observable-universe/braids-and-knots/ramified-disc-fusion.md
 -/
 
+open Equiv
+
 namespace QOU.BraidsKnots
 
-/-- Abstract context for the `ramified_disc_fusion` claim. -/
-class RamifiedDiscFusionContext where
-  /-- Number of color-sector preimages of a small disc on the
-      exceptional divisor at a foundry boundary latitude. -/
-  n_sectors : ℕ
-  /-- Ramification degree of the branched cover at the disc centre. -/
-  ramification_degree : ℕ
-  /-- Order of the Galois group realised by monodromy around the
-      boundary circle (manuscript: `S_3`, order 6). -/
-  galois_group_order : ℕ
-  /-- Manuscript claim — three color sectors. -/
-  claim_three_sectors : n_sectors = 3
-  /-- Manuscript claim — degree-3 ramification at the centre
-      (matches the sector count). -/
-  claim_degree_three_ramification : ramification_degree = 3
-  /-- Manuscript claim — `S_3` monodromy: the Galois group of the
-      branched cover has order `|S_3| = 6`. -/
-  claim_s3_monodromy : galois_group_order = 6
+/-- The Galois group $S_3$ acting on the three color sectors. -/
+abbrev S3 := Equiv.Perm (Fin 3)
 
-/-- **Proposition (`prop:ramified-disc-fusion`).** -/
--- Ref: [manuscript] quantum-observable-universe/braids-and-knots/ramified-disc-fusion.md
-def RamifiedDiscFusion [ctx : RamifiedDiscFusionContext] :
-    ctx.n_sectors = 3 ∧
-    ctx.ramification_degree = 3 ∧
-    ctx.galois_group_order = 6 :=
-  ⟨ctx.claim_three_sectors, ctx.claim_degree_three_ramification,
-   ctx.claim_s3_monodromy⟩
+/-- Order of the Galois group is 6. -/
+theorem galois_group_order : Fintype.card S3 = 6 := by
+  change Nat.factorial 3 = 6; rfl
+
+/-- The cyclic monodromy generator (rgb). -/
+def cyclic_perm : S3 := swap 0 1 * swap 1 2
+
+/-- The Lagrange resolvents $w_k$. -/
+noncomputable def resolvent (zeta : ℂ) (i : Fin 3) : ℂ :=
+  if i = 0 then 1
+  else if i = 1 then zeta⁻¹
+  else (zeta⁻¹)^2
+
+/-- **Proposition (`prop:ramified-disc-fusion`).**
+    The cyclic monodromy generator $(rgb)$ acts on the Lagrange
+    resolvent $w_k$ by multiplication by $\zeta^{-1}$. This exhibits
+    the explicit geometric agreement of the $S_3$ action with the
+    Lagrange-resolvent action, satisfying the third claim of the
+    narrative. -/
+theorem resolvent_agreement (zeta : ℂ) (hzeta : zeta ^ 3 = 1) :
+    resolvent zeta ∘ cyclic_perm = zeta⁻¹ • resolvent zeta := by
+  ext i
+  fin_cases i
+  · change resolvent zeta 1 = zeta⁻¹ * resolvent zeta 0
+    dsimp [resolvent]
+    ring
+  · change resolvent zeta 2 = zeta⁻¹ * resolvent zeta 1
+    dsimp [resolvent]
+    ring
+  · change resolvent zeta 0 = zeta⁻¹ * resolvent zeta 2
+    dsimp [resolvent]
+    have h1 : zeta⁻¹ * (zeta⁻¹)^2 = 1 := by
+      calc zeta⁻¹ * (zeta⁻¹)^2 = (zeta⁻¹)^3 := by ring
+        _ = (zeta^3)⁻¹ := by ring
+        _ = 1⁻¹ := by rw [hzeta]
+        _ = 1 := inv_one
+    exact h1.symm
 
 end QOU.BraidsKnots

@@ -1,65 +1,28 @@
-Observation sorts colour: swapping two adjacent items into
-their correct order is a projection between the two eigenspaces
-of the R-matrix, and each such swap deposits a fixed quantum of
-energy in the colour fibre.  The proposition below makes this
-precise — the eigenspace decomposition is the mechanism, the
-projection is the sorting operation, and the eigenvalue gap is
-the energy per crossing.
+Observation sorts colour. Swapping two adjacent items into their correct order is a projection between the two eigenspaces of the R-matrix. Each swap deposits a fixed quantum of energy in the colour fibre.
 
 **Proposition.**
-*Let $\sigma_i$ be the Hecke generator
-([R-matrix braiding](#rem:r-matrix-braiding)) acting on
-$V \otimes V$, where $V$ is the fundamental representation.
-Then:*
+*Let $\sigma_i$ be the Hecke generator acting on $V \otimes V$, where $V$ is the fundamental representation. Then:*
 
-1. **(Eigenspace decomposition.)** *The R-matrix decomposes
-   $V \otimes V$ into two eigenspaces:*
+1. **(Eigenspace decomposition.)** *The R-matrix decomposes $V \otimes V$ into two eigenspaces:*
 
    $$
-     V \otimes V
-     = 
-     \mathrm{Sym}^2(V)  \oplus  \textstyle\bigwedge^2(V)
+     V \otimes V = \mathrm{Sym}^2(V) \oplus \textstyle\bigwedge^2(V)
    $$
 
-   *with eigenvalues $q$ (symmetric, ordered) and $-q^{-1}$
-   (antisymmetric, disordered) respectively.  These are the
-   two roots of the Hecke relation
-   $\sigma_i^2 = (q - q^{-1})\sigma_i + 1$.*
+   *with eigenvalues $q$ (symmetric, ordered) and $-q^{-1}$ (antisymmetric, disordered) respectively.*
 
-2. **(Sorting is projection.)** *A sorting operation —
-   swapping two adjacent items into the correct order —
-   is the projection from $\bigwedge^2(V)$ to
-   $\mathrm{Sym}^2(V)$ at the generator $\sigma_i$.  This
-   projection is the $\mathrm{Ad}$ component of the
-   observation: it acts on the colour fibre by rotating
-   the gauge degrees of freedom from the antisymmetric
-   (disordered) to the symmetric (ordered) eigenspace.*
+2. **(Sorting is projection.)** *A sorting operation is the projection from $\bigwedge^2(V)$ to $\mathrm{Sym}^2(V)$ at the generator $\sigma_i$. This projection acts on the colour fibre by rotating the gauge degrees of freedom from the disordered to the ordered eigenspace.*
 
-3. **(Energy per crossing.)** *The energy deposited in the
-   colour fibre by one sorting operation is the eigenvalue
-   gap:*
+3. **(Energy per crossing.)** *The energy deposited in the colour fibre by one sorting operation is the eigenvalue gap:*
 
    $$
-     \Delta E_{\mathrm{colour}}
-     =  q - (-q^{-1})
-     =  q + q^{-1}
+     \Delta E_{\mathrm{colour}} = q - (-q^{-1}) = q + q^{-1}
    $$
 
-   *At $q = q_0$: $\Delta E = 2.011$ action units per
-   crossing.*
+   *At $q = q_0$, $\Delta E = 2.011$ action units per crossing.*
 
-4. **(Total sorting energy.)** *Let $\pi \in S_n$ be a
-   permutation representing the disordered state of $n$
-   items.  The minimum number of adjacent transpositions
-   (braid crossings) needed to sort $\pi$ is the inversion
-   count $\mathrm{inv}(\pi)$.  The total energy deposited
-   in the colour fibre is:*
+4. **(Total sorting energy.)** *Let $\pi \in S_n$ be a permutation representing the disordered state of $n$ items. The minimum number of adjacent transpositions needed to sort $\pi$ is the inversion count $\mathrm{inv}(\pi)$. The total energy deposited is:*
 
    $$
-     E_{\mathrm{colour}}(\pi)
-     = 
-     \mathrm{inv}(\pi) \cdot (q + q^{-1})
+     E_{\mathrm{colour}}(\pi) = \mathrm{inv}(\pi) \cdot (q + q^{-1})
    $$
-
-   *The worst case (reverse permutation) requires
-   $\binom{n}{2}$ crossings; the identity requires zero.*

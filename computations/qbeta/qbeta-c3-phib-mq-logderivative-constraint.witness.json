@@ -1,0 +1,74 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-12T00:23:26.947282+00:00",
+  "commitSha": "10959dd775bf588aa448adc56f30936d4ee829d8",
+  "assertions": [
+    {
+      "name": "quotient_rule_identity_closes",
+      "computed": 1.4081481410803865e-37,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-08,
+      "source": "finite-difference closure of dS/dq = A'/u^3 - 3(u'/u)(S - Vol41); the identity itself is exact calculus, machine-checked in Lean (QOU.QBeta.LeverLogDerivative); this numeric check verifies the implementation at step h=1e-20/70 dps"
+    },
+    {
+      "name": "static_amplification_dominates",
+      "computed": 0.9999734524335919,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.01,
+      "source": "A'/u^3 carries >99% of dS/dq at both anchors: the hypersensitivity is STATIC 1/u^3 amplification of the smooth slope A' ~ +2.37 (= round-1 dr/dq, consistency)"
+    },
+    {
+      "name": "anchor_fd_matches_local_derivative",
+      "computed": 6.175662826030367e-07,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 0.0001,
+      "source": "S is smooth between the anchors; the two-anchor swing is the same lever derivative (no hidden discontinuity)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 25,
+  "computation": "qbeta-c3-phib-mq-logderivative-constraint",
+  "scriptFile": "qbeta_c3_phib_mq_logderivative_constraint.py",
+  "scriptHash": "8c9352dd00c5",
+  "scriptCommitSha": "10959dd775bf588aa448adc56f30936d4ee829d8",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
+  },
+  "description": "Lever derivative decomposition (exact): dS/dq = A'/u^3 - 3(u'/u)(S - Vol41), with A'/u^3 carrying ~99.997% (A' ~ +2.37 = the smooth un-levered slope; the log-derivative term is only ~1e2). The S hypersensitivity is a STATIC 1/u^3 amplification of a smooth CODATA-vs-ladder slope. Gate for any m(q0) assignment (one anchor): u^3 d/dq[Im V(m(q))] = A'(q) ~ +2.37. Structural measurement; no fit; no c_k wired.",
+  "contentBlock": "prop:phi-b-unitary-bar-odd",
+  "data": {
+    "proton_decomposition": {
+      "dS_dq": "3838408.26493312760701867",
+      "A_prime": "2.3715673221513358269",
+      "static_term_Aprime_over_u3": "3838306.364534813069643465",
+      "logderiv_term": "101.9003983145373752",
+      "identity_closure_rel": 1.4081480469515492e-37,
+      "static_term_fraction": 0.9999734524335919
+    },
+    "muon_decomposition": {
+      "dS_dq": "3838403.523990967536563055",
+      "A_prime": "2.3715673832142044674",
+      "static_term_Aprime_over_u3": "3838304.043516034304852176",
+      "logderiv_term": "99.480474933231710879",
+      "identity_closure_rel": 1.4081481410803865e-37,
+      "static_term_fraction": 0.9999740828512919
+    },
+    "m_q0_gate": "DERIVATIVE GATE (per-candidate, one-anchor): a candidate assignment m(q0) with S = Im V(m(q0)) must satisfy u^3 d/dq[Im V(m(q))] = A'(q) ~ +2.37 at the anchor (A' = d/dq[Q_codata/Q_N2 - 1], smooth, canonical). Equivalently Im V(m(q)) = A(q)/u(q)^3 with A smooth: the complex volume carries the inverse-cube ladder factor STATICALLY. NZ-leading: |u_hol(q)|^2 sin(2 phi(q)) proportional to u^-3 x smooth. Candidates failing this are excluded without the second anchor.",
+    "initial_guess_corrected": "The probe's original hypothesis (log-derivative term dominates) was REFUTED by its own measurement and corrected: the log-derivative term is ~1e2 of the 3.84e6 slope; A'/u^3 dominates. Recorded per the anti-self-deception design.",
+    "verdict": "DECOMPOSITION VERIFIED (exact identity + dominance): dS/dq = A'/u^3 - 3(u'/u)(S - Vol41), identity closes to machine precision, and the static term A'/u^3 carries >99.99% at both anchors with A' ~ +2.37 = the round-1 un-levered slope. The S hypersensitivity is a STATIC 1/u^3 amplification of a smooth CODATA-vs-ladder slope; the m(q0) assignment inherits a one-anchor derivative gate. Scope-(a); no fit; nothing wired."
+  }
+}

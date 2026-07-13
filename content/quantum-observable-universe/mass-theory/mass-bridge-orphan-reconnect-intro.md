@@ -1,9 +1,3 @@
-The blocks in this section were reconnected during the
- restructuring that separated the mass derivation
-chain from the q-hyperbolic geometry chapter.  Each block
-addresses an open structural conjecture at the interface
-between the geometric and mass-endomorphism layers: linking
-operations, pentagon identities, Pachner moves, and Kashaev
-density--multiplicity correspondences.
+This section reconnects blocks separated during the restructuring of the mass derivation and $q$-hyperbolic geometry chapters. It resolves structural conjectures at the interface of the geometric and mass-endomorphism layers.
 
-The arc proceeds through the categorical linking operation, the crossed-module Euler characteristic that pins the substrate-flow data, and the master pentagon dimension identity.  The closing blocks specialise to the geometric-invariant piecewise / Hopf-link non-magic distinction and the Kashaev-density-equals-SDP-multiplicity identification that connects to the mass-application chapter.
+The sequence covers the categorical linking operation, the crossed-module Euler characteristic governing substrate flow, and the master pentagon dimension identity. The final blocks specify the geometric-invariant piecewise distinctions and the Kashaev-density-to-multiplicity identification linking directly to the mass application chapter.

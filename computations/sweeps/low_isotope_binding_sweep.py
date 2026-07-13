@@ -80,7 +80,7 @@ from knot_volumes import (  # noqa: E402
 M_E_MEV = float(_M_E_MEV_MP)
 
 # Strategy-(B) α-cluster parameters
-B_4HE_MEV = 28.295674                     # AME2020
+B_4HE_MEV = 28.29566                      # AME2020
 c_alpha_alpha_MEV = M_E_MEV * VOL_7_2_1   # ≈ 2.4269 MeV — derived, not fit here
 
 # ── AME2020 binding energies (Z ≤ 10) ────────────────────────────

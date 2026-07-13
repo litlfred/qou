@@ -1,4 +1,3 @@
-**Lemma.**
 *For a hadron $\mathfrak{H} \hookrightarrow V^{\otimes N}$ with
 $N = 2(j_1 + \cdots + j_n)$ and braid word
 $\beta_{\mathfrak{H}} \in B_N$, the constituent product

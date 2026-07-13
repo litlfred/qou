@@ -1,4 +1,5 @@
 import QOU.BraidKnot.AJTrefoil
+import QOU.BraidKnot.AJTrefoilRootEval
 
 /-!
 # QOU.BraidKnot.AJTrefoilAnnihilation
@@ -32,11 +33,11 @@ coefficients vanish exactly at the junk slots (`a₀` at `x = 1`, `a₁` at
 * `x = 1` / `xq = 1` — reduces to the two evaluation cores
   `trefoil_eval_at_root_prev` / `trefoil_eval_at_root_next`
   (`J(N+1) = 1` when `(w⁴)^N = 1`, resp. `J(N) = 1` when `(w⁴)^{N+1} = 1`)
-  — root-of-unity periodicity of the Rosso–Jones sum, numerically
-  verified to 40 dps in the pre-verification script, carried as cited
-  `sorry` cores (strictly smaller than the previous general-`N` sorry;
-  the induction through the singular slot breaks, so they need a genuine
-  sum evaluation — queued).
+  — root-of-unity periodicity of the Rosso–Jones sum, **proved**
+  (sorry-free) via the genuine sum evaluation in
+  `QOU.BraidKnot.AJTrefoilRootEval` (reflection + shift reindexings and
+  a Gauss-sum block-cancellation collapse), and numerically
+  pre-verified to 40 dps in the pre-verification script.
 
 ## Base ring (§7c)
 
@@ -132,32 +133,96 @@ theorem coloredJonesTrefoil_eq_P_form {w : K} (hw : w ≠ 0) (n : ℕ) :
             * qInt (w ^ 2) (2 * j + 1)) := by
         ring
 
-/-- **Evaluation core B (cited): root-of-unity periodicity of the
+/-- The `[N+1]_{w²}` denominator is nonzero when `(w⁴)^N = 1` but
+    `w⁴ ≠ 1` — its numerator vanishing would force `(w⁴)^{N+1} = 1`,
+    hence `w⁴ = 1`. -/
+private theorem qInt_succ_ne_zero {w : K} (hw : w ≠ 0)
+    (hv : w ^ 2 - (w ^ 2)⁻¹ ≠ 0) {N : ℕ}
+    (hnext : ((w : K) ^ 4) ^ (N + 1) = 1 → (w : K) ^ 4 = 1) :
+    qInt ((w : K) ^ 2) (N + 1) ≠ 0 := by
+  intro h
+  unfold qInt at h
+  rcases div_eq_zero_iff.mp h with hnum | hden
+  · have hY : ((w : K) ^ 2) ^ (N + 1) ≠ 0 :=
+      pow_ne_zero _ (pow_ne_zero _ hw)
+    have h1 : ((w : K) ^ 2) ^ (N + 1) * ((w : K) ^ 2) ^ (N + 1) = 1 := by
+      have h2 := sub_eq_zero.mp hnum
+      nth_rewrite 2 [h2]
+      exact mul_inv_cancel₀ hY
+    have h3 : ((w : K) ^ 4) ^ (N + 1) = 1 := by
+      rw [show ((w : K) ^ 4) ^ (N + 1)
+          = ((w : K) ^ 2) ^ (N + 1) * ((w : K) ^ 2) ^ (N + 1) by
+        rw [← mul_pow]; congr 1; ring]
+      exact h1
+    have h4 := hnext h3
+    apply hv
+    have h5 : (w : K) ^ 2 * (w : K) ^ 2 = 1 := by
+      rw [show (w : K) ^ 2 * (w : K) ^ 2 = w ^ 4 by ring, h4]
+    rw [inv_eq_of_mul_eq_one_right h5]
+    exact sub_self _
+  · exact hv hden
+
+/-- **Evaluation core B (proved): root-of-unity periodicity of the
     Rosso–Jones sum, previous slot.**  When `(w⁴)^N = 1` (but `w⁴ ≠ 1`)
     the tower value at the NEXT color is exactly `1` — the surviving term
-    of the annihilation at the degenerate color `x = 1`.  Numerically
-    verified to 40 dps in
+    of the annihilation at the degenerate color `x = 1`.  Proved via the
+    root evaluation `trP_sum_at_root_self`
+    (`QOU.BraidKnot.AJTrefoilRootEval`: reflection + shift +
+    Gauss-sum collapse); numerically pre-verified to 40 dps in
     `computations/aj_trefoil_telescope_assembly_check.py` [B core]. -/
 theorem trefoil_eval_at_root_prev {w : K} (hw : w ≠ 0)
-    (hv : w ^ 2 - (w ^ 2)⁻¹ ≠ 0) {N : ℕ} (hN : 1 ≤ N)
+    (hv : w ^ 2 - (w ^ 2)⁻¹ ≠ 0) {N : ℕ} (_hN : 1 ≤ N)
     (hroot : (w ^ 4) ^ N = 1) :
     coloredJonesTrefoil w (N + 1) = 1 := by
-  -- Ref: [garoufalidis2004] https://doi.org/10.4310/JDG/1090425531
-  -- (root-of-unity periodicity of the Rosso–Jones/cyclotomic sum; the
-  --  chain of generic annihilation steps breaks at the singular slot
-  --  [N]_v = 0, so this needs a genuine sum evaluation — queued)
-  sorry
+  have hsum : trP w N
+      = (-1 : K) ^ N * w ^ (6 * (N * (N + 2))) * qInt (w ^ 2) (N + 1) :=
+    trP_sum_at_root_self hw hv hroot
+  have hq : qInt ((w : K) ^ 2) (N + 1) ≠ 0 := by
+    refine qInt_succ_ne_zero hw hv fun h3 => ?_
+    rw [pow_succ, hroot, one_mul] at h3
+    exact h3
+  rw [coloredJonesTrefoil_eq_P_form hw N, hsum, div_eq_iff hq, one_mul]
+  have hee : (-1 : K) ^ N * (-1 : K) ^ N = 1 := by
+    rw [← mul_pow]; norm_num
+  have hE : (w : K) ^ (6 * (N * (N + 2))) ≠ 0 := pow_ne_zero _ hw
+  calc (-1 : K) ^ N * ((w : K) ^ (6 * (N * (N + 2))))⁻¹
+        * ((-1 : K) ^ N * w ^ (6 * (N * (N + 2))) * qInt ((w : K) ^ 2) (N + 1))
+      = ((-1 : K) ^ N * (-1 : K) ^ N)
+          * (((w : K) ^ (6 * (N * (N + 2))))⁻¹ * w ^ (6 * (N * (N + 2))))
+          * qInt ((w : K) ^ 2) (N + 1) := by ring
+    _ = qInt ((w : K) ^ 2) (N + 1) := by
+        rw [hee, inv_mul_cancel₀ hE, one_mul, one_mul]
 
-/-- **Evaluation core C (cited): root-of-unity periodicity, next slot.**
+/-- **Evaluation core C (proved): root-of-unity periodicity, next slot.**
     When `(w⁴)^{N+1} = 1` (but `w⁴ ≠ 1`) the tower value at color `N` is
-    exactly `1`.  Numerically verified to 40 dps ([C core]). -/
+    exactly `1`.  Proved via the offset root evaluation
+    `trP_sum_at_root_offset` (`QOU.BraidKnot.AJTrefoilRootEval`);
+    numerically pre-verified to 40 dps ([C core]). -/
 theorem trefoil_eval_at_root_next {w : K} (hw : w ≠ 0)
     (hv : w ^ 2 - (w ^ 2)⁻¹ ≠ 0) {N : ℕ} (hN : 1 ≤ N)
     (hroot : (w ^ 4) ^ (N + 1) = 1) :
     coloredJonesTrefoil w N = 1 := by
-  -- Ref: [garoufalidis2004] https://doi.org/10.4310/JDG/1090425531
-  -- (same evaluation family as trefoil_eval_at_root_prev)
-  sorry
+  obtain ⟨n, rfl⟩ : ∃ n, N = n + 1 := ⟨N - 1, by omega⟩
+  have hroot' : ((w : K) ^ 4) ^ (n + 2) = 1 := hroot
+  have hsum : trP w n
+      = (-1 : K) ^ n * w ^ (6 * (n * (n + 2))) * qInt (w ^ 2) (n + 1) :=
+    trP_sum_at_root_offset hw hv hroot'
+  have hq : qInt ((w : K) ^ 2) (n + 1) ≠ 0 := by
+    refine qInt_succ_ne_zero hw hv fun h3 => ?_
+    have h4 := hroot'
+    rw [show n + 2 = n + 1 + 1 from rfl, pow_succ, h3, one_mul] at h4
+    exact h4
+  rw [coloredJonesTrefoil_eq_P_form hw n, hsum, div_eq_iff hq, one_mul]
+  have hee : (-1 : K) ^ n * (-1 : K) ^ n = 1 := by
+    rw [← mul_pow]; norm_num
+  have hE : (w : K) ^ (6 * (n * (n + 2))) ≠ 0 := pow_ne_zero _ hw
+  calc (-1 : K) ^ n * ((w : K) ^ (6 * (n * (n + 2))))⁻¹
+        * ((-1 : K) ^ n * w ^ (6 * (n * (n + 2))) * qInt ((w : K) ^ 2) (n + 1))
+      = ((-1 : K) ^ n * (-1 : K) ^ n)
+          * (((w : K) ^ (6 * (n * (n + 2))))⁻¹ * w ^ (6 * (n * (n + 2))))
+          * qInt ((w : K) ^ 2) (n + 1) := by ring
+    _ = qInt ((w : K) ^ 2) (n + 1) := by
+        rw [hee, inv_mul_cancel₀ hE, one_mul, one_mul]
 
 /-! ## The assembled annihilation -/
 
@@ -424,12 +489,11 @@ end Assembly
 
 /-! ## The instance -/
 
-/-- **Strong AJ for the trefoil — the annihilation now routes through the
-    assembled case-split proof.**  Supersedes the broad cited-sorry
-    instance formerly in `AJTrefoil.lean`: the only unproved inputs left
-    are the two root-of-unity evaluation cores
-    (`trefoil_eval_at_root_prev`/`_next`), each strictly smaller than the
-    previous general-`N` sorry. -/
+/-- **Strong AJ for the trefoil — fully proved.**  The annihilation
+    routes through the assembled case-split proof; the two root-of-unity
+    evaluation cores (`trefoil_eval_at_root_prev`/`_next`) are discharged
+    by `QOU.BraidKnot.AJTrefoilRootEval`, so no `sorry` remains anywhere
+    in the trefoil strong-AJ chain. -/
 instance [CharZero K] : StrongAJTrefoil K where
   op := trefoilOperator
   order_eq := rfl

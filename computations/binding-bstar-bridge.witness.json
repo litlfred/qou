@@ -1,0 +1,45 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-11T18:46:32.289935+00:00",
+  "commitSha": "faa944dd542b03b5538cf64ad1e5840edfaeaa24",
+  "assertions": [
+    {
+      "name": "connected_equals_centered_gram_norm",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "tr(σ²)−tr(σ)² (#3548 connected) == tr_M((σ−⟨σ⟩)²) (#3545 ghost Gram norm) bit-identical; the connected part IS the centered Gram-quadratic. b* unified."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 10,
+  "computation": "binding-bstar-bridge",
+  "scriptFile": "binding_bstar_bridge.py",
+  "scriptHash": "b73611c3e7ea",
+  "scriptCommitSha": "50f21210281b89e32ee3a60480aa054332f89626",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "EXPLORATORY: proves #3548's connected tr_M part (tr(w²)−tr(w)²) is bit-identical to #3545's centered/ghost Gram-quadratic norm tr_M((w−⟨w⟩)²), via tr_M(1)=1. The two binding lenses are one object; the connected part IS the Gram norm of the centered (traceless) fluctuation. So #3548's deuteron connected 0.193 = #3545's per-bond b*; one H₆ build serves both. Ties main a44296db (decay=binding-quadratic). Verified on the H_2 (2,k) torus bond. No fit.",
+  "data": {
+    "h2_bond": {
+      "tr_sigma": 0.4993203341836944,
+      "tr_sigma2": 1.1043880582591816,
+      "connected_3548": 0.8550672621298653,
+      "gram_3545": 0.8550672621298653,
+      "abs_diff": 0.0
+    }
+  }
+}

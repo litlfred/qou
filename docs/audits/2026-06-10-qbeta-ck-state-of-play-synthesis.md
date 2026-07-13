@@ -21,7 +21,7 @@ found during the 2026-06-10 review.
 | rung | tier | note |
 |---|---|---|
 | c_2 = −1 | **CANONICAL** (proved, Taylor-exact, anchor-stable; Kashiwara f̃₁², bar-even) | the only derived rung |
-| c_3 ≈ −2.07 (p) / −2.02 (μ) | empirical near-match; **refuted as any real-q formula** | 2.37 % anchor swing; `dc_3/dq ≈ 4.6×10⁶` rigidity kills all real-q forms |
+| c_3 ≈ −2.02 … −2.07 | **empirical — cal-anchored near-match** (q-dependent; swings 2.375% between muon/proton anchors) | the "exact −2 / 0-index-bug" claim was **falsified 2026-07-06** ([c_3 cross-anchor verdict](2026-07-06-c3-not-exact-cross-anchor-verdict.md)); only c_2 = −1 is Taylor-exact |
 | c_4 | empirical (CODATA fit / normalisation artifact) | |
 | c_5 | empirical outlier | |
 | c_6, c_7 | imposed in extraction (self-consistent only) | |
@@ -53,12 +53,17 @@ distinct objects; only the first two are proved:
 3. **The kernel R(q,ξ) (open, but tightly constrained).** Accumulated
    constraints: depth ≥ 2 (`c_1 = 0, c_2 = −1 ≠ 0`); **constant kernels
    refuted through depth 4** (commit `eca145ca`); **constant depth-2 kernel
-   refuted** (PR #1900 — it over-determines `c_4 = 1 − c_3² ≈ −3.28` vs
+   refuted** (PR #1900 — it over-determines `c_4 = 1 − c_3² ≈ −3.0` vs
    fitted −0.97, 3.4× miss) ⇒ depth ≥ 3 **or non-constant q-rational**
-   coefficients; leading coefficient `a_1 = −c_3 = √2·Φ₂` is **bar-ODD** —
-   confirmed by three independent routes (Reeb-sinh parity #1887/#1900,
-   Hoefsmit `α_eff = (z−1)h/2` #1907, Habiro bar-dual of α_EM #1911);
-   ζ₄ residue; `√u → u²` lift.
+   coefficients; leading coefficient `a_1 = −c_3`, where `c_3` is the
+   cal-anchored, q-dependent near-match (≈ −2.02 muon / −2.07 proton;
+   2.375% swing). The "`c_3 = −2` exact from a fixed standard-block (2,1)
+   trace `Δχ = −2.0`, previously masked by a 0-indexed generator bug
+   `(0,1,0)`" claim was **falsified 2026-07-06**: generators are correctly
+   0-indexed (`(0,1,0) ≡ σ₁σ₂σ₁`), the one real historical bug (`TR_M[5]`)
+   is already fixed, and c_3 **still swings** on the post-fix code — the
+   fixed theoretical ladder has `[u³] = 0` (no first-principles c_3). See
+   [c_3 cross-anchor verdict](2026-07-06-c3-not-exact-cross-anchor-verdict.md). 
 4. **The element F(q) / the phase Φ(u) (open).** The #1887 reframe is the
    cleanest current statement: `Q_β/Q_A = cos(Φ(u))` with `Φ₁ = √2`
    **anchor-exact** (forced by c_2 = −1, sorry-free Lean) and
@@ -170,7 +175,9 @@ Minor cross-doc nits that are NOT errors: the ledger's c_k table (2026-06-03)
 says c_6 "NOT derived" while the registry says "applied in extraction
 (self-consistent)" — same empirical tier, different wording; the deep-audit's
 "4/7 / 6/7" L2 counts are pre-re-pin stale and already superseded (live count
-**3/7**: m_p, m_e, m_K/m_π).
+was **3/7** at this doc's date; **2/7 since 2026-07-04** — m_p dropped when
+its fitted Habiro tower was removed, per
+[`2026-07-04-c4-mu-p-tension-pin-dependence.md`](2026-07-04-c4-mu-p-tension-pin-dependence.md)).
 
 ## 6. What we need to do — the live menu
 

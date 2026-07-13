@@ -1,89 +1,11 @@
-The empirical $c_k$ chain at $H_3$ (extracted from the
-$\varepsilon^{2k}$ coefficients of $\chi_\lambda(\mathcal{B}_n; q) - \chi_\lambda(\mathcal{B}_p; q)$
-at $q = 1 + \varepsilon$ per
-[`rem:chi-per-irrep-cyclotomic-closed-forms`](#rem:chi-per-irrep-cyclotomic-closed-forms))
-does **not** match a uniform Plancherel-weighted sum
-$\sum_\lambda w_\lambda \cdot c_k^{(\lambda)}$ with the canonical
-$w_\lambda = (\dim V_\lambda)^2 / n!$: the Plancherel-weighted
-sum has the **wrong sign** at both $k = 5$ and $k = 6$ (see the
-`per-wedderburn-block-ck` canonical evaluation witness's `c5_match_status` and
-`c6_match_status` fields).
-
-This proposition identifies the **correct weighting**: the
-**character values at the long element** $w_0 \in S_3$, i.e.
-$\chi_\lambda(w_0) = (1, 0, -1)$ for $\lambda \in \{(3), (2,1), (1,1,1)\}$.
-
-## Statement
-
-**Proposition.**
-*Let $\mathcal{B}_p, \mathcal{B}_n \in \mathbf{B}_3$ be the canonical typed-braid
-representatives of the proton and neutron, and define*
-
-$$
-  c_k^{(\lambda)} \;:=\; [\varepsilon^{2k}]\,
-  \bigl(\chi_\lambda(\mathcal{B}_n;\,q) - \chi_\lambda(\mathcal{B}_p;\,q)\bigr)\Big|_{q = 1 + \varepsilon}
-  \qquad (\lambda \vdash 3,\ k \geq 0).
-$$
-
-*Let $w_0 \in S_3$ denote the longest element (the unique element
-of length $3$ in the Coxeter realisation; equivalently the
-order-reversing involution $(1\,3)$ in cycle form). Then the
-character-weighted sum*
+*Let $\mathcal{B}_n$ and $\mathcal{B}_p$ be canonical nucleon braids. The empirical coefficients $c_k^{(\lambda)}$ do not match a uniform Plancherel-weighted sum. Instead, they require weighting by the character values at the longest element $w_0 \in S_3$:*
 
 $$
   S_k^{(w_0)} \;:=\; \sum_{\lambda \vdash 3}
     \chi_\lambda(w_0) \cdot c_k^{(\lambda)}
-  \;=\; c_k^{(3)} \;-\; c_k^{(1,1,1)},
+  \;=\; c_k^{(3)} \;-\; c_k^{(1,1,1)}.
 $$
 
-*has the same sign as the empirical $c_k$ measured by the
-Wenzl-bridge Markov trace at $H_3$
-([`prop:alpha-k-derivation-procedure`](#prop:alpha-k-derivation-procedure))
-for $k = 5$ and $k = 6$. The character values used are the
-standard $S_3$ irreducible-character evaluations at the long
-element:*
+*This long-element character weighting correctly reproduces the sign of the empirical $c_k$ at $k=5$ and $k=6$.*
 
-| $\lambda \vdash 3$ | irrep | $\dim V_\lambda$ | $\chi_\lambda(w_0)$ |
-|--------------------|-------|------------------|---------------------|
-| $(3)$              | trivial | $1$ | $+1$ |
-| $(2,1)$            | standard (Hoefsmit) | $2$ | $0$ |
-| $(1,1,1)$          | sign | $1$ | $-1$ |
-
-## canonical structural verification
-
-From [`per-wedderburn-block-ck.witness.json`](https://github.com/litlfred/qou/blob/main/computations/per-wedderburn-block-ck.witness.json)
-( merge, per-Wedderburn-block canonical evaluation at $q = 1 + \varepsilon$
-to order $\varepsilon^{12}$):
-
-| $k$ | $c_k^{(3)}$ | $c_k^{(2,1)}$ | $c_k^{(1,1,1)}$ | $S_k^{(w_0)}$ | empirical $c_k$ | sign agreement |
-|----:|------------:|--------------:|----------------:|--------------:|----------------:|:--------------:|
-| $5$ ($\varepsilon^{10}$) | $0.25$ | $16.25$ | $266.5$ | $-266.25$ | $-395.41$ | yes |
-| $6$ ($\varepsilon^{12}$) | $0.25$ | $22.5$ | $477.5$ | $-477.25$ | $-45485$ | yes |
-
-Both signs agree. The magnitude ratios are
-$|\text{empirical}/S_k^{(w_0)}| \approx 1.49$ at $k = 5$ and
-$\approx 95.3$ at $k = 6$; the $S_3$ character weights are **necessary
-but not sufficient** for full magnitude closure. The residual
-factor must come from cross-block coupling (e.g. via the
-$\sigma_1$ matrix elements that mix the 2-dimensional $V_{(2,1)}$
-into the per-block-diagonal sum).
-
-## The role of $w_0$ versus $-I$
-
-The canonical evaluation agent that surfaced this finding referred to
-the weighting as "character $\chi_\lambda(-I)$." In the symmetric
-group $S_n$ realised as a Coxeter group, "$-I$" has no canonical
-meaning (the group is not realised as matrices acting on a real
-vector space with a $-I$ element); the closest analog is the
-**longest element** $w_0 \in S_n$, which is the unique involution
-of maximal length and plays the role of "central reversal." For
-$S_3$ specifically, $w_0 = (1\,3)$ is the order-reversing
-transposition, and its character values agree with the
-informal "$-I$" reading because $w_0 \cdot w_0 = 1$ (involution)
-and the irreducible $S_3$-characters on involutions are
-$\chi_{(3)} = 1, \chi_{(2,1)} = 0, \chi_{(1,1,1)} = \mathrm{sgn}(w_0) = -1$.
-
-The substantive content of the proposition is therefore: **the
-$c_k$ Markov-trace decomposition is governed by the long-element
-character, not the identity character**. This is consistent with
-the Coxeter-theoretic role of $w_0$ as the maximal mixing element.
+The longest element $w_0$ plays the role of central reversal. The $c_k$ Markov-trace decomposition is thus governed by the maximal mixing element, not the identity.

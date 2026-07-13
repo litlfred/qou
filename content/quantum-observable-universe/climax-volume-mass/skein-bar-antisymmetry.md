@@ -1,4 +1,3 @@
-**Proposition (Bar-antisymmetry of the Skein relation).**
 The Hecke--Skein relation
 
 $$
@@ -6,8 +5,7 @@ $$
   \tag{S}
 $$
 
-in the Iwahori--Hecke algebra $H_n(q)$ is **antisymmetric** under
-the bar involution
+in the Iwahori--Hecke algebra $H_n(q)$ is **antisymmetric** under the bar involution
 
 $$
   \overline{\,\cdot\,} \colon
@@ -16,8 +14,7 @@ $$
   (L_-,\,L_+,\,L_0,\,q^{-1}).
 $$
 
-That is, applying $\overline{\,\cdot\,}$ to both sides of (S) yields
-$-1$ times (S):
+Applying $\overline{\,\cdot\,}$ to both sides of (S) yields $-1$ times (S):
 
 $$
   \overline{L_+ - L_-}  =  L_- - L_+

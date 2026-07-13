@@ -1,11 +1,4 @@
-Let $(\mathbf{C}, A, \tau)$ be a
-([quantum observable universe](#def:quantum-observable-universe)) with maximal torus
-$T$ ([maximal torus](#def:maximal-torus)) and higher differential forms
-$\Omega^k(A)$ ([higher forms](#def:higher-forms)). The $T$-action on
-$\Omega^k(A)$ induces the **weight decomposition**, a
-$\mathbb{Z}$-grading by weights. Denoting by
-$\pi_H, \pi_V$ the projections onto the weight-$0$ and non-zero-weight
-summands, every $\alpha \in \Omega^k(A)$ decomposes uniquely:
+Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe with maximal torus $T$. The $T$-action extends to the non-commutative de Rham forms $\Omega^k(A)$, inducing a $\mathbb{Z}$-grading by weights. Let $\pi_H$ and $\pi_V$ denote the projections onto the weight-zero and non-zero-weight summands, respectively. This gives the **weight decomposition**, where every form $\alpha$ splits uniquely:
 
 ```tex
 \begin{equation}\label{eq:weight-decomposition-cd}
@@ -18,7 +11,4 @@ summands, every $\alpha \in \Omega^k(A)$ decomposes uniquely:
 \end{equation}
 ```
 
-Here $\alpha_H = \pi_H(\alpha)$ is the **horizontal component**
-(weight-$0$ under $T$) and $\alpha_V = \pi_V(\alpha)$ is the
-**vertical component** (non-zero weight). A form is **purely
-horizontal** if and only if $\alpha_V = 0$.
+The horizontal component $\alpha_H = \pi_H(\alpha)$ is invariant under $T$. The vertical component $\alpha_V = \pi_V(\alpha)$ carries non-zero weight. We say a form is purely horizontal if and only if $\alpha_V = 0$.

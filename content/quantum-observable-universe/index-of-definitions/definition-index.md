@@ -262,7 +262,7 @@
 | [prop:u1-equivariant-reduction](#prop:u1-equivariant-reduction) | $\mathrm{U}(1)$-equivariant reduction of the exceptional divisor | Ch 2 | `qou:QOU.CommutativeQOU.u1EquivariantReduction` |
 | [prop:vol-through-tau](#prop:vol-through-tau) | $\mathrm{Vol}(K)$ factors strictly through the fibre functor $\tau$ | Ch 10 | `qou:QOU.BraidsKnots.VolThroughTau` |
 | [prop:phi-q-aj-machinery-identification](#prop:phi-q-aj-machinery-identification) | $\Phi_q$ / $\mathrm{Li}_2^q$ machinery is the AJ-conjecture machinery | Ch 17 | `qou:QOU.BraidKnot.PhiQAJMachineryIdentification` |
-| [prop:tau-M-asymptotic-rep-theory](#prop:tau-M-asymptotic-rep-theory) | $\tau_M^{V_\lambda}(\beta) = \mathrm{Tr}\,\rho_\lambda(\beta) \cdot \exp(-\frac{1}{2} \sum_k c_k^{(\lambda)}(b_\lambda) \hbar_q^{2k})$: representation-theoretic asymptotic expansion of the Markov-traced character | Ch 7 | `qou:QOU.BraidKnot.tau_M_asymptotic_rep_theory` |
+| [prop:tau-M-asymptotic-rep-theory](#prop:tau-M-asymptotic-rep-theory) | $\mathrm{tr}_M^{V_\lambda}(\beta) = \mathrm{Tr}\,\rho_\lambda(\beta) \cdot \exp(-\frac{1}{2} \sum_k c_k^{(\lambda)}(b_\lambda) \hbar_q^{2k})$: representation-theoretic asymptotic expansion of the Markov-traced character | Ch 7 | `qou:QOU.BraidKnot.tau_M_asymptotic_rep_theory` |
 | [prop:c5-involution-leibniz-decomposition](#prop:c5-involution-leibniz-decomposition) | $c_5$ decomposes as $-b^2 - 1/2$: pure-$\sigma$ Kashiwara contribution plus bar-invariant involution fingerprint from averaged-crossing structure. Interpretation of the unique averaging-resonant rung k = 5 identified in `thm:averaging-resonance-rule` (planned, not yet derived); involution supplies the $1/2$ magnitude, while the half-fill cyclic structure supplies the rung selection. | Ch 17 | `qou:QOU.BraidKnot.C5InvolutionLeibnizDecomposition` |
 | [prop:dq-squared](#prop:dq-squared) | $d_q^2$ does not vanish | Ch 2 | `qou:QOU.dq_squared` |
 | [prop:e-infinity-page-identifications](#prop:e-infinity-page-identifications) | $E_\infty$-page identifications with the six mass-formula terms | Ch 10 | `qou:QOU.BraidKnot.e_infinity_identifications` |
@@ -292,7 +292,7 @@
 | [prop:h2o-bond-angle-shift](#prop:h2o-bond-angle-shift) | Bent angle as a quadratic-well shift | Ch 14 | `qou:QOU.Molecular.bond_angle_shift` |
 | [prop:beta-stability](#prop:beta-stability) | Beta-stability line from the Skein binding Lagrangian | Ch 8 | `qou:QOU.Braiding.beta_stability` |
 | [prop:binding-scale-catalan](#prop:binding-scale-catalan) | Binding energy scale $\alpha = m_e \times 8G$ | Ch 10 | `qou:QOU.BindingScale.bindingScale_value` |
-| [prop:blowup-yekutieli](#prop:blowup-yekutieli) | Blowup mechanism as Yekutieli lifting obstruction in the brane tower | Ch 4 | `qou:QOU.FluidDynamics.BlowupYekutieli` |
+| [prop:blowup-yekutieli](#prop:blowup-yekutieli) | Blowup mechanism as lifting obstruction in the brane tower | Ch 4 | `qou:QOU.FluidDynamics.BlowupYekutieli` |
 | [prop:boltzmann-constant](#prop:boltzmann-constant) | Boltzmann constant is unity in QOU natural units | Ch 18 | `qou:QOU.Information.thermalEnergy` |
 | [prop:lambda-scale-substrate-form](#prop:lambda-scale-substrate-form) | Borromean baryon $\lambda_{\text{scale}}$ empirical form $5/2 - h^2 \cdot G$ (acknowledged-CAL-4) | Ch 10 | `qou:QOU.BraidKnot.lambdaA_qForm_eq_hForm` |
 | [prop:q-gaussian-obstruction-at-q0](#prop:q-gaussian-obstruction-at-q0) | Bożejko–Speicher $q$-Gaussian obstruction at the substrate $q_0 > 1$ | Ch 10 | `qou:QOU.MassTheory.qGaussianObstructionAtQ0` |
@@ -450,7 +450,7 @@
 | [prop:full-pole-structure-mass-trace](#prop:full-pole-structure-mass-trace) | Habiro completion of the mass trace | Ch 10 | `qou:QOU.BraidKnot.HabiroCompletion` |
 | [prop:hadron-half-life](#prop:hadron-half-life) | Hadron half-life from the $q$-deformed transition amplitude | Ch 12 | `qou:QOU.Archimedean.hadron_half_life` |
 | [prop:s4-s3-half-symmetric-projection](#prop:s4-s3-half-symmetric-projection) | Half-symmetric $H_4$ projection extracts one octahedral cell via $S_4 \downarrow S_3$ branching | Ch 10 | `qou:QOU.BraidsAndKnots.s4_s3_half_symmetric_projection` |
-| [prop:hecke-branching-trace-decomposition](#prop:hecke-branching-trace-decomposition) | Hecke branching trace decomposition: $\operatorname{tr}_{V_\lambda}(\rho_\lambda(\beta_1 I \beta_2)) = \sum_{\mu,\nu} \operatorname{tr}\,A^\lambda_{\mu,\nu}(I) \cdot (\rho_\mu(\beta_1) \otimes \rho_\nu(\beta_2))$ | Ch 7 | `qou:QOU.MassEndomorphism.HeckeBranchingTraceDecomposition.branch_trace` |
+| [prop:hecke-branching-trace-decomposition](#prop:hecke-branching-trace-decomposition) | Hecke branching trace decomposition: $\mathrm{tr}_{V_\lambda}(\rho_\lambda(\beta_1 I \beta_2)) = \sum_{\mu,\nu} \mathrm{tr}\,A^\lambda_{\mu,\nu}(I) \cdot (\rho_\mu(\beta_1) \otimes \rho_\nu(\beta_2))$ | Ch 7 | `qou:QOU.MassEndomorphism.HeckeBranchingTraceDecomposition.branch_trace` |
 | [prop:hecke-convergence-bound](#prop:hecke-convergence-bound) | Hecke convergence bound: $\mathrm{MAE}(H_k) \leq C \cdot r^{-(k-3)}$ | Ch 10 | `qou:QOU.BraidKnot.hecke_convergence_bound` |
 | [prop:crossed-module-euler-characteristic](#prop:crossed-module-euler-characteristic) | Hecke crossed module h² trace equals $\dim(V) \cdot \chi(\Sigma_4)$ | Ch 10 | `qou:QOU.BraidKnot.CrossedModuleEulerCharacteristic` |
 | [prop:hecke-markov-transition](#prop:hecke-markov-transition) | Hecke generator as stochastic transition operator | Ch 10 | `qou:QOU.Braiding.SpectralIdempotentData` |
@@ -602,7 +602,7 @@
 | [prop:figure-eight-reeb-rotation](#prop:figure-eight-reeb-rotation) | The figure-eight knot operator acts unitarily on $V_{(2,1)}$ | Ch 5 | `qou:QOU.BraidsAndKnots.figure_eight_unitary_on_standard` |
 | [prop:tetrahedral-hbond-directions](#prop:tetrahedral-hbond-directions) | The four H-bond directions are tetrahedral ($\cos\theta_0 = -1/3$) | Ch 14 | `qou:QOU.Molecular.tetrahedral_cos` |
 | [prop:toffoli-transfer-matrix](#prop:toffoli-transfer-matrix) | The massive Toffoli transfer matrix $M(q)$ and the q-AND polynomial $P_{7,6}(q)$ | Ch 18 | `qou:QOU.Information.toffoli_transfer_matrix` |
-| [prop:ns-obstruction-tower](#prop:ns-obstruction-tower) | The NS obstruction class in the Yekutieli tower | Ch 16 | `qou:QOU.FluidDynamics.ns_obstruction_tower` |
+| [prop:ns-obstruction-tower](#prop:ns-obstruction-tower) | The NS obstruction class in the brane tower | Ch 16 | `qou:QOU.FluidDynamics.ns_obstruction_tower` |
 | [prop:bar-self-dual-confinement-band](#prop:bar-self-dual-confinement-band) | The open interval $(1/\varphi^2,\,\varphi^2)$ is the maximal bar-self-dual confinement band | Ch 12 | `qou:QOU.Archimedean.BarSelfDualConfBand.bar_self_dual_confinement_band` |
 | [prop:trace-ratio-observable](#prop:trace-ratio-observable) | The physical observable: ratio of Markov-traced generator volumes | Ch 13 | `qou:QOU.Archimedean.trace_ratio_observable` |
 | [prop:pion-half-figure-eight](#prop:pion-half-figure-eight) | The pion braid and $\sigma_1\sigma_2^{-1}$ have identical eigenvalue phases on $V_{(2,1)}$ | Ch 5 | `qou:QOU.BraidsAndKnots.pion_eq_half_figure_eight_phase` |
@@ -711,7 +711,7 @@
 | [lem:brings-riemann-hurwitz](#lem:brings-riemann-hurwitz) | Riemann--Hurwitz count for the canonical map $\Sigma_4 \to \mathbb{P}(V)$ | Ch 6 | `qou:QOU.ArchimedeanUniverse.brings_riemann_hurwitz` |
 | [lem:surreal-squeeze](#lem:surreal-squeeze) | Surreal squeeze: standard-scale cost dominates infinitesimal dissipation | Ch 22 | `qou:QOU.AlgebraicSubstrate.surreal_squeeze` |
 | [lem:topological-mass-cat-transient](#lem:topological-mass-cat-transient) | Transient terms localise to blow-up centres (categorical) | Ch 7 | `qou:QOU.TopologicalMass.cat_transient_localises_blowup` |
-| [lem:yekutieli-leading-coefficient](#lem:yekutieli-leading-coefficient) | Yekutieli obstruction equals the leading Chebyshev coefficient | Ch 6 | `qou:QOU.Archimedean.yekutieli_leading_coefficient` |
+| [lem:yekutieli-leading-coefficient](#lem:yekutieli-leading-coefficient) | Obstruction equals the leading Chebyshev coefficient | Ch 6 | `qou:QOU.Archimedean.yekutieli_leading_coefficient` |
 
 ## Corollarys
 
@@ -753,7 +753,7 @@
 | [conj:bigbang-heatdeath](#conj:bigbang-heatdeath) | Big Bang and heat-death functors as evaluations at named surreal endpoints | Ch 22 | `qou:QOU.AppendixSurreals.BigbangHeatdeath` |
 | [conj:jones-birthday](#conj:jones-birthday) | Birthday refinement of the Jones polynomial | Ch 22 | `qou:QOU.AppendixSurreals.JonesBirthday` |
 | [conj:bring-hyperbolic-knot-bloch-decomposition](#conj:bring-hyperbolic-knot-bloch-decomposition) | Bloch-group decomposition of $2/(3\pi)$ from $S_5$-equivariantly embeddable hyperbolic knots in Bring's surface | Ch 12 | `qou:QOU.Archimedean.bring_hyperbolic_decomposition` |
-| [conj:borromean-baryon-mass-formula](#conj:borromean-baryon-mass-formula) | Borromean baryon mass formula with common scale $\lambda_{\mathrm{scale}}$ | Ch 10 | `qou:QOU.Borromean.MassFormula` |
+| [conj:borromean-baryon-mass-formula](#conj:borromean-baryon-mass-formula) | Borromean baryon mass formula with common Borromean term $\mathfrak{m}_{\mathcal{B}_3}(q_0)$ | Ch 10 | `qou:QOU.Borromean.MassFormula` |
 | [conj:borromean-bloch-group-element](#conj:borromean-bloch-group-element) | Borromean rings represent a non-trivial element of $K_3(\mathbb{C})$ / Bloch group with regulator $r_2 = 8G$ | Ch 10 | `qou:QOU.BraidsAndKnots.BorromeanBlochGroupElement` |
 | [conj:brane-tower-z-habiro](#conj:brane-tower-z-habiro) | Brane tower lives in the $z$-Habiro ring | Ch 10 | `qou:QOU.BraidKnot.BraneTowerZHabiro` |
 | [conj:n-v-tower-depth-ninety](#conj:n-v-tower-depth-ninety) | Brane-tower depth from m_e to v equals 90 | Ch 13 | `qou:QOU.Observations.tower_depth_m_e_to_v_is_ninety` |
@@ -811,7 +811,7 @@
 | [conj:levi-degeneracy](#conj:levi-degeneracy) | Levi degeneracy conjecture: contact non-degeneracy at vortex collision determines NS regularity | Ch 16 | `qou:QOU.FluidDynamics.LeviDegeneracy` |
 | [conj:lifted-crossing-locality](#conj:lifted-crossing-locality) | Locality of lifted-crossing contributions in the mass expansion | Ch 10 | `qou:QOU.ParticleInteractions.LiftedCrossingLocality` |
 | [conj:lusztig-canonical-basis-q-eq-1](#conj:lusztig-canonical-basis-q-eq-1) | Lusztig canonical basis at $q = 1$ — decategorification of Kashiwara crystal via Kazhdan–Lusztig polynomials | Ch 17 | `qou:QOU.BraidsAndKnots.LusztigCanonicalBasisQEq1` |
-| [conj:magic-numbers-bring](#conj:magic-numbers-bring) | Magic numbers $\mathfrak{M} = \{2, 8, 20, 28, 50, 82, 126\}$ as ranks of $S_5$-stable Bring period sub-lattices | Ch 2 | `qou:QOU.AlgebraicSubstrate.MagicNumbersBring` |
+| [conj:magic-numbers-bring](#conj:magic-numbers-bring) | Magic numbers $\mathfrak{M} = \{2, 8, 20, 28, 50, 82, 126\}$ as ranks of $S_5$-stable Bring period sub-lattices | Ch 14 | `qou:QOU.AlgebraicSubstrate.MagicNumbersBring` |
 | [conj:mass-volume-factorization](#conj:mass-volume-factorization) | Mass-volume factorization of the categorical mass endomorphism | Ch 10 | `qou:QOU.ParticleInteractions.MassVolumeFactorization` |
 | [conj:modular-s-transform-q-q-tilde](#conj:modular-s-transform-q-q-tilde) | Modular $S$-transform $q \leftrightarrow \tilde q = \exp(2\pi i / \tau)$ for Hecke parameter analytic continuation | Ch 20 | `qou:QOU.BraidsAndKnots.ModularSTransformQQTilde` |
 | [conj:on-p-modular-hecke](#conj:on-p-modular-hecke) | Modular Hecke at $q = \zeta_p$ corresponds to nimber surreals $\mathbf{On}_p$ | Ch 23 | `qou:QOU.AppendixSurreals.OnPModularHecke` |
@@ -942,4 +942,3 @@
 | [ex:topological-mass-trefoil](#ex:topological-mass-trefoil) | Topological mass of the trefoil knot (electron) | Ch 10 | — |
 | [ex:trefoil-operator-algebra](#ex:trefoil-operator-algebra) | Trefoil braid relation and operator algebra | Ch 5 | — |
 | [ex:tritium-decay-knot-equation](#ex:tritium-decay-knot-equation) | Tritium decay as a Skein crossing change: ${}^3_1\mathrm{H} \to {}^3_2\mathrm{He} + e^- + \nu_e^{\sigma}$ | Ch 13 | — |
-

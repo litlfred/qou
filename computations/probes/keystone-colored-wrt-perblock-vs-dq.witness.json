@@ -1,0 +1,422 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-12T10:50:17.691529+00:00",
+  "commitSha": "c0b2d2defe6a6053fe2741f4bb24f21322b0ffaa",
+  "assertions": [
+    {
+      "name": "dq_conjugation_symmetric",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "d_q(lambda)=d_q(lambda') EXACTLY at every q: hook-length multiset is conjugation-invariant and [n]_q! is symmetric. Verified n=3,4,5 to 40 dps."
+    },
+    {
+      "name": "ribbon_twist_breaks_conjugation_symmetry",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "theta_{lambda'}=theta_lambda^{-1} (content sum c(lambda')=-c(lambda)), so the framed colored weight W_lambda=d_q*theta^f has W_lambda/W_{lambda'}=theta^{2f}!=1 for c!=0 -- it does NOT share d_q's conjugation symmetry. Verified on every non-self-conjugate pair."
+    },
+    {
+      "name": "proportional_to_dq_only_at_zero_framing",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "The colored weight is ∝ d_q ONLY at framing f=0 (the content-free modular-category reduction, valid for any manifold). Sigma(2,3,5) forces f!=0 (orbifold e=-1/30); every nonzero framing gives a content-dependent ratio theta_lambda^f that is NOT constant in lambda. Hence the geometric colored-WRT weight does NOT reproduce the d_q family -- a documented, parameter-free NEGATIVE that prunes the colored-WRT line."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 10,
+  "computation": "keystone-colored-wrt-perblock-vs-dq",
+  "scriptFile": "keystone_colored_wrt_perblock_vs_dq.py",
+  "scriptHash": "7dca4a060ffa",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Keystone vector 2 (colored WRT / Lawrence-Rozansky): does the FULL-Hecke lambda-colored WRT(S^3/2I)=Sigma(2,3,5) per-block weight W^{WRT}_lambda reproduce the Hecke q-hook-length dimension d_q(lambda) for ALL blocks lambda|-n, n=3,4,5, incl. >=3-row (electron (3,1,1), muon (3,2)), with ZERO free parameters? The parameter-free colored weight factorizes as W^{WRT}_lambda = d_q(lambda)*theta_lambda^f (RT/Lawrence-Rozansky/Beasley-Witten): S_{0lambda} = d_q(lambda) on the full-Hecke side, theta_lambda = q^{2c(lambda)} the ribbon twist (c=content sum), f the NONZERO fibre framing forced by Sigma(2,3,5) (orbifold e=-1/30; = -1 surgery on the left trefoil). VERDICT: PARTIAL/FAIL. Proportionality holds ONLY at f=0 (content-free tautology, valid for any manifold, no Sigma(2,3,5) data); for the actual nonzero framing the twist dressing is content-dependent and conjugation-ANTISYMMETRIC (theta_{lambda'}=theta_lambda^{-1}) while d_q is conjugation-SYMMETRIC (d_q(lambda)=d_q(lambda') exactly), so W_lambda/W_{lambda'}=theta_lambda^{2f}!=1 breaks proportionality normalization-independently, for EVERY nonzero framing. (b)-excludes the narrow 'fibre-colored WRT weight = d_q as-is' hypothesis (cites the two proved twist/hook invariants + nonzero framing); the broad geometric W_lambda programme stays (a)-open. Prunes the colored-WRT line. No fit; nothing wired.",
+  "data": {
+    "q0": 1.1099785955541805,
+    "seifert": [
+      2,
+      3,
+      5
+    ],
+    "P_coxeter_E8": 30,
+    "orbifold_euler": -0.03333333333333333,
+    "framing_f_geom": -1,
+    "per_n": {
+      "3": {
+        "rows_table": [
+          {
+            "lambda": [
+              3
+            ],
+            "rows": 1,
+            "d_q": 1.0,
+            "content_sum": 3,
+            "theta_lambda": 1.8701981561773968,
+            "W_wrt_f": 0.5347026980520376,
+            "ratio_W_over_dq": 0.5347026980520376,
+            "conj": [
+              1,
+              1,
+              1
+            ]
+          },
+          {
+            "lambda": [
+              2,
+              1
+            ],
+            "rows": 2,
+            "d_q": 2.010896869118482,
+            "content_sum": 0,
+            "theta_lambda": 1.0,
+            "W_wrt_f": 2.010896869118482,
+            "ratio_W_over_dq": 1.0,
+            "conj": [
+              2,
+              1
+            ]
+          },
+          {
+            "lambda": [
+              1,
+              1,
+              1
+            ],
+            "rows": 3,
+            "d_q": 1.0,
+            "content_sum": -3,
+            "theta_lambda": 0.5347026980520376,
+            "W_wrt_f": 1.8701981561773968,
+            "ratio_W_over_dq": 1.8701981561773968,
+            "conj": [
+              3
+            ]
+          }
+        ],
+        "ratio_spread_multiplicative": 3.4976411433693344,
+        "proportional_to_dq": false,
+        "dq_conjugation_symmetric": true,
+        "conj_pairs_total": 2,
+        "conj_pairs_symmetry_broken_by_twist": 1,
+        "n_blocks": 3,
+        "n_ge3row_blocks": 1,
+        "ge3row_blocks": [
+          [
+            1,
+            1,
+            1
+          ]
+        ]
+      },
+      "4": {
+        "rows_table": [
+          {
+            "lambda": [
+              4
+            ],
+            "rows": 1,
+            "d_q": 1.0,
+            "content_sum": 6,
+            "theta_lambda": 3.4976411433693344,
+            "W_wrt_f": 0.2859069753041285,
+            "ratio_W_over_dq": 0.2859069753041285,
+            "conj": [
+              1,
+              1,
+              1,
+              1
+            ]
+          },
+          {
+            "lambda": [
+              3,
+              1
+            ],
+            "rows": 2,
+            "d_q": 3.043706218230512,
+            "content_sum": 2,
+            "theta_lambda": 1.517953319852316,
+            "W_wrt_f": 2.005138220275864,
+            "ratio_W_over_dq": 0.6587817865817451,
+            "conj": [
+              2,
+              1,
+              1
+            ]
+          },
+          {
+            "lambda": [
+              2,
+              2
+            ],
+            "rows": 2,
+            "d_q": 2.043706218230512,
+            "content_sum": 0,
+            "theta_lambda": 1.0,
+            "W_wrt_f": 2.043706218230512,
+            "ratio_W_over_dq": 1.0,
+            "conj": [
+              2,
+              2
+            ]
+          },
+          {
+            "lambda": [
+              2,
+              1,
+              1
+            ],
+            "rows": 3,
+            "d_q": 3.043706218230512,
+            "content_sum": -2,
+            "theta_lambda": 0.6587817865817451,
+            "W_wrt_f": 4.620203958618144,
+            "ratio_W_over_dq": 1.517953319852316,
+            "conj": [
+              3,
+              1
+            ]
+          },
+          {
+            "lambda": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "rows": 4,
+            "d_q": 1.0,
+            "content_sum": -6,
+            "theta_lambda": 0.2859069753041285,
+            "W_wrt_f": 3.4976411433693344,
+            "ratio_W_over_dq": 3.4976411433693344,
+            "conj": [
+              4
+            ]
+          }
+        ],
+        "ratio_spread_multiplicative": 12.233493567789944,
+        "proportional_to_dq": false,
+        "dq_conjugation_symmetric": true,
+        "conj_pairs_total": 3,
+        "conj_pairs_symmetry_broken_by_twist": 2,
+        "n_blocks": 5,
+        "n_ge3row_blocks": 2,
+        "ge3row_blocks": [
+          [
+            2,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      },
+      "5": {
+        "rows_table": [
+          {
+            "lambda": [
+              5
+            ],
+            "rows": 1,
+            "d_q": 1.0,
+            "content_sum": 10,
+            "theta_lambda": 8.059202748724948,
+            "W_wrt_f": 0.12408175239892194,
+            "ratio_W_over_dq": 0.12408175239892194,
+            "conj": [
+              1,
+              1,
+              1,
+              1,
+              1
+            ]
+          },
+          {
+            "lambda": [
+              4,
+              1
+            ],
+            "rows": 2,
+            "d_q": 4.109682435637709,
+            "content_sum": 5,
+            "theta_lambda": 2.8388734999511596,
+            "W_wrt_f": 1.4476454959012484,
+            "ratio_W_over_dq": 0.35225239871280073,
+            "conj": [
+              2,
+              1,
+              1,
+              1
+            ]
+          },
+          {
+            "lambda": [
+              3,
+              2
+            ],
+            "rows": 2,
+            "d_q": 5.220441324664574,
+            "content_sum": 2,
+            "theta_lambda": 1.517953319852316,
+            "W_wrt_f": 3.4391316626076995,
+            "ratio_W_over_dq": 0.6587817865817451,
+            "conj": [
+              2,
+              2,
+              1
+            ]
+          },
+          {
+            "lambda": [
+              3,
+              1,
+              1
+            ],
+            "rows": 3,
+            "d_q": 6.220441324664574,
+            "content_sum": 0,
+            "theta_lambda": 1.0,
+            "W_wrt_f": 6.220441324664574,
+            "ratio_W_over_dq": 1.0,
+            "conj": [
+              3,
+              1,
+              1
+            ]
+          },
+          {
+            "lambda": [
+              2,
+              2,
+              1
+            ],
+            "rows": 3,
+            "d_q": 5.220441324664574,
+            "content_sum": -2,
+            "theta_lambda": 0.6587817865817451,
+            "W_wrt_f": 7.924386239868812,
+            "ratio_W_over_dq": 1.517953319852316,
+            "conj": [
+              3,
+              2
+            ]
+          },
+          {
+            "lambda": [
+              2,
+              1,
+              1,
+              1
+            ],
+            "rows": 4,
+            "d_q": 4.109682435637709,
+            "content_sum": -5,
+            "theta_lambda": 0.35225239871280073,
+            "W_wrt_f": 11.66686855974663,
+            "ratio_W_over_dq": 2.8388734999511596,
+            "conj": [
+              4,
+              1
+            ]
+          },
+          {
+            "lambda": [
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "rows": 5,
+            "d_q": 1.0,
+            "content_sum": -10,
+            "theta_lambda": 0.12408175239892194,
+            "W_wrt_f": 8.059202748724948,
+            "ratio_W_over_dq": 8.059202748724948,
+            "conj": [
+              5
+            ]
+          }
+        ],
+        "ratio_spread_multiplicative": 64.95074894505575,
+        "proportional_to_dq": false,
+        "dq_conjugation_symmetric": true,
+        "conj_pairs_total": 4,
+        "conj_pairs_symmetry_broken_by_twist": 3,
+        "n_blocks": 7,
+        "n_ge3row_blocks": 4,
+        "ge3row_blocks": [
+          [
+            3,
+            1,
+            1
+          ],
+          [
+            2,
+            2,
+            1
+          ],
+          [
+            2,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      }
+    },
+    "framing_dichotomy_n5": {
+      "0": {
+        "ratio_spread": 1.0,
+        "proportional_to_dq": true
+      },
+      "1": {
+        "ratio_spread": 64.95074894505575,
+        "proportional_to_dq": false
+      },
+      "-1": {
+        "ratio_spread": 64.95074894505575,
+        "proportional_to_dq": false
+      },
+      "2": {
+        "ratio_spread": 4218.59978852366,
+        "proportional_to_dq": false
+      },
+      "-2": {
+        "ratio_spread": 4218.59978852366,
+        "proportional_to_dq": false
+      }
+    },
+    "verdict": "PARTIAL/FAIL (scope-(b) narrow, (a)-open programme): the full-Hecke colored-WRT weight of Sigma(2,3,5) reproduces d_q(lambda) ONLY in the content-free f=0 reduction (a modular-category tautology, no Sigma(2,3,5) geometry). The geometry-forced nonzero framing dresses d_q by the content-dependent, conjugation-antisymmetric ribbon twist theta_lambda^f, breaking the conjugation symmetry d_q carries -- normalization-independently and for every nonzero framing. No free parameter rescues it. Prunes the colored-WRT line; the geometric carrier of W_lambda must cancel the fibre framing, which a fibre Wilson line does not."
+  }
+}

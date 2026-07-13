@@ -1,34 +1,21 @@
 *Proof.*
-
-**Step 1 (Schur–Weyl decomposition of the colour tangent module).**
-*By Schur–Weyl duality at level $n = 3$ in three dimensions
-([Schur–Weyl mass decomposition](#prop:schur-weyl-mass-decomposition)),
-the $\mathrm{S}_3$-module*
+By Schur–Weyl duality at level $n = 3$ in three dimensions ([Schur–Weyl mass decomposition](#prop:schur-weyl-mass-decomposition)), the $\mathrm{S}_3$-module
 
 $$
   V \;:=\; \bigotimes_{k=1}^{3}\, T_{c_k}\mathbf{C}
   \;\cong\; R\,\langle dc_1/dz,\ dc_2/dz,\ dc_3/dz\rangle
 $$
 
-*decomposes into isotypic components labelled by partitions of $3$:*
+decomposes into isotypic components labelled by partitions of $3$:
 
 $$
   V \;\cong\; V_{(3)} \;\oplus\; V_{(1,1,1)} \;\oplus\; V_{(2,1)}
-  \;=\; \mathrm{Sym}^3 \;\oplus\; \mathrm{Alt}^3 \;\oplus\; \mathrm{Std}^{\oplus 2},
+  \;=\; \mathrm{Sym}^3 \;\oplus\; \mathrm{Alt}^3 \;\oplus\; \mathrm{Std}^{\oplus 2}.
 $$
 
-*with $\dim_R V_{(3)} = 1$, $\dim_R V_{(1,1,1)} = 1$,
-$\dim_R V_{(2,1)} = 2$, summing to $4$ — but here $V$ is the
-rank-$3$ permutation representation of $\mathrm{S}_3$, so $V \cong
-V_{(3)} \oplus V_{(2,1)}$ and the rank-$1$ alternating piece sits
-inside the *exterior cube* $\Lambda^3 V$.  The relevant isotype is
-therefore not $V$ itself but its top exterior power.*
+The dimensions are $\dim_R V_{(3)} = 1$, $\dim_R V_{(1,1,1)} = 1$, $\dim_R V_{(2,1)} = 2$, summing to $4$. However, since $V$ is the rank-$3$ permutation representation of $\mathrm{S}_3$, we have $V \cong V_{(3)} \oplus V_{(2,1)}$. The rank-$1$ alternating piece sits inside the exterior cube $\Lambda^3 V$. The relevant isotype is therefore the top exterior power.
 
-**Step 2 (Alt-projector via the Frobenius character formula).**
-*By the Frobenius character formula
-([Frobenius universal](#thm:frobenius-codim-universal)) applied
-to $\mathrm{S}_3$, the projector onto the sign isotype of any
-$\mathrm{S}_3$-module $W$ is*
+By the Frobenius character formula ([Frobenius universal](#thm:frobenius-codim-universal)) applied to $\mathrm{S}_3$, the projector onto the sign isotype of any $\mathrm{S}_3$-module $W$ is
 
 $$
   \pi_{\mathrm{Alt}}
@@ -41,9 +28,7 @@ $$
   \bigr).
 $$
 
-*Applied to the rank-$3$ tensor
-$dc_1/dz \otimes dc_2/dz \otimes dc_3/dz \in V^{\otimes 3}$,
-this projector returns the antisymmetrisation*
+Applied to $dc_1/dz \otimes dc_2/dz \otimes dc_3/dz \in V^{\otimes 3}$, this projector yields the antisymmetrisation
 
 $$
   \pi_{\mathrm{Alt}}\bigl(dc_1/dz \otimes dc_2/dz \otimes dc_3/dz\bigr)
@@ -53,18 +38,13 @@ $$
     \bigotimes_{k=1}^{3} dc_{\sigma(k)}/dz.
 $$
 
-**Step 3 (Identification with the wedge product).**
-*Under the canonical isomorphism
-$\Lambda^3 V \cong R$ (top exterior power of a rank-$3$ free module
-over $R$ has rank $1$), the antisymmetrised tensor maps to the
-wedge product*
+Under the canonical isomorphism $\Lambda^3 V \cong R$, the antisymmetrised tensor maps to the wedge product
 
 $$
-  (dc_1/dz) \wedge (dc_2/dz) \wedge (dc_3/dz),
+  (dc_1/dz) \wedge (dc_2/dz) \wedge (dc_3/dz).
 $$
 
-*which, evaluated on the diagonal vector $\bigl((dc_k/dz)\,e_k\bigr)_{k=1}^{3}$
-(where $e_1, e_2, e_3$ is the chosen $R$-basis of $V$), gives*
+Evaluated on the diagonal vector $\bigl((dc_k/dz)\,e_k\bigr)_{k=1}^{3}$ with $R$-basis $\{e_1, e_2, e_3\}$, this yields
 
 $$
   \bigl((dc_1/dz)\,e_1\bigr) \wedge \bigl((dc_2/dz)\,e_2\bigr)
@@ -76,17 +56,9 @@ $$
   \prod_{k=1}^{3} \frac{dc_k}{dz}
 $$
 
-*under the basis identification $e_1 \wedge e_2 \wedge e_3 \mapsto 1$.
-Note that this is a top exterior power on the rank-$3$ free module $V$
-— not a Jacobian determinant of the (scalar-input) root map
-$z \mapsto (c_1(z), c_2(z), c_3(z))$, whose differential is a
-$3 \times 1$ matrix.  The product structure arises purely from
-multilinearity of $\wedge$, not from any change-of-variables identity.*
+under the identification $e_1 \wedge e_2 \wedge e_3 \mapsto 1$. This product structure arises solely from multilinearity of $\wedge$.
 
-**Step 4 (Discriminant identity for the Vandermonde square).**
-*The squared Vandermonde of the colour-tube roots equals the cubic's
-discriminant
-([color-tube cubic](#rem:color-tube-cubic)):*
+The squared Vandermonde of the colour-tube roots equals the cubic's discriminant ([color-tube cubic](#rem:color-tube-cubic)):
 
 $$
   V_3(c_1, c_2, c_3)^2
@@ -97,13 +69,7 @@ $$
   \;\in\; R[z].
 $$
 
-*Combining this with implicit differentiation
-$dc_k/dz = -(\partial F/\partial z)|_{(z, c_k)} \big/
-(\partial F/\partial c)|_{(z, c_k)}$ along each colour sheet, and
-the resultant identity
-$J(z) := \prod_{k=1}^{3} (\partial F/\partial c)|_{(z, c_k)}
-= \pm\, \Delta(z)$ for the monic cubic $F(z, \cdot)$, the Alt-isotype
-representative satisfies*
+Using implicit differentiation $dc_k/dz = -(\partial F/\partial z)|_{(z, c_k)} \big/ (\partial F/\partial c)|_{(z, c_k)}$ and the resultant identity $J(z) := \prod_{k=1}^{3} (\partial F/\partial c)|_{(z, c_k)} = \pm\, \Delta(z)$, the Alt-isotype representative satisfies
 
 $$
   \prod_{k=1}^{3} \frac{dc_k}{dz}
@@ -111,10 +77,10 @@ $$
   (-1)^{3}\,
   \frac{V_3(c_1, c_2, c_3)}{J(z)}
   \;=\;
-  \pm\,\frac{V_3(c_1, c_2, c_3)}{\Delta(z)},
+  \pm\,\frac{V_3(c_1, c_2, c_3)}{\Delta(z)}.
 $$
 
-*so that*
+Thus we obtain
 
 $$
   \Bigl(\prod_{k=1}^{3} \frac{dc_k}{dz}\Bigr)^{2}
@@ -125,37 +91,8 @@ $$
   \;\in\; R(z),
 $$
 
-*a manifestly $R$-rational quantity. $\square$*
+which is manifestly $R$-rational. $\square$
 
-**Product versus sum.**
-*The sum $\sum_k dc_k/dz$ is the projection onto $V_{(3)}$ (the
-trivial isotype) and is the integrand for a putative $\mathrm{Sym}^3$
-particle (a colour-singlet symmetric trion).  The baryon, by quark
-content, sits in the antisymmetric colour singlet $\mathrm{Alt}^3$
-and so its integrand is the wedge / product.  This selection is
-purely group-theoretic — fixed by the Wedderburn decomposition of
-$R[\mathrm{S}_3]$ above — and requires no input from the analytic
-PL machinery.*
+The sum $\sum_k dc_k/dz$ projects onto the trivial isotype $V_{(3)}$ as the integrand for a symmetric trion. The baryon sits in the antisymmetric colour singlet $\mathrm{Alt}^3$, selecting the wedge product. This algebraic selection requires no input from the Picard–Lefschetz machinery. Both the Vandermonde and $\pi_{\mathrm{Alt}}$ are defined over $R$; the baryon integrand evaluation remains $R$-rational until we apply the archimedean fibre functor $\tau$.
 
-**Categorical status.**
-*Both Vandermonde-cubed and the projector $\pi_{\mathrm{Alt}}$ are
-defined entirely over $R$; the proposition is a statement in
-$\mathrm{End}_{\mathbf{C}}(\Lambda^3 V) = R$ and does **not**
-require the embedding $R \hookrightarrow \mathbb{C}$.  The
-analytic / archimedean evaluation of $\int_{-a}^{a} \prod_k dc_k/dz \,dz$
-(baryon period ratio) is a separate
-step — see SW-period thimble equivalence —
-which lifts this $R$-rational integrand to a Picard–Lefschetz
-contour integral after applying $\tau$.*
-
-**Relation to existing blocks.**
-
-- *([categorical mass as Markov trace](#prop:categorical-mass-markov))
-  fixes the **scalar weight** $w_\lambda$ on each Wedderburn block;
-  this proposition fixes **which block** the baryon integrand sits in
-  (the sign block).  Together they fully determine
-  $\lambda_{\mathrm{baryon}}$ from $R[\mathrm{S}_3]$ alone.*
-- *([atom-knot mass derivation](#prop:atom-knot-mass-derivation))
-  uses the Markov trace on $H_n(R, q)$; this proposition is the
-  $\mathrm{S}_3 \subset H_3(R, q)$ specialisation that selects the
-  baryon channel.*
+This algebraic choice of the sign block, combined with the scalar weight $w_\lambda$ from the Markov trace ([categorical mass as Markov trace](#prop:categorical-mass-markov)), fully determines the baryon integrand $\lambda_{\mathrm{baryon}}$.

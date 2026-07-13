@@ -81,7 +81,7 @@ volume are not two competing engines: they are the same regulator
 $\Phi_n(x; q_0) \mapsto D(z(x))$ evaluated through two convergence
 schemes.
 
-## Conjectural standing (AGENTS.md §3b)
+## Conjectural standing
 
 This block is downstream of
 ([Kashaev volume conjecture](#conj:kashaev-volume-conjecture)) and
@@ -89,11 +89,18 @@ This block is downstream of
 necessarily a **conjecture** — propagation of conjectural backing
 forbids promotion to `proposition`/`theorem`.
 
-A Lean instance of the equivalence is provided as a typeclass
-`QOU.QPochhammer.algebraic_geometric_equivalence` parametrised by an
-`[ArchimedeanLimit]` instance and a `[Kashaev.VolumeConjecture]`
-instance; downstream theorems then verify formally, modulo those two
-class instances. This matches the conjectural-class pattern used for
+The Lean formalization follows the hypothesis-carrying conditional-class
+pattern: the class `QOU.QPochhammer.AlgebraicGeometricEquivalence` carries
+exactly the two open inputs — the volume-conjecture saddle asymptotic
+(a theorem for $4_1$ by Ohtsuki / Andersen–Hansen) and the matched-cusp
+volume identification supplied by
+([shared-denominator cusp holonomy](#conj:shared-denominator-cusp-holonomy)) —
+and the statement bundle `QOU.QPochhammer.algebraic_geometric_equivalence`
+*derives* both halves: item 1 (pole side) unconditionally, as the sorry-free
+theorem `pole_cusp_bijection_proved` (each $x = q^{-k}$ is a genuine root of
+$(x;q)_n$), and item 2 (Bloch–Wigner asymptotic) from the two class fields.
+The class asserts nothing provable-outright; no instance is fabricated. This
+matches the conjectural-class pattern used for
 [Φ$_q$-tower JSJ bridge](#rem:phi-q-tower-jsj-bridge).
 
 ## Witness

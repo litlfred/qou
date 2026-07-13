@@ -1,7 +1,4 @@
-**Proposition.**
-*For any braid $K$ on $3$ strands and any partition $\lambda \vdash k$
-with $k \geq 3$, the Frobenius character of $K$ in the irreducible
-representation $\rho_\lambda$ of $H_k(R, q)$ is:*
+*For any braid $K$ on $3$ strands and any partition $\lambda \vdash k$ with $k \geq 3$, the Frobenius character of $K$ in the irreducible representation $\rho_\lambda$ of $H_k(R, q)$ is:*
 
 $$
   \chi(K, \lambda)
@@ -10,11 +7,7 @@ $$
   + f^{\lambda/[1^3]} \cdot \chi_K^{\mathrm{alt}}
 $$
 
-*where $f^{\lambda/\mu} = |\mathrm{SYT}(\lambda/\mu)|$ counts
-saturated chains from $\mu$ to $\lambda$ in Young's lattice, and
-the three base characters are computed once from the Hoefsmit
-seminormal form
-([Hoefsmit seminormal form](#prop:hoefsmit-seminormal-form)):*
+*where $f^{\lambda/\mu} = |\mathrm{SYT}(\lambda/\mu)|$ counts saturated chains from $\mu$ to $\lambda$ in Young's lattice. The three base characters compute once from the Hoefsmit seminormal form:*
 
 | *Knot $K$* | *$\chi_K^{\mathrm{sym}}$* | *$\chi_K^{\mathrm{std}}$* | *$\chi_K^{\mathrm{alt}}$* |
 |:---:|:---:|:---:|:---:|
@@ -22,4 +15,4 @@ seminormal form
 | *$B_3$ (Borromean)* | *$1$* | *$(2 - [3])([3]^2 - 4[3] + 1)$* | *$1$* |
 | *unknot (identity)* | *$1$* | *$2$* | *$1$* |
 
-**Archimedean specialisation (§7c).** The character values $\chi^{\mathrm{sym}}, \chi^{\mathrm{alt}}$ and skew-SYT counts are stated as real numbers, the archimedean evaluations of the generic $\mathrm{Chebyshev}/\mathfrak{sl}_2$ branching over $[\mathrm{CommRing}\ R]$; acknowledged here.
+**Archimedean specialisation (§7c).** The character values $\chi^{\mathrm{sym}}, \chi^{\mathrm{alt}}$ and skew-SYT counts are stated as real numbers, forming the archimedean evaluations of the generic $\mathrm{Chebyshev}/\mathfrak{sl}_2$ branching over $[\mathrm{CommRing}\ R]$.

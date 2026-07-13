@@ -1,0 +1,65 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-07-11T19:13:23.137167+00:00",
+  "commitSha": "eea57383dced2804b20e5d7aba73d3ca9e2d40d0",
+  "assertions": [
+    {
+      "name": "connected_magnitude_is_charge_symmetry_invariant",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "⁴He connected |b_Ac| broken 1.9614 → charge-symm 1.9719 (Δ=+0.53%, <2%) ⇒ the connected magnitude is decoupled from charge symmetry; #3548's ~74% magnitude gap persists under the charge-symmetric kernel."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 5,
+  "computation": "connected-magnitude-charge-symmetric",
+  "scriptFile": "connected_magnitude_charge_symmetric.py",
+  "scriptHash": "3ad0cac7e488",
+  "scriptCommitSha": "d5158e08014f147d607d7e2626dd3d850746918e",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "mpmath": "1.4.1"
+  },
+  "description": "Re-runs #3548's connected-magnitude probe (irreducible Ursell/Mayer A-body cluster b_A^c, SU(4) C(4,A) gate) on the CHARGE-SYMMETRIC kernel (f_pp=f_nn=f_pn isoscalar) vs the charge-breaking #2089 kernel. FINDING: |b_Ac| is charge-symmetry-invariant (⁴He 1.961→1.972, +0.5%), so #3548's PARTIAL magnitude (⁴He ~×1.5 vs ×2.09 needed) is robust — charge symmetry does NOT close the magnitude gap. ⇒ the two binding levers are decoupled: charge structure (mirror split, fixed by #3575) vs connected magnitude (#3548, still open). Scope-(a), reuses #3548 machinery, no fit, no wiring.",
+  "data": {
+    "q0": 1.1099785827513808,
+    "per_atom": {
+      "D": {
+        "A": 2,
+        "gate": 6,
+        "b_broken": 0.6051379135860319,
+        "b_symm": 0.6051379135860319,
+        "delta_pct": 0.0,
+        "need_broken": 1.0,
+        "need_symm": 1.0
+      },
+      "4He": {
+        "A": 4,
+        "gate": 1,
+        "b_broken": 1.9614006852755823,
+        "b_symm": 1.9718742478950517,
+        "delta_pct": 0.5339838360461128,
+        "need_broken": 2.0925232110400818,
+        "need_symm": 2.1199395747305316
+      },
+      "6Li": {
+        "A": 6,
+        "gate": 0,
+        "b_broken": 22.218547982083365,
+        "b_symm": 22.517885350012865,
+        "delta_pct": 1.3472409095809519,
+        "need_broken": 0.9439838868866973,
+        "need_symm": 0.9588256465905409
+      }
+    }
+  }
+}

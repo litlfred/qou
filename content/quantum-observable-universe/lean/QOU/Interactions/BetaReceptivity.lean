@@ -52,7 +52,7 @@ noncomputable def two_crossing_ud1 : TMatrix :=
 --      published version.
 theorem borromean_unit_trivial_char :
     q_from_t * q_inv_from_t = (1 : R_t) := by
-  sorry
+  exact q_from_t_mul_q_inv_from_t
 
 /-- In the ALTERNATING representation: σ₀ ↦ −q⁻¹, σ₁⁻¹ ↦ −q.
     (σ₁ ↦ −q⁻¹, and σ₁⁻¹ = σ₁ − HA ↦ −q⁻¹ − (q−q⁻¹) = −q.)
@@ -63,7 +63,10 @@ theorem borromean_unit_trivial_char :
 --      published version.
 theorem borromean_unit_alt_char :
     (-q_inv_from_t) * (-q_from_t) = (1 : R_t) := by
-  sorry
+  calc
+    (-q_inv_from_t) * (-q_from_t) = q_inv_from_t * q_from_t := by ring
+    _ = q_from_t * q_inv_from_t := by ring
+    _ = 1 := q_from_t_mul_q_inv_from_t
 
 /-! ## §3  Character values of B₃ = (σ₀σ₁⁻¹)³ -/
 
@@ -78,7 +81,8 @@ theorem borromean_unit_alt_char :
 --      published version.
 theorem borromean3_net_exact :
     (q_from_t * q_inv_from_t) ^ 3 = (1 : R_t) := by
-  sorry
+  rw [q_from_t_mul_q_inv_from_t]
+  ring
 
 /-- χ_alt(B₃) = 1 EXACTLY for all q.
 
@@ -90,7 +94,13 @@ theorem borromean3_net_exact :
 --      published version.
 theorem borromean3_alt_char :
     ((-q_inv_from_t) * (-q_from_t)) ^ 3 = (1 : R_t) := by
-  sorry
+  have h : (-q_inv_from_t) * (-q_from_t) = (1 : R_t) := by
+    calc
+      (-q_inv_from_t) * (-q_from_t) = q_inv_from_t * q_from_t := by ring
+      _ = q_from_t * q_inv_from_t := by ring
+      _ = 1 := q_from_t_mul_q_inv_from_t
+  rw [h]
+  ring
 
 /-! ## §4  The e⁻ NF coefficient -/
 

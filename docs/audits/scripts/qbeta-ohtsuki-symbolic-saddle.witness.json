@@ -1,0 +1,102 @@
+{
+  "computation": "qbeta-ohtsuki-symbolic-saddle",
+  "description": "First-principles symbolic derivation (EM + Poisson + Laplace, exact \u211a(\u221a3,\u03c0)) of the 4\u2081 Ohtsuki rungs \u03ba_1..\u03ba_8; kill-checked against the PSLQ-identified \u03ba\u2081..\u03ba\u2084 and numerical \u03ba\u2085/\u03ba\u2086.",
+  "audit_only": true,
+  "tier": "symbolic-exact (derivation)",
+  "computedAt": "2026-07-12T15:31:47.984572+00:00",
+  "commitSha": "ea218d3b11a07c97196e87cdfe17a349f2f6d96b",
+  "engine": "sympy+mpmath",
+  "engineVersion": "sympy 1.14.0, mpmath 1.3.0",
+  "scriptFile": "qbeta_ohtsuki_symbolic_saddle.py",
+  "scriptHash": "0b4990e97993",
+  "assertions": [
+    {
+      "name": "kappa1_matches_pslq_identified",
+      "passed": true
+    },
+    {
+      "name": "kappa2_matches_pslq_identified",
+      "passed": true
+    },
+    {
+      "name": "kappa3_matches_pslq_identified",
+      "passed": true
+    },
+    {
+      "name": "kappa4_matches_pslq_identified",
+      "passed": true
+    },
+    {
+      "name": "kappa5_matches_numerical_13d",
+      "passed": true
+    },
+    {
+      "name": "kappa6_matches_numerical_9d",
+      "passed": true
+    },
+    {
+      "name": "all_rungs_parity_clean",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "result": {
+    "rungs": {
+      "1": {
+        "kappa_exact": "11*sqrt(3)*pi/108",
+        "rational_over_generator": "11/108",
+        "generator": "sqrt3*pi^1",
+        "parity_clean": true
+      },
+      "2": {
+        "kappa_exact": "2*pi**2/27",
+        "rational_over_generator": "2/27",
+        "generator": "pi^2",
+        "parity_clean": true
+      },
+      "3": {
+        "kappa_exact": "1081*sqrt(3)*pi**3/21870",
+        "rational_over_generator": "1081/21870",
+        "generator": "sqrt3*pi^3",
+        "parity_clean": true
+      },
+      "4": {
+        "kappa_exact": "98*pi**4/729",
+        "rational_over_generator": "98/729",
+        "generator": "pi^4",
+        "parity_clean": true
+      },
+      "5": {
+        "kappa_exact": "110011*sqrt(3)*pi**5/688905",
+        "rational_over_generator": "110011/688905",
+        "generator": "sqrt3*pi^5",
+        "parity_clean": true
+      },
+      "6": {
+        "kappa_exact": "207892*pi**6/295245",
+        "rational_over_generator": "207892/295245",
+        "generator": "pi^6",
+        "parity_clean": true
+      },
+      "7": {
+        "kappa_exact": "32729683*sqrt(3)*pi**7/26572050",
+        "rational_over_generator": "32729683/26572050",
+        "generator": "sqrt3*pi^7",
+        "parity_clean": true
+      },
+      "8": {
+        "kappa_exact": "139418294*pi**8/18600435",
+        "rational_over_generator": "139418294/18600435",
+        "generator": "pi^8",
+        "parity_clean": true
+      }
+    },
+    "verdict": "DERIVED (symbolic-exact). The 4\u2081 Ohtsuki rungs \u03ba_1..\u03ba_8 are computed from first principles (Euler\u2013Maclaurin inner sum + Poisson outer sum + Laplace at x*=5/6) in exact \u211a(\u221a3,\u03c0) arithmetic with no numerical input and no PSLQ. \u03ba\u2081..\u03ba\u2084 REPRODUCE the independently PSLQ-identified values (11/108\u00b7\u221a3\u03c0, 2/27\u00b7\u03c0\u00b2, 1081/21870\u00b7\u221a3\u03c0\u00b3, 98/729\u00b7\u03c0\u2074) \u2014 upgrading them from numerical-exact to symbolic-exact \u2014 and \u03ba\u2085, \u03ba\u2086 match the numerical extractions to their attained digits, with \u03ba\u2085..\u03ba\u2088 now EXACT (beyond any extraction precision). The \u221a3-parity alternation and 3-power denominators are consequences of the derivation (cot(5\u03c0/6)=\u2212\u221a3 Taylor data + rational Bernoulli/moment arithmetic), not assumptions. Scope: 4\u2081-Kashaev/Ohtsuki topology; NOT wired Q_\u03b2 c_k; the 4\u2081\u2194Q_\u03b2 bridge (Borel/\u03a6_b continuation) remains open. No fit; no c_k value; no tier change on any Q_\u03b2 rung."
+  },
+  "context": {
+    "axis": "z->c_k f-map keystone: even channel, symbolic saddle recursion",
+    "upgrades": "kappa_1..4 numerical-exact -> symbolic-exact (even-channel internal)",
+    "new_exact": "kappa_5..kappa_8",
+    "bridge_status": "open (Borel/Phi_b continuation; growth-class obstruction #3628)"
+  }
+}

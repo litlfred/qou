@@ -13,6 +13,13 @@
 
 import QOU.Basic
 import QOU.MathlibExt
+import QOU.MathlibExt.MarkovTrace
+import QOU.MathlibExt.QuantumDilogarithm
+import QOU.MathlibExt.QuantumDilogarithmInfinite
+import QOU.MathlibExt.FaddeevQuantumDilogarithm
+import QOU.MathlibExt.FaddeevPhiBRealIntegral
+import QOU.MathlibExt.PhiBProd
+import QOU.MathlibExt.YekutieliIntegration
 import QOU.MathlibExt.SDP
 import QOU.MathlibExt.SDPEmptyConstraints
 import QOU.MathlibExt.SDPRealUniqueness
@@ -31,21 +38,29 @@ import QOU.MathlibExt.FrobeniusInnerProduct
 import QOU.MathlibExt.QPlancherel
 import QOU.MathlibExt.MonoidalCalcVar
 import QOU.MathlibExt.QGaussianBinomialPascal
+import QOU.MathlibExt.DerivationRankNullity
+import QOU.MathlibExt.OctonionDerivations
+import QOU.MathlibExt.OctonionDerivationsBound
 import QOU.HeckeAlgebra
 import QOU.Glossary
+import QOU.Knot.CuspShapeBarParity
 import QOU.Knot.FigureEightSelfDuality
 import QOU.Knot.FigureEightVolume
+import QOU.Knot.NeumannZagierParity
 import QOU.Knot.PerNeutronLadder
 import QOU.KnotTheory
 import QOU.KnotTheory.Brunnian
 import QOU.KnotRegistry
 import QOU.MassDerivation
 import QOU.MassTheory.TraceConventionGate
+import QOU.MassTheory.NeutronProtonEMSign
 import QOU.MassTheory.BarParityExclusion
 import QOU.MassTheory.SU4SupermultipletGate
 import QOU.MassTheory.BodyOrderCumulant
+import QOU.MassTheory.ReebPnMagnitude
 import QOU.Mass.MassVolDensity
 import QOU.Mass.BindingRecurrenceSpectral
+import QOU.Mass.BindingClassicalKernel
 import QOU.Mass.Lever1Depth2Exclusion
 import QOU.Mass.Lever1TauClosedForm
 import QOU.Mass.BindingTauAnchorClosure
@@ -58,6 +73,7 @@ import QOU.Mass.BindingHyperbolicRecurrence
 import QOU.Mass.BindingQBesselKernel
 import QOU.Mass.BindingJacobiAngerBridge
 import QOU.Mass.BindingQHermiteOscillator
+import QOU.Mass.BindingEigenfunctionTwoTier
 import QOU.Mass.QWeberInterpolation
 import QOU.Mass.PaddedShapeLevelRational
 import QOU.Mass.AdditiveCorrectionConfinement
@@ -67,6 +83,7 @@ import QOU.Mass.SelectionRuleQuantumIntegerForm
 import QOU.Mass.JetFiltrationExtensive
 import QOU.Mass.LinearChainBondCount
 import QOU.Mass.KappaWritheAsymptote
+import QOU.Mass.LinearChainBondFactorization
 import QOU.Calculations
 import QOU.HadronicMass
 import QOU.AtomicMass
@@ -83,6 +100,12 @@ import QOU.PathIntegrals
 import QOU.MobiusEnergy
 import QOU.Torsion
 import QOU.BringsSurface
+import QOU.BringsSurface.OctonionInvariantObstruction
+import QOU.BringsSurface.ColourComplexStructure
+import QOU.BringsSurface.PentagonTwistAssociator
+import QOU.BringsSurface.OctonionCocycle
+import QOU.BringCone
+import QOU.QuaternionicElectroweak
 import QOU.ArchimedeanUniverse
 import QOU.PAdicQuantumGroups
 import QOU.GaugeFieldFluidDynamics
@@ -105,6 +128,7 @@ import QOU.PhotonThreading
 import QOU.QBirchSwinnertonDyer
 import QOU.QCollatz
 import QOU.QGeometricLanglands
+import QOU.AppendixQValues.ProtonBorromeanAssembly
 import QOU.AppendixSurreals
 import QOU.AlgebraicSubstrate
 import QOU.LiftingDescent
@@ -139,6 +163,10 @@ import QOU.su2_emergence_volume_determinant
 import QOU.frobenius_dagger_positive_definite
 import QOU.volume_from_rigidity
 import QOU.substrate_radial_coordinate
+-- Symmetry-eigenspace selection rules: bar-parity (c₃ ≠ −Vol(4₁), scope-(b)) +
+-- sign-positivity (Δ_λ rows B/E). Generic base ring §7c, sorry-free. Wired so
+-- CI type-checks it (not an orphan).
+import QOU.SelectionRules
 import QOU.Braiding.non_self_intersection
 -- Keystone geometric-angle fingerprint: the ℓ=1 icosahedral character on the
 -- 5-fold rotation is the golden ratio (parameter-free; validates irrepToRotation).
@@ -168,6 +196,10 @@ import QOU.ParticleInteractions.silver_ratio_beta_decay_null
 import QOU.ParticleInteractions.delta_pre_archimedean
 import QOU.FluidDynamics.q_bkm_criterion
 import QOU.FluidDynamics.TwoVortexChannelAlgebra
+import QOU.QBeta.BarOddLadderShape
+import QOU.QBeta.LeverLogDerivative
+import QOU.QBeta.MeridianLinearBarOdd
+import QOU.QBeta.ImQDecayLinearResponse
 import QOU.QBeta.RationalCoeffRecurrence
 import QOU.QBeta.SilverAnchorGrounding
 import QOU.QBeta.ReebTowerJacobiAnger
@@ -176,10 +208,26 @@ import QOU.QBeta.QBesselBarCovariance
 import QOU.QBeta.QBesselQuadraticActionTerm
 import QOU.QBeta.QCasoratianAbel
 import QOU.QBeta.QCasoratianBarParity
+import QOU.QBeta.ZBarParity
+import QOU.QBeta.QBetaZeta4ResidueRefutation
+import QOU.QBeta.BarParityZeta4Swap
+import QOU.QBeta.CuspShapeBarParity
+import QOU.QBeta.CAL3AnchorStructure
+import QOU.QBeta.SRigidityPrune
+import QOU.QBeta.HopfCubicOddCarrier
+import QOU.QBeta.Zeta4DescentCarrier
+-- Bar-parity selection rule of the Ohtsuki κ-tower at the imaginary substrate
+-- 2πb²=i·t: even rungs → Re 𝔙 (Vol/mass), odd rungs → Im 𝔙 (bar-odd S / CS).
+import QOU.QBeta.OhtsukiTowerBarParity
+-- Even-channel arithmetic home: the 4₁ Kashaev saddle Taylor data ∈ ℚ(√3)·π^k
+-- (Hessian −√3π; b₁=√3π/54). Counterpart to the odd HopfCubicOddCarrier (KC20).
+import QOU.QBeta.Qsqrt3SaddleArithmetic
 import QOU.QBeta.H4RouteBBranchingPrune
 import QOU.QBeta.QLommelOrderRecurrence
 import QOU.QBeta.HoefsmitBBarParity
 import QOU.QBeta.StageCSigma3LiftObligation
+import QOU.QBeta.CrossingWeightAffine
+import QOU.QBeta.WenzlPochhammerBoundary
 -- Concrete H₃(q) Markov-trace functional (NF model: linearity, cyclicity,
 -- Hecke σ₀²=hσ₀+1, Markov reduction tr(x·σ₁)=z·tr(x)); cross-checked vs
 -- `gram.py` / `pyhecke.trace_formal`. Was an orphan under `Machinery/`.
@@ -208,7 +256,15 @@ import QOU.Conjectures.QuantumLanglandsDual
 import QOU.Mathlib.PartitionListBridge
 import QOU.Mathlib.StandardYoungTableau
 import QOU.Mathlib.RSKBurnsideTarget
+import QOU.Mathlib.StandardYoungTableauBot
 import QOU.Mathlib.SchenstedInsertion
+import QOU.Mathlib.SchenstedTableau
+import QOU.Mathlib.SchenstedRecording
+import QOU.Mathlib.SchenstedRecordingShift
+import QOU.Mathlib.SchenstedCellsBridge
+import QOU.Mathlib.SchenstedStandardTableau
+import QOU.Mathlib.SchenstedStandardGeneric
+import QOU.Mathlib.SchenstedPairingMap
 import QOU.Mathlib.SYTEnumeration
 import QOU.Mathlib.SYTEnumerationBridge
 import QOU.Mathlib.SYTEnumerationFintype

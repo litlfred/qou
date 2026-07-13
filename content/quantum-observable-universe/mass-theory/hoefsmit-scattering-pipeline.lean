@@ -125,23 +125,60 @@ namespace QOU.BraidKnot.HoefsmitPipeline.ConditionalAudit
     `Vol(4₁)`, `Vol(5₂)`, `Vol(𝓑₃)`; this local mirror states the same
     *shape* over abstract reals so the §3b-cond banner audit recognises
     the conditional-on-class structure without a cross-module import. -/
-class HyperbolicVolumeIndependence : Prop where
+class HyperbolicVolumeIndependence (v₁ v₂ v₃ : ℝ) : Prop where
   /-- No non-trivial ℚ-monomial relation holds among the three
-      substrate hyperbolic volumes: for any three reals `v₁ v₂ v₃`
-      (the figure-8, `5₂`, and Borromean complement volumes) and any
-      finitely-supported rational coefficient assignment over exponent
-      triples, a vanishing weighted power-sum forces all coefficients
-      to vanish.  Mirrors `HyperbolicVolumeTranscendence.no_relation`. -/
+      substrate hyperbolic volumes `v₁ v₂ v₃` (the figure-8, `5₂`, and
+      Borromean complement volumes, carried as class parameters): for
+      any finitely-supported rational coefficient assignment over
+      exponent triples, a vanishing weighted power-sum forces all
+      coefficients to vanish.  Mirrors
+      `HyperbolicVolumeTranscendence.no_relation`, which fixes the three
+      concrete substrate volumes — the volumes are *parameters* of the
+      class, not universally quantified (a `∀ v₁ v₂ v₃` field would be
+      false, e.g. at `v₁ = 0`, hence uninhabitable). -/
   no_relation :
-    ∀ (v₁ v₂ v₃ : ℝ) (S : Finset (ℕ × ℕ × ℕ)) (f : ℕ × ℕ × ℕ → ℚ),
+    ∀ (S : Finset (ℕ × ℕ × ℕ)) (f : ℕ × ℕ × ℕ → ℚ),
       (∀ ijk, ijk ∉ S → f ijk = 0) →
       (S.sum fun ijk =>
         (f ijk : ℝ) * v₁ ^ ijk.1 * v₂ ^ ijk.2.1 * v₃ ^ ijk.2.2) = 0 →
       ∀ ijk, f ijk = 0
 
-/-- Witness theorem demonstrating the main proposition is conditional
-    on `[HyperbolicVolumeIndependence]` per CLAUDE.md §3b-cond. -/
-def conditional_on_HyperbolicVolumeIndependence
-    [_inst : HyperbolicVolumeIndependence] : True := trivial
+/-- **Conditional consequence of `HyperbolicVolumeIndependence`** (per
+    CLAUDE.md §3b-cond): the three substrate hyperbolic volumes are
+    ℚ-linearly independent — no non-trivial rational linear combination
+    vanishes.  This is the degree-1 specialisation of `no_relation`
+    (support `{(1,0,0),(0,1,0),(0,0,1)}`), deriving a genuine
+    conclusion from the class hypothesis rather than asserting `True`.
+    Mirrors `HyperbolicVolumeTranscendence`'s `BorelZagierQOU`. -/
+theorem conditional_on_HyperbolicVolumeIndependence
+    {v₁ v₂ v₃ : ℝ} [inst : HyperbolicVolumeIndependence v₁ v₂ v₃]
+    (a₁ a₂ a₃ : ℚ)
+    (h : (a₁ : ℝ) * v₁ + (a₂ : ℝ) * v₂ + (a₃ : ℝ) * v₃ = 0) :
+    a₁ = 0 ∧ a₂ = 0 ∧ a₃ = 0 := by
+  classical
+  set S : Finset (ℕ × ℕ × ℕ) := {(1,0,0), (0,1,0), (0,0,1)} with hS
+  set f : ℕ × ℕ × ℕ → ℚ :=
+    fun p => if p = (1,0,0) then a₁ else if p = (0,1,0) then a₂
+             else if p = (0,0,1) then a₃ else 0 with hf
+  have hsupp : ∀ ijk, ijk ∉ S → f ijk = 0 := by
+    intro ijk hijk
+    simp only [hf]
+    rw [if_neg, if_neg, if_neg]
+    · rintro rfl; exact hijk (by simp [hS])
+    · rintro rfl; exact hijk (by simp [hS])
+    · rintro rfl; exact hijk (by simp [hS])
+  have hsum : (S.sum fun ijk =>
+      (f ijk : ℝ) * v₁ ^ ijk.1 * v₂ ^ ijk.2.1 * v₃ ^ ijk.2.2) = 0 := by
+    rw [hS]
+    rw [Finset.sum_insert (by decide), Finset.sum_insert (by decide),
+      Finset.sum_singleton]
+    simp only [hf]
+    norm_num
+    rw [← add_assoc]; exact h
+  have hall := inst.no_relation S f hsupp hsum
+  refine ⟨?_, ?_, ?_⟩
+  · have := hall (1,0,0); simpa [hf] using this
+  · have := hall (0,1,0); simpa [hf] using this
+  · have := hall (0,0,1); simpa [hf] using this
 
 end QOU.BraidKnot.HoefsmitPipeline.ConditionalAudit

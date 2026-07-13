@@ -1,0 +1,11 @@
+<!-- FILE_START: glossary-hom-set.md -->
+**:defterm[Hom-set]{#hom-set}.** For objects $X$ and $Y$ in a category $\mathbf{C}$, the hom-set $\mathrm{Hom}_{\mathbf{C}}(X, Y)$ is the collection of all morphisms from $X$ to $Y$. We also write $\mathbf{C}(X, Y)$ or $X \to Y$. In a locally small category, each hom-set is a genuine set.
+
+When $\mathbf{C}$ is $R$-linear, each hom-set carries the structure of an $R$-module. Composition is $R$-bilinear.
+
+**Mathlib reference.**
+We denote the hom-set from `X` to `Y` by `X → Y`.
+Import: `Mathlib.CategoryTheory.Category.Basic`.
+The type is `CategoryTheory.Category.Hom X Y`.
+<!-- FILE_END: glossary-hom-set.md -->
+

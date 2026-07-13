@@ -31,9 +31,18 @@ export default proposition({
   title:
     "Substrate evaluation: $m_p = 2 \\cdot m_\\mu \\cdot F_{\\mathrm{Bor}}(q_0) - 12 \\cdot m_e$ to $0.24\\,\\mathrm{ppm}$ at $q = q_0$",
   uses: [
+    "conj:proton-borromean-assembly",
     "def:f-bor-borromean-observable",
     "prop:flavor-split-substrate",
   ],
+  lean: {
+    // §3b-cond conditional: the theorem takes the [ProtonBorromeanAssembly]
+    // class hypothesis (conj:proton-borromean-assembly, in uses[] above) and
+    // DERIVES this flat identity from it (12 = 2·6), sorry-free modulo the
+    // class instance. Class + theorem live in the qou Lake library
+    // (QOU/AppendixQValues/ProtonBorromeanAssembly.lean); no sibling .lean.
+    ref: "qou:QOU.AppendixQValues.proton_mass_substrate_identity",
+  },
   cites: [
     "adams1985hyperbolic",
     "wenzl1988c",
@@ -45,20 +54,6 @@ export default proposition({
     witness: "computations/m-p-substrate-identity-50dps.witness.json",
     status: "verified",
   },
-  // lean ref deferred: this block's uses[] cone transitively touches
-  // conjectural categorical derivations (the "2" structural integer,
-  // the "12" via Ocneanu, F_Bor categoricity). Per AGENTS.md §3b-cond,
-  // declaring a `lean:` field on a provable kind whose uses[] cone
-  // touches `conj:` requires either downgrade to `remark`/`conjecture`
-  // OR the conditional-class banner + [Class] Lean hypothesis pattern.
-  // The Lean sibling (proton-mass-substrate-identity.lean) is currently
-  // unconditional; without the banner + class hypothesis on the .md +
-  // .lean, declaring the ref here trips the §3b-cond strict audit (CI
-  // validate fail; see PR #1690 round-3 CI fail).
-  // Follow-up: separate PR adding the conditional banner + restructure
-  // the Lean theorem to take an explicit [ProtonMassSubstrateClass]
-  // hypothesis. Until then the `validate` step warns
-  // "no Lean declaration yet" (non-blocking).
   tags: [
     "mass-formula",
     "proton",

@@ -24,9 +24,10 @@ namespace QOU.AppendixSurreals
 -- below (a genuine consequence, not a shadow stub for the functor).
 
 /--
-The Archimedean Functor (Standard Part) commutes with the mass limit mapping.
-The evaluation of the exact algebraic trace `B_sym` converges to the macroscopic `B_qCLT`
-limit under the Archimedean scale.
+The object-level standard-part map `st` (a ring homomorphism, not a
+functor in its own right) commutes with the mass limit mapping.
+The evaluation of the exact algebraic trace `B_sym` converges to the
+macroscopic `B_qCLT` limit under the Archimedean scale.
 -/
 theorem archimedean_mass_commutes
   (m_unbound : ℝ)

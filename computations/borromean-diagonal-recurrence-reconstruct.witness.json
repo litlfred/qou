@@ -1,0 +1,22 @@
+{
+  "engine": "python (mod-p RREF sampling + multi-prime CRT/Wang lift)",
+  "scriptFile": "computations/borromean_recurrence_crt_driver.py",
+  "commitSha": "412c743a79a021be1c3d5abf7e5c6a4fd4eeef04",
+  "computedAt": "2026-07-07T11:37:38.608035+00:00",
+  "description": "Phase-2 explicit-operator reconstruction of the Borromean diagonal recurrence (r,W)=(6,11): status record. NOT green \u2014 see conditioning audit.",
+  "computation": "borromean-diagonal-recurrence-reconstruct",
+  "audit_only": true,
+  "result": {
+    "reconstructed": false,
+    "blockers": [
+      "ill-conditioning: RREF-nullspace entries are ratios coeff_c/coeff_free, q-degree up to 252 (median 208); low-degree col 181 destabilized CRT consensus. FIXED (hint-bisect + modal-degree consensus).",
+      "environmental: clean run needs ~35min uninterrupted; container reclaimed mid-run 4 consecutive times here. Fix committed but not validated in this environment."
+    ],
+    "standing_result": "existence certificate (3 windows, r<=4 excluded, 9/9) is merged and unaffected \u2014 computations/borromean-diagonal-recurrence-hunt.witness.json",
+    "forward_routes": [
+      "finish fixed CRT pipeline on a persistent compute environment",
+      "qZeilberger creative telescoping (proof-grade, Lean-formalizable)"
+    ],
+    "audit": "docs/audits/2026-07-07-borromean-recurrence-reconstruction-conditioning.md"
+  }
+}

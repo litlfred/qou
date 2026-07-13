@@ -22,7 +22,7 @@ satisfied by construction for the same-Hecke-algebra subtraction:
 
   - Markov-invariance term-by-term (Li_2^q tower preserves it)
   - |S| ≤ 2 R-side bound (descended + single + pair only)
-  - Symmetric Li_2^q (NOT Faddeev Φ_q — Faddeev gives −737 MeV
+  - Symmetric Li_2^q (NOT compact q-dilog Φ_q — compact-q-dilog gives −737 MeV
     mirror-nucleus pathology per SUPERSEDED banner)
   - Three blow-up types: descended, single-gen, pair (weighted by z²)
   - Three-calibration discipline (m_e, q_0; Q_β only for absolute

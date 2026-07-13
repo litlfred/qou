@@ -102,6 +102,58 @@ def ser_inv(a):
     return out
 
 
+def ser_valuation(a):
+    """Index of the lowest nonzero coefficient of a truncated series
+    (returns ORD+1 for the series that is identically zero to truncation)."""
+    for i in range(min(len(a), ORD + 1)):
+        if sp.simplify(a[i]) != 0:
+            return i
+    return ORD + 1
+
+
+def ser_div(a, b):
+    """Exact valuation-aware truncated quotient a/b over the field.
+
+    Returns ``(quo, valid_top)``: ``quo[n]`` is the exact coefficient of
+    ``s^n`` in ``a/b`` for every ``n <= valid_top`` and is set to 0 for
+    ``n > valid_top``.
+
+    Why the top rows must be dropped. If ``b`` has s-valuation ``vb > 0``,
+    then ``a/b`` is a power series only when ``a``'s valuation ``va >= vb``,
+    and forming it strips a factor ``s^vb`` from the denominator — which
+    discards the lowest ``vb`` orders of information carried by ``a``.
+    Concretely ``a/b`` is determined only through order ``ORD - vb``; the
+    coefficients above that would need ``a[ORD+1 .. ORD+vb]``, which the
+    truncation has already thrown away. The historical idiom
+
+        G = ser_mul(a[1:] + [0], ser_inv(b[1:] + [0]))     # a/b with vb == 1
+
+    silently returned a garbage top coefficient ``G[ORD]`` that depended on
+    the unknown ``a[ORD+1]``; every reader of that top row (the D-ladder
+    "order-11 failure" and the margin-1 h^3 refutation) was reading an
+    artifact. ``ser_div`` makes the loss explicit: it zeroes the invalid rows
+    and reports ``valid_top`` so callers cannot read past the determined range.
+    """
+    vb = ser_valuation(b)
+    if vb > ORD:
+        raise ZeroDivisionError("ser_div: divisor is zero to truncation order")
+    va = ser_valuation(a)
+    if va < vb:
+        raise ValueError(
+            f"ser_div: quotient has negative valuation (va={va} < vb={vb}); "
+            "a/b is not a power series")
+    # Strip the common s^vb; the shifted divisor B has B[0] = b[vb] != 0, so
+    # ser_inv is well-defined. The vb zeros padded onto A's top are the only
+    # fabricated entries; they contaminate exactly the rows above valid_top.
+    A = list(a[vb:]) + [sp.Integer(0)] * vb
+    B = list(b[vb:]) + [sp.Integer(0)] * vb
+    quo = ser_mul(A, ser_inv(B))
+    valid_top = ORD - vb
+    for n in range(valid_top + 1, ORD + 1):
+        quo[n] = sp.Integer(0)
+    return quo, valid_top
+
+
 def ser_sqrt(a):
     """sqrt(a) for a[0] > 0 (principal branch)."""
     out = [sp.Integer(0)] * (ORD + 1)

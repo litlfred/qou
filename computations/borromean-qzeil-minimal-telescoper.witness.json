@@ -1,0 +1,23 @@
+{
+  "engine": "python 3.11.15 / sympy 1.14.0 (op-projection)",
+  "scriptFile": "computations/borromean_qzeil_minimal_telescoper.py",
+  "commitSha": "6e99d7fa68a802ea76c4d2f221956129184352e4",
+  "scriptHash": "bf6eee0c20e6",
+  "computedAt": "2026-07-07T12:36:14.595993+00:00",
+  "description": "Minimal qZeilberger telescoper order for the Borromean diagonal colored Jones via operator-projection of the telescoping nullspace + tower verification",
+  "computation": "borromean-qzeil-minimal-telescoper",
+  "audit_only": true,
+  "verdict": {
+    "found": false,
+    "op_projection_rstar": 2,
+    "op_rank_by_r": {
+      "2": 38
+    },
+    "x_window": 8,
+    "cert_y_degree": 10,
+    "q0": 5,
+    "telescoper_verified_on_tower": false,
+    "interpretation": "OP-PROJECTION ARTIFACT (r*=2, tower-verify=False): the free certificate ansatz (y-deg 10, x-window +/-8) is OVER-RICH -- it Gosper-sums almost any low-order a-part, so op-projection reports a spurious r*=2 that FAILS tower verification and contradicts the merged existence certificate (minimal raw recurrence order 5, r<=4 excluded, PR #3443). CONCLUSION: the naive telescoping-nullspace cannot isolate the minimal telescoper; the certificate denominator must be EXACTLY q-Gosper-normalized (computed from the summand q-shift ratio s(x,y) via the q-Gosper-Petkovsek greatest-factorial factorization), which bounds the certificate numerator degree precisely. That is the required next step -- a real q-Gosper implementation, not a sampling shortcut."
+  },
+  "wall_seconds": 2.5
+}

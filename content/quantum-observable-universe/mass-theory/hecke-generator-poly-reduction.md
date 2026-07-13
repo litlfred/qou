@@ -1,4 +1,3 @@
-**Proposition (single-generator Hecke polynomial reduction).**
 *Let $\sigma_i$ be a Hecke generator, satisfying the quadratic relation
 $\sigma_i^2 = (q - q^{-1})\,\sigma_i + 1$. For any finite list of scalars
 $d_1, \dots, d_r \in R$, the product of single-generator factors collapses
@@ -19,6 +18,7 @@ $$
 
 *with $h = q - q^{-1}$ and $(\alpha',\beta')$ the coefficients for the
 tail $\mathrm{ds}$.*
+
 ## Consequence for the Markov trace
 
 In a seminormal (Gelfand–Zetlin) representation the diagonal entry of
@@ -44,12 +44,3 @@ $\mathrm{tr}_M = \sum_\lambda y_\lambda\,\chi^\lambda$ scales to large
 atoms (Steps 3 and 9b of the mass–binding chain): the per-block work drops
 to a few field operations, removing the $n!$ wall of the per-basis-vector
 evaluation.
-
-## Lean formalization
-
-The division-free reduction is formalised in
-`QOU.Braiding.hecke_gen_poly_reduction`, proved by induction over the
-factor list from the Hecke quadratic alone (the coefficient recursion is
-`QOU.Braiding.heckeAB`). The transfer-matrix character built on it is
-implemented and validated to the 50-digit floor in
-the formal derivation.

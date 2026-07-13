@@ -1,12 +1,1 @@
-Let $(\mathbf{C}, A, \tau)$ be a
-([quantum universe](#def:quantum-universe)).  A **categorical point**
-of $A$ is a morphism
-
-```tex
-\begin{equation}\label{eq:categorical-point}
-\begin{tikzcd}[column sep=3em]
-  \mathbf{1} \ar[r, "p"] & A
-\end{tikzcd}
-\qquad\text{(categorical point)}
-\end{equation}
-```
+Let $(\mathbf{C}, A, \tau)$ be a quantum universe. A **categorical point** of $A$ is a morphism $p \colon \mathbf{1} \to A$. In the archimedean realisation $A = C^\infty(M)$, a categorical point corresponds to evaluation at $p \in M$. The augmentation ideal at $p$ is $\mathfrak{m}_p = \ker(p^* \colon A \to \mathbf{1})$, and the germ of $A$ at $p$ is the quotient $A / \mathfrak{m}_p^2$.

@@ -1,11 +1,11 @@
 ---
 # 5nx8
 title: 'Conjecture gap: formalize conj:binding-qbeta-complex-volume as §3b class — ζ4-coupling proved field, fibre-descent conjectural field'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-06-28T06:54:32Z
-updated_at: 2026-07-03T00:20:00Z
+updated_at: 2026-07-06T17:17:57Z
 ---
 
 

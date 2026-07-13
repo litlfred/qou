@@ -1,16 +1,15 @@
-**Proposition (Habiro integrality of the Markov trace).**
-*The Markov trace $\operatorname{tr}_M(T_w, q)$ of any braid word
+*The Markov trace $\mathrm{tr}_M(T_w, q)$ of any braid word
 admits a finite Habiro expansion with integer coefficients $a_m \in
 \mathbb{Z}[u]$. The Habiro form is the canonical representation: it is
 an exact, finite rational evaluation, not a truncated series.*
 
-**Mathematical Novelty.** While the existence of the Habiro expansion for quantum invariants with integer coefficients is a standard result in quantum topology, its novel application here is using the strictly finite nature of this algebraic ladder to eliminate arbitrary truncation choices in evaluating physical mass differences, anchoring the observable spectrum directly to the exact cyclotomic integrality of the trace.
+While the existence of the Habiro expansion for quantum invariants with integer coefficients is a standard result in quantum topology, its application here uses the strictly finite nature of this algebraic ladder to eliminate arbitrary truncation choices in evaluating physical mass differences, anchoring the observable spectrum directly to the exact cyclotomic integrality of the trace.
 
 *Specifically, the Markov trace of the neutron–proton braid-word
 difference admits the finite expansion*
 
 $$
-  \operatorname{tr}_M(\beta_n) - \operatorname{tr}_M(\beta_p)
+  \mathrm{tr}_M(\beta_n) - \mathrm{tr}_M(\beta_p)
   \;=\;
   \sum_{m=0}^{M} a_m(u) \cdot (u;\,u)_m,
   \qquad
@@ -45,32 +44,32 @@ The proton's Markov trace has $M = 8$ (series terminates):
 The neutron has the same structure with $M = 8$ and different integer
 coefficients. The deuteron has $M = 12$.
 
-## Resolution of the axiom-vs-theorem question
+## Uniqueness of the archimedean evaluation
 
-The archimedean functor is not an arbitrary map — it is the UNIQUE
+The archimedean functor is not an arbitrary map — it is the unique
 evaluation $\widehat{\mathbb{Z}[q]} \to \mathbb{R}$ that:
 
-1. Sends the Habiro ring element $\operatorname{tr}_M(T_w)$ to its
+1. Sends the Habiro ring element $\mathrm{tr}_M(T_w)$ to its
    value at $q = q_0$.
 2. Respects the cyclotomic integrality: each $a_m \in \mathbb{Z}[u]$.
 3. Terminates at finite $M$ (no truncation needed).
 
 The integrality and finiteness of the $a_m$ require no fitting and no
 free parameters beyond $(m_e, q_0)$ — the Habiro evaluation of
-$\operatorname{tr}_M$ at $q_0$ is determined.
+$\mathrm{tr}_M$ at $q_0$ is determined.
 
 ## Scope of the exact evaluation
 
 Since the Habiro expansion is **finite** ($M = 8$ for proton), the
-evaluation $\operatorname{tr}_M(\beta_K, q_0)$ is **exact** — a
+evaluation $\mathrm{tr}_M(\beta_K, q_0)$ is **exact** — a
 well-defined element of $\mathbb{Q}(q_0)$, not a truncated series.
 
 What this does **not** give is experiment-grade agreement with
 data. An observable such as $\mathfrak{Q}_\beta$ is
-$m_e \cdot f(\operatorname{tr}_M(\beta_n), \operatorname{tr}_M(\beta_p),
+$m_e \cdot f(\mathrm{tr}_M(\beta_n), \mathrm{tr}_M(\beta_p),
 q_0)$, and the exact Habiro evaluation of that map lands at the
 substrate's *intrinsic* accuracy (improving once the derived low-order
-$\tau_M$ corrections of `prop:tau-M-asymptotic-rep-theory` are
+$\mathrm{tr}_M$ corrections of `prop:tau-M-asymptotic-rep-theory` are
 included; specific intrinsic-accuracy and ladder-correction figures
 live in the archimedean witness ledger, not here).
 Reaching experiment-grade precision requires higher-order

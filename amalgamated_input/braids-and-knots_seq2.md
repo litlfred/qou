@@ -1,0 +1,14 @@
+<!-- FILE_START: categorical-braiding-hecke-eigenbasis-intro.md -->
+Having established the categorical origin of braiding, we turn to the Hecke quotient of the braid action. Its representation theory furnishes a knot eigenbasis. This eigenbasis consists of states in $\mathrm{End}_{\mathbf{C}}(A)$ indexed by knot equivalence classes that diagonalise the Hecke action. We compute this explicitly on the two-strand $B_3$ kernel. The knot eigenbasis serves as the structural pivot for subsequent substrate-arithmetic computations of binding energies and mass predictions.
+<!-- FILE_END: categorical-braiding-hecke-eigenbasis-intro.md -->
+
+<!-- FILE_START: eigenbasis-structural-lemmas.md -->
+The categorical-confinement proposition expresses every physical observable as a sum of Wedderburn residues, $\mathrm{tr}_M = \sum_\lambda y_\lambda\,\chi_\lambda$, with one term per Wedderburn channel $V_\lambda$. The content/twist eigenbasis organises these characters $\chi_\lambda$ by their ribbon-twist eigenvalue $\theta_\lambda = q^{2c(\lambda)}$, which is the scalar by which the full twist $\varDelta^2 \in Z(H_n(q))$ acts on $V_\lambda$. Three structural properties characterise each $\chi_\lambda(\beta)$:
+
+1. **Parity.** For a braid word $\beta$ of length $L$, every Laurent exponent of $\chi_\lambda(\beta)(q)$ has the same parity as $L$. Equivalently, $\chi_\lambda(\beta)(-q) = (-1)^L\,\chi_\lambda(\beta)(q)$. This parity dictates which crossing-counts contribute to a given channel.
+2. **Conjugation duality.** The bar involution $q \mapsto q^{-1}$ swaps the seminormal eigenvalues $q \leftrightarrow -q^{-1}$ and intertwines $V_\lambda$ with the conjugate channel $V_{\lambda'}$. Thus, $\chi_\lambda(q^{-1}) = \varepsilon_\lambda\,\chi_{\lambda'}(q)$ for some $\varepsilon_\lambda \in \{\pm 1\}$. This conjugation duality represents the matter/antimatter symmetry of the channel weights.
+3. **Framing rational.** Framing $\beta$ by $m$ full twists scales $\chi_\lambda$ by $\theta_\lambda^m$. The framing tower is given by the single-pole rational function $\chi_\lambda(\beta)/(1 - t\,\theta_\lambda)$, with its sole pole at $t = q^{-2c(\lambda)}$. This rational form determines how reframing redistributes weight across the tower.
+
+These structural properties strictly derive from categorical inputs, namely the ribbon eigenvalue and the seminormal bar–conjugate relation. They are fully formalised in Lean.
+<!-- FILE_END: eigenbasis-structural-lemmas.md -->
+

@@ -1,4 +1,3 @@
-**Proposition (mirror-pair cancellation of the bar-even baseline).**
 *Let $(Z, N)$ and $(N, Z)$ be a mirror pair at fixed mass number
 $A = Z + N$, with crossing statistics of the atom braid word*
 $$
@@ -29,11 +28,4 @@ additive form $\beta(A) + \zeta(Z-N)$ — that separation is the only hypothesis
 justified by the mirror-invariance of the bar-even statistics and supplied (not
 derived) as the additive-channel ansatz.
 
-This is why the observed mirror splits are clean numerical values
-($\zeta(+1) - \zeta(-1) \approx -1.34$ for ${}^{3}\mathrm{He}/{}^{3}\mathrm{H}$,
-$\approx -1.77$ for ${}^{7}\mathrm{Be}/{}^{7}\mathrm{Li}$) even where the absolute
-deviations are large and $A$-dependent, and even past the $A \le 4$ regime in
-which the leading $q_0^{10A-5}$ near-match holds: the difference isolates the
-bar-odd $Z$-correction from the $A$-dependent baseline. The sign of $\zeta$ is
-fixed by the per-nucleon intra-$\mathcal{B}_3$ writhe asymmetry (proton $+3 >$
-neutron $+1$); the magnitude is open and is not fitted.
+Thus, the observed mirror splits are clean numerical values ($\zeta(+1) - \zeta(-1) \approx -1.34$ for ${}^{3}\mathrm{He}/{}^{3}\mathrm{H}$, $\approx -1.77$ for ${}^{7}\mathrm{Be}/{}^{7}\mathrm{Li}$) even where absolute deviations are large and $A$-dependent. This holds even past the $A \le 4$ regime. The difference isolates the bar-odd $Z$-correction from the $A$-dependent baseline. The sign of $\zeta$ is fixed by the per-nucleon intra-$\mathcal{B}_3$ writhe asymmetry (proton $+3 >$ neutron $+1$); its magnitude is open and unfitted.

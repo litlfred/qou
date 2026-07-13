@@ -1,0 +1,64 @@
+{
+  "computation": "qbeta-net-bar-odd-projection",
+  "description": "Bar-odd projection of the H_3 GS categorical net Delta(net) equals (h/4)*C(q^2+q^-2) with C(y)=y^3-4y^2+3y-2 -- an INDEPENDENT categorical derivation of KC20's irreducible odd-channel Hopf cubic.",
+  "auditOnly": true,
+  "tier": "symbolic-exact (sympy; no fit, no anchors)",
+  "computedAt": "2026-07-07T19:39:02.631578+00:00",
+  "commitSha": "2343c25c121e6561e6457c1b8cb714a5d2ca44a2",
+  "engine": "sympy",
+  "engineVersion": "1.14.0",
+  "scriptFile": "qbeta_net_bar_odd_projection_probe.py",
+  "scriptHash": "c18f0c501a6c",
+  "assertions": [
+    {
+      "name": "W_odd_1_projection_equals_KC20_cubic",
+      "passed": true,
+      "detail": "Delta(net)_odd = (h/4) * C(q^2+q^-2), C(y)=y^3-4y^2+3y-2"
+    },
+    {
+      "name": "W_odd_bar_odd",
+      "passed": true,
+      "detail": "Delta(net)_odd is exactly bar-odd"
+    },
+    {
+      "name": "W_odd_2_sector_split",
+      "passed": true,
+      "detail": "C = C_Hopf + C_unknot"
+    },
+    {
+      "name": "W_odd_3_C_irreducible",
+      "passed": true,
+      "detail": "C irreducible over Q"
+    },
+    {
+      "name": "W_odd_3_C_Hopf_irreducible",
+      "passed": true,
+      "detail": "C_Hopf irreducible over Q"
+    },
+    {
+      "name": "W_odd_4_no_quadratic_anchor_root",
+      "passed": true,
+      "detail": "C(y) at {'golden': 3, 'silver': 6, 'classical': 2} = golden:-2, silver:88, classical:-4 (none 0) => quadratic-anchor c_3 closures excluded"
+    },
+    {
+      "name": "W_odd_5_vanishes_at_q1",
+      "passed": true,
+      "detail": "Delta(net)_odd -> 0 as q -> 1 (h(1)=0)"
+    }
+  ],
+  "allPassed": true,
+  "result": {
+    "Delta_net_odd": "(q**14 - 5*q**12 + 10*q**10 - 16*q**8 + 16*q**6 - 10*q**4 + 5*q**2 - 1)/(4*q**7)",
+    "identity": "Delta(net)_odd = (h/4) * C(q^2+q^-2)",
+    "C": "y^3 - 4y^2 + 3y - 2",
+    "C_Hopf": "y^3 - 6y^2 + 10y - 6",
+    "C_unknot": "2y^2 - 7y + 4",
+    "verdict": "CONFIRMED: the bar-ODD projection of the H_3 GS categorical net is EXACTLY Delta(net)_odd = (h/4) * C(q^2+q^-2) with C(y)=y^3-4y^2+3y-2 -- the SAME irreducible odd-channel cubic KC20 derived independently from the cyclotomic / Hopf-sector analysis. C = C_Hopf + C_unknot reproduces KC20's sector split; C and C_Hopf are irreducible over Q; no quadratic anchor (golden/silver/classical) is a root, so real-q/quadratic c_3 closures are structurally excluded (second independent witness for KC20). The full net's cosh-likeness (W2 kill) is the bar-EVEN part; the decay carrier is this bar-ODD cubic. NO c_k value; nothing wired."
+  },
+  "context": {
+    "follows": "W2 kill (docs/audits/2026-07-07-qbeta-gs-net-vs-cos-ladder-w2-kill.md)",
+    "independent_of": "KC20 (registry \u00a79) -- derived C from cyclotomic/Hopf-sector; this derives it from the GS augmentation bar-odd projection",
+    "gs_reducer": "computations/qbeta/qbeta_h4_nucleon_assembly.py",
+    "flip_flop_guard": "registry section 8 -- no c_k wired"
+  }
+}

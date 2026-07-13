@@ -14,10 +14,22 @@ LaTeX label: `prop:jet-sw-tau-decomposition`. Lemma **L2** of the
 step-9 binding-closure workplan: the SW differential is the jet-graded
 decomposition of the Archimedean functor.
 
-The realisation content — exhaustiveness of the jet tower and additivity
-of `τ` on the associated graded — is packaged as the structure
-hypothesis (`prop:mi-sw-abelianisation`), so the graded-sum identity is
-available downstream sorry-free.
+## Lean structure — derived, not projected
+
+The realisation content is packaged as **two genuine hypothesis
+fields**, and the graded-sum identity is *derived* from them (not
+projected from a single conclusion-typed field):
+
+  * `tau_additive` — the "observe last" / exhaustiveness principle:
+    `τ` collapses the jet tower to the graded sum `∑_n τ(graded_n)`
+    (additivity of `τ` on the associated graded).
+  * `graded_eq_period` — `prop:mi-sw-abelianisation`: each vertical
+    (jet) graded piece `τ(graded_n)` equals the `n`-th prolonged SW
+    period `a_D^{(n)} = ∮ λ_SW^{(n)}` (`prop:sw-period-residue-sum`).
+
+`jet_sw_tau_decomposition` composes the two — rewrites `τ` to the
+graded sum, then rewrites each summand to the SW period — yielding
+`τ(MI∫) = ∑_n a_D^{(n)}`. Neither field is this conclusion.
 
 ## References
 
@@ -31,24 +43,42 @@ namespace QOU.Brings
 
 open scoped BigOperators
 
-/-- **Jet / τ decomposition data**: the prolonged SW periods `a_D^{(n)}`
-    for `n < maxOrder`, the τ-value of the MI integral, and the identity
-    that τ equals the graded sum of periods. -/
+/-- **Jet / τ decomposition data**.  All fields are *inputs*: the
+    prolonged SW periods, the τ-value of the MI integral, the τ-image of
+    each jet graded piece, and the two structural hypotheses (additivity
+    of `τ` on the associated graded, and the identification of each
+    graded piece with a SW period).  None is the conclusion
+    `tauValue = ∑ period n`. -/
 structure JetSWArchDecomposition where
   /-- Highest vertical (jet) degree retained. -/
   maxOrder : ℕ
-  /-- The `n`-th prolonged SW period `a_D^{(n)} = ∮ λ_SW^{(n)}`. -/
+  /-- The `n`-th prolonged SW period `a_D^{(n)} = ∮ λ_SW^{(n)}`
+      (`prop:sw-period-residue-sum`: an algebraic residue sum). -/
   period : ℕ → ℂ
+  /-- The τ-image `τ(graded_n)` of the `n`-th vertical (jet) graded piece
+      of the MI integral. -/
+  tauGraded : ℕ → ℂ
   /-- The Archimedean value `τ(MI∫_{S_c})`. -/
   tauValue : ℂ
-  /-- τ is the jet-graded sum of the prolonged SW periods. -/
-  tau_eq : tauValue = ∑ n ∈ Finset.range maxOrder, period n
+  /-- **Additivity / exhaustiveness of `τ`** (the "observe last"
+      principle): `τ` collapses the jet tower to the graded sum of the
+      τ-images of its graded pieces.  A structural *hypothesis* — its
+      right-hand side sums `tauGraded`, not `period`. -/
+  tau_additive : tauValue = ∑ n ∈ Finset.range maxOrder, tauGraded n
+  /-- **`prop:mi-sw-abelianisation`**: each jet graded piece's τ-image is
+      the `n`-th prolonged SW period.  A structural *hypothesis*, not the
+      graded-sum conclusion. -/
+  graded_eq_period : ∀ n, tauGraded n = period n
 
 /-- **L2.** The τ-image of the MI integral is the sum over jet degrees of
-    the prolonged Seiberg–Witten periods. -/
+    the prolonged Seiberg–Witten periods.  **Derived** (not projected):
+    rewrite `τ` to the graded sum (`tau_additive`), then rewrite each
+    summand `tauGraded n` to the SW period `period n`
+    (`graded_eq_period`).  Neither hypothesis field is this conclusion. -/
 -- Ref: [manuscript] §5-brings-surface
 theorem jet_sw_tau_decomposition (D : JetSWArchDecomposition) :
-    D.tauValue = ∑ n ∈ Finset.range D.maxOrder, D.period n :=
-  D.tau_eq
+    D.tauValue = ∑ n ∈ Finset.range D.maxOrder, D.period n := by
+  rw [D.tau_additive]
+  exact Finset.sum_congr rfl (fun n _ => D.graded_eq_period n)
 
 end QOU.Brings

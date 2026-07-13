@@ -1,14 +1,4 @@
-**Conjecture (D18 3d–3d correspondence closure, research-grade,
-long horizon).**
-*The Dimofte–Gaiotto–Gukov 3d–3d correspondence maps a hyperbolic
-3-manifold $M^3$ to a 3d $\mathcal{N}{=}2$ gauge theory $T[M^3]$
-such that the partition function $Z_{T[M^3]}(q)$ on a squashed
-3-sphere $S^3_b$ equals the state-integral invariant of $M^3$
-constructed from the quantum dilogarithm $\Phi_q$.  Applied to the
-Borromean rings complement $\mathbf{S}^3 \setminus \mathcal{B}_3$,
-the 3d–3d theory $T[\mathbf{S}^3 \setminus \mathcal{B}_3]$ has a
-partition function whose $h^4$ coefficient is the QOU framework's
-$h^4 = -3/4$.*
+The Dimofte–Gaiotto–Gukov 3d–3d correspondence maps a hyperbolic 3-manifold $M^3$ to a 3d $\mathcal{N}{=}2$ gauge theory $T[M^3]$. The partition function $Z_{T[M^3]}(q)$ on a squashed 3-sphere $S^3_b$ equals the state-integral invariant of $M^3$ constructed from the quantum dilogarithm $\Phi_q$. Applied to the Borromean rings complement $\mathbf{S}^3 \setminus \mathcal{B}_3$, the 3d–3d theory $T[\mathbf{S}^3 \setminus \mathcal{B}_3]$ yields a partition function whose $h^4$ coefficient matches the framework's Markov-trace coefficient $h^4 = -3/4$.
 
 ## Significance
 

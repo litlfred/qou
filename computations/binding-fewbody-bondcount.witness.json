@@ -1,0 +1,53 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-11T18:46:31.998542+00:00",
+  "commitSha": "faa944dd542b03b5538cf64ad1e5840edfaeaa24",
+  "assertions": [
+    {
+      "name": "fewbody_truncation_tames_overshoot",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "n_max=3 chain truncation worst |err| = 50% (vs full-tower ~2e6%); residual is the geometric bond-count M_n(K)."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 12,
+  "computation": "binding-fewbody-bondcount",
+  "scriptFile": "binding_fewbody_bondcount.py",
+  "scriptHash": "ed5eb90593be",
+  "scriptCommitSha": "aa516278c4ee44b4bb1633fa4cb763b9be0b7a67",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "EXPLORATORY: few-body truncation (n_max=3) of the na-Stokes jet-filtration binding drops the sum-to-A overshoot from ~2e6% to ~50%; the residual is the geometric bond-count M_n(K) (implied #bonds/A = nuclear coordination, plateau ~2.6-3.8 for A≥6). Synthesis: a_D=per-cluster energy, knot topology=cluster count; missing piece is geometric (bond-count), not an algebraic weight kernel. Weights anchored on D,T; no free fit.",
+  "data": {
+    "w2_w3_anchored": {
+      "w2": 4.353367066605519,
+      "w3": 5.902751260185191
+    },
+    "coordination_bonds_per_A": {
+      "D": 0.5,
+      "T": 1.2709326972841744,
+      "3He": 1.3060971945486466,
+      "4He": 3.2818540960264055,
+      "6Li": 2.5751860227421237,
+      "7Li": 2.6652296210999453,
+      "9Be": 3.1126495266684895,
+      "12C": 3.8058505576350634
+    },
+    "chain_worst_err_pct": 49.52855923937046
+  }
+}

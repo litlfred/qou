@@ -1,10 +1,11 @@
 ---
 # mmst
 title: 'Data-integrity: ~5e-8 Wenzl-Frobenius vs markov-peel dual-implementation tr_M gap (deuteron 4.8e-8, He-4 1.3e-7)'
-status: todo
+status: completed
 type: task
+priority: normal
 created_at: 2026-06-30T16:06:58Z
-updated_at: 2026-06-30T16:06:58Z
+updated_at: 2026-07-11T12:16:16Z
 ---
 
 

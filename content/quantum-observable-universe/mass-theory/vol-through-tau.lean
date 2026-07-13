@@ -3,11 +3,22 @@
 --   the simplicial volume of a knot.
 -- Vol(K) factors strictly through the QOU fibre functor τ : C → Arch.
 --
--- Canonical declaration lives in: lean/QOU/MotivesArchimedean.lean
--- This sibling is a documentation-mirror of the QOU library declaration.
+-- **Proposition (conditional on `conj:kashaev-volume-conjecture`, per
+-- AGENTS.md §3b-cond).**  The Kashaev-limit identification of the
+-- hyperbolic volume is the conjectural input, axiomatised as the class
+-- `QOU.Kashaev.VolumeConjecture`; conditional on an instance, the
+-- factorization Vol(K_β) = τ_arch(Vol_q(β)) is *derived* below
+-- (`vol_through_tau_of_volumeConjecture`).
+--
+-- The categorified `VolThroughTau` data packaging (with `Category C`)
+-- lives in lean/QOU/MotivesArchimedean.lean; this sibling carries the
+-- conditional derivation.
 import Mathlib.Data.Real.Basic
+import QOU.Kashaev
 
 namespace QOU.BraidsKnots
+
+open QOU.Kashaev QOU.PhiQPiece
 
 /-- Abstract archimedean target category Arch (e.g. smooth manifolds,
     real Hilbert spaces, or any chosen archimedean realization). -/
@@ -27,29 +38,27 @@ structure FibreFunctor (C : Type*) (Arch : ArchimedeanCategory) where
   /-- The archimedean restriction τ_arch = π_∞ ∘ τ on objects. -/
   archRestriction : C → Real
 
-/-- **Vol(K) factors through τ.**
+/-- **Vol(K) factors through τ (conditional on the Kashaev volume
+    conjecture).**
 
-    The real-valued knot volume of the closure of a braid β equals
-    the τ_arch-image of its algebraic quantum volume Vol_q(β).
-    This is the QOU statement of the volume conjecture as a
-    factorization through the fibre functor. -/
-structure VolThroughTau (C : Type*) (Arch : ArchimedeanCategory) where
-  /-- The QOU fibre functor. -/
-  τ : FibreFunctor C Arch
-  /-- The algebraic quantum volume of a braid (as an element of C). -/
-  algVol : C
-  /-- The real-valued knot volume of the braid closure. -/
-  knotVol : Real
-  /-- Factorization: knotVol = τ_arch(algVol). -/
-  factors : knotVol = τ.archRestriction algVol
+    Hypotheses:
+    * `[VolumeConjecture q]` — the class axiomatisation of
+      `conj:kashaev-volume-conjecture`: the hyperbolic volume equals
+      the Kashaev limit (`kvc_holds`).
+    * `hcomp` — the computation rule of the archimedean realization
+      functor: `τ_arch` evaluates the algebraic quantum volume
+      `Vol_q(β)` as the Kashaev limit of `β` (per
+      `def:archimedean-realization-functor`).
 
-/-- Theorem asserting the factorization of knot volume through the fibre functor:
-    for any `VolThroughTau` witness, the real-valued knot volume equals the
-    `τ_arch`-image of the algebraic quantum volume. -/
--- Ref: [manuscript]
-theorem vol_through_tau_factors {C : Type*} {Arch : ArchimedeanCategory}
-    (v : VolThroughTau C Arch) :
-    v.knotVol = v.τ.archRestriction v.algVol :=
-  v.factors
+    Conclusion: the real-valued knot volume factors through the fibre
+    functor, `Vol(K_β) = τ_arch(Vol_q(β))` — derived from `kvc_holds`,
+    not assumed. -/
+theorem vol_through_tau_of_volumeConjecture (q : ℝ) [inst : VolumeConjecture q]
+    {C : Type*} {Arch : ArchimedeanCategory}
+    (τ : FibreFunctor C Arch) (β : Braid) (algVol : C)
+    (hcomp : τ.archRestriction algVol = inst.kashaevLimit β) :
+    inst.hypVolume β = τ.archRestriction algVol := by
+  rw [hcomp]
+  exact inst.kvc_holds β
 
 end QOU.BraidsKnots

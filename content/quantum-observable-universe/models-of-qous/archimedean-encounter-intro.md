@@ -1,7 +1,7 @@
-A link complement carries a hyperbolic metric whose volume is an invariant of the link alone; that volume, read through the encounter, fixes a discrete mass spectrum. The archimedean wall is where this geometric fact meets its algebraic counterpart, and both sides turn out to be rigid: an encounter has a unique outcome no matter which side one approaches it from.
+The hyperbolic volume of a link complement is a topological invariant. Through the encounter mechanism, this volume determines a discrete mass spectrum. The archimedean wall connects this geometric rigidity to an algebraic counterpart.
 
-On the geometric side, hyperbolic (Mostow) rigidity locks the spectrum — the hyperbolic volume of the link complement leaves no continuous freedom, so the mass eigenvalue it selects is discrete and unique. On the algebraic side, the SDP Slater-uniqueness condition plays the same role: the selection problem has a single feasible interior point, so its solution is likewise pinned. The two rigidities are the geometric and algebraic faces of one picture.
+Geometry and algebra independently force a unique outcome for the encounter. On the geometric side, Mostow rigidity locks the hyperbolic volume. It leaves no continuous deformations and selects a unique discrete mass eigenvalue. On the algebraic side, the Slater uniqueness condition for semidefinite programming ensures the selection problem has a single feasible interior point. These two rigidities are equivalent.
 
-These matches are anchored in the existing literature — Mostow, Thurston, Neumann--Zagier, Witten, and Kashaev — which the encounter picture inherits rather than re-derives.
+We rely on established results from Mostow, Thurston, Neumann–Zagier, Witten, and Kashaev. The encounter mechanism packages these known facts.
 
-Part B takes up the archimedean wall as the setting for the Descartes universe. (The fluid-dynamics development that once sat here now lives in Chapter 10.)
+Part B places the Descartes universe on the archimedean wall.

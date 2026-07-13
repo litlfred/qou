@@ -1,0 +1,58 @@
+{
+  "computation": "qbeta-ohtsuki-borel-exact",
+  "description": "Richardson-accelerated Borel singularity A of the 4\u2081 even channel from the exact symbolic rungs \u03ba_1..\u03ba_12; candidate tests vs Vol-multiples.",
+  "audit_only": true,
+  "tier": "symbolic-exact input, extrapolated A",
+  "computedAt": "2026-07-12T15:35:23.303148+00:00",
+  "commitSha": "59f947f95acec948b3db13faa64b1a0571143596",
+  "engine": "sympy+mpmath",
+  "engineVersion": "sympy 1.14.0, mpmath 1.3.0",
+  "scriptFile": "qbeta_ohtsuki_borel_exact.py",
+  "scriptHash": "425a095a8bfe",
+  "assertions": [
+    {
+      "name": "richardson_stable_4plus_digits",
+      "passed": false
+    },
+    {
+      "name": "A_positive_finite",
+      "passed": true
+    }
+  ],
+  "allPassed": false,
+  "result": {
+    "M": 12,
+    "kappas_exact": {
+      "1": "11*sqrt(3)*pi/108",
+      "2": "2*pi**2/27",
+      "3": "1081*sqrt(3)*pi**3/21870",
+      "4": "98*pi**4/729",
+      "5": "110011*sqrt(3)*pi**5/688905",
+      "6": "207892*pi**6/295245",
+      "7": "32729683*sqrt(3)*pi**7/26572050",
+      "8": "139418294*pi**8/18600435",
+      "9": "860118209659*sqrt(3)*pi**9/49718962755",
+      "10": "48187226692*pi**10/358722675",
+      "11": "3963323494126429*sqrt(3)*pi**11/10282785478875",
+      "12": "8151561592180588*pi**12/2237353323975"
+    },
+    "A": "0.75812525754766621347",
+    "A_confident_digits": 2,
+    "beta": "1.998334405",
+    "candidate_devs": {
+      "Vol/pi": "0.173329",
+      "Vol/2pi": "1.34666",
+      "2Vol/pi": "-0.413336",
+      "3Vol/4pi": "0.564439",
+      "2Vol/3pi": "0.759993"
+    },
+    "best_candidate": "Vol/pi",
+    "candidate_match": false,
+    "verdict": "Borel singularity from EXACT rungs \u03ba_1..\u03ba_12: A = 0.758125257548 (Richardson on exact \u0394r_n, \u22482 stable digits; \u03b2 \u2248 1.99833). No tested parameter-free candidate matches at attained precision (best: Vol/pi, rel dev 0.173); the #3628 'A \u2248 Vol/\u03c0 (4.4%)' suggestion is hereby SUPERSEDED as not exact \u2014 the true A awaits either more rungs (slow convergence) or the exact resurgence identification via the state integral. Scope: 4\u2081 topology; NOT a Q_\u03b2 c_k; no fit; no wiring; no tier change."
+  },
+  "context": {
+    "axis": "z->c_k f-map keystone: even-channel Borel singularity, exact input",
+    "supersedes": "#3628 numerical A=0.6177 (5 noisy ratios)",
+    "bridge_status": "open (Borel/Phi_b continuation)"
+  }
+}

@@ -120,7 +120,8 @@ The q-Reeb model `B(K) = ρ·S(K)`, `S = Σ_λ y_λ dim_λ |Δθ_λ|`. The key s
 ## Cross-cutting
 
 None of the three manufactured a closure. The Δ_λ / per-isotope binding gate
-**remains open** (`precision-goals.md`: 3/7 L2 met). What changed:
+**remains open** (`precision-goals.md`: 3/7 L2 met at this doc's date; 2/7
+since the 2026-07-04 m_p de-fit). What changed:
 
 | lever | before | after (this session) |
 |---|---|---|

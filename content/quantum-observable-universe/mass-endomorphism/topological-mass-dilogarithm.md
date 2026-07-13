@@ -1,6 +1,4 @@
-**Lemma.**
-*Each exceptional-divisor summand evaluates to the quantum
-dilogarithm:*
+*Each exceptional-divisor summand evaluates to the quantum dilogarithm in the spectral coordinates of the Briggs--Klein chart at $E_i$:*
 
 $$
   \bigl\lVert
@@ -10,7 +8,5 @@ $$
   =
   \Phi_q(z_i)
   =
-  \int_0^{z_i} \frac{\ln_q(1+t)}{t}\, dt,
+  \int_0^{z_i} \frac{\ln_q(1+t)}{t}\, dt.
 $$
-
-*in the spectral coordinates of the Briggs--Klein chart at $E_i$.*

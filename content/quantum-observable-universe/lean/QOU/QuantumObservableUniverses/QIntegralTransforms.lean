@@ -46,9 +46,13 @@ structure CategoricalLaplace (A : Type*) where
   monoidal_mul :
     ∀ (f g : A → A) (s : Archimedean.R_q) (q_conv : (A → A) → (A → A) → (A → A)),
       (transform (q_conv f g) s) = fun x => transform f s (transform g s x)
-  /-- Unit preservation: `L[1] = 1`. -/
+  /-- Unit preservation: `L[𝟙] = 𝟙`, with the monoidal unit of `A → A`
+      under composition pinned to `id`.  Quantifying `one` over *all*
+      functions (the previous form) together with `monoidal_mul` makes
+      the structure uninhabitable for `|A| ≥ 2`; the unit is a specific
+      object, so it is `id`. -/
   monoidal_unit :
-    ∀ (one : A → A) (s : Archimedean.R_q),
-      transform one s = one
+    ∀ (s : Archimedean.R_q),
+      transform id s = id
 
 end QOU

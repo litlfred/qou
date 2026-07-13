@@ -1,4 +1,3 @@
-**Proposition (Bring residue $\to$ canonical resolvent form).**
 *The substrate evaluation of the residue / Schwarz integral on
 Bring's surface around the simple pole of order $n$ of $\sigma$
 on the torus knot $T(p, k)$ with $\alpha_{\text{shift}}(p, k) = n$
@@ -59,8 +58,7 @@ Closing `BringResidueAtOrder n q` requires either:
 Both routes converge on the same closed form
 $F_n(q) = 1 / (1 - h_q \cdot q^n)$.  Closing the class is a
 Mathlib-import follow-up; until then this file states the
-**conditional uniqueness** of the resolvent form per AGENTS.md
-§3b-cond.
+**conditional uniqueness** of the resolvent form.
 
 ## Downstream consequence
 

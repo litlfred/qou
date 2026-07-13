@@ -1,7 +1,11 @@
-The archimedean functor $\tau \colon \mathbf{C} \to \mathbf{Arch}$
-([def:archimedean-realization-functor](#def:archimedean-realization-functor))
+The fibre functor $\tau \colon \mathbf{C} \to \mathbf{Arch}$, followed by
+the archimedean evaluation $\pi_\infty \colon \mathrm{Obj}(\mathbf{Arch}) \to \mathbb{R}$
+([def:archimedean-realization-functor](#def:archimedean-realization-functor)),
 maps each algebraic structure on the categorical side to a concrete
-real-valued object at the substrate parameter $q_0$. The table below
+real-valued object at the substrate parameter $q_0$. (Per the notation
+register, $\tau$ is the functor; the archimedean realization
+$\pi_\infty \circ \tau$ is an evaluation into $\mathbb{R}$, not itself a
+functor between QOU categories.) The table below
 catalogues these images systematically, distinguishing structures
 that are **implemented** in the current pipeline from those that
 remain open infrastructure targets.
@@ -35,7 +39,7 @@ physically deepest entries are:
   split: the proton and neutron braids $\beta_p, \beta_n$ differ by
   crossing signs, and $S$ is the map between them. The
   $\tau$-image of $S$ is the real-valued gap
-  $\operatorname{tr}_M(\beta_n) - \operatorname{tr}_M(\beta_p)$,
+  $\mathrm{tr}_M(\beta_n) - \mathrm{tr}_M(\beta_p)$,
   which (after calibration) gives $\mathfrak{Q}_\beta$.
 
 - **Row 5 (HOMFLYPT mirror).** The mirror $P(\bar K) = P(K; a^{-1}, z)$

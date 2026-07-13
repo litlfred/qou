@@ -11,5 +11,4 @@ $$
   \bigl((q^2 - q^{-2}) + (q^4 - q^{-4}) + (q^6 - q^{-6})\bigr),
 $$
 
-which holds in any field with $q \ne 0$ by direct expansion (`ring`
-in the Lean formalisation). $\square$
+which holds in any field with $q \ne 0$ by direct expansion. $\square$

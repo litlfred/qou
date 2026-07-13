@@ -1,0 +1,107 @@
+{
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-07-07T14:43:44.657941+00:00",
+  "commitSha": "2ac1bc97e663e514a3d27348540e4e8e31443cf4",
+  "assertions": [
+    {
+      "name": "WP1_wenzl_boundaries_exist",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "[4m]_q=0 at ζ_{4m} (m=1,2,3) — Wenzl annihilator boundaries"
+    },
+    {
+      "name": "WP2_c4even_generic_not_wp_closed_form",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "exact c_4^even is generic ℚ(√3) (height~1e9), no low-complexity W-P form"
+    },
+    {
+      "name": "WP3_c8_break_is_second_boundary",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "c_8 first-free-rung break (c6-c10) ↔ [8]_q=0 (ζ_8) boundary"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 58,
+  "computation": "qbeta-c4-wenzl-pochhammer-channel",
+  "scriptFile": "qbeta_c4_wenzl_pochhammer_channel_probe.py",
+  "scriptHash": "30cf9b3ab8a4",
+  "scriptCommitSha": "2ac1bc97e663e514a3d27348540e4e8e31443cf4",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Pursues the surviving c_k candidate: Wenzl–Pochhammer (vanishing quantum integers [n]_q=0 at roots of unity = Habiro-tower annihilator boundaries, phase channel). WP1: [4m]_q=0 boundaries exist exactly. WP2: the exact c_4^even (9fnm, ∈ ℚ(√3)) is a GENERIC ℚ(√3) element (huge heights), NOT a low-complexity W-P value ⇒ W-P gives no clean c_4 closed form. WP3: the known c_k break at c_8 (c6-c10 witness) coincides with the [8]_q=0 second boundary. Verdict scope-(a): W-P is the correct CHANNEL (roots of unity + [4m]_q boundaries) but does not fix c_4; that needs the #3458 evaluation map in the W-P basis, not a special-function substitution. No c_4 fitted.",
+  "contentBlock": "prop:phi-b-unitary-bar-odd",
+  "data": {
+    "wp1_boundaries": [
+      {
+        "k": 4,
+        "root": "zeta_4",
+        "value": "0",
+        "is_zero": true
+      },
+      {
+        "k": 8,
+        "root": "zeta_8",
+        "value": "0",
+        "is_zero": true
+      },
+      {
+        "k": 12,
+        "root": "zeta_12",
+        "value": "0",
+        "is_zero": true
+      }
+    ],
+    "wp1_cross_vanishing_at_zeta4": {
+      "4": true,
+      "8": true,
+      "12": true
+    },
+    "wp2_c4even_a": "-2483340421/1451520",
+    "wp2_c4even_b_sqrt3": "-120701/1920",
+    "wp2_max_rational_height": 2483340421,
+    "wp2_is_generic_not_structured": true,
+    "wp3_break_rung_from_c6c10_witness": 8,
+    "wp3_c8_break_is_eight_q_boundary": true,
+    "channel": "phase / root-of-unity (surviving candidate); magnitude-channel candidates q-Hermite/q-Bessel/toroidal excluded",
+    "determines_c4": false,
+    "handoff": "PR #3458 evaluation map in the Wenzl-Pochhammer basis",
+    "upstream_witness_hashes": [
+      {
+        "path": "qbeta-ck-sseries-exact-rational.witness.json",
+        "sha256": "1b1a4e57157efd097c58a18696529975cf62a2af93ce0bd69376aaead86469f5",
+        "size_bytes": 3999,
+        "commitSha": "45676495cbb013a717c12ee84569a564d61df977",
+        "scriptCommitSha": "unknown",
+        "computedAt": "2026-07-03T11:24:32.851063+00:00"
+      },
+      {
+        "path": "qbeta-c6-c10-crossanchor-falsification.witness.json",
+        "sha256": "42979a75824e9b6502ead538c0bcb357f162a339f91875ce51a4e7b4ea537318",
+        "size_bytes": 4560,
+        "commitSha": "58d7abe89fb9e1ee9064a9bca3cffb503953a750",
+        "scriptCommitSha": "c4ab12b6302fa62343f303820d6efb8e2667719d",
+        "computedAt": "2026-06-22T13:27:29.667225+00:00"
+      }
+    ]
+  }
+}

@@ -577,7 +577,7 @@ Sprint C (after A4 + B1 land)
 
 C1. α₄ canonical derivation or labeling (#5)
 C2. Delete per-isotope ladder fits (#6) — verify they're redundant once #2/#3/#4 land
-C3. Pentagon-defect O(ℏ_q²) Faddeev resummation → light-atom residue 1% → ~100 ppm
+C3. Pentagon-defect O(ℏ_q²) compact-q-dilog resummation → light-atom residue 1% → ~100 ppm
 C4. Markov-equivalence knot ID (replaces SnapPy census search) → 100 ppm → 1 ppm
 C5. q₀ exhaustion to 1 ppb (CODATA-bounded, framework-limit)
 What to do on this branch right now

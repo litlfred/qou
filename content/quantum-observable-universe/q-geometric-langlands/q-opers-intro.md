@@ -1,14 +1,1 @@
-With the conjecture in place, we turn to the spectral side
-and the canonical objects that realise it. The section introduces the
-Definition: $q$-Oper — a $\check{G}_q$-bundle on $X$ equipped with a
-reduction to the Borel and a $q$-flat connection in oper position —
-which provides the rigid spectral data dual to the $q$-Hecke
-eigensheaves of the automorphic side. The remaining two blocks
-implement this duality: the Conjecture: $q$-Opers are $q$-Hecke eigensheaves asserts that the fibre functor sends every
-$q$-oper to a $q$-Hecke eigensheaf with eigenvalue determined by its
-oper coordinates, and the accompanying Remark: Proof sketch: $q$-opers produce eigensheaves records the Frenkel–Reshetikhin
-construction underlying that map. Together they give the concrete
-realisation of the abstract Tannakian mediation conjectured in the
-previous section.
-
-_(draft.)_
+We turn to the spectral side of the conjecture and the canonical objects that realise it. We introduce the $q$-oper: a $\check{G}_q$-bundle on $X$, equipped with a reduction to the Borel subgroup and a $q$-flat connection in oper position. This object provides the rigid spectral data dual to the automorphic $q$-Hecke eigensheaves. The fibre functor maps every $q$-oper to a $q$-Hecke eigensheaf, with the eigenvalue determined by the oper coordinates. This concretely realises the abstract Tannakian mediation.

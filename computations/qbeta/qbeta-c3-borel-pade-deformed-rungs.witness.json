@@ -1,0 +1,100 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-12T22:52:38.748293+00:00",
+  "commitSha": "15105df99f96ea44321f40b051959a8c44436a2d",
+  "assertions": [
+    {
+      "name": "meridian_corrected_imV_stable_vs_truncation",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "Borel-Pade[2/2] resummed Im V within 15% of the 4-rung truncation"
+    },
+    {
+      "name": "deformed_borel_singularity_off_imaginary_ray",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "nearest deformed s-plane Borel pole stays off the +real Laplace ray (>0.1*pi) => single-valued Borel sum, #3692 conclusion survives deformation"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 10,
+  "computation": "qbeta-c3-borel-pade-deformed-rungs",
+  "scriptFile": "qbeta_c3_borel_pade_deformed_rungs_probe.py",
+  "scriptHash": "6cd4e8fc0f89",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Borel–Padé[2/2] resummation of the DEFORMED 4₁ Ohtsuki rungs κ̃₁…κ̃₄ at the substrate meridian (merged #3691 tall-ladder), the meridian-corrected version of #3692's u=0 resummation. (A) Deformed rungs are complex, so the even rungs now feed Im 𝔙_b: meridian-corrected Im 𝔙_b (truncation 0.057057657, resummed 0.058549995) vs #3692's odd-only u=0 0.05481/0.05545. (B) DECISIVE: the deformed Borel singularities stay off the imaginary substrate Laplace ray (nearest s-pole 0.48943·π off), so the Borel sum stays single-valued — no Stokes split / trans-series even at the deformed meridian; #3692's representational conclusion for the odd-S sign-flip (1/u³ ladder, #3636) survives the deformation. Caveat: 4 rungs → Padé[2/2], indicative. Scope-(a); no c_k wired; no fit.",
+  "contentBlock": "conj:im-q-physical-role",
+  "data": {
+    "rungs_deformed": {
+      "kappa1": {
+        "re": "0.5873433873112124",
+        "im": "-0.01950724962287248"
+      },
+      "kappa2": {
+        "re": "0.9121367216059822",
+        "im": "-0.0606559237025092"
+      },
+      "kappa3": {
+        "re": "3.956290802132388",
+        "im": "-0.3953604960998155"
+      },
+      "kappa4": {
+        "re": "24.78023253548119",
+        "im": "-3.310345961593749"
+      }
+    },
+    "t_ln_q0": "0.1043407203195195",
+    "imV_meridian_corrected": {
+      "truncation_4_rungs": "0.0570576566109",
+      "odd_only_part": "0.0567896600198",
+      "even_rung_im_contribution": "0.000267996591129",
+      "resummed_pade22": "0.0585499951473",
+      "u0_reference_truncation": "0.05481",
+      "u0_reference_resummed": "0.05545"
+    },
+    "borel_singularities_deformed": [
+      {
+        "xi_abs": "0.6313412913",
+        "xi_arg_rad": "0.033200474",
+        "xi_arg_over_pi": "0.010568039",
+        "s_pole": "(0.2008514 - 6.0474316j)",
+        "s_pole_arg_over_pi": "-0.48943196",
+        "arg_gap_to_imag_axis": "1.5375959"
+      },
+      {
+        "xi_abs": "7.727156528",
+        "xi_arg_rad": "0.033200432",
+        "xi_arg_over_pi": "0.010568026",
+        "s_pole": "(2.4582714 - 74.016148j)",
+        "s_pole_arg_over_pi": "-0.48943197",
+        "arg_gap_to_imag_axis": "1.5375959"
+      }
+    ],
+    "nearest_s_pole_gap_over_pi": "0.4894319609",
+    "nearest_xi_arg_gap_to_imag_axis_over_pi": "0.4894319609",
+    "u0_reference_action_A_Vol_over_pi": "0.646131894439",
+    "verdict": "MERIDIAN DEFORMATION DOES NOT reopen a resummable anchor-dependence. Borel–Padé[2/2] on the deformed κ̃₁…κ̃₄: meridian-corrected Im 𝔙_b = 0.058549995 (resummed) / 0.057057657 (truncation) — the even-rung imaginary parts add 0.000267997 to #3692's odd-only value. DECISIVE (question B): the deformed Borel singularities stay off the imaginary substrate ray (nearest s-plane pole 0.48943·π off the +real Laplace ray), so the Borel sum stays single-valued — no Stokes median split, no e^{−A/x} trans-series on the substrate ray, even at the deformed meridian. #3692's conclusion SURVIVES the deformation: Im 𝔙_b is the exact smooth value, the odd-S sign-flip is the 1/u³ ladder representation (#3636), representational / experimental-Q_β-limited, NOT resummable. Caveat: 4 rungs → Padé[2/2], indicative; scope-(a); no fit; no c_k wired.",
+    "scope": "(a) — deformed-meridian 4₁ asymptotics; no wiring",
+    "caveats": [
+      "4 deformed rungs → Borel–Padé[2/2]: resummed Im 𝔙_b is indicative (fewer than #3692's 6-rung [3/3]); the robust deliverable is the singularity-arg statement (question B).",
+      "rungs read from the merged tall-ladder witness; not re-extracted.",
+      "no c_k wired; no fit; no tier change."
+    ]
+  }
+}

@@ -134,8 +134,84 @@ export const references: CSLData[] = [
     issued: { "date-parts": [[2004]] },
     volume: "7",
     page: "291-309",
-    DOI: "10.4310/JDG/1090425531",
-    URL: "https://doi.org/10.4310/JDG/1090425531",
+    DOI: "10.2140/gtm.2004.7.291",
+    URL: "https://doi.org/10.2140/gtm.2004.7.291",
+    note: "Proceedings of the Casson Fest; arXiv:math/0306230. The AJ-conjecture formulation paper. DOI corrected 2026-07-06 from the spurious J. Diff. Geom. DOI 10.4310/JDG/1090425531 to the authoritative GTM DOI (verified via msp.org search snippets; ds4b literature check, PR #3434).",
+  }),
+
+  // ── Garoufalidis–Lê 2005 — colored Jones is q-holonomic (knots AND links) ──
+  ref({
+    id: "garoufalidis-le-2005",
+    type: "article-journal",
+    title: "The colored Jones function is q-holonomic",
+    author: [
+      { family: "Garoufalidis", given: "Stavros" },
+      { family: "Lê", given: "Thang T. Q." },
+    ],
+    "container-title": "Geometry & Topology",
+    issued: { "date-parts": [[2005]] },
+    volume: "9",
+    page: "1253-1293",
+    DOI: "10.2140/gt.2005.9.1253",
+    URL: "https://doi.org/10.2140/gt.2005.9.1253",
+    note: "arXiv:math/0309214. The existence half of the AJ machinery: the (multi-)colored Jones function satisfies a nontrivial q-difference recurrence for every knot and link — a THEOREM needing no framework input. Added 2026-07-06 (ds4b Borromean-AJ literature check, PR #3434); metadata verified via msp.org/Project Euclid snippets, PDF body not read in-sandbox.",
+  }),
+
+  // ── Lê 2006 — AJ conjecture proved for a large class of 2-bridge knots ──
+  ref({
+    id: "le2006",
+    type: "article-journal",
+    title: "The colored Jones polynomial and the A-polynomial of knots",
+    author: [{ family: "Lê", given: "Thang T. Q." }],
+    "container-title": "Advances in Mathematics",
+    issued: { "date-parts": [[2006]] },
+    volume: "207",
+    page: "782-804",
+    URL: "https://arxiv.org/abs/math/0407521",
+    note: "arXiv:math/0407521 (ScienceDirect S0001870806000156). Proves the AJ conjecture for a large class of two-bridge knots (including all twist knots); the trefoil-class backing for the corpus's StrongAJTrefoil literature class. Added 2026-07-06 (ds4b, PR #3434); DOI not captured in-sandbox — vol/pages verified via ScienceDirect snippet.",
+  }),
+
+  // ── Garoufalidis–Lê 2011 — asymptotics; Borromean VC via Habiro expansion ──
+  ref({
+    id: "garoufalidis-le-2011",
+    type: "article-journal",
+    title: "Asymptotics of the colored Jones function of a knot",
+    author: [
+      { family: "Garoufalidis", given: "Stavros" },
+      { family: "Lê", given: "Thang T. Q." },
+    ],
+    "container-title": "Geometry & Topology",
+    issued: { "date-parts": [[2011]] },
+    volume: "15",
+    page: "2135-2180",
+    URL: "https://arxiv.org/abs/math/0508100",
+    note: "arXiv:math/0508100. Appendix proves the volume conjecture for the BORROMEAN RINGS using Habiro's cyclotomic expansion (habiro2000) — the strongest published Borromean asymptotic result; no AJ/recurrence-ideal statement for the Borromean exists in the literature as of 2026-07 (ds4b check, PR #3434). Metadata verified via search snippets, PDF body not read in-sandbox.",
+  }),
+
+  // ── Sawabe 2024 — the link-AJ formulation (Hopf + Whitehead computed) ──
+  ref({
+    id: "sawabe2024",
+    type: "article",
+    title: "On the Annihilating polynomial of the Colored Jones Polynomial for Some Links",
+    author: [{ family: "Sawabe", given: "Shun" }],
+    issued: { "date-parts": [[2024]] },
+    URL: "https://arxiv.org/abs/2409.03802",
+    note: "arXiv:2409.03802 (v3 2026-03-30, unpublished preprint). Per the abstract: computes the annihilating polynomial of the multi-colored Jones for the Hopf and Whitehead links, defines the commutative/noncommutative link A-ideals, and FORMULATES the link version of the AJ conjecture — the only explicit link-AJ formulation found (ds4b check, PR #3434). Whether the Borromean rings appear beyond remarks is UNRESOLVED (PDF body not readable in-sandbox); do not cite this as a Borromean result.",
+  }),
+
+  // ── Masbaum 2003 — skein derivation of Habiro's twist-knot formulas ──
+  ref({
+    id: "masbaum2003",
+    type: "article-journal",
+    title: "Skein-theoretical derivation of some formulas of Habiro",
+    author: [{ family: "Masbaum", given: "Gregor" }],
+    "container-title": "Algebraic & Geometric Topology",
+    issued: { "date-parts": [[2003]] },
+    volume: "3",
+    page: "537-556",
+    DOI: "10.2140/agt.2003.3.537",
+    URL: "https://doi.org/10.2140/agt.2003.3.537",
+    note: "arXiv:math/0306345. Published companion to habiro2000: skein-theoretic derivation of Habiro's cyclotomic expansions for TWIST KNOTS (4₁ = K_{-1}, trefoil = K_1) — the source used by the corpus's Masbaum twist-knot cross-check (bean xcyc). Twist knots only; does NOT cover the Borromean rings. Added 2026-07-06 (ds4b, PR #3434).",
   }),
 
   // ── Nguyen–Tran 2021 — strong AJ conjecture proved for the figure-eight ──
@@ -273,6 +349,25 @@ export const references: CSLData[] = [
     DOI: "10.1090/S0002-9947-1992-1069750-0",
     URL: "https://arxiv.org/abs/1208.2521",
     note: "The self-reciprocal q-Hankel transform on E_q(2); third (Hahn–Exton) q-Bessel eq. (1.2) with Hansen–Lommel orthogonality at the roots of C_α(q;μ)=0. Source for the keystone value-map q-Bessel node screens (KeystoneSelfDualSpectralNarrowing.lean; docs/audits/2026-07-04-keystone-qhankel-eq2-vacuum-row-sourced-refutation.md).",
+  }),
+
+  // ── Ciccoli–Koelink–Koornwinder 1999 — big q-Bessel / q-Laguerre spectral duality ──
+  ref({
+    id: "ciccolikoelinkkoornwinder1999",
+    type: "article-journal",
+    title:
+      "q-Laguerre polynomials and big q-Bessel functions and their orthogonality relations",
+    author: [
+      { family: "Ciccoli", given: "Nicola" },
+      { family: "Koelink", given: "Erik" },
+      { family: "Koornwinder", given: "Tom H." },
+    ],
+    "container-title": "Methods and Applications of Analysis",
+    issued: { "date-parts": [[1999]] },
+    volume: "6",
+    page: "109-127",
+    URL: "https://arxiv.org/abs/math/9805023",
+    note: "Big q-Bessel / q-Laguerre spectral duality: the completed (non-N-extremal, Ramanujan ₁ψ₁) q-Laguerre L²-basis and its dual big-q-Bessel basis are exchanged by a self-reciprocal q-Hankel-type transform; SU(1,1)/E(2) quantum-group interpretations. Serves as the analytic prototype of the self-reciprocal transform whose categorical avatar (Verlinde S-matrix, S⁴=1) is the keystone (C) self-duality leg (KeystoneSelfDualSpectralNarrowing.lean; docs/audits/2026-07-05-keystone-selfduality-spectral-narrowing.md). Its discrete orthogonality carries a free scale c>0 (§4), so it is NOT a 0-dof node screen — used as a duality template, not an imported family. arXiv:math/9805023.",
   }),
 
   // ── Koornwinder 1990 — orthogonal polynomials & quantum groups ──
@@ -1416,6 +1511,97 @@ export const references: CSLData[] = [
     DOI: "10.1016/j.difgeo.2004.10.005",
   }),
 
+  // ── Tetraplectic / quaternionic-EW references (added 2026-07-06) ──
+  // Origin of the "tetraplectic structure" (closed non-degenerate 4-form).
+  ref({
+    id: "foth2002",
+    type: "article-journal",
+    title:
+      "Tetraplectic structures, tri-momentum maps, and quaternionic flag manifolds",
+    author: [
+      { family: "Foth", given: "Philip" },
+    ],
+    "container-title": "Journal of Geometry and Physics",
+    issued: { "date-parts": [[2002]] },
+    volume: "41",
+    issue: "4",
+    page: "330-343",
+    DOI: "10.1016/S0393-0440(01)00068-7",
+    URL: "https://arxiv.org/abs/math/0103042",
+  }),
+
+  // Foth–Leitner: four-vector fields on quaternionic flag manifolds
+  // (the Reeb-triad / quaternionic-twist source for bring_tetraplectic.md §4).
+  ref({
+    id: "fothleitner2003",
+    type: "article-journal",
+    title: "Geometry of Four-Vector Fields on Quaternionic Flag Manifolds",
+    author: [
+      { family: "Foth", given: "Philip" },
+      { family: "Leitner", given: "Frederick" },
+    ],
+    "container-title": "Communications in Mathematical Physics",
+    issued: { "date-parts": [[2003]] },
+    volume: "238",
+    issue: "1",
+    page: "119-140",
+    DOI: "10.1007/s00220-003-0821-9",
+    URL: "https://arxiv.org/abs/math/0104104",
+  }),
+
+  // Morita: the left–right symmetric SU(2)_L × SU(2)_R × U(1) quaternionic
+  // reformulation of Weinberg–Salam theory.
+  ref({
+    id: "morita1981",
+    type: "article-journal",
+    title: "Gauge Theories over Quaternions and Weinberg-Salam Theory",
+    author: [
+      { family: "Morita", given: "Katsusada" },
+    ],
+    "container-title": "Progress of Theoretical Physics",
+    issued: { "date-parts": [[1981]] },
+    volume: "65",
+    issue: "6",
+    page: "2071-2074",
+    DOI: "10.1143/PTP.65.2071",
+    URL: "https://academic.oup.com/ptp/article/65/6/2071/1909100",
+  }),
+
+  // Morita: the full quaternionic Weinberg–Salam theory (owner-supplied PDF
+  // 67-6-1860.pdf).
+  ref({
+    id: "morita1982",
+    type: "article-journal",
+    title: "Quaternionic Weinberg-Salam Theory",
+    author: [
+      { family: "Morita", given: "Katsusada" },
+    ],
+    "container-title": "Progress of Theoretical Physics",
+    issued: { "date-parts": [[1982]] },
+    volume: "67",
+    issue: "6",
+    page: "1860-1876",
+    DOI: "10.1143/PTP.67.1860",
+    URL: "https://academic.oup.com/ptp/article/67/6/1860/1887264",
+  }),
+
+  // Cederwall–Preitschopf: quaternionic (N=4) superconformal field theory.
+  // DOI omitted (older CMP volume, not URL-verified); arXiv id is the locator.
+  ref({
+    id: "cederwallpreitschopf1995",
+    type: "article-journal",
+    title: "Quaternionic Superconformal Field Theory",
+    author: [
+      { family: "Cederwall", given: "Martin" },
+      { family: "Preitschopf", given: "Christian" },
+    ],
+    "container-title": "Communications in Mathematical Physics",
+    issued: { "date-parts": [[1995]] },
+    volume: "167",
+    page: "373-394",
+    URL: "https://arxiv.org/abs/hep-th/9209107",
+  }),
+
   ref({
     id: "majid2002",
     type: "book",
@@ -1798,6 +1984,71 @@ export const references: CSLData[] = [
     publisher: "Wiley",
     "publisher-place": "New York",
     issued: { "date-parts": [[1955]] },
+  }),
+
+  ref({
+    id: "elliott1958",
+    type: "article-journal",
+    title:
+      "Collective motion in the nuclear shell model. I. Classification schemes for states of mixed configurations",
+    author: [{ family: "Elliott", given: "J. P." }],
+    "container-title": "Proceedings of the Royal Society of London A",
+    issued: { "date-parts": [[1958]] },
+    volume: "245",
+    issue: "1240",
+    page: "128-145",
+    DOI: "10.1098/rspa.1958.0072",
+  }),
+
+  ref({
+    id: "minkov1996",
+    type: "article-journal",
+    title:
+      "Nuclear beta- and gamma- collective bands in the SU_q(2) rotator model",
+    author: [
+      { family: "Minkov", given: "N." },
+      { family: "Drenska", given: "S. B." },
+      { family: "Raychev", given: "P. P." },
+      { family: "Roussev", given: "R. P." },
+      { family: "Bonatsos", given: "D." },
+    ],
+    "container-title": "arXiv preprint nucl-th/9605013",
+    issued: { "date-parts": [[1996]] },
+    URL: "https://arxiv.org/abs/nucl-th/9605013",
+  }),
+
+  ref({
+    id: "negadi1992",
+    type: "article-journal",
+    title: "A q-deformed Aufbau Prinzip",
+    author: [
+      { family: "Négadi", given: "T." },
+      { family: "Kibler", given: "M." },
+    ],
+    "container-title": "Journal of Physics A: Mathematical and General",
+    volume: "25",
+    page: "L157-L160",
+    issued: { "date-parts": [[1992]] },
+    URL: "https://arxiv.org/abs/quant-ph/0409177",
+  }),
+
+  ref({
+    id: "raychev1998",
+    type: "article-journal",
+    title:
+      "An application of the three-dimensional q-deformed harmonic oscillator to the nuclear shell model",
+    author: [
+      { family: "Raychev", given: "P. P." },
+      { family: "Roussev", given: "R. P." },
+      { family: "Lo Iudice", given: "N." },
+      { family: "Terziev", given: "P. A." },
+    ],
+    "container-title": "Journal of Physics G: Nuclear and Particle Physics",
+    issued: { "date-parts": [[1998]] },
+    volume: "24",
+    issue: "10",
+    page: "1931-1943",
+    URL: "https://arxiv.org/abs/nucl-th/9709034",
   }),
 
   // ── BEC vortex experiments ──────────────────────────────────────
@@ -5256,7 +5507,7 @@ export const references: CSLData[] = [
     page: "055",
     DOI: "10.3842/SIGMA.2024.055",
     URL: "https://arxiv.org/abs/2111.06645",
-    note: "arXiv:2111.06645, SIGMA 20 (2024) 055. Added 2026-06-04 from uploads/2111.06645v3.pdf. Rigorous all-orders refinement of the Kashaev volume conjecture: a matrix invariant whose (sigma_0, sigma_1) entry is the Kashaev invariant in the Habiro ring (sigma_0 = trivial rep / unknot column). DIRECT fit with QOU's Kashaev / Habiro-ring content (QOU.Kashaev.VolumeConjecture, Phi_q / Li_2^q). Preferred citation for the Kashaev-on-trivial-knot sub-part over the bare 1995 conjecture.",
+    note: "arXiv:2111.06645, SIGMA 20 (2024) 055. Added 2026-06-04 from uploads/2111.06645v3.pdf. Rigorous all-orders refinement of the Kashaev volume conjecture: a matrix invariant whose ($\\sigma_0$, $\\sigma_1$) entry is the Kashaev invariant in the Habiro ring ($\\sigma_0$ = trivial rep / unknot column). DIRECT fit with QOU's Kashaev / Habiro-ring content (QOU.Kashaev.VolumeConjecture, $\\Phi_q$ / $\\mathrm{Li}_2^q$). Preferred citation for the Kashaev-on-trivial-knot sub-part over the bare 1995 conjecture.",
   }),
 
   // ── Internal QOU derivation pull requests ───────────────────────
@@ -5696,13 +5947,13 @@ export const references: CSLData[] = [
     id: "habiro2000",
     type: "article-journal",
     title:
-      "On the colored Jones polynomial of some simple links",
+      "On the colored Jones polynomials of some simple links",
     author: [{ family: "Habiro", given: "Kazuo" }],
     "container-title": "Recent progress towards the volume conjecture (RIMS Kokyuroku)",
     volume: "1172",
     page: "34-43",
     issued: { "date-parts": [[2000]] },
-    note: "PLACEHOLDER: Habiro 2000 RIMS Kokyuroku preprint introducing the colored-Jones machinery later expanded in habiro2002 / habiro2004. Cited in DeltaLambdaSignRule.lean / TwoRoutesProtonMass.lean. Distinct from habiro2002 (Habiro ring) and habiro2004; verify the QOU Lean Ref intends the 2000 RIMS preprint vs an alternate Habiro 2000 work.",
+    note: "Sūrikaisekikenkyūsho Kōkyūroku No. 1172 (2000), 34-43 — unrefereed proceedings, no DOI/arXiv. Citation CONFIRMED 2026-07-06 (ds4b literature check, PR #3434; title pluralised to match standard citations): the single-sum cyclotomic expansion of the colored Jones of simple links including the BORROMEAN RINGS, symmetric in the three colors — the key input to the Garoufalidis-Lê 2011 Borromean volume-conjecture appendix (garoufalidis-le-2011) and the published-derivation companion masbaum2003 (twist knots). Exact formula NOT transcribed into the corpus yet (PDF unavailable in-sandbox; bean n920). Distinct from habiro2002 (bottom tangles) and habiro2004cyclotomic (Habiro ring).",
   }),
 
   // ── Halverson–Ram 1998 — characters of Iwahori–Hecke ──────────
@@ -5817,6 +6068,41 @@ export const references: CSLData[] = [
     issued: { "date-parts": [[1995]] },
     ISBN: "978-0-521-46032-7",
     note: "Verified 2026-06-23 (doth): Majid, Foundations of Quantum Group Theory, CUP 1995, ISBN 0521460328 (978-0-521-46032-7) — confirmed via ISBN registries. Cited in QuaternionFromHecke.lean. See docs/audits/2026-06-23-bibliography-doi-verification-doth.md §D.",
+  }),
+
+  // ── Albuquerque & Majid 1999 — octonions as a (ℤ/2)³ 3-cocycle twist ──
+  ref({
+    id: "albuquerque-majid1999",
+    type: "article-journal",
+    title: "Quasialgebra structure of the octonions",
+    author: [
+      { family: "Albuquerque", given: "Helena" },
+      { family: "Majid", given: "Shahn" },
+    ],
+    "container-title": "Journal of Algebra",
+    volume: "220",
+    issue: "1",
+    page: "188-224",
+    issued: { "date-parts": [[1999]] },
+    DOI: "10.1006/jabr.1999.7916",
+    URL: "https://arxiv.org/abs/math/9802116",
+    note: "The octonions 𝕆 = ℝ_F[(ℤ/2)³] realised as the group algebra of (ℤ/2)³ twisted by a sign 2-cochain F that is not a 2-cocycle (dF ≠ 0) — octonion non-associativity as a pentagon-cochain deformation, the associativity-side analogue of the braiding/hexagon (quantum-group) deformation. The multiplication associator dF is a coboundary (cohomologically trivial); Albuquerque–Majid's nontrivial H³ class is the category associator of Vect_(ℤ/2)³^ω. Cited in the genus-4 octonion-recovery audit (docs/audits/2026-07-12-octonion-recovery-from-genus4-analysis.md).",
+  }),
+
+  // ── Baez 2002 — The Octonions (Der(𝕆) ≅ 𝔤₂) ──────────────────
+  ref({
+    id: "baez2002",
+    type: "article-journal",
+    title: "The Octonions",
+    author: [{ family: "Baez", given: "John C." }],
+    "container-title": "Bulletin of the American Mathematical Society",
+    volume: "39",
+    issue: "2",
+    page: "145-205",
+    issued: { "date-parts": [[2002]] },
+    DOI: "10.1090/S0273-0979-01-00934-X",
+    URL: "https://arxiv.org/abs/math/0105155",
+    note: "The canonical survey of the octonions. §4.1 identifies the derivation algebra of the octonions with the compact exceptional Lie algebra 𝔤₂: Der(𝕆) ≅ 𝔤₂, a 14-dimensional space. Cited by QOU/MathlibExt/OctonionDerivationsBound.lean for the upper bound dim Der(𝕆) ≤ 14 (the lower bound and the rank-nullity reduction are machine-verified there).",
   }),
 
   // ── Murasugi 1996 — Knot Theory and Its Applications ──────────
@@ -6123,6 +6409,33 @@ export const references: CSLData[] = [
     note: "Canonical reference for D_nu(z): Weber equation, the even/odd solution pair, and the connection formula whose 1/Gamma((1-nu)/2), 1/Gamma(-nu/2) coefficients implement parity selection by pole-vanishing at integer nu — the classical mechanism transported to the QOU even/odd (bar-parity) channel interpolation.",
   }),
 
+  // ── Whipple 1917 (toroidal transformation: Legendre functions at cosh vs coth argument) ──
+  ref({
+    id: "whipple1917",
+    type: "article-journal",
+    title:
+      "A symmetrical relation between Legendre's functions with parameters cosh α and coth α",
+    author: [{ family: "Whipple", given: "Francis J. W." }],
+    "container-title": "Proceedings of the London Mathematical Society",
+    volume: "s2-16",
+    page: "301-314",
+    issued: { "date-parts": [[1917]] },
+    DOI: "10.1112/plms/s2-16.1.301",
+    URL: "https://doi.org/10.1112/plms/s2-16.1.301",
+    note: "The Whipple transformation exchanging degree and order of associated Legendre functions at hyperbolic argument — the structural home of the half-integer-degree toroidal family P^mu_{nu-1/2}(cosh eta) used as the 3-d channel carrier in the toroidal channel-interpolation audit (2026-07-06).",
+  }),
+
+  // ── Lebedev 1965 (toroidal coordinates and toroidal harmonics: standard reference) ──
+  ref({
+    id: "lebedev1965",
+    type: "book",
+    title: "Special Functions and Their Applications",
+    author: [{ family: "Lebedev", given: "Nikolai N." }],
+    publisher: "Prentice-Hall (Dover reprint 1972)",
+    issued: { "date-parts": [[1965]] },
+    note: "Standard reference for toroidal coordinates and the separated harmonics sqrt(cosh eta - cos theta) P^mu_{nu-1/2}(cosh eta) e^{i mu theta} e^{i nu phi}: the two phase windings are the two local 1-d channel oscillations and the half-integer-degree Legendre factor is the decaying radial profile off the core torus (toroidal channel-interpolation audit, 2026-07-06).",
+  }),
+
   // ── Deligne 2007 (Rep(S_t) at non-integer t: interpolated tensor categories) ──
   ref({
     id: "deligne2007",
@@ -6171,7 +6484,7 @@ export const references: CSLData[] = [
     id: "ponsot-teschner2001",
     type: "article-journal",
     title:
-      "Clebsch-Gordan and Racah-Wigner coefficients for a continuous series of representations of U_q(sl(2,R))",
+      "Clebsch-Gordan and Racah-Wigner coefficients for a continuous series of representations of $U_q(\\mathrm{sl}(2,\\mathbb{R}))$",
     author: [
       { family: "Ponsot", given: "Bénédicte" },
       { family: "Teschner", given: "Jörg" },
@@ -6182,7 +6495,7 @@ export const references: CSLData[] = [
     issued: { "date-parts": [[2001]] },
     DOI: "10.1007/PL00005590",
     URL: "https://arxiv.org/abs/math/0007097",
-    note: "Non-compact Askey-Wilson/Racah level of the modular double (q = e^{i pi b^2}, q~ = e^{-i pi/b^2}); the b <-> 1/b duality is the 6j-level form of the channel rotation.",
+    note: "Non-compact Askey-Wilson/Racah level of the modular double ($q = e^{i\\pi b^2}$, $\\tilde q = e^{-i\\pi/b^2}$); the b <-> 1/b duality is the 6j-level form of the channel rotation.",
   }),
 
   // ── Creutzig–Milas 2014 (false theta functions: the log-VOA character side) ──

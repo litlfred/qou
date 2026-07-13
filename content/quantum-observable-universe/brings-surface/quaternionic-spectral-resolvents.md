@@ -1,10 +1,4 @@
-Let $\mathcal{S}$ denote the
-([Bring's surface](#def:brings-surface)).  Let $q\in\mathbb{C}$ with
-$0<\lvert q\rvert\le 1$, and set $r=-\ln\lvert q\rvert$ so that
-$\lvert q\rvert=e^{-r}$.
-Write $\mathbf{i},\mathbf{j},\mathbf{k}$ for the standard basis of
-$\mathrm{Im}\mathbb{H}$.
-Using the Lusztig $q$-exponential and $q$-logarithm,
+Let $\mathcal{S}$ denote Bring's surface ([Bring's surface](#def:brings-surface)). Let $q\in\mathbb{C}$ with $0<\lvert q\rvert\le 1$, and set $r=-\ln\lvert q\rvert$ so that $\lvert q\rvert=e^{-r}$. Write $\mathbf{i},\mathbf{j},\mathbf{k}$ for the standard basis of $\mathrm{Im}\mathbb{H}$. Using the Lusztig $q$-exponential and $q$-logarithm,
 
 ```tex
 \begin{equation}\label{eq:q-exp}
@@ -14,8 +8,7 @@ Using the Lusztig $q$-exponential and $q$-logarithm,
 \end{equation}
 ```
 
-we define the **quaternionic spectral resolvents**
-$\omega_k\colon\mathcal{S}\to J^\infty E$ by
+we define the **quaternionic spectral resolvents** $\omega_k\colon\mathcal{S}\to J^\infty E$ by
 
 ```tex
 \begin{align}
@@ -44,7 +37,4 @@ $\omega_k\colon\mathcal{S}\to J^\infty E$ by
 \end{align}
 ```
 
-By the first power sum, $\omega_0=0$ in the
-balanced state; the remaining coordinates embed $\mathcal{S}$ into the
-infinite jet shell $J^\infty E$
-([jet shell](#rem:jet-shell)).
+By the first power sum, $\omega_0=0$ in the balanced state. The remaining coordinates embed $\mathcal{S}$ into the infinite jet shell $J^\infty E$ ([jet shell](#rem:jet-shell)).

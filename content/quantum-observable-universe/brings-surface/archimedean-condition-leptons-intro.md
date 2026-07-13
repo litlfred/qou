@@ -1,10 +1,1 @@
-The preceding sub-section stated the Descartes condition $\chi = -6$
-and proved that its descent chain forces a maximally-descended genus.
-This sub-section reads off the immediate physical consequences:
-the lepton spectrum, the chirality assignment that distinguishes
-leptons from anti-leptons, the affine-light-cone parameterisation
-underlying the chirality measurement, and the trefoil-chirality
-correspondence that anchors the chirality assignment in braid
-data. The Brings-curve block closes the sub-section by pointing
-forward to the genus-completeness derivation that the next sub-
-section unfolds.
+The preceding sub-section stated the Descartes condition $\chi = -6$ and proved that its descent chain forces a maximally-descended genus. This sub-section extracts the immediate physical consequences: the lepton spectrum, the chirality assignment that distinguishes leptons from anti-leptons, the affine-light-cone parameterisation underlying the chirality measurement, and the trefoil-chirality correspondence that anchors the chirality assignment in braid data. The Brings-curve block closes the sub-section by pointing forward to the genus-completeness derivation that the next sub-section unfolds.

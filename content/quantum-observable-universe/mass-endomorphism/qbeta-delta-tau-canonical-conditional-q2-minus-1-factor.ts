@@ -3,7 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:qbeta-delta-tau-canonical-conditional-q2-minus-1-factor",
   title:
-    "Conditional on canonical Markov weights: $\\Delta\\tau_M^{\\text{can}}(q)$ factors $(q^2 - 1)$",
+    "Conditional on canonical Markov weights: $\\Delta\\mathrm{tr}_M^{\\text{can}}(q)$ factors $(q^2 - 1)$",
   uses: [
     "prop:qbeta-per-block-chi-closed-forms",
   ],

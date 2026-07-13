@@ -1,3 +1,1 @@
-Continuation of the preceding sub-section.
-
-The substantive Mathlib fillers identify the categorical structures (Clausen-function, Bloch-Wigner dilogarithm, Bloch-group quotient) that the substrate-flow construction relies on but Mathlib does not yet provide.  The closing blocks lift the Faddeev-Cl2 pentagon identity and assemble the deeper mass-tower content that the next sub-section's $\alpha_{\mathrm{EM}}$ derivation consumes.
+The substrate-flow construction rests on specific categorical structures. The Mathlib fillers identify these structures: the Clausen function, the Bloch-Wigner dilogarithm, and the Bloch-group quotient. The subsequent blocks lift the Faddeev-$\mathrm{Cl}_2$ pentagon identity. They assemble the mass-tower content required for the $\alpha_{\mathrm{EM}}$ derivation.

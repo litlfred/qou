@@ -1,15 +1,15 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-05T11:17:37.375359+00:00",
-  "commitSha": "ce39b659e64f7bb00a5b6c01399cc7f595da16e0",
+  "computedAt": "2026-07-11T05:33:03.523521+00:00",
+  "commitSha": "6f9c59c652ee63efde763d7a6c7366c15ad0cf61",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 80,
+  "durationMs": 43,
   "computation": "canonical-isotope-witness-Z00",
   "scriptFile": "canonical_isotope_witness.py",
-  "scriptHash": "19d75785a6b2",
-  "scriptCommitSha": "a13f0066fec64dfc824ffff5690bd3571bcdeb94",
+  "scriptHash": "46eb131fcd57",
+  "scriptCommitSha": "242bd2515ed6eb591bc763c9d09b464a2f18a755",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -19,7 +19,6 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
-    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0"
   },
@@ -30,7 +29,7 @@
     "q_0": "1.1099785827513808075916690956107688798744991218736",
     "rows_total": 1,
     "rows_with_prediction": 0,
-    "rows_with_composite_mass": 0
+    "rows_with_composite_mass": 1
   },
   "data": {
     "rows": [
@@ -46,6 +45,16 @@
         "reference_MeV_50dps": null,
         "err_MeV": null,
         "err_ppm": null,
+        "composite_mass": {
+          "M_pred_MeV": 939.5654227645324,
+          "M_AME_MeV": 939.5654217900798,
+          "err_MeV": 9.744526323629543e-07,
+          "err_ppm": 0.0010371312202043439,
+          "canonical_status": "borromean-tower-via-fitted-lambda",
+          "formula": "N·m_n + Z·m_p + Z·m_e − B(A,Z)",
+          "m_p_source": "borromean-tower (conj:borromean-baryon-mass-formula)",
+          "B_source": "L1-borromean-via-canonical"
+        },
         "ame_reference": {
           "B_AME_keV": 0.0,
           "mass_excess_keV": 8071.31806,

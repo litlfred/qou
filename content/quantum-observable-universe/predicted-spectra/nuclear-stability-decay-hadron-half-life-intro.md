@@ -1,5 +1,1 @@
-Continuation of the preceding sub-section.
-
-The arc proceeds from the hadron half-life definition through the substrate-level $q$-self-correction and the skein-Coulomb enhancement that pins the substrate-flow behaviour of the half-life.  The closing blocks tabulate the per-hadron half-life predictions against PDG values and identify the substrate-flow regime in which the predictions are most accurate.
-
-The output is a substrate-level hadron half-life formula tabulated against PDG values, with the categorical $q$-self-correction supplying the leading deviation from the classical Fermi formula.
+We continue the analysis of nuclear stability. We derive a substrate-level formula for the hadron half-life. The categorical $q$-self-correction provides the leading deviation from the classical Fermi formula. We define the hadron half-life. We derive the $q$-self-correction. We establish the skein-Coulomb enhancement governing the substrate-flow behaviour. We tabulate predictions against PDG values. We identify the optimal substrate-flow regime.

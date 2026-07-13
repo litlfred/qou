@@ -752,3 +752,287 @@ is that `tr_M` is the *wrong* functional for the transition:
 counit strand-append (contaminates c₂/c₃, proven full+linear), or tr_M recalibration
 (derived-wrong; N=0 analog already Lean-proved). Redirected to the keystone.
 Audit: [`2026-07-04-8we6-h4-route-a-explicit-strand-gate-scan.md`](../audits/2026-07-04-8we6-h4-route-a-explicit-strand-gate-scan.md).
+
+**2026-07-11 (#3509) — selection-rule engine + Δ_λ ζ₄ locus + strong-sector vacuity.**
+Re-scoped the Gemini-session c₃ over-claims (c₃=−Vol(4₁) → scope-(b) bar-parity
+exclusion; three vacuous "closure" Lean stubs bannered). Landed
+`QOU/SelectionRules.lean` (sorry-free): `odd_ne_even_of_ne_zero` (bar-parity) +
+`nonneg_sum_ne_neg_target` (sign-positivity) unify the weak (c₃) and strong (Δ_λ)
+sign/parity exclusions. Δ_λ probes: raw T(2,5) character + real-q re-framing pruned;
+the Δ_λ chirality sign located at **q=i (ζ₄, non-semisimple H₅)**:
+`sgn(Δ_λ)=(−1)^{n(λ)}=q^{2n(λ)}|_{q=i}` — the SAME ζ₄ fibre point #3429 formalizes for
+the Q_β f-map (Arm 2). Coordinated on #3429 (intent comment); no file overlap.
+Open: exact chiral operator realizing `q^{2n(λ)}`; magnitude `|Δ_λ|=dim` (Track A).
+Audit: [`2026-07-11-gemini-session-c3-overclaim-continuum-and-lean-audit.md`](../audits/2026-07-11-gemini-session-c3-overclaim-continuum-and-lean-audit.md).
+
+**2026-07-11 (#3556 merged, #3563) — KC17 parity-descent dichotomy + ζ₄ ↔ odd-carrier bridge (Lean).**
+Formalized *why* the bar-odd c_k channel is archimedean, as sorry-free Lean
+(lean-direct EXIT 0). #3556 (merged): `uside_parity_descent_iff_zeta4` — the
+u-side cyclotomic re-basing transports the fibre bar-parity to the c_k rungs iff
+`q²=−1` (q-side `(−1)^k` vs u-side `(q²)^k` twists agree only there); over ℝ,
+`uside_parity_never_descends_real` (never, `q²≥0`). #3563: `descent_iff_order_four`
+— that descent point **is a primitive 4th root ζ₄** (`q²=−1 ↔ q⁴=1 ∧ q²≠1`), plus
+the formal composed bridge `uside_parity_descent_iff_order_four`. This is the SAME
+ζ₄ fibre point the #3509 entry above located for Δ_λ (`q^{2n(λ)}|_{q=i}`) and #3429
+formalizes for the f-map — now the Q_β-side parity descent is pinned to it too.
+Net (with merged #3534, `S=Q_β/E₀` irreducible archimedean): the odd channel
+connects to the c_k parity only at ζ₄, never on the real substrate axis → S is
+irreducibly archimedean, corroborating the Φ_b-at-real-q₀ route (#3544/#3562/#3536).
+Coordinated: intent on #3560 (ζ₄ swap sibling), support note on #3562 (Φ_b).
+No c_k value; wires nothing; no tier change.
+
+**2026-07-11 (#3536 + #3567, merged) — untested-avenues execution wave: every
+discrete/formal c_k identification route closed; C15–C18 land on the map.**
+Owner-directed survey + same-day execution of all ranked avenues
+([`2026-07-11-qbeta-ck-untested-avenues-and-literature.md`](../audits/2026-07-11-qbeta-ck-untested-avenues-and-literature.md) §6),
+one probe per commit, pre-registered kill criteria, nothing wired:
+
+- **C15** Borromean forced-link shadow REFUTED (τ_D Brunnian ℏ³-vanishing;
+  4 canonical normalisations all miss −2).
+- **C16** Habiro-ring membership of the ladder in `q` REFUTED (scope-(a)) at
+  natural normalisations — the ladder is not a Habiro element's q=1 expansion;
+  gates off GSWZ Galois descent; converges with KC8 (simple pole ≠ Gevrey-1).
+- **C17** raw `q^N↦q^k` 4₁-operator kernel REFUTED (scope-(a)); P-C15 bar-parity
+  survivor intact (needs re-basing/twist, canonical rungs).
+- **C18** PSLQ recognition of *extracted* rungs ENTROPY-BLOCKED: empirical c₃
+  carries ≤ ~2.2 digits/anchor; **"empirical c₄ = −0.972" is a rounding
+  artifact of c₃** (identically 0 under exact extraction — updated in the
+  registry rung-4 row, [`ck-dk-canonical-registry.md` §3](ck-dk-canonical-registry.md)
+  + JSON twin [`ck-dk-registry.json`](ck-dk-registry.json)). Extracted k ≥ 4 is
+  noise; kernel tests need canonical rungs.
+- **C13 extended**: exponentiated-uniform per-block seeding refuted
+  (exp ≡ linear at c₃, symbolic).
+- P2 (Φ_b infra) resolved as collision → deferred to the `qou-9lot` line
+  (merged #3540; open #3562/#3544).
+
+Net: with C16+C18+KC8+KC17, the surviving c₃ bar-odd object is the **analytic
+Φ_b state-integral face at real q₀** — active on #3562 (m-plane inversion +
+`FaddeevPhi` class repair) and #3544 (real-integral route). Map rows:
+[`2026-06-04-qbeta-ck-refuted-class-map-and-open-axis.md`](../audits/2026-06-04-qbeta-ck-refuted-class-map-and-open-axis.md) §2.
+Coordination this cycle: duplicate `CuspShapeBarParity.lean` flagged on
+#3573 ↔ #3579 (QBeta/ vs Knot/, same theorems); parallel Lean Φ_b carrier
+flagged on #3544 ↔ #3562 (instantiate the repaired class, don't fork).
+
+**2026-07-11 (#3540/#3562 merged, #3596) — Φ_b constructed + S-flip source localized to the m-deformation stage.**
+Three merged/landed tranches on `claude/faddeev-phi-b-construction-wwblhu`:
+(1) #3540: substrate b-map pinned `b = √(t/2π)e^{+iπ/4}` (q = 1/q₀, dual
+q̃ ≈ 5e−165); contour == modular-double product to 1e−39 at both anchors;
+the documented −π/4 branch is the inverse-conjugate object. (2) #3562:
+`FaddeevPhi` class repaired (unguarded `shift_binv` unsatisfiable by any
+total-function encoding — the dual lattice carries POLES; false
+`phi_binv_zero` removed); `phiBProd` tprod instantiation with CommMonoid-level
+telescoping, sorry-free; m-plane inversion: S smoothness-killed
+(|dS/dq| ≈ 3.8e6, lever = CODATA ÷u³), un-levered r = S·u³ smooth
+(r_μ ≈ +5.98e−9, r_p ≈ −2.44e−8, slope ≈ −2.4) = the well-posed target.
+(3) #3596: 84 lever-class (|U|, κ/u³) candidates all fail cross-anchor
+(h and 2t sit 2% below the proton feasibility floor |u|_min = √(2|S|/√3));
+pole-seed sensitivity probe: the Φ_q-pole-seeded Newton stage is
+ANCHOR-BLIND (amplification 1.4e−4, Jacobian O(1)) ⇒ with #3600's θ-smooth
+negative and the rate exclusion, the S sign-flip source is localized to the
+m-deformed gluing system (the m(q₀) assignment), scope-(a) throughout.
+Coordinated: intent+results on #3573, #3600; earlier on #3543 (merged).
+Open: Multipliable discharge (LogBounds cone building); m(q₀) law itself.
+No c_k value; wires nothing; no tier change.
+
+- **C19 (#3573, pole-seed Newton — the phase is a BRANCH SELECTOR).** Seeding
+  Thurston's figure-8 gluing Newton with the *real* substrate pole `q₀^{-k}`
+  flows to the **degenerate golden branch** `z²−z−1=0` (`φ=1.618`, Vol=0), never
+  the hyperbolic cusp `z²−z+1=0`. The two branches swap bar-parity roles via the
+  discriminant flip `−3 ↔ +5` (`goldenShape_barEven_sq=5`, Lean-proved), so
+  CS = bar-odd `S` turns on only under complexification — the phase `φ(q₀)` *is*
+  the branch selector (= open `conj:agde`). Independent quantitative confirm of
+  the geometry-side negative (#`1a4894b8`): full Rogers-dilog CS at substrate
+  scale `~1.7e-5`, **~2350× below** `|S|` — the naive 4₁ CS deformation is orders
+  too small, so `Φ_b` (not pure-4₁ geometry) is the live `S` carrier. No c_k wired.
+
+**2026-07-11 (#3571 merged, #3606) — even-channel action arithmetic home = ℚ(√3), both numerical-block and exact-saddle.**
+Completes the even-channel arithmetic mapping, complementing the odd-channel
+#3556/#3563 (KC17 ζ₄ + Hopf-cubic prime-19). #3571 (merged): the *numerical* PSLQ
+of the 4₁ resurgence-action coefficients over ℚ(√−3) is **entropy-blocked**
+(divergent series c_m~m!/A^m + fit contamination) — ℚ(√−3) is the arithmetic home
+(4₁ trace field) but unreachable by fit. #3606: the **exact-saddle** complement,
+sorry-free Lean (`QOU/QBeta/Qsqrt3SaddleArithmetic.lean`): the 4₁ Kashaev saddle
+at x*=5/6 has Taylor data ∈ ℚ(√3)·π^k (Hessian −√3π, then −4π², −8√3π³, …) and
+leading coefficient `b₁ = √3π/54 ∈ ℚ(√3)·π` — computed exactly where PSLQ failed.
+Even-channel counterpart of `HopfCubicOddCarrier` (KC20). **Consistent with the
+cusp-shape siblings** #3573/#3579 (`barEven ω=1`=Vol, `barOdd ω²=−3`=CS, trace
+field ℚ(√−3)): same 4₁ ℚ(√−3) home, cusp-shape side ⊕ saddle-expansion side; no
+§6 escalation. Anti-laundering: `b₁≈0.101` is the naive saddle value, explicitly
+≠ observable c₁≈0.554 (needs full state-integral normalisation); no action value
+wired. Coordinated on #3573 (intent) + #3579 (link). Owner ruling #3607
+(Subgoal-2 open-for-all) relaxes the deferred observable closure to in-scope
+(anti-fit still binds). No c_k value; wires nothing; no tier change.
+**Currency (Copilot #3606):** the two fields are now certified **distinct** —
+the 4₁ *trace* field ℚ(√−3) is imaginary quadratic (cusp/CS side, #3573/#3579),
+the *saddle* data field ℚ(√3) is totally real (even-Laplace side, this PR); both
+embed in ℚ(ζ₁₂) and √−3 = i·√3 relates the generators, but they are not equal.
+The earlier "same ℚ(√−3) home" phrasing is refined accordingly — the two channels
+share the *ambient* ℚ(ζ₁₂), each realising its own real/imaginary quadratic subfield.
+
+**2026-07-11 (#3606, Ohtsuki κ₁) — even-channel OBSERVABLE leading coefficient is
+EXACT: `κ₁ = 11√3π/108 = (11/2)·b₁`.** The naive saddle `b₁=√3π/54` (#3606) is the
+integral-Laplace value; the *observable* leading coefficient `κ₁ = [1/N] log J_N(4₁)
+≈ 0.55421647` (the value #3571 could only fit; naive saddle missed it, κ₁/b₁=5.5) is
+identified exactly by a targeted 10-point Vandermonde extraction (N≤786432, ≈23
+confident digits) + 2-term PSLQ (33-digit agreement):
+`κ₁ = 11·√3·π/108 ∈ ℚ(√3)·π` — the Ohtsuki figure-eight **2-loop** coefficient
+(imaginary form `κ_1^Oht = (11/72)/√−3`, the classical numerator **11**). #3571's
+entropy-block was on the *full ladder*, never the best-conditioned leading rung;
+its PSLQ miss was a basis-size artifact (10 elements @ 15 digits). Lean
+(`ohtsukiKappa1_eq_eleven_halves_b1`, `_mem_qsqrt3`, sorry-free) certifies the
+algebra κ₁=(11/2)·b₁ + field membership; the *value* is the numerical Ohtsuki
+identification. Probe [`qbeta_ohtsuki_kappa1_extract.py`](../audits/scripts/qbeta_ohtsuki_kappa1_extract.py).
+**Anti-laundering:** κ₁ is a 4₁-Kashaev/Ohtsuki topological fact, NOT a Q_β
+production c_k — the 4₁↔Q_β action bridge is the open keystone; nothing wired, no
+tier change. Higher [1/N^k] rungs remain entropy-blocked (#3571).
+**2026-07-11 (#3600) — q-Reeb rotation angle θ(q₀) for the S wall (probe + Lean + paper).**
+"Keep pushing on arg(u(q₀)) using reeb." Built the 2×2 Hoefsmit seminormal
+block of σ₁,σ₂ on V_{(2,1)} and read the figure-eight operator
+M_{4₁}=(σ₁σ₂⁻¹)² eigenvalue phase (gauge-invariant). Verified from the actual
+rep: braid+Hecke hold, det M=1, |tr M|<2 ⇒ |λ_{4₁}|=1 (confirms the content
+block's Reeb claim). Derived: θ(q₀)≈117.087° at both anchors; θ(1)=2π/3 EXACT
+(S₃ 3-cycle, amphichiral, CS=0); closed form tr=q⁴−2q²+1−2q⁻²+q⁻⁴. θ is SMOOTH
+(dθ/dq≈−51°/unit q) ⇒ arg(u)=θ is a scope-(a) NEGATIVE — θ cannot supply the
+dc₃/dq≈4.66e6 sign-flip; the open q₀→u map (conj:algebraic-geometric-dilog-
+equivalence) still owns it. Third independent confirmation of the "smooth
+geometric quantity ≠ the hypersensitive phase" pattern (with #3596 pole-seed
+amplification 1.4e−4 and #3573 near-singular φ). Reeb's real contribution:
+Δθ=θ(q₀)−120°≈−2.91° is the parameter-free amphichirality-breaking seed of S.
+Lean (hand-audited, toolchain behind egress): figureEightTrace + tr(1)=−1 +
+figure_eight_classical_reeb (θ(1)=2π/3 proved via existing unit-modulus thm +
+primitive-cube-root). Paper: rem:figure-eight-reeb-theta-value. Coordinated:
+intent on #3596/#3573/#3579; flagged the #3573↔#3579 CuspShapeBarParity.lean
+duplication and the θ(braid-operator) vs boost(meridian-holonomy) phase
+distinction. No c_k value; wires nothing; no tier change.
+
+**2026-07-12 (#3648) — KC19×KC20 bridge reconciliation + ℚ(√−19)≠ℚ(√−3) arithmetic separator.**
+Self-correction of merged #3618 (it missed the prior 2026-07-07 hopf-cubic-vs-crossing-weight
+bridge audit): assertion 4 now separates the MEANINGFUL Hopf-sector shadow C_Hopf(2)=−2 (=J_Hopf(1),
+Lean-certified) from the COINCIDENTAL total-C(3)=−2 at golden y=3; #3618's genuinely-new pieces
+(4−h²=6−y kernel-denominator identity; disjoint singularities) delineated from the bridge audit's
+prior coverage. NEW (scope-(a), grep-confirmed not explicit): the odd carrier's quadratic field is
+ℚ(√−19) (disc C_Hopf=−76=−2²·19), DISTINCT from the even/4₁/Φ_b field ℚ(√−3) — channels separated
+by ramified odd prime 19 vs 3. Consequence: the odd algebraic field-of-definition is not contained
+in the 4₁/Φ_b arithmetic; a closure must supply the disc-19 field. STRICT scope guard: does NOT
+exclude Φ_b (transcendental, richer arithmetic possible), does NOT address the anchor-dependent c₃
+swing (w(q) fibre, KC19). Sharpens the search target. No c_k value; nothing wired; no tier change.
+**2026-07-12 (PR #3622, in flight) — NZ parity prune + exact 4₁ even series.**
+Lean (sorry-free): the geometric NZ deformation series has NO odd rung
+([`NeumannZagierParity.lean`](../../content/quantum-observable-universe/lean/QOU/Knot/NeumannZagierParity.lean),
+scope-(b), invariant = parity) — kills this session's own #3562 NZ-u³
+proposal (which also conflated `u_ladder` with the NZ deformation u).
+Probe (geometric-exact, from the CCGLS A-polynomial, convention-free):
+τ = −i√3, v₃ = −i√3/3, v₅ = −23i√3/180, ratio Φ₄/Φ₂ = **1/6** ⇒
+`corr(u) = 1 ± u²/6`; at the #3573 anchors the **real-u ray improves both**
+(muon 2.54%→2.36%, proton 4.08%→3.38%, not closing; imag-u worsens) —
+selects the real-u geometric embedding and leaves the ~2.4%/3.4% residual
+to the odd/archimedean channel (KC17). Audit:
+[`2026-07-12-nz-parity-prune-and-fourone-even-series.md`](../audits/2026-07-12-nz-parity-prune-and-fourone-even-series.md).
+No c_k; nothing wired.
+
+
+**2026-07-12 (#3628) — even-channel Ohtsuki rungs exact through κ₄; growth-class
+obstruction makes the 4₁↔Q_β bridge = Borel/Φ_b resummation (scope-(b)).**
+Extends merged #3606 (κ₁=11√3π/108). Targeted Vandermonde extraction (13 pts,
+N≤6.29M) + strict 2-term parity PSLQ identifies **all four rungs exactly**:
+κ₁=(11/108)√3π [36d], κ₂=(2/27)π² [30d], κ₃=(1081/21870)√3π³ [25d],
+κ₄=(98/729)π⁴ [19d] — the √3-parity alternation (odd→√3, even→pure rational)
+confirmed by construction; denominators 3-power-dominated (ℚ(√−3) torsion-3).
+⇒ #3571's entropy-block is a divergent-TAIL effect, not a low-rung wall. Lean:
+`ohtsukiKappa2/3/4` + parity-membership lemmas (sorry-free, lean-direct EXIT 0)
+extend the merged κ₁ pattern. **Bridge consequence (scope-(b), cited invariant):**
+the exact κ_n ratios rise without bound (1.32→3.63→4.93, Gevrey-1 divergent,
+finite Borel singularity A≈0.7) while the Q_β ladder is convergent
+(c_{k+1}/c_k→1/u=117.41, KC8) — a divergent and a convergent series cannot be
+equated term-by-term under any ℏ↔u reparametrisation, so the naive bridge is a
+PROVED dead end and the true bridge is the Borel-median / Faddeev-Φ_b state
+integral = analytic continuation off |q|=1 (Kashaev root-of-unity) to real q₀>1
+(fibre-vs-observable rule; a b·A²=u_substrate "necessary condition" was drafted
+then RETRACTED as laundering-risk — the map is a continuation, not algebraic).
+Skeleton already proved: even [2]_q=2cosh η ⊥ odd h=2sinh η of one η=log q
+(`reeb_growth_hyperbola`). Borel-singularity probe
+(`qbeta_even_borel_singularity.py`) quantifies A. Coordinated: complementary-
+scope note on #3544 (Φ_b construction; we characterise the divergence their
+resummation resums — no overlap). Audits:
+`2026-07-12-ohtsuki-higher-rungs-exact.md`,
+`2026-07-12-fmap-4one-qbeta-bridge-growth-obstruction.md`. No fit; no c_k value;
+wires nothing; no tier change.
+
+**2026-07-12 (follow-up to #3622) — the deformed 1-loop of 4₁ is e^u × even:
+a geometric sinh carrier at one loop.** The DG 1-loop invariant along the
+4₁ Dehn-surgery branch satisfies **τ(u) = e^u·τ_even(u)** (κ = e^{−u}τ even
+to 9e-62; flattening-irreducible, class ±M^{4ℤ}), so its odd part is exactly
+**sinh(u)·τ_even(u)** — the first geometric object with the bar-odd sinh
+structure (classical NZ series has no odd rung, #3622). Even core rungs
+exact: 1 − u²/3 − u⁴/4 − 121u⁶/1080. τ(0) = ±√−3/2; A-polynomial
+cross-check ≤ 3e-61. Plugs into the cosh/sinh bridge skeleton
+(`3336314582` audit). Audit:
+[`2026-07-12-deformed-one-loop-sinh-carrier.md`](../audits/2026-07-12-deformed-one-loop-sinh-carrier.md).
+No c_k; nothing wired.
+**2026-07-12 (#3639, meridian-boost) — the meridian-holonomy boost is a
+smooth-quantity NEGATIVE for the c₃ seat (scope-(a); 4th confirmation).** Closes
+the one angle `#3600` flagged as unprobed: the boost `ζ = ln q₀` distinct from the
+braid phase `θ`. The target is `dc₃/dq₀ ≈ 4.66×10⁶` (from `Δc₃ = −0.0596` over the
+`11.5 ppb` muon↔proton anchor gap, `c₃: −2.0097 → −2.0693`). The boost's
+sensitivity is `dζ/dq₀ = 1/q₀ ≈ 0.90 = O(1)` — same order as `θ` (`#3600`,
+`dθ/dq ≈ −51°/unit`), **6–7 orders too small** to be the sole seat. So the
+meridian boost, like `θ`, is a **smooth geometric quantity ≠ the hypersensitive
+phase** — the 4th independent confirmation (`#3600` θ, `#3596` pole-seed, `#3573`
+near-singular φ, this). **Corollary (productive direction):** by
+`dc₃/dq₀ = (dc₃/du)(du/dq₀)`, a smooth `u(q₀)` forces `du/dq₀ = O(1)`, so the
+amplification must live in a **near-singular / pole structure** of the `q₀→u`
+dilog map (`conj:algebraic-geometric-dilog-equivalence`) — exactly where `#3596`
+(pole-seed amp `1.4×10⁻⁴`) and `#3573` (near-singular φ) are circling. The
+smooth-holonomy family (boost + braid θ) is now closed as a *sole* mechanism; the
+search concentrates on the pole structure. Anti-laundering: no `c_k` value; wires
+nothing; no tier change; `c₃` stays a q₀-dependent near-match (SETTLED #1580).
+Audit:
+[`docs/audits/2026-07-12-c3-meridian-boost-smooth-negative.md`](../audits/2026-07-12-c3-meridian-boost-smooth-negative.md).
+Coordinated: intent on `#3596`/`#3573`.
+
+
+**2026-07-12 (#3691) — bar-odd S three routes: DEFORMED rungs κ̃₁(u)/κ̃₂(u) at
+the substrate meridian (route 2), experimental Q_β budget (route 3), D(u) ladder
+scoped (route 1).** Route 2: new extractor
+(`qbeta_ohtsuki_deformed_meridian_rungs.py`) generalizes the u=0 Kashaev sum to
+the exact deformed Habiro form `Σ_k ∏_j (2cosh u − 2cosh(ξj/N))`, ξ=u+2πi —
+inside H. Murakami's PROVED asymptotic regime (0<u<0.9624), so no
+deformed-volume-conjecture assumption. At u_sub=2ln q₀≈0.2087:
+**κ̃₁ = 0.587343387311 − 0.0195072·i** (12d; vs κ₁(0)=11√3π/108=0.554216, +5.98%),
+anchor-blind to 7.9e-9, smooth dκ̃₁/du — sign-flip stays representational
+(capstone-consistent). Im κ̃₁ ≠ 0 is a new intrinsic bar-odd-channel datum
+(deformation breaks J_N reality). Deformed finite-b lead t·Re κ̃₁ = 0.0613
+(refines #3654's 0.0578 scale). Bonus structural: Re α(u) −
+2πVol(u)/(u²+4π²) = **(1/2)u** + 0.1703·u² (linear meridian term ⇔ Im S ⊃ π·u,
+odd under u↦−u — bar-odd); b·u² unidentified, NOT fitted. Deformed-saddle
+cancellation eats ~u^1.9·N digits — measured, handled adaptively (dps 300).
+Route 3 (`qbeta_qstar_experimental_budget.py`): σ(q*) today = 296 ppb from
+σ(Q_β)=0.61 eV via dq*/dQ_β=−0.539 (#3636); **~26× sharper Q_β (0.024 eV) makes
+q* an arbiter of the μ–p tension**; ~13.5× matches the muon pin; proton pin
+needs ~4900×. Route 1 queued (bean qou-gmm6): D₁..D₅ exact in ℚ(√3), ũ=q·u
+hypothesis fails exactly at ord 11 — extension deferred for reviewability.
+Audit: `2026-07-12-bar-odd-s-three-routes.md`. No fit; no c_k wired; no tier
+change.
+
+
+**2026-07-12 (#3691, update 2) — route-1 CORRECTION: the "order-11 failure" of
+the two-variable form was an O/h TOP-ORDER ARTIFACT; log R = E(ũ) + h·D(ũ)
+HOLDS exactly (margin 9). Also: κ̃₃(u_sub) landed; π·u meridian term Lean.**
+The route-1 probe (`qbeta_barodd_d_ladder_ord17_probe.py`) found the failing
+order tracks the truncation top exactly (ORD 11→s^11, 17→s^17, 19→s^19);
+series-diff localized the drift to G = O/h's top row, which the shift-padding
+makes depend on the unknown O[ORD+1] — garbage by construction. Scope-(a)
+re-scopes: ai81's FAILS-at-11 verdict corrected (form holds through s^18, 9
+over-determining checks all zero); 08ds's margin-1 h³-refutation moot (its
+distinguishing row was the invalid one; no residual exists to repair); the
+ζ₄-route "failing-residual constraint set" is void (KC18–KC20 untouched);
+the capstone's S = h·D(ũ) STRENGTHENED — D exact ℚ(√3) ladder now d₁..d₉
+(d₅ reproduces ai81; heights →10²⁰). Diagnostic h·D(ũ(q₀)) = −0.003486 is
+anchor-blind (swing stays in the 1/u³ inversion). Route 2 additions:
+**κ̃₃(u_sub) = 3.956290802 − 0.395360496·i** [10d/8d] (tall ladder N≤262144,
+dps 980, 445d cancellation handled) vs κ₃(0)=2.6545; odd finite-b partial sum
+t·κ̃₁ − t³·κ̃₃ = 0.056790. Lean `MeridianLinearBarOdd.lean` (sorry-free,
+lean-direct exit 0): the Im S ⊃ π·u response model 2π²u/(u²+4π²) — bar-odd,
+= u/2 − u³/(2(u²+4π²)), |deviation| ≤ |u|³/(8π²). Heads-up posted on #3692
+(κ-tower resummation sibling): their Borel–Padé can now rerun on DEFORMED
+rungs (κ̃₁, κ̃₃ available). No fit; no c_k wired; no tier change.

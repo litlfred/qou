@@ -3,19 +3,26 @@
 The Hoefsmit seminormal basis is built by inductively decomposing
 $V^{\otimes n}$ via the chain
 $H_1(q) \subset H_2(q) \subset \cdots \subset H_n(q)$. At each step
-$k$, every existing eigenvector $|t\rangle$ for $H_k(q)$ splits
+$k$, every existing eigenvector $v_t$ for $H_k(q)$ splits
 under $\sigma_k$ into:
 
-- $a^+_t \cdot |t \cup \square_{k+1}^{\to}\rangle$ (extend tableau
+- $a^+_t \cdot v_{t \cup \square_{k+1}^{\to}}$ (extend tableau
   rightward; $q$-eigenvalue);
-- $a^-_t \cdot |t \cup \square_{k+1}^{\downarrow}\rangle$ (extend
+- $a^-_t \cdot v_{t \cup \square_{k+1}^{\downarrow}}$ (extend
   tableau downward; $-q^{-1}$-eigenvalue).
 
 Conway's surreal construction at stage $k$ takes each existing
 surreal $x$ with sign-sequence $s$ and produces *exactly two*
 new surreals: $x^+$ (insert $+$ at position $k+1$) and $x^-$
-(insert $-$ at position $k+1$). The bijection $\Phi$ matches
-these two-fold splittings step-by-step.
+(insert $-$ at position $k+1$). The embedding $\Phi$ matches each
+tableau splitting with the corresponding sign extension
+step-by-step. The tableau side, however, produces the antisymmetric
+child only when the two-row shape constraint permits it (a box can
+be added to the second row of $\lambda = (\lambda_1, \lambda_2)$
+only if $\lambda_2 < \lambda_1$), while Conway's construction always
+splits both ways — which is exactly why $\Phi$ is injective but not
+surjective: the unmatched sign sequences are the non-tableau dyadic
+rationals identified in the statement.
 
 Compatibility with sums is forced by the eigenvalue convention:
 $\sigma_i$'s $q$-eigenspace + $-q^{-1}$-eigenspace decomposition
@@ -37,6 +44,6 @@ A full proof requires:
   $q$ and $-q^{-1}$; Conway's construction uses left/right of
   midpoint).
 
-The Lean stub axiomatises the bijection
+The Lean stub axiomatises the embedding
 ([sign sequence functor](#def:sign-sequence-of-braid)) pending
 these prerequisites.

@@ -1,4 +1,4 @@
-Using the derived $q_0$, the hadronic mass collapses into a linear combination of the neutrino vacuum drag and the pure strong-force binding energy. All four rows match CODATA to sub-keV precision:
+*The hadronic mass collapses into a combination of neutrino vacuum drag and pure strong-force binding energy. Using the derived $q_0$, the predictions match CODATA to sub-keV precision:*
 
 | **Structure** | **Topological Formula** | **QOU Result (MeV)** | **CODATA (MeV)** |
 |---|---|---|---|

@@ -13,14 +13,10 @@ whose total curvature $\nabla_q^2$ equals the **intrinsic
 $q$-curvature** determined by $d_q^2$:
 
 $$
-  \nabla_q^2 = (q - 1)\mathcal{F}_q^{\mathrm{intr}},
+  \nabla_q^2 = (q - 1)\mathcal{F}_q^{\mathrm{intr}}.
 $$
 
-where $\mathcal{F}_q^{\mathrm{intr}} \in
-\mathrm{End}(\mathcal{V}) \otimes \Omega^2_q$ is the
-**intrinsic $q$-curvature**, the image of the obstruction class $\kappa_0$
-under the HKR map
-([Kummer filtration](#rem:kummer-filtration-obstruction)):
+Here, $\mathcal{F}_q^{\mathrm{intr}} \in \mathrm{End}(\mathcal{V}) \otimes \Omega^2_q$ is the **intrinsic $q$-curvature**, defined as the image of the obstruction class $\kappa_0$ under the Hochschild--Kostant--Rosenberg map ([Kummer filtration](#rem:kummer-filtration-obstruction)):
 
 $$
   \mathcal{F}_q^{\mathrm{intr}}

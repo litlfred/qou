@@ -1,0 +1,1384 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-12T10:50:17.414924+00:00",
+  "commitSha": "c0b2d2defe6a6053fe2741f4bb24f21322b0ffaa",
+  "assertions": [
+    {
+      "name": "no_structural_latticept_realizes_vacuum_row",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "Falsification gate: the disciplined claim is a coherent no-fit realization of the seven-block vacuum row on the second-kind q-Bessel contiguity orbit via a transpose-invariant zero-parameter structural latticePt. A future map that reproduces d_q(lambda)/d_q(ref) at all seven blocks must FAIL this assertion so it is re-adjudicated (a)/(b) under owner review before any wiring."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 10,
+  "computation": "keystone-qbessel-latticept-search",
+  "scriptFile": "keystone_qbessel_latticept_search.py",
+  "scriptHash": "494333cdd9e3",
+  "scriptCommitSha": "c0b2d2defe6a6053fe2741f4bb24f21322b0ffaa",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "s013 geometric W_lambda vector 1: falsifiable NO-FIT test of the open latticePt field of QBesselRadialPartRealization. Feeds six transpose-invariant zero-parameter structural index maps (|content sum|, content^2 sum, Durfee, n(l)+n(l'), max hook, hook sum) into the second-kind Jackson q-Bessel contiguity WEIGHT orbit P_k=prod r_j (qbesselSecondKindRatio), over q in {q0,1/q0} and orders nu in {0,1/2,1,2} (a=q^nu). Tests the normalization-free realization condition P_{k_lambda}/P_{k_ref}=d_q(lambda)/d_q(ref) at all seven n=5 blocks incl. the self-conjugate (3,1,1)=[4][3]/[2]. Distinct from prior probes which tested q-Bessel ROOTS (keystone_qhankel_eq2_vacuum_row) or COMPACT closed forms (keystone_valuemap_screen_s013), not a structural latticePt INDEX into the weight orbit. Structural triage: most transpose-invariant indices collide (same index, different d_q) => excluded a priori; only |content sum| and content^2 sum are injective+testable. VERDICT: all candidates FAIL (scope a) -- these structural lattice maps alone do not realize the vacuum row on the second-kind q-Bessel orbit; NOT a structural exclusion (b). No fit, nothing wired.",
+  "data": {
+    "q0": "1.1099785955541805",
+    "compute_dps": 60,
+    "target_d_q": {
+      "(5)~(1^5)": "1.0",
+      "(4,1)~(2,1^3)": "4.10968243564",
+      "(3,2)~(2,2,1)": "5.22044132466",
+      "(3,1,1) self-conj": "6.22044132466"
+    },
+    "maps": {
+      "A_abs_content_sum": {
+        "why_structural": "|Σ(j−i)|; transpose-invariant (content negates → abs fixed); no free param",
+        "transpose_invariant": true,
+        "index_per_class": {
+          "(5)~(1^5)": 10,
+          "(4,1)~(2,1^3)": 5,
+          "(3,2)~(2,2,1)": 2,
+          "(3,1,1) self-conj": 0
+        },
+        "injective_on_distinct_dq": true,
+        "collisions": []
+      },
+      "B_content_sq_sum": {
+        "why_structural": "Σ(j−i)² = quadratic-Casimir magnitude; transpose-invariant; no free param",
+        "transpose_invariant": true,
+        "index_per_class": {
+          "(5)~(1^5)": 30,
+          "(4,1)~(2,1^3)": 15,
+          "(3,2)~(2,2,1)": 6,
+          "(3,1,1) self-conj": 10
+        },
+        "injective_on_distinct_dq": true,
+        "collisions": []
+      },
+      "C_durfee": {
+        "why_structural": "Durfee-square side (main-diagonal length); transpose-invariant; no free param",
+        "transpose_invariant": true,
+        "index_per_class": {
+          "(5)~(1^5)": 1,
+          "(4,1)~(2,1^3)": 1,
+          "(3,2)~(2,2,1)": 2,
+          "(3,1,1) self-conj": 1
+        },
+        "injective_on_distinct_dq": false,
+        "collisions": [
+          {
+            "classes": [
+              "(5)~(1^5)",
+              "(4,1)~(2,1^3)"
+            ],
+            "shared_index": 1
+          },
+          {
+            "classes": [
+              "(5)~(1^5)",
+              "(3,1,1) self-conj"
+            ],
+            "shared_index": 1
+          },
+          {
+            "classes": [
+              "(4,1)~(2,1^3)",
+              "(3,1,1) self-conj"
+            ],
+            "shared_index": 1
+          }
+        ]
+      },
+      "D_n_plus_nconj": {
+        "why_structural": "n(λ)+n(λ′), transpose-symmetric coarea; no free param",
+        "transpose_invariant": true,
+        "index_per_class": {
+          "(5)~(1^5)": 10,
+          "(4,1)~(2,1^3)": 7,
+          "(3,2)~(2,2,1)": 6,
+          "(3,1,1) self-conj": 6
+        },
+        "injective_on_distinct_dq": false,
+        "collisions": [
+          {
+            "classes": [
+              "(3,2)~(2,2,1)",
+              "(3,1,1) self-conj"
+            ],
+            "shared_index": 6
+          }
+        ]
+      },
+      "E_max_hook": {
+        "why_structural": "max hook length (principal hook = arm+leg+1 of corner); transpose-invariant; no free param",
+        "transpose_invariant": true,
+        "index_per_class": {
+          "(5)~(1^5)": 5,
+          "(4,1)~(2,1^3)": 5,
+          "(3,2)~(2,2,1)": 4,
+          "(3,1,1) self-conj": 5
+        },
+        "injective_on_distinct_dq": false,
+        "collisions": [
+          {
+            "classes": [
+              "(5)~(1^5)",
+              "(4,1)~(2,1^3)"
+            ],
+            "shared_index": 5
+          },
+          {
+            "classes": [
+              "(5)~(1^5)",
+              "(3,1,1) self-conj"
+            ],
+            "shared_index": 5
+          },
+          {
+            "classes": [
+              "(4,1)~(2,1^3)",
+              "(3,1,1) self-conj"
+            ],
+            "shared_index": 5
+          }
+        ]
+      },
+      "F_hook_sum": {
+        "why_structural": "Σ hook lengths; transpose-invariant (hook multiset invariant); no free param",
+        "transpose_invariant": true,
+        "index_per_class": {
+          "(5)~(1^5)": 15,
+          "(4,1)~(2,1^3)": 12,
+          "(3,2)~(2,2,1)": 11,
+          "(3,1,1) self-conj": 11
+        },
+        "injective_on_distinct_dq": false,
+        "collisions": [
+          {
+            "classes": [
+              "(3,2)~(2,2,1)",
+              "(3,1,1) self-conj"
+            ],
+            "shared_index": 11
+          }
+        ]
+      }
+    },
+    "runs": [
+      {
+        "map": "A_abs_content_sum",
+        "q_choice": "q0",
+        "order_nu": "0",
+        "a_eq_q_pow_nu": "1.0",
+        "anchor_class": "(3,1,1) self-conj",
+        "sign_consistent": false,
+        "max_rel_err": "1.56161e+9",
+        "matched_no_fit": false,
+        "blocks": [
+          {
+            "block": "(5)",
+            "class": "(5)~(1^5)",
+            "lattice_k": 10,
+            "P_k": "2.5104525e+8",
+            "predicted_weight_normed": "1561612241.0",
+            "target_d_q": "1.0",
+            "rel_err": "1.56161e+9"
+          },
+          {
+            "block": "(1^5)",
+            "class": "(5)~(1^5)",
+            "lattice_k": 10,
+            "P_k": "2.5104525e+8",
+            "predicted_weight_normed": "1561612241.0",
+            "target_d_q": "1.0",
+            "rel_err": "1.56161e+9"
+          },
+          {
+            "block": "(4,1)",
+            "class": "(4,1)~(2,1^3)",
+            "lattice_k": 5,
+            "P_k": "-1226334.4",
+            "predicted_weight_normed": "-7628341.067",
+            "target_d_q": "4.109682436",
+            "rel_err": "1.85619e+6"
+          },
+          {
+            "block": "(2,1,1,1)",
+            "class": "(4,1)~(2,1^3)",
+            "lattice_k": 5,
+            "P_k": "-1226334.4",
+            "predicted_weight_normed": "-7628341.067",
+            "target_d_q": "4.109682436",
+            "rel_err": "1.85619e+6"
+          },
+          {
+            "block": "(3,2)",
+            "class": "(3,2)~(2,2,1)",
+            "lattice_k": 2,
+            "P_k": "2330.6102",
+            "predicted_weight_normed": "14497.42389",
+            "target_d_q": "5.220441325",
+            "rel_err": "2776.05"
+          },
+          {
+            "block": "(2,2,1)",
+            "class": "(3,2)~(2,2,1)",
+            "lattice_k": 2,
+            "P_k": "2330.6102",
+            "predicted_weight_normed": "14497.42389",
+            "target_d_q": "5.220441325",
+            "rel_err": "2776.05"
+          },
+          {
+            "block": "(3,1,1)",
+            "class": "(3,1,1) self-conj",
+            "lattice_k": 0,
+            "P_k": "1.0",
+            "predicted_weight_normed": "6.220441325",
+            "target_d_q": "6.220441325",
+            "rel_err": "0.0"
+          }
+        ]
+      },
+      {
+        "map": "A_abs_content_sum",
+        "q_choice": "q0",
+        "order_nu": "1/2",
+        "a_eq_q_pow_nu": "1.053555217",
+        "anchor_class": "(3,1,1) self-conj",
+        "sign_consistent": false,
+        "max_rel_err": "5.33864e+8",
+        "matched_no_fit": false,
+        "blocks": [
+          {
+            "block": "(5)",
+            "class": "(5)~(1^5)",
+            "lattice_k": 10,
+            "P_k": "85824119.0",
+            "predicted_weight_normed": "533863894.3",
+            "target_d_q": "1.0",
+            "rel_err": "5.33864e+8"
+          },
+          {
+            "block": "(1^5)",
+            "class": "(5)~(1^5)",
+            "lattice_k": 10,
+            "P_k": "85824119.0",
+            "predicted_weight_normed": "533863894.3",
+            "target_d_q": "1.0",
+            "rel_err": "5.33864e+8"
+          },
+          {
+            "block": "(4,1)",
+            "class": "(4,1)~(2,1^3)",
+            "lattice_k": 5,
+            "P_k": "-512350.47",
+            "predicted_weight_normed": "-3187046.014",
+            "target_d_q": "4.109682436",
+            "rel_err": "775498.0"
+          },
+          {
+            "block": "(2,1,1,1)",
+            "class": "(4,1)~(2,1^3)",
+            "lattice_k": 5,
+            "P_k": "-512350.47",
+            "predicted_weight_normed": "-3187046.014",
+            "target_d_q": "4.109682436",
+            "rel_err": "775498.0"
+          },
+          {
+            "block": "(3,2)",
+            "class": "(3,2)~(2,2,1)",
+            "lattice_k": 2,
+            "P_k": "1307.4847",
+            "predicted_weight_normed": "8133.132141",
+            "target_d_q": "5.220441325",
+            "rel_err": "1556.94"
+          },
+          {
+            "block": "(2,2,1)",
+            "class": "(3,2)~(2,2,1)",
+            "lattice_k": 2,
+            "P_k": "1307.4847",
+            "predicted_weight_normed": "8133.132141",
+            "target_d_q": "5.220441325",
+            "rel_err": "1556.94"
+          },
+          {
+            "block": "(3,1,1)",
+            "class": "(3,1,1) self-conj",
+            "lattice_k": 0,
+            "P_k": "1.0",
+            "predicted_weight_normed": "6.220441325",
+            "target_d_q": "6.220441325",
+            "rel_err": "0.0"
+          }
+        ]
+      },
+      {
+        "map": "A_abs_content_sum",
+        "q_choice": "q0",
+        "order_nu": "1",
+        "a_eq_q_pow_nu": "1.109978596",
+        "anchor_class": "(3,1,1) self-conj",
+        "sign_consistent": false,
+        "max_rel_err": "2.26657e+8",
+        "matched_no_fit": false,
+        "blocks": [
+          {
+            "block": "(5)",
+            "class": "(5)~(1^5)",
+            "lattice_k": 10,
+            "P_k": "36437441.0",
+            "predicted_weight_normed": "226656966.4",
+            "target_d_q": "1.0",
+            "rel_err": "2.26657e+8"
+          },
+          {
+            "block": "(1^5)",
+            "class": "(5)~(1^5)",
+            "lattice_k": 10,
+            "P_k": "36437441.0",
+            "predicted_weight_normed": "226656966.4",
+            "target_d_q": "1.0",
+            "rel_err": "2.26657e+8"
+          },
+          {
+            "block": "(4,1)",
+            "class": "(4,1)~(2,1^3)",
+            "lattice_k": 5,
+            "P_k": "-261139.12",
+            "predicted_weight_normed": "-1624400.571",
+            "target_d_q": "4.109682436",
+            "rel_err": "395263.0"
+          },
+          {
+            "block": "(2,1,1,1)",
+            "class": "(4,1)~(2,1^3)",
+            "lattice_k": 5,
+            "P_k": "-261139.12",
+            "predicted_weight_normed": "-1624400.571",
+            "target_d_q": "4.109682436",
+            "rel_err": "395263.0"
+          },
+          {
+            "block": "(3,2)",
+            "class": "(3,2)~(2,2,1)",
+            "lattice_k": 2,
+            "P_k": "859.18832",
+            "predicted_weight_normed": "5344.53052",
+            "target_d_q": "5.220441325",
+            "rel_err": "1022.77"
+          },
+          {
+            "block": "(2,2,1)",
+            "class": "(3,2)~(2,2,1)",
+            "lattice_k": 2,
+            "P_k": "859.18832",
+            "predicted_weight_normed": "5344.53052",
+            "target_d_q": "5.220441325",
+            "rel_err": "1022.77"
+          },
+          {
+            "block": "(3,1,1)",
+            "class": "(3,1,1) self-conj",
+            "lattice_k": 0,
+            "P_k": "1.0",
+            "predicted_weight_normed": "6.220441325",
+            "target_d_q": "6.220441325",
+            "rel_err": "0.0"
+          }
+        ]
+      },
+      {
+        "map": "A_abs_content_sum",
+        "q_choice": "q0",
+        "order_nu": "2",
+        "a_eq_q_pow_nu": "1.232052483",
+        "anchor_class": "(3,1,1) self-conj",
+        "sign_consistent": false,
+        "max_rel_err": "5.97821e+7",
+        "matched_no_fit": false,
+        "blocks": [
+          {
+            "block": "(5)",
+            "class": "(5)~(1^5)",
+            "lattice_k": 10,
+            "P_k": "9610591.0",
+            "predicted_weight_normed": "59782117.21",
+            "target_d_q": "1.0",
+            "rel_err": "5.97821e+7"
+          },
+          {
+            "block": "(1^5)",
+            "class": "(5)~(1^5)",
+            "lattice_k": 10,
+            "P_k": "9610591.0",
+            "predicted_weight_normed": "59782117.21",
+            "target_d_q": "1.0",
+            "rel_err": "5.97821e+7"
+          },
+          {
+            "block": "(4,1)",
+            "class": "(4,1)~(2,1^3)",
+            "lattice_k": 5,
+            "P_k": "-94900.253",
+            "predicted_weight_normed": "-590321.4576",
+            "target_d_q": "4.109682436",
+            "rel_err": "143643.0"
+          },
+          {
+            "block": "(2,1,1,1)",
+            "class": "(4,1)~(2,1^3)",
+            "lattice_k": 5,
+            "P_k": "-94900.253",
+            "predicted_weight_normed": "-590321.4576",
+            "target_d_q": "4.109682436",
+            "rel_err": "143643.0"
+          },
+          {
+            "block": "(3,2)",
+            "class": "(3,2)~(2,2,1)",
+            "lattice_k": 2,
+            "P_k": "474.25637",
+            "predicted_weight_normed": "2950.083901",
+            "target_d_q": "5.220441325",
+            "rel_err": "564.102"
+          },
+          {
+            "block": "(2,2,1)",
+            "class": "(3,2)~(2,2,1)",
+            "lattice_k": 2,
+            "P_k": "474.25637",
+            "predicted_weight_normed": "2950.083901",
+            "target_d_q": "5.220441325",
+            "rel_err": "564.102"
+          },
+          {
+            "block": "(3,1,1)",
+            "class": "(3,1,1) self-conj",
+            "lattice_k": 0,
+            "P_k": "1.0",
+            "predicted_weight_normed": "6.220441325",
+            "target_d_q": "6.220441325",
+            "rel_err": "0.0"
+          }
+        ]
+      },
+      {
+        "map": "A_abs_content_sum",
+        "q_choice": "1/q0",
+        "order_nu": "0",
+        "a_eq_q_pow_nu": "1.0",
+        "anchor_class": "(3,1,1) self-conj",
+        "sign_consistent": false,
+        "max_rel_err": "230320.0",
+        "matched_no_fit": false,
+        "blocks": [
+          {
+            "block": "(5)",
+            "class": "(5)~(1^5)",
+            "lattice_k": 10,
+            "P_k": "20962.238",
+            "predicted_weight_normed": "130394.3691",
+            "target_d_q": "1.0",
+            "rel_err": "130393.0"
+          },
+          {
+            "block": "(1^5)",
+            "class": "(5)~(1^5)",
+            "lattice_k": 10,
+            "P_k": "20962.238",
+            "predicted_weight_normed": "130394.3691",
+            "target_d_q": "1.0",
+            "rel_err": "130393.0"
+          },
+          {
+            "block": "(4,1)",
+            "class": "(4,1)~(2,1^3)",
+            "lattice_k": 5,
+            "P_k": "-152165.72",
+            "predicted_weight_normed": "-946537.9275",
+            "target_d_q": "4.109682436",
+            "rel_err": "230320.0"
+          },
+          {
+            "block": "(2,1,1,1)",
+            "class": "(4,1)~(2,1^3)",
+            "lattice_k": 5,
+            "P_k": "-152165.72",
+            "predicted_weight_normed": "-946537.9275",
+            "target_d_q": "4.109682436",
+            "rel_err": "230320.0"
+          },
+          {
+            "block": "(3,2)",
+            "class": "(3,2)~(2,2,1)",
+            "lattice_k": 2,
+            "P_k": "1891.6485",
+            "predicted_weight_normed": "11766.88826",
+            "target_d_q": "5.220441325",
+            "rel_err": "2253.0"
+          },
+          {
+            "block": "(2,2,1)",
+            "class": "(3,2)~(2,2,1)",
+            "lattice_k": 2,
+            "P_k": "1891.6485",
+            "predicted_weight_normed": "11766.88826",
+            "target_d_q": "5.220441325",
+            "rel_err": "2253.0"
+          },
+          {
+            "block": "(3,1,1)",
+            "class": "(3,1,1) self-conj",
+            "lattice_k": 0,
+            "P_k": "1.0",
+            "predicted_weight_normed": "6.220441325",
+            "target_d_q": "6.220441325",
+            "rel_err": "0.0"
+          }
+        ]
+      },
+      {
+        "map": "A_abs_content_sum",
+        "q_choice": "1/q0",
+        "order_nu": "1/2",
+        "a_eq_q_pow_nu": "0.9491671473",
+        "anchor_class": "(3,1,1) self-conj",
+        "sign_consistent": false,
+        "max_rel_err": "74132.3",
+        "matched_no_fit": false,
+        "blocks": [
+          {
+            "block": "(5)",
+            "class": "(5)~(1^5)",
+            "lattice_k": 10,
+            "P_k": "4253.2603",
+            "predicted_weight_normed": "26457.15626",
+            "target_d_q": "1.0",
+            "rel_err": "26456.2"
+          },
+          {
+            "block": "(1^5)",
+            "class": "(5)~(1^5)",
+            "lattice_k": 10,
+            "P_k": "4253.2603",
+            "predicted_weight_normed": "26457.15626",
+            "target_d_q": "1.0",
+            "rel_err": "26456.2"
+          },
+          {
+            "block": "(4,1)",
+            "class": "(4,1)~(2,1^3)",
+            "lattice_k": 5,
+            "P_k": "-48976.59",
+            "predicted_weight_normed": "-304656.0044",
+            "target_d_q": "4.109682436",
+            "rel_err": "74132.3"
+          },
+          {
+            "block": "(2,1,1,1)",
+            "class": "(4,1)~(2,1^3)",
+            "lattice_k": 5,
+            "P_k": "-48976.59",
+            "predicted_weight_normed": "-304656.0044",
+            "target_d_q": "4.109682436",
+            "rel_err": "74132.3"
+          },
+          {
+            "block": "(3,2)",
+            "class": "(3,2)~(2,2,1)",
+            "lattice_k": 2,
+            "P_k": "956.07688",
+            "predicted_weight_normed": "5947.220164",
+            "target_d_q": "5.220441325",
+            "rel_err": "1138.22"
+          },
+          {
+            "block": "(2,2,1)",
+            "class": "(3,2)~(2,2,1)",
+            "lattice_k": 2,
+            "P_k": "956.07688",
+            "predicted_weight_normed": "5947.220164",
+            "target_d_q": "5.220441325",
+            "rel_err": "1138.22"
+          },
+          {
+            "block": "(3,1,1)",
+            "class": "(3,1,1) self-conj",
+            "lattice_k": 0,
+            "P_k": "1.0",
+            "predicted_weight_normed": "6.220441325",
+            "target_d_q": "6.220441325",
+            "rel_err": "0.0"
+          }
+        ]
+      },
+      {
+        "map": "A_abs_content_sum",
+        "q_choice": "1/q0",
+        "order_nu": "1",
+        "a_eq_q_pow_nu": "0.9009182736",
+        "anchor_class": "(3,1,1) self-conj",
+        "sign_consistent": false,
+        "max_rel_err": "29109.5",
+        "matched_no_fit": false,
+        "blocks": [
+          {
+            "block": "(5)",
+            "class": "(5)~(1^5)",
+            "lattice_k": 10,
+            "P_k": "1071.7351",
+            "predicted_weight_normed": "6666.665479",
+            "target_d_q": "1.0",
+            "rel_err": "6665.67"
+          },
+          {
+            "block": "(1^5)",
+            "class": "(5)~(1^5)",
+            "lattice_k": 10,
+            "P_k": "1071.7351",
+            "predicted_weight_normed": "6666.665479",
+            "target_d_q": "1.0",
+            "rel_err": "6665.67"
+          },
+          {
+            "block": "(4,1)",
+            "class": "(4,1)~(2,1^3)",
+            "lattice_k": 5,
+            "P_k": "-19231.22",
+            "predicted_weight_normed": "-119626.6749",
+            "target_d_q": "4.109682436",
+            "rel_err": "29109.5"
+          },
+          {
+            "block": "(2,1,1,1)",
+            "class": "(4,1)~(2,1^3)",
+            "lattice_k": 5,
+            "P_k": "-19231.22",
+            "predicted_weight_normed": "-119626.6749",
+            "target_d_q": "4.109682436",
+            "rel_err": "29109.5"
+          },
+          {
+            "block": "(3,2)",
+            "class": "(3,2)~(2,2,1)",
+            "lattice_k": 2,
+            "P_k": "566.01762",
+            "predicted_weight_normed": "3520.879364",
+            "target_d_q": "5.220441325",
+            "rel_err": "673.441"
+          },
+          {
+            "block": "(2,2,1)",
+            "class": "(3,2)~(2,2,1)",
+            "lattice_k": 2,
+            "P_k": "566.01762",
+            "predicted_weight_normed": "3520.879364",
+            "target_d_q": "5.220441325",
+            "rel_err": "673.441"
+          },
+          {
+            "block": "(3,1,1)",
+            "class": "(3,1,1) self-conj",
+            "lattice_k": 0,
+            "P_k": "1.0",
+            "predicted_weight_normed": "6.220441325",
+            "target_d_q": "6.220441325",
+            "rel_err": "0.0"
+          }
+        ]
+      },
+      {
+        "map": "A_abs_content_sum",
+        "q_choice": "1/q0",
+        "order_nu": "2",
+        "a_eq_q_pow_nu": "0.8116537356",
+        "anchor_class": "(3,1,1) self-conj",
+        "sign_consistent": false,
+        "max_rel_err": "6279.3",
+        "matched_no_fit": false,
+        "blocks": [
+          {
+            "block": "(5)",
+            "class": "(5)~(1^5)",
+            "lattice_k": 10,
+            "P_k": "99.573471",
+            "predicted_weight_normed": "619.3909317",
+            "target_d_q": "1.0",
+            "rel_err": "618.391"
+          },
+          {
+            "block": "(1^5)",
+            "class": "(5)~(1^5)",
+            "lattice_k": 10,
+            "P_k": "99.573471",
+            "predicted_weight_normed": "619.3909317",
+            "target_d_q": "1.0",
+            "rel_err": "618.391"
+          },
+          {
+            "block": "(4,1)",
+            "class": "(4,1)~(2,1^3)",
+            "lattice_k": 5,
+            "P_k": "-4147.9093",
+            "predicted_weight_normed": "-25801.8263",
+            "target_d_q": "4.109682436",
+            "rel_err": "6279.3"
+          },
+          {
+            "block": "(2,1,1,1)",
+            "class": "(4,1)~(2,1^3)",
+            "lattice_k": 5,
+            "P_k": "-4147.9093",
+            "predicted_weight_normed": "-25801.8263",
+            "target_d_q": "4.109682436",
+            "rel_err": "6279.3"
+          },
+          {
+            "block": "(3,2)",
+            "class": "(3,2)~(2,2,1)",
+            "lattice_k": 2,
+            "P_k": "253.58616",
+            "predicted_weight_normed": "1577.417821",
+            "target_d_q": "5.220441325",
+            "rel_err": "301.162"
+          },
+          {
+            "block": "(2,2,1)",
+            "class": "(3,2)~(2,2,1)",
+            "lattice_k": 2,
+            "P_k": "253.58616",
+            "predicted_weight_normed": "1577.417821",
+            "target_d_q": "5.220441325",
+            "rel_err": "301.162"
+          },
+          {
+            "block": "(3,1,1)",
+            "class": "(3,1,1) self-conj",
+            "lattice_k": 0,
+            "P_k": "1.0",
+            "predicted_weight_normed": "6.220441325",
+            "target_d_q": "6.220441325",
+            "rel_err": "0.0"
+          }
+        ]
+      },
+      {
+        "map": "B_content_sq_sum",
+        "q_choice": "q0",
+        "order_nu": "0",
+        "a_eq_q_pow_nu": "1.0",
+        "anchor_class": "(3,2)~(2,2,1)",
+        "sign_consistent": false,
+        "max_rel_err": "16270.2",
+        "matched_no_fit": false,
+        "blocks": [
+          {
+            "block": "(5)",
+            "class": "(5)~(1^5)",
+            "lattice_k": 30,
+            "P_k": "1.5905392e+10",
+            "predicted_weight_normed": "16271.15467",
+            "target_d_q": "1.0",
+            "rel_err": "16270.2"
+          },
+          {
+            "block": "(1^5)",
+            "class": "(5)~(1^5)",
+            "lattice_k": 30,
+            "P_k": "1.5905392e+10",
+            "predicted_weight_normed": "16271.15467",
+            "target_d_q": "1.0",
+            "rel_err": "16270.2"
+          },
+          {
+            "block": "(4,1)",
+            "class": "(4,1)~(2,1^3)",
+            "lattice_k": 15,
+            "P_k": "-3.0834297e+9",
+            "predicted_weight_normed": "-3154.336666",
+            "target_d_q": "4.109682436",
+            "rel_err": "768.538"
+          },
+          {
+            "block": "(2,1,1,1)",
+            "class": "(4,1)~(2,1^3)",
+            "lattice_k": 15,
+            "P_k": "-3.0834297e+9",
+            "predicted_weight_normed": "-3154.336666",
+            "target_d_q": "4.109682436",
+            "rel_err": "768.538"
+          },
+          {
+            "block": "(3,2)",
+            "class": "(3,2)~(2,2,1)",
+            "lattice_k": 6,
+            "P_k": "5103090.0",
+            "predicted_weight_normed": "5.220441325",
+            "target_d_q": "5.220441325",
+            "rel_err": "0.0"
+          },
+          {
+            "block": "(2,2,1)",
+            "class": "(3,2)~(2,2,1)",
+            "lattice_k": 6,
+            "P_k": "5103090.0",
+            "predicted_weight_normed": "5.220441325",
+            "target_d_q": "5.220441325",
+            "rel_err": "0.0"
+          },
+          {
+            "block": "(3,1,1)",
+            "class": "(3,1,1) self-conj",
+            "lattice_k": 10,
+            "P_k": "2.5104525e+8",
+            "predicted_weight_normed": "256.818316",
+            "target_d_q": "6.220441325",
+            "rel_err": "40.2862"
+          }
+        ]
+      },
+      {
+        "map": "B_content_sq_sum",
+        "q_choice": "q0",
+        "order_nu": "1/2",
+        "a_eq_q_pow_nu": "1.053555217",
+        "anchor_class": "(3,2)~(2,2,1)",
+        "sign_consistent": false,
+        "max_rel_err": "11813.0",
+        "matched_no_fit": false,
+        "blocks": [
+          {
+            "block": "(5)",
+            "class": "(5)~(1^5)",
+            "lattice_k": 30,
+            "P_k": "4.5585294e+9",
+            "predicted_weight_normed": "11813.99038",
+            "target_d_q": "1.0",
+            "rel_err": "11813.0"
+          },
+          {
+            "block": "(1^5)",
+            "class": "(5)~(1^5)",
+            "lattice_k": 30,
+            "P_k": "4.5585294e+9",
+            "predicted_weight_normed": "11813.99038",
+            "target_d_q": "1.0",
+            "rel_err": "11813.0"
+          },
+          {
+            "block": "(4,1)",
+            "class": "(4,1)~(2,1^3)",
+            "lattice_k": 15,
+            "P_k": "-9.6380307e+8",
+            "predicted_weight_normed": "-2497.814328",
+            "target_d_q": "4.109682436",
+            "rel_err": "608.788"
+          },
+          {
+            "block": "(2,1,1,1)",
+            "class": "(4,1)~(2,1^3)",
+            "lattice_k": 15,
+            "P_k": "-9.6380307e+8",
+            "predicted_weight_normed": "-2497.814328",
+            "target_d_q": "4.109682436",
+            "rel_err": "608.788"
+          },
+          {
+            "block": "(3,2)",
+            "class": "(3,2)~(2,2,1)",
+            "lattice_k": 6,
+            "P_k": "2014352.0",
+            "predicted_weight_normed": "5.220441325",
+            "target_d_q": "5.220441325",
+            "rel_err": "0.0"
+          },
+          {
+            "block": "(2,2,1)",
+            "class": "(3,2)~(2,2,1)",
+            "lattice_k": 6,
+            "P_k": "2014352.0",
+            "predicted_weight_normed": "5.220441325",
+            "target_d_q": "5.220441325",
+            "rel_err": "0.0"
+          },
+          {
+            "block": "(3,1,1)",
+            "class": "(3,1,1) self-conj",
+            "lattice_k": 10,
+            "P_k": "85824119.0",
+            "predicted_weight_normed": "222.4237718",
+            "target_d_q": "6.220441325",
+            "rel_err": "34.7569"
+          }
+        ]
+      },
+      {
+        "map": "B_content_sq_sum",
+        "q_choice": "q0",
+        "order_nu": "1",
+        "a_eq_q_pow_nu": "1.109978596",
+        "anchor_class": "(3,2)~(2,2,1)",
+        "sign_consistent": false,
+        "max_rel_err": "8777.64",
+        "matched_no_fit": false,
+        "blocks": [
+          {
+            "block": "(5)",
+            "class": "(5)~(1^5)",
+            "lattice_k": 30,
+            "P_k": "1.6405337e+9",
+            "predicted_weight_normed": "8778.63835",
+            "target_d_q": "1.0",
+            "rel_err": "8777.64"
+          },
+          {
+            "block": "(1^5)",
+            "class": "(5)~(1^5)",
+            "lattice_k": 30,
+            "P_k": "1.6405337e+9",
+            "predicted_weight_normed": "8778.63835",
+            "target_d_q": "1.0",
+            "rel_err": "8777.64"
+          },
+          {
+            "block": "(4,1)",
+            "class": "(4,1)~(2,1^3)",
+            "lattice_k": 15,
+            "P_k": "-3.7640813e+8",
+            "predicted_weight_normed": "-2014.192575",
+            "target_d_q": "4.109682436",
+            "rel_err": "491.109"
+          },
+          {
+            "block": "(2,1,1,1)",
+            "class": "(4,1)~(2,1^3)",
+            "lattice_k": 15,
+            "P_k": "-3.7640813e+8",
+            "predicted_weight_normed": "-2014.192575",
+            "target_d_q": "4.109682436",
+            "rel_err": "491.109"
+          },
+          {
+            "block": "(3,2)",
+            "class": "(3,2)~(2,2,1)",
+            "lattice_k": 6,
+            "P_k": "975585.24",
+            "predicted_weight_normed": "5.220441325",
+            "target_d_q": "5.220441325",
+            "rel_err": "0.0"
+          },
+          {
+            "block": "(2,2,1)",
+            "class": "(3,2)~(2,2,1)",
+            "lattice_k": 6,
+            "P_k": "975585.24",
+            "predicted_weight_normed": "5.220441325",
+            "target_d_q": "5.220441325",
+            "rel_err": "0.0"
+          },
+          {
+            "block": "(3,1,1)",
+            "class": "(3,1,1) self-conj",
+            "lattice_k": 10,
+            "P_k": "36437441.0",
+            "predicted_weight_normed": "194.979912",
+            "target_d_q": "6.220441325",
+            "rel_err": "30.345"
+          }
+        ]
+      },
+      {
+        "map": "B_content_sq_sum",
+        "q_choice": "q0",
+        "order_nu": "2",
+        "a_eq_q_pow_nu": "1.232052483",
+        "anchor_class": "(3,2)~(2,2,1)",
+        "sign_consistent": false,
+        "max_rel_err": "5150.52",
+        "matched_no_fit": false,
+        "blocks": [
+          {
+            "block": "(5)",
+            "class": "(5)~(1^5)",
+            "lattice_k": 30,
+            "P_k": "3.203532e+8",
+            "predicted_weight_normed": "5151.521416",
+            "target_d_q": "1.0",
+            "rel_err": "5150.52"
+          },
+          {
+            "block": "(1^5)",
+            "class": "(5)~(1^5)",
+            "lattice_k": 30,
+            "P_k": "3.203532e+8",
+            "predicted_weight_normed": "5151.521416",
+            "target_d_q": "1.0",
+            "rel_err": "5150.52"
+          },
+          {
+            "block": "(4,1)",
+            "class": "(4,1)~(2,1^3)",
+            "lattice_k": 15,
+            "P_k": "-85383669.0",
+            "predicted_weight_normed": "-1373.033904",
+            "target_d_q": "4.109682436",
+            "rel_err": "335.097"
+          },
+          {
+            "block": "(2,1,1,1)",
+            "class": "(4,1)~(2,1^3)",
+            "lattice_k": 15,
+            "P_k": "-85383669.0",
+            "predicted_weight_normed": "-1373.033904",
+            "target_d_q": "4.109682436",
+            "rel_err": "335.097"
+          },
+          {
+            "block": "(3,2)",
+            "class": "(3,2)~(2,2,1)",
+            "lattice_k": 6,
+            "P_k": "324639.06",
+            "predicted_weight_normed": "5.220441325",
+            "target_d_q": "5.220441325",
+            "rel_err": "0.0"
+          },
+          {
+            "block": "(2,2,1)",
+            "class": "(3,2)~(2,2,1)",
+            "lattice_k": 6,
+            "P_k": "324639.06",
+            "predicted_weight_normed": "5.220441325",
+            "target_d_q": "5.220441325",
+            "rel_err": "0.0"
+          },
+          {
+            "block": "(3,1,1)",
+            "class": "(3,1,1) self-conj",
+            "lattice_k": 10,
+            "P_k": "9610591.0",
+            "predicted_weight_normed": "154.5455634",
+            "target_d_q": "6.220441325",
+            "rel_err": "23.8448"
+          }
+        ]
+      },
+      {
+        "map": "B_content_sq_sum",
+        "q_choice": "1/q0",
+        "order_nu": "0",
+        "a_eq_q_pow_nu": "1.0",
+        "anchor_class": "(3,2)~(2,2,1)",
+        "sign_consistent": false,
+        "max_rel_err": "1.00001",
+        "matched_no_fit": false,
+        "blocks": [
+          {
+            "block": "(5)",
+            "class": "(5)~(1^5)",
+            "lattice_k": 30,
+            "P_k": "5.9956854e-30",
+            "predicted_weight_normed": "1.403301356e-34",
+            "target_d_q": "1.0",
+            "rel_err": "1.0"
+          },
+          {
+            "block": "(1^5)",
+            "class": "(5)~(1^5)",
+            "lattice_k": 30,
+            "P_k": "5.9956854e-30",
+            "predicted_weight_normed": "1.403301356e-34",
+            "target_d_q": "1.0",
+            "rel_err": "1.0"
+          },
+          {
+            "block": "(4,1)",
+            "class": "(4,1)~(2,1^3)",
+            "lattice_k": 15,
+            "P_k": "-0.93965234",
+            "predicted_weight_normed": "-2.199273845e-5",
+            "target_d_q": "4.109682436",
+            "rel_err": "1.00001"
+          },
+          {
+            "block": "(2,1,1,1)",
+            "class": "(4,1)~(2,1^3)",
+            "lattice_k": 15,
+            "P_k": "-0.93965234",
+            "predicted_weight_normed": "-2.199273845e-5",
+            "target_d_q": "4.109682436",
+            "rel_err": "1.00001"
+          },
+          {
+            "block": "(3,2)",
+            "class": "(3,2)~(2,2,1)",
+            "lattice_k": 6,
+            "P_k": "223046.34",
+            "predicted_weight_normed": "5.220441325",
+            "target_d_q": "5.220441325",
+            "rel_err": "0.0"
+          },
+          {
+            "block": "(2,2,1)",
+            "class": "(3,2)~(2,2,1)",
+            "lattice_k": 6,
+            "P_k": "223046.34",
+            "predicted_weight_normed": "5.220441325",
+            "target_d_q": "5.220441325",
+            "rel_err": "0.0"
+          },
+          {
+            "block": "(3,1,1)",
+            "class": "(3,1,1) self-conj",
+            "lattice_k": 10,
+            "P_k": "20962.238",
+            "predicted_weight_normed": "0.4906250846",
+            "target_d_q": "6.220441325",
+            "rel_err": "0.921127"
+          }
+        ]
+      },
+      {
+        "map": "B_content_sq_sum",
+        "q_choice": "1/q0",
+        "order_nu": "1/2",
+        "a_eq_q_pow_nu": "0.9491671473",
+        "anchor_class": "(3,2)~(2,2,1)",
+        "sign_consistent": false,
+        "max_rel_err": "1.0",
+        "matched_no_fit": false,
+        "blocks": [
+          {
+            "block": "(5)",
+            "class": "(5)~(1^5)",
+            "lattice_k": 30,
+            "P_k": "3.5925279e-31",
+            "predicted_weight_normed": "2.913090219e-35",
+            "target_d_q": "1.0",
+            "rel_err": "1.0"
+          },
+          {
+            "block": "(1^5)",
+            "class": "(5)~(1^5)",
+            "lattice_k": 30,
+            "P_k": "3.5925279e-31",
+            "predicted_weight_normed": "2.913090219e-35",
+            "target_d_q": "1.0",
+            "rel_err": "1.0"
+          },
+          {
+            "block": "(4,1)",
+            "class": "(4,1)~(2,1^3)",
+            "lattice_k": 15,
+            "P_k": "-0.13429564",
+            "predicted_weight_normed": "-1.088969458e-5",
+            "target_d_q": "4.109682436",
+            "rel_err": "1.0"
+          },
+          {
+            "block": "(2,1,1,1)",
+            "class": "(4,1)~(2,1^3)",
+            "lattice_k": 15,
+            "P_k": "-0.13429564",
+            "predicted_weight_normed": "-1.088969458e-5",
+            "target_d_q": "4.109682436",
+            "rel_err": "1.0"
+          },
+          {
+            "block": "(3,2)",
+            "class": "(3,2)~(2,2,1)",
+            "lattice_k": 6,
+            "P_k": "64380.365",
+            "predicted_weight_normed": "5.220441325",
+            "target_d_q": "5.220441325",
+            "rel_err": "0.0"
+          },
+          {
+            "block": "(2,2,1)",
+            "class": "(3,2)~(2,2,1)",
+            "lattice_k": 6,
+            "P_k": "64380.365",
+            "predicted_weight_normed": "5.220441325",
+            "target_d_q": "5.220441325",
+            "rel_err": "0.0"
+          },
+          {
+            "block": "(3,1,1)",
+            "class": "(3,1,1) self-conj",
+            "lattice_k": 10,
+            "P_k": "4253.2603",
+            "predicted_weight_normed": "0.344886145",
+            "target_d_q": "6.220441325",
+            "rel_err": "0.944556"
+          }
+        ]
+      },
+      {
+        "map": "B_content_sq_sum",
+        "q_choice": "1/q0",
+        "order_nu": "1",
+        "a_eq_q_pow_nu": "0.9009182736",
+        "anchor_class": "(3,2)~(2,2,1)",
+        "sign_consistent": false,
+        "max_rel_err": "1.0",
+        "matched_no_fit": false,
+        "blocks": [
+          {
+            "block": "(5)",
+            "class": "(5)~(1^5)",
+            "lattice_k": 30,
+            "P_k": "2.7029716e-32",
+            "predicted_weight_normed": "6.188839661e-36",
+            "target_d_q": "1.0",
+            "rel_err": "1.0"
+          },
+          {
+            "block": "(1^5)",
+            "class": "(5)~(1^5)",
+            "lattice_k": 30,
+            "P_k": "2.7029716e-32",
+            "predicted_weight_normed": "6.188839661e-36",
+            "target_d_q": "1.0",
+            "rel_err": "1.0"
+          },
+          {
+            "block": "(4,1)",
+            "class": "(4,1)~(2,1^3)",
+            "lattice_k": 15,
+            "P_k": "-0.02398132",
+            "predicted_weight_normed": "-5.490865669e-6",
+            "target_d_q": "4.109682436",
+            "rel_err": "1.0"
+          },
+          {
+            "block": "(2,1,1,1)",
+            "class": "(4,1)~(2,1^3)",
+            "lattice_k": 15,
+            "P_k": "-0.02398132",
+            "predicted_weight_normed": "-5.490865669e-6",
+            "target_d_q": "4.109682436",
+            "rel_err": "1.0"
+          },
+          {
+            "block": "(3,2)",
+            "class": "(3,2)~(2,2,1)",
+            "lattice_k": 6,
+            "P_k": "22800.243",
+            "predicted_weight_normed": "5.220441325",
+            "target_d_q": "5.220441325",
+            "rel_err": "0.0"
+          },
+          {
+            "block": "(2,2,1)",
+            "class": "(3,2)~(2,2,1)",
+            "lattice_k": 6,
+            "P_k": "22800.243",
+            "predicted_weight_normed": "5.220441325",
+            "target_d_q": "5.220441325",
+            "rel_err": "0.0"
+          },
+          {
+            "block": "(3,1,1)",
+            "class": "(3,1,1) self-conj",
+            "lattice_k": 10,
+            "P_k": "1071.7351",
+            "predicted_weight_normed": "0.2453890667",
+            "target_d_q": "6.220441325",
+            "rel_err": "0.960551"
+          }
+        ]
+      },
+      {
+        "map": "B_content_sq_sum",
+        "q_choice": "1/q0",
+        "order_nu": "2",
+        "a_eq_q_pow_nu": "0.8116537356",
+        "anchor_class": "(3,2)~(2,2,1)",
+        "sign_consistent": false,
+        "max_rel_err": "1.0",
+        "matched_no_fit": false,
+        "blocks": [
+          {
+            "block": "(5)",
+            "class": "(5)~(1^5)",
+            "lattice_k": 30,
+            "P_k": "2.3069983e-34",
+            "predicted_weight_normed": "2.96870528e-37",
+            "target_d_q": "1.0",
+            "rel_err": "1.0"
+          },
+          {
+            "block": "(1^5)",
+            "class": "(5)~(1^5)",
+            "lattice_k": 30,
+            "P_k": "2.3069983e-34",
+            "predicted_weight_normed": "2.96870528e-37",
+            "target_d_q": "1.0",
+            "rel_err": "1.0"
+          },
+          {
+            "block": "(4,1)",
+            "class": "(4,1)~(2,1^3)",
+            "lattice_k": 15,
+            "P_k": "-0.0011372864",
+            "predicted_weight_normed": "-1.463489643e-6",
+            "target_d_q": "4.109682436",
+            "rel_err": "1.0"
+          },
+          {
+            "block": "(2,1,1,1)",
+            "class": "(4,1)~(2,1^3)",
+            "lattice_k": 15,
+            "P_k": "-0.0011372864",
+            "predicted_weight_normed": "-1.463489643e-6",
+            "target_d_q": "4.109682436",
+            "rel_err": "1.0"
+          },
+          {
+            "block": "(3,2)",
+            "class": "(3,2)~(2,2,1)",
+            "lattice_k": 6,
+            "P_k": "4056.8355",
+            "predicted_weight_normed": "5.220441325",
+            "target_d_q": "5.220441325",
+            "rel_err": "0.0"
+          },
+          {
+            "block": "(2,2,1)",
+            "class": "(3,2)~(2,2,1)",
+            "lattice_k": 6,
+            "P_k": "4056.8355",
+            "predicted_weight_normed": "5.220441325",
+            "target_d_q": "5.220441325",
+            "rel_err": "0.0"
+          },
+          {
+            "block": "(3,1,1)",
+            "class": "(3,1,1) self-conj",
+            "lattice_k": 10,
+            "P_k": "99.573471",
+            "predicted_weight_normed": "0.1281337288",
+            "target_d_q": "6.220441325",
+            "rel_err": "0.979401"
+          }
+        ]
+      }
+    ],
+    "any_candidate_matched": false,
+    "verdict": "REFUTED-as-is (scope a): NO transpose-invariant zero-parameter structural index map (|content sum| / content^2 sum / Durfee / n+n' / max hook / hook sum) feeds the second-kind Jackson q-Bessel contiguity orbit P_k so that P_{k_lambda}/P_{k_ref} = d_q(lambda)/d_q(ref) at the seven n=5 blocks. Two obstructions: (1) collision exclusion -- Durfee/n+n'/max-hook/hook-sum assign one index to classes with different d_q (a priori excluded); (2) orbit-shape mismatch -- for the injective |content sum| and content^2 sum maps, the alternating q^{2k}-scaled orbit misses the near-linear d_q (1,4.11,5.22,6.22), the self-conjugate [4][3]/[2] missed as sharply as the single q-integers. Scope (a) not (b): no proved invariant forbids a q-Bessel radial realization in general; non-integer-index / other-order / other-kind / geometric-DG (#2503) latticePt untouched. A (b) would need a proved parity/degree/orbit invariant. Consistent with the two prior s013 negatives. No fit; nothing wired."
+  }
+}

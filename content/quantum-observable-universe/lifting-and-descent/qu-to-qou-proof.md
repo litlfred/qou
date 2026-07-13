@@ -1,5 +1,5 @@
 [Yekutieli lifting](#prop:yekutieli-lifting) establishes that the constructed
-brane tower satisfies the Yekutieli lifting condition.  We prove each
+brane tower satisfies the Quantum lifting condition.  We prove each
 structural property in turn.
 
 *Item (1): :refterm[Descent]{#descent} terminates.*
@@ -13,7 +13,7 @@ reduces the Krull dimension of the centre, so after at most $d_0$ steps
 the base becomes a discrete (Artinian) scheme.
 
 *Item (2): $\kappa_0$ equals the Euler class.*
-The first Yekutieli obstruction $\kappa_0 \in H^2(\mathcal{S}, \mathcal{B})$
+The first obstruction $\kappa_0 \in H^2(\mathcal{S}, \mathcal{B})$
 is the connecting-homomorphism image of $[A_0]$ under the central extension
 $1 \to \mathcal{B} \to \mathfrak{G}_1 \to \mathfrak{G}_0 \to 1$.  In the
 archimedean realisation, this identifies with the Euler class $e$ of the

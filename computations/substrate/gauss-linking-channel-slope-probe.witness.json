@@ -1,0 +1,45 @@
+{
+  "computation": "gauss_linking_channel_slope_probe",
+  "description": "D3: the CWF channel postulate discharged to a units convention — linking rate of a slope-z torus pair equals g = z/sqrt(1+z^2) exactly (symbolic, geometry-independent), Gauss-integral verification of the Lk = n input.",
+  "discipline": "no fit; sympy exact + numpy Gauss quadrature (periodic Riemann, spectral); (a)-scoped; no q_0, no observables.",
+  "auditOnly": "docs/audits/2026-07-06-parabolic-cylinder-toroidal-channel-interpolation.md",
+  "results": {
+    "symbolic_identity": "Lk*(2*pi*r)/L = z/sqrt(1+z^2) = g, any (R, r)",
+    "numeric_gauss": {
+      "Lk_(1,1)_cable_pair": {
+        "gauss_integral_signed": "-1.00000000",
+        "expected_abs": 1,
+        "ok": true
+      },
+      "Lk_(1,2)_cable_pair": {
+        "gauss_integral_signed": "-2.00000001",
+        "expected_abs": 2,
+        "ok": true
+      },
+      "Lk_(1,3)_cable_pair": {
+        "gauss_integral_signed": "-3.00000014",
+        "expected_abs": 3,
+        "ok": true
+      }
+    },
+    "postulate_reduction": "linking amplitude = CWF functional on (1, z)  ==>  arc length measured in exchange-cycle units (normalization convention)",
+    "related": [
+      "docs/audits/2026-07-06-reeb-flow-pn-magnitude-provenance-and-1four-extension.md SS2d/SS2e",
+      "deuteron-tower-fusion-frame-probe.witness.json (D1: z canonical)"
+    ]
+  },
+  "assertions": {
+    "linking_rate_equals_g_exact": true,
+    "rate_geometry_independent_in_z": true,
+    "gauss_integral_abs_lk_eq_n_n123": true
+  },
+  "allPassed": true,
+  "verdict": "THE g = sin(theta) MAGNITUDE IS LINKING GEOMETRY (derived): for a slope-z curve pair on a torus, linking number per unit arc length in exchange-cycle units equals z/sqrt(1+z^2) = g EXACTLY, independent of the torus geometry (symbolic), with the topological input Lk = n verified by direct Gauss integration (n = 1,2,3 to <1e-3). Composed with SS2d (tangent = Markov weight) and D1 (z = canonical Markov parameter), the reeb-flow chain's residual CWF postulate REDUCES TO A UNITS CONVENTION (arc length in exchange-cycle units). Remaining 2H opens: that convention, the D1 deformation choice, and E_unit. SCOPE (a): structural; nothing wired; no observable evaluated.",
+  "scriptHash": "ed2cc00e52a5",
+  "scriptCommitSha": "6c6eac62fcf667b0e345a8c472b49e4c7492bb70",
+  "commitSha": "6c6eac62fcf667b0e345a8c472b49e4c7492bb70",
+  "engine": "sympy+numpy",
+  "computedAt": "2026-07-07T08:40:14.605480+00:00",
+  "durationMs": 0,
+  "scriptFile": "gauss_linking_channel_slope_probe.py"
+}

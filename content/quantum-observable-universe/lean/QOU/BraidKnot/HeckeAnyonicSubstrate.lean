@@ -78,14 +78,12 @@ theorem normal_form_inhabited_of_action
     Nonempty H.NormalForm :=
   ⟨T⟩
 
-/-- **Faithful instance.** Carries the explicit research-grade conjecture as a sorry. -/
-instance canonical (R : Type u) [CommRing R] (q : R) :
-    HeckeAnyonicSubstrate R q where
-  NormalForm := PUnit
-  braidAction _ T := T
-  heckeQuadratic := True
-  -- Ref: [manuscript] conj:hecke-anyonic-substrate (§3b-cond conjectural-class instance; sorry = the conjecture)
-  anyonic_holds T := ⟨0, T, rfl⟩
+/-! **No canonical instance is provided — `conj:hecke-anyonic-substrate` is open.**
+Per AGENTS.md §3b-tax, an unproved primary conjecture is represented by a
+content-bearing class with **no** instance (the open state); a genuine instance
+over a real Hecke `NormalForm` arrives once the substrate realisation is
+established. Downstream conditional theorems in `KazhdanLusztigClassicalLimit`
+take `[HeckeAnyonicSubstrate R q]` as an explicit hypothesis. -/
 
 end HeckeAnyonicSubstrate
 

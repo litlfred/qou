@@ -54,4 +54,11 @@ class MagicNumbersBring where
       rank-preserving bijection `𝔐 ↔ {Lₙ}`. -/
   rank_eq_magic : ∀ n ∈ magicNumbers, magicLattice n = n
 
+-- No instance: this is an OPEN primary conjecture (AGENTS.md §3b-tax).
+-- The identity model (`magicLattice n := n`) discharges `rank_eq_magic`
+-- by `rfl` for ANY set of naturals — it constructs no actual
+-- S₅-stable period sub-lattice of Bring's curve, so it captures none of
+-- the conjecture's content.  The Phase-2 period-lattice computation
+-- that would supply a genuine instance is deferred (workplan P1.4).
+
 end QOU.Conjectures

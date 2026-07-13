@@ -1,93 +1,24 @@
-**Reading.**
-The hyperbolic volume $\mathrm{Vol}(S^3 \setminus K)$ of a hyperbolic
-knot complement is a *motivic period* — specifically, the value of a
-mixed-Tate motive under the **Bloch--Wigner regulator** $r_\infty$.
-Under this reading, the
-[archimedean realization functor](#def:archimedean-realization-functor)
-is the period-evaluation map: it takes a class in the (quantum) Bloch
-group and returns its archimedean image in $\mathbb{R}$.
-
 **Period interpretation.**
-A *period*, in the sense of Kontsevich--Zagier, is a complex number
-expressible as the integral of an algebraic differential form over a
-domain cut out by polynomial inequalities with rational coefficients.
-For a hyperbolic knot complement triangulated with shape parameters
-$z_1, \ldots, z_k \in \overline{\mathbb{Q}}$ satisfying Thurston's
-gluing equations, the volume is
+The hyperbolic volume $\mathrm{Vol}(S^3 \setminus K)$ is a motivic period: the value of a mixed-Tate motive under the Bloch-Wigner regulator $r_\infty$. For a hyperbolic knot complement with shape parameters $z_i$, the volume is:
 
 $$
   \mathrm{Vol}(S^3 \setminus K)
   \;=\;
   \sum_{i=1}^{k} D(z_i),
-\qquad
-D(z) := \operatorname{Im}\,\mathrm{Li}_2(z)
-       + \log|z|\cdot\arg(1-z),
 $$
 
-where $D$ is the **Bloch--Wigner dilogarithm**. Each summand $D(z_i)$
-is the period of an algebraic 1-form on $\mathbb{P}^1\setminus\{0,1,\infty\}$
-integrated over a cycle determined by $z_i$, hence a period in the
-Kontsevich--Zagier sense [`zagier1986`,`neumann-zagier1985`].
+where $D$ is the Bloch-Wigner dilogarithm. Each $D(z_i)$ is a Kontsevich-Zagier period.
 
 **Regulator interpretation.**
-Equivalently, the shape parameters define a class
-$[K] \in \mathcal{B}(\overline{\mathbb{Q}})$ in the (pre-)Bloch group,
-and
+The shape parameters define a class $[K] \in \mathcal{B}(\overline{\mathbb{Q}})$ in the pre-Bloch group, yielding:
 
 $$
   \mathrm{Vol}(S^3 \setminus K)
   \;=\;
-  r_\infty\bigl([K]\bigr),
+  r_\infty\bigl([K]\bigr).
 $$
 
-where $r_\infty : \mathcal{B}(\mathbb{C}) \to \mathbb{R}$ is the
-archimedean Beilinson regulator restricted to the Bloch group. Under
-this perspective, $\mathrm{Vol}(K)$ is exactly $K$-theoretic — the
-image of an algebraic $K$-theory class under a transcendental
-regulator.
+The volume $\mathrm{Vol}(K)$ is the $K$-theoretic image of an algebraic class under a transcendental regulator.
 
 **QOU placement.**
-The
-[archimedean realization functor](#def:archimedean-realization-functor)
-already factorises as $\tau_{\mathrm{arch}} = \pi_\infty \circ \tau$
-on motivic inputs and as $\pi_\infty \circ \chi_{\mathrm{top}}$ on
-arc-space inputs. The Bloch--Wigner reading is the third equivalent
-factorisation, restricted to inputs that come from
-$\mathrm{Vol}_q$:
-
-$$
-  \tau_{\mathrm{arch}}\!
-  \begin{pmatrix}
-    \text{algebraic quantum volume}\\
-    \mathrm{Vol}_q(\mathcal{B}_K) \in \mathbb{Z}[q^{\pm 1/2}]
-  \end{pmatrix}
-  \;=\;
-  r_\infty\!\bigl([K]\bigr)
-  \;=\;
-  \mathrm{Vol}(S^3 \setminus K).
-$$
-
-The three pictures — adelic projection, Euler-characteristic
-realization, Bloch--Wigner regulator — agree on this common domain.
-Each is useful for a different formal manipulation:
-
-* The **adelic** picture
- ([archimedean realization functor](#def:archimedean-realization-functor))
- is what controls the *categorical* compatibility ($\tau_{\mathrm{arch}}$
- factoring through the QOU fibre functor $\tau$).
-* The **Euler-characteristic** picture
- ([motivic mass measure](#def:motivic-mass-measure)) governs the
- blow-up calculus for arc-space integrals.
-* The **Bloch--Wigner / regulator** picture is the one that connects
- $\mathrm{Vol}_q$ to existing motivic-cohomology and quantum-topology
- literature (Kashaev, Murakami--Murakami, Garoufalidis--Zagier).
-
-**Scope.**
-This is an *interpretive remark*: it makes no new mathematical claim
-beyond what is in
-[$\mathrm{Vol}(K)$ factors through $\tau$](#prop:vol-through-tau).
-It names the existing factorisation in motivic-period
-language so that the
-[Kashaev volume conjecture](#conj:kashaev-volume-conjecture) and the
-archimedean remainder decay conjecture
-can be cross-referenced with the regulator literature.
+The archimedean realization functor factorizes identically across three pictures: adelic projection ($\pi_\infty \circ \tau$), Euler-characteristic integration ($\pi_\infty \circ \chi_{\mathrm{top}}$), and Bloch-Wigner regulation ($r_\infty$). These pictures agree entirely on the algebraic quantum volume domain. Each formalizes a distinct aspect: adelic ensures categorical compatibility, Euler-characteristic handles blow-up calculus, and Bloch-Wigner bridges to quantum topology literature.

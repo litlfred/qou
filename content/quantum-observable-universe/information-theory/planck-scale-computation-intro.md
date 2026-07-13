@@ -1,12 +1,3 @@
-This section develops computation at Planck time lengths.  The
-arc proceeds through the substrate-level Planck-scale computation,
-the Toffoli transfer matrix, the $q$-deformed AND gate, and the
-linear-program stability analysis that pins the Toffoli gate's
-operational regime.
+Computation at the Planck scale operates via substrate-level transitions. The Toffoli transfer matrix realizes the $q$-deformed AND gate. Linear-program stability analysis determines the operational regime of this gate.
 
-The closing blocks lift the substrate-level construction into a
-$q$-deformed game of life, identify the substrate computation as
-a model of quantum-computational universality, and close the
-section with the skein Turing machine — the categorical
-embodiment of substrate-level Church–Turing equivalence that the
-information-theoretic chapter relies on for falsifiability.
+This substrate-level construction lifts to a $q$-deformed Game of Life, supplying a model for quantum-computational universality. The categorical embodiment of this dynamic is the skein Turing machine. It realizes Church–Turing equivalence at the substrate level, establishing the physical falsifiability of the information-theoretic framework.

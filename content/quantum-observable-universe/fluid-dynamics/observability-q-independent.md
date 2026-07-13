@@ -1,9 +1,4 @@
-Let $(\mathbf{C}, A, \tau)$ be a
-[QOU](#def:quantum-observable-universe) and let
-$\mathcal{Q}_M = M \times \mathbb{G}_m$ be the
-[substrate line bundle](#def:substrate-line-bundle).  Let
-$q_1, q_2 \colon M \to \mathbb{G}_m$ be any two substrate
-sections.
+Let $(\mathbf{C}, A, \tau)$ act as a [QOU](#def:quantum-observable-universe) over the [substrate line bundle](#def:substrate-line-bundle) $\mathcal{Q}_M = M \times \mathbb{G}_m$. Assume $q_1, q_2 \colon M \to \mathbb{G}_m$ specify any two substrate sections.
 
 Then:
 
@@ -15,9 +10,6 @@ $$
   \bigl(\mathbf{1}, \mathrm{Ad}(A)\bigr).
 $$
 
-In particular, if $(\mathbf{C}, A, \tau)$ satisfies the
-observability axiom for any substrate section $q > 1$, then
-it satisfies it for **every** substrate section, including
-$q = 1$.
+If $(\mathbf{C}, A, \tau)$ sustains the observability axiom over one section $q > 1$, it sustains the axiom over **every** section, unconditionally including $q = 1$.
 
-**Mathematical Novelty.** While the specific result is a straightforward categorical triviality (that Hom-spaces over a fixed monoidal category do not depend on the differential layer $d_q$), the mathematical novelty lies in establishing this exact independence as the formal mechanism that permits properties to safely propagate from the deformed observable phase space ($q > 1$) directly to the unphysical/classical substrate ($q = 1$) without discontinuity.
+**Mathematical novelty.** That the Hom-spaces are independent of the differential layer $d_q$ is a triviality; the point is that this independence carries the observability property across the transition from the regular deformed phase ($q > 1$) to the singular substrate ($q = 1$).

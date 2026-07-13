@@ -367,7 +367,7 @@ author refinement pass.
 > 
 > **Categorical action** (def) defines $\mathcal{S} = \mathrm{tr}
 > (\Phi) = \mathrm{ev}_A \circ (\mathrm{id}_{A^\vee} \otimes \Phi)
-> \circ \mathrm{coev}_A$ for a physics endomorphism $\Phi \in
+> \circ \mathrm{coev}_A$ for a Lagrangian endomorphism $\Phi \in
 > \mathrm{End}_{\mathbf{C}}(A)$. **Existence of the categorical
 > action** (prop) — with its proof — verifies the construction,
 > and **uniqueness of the categorical action (given $\Phi$)**

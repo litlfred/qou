@@ -1,0 +1,94 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-11T21:57:59.694789+00:00",
+  "commitSha": "827b43e4cf7c76ab8192bfb8589ead8647a02767",
+  "assertions": [
+    {
+      "name": "sign_flip_is_pi_over_2_crossing",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "required arg u at the two anchors straddle pi/2 (u=0 quadratic branch quadrant boundary)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 14,
+  "computation": "qbeta-c3-wall-branch-structure",
+  "scriptFile": "qbeta_c3_wall_branch_structure_probe.py",
+  "scriptHash": "3babbe23518e",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Analytic structure of the open u(q₀) wall for c₃ bar-odd S. Branch points of the figure-eight 𝔙(u): u=0, u=±2ln φ (M=golden ratio), u=iπ. The u=0 QUADRATIC branch gives Im 𝔙 ≈ (√3/2)|u|²sin(2 arg u) with 4 sign-quadrants; the S sign-flip = arg(u(q₀)) crossing π/2. Non-fitting phase inversion (|u|=HA, √3 fixed) extracts arg u ≈ (muon ~82°, proton ~135°), straddling π/2. Reduces the wall to the single phase arg(u(q₀)) + the q* at π/2. Scope-(a); C14; magnitude/structure derived, only the phase open; no fit.",
+  "contentBlock": "prop:phi-b-unitary-bar-odd",
+  "data": {
+    "branch_points": [
+      {
+        "label": "R=+2, w=3 (M=φ golden ratio)",
+        "M_sq": "2.618034",
+        "u": "(0.96242365 + 0.0j)"
+      },
+      {
+        "label": "R=+2, w=3 (M=φ golden ratio)",
+        "M_sq": "0.38196601",
+        "u": "(-0.96242365 + 0.0j)"
+      },
+      {
+        "label": "R=+2, w=−2 (M=i)",
+        "M_sq": "-1.0",
+        "u": "(0.0 + 3.1415927j)"
+      },
+      {
+        "label": "R=+2, w=−2 (M=i)",
+        "M_sq": "-1.0",
+        "u": "(0.0 + 3.1415927j)"
+      },
+      {
+        "label": "complete",
+        "M_sq": "1",
+        "u": "0"
+      }
+    ],
+    "golden_ratio": {
+      "phi": "1.61803398875",
+      "u_golden": "0.962423650119"
+    },
+    "phase_inversion": [
+      {
+        "anchor": "muon",
+        "HA": "0.209060322",
+        "amp": "0.03785069529",
+        "sin_2arg": "0.2558204",
+        "arg_u_deg": "82.588898",
+        "sin_gt_1": false
+      },
+      {
+        "anchor": "proton",
+        "HA": "0.2090602988",
+        "amp": "0.03785068689",
+        "sin_2arg": "-1.0425005",
+        "arg_u_deg": "135.0",
+        "sin_gt_1": true
+      }
+    ],
+    "wall_reduced": {
+      "arg_u_muon_deg": 82.58889844128556,
+      "arg_u_proton_deg": 135.0,
+      "straddle_pi_over_2": true,
+      "residue": "single phase function arg(u(q0)) + q* where arg u = pi/2 (S zero-crossing)"
+    }
+  }
+}

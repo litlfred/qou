@@ -1,5 +1,15 @@
 # F_Bor `/q³` is exact; the `habiro_ratio` is the fit — and Li₂^q can't source it
 
+> **🛑 Supersession note (2026-07-04): the `habiro_ratio` tower was
+> DROPPED from production.** This doc correctly located the fit; the
+> follow-through landed 2026-07-04 (PR #3280): the tower
+> `(1+46u⁴)(1+4u⁵)(1−29u⁶)` was a muon-era CODATA fit left applied to
+> the proton-pinned q₀ (a live +242 ppb regression) and was removed.
+> Production m_p is now the bare formula at **+1.35 ppb** (the "+0.0004
+> ppb production" row below is historical); L2 count 2/7. See
+> [`2026-07-04-c4-mu-p-tension-pin-dependence.md`](2026-07-04-c4-mu-p-tension-pin-dependence.md).
+> The `/q³`-is-exact and Li₂^q-can't-source-it findings stand.
+
 **Date:** 2026-06-24
 **Bean:** `ovud` ("wire Li₂^q brane-tower into production F_Bor")
 **PR:** #2691

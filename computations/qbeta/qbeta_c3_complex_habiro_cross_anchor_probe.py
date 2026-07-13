@@ -31,7 +31,7 @@ real values:
   B. F(q) = log(q - 1) / (q - 1)
      — log-singularity at q=1 (Habiro ring near classical limit)
   C. F(q) = (q-1) · ψ(q) where ψ has root-of-unity expansion
-     — Faddeev's quantum dilogarithm (analytic away from roots of unity)
+     — compact quantum dilogarithm (analytic away from roots of unity)
   D. F(q) = Σ_{ζ root of unity} a_ζ / (q - ζ)
      — partial-fraction decomposition over root of unity poles
 

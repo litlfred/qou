@@ -1,0 +1,6 @@
+**Remark (the $A=4$ closure in the nuclear-physics literature).**
+*The $A=4$ magic shell is the first Wigner $\mathrm{SU}(4)$ supermultiplet. The four single-nucleon spin-isospin states span the fundamental of $\mathrm{SU}(4)$. Their totally antisymmetric product forms the one-dimensional singlet $\Lambda^{4}(\mathbb{C}^{4})$: the closed shell of ${}^{4}\mathrm{He}$. The vanishing dimension $\dim \Lambda^{A}(\mathbb{C}^{4}) = 0$ for $A > 4$ fixes the $A = 4$ locality of the closure.*
+
+Standard nuclear-mass systematics treat this closed-shell binding phenomenologically. The Wigner mass term vanishes identically at $N = Z$. It does not account for the anomalous extra binding of the even-even self-conjugate nuclei. A separate empirical cusp correction supplies that binding.
+
+We locate this binding directly in the representation content of the nucleon braids. The $T = 0$ isoscalar channel — the self-conjugate partition $(2,2) \vdash 4$ — reproduces this scale with zero free parameters. The fully antisymmetric $\Lambda^{4}$ channel acts as the closed-shell supermultiplet. What nuclear phenomenology encodes in the Wigner term, we read off the $\mathrm{SU}(4)$ structure of the $A = 4$ shell.

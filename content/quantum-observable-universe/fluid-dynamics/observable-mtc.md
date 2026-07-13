@@ -1,18 +1,3 @@
-Fix a positive integer $N \geq 3$ and set
-$q = \zeta_N = e^{2\pi i / N}$ --- a primitive $N$-th root of unity.
-At this value of the substrate parameter the representation category
-$\mathrm{Rep}(U_q(\mathfrak{su}_2))$ is not semisimple; quotienting
-by the ideal of negligible morphisms produces the *truncated*
-category
-$\mathbf{C}_{\mathrm{any}}(N)$ with only finitely many simple
-objects $\mathbf{V}_0, \mathbf{V}_1, \ldots, \mathbf{V}_{N-2}$
-\cite{moore-seiberg1989}.
+Fix an integer $N \geq 3$ and set $q = \zeta_N = e^{2\pi i / N}$, a primitive $N$-th root of unity. At this value the representation category $\mathrm{Rep}(U_q(\mathfrak{su}_2))$ is no longer semisimple; quotienting out the ideal of negligible morphisms yields the *truncated* category $\mathbf{C}_{\mathrm{any}}(N)$, with finitely many simple objects $\mathbf{V}_0, \mathbf{V}_1, \ldots, \mathbf{V}_{N-2}$ \cite{moore-seiberg1989}.
 
-**Definition.**  The **observable modular tensor category** at level
-$N$ is the ribbon fusion category $\mathbf{C}_{\mathrm{any}}(N)$
-together with the braiding $c$ and ribbon twist $\varTheta$ inherited
-from the quasi-triangular structure of $U_q(\mathfrak{su}_2)$ at
-$q = \zeta_N$.  Equivalently, $\mathbf{C}_{\mathrm{any}}(N)$ is a
-*modular* tensor category: the $S$-matrix
-$S_{ij} = \mathrm{tr}(c_{\mathbf{V}_i, \mathbf{V}_j} \circ
-c_{\mathbf{V}_j, \mathbf{V}_i})$ is non-degenerate.
+**Definition.** The **observable modular tensor category** at level $N$ is the ribbon fusion category $\mathbf{C}_{\mathrm{any}}(N)$, equipped with the braiding $c$ and ribbon twist $\varTheta$ inherited from the quasi-triangular structure of $U_q(\mathfrak{su}_2)$ at $q = \zeta_N$. It is *modular*: the $S$-matrix $S_{ij} = \mathrm{tr}(c_{\mathbf{V}_i, \mathbf{V}_j} \circ c_{\mathbf{V}_j, \mathbf{V}_i})$ is non-degenerate.

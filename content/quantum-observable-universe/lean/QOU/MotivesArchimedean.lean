@@ -1,4 +1,5 @@
 import Mathlib.Data.Real.Basic
+import Mathlib.CategoryTheory.Functor.Basic
 
 /-!
 # QOU.BraidsKnots — Motivic measure, archimedean realization,
@@ -28,6 +29,8 @@ categorical substrate `C` to the laboratory continuum `ℝ`.
 - [murakami-murakami2001] Murakami-Murakami, The colored Jones
   polynomials and the simplicial volume of a knot.
 -/
+
+open CategoryTheory
 
 namespace QOU.BraidsKnots
 
@@ -66,32 +69,56 @@ structure MotivicMassMeasure (X : Type*) where
 
 /-- An abstract **archimedean target category** `Arch`.
 
-    The codomain of the QOU fibre functor `τ : C → Arch`. Each
-    object exposes a real-valued archimedean evaluation
-    `archProj : Obj → ℝ`. -/
+    The codomain of the QOU fibre functor. `Arch` is a *bundle*: it
+    carries a genuine category on its object type `Arch.Obj` (via the
+    `[Category Obj]` instance below), so the fibre functor is concretely
+    `τ : C ⥤ Arch.Obj`. Each object also exposes a real-valued
+    archimedean evaluation `archProj : Obj → ℝ`.
+
+    Note `archProj` is an **object-level evaluation** (`π_∞`, a place),
+    NOT a functor: it maps objects of `Arch` to the set `ℝ`, with no
+    action on morphisms. Only `τ` (below) is a functor. -/
 structure ArchimedeanCategory where
   /-- Carrier type of objects in `Arch`. -/
   Obj : Type*
-  /-- Real-valued evaluation `π_∞ : Obj → ℝ` on the archimedean place. -/
+  /-- The category structure on `Arch` — morphisms, composition,
+      identities. This is what makes `τ : C ⥤ Arch.Obj` a genuine functor. -/
+  [cat : Category Obj]
+  /-- Real-valued evaluation `π_∞ : Obj → ℝ` on the archimedean place
+      (object-level; not functorial). -/
   archProj : Obj → ℝ
 
-/-- The QOU **fibre functor** `τ : C → Arch`.
+attribute [instance] ArchimedeanCategory.cat
 
-    Acts on objects of `C` by `obj : C → Arch.Obj`. The archimedean
-    restriction `τ_arch = π_∞ ∘ τ : C → ℝ` is *derived* (see
-    `FibreFunctor.archRestriction` below), so it cannot disagree
-    with `Arch.archProj ∘ obj`. -/
-structure FibreFunctor (C : Type*) (Arch : ArchimedeanCategory) where
-  /-- Action of `τ` on objects of `C`. -/
-  obj : C → Arch.Obj
+/-- The QOU **fibre functor** `τ`, a genuine `C ⥤ Arch.Obj`.
 
-/-- The archimedean restriction `τ_arch = π_∞ ∘ τ` of a fibre
-    functor, derived from `obj` and `Arch.archProj`. -/
-def FibreFunctor.archRestriction {C : Type*} {Arch : ArchimedeanCategory}
+    This is a genuine `CategoryTheory.Functor`: it carries an action on
+    objects (`τ.functor.obj`) **and** on morphisms (`τ.functor.map`),
+    satisfying the functor laws. The archimedean restriction
+    `τ_arch = π_∞ ∘ τ : C → ℝ` is *derived* (see
+    `FibreFunctor.archRestriction` below) — it composes the functor `τ`
+    with the object-level evaluation `Arch.archProj` and so is NOT
+    itself a functor (its codomain `ℝ` is a set/ring, not a category). -/
+structure FibreFunctor (C : Type*) [Category C] (Arch : ArchimedeanCategory) where
+  /-- The underlying genuine functor `τ : C ⥤ Arch.Obj`. -/
+  functor : C ⥤ Arch.Obj
+
+/-- The archimedean restriction `τ_arch = π_∞ ∘ τ` of a fibre functor,
+    derived from `τ.functor` and `Arch.archProj`. A plain function
+    `C → ℝ` — the object-level archimedean evaluation, not a functor. -/
+def FibreFunctor.archRestriction {C : Type*} [Category C] {Arch : ArchimedeanCategory}
     (τ : FibreFunctor C Arch) : C → ℝ :=
-  fun c => Arch.archProj (τ.obj c)
+  fun c => Arch.archProj (τ.functor.obj c)
 
-/-- The **archimedean realization functor** `R_top`.
+/-- The **archimedean realization** `R_top` (a motivic measure, NOT a
+    functor).
+
+    Despite the historical name, this is a map *out of the Grothendieck
+    ring* `M̂` — `eulerChar` is a ring homomorphism (a motivic measure)
+    and the archimedean post-processing is a place — so it has no action
+    on morphisms and is not a `CategoryTheory.Functor`. The genuine
+    functor is `FibreFunctor` (τ) above; `R_top` agrees with `τ_arch`
+    (the object-level evaluation `π_∞ ∘ τ`) on QOU motivic data.
 
     Maps a motivic class to `ℝ` via the topological Euler
     characteristic followed by an archimedean post-processing map.
@@ -121,7 +148,7 @@ structure ArchimedeanRealizationFunctor where
     `τ_arch`-image of its algebraic quantum volume. This is the
     QOU statement of the volume conjecture as a *factorization*
     through the unique fibre functor `τ : C → Arch`. -/
-structure VolThroughTau (C : Type*) (Arch : ArchimedeanCategory) where
+structure VolThroughTau (C : Type*) [Category C] (Arch : ArchimedeanCategory) where
   /-- The QOU fibre functor. -/
   τ : FibreFunctor C Arch
   /-- The algebraic quantum volume of a braid (as an object of `C`). -/
@@ -133,7 +160,7 @@ structure VolThroughTau (C : Type*) (Arch : ArchimedeanCategory) where
 
 /-- The factorization is by definition: extracting the `factors`
     field of a `VolThroughTau` immediately yields the equation. -/
-theorem VolThroughTau.factors_def {C : Type*} {Arch : ArchimedeanCategory}
+theorem VolThroughTau.factors_def {C : Type*} [Category C] {Arch : ArchimedeanCategory}
     (v : VolThroughTau C Arch) :
     v.knotVol = v.τ.archRestriction v.algVol :=
   v.factors

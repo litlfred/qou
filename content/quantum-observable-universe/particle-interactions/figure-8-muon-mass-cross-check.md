@@ -1,7 +1,5 @@
-**Remark (numerical cross-check of CAL-2 at 50 dps:
-$\mathrm{Vol}(4_1)/\hbar_q^2 = m_\mu/m_e$).**
-*The CAL-2 identity
-([prop:three-calibration-inputs](#prop:three-calibration-inputs))*
+**Remark (numerical cross-check of CAL-2 at 50 dps: $\mathrm{Vol}(4_1)/\hbar_q^2 = m_\mu/m_e$).**
+*The CAL-2 identity*
 
 $$
   \frac{m_\mu}{m_e}
@@ -9,11 +7,7 @@ $$
   \frac{\mathrm{Vol}(4_1)}{\hbar_q^2}
 $$
 
-*is the substrate-side anchor that fixes $q_0$. The
-[derive\_m\_baryon\_volume\_form](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/computations/derive_m_baryon_volume_form.py)
-script evaluates both sides at 50-decimal precision and records the
-residual in
-[`m-baryon-volume-form.witness.json`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/computations/m-baryon-volume-form.witness.json):*
+*is the substrate-side anchor that fixes $q_0$. We evaluate both sides at 50-decimal precision and record the residual in the witness file:*
 
 | Quantity | 50-dps value | Source |
 |----------|-------------|--------|
@@ -23,59 +17,26 @@ residual in
 | $m_\mu/m_e$ (CODATA 2022) | $206.7682830\ldots$ | empirical |
 | relative residual | $1.45 \times 10^{-30}$ ppm | — |
 
-## Structural vanishing of the residual (not "small")
+## Structural vanishing of the residual
 
-The 50-dps residual is $\sim 10^{-30}$ ppm — *not* a fit, *not* a
-coincidence, *not* a fortunate cancellation. It is exactly the
-$q_0$-pinning equation read in the forward direction:
+The 50-dps residual is $\sim 10^{-30}$ ppm. This is exactly the $q_0$-pinning equation read in the forward direction. The CAL-2 calibration defines $q_0$ as the unique real solution of $m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_q^2$. Evaluating both sides at that $q_0$ yields equality by construction, up to the 50-dps numerical precision of the pinning algorithm and the CODATA $m_\mu/m_e$ truncation.
 
-- the CAL-2 calibration *defines* $q_0$ as the unique real solution
-  of $m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_q^2$
-  ([prop:local-substrate-q](#prop:local-substrate-q));
-- evaluating both sides at *that* $q_0$ then gives equality by
-  construction up to the 50-dps numerical precision of the pinning
-  algorithm and the CODATA $m_\mu/m_e$ truncation.
-
-The witness therefore serves as a **numerical certificate of the
-pinning procedure**, not as a falsifiability test of the formula.
-A falsifiability test would have to vary $q_0$ or add an independent
-substrate constraint
-([prop:three-calibration-inputs](#prop:three-calibration-inputs),
-"what is forbidden").
+The witness serves as a numerical certificate of the pinning procedure. It is not a falsifiability test of the formula. A falsifiability test requires varying $q_0$ or adding an independent substrate constraint.
 
 ## Significance for the Borromean baryon programme
 
-The figure-8 (muon) sector verifies the
-[$\mathrm{Vol}(K)/\hbar_q^2$](#lem:topological-mass-cat-descended) ansatz at the
-single-knot level with topologically trivial Skein contribution
-($S(4_1) = 0$ in the canonical orientation): the mass formula
-reduces to $m_\mu = m_e \cdot \mathrm{Vol}(4_1)/\hbar_q^2$.
+The figure-8 (muon) sector verifies the mass ansatz at the single-knot level with a topologically trivial Skein contribution ($S(4_1) = 0$ in the canonical orientation). The mass formula reduces to $m_\mu = m_e \cdot \mathrm{Vol}(4_1)/\hbar_q^2$.
 
-The Borromean baryon programme
-([conj:borromean-baryon-mass-formula](#conj:borromean-baryon-mass-formula))
-asks whether the same ansatz, lifted to a 3-link with non-trivial
-Skein contribution, gives baryon masses with a single common scale
-$\lambda_{\mathrm{scale}}$:
+The Borromean baryon programme asks whether the same ansatz, lifted to a 3-link with non-trivial Skein contribution, gives baryon masses with a single common Borromean term $\mathfrak{m}_{\mathcal{B}_3}(q_0)$:
 
 $$
   m_B
   \;=\;
-  m_e \cdot \left[\,
-    \frac{\mathrm{Vol}(\mathcal{B}_3)}{\hbar_q^2}
-    \cdot \lambda_{\mathrm{scale}}
-    \;+\; S(B)
-  \,\right].
+  \mathfrak{m}_{\mathcal{B}_3}(q_0)
+  \;+\;
+  m_e \cdot S(B).
 $$
 
-In the figure-8 case the formula degenerates to
-$\lambda_{\mathrm{scale}}^{(4_1)} = 1$ and $S(4_1) = 0$; in the
-Borromean case the empirical closure target is
-$\lambda_{\mathrm{scale}}^{(\mathcal{B}_3)} \approx 2.46$ (see
-[conj:borromean-baryon-mass-formula](#conj:borromean-baryon-mass-formula)).
+In the figure-8 case, the common term degenerates to the bare volume form, $\mathfrak{m}_{4_1} = m_e \cdot \mathrm{Vol}(4_1)/\hbar_q^2$, with $S(4_1) = 0$. In the Borromean case, the empirical closure target exceeds the bare volume form by a factor $\approx 2.46$ (the purged historical $\lambda_{\mathrm{scale}}$ literal): $\mathfrak{m}_{\mathcal{B}_3}(q_0) \approx 2.46 \cdot m_e\,\mathrm{Vol}(\mathcal{B}_3)/\hbar_q^2$.
 
-The substrate consistency of $\Delta S(n - p)$
-([rem:delta-skein-substrate-identity](#rem:delta-skein-substrate-identity))
-to $\sim 1\,000$ ppm using only CAL-1 + CAL-2 +
-$\mathrm{Vol}(\mathcal{B}_3)$ is the first non-trivial extension of
-the figure-8 / muon cross-check shown here to the Borromean / baryon
-sector.
+The substrate consistency of $\Delta S(n - p)$ to $\sim 1\,000$ ppm using only CAL-1, CAL-2, and $\mathrm{Vol}(\mathcal{B}_3)$ is the first non-trivial extension of the figure-8 cross-check to the Borromean sector.

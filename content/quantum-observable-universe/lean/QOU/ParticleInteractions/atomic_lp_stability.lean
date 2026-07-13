@@ -110,4 +110,16 @@ theorem dressed_is_lp_stable [ctx : AtomicLPStabilityContext] :
   -- Ref: [wenzl1990] https://doi.org/10.1007/BF02097372
   sorry
 
+/-- **Proposition** ([`prop:atomic-lp-stability`]) — resolving
+    declaration for the `lean.ref` URI.
+
+    Conjoins the instability of the bare hydrogen atom (there exists
+    an annihilating Markov-normalised operator) and the stability of
+    the dressed atom (no such operator exists). -/
+-- Ref: [manuscript] quantum-observable-universe/particle-interactions/atomic-lp-stability.md
+theorem atomic_lp_stability [ctx : AtomicLPStabilityContext] :
+    (∃ X : ctx.Candidate, ctx.normalised X ∧ ctx.bareVolume X = 0) ∧
+    (¬ ∃ X : ctx.Candidate, ctx.normalised X ∧ ctx.dressedVolume X = 0) :=
+  ⟨bare_is_lp_unstable, dressed_is_lp_stable⟩
+
 end QOU.ParticleInteractions

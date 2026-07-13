@@ -78,7 +78,7 @@ _HERE = Path(__file__).resolve().parent
 # qou_substrate is not always importable in the sandbox.
 Q0 = 1.1099785955573347198997632204832250266562084087802
 try:  # prefer the canonical constant when the package is present
-    from qou_substrate.constants import q_at  # type: ignore
+    from q_parameter import q_at  # type: ignore
 
     Q0 = float(q_at())
 except Exception:

@@ -1,25 +1,12 @@
-$^{40}\mathrm{Ca}$ ($Z = N = 20$, $A = 40$) is the canonical
-**double-magic** test case: both proton and neutron counts lie in
-$\mathfrak{M} = \{2, 8, 20, 28, 50, 82, 126\}$. This example
-illustrates the partition-level rigidity content of the
-double-magic LR-fusion conjecture
-([`prop:diagrammatic-double-magic-lr-fusion`](#prop:diagrammatic-double-magic-lr-fusion))
-in the regime where both blocks are saturated and the LR fusion
-collapses to a single self-conjugate $\nu_{ZN} \vdash 40$.
+$^{40}\mathrm{Ca}$ ($Z = N = 20$, $A = 40$) is the canonical double-magic test case. Both proton and neutron counts lie in $\mathfrak{M} = \{2, 8, 20, 28, 50, 82, 126\}$. This example illustrates the partition-level rigidity of the double-magic LR-fusion conjecture ([`prop:diagrammatic-double-magic-lr-fusion`](#prop:diagrammatic-double-magic-lr-fusion)). We analyze the regime where both blocks are saturated and the LR fusion collapses to a single self-conjugate $\nu_{ZN} \vdash 40$.
 
-## $Z$-block and $N$-block (twin saturated)
+## Twin saturated blocks
 
-Both $Z = 20$ and $N = 20$ are magic. By
-[`prop:categorical-neutrality-saturated-shells`](../braids-and-knots/categorical-neutrality-saturated-shells.md)
-the categorical mass at each level is supported on a single
-self-conjugate partition. The relevant partition is
+Both $Z = 20$ and $N = 20$ are magic. By [`prop:categorical-neutrality-saturated-shells`](../braids-and-knots/categorical-neutrality-saturated-shells.md), the categorical mass at each level is supported on a single self-conjugate partition. We use the self-conjugate hook-staircase of size $20$ \cite{geckpfeiffer2000} as a representative diagrammatic illustration:
 
 $$
   \lambda_{20} \;=\; \mu_{20} \;=\; (5, 4, 4, 4, 3) \;=\; (5,4,4,4,3)'
 $$
-
-— the self-conjugate hook-staircase of size $20$ \cite{geckpfeiffer2000}.
-The Young diagram:
 
 ```text
   ■ ■ ■ ■ ■
@@ -29,21 +16,11 @@ The Young diagram:
   ■ ■ ■
 ```
 
-is symmetric under transposition, with arms equal to legs:
-$\sum c(x) = 0$. The full-twist eigenvalues at level $20$ are
-$q^0 = 1$ on both the $Z$-block and the $N$-block.
+This diagram is symmetric under transposition. Arms equal legs, yielding $\sum c(x) = 0$. The full-twist eigenvalues at level $20$ are $q^0 = 1$ on both the $Z$-block and the $N$-block.
 
-(The actual self-conjugate partition of $20$ that the
-matrix-evaluation programme picks out at $k = 20$ is
-combinatorially blocked, but the saturated-shell conjecture
-predicts a unique self-conjugate $\lambda_{Z = 20}$; we use
-$(5,4,4,4,3)$ as a representative diagrammatic illustration.)
+## Rigid LR fusion at $A = 40$
 
-## LR fusion at $A = 40$ — rigid
-
-By the double-magic conjecture
-([`prop:diagrammatic-double-magic-lr-fusion`](#prop:diagrammatic-double-magic-lr-fusion))
-the LR product
+The double-magic conjecture predicts the LR product collapses to a single self-conjugate $\nu_{20, 20} \vdash 40$ with multiplicity one:
 
 $$
   V_{\lambda_{20}} \otimes V_{\mu_{20}}
@@ -51,46 +28,24 @@ $$
   V_{\nu_{20, 20}}(40)
 $$
 
-collapses to a single self-conjugate $\nu_{20, 20} \vdash 40$ with
-multiplicity one. The cancellation $\sum c(x) = 0$ on $\nu_{20, 20}$
-is forced by additivity of the content sum along LR fusion plus
-self-conjugacy of both factors.
+The cancellation $\sum c(x) = 0$ on $\nu_{20, 20}$ follows from the additivity of the content sum along LR fusion and the self-conjugacy of both factors.
 
-## Content of the diagram
+The associated diagrammatic structure consists of:
 
-The diagrammatic illustration in this example block is, schematically:
+- **Left**: The $\lambda_{20}$ self-conjugate Young diagram (symmetric, $c = 0$).
+- **Right**: An identical copy $\mu_{20} = \lambda_{20}$.
+- **Centre**: A single LR-fusion arrow targeting $\nu_{20, 20}$ at level $40$, rigid with multiplicity one.
 
-- **Left**: the $\lambda_{20}$ self-conjugate Young diagram (symmetric
-  under transposition, marked "saturated, $c = 0$").
-- **Right**: an identical copy of the $\mu_{20} = \lambda_{20}$ diagram
-  (since $Z = N$, the two saturated blocks are *identical*).
-- **Centre**: a single LR-fusion arrow producing the unique
-  self-conjugate $\nu_{20, 20}$ at level $40$, marked
-  "**rigid: multiplicity one**".
-
-The cancellation $\sum_{x \in \nu_{20, 20}} c(x) = 0$ is depicted by
-arms balancing legs across the diagonal of $\nu_{20, 20}$.
+Arms balance legs across the diagonal of $\nu_{20, 20}$, depicting the cancellation $\sum_{x \in \nu_{20, 20}} c(x) = 0$.
 
 ## Exceptional binding of $^{40}\mathrm{Ca}$
 
-The empirical $^{40}\mathrm{Ca}$ binding energy is $342.05$ MeV,
-sitting at a sharp local maximum of the binding-per-nucleon curve
-($8.55$ MeV/nucleon). The algebraic content of this exception is
-exactly the **rigidity** above: there are *no* off-diagonal Wedderburn
-channels at $A = 40$ in which further crossing energy could be
-absorbed. Every Hecke operator $\sigma_i$ at level $40$ that would
-have moved the system off the unique $\nu_{20, 20}$ block is
-constrained by self-conjugacy + content-sum-zero to produce zero.
+The empirical $^{40}\mathrm{Ca}$ binding energy is $342.05$ MeV. This is a local maximum on the binding-per-nucleon curve ($8.55$ MeV/nucleon). This empirical peak matches the algebraic rigidity. At $A = 40$, no off-diagonal Wedderburn channels exist to absorb further crossing energy. Self-conjugacy and a zero content sum constrain every Hecke operator $\sigma_i$ at level $40$ that would move the system off the $\nu_{20, 20}$ block to produce zero.
 
-Phenomenologically: $^{40}\mathrm{Ca}$ has no available
-binding-energy channels. It is *as bound as the algebraic structure
-allows at $A = 40$*. The empirical exception is the algebraic
-rigidity.
+$^{40}\mathrm{Ca}$ lacks available binding-energy channels. The structure is maximally bound under the algebraic constraints at $A = 40$.
 
-## Empirical match (representative double-magic ladder)
+## Empirical match
 
 See [Table](#tbl:double-magic-Ca40-diagram-table-data).
 
-All seven double-magic cases above are predicted to exhibit the same
-diagrammatic structure: twin self-conjugate blocks, single-$\nu_{ZN}$
-LR fusion, rigid binding peak.
+All seven double-magic cases exhibit the same diagrammatic structure: twin self-conjugate blocks, single-$\nu_{ZN}$ LR fusion, and a rigid binding peak.

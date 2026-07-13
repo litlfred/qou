@@ -1,18 +1,10 @@
-Just as a jet of a section of a bundle records the section together
-with its first-order variation, the jet object packages an element of
-$A$ together with its infinitesimal (first-order) variation along the
-connection. Let $(\mathbf{C}, A, \tau)$ be a
-([quantum universe](#def:quantum-universe)) with connection $\nabla$
-([categorical connection](#def:categorical-connection)). The **jet
-object** is
+A jet object packages an element of $A$ together with its infinitesimal variation along the connection. Let $(\mathbf{C}, A, \tau)$ be a [quantum universe](#def:quantum-universe) with connection $\nabla$ ([categorical connection](#def:categorical-connection)). The **jet object** is
 
 $$
   J^1(A) := A \otimes_{\mathbf{C}} \Omega^1(A),
 $$
 
-where $\Omega^1(A) = \ker(\mu \colon A \otimes A \to A)$ is the
-bimodule of K\"ahler differentials. The jet object fits into the
-universal extension
+where $\Omega^1(A) = \ker(\mu \colon A \otimes A \to A)$ is the bimodule of K\"ahler differentials. The jet object fits into the universal extension
 
 ```tex
 \begin{equation}\label{eq:jet-ses}
@@ -26,5 +18,4 @@ universal extension
 \end{equation}
 ```
 
-where $j^1 \colon J^1(A) \to A$ is the jet evaluation (the counit of
-the tensor--hom adjunction).
+where $j^1 \colon J^1(A) \to A$ is the jet evaluation.

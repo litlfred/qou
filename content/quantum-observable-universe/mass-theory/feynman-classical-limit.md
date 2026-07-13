@@ -1,51 +1,21 @@
 **Proposition (conditional on [`conj:classical-limit-stpart`](#conj:classical-limit-stpart) — classical limit).**
-*In the $q \to 1$ limit of the categorical trace
-([Feynman transition amplitude](#prop:feynman-categorical-trace)),
-the following degenerations occur:*
+*In the $q \to 1$ limit of the categorical trace, the following degenerations occur:*
 
 1. **(Hecke $\to$ symmetric group.)**
-   *The Hecke relation $(T - q)(T + q^{-1}) = 0$ becomes
-   $(T - 1)(T + 1) = 0$, i.e.\ $T^2 = 1$.  The Iwahori--Hecke algebra
-   $H_n(R, q)$ degenerates to the group algebra $k[S_n]$ of the symmetric
-   group
-   ([Hecke algebra from braiding](#rem:hecke-algebra-from-braiding)).*
+   *The Hecke relation $(T - q)(T + q^{-1}) = 0$ becomes $T^2 = 1$. The Iwahori--Hecke algebra $H_n(R, q)$ degenerates to the group algebra $k[S_n]$.*
 
 2. **(Markov trace $\to$ flat character trace.)**
-   *The Jones--Markov trace parameter
-   $z = (q - 1)/(q^{1/2} + q^{-1/2})^2 \to 0$
-   ([Jones--Markov trace](#thm:jones-markov-trace)),
-   and the Markov trace $\mathrm{tr}_M$ on $H_n(R, q)$ degenerates to
-   the augmentation map
-   $\varepsilon \colon k[S_n] \to k$ sending every group element to $1$.*
+   *The Jones--Markov trace parameter $z \to 0$. The Markov trace $\mathrm{tr}_M$ on $H_n(R, q)$ degenerates to the augmentation map $\varepsilon \colon k[S_n] \to k$ sending every group element to $1$.*
 
 3. **(Categorical action $\to$ classical action.)**
-   *The categorical action
-   $\mathfrak{S}_q(K) = \mathrm{tr}_M(\rho(\beta)) \to \mathfrak{S}_1(\beta)$, the
-   character of the permutation $\pi(\beta) \in S_n$ obtained by
-   imposing $\sigma_i^2 = 1$ on the braid word.  The $q$-energy
-   reduces to $\mathfrak{E}_1 = \mathfrak{S}_1$ because the rotational and
-   translational terms vanish with $\hbar_q = 1 - q^{-1} \to 0$
-   ([$q$-energy](#def:q-energy)).*
+   *The categorical action $\mathfrak{S}_q(K) = \mathrm{tr}_M(\rho(\beta)) \to \mathfrak{S}_1(\beta)$, the character of the permutation $\pi(\beta) \in S_n$. The $q$-energy reduces to the classical action because the rotational and translational terms vanish with $\hbar_q = 1 - q^{-1} \to 0$.*
 
 4. **(Eigenbasis collapse.)**
-   *The Jones polynomial $J_K(1) = 1$ for every knot $K$, so the
-   Markov trace can no longer distinguish knot types.  The eigenspace
-   decomposition $V^{\otimes n} \cong \bigoplus_\lambda V_\lambda \otimes S_\lambda$
-   persists, but the $S_\lambda$ become Specht modules of $S_n$ ---
-   the standard angular momentum eigenbasis of quantum mechanics.
-   The quantum dimensions $[2j+1]_q$ become ordinary dimensions
-   $2j+1$.*
+   *The Jones polynomial evaluates to $J_K(1) = 1$ for every knot $K$. The Markov trace ceases to distinguish knot types. The eigenspace decomposition $V^{\otimes n} \cong \bigoplus_\lambda V_\lambda \otimes S_\lambda$ persists, but the $S_\lambda$ become Specht modules of $S_n$, forming the standard angular momentum eigenbasis. The quantum dimensions $[2j+1]_q$ become ordinary dimensions $2j+1$.*
 
 5. **(Braiding $\to$ symmetric.)**
-   *The braiding $c_{V,V}$ satisfies $c_{V,V}^2 = \mathrm{id}$, so
-   the :refterm[monoidal category]{#monoidal-category} becomes symmetric.  The non-trivial
-   knot structure that organises the sum at $q \neq 1$ collapses:
-   all braid closures yield the unknot under the symmetric quotient.*
+   *The braiding $c_{V,V}$ satisfies $c_{V,V}^2 = \mathrm{id}$, making the monoidal category symmetric. The non-trivial knot structure collapses, reducing all braid closures to the unknot.*
 
-*In this limit, the finite categorical trace
-$\sum_\lambda \dim_q(V_\lambda) \cdot \mathrm{tr}_{S_\lambda}(\rho(\beta))$
-degenerates to the standard discrete trace
-$\sum_\lambda (2j+1) \cdot \mathrm{tr}_{S_\lambda}(\pi(\beta))$
-over the finite-dimensional angular momentum eigenbasis of the symmetric group.*
+*The finite categorical trace degenerates to the standard discrete trace over the finite-dimensional angular momentum eigenbasis of the symmetric group.*
 
-**Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall: it invokes real- or complex-analytic constructs — real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.
+**Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall. It applies $q$-deformation identities over an abstract coefficient ring and specializes them to real-valued observables at $q_0$.

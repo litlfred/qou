@@ -1,7 +1,5 @@
-**Conjecture (canonical form of $\rho_K^{\text{pair-gen}}$).**
-*There exists a closed-form Wedderburn-coupled functional form
-$f_2 : \mathbb{Q}(q^{1/2}) \times \mathbb{Q}(q^{1/2}) \times \mathbb{Q}(q^{1/2}) \to \mathbb{R}$
-such that for every atomic braid $\mathcal{B}_K \in B_{3A}$:*
+**Conjecture (Canonical form of $\rho_K^{\text{pair-gen}}$).**
+*There exists a closed-form Wedderburn-coupled functional $f_2 : \mathbb{Q}(q^{1/2}) \times \mathbb{Q}(q^{1/2}) \times \mathbb{Q}(q^{1/2}) \to \mathbb{R}$ such that for every atomic braid $\mathcal{B}_K \in B_{3A}$:*
 
 $$
 \rho_K^{\text{pair-gen}}
@@ -19,33 +17,31 @@ m_e \cdot |\mathrm{tr}_M(\mathcal{B}_K)| \cdot \left(\rho_K^{\text{LO}} + \rho_K
 \;+\; O(\hbar_q^{6})
 $$
 
-*to sub-percent accuracy across $Z = 1..20$, where $\hat V_i^{\text{full}}$
-are the Wedderburn-traced per-generator volumes and $z = 1/(q^{1/2} + q^{-1/2})$
-is the Markov parameter.*
+*matches CODATA to sub-percent accuracy across $Z = 1..20$. Here, $\hat V_i^{\text{full}}$ denotes the Wedderburn-traced per-generator volumes, and $z = 1/(q^{1/2} + q^{-1/2})$ forms the Markov parameter.*
 
-## Empirical evidence (current state)
+## Empirical evidence
 
-| Candidate $f_2$ | Form | Z=1..20 status |
+| Candidate $f_2$ | Form | $Z=1..20$ status |
 |---|---|---|
-| Naive log-additive | $\alpha z^2 \sum \ln\|V_i V_j\|$ | **Degrades** vs LO + single-gen |
-| Wedderburn-decomposed | $\alpha z^2 \sum \|V_i V_j\|_{\text{Wedderburn}}$ (with $w_{sym}, w_{std}, w_{alt}$) | Still degrades — wrong functional form |
-| Six-term theorem $T_3$ | $-z^2 \sum \text{Li}_2^q(-\|V_i V_j\|)$ | Believed correct per `thm:knot-mass-formula-unified` (Kashaev-limit form); not yet wired into $\rho_K$ expansion |
+| Naive log-additive | $\alpha z^2 \sum \ln\|V_i V_j\|$ | Degrades vs LO + single-gen |
+| Wedderburn-decomposed | $\alpha z^2 \sum \|V_i V_j\|_{\text{Wedderburn}}$ (with $w_{sym}, w_{std}, w_{alt}$) | Degrades (wrong functional form) |
+| Six-term theorem $T_3$ | $-z^2 \sum \text{Li}_2^q(-\|V_i V_j\|)$ | Expected per [`thm:knot-mass-formula-unified`](knot-mass-formula-unified.md); wiring pending |
 
-The Kashaev-limit form (six-term $T_3$) is the expected canonical form, but its derivation as a leading-order expansion in $\hbar_q$ — parallel to the single-gen Kashaev derivation $\alpha \sum \ln|V_i|$ — has not been completed.
+The Kashaev-limit form (six-term $T_3$) provides the anticipated canonical form. Its derivation as a leading-order expansion in $\hbar_q$ remains incomplete. This must parallel the single-generator Kashaev derivation $\alpha \sum \ln|V_i|$.
 
-## Proved versus conjectured status
+## Conjecture status
 
 | Component | Status | Evidence |
 |---|---|---|
-| Existence of $f_2$ (any form) | Conjectural | follows from existence of mass formula evaluated at finite truncation |
-| $f_2 = -\text{Li}_2^q(-\|V_i V_j\|) \cdot z^2$ specifically | Conjectural | matches the six-term theorem's $T_3$; derivation pending |
-| Naive log-additive form | Refuted (empirical) | `rho-k-pair-gen-extension.witness.json` |
-| Wedderburn-coupled form | Partial (correct Wedderburn weights, wrong functional) | Same witness |
-| Six-term theorem itself ([`thm:knot-mass-formula-unified`](knot-mass-formula-unified.md)) | Theorem | proved separately |
+| Existence of $f_2$ (any form) | Conjectural | Follows from evaluating mass formula at finite truncation |
+| $f_2 = -\text{Li}_2^q(-\|V_i V_j\|) \cdot z^2$ | Conjectural | Matches six-term $T_3$; derivation pending |
+| Naive log-additive form | Refuted | `rho-k-pair-gen-extension.witness.json` |
+| Wedderburn-coupled form | Partial | Correct Wedderburn weights, wrong functional form |
+| Six-term theorem [`thm:knot-mass-formula-unified`](knot-mass-formula-unified.md) | Theorem | Proved independently |
 
 ## Wedderburn-coupling structure
 
-Per [`prop:rho-k-graded-expansion`](rho-k-graded-expansion.md) §pair-gen:
+Under [`prop:rho-k-graded-expansion`](rho-k-graded-expansion.md) §pair-gen, the pair coupling expands as:
 
 $$
 |\hat V_i \hat V_j|_{\text{Wedderburn}}
@@ -54,26 +50,22 @@ w_{\text{sym}}\, \lambda_i^{\text{sym}} \lambda_j^{\text{sym}}
 \;+\;
 w_{\text{std}}\, \bigl[z\,(M_i M_j)_{1,2} + (M_i M_j)_{2,2}\bigr]
 \;+\;
-w_{\text{alt}}\, \lambda_i^{\text{alt}} \lambda_j^{\text{alt}}
+w_{\text{alt}}\, \lambda_i^{\text{alt}} \lambda_j^{\text{alt}},
 $$
 
 where:
-- $w_{\text{sym}}, w_{\text{std}}, w_{\text{alt}}$ are Wedderburn-Markov weights from [`thm:wedderburn-mass-formula`](wedderburn-mass-formula.md)
-- $\lambda_i^\bullet$ are per-generator eigenvalues in each Wedderburn channel
-- $M_i$ is the per-generator $2 \times 2$ standard-rep transfer matrix
-- The standard-channel pair coupling uses the **Markov-traced** $2 \times 2$ matrix product $M_i M_j$ — genuinely capturing braid non-commutativity — rather than the naive $V_i^{\text{std}} \cdot V_j^{\text{std}}$.
+- $w_{\text{sym}}, w_{\text{std}}, w_{\text{alt}}$ denote Wedderburn–Markov weights from [`thm:wedderburn-mass-formula`](wedderburn-mass-formula.md).
+- $\lambda_i^\bullet$ denote per-generator eigenvalues within each Wedderburn channel.
+- $M_i$ denotes the per-generator $2 \times 2$ standard-representation transfer matrix.
 
-The OPEN piece is the **functional form** $f_2$ that takes this Wedderburn-coupled product as input and outputs the correct mass contribution. Two candidates:
+The standard-channel pair coupling relies on the Markov-traced $2 \times 2$ matrix product $M_i M_j$. This captures braid non-commutativity, superseding the naive scalar product $V_i^{\text{std}} \cdot V_j^{\text{std}}$.
 
-(i) Logarithmic: $\alpha z^2 \ln|V_i V_j|_{\text{Wedderburn}}$ — refuted empirically (degrades).
-(ii) q-dilogarithmic: $-z^2 \text{Li}_2^q(-|V_i V_j|_{\text{Wedderburn}})$ — believed correct; pending derivation.
+The open requirement is the functional form $f_2$. The naive logarithmic form $\alpha z^2 \ln|V_i V_j|_{\text{Wedderburn}}$ degrades empirically. The expected $q$-dilogarithmic form $-z^2 \text{Li}_2^q(-|V_i V_j|_{\text{Wedderburn}})$ requires a formal derivation connecting it to the pair-generator expansion.
 
-The Kashaev-limit derivation that gave $\alpha \ln|V_i|$ for the single-gen piece (matching $T_2$ of the six-term theorem) needs a parallel derivation for the pair-gen piece.
+## Dependencies
 
-## Connection to dependent conjectures
-
-- [`conj:lepton-mass-tower-canonical`](lepton-mass-tower-canonical.md) — the lepton-sector variant; gates on the graded-expansion formalism but has $Z = N = 0$ so the atomic LO piece vanishes; needs its own dimensional factor $\xi_\ell(q)$.
-- [`conj:mass-endomorphism`](mass-endomorphism-conjecture.md) (per `prop:per-braid-mass-tower` §"Open: explicit closed form") — the unifying closed-form mass element $\Phi_{\text{mass}}(W) \in H_{3A}(q)$; the present conjecture is a sub-claim about its expansion at pair level.
+- [`conj:lepton-mass-tower-canonical`](lepton-mass-tower-canonical.md): The lepton-sector variant. It gates on the graded-expansion formalism but evaluates at $Z = N = 0$, nullifying the atomic LO piece. It requires its own dimensional factor $\xi_\ell(q)$.
+- [`conj:mass-endomorphism`](mass-endomorphism-conjecture.md): The unifying closed-form mass element $\Phi_{\text{mass}}(W) \in H_{3A}(q)$. The present conjecture restricts this to the pair level.
 
 ## Lean formalization
 
@@ -81,17 +73,15 @@ The Kashaev-limit derivation that gave $\alpha \ln|V_i|$ for the single-gen piec
 namespace QOU.BraidKnot.RhoKPairGenCanonicalForm
 
 /-- The conjectural canonical pair-gen functional `f_2(q, V_i, V_j)`;
-    expected six-term `T_3` Kashaev form, derivation open (cited placeholder). -/
+    expected six-term `T_3` Kashaev form, derivation open. -/
 noncomputable def pair_gen_functional
     {R : Type*} [Field R] (q V_i V_j : R) : R :=
-  sorry  -- Ref: [manuscript] conj:rho-k-pair-gen-canonical-form
+  sorry
 
-/-- Conjecture, §3b class axiomatisation: a single canonical functional
-    reproduces ρ_K^pair-gen to sub-percent accuracy (the precise Li_2^q
-    recovery bound needs the graded-expansion infrastructure, so it is
-    carried as a `Prop` class that downstream blocks take as a
-    `[PairGenCanonical]` hypothesis). The field encodes the recovery in
-    the *shape* of the claim — a sub-percent error bound — not `True`. -/
+/-- Conjecture axiomatisation: a single canonical functional
+    reproduces ρ_K^pair-gen to sub-percent accuracy. The specific Li_2^q
+    recovery bound requires the graded-expansion infrastructure, 
+    so it exists as a `Prop` class assumed downstream as `[PairGenCanonical]`. -/
 class PairGenCanonical : Prop where
   exists_subpercent_recovery :
     ∀ (M : ℝ), 0 ≤ M → ∃ M_rec : ℝ, |M_rec - M| ≤ M / 100
@@ -101,18 +91,12 @@ end QOU.BraidKnot.RhoKPairGenCanonicalForm
 
 ## Resolution path
 
-When the canonical $f_2$ is derived:
-1. This conjecture promotes to a theorem.
-2. [`prop:rho-k-graded-expansion`](rho-k-graded-expansion.md) §pair-gen status changes from "open" to "proved".
-3. Downstream conjectures (especially [`conj:lepton-mass-tower-canonical`](lepton-mass-tower-canonical.md) which doesn't currently use pair-gen but will if extended to multi-strand leptons) get unblocked.
-4. The $\mathfrak{Q}_\beta$ residual closure direction (Path A / Path B in [`2026-05-24-q-beta-net-ansatz-fitting-finding.md`](../../../docs/audits/2026-05-24-q-beta-net-ansatz-fitting-finding.md)) becomes tractable.
+Deriving the canonical $f_2$ yields four consequences:
+1. This conjecture elevates to a theorem.
+2. The open status of [`prop:rho-k-graded-expansion`](rho-k-graded-expansion.md) §pair-gen resolves to proved.
+3. Downstream conjectures unblock, specifically [`conj:lepton-mass-tower-canonical`](lepton-mass-tower-canonical.md).
+4. The $\mathfrak{Q}_\beta$ residual closure direction becomes tractable.
 
-## Cross-references
+## Archimedean specialization
 
-- [`prop:rho-k-graded-expansion`](rho-k-graded-expansion.md) — parent proposition (this conjecture promotes its OPEN pair-gen subsection)
-- [`thm:knot-mass-formula-unified`](knot-mass-formula-unified.md) — six-term theorem providing the expected $T_3 = -z^2 \sum \text{Li}_2^q(-\|V_i V_j\|)$ form
-- [`prop:per-braid-mass-tower`](per-braid-mass-tower.md) — canonical mass formula
-- [`conj:lepton-mass-tower-canonical`](lepton-mass-tower-canonical.md) — sibling conjecture for leptons
-- Audit: [`docs/audits/2026-05-25-rho-k-dependent-conjectures-status.md`](../../../docs/audits/2026-05-25-rho-k-dependent-conjectures-status.md) — full dependency graph
-
-**Archimedean specialisation (§7c).** This conjecture is stated on the archimedean side of the substrate wall: its content is a real-mass sub-percent recovery bound — $\forall M \ge 0,\ \exists M_{\mathrm{rec}},\ |M_{\mathrm{rec}} - M| \le M/100$ over $\mathbb{R}$. The posited functional $f_2(q, \hat V_i, \hat V_j)$ is the generic $q$-deformation input it consumes; the real-mass claim and the generic functional coexist in one block because the conjectural statement is intrinsically about real masses, not a separable archimedean specialisation of an otherwise ℝ-free construction.
+We state this conjecture on the archimedean side of the substrate wall. It asserts a real-mass sub-percent recovery bound: $\forall M \ge 0,\ \exists M_{\mathrm{rec}},\ |M_{\mathrm{rec}} - M| \le M/100$ over $\mathbb{R}$. The generic $q$-deformation functional $f_2(q, \hat V_i, \hat V_j)$ serves as input. The conjectural statement intrinsically addresses real masses; it does not constitute a separable archimedean specialization of an otherwise $\mathbb{R}$-free construction.

@@ -1,16 +1,7 @@
-*Shell closures in nuclei (magic numbers $\{2, 8, 20, 28, 50, 82, 126\}$)
-correspond to **charge-conjugate-invariant braid elements** in
-$H_{A_{\mathrm{magic}}}(q)$.  This is the categorical origin of:*
+Shell closures in nuclei correspond to charge-conjugate-invariant braid elements in $H_{A_{\mathrm{magic}}}(q)$. This categorical structure enforces three physical constraints:
 
-- *Parity conservation in the nuclear strong interaction (shell
-  closures respect charge conjugation);*
-- *Proton-neutron interchange symmetry at closed shells (isospin
-  SU(2) doubling);*
-- *Absence of shell-level CP violation (parity-odd channels cancel
-  between $\lambda$ and $\lambda^*$ contributions).*
+- **Parity conservation.** The nuclear strong interaction conserves parity because shell closures respect charge conjugation.
+- **Isospin doubling.** Proton-neutron interchange symmetry emerges at closed shells via isospin SU(2) doubling.
+- **CP conservation.** Shell-level CP violation vanishes because parity-odd channels cancel between $\lambda$ and $\lambda^*$ contributions.
 
-*Parity-violating phenomena (β-decay) arise at **level 3**
-(inter-nucleon pair) where the conjugate symmetry is broken by the
-skein asymmetry
-([skein crossing asymmetry](#prop:skein-crossing-asymmetry)), not
-at level 4 (shell) where the Schur–Weyl self-duality is exact.*
+Parity-violating phenomena arise at level 3 (the inter-nucleon pair), where conjugate symmetry breaks via skein asymmetry. They do not appear at level 4 (the shell), where Schur–Weyl self-duality is exact.

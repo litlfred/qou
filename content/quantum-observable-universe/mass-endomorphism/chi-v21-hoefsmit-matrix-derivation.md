@@ -1,7 +1,7 @@
-**V_(2,1) Hoefsmit 2$\times$2 matrix derivation — partial closure (item 1 of ).**
+**V_(2,1) Hoefsmit 2$\times$2 matrix derivation — partial closure.**
 
-V_(2,1) is the **2-dimensional Hoefsmit irrep** of $H_3(q)$. Unlike
-V_(3) and V_(1,1,1) (1-d, scalar arithmetic), V_(2,1) requires the
+$V_{(2,1)}$ provides the 2-dimensional Hoefsmit irrep of $H_3(q)$. Unlike
+$V_{(3)}$ and $V_{(1,1,1)}$ (1-d, scalar arithmetic), $V_{(2,1)}$ requires the
 full 2$\times$2 matrix representation:
 
 $$

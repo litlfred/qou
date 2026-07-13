@@ -1,34 +1,9 @@
-This example realises the QOU structure on classical hyper-Kähler
-geometry, exhibiting standard instanton moduli problems as special
-cases of the categorical framework.
+Classical hyper-Kähler geometry provides a natural setting for quantum observable universes.
 
-Let $X$ be a Calabi--Yau $2$-fold (K3 surface) with holonomy
-$\mathrm{SU}(2)$, and let $M \subset X$ be a smooth, strictly convex real
-hypersurface.  Then $M$ is a $3$-dimensional strictly pseudoconvex CR
-manifold inheriting its CR structure from the ambient Kähler geometry.
-The frame bundle of $X$ restricted to $M$ yields a natural principal
-$\mathrm{SU}(2)$-bundle $P \to M$.  The associated state bundle
-$\mathcal{S} = P \times_G \mathbb{P}^1(\mathbb{C})$ yields an archimedean quantum
-observable universe $(\mathbf{C}, \varTheta, G, \mathcal{S})$
-([$\mathbb{C}$-quantum observable universe](#ex:c-quantum-observable-universe)).
+Let $X$ be a Calabi–Yau 2-fold (a K3 surface) with holonomy $\mathrm{SU}(2)$. Let $M \subset X$ be a smooth, strictly convex real hypersurface. The ambient Kähler geometry induces a 3-dimensional strictly pseudoconvex CR structure on $M$. The frame bundle of $X$ restricts to a principal $\mathrm{SU}(2)$-bundle $P \to M$ over the hypersurface. The associated state bundle $\mathcal{S} = P \times_{\mathrm{SU}(2)} \mathbb{P}^1(\mathbb{C})$ completes the data for an archimedean quantum observable universe.
 
-The K3 surface carries a hyper-Kähler structure, so $M$ inherits a
-natural contact form $\varTheta$ from the Kähler potential.  The Reeb
-vector field $\xi$ ([Reeb decomposition](#ex:reeb-decomposition))
-is the restriction of the Hamiltonian vector field of the Kähler
-potential to $M$, and the weight decomposition
-([weight decomposition](#def:weight-decomposition)) is the splitting
-induced by the hyper-Kähler triple $(\omega_I, \omega_J, \omega_K)$
-restricted to forms on $M$.
+Because $X$ is hyper-Kähler, the Kähler potential induces a contact form $\varTheta$ on $M$. The Reeb vector field $\xi$ is the restriction of the Hamiltonian vector field of the Kähler potential. The hyper-Kähler triple $(\omega_I, \omega_J, \omega_K)$ restricts to forms on $M$, inducing the weight decomposition.
 
-The instanton condition
-([categorical instanton](#def:categorical-instanton)) specialises to
-the anti-self-duality equation $F_A^+ = 0$ on $X$, whose moduli space
-is the classical moduli of instantons on a K3 surface.  The substrate
-parameter $q(p)$ ([substrate parameter](#def:substrate-parameter))
-interpolates between this instanton connection and the Reeb component.
+The categorical instanton condition reduces to the anti-self-duality equation $F_A^+ = 0$ on $X$. The moduli space of solutions is the classical instanton moduli space on a K3 surface. The substrate parameter $q(p)$ interpolates between this instanton connection and the Reeb component.
 
-This example connects the QOU to the large body of results on gauge
-theory over hyper-Kähler $4$-manifolds, and shows that standard
-instanton moduli problems arise as special cases of the categorical
-framework.
+This construction casts standard instanton moduli problems as special cases of the categorical framework.

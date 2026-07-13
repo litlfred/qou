@@ -12,5 +12,4 @@ $$
 $$
 
 Multiplying numerator and denominator by $q^2$ gives
-$(3 q^2 - 1)/(2 q^2)$. The Lean formalisation closes each step with
-`field_simp; ring`. $\square$
+$(3 q^2 - 1)/(2 q^2)$. $\square$

@@ -1,56 +1,38 @@
-The following develops the [Breit--Wheeler categorical pair
-production](#def:breit-wheeler-pair-production): the bare photon pair,
-the color-dressed photon, the step-by-step normal-form derivation, the
-linear and circular polarization models, and the $4$-term extension.
+**Derivation (Breit--Wheeler categorical pair production).**
 
-**Bare photon pair.**
-Two identical photons give $\gamma\gamma = \sigma_0^2$.
-Applying the Hecke relation $\sigma_i^2 = (q - q^{-1})\sigma_i + 1$:
+We derive the Breit--Wheeler categorical pair production. We define the bare and colored photon. We compute the normal-form reduction of the pair product. We evaluate linear and circular polarization limits. We identify the four-term extension.
+
+#### Bare photon pair
+
+Two identical bare photons yield the product $\gamma\gamma = \sigma_0^2$. We apply the Hecke relation $\sigma_i^2 = (q - q^{-1})\sigma_i + \mathbf{1}$:
 
 $$
   \mathrm{NF}(\gamma\gamma)
-  =  (q - q^{-1})\sigma_0 + \gamma
+  =  (q - q^{-1})\sigma_0 + \mathbf{1}.
 $$
 
-with $\mathrm{net}(\gamma\gamma) = 1 + (q - q^{-1}) \approx 1.209$.
-This yields a bare pair energy $E_{\mathrm{pair}} \approx 1.006$ MeV,
-which is $1.6\%$ below $2m_e = 1.022$ MeV.
+The net valuation is $\mathrm{net}(\gamma\gamma) = 1 + (q - q^{-1}) \approx 1.209$. This corresponds to a bare pair energy $E_{\mathrm{pair}} \approx 1.006$ MeV. This falls $1.6\%$ short of the physical $2m_e = 1.022$ MeV threshold.
 
-**Colored photon (general form).**
-To match the threshold $2m_e$ exactly, the photon acquires
-**color dressing** — an admixture of the two Hecke generators
-$\sigma_0, \sigma_1$, each with its own color weight
-([color content](#rem:knot-basis-color-content)):
+#### Colored photon
+
+Matching the $2m_e$ threshold requires color dressing. The photon incorporates an admixture of the Hecke generators $\sigma_0$ and $\sigma_1$. A color parameter weights each generator:
 
 $$
   \gamma
   = 
   \mathbf{1} + \varphi_0\sigma_0 + \varphi_1\sigma_1
-  + \varphi_{01}\sigma_0\sigma_1
+  + \varphi_{01}\sigma_0\sigma_1,
 $$
 
-where $\varphi_0, \varphi_1, \varphi_{01} \in \mathbb{R}$ are independent
-**color weights**.  The generator $\sigma_0$ acts on the
-$(\sigma, r)$ crossing plane, $\sigma_1$ on the $(r, g)$
-crossing plane, and $\sigma_0\sigma_1 = L_+$ is the Hopf link
-dressing.  The derivation below uses the 3-term specialization
-$\varphi_{01} = 0$; see
-[photon knot operations](#rem:physics-names-knot-operations)
-for the general 4-term formula.
+where $\varphi_0, \varphi_1, \varphi_{01} \in \mathbb{R}$. The generator $\sigma_0$ acts on the $(\sigma, r)$ plane. The generator $\sigma_1$ acts on the $(r, g)$ plane. The product $\sigma_0\sigma_1 = L_+$ provides Hopf-link dressing. 
 
-**Step-by-step derivation of the pair NF.**
-Given two colored photons (3-term specialization)
-$\gamma_1 = \mathbf{1} + \varphi_0\sigma_0 + \varphi_1\sigma_1$
-and
-$\gamma_2 = \mathbf{1} + \psi_0\sigma_0 + \psi_1\sigma_1$,
-expand $\gamma_1 \cdot \gamma_2$ into nine terms and reduce
-each using the Hecke relation
-$\sigma_i^2 = h\sigma_i + \mathbf{1}$
-where $h = q - q^{-1}$:
+This derivation treats the 3-term specialization $\varphi_{01} = 0$.
 
-See [Table: Breit-Wheeler Hecke product table](#tbl:breit-wheeler-pair-production-table-data).
+#### Normal-form pair product
 
-Collecting by basis element:
+We expand the product $\gamma_1 \cdot \gamma_2$ for two 3-term colored photons $\gamma_1 = \mathbf{1} + \varphi_0\sigma_0 + \varphi_1\sigma_1$ and $\gamma_2 = \mathbf{1} + \psi_0\sigma_0 + \psi_1\sigma_1$. We reduce via $\sigma_i^2 = h\sigma_i + \mathbf{1}$, where $h = q - q^{-1}$.
+
+Collecting by basis element yields:
 
 $$
   \mathrm{NF}(\gamma_1 \cdot \gamma_2)
@@ -68,75 +50,47 @@ $$
   \sigma_0\sigma_1
   + 
   \underbrace{\varphi_1\psi_0}_{L_-}
-  \sigma_1\sigma_0
+  \sigma_1\sigma_0.
 $$
 
-The $\mathbf{1}$ coefficient absorbs the Hecke self-energy
-terms $\varphi_0\psi_0$ and $\varphi_1\psi_1$ (from
-$\sigma_i^2 \to h\sigma_i + \mathbf{1}$).  The Hopf link
-terms $L_\pm$ arise **only** from cross-color products
-$\varphi_0\psi_1$ and $\varphi_1\psi_0$.
+The Hecke self-energy terms $\varphi_0\psi_0$ and $\varphi_1\psi_1$ contribute to the $\mathbf{1}$ coefficient. The Hopf link terms $L_\pm$ arise strictly from cross-color products $\varphi_0\psi_1$ and $\varphi_1\psi_0$.
 
-Net (sum of all coefficients):
+The net evaluation is the sum of all coefficients:
 
 $$
   \mathrm{net}
   = 
   (1 + \varphi_0 + \varphi_1)(1 + \psi_0 + \psi_1)
   + 
-  (\varphi_0\psi_0 + \varphi_1\psi_1)h
+  (\varphi_0\psi_0 + \varphi_1\psi_1)h.
 $$
 
-**Polarization models.**
+#### Polarization limits
 
-*Linear (symmetric) polarization.*
-Set $\varphi_0 = \varphi_1 = \psi_0 = \psi_1 = \phi$
-(both photons carry equal color in both generators):
+**Linear (symmetric) polarization:** 
+We set equal color in both generators, $\varphi_0 = \varphi_1 = \psi_0 = \psi_1 = \phi$.
+- $\gamma$: $1 + 2\phi^2$
+- $\sigma_0$: $2\phi + \phi^2 h$
+- $\sigma_1$: $2\phi + \phi^2 h$
+- $L_+$: $\phi^2$
+- $L_-$: $\phi^2$
 
-- $\gamma$: $1 + \phi^2 + \phi^2 = 1 + 2\phi^2$
-- $\sigma_0$: $\phi + \phi + \phi^2 h = 2\phi + \phi^2 h$
-- $\sigma_1$: $\phi + \phi + \phi^2 h = 2\phi + \phi^2 h$
-- $L_+$: $\phi \cdot \phi = \phi^2$
-- $L_-$: $\phi \cdot \phi = \phi^2$
+The equal Hopf link content ($L_+ = L_- = \phi^2$) implies zero chirality. The net valuation is $(1 + 2\phi)^2 + 2\phi^2 h$. Setting $E_{\mathrm{pair}} = 2m_e$ fixes $\phi = 0.0487$.
 
-Equal Hopf link content ($L_+ = L_- = \phi^2$) — no chirality.
-Net $= (1 + 2\phi)^2 + 2\phi^2 h$.
-Setting $E_{\mathrm{pair}} = 2m_e$ fixes
-$\phi = 0.0487$.
+**Circular (orthogonal) polarization:**
+We set orthogonal polarization, $\varphi_0 = s$, $\varphi_1 = 0$, $\psi_0 = 0$, $\psi_1 = s$.
+- $\gamma$: $1$
+- $\sigma_0$: $s$
+- $\sigma_1$: $s$
+- $L_+$: $s^2$
+- $L_-$: $0$
 
-*Circular (orthogonal) polarization.*
-Set $\varphi_0 = s$, $\varphi_1 = 0$, $\psi_0 = 0$, $\psi_1 = s$
-(each photon polarized along one generator only):
+Only $L_+$ appears ($L_- = 0$). This produces maximally chiral Hopf content. The Hecke self-energy vanishes ($\varphi_0\psi_0 = \varphi_1\psi_1 = 0$). The net valuation is $(1 + s)^2$. Setting $E_{\mathrm{pair}} = 2m_e$ fixes $s = 0.0978$.
 
-- $\gamma$: $1 + 0 + 0 = 1$
-- $\sigma_0$: $s + 0 + 0 = s$
-- $\sigma_1$: $0 + s + 0 = s$
-- $L_+$: $s \cdot s = s^2$
-- $L_-$: $0 \cdot 0 = 0$
+Both models close the $1.6\%$ energy gap. The color weight generates Hopf link content $L_\pm$ that supplies the missing pair production energy. The asymmetry $L_+ \neq L_-$ in the circular model acts as the categorical expression of photon helicity.
 
-Only $L_+$ appears ($L_- = 0$) — maximally chiral Hopf content.
-No Hecke self-energy ($\varphi_0\psi_0 = \varphi_1\psi_1 = 0$).
-Net $= (1 + s)^2$.
-Setting $E_{\mathrm{pair}} = 2m_e$ fixes $s = 0.0978$.
+#### Four-term extension
 
-**Energy alignment.**
-Both models close the $1.6\%$ gap.  The color weight generates
-Hopf link content $L_\pm$ in the photon pair — the colored photon
-carries topological structure that supplies the missing pair
-production energy.  The Hopf link asymmetry
-$L_+ \neq L_-$ in the circular model is the categorical
-expression of photon helicity.
+Activating $\varphi_{01} \neq 0$ recovers the general 4-term photon. The $\gamma\gamma$ product directly opens the $e^-$ (trefoil) channel. The 6-term normal form and the derivation of nucleons from pair production follow from these operations.
 
-**4-term extension.**
-The 3-term derivation above ($\varphi_{01} = 0$) is a specialization
-of the general 4-term photon
-$\gamma = \mathbf{1} + \varphi_0\sigma_0 + \varphi_1\sigma_1
-+ \varphi_{01}\sigma_0\sigma_1$.  With $\varphi_{01} \neq 0$,
-the $e^-$ (trefoil) channel opens directly in the $\gamma\gamma$
-product — see
-[photon knot operations](#rem:physics-names-knot-operations) for the
-full 6-term NF formula.  The 4-term form is used in the complete
-derivation of nucleons from pair production
-([4-term pair nucleon](#prop:four-term-pair-nucleon)).
-
-**Witness**: `breit-wheeler-nucleon-nf.witness.json`.
+**Witness:** `breit-wheeler-nucleon-nf.witness.json`

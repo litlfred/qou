@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-07-03T15:04:52.826041+00:00",
-  "commitSha": "d94131acded9750ba61ba5fc765011a6c14180fc",
+  "computedAt": "2026-07-12T22:47:08.058605+00:00",
+  "commitSha": "544ef706b8f0983009862b4390b4bf56723b7e47",
   "assertions": [
     {
       "name": "bar_involution_sanity",
@@ -12,11 +12,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 25,
+  "durationMs": 19,
   "computation": "qbeta-even-channel-bar-split",
   "scriptFile": "qbeta_even_channel_bar_split_probe.py",
-  "scriptHash": "d9e42f92f37d",
-  "scriptCommitSha": "aaa764dae3996a20cdcd03f812c6d32995aa6bec",
+  "scriptHash": "93e22db34edf",
+  "scriptCommitSha": "be74ea07abc0b4dd3ef9eca855e24f767d5f373f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -50,12 +50,11 @@
       "4": "-59195/162 + 15055*sqrt(3)/1741824",
       "5": "-252241*sqrt(3)/243 - 836891/139345920"
     },
-    "OoverH_first_nonzero_residual_order": 11,
-    "OoverH_residuals_nonzero": {
-      "11": "-13000.7533612133"
-    },
-    "two_variable_form_holds_to_ORD": false,
-    "verdict": "TWO-VARIABLE FORM FAILS exactly at order {'E': None, 'O/h': 11} — the h-companion hypothesis as-is does not absorb the residual; the failing exact residuals sharpen the constraint for the next candidate (zeta4-residue route). Scope (a).",
+    "OoverH_first_nonzero_residual_order": null,
+    "OoverH_valid_top_order": 10,
+    "OoverH_residuals_nonzero": {},
+    "two_variable_form_holds_to_ORD": true,
+    "verdict": "TWO-VARIABLE FORM HOLDS (to s^11, exact): log R = E(u~) + h*D(u~), with u~ = q*u the bar-even variable (u itself has bar-weight 2) and h = q - 1/q the companion bar-odd variable — the even channel IS a u-series after exact removal of the h-odd component; the honest bar-even ladder data are the e_k (E) with the d_k (D) as the odd-companion series. Scope (a): established to truncation order, on the net route.",
     "scope": "(a) — truncation order ORD, net route; no wiring"
   }
 }

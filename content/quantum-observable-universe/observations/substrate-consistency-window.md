@@ -1,9 +1,4 @@
-The QOU framework has **one free parameter**: the substrate
-parameter $q$.  Every observable quantity --- masses, couplings,
-decay rates, causal structure --- is a function of $q$ alone.
-The parameter is **overdetermined**: independent classes of
-measurements each fix $q$ to a narrow range, and these ranges
-overlap.
+The QOU framework relies on a single free parameter: the substrate parameter $q$. Every observable quantity—masses, couplings, decay rates, and causal structure—is a function of $q$ alone. Independent classes of measurements each restrict $q$ to a narrow range. These ranges overlap, rendering $q$ overdetermined.
 
 **Consistency window.**
 
@@ -13,23 +8,17 @@ $$
 
 See [Table 1](#tbl:substrate-consistency-window-table1-data).
 
-Three independent sectors of physics --- strong (mass ratios),
-electromagnetic (fine structure constant), and weak (beta decay)
---- all point to the same $q$.  This is the central empirical
-result of the QOU: the entire Standard Model parameter space
-collapses to a single point in the consistency window.
+Three independent sectors of physics—strong (mass ratios), electromagnetic (fine structure constant), and weak (beta decay)—all point to the same $q$. This is the central empirical result of the QOU. The entire Standard Model parameter space collapses to a single point in the consistency window.
 
 **Derived quantities within the window.**
 
-All entries below are **zero-free-parameter predictions** once $q$
-is fixed by any one of the three determinations above.
+All entries below are zero-parameter predictions once we fix $q$ by any one of the preceding determinations.
 
 *Dimensionless ratios.*
 
 See [Table 2](#tbl:substrate-consistency-window-table2-data).
 
-*Mass predictions (MeV/$c^2$, one input: $m_e$ fixes dressed
-quark mass).*
+*Mass predictions (MeV/$c^2$; $m_e$ input fixes the dressed quark mass).*
 
 See [Table 3](#tbl:substrate-consistency-window-table3-data).
 

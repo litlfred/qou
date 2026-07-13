@@ -7,14 +7,16 @@ $R$-linear trace
 $\mathrm{tr}_M \colon \bigcup_n H_n(R, q) \to R\otimes\mathbb{Q}$
 satisfying normalisation $\mathrm{tr}_M(1) = 1$, the trace property
 $\mathrm{tr}_M(ab) = \mathrm{tr}_M(ba)$, and the Markov property
-$\mathrm{tr}_M(x \sigma_n^{\pm 1}) = z^{\pm 1} \mathrm{tr}_M(x)$
-for all $x \in H_n(R, q)$, $n \geq 1$, $z = 1/(q^{1/2} + q^{-1/2})$.
+$\mathrm{tr}_M(x \sigma_n) = z\, \mathrm{tr}_M(x)$
+for all $x \in H_n(R, q)$, $n \geq 1$, $z = 1/(q^{1/2} + q^{-1/2})$;
+the negative stabilisation
+$\mathrm{tr}_M(x \sigma_n^{-1}) = z_{-}\, \mathrm{tr}_M(x)$,
+$z_{-} = z - (q - q^{-1})$, follows from the Hecke quadratic
+relation.
 The Markov property *is* the locality statement. $\square$ for (1).
 
 **(2) GS non-locality.** Part (2) is a structural observation about
-the Gröbner–Shirshov reduction algorithm on the Hecke algebra
-(established QOU infrastructure, e.g.
-`QOU.Hecke.MarkovTrace`, `QOU.Archimedean.HeckeRep`). The algorithm
+the Gröbner–Shirshov reduction algorithm on the Hecke algebra. The algorithm
 applies three rewriting rules:
 
 - *Hecke quadratic relation:*
@@ -56,8 +58,14 @@ $i$-th vertex volume $\widehat{V}_i(q)$, determined by the local
 data of the GS coefficient $(a_i, b_i)$.
 
 Specifically, Wenzl 1988 establishes:
-- The Wedderburn-block weight $\tilde w_\lambda = \dim_q^2(\lambda) /
-  [n]_q!$ is the canonical proportionality constant.
+- The Wedderburn-block weight
+  $\tilde w_\lambda = \prod_{x \in \lambda}
+  \bigl(z\,q^{c(x)} - z_{-}\,q^{-c(x)}\bigr)/\bigl(q^{h(x)} - q^{-h(x)}\bigr)$
+  is the canonical proportionality constant, where $c(x)$ and $h(x)$
+  are the content and hook length of the cell $x$ and
+  $z_{-} = z - (q - q^{-1})$
+  ([witness](computations/markov-trace-weights-wenzl.witness.json);
+  exact for every $\lambda \vdash n \leq 5$).
 - Each vertex volume $\widehat{V}_i(q)$ depends only on the
   Bratteli-diagram path traced by the normal-form generator $e_{j_i}$
   through the inductive system $H_1 \subset H_2 \subset \cdots$.

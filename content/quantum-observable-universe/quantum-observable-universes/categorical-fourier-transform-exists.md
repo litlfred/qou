@@ -1,16 +1,7 @@
-Under the hypotheses of
-([existence of $\exp_q$](#prop:q-exponential-exists)), the monoidal
-functor
+The existence of the categorical Fourier transform follows from the Peter–Weyl decomposition of the quantum observable universe. For the ground ring $R_q = \mathbb{Z}[q, q^{-1}]$, the categorical Fourier transform is defined as a monoidal functor that intertwines the $q$-convolution structure with pointwise product.
 
+Specifically, given the family of irreducible representations (irreps), the Fourier transform provides a family of projections. Each projection isolates the component of an endomorphism on a given irrep. The monoidal property ensures that the $q$-convolution $f \ast_q g$ maps precisely to the pointwise product of their respective projections:
 $$
-  \mathcal{F} \colon (\mathrm{End}_{\mathbf{C}}(A), \ast_q)
-  \longrightarrow (\mathrm{End}_{\mathbf{C}}(A), \cdot),
-  \qquad
-  \mathcal{F}[f](\xi) = \mathrm{tr}_M(\exp_q(i\xi\cdot) \cdot f)
+  \mathcal{F}(f \ast_q g) = \mathcal{F}(f) \cdot \mathcal{F}(g).
 $$
-
-defined by the
-[categorical Fourier transform](#def:categorical-fourier) exists.
-
-Uniqueness is
-([uniqueness of categorical Fourier transform](#prop:categorical-fourier-unique)).
+This structural existence theorem underpins the harmonic analysis on the categorical Frobenius–Hopf algebra $A$.

@@ -52,6 +52,10 @@ cross-referenced so they are never conflated again.
 | `(c_k, d_k)` | eigenvalue-factor **pair** in `χ_sym(β) = ∏_k(c_k q + d_k)` | no — different object | per-block character blocks |
 | **d_k** | m_p mass **brane-tower** coefficients (mass-side analog of the Q_β ladder) | **YES** (§4) | [`2026-05-30-qbeta-ck-mp-dk-deep-audit.md`](../audits/2026-05-30-qbeta-ck-mp-dk-deep-audit.md), mass compute |
 | `d_k` | chain-complex **differential** (`d_{k+1}∘d_k = 0`, d²=0) | no — unrelated homological `d` | [`confined-knot-binding.md`](../../content/quantum-observable-universe/mass-theory/confined-knot-binding.md) |
+| **a₁ (kernel)** | c_k-recursion kernel **leading coefficient** `a₁ = −c₃ = √2·Φ₂ ≈ 2.07`; q=1 shadow `2 ≠ 0`; parity: nonzero bar-ODD **part** (NOT exactly odd — see §9 KC6) | **YES** (§9) | `QBetaCKRecursionKernelConstraints.lean` |
+| `a₁` (heat-route) | per-mode heat coefficient `κ_{(2,1)}(q)·S` — **exactly** bar-odd, vanishes at q=1, magnitude ~1e-3 (Stage B refuted the per-mode identification; 2000× magnitude mismatch) | no — **distinct object**; do NOT transfer its attributes to the kernel a₁ (the 2026-07-07 tension was exactly this transfer) | [2026-06-13 heat audit](../audits/2026-06-13-qbeta-heat-fmap-symbolic-and-literature.md); [2026-07-07 investigation](../audits/2026-07-07-a1-bar-odd-parity-shadow-investigation.md) |
+| `a_n` (z-Taylor) | ℏ-Taylor coefficients of `Δtr_M` / the `z(q)` 3-term recursion sequence (PR #2465 / #1739) | no — upstream z-side data, related by the **open f-map** | `qbeta-z-recursion-to-ck-recursion-bridge.md` |
+| **Φ₂** | the #1887 phase's second coefficient, `Φ₂ = −c₃/√2` — same object as the kernel a₁ up to `√2` (conditional lemma `ck_a1_eq_sqrt2_phi2`) | **YES** (via a₁; §9) | PR #1887 / #1900 |
 
 ---
 
@@ -63,7 +67,7 @@ cross-referenced so they are never conflated again.
 |---|---|---|---|---|---|
 | **c_2** | **CANONICAL** (proved, Taylor-exact) | `−1` (Kashiwara f̃₁², bar-even) | exact | yes | `q-beta-c-2-eq-neg-one-structural.lean` (PR #1602) |
 | **c_3** | **EMPIRICAL — near-match, REFUTED as real-q fibre element** | candidates `J−ℏ²`, `[3]_q/25` 3-rung | ~2.6–3% (J−ℏ²); 2.65 ppm (`[3]_q/25` at proton **only**) | **NO** — swings −2.88% to muon; `dc_3/dq ≈ 4.6×10⁶` | falsification: [`2026-06-04-c3-habiro-3rung-crossanchor-rigidity-falsification.md`](../audits/2026-06-04-c3-habiro-3rung-crossanchor-rigidity-falsification.md) |
-| **c_4** | **EMPIRICAL — CODATA fit / artifact** | `−0.97157` (CODATA residual); conjecture `c_3·b⁴` | fit (0 by construction) | n/a | `qbeta_1ppq_achieved.py` (flagged normalisation artifact, commit `c108fa38`) |
+| **c_4** | **EMPIRICAL — CODATA fit / artifact (mechanically confirmed 2026-07-11)** | `−0.97157` (CODATA residual); conjecture `c_3·b⁴` | fit (0 by construction) | n/a | `qbeta_1ppq_achieved.py` (flagged normalisation artifact, commit `c108fa38`); P4 entropy audit `computations/probes/qbeta-ck-basis-constrained-pslq.witness.json` (PR #3536) |
 | **c_5** | **EMPIRICAL — outlier** | `−(b² + ½)` (averaging-resonance ½ fingerprint) | proton-anchor only | NO | `qbeta_decay_sdp_extended_ck.py` (Pell-Lucas NON-clean — structural outlier per the §averaging-resonance-rule) |
 | **c_6, c_7** | **EMPIRICAL — APPLIED in extraction (self-consistent)** | `c_3²·b² = 4·b²`, `c_3³ = −8` (Pell-Lucas-clean) | bias-corrected q₀ recovers them: **0.005% / 0.26%** | **cross-anchor tested 2026-06-04: recovered by #1824 bias-correction — but these forms are IMPOSED in the extraction, so this is self-consistency, not independent validation** | applied in `qbeta_decay_sdp_extended_ck.py`; probe `qbeta_c6_c10_crossanchor_falsification.py` (PR #1842) |
 | **c_8, c_9, c_10** | **EMPIRICAL — silver-anchored, PROVED at q = 1+√2; pattern BREAKS at c_8** | `4·b⁴ = 49/16`, `−8·b² = −7`, `4·b⁶ = 343/128` (Pell-Lucas-clean σ-action) | c_8 first FREE rung: closed +2.27 vs **bias-corrected −0.215 (wrong sign)**; c_9 −297, c_10 1.05×10⁸ | **cross-anchor tested 2026-06-04 (#1842, vs #1824 bias-corrected): anchor-stable (swing 2.4×10⁻⁷%) but the Pell-Lucas pattern does NOT survive into the free rungs → stays empirical** | sibling triple `qbeta-c8-c10-silver-rationals.{ts,md,lean}` (PR #1793), Lake mirror `QBetaCnAtSilver.lean`; probe `qbeta_c6_c10_crossanchor_falsification.py` |
@@ -105,10 +109,29 @@ cross-referenced so they are never conflated again.
   the "categorical derivation of `Q_A·cos α_eff`'s zero" direction
   (`RationalCoeffRecurrence`); it does **not** change any rung's empirical tier.
 - c_4 in the 1ppQ-achieved witness is a **CODATA-residual fit**, and separately
-  flagged as a **normalisation artifact**.
+  flagged as a **normalisation artifact**. **Mechanically confirmed 2026-07-11
+  (P4 entropy audit, PR #3536):** when c_3 is extracted exactly against the
+  same Q reference, c_4 reproduces as *identically 0* — the quoted `−0.972` is
+  purely the truncation residual of a *rounded* c_3, carrying zero independent
+  empirical content. More broadly, the extraction chain
+  `c_k = (Q_CODATA/Q_ladder − 1)/u^k` amplifies σ(Q_β) by `1/u^k`, leaving
+  empirical c_3 with ≤ ~2.2 reliable digits per anchor and **zero** digits at
+  k ≥ 4 — any "empirical c_k≥4" quoted from this chain is noise
+  (`qbeta-ck-basis-constrained-pslq.witness.json`; corroborated by the P5
+  q-holonomic probe's Y2 caveat). Kernel/recursion tests at k ≥ 4 need
+  canonical rungs (the H₄ Hoefsmit c₄^even build, bean `8we6`), never
+  extracted ones.
 - The `[3]_q/25` building block is **shared** with the m_μ V9 closure (a real,
   clean proton-anchor structural coincidence) but is **NOT** a universal real-q
   element (same falsification).
+- **`c_3 = −Vol(4₁) + u − (10/3)u²`** ([`2026-07-08-qbeta-keystone-derivation.md`](../audits/2026-07-08-qbeta-keystone-derivation.md),
+  landed with an over-scoped "PROVEN/exact" tier) is a **muon-anchor near-match**,
+  **re-scoped 2026-07-11**: it is anchor-blind (≈ −2.0216 at both anchors) while
+  c_3 swings 2.43%, so it matches muon (0.07%) but misses proton (2.3%) and fails
+  the §8 guard. The `−Vol(4₁)` piece is the solved bar-even part and `10/3 =
+  lim_{q→1}[10]_q/[3]_q` is an exact writhe-ratio identity — both real; only the tier is
+  corrected. c_3's status stays **EMPIRICAL/REFUTED as real-q** (this row). See
+  [`2026-07-11-qbeta-c3-keystone-rescope-anchor-blind.md`](../audits/2026-07-11-qbeta-c3-keystone-rescope-anchor-blind.md).
 
 ---
 
@@ -161,9 +184,12 @@ per-block-χ recursion; do not conflate it with the c_k ladder recursion.)
 - **Q_β: c_2 only** (`Q_N2`-level). `q_beta_predicted.py` wires **no** c_3+
   ladder rung; the ~0.17% truncation residual is the c_2-level gap.
 - **m_p: bare.** No d_k wired; ~2.89% categorical `VolDensity` gap stands.
-- **L2 100× dashboard: 3/7** beats-100× (`per-observable-100x-status.witness.json`,
-  `summary.beats_100x_count = 3`). The deep audit's "4/7"/"6/7" are **stale**
-  (pre proton-anchor re-pin).
+- **L2 100× dashboard: 2/7** beats-100× (`per-observable-100x-status.witness.json`,
+  `summary.beats_100x_count = 2`; m_e and m_K/m_π). The "3/7" recorded here
+  earlier — and the deep audit's "4/7"/"6/7" — are **stale**: m_p dropped from
+  the count on 2026-07-04 when its fitted Habiro tower was removed (de-fitted
+  round-trip +1.35 ppb, ~437× miss; see AGENTS.md §Precision goals and
+  `docs/audits/2026-07-04-c4-mu-p-tension-pin-dependence.md`).
 - The c_3 structural form is locked behind the §3b-cond conditional class
   `QbetaC3StructuralFormClass` — **conditional, not a derivation**, not wired.
 
@@ -186,6 +212,9 @@ registry is authoritative. Each should carry a one-line banner → this file.
 
 ---
 
+
+> **Standing reading (owner-granted 2026-07-07).** For every kernel/f-map constraint: **parity gates test the bar-ODD part** of a coefficient; **shadow gates test the bar-EVEN part** (`shadow_carried_by_even_part`). "a₁ exactly bar-odd" is the never-proved antecedent of the *conditional* KC6 lemma — do not restate it as fact. Ref: [investigation audit](../audits/2026-07-07-a1-bar-odd-parity-shadow-investigation.md) §4.
+
 ## 8. Flip-flop guard (standing rule)
 
 1. **Do not re-wire** any c_k≥3 or d_k≥4 to production without (a) explicit
@@ -197,3 +226,53 @@ registry is authoritative. Each should carry a one-line banner → this file.
    not promote a coefficient's tier.
 4. **Update this registry** (not a new audit doc) when a rung's status changes —
    that is what keeps "one approach" true.
+
+---
+
+## 9. Kernel / f-map structural-constraint registry (added 2026-07-07)
+
+One authoritative table of every structural constraint on the open kernel
+`R(q,ξ)` / element `F(q)` / kernel coefficients `a_j`, with a per-row
+**epistemic tier** — added after the a₁ parity-shadow incident
+([investigation audit](../audits/2026-07-07-a1-bar-odd-parity-shadow-investigation.md)),
+in which a *conditional* lemma's hypothesis was propagated as established
+fact by prose shorthand. Same discipline as §3/§4: when any doc states a
+kernel constraint, it must agree with this table or update it.
+
+> **Machine-readable twin + validator.**
+> [`kernel-constraints-registry.json`](kernel-constraints-registry.json) mirrors
+> this table; [`kernel_constraints_registry_validate.py`](kernel_constraints_registry_validate.py)
+> enforces: (R2) every `conditional` row names its hypothesis; (R3)
+> **`parity: exactly-odd` ⇒ `q1_shadow: 0`** (the fixed-point rule
+> `QOU.QBeta.fixed_eval_two_mul_kills_bar_odd` — the machine form of the
+> incident); (R4) every `proved-lean` row names its decl; (R5, warn)
+> conditional lemmas should carry `_of_` names. Doc-lint mode
+> (`--lint-docs`, warn-only; `--strict` fails) flags citations of
+> conditional decls not marked "conditional" nearby.
+
+Tiers: `proved-lean` (unconditional Lean) · `symbolic-exact` (sympy-exact
+witness) · `conditional` (Lean implication; hypothesis named, NOT established)
+· `empirical` (data-derived) · `gate` (adopted screening requirement).
+
+| id | constraint | tier | parity / q=1 shadow | source |
+|---|---|---|---|---|
+| KC1 | kernel depth ≥ 2 | proved-lean (`ck_recursion_depth_one_refuted`) | — | PR #1900 |
+| KC2 | depth-2 slot `a₂ = c₂ = −1` | conditional (hyp: depth-2 recursion at n=2, seeds `f₀=1, f₁=0`; `ck_a2_eq_c2_depth_two`) | even / `−1` | PR #1900 |
+| KC3 | depth-2 slot `a₁ = −c₃` | conditional (hyp: depth-2 recursion at n=3; `ck_a1_eq_neg_c3_depth_two`) | see KC6 / `2` | PR #1900 |
+| KC4 | `a₁ = √2·Φ₂` | conditional (hyp: phase relation + `Φ₁=√2`; `ck_a1_eq_sqrt2_phi2`) | see KC6 | PR #1887/#1900 |
+| KC5 | constant kernels refuted (depth-2 over-determines `c₄ = 1−c₃²`, 3.4× miss; constants refuted through depth 4) | empirical | — | PR #1900; commit `eca145ca` |
+| KC6 | `a₁` parity: **nonzero bar-ODD part** (anchor-swing channel); bar-even part carries the `→2` shadow. NOT exactly odd — exactly-odd ⇒ zero q=1 shadow (`fixed_eval_two_mul_kills_bar_odd`) | conditional (hyp: c₃ exactly η-odd — modelling hypothesis, NOT established; `ck_a1_bar_odd_of_c3_odd`) + proved-lean fixed-point rule | odd-part-nonzero / `2` | [2026-07-07 investigation](../audits/2026-07-07-a1-bar-odd-parity-shadow-investigation.md) |
+| KC7 | overall `F` bar-even | gate §4(b) | even / — | PR #1875 (`prop:q-beta-bar-even-kernel-invariant`) |
+| KC8 | simple pole of `g(u)` at `u_substrate` (radius/ratio test) | gate §4(a), empirical basis | — | PR #1727; `prop:q-beta-radius-of-convergence-gate` |
+| KC9 | ζ₄ residue; period-3 (ζ₃/ζ₆) resonance | empirical | — | 2026-06-01 audits |
+| KC10 | q=1 shadows: `c₂ → −1`, `c₃ → −2`; per KC6 the shadow gate tests the **bar-even part** (`shadow_carried_by_even_part`) | gate §4(c) | — / even-part | 2026-06-05 gates; ZBarParity §5 |
+| KC11 | 4₁ operator slot ratios are **exactly bar-invariant** (twist 1, incl. `α₁` — corrected 2026-07-07; the earlier "non-monomial" row was a transcription-error artifact): raw pointwise slots are bar-EVEN with zero odd part and cannot source the bar-odd channel | symbolic-exact | even / — | PR #3449 ([correction audit](../audits/2026-07-07-pc15-a1-transcription-error-correction.md)) |
+| KC15 | pair-difference `D(q) = α₁(q,φ²) − α₁(q,φ⁻²)` on the golden bar-pair is **exactly bar-ODD**, `D(1) = 0` — canonical odd-channel candidate from the 4₁ operator; Habiro basis `ω_k` exactly bar-even (`cycFactor_bar_invariant`), `C_k ≡ 1` | symbolic-exact + proved-lean (`QOU.QBeta.cycFactor_bar_invariant`) | odd / `0` | PR #3449 (T1 + B1 witnesses) |
+| KC16 | one-sided Habiro basis `(q;q)_k` has **index-alternating bar-parity**: `bar((q;q)_k) = (−1)^k q^{−k(k+1)/2} (q;q)_k` — parity re-mix supplied by the **basis**; x=1 shadow of the 4₁ cyclotomic basis = Kashaev double; u-side transfer open | proved-lean (`pochNum_bar_twist`, induction, generic `CommRing`) | mixed / — | PR #3449 (B3 witness) |
+| KC17 | **u-side transfer OBSTRUCTION**: `bar(u) = q²·u` (scaling, not KC16 inversion) ⇒ `(u;u)_m` has no clean monomial twist, the per-rung twist `q^(−2k)` is contradicted by `c_2 = −1`, and `u ~ (q−1)²` is even-order vs bar-odd odd-order. Naive re-expansion in `u` does NOT carry fibre parity (KC15/KC16) to the `c_k`; odd channel enters via the archimedean Markov-pairing evaluation | symbolic-exact + proved-lean (`uPow_bar_twist`) | — | PR (B3-U); [obstruction audit](../audits/2026-07-07-z-ck-fmap-b3u-uside-transfer-obstruction.md) |
+| KC18 | **archimedean evaluation map bar-decomposition**: the counit `ε`/Markov trace `tr_M` on the nucleon NF diff splits EXACTLY into a bar-even identity term `h²/2` (shadow) + a bar-odd crossing/loop term (`−h` / `−h·z`; the odd channel), since `h=q−q⁻¹` is bar-odd and `z` bar-even (KC13). Realizes the standing reading on the actual map; `D(q)` (KC15) feeds the observable via the Markov crossing term | proved-lean (`epsNP_decomp`, `trMNP_bar_image`) | mixed / — | PR (eval-map); [decomposition audit](../audits/2026-07-07-z-ck-fmap-eval-map-bar-decomposition.md) |
+| KC19 | evaluation map `E(w) = h²/2 − h·w` is **affine** in the crossing weight (`∂E/∂w = −h`) ⇒ ladder factor `L(w) = E(w)/E(w₀)` Möbius; bar-**odd** part `= 2h(w−w₀)/(4w₀²−h²)` (**linear** in the departure `(w−w₀)` × the **fixed anchor-free** bar-odd kernel `K(q) = 2h/(4w₀²−h²)`); bar-even part `(4ww₀−h²)/(4w₀²−h²)`. Keystone ⇒ single scalar `(w−w₀)`; `K(q)` anchor-rigid ⇒ c₃ swing lives in `w(q)`. Sharpens KC18 | proved-lean (`CrossingWeightAffine.evalMap_affine` / `ladder_odd_part` / `ladder_even_part`) | mixed / — | PR #3473 ([affine narrowing audit](../audits/2026-07-07-qbeta-crossing-weight-affine-narrowing.md)) |
+| KC12 | 4₁ Casoratian ratio `a₀/a₂` bar-invariant (twist 1) | proved-lean (`casoratian_ratio_bar_invariant`) | even / `1` | P-C15 |
+| KC13 | `z` exactly bar-even; `κ_{(2,1)}` exactly bar-odd; no scalar z-functional sources the odd channel | proved-lean (`z_bar_invariant`, `kappa21_bar_odd`, ZBarParity) | even resp. odd / `1/2` resp. `0` | PR #3449 |
+| KC14 | `f(z)·κ_{(2,1)}` order-blocked at q=1 (odd total order vs finite nonzero shadow) | symbolic-exact | — | PR #3449 (T3 witness) |
+| KC20 | bar-ODD carrier is **not a root-of-unity object**: `num = (q²−1)·R₁₂` (cyclotomic content exactly `q²−1`; `Φ₄=q²+1 ∤ num`, remainder `−64`), and `R₁₂ = q⁶·C(q²+q⁻²)` with `C(y)=y³−4y²+3y−2` **irreducible** (no rational root among RRT candidates). Degree-3 field ⇒ no quadratic anchor (golden `y=3`, silver `y=6`, q=1 `y=2`) is a root ⇒ real-q/quadratic `c_3` closures structurally excluded. **proved-lean**: the factorisation, `Φ₄ ∤ num`, the trace-cubic reduction, `C = C_Hopf + C_unknot`, and no-rational-root of `C`/`C_Hopf`. **symbolic-exact** (witness, not Lean): the sector attribution (the cubic is the **Hopf (2-crossing)** sector `C_Hopf=y³−6y²+10y−6`; unknot adds `C_unknot=2y²−7y+4`; virtual+trefoil vanish) and the discriminants (`C: −152=−2³·19`, `C_Hopf: −76=−2²·19`) | proved-lean (`numOdd_factor`, `numOdd_at_phi4_root`, `R12_eq_cubic_trace`, `cubicC_sector_decomp`, `cubicC_rrt_candidates_all_nonzero`, `cubicC_Hopf_rrt_candidates_all_nonzero`) + symbolic-exact (sector attribution + discriminants) | — / — | PR #3467 ([audit](../audits/2026-07-07-zeta4-residue-lean-certificate-and-surviving-cubic.md); refines [2026-07-04 ζ₄ refutation](../audits/2026-07-04-zeta4-fibre-cyclotomic-refutation.md); complements KC19 affine ladder, PR #3473) |

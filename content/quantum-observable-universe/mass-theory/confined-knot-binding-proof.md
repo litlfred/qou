@@ -5,23 +5,23 @@ for the one-dimensional representations of $H_3(R, q)$.
 The Wedderburn weight is $w_\lambda = d_q(\lambda)^2 / [n]_q!$,
 and $d_q((3)) = d_q((1,1,1)) = 1$.
 
-For the symmetric crossing $(c, d) = (1, -H_A/2)$:
+For the symmetric crossing $(c, d) = (1, -h_{\mathrm{A}}/2)$:
 
 $$
   \chi_{\mathrm{sym}} + \chi_{\mathrm{alt}}
-  = (q - H_A/2) + (-q^{-1} - H_A/2)
-  = q - q^{-1} - H_A = 0
+  = (q - h_{\mathrm{A}}/2) + (-q^{-1} - h_{\mathrm{A}}/2)
+  = q - q^{-1} - h_{\mathrm{A}} = 0
 $$
 
-since $H_A = q - q^{-1}$.  Therefore the weighted sum vanishes:
+since $h_{\mathrm{A}} = q - q^{-1}$.  Therefore the weighted sum vanishes:
 $W_{\mathrm{sym}} \cdot \chi_{\mathrm{sym}}
 + W_{\mathrm{alt}} \cdot \chi_{\mathrm{alt}}
 = W_{\mathrm{sym}}(\chi_{\mathrm{sym}} + \chi_{\mathrm{alt}}) = 0$.
 
-The standard-representation volume $z - H_A/2$ follows from the
+The standard-representation volume $z - h_{\mathrm{A}}/2$ follows from the
 transfer matrix with initial condition $(a_0, b_0) = (0, 1)$:
-$(a, b) = (1, -H_A/2)$, giving
-$\chi_{\mathrm{std}} = z \cdot 1 + (-H_A/2) = z - H_A/2$.
+$(a, b) = (1, -h_{\mathrm{A}}/2)$, giving
+$\chi_{\mathrm{std}} = z \cdot 1 + (-h_{\mathrm{A}}/2) = z - h_{\mathrm{A}}/2$.
 
 For a general confined state at jet level $\ell$, the character
 ratio $a_\ell$ compares the accumulated Wedderburn volume of

@@ -67,7 +67,4 @@ chosen $q$, and the upstream Hoefsmit cell-content table from
 
 ### Notes
 
-*The Wedderburn decomposition is the **single most expensive
-step** in the chain for $n > 6$ because $y_\lambda(q)$ involves
-nested $[k]_q$ factors. The native Rust core caches partitions
-across braid-trace calls.*
+*The Wedderburn decomposition is the **most expensive step** in the chain for $n > 6$, as $y_\lambda(q)$ involves nested $[k]_q$ factors. The native Rust core caches partitions across braid-trace calls.*

@@ -1,4 +1,1 @@
-The decomposition $\alpha = \alpha_H + \alpha_V$ is the geometric origin of
-spin--statistics: fermions (non-trivial $\alpha_V$) carry half-integer spin;
-bosons (purely horizontal) carry integer spin. See
-[*Bring's Surface*](#chap:brings-surface) for experimental confirmation.
+The geometric decomposition $\alpha = \alpha_H + \alpha_V$ enforces the spin-statistics connection at the categorical level. Purely horizontal forms carry integer spin and act as bosons, while forms with non-trivial vertical components carry half-integer spin and act as fermions.

@@ -1,0 +1,97 @@
+{
+  "computation": "qbeta-odd-carrier-sector-decomposition",
+  "engine": "python-exact",
+  "scriptFile": "qbeta_odd_carrier_sector_decomposition.py",
+  "commitSha": "8e02a8afa278d319b0c9899c3753970bfa40ccf0",
+  "data": {
+    "num_matches_audit": true,
+    "sector_bar_odd_vanishes": {
+      "unknot": false,
+      "virtual": true,
+      "Hopf": false,
+      "trefoil": true
+    },
+    "C_total_in_y": {
+      "3": "1",
+      "1": "3",
+      "2": "-4",
+      "0": "-2"
+    },
+    "C_unknot_in_y": {
+      "2": "2",
+      "0": "4",
+      "1": "-7"
+    },
+    "C_Hopf_in_y": {
+      "3": "1",
+      "1": "10",
+      "2": "-6",
+      "0": "-6"
+    },
+    "C_total_disc": -152,
+    "C_Hopf_disc": -76,
+    "shared_discriminant_prime": 19,
+    "verdict": "degree-3 (irreducible cubic field) is contributed by the Hopf double-crossing sector alone; identity adds a quadratic; virtual+trefoil vanish. NOT a 3-dim rep (H3 blocks 1,2,1), NOT a single knot invariant."
+  },
+  "assertions": [
+    {
+      "name": "num_reconstructs_audit_carrier",
+      "computed": 0.0,
+      "expected": 0.0,
+      "tolerance": 0.0,
+      "unit": "bool (0 = holds)",
+      "source": "exact Q-Laurent arithmetic"
+    },
+    {
+      "name": "virtual_sector_bar_odd_zero",
+      "computed": 0.0,
+      "expected": 0.0,
+      "tolerance": 0.0,
+      "unit": "bool (0 = holds)",
+      "source": "exact Q-Laurent arithmetic"
+    },
+    {
+      "name": "trefoil_sector_bar_odd_zero",
+      "computed": 0.0,
+      "expected": 0.0,
+      "tolerance": 0.0,
+      "unit": "bool (0 = holds)",
+      "source": "exact Q-Laurent arithmetic"
+    },
+    {
+      "name": "C_equals_Hopf_plus_unknot",
+      "computed": 0.0,
+      "expected": 0.0,
+      "tolerance": 0.0,
+      "unit": "bool (0 = holds)",
+      "source": "exact Q-Laurent arithmetic"
+    },
+    {
+      "name": "Hopf_sector_is_the_cubic",
+      "computed": 0.0,
+      "expected": 0.0,
+      "tolerance": 0.0,
+      "unit": "bool (0 = holds)",
+      "source": "exact Q-Laurent arithmetic"
+    },
+    {
+      "name": "unknot_sector_is_quadratic",
+      "computed": 0.0,
+      "expected": 0.0,
+      "tolerance": 0.0,
+      "unit": "bool (0 = holds)",
+      "source": "exact Q-Laurent arithmetic"
+    },
+    {
+      "name": "Hopf_cubic_no_rational_root",
+      "computed": 0.0,
+      "expected": 0.0,
+      "tolerance": 0.0,
+      "unit": "bool (0 = holds)",
+      "source": "exact Q-Laurent arithmetic"
+    }
+  ],
+  "audit_only": "docs/audits/2026-07-07-zeta4-residue-lean-certificate-and-surviving-cubic.md",
+  "description": "Knot-sector decomposition of the Q_beta bar-odd carrier: virtual (1-crossing) and trefoil (3-crossing) sectors vanish; unknot (identity) gives a quadratic C_unknot(y)=2y^2-7y+4 (disc 17); Hopf (2-crossing) gives the cubic C_Hopf(y)=y^3-6y^2+10y-6 (irreducible, disc -76=-2^2*19). C = C_Hopf + C_unknot. The degree-3 field of the odd channel is sourced ENTIRELY by the Hopf (double-crossing) sector. Exact Q-Laurent arithmetic; audit-only; no wiring, no fit.",
+  "allPassed": true
+}

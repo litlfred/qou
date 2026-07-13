@@ -1,0 +1,74 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-11T23:05:08.112493+00:00",
+  "commitSha": "a7a0cc4dd3adeea25889856bb4d85591ef093b5a",
+  "assertions": [
+    {
+      "name": "complete_convention_vol_cs",
+      "computed": 4.591774807899561e-41,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-25,
+      "source": "Σ rogers at m=1: Im=Vol(4₁), Re−π²/6=CS=0 (amphichiral)"
+    },
+    {
+      "name": "real_pole_hits_golden_branch",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "≥1 real pole seed q0^{-k} reaches golden φ=(1+√5)/2, not the cusp"
+    },
+    {
+      "name": "branch_bar_parity_swap",
+      "computed": 1.857987377871281e-40,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-20,
+      "source": "cusp barOdd²=−3 (√−3=CS), golden barEven²=+5 (√5, no CS); Lean-proved"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 43,
+  "computation": "qbeta-c3-barodd-pole-seed-newton",
+  "scriptFile": "qbeta_c3_barodd_pole_seed_newton_probe.py",
+  "scriptHash": "29c1f08cb134",
+  "scriptCommitSha": "a7a0cc4dd3adeea25889856bb4d85591ef093b5a",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Seeds Thurston's figure-8 gluing Newton with the real substrate pole q0^{-k}. Result: flows to the GOLDEN branch (z²−z−1=0, φ=1.618, real, Vol=0), NOT the cusp (z²−z+1=0, e^{iπ/3}). Bar-parity roles swap (Lean CuspShapeBarParity): cusp barOdd²=−3 (√−3=CS), golden barEven²=+5 (√5, no CS). Full Rogers-dilog CS at substrate scale ~1e-5 ≪ |S| — confirms landed geometry-side clean-negative (1a4894b8). Phase φ(q0) is the branch selector (open conj:agde). Scope-(a); C14; m(q0) NOT fitted; no c_k wired.",
+  "contentBlock": "conj:algebraic-geometric-dilog-equivalence",
+  "data": {
+    "complete_convention": {
+      "Vol": "2.02988321281930725",
+      "CS": "4.5917748079e-41"
+    },
+    "pole_seed_branch": {
+      "golden_phi": "1.6180339887498948482",
+      "result": "real pole q0^{-k} -> golden branch (real, Vol=0), not cusp"
+    },
+    "branch_bar_parity": {
+      "cusp_barOdd_sq": "(-3.0 - 1.98829681605e-41j)",
+      "golden_barEven_sq": "5.0",
+      "lean": "QOU.QBeta.CuspShapeBarParity (cuspShape_barOdd_sq=−3, goldenShape_barEven_sq=+5)"
+    },
+    "full_cs_scale": {
+      "max_cs_at_HA": "1.68154286527e-5",
+      "S_muon": "0.00968298",
+      "S_proton": "-0.03945936",
+      "ratio_S_over_CS": "2346.6164",
+      "note": "naive 4_1 CS deformation ~1000x too small (confirms 1a4894b8)"
+    }
+  }
+}

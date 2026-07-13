@@ -11,7 +11,7 @@ The instrumented division algorithm (`hecke_division.py`) confirms the Hecke ste
 | ${}^{4}\mathrm{He} \mathcal{N}(2,2)$ | 4 | 0 | 0 | $+0.641$ |
 | ${}^{6}\mathrm{Li} \mathcal{N}(3,3)$ | 26 | 0 | 0 | $+4.233$ |
 
-All energy changes in this probe arise from Hecke steps. Yang--Baxter and far-commutativity steps contribute zero energy change, consistent with the theoretical derivation.
+All energy changes in this probe arise from Hecke steps. Yang--Baxter and far-commutativity steps contribute zero energy change. This matches the theoretical derivation.
 
 ## Evaluated reduction paths
 
@@ -23,4 +23,4 @@ Evaluating the reduction path between states of fixed nucleon number confirms th
 | ${}^{4}\mathrm{He} \to {}^{5}\mathrm{Li}$ | $-0.073$ |
 | ${}^{6}\mathrm{Li} \to {}^{6}\mathrm{Be}$ | $-0.828$ |
 
-The differential Hecke step count between these states is consistently negative, with magnitude increasing with $A$.
+The differential Hecke step count between these states remains strictly negative. Its magnitude increases with $A$.

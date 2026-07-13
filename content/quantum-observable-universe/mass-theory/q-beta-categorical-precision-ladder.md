@@ -10,11 +10,8 @@
 > The content below is retained for HISTORICAL reference and for the
 > derivation narrative (it shows how the pattern was discovered).
 
-**$\mathfrak{Q}_\beta$ categorical-derivation precision ladder** — the closed-form
-prediction of free-neutron $\beta$-decay Q-value $\mathfrak{Q}_\beta$ at the
-substrate $q_0$ via a four-rung categorical recursion ending at $-0.0066$
-ppm residual against CODATA (well under the $0.0094$ ppm $N=3$ c(K)
-ceiling from `conj:archimedean-remainder-exponential-decay`).
+**$\mathfrak{Q}_\beta$ categorical-derivation precision ladder.**
+This derives the free-neutron $\beta$-decay Q-value $\mathfrak{Q}_\beta$ at the substrate $q_0$ via a four-rung categorical recursion. The series reaches a $-0.0066$ ppm residual against CODATA, below the $0.0094$ ppm $N=3$ c(K) ceiling from `conj:archimedean-remainder-exponential-decay`.
 
 ## The formula
 
@@ -173,7 +170,7 @@ sub-percent empirical match. The remaining open questions:
    a generating-function description rather than a per-rung
    tabulation.
 
-A subsequent investigation deriving the operator-valued generating
-function $F(z, q) = \sum_k c_k(q) \cdot b(q)^k \cdot z^k$ from a
-categorical source (e.g. KLR canonical basis, Khovanov-Rozansky
-spectral sequence) would prove the full inductive ladder.
+The full inductive ladder follows from a categorical source for the
+operator-valued generating function
+$F(z, q) = \sum_k c_k(q) \cdot b(q)^k \cdot z^k$ — for instance the KLR
+canonical basis or a Khovanov–Rozansky spectral sequence.

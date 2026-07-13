@@ -64,6 +64,6 @@ Ref: [manuscript] `prop:three-calibration-inputs`
 -/
 def three_calibration_inputs
     (cal : ThreeCalibrationInputs) (obs : ℝ) : Prop :=
-    ∃ f : ℝ → ℝ → ℝ → ℝ, obs = f cal.q_zero cal.m_e cal.Q_beta_n
+  ∃ f : ℝ → ℝ → ℝ → ℝ, obs = f cal.q_zero cal.m_e cal.Q_beta_n
 
 end QOU.BraidKnot

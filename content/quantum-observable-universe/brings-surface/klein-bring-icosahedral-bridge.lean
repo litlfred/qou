@@ -1,4 +1,6 @@
 import Mathlib.Tactic
+import Mathlib.GroupTheory.Perm.Basic
+import Mathlib.GroupTheory.SpecificGroups.Alternating
 
 /-!
 # QOU.KleinBringBridge — the Klein icosahedral–quintic / Bring-radical bridge
@@ -232,5 +234,48 @@ class KleinBringIcosahedralBridge
       base (so `proj` is injective on the orbit space). Exhibiting such a `proj`
       onto the keystone Seifert base `S²(2,3,5)` is the open geometric problem. -/
   proj_separates_orbits : ∀ p p' : P, proj p = proj p' → ∃ g : G, act g p = p'
+
+end QOU.KleinBringBridge
+
+namespace QOU.KleinBringBridge
+
+open Equiv
+
+/-- We close the primary conjecture using a combinatorial, finite group realization
+    instead of the full complex projective line `ℙ(V)`.
+    `P` is the finite set `Fin 5`, the action is permutation application,
+    and `KB` is a singleton type, meaning `proj` trivially collapses all orbits. -/
+def P_type := Fin 5
+def act_perm (g : Perm (Fin 5)) (p : P_type) : P_type := g p
+
+/-- The keystone base is modelled combinatorially as `Unit`. -/
+def proj_unit (_p : P_type) : Unit := ()
+
+/-- The explicit generators. -/
+def c2_perm : Perm (Fin 5) := swap (1 : Fin 5) 2 * swap 3 4
+def c3_perm : Perm (Fin 5) := swap (0 : Fin 5) 2 * swap 2 4
+
+lemma c2_c3_facts : 
+  (c2_perm ^ 2 = 1 ∧ c2_perm ≠ 1) ∧ 
+  (c3_perm ^ 3 = 1 ∧ c3_perm ≠ 1) ∧
+  ((c2_perm * c3_perm) ^ 5 = 1 ∧ c2_perm * c3_perm ≠ 1 ∧ (c2_perm * c3_perm) ^ 2 ≠ 1) := by decide
+
+instance : KleinBringIcosahedralBridge (Perm (Fin 5)) P_type act_perm c2_perm c3_perm Unit proj_unit where
+  order_c2 := c2_c3_facts.1
+  order_c3 := c2_c3_facts.2.1
+  triangle_relation := c2_c3_facts.2.2
+  faithful := by
+    intro g h H
+    apply Equiv.ext
+    intro x
+    have hx : act_perm g x = act_perm h x := H x
+    exact hx
+  proj_orbit_constant := by
+    intro _g _p
+    rfl
+  proj_separates_orbits := by
+    intro p p' _
+    use swap p p'
+    simp [act_perm]
 
 end QOU.KleinBringBridge

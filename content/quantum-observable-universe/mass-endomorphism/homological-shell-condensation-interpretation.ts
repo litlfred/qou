@@ -4,7 +4,7 @@ export default remark({
   interprets: "prop:homological-shell-condensation",
   label: "rem:homological-shell-condensation-interpretation",
   title:
-    "Why “condensation”, the conditional categorical-neutrality content, and supporting evidence",
+    "Condensation terminology, conditional categorical-neutrality, and supporting evidence",
   tags: [
     "magic-numbers",
     "shell-closure",

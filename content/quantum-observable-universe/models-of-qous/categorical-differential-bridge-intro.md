@@ -1,14 +1,5 @@
-The archimedean specialisation demands a metric that the
-categorical-differential side of QOU does not supply on its own:
-without a link to the Levi-form substrate, the archimedean
-Hartree section of the predicted-spectra chapter has no
-inner-product structure to draw on.  This section supplies that
-link.  The arc proceeds from the substrate-via-Levi
-identification, through the Webster inner product, to the closing
-blocks that deliver the inner-product structure that Hartree
-section relies on.
+The archimedean Hartree computations of the predicted-spectra chapter require an inner-product structure. The categorical framework does not supply this metric on its own. We must extract it from the Levi-form substrate. This section constructs that bridge.
 
-The bridge's output is the categorical metric, promoted from the
-Levi-form substrate.  Readers focused on substrate-level
-statements can take the bridge as a black box; the archimedean
-specialisation is deferred to Bring's surface.
+We proceed in three steps. First, we identify the substrate parameter via the Levi form. Second, we introduce the Webster inner product. Third, we package this geometric structure into the categorical metric required by the Hartree computations.
+
+The output is a categorical metric promoted from the Levi-form substrate. Readers focused exclusively on substrate-level statements may treat this bridge as a black box and defer the archimedean specialisation to Bring's surface.

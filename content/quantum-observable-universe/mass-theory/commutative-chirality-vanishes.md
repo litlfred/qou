@@ -1,12 +1,12 @@
 **Corollary** (of [Frobenius S-classification](#prop:frobenius-s-classification)
 applied in the [commutative QOU](#def:commutative-qou) limit).
 *In the commutative specialisation $q \to 1$, the chirality term
-$H_A^2 \Phi_3$ in the Wedderburn mass formula
+$h_{\mathrm{A}}^2 \Phi_3$ in the Wedderburn mass formula
 ([Wedderburn mass formula](#thm:wedderburn-mass-formula)) vanishes
 identically:*
 
 $$
-  \lim_{q \to 1} H_A^2 \cdot \Phi_3 = 0.
+  \lim_{q \to 1} h_{\mathrm{A}}^2 \cdot \Phi_3 = 0.
 $$
 
 *Consequently the commutative atomic mass formula reduces to the

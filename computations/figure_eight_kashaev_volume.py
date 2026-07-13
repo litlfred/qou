@@ -3,7 +3,7 @@
 Figure-eight (4₁ = Higgs) root-of-unity saddle → Vol(4₁).  Keystone part (a).
 
 Verifies the volume-conjecture (Kashaev–Murakami–Murakami) root-of-unity
-(Φ_q / Faddeev) saddle for the figure-eight knot, the QOU Higgs:
+(Φ_q / compact-q-dilog) saddle for the figure-eight knot, the QOU Higgs:
 
     ⟨4₁⟩_N = Σ_{k=0}^{N-1} | (q)_k |²,    q = e^{2πi/N},   (q)_k = ∏_{j=1}^k (1-q^j)
            = Σ_{k=0}^{N-1} ∏_{j=1}^k (2 - 2cos(2πj/N))     [real form]

@@ -18,4 +18,16 @@ export default definition({
     ref: "qou:QOU.AlgebraicSubstrate.MotivicSubstrate",
     validation: "not_checked",
   },
+  authorNotes: [
+    {
+      kind: "note",
+      body:
+        "Lean: the substrate is axiomatised as a `class MotivicSubstrate` " +
+        "(AGENTS.md §3b) whose fields encode $K_0(\\mathrm{Var}_k)$, " +
+        "$\\mathbb{L}$, the localization $\\widehat{\\mathcal{M}}$, and the " +
+        "realization functors; the `sorry` in any concrete instance is the " +
+        "substrate axiom (not a missing proof), and downstream results take " +
+        "a `[MotivicSubstrate]` instance as an explicit hypothesis.",
+    },
+  ],
 });

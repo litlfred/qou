@@ -135,13 +135,21 @@ noncomputable def crossingGradedYMG (q : ℝ) (hq : 1 < q) (hq2 : q ≤ 2)
 /-- The millennium-conjecture class `HasYangMillsMassGap` is
     **non-vacuous in-framework**: the crossing-graded model
     instantiates it on the substrate window.  (First in-framework
-    instance; MODEL caveat per the module docstring.) -/
+    instance; MODEL caveat per the module docstring.)
+
+    The class's `mass_gap_holds : Prop` field carries the mass-gap
+    proposition for the model transfer matrix,
+    `(crossingGradedTM …).hasMassGap`, and `gap_present` is discharged by
+    the model's `crossingGradedYMG.gap_positive` (the crossing-graded gap
+    is positive by `minCrossingEnergy_pos`).  MODEL CAVEAT (as above): this
+    is the crossing-graded model spectrum, not the physical `End(Aₙ)`
+    transfer matrix — the physical Yang–Mills mass gap remains open. -/
 noncomputable instance instHasYangMillsMassGapCrossingGraded
     (q : ℝ) (hq : 1 < q) (hq2 : q ≤ 2)
     (dla : DirectLimitAlgebra) (vac : VacuumState dla) :
     HasYangMillsMassGap q (crossingGradedTM q hq dla vac) where
-  mass_gap_holds := True
-  gap_present := trivial
+  mass_gap_holds := (crossingGradedTM q hq dla vac).hasMassGap
+  gap_present := (crossingGradedYMG q hq hq2 dla vac).gap_positive
   impl_witness _ := crossingGradedYMG q hq hq2 dla vac
   impl_q_eq _ := rfl
   impl_tm_eq _ := rfl

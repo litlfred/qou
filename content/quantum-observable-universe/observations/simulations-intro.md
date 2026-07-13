@@ -1,3 +1,7 @@
-The transcendence-signature blocks catalogued the predictions we expect to test numerically; here we supply the interactive tools. **q-Deformed Double-Slit Simulator** (sim) and **Double-Slit Analytical Simulator** (sim) implement the two-mode interference patterns of the earlier double-slit section, **Bring's Surface Simulator** (sim) and **Quantum Bring's Surface Simulator** (sim) expose the Bring-surface geometry that underlies the particle-identification conjectures and the $S_5$-equivariant embeddings, and **Beta-Decay Half-Life Simulator** (sim) lets the reader vary $q$ and watch the predicted half-lives move against the experimental table from the beta-decay section. These tools close the chapter by making every numerical prediction of Chapter 7 reproducible at the slider level.
+We supply interactive tools to test numerical predictions:
 
-_(draft.)_
+- **q-Deformed Double-Slit Simulator** and **Double-Slit Analytical Simulator** implement the two-mode interference patterns.
+- **Bring's Surface Simulator** and **Quantum Bring's Surface Simulator** expose the Bring-surface geometry.
+- **Beta-Decay Half-Life Simulator** tracks predicted half-lives against experimental data via $q$ variation.
+
+These tools render every numerical prediction reproducible.

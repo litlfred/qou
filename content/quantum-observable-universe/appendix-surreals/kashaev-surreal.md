@@ -111,7 +111,7 @@ as a sanity check.
 
 ## Connection to QOU
 
-The QOU paper uses the Kashaev volume conjecture as a *cross-
+This paper uses the Kashaev volume conjecture as a *cross-
 check* on its categorical mass formula
 ([Kashaev volume--density](#rem:kashaev-volume-density)). The
 mass formula computes a particle mass via Hoefsmit/Markov-trace

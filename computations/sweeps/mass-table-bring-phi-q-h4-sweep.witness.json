@@ -1,0 +1,40 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-05T11:21:33.164298+00:00",
+  "commitSha": "be738077a998aced47326c8de63ea658ce2849c4",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 11,
+  "computation": "mass-table-bring-phi-q-h4-sweep",
+  "scriptFile": "mass_table_bring_phi_q_h4_sweep.py",
+  "scriptHash": "c23461dbb26e",
+  "scriptCommitSha": "a13f0066fec64dfc824ffff5690bd3571bcdeb94",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Sweep of the Bring color-tube + Faddeev h⁴ candidate linking_weight `1/(1 − h·q^{10}) + 1/(1 − h⁴) − 1` against the Family A production output across the full isotope mass table (mass-table-comprehensive.witness.json). The candidate shifts m_p, m_n each by ~−27 MeV (closing the +2.89 % gap to +108 ppm); the shift propagates linearly to atomic masses as Z·Δm_p + N·Δm_n (binding unchanged). RULE 14 compliance: both factors are Φ_q functional-equation ratios at substrate-natural z values (driver i Faddeev iterated + driver xiii KLR positivity). Open load-bearing step: additive-vs-multiplicative composition categorical proof at H_4.",
+  "contentBlock": "conj:borromean-baryon-mass-formula",
+  "parameters": {
+    "dps": 80,
+    "linking_weight_FamilyA": "2.532779656399391492051515",
+    "linking_weight_Bring_Faddeev_h4": "2.461912307524426657224795",
+    "m_p_FamilyA_MeV": "965.384675510658",
+    "m_p_Bring_Faddeev_h4_MeV": "938.373145934802",
+    "m_n_FamilyA_MeV": "966.714973422537",
+    "m_n_Bring_Faddeev_h4_MeV": "939.66622201967"
+  },
+  "data": {
+    "isotope_rows": []
+  }
+}

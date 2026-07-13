@@ -1,6 +1,4 @@
-The helium atom $\mathcal{A}(2, 2)$ is the simplest atom with a
-**closed electron shell**.  Its electron cloud consists of two
-trefoils $T_{2,3}$ joined by a Hopf link $\mathcal{L}_H$.
+The helium atom $\mathcal{A}(2, 2)$ provides the simplest closed electron shell. Its electron cloud comprises two trefoils $T_{2,3}$ joined by a Hopf link $\mathcal{L}_H$.
 
 ```tex
 \begin{tikzcd}[row sep=3em, column sep=4em]
@@ -9,12 +7,8 @@ trefoils $T_{2,3}$ joined by a Hopf link $\mathcal{L}_H$.
   & & T_{2,3} \\
   \underset{e_1}{\text{electron 1}} & \underset{1s^2 \text{ (closed)}}{\text{—————————————}} & \underset{e_2}{\text{electron 2}}
 \end{tikzcd}
-```
 
-The Hopf link $\mathcal{L}_H$ between $e_1$ and $e_2$ is the
-linking operation: each trefoil passes through the Seifert
-surface of the other exactly once
-($\mathrm{lk}(e_1, e_2) = 1$).
+The Hopf link $\mathcal{L}_H$ defines the linking operation between $e_1$ and $e_2$. Each trefoil threads the Seifert surface of the other exactly once ($\mathrm{lk}(e_1, e_2) = 1$).
 
 **Full atom structure.**
 
@@ -25,19 +19,15 @@ $$
   \underbrace{T_{2,3} \oplus T_{2,3}}_{1s^2\text{ shell (closed)}}
 $$
 
-**Closure of the shell.**  The linking matrix of the
-two-electron Hopf link is
+**Closure of the shell.**
+
+The linking matrix of the two-electron Hopf link is:
 
 $$
   L =  \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}.
 $$
 
-This matrix has rank $1$.  Adding a third component $e_3$
-requires $\mathrm{lk}(e_3, e_1) \geq 1$ and
-$\mathrm{lk}(e_3, e_2) \geq 1$, increasing the total linking
-number from $1$ to at least $3$.  The crossing energy cost
-of these additional links exceeds the binding energy gained,
-The third electron is expelled to a higher shell.
+This matrix has rank $1$. Adding a third component $e_3$ requires $\mathrm{lk}(e_3, e_1) \geq 1$ and $\mathrm{lk}(e_3, e_2) \geq 1$. This increases the total linking number from $1$ to at least $3$. The crossing energy cost of these extra links exceeds the binding energy gain. The atom expels the third electron to a higher shell.
 
 **Comparison: lithium ($p = 3$, $n = 4$).**
 
@@ -48,7 +38,6 @@ The third electron is expelled to a higher shell.
   & T_{2,3} & \\
   & \underset{2s^1}{\text{outer electron}} &
 \end{tikzcd}
-```
 
 $$
   \mathcal{A}(3, 4) = 
@@ -59,8 +48,4 @@ $$
   \underbrace{T_{2,3}}_{2s^1}
 $$
 
-The third electron links to the closed $1s^2$ sub-link at a
-**higher linking level** — it passes around the entire Hopf
-pair rather than threading through it.  This is the $2s$ shell:
-the trefoil is linked to the $1s^2$ cluster as a whole, not to
-either individual electron.
+The third electron links to the closed $1s^2$ sub-link at a higher linking level. It passes around the entire Hopf pair instead of threading through it. This forms the $2s$ shell. The trefoil links to the $1s^2$ cluster as a single unit.

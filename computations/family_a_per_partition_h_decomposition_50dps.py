@@ -10,7 +10,7 @@ PR [#1276](https://github.com/litlfred/qou/pull/1276) lists as its
 open question:
 
 > "Specific partition-channel assignment of Bring color-tube vs
-> Faddeev h⁴ at H_4 (i.e. WHICH of the 5 H_4 Wedderburn blocks
+> compact-q-dilog h⁴ at H_4 (i.e. WHICH of the 5 H_4 Wedderburn blocks
 > each factor occupies)."
 
 This probe answers the **prerequisite question**: what is the
@@ -69,7 +69,7 @@ across the three h²-active channels — does it split equally
 
 - [`_li_2_q_util.py:linking_weight_family_a`](https://github.com/litlfred/qou/blob/main/computations/_li_2_q_util.py#L172) — production
 - [PR #1272](https://github.com/litlfred/qou/pull/1272) γγ̄ decomposition — h² Reading-A
-- [PR #1276](https://github.com/litlfred/qou/pull/1276) Bring + Faddeev h⁴ candidate — channel-assignment open Q
+- [PR #1276](https://github.com/litlfred/qou/pull/1276) Bring + compact-q-dilog h⁴ candidate — channel-assignment open Q
 - [PR #1285](https://github.com/litlfred/qou/pull/1285) — markov_trace mpf precision fix
 - [PR #1287](https://github.com/litlfred/qou/pull/1287) — Borromean h-expansion (companion probe)
 """
@@ -172,7 +172,7 @@ def main() -> int:
         "contributions per channel at mp.mpf 50 dps. Addresses the "
         "prerequisite to PR #1276's 'partition-channel assignment' "
         "open question (which partitions carry Bring color-tube vs "
-        "Faddeev h⁴)."
+        "compact-q-dilog h⁴)."
     )
 
     print("=" * 78)
@@ -270,7 +270,7 @@ def main() -> int:
             "(2,1,1). Reading-A: h² becomes -G ≈ -0.916; under "
             "uniform redistribution, each active partition's "
             "h² coefficient becomes (1/4 + (-G - 3/4)/3) ≈ -0.305. "
-            "PR #1276's Bring color-tube + Faddeev h⁴ rational "
+            "PR #1276's Bring color-tube + compact-q-dilog h⁴ rational "
             "expression does not naturally fit this Wedderburn-"
             "block decomposition — addresses why my h-expansion "
             "fit gave wildly varying coefficients."

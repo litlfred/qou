@@ -1,0 +1,71 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-12T11:10:46.668730+00:00",
+  "commitSha": "c8aedd7efc3c4594ed42cbb1c728fbc6965c614b",
+  "assertions": [
+    {
+      "name": "saddle_Im_zero_at_real_meridian",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "Im V(m=q0 real)=0 exactly at both anchors (real meridian => CS=0, amphichirality)"
+    },
+    {
+      "name": "state_integral_smooth_anchor_blind",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "volume deficit identical at both anchors (m=q0 differ ~1e-8); state integral supplies S scale but no anchor-dependence => sign-flip is the 1/u^3 ladder artifact not physics"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 11,
+  "computation": "qbeta-c3-phib-saddle-state-integral",
+  "scriptFile": "qbeta_c3_phib_saddle_state_integral_probe.py",
+  "scriptHash": "57582d2184e0",
+  "scriptCommitSha": "8fabb54497f162569c0561272437d1826891a323",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Owner-directed 'build it': the Φ_b state-integral SADDLE 𝔙(m) (= the validated gluing Newton solve vol_of_m, Vol(4₁) to 4e-18) at the substrate meridian m=q₀. Result: Re 𝔙=2.02048069 (volume deficit 0.00940 from complete Vol(4₁) — the S(muon) scale), Im 𝔙=0 EXACTLY at both anchors (real m ⇒ CS=0, amphichirality); finite-b adds i·t·κ₁=0.058 (imaginary, #3654). Both smooth + anchor-blind. So the state integral supplies the S scale from two geometric handles (deficit, finite-b), no fit, but no anchor-dependence — CONFIRMING no physical near-singular substrate→u map: S's sign-flip is the 1/u³ ladder artifact (merged #3636), not a term in 𝔙. Route 1 closes: the saddle does NOT give the sign-flip because it is not physical; a complex m=q₀+iε (the smooth ε) is needed for nonzero saddle Im. Scope-(a); C14; no c_k wired; no fit.",
+  "contentBlock": "conj:im-q-physical-role",
+  "data": {
+    "saddle": [
+      {
+        "anchor": "proton",
+        "Re_V_saddle": "2.0204806931396358415",
+        "Im_V_saddle": "0.0",
+        "vol_deficit": "0.0094025196796714085423",
+        "finite_b_im": "0.057827345943670363948",
+        "S_target": "-0.03945936"
+      },
+      {
+        "anchor": "muon",
+        "Re_V_saddle": "2.0204806910666174136",
+        "Im_V_saddle": "0.0",
+        "vol_deficit": "0.0094025217526898364592",
+        "finite_b_im": "0.057827352336156303313",
+        "S_target": "0.00968298"
+      }
+    ],
+    "conclusion": {
+      "im_V_real_m_zero_both_anchors": true,
+      "deficit_anchor_blind": true,
+      "S_scale_reproduced": "deficit 0.0094 ~ |S(muon)|; finite-b 0.058 ~ |S| (no fit)",
+      "verdict": "state integral is smooth+anchor-blind => confirms no physical singular map; S sign-flip is the 1/u^3 ladder artifact (#3636), not a term in V"
+    }
+  }
+}

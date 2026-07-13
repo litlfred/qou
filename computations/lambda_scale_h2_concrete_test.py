@@ -164,7 +164,7 @@ def main() -> int:
     print()
     print("Categorical drivers (13-driver menu, see")
     print("docs/audits/2026-05-23-lambda-scale-canonical-unification.md):")
-    print("  (i)   Faddeev iterated Φ_q(q^k z)/Φ_q(z)")
+    print("  (i)   iterated compact-q-dilog Φ_q(q^k z)/Φ_q(z)")
     print("  (ii)  Φ_q power series expansion")
     print("  (iii) Rogers pentagon Li_2^q")
     print("  (iv)  Yang-Baxter higher-iter")

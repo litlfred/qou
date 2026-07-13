@@ -6,11 +6,7 @@ any $\delta > 0$.  We use $\delta$ rather than $\varepsilon$ here
 to avoid collision with the surreal infinitesimal $\varepsilon =
 1/\omega$ used elsewhere in this appendix.
 
-These are analytic statements about approximation rates. The
-surreal framework suggests a **direct algebraic shadow**: algebraic
-and transcendental numbers should be distinguished by the
-*birthday trajectory* of their sign sequences
-([birthday grading](#def:birthday-grading)).
+These are analytic statements about approximation rates. The surreal framework suggests a **direct algebraic shadow**. Algebraic and transcendental numbers distinguish themselves by the *birthday trajectory* of their sign sequences ([birthday grading](#def:birthday-grading)).
 
 ## Setup
 
@@ -27,16 +23,12 @@ $$
   \qquad b_\alpha(n) := \text{minimum birthday of}~p/q~\text{with}~q \leq n,~|\alpha - p/q|~\text{minimal}.
 $$
 
-This is the birthday analogue of the classical continued-fraction
-convergent sequence. Two regimes bracket the behaviour: a quadratic
-irrational has an eventually periodic continued fraction, so its
-birthday trajectory grows only logarithmically, whereas a Liouville
-number has unboundedly growing partial quotients and a trajectory
-that climbs toward $\omega$.
+This serves as the birthday analogue of the classical continued-fraction convergent sequence. Two regimes bracket the behaviour. A quadratic irrational has an eventually periodic continued fraction, limiting its birthday trajectory to logarithmic growth. In contrast, a Liouville number has unboundedly growing partial quotients, forcing a trajectory that climbs toward $\omega$.
 
 ## Conjecture
 
-The birthday trajectory discriminates algebraic from transcendental:
+**Conjecture (Algebraic-transcendental discrimination via birthday trajectory).**
+The birthday trajectory discriminates algebraic from transcendental numbers:
 
 1. **Algebraic rigidity**: if $\alpha$ is algebraic of degree
    $d$, then $b_\alpha(n) = O(\log n)$ up to a bounded error.
@@ -104,9 +96,7 @@ object: **how efficiently rationals approach a real**.
 
 ## Specialisation to QOU
 
-The QOU substrate parameter $q_0$ satisfies a recursive equation
-from the paper's categorical structure (via fibre-functor
-rigidity, Tannaka-Krein, etc.). The conjecture predicts:
+The substrate parameter $q_0$ satisfies a recursive equation derived from the categorical structure (via fibre-functor rigidity, Tannaka-Krein, etc.). The conjecture predicts:
 
 - if $q_0$ is algebraic, its birthday *trajectory* $b_{q_0}(n)$
   is logarithmic (bounded continued-fraction partial quotients, per
@@ -124,7 +114,7 @@ cannot be read off the birthday of $q_0$ itself, only off the
 growth rate of its rational-approximation trajectory.
 
 Computing $q_0$'s actual birthday trajectory would:
-- decide its algebraic status (open in the main paper);
+- decide its algebraic status (open in this paper);
 - give a birthday-based characterisation of the QOU substrate.
 
 ## Proof strategy
@@ -179,7 +169,4 @@ theorem, which is deep but classical.
 classical. The conjecture restates Roth / Liouville in
 surreal-combinatorial language.
 
-The specific application to $q_0$ in QOU is the novel part — if
-$q_0$ has a computable closed-form birthday, the conjecture
-gives an algebraic-complexity characterisation of the substrate
-parameter.
+The application to $q_0$ is the novel part. If $q_0$ has a computable closed-form birthday, the conjecture characterizes the algebraic complexity of the substrate parameter.

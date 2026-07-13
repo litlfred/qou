@@ -1,6 +1,8 @@
 import QOU.BraidKnot.BsymLinearChain
 import QOU.BraidKnot.ChiralityTopologySelection
 import QOU.BraidKnot.WLambdaDefectClosedForm
+import QOU.BraidKnot.KeystoneC8SuperExpBound
+import QOU.BraidKnot.YoungTableauStandard
 import QOU.BraidKnot.WLambdaDefectSubleadingD
 import QOU.BraidKnot.WLambdaDefectLadderE
 import QOU.BraidKnot.IdentityIContentDecomposition
@@ -12,6 +14,10 @@ import QOU.BraidKnot.KeystoneC2QDimTranspose
 import QOU.BraidKnot.KeystoneG2Gate
 import QOU.BraidKnot.KeystoneG2LadderGate
 import QOU.BraidKnot.KeystoneFpnBracket
+import QOU.BraidKnot.KeystoneStandardRepQDim
+import QOU.BraidKnot.KeystoneMcKayValueMap
+import QOU.BraidKnot.BWVacuumRowConcrete
+import QOU.BraidKnot.KeystoneModularTwist
 import QOU.BraidKnot.BringWPlaneMonodromy
 import QOU.BraidKnot.BringWPlaneMonodromyTower
 import QOU.BraidKnot.CyclotomicLValueDecomposition
@@ -136,10 +142,19 @@ import QOU.BraidKnot.RegularRepBlockTrace
 import QOU.BraidKnot.DeltaLambdaRefutation
 import QOU.BraidKnot.DeltaLambdaExponentKeystone
 import QOU.BraidKnot.DeltaLambdaSignRule
+-- g_ρ = GS/jet-order (fake-degree) grading: the Δ_λ sign carrier (#3542) +
+-- assembly identity Δ_λ = tr(g_ρ) = (−1)^{n(λ)}·dim(λ) + bar-parity selection
+-- rule. Pulls the file into the CI build set (was previously un-imported).
+import QOU.BraidKnot.PrincipalGradingJetOrder
 -- Tier-3 (bean 60iz): Jones value of the Hopf link via the Markov trace +
 -- proved stabilisation-invariance (the q-deformed H_n(q) side of the knot
 -- invariant; complementary to the q=1 k[S_n] Wedderburn build).
 import QOU.BraidKnot.JonesViaMarkovTrace
+-- Nuclear quotient braid Jones value (RHS of the open jet-filtered-knot-factor
+-- Part-4 conjecture): the (2,k) torus-link Markov-trace values unknot/Hopf/
+-- trefoil + the shell-structure Z,N ↦ k∈{1,2,3} classifier. Infra only — builds
+-- jonesQuotient, does NOT prove a(Z,N)=J_β̄(q).
+import QOU.BraidKnot.JonesNuclearQuotient
 -- Tier-3 (bean 60iz) general-H_n(q) completion: the arbitrary-braid-word Jones
 -- value + Markov move II (conjugation invariance), on the sibling-landed
 -- IwahoriHeckeAPI element algebra. Move I = IwahoriHeckeAPI.markovTrace_stab_comm;

@@ -1,16 +1,7 @@
 **Content of the theorem.**
-This is not a unit convention.  The crossing energy (an algebraic
-quantity: the Skein weight from $R$-matrix braiding) equals the
-categorical mass (an analytic quantity: the trace norm through
-the Frobenius pairing and comultiplication) multiplied by the
-**square of the information speed** --- the square of the ratio
-of spatial to temporal coupling in the $q$-connection.
+This relationship is not a unit convention. The crossing energy (the algebraic Skein weight from $R$-matrix braiding) equals the categorical mass (the analytic trace norm derived through the Frobenius pairing and comultiplication) multiplied by the **square of the information speed**. This factor $c_q^2$ is the square of the ratio of spatial coupling to temporal coupling in the $q$-connection.
 
-The factor $c_q^2 = 1/(q-1)^2$ has a direct information-theoretic
-interpretation: it converts the *resistance to vertical
-(Reeb) transport* (mass) into the *horizontal (spatial) crossing
-weight* (energy) by accounting for the mismatch between horizontal
-and vertical information rates in the $q$-connection.
+The factor $c_q^2 = 1/(q-1)^2$ carries a direct information-theoretic interpretation. It converts the resistance to vertical (Reeb) transport (mass) into the horizontal (spatial) crossing weight (energy) by accounting for the mismatch between horizontal and vertical information rates in the $q$-connection.
 
 **Regime behaviour of $E = \mathfrak{m} \cdot c_q^2$.**
 
@@ -22,24 +13,12 @@ and vertical information rates in the $q$-connection.
 | Near-classical  | $1.01$         | $10{,}000$      | Extreme amplification: tiny mass $\to$ large energy              |
 | Classical limit | $q \to 1^+$    | $\to \infty$    | $E/\mathfrak{m} \to \infty$: classical $E = mc^2$ with $c$ large |
 
-At $q = q_0$, a vortex with categorical mass $\mathfrak{m}$
-carries crossing energy
-$E = \mathfrak{m}/(q-1)^2 \approx 83\mathfrak{m}$.
-This large amplification factor is the QOU explanation for why
-nuclear energy ($E = mc^2$) releases vastly more energy than the
-rest mass would suggest in everyday units.
+At $q = q_0$, a vortex with categorical mass $\mathfrak{m}$ carries crossing energy $E = \mathfrak{m}/(q-1)^2 \approx 83\mathfrak{m}$. This large amplification factor explains why nuclear energy ($E = mc^2$) releases vastly more energy than the rest mass implies in everyday units.
 
-The concrete electron consistency check
-([electron consistency check](#rem:mass-energy-electron-check))
-and the pair-creation reinterpretation
-([pair creation reinterpreted](#rem:mass-energy-pair-creation))
-are worked separately.
+We work out the concrete electron consistency check ([electron consistency check](#rem:mass-energy-electron-check)) and the pair-creation reinterpretation ([pair creation reinterpreted](#rem:mass-energy-pair-creation)) separately.
 
 **Archimedean realisation.**
-Over $\mathbb{C}$, the categorical mass is realised as Yekutieli's
-nonabelian multiplicative integral \[yekutieli2015]
-([mass over $\mathbb{C}$](#cor:mass-identity-C)), and
-$E_{\mathfrak{H}} = \mathfrak{m}_{\mathfrak{H}} \cdot c_q^2$ becomes
+Over $\mathbb{C}$, Yekutieli's nonabelian multiplicative integral \[yekutieli2015] realises the categorical mass ([mass over $\mathbb{C}$](#cor:mass-identity-C)). The relation $E_{\mathfrak{H}} = \mathfrak{m}_{\mathfrak{H}} \cdot c_q^2$ becomes:
 
 $$
   \sum_{\text{crossings}} \epsilon_i
@@ -51,5 +30,4 @@ $$
   \bigr\rVert,
 $$
 
-identifying the discrete Skein weight (spatial) with the rescaled
-continuous multiplicative-integral norm (temporal).
+identifying the discrete Skein weight (spatial) with the rescaled continuous multiplicative-integral norm (temporal).

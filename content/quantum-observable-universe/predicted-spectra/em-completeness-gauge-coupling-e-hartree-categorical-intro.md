@@ -1,5 +1,5 @@
-Continuation of the preceding sub-section.
+This continues the preceding sub-section.
 
-The Hartree-categorical derivation forms the section's structural backbone: a self-consistent approximation that converges to the substrate-level EM completeness condition.  The five table-data blocks tabulate the Hartree-categorical iteration converging to a fixed point, exhibit the per-iteration corrections, and pin the substrate-level $\alpha_{\mathrm{EM}}$ value within the substrate-flow precision band.
+A self-consistent approximation converges to the substrate-level EM completeness condition. This Hartree-categorical derivation forms the structural backbone of this section. Five table-data blocks tabulate the iteration converging to a fixed point. They exhibit the per-iteration corrections. They isolate the substrate-level $\alpha_{\mathrm{EM}}$ value within the substrate-flow precision band.
 
-The section's output is the substrate-level $\alpha_{\mathrm{EM}}$ closed form together with its substrate-parameter dependence; the next sub-section specialises to the archimedean Hartree-crystal correction.
+This section outputs the closed form of the substrate-level $\alpha_{\mathrm{EM}}$ and its substrate-parameter dependence. The subsequent sub-section specializes to the archimedean Hartree-crystal correction.

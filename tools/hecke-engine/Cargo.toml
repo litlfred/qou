@@ -187,9 +187,9 @@ default = ["mpfr"]
 # mpfr: enables `rug` (system GMP + MPFR). 13 source modules in the
 # transitive cone: precision_scalar, dense_la_mpfr, laurent_poly_q,
 # sdp_clarabel_mpfr_prep, seminormal_mpfr, laurent_rational_q,
-# tr_m_atomic_mpfr, geck_pfeiffer (Tier A/B: `use rug` direct), plus
+# tr_m_atomif_mpfr, geck_pfeiffer (Tier A/B: `use rug` direct), plus
 # laurent_hecke_element, reduce_laurent, seminormal_mn, tr_m_word_lq,
-# wenzl_lr, atomic_reduce_cache (Tier C: transitive importers).
+# wenzl_lr, atomif_reduce_cache (Tier C: transitive importers).
 # Disabling carves out the WASM-targetable canonical surface
 # (certificate, cross_level_embedding, gb_nf_reducer, gram,
 # joint_tower_sdp_certificate, littlewood_richardson, rational_round,
@@ -288,3 +288,7 @@ path = "src/bin/v18_pergen.rs"
 [[bin]]
 name = "hecke-mass"
 path = "src/bin/v19_nuclear_mass.rs"
+
+[[bin]]
+name = "faddeev_ck"
+path = "src/bin/faddeev_ck.rs"

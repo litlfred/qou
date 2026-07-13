@@ -66,7 +66,7 @@ Bit-exact at 50 dps for all atoms in $\{p, n, D, T, {}^{3}\mathrm{He}\}$
 The full Markov trace at any $n$ decomposes as
 
 $$
-  \tau_M(\beta)
+  \mathrm{tr}_M(\beta)
    \;=\;
    y_{(n)} \cdot \chi^{(n)}_q(\beta)
    \;+\;
@@ -91,11 +91,11 @@ same generator eigenvalues, so this closed form extends without
 modification to ${}^{4}$He ($H_{12}$), ${}^{6}$Li ($H_{18}$), and all heavier
 isotopes.  Higher-dimensional irreps grow combinatorially (per
 Robinson-Schensted), but their contribution to the 1-d backbone of
-$\tau_M$ is captured by exactly the same closed forms — only the
+$\mathrm{tr}_M$ is captured by exactly the same closed forms — only the
 $y_\lambda$ weights and the Hoefsmit matrices of the $\dim \geq 2$
 blocks change with $n$.
 
 This is a substantive **substrate-derivability result**: the entire
-1-d slice of the Wedderburn decomposition of $\tau_M$ is a finite
+1-d slice of the Wedderburn decomposition of $\mathrm{tr}_M$ is a finite
 closed-form expression in $(q, w, m)$, with **no $n$-dependence in
 the formula** beyond the choice of trivial-vs-sign irrep.

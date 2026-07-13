@@ -66,7 +66,7 @@ import time
 from pathlib import Path
 
 from qou_substrate.witness import WitnessBuilder  # noqa: E402
-from qou_substrate.constants import q_at  # noqa: E402
+from q_parameter import q_at  # noqa: E402
 
 HERE = Path(__file__).parent
 RESIDUAL = HERE / "delta-lambda-canonical-residual.witness.json"

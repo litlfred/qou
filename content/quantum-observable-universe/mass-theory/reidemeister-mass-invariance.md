@@ -22,16 +22,17 @@ of three local moves:
 **Topological mass: invariant under all three.**
 
 The bare mass of a particle is determined by the hyperbolic
-volume of its knot complement:
+volume of its knot complement and the per-block density:
 
 $$
-  m_{\mathrm{bare}} = 
-  \frac{\mathrm{Vol}(S^3 \setminus K)}{\hbar_q^2}
-  \cdot \lambda_{\mathrm{scale}}.
+  m_{\mathrm{bare}}(K) = 
+  m_e \cdot \frac{\mathrm{Vol}(S^3 \setminus K) \, \rho(K)}{\hbar_q^2}.
 $$
 
 The hyperbolic volume is a **topological invariant** of the
-knot type — it does not depend on the diagram.  Since
+knot type — it does not depend on the diagram — and the
+per-block density $\rho(K)$ is computed from the Markov trace
+of the braid closure, itself a knot invariant.  Since
 Reidemeister's theorem states that two diagrams represent the
 same knot if and only if they are related by a finite sequence
 of R-I, R-II, R-III moves:

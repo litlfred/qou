@@ -290,3 +290,101 @@ Derived, no fit; Lean `QOU/Mass/TauQuantumIntegerForm.lean` sorry-free:
 **Update 2026-06-28 (Stage 8) — the core R_m is a tower of pairwise-coprime, irreducible, bar-symmetric, substrate-positive polynomials.** Characterized the non-cyclotomic cores R_m (read from Stage-7 witness; exact in q). Findings on m=6..11: (1) ALL R_m palindromic (bar-symmetric q↔1/q) — extends 2026-06-27's single D(7) observation to all m; binding residue is bar-even; (2) each R_m IRREDUCIBLE over ℚ; (3) cores PAIRWISE COPRIME (no nesting, no fixed growing factor — each order brings a genuinely new irreducible core); (4) R_m(1)>0 and R_m(q0)>0 (the (q−1)² carries all q=1 vanishing). Degree seq 8,10,14,28,34,46 and R(1) seq 28,16,34,1232,1328,9024 — no simple closed form. Net Stages 1-8 picture: S(m)=q-involution skeleton + D(m) = (q−1)²·[Φ_d cyclotomic tower, odd-d rule Φ_d|D(d+1)]·[tower of pairwise-coprime irreducible bar-symmetric substrate-positive cores R_m] — the genuine cyclotomic-completion (Habiro) residue. Scope: palindromy/irreducible/coprime/positive are exact derived facts; "grows unboundedly/not a single finite element" is bounded-MMAX, not proved (b); Habiro class not refuted. Next: (i) identify R_m(1) seq combinatorially; (ii) root distribution on/off unit circle. Probe: computations/substrate/lever1_binding_core_characterization.py; witness: …-core-characterization.witness.json; audit: docs/audits/2026-06-28-lever1-binding-core-bar-symmetric-irreducible.md
 
 **Update 2026-06-28 (Stage 9) — cores are GENERIC bar-symmetric residues; algebraic-characterization line CONCLUDED.** Exact on/off-unit-circle root split (Dickson y=q+1/q reduction + Sturm count_roots, no numerics) + R_m(1) factorization. Findings m=6..11: (1) MIXED root distribution — on-circle 4/8,6/10,6/14,14/28,24/34,32/46 (43–71%), substantial off-circle z↔1/z pairs ⇒ cores are NOT cyclotomic-type, NOT Salem, NOT a recognizable q-special-function; generic bar-even residues; (2) R_m(1)=28,16,34,1232,1328,9024 = 2²·7,2⁴,2·17,2⁴·7·11,2⁴·83,2⁶·3·47 — no combinatorial law. NET (Stages 6-9): the real-q algebraic structure of the binding correction is fully mapped — D(m)=(q−1)²·[Φ_d tower, odd-d rule]·[pairwise-coprime irreducible bar-symmetric generic cores], genuine Habiro/cyclotomic-completion content, NO finite special-function closed form. Further algebraic probing has diminishing returns. The genuine DERIVATION (not description) is the OWNER-GATED λ_SW-holonomy keystone on color E_q (tr B side, #2722) — the algebraic side has now handed it a complete exact parameter-free TARGET. Scope: exact derived facts m=6..11; "no finite closed form" is (a)-cumulative, not proved (b). Probe: computations/substrate/lever1_binding_core_root_distribution.py; witness: …-core-root-distribution.witness.json; audit: docs/audits/2026-06-28-lever1-binding-core-root-distribution.md
+
+## Update 2026-07-12 — headline is STALE: fork RESOLVED; open piece is the super-exp kernel, not "derive τ"
+
+The bean's "frontier = derive τ = tr B geometrically" headline is superseded. `sw_period_growth_probe.py`
+(audit) + `prop:sw-period-residue-sum` (Lean `sw_period_eq_residue_sum`) + `Lever1Depth2Exclusion.lean`
+already RESOLVE the SW-period prolongation fork: the explicit jet rule `λ_SW^(n)=X^(n)(z)dz` gives a
+super-exponential period = lw/#1765 (= Σ_λ dim_q residue sum), so the depth-2 τ-recurrence is an n≤4
+EFFECTIVE FIT (Lean (b)-excluded). τ is settled — NOT the live object.
+
+Refined this session (`lever1_sw_period_lw_rate_refine.py`, mpmath-only, audit
+`docs/audits/2026-07-12-lever1-sw-period-lw-rate-refine.md`): fork reproduced in-container (lw ratio
+1.34→3.10 super-exp vs depth-2 → λ₊≈2.184 constant, split n≥5); NEW quantitative finding — the naive
+single-branch rate (n−½)/R OVERSHOOTS the true lw ratio ~2.6× at n=8. The color cubic has 6 branch
+points (3 pairs |z|≈0.943/1.0/1.061); the exact rate is the FULL multi-branch residue sum, and lw
+tracks the involution-class ~√n (q→1 telephone limit).
+
+**Live open object (sharpened):** the exact super-exponential `a_D^(n)` kernel — the q-Bessel-class /
+multi-branch residue sum — NOT the τ derivation (τ is its n≤4 shadow). Coordinated with active keystone
+sibling #3662 (W_λ side).
+
+## Update 2026-07-12 (b) — EXACT classical kernel DERIVED + Lean-proved (τ is NOT a fit)
+
+Answering "τ is settled — n≤4 is a fit?": τ is NOT a fit — it is an exact q-rational of the DERIVED
+anchors a_D^(n)=lw(n−1) (Lean tauAnchor_closed_form). Only the FIXED-τ depth-2 as an all-n model is
+n≤4-effective. The EXACT kernel is now derived at q=1:
+- q→1: S(n)=Σf^λ=I(n) (RSK/Burnside = Identity I; telephone A000085), verified exact.
+- a_D^(n)=I(n)/n satisfies the EXACT variable-coefficient kernel a_D(n)=((n−1)/n)a_D(n−1)+
+  ((n−1)(n−2)/n)a_D(n−2) — Lean-proved sorry-free from the telephone recurrence
+  (`QOU/Mass/BindingClassicalKernel.lean`, `aDClassical_variable_coeff`, lean-direct exit 0).
+  Super-exp; the fixed-τ depth-2 is its n≤4 shadow.
+- q-deformation: S(n)=S(n−1)+[n−1]_q S(n−2)+D(n), c_3=[2]_q exact, Habiro tail grows.
+
+Closes the classical-kernel gap MODULO Identity I (Σf^λ=I(n)) — the SAME keystone P1–P5 RSK input.
+So binding + keystone share ONE open input; classical binding kernel otherwise proved. Probe
+`lever1_binding_classical_kernel_derive.py`; audit `docs/audits/2026-07-12-lever1-sw-period-lw-rate-refine.md`.
+
+## Update 2026-07-12 (c) — alien-calculus review distilled: Gevrey-1/2 Lean-proved; Borel(1/2) singularity ξ=1/√2; q₀ class change to q-Gevrey; Habiro-basis expansion (PR #3694)
+
+Owner-approved distillation of an external alien-calculus/resurgence dialog into utility
+(branch claude/alien-calculus-resurgence-nvvezn). The dialog's Gevrey-1/standard-Borel premise
+is REFUTED-and-corrected: (W1) the classical period a_D^(n)=I(n)/n is GEVREY-1/2 — Lean-proved
+two-sided sandwich n! ≤ 4ⁿ·I(n)² ≤ 8ⁿ·n! (QOU/Mass/BindingGevreyHalf.lean, sorry-free,
+lean-direct exit 0) ⇒ the level-1 Borel plane is entire (no alien derivatives there); level-1/2
+is canonical. (W2) Level-1/2 Borel–Padé (n≤60): dominant singularity at ξ = 1/√2 on the positive
+real axis, NON-POLAR (accumulating Padé poles — mixed-level transseries signature); at q₀ the
+root test rises without plateau under the exact q^{n(n−1)/2} envelope ⇒ the q-deformation CHANGES
+the class to q-GEVREY — the alien-calculus geometry at q₀ is an Écalle acceleration chain, not
+one Borel plane. The (ρ=1/√2, positive axis, non-polar) datum is the derived analytic TARGET the
+open multi-branch super-exp kernel must reproduce (complements the concluded algebraic line,
+Stages 6–9 + #3686 not-Salem). (W3) Stage-6 queued next step executed: exact Habiro
+(q;q)_k-basis expansion of D(4..9) — round-trip exact, c₀=0 universal, depth k_max ≈ n−1 growing,
+height ×8–9/step (basis-side face of no-finite-closed-form). NOT done deliberately: Bridge-eq
+Stokes multipliers (no proved resurgence for a non-q-holonomic series), OP/spectral-network
+construction (already pruned). Probes: lever1_gevrey_order_pin.py,
+lever1_borel_half_singularity_probe.py, lever1_habiro_tail_habiro_basis_expansion.py (+3
+witnesses). Audit: docs/audits/2026-07-12-alien-calculus-review-binding-gevrey-half.md.
+No fit; nothing wired; scope-(a) + Lean-proved core. Owner closes (§4a).
+
+## Update 2026-07-12 (d) — KERNEL IDENTIFIED at the statistic level: S^bal is the involution
+## statistic 2·maj + content∘RSK (exact, n≤8); kernel = insertion recursion, not q-difference
+
+Owner steer "try find kernel". EXACT identification (PR #3694, probe
+lever1_kernel_maj_involution_identification.py, all n≤8 bit-exact):
+S^bal(n)·q^{n(n−1)/2} = Σ_{w∈Inv(Sₙ)} q^{2·maj(w)+content(λ(w))} — derived from Stanley's
+q-hook-maj + RSK/Schützenberger (both verified shape-refined in-container) + the balanced
+twist dim_q^bal = q^{content−n(n−1)/2}·fakedeg(q²). DIFFERENT statistic from the pruned
+q-Hermite crossing id (2026-06-26). Kernel consequence: fixed-point-insertion weight ratio
+is NON-monomial with growing spread (2,4,6,10,15,22 terms, n=3..8) ⇒ maj not Markovian
+under RSK insertion ⇒ the kernel is an INSERTION RECURSION at statistic level, not a finite
+q-difference operator — explains the (re-verified) non-q-holonomicity + the Habiro tail
+combinatorially. Next: statistic-level transfer operator (descent-set refinement under
+insertion); promote identity to content block + Lean. No fit; nothing wired.
+
+## Update 2026-07-12 (e) — Habiro cofactors NOT Salem/Lehmer (mpmath cross-check of Stage 9)
+
+Independent mpmath cross-check of Stage 9 (2026-06-28): the n≥6 non-cyclotomic cofactors of the
+Habiro tail D(n) are NOT Salem/Lehmer numbers — each has ≥2 off-circle reciprocal pairs (off-pairs
+2,2,4,7), not the single pair a Salem polynomial requires. Generic bar-even non-cyclotomic; the n=6
+boundary is the onset of non-q-holonomic content, not a distinguished arithmetic class. REPRODUCES
+Stage 9 (Dickson/Sturm) via a different method (numerical root isolation), agrees. Magnitudes not
+interpreted (numerology guard). Probe `lever1_habiro_cofactor_root_classification.py`; audit
+`docs/audits/2026-07-12-lever1-habiro-tail-closed-form.md` (cofactor-roots section).
+
+## Update 2026-07-12 (f) — conj:cyclotomic-boundary-at-keystone (NEW, non-duplicate) + McKay mechanism
+
+Beyond the Stage 7-9 arithmetic (cross-checked by (e)): the NEW content is that the cyclotomic-pure
+regime of the Habiro tail is EXACTLY n≤5 = the framework's {calibration orders c=1,2,3 → n=2,3,4} ∪
+{S₅ keystone n=5}; first non-cyclotomic content at n=6 = first order beyond cal+keystone.
+MECHANISM (ties to merged #3685): at the keystone n=5 the four bwS0 classes of S₅ carry dim_q = the
+E₈ McKay marks [1]_q,[4]_q,[5]_q,[5]_q+1 (McKay 2I↔Ê₈, exact no-fit); A₅ = icosahedral = the LAST
+McKay-ADE alternating group (A₄↔Ê₆, A₅↔Ê₈, A₆ not binary polyhedral). At n=6 the McKay-mark
+structure exits (4/11 single-[m]_q vs 7/7 at n=5) and D(6) leaves the cyclotomic ring. Conjecture
+(correlation, causation OPEN): D(n) cyclotomic ⟺ n≤5=keystone order. Two dovetailing candidate
+causes: (a) A₅ = last McKay-ADE alt. group (keystone dims = E₈ marks); (b) n=6 = the UNIQUE S_n with
+a nontrivial outer automorphism (S₆). Ties binding arithmetic to s5-so3 keystone + Identity-I
+(S(n)=Σdim_q=ΣW_λ). Probe `lever1_cyclotomic_boundary_keystone_conjecture.py`; audit
+`docs/audits/2026-07-12-lever1-cyclotomic-boundary-keystone-conjecture.md`. Content block:
+`conj:cyclotomic-boundary-at-keystone` (mass-theory).

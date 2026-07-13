@@ -148,7 +148,7 @@ per-cell conjecture.
 **Verdict.** Same plausibility as C2 (twisted Yekutieli) — needs a
 non-natural reading. Don't double-count.
 
-### C5 — Faddeev iterated tower in the h² channel (not h⁴)
+### C5 — iterated compact-q-dilog tower in the h² channel (not h⁴)
 
 **Hypothesis.** PR #1276 uses Faddeev iteration `1/(1−h⁴)` for the h⁴
 channel. What about Faddeev iteration in the h² channel:
@@ -173,10 +173,10 @@ totally different replacement, but that's PR #1276's territory.
 **Verdict.** **LOW PRIORITY** — doesn't yield −G·h², just matches
 linking_weight at q_0 via a different rational.
 
-### C6 — Reading B + Faddeev h⁴ tower "happens to equal" Reading-A at q_0
+### C6 — Reading B + compact-q-dilog h⁴ tower "happens to equal" Reading-A at q_0
 
 **Hypothesis.** Reading B (Family A + Yekutieli additive) gives
-`5/2 + (3/4 − G)·h² = 2.4927` at q_0. Adding a Faddeev h⁴ tower
+`5/2 + (3/4 − G)·h² = 2.4927` at q_0. Adding a compact-q-dilog h⁴ tower
 `α·h⁴/(1 − β·h²)` calibrated to push 2.4927 → 2.4599 might be a
 substrate-natural CORRECTION sequence.
 
@@ -234,7 +234,7 @@ sign / magnitude ambiguity.
 | **C6 — Reading-A as Yekutieli-only** | FORMALIZE AS PATH B | 1 session | Conditional Lean theorem |
 | C2 — Twisted Yekutieli | LOW | needs alternative projection | No concrete candidate |
 | C4 — Motivic period | DUPLICATE | — | Same as C2 |
-| C5 — h²-Faddeev tower | LOW | — | Doesn't yield −G coefficient |
+| C5 — h²-compact-q-dilog tower | LOW | — | Doesn't yield −G coefficient |
 | C7 — Seifert-surface integral | LOW | — | Same layer as Yekutieli |
 
 ## Recommended next single-session actions
@@ -256,7 +256,7 @@ owner directs in-session escalation.
 - [PR #1285](https://github.com/litlfred/qou/pull/1285) — markov_trace mpf precision fix
 - [PR #1287](https://github.com/litlfred/qou/pull/1287) — h-expansion + per-partition + redistribution probes
 - [PR #1272](https://github.com/litlfred/qou/pull/1272) — γγ̄ decomposition, Reading-A target
-- [PR #1276](https://github.com/litlfred/qou/pull/1276) — Bring + Faddeev h⁴ candidate
+- [PR #1276](https://github.com/litlfred/qou/pull/1276) — Bring + compact-q-dilog h⁴ candidate
 - [audit 2026-05-22](2026-05-22-yekutieli-percell-conjecture-formalized.md) — Reading B framework canonical
 - [audit 2026-05-23](2026-05-23-yekutieli-bijection-natural-reading-negative.md) — natural-reading negative
 - [PR #701](https://github.com/litlfred/qou/pull/701) — Wedderburn-search falsification

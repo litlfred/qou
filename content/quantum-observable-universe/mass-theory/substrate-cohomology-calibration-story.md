@@ -1,55 +1,13 @@
 ## The substrate, its cohomology, and the three units
 
-Everything the framework predicts is built from one categorical substrate and a
-single deformation parameter $q_0$. The geometry of that substrate is Bring's
-curve, whose first cohomology $H^1$ is eight-dimensional and decomposes, under
-the curve's $S_5$ symmetry, as two copies of one irreducible four-dimensional
-representation, $H^1 = 2W$. This cohomology is rigid: once the curve is fixed,
-$H^1$ and its polarised Hodge structure are determined. What is *not* fixed by
-the categorical data alone is a small set of units — and it is exactly here that
-measurement enters.
+The categorical framework predicts all observables from a single substrate and one deformation parameter $q_0$. Bring's curve defines the geometry of this substrate. Its first cohomology $H^1$ is eight-dimensional. Under the curve's $S_5$ symmetry, it decomposes as two copies of one irreducible four-dimensional representation, $H^1 = 2W$. This cohomology is rigid. Fixing the curve determines $H^1$ and its polarised Hodge structure. The categorical data leaves a small set of units undetermined. Measurement enters here.
 
-A polarised, weight-one Hodge structure of the shape $2W$ has precisely three
-real degrees of freedom that are invisible to the categorical chain and must be
-supplied as units when one crosses the substrate-to-archimedean wall (the
-realisation functor $\tau$): the **scale** of the rank-two $W$-Hodge plane, its
-**modulus**, and a third **scale** belonging to the meson sector, whose Hopf-link
-topology has zero hyperbolic volume and therefore carries no scale derivable from
-the other two. These three are the three calibration inputs of the framework, in
-exact correspondence:
+A polarised, weight-one Hodge structure $2W$ has exactly three real degrees of freedom invisible to the categorical chain. Crossing the substrate-to-archimedean wall (the realisation functor $\tau$) requires supplying these degrees of freedom as units: the **scale** of the rank-two $W$-Hodge plane, its **modulus**, and a third **scale** belonging to the meson sector. The meson sector has a Hopf-link topology with zero hyperbolic volume, meaning it carries no scale derivable from the other two. These match the three calibration inputs exactly:
 
-* **CAL-1, $m_e$** is the scale of the $W$-plane — the unprolonged ($n=0$)
-  Seiberg--Witten period, the *electron period*. It is the base of the mass
-  tower, propagated into every higher mass by the recurrence, not a prefactor
-  pasted on at the end.
-* **CAL-2, $q_0$** is the modulus of that plane — the trace
-  $\tau = 2\cosh\theta$ of the Hodge monodromy. Because the monodromy preserves
-  the curve's polarisation it lies in $\mathrm{SL}_2$, so its determinant is one
-  and the modulus is the single number $\tau$.
-* **CAL-3, $m_\pi$** is the scale of the meson sector — a cohomologically
-  orthogonal class with no hyperbolic volume, hence genuinely independent of
-  $(m_e, q_0)$.
+* **CAL-1, $m_e$**: The scale of the $W$-plane. This is the unprolonged ($n=0$) Seiberg--Witten period, the electron period. It serves as the base of the mass tower, propagating into every higher mass by the recurrence, rather than acting as a pasted prefactor.
+* **CAL-2, $q_0$**: The modulus of the $W$-plane. This is the trace $\tau = 2\cosh\theta$ of the Hodge monodromy. The monodromy lies in $\mathrm{SL}_2$ because it preserves the curve's polarisation. Its determinant is one, leaving the single number $\tau$ as the modulus.
+* **CAL-3, $m_\pi$**: The scale of the meson sector. This is a cohomologically orthogonal class with no hyperbolic volume, independent of $(m_e, q_0)$.
 
-Crossing the wall also fixes a parity. The two eigenvalues of a crossing,
-$q$ and $-q^{-1}$, split as $\cosh\lambda \pm \sinh\lambda$ with
-$\lambda = \log q$: the symmetric $\cosh$ part is curvature-free transport and
-the antisymmetric $\sinh$ part is the curvature defect. Under the bar-involution
-$q \mapsto q^{-1}$ these are the even and odd parities of one element. The
-binding observables — masses and their averages — live on the $\cosh$, bar-even
-side, where the modulus $\tau$ sits; the $\beta$-decay observable $\mathfrak{Q}_\beta$ and
-its precision coefficients live on the $\sinh$, bar-odd side. They are not two
-separate problems but the two parities of a single substrate element, so pinning
-one constrains the other. That single element is the **complex volume**
-$\mathfrak{V}$ ([`conj:binding-qbeta-complex-volume`](../mass-endomorphism/binding-qbeta-complex-volume.md)):
-its bar-even part is $\operatorname{Re}\mathfrak{V} = \mathfrak{E}_{\mathrm{bind}}$
-(the mass/binding channel) and its bar-odd part is
-$\operatorname{Im}\mathfrak{V} = \mathfrak{Q}_\beta$ (the decay channel), the QOU
-analogue of the Neumann--Zagier $\operatorname{Vol} + i\,\mathrm{CS}$.
+Crossing the wall also fixes a parity. A crossing has two eigenvalues, $q$ and $-q^{-1}$. Setting $\lambda = \log q$, these split as $\cosh\lambda \pm \sinh\lambda$. The symmetric $\cosh$ part represents curvature-free transport. The antisymmetric $\sinh$ part represents the curvature defect. The bar-involution $q \mapsto q^{-1}$ identifies these as the even and odd parities of one element. The binding observables (masses and their averages) sit on the $\cosh$, bar-even side, alongside the modulus $\tau$. The $\beta$-decay observable $\mathfrak{Q}_\beta$ and its precision coefficients sit on the $\sinh$, bar-odd side. These are the two parities of a single substrate element. Pinning one constrains the other. That single element is the **complex volume** $\mathfrak{V}$ ([`conj:binding-qbeta-complex-volume`](../mass-endomorphism/binding-qbeta-complex-volume.md)). Its bar-even part is $\mathrm{Re}\,\mathfrak{V} = \mathfrak{E}_{\mathrm{bind}}$ (the mass/binding channel). Its bar-odd part is $\mathrm{Im}\,\mathfrak{V} = \mathfrak{Q}_\beta$ (the decay channel), forming the QOU analogue of the Neumann--Zagier $\mathrm{Vol} + i\,\mathrm{CS}$.
 
-This is the whole shape of the theory in one breath: a rigid cohomology fixes
-the structure; three units — a scale, a modulus, and an orthogonal scale — are
-the only freedom, and they are the three measured calibrations; and the
-even/odd split at the wall sorts every observable into the mass channel or the
-decay channel. The remaining open numbers — the binding modulus and the decay
-coefficients — are the two parities of one object, which is why closing one is
-expected to close the other.
+A rigid cohomology fixes the structure. Three units—a scale, a modulus, and an orthogonal scale—provide the only freedom, matching the three measured calibrations. The even/odd split at the wall sorts every observable into either the mass channel or the decay channel. The remaining open numbers, the binding modulus and the decay coefficients, represent the two parities of one object. Closing one closes the other.

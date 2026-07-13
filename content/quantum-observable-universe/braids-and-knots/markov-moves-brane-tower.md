@@ -1,42 +1,7 @@
-The two Markov moves that guarantee link invariance of the Jones
-polynomial ([Jones--Markov trace](#thm:jones-markov-trace)) correspond
-to the horizontal and vertical components of the brane tower's
-cosimplicial structure
-([cosimplicial crossed groupoid](#prop:cosimplicial-crossed-groupoid)).
+The two Markov moves that ensure link invariance correspond to the horizontal and vertical directions of the brane tower's cosimplicial structure. 
 
-1. **Conjugation** $\beta \mapsto \gamma\beta\gamma^{-1}$ (same $B_n$,
-   same level).  This is the *horizontal* direction: the crossed
-   structure of the cosimplicial groupoid, where $1$-morphisms
-   $g_{ij}^{(n)}$ act on $2$-morphisms $a_{ij}^{(n)}$ by conjugation
-   via $\mathrm{Ad}(\mathrm{SU}_{q_n}(2))$ at a *fixed level* $n$.
-   In the weight decomposition
-   ([weight decomposition](#thm:weight-decomposition-exists)), this is
-   the weight-$0$ (horizontal) component $\alpha_H$: gauge
-   transformations within a single fibre.  The trace property
-   $\mathrm{tr}_M(ab) = \mathrm{tr}_M(ba)$ ensures the categorical
-   trace is invariant under these horizontal moves.
+Conjugation $\beta \mapsto \gamma\beta\gamma^{-1}$ is the horizontal direction. It represents gauge transformations within a single fibre at a fixed level $n$. The trace property $\mathrm{tr}_M(ab) = \mathrm{tr}_M(ba)$ guarantees invariance under these moves.
 
-2. **Stabilisation** $\beta \mapsto \beta \cdot \sigma_n^{\pm 1}$
-   (embed $B_n \hookrightarrow B_{n+1}$).  This is the *vertical*
-   direction: the coface maps
-   $\delta^i \colon \mathfrak{G}_n \to \mathfrak{G}_{n+1}$ of the
-   cosimplicial structure, realized by jet prolongation
-   $A_n \hookrightarrow J^1(A_n) = A_{n+1}$
-   ([recursive brane tower](#def:recursive-brane-tower)).  In the weight
-   decomposition, this is the non-zero-weight (vertical) component
-   $\alpha_V$: moving between levels of the tower.  The Markov property
-   $\mathrm{tr}_M(x \sigma_n^{\pm 1}) = z^{\pm 1}\mathrm{tr}_M(x)$
-   ensures the trace scales predictably under these vertical inclusions.
+Stabilisation $\beta \mapsto \beta \cdot \sigma_n^{\pm 1}$ is the vertical direction. It represents movement between levels of the tower via jet prolongation $A_n \hookrightarrow A_{n+1}$. The Markov property — $\mathrm{tr}_M(x \sigma_n) = z\,\mathrm{tr}_M(x)$ for a positive crossing, $\mathrm{tr}_M(x \sigma_n^{-1}) = z_{-}\,\mathrm{tr}_M(x)$ with $z_{-} = z - (q - q^{-1})$ for a negative one ([Markov axioms](#rem:markov-axioms-primitive)) — correctly scales the trace across these inclusions.
 
-The Iwahori--Hecke algebra tower $H_1(R, q) \hookrightarrow H_2(R, q) \hookrightarrow \cdots$ thus shadows the brane tower
-$A_0 \hookrightarrow A_1 \hookrightarrow \cdots$, and the Jones
-polynomial is the observable invariant under *both* directions of this
-decomposition.  Markov's theorem --- that conjugation and stabilisation
-generate all equivalences between braid representatives of the same
-link --- is the statement that horizontal and vertical moves together
-exhaust the gauge freedom of the cosimplicial crossed groupoid.  The
-direct limit
-$\mathcal{A}_\infty = \varinjlim\mathrm{End}_{\mathbf{C}}(A_n)$
-([direct limit algebra](#def:direct-limit-algebra)) is the algebraic
-receptacle for this invariance: it is the algebra on which the Markov
-trace stabilises to a well-defined link invariant.
+Thus, the Iwahori--Hecke algebra tower shadows the brane tower. Markov's theorem dictates that horizontal and vertical moves exhaust the gauge freedom. The direct limit algebra $\mathcal{A}_\infty = \varinjlim\mathrm{End}_{\mathbf{C}}(A_n)$ provides the receptacle where the Markov trace stabilises to a well-defined link invariant.

@@ -13,12 +13,16 @@ the mass-gap classical limit to the χ(A) = −6 Kummer obstruction of
 `thm:qou-obstruction-reduction`, in §3b-cond conditional form.
 
 The obstruction-reduction context class
-(`QOU.AlgebraicSubstrate.QouObstructionReductionContext`) already
-carries the three manuscript sub-claims — (a) one-dimensional
-obstruction, (b) class = χ(A), (c) Kummer level-`n` vanishing ⟺
-`n ∣ χ(A)` — and the NS corollaries are wired in
-`QOU.FluidDynamics.ns_obstruction_*`.  What was missing is the
-**mass-gap corollary**, landed here sorry-free:
+(`QOU.AlgebraicSubstrate.QouObstructionReductionContext`) carries the
+genuine *inputs* — Van den Bergh CY-3 duality + Drinfeld rigidity +
+the Kummer datum `κ₀` — from which conclusion (a) `dim HH² = 1` is
+*derived*.  The `χ(A)`-identification `κ₀ = χ(A)` (conclusions (b),(c))
+is the single honest domain gap `obstruction_trace_gap` (sorry, cited),
+packaged as the derived lemma `kappa_vanishes_iff_chi`.  The NS
+corollaries are wired in `QOU.FluidDynamics.ns_obstruction_*`.  The
+**mass-gap corollary** landed here is conditional on that one gap (it
+was previously "sorry-free" only because `κ₀ = χ(A)` was an *assumed*
+class field — the self-projection now removed):
 
 - `kummer_vanishes_at_two` — at χ(A) = −6 the level-2 obstruction
   vanishes: the Kummer shadow of the μ₂-vanishing of the gap
@@ -55,8 +59,9 @@ open QOU.Torsion QOU.AlgebraicSubstrate
 -- Ref: [manuscript] models-of-qous/yang-mills-mass-gap.md §G_m-torsion
 theorem kummer_vanishes_at_two [ctx : QouObstructionReductionContext]
     (hchi : ctx.chi_A = -6) : ctx.kappa_vanishes 2 := by
-  -- `kappa_vanishes 2 ↔ (2:ℤ) ∣ obstruction_class = chi_A = -6`, and `2 ∣ 6`.
-  rw [ctx.kappa_vanishes_iff, ctx.obstruction_class_eq, hchi]
+  -- `kappa_vanishes 2 ↔ (2:ℤ) ∣ χ(A) = -6` (derived `kappa_vanishes_iff_chi`),
+  -- and `2 ∣ 6`.
+  rw [kappa_vanishes_iff_chi, hchi]
   norm_num
 
 /-- **Kummer persistence above 3 at χ(A) = −6** — the obstruction
@@ -68,7 +73,7 @@ theorem kummer_persists_above_three [ctx : QouObstructionReductionContext]
     (hchi : ctx.chi_A = -6) {p : ℕ} (hp : Nat.Prime p) (hp3 : 3 < p) :
     ¬ ctx.kappa_vanishes p := by
   -- `kappa_vanishes p ↔ (p:ℤ) ∣ -6 ↔ p ∣ 6`; a prime `p > 3` does not divide 6.
-  rw [ctx.kappa_vanishes_iff, ctx.obstruction_class_eq, hchi]
+  rw [kappa_vanishes_iff_chi, hchi]
   intro hdvd
   rw [Int.dvd_neg] at hdvd
   have hpn : p ∣ 6 := by exact_mod_cast hdvd

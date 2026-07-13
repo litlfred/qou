@@ -89,6 +89,131 @@ theorem bring_group_homology_ratio_exact :
   field_simp
   ring
 
+/-! ## The zero-mode value is genus-determined (unconditional)
+
+The additive shift `2/(3π)` is **not** a conjectural input: it is fixed by the
+Bring genus `g = 4` alone, through two standard topological facts — the
+Gauss–Bonnet area and the first Betti number. This isolates what actually remains
+conjectural (the *physical* claim that this IR ratio contributes to `1/α_EM`, and
+the transcendence-obstructed point-evaluation `BringZeroModeBlochClass` below)
+from the *value*, which is proved here. -/
+
+/-- Gauss–Bonnet area of a genus-`g` orientable surface at constant curvature `-1`:
+    `Area = -2πχ = -2π(2-2g) = 4π(g-1)`. At `g = 4` this is `12π`. -/
+noncomputable def gaussBonnetArea (g : ℝ) : ℝ := 4 * Real.pi * (g - 1)
+
+/-- First Betti number of a genus-`g` orientable surface: `b₁ = 2g`. -/
+def firstBetti (g : ℝ) : ℝ := 2 * g
+
+/-- **The two area computations agree.** The `(2,4,5)`-hyperbolic-triangle tiling
+    area of Bring's surface (`240` triangles) equals its Gauss–Bonnet area at
+    `g = 4` — both are `12π`. Reconciles the explicit tiling (`bringSurfaceArea`)
+    with the topological Gauss–Bonnet form. -/
+theorem bringSurfaceArea_eq_gaussBonnet :
+    bringSurfaceArea = gaussBonnetArea 4 := by
+  unfold bringSurfaceArea bringFundamentalTriangleArea gaussBonnetArea
+  ring
+
+/-- **The zero-mode value is genus-determined (unconditional).**
+    `bringZeroModeValue = b₁ / Area = 2g/(4π(g-1))` at `g = 4` — established from
+    the Bring genus alone (Gauss–Bonnet area + first Betti number), with **no**
+    `BringZeroModeBlochClass` instance. The value `2/(3π)` is therefore *derived*,
+    not fitted or assumed. -/
+theorem bringZeroMode_genus_determined :
+    bringZeroModeValue = firstBetti 4 / gaussBonnetArea 4 := by
+  unfold bringZeroModeValue firstBetti gaussBonnetArea
+  have hπ : Real.pi ≠ 0 := Real.pi_ne_zero
+  field_simp
+  ring
+
+/-- **All three forms of the zero-mode coincide at `g = 4`, unconditionally:**
+    the genus-Hodge ratio `hodgeRatio 4 = 2g/(4π(g-1))`, the Betti/Gauss–Bonnet
+    ratio `b₁/Area`, and the explicit `(2,4,5)`-tiling homology ratio
+    `bringGroupHomologyRatio` — all equal `2/(3π)`. The *value* is fully
+    genus-determined; only the physical coupling claim remains conjectural. -/
+theorem bringZeroMode_forms_agree :
+    hodgeRatio 4 = firstBetti 4 / gaussBonnetArea 4
+      ∧ firstBetti 4 / gaussBonnetArea 4 = bringGroupHomologyRatio := by
+  refine ⟨?_, ?_⟩
+  · rw [hodgeRatio_at_g4, bringZeroMode_genus_determined]
+  · rw [← bringZeroMode_genus_determined]
+    exact bring_group_homology_ratio_exact.symm
+
+/-! ## Tiling combinatorics FORCE the genus and the Betti number (nothing assumed)
+
+The section above still *inputs* `g = 4` (and `b₁ = 2g`). This section removes
+those inputs: from the `(2,4,5)`-triangle tiling data alone — `240` triangles,
+each carrying one corner of each type, with a type-`k` corner (angle `π/k`)
+surrounded by exactly `2k` triangles — the vertex/edge counts, the Euler
+characteristic, the genus, and the first Betti number are all **forced**:
+
+  `V = 240/4 + 240/8 + 240/10 = 60 + 30 + 24 = 114`,  `E = 3·240/2 = 360`,
+  `χ = V − E + F = −6`  ⇒  `g = 4`  ⇒  `b₁ = 2 − χ = 8`.
+
+Together with `bringSurfaceArea_eq_gaussBonnet` (the tiling area = `12π`), **every
+ingredient of the ratio `b₁/Area = 2/(3π)` is now derived from the tiling** —
+numerator and denominator both; the mathematics is closed.
+
+**Epistemic posture (owner, 2026-07-12): comparison to observed, no ontological
+claim.** The framework does not assert a *mechanism* by which this ratio enters
+`1/α_EM`; it reports a parameter-free structural value whose assembly with the
+tree term matches observed `1/α` (near-match tier). Under that posture the
+remaining outside-view question (per
+`docs/audits/2026-07-12-alpha-em-heat-kernel-coupling-outside-view.md`) is
+*assembly-selection* — why this combination of Bring invariants, answered by the
+documented attempt ledger — and the stated cost is that the `O(α²)` coefficient is
+permanently observational (never computable without a mechanism), so the
+`+0.313 ppb` residual is a floor, not a waypoint. -/
+
+/-- Number of triangles in the `(2,4,5)` tiling of Bring's curve. -/
+def bringTilingFaces : ℕ := 240
+
+/-- Edge count forced by the tiling: `3` edges per triangle, each shared by `2`
+    (`E = 3F/2 = 360`). -/
+def bringTilingEdges : ℕ := 3 * bringTilingFaces / 2
+
+/-- Vertex count forced by the corner angles: a type-`k` corner (angle `π/k`)
+    is surrounded by `2k` triangles, and each triangle carries one corner of each
+    type, so `V = F/4 + F/8 + F/10 = 60 + 30 + 24 = 114`. -/
+def bringTilingVertices : ℕ :=
+  bringTilingFaces / 4 + bringTilingFaces / 8 + bringTilingFaces / 10
+
+/-- Euler characteristic of the tiled surface, `χ = V − E + F` (as an integer). -/
+def bringTilingEuler : ℤ :=
+  (bringTilingVertices : ℤ) - (bringTilingEdges : ℤ) + (bringTilingFaces : ℤ)
+
+/-- **`χ = −6`, computed from the tiling** (`114 − 360 + 240`). -/
+theorem bringTilingEuler_eq : bringTilingEuler = -6 := by
+  unfold bringTilingEuler bringTilingVertices bringTilingEdges bringTilingFaces
+  norm_num
+
+/-- **The genus is FORCED to `4`:** `χ = 2 − 2g` with `χ = −6` gives `g = 4`.
+    The `g = 4` used throughout this file is now derived from the tiling, not
+    assumed. -/
+theorem bringTiling_genus_four : bringTilingEuler = 2 - 2 * (4 : ℤ) := by
+  rw [bringTilingEuler_eq]; norm_num
+
+/-- **The first Betti number is FORCED to `8`:** for a closed connected orientable
+    surface `b₁ = 2 − χ` (`b₀ = b₂ = 1`), so `b₁ = 2 − (−6) = 8`. -/
+theorem bringTiling_b1 : 2 - bringTilingEuler = 8 := by
+  rw [bringTilingEuler_eq]; norm_num
+
+/-- **The forced Betti number matches the Hodge input:** the tiling-derived
+    `b₁ = 8` equals `firstBetti 4 = 2g` at the tiling-derived genus. Closes the
+    loop: the numerator of the zero-mode ratio is a counted quantity of the
+    `(2,4,5)` tiling. -/
+theorem bringTiling_b1_eq_firstBetti :
+    ((2 - bringTilingEuler : ℤ) : ℝ) = firstBetti 4 := by
+  rw [bringTiling_b1]; unfold firstBetti; norm_num
+
+/-- **The zero-mode ratio, fully tiling-derived:** the forced Betti number over
+    the tiling area equals `2/(3π)`. Both numerator (`b₁ = 8`, counted) and
+    denominator (`Area = 12π`, angle defects) now come from the tiling alone. -/
+theorem bringZeroMode_fully_tiling_derived :
+    ((2 - bringTilingEuler : ℤ) : ℝ) / bringSurfaceArea = bringZeroModeValue := by
+  rw [bringTiling_b1_eq_firstBetti, bringSurfaceArea_eq_gaussBonnet]
+  exact bringZeroMode_genus_determined.symm
+
 /- **Phase-1 wiring (2026-05-30).**  Reference to the Bloch-Wigner
     unit-circle function `D(e^{iθ}) = Cl_2 θ` defined in the
     Mathlib filler at
@@ -187,18 +312,19 @@ theorem bring_zero_mode_additive_form
   rw [hθ, hodgeRatio_at_g4]
 
 
-/-- **Faithful instance.** Carries the explicit research-grade conjecture as a sorry.
-    Since `BlochWigner_unit_circle` is an unconstrained axiom, this cannot be mathematically
-    proven from first principles without additional axioms on the range of the Bloch-Wigner function. -/
-instance canonical : BringZeroModeBlochClass where
-  -- Ref: [manuscript] prop:em-coupling-bring-zero-mode — identifying the
-  --      explicit Bloch class [Z] ∈ B(ℂ) on the genus-4 force-carrier pair
-  --      {T(2,9), T(3,5)} whose τ_arch-image equals 2/(3π) is research-grade
-  --      and open (PR #952: PSLQ refutes the canonical unit-circle bases).
-  -- Ref: [suslin1991], [bloch2000] — Bloch-group framework for [Z].
-  --      Per AGENTS.md §3b this instance carries the conjecture: the `sorry`
-  --      denotes "conjectured", not "missing proof".
-  bring_zero_mode_realised := sorry
+-- /-- **Faithful instance.** Carries the explicit research-grade conjecture as a sorry.
+--     Since `BlochWigner_unit_circle` is an unconstrained axiom, this cannot be mathematically
+--     proven from first principles without additional axioms on the range of the Bloch-Wigner function. -/
+-- Per AGENTS.md §3b-cond we provide NO global instance.
+-- instance canonical_bloch : BringZeroModeBlochClass where
+--   -- Ref: [manuscript] prop:em-coupling-bring-zero-mode — identifying the
+--   --      explicit Bloch class [Z] ∈ B(ℂ) on the genus-4 force-carrier pair
+--   --      {T(2,9), T(3,5)} whose τ_arch-image equals 2/(3π) is research-grade
+--   --      and open (PR #952: PSLQ refutes the canonical unit-circle bases).
+--   -- Ref: [suslin1991], [bloch2000] — Bloch-group framework for [Z].
+--   --      Per AGENTS.md §3b this instance carries the conjecture: the `sorry`
+--   --      denotes "conjectured", not "missing proof".
+--   bring_zero_mode_realised := sorry
 
 
 end QOU.Archimedean

@@ -1,7 +1,1 @@
-$\mathrm{SU}(2)$ and $\mathrm{SO}(3)$ are the natural gauge groups
-on the substrate side and the archimedean side respectively.  This
-short section fixes the basis, the first-order Taylor relation
-between the generators, and the quaternionic picture of $\mathrm{SO}(3)$
-that drives the chapter's later identification of the
-substrate-parametrised gauge group $\mathrm{SU}_q(2)$ as the
-deformation of $\mathrm{SU}(2)$ along the substrate flow.
+The groups $\mathrm{SU}(2)$ and $\mathrm{SO}(3)$ serve as the natural gauge groups on the substrate and archimedean sides, respectively. We fix their bases, clarify the first-order Taylor relation between their generators, and establish the quaternionic picture of $\mathrm{SO}(3)$ necessary for identifying $\mathrm{SU}_q(2)$ as the substrate deformation of $\mathrm{SU}(2)$.

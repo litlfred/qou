@@ -4,7 +4,7 @@ title: 'Integration: canonical watcher - P30 WitnessBuilder rollup'
 status: todo
 type: task
 created_at: 2026-06-21T21:44:26Z
-updated_at: 2026-06-21T21:44:26Z
+updated_at: 2026-07-03T00:45:00Z
 ---
 
 ## Canonical bean for the P30 WitnessBuilder rollup (dedup 2026-06-28)
@@ -126,4 +126,14 @@ resolution in witness_dependency_drift.py (substrate upstreams were false
 upstream_missing). PROV_MISSING 258→254 post-rebase. Remaining substrate tail
 ~9 (qaskey, qholonomic ×2, z2bn ×3, + non-substrate).
 
-> **Investigated 2026-07-05 (swarm 2, PR #3344) — deferred, kept OPEN.** WitnessBuilder ports need running the producer (regen witness w/ provenance); WitnessBuilder imports mpmath → unimportable in sandbox (compute-blocked). Easy tail drained (batches 1–9b); hard tail (qaskey/qholonomic/z2bn) needs canonical env.
+## 2026-07-03 — Batch 10 SHIPPED (5 more producers via wrap_legacy; PROV_MISSING 254→249)
+borromean_binding_recompute, borromean_h3_2_1_irrep_derivation,
+canonical_tr_m_three_path_comparison, probes/bowtie_q_channel_projection_probe,
+chebyshev_pairing_engine_witness — all plain payloads → wrap_legacy; dropped
+manual scriptCommitSha/scriptHash/computedAt/dead "computation" keys + now-dead
+git_sha_of/file_hash helpers and subprocess imports. All 5 rerun exit 0;
+provenance triple (engine/scriptFile/commitSha) verified on each witness.
+NOTE: bring-coordinate-linking-weight-probe.witness.json is an ORPHAN (no
+producer script in tree) — needs a disposition pass, not a wrap.
+
+> **Investigated 2026-07-05 (swarm 2, PR #3344) — deferred, kept OPEN.** WitnessBuilder ports need running the producer (regen witness w/ provenance); WitnessBuilder imports mpmath → unimportable in sandbox (compute-blocked). Easy tail drained (batches 1–10); hard tail (qaskey/qholonomic/z2bn) needs canonical env.

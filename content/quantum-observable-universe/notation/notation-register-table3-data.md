@@ -1,6 +1,7 @@
 | Concept | Font | Symbols |
 |---------|------|---------|
 | Crossing energy | plain italic | $E_{\mathfrak{H}}$ — total crossing energy of hadron $\mathfrak{H}$. $E_{\mathfrak{H}} = \mathfrak{m}_{\mathfrak{H}} \cdot c_q^2$. |
+| Hecke amplitude | plain italic + roman subscript | $h_{\mathrm{A}} = q - q^{-1}$ — the Hecke-relation discriminant ($\sigma_i^2 = h_{\mathrm{A}}\sigma_i + \mathbf{1}$; equivalently the Skein amplitude $\sigma_i - \sigma_i^{-1} = h_{\mathrm{A}}$), the scalar shift carried by typed crossings ($\mathfrak{d}$-type $-h_{\mathrm{A}}$, mixed $-h_{\mathrm{A}}/2$); $\approx 0.209$ at $q_0$. **Canonized 2026-07-12** from the former split "$\mathrm{HA}$" (acronym) vs bare "$H_A$" — the bare form collided with the Iwahori–Hecke algebra $H_A(q)$ on $A$ strands ($H$-family symbols always carry an argument). Compute-layer witness keys (`derived_50_digit.H_A`, `parameters.HA`) keep their historical names. |
 | Hook-length product | Latin cap + arg | $H_q(\lambda) = \prod_{x \in \lambda} [h_x(\lambda)]_q$ — always with partition argument. |
 | Iwahori–Hecke algebra | Latin cap | $H_n(q)$ — always with subscript $n$. |
 | Atomic braid word | calligraphic | $\mathcal{B}_K \in H_{3A}(q)$ — canonical atomic braid for atom $K = (Z, N)$ with $A = Z + N$. Factorises as $\mathcal{B}_K = \mathcal{B}_K^{\mathrm{vac}} \cdot \bowtie_K$ (vacuum · interface). Relocated from $\beta_K$ to cal in Phase 5n — cal register expanded to admit Hecke-algebra structural elements alongside bundles/sheaves. |

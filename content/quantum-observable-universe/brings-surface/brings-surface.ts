@@ -136,6 +136,8 @@ export default chapter({
         "mi-sw-abelianisation-proof",
         "sw-period-residue-sum",
         "sw-period-residue-sum-proof",
+        "sw-classical-jet-exactness",
+        "sw-classical-jet-exactness-proof",
         "jet-sw-tau-decomposition",
         "jet-sw-tau-decomposition-proof",
         "color-sector-coords",

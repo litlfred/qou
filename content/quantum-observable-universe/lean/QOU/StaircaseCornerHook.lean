@@ -37,6 +37,8 @@ theorems "if `StaircaseEWResidual` holds, then …".
 
 namespace QOU.StaircaseCornerHook
 
+universe u
+
 /-- The corner hook of the staircase `ρ k = (k, k-1, …, 1)` at cell
 `(0, 0)`.  Defined directly as the combinatorial quantity:
 
@@ -89,18 +91,22 @@ Per `AGENTS.md §3b-cond`, the conjecture is encoded as
 * a `class StaircaseEWResidual` whose single field bundles the family
   `∀ k ≥ 2, StaircaseEWSpectralContent k`.
 
-A canonical instance is provided **with `sorry`** as the formal record
-that the conjecture is open:
+Per AGENTS.md §3b-tax an open primary conjecture is represented by a
+content-bearing class with **no** instance.  This file therefore provides
+**no global instance** (see the "Open conjecture — hypothesis-only" section
+below); the illustrative snippet
 
   ```
-  instance : StaircaseEWResidual := ⟨fun _ _ => sorry⟩
+  instance : StaircaseEWResidual := ⟨fun _ _ => sorry⟩   -- illustrative only; NOT provided
   ```
 
-The single `sorry` IS the conjecture.  Downstream theorems may take
-`[StaircaseEWResidual]` as an instance hypothesis and carry the §3b-cond
-"conditional on `conj:staircase-ew-residual`" banner; once a real proof
-lands, the `sorry` is discharged here and every downstream conditional
-becomes unconditional automatically.
+shows what a `sorry`-record instance *would* look like, but a fabricated
+`sorry`/trivial instance is exactly what §3b-tax forbids on an open carrier.
+Downstream theorems instead take `[StaircaseEWResidual]` as an explicit
+instance hypothesis and carry the §3b-cond "conditional on
+`conj:staircase-ew-residual`" banner; once a real proof lands, a genuine
+instance is added here and every downstream conditional becomes
+unconditional automatically.
 
 Ref: [manuscript] §EW-residual, observed at q_0 to relative error
 1.30e-3 (k=3, top-two ratio against cot θ_W) and 1.42e-3 (k=4,
@@ -123,33 +129,34 @@ This replaces the previous opaque
 `axiom StaircaseEWSpectralContent (k : ℕ) : Prop` with a
 predicate that actually mentions the Hoefsmit-matrix spectrum. -/
 def StaircaseEWSpectralContent
-    {R : Type*} {A : Type*} [CommRing R] [Inv R] [Ring A]
+    {R A : Type u} [CommRing R] [Inv R] [Ring A]
     [Algebra R A] (q : R) (s : R) (k : ℕ)
-    [QOU.Hecke.HeckeAlgebra R (QOU.Hecke.staircaseStrands k) q A]
+    [QOU.Hecke.HeckeAlgebra R (k * (k + 1) / 2) q A]
     [HR : QOU.Hecke.HoefsmitRepresentation
-            (QOU.Hecke.staircaseStrands k) q A
+            (k * (k + 1) / 2) q A
             (QOU.Hecke.staircasePartition k)] : Prop :=
   QOU.Hecke.HoefsmitRepresentation.HasEigenvalueRatio
     (QOU.Hecke.HoefsmitRepresentation.wordImage
+      (lam := QOU.Hecke.staircasePartition k) (HR := HR)
       (QOU.Hecke.betaEWWord (QOU.Hecke.staircaseStrands k)))
     s
 
 /-- Axiomatic class encoding the staircase EW-residual conjecture. -/
 class StaircaseEWResidual
-    {R : Type*} {A : Type*} [CommRing R] [Inv R] [Ring A]
+    {R A : Type u} [CommRing R] [Inv R] [Ring A]
     [Algebra R A] (q : R) (scale : ℕ → R)
-    [∀ k, QOU.Hecke.HeckeAlgebra R (QOU.Hecke.staircaseStrands k) q A]
+    [∀ k, QOU.Hecke.HeckeAlgebra R (k * (k + 1) / 2) q A]
     [∀ k, QOU.Hecke.HoefsmitRepresentation
-            (QOU.Hecke.staircaseStrands k) q A
+            (k * (k + 1) / 2) q A
             (QOU.Hecke.staircasePartition k)] : Prop where
   /-- For every `k ≥ 2`, the inverse-corner-hook scale `scale k`
   (intended interpretation: `q ^ (1 / (2k − 1))`) is realised as
   a ratio of two positive eigenvalues of the canonical staircase
   β_EW operator on `V_{ρ k}`. -/
   spectral_scale_present :
-    ∀ (k : ℕ), 2 ≤ k → StaircaseEWSpectralContent q (scale k) k
+    ∀ (k : ℕ), 2 ≤ k → StaircaseEWSpectralContent (A := A) q (scale k) k
 
-/-- **Refined conjecture (2026-05-17)**: the specific scale function
+/-! **Refined conjecture (2026-05-17)**: the specific scale function
 `canonicalScale q k := q^(1/(2k-1))` realises the staircase EW-residual
 ratio for the substrate parameter `q`.
 
@@ -159,6 +166,15 @@ empirically-supported specific scale.  The empirical witness
 (`staircase-ew-residual-conjecture.witness.json`) verifies this
 specific scale at k=3 (rel.err 0.13 %) and k=4 (rel.err 0.14 %)
 at `q = q_0 ≈ 1.110`. -/
+/-- **External axiom**: the abstract canonical scale function
+`q^(1/(2k-1))` — meaningful in any ring `R` admitting a `(2k-1)`-th
+root structure.  Specialise to `Real.rpow q (1 / (2k-1))` over `R = ℝ`. -/
+-- Ref: [manuscript] docs/audits/2026-05-06-staircase-ew-residual-conjecture.md
+axiom canonicalScaleAxiom {R : Type*} [CommRing R] [Inv R]
+    (q : R) (k : ℕ) : R
+
+/-- The canonical scale `q^(1/(2k-1))` on the base ring, realised via the
+external `canonicalScaleAxiom`. -/
 noncomputable def canonicalScale {R : Type*} [CommRing R] [Inv R]
     (q : R) (k : ℕ) : R :=
   -- The intended interpretation is `q^(1/(2k-1))`, which requires
@@ -166,13 +182,6 @@ noncomputable def canonicalScale {R : Type*} [CommRing R] [Inv R]
   -- over `R`, we axiomatise the scale; downstream consumers over
   -- `R = ℝ` can specialise via `Real.rpow q (1 / (2 * k - 1))`.
   canonicalScaleAxiom q k
-
-/-- **External axiom**: the abstract canonical scale function
-`q^(1/(2k-1))` — meaningful in any ring `R` admitting a `(2k-1)`-th
-root structure.  Specialise to `Real.rpow q (1 / (2k-1))` over `R = ℝ`. -/
--- Ref: [manuscript] docs/audits/2026-05-06-staircase-ew-residual-conjecture.md
-axiom canonicalScaleAxiom {R : Type*} [CommRing R] [Inv R]
-    (q : R) (k : ℕ) : R
 
 /-! ## Open conjecture — hypothesis-only (no global instance)
 

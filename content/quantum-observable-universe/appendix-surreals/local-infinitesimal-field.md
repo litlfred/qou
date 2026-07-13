@@ -8,7 +8,7 @@ locally from patch to patch.
 ## Setup
 
 Let $X$ be the scheme of quantum observable universes (underlying
-the categorical substrate of the main paper). Following the
+the categorical substrate of this paper). Following the
 points-and-topology framework already in the paper, treat $X$ as a
 functor $\mathrm{CRing} \to \mathrm{Set}$.
 
@@ -72,13 +72,13 @@ birthday-ordered magnitude distribution.
  points collapse to the classical point — but within the halo,
  distinct surreal fluctuations are resolved.
 
-2. **Non-global symmetries**: a symmetry of the main paper's QOU
+2. **Non-global symmetries**: a symmetry of this paper's QOU
  that is global in the archimedean sense may be broken at the
  infinitesimal scale *locally* (at specific points $x$), without
  affecting the classical image. This is analogous to approximate
  isospin / chiral symmetries in particle physics.
 
-3. **Singularity detection**: a "singularity" of the main paper's
+3. **Singularity detection**: a "singularity" of this paper's
  QOU is a point $x_0$ where some quantity diverges. In the
  surreal lift, the divergence has a specific normal-form order
  $\ordw(\cdot)$ — which, by locality, can vary in a neighbourhood
@@ -132,7 +132,7 @@ single-point morphism.
 
 7. Show that there are *no* non-trivial fluctuation distributions
  at leading order beyond the global one — equivalent to
- rigidity of the main-paper QOU.
+ rigidity of this paper QOU.
 
 **Falsification path**: produce two distinct sheaf sections
 $\varepsilon_1, \varepsilon_2$ on $X$ both producing the same
@@ -143,6 +143,5 @@ lift is strictly richer than the archimedean, and the extra
 information is physical.
 
 **Provability assessment**: mathematical layer provable once
-`QOU.AppendixSurreals.ValuationRing` is developed (currently
-pending). Physical layer speculative — depends on
-interpretation.
+the finite-surreal valuation-ring foundations are developed.
+Physical layer speculative — depends on interpretation.

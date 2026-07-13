@@ -18,10 +18,7 @@ M^{n+d} = M^n\!\cdot\!\Big(\sum_{j<d} c_j M^j\Big)
         = \sum_{j<d} c_j\,M^{n+j},
 $$
 where the middle step is `mul_smul_comm` (scalars commute past the operator
-product) and the last is $M^n\!\cdot M^j = M^{n+j}$. This is the Lean theorem
-[`QOU.Mass.prolongation_fixed_depth_recurrence`](#prop:prolonged-periods-fixed-depth),
-verified sorry-free; the finite-rank premise (Cayley--Hamilton) is its
-hypothesis.
+product) and the last is $M^n\!\cdot M^j = M^{n+j}$.
 
 *Period recurrence.* Applying the linear functional $T \mapsto \varphi(T v_0)$
 to both sides and using its additivity and $R$-homogeneity (`map_sum`,
@@ -31,7 +28,7 @@ a_D^{(n+d)} = \sum_{j<d} c_j\,a_D^{(n+j)},
 $$
 a depth-$d$ linear recurrence with $n$-independent kernel $c$. Hence a fixed-depth
 recurrence on the prolonged periods exists, with depth bounded by
-$\operatorname{rank} V$. Identifying $d$ and $c$ with the Bring Picard--Fuchs
+$\mathrm{rank}\, V$. Identifying $d$ and $c$ with the Bring Picard--Fuchs
 operator is the remaining (identification) half of
 [`conj:qdifference-kernel-prolongation-symbol`](#conj:qdifference-kernel-prolongation-symbol).
 $\qquad\blacksquare$

@@ -1,0 +1,110 @@
+{
+  "schema": "witness/v1",
+  "computation": "wlambda-nuclear-braid-connected",
+  "engine": "python+mpmath",
+  "engineVersion": "3.11.15",
+  "scriptFile": "wlambda_nuclear_braid_connected_probe.py",
+  "commitSha": "830526025a7316b8c7d287d255827ac07c7a0452",
+  "scriptHash": "eb0ea09a15f4",
+  "description": "Connected part of the W_lambda-weighted nuclear-braid standard-rep transfer-matrix product for 2H/3He/3H/4He/6Li/12C: localizes the extensive binding channel to the non-abelian (2,1) rep (C_std=0 at A=2, grows with bonds for A>=3). Mechanism probe; NOT a binding closure; no fit.",
+  "generated": "2026-07-11T15:20:08.828456+00:00",
+  "assertions": [
+    {
+      "name": "A2_single_bond_connected_zero",
+      "passed": true,
+      "detail": "2H C_std=0.00e+00 (one bond: nothing to connect)"
+    },
+    {
+      "name": "connected_channel_nonempty_A3plus",
+      "passed": true,
+      "detail": "|C_std|>0 for all A>=3 [0.427, 0.248, 1.018, 0.412, 1.216] (extensive channel NON-EMPTY, localized to std (2,1) rep)"
+    },
+    {
+      "name": "extensive_piece_in_nonabelian_std_channel",
+      "passed": true,
+      "detail": "4He: W_(2,1)*C_std=0.67286 (connected, non-abelian) vs 1-dim factorized parts 0.33395 \u2014 extensive binding is the std connected part"
+    }
+  ],
+  "allPassed": true,
+  "result": {
+    "q0": "1.10997859555733471",
+    "W_21": 0.6606737723480263,
+    "nuclei": {
+      "2H": {
+        "A": 2,
+        "nb": 1,
+        "V_std": 0.39479017303576447,
+        "std_fact": 0.39479017303576447,
+        "C_std": 0.0,
+        "per_bond": 0.0,
+        "sp": 1.0054484345595378,
+        "ap": -1.0054484345595378
+      },
+      "3He": {
+        "A": 3,
+        "nb": 3,
+        "V_std": 0.5047761849054103,
+        "std_fact": 0.0778237081141416,
+        "C_std": 0.4269524767912687,
+        "per_bond": 0.14231749226375623,
+        "sp": 1.1221068372401541,
+        "ap": -0.9107622062303156
+      },
+      "3H": {
+        "A": 3,
+        "nb": 3,
+        "V_std": 0.29343155389557163,
+        "std_fact": 0.04523971669964419,
+        "C_std": 0.2481918371959274,
+        "per_bond": 0.08273061239864248,
+        "sp": 0.9107622062303156,
+        "ap": -1.1221068372401541
+      },
+      "4He": {
+        "A": 4,
+        "nb": 6,
+        "V_std": 1.0219724987109646,
+        "std_fact": 0.003520722507599567,
+        "C_std": 1.018451776203365,
+        "per_bond": 0.16974196270056083,
+        "sp": 1.0219724987109646,
+        "ap": 1.0219724987109646
+      },
+      "6Li": {
+        "A": 6,
+        "nb": 15,
+        "V_std": 0.4123298271958605,
+        "std_fact": 7.09245172615664e-07,
+        "C_std": 0.4123291179506879,
+        "per_bond": 0.027488607863379193,
+        "sp": 1.0501182845772754,
+        "ap": -1.0501182845772754
+      },
+      "12C": {
+        "A": 12,
+        "nb": 66,
+        "V_std": 1.2160540592940856,
+        "std_fact": 7.703444144529042e-28,
+        "C_std": 1.2160540592940856,
+        "per_bond": 0.018425061504455845,
+        "sp": 1.2160540592940856,
+        "ap": 1.2160540592940856
+      }
+    },
+    "non_monotone_in_bond_count": true,
+    "per_bond_C_std": {
+      "3He": 0.14231749226375623,
+      "3H": 0.08273061239864248,
+      "4He": 0.16974196270056083,
+      "6Li": 0.027488607863379193,
+      "12C": 0.018425061504455845
+    },
+    "verdict": "MECHANISM LOCALIZED (no closure): the extensive/connected binding channel is the STANDARD (2,1) rep \u2014 the non-abelian transfer-matrix product over inter-nucleon bonds \u2014 whose connected part C_std vanishes for A=2 and is NON-EMPTY (>0) for A>=3. The 1-dim (sym/alt) reps factorize over bonds and are disconnected/intensive. This is the (2,1) channel that brackets the deuteron f_pn (#2528). HONEST CAVEAT: C_std is NON-MONOTONE in bond count and its per-bond value SHRINKS for heavy nuclei \u2014 the fixed-H_3 braid localizes the channel but does not by itself sustain extensivity past the light nuclei (consistent with the known r18k det-direction non-monotonicity + light-nuclei breakdown). Localizes/confirms the channel is non-empty; does NOT set a scale, land AME magnitudes, or wire anything. No fit."
+  },
+  "context": {
+    "builds_on": "wlambda_transfer_matrix_connected_probe.py + design note",
+    "channel": "(2,1) standard rep = deuteron f_pn channel (#2528)",
+    "structural": "1-dim reps factorize (disconnected); (2,1) is the non-abelian transfer-matrix product (connected)",
+    "scope": "mechanism localization; NOT a closure; no scale/wiring/fit"
+  }
+}

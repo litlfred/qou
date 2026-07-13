@@ -72,6 +72,8 @@ export default chapter({
         "binding-scale-catalan-proof",
         "binding-error-amplification",
         "binding-error-amplification-proof",
+        "deuteron-fusion-frame",
+        "frakD-energy-decomposition",
         "wedderburn-mass-formula",
         "wedderburn-mass-formula-proof",
         "frobenius-s-classification",
@@ -173,6 +175,8 @@ export default chapter({
           label: "sec:mass-algebraic-complex-volume-ladder",
           blocks: [
             "complex-volume-ladder-intro",
+            "phi-b-bar-parity-decomposition",
+            "phi-b-unitary-bar-odd",
             "q-beta-categorical-precision-ladder",
             "q-beta-c3-hopf-three-fold-markov",
             "ck-extraction-from-algebraic-rules",
@@ -256,6 +260,9 @@ export default chapter({
             "two-row-stratum",
             "he4-channel-active-set",
             "he4-two-row-dominance",
+            // Ledger §5 orphan integration (2026-07-12): LR-fusion support
+            // bound conjecture explaining which Wedderburn blocks vanish.
+            "active-set-trace-concentration",
             "markov-trace-frobenius-selection",
             "markov-trace-frobenius-selection-proof",
             // Re-homed orphans: the min-Frobenius-norm collapse T_β = S·1
@@ -280,12 +287,15 @@ export default chapter({
             "bond-order-eq-jet-degree",
             "bond-order-eq-jet-degree-proof",
             "binding-manybody-jet-filtration",
+            "cyclotomic-boundary-at-keystone",
+            "bk-coordination-multiplicity",
             "jet-filtration-binding-extensive",
             "linear-chain-bond-count",
             "binding-genfun-qdifference",
             "binding-genfun-qdifference-proof",
             "binding-closure-conditional",
             "binding-closure-conditional-proof",
+            "universal-binding-architecture",
           ],
         }),
         section({
@@ -328,6 +338,7 @@ export default chapter({
       label: "sec:mass-algebraic-qbeta-formalize-first-gates",
       blocks: [
         "qbeta-formalize-first-gates-intro",
+        "toroidal-harmonics-delta-lambda",
         "q-beta-over-e0-classical-vanishing",
         "q-beta-over-e0-classical-vanishing-proof",
         "qbeta-c8-c10-silver-rationals",
@@ -340,6 +351,7 @@ export default chapter({
         "qbeta-c4-from-c3-c8-product-identity",
         "qbeta-z-recursion-to-ck-recursion-bridge",
         "qbeta-z-recursion-to-ck-recursion-bridge-proof",
+        "qbeta-odd-carrier-hopf-cubic",
         "q-beta-c-2-eq-neg-one-structural",
         "q-beta-c-2-eq-neg-one-structural-proof",
         "q-beta-bar-even-kernel-invariant",
@@ -616,6 +628,8 @@ export default chapter({
             "three-halves-structural-factor",
             "rem-im-q-vs-p-skew",
             "conj-im-q-physical-role",
+            "rem-c3-s-imq-decay-projection",
+            "rem-ohtsuki-tower-bar-parity",
           ],
         }),
         section({
@@ -734,6 +748,11 @@ export default chapter({
         "jet-convergence-classical-limit",
         "wigner-np-pairing",
         "wigner-np-pairing-proof",
+        // Reeb-flow pn-bond magnitude (2026-07-07): the proved
+        // exchange-criticality algebra + the open CWF linking postulate
+        // behind the ²H reeb-flow tier (owner ruling: NEAR-MATCH label).
+        "reeb-pn-magnitude-criticality",
+        "reeb-linking-cwf-normalization",
         "unified-iterative-correction",
         "unified-iterative-correction-proof",
         "unified-iterative-correction-table-data",
@@ -1066,6 +1085,9 @@ export default chapter({
       blocks: [
                 "mass-physical-face-intro",
 "neutron-proton-splitting",
+        // Ledger §5 orphan integration (2026-07-12): H_4 alternating-
+        // channel Habiro-element conjecture for the Δ_pn residual.
+        "flavor-split-habiro-derivation",
         "borromean-baryon-mass-formula",
         "borromean-baryon-interpretation",
         "q-integer-mass-formula",

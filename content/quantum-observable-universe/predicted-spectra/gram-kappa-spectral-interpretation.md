@@ -1,18 +1,12 @@
 **Numerical check at $q_0 = 1.109978595554181\ldots$ (50 dps).**
-The Hoefsmit pipeline
-([Hoefsmit](#conj:hoefsmit-scattering-pipeline)) computes
-$\chi_\lambda(\beta_s), \chi_\lambda(\beta_w)$ in seminormal form.
-At strand count $n = 9$ the dominant blocks are the hook partitions
-$(8,1)$, $(7,1,1)$ and the rectangular $(5,4)$.  Substituting the
-Plancherel weights $w_\lambda = \dim_q^2(V_\lambda)/[n]_q!$ and
-character values yields
+
+The Hoefsmit pipeline ([Hoefsmit](#conj:hoefsmit-scattering-pipeline)) computes $\chi_\lambda(\beta_s)$ and $\chi_\lambda(\beta_w)$ in seminormal form. At strand count $n = 9$, the hook partitions $(8,1)$ and $(7,1,1)$ and the rectangular partition $(5,4)$ are the dominant blocks. Substituting the Plancherel weights $w_\lambda = \dim_q^2(V_\lambda)/[n]_q!$ and character values yields
 
 $$
-  \kappa \;\approx\; 1.722,
+  \kappa \;\approx\; 1.722.
 $$
 
-matching the previous 2-jet hand computation, now derived from the
-Wedderburn block structure with no truncation choice.
+This matches the 2-jet hand computation. It now derives from the Wedderburn block structure without arbitrary truncation.
 
 **Structural comparison.**
 
@@ -21,20 +15,12 @@ Wedderburn block structure with no truncation choice.
 | Ratio of $2{\times}2$ Gram matrix determinants at $J^2$ jet | Plancherel-weighted character product over Wedderburn blocks |
 | 2-jet truncation chosen by hand | Full $\lambda \vdash n$ sum, convergent by Plancherel ($\sum w_\lambda = 1$) |
 | Tied to Bring-surface coordinate calculation | Categorical: depends only on $\chi_\lambda(\beta_\bullet)$ |
-| Result $1.722$ stated as numerical fact | Result $1.722$ determined by which $\lambda$-blocks the genus-$4$ pair occupies |
+| Result $1.722$ stated as numerical fact | Result $1.722$ determined by the $\lambda$-blocks of the genus-$4$ pair |
 
 **Lean handle.**
-The formula evaluates symbolically over $R$ to a $q$-rational
-expression for $\kappa$, or specialises numerically via
-$\iota \colon R \to \mathbb{R}$, $q \mapsto q_0$.  Character values
-$\chi_\lambda(T_{m,n})$ for torus knots are polynomial in $q^{\pm 1}$
-\cite{jones1987}, so the formula reduces to a finite product of
-Laurent monomials.
+
+The formula evaluates symbolically over $R$ to a $q$-rational expression for $\kappa$. It specializes numerically via $\iota \colon R \to \mathbb{R}$ at $q \mapsto q_0$. Character values $\chi_\lambda(T_{m,n})$ for torus knots are polynomial in $q^{\pm 1}$ \cite{jones1987}. The formula reduces to a finite product of Laurent monomials.
 
 **Sensitivity.**
-$\partial \ln \kappa / \partial \ln q$ at $q_0$ measures how
-Wedderburn block weights shift with the substrate parameter.  Because
-$\sum_\lambda w_\lambda = 1$ at every $q$, the sensitivity is bounded
-by $\max_\lambda |c_\lambda^{(s)} c_\lambda^{(w)}| \cdot
-|\partial \ln(\dim_q V_\lambda)/\partial \ln q|$, finite and
-computable.
+
+The logarithmic derivative $\partial \ln \kappa / \partial \ln q$ at $q_0$ measures the shift of Wedderburn block weights with the substrate parameter. Plancherel ensures $\sum_\lambda w_\lambda = 1$ at every $q$. The sensitivity bounds by $\max_\lambda |c_\lambda^{(s)} c_\lambda^{(w)}| \cdot |\partial \ln(\dim_q V_\lambda)/\partial \ln q|$. This bound is finite and computable.

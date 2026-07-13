@@ -1,10 +1,4 @@
-The Hausdorff dimension recurrence
-([Hausdorff recurrence](#rem:hausdorff-dimension-recurrence))
-is the paper's only universal convergence proof: the map
-$q_{n+1} = (q_n^2 - q_n + 1)/q_n$ contracts for all
-$q > 3/4$, with $q = 1$ as a superattracting fixed point
-($F'(1) = 0$).  The $q$-Collatz conjecture has a parallel
-structure — with one critical difference.
+The Hausdorff dimension recurrence ([Hausdorff recurrence](#rem:hausdorff-dimension-recurrence)) provides the only universal convergence proof in this paper. The map $q_{n+1} = (q_n^2 - q_n + 1)/q_n$ contracts for all $q > 3/4$, with $q = 1$ as a superattracting fixed point ($F'(1) = 0$). The $q$-Collatz conjecture shares a parallel structure, but with one critical difference.
 
 ### The Lyapunov function $\Phi = \log_q |P|$
 

@@ -1,36 +1,13 @@
-*Lean sibling: a field $R$ carrying the $q$-data (AGENTS.md §7c); the identity is purely algebraic modulo the Hecke relation.*
-
-**Proposition (Hopf-link symmetric decomposition).** *The Hopf element
-$\sigma_1^2$ of $H_2(q)$ weights the two blocks of
-[`def:van-der-waals-hopf-channel`](#def:van-der-waals-hopf-channel) by the
-squared block eigenvalues:*
-
+*The Hopf element $\sigma_1^2$ of $H_2(q)$ formally weights the two blocks by their squared eigenvalues:*
 $$
-  \sigma_1^2 \;=\; q^2\, e_+ \;+\; q^{-2}\, e_-,
+  \sigma_1^2 = q^2 e_+ + q^{-2} e_-.
 $$
-
-*equivalently, cleared of the $[2]_q = q+q^{-1}$ denominator,*
-
+*Equivalently, cleared of the $[2]_q = q+q^{-1}$ denominator:*
 $$
-  [2]_q\,\sigma_1^2 \;=\; q^2\,(\sigma_1+q^{-1}) \;+\; q^{-2}\,(q-\sigma_1),
+  [2]_q \sigma_1^2 = q^2 (\sigma_1+q^{-1}) + q^{-2} (q-\sigma_1).
 $$
+*This formally derives from the Hecke relation $\sigma_1^2 = (q-q^{-1})\sigma_1 + 1$.*
 
-*which follows from the Hecke relation $\sigma_1^2 = (q-q^{-1})\sigma_1 + 1$
-(Lean `hopf_symmetric_decomposition`, sorry-free, verified Lean 4.24.0).*
+The Hopf element $\sigma_1^2$ strictly splits between the symmetric $e_+$ and antisymmetric $e_-$ blocks. At $q_0$, the symmetric weight fraction is $q^2/(q^2+q^{-2}) \approx :val[vdw_sigma1sq_pct_symmetric]{precision=1}\%$. This split fails to dominate. The van der Waals force avoids corresponding to the $e_+$ block. It identically corresponds to the bar-odd residual $\sinh(2\lambda)(e_+-e_-)$ that the canonical $P_{\mathrm{avg}}$ projection discards. The symmetric block $e_+$ acts strictly as the retained $\cosh$ carrier, wholly distinct from the antisymmetric block $e_-$. Neither block alone constitutes van der Waals.
 
-Thus the Hopf element $\sigma_1^2$
-([`prop:trm-hopf-sigma1-sq-closed-form`](#prop:trm-hopf-sigma1-sq-closed-form))
-splits between the symmetric $e_+$ and antisymmetric $e_-$ blocks, with symmetric
-weight fraction $q^2/(q^2+q^{-2}) \approx :val[vdw_sigma1sq_pct_symmetric]{precision=1, witness=computations/hbond-vdw-sdp.witness.json}\%$
-at $q_0$ — a $\approx 60/40$ split, not a dominant one. The **van der Waals**
-force is **not** this $e_+$ block but the **bar-odd residual**
-$\sinh(2\lambda)(e_+-e_-)$ that the canonical $P_{\mathrm{avg}}$ projection
-discards (the canonical `prop:vdw-pskew-isolation`). The symmetric block $e_+$
-(Markov $q$-dimension $\approx :val[vdw_e_plus_qdim]{precision=3, witness=computations/hbond-vdw-sdp.witness.json}$)
-is the retained $\cosh$ carrier, distinct from the antisymmetric block $e_-$
-($q$-dimension $\approx 0.304$) — **neither block alone is van der Waals**.
-
-This is the structural identification; the molecular dispersion **energy** scale
-is a separate, archimedean (inter-molecular-separation) question — the bare $e_+$
-is $\hbar_q$-scale, and the long-distance suppression to the $\sim 0.5\,$kJ/mol
-molecular van der Waals energy is not fixed by this Hecke decomposition.
+This establishes the formal structural identification. The molecular dispersion energy scale poses a separate archimedean (inter-molecular-separation) question. The bare $e_+$ securely resides at the $\hbar_q$-scale. This Hecke decomposition refuses to arbitrarily fix the long-distance suppression to the $\sim 0.5\,\mathrm{kJ/mol}$ molecular van der Waals energy.

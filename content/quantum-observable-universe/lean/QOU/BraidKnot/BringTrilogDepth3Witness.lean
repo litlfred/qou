@@ -110,7 +110,8 @@ end BringTrilogDepth3Witness
 -- exists in $G^{(3)}(\mathcal{H}_q) \setminus G^{(2)}$ and archimedean-realises
 -- to these components.  The `sorry` represents the **open conjecture** per
 -- §3b — not a missing proof.
+-- Per AGENTS.md §3b-cond we provide NO global instance.
 -- Ref: [manuscript] quantum-observable-universe/mass-theory/bring-trilog-depth-3-witness.ts
-noncomputable instance : BringTrilogDepth3Witness := sorry
+-- noncomputable instance : BringTrilogDepth3Witness := sorry
 
 end QOU.BraidKnot

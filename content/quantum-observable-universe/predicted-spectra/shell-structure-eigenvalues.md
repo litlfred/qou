@@ -1,15 +1,9 @@
 **Proposition (conditional on [`conj:borromean-quark`](#conj:borromean-quark) — shell-structure eigenvalues from photon-electron transfer matrix).**
-The orbital shell structure of an atom is determined by the
-**eigenvalues** of the photon-electron transfer matrix
-$T_{\gamma e}(q)$.  Shell $n$ corresponds to the $n$-th power
-$T_{\gamma e}^n$, and the shell energies satisfy a **Chebyshev
-recurrence** in $q$.
+The **eigenvalues** of the photon-electron transfer matrix $T_{\gamma e}(q)$ determine the orbital shell structure of an atom. Shell $n$ corresponds to the $n$-th power $T_{\gamma e}^n$. The shell energies satisfy a **Chebyshev recurrence** in $q$.
 
 ## The characteristic polynomial
 
-The photon-electron transfer matrix
-([transfer matrix operator](#def:transfer-matrix-operator))
-is $T_{\gamma e} = T_{pp}$:
+The photon-electron transfer matrix ([transfer matrix operator](#def:transfer-matrix-operator)) is $T_{\gamma e} = T_{pp}$:
 
 $$
   T_{\gamma e}(q) = 
@@ -28,7 +22,7 @@ $$
   =  0
 $$
 
-with eigenvalues:
+This yields the eigenvalues:
 
 $$
   \lambda_{\pm}(q)
@@ -50,13 +44,9 @@ $$
 
 ## Shell $n$ from the $n$-th power
 
-Shell $n$ of an atom is the $n$-th power of the transfer
-matrix at the electron-nucleus junction.  Each power
-corresponds to one **R-I move** (Reidemeister I) — one curl
-added to the electron trefoil, increasing the writhe by $1$
-without changing the knot type.
+Shell $n$ of an atom is the $n$-th power of the transfer matrix at the electron-nucleus junction. Each power corresponds to one **R-I move** (Reidemeister I). This adds one curl to the electron trefoil, increasing the writhe by $1$ without altering the knot type.
 
-Diagonalizing $T_{\gamma e} = S \Lambda S^{-1}$:
+We diagonalize $T_{\gamma e} = S \Lambda S^{-1}$:
 
 $$
   T_{\gamma e}^n
@@ -69,7 +59,7 @@ $$
   S^{-1}
 $$
 
-where the eigenvector matrix is:
+The eigenvector matrix is:
 
 $$
   S = 
@@ -79,7 +69,7 @@ $$
   \end{pmatrix}
 $$
 
-The entries of $T_{\gamma e}^n$:
+The entries of $T_{\gamma e}^n$ are:
 
 $$
   (T^n)_{11}
@@ -91,8 +81,7 @@ $$
   \frac{\lambda_+^n - \lambda_-^n}{\lambda_+ - \lambda_-}
 $$
 
-These are **Chebyshev polynomials of the second kind** in the
-variable $\frac{1}{2}(q - q^{-1})$:
+These correspond to **Chebyshev polynomials of the second kind** in the variable $\frac{1}{2}(q - q^{-1})$:
 
 $$
   (T^n)_{21} =  U_{n-1}\!\left(\tfrac{q - q^{-1}}{2}\right)
@@ -100,7 +89,7 @@ $$
 
 ## The traced volume at shell $n$
 
-The Markov-traced volume at shell $n$:
+The Markov-traced volume at shell $n$ is:
 
 $$
   \hat{V}(n, q)
@@ -113,14 +102,14 @@ $$
 
 where $z = 1/(q^{1/2} + q^{-1/2})$ is the Markov parameter.
 
-Define:
+We define:
 
 $$
   \alpha =  z\lambda_+ + 1, \qquad
   \beta =  z\lambda_- + 1
 $$
 
-Then:
+This gives:
 
 $$
   \hat{V}(n, q) = 
@@ -128,8 +117,7 @@ $$
        {\lambda_+ - \lambda_-}
 $$
 
-Since $|\lambda_+| > 1 > |\lambda_-|$, the dominant term for
-large $n$ is:
+Since $|\lambda_+| > 1 > |\lambda_-|$, the dominant term for large $n$ becomes:
 
 $$
   \hat{V}(n, q)  \sim 
@@ -137,8 +125,7 @@ $$
   \qquad (n \gg 1)
 $$
 
-The sub-dominant term $\beta \cdot \lambda_-^n = \beta \cdot (-1)^n / \lambda_+^n$ is an **alternating correction** that
-decays exponentially.
+The sub-dominant term $\beta \cdot \lambda_-^n = \beta \cdot (-1)^n / \lambda_+^n$ provides an **alternating correction** that decays exponentially.
 
 ## The Chebyshev recurrence
 
@@ -154,5 +141,4 @@ $$
   }
 $$
 
-with initial conditions $\hat{V}(0, q) = 1$ (no crossings)
-and $\hat{V}(1, q) = z(q - q^{-1}) + 1$ (one crossing).
+The initial conditions are $\hat{V}(0, q) = 1$ (no crossings) and $\hat{V}(1, q) = z(q - q^{-1}) + 1$ (one crossing).

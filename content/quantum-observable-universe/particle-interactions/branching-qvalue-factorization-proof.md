@@ -1,8 +1,6 @@
 ## Proof
 
-The full character sum distributes over the product structure
-of the
-[per-nucleon decomposition](#def:per-nucleon-channel-decomposition):
+The full character sum distributes over the product structure of the [per-nucleon decomposition](#def:per-nucleon-channel-decomposition):
 
 $$
   \sum_{c_1, \ldots, c_A}
@@ -10,9 +8,7 @@ $$
         - \prod_{m=1}^{A} G_{n_m}(c_m)\Bigr)
 $$
 
-where $n'_m$ is the daughter nucleon type (the changed nucleon
-switches $N \to P$; all others unchanged).  Since the sum over
-$c_m$ factors independently for each nucleon:
+where $n'_m$ is the daughter nucleon type (the changed nucleon switches $N \to P$; all others are unchanged). The sum over $c_m$ factors independently for each nucleon:
 
 $$
   = \Bigl(\prod_{\text{spectator } P} a\Bigr)
@@ -21,6 +17,4 @@ $$
   = a^Z \cdot b^{N-1} \cdot (a - b)
 $$
 
-The factorization is **exact** — no approximation is involved.
-The only inputs are the eight per-nucleon channel values
-$G_P(c)$ and $G_N(c)$, which are rational functions of $q$.
+The factorization is exact — no approximation is involved. The only inputs are the eight per-nucleon channel values $G_P(c)$ and $G_N(c)$, which are rational functions of $q$.

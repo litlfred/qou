@@ -1,45 +1,17 @@
 **Conjecture.**
-*Let $(\mathbf{C}, \varTheta, G, \mathcal{S})$ be the Descartes
-universe at substrate parameter $q = q_0$.  At baryon densities
-$\rho > \rho_c$, where $\rho_c$ is determined by the
-[energy crossover](#prop:borromean-hopf-energy-crossover), the
-ground state of strange quark matter undergoes a topological
-phase transition:*
+*Let $(\mathbf{C}, \varTheta, G, \mathcal{S})$ be the Descartes universe at substrate parameter $q = q_0$. At baryon densities $\rho > \rho_c$, the ground state of strange quark matter undergoes a topological phase transition:*
 
-1. *The Borromean linking $\mathcal{B}_3$ of each baryon is
-   disrupted.*
+*1. The Borromean linking $\mathcal{B}_3$ of each baryon is disrupted.*
+*2. Quarks recombine into [Hopf diquark](#def:hopf-diquark) Cooper pairs $D_{[ij]}^{[ab]}$ in the color-antitriplet channel.*
+*3. The condensate of all nine flavor-color diquark species spontaneously breaks $\mathrm{SU}(3)_c \times \mathrm{SU}(3)_L \times \mathrm{SU}(3)_R$ to the diagonal $\mathrm{SU}(3)_{c+L+R}$, realizing color-flavor locking.*
+*4. The Milnor invariant $\bar{\mu}(123)$ of the Borromean link transitions from $1$ in the confined phase to $0$ in the CFL phase. This serves as the topological order parameter of the transition.*
 
-2. *Quarks recombine into [Hopf diquark](#def:hopf-diquark)
-   Cooper pairs $D_{[ij]}^{[ab]}$ in the color-antitriplet
-   channel.*
+**Milnor order parameter.**
+The Borromean link exhibits pairwise linking numbers $\mathrm{lk}(i,j) = 0$ but Milnor triple linking $\bar{\mu}(123) = 1$ ([Borromean baryon](#def:borromean-baryon)). This triple invariant defines confinement via inseparability without pairwise linking.
 
-3. *The condensate of all nine flavor-color diquark species
-   spontaneously breaks*
-   $\mathrm{SU}(3)_c \times \mathrm{SU}(3)_L \times \mathrm{SU}(3)_R$
-   *to the diagonal*
-   $\mathrm{SU}(3)_{c+L+R}$*, realizing color-flavor locking.*
+In the CFL phase, pairs of quarks are Hopf-linked: $\mathrm{lk}(i,j) = \pm 1$ for all $i \neq j$. The Milnor triple linking becomes $\bar{\mu}(123) = 0$. Triple inseparability yields to pairwise binding.
 
-4. *The Milnor invariant $\bar{\mu}(123)$ of the Borromean link
-   — which is $1$ in the confined phase — transitions to $0$ in
-   the CFL phase.  This is the topological order parameter of
-   the transition.*
-
-**The Milnor order parameter.**
-
-The Borromean link has pairwise linking numbers
-$\mathrm{lk}(i,j) = 0$ but Milnor triple linking
-$\bar{\mu}(123) = 1$
-([Borromean baryon](#def:borromean-baryon)).  This triple
-invariant detects the "inseparability without pairwise linking"
-that IS confinement.
-
-In the CFL phase, each pair of quarks is Hopf-linked:
-$\mathrm{lk}(i,j) = \pm 1$ for all $i \neq j$.  The Milnor
-triple linking of the reconfigured link is
-$\bar{\mu}(123) = 0$ — the triple inseparability has been
-traded for pairwise binding.
-
-The transition is characterized by:
+The transition features:
 
 | Invariant | Borromean (confined) | CFL (superconducting) |
 |-----------|---------------------|----------------------|
@@ -49,68 +21,33 @@ The transition is characterized by:
 | Stable diquarks | No | Yes (condensate) |
 | Mass source | Borromean volume | Crossing energy |
 
-The transition is **not** a smooth deformation: continuous
-interpolation between $\bar{\mu} = 1$ and
-$\bar{\mu} = 0$ is impossible — the Milnor invariant is a concordance
-invariant and jumps discontinuously.  This is a **first-order
-topological phase transition**.
+Continuous interpolation between $\bar{\mu} = 1$ and $\bar{\mu} = 0$ is impossible. The Milnor invariant is a concordance invariant and jumps discontinuously. This forces a first-order topological phase transition.
 
-**Mechanism: color-tube overlap.**
+**Color-tube overlap.**
+The three color tubes of Bring's surface ([color tube coordinates](#def:color-tube-coordinates)) possess a transverse scale set by the resolvent separation $|w_k - w_l| \sim |c_r|$. At low density, color tubes of adjacent baryons remain isolated. At density $\rho$, inter-baryon spacing scales as $\rho^{-1/3}$.
 
-The three color tubes of Bring's surface
-([color tube coordinates](#def:color-tube-coordinates)) have a
-characteristic transverse scale set by the resolvent separation
-$|w_k - w_l| \sim |c_r|$.  At low density, the color tubes of
-adjacent baryons are well-separated.  At density $\rho$, the
-inter-baryon spacing scales as $\rho^{-1/3}$.
+When $\rho^{-1/3} \lesssim |c_r|$, adjacent color tubes overlap. A quark in color tube $a$ of baryon $1$ forms a Hopf link with a quark in color tube $b$ of baryon $2$, yielding a [Hopf diquark](#def:hopf-diquark). This inter-baryon Hopf linking disrupts the intra-baryon Borromean structure. Once a quark Hopf-links externally, its internal Borromean triple breaks.
 
-When $\rho^{-1/3} \lesssim |c_r|$, the color tubes of
-adjacent baryons **overlap**.  Within the overlap region, a
-quark in color tube $a$ of baryon $1$ can form a Hopf link
-with a quark in color tube $b$ of baryon $2$ — a
-[Hopf diquark](#def:hopf-diquark).  This inter-baryon
-Hopf linking disrupts the intra-baryon Borromean structure:
-once a quark is Hopf-linked to an external partner, its
-Borromean triple is broken (removing one component frees the
-other two).
-
-The cascade is:
+The cascade proceeds as follows:
 1. Color tubes overlap at $\rho \sim \rho_c$.
-2. Inter-baryon Hopf diquarks form spontaneously (energetically
-   favorable in the overlap region).
+2. Inter-baryon Hopf diquarks form spontaneously.
 3. Each diquark breaks a Borromean triple, freeing two quarks.
 4. Freed quarks form new diquarks with neighbors.
-5. The entire system rearranges into a Hopf-diquark condensate.
+5. The system rearranges into a Hopf-diquark condensate.
 
-**The $\epsilon^{abc}$ from linking orientation.**
+**$\epsilon^{abc}$ from linking orientation.**
+In the CFL phase, the pairing pattern locks color and flavor: $\langle \mathfrak{q}_i^a \mathfrak{q}_j^b \rangle \propto \epsilon^{abc}\epsilon_{ijk}$ \cite{alford1999}. This antisymmetric tensor arises from the Hopf linking number.
 
-In the CFL phase, the pairing pattern locks color and flavor:
-$\langle \mathfrak{q}_i^a \mathfrak{q}_j^b \rangle \propto \epsilon^{abc}\epsilon_{ijk}$ \cite{alford1999}.  In QOU,
-the antisymmetric tensor arises from the **Hopf linking number**:
-
-- The Hopf link $\mathcal{L}_H$ has linking number
-  $\mathrm{lk} = +1$ for a specific orientation of the two
-  components.
-- Exchanging the two components reverses the linking number:
-  $\mathrm{lk}(a, b) = -\mathrm{lk}(b, a)$.
-- For three color tubes $(r, g, b)$, the three independent
-  diquark orientations form the antisymmetric tensor:
-
+The Hopf link $\mathcal{L}_H$ gives linking number $\mathrm{lk} = +1$ for a chosen orientation. Exchanging components reverses the linking number: $\mathrm{lk}(a, b) = -\mathrm{lk}(b, a)$. For three color tubes $(r, g, b)$, the three independent diquark orientations produce the antisymmetric tensor:
 $$
   \mathrm{lk}(a, b)
   = 
   \epsilon^{abc}\delta_{c, \text{spectator}},
 $$
+where the "spectator" color $c$ denotes the tube excluded from the diquark. This generates the CFL pairing pattern.
 
-  where the "spectator" color $c$ is the tube not participating
-  in the diquark.  This automatically generates the CFL
-  pairing pattern.
-
-**The CFL gap.**
-
-The superconducting gap $\Delta_{\mathrm{CFL}}$ — the energy
-cost of breaking a Cooper pair — equals the crossing energy
-of the Hopf link binding the diquark:
+**CFL gap.**
+The superconducting gap $\Delta_{\mathrm{CFL}}$ represents the energy required to break a Cooper pair. It equals the crossing energy of the binding Hopf link:
 
 $$
   \Delta_{\mathrm{CFL}}
@@ -121,9 +58,7 @@ $$
    \approx  2.011 \quad\text{Skein units}.
 $$
 
-This is the strong-channel energy of a single Hopf-link crossing
-pair.  In physical units, converting via the proton mass scale
-$m_p \approx 938$ MeV and the Borromean volume ratio:
+This is the strong-channel energy of a single Hopf-link pair. Converting to physical units via the proton mass scale $m_p \approx 938$ MeV and the Borromean volume ratio gives:
 
 $$
   \Delta_{\mathrm{CFL}}^{\mathrm{phys}}
@@ -136,19 +71,10 @@ $$
    \approx  2.5  \mathrm{MeV}.
 $$
 
-This is close to perturbative QCD estimates of
-$\Delta_{\mathrm{CFL}} \sim 10\text{--}100$ MeV at
-asymptotically high density, given that the QOU estimate
-uses no fitting parameters.  The discrepancy suggests that
-multi-diquark coherence effects (BCS enhancement from the
-condensate) amplify the single-pair gap by a factor of
-$\sim 10\text{--}40$.
+This estimate aligns with perturbative QCD predictions of $\Delta_{\mathrm{CFL}} \sim 10\text{--}100$ MeV at high density. Multi-diquark coherence effects likely amplify the single-pair gap.
 
 **Phase sequence in neutron stars.**
-
-The [strangelet crossing energy](#prop:strangelet-crossing-energy)
-and [energy crossover](#prop:borromean-hopf-energy-crossover)
-together predict a layered structure in neutron stars:
+The [strangelet crossing energy](#prop:strangelet-crossing-energy) and [energy crossover](#prop:borromean-hopf-energy-crossover) establish a layered structure in neutron stars:
 
 | Layer | Density | Topology | Phase |
 |-------|---------|----------|-------|
@@ -157,27 +83,10 @@ together predict a layered structure in neutron stars:
 | Inner core | $2\rho_0 < \rho < \rho_c$ | Borromean dissolution | Quark matter |
 | Deep core | $\rho > \rho_c$ | $D_{[ij]}^{[ab]}$ Hopf condensate | CFL superconductor |
 
-The layered structure is a direct consequence of the two
-topological invariants: $\bar{\mu}(123)$ (confinement) and
-$\mathrm{lk}(i,j)$ (diquark binding) cannot both be nonzero
-simultaneously.  The transition between layers is first-order
-(discontinuous jump in $\bar{\mu}$).
+The topological invariants $\bar{\mu}(123)$ and $\mathrm{lk}(i,j)$ cannot simultaneously take non-zero values. The transition between layers is first-order. It is indicated by the discontinuous jump in $\bar{\mu}$.
 
 **Falsifiability.**
-
-The conjecture predicts:
-
-1. **Neutron star mass-radius relation**: the CFL core has
-   a stiffer equation of state than nuclear matter (zero
-   volume contribution to mass $\to$ lower density at given
-   pressure).  This should produce a kink in the $M(R)$
-   relation at $\rho_c$.
-
-2. **Cooling rate**: the CFL gap $\Delta_{\mathrm{CFL}} \approx 2.5$ MeV suppresses neutrino emission below
-   $T \sim \Delta_{\mathrm{CFL}} / k_B \sim 3 \times 10^{10}$ K.
-   Stars with CFL cores cool more slowly at intermediate ages.
-
-3. **Gravitational wave signature**: the first-order
-   transition at $\rho_c$ produces a density discontinuity
-   that modifies the $f$-mode oscillation spectrum of
-   neutron stars, detectable by LIGO/Virgo.
+The conjecture provides three predictions.
+1. **Neutron star mass-radius relation.** The CFL core possesses a stiffer equation of state than nuclear matter. The zero-volume contribution to mass results in lower density at a given pressure. This induces a kink in the $M(R)$ relation at $\rho_c$.
+2. **Cooling rate.** The CFL gap $\Delta_{\mathrm{CFL}} \approx 2.5$ MeV suppresses neutrino emission below $T \sim \Delta_{\mathrm{CFL}} / k_B \sim 3 \times 10^{10}$ K. Stars with CFL cores cool more slowly at intermediate ages.
+3. **Gravitational wave signature.** The first-order transition at $\rho_c$ introduces a density discontinuity. This shifts the $f$-mode oscillation spectrum of neutron stars. This signature is accessible to LIGO/Virgo.

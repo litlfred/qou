@@ -1,0 +1,58 @@
+{
+  "computation": "qbeta-exotic-lusztig-magnitude-preflight",
+  "description": "N4 formalize-first prune of the exotic-signed Lusztig c_3 escape: the |\u03a3|~40 target is a (q;q)_2 divisor artifact; the Demazure-Lusztig operator's O(1) character magnitude needs rank>=9 to reach it (physically absurd). Owner-authorized Subgoal-2 (2026-07-07).",
+  "audit_only": true,
+  "tier": "structural-exact (magnitude/rank bounds; no fit, no anchors beyond q0 eval)",
+  "computedAt": "2026-07-07T12:19:19.353325+00:00",
+  "commitSha": "b9ee6b136e84df356e4dcd7f8480cf23e128aa8b",
+  "engine": "sympy",
+  "engineVersion": "1.14.0",
+  "scriptFile": "qbeta_exotic_lusztig_magnitude_preflight.py",
+  "scriptHash": "480fe22fdd41",
+  "assertions": [
+    {
+      "name": "target_is_qq2_divisor_artifact_~-39",
+      "passed": true
+    },
+    {
+      "name": "demazure_lusztig_len2_magnitude_bounded_~1.2",
+      "passed": true
+    },
+    {
+      "name": "required_rank_geq_9_physically_absurd",
+      "passed": true
+    },
+    {
+      "name": "demazure_lusztig_eigsum_is_h",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "result": {
+    "qq2_at_q0": 0.025521474931992,
+    "sigma_target_c2_over_qq2": -39.18268840906477,
+    "demazure_lusztig_len2_max_magnitude": 1.2320556004,
+    "len2_weyl_counts_S3_to_S10": {
+      "3": 2,
+      "4": 5,
+      "5": 9,
+      "6": 14,
+      "7": 20,
+      "8": 27,
+      "9": 35,
+      "10": 44
+    },
+    "terms_needed_for_target": 31.802694940344978,
+    "min_rank_required": 9,
+    "nucleon_physical_rank": "3-4 (H_3/H_4 Hecke)",
+    "verdict": "N4 NARROWING (scope-(a)): the exotic-signed Lusztig escape's |\u03a3 D_w| ~ 39.4 requirement is an ARTIFACT of the Composite-1 u-series ansatz routing c_2 through the tiny (q;q)_2 \u2248 0.026 divisor -- the u-re-expansion mechanism KC17 showed is obstructed, and c_2 = -1 is already proved without it (Kashiwara f\u0303\u2081\u00b2; eval-map KC18). The Demazure-Lusztig operator (eigenvalues q, -1/q; eigenvalue-sum = h, the KC18 odd-channel carrier) has length-2 character magnitude <= q0^2 ~ 1.23, so reaching |\u03a3| ~ 40 needs ~32 length-2 Weyl elements \u21d2 rank n >= 9 -- physically absurd for a nucleon (H_3/H_4 Hecke, rank 3-4). Combined with N1-N3 + Lusztig 1990 positivity, the physically-motivated Demazure-Lusztig family does NOT escape. Unphysical-rank / unnatural-magnitude conventions are not excluded (scope-(a), not a convention-independent impossibility proof) but are categorically unmotivated and, per KC18, unnecessary. Recommendation stands: Option A (c_3 CAL-3-anchored). NO fit, NO c_k value, nothing wired."
+  },
+  "context": {
+    "axis": "z->c_k f-map keystone: exotic-signed Lusztig escape (bean 8z8k)",
+    "scope": "docs/scope/2026-06-06-qbeta-klr-exotic-signed-lusztig-bounded-magnitude-scope.md",
+    "kc17_obstruction": "docs/audits/2026-07-07-z-ck-fmap-b3u-uside-transfer-obstruction.md",
+    "kc18_eval_map": "docs/audits/2026-07-07-z-ck-fmap-eval-map-bar-decomposition.md",
+    "c2_proved": "content/.../q-beta-c-2-eq-neg-one-structural.lean (Kashiwara f\u0303\u2081\u00b2)",
+    "menu_state": "docs/coordination/1ppq-qbeta.md cont.18 (Option A reinforced)"
+  }
+}

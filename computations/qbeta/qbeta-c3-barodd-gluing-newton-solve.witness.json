@@ -1,0 +1,77 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-11T15:10:15.897645+00:00",
+  "commitSha": "082eaea02583f466de4f7cb0de8739b3b774ddbc",
+  "assertions": [
+    {
+      "name": "gluing_complete_factor_minus_one",
+      "computed": 1.988296816049215e-41,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-25,
+      "source": "Thurston figure-eight: z(z−1)=−1 at complete z=e^{iπ/3}"
+    },
+    {
+      "name": "newton_recovers_vol_4_1",
+      "computed": 4.1282603944519646e-18,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-10,
+      "source": "gluing Newton solve at m=1 gives Vol(4₁)=D(z)+D(w)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 38,
+  "computation": "qbeta-c3-barodd-gluing-newton-solve",
+  "scriptFile": "qbeta_c3_barodd_gluing_newton_solve.py",
+  "scriptHash": "6155d3eb7b54",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Direct Newton solve of Thurston's gluing equations for 4₁ (z(z−1)w(w−1)=1, w=m²z), computing the complex volume 𝔙=Vol+iCS whose imaginary part is the c₃ bar-odd S (conj:binding-qbeta-complex-volume). Validated: m=1 recovers Vol(4₁)=2.029883213 (10 digits), CS=0. Leading Im 𝔙 = (√3/2)|u|²sin(2 arg u). The open link is q₀→m (Φ_q-pole-seeded Newton, conj:algebraic-geometric-dilog-equivalence), shown near-singular by the anchor-sensitivity. Scope-(a); C14; m(q₀) NOT fitted; no c_k wired.",
+  "contentBlock": "prop:phi-b-unitary-bar-odd",
+  "data": {
+    "complete_structure": {
+      "z_z_minus_1": "(-1.0 - 1.98829681605e-41j)",
+      "Vol": "2.02988321281930725",
+      "vol_err_vs_Vol_4_1": 4.1282603944519646e-18,
+      "CS": 0.0
+    },
+    "deformation_V_of_m": [
+      {
+        "arg_u": "0.3",
+        "Vol": "2.02121194167",
+        "CS_leading": "0.0195597890406"
+      },
+      {
+        "arg_u": "0.785398",
+        "Vol": "2.02119055133",
+        "CS_leading": "0.0346410161514"
+      },
+      {
+        "arg_u": "1.0",
+        "Vol": "2.02119884256",
+        "CS_leading": "0.0314989868491"
+      }
+    ],
+    "open_link": {
+      "map": "q0 -> m (meridian holonomy)",
+      "mechanism": "Phi_q-pole-seeded Newton on gluing equations (thurston-relaxation)",
+      "conjecture": "conj:algebraic-geometric-dilog-equivalence",
+      "near_singular": "dc3/dq~4.66e6 => smooth m(q0) excluded; phase accumulates (RoU)",
+      "S_identity": "S = Im V (conj:binding-qbeta-complex-volume)"
+    }
+  }
+}

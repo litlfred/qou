@@ -60,7 +60,6 @@ from pathlib import Path as _Path  # noqa: E402
 _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 del _sys, _Path, _bridge
-import json, subprocess
 from pathlib import Path
 
 import sympy as sp
@@ -302,14 +301,14 @@ def main():
             "delta-m-np-redirect",
             "item-1-closure",
         ],
-        "scriptCommitSha": (
-            subprocess.check_output(["git", "rev-parse", "HEAD"])
-            .decode().strip()
-        ),
     }
-    out_path = Path(__file__).parent / "bowtie-q-channel-projection-probe.witness.json"
-    out_path.write_text(json.dumps(witness, indent=2, sort_keys=True) + "\n")
-    print(f"  Witness: {out_path.relative_to(Path.cwd())}")
+    from witness_base import WitnessBuilder
+    out_path = WitnessBuilder.wrap_legacy(
+        "bowtie-q-channel-projection-probe", witness,
+        script_path=__file__, engine="sympy",
+        output_dir=Path(__file__).resolve().parent.parent,
+    ).save()
+    print(f"  Witness: {Path(out_path).name}")
 
 
 if __name__ == "__main__":

@@ -7,7 +7,7 @@ Per the user-picked next step "Prove additive composition rule
 categorically": the candidate linking_weight is
   λ(q) = 1/(1 − h·q^{10}) + 1/(1 − h⁴) − 1
                 ↑                 ↑
-                Bring color-tube  Faddeev recursion at h⁴
+                Bring color-tube  compact-q-dilog recursion at h⁴
                 (driver i + Bring)  (driver i + KLR positivity)
 
 The composition is ADDITIVE (108 ppm m_p match) not MULTIPLICATIVE
@@ -23,12 +23,12 @@ audit):
 
 (H2) **S_4 ↓ S_3 restriction.** The restriction H_4 → H_3 splits each
      λ ⊢ 4 into a sum of μ ⊢ 3. If the Bring color-tube belongs to the
-     "remaining-after-restriction" piece and Faddeev h⁴ belongs to a
+     "remaining-after-restriction" piece and compact-q-dilog h⁴ belongs to a
      pure H_3 piece, the linking_weight is additive.
 
 (H3) **Half-symmetric Frobenius reciprocity at H_4.** The Family A
      linking_weight is (1/4) Σ_{λ ⊢ 4} dim_q V_λ — a SUM over partitions
-     of 4. If the canonical Bring + Faddeev refinement keeps this
+     of 4. If the canonical Bring + compact-q-dilog refinement keeps this
      sum-over-partitions structure (vs replacing it with a product),
      the composition is forced additive by Frobenius reciprocity.
 
@@ -111,7 +111,7 @@ def main() -> int:
     print("    living in different Wedderburn blocks (e.g. Bring color-tube")
     print("    in the (3,1)+(2,1,1) channels carrying 9 = d_λ² + d_λ² each")
     print("    summing to 9+9=18 = 2·9 with the diagonal d_λ=1 piece; the")
-    print("    Faddeev h⁴ lives in the bar-invariant (2,2) block")
+    print("    compact-q-dilog h⁴ lives in the bar-invariant (2,2) block")
     print()
 
     # ── Hypothesis 2: S_4 ↓ S_3 restriction ─────────────────────
@@ -135,7 +135,7 @@ def main() -> int:
     print("  (Family A = (1/4) Σ_{λ ⊢ 4} dim_q V_λ at H_4).")
     print()
     print("  → Bring color-tube lives at H_4 (Bring's surface χ=-6 ↔ 5 partitions of 4)")
-    print("    Faddeev h⁴ correction lives at H_4 (bar-invariant Z/2 fold at level n=4)")
+    print("    compact-q-dilog h⁴ correction lives at H_4 (bar-invariant Z/2 fold at level n=4)")
     print()
     print("  The two factors both live at H_4 — ADDITIVE composition matches the")
     print("  (1/4) Σ structure of Family A.")
@@ -152,7 +152,7 @@ def main() -> int:
     print("      = 5/2 + (3/4)h²")
     print()
     print("This is an ARITHMETIC mean of partition dimensions — INHERENTLY ADDITIVE")
-    print("structure (sum-over-partitions). The Bring + Faddeev refinement must")
+    print("structure (sum-over-partitions). The Bring + compact-q-dilog refinement must")
     print("preserve this additive shape; multiplicative composition would BREAK")
     print("the Frobenius reciprocity that gives Family A its (1/4)·Σ form.")
     print()
@@ -220,13 +220,13 @@ def main() -> int:
     )
     w.set_description(
         "Probe of the categorical origin of the ADDITIVE composition rule "
-        "for the two Faddeev factors in the Bring + Faddeev h⁴ candidate "
+        "for the two Faddeev factors in the Bring + compact-q-dilog h⁴ candidate "
         "linking_weight. Tests 4 hypotheses (H_4 Wedderburn direct sum, "
         "S_4 ↓ S_3 restriction, half-symmetric Frobenius reciprocity, "
         "KLR positivity / Kashiwara crystal). All four converge on "
         "ADDITIVE as the canonical composition: the Family A linking_weight "
         "(1/4)·Σ_{λ ⊢ 4} dim_q V_λ has inherent sum-over-partitions structure; "
-        "Bring color-tube and Faddeev h⁴ both decompose as KLR canonical-basis "
+        "Bring color-tube and compact-q-dilog h⁴ both decompose as KLR canonical-basis "
         "sums with positive integer coefficients; Frobenius reciprocity + KLR "
         "positivity force the additive composition. Empirical match (additive "
         "108 ppm vs multiplicative 1243 ppm at q_0) is consistent with the "
@@ -244,7 +244,7 @@ def main() -> int:
             "label": "H2 — S_4 ↓ S_3 restriction",
             "claim": "Both factors live at H_4; (1/4)·Σ is the Family A inheritance",
             "supports_additive": True,
-            "load_bearing_step": "Verify Bring color-tube and Faddeev h⁴ are both H_4-level (not H_3 or H_5)",
+            "load_bearing_step": "Verify Bring color-tube and compact-q-dilog h⁴ are both H_4-level (not H_3 or H_5)",
         },
         {
             "label": "H3 — Half-symmetric Frobenius reciprocity",
@@ -263,7 +263,7 @@ def main() -> int:
                "All 4 hypotheses converge on additive composition. The remaining "
                "load-bearing step (research-grade) is the specific partition-channel "
                "assignment proof: WHICH 4 of the 5 H_4 partition blocks Bring color-tube "
-               "occupies, vs WHICH 1 contains the Faddeev h⁴ correction.")
+               "occupies, vs WHICH 1 contains the compact-q-dilog h⁴ correction.")
 
     w.add_assertion(
         "additive_composition_supported_by_all_4_hypotheses",

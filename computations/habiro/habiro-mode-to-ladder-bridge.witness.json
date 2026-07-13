@@ -1,8 +1,8 @@
 {
   "engine": "python+sympy",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-18T03:03:48.956183+00:00",
-  "commitSha": "76b691a5e6b798d7dcfb7136c0a3a2d19eb49fa8",
+  "engineVersion": "python 3.13.12",
+  "computedAt": "2026-07-07T13:40:06.215216+00:00",
+  "commitSha": "85da4f43133d9d70ca3582f4fa4f31771b5ec3f1",
   "assertions": [
     {
       "name": "both_candidates_scale_fix_solvable",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 1699,
+  "durationMs": 705,
   "computation": "habiro-mode-to-ladder-bridge",
   "scriptFile": "habiro_mode_to_ladder_bridge.py",
-  "scriptHash": "1e2187407e27",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "48061f964e52",
+  "scriptCommitSha": "c4ab12b6302fa62343f303820d6efb8e2667719d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -26,9 +26,12 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "Executes the PR #1622 open bridge: the change of variable u=√q ↦ u_L=b·ℏ_q² that reads the ladder c_k off the exact Δtr_M mode decomposition. Δtr_M expressed in ℏ_q is an ordinary power series; u_L=b·ℏ² makes even-in-ℏ rungs the integer-u_L ladder (G_k=a_2k/b^k, anchor-independent constants — the only non-C1-refuted path) and odd-in-ℏ rungs the bar-odd half-integer remainder. Peels c_2..c_4 with c_2=−1 fixing the scale; contrasts the anchor-independent formal coefficients against the naive real-q analytic control (predicted C1-refuted). Exact symbolic; tiered; no fit; no wiring.",
   "contentBlock": "prop:q-beta-categorical-precision-ladder",
@@ -63,8 +66,8 @@
       },
       "c_numeric": {
         "c_2": "-1.00000000000000000000000000000",
-        "c_3": "-1.49691695381643613739854909583",
-        "c_4": "-2.11521476470687473541995680791"
+        "c_3": "-1.49691695322654196968759384677",
+        "c_4": "-2.11521476303977777358830853580"
       },
       "scale_N": "32*b**2/77"
     },
@@ -76,8 +79,8 @@
       },
       "c_numeric": {
         "c_2": "-1.00000000000000000000000000000",
-        "c_3": "-1.40076083004697756607260062960",
-        "c_4": "-1.86480921020540024947180022514"
+        "c_3": "-1.40076082949497590566252271425",
+        "c_4": "-1.86480920873565929427384589093"
       },
       "scale_N": "8*b**2/9"
     },
@@ -90,15 +93,15 @@
           "tier": "derived"
         },
         "c_3": {
-          "bridge": "-1.49691695381643613739854909583",
+          "bridge": "-1.49691695322654196968759384677",
           "stated": "-2.00000000000000000000000000000",
-          "rel_to_stated": "0.251541523091781931300725452087",
+          "rel_to_stated": "0.251541523386729015156203076613",
           "tier": "refuted"
         },
         "c_4": {
-          "bridge": "-2.11521476470687473541995680791",
-          "stated": "-1.13312094258794909885709826968",
-          "rel_to_stated": "0.866715798117638941399409785044",
+          "bridge": "-2.11521476303977777358830853580",
+          "stated": "-1.13312094437407740556944287932",
+          "rel_to_stated": "0.866715793703908073332767952910",
           "tier": "refuted"
         }
       },
@@ -110,15 +113,15 @@
           "tier": "derived"
         },
         "c_3": {
-          "bridge": "-1.40076083004697756607260062960",
+          "bridge": "-1.40076082949497590566252271425",
           "stated": "-2.00000000000000000000000000000",
-          "rel_to_stated": "0.299619584976511216963699685200",
+          "rel_to_stated": "0.299619585252512047168738642873",
           "tier": "refuted"
         },
         "c_4": {
-          "bridge": "-1.86480921020540024947180022514",
-          "stated": "-1.13312094258794909885709826968",
-          "rel_to_stated": "0.645728306765153559879762603209",
+          "bridge": "-1.86480920873565929427384589093",
+          "stated": "-1.13312094437407740556944287932",
+          "rel_to_stated": "0.645728302873933570556756486312",
           "tier": "refuted"
         }
       }

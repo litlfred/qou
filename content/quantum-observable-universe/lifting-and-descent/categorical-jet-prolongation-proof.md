@@ -1,9 +1,4 @@
-
-The Frobenius--Hopf structure on $J^1(A)$ is inherited from $A$ via the
-jet prolongation functor. The induced fibre functor $\tau'$ is defined
-by composition with the canonical projection $J^1(A) \to A$, and the
-substrate parameter $q$ carries over unchanged. The commutativity of
-the diagram
+The Frobenius--Hopf structure on $J^1(A)$ inherits from $A$ via the jet prolongation functor. The induced fibre functor $\tau'$ is defined by composition with the canonical projection $J^1(A) \to A$, preserving the substrate parameter $q$. The commutativity of the diagram
 
 ```tex
 \begin{equation}
@@ -16,7 +11,4 @@ the diagram
 \end{equation}
 ```
 
-follows from the universal property of the jet bundle: $j^1$ is the
-universal first-order differential operator, so any connection $\nabla$
-on $A$ lifts uniquely to $\nabla'$ on $J^1(A)$ making the square
-commute.
+follows from the jet bundle's universal property. Because $j^1$ is the universal first-order differential operator, any connection $\nabla$ on $A$ lifts uniquely to $\nabla'$ on $J^1(A)$, forcing the square to commute.

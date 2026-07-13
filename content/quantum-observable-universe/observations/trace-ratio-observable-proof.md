@@ -1,4 +1,3 @@
-**Proof.**
 From the factorization theorem:
 
 $$
@@ -12,14 +11,9 @@ $$
   \frac{\hat{V}_i^{\mathrm{par}}}{\hat{V}_i^{\mathrm{dau}}}.
 $$
 
-For generators $i > p$: the crossings from nucleon $i$ to
-nucleons $j > i$ are identical in parent and daughter (neither
-nucleon $i$ nor any $j > i$ changed type).  Therefore
-$\hat{V}_i^{\mathrm{par}} = \hat{V}_i^{\mathrm{dau}}$ and
-the ratio is $1$.  Only generators $i = 0, \ldots, p$ contribute.
+For generators $i > p$, the crossings from nucleon $i$ to nucleons $j > i$ are identical in parent and daughter because neither nucleon $i$ nor any $j > i$ changed type. Therefore $\hat{V}_i^{\mathrm{par}} = \hat{V}_i^{\mathrm{dau}}$ and the ratio is $1$. Only generators $i \leq p$ contribute.
 
-The transition matrix element is the Skein amplitude at the
-beta-decay vertex, which is proportional to the trace ratio:
+The transition matrix element is the Skein amplitude at the beta-decay vertex, which is proportional to the trace ratio:
 
 $$
   |\mathcal{M}_q|^2
@@ -32,4 +26,4 @@ $$
   \right|^2
 $$
 
-where $\mathrm{skein\_amp} = q^{1/2} - q^{-1/2}$.  $\square$
+where $\mathrm{skein\_amp} = q^{1/2} - q^{-1/2}$. $\square$

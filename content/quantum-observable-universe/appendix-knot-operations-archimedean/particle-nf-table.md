@@ -41,8 +41,8 @@ own knot type.
 
 2. **Down quark** $\mathfrak{d} = \sigma_0^{-1} = \sigma_0 -
    (q - q^{-1})\mathbf{1}$.  The negative crossing orientation
-   bleeds the Hecke amplitude $-\mathrm{HA} \approx -0.209$ (with
-   $\mathrm{HA} = q - q^{-1}$) into the $\gamma$ (identity)
+   bleeds the Hecke amplitude $-h_{\mathrm{A}} \approx -0.209$ (with
+   $h_{\mathrm{A}} = q - q^{-1}$) into the $\gamma$ (identity)
    channel.  This leakage is the origin of the $\mathfrak{d}$--$\mathfrak{u}$
    mass splitting.
 
@@ -56,14 +56,14 @@ own knot type.
    Hopf link $\mathcal{L}_H$ from [Definition](#def:borromean-baryon):
    $B = \mathcal{B}_3 \oplus \mathcal{L}_H$.
 
-5. **Hopf self-link** $\sigma_i^2 = \mathrm{HA}\cdot\sigma_i +
+5. **Hopf self-link** $\sigma_i^2 = h_{\mathrm{A}}\cdot\sigma_i +
    \mathbf{1}$.  This is the Hecke relation itself — squaring
    any crossing yields the identity (photon) plus an
-   $\mathrm{HA}$-weighted crossing.
+   $h_{\mathrm{A}}$-weighted crossing.
 
-6. **Trefoil vs unknot test.**  Using full trefoil words
-   $\sigma_0\sigma_1\sigma_0$ as quark crossings (Model T)
-   gives $\Delta \times E_0 = -2.51$ MeV, overshooting
-   CODATA by $3\times$.  Single-crossing unknots (Model S)
-   give $\Delta \times E_0 = -0.782$ MeV, matching CODATA
-   exactly (witness: `trefoil-quark-nucleon-nf.witness.json`).
+6. **Single-crossing unknot quarks.**  Each quark enters as a
+   single-crossing unknot rather than a full trefoil word
+   $\sigma_0\sigma_1\sigma_0$: the trefoil assignment triples
+   $|\Delta \times E_0|$ to $-2.51$ MeV, whereas the
+   single-crossing assignment gives $\Delta \times E_0 = -0.782$ MeV,
+   in agreement with CODATA.

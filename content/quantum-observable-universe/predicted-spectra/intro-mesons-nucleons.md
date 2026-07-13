@@ -1,23 +1,5 @@
-With pair-production established, we now build the bound states.
-The lightest composite is the meson — a quark/antiquark pair joined
-by a colour string; the next level up is the nucleon, where a third
-quark threads the meson through the Borromean linking that gives
-the proton and neutron their characteristic stability.
+We construct bound states from pair-production events. The meson is the lightest composite. It consists of a quark-antiquark pair joined by a colour string. We define the categorical meson via its formation chain.
 
-The arc moves from the simpler object to the more constrained one.
-The categorical meson is defined first (one definition, one
-formation chain).  The categorical proton then receives an
-existence/uniqueness pair, established by lifting the meson through
-the Borromean linking morphism; the categorical neutron follows the
-same pattern with the parity-reversed braid word.  The two
-nucleon definitions share the substrate-level pair-production
-machinery of the previous section but specialise it to bound
-states.
+A nucleon requires a third quark. This third quark threads the meson through a Borromean link. The link imparts the characteristic stability of protons and neutrons. We lift the meson through the Borromean linking morphism to establish the existence and uniqueness of the categorical proton. The categorical neutron follows via the parity-reversed braid word. These definitions specialise the substrate-level pair-production machinery to bound states.
 
-The section's output is a categorical assignment
-$\{(\text{quark}, \text{antiquark}, \text{nucleon})\}$ that the
-next section uses to identify which nucleon configurations are
-*stable* — i.e. survive the substrate-to-archimedean specialisation
-without decay.  Readers interested only in the structural
-assignment can skim the proofs; the heavy lifting is in the
-Borromean-linking step, which the next chapter cites repeatedly.
+This yields a categorical assignment of quarks, antiquarks, and nucleons. This structural assignment determines which nucleon configurations survive the archimedean specialisation without decaying.

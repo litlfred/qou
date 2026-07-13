@@ -1,4 +1,4 @@
-# QOU observable sector tracker (updated 2026-05-31)
+# QOU observable sector tracker (updated 2026-07-06)
 
 **Purpose:** single-source-of-truth tracker for every QOU observable
 across the standard-model sectors (leptons, quarks, mesons, baryons,
@@ -39,19 +39,35 @@ honest discipline call (DERIVED / PARTIAL / OPEN / NUMEROLOGY).
 > `docs/audits/2026-05-30-qbeta-ck-mp-dk-deep-audit.md` (read the
 > ADDENDUM, not the body).
 
+> ## 🛑 m_p de-fit (2026-07-04) — read before citing any m_p row
+>
+> m_p's former "0.0004 ppb / beats 100×" status rode the **fitted Habiro
+> tower** `(1+46u⁴)(1+4u⁵)(1−29u⁶)` — a muon-era CODATA fit left applied
+> to the proton-pinned q₀ (a live +242 ppb regression). The tower was
+> **dropped** (PR #3280); the honest documented-pin round-trip is
+> **+1.35 ppb**, a **~437× miss** of the 100× target. Authoritative L2
+> count: **2/7** (m_e, m_K/m_π) per
+> `computations/per-observable-100x-status.witness.json`
+> (`beats_100x_count=2`). Full analysis:
+> [`docs/audits/2026-07-04-c4-mu-p-tension-pin-dependence.md`](audits/2026-07-04-c4-mu-p-tension-pin-dependence.md).
+> Table + m_p rows below corrected 2026-07-06; Q_β/m_n/Δ_pn residuals
+> refreshed from the live witness at the same time.
+
 ## L2 100× dashboard (proton-anchored convention; see AGENTS.md §"q₀ anchor convention")
 
 | observable | role | pred err | σ_exp (=100×/100) | beats 100×? | beats 1×? |
 |------------|------|--------:|------:|:----:|:----:|
 | m_e | CAL-1 anchor | 0 ppb | 0.2935 ppb | ✓ | ✓ |
-| m_p | CAL-2 numerical anchor (m_p/m_e re-pin) | 0.0004 ppb | 0.3091 ppb | ✓ | ✓ |
+| m_p | CAL-2 numerical anchor (m_p/m_e re-pin) | **1.35 ppb** (de-fitted round-trip) | 0.3091 ppb | ✗ (~437×) | ✗ |
 | m_μ | validation (proton-anchored prediction) | 209.8 ppb | 21.77 ppb | ✗ | ✗ |
 | m_K/m_π | validation (meson) | 23.44 ppb | 2.64×10⁴ ppb | ✓ | ✓ |
-| Q_β | derived (CAL-1+2; **not** CAL-3 — CAL-3 is m_π) | **1279 ppb** | 779.7 ppb | ✗ | ✗ |
-| m_n | validation | 1.066 ppb | 0.5747 ppb | ✗ | ✗ |
-| Δ_pn | validation | 773.9 ppb | 473.9 ppb | ✗ | ✗ |
+| Q_β | derived (CAL-1+2; **not** CAL-3 — CAL-3 is m_π) | **1248 ppb** | 779.7 ppb | ✗ | ✗ |
+| m_n | validation | 2.389 ppb | 0.5747 ppb | ✗ (~416×) | ✗ |
+| Δ_pn | validation | 755.6 ppb | 473.9 ppb | ✗ | ✗ |
 
-**Net: 3/7 beat 100×, 3/7 beat 1× experimental** (m_e, m_p, m_K/m_π).
+**Net: 2/7 beat 100×, 2/7 beat 1× experimental** (m_e, m_K/m_π).
+m_p was dropped 2026-07-04: its "0.0004 ppb" was the fitted Habiro
+tower (see banner above); de-fitted it is +1.35 ppb, a ~437× miss.
 m_μ is a **9.5σ proton-anchored prediction** (209.8 ppb — the μ–p
 substrate tension), **not** "~0 ppb / met": the earlier ~0 ppb value
 was the **muon-q₀ CAL-2 calibration tautology** mis-scored as a
@@ -59,8 +75,9 @@ prediction (see AGENTS.md §"q₀ anchor convention" + bean `tnjb`).
 Q_β / m_n / Δ_pn miss BOTH — the **μ-p substrate tension floor**, the
 framework's irreducible self-consistency limit at the single-substrate
 level (see `docs/precision-goals.md` Subgoal-2). Note: m_p is NOT 242
-ppb (that was the stale muon-pin); at the canonical m_p-pin q₀ it is the
-0.0004 ppb anchor. Closing Q_β below the floor requires a genuine
+ppb (that was the stale muon-pin) and NOT the 0.0004 ppb anchor (that
+was the dropped fitted tower); the de-fitted documented-pin round-trip
+is +1.35 ppb. Closing Q_β below the floor requires a genuine
 Taylor-exact c_3 derivation (the open bridge `f`), NOT a structural
 near-match.
 
@@ -120,20 +137,22 @@ states (next section).
 
 | observable | canonical formula | Lean proof | production | residual | status |
 |---|---|---|---|---|---|
-| **m_p** | CAL-2 numerical anchor; substrate-identity `m_p = m_e · 2Vol/ℏ_q² · F_Bor − 12` | extensive Lean (`m-p-substrate-identity-50dps.witness.json`) | `m_p_substrate_identity_50dps.py` | **0.0004 ppb** (anchor, at canonical m_p-pin q₀) | DERIVED (anchor) |
-| **m_n** | Path C: `m_n = m_p + Q_β + m_e` | (composes m_p, Q_β proofs) | dashboard composes | **1.066 ppb** (inherits Q_β floor) — ✗ 100× | DERIVED (composed); limited by Q_β floor |
-| **Δ_pn** | derived from m_n − m_p | — | dashboard composes | **773.9 ppb** (inherits Q_β floor) — ✗ 100× | DERIVED; limited by Q_β floor |
+| **m_p** | CAL-2 numerical anchor; substrate-identity `m_p = m_e · 2Vol/ℏ_q² · F_Bor − 12` | extensive Lean (`m-p-substrate-identity-50dps.witness.json`) | `m_p_substrate_identity_50dps.py` | **+1.35 ppb** (de-fitted documented-pin round-trip; ✗ 100× ~437× — the former "0.0004 ppb" was the fitted Habiro tower, dropped 2026-07-04) | DERIVED (anchor round-trip; misses 100× post de-fit) |
+| **m_n** | Path C: `m_n = m_p + Q_β + m_e` | (composes m_p, Q_β proofs) | dashboard composes | **2.389 ppb** (rides on m_p +1.35 ppb post tower drop) — ✗ 100× (~416×) | DERIVED (composed); limited by Q_β floor + m_p round-trip |
+| **Δ_pn** | derived from m_n − m_p | — | dashboard composes | **755.6 ppb** (inherits Q_β floor) — ✗ 100× | DERIVED; limited by Q_β floor |
 | **m_p brane-tower d_k** | claimed d_4 = J²·11+2 = 46, d_5 = 4, d_6 = −29 | — | `proton_brane_tower_correction_probe.py` (witness at stale q₀) | **stale-q₀ artifact** (item 2: d_4 drifts 100% between pins; d_5/d_6 don't match claims) | **NOT a derivation** — see `mp-dk-decisive-test.witness.json` |
 | **m_Λ, m_Σ, m_Ξ (other baryons)** | — | — | — | — | OPEN — no canonical chain |
 | **m_Δ, m_N* (resonances)** | — | — | — | — | OPEN — these may live in the Demazure sub-crystal layer (AGENTS.md §7b) |
 
 **Baryon gaps:**
-- m_p is the CAL-2 anchor (0.0004 ppb, exact by construction at the
-  canonical m_p-pin q₀). The old "242 ppb / witness-stale" framing was
-  itself the muon-pin artifact — corrected 2026-05-31 (item 2).
-- m_n / Δ_pn are derived but limited by the Q_β substrate floor
-  (1.066 / 773.9 ppb), not by m_p. Closing them at 100× requires
-  closing Q_β (the open bridge), not regenerating m_p.
+- m_p is the CAL-2 anchor, but the round-trip is **+1.35 ppb, not
+  0.0004 ppb** (2026-07-04 de-fit: the 0.0004 ppb rode the dropped
+  fitted Habiro tower; ~437× miss of the 100× target). The old
+  "242 ppb / witness-stale" framing was itself the muon-pin artifact —
+  corrected 2026-05-31 (item 2).
+- m_n / Δ_pn are derived but limited by the Q_β substrate floor and
+  the m_p +1.35 ppb round-trip (2.389 / 755.6 ppb). Closing them at
+  100× requires closing Q_β (the open bridge), not regenerating m_p.
 - The m_p brane-tower d_k are NOT categorical derivations (item 2).
 - All hyperons + resonances are open.
 
@@ -243,9 +262,12 @@ at 100×):
    near-match) closes Q_β → m_n → Δ_pn at L1. **3 observables**.
    (Supersedes the earlier "Habiro c_4..c_7 closed forms" item — those
    were stale-q₀ near-matches, not the closure path.)
-2. ~~m_p brane-tower correction to E_0~~ — **NOT a gap** (item 2): m_p is
-   the 0.0004 ppb CAL-2 anchor at canonical q₀; the brane-tower d_k were
-   a stale-pin artifact. Removed from the queue.
+2. ~~m_p brane-tower correction to E_0~~ — **NOT a gap to fit** (item 2 +
+   2026-07-04 de-fit): the brane-tower d_k were a stale-pin artifact /
+   CODATA fit (the `(1+46u⁴)…` tower was dropped from production
+   2026-07-04; the honest m_p round-trip is +1.35 ppb, ~437× miss).
+   Closing that residual below 100× is Subgoal-2-gated (substrate
+   derivation), never a fit target. Removed from the queue.
 3. **Operator-valued LR `A^λ_{μν}(I)`** (#1443) — categorical mechanism
    for multi-Wedderburn-block decompositions; enables higher-A binding
    derivation (#1431 Barrier-1) and flavor-split structure. **Infrastructure**.

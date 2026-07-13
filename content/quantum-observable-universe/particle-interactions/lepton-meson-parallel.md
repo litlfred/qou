@@ -1,13 +1,6 @@
-# The lepton–meson structural parallel
+Leptons and mesons occupy dual positions in the Hecke hierarchy. Both are indexed by the torus-knot family $T(2,n)$. Both participate in a mass-ratio tower governed by hyperbolic volume. Both feature the flavor transition $3 \to 5$ (electron $\to$ muon; $d$-quark $\to$ $s$-quark).
 
-Leptons and mesons occupy dual positions in the Hecke hierarchy.
-Both are indexed by the same torus-knot family $T(2,n)$, both
-participate in a mass-ratio tower governed by hyperbolic volume,
-and both feature the flavor transition $3 \to 5$ (electron $\to$
-muon; $d$-quark $\to$ $s$-quark) as a structural step.  The
-duality exchanges fundamental particles (leptons, single strand)
-with composite bound states (mesons, quark–antiquark pair), and
-highest-weight representations with lowest-weight representations.
+This duality exchanges fundamental particles (leptons, single strand) with composite bound states (mesons, quark–antiquark pair). It exchanges highest-weight representations with lowest-weight representations.
 
 ## The torus-knot dictionary
 
@@ -25,22 +18,9 @@ highest-weight representations with lowest-weight representations.
 
 ## The highest-weight / lowest-weight duality
 
-In the lepton sector, the braid representative $\sigma_1^n$ is a
-**positive-crossing** word.  In the Hoefsmit seminormal basis, the
-eigenvalue of $\sigma_i$ on the trivial (highest-weight) partition
-$(n)$ is $q$ — the positive Hecke eigenvalue.  The lepton mass
-formula evaluates the Markov trace on this highest-weight strand:
-the torus knot $T(2,n)$ lives entirely in the
-$\sigma \mapsto q$ eigenspace.
+In the lepton sector, the braid representative $\sigma_1^n$ is a positive-crossing word. In the Hoefsmit seminormal basis, the eigenvalue of $\sigma_i$ on the trivial (highest-weight) partition $(n)$ is $q$. This is the positive Hecke eigenvalue. The lepton mass formula evaluates the Markov trace on this highest-weight strand. The torus knot $T(2,n)$ lives entirely in the $\sigma \mapsto q$ eigenspace.
 
-In the meson sector, the binding Hopf link introduces
-**negative crossings** via $\sigma^{-1} = \sigma - h$.  The
-Hecke normal form
-$\mathfrak{M}_+ = h \cdot \sigma_1 + (h^2 + 1) L_+ + h^2 L_- + (h^3 + h) e^-$
-has its dominant contribution from $L_+$ (coefficient $h^2 + 1
-\approx 1.044$), which is the **lowest-weight** Hecke basis element
-in the sense that $L_+ = \sigma_1\sigma_2$ mixes both eigenspaces
-through the off-diagonal Hoefsmit blocks.
+In the meson sector, the binding Hopf link introduces negative crossings via $\sigma^{-1} = \sigma - h$. The Hecke normal form $\mathfrak{M}_+$ has its dominant contribution from $L_+$ (coefficient $h^2 + 1 \approx 1.044$). This is the lowest-weight Hecke basis element because $L_+ = \sigma_1\sigma_2$ mixes both eigenspaces through the off-diagonal Hoefsmit blocks.
 
 The duality is:
 
@@ -49,6 +29,4 @@ $$
 \text{meson: } (\sigma\sigma^{-1})^k \cdot \sigma
 $$
 
-The lepton evaluates the **top** of the Hecke spectrum ($q$-eigenvalue),
-the meson evaluates the **full spectrum** through binding (both $q$ and
-$-q^{-1}$ eigenvalues participate).
+The lepton evaluates the top of the Hecke spectrum ($q$-eigenvalue). The meson evaluates the full spectrum through binding (both $q$ and $-q^{-1}$ eigenvalues participate).

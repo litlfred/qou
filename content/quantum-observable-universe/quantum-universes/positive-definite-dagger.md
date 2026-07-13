@@ -1,28 +1,9 @@
-**Proposition (conditional on a formally-real pivotal structure).**
-A positive-definite dagger is what gives the categorical states genuine
-squared lengths — the categorical counterpart of a Hilbert-space norm.
-Under a self-adjoint pivotal antipode over a formally-real endomorphism
-ring, the Frobenius pairing supplies such a dagger, promoting
-$\mathbf{C}$ to an inner-product (involutive) category.
-Let $(\mathbf{C}, A)$ be a
-[quantum universe](#def:quantum-universe) whose endomorphism ring
-$\mathrm{End}(\mathbf{1}) \cong R$ is a formally-real ordered field,
-equipped with a [Frobenius pairing](#def:frobenius-pairing)
-$\langle a, b \rangle = \int_A(\mu(a \otimes b))$, where $\mu$ is the
-multiplication of $A$, and a pivotal antipode $S$ that is
-self-adjoint for the pairing.
+A positive-definite dagger gives categorical states genuine squared lengths. Let $(\mathbf{C}, A)$ be a [quantum universe](#def:quantum-universe) whose endomorphism ring $\mathrm{End}(\mathbf{1}) \cong R$ is a formally-real ordered field. Assume a [Frobenius pairing](#def:frobenius-pairing) and a pivotal antipode $S$ that is self-adjoint for the pairing.
 
-Define the *Frobenius dagger* on morphisms by
+Define the *Frobenius dagger* on morphisms by:
 
 $$
   f^{\dagger} =  \int_A \circ\, \mu(S(f) \otimes -).
 $$
 
-The Frobenius dagger satisfies $S^2 = \mathrm{id}$ and restricts to
-$S = \dagger$ on $\mathrm{End}(\mathbf{1})$.
-
-Then $\dagger$ is a positive-definite
-[involutive structure](#def:involutive-structure) on $\mathbf{C}$: for
-every non-zero morphism $f \colon \mathbf{1} \to X$, the composite
-$f^{\dagger} \circ f = \langle f, f\rangle$ is a positive element of
-$\mathrm{End}(\mathbf{1}) \cong R$.
+The Frobenius dagger satisfies $S^2 = \mathrm{id}$ and restricts to $S = \dagger$ on $\mathrm{End}(\mathbf{1})$. The functor $\dagger$ is a positive-definite [involutive structure](#def:involutive-structure). For every non-zero morphism $f \colon \mathbf{1} \to X$, the composite $f^{\dagger} \circ f$ is a positive element of $R$.

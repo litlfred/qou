@@ -210,13 +210,32 @@ def _constants():
 
 
 def _bond_type_L():
-    """Per-bond-type 2-nucleon sub-braid log-suppression: p-p (2,0), p-n (1,1),
-    n-n (0,2). The V_i of the factorized q-CLT, computed once."""
+    """Per-bond-type 2-nucleon sub-braid log-suppression: p-p (2,0),
+    p-n (1,1) (overridden by exact Reeb-flow bound), n-n (0,2).
+    The V_i of the factorized q-CLT, computed once."""
     from tr_m_atom_via_transfer import tr_m_atom_zn
+    import mpmath as mp
+    from q_parameter import Q as Q0_val
+    import codata_constants as _codata
+    
+    q0 = mp.mpf(str(Q0_val))
+    # g = z/sqrt(1+z²) = 1/sqrt(1+[2]_v²): the Markov-peel bond factor z
+    # arc-length-normalized ≡ the q-deformed [1⁴] ss-ceiling (2 → [2]_v).
+    # Identity 5+(q−1)²/q = 1+[2]_v² is exact; see
+    # docs/audits/2026-07-06-reeb-flow-pn-magnitude-provenance-and-1four-extension.md §2b
+    # + probes/reeb_g_structural_identity_probe.py (4/4 assertions).
+    v = mp.sqrt(q0)
+    z_bond = mp.mpf(1) / (v + 1 / v)
+    g_true = float(z_bond / mp.sqrt(1 + z_bond ** 2))
+    _, _, alpha = _constants()
+
     out = {}
     for key, (Z, N) in (("pp", (2, 0)), ("pn", (1, 1)), ("nn", (0, 2))):
-        ta, tf, _, _ = tr_m_atom_zn(Z, N, dps=50)
-        out[key] = math.log(float(tf) / float(ta))
+        if key == "pn":
+            out[key] = (5.0 * g_true) / alpha
+        else:
+            ta, tf, _, _ = tr_m_atom_zn(Z, N, dps=50)
+            out[key] = math.log(float(tf) / float(ta))
     return out
 
 
@@ -298,6 +317,13 @@ def _row(name, Z, N, alpha, me, Lbond, nucleon_msym, ame, max_strands):
     #   (s < 1), so it under-binds increasingly with A. Leading term: B_lin ≈ B_sym
     #   for small L (B_sym = α(s + s²/2 + …)).
     B_lin = alpha * (1.0 - math.exp(-B_sym / alpha)) if alpha else 0.0
+    
+    # Explicit h^4 = (q_0 - q_0^{-1})^4 modification applied to the raw trace B_lin 
+    # scaled by the topological exponent (10A-5), to observe jet-order scaling.
+    h4 = (q0 - 1.0/q0)**4
+    B_tetra = B_lin * (q0 ** (10*A - 5)) * h4
+    m_tetra = m_sym_free - B_tetra
+
     # ---- m_can⁰: brane-tower LEVEL-0 binding. The per-braid brane tower
     #   (per-braid-mass-tower.md) has descended (n=0) term |tr_M(W)|, so its
     #   binding is B_can⁰ = E₀·Δtr_M = α·(|tr_M_free| − |tr_M_atom|) — the
@@ -377,7 +403,8 @@ def _row(name, Z, N, alpha, me, Lbond, nucleon_msym, ame, max_strands):
     return {"name": name, "Z": Z, "N": N, "A": A, "n": n, "B_AME": bame,
             "sigma_AME": sigma_ame, "M_atom_AME": m_atom_ame, "sigma_atom": sigma_atom,
             "n_pp": n_pp, "n_pn": n_pn, "n_nn": n_nn,
-            "B_lin": B_lin, "B_can0": B_can0, "B_can_bor": B_can_bor,
+            "B_lin": B_lin, "B_tetra": B_tetra, "B_can0": B_can0, "B_can_bor": B_can_bor,
+            "m_tetra": m_tetra,
             "tr_free": tr_free_val, "tr_atom": tr_atom_val,
             "B_sym": B_sym, "B_sym_exact": B_sym_exact, "chain_resid": chain_resid,
             "B_qCLT": B_qCLT,
@@ -590,9 +617,9 @@ def main(argv=None) -> int:
           f"m_n,can = {mn_can:.3f} MeV ({(mn_can/mn_-1)*100:+.3f}%) — "
           f"m_μ-anchored F_Bor = |tr_M(β_Bor)|·[3]_q!/q³ (matches CODATA; m_n the "
           f"genuine prediction).")
-    print("| iso | A | M_meas | σ_exp (ppb) | m_can | m_can⁰ | m_qCLT | "
+    print("| iso | A | M_meas | σ_exp (ppb) | m_can | m_can⁰ | m_tetra | m_qCLT | "
           "err m_can (ppb) | err m_qCLT (ppb) |")
-    print("|---|--:|--:|--:|--:|--:|--:|--:|--:|")
+    print("|---|--:|--:|--:|--:|--:|--:|--:|--:|--:|")
     for r in rows:
         mu = r["Z"] * mp_ + r["N"] * mn_                 # measured constituent sum
         mu_can = r["Z"] * mp_can + r["N"] * mn_can       # framework-derived sum
@@ -610,7 +637,7 @@ def main(argv=None) -> int:
             return ((mu_can - b) - m_meas) / m_meas * 1e9 if b is not None else None
         print(f"| {r['name']} | {r['A']} | {_fmt(m_meas,9,1)} | {_sci(s_ppb,11,2)} "
               f"| {_fmt(_can('B_can_bor'),9,1)} | {_fmt(_can('B_can0'),9,1)} "
-              f"| {_fmt(_can('B_qCLT_fac'),9,1)} "
+              f"| {_fmt(r.get('m_tetra'),9,1)} | {_fmt(_can('B_qCLT_fac'),9,1)} "
               f"| {_sci(_err_ppb('B_can_bor'),13,3)} | {_sci(_err_ppb('B_qCLT_fac'),14,3)} |")
 
     # 1c. ATOMIC mass comparison — the framework predicts NUCLEAR masses; add the
@@ -641,9 +668,9 @@ def main(argv=None) -> int:
     # 2. BINDING + error  (B_AME ± exp 1σ from AME2020; err X = B_AME/B_X)
     print("### Binding  B + error (MeV)   "
           "[σ_exp = AME2020 1σ; err X = B_AME/B_X (1.00 = perfect, >1 under-binds)]")
-    print("| iso | A | B_AME | σ_exp (ppb) | B_can⁰ | B_sym | B_qCLT_fac | B_gate | B_vol "
-          "| E_C | err can⁰ | err sym | err qCLT_fac | err gate | err vol |")
-    print("|---|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|")
+    print("| iso | A | B_AME | σ_exp (ppb) | B_can⁰ | B_sym | B_tetra | B_qCLT_fac | B_gate | B_vol "
+          "| E_C | err can⁰ | err sym | err tetra | err qCLT_fac | err gate | err vol |")
+    print("|---|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|")
     for r in rows:
         s = r["sigma_AME"]
         s_ppb = (s / r["B_AME"] * 1e9) if (s and r["B_AME"]) else None
@@ -660,10 +687,11 @@ def main(argv=None) -> int:
         e_gate = _err(r["B_AME"], eg)
         # B_vol = A·a_V (all-knots volume term) — valid for ALL A.
         e_vol = _err(r["B_AME"], r.get("B_vol"))
+        e_tetra = _err(r["B_AME"], r.get("B_tetra"))
         print(f"| {r['name']} | {r['A']} | {_fmt(r['B_AME'])} | {_sci(s_ppb,11,2)} "
-              f"| {_fmt(r['B_can0'])} | {_fmt(r['B_sym'])} | {_fmt(r['B_qCLT_fac'])} "
+              f"| {_fmt(r['B_can0'])} | {_fmt(r['B_sym'])} | {_fmt(r.get('B_tetra'))} | {_fmt(r['B_qCLT_fac'])} "
               f"| {_fmt(eg)} | {_fmt(r.get('B_vol'))} | {_fmt(r.get('E_C'))} "
-              f"| {_fmt(e_can0,6)} | {_fmt(e_sym,6)} | {_fmt(e_qclt_fac,6)} "
+              f"| {_fmt(e_can0,6)} | {_fmt(e_sym,6)} | {_fmt(e_tetra,6)} | {_fmt(e_qclt_fac,6)} "
               f"| {_fmt(e_gate,6)} | {_fmt(e_vol,6)} |")
 
     # chain ≡ exact-trace validation (rows where the p(3A) trace is feasible)

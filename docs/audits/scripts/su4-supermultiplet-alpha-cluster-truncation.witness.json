@@ -1,0 +1,55 @@
+{
+  "computation": "su4-supermultiplet-alpha-cluster-truncation",
+  "description": "The SU(4) [1^n] supermultiplet dim C(4,n) truncates at n=4, forcing A>4 binding to \u03b1-cluster (Hafstad-Teller/Brink) \u2014 the algebraic source of GAP-1's empirical \u03b1-cluster geometry. Connects #3569 (SU(4) gate) \u2194 GAP-1. Structural; explains the building block, not the M_n weights. Nothing wired.",
+  "auditOnly": "docs/audits/2026-07-12-su4-supermultiplet-alpha-cluster-truncation.md",
+  "tier": "structural-exact (C(4,n) combinatorics) + Wigner-supermultiplet reading (textbook)",
+  "computedAt": "2026-07-12T11:32:39.627043+00:00",
+  "commitSha": "667208a51a880d1cd5ba4f514edbe00f663fa19d",
+  "engine": "python-stdlib",
+  "engineVersion": "3.11.15",
+  "scriptFile": "su4_supermultiplet_alpha_cluster_truncation_probe.py",
+  "scriptHash": "afb3b5d60843",
+  "assertions": [
+    {
+      "name": "su4_supermultiplet_truncates_at_4",
+      "passed": true,
+      "detail": "dim[1^n]_SU(4) = C(4,n) = [1, 4, 6, 4, 1, 0, 0, 0] \u2014 the maximally-antisymmetric nucleon-flavor channel truncates at n=4 (no [1^{>4}] with only 4 flavors)"
+    },
+    {
+      "name": "top_supermultiplet_is_alpha_singlet",
+      "passed": true,
+      "detail": "dim[1^4] = C(4,4) = 1 \u2014 the spin-isospin SINGLET = the \u03b1-particle (\u2074He closed s-shell), the largest irreducible antisymmetric supermultiplet"
+    },
+    {
+      "name": "A_gt_4_must_alpha_cluster",
+      "passed": true,
+      "detail": "C(4,5)=C(4,6)=0 \u21d2 no direct 5- or 6-body [1^n] supermultiplet \u21d2 A>4 binding proceeds by clustering 4-body [1^4]=\u03b1 blocks (Hafstad\u2013Teller / Brink) \u2014 the algebraic source of GAP-1's empirical \u03b1-cluster deltahedra"
+    },
+    {
+      "name": "geometric_and_algebraic_alpha_agree",
+      "passed": true,
+      "detail": "the #3569 measured \u2076Li locality zero (C(4,6)=0, super-pairwise excess \u21920.944\u00d7) and GAP-1's A\u22655 \u03b1-cluster geometry are the SAME truncation seen algebraically vs geometrically \u2014 the empirical \u03b1 building block is FORCED by the Lean-proved gate"
+    }
+  ],
+  "allPassed": true,
+  "result": {
+    "su4_1n_dims": [
+      1,
+      4,
+      6,
+      4,
+      1,
+      0,
+      0,
+      0
+    ],
+    "truncation_order": 4,
+    "verdict": "SU(4) [1^n] TRUNCATION IS THE ALGEBRAIC SOURCE OF \u03b1-CLUSTERING (structural synthesis, no fit, nothing wired): dim[1^n]_SU(4)=C(4,n)=[1,4,6,4,1,0,\u2026] truncates at n=4, the top [1^4] is the \u03b1 singlet, and C(4,n>4)=0 forbids a direct n-body supermultiplet \u21d2 A>4 binding must cluster 4-body \u03b1 blocks \u2014 precisely the Hafstad\u2013Teller/Brink \u03b1-cluster geometry GAP-1 adopts EMPIRICALLY. The already-Lean-proved SU(4) gate (#3569) and the geometric max-contact deltahedra (GAP-1) converge on the SAME \u03b1 building block; the empirical \u03b1 choice is FORCED by the gate, not an independent fit. SCOPE GUARD: this explains the BUILDING BLOCK (why \u03b1), NOT the per-order M_n weights (qou-v0yw open); the n-body-in-[1^n] step is the textbook Wigner supermultiplet hypothesis; nothing is wired. NO tier change."
+  },
+  "context": {
+    "connects": "#3569 SU4SupermultipletGate (Lean, C(4,A)) <-> GAP-1 max-contact \u03b1-cluster deltahedra (gap1_max_contact_a5plus.py, qou-lzoh)",
+    "new": "grep-confirmed the SU(4)-saturation <-> \u03b1-clustering link was not explicit in corpus",
+    "scope_guard": "explains the \u03b1 BUILDING BLOCK; does NOT derive the per-order M_n weights (qou-v0yw open); n-body-in-[1^n] is the Wigner hypothesis; nothing wired",
+    "gate": "no fit, no wiring, no production change; structural synthesis only"
+  }
+}

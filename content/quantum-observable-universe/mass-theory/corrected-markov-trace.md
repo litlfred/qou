@@ -1,9 +1,4 @@
-The Markov trace of the trefoil braid
-$\sigma_0 \sigma_1 \sigma_0$ is $z^3$, **not** $hz^2 + z$
-as would be obtained from the vertex volume product formula.
-The product factorization
-([Markov trace product](#thm:markov-trace-product))
-is invalid when generators are **adjacent**.
+The Markov trace of the trefoil braid $\sigma_0 \sigma_1 \sigma_0$ is $z^3$, not $hz^2 + z$. The vertex volume product formula yields $hz^2 + z$, demonstrating that the product factorization is invalid when generators are adjacent.
 
 ## Statement
 

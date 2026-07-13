@@ -1,12 +1,7 @@
-The [metallic character proposition](#prop:metallic-character-knot)
-classifies metals by the size of the residual sub-link $R$.
-Metallic character is strongest when $|R|$ is smallest and the
-shell number $n$ is largest.  Both conditions are simultaneously
-extremised by a single element: **francium** ($p = 87$).
+Metallic character strengthens as the residual sub-link $R$ shrinks and the shell number $n$ grows. Francium ($p = 87$) extremises both conditions.
 
 **Francium's electron cloud.**
-
-Francium has 87 electrons partitioned as
+Francium partitions its $87$ electrons as:
 
 $$
   \mathcal{E}(87)
@@ -17,61 +12,28 @@ $$
   \underbrace{R}_{|R| = 1}.
 $$
 
-The inner 86 trefoils form the
-[noble gas](#prop:noble-gas-characterization) configuration of
-radon — six fully closed sub-Hopf links, every curl interlocked.
-The 87th trefoil sits alone in shell $n = 7$: a **single loose
-curl** weakly Hopf-linked to the radon core.
+The inner $86$ trefoils form the radon core. These six fully closed sub-Hopf links interlock every curl. The $87$th trefoil sits alone in shell $n = 7$. This single loose curl weakly Hopf-links to the core.
 
 **Extremality of francium.**
+Francium minimises the outermost crossing energy in two ways:
 
-Among all stable (or near-stable) atoms, francium minimises the
-outermost crossing energy in two independent ways:
+1. **Minimal residual**: $|R| = 1$. The lone trefoil lacks an interlocking partner. It occupies an open linking site without compensating closure. Elements with $|R| \geq 2$ exhibit partial interlocking among residual trefoils. This raises detachment energy.
+2. **Maximal shell depth**: $n = 7$. The crossing energy scales as $\mathfrak{E}_{\mathrm{cross}} \propto 1/n^2$. The $n = 7$ trefoil is the most weakly bound alkali electron.
 
-1. **Minimal residual**: $|R| = 1$.  The lone trefoil has no
-   partner to interlock with — it occupies an open linking
-   site with no compensating closure.  Any element with
-   $|R| \geq 2$ has at least partial interlocking among its
-   residual trefoils, raising the detachment energy.
+Consequently, francium exhibits:
+- The lowest ionization energy ($E_{\mathrm{ion}} \approx 4.07 \mathrm{eV}$).
+- The highest electropositive character. It donates its lone curl readily.
+- The strongest metallic bonding tendency. Its single open linking site couples to neighbours with negligible crossing cost.
 
-2. **Maximal shell depth**: $n = 7$.  The crossing energy
-   scales as
-   $\mathfrak{E}_{\mathrm{cross}} \propto 1/n^2$
-   ([crossing energy](#def:crossing-energy)), so the $n = 7$
-   trefoil is the most weakly bound of any alkali.
-
-Together these give francium:
-
-- The **lowest ionization energy** of any element
-  ($E_{\mathrm{ion}} \approx 4.07 \mathrm{eV}$).
-- The **highest electropositive character** — it donates its
-  lone curl more readily than any other atom.
-- The **strongest metallic bonding tendency** — its single
-  open linking site couples to any neighbouring residual
-  sub-link with negligible crossing cost.
-
-**The alkali series as a monotone sequence.**
-
-The alkali metals form a sequence of atoms with $|R| = 1$ at
-increasing shell depth:
+**The alkali series.**
+The alkali metals possess $|R| = 1$ at increasing shell depth:
 
 See [Table](#tbl:francium-extremal-metal-table-data).
 
-Each has exactly one loose trefoil; the crossing energy
-decreases monotonically with $n$ (the slight uptick for
-francium reflects relativistic contraction of the $7s$ orbital,
-which in the knot picture corresponds to a small tightening
-of the Hopf linking to the nuclear Borromean core at high $p$).
+Each atom has one loose trefoil. The crossing energy decreases monotonically with $n$. The slight ionization-energy uptick for francium reflects relativistic contraction of the $7s$ orbital. This corresponds to a tightening of the Hopf linking to the Borromean core at high $p$.
 
 **Dual extremum: fluorine.**
-
-At the opposite end of the residual spectrum sits **fluorine**
-($p = 9$), with $|R| = 7$ out of a shell-2 capacity of 8.
-Its residual sub-link is one trefoil short of closure — one
-empty linking site.  This makes fluorine the **most
-electronegative** element: it pulls in a trefoil from any
-neighbour to close its sub-link, the topological dual of
-francium donating its lone curl.
+Fluorine ($p = 9$) anchors the opposite end of the spectrum. It holds $|R| = 7$ trefoils out of a shell-$2$ capacity of $8$. The residual sub-link sits one trefoil short of closure. This empty linking site makes fluorine the most electronegative element. It pulls a trefoil from any neighbour to close its sub-link. This action is the topological dual to francium donating a curl.
 
 $$
   \underbrace{\text{Fr}: |R| = 1}_{\text{most metallic}}
@@ -79,6 +41,4 @@ $$
   \underbrace{\text{F}: |R| = 2n^2 - 1}_{\text{most nonmetallic}}
 $$
 
-The entire metallic--nonmetallic spectrum is thus parametrised
-by a single topological invariant: the **filling fraction**
-$|R| / 2n^2$ of the outermost sub-Hopf link.
+The filling fraction $|R| / 2n^2$ of the outermost sub-Hopf link parametrises the entire metallic–nonmetallic spectrum.

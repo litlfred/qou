@@ -1,1 +1,1 @@
-**Remark (mathematical novelty).** This formulation provides a deep structural insight by deriving the Bohr $1/n^2$ dependency purely from the Hecke-algebraic gap. Bypassing the standard additive kinetic/Coulomb split, it serves as a novel purely categorical recovery of a foundational quantum result.
+**Remark.** This formulation derives the Bohr $1/n^2$ dependency purely from the Hecke-algebraic gap. It bypasses the standard additive kinetic/Coulomb split. This provides a categorical recovery of this quantum result.

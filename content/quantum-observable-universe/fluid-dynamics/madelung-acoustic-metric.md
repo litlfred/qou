@@ -1,6 +1,5 @@
 **Acoustic metric and analogue gravity.**
-Perturbations $\delta\psi$ around a background flow satisfy
-$\Box_{g_{\mathrm{ac}}}\delta\psi = 0$ with the acoustic metric
+Perturbations $\delta\psi$ around a background flow satisfy $\Box_{g_{\mathrm{ac}}}\delta\psi = 0$ for the acoustic metric
 
 $$
   g_{\mathrm{ac}}
@@ -14,10 +13,4 @@ $$
   c_s^2 = \frac{\partial P}{\partial\rho}\bigg|_{Q_q}.
 $$
 
-An acoustic horizon forms wherever $|v| = c_s$, coinciding with a
-gravitational horizon in the substrate geometry.  General relativity
-emerges as the geometry of non-uniform brane flow: the
-[GR substrate geometry](#rem:gr-substrate-geometry) is the acoustic
-manifold.  Bosonic modes (with $[F_A, \alpha] = 0$) travel on null
-acoustic geodesics; fermionic modes (with $[F_A, \alpha] \neq 0$)
-spiral into vortex filaments of $\psi$.
+An acoustic horizon forms wherever $|v| = c_s$, coinciding with a gravitational horizon in the substrate geometry. General relativity emerges as the geometry of non-uniform brane flow: the [GR substrate geometry](#rem:gr-substrate-geometry) is precisely the acoustic manifold. Bosonic modes (where $[F_A, \alpha] = 0$) travel along null acoustic geodesics; fermionic modes ($[F_A, \alpha] \neq 0$) spiral into the vortex filaments of $\psi$.

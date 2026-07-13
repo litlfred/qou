@@ -1,0 +1,95 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-07-11T18:40:37.886696+00:00",
+  "commitSha": "9cc82032ee5d4616441f6a415a589912b135b5ff",
+  "assertions": [
+    {
+      "name": "mirror_split_proportional_to_canonical_coulomb_all_A",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "split_AME/ΔE_C(canonical Z(Z−1), r₀=1.2) = 0.838 ± 0.059 (7% scatter) across 8 mirror pairs A=3–39 ⇒ the split is proportional to Coulomb ⇒ the strong kernel must be charge-symmetric."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 5,
+  "computation": "mirror-nuclei-coulomb-systematics",
+  "scriptFile": "mirror_nuclei_coulomb_systematics.py",
+  "scriptHash": "5d64ba9ecdc1",
+  "scriptCommitSha": "c39307c6317a7f199271c7ff5f4ea2350c71f462",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "mpmath": "1.4.1"
+  },
+  "description": "The mirror binding split is Coulomb across the isobaric chain ³H/³He…³⁹K/³⁹Ca: using the repo's canonical uniform-sphere Coulomb (Z(Z−1) self-energy, r₀=1.2 fm, coulomb_energy.mirror_displacement_mev — NO free parameter), the ratio split_AME/ΔE_C = 0.84 ± 0.06 is ≈constant across A=3–39 (the ~0.8 factor is the known uniform-sphere over-estimate). ⇒ the split is proportional to Coulomb, so any QOU strong kernel must be charge-symmetric (Coulomb separate); the #2089 kernel's 2.27 MeV A=3 strong split (#3564) is 3× the whole observed split, systematically. Scope-(a), no wiring.",
+  "data": {
+    "mirror_pairs": [
+      {
+        "pair": "3H/3He",
+        "A": 3,
+        "split_AME": 0.76375488,
+        "coulomb_canonical": 0.99841250061394,
+        "ratio": 0.7649692682436916
+      },
+      {
+        "pair": "7Li/7Be",
+        "A": 7,
+        "split_AME": 1.6442398,
+        "coulomb_canonical": 2.258251650087719,
+        "ratio": 0.7281029994757809
+      },
+      {
+        "pair": "11B/11C",
+        "A": 11,
+        "split_AME": 2.76403599999999,
+        "coulomb_canonical": 3.237349124900182,
+        "ratio": 0.8537960823379575
+      },
+      {
+        "pair": "13C/13N",
+        "A": 13,
+        "split_AME": 3.0028193,
+        "coulomb_canonical": 3.6744067295561713,
+        "ratio": 0.8172256151846065
+      },
+      {
+        "pair": "15N/15O",
+        "A": 15,
+        "split_AME": 3.53653199999999,
+        "coulomb_canonical": 4.087126206588071,
+        "ratio": 0.8652857340934142
+      },
+      {
+        "pair": "23Na/23Mg",
+        "A": 23,
+        "split_AME": 4.8385261,
+        "coulomb_canonical": 5.569726049854385,
+        "ratio": 0.868718866366237
+      },
+      {
+        "pair": "27Al/27Si",
+        "A": 27,
+        "split_AME": 5.5947051,
+        "coulomb_canonical": 6.239826666666666,
+        "ratio": 0.8966122616653882
+      },
+      {
+        "pair": "39K/39Ca",
+        "A": 39,
+        "split_AME": 7.3068333,
+        "coulomb_canonical": 8.067689219544107,
+        "ratio": 0.905690973110253
+      }
+    ],
+    "ratio_mean": 0.837550225059666,
+    "ratio_rms_scatter": 0.05894482218649511
+  }
+}

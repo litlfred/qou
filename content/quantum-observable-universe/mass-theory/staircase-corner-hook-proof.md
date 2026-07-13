@@ -18,9 +18,3 @@ $0.13\%$ (the canonical formalism);
 for $k = 4$ it predicts the $q^{1/7}$ residual scale empirically
 verified at relative error $0.14\%$ in the dim-$768$ spectrum
 (the canonical formalism).
-
-The Lean proof
-(`QOU.StaircaseCornerHook.staircase_corner_hook_eq_two_k_sub_one`)
-is fully discharged by `omega` after unfolding the definition; it
-contains **no `sorry`** and is independent of any conjectural
-spectral data.

@@ -1,4 +1,3 @@
-**Proposition (Borromean $h^4$ categorical derivation).**
 *The $h^4$ coefficient of the Borromean Markov trace
 $\mathrm{tr}_M(\beta_{\mathrm{Bor}}) = (4 + h^2 - 3h^4 - h^6)/(h^2 + 4)$
 factorises as*

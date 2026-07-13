@@ -1,4 +1,4 @@
-The Bring's surface visualizer renders quaternionic spectral resolvents as
+The **Bring's surface visualizer** renders quaternionic spectral resolvents as
 interactive 3D surfaces. The viewport state is fully serialisable (see
 `VizState` in `schemas/qou-types.ts`) and can be embedded in URLs or
 Markdown to reproduce a specific view.

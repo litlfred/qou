@@ -25,7 +25,7 @@ Both were "research-grade, multi-session". The cont. 9 KLR/crystal infra roadmap
 | **D** Composite 3 (Type-B folded crystal) | REFUTED at u² sign | #1924 |
 | **C″** exotic signed Lusztig | NARROWED by bounded magnitude + cont. 11 + Lusztig 1990 | [scope doc](../scope/2026-06-06-qbeta-klr-exotic-signed-lusztig-bounded-magnitude-scope.md) |
 
-So **Option E via the cont. 9 menu paths is effectively closed** — the four candidate composites all fail at u² (the deepest rung the proved `c_2 = -1` constrains, well below where the residue-A `c_3 = -2.07` lives).
+So **Option E via the cont. 9 menu paths is effectively closed** — the four candidate composites all fail at u² (the deepest rung the proved `c_2 = -1` constrains, well below where the cal-anchored `c_3 ≈ −2.02..−2.07` lives — a q-dependent near-match, not an exact `−2`; see [c_3 cross-anchor verdict](2026-07-06-c3-not-exact-cross-anchor-verdict.md)).
 
 ## Net effect on the 3 failing observables
 

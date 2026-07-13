@@ -14,7 +14,7 @@ $$
   \sum_{\lambda \vdash n} d_\lambda\, y_\lambda(q) = 1 .
 $$
 
-*Equivalently $\operatorname{tr}_M(\mathbf{1}) = \sum_\lambda y_\lambda\,\chi^\lambda(\mathbf{1}) = \sum_\lambda y_\lambda d_\lambda = 1$: the Markov trace of the identity is unit, so the weights $y_\lambda$ partition the total Markov weight among the irreducibles.*
+*Equivalently $\mathrm{tr}_M(\mathbf{1}) = \sum_\lambda y_\lambda\,\chi^\lambda(\mathbf{1}) = \sum_\lambda y_\lambda d_\lambda = 1$: the Markov trace of the identity is unit, so the weights $y_\lambda$ partition the total Markov weight among the irreducibles.*
 
 **Consequence for mass.**
 

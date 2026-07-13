@@ -1,23 +1,12 @@
-**Proposition (incompleteness implies non-empty horizon).**
-*Let $(P, e, \mathrm{eval})$ be a Turing-complete resolution
-system:*
+*Let $(P, e, \mathrm{eval})$ denote a Turing-complete resolution system:*
 
-- *$P$ is a set of programs (finite braids),*
-- *$e \colon \mathbb{N} \twoheadrightarrow P$ is a surjective
-  enumeration (the braid group on finitely many strands is
-  countable),*
-- *$\mathrm{eval} \colon P \to (\mathbb{N} \to \mathbb{N})$
-  maps each program to the total function it computes.*
+- *$P$ forms a set of programs (finite braids).*
+- *$e \colon \mathbb{N} \twoheadrightarrow P$ provides a surjective enumeration (the braid group on finitely many strands is countable).*
+- *$\mathrm{eval} \colon P \to (\mathbb{N} \to \mathbb{N})$ maps each program to its computed total function.*
 
-*The surjectivity of $e$ and the domain $\mathbb{N}$ of
-$\mathrm{eval}$ constitute the **arithmetic non-triviality
-condition**: $\mathbb{N}$ is embeddable in the system.
-Without this, the diagonal argument is vacuous --- a trivial
-category has no self-referential capacity and incompleteness
-does not apply.*
+*The surjectivity of $e$ and the domain $\mathbb{N}$ of $\mathrm{eval}$ define the **arithmetic non-triviality condition**: $\mathbb{N}$ must embed into the system. Without this condition, the diagonal argument remains vacuous; a trivial category lacks self-referential capacity, rendering incompleteness inapplicable.*
 
-*Then there exists $f \colon \mathbb{N} \to \mathbb{N}$
-not in the image of $\mathrm{eval}$:*
+*There exists a function $f \colon \mathbb{N} \to \mathbb{N}$ outside the image of $\mathrm{eval}$:*
 
 $$
   \exists\, f \colon \mathbb{N} \to \mathbb{N},\;
@@ -25,5 +14,4 @@ $$
   \mathrm{eval}(p) \neq f.
 $$
 
-*The computable fragment is strictly smaller than the full
-function space.*
+*The computable fragment is strictly smaller than the full function space.*

@@ -186,6 +186,7 @@ def collect():
                 s["prov"] += 1
                 lp = resolve_lean(ts, src)
                 if lp is None:
+                    print(f"BINGO: {ch} / {ts.name}")
                     s["missing"] += 1
                 else:
                     cls = classify_lean(lp)
@@ -200,7 +201,7 @@ def collect():
                 continue
             s["qa_side"] += 1
             failing = [c for c, e in (data.get("criteria") or {}).items()
-                       if e and e[-1].get("result") == "fail"]
+                       if e and (e[-1].get("result") == "fail" if isinstance(e, list) else e.get("result") == "fail")]
             s["qa_fail_crit"] += len(failing)
             s["da_fail"] += sum(1 for c in failing if c.startswith("da-"))
             if failing:
@@ -225,7 +226,7 @@ def fail_by_criterion():
         except Exception:
             continue
         for c, e in (data.get("criteria") or {}).items():
-            if e and e[-1].get("result") == "fail":
+            if e and (e[-1].get("result") == "fail" if isinstance(e, list) else e.get("result") == "fail"):
                 out[c] = out.get(c, 0) + 1
     return out
 

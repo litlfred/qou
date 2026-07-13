@@ -12,16 +12,11 @@
 | ${}^{60}\mathrm{Co}$ | 60 | 1770 | $38{,}863$ | $35{,}813$ | $-3{,}050$ |
 | ${}^{210}\mathrm{Bi}$ | 210 | 21945 | $8.25 \times 10^{13}$ | $7.62 \times 10^{13}$ | $-6.24 \times 10^{12}$ |
 
-All $\Delta E$ are negative — the daughter has lower energy.
-The computation requires exactly $\binom{A}{2}$ transfer matrix
-multiplications (including ${}^{210}\mathrm{Bi}$: 21,945 steps,
-instant).
+Every $\Delta E$ is negative; the daughter nucleus always occupies a lower energy state. The computation requires exactly $\binom{A}{2}$ transfer matrix multiplications. This completes instantly even for ${}^{210}\mathrm{Bi}$ (21,945 steps).
 
 ## Generator volume profile: ${}^{14}\mathrm{C}$ vs ${}^{14}\mathrm{N}$
 
-Generators $\sigma_7$ through $\sigma_{12}$ have **identical
-volumes** in both nuclei — only generators $\sigma_0$ through
-$\sigma_6$ differ (the 1-jet support of the single beta decay).
+Generators $\sigma_7$ through $\sigma_{12}$ share identical volumes in both nuclei. Only generators $\sigma_0$ through $\sigma_6$ differ. This localises the 1-jet support of the single beta decay.
 
 | Generator | $k_i$ | $V_i({}^{14}\mathrm{C})$ | $V_i({}^{14}\mathrm{N})$ | $\Delta V_i$ |
 |:---------:|:---:|:-----------------------:|:-----------------------:|:------------:|
@@ -34,9 +29,10 @@ $\sigma_6$ differ (the 1-jet support of the single beta decay).
 | $\sigma_6$ | 7 | $4.603$ | $2.943$ | $-\mathbf{1.660}$ |
 | $\sigma_7$--$\sigma_{12}$ | 6--1 | identical | identical | $0$ |
 
-Generator $\sigma_6$ — the converting neutron's own generator —
-has the **largest volume change** ($-1.660$, nearly half the total
-$\Delta E$).  Its color degree is $k_6 = 7$: it sees 7 crossings
-with downstream nucleons, ALL of which change type when the
-neutron converts to a proton.  This is the highest color degree
-at the converting position.
+Generator $\sigma_6$ corresponds to the converting neutron. It records the largest volume change ($-1.660$), accounting for nearly half the total $\Delta E$. Its color degree is $k_6 = 7$. It sees 7 crossings with downstream nucleons, all of which change type upon conversion. This is the highest color degree at the converting position.
+
+## Scope limit — the traced volume is structural, not an absolute energy
+
+The energy column $E(A)$ in the table above is the raw summed generator volume $\sum_i \hat V_i$. It grows multiplicatively with the crossing count and does **not** saturate: $E({}^{210}\mathrm{Bi}) \approx 8.25 \times 10^{13}$ is roughly $5 \times 10^{10}$ times the physical nuclear scale (${}^{210}\mathrm{Bi}$ binds at $\approx 1.6\ \mathrm{GeV}$, i.e. $\approx 8\ \mathrm{MeV}$ per nucleon). The decomposition is therefore a **structural, relative** object: it localises the $\beta$-decay $1$-jet to specific generators (here $\sigma_6$ carries nearly half of $\Delta E$), and its per-bond sign is fixed ($\Delta E < 0$, every daughter lower). It is **not** a physical absolute binding energy for $A$ beyond the lightest nuclei.
+
+Absolute masses and binding energies must route through the canonical mass facade [`computations/canonical_mass.py`](https://github.com/litlfred/qou/blob/main/computations/canonical_mass.py), which carries the saturation the raw generator sum lacks (per the canonical-mass guardrail). What survives from this probe is the **shape** of $\Delta V_i$ across generators and the sign of $\Delta E$ — not the magnitude of the totals. This is a scope-limited negative: the generator-volume *decomposition* stands; only the absolute-energy reading of the raw sum is excluded.

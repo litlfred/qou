@@ -1,0 +1,70 @@
+{
+  "computation": "qbeta-ohtsuki-kappa1-extract",
+  "description": "Targeted Richardson extraction of the 4\u2081 Kashaev leading 1/N coefficient \u03ba\u2081 (the observable action coeff) + PSLQ over \u211a(\u221a3)\u00b7\u03c0^j; decisive test of whether \u03ba\u2081 has an exact real-cyclotomic closed form.",
+  "audit_only": true,
+  "tier": "numerical (leading-order extraction)",
+  "computedAt": "2026-07-12T00:02:01.867944+00:00",
+  "commitSha": "ba716f13157ab707527737ec8d92dbdc5bba12ed",
+  "engine": "mpmath",
+  "engineVersion": "1.3.0",
+  "scriptFile": "qbeta_ohtsuki_kappa1_extract.py",
+  "scriptHash": "742868884a56",
+  "assertions": [
+    {
+      "name": "D_converges",
+      "passed": true
+    },
+    {
+      "name": "vol41_slope_anchor",
+      "passed": true
+    },
+    {
+      "name": "kappa1_converged_8plus_digits",
+      "passed": true
+    },
+    {
+      "name": "kappa1_near_observable_c1",
+      "passed": true
+    },
+    {
+      "name": "kappa1_eq_11_sqrt3_pi_over_108",
+      "passed": true
+    },
+    {
+      "name": "kappa1_eq_eleven_halves_b1",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "result": {
+    "Ns": [
+      1536,
+      3072,
+      6144,
+      12288,
+      24576,
+      49152,
+      98304,
+      196608,
+      393216,
+      786432
+    ],
+    "A0_extracted": "-0.27465307216702742285",
+    "kappa1": "0.554216472404899898792635023168",
+    "kappa1_confident_digits": 23,
+    "kappa1_over_naive_b1": "5.5",
+    "kappa1_stability": "3.404e-24",
+    "identified": true,
+    "kappa1_closed_form": "11*sqrt(3)*pi/108",
+    "kappa1_eq_eleven_halves_b1": true,
+    "ohtsuki_A_over_sqrt_minus3": "11/72",
+    "verdict": "IDENTIFIED (scope: 4\u2081 classical Ohtsuki asymptotics). The observable even-channel leading coefficient \u03ba\u2081 = [1/N] log J_N(4\u2081), extracted to \u224823 confident digits (10-point Vandermonde, N\u2264786432; matches the #3571 numerically-fitted c\u2081\u22480.554), is EXACTLY \u03ba\u2081 = 11\u00b7\u221a3\u00b7\u03c0/108 \u2208 \u211a(\u221a3)\u00b7\u03c0 (2-term PSLQ [q,p]=(-108,-11), 33-digit agreement). Two structural facts: (1) \u03ba\u2081 = (11/2)\u00b7b\u2081 \u2014 the Euler\u2013Maclaurin sum-vs-integral correction multiplies the naive integral-Laplace saddle b\u2081=\u221a3\u03c0/54 (Lean #3606) by exactly 11/2; (2) the Ohtsuki imaginary-coefficient form \u03ba_1^Oht = A/\u221a\u22123 has A = 11/72 exactly \u2014 the classical figure-eight 2-loop numerator '11'. This CLOSES the exact value of the even-channel action's leading coefficient (which #3571's full-ladder PSLQ was entropy-blocked on and the naive saddle missed). SCOPE (anti-laundering): this is a fact about the 4\u2081 Kashaev/Ohtsuki asymptotic \u2014 NOT a Q_\u03b2 production c_k. The bridge (Q_\u03b2 observable action \u2261 4\u2081 resurgence action) remains the open keystone; nothing is wired, no tier changes."
+  },
+  "context": {
+    "axis": "z->c_k f-map keystone: even-channel action, Ohtsuki \u03ba\u2081",
+    "naive_saddle_b1": "\u221a3\u03c0/54 \u2248 0.101 (Lean #3606, integral-Laplace, no EM correction)",
+    "observable_c1_prior": "\u2248 0.554 (#3571 global-lstsq fit)",
+    "field": "real cyclotomic subfield \u211a(\u221a3)\u00b7\u03c0^j \u2282 \u211a(\u03b6\u2081\u2082)\u00b7\u03c0",
+    "entropy_block_sibling": "#3571 (full ladder), #3536 P4 (c_k PSLQ)"
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "computation": "qbeta-hopf-cubic-shadow-bridge",
+  "engine": "python-decimal",
+  "scriptFile": "qbeta_hopf_cubic_shadow_bridge.py",
+  "commitSha": "6ec666854e4e1b14cda3689e9d8a470c3b967a4e",
+  "description": "Reconcile KC20 (Hopf cubic C_Hopf) with KC19 (affine crossing weight, c_3=open scalar). SHADOW: C_Hopf(2)=-2=c_3 q=1 shadow (Lean cubicC_Hopf_classical_shadow). SUBSTRATE: C_Hopf(y0) anchor-rigid ~-2.0873 while c_3 swings 2.375% -> cubic does NOT determine c_3; swing lives in w(q). Near-coincidence, not identity.",
+  "data": {
+    "shadow_C_Hopf_at_2": "-2",
+    "c3_q1_shadow": "-2",
+    "y0_proton": "2.0437062085325219894020193356773883097682139607135",
+    "y0_muon": "2.0437062182329013102182450855436030316663417518847",
+    "C_Hopf_y0_proton": "-2.087328928037872959383247763194373026799702999906",
+    "C_Hopf_y0_muon": "-2.087328947383041644373952302805792447010825177426",
+    "C_Hopf_anchor_rel_swing": "9.2679061862930792980655662865319237914321080905201E-9",
+    "c3_anchor_rel_swing": "0.023753654671453040372726474703390929648665816803890",
+    "disc_C_Hopf": -76,
+    "disc_C_total": -152,
+    "disc_C_unknot": 17,
+    "chirality_parity": "odd/Hopf: disc<0 -> complex-conjugate roots (Hopf link CHIRAL); even/unknot: disc>0 -> real (Q(sqrt17)); matches Borel-Pade — complex structure enters via a CHIRAL knot (Hopf), not the amphichiral figure-eight/pion (even channel real)",
+    "verdict": "shadow: exact Hopf match (q=1); substrate: no bridge (C_Hopf anchor-rigid vs c_3 swinging) — swing in w(q), KC19"
+  },
+  "assertions": [
+    {
+      "name": "shadow_C_Hopf_2_equals_minus_2",
+      "computed": 0.0,
+      "expected": 0.0,
+      "tolerance": 0.0,
+      "unit": "bool (0=holds)",
+      "source": "C_Hopf(2)=-2 = c_3 q=1 shadow; Lean cubicC_Hopf_classical_shadow"
+    },
+    {
+      "name": "C_Hopf_y0_anchor_rigid",
+      "computed": 0.0,
+      "expected": 0.0,
+      "tolerance": 0.0,
+      "unit": "bool (0=rigid, rel swing<1e-6)",
+      "source": "C_Hopf(y0) anchor-rigid: proton vs muon agree to ~1e-8 (rel swing<1e-6)"
+    },
+    {
+      "name": "c3_anchor_swings_gt_2pct",
+      "computed": 0.0,
+      "expected": 0.0,
+      "tolerance": 0.0,
+      "unit": "bool (0=swings>2%)",
+      "source": "c_3 -2.069(p)/-2.020(m), 2.375% swing (2026-07-06 verdict)"
+    },
+    {
+      "name": "cubic_does_not_determine_c3",
+      "computed": 0.0,
+      "expected": 0.0,
+      "tolerance": 0.0,
+      "unit": "bool (0=not a bridge)",
+      "source": "anchor-rigid cannot equal anchor-swinging at both anchors"
+    },
+    {
+      "name": "substrate_proximity_is_near_coincidence",
+      "computed": 0.0,
+      "expected": 0.0,
+      "tolerance": 0.0,
+      "unit": "bool (0=near but not identity)",
+      "source": "|C_Hopf(y0)-c3|~0.018, same order as the c_3 swing"
+    },
+    {
+      "name": "odd_Hopf_cubic_disc_negative_complex",
+      "computed": 0.0,
+      "expected": 0.0,
+      "tolerance": 0.0,
+      "unit": "bool (0=disc<0, complex pair)",
+      "source": "disc(C_Hopf)=-76<0 -> complex-conjugate roots; Hopf link is chiral"
+    },
+    {
+      "name": "even_unknot_disc_positive_real",
+      "computed": 0.0,
+      "expected": 0.0,
+      "tolerance": 0.0,
+      "unit": "bool (0=disc>0, real)",
+      "source": "disc(C_unknot)=17>0 -> real roots Q(sqrt17); amphichiral even channel real"
+    }
+  ],
+  "audit_only": "docs/audits/2026-07-07-hopf-cubic-vs-crossing-weight-shadow-bridge.md",
+  "allPassed": true
+}

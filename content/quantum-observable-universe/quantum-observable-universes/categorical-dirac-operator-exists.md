@@ -1,15 +1,1 @@
-Let $(\mathbf{C}, A, \tau)$ be a
-[quantum observable universe](#def:quantum-observable-universe) with
-connection $\nabla$, substrate parameter $q$, and Reeb derivation
-$\xi$.  Then the
-[categorical Dirac operator](#def:categorical-dirac-operator)
-
-$$
-  \mathcal{D}_\nabla \;=\; q^{-1} \nabla + (1 - q^{-1})  \iota_\xi \nabla
-  \;\colon\; A \to \Omega^1(A)
-$$
-
-exists as a morphism in $\mathbf{C}$.
-
-Uniqueness is
-([uniqueness of categorical Dirac operator](#prop:categorical-dirac-operator-unique)).
+Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe with connection $\nabla$, substrate parameter $q$, and Reeb derivation $\xi$. The categorical Dirac operator $\mathcal{D}_\nabla = q^{-1} \nabla + (1 - q^{-1}) \iota_\xi \nabla \colon A \to \Omega^1(A)$ exists as a morphism in $\mathbf{C}$.

@@ -21,7 +21,7 @@ that drive open issues at the atomic-braid scale.
   Frame–Robinson–Thrall hook-length quantum dimension. Standard
   paper conventions; no novel mathematical content here.
 - `Phi_q(z_val, max_k=2000)` (line 80): the non-perturbative quantum
-  dilogarithm `Φ_q(z) = ∏_{k≥1}(1 − q^{−k}z)^{−1}` in the **Faddeev**
+  dilogarithm `Φ_q(z) = ∏_{k≥1}(1 − q^{−k}z)^{−1}` in the **compact-q-dilog**
   (asymmetric q-integer) convention.
 - `additive_wedderburn_volumes` (line 98): per-generator
   `V̂_full = w_sym·χ_sym + w_std·V_std + w_alt·χ_alt` via the standard
@@ -70,7 +70,7 @@ contradicts in two places.
 
 **Summary.** Script is the f64 reference for the Φ_q tower (1.8%
 proton–electron ratio at q_0). It implements the *literal*
-proposition statement as it stood pre-2026-05-03 (Faddeev Φ_q,
+proposition statement as it stood pre-2026-05-03 (compact q-dilog Φ_q,
 all-pairs z²). The paper has since refactored to symmetric
 `Li_2^q` per the Briggs–Klein integration witness; the .py / .lean
 have not yet been migrated. Cross-term z² weight is now correctly
@@ -589,7 +589,7 @@ collisions expected.
 ## Open issues flagged
 
 1. **`prop:mass-endomorphism-tower` .lean drift.** Mass formula
-   uses adjacent-only sum + Faddeev Φ_q; .md uses all-pairs +
+   uses adjacent-only sum + compact q-dilog Φ_q; .md uses all-pairs +
    symmetric `Li_2^q`. Resolve by either updating the Lean to
    the symmetric form or back-porting the .md update.
 2. **`atom_braid_word_3A` has no Lean.** The canonical chain

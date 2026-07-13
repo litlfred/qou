@@ -11,5 +11,12 @@ export default proposition({
   uses: [
     "lem:pair-skein-mass-formula",
   ],
+  computation: {
+    engine: "python",
+    script: "computations/probes/flavor_split_substrate_probe.py",
+    witness: "computations/probes/flavor-split-substrate-probe.witness.json",
+    status: "verified",
+    requires: ["mpmath"],
+  },
   proofs: ["prf:flavor-split-substrate"],
 });

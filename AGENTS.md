@@ -601,6 +601,33 @@ refutations missing the (a)/(b) scope; `local/compute-author`
 §formalize-first is the forward complement (prove the invariant that
 *would* justify a (b) before running the wide search).
 
+## Conditional-proved ≠ premise-established (STRICT, 2026-07-07)
+
+The sibling of "sorry-free ≠ derived" (registry §1): a **hypothesis-carrying
+Lean lemma proves the implication, never the premise.** Do not restate a
+conditional lemma's antecedent as established fact in constraint lists,
+audit docs, ledgers, or chat ("a₁ bar-odd" when the Lean says "IF c₃ is
+odd THEN a₁ is odd"). Rules:
+
+1. **Constraint lists carry per-row epistemic tiers** (`proved-lean` /
+   `symbolic-exact` / `conditional` + named hypothesis / `empirical` /
+   `gate`). For kernel/f-map constraints the authoritative table is
+   [`ck-dk-canonical-registry.md` §9](docs/coordination/ck-dk-canonical-registry.md)
+   + JSON twin + validator (`kernel_constraints_registry_validate.py`,
+   `--lint-docs --strict` for CI); update the registry, not a new scatter
+   of status notes.
+2. **Conditional lemmas wear their hypothesis in the name** (Mathlib `_of_`
+   style) — see `local/formalizer.md` §Conditional-lemma naming.
+3. **Machine-checked contradiction rule:** `parity: exactly-odd` together
+   with a nonzero q=1 shadow is impossible
+   (`QOU.QBeta.fixed_eval_two_mul_kills_bar_odd`) and fails the validator.
+4. **Attributes do not transfer across overloaded symbols** — check registry
+   §2 before asserting a property of `a₁`/`Φ₂`/`c_k`-like symbols; distinct
+   objects sharing a glyph is a recurring root cause.
+
+History: the a₁ parity-shadow incident,
+[`docs/audits/2026-07-07-a1-bar-odd-parity-shadow-investigation.md`](docs/audits/2026-07-07-a1-bar-odd-parity-shadow-investigation.md).
+
 ## Formalize-first probe discipline (STRICT — narrow the search before running it)
 
 **Too much time is lost chasing numerical rainbows that a one-line
@@ -778,19 +805,38 @@ Authoritative reference: [`docs/precision-goals.md`](docs/precision-goals.md).
 - **Subgoal-1 (achievable):** 100× targets ≥ ~780 ppb CAL-2 floor.
   Closure path: per-isotope Borromean-tower extension + operator-
   valued branching combiner.
-- **Subgoal-2 (research-grade, out of scope):** 100× targets <
-  CAL-2 floor (absolute m_p / m_n / m_⁴He). Requires substrate-
-  derivation of q_0, which the coordination ledger explicitly
-  declined on 2026-05-08. Do **not** attempt without owner reversal.
+- **Subgoal-2 (research-grade, now OPEN for all — 2026-07-11):** 100×
+  targets < CAL-2 floor (absolute m_p / m_n / m_⁴He). Requires
+  substrate-derivation of q_0, which the coordination ledger declined
+  on 2026-05-08 — a decline the owner **generally reversed on
+  2026-07-11** (see the general-reversal bullet below). The
+  geometric / substrate-derivation routes are now in scope for all
+  agents; the anti-fit / anti-laundering discipline still gates *how*
+  (a fit is not a derivation), not *whether*.
   - **Narrow owner reversal (2026-06-19, recorded 2026-06-22; PRs #2503 /
     #2524).** The owner reversed this decline **only for the s5-so3 keystone
     geometric-realization construction** — the differential-geometry /
     WRT(S³/2I) build of the `W_λ` index (see
     [`docs/coordination/s5-so3-keystone.md`](docs/coordination/s5-so3-keystone.md)).
-    That specific geometric `W_λ` build is **in scope**. The reversal is
-    narrow: it does **not** reopen fit-based q_0 derivation, and the `Δ_λ`
-    "no seventh fit-based ansatz" rule below **still stands**; any other
-    Subgoal-2 work still needs explicit owner sign-off.
+    That specific geometric `W_λ` build was the first item brought in scope.
+    *(Superseded in breadth by the 2026-07-11 general reversal below.)*
+  - **🟧 GENERAL owner reversal — Subgoal-2 open for all (2026-07-11).** The
+    owner reversed the 2026-05-08 decline **generally**: the geometric /
+    substrate-derivation routes to the Subgoal-2 targets (absolute
+    m_p / m_n / m_⁴He; substrate-derivation of q_0; the per-isotope binding
+    `M_n(K)` edge-set / coordination-graph closure; the s5-so3 keystone) are
+    now **in scope for all agents** — no longer owner-gated, no per-item
+    sign-off required. Context: the qou-v0yw binding-weight closure (the
+    M₃/M₄ weights of `conj:binding-manybody-eq-jet-filtration`) was blocked
+    *only* by this gate plus the anti-fit rule; the gate is now lifted.
+    **The anti-fit / anti-laundering honesty discipline is ORTHOGONAL to this
+    scope gate and STILL STANDS:** the `Δ_λ` "no seventh fit-based ansatz"
+    rule (below), the §"Axiomatization is NOT a Proof" anti-laundering rule,
+    and "sorry-free ≠ derived" all remain in force. "Open for all" grants
+    permission to *pursue and derive*, not to pass a fit off as a derivation
+    or wire an anchor-inverted `wₙ(K)` to production as canonical. Full
+    ruling: [`docs/audits/2026-07-11-subgoal2-owner-reversal-open-for-all.md`](docs/audits/2026-07-11-subgoal2-owner-reversal-open-for-all.md);
+    [`docs/precision-goals.md`](docs/precision-goals.md).
 
 **Δ_λ gate (Track A blocker).** The per-isotope binding-energy
 formula `B(K) = m_e · Σ_λ y_λ χ^λ Δ_λ` requires per-partition Δ_λ
@@ -2516,3 +2562,14 @@ output is still deployed even when the Lean build fails:
 - **Blueprint compilation fails** → other artifacts (manifests, axiom report)
   still deploy.
 - **latexdiff fails** → main PDF still publishes; diff PDF is skipped.
+
+## Axiomatization is NOT a Proof (Anti-Laundering Rule)
+
+Agents frequently conflate "Lean code that compiles with 0 errors" with "a mathematically proved theorem." 
+
+1. **Axioms and Conditional Classes do not satisfy "Proved".** 
+   If a user says "only do X if Y is proved," creating an `axiom`, `sorry`, or a conditional `class` (e.g., `[ZToCkMappingClass]`) to define the structure does **NOT** count as proving it. You must stop and state the math is open.
+2. **Never launder empirical fits through Lean axioms.** 
+   Do not use conditional classes as an excuse to wire un-derived constants into downstream dashboards or production scripts. If the closed-form math isn't proven from the 13 categorical drivers, the compute remains blocked.
+3. **Formalize-First means PROVING the invariant.**
+   Writing the structural scaffolding is good, but it does not unlock downstream physics code. Only a true closed-form derivation does.

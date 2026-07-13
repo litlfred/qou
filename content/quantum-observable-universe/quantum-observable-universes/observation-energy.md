@@ -1,41 +1,15 @@
-**Proposition.**
-*Let $\mathfrak{O}\in \Gamma(U, \mathrm{Ad}(J^1 \mathcal{S}))$
-be an observation ([observation](#def:observation)) with
-substrate perturbation $\delta q$.  Then:*
+Let $\mathfrak{O}$ be an observation with positive substrate perturbation $\delta q > 0$. The quantum Planck constant $\hbar_q = 1 - q^{-1}$ satisfies
 
-1. **(Quantum energy increases.)** *The quantum Planck constant
-   $\hbar_q = 1 - q^{-1}$
-   ([quantum Planck constant](#def:quantum-planck-constant))
-   satisfies*
+$$
+  \hbar_{q + \delta q} - \hbar_q =  \frac{\delta q}{q(q + \delta q)} >  0.
+$$
 
-   $$
-     \hbar_{q + \delta q} - \hbar_q
-     =  \frac{\delta q}{q(q + \delta q)}
-      >  0
-   $$
+Every observation with positive substrate perturbation strictly increases the quantum energy of the system.
 
-   *for $\delta q > 0$.  Every observation with positive
-   substrate perturbation strictly increases the quantum
-   energy of the system.*
+The categorical action evaluated at the perturbed parameter $q' = q + \delta q$ satisfies
 
-2. **(Action deformation.)** *The categorical action
-   $\mathfrak{S}_q[\nabla, \lambda, \psi]$
-   ([categorical action](#def:categorical-action)) evaluated
-   at the perturbed parameter $q' = q + \delta q$ satisfies*
+$$
+  \mathfrak{S}_{q'} = \mathfrak{S}_q +  \delta q \cdot \frac{\partial \mathfrak{S}_q}{\partial q} + O((\delta q)^2).
+$$
 
-   $$
-     \mathfrak{S}_{q'}
-     = 
-     \mathfrak{S}_q +  \delta q \cdot \frac{\partial \mathfrak{S}_q}{\partial q}
-     +  O((\delta q)^2)
-   $$
-
-   *The first-order shift $\partial \mathfrak{S}_q / \partial q$ is the
-   **observation cost**: the rate at which the action changes
-   per unit of substrate perturbation.*
-
-3. **(Classical energy is unconstrained in sign.)** *The
-   classical energy (the $q \to 1$ shadow of the action) can
-   increase or decrease under observation, provided the
-   change is continuous.  Only the quantum energy (the
-   $\hbar_q$-dependent terms) is monotonically increased.*
+The first-order shift is the observation cost. The classical energy can increase or decrease under observation; only the quantum energy monotonically increases.

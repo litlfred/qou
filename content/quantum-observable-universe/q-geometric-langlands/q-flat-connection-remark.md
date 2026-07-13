@@ -1,10 +1,4 @@
-**The classical flatness condition and its $q$-deformation.**
-The condition $\nabla^2 = 0$ is the geometric incarnation of
-$d^2 = 0$.  In the QOU, $d_q^2 \neq 0$ introduces a canonical
-obstruction to flatness proportional to $(q-1)$.  The
-$q$-flatness equation $\nabla_q^2 = (q-1)\mathcal{F}_q$ absorbs
-this obstruction: a $q$-flat connection is not truly flat but carries
-the minimal curvature compatible with the $q$-deformation.
+The condition $\nabla^2 = 0$ provides the geometric incarnation of $d^2 = 0$. The $q$-flatness equation $\nabla_q^2 = (q-1)\mathcal{F}_q^{\mathrm{intr}}$ absorbs the canonical obstruction to flatness. The Hochschild--Kostant--Rosenberg comparison ([Kummer filtration](#rem:kummer-filtration-obstruction)) identifies the $q$-curvature $\mathcal{F}_q^{\mathrm{intr}}$ with the gerbe-theoretic obstruction class $\kappa_0 = e(\xi)$ in $H^2(\mathcal{S}, \mathbb{G}_m)$. The Kummer filtration pulls back to a filtration on $HH^2$ that measures the $n$-divisibility of the $q$-curvature.
 
 **The HKR identification.**
 The Hochschild--Kostant--Rosenberg comparison

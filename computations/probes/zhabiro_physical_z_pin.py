@@ -23,7 +23,7 @@ Sources (exact, 50 dps):
   - |V̂_i^full| per generator   same (full channel) + mass-endomorphism.witness.json (electron)
 
 Two evaluators are compared at each physical z_i:
-  - Φ_q(z)   = ∏_{k≥1} (1 − q^{−k} z)^{−1}          (Faddeev — SUPERSEDED
+  - Φ_q(z)   = ∏_{k≥1} (1 − q^{−k} z)^{−1}          (compact-q-dilog — SUPERSEDED
                `brane-legacy` tower mode; the −737 MeV isospin pathology)
   - −Li₂^q(−z) = Σ_{n≥1} (−1)^{n+1} z^n /(n·[n]_q)   (symmetric — the
                PRODUCTION `li2q` tower mode in prop:mass-endomorphism-tower)
@@ -99,7 +99,7 @@ VHAT_FULL: dict[str, list[str]] = {
 
 
 def phi_q(z: mp.mpf, q: mp.mpf, terms: int = 100000) -> mp.mpf:
-    """Faddeev quantum dilogarithm Φ_q(z) = ∏_{k≥1}(1 − q^{−k} z)^{−1}, q>1."""
+    """compact quantum dilogarithm phi_q(z) = ∏_{k≥1}(1 − q^{−k} z)^{−1}, q>1."""
     qinv = 1 / q
     prod = mp.mpf(1)
     qk = qinv
@@ -205,7 +205,7 @@ def main() -> None:
         "description": (
             "Pins the physical brane-tower variable z = |V̂_i^full| (additive "
             "Wedderburn traced volume per generator) from production witnesses "
-            "and compares the SUPERSEDED Faddeev Φ_q (brane-legacy) against the "
+            "and compares the SUPERSEDED compact q-dilog Φ_q (brane-legacy) against the "
             "PRODUCTION symmetric −Li₂^q(−z) (li2q) at each physical z_i. At "
             "every z_i (all < 1) Φ_q is convergent-but-enormous (10²–10⁶) while "
             "−Li₂^q(−z) is O(1): wiring per-generator Φ_q regresses the mass "
@@ -219,7 +219,7 @@ def main() -> None:
             "hbar_q_squared": mp.nstr(HBAR_Q**2, 30),
             "phi_q_at_hbar_q_sq_correction_pct": mp.nstr(corr_rep, 8),
             "production_tower_mode": "li2q",
-            "superseded_tower_mode": "brane-legacy (Faddeev Φ_q)",
+            "superseded_tower_mode": "brane-legacy (compact q-dilog Φ_q)",
         },
         "data": {"atoms": atoms_out},
         "cross_checks": cross,

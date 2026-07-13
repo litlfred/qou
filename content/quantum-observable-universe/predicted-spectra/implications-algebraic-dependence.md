@@ -1,71 +1,24 @@
-Suppose instead that the [algebraic independence
-conjecture](#conj:hyperbolic-volume-transcendence) fails: some
-non-trivial $P \in \mathbb{Q}[x, y, z]$ satisfies
-$P(\mathrm{Vol}(4_1), \mathrm{Vol}(5_2),
-\mathrm{Vol}(\mathcal{B}_3)) = 0$.
+Suppose the [algebraic independence conjecture](#conj:hyperbolic-volume-transcendence) fails. A non-trivial polynomial $P \in \mathbb{Q}[x, y, z]$ satisfies $P(\mathrm{Vol}(4_1), \mathrm{Vol}(5_2), \mathrm{Vol}(\mathcal{B}_3)) = 0$.
 
 **Mathematical consequences.**
 
-1. **Milnor's conjecture remains open on this triple.** Algebraic
-   dependence is strictly weaker than $\mathbb{Q}$-linear dependence,
-   so failure of algebraic independence is compatible with Milnor's
-   prediction ($\mathbb{Q}$-linear independence of volumes of
-   pairwise non-commensurable hyperbolic $3$-manifolds).  Only a
-   dependence polynomial of total degree one refutes Milnor; a
-   higher-degree relation refutes only the stronger QOU conjecture.
+1. **Milnor's conjecture.** Algebraic dependence is weaker than $\mathbb{Q}$-linear dependence. A dependence polynomial of degree greater than one does not refute Milnor's prediction of $\mathbb{Q}$-linear independence for pairwise non-commensurable hyperbolic $3$-manifolds.
 
-2. **Unexpected Bloch--Wigner identity.** Each volume is
-   $D(\xi_K)$ for algebraic $\xi_K$ in distinct number fields.  A
-   dependence would yield a non-trivial $\mathbb{Q}$-polynomial
-   identity among Bloch--Wigner values across
-   $\mathbb{Q}(\sqrt{-3})$, the cubic field of $5_2$, and
-   $\mathbb{Q}(i)$ --- an arithmetic identity for which no candidate
-   is presently known.
+2. **Bloch--Wigner identities.** Each volume takes the form $D(\xi_K)$ for an algebraic $\xi_K$ in distinct number fields. An algebraic dependence yields a $\mathbb{Q}$-polynomial identity among Bloch--Wigner values across $\mathbb{Q}(\sqrt{-3})$, the cubic field of $5_2$, and $\mathbb{Q}(i)$.
 
-3. **Collapse of the formal transcendence conjecture chain.** The
-   implication chain
-   (independence $\Rightarrow$ Borel--Zagier $\Rightarrow$
-   single-volume irrationality) does not reverse; dependence leaves
-   irrationality of each individual volume open but removes the
-   categorical lever for proving it.
+3. **Transcendence chain.** The implication chain from independence to Borel--Zagier to single-volume irrationality breaks. Irrationality remains open for each volume. The categorical lever to prove it vanishes.
 
-**QOU-specific consequences.**
+**Framework consequences.**
 
-1. **Brane tower collapses at finite height.** By the
-   contrapositive of [the bridge
-   theorem](#rem:yekutieli-transcendence-shadow), some obstruction
-   class $\kappa_n$ vanishes: the cosimplicial filtration terminates
-   after finitely many levels.
+1. **Tower collapse.** The contrapositive of the [bridge theorem](#rem:yekutieli-transcendence-shadow) forces an obstruction class $\kappa_n$ to vanish. The cosimplicial filtration terminates at finite depth.
 
-2. **Confinement admits an algebraic closed form.** The hadronic
-   binding energy $\mathfrak{E}_{\mathrm{bind}}$ reduces to a finite
-   polynomial expression in $q$; the infinite-tower interpretation of
-   confinement is categorically inessential.
+2. **Confinement.** The hadronic binding energy $\mathfrak{E}_{\mathrm{bind}}$ reduces to a finite polynomial expression in $q$. Confinement does not require the infinite-tower structure.
 
-3. **Borromean baryon interpretation weakens.** The obstruction-theoretic
-   distinction between the Borromean link $\mathcal{B}_3$ and a sum of
-   Hopf pairs reduces to finite categorical data: the invariant that
-   singles out the proton as a three-body configuration becomes
-   computable without the infinite tower.
+3. **Borromean baryon.** The distinction between the Borromean link $\mathcal{B}_3$ and a sum of Hopf pairs reduces to finite categorical data. The invariant identifying the proton as a three-body configuration is computable without the infinite tower.
 
-4. **Coefficient ring simplifies.** The evaluation map
-   $\iota$ is non-injective; the physical ring
-   $\mathbb{Q}[q, q^{-1}][\mathrm{Vol}(4_1), \mathrm{Vol}(5_2),
-   \mathrm{Vol}(\mathcal{B}_3)]$ is strictly smaller than the formal
-   Laurent ring admits.
+4. **Coefficient ring.** The evaluation map $\iota$ is not injective. The physical ring $\mathbb{Q}[q, q^{-1}][\mathrm{Vol}(4_1), \mathrm{Vol}(5_2), \mathrm{Vol}(\mathcal{B}_3)]$ is smaller than the formal Laurent ring admits.
 
-5. **Partial QOU falsification.** The information-bandwidth bounds
-   $\mathfrak{B}(q)$ are satisfied with slack; the substrate carries
-   less information-theoretic hardness than the full conjecture
-   predicts.  This is a falsification of the strong form but not of
-   the topological mass formula, Gr\"obner--Shirshov construction, or
-   experimental predictions --- those live entirely in
-   $\mathbb{Z}[q, q^{-1}]$ and do not depend on transcendence (cf.
-   [formal chain remark](#rem:formal-chain-transcendence)).
+5. **Bandwidth bounds.** The substrate satisfies the information-bandwidth bounds $\mathfrak{B}(q)$ with slack. The topological mass formula, the Gröbner--Shirshov construction, and the spectral predictions remain valid. They reside in $\mathbb{Z}[q, q^{-1}]$ (see [formal chain remark](#rem:formal-chain-transcendence)).
 
-**Lean status.** Dependence would mean no instance of
-`QOU.Archimedean.HyperbolicVolumeIndependence` is populatable; the class
-remains well-formed but uninhabited.  The conditional theorem
-`QOU.Archimedean.tower_noncollapse_implies_independence` is still valid
-(vacuously), but its hypothesis
-`QOU.Torsion.YekutieliLiftingCondition` becomes unsatisfiable.
+**Lean formalisation.**
+Dependence implies the class `QOU.Archimedean.HyperbolicVolumeIndependence` is uninhabited. The conditional theorem `QOU.Archimedean.tower_noncollapse_implies_independence` remains vacuously true. Its hypothesis `QOU.Torsion.YekutieliLiftingCondition` is unsatisfiable.

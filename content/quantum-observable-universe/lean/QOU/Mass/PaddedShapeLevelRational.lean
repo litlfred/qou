@@ -138,11 +138,11 @@ theorem legCount_eq_zero {B j : ℕ} (hj : B ≤ j) :
   | cons p l ih =>
     intro hB
     have hp : ¬(p > j) := by
-      have := hB p (List.mem_cons_self p l)
+      have := hB p List.mem_cons_self
       omega
     simp only [legCount, List.filter_cons]
     rw [if_neg (by simpa using hp)]
-    exact ih fun p' hp' => hB p' (List.mem_cons_of_mem p hp')
+    exact ih fun p' hp' => hB p' (List.mem_cons_of_mem _ hp')
 
 /-- **Prepending a first row leaves lower-row hooks unchanged** — definitionally:
 `get?` and `drop` on a cons reduce structurally, and legs only count rows below. -/
@@ -217,27 +217,24 @@ theorem hookProd_cons_split (q : ℝ) (mu : Partition) (B t : ℕ)
     hookProd q ((B + t) :: mu) =
       ((∏ j ∈ Finset.range B, qBracket q (Partition.hookLength ((B + t) :: mu) 0 j)) *
         qFactorial q t) * hookProd q mu := by
-  rw [hookProd_eq_prod q ((B + t) :: mu), hookProd_eq_prod q mu,
-    show ((B + t) :: mu : Partition).length = mu.length + 1 from rfl,
-    Finset.prod_range_succ', mul_comm]
+  rw [hookProd_eq_prod q ((B + t) :: mu), hookProd_eq_prod q mu]
+  have hlen : Partition.length ((B + t) :: mu) = mu.length + 1 := rfl
+  rw [hlen, Finset.prod_range_succ', mul_comm]
   congr 1
-  · -- row 0: split the column range at B; the tail is the descending q-factorial
-    show (∏ j ∈ Finset.range (B + t),
-        qBracket q (Partition.hookLength ((B + t) :: mu) 0 j)) = _
-    rw [Finset.prod_range_add]
-    have h2 : (∏ k ∈ Finset.range t,
-        qBracket q (Partition.hookLength ((B + t) :: mu) 0 (B + k))) = qFactorial q t := by
-      rw [← prod_desc_eq_qFactorial q t]
-      refine Finset.prod_congr rfl fun k hk => ?_
-      have hk' : k < t := Finset.mem_range.mp hk
-      rw [hookLength_cons_zero (B + t) mu (B + k) (by omega),
-        legCount_eq_zero (by omega : B ≤ B + k) mu hB]
-      congr 1
-      omega
-    rw [h2]
-  · -- rows ≥ 1: hooks agree definitionally with the hooks of μ
-    refine Finset.prod_congr rfl fun i _ => ?_
-    rfl
+  -- row 0: split the column range at B; the tail is the descending q-factorial
+  show (∏ j ∈ Finset.range (B + t),
+      qBracket q (Partition.hookLength ((B + t) :: mu) 0 j)) = _
+  rw [Finset.prod_range_add]
+  have h2 : (∏ k ∈ Finset.range t,
+      qBracket q (Partition.hookLength ((B + t) :: mu) 0 (B + k))) = qFactorial q t := by
+    rw [← prod_desc_eq_qFactorial q t]
+    refine Finset.prod_congr rfl fun k hk => ?_
+    have hk' : k < t := Finset.mem_range.mp hk
+    rw [hookLength_cons_zero (B + t) mu (B + k) (by omega),
+      legCount_eq_zero (by omega : B ≤ B + k) mu hB]
+    congr 1
+    omega
+  rw [h2]
 
 /-- **Unconditional level-rationality of the padded q-dimension**: for every `μ` with
 parts `≤ B` and first row `B + t` (i.e. `μ[n]` at level `n = |μ| + B + t`),
@@ -251,19 +248,20 @@ theorem qDim_cons_level_rational {q : ℝ} (hq : 1 < q) (mu : Partition) (B t : 
     (hB : ∀ p ∈ mu, p ≤ B) :
     qDim q ((B + t) :: mu) =
       (∏ i ∈ Finset.range (mu.sum + B),
-        qBracket q (((B + t) :: mu : Partition).size - i)) /
+        qBracket q (Partition.size ((B + t) :: mu) - i)) /
       ((∏ j ∈ Finset.range B, qBracket q (Partition.hookLength ((B + t) :: mu) 0 j)) *
         hookProd q mu) := by
-  have hsize : ((B + t) :: mu : Partition).size = (B + t) + mu.sum := by
+  have hsize : Partition.size ((B + t) :: mu) = (B + t) + mu.sum := by
     simp [Partition.size]
-  have hK : mu.sum + B ≤ ((B + t) :: mu : Partition).size := by
+  have hK : mu.sum + B ≤ Partition.size ((B + t) :: mu) := by
     rw [hsize]; omega
   have hsplit : hookProd q ((B + t) :: mu) =
-      qFactorial q (((B + t) :: mu : Partition).size - (mu.sum + B)) *
+      qFactorial q (Partition.size ((B + t) :: mu) - (mu.sum + B)) *
         ((∏ j ∈ Finset.range B, qBracket q (Partition.hookLength ((B + t) :: mu) 0 j)) *
           hookProd q mu) := by
-    rw [hookProd_cons_split q mu B t hB,
-      show ((B + t) :: mu : Partition).size - (mu.sum + B) = t from by rw [hsize]; omega]
+    rw [hookProd_cons_split q mu B t hB]
+    have hsub : Partition.size ((B + t) :: mu) - (mu.sum + B) = t := by rw [hsize]; omega
+    rw [hsub]
     ring
   exact qdim_level_rational_of_hook_split hq ((B + t) :: mu) (mu.sum + B) hK _ hsplit
 

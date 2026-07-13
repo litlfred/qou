@@ -1,9 +1,4 @@
-A **meson** is a hadron ([hadron](#def:hadron)) of valence $2$:
-a quark–antiquark pair bound by the Hopf link $\mathcal{L}_H$.
-The meson arises when two independent
-[quark–antiquark productions](#def:quark-antiquark-production)
-each create a $q\bar{q}$ pair, and a quark from one production
-binds with an antiquark from the other:
+A **meson** is a valence-2 [hadron](#def:hadron): a quark--antiquark pair bound by the Hopf link $\mathcal{L}_H$. We form the meson from two independent [quark--antiquark productions](#def:quark-antiquark-production), pairing a quark from one with an antiquark from the other:
 
 $$
   \mathfrak{M}
@@ -13,76 +8,50 @@ $$
 
 where:
 
-- $T_{01} = \sigma_0\sigma_1 = L_+$ is the positive Hopf link
-  (up-type crossing pair, [knot notation](#sec:knot-notation-convention)),
+- $T_{01} = \sigma_0\sigma_1 = L_+$ is the positive Hopf link (up-type crossing pair, [knot notation](#sec:knot-notation-convention)).
+- $T_{10} = \sigma_1\sigma_0 = L_-$ is the negative Hopf link (down-type crossing pair).
+- $\mathcal{L}_H = \sigma_0\sigma_1$ is the Hopf link binding the two constituents.
 
-- $T_{10} = \sigma_1\sigma_0 = L_-$ is the negative Hopf link
-  (down-type crossing pair),
-
-- $\mathcal{L}_H = \sigma_0\sigma_1$ is the Hopf link binding
-  the two constituents.
-
-The full braid word is $(\sigma_0\sigma_1)^2 \cdot \sigma_1\sigma_0$
-(6 crossings on 3 strands).
+The full braid word is $(\sigma_0\sigma_1)^2 \cdot \sigma_1\sigma_0$, containing 6 crossings on 3 strands.
 
 **Normal form (step-by-step Hecke reduction).**
-Write $h = H_A = q - q^{-1}$ and use the Hecke relation
-$\sigma_i^2 = h\sigma_i + \mathbf{1}$ and the braid relation
-$\sigma_0\sigma_1\sigma_0 = \sigma_1\sigma_0\sigma_1$.
+We write $h = h_{\mathrm{A}} = q - q^{-1}$ and apply the Hecke relation $\sigma_i^2 = h\sigma_i + \mathbf{1}$ and the braid relation $\sigma_0\sigma_1\sigma_0 = \sigma_1\sigma_0\sigma_1$.
 
-*Step 1.* $T_{01} \cdot \mathcal{L}_H = (\sigma_0\sigma_1)^2
-= \sigma_0\sigma_1\sigma_0\sigma_1$.
-Apply the braid relation to the rightmost three generators:
-$\sigma_1\sigma_0\sigma_1 = \sigma_0\sigma_1\sigma_0$, giving
-$\sigma_0 \cdot \sigma_0\sigma_1\sigma_0 = \sigma_0^2 \cdot L_-$.
-Then Hecke: $\sigma_0^2 = h\sigma_0 + \mathbf{1}$, so
+*Step 1.* For the bound pair $T_{01} \cdot \mathcal{L}_H = (\sigma_0\sigma_1)^2 = \sigma_0\sigma_1\sigma_0\sigma_1$, we apply the braid relation to the rightmost three generators to yield $\sigma_0 \cdot \sigma_0\sigma_1\sigma_0 = \sigma_0^2 \cdot L_-$. The Hecke relation reduces this to:
 
 $$
   (\sigma_0\sigma_1)^2 = h \cdot e^- + L_-
 $$
 
-*Step 2.* Multiply by $T_{10} = \sigma_1\sigma_0$:
+*Step 2.* We multiply by $T_{10} = \sigma_1\sigma_0$:
 
 | Factor | Product | Hecke reduction |
 |:---|:---|:---|
 | $L_- \cdot L_-$ | $\sigma_1\sigma_0\sigma_1\sigma_0$ | braid + Hecke: $h \cdot e^- + L_+$ |
 | $e^- \cdot L_-$ | $\sigma_0\sigma_1\sigma_0 \cdot \sigma_1\sigma_0$ | two braid + Hecke steps: $h^2 e^- + hL_+ + hL_- + \sigma_1$ |
 
-Collecting:
+Collecting terms yields the exact normal form:
 
 $$
   \mathfrak{M}_+ =
-  \underbrace{h}_{\sigma_1}\sigma_1
-  + \underbrace{(h^2 + 1)}_{L_+}\sigma_0\sigma_1
-  + \underbrace{h^2}_{L_-}\sigma_1\sigma_0
-  + \underbrace{(h^3 + h)}_{e^-}\sigma_0\sigma_1\sigma_0
+  \underbrace{h}_{\sigma_1}\sigma_1 + \underbrace{(h^2 + 1)}_{L_+}\sigma_0\sigma_1 + \underbrace{h^2}_{L_-}\sigma_1\sigma_0 + \underbrace{(h^3 + h)}_{e^-}\sigma_0\sigma_1\sigma_0
 $$
 
-At $q_0 \approx 1.1100$ ($h \approx 0.2091$):
+At the CODATA root $q_0 \approx 1.1100$ ($h \approx 0.2091$):
 
 $$
   \mathrm{NF}(\mathfrak{M}_+) \approx 0.209\,\sigma_1 + 1.044\,L_+ + 0.044\,L_- + 0.218\,e^-
 $$
 
-with $\mathrm{net}(\mathfrak{M}_+) \approx +1.515$.
+yielding $\mathrm{net}(\mathfrak{M}_+) \approx +1.515$.
 
-The mirror meson $\mathfrak{M}_- = T_{10} \cdot \mathcal{L}_H \cdot T_{01}$
-has the same net but with $\sigma_0$ replacing $\sigma_1$:
+The mirror meson $\mathfrak{M}_- = T_{10} \cdot \mathcal{L}_H \cdot T_{01}$ maintains identical net amplitude but exchanges $\sigma_1$ for $\sigma_0$:
 
 $$
   \mathrm{NF}(\mathfrak{M}_-) \approx 0.209\,\sigma_0 + 1.044\,L_+ + 0.044\,L_- + 0.218\,e^-
 $$
 
-Both mesons carry the same Hopf link content ($L_+ + L_-$)
-and trefoil content ($e^-$), differing only in which
-generator ($\sigma_0$ vs $\sigma_1$) is excited.
+Both mesons carry identical Hopf link ($L_+ + L_-$) and trefoil ($e^-$) content, differing only in the single-generator excitation.
 
 **Particle content.**
-The dominant term is $L_+$ (coefficient $\approx 1.044$),
-reflecting the Hopf link binding.  The trefoil component
-$e^-$ ($\approx 0.218$) encodes the residual lepton channel.
-The bare quark–antiquark pair without binding ($T_{01} \cdot T_{10}$)
-yields $\mathrm{net} = +1.418$ with a neutrino $\nu$ component
-instead of Hopf links — showing that the Hopf link binding
-replaces the neutrino channel with Hopf content and increases
-the net by $\approx 0.097$.
+The dominant $L_+$ term (coefficient $\approx 1.044$) establishes the Hopf link binding. The trefoil component $e^-$ ($\approx 0.218$) encodes the residual lepton channel. In contrast, the bare quark--antiquark pair ($T_{01} \cdot T_{10}$) yields $\mathrm{net} = +1.418$ and contains a neutrino $\nu$ component in place of the Hopf links. The Hopf link binding actively replaces the neutrino channel and increases the net amplitude by $\approx 0.097$.

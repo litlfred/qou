@@ -1,36 +1,14 @@
-The three color tubes of the Bring's surface
-([color tube interpretation](#rem:color-tube-interpretation)) and
-the three $S_3$ subgroups of its automorphism group
-([chirality of the trefoil](#rem:chirality-trefoil)) provide a
-categorical basis for the color space.  The structure of this
-basis — specifically, its failure to span all "colors" with
-positive coefficients — is the topological origin of color
-confinement.
+The three color tubes of the Bring's surface ([color tube interpretation](#rem:color-tube-interpretation)) and the three $S_3$ subgroups of its automorphism group ([chirality of the trefoil](#rem:chirality-trefoil)) form a categorical basis for the color space. This basis fails to span all colors with positive coefficients. This geometric restriction constitutes the topological origin of color confinement.
 
 **The chromaticity problem.**
 
-In classical color theory \cite{feynman1963}, any choice of three
-primary colors $(r, g, b)$ defines a coordinate system for the
-space of perceived colors.  A central fact is that **no three
-primaries suffice with only positive coefficients**: some spectral
-colors require negative amounts of at least one primary.  The
-visible gamut is the convex hull of the spectral locus — an
-irregularly curved region — while any three primaries span only a
-triangle.  The triangle always leaves part of the gamut outside,
-accessible only via negative coefficients.
+Classical color theory \cite{feynman1963} defines a coordinate system from any three primary colors $(r, g, b)$. No three primaries span the entire space of perceived colors with strictly positive coefficients. The spectral locus forms an irregularly curved region, but three primaries span only a flat triangle. This triangle necessarily excludes parts of the gamut, requiring negative coefficients for complete coverage.
 
-This is not a deficiency of a particular choice of primaries; it
-is a theorem about the geometry of the color space: the spectral
-locus is not contained in any triangular cone.
+This reflects the intrinsic geometry of the color space rather than a deficient choice of primaries. The spectral locus lies outside any triangular cone.
 
 **The $q$-deformed color space.**
 
-In the Descartes universe, the "color space" is the Skein module
-$\mathrm{Sk}_q(\mathbf{C})$.  The three color tubes
-$(r, g, b) = (w_2 - z, w_3 - z, w_4 - z)$ provide three
-distinguished directions — the "primaries" of the categorical
-color space.  An arbitrary element of $\mathrm{Sk}_q$ is a formal
-linear combination of knot types with $q$-polynomial coefficients.
+In the Descartes universe, the Skein module $\mathrm{Sk}_q(\mathbf{C})$ constitutes the color space. The three color tubes $(r, g, b) = (w_2 - z, w_3 - z, w_4 - z)$ supply the primary directions. Every element of $\mathrm{Sk}_q$ expands as a formal linear combination of knot types with $q$-polynomial coefficients.
 
 The Skein relation
 
@@ -39,20 +17,11 @@ $$
   = (q^{1/2} - q^{-1/2}) [L_0]
 $$
 
-forces **negative coefficients** into the expansion: the term
-$-q^{-1}[L_-]$ is unavoidable.  This is the $q$-deformed analogue
-of the chromaticity negativity.  At $q = 1$, the relation becomes
-$[L_+] - [L_-] = 0$ and the negativity vanishes — but at $q \neq 1$
-(the physical Descartes universe), negative Skein coefficients are
-mandatory.
+enforces **negative coefficients** into the expansion. The term $-q^{-1}[L_-]$ introduces unavoidable negativity. This provides the $q$-deformed analogue of chromaticity negativity. At $q = 1$, the relation evaluates to $[L_+] - [L_-] = 0$ and the negativity vanishes. For physical values $q \neq 1$, negative Skein coefficients remain mandatory.
 
 **Three primaries, three trefoils, three $S_3$ subgroups.**
 
-The automorphism group $S_5$ of Bring's surface contains exactly three
-copies of $S_3$, each the quotient of the trefoil knot group
-$\langle x, y \mid x^2 = y^3 \rangle$ restricted to one color
-sector.  These three $S_3$ subgroups are the "primaries" of the
-categorical color space:
+The automorphism group $S_5$ of Bring's surface contains exactly three copies of $S_3$. Each $S_3$ arises as the quotient of the trefoil knot group $\langle x, y \mid x^2 = y^3 \rangle$ restricted to a single color sector. These three $S_3$ subgroups serve as the primaries of the categorical color space:
 
 | Color | $S_3$ subgroup | Trefoil copy | Color coordinate |
 |-------|---------------|-------------|-----------------|
@@ -60,85 +29,40 @@ categorical color space:
 | Green | $S_3^{(g)} \leq S_5$ | $T_{2,3}^{(g)}$ | $c_g = w_3 - z$ |
 | Blue | $S_3^{(b)} \leq S_5$ | $T_{2,3}^{(b)}$ | $c_b = w_4 - z$ |
 
-Each $S_3$ acts on one color fiber.  The elements of $S_5$ that
-lie *outside* all three $S_3$ subgroups act by **conjugation**,
-permuting the three color sectors among themselves — this is the
-$S_5$-theoretic origin of the color permutation symmetry of QCD.
+Each $S_3$ acts on one color fiber. Elements of $S_5$ outside all three $S_3$ subgroups conjugate the subgroups, permuting the three color sectors. This $S_5$ permutation action yields the color permutation symmetry of QCD.
 
 **Necessity of confinement.**
 
-In Feynman's language: some spectral colors lie outside the triangle
-of primaries, requiring negative coefficients.  In QOU language:
-some Skein elements have negative coefficients in the color-tube
-basis.
+Just as spectral colors require negative primary coefficients, some Skein elements carry negative coefficients in the color-tube basis.
 
-An individual quark — a trefoil $T_{2,3}$ in a single color tube —
-is a "primary color."  It does not span the full Skein module with
-positive coefficients.  The Skein resolution of a physical process
-generically produces terms with $-q^{-1}$ factors, which are
-interpretable only when the full Skein sum is evaluated.  A single
-color component, evaluated in isolation, can yield a negative
-"probability" — physically meaningless.
+An individual quark forms a trefoil $T_{2,3}$ within a single color tube. This primary color fails to span the full Skein module with positive coefficients. Generic physical processes resolve into Skein sums containing $-q^{-1}$ factors. These terms hold physical meaning only upon evaluation of the complete Skein sum. Isolated evaluation of a single color component yields a meaningless negative probability.
 
-The resolution is **confinement**: only **color-neutral**
-combinations — those invariant under all three $S_3$ subgroups,
-hence under the full $S_5$ color permutation — yield positive
-evaluations under the fibre functor $\tau$.  The fibre functor
-maps the Skein module to non-negative reals:
+Confinement resolves this negativity. Combinations invariant under all three $S_3$ subgroups remain invariant under the full $S_5$ color permutation. Only these color-neutral combinations guarantee positive evaluations under the fibre functor:
 
 $$
-  \tau \colon \mathrm{Sk}_q(\mathbf{C}) \to \mathbb{R}_{\geq 0}
+  \tau \colon \mathrm{Sk}_q(\mathbf{C}) \to \mathbb{R}_{\geq 0}.
 $$
 
-but this map is positive only on the **$S_5$-invariant** submodule.
-On individual color components, $\tau$ can produce negative values
-— exactly as a chromaticity coefficient can be negative for a
-spectral color outside the primary triangle.
+The map $\tau$ ensures positivity exclusively on the $S_5$-invariant submodule. Individual color components risk negative values, exactly as chromaticity coefficients become negative for spectral colors outside the primary triangle.
 
 **The role of $T_{2,9}$.**
 
-The three-fold cover $T_{2,9}$
-([force identification](#rem:force-knot-identification)) is the
-topological agent that enforces positivity.  By interpolating all
-three color tubes in a single closed curve, $T_{2,9}$ provides
-the binding that makes the full Skein sum $S_5$-invariant.  Without
-$T_{2,9}$, the three trefoil copies could be evaluated separately
-(in which case negative coefficients are possible); with $T_{2,9}$,
-they are bound into a single $S_5$-invariant configuration whose
-$\tau$-evaluation is guaranteed non-negative.
+The three-fold cover $T_{2,9}$ ([force identification](#rem:force-knot-identification)) enforces this positivity. By interpolating all three color tubes along a single closed curve, $T_{2,9}$ binds the components into an $S_5$-invariant whole. Unbound trefoils permit isolated, potentially negative evaluations. The $T_{2,9}$ binding yields an unconditionally positive $S_5$-invariant configuration.
 
-This is the precise sense in which confinement follows from the
-torus knot architecture: $T_{2,9}$ wraps the three primaries into a
-closed system, just as a physical color-mixing apparatus must
-combine all three primaries to produce a visible (positive-intensity)
-result.
+Confinement emerges structurally from this torus knot architecture. A physical color-mixing apparatus requires all three primaries to synthesize a visible result. Similarly, $T_{2,9}$ wraps the three primary quarks into a closed, observable system.
 
 **$q$-chromaticity coordinates.**
 
-By analogy with the CIE chromaticity diagram, define the
-$q$-chromaticity coordinates of a Skein element
-$\psi \in \mathrm{Sk}_q$:
+Following the CIE chromaticity diagram, the $q$-chromaticity coordinates of a Skein element $\psi \in \mathrm{Sk}_q$ normalize the $q$-coefficients $a_r, a_g, a_b$:
 
 $$
   (\hat{c}_r, \hat{c}_g, \hat{c}_b)
   = 
-  \frac{(a_r, a_g, a_b)}{a_r + a_g + a_b}
+  \frac{(a_r, a_g, a_b)}{a_r + a_g + a_b}.
 $$
 
-where $a_r, a_g, a_b$ are the $q$-coefficients of $\psi$ in the
-three color tubes.  These satisfy $\hat{c}_r + \hat{c}_g + \hat{c}_b = 1$,
-The $q$-chromaticity diagram is a triangle (the $q$-simplex).
+These coordinates sum to unity, spanning the $q$-simplex chromaticity triangle.
 
-For color-neutral states (hadrons): $\hat{c}_r = \hat{c}_g = \hat{c}_b = 1/3$
-— the white point at the centroid.  For individual quarks, some
-coordinates exceed $1$ and others are negative — these points lie
-outside the physical triangle, just as spectral colors lie outside
-the gamut of any three primaries.
+Color-neutral hadron states sit at the centroid $\hat{c}_r = \hat{c}_g = \hat{c}_b = 1/3$. Individual quarks push some coordinates above $1$ and drive others negative. These states fall outside the physical triangle, mirroring spectral colors outside a primary gamut.
 
-The **physical gamut** — the set of states with all-positive
-$\tau$-evaluation — is a $q$-deformed convex region inscribed in
-the triangle.  Its boundary is the **$q$-spectral locus**, the
-image of the pure knot types under the $q$-chromaticity projection.
-At $q = 1$, this region fills the entire triangle (no confinement
-needed); at the substrate parameter $q$, it shrinks, excluding individual colors
-and admitting only near-centroid (confined) combinations.
+The physical gamut containing all strictly positive $\tau$-evaluations forms a $q$-deformed convex region inscribed within the triangle. The $q$-spectral locus bounds this region, formed by the $q$-chromaticity projection of pure knot types. At $q = 1$, the gamut fills the entire triangle, rendering confinement unnecessary. At the physical substrate parameter $q$, the gamut shrinks. It excludes individual colors and admits only confined, near-centroid combinations.

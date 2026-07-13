@@ -81,6 +81,5 @@ theorem binding_dressing_eq_qbeta_over_h [inst : BorromeanQuark]
   have hden : inst.q * (inst.q - 1) ≠ 0 := borromeanQuark_denom_ne_zero
   rw [qbeta_eq_E0_h_net_p]
   field_simp
-  ring
 
 end QOU.Mass

@@ -51,7 +51,7 @@ higher-order brane tower).
 
 - `docs/audits/2026-05-25-gap-closure-structural-analysis.md`
 - `prop:li2q-phiq-bar-symmetrization`
-- Faddeev quantum dilogarithm zeta-regularization (standard
+- compact quantum dilogarithm zeta-regularization (standard
   technique in quantum-dilog literature)
 """
 from __future__ import annotations

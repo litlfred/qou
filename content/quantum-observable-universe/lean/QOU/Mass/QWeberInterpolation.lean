@@ -94,7 +94,7 @@ theorem interp_two_step_at_neg_one {D : K → ℕ → K} (E O : ℕ → K) (A B 
     [instE : FollowsRogersSzego E (-1) q] [instO : FollowsRogersSzego O (-1) q]
     (m : ℕ) :
     D ν (m + 2) = (1 - q ^ (m + 1)) * D ν m := by
-  haveI := interp_follows_rogers_szego (D := D) E O A B ν
+  haveI := interp_follows_rogers_szego (D := D) (t := -1) (q := q) E O A B ν
   exact rogers_szego_t_neg_one_two_step (D ν) q m
 
 /-- **Odd-term vanishing transfers through the interpolation.** At `t = −1` with both
@@ -106,7 +106,7 @@ theorem interp_odd_vanishes_at_neg_one {D : K → ℕ → K} (E O : ℕ → K) (
     [instE : FollowsRogersSzego E (-1) q] [instO : FollowsRogersSzego O (-1) q]
     (hE1 : E 1 = 0) (hO1 : O 1 = 0) (j : ℕ) :
     D ν (2 * j + 1) = 0 := by
-  haveI := interp_follows_rogers_szego (D := D) E O A B ν
+  haveI := interp_follows_rogers_szego (D := D) (t := -1) (q := q) E O A B ν
   have hD1 : D ν 1 = 0 := by
     rw [instW.combination, hE1, hO1, mul_zero, mul_zero, add_zero]
   exact rogers_szego_odd_vanishes_at_neg_one (D ν) q hD1 j

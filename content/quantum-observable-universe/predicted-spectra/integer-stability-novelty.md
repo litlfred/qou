@@ -1,1 +1,2 @@
-**Remark.** Beyond standard liquid-drop models, this nearest-integer minimization reframes the even-even dominance algebraically. By grounding the empirical observation in a rigid quadratic convex optimization on the quantum integers, it offers a novel algebraic rigidification of pairing effects.
+**Algebraic rigidification.**
+Nearest-integer minimization reframes even-even dominance algebraically. The empirical observation stems from a rigid convex optimization over the quantum integers. This argument supplements standard liquid-drop models.

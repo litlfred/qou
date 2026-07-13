@@ -1,43 +1,24 @@
-Let $T_{2,3}$ be the left trefoil (the electron generator) and
-$T_{2,3}^{\sigma}$ its mirror image (all crossings reversed).
+The left trefoil $T_{2,3}$ represents the electron generator. Its mirror image $T_{2,3}^{\sigma}$ has all crossings reversed.
 
 **Statement.**
 
-1. **Crossing reversal defines antiparticles.**  The antihadron
-   $\mathfrak{H}^{\sigma}$ of a composite hadron
-   $\mathfrak{H} = [K_1, \ldots, K_n]_p \oplus \mathcal{L}$ is obtained by
-   replacing every constituent $K_i$ with its mirror
-   $K_i^{\sigma}$.  The braid word $\beta$ representing the linking
-   has all crossing signs reversed.
-
-2. **Crossing energy sign reversal.**  If the
-   [crossing energy](#def:crossing-energy) of $\mathfrak{H}$ is
+1. **Crossing reversal defines antiparticles.** Replacing every constituent $K_i$ with its mirror $K_i^{\sigma}$ yields the antihadron $\mathfrak{H}^{\sigma}$ of a composite hadron $\mathfrak{H} = [K_1, \ldots, K_n]_p \oplus \mathcal{L}$. The braid word $\beta$ representing the linking has all crossing signs reversed.
+2. **Crossing energy sign reversal.** The [crossing energy](#def:crossing-energy) of $\mathfrak{H}$ is
 
    $$
      \mathfrak{E}_{\mathrm{cross}}(\mathfrak{H}) = \sum_{\text{crossings}} \epsilon_i,
-     \qquad \epsilon_i \in \{q, -q^{-1}\},
+     \qquad \epsilon_i \in \{q, -q^{-1}\}.
    $$
 
-   then the crossing energy of the antihadron satisfies
+   The crossing energy of the antihadron satisfies
 
    $$
      \mathfrak{E}_{\mathrm{cross}}(\mathfrak{H}^{\sigma}) = -\mathfrak{E}_{\mathrm{cross}}(\mathfrak{H})
-     \bigg|_{q \leftrightarrow q^{-1}},
+     \bigg|_{q \leftrightarrow q^{-1}}.
    $$
 
-   i.e. positive crossings ($+q$) become negative ($-q^{-1}$) and
-   vice versa.
+   Positive crossings ($+q$) become negative ($-q^{-1}$) and vice versa.
+3. **Coulomb charge reversal.** The antisymmetric component of the crossing energy determines the Coulomb channel. This reverses sign: $Q(\mathfrak{H}^{\sigma}) = -Q(\mathfrak{H})$. The antiproton specifically carries $Q(\mathfrak{p}^{\sigma}) = -1$.
+4. **Bare mass invariance.** The mirror operation preserves the knot type and its hyperbolic volume. The bare mass of a particle equals that of its antiparticle: $m_{\mathrm{bare}}(\mathfrak{H}^{\sigma}) = m_{\mathrm{bare}}(\mathfrak{H})$.
 
-3. **Coulomb charge reversal.**  The antisymmetric component of
-   the crossing energy (the Coulomb channel) reverses sign:
-   $Q(\mathfrak{H}^{\sigma}) = -Q(\mathfrak{H})$.  In particular,
-   $Q(\mathfrak{p}^{\sigma}) = -1$ for the antiproton.
-
-4. **Bare mass invariance.**  The mirror operation preserves the
-   knot type (and hence hyperbolic volume), so the bare mass of
-   a particle equals that of its antiparticle:
-   $m_{\mathrm{bare}}(\mathfrak{H}^{\sigma}) = m_{\mathrm{bare}}(\mathfrak{H})$.
-
-**Formalization Goal Plausibility.** The Lean formalization currently provides partial coverage: the sub-lemmas for Coulomb reversal, pair crossing energy, and bare mass invariance are `sorry`-free, resting on basic arithmetic and ring properties. The remaining gap—the full proposition declaration and the explicit algebraic demonstration of sign reversal under $q \leftrightarrow q^{-1}$—is highly plausible to close. The formal proof already establishes that the mirror operation swaps the topological crossing counts; upgrading this to the algebraic trace substitution is a localized, routine goal that does not threaten the structural validity of the antiparticle mechanism.
-
-While the derivation follows standard crossing-reversal ring algebra, equating this formal knot-theoretic mirror swapping of positive and negative crossings with the physical properties of antiparticles is a conceptually novel contribution of the Quantum Observable Universe.
+Formal knot-theoretic mirror swapping models the physical properties of antiparticles.

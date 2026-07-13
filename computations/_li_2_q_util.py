@@ -11,8 +11,12 @@ kills the dimensional mass scale — exactly what is wanted when
 masses cancel in a difference.
 
 For MASS context (m_p, m_n, m_e, m_atom absolutes; m_p/m_e ratio)
-use `_phi_q_util.py` instead — Φ_q (Faddeev) is the bar-asymmetric
-archimedean / post-τ form that carries the dimensional mass scale.
+use `_phi_q_util.py` instead — its `phi_q` is the COMPACT quantum
+dilogarithm (reciprocal q-Pochhammer `∏(1−q^{-k}z)^{-1}`), the
+bar-asymmetric archimedean / post-τ form that carries the dimensional
+mass scale. (NOT the Faddeev *non-compact* Φ_b modular double; the legacy
+"Faddeev" naming there is corrected — see the terminology ruling in
+`docs/audits/2026-07-06-qbeta-faddeev-phi-b-modular-double-accuracy.md`.)
 
 Per `prop:mass-endomorphism-tower` ([mass-endomorphism-tower.md]),
 the canonical mass-formula brane-tower contribution uses the
@@ -24,9 +28,9 @@ with the symmetric q-integer
 
     [n]_q = (q^n − q^{-n}) / (q − q^{-1}).
 
-This replaces the earlier Faddeev Φ_q form (asymmetric (q^n − 1)
-q-integer), per the 2026-05-03 paper revision note.  The Faddeev
-form is empirically incompatible with isospin symmetry at q_0
+This replaces the earlier compact-q-dilog form (asymmetric (q^n − 1)
+q-integer), per the 2026-05-03 paper revision note.  That compact form
+is empirically incompatible with isospin symmetry at q_0
 (`brane-tower-isospin-diagnosis.witness.json`).
 
 The canonical brane-tower terms are
@@ -37,8 +41,8 @@ The canonical brane-tower terms are
 — note the **minus signs** outside and the **negative argument**
 inside.  At the substrate value q_0 with |V̂| ∈ [0, 1) these
 evaluate to small positive corrections (the alternating series
-converges far from any pole, unlike Faddeev Φ_q which blows up
-near |z| = q).
+converges far from any pole, unlike the compact q-dilog phi_q which
+blows up near |z| = q).
 
 Convergence: Li_2^q(z) converges absolutely for |z| < 1; the
 factor z^n / (n · [n]_q) decays super-exponentially because

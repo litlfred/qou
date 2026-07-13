@@ -1,26 +1,9 @@
-The class $\mathrm{P}$ consists of those
-computations whose resolution trees admit sufficient destructive
-interference — enough cancellation among the $3^c$ Skein
-histories — that the Markov trace compresses the tree to
-$O(\mathrm{poly}(c))$ surviving terms.  In each Planck step,
-the $q$-connection $\nabla_q$ processes $n_R(q) = 1/\hbar_q$
-iterations ([Reeb operations](#prop:reeb-operations-per-planck)),
-each generating $\eta_q$ $q$-bits of entropy
-([operational entropy](#def:operational-entropy)).  The total
-information budget after $t$ Planck steps is
-
+The class $\mathrm{P}$ consists of computations whose resolution trees exhibit sufficient destructive interference. Cancellation among the $3^c$ Skein histories allows the Markov trace to compress the tree to $O(\mathrm{poly}(c))$ surviving terms. In each Planck step, the $q$-connection $\nabla_q$ processes $n_R(q) = 1/\hbar_q$ iterations. Each iteration generates $\eta_q$ $q$-bits of entropy. After $t$ Planck steps, the total information budget is:
 $$
-  I(t) =  t \cdot \mathfrak{B}(q)
-  =  t \cdot \frac{q\eta_q}{(q-1)^2}
-  q\text{-bits.}
+  I(t) = t \mathfrak{B}(q) = t \frac{q\eta_q}{(q-1)^2} \quad q\text{-bits.}
 $$
 
-A P-class computation is one where $I(\mathrm{poly}(c))$
-suffices to determine $P_L(q_0)$.  The resolution tree has
-$3^c$ leaves carrying $c \cdot \log 3$ $q$-bits of raw information,
-but destructive interference reduces the effective information
-content to $O(\mathrm{poly}(c) \cdot \log 3)$ $q$-bits — within
-the polynomial bandwidth budget.
+A $\mathrm{P}$-class computation succeeds when $I(\mathrm{poly}(c))$ suffices to determine $P_L(q_0)$. Although the full resolution tree carries $c \log_2 3$ $q$-bits of raw information, destructive interference limits the effective content to $O(\mathrm{poly}(c))$ $q$-bits, fitting within the polynomial budget.
 
 **Three regimes.**
 
@@ -30,17 +13,6 @@ the polynomial bandwidth budget.
 | Critical | Effective tree $= c^{O(\log c)}$ | Quasi-polynomial; horizon marginally transparent |
 | Super-horizon (NP-hard) | Effective tree $= 2^{\Omega(c)}$ | Horizon opaque; bandwidth saturated exponentially |
 
-In the sub-horizon regime, the Markov trace acts as an efficient
-**information funnel**: it channels the $3^c$ resolution paths
-through the degree-$0$ bottleneck in polynomial time.  The
-computation never encounters a computational horizon — the
-degree-$0$ answer is accessible from a polynomial-depth slice
-of the resolution tree.
+In the sub-horizon regime, the Markov trace funnels the $3^c$ paths through the degree-$0$ bottleneck in polynomial time. The computation avoids any computational horizon; the answer remains accessible from a polynomial-depth subtree.
 
-In the super-horizon regime, the resolution tree has
-irreducible exponential weight.  The $3^c$ paths do not
-cancel — they carry independent information that must be
-aggregated to determine the degree-$0$ observable.  The
-bandwidth $\mathfrak{B}(q)$ is finite per Planck step, so
-exponentially many steps are required.  A computational
-horizon separates the answer from the observer.
+In the super-horizon regime, the resolution tree retains irreducible exponential weight. The uncancelled paths carry independent information requiring full aggregation. Because the bandwidth $\mathfrak{B}(q)$ per Planck step is finite, this demands exponentially many steps. A computational horizon strictly separates the answer from the observer.

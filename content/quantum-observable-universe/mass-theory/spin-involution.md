@@ -1,62 +1,20 @@
 **Definition (spin involution on a Frobenius $*$-algebra).**
-Let $(A, \tau, {}^*)$ be a Frobenius $*$-algebra over a
-commutative ring $R$ — i.e., a Frobenius algebra equipped with
-an $R$-linear involutive anti-homomorphism ${}^* : A \to A$
-($(ab)^* = b^* a^*$, $(a^*)^* = a$) such that $\tau$ is
-$*$-compatible ($\tau(a^*) = \tau(a)$ in the real case;
-$\tau(a^*) = \overline{\tau(a)}$ otherwise). A *spin involution*
-on $(A, \tau, {}^*)$ is an $R$-linear map $\sigma : A \to A$
-satisfying
+*Let $(A, \tau, {}^*)$ be a Frobenius $*$-algebra over a commutative ring $R$. A spin involution on $(A, \tau, {}^*)$ is an $R$-linear map $\sigma : A \to A$ satisfying:*
 
-1. **Involution**: $\sigma \circ \sigma = \mathrm{id}_A$.
-2. **Anti-multiplicative**:
-   $\sigma(a b) = \sigma(b)\, \sigma(a)$ for all $a, b \in A$.
-3. **Trace-invariant**: $\tau \circ \sigma = \tau$.
-4. **$*$-compatible**: $\sigma(a^*) = \sigma(a)^*$ for all $a$.
+1. *Involution: $\sigma \circ \sigma = \mathrm{id}_A$.*
+2. *Anti-multiplicative: $\sigma(a b) = \sigma(b)\, \sigma(a)$ for all $a, b \in A$.*
+3. *Trace-invariant: $\tau \circ \sigma = \tau$.*
+4. *$*$-compatible: $\sigma(a^*) = \sigma(a)^*$ for all $a$.*
 
-The $\mathbb{Z}/2$ grading $A = A_+ \oplus A_-$ by
-$\sigma$-eigenvalue is the *spin grading*; $A_+$ is the
-*spin-singlet sector* and $A_-$ is the *spin-doublet sector*.
+*The $\mathbb{Z}/2$ grading $A = A_+ \oplus A_-$ by $\sigma$-eigenvalue defines the spin grading. The space $A_+$ is the spin-singlet sector and $A_-$ is the spin-doublet sector.*
 
-**Hypothesis (2 invertible).** When using the $A_\pm$ projections
-we assume $2 \in R^\times$ — i.e., the base ring $R$ contains
-$\tfrac{1}{2}$. This is satisfied when $R$ is a field of
-characteristic $\neq 2$ (in particular $\mathbb{Q}$,
-$\mathbb{R}$, $\mathbb{C}$, $\mathbb{Z}[\tfrac{1}{2}]$, or any
-$\mathbb{Q}$-algebra). For the QOU substrate $R = \mathbb{R}$ or
-$R = \mathbb{Q}(q)$ this holds. Without this hypothesis, the
-$A_\pm$ projections $a_\pm := \tfrac{1}{2}(a \pm \sigma(a))$ are
-ill-defined; an alternative additive decomposition (without
-division) exists when $A$ has an idempotent splitting
-$\mathbf{1} = e_+ + e_-$ with $\sigma(e_\pm) = \pm e_\pm$, but
-that is more restrictive.
+When applying the $A_\pm$ projections, assume $2 \in R^\times$. Without this hypothesis, the projections $a_\pm := \tfrac{1}{2}(a \pm \sigma(a))$ are ill-defined.
 
-Every $a \in A$ has the canonical decomposition
-$a = a_+ + a_-$ with $a_\pm := \tfrac{1}{2}(a \pm \sigma(a)) \in
-A_\pm$. The *isospin third-component* is **defined on
-$\sigma$-eigenvectors**:
+Every $a \in A$ has the canonical decomposition $a = a_+ + a_-$. The isospin third-component evaluates on $\sigma$-eigenvectors as:
 
 $$
   T_3(a) \;=\; \tfrac{1}{2}\,\mathrm{sgn}_\sigma(a)
-  \;\in\; \{-\tfrac{1}{2},\, 0,\, +\tfrac{1}{2}\},
+  \;\in\; \{-\tfrac{1}{2},\, 0,\, +\tfrac{1}{2}\}.
 $$
 
-with $T_3(a) = 0$ for $a \in A_+$ (singlet, $\sigma(a) = a$)
-and $T_3(a) = \pm \tfrac{1}{2}$ for $a \in A_-$ realising
-$\sigma(a) = \pm a$. For a general $a \in A$, $T_3$ is read
-off the $A_\pm$-projection $a = a_+ + a_-$.
-
-**Derived spin grading (formalised sorry-free).** The Lean sibling proves
-the following facts about the grading, over any commutative ring $R$ with
-$\tfrac{1}{2} \in R$ (so $2 \in R^\times$):
-
-1. $\sigma$ is an additive group homomorphism ($\sigma 0 = 0$,
-   $\sigma(-a) = -\sigma(a)$, $\sigma(a-b) = \sigma a - \sigma b$).
-2. The projections $a_\pm = \tfrac{1}{2}(a \pm \sigma(a))$ satisfy
-   $\sigma(a_+) = a_+$ and $\sigma(a_-) = -a_-$; the decomposition
-   $a = a_+ + a_-$ holds, and $\sigma(a) = a_+ - a_-$.
-3. The sectors meet trivially: $\sigma(x) = x$ and $\sigma(x) = -x$ force
-   $x = 0$, so $A_+ \cap A_- = 0$.
-4. The isospin third component $T_3 = \tfrac{1}{2}\,\mathrm{sgn}_\sigma$
-   satisfies $T_3 = 0$ on the singlet sector and $T_3 = \pm\tfrac{1}{2}$ on
-   the two doublet components, with $2\,T_3 = \mathrm{sgn}_\sigma$.
+For a general $a \in A$, read $T_3$ off the $A_\pm$-projection $a = a_+ + a_-$. The derived spin grading secures the additive homomorphism properties, the orthogonality of the sectors $A_+ \cap A_- = 0$, and the explicit mapping $2\,T_3 = \mathrm{sgn}_\sigma$.
