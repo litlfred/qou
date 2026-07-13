@@ -1036,3 +1036,26 @@ lean-direct exit 0): the Im S ⊃ π·u response model 2π²u/(u²+4π²) — ba
 = u/2 − u³/(2(u²+4π²)), |deviation| ≤ |u|³/(8π²). Heads-up posted on #3692
 (κ-tower resummation sibling): their Borel–Padé can now rerun on DEFORMED
 rungs (κ̃₁, κ̃₃ available). No fit; no c_k wired; no tier change.
+
+**2026-07-13 (#3737 merged + registry rows KC21/KC22, this branch) — D-ladder
+holonomy negatives complete; the wall resolution + D-ladder enter the kernel
+registry.** #3737's two exact results: (1) **no coupled ℚ(√3) matrix
+P-recurrence** for `d_k` (`r≤2, D≤4`; `r=3, D≤3`; `r=4, D≤2` — the class the
+separated #3716 test structurally could not see); (1b) **not q-holonomic
+either, in the base its own denominators indicate** — base `3` (and `1/3`,
+and classical `k`) through `r≤3, E≤3`, prime-certified full rank, despite the
+3-smooth denominators (`v₃ ~ 1.5k`). (2) denominator **2-adic valuation is
+parity-graded** (Lean-proved window `K=5`,
+`DLadderTwoAdicGrading.bDen_two_adic_graded`; `p=3` ungraded ⇒ 2 is the
+**unique graded prime** — the ℤ/2 bar-involution signature). Together with
+the [2026-07-12 capstone](../audits/2026-07-12-c3-wall-resolution-capstone.md)
+(the `1/u³` artifact, `S = h·D(ũ)`, structural sign-flip, decay-sector `q*`)
+these are now **registry rows KC21 + KC22** in
+[`ck-dk-canonical-registry.md §9`](ck-dk-canonical-registry.md) + JSON twin
+(validator green): the odd-channel element is transcendental/**resurgent**
+(Écalle class) — the low-order (q-)holonomic search class is CLOSED. Do not
+re-run holonomic/P-finite hunts on `D(ũ)`; the live routes are (i) the
+resurgent/acceleration chain, (ii) KC19's crossing-weight `w(q)` derived from
+the Φ_b state integral, (iii) canonical `c₄^even` rungs via H₄ Hoefsmit
+(bean `8we6`) since extracted `c_k≥4` are noise (P4 entropy audit). No fit;
+no c_k wired; no tier change.
