@@ -26,6 +26,13 @@ $$
   $C(\nu+1, \mu)/C(\nu,\mu) = -1/(\nu+\mu+\tfrac12)$ carry a single
   $\Gamma(\nu+\mu+\tfrac12)$ with an alternating $\nu$-sign
   \cite{whipple1917};
+- the constant's full Gamma structure is a symbolic-exact structural
+  identity, grid-verified (not one-point): solving the two shift
+  recurrences forces
+  $C(\nu,\mu) = \sqrt{2/\pi}\;e^{-i\pi\nu}/\Gamma(\nu+\mu+\tfrac12)$,
+  which matches the direct $60$-digit compute to $\sim 10^{-40}$ across a
+  grid of generic non-integer, non-half-integer $(\nu,\mu)$ points (witness
+  `computations/substrate/whipple-gamma-constant-gridverify.witness.json`);
 - the order $\mu = \tfrac12$ and the half-integer degree are forced by the
   Hoefsmit mixing structure
   ([prop:hoefsmit-toroidal-ladder-locus](../braids-and-knots/hoefsmit-toroidal-ladder-locus.md)).
