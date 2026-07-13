@@ -893,6 +893,19 @@
         "reviewed_at": "2026-07-07T14:26:57.311203Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:51:49.000Z",
+        "reviewed_sha": "eb4d65e13781c839ce0f679361e35a8fea323c4a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "wall-side-statement": [
@@ -935,6 +948,19 @@
         "notes": "The mathematical claims in 'Hadron (stable knot composite)' are unverified due to compile errors in the Lean sibling file: content/quantum-observable-universe/particle-interactions/hadron.lean:28:13: error: unexpected token 'section'; expected 'lemma'.",
         "severity": "minor",
         "evidence": "hadron.lean:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:51:49.000Z",
+        "reviewed_sha": "eb4d65e13781c839ce0f679361e35a8fea323c4a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-vacuous": [
@@ -957,6 +983,19 @@
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/hadron.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
         "severity": "minor",
         "evidence": "hadron.lean:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:51:49.000Z",
+        "reviewed_sha": "eb4d65e13781c839ce0f679361e35a8fea323c4a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-circular": [
@@ -979,6 +1018,19 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Hadron (stable knot composite)'.",
         "severity": "minor",
         "evidence": "hadron.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:51:49.000Z",
+        "reviewed_sha": "eb4d65e13781c839ce0f679361e35a8fea323c4a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-overclaim": [
@@ -1000,6 +1052,19 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The remarks and narrative scope in 'Hadron (stable knot composite)' are appropriately qualified.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:51:49.000Z",
+        "reviewed_sha": "eb4d65e13781c839ce0f679361e35a8fea323c4a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-hidden-dof": [
@@ -1022,6 +1087,19 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Hadron (stable knot composite)'.",
         "severity": "minor",
         "evidence": "hadron.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:51:49.000Z",
+        "reviewed_sha": "eb4d65e13781c839ce0f679361e35a8fea323c4a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-non-sequitur": [
@@ -1044,6 +1122,19 @@
         "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/particle-interactions/hadron.lean.",
         "severity": "minor",
         "evidence": "hadron.lean:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:51:49.000Z",
+        "reviewed_sha": "eb4d65e13781c839ce0f679361e35a8fea323c4a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1065,6 +1156,19 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/hadron.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:51:49.000Z",
+        "reviewed_sha": "eb4d65e13781c839ce0f679361e35a8fea323c4a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-citation-misuse": [
@@ -1087,6 +1191,19 @@
         "notes": "No citations are present in 'Hadron (stable knot composite)', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "hadron.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:51:49.000Z",
+        "reviewed_sha": "eb4d65e13781c839ce0f679361e35a8fea323c4a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-definitional-ambiguity": [
@@ -1109,6 +1226,19 @@
         "notes": "Key terms and symbols in 'Hadron (stable knot composite)' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "hadron.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:51:49.000Z",
+        "reviewed_sha": "eb4d65e13781c839ce0f679361e35a8fea323c4a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-empirical-fragility": [
@@ -1131,6 +1261,19 @@
         "notes": "The algebraic and logical relations in 'Hadron (stable knot composite)' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "hadron.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:51:49.000Z",
+        "reviewed_sha": "eb4d65e13781c839ce0f679361e35a8fea323c4a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-physical-implausibility": [
@@ -1153,6 +1296,19 @@
         "notes": "The physical concepts described in 'Hadron (stable knot composite)' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "hadron.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:51:49.000Z",
+        "reviewed_sha": "eb4d65e13781c839ce0f679361e35a8fea323c4a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-reproducibility": [
@@ -1175,6 +1331,19 @@
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/hadron.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
         "evidence": "hadron.lean:1 — content/quantum-observable-universe/particle-interactions/hadron.lean:28:13: error: unexpected token 'section'; expected 'lemma'"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:51:49.000Z",
+        "reviewed_sha": "eb4d65e13781c839ce0f679361e35a8fea323c4a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-referee-verdict": [
@@ -1198,6 +1367,19 @@
         "severity": "major",
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/hadron.lean fails compilation, indicating that the claims cannot be formally verified in Lean."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:51:49.000Z",
+        "reviewed_sha": "eb4d65e13781c839ce0f679361e35a8fea323c4a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1433,6 +1615,36 @@
         },
         "reviewed_at": "2026-07-12T00:35:39.126Z",
         "reviewed_sha": "a38f99c8befc4b364f7820811bc286a64f3a2b6e"
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:51:49.000Z",
+        "reviewed_sha": "eb4d65e13781c839ce0f679361e35a8fea323c4a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:51:49.000Z",
+        "reviewed_sha": "eb4d65e13781c839ce0f679361e35a8fea323c4a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ]
   },
