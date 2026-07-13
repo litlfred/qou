@@ -3,27 +3,33 @@ name: build-pdf
 roles: [collaborator, owner]
 user_invocable: true
 description: >
-  Triggers the GitHub Actions PDF build workflow (build.yml) which produces the main
-  full PDF as well as per-chapter PDFs.
-allowed-tools: Bash AskUserQuestion
+  Builds the PDF locally in the workspace (main monolithic PDF and split per-chapter PDFs).
+allowed-tools: Bash AskUserQuestion run_command
 ---
 
 # /build-pdf
 
-This command manually triggers the GitHub Actions `build.yml` workflow to generate PDFs.
-The workflow automatically handles generating both the full monolithic PDF (`main.pdf`) and the individual per-chapter PDFs (using the `split-pdf-by-chapter.py` script).
+This command builds the PDF locally to save GitHub CI minutes. It generates the monolithic PDF (`main.pdf`) and the split per-chapter PDFs.
 
 ## Behavior
-1. Run `git branch --show-current` to get the current branch.
-2. If there are unpushed commits, advise the user to push first so the build action catches the latest changes.
-3. Run `gh workflow run build.yml --ref <current-branch>` to trigger the build.
-4. Once triggered, optionally run `gh run list --workflow=build.yml -L 1` to get the URL of the newly created run.
-5. Provide the user with the link to monitor the GitHub Action run.
-
-## Example Usage
-```
-User: /build-pdf
-Agent: I have triggered the PDF build on GitHub Actions for your branch. 
-You can monitor the progress and download the resulting PDFs (both the full paper and the per-chapter splits) here:
-https://github.com/litlfred/qou/actions/runs/123456789
-```
+1. Run the `build.ts` script to generate `main.tex` and the chapters:
+   ```bash
+   bun run ../folio-assistant/content/pipeline/build.ts \
+     content/quantum-observable-universe/quantum-observable-universe.ts \
+     --out-dir chapters/ \
+     --generate-main \
+     --main-out main.tex \
+     --preamble latex/preamble.tex
+   ```
+2. Compile the PDF using `latexmk`. If `latexmk` is not available natively in the workspace, use the Docker builder image fallback (as specified in `docs-generation.md`):
+   ```bash
+   latexmk -pdf main.tex || docker run --rm --entrypoint "" -v $(pwd):/work -w /work ghcr.io/litlfred/qou-paper-builder:latest latexmk -pdf main.tex
+   ```
+3. Split the generated `main.pdf` into individual per-chapter PDFs:
+   ```bash
+   mkdir -p chapters-pdf/
+   python3 ../folio-assistant/scripts/split-pdf-by-chapter.py \
+     --input main.pdf \
+     --output-dir chapters-pdf/
+   ```
+4. Confirm to the user that the PDFs have been generated in the workspace and provide the paths (`main.pdf` and `chapters-pdf/`).
