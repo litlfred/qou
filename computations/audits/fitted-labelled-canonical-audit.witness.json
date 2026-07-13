@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-13T15:08:27.565190+00:00",
-  "commitSha": "34af1e7c8a2af7ab2f4e000ff79eaf0c190a2880",
+  "computedAt": "2026-07-13T15:59:17.484662+00:00",
+  "commitSha": "cf22cc5671f16074b279ce053f4ee36c9ae3b499",
   "assertions": [
     {
       "name": "no_fitted_labelled_canonical",
@@ -35,7 +35,7 @@
   "data": {
     "total_issues": 2,
     "flagged_script_count": 2,
-    "scripts_scanned": 1970,
+    "scripts_scanned": 1976,
     "rows": [
       {
         "path": "computations/metallic_q_n4_character_sweep.py",
