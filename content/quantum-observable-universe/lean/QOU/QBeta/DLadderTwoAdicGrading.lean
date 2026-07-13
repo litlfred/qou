@@ -73,6 +73,15 @@ theorem bDen_two_adic_graded : TwoAdicParityGraded bDen 5 := by
   intro k hk1 hk5
   interval_cases k <;> decide
 
+/-- **Contrast: p = 3 is NOT graded (sorry-free).** `3` divides `den(b_k)` at
+    both an **even** index (`k=2`, den `288 = 2⁵·3²`) and an **odd** index
+    (`k=3`, den `27 = 3³`), so no parity rule `3 ∣ den(b_k) ⟺ (parity of k)`
+    can hold — unlike `2`, whose grading is `bDen_two_adic_graded`. Together they
+    witness that **`2` is the *unique* graded prime**: only the prime of the ℤ/2
+    bar-involution sees the parity grading (p=3 is factorial-smooth growth on both
+    parities). -/
+theorem three_not_parity_graded : 3 ∣ bDen 2 ∧ 3 ∣ bDen 3 := by decide
+
 /-- **Open target (§3b conjecture class).** The full bar-odd D-ladder
     `√3`-component `b : ℕ → ℚ` (the `ser_sqrt`/`ser_div` object) is 2-adically
     parity-graded for **all** `k ≥ 1`. Content-bearing (a parameter-quantified
