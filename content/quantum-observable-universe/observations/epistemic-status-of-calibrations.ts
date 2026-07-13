@@ -9,6 +9,7 @@ export default remark({
     "prop:three-calibration-inputs",
     "prop:three-calibration-discipline",
     "prop:self-dual-higgs-real-volume",
+    "rem:qstar-decay-sector-q0",
   ],
   tags: [
     "calibration",
