@@ -335,7 +335,16 @@ pub fn chi_via_matrix_m_mpfr(
     }
     let mut total = Float::with_val(prec, 0);
 
-    for block in cache.blocks.values() {
+    // Iterate blocks in deterministic μ_p-key order. `HashMap::values()`
+    // has nondeterministic iteration order; combined with non-associative
+    // mpfr `Float` addition this would make `total` vary by a few ULPs
+    // across runs (last few digits of the decimal string), breaking
+    // witness reproducibility. Sorting by the partition tuple is O(B log B)
+    // for B ≤ p(k_split) blocks (B ≤ 3 for the deuteron split, ≤ ~30 for
+    // larger atoms) — trivial overhead next to the matrix products.
+    let mut sorted_blocks: Vec<&BlockDataMpfr> = cache.blocks.values().collect();
+    sorted_blocks.sort_by(|a, b| a.mu_p.cmp(&b.mu_p));
+    for block in sorted_blocks {
         let size = block.size;
 
         let mut b_p = dense_eye(size, prec);
@@ -465,6 +474,43 @@ mod tests {
                 group_total,
                 syts.len(),
             );
+        }
+    }
+
+    /// Determinism: calling `chi_via_matrix_m_mpfr` on the same input
+    /// must return bit-identical results across calls. The pre-fix
+    /// implementation iterated `HashMap::values()` (nondeterministic
+    /// order); combined with non-associative mpfr addition the last
+    /// few digits could shift across runs, breaking witness
+    /// reproducibility. The fix sorts blocks by μ_p key before
+    /// iterating. This test catches a regression of either piece.
+    #[test]
+    fn chi_via_matrix_m_is_deterministic_across_calls() {
+        let dps: u32 = 50;
+        let left: Vec<(i32, usize)> = vec![(1, 1)];
+        let right: Vec<(i32, usize)> = vec![(1, 5)];
+        // λ = (3,2,1) at k_split=3 has > 1 μ_p block so the sort
+        // order actually matters across iteration.
+        let shape: Vec<usize> = vec![3, 2, 1];
+        let mut prev: Option<String> = None;
+        for _ in 0..5 {
+            // Re-precompute the cache each iteration: the HashMap
+            // construction order is run-dependent (depends on hasher
+            // seed); the sort-then-iterate happens INSIDE
+            // chi_via_matrix_m_mpfr so the result must be stable.
+            let cache = precompute_block_tables_mpfr(&shape, 3, Q_50, dps);
+            let chi = chi_via_matrix_m_mpfr(&cache, &left, 1, &right);
+            let s = chi.to_string_radix(10, Some(dps as usize));
+            if let Some(p) = &prev {
+                assert_eq!(
+                    p, &s,
+                    "chi_via_matrix_m_mpfr returned different decimals \
+                     across calls — HashMap iteration is no longer \
+                     deterministic. Previous: {}, current: {}",
+                    p, s,
+                );
+            }
+            prev = Some(s);
         }
     }
 }
