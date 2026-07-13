@@ -3,7 +3,7 @@ The fermion--boson decomposition extends the generator set to the even-$n$ torus
 All torus knots have zero hyperbolic volume. They are satellite knots, not hyperbolic. Consequently, their bare mass under the topological mass formula vanishes:
 
 $$
-  \mathcal{M}_{\mathrm{bare}}(T_{m,n}) = 
+  \mathfrak{m}_{\mathrm{bare}}(T_{m,n}) = 
   \frac{\mathrm{Vol}(T_{m,n})}{\hbar_q^{2}} =  0.
 $$
 

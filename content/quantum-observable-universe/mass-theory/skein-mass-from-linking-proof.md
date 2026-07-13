@@ -1,11 +1,11 @@
 **Proof.**
-Evaluating the mass functional $\mathcal{M}$ on the Skein resolution
+Evaluating the mass functional $\mathfrak{m}$ on the Skein resolution
 of $H$ gives:
 
 $$
-  \mathcal{M}(H)
+  \mathfrak{m}(H)
   = 
-  \underbrace{Q(q) \cdot \mathcal{M}(\mathcal{L}_{\mathrm{Hopf}})}_{\text{binding energy (from linking)}}
+  \underbrace{Q(q) \cdot \mathfrak{m}(\mathcal{L}_{\mathrm{Hopf}})}_{\text{binding energy (from linking)}}
   + 
   \underbrace{\sum_{i=1}^{n}
   \frac{\mathrm{Vol}(K_i)}{\hbar_q^{2}}}_{\text{constituent mass (zero for torus knots)}}
@@ -19,7 +19,7 @@ $\mathrm{Vol}(K_i) = 0$ for all $i$, so the entire inertial mass
 arises from the linking topology:
 
 $$
-  \mathcal{M}(H) =  Q(q) \cdot \mathcal{M}(\mathcal{L}_{\mathrm{Hopf}}).
+  \mathfrak{m}(H) =  Q(q) \cdot \mathfrak{m}(\mathcal{L}_{\mathrm{Hopf}}).
 $$
 
 $\square$

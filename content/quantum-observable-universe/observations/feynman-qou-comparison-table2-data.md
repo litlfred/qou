@@ -1,4 +1,4 @@
-| $Z$ | El | $A$ | $\mathcal{M}_{\mathrm{SEMF}}$ | $\Delta_S$ | $\%_S$ | $\mathcal{M}_{\mathrm{QOU}}$ | $\Delta_Q$ | $\%_Q$ | Winner |
+| $Z$ | El | $A$ | $\mathfrak{m}_{\mathrm{SEMF}}$ | $\Delta_S$ | $\%_S$ | $\mathfrak{m}_{\mathrm{QOU}}$ | $\Delta_Q$ | $\%_Q$ | Winner |
 |:----|:---|:----|:-----|:------|:------|:-----|:------|:------|:------|
 | 1 | H | 1 | 938.783 | $+0.0$ | $0.000$ | 938.910 | $+0.1$ | $0.014$ | SEMF |
 | 2 | He | 4 | 3732.751 | $+4.4$ | $0.117$ | 3734.624 | $+6.2$ | $0.167$ | SEMF |

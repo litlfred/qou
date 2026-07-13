@@ -1,10 +1,10 @@
-*Evaluating the mass functional $\mathcal{M}$ on the terminal Skein
+*Evaluating the mass functional $\mathfrak{m}$ on the terminal Skein
 resolution of a hadron $H$ gives*
 
 $$
-  \mathcal{M}(H)
+  \mathfrak{m}(H)
   = 
-  Q(q) \cdot \mathcal{M}(\mathcal{L}_{\mathrm{Hopf}})
+  Q(q) \cdot \mathfrak{m}(\mathcal{L}_{\mathrm{Hopf}})
   +
   \sum_{i=1}^{n}
   \frac{\mathrm{Vol}(K_i)}{\hbar_q^{2}},

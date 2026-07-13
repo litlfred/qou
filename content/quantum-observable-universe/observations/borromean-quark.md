@@ -60,10 +60,10 @@ The gluon is $T(2,2)$, the Hopf link, not $T(2,7)$. The Hopf link has two compon
 The terminal resolution ([terminal resolution](#prop:terminal-resolution)) decomposes any hadronic link into a polynomial in unknots and Hopf links:
 
 $$
-  \mathcal{M}(\mathcal{H})
+  \mathfrak{m}(\mathcal{H})
   = 
-  \sum_j P_j(q)\mathcal{M}(\nu)
-  +  \sum_k Q_k(q)\mathcal{M}(\mathcal{L}_H).
+  \sum_j P_j(q)\mathfrak{m}(\nu)
+  +  \sum_k Q_k(q)\mathfrak{m}(\mathcal{L}_H).
 $$
 
-In the Borromean picture, $\mathcal{M}(\nu) \approx 0$ since unknot mass is vacuum drag only. Thus, the $Q_k(q)\mathcal{M}(\mathcal{L}_H)$ terms dominate the hadronic mass. These represent the Hopf link mass contributions from the Borromean structure. The assertion that the vast majority of hadronic mass derives from Skein polynomials multiplying the Hopf link mass perfectly aligns with the Borromean volume contributing through the Skein resolution.
+In the Borromean picture, $\mathfrak{m}(\nu) \approx 0$ since unknot mass is vacuum drag only. Thus, the $Q_k(q)\mathfrak{m}(\mathcal{L}_H)$ terms dominate the hadronic mass. These represent the Hopf link mass contributions from the Borromean structure. The assertion that the vast majority of hadronic mass derives from Skein polynomials multiplying the Hopf link mass perfectly aligns with the Borromean volume contributing through the Skein resolution.

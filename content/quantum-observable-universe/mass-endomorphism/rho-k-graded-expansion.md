@@ -1,6 +1,6 @@
 ## Statement
 
-We expose the graded expansion of the categorical density $\rho_K$ by multiplying the GB-NF identity ([atomic mass via GB-NF](#prop:atomic-mass-gb-nf)) $\mathcal{M}(K) = m_e \cdot \rho_K \cdot |\!\mathrm{tr}_M(\mathrm{NF}_{\mathrm{GS}}(\mathcal{B}_K))|$ through by $m_e \cdot |\!\mathrm{tr}_M(\mathcal{B}_K)|$:
+We expose the graded expansion of the categorical density $\rho_K$ by multiplying the GB-NF identity ([atomic mass via GB-NF](#prop:atomic-mass-gb-nf)) $\mathfrak{m}(K) = m_e \cdot \rho_K \cdot |\!\mathrm{tr}_M(\mathrm{NF}_{\mathrm{GS}}(\mathcal{B}_K))|$ through by $m_e \cdot |\!\mathrm{tr}_M(\mathcal{B}_K)|$:
 
 $$
   \boxed{
