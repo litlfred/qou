@@ -1,6 +1,20 @@
 #!/usr/bin/env python3
 """he4_binding_k_fingerprint_stage1_probe.py
 
+⛔ VOID — SAME-DAY CORRECTION (2026-07-13, later the same day). This probe
+evaluated the GP Laurent characters AT q₀, but the GP kernel's variable is
+√q (generator eigenvalues (v², −v⁻²) = paper (q, −q⁻¹) at q = v²), so every
+number below is the paper trace at q₀², not q₀ — the headline "best plain K
+rel Δ = 14.7%" is void. The constituent product (plain Borromean nucleons)
+and the {3,6,9} seam placement were also wrong: the canonical ⁴He word is
+p(0)·σ₂·p(3)·cw₅·n(6)·σ₈⁻¹·n(9) — canonical 11-crossing operator-valued
+nucleon blocks joined by ONE pair-typed crossing per seam at generators
+{2,5,8} — explicit in `mass_at_3A_proper.atom_braid_word_3A`, no search
+needed. See `he4_binding_k_presentation_correction_probe.py` (+witness) for
+the measured presentation identity, the certified operator dictionary, and
+the end-to-end reproduction of the combiner traces. Stage-2 (PSD/LP) remains
+the open question. Kept for the record; do not cite its numbers.
+
 A=4 extension of the canonical binding-K search — STAGE 1 (trace fingerprint),
 unblocked by the in-sandbox `pyhecke-native` build (2026-07-13).
 
