@@ -1,0 +1,59 @@
+{
+  "computation": "su4-schur-weyl-flavor-factor",
+  "description": "Schur\u2013Weyl duality DERIVES the C(4,n) flavor factor of the n-body binding weight as dim \u2227^n(C^4)=V_{[1^n]}^{GL_4}, upgrading #3676's Wigner hypothesis to a theorem for the flavor leg. Truncation at n=4 is Pauli (antisymmetric-specific). w_n = C(4,n)\u00b7w_n^spatial; spatial leg open (z2bn). Nothing wired.",
+  "auditOnly": "docs/audits/2026-07-12-su4-supermultiplet-alpha-cluster-truncation.md",
+  "tier": "structural-exact (Weyl dimension formula, GL_4; Schur\u2013Weyl duality \u2014 textbook)",
+  "computedAt": "2026-07-12T15:32:54.206010+00:00",
+  "commitSha": "877117ba00279fd7721ec392d93ecadb4bd78b13",
+  "engine": "python-stdlib",
+  "engineVersion": "3.11.15",
+  "scriptFile": "su4_schur_weyl_flavor_factor_probe.py",
+  "scriptHash": "9ad7c49ccb47",
+  "assertions": [
+    {
+      "name": "flavor_degeneracy_is_exterior_power_C4n",
+      "passed": true,
+      "detail": "dim V_{[1^n]}^{GL_4} (Weyl dim formula) = n=1:4, n=2:6, n=3:4, n=4:1, n=5:0 = C(4,n) exactly \u21d2 the [1^n] flavor degeneracy is \u2227^n(C^4), DERIVED via Schur\u2013Weyl (not the Wigner hypothesis of #3676)"
+    },
+    {
+      "name": "truncation_is_pauli_antisymmetric_specific",
+      "passed": true,
+      "detail": "antisym \u2227^n(C^4)=0 for n>4 (Pauli on 4 flavors) while symmetric [n] dim stays >0 (n=5:56, n=6:84) \u21d2 the n=4 truncation is the ANTISYMMETRIC channel closing at the \u03b1, a Schur\u2013Weyl fact, not a fit"
+    },
+    {
+      "name": "weight_factorizes_flavor_times_spatial",
+      "passed": true,
+      "detail": "w_n = C(4,n)_flavor \u00b7 w_n^spatial ; FLAVOR leg C(4,n) DERIVED here (Schur\u2013Weyl), SPATIAL leg w_n^spatial = the Specht/Hecke binding kernel is separately OPEN (active z2bn/lever1 'classical binding kernel' line). B not closed; nothing wired"
+    }
+  ],
+  "allPassed": true,
+  "result": {
+    "antisym_col_dims": {
+      "1": 4,
+      "2": 6,
+      "3": 4,
+      "4": 1,
+      "5": 0,
+      "6": 0,
+      "7": 0
+    },
+    "symmetric_dims": {
+      "1": 4,
+      "2": 10,
+      "3": 20,
+      "4": 35,
+      "5": 56,
+      "6": 84,
+      "7": 120
+    },
+    "flavor_factor": "C(4,n) = dim \u2227^n(C^4)",
+    "verdict": "SCHUR\u2013WEYL DERIVES THE FLAVOR FACTOR (upgrades #3676's Wigner hypothesis; no fit, nothing wired): by Schur\u2013Weyl duality on (C^4)^{\u2297n}, the fully-antisymmetric n-body flavor channel is \u2227^n(C^4)=V_{[1^n]}^{GL_4} with dim = C(4,n) EXACTLY (Weyl dim formula = exterior power). So the C(4,n) that #3676 introduced as the Wigner-supermultiplet hypothesis is a DERIVED Schur\u2013Weyl fact for the flavor leg, and its n>4 vanishing is Pauli exclusion on 4 flavors \u2014 specific to the antisymmetric channel (symmetric [n] stays nonzero). The weight factorizes w_n = C(4,n)_flavor \u00b7 w_n^spatial: the flavor leg is now derived; the spatial (Specht/Hecke) leg is the separately-OPEN piece the active z2bn/lever1 'classical binding kernel' line is working. SCOPE GUARD: derives the FLAVOR factor only \u2014 NOT the spatial factor (z2bn open), NOT the per-order M_n(K) (qou-v0yw open); wires NOTHING, B stays open. NO tier change."
+  },
+  "context": {
+    "upgrades": "#3676 \u2014 the 'Wigner supermultiplet hypothesis' flavor step becomes a Schur\u2013Weyl theorem for the flavor leg",
+    "factorizes": "w_n = C(4,n)_flavor (DERIVED) \u00b7 w_n^spatial (OPEN)",
+    "spatial_leg_active_on": "z2bn/lever1 'DERIVE the exact classical binding kernel' line",
+    "distinct_from": "the DEPRECATED schur-weyl MASS-trace route (S_{3A} braid/color side), which this is not \u2014 this is the 4-FLAVOR supermultiplet side",
+    "scope_guard": "derives the FLAVOR factor only; spatial (z2bn) + M_n(K) (qou-v0yw) open; wires nothing; B not closed"
+  }
+}

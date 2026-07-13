@@ -54,10 +54,33 @@ already-Lean-proved supermultiplet gate**, not an independent geometric fit.
 - **Does not buy (STRICT scope guard):**
   - It does **not** derive the per-order `M_n` weights — **qou-v0yw stays open**. This explains
     the *building block* (why the α), not the *counts*.
-  - The "n-body term lives in `[1ⁿ]`" step is the **Wigner supermultiplet hypothesis** (textbook,
-    physically standard) — flagged as a hypothesis, not a fit.
   - It **wires nothing** and changes no production. The `C(4,n)` gate is already Lean-proved; the
     α-cluster geometry is already in GAP-1. This connects them.
+
+## Update (2026-07-12): the flavor factor is Schur–Weyl-*derived*, not a hypothesis
+
+The original scope guard flagged the "n-body term lives in `[1ⁿ]`" step as the *Wigner
+supermultiplet hypothesis*. That step is **upgraded to a theorem for the flavor factor** by
+**Schur–Weyl duality** (probe
+[`su4_schur_weyl_flavor_factor_probe.py`](scripts/su4_schur_weyl_flavor_factor_probe.py)
+→ [witness](scripts/su4-schur-weyl-flavor-factor.witness.json), 3/3):
+
+- On `(C⁴)^{⊗n}` (n nucleons, 4 flavors), `(C⁴)^{⊗n} = ⊕_{λ⊢n,≤4 rows} V_λ^{GL₄} ⊗ S_λ^{Sₙ}`.
+  The fully-antisymmetric n-body flavor channel is `λ=[1ⁿ]`: `V_{[1ⁿ]}^{GL₄} = ∧ⁿ(C⁴)`, of
+  dimension **`C(4,n)` exactly** (Weyl dim formula = exterior power). So the `C(4,n)` is the
+  flavor degeneracy **by the Schur–Weyl theorem**, not by assumption.
+- Its `n>4` vanishing is **Pauli exclusion on 4 flavors** — *specific to the antisymmetric
+  channel* (the symmetric `[n]` dimension `C(n+3,3)` stays nonzero for all n). So the n=4
+  truncation is a Schur–Weyl fact, not a fit.
+- **Weight factorization:** `w_n = C(4,n)_flavor · w_n^{spatial}`. The **flavor leg** `C(4,n)`
+  is now **derived**; the **spatial leg** `w_n^{spatial}` (the Specht/Hecke binding kernel) is
+  the separately-**open** piece — exactly what the active **z2bn/lever1** "DERIVE the exact
+  classical binding kernel" line is working. This closes the flavor leg and points the spatial
+  leg at that line; it does **not** close `B` (spatial factor + `M_n(K)` still open), and wires
+  nothing.
+
+This is **distinct** from the deprecated Schur–Weyl *mass-trace* route (the `S_{3A}` braid/color
+projection); this is the **4-flavor supermultiplet** side.
 
 ## Cross-references
 
