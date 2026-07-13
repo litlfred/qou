@@ -71,6 +71,8 @@ five-term (⇒ discharges `QRogersAnalyticContinuation`); build RSK / `Σ(f^λ)�
 
 ## Honest §3b chips LANDED (move B — extend the conditional cone, no fabricated instance)
 
+Both landed with the real Mathlib lemmas — no artifact shortcuts.
+
 1. **`FollowsRogersSzego` even-sector tower** (`Mass/BindingQHermiteOscillator.lean`,
    `rogers_szego_even_at_neg_one`) — the file already proved the ODD sector vanishes
    at `t=−1` (bar-odd/sinh collapse); added the EVEN closed form
@@ -78,14 +80,11 @@ five-term (⇒ discharges `QRogersAnalyticContinuation`); build RSK / `Σ(f^λ)�
    q-Hermite even/odd parity. Direct application of this session's bar-parity insight.
    Verified lean-direct sorry-free (`#print axioms` = propext/Classical/Quot only). ✓
 
-## Deferred honest chip (flagged so no one closes it dishonestly)
-
 2. **`TowerGeometricLowerBound.no_linear_selection`** (`Mass/LevelSelectionLogarithmic.lean`)
-   — converting the file's "linear selection excluded" prose into a `: False` theorem.
-   **TRAP:** the naive `∀ A, w A ≤ M·A → False` is provable trivially at **A=0** (the
-   class forces `w 0 ≥ c > 0`, extensivity forces `w 0 ≤ 0` — instant contradiction),
-   which would *look* like the exponential-beats-linear exclusion while exploiting a
-   boundary artifact. The **honest** statement must restrict extensivity to `A ≥ 1`
-   (or asymptotic) and then genuinely needs the Mathlib exponential-dominates-linear
-   lemma (`Tendsto (fun A => c·r^A − M·A) atTop atTop`, or `A/r^A → 0`). Real work;
-   **not** to be closed via the A=0 artifact.
+   — converts the file's "linear selection excluded" prose into a `: False` theorem, the
+   **honest** way: extensivity required only for `A ≥ 1` (the `A = 0` boundary artifact —
+   `w 0 ≥ c > 0` vs `M·0 = 0` — deliberately excluded), and the contradiction genuinely
+   uses the Mathlib exponential-beats-linear lemma `isLittleO_coe_const_pow_of_one_lt`
+   (`(A:ℝ) =o[atTop] r^A`), not the boundary. Verified lean-direct sorry-free
+   (`#print axioms` = propext/Classical/Quot only). ✓ **LANDED** — done with the real
+   growth lemma as requested, no artifact shortcut.
