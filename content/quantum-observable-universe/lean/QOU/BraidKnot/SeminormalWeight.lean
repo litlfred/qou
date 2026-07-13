@@ -110,16 +110,55 @@ theorem characterSum_pair {ι : Type*} [DecidableEq ι] (q h : R) (a b : ι) (ha
     ∑ t ∈ ({a, b} : Finset ι), seminormalWeight q h (ρ t) = h := by
   rw [characterSum_eq_h_mul, reducedSum_pair q a b hab ρ hρ hq hnd, mul_one]
 
-/-! ### Next rung (bean `qou-vg1u`, Infra 3): the integer content `c_λ`
+/-- **The reduced-weight sum is `|S|/2` — the integer content `c_λ` (general).**
+    If the SYT index set `S` carries a fixed-point-free involution `τ` that negates
+    the axial distance (`ρ(τ t) = −ρ t` — the `i ↔ i+1` transposition swapping the
+    two boxes, which negates `ρ` by `TableauContent.axialDistance_antisymm`), then
+    `2·Σ_t g_{ρ(t)} = |S|`: each τ-pair contributes `g_ρ + g_{−ρ} = 1`, so the sum
+    is the pair count `|S|/2 ∈ ℤ`. The proof reindexes `∑ g_{−ρ t}` by `τ` (via
+    `Finset.sum_image` over the involution) into `∑ g_{ρ t}`, then applies the
+    pairing identity termwise. This is the **integer content** `c_λ`. -/
+theorem two_mul_reducedSum_eq_card {ι : Type*} [DecidableEq ι] (q : R) (S : Finset ι)
+    (ρ : ι → ℤ) (τ : ι → ι) (hτS : ∀ t ∈ S, τ t ∈ S) (hττ : ∀ t ∈ S, τ (τ t) = t)
+    (hρτ : ∀ t ∈ S, ρ (τ t) = -ρ t) (hq : q ≠ 0)
+    (hnd : ∀ t ∈ S, q ^ (2 * ρ t) ≠ 1) :
+    (2 : R) * ∑ t ∈ S, reducedWeight q (ρ t) = (S.card : R) := by
+  have reindex : (∑ t ∈ S, reducedWeight q (-ρ t)) = ∑ t ∈ S, reducedWeight q (ρ t) := by
+    have hinj : ∀ x ∈ S, ∀ y ∈ S, τ x = τ y → x = y := by
+      intro x hx y hy h
+      have h2 := congrArg τ h; rwa [hττ x hx, hττ y hy] at h2
+    have himg : S.image τ = S := by
+      apply Finset.Subset.antisymm
+      · intro b hb; rw [Finset.mem_image] at hb; obtain ⟨a, ha, rfl⟩ := hb; exact hτS a ha
+      · intro b hb; rw [Finset.mem_image]; exact ⟨τ b, hτS b hb, hττ b hb⟩
+    calc (∑ t ∈ S, reducedWeight q (-ρ t))
+        = ∑ t ∈ S, reducedWeight q (ρ (τ t)) :=
+          Finset.sum_congr rfl (fun t ht => by rw [hρτ t ht])
+      _ = ∑ t ∈ S.image τ, reducedWeight q (ρ t) :=
+          (Finset.sum_image (f := fun t => reducedWeight q (ρ t)) hinj).symm
+      _ = ∑ t ∈ S, reducedWeight q (ρ t) := by rw [himg]
+  have pair : ∀ t ∈ S, reducedWeight q (ρ t) + reducedWeight q (-ρ t) = 1 :=
+    fun t ht => reducedWeight_add_neg q (ρ t) hq (hnd t ht)
+  calc (2 : R) * ∑ t ∈ S, reducedWeight q (ρ t)
+      = (∑ t ∈ S, reducedWeight q (ρ t)) + ∑ t ∈ S, reducedWeight q (ρ t) := by ring
+    _ = (∑ t ∈ S, reducedWeight q (ρ t)) + ∑ t ∈ S, reducedWeight q (-ρ t) := by rw [reindex]
+    _ = ∑ t ∈ S, (reducedWeight q (ρ t) + reducedWeight q (-ρ t)) := by
+          rw [Finset.sum_add_distrib]
+    _ = ∑ _t ∈ S, (1 : R) := Finset.sum_congr rfl pair
+    _ = (S.card : R) := by rw [Finset.sum_const, nsmul_eq_mul, mul_one]
 
-The one piece left to reach `χ_λ(σ) = c_λ·h` is that the reduced-weight sum is an
-integer: for a SYT index set `S` closed under the fixed-point-free `i ↔ i+1` swap
-involution `τ` (which negates the axial distance, `ρ(τ t) = −ρ t` by
-`TableauContent.axialDistance_antisymm`), each τ-pair contributes
-`g_ρ + g_{−ρ} = 1`, so `2·Σ_t g_{ρ(t)} = |S|`, i.e. `Σ g = |S|/2 = c_λ ∈ ℤ`.
-Composed with `characterSum_eq_h_mul` this gives `2·χ_λ(σ) = |S|·h`. The proof is
-a τ-reindex (`∑ g_{−ρ t} = ∑ g_{ρ t}`) + the pairing identity; it needs the
-`Finset` involution-reindex API pinned against a live LSP, deferred to the next
-session (this one lost the LSP mid-build). -/
+/-- **`2·χ_λ(σ) = |S|·h` — the general closed form `χ_λ(σ) = c_λ·h`, `c_λ = |S|/2`.**
+    The single-generator seminormal character over a standard-tableau set `S`
+    carrying the `i ↔ i+1` swap involution is `c_λ·h` with `c_λ = |S|/2 ∈ ℤ`.
+    Composes `characterSum_eq_h_mul` (h factors out) with `two_mul_reducedSum_eq_card`
+    (the reduced sum is the integer `|S|/2`). No `sorry`. -/
+theorem two_mul_characterSum_eq {ι : Type*} [DecidableEq ι] (q h : R) (S : Finset ι)
+    (ρ : ι → ℤ) (τ : ι → ι) (hτS : ∀ t ∈ S, τ t ∈ S) (hττ : ∀ t ∈ S, τ (τ t) = t)
+    (hρτ : ∀ t ∈ S, ρ (τ t) = -ρ t) (hq : q ≠ 0)
+    (hnd : ∀ t ∈ S, q ^ (2 * ρ t) ≠ 1) :
+    (2 : R) * ∑ t ∈ S, seminormalWeight q h (ρ t) = (S.card : R) * h := by
+  rw [characterSum_eq_h_mul]
+  have hkey := two_mul_reducedSum_eq_card q S ρ τ hτS hττ hρτ hq hnd
+  linear_combination h * hkey
 
 end QOU.BraidKnot.SeminormalWeight
