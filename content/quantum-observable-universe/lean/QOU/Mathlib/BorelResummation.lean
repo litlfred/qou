@@ -21,9 +21,15 @@
       `∫₀^∞ e^{−t} (aₙ/n!)(z t)ⁿ dt = aₙ zⁿ` (`laplace_borel_term`): the Borel
       division by `n!` and the Laplace multiplication by `n!` cancel exactly,
       term by term;
-    * the ∑↔∫ interchange under a Gevrey-1 dominating bound (dominated
-      convergence) and the Watson / Nevanlinna–Sokal UNIQUENESS half remain
-      the genuine Mathlib gap — next el8w tranche. NEVER `sorry`-faked.
+    * NEW (el8w tranche 4, `BorelLaplace.lean`): the ∑↔∫ interchange proved
+      sorry-free as **regularity** — `borelSum_eq_tsum`: on the disc of
+      convergence (`∑ₙ|aₙ||z|ⁿ < ∞`) the Borel sum reproduces the ordinary sum,
+      via `integral_tsum`. (The earlier "Gevrey-1 dominating bound" framing was
+      corrected: for a DIVERGENT Gevrey-1 series the interchange fails —
+      `∑ₙ∫|·| = ∞` — which is the Borel-plane Stokes obstruction itself.)
+    * the Watson / Nevanlinna–Sokal UNIQUENESS half (the divergent case: Borel
+      sum IS the asymptotic function) remains the genuine Mathlib gap — next
+      el8w tranche. NEVER `sorry`-faked.
 
   Why QOU needs it: Ohtsuki's PROOF of the volume conjecture for the figure-
   eight (the Vol(4_1) saddle, QOU/Knot/FigureEightVolume.VolumeConjecture41)
