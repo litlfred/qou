@@ -61,4 +61,24 @@ It is fully parameter-free (no cost choice, no inversion), so a match would be a
 *derivation* and a miss is a clean scope-(a) negative that sharpens the gap —
 neither is a fit. Result recorded below / in the companion probe witness.
 
-_(probe results pending — see companion commit)_
+**Result (checkcorpus first — the probe already exists).** The parameter-free
+target `B = m_e·|Σ y_λ χ^λ sgn·dim|` is already evaluated
+(`delta-lambda-binding-full-evaluation`): it **undershoots** AME by 70–89%
+(D −82.9%, T −77.5%, ³He −69.6%, ⁴He −89.3%). The sign is closed (ρ-grading),
+the magnitude base `|Δ_λ|=dim` is closed (`magnitude-graded-trace`); the base
+lacks **extensivity**. The extensivity multipliers `μ_ext=B_AME/B_base` a
+derived level rule must supply are **5.85 / 4.44 / 3.29 / 9.31** (D/T/³He/⁴He),
+non-monotone in A (⁴He doubly-magic largest) — not fit-closable from 4 points
+(`deltalambda-extensivity-gap-synthesis` probe).
+
+**Where the recent machinery already gets it (5-day window).** The **bond-count**
+route supersedes the per-partition Δ_λ for A≥3: `B = m_e·Σ_n M_n(A)·Vol_n(K)` with
+`M_n(A)=(n−1)` the linear-chain inter-nucleon bond count (**derived, zero fit**,
+2026-07-04) — ³H to **−0.16%**, ³He to **−2.97%**. The **deuteron is the wall**
+(2-body sub-link = Hopf, `Vol=0` ⇒ B=0), the pure-resurgent case for the
+alien-calculus / Gevrey-1/2 route. The NA-Stokes / CKRecursion "closure" that
+would moot this gate is **adversarially reviewed** in
+[`2026-07-13-na-stokes-ck-recursion-binding-adversarial-review.md`](2026-07-13-na-stokes-ck-recursion-binding-adversarial-review.md)
+— it inserts the measured ³H–³He split as the "SU(4) differential" and uses a
+q₀ `r_res=2.596` for the advertised invariant `5/2`, so it is not the
+parameter-free closure it claims.
