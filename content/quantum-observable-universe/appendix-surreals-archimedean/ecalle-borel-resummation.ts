@@ -17,4 +17,24 @@ export default definition({
     "archimedean",
   ],
   cites: ["ecalle1981"],
+  authorNotes: [
+    {
+      kind: "note",
+      date: "2026-07-13",
+      body:
+        "The uniqueness underlying the median resummation (the lateral sum is " +
+        "asymptotic to the Gevrey-1 series, and the median sum is the unique " +
+        "real single-valued resummation) is the Watson / Nevanlinna–Sokal " +
+        "theorem, now formalized sorry-free in the Mathlib-gap library " +
+        "`QOU.Mathlib.Borel` (bean el8w): `watson_uniqueness_rhp_open` (open " +
+        "right half-plane) and `watson_uniqueness_sector` (sector-at-0), built " +
+        "on the Gevrey-1 ⇒ Borel-disc convergence and the term-wise Laplace " +
+        "engine (`laplace_borel_term`) with the regularity `borelSum_eq_tsum` " +
+        "(Borel sum = ordinary sum on the disc of convergence). These are the " +
+        "general analysis engine; they are distinct from this block's own " +
+        "`borelCoeff` sibling and do not by themselves discharge any specific " +
+        "series' asymptotic (e.g. the figure-eight volume conjecture, which " +
+        "additionally needs the saddle-point existence/value).",
+    },
+  ],
 });

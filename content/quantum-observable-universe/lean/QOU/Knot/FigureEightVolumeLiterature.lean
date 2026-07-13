@@ -38,13 +38,23 @@ theorem log_kashaev_nonneg (N : ℕ) (hN : 1 ≤ N) : 0 ≤ Real.log (kashaev N)
 
 /-- **The literature instance of the figure-eight volume conjecture**
     (Kashaev–Murakami–Murakami statement; proved for `4₁` — Andersen–Hansen,
-    Ohtsuki — via saddle-point / Borel-resummation analysis). The `sorry` is
-    the pending in-Lean Borel-resummation formalization tracked as bean el8w
-    (`QOU.Mathlib.Borel`), not an open problem: replacing it with a proof is
-    the `BorelTransformConverges` + Nevanlinna–Sokal programme described in
-    `QOU/Mathlib/BorelResummation.lean`. Downstream results conditional on
-    `[VolumeConjecture41]` become unconditional modulo this single cited
-    declaration. -/
+    Ohtsuki — via saddle-point / Borel-resummation analysis).
+
+    STATUS (2026-07-13). The Borel-resummation UNIQUENESS half of that analysis
+    is now formalized sorry-free in `QOU.Mathlib.Borel` (bean el8w): the
+    Watson / Nevanlinna–Sokal theorem `watson_uniqueness_rhp_open` (open right
+    half-plane) and `watson_uniqueness_sector` (sector-at-0), built on the
+    Gevrey-1 ⇒ Borel-disc convergence and the regularity `borelSum_eq_tsum`.
+    That engine does NOT by itself close the `sorry` below: `limit_eq_vol` is a
+    concrete saddle-point ASYMPTOTIC of the explicit Kashaev sum — its EXISTENCE
+    and VALUE (growth rate `= Vol(4₁)`) are the load-bearing Andersen–Hansen /
+    Ohtsuki content, of which uniqueness is only one ingredient. So the `sorry`
+    remains the cited established-in-the-literature theorem (per the
+    anti-laundering rule a citation, not a Lean proof); wiring the general
+    uniqueness engine to this specific series' saddle-point evaluation is a
+    separate open formalization item, not an automatic consequence. Downstream
+    results conditional on `[VolumeConjecture41]` remain conditional on this
+    single cited declaration. -/
 instance volumeConjecture41_of_literature : VolumeConjecture41 := by
   constructor
   -- Ref: [andersen-hansen2006] https://doi.org/10.1142/S0218216506004555
