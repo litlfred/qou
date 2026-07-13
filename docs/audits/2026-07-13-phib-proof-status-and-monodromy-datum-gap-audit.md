@@ -6,6 +6,36 @@
 and "Φ_b usable in a mass / binding number", plus the
 existence / uniqueness / constructive narrowing framework for the open keystone.
 
+## Resolution update (2026-07-13) — G2 CLOSED via the combinatorial route
+
+The **combinatorial (cyclotomic / tetraplectic) route** — replacing the
+contour integral by finite root-of-unity algebra — was executed (PR #3768,
+[workplan](../workplans/2026-07-13-phib-combinatorial-fibre-lean-workplan.md)).
+**Five Lean results, all machine-verified sorry-free** (`lean`-direct exit 0,
+v4.24.0; `#print axioms` clean = only `propext`/`Classical.choice`/`Quot.sound`):
+
+| # | File (`QOU/QBeta/`) | Result |
+|---|---------------------|--------|
+| L1 | `CyclotomicDilogCollapse` | `∏_{k<N}(1−xζ^k) = 1−x^N` (finite reduction of `(x;q)_N` at `ζ_N`) |
+| L2 | `CyclicQuantumDilog` | finite cyclic dilog + the true boundary-trade shift `(1−x)D(ζx)=(1−xζ^N)D(x)` ⇒ N-periodicity |
+| **L3** | `FaddeevPhiFibreBranch` | **`CyclicFaddeevPhi` class + unconditional discharge `cyclicFaddeevPhi_cyclic` at every primitive `ζ_N` — the fibre-branch mirror of `PhiBProd`'s substrate discharge. This CLOSES G2.** |
+| L4 | `CyclicDilogPentagon` | finite Faddeev–Volkov rigidity core (`solution_unique_of_seed`) + `faddeevPhi_unique_of_pentagon` (uniqueness *implication*; pentagon an honest open input) |
+| L5 | `TetraplecticYoungStateSum` | N=5 index: `p(5)` (7 partitions), `\|S₅\|=120`, `7 ≤ card(Partition 5)`; deep correspondence an honest §3b structure |
+
+**What this closes and what it does not (honest):**
+- **G2 is closed** — the fibre-regime (`\|q\|=1`, root-of-unity) Φ_b construction now
+  exists in Lean as a discharged shift-structure instance (L3), where the decay
+  physics lives. The contour integral is replaced by finite algebra.
+- **G0/G1 are re-scoped, not closed** — L3 is the *algebraic fibre-branch analog*
+  (`CyclicFaddeevPhi`), not the ℂ-analytic `FaddeevPhi`; the bridge is a genuine
+  *degeneration* of the functional equation (`(1+e^{2πbz})→1` at `ζ^N=1`), recorded
+  as prose, NOT faked as a theorem. Integrability / def↔contour (G1) untouched.
+- **G3 — the keystone monodromy datum `z(q₀)→S` = Stokes constant `A_ω` via `Δ_ω`
+  — remains OPEN.** No L-result closes it; it is the resurgent computation (with
+  #3683). L4 converts it to a rigidity statement (the datum is *forced* if the
+  pentagon holds), but the pentagon + Liouville step stay the open input. The
+  conjecture stays a conjecture — anti-laundering respected throughout.
+
 ## 0. Executive summary
 
 The Faddeev non-compact quantum dilogarithm `Φ_b` exists in the Lean corpus at
