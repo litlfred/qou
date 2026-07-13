@@ -1,0 +1,60 @@
+{
+  "computation": "whipple_observable_ratio_probe",
+  "description": "Honest parameter-free test of whether the Whipple toroidal amplitude at the physical forced windings (mu,nu)=(1/2,d-1/2) reproduces the observed even/odd binding ratio (deuteron, d=2). No fit; explicit NULL if no parameter-free match. auditOnly.",
+  "discipline": "canonical-derivation / observable-connection test (no fit)",
+  "auditOnly": true,
+  "results": {
+    "per_d": {
+      "2": {
+        "windings_mu_nu": [
+          "0.5",
+          "1.5"
+        ],
+        "whipple_C_magnitude": "0.6002108774",
+        "toroidal_amp_ratio_at_a": "0.6002108774",
+        "observed_B_even_over_B_odd": "3.3734444",
+        "best_parameterfree_match": "1/C",
+        "best_rel_err": "0.5061",
+        "is_match_within_5pct": false
+      },
+      "3": {
+        "windings_mu_nu": [
+          "0.5",
+          "2.5"
+        ],
+        "whipple_C_magnitude": "0.240084351",
+        "toroidal_amp_ratio_at_a": "0.240084351"
+      },
+      "4": {
+        "windings_mu_nu": [
+          "0.5",
+          "3.5"
+        ],
+        "whipple_C_magnitude": "0.06859552885",
+        "toroidal_amp_ratio_at_a": "0.06859552885"
+      }
+    },
+    "observed": {
+      "2": {
+        "B_even": 3.000303217771135,
+        "B_odd": 0.8893886671066227,
+        "B_AME": 2.2245662
+      }
+    },
+    "note": "Only the deuteron (d=2, single pn bond) has a clean axial distance; heavier isotopes lack a single d and are reported unscored."
+  },
+  "assertions": {
+    "whipple_amplitude_computed_all_d": true,
+    "observed_deuteron_ratio_loaded": true
+  },
+  "allPassed": true,
+  "verdict": "NULL (honest, not a fit): the bare Whipple constant |C(nu,mu)| and the raw toroidal amplitude ratio at the physical forced windings (mu,nu)=(1/2,d-1/2) do NOT reproduce the observed even/odd binding ratio (deuteron B_even/B_odd) to 5% under any parameter-free combination {C, 1/C, amp, 1/amp}. The Whipple identification is mathematically exact but its BARE amplitude is not the observable ratio -- the binding-closure gap must supply the E0-scaled, many-body dressing between the dimensionless toroidal amplitude and the MeV even/odd split. This sharpens (does not close) the gap; nothing is fitted or wired.",
+  "scriptHash": "822e58932d9f",
+  "scriptCommitSha": "unknown",
+  "commitSha": "0af6c32736ad31f5b7bcb4c6f3b229df15f198dd",
+  "engine": "mpmath",
+  "computedAt": "2026-07-13T12:22:19.672059+00:00",
+  "durationMs": 0,
+  "engineVersion": "mpmath 1.3.0",
+  "scriptFile": "whipple_observable_ratio_probe.py"
+}
