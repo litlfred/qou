@@ -205,6 +205,29 @@ construction formalized (see below). Identifying the origin is the honest
 intermediate step: the invariant is now structurally motivated, not merely
 observed.
 
+### 2 is the *unique* graded prime — the ℤ/2 signature
+
+The grading is sharper than "the `√3`-component has a 2-adic parity structure":
+a prime-by-prime scan of every prime dividing `den(a_k)`, `den(b_k)`
+([`qbeta_dladder_padic_graded_prime_probe.py`](../../computations/qbeta/qbeta_dladder_padic_graded_prime_probe.py),
+all three checks pass) shows **p = 2 is the *only* graded prime**:
+
+- **p = 2 — graded.** `v₂(den b_k) = 0 ⟺ k odd`, and the singular 2-adic mass
+  *swaps* to `a_k` on the complementary parity (`v₂(den a_k) ≤ 1 ⟺ k even`).
+- **p = 3 — ungraded.** `v₃(den a_k)` and `v₃(den b_k)` both grow `~1.4·k` on
+  **both** parities (monotone-ish with fluctuations) — the factorial-smooth
+  Ohtsuki–Habiro growth that motivated the base-3 q-holonomic test (Result 1b),
+  **not** a grading. This closes that loop: base 3 governs *growth/smoothness*,
+  parity is a 2-adic-only phenomenon.
+- **p ≥ 5 — ungraded.** 5, 7, 11, … enter sporadically (`k ≈ 3,4,6,…`) in the
+  same factorial-smooth pattern, no parity structure.
+
+That **2 is the unique graded prime is not a coincidence: 2 is the prime of the
+ℤ/2 bar-involution** (`q ↦ q⁻¹`, the sinh/cosh split). Only the prime matching
+the order of the symmetry sees the grading — the arithmetic carries the
+bar-parity `ℤ/2` exactly on its 2-adic component and nowhere else. This is the
+tightest form of the headline result.
+
 ## Formalize-first note (the invariant, and what proving it needs)
 
 The grading is a precise, exact, non-fitting statement. Formalizing it as a Lean
