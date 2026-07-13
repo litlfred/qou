@@ -1,4 +1,4 @@
-import Mathlib.Init.Data.Int.Basic
+import Mathlib.Data.Int.Basic
 
 namespace QOU.BraidKnot
 
