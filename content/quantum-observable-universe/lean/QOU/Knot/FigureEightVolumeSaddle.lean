@@ -58,4 +58,30 @@ theorem kashaevProd_eq_sin (N k : ℕ) :
   rw [Finset.prod_congr rfl hfac, Finset.prod_mul_distrib, Finset.prod_const,
     Finset.prod_pow, Nat.card_Icc, Nat.add_sub_cancel]
 
+/-- **The saddle critical point (dual-purpose).** On `(0, π)`,
+    `2 sin(θ/2) = 1 ↔ θ = π/3`. This is the location of the Kashaev
+    saddle — the factors `4 sin²(πj/N)` of `kashaevProd_eq_sin` cross `1` here —
+    and it is *simultaneously* the critical point of the QOU dilog-saddle
+    potential `V(θ) = Im Li₂(e^{iθ})`, whose derivative is `−log(2 sin(θ/2))`
+    (content block `rem:dilog-saddle-regime`): `V'(θ) = 0 ⟺ 2 sin(θ/2) = 1 ⟺
+    θ = π/3`, giving `Vol(4₁) = 2 Cl₂(π/3)`. The block states this narratively;
+    this is its Lean proof, needing no Clausen function — only `sin(π/6) = 1/2`
+    and injectivity of `sin` on `[−π/2, π/2]`. -/
+theorem saddle_critical_point {θ : ℝ} (h0 : 0 < θ) (hπ : θ < π) :
+    2 * Real.sin (θ / 2) = 1 ↔ θ = π / 3 := by
+  have hpi := Real.pi_pos
+  constructor
+  · intro h
+    have hs : Real.sin (θ / 2) = Real.sin (π / 6) := by
+      rw [Real.sin_pi_div_six]; linarith
+    have hmem1 : θ / 2 ∈ Set.Icc (-(π / 2)) (π / 2) :=
+      ⟨by linarith, by linarith⟩
+    have hmem2 : π / 6 ∈ Set.Icc (-(π / 2)) (π / 2) :=
+      ⟨by linarith, by linarith⟩
+    have := Real.injOn_sin hmem1 hmem2 hs
+    linarith
+  · intro h
+    rw [h, show π / 3 / 2 = π / 6 by ring, Real.sin_pi_div_six]
+    norm_num
+
 end QOU.Knot.FigureEightVolume
