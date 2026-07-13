@@ -59,6 +59,16 @@ order-unity resolution of this test). θ convention identical to
 | **⁵Li** | 5 | 0.408 | **64.56** | 202.4 | **−68.1 %** |
 | **⁶Li** | 6 | 0.401 | **79.86** | 649.8 | **−87.7 %** |
 
+> **ERRATUM (2026-07-13, R4-b).** The m_e·S entries for T (0.22) and ³He
+> (0.19) above are wrong — inconsistent with this table's own 𝒜 column
+> (B_AME/𝒜 = **0.4466** and **0.3877** MeV respectively; recomputed per-λ
+> and machine-checked in
+> [`2026-07-13-carrier-saturation-crossover-mechanism.md`](2026-07-13-carrier-saturation-crossover-mechanism.md)
+> §2, assertion `erratum_T_me_S_matches_A_column`). The 𝒜 column and the
+> BREAKS verdict are unaffected. Corrected reading: the carrier is FLAT
+> across **all** A = 2..6 (m_e·S ∈ [0.368, 0.449] MeV, max/min 1.22) — it
+> never grew geometrically; see the §5 item 2 correction below.
+
 - **𝒜(⁶Li) = 79.86**, vs the predicted ≈ 650: outside the anchor-scatter
   band [589, 734] by a factor **8.1×**, and far outside the generous
   ±40 % outer gate. Not a tolerance question.
@@ -102,6 +112,17 @@ forbids the ingredients — no scope-(b) claim is made.
    information at H₁₅⁺ under this weighting.
    Any future θ_λ closure must explain a *cross-over at A ≈ 4*, not a
    geometric ramp — a strictly harder target than the ratio hunt.
+   > **RESOLVED 2026-07-13 (same day, R4-b): there is no carrier
+   > crossover.** With the §3 erratum corrected (m_e·S(T) = 0.4466,
+   > m_e·S(³He) = 0.3877), the carrier is flat at 0.37–0.45 MeV for
+   > **all** A = 2..6 — it never "grew geometrically to A = 4". The
+   > structural reason is the Markov-trace normalization
+   > `Σ y_λ·dim_λ = tr_M(1) = 1` (`prop:wedderburn-trace-identity`):
+   > S = E_p[|Δθ|] is an intensive bounded mean. The geometric ramp and
+   > its A ≈ 4 collapse live entirely in the numerator B_AME (the
+   > experimental α-peak; corpus-side account: the SU(4) [1ⁿ]
+   > truncation). See
+   > [`2026-07-13-carrier-saturation-crossover-mechanism.md`](2026-07-13-carrier-saturation-crossover-mechanism.md).
 3. **The jet-filtration q-difference-kernel route** (prior audit §8
    item 2) loses its cheap motivation in this specific form: a constant
    per-nucleon factor R(q₀) ≈ 3.2 is exactly what the A = 5, 6 points
