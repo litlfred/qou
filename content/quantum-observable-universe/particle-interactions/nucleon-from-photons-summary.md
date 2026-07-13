@@ -24,4 +24,4 @@ Baryon number, lepton number, and electric charge remain conserved at every step
 1. **Confinement is derived**: Minimum action selects $\mathcal{B}_3$ among operators matching the physical nucleon net.
 2. **Beta decay channel**: The $e^-$ coefficient in the confined nucleon normal form defines the categorical beta decay channel.
 3. **Confinement universality**: The nucleon normal form depends solely on $q_0$ and quark flavors.
-4. **Shell closure**: Shell configuration demands dictate stability.
+4. **Shell closure**: Shell configuration deficits dictate stability.
