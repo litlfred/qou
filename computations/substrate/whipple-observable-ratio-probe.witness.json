@@ -41,19 +41,51 @@
         "B_AME": 2.2245662
       }
     },
-    "note": "Only the deuteron (d=2, single pn bond) has a clean axial distance; heavier isotopes lack a single d and are reported unscored."
+    "factor2_generalization_falsification": {
+      "2H": {
+        "A": 2,
+        "observed_B_even_over_B_odd": "3.3734",
+        "A_over_C_d_eq_A": "3.332",
+        "rel_err": "0.0122",
+        "matches_within_5pct": true
+      },
+      "3H": {
+        "A": 3,
+        "observed_B_even_over_B_odd": "2.2892",
+        "A_over_C_d_eq_A": "12.496",
+        "rel_err": "4.4584",
+        "matches_within_5pct": false
+      },
+      "3He": {
+        "A": 3,
+        "observed_B_even_over_B_odd": "6.6422",
+        "A_over_C_d_eq_A": "12.496",
+        "rel_err": "0.8812",
+        "matches_within_5pct": false
+      },
+      "4He": {
+        "A": 4,
+        "observed_B_even_over_B_odd": "3.3438",
+        "A_over_C_d_eq_A": "58.313",
+        "rel_err": "16.4391",
+        "matches_within_5pct": false
+      }
+    },
+    "factor2_finding": "The deuteron 2/|C(d=2)| = 3.33 ≈ observed 3.373 (1.2%) is a COINCIDENCE, not a derived factor. The hypothesis B_even/B_odd = A/|C(d=A)| fails badly for A≥3 (446% off at A=3, 1644% at A=4) because |C| collapses (0.60, 0.24, 0.069) while the observed ratios stay O(2-7). The fixed constant 3.33 also matches ⁴He (0.3%) but not ³H/³He — i.e. it hits the two N=Z cases only, a fixed number matching 2 of 4 points, not a law. NOT wired (anti-fit / no-seventh-ansatz discipline).",
+    "note": "Only the deuteron (d=2, single pn bond) has a clean axial distance; heavier isotopes lack a single d and are reported unscored for the amplitude test. The factor-2 falsification uses the falsifiable hypothesis ratio = A/|C(d=A)| regardless of whether d=A is exact."
   },
   "assertions": {
     "whipple_amplitude_computed_all_d": true,
-    "observed_deuteron_ratio_loaded": true
+    "observed_deuteron_ratio_loaded": true,
+    "factor2_is_a_derived_law_not_coincidence": false
   },
   "allPassed": true,
-  "verdict": "NULL (honest, not a fit): the bare Whipple constant |C(nu,mu)| and the raw toroidal amplitude ratio at the physical forced windings (mu,nu)=(1/2,d-1/2) do NOT reproduce the observed even/odd binding ratio (deuteron B_even/B_odd) to 5% under any parameter-free combination {C, 1/C, amp, 1/amp}. The Whipple identification is mathematically exact but its BARE amplitude is not the observable ratio -- the binding-closure gap must supply the E0-scaled, many-body dressing between the dimensionless toroidal amplitude and the MeV even/odd split. This sharpens (does not close) the gap; nothing is fitted or wired.",
-  "scriptHash": "822e58932d9f",
-  "scriptCommitSha": "unknown",
-  "commitSha": "0af6c32736ad31f5b7bcb4c6f3b229df15f198dd",
+  "verdict": "NULL (honest, not a fit): the bare Whipple constant |C(nu,mu)| and the raw toroidal amplitude ratio at the physical forced windings (mu,nu)=(1/2,d-1/2) do NOT reproduce the observed even/odd binding ratio (deuteron B_even/B_odd) to 5% under any parameter-free combination {C, 1/C, amp, 1/amp}. The Whipple identification is mathematically exact but its BARE amplitude is not the observable ratio -- the binding-closure gap must supply the E0-scaled, many-body dressing between the dimensionless toroidal amplitude and the MeV even/odd split. This sharpens (does not close) the gap; nothing is fitted or wired. FURTHER: the tempting deuteron 2/|C| match is FALSIFIED as a derived factor — ratio = A/|C(d=A)| fails 446%/1644% at A=3/4 (see factor2_generalization_falsification); the factor-2 is a coincidence, explicitly NOT wired.",
+  "scriptHash": "a6b32e126758",
+  "scriptCommitSha": "757313e980813984c8270f60b1d88254a6522da0",
+  "commitSha": "9c7c29980a8985dfdf736ab71226449cf7bf79a4",
   "engine": "mpmath",
-  "computedAt": "2026-07-13T12:22:19.672059+00:00",
+  "computedAt": "2026-07-13T12:33:02.385177+00:00",
   "durationMs": 0,
   "engineVersion": "mpmath 1.3.0",
   "scriptFile": "whipple_observable_ratio_probe.py"
