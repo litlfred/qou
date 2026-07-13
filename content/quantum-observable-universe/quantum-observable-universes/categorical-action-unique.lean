@@ -4,7 +4,7 @@ import Mathlib.CategoryTheory.Monoidal.Rigid.Basic
 /-!
 # QOU.CategoricalAction.unique — uniqueness of the categorical action (given Φ)
 
-For a fixed physics endomorphism `Φ : A ⟶ A` (with right dual `(A, Aᘁ)` and
+For a fixed Lagrangian endomorphism `Φ : A ⟶ A` (with right dual `(A, Aᘁ)` and
 transposition `swap`), the categorical action
 
   𝒮_Φ = η_ ≫ (Φ ▷ Aᘁ) ≫ swap ≫ ε_  =  tr(Φ)

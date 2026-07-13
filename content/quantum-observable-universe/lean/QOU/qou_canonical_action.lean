@@ -53,7 +53,7 @@ $$
 
 where $\mathcal{L}_q = \mathcal{L}_q(\nabla, \psi)$ is the categorical
 Lagrangian ([categorical Lagrangian](#def:categorical-lagrangian)).
-The physics endomorphism is $\Phi_q = \mathcal{L}_q$.
+The Lagrangian endomorphism is $\Phi_q = \mathcal{L}_q$.
 
 The square of the Dirac operator
 ([categorical Dirac operator](#def:categorical-dirac-operator))

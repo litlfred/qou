@@ -111,7 +111,7 @@ This states that $\tau(\pi_V \circ d) = \varTheta \wedge \mathcal{L}_\xi$, where
 In the archimedean realization where $\mathbf{C} = \mathbf{Vect}_{\mathbb{R}}$, $A = C^{\infty}(M)$ for a Riemannian manifold $M$, and $\nabla$ is an Ehresmann connection on a principal $G$-bundle $P \to M$, the three constituents of the categorical action acquire their classical meanings:
 
 1. The *categorical trace* $\mathrm{tr} = \mathrm{ev}_A \circ (\mathrm{id}_{A^\vee} \otimes {-}) \circ \mathrm{coev}_A$ becomes integration against the volume form: $\mathrm{tr}(\cdot) \to \int_M (\cdot)\mathrm{dvol}$.
-2. The *physics endomorphism* $\Phi_q = \mathcal{L}_q$ becomes the Lagrangian density $\mathscr{L}(x)$, a section of the density bundle.
+2. The *Lagrangian endomorphism* $\Phi_q = \mathcal{L}_q$ becomes the Lagrangian density $\mathscr{L}(x)$, a section of the density bundle.
 3. The *categorical Dirac operator* $\mathcal{D}_\nabla$ reduces to the gauge-covariant Dirac operator $D\!\!\!\!/ = \gamma^\mu D_\mu$.
 
 The three-term decomposition then reads
