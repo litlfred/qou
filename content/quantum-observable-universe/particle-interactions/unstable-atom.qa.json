@@ -892,6 +892,19 @@
         "reviewed_at": "2026-07-07T14:26:57.432642Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:45:28.000Z",
+        "reviewed_sha": "d5635076c91d48b69b86b7b9e616f6b62bfe6d78",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "wall-side-statement": [
@@ -934,6 +947,19 @@
         "notes": "No false claims identified in 'Unstable atom (ILP infeasibility)': the formalization compiles successfully without errors.",
         "severity": "minor",
         "evidence": "unstable-atom.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:45:28.000Z",
+        "reviewed_sha": "d5635076c91d48b69b86b7b9e616f6b62bfe6d78",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-vacuous": [
@@ -955,6 +981,19 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The block 'Unstable atom (ILP infeasibility)' presents substantial mathematical content: '$K$'.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:45:28.000Z",
+        "reviewed_sha": "d5635076c91d48b69b86b7b9e616f6b62bfe6d78",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-circular": [
@@ -977,6 +1016,19 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Unstable atom (ILP infeasibility)'.",
         "severity": "minor",
         "evidence": "unstable-atom.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:45:28.000Z",
+        "reviewed_sha": "d5635076c91d48b69b86b7b9e616f6b62bfe6d78",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-overclaim": [
@@ -998,6 +1050,19 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The remarks and narrative scope in 'Unstable atom (ILP infeasibility)' are appropriately qualified.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:45:28.000Z",
+        "reviewed_sha": "d5635076c91d48b69b86b7b9e616f6b62bfe6d78",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-hidden-dof": [
@@ -1020,6 +1085,19 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Unstable atom (ILP infeasibility)'.",
         "severity": "minor",
         "evidence": "unstable-atom.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:45:28.000Z",
+        "reviewed_sha": "d5635076c91d48b69b86b7b9e616f6b62bfe6d78",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-non-sequitur": [
@@ -1042,6 +1120,19 @@
         "notes": "The prose arguments in 'Unstable atom (ILP infeasibility)' proceed logically through the stated steps.",
         "severity": "minor",
         "evidence": "unstable-atom.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:45:28.000Z",
+        "reviewed_sha": "d5635076c91d48b69b86b7b9e616f6b62bfe6d78",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1063,6 +1154,19 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Lean sibling corresponds directly to the narrative claim in 'Unstable atom (ILP infeasibility)'.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:45:28.000Z",
+        "reviewed_sha": "d5635076c91d48b69b86b7b9e616f6b62bfe6d78",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-citation-misuse": [
@@ -1085,6 +1189,19 @@
         "notes": "No citations are present in 'Unstable atom (ILP infeasibility)', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "unstable-atom.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:45:28.000Z",
+        "reviewed_sha": "d5635076c91d48b69b86b7b9e616f6b62bfe6d78",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-definitional-ambiguity": [
@@ -1107,6 +1224,19 @@
         "notes": "Key terms and symbols in 'Unstable atom (ILP infeasibility)' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "unstable-atom.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:45:28.000Z",
+        "reviewed_sha": "d5635076c91d48b69b86b7b9e616f6b62bfe6d78",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-empirical-fragility": [
@@ -1129,6 +1259,19 @@
         "notes": "The algebraic and logical relations in 'Unstable atom (ILP infeasibility)' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "unstable-atom.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:45:28.000Z",
+        "reviewed_sha": "d5635076c91d48b69b86b7b9e616f6b62bfe6d78",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-physical-implausibility": [
@@ -1151,6 +1294,19 @@
         "notes": "The physical concepts described in 'Unstable atom (ILP infeasibility)' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "unstable-atom.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:45:28.000Z",
+        "reviewed_sha": "d5635076c91d48b69b86b7b9e616f6b62bfe6d78",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-reproducibility": [
@@ -1172,6 +1328,19 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Lean file compiles successfully, confirming reproducibility.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:45:28.000Z",
+        "reviewed_sha": "d5635076c91d48b69b86b7b9e616f6b62bfe6d78",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-referee-verdict": [
@@ -1195,6 +1364,19 @@
         "severity": "minor",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Unstable atom (ILP infeasibility)' are consistent."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:45:28.000Z",
+        "reviewed_sha": "d5635076c91d48b69b86b7b9e616f6b62bfe6d78",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1411,6 +1593,36 @@
         },
         "reviewed_at": "2026-07-12T00:35:39.126Z",
         "reviewed_sha": "a38f99c8befc4b364f7820811bc286a64f3a2b6e"
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:45:28.000Z",
+        "reviewed_sha": "d5635076c91d48b69b86b7b9e616f6b62bfe6d78",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:45:28.000Z",
+        "reviewed_sha": "d5635076c91d48b69b86b7b9e616f6b62bfe6d78",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ]
   },
