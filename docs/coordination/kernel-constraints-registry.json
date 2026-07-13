@@ -1,6 +1,6 @@
 {
   "schema": "kernel-constraints-registry/v1",
-  "updated": "2026-07-07",
+  "updated": "2026-07-13",
   "authoritative_markdown": "docs/coordination/ck-dk-canonical-registry.md#9-kernel--f-map-structural-constraint-registry-added-2026-07-07",
   "meta": {
     "tiers": {
@@ -196,6 +196,24 @@
       "parity": null,
       "q1_shadow": null,
       "source": "PR #3467; docs/audits/2026-07-07-zeta4-residue-lean-certificate-and-surviving-cubic.md; refines 2026-07-04 zeta4-fibre-cyclotomic refutation; complements KC19 (affine ladder, PR #3473)"
+    },
+    {
+      "id": "KC21",
+      "statement": "The c_3 bar-odd part factors S = h*D(u~) — h = q - q^-1 the anchor-blind bar-odd carrier, D(u~) a bar-even Q(sqrt3) ladder — and the c_3 'wall' is a representation artifact: the dc_3/dq ~ 4.66e6 hypersensitivity is the 1/u^3 ladder inversion magnifying a SMOOTH numerator zero (S'(q*) = 2.37 x (1/u^3)); the sign-flip is STRUCTURAL (bar-odd: with q = q0 + i*eps, S(-eps) = -S(eps), so no real q0 produces it); the S=0 point q* is a third, decay-sector determination of q0 (mu-p-Q_beta three-way); the Phi_b state-integral saddle supplies the |S| scale from geometry (Im V = 0 at real substrate; volume deficit 0.0094 ~ |S(muon)|), smooth and anchor-blind. PROVED-LEAN: the bar-odd sign structure. SYMBOLIC-EXACT: the S = h*D split, the 1/u^3 prefactor, the Phi_b saddle scale.",
+      "tier": "proved-lean",
+      "lean": "QOU.QBeta.fig8Trace_im_odd; QOU.QBeta.fig8Trace_im_real_zero",
+      "parity": "odd",
+      "q1_shadow": "0",
+      "source": "PRs #3600/#3636/#3654; docs/audits/2026-07-12-c3-wall-resolution-capstone.md; docs/audits/2026-07-12-c3-hypersensitivity-is-ladder-1-over-u3.md"
+    },
+    {
+      "id": "KC22",
+      "statement": "D(u~) is NOT low-order (q-)holonomic in any tested class. Exact d_k = a_k + b_k*sqrt3 in Q(sqrt3) through k=21; super-exponentially divergent (q-Gevrey, radius -> 0; the ~0.143 ratio is the (k!)^C shadow, not a radius). Negatives (all exact / prime-certified): no Q P-finite recurrence for a_k or b_k separately; no coupled Q(sqrt3) matrix P-recurrence (r<=2 D<=4; r=3 D<=3; r=4 D<=2, over-determined); no q-holonomic recurrence in base 3, 1/3, or classical k (r<=3, E<=3, full column rank mod large primes) — even though denominators are 3-smooth (v3(den d_k) ~ 1.5k, Ohtsuki-Habiro). Denominator 2-adic valuation is parity-graded (proved window K=5; open conjecture class beyond; p=3 ungraded => 2 is the unique graded prime). Consequence: the odd-channel element is transcendental/resurgent (Ecalle acceleration class), not a q-difference equation — the low-order (q-)holonomic search class is closed.",
+      "tier": "symbolic-exact",
+      "lean": "QOU.QBeta.DLadderTwoAdicGrading.bDen_two_adic_graded; QOU.QBeta.DLadderTwoAdicGrading.three_not_parity_graded",
+      "parity": null,
+      "q1_shadow": null,
+      "source": "PR #3737; docs/audits/2026-07-13-dladder-coupled-recurrence-and-2adic-parity-grading.md; docs/audits/2026-07-12-dladder-divergence-correction.md"
     }
   ]
 }
