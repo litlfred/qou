@@ -70,7 +70,7 @@ theorem re_cpow_pos_of_abs_arg_lt {z : ℂ} {t : ℝ} (hz : z ≠ 0) (ht : 0 < t
     rw [abs_mul, abs_of_pos ht]
     have h := mul_lt_mul_of_pos_right harg ht
     have hsimp : Real.pi / (2 * t) * t = Real.pi / 2 := by
-      field_simp
+      field_simp [ht.ne']
     rwa [hsimp] at h
   exact abs_lt.mp hbound
 
