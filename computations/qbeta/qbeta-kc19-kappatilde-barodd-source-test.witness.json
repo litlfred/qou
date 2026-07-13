@@ -1,0 +1,96 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-13T20:39:58.218601+00:00",
+  "commitSha": "63927896d26bf020a9f91ad2511ac1922cb180ac",
+  "assertions": [
+    {
+      "name": "swing_is_amplified_slope",
+      "computed": 0.9999996258034674,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.05,
+      "source": "S(p)-S(mu) = S'(q*)*(q_p-q_mu) to <5%: the anchor swing is the KC21 1/u^3 slope, so a c3-level smooth meridian source is structurally excluded from the swing"
+    },
+    {
+      "name": "targets_sign_flip",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "S(proton)*S(muon) < 0 while every candidate is a single positive number"
+    },
+    {
+      "name": "candidates_at_S_scale",
+      "computed": 0.16537965158992168,
+      "expected": 0.4,
+      "passed": true,
+      "tolerance": 0.4,
+      "source": "all |S|/candidate ratios are O(0.17-0.7): the deformed rungs supply the scale (only)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 11,
+  "computation": "qbeta-kc19-kappatilde-barodd-source-test",
+  "scriptFile": "qbeta_kc19_kappatilde_barodd_source_test.py",
+  "scriptHash": "74148293733e",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
+  },
+  "description": "Fit-free KC19 consumption test of the three derived bar-odd meridian candidates from the #3691 deformed-rung tower (Im V_b truncation 0.05706, resummed 0.05855, odd-only 0.05679). Value level: all three sit at the |S| scale (ratios 0.17-0.69 per anchor) but S sign-flips while each candidate is one smooth number — scale-only, same verdict class as the Phi_b handles. Slope level: the anchor swing equals S'(q*)*(q_p - q_mu) with S' ~ 3.8e6 (verified <5%), so any c3-level geometric source needs a 1e6 slope that smooth t=ln q rungs cannot supply — excluded at c3 level, scope-(a). Correct consumption level is the numerator N_odd = S*u^3 (dN/dq = O(1)); required per-anchor KC19 departures dw_odd reported as the normalization-bearing target. Decisive follow-up: tall-ladder d(kappa-tilde)/dq at both anchors. No c_k wired; no fit.",
+  "contentBlock": "conj:im-q-physical-role",
+  "data": {
+    "candidates": {
+      "G1_imVb_truncation": "0.0570576566109",
+      "G2_imVb_resummed_pade22": "0.0585499951473",
+      "G3_odd_only_partial_sum": "0.0567896600198"
+    },
+    "targets": {
+      "proton": "-0.0394593643",
+      "muon": "0.009682977798"
+    },
+    "value_ratios": {
+      "G1_imVb_truncation": {
+        "proton": "-0.69157001",
+        "muon": "0.16970514"
+      },
+      "G2_imVb_resummed_pade22": {
+        "proton": "-0.67394308",
+        "muon": "0.16537965"
+      },
+      "G3_odd_only_partial_sum": {
+        "proton": "-0.69483361",
+        "muon": "0.170506"
+      }
+    },
+    "slope_test": {
+      "S_prime_qstar": "3838404.458",
+      "swing_pred": "-0.04914232371",
+      "swing_true": "-0.04914234209"
+    },
+    "numerator_level": {
+      "proton": {
+        "u": "0.00851723455",
+        "N_odd": "-2.438068513e-8",
+        "dw_odd_required": "-2.306921825e-7"
+      },
+      "muon": {
+        "u": "0.00851723634",
+        "N_odd": "5.982807526e-9",
+        "dw_odd_required": "5.660984348e-8"
+      },
+      "dN_odd_dq_at_qstar": "2.3716291"
+    }
+  }
+}
