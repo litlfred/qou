@@ -122,7 +122,7 @@ export default paper({
 
     // ── Back matter ─────────────────────────────────────────────────
     chapterRef({ dir: "glossary" }),
-    chapterRef({ dir: "notation" }),                          // Symbol register — moved out of the front matter to its own appendix (too long for the front). Forward refs ignored by the detangler (preview chapter).
+
     chapterRef({ dir: "appendix-knot-periodic-table" }),
     chapterRef({ dir: "appendix-knot-operations" }),
     chapterRef({ dir: "appendix-knot-operations-archimedean" }),  // Archimedean lobe (particle NF + gluon-model) — split per q-usage Policy A
@@ -132,5 +132,6 @@ export default paper({
     chapterRef({ dir: "appendix-surreals" }),                  // Surreal-number lift (categorical lobe) + Millennium-problem surreal bounds
     chapterRef({ dir: "appendix-surreals-archimedean" }),      // Surreal-number lift (archimedean lobe) — substrate-q_0-pinned content split out per q-usage audit
     chapterRef({ dir: "index-of-definitions" }),
+    chapterRef({ dir: "notation" }),                          // Symbol register — moved out of the front matter to its own appendix (too long for the front). Forward refs ignored by the detangler (preview chapter).
   ],
 });
