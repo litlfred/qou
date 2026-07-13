@@ -1186,6 +1186,19 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.253839Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound. Removed anthropomorphism from hydrogen-derived-nf.",
+        "reviewed_at": "2026-07-13T01:50:00.000Z",
+        "reviewed_sha": "0a89a3cc741fbe2d6e63643626a54ddc284cc8b4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "wall-side-statement": [
@@ -1566,6 +1579,19 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.253839Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound. Removed anthropomorphism from hydrogen-derived-nf.",
+        "reviewed_at": "2026-07-13T01:50:00.000Z",
+        "reviewed_sha": "0a89a3cc741fbe2d6e63643626a54ddc284cc8b4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-vacuous": [
@@ -1635,6 +1661,19 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.253839Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound. Removed anthropomorphism from hydrogen-derived-nf.",
+        "reviewed_at": "2026-07-13T01:50:00.000Z",
+        "reviewed_sha": "0a89a3cc741fbe2d6e63643626a54ddc284cc8b4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-circular": [
@@ -1704,6 +1743,19 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.253839Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound. Removed anthropomorphism from hydrogen-derived-nf.",
+        "reviewed_at": "2026-07-13T01:50:00.000Z",
+        "reviewed_sha": "0a89a3cc741fbe2d6e63643626a54ddc284cc8b4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-overclaim": [
@@ -1775,6 +1827,19 @@
         "severity": "minor",
         "evidence": "derivable, not independently calibrated",
         "notes": "Stating that it is 'derivable, not independently calibrated' is an overclaim if the shadow prices are calibrated elsewhere."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound. Removed anthropomorphism from hydrogen-derived-nf.",
+        "reviewed_at": "2026-07-13T01:50:00.000Z",
+        "reviewed_sha": "0a89a3cc741fbe2d6e63643626a54ddc284cc8b4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-hidden-dof": [
@@ -1849,6 +1914,19 @@
         "severity": "major",
         "evidence": "The RHS is fully determined by AME β-decay data plus the categorical level-3 shadow prices — no free parameters beyond E_0.",
         "notes": "Claiming 'no free parameters beyond E_0' hides the fact that level-3 shadow prices Q_beta^(3) themselves might carry implicit calibrations or empirical fits. This is a potential hidden degree of freedom."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound. Removed anthropomorphism from hydrogen-derived-nf.",
+        "reviewed_at": "2026-07-13T01:50:00.000Z",
+        "reviewed_sha": "0a89a3cc741fbe2d6e63643626a54ddc284cc8b4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-non-sequitur": [
@@ -1918,6 +1996,19 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.253839Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound. Removed anthropomorphism from hydrogen-derived-nf.",
+        "reviewed_at": "2026-07-13T01:50:00.000Z",
+        "reviewed_sha": "0a89a3cc741fbe2d6e63643626a54ddc284cc8b4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1986,6 +2077,19 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.253839Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound. Removed anthropomorphism from hydrogen-derived-nf.",
+        "reviewed_at": "2026-07-13T01:50:00.000Z",
+        "reviewed_sha": "0a89a3cc741fbe2d6e63643626a54ddc284cc8b4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-citation-misuse": [
@@ -2055,6 +2159,19 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.253839Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound. Removed anthropomorphism from hydrogen-derived-nf.",
+        "reviewed_at": "2026-07-13T01:50:00.000Z",
+        "reviewed_sha": "0a89a3cc741fbe2d6e63643626a54ddc284cc8b4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-definitional-ambiguity": [
@@ -2126,6 +2243,19 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.253839Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound. Removed anthropomorphism from hydrogen-derived-nf.",
+        "reviewed_at": "2026-07-13T01:50:00.000Z",
+        "reviewed_sha": "0a89a3cc741fbe2d6e63643626a54ddc284cc8b4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-empirical-fragility": [
@@ -2196,6 +2326,19 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.253839Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound. Removed anthropomorphism from hydrogen-derived-nf.",
+        "reviewed_at": "2026-07-13T01:50:00.000Z",
+        "reviewed_sha": "0a89a3cc741fbe2d6e63643626a54ddc284cc8b4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-physical-implausibility": [
@@ -2267,6 +2410,19 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.253839Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound. Removed anthropomorphism from hydrogen-derived-nf.",
+        "reviewed_at": "2026-07-13T01:50:00.000Z",
+        "reviewed_sha": "0a89a3cc741fbe2d6e63643626a54ddc284cc8b4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-reproducibility": [
@@ -2336,6 +2492,19 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.253839Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound. Removed anthropomorphism from hydrogen-derived-nf.",
+        "reviewed_at": "2026-07-13T01:50:00.000Z",
+        "reviewed_sha": "0a89a3cc741fbe2d6e63643626a54ddc284cc8b4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-referee-verdict": [
@@ -2406,6 +2575,19 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.253839Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound. Removed anthropomorphism from hydrogen-derived-nf.",
+        "reviewed_at": "2026-07-13T01:50:00.000Z",
+        "reviewed_sha": "0a89a3cc741fbe2d6e63643626a54ddc284cc8b4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "milnor-amalgamated-flow": [
@@ -2469,6 +2651,36 @@
         },
         "reviewed_at": "2026-07-12T00:35:39.126Z",
         "reviewed_sha": "a38f99c8befc4b364f7820811bc286a64f3a2b6e"
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound. Removed anthropomorphism from hydrogen-derived-nf.",
+        "reviewed_at": "2026-07-13T01:50:00.000Z",
+        "reviewed_sha": "0a89a3cc741fbe2d6e63643626a54ddc284cc8b4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound. Removed anthropomorphism from hydrogen-derived-nf.",
+        "reviewed_at": "2026-07-13T01:50:00.000Z",
+        "reviewed_sha": "0a89a3cc741fbe2d6e63643626a54ddc284cc8b4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ]
   },
