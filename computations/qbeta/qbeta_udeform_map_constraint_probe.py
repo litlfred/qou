@@ -32,7 +32,11 @@ Findings encoded as assertions:
        OTHER is anchor-constant and nonzero.
 
 Companion Lean: exists_cs_vanishing (Im 𝔙(u(q*)) = 0 — this probe's q* is
-the numerical face of that derived theorem).
+the numerical face of that derived theorem), and the family kill-test LAWS
+are formalized sorry-free in QOU.QBeta.UDeformFamilyPruning
+(fixed_phase_family_excluded, cubic_ratio_law, linear_family_sign_flip,
+hasDerivAt_linear_family) — this probe supplies the measured violations,
+the Lean supplies the laws they kill.
 """
 from __future__ import annotations
 
