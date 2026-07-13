@@ -1,0 +1,9 @@
+---
+# qou-d98a
+title: 'T2: deuteron entanglement coupling — independent derivation of x≈1/sqrt2 or scope-(a) negative'
+status: todo
+type: task
+created_at: 2026-07-13T12:42:52Z
+updated_at: 2026-07-13T12:42:52Z
+---
+
