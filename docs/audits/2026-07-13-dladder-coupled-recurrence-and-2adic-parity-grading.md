@@ -123,6 +123,33 @@ exactly the kind of **structural invariant** the formalize-first discipline asks
 to be isolated before any wider numerical search — here it also *is* the exact
 content that a Domb–Sykes radius (refuted) or a fitted singularity never was.
 
+### Structural origin of the √3 and the 2-powers (verified from the construction)
+
+The two arithmetic channels are traceable directly to the D-ladder build
+(`build_d_ladder` in the merged structure probe), independent of any fit:
+
+- **The √3 is the Hoefsmit `b`.** The ladder is assembled from
+  `b_ser = ser_sqrt(q⁴ + q² + 1) / (q² + 1)` — the Hoefsmit branch-parameter.
+  Its `ser_sqrt` of `q⁴ + q² + 1` is the *sole* radical in the construction, so
+  every `√3` appearing in a `d_k` descends from it (`q⁴+q²+1` takes the value
+  `3` at the branch point, giving the field generator `√3`). The bar-odd
+  projection `O = (log R − (log R)∘φ)/2` with `φ: ũ ↦ −ũ` then sorts the radical
+  by ũ-parity.
+- **The 2-powers come from three explicit sources:** the factor `(q² + 1)`
+  (value `2`) in `b_ser`; the `½` in the archimedean edge
+  `α = ½(z−1)h − ½ũ`; and the `2q³` denominator of
+  `Q_A = (2q + 1 − q²)(q+1)/(2q³)`. These are the only carriers of `2` in the
+  numerator/denominator data, so the 2-adic valuation of each `d_k` is fixed by
+  how these distribute across the even/odd ũ-tower — which is exactly the
+  parity-graded pattern observed.
+
+This **explains** the grading (why a ℤ/2 2-adic split exists at all, and why it
+keys to ũ-parity via the bar-odd projection `φ`) without yet **proving** the
+sharp `v₂(den b_k)=0 ⟺ k odd` law — that proof needs the `ser_sqrt`/`ser_div`
+construction formalized (see below). Identifying the origin is the honest
+intermediate step: the invariant is now structurally motivated, not merely
+observed.
+
 ## Formalize-first note (the invariant, and what proving it needs)
 
 The grading is a precise, exact, non-fitting statement. Formalizing it as a Lean
