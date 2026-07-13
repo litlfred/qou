@@ -1,0 +1,157 @@
+{
+ "computation": "he4-vol4-prediction-test",
+ "description": "4He Vol4=8.05 falsifiable prediction test of the bond-count tower B = m_e*Sum (n-1)*Vol_n: exact AME back-out of the implied Vol4 (from AME2020 B(4He), CODATA m_e, corpus Vol(L6a4)/Vol(8_11)), SnapPy comparison against in-advance-named structural candidates, and a guarded 4-component census density tabulation. NEGATIVE for the single-link linear-chain reading; link assignment itself is the open model input (gated on R5-full SDP #604). Scope-(a).",
+ "audit_only": true,
+ "computedAt": "2026-07-13T15:44:56.834022+00:00",
+ "engine": "mpmath+snappy",
+ "inputs": {
+  "m_e_MeV": {
+   "value": 0.51099895069,
+   "source": "codata_constants.M_E_MEV (CODATA 2022, CAL-1)"
+  },
+  "B_AME_4He_MeV": {
+   "value": 28.2956624,
+   "source": "codata_constants.AME_B_HE4_MEV_VALIDATION (vendored AME2020)"
+  },
+  "Vol_L6a4_ppn": {
+   "value": 7.327724753417752,
+   "source": "binding-link-volumes.witness.json"
+  },
+  "Vol_8_11_pnn": {
+   "value": 8.286316817806593,
+   "source": "binding-link-volumes.witness.json"
+  },
+  "Vol_2body": {
+   "value": 0.0,
+   "source": "Hopf link non-hyperbolic (KMM convention)"
+  }
+ },
+ "backout": {
+  "B_n23_MeV": 15.957517717851358,
+  "residual_n4_MeV": 12.338144682148641,
+  "vol4_implied": 8.048382268684042,
+  "vol4_preregistered_2026_07_04": 8.048,
+  "formula": "vol4 = (B_AME(4He) - m_e*(2*Vol(L6a4)+2*Vol(8_11))) / (3*m_e)"
+ },
+ "tolerances": {
+  "strict": 0.05,
+  "model_band": 0.3122808314244869,
+  "model_band_rationale": "+/-3% (worst A=3 residual) on the n=3 term, propagated"
+ },
+ "corpus_validation": {
+  "L6a4": {
+   "expected": 7.327724753417752,
+   "reproduced": true
+  },
+  "8_11": {
+   "expected": 8.286316817806593,
+   "reproduced": true
+  }
+ },
+ "candidates": {
+  "L8n8": {
+   "volume": 5.242565885828568e-07,
+   "delta_vs_implied": -8.048381744427454,
+   "role": "4-component brunnian (Borromean analogue)"
+  },
+  "L8a21": {
+   "volume": 10.149416064096537,
+   "delta_vs_implied": 2.1010337954124942,
+   "role": "4-chain (linear-chain closure)"
+  },
+  "L8a20": {
+   "volume": 10.149416064096535,
+   "delta_vs_implied": 2.1010337954124925,
+   "role": "4-chain variant"
+  },
+  "L8a19": {
+   "volume": 10.666979133796232,
+   "delta_vs_implied": 2.61859686511219,
+   "role": "4-component alternating"
+  },
+  "L8n7": {
+   "volume": 7.327724753417754,
+   "delta_vs_implied": -0.7206575152662884,
+   "role": "4-component non-alternating"
+  }
+ },
+ "census_guarded": {
+  "note": "NON-EVIDENTIAL selection-freedom quantifier; no corpus link assignment exists",
+  "n_4component_links_scanned": 7463,
+  "n_within_strict": 0,
+  "n_within_model_band": 2,
+  "nearest_10": [
+   {
+    "name": "L13n11075",
+    "volume": 8.355502146379582,
+    "delta": 0.3071198776955395
+   },
+   {
+    "name": "L13n11059",
+    "volume": 8.355502146379592,
+    "delta": 0.30711987769555016
+   },
+   {
+    "name": "L11n459",
+    "volume": 7.706912090907135,
+    "delta": -0.34147017777690714
+   },
+   {
+    "name": "L14n61056",
+    "volume": 7.706912059753149,
+    "delta": -0.3414702089308932
+   },
+   {
+    "name": "L14n61166",
+    "volume": 7.706911802810237,
+    "delta": -0.3414704658738055
+   },
+   {
+    "name": "L14n61212",
+    "volume": 7.706911802810197,
+    "delta": -0.34147046587384544
+   },
+   {
+    "name": "L14n61180",
+    "volume": 7.7069118028101435,
+    "delta": -0.34147046587389873
+   },
+   {
+    "name": "L14n61050",
+    "volume": 7.706911802810138,
+    "delta": -0.34147046587390406
+   },
+   {
+    "name": "L13n11287",
+    "volume": 7.706911802810132,
+    "delta": -0.3414704658739103
+   },
+   {
+    "name": "L13n11283",
+    "volume": 7.706911778007548,
+    "delta": -0.34147049067649426
+   }
+  ]
+ },
+ "verdict": "Two-layer verdict. (i) NOT DECISIVELY TESTABLE: the corpus fixes no derived 4He binding link (canonical knot-ID gated on R5-full SDP, #604; the A<=3 IDs are deprecated volume-search matches), so the link assignment is the open MODEL INPUT. (ii) Scope-(a) NEGATIVE for the pre-registered structural reading: the exact AME back-out gives Vol4 = 8.0484 (confirming the pre-registered 8.048), and NO in-advance-named candidate matches within even the +/-0.31 model band \u2014 linear 4-chains L8a21/L8a20 at 10.149 (+26%), brunnian analogue non-hyperbolic (Vol~0), L8n7 = Vol(Borromean) = 7.328 (-0.72), L8a19 at 10.667. The naive 'n=4 term = single linear-chain-closure volume' reading FAILS at 4He. This constrains that single-link reading only: the Lean-proved multiplicity (n-1), the 3H -0.16% / 3He -2.97% results, and the tower form survive. Guarded census datum: the implied volume falls in a GAP of the 4-component HT census spectrum (<=14 crossings) \u2014 0 links within +/-0.05, only 2 within the model band (nearest at +/-0.31/0.34) \u2014 so no <=14-crossing 4-component link carries Vol4 even post-hoc; and any wider post-hoc volume search would be a CAL-4 fit, out of bounds. Honest routes: R5-full SDP canonical knot-ID at H12, or a non-single-volume n=4 term. No fit; nothing wired.",
+ "scope": "(a) \u2014 constrains the single-link n=4 reading; multiplicity + A=3 + tower form untouched",
+ "assertions": [
+  {
+   "label": "exact back-out confirms pre-registered Vol4=8.048 to 0.01",
+   "passed": true
+  },
+  {
+   "label": "snappy reproduces corpus L6a4/8_11 volumes to 1e-9",
+   "passed": true
+  },
+  {
+   "label": "no pre-named candidate within the +/-3%-band (negative registered)",
+   "passed": true
+  },
+  {
+   "label": "guarded census density tabulated (selection freedom quantified)",
+   "passed": true
+  }
+ ],
+ "allPassed": true
+}
