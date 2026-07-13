@@ -53,7 +53,11 @@ from syt_prefix_cache import BlockCache, build_seminormal_matrices_cached  # noq
 
 q = float(Q0_FLOAT)
 h = q - 1.0 / q
-z = float(1.0 / (mp.sqrt(Q_MP) + 1.0 / mp.sqrt(Q_MP)))  # Markov parameter
+# Markov parameter z = 1/(√q + 1/√q).  Evaluate in an explicit high-precision
+# mpmath context (unary + forces re-rounding at the context precision) so the
+# value never silently truncates at a low ambient dps before the float cast.
+with mp.workdps(100):
+    z = float(+(1.0 / (mp.sqrt(Q_MP) + 1.0 / mp.sqrt(Q_MP))))  # Markov parameter
 TOL = 1e-9
 
 
