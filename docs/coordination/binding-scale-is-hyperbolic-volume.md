@@ -31,7 +31,7 @@ volume → more binding.
 |---|---|
 | **bond-count multiplicity `M_n(A) = (n−1)`** and the cluster-measure identity `6·Σ_k (A−k)k = (A−1)A(A+1)` | ✅ **Lean-proved, sorry-free** — [`QOU/Mass/LinearChainBondCount.lean`](../../content/quantum-observable-universe/lean/QOU/Mass/LinearChainBondCount.lean) (`chainBonds`, `linear_chain_cluster_measure`, proved by induction; 0 sorries; source-confirmed — not `lean_verify`'d in this sandbox) |
 | **deuteron `Vol = 0`** (2-body Hopf sub-link) | geometric fact — the Hopf link is **non-hyperbolic**, so the RHS of the volume conjecture vanishes ([`degree-one-braid-trivial-volume-proof.md`](../../content/quantum-observable-universe/mass-theory/degree-one-braid-trivial-volume-proof.md), KMM convention) |
-| **`Vol(K)` IS the binding scale** (the load-bearing claim) | ⚠️ **CONDITIONAL on an OPEN conjecture** — the identification of `Vol` with the colored-Jones/categorical-density growth is [`conj:kashaev-volume-conjecture`](../../content/quantum-observable-universe/mass-theory/kashaev-volume-conjecture.md), a **conjecture** (axiomatised as a Lean class, not proved; the KMM volume conjecture is open in the literature). Per "conditional-proved ≠ premise-established," the scale claim is *conditional*, **not** established. |
+| **`Vol(K)` IS the binding scale** (the load-bearing claim) | ⚠️ **CONDITIONAL — but now PER-LINK, and mostly on PROVEN instances (narrowed 2026-07-13, citation verified).** The framework needs only the volume-conjecture instances for its specific links, not full KMM: **L6a4 = Borromean rings** — **PROVEN** (a Whitehead chain; R. van der Veen, *Proof of the volume conjecture for Whitehead chains*, [arXiv:math/0611181](https://arxiv.org/abs/math/0611181), Acta Math. Vietnam. 2008 — family explicitly includes the Borromean rings; web-verified 2026-07-13). **4₁ (muon anchor)** — proven (Ekholm/Andersen–Hansen). **8₁₁ (³H)** — **open** (the one remaining open instance). So the ³He and 𝓑₃-anchored scale identifications are conditional on *proven theorems*; only ³H rides an open instance. Per "conditional-proved ≠ premise-established," the general claim stays conditional. |
 | **the 3% accuracy** of `m_e·2·Vol` vs AME | empirical (measured; the −3% ³He residual is the Coulomb/EM piece, 31% derived) |
 
 **Bottom line for Lean:** the *combinatorics* of the scale (the bond count) is
@@ -88,10 +88,14 @@ is what makes its contraction extensive and MeV-scaled; the "two derivations" ar
 its two collapse schemes. (The third, per-λ route with a fitted `C_knot = 5.852`
 — exactly the μ_ext I measured — was **retracted as a fit**; it is not a
 collapse of `θ_λ` but an anchor inversion.)
-3. **mirror Coulomb residual** — 31% derived (`tanh(ln q₀)·B_pp`); the rest is the
-   geometric/Milnor EM object (the pairwise route is provably empty — Borromean
-   L6a4 has pairwise linking 0). The Reeb phase θ_λ is the right geometric
-   candidate but bare-undershoots ~270× (needs the `Vol`-type magnitude).
+3. **mirror Coulomb residual** — 31% derived (`tanh(ln q₀)·B_pp`); the pairwise
+   EM route is provably empty (Borromean pairwise linking 0). **Calibrated
+   2026-07-13:** the fixed `B_pp/3` Borromean-channel candidate is a
+   single-point coincidence — the 8-pair mirror systematics
+   (`split/ΔE_C = 0.838 ± 0.059`) shows the split follows the continuum Coulomb
+   `Z(Z−1)/A^{1/3}` scaling, which a fixed 1/3 fails at ⁷Li/⁷Be (2.2×). The
+   honest open object: derive `~0.84·α·Z(Z−1)/R(A)` from the categorical EM
+   (α_EM + a derived radius law).
 
 ## Session cross-refs
 
