@@ -1,0 +1,83 @@
+{
+  "computation": "qbeta-fmap-power-class-prune",
+  "description": "Arm-1 (integer-u grading) symbolic verification of the power-class pincer (scope doc 2026-07-06, refuted-class row C19): Δtr_M = the atom-word bridge rational (the a_n provenance); pinned a_1..a_9 re-derived exactly; the explicit-instance per-block weighting is recorded as a DIFFERENT inhabitant (not used). Obstructions all fire with exact closed forms: odd m -> leading a_1^m != 0 (half-integer u_L); m=2 -> a_1^2 = 25/16 (forbidden c_1 rung, PR #1602); m=4,6 -> first odd-eps sub-leading coefficient m*a_1^(m-1)*a_2 != 0 (half-integer obstruction at sub-leading order). FULL pure-power class f = A*(Delta tr_M)^m, m=1..6, refuted UNCONDITIONALLY on Arm-1 alone (zero anchor sweeps); the zeta_4 Arm-2 Lean prune remains an independent conditional confirmation for even m. Scope-(b) with invariant cited (integer-u_L grading + Lean-proved c_1=0). Surviving f-space: non-monomial (keystone W_lambda axis). auditOnly; no c_k value; no fit; no wiring.",
+  "audit_only": true,
+  "content_block": "prop:q-beta-categorical-precision-ladder",
+  "inputs": {
+    "per_block_closed_forms_recorded_differs": "computations/qbeta/qbeta-per-block-paper-closed-forms.witness.json",
+    "bridge_rational": "computations/habiro/habiro-mode-to-ladder-bridge.witness.json",
+    "explicit_weights": "y = (z, 1/2 - z, z), z = sqrt(q)/(1+q) (CanonicalMarkovWeightsH3.explicitInstance)"
+  },
+  "hbar_taylor_a1_a9": [
+    "-5/4",
+    "-13/8",
+    "-33/16",
+    "-77/32",
+    "-177/64",
+    "-25/8",
+    "-891/256",
+    "-3923/1024",
+    "-4277/1024"
+  ],
+  "obstructions": {
+    "m=1": {
+      "verdict": "REFUTED (leading half-integer u_L^{1/2}; [ε^1]=-5/4 ≠ 0)",
+      "obstruction_coeff": "-5/4",
+      "closed_form_check": "-5/4",
+      "exact_match": true
+    },
+    "m=2": {
+      "verdict": "REFUTED (forbidden c₁ rung; [ε²]=25/16 = a₁² ≠ 0)",
+      "obstruction_coeff": "25/16",
+      "closed_form_check": "25/16",
+      "exact_match": true
+    },
+    "m=3": {
+      "verdict": "REFUTED (leading half-integer u_L^{3/2}; [ε^3]=-125/64 ≠ 0)",
+      "obstruction_coeff": "-125/64",
+      "closed_form_check": "-125/64",
+      "exact_match": true
+    },
+    "m=4": {
+      "verdict": "REFUTED unconditional (sub-leading odd-ε fires: [ε^5]=1625/128 = m·a₁^3·a₂ ≠ 0)",
+      "obstruction_coeff": "1625/128",
+      "closed_form_check": "1625/128",
+      "exact_match": true
+    },
+    "m=5": {
+      "verdict": "REFUTED (leading half-integer u_L^{5/2}; [ε^5]=-3125/1024 ≠ 0)",
+      "obstruction_coeff": "-3125/1024",
+      "closed_form_check": "-3125/1024",
+      "exact_match": true
+    },
+    "m=6": {
+      "verdict": "REFUTED unconditional (sub-leading odd-ε fires: [ε^7]=121875/4096 = m·a₁^5·a₂ ≠ 0)",
+      "obstruction_coeff": "121875/4096",
+      "closed_form_check": "121875/4096",
+      "exact_match": true
+    }
+  },
+  "assertions": [
+    {
+      "label": "explicit-instance per-block weighting recorded as a DIFFERENT inhabitant",
+      "passed": true
+    },
+    {
+      "label": "pinned a_1..a_9 reproduced exactly",
+      "passed": true
+    },
+    {
+      "label": "all six Arm-1 obstructions fire with exact closed forms",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "scriptHash": "b9bb7d0d58a5",
+  "scriptCommitSha": "unknown",
+  "commitSha": "ecadd5d6add073c67b86bdaafd2cc0ad64022a19",
+  "engine": "sympy",
+  "computedAt": "2026-07-13T21:10:05.151623+00:00",
+  "durationMs": 875,
+  "engineVersion": "sympy 1.14.0",
+  "scriptFile": "qbeta_fmap_power_class_prune.py"
+}
