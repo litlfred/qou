@@ -14,7 +14,7 @@ This command builds the PDF locally to save GitHub CI minutes. It generates the 
 ## Behavior
 1. Run the `build.ts` script to generate `main.tex` and the chapters:
    ```bash
-   bun run --preload ../scripts/preload-registry.ts ../folio-assistant/content/pipeline/build.ts \
+   bun run --preload scripts/preload-registry.ts ../folio-assistant/content/pipeline/build.ts \
      content/quantum-observable-universe/quantum-observable-universe.ts \
      --out-dir chapters/ \
      --generate-main \
@@ -23,7 +23,7 @@ This command builds the PDF locally to save GitHub CI minutes. It generates the 
    ```
 2. Compile the PDF using `latexmk`. If `latexmk` is not available natively in the workspace, use the Docker builder image fallback (as specified in `docs-generation.md`):
    ```bash
-   latexmk -pdf main.tex || docker run --rm --entrypoint "" -v $(pwd):/work -w /work ghcr.io/litlfred/qou-paper-builder:latest latexmk -pdf main.tex
+   latexmk -pdf main.tex || docker run --rm -v $(pwd):/work -w /work texlive/texlive:latest latexmk -pdf main.tex
    ```
 3. Split the generated `main.pdf` into individual per-chapter PDFs:
    ```bash
