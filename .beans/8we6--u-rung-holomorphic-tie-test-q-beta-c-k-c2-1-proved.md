@@ -45,3 +45,17 @@ confinement braid — no canonical B4 in corpus — and 4th-strand type/crossing
 Stability gate: must reproduce c2^even=-8.00641, c3^even=+86.66116 exactly in
 the decoupling limit. Route C = F(q) keystone, unchanged.
 Audit: ../docs/audits/2026-07-03-8we6-h4-route-b-structural-prune.md
+
+## 2026-07-13 — Route A EXECUTED: all three owner-authorized framings GATE-FAIL
+
+Owner authorized building all 3 candidate framings (PR #3769 session). Probe
+`computations/qbeta/qbeta_h4_route_a_gate_probe.py` (+ witness): A1 brane/Hopf
+pairwise extension, A2 lepton strand (s1 s2 s1 appended), A3 4-Brunnian core
+candidate `(s0 s1^-1 s2 s1^-1)^3` — ALL FAIL the decoupling gate: c2 shifts
+exactly +12, +13/6, -40 (sigma_2 content enters the ladder at u^2, not u^4).
+No c4^even rung produced; W3 stays gated (item 3 unchanged). Surviving
+criterion for any future candidate (cheap a-priori check):
+log(Delta(net)_4 / Delta(net)_3) = O(u^4) — appended couplings, pairwise
+extensions, and core replacements all violate it at leading order, mechanically
+corroborating Stage-B "longer braid words, entangled mid-word".
+Audit: docs/audits/2026-07-13-8we6-h4-route-a-three-framings-gate-fail.md
