@@ -32,7 +32,7 @@
 -/
 
 import Mathlib.Analysis.Complex.PhragmenLindelof
-import Mathlib.Analysis.SpecialFunctions.Pow.Deriv
+import Mathlib.Analysis.SpecialFunctions.Pow.Asymptotics
 
 namespace QOU.Mathlib.Borel
 
