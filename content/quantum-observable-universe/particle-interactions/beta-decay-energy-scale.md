@@ -59,8 +59,8 @@ Terms of word length $\ell \geq 2$ are topologically non-trivial and observable.
 
 ## Full energy budget
 
-Each of the six NF terms contributes to the total decay energy. The $\gamma$ debt and $L_+$ shift together account for $0.877 \text{MeV}$, which exceeds $\mathfrak{Q}_\beta$. The small virtual terms absorb the excess.
+Each of the six NF terms contributes to the total decay energy. The $\gamma$ deficit and $L_+$ shift together account for $0.877 \text{MeV}$, which exceeds $\mathfrak{Q}_\beta$. The small virtual terms absorb the excess.
 
 ## Physical interpretation
 
-Beta decay pays down the neutron's leptonic debt. The process $\mathfrak{n} \to \mathfrak{p} + e^- + \bar\nu_e$ releases $\mathfrak{Q}_\beta = 0.782 \text{MeV}$ because the neutron's $L_+$ coefficient is negative while the proton's is positive. The $\Delta L_+$ is the dominant energy source. The neutron carries a larger $\gamma$ debt than the proton. The virtual terms contribute small negative corrections. The $e^-$ channel contributes nearly zero.
+Beta decay pays down the neutron's leptonic deficit. The process $\mathfrak{n} \to \mathfrak{p} + e^- + \bar\nu_e$ releases $\mathfrak{Q}_\beta = 0.782 \text{MeV}$ because the neutron's $L_+$ coefficient is negative while the proton's is positive. The $\Delta L_+$ is the dominant energy source. The neutron carries a larger $\gamma$ deficit than the proton. The virtual terms contribute small negative corrections. The $e^-$ channel contributes nearly zero.
