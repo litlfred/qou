@@ -35,6 +35,7 @@
 
 import Mathlib.Analysis.SpecialFunctions.Integrability.LogMeromorphic
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus
+import QOU.Archimedean.ClausenFunctionMathlibFiller
 
 namespace QOU.Knot
 
@@ -88,5 +89,32 @@ theorem hasDerivAt_clausen {θ : ℝ} (h0 : 0 < θ) (h2 : θ < 2 * π) :
       (fun t => -Real.log (2 * Real.sin (t / 2))) (𝓝 θ) volume :=
     (ContinuousAt.stronglyMeasurableAtFilter (μ := volume) isOpen_Ioo hcontOn) θ ⟨h0, h2⟩
   simpa only [clausen] using integral_hasDerivAt_right hint hmeas hg
+
+/-- **Bridge to the series Clausen (classical Zagier identity, cited).** On the
+    fundamental domain, the integral Clausen equals the Fourier-series Clausen
+    `QOU.Archimedean.Cl_2`:
+    `∫₀^θ -log(2 sin(t/2)) dt = ∑_{k≥1} sin(kθ)/k²`. This is the Fourier
+    expansion of `log(2 sin(·/2))`, classical (Zagier) but NOT in Mathlib — the
+    exact "Fourier-series infrastructure" gap the filler file records. Encoded
+    per the anti-laundering rule as a CITED `sorry` (established in the
+    literature, not an open problem), reducing the filler's derivative gap to
+    this single named identity. -/
+theorem clausen_eq_series {θ : ℝ} (h0 : 0 ≤ θ) (h2 : θ ≤ 2 * π) :
+    clausen θ = QOU.Archimedean.Cl_2 θ := by
+  -- Ref: [zagier1986] Cl₂(θ) = -∫₀^θ log(2 sin(t/2)) dt (Fourier expansion of log∘sin)
+  sorry
+
+/-- **The series Clausen inherits the derivative.** `Cl_2'(θ) = -log(2 sin(θ/2))`
+    for `θ ∈ (0, 2π)` — the derivative the filler file
+    (`ClausenFunctionMathlibFiller`) flagged as "requires Fourier-series
+    infrastructure", now reduced to the single cited bridge `clausen_eq_series`
+    (the proved FTC content is `hasDerivAt_clausen`). Dual-purpose: this is
+    `V'(θ)` of `rem:dilog-saddle-regime`, zero at the saddle `θ = π/3`. -/
+theorem hasDerivAt_cl_2 {θ : ℝ} (h0 : 0 < θ) (h2 : θ < 2 * π) :
+    HasDerivAt QOU.Archimedean.Cl_2 (-Real.log (2 * Real.sin (θ / 2))) θ := by
+  have heq : QOU.Archimedean.Cl_2 =ᶠ[nhds θ] clausen := by
+    filter_upwards [Ioo_mem_nhds h0 h2] with x hx
+    exact (clausen_eq_series hx.1.le hx.2.le).symm
+  exact (hasDerivAt_clausen h0 h2).congr_of_eventuallyEq heq
 
 end QOU.Knot
