@@ -844,9 +844,28 @@ values, and six closure ansätze (Frobenius co-Casimir, Demazure-
 fibre, LP-Plancherel, LP-Frobenius, crystal-graph, augmented Markov)
 have all failed on the deuteron. **Do not propose a seventh fit-
 based ansatz** — the three-calibration discipline review will catch
-it. The productive directions are GAP-A-3 / GAP-A-4 (categorical
-brane-tower level selection / ρ general rule) and Option E **via the
-A=4 interface operator (PROBE 2)** + `conj:s5-so3-fiber-action`.
+it.
+
+> **🟧 GENERAL owner reversal — the Δ_λ gate is OPEN FOR ALL (2026-07-13).**
+> The owner has lifted the *direction/scope* narrowing on the Δ_λ closure:
+> any **derivation** route (geometric / substrate / categorical brane-tower /
+> Option E and beyond) is now **in scope for all agents**, no owner per-item
+> sign-off — mirroring the 2026-07-11 Subgoal-2 general reversal. The
+> "productive directions" list below is now a *starting-point suggestion*, not
+> a restriction. **The anti-fit / anti-laundering discipline is ORTHOGONAL and
+> STILL STANDS:** the "no seventh fit-based ansatz" rule above, §"Axiomatization
+> is NOT a Proof", "sorry-free ≠ derived", and "conditional-proved ≠
+> premise-established" all remain in force. "Open for all" grants permission to
+> *pursue and derive* — a Δ_λ obtained by inverting the AME anchors is still a
+> **fit**, must be labelled one, and may **not** be wired to production as
+> canonical; only a *derived* Δ_λ may. The **Lean-proved PROBE-4 prune** below
+> (KL-positivity vs the mixed-sign target) is a *proved exclusion*, not a scope
+> gate — it stays pruned. Full ruling:
+> [`docs/audits/2026-07-13-delta-lambda-gate-open-for-all.md`](docs/audits/2026-07-13-delta-lambda-gate-open-for-all.md).
+
+Suggested starting points (no longer a restriction): GAP-A-3 / GAP-A-4
+(categorical brane-tower level selection / ρ general rule) and Option E **via
+the A=4 interface operator (PROBE 2)** + `conj:s5-so3-fiber-action`.
 **Option E's Kashiwara-crystal / KL-weight sub-path (PROBE 4) is
 PRUNED**, not a productive direction: the target
 `Δ_λ = sgn(w_0^{S_{λ'}})·dim` is mixed-sign (n=3: 1+/2−; n=6: 6+/5−)
