@@ -2,7 +2,7 @@ import { remark } from "../../schema/builders";
 
 export default remark({
   label: "rem:archimedean-functor-trace-commutativity",
-  title: "Archimedean functor and binding-trace commutativity",
+  title: "Archimedean realisation and binding-trace commutativity",
   tags: [
     "surreal-numbers",
     "standard-part",

@@ -17,7 +17,7 @@ The Maxwell sector of the categorical Lagrangian restricts to the UV-completing 
 
 **Dimensional reduction.** A naive attempt places the zero-mode on the $3$-manifold $M_g\times S^1$. Here $b_1 = 2g+1$ and $\operatorname{Vol} = 2\pi\operatorname{Area}$. This gives $(2g+1)/(8\pi^2(g-1)) = 9/(24\pi^2) \approx 0.038$. Crossing with $S^1$ adds a spurious harmonic generator and a factor of $2\pi$ to the volume. The photon zero-mode lives strictly on the $2$-surface.
 
-**Jet-order placement.** The Archimedean functor decomposes into jet grades: $\tau = \sum_{n\ge 0} a_D^{(n)}$ ([`prop:jet-sw-tau-decomposition`](#prop:jet-sw-tau-decomposition)). The $n=0$ term is the electron period. The photon zero-mode forms the $n=1$ infrared term. This is the first prolongation beyond the tree coupling $q[9]_q[10]_q$. The $n=2$ self-energy takes the form $\alpha\,[2]_q/(8\pi)\,(1-h^2\alpha)$. Its denominator depends on the same Hodge datum:
+**Jet-order placement.** The Archimedean realisation decomposes into jet grades: $\tau = \sum_{n\ge 0} a_D^{(n)}$ ([`prop:jet-sw-tau-decomposition`](#prop:jet-sw-tau-decomposition)). The $n=0$ term is the electron period. The photon zero-mode forms the $n=1$ infrared term. This is the first prolongation beyond the tree coupling $q[9]_q[10]_q$. The $n=2$ self-energy takes the form $\alpha\,[2]_q/(8\pi)\,(1-h^2\alpha)$. Its denominator depends on the same Hodge datum:
 
 $$
   8\pi \;=\; \pi\cdot\dim H^1(M_{\text{Bring}}) \;=\; \pi\,b_1.

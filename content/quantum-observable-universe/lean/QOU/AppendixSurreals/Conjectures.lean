@@ -128,7 +128,7 @@ abbrev QOU_Real : Type u := PUnit
     `K`'s instances propagate. -/
 abbrev QOU_Surreal (K : Type u) [SurrealField K] : Type u := K
 
-/-- The **QOU standard-part functor**: collapses the surreal QOU
+/-- The **QOU standard-part map**: collapses the surreal QOU
     structure (= an element of `K`) onto the unique archimedean
     QOU.  Trivially essentially-surjective in the placeholder
     setting. -/
@@ -312,7 +312,7 @@ class ClassicalLimitIsStandardPart where
     placeholders — not provable from `SurrealField` lemmas. -/
 -- Ref: [robinson1966] §3.2, [conway1976] §0
 class ArchimedeanIsStandardPart where
-  /-- Essential surjectivity of the QOU standard-part functor. -/
+  /-- Essential surjectivity of the QOU standard-part map. -/
   essentially_surjective :
     ∀ (Q : QOU_Real.{u}), ∃ (SQ : QOU_Surreal K), QOU_StandardPart K SQ = Q
 

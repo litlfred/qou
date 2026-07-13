@@ -4,7 +4,7 @@ import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 /-!
 # QOU.Brings.jet_sw_tau_decomposition — SW = jet decomposition of τ
 
-The Archimedean functor `τ` applied to the surface-ordered MI integral
+The Archimedean realisation `τ` applied to the surface-ordered MI integral
 over the exceptional divisor decomposes as the sum over vertical (jet)
 degrees of the prolonged Seiberg–Witten periods:
 
@@ -12,7 +12,7 @@ degrees of the prolonged Seiberg–Witten periods:
 
 LaTeX label: `prop:jet-sw-tau-decomposition`. Lemma **L2** of the
 step-9 binding-closure workplan: the SW differential is the jet-graded
-decomposition of the Archimedean functor.
+decomposition of the Archimedean realisation.
 
 ## Lean structure — derived, not projected
 

@@ -22,7 +22,7 @@ $$
 
 An element of $X(\mathcal{O})$ is a "surreal-valued point" — an
 assignment of a finite surreal to each coordinate of $X$. The
-standard-part functor $\mathrm{st} : \mathcal{O} \to \mathbb{R}$
+standard-part map $\mathrm{st} : \mathcal{O} \to \mathbb{R}$
 induces
 
 $$

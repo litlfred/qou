@@ -7,7 +7,7 @@ An archimedean QOU $(\mathbf{C}, \varTheta, G, \mathcal{S})$ ([quantum observabl
 | Volume | $g_{\mathbf{1}} = \mathrm{id}$ | $= (1 + \varepsilon) \mathrm{id}$ |
 | Vacuum | $\mathrm{Geom}(\unicode{9737}) = 0$ | $= \varepsilon$ |
 
-**Conjecture.** The standard-part functor $\mathrm{St}$ sends every surreal QOU to an archimedean QOU.
+**Conjecture.** The standard-part map $\mathrm{St}$ sends every surreal QOU to an archimedean QOU.
 
 More precisely, there is a functor $\mathrm{St}_{\mathrm{QOU}} : \mathbf{QOU}_{\mathbf{No}}^{\varepsilon} \longrightarrow \mathbf{QOU}_{\mathbb{R}}$ defined by applying $\mathrm{St}$ to all hom-spaces. The functor is essentially surjective, and the composition $\mathrm{St}_{\mathrm{QOU}} \circ \iota$ is the identity.
 

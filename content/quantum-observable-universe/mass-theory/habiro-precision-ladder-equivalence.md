@@ -46,7 +46,7 @@ coefficients. The deuteron has $M = 12$.
 
 ## Uniqueness of the archimedean evaluation
 
-The archimedean functor is not an arbitrary map — it is the unique
+The archimedean realisation is not an arbitrary map — it is the unique
 evaluation $\widehat{\mathbb{Z}[q]} \to \mathbb{R}$ that:
 
 1. Sends the Habiro ring element $\mathrm{tr}_M(T_w)$ to its

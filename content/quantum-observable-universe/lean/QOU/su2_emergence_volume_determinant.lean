@@ -13,7 +13,7 @@ satisfies `det(g_V) = 1`; equivalently, `G ⊆ SL(2)`.*
 
 ## Archimedean realisation (this file)
 
-After the substrate→archimedean functor `τ`, the fibre `τ(V)` is the
+After the substrate→archimedean realisation `τ`, the fibre `τ(V)` is the
 standard 2-dimensional Hermitian space `ℂ²`.  The volume constraint
 "`g` preserves the volume form on `τ(V)`" is the concrete identity
 `g.det = 1`, and the lemma's content at this level is the containment

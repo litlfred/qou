@@ -160,7 +160,7 @@ The even (compact / binding / continuous q-Hermite) and odd (non-compact /
 stated over a generic `[CommRing R]` — **not** `ℝ` or `ℂ`.  The "complex
 rotation" between the two channels is a *formal* rotation element `ι` with
 `ι * ι = -1` living in the fibre ring; `Complex.I` is only one archimedean
-instance, reached downstream of the archimedean functor τ.  Nothing in this
+instance, reached downstream of the archimedean realisation τ.  Nothing in this
 section uses an ordering, `cosh`, a metric, or a real/complex embedding.
 
 Division-free conventions: the bar involution is carried by the hypothesis
