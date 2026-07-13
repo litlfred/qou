@@ -910,6 +910,19 @@
         "reviewed_at": "2026-07-07T14:26:56.415184Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:00:45.000Z",
+        "reviewed_sha": "b0b3555a8991cd5a84bfcbe3f0b1c9df3b78605e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -949,6 +962,19 @@
         "notes": "No false claims identified in 'Irrationality of a single hyperbolic knot volume': mathematical reasoning is consistent in prose.",
         "severity": "minor",
         "evidence": "single-volume-irrationality.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:00:45.000Z",
+        "reviewed_sha": "b0b3555a8991cd5a84bfcbe3f0b1c9df3b78605e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-vacuous": [
@@ -969,6 +995,19 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The block 'Irrationality of a single hyperbolic knot volume' presents substantial mathematical content: '$$'.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:00:45.000Z",
+        "reviewed_sha": "b0b3555a8991cd5a84bfcbe3f0b1c9df3b78605e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-circular": [
@@ -990,6 +1029,19 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Irrationality of a single hyperbolic knot volume'.",
         "severity": "minor",
         "evidence": "single-volume-irrationality.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:00:45.000Z",
+        "reviewed_sha": "b0b3555a8991cd5a84bfcbe3f0b1c9df3b78605e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-overclaim": [
@@ -1010,6 +1062,19 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The remarks and narrative scope in 'Irrationality of a single hyperbolic knot volume' are appropriately qualified.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:00:45.000Z",
+        "reviewed_sha": "b0b3555a8991cd5a84bfcbe3f0b1c9df3b78605e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-hidden-dof": [
@@ -1031,6 +1096,19 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Irrationality of a single hyperbolic knot volume'.",
         "severity": "minor",
         "evidence": "single-volume-irrationality.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:00:45.000Z",
+        "reviewed_sha": "b0b3555a8991cd5a84bfcbe3f0b1c9df3b78605e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-non-sequitur": [
@@ -1052,6 +1130,19 @@
         "notes": "The prose arguments in 'Irrationality of a single hyperbolic knot volume' proceed logically through the stated steps.",
         "severity": "minor",
         "evidence": "single-volume-irrationality.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:00:45.000Z",
+        "reviewed_sha": "b0b3555a8991cd5a84bfcbe3f0b1c9df3b78605e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1072,6 +1163,19 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No Lean sibling required; narrative matches the expected configuration.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:00:45.000Z",
+        "reviewed_sha": "b0b3555a8991cd5a84bfcbe3f0b1c9df3b78605e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-citation-misuse": [
@@ -1093,6 +1197,19 @@
         "notes": "No citations are present in 'Irrationality of a single hyperbolic knot volume', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "single-volume-irrationality.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:00:45.000Z",
+        "reviewed_sha": "b0b3555a8991cd5a84bfcbe3f0b1c9df3b78605e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-definitional-ambiguity": [
@@ -1114,6 +1231,19 @@
         "notes": "Key terms and symbols in 'Irrationality of a single hyperbolic knot volume' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "single-volume-irrationality.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:00:45.000Z",
+        "reviewed_sha": "b0b3555a8991cd5a84bfcbe3f0b1c9df3b78605e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-empirical-fragility": [
@@ -1135,6 +1265,19 @@
         "notes": "The algebraic and logical relations in 'Irrationality of a single hyperbolic knot volume' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "single-volume-irrationality.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:00:45.000Z",
+        "reviewed_sha": "b0b3555a8991cd5a84bfcbe3f0b1c9df3b78605e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-physical-implausibility": [
@@ -1156,6 +1299,19 @@
         "notes": "The physical concepts described in 'Irrationality of a single hyperbolic knot volume' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "single-volume-irrationality.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:00:45.000Z",
+        "reviewed_sha": "b0b3555a8991cd5a84bfcbe3f0b1c9df3b78605e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-reproducibility": [
@@ -1176,6 +1332,19 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The derivation steps and formal definitions in 'Irrationality of a single hyperbolic knot volume' are reproducible.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:00:45.000Z",
+        "reviewed_sha": "b0b3555a8991cd5a84bfcbe3f0b1c9df3b78605e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-referee-verdict": [
@@ -1198,6 +1367,19 @@
         "severity": "minor",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Irrationality of a single hyperbolic knot volume' are consistent."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:00:45.000Z",
+        "reviewed_sha": "b0b3555a8991cd5a84bfcbe3f0b1c9df3b78605e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "milnor-amalgamated-flow": [
@@ -1414,6 +1596,36 @@
         },
         "reviewed_at": "2026-07-12T00:35:44.899Z",
         "reviewed_sha": "6a697553ee79c4d9e8932245bfa58ba9bd9e7e5c"
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:00:45.000Z",
+        "reviewed_sha": "b0b3555a8991cd5a84bfcbe3f0b1c9df3b78605e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:00:45.000Z",
+        "reviewed_sha": "b0b3555a8991cd5a84bfcbe3f0b1c9df3b78605e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ]
   },
