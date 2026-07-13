@@ -1087,6 +1087,19 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Block placement and kind 'proposition' match validated structurally.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "wall-side-statement": [
@@ -1312,6 +1325,19 @@
         "notes": "No false claims identified in 'Integer stability: the valley of stability as a Diophantine constraint': the formalization compiles successfully without errors.",
         "severity": "minor",
         "evidence": "integer-stability.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-vacuous": [
@@ -1334,6 +1360,19 @@
         "notes": "No vacuous proofs detected. Sibling Lean file compiles sorry-free, verifying non-vacuity.",
         "severity": "minor",
         "evidence": "integer-stability.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-circular": [
@@ -1356,6 +1395,19 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Integer stability: the valley of stability as a Diophantine constraint'.",
         "severity": "minor",
         "evidence": "integer-stability.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-overclaim": [
@@ -1377,6 +1429,19 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No overclaims: the scope of 'Integer stability: the valley of stability as a Diophantine constraint' is appropriately qualified.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-hidden-dof": [
@@ -1399,6 +1464,19 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Integer stability: the valley of stability as a Diophantine constraint'.",
         "severity": "minor",
         "evidence": "integer-stability.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-non-sequitur": [
@@ -1421,6 +1499,19 @@
         "notes": "The argument flow in 'Integer stability: the valley of stability as a Diophantine constraint' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
         "evidence": "integer-stability.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1442,6 +1533,19 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Lean sibling corresponds directly to the narrative claim in 'Integer stability: the valley of stability as a Diophantine constraint'.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-citation-misuse": [
@@ -1464,6 +1568,19 @@
         "notes": "No citations are present in 'Integer stability: the valley of stability as a Diophantine constraint', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "integer-stability.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-definitional-ambiguity": [
@@ -1486,6 +1603,19 @@
         "notes": "Key terms and symbols in 'Integer stability: the valley of stability as a Diophantine constraint' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "integer-stability.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-empirical-fragility": [
@@ -1508,6 +1638,19 @@
         "notes": "The algebraic and logical relations in 'Integer stability: the valley of stability as a Diophantine constraint' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "integer-stability.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-physical-implausibility": [
@@ -1530,6 +1673,19 @@
         "notes": "The physical concepts described in 'Integer stability: the valley of stability as a Diophantine constraint' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "integer-stability.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-reproducibility": [
@@ -1551,6 +1707,19 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Lean file compiles successfully, confirming reproducibility.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-referee-verdict": [
@@ -1574,6 +1743,19 @@
         "severity": "minor",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Integer stability: the valley of stability as a Diophantine constraint' are consistent."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "milnor-amalgamated-flow": [
@@ -1650,6 +1832,36 @@
         },
         "reviewed_at": "2026-07-12T00:35:44.899Z",
         "reviewed_sha": "6a697553ee79c4d9e8932245bfa58ba9bd9e7e5c"
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ]
   },

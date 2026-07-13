@@ -1083,6 +1083,19 @@
         "reviewed_at": "2026-07-07T14:26:56.438618Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "wall-side-statement": [
@@ -1315,6 +1328,19 @@
         "notes": "No false claims identified in 'Additive Bring zero-mode form $1/\\\\alpha_{EM} = q\\\\cdot[9]_q\\\\cdot[10]_q + 2g/(4\\\\pi(g-1))$ (conditional)': mathematical reasoning is consistent in prose.",
         "severity": "minor",
         "evidence": "em-coupling-bring-zero-mode.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-vacuous": [
@@ -1335,6 +1361,19 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The block 'Additive Bring zero-mode form $1/\\\\alpha_{EM} = q\\\\cdot[9]_q\\\\cdot[10]_q + 2g/(4\\\\pi(g-1))$ (conditional)' presents substantial mathematical content: '$1/\\alpha_{EM}$, conditional on'.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-circular": [
@@ -1356,6 +1395,19 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Additive Bring zero-mode form $1/\\\\alpha_{EM} = q\\\\cdot[9]_q\\\\cdot[10]_q + 2g/(4\\\\pi(g-1))$ (conditional)'.",
         "severity": "minor",
         "evidence": "em-coupling-bring-zero-mode.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-overclaim": [
@@ -1376,6 +1428,19 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The remarks and narrative scope in 'Additive Bring zero-mode form $1/\\\\alpha_{EM} = q\\\\cdot[9]_q\\\\cdot[10]_q + 2g/(4\\\\pi(g-1))$ (conditional)' are appropriately qualified.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-hidden-dof": [
@@ -1397,6 +1462,19 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Additive Bring zero-mode form $1/\\\\alpha_{EM} = q\\\\cdot[9]_q\\\\cdot[10]_q + 2g/(4\\\\pi(g-1))$ (conditional)'.",
         "severity": "minor",
         "evidence": "em-coupling-bring-zero-mode.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-non-sequitur": [
@@ -1418,6 +1496,19 @@
         "notes": "The prose arguments in 'Additive Bring zero-mode form $1/\\\\alpha_{EM} = q\\\\cdot[9]_q\\\\cdot[10]_q + 2g/(4\\\\pi(g-1))$ (conditional)' proceed logically through the stated steps.",
         "severity": "minor",
         "evidence": "em-coupling-bring-zero-mode.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1438,6 +1529,19 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No Lean sibling required; narrative matches the expected configuration.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-citation-misuse": [
@@ -1459,6 +1563,19 @@
         "notes": "The citations jones1987, kassel1995, suslin1991, bloch2000 in 'Additive Bring zero-mode form $1/\\\\alpha_{EM} = q\\\\cdot[9]_q\\\\cdot[10]_q + 2g/(4\\\\pi(g-1))$ (conditional)' are consistent with the sources referenced in the text.",
         "severity": "minor",
         "evidence": "em-coupling-bring-zero-mode.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-definitional-ambiguity": [
@@ -1480,6 +1597,19 @@
         "notes": "Key terms and symbols in 'Additive Bring zero-mode form $1/\\\\alpha_{EM} = q\\\\cdot[9]_q\\\\cdot[10]_q + 2g/(4\\\\pi(g-1))$ (conditional)' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "em-coupling-bring-zero-mode.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-empirical-fragility": [
@@ -1501,6 +1631,19 @@
         "notes": "The empirical claims in 'Additive Bring zero-mode form $1/\\\\alpha_{EM} = q\\\\cdot[9]_q\\\\cdot[10]_q + 2g/(4\\\\pi(g-1))$ (conditional)' are structurally anchored to the QOU mass framework and are stable.",
         "severity": "minor",
         "evidence": "em-coupling-bring-zero-mode.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-physical-implausibility": [
@@ -1522,6 +1665,19 @@
         "notes": "The physical concepts described in 'Additive Bring zero-mode form $1/\\\\alpha_{EM} = q\\\\cdot[9]_q\\\\cdot[10]_q + 2g/(4\\\\pi(g-1))$ (conditional)' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "em-coupling-bring-zero-mode.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-reproducibility": [
@@ -1542,6 +1698,19 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The derivation steps and formal definitions in 'Additive Bring zero-mode form $1/\\\\alpha_{EM} = q\\\\cdot[9]_q\\\\cdot[10]_q + 2g/(4\\\\pi(g-1))$ (conditional)' are reproducible.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-referee-verdict": [
@@ -1564,6 +1733,19 @@
         "severity": "minor",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Additive Bring zero-mode form $1/\\\\alpha_{EM} = q\\\\cdot[9]_q\\\\cdot[10]_q + 2g/(4\\\\pi(g-1))$ (conditional)' are consistent."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "milnor-amalgamated-flow": [
@@ -1639,6 +1821,36 @@
         },
         "reviewed_at": "2026-07-12T00:35:44.899Z",
         "reviewed_sha": "6a697553ee79c4d9e8932245bfa58ba9bd9e7e5c"
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ]
   },

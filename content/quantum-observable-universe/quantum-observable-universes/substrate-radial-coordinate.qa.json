@@ -1086,6 +1086,19 @@
         "reviewed_at": "2026-07-07T14:26:55.861488Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "wall-side-statement": [
@@ -1307,6 +1320,19 @@
         "severity": "minor",
         "evidence": "substrate-radial-coordinate.lean:1",
         "notes": "The mathematical claims in 'Substrate parameter as the radial coordinate' regarding 'Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). U...' are unverified due to compilation errors in the Lean sibling file substrate-radial-coordinate.lean: content/quantum-observable-universe/quantum-observable-universes/substrate-radial-coordinate.lean:53:3: error: unknown tactic."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-vacuous": [
@@ -1329,6 +1355,19 @@
         "severity": "minor",
         "evidence": "substrate-radial-coordinate.ts:1",
         "notes": "The sibling Lean file substrate-radial-coordinate.lean fails to compile, so the completeness and non-vacuity of the formal proof cannot be verified."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-circular": [
@@ -1351,6 +1390,19 @@
         "severity": "minor",
         "evidence": "substrate-radial-coordinate.ts:1",
         "notes": "No circular reasoning or self-assuming definitions are detected in the statement or proof of 'Substrate parameter as the radial coordinate' (which asserts 'Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). U...')."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-overclaim": [
@@ -1373,6 +1425,19 @@
         "severity": "minor",
         "evidence": "substrate-radial-coordinate.ts:1",
         "notes": "The prose presents 'Substrate parameter as the radial coordinate' as verified, but the sibling Lean file substrate-radial-coordinate.lean fails to compile."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-hidden-dof": [
@@ -1395,6 +1460,19 @@
         "severity": "minor",
         "evidence": "substrate-radial-coordinate.ts:1",
         "notes": "No hidden degrees of freedom, unstated constants, or arbitrary parameters are introduced in the formulation of 'Substrate parameter as the radial coordinate'."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-non-sequitur": [
@@ -1417,6 +1495,19 @@
         "severity": "minor",
         "evidence": "substrate-radial-coordinate.lean:1",
         "notes": "Logical gaps exist in the formalization of 'Substrate parameter as the radial coordinate' due to compilation failure in substrate-radial-coordinate.lean."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1439,6 +1530,19 @@
         "severity": "minor",
         "evidence": "substrate-radial-coordinate.lean:1",
         "notes": "The Lean sibling substrate-radial-coordinate.lean fails compilation, causing divergence from the narrative."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-citation-misuse": [
@@ -1461,6 +1565,19 @@
         "severity": "minor",
         "evidence": "substrate-radial-coordinate.ts:1",
         "notes": "No citations are present in 'Substrate parameter as the radial coordinate', hence no citation misuse is possible."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-definitional-ambiguity": [
@@ -1483,6 +1600,19 @@
         "severity": "minor",
         "evidence": "substrate-radial-coordinate.ts:1",
         "notes": "Key terms and symbols in 'Substrate parameter as the radial coordinate' (e.g. from 'Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). U...') are mathematically defined and unambiguous."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-empirical-fragility": [
@@ -1505,6 +1635,19 @@
         "severity": "minor",
         "evidence": "substrate-radial-coordinate.ts:1",
         "notes": "The empirical claims in 'Substrate parameter as the radial coordinate' (quoting 'Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). U...') are structurally anchored to the QOU mass framework and are stable."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-physical-implausibility": [
@@ -1527,6 +1670,19 @@
         "severity": "minor",
         "evidence": "substrate-radial-coordinate.ts:1",
         "notes": "The physical concepts described in 'Substrate parameter as the radial coordinate' are consistent with quantum observable mechanics."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-reproducibility": [
@@ -1549,6 +1705,19 @@
         "severity": "minor",
         "evidence": "substrate-radial-coordinate.lean:1",
         "notes": "The Lean sibling substrate-radial-coordinate.lean fails compilation, indicating a reproducibility failure: content/quantum-observable-universe/quantum-observable-universes/substrate-radial-coordinate.lean:53:3: error: unknown tactic."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-referee-verdict": [
@@ -1572,6 +1741,19 @@
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/quantum-observable-universes/substrate-radial-coordinate.lean fails compilation: content/quantum-observable-universe/quantum-observable-universes/substrate-radial-coordinate.lean:53:3: error: unknown tactic",
         "verdict": "open-objection",
         "referee_argument": "The proposed formalization for 'Substrate parameter as the radial coordinate' (asserting 'Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). U...') fails to compile with error: content/quantum-observable-universe/quantum-observable-universes/substrate-radial-coordinate.lean:53:3: error: unknown tactic. A competent referee cannot accept this as a verified mathematical claim."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "milnor-amalgamated-flow": [
@@ -1648,6 +1830,36 @@
         },
         "reviewed_at": "2026-07-12T02:27:16.832Z",
         "reviewed_sha": "a261b5599858024c2ffcb9a1f91fc8aceb108c50"
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ]
   },

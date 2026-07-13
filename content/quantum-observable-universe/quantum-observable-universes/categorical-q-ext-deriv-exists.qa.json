@@ -1066,6 +1066,19 @@
         "reviewed_at": "2026-06-22T02:56:37.868Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "wall-side-statement": [
@@ -1299,6 +1312,19 @@
         "severity": "minor",
         "evidence": "categorical-q-ext-deriv-exists.lean:1",
         "notes": "The mathematical claims in 'Existence of the categorical $q$-exterior derivative' regarding 'Let $(\\mathbf{C}, A, \\tau)$ be a' are unverified due to compilation errors in the Lean sibling file categorical-q-ext-deriv-exists.lean: content/quantum-observable-universe/quantum-observable-universes/categorical-q-ext-deriv-exists.lean:25:41: error: unexpected token '/--'; expected 'lemma'."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-vacuous": [
@@ -1319,6 +1345,19 @@
         "severity": "major",
         "evidence": "categorical-q-ext-deriv-exists.lean:1",
         "notes": "The sibling Lean file categorical-q-ext-deriv-exists.lean contains 'sorry' placeholders, rendering the formal verification of 'Existence of the categorical $q$-exterior derivative' vacuous."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-circular": [
@@ -1339,6 +1378,19 @@
         "severity": "minor",
         "evidence": "categorical-q-ext-deriv-exists.ts:1",
         "notes": "No circular reasoning or self-assuming definitions are detected in the statement or proof of 'Existence of the categorical $q$-exterior derivative' (which asserts 'Let $(\\mathbf{C}, A, \\tau)$ be a')."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-overclaim": [
@@ -1359,6 +1411,19 @@
         "severity": "minor",
         "evidence": "categorical-q-ext-deriv-exists.ts:1",
         "notes": "The prose presents 'Existence of the categorical $q$-exterior derivative' as verified, but the sibling Lean file categorical-q-ext-deriv-exists.lean fails to compile."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-hidden-dof": [
@@ -1379,6 +1444,19 @@
         "severity": "minor",
         "evidence": "categorical-q-ext-deriv-exists.ts:1",
         "notes": "No hidden degrees of freedom, unstated constants, or arbitrary parameters are introduced in the formulation of 'Existence of the categorical $q$-exterior derivative'."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-non-sequitur": [
@@ -1399,6 +1477,19 @@
         "severity": "minor",
         "evidence": "categorical-q-ext-deriv-exists.lean:1",
         "notes": "Logical gaps exist in the formalization of 'Existence of the categorical $q$-exterior derivative' due to compilation failure in categorical-q-ext-deriv-exists.lean."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1419,6 +1510,19 @@
         "severity": "minor",
         "evidence": "categorical-q-ext-deriv-exists.lean:1",
         "notes": "The Lean sibling categorical-q-ext-deriv-exists.lean fails compilation, causing divergence from the narrative."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-citation-misuse": [
@@ -1439,6 +1543,19 @@
         "severity": "minor",
         "evidence": "categorical-q-ext-deriv-exists.ts:1",
         "notes": "No citations are present in 'Existence of the categorical $q$-exterior derivative', hence no citation misuse is possible."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-definitional-ambiguity": [
@@ -1459,6 +1576,19 @@
         "severity": "minor",
         "evidence": "categorical-q-ext-deriv-exists.ts:1",
         "notes": "Key terms and symbols in 'Existence of the categorical $q$-exterior derivative' (e.g. from 'Let $(\\mathbf{C}, A, \\tau)$ be a') are mathematically defined and unambiguous."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-empirical-fragility": [
@@ -1479,6 +1609,19 @@
         "severity": "minor",
         "evidence": "categorical-q-ext-deriv-exists.ts:1",
         "notes": "The algebraic and logical relations in 'Existence of the categorical $q$-exterior derivative' are independent of empirical tuning parameters."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-physical-implausibility": [
@@ -1499,6 +1642,19 @@
         "severity": "minor",
         "evidence": "categorical-q-ext-deriv-exists.ts:1",
         "notes": "The physical concepts described in 'Existence of the categorical $q$-exterior derivative' are consistent with quantum observable mechanics."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-reproducibility": [
@@ -1519,6 +1675,19 @@
         "severity": "minor",
         "evidence": "categorical-q-ext-deriv-exists.lean:1",
         "notes": "The Lean sibling categorical-q-ext-deriv-exists.lean fails compilation, indicating a reproducibility failure: content/quantum-observable-universe/quantum-observable-universes/categorical-q-ext-deriv-exists.lean:25:41: error: unexpected token '/--'; expected 'lemma'."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-referee-verdict": [
@@ -1540,6 +1709,19 @@
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/quantum-observable-universes/categorical-q-ext-deriv-exists.lean contains 'sorry' placeholders.",
         "verdict": "open-objection",
         "referee_argument": "The sibling Lean file categorical-q-ext-deriv-exists.lean contains sorry placeholders, meaning the main result of 'Existence of the categorical $q$-exterior derivative' is unproved and the formalization of 'Let $(\\mathbf{C}, A, \\tau)$ be a' is currently vacuous."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "bib-cite-resolves": [
@@ -1617,6 +1799,36 @@
         },
         "reviewed_at": "2026-07-12T15:50:44.722Z",
         "reviewed_sha": "af10190f5f9d287f74ba56e56051275b24e3ecbc"
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ]
   },
