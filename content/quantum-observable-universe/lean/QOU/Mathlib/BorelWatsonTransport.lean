@@ -62,12 +62,10 @@ theorem differentiableOn_comp_inv {E : Type*} [NormedAddCommGroup E]
     [NormedSpace ℂ E] {g : ℂ → E}
     (hg : DifferentiableOn ℂ g {z : ℂ | 0 < z.re}) :
     DifferentiableOn ℂ (fun w => g w⁻¹) {z : ℂ | 0 < z.re} := by
-  intro w hw
-  have hw0 : w ≠ 0 := fun h => by rw [h] at hw; simp at hw
-  have hinv : DifferentiableWithinAt ℂ (fun w : ℂ => w⁻¹) {z : ℂ | 0 < z.re} w :=
-    ((differentiableAt_id.inv hw0)).differentiableWithinAt
-  have hgw : DifferentiableWithinAt ℂ g {z : ℂ | 0 < z.re} w⁻¹ :=
-    hg w⁻¹ (inv_re_pos hw)
-  exact hgw.comp w hinv (fun z hz => inv_re_pos hz)
+  have hinv : DifferentiableOn ℂ (fun w : ℂ => w⁻¹) {z : ℂ | 0 < z.re} := by
+    intro w hw
+    have hw0 : w ≠ 0 := fun h => by rw [h] at hw; simp at hw
+    exact (differentiableAt_id.inv hw0).differentiableWithinAt
+  exact hg.comp hinv (fun z hz => inv_re_pos hz)
 
 end QOU.Mathlib.Borel
