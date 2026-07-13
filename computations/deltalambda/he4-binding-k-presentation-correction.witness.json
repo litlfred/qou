@@ -1,0 +1,112 @@
+{
+ "computation": "he4-binding-k-presentation-correction",
+ "description": "Same-day correction of the A=4 stage-1/stage-1.5 probes: the GP-kernel presentation identity is measured (GP variable v = \u221aq; evaluating at q computes the paper trace at q\u00b2) and the full operator dictionary is certified end-to-end against the certified combiner traces (p, n, D, 4He). Canonical seam structure read off the builder: one pair-typed crossing per seam at generators {2,5,8}. Stage-1/1.5 headline residuals (14.7%, 3.8%) are void.",
+ "audit_only": true,
+ "computedAt": "2026-07-13T20:45:46.476589+00:00",
+ "engine": "pyhecke_native(GP + seminormal-mpfr) + mpmath",
+ "dps": 50,
+ "q_pin": {
+  "used": "canonical muon, q-pinning-50-digit.witness.json derived_50_digit.q",
+  "value": "1.10997859555733471989976322048322502665620840878015368660798114614493",
+  "note": "q_parameter is anchor-adaptive (q0_anchor_manifest.json): ideal_muon producers resolve this value; ad-hoc shells resolve the proton pin \u2014 an 8.8e-8-level trap for reproduction scripts. Stage-1/1.5's hardcoded muon string agreed to ~1e-17 (pin was NOT their error; the presentation was)."
+ },
+ "presentation": {
+  "gp_variable": "v with generator eigenvalues (v\u00b2, \u2212v\u207b\u00b2); paper q = v\u00b2",
+  "correct_eval_point": "v = \u221aq\u2080",
+  "layer1_plain_word": {
+   "rel_at_sqrt_q": "8.03141e-51",
+   "rel_at_q": "0.0262852"
+  }
+ },
+ "operator_dictionary": {
+  "sigma": "(1,0,g) \u2192 GP (1,g+1)",
+  "sigma_inv": "(1,\u2212h,g) \u2192 GP (\u22121,g+1)  [\u03c3\u207b\u00b9 = \u03c3 \u2212 h]",
+  "averaged": "(1,\u2212h/2,g) \u2192 GP (0,g+1) = \u03c3+\u03c3\u207b\u00b9 unnormalized; \u00f72 per crossing",
+  "color_weighted": "(1,\u2212h(\u00bd\u2212\u03b4/4),g) \u2192 (\u00bd+\u03b4/4)\u00b7\u03c3 + (\u00bd\u2212\u03b4/4)\u00b7\u03c3\u207b\u00b9, \u03b4 = _avg_color_delta()"
+ },
+ "canonical_4he_structure": {
+  "word": "p(0)\u00b7\u03c3\u2082\u00b7p(3)\u00b7cw\u2085\u00b7n(6)\u00b7\u03c3\u2088\u207b\u00b9\u00b7n(9)",
+  "seam_generators_0based": [
+   2,
+   5,
+   8
+  ],
+  "seam_operators": {
+   "p-p (gen 2)": "plain \u03c3",
+   "p-n (gen 5)": "color-weighted average",
+   "n-n (gen 8)": "\u03c3\u207b\u00b9"
+  },
+  "note": "nucleon blocks are the canonical 11-crossing operator words, NOT plain Borromean [\u03c3\u2081\u03c3\u2082\u207b\u00b9]\u00b3; stage-1/1.5's constituent product and its {3,6,9} seam placement were therefore also wrong"
+ },
+ "end_to_end": {
+  "proton": {
+   "gp_reproduction": "1.065306228613167059365285",
+   "combiner_target": "1.065306228613167059365285",
+   "rel_delta": "2.91034e-49",
+   "n_crossings": 11,
+   "n_averaged": 2,
+   "n_color_weighted": 0,
+   "tolerance": "1e-15",
+   "passed": true
+  },
+  "neutron": {
+   "gp_reproduction": "0.9232332971861535571052534",
+   "combiner_target": "0.9232332971861535571052534",
+   "rel_delta": "2.88053e-49",
+   "n_crossings": 11,
+   "n_averaged": 2,
+   "n_color_weighted": 0,
+   "tolerance": "1e-15",
+   "passed": true
+  },
+  "deuteron": {
+   "gp_reproduction": "0.3883571887237810072705909",
+   "combiner_target": "0.3883571887237810072663901",
+   "rel_delta": "1.0817e-20",
+   "n_crossings": 23,
+   "n_averaged": 4,
+   "n_color_weighted": 1,
+   "tolerance": "1e-12",
+   "passed": true
+  },
+  "helium-4": {
+   "gp_reproduction": "0.05535842626678310646540726",
+   "combiner_target": "0.05535842626678310646480845",
+   "rel_delta": "1.0817e-20",
+   "n_crossings": 47,
+   "n_averaged": 8,
+   "n_color_weighted": 1,
+   "tolerance": "1e-12",
+   "passed": true
+  }
+ },
+ "voided_claims": [
+  "stage-1 'best plain K rel \u0394 = 14.7%' (he4-binding-k-fingerprint-stage1)",
+  "stage-1.5 'averaged 3-bond captures 96.2% / residual 3.8% = woven structure' (he4-binding-k-averaged-interface)"
+ ],
+ "verdict": "SAME-DAY CORRECTION of A=4 stage 1/1.5: both probes evaluated GP Laurent characters at q\u2080 where the GP variable is \u221aq (generator eigenvalues (v\u00b2, \u2212v\u207b\u00b2) = paper (q, \u2212q\u207b\u00b9) at q = v\u00b2) \u2014 so the published 14.7% / 3.8% residuals are VOID as paper-convention quantities, and their 'woven-structure 3.8%' interpretation is retracted. Convention now measured and certified: GP(\u221aq) \u2261 seminormal(q) exactly (50-digit match, plain word) and the full operator dictionary (\u03c3; \u03c3\u207b\u00b9 = \u03c3\u2212h; averaged = (\u03c3+\u03c3\u207b\u00b9)/2 via GP sign 0 \u00f72; color-weighted a\u03c3+b\u03c3\u207b\u00b9) reproduces the certified combiner traces for proton, neutron, deuteron, \u2074He end-to-end through GP at the canonical-muon pin. The canonical \u2074He binding structure needs no fingerprint search \u2014 it is explicit in atom_braid_word_3A: one inter-nucleon crossing per adjacent seam at generators {2,5,8} (0-based), pair-typed (p-p: \u03c3; p-n: color-weighted average; n-n: \u03c3\u207b\u00b9), joining four canonical 11-crossing nucleon blocks. Stage-2 (per-block PSD + operator-selection LP) remains the open, non-tautological question. Scope-(a); no fit; nothing wired.",
+ "scope": "(a) \u2014 convention correction + certification; stage-2 PSD/LP still open",
+ "assertions": [
+  {
+   "label": "GP(\u221aq) \u2261 seminormal(q) on plain word (\u22641e-40)",
+   "passed": true
+  },
+  {
+   "label": "end-to-end combiner reproduction: proton",
+   "passed": true
+  },
+  {
+   "label": "end-to-end combiner reproduction: neutron",
+   "passed": true
+  },
+  {
+   "label": "end-to-end combiner reproduction: deuteron",
+   "passed": true
+  },
+  {
+   "label": "end-to-end combiner reproduction: helium-4",
+   "passed": true
+  }
+ ],
+ "allPassed": true
+}
