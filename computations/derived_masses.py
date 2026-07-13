@@ -440,6 +440,40 @@ def q_beta_kashiwara_n2_mev() -> mp.mpf:
 
 
 @lru_cache(maxsize=None)
+def q_beta_toroidal_mev() -> mp.mpf:
+    """Q_β via the exact Toroidal Harmonic basis / Weber ODE limit (N=4).
+
+    Replaces the empirical Kashiwara N2 truncation with the rigorous
+    Toroidal projection derived from the global Markov trace on the
+    solid torus (prop:qbeta-toroidal-harmonics-basis):
+    
+        Q_A   = m_e·|q²−2q−1|(q+1)/(2q³)
+        z     = 1/(√q + 1/√q),  h = q − q⁻¹,  ℏ_q = (q−1)/q
+        α     = (z − 1)·h / 2
+        b     = √(1 − q²/(q²+1)²)
+        u     = b·ℏ_q²
+        Q_N1  = Q_A · cos(α − u/2)
+        Q_Tor = Q_N1 · (1 - u² - 2·u³ + 2·u⁴)
+
+    The coefficients (c_2=-1, c_3=-2, c_4=2) correspond exactly to
+    the Parabolic Cylinder limit (A=2, C=-22) enforced by the
+    half-integer toroidal mode basis P_{n-1/2}^m.
+    """
+    q = _q_0()
+    Q_A = q_beta_predicted_mev()
+    h = q - 1 / q
+    z = 1 / (mp.sqrt(q) + 1 / mp.sqrt(q))
+    hbar_q = (q - 1) / q
+    alpha = (z - 1) * h / 2
+    q_sq = q ** 2
+    b = mp.sqrt(1 - q_sq / (q_sq + 1) ** 2)
+    u = b * hbar_q ** 2
+    Q_N1 = Q_A * mp.cos(alpha - u / 2)
+    return Q_N1 * (1 - u**2 - 2 * u**3 + 2 * u**4)
+
+
+
+@lru_cache(maxsize=None)
 def q_beta_predicted_typed_crossing_mev() -> mp.mpf:
     """Q_β via typed-crossings 6-term decomposition (LEGACY, +0.747% err).
 
@@ -608,6 +642,7 @@ __all__ = [
     "e_0_n0_mev", "e_0_n_mev", "e_0_full_mev", "e_0_full_li2q_mev",
     "e_0_calibrated_mev",
     "q_beta_predicted_mev", "q_beta_observable_mev", "q_beta_virtual_mev",
+    "q_beta_kashiwara_n2_mev", "q_beta_toroidal_mev",
     "proton_mass_mev", "neutron_mass_mev",
     "deuteron_mass_mev", "triton_mass_mev",
     "helium3_mass_mev", "helium4_mass_mev",

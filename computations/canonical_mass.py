@@ -57,8 +57,8 @@ def _from_formula() -> tuple[float, float]:
     # fit; see m_p_substrate_identity_50dps.habiro_ratio_s5bb for the
     # fit-tier dressing the producer still reports separately)
     m_p = 2 * (m_mu * F_Bor(q) - 6 * m_e)
-    from derived_masses import q_beta_kashiwara_n2_mev
-    m_n = m_p + q_beta_kashiwara_n2_mev() + m_e        # n→p+e+ν̄: Kashiwara b² Q_β (~1 ppb)
+    from derived_masses import q_beta_toroidal_mev
+    m_n = m_p + q_beta_toroidal_mev() + m_e        # n→p+e+ν̄: Toroidal/Weber limit Q_β
     return float(m_p), float(m_n)
 
 
