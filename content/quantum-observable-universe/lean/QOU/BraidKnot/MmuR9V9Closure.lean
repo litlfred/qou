@@ -449,7 +449,15 @@ them as hypotheses per AGENTS.md §3b-cond. -/
   factor at the substrate level. -/
 class UniversalHabiroStructure (q : ℝ) : Prop where
   /-- The function `fun n r => ℏ_r^n` is the Markov-trace expansion of
-  a Wenzl-Hoefsmit operator (opaque marker for the open derivation). -/
+  a Wenzl-Hoefsmit operator (opaque marker for the open derivation).
+
+  The Markov-trace *infrastructure* is not the gate: `QOU.Machinery.
+  MarkovTraceOnHecke` realizes the H₃(q) Markov trace concretely (`trM`)
+  with (M1) linearity, (M2) cyclicity (`trM_cyclic`) and (M3) reduction
+  (`trM_markov_σ₁`) all proved sorry-free, and names itself the bridge for
+  discharging this marker "once Step 4 names the residue-A element." The
+  open gate is that operator identification (Step 4) plus extending the
+  trace beyond H₃. -/
   markov_trace_origin : True
   /-- The function `fun n r => [3]_r / n²` is the substrate-level T(2,n)
   cinquefoil framing factor (opaque marker for the open derivation). -/
