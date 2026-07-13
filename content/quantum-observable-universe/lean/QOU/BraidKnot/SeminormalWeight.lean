@@ -88,6 +88,28 @@ theorem reducedWeight_add_neg (q : R) (ρ : ℤ) (hq : q ≠ 0)
   field_simp
   ring
 
+/-- **Integer content `c_λ = 1` — the two-tableau base case.** When the SYT set is
+    a single swap-pair `{a, b}` with `ρ(b) = −ρ(a)` (one off-diagonal box pair, the
+    boxes exchanged by the `i ↔ i+1` transposition), the reduced-weight sum is `1`.
+    The base case of `Σ g_ρ = c_λ ∈ ℤ`, provable directly from the pairing identity
+    (no general involution reindex). -/
+theorem reducedSum_pair {ι : Type*} [DecidableEq ι] (q : R) (a b : ι) (hab : a ≠ b)
+    (ρ : ι → ℤ) (hρ : ρ b = -ρ a) (hq : q ≠ 0) (hnd : q ^ (2 * ρ a) ≠ 1) :
+    ∑ t ∈ ({a, b} : Finset ι), reducedWeight q (ρ t) = 1 := by
+  rw [Finset.sum_pair hab, hρ]
+  exact reducedWeight_add_neg q (ρ a) hq hnd
+
+/-- **`χ_λ(σ) = c_λ · h` end-to-end for a two-tableau partition (`c_λ = 1`).**
+    Composes `characterSum_eq_h_mul` (h factors out) with `reducedSum_pair`
+    (the reduced sum is the integer `1`): the single-generator seminormal character
+    over a one-pair SYT set is exactly `h`. This is the full closed form realised on
+    the base case — the weight + geometry layers deliver `χ = c_λ·h` with no
+    outstanding `sorry`. -/
+theorem characterSum_pair {ι : Type*} [DecidableEq ι] (q h : R) (a b : ι) (hab : a ≠ b)
+    (ρ : ι → ℤ) (hρ : ρ b = -ρ a) (hq : q ≠ 0) (hnd : q ^ (2 * ρ a) ≠ 1) :
+    ∑ t ∈ ({a, b} : Finset ι), seminormalWeight q h (ρ t) = h := by
+  rw [characterSum_eq_h_mul, reducedSum_pair q a b hab ρ hρ hq hnd, mul_one]
+
 /-! ### Next rung (bean `qou-vg1u`, Infra 3): the integer content `c_λ`
 
 The one piece left to reach `χ_λ(σ) = c_λ·h` is that the reduced-weight sum is an
