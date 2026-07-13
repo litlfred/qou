@@ -1,0 +1,42 @@
+{
+  "engine": "sympy+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-07-13T10:47:14.347871+00:00",
+  "commitSha": "dfa461088b79c932819d0a823d798401211ebad5",
+  "assertions": [
+    {
+      "name": "plancherel_content_is_palindromic_bar_even_shape_sum",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "C_n^all = Σ_λ (f^λ)² q^content(λ) (= all-perm enumeration, palindromic, C(1)=n!, first moment 0); same anti-invariant involution as the involution object, so the Δ_ω bar-even rigidity is weight-independent. Both q-Gevrey, → ln q_0."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 16,
+  "computation": "lever1-plancherel-content-separation",
+  "scriptFile": "lever1_plancherel_content_separation.py",
+  "scriptHash": "f927146fbf29",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Lever-1 item 3 (twist-completion): squared-Plancherel sibling of the W12 content-monomial separation. The all-permutation content-only object is the closed shape sum C_n^all(q) = Σ_λ (f^λ)² q^content(λ) (RSK: #{w: shape λ} = (f^λ)²) — verified = direct all-permutation enumeration (n≤7), palindromic (Q2), C_n^all(1)=n! (Q3), and first moment Σ(f^λ)²·content = 0 (Q4, the bar-even O((q-1)^2) Δ_ω rigidity). Q2+Q4 are the SAME anti-invariant-involution facts proved generally in QOU/Common/AntiInvolutionPalindrome.lean — weight (f^λ)² is conjugation-invariant, so the abstract lemma covers the whole Plancherel measure with no new Lean; the Δ_ω rigidity is a weight-independent property of the content sector. Comparison: q=1 limits differ (n! vs I(n)); both q-Gevrey with deg = n(n-1)/2 and the same ln q_0 asymptote; the larger base mass n! >> I(n) keeps r_all ABOVE r_inv at finite n (slower convergence to ln q_0), correcting an initial 'balanced-shape favouring' guess. Exact sympy + 50-dps mpmath; no fit; no wiring; EXPLORATORY.",
+  "data": {
+    "Q1_closed_form_eq_all_perm_enumeration": true,
+    "Q2_palindromy": true,
+    "Q3_content_at_q1_eq_factorial": true,
+    "Q4_first_moment_zero_squared_weight": true,
+    "r_all_over_ln_q0": "1.412175868",
+    "r_inv_over_ln_q0": "1.010455407"
+  }
+}
