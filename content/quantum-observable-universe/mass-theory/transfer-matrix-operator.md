@@ -1,4 +1,4 @@
-Every particle interaction in the Descartes universe encodes as a transfer matrix $T_{K_1, K_2}(q) \in \mathrm{M}_2(\mathbb{Z}[q^{\pm 1/2}])$ acting on the Gröbner–Shirshov ideal of the Iwahori–Hecke algebra, with entries that are polynomials in $q$.
+Every particle interaction in the Descartes universe encodes as a transfer matrix $T_{K_1, K_2}(q) \in \mathrm{M}_2(\mathbb{Z}[q^{± 1/2}])$ acting on the Gröbner–Shirshov ideal of the Iwahori–Hecke algebra, with entries that are polynomials in $q$.
 
 **Definition.**
 Let $K_1, K_2$ be two building block knots
@@ -15,7 +15,7 @@ $$
   \end{pmatrix}
 $$
 
-where the **crossing coefficients** $(c, d) \in \mathbb{Z}[q^{\pm 1/2}]^2$
+where the **crossing coefficients** $(c, d) \in \mathbb{Z}[q^{± 1/2}]^2$
 are determined by the knot types:
 
 $$

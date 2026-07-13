@@ -66,7 +66,7 @@ coefficients with two distinct categorical origins:
 - **Pure-$\sigma$ contributions**: from non-averaged positions in
   the braid. These factor through $\sigma^p \cdot b^{2m}$
   combinatorics. At the silver ratio ($\sigma$-eigenvalues
-  $= 1 \pm \sqrt{2}$ via the Hecke quadratic
+  $= 1 ± \sqrt{2}$ via the Hecke quadratic
   [`prop:silver-ratio-beta-decay-null`](#prop:silver-ratio-beta-decay-null)),
   these reduce to **Pell-Lucas-clean** rationals.
 

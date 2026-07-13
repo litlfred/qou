@@ -5,7 +5,7 @@ Every derivation step belongs to exactly one of two registers:
 
 | Register | Coefficient ring | Operative invariants | Examples |
 |---|---|---|---|
-| **Pre-$\tau$** | $R = \mathbb{Z}[q^{\pm 1/2}, (q-q^{-1})^{-1}]$ (or $z$-Habiro) | Hecke spectra, Markov traces | SDP feasibility, Gröbner--Shirshov reductions |
+| **Pre-$\tau$** | $R = \mathbb{Z}[q^{± 1/2}, (q-q^{-1})^{-1}]$ (or $z$-Habiro) | Hecke spectra, Markov traces | SDP feasibility, Gröbner--Shirshov reductions |
 | **Post-$\tau$** | $\mathbb{R}$ via $\tau_{\mathrm{arch}}$ | Hyperbolic volumes | PL thimble flow, Bloch--Wigner $D(z)$ |
 
 The functor $\tau_{\mathrm{arch}}$ is the only legal bridge between these columns.

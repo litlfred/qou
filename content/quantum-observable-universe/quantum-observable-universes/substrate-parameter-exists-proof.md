@@ -20,7 +20,7 @@ $(T - q)(T + q^{-1}) = 0$
 ([braiding eigenvalue extraction](#prop:braiding-eigenvalue-extraction)).
 
 **Step 3 (non-degeneracy).** The QOU assumption
-$c_{V,V}^2 \neq \mathrm{id}$ ensures $q \neq \pm 1$.  The
+$c_{V,V}^2 \neq \mathrm{id}$ ensures $q \neq ± 1$.  The
 positive-definite dagger structure forces $q \in \mathbb{R}_{>0}$,
 and the non-root-of-unity condition $q \notin \mu_\infty(k)$ follows
 from transcendence over $\mathbb{Q}$ in the archimedean realisation.

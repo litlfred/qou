@@ -1,4 +1,4 @@
-The $\beta$-decay Skein operation requires the $T_{3,5}$ weak vertex, the $10$-crossing budget, the $\mathbb{Z}/2$ involution relating $\beta^\pm$, the lepton-pair decomposition, and the $10$-crossing $Q$-value.
+The $\beta$-decay Skein operation requires the $T_{3,5}$ weak vertex, the $10$-crossing budget, the $\mathbb{Z}/2$ involution relating $\beta^±$, the lepton-pair decomposition, and the $10$-crossing $Q$-value.
 
 **Setup.**
 A nucleus $\mathcal{N}(Z, N)$ is a satellite link of $A = Z + N$ Borromean components. Its braid word in $B_{3A}$ reduces to a unique Gröbner–Shirshov normal form $\mathcal{N}(Z, N)$ in the Iwahori–Hecke algebra $H_{3A}(q)$.
@@ -23,7 +23,7 @@ $$
   \mathcal{W}(q)
    := 
   \mathrm{tr}_{\mathrm{Markov}}\bigl((\sigma_1 \sigma_2)^5\bigr)
-   \in  \mathbb{Z}[q^{\pm 1/2}]
+   \in  \mathbb{Z}[q^{± 1/2}]
 $$
 
 The single-crossing Skein amplitude $s = q^{1/2} - q^{-1/2}$ appears as the coupling at each crossing of the $T_{3,5}$ braid. The full vertex factor is the Markov trace $\mathcal{W}(q)$ of all $10$ crossings, not $s^2$.
@@ -100,7 +100,7 @@ $$
   = 
   \mathfrak{S}_q[\mathcal{N}(Z, N)]
   - 
-  \mathfrak{S}_q[\mathcal{N}(Z \pm 1, N \mp 1)]
+  \mathfrak{S}_q[\mathcal{N}(Z ± 1, N \mp 1)]
   - 
   m_e
 $$

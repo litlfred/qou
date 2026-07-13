@@ -58,7 +58,7 @@ The torus knot $T_{3,5}$ has 3-strand meridional winding. This places it in the 
 
 The knot $T_{3,5}$ sits at the intersection of the $m = 3$ (quark) row and the $n = 5$ (second-generation) column. Its knot group relation $x^3 = y^5$ intertwines the three-strand color structure with five-fold longitudinal winding.
 
-If $T_{2,9}$ carries the strong force, $T_{3,5}$ is the natural candidate for a flavor-changing interaction. It topologically connects the $m = 2$ and $m = 3$ families. The weak force changes quark flavor (e.g., $u \leftrightarrow d$ via $W^{\pm}$) and requires precisely this cross-family mediation. Alternatively, $T_{3,5}$ encodes the electroweak mixing between leptonic and quark sectors.
+If $T_{2,9}$ carries the strong force, $T_{3,5}$ is the natural candidate for a flavor-changing interaction. It topologically connects the $m = 2$ and $m = 3$ families. The weak force changes quark flavor (e.g., $u \leftrightarrow d$ via $W^{±}$) and requires precisely this cross-family mediation. Alternatively, $T_{3,5}$ encodes the electroweak mixing between leptonic and quark sectors.
 
 **Summary of candidate assignments.**
 
@@ -68,4 +68,4 @@ If $T_{2,9}$ carries the strong force, $T_{3,5}$ is the natural candidate for a 
 | $T_{3,5}$ | Cross-link of $m = 3$, $n = 5$ | Weak / electroweak mediator | Connects quark and lepton winding families; flavor-changing |
 
 **Open problem.**
-Make the force interpretation precise. Identify $T_{2,9}$ and $T_{3,5}$ with specific gauge bosons (gluon, $W^{\pm}$, $Z^0$). Compute their Skein interaction terms with matter generators. Compare coupling constants derived from the mass functional with Standard Model values.
+Make the force interpretation precise. Identify $T_{2,9}$ and $T_{3,5}$ with specific gauge bosons (gluon, $W^{±}$, $Z^0$). Compute their Skein interaction terms with matter generators. Compare coupling constants derived from the mass functional with Standard Model values.

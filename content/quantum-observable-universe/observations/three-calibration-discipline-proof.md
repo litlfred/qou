@@ -55,7 +55,7 @@ The proposition is **conditional** on the chain being realised.
 Open conjectures along the chain
 ([motivic-perpetual-obstruction](#conj:motivic-perpetual-obstruction),
 [mass-endomorphism](#conj:mass-endomorphism),
-[phi-q-tower-jsj-bridge](#conj:phi-q-tower-jsj-bridge))
+[phi-q-tower-jsj-bridge](#rem:phi-q-tower-jsj-bridge))
 do not affect the dimensional-discipline statement: every step
 that *is* realised respects $m_e^a m_\pi^c \cdot \mathbb{Q}(q_0)$
 homogeneity, and any future closure of the chain inherits this.

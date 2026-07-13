@@ -9,8 +9,8 @@ $$
 The transfer matrix $T(c, d)$ at each crossing has eigenvalues:
 
 $$
-  \lambda_{\pm} = 
-  \frac{\mathrm{tr}T \pm \sqrt{(\mathrm{tr}T)^2 - 4\det T}}{2}.
+  \lambda_{±} = 
+  \frac{\mathrm{tr}T ± \sqrt{(\mathrm{tr}T)^2 - 4\det T}}{2}.
 $$
 
 These are real and opposite in sign because $\det T < 0$ for all three crossing types.
@@ -23,7 +23,7 @@ $$
   \hat{V}_i =  c_+\lambda_+^k +  c_-\lambda_-^k
 $$
 
-where $c_{\pm}$ depend on $z$ and the crossing coefficients. We have $\lambda_- < 0$. The term $c_- \lambda_-^k$ therefore alternates in sign with $k$.
+where $c_{±}$ depend on $z$ and the crossing coefficients. We have $\lambda_- < 0$. The term $c_- \lambda_-^k$ therefore alternates in sign with $k$.
 
 ## The finiteness inequality
 

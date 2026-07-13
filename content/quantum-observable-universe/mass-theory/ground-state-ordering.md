@@ -16,9 +16,9 @@ where $h = q - q^{-1}$.
 
 **Key symmetry**: $T_{nn}$ is the $q \leftrightarrow q^{-1}$
 mirror of $T_{pp}$.  Their eigenvalues are swapped:
-$\lambda_\pm(T_{nn}) = \lambda_\mp(T_{pp})$.  The mixed matrix
+$\lambda_±(T_{nn}) = \lambda_\mp(T_{pp})$.  The mixed matrix
 $T_{pn}$ has **zero trace** and equal-magnitude eigenvalues
-$\pm\sqrt{1 + h^2/4} \approx \pm 1.005$.
+$±\sqrt{1 + h^2/4} \approx ± 1.005$.
 
 ## Ground-state rule
 

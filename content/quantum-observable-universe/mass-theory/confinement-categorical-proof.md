@@ -42,7 +42,7 @@ extracting an isolated quark.*
 more commutator load = harder to extract.  At $k = 0$ (the centre)
 elements are completely free; at $k \geq 1$ extraction requires
 energy proportional to $F$.  The chirality channel $D_q^2 = 0$
-([q-Dirac cell scanner witness](#)) supplies the persistent
+(q-Dirac cell scanner witness) supplies the persistent
 gauge-invariant background analogous to the gluon condensate, with
 $\mathrm{Vol}(B_3) = 8 G$ matching $\dim \mathfrak{su}(3) = 8$.*
 
@@ -57,5 +57,5 @@ layers.  Term $k$ of the formula is the contribution of the
 curvature-rank-$k$ confinement stratum.  The rank-3 chirality residue
 ($\mathrm{Vol}(6_1) \cdot |(q;q)_3|$) and the rank-$\geq 4$ universal
 Pochhammer tail in the structural $\mathfrak{Q}_\beta$ derivation
-([Q-beta path A extended witness](#)) are confinement residues, not
+(Q-beta path A extended witness) are confinement residues, not
 independent ingredients.*

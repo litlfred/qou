@@ -18,7 +18,7 @@ $$
 
 The $q$-deformation moves the rotation angle off its classical amphichiral value by the small $\Delta\theta$; this departure is the parameter-free measure of the symmetry breaking that seeds the bar-odd part $S$ of the $\beta$-decay observable. The angle $\theta(q)$ is a smooth function of $q$ ($\mathrm{d}\theta/\mathrm{d}q \approx -51^\circ$ per unit $q$), so $\theta(q_0)$ fixes the carrier scale of the deformation phase but is not itself the source of the observed hypersensitivity in the truncation coefficient $c_3$; that hypersensitivity resides in the substrate-to-deformation map, which remains conjectural.
 
-The rotation degenerates — the eigenvalue leaves the unit circle, $\theta \in \{0, \pi\}$ — exactly where $\mathrm{tr}M_{4_1}(q) = \pm 2$, and both boundaries factor into the geometric special points of the figure-eight knot. The two trace identities
+The rotation degenerates — the eigenvalue leaves the unit circle, $\theta \in \{0, \pi\}$ — exactly where $\mathrm{tr}M_{4_1}(q) = ± 2$, and both boundaries factor into the geometric special points of the figure-eight knot. The two trace identities
 
 $$
   \mathrm{tr}M_{4_1}(q) + 2 = (q^2 - 1 + q^{-2})^2,

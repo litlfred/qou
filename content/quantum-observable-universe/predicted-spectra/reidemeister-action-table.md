@@ -78,9 +78,9 @@ Markov I &
   preserved \\
 \midrule
 Markov II &
-  $\beta \mapsto \beta \sigma_n^{\pm 1}$ &
+  $\beta \mapsto \beta \sigma_n^{± 1}$ &
   $0$ &
-  $+q^{\pm 1}$ &
+  $+q^{± 1}$ &
   $0$ &
   preserved &
   $\times z$ \\

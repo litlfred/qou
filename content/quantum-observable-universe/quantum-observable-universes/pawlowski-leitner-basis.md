@@ -23,4 +23,4 @@ $$
   \frac{(2j+1) n!}{(\tfrac{n}{2}+j+1)!(\tfrac{n}{2}-j)!}
 $$
 
-for $n \equiv 2j \pmod{2}$, and vanishes otherwise.
+for $n \equiv 2j ±od{2}$, and vanishes otherwise.

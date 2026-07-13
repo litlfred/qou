@@ -17,14 +17,14 @@ Explicitly, the $q$-Clebsch--Gordan decomposition $V_{1/2} \otimes V_J = V_{J+1/
 In the braid group $B_A$, the writhe $w(\beta)$ of the standard nuclear braid representative has parity:
 
 $$
-  w(\beta) \equiv \binom{A}{2} \pmod{2}.
+  w(\beta) \equiv \binom{A}{2} ±od{2}.
 $$
 
 Writhe parity determines statistics:
 - $w$ even $\Leftrightarrow$ bosonic statistics $\Leftrightarrow$ $J \in \mathbb{Z}$.
 - $w$ odd $\Leftrightarrow$ fermionic statistics $\Leftrightarrow$ $J \in \mathbb{Z} + \tfrac{1}{2}$.
 
-Since $\binom{A}{2} = A(A-1)/2$, the writhe is even if and only if $A \equiv 0$ or $1 \pmod{4}$. However, the $q$-deformed spin-statistics theorem follows directly from representation theory, independent of writhe.
+Since $\binom{A}{2} = A(A-1)/2$, the writhe is even if and only if $A \equiv 0$ or $1 ±od{4}$. However, the $q$-deformed spin-statistics theorem follows directly from representation theory, independent of writhe.
 
 **The Jones--Wenzl projector.**
 In the Temperley--Lieb algebra $TL_A(\delta)$ with $\delta = -(q^{1/2} + q^{-1/2})$, the Jones--Wenzl projector $p_A$ projects onto the highest-weight irreducible representation $V_{A/2}$. The embedding of the nuclear link in the TL algebra and the action of $p_A$ determine the ground state spin.

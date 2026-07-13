@@ -33,7 +33,7 @@ export default paper({
     // here both contradicts AGENTS.md §7aa (proton is `\mathfrak{p}`, never
     // `\pp`) and triggered a fatal "Command \pp already defined" in the
     // pdflatex compile. The proton is written `\mathfrak{p}` directly.
-    nn:    { tex: "\\mathfrak{n}",  unicode: "𝔫" },
+    nn:    { tex: "\\mathfrak{n}",  unicode: "$\\mathfrak{n}$" },
     frakr: { tex: "\\mathfrak{r}",  unicode: "𝔯" },
     frakg: { tex: "\\mathfrak{g}",  unicode: "𝔤" },
     frakb: { tex: "\\mathfrak{b}",  unicode: "𝔟" },

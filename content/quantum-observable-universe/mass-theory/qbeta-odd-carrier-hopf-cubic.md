@@ -22,7 +22,7 @@ $$
 C(y) = y^3 - 4y^2 + 3y - 2.
 $$
 
-$C$ is irreducible over $\mathbb{Q}$ (its only possible rational roots $\pm 1, \pm 2$
+$C$ is irreducible over $\mathbb{Q}$ (its only possible rational roots $± 1, ± 2$
 are all nonzero), so its root generates a genuine **degree-3 field**
 (discriminant $-152 = -2^3 \cdot 19$, Galois group $S_3$). Every substrate
 *quadratic* anchor sits at a rational trace value — golden $\varphi \mapsto y = 3$,

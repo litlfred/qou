@@ -15,7 +15,7 @@ $$
 | Step | Input | Output | $B$ | $L$ | $Q$ |
 |:---|:---|:---|:---:|:---:|:---:|
 | $\gamma\gamma$ collision | 2 photons | $q\bar{q}$ pair | $0$ | $0$ | $0$ |
-| Quark selection | 3 pairs | 3 quarks + 3 antiquarks | $\pm 1$ | $0$ | $\pm 1$ |
+| Quark selection | 3 pairs | 3 quarks + 3 antiquarks | $± 1$ | $0$ | $± 1$ |
 | $\mathcal{B}_3$ confinement | 3 quarks | nucleon | $+1$ | $0$ | $0,+1$ |
 | Hopf link $\oplus e^-$ | nucleon + electron | atom | $+1$ | $+1$ | $0$ |
 

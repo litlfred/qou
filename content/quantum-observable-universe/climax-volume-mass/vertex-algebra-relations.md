@@ -170,7 +170,7 @@ $$
 **(QU-3b) Markov property II** (stabilisation):
 
 $$
-  \mathrm{tr}_M\!\bigl(w \cdot \sigma_n^{\pm 1}\bigr)
+  \mathrm{tr}_M\!\bigl(w \cdot \sigma_n^{± 1}\bigr)
   = 
   \frac{1}{\delta} \mathrm{tr}_M(w)
   \qquad \text{for } w \in H_n(R, q) \subset H_{n+1}(q),

@@ -25,9 +25,9 @@ $$
 This yields the eigenvalues:
 
 $$
-  \lambda_{\pm}(q)
+  \lambda_{±}(q)
   = 
-  \frac{(q - q^{-1}) \pm \sqrt{(q - q^{-1})^2 + 4}}{2}
+  \frac{(q - q^{-1}) ± \sqrt{(q - q^{-1})^2 + 4}}{2}
 $$
 
 **At the substrate parameter $q$:**

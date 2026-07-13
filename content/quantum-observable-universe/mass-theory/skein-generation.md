@@ -10,4 +10,4 @@ algebra by:
 
 Every hadron admits a terminal Skein resolution into a finite
 polynomial in these generators with coefficients in
-$\mathbb{Z}[q^{\pm 1}]$.
+$\mathbb{Z}[q^{± 1}]$.

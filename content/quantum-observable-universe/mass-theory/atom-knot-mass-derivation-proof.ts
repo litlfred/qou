@@ -6,7 +6,7 @@ export default proof({
     "Proof of the end-to-end mass derivation $B = \\rho \\cdot m_e \\cdot \\mathrm{Vol}_{\\mathrm{hyp}}(\\widehat{T_w})$",
   uses: [
     "prop:atom-knot-mass-derivation",
-    "prop:archimedean-realization-functor",
+    "def:archimedean-realization-functor",
   ],
   cites: [
     "gromov1982",

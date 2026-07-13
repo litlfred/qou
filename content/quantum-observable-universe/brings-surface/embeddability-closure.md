@@ -7,7 +7,7 @@ No generated knot is "dark"—the generation scheme is closed under observabilit
 
 *Hopf linking $\ell_H$ and Color-tube threading $\ell_c$* preserve each component's knot type and Seifert genus. The structures live in the total space and do not increase the genus of any individual component. 
 
-*Skein crossing change $\sigma$* alters the Seifert genus by at most $\pm 1$:
+*Skein crossing change $\sigma$* alters the Seifert genus by at most $± 1$:
 $$
   |g(L_+) - g(L_-)| \leq 1, \qquad
   g(L_0) \leq \max\{g(L_+), g(L_-)\}.

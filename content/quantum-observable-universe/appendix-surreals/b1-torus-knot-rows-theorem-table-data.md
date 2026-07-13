@@ -1,4 +1,4 @@
-| $T(p, q)$ | Genus $g$ | $\mathrm{Vol}$ | $\mathrm{CS} \pmod{\pi^2 \mathbb{Z}}$ |
+| $T(p, q)$ | Genus $g$ | $\mathrm{Vol}$ | $\mathrm{CS} ±od{\pi^2 \mathbb{Z}}$ |
 |---|---|---|---|
 | $T(2, 3) = 3_1$ | 1 | 0 | $-\frac{3 \cdot 8}{24 \cdot 6} \pi^2 = -\frac{1}{6} \pi^2$ |
 | $T(2, 5)$ | 2 | 0 | $-\frac{3 \cdot 24}{24 \cdot 10} \pi^2 = -\frac{3}{10} \pi^2$ |

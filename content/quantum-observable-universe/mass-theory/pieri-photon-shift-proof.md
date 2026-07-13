@@ -62,7 +62,7 @@ $q$ — the one-box case of the Pieri rule — decomposes
 $$
   V_\lambda \otimes V_\square
   \;\cong\;
-  \bigoplus_{\mu = \lambda \pm \square} V_\mu,
+  \bigoplus_{\mu = \lambda ± \square} V_\mu,
 $$
 
 with multiplicity one for each summand

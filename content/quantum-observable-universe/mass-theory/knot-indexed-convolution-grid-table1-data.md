@@ -1,7 +1,7 @@
 | Operation | Block | $n$ (depth) | $K$ (knot/braid index) | Output type |
 |---|---|---|---|---|
 | Markov trace $\mathrm{tr}_M$ | [`thm:jones-markov-trace`](#thm:jones-markov-trace) | 0 | trivial (closed braid) | Laurent in $q$ — algebraic $\mathcal{P}_0$ |
-| Hoefsmit pairing $\langle \cdot, \chi_\lambda \rangle$ | [`prop:hoefsmit-seminormal-form`](#prop:hoefsmit-seminormal-form) | 0 | partition $\lambda$ | $y_\lambda(q) \in \mathbb{Z}[q^{\pm 1}]$ |
+| Hoefsmit pairing $\langle \cdot, \chi_\lambda \rangle$ | [`prop:hoefsmit-seminormal-form`](#prop:hoefsmit-seminormal-form) | 0 | partition $\lambda$ | $y_\lambda(q) \in \mathbb{Z}[q^{± 1}]$ |
 | EW interface knot $\bowtie_K$ | `def:ew-interface-knot` (orphan block — not yet in any chapter section) | 0 | EW braid in $B_6$ with interface $I$ | element of $H_6(q)$ |
 | Higgs-vev mechanism $\mathrm{Lk}_R^{(1)}$ | `conj:categorical-higgs-mechanism` (orphan block) Step C | 0 | linking $k = 1$ | $\mathrm{End}_R(A)$ |
 | Categorical linking $\mathrm{Lk}_R^{(k)}$ | `conj:categorical-linking-operation` (orphan block) | 0 | linking integer $k$ | $\mathrm{End}_R(A)$ |

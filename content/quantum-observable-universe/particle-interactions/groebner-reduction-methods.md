@@ -8,7 +8,7 @@ The reduction is confluent. The final normal form is independent of the order in
 
 ## The $h_{\mathrm{A}}$-power factorization
 
-For the $\mathfrak{p}\mathfrak{p}\cdots\mathfrak{n}\mathfrak{n}$ ordering, every normal form coefficient factors as $\pm 2^a \times h_{\mathrm{A}}^k$. This factorization enables a compressed representation. For atoms with mixed orderings, the factorization breaks.
+For the $\mathfrak{p}\mathfrak{p}\cdots\mathfrak{n}\mathfrak{n}$ ordering, every normal form coefficient factors as $± 2^a \times h_{\mathrm{A}}^k$. This factorization enables a compressed representation. For atoms with mixed orderings, the factorization breaks.
 
 ## Computational engines
 

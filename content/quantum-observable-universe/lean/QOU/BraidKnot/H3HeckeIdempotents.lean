@@ -49,7 +49,7 @@ variable {R : Type*} [Field R]
     rational formula is `0/0` at `q = 1` (Lean division-by-zero
     convention returns 0, but the correct limit is `k`). The
     `q = 1` guard yields `[k]_1 = k` as expected. -/
-noncomputable def qInt [DecidableEq R] (q : R) (k : ℕ) : R :=
+private noncomputable def qInt [DecidableEq R] (q : R) (k : ℕ) : R :=
   if q = 1 then (k : R)
   else (q ^ k - q⁻¹ ^ k) / (q - q⁻¹)
 

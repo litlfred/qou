@@ -49,7 +49,7 @@ present conjecture supplies the structural answer:
 - A relation $R(g_1,\dots,g_m) = 0$ among grouplikes survives
   $\tau_{\mathrm{arch}}$ iff *all $g_i$ live in the same depth $G^{(n)}$
   and the relation is an algebraic identity in the cellular structure of
-  $H_n(q)$* (provable over $\mathbb{Z}[q^{\pm 1}]$).
+  $H_n(q)$* (provable over $\mathbb{Z}[q^{± 1}]$).
 - A relation that crosses depth or invokes a transcendental
   identity among periods (e.g. the Bloch–Wigner 5-term relation,
   hyperbolic gluing equations) is an **archimedean accident** — it

@@ -57,7 +57,7 @@ $\mathrm{Li}_2^q(z)$ for $z \in F^\times$ has archimedean image
 $$
   \tau_{\mathrm{arch}}\!\bigl(\mathrm{Li}_2^q(z)\bigr)
   \;=\;
-  \mathrm{Li}_2(z) \pmod{\mathcal{P}_1}
+  \mathrm{Li}_2(z) ±od{\mathcal{P}_1}
 $$
 
 by [`prop:categorical-laplace-unique`](#prop:categorical-laplace-unique)
@@ -74,9 +74,9 @@ is the *single-valued* version of $\mathrm{Li}_2$, well-defined
 modulo $\pi^2 \mathbb{Q}$. Comparing:
 
 $$
-  \tau_{\mathrm{arch}}\!\bigl(\mathrm{Li}_2^q(z)\bigr) \pmod{\mathcal{P}_1}
+  \tau_{\mathrm{arch}}\!\bigl(\mathrm{Li}_2^q(z)\bigr) ±od{\mathcal{P}_1}
   \;\sim\;
-  D(z) \pmod{\pi^2 \mathbb{Q}}.
+  D(z) ±od{\pi^2 \mathbb{Q}}.
 $$
 
 **Step 4 (composition).** Combining Steps 1–3:
@@ -130,7 +130,7 @@ The same proof chain at depth 3 requires:
 | 1 (Bloch group) | $\mathfrak{B}(F)$ via 5-term relations | Goncharov's $\mathfrak{B}_3(F)$ via 22-term relations | conjecturally complete |
 | 2 (Suslin isom.) | $K_3^{\mathrm{ind}}(F) \otimes \mathbb{Q} \cong \mathfrak{B}(F) \otimes \mathbb{Q}$ | $K_5^{\mathrm{ind}}(F) \otimes \mathbb{Q} \cong \mathfrak{B}_3(F) \otimes \mathbb{Q}$ | **Goncharov's motivic conjecture (open)** |
 | 3 (single-valued) | Bloch–Wigner $D(z)$ | Goncharov $D_3(z)$ — single-valued trilog | provable |
-| 4 (image direction) | $\tau_{\mathrm{arch}} \mathrm{Li}_2^q = D \pmod{\mathcal{P}_1}$ | $\tau_{\mathrm{arch}} \mathrm{Li}_3^q = D_3 \pmod{\mathcal{P}_2}$ | provable |
+| 4 (image direction) | $\tau_{\mathrm{arch}} \mathrm{Li}_2^q = D ±od{\mathcal{P}_1}$ | $\tau_{\mathrm{arch}} \mathrm{Li}_3^q = D_3 ±od{\mathcal{P}_2}$ | provable |
 
 Steps 3, 4 generalize. **Step 2 (Goncharov's motivic
 conjecture) is the open piece**. Conditional on Step 2, the

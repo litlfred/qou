@@ -9,7 +9,7 @@ beyond the unified-formula proposition. $\square$
 **The chirality marker $c_\lambda = 0$.**
 
 *By the q-Dirac operator construction
-([cite q-Dirac scanner witness](#)), the q-deformed second-order
+(cite q-Dirac scanner witness), the q-deformed second-order
 Dirac operator $D_q$ acts on the centre $Z(H_n(R, q)) =
 \bigoplus_\lambda R \cdot e_\lambda$ with eigenvalues*
 
@@ -27,7 +27,7 @@ of the gluon-condensate vacuum.*
 
 *The q-deformed Wedderburn-weighted character contribution from
 chirality cells is computed in
-[the formal derivation](#).
+the formal derivation.
 For $\mathcal{T} = 1$ (total mass), the chirality contribution to the
 binding energy via $\alpha = m_e \cdot 8G$ is:*
 

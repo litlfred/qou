@@ -23,7 +23,7 @@ $$
 This is a single Laurent monomial with pole order exactly
 $k(p - 1)$ at $q = 0$. There is no within-partition cancellation
 because the SYT path visits distinct axial distances at every
-step (no adjacent contents differ by $\pm 1$), so the
+step (no adjacent contents differ by $± 1$), so the
 $b^2 = (1 - q^{2\rho - 2})(1 - q^{2\rho + 2})/(1 - q^{2\rho})^2$
 zeroing on adjacent contents in the $2 \times 2$ Hoefsmit blocks
 never fires on $V_{(1^p)}$.

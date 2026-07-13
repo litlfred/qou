@@ -34,7 +34,7 @@ Classical asymptotic notation is a leading-exponent statement in disguise. For $
 | $f = o(g)$ | $\ordw(f) < \ordw(g)$ | $f \prec g$ |
 | $f = \Theta(g)$ | $\ordw(f) = \ordw(g)$ | $f \asymp g$ |
 | $f \sim g$ | $\ordw(f) = \ordw(g)$ and $\mathrm{lc}(f) = \mathrm{lc}(g)$ | $f \simeq g$ |
-| $f = g + O(h)$ | $\ordw(f - g) \leq \ordw(h)$ | $f \equiv g \pmod{\preceq h}$ |
+| $f = g + O(h)$ | $\ordw(f - g) \leq \ordw(h)$ | $f \equiv g ±od{\preceq h}$ |
 
 Classical Big-O has three pathologies:
 1. $f = O(g)$ is an abuse of equality; $O(g)$ is a set.
@@ -51,7 +51,7 @@ Example translations:
 | Classical | Surreal |
 |---|---|
 | $f(x) = x^2 + 5x + O(1)$ as $x \to \infty$ | $f(x) = x^2 + 5x + r$ where $r \prec 1$ |
-| $f(q) = g(q) + O((q-1)^2)$ as $q \to 1$ | $f \equiv g \pmod{\prec \varepsilon^2}$ |
+| $f(q) = g(q) + O((q-1)^2)$ as $q \to 1$ | $f \equiv g ±od{\prec \varepsilon^2}$ |
 | $\int_0^1 e^{-x/\varepsilon} dx \sim \varepsilon$ as $\varepsilon \to 0^+$ | $\int_0^1 e^{-x/\varepsilon} dx \simeq \varepsilon$ |
 
 The surreal valuation serves three specific purposes in QOU:

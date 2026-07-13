@@ -27,7 +27,7 @@ This involution descends from three interlocking structures on Bring's surface:
 
 Electromagnetism is intrinsic to any knot. Every charged particle (knot with nonzero antisymmetric crossing energy) automatically couples electromagnetically. This structure yields three consequences:
 - **Universality**. All charged particles interact, regardless of knot type or genus.
-- **Charge quantisation**. $Q$ is an eigenvalue of an involution, hence discrete ($\pm 1$ for leptons, $\pm 1/3, \pm 2/3$ for quarks in the Borromean decomposition).
+- **Charge quantisation**. $Q$ is an eigenvalue of an involution, hence discrete ($± 1$ for leptons, $± 1/3, ± 2/3$ for quarks in the Borromean decomposition).
 - **Masslessness**. Electromagnetism is not carried by a knot. The $\dagger$-involution has no Seifert genus, contributing zero topological mass.
 
 **II. Strong force.**

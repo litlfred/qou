@@ -19,7 +19,7 @@ $\min(Z,N)$ (number of $T=0$ pn pairs) by $n_{pp} + n_{nn}$ (number
 of $T=1$ same-flavor pairs).
 
 canonical evaluation at $q_0 = 1.109978595554181\ldots$ (50 dps) uses
-[the formal derivation](#)
+the formal derivation
 (witness `derived-only-formula.witness.json`).
 $\square$
 

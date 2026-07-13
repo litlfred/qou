@@ -12,5 +12,5 @@ $$
 
 *where the first term is the binding energy from linking and the
 second is the constituent mass (zero for torus-knot constituents),
-$Q(q) \in \mathbb{Z}[q^{\pm 1}]$ is the Skein polynomial of the
+$Q(q) \in \mathbb{Z}[q^{± 1}]$ is the Skein polynomial of the
 linking configuration, and $\hbar_q = 1 - q^{-1}$.*

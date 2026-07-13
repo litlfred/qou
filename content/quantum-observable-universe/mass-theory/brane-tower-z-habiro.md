@@ -17,7 +17,7 @@ Two regularizations exist but neither uniformly closes the gap:
 ## Statement
 
 **Conjecture (brane tower in $z$-Habiro).**
-*Let $\mathfrak{H}$ be a confined particle/atom with per-generator volumes $\{\hat{V}_i(q)\}_{i=1}^{N}$ in $\mathbb{Z}[q^{\pm 1/2}]$. The brane-tower partial sums form a Cauchy sequence in the $z$-Habiro topology as $N$ varies. Their limit exists as an algebraic element $\widetilde{\Phi}_q^{\mathrm{tower}}(\beta) \in \widehat{\mathbb{Z}[q^{\pm 1}][z]}_z$, well-defined purely algebraically.*
+*Let $\mathfrak{H}$ be a confined particle/atom with per-generator volumes $\{\hat{V}_i(q)\}_{i=1}^{N}$ in $\mathbb{Z}[q^{± 1/2}]$. The brane-tower partial sums form a Cauchy sequence in the $z$-Habiro topology as $N$ varies. Their limit exists as an algebraic element $\widetilde{\Phi}_q^{\mathrm{tower}}(\beta) \in \widehat{\mathbb{Z}[q^{± 1}][z]}_z$, well-defined purely algebraically.*
 
 *Furthermore, there exists a **canonical level-selection rule***
 

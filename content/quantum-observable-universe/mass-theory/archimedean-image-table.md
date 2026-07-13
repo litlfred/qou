@@ -67,7 +67,7 @@ coincidences.
 
 **The HOMFLYPT specialisation family.** For a braid closure
 $\hat\beta$ with HOMFLYPT polynomial
-$P(\hat\beta; a, z) \in \mathbb{Z}[a^{\pm 1}, z^{\pm 1}]$:
+$P(\hat\beta; a, z) \in \mathbb{Z}[a^{± 1}, z^{± 1}]$:
 
 $$
   P(\hat\beta;\, q_0^{N-1},\, q_0 - q_0^{-1})

@@ -12,7 +12,7 @@ This constitutes the path integral at Planck resolution. Each resolution is exac
 | Path integral | Skein decomposition |
 | ------------- | ------------------- |
 | History | Resolution path through the tree |
-| Action weight $e^{iS/\hbar}$ | Skein weight $q^{\pm 1}$ or $s$ per crossing |
+| Action weight $e^{iS/\hbar}$ | Skein weight $q^{± 1}$ or $s$ per crossing |
 | Partition function $Z$ | Skein polynomial $P_L(q) = \sum_{\text{paths}}(\text{weights})$ |
 | Path integral measure | Markov trace $\mathrm{tr}_M$ |
 | Planck time step | One crossing resolution |

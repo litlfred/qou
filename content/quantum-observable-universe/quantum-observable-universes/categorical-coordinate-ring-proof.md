@@ -26,14 +26,14 @@ is exactly the involution exchanging them
 ([rem:braiding-unit-circle-convention](#rem:braiding-unit-circle-convention)).
 
 The same semidirect persists in the commutative limit: in
-$R[i, q^{\pm 1}]$ the chart-swap acts on the $i$-generator by
+$R[i, q^{± 1}]$ the chart-swap acts on the $i$-generator by
 
 $$
   \iota \cdot i \cdot \iota^{-1}  \;=\;  -i,
 $$
 
 since the Galois action $\mathrm{Gal}(R[i]/R) = \mathbb{Z}_2$ on
-$\pm i$ coincides with the chart-swap $\mathbb{Z}_2$ (one
+$± i$ coincides with the chart-swap $\mathbb{Z}_2$ (one
 $\mathbb{Z}_2$, three faces — chart-swap, Galois, braiding orientation
 — per [rem:i-as-braiding-orientation](#rem:i-as-braiding-orientation)).
 

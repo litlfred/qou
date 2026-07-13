@@ -9,6 +9,6 @@ $$
   \mathrm{tr}_M(\beta)\,\mathrm{tr}_M(\beta'),
 $$
 
-making $\mathrm{tr}_M$ a monoid homomorphism from the disjoint-union monoid of links to $\mathbb{Z}[q^{\pm 1/2}]$.
+making $\mathrm{tr}_M$ a monoid homomorphism from the disjoint-union monoid of links to $\mathbb{Z}[q^{± 1/2}]$.
 
 This applies strictly to the disjoint-union monoidal structure, not the internal product. It avoids the wall-crossing archimedean apparatus entirely.

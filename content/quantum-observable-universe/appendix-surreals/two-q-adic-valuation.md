@@ -1,7 +1,7 @@
-For an element $P \in \mathcal{S}(q) \cong \mathbb{Z}[q^{\pm 1}]$ of the Skein module, we define the $[2]_q$-**adic valuation**:
+For an element $P \in \mathcal{S}(q) \cong \mathbb{Z}[q^{± 1}]$ of the Skein module, we define the $[2]_q$-**adic valuation**:
 
 $$
-v_{[2]}(P) := \max\bigl\{k \geq 0 : [2]_q^k \mid P \text{ in } \mathbb{Z}[q^{\pm 1}]\bigr\}.
+v_{[2]}(P) := \max\bigl\{k \geq 0 : [2]_q^k \mid P \text{ in } \mathbb{Z}[q^{± 1}]\bigr\}.
 $$
 
 This counts how many times $[2]_q = q + 1$ divides $P$ in the Laurent polynomial ring. It is the $q$-analog of the $2$-adic valuation $v_2(n)$ that counts trailing zeros in the binary expansion of an integer.

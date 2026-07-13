@@ -24,7 +24,7 @@ involution (archimedean instance: complex conjugation).
 
 The rigidity clause then forces the structure of the ladder factorisation
 $F(q) = F_{\text{even}}(q)\cdot F_{\text{odd}}(q)$: **a phase beyond
-$\pm 1$ cannot sit on the bar-even face.** The unimodular fibre-saddle
+$± 1$ cannot sit on the bar-even face.** The unimodular fibre-saddle
 $\Phi_b$ is therefore intrinsically a *bar-odd* carrier, and the phase
 reframe $\mathfrak{Q}_\beta/Q_A = \cos\Phi(u)$ is the natural bar-odd form
 for the decay channel. (The identification of the bar-odd face with the

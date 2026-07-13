@@ -1,8 +1,8 @@
-The Jones polynomial $J_K(q) \in \mathbb{Z}[q^{\pm 1/2}]$ is the Markov trace $\mathrm{tr}_M(\rho_n(\beta))$ of the Hecke representation of any braid word $\beta$ whose closure is the oriented link $K$. The Markov trace is computed by summing contributions from every standard tableau $t$ of every two-rowed shape $\lambda \vdash n$.
+The Jones polynomial $J_K(q) \in \mathbb{Z}[q^{± 1/2}]$ is the Markov trace $\mathrm{tr}_M(\rho_n(\beta))$ of the Hecke representation of any braid word $\beta$ whose closure is the oriented link $K$. The Markov trace is computed by summing contributions from every standard tableau $t$ of every two-rowed shape $\lambda \vdash n$.
 
 By [Hoefsmit-is-surreal-construction](#prop:hoefsmit-is-surreal-construction), each tableau $t$ corresponds to a finite-dyadic surreal $\Phi(t) \in \mathbf{No}$ of birthday $\leq n$. This suggests that the Jones polynomial admits a birthday refinement: a finer invariant that records contributions stratified by the birthday of the underlying surreal sign sequence.
 
-**Conjecture.** There exists a refinement $\widetilde{J}_K \in \mathbb{Z}[q^{\pm 1/2}]^{\mathrm{Ord}}$ satisfying:
+**Conjecture.** There exists a refinement $\widetilde{J}_K \in \mathbb{Z}[q^{± 1/2}]^{\mathrm{Ord}}$ satisfying:
 1. **Recovery of Jones**: $\sum_\alpha \widetilde{J}_K(\alpha) = J_K(q)$.
 2. **Birthday locality**: $\widetilde{J}_K(\alpha)$ depends only on tableau contributions of YJM depth $\leq \alpha$.
 3. **Strict refinement**: there exist knots $K_1, K_2$ with $J_{K_1}(q) = J_{K_2}(q)$ but $\widetilde{J}_{K_1} \neq \widetilde{J}_{K_2}$.

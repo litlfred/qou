@@ -17,7 +17,7 @@ This agrees with the CODATA value $137.035999084(21)$ to within $-0.155\%$. The 
 
 ## Audit failure of both prior attempts
 
-**Form A's $\kappa$ is incorrect.** The Witten-1988 Gram-determinant identification gives $\kappa \approx 1.722$. Matching CODATA at $q_0$ requires $\kappa \approx 1.8878$. The discrepancy is $\sim 10\%$ and cannot be quadrature error. The Lean formalisation ([`em-coupling-chern-simons.lean`](#)) carried this as `sorry` from the start.
+**Form A's $\kappa$ is incorrect.** The Witten-1988 Gram-determinant identification gives $\kappa \approx 1.722$. Matching CODATA at $q_0$ requires $\kappa \approx 1.8878$. The discrepancy is $\sim 10\%$ and cannot be quadrature error. The Lean formalisation (`em-coupling-chern-simons.lean`) carried this as `sorry` from the start.
 
 **Form B is hidden numerology.** Of its four factors:
 
@@ -45,7 +45,7 @@ $$ F - 1 \;\approx\; \frac{\hbar_q^2}{\pi \cdot [2]_q} $$
 
 at $7.4 \times 10^{-4}$ relative residual. This structure relates to $\mathrm{Vol}(S^3_q) = \pi^2[2]_q$ geometry, but it is not exact. A direct closed-form correction in any natural $q$-arithmetic basis at low degree is impossible.
 
-See [`alpha-em-correction-derivation-attempts.witness.json`](#) for the full attempt log.
+See `alpha-em-correction-derivation-attempts.witness.json` for the full attempt log.
 
 ## Insufficiency of block-diagonal Gram deformations
 

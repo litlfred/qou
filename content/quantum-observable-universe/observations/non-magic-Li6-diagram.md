@@ -28,7 +28,7 @@ The combined Wedderburn support of $\Phi_6$ at $^{6}\mathrm{Li}$ is a weighted s
 ## Diagrammatic content
 
 Schematically, the $^{6}\mathrm{Li}$ diagram comprises:
-- **Left**: A fragment of Young's lattice between $(3)$, $(2,1)$, and $(1,1,1)$. This triangle with $(2,1)$ at the centre carries full-twist flux $\pm q^3$.
+- **Left**: A fragment of Young's lattice between $(3)$, $(2,1)$, and $(1,1,1)$. This triangle with $(2,1)$ at the centre carries full-twist flux $± q^3$.
 - **Right**: An identical copy on the $N$ side.
 - **Centre**: An LR-fusion spread. This wide arrow produces multiple $\nu \vdash 6$ with $c^\nu_{\lambda, \mu}$ printed at each target. It exhibits multiple non-zero LR coefficients.
 

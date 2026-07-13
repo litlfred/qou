@@ -14,7 +14,7 @@ The extension **splits** (yielding a stable liquid phase) if and only if the out
 The extension remains **non-split** when the valence shell is half-filled ($\lambda_1 \approx \lambda_2 + n/2$). Here the mixed Hecke channel achieves maximal dimension, structurally driving sublimation.
 
 **Crossing parity.**
-To estimate sublimation behavior, we examine the composite crossing parity. The composite crossing number identically satisfies $n_K(\mathcal{A}) \equiv Z \pmod{2}$, stemming from the crossing budget $A^2 + 7A + 5Z$ and the invariant parity $A(A+1) \equiv 0 \pmod{2}$. This parity detects the mod-2 shadow of the Young diagram structure. It acts as a necessary but not sufficient condition for sublimation, as it fails to distinguish closed shells from half-filled ones.
+To estimate sublimation behavior, we examine the composite crossing parity. The composite crossing number identically satisfies $n_K(\mathcal{A}) \equiv Z ±od{2}$, stemming from the crossing budget $A^2 + 7A + 5Z$ and the invariant parity $A(A+1) \equiv 0 ±od{2}$. This parity detects the mod-2 shadow of the Young diagram structure. It acts as a necessary but not sufficient condition for sublimation, as it fails to distinguish closed shells from half-filled ones.
 
 **Full criterion.**
 Let $\ell_v$ denote the number of valence electrons beyond the last closed shell. Let $\ell_{\max}$ dictate the capacity of the valence shell ($\ell_{\max} = 2n^2$ for principal quantum number $n$). We systematically classify the macroscopic phase:

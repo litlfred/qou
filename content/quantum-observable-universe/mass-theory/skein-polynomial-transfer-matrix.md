@@ -22,7 +22,7 @@ $$
   \hat{V}_i(q) =  z(q) \cdot a_i(q) + b_i(q)
 $$
 
-*is a rational function in $q^{1/2}$, where $a_i(q), b_i(q) \in \mathbb{Z}[q^{\pm 1}]$ are the transfer matrix coefficients at
+*is a rational function in $q^{1/2}$, where $a_i(q), b_i(q) \in \mathbb{Z}[q^{± 1}]$ are the transfer matrix coefficients at
 generator $\sigma_i$ and $z(q) = 1/(q^{1/2} + q^{-1/2})$ is the
 Markov parameter.  The product $P_{\mathcal{N}}(q)$ is the
 **Skein polynomial of the nuclear link** in factored form.

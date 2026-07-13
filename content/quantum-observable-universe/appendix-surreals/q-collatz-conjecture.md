@@ -1,11 +1,11 @@
 **Conjecture ($q$-Collatz).**
-Let $q \in \mathbb{G}_m^{\mathrm{nt}}(k)$ be a substrate parameter ([torsion avoidance](#rem:substrate-gm-torsion)) and let $\mathcal{S}(q) \cong \mathbb{Z}[q^{\pm 1}]$ be the Skein module of the Reeb bundle $\mathcal{R}_p = (S^3 \to S^2, \xi_q)$ ([Reeb bundle](#def:reeb-bundle)).
+Let $q \in \mathbb{G}_m^{\mathrm{nt}}(k)$ be a substrate parameter ([torsion avoidance](#rem:substrate-gm-torsion)) and let $\mathcal{S}(q) \cong \mathbb{Z}[q^{± 1}]$ be the Skein module of the Reeb bundle $\mathcal{R}_p = (S^3 \to S^2, \xi_q)$ ([Reeb bundle](#def:reeb-bundle)).
 
 We use the combinatorial $q$-integer $[n]_q = (q^n - 1)/(q - 1)$, giving $[2]_q = q + 1$ and $[3]_q = q^2 + q + 1$. The Iwahori--Hecke algebra convention $[n]_q = (q^n - q^{-n})/(q - q^{-1})$ differs by a factor of $q^{(n-1)/2}$. The combinatorial convention ensures the Skein divisibility identity $[3]_q = q[2]_q + 1$ and the contraction gap $[2]_q^2 - [3]_q = q$.
 
-An element $P \in \mathbb{Z}[q^{\pm 1}]$ is $q$-even if $[2]_q \mid P$ and $q$-odd if $[2]_q \mid (P + 1)$. At $q = 1$, we recover integer parity ($[2]_1 = 2$).
+An element $P \in \mathbb{Z}[q^{± 1}]$ is $q$-even if $[2]_q \mid P$ and $q$-odd if $[2]_q \mid (P + 1)$. At $q = 1$, we recover integer parity ($[2]_1 = 2$).
 
-Define the Skein-Collatz map $\mathcal{C}_q \colon \mathbb{Z}[q^{\pm 1}] \to \mathbb{Z}[q^{\pm 1}]$ by:
+Define the Skein-Collatz map $\mathcal{C}_q \colon \mathbb{Z}[q^{± 1}] \to \mathbb{Z}[q^{± 1}]$ by:
 
 $$
 \mathcal{C}_q(P) =
@@ -55,6 +55,6 @@ $$
 
 Two halvings beat one tripling by a factor $[2]_q^2 / [3]_q = 1 + q/[3]_q \approx 4/3$.
 
-**Conjecture.** For all $q > 1$ and all $P \in \mathbb{Z}[q^{\pm 1}]_{>0}$, the orbit $\{\mathcal{C}_q^k(P)\}_{k \geq 0}$ reaches $1$.
+**Conjecture.** For all $q > 1$ and all $P \in \mathbb{Z}[q^{± 1}]_{>0}$, the orbit $\{\mathcal{C}_q^k(P)\}_{k \geq 0}$ reaches $1$.
 
-The Collatz obstruction $\kappa_C := \mathrm{res}_{C_q}(\kappa_0) \in H^2(\mathcal{S}_{C_q}, \mathbb{G}_m)$ ([classical limit obstruction](#def:classical-limit-obstruction), [QOU obstruction reduction](#thm:qou-obstruction-reduction)) measures the failure of Skein-Collatz orbits to converge. The conjecture $\kappa_C = 0$ is equivalent to stating that every element of the Skein module $\mathcal{S}(q) \cong \mathbb{Z}[q^{\pm 1}]$ reduces to the unknot polynomial $1$ under iterated crossing resolution via $\mathcal{C}_q$.
+The Collatz obstruction $\kappa_C := \mathrm{res}_{C_q}(\kappa_0) \in H^2(\mathcal{S}_{C_q}, \mathbb{G}_m)$ ([classical limit obstruction](#def:classical-limit-obstruction), [QOU obstruction reduction](#thm:qou-obstruction-reduction)) measures the failure of Skein-Collatz orbits to converge. The conjecture $\kappa_C = 0$ is equivalent to stating that every element of the Skein module $\mathcal{S}(q) \cong \mathbb{Z}[q^{± 1}]$ reduces to the unknot polynomial $1$ under iterated crossing resolution via $\mathcal{C}_q$.

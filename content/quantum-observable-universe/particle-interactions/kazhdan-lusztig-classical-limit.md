@@ -10,7 +10,7 @@ $$
   b_w \;\longmapsto\; C_w \quad \text{as } q \to 1,
 $$
 
-*sending each KLR canonical basis element to its $q \to 1$ specialisation in $\mathbb{Z}[S_n]$. Then $\mathrm{KL}$ is a monoidal functor compatible with the observation functor $\tau$. Its action on QOU particle states represents the topological-to-classical transition. The braid group $B_n$ collapses to $S_n$ via $\sigma_i^2 \mapsto 1$. The Hecke matrices lose their topological braiding memory. The surviving statistics are exactly the $\pm 1$ permutation signs that govern Pauli exclusion (fermions) and Bose–Einstein occupation (bosons).*
+*sending each KLR canonical basis element to its $q \to 1$ specialisation in $\mathbb{Z}[S_n]$. Then $\mathrm{KL}$ is a monoidal functor compatible with the observation functor $\tau$. Its action on QOU particle states represents the topological-to-classical transition. The braid group $B_n$ collapses to $S_n$ via $\sigma_i^2 \mapsto 1$. The Hecke matrices lose their topological braiding memory. The surviving statistics are exactly the $± 1$ permutation signs that govern Pauli exclusion (fermions) and Bose–Einstein occupation (bosons).*
 
 **Algorithmic role.**
 *The reduction engine implements the classical limit by replacing $\sigma_{s_i}$ with the symmetric-group generator $s_i$ and the canonical basis element $b_w$ with the Kazhdan–Lusztig basis element $C_w$. The cyclotomic-KLR Wedderburn decomposition specialises to the ordinary $S_n$ Wedderburn decomposition, with multiplicities given by hook-length formulae. The transition is functorial. No extra selection rule is introduced for the bosonic vs fermionic split. The split is the eigenvalue decomposition of $s_i$ acting on the $q \to 1$ canonical basis.*

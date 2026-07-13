@@ -67,7 +67,7 @@ The total Berry phase accumulated by a vortex tangle $L$ executing a closed loop
 $$
   \Phi_{\mathrm{Berry}}[L]
   = 
-  2\pi\mathcal{H}_q[L] \pmod{2\pi}.
+  2\pi\mathcal{H}_q[L] ±od{2\pi}.
 $$
 
 This equation maps helicity — a hydrodynamic invariant — directly to a quantum-mechanical phase, completing the structural triad:

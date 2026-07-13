@@ -87,8 +87,8 @@ export default chapter({
       ],
     }),
 
-    // ═══ THE COMPLEX VOLUME 𝔙 ═══════════════════════════════════
-    // Binding (Re 𝔙) and β-decay Q-value (Im 𝔙) are two real
+    // ═══ THE COMPLEX VOLUME $\mathfrak{V}$ ═══════════════════════════════════
+    // Binding (Re $\mathfrak{V}$) and β-decay Q-value (Im $\mathfrak{V}$) are two real
     // shadows of one complex fibre observable. Frames the rest of
     // the mass + β-decay narrative as one derivation.
     section({

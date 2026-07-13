@@ -69,7 +69,7 @@ $$
   \;\in\; R[z].
 $$
 
-Using implicit differentiation $dc_k/dz = -(\partial F/\partial z)|_{(z, c_k)} \big/ (\partial F/\partial c)|_{(z, c_k)}$ and the resultant identity $J(z) := \prod_{k=1}^{3} (\partial F/\partial c)|_{(z, c_k)} = \pm\, \Delta(z)$, the Alt-isotype representative satisfies
+Using implicit differentiation $dc_k/dz = -(\partial F/\partial z)|_{(z, c_k)} \big/ (\partial F/\partial c)|_{(z, c_k)}$ and the resultant identity $J(z) := \prod_{k=1}^{3} (\partial F/\partial c)|_{(z, c_k)} = ±\, \Delta(z)$, the Alt-isotype representative satisfies
 
 $$
   \prod_{k=1}^{3} \frac{dc_k}{dz}
@@ -77,7 +77,7 @@ $$
   (-1)^{3}\,
   \frac{V_3(c_1, c_2, c_3)}{J(z)}
   \;=\;
-  \pm\,\frac{V_3(c_1, c_2, c_3)}{\Delta(z)}.
+  ±\,\frac{V_3(c_1, c_2, c_3)}{\Delta(z)}.
 $$
 
 Thus we obtain

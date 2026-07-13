@@ -18,7 +18,7 @@ On a $4m$-dimensional manifold, a **tetraplectic structure** \cite{foth2002} is 
 The manifold $M$ inherits the discrete symmetries of the Bring curve, notably an $S_5 \times \mathbb{Z}_2$ action where $\mathbb{Z}_2$ is an involution $\tau$. Averaging an arbitrary initial volume form $\omega_0$ over the group action,
 
 $$
-\Omega = \frac{1}{|S_5|} \sum_{g \in S_5} \left( \omega_0 \pm \tau^*(g^* \omega_0) \right),
+\Omega = \frac{1}{|S_5|} \sum_{g \in S_5} \left( \omega_0 ± \tau^*(g^* \omega_0) \right),
 $$
 
 constructs an $S_5$-invariant tetraplectic volume form $\Omega$.

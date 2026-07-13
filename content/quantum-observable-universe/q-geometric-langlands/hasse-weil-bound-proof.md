@@ -1,4 +1,4 @@
-**Proof.** Write $\mathcal{B}$ for Bring's curve over $\mathbb{F}_q$, of genus $g = 4$, and let $N_n = |\mathcal{B}(\mathbb{F}_{q^n})|$ denote the point count over the degree-$n$ extension. By the definition of the [local $q$-zeta function](#local-q-zeta-function), the numerator $P(t) = \prod_{i=1}^{2g}(1 - \alpha_i t)$ encodes the point counts through
+**Proof.** Write $\mathcal{B}$ for Bring's curve over $\mathbb{F}_q$, of genus $g = 4$, and let $N_n = |\mathcal{B}(\mathbb{F}_{q^n})|$ denote the point count over the degree-$n$ extension. By the definition of the [local $q$-zeta function](#def:local-q-zeta-function), the numerator $P(t) = \prod_{i=1}^{2g}(1 - \alpha_i t)$ encodes the point counts through
 
 $$
 N_n = q^n + 1 - \sum_{i=1}^{2g} \alpha_i^n ,

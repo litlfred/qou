@@ -24,7 +24,7 @@
    plus a residual that ascends to level $(n+1)$ as a new singleton
    or pair. Iteration covers all higher orders.
 
-4. **Each summand is in $\mathbb{Z}[q^{\pm 1/2}]$.** $\hat V_S$ is a
+4. **Each summand is in $\mathbb{Z}[q^{± 1/2}]$.** $\hat V_S$ is a
    Laurent polynomial in $q^{1/2}$ with integer coefficients
    ([algebraic quantum volume](#def:algebraic-quantum-volume)); the
    quantum dilogarithm $\Phi_q$ is given as a formal product
@@ -38,7 +38,7 @@ $\square$
 ## Relation to the JSJ archimedean bridge
 
 The conjecture
-[Φ$_q$-tower JSJ archimedean bridge](#conj:phi-q-tower-jsj-bridge)
+[Φ$_q$-tower JSJ archimedean bridge](#rem:phi-q-tower-jsj-bridge)
 states that under $\tau_{\mathrm{arch}}$ each algebraic stratum $S$
 maps to a JSJ piece of $\widehat\beta$, with the algebraic value
 $\Phi_q(|\hat V_S|)$ τ-realising to $\rho_q \cdot \mathrm{Vol}_{\mathrm{hyp}}(S^3 \setminus K_S)$.

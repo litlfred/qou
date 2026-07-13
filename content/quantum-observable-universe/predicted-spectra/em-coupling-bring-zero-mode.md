@@ -63,4 +63,4 @@ The additive form provides the cleanest structure. It avoids fitted coefficients
 
 ## Witness
 
-See [`alpha-em-correction-derivation-attempts.witness.json`](#) for the full attempt log.
+See `alpha-em-correction-derivation-attempts.witness.json` for the full attempt log.

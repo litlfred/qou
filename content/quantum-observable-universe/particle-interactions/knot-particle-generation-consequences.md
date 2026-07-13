@@ -14,7 +14,7 @@ The Skein module admits the presentation
 
 $$
   \mathrm{Sk}_q(\mathbf{C}) = 
-  \mathbb{Z}[q^{\pm 1}]\bigl\langle
+  \mathbb{Z}[q^{± 1}]\bigl\langle
     \mathcal{G},
     \mathcal{L}_{\mathrm{Hopf}},
     \ell_c

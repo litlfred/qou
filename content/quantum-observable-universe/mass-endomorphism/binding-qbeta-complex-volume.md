@@ -68,7 +68,7 @@ $$
   \underbrace{\tfrac{q-q^{-1}}{2}=\sinh\lambda}_{\textbf{bar-odd}},
 $$
 
-so $\cosh\lambda \pm \sinh\lambda = e^{\pm\lambda}$. The bar-even and
+so $\cosh\lambda ± \sinh\lambda = e^{±\lambda}$. The bar-even and
 bar-odd parts constitute **one element $e^{\lambda}$ read on its two
 parities**. Continue $\lambda \mapsto i\theta$ (the substrate $q$ rotated
 onto the unit circle / a root of unity) and $\cosh\to\cos$,
@@ -87,7 +87,7 @@ same $\mathfrak{V}$.
 ## Established results, and the fibre-level caveat
 
 - **Proved (algebra).** The bar-parity decomposition
-  $\tfrac{q+q^{-1}}{2}\pm\tfrac{q-q^{-1}}{2} = q^{\pm1}$ holds over any
+  $\tfrac{q+q^{-1}}{2}±\tfrac{q-q^{-1}}{2} = q^{±1}$ holds over any
   field. The complex reconstruction $\mathfrak{E}_{\mathrm{bind}}+i\,\mathfrak{Q}_\beta
   = \mathfrak{V}$ follows from the two projection
   hypotheses ([Lean](#conj:binding-qbeta-complex-volume),
@@ -112,11 +112,11 @@ same $\mathfrak{V}$.
   $\mathrm{Vol}$ and $\mathrm{CS}$ are separately real.
 
 
-## The open single-𝔙 assembly and the ζ₄-faithfulness constraint
+## The open single-$\mathfrak{V}$ assembly and the ζ₄-faithfulness constraint
 
-The complex-volume model $V_0(z) = \cosh z + i\sinh z$ satisfies the **ζ₄-partner relation**: $V_0(z + i\pi/2) = -\cosh z + i\sinh z$, exactly negating the bar-even (binding) channel while keeping the bar-odd ($Q_eta$) channel. The full ζ₄-orbit decomposes the model into exactly the two **faithful** eigencomponents (trivial and sign isotypes vanish).
+The complex-volume model $V_0(z) = \cosh z + i\sinh z$ satisfies the **ζ₄-partner relation**: $V_0(z + i\pi/2) = -\cosh z + i\sinh z$, exactly negating the bar-even (binding) channel while keeping the bar-odd ($Q_\beta$) channel. The full ζ₄-orbit decomposes the model into exactly the two **faithful** eigencomponents (trivial and sign isotypes vanish).
 
-**Constraint on the open assembly (the 5nx8 gap):** Any candidate physical assembly $\mathfrak{V}$ must be **ζ₄-faithful** (supported entirely on the $\pm i$ characters of $\mathbb{Z}_4$). A candidate with a nonzero orbit sum or sign isotype is falsified (`QOU.Mass.ComplexVolumeZeta4Partner.SingleFrakVAssembly`). This structural consequence forces $\zeta_4^2 = -1$ on the assembly, providing non-degenerate conditional content for the conjecture class.
+**Constraint on the open assembly (the 5nx8 gap):** Any candidate physical assembly $\mathfrak{V}$ must be **ζ₄-faithful** (supported entirely on the $± i$ characters of $\mathbb{Z}_4$). A candidate with a nonzero orbit sum or sign isotype is falsified (`QOU.Mass.ComplexVolumeZeta4Partner.SingleFrakVAssembly`). This structural consequence forces $\zeta_4^2 = -1$ on the assembly, providing non-degenerate conditional content for the conjecture class.
 
 
 ## The open Stage-C $\sigma_3$-lift obligation
@@ -151,7 +151,7 @@ independent open problems.
 ring $R$ with the **bar-involution** $\sigma$ (the structural setting —
 *not* $\mathbb{C}$, per AGENTS.md §7c) descends to **both** the bar-even
 (binding) and bar-odd ($\mathfrak{Q}_\beta$) parts from a single proof,
-because the projections $x \mapsto x\pm\sigma x$ act additively. Formalised
+because the projections $x \mapsto x±\sigma x$ act additively. Formalised
 sorry-free in [`QOU.MassEndomorphism`](binding-qbeta-complex-volume.lean):
 `invol_descent` (one ring identity $\Rightarrow$ both parity identities)
 and `recurrence_invol_descent` (a three-term $\mathfrak{V}$-recurrence with

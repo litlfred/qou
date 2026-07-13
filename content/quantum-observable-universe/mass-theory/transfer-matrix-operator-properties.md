@@ -127,7 +127,7 @@ Photon absorption promotes an electron from shell $n$ to
 shell $n+1$.  In the transfer matrix language, this is a
 **Reidemeister I move** on the electron-nucleus Hopf link:
 a curl is added to the electron trefoil, changing its writhe
-by $\pm 1$ but preserving its knot type.
+by $± 1$ but preserving its knot type.
 
 The R-I move at the electron-nucleus junction:
 
@@ -159,7 +159,7 @@ $$
 $$
 
 Since $T_{\gamma e}$ has eigenvalues
-$\lambda_{\pm} = \frac{1}{2}\bigl[(q - q^{-1}) \pm \sqrt{(q - q^{-1})^2 + 4}\bigr]$, the $n$-th power grows as
+$\lambda_{±} = \frac{1}{2}\bigl[(q - q^{-1}) ± \sqrt{(q - q^{-1})^2 + 4}\bigr]$, the $n$-th power grows as
 $\lambda_+^n$, and the energy scales as:
 
 $$

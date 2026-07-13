@@ -16,4 +16,4 @@ $\mathrm{lcm}(8, 8) = 8$. ∎
 
 **(3)** At $q = \zeta_8$, $q^4 = (e^{i\pi/4})^4 = e^{i\pi} = -1$, so
 $q^4 = -1 = q^{-4}$, giving $q^4 - q^{-4} = 0$. Since $q - q^{-1} \neq 0$
-(as $\zeta_8 \neq \pm 1$), $[4]_q = 0/(q - q^{-1}) = 0$. ∎
+(as $\zeta_8 \neq ± 1$), $[4]_q = 0/(q - q^{-1}) = 0$. ∎

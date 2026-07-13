@@ -24,7 +24,7 @@ $$
 $$
 
 where each $[K_{i_j}]$ is the class of a fundamental knot and
-$c_\alpha(q) \in \mathbb{Z}[q^{\pm 1}]$.
+$c_\alpha(q) \in \mathbb{Z}[q^{± 1}]$.
 
 **Mass from linking.**  By
 ([Skein-resolution mass formula](#lem:skein-mass-from-linking)),

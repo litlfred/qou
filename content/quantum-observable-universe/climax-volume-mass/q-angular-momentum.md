@@ -18,7 +18,7 @@ At $q = 1$: $J_q^2 \to j(j+1)$, the standard Casimir.
 The generators $J_+, J_-, J_z$ of $\mathrm{SU}_q(2)$ satisfy:
 
 $$
-  [J_z, J_{\pm}] = \pm J_{\pm}, \qquad
+  [J_z, J_{±}] = ± J_{±}, \qquad
   [J_+, J_-] = [2 J_z]_q
   =  \frac{q^{2J_z} - q^{-2J_z}}{q - q^{-1}}
 $$

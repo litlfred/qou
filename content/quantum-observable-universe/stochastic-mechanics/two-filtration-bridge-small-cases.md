@@ -13,7 +13,7 @@ $$
 ### Detailed verifications
 
 #### Self-conjugate $\lambda = (2, 2)$, $n = 4$ (figure-8 row)
-The figure-8 knot $4_1$ is amphichiral, so $\mathrm{CS}(4_1) = 0 \pmod{\pi^2 \mathbb{Z}}$. Its volume is non-trivial: $\mathrm{Vol}(4_1) = 2\,\mathrm{Cl}_2(\pi/3) \in \mathcal{P}_2 / \mathcal{P}_1$. Pairing of $e_{(2, 2)}$ with $\mathrm{Li}_2^q(\zeta_6)$ via Markov trace produces $\mathrm{Vol}(4_1) \neq 0$. Pairing with $\mathrm{Li}_3^q(\zeta_6)$ is trivial in $\mathcal{P}_3 / \mathcal{P}_2$. Conclusion: $d_{\mathrm{II}}((2, 2)) = 2$. Bridge prediction verified.
+The figure-8 knot $4_1$ is amphichiral, so $\mathrm{CS}(4_1) = 0 ±od{\pi^2 \mathbb{Z}}$. Its volume is non-trivial: $\mathrm{Vol}(4_1) = 2\,\mathrm{Cl}_2(\pi/3) \in \mathcal{P}_2 / \mathcal{P}_1$. Pairing of $e_{(2, 2)}$ with $\mathrm{Li}_2^q(\zeta_6)$ via Markov trace produces $\mathrm{Vol}(4_1) \neq 0$. Pairing with $\mathrm{Li}_3^q(\zeta_6)$ is trivial in $\mathcal{P}_3 / \mathcal{P}_2$. Conclusion: $d_{\mathrm{II}}((2, 2)) = 2$. Bridge prediction verified.
 
 #### Chiral pair $(3) + (1, 1, 1)$, $n = 3$ (trefoil row)
 Trefoil $T(2, 3) = 3_1$ is chiral. Its volume is 0, but $\mathrm{CS}(3_1) = -\pi^2/6$. Pairing with $\mathrm{Li}_2^q$ yields depth-2 vanishes. Pairing with $\mathrm{Li}_3^q$ yields $\mathrm{CS}(3_1) = -\pi^2/6$, which is non-trivial in $\mathcal{P}_3 / \mathcal{P}_2$. Conclusion: $d_{\mathrm{II}}(\text{chiral pair}) = 3$. Bridge prediction verified.

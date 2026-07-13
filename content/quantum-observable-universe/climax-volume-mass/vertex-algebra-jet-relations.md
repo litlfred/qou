@@ -71,7 +71,7 @@ $$
 **(J-3b) Stabilisation**:
 
 $$
-  \mathrm{tr}_M^{(n)}(w \cdot \sigma_m^{(n)\pm 1})
+  \mathrm{tr}_M^{(n)}(w \cdot \sigma_m^{(n)± 1})
   = 
   \frac{1}{\delta} \mathrm{tr}_M^{(n)}(w),
   \qquad

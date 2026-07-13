@@ -14,7 +14,7 @@ The proton is a [Borromean baryon](#def:borromean-baryon): $\mathfrak{p} = [\mat
 
 Topological protection applies equally:
 
-1. **Link type invariance.** The Milnor triple linking number $\bar{\mu}(123) = \pm 1$ distinguishes the Borromean link $\mathcal{B}_3$ from its mirror $\mathcal{B}_3^{\sigma}$. No Reidemeister sequence connects them.
+1. **Link type invariance.** The Milnor triple linking number $\bar{\mu}(123) = ± 1$ distinguishes the Borromean link $\mathcal{B}_3$ from its mirror $\mathcal{B}_3^{\sigma}$. No Reidemeister sequence connects them.
 2. **Constituent protection.** Every constituent trefoil requires an infinite-energy chirality flip.
 3. **Chirality-sensitive linking.** The Hopf link $\mathcal{L}_H$ carries linking number $+1$. Its mirror carries $-1$. Reversal requires link destruction and recreation.
 

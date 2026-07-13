@@ -11,7 +11,7 @@ none are hyperbolic (torus-knot complements are Seifert-fibred). Thus, the depth
 The non-trivial content resides at depth 3. Each torus knot possesses a non-zero Chern–Simons invariant:
 
 $$
-  \mathrm{CS}(T(p, q)) = -\frac{(p^2 - 1)(q^2 - 1)}{24 p q} \cdot \pi^2 \pmod{\pi^2 \mathbb{Z}}
+  \mathrm{CS}(T(p, q)) = -\frac{(p^2 - 1)(q^2 - 1)}{24 p q} \cdot \pi^2 ±od{\pi^2 \mathbb{Z}}
 $$
 
 (Freed–Gompf 1991, Kirk–Klassen 1990). These are rational multiples of $\pi^2$, hence degenerate depth-3 classes lying entirely in $\mathcal{P}_2$ when reduced modulo the Tate twist.

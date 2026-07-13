@@ -47,7 +47,7 @@ $$
 \;\ll\; \ln 10 ,
 $$
 
-so the correction product lies within a factor $e^{\pm 2\times
+so the correction product lies within a factor $e^{± 2\times
 10^{-4}}$ of unity: it cannot move the base value
 $Q_A \cos\alpha_{\text{eff}}$ by even a fraction of a decade. The
 empirical target evaluates to $F_{\text{target}}(q_0) \approx 0.998$

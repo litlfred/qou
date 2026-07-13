@@ -6,7 +6,7 @@ $$
   \;=\;
   \frac{q - 1}{(q^{1/2} + q^{-1/2})^2}.
 $$
-At $q_0 \approx 1.110$, this gives $z_{\mathrm{J}} \approx 0.027$. The trace itself does **not** satisfy a two-sided rule $\mathrm{tr}_M(x\,\sigma_n^{\pm 1}) = c^{\pm 1}\,\mathrm{tr}_M(x)$ for any parameter $c$: the Hecke quadratic relation forces the negative stabilisation to the affine value $z_{-} = z_{\mathrm{m}} - (q - q^{-1})$ (see below), and requiring $c\,\bigl(c - (q - q^{-1})\bigr) = 1$ forces $c \in \{q, -q^{-1}\}$, the two degenerate one-dimensional characters.
+At $q_0 \approx 1.110$, this gives $z_{\mathrm{J}} \approx 0.027$. The trace itself does **not** satisfy a two-sided rule $\mathrm{tr}_M(x\,\sigma_n^{± 1}) = c^{± 1}\,\mathrm{tr}_M(x)$ for any parameter $c$: the Hecke quadratic relation forces the negative stabilisation to the affine value $z_{-} = z_{\mathrm{m}} - (q - q^{-1})$ (see below), and requiring $c\,\bigl(c - (q - q^{-1})\bigr) = 1$ forces $c \in \{q, -q^{-1}\}$, the two degenerate one-dimensional characters.
 
 **Convention 2 (mass computations).** The categorical mass formula ([categorical mass as Markov trace](#prop:categorical-mass-markov)) and all subsequent mass and volume computations use
 $$

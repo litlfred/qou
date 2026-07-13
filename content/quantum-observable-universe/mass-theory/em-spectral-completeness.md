@@ -2,7 +2,7 @@
 Throughout, the categorical structure is $R$-enriched over
 
 $$
-  R \;=\; \mathbb{Z}\bigl[q^{\pm 1/2},\, (q - q^{-1})^{-1}\bigr].
+  R \;=\; \mathbb{Z}\bigl[q^{± 1/2},\, (q - q^{-1})^{-1}\bigr].
 $$
 
 Let $(\mathbf{C}, A, \tau)$ be a rigid :refterm[braided monoidal category]{#braided-monoidal-category}
@@ -17,10 +17,10 @@ is a free $R$-module of rank $2$ with the following structure.*
 1. *There exist exactly two non-zero central idempotents
    $e_+, e_- \in E$ with $e_+ + e_- = \mathrm{id}_{A \otimes A}$ and
    $e_+ \cdot e_- = 0$.*
-2. *Each $e_\pm$ projects onto a simple summand:*
+2. *Each $e_±$ projects onto a simple summand:*
    $$
      A \otimes A \;\cong\; V_+ \oplus V_-,
-     \qquad e_\pm A^{\otimes 2} = V_\pm.
+     \qquad e_± A^{\otimes 2} = V_±.
    $$
    *The summand $V_-$ is canonically isomorphic to the unit object
    $\mathbf{1}$ — a singlet of $R$-rank one.*

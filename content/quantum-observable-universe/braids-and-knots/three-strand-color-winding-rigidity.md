@@ -22,7 +22,7 @@ Since the closures of $(\sigma_1\sigma_2)^k$ are the $(3,k)$ torus links,
 the proposition says the compact winding of the three-strand torus-link
 tower is **topological**: a $\zeta_3$ (color/triality) rotation that does
 not flow with the substrate modulus, in contrast to the modulus-carrying
-hyperbolic winding pair $q^{\pm 2k}$ of the $1$-dimensional channels. The
+hyperbolic winding pair $q^{± 2k}$ of the $1$-dimensional channels. The
 level-lattice and vortex readings — winding pair $(k,\ k \bmod 3)$ for the
 three-strand (Borromean/nucleon) carrier, and the alternating-word
 deformation of the same rotation — are developed in the channel-

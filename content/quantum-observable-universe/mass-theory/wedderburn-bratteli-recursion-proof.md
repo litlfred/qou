@@ -1,7 +1,7 @@
 ## Proof of existence
 
 By [Jones–Markov trace](#thm:jones-markov-trace), the Markov property
-$\mathrm{tr}_M(x \cdot T_n^{\pm 1}) = z^{\pm 1} \cdot \mathrm{tr}_M(x)$
+$\mathrm{tr}_M(x \cdot T_n^{± 1}) = z^{± 1} \cdot \mathrm{tr}_M(x)$
 extends $\mathrm{tr}_M$ uniquely from $H_n$ to $H_{n+1}$.  In the
 Wedderburn block decomposition, this fixes
 $\{y_\lambda^{(n+1)}\}_{\lambda \vdash n+1}$ in terms of
@@ -65,7 +65,7 @@ consistency condition** for any candidate closed form $F_q$.
 
 The $q$-rational function $F_q$ is now **explicit in closed form** via
 the symbolic linear-system solve in
-[`y-lambda-symbolic-witness.json`](#) — produced by sympy in
+`y-lambda-symbolic-witness.json` — produced by sympy in
 $\mathbb{Q}(q^{1/2})$.  Per-edge factors
 
 $$
