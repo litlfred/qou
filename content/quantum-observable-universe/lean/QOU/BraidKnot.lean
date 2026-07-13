@@ -158,6 +158,11 @@ import QOU.BraidKnot.JonesViaMarkovTrace
 -- trefoil + the shell-structure Z,N ↦ k∈{1,2,3} classifier. Infra only — builds
 -- jonesQuotient, does NOT prove a(Z,N)=J_β̄(q).
 import QOU.BraidKnot.JonesNuclearQuotient
+-- YT seminormal-sum Mathlib-gap infra (beans qou-cxkc / qou-mcbf / qou-ujfg):
+-- the weight layer (a_ρ = h·g_ρ, pairing g_ρ+g_{−ρ}=1) + the cell-geometry
+-- layer (content, axial distance) toward the seminormal character sum.
+import QOU.BraidKnot.SeminormalWeight
+import QOU.BraidKnot.TableauContent
 -- Tier-3 (bean 60iz) general-H_n(q) completion: the arbitrary-braid-word Jones
 -- value + Markov move II (conjugation invariance), on the sibling-landed
 -- IwahoriHeckeAPI element algebra. Move I = IwahoriHeckeAPI.markovTrace_stab_comm;
