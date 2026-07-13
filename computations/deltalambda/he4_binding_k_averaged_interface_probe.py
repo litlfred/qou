@@ -1,6 +1,18 @@
 #!/usr/bin/env python3
 """he4_binding_k_averaged_interface_probe.py — stage 1.5: the averaged interface.
 
+⛔ VOID — SAME-DAY CORRECTION (2026-07-13, later the same day). This probe
+evaluated the GP Laurent characters AT q₀, but the GP kernel's variable is
+√q (paper q = v²), so the headline "averaged 3-bond captures 96.2% / residual
+3.8% = woven color-tube structure" is void — the 3.8% is a wrong-presentation
+artifact, not a measured structural quantity. The comparison was also built
+on the wrong constituent product (plain Borromean nucleons vs the canonical
+11-crossing operator-valued blocks) and the wrong seam placement ({3,6,9} vs
+the canonical {2,5,8} with pair-typed operators: p-p σ, p-n color-weighted
+average, n-n σ⁻¹). See `he4_binding_k_presentation_correction_probe.py`
+(+witness) for the certified convention and end-to-end combiner reproduction.
+Kept for the record; do not cite its numbers.
+
 Follow-up to the stage-1 fingerprint (he4_binding_k_fingerprint_stage1_probe.py),
 which found the best PLAIN inter-nucleon word at rel Δ = 14.7% and flagged the
 plain-vs-averaged convention as the expected gap. This probe evaluates the
