@@ -1,0 +1,52 @@
+{
+ "computation": "deuteron-wall-full-transseries",
+ "description": "FULL level-1/2 Borel\u2013Laplace median resummation of the Gevrey-1/2 binding period a_D^(n)=I(n)/n for the Hopf-deuteron (perturbative Vol=0), parameter-free at the substrate coupling. Undershoots B_D by ~40\u00d7 (m_e\u00b7ReP \u2264 0.06 MeV vs 2.225); reaches B_D only at the Borel singularity 1/\u221a2 (not a substrate qty). The full alien calculus of the dualized entanglement energy does NOT close the deuteron parameter-free; distinct-mechanism (q-rotational) route indicated. Scope-(a) negative; no fit.",
+ "audit_only": true,
+ "computedAt": "2026-07-13T10:01:57.633211+00:00",
+ "engine": "mpmath",
+ "engineVersion": "1.3.0",
+ "borel_singularity": "1/sqrt(2)",
+ "borel_level": "1/2 (Gevrey-1/2)",
+ "target_B_D_over_m_e": "4.353277",
+ "resummation_by_coupling": {
+  "hbar_q^2": {
+   "x": "0.00981719",
+   "m_e_ReP_MeV": "0.00505995",
+   "alien_jump": "0.00050047",
+   "pct_of_B_D": "0.2275"
+  },
+  "hbar_q": {
+   "x": "0.0990817",
+   "m_e_ReP_MeV": "0.0563674",
+   "alien_jump": "0.00619121",
+   "pct_of_B_D": "2.534"
+  },
+  "t": {
+   "x": "0.104341",
+   "m_e_ReP_MeV": "0.0597434",
+   "alien_jump": "0.00661005",
+   "pct_of_B_D": "2.686"
+  },
+  "0.35": {
+   "x": "0.35",
+   "m_e_ReP_MeV": "0.302313",
+   "alien_jump": "0.143129",
+   "pct_of_B_D": "13.59"
+  },
+  "0.5": {
+   "x": "0.5",
+   "m_e_ReP_MeV": "0.423446",
+   "alien_jump": "0.519071",
+   "pct_of_B_D": "19.04"
+  }
+ },
+ "verdict": "Scope-(a) NEGATIVE (no fit): the FULL level-1/2 Borel\u2013Laplace median resummation of the Gevrey-1/2 binding period, evaluated parameter-free at the substrate coupling, gives m_e\u00b7ReP \u2264 0.05974 MeV (\u2264 2.69% of B_D=2.2245), undershooting by ~37\u00d7; the alien jump is smaller still. It reaches B_D only as the coupling \u2192 the Borel radius 1/\u221a2 (the singularity), which is not a substrate quantity \u2014 so a match would require tuning the coupling (a fit). The FULL alien calculus of the dualized entanglement energy therefore does NOT close the deuteron parameter-free; the wall is a distinct-mechanism problem. The working deuteron channel is the separate q-rotational \u03bc\u2080\u00b7\u210f_q\u00b7J_q\u00b2 route (B_D to \u22129%, 0 params). This closes the resummation hypothesis for the deuteron negatively. No fit; no wiring; no tier change.",
+ "scope": "(a) \u2014 full median Borel-Laplace undershoots B_D at every substrate coupling; closes the resummation hypothesis for the deuteron negatively",
+ "assertions": [
+  {
+   "label": "full median resummation undershoots B_D at substrate couplings",
+   "passed": true
+  }
+ ],
+ "allPassed": true
+}
