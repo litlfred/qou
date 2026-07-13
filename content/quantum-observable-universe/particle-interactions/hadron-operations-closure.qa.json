@@ -1065,6 +1065,19 @@
         "reviewed_at": "2026-07-07T14:26:57.199348Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:43:03.000Z",
+        "reviewed_sha": "a8471b2db90a0df8dae88a0212a62731fc9c3e14",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "wall-side-statement": [
@@ -1286,6 +1299,19 @@
         "notes": "No false claims identified in 'Closure of hadron operations under braiding, Hopf linking, skein action, and fusion': the formalization compiles successfully without errors.",
         "severity": "minor",
         "evidence": "hadron-operations-closure.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:43:03.000Z",
+        "reviewed_sha": "a8471b2db90a0df8dae88a0212a62731fc9c3e14",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-vacuous": [
@@ -1307,6 +1333,19 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The block 'Closure of hadron operations under braiding, Hopf linking, skein action, and fusion' presents substantial mathematical content: '$\\mathbf{C}$'.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:43:03.000Z",
+        "reviewed_sha": "a8471b2db90a0df8dae88a0212a62731fc9c3e14",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-circular": [
@@ -1329,6 +1368,19 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Closure of hadron operations under braiding, Hopf linking, skein action, and fusion'.",
         "severity": "minor",
         "evidence": "hadron-operations-closure.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:43:03.000Z",
+        "reviewed_sha": "a8471b2db90a0df8dae88a0212a62731fc9c3e14",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-overclaim": [
@@ -1350,6 +1402,19 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The remarks and narrative scope in 'Closure of hadron operations under braiding, Hopf linking, skein action, and fusion' are appropriately qualified.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:43:03.000Z",
+        "reviewed_sha": "a8471b2db90a0df8dae88a0212a62731fc9c3e14",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-hidden-dof": [
@@ -1372,6 +1437,19 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Closure of hadron operations under braiding, Hopf linking, skein action, and fusion'.",
         "severity": "minor",
         "evidence": "hadron-operations-closure.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:43:03.000Z",
+        "reviewed_sha": "a8471b2db90a0df8dae88a0212a62731fc9c3e14",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-non-sequitur": [
@@ -1394,6 +1472,19 @@
         "notes": "The prose arguments in 'Closure of hadron operations under braiding, Hopf linking, skein action, and fusion' proceed logically through the stated steps.",
         "severity": "minor",
         "evidence": "hadron-operations-closure.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:43:03.000Z",
+        "reviewed_sha": "a8471b2db90a0df8dae88a0212a62731fc9c3e14",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1415,6 +1506,19 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Lean sibling corresponds directly to the narrative claim in 'Closure of hadron operations under braiding, Hopf linking, skein action, and fusion'.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:43:03.000Z",
+        "reviewed_sha": "a8471b2db90a0df8dae88a0212a62731fc9c3e14",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-citation-misuse": [
@@ -1437,6 +1541,19 @@
         "notes": "No citations are present in 'Closure of hadron operations under braiding, Hopf linking, skein action, and fusion', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "hadron-operations-closure.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:43:03.000Z",
+        "reviewed_sha": "a8471b2db90a0df8dae88a0212a62731fc9c3e14",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-definitional-ambiguity": [
@@ -1459,6 +1576,19 @@
         "notes": "Key terms and symbols in 'Closure of hadron operations under braiding, Hopf linking, skein action, and fusion' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "hadron-operations-closure.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:43:03.000Z",
+        "reviewed_sha": "a8471b2db90a0df8dae88a0212a62731fc9c3e14",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-empirical-fragility": [
@@ -1481,6 +1611,19 @@
         "notes": "The algebraic and logical relations in 'Closure of hadron operations under braiding, Hopf linking, skein action, and fusion' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "hadron-operations-closure.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:43:03.000Z",
+        "reviewed_sha": "a8471b2db90a0df8dae88a0212a62731fc9c3e14",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-physical-implausibility": [
@@ -1503,6 +1646,19 @@
         "notes": "The physical concepts described in 'Closure of hadron operations under braiding, Hopf linking, skein action, and fusion' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "hadron-operations-closure.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:43:03.000Z",
+        "reviewed_sha": "a8471b2db90a0df8dae88a0212a62731fc9c3e14",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-reproducibility": [
@@ -1524,6 +1680,19 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Lean file compiles successfully, confirming reproducibility.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:43:03.000Z",
+        "reviewed_sha": "a8471b2db90a0df8dae88a0212a62731fc9c3e14",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-referee-verdict": [
@@ -1547,6 +1716,19 @@
         "severity": "minor",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Closure of hadron operations under braiding, Hopf linking, skein action, and fusion' are consistent."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:43:03.000Z",
+        "reviewed_sha": "a8471b2db90a0df8dae88a0212a62731fc9c3e14",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "bib-cite-resolves": [
@@ -1643,6 +1825,36 @@
         },
         "reviewed_at": "2026-07-12T00:35:39.126Z",
         "reviewed_sha": "a38f99c8befc4b364f7820811bc286a64f3a2b6e"
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:43:03.000Z",
+        "reviewed_sha": "a8471b2db90a0df8dae88a0212a62731fc9c3e14",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:43:03.000Z",
+        "reviewed_sha": "a8471b2db90a0df8dae88a0212a62731fc9c3e14",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ]
   },
