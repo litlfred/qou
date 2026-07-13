@@ -8,8 +8,8 @@
     "lean": "../qou/content/quantum-observable-universe/lean/QOU/Braiding/TrMHopfSigma1SqClosedForm.lean"
   },
   "source_hashes": {
-    "md": "2a6ccc529c6b",
     "ts": "594d979e3907",
+    "md": "2a6ccc529c6b",
     "lean": "71102bd2d813"
   },
   "criteria": {
@@ -832,6 +832,21 @@
         "reviewed_sha": "d425b4347e9353ba8ea2a35048d0b289e62d9594",
         "severity": "major",
         "evidence": "content/quantum-observable-universe/lean/QOU/Braiding/TrMHopfSigma1SqClosedForm.lean:73: archimedean Real.* in categorical chapter — -- Now both sides are in terms of `Real.sqrt q`. Let u := Real.sqrt q. | content/quantum-observable-universe/lean/QOU/Braiding/TrMHopfSigma1SqClosedForm.lean:74: archimedean Real.* in categorical chapter — set u := Real.sqrt q with hu_def | content/quantum-observable-universe/lean/QOU/Braiding/TrMHopfSigma1SqClosedForm.lean:46: archimedean tactic in categorical chapter — /-- Hypothesis: q is in the Wenzl positivity regime (q > 1). -/ | content/quantum-observable-universe/lean/QOU/Braiding/TrMHopfSigma1SqClosedForm.lean:83: archimedean tactic in categorical chapter — have hu_denom : u ^ 4 + u ^ 2 ≠ 0 := by positivity"
+      },
+      {
+        "field_hash": {
+          "ts": "594d979e3907",
+          "md": "2a6ccc529c6b",
+          "lean": "71102bd2d813"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "human",
+          "id": "litlfred"
+        },
+        "reviewed_at": "2026-07-13T12:14:53Z",
+        "reviewed_sha": "d539da73180d5888f4a9dc765b90a0efbf32510d",
+        "notes": "Owner-directed dispensation (directive \"can we address those QA issues\", 2026-07-13); transcribed by agent from source inspection, owner to confirm in PR review. Closed form of the Hopf-link Markov trace tr_M(sigma_1^2) is expressed in Real.sqrt q (via rpow bridges) with `hq_pos`/`hq_nonneg`. The sqrt(q) is intrinsic to the closed form; genuine archimedean specialisation."
       }
     ],
     "q-usage-positivity-implicit": [

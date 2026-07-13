@@ -7,8 +7,8 @@
     "md": "../qou/content/quantum-observable-universe/braids-and-knots/figure-eight-reeb-rotation-proof.md"
   },
   "source_hashes": {
-    "md": "727b59d9885c",
-    "ts": "7638a08d534e"
+    "ts": "7638a08d534e",
+    "md": "7a9c904c2fc1"
   },
   "criteria": {
     "bib-cite-resolves": [
@@ -797,6 +797,20 @@
         "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554",
         "severity": "major",
         "evidence": "content/quantum-observable-universe/braids-and-knots/figure-eight-reeb-rotation-proof.md:102: This proves the unit-modulus claim, with the rotation angle determined by the closed-form trace of Step 3. At $q = 1$ the trace is $-1$, so $\\theta = 2\\pi/3$ exactly (the eigenvalues are the primitive cube roots of unity); at the substrate value of $q$ the angle evaluates to $\\theta \\approx 117.09^{\\circ}$. The eigenvalue degenerates to $\\lambda = 1$ ($\\theta = 0$) exactly at the golden endpoints $q \\in \\{\\varphi^{-1}, \\varphi\\}$, where $\\mathrm{tr}(M_{4_1}) = 2$, and the boundary value $\\theta = \\pi$ is never attained on the real axis since $\\mathrm{tr}(M_{4_1}) + 2$ is a nonzero square. $\\square$"
+      },
+      {
+        "field_hash": {
+          "ts": "7638a08d534e",
+          "md": "7a9c904c2fc1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "human",
+          "id": "litlfred"
+        },
+        "reviewed_at": "2026-07-13T12:14:53Z",
+        "reviewed_sha": "d539da73180d5888f4a9dc765b90a0efbf32510d",
+        "notes": "Owner-directed dispensation (directive \"can we address those QA issues\", 2026-07-13); transcribed by agent from source inspection, owner to confirm in PR review. Proof narrative evaluates the figure-eight (4_1) Reeb trace at the substrate modulus q_0 ~ 1.10998 to exhibit the unit-modulus / rotation-angle value. The fixed-q_0 mention is the intended archimedean specialisation of the closed-form trace, not a leak."
       }
     ],
     "q-usage-archimedean-in-categorical-chapter": [

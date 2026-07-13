@@ -8,8 +8,8 @@
     "lean": "../qou/content/quantum-observable-universe/braids-and-knots/figure-eight-reeb-rotation.lean"
   },
   "source_hashes": {
-    "md": "a9f5d675179f",
     "ts": "3916b2547bf3",
+    "md": "fa045a6f2807",
     "lean": "2bed79e14e43"
   },
   "criteria": {
@@ -833,6 +833,21 @@
         "reviewed_sha": "d425b4347e9353ba8ea2a35048d0b289e62d9594",
         "severity": "major",
         "evidence": "content/quantum-observable-universe/braids-and-knots/figure-eight-reeb-rotation.lean:194: archimedean tactic in categorical chapter — linarith"
+      },
+      {
+        "field_hash": {
+          "ts": "3916b2547bf3",
+          "md": "fa045a6f2807",
+          "lean": "2bed79e14e43"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "human",
+          "id": "litlfred"
+        },
+        "reviewed_at": "2026-07-13T12:14:53Z",
+        "reviewed_sha": "d539da73180d5888f4a9dc765b90a0efbf32510d",
+        "notes": "Owner-directed dispensation (directive \"can we address those QA issues\", 2026-07-13); transcribed by agent from source inspection, owner to confirm in PR review. Reeb rotation proposition: the trace-equals-2 / unit-modulus statement is genuinely real-line (rotation angle), proved via `linarith` on a real factorisation with a real hypothesis `hq`. Intrinsically archimedean."
       }
     ],
     "q-usage-positivity-implicit": [

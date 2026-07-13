@@ -7,8 +7,8 @@
     "md": "../qou/content/quantum-observable-universe/braids-and-knots/figure-eight-reeb-theta-value.md"
   },
   "source_hashes": {
-    "md": "41cabb1c990b",
-    "ts": "8897cc180605"
+    "ts": "8897cc180605",
+    "md": "7416f8538017"
   },
   "criteria": {
     "voice-status-leak": [
@@ -355,6 +355,20 @@
         "reviewed_sha": "d425b4347e9353ba8ea2a35048d0b289e62d9594",
         "severity": "major",
         "evidence": "content/quantum-observable-universe/braids-and-knots/figure-eight-reeb-theta-value.md:11: At the substrate modulus $q_0 \\approx 1.10998$ the same trace evaluates to $\\mathrm{tr}M_{4_1}(q_0) \\approx -0.91068$, giving"
+      },
+      {
+        "field_hash": {
+          "ts": "8897cc180605",
+          "md": "7416f8538017"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "human",
+          "id": "litlfred"
+        },
+        "reviewed_at": "2026-07-13T12:14:53Z",
+        "reviewed_sha": "d539da73180d5888f4a9dc765b90a0efbf32510d",
+        "notes": "Owner-directed dispensation (directive \"can we address those QA issues\", 2026-07-13); transcribed by agent from source inspection, owner to confirm in PR review. Remark reports the numerical value of the 4_1 Reeb trace at the substrate modulus q_0 ~ 1.10998 -- an explicit archimedean-specialisation remark on the closed form. The q_0 pin is the point of the remark, not a leak."
       }
     ],
     "q-usage-archimedean-in-categorical-chapter": [
