@@ -102,7 +102,13 @@ collapse of `θ_λ` but an anchor inversion.)
    (`split/ΔE_C = 0.838 ± 0.059`) shows the split follows the continuum Coulomb
    `Z(Z−1)/A^{1/3}` scaling, which a fixed 1/3 fails at ⁷Li/⁷Be (2.2×). The
    honest open object: derive `~0.84·α·Z(Z−1)/R(A)` from the categorical EM
-   (α_EM + a derived radius law).
+   (α_EM + a derived radius law). **Attempted 2026-07-13 (R2-c): PARTIAL** —
+   `split = (3/5)·α·ΔZ(Z−1)·m_π/A^{1/3}` (pion-Compton radius `R = λ̄_π·A^{1/3}`,
+   CAL-3 length, zero fitted constants) gives `split/pred = 0.985 ± 0.069`
+   across all 8 pairs, superseding both fixed-1/3 and pairwise tanh on scaling;
+   the underived steps are the Yukawa packing selection (`R_unit = λ̄_π` at
+   coefficient 1) and the volume→radius extensivity identification —
+   [`2026-07-13-mirror-split-continuum-em-derivation-attempt.md`](../audits/2026-07-13-mirror-split-continuum-em-derivation-attempt.md).
 
 ## Session cross-refs
 
