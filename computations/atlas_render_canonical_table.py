@@ -119,7 +119,7 @@ def render_table(witness_data: dict) -> str:
             m_unc = ame.get("atomic_mass_unc_micro_u")
             m_val = ame.get("atomic_mass_micro_u")
             if m_unc is not None and m_val is not None and m_val != 0:
-                exp_m_ppb_str = f" \\pm {(m_unc / m_val) * 1e9:.2f}"
+                exp_m_ppb_str = f" $\\pm$ {(m_unc / m_val) * 1e9:.2f}"
             
             b_unc_per_a = ame.get("binding_energy_per_A_unc_keV")
             b_total_ref = ame.get("binding_energy_total_keV")
