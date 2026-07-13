@@ -158,6 +158,17 @@ DATUM** (post-hoc shape at 4 points, degenerate identification, mirror
 open); not derived, not wired, per the anti-fit discipline. It is
 falsifiable parameter-free at A = 6: it predicts 𝒜(⁶Li) ≈ 650.
 
+> **RESOLVED 2026-07-13 (same day, R3-b): the A = 6 discriminator was run
+> and the geometric law BREAKS.** Measured 𝒜(⁶Li) = 79.86 (and
+> 𝒜(⁵Li) = 64.56) vs the predicted ≈ 650 (≈ 202 at A = 5) — the per-step
+> ratio collapses from ~3.2 to 1.02–1.24 past A = 4; the carrier
+> m_e·Σ y·dim·|Δθ| saturates at ≈ 0.40–0.45 MeV for A = 4, 5, 6. The law
+> is a 4-point artifact (scope-(a): the A ≤ 4 absolute agreement stands
+> as a numerical fact; ingredients are not excluded). This §6 pattern
+> must be read as **A ≤ 4 only**; the §4 scalar-𝒜 refutation is
+> unaffected (dispersion only grew). See
+> [`2026-07-13-li6-h18-amplification-discriminator.md`](2026-07-13-li6-h18-amplification-discriminator.md).
+
 ## 7. Honest classification
 
 | item | verdict |
@@ -180,6 +191,9 @@ formula.
    H₁₈ θ_λ vectors; predicted 𝒜 ≈ 650 under e^{Vol/2π}, ≈ 605 under π,
    ≈ 630 under μ₀/m_e — a 50-dps θ_λ extraction at H₁₈ separates them).
    Requires the ⁶Li chi/θ witnesses (long compute; tee-log discipline).
+   **[DONE 2026-07-13 — outcome: BREAKS; measured 𝒜(⁶Li) = 79.9, no
+   candidate within a factor 7; the ratio hunt closes as a package. See
+   the discriminator audit linked in §6.]**
 2. **Connect to the jet-filtration weight w_n(K)** (2026-07-03 audit,
    option 2): a per-nucleon geometric factor is exactly what a
    q-difference kernel `G(qx;q) = R(q,x)G(x;q)` produces; test whether a
