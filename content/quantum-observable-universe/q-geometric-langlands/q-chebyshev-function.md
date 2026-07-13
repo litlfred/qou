@@ -1,4 +1,7 @@
-We define the :defterm[$q$-Chebyshev function]{#q-chebyshev-function} as the partial sum of the $q$-von Mangoldt function over the geometry:
+To track how defect weight accumulates by norm across the spectral fiber — a
+number-theoretic accountant of matter — one deforms the classical
+prime-counting apparatus. The :defterm[$q$-Chebyshev function]{#q-chebyshev-function} is the partial sum of the $q$-von Mangoldt
+function over the geometry:
 
 $$
 \psi_q(X) = \sum_{\substack{\mathfrak{m} \in \mathrm{MaxSpec}(\mathcal{O}_q(\mathcal{B})) \\ N(\mathfrak{m}) \le X}} \Lambda_q(\mathfrak{m}).

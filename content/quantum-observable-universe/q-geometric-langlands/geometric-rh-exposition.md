@@ -1,5 +1,22 @@
 The Frobenius eigenvalues must satisfy $|\alpha_i| = q^{1/2}$. We establish the geometric origin of this constraint.
 
+**Concrete example: $\mathrm{SU}(2)$.** In the archimedean
+realisation $\mathbf{C} = \mathbf{Rep}(\mathrm{SU}(2))$, the
+adjoint representation $\mathrm{Ad}(A)$ is the 3-dimensional real
+representation on $\mathfrak{su}(2)$. The Frobenius form
+$\lambda = \mathrm{tr}$ gives the Killing inner product, and the
+flatness condition $c_1 = c_2 = 0$ says the $\mathrm{SU}(2)$
+connection has zero curvature on the adjoint bundle. Since
+$\mathrm{SU}(2)$ is compact, the holonomy of a flat connection lies
+in $\mathrm{U}(1) \subset \mathrm{SU}(2)$: any closed loop yields
+a pure phase $e^{i\phi}$. The Frobenius eigenvalues are
+$\alpha = q^{1/2} e^{i\phi}$, with $|\alpha| = q^{1/2}$ by
+construction --- the critical-line property is visibly forced by the
+compactness of the gauge group.
+
+With this concrete picture in mind, the general mechanism unfolds
+in three steps.
+
 **Step 1: Global coherence demands vanishing Chern classes.**
 The multiplicative integral computes a path-ordered product of holonomy matrices along the Reeb flow. This product must be globally well-defined. The nonabelian Stokes theorem dictates that if the curvature $F_\nabla$ of the connection on the adjoint bundle $\mathrm{Ad}(A)$ were nonzero, different triangulations of a bounding surface would yield different path-ordered products. Consistency requires $F_\nabla = 0$, implying the Chern classes vanish: $c_1(\mathrm{Ad}(A)) = 0$ and $c_2(\mathrm{Ad}(A)) = 0$. The first Chern class controls path-independence; the second precludes topological phases around non-contractible cycles.
 
@@ -11,8 +28,16 @@ Algebraically, this corresponds to the Castelnuovo--Severi argument. The Frobeni
 **Step 3: Unitarity locks the zeros to the critical line.**
 The eigenvalues $\alpha_i$ of the Frobenius endomorphism are the reciprocal roots of the local zeta function $Z_q(t)$. Under $t = q^{-s}$, the condition $|\alpha_i| = q^{1/2}$ forces all zeros of $Z_q(s)$ to satisfy $\mathrm{Re}(s) = 1/2$. If $\alpha_i = q^{1/2} e^{i\phi}$, then $q^{-s} = \alpha_i^{-1}$ gives $s = 1/2 - i\phi/\ln q$. This establishes the Riemann hypothesis for Bring's curve over $\mathbb{F}_q$.
 
-In the archimedean realisation $\mathbf{C} = \mathbf{Rep}(\mathrm{SU}(2))$, the adjoint representation $\mathrm{Ad}(A)$ is the 3-dimensional real representation on $\mathfrak{su}(2)$. The Frobenius form $\lambda = \mathrm{tr}$ provides the Killing inner product. Flatness requires the $\mathrm{SU}(2)$ connection to have zero curvature. Because $\mathrm{SU}(2)$ is compact, flat holonomy lies in $\mathrm{U}(1) \subset \mathrm{SU}(2)$, yielding a pure phase $e^{i\phi}$. The Frobenius eigenvalues become $\alpha = q^{1/2} e^{i\phi}$, satisfying $|\alpha| = q^{1/2}$. Compactness of the gauge group directly forces the critical-line property.
-
-Non-trivial zeros of the zeta function represent eigenvalues of the Reeb flow. Each eigenvalue defines a fundamental oscillation mode of the substrate. The unitary constraint ensures no mode grows or decays. If an eigenvalue drifted off the critical line, holonomy around the prime orbit would cease to be unitary, the Chern classes would become nonzero, and the multiplicative integral would develop an anomaly. Global coherence would fail.
-
-Prime distribution cannot contain unconstrained error terms because the geometry forbids it. Vanishing Chern classes imply flat connections, flat connections imply unitary holonomy, and unitary holonomy confines zeros to $\mathrm{Re}(s) = 1/2$. This geometric chain enforces the quantum Riemann hypothesis at the $q$-scale. 
+**The physical picture.** The non-trivial zeros of the zeta function
+are eigenvalues of the Reeb flow, each corresponding to a fundamental
+oscillation mode of the substrate; the unitary constraint means no
+mode grows or decays, so the substrate sits in a *critical phase* of
+exact balance between order and disorder
+([unitary stability](#rem:unitary-stability)). The chain of
+implications --- vanishing Chern classes $\to$ flatness of the
+connection $\to$ unitarity of the holonomy $\to$ confinement of zeros
+to $\mathrm{Re}(s) = 1/2$ --- is thus what forbids wild, unconstrained
+error terms in the prime distribution. Whether this local rigidity
+survives the classical limit $q \to 1$ is precisely the content of the
+classical Riemann hypothesis
+([Conjecture](#conj:classical-riemann-hypothesis)).

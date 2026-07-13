@@ -1,1 +1,12 @@
-We verify that the $q \to 1$ degeneration recovers familiar geometry and provides a clear physical structure. Specialising at $q = 1$ recovers the classical Geometric Langlands equivalence of Beilinson–Drinfeld, tracing the degeneration of $q$-opers and $q$-Hecke eigensheaves to their classical counterparts. The perpetual obstruction refines this picture: the obstruction classes $\kappa_n$ vanish identically at $q = 1$ but persist on the full non-torsion locus. This forces the correspondence to remain intrinsically $q$-deformed away from the classical fibre. The equivalence acts physically as the observability condition supplied by the fibre functor $\tau$.
+Having stated the conjecture on the non-torsion locus, we
+verify that the $q \to 1$ degeneration recovers familiar geometry and
+read the resulting structure physically. The classical-limit conjecture asserts that
+specialising at $q = 1$ recovers the classical Geometric Langlands
+equivalence of Beilinson–Drinfeld, and an accompanying remark sketches how the degeneration of $q$-opers and
+$q$-Hecke eigensheaves recovers their classical counterparts. A further remark refines this picture: the
+obstruction classes $\kappa_n$ vanish identically at $q = 1$ but persist
+on the full non-torsion locus, forcing the correspondence to be
+intrinsically $q$-deformed away from the classical fibre. The section
+closes with two interpretive remarks, which read the equivalence as the observability
+condition that the fibre functor $\tau$ supplies for a quantum
+observable universe.

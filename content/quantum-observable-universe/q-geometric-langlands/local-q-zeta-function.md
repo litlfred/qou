@@ -1,4 +1,8 @@
-We define the :defterm[local $q$-zeta function]{#local-q-zeta-function} of Bring's curve $\mathcal{B}$ as the generating function for point counts over finite extensions:
+The Frobenius eigenvalues of Bring's curve are the arithmetic invariants
+whose absolute values the geometric Riemann hypothesis constrains; the
+local $q$-zeta function packages them as a single generating function.
+Define the :defterm[local $q$-zeta function]{#local-q-zeta-function} of Bring's curve $\mathcal{B}$ as
+the generating function for point counts over finite extensions:
 
 $$
 Z(\mathcal{B}, t) = \exp\!\left(\sum_{n=1}^{\infty} \frac{|\mathcal{B}(\mathbb{F}_{q^n})|}{n} t^n\right) = \frac{P(t)}{(1-t)(1-qt)},
