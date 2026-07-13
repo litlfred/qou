@@ -150,4 +150,79 @@ theorem exists_pure_bar_even (zArg S : ℝ → ℝ)
   rw [hphase]
   simp
 
+/-! ## The binding channel: `S = Im 𝔙(u(q₀))` — conditional composition
+
+`conj:binding-qbeta-complex-volume` identifies the bar-odd/decay face with
+the imaginary (Chern–Simons) part of the deformed complex volume
+`𝔙(u) = Vol(u) + i·CS(u)` evaluated at the substrate deformation
+`u = u(q₀)` (log meridian holonomy).  Per the 2026-07-11 conditional
+audit, the deformed volume itself is a *theorem* for `4₁`
+(Ohtsuki; Murakami–Yokota) and explicitly computable via Neumann–Zagier;
+the open inputs are the substrate → deformation map `u(q₀)` and the
+channel identity `S = Im 𝔙(u(q₀))`.  The class below carries exactly
+those inputs — nothing provable-outright, no instance fabricated — and
+the theorems after it derive the two-conjecture composition: **`Φ_b`
+touches binding ONLY through this channel**, as the precise conditional
+statement that the fibre-branch `Φ_b` readout at the identified argument
+equals the deformed Chern–Simons part.
+
+-- Ref: [manuscript] conj:binding-qbeta-complex-volume; docs/audits/2026-07-11-complex-volume-conditional-mass-binding.md
+-/
+
+/-- **The S-channel of the complex-volume conjecture (§3b class).**  Carries
+    the two open inputs of the binding side of
+    `conj:binding-qbeta-complex-volume` for the S observable:
+
+    * `u` — the substrate → deformation map (log meridian holonomy), the
+      open map every S-route converges on;
+    * `V` — the deformed complex volume `𝔙(u) = Vol(u) + i·CS(u)` (a
+      theorem for `4₁`, explicitly computable via Neumann–Zagier);
+    * `S_eq` — the channel identity: the S-leak is the imaginary
+      (Chern–Simons) part at the deformed point.
+
+    The class asserts nothing provable-outright; instances are the open
+    conjecture. -/
+-- Ref: [manuscript] conj:binding-qbeta-complex-volume
+class SDeformedVolumeChannel (S : ℝ → ℝ) where
+  /-- The substrate → deformation map `u(q₀)` (log meridian holonomy). -/
+  u : ℝ → ℂ
+  /-- The deformed complex volume `𝔙(u) = Vol(u) + i·CS(u)`. -/
+  V : ℂ → ℂ
+  /-- The channel identity `S(q₀) = Im 𝔙(u(q₀))`. -/
+  S_eq : ∀ q₀ : ℝ, 1 < q₀ → S q₀ = (V (u q₀)).im
+
+/-- **Two-conjecture composition (derived).**  Under the keystone argument
+    identification AND the S-channel of the complex-volume conjecture, the
+    fibre-branch `Φ_b` phase at the identified argument equals the deformed
+    Chern–Simons part — the precise form of "`Φ_b` touches binding only
+    through the `conj:binding-qbeta-complex-volume` channel". -/
+theorem phase_eq_im_deformed_volume (zArg S : ℝ → ℝ)
+    [h : SArgumentIdentification zArg S] [ch : SDeformedVolumeChannel S]
+    {q₀ : ℝ} (hq : 1 < q₀) :
+    phase (fibreB q₀) (zArg q₀) = (ch.V (ch.u q₀)).im := by
+  rw [h.readout q₀ hq, ch.S_eq q₀ hq]
+
+/-- **The `Φ_b` readout is the Chern–Simons phase (derived).**  Composing
+    the unimodular readout with the channel identity: at the identified
+    argument, `Φ_b = e^{i·CS(u(q₀))}`. -/
+theorem phiB_eq_cs_phase (zArg S : ℝ → ℝ)
+    [SArgumentIdentification zArg S] [ch : SDeformedVolumeChannel S]
+    {q₀ : ℝ} (hq : 1 < q₀) :
+    phiB (fibreB q₀) (zArg q₀)
+      = Complex.exp (Complex.ofReal ((ch.V (ch.u q₀)).im) * Complex.I) := by
+  rw [readout_phiB (zArg := zArg) (S := S) hq, ch.S_eq q₀ hq]
+
+/-- **Vanishing Chern–Simons point (derived, falsifiable).**  Granting both
+    classes and the two measured anchor signs, the IVT zero crossing is a
+    substrate point where the deformed complex volume is purely REAL — the
+    Chern–Simons part vanishes: `Im 𝔙(u(q*)) = 0`.  A geometric prediction
+    of the composed conjectures. -/
+theorem exists_cs_vanishing (zArg S : ℝ → ℝ)
+    [h : SArgumentIdentification zArg S] [ch : SDeformedVolumeChannel S]
+    {a c : ℝ} (ha : 1 < a) (hac : a ≤ c) (hSa : 0 < S a) (hSc : S c < 0) :
+    ∃ q ∈ Set.Icc a c, (ch.V (ch.u q)).im = 0 := by
+  obtain ⟨q, hq, hq0⟩ := exists_zero_crossing h.S_continuousOn ha hac hSa hSc
+  have hq1 : 1 < q := lt_of_lt_of_le ha hq.1
+  exact ⟨q, hq, by rw [← ch.S_eq q hq1, hq0]⟩
+
 end QOU.QBeta.PhiBSArgumentIdentification

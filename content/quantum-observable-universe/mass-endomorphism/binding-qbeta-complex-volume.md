@@ -125,6 +125,30 @@ The holomorphic tie hypothesis demands that a **single** Askey-Wilson three-term
 
 **Constraint on the lift (the 1jrh gap):** The categorical $\sigma_3$-lift $\Lambda \in H_4(q)$ of the decay operator must supply genuine $c_4$ rungs that satisfy this sign constraint (`QOU.QBeta.StageC.StageCSigma3Lift`). Any valid lift that leads to a sign-incompatible Casoratian $W_3 \le 0$ (given $W_2 > 0$) refutes the one-recurrence identification, serving as a parameter-free kill-test on candidate objects.
 
+## The S channel through $\Phi_b$ (conditional wiring)
+
+For the bar-odd S observable ($S = c_3 + \mathrm{Vol}(4_1)$), the
+conjecture's decay side takes the concrete form
+$S(q_0) = \mathrm{Im}\,\mathfrak{V}\bigl(u(q_0)\bigr)$: the Chern–Simons
+part of the **deformed** complex volume at the substrate deformation
+$u(q_0)$ (log meridian holonomy). The deformed volume itself is a
+theorem for $4_1$ and explicitly computable via Neumann–Zagier; the two
+open inputs — the map $u(q_0)$ and the channel identity — are carried by
+the class `QOU.QBeta.PhiBSArgumentIdentification.SDeformedVolumeChannel`.
+Composed with the argument-identification keystone of
+([algebraic-geometric dilogarithm equivalence](../mass-theory/algebraic-geometric-dilog-equivalence.md)),
+three statements are derived unconditionally from the two classes
+(`phase_eq_im_deformed_volume`, `phiB_eq_cs_phase`,
+`exists_cs_vanishing`): the fibre-branch $\Phi_b$ phase at the
+identified argument **is** the deformed Chern–Simons part; the $\Phi_b$
+readout is the pure phase $e^{i\,\mathrm{CS}(u(q_0))}$; and the measured
+sign flip of $S$ between the anchors forces a substrate point $q^{*}$
+where $\mathrm{Im}\,\mathfrak{V}(u(q^{*})) = 0$ — the deformed complex
+volume purely real, a falsifiable geometric prediction of the composed
+conjectures. This makes precise that $\Phi_b$ touches binding **only**
+through this channel: remove the `SDeformedVolumeChannel` hypothesis and
+no binding statement about $\Phi_b$ survives.
+
 ## Computational corroboration (this PR)
 
 The two channels really construct distinct real components of one object: the
