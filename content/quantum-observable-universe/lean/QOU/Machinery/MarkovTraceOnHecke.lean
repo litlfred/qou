@@ -233,6 +233,15 @@ this file does not yet carry:
    the *same* verified source — do **not** hand-write the table; generate it
    from `gram.py`/`pyhecke` and cross-check `tr_M(u·v) = tr_M(v·u)` over
    `ℚ(z,h)` before formalizing, exactly as the H₃ table was verified.
+   **Reducer caveat (verified 2026-07-13).** `gram.py`'s `_reduce_nf` is
+   H₃-specific: it applies only the Hecke-square and *adjacent* braid moves,
+   which suffice for H₃ (whose two generators σ₀,σ₁ are adjacent). H₄ also
+   needs the non-adjacent commuting relation `σ₀σ₂ = σ₂σ₀`, and even
+   Hecke + commute + adjacent-braid is **not confluent** — a BFS over that
+   rule set yields 60+ irreducible words, not the 24 = 4! GB normal forms.
+   Generate the H₄ table with the proper confluent reducer (hecke-engine's
+   `gb_nf_reducer.rs`, Rust), not a naive local-rewriting Python
+   reimplementation.
 
 2. **The `Ind_{H₃}^{H₄}` Markov stabilization.** The general-`n` trace is built
    from the H₃ trace by the Markov induction/stabilization the (M3) law
