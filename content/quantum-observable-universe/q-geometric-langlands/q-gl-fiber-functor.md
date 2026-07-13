@@ -2,7 +2,7 @@ Under the hypotheses of the
 [$q$-Geometric Langlands conjecture](#conj:q-geometric-langlands),
 the Tannakian rigidity of the fibre functor $\tau$ pins the
 correspondence: it forces $\tau$ to determine the equivalence
-$\mathbb{L}_q$ uniquely up to natural isomorphism,
+$\mathbb{L}_q$ uniquely up to natural isomorphism:
 
 $$
   \mathbb{L}_q(\mathcal{M})(\mathcal{L}_q)
