@@ -85,11 +85,11 @@ the conventional 3-manifold-theory name $\mathrm{Vol}_{\mathrm{hyp}}(K)$.
 This is **borrowed, conventional, and used only as naming**. The QOU
 mass identity above does not depend on the volume conjecture in any
 way: it is a finite-sum categorical statement, terminated by the
-Archimedean functor.
+Archimedean realisation.
 
 ### Concluding identity
 
-Combining the categorical leg and the Archimedean functor,
+Combining the categorical leg and the Archimedean realisation,
 
 $$
 B(\mathfrak{H}) \;=\; m_e \cdot \nu_{\mathrm{SDP}} \cdot \mathrm{tr}_M(T_w) \big|_{q = q_0}.

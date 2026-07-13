@@ -39,7 +39,7 @@ namespace QOU.AlgebraicSubstrate
     * `strict_separation` — the strict inclusion `P ⊊ BQP_q` for
       every positive Reeb infinitesimal `ε`, AND
     * `noncompressible` — non-compressibility of this strict
-      inclusion under the standard-part functor `ε → 0`.
+      inclusion under the standard-part map `ε → 0`.
 
     No instance is provided: this is the honest open state of the
     conjecture (per §3b, no instance = open). The `Ow`-valuation

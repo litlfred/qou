@@ -19,7 +19,7 @@ function not available in Mathlib. This file provides:
    object; its structural identities are formalised).
 
 Scope: this does **not** construct `Φ_b`, and does **not** claim `Φ_b` is the
-canonical archimedean functor of the decay step — that is the open f-map (a
+canonical archimedean realisation of the decay step — that is the open f-map (a
 §3b-cond conditional). See
 `docs/scope/2026-07-06-qbeta-fmap-torus-knot-cs-phase-geometry.md` and
 `docs/audits/2026-07-06-qbeta-faddeev-phi-b-modular-double-accuracy.md`.

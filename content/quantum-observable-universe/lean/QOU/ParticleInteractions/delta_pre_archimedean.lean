@@ -9,7 +9,7 @@ import Mathlib.Tactic.NormNum
 The proton/neutron mass *difference* observables — the binding energy
 `B(K)` and the β-decay Q-value `Q_β = |Δ(net)|·𝔈₀` — are formed as a
 **categorical delta** `Δ = x_n − x_p` at the **fibre level**, *before*
-the archimedean functor `τ` is applied. This file proves the structural
+the archimedean realisation `τ` is applied. This file proves the structural
 reason that the framework's folding/unfolding moves (the bar involution
 `q ↦ q⁻¹`, the Hecke `σ ↔ σ⁻¹` reduction, Type-B folding) are legitimate
 for these difference observables, but would NOT be legitimate if one
@@ -23,7 +23,7 @@ coefficient ring; no reality / archimedean assumption):
    Hence "fold then delta = delta then fold" — the fold can be applied
    either side of the categorical subtraction.
 
-2. **The archimedean functor is NONLINEAR**, so it does NOT commute
+2. **The archimedean realisation is NONLINEAR**, so it does NOT commute
    with the delta: in general `τ(x_n) − τ(x_p) ≠ τ(x_n − x_p)`. We
    witness this with a concrete nonlinear `τ` (squaring) for which the
    two orders differ — `archimedean_does_not_commute_sub`.
@@ -69,9 +69,9 @@ theorem fold_commutes_sub (f : FibreFold R) (xn xp : R) :
     f.toFun (xn - xp) = f.toFun xn - f.toFun xp := by
   rw [sub_eq_add_neg, f.map_add, f.map_neg, ← sub_eq_add_neg]
 
-/-- **The archimedean functor does NOT commute with the delta.** A
+/-- **The archimedean realisation does NOT commute with the delta.** A
     nonlinear `τ` (here squaring, standing in for the Li_2^q-tower /
-    product / 𝔈₀-scaling structure of the real archimedean functor)
+    product / 𝔈₀-scaling structure of the real archimedean realisation)
     satisfies `τ(xn) − τ(xp) ≠ τ(xn − xp)` in general. We exhibit a
     concrete witness over `ℤ`: with `τ = (·)²`, `xn = 2`, `xp = 1`,
     `τ(2) − τ(1) = 3` but `τ(2 − 1) = 1`.

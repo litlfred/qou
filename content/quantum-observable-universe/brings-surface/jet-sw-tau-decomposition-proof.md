@@ -7,7 +7,7 @@ exhaustive — every vertical component of the connection lives at some finite j
 degree — so the surface-ordered integral is the (convergent) sum of its jet
 components.
 
-The Archimedean functor $\tau$ is additive on the graded pieces of the jet
+The Archimedean realisation $\tau$ is additive on the graded pieces of the jet
 filtration (it is exact on the associated graded of the prolongation tower), so
 it commutes with the degree sum:
 

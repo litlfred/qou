@@ -6,7 +6,7 @@ export default definition({
     ref: "qou:QOU.AppendixSurreals.standardPart",
     validation: "not_checked",
   },
-  title: "Standard-part functor $\\mathrm{st} : \\mathbf{No}_{\\mathrm{fin}} \\to \\mathbb{R}$",
+  title: "standard-part map $\\mathrm{st} : \\mathbf{No}_{\\mathrm{fin}} \\to \\mathbb{R}$",
   tags: [
     "surreal-numbers",
     "standard-part",

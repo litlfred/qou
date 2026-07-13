@@ -22,7 +22,7 @@ $$
 \ordw\bigl(L(\mathcal{E}_q, 1 + \delta) / \delta^r\bigr) = 0 \qquad (\text{no extra vanishing beyond the rank}).
 $$
 
-The order of vanishing of $L(\mathcal{E}_q, s)$ at $s = 1$ equals $r$, as a literal identity of surreal $\omega$-orders. Classical BSD is recovered by applying the standard-part functor ([calculus up to $\varepsilon$](#rem:calculus-up-to-epsilon)): $\mathrm{st}\bigl(-\ordw(L)\bigr) = r$ gives the classical rank formula (with $\delta = \omega^{-1}$ infinitesimal, $L \asymp \delta^r = \omega^{-r}$ has $\ordw(L) = -r$; the classical order of vanishing $r$ is the negation).
+The order of vanishing of $L(\mathcal{E}_q, s)$ at $s = 1$ equals $r$, as a literal identity of surreal $\omega$-orders. Classical BSD is recovered by applying the standard-part map ([calculus up to $\varepsilon$](#rem:calculus-up-to-epsilon)): $\mathrm{st}\bigl(-\ordw(L)\bigr) = r$ gives the classical rank formula (with $\delta = \omega^{-1}$ infinitesimal, $L \asymp \delta^r = \omega^{-r}$ has $\ordw(L) = -r$; the classical order of vanishing $r$ is the negation).
 
 The BSD bound generalizes the RH bound ([RH surreal bound](#rem:rh-surreal-bound)) from the trivial rank-zero case (Dedekind $\zeta$) to higher ranks. RH is the $r = 0$ specialization where no extra vanishing is allowed beyond the pole of $\zeta$. The surreal squeeze gives the same strict inequality at each rank: every drift beyond rank-prescribed vanishing is forbidden by the $\varepsilon^{-1} > \varepsilon^3$ separation of orders.
 
