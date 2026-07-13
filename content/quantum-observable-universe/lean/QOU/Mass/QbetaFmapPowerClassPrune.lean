@@ -3,7 +3,7 @@
 
 Formalizes the **Arm-2** invariant of the Q_β f-map *power-class pincer* stated
 (before any probe) in the scope doc
-[`docs/scope/2026-07-06-qbeta-fmap-power-class-pincer-scope.md`](../../../../../../docs/scope/2026-07-06-qbeta-fmap-power-class-pincer-scope.md)
+[`docs/scope/2026-07-06-qbeta-fmap-power-class-pincer-scope.md`](../../../../../docs/scope/2026-07-06-qbeta-fmap-power-class-pincer-scope.md)
 (beans `571x`/`ebf5`/`2x2i`). The hypothesis class under attack is the minimal
 non-linear f-map, the **pure power monomials** `f(Δtr_M) = A·(Δtr_M)^m`,
 `m ∈ {1,…,6}` (C13 refuted only the *linear / bar-even* seedings; power maps are
