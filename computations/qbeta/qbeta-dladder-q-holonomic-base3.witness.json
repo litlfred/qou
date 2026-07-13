@@ -1,0 +1,45 @@
+{
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-07-13T10:47:18.556117+00:00",
+  "commitSha": "0931d08b90efa226526f53928f731abe5754e0aa",
+  "assertions": [
+    {
+      "name": "q_holonomic_base3_recurrence_absent",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "exact null space trivial for the 3-adic-principled bases {3, 1/3} (and classical k) through (r≤3,E≤3) ⇒ D(ũ) is not q-holonomic at accessible order in the structurally-indicated base"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 876,
+  "computation": "qbeta-dladder-q-holonomic-base3",
+  "scriptFile": "qbeta_dladder_q_holonomic_base3_probe.py",
+  "scriptHash": "f2e6147e15d0",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Exact q-holonomic (q-difference) recurrence test for the bar-odd D-ladder d_k=a_k+b_k√3, base fixed by the observed 3-power denominators (v_3(den d_k)~1.5k). Coefficients polynomial in X^k (X=3 principal, 1/3 reciprocal, classical k control), genuine ℚ(√3) coupling, exact rational null space (no floats/PSLQ/fit). A nontrivial kernel = an exact q-difference closed form for D(ũ); empty across bases tightens the resurgent/non-q-holonomic reading. Follows PR #3737 (coupled-recurrence negative) + #3716; sibling #3683 does κ-tower Borel (distinct object). Scope-(a); nothing wired.",
+  "contentBlock": "prop:phi-b-unitary-bar-odd",
+  "data": {
+    "KMAX": 21,
+    "ORD": 43,
+    "bases_tested": {
+      "3": "none (r≤3,E≤3, prime-certified full rank)",
+      "1/3": "none (r≤3,E≤3, prime-certified full rank)",
+      "k-classical": "none (r≤3,E≤3, prime-certified full rank)"
+    },
+    "verdict": "NO q-holonomic recurrence in base {3,1/3} (+ classical k) up to (r≤3,E≤3)"
+  }
+}

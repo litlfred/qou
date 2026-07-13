@@ -54,6 +54,35 @@ negative here further **constrains** the resurgent class; a positive would have
 been an exact closed-form characterization. Either way it is decisive and
 exact.)*
 
+## Result 1b — not q-holonomic either, in the base its own denominators indicate
+
+A polynomial-in-`k` recurrence (Results 1 + #3716) is the wrong class for a
+q-Gevrey series; the natural object is a **q-difference (q-holonomic)**
+recurrence, coefficients polynomial in `X^k`. The base is not free — it is fixed
+by the arithmetic: the exact `d_k` have **3-power-dominated denominators**
+(`v₃(den d_k) ~ 1.5·k`, the Ohtsuki–Habiro 3-smoothness), so the
+structurally-indicated base is `X = 3`: a recurrence
+`Σ_i P_i(3^k)·d_{k-i} = 0` has coefficients `3^{k·d}` that **exactly clear** those
+denominators (at degree `E ≥ 2`, since `3^{2k}` dominates `3^{1.5k}`) — a
+mechanism a polynomial-in-`k` coefficient cannot supply.
+
+**Probe** ([`qbeta_dladder_q_holonomic_base3_probe.py`](../../computations/qbeta/qbeta_dladder_q_holonomic_base3_probe.py)):
+the same genuine-ℚ(√3)-coupled kernel with monomials `X^{k d}` in place of
+`k^d`, base `X ∈ {3, 1/3}` (the reciprocal `q ↔ q⁻¹` direction) plus the
+classical `k` control. Because the exact entries `3^{k d}` are astronomically
+large, the negative is certified by **full column rank modulo large primes**
+(full rank mod `p` ⟹ full rank over ℚ ⟹ trivial nullspace) — rigorous and cheap;
+an exact re-verification is triggered only on a rank deficiency. **No
+q-holonomic recurrence** in base `3` or `1/3` (nor classical `k`) through
+`r ≤ 3`, `E ≤ 3` (12 prime-certified full-rank cells per base).
+
+So `D(ũ)` is **not (q-)holonomic even in the base its own denominators pointed
+at** — the strongest form of the negative yet, and a genuine tightening of the
+resurgent reading: the 3-adic structure is real (Result 2) but it is *not* the
+signature of a q-difference equation. `D(ũ)`'s closed form, if any, is
+transcendental / resurgent (Écalle acceleration chain, per the corpus's
+q-Gevrey verdict), not (q-)holonomic.
+
 ## Result 2 — the exact 2-adic parity grading (headline)
 
 Writing `d_k = a_k + b_k√3` and reading the **2-adic valuation of the
