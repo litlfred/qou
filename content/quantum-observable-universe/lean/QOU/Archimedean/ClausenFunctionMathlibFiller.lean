@@ -73,6 +73,32 @@ noncomputable def Cl_2 (θ : ℝ) : ℝ :=
   unfold Cl_2
   simp
 
+/-- **Boundary lemma:** `Cl_2(π) = 0`. Each term is
+    `sin((k+1)π) = 0` (`sin` at an integer multiple of `π`). Filled in
+    per the docstring's "unconditional boundary lemmas"; needs no
+    Fourier infrastructure. -/
+@[simp] theorem Cl_2_pi : Cl_2 Real.pi = 0 := by
+  have h : ∀ k : ℕ,
+      Real.sin (((k : ℝ) + 1) * Real.pi) / ((k : ℝ) + 1) ^ 2 = 0 := by
+    intro k
+    have hc : ((k : ℝ) + 1) = ((k + 1 : ℕ) : ℝ) := by push_cast; ring
+    rw [hc, Real.sin_nat_mul_pi, zero_div]
+  unfold Cl_2
+  simp only [h, tsum_zero]
+
+/-- **Boundary lemma:** `Cl_2(2π) = 0` (the right endpoint of the
+    fundamental domain). Each term is `sin(2(k+1)π) = 0`. This is the
+    `Cl_2_two_pi` promised in the file docstring. -/
+@[simp] theorem Cl_2_two_pi : Cl_2 (2 * Real.pi) = 0 := by
+  have h : ∀ k : ℕ,
+      Real.sin (((k : ℝ) + 1) * (2 * Real.pi)) / ((k : ℝ) + 1) ^ 2 = 0 := by
+    intro k
+    have hc : ((k : ℝ) + 1) * (2 * Real.pi)
+        = ((2 * (k + 1) : ℕ) : ℝ) * Real.pi := by push_cast; ring
+    rw [hc, Real.sin_nat_mul_pi, zero_div]
+  unfold Cl_2
+  simp only [h, tsum_zero]
+
 /-- **Catalan constant carrier:** `G = Cl_2(π/2)`. The numerical
     value `G ≈ 0.91596...` is the imaginary part of the
     dilogarithm at `i = e^{iπ/2}` and gives the per-octahedron

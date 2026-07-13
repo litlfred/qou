@@ -17,7 +17,7 @@ $$
   \mathrm{Vol}(\mathcal{B}_3)\;=\;8\,\mathrm{Cl}_2(\pi/4)\;=\;8G\;\approx\;7.327724.
 $$
 
-The Lean file [`clausen-function-mathlib-filler.lean`](clausen-function-mathlib-filler.lean) provides the necessary definitions.
+The Lean library file [`QOU/Archimedean/ClausenFunctionMathlibFiller.lean`](../lean/QOU/Archimedean/ClausenFunctionMathlibFiller.lean) provides the `Cl_2` series definition and the boundary/volume carriers; the integral-side definition and derivative `Cl_2'(\theta) = -\log(2\sin(\theta/2))` are in [`QOU/Knot/Clausen.lean`](../lean/QOU/Knot/Clausen.lean) (via the fundamental theorem of calculus).
 
 See [Table 1](#tbl:clausen-function-mathlib-filler-table1-data).
 
