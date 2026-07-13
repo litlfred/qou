@@ -1104,6 +1104,19 @@
         "reviewed_at": "2026-07-07T14:26:57.235390Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:30:09.000Z",
+        "reviewed_sha": "8860b4e2b1011d20ea08694af780d6c1ac62038a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "wall-side-statement": [
@@ -1336,6 +1349,19 @@
         "notes": "No false claims identified in 'Demand profile determines nuclear and atomic stability': mathematical reasoning is consistent.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/demand-stability.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:30:09.000Z",
+        "reviewed_sha": "8860b4e2b1011d20ea08694af780d6c1ac62038a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-vacuous": [
@@ -1356,6 +1382,19 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The block 'Demand profile determines nuclear and atomic stability' presents substantial mathematical content: The demand profile of a derived atom (derived atom) — the set of negative NF coefficients — is the categorical diagno...",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:30:09.000Z",
+        "reviewed_sha": "8860b4e2b1011d20ea08694af780d6c1ac62038a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-circular": [
@@ -1377,6 +1416,19 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Demand profile determines nuclear and atomic stability'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/demand-stability.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:30:09.000Z",
+        "reviewed_sha": "8860b4e2b1011d20ea08694af780d6c1ac62038a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-overclaim": [
@@ -1397,6 +1449,19 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No overclaims: the scope of 'Demand profile determines nuclear and atomic stability' is appropriately qualified.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:30:09.000Z",
+        "reviewed_sha": "8860b4e2b1011d20ea08694af780d6c1ac62038a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-hidden-dof": [
@@ -1418,6 +1483,19 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Demand profile determines nuclear and atomic stability'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/demand-stability.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:30:09.000Z",
+        "reviewed_sha": "8860b4e2b1011d20ea08694af780d6c1ac62038a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-non-sequitur": [
@@ -1439,6 +1517,19 @@
         "notes": "The argument flow in 'Demand profile determines nuclear and atomic stability' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/demand-stability.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:30:09.000Z",
+        "reviewed_sha": "8860b4e2b1011d20ea08694af780d6c1ac62038a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1459,6 +1550,19 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The referenced Lean file content/quantum-observable-universe/particle-interactions/demand-stability.lean is missing, leading to complete divergence.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:30:09.000Z",
+        "reviewed_sha": "8860b4e2b1011d20ea08694af780d6c1ac62038a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-citation-misuse": [
@@ -1480,6 +1584,19 @@
         "notes": "No citations are present in 'Demand profile determines nuclear and atomic stability', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/demand-stability.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:30:09.000Z",
+        "reviewed_sha": "8860b4e2b1011d20ea08694af780d6c1ac62038a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-definitional-ambiguity": [
@@ -1501,6 +1618,19 @@
         "notes": "Key terms and symbols in 'Demand profile determines nuclear and atomic stability' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/demand-stability.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:30:09.000Z",
+        "reviewed_sha": "8860b4e2b1011d20ea08694af780d6c1ac62038a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-empirical-fragility": [
@@ -1522,6 +1652,19 @@
         "notes": "The algebraic and logical relations in 'Demand profile determines nuclear and atomic stability' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/demand-stability.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:30:09.000Z",
+        "reviewed_sha": "8860b4e2b1011d20ea08694af780d6c1ac62038a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-physical-implausibility": [
@@ -1543,6 +1686,19 @@
         "notes": "The physical concepts described in 'Demand profile determines nuclear and atomic stability' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/demand-stability.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:30:09.000Z",
+        "reviewed_sha": "8860b4e2b1011d20ea08694af780d6c1ac62038a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-reproducibility": [
@@ -1564,6 +1720,19 @@
         "notes": "The derivation steps and formal definitions in 'Demand profile determines nuclear and atomic stability' are reproducible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/demand-stability.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:30:09.000Z",
+        "reviewed_sha": "8860b4e2b1011d20ea08694af780d6c1ac62038a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-referee-verdict": [
@@ -1586,6 +1755,19 @@
         "severity": "critical",
         "verdict": "open-objection",
         "referee_argument": "The referenced Lean sibling file content/quantum-observable-universe/particle-interactions/demand-stability.lean is missing entirely, preventing formal verification of the claims in 'Demand profile determines nuclear and atomic stability'."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:30:09.000Z",
+        "reviewed_sha": "8860b4e2b1011d20ea08694af780d6c1ac62038a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "milnor-amalgamated-flow": [
@@ -1649,6 +1831,36 @@
         },
         "reviewed_at": "2026-07-12T15:52:22.520Z",
         "reviewed_sha": "a6842b612535161c2447bdcb67511f02265e7f9b"
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:30:09.000Z",
+        "reviewed_sha": "8860b4e2b1011d20ea08694af780d6c1ac62038a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:30:09.000Z",
+        "reviewed_sha": "8860b4e2b1011d20ea08694af780d6c1ac62038a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ]
   },

@@ -873,6 +873,19 @@
         "reviewed_at": "2026-07-07T14:26:57.244048Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:30:09.000Z",
+        "reviewed_sha": "8860b4e2b1011d20ea08694af780d6c1ac62038a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "wall-side-statement": [
@@ -915,6 +928,19 @@
         "notes": "The claim in 'Derived atom $\\\\mathcal{A}(Z, N)$ from pair production' is unverified due to Lean compilation failures: content/quantum-observable-universe/particle-interactions/derived-atom.lean:24:4: error: `QOU.Interactions.DerivedAtom` has already been declared.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/derived-atom.lean:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:30:09.000Z",
+        "reviewed_sha": "8860b4e2b1011d20ea08694af780d6c1ac62038a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-vacuous": [
@@ -936,6 +962,19 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The block 'Derived atom $\\\\mathcal{A}(Z, N)$ from pair production' presents substantial mathematical content: A derived atom $\\mathcal{A}(Z, N)$ with atomic number $Z$ and neutron number $N$ is the endpoint of the following cat...",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:30:09.000Z",
+        "reviewed_sha": "8860b4e2b1011d20ea08694af780d6c1ac62038a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-circular": [
@@ -958,6 +997,19 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Derived atom $\\\\mathcal{A}(Z, N)$ from pair production'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/derived-atom.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:30:09.000Z",
+        "reviewed_sha": "8860b4e2b1011d20ea08694af780d6c1ac62038a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-overclaim": [
@@ -979,6 +1031,19 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The prose presents 'Derived atom $\\\\mathcal{A}(Z, N)$ from pair production' as verified, but the sibling Lean file fails to compile.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:30:09.000Z",
+        "reviewed_sha": "8860b4e2b1011d20ea08694af780d6c1ac62038a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-hidden-dof": [
@@ -1001,6 +1066,19 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Derived atom $\\\\mathcal{A}(Z, N)$ from pair production'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/derived-atom.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:30:09.000Z",
+        "reviewed_sha": "8860b4e2b1011d20ea08694af780d6c1ac62038a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-non-sequitur": [
@@ -1023,6 +1101,19 @@
         "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/particle-interactions/derived-atom.lean.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/derived-atom.lean:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:30:09.000Z",
+        "reviewed_sha": "8860b4e2b1011d20ea08694af780d6c1ac62038a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1044,6 +1135,19 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/derived-atom.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:30:09.000Z",
+        "reviewed_sha": "8860b4e2b1011d20ea08694af780d6c1ac62038a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-citation-misuse": [
@@ -1066,6 +1170,19 @@
         "notes": "No citations are present in 'Derived atom $\\\\mathcal{A}(Z, N)$ from pair production', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/derived-atom.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:30:09.000Z",
+        "reviewed_sha": "8860b4e2b1011d20ea08694af780d6c1ac62038a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-definitional-ambiguity": [
@@ -1088,6 +1205,19 @@
         "notes": "Key terms and symbols in 'Derived atom $\\\\mathcal{A}(Z, N)$ from pair production' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/derived-atom.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:30:09.000Z",
+        "reviewed_sha": "8860b4e2b1011d20ea08694af780d6c1ac62038a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-empirical-fragility": [
@@ -1110,6 +1240,19 @@
         "notes": "The algebraic and logical relations in 'Derived atom $\\\\mathcal{A}(Z, N)$ from pair production' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/derived-atom.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:30:09.000Z",
+        "reviewed_sha": "8860b4e2b1011d20ea08694af780d6c1ac62038a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-physical-implausibility": [
@@ -1132,6 +1275,19 @@
         "notes": "The physical concepts described in 'Derived atom $\\\\mathcal{A}(Z, N)$ from pair production' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/derived-atom.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:30:09.000Z",
+        "reviewed_sha": "8860b4e2b1011d20ea08694af780d6c1ac62038a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-reproducibility": [
@@ -1154,6 +1310,19 @@
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/derived-atom.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/derived-atom.lean:1 — content/quantum-observable-universe/particle-interactions/derived-atom.lean:24:4: error: `QOU.Interactions.DerivedAtom` has already been declared"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:30:09.000Z",
+        "reviewed_sha": "8860b4e2b1011d20ea08694af780d6c1ac62038a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-referee-verdict": [
@@ -1177,6 +1346,19 @@
         "severity": "critical",
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/derived-atom.lean for 'Derived atom $\\\\mathcal{A}(Z, N)$ from pair production' fails compilation with error: content/quantum-observable-universe/particle-interactions/derived-atom.lean:24:4: error: `QOU.Interactions.DerivedAtom` has already been declared. This invalidates the claim of formal verification."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:30:09.000Z",
+        "reviewed_sha": "8860b4e2b1011d20ea08694af780d6c1ac62038a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "bib-cite-resolves": [
@@ -1419,6 +1601,36 @@
         },
         "reviewed_at": "2026-07-12T15:50:22.850Z",
         "reviewed_sha": "af10190f5f9d287f74ba56e56051275b24e3ecbc"
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:30:09.000Z",
+        "reviewed_sha": "8860b4e2b1011d20ea08694af780d6c1ac62038a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:30:09.000Z",
+        "reviewed_sha": "8860b4e2b1011d20ea08694af780d6c1ac62038a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ]
   },

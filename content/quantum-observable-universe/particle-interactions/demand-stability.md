@@ -17,7 +17,7 @@ The demand-free ${}^3\mathrm{He}$ and the Markov-trace-minimal ${}^4\mathrm{He}$
 
 ## Connection to beta decay
 
-The $e^-$ demand channel in the nucleon normal form represents beta decay receptivity. A nucleon with $c_{e^-} < 0$ is receptive to emitting an electron. The transition $\mathfrak{n} \to \mathfrak{p} + e^- + \bar\nu$ occurs when:
+The $e^-$ demand channel in the nucleon normal form represents beta decay balance. A nucleon with $c_{e^-} < 0$ is topologically configured to emit an electron. The transition $\mathfrak{n} \to \mathfrak{p} + e^- + \bar\nu$ occurs when:
 
 $$
   |c_{e^-}(\mathfrak{n})| > |c_{e^-}(\mathfrak{p})|
