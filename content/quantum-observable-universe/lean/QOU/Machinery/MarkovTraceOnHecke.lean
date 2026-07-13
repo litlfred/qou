@@ -218,6 +218,31 @@ theorem markovTrace_realized (z h : R) :
        trM z h (mulσ₁ h v) = z * trM z h v) :=
   ⟨trM_add z h, trM_smul z h, trM_cyclic z h, trM_markov_σ₁ z h⟩
 
+/-! ## Extending past H₃ (open keystone infra)
+
+The `H3` realization above is `n = 3`-specific (the `Fin 6` NF basis
+`[γ, σ₀, σ₁, L₊, L₋, e⁻]`). The `markov_trace_origin` marker
+(`QOU.BraidKnot.MmuR9V9Closure.UniversalHabiroStructure`) needs the trace for
+general `n` — the `fun n r => ℏ_rⁿ` family — which requires two ingredients
+this file does not yet carry:
+
+1. **The H₄(q) NF basis + `mulNF` table.** The `Fin 6` basis and the σ₀/σ₁
+   action tables (`mulσ₀`, `mulσ₁`, `mulNF`) here were pinned by the symbolic
+   preflight in `computations/.../gram.py` (`hm`, `TR_M`). The H₄ analogue
+   (a larger NF basis, order fixed by the Gröbner normal forms) must come from
+   the *same* verified source — do **not** hand-write the table; generate it
+   from `gram.py`/`pyhecke` and cross-check `tr_M(u·v) = tr_M(v·u)` over
+   `ℚ(z,h)` before formalizing, exactly as the H₃ table was verified.
+
+2. **The `Ind_{H₃}^{H₄}` Markov stabilization.** The general-`n` trace is built
+   from the H₃ trace by the Markov induction/stabilization the (M3) law
+   encodes; the `trM_markov_σ₁` reduction here is the `n = 3` base case.
+
+Separately, `markov_trace_origin` also needs **Step 4** — naming the specific
+Wenzl–Hoefsmit operator whose trace is `ℏ_rⁿ` (an *identification*, not a
+trace-infrastructure gap). That operator is currently unidentified; every
+compute attempt at it lives in `computations/_deprecated/`. -/
+
 end H3
 
 end QOU.Machinery
