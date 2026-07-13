@@ -1,4 +1,5 @@
 import Mathlib.Algebra.Field.Basic
+import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 import Mathlib.Tactic.Ring
 import Mathlib.Tactic.LinearCombination
 
@@ -19,9 +20,11 @@ the hypothesis) and proves two structural consequences:
 
 * **`q → 1` collapse** to the first-order binomial recurrence — the classical (un-q-deformed) limit;
 * **even/odd decoupling at `t = −1`** — the recurrence becomes two-step `H_{n+2} = (1−q^{n+1})H_n`,
-  so with the boundary value `H_1(−1;q) = 0` *all odd terms vanish*. This is the **q-deformed
-  even/odd parity**: the q-oscillator analogue of the cosh (even) / sinh (odd) split of
-  `NaStokesKeystone` and `BindingHyperbolicRecurrence`, now at the level of the q-Hermite basis.
+  so with the boundary value `H_1(−1;q) = 0` *all odd terms vanish* while the *even* terms are the
+  finite `q`-product tower `H_{2j}(−1;q) = ∏_{i<j}(1−q^{2i+1})·H_0`. This is the **q-deformed
+  even/odd parity** — both directions now closed: the q-oscillator analogue of the cosh (even) /
+  sinh (odd) split of `NaStokesKeystone` and `BindingHyperbolicRecurrence`, at the level of the
+  q-Hermite basis.
 
 Standard reference recurrence (Rogers–Szegő):
 `H_{n+1}(t;q) = (1+t)·H_n(t;q) − (1−q^n)·t·H_{n−1}(t;q)`.
@@ -72,5 +75,24 @@ theorem rogers_szego_odd_vanishes_at_neg_one (H : ℕ → K) (q : K)
   | succ j ih =>
     rw [show 2 * (j + 1) + 1 = (2 * j + 1) + 2 from by ring,
       rogers_szego_t_neg_one_two_step H q (2 * j + 1), ih, mul_zero]
+
+open Finset in
+/-- **The even Rogers–Szegő tower at `t = −1`** — the closed form
+`H_{2j}(−1;q) = ∏_{i<j}(1 − q^{2i+1})·H_0`, the bar-even (cosh-like) partner of the
+odd-sector collapse `rogers_szego_odd_vanishes_at_neg_one`. Together the two lemmas
+complete the q-deformed even/odd parity of the q-oscillator basis: the odd (sinh)
+channel vanishes, while the even (cosh) channel is the finite `q`-product tower — the
+q-Hermite analogue of the bar-even/bar-odd split of `NaStokesKeystone` /
+`BindingHyperbolicRecurrence`. Pure `q`-formal algebra over a generic field (§7c), no
+archimedean input, no fit. -/
+theorem rogers_szego_even_at_neg_one (H : ℕ → K) (q : K)
+    [inst : FollowsRogersSzego H (-1) q] (j : ℕ) :
+    H (2 * j) = (∏ i ∈ Finset.range j, (1 - q ^ (2 * i + 1))) * H 0 := by
+  induction j with
+  | zero => simp
+  | succ j ih =>
+    rw [show 2 * (j + 1) = (2 * j) + 2 from by ring,
+      rogers_szego_t_neg_one_two_step H q (2 * j), ih, Finset.prod_range_succ]
+    ring
 
 end QOU.Mass.BindingQHermiteOscillator
