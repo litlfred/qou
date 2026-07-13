@@ -122,7 +122,8 @@ C0 = C_samples[0]
 C_spread = max(abs(Ci - C0) / abs(C0) for Ci in C_samples[1:])
 C_constant = C_spread < TOL
 
-C_SQRT_2_PI = mp.sqrt(2 / mp.pi)
+with mp.workdps(60):
+    C_SQRT_2_PI = +mp.sqrt(2 / mp.pi)
 C_imag_max = max(abs(Ci.imag) / abs(Ci) for Ci in C_samples)
 C_matches_sqrt2pi = abs(C0.real - C_SQRT_2_PI) / C_SQRT_2_PI < TOL
 
