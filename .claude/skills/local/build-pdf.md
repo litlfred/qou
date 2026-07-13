@@ -19,7 +19,7 @@ This command builds the PDF locally to save GitHub CI minutes. It generates the 
      --out-dir chapters/ \
      --generate-main \
      --main-out main.tex \
-     --preamble latex/preamble.tex
+     --preamble ../folio-assistant/latex/preamble.tex
    ```
 2. Compile the PDF using `latexmk`. If `latexmk` is not available natively in the workspace, use the Docker builder image fallback (as specified in `docs-generation.md`):
    ```bash
