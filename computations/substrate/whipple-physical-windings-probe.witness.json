@@ -14,8 +14,8 @@
         "forcing_target_d2_minus_1": 3,
         "forcing_ok": true,
         "a_independence_spread": "1.7373e-50",
-        "max_dev_from_gamma_constant": "1.471e-50",
-        "gamma_constant": "(5.46489213931093284778021465851e-52 + 0.600210877438070713036799460671j)",
+        "max_dev_from_gamma_constant": "1.4914e-50",
+        "gamma_constant": "(2.51416831500376319405128943987e-51 + 0.600210877438070713036799460671j)",
         "whipple_ratio_point0": "(0.0 + 0.600210877438070713036799460671j)",
         "exchange_ok": true
       },
@@ -28,8 +28,8 @@
         "forcing_target_d2_minus_1": 8,
         "forcing_ok": true,
         "a_independence_spread": "7.3501e-51",
-        "max_dev_from_gamma_constant": "6.8166e-51",
-        "gamma_constant": "(1.34851553771853794348564995556e-51 - 0.240084350975228285214719784268j)",
+        "max_dev_from_gamma_constant": "6.682e-51",
+        "gamma_constant": "(3.50584052827684753847678939255e-53 - 0.240084350975228285214719784268j)",
         "whipple_ratio_point0": "(0.0 - 0.240084350975228285214719784268j)",
         "exchange_ok": true
       },
@@ -42,8 +42,8 @@
         "forcing_target_d2_minus_1": 15,
         "forcing_ok": true,
         "a_independence_spread": "2.3387e-51",
-        "max_dev_from_gamma_constant": "2.1708e-51",
-        "gamma_constant": "(-8.33036217431289485966430999275e-52 + 0.0685955288500652243470627955053j)",
+        "max_dev_from_gamma_constant": "2.028e-51",
+        "gamma_constant": "(-3.07366896162012065254300446799e-52 + 0.0685955288500652243470627955053j)",
         "whipple_ratio_point0": "(0.0 + 0.0685955288500652243470627955053j)",
         "exchange_ok": true
       }
@@ -58,11 +58,11 @@
   },
   "allPassed": true,
   "verdict": "The toroidal degree<->order exchange with the exact Gamma-constant C(nu,mu) = sqrt(2/pi) e^{-i pi nu}/Gamma(nu+mu+1/2) holds to 1e-30 at the PHYSICAL forced windings (mu, nu) = (1/2, d-1/2) for d in {2,3,4} -- not only at the generic grid points -- and the order-ladder factor reproduces the Hoefsmit mixing numerator d^2-1 at each d. This is numerical EVIDENCE that the even<->odd channel rotation descends to the physical toroidal windings as the Whipple exchange; it does NOT prove the modeling identification (a model validated by observables, not a theorem).",
-  "scriptHash": "c38da24dcb86",
-  "scriptCommitSha": "unknown",
-  "commitSha": "be5ccd2f9963b657f3b46dfd00a610c5cc4f79ec",
+  "scriptHash": "e7cbfee5384f",
+  "scriptCommitSha": "7422575291bc6614e7b9c88e285d599eb7355aea",
+  "commitSha": "337badb759d0296187044074f8ef00c99a0d8513",
   "engine": "mpmath",
-  "computedAt": "2026-07-13T11:50:21.533851+00:00",
+  "computedAt": "2026-07-13T12:40:35.091694+00:00",
   "durationMs": 0,
   "engineVersion": "mpmath 1.3.0",
   "scriptFile": "whipple_physical_windings_probe.py"
