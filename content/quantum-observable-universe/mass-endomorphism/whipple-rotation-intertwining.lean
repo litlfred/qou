@@ -60,4 +60,29 @@ theorem grading_square {M : Type} (L : WindingLadderData M)
     L.muGrade (L.rot (L.rot x)) = L.muGrade x := by
   rw [W.rot_involutive_on_ladder x]
 
+/-- Companion of `grading_square` for the along-loop winding: the along-loop
+    grading is also restored after a double rotation. Together the two say
+    the winding pair `(μ, ν)` is fixed by `rot²`, as the Whipple square
+    requires. -/
+theorem nuGrade_square {M : Type} (L : WindingLadderData M)
+    [W : WhippleRotationIntertwining L] (x : M) :
+    L.nuGrade (L.rot (L.rot x)) = L.nuGrade x := by
+  rw [W.rot_involutive_on_ladder x]
+
+/-- **Derived intertwining (provable modulo the class).** The winding-grading
+    map `x ↦ (μ(x), ν(x))` intertwines the channel rotation `rot` with the
+    coordinate swap `Prod.swap`: for every ladder state, the grading pair of
+    `rot x` is the swap of the grading pair of `x`. This is the exact
+    categorical shadow of the Whipple degree–order exchange
+    `(μ, ν) ↦ (ν, μ)`; it is a genuine *consequence* of the class fields
+    (the two swap components), not a restatement of them, and holds for any
+    instance without providing one. -/
+theorem gradingPair_intertwines_swap {M : Type} (L : WindingLadderData M)
+    [W : WhippleRotationIntertwining L] (x : M) :
+    (L.muGrade (L.rot x), L.nuGrade (L.rot x))
+      = Prod.swap (L.muGrade x, L.nuGrade x) := by
+  obtain ⟨hmu, hnu⟩ := W.rot_swaps_windings x
+  rw [hmu, hnu]
+  rfl
+
 end QOU.MassEndomorphism

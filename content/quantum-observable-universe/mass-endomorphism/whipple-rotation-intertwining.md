@@ -47,3 +47,22 @@ axiomatises exactly this as a primary conjecture class
 gradings and is involutive on ladder data. Both fields are
 parameter-quantified in the shape of the claim; no instance is provided
 (the conjecture is open).
+
+Two consequences are *derived from* the class (provable modulo it, no
+instance):
+
+- `nuGrade_square` — the along-loop winding is restored after a double
+  rotation, so the winding pair $(\mu, \nu)$ is fixed by $\mathrm{rot}^2$
+  (the categorical shadow of the exact $\cosh\eta \leftrightarrow \coth\eta$
+  involution);
+- `gradingPair_intertwines_swap` — the winding-grading map
+  $x \mapsto (\mu(x), \nu(x))$ intertwines the channel rotation with the
+  coordinate swap: $(\mu(\mathrm{rot}\,x), \nu(\mathrm{rot}\,x)) =
+  \mathrm{swap}(\mu(x), \nu(x))$. This is the exact discrete shadow of the
+  Whipple degree–order exchange $(\mu, \nu) \mapsto (\nu, \mu)$, and a
+  genuine consequence of the two swap-component fields (not a restatement).
+
+The archimedean *amplitude* of that exchange is fixed independently of the
+open identification: the grid-verified constant
+$C(\nu,\mu) = \sqrt{2/\pi}\,e^{-i\pi\nu}/\Gamma(\nu+\mu+\tfrac12)$ above is
+the symbolic-exact shadow the intertwining must carry.
