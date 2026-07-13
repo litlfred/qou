@@ -69,11 +69,20 @@ Ran `cross_check_trM_1ppb.py` on this branch (2026-07-13):
 the last float64-q₀ substitution; single-nucleon traces now cross-certify at
 ~1e-49 (three independent methods). What remains is **not** float:
 
-1. **Nuclei "cb≠":** the Hoefsmit-mpfr and Habiro legs are *color-blind*; the
-   1.8e-4 spread is the color-weighting convention difference. Fix = implement
-   color-weighted mpf variants of the 2nd/3rd methods (convention alignment, not
-   precision work).
-2. **⁴He:** needs an H₁₂ Hoefsmit (or Rust chi_q) run — compute cost, not float.
+> **Correction (same day, on closer read of the script):** the nuclei are in
+> better shape than the table's "cb≠" reads. The TWO color-weighted exact
+> methods (peel + chi-cache) already agree at ~1e-50 on D/T/³He — both build
+> the `bring_color_weighted` trace as exact sympy evaluated at the 50-digit q₀
+> — so **D/T/³He are 2-method 1 ppQ-certified on the canonical convention.**
+> The 1.8e-4 is only the *informational* gap vs the color-blind Hoefsmit/Habiro
+> legs (`TOLERANCE_PEEL`, expected, not gated).
+
+1. **Third-method independence (defense in depth):** peel + chi-cache share the
+   `Σ y_λ χ^λ` definition (a common χ-engine error would be invisible; the
+   closed-form character anchor covers the χ engine) — a genuinely independent
+   color-weighted third method (color-weighted Hoefsmit-mpfr) would harden it.
+2. **⁴He:** genuinely UNCERTIFIED — chi-cache partial, no H₁₂ Hoefsmit; needs
+   the H₁₂ run (compute cost + Rust kernel, not float).
 3. **Sandbox note:** the script's final closed-form anchor stage requires
    `pyhecke_native` (Rust), absent here — the certification of that stage runs
    in CI/dev envs, not this sandbox.
