@@ -64,5 +64,5 @@ instance):
 
 The archimedean *amplitude* of that exchange is fixed independently of the
 open identification: the grid-verified constant
-$C(\nu,\mu) = \sqrt{2/\pi}\,e^{-i\pi\nu}/\Gamma(\nu+\mu+\tfrac12)$ above is
+$C(\nu,\mu) = \sqrt{2/\pi}\,e^{-i\pi\nu}/\Gamma(\nu+\mu+\tfrac{1}{2})$ above is
 the symbolic-exact shadow the intertwining must carry.
