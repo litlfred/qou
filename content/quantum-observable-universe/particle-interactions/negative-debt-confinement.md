@@ -1,10 +1,10 @@
 The NF$_+$ / NF$_-$ decomposition of the nucleon normal forms reveals a quantitative signature of confinement. The neutron carries significantly more internal cancellation than the proton.
 
-## The negative coefficient debt
+## The topological-deficit
 
-Each nucleon's Gröbner--Shirshov normal form splits into positive and negative coefficient sums. The neutron's negative coefficient debt $|\mathrm{NF}_-(\mathfrak{n})| = 0.2555$ exceeds the proton's by $|\Delta\mathrm{NF}_-| = 0.1127$. This excess debt is $11.3\%$ of the proton's net coefficient.
+Each nucleon's Gröbner--Shirshov normal form splits into positive and negative coefficient sums. The neutron's topological-deficit $|\mathrm{NF}_-(\mathfrak{n})| = 0.2555$ exceeds the proton's by $|\Delta\mathrm{NF}_-| = 0.1127$. This excess deficit is $11.3\%$ of the proton's net coefficient.
 
-The dominant source is the $L_+$ sign flip. This single channel contributes approximately the entire excess debt.
+The dominant source is the $L_+$ sign flip. This single channel contributes approximately the entire excess deficit.
 
 ## Confinement interpretation
 
