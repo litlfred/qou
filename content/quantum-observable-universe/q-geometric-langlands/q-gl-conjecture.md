@@ -8,7 +8,7 @@ stack to quasi-coherent sheaves on the moduli of local systems for the
 $q$-dual, so that spectral data on one side controls automorphic data
 on the other.  At the classical value $q = 1$ it specialises to the
 ordinary geometric Langlands equivalence (property 5 below), which
-fixes the target the deformed statement must recover; the parameter
+fixes the target that the deformed statement must recover; the parameter
 $q$ then deforms that equivalence across the non-torsion locus of the
 substrate.  With this anchor in hand, the
 **$q$-Geometric Langlands correspondence** asserts the existence of

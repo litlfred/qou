@@ -1,4 +1,4 @@
-At the substrate level the spectral and automorphic sides of the
+At the substrate level, the spectral and automorphic sides of the
 Langlands correspondence are tied together by a single chain of
 constructions.  The mutant-Jones / Bloch-group bridge carries the
 substrate side into the cyclotomic $L$-value decomposition, which

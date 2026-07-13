@@ -26,7 +26,7 @@ $$
   HH^2(\mathcal{U}_q, \mathrm{Ad}).
 $$
 
-Concretely, in the classical limit $q \to 1$ the prefactor $(q - 1)$
+Concretely, in the classical limit $q \to 1$, the prefactor $(q - 1)$
 vanishes, so the intrinsic term drops out and $q$-flatness reduces to
 ordinary flatness ($\nabla_q^2 = 0$); it is precisely the
 $q$-deformation ($q \neq 1$) that forces the residual, unavoidable

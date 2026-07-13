@@ -1,6 +1,6 @@
 Any $q$-deformation of Geometric Langlands must reduce to the
 classical Beilinson–Drinfeld equivalence $\mathbb{L}_{\mathrm{BD}}$ at
-$q = 1$; this consistency check the $q$-correspondence passes, and it
+$q = 1$; the $q$-correspondence passes this consistency check, and it
 does so through three compatible limits of its defining data
 (differential, Hecke, and dual-group).  Accordingly, as $q \to 1$ in
 the $\mathbb{G}_m$-family, the $q$-Geometric Langlands correspondence

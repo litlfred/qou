@@ -6,14 +6,13 @@ The 3d–3d correspondence gives the framework a **gauge-theory
 realisation** of every hyperbolic-3-manifold mass formula.
 Concretely, the Borromean coefficient $h^4 = -3/4$ is expected to
 reappear as the four-loop perturbative contribution to
-$Z_{T[\mathcal{B}_3]}$, and the proton mass
-$m_p = m_e \cdot \mathrm{VolDensity}(\mathcal{B}_3, q_0)$ as the value
-of that partition function at $q_0$:
+$Z_{T[\mathcal{B}_3]}$, and the proton mass $m_p$ as the value of that
+partition function at $q_0$:
 
 | Framework side | 3d gauge theory side |
 |----------------|----------------------|
 | $\mathcal{B}_3$ (Borromean rings complement) | $T[\mathcal{B}_3]$ — a 3d $\mathcal{N}{=}2$ theory |
-| $m_p = m_e \cdot \mathrm{VolDensity}(\mathcal{B}_3, q_0)$ | partition function $Z_{T[\mathcal{B}_3]}(q_0)$ on $S^3_b$ |
+| $m_p$ | partition function $Z_{T[\mathcal{B}_3]}(q_0)$ on $S^3_b$ |
 | $h^4 = -3/4$ Markov-trace coefficient | 4-loop perturbative contribution to $Z_{T[\mathcal{B}_3]}$ |
 
 This is **mirror symmetry** in the sense that the framework's mass
