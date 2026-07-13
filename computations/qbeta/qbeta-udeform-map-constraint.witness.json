@@ -1,0 +1,91 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-07-13T20:51:02.601040+00:00",
+  "commitSha": "15283efc03c3b8a9344fc2af4c79bceaeb8ed1f2",
+  "assertions": [
+    {
+      "name": "anchors_reproduce",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "sign_flip_hard_fact",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "F1_fixed_phase_refuted_by_sign_flip",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "F2_cubic_family_refuted_by_anchor_ratio",
+      "computed": "True",
+      "expected": "True",
+      "passed": true,
+      "source": "F2/measured ratio = 16.607x"
+    },
+    {
+      "name": "F3_linear_family_anchor_consistent",
+      "computed": "True",
+      "expected": "True",
+      "passed": true,
+      "source": "anchor mismatch 6.176e-5%; vs S'(q*)/sqrt3 4.959e-5%"
+    },
+    {
+      "name": "F3_ratio_agreement",
+      "computed": 6.175664033939079e-07,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 0.001
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 4,
+  "computation": "qbeta-udeform-map-constraint",
+  "scriptFile": "qbeta_udeform_map_constraint_probe.py",
+  "scriptHash": "a0e0d8b9cedd",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "mpmath": "1.4.1"
+  },
+  "description": "Constraint characterization of the open substrate→deformation map u(q₀) in S = Im 𝔙(u(q₀)) (conj:binding-qbeta-complex-volume S-channel, Lean SDeformedVolumeChannel): NZ leading-form inversion at both anchors + q*, and scope-(a) pruning of the minimal structural families. F1 (fixed-phase, S∝d²) refuted by the sign flip; F2 (phase-crossing, S∝d³) refuted by the anchor ratio; F3 (one component linear through zero at q*, the other anchor-constant) survives with product-slope k = S'(q*)/√3. Measurement + pruning only — no u-map wired, no c_k proposed, no instance fabricated.",
+  "contentBlock": "conj:binding-qbeta-complex-volume",
+  "data": {
+    "inversion": {
+      "q_star": "1.109978593031523288402328",
+      "S_muon": "0.00968297779805",
+      "S_proton": "-0.0394593642959",
+      "required_ReIm_muon": "0.005590469838",
+      "required_ReIm_proton": "-0.0227818746",
+      "u_min_muon_phi_pi4": "0.1057399625",
+      "u_min_proton_phi_pi4": "0.2134566682",
+      "u_sub_qstar_for_scale": "0.008517235987"
+    },
+    "family_pruning": {
+      "ratio_measured_Spr_over_Smu": "-4.075127003",
+      "ratio_F2_cubic_family": "-67.67412359",
+      "ratio_F3_linear_family": "-4.075124487",
+      "F2_off_by_factor": "16.6066"
+    },
+    "F3_consistency": {
+      "k_product_slope_muon": "2216103.578",
+      "k_product_slope_proton": "2216104.946",
+      "k_product_slope_qstar_from_Sprime": "2216103.847",
+      "anchor_mismatch_pct": "6.17566e-5",
+      "max_dev_vs_qstar_pct": "4.95882e-5",
+      "verdict": "u(q0) leading-order constraint: one component crosses zero linearly at q* while the other is anchor-constant and nonzero (F3); fixed-phase (F1) and minimal phase-crossing (F2) families refuted scope-(a). Numerical face of the Lean exists_cs_vanishing (Im V(u(q*)) = 0)."
+    }
+  }
+}
