@@ -35,10 +35,36 @@ tuning any pp-Coulomb constant to `0.764 MeV` would be a CAL-4 fit (forbidden).
 If `1/3` were *derived* (e.g. one active pair among three Borromean components, or
 a color factor) it would close target 1 — but that derivation is not in hand.
 
+**The Reeb coordinate is the geometric candidate — but bare, it undershoots
+~270×.** The framework's geometric phase is the q-Reeb coordinate
+`θ_λ = arccos(χ^λ/d_λ)`, which *can* carry the Borromean/triple information the
+pairwise linking cannot. Tested parameter-free (Markov-weighted, cached
+`χ^λ`/`y_λ`): the mirror difference is
+`m_e·Σ y_λ(θ_λ^{³H} − θ_λ^{³He}) = 0.0028 MeV = 0.37%` of the `0.7638 MeV` split
+— i.e. the bare Reeb phase gives the right object but is `~270×` too small. This
+reproduces the corpus's retraction of the "θ_λ closes the mirror to 2%" claim as
+a **C_knot scale fit** (PR #1417): the Reeb coordinate names the geometric object
+and gets the shape, but its **magnitude needs a scale that is not derived** —
+tuning it is the forbidden fit.
+
 **Net for the block.** The honest replacement for the CKRecursion's inserted
 `1.4947 m_e` is: *charge-symmetric strong + 2p Coulomb, of which `tanh(ln q₀)·B_pp`
-= 31% is derived; the rest is the geometric/Milnor EM object (open), the pairwise
-route provably empty.* That is the accurate status — not "exact SU(4) closure."
+= 31% is derived; the geometric object is the Reeb coordinate `θ_λ` (Borromean-
+capable, pairwise route provably empty), but its bare magnitude undershoots ~270×
+— the open piece is the θ_λ **scale**, not the mechanism.* That is the accurate
+status — not "exact SU(4) closure."
+
+## The unifying gate — magnitude, not mechanism
+
+Every parameter-free object tried this session gets the *shape/sign* right and
+**undershoots the magnitude** by a scale factor: the deuteron resummation ~37×
+(#3736), the sgn·dim Δ_λ base 70–89% (#3723), the Reeb-phase mirror ~270×, the
+derived Coulomb 3.21×. The recurring open gate is the same one — a **derived
+magnitude/scale** (the "C_knot" / EM-linking / entanglement-coupling object)
+that the framework's topological+geometric data determine up to normalization but
+do not yet *fix*. That is the honest single obstruction behind both targets, and
+behind the A≥3 θ_λ magnitude gate (`2026-07-03-theta-lambda-via-reeb-nastokes-jet-filtration.md`):
+mechanism derivable, magnitude open.
 
 ## Target 2 — a derived coupling for the deuteron entanglement-dual resummation
 
