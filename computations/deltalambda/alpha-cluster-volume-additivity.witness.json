@@ -1,0 +1,279 @@
+{
+ "computation": "alpha-cluster-volume-additivity",
+ "description": "A>=5 atom->knot rule constraint quantification + alpha-cluster volume-additivity test: exact AME2020 back-outs, supra-linearity of the linear-chain cluster measure C(A+1,3) vs linear B, the p^Z n^N ordering gap (unassigned ppp/nnn carriers), and zero-fit additivity predictions for 6Li/7Li/8Be/9Be/11B/12C/14N/16O/19F from A<=4 cluster values. Research-queue item research-atom-to-knot-rule-A5plus.",
+ "audit_only": true,
+ "computedAt": "2026-07-13T20:39:49.704785+00:00",
+ "engine": "mpmath (symbolic-exact arithmetic; no census scan)",
+ "inputs": {
+  "m_e_MeV": {
+   "value": 0.51099895069,
+   "source": "codata_constants.M_E_MEV (CODATA 2022, CAL-1)"
+  },
+  "AME2020": {
+   "source": "qou-mass/src/qou_mass/data/ame2020.json via _ame_binding_mev (validation-only)",
+   "binding_MeV": {
+    "d": 2.2245662,
+    "t": 8.4817962,
+    "3He": 7.71804132,
+    "4He": 28.2956624,
+    "6Li": 31.993987199999996,
+    "7Li": 39.2450807,
+    "8Be": 56.4994848,
+    "9Be": 58.1640237,
+    "11B": 76.20505529999998,
+    "12C": 92.1617352,
+    "14N": 104.6586072,
+    "16O": 127.6193152,
+    "19F": 147.8013648
+   }
+  },
+  "Vol_L6a4_ppn": {
+   "value": 7.327724753417752,
+   "source": "binding-link-volumes.witness.json (deprecated volume-search ID)"
+  },
+  "Vol_8_11_pnn": {
+   "value": 8.286316817806593,
+   "source": "binding-link-volumes.witness.json (deprecated volume-search ID)"
+  },
+  "Vol_2body": {
+   "value": 0.0,
+   "source": "Hopf link non-hyperbolic (KMM convention)"
+  },
+  "Vol4_AME_implied_GUARDED": {
+   "value": 8.048382268684042,
+   "guard": "AME-implied, not derived; conditional everywhere used"
+  }
+ },
+ "supra_linearity": {
+  "identity": "sum_{n=2..A} (A-n+1)(n-1) = C(A+1,3) (Lean-proved, QOU.Mass.linear_chain_cluster_measure)",
+  "avg_vol_required": {
+   "t": {
+    "A": 3,
+    "cluster_measure": 4,
+    "avg_vol_required": 4.149615272471236
+   },
+   "4He": {
+    "A": 4,
+    "cluster_measure": 10,
+    "avg_vol_required": 5.537322994850082
+   },
+   "6Li": {
+    "A": 6,
+    "cluster_measure": 35,
+    "avg_vol_required": 1.7888763152364113
+   },
+   "7Li": {
+    "A": 7,
+    "cluster_measure": 56,
+    "avg_vol_required": 1.3714411968042313
+   },
+   "12C": {
+    "A": 12,
+    "cluster_measure": 286,
+    "avg_vol_required": 0.630615442429979
+   },
+   "16O": {
+    "A": 16,
+    "cluster_measure": 680,
+    "avg_vol_required": 0.3672717199829751
+   }
+  },
+  "strictly_decreasing_from_A4": true
+ },
+ "ordering_gap": {
+  "canonical_ordering": "['p']*Z + ['n']*N (atom_braid_word_3A)",
+  "unassigned_3carriers_at_6Li": [
+   "ppp",
+   "nnn"
+  ],
+  "n3_partial_sum_brackets": {
+   "6Li": {
+    "n3_clusters": 4,
+    "B_n3_lo": 29.955677279532882,
+    "B_n3_hi": 33.874393591872554,
+    "B_AME": 31.993987199999996,
+    "AME_inside_bracket": true
+   },
+   "7Li": {
+    "n3_clusters": 5,
+    "B_n3_lo": 37.4445965994161,
+    "B_n3_hi": 42.34299198984069,
+    "B_AME": 39.2450807,
+    "AME_inside_bracket": true
+   }
+  }
+ },
+ "alpha_cluster_additivity_AME_level": {
+  "6Li": {
+   "pieces": [
+    "4He",
+    "d"
+   ],
+   "B_add_MeV": 30.5202286,
+   "B_AME_MeV": 31.993987199999996,
+   "rel_err": -0.046063611602620014,
+   "deficit_MeV": 1.473758599999996,
+   "n_intercluster_bonds": 1,
+   "implied_vol_per_bond_GUARDED": 2.8840736326561633
+  },
+  "7Li": {
+   "pieces": [
+    "4He",
+    "t"
+   ],
+   "B_add_MeV": 36.7774586,
+   "B_AME_MeV": 39.2450807,
+   "rel_err": -0.06287723342609919,
+   "deficit_MeV": 2.4676221,
+   "n_intercluster_bonds": 1,
+   "implied_vol_per_bond_GUARDED": 4.829015982651195
+  },
+  "8Be": {
+   "pieces": [
+    "4He",
+    "4He"
+   ],
+   "B_add_MeV": 56.5913248,
+   "B_AME_MeV": 56.4994848,
+   "rel_err": 0.0016255015479362388,
+   "deficit_MeV": -0.09184,
+   "n_intercluster_bonds": 1,
+   "implied_vol_per_bond_GUARDED": -0.1797263964553915
+  },
+  "9Be": {
+   "pieces": [
+    "4He",
+    "4He",
+    "n"
+   ],
+   "B_add_MeV": 56.5913248,
+   "B_AME_MeV": 58.1640237,
+   "rel_err": -0.02703903203312944,
+   "deficit_MeV": 1.5726989,
+   "n_intercluster_bonds": 2,
+   "implied_vol_per_bond_GUARDED": 1.5388474847907128
+  },
+  "11B": {
+   "pieces": [
+    "4He",
+    "4He",
+    "t"
+   ],
+   "B_add_MeV": 65.073121,
+   "B_AME_MeV": 76.20505529999998,
+   "rel_err": -0.1460786854123573,
+   "deficit_MeV": 11.13193429999999,
+   "n_intercluster_bonds": 2,
+   "implied_vol_per_bond_GUARDED": 10.892325987136157
+  },
+  "12C": {
+   "pieces": [
+    "4He",
+    "4He",
+    "4He"
+   ],
+   "B_add_MeV": 84.8869872,
+   "B_AME_MeV": 92.1617352,
+   "rel_err": -0.07893458151816568,
+   "deficit_MeV": 7.274748,
+   "n_intercluster_bonds": 2,
+   "implied_vol_per_bond_GUARDED": 7.1181633447357715
+  },
+  "14N": {
+   "pieces": [
+    "4He",
+    "4He",
+    "4He",
+    "d"
+   ],
+   "B_add_MeV": 87.1115534,
+   "B_AME_MeV": 104.6586072,
+   "rel_err": -0.16765992085551087,
+   "deficit_MeV": 17.5470538,
+   "n_intercluster_bonds": 3,
+   "implied_vol_per_bond_GUARDED": 11.446242551839736
+  },
+  "16O": {
+   "pieces": [
+    "4He",
+    "4He",
+    "4He",
+    "4He"
+   ],
+   "B_add_MeV": 113.1826496,
+   "B_AME_MeV": 127.6193152,
+   "rel_err": -0.1131228887835311,
+   "deficit_MeV": 14.4366656,
+   "n_intercluster_bonds": 3,
+   "implied_vol_per_bond_GUARDED": 9.417283264806594
+  },
+  "19F": {
+   "pieces": [
+    "4He",
+    "4He",
+    "4He",
+    "4He",
+    "t"
+   ],
+   "B_add_MeV": 121.6644458,
+   "B_AME_MeV": 147.8013648,
+   "rel_err": -0.17683814378417692,
+   "deficit_MeV": 26.13691899999998,
+   "n_intercluster_bonds": 4,
+   "implied_vol_per_bond_GUARDED": 12.78716862564365
+  }
+ },
+ "tower_level_conditional": {
+  "6Li": {
+   "B_pred_MeV": 28.2956624,
+   "note": "alpha(conditional) + d(Hopf, Vol=0)",
+   "rel_err": -0.11559437018215711
+  },
+  "7Li": {
+   "B_pred_MeV": 36.764260797968134,
+   "note": "alpha(conditional) + t(m_e\u00b72\u00b7Vol(8_11))",
+   "rel_err": -0.06321352530769203
+  }
+ },
+ "verdict": "Scope-(a) constraint analysis for the A>=5 atom->knot rule. (1) The untruncated linear-chain tower is excluded by arithmetic at A>=5 unless Vol_n collapses (required avg volume falls 5.54 -> 1.79 from A=4 to A=6 vs the 7.3-8.3 corpus 3-carriers); with the \u2074He census-gap negative, the single-volume linear-chain reading does not extend. (2) The p^Z n^N ordering leaves ppp/nnn 3-carriers unassigned at A>=5 \u2014 the rule is underdetermined even at n=3 \u2014 though the bracketed n<=3 layer alone spans AME at A=6,7. (3) ALPHA-CLUSTER ADDITIVITY (zero fit, AME-level clusters): the 2-alpha anchor 8Be reproduces AME to +0.16%; one-bond composites undershoot mildly (6Li -4.61%, 7Li -6.29%, 9Be -2.70%); multi-bond composites degrade (11B -14.6%, 14N -16.8%, 19F -17.7%). Additivity is a consistent LOWER BOUND (all deficits > 0 except the famously 2alpha-unbound 8Be) whose deficit is the inter-cluster bond term; the implied per-bond volumes (2.9 -> 12.8, guarded) are NON-CONSTANT, so the missing term is not one universal volume. This constrains the composite rule class as-is; it does not exclude the composite ingredient (permanence principle: the cluster pieces are structurally exact lower-bound contributions). The principled route to the actual A>=5 links remains the R5-full SDP canonical knot-ID (conj:canonical-knot-id-sdp, #604), which must first resolve its own A<=3 anchor non-confirmation. Nothing wired; no fit; every use of Vol4=8.048 is conditional/AME-implied.",
+ "scope": "(a) \u2014 constrains the untruncated tower and quantifies the composite rule class; no ingredient excluded",
+ "assertions": [
+  {
+   "label": "exact back-out confirms AME-implied Vol4 = 8.048 to 0.01",
+   "passed": true
+  },
+  {
+   "label": "required avg volume strictly decreasing A=4 -> 16 (supra-linearity constraint)",
+   "passed": true
+  },
+  {
+   "label": "8Be (2-alpha) additivity anchor within 0.5% of AME",
+   "passed": true
+  },
+  {
+   "label": "one-bond composites 6Li/7Li within 10% (measured -4.6%/-6.3%)",
+   "passed": true
+  },
+  {
+   "label": "additivity is a lower bound: all deficits > 0 except unbound 8Be (in (-0.2, 0))",
+   "passed": true
+  },
+  {
+   "label": "implied per-bond volumes non-constant (spread > 2.0) => no single universal inter-cluster volume",
+   "passed": true
+  },
+  {
+   "label": "n<=3 bracket spans AME at A=6 and A=7",
+   "passed": true
+  }
+ ],
+ "gap_isotopes_covered": [
+  "6Li",
+  "7Li",
+  "9Be",
+  "11B",
+  "14N",
+  "19F"
+ ],
+ "allPassed": true
+}
