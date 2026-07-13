@@ -43,6 +43,17 @@ noncomputable def seminormalWeight (q h : R) (ρ : ℤ) : R := h * reducedWeight
 theorem seminormalWeight_eq_h_mul (q h : R) (ρ : ℤ) :
     seminormalWeight q h ρ = h * reducedWeight q ρ := rfl
 
+/-- **Character sum factors out `h`.** The single-generator seminormal character
+    is a sum of weights `Σ_{t ∈ S} a_{ρ(t)}` over the standard-tableau index set
+    `S`; `h` pulls out of the whole sum: `χ_λ(σ) = h · Σ_t g_{ρ(t)}`. Together with
+    `Σ_t g_{ρ(t)} = c_λ ∈ ℤ` (the reduced-weight sum over the swap-symmetric SYT
+    set — an integer by the pairing identity `reducedWeight_add_neg`) this is the
+    closed form `χ_λ(σ) = c_λ · h`. The `h`-linearity of the whole table is thus
+    reduced to a purely *integer* combinatorial statement about the reduced sum. -/
+theorem characterSum_eq_h_mul {ι : Type*} (q h : R) (S : Finset ι) (ρ : ι → ℤ) :
+    (∑ t ∈ S, seminormalWeight q h (ρ t)) = h * ∑ t ∈ S, reducedWeight q (ρ t) := by
+  simp only [seminormalWeight, Finset.mul_sum]
+
 /-- Rewriting `q^{−2ρ}` as `(q^{2ρ})⁻¹`. -/
 theorem reducedWeight_eq (q : R) (ρ : ℤ) :
     reducedWeight q ρ = (1 - (q ^ (2 * ρ))⁻¹)⁻¹ := by
@@ -76,3 +87,17 @@ theorem reducedWeight_add_neg (q : R) (ρ : ℤ) (hq : q ≠ 0)
   rw [A, B]
   field_simp
   ring
+
+/-! ### Next rung (bean `qou-vg1u`, Infra 3): the integer content `c_λ`
+
+The one piece left to reach `χ_λ(σ) = c_λ·h` is that the reduced-weight sum is an
+integer: for a SYT index set `S` closed under the fixed-point-free `i ↔ i+1` swap
+involution `τ` (which negates the axial distance, `ρ(τ t) = −ρ t` by
+`TableauContent.axialDistance_antisymm`), each τ-pair contributes
+`g_ρ + g_{−ρ} = 1`, so `2·Σ_t g_{ρ(t)} = |S|`, i.e. `Σ g = |S|/2 = c_λ ∈ ℤ`.
+Composed with `characterSum_eq_h_mul` this gives `2·χ_λ(σ) = |S|·h`. The proof is
+a τ-reindex (`∑ g_{−ρ t} = ∑ g_{ρ t}`) + the pairing identity; it needs the
+`Finset` involution-reindex API pinned against a live LSP, deferred to the next
+session (this one lost the LSP mid-build). -/
+
+end QOU.BraidKnot.SeminormalWeight
