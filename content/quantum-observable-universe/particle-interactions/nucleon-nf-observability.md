@@ -28,6 +28,6 @@ The generator $\sigma_1$ acts on the crossing within the color tube fiber betwee
 
 ## Sign pattern and beta decay
 
-The negative terms in each nucleon represent **leptonic debt** — topological content that must be supplied by the vacuum. The neutron carries three debts while the proton carries only two. The excess debt drives beta decay $\mathfrak{n} \to \mathfrak{p} + e^- + \bar{\nu}_e$. The neutron pays down its excess debt by emitting the physical electron and antineutrino.
+The negative terms in each nucleon represent **leptonic deficits** — topological content that must be balanced by the vacuum state. The neutron carries three deficit terms while the proton carries only two. This imbalance is exactly resolved via beta decay $\mathfrak{n} \to \mathfrak{p} + e^- + \bar{\nu}_e$. The neutron transition emits the physical electron and antineutrino to conserve total topological crossing number.
 
-The nucleon normal form exhibits a clean tripartite structure: virtual bulk, observable links, and leptonic debt. Beta decay settles this debt.
+The nucleon normal form exhibits a clean tripartite structure: virtual bulk, observable links, and leptonic deficits. Beta decay is the transition that balances these deficits.
