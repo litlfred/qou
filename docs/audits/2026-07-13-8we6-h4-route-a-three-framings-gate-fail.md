@@ -67,6 +67,32 @@ content.
   the surviving constraint any future candidate must clear.
 - No `c_k` wired; no tier change; registry untouched (no rung produced).
 
+## Addendum (same day) — six mid-word-entangled candidates screened, zero survivors
+
+Follow-up probe
+[`qbeta_h4_midword_criterion_screen.py`](../../computations/qbeta/qbeta_h4_midword_criterion_screen.py)
+applies the `O(u⁴)` criterion (a rational-function series, ~33 s for all six,
+vs ~10 min each on the full ladder) to six mid-word-entangled σ₂
+constructions — the class the main fails pointed at:
+
+| candidate | `[s⁴] log f` | `[s⁶] log f` | verdict |
+|---|---|---|---|
+| C1 conjugated core `σ₂B₃σ₂⁻¹` | −6 | 37/2 | FAIL |
+| C2 conjugated baryon | −75/8 | −32 | FAIL |
+| C3 append `[σ₁,σ₂]` | −14 | −119/2 | FAIL |
+| C4 append `[σ₂,σ₁⁻¹]` | −11/8 | 353/12 | FAIL |
+| C5 straddled core | −463/4 | −43325/24 | FAIL |
+| C6 straddled crossings | — | — | TRIVIAL (`σ₂…σ₂⁻¹` wrapped a far-commuting crossing and telescoped) |
+
+Nine constructions total (three framings + six mid-word) now tested, zero
+survivors: every natural conjugation/commutator/straddle injects σ₂ content
+at `s⁴` (the c₂ order). Engineering a cancellation by combining candidates
+with opposite `[s⁴]` coefficients would be *tuning* — the fit trap — so the
+honest conclusion stands: a genuine `c₄`-first H₄ object requires new
+framework content (a construction whose low-order cancellation is *derived*,
+not arranged), and the `O(u⁴)` screen is the cheap admission test for any
+future proposal.
+
 ## Cross-references
 
 - Route-B prune + gate definition: [`2026-07-03-8we6-h4-route-b-structural-prune.md`](2026-07-03-8we6-h4-route-b-structural-prune.md)

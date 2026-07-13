@@ -1,0 +1,96 @@
+{
+  "computation": "qbeta-h4-midword-criterion-screen",
+  "description": "Cheap O(u^4)-criterion screen (log(Delta(net)_4/Delta(net)_3) must have zero s^4 and s^6 coefficients) over six mid-word-entangled sigma_2 H4 candidates (conjugated core/baryon, two commutator appends, straddled core, straddled crossings), per the Route-A gate-fail audit's sharpened criterion. Full exact ladder run only for screen survivors. Screening can only falsify; survivors are design candidates for owner review, never auto-wired. auditOnly; no fit.",
+  "audit_only": true,
+  "parameters": {
+    "screen_order": 7,
+    "criterion": "[s^4]=[s^6]=0 of log(dnet4/dnet3)"
+  },
+  "candidates": {
+    "C1_conj_core": {
+      "verdict": "FAIL_screen",
+      "log_f_coeffs": {
+        "s^1": "0",
+        "s^2": "0",
+        "s^3": "-4",
+        "s^4": "-6",
+        "s^5": "-25",
+        "s^6": "37/2",
+        "s^7": "-253/2"
+      },
+      "delta_net4": "(q**14 + 6*q**13 - 3*q**12 - 32*q**11 + 76*q**9 + 4*q**8 - 100*q**7 - 4*q**6 + 76*q**5 - 32*q**3 + 3*q**2 + 6*q - 1)/(4*q**7)"
+    },
+    "C2_conj_baryon": {
+      "verdict": "FAIL_screen",
+      "log_f_coeffs": {
+        "s^1": "-1",
+        "s^2": "0",
+        "s^3": "-10/3",
+        "s^4": "-75/8",
+        "s^5": "-179/20",
+        "s^6": "-32",
+        "s^7": "-3193/56"
+      },
+      "delta_net4": "(-q**16 + q**15 + 10*q**14 - 4*q**13 - 36*q**12 + 4*q**11 + 74*q**10 - 3*q**9 - 94*q**8 + 3*q**7 + 74*q**6 - 4*q**5 - 36*q**4 + 4*q**3 + 10*q**2 - q - 1)/(4*q**8)"
+    },
+    "C3_comm_12_append": {
+      "verdict": "FAIL_screen",
+      "log_f_coeffs": {
+        "s^1": "-2",
+        "s^2": "-3",
+        "s^3": "-11/3",
+        "s^4": "-14",
+        "s^5": "-172/5",
+        "s^6": "-119/2",
+        "s^7": "-2923/14"
+      },
+      "delta_net4": "(-q**18 - q**17 + 7*q**16 + 9*q**15 - 20*q**14 - 32*q**13 + 31*q**12 + 69*q**11 - 37*q**10 - 90*q**9 + 37*q**8 + 69*q**7 - 31*q**6 - 32*q**5 + 20*q**4 + 9*q**3 - 7*q**2 - q + 1)/(4*q**9)"
+    },
+    "C4_comm_21inv_append": {
+      "verdict": "FAIL_screen",
+      "log_f_coeffs": {
+        "s^1": "-1",
+        "s^2": "-4",
+        "s^3": "8/3",
+        "s^4": "-11/8",
+        "s^5": "271/20",
+        "s^6": "353/12",
+        "s^7": "3205/56"
+      },
+      "delta_net4": "(-q**18 - 2*q**17 + 6*q**16 + 15*q**15 - 15*q**14 - 51*q**13 + 23*q**12 + 105*q**11 - 31*q**10 - 134*q**9 + 31*q**8 + 105*q**7 - 23*q**6 - 51*q**5 + 15*q**4 + 15*q**3 - 6*q**2 - 2*q + 1)/(4*q**9)"
+    },
+    "C5_straddle_core": {
+      "verdict": "FAIL_screen",
+      "log_f_coeffs": {
+        "s^1": "-4",
+        "s^2": "-13",
+        "s^3": "-88/3",
+        "s^4": "-463/4",
+        "s^5": "-9091/20",
+        "s^6": "-43325/24",
+        "s^7": "-409805/56"
+      },
+      "delta_net4": "(q**14 + 2*q**13 - 8*q**12 - 15*q**11 + 28*q**10 + 52*q**9 - 55*q**8 - 78*q**7 + 55*q**6 + 52*q**5 - 28*q**4 - 15*q**3 + 8*q**2 + 2*q - 1)/(4*q**7)"
+    },
+    "C6_crossing_straddle": {
+      "verdict": "TRIVIAL",
+      "delta_net4": "(q**14 + 2*q**13 - 5*q**12 - 10*q**11 + 10*q**10 + 24*q**9 - 16*q**8 - 32*q**7 + 16*q**6 + 24*q**5 - 10*q**4 - 10*q**3 + 5*q**2 + 2*q - 1)/(4*q**7)"
+    }
+  },
+  "n_survivors": 0,
+  "assertions": [
+    {
+      "label": "screen executed on all six candidates",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "scriptHash": "04f17d943edb",
+  "scriptCommitSha": "unknown",
+  "commitSha": "0a04235b156ec24a6226fa5402bc6546d3d55113",
+  "engine": "sympy",
+  "computedAt": "2026-07-13T20:44:26.080793+00:00",
+  "durationMs": 33214,
+  "engineVersion": "sympy 1.14.0",
+  "scriptFile": "qbeta_h4_midword_criterion_screen.py"
+}
