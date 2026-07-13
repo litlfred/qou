@@ -1,0 +1,191 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-13T16:09:54.885958+00:00",
+  "commitSha": "74beedc68f4b918278fadbd57277596526b7461e",
+  "assertions": [
+    {
+      "name": "hopf_bond_wplane_annihilated",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "m_e·Vol(Hopf) = 0 identically — the W-plane (CAL-1×CAL-2) classes have zero support on the 2-body inter-nucleon bond channel (Hopf non-hyperbolic; ledger identification B = m_e·Vol)"
+    },
+    {
+      "name": "cal3_unique_surviving_class",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "the 4-scale selection table re-read: m_pi is the unique scale whose required coefficient is within 25% of 1 AND the unique non-W-plane calibration class — the 2-bit selection collapses to class selection"
+    },
+    {
+      "name": "coefficient_one_consistent",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "|1 − measured|/rms = 0.21σ < 1σ — coefficient 1 is consistent with the 8-pair systematics"
+    },
+    {
+      "name": "coefficient_not_uniquely_selected",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "8/9 simple Q(q0) candidates within 1.25σ of the measured coefficient — 'exactly 1' is NOT selected by the data at 7% scatter (honesty assertion; needs ~0.3% scatter to discriminate at 3σ)"
+    },
+    {
+      "name": "two_body_energy_length_negative",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "hbar*c/B_D and hbar*c/mu0 are 60-90x lambda_pi — the packing length is not the inverse of a 2-body channel energy (scope-(a))"
+    },
+    {
+      "name": "radius_energy_rescoping_identity",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "hbar*c/(lambda_pi*A^(1/3)) = m_pi*A^(-1/3) exactly — GAP 2 re-scopes to the A^(-1/3) energy exponent; no length object needed"
+    },
+    {
+      "name": "borromean_per_cusp_volume_two",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "Borromean maximal-cusp volume per cusp = 2 exactly (area 4, SnapPy unbiased policy) — the candidate Euclidean packing unit"
+    },
+    {
+      "name": "cusp_count_extensivity_fails_3h",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "8_11 (the corpus 3H binding link) is a knot: 1 cusp for A=3 — cusp-per-nucleon extensivity fails on the corpus's own links"
+    },
+    {
+      "name": "cusp_density_not_constant",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "maximal-cusp density spread x1.41 (0.604-0.853) across the corpus family — cusp volume is NOT more uniformly extensive than complement volume"
+    },
+    {
+      "name": "cusp_facevalue_coefficients_miss",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "both pinned cusp normalizations miss the measured packing coefficient (coefficient-space metric, same as the Q(q0) table): per-cusp 2.0 at 2.9 sigma, whole-B3 6.0 at 2.0 sigma (1.4 in ratio-space) — no post-hoc selection made"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 69,
+  "computation": "pion-radius-and-cusp-volume-gaps",
+  "scriptFile": "pion_radius_and_cusp_volume_gap_probe.py",
+  "scriptHash": "2aaa49e457e1",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "R2-e attack on the two underived steps of the continuum-EM mirror split. GAP 1 (pion packing radius): the scale-CLASS is derived by W-plane annihilation — the inter-nucleon bond is a Vol=0 Hopf sub-link, so m_e·Vol vanishes identically and q0 is dimensionless; CAL-3 ('the Vol(Hopf)=0 meson scale') is the unique class with nonzero support, giving bond unit hbar*c/(m_pi*Q(q0)) — the 2-bit mass-scale selection collapses to 0 bits (conditional on B = m_e*Vol). The COEFFICIENT Q=1 stays underived: measured 0.985 ± 0.069, consistent at 0.21 sigma but with 8/9 simple Q(q0) within 1.25 sigma. GAP 2 (volume->radius): no functorial transport exists (taxonomy audit); re-scoped to the A^(-1/3) energy exponent. Cusp route: Euclidean tori genuine, but cusp-count extensivity fails at 3H (8_11 = knot), density spread x1.41, and both pinned normalizations miss at >=1.6 sigma. Scope-(a); exploratory; nothing wired.",
+  "data": {
+    "measured_coefficient_mean": 0.9852501763838704,
+    "measured_coefficient_rms": 0.06933959865155886,
+    "ratio_A_trend_monotone": false,
+    "lambda_pi_fm": 1.4138169306541308,
+    "selection_table_required_coefficients": {
+      "m_e (CAL-1, W-plane)": 269.10378422457416,
+      "m_mu (CAL-2 proxy, W-plane a=1)": 1.301475161952169,
+      "m_pi (CAL-3, orthogonal class)": 0.9852501763838704,
+      "m_p (baryon c=0, W-plane a=1)": 0.14655850143533944
+    },
+    "q_coefficient_candidates_sigma": {
+      "1 (one CAL-3 quantum/bond)": 0.2127186182638512,
+      "q0": 1.7988048502312222,
+      "1/q0": 1.2162154680460209,
+      "sqrt(q0)": 0.9850797524691391,
+      "1/sqrt(q0)": 0.5203812004236826,
+      "[2]_q/2 = (q0+1/q0)/2": 0.2912946910926007,
+      "(1+1/q0)/2": 0.5017484248910848,
+      "1+hbar_q^2": 0.3542998596495679,
+      "1-hbar_q^2": 0.07113737687813448
+    },
+    "scatter_needed_for_3sigma_discrimination": 0.00181614445118705,
+    "two_body_lengths_fm": {
+      "hbarc_over_B_D": 88.70357753345348,
+      "hbarc_over_mu0": 121.09585771309658
+    },
+    "cusp_geometry": {
+      "4_1": {
+        "n_cusps": 1,
+        "vol": 2.029883212819307,
+        "cusp_vol": 1.7320508075688754,
+        "density": 0.85327608831408,
+        "A_assignment": 1,
+        "cusp_vol_per_A": 1.7320508075688754
+      },
+      "L6a4": {
+        "n_cusps": 3,
+        "vol": 7.327724753417752,
+        "cusp_vol": 6.0,
+        "density": 0.8188080477779296,
+        "A_assignment": 3,
+        "cusp_vol_per_A": 2.0
+      },
+      "8_11": {
+        "n_cusps": 1,
+        "vol": 8.286316817806592,
+        "cusp_vol": 5.006547349573503,
+        "density": 0.6041945365659755,
+        "A_assignment": 3,
+        "cusp_vol_per_A": 1.668849116524501
+      },
+      "L8a21": {
+        "n_cusps": 4,
+        "vol": 10.149416064096537,
+        "cusp_vol": 6.928203230275514,
+        "density": 0.6826208706512651,
+        "A_assignment": 4,
+        "cusp_vol_per_A": 1.7320508075688785
+      },
+      "L8a20": {
+        "n_cusps": 3,
+        "vol": 10.149416064096535,
+        "cusp_vol": 7.348469228349526,
+        "density": 0.7240287699254607,
+        "A_assignment": 4,
+        "cusp_vol_per_A": 1.8371173070873814
+      },
+      "L6a5": {
+        "n_cusps": 3,
+        "vol": 5.333489566898119,
+        "cusp_vol": 3.9686269665968847,
+        "density": 0.7440957588494883,
+        "A_assignment": 3,
+        "cusp_vol_per_A": 1.322875655532295
+      }
+    },
+    "cusp_density_spread": 1.4122538961768745,
+    "facevalue_radius_coefficients": {
+      "per_cusp_V2": 0.781592641796772,
+      "whole_B3_V6": 1.1272516517868265,
+      "required_V_for_coeff_1": 4.379747218049653
+    }
+  }
+}
