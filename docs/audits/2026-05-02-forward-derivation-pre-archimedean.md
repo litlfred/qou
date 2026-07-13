@@ -127,7 +127,7 @@ Every step links to its primary `.md` block; siblings (`.lean`,
 - **Riding-on:** existence/uniqueness on generic $\mathbf{C}$ are
   🟡; on SU(2) both 🟢.
 - **Compute backing:** Lean `categorical-action.lean` + proofs.
-- **AUDIT.** 🟢 No fits. $\Phi$ is the *physics endomorphism*; its
+- **AUDIT.** 🟢 No fits. $\Phi$ is the *Lagrangian endomorphism*; its
   identification with the Hecke mass element happens at Step 16, not
   here.
 

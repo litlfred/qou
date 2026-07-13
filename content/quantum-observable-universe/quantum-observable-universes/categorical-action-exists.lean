@@ -4,7 +4,7 @@ import Mathlib.CategoryTheory.Monoidal.Rigid.Basic
 /-!
 # QOU.CategoricalAction.exists — existence of the categorical action 𝒮_Φ
 
-For a physics endomorphism `Φ ∈ End(A)` in a rigid monoidal category, the
+For a Lagrangian endomorphism `Φ ∈ End(A)` in a rigid monoidal category, the
 categorical action is the scalar `𝒮_Φ : 𝟙 ⟶ 𝟙` obtained as the composite
 
   𝒮_Φ = η_ ≫ (Φ ▷ Aᘁ) ≫ swap ≫ ε_
@@ -33,7 +33,7 @@ universe v u
 
 variable {C : Type u} [Category.{v} C] [MonoidalCategory C]
 
-/-- **Categorical action** `𝒮_Φ : 𝟙 ⟶ 𝟙` of a physics endomorphism `Φ : A ⟶ A`.
+/-- **Categorical action** `𝒮_Φ : 𝟙 ⟶ 𝟙` of a Lagrangian endomorphism `Φ : A ⟶ A`.
 
     `𝒮_Φ = η_ ≫ (Φ ▷ Aᘁ) ≫ swap ≫ ε_`, the composite
     `ev_A ∘ (id_{Aᘁ} ⊗ Φ) ∘ coev_A` of the manuscript, with `swap` the
@@ -46,7 +46,7 @@ noncomputable def categoricalAction {A Ad : C} [ExactPairing A Ad]
 
 /-- **Existence of the categorical action.**
 
-    For any physics endomorphism `Φ : A ⟶ A` with right dual `(A, Aᘁ)` and
+    For any Lagrangian endomorphism `Φ : A ⟶ A` with right dual `(A, Aᘁ)` and
     transposition `swap`, the categorical action `𝒮_Φ : 𝟙 ⟶ 𝟙` exists as a
     morphism in `C` and equals the categorical trace `tr(Φ) = categoricalAction Φ swap`.
 

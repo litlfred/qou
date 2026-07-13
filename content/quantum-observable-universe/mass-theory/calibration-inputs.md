@@ -91,7 +91,7 @@ The relation $\mathfrak{Q}_\beta = |\Delta(\mathrm{net})| \cdot \mathfrak{E}_0$ 
 
 ## Necessity of exactly three inputs
 
-The physics endomorphism $\Phi \in \mathrm{End}_{\mathbf{C}}(A)$
+The Lagrangian endomorphism $\Phi \in \mathrm{End}_{\mathbf{C}}(A)$
 ([categorical action](#def:categorical-action)) lives in a
 vector space of dimension $\dim \mathrm{End}(A) = (\dim A)^2$.
 For $H_3(R, q)$ this is $6^2 = 36$ in principle.  The on-shell

@@ -11,7 +11,7 @@ comprising a rigid monoidal category $\mathbf{C}$, a Frobenius–Hopf object $A$
 $$
   (\mathbf{C}, \varTheta, G, \mathcal{S}).
 $$
-In this language, a Lagrangian forms a categorical trace. Every action equals the trace of a single *physics endomorphism* $\Phi$ dictating the dynamics:
+In this language, a Lagrangian forms a categorical trace. Every action equals the trace of a single *Lagrangian endomorphism* $\Phi$ dictating the dynamics:
 $$
   \mathfrak{S} = \mathrm{tr}(\Phi).
 $$

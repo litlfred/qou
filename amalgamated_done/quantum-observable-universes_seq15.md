@@ -1,7 +1,7 @@
 <!-- FILE_START: categorical-action-intro.md -->
 The Lagrangian $\mathcal{L}_q$ acts as an endomorphism of $A$. We trace it to a morphism $\mathbf{1} \to \mathbf{1}$ and read off the gravity, gauge, and matter terms that the QOU axioms force into the result. The rigid duality supplies the trace; no spacetime measure is invoked.
 
-The categorical action defines $\mathfrak{S} = \mathrm{tr}(\Phi)$ for a physics endomorphism $\Phi \in \mathrm{End}_{\mathbf{C}}(A)$. Choosing $\Phi_q = \mathcal{L}_q$ delivers $\mathfrak{S}_q = \mathrm{tr}(\mathcal{L}_q)$, which expands via the Frobenius--Hopf decomposition of $\mathcal{D}_\nabla^2$ into three terms: gravity $\mathrm{tr}(q R_{\int})$, gauge $\int_A \mathrm{tr}_A(F_\nabla \wedge_q \star_q F_\nabla)$, and matter $\int_A(\psi^* \cdot \mathcal{D}_\nabla \psi)$. This holds uniquely up to a single scalar $\lambda \in R^\times$ tracking the normalisation of $\int_A$.
+The categorical action defines $\mathfrak{S} = \mathrm{tr}(\Phi)$ for a Lagrangian endomorphism $\Phi \in \mathrm{End}_{\mathbf{C}}(A)$. Choosing $\Phi_q = \mathcal{L}_q$ delivers $\mathfrak{S}_q = \mathrm{tr}(\mathcal{L}_q)$, which expands via the Frobenius--Hopf decomposition of $\mathcal{D}_\nabla^2$ into three terms: gravity $\mathrm{tr}(q R_{\int})$, gauge $\int_A \mathrm{tr}_A(F_\nabla \wedge_q \star_q F_\nabla)$, and matter $\int_A(\psi^* \cdot \mathcal{D}_\nabla \psi)$. This holds uniquely up to a single scalar $\lambda \in R^\times$ tracking the normalisation of $\int_A$.
 <!-- FILE_END: categorical-action-intro.md -->
 
 <!-- FILE_START: categorical-action.md -->
@@ -17,17 +17,17 @@ $$
     \mathrm{coev}_A,
 $$
 
-where $\Phi \in \mathrm{End}_{\mathbf{C}}(A)$ is the physics endomorphism. The evaluation $\mathrm{ev}_A \colon A^\vee \otimes A \to \mathbf{1}$ and coevaluation $\mathrm{coev}_A \colon \mathbf{1} \to A \otimes A^\vee$ are the structure maps of the rigid duality on $A$. Composing them with an inserted endomorphism produces the categorical trace $\mathfrak{S} = \mathrm{tr}(\Phi)$.
+where $\Phi \in \mathrm{End}_{\mathbf{C}}(A)$ is the Lagrangian endomorphism. The evaluation $\mathrm{ev}_A \colon A^\vee \otimes A \to \mathbf{1}$ and coevaluation $\mathrm{coev}_A \colon \mathbf{1} \to A \otimes A^\vee$ are the structure maps of the rigid duality on $A$. Composing them with an inserted endomorphism produces the categorical trace $\mathfrak{S} = \mathrm{tr}(\Phi)$.
 
-As a string diagram, the action forms a single closed loop with $\Phi$ inserted. The rigid structure provides the integration; the physics endomorphism encodes the dynamics.
+As a string diagram, the action forms a single closed loop with $\Phi$ inserted. The rigid structure provides the integration; the Lagrangian endomorphism encodes the dynamics.
 <!-- FILE_END: categorical-action.md -->
 
 <!-- FILE_START: categorical-action-exists.md -->
-Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe and $\Phi \in \mathrm{End}_{\mathbf{C}}(A)$ a physics endomorphism. The categorical action $\mathfrak{S}_\Phi = \mathrm{ev}_A \circ (\mathrm{id}_{A^\vee} \otimes \Phi) \circ \mathrm{coev}_A$ exists as a morphism in $\mathbf{C}$ and equals the categorical trace $\mathrm{tr}(\Phi)$.
+Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe and $\Phi \in \mathrm{End}_{\mathbf{C}}(A)$ a Lagrangian endomorphism. The categorical action $\mathfrak{S}_\Phi = \mathrm{ev}_A \circ (\mathrm{id}_{A^\vee} \otimes \Phi) \circ \mathrm{coev}_A$ exists as a morphism in $\mathbf{C}$ and equals the categorical trace $\mathrm{tr}(\Phi)$.
 <!-- FILE_END: categorical-action-exists.md -->
 
 <!-- FILE_START: categorical-action-unique.md -->
-For a fixed physics endomorphism $\Phi \in \mathrm{End}_{\mathbf{C}}(A)$, the categorical action $\mathfrak{S}_\Phi = \mathrm{tr}(\Phi)$ is uniquely determined. Any morphism $\mathbf{1} \to \mathbf{1}$ factoring as $\mathrm{ev}_A \circ (\mathrm{id}_{A^\vee} \otimes \Phi) \circ \mathrm{coev}_A$ equals $\mathrm{tr}(\Phi)$.
+For a fixed Lagrangian endomorphism $\Phi \in \mathrm{End}_{\mathbf{C}}(A)$, the categorical action $\mathfrak{S}_\Phi = \mathrm{tr}(\Phi)$ is uniquely determined. Any morphism $\mathbf{1} \to \mathbf{1}$ factoring as $\mathrm{ev}_A \circ (\mathrm{id}_{A^\vee} \otimes \Phi) \circ \mathrm{coev}_A$ equals $\mathrm{tr}(\Phi)$.
 <!-- FILE_END: categorical-action-unique.md -->
 
 <!-- FILE_START: categorical-action-notation.md -->

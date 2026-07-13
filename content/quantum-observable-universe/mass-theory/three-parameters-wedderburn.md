@@ -31,7 +31,7 @@ representation labelled by a partition $\lambda \vdash 3$:
 
 ## On-shell projection
 
-The physics endomorphism $\Phi \in \mathrm{End}_{\mathbf{C}}(A)$
+The Lagrangian endomorphism $\Phi \in \mathrm{End}_{\mathbf{C}}(A)$
 ([categorical action](#def:categorical-action)) decomposes
 over the three irreps via the central idempotents $e_\lambda$:
 

@@ -326,7 +326,7 @@ The generative core is formalised over a generic commutative ring. The cross-col
 <!-- FILE_END: gamma-gamma-generates-particles.md -->
 
 <!-- FILE_START: knot-operator-selection.md -->
-The physics endomorphism $\Phi \in \mathrm{End}_{\mathbf{C}}(A)$ of the categorical action decomposes over the irreducible representations of $H_n(q)$. This decomposition and the Frobenius self-duality $A \cong A^\vee$ determine the specific knot operators that mediate any interaction. They also determine their corresponding weights.
+The Lagrangian endomorphism $\Phi \in \mathrm{End}_{\mathbf{C}}(A)$ of the categorical action decomposes over the irreducible representations of $H_n(q)$. This decomposition and the Frobenius self-duality $A \cong A^\vee$ determine the specific knot operators that mediate any interaction. They also determine their corresponding weights.
 
 ## Statement
 
@@ -334,7 +334,7 @@ The physics endomorphism $\Phi \in \mathrm{End}_{\mathbf{C}}(A)$ of the categori
 *Let $(\mathbf{C}, A, \tau)$ be a QOU with archimedean realisation $H_r(q)$. Let $\{\tau(r_i, s_i)\}_{i=1}^{6}$ be the embeddable torus knots on $\Sigma_4$. Let $\gamma_1, \gamma_2 \in H_3(q)$ be two incoming particle states.*
 
 **(i) Spectral decomposition of the mediating endomorphism.**
-*The physics endomorphism $\Phi$ decomposes via Schur orthogonality:*
+*The Lagrangian endomorphism $\Phi$ decomposes via Schur orthogonality:*
 
 $$
   \Phi
