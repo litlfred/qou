@@ -13,7 +13,7 @@ $$
 two-term expression*
 
 $$
-  \mathcal{M}^{\mathrm{class}}(Z, N) = Z\,\mathfrak{m}_{\mathfrak{p}} + N\,\mathfrak{m}_{\mathfrak{n}} + Z\,m_e + \alpha \bigl(\Phi_1 - 6\,\Phi_2\bigr),
+  \mathfrak{m}^{\mathrm{class}}(Z, N) = Z\,\mathfrak{m}_{\mathfrak{p}} + N\,\mathfrak{m}_{\mathfrak{n}} + Z\,m_e + \alpha \bigl(\Phi_1 - 6\,\Phi_2\bigr),
 $$
 
 *where $\alpha = m_e \cdot 8G$ and $\lim_{q \to 1} [3]_q = 3$.*

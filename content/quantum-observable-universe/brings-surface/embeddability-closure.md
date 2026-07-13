@@ -19,4 +19,4 @@ $$
   q  [L_+] - q^{-1} [L_-]
   = (q^{1/2} - q^{-1/2}) [L_0].
 $$
-Terms with $g > 4$ lie in the kernel of the mass functional $\mathcal{M}$. The physical mass receives contributions only from embeddable terms. Every knot in the standard dictionary has $g(K) \leq 4$. Skein descendants like $4_1$ typically exhibit lower genus than their parent generators.
+Terms with $g > 4$ lie in the kernel of the mass functional $\mathfrak{m}$. The physical mass receives contributions only from embeddable terms. Every knot in the standard dictionary has $g(K) \leq 4$. Skein descendants like $4_1$ typically exhibit lower genus than their parent generators.

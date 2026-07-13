@@ -3,7 +3,7 @@
 *Let $(Z, N)$ be a neutral atom with atomic braid $\mathcal{B}_K \in B_{n}$, where $n = 3A + Z$ and $A = Z + N$ ([atomic braid](#def:atomic-braid)). Let $\mathrm{NF}_{\mathrm{GS}}(\mathcal{B}_K) \in H_n(R, q_0)$ denote the Gröbner–Shirshov normal form of $\mathcal{B}_K$ in the Iwahori–Hecke algebra under the PBW Gröbner–Shirshov basis ([PBW corollary](unital-groebner-bases:cor:pbw)). The atomic mass admits the unified categorical expression:*
 
 $$
-  \mathcal{M}(K)
+  \mathfrak{m}(K)
   \;=\;
   m_e \cdot \rho_K \cdot
   \bigl\lvert\!\mathrm{tr}_M\!\bigl(\mathrm{NF}_{\mathrm{GS}}(\mathcal{B}_K)\bigr)\!\bigr\rvert,

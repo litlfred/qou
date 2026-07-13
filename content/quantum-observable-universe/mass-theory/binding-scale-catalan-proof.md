@@ -17,7 +17,7 @@ The scale $\alpha = m_e \times 8G$ connects:
 
 The same scale $\alpha$ appears at two levels:
 
-1. **Nuclear binding**: $\mathcal{M}(Z, N) = M_{\mathrm{free}}
+1. **Nuclear binding**: $\mathfrak{m}(Z, N) = M_{\mathrm{free}}
    + \alpha \cdot \Phi_{\mathrm{atom}}$, where $\Phi < 0$ for
    bound nuclei.
 2. **Quark confinement**: $\Delta m = \alpha \cdot

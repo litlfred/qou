@@ -1,4 +1,4 @@
-| $Z$ | Element | $A$ | $\mathcal{M}_{\mathrm{pred}}$ (MeV) | $\mathcal{M}_{\mathrm{obs}}$ (MeV) | $\Delta$ (MeV) | $\Delta/\mathcal{M}$ |
+| $Z$ | Element | $A$ | $\mathfrak{m}_{\mathrm{pred}}$ (MeV) | $\mathfrak{m}_{\mathrm{obs}}$ (MeV) | $\Delta$ (MeV) | $\Delta/\mathfrak{m}$ |
 |:----|:--------|:----|:-------------------------------------|:------------------------------------|:----------------|:---------------------|
 | 1 | H | 1 | 938.910 | 938.783 | $+0.127$ | $+0.014\%$ |
 | 2 | He | 4 | 3734.624 | 3728.401 | $+6.223$ | $+0.167\%$ |

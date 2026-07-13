@@ -6,7 +6,7 @@ $2 \times 2$ transfer matrix obtained by chaining the crossing
 matrices of all strands $j > i$.  Then the atomic mass is*
 
 $$
-  \mathcal{M}(Z, N)
+  \mathfrak{m}(Z, N)
   =
   Z \cdot m_{\mathfrak{p}}
   + N \cdot m_{\mathfrak{n}}

@@ -1,4 +1,4 @@
-| atom | $A$ | $\mathcal{M}_{\mathrm{AME}}$ (MeV) | $\mathcal{M}_{\mathrm{pred}}$ | err % |
+| atom | $A$ | $\mathfrak{m}_{\mathrm{AME}}$ (MeV) | $\mathfrak{m}_{\mathrm{pred}}$ | err % |
 |------|-----|------:|------:|------:|
 | p    |  1  |  938.7831 |  938.7831 |  0.000 |
 | n    |  1  |  939.5654 |  939.5654 |  0.000 |

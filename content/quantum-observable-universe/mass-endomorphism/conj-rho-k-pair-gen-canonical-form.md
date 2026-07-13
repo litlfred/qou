@@ -13,7 +13,7 @@ $$
 $$
 m_e \cdot |\mathrm{tr}_M(\mathcal{B}_K)| \cdot \left(\rho_K^{\text{LO}} + \rho_K^{\text{single-gen}} + \rho_K^{\text{pair-gen}}\right)
 \;=\;
-\mathcal{M}(K)^{\text{CODATA}}
+\mathfrak{m}(K)^{\text{CODATA}}
 \;+\; O(\hbar_q^{6})
 $$
 

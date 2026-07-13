@@ -1,7 +1,7 @@
-The mass functional $\mathcal{M}(\mathfrak{H})$ obeys the quantum Skein relation:
+The mass functional $\mathfrak{m}(\mathfrak{H})$ obeys the quantum Skein relation:
 
 $$
-q \mathcal{M}(L_+) - q^{-1}\mathcal{M}(L_-) = (q^{1/2} - q^{-1/2})\mathcal{M}(L_0).
+q \mathfrak{m}(L_+) - q^{-1}\mathfrak{m}(L_-) = (q^{1/2} - q^{-1/2})\mathfrak{m}(L_0).
 $$
 
 Evaluating the lepton mass ratio $m_{\mu}/m_{e}$ determines the local substrate parameter $q$:

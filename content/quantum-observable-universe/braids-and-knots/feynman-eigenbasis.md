@@ -26,4 +26,4 @@ $$
 
 Since $A$ is a finite-dimensional Frobenius--Hopf object, this categorical trace is intrinsically finite. No regularisation is required because the sum runs over the finitely many irreducible summands of $V^{\otimes n}$.
 
-The skein relation $q\mathcal{M}(L_+) - q^{-1}\mathcal{M}(L_-) = (q^{1/2} - q^{-1/2})\mathcal{M}(L_0)$ is simply the characteristic equation of the braiding $c_{V,V}$ evaluated under the categorical trace. Because the $R$-matrix determines the eigenvalues, mass ratios such as $\mathfrak{m}_\mu/\mathfrak{m}_e$ emerge exactly from a finite trace over this complete knot eigenbasis.
+The skein relation $q\mathfrak{m}(L_+) - q^{-1}\mathfrak{m}(L_-) = (q^{1/2} - q^{-1/2})\mathfrak{m}(L_0)$ is simply the characteristic equation of the braiding $c_{V,V}$ evaluated under the categorical trace. Because the $R$-matrix determines the eigenvalues, mass ratios such as $\mathfrak{m}_\mu/\mathfrak{m}_e$ emerge exactly from a finite trace over this complete knot eigenbasis.

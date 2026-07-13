@@ -1,12 +1,12 @@
 ## Three equivalent forms
 
-The same observable $\mathcal{M}(K)$ admits three rewritings.
+The same observable $\mathfrak{m}(K)$ admits three rewritings.
 Each exposes different structure:
 
 | Form | Inputs | Status |
 |---|---|---|
-| **(GB-NF)** $\mathcal{M} = m_e \cdot \rho_K \cdot \lvert\!\mathrm{tr}_M\!\bigl(\mathrm{NF}_{\mathrm{GS}}(\mathcal{B}_K)\bigr)\!\rvert$ | $m_e$, $\mathcal{B}_K$, $q_0$, $\rho_K$ | algebraic |
-| **(constituent)** $\mathcal{M} = Z m_{\mathfrak{p}} + N m_{\mathfrak{n}} + Z m_e + \alpha \sum_i \ln\lvert\hat{V}_i^{\mathrm{full}}\rvert$ | $m_e$, $\mathcal{B}_K$, $q_0$, $m_\mu$ | $0.18\%$ mean error, $Z\!=\!1\!\dots\!20$, utilizing the exact muon-anchored Hecke energy |
+| **(GB-NF)** $\mathfrak{m} = m_e \cdot \rho_K \cdot \lvert\!\mathrm{tr}_M\!\bigl(\mathrm{NF}_{\mathrm{GS}}(\mathcal{B}_K)\bigr)\!\rvert$ | $m_e$, $\mathcal{B}_K$, $q_0$, $\rho_K$ | algebraic |
+| **(constituent)** $\mathfrak{m} = Z m_{\mathfrak{p}} + N m_{\mathfrak{n}} + Z m_e + \alpha \sum_i \ln\lvert\hat{V}_i^{\mathrm{full}}\rvert$ | $m_e$, $\mathcal{B}_K$, $q_0$, $m_\mu$ | $0.18\%$ mean error, $Z\!=\!1\!\dots\!20$, utilizing the exact muon-anchored Hecke energy |
 | **(muon-anchored)** $m_{\mathfrak{p}} = 2(m_\mu F_{\mathrm{Bor}} - 6m_e)$ | $m_e$, $q_0$, $m_\mu$ | Exact canonical derivation matching CODATA ([unified mass formula](#thm:knot-mass-formula-unified)) |
 
 The (GB-NF) form constitutes the abstract algebraic statement. The
@@ -25,11 +25,11 @@ braid-class invariant:
 
 $$
   \rho_K \;=\;
-  \frac{\mathcal{M}(K)}{m_e \cdot
+  \frac{\mathfrak{m}(K)}{m_e \cdot
     \lvert\!\mathrm{tr}_M\!\bigl(\mathrm{NF}_{\mathrm{GS}}(\mathcal{B}_K)\bigr)\!\rvert}.
 $$
 
-| Atom | $A$ | $\lvert\mathrm{tr}_M(\mathrm{NF}_{\mathrm{GS}})\rvert$ | $\mathcal{M}_{\mathrm{CODATA}}$ (MeV) | $\rho_K^{\mathrm{CODATA}}$ |
+| Atom | $A$ | $\lvert\mathrm{tr}_M(\mathrm{NF}_{\mathrm{GS}})\rvert$ | $\mathfrak{m}_{\mathrm{CODATA}}$ (MeV) | $\rho_K^{\mathrm{CODATA}}$ |
 |---|---|---|---|---|
 | $\mathfrak{p}$ | $1$ | $1.0653$ | $938.272$ | $1723.6$ |
 | $\mathfrak{n}$ | $1$ | $0.9232$ | $939.565$ | $1991.6$ |
@@ -86,7 +86,7 @@ since their CODATA masses agree to $0.02\%$. So $\rho_K$ is **not**
 a function of $(A, n\text{-strands})$ alone. It must depend on the
 specific braid $\mathcal{B}_K$ through $|\!\mathrm{tr}_M(\mathrm{NF}_{\mathrm{GS}}(\mathcal{B}_K))|$
 (and hence $\rho_K \cdot |\!\mathrm{tr}_M\!|$ constructs the
-mirror-symmetric quantity, equal to $\mathcal{M}(K)/m_e$).
+mirror-symmetric quantity, equal to $\mathfrak{m}(K)/m_e$).
 
 **Reduction.** The categorical-closure question reduces to deriving
 the nucleon-mass anchors $m_{\mathfrak{p}}$ and $m_{\mathfrak{n}}$ from $H_3(q_0)$ data alone.
@@ -109,7 +109,7 @@ By anchoring the absolute mass to the muon-anchored Hecke energy rather than an 
 
 ## Reading the three forms
 
-The three forms encode the same physical mass $\mathcal{M}(K)$
+The three forms encode the same physical mass $\mathfrak{m}(K)$
 parameterised by different calibration data:
 
 * **(constituent)** anchors at the nucleon level but evaluates the exact constituent masses through the **muon-anchored Hecke energy** $m_{\mathfrak{p}} = 2(m_\mu F_{\mathrm{Bor}} - 6m_e)$, rendering CODATA fits unnecessary. Sub-percent for $Z = 1$..$20$.

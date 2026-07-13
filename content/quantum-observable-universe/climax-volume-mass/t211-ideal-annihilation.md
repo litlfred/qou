@@ -20,7 +20,7 @@ Yet the cohomological constraints obliterate it:
 | Constraint          | Status     | Detail                                   |
 | ------------------- | ---------- | ---------------------------------------- |
 | Chebyshev overflow  | **Killed** | $\deg_u a_{11} = 5 > 4 = g(\Sigma_4)$    |
-| Mass functional     | **Killed** | $\mathcal{M}(T_{(2,11)}) = 0$            |
+| Mass functional     | **Killed** | $\mathfrak{m}(T_{(2,11)}) = 0$            |
 | Harmonic projection | **Killed** | $\Pi_{\mathrm{harm}} T_{(2,11)} = 0$     |
 | Hodge dual          | **Killed** | $\star[T_{2,11}] = 0$ in $H^*(\Sigma_4)$ |
 
@@ -108,7 +108,7 @@ For $T_{2,7}$ and $T_{2,9}$: the cyclic symmetry exceeds $S_5$ yet the genus fit
 When $T_{2,11}$ surfaces as an $L_0$ intermediate in a Skein resolution of physical knots, the spectral filter projects it away. The physical Skein relation on $\Sigma_4$ reads:
 
 $$
-  q\mathcal{M}[L_+] = q^{-1}\mathcal{M}[L_-]
+  q\mathfrak{m}[L_+] = q^{-1}\mathfrak{m}[L_-]
   \qquad\text{when } g(L_0) > 4,
 $$
 

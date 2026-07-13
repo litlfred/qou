@@ -21,7 +21,7 @@ symbol is glossed at first use.
 **Mass formula.**
 
 $$
-  \mathcal{M}(Z, N) = 
+  \mathfrak{m}(Z, N) = 
   Z \cdot m_{\mathfrak{p}}
   +  N \cdot m_{\mathfrak{n}}
   -  (Z + N) \cdot (B/A)

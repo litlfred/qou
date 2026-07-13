@@ -11,11 +11,11 @@ See [Table 1](#tbl:recomputed-low-isotope-mass-table-table1-data).
 The atomic-mass formula is:
 
 $$
-  \mathcal{M}(K) = (Z m_p + N m_n) + \mathrm{Binding}(K), \qquad
+  \mathfrak{m}(K) = (Z m_p + N m_n) + \mathrm{Binding}(K), \qquad
   \mathrm{Binding}(K) = m_e \sum_{\lambda \vdash 3A} y_\lambda(q) \chi^\lambda(\mathcal{B}_K) \Delta_\lambda(K).
 $$
 
-This direct form supersedes the equivalent factorisation $\mathcal{M}(K) = \rho_K m_e |\mathrm{tr}_M(K)|$, where $\rho_K = \rho_K^{\mathrm{LO}} + (\Sigma_\lambda y_\lambda \chi^\lambda \Delta_\lambda)/|\mathrm{tr}_M|$. In the factorisation, the leading-order term $\rho_K^{\mathrm{LO}} = (Z m_p + N m_n)/(m_e |\mathrm{tr}_M|)$ forces the $|\mathrm{tr}_M|$ factor to cancel identically against the outer multiplier, recovering the constituent mass $Z m_p + N m_n$. While $\rho_K$ packages constituent and binding masses into a single symbol, the sole physical content resides in the $\Delta_\lambda$ correction. We therefore write the constituent sum and binding terms side by side.
+This direct form supersedes the equivalent factorisation $\mathfrak{m}(K) = \rho_K m_e |\mathrm{tr}_M(K)|$, where $\rho_K = \rho_K^{\mathrm{LO}} + (\Sigma_\lambda y_\lambda \chi^\lambda \Delta_\lambda)/|\mathrm{tr}_M|$. In the factorisation, the leading-order term $\rho_K^{\mathrm{LO}} = (Z m_p + N m_n)/(m_e |\mathrm{tr}_M|)$ forces the $|\mathrm{tr}_M|$ factor to cancel identically against the outer multiplier, recovering the constituent mass $Z m_p + N m_n$. While $\rho_K$ packages constituent and binding masses into a single symbol, the sole physical content resides in the $\Delta_\lambda$ correction. We therefore write the constituent sum and binding terms side by side.
 
 ### Calibrated form
 
@@ -85,7 +85,7 @@ These orders are rigorously exact, as lower-order poles cannot cancel a strict m
 
 ## Cross-references
 
-- [`prop:atomic-mass-gb-nf`](atomic-mass-gb-nf.md): The master mass formula $\mathcal{M}(K) = \rho_K m_e |\mathrm{tr}_M|$.
+- [`prop:atomic-mass-gb-nf`](atomic-mass-gb-nf.md): The master mass formula $\mathfrak{m}(K) = \rho_K m_e |\mathrm{tr}_M|$.
 - [`prop:q-hecke-seminormal-character-closure`](q-hecke-seminormal-character-closure.md): Partition-sum and canonical-reducer agreement.
 - [`prop:hecke-branching-trace-decomposition`](hecke-branching-trace-decomposition.md): Operator-valued Littlewood-Richardson block formula.
 - [`prop:per-nucleon-shift-additive-linearity`](per-nucleon-shift-additive-linearity.md): Path A categorical verification.

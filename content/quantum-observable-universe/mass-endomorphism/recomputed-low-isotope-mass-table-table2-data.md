@@ -1,4 +1,4 @@
-| Atom | $\mathcal{M}_{\text{pred}}^{\mathrm{LO}}$ (MeV) | $\mathcal{M}_{\text{CODATA}}$ (MeV) | $\Delta$ (MeV) | rel err | binding (CODATA) |
+| Atom | $\mathfrak{m}_{\text{pred}}^{\mathrm{LO}}$ (MeV) | $\mathfrak{m}_{\text{CODATA}}$ (MeV) | $\Delta$ (MeV) | rel err | binding (CODATA) |
 |---|---:|---:|---:|---:|---:|
 | $p$ † | 938.272088 | 938.272088 | 0.0000 | 0.000 % | (anchor) |
 | $n$ † | 939.565421 | 939.565421 | 0.0000 | 0.000 % | (anchor) |

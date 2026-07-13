@@ -11,7 +11,7 @@ the per-derivation reading above:
 
 - *$T_1$ binding (descended Markov):* the categorical mass
   formula
-  $\mathcal{M}(Z, N) = E_{0,\beta} \cdot \mathfrak{m}(\beta_{Z,N})$
+  $\mathfrak{m}(Z, N) = E_{0,\beta} \cdot \mathfrak{m}(\beta_{Z,N})$
   with $E_{0,\beta} = 0.7823$ MeV the free-neutron β-decay $Q$
   per [categorical mass, Markov](#prop:categorical-mass-markov)
   reads $T_1$ in cat units.  The binding contribution is the
@@ -58,7 +58,7 @@ Across the proton..${}^{9}$Be spectrum (12 atoms):
 
 See [Table 3](#tbl:six-term-per-derivation-weights-table3-data).
 
-**Mean $\lvert\delta\mathcal{M}/\mathcal{M}\rvert = 0.184\%$,
+**Mean $\lvert\delta\mathfrak{m}/\mathfrak{m}\rvert = 0.184\%$,
 max $= 0.525\%$ (${}^{4}$He).**
 
 This matches the standalone
