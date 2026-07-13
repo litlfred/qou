@@ -180,7 +180,12 @@ on the complex-volume unification
 ([binding–$Q_\beta$ complex volume](#conj:binding-qbeta-complex-volume)).
 $\Phi_b$ touches binding **only** through that unproven channel
 identity; no statement in this block or in the Lean carriers above
-assumes it.
+assumes it. The channel is carried explicitly as the class
+`SDeformedVolumeChannel` ($u(q_0)$ map + deformed volume + the identity
+$S = \mathrm{Im}\,\mathfrak{V}(u(q_0))$), and the composition with the
+keystone is derived, not assumed: `phase_eq_im_deformed_volume`,
+`phiB_eq_cs_phase`, and `exists_cs_vanishing` (the sign flip of $S$
+forces a substrate point with vanishing deformed Chern–Simons part).
 
 ## Witness
 
