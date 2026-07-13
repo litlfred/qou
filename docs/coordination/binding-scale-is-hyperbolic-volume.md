@@ -55,8 +55,15 @@ items are narrow and specific:
    `8.048 < Vol(8₁₁)=8.286` was already against the volume-complexity trend. So
    the naive "n=4 term = one chain-link volume" reading **fails at ⁴He**
    (scope-(a); the Lean-proved multiplicity and the A=3 results are untouched).
-   Honest routes: the SDP canonical knot-ID at H₁₂ for the true ⁴He link, or a
-   non-single-volume n=4 term.
+   **Closed out same day** (`he4_vol4_prediction_test_probe.py` +
+   [audit](../audits/2026-07-13-he4-vol4-prediction-test.md)): the implied
+   `Vol₄` is now computed *exactly* from AME/m_e/corpus volumes (8.0484,
+   confirming the pre-registered 8.048 to 4e-4), and a guarded census scan of
+   all 7463 4-component HT links (≤14 crossings) finds **zero** volumes within
+   ±0.05 of 8.048 (nearest ±0.31) — the prediction falls in a *gap* of the
+   census spectrum, so no ≤14-crossing 4-component link carries it even
+   post-hoc. Honest routes: the SDP canonical knot-ID at H₁₂ for the true ⁴He
+   link, or a non-single-volume n=4 term.
 2. **deuteron** — NOT an open wall. It is derived via `m_e·Vol(𝓑₃)·Δtr` at
    **+0.19%** (the single-nucleon Borromean knot 𝓑₃, scalar-trace collapse). The
    "Hopf `Vol=0`" is only the *bond-count multi-body-chain* route being
