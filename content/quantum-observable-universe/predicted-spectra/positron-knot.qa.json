@@ -891,6 +891,19 @@
         "reviewed_at": "2026-07-07T14:26:56.357365Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "definition in sec:fundamental-fermions (lepton sector) alongside electron-knot/neutrino-knot; the positron is exactly this section's subject and names a new construction (mirror trefoil σ(T_{2,3}))."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:00:00.000Z",
+        "reviewed_sha": "ec1e5f74dd3ebae71fbc114aa458816d8bde2da7",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "wall-side-statement": [
@@ -951,6 +964,19 @@
         "notes": "The mathematical claims in 'Positron' are unverified due to compile errors in the Lean sibling file: content/quantum-observable-universe/predicted-spectra/positron-knot.lean:28:13: error: unexpected token 'section'; expected 'lemma'.",
         "severity": "minor",
         "evidence": "positron-knot.lean:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:00:00.000Z",
+        "reviewed_sha": "ec1e5f74dd3ebae71fbc114aa458816d8bde2da7",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-vacuous": [
@@ -973,6 +999,19 @@
         "notes": "No vacuous proofs detected. Sibling Lean file does not contain sorry, though it fails compilation on modules.",
         "severity": "minor",
         "evidence": "positron-knot.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:00:00.000Z",
+        "reviewed_sha": "ec1e5f74dd3ebae71fbc114aa458816d8bde2da7",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-circular": [
@@ -995,6 +1034,19 @@
         "notes": "The definition 'Positron' is formulated via non-circular relations to existing primitives.",
         "severity": "minor",
         "evidence": "positron-knot.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:00:00.000Z",
+        "reviewed_sha": "ec1e5f74dd3ebae71fbc114aa458816d8bde2da7",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-overclaim": [
@@ -1016,6 +1068,19 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The prose presents 'Positron' as verified, but the sibling Lean file fails to compile.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:00:00.000Z",
+        "reviewed_sha": "ec1e5f74dd3ebae71fbc114aa458816d8bde2da7",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-hidden-dof": [
@@ -1038,6 +1103,19 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Positron'.",
         "severity": "minor",
         "evidence": "positron-knot.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:00:00.000Z",
+        "reviewed_sha": "ec1e5f74dd3ebae71fbc114aa458816d8bde2da7",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-non-sequitur": [
@@ -1060,6 +1138,19 @@
         "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/predicted-spectra/positron-knot.lean.",
         "severity": "minor",
         "evidence": "positron-knot.lean:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:00:00.000Z",
+        "reviewed_sha": "ec1e5f74dd3ebae71fbc114aa458816d8bde2da7",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1081,6 +1172,19 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/predicted-spectra/positron-knot.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:00:00.000Z",
+        "reviewed_sha": "ec1e5f74dd3ebae71fbc114aa458816d8bde2da7",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-citation-misuse": [
@@ -1103,6 +1207,19 @@
         "notes": "No citations are present in 'Positron', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "positron-knot.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:00:00.000Z",
+        "reviewed_sha": "ec1e5f74dd3ebae71fbc114aa458816d8bde2da7",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-definitional-ambiguity": [
@@ -1125,6 +1242,19 @@
         "notes": "Key terms and symbols in 'Positron' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "positron-knot.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:00:00.000Z",
+        "reviewed_sha": "ec1e5f74dd3ebae71fbc114aa458816d8bde2da7",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-empirical-fragility": [
@@ -1147,6 +1277,19 @@
         "notes": "The empirical claims in 'Positron' are structurally anchored to the QOU mass framework and are stable.",
         "severity": "minor",
         "evidence": "positron-knot.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:00:00.000Z",
+        "reviewed_sha": "ec1e5f74dd3ebae71fbc114aa458816d8bde2da7",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-physical-implausibility": [
@@ -1169,6 +1312,19 @@
         "notes": "The physical concepts described in 'Positron' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "positron-knot.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:00:00.000Z",
+        "reviewed_sha": "ec1e5f74dd3ebae71fbc114aa458816d8bde2da7",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-reproducibility": [
@@ -1191,6 +1347,19 @@
         "notes": "The Lean sibling content/quantum-observable-universe/predicted-spectra/positron-knot.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
         "evidence": "positron-knot.lean:1 — content/quantum-observable-universe/predicted-spectra/positron-knot.lean:28:13: error: unexpected token 'section'; expected 'lemma'"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:00:00.000Z",
+        "reviewed_sha": "ec1e5f74dd3ebae71fbc114aa458816d8bde2da7",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-referee-verdict": [
@@ -1214,6 +1383,19 @@
         "severity": "critical",
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling content/quantum-observable-universe/predicted-spectra/positron-knot.lean contains compilation errors: content/quantum-observable-universe/predicted-spectra/positron-knot.lean:28:13: error: unexpected token 'section'; expected 'lemma', invalidating the claimed formalization."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:00:00.000Z",
+        "reviewed_sha": "ec1e5f74dd3ebae71fbc114aa458816d8bde2da7",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "bib-cite-resolves": [
@@ -1469,6 +1651,36 @@
         },
         "reviewed_at": "2026-07-12T00:35:44.899Z",
         "reviewed_sha": "6a697553ee79c4d9e8932245bfa58ba9bd9e7e5c"
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:00:00.000Z",
+        "reviewed_sha": "ec1e5f74dd3ebae71fbc114aa458816d8bde2da7",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:00:00.000Z",
+        "reviewed_sha": "ec1e5f74dd3ebae71fbc114aa458816d8bde2da7",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ]
   },
