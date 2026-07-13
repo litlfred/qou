@@ -1,6 +1,6 @@
 {
   "$schema": "lean-vacuity-review/v1",
-  "updated_at": "2026-07-04T00:32:55.298Z",
+  "updated_at": "2026-07-13T10:28:57Z",
   "entries": {
     "content/quantum-observable-universe/lean/QOU/Archimedean/BetaDecay.lean::interaction_completeness::proof-no-false-premise": {
       "category": "proof-no-false-premise",
@@ -95,55 +95,55 @@
       "pattern": "exists-true-tautology",
       "line": 650,
       "verdict": "legit",
-      "file_sha": "b501cf3b668d",
+      "file_sha": "af2ac0b0f575",
       "disposition": "no-fix",
-      "evidence": "Conditional consequence: obtains the witness from the conjecture class field knot_inhabited and repackages as an existential; 'exists _ : Knot, True' is the Nonempty statement, trailing True is packaging, the [JonesBirthday K] instance is load-bearing.",
+      "evidence": "Conditional consequence: obtains the witness from the conjecture class field knot_inhabited and repackages as an existential; 'exists _ : Knot, True' is the Nonempty statement, trailing True is packaging, the [JonesBirthday K] instance is load-bearing. | Re-verified 2026-07-13 (file_sha drift; decl re-read, substance unchanged — still legit).",
       "reviewer": "agent",
-      "reviewed_at": "2026-07-03T19:59:05Z"
+      "reviewed_at": "2026-07-13T10:28:57Z"
     },
     "content/quantum-observable-universe/lean/QOU/BraidKnot/JucysMurphy.lean::jucysMurphy_zero::proof-no-false-premise": {
       "category": "proof-no-false-premise",
       "pattern": "discharged-impossible-hyp",
-      "line": 106,
+      "line": 124,
       "verdict": "legit",
-      "file_sha": "6c280bc9c88a",
+      "file_sha": "233adf626a11",
       "disposition": "no-fix",
-      "evidence": "Premise 0<n is satisfiable (any n>=1); Nat.not_lt_zero proves the filter over j<0 is EMPTY (an empty-sum computation), not that a hypothesis is impossible. Real anchor lemma X_0 = 0 for the Jucys-Murphy definition.",
+      "evidence": "Premise 0<n is satisfiable (any n>=1); Nat.not_lt_zero proves the filter over j<0 is EMPTY (an empty-sum computation), not that a hypothesis is impossible. Real anchor lemma X_0 = 0 for the Jucys-Murphy definition. | Re-verified 2026-07-13 (file_sha drift; decl re-read, substance unchanged — still legit).",
       "reviewer": "agent",
-      "reviewed_at": "2026-07-03T19:59:05Z"
+      "reviewed_at": "2026-07-13T10:28:57Z"
     },
     "content/quantum-observable-universe/lean/QOU/BraidKnot/JucysMurphy.lean::row_eq_offset_add_count::proof-no-false-premise": {
       "category": "proof-no-false-premise",
       "pattern": "discharged-impossible-hyp",
-      "line": 646,
+      "line": 1100,
       "verdict": "legit",
-      "file_sha": "6c280bc9c88a",
+      "file_sha": "233adf626a11",
       "disposition": "no-fix",
-      "evidence": "Substantive combinatorial proof (Finset.card_bij' bijection with the row range [(-d)+, x.1)); absurd only discharges impossible sub-cases inside the bijection argument. No vacuous whole-theorem premise.",
+      "evidence": "Substantive combinatorial proof (Finset.card_bij' bijection with the row range [(-d)+, x.1)); absurd only discharges impossible sub-cases inside the bijection argument. No vacuous whole-theorem premise. | Re-verified 2026-07-13 (file_sha drift; decl re-read, substance unchanged — still legit).",
       "reviewer": "agent",
-      "reviewed_at": "2026-07-03T19:59:05Z"
+      "reviewed_at": "2026-07-13T10:28:57Z"
     },
     "content/quantum-observable-universe/lean/QOU/BraidKnot/SpechtClassification.lean::diagram_card::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
       "line": 122,
       "verdict": "legit",
-      "file_sha": "a6cfddf99041",
+      "file_sha": "c9d4d52d5fdf",
       "disposition": "no-fix",
-      "evidence": "Standard subtype-projection simp lemma: PartitionIndex n := {mu // mu.card = n}, so i.property IS the defining datum, not a smuggled conclusion. Mathlib idiom, not the anti-pattern.",
+      "evidence": "Standard subtype-projection simp lemma: PartitionIndex n := {mu // mu.card = n}, so i.property IS the defining datum, not a smuggled conclusion. Mathlib idiom, not the anti-pattern. | Re-verified 2026-07-13 (file_sha drift; decl re-read, substance unchanged — still legit).",
       "reviewer": "agent",
-      "reviewed_at": "2026-07-03T19:59:05Z"
+      "reviewed_at": "2026-07-13T10:28:57Z"
     },
     "content/quantum-observable-universe/lean/QOU/BraidKnot/SpechtTriangularCore.lean::rowSet_card::proof-no-false-premise": {
       "category": "proof-no-false-premise",
       "pattern": "discharged-impossible-hyp",
       "line": 315,
       "verdict": "legit",
-      "file_sha": "9cd0442e5453",
+      "file_sha": "f2866372d13d",
       "disposition": "no-fix",
-      "evidence": "by_contra + trichotomy: absurd eliminates the a<b / b<a sub-cases via entry_row_strictMonoOn. Genuine injectivity-cardinality proof; premises satisfiable.",
+      "evidence": "by_contra + trichotomy: absurd eliminates the a<b / b<a sub-cases via entry_row_strictMonoOn. Genuine injectivity-cardinality proof; premises satisfiable. | Re-verified 2026-07-13 (file_sha drift; decl re-read, substance unchanged — still legit).",
       "reviewer": "agent",
-      "reviewed_at": "2026-07-03T19:59:05Z"
+      "reviewed_at": "2026-07-13T10:28:57Z"
     },
     "content/quantum-observable-universe/lean/QOU/BraidKnot/WLambdaMTCLocalizationObligation.lean::one_le_hookLength::proof-no-false-premise": {
       "category": "proof-no-false-premise",
@@ -258,35 +258,35 @@
     "content/quantum-observable-universe/lifting-and-descent/qu-to-qou.lean::qu_to_qou_exists::proof-no-trivial-true": {
       "category": "proof-no-trivial-true",
       "pattern": "exists-true-tautology",
-      "line": 94,
+      "line": 100,
       "verdict": "legit",
-      "file_sha": "99a7e82b78c0",
+      "file_sha": "f0cc57a64ad6",
       "disposition": "no-fix",
-      "evidence": "'exists q : QuToQou, True' == Nonempty QuToQou over a constrained structure (trace_map, perpetual obstruction, branch data) — a real existence claim, honestly sorry'd with -- Ref: [manuscript]. Advisory: restate as Nonempty for clarity.",
+      "evidence": "'exists q : QuToQou, True' == Nonempty QuToQou over a constrained structure (trace_map, perpetual obstruction, branch data) — a real existence claim, honestly sorry'd with -- Ref: [manuscript]. Advisory: restate as Nonempty for clarity. | Re-verified 2026-07-13 (file_sha drift; decl re-read, substance unchanged — still legit).",
       "reviewer": "agent",
-      "reviewed_at": "2026-07-03T19:59:05Z"
+      "reviewed_at": "2026-07-13T10:28:57Z"
     },
     "content/quantum-observable-universe/mass-theory/habiro-expansion-atomic.lean::habiro_expansion_atomic::proof-no-trivial-true": {
       "category": "proof-no-trivial-true",
       "pattern": "exists-true-tautology",
-      "line": 174,
+      "line": 165,
       "verdict": "legit",
-      "file_sha": "36e61eceb7f8",
+      "file_sha": "1e07bfaf5a27",
       "disposition": "no-fix",
-      "evidence": "Derives the witness from the CITED external axiom habiro_expansion_exists (Habiro 2002) via rcases; existential-of-structure = Nonempty packaging. Resting on a cited upstream axiom is the sanctioned pattern.",
+      "evidence": "Derives the witness from the CITED external axiom habiro_expansion_exists (Habiro 2002) via rcases; existential-of-structure = Nonempty packaging. Resting on a cited upstream axiom is the sanctioned pattern. | Re-verified 2026-07-13 (file_sha drift; decl re-read, substance unchanged — still legit).",
       "reviewer": "agent",
-      "reviewed_at": "2026-07-03T19:59:05Z"
+      "reviewed_at": "2026-07-13T10:28:57Z"
     },
     "content/quantum-observable-universe/mass-theory/knot-operator-lp-selection.lean::knot_operator_lp_selection::proof-no-trivial-true": {
       "category": "proof-no-trivial-true",
       "pattern": "exists-true-tautology",
-      "line": 116,
-      "verdict": "genuine",
-      "file_sha": "f8af9f73757a",
-      "disposition": "queued",
-      "evidence": "Theorem concludes 'exists _oStar : ops.Op, True' by projecting the class field selectionUnique whose own type IS that conclusion — and the conclusion is contentless (inhabitation of Op). Neither optimality nor uniqueness of the active set is encoded. Fix requires designing an LP-optimality predicate (Mathlib lacks LP duality); queued as follow-up, degenerate per AGENTS.md 3b-cond item 5.",
+      "line": 136,
+      "verdict": "legit",
+      "file_sha": "f1c5d1904903",
+      "disposition": "no-fix",
+      "evidence": "Prior genuine issue RESOLVED in code (verified lean-direct, exit 0, sorry-free). The theorem no longer projects a contentless '∃ _oStar, True'; it now DERIVES '∃ oStar ∃ x, ops.Optimal x n_T ∧ (∀ o, x o ≠ 0 ↔ o = oStar)' by composing two content-bearing class hypotheses — strongDuality (Schrijver §7.2: an LP-optimum exists) and complementarySlackness (Schrijver §7.4: its support is a singleton). The Optimal predicate (feasible + objective-maximal) encodes the LP-optimality the old ∃-True stub lacked; §3b-cond conditional-class, non-degenerate. Re-reviewed 2026-07-13 after file_sha drift f8af9f7→f1c5d19.",
       "reviewer": "agent",
-      "reviewed_at": "2026-07-03T19:59:05Z"
+      "reviewed_at": "2026-07-13T10:28:57Z"
     },
     "content/quantum-observable-universe/quantum-observable-universes/categorical-reeb-derivation.lean::CategoricalReebDerivation::proof-claims-unencoded": {
       "category": "proof-claims-unencoded",
