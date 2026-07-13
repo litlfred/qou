@@ -61,4 +61,119 @@ theorem sorted_prefix (l : List ℕ) (j : ℕ)
   refine ⟨lt_of_le_of_lt hab hblt, ?_⟩
   exact lt_of_lt_of_le hbj (hsort a b hab hblt)
 
+/-- `Σ_{i<len} λ_i = l.sum`. -/
+theorem sum_range_getD (l : List ℕ) :
+    ∑ i ∈ Finset.range l.length, l.getD i 0 = l.sum := by
+  induction l with
+  | nil => simp
+  | cons a t ih =>
+    rw [List.length_cons, Finset.sum_range_succ', List.sum_cons]
+    simp only [List.getD_cons_succ, List.getD_cons_zero]
+    rw [ih]; ring
+
+/-- **Cell regrouping** (the workhorse): summing any `h i j` over the cells of a
+sorted `λ` rows-first equals columns-first, `Σ_i Σ_{j<λ_i} h i j =
+Σ_j Σ_{i<colLen j} h i j`. Both iterate the same cell set `{(i,j) : j < λ_i} =
+{(i,j) : i < colLen j}` (sorted-prefix). -/
+theorem sum_cells_group (l : List ℕ) (M : ℕ)
+    (hsort : ∀ a b, a ≤ b → b < l.length → l.getD b 0 ≤ l.getD a 0)
+    (hM : ∀ i ∈ Finset.range l.length, l.getD i 0 ≤ M)
+    (h : ℕ → ℕ → ℕ) :
+    ∑ i ∈ Finset.range l.length, ∑ j ∈ Finset.range (l.getD i 0), h i j
+      = ∑ j ∈ Finset.range M, ∑ i ∈ Finset.range (colLen l j), h i j := by
+  have e1 : ∀ i ∈ Finset.range l.length,
+      (∑ j ∈ Finset.range (l.getD i 0), h i j)
+        = ∑ j ∈ Finset.range M, (if j < l.getD i 0 then h i j else 0) := by
+    intro i hi
+    rw [Finset.sum_ite]
+    simp only [Finset.sum_const_zero, add_zero]
+    congr 1
+    ext j
+    simp only [Finset.mem_filter, Finset.mem_range]
+    constructor
+    · intro hj; exact ⟨lt_of_lt_of_le hj (hM i hi), hj⟩
+    · intro hj; exact hj.2
+  rw [Finset.sum_congr rfl e1, Finset.sum_comm]
+  refine Finset.sum_congr rfl fun j _ => ?_
+  rw [← Finset.sum_filter, sorted_prefix l j hsort]
+
+/-- `Σ_{i<m} i = C(m,2)` reindex helper: `Σ_{i<m}(m-1-i) = Σ_{i<m} i`. -/
+theorem sum_range_sub_rev (m : ℕ) :
+    ∑ i ∈ Finset.range m, (m - 1 - i) = ∑ i ∈ Finset.range m, i := by
+  rw [← Finset.sum_range_reflect]
+  refine Finset.sum_congr rfl fun i hi => ?_
+  have : i < m := Finset.mem_range.mp hi
+  omega
+
+/-- `b(λ) = Σ_i i · λ_i`. -/
+def bStat (l : List ℕ) : ℕ := ∑ i ∈ Finset.range l.length, i * l.getD i 0
+
+/-- `b(λ') = Σ_j (colLen j) · j` — `b` of the conjugate, as a column sum. -/
+def colSum (l : List ℕ) (M : ℕ) : ℕ := ∑ j ∈ Finset.range M, (colLen l j) * j
+
+/-- The arm part `Σ_c arm(c) = Σ_i Σ_{j<λ_i} (λ_i − 1 − j)`. -/
+def armPart (l : List ℕ) : ℕ :=
+  ∑ i ∈ Finset.range l.length, ∑ j ∈ Finset.range (l.getD i 0), (l.getD i 0 - 1 - j)
+
+/-- The leg part `Σ_c leg(c) = Σ_i Σ_{j<λ_i} (colLen j − 1 − i)`. -/
+def legPart (l : List ℕ) : ℕ :=
+  ∑ i ∈ Finset.range l.length, ∑ j ∈ Finset.range (l.getD i 0), (colLen l j - 1 - i)
+
+/-- The hook sum `Σ_c h(c) = Σ_i Σ_{j<λ_i} (arm + leg + 1)`. -/
+def hookSum (l : List ℕ) : ℕ :=
+  ∑ i ∈ Finset.range l.length, ∑ j ∈ Finset.range (l.getD i 0),
+    ((l.getD i 0 - 1 - j) + (colLen l j - 1 - i) + 1)
+
+/-- `Σ_c arm(c) = b(λ')` (the column sum). -/
+theorem armPart_eq_colSum (l : List ℕ) (M : ℕ)
+    (hsort : ∀ a b, a ≤ b → b < l.length → l.getD b 0 ≤ l.getD a 0)
+    (hM : ∀ i ∈ Finset.range l.length, l.getD i 0 ≤ M) :
+    armPart l = colSum l M := by
+  have hrev : armPart l
+      = ∑ i ∈ Finset.range l.length, ∑ j ∈ Finset.range (l.getD i 0), j := by
+    unfold armPart; exact Finset.sum_congr rfl fun i _ => sum_range_sub_rev _
+  have hswap : (∑ i ∈ Finset.range l.length, ∑ j ∈ Finset.range (l.getD i 0), j)
+      = ∑ j ∈ Finset.range M, ∑ i ∈ Finset.range (colLen l j), j :=
+    sum_cells_group l M hsort hM (fun _ j => j)
+  have hcol : (∑ j ∈ Finset.range M, ∑ i ∈ Finset.range (colLen l j), j) = colSum l M := by
+    unfold colSum
+    exact Finset.sum_congr rfl fun j _ => by
+      rw [Finset.sum_const, Finset.card_range, smul_eq_mul]
+  rw [hrev, hswap, hcol]
+
+/-- `Σ_c leg(c) = b(λ)`. Both collapse to `Σ_j C(colLen j, 2)`. -/
+theorem legPart_eq_bStat (l : List ℕ) (M : ℕ)
+    (hsort : ∀ a b, a ≤ b → b < l.length → l.getD b 0 ≤ l.getD a 0)
+    (hM : ∀ i ∈ Finset.range l.length, l.getD i 0 ≤ M) :
+    legPart l = bStat l := by
+  have hleg : legPart l
+      = ∑ j ∈ Finset.range M, ∑ i ∈ Finset.range (colLen l j), (colLen l j - 1 - i) := by
+    unfold legPart; exact sum_cells_group l M hsort hM (fun i j => colLen l j - 1 - i)
+  have hb : bStat l = ∑ j ∈ Finset.range M, ∑ i ∈ Finset.range (colLen l j), i := by
+    have hbi : bStat l
+        = ∑ i ∈ Finset.range l.length, ∑ _j ∈ Finset.range (l.getD i 0), i := by
+      unfold bStat
+      exact Finset.sum_congr rfl fun i _ => by
+        rw [Finset.sum_const, Finset.card_range, smul_eq_mul]; ring
+    rw [hbi]; exact sum_cells_group l M hsort hM (fun i _ => i)
+  rw [hleg, hb]
+  exact Finset.sum_congr rfl fun j _ => sum_range_sub_rev _
+
+/-- **The full hook-sum identity**, for every sorted partition (leg-sum lemma
+closed): `Σ_c h(c) = b(λ') + b(λ) + n`, with `b(λ')` the column sum. -/
+theorem hookSum_eq (l : List ℕ) (M : ℕ)
+    (hsort : ∀ a b, a ≤ b → b < l.length → l.getD b 0 ≤ l.getD a 0)
+    (hM : ∀ i ∈ Finset.range l.length, l.getD i 0 ≤ M) :
+    hookSum l = colSum l M + bStat l + l.sum := by
+  have hsplit : hookSum l = armPart l + legPart l
+      + ∑ i ∈ Finset.range l.length, ∑ _j ∈ Finset.range (l.getD i 0), 1 := by
+    unfold hookSum armPart legPart
+    rw [← Finset.sum_add_distrib, ← Finset.sum_add_distrib]
+    refine Finset.sum_congr rfl fun i _ => ?_
+    rw [← Finset.sum_add_distrib, ← Finset.sum_add_distrib]
+  have hn : (∑ i ∈ Finset.range l.length, ∑ _j ∈ Finset.range (l.getD i 0), 1) = l.sum := by
+    simp only [Finset.sum_const, smul_eq_mul, mul_one, Finset.card_range]
+    exact sum_range_getD l
+  rw [hsplit, armPart_eq_colSum l M hsort hM, legPart_eq_bStat l M hsort hM, hn]
+
 end QOU.HookSumComplete
