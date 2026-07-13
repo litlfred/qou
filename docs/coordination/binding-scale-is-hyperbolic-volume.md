@@ -51,9 +51,37 @@ items are narrow and specific:
    prediction:** compute the hyperbolic volume of the canonical ⁴He link with
    SnapPy and compare to 8.05 (in-family with 8₁₁=8.29, L6a4=7.33). *Not run here
    — SnapPy unavailable in this sandbox.*
-2. **deuteron** — Hopf `Vol=0` is a regime boundary (non-hyperbolic), not a gap;
-   the 2-body scale is the derived q-rotational `μ₀·ℏ_q·J_q²` (−9%), a genuinely
-   different mechanism. Refining −9% → tighter is the open A=2 item.
+2. **deuteron** — NOT an open wall. It is derived via `m_e·Vol(𝓑₃)·Δtr` at
+   **+0.19%** (the single-nucleon Borromean knot 𝓑₃, scalar-trace collapse). The
+   "Hopf `Vol=0`" is only the *bond-count multi-body-chain* route being
+   inapplicable at A=2 (a 2-body chain has no hyperbolic sub-link) — a
+   route-boundary, not a gap. My earlier "deuteron wall / entanglement
+   resummation" framing (#3736) over-stated it: the resummation undershoot is a
+   negative for *that route*, not evidence the deuteron is open.
+
+### Why "two derivations"? They are ONE — two contractions of the q-Reeb phase
+
+The cheat-sheet "derived twice" (`m_e·Vol(𝓑₃)·Δtr` at +0.19% and
+`μ₀·ℏ_q·J_q²(j=n/2)` at −9%) is **not** two independent derivations — a single
+physical binding number should have one, and it does. Both are collapses of the
+**single per-block q-Reeb phase `θ_λ`** (the Reeb coordinate): the cheat sheet
+states it outright — *"the per-rep highest-weight `j=n/2` collapses the per-block
+Reeb phase just as the scalar trace does."*
+
+| collapse of `θ_λ` | resulting form | accuracy |
+|---|---|---|
+| scalar trace (`Δtr`) — full contraction | `m_e·Vol(𝓑₃)·Δtr` (volume route) | +0.19% |
+| highest weight `j=n/2` — leading-spin truncation | `μ₀·ℏ_q·J_q²` (rotational route) | −9% |
+
+So the object is `θ_λ`; `Vol` is its all-orders (semiclassical, colored-Jones-
+growth) contraction and the rotor `J_q²` is its leading-spin truncation. The ~9%
+gap between them is the **inter-scheme truncation error** (leading spin vs full
+trace), i.e. a **consistency check of the one derivation**, not two. This unifies
+the session's threads: the Reeb phase `θ_λ` is the object; the hyperbolic volume
+is what makes its contraction extensive and MeV-scaled; the "two derivations" are
+its two collapse schemes. (The third, per-λ route with a fitted `C_knot = 5.852`
+— exactly the μ_ext I measured — was **retracted as a fit**; it is not a
+collapse of `θ_λ` but an anchor inversion.)
 3. **mirror Coulomb residual** — 31% derived (`tanh(ln q₀)·B_pp`); the rest is the
    geometric/Milnor EM object (the pairwise route is provably empty — Borromean
    L6a4 has pairwise linking 0). The Reeb phase θ_λ is the right geometric
