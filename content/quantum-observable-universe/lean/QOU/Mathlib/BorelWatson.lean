@@ -75,7 +75,6 @@ theorem gevrey1_remainder_expDecay {C x a : ℝ}
     (hC : 0 ≤ C) (hx0 : 0 < x) (hx1 : x ≤ 1) (_ha : 0 ≤ a)
     (hbound : ∀ N : ℕ, a ≤ C * (N ! : ℝ) * x ^ N) :
     a ≤ C * Real.exp 2 / Real.sqrt x * Real.exp (-1 / x) := by
-  have he : (0 : ℝ) < Real.exp 1 := Real.exp_pos 1
   set N : ℕ := ⌊x⁻¹⌋₊ with hNdef
   have hxinv0 : 0 < x⁻¹ := inv_pos.mpr hx0
   have hxinv1 : 1 ≤ x⁻¹ := (one_le_inv₀ hx0).mpr hx1
@@ -86,7 +85,6 @@ theorem gevrey1_remainder_expDecay {C x a : ℝ}
   have hNx : (N : ℝ) * x ≤ 1 := by
     have := mul_le_mul_of_nonneg_right hNle hx0.le
     rwa [inv_mul_cancel₀ hx0.ne'] at this
-  have hNpos : (0 : ℝ) < N := by exact_mod_cast hN1
   -- sub-bound A: (Nx/e)^N ≤ (1/e)^N
   have hbase : (0 : ℝ) ≤ (N : ℝ) * x / Real.exp 1 := by positivity
   have hbase_le : (N : ℝ) * x / Real.exp 1 ≤ 1 / Real.exp 1 := by gcongr
