@@ -64,12 +64,12 @@ theorem T35_braid_index : T35.braidIndex = 3 := by
   unfold T35 TorusKnot.braidIndex
   norm_num
 
-/-- The braid word for T(m,n) in B_m is (σ₁σ₂⋯σ_{m-1})^n,
+/-- The braid word for T(m,n) in B_m is (σ₀σ₁⋯σ_{m-2})^n,
     which has exactly (m-1)*n crossings. -/
 -- Ref: [manuscript] §6/box-braid-irreducibility
 def torusBraidWordLength (m n : ℕ) : ℕ := (m - 1) * n
 
-/-- T(3,5) has braid word (σ₁σ₂)⁵ with 10 crossings in B₃. -/
+/-- T(3,5) has braid word (σ₀σ₁)⁵ with 10 crossings in B₃. -/
 -- Ref: [manuscript] §6/box-braid-irreducibility
 theorem T35_braid_word_length : torusBraidWordLength 3 5 = 10 := by
   unfold torusBraidWordLength
@@ -94,7 +94,7 @@ theorem T35_braid_word_length : torusBraidWordLength 3 5 = 10 := by
 
     The Lean content is the topological invariant of that mediator:
     the T(3,5) sub-topology has crossing number 10 and is realised by
-    the braid word `(σ₁σ₂)⁵` of length 10 in B₃ (braid index 3). This
+    the braid word `(σ₀σ₁)⁵` of length 10 in B₃ (braid index 3). This
     is the irreducible cost of the γ–ν interaction — 10 R-matrix
     applications / Planck steps (cf. `box_braid_min_crossings`). -/
 -- Ref: [manuscript] §6/box-braid-irreducibility

@@ -28,7 +28,9 @@ export default conjecture({
         "and its generation modulation (T(2,3)/T(2,5)/T(2,7), framing q^n) so m_τ ≠ m_μ'. " +
         "The 2026-05-24 notes below predate this ruling — read their muon = figure-eight " +
         "identification as SUPERSEDED; the Phase 4–5 own-tower material is retained as a " +
-        "scope-limited negative (see the .md resolution banner).",
+        "scope-limited negative on the isolated-tower hypothesis (the .md body's two-constraint " +
+        "obstruction + Φ_q probe record the negative; formerly also a .md resolution banner, " +
+        "migrated here per §4d on 2026-07-12).",
     },
     {
       kind: "status",

@@ -27,7 +27,7 @@ $$
 
 The binding energy $\mathfrak{E}_{\mathrm{bind}}$ originates from the Borromean linking. Because the individual quark masses $\mathfrak{m}(\mathfrak{u})$ and $\mathfrak{m}(\mathfrak{d})$ are small, the binding energy dominates. The mass of the proton arises overwhelmingly from topological complexity.
 
-We compute the binding energy from the crossing energy of the linking braid word $\beta_{\mathrm{Bor}} \in B_3$. The Borromean link admits the braid representation $\beta_{\mathrm{Bor}} = (\sigma_1^{-1}\sigma_2)^3$. This geometry yields mutual crossings that ensure $\mathfrak{E}_{\mathrm{cross}}(\mathfrak{p}) < 0$. At the substrate parameter $q \approx 1.110$, this evaluates to:
+We compute the binding energy from the crossing energy of the linking braid word $\beta_{\mathrm{Bor}} \in B_3$. The Borromean link admits the braid representation $\beta_{\mathrm{Bor}} = (\sigma_0^{-1}\sigma_1)^3$. This geometry yields mutual crossings that ensure $\mathfrak{E}_{\mathrm{cross}}(\mathfrak{p}) < 0$. At the substrate parameter $q \approx 1.110$, this evaluates to:
 
 $$
   \mathfrak{m}_{\mathfrak{p}}(q) \approx :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} \text{MeV}.
