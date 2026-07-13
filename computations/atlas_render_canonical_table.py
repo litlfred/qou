@@ -125,7 +125,7 @@ def render_table(witness_data: dict) -> str:
             b_total_ref = ame.get("binding_energy_total_keV")
             if b_unc_per_a is not None and b_total_ref is not None and b_total_ref != 0:
                 b_unc_total = b_unc_per_a * A
-                exp_b_pct_str = f" \\pm {(b_unc_total / b_total_ref) * 100:.4f}"
+                exp_b_pct_str = f" $\\pm$ {(b_unc_total / b_total_ref) * 100:.4f}"
         
         if ptype == "mass":
             # For p and n, the prediction IS the mass. Binding is 0.

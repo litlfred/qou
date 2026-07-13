@@ -131,7 +131,7 @@ def render_row(r: dict) -> str:
             if bind_unc_per_a is not None and bind_total_ref is not None and bind_total_ref != 0:
                 bind_unc_total = bind_unc_per_a * r["A"]
                 exp_bind_ppm = (bind_unc_total / bind_total_ref) * 1e6
-                exp_bind_ppm_str = f" \\pm {exp_bind_ppm:.4f}"
+                exp_bind_ppm_str = f" $\\pm$ {exp_bind_ppm:.4f}"
                 
         err_cell = f"{err}{exp_bind_ppm_str}"
     else:
@@ -164,7 +164,7 @@ def render_row(r: dict) -> str:
     # Combine pred and exp mass error
     if cm_cell_err != "—":
         if cm_cell_err_exp != "—":
-            combined_mass_error = f"{cm_cell_err} \\pm {cm_cell_err_exp}"
+            combined_mass_error = f"{cm_cell_err} $\\pm$ {cm_cell_err_exp}"
         else:
             combined_mass_error = cm_cell_err
     else:
