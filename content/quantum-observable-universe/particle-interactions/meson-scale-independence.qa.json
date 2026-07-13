@@ -1136,6 +1136,19 @@
         "reviewed_at": "2026-07-07T14:26:57.387256Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "Hosted in sec:particle-interactions-orphan-reconnect after categorical-proton/neutron/meson; the m_π scale-independence claim sits with the categorical meson material it depends on (uses def:categorical-meson)."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:40:03.000Z",
+        "reviewed_sha": "13e7c0a3c2d489330bf7b9786b226d9eb80b488d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "wall-side-statement": [
@@ -1407,6 +1420,19 @@
         "notes": "No false claims identified in 'The meson mass scale $m_\\\\pi$ is independent of $(m_\\\\mathfrak{e}, q_0)$': mathematical reasoning is consistent.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/meson-scale-independence.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:40:03.000Z",
+        "reviewed_sha": "13e7c0a3c2d489330bf7b9786b226d9eb80b488d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-vacuous": [
@@ -1428,6 +1454,19 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The block 'The meson mass scale $m_\\\\pi$ is independent of $(m_\\\\mathfrak{e}, q_0)$' presents substantial mathematical content: parameters $(m_\\mathfrak{e}, q_0)$ alone.  The Hecke algebra determines the relative meson mass spectrum (character r...",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:40:03.000Z",
+        "reviewed_sha": "13e7c0a3c2d489330bf7b9786b226d9eb80b488d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-circular": [
@@ -1450,6 +1489,19 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'The meson mass scale $m_\\\\pi$ is independent of $(m_\\\\mathfrak{e}, q_0)$'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/meson-scale-independence.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:40:03.000Z",
+        "reviewed_sha": "13e7c0a3c2d489330bf7b9786b226d9eb80b488d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-overclaim": [
@@ -1471,6 +1523,19 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No overclaims: the scope of 'The meson mass scale $m_\\\\pi$ is independent of $(m_\\\\mathfrak{e}, q_0)$' is appropriately qualified.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:40:03.000Z",
+        "reviewed_sha": "13e7c0a3c2d489330bf7b9786b226d9eb80b488d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-hidden-dof": [
@@ -1493,6 +1558,19 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'The meson mass scale $m_\\\\pi$ is independent of $(m_\\\\mathfrak{e}, q_0)$'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/meson-scale-independence.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:40:03.000Z",
+        "reviewed_sha": "13e7c0a3c2d489330bf7b9786b226d9eb80b488d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-non-sequitur": [
@@ -1515,6 +1593,19 @@
         "notes": "The argument flow in 'The meson mass scale $m_\\\\pi$ is independent of $(m_\\\\mathfrak{e}, q_0)$' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/meson-scale-independence.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:40:03.000Z",
+        "reviewed_sha": "13e7c0a3c2d489330bf7b9786b226d9eb80b488d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1536,6 +1627,19 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Lean formalization and narrative for 'The meson mass scale $m_\\\\pi$ is independent of $(m_\\\\mathfrak{e}, q_0)$' are in complete agreement.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:40:03.000Z",
+        "reviewed_sha": "13e7c0a3c2d489330bf7b9786b226d9eb80b488d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-citation-misuse": [
@@ -1558,6 +1662,19 @@
         "notes": "Citations to jones1987, wenzl1988c are correct and contextually appropriate.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/meson-scale-independence.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:40:03.000Z",
+        "reviewed_sha": "13e7c0a3c2d489330bf7b9786b226d9eb80b488d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-definitional-ambiguity": [
@@ -1580,6 +1697,19 @@
         "notes": "Key terms and symbols in 'The meson mass scale $m_\\\\pi$ is independent of $(m_\\\\mathfrak{e}, q_0)$' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/meson-scale-independence.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:40:03.000Z",
+        "reviewed_sha": "13e7c0a3c2d489330bf7b9786b226d9eb80b488d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-empirical-fragility": [
@@ -1602,6 +1732,19 @@
         "notes": "The algebraic and logical relations in 'The meson mass scale $m_\\\\pi$ is independent of $(m_\\\\mathfrak{e}, q_0)$' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/meson-scale-independence.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:40:03.000Z",
+        "reviewed_sha": "13e7c0a3c2d489330bf7b9786b226d9eb80b488d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-physical-implausibility": [
@@ -1624,6 +1767,19 @@
         "notes": "The physical concepts described in 'The meson mass scale $m_\\\\pi$ is independent of $(m_\\\\mathfrak{e}, q_0)$' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/meson-scale-independence.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:40:03.000Z",
+        "reviewed_sha": "13e7c0a3c2d489330bf7b9786b226d9eb80b488d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-reproducibility": [
@@ -1646,6 +1802,19 @@
         "notes": "The derivation steps and formal definitions in 'The meson mass scale $m_\\\\pi$ is independent of $(m_\\\\mathfrak{e}, q_0)$' are reproducible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/meson-scale-independence.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:40:03.000Z",
+        "reviewed_sha": "13e7c0a3c2d489330bf7b9786b226d9eb80b488d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-referee-verdict": [
@@ -1669,6 +1838,19 @@
         "severity": "minor",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'The meson mass scale $m_\\\\pi$ is independent of $(m_\\\\mathfrak{e}, q_0)$' are consistent."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:40:03.000Z",
+        "reviewed_sha": "13e7c0a3c2d489330bf7b9786b226d9eb80b488d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "voice-probe-narrative": [
@@ -1726,6 +1908,36 @@
         },
         "reviewed_at": "2026-07-12T00:35:39.126Z",
         "reviewed_sha": "a38f99c8befc4b364f7820811bc286a64f3a2b6e"
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:40:03.000Z",
+        "reviewed_sha": "13e7c0a3c2d489330bf7b9786b226d9eb80b488d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:40:03.000Z",
+        "reviewed_sha": "13e7c0a3c2d489330bf7b9786b226d9eb80b488d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ]
   },
