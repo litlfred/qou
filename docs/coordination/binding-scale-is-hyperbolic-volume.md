@@ -99,6 +99,18 @@ collapse of `θ_λ` but an anchor inversion.)
 
 ## Session cross-refs
 
+Mass-binding closure tranche (#3764, 2026-07-13): mirror-split 1/3 = **datum
+only**, gate decomposed S1/S2/S3
+([`2026-07-13-mirror-split-one-third-mechanism-probe.md`](../audits/2026-07-13-mirror-split-one-third-mechanism-probe.md));
+S₃-equivariant EM functional — **S2 closed** (equal pair-weight derived from
+link symmetry), new μ̄ sign-rep obstruction (coupling through |μ̄| only), S3
+re-scoped to **one scalar κ**, calibration-constrained by the 8-pair mirror
+systematics above (a κ closure reproducing only A=3 is single-point)
+([`2026-07-13-mirror-split-s3-em-functional-attempt.md`](../audits/2026-07-13-mirror-split-s3-em-functional-attempt.md));
+deuteron coupling derive-or-refute **negative** + corrective on #3736: the
+level-1/2 median resummation plateaus at ~21% of B_D at *every* coupling —
+"reaches B_D as x→1/√2" was an extrapolation artifact
+([`2026-07-13-deuteron-coupling-candidates-derive-or-refute.md`](../audits/2026-07-13-deuteron-coupling-candidates-derive-or-refute.md)).
 Deuteron trans-series negative (#3736); Δ_λ gate + CKRecursion review (#3723);
 Borromean redirect + Reeb test + "magnitude not a q₀ power" (#3738);
 θ_λ magnitude gate ([`2026-07-03-theta-lambda-via-reeb-nastokes-jet-filtration.md`](../audits/2026-07-03-theta-lambda-via-reeb-nastokes-jet-filtration.md)).

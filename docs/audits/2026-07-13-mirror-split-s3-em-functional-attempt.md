@@ -153,6 +153,21 @@ cannot both stand; **this audit resolves neither in favor of the other.**
    (coefficient $\tanh(\ln q_0)$) — this must simultaneously explain why the
    derived pairwise tanh is superseded at the triple channel. Until then the
    31%-vs-99.8% tension stands as recorded.
+
+   **Calibration constraint (corpus, same-day — any κ derivation must clear
+   it).** The 8-pair mirror systematics already on main
+   ([`2026-07-11-mirror-nuclei-coulomb-systematics.md`](2026-07-11-mirror-nuclei-coulomb-systematics.md);
+   ledger [`binding-scale-is-hyperbolic-volume.md`](../coordination/binding-scale-is-hyperbolic-volume.md)
+   §mirror-Coulomb-residual) shows the mirror split follows the continuum
+   Coulomb scaling $Z(Z-1)/A^{1/3}$ across A=3…: `split/ΔE_C = 0.838 ± 0.059`,
+   and a **fixed** universal $1/3$ fails at ⁷Li/⁷Be by 2.2×. This is compatible
+   with the present construction only in the narrow reading: the derived $1/3$
+   is the **L6a4-specific pair-orbit weight** (S₃ transitivity of *that* link),
+   not a universal constant — at A≥7 the functional's value is set by the
+   heavier link's own symmetry orbits and $|\bar\mu|$ structure, which a κ
+   derivation must show reproduces the observed $Z(Z-1)/A^{1/3}$ systematics.
+   A κ closure that only reproduces the A=3 point is single-point and fails
+   the corpus calibration.
 3. The numerology-guard items ($\tanh(\ln\sqrt2) = 1/3$ exactly, $\sqrt2 = 1/x^*$)
    remain guarded, unchanged from the predecessor audit.
 
