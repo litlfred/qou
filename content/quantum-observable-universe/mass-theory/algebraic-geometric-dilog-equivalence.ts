@@ -10,6 +10,8 @@ export default conjecture({
   },
   uses: [
     "conj:dilogarithm-archimedean-limit",
+    "conj:binding-qbeta-complex-volume",
+    "prop:phi-b-unitary-bar-odd",
   ],
   cites: [
     "kashaev1997",
