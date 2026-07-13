@@ -15,14 +15,19 @@ The merged probe tested classical P-finite recurrences for a_k and b_k
     Σ_{i=0}^{r} P_i(k)·d_{k-i} = 0,   P_i ∈ ℚ(√3)[k],
 
 does NOT reduce to separate ℚ-recurrences for a_k, b_k of the same order —
-applying the √3-Galois conjugation couples the two rational components into a
-2-vector v_k = (a_k, b_k)ᵀ obeying a **matrix** P-recurrence
+the recurrence coefficients P_i = A_i + B_i√3 (A_i, B_i ∈ ℚ[k]) couple the two
+rational components: expanding in {1, √3} (√3² = 3) gives two scalar equations
+sharing A_i, B_i,
 
-    Σ_{i=0}^{r} M_i(k)·v_{k-i} = 0,   M_i(k) ∈ Mat₂(ℚ[k]),  deg ≤ D,
+    (rational) Σ_i [ A_i(k)·a_{k-i} + 3·B_i(k)·b_{k-i} ] = 0,
+    (√3-part)  Σ_i [ B_i(k)·a_{k-i} +    A_i(k)·b_{k-i} ] = 0,
 
-whose off-diagonal (√3-mixing) entries the separated scalar test structurally
-cannot see. So a coupled recurrence can exist where both separated ones fail.
-This is the exact ℚ(√3) P-finiteness question for D(ũ) — decisive either way.
+whose √3-mixing the separated scalar test structurally cannot see. So a coupled
+recurrence can exist where both separated ones fail. This is the exact ℚ(√3)
+P-finiteness question for D(ũ) — decisive either way. Only 2·(r+1)·(D+1)
+unknowns (the A_i, B_i coefficients), NOT the 4·(r+1)·(D+1) of an unconstrained
+Mat₂(ℚ[k]): the √3-algebra ties the diagonal to A_i and the off-diagonal to B_i
+(the coupling @gemini-code-assist flagged on PR #3737).
 
 ## Discipline (STRICT)
 
@@ -80,38 +85,46 @@ def exact_dk():
 
 
 def coupled_recurrence_kernel(ab, KMAX, r, D):
-    """Exact null-space test for a coupled 2-vector P-recurrence of order r,
+    """Exact null-space test for a genuine ℚ(√3) P-recurrence of order r,
     polynomial degree D:
 
-        Σ_{i=0}^{r} M_i(k)·(a_{k-i}, b_{k-i})ᵀ = 0   (2 scalar rows per k)
+        Σ_{i=0}^{r} (A_i(k) + B_i(k)√3)·(a_{k-i} + b_{k-i}√3) = 0,
 
-    with M_i(k) ∈ Mat₂(ℚ[k]), deg_k ≤ D. Unknowns: the 4·(r+1)·(D+1) polynomial
-    coefficients of the M_i entries. Build the exact rational constraint matrix
-    over all valid k and return its right null space (sympy, exact).
+    with A_i(k), B_i(k) ∈ ℚ[k], deg_k ≤ D. Expanding in the ℚ-basis {1, √3}
+    (√3² = 3) gives the two coupled scalar equations sharing A_i, B_i:
+
+        (rational) Σ_i [ A_i(k)·a_{k-i} + 3·B_i(k)·b_{k-i} ] = 0,
+        (√3-part)  Σ_i [ B_i(k)·a_{k-i} +    A_i(k)·b_{k-i} ] = 0.
+
+    Unknowns: the 2·(r+1)·(D+1) polynomial coefficients of A_i, B_i (NOT
+    4·(r+1)·(D+1) — an arbitrary Mat₂(ℚ[k]) would over-count by ignoring the
+    √3-algebra ties A→both diagonals, B→both off-diagonals, thanks to
+    @gemini-code-assist review on PR #3737). Halving the unknowns at fixed
+    equation count doubles the eqs/unknowns margin, so higher (r, D) are
+    testable on the same exact d_k without extending ORD. Returns the exact
+    rational right null space; a nontrivial vector is a genuine recurrence.
     """
-    # Unknown layout: for each shift i∈[0,r], each matrix entry (row∈{0,1} =
-    # output component, col∈{0,1} = which of a/b feeds in), each degree d∈[0,D]:
-    #   coefficient c[i, row, col, d].
-    idx = {}
-    n = 0
-    for i in range(r + 1):
-        for row in range(2):
-            for col in range(2):
-                for d in range(D + 1):
-                    idx[(i, row, col, d)] = n
-                    n += 1
+    n_half = (r + 1) * (D + 1)   # coeffs of the A_i(k)
+    n = 2 * n_half               # + coeffs of the B_i(k)
     rows = []
     # Valid k: need k-i ≥ 1 (have d_1..d_KMAX). Use k from r+1..KMAX.
     for k in range(r + 1, KMAX + 1):
-        for row in range(2):  # two scalar equations (a-row, b-row) per k
-            eq = [sp.Integer(0)] * n
-            for i in range(r + 1):
-                a_ki, b_ki = ab[k - i]
-                comp = (a_ki, b_ki)
-                for col in range(2):
-                    for d in range(D + 1):
-                        eq[idx[(i, row, col, d)]] += comp[col] * sp.Integer(k) ** d
-            rows.append(eq)
+        eq1 = [sp.Integer(0)] * n   # rational part
+        eq2 = [sp.Integer(0)] * n   # √3 part
+        for i in range(r + 1):
+            a_ki, b_ki = ab[k - i]
+            for d in range(D + 1):
+                idx_A = i * (D + 1) + d
+                idx_B = n_half + idx_A
+                kp = sp.Integer(k) ** d
+                # (rational) A_i·a + 3·B_i·b
+                eq1[idx_A] += a_ki * kp
+                eq1[idx_B] += 3 * b_ki * kp
+                # (√3) B_i·a + A_i·b
+                eq2[idx_A] += b_ki * kp
+                eq2[idx_B] += a_ki * kp
+        rows.append(eq1)
+        rows.append(eq2)
     Mmat = sp.Matrix(rows)
     ns = Mmat.nullspace()  # exact rational null space
     return ns, n, Mmat.rows
@@ -147,7 +160,7 @@ def main() -> int:
     # Bounded search: keep #unknowns comfortably below #equations (2·(KMAX-r)).
     for r in range(1, 5):
         for D in range(0, 5):
-            n_unknowns = 4 * (r + 1) * (D + 1)
+            n_unknowns = 2 * (r + 1) * (D + 1)   # genuine ℚ(√3) coupling (A_i, B_i)
             n_eqs = 2 * (KMAX - r)
             if n_eqs < n_unknowns + 4:   # need a genuine overdetermination margin
                 print(f"  (r={r}, D={D}): SKIP — {n_eqs} eqs < {n_unknowns}+4 unknowns "
@@ -168,12 +181,41 @@ def main() -> int:
         if found:
             break
 
+    # --- Exact 2-adic parity grading (a crisp refinement of #3716's
+    # "small-denominator alternation"). The 2-adic valuation of the denominator
+    # of the √3-component b_k vanishes EXACTLY on odd k; the rational component
+    # a_k is the mirror (2-integral, v2(den) ≤ 1, exactly on even k). This is
+    # the arithmetic shadow of the sinh/cosh (bar-odd/bar-even) split. ---
+    def v2_den(x):
+        return sp.multiplicity(2, sp.Rational(x).q) if x != 0 else 0
+    grade_ok = True
+    grade_rows = {}
+    for k in range(1, KMAX + 1):
+        a, b = ab[k]
+        vb, va = v2_den(b), v2_den(a)
+        # odd k  ⟺ b (√3-part) is 2-integral (vb == 0) and a carries the 2-power
+        # even k ⟺ a (rational part) is 2-integral (va ≤ 1) and b carries it
+        ok = ((k % 2 == 1 and vb == 0 and va >= 2) or
+              (k % 2 == 0 and va <= 1 and vb >= 2)) if k >= 2 else (vb == 0)
+        grade_ok = grade_ok and ok
+        grade_rows[str(k)] = {"v2_den_a": int(va), "v2_den_b": int(vb),
+                              "parity": "odd" if k % 2 else "even", "graded": ok}
+    print(f"\n  2-adic parity grading (v2(den b_k)=0 ⟺ k odd; a_k the mirror): "
+          f"{'HOLDS' if grade_ok else 'FAILS'} for k=1..{KMAX}")
+    wb.add_data("two_adic_parity_grading", grade_rows)
+    wb.add_assertion(
+        "two_adic_parity_grading_exact",
+        computed=(1.0 if grade_ok else 0.0), expected=1.0, tolerance=0.5,
+        source="v2(den(b_k)) = 0 ⟺ k odd, and v2(den(a_k)) ≤ 1 ⟺ k even, "
+               "exactly for k=1..KMAX — the ℤ/2 arithmetic shadow of the "
+               "sinh/cosh bar-parity split (refines #3716's denominator alternation)")
+
     wb.add_data("KMAX", KMAX)
     wb.add_data("ORD", ORD)
     wb.add_data("d_k_a_b", {str(k): [str(ab[k][0]), str(ab[k][1])]
                             for k in range(1, KMAX + 1)})
-    wb.add_data("classes_tested", "coupled 2-vector P-recurrence, "
-                "order r=1..4, poly-degree D=0..4, over ℚ (= ℚ(√3) P-finiteness)")
+    wb.add_data("classes_tested", "genuine ℚ(√3) P-recurrence (coeffs A_i+B_i√3, "
+                "2·(r+1)·(D+1) unknowns), order r=1..4, poly-degree D=0..4")
     verdict = ("coupled ℚ(√3) recurrence FOUND" if found
                else "NO coupled ℚ(√3) P-recurrence up to (r≤4, D≤4) at this ORD")
     wb.add_data("verdict", verdict)
