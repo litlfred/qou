@@ -55,7 +55,7 @@ def gamma_constant(nu, mu):
     """C(nu, mu) = sqrt(2/pi) * e^{-i pi nu} / Gamma(nu + mu + 1/2)."""
     with mp.workdps(60):
         c = +mp.sqrt(2 / mp.pi)
-    return c * mp.e ** (-mp.mpc(0, 1) * mp.pi * nu) / mp.gamma(nu + mu + HALF)
+    return c * mp.exp(-mp.mpc(0, 1) * mp.pi * nu) / mp.gamma(nu + mu + HALF)
 
 
 # Physical axial distances: d = 2 is the meson (b^2 = [3]_q/[2]_q^2), then 3, 4.
