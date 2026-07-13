@@ -103,6 +103,85 @@ The class asserts nothing provable-outright; no instance is fabricated. This
 matches the conjectural-class pattern used for
 [Φ$_q$-tower JSJ bridge](#rem:phi-q-tower-jsj-bridge).
 
+## The bar-odd keystone: argument identification to $S$
+
+The equivalence above is the **bar-even** face of the correspondence:
+the asymptotic recovers the real volume $D(z) = \mathrm{Vol}_{\mathrm{hyp}}$,
+which for the amphichiral $4_1$ supplies the $-\mathrm{Vol}(4_1)$ part of
+the $Q_\beta$ coefficient $c_3$. Its **bar-odd** companion is the
+anchor-dependent leak $S = c_3 + \mathrm{Vol}(4_1)$, carried not by the
+compact $\Phi_q$ but by the Faddeev non-compact $\Phi_b$
+(modular double). The keystone open item is the
+**argument-identification map**: the structural map $q_0 \mapsto z(q_0)$
+— the substrate-to-meridian-holonomy map supplied by the same
+pole-to-cusp matching as items 1–2 — such that the fibre-branch Faddeev
+phase at the identified argument reproduces $S$:
+
+$$
+  \arg \Phi_{b(q_0)}\bigl(z(q_0)\bigr) \;=\; S(q_0),
+  \qquad
+  b(q_0) \;=\; \sqrt{\tfrac{\ln q_0}{2\pi}}.
+$$
+
+The Lean carrier is the hypothesis class
+`QOU.QBeta.PhiBSArgumentIdentification.SArgumentIdentification`,
+parametrized by the argument map itself: a bare existence claim
+($\forall q_0\, \exists z$) would be near-vacuous by pointwise choice
+against the unbounded continuous phase, so the class carries the
+structural map as a parameter and no instance is fabricated. Two
+consequences are derived unconditionally from the class:
+
+1. (**Unimodular readout.**) At the identified argument the $\Phi_b$
+   value is the pure phase $e^{i S(q_0)}$ — the leak is the argument of
+   a $\sigma$-unitary
+   ([unitary phases are bar-odd](#prop:phi-b-unitary-bar-odd)).
+
+2. (**Zero crossing.**) The measured sign flip
+   $S(\text{muon}) \approx +0.00968 > 0 > S(\text{proton}) \approx
+   -0.03946$, together with continuity of $S$ on $q_0 > 1$, forces by
+   the intermediate value theorem a substrate $q^{*}$ between the
+   anchors where $S(q^{*}) = 0$: there $c_3 = -\mathrm{Vol}(4_1)$
+   exactly and the $\Phi_b$ readout is $1$ — the bar-odd leak switches
+   off (Lean: `exists_zero_crossing`, `exists_pure_bar_even`).
+
+## The fibre branch ($\lvert q \rvert = 1$, real $b$) and construction status
+
+The physical regime of the bar-odd face is the **fibre branch**: real
+$b$, where the modular parameter $q_b = e^{i\pi b^2}$ satisfies
+$\lvert q_b \rvert = 1$ and equals the pure phase $e^{i \ln q_0 / 2}$ at
+the substrate map (Lean: `norm_fibreQParam`, `fibreQParam_fibreB`). On
+this branch the modular-double product diverges and the construction is
+the real single integral `phiB`
+(`QOU.MathlibExt.FaddeevPhiBRealIntegral`), whose structural laws —
+self-duality $\Phi_{b^{-1}} = \Phi_b$, unitarity
+$\lvert \Phi_b \rvert = 1$, the inversion relation, and
+$\sigma$-unitarity $\Phi_b \cdot \overline{\Phi_b} = 1$ — hold for the
+defined object unconditionally. By the rigidity clause of
+([unitary phases are bar-odd](#prop:phi-b-unitary-bar-odd)), the
+fibre-branch $\Phi_b$ is an intrinsically bar-odd carrier.
+
+Of the two analytic identifications behind the construction, the
+**integrability** of the Faddeev kernel is settled on the tail: the
+exponential-domination chain on $[1, \infty)$ is proved
+(`integrableOn_kernel_Ioi_one`, with the two standard majorant
+integrability facts carried as explicit named hypotheses), and full
+integrability on $(0, \infty)$ is reduced to the bounded near-$0$ piece
+(`integrableOn_kernel_Ioi_zero`). The **definition-to-contour
+identity** — that the real-integral `phiB` equals the Faddeev contour
+integral — remains a numerical pin ($8 \times 10^{-29}$ against the
+validated contour evaluator) and is assumed nowhere in the Lean.
+
+## Binding channel: conditional only
+
+The identification of the bar-odd face with the decay observable
+$\mathfrak{Q}_\beta = \mathrm{Im}\,\mathfrak{V}$ — and with it any
+"decay equals binding" reading of the Gram-ghost mode — is conditional
+on the complex-volume unification
+([binding–$Q_\beta$ complex volume](#conj:binding-qbeta-complex-volume)).
+$\Phi_b$ touches binding **only** through that unproven channel
+identity; no statement in this block or in the Lean carriers above
+assumes it.
+
 ## Witness
 
 The algebraic-geometric matching of poles to cusps for the simplest
