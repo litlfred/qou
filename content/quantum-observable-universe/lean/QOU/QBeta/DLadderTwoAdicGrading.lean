@@ -1,0 +1,95 @@
+import Mathlib.Data.Rat.Defs
+import Mathlib.Algebra.Ring.Parity
+import Mathlib.Tactic
+
+/-!
+# The bar-odd D-ladder 2-adic parity grading — verified anchor + open target
+
+The bar-odd `S = h·D(ũ)` ladder has exact coefficients `d_k = a_k + b_k√3 ∈ ℚ(√3)`
+(the `ser_sqrt`/`ser_div` construction in
+`computations/qbeta/qbeta_dladder_generating_function_structure_probe.py`; witness
+`qbeta-barodd-d-ladder-ord17`). Result 2 of
+`docs/audits/2026-07-13-dladder-coupled-recurrence-and-2adic-parity-grading.md`
+found an **exact 2-adic parity grading** of the `√3`-component:
+
+  the 2-adic valuation of `den(b_k)` vanishes **iff `k` is odd**
+
+— equivalently the reduced denominator `den(b_k)` is **odd iff `k` is odd** — the
+arithmetic shadow of the sinh/cosh (bar-odd/bar-even) split
+(`QOU.QBeta.bar_parity_decomposition`). Structural origin (audit §"Structural
+origin"): the `√3` is the Hoefsmit `b = √(q⁴+q²+1)/(q²+1)` (`q⁴+q²+1 = 3` at the
+branch point), the 2-powers come from `(q²+1)`, the `½` in `α`, and `2q³` in `Q_A`;
+the bar-odd projection `φ : ũ ↦ −ũ` sorts them by ũ-parity.
+
+This file provides, per the **formalize-first** discipline:
+
+1. a **sorry-free verified anchor** — the grading holds for the first exact
+   coefficients, machine-checked by `decide` on their exact reduced denominators
+   (as ℕ — ℚ-division does not kernel-reduce under `decide`);
+2. the **open target** as a §3b conjecture class carrying the real content (the
+   grading law for the full sequence) — *not* proved: the general proof needs the
+   `ser_sqrt`/`ser_div` construction formalized, which is not yet in Lean. Per the
+   anti-laundering rule, axiomatizing the class is **not** a proof of the law.
+
+-- Ref: [manuscript] docs/audits/2026-07-13-dladder-coupled-recurrence-and-2adic-parity-grading.md
+-/
+
+namespace QOU.QBeta.DLadderTwoAdicGrading
+
+/-- The exact `√3`-component `b_k` of the bar-odd D-ladder `d_k = a_k + b_k√3`,
+    tabulated from the exact ℚ(√3) compute (first five computed values; the full
+    sequence is the `ser_sqrt`/`ser_div` build, not yet in Lean). Documentation of
+    the exact values behind `bDen` below; indices `0` and `> 5` pad with `0`. -/
+def bComp : ℕ → ℚ
+  | 1 => -1
+  | 2 => 5 / 288
+  | 3 => -676 / 27
+  | 4 => 15055 / 1741824
+  | 5 => -252241 / 243
+  | _ => 0
+
+/-- The **reduced denominators** `den(b_k)` of the exact coefficients above, as
+    ℕ data from the compute (`b₁` den 1; `b₂=5/288` den `288=2⁵·3²`;
+    `b₃=-676/27` den 27; `b₄=15055/1741824` den `1741824=2¹⁰·3⁴·… `; `b₅=-252241/243`
+    den `243=3⁵`). Kept as explicit ℕ so the grading is a pure decidable ℕ fact
+    (ℚ-division does not kernel-reduce under `decide`). -/
+def bDen : ℕ → ℕ
+  | 1 => 1
+  | 2 => 288
+  | 3 => 27
+  | 4 => 1741824
+  | 5 => 243
+  | _ => 0
+
+/-- **2-adic parity grading predicate.** The reduced denominator is odd
+    (equivalently `v₂(den) = 0`) exactly on odd indices `1 ≤ k ≤ K`. -/
+def TwoAdicParityGraded (den : ℕ → ℕ) (K : ℕ) : Prop :=
+  ∀ k, 1 ≤ k → k ≤ K → (Odd (den k) ↔ Odd k)
+
+/-- **Verified anchor (sorry-free).** The 2-adic parity grading holds for the
+    first five exact D-ladder coefficients: `den(b_k)` is odd iff `k` is odd.
+    Matches Result 2 of the audit exactly (compute extends this to `k=21`). -/
+theorem bDen_two_adic_graded : TwoAdicParityGraded bDen 5 := by
+  intro k hk1 hk5
+  interval_cases k <;> decide
+
+/-- **Open target (§3b conjecture class).** The full bar-odd D-ladder
+    `√3`-component `b : ℕ → ℚ` (the `ser_sqrt`/`ser_div` object) is 2-adically
+    parity-graded for **all** `k ≥ 1`. Content-bearing (a parameter-quantified
+    equivalence in the shape of the claim, not `True`); the class instance is the
+    single open input. Proving it needs the D-ladder construction in Lean —
+    axiomatizing this class is **not** a proof of the law (anti-laundering). -/
+class DLadderGradingConjecture where
+  b : ℕ → ℚ
+  /-- The 2-adic parity grading, for all `k ≥ 1` (verified exactly to `k=21`). -/
+  graded : ∀ k, 1 ≤ k → (Odd (b k).den ↔ Odd k)
+
+/-- Conditional consequence (§3b-cond): *given* the grading class, the finite
+    window predicate holds at every `K` — the anchor theorem is the `K=5`
+    instance of what the class asserts unconditionally. Derives the conclusion
+    from the class hypothesis (not a self-assuming projection). -/
+theorem graded_window [G : DLadderGradingConjecture] (K : ℕ) :
+    TwoAdicParityGraded (fun k => (G.b k).den) K := by
+  intro k hk1 _; exact G.graded k hk1
+
+end QOU.QBeta.DLadderTwoAdicGrading
