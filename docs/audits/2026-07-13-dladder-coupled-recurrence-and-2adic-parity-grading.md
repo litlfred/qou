@@ -83,6 +83,36 @@ signature of a q-difference equation. `D(ũ)`'s closed form, if any, is
 transcendental / resurgent (Écalle acceleration chain, per the corpus's
 q-Gevrey verdict), not (q-)holonomic.
 
+## Resummation note — the singularity is Jackson q-Borel territory, not plain Borel (deferred)
+
+A natural parallel-track idea (coordinated with the κ-tower resurgence program,
+PR #3683) is to locate the D-ladder's Borel singularity with #3683's C1
+conformal-Padé. **Recorded here so it is not repeated: the plain `∑ d_k ζ^k/k!`
+Borel transform is the wrong tool for this series, and a "convergent ũ-plane
+branch point at ρ≈0.143" reading is the finite-n shadow trap.** Both were checked
+against the corpus and rejected:
+
+- **Divergent, re-confirmed (not convergent).** The merged divergence correction
+  ([`2026-07-12-dladder-divergence-correction.md`](2026-07-12-dladder-divergence-correction.md))
+  establishes `D(ũ)` is super-exponentially divergent (radius → 0); the ratio
+  `d_{k-1}/d_k ≈ 0.143` that *looks* like a finite radius is the `(k!)^{C}`
+  (C ≈ 0.06) shadow it warns about. Re-verified here: the root test
+  `|d_k|^{1/k}` **rises without plateau** (4.72 → 5.91 over k=6…21), the
+  radius-→0 signature.
+- **Plain Borel is the wrong transform.** For a **q-Gevrey** divergent series the
+  resummation is **Jackson q-Borel** / an Écalle acceleration chain (per the
+  corpus's alien-calculus audit), not the classical `÷k!` Borel — which
+  over-suppresses a mild `C ≈ 0.06` super-exponential into a near-entire
+  transform with no meaningful singularity (a conformal-Padé run on it returns
+  only a spurious negative-axis pole, inconsistent with the constant-sign `d_k`
+  Pringsheim constraint). The correct q-Borel/acceleration analysis is the
+  resurgent-program territory of #3683 and is **deferred** there, not attempted
+  with the wrong transform here.
+
+This note is the honest scope boundary: the exact-arithmetic negatives (Results
+1, 1b) and the grading (Result 2) stand on their own; the analytic resummation of
+the divergent ladder is a separate, q-Borel undertaking.
+
 ## Result 2 — the exact 2-adic parity grading (headline)
 
 Writing `d_k = a_k + b_k√3` and reading the **2-adic valuation of the
