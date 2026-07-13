@@ -33,4 +33,38 @@ mostly **genuine open math** carried honestly as §3b conjecture classes
 level-selection faithful proof; the packing exponent "empirical import" per merged
 #3778) or **anti-fit-gated**. Per the STRICT anti-laundering rule these are NOT to
 be closed by axiom/vacuous-proof. Only genuinely-derivable bridges get closed.
-Survey in progress for a real dilog→binding bridge (Rogers h⁴ residual).
+
+## Survey result (2026-07-13) — no honest dilog→binding lever exists
+
+A read-only survey of the pentagon/dilog/Rogers/h⁴ material in `Mass/`,
+`MassTheory/`, `Braiding/`, `BraidsAndKnots/`, `BringsSurface/` found **no §3b
+conjecture class the new `pentagon_iff_isDilog` (or Rogers/PentagonTwist) infra
+can honestly chip at**:
+
+1. **No sorries touch pentagon/dilog** in those four trees — already sorry-free.
+2. **`PachnerPentagonBorromean`** (field `4·h4_stateSum_coeff = -3`, the pentagon
+   residual → Borromean −3/4 bridge) is **witnessed-negative**, not merely open:
+   `borromeanH4BestSpec_misses_target_by_more_than_1pct` proves the best natural
+   `(u,v)` specialisation gives h⁴ ≈ +2.49e-7 (positive) vs target −3/4 — ~100%
+   miss, wrong sign. Intentionally instance-free per the negative-scope discipline.
+   Its consumers already exist sorry-free. Not chippable.
+3. **`QRogersAnalyticContinuation`** — q=1 five-term already discharged sorry-free
+   (default instance + `rogersLogCorrection_eq_log_sub`, `rogersAlphaBeta_complement`);
+   q≠1 analytic `Li₂` five-term is the genuine **Mathlib-`Li₂` gap** (`deriv Li₂ =
+   −log(1−x)/x` term-by-term). The scalar `pentagon_iff_isDilog` cannot supply it.
+4. **`CyclicDilogPentagon`** (`PentagonRigidity`/`PentagonClosure`) — open field is
+   the **operator** pentagon `Φ(𝗉)Φ(𝗊)=Φ(𝗊)Φ(𝗉+𝗊)Φ(𝗉)` + a Liouville step; the file
+   states a scalar/commutative pentagon "would be *false*." `FiveTerm` is scalar/
+   additive ⇒ applying it here would be **laundering**.
+
+The only real sorries in the vicinity are RSK/Specht combinatorics in `BraidKnot/`
+(`burnside : Σ_λ (f^λ)² = n!`, SYT/character-table) — genuine Mathlib gaps, unrelated
+to the pentagon insight.
+
+**Honest conclusion:** the session's dilog/pentagon insights are an upstream
+*consolidation* (real, sorry-free, axiom-free), not a lever that discharges pending
+mass/binding conjecture classes. The remaining §3b classes are open for good reasons
+(Mathlib-`Li₂` gap; witnessed-negative Pachner; RSK gap) and must stay honestly open.
+Genuine (large) paths to actually chip them: build `Real.dilog` + the analytic
+five-term (⇒ discharges `QRogersAnalyticContinuation`); build RSK / `Σ(f^λ)²=n!`
+(⇒ discharges the `burnside` sorry + Specht chain). Neither is faked here.
