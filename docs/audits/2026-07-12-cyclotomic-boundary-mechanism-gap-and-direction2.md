@@ -105,17 +105,33 @@ Established in the corpus; recorded here for cross-reference:
   solution; the corpus's held-out falsification is the authoritative negative.
   Recorded so the false positive is not re-derived.
 
-## Lean scope (why no base-case Lean file in this PR)
+## Lean formalization (landed)
 
-A *meaningful* Lean formalization of Tier 1 requires defining
-`S(n) = Σ_{λ⊢n} dim_q(λ)` (partitions, hook lengths, q-factorials) — a
-substantial build. A bare polynomial-identity stub (`(q−1)²(q²+q+1) = q⁴−q³−q+1`)
-would be **vacuous** (trivial by `ring`, disconnected from the actual tail) and
-would trip the repo's anti-vacuity audit (§1a). Tier 2 (non-cyclotomicity) is
-**not Lean-tractable** — it needs off-unit-circle root analysis. The
-special-function home is already formalized (the two Lean siblings above). A
-genuine `S(n)`-definition + base-case factorization Lean file is offered as a
-scoped follow-up if the owner wants it.
+Module
+[`QOU.Mass.CyclotomicBoundaryKeystone`](../../content/quantum-observable-universe/lean/QOU/Mass/CyclotomicBoundaryKeystone.lean)
+(`lean`-direct exit 0, one cited `sorry`). **Sorry-free:**
+
+- **Tier 1** — `D4_eq`, `D5_eq` (base-case factorizations) + `Phi{1,2,3,5,6}_cyclotomic`
+  (factors = Mathlib `cyclotomic k ℤ`) ⇒ `D4_cyclotomic`, `D5_cyclotomic`. Tier 1
+  is fully closed in Lean.
+- `C6_reciprocal` (palindrome identity `C₆(z)=z⁴·C̃(z+z⁻¹)`), `C6ℂ_eq`,
+  `unit_circle_sum_real`, `Ctil_disc` (`Δ(C̃)=−44208<0`).
+- `C6core_offcircle_root` (derived from the one gap below) and
+  **`C6core_non_cyclotomic`** — the full n = 6 non-cyclotomicity of the deg-8 core,
+  derived using only the **easy** direction of Kronecker's dichotomy (roots of
+  cyclotomics are roots of unity ⇒ norm 1: `cyclotomic.dvd_X_pow_sub_one` +
+  `Complex.norm_eq_one_of_pow_eq_one`). The **hard** Kronecker converse (absent from
+  Mathlib) is *not* used.
+
+**Single residual gap (honest, cited):** `Ctil_has_nonreal_root` — `C̃` has a
+non-real root. Mathematically immediate from `Δ(C̃)<0`, but Mathlib's
+`Polynomial.disc` is a resultant with no product-of-root-differences bridge, and no
+elementary substitute works for this quartic (Newton's inequalities and Descartes'
+rule both pass). One `sorry` + `-- Ref:`; nothing downstream depends on it. Not
+laundered (no axiom, no vacuous body). The full Tier-2 claim (non-cyclotomic ∀ n≥6)
+is not formalized — it stays verified-through-n=11. The special-function home is
+independently formalized in the two Lean siblings above
+(`BindingQHermiteOscillator`, `QBesselContiguityRecurrence`).
 
 ## Disposition
 
