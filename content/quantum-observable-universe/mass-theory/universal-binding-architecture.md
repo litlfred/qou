@@ -1,35 +1,31 @@
 # The Universal Binding Architecture
 
-It is a classical observation that the mass scales of the weak and strong interactions appear phenomenologically decoupled. In this section, we show that the mass generation mechanisms for both sectors are governed by a single geometric structure: a $q$-difference generating function whose kernel is fixed by the non-abelian Stokes integration of topological knot traces.
+It is a classical observation that the mass scales of the weak and strong interactions appear phenomenologically decoupled. This section proposes a candidate common structure — a $q$-difference generating function whose kernel is built from torus-knot traces — and states carefully which of its ingredients are *derived*, which are *empirical modeling inputs*, and which remain *open*. The genuinely fit-free part of the per-isotope binding is the linear-chain bond-count law of [`prop:theta-mn-bondcount`](#prop:theta-mn-bondcount) ($B = m_e\sum_n (n-1)\,\mathrm{Vol}_n$, which reproduces $^3$H to $0.16\%$ with zero parameters); the recursion below is a compact organizing ansatz for that data, not an independent first-principles closure.
 
-## 1. The Topological Interaction Kernel
+## 1. The Torus-Knot Trace Ratios
 
-Let $T_{p,q}$ denote the $(p,q)$-torus knot. The interaction invariants are obtained by evaluating the traces of the respective mediator knots over their boundary limits at $q=1$. The non-abelian Stokes volume limits yield the following geometric constants:
+Let $T_{p,q}$ denote the $(p,q)$-torus knot. Evaluating the relevant Markov traces at $q=1$ gives the ratios
 
-1. **Weak interaction anomaly:** $\lim_{q \to 1} \frac{\mathrm{tr}(T_{3,5})}{\mathrm{tr}(3_1)} = \frac{10}{3}$.
-2. **Strong gluonic interaction:** $\lim_{q \to 1} \frac{\mathrm{tr}(T_{2,9})}{\mathrm{tr}(T_{2,3})} = 3$.
-3. **Strong residual interaction:** $\lim_{q \to 1} \frac{\mathrm{tr}(T_{2,5})}{\mathrm{tr}(T_{2,2})} = \frac{5}{2}$.
+1. **Weak channel:** $\lim_{q \to 1} \frac{\mathrm{tr}(T_{3,5})}{\mathrm{tr}(3_1)} = \frac{10}{3}$.
+2. **Strong gluonic channel:** $\lim_{q \to 1} \frac{\mathrm{tr}(T_{2,9})}{\mathrm{tr}(T_{2,3})} = 3$.
+3. **Strong residual channel:** $\lim_{q \to 1} \frac{\mathrm{tr}(T_{2,5})}{\mathrm{tr}(T_{2,2})} = \frac{5}{2}$.
 
-These ratios are not phenomenological fits; they are exact topological invariants of the respective interaction braids.
+Because $\mathrm{tr}(T_{2,n})|_{q=1} \propto n$, the $q=1$ values above are exactly the index ratios $9/3$ and $5/2$ of the chosen $(2,n)$ knots. The ratios are therefore *computed* invariants, but the **assignment of a particular knot pair to each interaction channel is a modeling input, not a derivation**: nothing here fixes why $T_{2,9}/T_{2,3}$ is "gluonic" or $T_{2,5}/T_{2,2}$ is "residual." Any first-principles status requires deriving that assignment.
 
 ## 2. The q-Difference Generating Function
 
-Let $G(x; q)$ be the generating function for the binding hierarchy. The function satisfies a $q$-difference equation of the form
-$$ G(qx) = R(q,x)G(x) $$
-where the boundary kernel $R(q,x)$ is determined by the topological invariants defined above. 
+Let $G(x; q)$ be the generating function for the binding hierarchy, satisfying a $q$-difference equation
+$$ G(qx) = R(q,x)\,G(x) $$
+whose boundary kernel $R(q,x)$ is built from the ratios of §1. Unrolling $G$ into a power series induces a depth-$2$ linear recurrence, formalized as the `CKRecursion` operator; the bar-even parity of the kernel fixes the base prior $a_0 = 1/2$.
 
-Unrolling $G(x;q)$ into a power series induces a discrete depth-$d$ linear recurrence on the coefficients. We formalize this via the `CKRecursion` operator. The parity constraints on the kernel (specifically, the bar-even property) dictate a base recursion prior of $a_0 = 1/2$. 
+**Organizing ansatz.** The same depth-$2$ operator, seeded per channel, is used to compactly represent both the weak precision coefficients and the strong multi-body binding weights $w_n$.
 
-**Theorem 1.** *The identical depth-2 recursive operator, seeded by the respective topological invariant, generates both the weak precision ladder $c_k$ and the strong multi-body binding weights $w_n$.*
+**Weak channel.** Seeding with $10/3$ yields a coefficient $c_3 = 10/3$ in this construction. **Note (glyph collision):** this $c_3$ is *not* the bar-odd $Q_\beta$ precision-ladder coefficient, whose canonical value is the near-match $c_3 \approx -2 = J_{\mathrm{Hopf}}(q{=}1)$ (see the $c_k$ truncation-order framing); the two share a symbol but are different objects, and no identification between them is claimed.
 
-**The Weak Sector:** Seeding the recursion with the weak limit $10/3$ analytically recovers the boundary constraint $c_3 = 10/3$ required to bound the $Q_\beta$ anomaly.
+**Strong channel.** With $r_{\text{res}}$ the residual trace *evaluated at the substrate $q_0$* — numerically $r_{\text{res}} \approx 2.596$, which differs by $3.8\%$ from the $q=1$ limit $5/2$ of §1 — the recurrence reads
+$$ w_{n+1} = \tfrac{1}{2} w_n + r_{\text{res}}\, w_{n-1}. $$
+For the $^4$He cluster it gives $w_4 \approx 15.6016$; with a fixed constituent-mass scale this matches the $^4$He binding to $\approx 3.4$ keV ($1.2\times10^{-4}$ relative). This is a **match at the substrate value $r_{\text{res}}=2.596$**, not a prediction from the advertised invariant $5/2$; the $q_0$ value of $r_{\text{res}}$ and the overall scale are inputs, so the $^4$He agreement is a consistency check of the ansatz, not a parameter-free derivation.
 
-**The Strong Sector:** Let $r_{\text{res}}$ denote the residual strong trace evaluated at the structural parameter $q_0$, so that $r_{\text{res}} \approx 2.596$. The depth-2 recurrence for the nuclear binding weights $w_n$ is given by
-$$ w_{n+1} = \frac{1}{2} w_n + r_{\text{res}} w_{n-1}. $$
-For the $^4$He cluster ($n=4$), this recursion yields $w_4 \approx 15.6016$. When scaled by the constituent mass parameters, this analytically predicts the $^4$He atomic binding energy with a residual error of approximately $3.4$ keV (a relative error of $1.2 \times 10^{-4}$), strictly from geometric first principles.
+## 3. The A=3 Isospin Splitting — an Empirical Input, Not a Derivation
 
-## 3. Isospin Symmetry Breaking and the SU(4) Anomaly
-
-The recursive structure of Theorem 1 determines the isospin-symmetric baseline. The fine structure of the mass spectrum—such as the $\sim 0.76$ MeV binding difference between $^3$H and $^3$He—is governed by the Seiberg-Witten residue of the SU(4) dynamic occupancy.
-
-Injecting the exact $S_3$/SU(4) representation differential ($1.4947 m_e$) splits the $A=3$ doublet degeneracy. As verified numerically in the preceding evaluations, this categorical correction precisely cancels the remaining disparity, yielding exact mass closure across the fundamental light isotopes.
+The $\sim 0.76$ MeV binding difference between $^3$H and $^3$He is inserted, not derived. In $m_e$ units the difference is $B(^3\mathrm{H}) - B(^3\mathrm{He}) = 0.7638\ \text{MeV} = 1.4946\, m_e$ — i.e. the "$1.4947\,m_e$ $S_3$/SU(4) representation differential" is exactly the *measured* split relabeled. The accompanying Lean (`isospin-symmetry-breaking-su4-anomaly.lean`) is explicitly marked **vacuous**: `doublet_degeneracy_split` proves $(\text{base}+\text{diff})-\text{base}=\text{diff}$ by `ring`, a universal tautology with `diff` an unconstrained free parameter. Per the standing anti-fit discipline (a fitted number relabeled in categorical language is not a derivation) this splitting is recorded as an **open empirical input**; the physical $^3$H/$^3$He difference is moreover Coulomb-dominated. A derived replacement — an isospin split obtained without reference to the measured value — is the open item here.

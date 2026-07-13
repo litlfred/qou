@@ -61,12 +61,28 @@ compose to attack it *parameter-free*:
 **Proposal (derivation-grade, honesty-safe):** apply the Borel–Padé machinery
 this session built for the odd/S tower to the **even/Vol tower at ξ=1/√2**,
 evaluated for the deuteron. Where the perturbative Vol is 0 (Hopf), the resummed
-even-tower value = the alien (non-perturbative) contribution `∝ A_ω·e^{−ω₀/x}`,
-which is parameter-free. Test: does it reproduce `B_D = 2.225 MeV`? A match is a
-*derivation* of the one binding number the bond-count route structurally cannot
-reach; a miss is a clean scope-(a) negative. This is the honest successor to the
-CKRecursion — it uses only Lean-proved structure and a derived Stokes constant,
-inserts no measured number, and targets exactly the open wall.
+even-tower value is the alien (non-perturbative) contribution, parameter-free
+(derived `A_ω`, `ω₀`, scale `m_e`).
+
+**First test (`deuteron_wall_alien_resummation_probe.py`) — leading term
+undershoots; full route OPEN.** The single leading (m=1) level-1/2 alien term is
+`m_e·A_ω·e^{−ω₀/√x}`, with a hard ceiling `m_e·A_ω = 1.987 MeV < B_D = 2.225 MeV`
+and ~0.21 MeV at the substrate coupling. So the *leading* term alone does not
+close the wall — but this is **not** a refutation (scope-(a), not (b)): the full
+alien-calculus content is the whole trans-series
+`B_D = m_e·Σ_{m≥1} S_m·A_ω^m·e^{−m ω₀/√x}·Φ_m(x)` (bridge equation), which is
+**not** bounded by `A_ω` (as `x→∞` every sector → its constant). The Stokes
+constants `S_m` and fluctuations `Φ_m` are uncomputed; the full median/Écalle
+resummation remains open and can reach `B_D`.
+
+**Physical frame (owner) — the dualized entanglement energy.** Read `B_D` as the
+**entanglement energy** of the two-nucleon sub-braid bipartition. The
+perturbative (Vol) face vanishes for the Hopf deuteron, so the binding is carried
+entirely by the **dual** channel — and the alien calculus *is* the structure of
+that dual. The non-perturbative trans-series is the dualized entanglement energy;
+the derivation step is to compute the bipartition-dual `S_m/Φ_m`, not to stop at
+the m=1 ceiling. This is the honest successor to the CKRecursion — only
+Lean-proved structure + a derived Stokes datum, no inserted number.
 
 ## Resolve / preserve recommendation
 
