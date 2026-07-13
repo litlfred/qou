@@ -516,6 +516,7 @@ export default chapter({
         "q-dilogarithm-exists-proof",
         "q-dilogarithm-unique",
         "q-dilogarithm-unique-proof",
+        "dilog-pentagon-is-associator",
         // Generating-functions-as-Reeb-flow-solutions synthesis (Commit 3).
         "generating-functions-solve-reeb-flow",
         "archimedean-realisation-volume-compatibility",

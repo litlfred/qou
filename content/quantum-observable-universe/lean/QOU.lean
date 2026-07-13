@@ -98,6 +98,7 @@ import QOU.Calculations
 import QOU.HadronicMass
 import QOU.AtomicMass
 import QOU.QuantumObservableUniverse
+import QOU.QuantumObservableUniverses.DilogPentagonAssociator
 import QOU.QuantumObservableUniverses.QAnalysis
 import QOU.QuantumObservableUniverses.QIntegralTransforms
 import QOU.QuantumObservableUniverses.QDifferentialGeometry
