@@ -42,6 +42,7 @@ import QOU.MathlibExt.DerivationRankNullity
 import QOU.MathlibExt.OctonionDerivations
 import QOU.MathlibExt.OctonionDerivationsBound
 import QOU.MathlibExt.OctonionDerivationsUpperBound
+import QOU.MathlibExt.OctonionDerivationProperties
 import QOU.HeckeAlgebra
 import QOU.Glossary
 import QOU.Knot.CuspShapeBarParity

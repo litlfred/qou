@@ -330,3 +330,21 @@ non-associative product.
   (pentagon-coherent, `decide` over `8⁴`) + `det3_nonzero` (non-associativity
   fires) + `det3_cyclic_invariant` (the `PSL(2,7)`/Fano symmetry witness,
   Investigation 2). Sorry-free.
+
+### The `𝔤₂ = Der(𝕆)` dimension, now machine-verified
+
+The `G₂ = Aut(𝕆)` claim invoked throughout (Task 2, Investigation 2, Synthesis)
+is now rigorously grounded in the corpus at the Lie-algebra level:
+
+- [`OctonionDerivations.lean`](../../content/quantum-observable-universe/lean/QOU/MathlibExt/OctonionDerivations.lean),
+  [`OctonionDerivationsBound.lean`](../../content/quantum-observable-universe/lean/QOU/MathlibExt/OctonionDerivationsBound.lean),
+  [`OctonionDerivationsUpperBound.lean`](../../content/quantum-observable-universe/lean/QOU/MathlibExt/OctonionDerivationsUpperBound.lean)
+  — `octonion_derivation_dim : dim Der(𝕆) = 14`, fully sorry-free (PRs #3717, #3734).
+  Since `Der(𝕆) = Lie(Aut(𝕆))`, this is the infinitesimal `dim Aut(𝕆) = dim G₂ = 14`
+  underpinning the `G₂` invocations above — no longer only cited-external.
+- [`OctonionDerivationProperties.lean`](../../content/quantum-observable-universe/lean/QOU/MathlibExt/OctonionDerivationProperties.lean)
+  — `derivation_annihilates_one : D ∈ Der𝕆 → D 1 = 0`, the **infinitesimal shadow of
+  `no_fixed_unit`** (Task-1 Argument A): differentiating `φ_t(1) = 1` gives `D 1 = 0`.
+  So every derivation preserves the splitting `𝕆 = ℝ·1 ⊕ Im 𝕆`, acting (as the
+  14-dimensional `𝔤₂`) on the 7-dimensional `Im 𝕆` where `G₂` is irreducible — the
+  exact `1 ⊕ 7` structure Argument B / the involution discussion turn on. Sorry-free.
