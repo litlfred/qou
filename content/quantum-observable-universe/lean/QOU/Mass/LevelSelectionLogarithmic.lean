@@ -28,6 +28,7 @@ excluded. That is the "conditional-proved ≠ premise-established" half.
 Base ring `ℝ` (archimedean: `1 < r`, real order); no other archimedean input.
 -/
 import Mathlib.Data.Real.Basic
+import Mathlib.Analysis.SpecificLimits.Normed
 
 namespace QOU.Mass.LevelSelection
 
@@ -80,5 +81,49 @@ theorem linear_selection_bound (w : ℕ → ℝ) (r c : ℝ) [T : TowerGeometric
     (M : ℝ) (A : ℕ) (hext : w A ≤ M * (A : ℝ)) :
     c * r ^ A ≤ M * (A : ℝ) :=
   le_trans (T.lower_bound A) hext
+
+open Filter Topology Asymptotics in
+/-- **Linear selection is genuinely impossible (exponential beats linear).** The
+`linear_selection_bound` inequality `c·r^A ≤ M·A` cannot hold for *all* `A ≥ 1`:
+since `r > 1`, the geometric `c·r^A` eventually outgrows any linear `M·A`
+(Mathlib's `isLittleO_coe_const_pow_of_one_lt`: `(A : ℝ) =o[atTop] r^A`). So no
+extensive (linear-in-`A`) binding law is consistent with the tower lower bound —
+the level-selection rule cannot be linear (nor bond-count `A(A−1)/2`, a fortiori).
+This converts the file's "linear excluded" argument into an actual theorem.
+
+Extensivity is required only for `A ≥ 1` (the physical regime); the `A = 0` case is
+deliberately excluded — there it would collapse to a boundary artifact
+(`w 0 ≥ c > 0` vs `M·0 = 0`) that does **not** capture the exponential-vs-linear
+content. The proof genuinely uses the growth lemma, not the boundary. -/
+theorem no_linear_selection (w : ℕ → ℝ) (r c : ℝ) [T : TowerGeometricLowerBound w r c]
+    (M : ℝ) (hext : ∀ A : ℕ, 1 ≤ A → w A ≤ M * (A : ℝ)) : False := by
+  have hr := T.one_lt_r
+  have hc := T.c_pos
+  have hr0 : (0:ℝ) < r := by linarith
+  have hlo := isLittleO_coe_const_pow_of_one_lt (R := ℝ) (r := r) hr
+  have hε : (0:ℝ) < c / (2 * (|M| + 1)) := div_pos hc (by positivity)
+  have hev := hlo.def hε
+  have hev1 : ∀ᶠ A : ℕ in atTop, 1 ≤ A := eventually_atTop.2 ⟨1, fun A h => h⟩
+  obtain ⟨A, hbnd, hA1⟩ := (hev.and hev1).exists
+  have hA1' : (1:ℝ) ≤ (A:ℝ) := by exact_mod_cast hA1
+  have hApos : (0:ℝ) < (A:ℝ) := by linarith
+  have hrpos : (0:ℝ) < r ^ A := pow_pos hr0 A
+  rw [Real.norm_eq_abs, Real.norm_eq_abs, abs_of_pos hApos, abs_of_pos hrpos] at hbnd
+  have hcombine : c * r ^ A ≤ M * (A:ℝ) := le_trans (T.lower_bound A) (hext A hA1)
+  have habs : M ≤ |M| := le_abs_self M
+  have hMc : (0:ℝ) < |M| + 1 := by positivity
+  have step1 : M * (A:ℝ) ≤ (|M| + 1) * (A:ℝ) := by
+    nlinarith [mul_nonneg (by linarith [habs] : (0:ℝ) ≤ |M| - M + 1) (le_of_lt hApos)]
+  have step2 : (|M| + 1) * (A:ℝ) ≤ (|M| + 1) * ((c/(2*(|M|+1))) * r^A) :=
+    mul_le_mul_of_nonneg_left hbnd (le_of_lt hMc)
+  have hne : (|M| + 1) ≠ 0 := ne_of_gt hMc
+  have step3 : (|M| + 1) * ((c/(2*(|M|+1))) * r^A) = (c/2) * r^A := by
+    field_simp
+  have final : c * r ^ A ≤ (c/2) * r ^ A :=
+    calc c * r ^ A ≤ M * (A:ℝ) := hcombine
+      _ ≤ (|M| + 1) * (A:ℝ) := step1
+      _ ≤ (|M| + 1) * ((c/(2*(|M|+1))) * r^A) := step2
+      _ = (c/2) * r ^ A := step3
+  nlinarith [mul_pos hc hrpos, final]
 
 end QOU.Mass.LevelSelection
