@@ -543,407 +543,216 @@ def Hfam : Fin 50 → Matrix (Fin 8) (Fin 8) ℤ :=
         0, 0, 0, 0, 0, 0, 1, 0;
         0, 0, 0, 0, 0, 0, 0, 1]]
 
-/-- The 50 per-witness row-projection identities, each a separate declaration so each gets
-its own heartbeat budget for its (50-value) `decide` over ℤ. -/
-theorem hrow0 :
-    rowProj (leibnizDefect octMulₗ (Matrix.mulVecLin ((Hfam 0).map (Int.cast)))) = twoSingle 0 := by
-  have hZ : ∀ i : Fin 50, defCZ (Hfam 0) (rx i) (ry i) (rk i) = (if i = 0 then (2 : ℤ) else 0) := by
-    decide
+/-- Shared proof skeleton for the per-witness row-projection identities: given the ℤ defect
+values at the 50 output coordinates, the ℚ row-projection is `2 · (standard basis s)`. -/
+theorem hrow_helper (s : Fin 50)
+    (hZ : ∀ i : Fin 50, defCZ (Hfam s) (rx i) (ry i) (rk i) = (if i = s then (2 : ℤ) else 0)) :
+    rowProj (leibnizDefect octMulₗ (Matrix.mulVecLin ((Hfam s).map (Int.cast)))) = twoSingle s := by
   funext i
   rw [rowProj_apply, key, hZ i, twoSingle]
   split <;> simp
+
+/-- The 50 per-witness identities. Each is a separate declaration so each `decide` (50 values
+over ℤ) gets its own heartbeat budget; the shared skeleton lives in `hrow_helper`. -/
+theorem hrow0 :
+    rowProj (leibnizDefect octMulₗ (Matrix.mulVecLin ((Hfam 0).map (Int.cast)))) = twoSingle 0 :=
+  hrow_helper 0 (by decide)
 
 theorem hrow1 :
-    rowProj (leibnizDefect octMulₗ (Matrix.mulVecLin ((Hfam 1).map (Int.cast)))) = twoSingle 1 := by
-  have hZ : ∀ i : Fin 50, defCZ (Hfam 1) (rx i) (ry i) (rk i) = (if i = 1 then (2 : ℤ) else 0) := by
-    decide
-  funext i
-  rw [rowProj_apply, key, hZ i, twoSingle]
-  split <;> simp
+    rowProj (leibnizDefect octMulₗ (Matrix.mulVecLin ((Hfam 1).map (Int.cast)))) = twoSingle 1 :=
+  hrow_helper 1 (by decide)
 
 theorem hrow2 :
-    rowProj (leibnizDefect octMulₗ (Matrix.mulVecLin ((Hfam 2).map (Int.cast)))) = twoSingle 2 := by
-  have hZ : ∀ i : Fin 50, defCZ (Hfam 2) (rx i) (ry i) (rk i) = (if i = 2 then (2 : ℤ) else 0) := by
-    decide
-  funext i
-  rw [rowProj_apply, key, hZ i, twoSingle]
-  split <;> simp
+    rowProj (leibnizDefect octMulₗ (Matrix.mulVecLin ((Hfam 2).map (Int.cast)))) = twoSingle 2 :=
+  hrow_helper 2 (by decide)
 
 theorem hrow3 :
-    rowProj (leibnizDefect octMulₗ (Matrix.mulVecLin ((Hfam 3).map (Int.cast)))) = twoSingle 3 := by
-  have hZ : ∀ i : Fin 50, defCZ (Hfam 3) (rx i) (ry i) (rk i) = (if i = 3 then (2 : ℤ) else 0) := by
-    decide
-  funext i
-  rw [rowProj_apply, key, hZ i, twoSingle]
-  split <;> simp
+    rowProj (leibnizDefect octMulₗ (Matrix.mulVecLin ((Hfam 3).map (Int.cast)))) = twoSingle 3 :=
+  hrow_helper 3 (by decide)
 
 theorem hrow4 :
-    rowProj (leibnizDefect octMulₗ (Matrix.mulVecLin ((Hfam 4).map (Int.cast)))) = twoSingle 4 := by
-  have hZ : ∀ i : Fin 50, defCZ (Hfam 4) (rx i) (ry i) (rk i) = (if i = 4 then (2 : ℤ) else 0) := by
-    decide
-  funext i
-  rw [rowProj_apply, key, hZ i, twoSingle]
-  split <;> simp
+    rowProj (leibnizDefect octMulₗ (Matrix.mulVecLin ((Hfam 4).map (Int.cast)))) = twoSingle 4 :=
+  hrow_helper 4 (by decide)
 
 theorem hrow5 :
-    rowProj (leibnizDefect octMulₗ (Matrix.mulVecLin ((Hfam 5).map (Int.cast)))) = twoSingle 5 := by
-  have hZ : ∀ i : Fin 50, defCZ (Hfam 5) (rx i) (ry i) (rk i) = (if i = 5 then (2 : ℤ) else 0) := by
-    decide
-  funext i
-  rw [rowProj_apply, key, hZ i, twoSingle]
-  split <;> simp
+    rowProj (leibnizDefect octMulₗ (Matrix.mulVecLin ((Hfam 5).map (Int.cast)))) = twoSingle 5 :=
+  hrow_helper 5 (by decide)
 
 theorem hrow6 :
-    rowProj (leibnizDefect octMulₗ (Matrix.mulVecLin ((Hfam 6).map (Int.cast)))) = twoSingle 6 := by
-  have hZ : ∀ i : Fin 50, defCZ (Hfam 6) (rx i) (ry i) (rk i) = (if i = 6 then (2 : ℤ) else 0) := by
-    decide
-  funext i
-  rw [rowProj_apply, key, hZ i, twoSingle]
-  split <;> simp
+    rowProj (leibnizDefect octMulₗ (Matrix.mulVecLin ((Hfam 6).map (Int.cast)))) = twoSingle 6 :=
+  hrow_helper 6 (by decide)
 
 theorem hrow7 :
-    rowProj (leibnizDefect octMulₗ (Matrix.mulVecLin ((Hfam 7).map (Int.cast)))) = twoSingle 7 := by
-  have hZ : ∀ i : Fin 50, defCZ (Hfam 7) (rx i) (ry i) (rk i) = (if i = 7 then (2 : ℤ) else 0) := by
-    decide
-  funext i
-  rw [rowProj_apply, key, hZ i, twoSingle]
-  split <;> simp
+    rowProj (leibnizDefect octMulₗ (Matrix.mulVecLin ((Hfam 7).map (Int.cast)))) = twoSingle 7 :=
+  hrow_helper 7 (by decide)
 
 theorem hrow8 :
-    rowProj (leibnizDefect octMulₗ (Matrix.mulVecLin ((Hfam 8).map (Int.cast)))) = twoSingle 8 := by
-  have hZ : ∀ i : Fin 50, defCZ (Hfam 8) (rx i) (ry i) (rk i) = (if i = 8 then (2 : ℤ) else 0) := by
-    decide
-  funext i
-  rw [rowProj_apply, key, hZ i, twoSingle]
-  split <;> simp
+    rowProj (leibnizDefect octMulₗ (Matrix.mulVecLin ((Hfam 8).map (Int.cast)))) = twoSingle 8 :=
+  hrow_helper 8 (by decide)
 
 theorem hrow9 :
-    rowProj (leibnizDefect octMulₗ (Matrix.mulVecLin ((Hfam 9).map (Int.cast)))) = twoSingle 9 := by
-  have hZ : ∀ i : Fin 50, defCZ (Hfam 9) (rx i) (ry i) (rk i) = (if i = 9 then (2 : ℤ) else 0) := by
-    decide
-  funext i
-  rw [rowProj_apply, key, hZ i, twoSingle]
-  split <;> simp
+    rowProj (leibnizDefect octMulₗ (Matrix.mulVecLin ((Hfam 9).map (Int.cast)))) = twoSingle 9 :=
+  hrow_helper 9 (by decide)
 
 theorem hrow10 :
-    rowProj (leibnizDefect octMulₗ (Matrix.mulVecLin ((Hfam 10).map (Int.cast)))) = twoSingle 10 := by
-  have hZ : ∀ i : Fin 50, defCZ (Hfam 10) (rx i) (ry i) (rk i) = (if i = 10 then (2 : ℤ) else 0) := by
-    decide
-  funext i
-  rw [rowProj_apply, key, hZ i, twoSingle]
-  split <;> simp
+    rowProj (leibnizDefect octMulₗ (Matrix.mulVecLin ((Hfam 10).map (Int.cast)))) = twoSingle 10 :=
+  hrow_helper 10 (by decide)
 
 theorem hrow11 :
-    rowProj (leibnizDefect octMulₗ (Matrix.mulVecLin ((Hfam 11).map (Int.cast)))) = twoSingle 11 := by
-  have hZ : ∀ i : Fin 50, defCZ (Hfam 11) (rx i) (ry i) (rk i) = (if i = 11 then (2 : ℤ) else 0) := by
-    decide
-  funext i
-  rw [rowProj_apply, key, hZ i, twoSingle]
-  split <;> simp
+    rowProj (leibnizDefect octMulₗ (Matrix.mulVecLin ((Hfam 11).map (Int.cast)))) = twoSingle 11 :=
+  hrow_helper 11 (by decide)
 
 theorem hrow12 :
-    rowProj (leibnizDefect octMulₗ (Matrix.mulVecLin ((Hfam 12).map (Int.cast)))) = twoSingle 12 := by
-  have hZ : ∀ i : Fin 50, defCZ (Hfam 12) (rx i) (ry i) (rk i) = (if i = 12 then (2 : ℤ) else 0) := by
-    decide
-  funext i
-  rw [rowProj_apply, key, hZ i, twoSingle]
-  split <;> simp
+    rowProj (leibnizDefect octMulₗ (Matrix.mulVecLin ((Hfam 12).map (Int.cast)))) = twoSingle 12 :=
+  hrow_helper 12 (by decide)
 
 theorem hrow13 :
-    rowProj (leibnizDefect octMulₗ (Matrix.mulVecLin ((Hfam 13).map (Int.cast)))) = twoSingle 13 := by
-  have hZ : ∀ i : Fin 50, defCZ (Hfam 13) (rx i) (ry i) (rk i) = (if i = 13 then (2 : ℤ) else 0) := by
-    decide
-  funext i
-  rw [rowProj_apply, key, hZ i, twoSingle]
-  split <;> simp
+    rowProj (leibnizDefect octMulₗ (Matrix.mulVecLin ((Hfam 13).map (Int.cast)))) = twoSingle 13 :=
+  hrow_helper 13 (by decide)
 
 theorem hrow14 :
-    rowProj (leibnizDefect octMulₗ (Matrix.mulVecLin ((Hfam 14).map (Int.cast)))) = twoSingle 14 := by
-  have hZ : ∀ i : Fin 50, defCZ (Hfam 14) (rx i) (ry i) (rk i) = (if i = 14 then (2 : ℤ) else 0) := by
-    decide
-  funext i
-  rw [rowProj_apply, key, hZ i, twoSingle]
-  split <;> simp
+    rowProj (leibnizDefect octMulₗ (Matrix.mulVecLin ((Hfam 14).map (Int.cast)))) = twoSingle 14 :=
+  hrow_helper 14 (by decide)
 
 theorem hrow15 :
-    rowProj (leibnizDefect octMulₗ (Matrix.mulVecLin ((Hfam 15).map (Int.cast)))) = twoSingle 15 := by
-  have hZ : ∀ i : Fin 50, defCZ (Hfam 15) (rx i) (ry i) (rk i) = (if i = 15 then (2 : ℤ) else 0) := by
-    decide
-  funext i
-  rw [rowProj_apply, key, hZ i, twoSingle]
-  split <;> simp
+    rowProj (leibnizDefect octMulₗ (Matrix.mulVecLin ((Hfam 15).map (Int.cast)))) = twoSingle 15 :=
+  hrow_helper 15 (by decide)
 
 theorem hrow16 :
-    rowProj (leibnizDefect octMulₗ (Matrix.mulVecLin ((Hfam 16).map (Int.cast)))) = twoSingle 16 := by
-  have hZ : ∀ i : Fin 50, defCZ (Hfam 16) (rx i) (ry i) (rk i) = (if i = 16 then (2 : ℤ) else 0) := by
-    decide
-  funext i
-  rw [rowProj_apply, key, hZ i, twoSingle]
-  split <;> simp
+    rowProj (leibnizDefect octMulₗ (Matrix.mulVecLin ((Hfam 16).map (Int.cast)))) = twoSingle 16 :=
+  hrow_helper 16 (by decide)
 
 theorem hrow17 :
-    rowProj (leibnizDefect octMulₗ (Matrix.mulVecLin ((Hfam 17).map (Int.cast)))) = twoSingle 17 := by
-  have hZ : ∀ i : Fin 50, defCZ (Hfam 17) (rx i) (ry i) (rk i) = (if i = 17 then (2 : ℤ) else 0) := by
-    decide
-  funext i
-  rw [rowProj_apply, key, hZ i, twoSingle]
-  split <;> simp
+    rowProj (leibnizDefect octMulₗ (Matrix.mulVecLin ((Hfam 17).map (Int.cast)))) = twoSingle 17 :=
+  hrow_helper 17 (by decide)
 
 theorem hrow18 :
-    rowProj (leibnizDefect octMulₗ (Matrix.mulVecLin ((Hfam 18).map (Int.cast)))) = twoSingle 18 := by
-  have hZ : ∀ i : Fin 50, defCZ (Hfam 18) (rx i) (ry i) (rk i) = (if i = 18 then (2 : ℤ) else 0) := by
-    decide
-  funext i
-  rw [rowProj_apply, key, hZ i, twoSingle]
-  split <;> simp
+    rowProj (leibnizDefect octMulₗ (Matrix.mulVecLin ((Hfam 18).map (Int.cast)))) = twoSingle 18 :=
+  hrow_helper 18 (by decide)
 
 theorem hrow19 :
-    rowProj (leibnizDefect octMulₗ (Matrix.mulVecLin ((Hfam 19).map (Int.cast)))) = twoSingle 19 := by
-  have hZ : ∀ i : Fin 50, defCZ (Hfam 19) (rx i) (ry i) (rk i) = (if i = 19 then (2 : ℤ) else 0) := by
-    decide
-  funext i
-  rw [rowProj_apply, key, hZ i, twoSingle]
-  split <;> simp
+    rowProj (leibnizDefect octMulₗ (Matrix.mulVecLin ((Hfam 19).map (Int.cast)))) = twoSingle 19 :=
+  hrow_helper 19 (by decide)
 
 theorem hrow20 :
-    rowProj (leibnizDefect octMulₗ (Matrix.mulVecLin ((Hfam 20).map (Int.cast)))) = twoSingle 20 := by
-  have hZ : ∀ i : Fin 50, defCZ (Hfam 20) (rx i) (ry i) (rk i) = (if i = 20 then (2 : ℤ) else 0) := by
-    decide
-  funext i
-  rw [rowProj_apply, key, hZ i, twoSingle]
-  split <;> simp
+    rowProj (leibnizDefect octMulₗ (Matrix.mulVecLin ((Hfam 20).map (Int.cast)))) = twoSingle 20 :=
+  hrow_helper 20 (by decide)
 
 theorem hrow21 :
-    rowProj (leibnizDefect octMulₗ (Matrix.mulVecLin ((Hfam 21).map (Int.cast)))) = twoSingle 21 := by
-  have hZ : ∀ i : Fin 50, defCZ (Hfam 21) (rx i) (ry i) (rk i) = (if i = 21 then (2 : ℤ) else 0) := by
-    decide
-  funext i
-  rw [rowProj_apply, key, hZ i, twoSingle]
-  split <;> simp
+    rowProj (leibnizDefect octMulₗ (Matrix.mulVecLin ((Hfam 21).map (Int.cast)))) = twoSingle 21 :=
+  hrow_helper 21 (by decide)
 
 theorem hrow22 :
-    rowProj (leibnizDefect octMulₗ (Matrix.mulVecLin ((Hfam 22).map (Int.cast)))) = twoSingle 22 := by
-  have hZ : ∀ i : Fin 50, defCZ (Hfam 22) (rx i) (ry i) (rk i) = (if i = 22 then (2 : ℤ) else 0) := by
-    decide
-  funext i
-  rw [rowProj_apply, key, hZ i, twoSingle]
-  split <;> simp
+    rowProj (leibnizDefect octMulₗ (Matrix.mulVecLin ((Hfam 22).map (Int.cast)))) = twoSingle 22 :=
+  hrow_helper 22 (by decide)
 
 theorem hrow23 :
-    rowProj (leibnizDefect octMulₗ (Matrix.mulVecLin ((Hfam 23).map (Int.cast)))) = twoSingle 23 := by
-  have hZ : ∀ i : Fin 50, defCZ (Hfam 23) (rx i) (ry i) (rk i) = (if i = 23 then (2 : ℤ) else 0) := by
-    decide
-  funext i
-  rw [rowProj_apply, key, hZ i, twoSingle]
-  split <;> simp
+    rowProj (leibnizDefect octMulₗ (Matrix.mulVecLin ((Hfam 23).map (Int.cast)))) = twoSingle 23 :=
+  hrow_helper 23 (by decide)
 
 theorem hrow24 :
-    rowProj (leibnizDefect octMulₗ (Matrix.mulVecLin ((Hfam 24).map (Int.cast)))) = twoSingle 24 := by
-  have hZ : ∀ i : Fin 50, defCZ (Hfam 24) (rx i) (ry i) (rk i) = (if i = 24 then (2 : ℤ) else 0) := by
-    decide
-  funext i
-  rw [rowProj_apply, key, hZ i, twoSingle]
-  split <;> simp
+    rowProj (leibnizDefect octMulₗ (Matrix.mulVecLin ((Hfam 24).map (Int.cast)))) = twoSingle 24 :=
+  hrow_helper 24 (by decide)
 
 theorem hrow25 :
-    rowProj (leibnizDefect octMulₗ (Matrix.mulVecLin ((Hfam 25).map (Int.cast)))) = twoSingle 25 := by
-  have hZ : ∀ i : Fin 50, defCZ (Hfam 25) (rx i) (ry i) (rk i) = (if i = 25 then (2 : ℤ) else 0) := by
-    decide
-  funext i
-  rw [rowProj_apply, key, hZ i, twoSingle]
-  split <;> simp
+    rowProj (leibnizDefect octMulₗ (Matrix.mulVecLin ((Hfam 25).map (Int.cast)))) = twoSingle 25 :=
+  hrow_helper 25 (by decide)
 
 theorem hrow26 :
-    rowProj (leibnizDefect octMulₗ (Matrix.mulVecLin ((Hfam 26).map (Int.cast)))) = twoSingle 26 := by
-  have hZ : ∀ i : Fin 50, defCZ (Hfam 26) (rx i) (ry i) (rk i) = (if i = 26 then (2 : ℤ) else 0) := by
-    decide
-  funext i
-  rw [rowProj_apply, key, hZ i, twoSingle]
-  split <;> simp
+    rowProj (leibnizDefect octMulₗ (Matrix.mulVecLin ((Hfam 26).map (Int.cast)))) = twoSingle 26 :=
+  hrow_helper 26 (by decide)
 
 theorem hrow27 :
-    rowProj (leibnizDefect octMulₗ (Matrix.mulVecLin ((Hfam 27).map (Int.cast)))) = twoSingle 27 := by
-  have hZ : ∀ i : Fin 50, defCZ (Hfam 27) (rx i) (ry i) (rk i) = (if i = 27 then (2 : ℤ) else 0) := by
-    decide
-  funext i
-  rw [rowProj_apply, key, hZ i, twoSingle]
-  split <;> simp
+    rowProj (leibnizDefect octMulₗ (Matrix.mulVecLin ((Hfam 27).map (Int.cast)))) = twoSingle 27 :=
+  hrow_helper 27 (by decide)
 
 theorem hrow28 :
-    rowProj (leibnizDefect octMulₗ (Matrix.mulVecLin ((Hfam 28).map (Int.cast)))) = twoSingle 28 := by
-  have hZ : ∀ i : Fin 50, defCZ (Hfam 28) (rx i) (ry i) (rk i) = (if i = 28 then (2 : ℤ) else 0) := by
-    decide
-  funext i
-  rw [rowProj_apply, key, hZ i, twoSingle]
-  split <;> simp
+    rowProj (leibnizDefect octMulₗ (Matrix.mulVecLin ((Hfam 28).map (Int.cast)))) = twoSingle 28 :=
+  hrow_helper 28 (by decide)
 
 theorem hrow29 :
-    rowProj (leibnizDefect octMulₗ (Matrix.mulVecLin ((Hfam 29).map (Int.cast)))) = twoSingle 29 := by
-  have hZ : ∀ i : Fin 50, defCZ (Hfam 29) (rx i) (ry i) (rk i) = (if i = 29 then (2 : ℤ) else 0) := by
-    decide
-  funext i
-  rw [rowProj_apply, key, hZ i, twoSingle]
-  split <;> simp
+    rowProj (leibnizDefect octMulₗ (Matrix.mulVecLin ((Hfam 29).map (Int.cast)))) = twoSingle 29 :=
+  hrow_helper 29 (by decide)
 
 theorem hrow30 :
-    rowProj (leibnizDefect octMulₗ (Matrix.mulVecLin ((Hfam 30).map (Int.cast)))) = twoSingle 30 := by
-  have hZ : ∀ i : Fin 50, defCZ (Hfam 30) (rx i) (ry i) (rk i) = (if i = 30 then (2 : ℤ) else 0) := by
-    decide
-  funext i
-  rw [rowProj_apply, key, hZ i, twoSingle]
-  split <;> simp
+    rowProj (leibnizDefect octMulₗ (Matrix.mulVecLin ((Hfam 30).map (Int.cast)))) = twoSingle 30 :=
+  hrow_helper 30 (by decide)
 
 theorem hrow31 :
-    rowProj (leibnizDefect octMulₗ (Matrix.mulVecLin ((Hfam 31).map (Int.cast)))) = twoSingle 31 := by
-  have hZ : ∀ i : Fin 50, defCZ (Hfam 31) (rx i) (ry i) (rk i) = (if i = 31 then (2 : ℤ) else 0) := by
-    decide
-  funext i
-  rw [rowProj_apply, key, hZ i, twoSingle]
-  split <;> simp
+    rowProj (leibnizDefect octMulₗ (Matrix.mulVecLin ((Hfam 31).map (Int.cast)))) = twoSingle 31 :=
+  hrow_helper 31 (by decide)
 
 theorem hrow32 :
-    rowProj (leibnizDefect octMulₗ (Matrix.mulVecLin ((Hfam 32).map (Int.cast)))) = twoSingle 32 := by
-  have hZ : ∀ i : Fin 50, defCZ (Hfam 32) (rx i) (ry i) (rk i) = (if i = 32 then (2 : ℤ) else 0) := by
-    decide
-  funext i
-  rw [rowProj_apply, key, hZ i, twoSingle]
-  split <;> simp
+    rowProj (leibnizDefect octMulₗ (Matrix.mulVecLin ((Hfam 32).map (Int.cast)))) = twoSingle 32 :=
+  hrow_helper 32 (by decide)
 
 theorem hrow33 :
-    rowProj (leibnizDefect octMulₗ (Matrix.mulVecLin ((Hfam 33).map (Int.cast)))) = twoSingle 33 := by
-  have hZ : ∀ i : Fin 50, defCZ (Hfam 33) (rx i) (ry i) (rk i) = (if i = 33 then (2 : ℤ) else 0) := by
-    decide
-  funext i
-  rw [rowProj_apply, key, hZ i, twoSingle]
-  split <;> simp
+    rowProj (leibnizDefect octMulₗ (Matrix.mulVecLin ((Hfam 33).map (Int.cast)))) = twoSingle 33 :=
+  hrow_helper 33 (by decide)
 
 theorem hrow34 :
-    rowProj (leibnizDefect octMulₗ (Matrix.mulVecLin ((Hfam 34).map (Int.cast)))) = twoSingle 34 := by
-  have hZ : ∀ i : Fin 50, defCZ (Hfam 34) (rx i) (ry i) (rk i) = (if i = 34 then (2 : ℤ) else 0) := by
-    decide
-  funext i
-  rw [rowProj_apply, key, hZ i, twoSingle]
-  split <;> simp
+    rowProj (leibnizDefect octMulₗ (Matrix.mulVecLin ((Hfam 34).map (Int.cast)))) = twoSingle 34 :=
+  hrow_helper 34 (by decide)
 
 theorem hrow35 :
-    rowProj (leibnizDefect octMulₗ (Matrix.mulVecLin ((Hfam 35).map (Int.cast)))) = twoSingle 35 := by
-  have hZ : ∀ i : Fin 50, defCZ (Hfam 35) (rx i) (ry i) (rk i) = (if i = 35 then (2 : ℤ) else 0) := by
-    decide
-  funext i
-  rw [rowProj_apply, key, hZ i, twoSingle]
-  split <;> simp
+    rowProj (leibnizDefect octMulₗ (Matrix.mulVecLin ((Hfam 35).map (Int.cast)))) = twoSingle 35 :=
+  hrow_helper 35 (by decide)
 
 theorem hrow36 :
-    rowProj (leibnizDefect octMulₗ (Matrix.mulVecLin ((Hfam 36).map (Int.cast)))) = twoSingle 36 := by
-  have hZ : ∀ i : Fin 50, defCZ (Hfam 36) (rx i) (ry i) (rk i) = (if i = 36 then (2 : ℤ) else 0) := by
-    decide
-  funext i
-  rw [rowProj_apply, key, hZ i, twoSingle]
-  split <;> simp
+    rowProj (leibnizDefect octMulₗ (Matrix.mulVecLin ((Hfam 36).map (Int.cast)))) = twoSingle 36 :=
+  hrow_helper 36 (by decide)
 
 theorem hrow37 :
-    rowProj (leibnizDefect octMulₗ (Matrix.mulVecLin ((Hfam 37).map (Int.cast)))) = twoSingle 37 := by
-  have hZ : ∀ i : Fin 50, defCZ (Hfam 37) (rx i) (ry i) (rk i) = (if i = 37 then (2 : ℤ) else 0) := by
-    decide
-  funext i
-  rw [rowProj_apply, key, hZ i, twoSingle]
-  split <;> simp
+    rowProj (leibnizDefect octMulₗ (Matrix.mulVecLin ((Hfam 37).map (Int.cast)))) = twoSingle 37 :=
+  hrow_helper 37 (by decide)
 
 theorem hrow38 :
-    rowProj (leibnizDefect octMulₗ (Matrix.mulVecLin ((Hfam 38).map (Int.cast)))) = twoSingle 38 := by
-  have hZ : ∀ i : Fin 50, defCZ (Hfam 38) (rx i) (ry i) (rk i) = (if i = 38 then (2 : ℤ) else 0) := by
-    decide
-  funext i
-  rw [rowProj_apply, key, hZ i, twoSingle]
-  split <;> simp
+    rowProj (leibnizDefect octMulₗ (Matrix.mulVecLin ((Hfam 38).map (Int.cast)))) = twoSingle 38 :=
+  hrow_helper 38 (by decide)
 
 theorem hrow39 :
-    rowProj (leibnizDefect octMulₗ (Matrix.mulVecLin ((Hfam 39).map (Int.cast)))) = twoSingle 39 := by
-  have hZ : ∀ i : Fin 50, defCZ (Hfam 39) (rx i) (ry i) (rk i) = (if i = 39 then (2 : ℤ) else 0) := by
-    decide
-  funext i
-  rw [rowProj_apply, key, hZ i, twoSingle]
-  split <;> simp
+    rowProj (leibnizDefect octMulₗ (Matrix.mulVecLin ((Hfam 39).map (Int.cast)))) = twoSingle 39 :=
+  hrow_helper 39 (by decide)
 
 theorem hrow40 :
-    rowProj (leibnizDefect octMulₗ (Matrix.mulVecLin ((Hfam 40).map (Int.cast)))) = twoSingle 40 := by
-  have hZ : ∀ i : Fin 50, defCZ (Hfam 40) (rx i) (ry i) (rk i) = (if i = 40 then (2 : ℤ) else 0) := by
-    decide
-  funext i
-  rw [rowProj_apply, key, hZ i, twoSingle]
-  split <;> simp
+    rowProj (leibnizDefect octMulₗ (Matrix.mulVecLin ((Hfam 40).map (Int.cast)))) = twoSingle 40 :=
+  hrow_helper 40 (by decide)
 
 theorem hrow41 :
-    rowProj (leibnizDefect octMulₗ (Matrix.mulVecLin ((Hfam 41).map (Int.cast)))) = twoSingle 41 := by
-  have hZ : ∀ i : Fin 50, defCZ (Hfam 41) (rx i) (ry i) (rk i) = (if i = 41 then (2 : ℤ) else 0) := by
-    decide
-  funext i
-  rw [rowProj_apply, key, hZ i, twoSingle]
-  split <;> simp
+    rowProj (leibnizDefect octMulₗ (Matrix.mulVecLin ((Hfam 41).map (Int.cast)))) = twoSingle 41 :=
+  hrow_helper 41 (by decide)
 
 theorem hrow42 :
-    rowProj (leibnizDefect octMulₗ (Matrix.mulVecLin ((Hfam 42).map (Int.cast)))) = twoSingle 42 := by
-  have hZ : ∀ i : Fin 50, defCZ (Hfam 42) (rx i) (ry i) (rk i) = (if i = 42 then (2 : ℤ) else 0) := by
-    decide
-  funext i
-  rw [rowProj_apply, key, hZ i, twoSingle]
-  split <;> simp
+    rowProj (leibnizDefect octMulₗ (Matrix.mulVecLin ((Hfam 42).map (Int.cast)))) = twoSingle 42 :=
+  hrow_helper 42 (by decide)
 
 theorem hrow43 :
-    rowProj (leibnizDefect octMulₗ (Matrix.mulVecLin ((Hfam 43).map (Int.cast)))) = twoSingle 43 := by
-  have hZ : ∀ i : Fin 50, defCZ (Hfam 43) (rx i) (ry i) (rk i) = (if i = 43 then (2 : ℤ) else 0) := by
-    decide
-  funext i
-  rw [rowProj_apply, key, hZ i, twoSingle]
-  split <;> simp
+    rowProj (leibnizDefect octMulₗ (Matrix.mulVecLin ((Hfam 43).map (Int.cast)))) = twoSingle 43 :=
+  hrow_helper 43 (by decide)
 
 theorem hrow44 :
-    rowProj (leibnizDefect octMulₗ (Matrix.mulVecLin ((Hfam 44).map (Int.cast)))) = twoSingle 44 := by
-  have hZ : ∀ i : Fin 50, defCZ (Hfam 44) (rx i) (ry i) (rk i) = (if i = 44 then (2 : ℤ) else 0) := by
-    decide
-  funext i
-  rw [rowProj_apply, key, hZ i, twoSingle]
-  split <;> simp
+    rowProj (leibnizDefect octMulₗ (Matrix.mulVecLin ((Hfam 44).map (Int.cast)))) = twoSingle 44 :=
+  hrow_helper 44 (by decide)
 
 theorem hrow45 :
-    rowProj (leibnizDefect octMulₗ (Matrix.mulVecLin ((Hfam 45).map (Int.cast)))) = twoSingle 45 := by
-  have hZ : ∀ i : Fin 50, defCZ (Hfam 45) (rx i) (ry i) (rk i) = (if i = 45 then (2 : ℤ) else 0) := by
-    decide
-  funext i
-  rw [rowProj_apply, key, hZ i, twoSingle]
-  split <;> simp
+    rowProj (leibnizDefect octMulₗ (Matrix.mulVecLin ((Hfam 45).map (Int.cast)))) = twoSingle 45 :=
+  hrow_helper 45 (by decide)
 
 theorem hrow46 :
-    rowProj (leibnizDefect octMulₗ (Matrix.mulVecLin ((Hfam 46).map (Int.cast)))) = twoSingle 46 := by
-  have hZ : ∀ i : Fin 50, defCZ (Hfam 46) (rx i) (ry i) (rk i) = (if i = 46 then (2 : ℤ) else 0) := by
-    decide
-  funext i
-  rw [rowProj_apply, key, hZ i, twoSingle]
-  split <;> simp
+    rowProj (leibnizDefect octMulₗ (Matrix.mulVecLin ((Hfam 46).map (Int.cast)))) = twoSingle 46 :=
+  hrow_helper 46 (by decide)
 
 theorem hrow47 :
-    rowProj (leibnizDefect octMulₗ (Matrix.mulVecLin ((Hfam 47).map (Int.cast)))) = twoSingle 47 := by
-  have hZ : ∀ i : Fin 50, defCZ (Hfam 47) (rx i) (ry i) (rk i) = (if i = 47 then (2 : ℤ) else 0) := by
-    decide
-  funext i
-  rw [rowProj_apply, key, hZ i, twoSingle]
-  split <;> simp
+    rowProj (leibnizDefect octMulₗ (Matrix.mulVecLin ((Hfam 47).map (Int.cast)))) = twoSingle 47 :=
+  hrow_helper 47 (by decide)
 
 theorem hrow48 :
-    rowProj (leibnizDefect octMulₗ (Matrix.mulVecLin ((Hfam 48).map (Int.cast)))) = twoSingle 48 := by
-  have hZ : ∀ i : Fin 50, defCZ (Hfam 48) (rx i) (ry i) (rk i) = (if i = 48 then (2 : ℤ) else 0) := by
-    decide
-  funext i
-  rw [rowProj_apply, key, hZ i, twoSingle]
-  split <;> simp
+    rowProj (leibnizDefect octMulₗ (Matrix.mulVecLin ((Hfam 48).map (Int.cast)))) = twoSingle 48 :=
+  hrow_helper 48 (by decide)
 
 theorem hrow49 :
-    rowProj (leibnizDefect octMulₗ (Matrix.mulVecLin ((Hfam 49).map (Int.cast)))) = twoSingle 49 := by
-  have hZ : ∀ i : Fin 50, defCZ (Hfam 49) (rx i) (ry i) (rk i) = (if i = 49 then (2 : ℤ) else 0) := by
-    decide
-  funext i
-  rw [rowProj_apply, key, hZ i, twoSingle]
-  split <;> simp
+    rowProj (leibnizDefect octMulₗ (Matrix.mulVecLin ((Hfam 49).map (Int.cast)))) = twoSingle 49 :=
+  hrow_helper 49 (by decide)
 
 /-- The defect row-projections of the family are `2 · (standard basis)` (assembled from the
 50 per-witness identities). -/
