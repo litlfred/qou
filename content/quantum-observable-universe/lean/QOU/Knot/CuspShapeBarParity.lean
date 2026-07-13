@@ -59,9 +59,10 @@ The four core figure-eight cusp lemmas (`inv`, `barEven = 1`, `barOdd ² = −3`
 which additionally proves `cuspShape_cube` / `_sixth` / `_reconstruct` and the golden
 shape. This module previously duplicated those four proofs; they are removed and the
 one downstream use below (`cusp_barParity_split`) delegates to the canonical lemmas.
-What remains genuinely new here is the **boost / rapidity-addition** structure
-(`holonomy_hyperbola`, `barEven_mul`, `barOdd_mul`), which the canonical module does
-not carry (`barEven_mul` is consumed by `mass-theory/deuteron-fusion-frame.lean`). -/
+The generic bar-involution multiplicativity lemmas `barEven_mul` / `barOdd_mul` have
+been moved to their natural home, the base module `QOU.QBeta.BarParityZeta4Swap`
+(where `barEven` / `barOdd` are defined); what remains genuinely new here is the
+**meridian boost** `holonomy_hyperbola`. -/
 
 /-- **Boost hyperbola.** The meridian holonomy `q` (any nonzero field element)
 satisfies `barEven q ² − barOdd q ² = 4` — the `cosh² − sinh² = 1` identity.
@@ -70,20 +71,6 @@ theorem holonomy_hyperbola {q : R} (hq : q ≠ 0) :
     barEven q ^ 2 - barOdd q ^ 2 = 4 := by
   simp only [barEven, barOdd]
   field_simp
-  ring
-
-/-- **Rapidities add (cosh law).** Composing meridian turns multiplies the
-holonomies; the bar-even (mass / `cosh`) shape obeys the addition formula. -/
-theorem barEven_mul (x y : R) :
-    2 * barEven (x * y) = barEven x * barEven y + barOdd x * barOdd y := by
-  simp only [barEven, barOdd, mul_inv]
-  ring
-
-/-- **Rapidities add (sinh law).** The bar-odd (decay–binding / `sinh`)
-companion of `barEven_mul`. -/
-theorem barOdd_mul (x y : R) :
-    2 * barOdd (x * y) = barOdd x * barEven y + barEven x * barOdd y := by
-  simp only [barEven, barOdd, mul_inv]
   ring
 
 /-- **Cusp bar-parity split (paper statement).** The figure-eight cusp shape
