@@ -32,7 +32,7 @@ $$
 
 The objective $\sum t_i x_i = \mathrm{tr}_M(\Phi)$ is the categorical action. The Frobenius positivity constraint $Gx \geq 0$ ensures that $\Phi$ pairs non-negatively with all basis elements.
 
-## Dual program (demand satisfaction)
+## Dual program (deficit satisfaction)
 
 By LP duality, the dual of the primal is:
 
@@ -59,7 +59,7 @@ Strong duality holds because the feasible set is non-empty and bounded.
 
 At specific topological evaluations, the LP has an optimal vertex at $x^* = \mathrm{NF}(\mathcal{B}_3)$.
 
-The Frobenius positivity constraints are tight at two indices ($\sigma_0$ and $L_-$), giving the two active demand channels that correspond to the residual demand.
+The Frobenius positivity constraints are tight at two indices ($\sigma_0$ and $L_-$), giving the two active deficit channels that correspond to the residual deficit.
 
 ## Caveat: $\mathcal{B}_3$ is a local minimum
 
