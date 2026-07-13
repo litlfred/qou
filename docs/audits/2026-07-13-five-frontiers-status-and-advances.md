@@ -83,10 +83,21 @@ candidate**:
 
 Numerology guard: `1/3` is reported with its structural justification (S₃
 channel equivalence, now SnapPy-verified) and stays unwired pending the
-selection derivation. Note `E_split = B_pp/3 = 0.762 MeV` vs measured
-`0.764 MeV`; the previously-derived `tanh(ln q₀)·B_pp = 0.238 MeV` (31 %) would
-then be the *leading term* of the channel mechanism, not a competing one —
-reconciling the two is part of the open derivation.
+selection derivation.
+
+> **⚠ SAME-DAY CALIBRATION (the selection-derivation attempt REFUTES the fixed
+> 1/3 as a universal rule).** Checkcorpus for the derivation surfaced the 8-pair
+> [mirror-Coulomb systematics](2026-07-11-mirror-nuclei-coulomb-systematics.md)
+> (merged 2026-07-11): the mirror split is proportional to the **continuum
+> Coulomb displacement** `ΔE_C ∝ Z(Z−1)/(r₀A^{1/3})` across ALL eight pairs
+> (`split/ΔE_C = 0.838 ± 0.059`). At A=3 the two parameterizations are
+> indistinguishable (`0.765·ΔE_C = 0.764` vs `B_pp/3 = 0.762`), but the fixed
+> `B_pp/3` **fails ⁷Li/⁷Be** (predicts 0.76 vs measured 1.644 MeV, 2.2×) while
+> `0.84·ΔE_C` covers the whole chain at 7 % scatter. Eight points beat one: the
+> 1/3-channel reading is a **single-point coincidence**, downgraded same-day
+> (scope-(a)). The honest target for the geometric/Milnor object is therefore
+> to *derive the continuum-Coulomb scaling* `~0.84·α·Z(Z−1)/R(A)` from the
+> categorical EM (α_EM + a derived radius law) — not a fixed channel fraction.
 
 ## Net
 
