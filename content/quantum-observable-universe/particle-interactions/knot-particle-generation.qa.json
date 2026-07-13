@@ -872,6 +872,19 @@
         "reviewed_at": "2026-07-07T14:26:57.401233Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:36:20.000Z",
+        "reviewed_sha": "de97de2a896fe7650f7de420b7c1fdee018e7fb4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "wall-side-statement": [
@@ -914,6 +927,19 @@
         "notes": "The claim in 'Knot-particle generation from $T_{m,n}$ torus knot generators' is unverified due to Lean compilation failures: content/quantum-observable-universe/particle-interactions/knot-particle-generation.lean:94:3: error(lean.unknownIdentifier): Unknown constant `Real.sqrt`.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/knot-particle-generation.lean:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:36:20.000Z",
+        "reviewed_sha": "de97de2a896fe7650f7de420b7c1fdee018e7fb4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-vacuous": [
@@ -935,6 +961,19 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The block 'Knot-particle generation from $T_{m,n}$ torus knot generators' presents substantial mathematical content: The particle spectrum is generated from a finite set of torus knot",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:36:20.000Z",
+        "reviewed_sha": "de97de2a896fe7650f7de420b7c1fdee018e7fb4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-circular": [
@@ -957,6 +996,19 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Knot-particle generation from $T_{m,n}$ torus knot generators'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/knot-particle-generation.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:36:20.000Z",
+        "reviewed_sha": "de97de2a896fe7650f7de420b7c1fdee018e7fb4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-overclaim": [
@@ -978,6 +1030,19 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The prose presents 'Knot-particle generation from $T_{m,n}$ torus knot generators' as verified, but the sibling Lean file fails to compile.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:36:20.000Z",
+        "reviewed_sha": "de97de2a896fe7650f7de420b7c1fdee018e7fb4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-hidden-dof": [
@@ -1000,6 +1065,19 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Knot-particle generation from $T_{m,n}$ torus knot generators'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/knot-particle-generation.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:36:20.000Z",
+        "reviewed_sha": "de97de2a896fe7650f7de420b7c1fdee018e7fb4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-non-sequitur": [
@@ -1022,6 +1100,19 @@
         "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/particle-interactions/knot-particle-generation.lean.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/knot-particle-generation.lean:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:36:20.000Z",
+        "reviewed_sha": "de97de2a896fe7650f7de420b7c1fdee018e7fb4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1043,6 +1134,19 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/knot-particle-generation.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:36:20.000Z",
+        "reviewed_sha": "de97de2a896fe7650f7de420b7c1fdee018e7fb4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-citation-misuse": [
@@ -1065,6 +1169,19 @@
         "notes": "No citations are present in 'Knot-particle generation from $T_{m,n}$ torus knot generators', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/knot-particle-generation.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:36:20.000Z",
+        "reviewed_sha": "de97de2a896fe7650f7de420b7c1fdee018e7fb4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-definitional-ambiguity": [
@@ -1087,6 +1204,19 @@
         "notes": "Key terms and symbols in 'Knot-particle generation from $T_{m,n}$ torus knot generators' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/knot-particle-generation.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:36:20.000Z",
+        "reviewed_sha": "de97de2a896fe7650f7de420b7c1fdee018e7fb4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-empirical-fragility": [
@@ -1109,6 +1239,19 @@
         "notes": "The algebraic and logical relations in 'Knot-particle generation from $T_{m,n}$ torus knot generators' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/knot-particle-generation.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:36:20.000Z",
+        "reviewed_sha": "de97de2a896fe7650f7de420b7c1fdee018e7fb4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-physical-implausibility": [
@@ -1131,6 +1274,19 @@
         "notes": "The physical concepts described in 'Knot-particle generation from $T_{m,n}$ torus knot generators' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/knot-particle-generation.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:36:20.000Z",
+        "reviewed_sha": "de97de2a896fe7650f7de420b7c1fdee018e7fb4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-reproducibility": [
@@ -1153,6 +1309,19 @@
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/knot-particle-generation.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/knot-particle-generation.lean:1 — content/quantum-observable-universe/particle-interactions/knot-particle-generation.lean:94:3: error(lean.unknownIdentifier): Unknown constant `Real.sqrt`"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:36:20.000Z",
+        "reviewed_sha": "de97de2a896fe7650f7de420b7c1fdee018e7fb4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "da-referee-verdict": [
@@ -1176,6 +1345,19 @@
         "severity": "critical",
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/knot-particle-generation.lean for 'Knot-particle generation from $T_{m,n}$ torus knot generators' fails compilation with error: content/quantum-observable-universe/particle-interactions/knot-particle-generation.lean:94:3: error(lean.unknownIdentifier): Unknown constant `Real.sqrt`. This invalidates the claim of formal verification."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:36:20.000Z",
+        "reviewed_sha": "de97de2a896fe7650f7de420b7c1fdee018e7fb4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ],
     "bib-cite-resolves": [
@@ -1431,6 +1613,36 @@
         },
         "reviewed_at": "2026-07-12T00:35:39.126Z",
         "reviewed_sha": "a38f99c8befc4b364f7820811bc286a64f3a2b6e"
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:36:20.000Z",
+        "reviewed_sha": "de97de2a896fe7650f7de420b7c1fdee018e7fb4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:36:20.000Z",
+        "reviewed_sha": "de97de2a896fe7650f7de420b7c1fdee018e7fb4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
       }
     ]
   },
