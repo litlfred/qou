@@ -39,6 +39,7 @@ import Mathlib.Analysis.Normed.Group.FunctionSeries
 import Mathlib.Analysis.PSeries
 import Mathlib.Analysis.SpecialFunctions.Integrals.LogTrigonometric
 import Mathlib.Analysis.Complex.AbelLimit
+import Mathlib.Analysis.SpecialFunctions.Complex.LogBounds
 import QOU.Archimedean.ClausenFunctionMathlibFiller
 
 namespace QOU.Knot
@@ -169,6 +170,26 @@ theorem clausen_pi : clausen π = 0 := by
       (f := fun u => Real.log (2 * Real.sin u)) (a := 0) (b := π) (c := 2) two_ne_zero
     simpa using h
   rw [hcov, hhalf]; ring
+
+/-- **Assembly brick 2a (sorry-free)** — the complex log power series at the
+    boundary interior: `∑ₙ wⁿ/n = -log(1-w)` for `‖w‖ < 1`. Derived from Mathlib's
+    `Complex.hasSum_taylorSeries_log` (`∑ (-1)^{n+1} zⁿ/n = log(1+z)`) at `z = -w`,
+    with the sign algebra `(-1)^{n+1}(-w)ⁿ = -wⁿ`. (bean qou-6r0y) -/
+theorem hasSum_pow_div_neg_log {w : ℂ} (hw : ‖w‖ < 1) :
+    HasSum (fun n : ℕ => w ^ n / n) (-Complex.log (1 - w)) := by
+  have h := Complex.hasSum_taylorSeries_log (z := -w) (by rwa [norm_neg])
+  rw [show (1 : ℂ) + -w = 1 - w by ring] at h
+  have hfun : (fun n : ℕ => w ^ n / (n : ℂ))
+      = fun n : ℕ => -((-1 : ℂ) ^ (n + 1) * (-w) ^ n / n) := by
+    funext n
+    have e3 : ((-1 : ℂ) ^ n) * ((-1) ^ n) = 1 := by
+      rw [← pow_add, ← two_mul, pow_mul]; norm_num
+    rw [neg_pow w n, pow_succ,
+      show ((-1 : ℂ) ^ n * (-1)) * ((-1) ^ n * w ^ n)
+        = ((-1) ^ n * (-1) ^ n) * (-(w ^ n)) by ring, e3]
+    ring
+  rw [hfun]
+  exact h.neg
 
 /-- **The atom (single CITED sorry) — the series Clausen's term-by-term
     derivative.** `Cl_2'(θ) = -log(2 sin(θ/2))` on `(0, 2π)`. This IS the
