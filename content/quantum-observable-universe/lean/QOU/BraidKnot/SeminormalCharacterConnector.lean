@@ -231,4 +231,99 @@ theorem cellOf_selfTranspose (h : μ.transpose = μ) (T : StandardYoungTableau �
     exact Finset.mem_coe.mp ((swap_bijOn_cells μ).mapsTo h1)
   · rw [selfTranspose_entry]; exact hval
 
+/-! ## The σ₁ class-count identity `|R_row| = |R_col|` (bean `qou-tqab`)
+
+The concrete `Finset.card` payload: for a **self-conjugate** shape with `≥ 2`
+cells, the same-row and same-column classes of the pair `1, 2` are equinumerous.
+`SYT(μ)` is a `Fintype` (via the `encode` injection already in
+`StandardYoungTableau`), the classes are `Finset.filter`s, and `selfTranspose`
+is the bijection between them (`cellOf_selfTranspose` swaps row ↔ column,
+`selfTranspose_selfTranspose` is the involution). -/
+
+/-- **Surjectivity of the filling**: every value in `{1,…,|μ|}` is the entry of some
+    cell (`bijOn.surjOn`). -/
+theorem exists_cell_entry (T : StandardYoungTableau μ) {k : ℕ}
+    (hk : k ∈ Set.Icc 1 μ.cells.card) : ∃ c ∈ μ.cells, T.entry c.1 c.2 = k := by
+  obtain ⟨c, hc, hce⟩ := T.bijOn.surjOn hk
+  exact ⟨c, Finset.mem_coe.mp hc, hce⟩
+
+/-- **The self-conjugate transpose is a structural involution** on `SYT(μ)`:
+    `selfTranspose h (selfTranspose h T) = T` (full equality, not just entry level —
+    lifted through the `encode` injection). -/
+theorem selfTranspose_selfTranspose (h : μ.transpose = μ) (T : StandardYoungTableau μ) :
+    selfTranspose h (selfTranspose h T) = T := by
+  apply StandardYoungTableau.encode_injective
+  funext c
+  apply Fin.ext
+  exact selfTranspose_involutive h T c.1.1 c.1.2
+
+section Closure
+open scoped Classical
+
+/-- `SYT(μ)` is a `Fintype` (the `encode` injection into a finite function space,
+    already proved injective in `StandardYoungTableau`). Noncomputable — the count is
+    what matters, not an enumeration algorithm. -/
+noncomputable instance instFintypeSYT (μ : YoungDiagram) :
+    Fintype (StandardYoungTableau μ) :=
+  Fintype.ofInjective StandardYoungTableau.encode StandardYoungTableau.encode_injective
+
+/-- **Same-row class predicate** for the generator pair `1, 2`: the cells holding
+    `1` and `2` share a row. -/
+def sameRow12 (T : StandardYoungTableau μ) : Prop := (cellOf T 1).1 = (cellOf T 2).1
+
+/-- **Same-column class predicate** for the pair `1, 2`. -/
+def sameCol12 (T : StandardYoungTableau μ) : Prop := (cellOf T 1).2 = (cellOf T 2).2
+
+/-- The **same-row class** `R_row ⊆ SYT(μ)`. -/
+noncomputable def rowClass (μ : YoungDiagram) : Finset (StandardYoungTableau μ) :=
+  Finset.univ.filter (fun T => sameRow12 T)
+
+/-- The **same-column class** `R_col ⊆ SYT(μ)`. -/
+noncomputable def colClass (μ : YoungDiagram) : Finset (StandardYoungTableau μ) :=
+  Finset.univ.filter (fun T => sameCol12 T)
+
+/-- `selfTranspose` carries the same-row class to the same-column class: for `≥ 2`
+    cells and self-conjugate `μ`, `sameRow12 (selfTranspose h T) ↔ sameCol12 T`
+    (`cellOf_selfTranspose` swaps the row/column coordinate). -/
+theorem sameRow12_selfTranspose (h : μ.transpose = μ) (hn : 2 ≤ μ.cells.card)
+    (T : StandardYoungTableau μ) : sameRow12 (selfTranspose h T) ↔ sameCol12 T := by
+  have e1 : (1 : ℕ) ∈ Set.Icc 1 μ.cells.card := Set.mem_Icc.mpr ⟨le_refl 1, by omega⟩
+  have e2 : (2 : ℕ) ∈ Set.Icc 1 μ.cells.card := Set.mem_Icc.mpr ⟨by norm_num, by omega⟩
+  have c1 := cellOf_selfTranspose h T (exists_cell_entry T e1)
+  have c2 := cellOf_selfTranspose h T (exists_cell_entry T e2)
+  unfold sameRow12 sameCol12
+  rw [c1, c2]
+  simp only [Prod.fst_swap]
+
+/-- `selfTranspose` carries the same-column class to the same-row class. -/
+theorem sameCol12_selfTranspose (h : μ.transpose = μ) (hn : 2 ≤ μ.cells.card)
+    (T : StandardYoungTableau μ) : sameCol12 (selfTranspose h T) ↔ sameRow12 T := by
+  have e1 : (1 : ℕ) ∈ Set.Icc 1 μ.cells.card := Set.mem_Icc.mpr ⟨le_refl 1, by omega⟩
+  have e2 : (2 : ℕ) ∈ Set.Icc 1 μ.cells.card := Set.mem_Icc.mpr ⟨by norm_num, by omega⟩
+  have c1 := cellOf_selfTranspose h T (exists_cell_entry T e1)
+  have c2 := cellOf_selfTranspose h T (exists_cell_entry T e2)
+  unfold sameCol12 sameRow12
+  rw [c1, c2]
+  simp only [Prod.snd_swap]
+
+/-- **The σ₁ class-count identity** `|R_row| = |R_col|`. For a self-conjugate shape
+    with `≥ 2` cells, the same-row and same-column classes of the generator pair
+    `1, 2` are equinumerous — `selfTranspose` is the explicit bijection between them
+    (row ↔ column swap + involution), fed to `card_row_eq_card_col`. This is the
+    concrete `Finset.card` heart of the σ₁ seminormal character `χ_λ(σ₁) = c_λ·h`. -/
+theorem card_rowClass_eq_colClass (h : μ.transpose = μ) (hn : 2 ≤ μ.cells.card) :
+    (rowClass μ).card = (colClass μ).card := by
+  apply card_row_eq_card_col (rowClass μ) (colClass μ) (selfTranspose h)
+  · intro T hT
+    rw [rowClass, Finset.mem_filter] at hT
+    rw [colClass, Finset.mem_filter]
+    exact ⟨Finset.mem_univ _, (sameCol12_selfTranspose h hn T).mpr hT.2⟩
+  · intro T hT
+    rw [colClass, Finset.mem_filter] at hT
+    rw [rowClass, Finset.mem_filter]
+    exact ⟨Finset.mem_univ _, (sameRow12_selfTranspose h hn T).mpr hT.2⟩
+  · exact selfTranspose_selfTranspose h
+
+end Closure
+
 end QOU.BraidKnot.SeminormalCharacterConnector
