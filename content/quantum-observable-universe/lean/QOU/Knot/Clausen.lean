@@ -156,6 +156,18 @@ theorem clausen_pi : clausen π = 0 := by
 theorem hasDerivAt_Cl_2_series {θ : ℝ} (h0 : 0 < θ) (h2 : θ < 2 * π) :
     HasDerivAt QOU.Archimedean.Cl_2 (-Real.log (2 * Real.sin (θ / 2))) θ := by
   -- Ref: [zagier1986] term-by-term d/dθ ∑ sin(kθ)/k² = ∑ cos(kθ)/k = -log(2 sin(θ/2))
+  --
+  -- ATOM DECOMPOSITION (calibrated against Mathlib 2026-07; two sub-walls remain,
+  -- each Mathlib-contribution-sized — do NOT wire an ansatz, this is honestly open):
+  --   (i) term-by-term diff  Cl_2'(θ) = ∑ cos(kθ)/k.  `hasDerivAt_tsum`
+  --       (SmoothSeries) needs a SUMMABLE derivative bound; the derivative series
+  --       ∑ cos(kθ)/k is only CONDITIONALLY convergent (bound 1/k not summable),
+  --       so it does not apply.  Mathlib HAS Dirichlet's test
+  --       (SpecificLimits.Normed) giving convergence, but not the local-uniform /
+  --       Dirichlet-kernel argument needed for the derivative interchange.
+  --  (ii) boundary identity  ∑ cos(kθ)/k = -log(2 sin(θ/2)) = Re(-log(1-e^{iθ})).
+  --       Mathlib HAS `hasSum_taylorSeries_log` for ‖z‖<1 (Complex.LogBounds) but
+  --       NOT Abel's theorem to pass to the boundary ‖z‖=1 (θ ∉ 2πℤ).
   sorry
 
 /-- **Reduction (Route-B brick 2, sorry-free modulo the atom).** `clausen` and
