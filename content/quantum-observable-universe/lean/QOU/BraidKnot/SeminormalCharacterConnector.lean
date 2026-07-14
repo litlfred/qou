@@ -96,4 +96,25 @@ theorem card_row_eq_card_col {ι : Type*} [DecidableEq ι]
       exact ⟨f b, hf_col b hb, hff b⟩
   rw [← himg, Finset.card_image_of_injOn hinj]
 
+/-! ## The conjugate transpose (bean `qou-tqab`) -/
+
+/-- **Cell membership in the transpose**: `(i, j) ∈ μᵀ ↔ (j, i) ∈ μ`. The transpose
+    cell set is the `Prod.swap`-image of `μ`'s cells (`YoungDiagram.transpose`). -/
+theorem mem_transpose_iff {i j : ℕ} : (i, j) ∈ μ.transpose ↔ (j, i) ∈ μ :=
+  YoungDiagram.mem_transpose
+
+/-- **The conjugate transpose of a standard tableau, as a semistandard tableau of
+    `μᵀ`** — the mathematical heart of the row↔column swap: `entry (i,j) := T.entry
+    (j,i)`. Weak rows of the transpose come from `T`'s **strict columns**
+    (`col_strict`); strict columns come from `T`'s **strict rows** (`row_strict`,
+    which holds for a *standard* tableau by bijectivity). The residual off-diagram
+    zeros transport through `mem_transpose_iff`. -/
+def transposeSsyt (T : StandardYoungTableau μ) : SemistandardYoungTableau μ.transpose where
+  entry i j := T.entry j i
+  zeros' := fun h => T.toSsyt.zeros (fun hc => h (mem_transpose_iff.mpr hc))
+  row_weak' := fun hj hcell =>
+    le_of_lt (T.toSsyt.col_strict hj (mem_transpose_iff.mp hcell))
+  col_strict' := fun hi hcell =>
+    T.row_strict hi (mem_transpose_iff.mp hcell)
+
 end QOU.BraidKnot.SeminormalCharacterConnector
