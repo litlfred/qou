@@ -1,5 +1,14 @@
 # Path to 1 ppq: the calibration floor, and α_EM as the headline opportunity
 
+> **⚠ Calibration (2026-07-14).** The Schwinger factor `(1−h²α)` in form B is
+> labeled "derived (RT phase 3)" below; the exact vertex-moment check
+> ([`2026-07-14-alpha-em-phase3-schwinger-coefficient-exact-check.md`](2026-07-14-alpha-em-phase3-schwinger-coefficient-exact-check.md))
+> found the phase-3 prescription does **not** reproduce `−h²α` in the natural
+> exact realizations (wrong (q−1)-order, wrong sign). The +0.313 ppb number is
+> unchanged; the factor's honest tier is **structurally-motivated /
+> empirically-anchored**, and its derivation is part of the same open program
+> as the 2-loop `c₂`.
+
 **Date:** 2026-07-11 · **Axis:** precision program (L1/L2) · **Tier:** strategic analysis.
 **No c_k wired; no calibration change; scope-(a) throughout.**
 **Probe:** [`onepq_frontier_ratio_classification_probe.py`](../../computations/onepq_frontier_ratio_classification_probe.py).
