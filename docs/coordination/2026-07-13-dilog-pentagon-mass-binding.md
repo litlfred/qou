@@ -109,12 +109,23 @@ a nicety blocked by environment friction.
 `RogersSzegoInhabited`, `BarParityExclusion`, `KeystoneC8SuperExpBound` — surveyed, not
 genuine one-lever chips (already symmetric, no vanishing sector, or need cross-file √(k!)).
 
-### Forward path (not yet done)
+### Forward path — rebased + integrated (2026-07-14)
 
-`conj:tower-geometric-lower-bound`'s faithful proof needs SYT/skew-tableau/Plancherel
-infra — and **main just landed YT seminormal-weight infra** (`χ_λ(σ)=c_λ·h`, several
-commits 2026-07-14). Rebasing onto that may unblock the growth conjecture's combinatorial
-core. Remaining beans qou-8t34 (cyclotomic, anti-fit-gated), qou-x3nt (pairing / narrow a
+Rebased onto main (+13 commits: YT seminormal-weight infra `χ_λ(σ)=c_λ·h`, `SkewSYT`,
+`QPlancherel`, `RSKBurnsideTarget`). **Landed integration chip** combining the rebased
+Gevrey-1/2 involution bound with the keystone C8 machinery
+(`KeystoneC8SuperExpBound.lean` [shared main-tree file — flagged], `BindingGevreyHalf.lean`):
+
+6. **`c8_superexp_sq_lower_bound`** (abstract) + **`wstd_superexp_sq`** (concrete) — the
+   C8 lower bound `w_std ≥ 1/9` (from `I(k) ≤ k!`) is strengthened to genuinely
+   super-exponential `w_std² ≥ k!/(81·2^k)` by feeding `I(k)² ≤ 2^k·k!` instead.
+   Square form avoids `Real.sqrt` (no analysis-import timeout). Verified sorry-free. ✓
+
+**Still open (not discharged, honest):** the SYT inputs (A) `Σ f^λ f^{λ/(2,1)} = k!/3`
+and (C) `Σ f^{λ/(2,1)} ≤ I(k)` — the combinatorial core — remain hypotheses; the chip
+sharpens only the downstream bound they feed. `conj:tower-geometric-lower-bound`'s all-k
+geometric instance stays open. The new seminormal infra is *character* values
+(`χ_λ=c_λ·h`), not skew-SYT dimensions, so it does not directly supply (A)/(C). Remaining beans qou-8t34 (cyclotomic, anti-fit-gated), qou-x3nt (pairing / narrow a
 class), qou-g020 (2-adic, speculative for binding) are lower-confidence.
 
 ---
