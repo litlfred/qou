@@ -200,4 +200,35 @@ theorem selfTranspose_involutive (h : μ.transpose = μ) (T : StandardYoungTable
     (i j : ℕ) : (selfTranspose h (selfTranspose h T)).entry i j = T.entry i j := by
   rw [selfTranspose_entry, selfTranspose_entry]
 
+/-! ## The `cellOf`-swap bridge (bean `qou-tqab`) -/
+
+/-- **`cellOf` is pinned by any witnessing cell** — the inverse of the filling is
+    unique. If `c` is a cell of `μ` carrying entry `k`, then `cellOf T k = c`
+    (filling injectivity, `injOn_cells`). This is the uniqueness the choice-based
+    `cellOf` needs to compose with a coordinate swap. -/
+theorem cellOf_eq_of_entry (T : StandardYoungTableau μ) {k : ℕ} {c : ℕ × ℕ}
+    (hc : c ∈ μ.cells) (hk : T.entry c.1 c.2 = k) : cellOf T k = c := by
+  obtain ⟨hmem, hval⟩ := cellOf_spec T ⟨c, hc, hk⟩
+  exact T.injOn_cells (Finset.mem_coe.mpr hmem) (Finset.mem_coe.mpr hc)
+    (hval.trans hk.symm)
+
+/-- **The self-conjugate transpose swaps cells**:
+    `cellOf (selfTranspose h T) k = Prod.swap (cellOf T k)`. The cell holding `k` in
+    `Tᵀ` is the coordinate swap of the cell holding `k` in `T` — the entry-level
+    coordinate swap (`selfTranspose_entry`) lifted through the pinned inverse
+    (`cellOf_eq_of_entry`), the swapped cell staying in `μ` by
+    `swap_bijOn_cells` + self-conjugacy. This is the **same-row ↔ same-column
+    class swap** for the generator pair `1, 2`: whichever of `(cellOf T 1),
+    (cellOf T 2)` shared a row now shares a column, discharging the
+    class-exchange hypotheses of `card_row_eq_card_col`. -/
+theorem cellOf_selfTranspose (h : μ.transpose = μ) (T : StandardYoungTableau μ) {k : ℕ}
+    (hk : ∃ c ∈ μ.cells, T.entry c.1 c.2 = k) :
+    cellOf (selfTranspose h T) k = Prod.swap (cellOf T k) := by
+  obtain ⟨hmem, hval⟩ := cellOf_spec T hk
+  apply cellOf_eq_of_entry
+  · have h1 : cellOf T k ∈ (μ.transpose.cells : Set (ℕ × ℕ)) := by
+      rw [h]; exact Finset.mem_coe.mpr hmem
+    exact Finset.mem_coe.mp ((swap_bijOn_cells μ).mapsTo h1)
+  · rw [selfTranspose_entry]; exact hval
+
 end QOU.BraidKnot.SeminormalCharacterConnector
