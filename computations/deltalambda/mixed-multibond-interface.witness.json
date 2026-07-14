@@ -1,0 +1,315 @@
+{
+ "computation": "mixed-multibond-interface-derive-or-refute",
+ "description": "R8 derive-or-refute of the mixed multi-bond interface (11B/14N/19F \u2014 the isotopes Model G does not close): exact ledgers + residual correlates from committed witnesses; formalize-first cone prune excluding every additive non-negative graph-counting extension; pre-registered candidates (a) bridge copies, (b) 3-cluster gate (11B discriminating case), (c) sub-cluster promotion with Model-G cross interface; mandatory closed-six regression. All inputs from committed witnesses + vendored AME2020; nothing recomputed, nothing tuned.",
+ "audit_only": true,
+ "computedAt": "2026-07-14T02:03:21.374447+00:00",
+ "engine": "mpmath (witness-fed; no new tr_M compute)",
+ "inputs": {
+  "deficit_source": "alpha-cluster-volume-additivity.witness.json (committed; consistency-checked to 1e-9 MeV)",
+  "model_G_source": "alpha-activation-brunnian.witness.json (committed; ledger reproduced to 1e-9 MeV)",
+  "b_linear_MeV_per_nucleon": {
+   "value": 0.7819231499999993,
+   "source": "alpha-activation-brunnian.witness.json inputs.b_linear_MeV_per_nucleon (committed R5-a; reused not re-fit)"
+  },
+  "AME2020": "vendored qou-mass/src/qou_mass/data/ame2020.json via codata_constants._ame_binding_mev"
+ },
+ "characterization": {
+  "per_isotope": {
+   "11B": {
+    "deficit_MeV": 11.13193429999999,
+    "pred_G_MeV": 4.691538899999996,
+    "miss_MeV": 6.4403953999999946,
+    "m_alpha_contacts": 2,
+    "A_light": 3,
+    "miss_over_b": 8.236609185953888,
+    "miss_per_aaX_triple": 6.4403953999999946,
+    "miss_per_aX_bond": 3.2201976999999973,
+    "miss_per_nucleon_bond": 1.0733992333333324,
+    "miss_over_deficit": 0.5785513304727283
+   },
+   "14N": {
+    "deficit_MeV": 17.5470538,
+    "pred_G_MeV": 11.728847249999989,
+    "miss_MeV": 5.818206550000012,
+    "m_alpha_contacts": 3,
+    "A_light": 2,
+    "miss_over_b": 7.440893072420246,
+    "miss_per_aaX_triple": 1.9394021833333372,
+    "miss_per_aX_bond": 1.9394021833333372,
+    "miss_per_nucleon_bond": 0.9697010916666686,
+    "miss_over_deficit": 0.3315774041793849
+   },
+   "19F": {
+    "deficit_MeV": 26.13691899999998,
+    "pred_G_MeV": 23.457694499999977,
+    "miss_MeV": 2.6792245000000037,
+    "m_alpha_contacts": 4,
+    "A_light": 3,
+    "miss_over_b": 3.426455016711049,
+    "miss_per_aaX_triple": 0.4465374166666673,
+    "miss_per_aX_bond": 0.6698061250000009,
+    "miss_per_nucleon_bond": 0.22326870833333365,
+    "miss_over_deficit": 0.10250728098441923
+   }
+  },
+  "n15_diagnostic_3a_t": {
+   "deficit_MeV": 22.12312109999999,
+   "pred_G_MeV": 14.074616699999988,
+   "miss_MeV": 8.048504400000004,
+   "miss_over_deficit": 0.3638051052389713,
+   "note": "t-series miss vs k NON-monotone: 6.440 (k=2) -> 8.049 (k=3) -> 2.679 (k=4); the smooth trend-in-A reading mixes d and t"
+  },
+  "trio_selector": "exactly the isotopes with A_light >= 2 AND m >= 2 (9Be A_light=1 closes; 6Li/7Li m=1 close)"
+ },
+ "cone_prune": {
+  "countings_11B_to_19F": {
+   "per alpha.X bond (m)": [
+    2,
+    4
+   ],
+   "per bridged triple C(m,2)": [
+    1,
+    6
+   ],
+   "per nucleon-bond (m*A_light)": [
+    6,
+    12
+   ],
+   "per light cluster (1)": [
+    1,
+    1
+   ],
+   "per light nucleon (A_light)": [
+    3,
+    3
+   ]
+  },
+  "miss_11B_MeV": 6.4403953999999946,
+  "miss_19F_MeV": 2.6792245000000037,
+  "miss_decrease_factor": 2.4038281973011166,
+  "invariant": "coordinatewise monotone counting cone (11B -> 19F, same light cluster t) vs strictly decreasing measured miss",
+  "scope": "excludes the additive non-negative graph-counting class given the all-alpha decompositions + committed AME deficits; non-additive/saturating/sign-changing closures NOT excluded; (c) adjudicated separately"
+ },
+ "candidate_a_bridge": {
+  "a1_note": "m copies (complete graph) IS committed Model G \u2014 already open",
+  "a2_rows": {
+   "11B": {
+    "extra_MeV": 2.345769449999998,
+    "miss_MeV": 6.4403953999999946,
+    "miss_over_extra": 2.745536395317963
+   },
+   "14N": {
+    "extra_MeV": 3.1276925999999974,
+    "miss_MeV": 5.818206550000012,
+    "miss_over_extra": 1.8602232681050614
+   },
+   "19F": {
+    "extra_MeV": 7.037308349999994,
+    "miss_MeV": 2.6792245000000037,
+    "miss_over_extra": 0.38071722407900543
+   }
+  },
+  "a2_ratio_span": 7.21148459190335,
+  "a2_9Be_regression_resid_over_B": 0.013291215098655527,
+  "verdict": "REFUTED (x7+ non-flat across the trio; breaks 9Be)"
+ },
+ "candidate_b_3cluster_gate": {
+  "rows_11B": {
+   "3b": {
+    "granted_MeV": 2.345769449999998,
+    "miss_after_MeV": 4.094625949999997,
+    "miss_after_over_deficit": 0.36782699570909255
+   },
+   "g_flat": {
+    "granted_MeV": 2.415513466666667,
+    "miss_after_MeV": 4.024881933333328,
+    "miss_after_over_deficit": 0.3615617757763205
+   }
+  },
+  "regression_9Be_resid_over_B": 0.04017804651984551,
+  "verdict": "REFUTED twice (11B stays open at -36% even granted; 9Be breaks at +4.0% of B); alpha-only gate (I3) confirmed at the discriminating multi-nucleon-spectator case"
+ },
+ "candidate_c_promotion": {
+  "best_2part_splits_verified": {
+   "11B": [
+    "4He",
+    "7Li"
+   ],
+   "14N": [
+    "13C",
+    "p"
+   ],
+   "19F": [
+    "15N",
+    "4He"
+   ],
+   "16O": [
+    "12C",
+    "4He"
+   ]
+  },
+  "pre_registered_match": true,
+  "rows": {
+   "11B=7Li+4He": {
+    "B_add_MeV": 67.5407431,
+    "deficit_MeV": 8.66431219999999,
+    "cross_interface_MeV": 2.345769449999998,
+    "terms": "1aa[off]+ax:2.346",
+    "resid_MeV": -6.318542749999992,
+    "resid_over_deficit": -0.7292607427050007,
+    "resid_over_B_AME": -0.08291500773965048
+   },
+   "11B=8Be+t": {
+    "B_add_MeV": 64.981281,
+    "deficit_MeV": 11.22377429999999,
+    "cross_interface_MeV": 4.691538899999996,
+    "terms": "0aa[off]+ax:4.692",
+    "resid_MeV": -6.532235399999994,
+    "resid_over_deficit": -0.5819998892885792,
+    "resid_over_B_AME": -0.08571918718888451
+   },
+   "14N=13C+p": {
+    "B_add_MeV": 97.1080435,
+    "deficit_MeV": 7.5505637,
+    "cross_interface_MeV": 2.345769449999998,
+    "terms": "0aa[on]+ax:2.346+ll:none",
+    "resid_MeV": -5.204794250000002,
+    "resid_over_deficit": -0.6893252552786228,
+    "resid_over_B_AME": -0.04973116296162598
+   },
+   "14N=12C+d": {
+    "B_add_MeV": 94.3863014,
+    "deficit_MeV": 10.2723058,
+    "cross_interface_MeV": 4.691538899999996,
+    "terms": "0aa[on]+ax:4.692",
+    "resid_MeV": -5.580766900000004,
+    "resid_over_deficit": -0.5432827846694366,
+    "resid_over_B_AME": -0.053323534961011824
+   },
+   "19F=15N+4He": {
+    "B_add_MeV": 143.7875669,
+    "deficit_MeV": 4.01379789999999,
+    "cross_interface_MeV": 9.383077799999992,
+    "terms": "3aa[on]+ax:2.346",
+    "resid_MeV": 5.369279900000001,
+    "resid_over_deficit": 1.3377055929995916,
+    "resid_over_B_AME": 0.03632767469546399
+   },
+   "19F=16O+t": {
+    "B_add_MeV": 136.1011114,
+    "deficit_MeV": 11.70025339999998,
+    "cross_interface_MeV": 9.383077799999992,
+    "terms": "0aa[on]+ax:9.383",
+    "resid_MeV": -2.3171755999999886,
+    "resid_over_deficit": -0.1980449073008959,
+    "resid_over_B_AME": -0.015677633309648498
+   },
+   "16O=12C+4He": {
+    "B_add_MeV": 120.4573976,
+    "deficit_MeV": 7.1619176,
+    "cross_interface_MeV": 7.037308349999994,
+    "terms": "3aa[on]+ax:0.000",
+    "resid_MeV": -0.1246092500000063,
+    "resid_over_deficit": -0.017398866750436545,
+    "resid_over_B_AME": -0.00097641371766275
+   }
+  },
+  "coherence_16O_12C_alpha": {
+   "B_add_MeV": 120.4573976,
+   "deficit_MeV": 7.1619176,
+   "cross_interface_MeV": 7.037308349999994,
+   "terms": "3aa[on]+ax:0.000",
+   "resid_MeV": -0.1246092500000063,
+   "resid_over_deficit": -0.017398866750436545,
+   "resid_over_B_AME": -0.00097641371766275
+  },
+  "verdict": "REFUTED for the trio (11B -73%, 14N -69% of deficit; 19F flips sign +134% \u2014 brackets zero, nothing lands it); 16O = 12C+alpha coherence at -0.10% of B"
+ },
+ "closed_six_regression_rule_c": {
+  "6Li": {
+   "decomposition": "all-alpha",
+   "B_add_MeV": 30.5202286,
+   "interface_MeV": 1.5638462999999987,
+   "resid_over_B_AME": 0.002815769708128242
+  },
+  "7Li": {
+   "decomposition": "all-alpha",
+   "B_add_MeV": 36.7774586,
+   "interface_MeV": 2.345769449999998,
+   "resid_over_B_AME": -0.0031049152613922895
+  },
+  "8Be": {
+   "decomposition": "all-alpha",
+   "B_add_MeV": 56.5913248,
+   "interface_MeV": 0.0,
+   "resid_over_B_AME": 0.0016255015479362388
+  },
+  "9Be": {
+   "decomposition": "all-alpha",
+   "B_add_MeV": 56.5913248,
+   "interface_MeV": 1.5638462999999987,
+   "resid_over_B_AME": -0.0001522006119394608
+  },
+  "12C": {
+   "decomposition": "all-alpha",
+   "B_add_MeV": 84.8869872,
+   "interface_MeV": 7.037308349999994,
+   "resid_over_B_AME": -0.0025763365835586613
+  },
+  "16O": {
+   "decomposition": "12C+4He",
+   "B_add_MeV": 120.4573976,
+   "interface_MeV": 7.037308349999994,
+   "resid_over_B_AME": -0.00097641371766275
+  }
+ },
+ "verdict": "REFUTED (all three pre-registered zero-new-constant candidates), with a structural exclusion of the whole additive class. CONE PRUNE (formalize-first, stated before the scans): 11B and 19F carry the same light cluster (t) at k = 2 vs k = 4; every cluster-graph counting (per-bond m, per-bridged-triple C(m,2), per-nucleon-bond m*A_light, per-cluster 1, per-nucleon A_light) is non-decreasing 11B -> 19F while the measured miss DECREASES x2.40 (6.440 -> 2.679 MeV) \u2014 no non-negative combination of graph countings can close the trio (invariant: monotone counting cone vs strictly decreasing miss; conditional on the all-alpha decompositions and committed AME deficits; non-additive/saturating closures not excluded). (a) bridge copies: sub-reading a1 (per-bond, complete graph) IS committed Model G (open); a2 (+(m-1) copies) is x7.2 non-flat across the trio AND breaks 9Be (+1.33% of B). (b) gate = 3 clusters: granting 11B the gated pair leaves -36% of deficit unexplained AND the same rule breaks 9Be (+4.02% of B) \u2014 the alpha-only Milnor gate (I3) is confirmed at the discriminating multi-nucleon-spectator case. (c) sub-cluster promotion (max-B_add + Model-G cross interface): 11B = 7Li+alpha resid -73% of deficit (-8.3% of B), 14N = 13C+p -69% (-5.0% of B), 19F = 15N+alpha FLIPS SIGN to +134% (+3.6% of B) \u2014 brackets zero but nothing lands it; the closed six SURVIVE rule (c) (16O = 12C+alpha closes at -0.10% of B, a genuine coherence datum: promotion commutes with Model G when the sub-cluster's pairs are already gated on inside its AME value). CHARACTERIZATION: the trio is exactly {A_light >= 2 AND m >= 2}; the miss per nucleon-bond falls from 1.07 (11B) to 0.22 (19F); the 15N (3a+t) diagnostic (miss 8.05 MeV, -36%) makes the t-series NON-monotone in k (6.44 -> 8.05 -> 2.68), so the smooth -58/-33/-10 trend is partly an artifact of mixing d and t. The missing object is a SHARED (sub-additive, non-additive in the counting cone) channel of a multi-nucleon light cluster bonded to several alphas \u2014 scope-(a) for Model G's ingredients (nothing excluded as an ingredient); scope-(b) ONLY for the additive non-negative graph-counting class, with the cone invariant cited. Nothing tuned; b reused from the committed R5-a witness; no production wiring.",
+ "scope": "(a) for Model G's ingredients (nothing excluded as ingredient); (b) only for the additive non-negative graph-counting class, invariant cited (cone monotonicity vs decreasing miss)",
+ "assertions": [
+  {
+   "label": "committed additivity deficits reproduce from vendored AME2020 to 1e-9 MeV",
+   "passed": true
+  },
+  {
+   "label": "committed Model-G ledger (all 9 isotopes) reproduces to 1e-9 MeV",
+   "passed": true
+  },
+  {
+   "label": "characterization: trio misses all positive (undershoot) and >4x non-flat per nucleon-bond",
+   "passed": true
+  },
+  {
+   "label": "cone prune: every pre-registered counting non-decreasing 11B->19F while the miss falls by >2x",
+   "passed": true
+  },
+  {
+   "label": "(a2) refuted: ratio span > 5x across the trio AND 9Be regression breaks (> 0.5% of B)",
+   "passed": true
+  },
+  {
+   "label": "(b) refuted: 11B miss remains > 25% of deficit even granting the gated pair AND 9Be breaks (> 0.5% of B)",
+   "passed": true
+  },
+  {
+   "label": "(c) pre-registered best 2-part splits match the vendored-AME enumeration",
+   "passed": true
+  },
+  {
+   "label": "(c) refuted: no tested decomposition closes any trio member to < 0.5% of B; 19F flips sign under 15N+alpha",
+   "passed": true
+  },
+  {
+   "label": "closed-six regression: all six stay < 0.5% of B under rule (c); 16O = 12C+alpha closes",
+   "passed": true
+  },
+  {
+   "label": "15N diagnostic: t-series miss non-monotone in k (miss(15N,k=3) > miss(11B,k=2) > miss(19F,k=4))",
+   "passed": true
+  },
+  {
+   "label": "honest negative: the trio remains OPEN under all three pre-registered candidates",
+   "passed": true
+  }
+ ],
+ "allPassed": true
+}
