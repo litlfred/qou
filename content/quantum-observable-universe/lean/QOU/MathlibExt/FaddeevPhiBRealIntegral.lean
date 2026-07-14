@@ -2,6 +2,8 @@ import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic
 import Mathlib.Analysis.SpecialFunctions.Complex.Circle
 import Mathlib.MeasureTheory.Integral.Bochner.Basic
 import Mathlib.MeasureTheory.Measure.Lebesgue.Basic
+import Mathlib.MeasureTheory.Integral.ExpDecay
+import Mathlib.Analysis.SpecialFunctions.ImproperIntegrals
 import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.Ring
 
@@ -182,21 +184,20 @@ the subtracted `2z/t²` is a `t^{-2}` tail — so the kernel is dominated on
 kernel-specific analysis (the `sinh` lower bound, the domination chain,
 continuity/measurability) is proved sorry-free below.
 
-**Hypothesis discipline (the `PhiBProd` precedent).**  The two *majorant*
-integrability facts — `e^{−bt}` and `t^{−2}` are integrable on `[1, ∞)` —
-are standard Mathlib theorems (`exp_neg_integrableOn_Ioi`,
-`integrableOn_Ioi_rpow_of_lt`) whose modules
-(`Mathlib.MeasureTheory.Integral.ExpDecay`,
-`Mathlib.Analysis.SpecialFunctions.Integrals`) are outside the current
-sandbox olean cone.  They are therefore carried as **explicit named
-hypotheses** (`hexp`, `hinv`) on `integrableOn_kernel_Ioi_one` — not
-axiomatized, not `sorry`'d; on a full Mathlib each discharges in one line.
-The near-`0` piece is proved outright below (`integrableOn_kernel_Ioc_zero_one`
-— the `−2z/t²` subtraction cancels the pole), so `integrableOn_kernel_Ioi_zero`
-gives full integrability on `(0, ∞)` modulo only the two majorant facts.
-The def↔contour identification of `phiB` with the Faddeev
-contour integral remains the `8e-29` numerical pin (module docstring) — it is
-NOT assumed anywhere in this file. -/
+**Fully unconditional (2026-07-14).**  The two *majorant* integrability facts
+— `e^{−bt}` and `t^{−2}` are integrable on `[1, ∞)` — are the standard Mathlib
+theorems `exp_neg_integrableOn_Ioi` and `integrableOn_Ioi_rpow_of_lt`, proved
+here as the private lemmas `majorant_exp` / `majorant_inv`.  (Their modules
+`Mathlib.MeasureTheory.Integral.ExpDecay` +
+`Mathlib.Analysis.SpecialFunctions.ImproperIntegrals` were built into the
+sandbox olean cone; an earlier revision carried them as explicit `hexp`/`hinv`
+hypotheses per the `PhiBProd` precedent — now discharged.)  So the tail
+(`integrableOn_kernel_Ioi_one`), the near-`0` piece
+(`integrableOn_kernel_Ioc_zero_one` — the `−2z/t²` subtraction cancels the
+pole), and hence the full `(0, ∞)` integrability (`integrableOn_kernel_Ioi_zero`)
+are all **hypothesis-free theorems**.  The def↔contour identification of `phiB`
+with the Faddeev contour integral remains the `8e-29` numerical pin (module
+docstring) — it is NOT assumed anywhere in this file. -/
 
 /-- `sinh` is positive on positives (local; the Mathlib lemma lives in the
 `Trigonometric.Deriv` cone, outside the sandbox oleans). -/
@@ -223,15 +224,29 @@ private lemma sinh_tail_lower {b t : ℝ} (hb : 0 < b) (ht : 1 ≤ t) :
   rw [Real.sinh_eq]
   nlinarith
 
-/-- **Tail integrability.**  The Faddeev kernel is integrable on `[1, ∞)` for
-every `b > 0`: the oscillatory piece is dominated by `C·e^{−bt}`, the
-subtraction by `2|z|·t^{−2}`.  All kernel-specific analysis is proved here;
-the two hypotheses are the standard majorant facts (see the section
-docstring), each a one-line Mathlib theorem outside the sandbox olean cone. -/
-theorem integrableOn_kernel_Ioi_one (b z : ℝ) (hb : 0 < b)
-    (hexp : IntegrableOn (fun t => Real.exp (-b * t)) (Set.Ioi 1))
-    (hinv : IntegrableOn (fun t : ℝ => (t ^ 2)⁻¹) (Set.Ioi 1)) :
+/-- Majorant 1: `e^{−bt}` is integrable on `[1, ∞)` (`exp_neg_integrableOn_Ioi`). -/
+private lemma majorant_exp {b : ℝ} (hb : 0 < b) :
+    IntegrableOn (fun t => Real.exp (-b * t)) (Set.Ioi 1) :=
+  exp_neg_integrableOn_Ioi 1 hb
+
+/-- Majorant 2: `t^{−2}` is integrable on `[1, ∞)` (`integrableOn_Ioi_rpow_of_lt`,
+bridged from the `rpow` form to `(t^2)⁻¹` via `t > 0`). -/
+private lemma majorant_inv : IntegrableOn (fun t : ℝ => (t ^ 2)⁻¹) (Set.Ioi 1) := by
+  have h := integrableOn_Ioi_rpow_of_lt (show (-2 : ℝ) < -1 by norm_num)
+    (show (0 : ℝ) < 1 by norm_num)
+  refine h.congr_fun (fun t ht => ?_) measurableSet_Ioi
+  have ht0 : (0 : ℝ) < t := lt_trans one_pos ht
+  rw [Real.rpow_neg ht0.le, ← Real.rpow_natCast t 2]
+  norm_num
+
+/-- **Tail integrability (unconditional theorem).**  The Faddeev kernel is
+integrable on `[1, ∞)` for every `b > 0`: the oscillatory piece is dominated by
+`C·e^{−bt}` (`majorant_exp`), the subtraction by `2|z|·t^{−2}` (`majorant_inv`).
+All kernel-specific analysis is proved here. -/
+theorem integrableOn_kernel_Ioi_one (b z : ℝ) (hb : 0 < b) :
     IntegrableOn (kernel b z) (Set.Ioi 1) := by
+  have hexp : IntegrableOn (fun t => Real.exp (-b * t)) (Set.Ioi 1) := majorant_exp hb
+  have hinv : IntegrableOn (fun t : ℝ => (t ^ 2)⁻¹) (Set.Ioi 1) := majorant_inv
   -- the two pieces of the kernel
   set f : ℝ → ℝ := fun t => Real.sin (2 * z * t)
       / (t * Real.sinh (b * t) * Real.sinh (t / b)) with hf_def
@@ -671,18 +686,18 @@ theorem integrableOn_kernel_Ioc_zero_one (b z : ℝ) (hb : 0 < b) :
     · exact le_trans (kernel_abs_le_away hb hδ0 hcase.le) (le_max_right _ _)
 
 
-/-- **Full integrability on `(0, ∞)`.**  Near-`0` is the theorem above; the
-tail needs only the two standard majorant facts (see the tail section
-docstring — each is a one-line Mathlib theorem outside the sandbox olean
-cone, carried as an explicit named hypothesis, not axiomatized). -/
-theorem integrableOn_kernel_Ioi_zero (b z : ℝ) (hb : 0 < b)
-    (hexp : IntegrableOn (fun t => Real.exp (-b * t)) (Set.Ioi 1))
-    (hinv : IntegrableOn (fun t : ℝ => (t ^ 2)⁻¹) (Set.Ioi 1)) :
+/-- **Full integrability on `(0, ∞)` (unconditional theorem).**  Near-`0` is
+`integrableOn_kernel_Ioc_zero_one`; the tail is `integrableOn_kernel_Ioi_one`.
+Both are hypothesis-free, so the Faddeev kernel is integrable on all of
+`(0, ∞)` for every `b > 0` with no remaining analytic input — the def↔contour
+identification (the `8e-29` pin) is the only open piece, and is assumed
+nowhere. -/
+theorem integrableOn_kernel_Ioi_zero (b z : ℝ) (hb : 0 < b) :
     IntegrableOn (kernel b z) (Set.Ioi 0) := by
   have hset : Set.Ioc (0 : ℝ) 1 ∪ Set.Ioi 1 = Set.Ioi 0 :=
     Set.Ioc_union_Ioi_eq_Ioi (by norm_num)
   rw [← hset]
   exact (integrableOn_kernel_Ioc_zero_one b z hb).union
-    (integrableOn_kernel_Ioi_one b z hb hexp hinv)
+    (integrableOn_kernel_Ioi_one b z hb)
 
 end QOU.MathlibExt.FaddeevPhiBRealIntegral
