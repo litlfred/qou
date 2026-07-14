@@ -1,0 +1,139 @@
+{
+  "engine": "sympy+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-07-14T01:45:28.174996+00:00",
+  "commitSha": "554bc083a80fcde0fa2d85f49937420820c53926",
+  "assertions": [
+    {
+      "name": "representation_validations",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "Hecke + braid relations, e_- idempotent, dim_q=[2]_q, qTr(e_-)=1 — all exact"
+    },
+    {
+      "name": "hecke_moment_recursion_exact",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "m2 = h*m1 + 1 exactly (algebra-level consistency of the moment map)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 759,
+  "computation": "alpha-em-rt-phase3b-exact-vertex-moments",
+  "scriptFile": "alpha_em_rt_phase3b_exact_vertex_moments.py",
+  "scriptHash": "2c7764dfb400",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
+  },
+  "description": "Exact fundamental-rep computation of the RT phase-3 singlet-channel vertex moments (the deferred 'rigorous coefficient match' under the +0.313 ppb alpha_EM headline): e_- validated (qTr=1, dim_q=[2]_q), all 1..4-vertex canonical words computed exactly in Q(q) with (q-1)-expansions; the phase-3 prescription (bare-subtracted excess fills the ladder slot) applied uniformly; the implied O(alpha^2) slot values (connected 4-vertex, cross-position) tested single-shot against the required C2 ~ -8.1e-4 window (1 sig fig; falsification only, never an input). auditOnly; no fit; nothing wired.",
+  "contentBlock": "prop:em-coupling-bring-zero-mode",
+  "data": {
+    "validations": {
+      "all": true
+    },
+    "exact_moments": {
+      "m1 <s2>": "q**3/(q**2 + 1)",
+      "m2 <s2^2>": "(q**4 + 1)/(q**2 + 1)",
+      "m3 <s2^3>": "(q**6 + q**2 - 1)/(q**3 + q)",
+      "m4 <s2^4>": "(q**8 + q**4 - q**2 + 1)/(q**4 + q**2)",
+      "<s2 s3 s2 s3>": "(q**8 + q**4 - q**2)/(q**4 + 2*q**2 + 1)",
+      "<s2 s3^2 s2>": "(q**8 + 2*q**4 + 1)/(q**4 + 2*q**2 + 1)",
+      "<(s2 s3)^2 rev>": "(q**8 + q**4 - q**2)/(q**4 + 2*q**2 + 1)",
+      "<s2^2 s3^2>": "(q**8 + 2*q**4 + 1)/(q**4 + 2*q**2 + 1)"
+    },
+    "s_expansions": {
+      "m1 <s2>": [
+        "1/2",
+        "1",
+        "1/4",
+        "-1/4",
+        "1/8"
+      ],
+      "m2 <s2^2>": [
+        "1",
+        "1",
+        "3/2",
+        "0",
+        "-1/4"
+      ],
+      "m3 <s2^3>": [
+        "1/2",
+        "3",
+        "5/4",
+        "11/4",
+        "-11/8"
+      ],
+      "m4 <s2^4>": [
+        "1",
+        "2",
+        "7",
+        "0",
+        "13/2"
+      ],
+      "<s2 s3 s2 s3>": [
+        "1/4",
+        "2",
+        "15/4",
+        "13/4",
+        "27/16"
+      ],
+      "<s2 s3^2 s2>": [
+        "1",
+        "2",
+        "4",
+        "3",
+        "7/4"
+      ],
+      "<(s2 s3)^2 rev>": [
+        "1/4",
+        "2",
+        "15/4",
+        "13/4",
+        "27/16"
+      ],
+      "<s2^2 s3^2>": [
+        "1",
+        "2",
+        "4",
+        "3",
+        "7/4"
+      ]
+    },
+    "phase3_exact_check": {
+      "two_vertex_excess": "(q**4 - q**2)/(q**2 + 1)",
+      "leading_q_minus_1_order": 1,
+      "excess_over_h2_series": [
+        "5/8",
+        "5/16",
+        "-5/32",
+        "1/64",
+        "7/128"
+      ],
+      "hecke_recursion_exact": true
+    },
+    "order_alpha2_slot": {
+      "connected_4vertex_at_q0": "0.0328977555247",
+      "cross_position_at_q0": "-0.608206642769",
+      "required_C2_window": "-0.00081 +/- 50% (falsification only)",
+      "window_hits": {
+        "conn4": false,
+        "cross": false
+      }
+    }
+  }
+}
