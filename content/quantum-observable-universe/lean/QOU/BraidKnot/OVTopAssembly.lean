@@ -207,4 +207,25 @@ theorem identityB_general (n : ℕ) :
       = (n.factorial : R) * (n.choose 2 : R) :=
   RegularRepBlockTrace.identityB_conditional (sn_spectralData_exists (R := R) n).some
 
+/-- **RSK sum-of-squares in SYT-count form — unconditional (modulo the assembled OV bricks).**
+`∑_{λ ⊢ n} (#SYT λ)² = n!`, over the partition index `PartitionIndex n` with `#SYT = numSYT`.
+
+Specialises the conditional `RegularRepBlockTrace.sumSq_dim_eq` to the assembled datum
+`snSpectralData (R := ℚ) n` — whose `d = numSYT ∘ diagram` — over the characteristic-zero field `ℚ`,
+then transports the resulting `ℚ`-identity back to `ℕ` (`exact_mod_cast`). This is the **dimension
+side** the `Δ_λ`-gate / Identity-I note flagged as needing HLF/RSK: it now holds outright, the only
+residual inputs being the assembled tower's own cited bricks (no new axiom). It is the SYT-count half
+of the Burnside identity `Σ_λ (f^λ)² = n!` (`DeltaLambdaSignRule.burnside`); wiring it there
+additionally needs `dimIrrep = numSYT` (the hook-length formula `numSYT_mul_hookProduct` + the
+custom-`Partition` ↔ `YoungDiagram` hookProduct bridge) and the `List (Partition n)` ↔
+`PartitionIndex n` reindexing. -/
+theorem sum_numSYT_sq_eq_factorial (n : ℕ) :
+    ∑ i : SpechtClassification.PartitionIndex n, numSYT i.diagram ^ 2 = n.factorial := by
+  have h := RegularRepBlockTrace.sumSq_dim_eq (snSpectralData (R := ℚ) n)
+  have key : ((∑ i : SpechtClassification.PartitionIndex n, numSYT i.diagram ^ 2 : ℕ) : ℚ)
+      = ((n.factorial : ℕ) : ℚ) := by
+    push_cast
+    exact h
+  exact_mod_cast key
+
 end QOU.BraidKnot.OVTopAssembly
