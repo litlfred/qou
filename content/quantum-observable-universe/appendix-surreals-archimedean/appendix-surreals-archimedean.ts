@@ -40,6 +40,7 @@ export default chapter({
       blocks: [
         "diophantine-birthday",
         "infinitesimal-frobenius",
+        "surreal-limit-transfer",
       ],
     },
     {
