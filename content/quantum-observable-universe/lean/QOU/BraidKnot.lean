@@ -163,6 +163,9 @@ import QOU.BraidKnot.JonesNuclearQuotient
 -- layer (content, axial distance) toward the seminormal character sum.
 import QOU.BraidKnot.SeminormalWeight
 import QOU.BraidKnot.TableauContent
+-- connector (bean qou-tqab): reuses canonical StandardYoungTableau; cellOf +
+-- generatorRho supply the (position, ρ) data the character core ranges over.
+import QOU.BraidKnot.SeminormalCharacterConnector
 -- Tier-3 (bean 60iz) general-H_n(q) completion: the arbitrary-braid-word Jones
 -- value + Markov move II (conjugation invariance), on the sibling-landed
 -- IwahoriHeckeAPI element algebra. Move I = IwahoriHeckeAPI.markovTrace_stab_comm;
