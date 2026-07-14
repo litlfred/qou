@@ -80,6 +80,47 @@ Both landed with the real Mathlib lemmas — no artifact shortcuts.
    q-Hermite even/odd parity. Direct application of this session's bar-parity insight.
    Verified lean-direct sorry-free (`#print axioms` = propext/Classical/Quot only). ✓
 
+### Second round — the two proven levers applied to sibling files (2026-07-14)
+
+Survey confirmed the bar-parity and growth levers bite in siblings. Landed, all
+verified lean-direct sorry-free (axioms = propext/Classical/Quot only):
+
+3. **`QWeberInterpolation.interp_even_at_neg_one`** (bar-parity lever) — the q-Weber
+   interpolant transferred odd-vanishing but never the even tower; added it reusing the
+   new `rogers_szego_even_at_neg_one`. Completes the q-Weber even/odd parity. ✓
+4. **`LevelSelection.no_superlinear_selection`** (growth lever) — generalises
+   `no_linear_selection` to eventually-super-linear rules (`A ≤ kA A`, `A ≥ A₀`);
+   discharges the "bond-count `A(A−1)/2` a fortiori excluded" claim that was prose-only
+   (bond-count qualifies with `A₀ = 3`). ✓
+5. **Paper formalization** — `conj:tower-geometric-lower-bound` + `prop:level-selection-
+   not-linear` content blocks (lean.ref → the class / `no_linear_selection`), A≥1
+   nuance now in corpus. ✓
+
+**Deferred (honest):** `BindingGevreyHalf.involution_not_exponentially_bounded` — a
+formal `¬∃ C r, I(n) ≤ C·r^n` capstone. The *content* is already proved (the sandwich
+lower bound `factorial_le_four_pow_mul_involution_sq`: `I(n) ≥ √(n!/4ⁿ)` already leaves
+every exponential class); the `¬∃` repackaging needs `Real.summable_pow_div_factorial`,
+whose heavy analysis import exceeds the sandbox 2-min compile budget. Not an open gap —
+a nicety blocked by environment friction.
+
+### Ruled out (already complete / wrong-shape / anti-fit-gated)
+
+`BindingHyperbolicRecurrence`, `BindingQBesselKernel`, `NaStokesKeystone`,
+`RogersSzegoInhabited`, `BarParityExclusion`, `KeystoneC8SuperExpBound` — surveyed, not
+genuine one-lever chips (already symmetric, no vanishing sector, or need cross-file √(k!)).
+
+### Forward path (not yet done)
+
+`conj:tower-geometric-lower-bound`'s faithful proof needs SYT/skew-tableau/Plancherel
+infra — and **main just landed YT seminormal-weight infra** (`χ_λ(σ)=c_λ·h`, several
+commits 2026-07-14). Rebasing onto that may unblock the growth conjecture's combinatorial
+core. Remaining beans qou-8t34 (cyclotomic, anti-fit-gated), qou-x3nt (pairing / narrow a
+class), qou-g020 (2-adic, speculative for binding) are lower-confidence.
+
+---
+
+#### First-round detail
+
 2. **`TowerGeometricLowerBound.no_linear_selection`** (`Mass/LevelSelectionLogarithmic.lean`)
    — converts the file's "linear selection excluded" prose into a `: False` theorem, the
    **honest** way: extensivity required only for `A ≥ 1` (the `A = 0` boundary artifact —
