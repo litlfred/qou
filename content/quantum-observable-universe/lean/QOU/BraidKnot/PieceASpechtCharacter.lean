@@ -7,6 +7,8 @@ import QOU.BraidKnot.SpechtClassification
 import QOU.BraidKnot.SpechtFinrankWired
 import QOU.BraidKnot.IdentityIContentDecomposition
 import QOU.BraidKnot.JucysMurphy
+import QOU.BraidKnot.RegularRepBlockTrace
+import QOU.BraidKnot.OVTopAssembly
 
 /-!
 # Piece A: Specht Module Character Evaluation
@@ -69,11 +71,22 @@ theorem trace_centralC2_specht_module (μ : YoungDiagram) :
 a sum of dimensions and squared contents, bridging representation theory to hooks. -/
 lemma trace_centralC2_regular_rep (n : ℕ) :
     LinearMap.trace k _ (LinearMap.mulLeft k (centralC2 (k := k) n)) =
-    ∑ μ : SpechtClassification.PartitionIndex n, 
+    ∑ μ : SpechtClassification.PartitionIndex n,
       (contentSqSum μ.val : k) * (Module.finrank k (Specht.SpechtSubmodule (k := k) μ.val))^2 := by
   -- Ref: [macdonald1995] Symmetric Functions and Hall Polynomials
-  -- Derived from the Artin-Wedderburn decomposition of the regular representation.
-  sorry
+  -- The Artin–Wedderburn / Jucys–Murphy block spectral decomposition of the regular
+  -- representation is the assembled datum `OVTopAssembly.snSpectralData n`
+  -- (`Idx = PartitionIndex n`, `ω i = contentSqSum i.diagram`, `d i = numSYT i.diagram`); side 2
+  -- of the trace equation is `RegularRepBlockTrace.blockTrace_eq` applied to it. `centralC2` here
+  -- is defeq to `RegularRepTrace.centralC2` (`centralC2_eq_sum_jucysMurphy_sq`), and the wired
+  -- dimension identity `finrank Sᵘ = numSYT` (`specht_finrank_eq_numSYT_wired`) matches the
+  -- per-block factor. The residual Okounkov–Vershik / Wedderburn content stays in those bricks'
+  -- own cited sorries — nothing new is assumed here.
+  rw [JucysMurphy.centralC2_eq_sum_jucysMurphy_sq,
+    RegularRepBlockTrace.blockTrace_eq (OVTopAssembly.snSpectralData (R := k) n)]
+  refine Finset.sum_congr rfl (fun i _ => ?_)
+  rw [SpechtFinrankWired.specht_finrank_eq_numSYT_wired (k := k) i.val]
+  rfl
 
 /-- Piece A fundamental identity (representation-theoretic route):
 `Σ_c h_c² = Σ_c c(c)² + n²`.
