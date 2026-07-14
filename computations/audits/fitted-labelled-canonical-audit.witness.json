@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-13T21:04:48.300896+00:00",
-  "commitSha": "abf5f49843ae73288e8bb84646dd99c937af3888",
+  "computedAt": "2026-07-14T01:22:36.040062+00:00",
+  "commitSha": "1ed65205ad83f06499bd3f288ff6be4f7aac2fe9",
   "assertions": [
     {
       "name": "no_fitted_labelled_canonical",
@@ -13,7 +13,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 12,
+  "durationMs": 13,
   "computation": "fitted-labelled-canonical-audit",
   "scriptFile": "fitted_labelled_canonical_audit.py",
   "scriptHash": "34338951a64d",
@@ -35,7 +35,7 @@
   "data": {
     "total_issues": 2,
     "flagged_script_count": 2,
-    "scripts_scanned": 1986,
+    "scripts_scanned": 1990,
     "rows": [
       {
         "path": "computations/metallic_q_n4_character_sweep.py",
