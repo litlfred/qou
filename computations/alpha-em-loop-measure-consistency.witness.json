@@ -1,0 +1,97 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-14T02:17:20.320797+00:00",
+  "commitSha": "22a2c94da1661e6d988ef8637c8ccfb163ba17aa",
+  "assertions": [
+    {
+      "name": "measures_differ",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "1/(pi b1)=1/8pi != 1/Area=1/12pi -- the two IR measures are distinct"
+    },
+    {
+      "name": "theta_hit_measure_contingent",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "2-loop residual under proved 1/Area differs from the 1/8pi hit by > sigma_a"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 16,
+  "computation": "alpha-em-loop-measure-consistency",
+  "scriptFile": "alpha_em_loop_measure_consistency_probe.py",
+  "scriptHash": "46548dc953a3",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
+  },
+  "description": "Per-loop measure consistency for the alpha_EM graph ladder. The ONLY proved measure principle (heat-kernel: one constant mode 1/Vol per harmonic generator, #1444/photon-ir) gives per-mode 1/Area = 1/(12pi), NOT the self-energy's 1/(pi b1) = 1/(8pi) -- phase-4's 'same measure' consistency claim conflates a mode-count*1/Area with a per-loop 1/(pi b1). Propagating each candidate consistently through the theta-graph ladder: the 1.3-sigma theta-graph hit uses the UNDERIVED 1/(8pi) (mu_A); the proved 1/Area (mu_B) gives a materially different residual. So the candidate is contingent on the undecided per-loop measure -- closing alpha_EM to <= sigma_a genuinely requires DERIVING 1/(8pi), which the zero-mode argument does not supply. Nothing wired; window falsify-only; scope-(a).",
+  "contentBlock": "prop:em-coupling-bring-zero-mode",
+  "data": {
+    "bring_data": {
+      "g": 4,
+      "b1": 8,
+      "Area_over_pi": "12",
+      "zero_mode": "0.212206590789194"
+    },
+    "measures": {
+      "mu_A = 1/(pi*b1) = 1/(8pi)  [phase-4, UNDERIVED]": "0.0397887357729738",
+      "mu_B = 1/Area    = 1/(12pi) [PROVED heat-kernel per-mode]": "0.0265258238486492",
+      "mu_hybrid = 1/(pi*sqrt(b1*Area/pi)) ": "0.0324873667180698"
+    },
+    "ladder_residuals_ppb": {
+      "mu_A = 1/(pi*b1) = 1/(8pi)  [phase-4, UNDERIVED]": {
+        "proton": {
+          "1loop_ppb": 1.6723270482102428,
+          "2loop_ppb": -0.20015278611109236
+        },
+        "muon": {
+          "1loop_ppb": 80.50996340282691,
+          "2loop_ppb": 78.63748385778042
+        }
+      },
+      "mu_B = 1/Area    = 1/(12pi) [PROVED heat-kernel per-mode]": {
+        "proton": {
+          "1loop_ppb": -1418.5557947010063,
+          "2loop_ppb": -1419.388011504773
+        },
+        "muon": {
+          "1loop_ppb": -1339.7180480830823,
+          "2loop_ppb": -1340.5502647582812
+        }
+      },
+      "mu_hybrid = 1/(pi*sqrt(b1*Area/pi)) ": {
+        "proton": {
+          "1loop_ppb": -780.1773224479485,
+          "2loop_ppb": -781.4256452639303
+        },
+        "muon": {
+          "1loop_ppb": -701.3396253923671,
+          "2loop_ppb": -702.587948015498
+        }
+      }
+    },
+    "verdict": {
+      "proved_per_mode_measure": "1/Area = 1/(12pi)",
+      "self_energy_claimed_measure": "1/(pi b1) = 1/(8pi)",
+      "same_measure_claim": "UNSOUND (different geometric factors)",
+      "theta_hit_robust_to_proved_measure": false,
+      "consequence": "closing alpha_EM requires DERIVING 1/(8pi); zero-mode heat-kernel does not supply it"
+    }
+  }
+}
