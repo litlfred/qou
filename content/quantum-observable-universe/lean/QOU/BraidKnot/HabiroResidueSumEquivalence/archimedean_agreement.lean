@@ -23,6 +23,10 @@ Both are removed: the class now carries the genuine agreement claim, and
 its absence of instances IS the open state.  A future instance requires
 a genuine derivation (or per-braid certified evaluation) — never `⟨0, rfl⟩`.
 
+**Base ring (§7c).**  `ℝ` is genuinely required: the conjecture is about the
+*archimedean* evaluation (`√q₀`, MeV-valued GB mass, a machine-precision
+tolerance) — post-wall by its own statement, not a gratuitous specialisation.
+
 -- Ref: [manuscript] conj:gs-archimedean-agreement-trace
 -/
 

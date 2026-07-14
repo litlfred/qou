@@ -20,6 +20,10 @@ instance of a free-scalar placeholder (an audit-dodge per AGENTS.md
 generic agreement or a certified evaluation of the explicit degree-48
 polynomial — a genuine derivation, never a trivial instance.
 
+**Base ring (§7c).**  `ℝ` is genuinely required: the statement is the
+archimedean evaluation at `u₀ = √q₀` against an MeV-valued mass — post-wall
+by its own content.
+
 -- Ref: [manuscript] conj:gs-archimedean-agreement-residue
 -/
 
