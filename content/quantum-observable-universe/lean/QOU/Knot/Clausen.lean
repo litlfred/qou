@@ -51,7 +51,10 @@ noncomputable def clausen (θ : ℝ) : ℝ :=
 theorem analyticOnNhd_two_sin_half (a b : ℝ) :
     AnalyticOnNhd ℝ (fun t => 2 * Real.sin (t / 2)) (Set.uIcc a b) := by
   have haff : AnalyticOnNhd ℝ (fun t : ℝ => t / 2) (Set.uIcc a b) := by
-    fun_prop
+    have h : (fun t : ℝ => t / 2) = fun t : ℝ => (2 : ℝ)⁻¹ * t := by
+      funext t; ring
+    rw [h]
+    exact analyticOnNhd_const.mul analyticOnNhd_id
   have hsin : AnalyticOnNhd ℝ (fun t : ℝ => Real.sin (t / 2)) (Set.uIcc a b) :=
     Real.analyticOnNhd_sin.comp haff (Set.mapsTo_univ _ _)
   exact analyticOnNhd_const.mul hsin
@@ -78,9 +81,9 @@ theorem hasDerivAt_clausen {θ : ℝ} (h0 : 0 < θ) (h2 : θ < 2 * π) :
     intro x hx
     have hxpos : 0 < Real.sin (x / 2) :=
       Real.sin_pos_of_pos_of_lt_pi (by linarith [hx.1]) (by linarith [hx.2])
-    have hxne : 2 * Real.sin (x / 2) ≠ 0 := by positivity
+    have hxne : 2 * Real.sin (x / 2) ≠ 0 := ne_of_gt (by linarith [hxpos])
     have hbase : ContinuousAt (fun t : ℝ => 2 * Real.sin (t / 2)) x := by fun_prop
-    exact ((Real.continuousAt_log hxne).comp hbase).neg
+    exact (hbase.log hxne).neg
   have hg : ContinuousAt (fun t => -Real.log (2 * Real.sin (t / 2))) θ :=
     hcontOn θ ⟨h0, h2⟩
   have hint : IntervalIntegrable (fun t => -Real.log (2 * Real.sin (t / 2)))
