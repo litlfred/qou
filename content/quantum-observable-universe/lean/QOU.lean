@@ -88,6 +88,7 @@ import QOU.Mass.LinearChainBondCount
 import QOU.Mass.KappaWritheAsymptote
 import QOU.Mass.LinearChainBondFactorization
 import QOU.Mass.MilnorSignRepObstruction
+import QOU.Mass.MilnorIndeterminacyGate
 import QOU.Mass.BondChannelClassSelection
 -- GAP-A-3 level-selection: §3b conjecture class for the super-exponential tower
 -- growth (verified k≤10, faithful proof = Mathlib-gap) + the proved downstream
