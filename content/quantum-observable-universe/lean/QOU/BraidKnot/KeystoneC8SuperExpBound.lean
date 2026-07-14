@@ -122,4 +122,38 @@ theorem involution_le_factorial : ∀ n, involutionNumber n ≤ n.factorial := b
           exact Nat.mul_le_mul_right _ (by omega)
       _ = (n + 2).factorial := e.symm
 
+/-! ## Genuinely super-exponential lower bound (square form, no `√`) -/
+
+/-- **C8 super-exponential lower bound — square form.** The bare `c8_lower_bound`
+combined with the crude `Ik ≤ kfac` (`involution_le_factorial`) only yields the
+**constant** `w_std ≥ 1/9`. Feeding the *sharper* Gevrey-1/2 involution bound
+`Ik² ≤ 2^K·kfac` instead gives a genuinely **super-exponential** lower bound on the
+square:
+
+  `w_std² ≥ kfac / (81 · 2^K)`   ( `= k!/(81·2^k)` at `kfac = k!`, `K = k` ),
+
+and `k!/2^k → ∞` super-exponentially — so `w_std` itself leaves every geometric class.
+Squaring sidesteps `Real.sqrt` entirely: pure algebra over the two proved inputs. This
+is the arithmetic core the C8 audit's "super-exponential" claim actually needs (the
+`1/9` constant did not deliver it). -/
+theorem c8_superexp_sq_lower_bound {ι : Type*} (s : Finset ι) (f g : ι → ℝ)
+    (kfac Ik : ℝ) (K : ℕ)
+    (hg : ∀ i ∈ s, 0 ≤ g i) (hkfac : 0 < kfac) (hIk : 0 < Ik)
+    (hA : ∑ i ∈ s, f i * g i = kfac / 3) (hC : ∑ i ∈ s, g i ≤ Ik)
+    (hIsq : Ik ^ 2 ≤ 2 ^ K * kfac) :
+    kfac / (81 * 2 ^ K) ≤ ((∑ i ∈ s, f i ^ 2 * g i) / kfac) ^ 2 := by
+  set w := (∑ i ∈ s, f i ^ 2 * g i) / kfac with hw
+  have hlb : kfac / (9 * Ik) ≤ w := c8_lower_bound s f g kfac Ik hg hkfac hIk hA hC
+  have hpos : 0 < kfac / (9 * Ik) := by positivity
+  -- w ≥ kfac/(9·Ik) > 0 ⇒ w² ≥ (kfac/(9·Ik))²
+  have hsq : (kfac / (9 * Ik)) ^ 2 ≤ w ^ 2 := by
+    have hwpos : 0 ≤ w := le_trans (le_of_lt hpos) hlb
+    nlinarith [hlb, hpos, hwpos]
+  -- (kfac/(9·Ik))² = kfac²/(81·Ik²) ≥ kfac²/(81·2^K·kfac) = kfac/(81·2^K)
+  have h2K : (0:ℝ) < 2 ^ K := by positivity
+  have hstep : kfac / (81 * 2 ^ K) ≤ (kfac / (9 * Ik)) ^ 2 := by
+    rw [div_pow, div_le_div_iff₀ (by positivity) (by positivity)]
+    nlinarith [hIsq, hkfac, mul_pos hkfac h2K, sq_nonneg Ik]
+  linarith [hsq, hstep]
+
 end QOU.BraidKnot.KeystoneC8SuperExpBound
