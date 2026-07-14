@@ -1,0 +1,113 @@
+{
+  "name": "qbeta-modular-resurgence-stokes",
+  "description": "Modular-resurgence signature probe on the exact Ohtsuki kappa_1..7 ladder: action + beta=3/2 quantum-modular weight trends, Stokes-normalisation candidate grid with entropy accounting, L-function tower blocked at k=7.",
+  "computation": "qbeta-modular-resurgence-stokes",
+  "engine": "mpmath",
+  "scriptFile": "computations/probes/qbeta_modular_resurgence_stokes_probe.py",
+  "scriptCommitSha": "a868d6990f7c91ee9b116227e10077e31774c14e",
+  "computedAt": "2026-07-14T01:59:18Z",
+  "durationMs": 18,
+  "auditOnly": true,
+  "auditDoc": "docs/audits/2026-07-13-alien-calculus-surreal-integration-review.md",
+  "parameters": {
+    "compute_dps": 60,
+    "kappa_exact_forms": {
+      "1": "(11/108)*sqrt3*pi^1",
+      "2": "(2/27)*pi^2",
+      "3": "(1081/21870)*sqrt3*pi^3",
+      "4": "(98/729)*pi^4",
+      "5": "(110011/688905)*sqrt3*pi^5",
+      "6": "(207892/295245)*pi^6",
+      "7": "(32729683/26572050)*sqrt3*pi^7"
+    },
+    "beta_modular_target": "3/2",
+    "candidate_grid_size": 210,
+    "predecessor": "qbeta_kappa_exact_ladder_resurgence_probe.py",
+    "literature": [
+      "garoufalidis-gu-marino2021 (arXiv:2007.10190)",
+      "fantini-rella2024 (arXiv:2404.11550)",
+      "garoufalidis-zagier-2024 (arXiv:2111.06645)"
+    ]
+  },
+  "data": {
+    "vol41": "2.029883212819307250042405108549040571883",
+    "A_target_vol_over_pi": "0.6461318944389010281872730214476127881445",
+    "A_richardson": "0.68000884945172052678",
+    "beta_richardson": "0.43853916085462861516",
+    "S_estimates_n4_to_7": [
+      "0.6951520673121026",
+      "0.6884034774601958",
+      "0.6884034774601958",
+      "0.692057677230286"
+    ],
+    "best_candidates": [
+      [
+        "1*(2pi)^(-1/2)*3^(2/4)",
+        "0.6909882989",
+        "0.001545"
+      ],
+      [
+        "3*(2pi)^(-1/2)*3^(-2/4)",
+        "0.6909882989",
+        "0.001545"
+      ],
+      [
+        "6*(2pi)^(-3/2)*3^(2/4)",
+        "0.6598452204",
+        "0.04655"
+      ],
+      [
+        "6*(2pi)^(-2/2)*3^(-1/4)",
+        "0.7255896319",
+        "0.04845"
+      ],
+      [
+        "4*(2pi)^(-2/2)*3^(0/4)",
+        "0.6366197724",
+        "0.08011"
+      ]
+    ],
+    "verdict": "scope-(a): the exact kappa-ladder is CONSISTENT within spread with a resurgent action at Vol(4_1)/pi (A_inf rel_dev 0.05243) but NOT with the naive beta = 3/2 modular-weight reading of this ladder normalisation (beta_inf = 0.438539, raw-triple trend ~0.21-0.26; scope-(a) \u2014 beta is normalisation-sensitive, so this constrains the as-normalized rung ladder, not the modular-resurgence template itself). The Stokes constant is not identifiable from 7 rungs (best structured-grid candidate sqrt(3/(2pi)) at 0.15% sits below the 1/210 entropy bar but S carries only ~2 stable digits \u2014 recorded, not claimed) and the L-function tower is out of reach. The derivation route for A_omega remains the GGM state-integral / 3d-index face (G3)."
+  },
+  "assertions": [
+    {
+      "name": "T1-action-consistent-within-spread",
+      "passed": true,
+      "computed": "0.680008849452",
+      "expected": "0.646131894439",
+      "rel_dev": "0.0524304",
+      "richardson_spread": "0.423485",
+      "source": "consistency check ONLY \u2014 5 triples + 1 Richardson step; NOT an identification (C1 wording discipline)"
+    },
+    {
+      "name": "T2-beta-vs-modular-3/2",
+      "passed": false,
+      "computed": "0.438539160855",
+      "expected": "1.5",
+      "abs_dev": "1.06146",
+      "raw_triple_trend": [
+        "-0.42940166",
+        "0.78866884",
+        "0.22246509",
+        "0.21387496",
+        "0.2588078"
+      ],
+      "source": "GZ quantum-modularity hbar^{3/2} prefactor => one-instanton loggamma index 3/2 for a modular resurgent series (Fantini-Rella). CAVEAT: beta is normalisation-sensitive \u2014 a factorial rescaling of the rung ladder shifts beta by integers/halves; a FAIL here refutes the 3/2 reading of THIS ladder normalisation only (scope-(a)), not the modular-resurgence template."
+    },
+    {
+      "name": "T3-stokes-no-identification-claimed",
+      "passed": true,
+      "computed": "0.69205767723",
+      "best_candidate": "1*(2pi)^(-1/2)*3^(2/4)",
+      "best_rel_dev": "0.001545",
+      "entropy_bar": "0.004762",
+      "s_drift_6_to_7": "0.00528",
+      "source": "structured-grid comparison with entropy accounting; a percent-level best hit against ~210 candidates with ~2 stable digits of S is NOT an identification (PSLQ entropy discipline, PR #1805). Deriving S as a GGM integer count needs the state-integral face, not more rungs."
+    },
+    {
+      "name": "T4-lfunction-tower-blocked",
+      "passed": true,
+      "source": "Fantini-Rella L-function tower test needs the sub-leading Borel singularities (l*A, l >= 2); unresolvable from 7 rungs (dladder witness: singularity NOT resolved at k=21). Recorded as blocked; no claim."
+    }
+  ]
+}
