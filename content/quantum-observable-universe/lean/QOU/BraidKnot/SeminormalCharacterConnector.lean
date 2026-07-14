@@ -117,4 +117,44 @@ def transposeSsyt (T : StandardYoungTableau μ) : SemistandardYoungTableau μ.tr
   col_strict' := fun hi hcell =>
     T.row_strict hi (mem_transpose_iff.mp hcell)
 
+/-- **`Prod.swap` is a bijection of cell sets** `μᵀ.cells ↔ μ.cells`. The transpose
+    cell set is the swap-image of `μ`'s (`mem_transpose_iff`), so swapping coordinates
+    carries one onto the other and is its own inverse (`Prod.swap_swap`). -/
+theorem swap_bijOn_cells (μ : YoungDiagram) :
+    Set.BijOn Prod.swap (μ.transpose.cells : Set (ℕ × ℕ)) (μ.cells : Set (ℕ × ℕ)) := by
+  refine ⟨fun c hc => ?_, Prod.swap_injective.injOn, fun c hc => ?_⟩
+  · simp only [Finset.mem_coe, YoungDiagram.mem_cells] at hc ⊢
+    exact mem_transpose_iff.mp hc
+  · simp only [Finset.mem_coe, YoungDiagram.mem_cells] at hc
+    refine ⟨Prod.swap c, ?_, Prod.swap_swap c⟩
+    simp only [Finset.mem_coe, YoungDiagram.mem_cells]
+    exact mem_transpose_iff.mpr hc
+
+/-- **Transpose preserves the cell count** `|μᵀ| = |μ|`: the cell set is a `Prod.swap`
+    reindex of `μ`'s (`Finset.card_map`). -/
+theorem transpose_cells_card (μ : YoungDiagram) :
+    μ.transpose.cells.card = μ.cells.card := by
+  have hmap : μ.transpose.cells = μ.cells.map (Equiv.prodComm ℕ ℕ).toEmbedding := by
+    simp [YoungDiagram.transpose, Equiv.finsetCongr_apply]
+  rw [hmap, Finset.card_map]
+
+/-- **The conjugate transpose of a standard tableau** `T ↦ Tᵀ`, as a full
+    `StandardYoungTableau μᵀ`. The semistandard content is `transposeSsyt`; the
+    bijectivity of the filling is `T`'s own filling bijection **precomposed with the
+    `Prod.swap` cell bijection** (`swap_bijOn_cells`), the value range shifted by the
+    cardinality identity `|μᵀ| = |μ|` (`transpose_cells_card`).
+
+    This is the concrete construction the σ₁-character closure needs: for a
+    self-conjugate `μ` (`μ = μᵀ`) it is an **involution on `SYT(μ)`** that swaps the
+    same-row and same-column classes of the pair `1, 2`, discharging the three
+    hypotheses of `card_row_eq_card_col` and hence `|R_row| = |R_col|`. -/
+def transpose (T : StandardYoungTableau μ) : StandardYoungTableau μ.transpose where
+  toSsyt := transposeSsyt T
+  bijOn := by
+    have hfun : (fun c : ℕ × ℕ => (transposeSsyt T).entry c.1 c.2)
+        = (fun c : ℕ × ℕ => T.toSsyt.entry c.1 c.2) ∘ Prod.swap := by
+      funext c; rfl
+    rw [hfun, transpose_cells_card]
+    exact T.bijOn.comp (swap_bijOn_cells μ)
+
 end QOU.BraidKnot.SeminormalCharacterConnector
