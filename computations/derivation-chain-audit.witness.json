@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-13T15:08:25.620357+00:00",
-  "commitSha": "34af1e7c8a2af7ab2f4e000ff79eaf0c190a2880",
+  "computedAt": "2026-07-14T02:04:37.588699+00:00",
+  "commitSha": "d93a5d420b0e32257b1254ea3918f8bb26525da9",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -2067,9 +2067,11 @@
         "alpha-em-no-pi-correction-probe.witness.json",
         "alpha-em-rt-phase2-emfermionloop.witness.json",
         "alpha-em-rt-phase3-schwinger-derivation.witness.json",
+        "alpha-em-rt-phase3b-exact-vertex-moments.witness.json",
         "alpha-em-rt-phase4-bring-measure.witness.json",
         "alpha-em-rt-shadow-world-symbolic-phase1.witness.json",
         "alpha-em-schwinger-ladder.witness.json",
+        "alpha-em-theta-graph-two-loop.witness.json",
         "alpha-em-two-loop-structure.witness.json",
         "alpha-k-four-strand-singlet-selection.witness.json",
         "alpha-k-jones-markov-h3.witness.json",
