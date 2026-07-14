@@ -63,4 +63,37 @@ theorem generatorRho_swap (T : StandardYoungTableau μ) (i : ℕ) :
       = -axialDistance (cellOf T (i + 1)) (cellOf T i) :=
   axialDistance_antisymm _ _
 
+/-- **The `|R_row| = |R_col|` structural core (self-conjugacy ⇒ equal counts).**
+    Given a self-inverse map `f` on the standard-tableau index set that carries the
+    **same-row** class `Rrow` (`1, 2` in the same row) into the **same-column**
+    class `Rcol` and back, the two classes have equal cardinality. The
+    **conjugate transpose** `T ↦ Tᵀ` is exactly such an `f` for a self-conjugate
+    `μ` (`μ = μᵀ`): it maps `SYT(μ)` to itself, is an involution, and swaps
+    same-row ↔ same-column for the pair `1, 2`.
+
+    This is the structural half of the σ₁-character closure: with `|Rrow| = |Rcol|`
+    the diagonal contribution `|Rrow|·q + |Rcol|·(−q⁻¹) = |Rrow|·h` is an integer
+    multiple of `h`, feeding `SeminormalWeight.fullCharacter_two_mul` (with the
+    off-diagonal class empty for the single generator σ₁). Robust `Finset.image`
+    proof — no heavy tableau machinery here; the remaining piece (bean `qou-tqab`)
+    is *constructing* the transpose involution on the canonical
+    `StandardYoungTableau` and discharging its three hypotheses. -/
+theorem card_row_eq_card_col {ι : Type*} [DecidableEq ι]
+    (Rrow Rcol : Finset ι) (f : ι → ι)
+    (hf_row : ∀ t ∈ Rrow, f t ∈ Rcol) (hf_col : ∀ t ∈ Rcol, f t ∈ Rrow)
+    (hff : ∀ t, f (f t) = t) :
+    Rrow.card = Rcol.card := by
+  have hinj : Set.InjOn f (Rrow : Set ι) := fun a _ b _ h => by
+    have h2 := congrArg f h; rwa [hff, hff] at h2
+  have himg : Rrow.image f = Rcol := by
+    apply Finset.Subset.antisymm
+    · intro b hb
+      rw [Finset.mem_image] at hb
+      obtain ⟨a, ha, rfl⟩ := hb
+      exact hf_row a ha
+    · intro b hb
+      rw [Finset.mem_image]
+      exact ⟨f b, hf_col b hb, hff b⟩
+  rw [← himg, Finset.card_image_of_injOn hinj]
+
 end QOU.BraidKnot.SeminormalCharacterConnector
