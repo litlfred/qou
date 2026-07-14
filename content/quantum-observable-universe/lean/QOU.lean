@@ -20,6 +20,7 @@ import QOU.MathlibExt.QuantumDilogarithmInfinite
 import QOU.MathlibExt.FaddeevQuantumDilogarithm
 import QOU.MathlibExt.FaddeevPhiBRealIntegral
 import QOU.MathlibExt.PhiBProd
+import QOU.MathlibExt.PhiBFibreExtension
 import QOU.MathlibExt.YekutieliIntegration
 import QOU.MathlibExt.SDP
 import QOU.MathlibExt.SDPEmptyConstraints
