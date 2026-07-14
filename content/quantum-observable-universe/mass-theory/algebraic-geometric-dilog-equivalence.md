@@ -161,18 +161,21 @@ defined object unconditionally. By the rigidity clause of
 fibre-branch $\Phi_b$ is an intrinsically bar-odd carrier.
 
 Of the two analytic identifications behind the construction, the
-**integrability** of the Faddeev kernel is settled: the near-$0$ piece
-is proved outright (`integrableOn_kernel_Ioc_zero_one` — the $-2z/t^2$
-subtraction cancels the pole, via the two-sided cubic $\sinh$ estimates
-and a global $\lvert \sin y - y \rvert \le 2\lvert y \rvert^3$ bound), the
-exponential-domination chain on $[1, \infty)$ is proved
-(`integrableOn_kernel_Ioi_one`), and full integrability on $(0, \infty)$
-(`integrableOn_kernel_Ioi_zero`) holds modulo only the two standard
-majorant integrability facts, carried as explicit named hypotheses. The
-**definition-to-contour
-identity** — that the real-integral `phiB` equals the Faddeev contour
-integral — remains a numerical pin ($8 \times 10^{-29}$ against the
-validated contour evaluator) and is assumed nowhere in the Lean.
+**integrability** of the Faddeev kernel is now a fully unconditional
+theorem: the near-$0$ piece (`integrableOn_kernel_Ioc_zero_one` — the
+$-2z/t^2$ subtraction cancels the pole, via the two-sided cubic $\sinh$
+estimates and a global $\lvert \sin y - y \rvert \le 2\lvert y \rvert^3$
+bound), the exponential-domination tail on $[1, \infty)$
+(`integrableOn_kernel_Ioi_one`), and hence integrability on all of
+$(0, \infty)$ (`integrableOn_kernel_Ioi_zero`) are all hypothesis-free —
+the two standard majorant facts ($e^{-bt}$ and $t^{-2}$ integrable on
+$[1, \infty)$) are discharged from Mathlib, not carried. The
+**definition-to-contour identity** — that the real-integral `phiB`
+equals the Faddeev contour integral — remains a numerical pin
+($8 \times 10^{-29}$ against the validated contour evaluator) and is
+assumed nowhere in the Lean; its honest §3b carrier is
+`QOU.MathlibExt.PhiBFibreExtension` (the constructed `phiB` extends to a
+full Faddeev $\Phi_b$; no instance).
 
 ## Binding channel: conditional only
 
