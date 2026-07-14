@@ -139,6 +139,21 @@ export const references: CSLData[] = [
     note: "Proceedings of the Casson Fest; arXiv:math/0306230. The AJ-conjecture formulation paper. DOI corrected 2026-07-06 from the spurious J. Diff. Geom. DOI 10.4310/JDG/1090425531 to the authoritative GTM DOI (verified via msp.org search snippets; ds4b literature check, PR #3434).",
   }),
 
+  // ── Milnor 1954 — link groups; μ̄-invariants defined mod gcd of pairwise linkings ──
+  ref({
+    id: "milnor1954",
+    type: "article-journal",
+    title: "Link groups",
+    author: [{ family: "Milnor", given: "John" }],
+    "container-title": "Annals of Mathematics",
+    issued: { "date-parts": [[1954]] },
+    volume: "59",
+    page: "177-195",
+    DOI: "10.2307/1969685",
+    URL: "https://doi.org/10.2307/1969685",
+    note: "Source of the μ̄ triple-linking invariant and its indeterminacy (well-defined modulo the gcd of pairwise linking numbers) — the literature input for QOU/Mass/MilnorIndeterminacyGate.lean and the -- Ref: headers in MilnorSignRepObstruction.lean (added 2026-07-14, R7-a).",
+  }),
+
   // ── Garoufalidis–Lê 2005 — colored Jones is q-holonomic (knots AND links) ──
   ref({
     id: "garoufalidis-le-2005",
