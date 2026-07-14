@@ -289,11 +289,27 @@ theorem burnside (n : ℕ) (partitions : List (Partition n))
     (partitions.map fun Λ => Λ.dimIrrep ^ 2).sum = Nat.factorial n := by
   -- The general `∀ n` case is the RSK correspondence (bijection
   -- `S_n ≃ Σ_λ SYT(λ) × SYT(λ)`), equivalently the Artin–Wedderburn
-  -- `Σ_λ (dim V_λ)² = |S_n|`; neither RSK nor the S_n irrep classification
-  -- is in Mathlib, so this is a genuine formalisation target (the Identity-I
-  -- program), NOT dischargeable from the hook-length definition alone. It is
-  -- concretely verified for `n ≤ 5` by the `burnside_check_*` cross-checks
-  -- below.
+  -- `Σ_λ (dim V_λ)² = |S_n|`. Concretely verified for `n ≤ 5` by the
+  -- `burnside_check_*` cross-checks below.
+  --
+  -- REDUCTION ROADMAP (2026-07-14). The Wedderburn/dimension side is now
+  -- available unconditionally-modulo-the-OV-bricks as
+  -- `OVTopAssembly.sum_numSYT_sq_eq_factorial`:
+  --     `∑ i : PartitionIndex n, numSYT i.diagram ^ 2 = n!`
+  -- (specialising `RegularRepBlockTrace.sumSq_dim_eq` to the assembled
+  -- `snSpectralData ℚ n`). Discharging `burnside` from it needs two further
+  -- bridges, both genuine formalisation work (not yet in Mathlib or the corpus):
+  --   (1) `dimIrrep Λ = numSYT (youngDiagramOf Λ)` — the hook-length formula
+  --       `StandardYoungTableau.numSYT_mul_hookProduct` (a still-open sorry)
+  --       PLUS `Partition.hookProduct Λ = YoungDiagram.hookProduct
+  --       (youngDiagramOf Λ)` (the custom list-based hookProduct = the cell-based
+  --       one), with `Nat`-division care (`hookProduct ∣ n!`);
+  --   (2) the reindexing `List (Partition n)` (complete + `Nodup`) sum ↔
+  --       `Finset.univ (PartitionIndex n)` sum, via a custom-`Partition n` ↔
+  --       `Nat.Partition n` ↔ `PartitionIndex n` bijection
+  --       (`SpechtClassification.partitionEquivYoungIndex` supplies the latter).
+  -- Until (1)+(2) land, `burnside` stays the honest RSK sorry — reducing it via
+  -- unproved bridges would only add sorries.
   -- Ref: [sagan2001] Sagan, The Symmetric Group, §1.10–§3.10; Identity-I program
   -- axiom (i), docs/scope/2026-06-24-identity-i-plancherel-snrep-infra-program.md.
   sorry
