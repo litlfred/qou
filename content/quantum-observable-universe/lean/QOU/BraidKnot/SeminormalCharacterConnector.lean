@@ -15,11 +15,15 @@ that core's `(cellOf, ρ)` data per tableau:
 * `generatorRho T i` — the axial distance `ρ` of the generator pair `(i, i+1)`,
   i.e. `axialDistance (cellOf T i) (cellOf T (i+1))`, the `ρ` feeding `a_ρ`.
 
-Remaining to *discharge* `symbolic_character_table` (bean `qou-tqab`, coordinate
-with #3719 per `docs/coordination/yt-seminormal-infra.md`): the partition of the
-SYT set into same-row / same-column / off-diagonal classes for the σ₁ generator,
-the conjugate-transpose bijection giving `|R_row| = |R_col|` for a self-conjugate
-`μ`, and the wire into that block's abstract `chiSigma`.
+The σ₁ closure is now concrete and sorry-free: `sigmaOneCharacter_eq_card_mul`
+proves `χ_λ(σ₁) = |R_row|·h` for self-conjugate `μ` (`c_λ = |R_row| ∈ ℤ`), via
+the SYT `Fintype`, the same-row/same-column class `Finset`s
+(`rowClass`/`colClass`), the conjugate-transpose bijection between them
+(`card_rowClass_eq_colClass`), and `SeminormalWeight.fullCharacter_two_mul` at
+`Soff = ∅`. What remains to reach the *tabulated* `c_λ ∈ {1, 3, 8, 10}` of
+`symbolic_character_table` is the per-shape count `|R_row|` for each
+self-conjugate partition; the block's abstract `chiSigma` field is an opaque
+input, not dischargeable in place without restating that block.
 
 -- Ref: [sagan2001] The Symmetric Group, §3.3 (Young's seminormal form)
 -/
@@ -323,6 +327,51 @@ theorem card_rowClass_eq_colClass (h : μ.transpose = μ) (hn : 2 ≤ μ.cells.c
     rw [rowClass, Finset.mem_filter]
     exact ⟨Finset.mem_univ _, (sameRow12_selfTranspose h hn T).mpr hT.2⟩
   · exact selfTranspose_selfTranspose h
+
+/-! ### The concrete σ₁ seminormal character `χ_λ(σ₁) = c_λ·h`
+
+For the single generator `σ₁`, values `1, 2` are always adjacent (`1` at the
+corner), so the **off-diagonal class is empty** — the σ₁ character is purely
+diagonal, `|R_row|·q + |R_col|·(h − q)`. Instantiating
+`SeminormalWeight.fullCharacter_two_mul` at `Soff = ∅` with the class-count
+identity `card_rowClass_eq_colClass` collapses it to an integer multiple of `h`.
+This is the concrete, sorry-free realization of `prop:symbolic-character-table`'s
+"self-conjugate ⇒ integer coefficient" — `c_λ = |R_row| ∈ ℤ` — for `σ₁`. -/
+
+/-- The **concrete σ₁ seminormal character** on `S^λ`: purely diagonal (the
+    off-diagonal class is empty for `σ₁`), `|R_row|·q + |R_col|·(h − q)`. -/
+noncomputable def sigmaOneCharacter (μ : YoungDiagram) {R : Type*} [Field R] (q hh : R) : R :=
+  ((rowClass μ).card : R) * q + ((colClass μ).card : R) * (hh - q)
+
+/-- **`2·χ_λ(σ₁) = 2·|R_row|·h`** — fully general over any `[Field R]`. The σ₁
+    character is an integer multiple of `h`; `fullCharacter_two_mul` at `Soff = ∅`
+    plus `card_rowClass_eq_colClass`. -/
+theorem two_mul_sigmaOneCharacter (h : μ.transpose = μ) (hn : 2 ≤ μ.cells.card)
+    {R : Type*} [Field R] (q hh : R) (hq : q ≠ 0) :
+    (2 : R) * sigmaOneCharacter μ q hh = ((2 * (rowClass μ).card : ℕ) : R) * hh := by
+  have key := SeminormalWeight.fullCharacter_two_mul (ι := StandardYoungTableau μ)
+    q hh (rowClass μ) (colClass μ) ∅ (fun _ => (0 : ℤ)) id
+    (card_rowClass_eq_colClass h hn)
+    (by intro t ht; exact absurd ht (Finset.notMem_empty t))
+    (by intro t ht; exact absurd ht (Finset.notMem_empty t))
+    (by intro t ht; exact absurd ht (Finset.notMem_empty t))
+    hq
+    (by intro t ht; exact absurd ht (Finset.notMem_empty t))
+  rw [sigmaOneCharacter]
+  simpa using key
+
+/-- **`χ_λ(σ₁) = |R_row|·h`** (`c_λ = |R_row| ∈ ℤ`) — the proposition's factorisation
+    for `σ₁`, over any field with `2 ≠ 0` (in particular `ℝ`). The remaining step to
+    the tabulated `c_λ ∈ {1, 3, 8, 10}` is the per-shape count `|R_row|` for each
+    self-conjugate `μ`. -/
+theorem sigmaOneCharacter_eq_card_mul (h : μ.transpose = μ) (hn : 2 ≤ μ.cells.card)
+    {R : Type*} [Field R] (q hh : R) (hq : q ≠ 0) (h2 : (2 : R) ≠ 0) :
+    sigmaOneCharacter μ q hh = ((rowClass μ).card : R) * hh := by
+  have key := two_mul_sigmaOneCharacter h hn q hh hq
+  have hcast : ((2 * (rowClass μ).card : ℕ) : R) = 2 * ((rowClass μ).card : R) := by
+    push_cast; ring
+  rw [hcast, mul_assoc] at key
+  exact mul_left_cancel₀ h2 key
 
 end Closure
 
