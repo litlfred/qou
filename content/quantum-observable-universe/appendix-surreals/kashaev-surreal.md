@@ -118,12 +118,66 @@ just relocate the difficulty rather than dissolve it.
 
 ## Discussion
 
-**Open** — the conjecture is a reformulation, not a proof. Its
-value is in *separating* the algebraic content (which is
-computable) from the geometric content (which is the actual
-Kashaev). The Murakami--Murakami proof for the figure-eight
-knot [@murakami-murakami2001] should be re-derivable in the surreal form
-as a sanity check.
+**Open in general; a theorem for the figure-eight knot** — the
+conjecture is a reformulation, not a proof. Its value is in
+*separating* the algebraic content (which is computable) from the
+geometric content (which is the actual Kashaev). For $K = 4_1$ the
+classical limit statement is a theorem [@murakami-murakami2001], so
+the surreal form holds with $=$ in place of $\stackrel{?}{=}$ for
+$4_1$ — see the next section.
+
+## Figure-eight discharge and quantum-modularity refinement
+
+For the figure-eight knot the two question marks collapse:
+
+1. **Leading order ($=$, not $\stackrel{?}{=}$).** The classical
+   Kashaev limit for $4_1$ is proved [@murakami-murakami2001].
+   Combined with the formulation equivalence (proof-strategy items
+   1--3 below, provable by transfer), the surreal statement is a
+   theorem for $4_1$:
+
+   $$
+     \mathrm{st}\!\left(
+       2 \pi \cdot \frac{\log |J_{4_1}(\zeta_\omega, \omega)|}{\omega}
+     \right)
+     \;=\; \mathrm{Vol}(S^3 \setminus 4_1)
+     \;=\; 2\Lambda(\pi/3),
+   $$
+
+   conditional only on the transfer equivalence, not on any open
+   conjecture.
+
+2. **All orders (quantum modularity).** Garoufalidis--Zagier
+   [@garoufalidis-zagier-2024] refine the leading asymptotic to a
+   matrix-valued $\mathrm{SL}_2(\mathbb{Z})$-cocycle $W_\gamma$,
+   holomorphic on cut planes, whose functional equation holds
+   *exactly* — the factorially divergent perturbative series
+   $\Phi(\hbar)$ is the asymptotic expansion of an actual analytic
+   object satisfying an equality, not merely an estimate. Read
+   through [$\mathrm{st}$ as median resummation](#rem:st-is-median-resummation),
+   the cocycle supplies precisely the real-single-valued function
+   whose surreal evaluation $\mathrm{st}$ selects: the
+   quantum-modular functional equation is the inequality-free form of
+   the asymptotic statement.
+
+3. **Stokes data as integer counts.** The resurgent structure of the
+   $4_1$ Kashaev series is completely described in
+   [@garoufalidis-gu-marino2021]: Borel singularities sit on the
+   complex-volume lattice and the Stokes constants are organised as
+   integer $q$-series identified with 3d-index data. Under the
+   modular-resurgence template [@fantini-rella2024] these Stokes
+   constants are coefficients of an L-function, tying the alien
+   calculus of the series to a quantum modular form.
+
+The upgrade is deliberately scoped: it discharges the $4_1$
+*instance* of the surreal Kashaev statement and equips it with an
+exact (rather than asymptotic) analytic backbone. The general-knot
+statement remains open, exactly as for the classical volume
+conjecture. The QOU relevance is concentrated at $4_1$ because the
+muon anchor is $\mathfrak{m}_\mu = \mathfrak{m}_e \cdot
+\mathrm{Vol}(4_1)/\hbar_q^2$: the volume entering the mass formula is
+backed, at $4_1$, by a proved equality rather than a conjectural
+limit.
 
 ## Connection to QOU
 
