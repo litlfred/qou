@@ -114,4 +114,40 @@ theorem gevrey_half_sandwich (n : ℕ) :
       involutionNumber n ^ 2 ≤ 2 ^ n * n.factorial :=
   ⟨factorial_le_four_pow_mul_involution_sq n, involution_sq_le_two_pow_mul_factorial n⟩
 
+/-- `0 < I(n)` — the involution numbers are positive (needed as the `Ik > 0`
+input to the C8 super-exponential bound). -/
+theorem involutionNumber_pos : ∀ n, 0 < involutionNumber n := by
+  intro n
+  induction n using Nat.twoStepInduction with
+  | zero => decide
+  | one => decide
+  | more n ih1 ih2 =>
+    have hstep : involutionNumber (n + 2)
+        = involutionNumber (n + 1) + (n + 1) * involutionNumber n := rfl
+    omega
+
+/-- **The C8 lower bound is genuinely super-exponential (concrete form).** Plugging the
+Gevrey-1/2 involution bound `I(k)² ≤ 2^k·k!` into the abstract
+`c8_superexp_sq_lower_bound` gives, for the Plancherel-weighted branched sum
+`w_std = (Σ f² g)/k!` with the SYT inputs (A) `Σ f g = k!/3` and (C) `Σ g ≤ I(k)`:
+
+  `w_std² ≥ k! / (81 · 2^k)`,
+
+a genuinely **super-exponential** lower bound (`k!/2^k → ∞`), strengthening the bare
+`w_std ≥ 1/9` that `I(k) ≤ k!` alone yields. The SYT inputs (A)/(C) remain the open
+combinatorial core (they are hypotheses here, not discharged); this only sharpens the
+*downstream bound* they feed — honestly, no fabrication of the branched identities. -/
+theorem wstd_superexp_sq {ι : Type*} (s : Finset ι) (f g : ι → ℝ) (k : ℕ)
+    (hg : ∀ i ∈ s, 0 ≤ g i)
+    (hA : ∑ i ∈ s, f i * g i = (k.factorial : ℝ) / 3)
+    (hC : ∑ i ∈ s, g i ≤ (involutionNumber k : ℝ)) :
+    (k.factorial : ℝ) / (81 * 2 ^ k)
+      ≤ ((∑ i ∈ s, f i ^ 2 * g i) / (k.factorial : ℝ)) ^ 2 := by
+  have hkfac : 0 < (k.factorial : ℝ) := by exact_mod_cast k.factorial_pos
+  have hIkpos : 0 < (involutionNumber k : ℝ) := by exact_mod_cast involutionNumber_pos k
+  have hIsq : (involutionNumber k : ℝ) ^ 2 ≤ 2 ^ k * (k.factorial : ℝ) := by
+    exact_mod_cast involution_sq_le_two_pow_mul_factorial k
+  exact c8_superexp_sq_lower_bound s f g (k.factorial : ℝ) (involutionNumber k : ℝ) k
+    hg hkfac hIkpos hA hC hIsq
+
 end QOU.Mass.BindingGevreyHalf
