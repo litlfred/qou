@@ -39,3 +39,29 @@ the transcendental `A_ω`.
    production unless genuinely derived.
 
 Deliverable: probe + witness + this audit filled in.
+
+## Progress (2026-07-14)
+
+**Built:** `computations/probes/tetrahedron_index.py` — the DGG tetrahedron
+index `I_Δ(m,e)(q)` (canonical sum form) plus a self-validating triality
+harness `check_symmetries` that numerically tests candidate conventions
+rather than hardcoding one.
+
+**Finding (honest gate):** the naive transcription of `I_Δ` does **not**
+satisfy the literature triality `I_Δ(m,e) = (±q^?)^e I_Δ(-e-m, m)` across
+all `(m,e)`: the `(-√q)^e` form matches the `m=e=1` case to ~1e-41 but
+the negative-`e` cases miss by O(0.3). This means the standard definition
+carries a normalization prefactor (an overall `q`-power / `ζ=-q^{1/2}`
+convention) that must be pinned from the primary source
+(Garoufalidis, arXiv:1208.1663; DGG arXiv:1112.5179) before the 4₁
+two-tetrahedron gluing is assembled on top of it. Per the
+formalize-first / anti-guessing discipline, the 4₁ index is **not** built
+on an unvalidated `I_Δ` — the self-test is the gate, and it is currently
+red on the negative-`e` triality.
+
+**Next (gated on the verbatim formula):** pin the `I_Δ` normalization so
+`check_symmetries` goes green on all cases; assemble `I_{4₁}(0,e)(q)` as
+the standard 2-tetrahedron sum; validate against a published coefficient;
+then read the GGM Stokes data and run the formalize-first derivation-vs-fit
+check against the corpus even-face action (Vol(4₁)/π) and the geometric
+`vol_of_m` solver.
