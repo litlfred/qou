@@ -28,6 +28,7 @@ export default chapter({
         "analytic-obstructions-table1-data",
         "analytic-obstructions-table2-data",
         "ecalle-borel-resummation",
+        "st-is-median-resummation",
         "standard-part-functor",
         "standard-part-classical-limit",
         "archimedean-functor-trace-commutativity",
