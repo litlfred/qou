@@ -1,5 +1,28 @@
 # Saturating shared-channel closure for the mixed multi-bond interface — derive-or-refute
 
+> **⚠ ERRATUM (2026-07-14, R10 — the "resonance at k=A_light" reading is
+> FALSIFIED).** The falsifiable prediction stated in §6 item 3 below (the
+> deuteron ladder, A_light=2, should peak at k=2) was tested in
+> [R10](2026-07-14-deuteron-ladder-falsification.md) and **fails**: the
+> deuteron ladder (⁶Li/¹⁰B/¹⁴N/¹⁸F) miss is `[−0.090, 2.807, 5.818, 1.632]`
+> at k=[1,2,3,4] — a strict interior maximum at **k=3 (¹⁴N)**, NOT k=2 (¹⁰B).
+> The peak sits at the **same k=3** as the triton ladder, and the neutron
+> ladder (A_light=1) ALSO peaks at k=3 (¹³C) where the resonance shape is
+> degenerate. Three ladders, three A_light values (1,2,3), one peak location
+> k=3. **The peak does NOT track A_light — it is a FIXED-k=3 effect (the 3-α
+> Brunnian onset / k≥3 α·α gate turn-on).** So candidate (c) below reproduces
+> the peak location on the t-ladder *only because A_light=3 coincides with the
+> fixed onset k=3* — a coincidence, not a resonance. What A_light actually
+> controls is the peak **amplitude** (k=3 heights ≈ 2.8/5.8/8.0 MeV for
+> A_light=1/2/3), not its location. **What still STANDS:** the interior-maximum
+> invariant (§2) and the two structural prunes it powers — **(P1)** the additive
+> non-negative cone and **(P2)** the monotone-saturating 1−∏ idempotent class —
+> are unaffected (the invariant holds, indeed is strengthened, on all three
+> ladders); only the *mechanistic label* "resonance at k=A_light" is wrong. The
+> closure seed sharpens to **(fixed 3-α-onset envelope in k) × (A_light-scaled
+> amplitude) × (bar-parity fall)**. Full test:
+> [R10 deuteron-ladder falsification](2026-07-14-deuteron-ladder-falsification.md).
+
 **Date:** 2026-07-14 · **Task:** R9 (follows R8) · **Branch:** `claude/mass-binding-errors-9zqpal`
 **Probe:** [`computations/deltalambda/saturating_shared_channel_probe.py`](../../computations/deltalambda/saturating_shared_channel_probe.py)
 · **Witness:** [`saturating-shared-channel.witness.json`](../../computations/deltalambda/saturating-shared-channel.witness.json)
@@ -151,10 +174,15 @@ indicated). This is a genuine narrowing — the missing object is a
 2. **Derive the bar-parity grading.** Check the corpus's Ohtsuki-tower /
    `mirror_split_*` machinery (even → Vol/mass, odd → decay) supplies the
    odd-$k$ enhancement before inventing a term — the R8 odd-Z pairing route.
-3. **Second light cluster.** Repeat the ladder with the deuteron
-   ($A_{light}=2$; ⁶Li $k{=}1$, ¹⁴N $k{=}3$) to test whether the peak tracks
-   $k=A_{light}$ (predict a peak at $k=2$ for the d-ladder) — a falsifiable
-   out-of-sample consequence of the resonance reading.
+3. **Second light cluster. ✗ DONE / FALSIFIED (R10).** The deuteron ladder
+   ($A_{light}=2$; ⁶Li/¹⁰B/¹⁴N/¹⁸F) was tested in
+   [R10](2026-07-14-deuteron-ladder-falsification.md): it peaks at **k=3**
+   (¹⁴N), not the predicted k=2 (¹⁰B). Together with the neutron ladder
+   ($A_{light}=1$, peak k=3) and the triton ladder ($A_{light}=3$, peak k=3),
+   the peak is **fixed at k=3** and does not track $A_{light}$ — the resonance
+   reading is refuted (see the erratum at the top). $A_{light}$ controls the
+   peak *amplitude*, not its location. The invariant and the P1/P2 prunes
+   stand.
 4. **R5-full SDP knot-ID (#604)** remains the principled route to the
    composite interface (unchanged).
 
