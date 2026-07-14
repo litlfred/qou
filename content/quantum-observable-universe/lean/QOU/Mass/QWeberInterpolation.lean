@@ -111,6 +111,21 @@ theorem interp_odd_vanishes_at_neg_one {D : K → ℕ → K} (E O : ℕ → K) (
     rw [instW.combination, hE1, hO1, mul_zero, mul_zero, add_zero]
   exact rogers_szego_odd_vanishes_at_neg_one (D ν) q hD1 j
 
+open Finset in
+/-- **Even-term closed form transfers through the interpolation.** At `t = −1` every
+member of the family inherits the even (bar-even / cosh-like) product tower
+`D ν (2j) = ∏_{i<j}(1 − q^{2i+1})·D ν 0`, uniformly in `ν` — the interpolated partner of
+`interp_odd_vanishes_at_neg_one`, lifting `rogers_szego_even_at_neg_one` through the
+two-channel combination. Together the two complete the q-Hermite even/odd parity of the
+whole q-Weber family (odd sector vanishes, even sector is the finite `q`-product tower). -/
+theorem interp_even_at_neg_one {D : K → ℕ → K} (E O : ℕ → K) (A B : K → K)
+    {q : K} (ν : K) [instW : QWeberFamily D E O A B]
+    [instE : FollowsRogersSzego E (-1) q] [instO : FollowsRogersSzego O (-1) q]
+    (j : ℕ) :
+    D ν (2 * j) = (∏ i ∈ Finset.range j, (1 - q ^ (2 * i + 1))) * D ν 0 := by
+  haveI := interp_follows_rogers_szego (D := D) (t := -1) (q := q) E O A B ν
+  exact rogers_szego_even_at_neg_one (D ν) q j
+
 section DemoModel
 
 open Classical in
