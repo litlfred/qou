@@ -23,15 +23,28 @@ linear in σ_g by the Hecke quadratic:
 
 TWO LEGS (mirroring the A≤3 solver):
 
-  Leg A — EXACT trace channel analysis, ALL 77 blocks. χ_λ(K) via the Rust
-  GP kernel on the concatenated factor word (exact q-Laurent, evaluated at
-  v = √q₀ per the certified presentation; averaged factors and averaged-
-  inverses are GP sign-0 letters with scalar prefactors ½ and 2/[2]_q²; the
-  single color-weighted seam factor branches with weights ½±δ/4 → exactly
-  2 GP evaluations). Then t_λ = −|y_λ·χ_λ(K)| feeds the operator-selection
-  LP (G = I, n_target = 1) with full primal/dual emission per the AGENTS.md
-  LP-dual rule — the active channels are the binding shadow prices; the
-  dominant Wedderburn block λ*(K) is the channel with x* > 0.
+  Leg A — EXACT trace channel analysis, ALL 77 blocks, via the Rust
+  SEMINORMAL mpfr engine (`chi_lambda_all_partitions_mpfr`, 50 dps):
+  sign-encoded factor word (σ → +1; σ⁻¹ → −1; averaged σ−h/2 → 0;
+  averaged-INVERSE = (4/[2]_q²)·(σ−h/2) → 0 with scalar prefactor
+  (4/[2]_q²) per crossing; the color-weighted seam factor = aσ + bσ⁻¹,
+  a,b = ½±δ/4 → two weighted branch words). Then t_λ = −|y_λ·χ_λ(K)|
+  feeds the operator-selection LP (G = I, n_target = 1) with full
+  primal/dual emission per the AGENTS.md LP-dual rule — the active
+  channels are the binding shadow prices; the dominant Wedderburn block
+  λ*(K) is the channel with x* > 0.
+
+  ⚠ GP KERNEL BUG (found by this probe's own leg cross-check, 2026-07-14):
+  the first version of leg A used the Rust Geck–Pfeiffer exact-Laurent path
+  (`chi_lambdas_via_gp`), which returns WRONG characters on some plain braid
+  words — minimal reproducer `[(1,6),(1,7),(-1,9),(1,8),(-1,7)]` at H₁₂
+  gives χ_[12] = 0.7926·… where the trivial rep forces exactly q
+  (= 1.10998…); the independent seminormal mpfr engine returns q exactly.
+  Words validated end-to-end this morning (≤47 letters, the correction
+  probe) do not trigger it; this probe's 91-letter K word does. All
+  GP-based results must be validated per word-class against the seminormal
+  engine until the Rust bug is fixed (bean filed). The witness records the
+  reproducer under `gp_kernel_bug`.
 
   Leg B — per-block PSD spectrum, ALL 77 blocks, float64 DIAGNOSTIC (the
   identical precision class the A≤3 `binding_k_solver.per_block_evaluation`
@@ -122,7 +135,6 @@ def main() -> int:
     two_q = q0 + 1 / q0                       # [2]_q
     delta = mp.mpf(float(_avg_color_delta()))
     a_cw, b_cw = mp.mpf(1) / 2 + delta / 4, mp.mpf(1) / 2 - delta / 4
-    inv_avg_scalar = 2 / two_q ** 2           # (σ−h/2)⁻¹ = this · (σ+σ⁻¹)
 
     # ── build the K factor-kind list: T ++ reversed-inverted cp ────
     T_kinds = classify(atom_braid_word_3A(2, 2), h_f64)
@@ -143,13 +155,31 @@ def main() -> int:
     shapes = pn.partitions_of(N)
     y = {tuple(k): mp.mpf(str(val)) for k, val in y_lambda_at(N, q0).items()}
 
-    # ── Leg A: exact χ_λ(K) via GP, all 77 blocks ─────────────────
-    print("=" * 72)
-    print(" LEG A — exact χ_λ(K) via GP(√q), all 77 blocks")
-    print("=" * 72)
-    scalar = mp.mpf(1) / 2 ** n_a_T * inv_avg_scalar ** n_ia
+    # ── GP kernel bug reproducer (documented; not used for results) ──
+    repro_word = [(1, 6), (1, 7), (-1, 9), (1, 8), (-1, 7)]
+    gp_r = pn.chi_lambdas_via_gp([[N]], N, repro_word)
+    gp_triv = mp.mpf(0)
+    for e, cstr in gp_r[0]:
+        cc = mp.mpf(cstr) if "/" not in cstr else \
+            mp.mpf(cstr.split("/")[0]) / mp.mpf(cstr.split("/")[1])
+        gp_triv += cc * v ** e
+    mpfr_r = {tuple(lam): mp.mpf(chi) for lam, chi in
+              pn.chi_lambda_all_partitions_mpfr(N, repro_word, q_str, 50)}
+    gp_bug_present = abs(gp_triv - q0) / q0 > mp.mpf("1e-30")
+    mpfr_correct = abs(mpfr_r[(N,)] - q0) / q0 < mp.mpf("1e-45")
+    print(f"GP-bug reproducer: GP χ_[12] = {mp.nstr(gp_triv, 12)} vs exact q = "
+          f"{mp.nstr(q0, 12)} (bug present: {gp_bug_present}); "
+          f"seminormal-mpfr = {mp.nstr(mpfr_r[(N,)], 12)} (correct: {mpfr_correct})")
 
-    def gp_letters(cw_branch):
+    # ── Leg A: exact χ_λ(K) via seminormal mpfr, all 77 blocks ─────
+    print("=" * 72)
+    print(" LEG A — exact χ_λ(K) via seminormal mpfr (50 dps), all 77 blocks")
+    print("=" * 72)
+    # 'ia' = (4/[2]²)·(σ−h/2): sign-0 letter with a scalar prefactor;
+    # 'a' = σ−h/2: sign-0 letter, no scalar. Total scalar = (4/[2]²)^n_ia.
+    scalar = (4 / two_q ** 2) ** n_ia
+
+    def signed_letters(cw_branch):
         w = []
         for (k, g0) in K_kinds:
             g1 = g0 + 1
@@ -167,18 +197,14 @@ def main() -> int:
     chi_exact: dict[tuple, mp.mpf] = {}
     branch_res = {}
     for br in (1, -1):
-        branch_res[br] = pn.chi_lambdas_via_gp(shapes, N, gp_letters(br))
-    for i, lam in enumerate(shapes):
-        tot = mp.mpf(0)
-        for br, wgt in ((1, a_cw), (-1, b_cw)):
-            chi = mp.mpf(0)
-            for e, cstr in branch_res[br][i]:
-                cc = mp.mpf(cstr) if "/" not in cstr else \
-                    mp.mpf(cstr.split("/")[0]) / mp.mpf(cstr.split("/")[1])
-                chi += cc * v ** e
-            tot += wgt * chi
-        chi_exact[tuple(lam)] = scalar * tot
-    print(f"  GP evals done in {time.time()-t0:.1f}s")
+        branch_res[br] = {tuple(lam): mp.mpf(chi) for lam, chi in
+                          pn.chi_lambda_all_partitions_mpfr(
+                              N, signed_letters(br), q_str, 50)}
+        print(f"  branch {br:+d} done at {time.time()-t0:.0f}s", flush=True)
+    for lam in map(tuple, shapes):
+        chi_exact[lam] = scalar * (a_cw * branch_res[1][lam]
+                                   + b_cw * branch_res[-1][lam])
+    print(f"  seminormal-mpfr evals done in {time.time()-t0:.1f}s")
 
     per_lambda = sorted(
         ({"lambda": list(lam), "chi_K": mp.nstr(chi_exact[lam], 20),
@@ -320,9 +346,10 @@ def main() -> int:
                        "per-block exact-trace cross-check.",
         "audit_only": True,
         "computedAt": datetime.datetime.now(datetime.timezone.utc).isoformat(),
-        "engine": "pyhecke_native(GP) + mpmath (leg A exact); numpy f64 "
-                  "diagnostic (leg B spectra, per A<=3 binding_k_solver "
-                  "precision class)",
+        "engine": "pyhecke_native seminormal-mpfr 50dps (leg A exact); numpy "
+                  "f64 diagnostic (leg B spectra, per A<=3 binding_k_solver "
+                  "precision class). GP path NOT used for results (kernel "
+                  "bug, see gp_kernel_bug).",
         "dps": 50,
         "q_pin": {"used": "canonical muon (QOU_Q0_ANCHOR=ideal)", "value": q_str},
         "K_construction": {
@@ -333,6 +360,21 @@ def main() -> int:
                 "sigma_inv": "σ⁻¹ = σ − h",
                 "averaged_inv": "(σ−h/2)⁻¹ = (2/[2]_q²)(σ+σ⁻¹)",
             },
+        },
+        "gp_kernel_bug": {
+            "summary": "chi_lambdas_via_gp returns wrong characters on some "
+                       "plain braid words; found by this probe's leg "
+                       "cross-check, confirmed against the independent "
+                       "seminormal engine on the trivial rep (which forces "
+                       "chi_[12] = q exactly).",
+            "minimal_reproducer_word": repro_word,
+            "gp_chi_trivial_rep": mp.nstr(gp_triv, 25),
+            "expected_exact": mp.nstr(q0, 25),
+            "seminormal_mpfr_chi_trivial_rep": mp.nstr(mpfr_r[(N,)], 25),
+            "scope": "long/structured plain words (91-letter K word triggers "
+                     "it; the <=47-letter canonical words validated 1e-20 "
+                     "end-to-end this morning do not). Certified combiner "
+                     "chain (seminormal) unaffected.",
         },
         "leg_A": {
             "tr_M_K": mp.nstr(tr_M_K, 25),
@@ -362,6 +404,9 @@ def main() -> int:
              "passed": len(per_block) == 77},
             {"label": "LP dual fields emitted (duality gap finite)",
              "passed": lp_dict.get("duality_gap") is not None},
+            {"label": "seminormal-mpfr correct on GP-bug reproducer "
+                      "(trivial rep = q exactly)",
+             "passed": bool(mpfr_correct)},
         ],
     }
     wit["allPassed"] = all(a["passed"] for a in wit["assertions"])
