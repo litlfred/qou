@@ -35,6 +35,8 @@
 
 import Mathlib.Analysis.SpecialFunctions.Integrability.LogMeromorphic
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus
+import Mathlib.Analysis.Normed.Group.FunctionSeries
+import Mathlib.Analysis.PSeries
 import QOU.Archimedean.ClausenFunctionMathlibFiller
 
 namespace QOU.Knot
@@ -92,6 +94,24 @@ theorem hasDerivAt_clausen {θ : ℝ} (h0 : 0 < θ) (h2 : θ < 2 * π) :
       (fun t => -Real.log (2 * Real.sin (t / 2))) (𝓝 θ) volume :=
     (ContinuousAt.stronglyMeasurableAtFilter (μ := volume) isOpen_Ioo hcontOn) θ ⟨h0, h2⟩
   simpa only [clausen] using integral_hasDerivAt_right hint hmeas hg
+
+/-- **`Cl_2` is continuous (Route-B support brick, sorry-free).** Weierstrass
+    M-test: each term `θ ↦ sin((k+1)θ)/(k+1)²` is continuous and bounded by the
+    summable `1/(k+1)²`. The filler file *asserts* "the tsum is well-defined and
+    continuous" without proof; this discharges it. Needed to pin the constant in
+    the series↔integral bridge (both `clausen` and `Cl_2` → 0 at `θ = 0`). -/
+theorem continuous_Cl_2 : Continuous QOU.Archimedean.Cl_2 := by
+  have hsum : Summable (fun k : ℕ => 1 / ((k : ℝ) + 1) ^ 2) := by
+    have h : Summable (fun n : ℕ => 1 / (n : ℝ) ^ 2) :=
+      summable_one_div_nat_pow.mpr (by norm_num)
+    exact ((summable_nat_add_iff 1).2 h).congr (fun n => by push_cast; ring)
+  have hcont : Continuous (fun θ : ℝ =>
+      ∑' k : ℕ, Real.sin (((k : ℝ) + 1) * θ) / ((k : ℝ) + 1) ^ 2) :=
+    continuous_tsum (fun k => by fun_prop) hsum (fun k θ => by
+      rw [Real.norm_eq_abs, abs_div, abs_of_pos (by positivity : (0 : ℝ) < ((k : ℝ) + 1) ^ 2)]
+      gcongr
+      exact abs_le.mpr ⟨Real.neg_one_le_sin _, Real.sin_le_one _⟩)
+  simpa only [QOU.Archimedean.Cl_2] using hcont
 
 /-- **Bridge to the series Clausen (classical Zagier identity, cited).** On the
     fundamental domain, the integral Clausen equals the Fourier-series Clausen
