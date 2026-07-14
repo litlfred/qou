@@ -38,6 +38,7 @@ import Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus
 import Mathlib.Analysis.Normed.Group.FunctionSeries
 import Mathlib.Analysis.PSeries
 import Mathlib.Analysis.SpecialFunctions.Integrals.LogTrigonometric
+import Mathlib.Analysis.Complex.AbelLimit
 import QOU.Archimedean.ClausenFunctionMathlibFiller
 
 namespace QOU.Knot
@@ -113,6 +114,29 @@ theorem continuous_Cl_2 : Continuous QOU.Archimedean.Cl_2 := by
       gcongr
       exact abs_le.mpr ⟨Real.neg_one_le_sin _, Real.sin_le_one _⟩)
   simpa only [QOU.Archimedean.Cl_2] using hcont
+
+/-- **Abel-regularisation of `Cl_2` (assembly brick, sorry-free).** As `x → 1⁻`,
+    `∑ₙ (sin(nθ)/n²) xⁿ → Cl_2 θ` — Abel's limit theorem
+    (`Real.tendsto_tsum_powerSeries_nhdsWithin_lt`), valid because the
+    `sin(nθ)/n²` series converges absolutely at `x = 1`. First brick of the Abel
+    route discharging the atom `hasDerivAt_Cl_2_series`. -/
+theorem tendsto_Cl_2_reg (θ : ℝ) :
+    Filter.Tendsto (fun x : ℝ => ∑' n : ℕ, Real.sin (n * θ) / (n : ℝ) ^ 2 * x ^ n)
+      (nhdsWithin 1 (Set.Iio 1)) (nhds (QOU.Archimedean.Cl_2 θ)) := by
+  have hsum : Summable (fun n : ℕ => Real.sin (n * θ) / (n : ℝ) ^ 2) := by
+    have hg : Summable (fun n : ℕ => 1 / (n : ℝ) ^ 2) :=
+      summable_one_div_nat_pow.mpr (by norm_num)
+    refine hg.of_norm_bounded (fun n => ?_)
+    rw [Real.norm_eq_abs, abs_div, abs_of_nonneg (by positivity : (0:ℝ) ≤ (n : ℝ) ^ 2)]
+    rcases Nat.eq_zero_or_pos n with hn | hn
+    · simp [hn]
+    · gcongr
+      exact abs_le.mpr ⟨Real.neg_one_le_sin _, Real.sin_le_one _⟩
+  have hCl : ∑' n : ℕ, Real.sin (n * θ) / (n : ℝ) ^ 2 = QOU.Archimedean.Cl_2 θ := by
+    rw [tsum_eq_zero_add hsum, QOU.Archimedean.Cl_2]
+    simp
+  rw [← hCl]
+  exact Real.tendsto_tsum_powerSeries_nhdsWithin_lt hsum.hasSum.tendsto_sum_nat
 
 /-- **`clausen π = 0` (Route-B brick 2, sorry-free).** The interior agreement
     point that pins the bridge constant. Change of variables `t = 2x`
