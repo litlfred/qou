@@ -1951,6 +1951,19 @@ This applies to all physical predictions, CODATA comparisons, and
 numerical evaluations at `$q_0$`. Exact algebraic identities
 (e.g. `$c_q = 1/(q-1)$`) use `$=$` since they hold for all `$q$`.
 
+**Optional surreal-equality form (language-level, 2026-07-13).** A
+derived-value statement may additionally be recorded as the surreal
+equality `$X = Y + \delta$` with the remainder's leading order
+`$\mathrm{ord}_\omega(\delta)$` noted, per the blow-up calculus
+(`def:surreal-blowup-calculus`) and the surreal-limit-transfer block
+(`conj:surreal-limit-transfer`). This is bookkeeping, not new
+mathematics (all surreal narrowings are Language-tier per the
+2026-06-08 transcendental-surreal narrowing ledger); it never replaces
+the mandatory `$\approx$` in archimedean prose, and it must not be
+used to imply extra precision. Use it when a block wants to track
+*where* an approximation's error lives (infinitesimal vs finite vs
+growing grade) rather than merely its magnitude.
+
 ### 7a. Hecke-Skein convention (STRICT)
 
 The Hecke algebra generator is **$\sigma_i$** (never $T$, never $t$ or
