@@ -4384,6 +4384,62 @@ export const references: CSLData[] = [
       "(\\ref{rem:algebraic-core-survives}).",
   }),
 
+  // ── Garoufalidis–Gu–Mariño 2021 (resurgent structure of quantum knot invariants) ──
+  ref({
+    id: "garoufalidis-gu-marino2021",
+    type: "article-journal",
+    title: "The Resurgent Structure of Quantum Knot Invariants",
+    author: [
+      { family: "Garoufalidis", given: "Stavros" },
+      { family: "Gu", given: "Jie" },
+      { family: "Mariño", given: "Marcos" },
+    ],
+    issued: { "date-parts": [[2021]] },
+    "container-title": "Communications in Mathematical Physics",
+    volume: "386",
+    page: "469-493",
+    DOI: "10.1007/s00220-021-04076-0",
+    URL: "https://arxiv.org/abs/2007.10190",
+    note:
+      "arXiv:2007.10190. Complete resurgent structure of the " +
+      "Chern–Simons / Kashaev asymptotic series for hyperbolic knot " +
+      "complements, worked in detail for $4_1$ and $5_2$: location of " +
+      "Borel singularities at the complex-volume lattice and Stokes " +
+      "constants organised as integer $q$-series identified with the " +
+      "3d-index / DGG state-integral data. For QOU this is the " +
+      "derivation-side target for the odd-face Stokes constant " +
+      "$A_\\omega$ (monodromy-datum gap G3): a Stokes constant that is " +
+      "an integer count is a derived quantity, not a fit. Companion to " +
+      "the trivial-flat-connection sequel arXiv:2111.04763.",
+  }),
+
+  // ── Fantini–Rella 2024 (modular resurgent structures) ──
+  ref({
+    id: "fantini-rella2024",
+    type: "article",
+    title: "Modular resurgent structures",
+    author: [
+      { family: "Fantini", given: "Veronica" },
+      { family: "Rella", given: "Claudia" },
+    ],
+    issued: { "date-parts": [[2024]] },
+    "container-title": "arXiv preprint",
+    URL: "https://arxiv.org/abs/2404.11550",
+    note:
+      "arXiv:2404.11550 (Lett. Math. Phys. version exists; cite the " +
+      "arXiv for the full statements). Defines modular resurgent " +
+      "series: when the Borel plane carries a single infinite tower " +
+      "of singularities, the Stokes constants are the coefficients of " +
+      "an L-function and the median resummation is governed by a " +
+      "quantum modular form (Zagier). Bridges quantum modularity and " +
+      "resurgence; sequel arXiv:2506.08265 (q-Pochhammer / mirror " +
+      "curves). For QOU: the structural template under which the " +
+      "even-face Borel action and the odd-face Stokes constants would " +
+      "be two shadows of one quantum-modular object — the test posed " +
+      "by the modular-resurgence probe in the alien-calculus ↔ " +
+      "surreal integration review (2026-07-13).",
+  }),
+
   // ── Tate 1967 (Tate's 1950 Princeton thesis: adelic Fourier analysis) ──
   ref({
     id: "tate1967",
