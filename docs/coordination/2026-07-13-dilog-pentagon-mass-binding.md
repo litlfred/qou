@@ -125,7 +125,27 @@ Gevrey-1/2 involution bound with the keystone C8 machinery
 and (C) `Σ f^{λ/(2,1)} ≤ I(k)` — the combinatorial core — remain hypotheses; the chip
 sharpens only the downstream bound they feed. `conj:tower-geometric-lower-bound`'s all-k
 geometric instance stays open. The new seminormal infra is *character* values
-(`χ_λ=c_λ·h`), not skew-SYT dimensions, so it does not directly supply (A)/(C). Remaining beans qou-8t34 (cyclotomic, anti-fit-gated), qou-x3nt (pairing / narrow a
+(`χ_λ=c_λ·h`), not skew-SYT dimensions, so it does not directly supply (A)/(C).
+
+### Levers A/B (pairing-narrow, cyclotomic-collapse) — surveyed, no genuine target
+
+Both honest-negative:
+
+- **Lever A (`qou-x3nt`, narrow a §3b class by lifting its algebraic field out): NONE.**
+  The §3b-cond discipline already carries exactly one open field per class and proves all
+  algebraic/finite facts as standalone sorry-free theorems — the lift is done repo-wide.
+  Near-misses (`QSchurYLambdaClosedFormClaim`, `BringFiberAction`) are already-lifted or
+  not cleanly separable. Forcing it would duplicate a theorem or invent a field the class
+  does not carry.
+- **Lever B (`qou-8t34`, cyclotomic collapse → numerical binding coeff, anti-fit-gated):
+  NONE.** The collapse `∏(1−xζ^k)=1−x^N` is real + sorry-free (`cyclotomic_collapse`) but
+  **fibre/q-formal** — no mass/binding coefficient's numerical value is derived from a ζ_N
+  collapse. The only "finite value" objects (GapA4 muon correction `≈0.999999788`,
+  AME-anchored coefficients) are **fits**, correctly not claimed as collapse-derived.
+  Corpus negatives confirm the discipline: `QBetaZeta4ResidueRefutation` (ζ₄ route
+  excluded), `FMapDirectCyclotomic` (fibre collapse never descends to real q).
+
+No fabricated targets taken; the repo is already well-curated on exactly these two axes. Remaining beans qou-8t34 (cyclotomic, anti-fit-gated), qou-x3nt (pairing / narrow a
 class), qou-g020 (2-adic, speculative for binding) are lower-confidence.
 
 ---
