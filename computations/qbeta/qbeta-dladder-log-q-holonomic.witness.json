@@ -1,0 +1,547 @@
+{
+  "computation": "qbeta-dladder-log-q-holonomic",
+  "description": "Owner-suggested log-closure test: (q-)holonomicity is not closed under log/exp, so the #3716/#3737 negatives on D(u) do not cover log D. Exact l_k in Q(sqrt3) of log(D/(d1*u)) via the power-series log recursion (and k*l_k = the u*D'/D coefficients, distinct under base-X^k recurrences); both sequences run through the SAME two merged kernels: coupled Q(sqrt3) P-recurrence (exact nullspace; windows r<=2/D<=4, r=3/D<=3, r=4/D<=2) and q-holonomic base 3, 1/3, classical-k control (prime-certified full rank; r<=3, E<=3). Finite-window honesty as in #3737. NEGATIVE — log D is not low-order coupled-ℚ(√3) P-finite nor q-holonomic in base 3 / 1/3 / classical k (same windows as #3737); the log-closure loophole is CLOSED at accessible order. auditOnly; no c_k; no fit; no wiring.",
+  "audit_only": true,
+  "parameters": {
+    "KMAX_d": 21,
+    "LMAX": 20,
+    "d1": "1/8 - sqrt(3)",
+    "coupled_windows": [
+      [
+        1,
+        4
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        3,
+        3
+      ],
+      [
+        4,
+        2
+      ]
+    ],
+    "qholo_windows": [
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        3,
+        1
+      ],
+      [
+        3,
+        2
+      ],
+      [
+        3,
+        3
+      ]
+    ],
+    "qholo_bases": [
+      "base3",
+      "base1/3",
+      "classical_k"
+    ]
+  },
+  "l_k_a_b": {
+    "1": [
+      "126/191",
+      "37243/6876"
+    ],
+    "2": [
+      "-375390641/19699740",
+      "-16600651/6566580"
+    ],
+    "3": [
+      "12600671865227/316062628560",
+      "1669062726186839/11378254628160"
+    ],
+    "4": [
+      "-2815089761508391159/2759678265369600",
+      "-1180915015006777873/6209276097081600"
+    ],
+    "5": [
+      "1024343297728013343940049/365279294239116364800",
+      "25395224911193444278911859/4383351530869396377600"
+    ],
+    "6": [
+      "-4410944127953607092553971955777983/82281995594684256714190848000",
+      "-3710476962488580495224737215307/274273318648947522380636160"
+    ],
+    "7": [
+      "346341580307421252511012409073118403/1746206795398299225823383552000",
+      "53605284007237623439921222078606065889/188590333903016316388925423616000"
+    ],
+    "8": [
+      "-130623944129172649261650025200944164174573439/41989907258269301438731944032993280000",
+      "-6432245359052645461819727487777415199647501/6680212518361025228889172914339840000"
+    ],
+    "9": [
+      "780901337559174484674995388531841682900059663333/55308794804242262601012985332525170688000",
+      "38327231178009701387086262549265706910628723423324403/2419206684737556566168307978444650965893120000"
+    ],
+    "10": [
+      "-1328728088348756385002744373249283287679651524978004660981/6915310536916471218394034098928179155566592000000",
+      "-1944117782258967306968574428187495951883883829343714514209/28237518025742257475108972570623398218563584000000"
+    ],
+    "11": [
+      "903236144682355985435538559428427966194524526508498835536255781/893141400147017307034706758819789836293878736486400000",
+      "10239466872266917426541661844871328955786693621506434191471795423/10717696801764207684416481105837478035526544837836800000"
+    ],
+    "12": [
+      "-15801177726176238088246028998763028455778251311910766185176524412501037/1277377975621465328659493884118133982186195719952741171200000",
+      "-2911288556463971375211276984749622003429455516739219186695984227277611/588266172983569559251082709791245912848905923662446592000000"
+    ],
+    "13": [
+      "6786862145747511359715338364978052893731033375521317741077988059491998061/93155692003958135150058726712687916409978746049644451594240000",
+      "18676392949221784463003597914049637490207046341525196586100414414705657433861/307413783613061845995193798151870124152929861963826690260992000000"
+    ],
+    "14": [
+      "-33567372704939097552840606742898079937987306316993356791202341155922299879628592999/40866358738385989559217082751117006824393884130023264896535232512000000",
+      "-468411220026263157858146871719757828533423206298154546223836017160062846994013283/1309819190332884280744137267664006628986983465705873874888949760000000"
+    ],
+    "15": [
+      "28917488149426350021826300221614104747367851911391925985141350699705418730415341680254149/5479902257920213294667521975482650705987407785561122606421662823874560000000",
+      "13462922753775805524894756592266738642646317472574692684007151881485783131378926897479552973/3353700181847170536336523448995382232064293564763407035130057648211230720000000"
+    ],
+    "16": [
+      "-21640836955621931169418378885477515064052723530368921883263565734447085351491421189254635947476367/387180959660720452675011258271573550489342620614641160642392788755266351923200000000",
+      "-5221744663356355872660302430830123325189286692042666120924718599048667872093844415624732278056991/201036267516143311965871230256393958907927899165294448795088563392157528883200000000"
+    ],
+    "17": [
+      "11801433038064164648881206205741084332038317858976887796273490394825415688145676948978448792493287619/30718341676466698068385123983176996921131382992456991775889532486321670413352960000000",
+      "19623114008909773791588652384293749287500306391393380269461976916923552408415264737165446248174814077019/71880919522932073480021190120634172795447436202349360755581506017992708767245926400000000"
+    ],
+    "18": [
+      "-334530736007630818819169020229222176974663364391426804796405239031873141949558875570606488482427626146689317450801/86233254906731750723471814859795856295294436793249537803694249036036430023403421676077056000000000",
+      "-1280838977716100881382456307934727979043381755974405690340329959743183097020522177728315495939907320224904858051/675616669497186081166801968274753859863417952083863900171393689028775448901308859285504000000000"
+    ],
+    "19": [
+      "51434128227457397482757693042559911139951575325040159198638788843730885262505490692533894037180382065380196439643009/1830061298576196043131457404246778728044581936390073524500622396209217570496672615570079744000000000",
+      "2750933546470720876217443249436218665843751059412266021369280390648801950436506866895887613682265279715201583346391991/144940854847234726616011426416344875261130889362093823140449293779770031583336471153150315724800000000"
+    ],
+    "20": [
+      "-20499235636022281230364137190450841122323570153549701209350446097158748875132288241800838291065377251384924180739354578010622009/74912101064373879512579041697582183399214455643240744114848655692899021743721121769621128081099980800000000000",
+      "-2603524181193499853973205412320509358888741517240612385568027156550583776408750966856189261069204498101715267490871479799054383/18728025266093469878144760424395545849803613910810186028712163923224755435930280442405282020274995200000000000"
+    ]
+  },
+  "cells": {
+    "logD/coupled r=1 D=4": {
+      "unknowns": 20,
+      "rows": 38,
+      "nullspace_dim": 0,
+      "verdict": "none"
+    },
+    "logD/coupled r=2 D=4": {
+      "unknowns": 30,
+      "rows": 36,
+      "nullspace_dim": 0,
+      "verdict": "none"
+    },
+    "logD/coupled r=3 D=3": {
+      "unknowns": 32,
+      "rows": 34,
+      "nullspace_dim": 0,
+      "verdict": "none"
+    },
+    "logD/coupled r=4 D=2": {
+      "unknowns": 30,
+      "rows": 32,
+      "nullspace_dim": 0,
+      "verdict": "none"
+    },
+    "logD/qholo base3 r=1 E=1": {
+      "unknowns": 8,
+      "rows": 38,
+      "has_nullspace": false,
+      "verdict": "full rank (no recurrence)"
+    },
+    "logD/qholo base3 r=1 E=2": {
+      "unknowns": 12,
+      "rows": 38,
+      "has_nullspace": false,
+      "verdict": "full rank (no recurrence)"
+    },
+    "logD/qholo base3 r=1 E=3": {
+      "unknowns": 16,
+      "rows": 38,
+      "has_nullspace": false,
+      "verdict": "full rank (no recurrence)"
+    },
+    "logD/qholo base3 r=2 E=1": {
+      "unknowns": 12,
+      "rows": 36,
+      "has_nullspace": false,
+      "verdict": "full rank (no recurrence)"
+    },
+    "logD/qholo base3 r=2 E=2": {
+      "unknowns": 18,
+      "rows": 36,
+      "has_nullspace": false,
+      "verdict": "full rank (no recurrence)"
+    },
+    "logD/qholo base3 r=2 E=3": {
+      "unknowns": 24,
+      "rows": 36,
+      "has_nullspace": false,
+      "verdict": "full rank (no recurrence)"
+    },
+    "logD/qholo base3 r=3 E=1": {
+      "unknowns": 16,
+      "rows": 34,
+      "has_nullspace": false,
+      "verdict": "full rank (no recurrence)"
+    },
+    "logD/qholo base3 r=3 E=2": {
+      "unknowns": 24,
+      "rows": 34,
+      "has_nullspace": false,
+      "verdict": "full rank (no recurrence)"
+    },
+    "logD/qholo base3 r=3 E=3": {
+      "unknowns": 32,
+      "rows": 34,
+      "has_nullspace": false,
+      "verdict": "full rank (no recurrence)"
+    },
+    "logD/qholo base1/3 r=1 E=1": {
+      "unknowns": 8,
+      "rows": 38,
+      "has_nullspace": false,
+      "verdict": "full rank (no recurrence)"
+    },
+    "logD/qholo base1/3 r=1 E=2": {
+      "unknowns": 12,
+      "rows": 38,
+      "has_nullspace": false,
+      "verdict": "full rank (no recurrence)"
+    },
+    "logD/qholo base1/3 r=1 E=3": {
+      "unknowns": 16,
+      "rows": 38,
+      "has_nullspace": false,
+      "verdict": "full rank (no recurrence)"
+    },
+    "logD/qholo base1/3 r=2 E=1": {
+      "unknowns": 12,
+      "rows": 36,
+      "has_nullspace": false,
+      "verdict": "full rank (no recurrence)"
+    },
+    "logD/qholo base1/3 r=2 E=2": {
+      "unknowns": 18,
+      "rows": 36,
+      "has_nullspace": false,
+      "verdict": "full rank (no recurrence)"
+    },
+    "logD/qholo base1/3 r=2 E=3": {
+      "unknowns": 24,
+      "rows": 36,
+      "has_nullspace": false,
+      "verdict": "full rank (no recurrence)"
+    },
+    "logD/qholo base1/3 r=3 E=1": {
+      "unknowns": 16,
+      "rows": 34,
+      "has_nullspace": false,
+      "verdict": "full rank (no recurrence)"
+    },
+    "logD/qholo base1/3 r=3 E=2": {
+      "unknowns": 24,
+      "rows": 34,
+      "has_nullspace": false,
+      "verdict": "full rank (no recurrence)"
+    },
+    "logD/qholo base1/3 r=3 E=3": {
+      "unknowns": 32,
+      "rows": 34,
+      "has_nullspace": false,
+      "verdict": "full rank (no recurrence)"
+    },
+    "logD/qholo classical_k r=1 E=1": {
+      "unknowns": 8,
+      "rows": 38,
+      "has_nullspace": false,
+      "verdict": "full rank (no recurrence)"
+    },
+    "logD/qholo classical_k r=1 E=2": {
+      "unknowns": 12,
+      "rows": 38,
+      "has_nullspace": false,
+      "verdict": "full rank (no recurrence)"
+    },
+    "logD/qholo classical_k r=1 E=3": {
+      "unknowns": 16,
+      "rows": 38,
+      "has_nullspace": false,
+      "verdict": "full rank (no recurrence)"
+    },
+    "logD/qholo classical_k r=2 E=1": {
+      "unknowns": 12,
+      "rows": 36,
+      "has_nullspace": false,
+      "verdict": "full rank (no recurrence)"
+    },
+    "logD/qholo classical_k r=2 E=2": {
+      "unknowns": 18,
+      "rows": 36,
+      "has_nullspace": false,
+      "verdict": "full rank (no recurrence)"
+    },
+    "logD/qholo classical_k r=2 E=3": {
+      "unknowns": 24,
+      "rows": 36,
+      "has_nullspace": false,
+      "verdict": "full rank (no recurrence)"
+    },
+    "logD/qholo classical_k r=3 E=1": {
+      "unknowns": 16,
+      "rows": 34,
+      "has_nullspace": false,
+      "verdict": "full rank (no recurrence)"
+    },
+    "logD/qholo classical_k r=3 E=2": {
+      "unknowns": 24,
+      "rows": 34,
+      "has_nullspace": false,
+      "verdict": "full rank (no recurrence)"
+    },
+    "logD/qholo classical_k r=3 E=3": {
+      "unknowns": 32,
+      "rows": 34,
+      "has_nullspace": false,
+      "verdict": "full rank (no recurrence)"
+    },
+    "k_logD_prime/coupled r=1 D=4": {
+      "unknowns": 20,
+      "rows": 38,
+      "nullspace_dim": 0,
+      "verdict": "none"
+    },
+    "k_logD_prime/coupled r=2 D=4": {
+      "unknowns": 30,
+      "rows": 36,
+      "nullspace_dim": 0,
+      "verdict": "none"
+    },
+    "k_logD_prime/coupled r=3 D=3": {
+      "unknowns": 32,
+      "rows": 34,
+      "nullspace_dim": 0,
+      "verdict": "none"
+    },
+    "k_logD_prime/coupled r=4 D=2": {
+      "unknowns": 30,
+      "rows": 32,
+      "nullspace_dim": 0,
+      "verdict": "none"
+    },
+    "k_logD_prime/qholo base3 r=1 E=1": {
+      "unknowns": 8,
+      "rows": 38,
+      "has_nullspace": false,
+      "verdict": "full rank (no recurrence)"
+    },
+    "k_logD_prime/qholo base3 r=1 E=2": {
+      "unknowns": 12,
+      "rows": 38,
+      "has_nullspace": false,
+      "verdict": "full rank (no recurrence)"
+    },
+    "k_logD_prime/qholo base3 r=1 E=3": {
+      "unknowns": 16,
+      "rows": 38,
+      "has_nullspace": false,
+      "verdict": "full rank (no recurrence)"
+    },
+    "k_logD_prime/qholo base3 r=2 E=1": {
+      "unknowns": 12,
+      "rows": 36,
+      "has_nullspace": false,
+      "verdict": "full rank (no recurrence)"
+    },
+    "k_logD_prime/qholo base3 r=2 E=2": {
+      "unknowns": 18,
+      "rows": 36,
+      "has_nullspace": false,
+      "verdict": "full rank (no recurrence)"
+    },
+    "k_logD_prime/qholo base3 r=2 E=3": {
+      "unknowns": 24,
+      "rows": 36,
+      "has_nullspace": false,
+      "verdict": "full rank (no recurrence)"
+    },
+    "k_logD_prime/qholo base3 r=3 E=1": {
+      "unknowns": 16,
+      "rows": 34,
+      "has_nullspace": false,
+      "verdict": "full rank (no recurrence)"
+    },
+    "k_logD_prime/qholo base3 r=3 E=2": {
+      "unknowns": 24,
+      "rows": 34,
+      "has_nullspace": false,
+      "verdict": "full rank (no recurrence)"
+    },
+    "k_logD_prime/qholo base3 r=3 E=3": {
+      "unknowns": 32,
+      "rows": 34,
+      "has_nullspace": false,
+      "verdict": "full rank (no recurrence)"
+    },
+    "k_logD_prime/qholo base1/3 r=1 E=1": {
+      "unknowns": 8,
+      "rows": 38,
+      "has_nullspace": false,
+      "verdict": "full rank (no recurrence)"
+    },
+    "k_logD_prime/qholo base1/3 r=1 E=2": {
+      "unknowns": 12,
+      "rows": 38,
+      "has_nullspace": false,
+      "verdict": "full rank (no recurrence)"
+    },
+    "k_logD_prime/qholo base1/3 r=1 E=3": {
+      "unknowns": 16,
+      "rows": 38,
+      "has_nullspace": false,
+      "verdict": "full rank (no recurrence)"
+    },
+    "k_logD_prime/qholo base1/3 r=2 E=1": {
+      "unknowns": 12,
+      "rows": 36,
+      "has_nullspace": false,
+      "verdict": "full rank (no recurrence)"
+    },
+    "k_logD_prime/qholo base1/3 r=2 E=2": {
+      "unknowns": 18,
+      "rows": 36,
+      "has_nullspace": false,
+      "verdict": "full rank (no recurrence)"
+    },
+    "k_logD_prime/qholo base1/3 r=2 E=3": {
+      "unknowns": 24,
+      "rows": 36,
+      "has_nullspace": false,
+      "verdict": "full rank (no recurrence)"
+    },
+    "k_logD_prime/qholo base1/3 r=3 E=1": {
+      "unknowns": 16,
+      "rows": 34,
+      "has_nullspace": false,
+      "verdict": "full rank (no recurrence)"
+    },
+    "k_logD_prime/qholo base1/3 r=3 E=2": {
+      "unknowns": 24,
+      "rows": 34,
+      "has_nullspace": false,
+      "verdict": "full rank (no recurrence)"
+    },
+    "k_logD_prime/qholo base1/3 r=3 E=3": {
+      "unknowns": 32,
+      "rows": 34,
+      "has_nullspace": false,
+      "verdict": "full rank (no recurrence)"
+    },
+    "k_logD_prime/qholo classical_k r=1 E=1": {
+      "unknowns": 8,
+      "rows": 38,
+      "has_nullspace": false,
+      "verdict": "full rank (no recurrence)"
+    },
+    "k_logD_prime/qholo classical_k r=1 E=2": {
+      "unknowns": 12,
+      "rows": 38,
+      "has_nullspace": false,
+      "verdict": "full rank (no recurrence)"
+    },
+    "k_logD_prime/qholo classical_k r=1 E=3": {
+      "unknowns": 16,
+      "rows": 38,
+      "has_nullspace": false,
+      "verdict": "full rank (no recurrence)"
+    },
+    "k_logD_prime/qholo classical_k r=2 E=1": {
+      "unknowns": 12,
+      "rows": 36,
+      "has_nullspace": false,
+      "verdict": "full rank (no recurrence)"
+    },
+    "k_logD_prime/qholo classical_k r=2 E=2": {
+      "unknowns": 18,
+      "rows": 36,
+      "has_nullspace": false,
+      "verdict": "full rank (no recurrence)"
+    },
+    "k_logD_prime/qholo classical_k r=2 E=3": {
+      "unknowns": 24,
+      "rows": 36,
+      "has_nullspace": false,
+      "verdict": "full rank (no recurrence)"
+    },
+    "k_logD_prime/qholo classical_k r=3 E=1": {
+      "unknowns": 16,
+      "rows": 34,
+      "has_nullspace": false,
+      "verdict": "full rank (no recurrence)"
+    },
+    "k_logD_prime/qholo classical_k r=3 E=2": {
+      "unknowns": 24,
+      "rows": 34,
+      "has_nullspace": false,
+      "verdict": "full rank (no recurrence)"
+    },
+    "k_logD_prime/qholo classical_k r=3 E=3": {
+      "unknowns": 32,
+      "rows": 34,
+      "has_nullspace": false,
+      "verdict": "full rank (no recurrence)"
+    }
+  },
+  "verdict": "NEGATIVE — log D is not low-order coupled-ℚ(√3) P-finite nor q-holonomic in base 3 / 1/3 / classical k (same windows as #3737); the log-closure loophole is CLOSED at accessible order",
+  "assertions": [
+    {
+      "label": "exact l_k computed in Q(sqrt3) for k=1..20",
+      "passed": true
+    },
+    {
+      "label": "all cells executed (2 sequences x 4 coupled + 27 qholo)",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "scriptHash": "2c3b6a630ee9",
+  "scriptCommitSha": "649f38233cf48a21108edf833579df29cd98f085",
+  "commitSha": "649f38233cf48a21108edf833579df29cd98f085",
+  "engine": "sympy",
+  "computedAt": "2026-07-14T01:25:56.025419+00:00",
+  "durationMs": 84207,
+  "engineVersion": "sympy 1.14.0",
+  "scriptFile": "qbeta_dladder_log_q_holonomic_probe.py"
+}
