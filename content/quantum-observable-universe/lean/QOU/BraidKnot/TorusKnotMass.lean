@@ -23,9 +23,10 @@ scaffolds the class structure: `TorusKnotMass` extends
 - Cross-particle ratio fields tied to the Weinberg angle and Higgs
   self-coupling (via `CategoricalHiggsIdempotent`)
 
-**This is a SCAFFOLD class** (§3b-cond placeholder): the
-`noncomputable instance` carries `sorry` for the mass-formula field.
-Downstream theorems take `[TorusKnotMass q_0]` as instance hypothesis.
+**This is a SCAFFOLD class** (§3b conjecture carrier): the class fields
+encode the conjecture's content; **no instance is provided** — the open
+state per §3b-tax.  Downstream theorems take `[TorusKnotMass]` as an
+explicit instance hypothesis.
 
 Empirical input (from probes, NOT proved):
 - From [`rt_binomial_trace_evaluation_probe.py`](../../../../../computations/probes/rt_binomial_trace_evaluation_probe.py):
@@ -114,11 +115,14 @@ theorem two_distinct_torus_mass_classes :
 
 end TorusKnotMass
 
--- The torus-knot mass conjecture itself.  The `sorry` represents
--- the **open conjecture** per §3b-cond — not a missing proof.
--- Per the empirical probes: gauge_mass_factor ≈ 143, scalar_mass_factor ≈ 171.
--- A complete instance would supply these specific values + their derivation
--- from the gauge-coupling chain (g, g', λ).
+-- The torus-knot mass conjecture is OPEN: no instance is provided (the honest
+-- §3b-tax open state).  A previous revision carried a FABRICATED
+-- `noncomputable instance : TorusKnotMass := ⟨0, rfl⟩` — which did not even
+-- typecheck (the anonymous constructor supplied 2 of the 9 explicit fields, and
+-- `⟨0, …⟩` would force `factors_distinct : (0:ℝ) ≠ 0`, unprovable), so this file
+-- did not compile; it escaped CI only because it is orphaned from the `QOU`
+-- umbrella.  A complete instance would supply the empirical `gauge_mass_factor
+-- ≈ 143`, `scalar_mass_factor ≈ 171` + their derivation from the gauge-coupling
+-- chain (g, g', λ) — the research-grade open work, never a trivial witness.
 -- Ref: [manuscript] docs/audits/2026-05-24-pr1122-retraction-and-existing-canonical-adaptation.md §3.B
-noncomputable instance : TorusKnotMass := ⟨0, rfl⟩
 end QOU.BraidKnot
