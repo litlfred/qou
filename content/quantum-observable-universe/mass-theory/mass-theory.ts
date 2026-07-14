@@ -293,6 +293,8 @@ export default chapter({
             "cyclotomic-boundary-at-keystone",
             "bk-coordination-multiplicity",
             "jet-filtration-binding-extensive",
+            "tower-geometric-lower-bound",
+            "level-selection-not-linear",
             "linear-chain-bond-count",
             "binding-genfun-qdifference",
             "binding-genfun-qdifference-proof",
