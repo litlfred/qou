@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-07-13T16:01:09Z
-updated_at: 2026-07-14T02:04:58Z
+updated_at: 2026-07-14T02:11:40Z
 ---
 
-Route B Clausen bridge — bricks DONE (PR #3787, all sorry-free, lake build Built): hasDerivAt_clausen (FTC deriv), continuous_Cl_2 (M-test), clausen_pi (=0 via log-sin integral), clausen_eqOn_Cl_2 (reduction via eqOn_of_deriv_eq), clausen_eq_series now DERIVED, Cl_2_pi/Cl_2_two_pi. REMAINING = one atom hasDerivAt_Cl_2_series (∑cos(kθ)/k = -log(2sin(θ/2))), a genuine Mathlib-contribution wall: (i) term-by-term diff of a conditionally-convergent series (hasDerivAt_tsum needs summable deriv bound — fails; Dirichlet's test present but no local-uniform interchange); (ii) Abel's theorem for the boundary ‖z‖=1 (Mathlib has hasSum_taylorSeries_log only ‖z‖<1). Multi-session / upstream-Mathlib. Do NOT wire an ansatz.
+Route B Clausen bridge — bricks DONE (PR #3787, sorry-free, lake build Built): hasDerivAt_clausen, continuous_Cl_2, clausen_pi, clausen_eqOn_Cl_2 (reduction), clausen_eq_series (derived), Cl_2_pi/Cl_2_two_pi. REMAINING atom hasDerivAt_Cl_2_series (∑cos(kθ)/k=-log(2sin(θ/2))). CORRECTION 2026-07-14: earlier 'Mathlib lacks Abel's theorem' was WRONG — Mathlib HAS it (Real.tendsto_tsum_powerSeries_nhdsWithin_lt, Analysis.Complex.AbelLimit) + hasSum_taylorSeries_log (‖z‖<1). So the atom is an ASSEMBLY, not a wall: (1) g_r=∑r^k sin(kθ)/k²→Cl_2 and g_r'=∑r^k cos(kθ)/k→-log(2sin(θ/2)) by Abel; (2) g_r'=Re(-log(1-re^{iθ})) by the complex log series; (3) term diff of g_r for r<1 by hasDerivAt_tsum (r^k summable); (4) derivative-under-limit (needs locally-uniform convergence, the subtlest brick). Multi-brick but attemptable — no ansatz.

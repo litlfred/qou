@@ -157,17 +157,20 @@ theorem hasDerivAt_Cl_2_series {θ : ℝ} (h0 : 0 < θ) (h2 : θ < 2 * π) :
     HasDerivAt QOU.Archimedean.Cl_2 (-Real.log (2 * Real.sin (θ / 2))) θ := by
   -- Ref: [zagier1986] term-by-term d/dθ ∑ sin(kθ)/k² = ∑ cos(kθ)/k = -log(2 sin(θ/2))
   --
-  -- ATOM DECOMPOSITION (calibrated against Mathlib 2026-07; two sub-walls remain,
-  -- each Mathlib-contribution-sized — do NOT wire an ansatz, this is honestly open):
-  --   (i) term-by-term diff  Cl_2'(θ) = ∑ cos(kθ)/k.  `hasDerivAt_tsum`
-  --       (SmoothSeries) needs a SUMMABLE derivative bound; the derivative series
-  --       ∑ cos(kθ)/k is only CONDITIONALLY convergent (bound 1/k not summable),
-  --       so it does not apply.  Mathlib HAS Dirichlet's test
-  --       (SpecificLimits.Normed) giving convergence, but not the local-uniform /
-  --       Dirichlet-kernel argument needed for the derivative interchange.
-  --  (ii) boundary identity  ∑ cos(kθ)/k = -log(2 sin(θ/2)) = Re(-log(1-e^{iθ})).
-  --       Mathlib HAS `hasSum_taylorSeries_log` for ‖z‖<1 (Complex.LogBounds) but
-  --       NOT Abel's theorem to pass to the boundary ‖z‖=1 (θ ∉ 2πℤ).
+  -- ASSEMBLY (not a wall — CORRECTED 2026-07-14: an earlier note here wrongly
+  -- claimed "Mathlib lacks Abel's theorem"; it does NOT).  The standard Abel-
+  -- regularized proof assembles pieces that ALL exist in Mathlib:
+  --   • g_r(θ) := ∑ r^k sin(kθ)/k² converges absolutely for r<1, so term-by-term
+  --     diff (`hasDerivAt_tsum`, summable bound r^k) gives
+  --     g_r'(θ) = ∑ r^k cos(kθ)/k — the conditional-convergence obstruction only
+  --     bites at r=1, and is dissolved by regularising.
+  --   • g_r'(θ) = Re(-log(1 - r e^{iθ})) via `hasSum_taylorSeries_log` (‖z‖<1,
+  --     Complex.LogBounds), whose r→1⁻ limit is -log‖1-e^{iθ}‖ = -log(2 sin(θ/2)).
+  --   • the r→1⁻ limits g_r→Cl_2 and g_r'→-log(2 sin(θ/2)) are exactly
+  --     `Real.tendsto_tsum_powerSeries_nhdsWithin_lt` (Analysis.Complex.AbelLimit).
+  --   • the remaining subtlety is the derivative-under-limit step (needs locally-
+  --     uniform convergence of g_r', e.g. `hasDerivAt_of_tendstoLocallyUniformly`).
+  -- Attemptable multi-brick assembly, NOT an open-in-Mathlib gap. Tracked qou-reab.
   sorry
 
 /-- **Reduction (Route-B brick 2, sorry-free modulo the atom).** `clausen` and
