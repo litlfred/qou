@@ -145,7 +145,26 @@ Both honest-negative:
   Corpus negatives confirm the discipline: `QBetaZeta4ResidueRefutation` (ζ₄ route
   excluded), `FMapDirectCyclotomic` (fibre collapse never descends to real q).
 
-No fabricated targets taken; the repo is already well-curated on exactly these two axes. Remaining beans qou-8t34 (cyclotomic, anti-fit-gated), qou-x3nt (pairing / narrow a
+No fabricated targets taken; the repo is already well-curated on exactly these two axes.
+
+### Lever C (`qou-g020`, 2-adic ℤ/2 grading on the binding side) — no target
+
+The 2-adic ℤ/2 grading is a **bar-odd (decay)** phenomenon, already fully formalized in
+`DLadderTwoAdicGrading` (anchor `bDen_two_adic_graded`; uniqueness contrast
+`three_not_parity_graded` — p=2 is the unique graded prime; §3b `DLadderGradingConjecture`).
+Binding is **bar-even**, where the grading is trivial by design: `BorromeanTowerConvergence`
+is a convergence-radius result (h²≤1), not a denominator valuation, and the even
+Rogers–Szegő tower `∏(1−q^{2i+1})` has integer coefficients (nothing to grade). Formalizing
+"bar-even is 2-adically trivial" is a near-tautology, not a gap-closer. Honest negative.
+
+## Session close (2026-07-14)
+
+Milestone `qou-yx6b` complete: 6/6 beans resolved — **3 genuine sorry-free chips** landed
+(bar-parity `qou-yq2u`, growth `qou-opto`, paper-formalization `qou-umw8`) + the C8
+super-exponential integration chip; **3 honest no-targets** (`qou-x3nt`, `qou-8t34`,
+`qou-g020`) where forcing a chip would have duplicated existing work or laundered a fit.
+The honest-negative ratio is the point: the insights that genuinely bit did, and the ones
+that didn't were reported as such rather than fabricated. Remaining beans qou-8t34 (cyclotomic, anti-fit-gated), qou-x3nt (pairing / narrow a
 class), qou-g020 (2-adic, speculative for binding) are lower-confidence.
 
 ---
