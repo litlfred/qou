@@ -126,4 +126,51 @@ theorem no_linear_selection (w : ℕ → ℝ) (r c : ℝ) [T : TowerGeometricLow
       _ = (c/2) * r ^ A := step3
   nlinarith [mul_pos hc hrpos, final]
 
+open Filter Topology Asymptotics in
+/-- **Super-linear (incl. bond-count) selection is excluded too.** Generalises
+`no_linear_selection`: for any level rule `kA` that is eventually at least linear
+(`A ≤ kA A` for `A ≥ A₀`), extensive binding `w (kA A) ≤ M·A` on the same tail is
+impossible — because `c·r^A ≤ c·r^{kA A}` (monotonicity, `r > 1`) reduces it to the same
+geometric-beats-linear contradiction. In particular the **bond-count** rule
+`kA A = A(A−1)/2` satisfies `A ≤ kA A` for `A ≥ 3`, so it is excluded (with `A₀ = 3`,
+its physical deuteron-and-up regime) — discharging the "`A(A−1)/2` a fortiori excluded"
+claim that `no_linear_selection`'s docstring only asserted in prose. The threshold `A₀`
+plays the same honest role as the `A ≥ 1` restriction: it is the physical domain, not a
+boundary artifact. -/
+theorem no_superlinear_selection (w : ℕ → ℝ) (r c : ℝ) [T : TowerGeometricLowerBound w r c]
+    (M : ℝ) (kA : ℕ → ℕ) (A₀ : ℕ) (hsuper : ∀ A, A₀ ≤ A → A ≤ kA A)
+    (hext : ∀ A, A₀ ≤ A → w (kA A) ≤ M * (A : ℝ)) : False := by
+  have hr := T.one_lt_r
+  have hc := T.c_pos
+  have hr0 : (0:ℝ) < r := by linarith
+  have hlo := isLittleO_coe_const_pow_of_one_lt (R := ℝ) (r := r) hr
+  have hε : (0:ℝ) < c / (2 * (|M| + 1)) := div_pos hc (by positivity)
+  have hev := hlo.def hε
+  have hev1 : ∀ᶠ A : ℕ in atTop, A₀ ≤ A ∧ 1 ≤ A :=
+    eventually_atTop.2 ⟨max A₀ 1, fun A h =>
+      ⟨le_trans (le_max_left _ _) h, le_trans (le_max_right _ _) h⟩⟩
+  obtain ⟨A, hbnd, hA0, hA1⟩ := (hev.and hev1).exists
+  have hA1' : (1:ℝ) ≤ (A:ℝ) := by exact_mod_cast hA1
+  have hApos : (0:ℝ) < (A:ℝ) := by linarith
+  have hrpos : (0:ℝ) < r ^ A := pow_pos hr0 A
+  rw [Real.norm_eq_abs, Real.norm_eq_abs, abs_of_pos hApos, abs_of_pos hrpos] at hbnd
+  have hmono : c * r ^ A ≤ c * r ^ (kA A) :=
+    mul_le_mul_of_nonneg_left (pow_le_pow_right₀ (le_of_lt hr) (hsuper A hA0)) (le_of_lt hc)
+  have hcombine : c * r ^ A ≤ M * (A:ℝ) :=
+    le_trans hmono (le_trans (T.lower_bound (kA A)) (hext A hA0))
+  have habs : M ≤ |M| := le_abs_self M
+  have hMc : (0:ℝ) < |M| + 1 := by positivity
+  have step1 : M * (A:ℝ) ≤ (|M| + 1) * (A:ℝ) := by
+    nlinarith [mul_nonneg (by linarith [habs] : (0:ℝ) ≤ |M| - M + 1) (le_of_lt hApos)]
+  have step2 : (|M| + 1) * (A:ℝ) ≤ (|M| + 1) * ((c/(2*(|M|+1))) * r^A) :=
+    mul_le_mul_of_nonneg_left hbnd (le_of_lt hMc)
+  have hne : (|M| + 1) ≠ 0 := ne_of_gt hMc
+  have step3 : (|M| + 1) * ((c/(2*(|M|+1))) * r^A) = (c/2) * r^A := by field_simp
+  have final : c * r ^ A ≤ (c/2) * r ^ A :=
+    calc c * r ^ A ≤ M * (A:ℝ) := hcombine
+      _ ≤ (|M| + 1) * (A:ℝ) := step1
+      _ ≤ (|M| + 1) * ((c/(2*(|M|+1))) * r^A) := step2
+      _ = (c/2) * r ^ A := step3
+  nlinarith [mul_pos hc hrpos, final]
+
 end QOU.Mass.LevelSelection
