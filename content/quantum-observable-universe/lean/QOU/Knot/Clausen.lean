@@ -37,6 +37,7 @@ import Mathlib.Analysis.SpecialFunctions.Integrability.LogMeromorphic
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus
 import Mathlib.Analysis.Normed.Group.FunctionSeries
 import Mathlib.Analysis.PSeries
+import Mathlib.Analysis.SpecialFunctions.Integrals.LogTrigonometric
 import QOU.Archimedean.ClausenFunctionMathlibFiller
 
 namespace QOU.Knot
@@ -113,31 +114,81 @@ theorem continuous_Cl_2 : Continuous QOU.Archimedean.Cl_2 := by
       exact abs_le.mpr ⟨Real.neg_one_le_sin _, Real.sin_le_one _⟩)
   simpa only [QOU.Archimedean.Cl_2] using hcont
 
-/-- **Bridge to the series Clausen (classical Zagier identity, cited).** On the
-    fundamental domain, the integral Clausen equals the Fourier-series Clausen
-    `QOU.Archimedean.Cl_2`:
-    `∫₀^θ -log(2 sin(t/2)) dt = ∑_{k≥1} sin(kθ)/k²`. This is the Fourier
-    expansion of `log(2 sin(·/2))`, classical (Zagier) but NOT in Mathlib — the
-    exact "Fourier-series infrastructure" gap the filler file records. Encoded
-    per the anti-laundering rule as a CITED `sorry` (established in the
-    literature, not an open problem), reducing the filler's derivative gap to
-    this single named identity. -/
-theorem clausen_eq_series {θ : ℝ} (h0 : 0 ≤ θ) (h2 : θ ≤ 2 * π) :
-    clausen θ = QOU.Archimedean.Cl_2 θ := by
-  -- Ref: [zagier1986] Cl₂(θ) = -∫₀^θ log(2 sin(t/2)) dt (Fourier expansion of log∘sin)
+/-- **`clausen π = 0` (Route-B brick 2, sorry-free).** The interior agreement
+    point that pins the bridge constant. Change of variables `t = 2x`
+    (`integral_comp_div`) reduces to `∫₀^{π/2} log(2 sin x)`, which splits
+    *pointwise* on `Ι 0 (π/2)` (there `sin x > 0`) into `log 2 + log sin x`;
+    Mathlib's `integral_log_sin_zero_pi_div_two = -log2·π/2` then gives
+    `(π/2)log2 + (-log2·π/2) = 0`. No a.e. reasoning. -/
+theorem clausen_pi : clausen π = 0 := by
+  have hpi := Real.pi_pos
+  have hhalf : (∫ x in (0:ℝ)..(π / 2), Real.log (2 * Real.sin x)) = 0 := by
+    have hia : IntervalIntegrable (fun x => Real.log (Real.sin x)) volume 0 (π / 2) :=
+      intervalIntegrable_log_sin
+    have hsplit : (∫ x in (0:ℝ)..(π / 2), Real.log (2 * Real.sin x))
+        = ∫ x in (0:ℝ)..(π / 2), (Real.log 2 + Real.log (Real.sin x)) := by
+      apply intervalIntegral.integral_congr_ae
+      refine Filter.Eventually.of_forall (fun x hx => ?_)
+      rw [Set.uIoc_of_le (by linarith [Real.pi_pos] : (0:ℝ) ≤ π / 2)] at hx
+      have hsx : 0 < Real.sin x :=
+        Real.sin_pos_of_pos_of_lt_pi hx.1 (by linarith [Real.pi_pos, hx.2])
+      rw [Real.log_mul two_ne_zero (ne_of_gt hsx)]
+    rw [hsplit, intervalIntegral.integral_add _root_.intervalIntegrable_const hia,
+      integral_log_sin_zero_pi_div_two, intervalIntegral.integral_const, smul_eq_mul]
+    ring
+  have hcov : clausen π
+      = -(2 * ∫ x in (0:ℝ)..(π / 2), Real.log (2 * Real.sin x)) := by
+    unfold clausen
+    rw [intervalIntegral.integral_neg]
+    congr 1
+    have h := intervalIntegral.integral_comp_div
+      (f := fun u => Real.log (2 * Real.sin u)) (a := 0) (b := π) (c := 2) two_ne_zero
+    simpa using h
+  rw [hcov, hhalf]; ring
+
+/-- **The atom (single CITED sorry) — the series Clausen's term-by-term
+    derivative.** `Cl_2'(θ) = -log(2 sin(θ/2))` on `(0, 2π)`. This IS the
+    Fourier/Abel content Mathlib lacks: differentiating `∑ sin(kθ)/k²`
+    term-by-term gives `∑ cos(kθ)/k`, whose boundary summation equals
+    `-log(2 sin(θ/2))` (classical, Zagier). I verified Mathlib has the log power
+    series only for `|x|<1` and no Abel/boundary summation. Everything
+    downstream (the bridge, the constant-pinning) is *proved* from this one. -/
+theorem hasDerivAt_Cl_2_series {θ : ℝ} (h0 : 0 < θ) (h2 : θ < 2 * π) :
+    HasDerivAt QOU.Archimedean.Cl_2 (-Real.log (2 * Real.sin (θ / 2))) θ := by
+  -- Ref: [zagier1986] term-by-term d/dθ ∑ sin(kθ)/k² = ∑ cos(kθ)/k = -log(2 sin(θ/2))
   sorry
 
-/-- **The series Clausen inherits the derivative.** `Cl_2'(θ) = -log(2 sin(θ/2))`
-    for `θ ∈ (0, 2π)` — the derivative the filler file
-    (`ClausenFunctionMathlibFiller`) flagged as "requires Fourier-series
-    infrastructure", now reduced to the single cited bridge `clausen_eq_series`
-    (the proved FTC content is `hasDerivAt_clausen`). Dual-purpose: this is
-    `V'(θ)` of `rem:dilog-saddle-regime`, zero at the saddle `θ = π/3`. -/
+/-- **Reduction (Route-B brick 2, sorry-free modulo the atom).** `clausen` and
+    `Cl_2` agree on `(0, 2π)`: both have derivative `-log(2 sin(θ/2))` there
+    (`hasDerivAt_clausen`, `hasDerivAt_Cl_2_series`) and agree at the interior
+    point `θ = π` (`clausen_pi`, `Cl_2_pi`), so they are equal on the connected
+    open interval by `eqOn_of_deriv_eq`. This is the constant-pinning machinery
+    that turns the single derivative atom into the full series↔integral bridge. -/
+theorem clausen_eqOn_Cl_2 :
+    Set.EqOn clausen QOU.Archimedean.Cl_2 (Set.Ioo (0:ℝ) (2 * π)) := by
+  have hpi := Real.pi_pos
+  have hπ : π ∈ Set.Ioo (0:ℝ) (2 * π) := ⟨hpi, by linarith⟩
+  refine isOpen_Ioo.eqOn_of_deriv_eq isPreconnected_Ioo
+    (fun θ hθ => (hasDerivAt_clausen hθ.1 hθ.2).differentiableAt.differentiableWithinAt)
+    (fun θ hθ => (hasDerivAt_Cl_2_series hθ.1 hθ.2).differentiableAt.differentiableWithinAt)
+    (fun θ hθ => ?_) hπ ?_
+  · rw [(hasDerivAt_clausen hθ.1 hθ.2).deriv, (hasDerivAt_Cl_2_series hθ.1 hθ.2).deriv]
+  · rw [clausen_pi, QOU.Archimedean.Cl_2_pi]
+
+/-- **Series↔integral bridge (sorry-free modulo the atom).** On `(0, 2π)`,
+    `∫₀^θ -log(2 sin(t/2)) = ∑ sin(kθ)/k²` — now *derived* from
+    `clausen_eqOn_Cl_2`, not posited. The sole remaining `sorry` is the atom
+    `hasDerivAt_Cl_2_series`. -/
+theorem clausen_eq_series {θ : ℝ} (hθ : θ ∈ Set.Ioo (0:ℝ) (2 * π)) :
+    clausen θ = QOU.Archimedean.Cl_2 θ :=
+  clausen_eqOn_Cl_2 hθ
+
+/-- **The series Clausen's derivative** `Cl_2'(θ) = -log(2 sin(θ/2))` for
+    `θ ∈ (0, 2π)` — the derivative the filler flagged as needing Fourier
+    infrastructure, now exactly the atom. Dual-purpose: `V'(θ)` of
+    `rem:dilog-saddle-regime`, zero at the `θ = π/3` saddle. -/
 theorem hasDerivAt_cl_2 {θ : ℝ} (h0 : 0 < θ) (h2 : θ < 2 * π) :
-    HasDerivAt QOU.Archimedean.Cl_2 (-Real.log (2 * Real.sin (θ / 2))) θ := by
-  have heq : QOU.Archimedean.Cl_2 =ᶠ[nhds θ] clausen := by
-    filter_upwards [Ioo_mem_nhds h0 h2] with x hx
-    exact (clausen_eq_series hx.1.le hx.2.le).symm
-  exact (hasDerivAt_clausen h0 h2).congr_of_eventuallyEq heq
+    HasDerivAt QOU.Archimedean.Cl_2 (-Real.log (2 * Real.sin (θ / 2))) θ :=
+  hasDerivAt_Cl_2_series h0 h2
 
 end QOU.Knot
