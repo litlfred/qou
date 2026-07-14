@@ -157,4 +157,47 @@ def transpose (T : StandardYoungTableau μ) : StandardYoungTableau μ.transpose 
     rw [hfun, transpose_cells_card]
     exact T.bijOn.comp (swap_bijOn_cells μ)
 
+/-- **The double transpose recovers the filling** at the entry level: `Tᵀᵀ` has the
+    same entry map as `T` (`entry (i,j) = T.entry (i,j)`). Definitional — the entry
+    of `transpose` is the coordinate-swapped entry of its argument, and swapping
+    twice is the identity. This is the involution-of-transpose statement in the form
+    the character sum consumes (entry-level), independent of the
+    `μᵀᵀ = μ` diagram identification. -/
+theorem transpose_transpose_entry (T : StandardYoungTableau μ) (i j : ℕ) :
+    (transpose (transpose T)).entry i j = T.entry i j := rfl
+
+/-! ## The self-conjugate involution (bean `qou-tqab`) -/
+
+/-- **Transport preserves the entry map**: casting a standard tableau along a diagram
+    equality `μ = ν` leaves each entry value unchanged (the entry map is
+    `ℕ → ℕ → ℕ`, independent of the diagram). Proved with fresh `ν` so the transport
+    `subst`s cleanly — the self-referential `μᵀ = μ` case is recovered by
+    instantiation. -/
+theorem entry_cast {μ ν : YoungDiagram} (h : μ = ν) (S : StandardYoungTableau μ)
+    (i j : ℕ) : (h ▸ S).entry i j = S.entry i j := by
+  cases h; rfl
+
+/-- **The self-conjugate transpose** — for a **self-conjugate** shape (`μᵀ = μ`), the
+    conjugate transpose is an endomorphism `SYT(μ) → SYT(μ)`, obtained by transporting
+    `transpose T : SYT(μᵀ)` back across `μᵀ = μ`. This is the `f` that
+    `card_row_eq_card_col` consumes: for the generator pair `1, 2` it swaps the
+    same-row and same-column classes. -/
+noncomputable def selfTranspose (h : μ.transpose = μ) (T : StandardYoungTableau μ) :
+    StandardYoungTableau μ :=
+  h ▸ transpose T
+
+/-- The self-conjugate transpose swaps coordinates at the entry level:
+    `(selfTranspose h T).entry (i,j) = T.entry (j,i)`. -/
+theorem selfTranspose_entry (h : μ.transpose = μ) (T : StandardYoungTableau μ)
+    (i j : ℕ) : (selfTranspose h T).entry i j = T.entry j i := by
+  rw [selfTranspose, entry_cast]
+  rfl
+
+/-- **`selfTranspose` is an involution** (entry level): applying the self-conjugate
+    transpose twice recovers `T`'s filling. This is the involutivity hypothesis
+    `card_row_eq_card_col` needs, in the entry form the class Finsets are cut out by. -/
+theorem selfTranspose_involutive (h : μ.transpose = μ) (T : StandardYoungTableau μ)
+    (i j : ℕ) : (selfTranspose h (selfTranspose h T)).entry i j = T.entry i j := by
+  rw [selfTranspose_entry, selfTranspose_entry]
+
 end QOU.BraidKnot.SeminormalCharacterConnector
