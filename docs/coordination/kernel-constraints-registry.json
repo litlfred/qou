@@ -1,6 +1,6 @@
 {
   "schema": "kernel-constraints-registry/v1",
-  "updated": "2026-07-13",
+  "updated": "2026-07-14",
   "authoritative_markdown": "docs/coordination/ck-dk-canonical-registry.md#9-kernel--f-map-structural-constraint-registry-added-2026-07-07",
   "meta": {
     "tiers": {
@@ -208,12 +208,12 @@
     },
     {
       "id": "KC22",
-      "statement": "D(u~) is NOT low-order (q-)holonomic in any tested class. Exact d_k = a_k + b_k*sqrt3 in Q(sqrt3) through k=21; super-exponentially divergent (q-Gevrey, radius -> 0; the ~0.143 ratio is the (k!)^C shadow, not a radius). Negatives (all exact / prime-certified): no Q P-finite recurrence for a_k or b_k separately; no coupled Q(sqrt3) matrix P-recurrence (r<=2 D<=4; r=3 D<=3; r=4 D<=2, over-determined); no q-holonomic recurrence in base 3, 1/3, or classical k (r<=3, E<=3, full column rank mod large primes) — even though denominators are 3-smooth (v3(den d_k) ~ 1.5k, Ohtsuki-Habiro). Denominator 2-adic valuation is parity-graded (proved window K=5; open conjecture class beyond; p=3 ungraded => 2 is the unique graded prime). Consequence: the odd-channel element is transcendental/resurgent (Ecalle acceleration class), not a q-difference equation — the low-order (q-)holonomic search class is closed.",
+      "statement": "D(u~) is NOT low-order (q-)holonomic in any tested class. Exact d_k = a_k + b_k*sqrt3 in Q(sqrt3) through k=21; super-exponentially divergent (q-Gevrey, radius -> 0; the ~0.143 ratio is the (k!)^C shadow, not a radius). Negatives (all exact / prime-certified): no Q P-finite recurrence for a_k or b_k separately; no coupled Q(sqrt3) matrix P-recurrence (r<=2 D<=4; r=3 D<=3; r=4 D<=2, over-determined); no q-holonomic recurrence in base 3, 1/3, or classical k (r<=3, E<=3, full column rank mod large primes) — even though denominators are 3-smooth (v3(den d_k) ~ 1.5k, Ohtsuki-Habiro). Denominator 2-adic valuation is parity-graded (proved window K=5; open conjecture class beyond; p=3 ungraded => 2 is the unique graded prime). Consequence: the odd-channel element is transcendental/resurgent (Ecalle acceleration class), not a q-difference equation — the low-order (q-)holonomic search class is closed. LOG-CLOSURE (2026-07-14, owner-suggested): log D and u*D'/D (exact l_k in Q(sqrt3), k<=20) are likewise not low-order coupled-Q(sqrt3) P-finite nor q-holonomic in base 3, 1/3, or classical k (same windows, prime-certified) — D is not the exp of a low-order (q-)holonomic element.",
       "tier": "symbolic-exact",
       "lean": "QOU.QBeta.DLadderTwoAdicGrading.bDen_two_adic_graded; QOU.QBeta.DLadderTwoAdicGrading.three_not_parity_graded",
       "parity": null,
       "q1_shadow": null,
-      "source": "PR #3737; docs/audits/2026-07-13-dladder-coupled-recurrence-and-2adic-parity-grading.md; docs/audits/2026-07-12-dladder-divergence-correction.md"
+      "source": "PR #3737; docs/audits/2026-07-13-dladder-coupled-recurrence-and-2adic-parity-grading.md; docs/audits/2026-07-12-dladder-divergence-correction.md; computations/qbeta/qbeta-dladder-log-q-holonomic.witness.json (PR pending)"
     }
   ]
 }
