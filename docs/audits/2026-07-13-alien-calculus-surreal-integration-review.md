@@ -1,6 +1,22 @@
 # Alien calculus ↔ surreal number integration review (2026-07-13)
 
-**Status: COMPLETE — option menu delivered; no production wiring in this PR.**
+**Status: COMPLETE — all six options EXECUTED on this branch (owner: "do all"), no production wiring.**
+
+Execution record (2026-07-14):
+
+| Option | Landed as |
+|---|---|
+| A (wiring + notation) | `st` + `ord_ω` rows in notation Table 10; new block `rem:st-is-median-resummation` (interprets `def:ecalle-borel-resummation`); cross-`uses[]` edges |
+| B (median = st proposition) | `conj:surreal-limit-transfer` + `QOU/AppendixSurreals/SurrealLimitTransfer.lean` — content-bearing class, **no instance, no sorry**; two derived theorems fully proved (`standardPart_evalOmega_of_tendstoReal`, `tendstoReal_le_of_eventuallyLE`); verified `lean`-direct exit 0 |
+| C (QM upgrade of 4₁) | `kashaev-surreal`: 4₁ instance now `=` (MM2001 + transfer equivalence), new §"Figure-eight discharge and quantum-modularity refinement" (GZ exact cocycle, GGM integer Stokes counts, Fantini–Rella template); bib entries `garoufalidis-gu-marino2021`, `fantini-rella2024` added; status authorNote |
+| D (modular-resurgence probe) | `computations/probes/qbeta_modular_resurgence_stokes_probe.py` + audit-only witness. **Result (scope-(a)):** action consistent with Vol(4₁)/π within spread (rel. dev. 5.2%, Richardson over 5 exact triples); the naive β = 3/2 modular-weight reading of the as-normalized rung ladder **fails** (β_inf ≈ 0.44, raw trend ≈ 0.21–0.26; normalisation-sensitive, so this constrains the ladder normalisation, not the template); Stokes constant not identifiable at 7 rungs (best structured-grid candidate √(3/(2π)) at 0.15% — recorded under the 1/210 entropy bar, **not** claimed); L-function tower blocked. A_ω derivation route remains the GGM state-integral / 3d-index face (G3). |
+| E (§7ab surreal-equality form) | AGENTS.md §7ab optional `X = Y + δ` (`ord_ω`-graded) recording form, explicitly L-tier |
+| F (guardrail) | [`docs/surreal-analysis-guardrail.md`](../surreal-analysis-guardrail.md) — licensed vs forbidden analytic → surreal moves |
+
+Validation note: the folio-assistant content pipeline is unavailable in
+this sandbox; all `.md` edits passed the manual render-QA grep battery
+but were **not machine-validated**. Lean changes verified via
+`lean`-direct (exit 0) after lake-cache restore.
 
 Scope: find linkage points between the alien-calculus/resurgence thread
 (Borel–Écalle machinery, dilogarithm/transcendental data such as
