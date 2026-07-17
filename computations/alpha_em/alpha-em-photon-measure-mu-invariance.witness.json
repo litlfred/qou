@@ -1,0 +1,63 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-17T20:44:46.073247+00:00",
+  "commitSha": "2cc885523c49d222c7f7c40a357c18485c6bd2ef",
+  "assertions": [
+    {
+      "name": "mu_invariant_b1_is_neg_zeta",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "the μ-invariant appearance of b₁ is exactly ζ_{Δ₁}(0)=−b₁ (area-free, #3834)"
+    },
+    {
+      "name": "mu_absorbs_any_constant_fitting_trap",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "μ=m^{−1/b₁} reproduces ANY target measure m incl 1/(8π) => flat-torus determinant cannot discriminate 1/(π b₁); μ-tune is the forbidden fitting trap"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 16,
+  "computation": "alpha-em-photon-measure-mu-invariance",
+  "scriptFile": "alpha_em_photon_measure_mu_invariance_probe.py",
+  "scriptHash": "f5a121427d62",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Front-3 continuation of #3834: decompose the target photon per-loop measure 1/(π b₁)=1/(8π) into its μ-normalization-INVARIANT part (derivable from the determinant) and its μ-SECTOR part (a fitting trap on the flat torus). The 1-loop fluctuation measure on the Jacobian torus T^{b₁} is Z_fluc(μ)=μ^{ζ_{Δ₁}(0)}·(det'Δ₁)^{-1/2} with ζ_{Δ₁}(0)=−b₁ (#3834). (1) μ-INVARIANT: the only place b₁ enters invariantly is the anomaly ζ_{Δ₁}(0)=−b₁, area-free — the derived 'why b₁ not Area' mechanism. (2) μ-SECTOR: the μ-power is μ^{−b₁} (exponential in b₁), NOT the reciprocal 1/b₁; demonstrated that ANY target measure value (incl. 1/(8π)) is reachable by choosing μ (μ=m^{−1/b₁}), so a flat-torus determinant cannot discriminate 1/(8π) — tuning μ to make 8π appear is the spec's forbidden fitting trap. (3) CONSEQUENCE: the flat-torus determinant route is PRUNED; the reciprocal+π of 1/(π b₁) requires an independent μ-fixing = the categorical RT shadow-world normalization on the genus-4 Jacobian (μ-invariant), not a flat-torus μ-tune. Scope-(a) structural + route-prune; no α_k wired; no fit; does NOT manufacture 8π; 1/(8π) stays a phase-4 identification.",
+  "contentBlock": "prop:alpha-em-categorical-trace",
+  "data": {
+    "mu_invariant": {
+      "b1": 8,
+      "zeta_delta1_0": -8,
+      "mu_power_of_measure": -8,
+      "reading": "b₁ enters μ-invariantly ONLY as ζ_{Δ₁}(0)=−b₁ (area-free, #3834) = the derived 'why b₁ not Area'"
+    },
+    "mu_sector_fitting_trap": {
+      "mu_power_is_exponential_not_reciprocal": true,
+      "any_constant_reachable_by_mu": true,
+      "mu_for_1_over_8pi": "1.496338956",
+      "reading": "μ^{−b₁} exponential ⇒ 1/b₁ reciprocal + π live in the μ-normalization sector; μ absorbs any constant ⇒ flat-torus determinant cannot force 1/(8π) (fitting trap)"
+    },
+    "consequence": {
+      "flat_torus_route": "PRUNED — cannot force 1/(π b₁) without a forbidden μ-tune",
+      "honest_wall": "the RT / Reshetikhin–Turaev shadow-world normalization on the genus-4 Jacobian (μ-invariant TQFT prescription) — the multi-week item, now sharpened to the μ-fixing"
+    }
+  }
+}
