@@ -22,15 +22,45 @@ The actual algebraic content (Stembridge crystal axiom, type-A
 embedding, Demazure closure) is captured as conditional classes whose
 fields state the genuine conditions (crystal reversibility, a crystal
 morphism into the abstract standard-`sl_n` target, closure of the
-Demazure sub-crystal under lowering) — no longer `True` markers.
-Constructing instances (the concrete standard-`sl_n` tensor-power crystal
-and the Demazure characters) is the open infrastructure work.
+Demazure sub-crystal under lowering) — no longer `True` markers. The
+`standardSl2Crystal` (`B(Λ₁)`) instances below inhabit all four classes,
+so the scaffold is honest (non-vacuous) infrastructure. Constructing the
+*general* instances (the concrete standard-`sl_n` tensor-power crystal and
+the Demazure characters) is the open — and currently unscheduled —
+infrastructure work; see the route-status note below.
+
+## Route status (2026-07-17): PARKED — honest scaffold, do-not-re-pitch route
+
+This scaffold is honest and non-vacuous, but the motivating route it was
+built to serve — a **residue-A KLR/crystal derivation of the `Q_β` `c_k`
+precision-ladder coefficients** — is **not** an active direction, and this
+file should not be read as an invitation to wire it up:
+
+- The KLR/crystal link-Markov-closure route carries a standing
+  **"DO NOT RE-PITCH"** note in `.beans/1ppq-qbeta-queue.json` (AGENTS.md
+  §7b skeptical prior + the 2026-05-30 KLR dialog assessment found 0/6
+  candidate proofs shorten under a KLR layer).
+- Its finite-dimensional form is **falsified**: the 2026-07-11 Gemini audit
+  (`docs/audits/2026-07-11-gemini-session-c3-overclaim-continuum-and-lean-audit.md`,
+  Finding 4) shows the `[3]_q`/Gram-trace "pion" factor does not fall out of
+  the finite-dim KLR/Hecke `H₃(q)` Markov trace (raw trace `−4 + i√3 ≠ 0`).
+- The live `c_k` direction has moved to the geometric Φ_b state-integral +
+  `D(u)` ladder function, which does **not** route through these types.
+
+Accordingly these classes have **no downstream Lean consumers** at present.
+The residue-A infra scope doc below remains "scoping only; owner direction
+required before any items proceed" — no such go-ahead is on record. Keep the
+scaffold (an honest inhabited scaffold is strictly better than the vacuous
+`: True` version it replaced); do not resurrect the residue-A crystal route
+without first clearing the do-not-re-pitch prior with the owner.
 
 ## Cross-refs
 
-- Audit: [`docs/scope/2026-06-03-qbeta-residue-a-klr-crystal-infra-scope.md`](../../../../../docs/scope/2026-06-03-qbeta-residue-a-klr-crystal-infra-scope.md)
-- `MmuR9V9Closure.lean` Theorem 5 deep claim (cinquefoil framing)
-- `QBetaCategoricalPrecisionLadder.lean` (downstream consumer for residue A)
+- Audit (scope, owner-gated): [`docs/scope/2026-06-03-qbeta-residue-a-klr-crystal-infra-scope.md`](../../../../../docs/scope/2026-06-03-qbeta-residue-a-klr-crystal-infra-scope.md)
+- Do-not-re-pitch note: `.beans/1ppq-qbeta-queue.json`
+- KLR finite-dim falsification: `docs/audits/2026-07-11-gemini-session-c3-overclaim-continuum-and-lean-audit.md` (Finding 4)
+- `MmuR9V9Closure.lean` Theorem 5 deep claim (cinquefoil framing) — does not reference these types
+- `QBetaCategoricalPrecisionLadder.lean` — the actual residue-A `c_k` ladder; **axiomatises** `c_k` for `k ≥ 4` directly and does **not** consume these crystal classes (intended-but-never-wired downstream)
 -/
 
 namespace QOU.Machinery
