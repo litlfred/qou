@@ -193,14 +193,36 @@ def main() -> int:
                 w.append((cw_branch, g1))
         return w
 
+    # Resume cache: Leg A (the ~34-min mpfr eval) is idempotent in the
+    # K word, so cache the two branch-character dicts and skip the
+    # recompute on a resumed run (this compute is ~96 min total and can
+    # outlive a single session; the cache self-cleans on completion).
     t0 = time.time()
     chi_exact: dict[tuple, mp.mpf] = {}
     branch_res = {}
-    for br in (1, -1):
-        branch_res[br] = {tuple(lam): mp.mpf(chi) for lam, chi in
-                          pn.chi_lambda_all_partitions_mpfr(
-                              N, signed_letters(br), q_str, 50)}
-        print(f"  branch {br:+d} done at {time.time()-t0:.0f}s", flush=True)
+    legA_cache = HERE / ".he4_stage2_legA_cache.json"
+    if legA_cache.exists():
+        try:
+            _c = json.loads(legA_cache.read_text())
+            if _c.get("n_factors") == len(K_kinds):
+                branch_res = {int(b): {tuple(int(x) for x in k.split(",")):
+                                       mp.mpf(v) for k, v in d.items()}
+                              for b, d in _c["branch_res"].items()}
+                print(f"  Leg A loaded from cache {legA_cache.name} "
+                      f"({time.time()-t0:.0f}s)", flush=True)
+        except Exception:
+            branch_res = {}
+    if not branch_res:
+        for br in (1, -1):
+            branch_res[br] = {tuple(lam): mp.mpf(chi) for lam, chi in
+                              pn.chi_lambda_all_partitions_mpfr(
+                                  N, signed_letters(br), q_str, 50)}
+            print(f"  branch {br:+d} done at {time.time()-t0:.0f}s", flush=True)
+        legA_cache.write_text(json.dumps({
+            "n_factors": len(K_kinds),
+            "branch_res": {str(br): {",".join(map(str, k)): mp.nstr(v, 50)
+                                     for k, v in d.items()}
+                           for br, d in branch_res.items()}}))
     for lam in map(tuple, shapes):
         chi_exact[lam] = scalar * (a_cw * branch_res[1][lam]
                                    + b_cw * branch_res[-1][lam])
@@ -255,6 +277,29 @@ def main() -> int:
     xcheck_worst = 0.0
     t0 = time.time()
 
+    # Resume cache: Leg B per-block. Each large (dim ~5940) block eigen-
+    # solve is ~6 min; append completed blocks to a JSONL so a resumed
+    # run skips them (the full compute can outlive one session).
+    legB_prog = HERE / ".he4_stage2_legB_progress.jsonl"
+    done_lambdas = set()
+    if legB_prog.exists():
+        for _line in legB_prog.read_text().splitlines():
+            if not _line.strip():
+                continue
+            try:
+                _b = json.loads(_line)
+            except Exception:
+                continue
+            if tuple(_b["lambda"]) in done_lambdas:
+                continue
+            per_block.append(_b)
+            done_lambdas.add(tuple(_b["lambda"]))
+            xcheck_worst = max(xcheck_worst, _b["chi_exact_rel_diff"])
+            min_eig_overall = min(min_eig_overall, _b["min_eig_sym"])
+        if per_block:
+            print(f"  Leg B resumed: {len(per_block)} blocks from "
+                  f"{legB_prog.name}", flush=True)
+
     def hook_dim(lam):
         from math import factorial
         conj = [sum(1 for r in lam if r > c) for c in range(lam[0])]
@@ -267,9 +312,11 @@ def main() -> int:
     dims = [hook_dim(tuple(lam)) for lam in shapes]
     order = np.argsort(dims)
     total_d2 = float(sum(d * d for d in dims))
-    done_d2 = 0.0
+    done_d2 = float(sum(b["dim"] * b["dim"] for b in per_block))
     for idx in order:
         lam = tuple(shapes[idx])
+        if lam in done_lambdas:
+            continue
         sig_coo, dim = _build_seminormal_matrices_mpf(lam, q0)
         if dim == 0:
             continue
@@ -306,6 +353,8 @@ def main() -> int:
             "psd_within_tol": bool(mn >= -1e-9),
             "near_zero_flagged": bool(abs(mn) < NEAR_ZERO_FLAG),
         })
+        with open(legB_prog, "a") as _pf:  # resume checkpoint
+            _pf.write(json.dumps(per_block[-1]) + "\n")
         done_d2 += dim * dim
         el = time.time() - t0
         print(f"  λ={str(lam):26s} d={dim:5d}  min_eig={mn:+.3e}  "
@@ -412,6 +461,12 @@ def main() -> int:
     wit["allPassed"] = all(a["passed"] for a in wit["assertions"])
     out = HERE / "he4-binding-k-stage2.witness.json"
     json.dump(wit, open(out, "w"), indent=1)
+    # Completed cleanly — drop the resume caches so the next run is fresh.
+    for _c in (legA_cache, legB_prog):
+        try:
+            _c.unlink()
+        except FileNotFoundError:
+            pass
     print("witness ->", out.name, " allPassed:", wit["allPassed"],
           f" ({wit['elapsed_sec']}s)")
     return 0 if wit["allPassed"] else 1
