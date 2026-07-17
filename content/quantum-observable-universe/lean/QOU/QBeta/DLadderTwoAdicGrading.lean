@@ -1,5 +1,6 @@
 import Mathlib.Data.Rat.Defs
 import Mathlib.Algebra.Ring.Parity
+import Mathlib.NumberTheory.Padics.PadicVal.Basic
 import Mathlib.Tactic
 
 /-!
@@ -100,5 +101,24 @@ class DLadderGradingConjecture where
 theorem graded_window [G : DLadderGradingConjecture] (K : ℕ) :
     TwoAdicParityGraded (fun k => (G.b k).den) K := by
   intro k hk1 _; exact G.graded k hk1
+
+/-- **q-Borel scalar-transport invariance of the grading gap (sorry-free).**
+    Every member of the scalar acceleration family — classical Borel `÷k!`,
+    Borel–Leroy `÷(k!)^s` (integer `s`), Jackson q-Borel `÷[k]_Q!` /
+    `÷(Q;Q)_k` — acts diagonally on the ℚ(√3) components of
+    `d_k = a_k + b_k√3`: both are divided by the *same* scalar `f ∈ ℚ^×`.
+    Since `padicValRat p` is a valuation, the signed component gap
+    `v_p(a_k) − v_p(b_k)` is exactly invariant under the whole family: the
+    ℤ/2 bar-parity grading (gap form) survives into every accelerated
+    plane — the invariant is *permissive*, it obstructs no resummation
+    shape. Compute twin (exact, k ≤ 21, six bases):
+    `computations/qbeta/qbeta_dladder_qborel_2adic_transport_probe.py`
+    (witness `qbeta-dladder-qborel-2adic-transport`). -/
+theorem gap_invariant_under_scalar_transform (p : ℕ) [Fact p.Prime]
+    (a b f : ℚ) (ha : a ≠ 0) (hb : b ≠ 0) (hf : f ≠ 0) :
+    padicValRat p (a / f) - padicValRat p (b / f)
+      = padicValRat p a - padicValRat p b := by
+  rw [padicValRat.div (p := p) ha hf, padicValRat.div (p := p) hb hf]
+  ring
 
 end QOU.QBeta.DLadderTwoAdicGrading
