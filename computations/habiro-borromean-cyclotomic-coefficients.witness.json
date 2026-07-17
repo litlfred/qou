@@ -1,15 +1,15 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-07-17T23:16:18.655089+00:00",
-  "commitSha": "61c8887b0d4891318c21259817baa18a78c05676",
+  "computedAt": "2026-07-17T23:27:30.276248+00:00",
+  "commitSha": "7f14335cfd38828b3b32bb79487a5a2a19234ae2",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 11243,
+  "durationMs": 11222,
   "computation": "habiro-borromean-cyclotomic-coefficients",
   "scriptFile": "habiro_borromean_cyclotomic_coefficients.py",
-  "scriptHash": "7a6415b76130",
-  "scriptCommitSha": "901a9d47c910c61f9dd7cb94af793adb0b2a36f0",
+  "scriptHash": "e69557778d26",
+  "scriptCommitSha": "7f14335cfd38828b3b32bb79487a5a2a19234ae2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -49,13 +49,13 @@
   },
   "cyclotomic_coefficients_at_q0": {
     "C_0": "1.0000000000000000000",
-    "C_1": "91.758581966726308717",
-    "C_2": "-3.0104206081793020709",
-    "C_3": "-68.668568787969132070",
-    "C_4": "-221.47977435781559540",
-    "C_5": "100.74869258761680215",
-    "C_6": "253.63020958155159845"
+    "C_1": "91.758581966726293013",
+    "C_2": "-3.0104206081793020726",
+    "C_3": "-68.668568787969120255",
+    "C_4": "-221.47977435781551572",
+    "C_5": "100.74869258761678432",
+    "C_6": "253.63020958155149884"
   },
-  "q0_used": "110997859555733471/100000000000000000",
+  "q0_used": "110997859555733471989976322048322502665620840878015368660798114614493/100000000000000000000000000000000000000000000000000000000000000000000",
   "ck_identification": "none asserted (distinct object; see NOTE)"
 }
