@@ -13,6 +13,17 @@ first for the evidence; read this for the who/what/next. Per-thread ledgers
 remain authoritative for their thread (`1ppq-qbeta.md`, `alpha-em.md`,
 `keystone-infra.md`, `s5-so3-keystone.md`, `z-ck-fmap-keystone.md`).
 
+> **SAME-DAY UPDATE (2026-07-17 ~20:45Z).** Between the first draft of this
+> map (~19:40Z) and now, the owner picked the three-front attack
+> ([`2026-07-17-three-front-attack-specs.md`](../audits/2026-07-17-three-front-attack-specs.md))
+> and a **swarm has taken all three previously-"unowned" computations** in a
+> ~27-commit wave. **None of the three walls is unowned anymore** — the
+> ownership table below is updated to reflect it. The coordination value has
+> flipped from "flag the gaps" to "prevent collision": do **not** open a
+> fourth parallel attack on the D-ladder — it is bean `qou-dri7` / #3817 plus
+> the k→31 extension session. New capacity should either support a named
+> owner or take genuinely-uncontended L2 work elsewhere.
+
 ## Leg status
 
 | Leg | State | Source |
@@ -29,24 +40,36 @@ loop-measure falsification).
 
 ## The three named walls — ownership map
 
-| L2 miss(es) | Root cause | The named closing computation | Owner / live PR | Gap |
+| L2 miss(es) | Root cause | The named closing computation | Owner / live PR | State (20:45Z) |
 |---|---|---|---|---|
-| Q_β ~160×, m_n ~416×, Δ_pn ~159× (shared root; Q_β is the bottleneck) | c₃ exact value (bar-**odd** channel) | **Jackson q-Borel / Écalle acceleration of the D-ladder** (≡ Φ_b odd carrier). Anchors in hand: 2-adic bar-parity grading (2 = unique graded prime, Lean-anchored) + q\* (third decay-sector q₀ determination) | even-κ resurgence on **#3683**; GGM Stokes integer on **#3805** | **the odd-channel q-Borel acceleration itself is UNOWNED** |
-| m_p ~437×, m_μ ~964× (μ–p pin tension) | substrate q₀ (Subgoal-2, open for all) | **colored Lawrence–Rozansky modulus identification** `\|S_{0λ}^{Σ(2,3,5)}(ζ)\| = d_ζ(λ)/D(ζ)` — the W_λ/McKay keystone's last open piece (value-map + framing-is-phase already exact/proved on main) | McKay route landed on main; `keystone-infra.md` / `s5-so3-keystone.md` | **modulus ID UNOWNED** |
-| α_EM (headline, per `#3612`) | photon 1-loop measure | **Bring-Jacobian photon determinant** `1/(πb₁) = 1/(8π)` — one computation certifies all loop orders; θ-graph 2-loop candidate already 1.3σ parameter-free, contingent on it. Proved-exact: it is NOT the zero-mode measure 1/(12π) (fails 1-loop by ~9500σ) | AG program on **#3807** (b₁ = 8 proved exact); `alpha-em.md` | **the determinant computation UNOWNED** (multi-week) |
-| (L1) | — | — | — | **CLOSED** |
+| Q_β ~160×, m_n ~416×, Δ_pn ~159× (shared root; Q_β is the bottleneck) | c₃ exact value (bar-**odd** channel) | **Jackson q-Borel / Écalle acceleration of the D-ladder** (≡ Φ_b odd carrier). Anchors: 2-adic bar-parity grading + q\* | **#3817** (bean `qou-dri7`, parity split) + the **k→31 extension** session (`claude/dladder-qgevrey-extension-2026-07-17`); even-κ **#3683**; Stokes integer **#3805**; Φ_b carrier **#3773** | **OWNED, active.** Structural q-Gevrey drift *confirmed* → fixed-order Borel ruled out, Écalle acceleration is the honest object; parity split resolves ≥½ the drift, 3-adic normalization killed. Do not fork. |
+| m_p ~437×, m_μ ~964× (μ–p pin tension) | substrate q₀ (Subgoal-2, open for all) | **colored Lawrence–Rozansky modulus identification** `\|S_{0λ}^{Σ(2,3,5)}(ζ)\| = d_ζ(λ)/D(ζ)` | **#3822** (`s5-so3-keystone.md` sessions-log) | **LANDED corrected-exact** (probe `9198ce51`, Lean fold `dac9ae28` sorry-free). Keystone's last open piece now has an exact identity. |
+| α_EM (headline, per `#3612`) | photon 1-loop measure | **Bring-Jacobian photon determinant** `1/(πb₁) = 1/(8π)` — one computation certifies all loop orders | **#3810** (dilog-pentagon spine) + AG program **#3807** (b₁ = 8 exact); `alpha-em.md` | **OWNED, reframed.** `1/(πb₁)` and the additive `2/(3π)` shown to be the **same dilog-pentagon shadow** (`777234f5`); ζ-anomaly `ζ_Λ(0) = −b₁` count done. |
+| (L1) | — | — | — | **CLOSED** (6/6 atoms). |
 
-## Recommended sequencing (highest scoreboard leverage first)
+## Sequencing — all three fronts now owned (20:45Z)
 
-1. **D-ladder q-Borel/Écalle acceleration** — one derivation can flip **3** of
-   the 5 misses (2/7 → 5/7). Highest leverage; currently unowned. Coordinate
-   with #3683 (even κ-tower) + #3805 (Stokes integer) so the odd carrier reuses
-   their resurgence surface rather than forking it.
-2. **α_EM Bring-Jacobian determinant** — sharpest single-wall problem in the
-   program; second genuine 100× prediction gated on exactly one computation.
-3. **Lawrence–Rozansky modulus ID** — closes the only route to the two largest
-   misses (m_p/m_μ); Subgoal-2, open for all.
-4. **Support #3805's G3** rather than open a fourth front.
+The 19:40Z draft ranked these as unowned pickups; that is **superseded** — the
+swarm took all three within the hour. Current reality:
+
+1. **D-ladder q-Borel/Écalle** — OWNED (#3817 + extension). The next genuine
+   step is the **per-channel parity-split local-index estimator on the extended
+   k→31 rungs** (the intersection of the two active D-ladder sessions), and
+   #3817's own handoff already queues it ("drop-in: same probe, higher ORD") —
+   so it is **not** free capacity. New hands should *ask #3817/qou-dri7* before
+   touching the D-ladder probe family.
+2. **α_EM determinant** — OWNED (#3810 dilog-pentagon spine + #3807 AG). The
+   `1/(8π)` derivation is now folded into the dilog-pentagon program, not a
+   standalone front.
+3. **LR modulus ID** — LANDED (#3822). The keystone's remaining work is the
+   Lean `loc_matches` derivation gate, tracked in `s5-so3-keystone.md`.
+
+**For genuinely-uncontended capacity:** the L2 scoreboard is comprehensively
+covered by ~8 active sessions. Uncontended value is now in the *support* and
+*integrity* layers — not a fourth parallel attack. Candidates: the ⁴He binding
+stage-2 rebuild after the GP-kernel bug (`2026-07-14-gp-kernel-bug-and-he4-stage2.md`),
+Model G content-block promotion (bean `qou-hfiw`), or the L1 defense-in-depth
+third method — none of which any 1ppQ-front session is holding.
 
 ## This session's contribution (hygiene — additive, non-duplicative)
 
@@ -63,6 +86,8 @@ Branch `claude/focused-euler-ez3iu4`:
   backup) so the advertised proved-counts can't silently drift again.
 - This ledger.
 
-None of the three named computations is picked up here — they are the next
-tranche, sequenced above. This session unblocks/coordinates; it does not fork
-an owned thread.
+None of the three named computations is picked up here. At first draft they
+were unowned; within the hour the swarm took all three, so this session's
+value stayed in the currency/hygiene/coordination layer and it **deliberately
+did not fork the owned D-ladder thread** (#3817) — the same-day update above
+records that collision-avoidance call.
