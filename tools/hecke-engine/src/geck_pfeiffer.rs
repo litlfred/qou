@@ -711,6 +711,160 @@ pub fn reduce_basis_to_minimal_length(x: &HeckeElement) -> HeckeElement {
     }
 }
 
+/// **F3.2.η_full — Geck-Pfeiffer cyclic-shift completion of the basis
+/// reduction (bean `qou-b2ie`).**
+///
+/// [`reduce_basis_to_minimal_length`] only takes **strictly** length-
+/// decreasing simple conjugations `w ↦ s w s`, so it stalls at
+/// non-minimal elements that have no immediate length-reducing simple
+/// reflection (e.g. the 6-cycle `[1,3,4,5,0,2]` in `S₆`; and the
+/// classes reached by the H₁₂ reproducer). Geck–Pfeiffer 2000 §3: in
+/// type A every element reaches a minimal-length representative of its
+/// conjugacy class by a sequence of simple conjugations that is
+/// **non-increasing** in length — i.e. one may need to move *sideways*
+/// through equal-length "cyclic shifts" before a length drop opens up.
+///
+/// [`find_length_decreasing_path`] does a BFS over the equal-length
+/// cyclic-shift class of a stalled element and returns the simple-
+/// reflection sequence that drives it strictly shorter; this function
+/// applies that sequence as exact Hecke conjugations (each preserving
+/// `χ_λ` for **all** λ) until every basis element is minimal-length.
+///
+/// **Termination.** Equal-length cyclic shifts keep the top term at the
+/// stalled length `ℓ₀` and generate only shorter lower terms; the final
+/// step is strictly length-decreasing. No conjugation applied here ever
+/// exceeds `ℓ₀` (the BFS follows only `ℓ(sws) = ℓ₀` edges, then one
+/// `ℓ(sws) < ℓ₀` edge), so the potential `Σ (ℓ(w) − minlen(class(w)))`
+/// strictly decreases each outer iteration. A 10⁶-node BFS cap and a
+/// large outer-iteration cap backstop any pathological input; a word the
+/// completion cannot fully reduce is still caught by the exact
+/// trivial-rep guard in the character functions (never silently wrong).
+pub fn reduce_basis_to_minimal_length_complete(x: &HeckeElement) -> HeckeElement {
+    let mut current = x.clone();
+    let mut outer = 0usize;
+    let outer_cap = 2_000_000usize;
+    loop {
+        outer += 1;
+        if outer > outer_cap {
+            return current; // safety backstop; guard will catch any residue
+        }
+        // Find a non-minimal basis element.
+        let target = current.iter().find_map(|(w, _c)| {
+            let mu = perm_cycle_type(w);
+            let min_len = min_length_for_cycle_type(&mu);
+            if w.length() > min_len {
+                Some(w.clone())
+            } else {
+                None
+            }
+        });
+        let Some(target_w) = target else {
+            return current; // all basis elements are minimal-length
+        };
+        let n = target_w.n();
+
+        // First try a direct strictly-decreasing simple conjugation
+        // (the fast path — identical to the original reduction).
+        let target_len = target_w.length();
+        let mut direct: Option<usize> = None;
+        for i in 0..n.saturating_sub(1) {
+            let mut sws = target_w.clone();
+            sws.apply_s_left(i);
+            sws.apply_s_right(i);
+            if sws.length() < target_len {
+                direct = Some(i);
+                break;
+            }
+        }
+        let path: Vec<usize> = match direct {
+            Some(i) => vec![i],
+            None => match find_length_decreasing_path(&target_w, n) {
+                Some(p) => p,
+                None => {
+                    // No reachable length drop (should not happen for
+                    // type A). Leave the element; the trivial-rep guard
+                    // backstops correctness. Avoid an infinite loop by
+                    // returning.
+                    return current;
+                }
+            },
+        };
+
+        // Apply the conjugation path to the isolated singleton so the
+        // rest of `current` is not perturbed by length-increasing cross
+        // terms.
+        let coeff = current
+            .remove(&target_w)
+            .unwrap_or_else(LaurentPolyQ::zero);
+        let mut elt: HeckeElement = BTreeMap::new();
+        elt.insert(target_w.clone(), coeff);
+        for &s in &path {
+            elt = hecke_conjugate_by_s(&elt, s);
+        }
+        for (v, c_v) in elt {
+            let entry = current.entry(v).or_insert_with(LaurentPolyQ::zero);
+            *entry += &c_v;
+        }
+        current.retain(|_, v| !v.is_zero());
+    }
+}
+
+/// BFS over the equal-length cyclic-shift class of `w0` (edges are
+/// simple conjugations `w ↦ s w s` with `ℓ(sws) = ℓ(w0)`), returning a
+/// sequence of simple-reflection indices whose successive conjugation
+/// drives `w0` strictly shorter: all but the last index are equal-length
+/// cyclic shifts, and the last strictly decreases length.
+///
+/// Returns `None` if no length drop is reachable within the node cap
+/// (does not occur for genuine non-minimal elements in type A, but the
+/// cap backstops pathological inputs).
+fn find_length_decreasing_path(w0: &Perm, n: usize) -> Option<Vec<usize>> {
+    use std::collections::{HashMap, VecDeque};
+    let l0 = w0.length();
+    // parent[w] = (predecessor w, simple reflection used to reach w).
+    let mut parent: HashMap<Perm, Option<(Perm, usize)>> = HashMap::new();
+    parent.insert(w0.clone(), None);
+    let mut queue: VecDeque<Perm> = VecDeque::new();
+    queue.push_back(w0.clone());
+    let cap = 1_000_000usize;
+    let mut seen = 0usize;
+    while let Some(w) = queue.pop_front() {
+        seen += 1;
+        if seen > cap {
+            return None;
+        }
+        // A strictly-decreasing conjugation from w closes the path.
+        for i in 0..n.saturating_sub(1) {
+            let mut sws = w.clone();
+            sws.apply_s_left(i);
+            sws.apply_s_right(i);
+            if sws.length() < l0 {
+                // Reconstruct w0 → … → w, then append the drop index i.
+                let mut path = Vec::new();
+                let mut cur = w.clone();
+                while let Some(Some((prev, s))) = parent.get(&cur).cloned() {
+                    path.push(s);
+                    cur = prev;
+                }
+                path.reverse();
+                path.push(i);
+                return Some(path);
+            }
+        }
+        // Enqueue equal-length cyclic-shift neighbours.
+        for i in 0..n.saturating_sub(1) {
+            let mut sws = w.clone();
+            sws.apply_s_left(i);
+            sws.apply_s_right(i);
+            if sws.length() == l0 && !parent.contains_key(&sws) {
+                parent.insert(sws.clone(), Some((w.clone(), i)));
+                queue.push_back(sws);
+            }
+        }
+    }
+    None
+}
+
 /// **F3.2.ε — Geck-Pfeiffer cuspidal reduction by simple-reflection conjugation.**
 ///
 /// Given `w ∈ S_n`, repeatedly conjugate by simple reflections `s`
@@ -855,7 +1009,7 @@ fn gp_trivial_rep_from_cycle_data(
 /// instead.
 pub fn chi_gp_trivial_rep_consistent(n: usize, word: &[(i32, u32)]) -> bool {
     let basis = braid_to_hecke(n, word);
-    let reduced = reduce_basis_to_minimal_length(&basis);
+    let reduced = reduce_basis_to_minimal_length_complete(&basis);
     let cycle_data: Vec<(Vec<usize>, LaurentPolyQ)> = reduced
         .iter()
         .map(|(w, c)| (perm_cycle_type(w), c.clone()))
@@ -940,12 +1094,13 @@ pub fn chi_lambda_via_geck_pfeiffer(
         return LaurentPolyQ::zero();
     }
     let basis_expansion = braid_to_hecke(n, word);
-    // F3.2.ζ: reduce ALL basis elements to minimal-length representatives
-    // via iterated Hecke conjugation.  This produces a sum where
-    // each basis member T_w has ℓ(w) = minimal length within its
-    // conjugacy class — at which point q-MN on cycle_type(w) gives
-    // the correct character.
-    let reduced = reduce_basis_to_minimal_length(&basis_expansion);
+    // F3.2.η_full: reduce ALL basis elements to minimal-length
+    // representatives via iterated Hecke conjugation, including the
+    // Geck-Pfeiffer cyclic-shift completion (bean qou-b2ie) that escapes
+    // the local minima the strictly-decreasing reduction stalls at. At
+    // the fixed point each T_w has ℓ(w) = minimal length within its
+    // conjugacy class, so q-MN on cycle_type(w) is correct.
+    let reduced = reduce_basis_to_minimal_length_complete(&basis_expansion);
     let cycle_data: Vec<(Vec<usize>, LaurentPolyQ)> = reduced
         .iter()
         .map(|(w, c_w)| (perm_cycle_type(w), c_w.clone()))
@@ -979,9 +1134,11 @@ pub fn chi_lambdas_via_geck_pfeiffer(
     word: &[(i32, u32)],
 ) -> Vec<LaurentPolyQ> {
     use rayon::prelude::*;
-    // GP reduction ONCE for this (n, word) — the expensive part.
+    // GP reduction ONCE for this (n, word) — the expensive part. Uses the
+    // cyclic-shift completion (bean qou-b2ie) so every basis element is
+    // genuinely minimal-length before q-MN.
     let basis_expansion = braid_to_hecke(n, word);
-    let reduced = reduce_basis_to_minimal_length(&basis_expansion);
+    let reduced = reduce_basis_to_minimal_length_complete(&basis_expansion);
     // Pre-compute (cycle-type, coefficient) pairs from the reduced
     // basis so we don't recompute `perm_cycle_type(w)` per shape.
     let cycle_data: Vec<(Vec<usize>, LaurentPolyQ)> = reduced
@@ -1231,20 +1388,17 @@ mod tests {
         assert_eq!(expected, LaurentPolyQ::from_terms(vec![(2, 1), (-2, 1)]));
     }
 
-    /// **Regression (bean qou-b2ie) — the self-check FLAGS the H₁₂ bug.**
-    /// On the reproducer the simple-reflection reduction does not reach
-    /// minimal length at n=12, so the GP q-MN `[12]` row disagrees with
-    /// the exact `q^{writhe}` — the check must return `false` (rather than
-    /// the kernel silently returning the wrong value from qou-b2ie).
+    /// **Regression (bean qou-b2ie) — the cyclic-shift completion FIXES
+    /// the H₁₂ bug.** With `reduce_basis_to_minimal_length_complete`, the
+    /// GP q-MN `[12]` row now equals the exact `q^{writhe}` on the
+    /// reproducer (the incomplete reduction stalled here and disagreed).
     #[test]
-    fn gp_trivial_check_flags_reproducer() {
+    fn gp_trivial_check_ok_on_reproducer_after_completion() {
         let word = vec![(1i32, 6u32), (1, 7), (-1, 9), (1, 8), (-1, 7)];
         assert!(
-            !chi_gp_trivial_rep_consistent(12, &word),
-            "expected the GP reduction to be flagged INCONSISTENT on the \
-             qou-b2ie reproducer (H12). If this now passes, the full \
-             Geck-Pfeiffer cuspidal-move reduction has landed — update the \
-             guard/tests accordingly."
+            chi_gp_trivial_rep_consistent(12, &word),
+            "the cyclic-shift completion must make the GP [12] row match \
+             q^writhe on the qou-b2ie reproducer"
         );
     }
 
@@ -1262,13 +1416,86 @@ mod tests {
         assert_eq!(chi, LaurentPolyQ::q_pow(2));
     }
 
-    /// The guard fires (panics) when the GP path would return a wrong
-    /// character — the qou-b2ie reproducer at H₁₂.
+    /// **Regression (bean qou-b2ie) — the GP character function is now
+    /// CORRECT on the reproducer** (no longer panics): with the
+    /// completion, `chi_lambda_via_geck_pfeiffer` returns the exact
+    /// trivial-rep value `q = q^{writhe}` on the H₁₂ reproducer.
     #[test]
-    #[should_panic(expected = "INCORRECT for this word")]
-    fn gp_guard_panics_on_reproducer() {
+    fn gp_correct_on_reproducer_after_completion() {
         let word = vec![(1i32, 6u32), (1, 7), (-1, 9), (1, 8), (-1, 7)];
-        let _ = chi_lambda_via_geck_pfeiffer(&[12], 12, &word);
+        let chi = chi_lambda_via_geck_pfeiffer(&[12], 12, &word);
+        assert_eq!(
+            chi,
+            LaurentPolyQ::q_pow(1),
+            "χ_[12] must equal q^writhe = q; got {}",
+            chi.pretty()
+        );
+    }
+
+    /// **Full-character regression (bean qou-b2ie).** The completed GP
+    /// q-MN path now matches the direct seminormal kernel on the H₁₂
+    /// reproducer across a battery of λ ⊢ 12 (evaluated at q=1.1) — the
+    /// words where the incomplete reduction was wrong.
+    #[test]
+    fn gp_matches_seminormal_on_reproducer_battery() {
+        let word = vec![(1i32, 6u32), (1, 7), (-1, 9), (1, 8), (-1, 7)];
+        let q = 1.1_f64;
+        for lambda in [
+            vec![12usize],
+            vec![11, 1],
+            vec![6, 6],
+            vec![3, 3, 3, 3],
+            vec![2, 2, 2, 2, 2, 2],
+            vec![1; 12],
+        ] {
+            let gp = chi_lambda_via_geck_pfeiffer(&lambda, 12, &word).evaluate_f64(q);
+            let semi = crate::seminormal::chi_lambda_braid(&lambda, &word, q);
+            assert!(
+                (gp - semi).abs() < 1e-7,
+                "λ={lambda:?}: GP(complete)={gp} vs seminormal={semi}"
+            );
+        }
+    }
+
+    /// **Randomized cross-validation (bean qou-b2ie).** A deterministic
+    /// pseudo-random battery of ±1 braid words at n = 4..=8 must make the
+    /// completed GP q-MN path agree with the direct seminormal kernel on
+    /// every partition, at two q values. This is the exhaustive check
+    /// that the cyclic-shift completion is correct, not just patched for
+    /// one word.
+    #[test]
+    fn gp_matches_seminormal_random_battery() {
+        // Deterministic LCG (no Date/rand): x' = (a x + c) mod m.
+        let mut state: u64 = 0x1234_5678_9abc_def0;
+        let mut next = |bound: u64| -> u64 {
+            state = state.wrapping_mul(6364136223846793005).wrapping_add(1442695040888963407);
+            (state >> 33) % bound
+        };
+        for n in 4..=8usize {
+            let partitions = crate::seminormal::partitions_of(n);
+            for _trial in 0..20 {
+                let len = 3 + next(9) as usize; // word length 3..=11
+                let word: Vec<(i32, u32)> = (0..len)
+                    .map(|_| {
+                        let sign = if next(2) == 0 { -1i32 } else { 1 };
+                        let gen = 1 + next((n - 1) as u64) as u32; // 1..=n-1
+                        (sign, gen)
+                    })
+                    .collect();
+                for q in [0.85_f64, 1.1] {
+                    for lambda in &partitions {
+                        let gp = chi_lambda_via_geck_pfeiffer(lambda, n, &word)
+                            .evaluate_f64(q);
+                        let semi = crate::seminormal::chi_lambda_braid(lambda, &word, q);
+                        assert!(
+                            (gp - semi).abs() < 1e-6,
+                            "n={n} word={word:?} λ={lambda:?} q={q}: \
+                             GP(complete)={gp} vs seminormal={semi}"
+                        );
+                    }
+                }
+            }
+        }
     }
 
     /// **Validated correct path (bean qou-b2ie).** The Hoefsmit-per-T_w GP
