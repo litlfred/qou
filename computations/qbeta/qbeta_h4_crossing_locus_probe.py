@@ -92,10 +92,49 @@ def baryon_sym(core, types):
     return elem
 
 
+def _log_series_from_poly_coeffs(pk, order):
+    """[s^1..s^order] of log(sum_k pk[k] s^k), pk[0] != 0.
+    Uses the Mercator recursion on g = (P/p0 - 1), avoiding sympy's slow
+    symbolic-coefficient log-series when pk[k] are polynomials in (alpha,beta)."""
+    p0 = pk[0]
+    g = [sp.expand(pk[k] / p0) for k in range(order + 1)]  # g[0]=1
+    g[0] = sp.Integer(0)                                   # h = P/p0 - 1, h[0]=0
+    # log(1+h) = sum_{m>=1} (-1)^(m+1) h^m / m  (h has no constant term)
+    L = [sp.Integer(0)] * (order + 1)
+    hpow = [sp.Integer(0)] * (order + 1)
+    hpow[0] = sp.Integer(1)                                # h^0
+    for m in range(1, order + 1):
+        # hpow <- hpow * h  (truncated to `order`)
+        new = [sp.Integer(0)] * (order + 1)
+        for i in range(order + 1):
+            if hpow[i] == 0:
+                continue
+            for j in range(1, order + 1 - i):
+                if g[j] == 0:
+                    continue
+                new[i + j] = sp.expand(new[i + j] + hpow[i] * g[j])
+        hpow = new
+        sign = sp.Integer((-1) ** (m + 1))
+        for i in range(1, order + 1):
+            if hpow[i] != 0:
+                L[i] = sp.expand(L[i] + sign * hpow[i] / m)
+    return [sp.cancel(L[i]) for i in range(1, order + 1)]
+
+
 def phis_of(dnet3, dnet4, order=7):
-    f = sp.cancel(sp.together(dnet4) / sp.together(dnet3))
-    ser = sp.series(sp.log(f.subs(q, 1 + s)), s, 0, order + 1).removeO()
-    return [sp.simplify(ser.coeff(s, i)) for i in range(1, order + 1)]
+    """[s^1..s^order] of log(dnet4/dnet3). dnet4 may carry (alpha,beta).
+    log(dnet4/dnet3) = log P4 - log P3 with P = dnet/(q-1) (the regularized
+    part); the (q-1) zero cancels. Both logs via the fast poly recursion."""
+    P4 = sp.cancel(sp.together(dnet4) / (q - 1))
+    P3 = sp.cancel(sp.together(dnet3) / (q - 1))
+    # plain rational-function series (no log) — fast even with (alpha,beta)
+    s4 = sp.series(P4.subs(q, 1 + s), s, 0, order + 1).removeO().expand()
+    s3 = sp.series(P3.subs(q, 1 + s), s, 0, order + 1).removeO().expand()
+    pk4 = [sp.expand(s4.coeff(s, k)) for k in range(order + 1)]
+    pk3 = [sp.expand(s3.coeff(s, k)) for k in range(order + 1)]
+    L4 = _log_series_from_poly_coeffs(pk4, order)
+    L3 = _log_series_from_poly_coeffs(pk3, order)
+    return [sp.cancel(L4[i] - L3[i]) for i in range(order)]
 
 
 def is_categorical(val):
