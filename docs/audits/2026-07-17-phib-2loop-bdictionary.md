@@ -35,6 +35,7 @@ Standard 0-dimensional saddle asymptotics give
 |---|---|---|
 | G1 | `Im V(z*) = Vol(4₁)` | **PASS** — `2.02988321281930725` to 18 digits |
 | G2 | `\|−V''(z*)\| = √3` (4₁ adjoint Reidemeister torsion) | **PASS** — `1.73205080756887729`; exact complex torsion `−V''* = −3/2 + i√3/2 = √3·e^{i5π/6}` |
+| G3 | the A₁ **formula** reproduces the known 2-loop of a toy `V=−x²/2+ax³+bx⁴` (`A₁=3b+15a²/2`) | **PASS** to 30 digits — certifies the formula + `V'''`/`V''''` machinery, which G1/G2 do not cover |
 
 ## Result
 
@@ -73,7 +74,7 @@ ladder representation, not in a near-singular geometric term.
 
 ## Compute
 
-- Probe: [`computations/qbeta/qbeta_phib_2loop_bdictionary_probe.py`](../../computations/qbeta/qbeta_phib_2loop_bdictionary_probe.py) (exit 0, both gates pass)
+- Probe: [`computations/qbeta/qbeta_phib_2loop_bdictionary_probe.py`](../../computations/qbeta/qbeta_phib_2loop_bdictionary_probe.py) (exit 0, all three gates pass)
 - Witness: `computations/qbeta/qbeta-phib-2loop-bdictionary.witness.json`
 
 ## Cross-references

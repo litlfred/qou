@@ -81,8 +81,28 @@ def saddle_expansion(zstar):
     return Vs, V2, V3, V4, A1
 
 
+def _validate_formula():
+    """G3 — validate the A₁ formula on a toy V(x) = −x²/2 + a·x³ + b·x⁴ where the
+    2-loop coefficient is known in closed form: A₁ = 3b + (15/2)a² (Gaussian moments
+    ⟨y⁴⟩=3, ⟨y⁶⟩=15). Certifies the formula + the derivative machinery independent of
+    the 4₁ physics — the check the Vol+torsion gates do NOT cover."""
+    a, b = mp.mpf("0.37"), mp.mpf("-0.21")
+    Vtoy = lambda x: -x ** 2 / 2 + a * x ** 3 + b * x ** 4
+    V2 = mp.diff(Vtoy, 0, 2)
+    V3 = mp.diff(Vtoy, 0, 3)
+    V4 = mp.diff(Vtoy, 0, 4)
+    A1_code = V4 / (8 * V2 ** 2) - 5 * V3 ** 2 / (24 * V2 ** 3)
+    A1_known = 3 * b + mp.mpf(15) / 2 * a ** 2
+    return A1_code, A1_known, abs(A1_code - A1_known) < mp.mpf(10) ** (-30)
+
+
 def main() -> int:
     print("=== Φ_b 2-loop b-dictionary at m=q₀ — 4₁ state-integral saddle expansion ===\n")
+
+    # --- G3: independent formula validation on a toy potential (no external reviewer) ---
+    a1c, a1k, g3 = _validate_formula()
+    print(f"G3  formula self-check on toy V=−x²/2+ax³+bx⁴: A₁_code={mp.nstr(a1c, 14)} vs "
+          f"known 3b+15a²/2={mp.nstr(a1k, 14)} → {'PASS' if g3 else 'FAIL'}")
 
     zstar = mp.exp(1j * mp.pi / 3)          # geometric shape e^{iπ/3}
     # verify it is a critical point of V
@@ -104,8 +124,9 @@ def main() -> int:
           f"(torsion) → {'PASS' if g2 else 'FAIL'}")
     print(f"     −V''(z*) = {mp.nstr(-V2, 12)}  (the exact complex torsion)")
 
-    gates_ok = g1 and g2
-    print(f"\n{'='*4} gates {'PASS — A₁ is trustworthy' if gates_ok else 'FAIL — NO 2-loop claim'} {'='*4}")
+    gates_ok = g1 and g2 and g3
+    print(f"\n{'='*4} gates (G1 Vol, G2 torsion, G3 formula) "
+          f"{'PASS — A₁ is trustworthy' if gates_ok else 'FAIL — NO 2-loop claim'} {'='*4}")
 
     if not gates_ok:
         print("\nGate failure: the potential/derivative setup does not reproduce the known "
@@ -198,6 +219,7 @@ def _emit_witness(zstar, Vs, V2, V3, V4, A1, g1, g2, sub, vol_pred, tors):
         wb.add_data("A1_abs", float(abs(A1)))
         wb.add_data("gate_G1_volume", bool(g1))
         wb.add_data("gate_G2_torsion", bool(g2))
+        wb.add_data("gate_G3_formula_toy", bool(_validate_formula()[2]))
         if sub is not None:
             zst_u, A1_u = sub
             wb.add_data("substrate_z_star", [float(mp.re(zst_u)), float(mp.im(zst_u))])
