@@ -4413,6 +4413,110 @@ export const references: CSLData[] = [
       "the trivial-flat-connection sequel arXiv:2111.04763.",
   }),
 
+  // ── Garoufalidis–Gu–Mariño 2023 (peacock patterns; resurgence in complex CS) ──
+  ref({
+    id: "garoufalidis-gu-marino2023peacock",
+    type: "article-journal",
+    title: "Peacock Patterns and Resurgence in Complex Chern–Simons Theory",
+    author: [
+      { family: "Garoufalidis", given: "Stavros" },
+      { family: "Gu", given: "Jie" },
+      { family: "Mariño", given: "Marcos" },
+    ],
+    issued: { "date-parts": [[2023]] },
+    "container-title": "Research in the Mathematical Sciences",
+    volume: "10",
+    issue: "3",
+    page: "29",
+    DOI: "10.1007/s40687-023-00391-1",
+    URL: "https://arxiv.org/abs/2012.00062",
+    note:
+      "arXiv:2012.00062, Res. Math. Sci. 10 (2023) Paper No. 29. Added " +
+      "2026-07-17 from uploads/2012.00062v3.pdf. Companion to " +
+      "garoufalidis-gu-marino2021: the state-integral partition function " +
+      "$Z_M(u;\\tau)$, its $q$-holonomic module and descendants " +
+      "$W_m(x;q)$ (holomorphic for $|q|\\neq 1$), and the Stokes matrices " +
+      "for real $u$ (§5.6). Key structural fact for the 1ppq $A_\\omega$ " +
+      "target: the Stokes constants are integers equal to the " +
+      "Donaldson–Thomas invariants of the associated $q$-difference " +
+      "structure (eq. 16(d)) — a derived integer count, not a fit.",
+  }),
+
+  // ── Garoufalidis–Kashaev 2015 (evaluation of state integrals at rational points) ──
+  ref({
+    id: "garoufalidis-kashaev2015",
+    type: "article-journal",
+    title: "Evaluation of State Integrals at Rational Points",
+    author: [
+      { family: "Garoufalidis", given: "Stavros" },
+      { family: "Kashaev", given: "Rinat M." },
+    ],
+    issued: { "date-parts": [[2015]] },
+    "container-title": "Communications in Number Theory and Physics",
+    volume: "9",
+    issue: "3",
+    page: "549-582",
+    DOI: "10.4310/CNTP.2015.v9.n3.a3",
+    URL: "https://arxiv.org/abs/1411.6062",
+    note:
+      "arXiv:1411.6062, Comm. Number Theory Phys. 9 (2015) 549-582. Added " +
+      "2026-07-17 from uploads/1411.6062v2.pdf. Multi-dimensional " +
+      "state-integrals of Faddeev quantum dilogarithms ($\\Phi_b$) " +
+      "evaluated at rational points, expressed via the Rogers and cyclic " +
+      "(quantum) dilogarithms and finite state-sums at roots of unity — " +
+      "the $\\Phi_b$ state-integral face of the QOU odd-carrier / keystone " +
+      "root-of-unity work.",
+  }),
+
+  // ── Garoufalidis–Zagier 2023 (knots and their related q-series) ──
+  ref({
+    id: "garoufalidis-zagier2023",
+    type: "article-journal",
+    title: "Knots and Their Related $q$-Series",
+    author: [
+      { family: "Garoufalidis", given: "Stavros" },
+      { family: "Zagier", given: "Don" },
+    ],
+    issued: { "date-parts": [[2023]] },
+    "container-title":
+      "Symmetry, Integrability and Geometry: Methods and Applications (SIGMA)",
+    volume: "19",
+    page: "082",
+    DOI: "10.3842/SIGMA.2023.082",
+    URL: "https://arxiv.org/abs/2304.09377",
+    note:
+      "arXiv:2304.09377, SIGMA 19 (2023) 082. Added 2026-07-17 from " +
+      "uploads/2304.09377v2.pdf. The factorized $q$-series / matrix-valued " +
+      "invariant attached to a knot, with Habiro-ring / state-integral " +
+      "holomorphic-block structure; companion to the resurgence pair " +
+      "(garoufalidis-gu-marino2021, garoufalidis-gu-marino2023peacock). " +
+      "Relevant to the QOU $\\Phi_q$ / $\\mathrm{Li}_2^q$ odd-carrier and " +
+      "the 1ppq $A_\\omega$ Stokes program.",
+  }),
+
+  // ── Costin 1995 (generalized Borel summation for rank-one ODE systems) ──
+  ref({
+    id: "costin1995",
+    type: "article-journal",
+    title:
+      "Exponential Asymptotics, Transseries, and Generalized Borel Summation for Analytic, Nonlinear, Rank-One Systems of Ordinary Differential Equations",
+    author: [{ family: "Costin", given: "Ovidiu" }],
+    issued: { "date-parts": [[1995]] },
+    "container-title": "International Mathematics Research Notices",
+    issue: "8",
+    page: "377-417",
+    URL: "https://arxiv.org/abs/math/0608414",
+    note:
+      "IMRN 1995, no. 8, 377-417; arXiv:math/0608414 (posted 2006). Added " +
+      "2026-07-17 from uploads/0608414v1.pdf. Foundational " +
+      "generalized-Borel-summation / transseries result for rank-one " +
+      "nonlinear ODE systems at an irregular singularity — the resurgence " +
+      "machinery underlying the QOU $q$-Borel / Écalle acceleration of the " +
+      "bar-odd D-ladder (1ppq Option 1). Publisher DOI not verified " +
+      "in-sandbox (arXiv/proxy blocked); OUP: " +
+      "academic.oup.com/imrn/article-abstract/1995/8/377/644692.",
+  }),
+
   // ── Fantini–Rella 2024 (modular resurgent structures) ──
   ref({
     id: "fantini-rella2024",
@@ -5489,7 +5593,15 @@ export const references: CSLData[] = [
     volume: "9",
     issue: "5",
     page: "427-434",
-    DOI: "10.1142/S0217732394002446",
+    DOI: "10.1142/S0217732394000447",
+    URL: "https://arxiv.org/abs/hep-th/9310070",
+    note:
+      "arXiv:hep-th/9310070, Mod. Phys. Lett. A 9 (1994), no. 5, 427-434. " +
+      "DOI corrected 2026-07-17 from the spurious 10.1142/S0217732394002446 " +
+      "to the authoritative WorldScientific DOI 10.1142/S0217732394000447 " +
+      "(verified via worldscientific.com + doi.org). The Faddeev–Kashaev " +
+      "quantum dilogarithm / pentagon identity — foundation of $\\Phi_b$ / " +
+      "$\\mathrm{Li}_2^q$.",
   }),
 
   ref({
