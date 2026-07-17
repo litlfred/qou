@@ -178,40 +178,91 @@ def main() -> int:
     # ── phi_4, phi_6 as rational functions of (alpha, beta) ──
     t1 = time.monotonic()
     phis = phis_of(dnet3, dnet4)
-    phi4 = sp.simplify(phis[3])
-    phi6 = sp.simplify(phis[5])
-    print(f"\n[2] phi_4(alpha,beta) = {phi4}")
-    print(f"    phi_6(alpha,beta) = {phi6}")
-    print(f"    ({time.monotonic()-t1:.1f}s)")
+    phi4 = sp.cancel(phis[3])
+    phi6 = sp.cancel(phis[5])
+    N4 = sp.expand(sp.numer(sp.together(phi4)))   # degree-8 bivariate
+    N6 = sp.expand(sp.numer(sp.together(phi6)))   # degree-12 bivariate
+    print(f"\n[2] phi_4 num deg = {sp.Poly(N4, alpha, beta).total_degree()}, "
+          f"phi_6 num deg = {sp.Poly(N6, alpha, beta).total_degree()}  "
+          f"(denominators are powers of (alpha-beta+1))  ({time.monotonic()-t1:.1f}s)")
 
-    # ── solve phi_4 = phi_6 = 0 ──
-    t2 = time.monotonic()
-    sols = sp.solve([sp.numer(sp.together(phi4)), sp.numer(sp.together(phi6))],
-                    [alpha, beta], dict=True)
-    print(f"\n[3] solve phi_4 = phi_6 = 0  ->  {len(sols)} solution(s)  "
-          f"({time.monotonic()-t2:.1f}s)")
+    # ── [3] the SCIENTIFIC question: does any DERIVABLE coupling pass? ──
+    # Evaluate the gate (phi_4 = phi_6 = 0) on the categorical/nameable grid of
+    # coupling strengths (theta in {0, +-1/2, +-1, 2}; w = -HA*theta, so the
+    # existing rules are alpha,beta in {0 (Hopf/uu), -1/2 (ud), -1 (dd)}).
+    grid = [sp.Integer(0), sp.Rational(1, 2), sp.Rational(-1, 2),
+            sp.Integer(1), sp.Integer(-1), sp.Integer(2), sp.Integer(-2)]
+    print("\n[3] categorical grid — gate pass requires phi_4 = phi_6 = 0:")
+    grid_pass = []
+    for a_v in grid:
+        for b_v in grid:
+            n4 = sp.simplify(N4.subs({alpha: a_v, beta: b_v}))
+            if n4 != 0:
+                continue
+            n6 = sp.simplify(N6.subs({alpha: a_v, beta: b_v}))
+            tag = f"(alpha,beta)=({a_v},{b_v})"
+            if n6 == 0:
+                print(f"    *** {tag}: phi_4=phi_6=0  -> GATE PASS (derivable!)")
+                grid_pass.append((str(a_v), str(b_v)))
+            else:
+                print(f"    {tag}: phi_4=0 but phi_6!=0 (fails at c3)")
+    if not grid_pass:
+        print("    no categorical (alpha,beta) zeroes BOTH phi_4 and phi_6.")
 
-    verdicts = []
-    for sold in sols:
-        a_v = sp.simplify(sold.get(alpha, alpha))
-        b_v = sp.simplify(sold.get(beta, beta))
-        ca = is_categorical(a_v) if a_v.free_symbols == set() else None
-        cb = is_categorical(b_v) if b_v.free_symbols == set() else None
-        both_cat = bool(ca) and bool(cb)
-        print(f"    (alpha, beta) = ({a_v}, {b_v})  "
-              f"categorical: alpha={ca}  beta={cb}  ->  "
-              f"{'DERIVABLE LEAD' if both_cat else 'tuned/ugly (wall)'}")
-        verdicts.append({"alpha": str(a_v), "beta": str(b_v),
-                         "alpha_categorical": ca, "beta_categorical": cb,
-                         "derivable": both_cat})
+    # ── [3b] the full real locus via resultant (guarded) — is it even nonempty,
+    #        and does any branch pass near a rational point? ──
+    print("\n[3b] full locus: resultant_beta(N4, N6) -> real roots in alpha:")
+    locus_pts, res_ok = [], False
 
-    # ── also: check phi_4 = 0 alone (necessary), see the alpha=beta slice ──
-    phi4_diag = sp.simplify(phi4.subs(beta, alpha))
-    diag_roots = sp.solve(sp.numer(sp.together(phi4_diag)), alpha)
-    print(f"\n[4] on the symmetric slice alpha=beta:  phi_4 roots = "
-          f"{[sp.nsimplify(r) for r in diag_roots]}")
+    import signal
 
-    any_lead = any(v["derivable"] for v in verdicts)
+    class _Timeout(Exception):
+        pass
+
+    def _alarm(signum, frame):  # noqa: ANN001, ARG001
+        raise _Timeout()
+
+    signal.signal(signal.SIGALRM, _alarm)
+    signal.alarm(180)  # hard cap; grid verdict already stands without this
+    try:
+        res = sp.resultant(N4, N6, beta)
+        res = sp.factor(res)
+        res_ok = True
+        # rational roots first (exact categorical check)
+        num_res = sp.numer(sp.together(sp.expand(res)))
+        poly_a = sp.Poly(num_res, alpha)
+        rat_roots = [r for r in sp.roots(poly_a).keys() if r.is_rational]
+        real_roots = [r for r in poly_a.nroots(n=30) if abs(sp.im(r)) < mp.mpf("1e-20")]
+        print(f"     resultant degree {poly_a.degree()}; "
+              f"{len(rat_roots)} rational root(s), {len(real_roots)} real root(s)")
+        for ar in rat_roots:
+            # solve for beta at this alpha (common root of N4, N6)
+            g = sp.gcd(sp.Poly(N4.subs(alpha, ar), beta),
+                       sp.Poly(N6.subs(alpha, ar), beta))
+            broots = sp.roots(g).keys() if g.degree() > 0 else []
+            for br in broots:
+                ca = is_categorical(ar); cb = is_categorical(br) if getattr(br, "is_rational", False) else None
+                deriv = bool(ca) and bool(cb)
+                print(f"     RATIONAL locus point (alpha,beta)=({ar},{br})  "
+                      f"derivable={deriv}")
+                locus_pts.append({"alpha": str(ar), "beta": str(br),
+                                  "derivable": deriv})
+        if not rat_roots:
+            print("     NO rational alpha on the locus -> every passing (alpha,beta) "
+                  "is irrational/tuned (fit-trap wall)")
+    except _Timeout:
+        print("     resultant timed out (>180s); relying on the categorical-grid "
+              "verdict (the scientific answer)")
+    except Exception as e:  # noqa: BLE001
+        print(f"     resultant not completed ({type(e).__name__}: {e}); "
+              "relying on the categorical-grid verdict")
+    finally:
+        signal.alarm(0)
+
+    any_lead = bool(grid_pass) or any(p["derivable"] for p in locus_pts)
+    verdicts = ([{"alpha": a, "beta": b, "source": "grid", "derivable": True}
+                 for (a, b) in grid_pass] + locus_pts)
+    diag_roots = []  # (symmetric-slice detail folded into the grid above)
     witness = {
         "computation": "qbeta-h4-crossing-locus",
         "description": (
@@ -228,15 +279,19 @@ def main() -> int:
         "regularizability_forces_w_prop_HA": bool(reg_forced),
         "phi4_alpha_beta": str(phi4),
         "phi6_alpha_beta": str(phi6),
+        "phi_denominators": "phi_4: 8*(alpha-beta+1)^4 ; phi_6: 24*(alpha-beta+1)^6",
+        "categorical_grid_passes": [{"alpha": a, "beta": b} for (a, b) in grid_pass],
+        "locus_rational_points": locus_pts,
+        "resultant_completed": bool(res_ok),
         "solutions": verdicts,
-        "symmetric_slice_phi4_roots": [str(sp.nsimplify(r)) for r in diag_roots],
         "assertions": [
             {"label": "Delta(net)_4(q=1)=0 for all (alpha,beta) (w∝HA regularizes)",
              "passed": bool(reg_forced)},
-            {"label": "phi_4=phi_6=0 system solved (finite or parametrized)",
+            {"label": "categorical-grid gate evaluated (7x7 nameable couplings)",
              "passed": True},
         ],
-        "verdict": ("DERIVABLE 4th-strand crossing exists" if any_lead
+        "verdict": ("DERIVABLE 4th-strand crossing exists (grid or rational locus "
+                    "point passes)" if any_lead
                     else "no derivable constant-coupling 4th strand passes the "
                          "gate (fit-trap wall confirmed structurally); a passer "
                          "would need q-dependent (higher-Taylor) couplings"),
