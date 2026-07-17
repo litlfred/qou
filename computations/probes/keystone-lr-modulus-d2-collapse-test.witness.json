@@ -1,0 +1,77 @@
+{
+  "computation": "keystone-lr-modulus-d2-collapse-test",
+  "description": "Decisive first gate of the LR modulus ID: does the SU(2)-colored \u03a3(2,3,5) order-5 fibre carry 4 independent components (needed for \u03bb\u22a25 classes) or collapse to D=2?",
+  "audit_only": true,
+  "tier": "numerical (structural gate)",
+  "computedAt": "2026-07-17T20:42:29.019974+00:00",
+  "commitSha": "ed01a36cdeda9607d2eeea8d1ee921aa20258911",
+  "engine": "mpmath",
+  "engineVersion": "1.3.0",
+  "scriptFile": "keystone_lr_modulus_d2_collapse_test.py",
+  "scriptHash": "16da6c5ad257",
+  "assertions": [
+    {
+      "name": "four_colors_evaluated",
+      "passed": true
+    },
+    {
+      "name": "rank_decisive",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "result": {
+    "supports": {
+      "1": [
+        1,
+        11,
+        19,
+        29
+      ],
+      "2": [
+        7,
+        13,
+        17,
+        23
+      ],
+      "3": [
+        7,
+        13,
+        17,
+        23
+      ],
+      "4": [
+        1,
+        11,
+        19,
+        29
+      ]
+    },
+    "distinct_supports": 2,
+    "support_equal_pairs": [
+      [
+        1,
+        4
+      ],
+      [
+        2,
+        3
+      ]
+    ],
+    "psi_singular_values": [
+      "9.066124e+00",
+      "5.045008e-01",
+      "3.111823e-41",
+      "1.304591e-42"
+    ],
+    "psi_matrix_rank": 2,
+    "d2_collapse": true,
+    "verdict": "D=2 colour components (distinct supports 2; support-equal pairs [(1, 4), (2, 3)]). **D=2 COLLAPSE CONFIRMED** \u2014 the SU(2)-colored order-5 fibre carries only \u22642 independent modular components, but the LR modulus ID needs 4 (the 4 conjugacy classes of \u03bb\u22a25). So `|S_{0\u03bb}^{\u03a3(2,3,5)}| = d_\u03b6(\u03bb)/D` via fibre-coloring is REFUTED (scope-(a)): the route cannot carry the 4 value-map classes; a genuine derivation needs a different insertion (knot-complement \u1e90 / F_K blocks), as the recon flagged. This is the existing bare-vs-4d refutation, re-confirmed at the colored level. No fit; no W_\u03bb value wired; the Lean loc_matches gate is untouched; no tier change."
+  },
+  "context": {
+    "axis": "W_\u03bb keystone / LR modulus ID (m_p/m_\u03bc root cause; s5-so3)",
+    "gate": "D=2 collapse (\u03b1\u22615\u2212\u03b1 fold) \u2014 recon's flagged decisive trap",
+    "on_survive": "amplitude-level |S_{0\u03bb}| test (separate step, not a closure)",
+    "on_collapse": "route refuted; needs \u1e90/F_K knot-complement blocks"
+  }
+}
