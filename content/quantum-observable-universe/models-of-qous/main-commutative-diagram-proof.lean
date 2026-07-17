@@ -1,5 +1,7 @@
 import QOU.Basic
 import QOU.Glossary
+import QOU.QuantumObservableUniverse.CRRealisation
+import QOU.QuantumObservableUniverse.SubstrateParameter
 import Mathlib.CategoryTheory.Monoidal.Category
 import Mathlib.CategoryTheory.Functor.Basic
 import Mathlib.CategoryTheory.NatTrans
@@ -29,16 +31,6 @@ namespace QOU
 universe u v
 
 -- Ref: [kock2004] Kock, "Frobenius Algebras and 2D Topological Quantum Field Theories," CUP LMS Student Texts 59, 2004
-theorem main_commutative_diagram (cqou : CQuantumObservableUniverse)
-    (sp : SubstrateParameter cqou.M)
-    (inst : InstantonConnection cqou.toCRManifoldData)
-    (diag : MainCommutativeDiagram cqou sp inst) :
-    ∀ (x : diag.JetBundle),
-      diag.substrate_coupling (diag.euler_lagrange x) =
-      diag.parallel_transport (diag.jet_eval x) :=
-  diag.commutes
-
--- Ref: [kock2004] Kock, "Frobenius Algebras and 2D Topological Quantum Field Theories," CUP LMS Student Texts 59, 2004
 structure MainCommutativeDiagram (cqou : CQuantumObservableUniverse)
     (sp : SubstrateParameter cqou.M)
     (inst : InstantonConnection cqou.toCRManifoldData) where
@@ -66,5 +58,15 @@ structure MainCommutativeDiagram (cqou : CQuantumObservableUniverse)
       `κ ∘ E[S_q] = ∇^A ∘ j` -/
   commutes : ∀ (x : JetBundle),
     substrate_coupling (euler_lagrange x) = parallel_transport (jet_eval x)
+
+-- Ref: [kock2004] Kock, "Frobenius Algebras and 2D Topological Quantum Field Theories," CUP LMS Student Texts 59, 2004
+theorem main_commutative_diagram (cqou : CQuantumObservableUniverse)
+    (sp : SubstrateParameter cqou.M)
+    (inst : InstantonConnection cqou.toCRManifoldData)
+    (diag : MainCommutativeDiagram cqou sp inst) :
+    ∀ (x : diag.JetBundle),
+      diag.substrate_coupling (diag.euler_lagrange x) =
+      diag.parallel_transport (diag.jet_eval x) :=
+  diag.commutes
 
 end QOU

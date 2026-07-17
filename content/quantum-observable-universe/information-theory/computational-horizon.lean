@@ -42,7 +42,7 @@ numerical evaluation.
 
 namespace QOU.ComputationalHorizon
 
-/-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+/- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
     See `QOU.Archimedean.GroundRing` for the compiled definition. -/
 noncomputable section
 abbrev R_q := LaurentPolynomial ℤ
@@ -63,8 +63,9 @@ def q_inv_param : R_q := LaurentPolynomial.T (-1)
 structure ResolutionTree where
   /-- Number of crossings in the link. -/
   crossings : ℕ
-  /-- Crossings must be positive for a nontrivial computation. -/
-  -- crossings_pos : crossings > 0  -- (archimedean; not meaningful over R_q)
+  /-- Crossings must be positive for a nontrivial computation.
+      (ℕ-positivity, not an archimedean/order-on-`R_q` condition.) -/
+  crossings_pos : crossings > 0
   /-- The type of nodes at depth k. -/
   nodes : Fin (crossings + 1) → Type*
   /-- The root (depth 0) has exactly one node. -/
@@ -107,7 +108,7 @@ structure SkeinPolynomial where
   tree : ResolutionTree
   /-- Weight of each leaf at depth c. -/
   leafWeight : tree.nodes ⟨tree.crossings, by omega⟩ → SkeinWeight
-  /-- The polynomial value: sum of leaf weights. -/
+  -- The polynomial value: sum of leaf weights.
   -- (abstract; concrete evaluation requires summation over leaves)
 
 /-! ## Degree-0 sections and the computational horizon
@@ -124,18 +125,18 @@ structure DegreeZeroSection (T : ResolutionTree) where
   /-- The extraction depth. -/
   depth : Fin (T.crossings + 1)
   /-- The extraction function: given q, returns the extracted value. -/
-  extract : (q : R_q) → q > 1 → R_q
+  extract : R_q → R_q
 
 /-- A degree-0 section vanishes if it returns 0 for all q. -/
-def DegreeZeroSection.vanishes (s : DegreeZeroSection T) : Prop :=
-  -- ∀ (q : R_q) (hq : q > 1), s.extract q hq = 0  -- (archimedean; not meaningful over R_q)
+def DegreeZeroSection.vanishes {T : ResolutionTree} (s : DegreeZeroSection T) : Prop :=
+  ∀ q : R_q, s.extract q = 0
 
 /-- A degree-≥1 section: a witness (resolution path) verifiable in
     poly(c) steps.  Linear transport through the tree. -/
 structure DegreeOneSection (T : ResolutionTree) where
   /-- The resolution path: a choice at each crossing. -/
   path : (k : Fin T.crossings) → Fin 3
-  /-- The path produces a valid leaf. -/
+  -- The path produces a valid leaf.
 
 /-! ## Polynomial observable subcategory R° -/
 
@@ -143,7 +144,7 @@ structure DegreeOneSection (T : ResolutionTree) where
 structure PolyBound where
   /-- The polynomial exponent d (poly = c^d). -/
   exponent : ℕ
-  /-- The exponent is positive. -/
+  -- The exponent is positive:
   -- exponent_pos : exponent > 0  -- (archimedean; not meaningful over R_q)
 
 /-- The polynomial depth for a tree with c crossings. -/
@@ -222,13 +223,13 @@ structure NPWitness (T : ResolutionTree) where
   witness : DegreeOneSection T
   /-- Verification cost: exactly c steps (one per crossing). -/
   verification_cost : ℕ := T.crossings
+  /-- The cost is exactly one step per crossing. -/
+  verification_cost_eq : verification_cost = T.crossings := by rfl
 
 /-- The verification cost of an NP witness is polynomial (linear). -/
 theorem npWitness_poly_verifiable (T : ResolutionTree) (w : NPWitness T) :
-    w.verification_cost ≤ T.crossings := by
-  unfold NPWitness.verification_cost
-  -- The default value is T.crossings
-  omega
+    w.verification_cost ≤ T.crossings :=
+  w.verification_cost_eq.le
 
 /-! ## Structural parallels with the jet horizon -/
 
@@ -249,7 +250,7 @@ structure HorizonStructure where
   /-- If degree-0 is blocked, the horizon is non-empty. -/
   horizon_nonempty : degree_zero_blocked → True
 
-/-- The jet horizon as a HorizonStructure (when JetHorizon is in scope).
+/- The jet horizon as a HorizonStructure (when JetHorizon is in scope).
     This demonstrates that the computational horizon is structurally
     identical to the physical jet horizon. -/
 -- The jet horizon from jet-horizon.lean (QOU.JetHorizon) satisfies:
@@ -260,10 +261,12 @@ structure HorizonStructure where
 
 /-- The computational horizon as a HorizonStructure. -/
 def computationalHorizonStructure (T : ResolutionTree) (pb : PolyBound)
-    (h : hasComputationalHorizon T pb) : HorizonStructure where
+    (_h : hasComputationalHorizon T pb) : HorizonStructure where
   degree_zero_blocked := hasComputationalHorizon T pb
   degree_one_leaks := True  -- Witnesses always verifiable
   degree_two_leaks := True  -- Structural correlations always accessible
   horizon_nonempty := fun _ => trivial
+
+end
 
 end QOU.ComputationalHorizon

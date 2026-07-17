@@ -1,5 +1,6 @@
 import QOU.Basic
 import QOU.Glossary
+import QOU.QuantumObservableUniverse.CRRealisation
 import Mathlib.CategoryTheory.Monoidal.Category
 import Mathlib.CategoryTheory.Functor.Basic
 import Mathlib.CategoryTheory.NatTrans
@@ -27,6 +28,15 @@ open scoped Topology Manifold CategoryTheory CategoryTheory.MonoidalCategory
 namespace QOU
 
 universe u v
+
+/-- A connection is **irreducible** if the space of its covariant-constant
+    adjoint sections is trivial (at most one element, necessarily zero).
+    (Local co-location copy of `QOU.InstantonConnection.IsIrreducible` from
+    `QOU.QuantumObservableUniverse.Propositions`, which cannot be imported
+    here without clashing with this block's own `irreducible_connection`.) -/
+def InstantonConnection.IsIrreducible {cr : CRManifoldData}
+    (inst : InstantonConnection cr) : Prop :=
+  Subsingleton inst.parallelAdjointSections
 
 /-- **Lemma (Irreducibility of the connection).**
     In a ℂ quantum observable universe, every instanton connection is

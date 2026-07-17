@@ -3,6 +3,7 @@ import QOU.Glossary
 import Mathlib.CategoryTheory.Monoidal.Category
 import Mathlib.CategoryTheory.Functor.Basic
 import Mathlib.CategoryTheory.NatTrans
+import Mathlib.CategoryTheory.Types.Basic
 import Mathlib.Algebra.Group.Basic
 import Mathlib.Algebra.Ring.Basic
 import Mathlib.Algebra.Order.Field.Basic
@@ -26,7 +27,71 @@ open scoped Topology Manifold CategoryTheory CategoryTheory.MonoidalCategory
 
 namespace QOU
 
-universe u v
+universe u v w
+
+/-- **Frobenius–Hopf data** in a monoidal category.
+
+    Re-declared from the library module
+    `QOU.QuantumObservableUniverse.CategoricalFoundations` so this sibling
+    is a self-contained compilation unit — importing the library module
+    would collide with this block's own `QuantumObservableUniverse` and
+    `QuantumUniverse.gaugeGroup` declarations.  Keep field-for-field in
+    sync with the library.
+
+    LaTeX: used in `\label{def:quantum-universe}`, item (ii).
+    Ref: [kock2004] -/
+structure FrobeniusHopfData (C : Type u) [CategoryTheory.Category.{v} C]
+    [CategoryTheory.MonoidalCategory C] where
+  /-- The underlying object in `C`. -/
+  obj : C
+  /-- Multiplication morphism `μ : A ⊗ A → A`. -/
+  mul : (obj ⊗ obj) ⟶ obj
+  /-- Unit morphism `η : 𝟙 → A`. -/
+  unit : (𝟙_ C) ⟶ obj
+  /-- Comultiplication morphism `Δ : A → A ⊗ A`. -/
+  comul : obj ⟶ (obj ⊗ obj)
+  /-- Counit morphism `ε : A → 𝟙`. -/
+  counit : obj ⟶ (𝟙_ C)
+  /-- Antipode morphism `S : A → A`. -/
+  antipode : obj ⟶ obj
+  /-- Frobenius form `λ : A → 𝟙`. -/
+  frobeniusForm : obj ⟶ (𝟙_ C)
+  /-- Coevaluation morphism `η̃ : 𝟙 → A ⊗ A`, the dual datum to the
+      evaluation `ev = μ ≫ λ : A ⊗ A → 𝟙`. -/
+  coevaluation : (𝟙_ C) ⟶ (obj ⊗ obj)
+  /-- **Snake identity (left).** -/
+  pairing_snake_left :
+    (ρ_ obj).inv ≫ (obj ◁ coevaluation) ≫ (α_ obj obj obj).inv ≫
+      ((mul ≫ frobeniusForm) ▷ obj) ≫ (λ_ obj).hom = 𝟙 obj
+  /-- **Snake identity (right).** -/
+  pairing_snake_right :
+    (λ_ obj).inv ≫ (coevaluation ▷ obj) ≫ (α_ obj obj obj).hom ≫
+      (obj ◁ (mul ≫ frobeniusForm)) ≫ (ρ_ obj).hom = 𝟙 obj
+  /-- **Frobenius relation**: `μ ≫ Δ = (Δ ▷ A) ≫ α ≫ (A ◁ μ)`. -/
+  frobenius_relation :
+    mul ≫ comul = (comul ▷ obj) ≫ (α_ obj obj obj).hom ≫ (obj ◁ mul)
+
+/-- **Quantum Universe** over a field `k`.
+
+    Re-declared from the library module
+    `QOU.QuantumObservableUniverse.CategoricalFoundations` (see the note
+    on `FrobeniusHopfData` above).  Keep field-for-field in sync.
+
+    LaTeX: `\label{def:quantum-universe}` -/
+structure QuantumUniverse (k : Type*) [Field k] where
+  /-- The monoidal category `C`. Represented as an opaque type with
+      `Category` and `MonoidalCategory` instances. -/
+  C : Type u
+  [catInst : CategoryTheory.Category.{v} C]
+  [monInst : CategoryTheory.MonoidalCategory C]
+  /-- The Frobenius–Hopf object `A` in `C`. -/
+  frobHopf : @FrobeniusHopfData C catInst monInst
+  /-- The fibre functor `ω : C → Type*` (abstracting `Vect_k`).
+      An exact faithful `k`-linear monoidal functor. -/
+  fibreFunctor : @CategoryTheory.Functor C catInst (Type w) inferInstance
+  /-- `A` admits a differential calculus: the module of Kähler
+      differentials `Ω¹(A)` exists in `C`. -/
+  differentialForms : Type*
 
 /-- **Quantum Observable Universe** over a field `k`.
 
@@ -42,7 +107,7 @@ universe u v
 
     LaTeX: `\label{def:quantum-observable-universe}` -/
 structure QuantumObservableUniverse (k : Type*) [Field k]
-    extends QuantumUniverse.{u, v} k where
+    extends QuantumUniverse k where
   /-- The adjoint object `Ad(A)` in `C`, carrying the adjoint action of the
       Hopf algebra `A` on itself.  In a braided monoidal category this is
       constructed from `(A, μ, Δ, S)` and the braiding; here it is provided
@@ -81,7 +146,7 @@ structure QuantumObservableUniverse (k : Type*) [Field k]
 
     Ref: [lusztig1993] https://doi.org/10.1007/978-0-8176-4717-9 -/
 noncomputable def QuantumUniverse.gaugeGroup {k : Type*} [Field k]
-    (QU : QuantumUniverse.{u, v} k) : Type* :=
+    (QU : QuantumUniverse.{u, v, w} k) : Type (max u w) :=
   letI := QU.catInst
   QU.fibreFunctor ≅ QU.fibreFunctor
 

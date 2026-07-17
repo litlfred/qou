@@ -28,6 +28,36 @@ namespace QOU
 
 universe u v
 
+/-- **Reeb decomposition** of a differential form on a CR manifold.
+
+    Re-declared from the library module
+    `QOU.QuantumObservableUniverse.Particles` so this sibling is a
+    self-contained compilation unit — importing the library module would
+    collide with this block's own `Fermion` / `Boson` /
+    `Boson.total_eq_horizontal` declarations.  Keep field-for-field in
+    sync with the library.
+
+    LaTeX: `\label{def:reeb-decomposition}` -/
+structure ReebDecomposition (M : Type*) where
+  /-- The total form (abstract representative). -/
+  total : M → ℝ
+  /-- Horizontal component `α_H` satisfying `ι_ξ α_H = 0`. -/
+  horizontal : M → ℝ
+  /-- Vertical component `α_V = θ ∧ ι_ξ α`. -/
+  vertical : M → ℝ
+  /-- Decomposition identity: `total = horizontal + vertical`. -/
+  decomp : ∀ (p : M), total p = horizontal p + vertical p
+
+/-- **q-Harmonic form (Particle)**: a section in the kernel of `Δ_q`.
+    Re-declared from `QOU.QuantumObservableUniverse.Particles` (see the
+    note on `ReebDecomposition` above).  Keep field-for-field in sync.
+    LaTeX: `\label{def:q-harmonic-form}` -/
+structure QHarmonicForm (M : Type*) extends ReebDecomposition M where
+  /-- The q-Laplacian value `Δ_q(α)` at each point. -/
+  q_laplacian : M → ℝ
+  /-- The q-Laplacian vanishes: `Δ_q α = 0`. -/
+  q_laplacian_vanishes : ∀ (p : M), q_laplacian p = 0
+
 /-- **Fermion**: a q-harmonic form with non-trivial vertical component.
 
     LaTeX: `\label{def:fermion}` -/

@@ -1,5 +1,8 @@
 import Mathlib.Algebra.Algebra.Basic
 import Mathlib.LinearAlgebra.LinearIndependent.Basic
+import Mathlib.Data.Real.Basic
+import Mathlib.Tactic.Abel
+import Mathlib.Tactic.Linarith
 
 /-!
 # Term 1 of the unified mass formula: descended Markov trace
@@ -89,7 +92,7 @@ theorem term_one_descends (T_w j : A) (hj : j ∈ J1 (A := A)) :
   unfold term_one
   congr 1
   -- T_w + j ≡ T_w mod J1: their difference is j ∈ J1.
-  have h_diff : (T_w + j) - T_w = j := by ring
+  have h_diff : (T_w + j) - T_w = j := by abel
   exact markov_descends (T_w + j) T_w (by rw [h_diff]; exact hj)
 
 /-- Unit witness: the unit `1 ∈ A` has `tr_M = 1`, so its

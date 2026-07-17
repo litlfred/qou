@@ -1,5 +1,6 @@
 import QOU.Basic
 import QOU.Glossary
+import Mathlib.Algebra.Polynomial.Laurent
 import Mathlib.CategoryTheory.Monoidal.Category
 import Mathlib.CategoryTheory.Functor.Basic
 import Mathlib.CategoryTheory.NatTrans
@@ -28,6 +29,39 @@ namespace QOU
 
 universe u v
 
+noncomputable section
+
+/-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+    Mirrors the sibling block `c-quantum-universe.lean`; see
+    `QOU.Archimedean.GroundRing` for the compiled definition. -/
+abbrev R_q := LaurentPolynomial ℤ
+
+/-- **CR manifold data** for the ℂ realisation (local prerequisite).
+
+    Re-declared from the sibling block `c-quantum-universe.lean`
+    (`def:c-quantum-universe`) so this sibling is a self-contained
+    compilation unit — importing the library `CRRealisation` module
+    would collide with its own `CQuantumObservableUniverse`
+    declaration.  Keep field-for-field in sync with the sibling. -/
+structure CRManifoldData where
+  /-- The underlying smooth manifold carrier. -/
+  M : Type*
+  [topM : TopologicalSpace M]
+  /-- CR dimension `n ≥ 1`; real dimension of `M` is `2n + 1`. -/
+  n : ℕ
+  /-- Levi form signature `(r, s)` with `r + s = n`. -/
+  r : ℕ
+  s : ℕ
+  rs_sum : r + s = n
+  /-- The contact form `θ` as an `R_q`-valued function on `M`. -/
+  contactForm : M → R_q
+  /-- The contact form is non-degenerate: there exists a point where θ ≠ 0. -/
+  contact_nondeg : ∃ p : M, contactForm p ≠ 0
+  /-- The Reeb vector field `ξ`, characterised by `ι_ξ dθ = 0` and `θ(ξ) = 1`. -/
+  reebField : C(M, M)
+  /-- The Reeb field preserves the contact form: θ(ξ(p)) = θ(p) for all p. -/
+  reeb_preserves_contact : ∀ p : M, contactForm (reebField p) = contactForm p
+
 /-- **ℂ quantum observable universe**: CR manifold data satisfying the
     vanishing conditions `H⁰(M, Ad(P)) = 0` and `Γ_c(M, S) = 0`.
 
@@ -42,5 +76,7 @@ structure CQuantumObservableUniverse extends CRManifoldData where
   compactStateSections : Type*
   /-- `Γ_c(M, S)` is trivial: all compactly supported state sections are equal. -/
   state_sections_vanish : Subsingleton compactStateSections
+
+end
 
 end QOU
