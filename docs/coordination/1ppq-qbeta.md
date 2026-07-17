@@ -1059,3 +1059,24 @@ resurgent/acceleration chain, (ii) KC19's crossing-weight `w(q)` derived from
 the Φ_b state integral, (iii) canonical `c₄^even` rungs via H₄ Hoefsmit
 (bean `8we6`) since extracted `c_k≥4` are noise (P4 entropy audit). No fit;
 no c_k wired; no tier change.
+
+
+**2026-07-17 (bar-odd-S follow-up) — ξ-FRAME PHASE LAW: κ̃_n/ξⁿ ∈ (−i)ⁿ·ℝ (rung 1
+to 6e-20) ⇒ the perturbative deformed tower has NO intrinsic odd phase; deformed
+Borel–Padé extends #3692's single-valuedness to the meridian (Im 𝔙̃_b = 0.05855,
+88° Stokes margin).** Probe `qbeta_c3_borel_pade_deformed_meridian_probe.py`
+(5/5 assertions) on the #3691 deformed rungs: arg κ̃_n = −n·arctan(t/π) exactly
+(rung-1 residual 6.2e-20; rungs 2–4 within their witness precision), i.e. the
+deformed Ohtsuki coefficients are REAL in the ξ-normalized frame — the u=0
+parity structure (#3628) carries to the meridian unchanged, and #3691's
+"intrinsic odd channel Im κ̃₁" is the kinematic frame rotation, nothing more.
+**A_ω-lane selection rule (heads-up posted on #3805/#3813): any genuine
+odd-channel monodromy phase must be NON-perturbative — unreadable from κ̃ rungs
+at any order.** Deformed resummation: Im 𝔙̃_b = 0.05855 (u=0: 0.05545; meridian
+correction +0.0031); Borel singularity rotates by the same frame phase; nearest
+Padé pole 88.1° off the imaginary ray ⇒ no median split / no anchor-dependent
+trans-series at the meridian either. Task-2 record: the O/h top-order artifact
+is FIXED on main (`ser_div`, valuation-aware, credits the #3691 diagnosis);
+corpus sweep finds zero remaining shift-divide offenders. Audit:
+`2026-07-17-deformed-tower-xi-frame-phase-law.md`. No fit; no c_k wired; no
+integer Stokes constant claimed; no tier change.
