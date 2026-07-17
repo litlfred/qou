@@ -8,6 +8,8 @@ so 14 - 8 = 6 = dim S^6 = dim G2/SU(3). Exact rational linear algebra.
 
 Emits computations/octonion-su3-stabilizer.witness.json.
 """
+import time as _time  # noqa: E402 — wall-clock anchor for witness durationMs
+_T0 = _time.monotonic()
 import json
 from sympy import Matrix, Rational, zeros
 
@@ -75,8 +77,13 @@ witness = {
   "verdict": verdict,
   "scope": "exact-arithmetic; cross-checks sibling dim Der=14; NEW: su(3) subset g2 realised, S^6=G2/SU(3) dim. Anti-laundering: exact linear algebra, not a fit.",
 }
-with open("computations/octonion-su3-stabilizer.witness.json","w") as f:
-    json.dump(witness, f, indent=2)
+import os as _os, sys as _sys  # noqa: E402
+_sys.path.insert(0, _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "substrate"))
+from witness_base import WitnessBuilder  # noqa: E402 — P30 rollup (bean cmiy)
+WitnessBuilder.wrap_legacy(
+    "octonion-su3-stabilizer", witness,
+    script_path=__file__, engine="python", start_time=_T0,
+).save()
 print("dim Der(O) =", dimDer, "(expect 14)")
 for t,v in res.items(): print(f"  stab({t}): rank(ev)={v['rank_ev']} dim su3={v['dim_stabilizer']} im_perp(e0,e_t)={v['im_perp_e0']},{v['im_perp_et']}")
 print("\nVERDICT:", verdict)
