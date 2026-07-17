@@ -75,8 +75,7 @@ theorem fresidue_jet_succ (X : ℤ → R) (n : ℕ) : fresidue (jet X (n + 1)) =
     fresidue (fun e => f e + g e) = fresidue f + fresidue g := rfl
 
 theorem fresidue_sum {ι : Type*} (s : Finset ι) (F : ι → ℤ → R) :
-    fresidue (fun e => ∑ i ∈ s, F i e) = ∑ i ∈ s, fresidue (F i) := by
-  simp [fresidue]
+    fresidue (fun e => ∑ i ∈ s, F i e) = ∑ i ∈ s, fresidue (F i) := rfl
 
 /-- A finite residue sum of positive-order jets vanishes — the library form of
 the exactness (b)-exclusion: no residue-sum period can be sourced by classical
