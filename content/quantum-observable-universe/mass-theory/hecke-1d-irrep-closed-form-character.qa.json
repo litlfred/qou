@@ -3,13 +3,13 @@
   "label": "prop:hecke-1d-irrep-closed-form-character",
   "kind": "proposition",
   "paths": {
-    "ts": "../qou/content/quantum-observable-universe/mass-theory/hecke-1d-irrep-closed-form-character.ts",
-    "md": "../qou/content/quantum-observable-universe/mass-theory/hecke-1d-irrep-closed-form-character.md",
-    "lean": "../qou/content/quantum-observable-universe/mass-theory/hecke-1d-irrep-closed-form-character.lean"
+    "ts": "content/quantum-observable-universe/mass-theory/hecke-1d-irrep-closed-form-character.ts",
+    "md": "content/quantum-observable-universe/mass-theory/hecke-1d-irrep-closed-form-character.md",
+    "lean": "content/quantum-observable-universe/mass-theory/hecke-1d-irrep-closed-form-character.lean"
   },
   "source_hashes": {
     "md": "c688a4c6a11c",
-    "ts": "cb140b5db438",
+    "ts": "7cc169f31e93",
     "lean": "bd02ad2f2103"
   },
   "criteria": {
@@ -565,84 +565,6 @@
       }
     ],
     "canonical-no-negative-result-in-paper": [
-      {
-        "field_hash": {
-          "md": "c688a4c6a11c",
-          "ts": "cb140b5db438",
-          "lean": "bd02ad2f2103"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "0996f339228a",
-          "script_commit_sha": "7972b47d7962a662a5a6cb0cc175d21ee453ae3a"
-        },
-        "reviewed_at": "2026-07-13T00:59:15.685Z",
-        "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554"
-      }
-    ],
-    "compute-prop-has-probe": [
-      {
-        "field_hash": {
-          "md": "c688a4c6a11c",
-          "ts": "cb140b5db438",
-          "lean": "bd02ad2f2103"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "0996f339228a",
-          "script_commit_sha": "7972b47d7962a662a5a6cb0cc175d21ee453ae3a"
-        },
-        "reviewed_at": "2026-07-13T00:59:15.685Z",
-        "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554"
-      }
-    ],
-    "compute-prop-has-consumer": [
-      {
-        "field_hash": {
-          "md": "c688a4c6a11c",
-          "ts": "cb140b5db438",
-          "lean": "bd02ad2f2103"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "0996f339228a",
-          "script_commit_sha": "7972b47d7962a662a5a6cb0cc175d21ee453ae3a"
-        },
-        "reviewed_at": "2026-07-13T00:59:15.685Z",
-        "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554"
-      }
-    ],
-    "compute-witness-exists": [
-      {
-        "field_hash": {
-          "md": "c688a4c6a11c",
-          "ts": "cb140b5db438",
-          "lean": "bd02ad2f2103"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "0996f339228a",
-          "script_commit_sha": "7972b47d7962a662a5a6cb0cc175d21ee453ae3a"
-        },
-        "reviewed_at": "2026-07-13T00:59:15.685Z",
-        "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554",
-        "severity": "critical",
-        "evidence": "content/quantum-observable-universe/mass-theory/hecke-1d-irrep-closed-form-character.ts:1: declared witness 'computations/q-beta-operator-valued-N2.witness.json' does not exist on disk"
-      }
-    ],
-    "compute-lp-dual-present": [
       {
         "field_hash": {
           "md": "c688a4c6a11c",
@@ -2208,7 +2130,83 @@
         "reviewed_at": "2026-07-12T02:24:13.638Z",
         "reviewed_sha": "a261b5599858024c2ffcb9a1f91fc8aceb108c50"
       }
+    ],
+    "compute-witness-exists": [
+      {
+        "field_hash": {
+          "md": "c688a4c6a11c",
+          "ts": "7cc169f31e93",
+          "lean": "bd02ad2f2103"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f8ed8072ea0b",
+          "script_commit_sha": "a285d6903e89fd7951b6c293ad21d2d869f685a9"
+        },
+        "reviewed_at": "2026-07-17T14:48:26.456Z",
+        "reviewed_sha": "0b4ed888d43cef2bdd5605b40e9d6b8038f572a7"
+      }
+    ],
+    "compute-prop-has-probe": [
+      {
+        "field_hash": {
+          "md": "c688a4c6a11c",
+          "ts": "7cc169f31e93",
+          "lean": "bd02ad2f2103"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f8ed8072ea0b",
+          "script_commit_sha": "a285d6903e89fd7951b6c293ad21d2d869f685a9"
+        },
+        "reviewed_at": "2026-07-17T14:48:26.456Z",
+        "reviewed_sha": "0b4ed888d43cef2bdd5605b40e9d6b8038f572a7"
+      }
+    ],
+    "compute-prop-has-consumer": [
+      {
+        "field_hash": {
+          "md": "c688a4c6a11c",
+          "ts": "7cc169f31e93",
+          "lean": "bd02ad2f2103"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f8ed8072ea0b",
+          "script_commit_sha": "a285d6903e89fd7951b6c293ad21d2d869f685a9"
+        },
+        "reviewed_at": "2026-07-17T14:48:26.456Z",
+        "reviewed_sha": "0b4ed888d43cef2bdd5605b40e9d6b8038f572a7"
+      }
+    ],
+    "compute-lp-dual-present": [
+      {
+        "field_hash": {
+          "md": "c688a4c6a11c",
+          "ts": "7cc169f31e93",
+          "lean": "bd02ad2f2103"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f8ed8072ea0b",
+          "script_commit_sha": "a285d6903e89fd7951b6c293ad21d2d869f685a9"
+        },
+        "reviewed_at": "2026-07-17T14:48:26.456Z",
+        "reviewed_sha": "0b4ed888d43cef2bdd5605b40e9d6b8038f572a7"
+      }
     ]
   },
-  "updated_at": "2026-07-13T00:59:15.685Z"
+  "updated_at": "2026-07-17T14:48:26.456Z"
 }
