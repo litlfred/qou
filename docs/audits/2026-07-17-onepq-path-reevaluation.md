@@ -92,6 +92,40 @@ alien-derivative chain** (base `q₀` or base-3), not a fixed-order Leroy. No fi
 no `c_k` wired; comparison-only. *Constraint delivered to the G3 line:* don't
 apply a fixed-order Borel to the odd ladder — measure/deform the q-Borel base.
 
+### Cross-link to the landed A1 saddle data (main `360a1b22d9`, `57a0fcd02f`)
+
+Two commits landed on `main` in parallel with this session, from the saddle
+(Φ_b 2-loop) side, and they **corroborate the finding and explain the band**:
+
+- **Independent confirmation of the negative.** `57a0fcd02f` feeds the certified
+  complete-structure `A1 = 1/3 + 0.2726i` into the F1 acceleration and finds the
+  b-dictionary is a **scale-invariant prefactor** — "root-test & ratio radii
+  (both degree-0 in scale) are UNCHANGED (gap 0.0194→0.0194) — A1 does NOT rescue
+  the k=21 gate; it fixes the resummed value's normalization, **not the
+  singularity location** … the gate needs more rungs (k=31 drift persists)." That
+  is exactly this probe's scope-(a) negative, reached from the saddle side: the
+  singularity/action is not perturbatively extractable, and the order drifts.
+- **The band is the saddle's own data.** The A1 derivation (`360a1b22d9`) is
+  gated on **G2: `|−V″(z\*)| = √3`** (adjoint Reidemeister torsion) at the 4₁
+  saddle `z\* = e^{iπ/3} = (1+i√3)/2`, with `−V″(z\*) = −3/2 + i√3/2` (verified
+  to 30 digits) and **G1: `Im V(z\*) = Vol(4₁) = 2.0298832`**. So:
+  - the odd ladder is **ℚ(√3)-valued** because the bar-odd (imaginary) part of the
+    saddle Hessian is `√3/2` — the same √3, same 6th-root-of-unity saddle;
+  - `Vol(4₁)/(4π) = Im V(z\*)/(4π) = 0.16153` sits **inside** this probe's odd-face
+    band `[0.147, 0.168]` — i.e. the "consistent-not-identified" candidate is the
+    saddle's imaginary potential (hyperbolic volume) over the `4π` two-channel loop
+    measure, not an arbitrary constant. `Vol(4₁)/(4π) = (even-face Vol/π)/4`.
+
+  This upgrades "band brackets `Vol(4₁)/(4π)`" from numerical coincidence toward a
+  **structural expectation** (both faces are shadows of one saddle datum) — but it
+  is *still not an identification*: the 12 % s-systematic stands, and the exact
+  odd-face action needs the non-perturbative q-Borel/3d-index (#3805). Note also
+  `57a0fcd02f`'s **D1 refutation** of the naive meridian-deformed potential
+  `V_u = Li₂(z) − Li₂(1/z) − u log z` (`V_u′(z\*) ≠ 0`): the correct 4₁
+  meridian-deformed potential is a **named open piece**, so no deformed odd-face
+  `A1` is claimed here either. Formalize-first: the perturbative route is pruned
+  from both sides; the live instrument is the 3d-index.
+
 ## Headline
 
 L2 is still **2/7** (`beats_100x_count = 2`: m_e, m_K/m_π) — but the week
