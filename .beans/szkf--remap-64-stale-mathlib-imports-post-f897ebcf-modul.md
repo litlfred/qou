@@ -91,3 +91,18 @@ main):** bulk lean-direct verify of all 40 at main HEAD → for each FAIL, 3-way
 wave-2 fix (base=3535f809, ours=main, theirs=49057c2b old tip) or hand-port → fresh PR.
 Plus infra: ckj6 verifier hardening + lake-cache reseed. Wave-2 fix reference blobs live at
 commit 49057c2b (closed PR #3202 head).
+
+## Wave-3 landed (2026-07-17) — PR #3828
+
+37 deep repairs re-ported (24 auto-merge + 13 hand-port), each lean-direct exit 0 at
+main HEAD. Verifier hardening (ckj6) landed same PR. Branch rebased on main, force-pushed.
+
+### RESEED lake-cache — DEFERRED (do NOT do from a verify-only session)
+This session compiled only ~33 QOU oleans (verification subset). The last production seed
+(2026-07-02, lake-cache/qou-v4-24-0) holds 859 QOU oleans. Reseeding with 33 would DEGRADE
+the cache → must be done from a session with a near-complete library build (topological
+lean-direct orchestrator or lake with a working graft URL). Left for a build-capable session.
+
+### STILL OPEN
+- RESEED lake-cache/qou-v4-24-0 (build-capable session only; see above)
+- qx79: library file H3BraneTowerScaffold (pre-existing unsolved goals in ell_0)
