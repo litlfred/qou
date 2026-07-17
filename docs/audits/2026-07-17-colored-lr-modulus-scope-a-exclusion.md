@@ -1,3 +1,4 @@
+
 # Colored Lawrence–Rozansky modulus — scope-(a) excluded at the Σ(2,3,5) fibre root
 
 **Date:** 2026-07-17 · **Axis:** W_λ keystone (m_p·m_μ root cause) ·
@@ -63,3 +64,47 @@ of $[\text{mark}]_{q_0}$, not the root-level modular S-matrix.
 **Method note.** Exact sympy fifth-root arithmetic; the s013 τ_N/Thm-10 machinery
 is machine-validated and cited, not re-run. Math grep battery run by hand;
 pipeline render unavailable in this sandbox — **not machine-validated**.
+
+---
+
+## Addendum (2026-07-17, same day) — cross-reference + K3 framing correction
+
+A sibling probe landed on `main` in the same wave:
+[`lr_modulus_identification_sigma235.py`](../../computations/lr_modulus_identification_sigma235.py)
+(PR #3822, audit
+[`2026-07-17-lr-modulus-identification.md`](2026-07-17-lr-modulus-identification.md))
++ [`habiro_interpolation_wlambda.py`](../../computations/habiro_interpolation_wlambda.py).
+It executes the **fuller** Front 2: all three exceptional fibres ($p=2,3,5$),
+not only the order-5 fibre this probe treated, and derives the **corrected exact
+identity**
+$$|S_{0\lambda}^{(m)}| = 2\,d_{\zeta^m}(\lambda)/D_{\hat E_8}(\zeta^m)\quad(\text{exact }\mathbb{Q}(\sqrt5)),$$
+with $\zeta = e^{m\pi i/5}$ (the order-$2p_3=10$ fibre holonomy, Galois-indexed by
+the flat connection $m$), a global fold factor $2$ (resp. $\sqrt2$), and the whole
+identity living at the folded $D=2$ level. That is the more complete and more
+precise treatment; **read #3822 as the reference result** for Front 2. This
+probe's contribution is the single-order-5 restriction of the same picture.
+
+**Consistency and one framing correction.**
+
+- **K2 (D=2 collapse) agrees** with #3822's fold verdict exactly — the McKay
+  colouring factors *through* the collapse ($\alpha{=}4\equiv1$, $\alpha{=}3\equiv2$),
+  it does not escape it. #3822's `(F)` is this probe's K2.
+- **K3 should be read narrowly.** This probe phrased K3 as "the root modulus
+  *cannot reach* the growing target ratios." #3822 shows the sharper truth: the
+  modulus **identity holds *exactly* at the folded root level** ($|S_{0\lambda}|\,D = 2|[\text{mark}]_\zeta|$,
+  $\mathbb{Q}(\sqrt5)$-exact). So the correct statement is not that the root
+  "fails" to reach the target, but that the root realizes the identity *at the
+  folded $D=2$ level*, and the **generic-$q$ / archimedean-$q_0$ separation of the
+  four classes is the standing open continuation problem** (#3652 / #3681),
+  unchanged. The bounded-fifth-root-vs-growing-$q_0$ observation (K3) is a
+  *symptom* of that continuation gap, not an independent obstruction. K4 (the
+  mark-6 / fibre-order-5 split-node point) likewise refines to #3822's exact
+  reading: at the fibre root $[5]_\zeta + 1 = 1 = |[6]_\zeta|$, moduli consistent
+  across the $S_5$-block and $2I$-node dictionaries.
+
+**Net.** The scope-(a) headline stands — the colored-LR object at the Σ(2,3,5)
+fibre root is folded ($D=2$) and the value map's four-class separation is a
+*real-$q_0$ continuation* problem, not a root-level one — but the precise carrier
+of that statement is #3822's corrected exact identity, to which this probe should
+defer. No fit; nothing wired; the continuation gap (#3652/#3681) is the live open
+object.
