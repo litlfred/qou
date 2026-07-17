@@ -1,0 +1,142 @@
+{
+  "engine": "sympy+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-07-17T15:11:36.467399+00:00",
+  "commitSha": "50cfb692a1e38cff588b5112b311572ccd8a568f",
+  "assertions": [
+    {
+      "name": "parity_split_arithmetic_normalized_estimators_computed",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "exact d_k k=1..21; G2 parity grading reproduced; per-channel local Gevrey-index tables computed (drifts: {'mixed': 0.914, 'odd': 0.344, 'even': 0.26, 'norm3': 2.844, 'norm3_odd': 1.083, 'norm3_even': 0.789}); finding: best channel even, halves-mixed-drift=True. Scope-(a), fit-free, nothing wired."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 39,
+  "computation": "qbeta-dladder-parity-split-arithmetic-normalized",
+  "scriptFile": "qbeta_dladder_parity_split_arithmetic_normalized_probe.py",
+  "scriptHash": "89bb081ba8c5",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "W9 first increment (1ppq Option 1, bean qou-dri7): the two PROVED arithmetic gradings of the bar-odd D-ladder (2-adic bar-parity; 3-adic ~1.5k denominator growth) used as channel splitters / normalizers for the divergence-class estimators, on the exact k<=21 rungs. Complements Track 1 (extension, same mixed estimators) and #3683 (even channel). Local Gevrey-index tables per channel (parity-split, 3-power-normalized, combined) vs mixed control + drift stats; decides whether the 'no single Gevrey index' drift is a superposition artifact of the arithmetic channels at accessible order. Fit-free (splits forced by proved gradings); no instanton action claimed; no c_k value; no wiring; scope-(a).",
+  "data": {
+    "k_range": [
+      1,
+      21
+    ],
+    "g2_parity_reproduced": true,
+    "g3_v3_slope": 1.5,
+    "local_index_mixed": {
+      "2": 3.3278488596965077,
+      "3": 0.8996109870747173,
+      "4": 1.537582254486409,
+      "5": 0.9900557431558789,
+      "6": 1.0131035643986233,
+      "7": 0.933899817317557,
+      "8": 0.8644705577146549,
+      "9": 0.8438998362334256,
+      "10": 0.7969493455846625,
+      "11": 0.7759785745583296,
+      "12": 0.7490475544249615,
+      "13": 0.7288451117805935,
+      "14": 0.7106289739445556,
+      "15": 0.6939236106886033,
+      "16": 0.6795664881667405,
+      "17": 0.6661462256144952,
+      "18": 0.6541855979827339,
+      "19": 0.643138353677914,
+      "20": 0.6330063637147405,
+      "21": 0.6236501133056316
+    },
+    "local_index_odd": {
+      "3": 1.8389816247316881,
+      "5": 1.2434271548543883,
+      "7": 0.9718684122775423,
+      "9": 0.8539019293592354,
+      "11": 0.7862513511675528,
+      "13": 0.7387862237641595,
+      "15": 0.7021685190042195,
+      "17": 0.6727837893675154,
+      "19": 0.6486107921819443,
+      "21": 0.6282904509486269
+    },
+    "local_index_even": {
+      "4": 1.2555261562199211,
+      "6": 1.002197394263637,
+      "8": 0.8980336128915826,
+      "10": 0.8198749312270182,
+      "12": 0.7622731095249389,
+      "14": 0.7196073388559624,
+      "16": 0.6866605166324712,
+      "18": 0.6601061895710435,
+      "20": 0.6380286139016234
+    },
+    "local_index_norm3": {
+      "2": 6.49777386113882,
+      "3": 1.8996109870747173,
+      "4": 3.1225447552075654,
+      "5": 0.9900557431558789,
+      "6": 2.8525451426949986,
+      "7": 1.4984748513711366,
+      "8": 0.8644705577146549,
+      "9": 2.3438998362334256,
+      "10": 1.274070600304325,
+      "11": 1.6922923945409822,
+      "12": 1.633275771820442,
+      "13": 1.1571624528119882,
+      "14": 1.543208301676154,
+      "15": 0.6939236106886033,
+      "16": 1.8682883637076075,
+      "17": 0.2783842905760051,
+      "18": 2.1745606648464713,
+      "19": 1.0162526536995509,
+      "20": 0.9997321550568251,
+      "21": 1.3453477267346918
+    },
+    "local_index_norm3_odd": {
+      "3": 3.6784232030280632,
+      "5": 1.9768787375385575,
+      "7": 2.1475874039124196,
+      "9": 1.624557569590185,
+      "11": 1.4874215741068226,
+      "13": 1.3914457968832443,
+      "15": 1.1130868640559783,
+      "17": 1.0647392225688919,
+      "19": 1.5900400331423628,
+      "21": 1.1739357959786734
+    },
+    "local_index_norm3_even": {
+      "4": 2.581868482313142,
+      "6": 1.9712199166771005,
+      "8": 1.1709569182506407,
+      "10": 1.7964604929781014,
+      "12": 1.6622582459985362,
+      "14": 1.3529341318804489,
+      "16": 1.2880204879977422,
+      "18": 1.2359405324342398,
+      "20": 1.0079210772426344
+    },
+    "drifts": {
+      "mixed": 0.9139321411807775,
+      "odd": 0.3435779613289154,
+      "even": 0.2600049989899592,
+      "norm3": 2.8441604646315604,
+      "norm3_odd": 1.0828481813435278,
+      "norm3_even": 0.788539415735467
+    },
+    "best_channel": "even",
+    "split_resolves_half_drift": true
+  }
+}
