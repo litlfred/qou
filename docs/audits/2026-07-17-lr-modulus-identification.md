@@ -59,7 +59,7 @@ corrections:
   coloring does **not** escape it — it factors through it, identically on both sides of the
   identity. The collapse is the fold. A "9 independent moduli at a single $\zeta$" reading is
   **(b)-excluded**: the invariant is $D(2,3,5) = (p_1{-}1)(p_2{-}1)(p_3{-}1)/4 = 2$ — exactly two
-  irreducible flat SU(2) connections on $\Sigma(2,3,5)$ (\cite{fintushelstern1990}; Hikami's
+  irreducible flat SU(2) connections on $\Sigma(2,3,5)$ ([fintushelstern1990]; Hikami's
   $D$-formula machine-validated in-repo by `keystone_valuemap_genuine_smatrix_s013`). Any
   per-flat-connection amplitude family has at most 2 independent components.
 - **α=1 anchor:** the colored Gauss sum at $\alpha = 1$ reproduces the bare $\tau_N$ and the
