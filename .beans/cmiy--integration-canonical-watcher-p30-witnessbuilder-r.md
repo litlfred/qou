@@ -149,3 +149,30 @@ added); cwd-relative paths eliminated via save(). Followed sibling gotcha #5
 now has ZERO raw json.dump witness emitters — remaining rollup work is the
 root-computations tail (~30+ scripts, per-script triage: many-consumer,
 multi-emit, canonical-env, NOFILE classes).
+
+## 2026-07-17 — CORRECTION of the 2026-07-05 deferral note (stale)
+That note's "hard tail (qaskey/qholonomic/z2bn) needs canonical env" is stale:
+#3246 (merged 2026-07-03) drained exactly those — substrate/ has zero raw
+emitters since. The remaining tail is the ROOT-computations set, and most of
+it is pure-Python (no canonical env needed) — do not skip on that note.
+
+## 2026-07-17 — reevaluation + batch 12 (6 scripts) — root Δλ probe family
+REEVALUATION FINDINGS (post-week):
+1. PROV_MISSING regressed 243→268 while the corpus grew 1545→1868 — new probe
+   families (deltalambda/, qbeta/, probes/) land raw faster than batches drain.
+   RECOMMENDATION (needs owner sign-off): add a preflight/CI guard flagging raw
+   json.dump-to-*.witness.json in changed compute scripts (check-sidecars.sh is
+   the natural home) — without stopping the inflow the drain cannot converge.
+2. deltalambda/ subdir probes are ALREADY PROV_OK (hand-rolled provenance
+   satisfies the audit) — do not "migrate" them for the count.
+3. Worklist recipe: map by_verdict.PROV_MISSING stems → unique live producer via
+   grep over non-deprecated raw-emit scripts; currently 132 one-producer pairs.
+
+BATCH 12 (root delta_lambda_* family, all 0-consumer, no native deps):
+stamp (assertion-bearing): dim_weight_proof, multi_atom_crosscheck,
+qlommel_recurrence_precheck, sign_rule_proof; wrap_legacy (+_T0 durationMs
+anchor per #3246 lesson): magnitude_deficit_profile, qdim_route_probe. All:
+exit 0, prov triple present, keys + assertions preserved. PROV_MISSING 268→262.
+Root scripts need the substrate/ sys.path insert (gotcha #4); _T0 must go AFTER
+`from __future__` (new micro-gotcha #6). Deferred (1 consumer-hit each):
+cancellation_ascaling_probe, l1_ceiling_sign_prune.

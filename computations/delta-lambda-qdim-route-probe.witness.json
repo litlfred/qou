@@ -1,72 +1,88 @@
 {
- "engine": "mpmath",
- "engineVersion": "mpmath 50dps on canonical witnesses",
- "computedAt": "2026-06-28T06:06:33.317271+00:00",
- "computation": "delta-lambda-qdim-route-probe",
- "scriptFile": "delta_lambda_qdim_route_probe.py",
- "scriptHash": "7468e26442e5",
- "description": "Route-(i) probe across 3 q-dimension conventions (balanced / unbalanced / fake-degree). The \u2113\u00b9 ceiling \u2016c_q\u2016\u2081/|target| is wildly convention-dependent (\u2074He spans 0.41\u21925.62): balanced undershoots all isotopes, unbalanced/fake-degree overshoot the heavy ones. \u27f9 route (i) ESCAPES the sign-only prune and is UNDER-CONSTRAINED \u2014 the q-dim convention is a hidden DOF (Rule 14), so magnitude-matching via q-dim is not evidence of a derivation. The real discriminators: an independent principle fixing the convention + the sign/cancellation structure (net \u221282.9% vs fake-degree \u2113\u00b9 +462% on \u2074He). Scope (a), NOT a (b) exclusion (no invariant).",
- "scope": "(a) scope-limited \u2014 route (i) is convention-under-determined; q-dim convention is a hidden DOF",
- "conventions": {
-  "balanced": "[n]_q!/\u220f[h]_q, [k]=(q^k-q^-k)/(q-q^-1)",
-  "unbalanced": "[n]_q!/\u220f[h]_q, [k]=(1-q^k)/(1-q)",
-  "fake_degree": "q^{n(\u03bb)}\u00b7unbalanced, n(\u03bb)=\u03a3(i-1)\u03bb_i (principal specialization)"
- },
- "parameters": {
-  "q_0": 1.1099785955573347,
-  "m_e_MeV": 0.51099895069
- },
- "data": {
-  "rows": [
-   {
-    "atom": "D",
-    "B_AME_MeV": 2.224566,
-    "target_units_m_e": 4.353367060727183,
-    "ceiling_over_target": {
-     "classic": 0.5160663308986123,
-     "balanced": 0.5477929279624993,
-     "unbalanced": 0.6827162778760162,
-     "fake_degree": 0.845148160532311
-    }
-   },
-   {
-    "atom": "T",
-    "B_AME_MeV": 8.481798,
-    "target_units_m_e": 16.59846461239707,
-    "ceiling_over_target": {
-     "classic": 0.35756198993134597,
-     "balanced": 0.4645610590857577,
-     "unbalanced": 0.8639154402913146,
-     "fake_degree": 1.3508113939230264
-    }
-   },
-   {
-    "atom": "3He",
-    "B_AME_MeV": 7.718043,
-    "target_units_m_e": 15.10383336321602,
-    "ceiling_over_target": {
-     "classic": 0.5918182853944242,
-     "balanced": 0.7671019816468411,
-     "unbalanced": 1.4138969419534215,
-     "fake_degree": 2.1749852978629503
-    }
-   },
-   {
-    "atom": "4He",
-    "B_AME_MeV": 28.295673,
-    "target_units_m_e": 55.37325069218333,
-    "ceiling_over_target": {
-     "classic": 0.40589950858608864,
-     "balanced": 0.7948512286423757,
-     "unbalanced": 2.535171588784837,
-     "fake_degree": 5.617895289827509
-    }
-   }
-  ],
-  "ceiling_span_across_conventions": [
-   0.35756198993134597,
-   5.617895289827509
-  ],
-  "some_convention_overshoots_target": true
- }
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-17T14:44:31.431453+00:00",
+  "commitSha": "0b4ed888d43cef2bdd5605b40e9d6b8038f572a7",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 195,
+  "computation": "delta-lambda-qdim-route-probe",
+  "scriptFile": "delta_lambda_qdim_route_probe.py",
+  "scriptHash": "7499280970ff",
+  "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Route-(i) probe across 3 q-dimension conventions (balanced / unbalanced / fake-degree). The ℓ¹ ceiling ‖c_q‖₁/|target| is wildly convention-dependent (⁴He spans 0.41→5.62): balanced undershoots all isotopes, unbalanced/fake-degree overshoot the heavy ones. ⟹ route (i) ESCAPES the sign-only prune and is UNDER-CONSTRAINED — the q-dim convention is a hidden DOF (Rule 14), so magnitude-matching via q-dim is not evidence of a derivation. The real discriminators: an independent principle fixing the convention + the sign/cancellation structure (net −82.9% vs fake-degree ℓ¹ +462% on ⁴He). Scope (a), NOT a (b) exclusion (no invariant).",
+  "scope": "(a) scope-limited — route (i) is convention-under-determined; q-dim convention is a hidden DOF",
+  "conventions": {
+    "balanced": "[n]_q!/∏[h]_q, [k]=(q^k-q^-k)/(q-q^-1)",
+    "unbalanced": "[n]_q!/∏[h]_q, [k]=(1-q^k)/(1-q)",
+    "fake_degree": "q^{n(λ)}·unbalanced, n(λ)=Σ(i-1)λ_i (principal specialization)"
+  },
+  "parameters": {
+    "q_0": 1.1099785955573347,
+    "m_e_MeV": 0.51099895069
+  },
+  "data": {
+    "rows": [
+      {
+        "atom": "D",
+        "B_AME_MeV": 2.224566,
+        "target_units_m_e": 4.353367060727183,
+        "ceiling_over_target": {
+          "classic": 0.5160663308986123,
+          "balanced": 0.5477929279624993,
+          "unbalanced": 0.6827162778760162,
+          "fake_degree": 0.845148160532311
+        }
+      },
+      {
+        "atom": "T",
+        "B_AME_MeV": 8.481798,
+        "target_units_m_e": 16.59846461239707,
+        "ceiling_over_target": {
+          "classic": 0.35756198993134597,
+          "balanced": 0.4645610590857577,
+          "unbalanced": 0.8639154402913146,
+          "fake_degree": 1.3508113939230264
+        }
+      },
+      {
+        "atom": "3He",
+        "B_AME_MeV": 7.718043,
+        "target_units_m_e": 15.10383336321602,
+        "ceiling_over_target": {
+          "classic": 0.5918182853944242,
+          "balanced": 0.7671019816468411,
+          "unbalanced": 1.4138969419534215,
+          "fake_degree": 2.1749852978629503
+        }
+      },
+      {
+        "atom": "4He",
+        "B_AME_MeV": 28.295673,
+        "target_units_m_e": 55.37325069218333,
+        "ceiling_over_target": {
+          "classic": 0.40589950858608864,
+          "balanced": 0.7948512286423757,
+          "unbalanced": 2.535171588784837,
+          "fake_degree": 5.617895289827509
+        }
+      }
+    ],
+    "ceiling_span_across_conventions": [
+      0.35756198993134597,
+      5.617895289827509
+    ],
+    "some_convention_overshoots_target": true
+  }
 }

@@ -146,6 +146,12 @@ witness = {
     "allPassed": all_passed,
     "verdict": verdict,
 }
+import os as _os, sys as _sys  # noqa: E402
+_sys.path.insert(0, _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "substrate"))
+from witness_base import WitnessBuilder  # noqa: E402 — P30 rollup (bean cmiy)
+# Payload carries a top-level `assertions` mapping → stamp (not wrap_legacy) preserves it.
+WitnessBuilder.stamp_staleness_metadata(witness, script_path=__file__, engine="python")
+witness["scriptFile"] = _os.path.basename(__file__)
 out = pathlib.Path(__file__).parent / "delta-lambda-qlommel-recurrence-precheck.witness.json"
 out.write_text(json.dumps(witness, indent=2, ensure_ascii=False) + "\n")
 print(f"\nwitness → {out}")
