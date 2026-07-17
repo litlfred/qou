@@ -1,0 +1,59 @@
+{
+  "engine": "mpmath+sympy",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-07-17T22:35:32.916989+00:00",
+  "commitSha": "4c803d413b4b86613b94ba160f192dd500094e44",
+  "assertions": [
+    {
+      "name": "f1_feed_diagnosed_and_deformed_coupling_scoped",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "F-A: the -u*log(z) meridian coupling is REFUTED (deformed A1 awaits the correct V_u, open); F-B: the b-dictionary A1 is a scale-invariant prefactor ⇒ does NOT move the k=21 estimator gap (gap base 0.0194 = norm; needs more rungs)."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 17,
+  "computation": "qbeta-phib-2loop-deformed-gluing-f1-feed",
+  "scriptFile": "qbeta_phib_2loop_deformed_gluing_and_f1_feed.py",
+  "scriptHash": "46eb766692a0",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Follow-up to merged Φ_b 2-loop b-dictionary (#3854). (2) EXACT two-variable deformed gluing: z*(q0) from the corpus Thurston solve solve_shape (not the #3854 single-constraint approx), meridian-deformed potential V_u=Li2(z)-Li2(1/z)-u log z (u=2 ln q0), GATE D1 V_u'(z*)=0 (deformed shape IS the critical point). Corrected A1(q0) vs the #3854 approximation reported. (1) F1-feed: the A1 2-loop b-dictionary is a SCALE-INVARIANT prefactor normalization ⇒ it does NOT move the root-test / dlog-Pade estimator radii, so it does not rescue the merged F1 acceleration's k=21 gate — honest verdict: the gate needs more rungs (k=31 drift persists), the b-dictionary fixes the resummed VALUE's normalization not the singularity location. Scope-(a); no c_k wired; no fit; coordinated with #3805.",
+  "data": {
+    "q0": 1.1099785827513808,
+    "u_meridian": 0.208681440639039,
+    "z_def": [
+      0.4504458793795747,
+      0.7773944942081363
+    ],
+    "minus_u_log_coupling_correct": false,
+    "A1_3854_approx": [
+      0.2743277704208,
+      0.40021146846546
+    ],
+    "A1_complete": [
+      0.3333333333333333,
+      0.2726376271173233
+    ],
+    "f1_feed": {
+      "base_gap": 0.01943323202438943,
+      "norm_gap": 0.01943323202438943,
+      "shrinks": false,
+      "rt_radius": 0.16919390639595228,
+      "ratio_radius": 0.14976067437156285,
+      "reA1": 0.3333333333333333
+    }
+  }
+}
