@@ -1,0 +1,73 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-17T22:02:19.830939+00:00",
+  "commitSha": "574cf620d4fb1024f89f28a1526d12d8c6115157",
+  "assertions": [
+    {
+      "name": "phib_2loop_bdictionary_gated",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "G1 Vol(4_1) reproduced (True), G2 torsion sqrt3 (True); A1 2-loop = (0.333333333333 + 0.272637627117j) (reported only if both gates pass)."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 15,
+  "computation": "qbeta-phib-2loop-bdictionary",
+  "scriptFile": "qbeta_phib_2loop_bdictionary_probe.py",
+  "scriptHash": "268239f4344b",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Odd-channel Φ_b 2-loop b-dictionary at m=q₀ (owner-directed L2 gap-close). Semiclassical saddle expansion of the 4₁ figure-eight state integral with the Neumann-Zagier potential V(z)=Li2(z)-Li2(1/z): 1-loop is the torsion -1/2 log(-V''), 2-loop is A1 = V''''/(8 V''^2) - 5 V'''^2/(24 V''^3). GATED formalize-first: G1 the geometric saddle z*=e^{iπ/3} reproduces Vol(4_1)=2.02988; G2 the 1-loop torsion |-V''(z*)|=sqrt(3) (4_1 adjoint Reidemeister torsion). Only if both gates pass is A1 (the 2-loop b-dictionary coefficient) reported, at the complete structure and at the substrate deformation m=q0 (deformed saddle from the corpus vol_of_m gluing solve). Feeds the merged F1 D-ladder acceleration normalization; coordinated with #3805 (even-channel GGM A_omega). Scope-(a); no c_k wired; no fit; if a gate fails no 2-loop claim is made.",
+  "data": {
+    "saddle_z_star": [
+      0.5,
+      0.8660254037844386
+    ],
+    "V_star": [
+      0.0,
+      2.0298832128193074
+    ],
+    "vol_pred": 2.0298832128193074,
+    "torsion_abs_V2": 1.7320508075688772,
+    "V3": [
+      2.0,
+      5.196152422706632
+    ],
+    "V4": [
+      -19.5,
+      2.598076211353316
+    ],
+    "A1_2loop": [
+      0.3333333333333333,
+      0.27263762711732326
+    ],
+    "A1_abs": 0.4306302205271661,
+    "gate_G1_volume": true,
+    "gate_G2_torsion": true,
+    "substrate_z_star": [
+      0.4052940009318241,
+      0.9141863993785264
+    ],
+    "A1_substrate": [
+      0.27432777042079975,
+      0.4002114684654624
+    ],
+    "A1_deformation": [
+      -0.05900556291253355,
+      0.12757384134813915
+    ]
+  }
+}
