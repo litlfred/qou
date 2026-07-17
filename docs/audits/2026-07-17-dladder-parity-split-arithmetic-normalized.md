@@ -6,7 +6,7 @@
 [1ppq reassessment](2026-07-17-1ppq-path-reassessment.md)'s unowned Option 1)
 **Probe:** [`computations/qbeta/qbeta_dladder_parity_split_arithmetic_normalized_probe.py`](../../computations/qbeta/qbeta_dladder_parity_split_arithmetic_normalized_probe.py) (exit 0)
 **Witness:** `computations/qbeta/qbeta-dladder-parity-split-arithmetic-normalized.witness.json`
-**Complements:** Track 1 of the [three-front attack](2026-07-17-1ppq-three-front-attack.md)
+**Complements:** Track 1 of the [three-front attack](2026-07-17-three-front-attack-specs.md)
 (extension k>21, same *mixed* estimators) and #3683 (even κ-tower); neither runs these splits.
 
 ## The question
