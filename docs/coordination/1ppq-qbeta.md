@@ -1080,6 +1080,7 @@ is FIXED on main (`ser_div`, valuation-aware, credits the #3691 diagnosis);
 corpus sweep finds zero remaining shift-divide offenders. Audit:
 `2026-07-17-deformed-tower-xi-frame-phase-law.md`. No fit; no c_k wired; no
 integer Stokes constant claimed; no tier change.
+
 **2026-07-17 (PR #3818, `claude/dladder-qborel-acceleration-2026-07-17`) —
 q-Borel acceleration of the D-ladder: transport invariant proved, fixed-base
 Jackson pruned, gate fails at k=21.** The unowned odd-channel front of the
@@ -1189,3 +1190,25 @@ the 4₁ TOTAL index NOT yet certified (flat-wing divergence of the bare 4.18;
 q^{−e₂} near-miss; 9 quad frames excluded) — open input is the U=2·log m
 charge dictionary; appendix-B tables next. All open-state recorded in the
 witness (anti-fabrication). No fit; no c_k wired; no tier change.
+
+**2026-07-17 (#3813, this branch) — the A_ω monodromy datum is a
+pentagon-rigidity invariant (Lean, sorry-free).** Post-week re-evaluation
+(all 07-11→14 routes converged on the G3 keystone: the argument→S monodromy
+datum, `2026-07-13-phib-proof-status-and-monodromy-datum-gap-audit.md`).
+New Lean `QOU.QBeta.MonodromyDatumRigidity` composes two recent results into
+the lane's structural claim: (a) the deformed Ohtsuki tower has NO intrinsic
+odd phase (`arg κ̃_n = −n·arctan(t/π)`, phase-law commit `c821747763`) ⇒ A_ω
+is non-perturbative, i.e. a Stokes/monodromy ratio ⇒ scale-invariant; (b) L4
+`CyclicDilogPentagon` proved (modulo the honest open `PentagonRigidity`)
+that two nowhere-zero `FaddeevPhi` solutions are equal once normalized.
+Theorem `monodromy_datum_rigidity`: **every scale-invariant readout is the
+same on all `FaddeevPhi` solutions under pentagon rigidity** — the A_ω datum
+off any Φ_b representative is one pentagon-forced invariant, no fitting
+freedom (the Lean form of "forced, not fitted" for G3). Non-vacuous witness
+`qpRatio_scaleInvariant`; `qpRatio_solution_independent` isolates the pentagon
+input to the dual/large-argument monodromy (the local `ib`-quasi-period is
+already solution-independent via `phi_b_quasiperiod`). Does NOT compute A_ω;
+inherits the open `PentagonRigidity` hypothesis (§3b-cond). lean-direct exit 0.
+No c_k; registry untouched; scope-(a). Also this session: #3704's (N,k) 0/8
++ G2-misframing correction absorbed; bean `8we6` annotated with the H₄
+route-A 9/9 gate-fail state (awaits owner-level framework content).
