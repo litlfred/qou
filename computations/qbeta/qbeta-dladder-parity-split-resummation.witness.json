@@ -1,0 +1,53 @@
+{
+  "engine": "mpmath+sympy",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-07-17T23:22:58.921067+00:00",
+  "commitSha": "9e950a65bee15dd8fda9d1ca5eb37e7b54befe2d",
+  "assertions": [
+    {
+      "name": "even_k_subseries_built",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "odd_k_subseries_built",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "qbeta-dladder-parity-split-resummation",
+  "scriptFile": "qbeta_dladder_parity_split_resummation_probe.py",
+  "scriptHash": "875bf0bf79a3",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "2-adic parity split of the exact D-ladder: does separating even-k/odd-k coefficient subseries resolve the q-Gevrey 'no single Gevrey index' into two fixed-order Borel-summable series?",
+  "auditOnly": "docs/audits/2026-07-17-dladder-parity-split-resummation.md",
+  "data": {
+    "KMAX": 31,
+    "s_star_even_k": "0.3553729806",
+    "s_star_odd_k": "0.06831522142",
+    "drift_even_k": "0.023353",
+    "drift_odd_k": "0.00346276",
+    "even_k_stable": false,
+    "odd_k_stable": true,
+    "orders_differ": true,
+    "odd_k_matches_logfit_C_006": true,
+    "odd_clean_even_drifts": true,
+    "interleave_hypothesis_confirmed": false,
+    "verdict": "PARTIAL — the physically-relevant half is clean. The **odd-k** subseries (bar-ODD = the S-carrier, i.e. the Q_β c₃ half) is fixed-order Borel–Leroy summable at a STABLE order s_B=0.068315 (drift 0.00346), MATCHING the independent merged log-fit divergence exponent C≈0.06; the **even-k** subseries still drifts (s_A=0.35537, drift 0.0234). NEW (this fresh-context finding): the merged combined-series 'no single Gevrey index' is **even-k-driven** — the even half's drift contaminates the combined estimator, while the physically-relevant ODD (S-carrier) half has a clean fixed order. The root-test/log-fit disagreement of the combined scan (s*≈0.20 vs C≈0.06) is thus a parity-mixing artifact; the odd half sits at ≈0.068 by BOTH estimators. Actionable for the Écalle builders (#3683/#3805): resum the odd (S-carrier) half at fixed Borel–Leroy order ≈0.068 rather than the drifting combined series; only the even half needs full acceleration. Scope-(a) measurement; no c_k wired; no fit; no tier change."
+  }
+}
