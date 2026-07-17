@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-17T21:01:38.740306+00:00",
-  "commitSha": "6317b3a3a4125485dc7ce82c989794510410b1fd",
+  "computedAt": "2026-07-17T23:16:37.698782+00:00",
+  "commitSha": "925b655653bff8ebb6c5232c19c6e75846ac0370",
   "assertions": [
     {
       "name": "odd_over_determination_zero",
@@ -30,11 +30,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 22,
+  "durationMs": 15,
   "computation": "qbeta-odd-channel-stokes-borel",
   "scriptFile": "qbeta_odd_channel_stokes_borel_probe.py",
   "scriptHash": "5f961fc384ca",
-  "scriptCommitSha": "6317b3a3a4125485dc7ce82c989794510410b1fd",
+  "scriptCommitSha": "8f55e553fcfb0f90809776745bff2b98a6f71b7a",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

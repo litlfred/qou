@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-17T20:16:25.384355+00:00",
-  "commitSha": "1d74fbf1ef73dc6b1cd4ae292bdda7c3de29ead7",
+  "computedAt": "2026-07-17T23:15:19.935655+00:00",
+  "commitSha": "925b655653bff8ebb6c5232c19c6e75846ac0370",
   "assertions": [
     {
       "name": "loop_tower_factorizes_two_channels",
@@ -30,11 +30,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 1215,
+  "durationMs": 799,
   "computation": "alpha-em-channel-split-loop-measure",
   "scriptFile": "alpha_em_channel_split_loop_measure_probe.py",
   "scriptHash": "e7be6bfc9d8e",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "b72a0d3fff2bab89dc278788f8802310b2e5f196",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
