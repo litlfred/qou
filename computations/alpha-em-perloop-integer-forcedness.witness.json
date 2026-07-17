@@ -1,0 +1,54 @@
+{
+  "computation": "alpha-em-perloop-integer-forcedness",
+  "description": "Scope-(a) forcedness measurement of the \u03b1_EM per-loop-measure denominator: solve D from the fixed-point cubic against CODATA, test whether 8=dim H\u00b9(Bring) is uniquely data-selected. NOT a derivation of 1/(8\u03c0).",
+  "audit_only": true,
+  "tier": "numerical (forcedness measurement)",
+  "computedAt": "2026-07-17T20:38:10.086722+00:00",
+  "commitSha": "b1f1dd29aff47bff15ae0c9ec1dc8e2470b6c802",
+  "engine": "mpmath",
+  "engineVersion": "1.3.0",
+  "scriptFile": "alpha_em_perloop_integer_forcedness_probe.py",
+  "scriptHash": "3e57e05ebc04",
+  "assertions": [
+    {
+      "name": "neighbours_excluded_gt3sigma",
+      "passed": true
+    },
+    {
+      "name": "eight_is_closest_integer",
+      "passed": true
+    },
+    {
+      "name": "D_star_within_1_of_8",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "result": {
+    "anchors": {
+      "proton": {
+        "D_star": "8.00314125324",
+        "sigma_D": "0.000288",
+        "D_minus_8": "0.00314125",
+        "sep_from_7_sigma": "3483.6",
+        "sep_from_8_sigma": "10.909",
+        "sep_from_9_sigma": "3461.8"
+      },
+      "muon": {
+        "D_star": "8.15407984818",
+        "sigma_D": "0.0002989",
+        "D_minus_8": "0.15408",
+        "sep_from_7_sigma": "3860.7",
+        "sep_from_8_sigma": "515.44",
+        "sep_from_9_sigma": "2829.9"
+      }
+    },
+    "verdict": "The ladder pins the per-loop denominator to D* = 8.00314125324 (proton anchor), with integer neighbours 7 and 9 excluded at \u22653461.8\u03c3. D=8 is the UNIQUELY data-selected integer and it equals dim H\u00b9(Bring)=2g=8 exactly \u2014 a PRECISE coincidence (not loose numerology), which sharpens (does not close) the derivation target: the residual |D*\u22128| = 0.00314125 is the (still-underived) 2-loop-and-higher tail, not a free knob. SCOPE (anti-laundering): D* is SOLVED FROM CODATA \u2014 this measures how forced the empirical value is, it is NOT a derivation of 1/(\u03c0\u00b7dim H\u00b9). The open target (RT/heat-kernel zero-mode measure = 1/(\u03c0\u00b7dim H\u00b9), value FORCED by the physics) is unchanged. No c_k wired; no tier change."
+  },
+  "context": {
+    "axis": "\u03b1_EM per-loop measure wall (1ppq path, #3612)",
+    "identification_tested": "1/(8\u03c0) = 1/(\u03c0\u00b7dim H\u00b9(M_Bring)), dim H\u00b9=2g=8",
+    "status": "D* solved from CODATA = the FIT; derivation of 1/(\u03c0\u00b7dim H\u00b9) still open",
+    "derivation_target": "RT/heat-kernel zero-mode measure on Jac(Bring)~E\u2074"
+  }
+}
