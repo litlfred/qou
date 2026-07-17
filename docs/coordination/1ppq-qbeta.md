@@ -1106,3 +1106,19 @@ meridian partial sums to 2.5e-26 at muon-q₀ AND q\* (A2); `D` smooth through
 q\* — the S=0 zero is bridge-borne (KC21 smooth-zero reading confirmed from
 the accelerated side). No instanton action identified; no candidate value;
 no c_k wired; no fit; no tier change.
+
+**2026-07-17 addendum — independent replication (same branch, second
+implementation).** A parallel implementation
+([`2026-07-17-dladder-ecalle-acceleration.md`](../audits/2026-07-17-dladder-ecalle-acceleration.md),
+probe `qbeta_dladder_ecalle_acceleration_probe.py`, 4/4 assertions)
+independently reproduces the K1 headline: the estimator gate fails at every
+Borel–Leroy `s ≤ 0.40` AND every exponent-order Jackson `t ≤ 0.50`
+(`q₀^{t·k(k−1)/2}` parametrization) — the finite-k shadow at k = 21 is now
+double-confirmed and transform-independent. **One open discrepancy, flagged
+for adjudication (not resolved here):** on the parity split the two
+implementations disagree — the entry above finds parity branches unresolved,
+while the second implementation finds each parity subseries *individually
+passes* the gate when accelerated at its own per-parity slope-zero order in
+the w = ζ² plane (odd/S-carrier ρ_ζ ≈ 0.152, even ρ_ζ ≈ 0.254, radii 40%
+apart). Likely a methodology difference (shared-s vs per-parity s\*_par;
+ζ vs ζ² plane); queued as a bean — neither reading is wired anywhere.
