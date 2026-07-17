@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-07-03T00:33:16Z
-updated_at: 2026-07-17T20:49:46Z
+updated_at: 2026-07-17T23:17:11Z
 ---
 
-Young seminormal existence de-abstraction (JucysMurphy.lean). TRANCHE 1 (PR #3255, merged): all-T existence from 2 cores. TRANCHE 2 (PR #3843): syt_adjacentSwap_connected now sorry-free via proved adjacentSwapStep_symm + reflTransGen_adjacentSwap_symm; reduced to strictly-smaller one-directional core syt_all_connect_to_some (every SYT walks to one base tableau). REMAINING 2 cores: seminormalVector_base_exists (base seminormal vector) + syt_all_connect_to_some (exchange argument: construct row-superstandard base + inversion measure + admissible-swap-decreases-measure step + WF induction). Parent epic 08a2.
+OV brick-5 seminormal existence, JucysMurphy.lean. DELIVERED tranche 1 (#3255, merged): all-T existence assembled from 2 cores. DELIVERED tranche 2 (#3843): (a) syt_adjacentSwap_connected proved sorry-free via AdjacentSwapStep symmetry (adjacentSwapStep_symm + reflTransGen_adjacentSwap_symm) -> reduced to one-directional syt_all_connect_to_some; (b) SytRowSuperstandard.lean: row-superstandard SSYT sorry-free (rowPrefix + rowSuperstandardSsyt). REMAINING for syt_all_connect_to_some: (i) card=Sum rowLen via cells=disjoint-union-of-rows (biUnion + card_biUnion) ~40-60 lines; (ii) BijOn wrap -> Nonempty(StandardYoungTableau) [MapsTo/InjOn easy from rowPrefix_mono; SurjOn via Finset.surjOn_of_injOn_of_card_le] ~60-80 lines; (iii) inversion measure + exchange step -> the walk to base. Parent epic 08a2.
