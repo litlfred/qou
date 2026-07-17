@@ -1,0 +1,223 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-17T20:22:37.661628+00:00",
+  "commitSha": "3cc6541c1da47b49ab1d1af8ddab249b5dfce902",
+  "assertions": [
+    {
+      "name": "gate0_colour_insertion_reduces_to_bare_tau_and_theorem10_holds",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "GATE 0: the colour-alpha insertion on the order-5 fibre at alpha=1 reproduces the bare tau_N(Sigma(2,3,5)) to ~1e-30 (independent code path), and the bare Theorem-10 exact identity (Hikami eq 5.5) holds to ~1e-28 at N=3,5,7 -- jointly re-validating the transcription chain before any modulus conclusion."
+    },
+    {
+      "name": "colored_vacuum_row_has_two_independent_moduli_D2_collapse",
+      "computed": 2,
+      "expected": 2,
+      "passed": true,
+      "tolerance": 0,
+      "source": "The genuine Sigma(2,3,5) colored vacuum-row modulus |S_{0,alpha}| over the order-5 SU(2) colour alpha=1..4 takes exactly 2 distinct values (machine-zero to 40 dps): the fibre Weyl reflection alpha<->5-alpha folds alpha=4->1, alpha=3->2, leaving the golden-ratio icosahedral pair. D(2,3,5)=(1)(2)(4)/4=2. The McKay-labelled coloring does NOT escape the D=2 collapse."
+    },
+    {
+      "name": "modulus_identification_refuted_scope_a",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "scope-(a) negative: 2 independent geometric moduli cannot carry the 4-class McKay-marked target d_zeta/D (marks {1,4,5,6}); ratio-vector mismatch at every N (golden phi not in the target self-ratios). Conjugation-modulus RESPECTED (not violated); the split electron block correctly uses [5]_zeta+1 not [6]_zeta. Re-derives the s013 refutation explicitly at the McKay-colored level. Evidence not proof; Lean loc_matches gate open; nothing wired to production."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 10,
+  "computation": "keystone-lr-colored-modulus",
+  "scriptFile": "keystone_lr_colored_modulus_probe.py",
+  "scriptHash": "e09f5743628c",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Front 2 of 2026-07-17-three-front-attack-specs.md: the Lawrence-Rozansky colored-modulus identification |S_{0lambda}^{Sigma(2,3,5)}(zeta)| =?= d_zeta(lambda)/D(zeta) at fibre roots of unity, colours mapped by McKay(2I<->E8-hat) o (A5 subset S5) with VALUES on the E8 marks {1,4,5,6} (values [1],[4],[5],[5]+1; split electron block (3,1,1)=[5]+1 not [6]). Reuses the machine-validated Hikami machinery (tau_N Gauss sum eq 2.11, phi=181/30, Theorem-10 exact anchor eq 5.5, genuine S-matrix eq 3.8) and adds the colour-alpha insertion on the order-5 icosahedral fibre in the p3=5 numerator. GATE 0 PASSES: alpha=1 reproduces bare tau_N to ~1e-30 and the Theorem-10 identity holds. RESULT: the colored vacuum-row has exactly 2 INDEPENDENT moduli (D=2 collapse) -- the fibre Weyl fold alpha<->5-alpha gives |S_{0,4}|=|S_{0,1}|, |S_{0,3}|=|S_{0,2}|, ratio = golden phi (icosahedral pair); the McKay-labelled coloring does NOT escape the trap. Conjugation-modulus is RESPECTED (not violated); the split node correctly uses [5]_zeta+1 not [6]_zeta at every N. The modulus identification against the 4-class marked target is therefore VACUOUS (2 components cannot carry 4 classes) -- ratio-vector mismatch at every N. VERDICT scope-(a) negative: re-derives the s013 refutation explicitly at the McKay-colored level. Evidence not proof; Lean loc_matches gate open; nothing wired.",
+  "data": {
+    "P": 30,
+    "pvec": [
+      2,
+      3,
+      5
+    ],
+    "q0": 1.1099785955541805,
+    "gate0_alpha1_minus_bare_tau": {
+      "3": 0.0,
+      "5": 0.0,
+      "7": 0.0
+    },
+    "gate0_theorem10_residual": {
+      "3": 2.5568623508337472e-39,
+      "5": 4.2802139649491824e-39,
+      "7": 5.62899903519033e-39
+    },
+    "gate0_pass": true,
+    "phi_235": 6.033333333333333,
+    "phi_equals_181_over_30": true,
+    "colored_vacuum_moduli": {
+      "1": 0.5257311121191336,
+      "2": 0.8506508083520399,
+      "3": 0.8506508083520399,
+      "4": 0.5257311121191336
+    },
+    "n_independent_components": 2,
+    "D_235_formula": 2,
+    "D2_collapse": true,
+    "weyl_fold_alpha4_eq_alpha1": true,
+    "weyl_fold_alpha3_eq_alpha2": true,
+    "surviving_modulus_ratio": 1.618033988749895,
+    "golden_ratio": 1.618033988749895,
+    "ratio_is_golden": true,
+    "conjugation_modulus_respected": true,
+    "conjugation_modulus_violated": false,
+    "split_node_check": [
+      {
+        "N": 6,
+        "d_q_311": [
+          2.0,
+          0.0
+        ],
+        "qint5_plus_1": [
+          2.0,
+          0.0
+        ],
+        "qint6": [
+          5.3532413632050526e-42,
+          0.0
+        ],
+        "matches_5plus1": true,
+        "matches_6": false,
+        "5plus1_neq_6": true
+      },
+      {
+        "N": 7,
+        "d_q_311": [
+          2.801937735804838,
+          -5.763607529841269e-41
+        ],
+        "qint5_plus_1": [
+          2.801937735804838,
+          -5.029469977365674e-41
+        ],
+        "qint6": [
+          1.0,
+          -5.291480636308714e-41
+        ],
+        "matches_5plus1": true,
+        "matches_6": false,
+        "5plus1_neq_6": true
+      },
+      {
+        "N": 11,
+        "d_q_311": [
+          4.513337091666135,
+          7.710933533070766e-41
+        ],
+        "qint5_plus_1": [
+          4.513337091666135,
+          6.139051473295673e-41
+        ],
+        "qint6": [
+          3.513337091666135,
+          8.176344775221369e-41
+        ],
+        "matches_5plus1": true,
+        "matches_6": false,
+        "5plus1_neq_6": true
+      }
+    ],
+    "split_uses_5plus1_not_6": true,
+    "modulus_identification_per_N": [
+      {
+        "N": 5,
+        "target_bwS0_marks": [
+          0.4472135954999579,
+          0.4472135954999579,
+          1.733105117593899e-41,
+          0.4472135954999579
+        ],
+        "target_self_ratios": [
+          1.0,
+          1.0,
+          3.8753408550927253e-41,
+          1.0
+        ],
+        "geometric_D2_ratio_phi": 1.618033988749895,
+        "min_gap_phi_vs_target_ratio": 0.6180339887498949,
+        "identification_holds": false
+      },
+      {
+        "N": 6,
+        "target_bwS0_marks": [
+          0.2672612419124244,
+          0.4629100498862757,
+          0.2672612419124244,
+          0.5345224838248488
+        ],
+        "target_self_ratios": [
+          1.0,
+          1.7320508075688772,
+          1.0,
+          2.0
+        ],
+        "geometric_D2_ratio_phi": 1.618033988749895,
+        "min_gap_phi_vs_target_ratio": 0.11401681881898229,
+        "identification_holds": false
+      },
+      {
+        "N": 7,
+        "target_bwS0_marks": [
+          0.19446771900695217,
+          0.4369649981900811,
+          0.3504187212745189,
+          0.544886440281471
+        ],
+        "target_self_ratios": [
+          1.0,
+          2.246979603717467,
+          1.8019377358048383,
+          2.801937735804838
+        ],
+        "geometric_D2_ratio_phi": 1.618033988749895,
+        "min_gap_phi_vs_target_ratio": 0.1839037470549434,
+        "identification_holds": false
+      },
+      {
+        "N": 11,
+        "target_bwS0_marks": [
+          0.12135136860265332,
+          0.3918080636422943,
+          0.42634826443615115,
+          0.5476996330388044
+        ],
+        "target_self_ratios": [
+          1.0,
+          3.228707415119565,
+          3.513337091666135,
+          4.513337091666135
+        ],
+        "geometric_D2_ratio_phi": 1.618033988749895,
+        "min_gap_phi_vs_target_ratio": 1.61067342636967,
+        "identification_holds": false
+      }
+    ],
+    "identification_holds_any_N": false,
+    "ratio_mismatch_every_N": true,
+    "verdict_scope_a_negative": true
+  }
+}
