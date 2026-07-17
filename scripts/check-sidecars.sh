@@ -127,6 +127,21 @@ for f in "${files[@]}"; do
 done
 
 echo
+# Author-note Lean-coverage freshness (drift gate; PR #3490 mechanism).
+# The advertised proved-counts drift whenever a proof or conjecture
+# lands; refresh-authors-note.ts --check recomputes from the live tree.
+# Soft-skip when bun or the folio-assistant platform link is missing.
+if command -v bun >/dev/null 2>&1 && [ -e "$(dirname "$0")/../folio-assistant" ]; then
+  if ! bun run "$(dirname "$0")/refresh-authors-note.ts" --check >/dev/null 2>&1; then
+    action=1
+    echo "▸ authors-note Lean-coverage stats STALE (proved-counts drifted)"
+    echo "    → bun run scripts/refresh-authors-note.ts   (rewrites note + lean-coverage.json; commit both)"
+  fi
+else
+  echo "  (authors-note drift check skipped: bun or folio-assistant/ missing — scripts/setup-folio-assistant.sh)"
+fi
+
+echo
 if [ "$action" -eq 1 ]; then
   echo "⚠ check-sidecars: action needed above. Resolve §7c markers / refresh sidecars BEFORE commit."
 else
