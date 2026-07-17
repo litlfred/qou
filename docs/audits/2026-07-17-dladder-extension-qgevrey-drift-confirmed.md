@@ -30,12 +30,13 @@ the ladder core), then re-measures three quantities at the extended order.
 |---|---|---|---|
 | Divergence class `C` (`log\|d_k\| = A + Bk + C·k·log k`) | 0.07737 | 0.06134 | **still drifting** (not stabilising to a constant) |
 | Borel–Leroy order `s*` (slope-zero crossing) | 0.18652 | 0.15944 | **still drifting** (Δ = 0.0271) |
-| dlog-Padé `ρ(s*)` vs root-test `ρ` | — | 0.28304 vs 0.24152 | **gap 0.172 PERSISTS** |
+| dlog-Padé `ρ(s*)` vs root-test `ρ` | — | 0.28304 vs 0.24152 | **relative gap `\|ρ/ρ_rt − 1\|` 0.172 PERSISTS** (17.2%) |
 
 **Verdict: structural q-Gevrey drift, not a finite-`k` shadow.** Neither the
 divergence-class exponent `C` nor the Borel–Leroy order `s*` stabilises as
 `k` grows from 21 to 31, and the singularity-estimator inconsistency does not
-shrink. There is **no single effective Gevrey index**, so no fixed-order
+shrink (the reported 0.172 is the **relative** gap `|ρ_dlogPadé/ρ_rootTest − 1|`,
+i.e. 17.2%, not the absolute difference 0.042). There is **no single effective Gevrey index**, so no fixed-order
 Borel–Leroy resummation is the honest object.
 
 ## Consequence for the Q_β odd channel

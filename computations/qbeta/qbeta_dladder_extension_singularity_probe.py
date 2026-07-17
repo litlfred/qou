@@ -149,7 +149,7 @@ def main():
     rho_rt = 1 / (mp.fsum(tail) / len(tail))
     gap = (abs(rho / rho_rt - 1) if rho else None)
     print(f"  dlog-Padé ρ(s*) = {mp.nstr(rho, 8) if rho else 'none'};  "
-          f"root-test ρ ≈ {mp.nstr(rho_rt, 8)};  gap = {mp.nstr(gap, 4) if gap else 'n/a'}")
+          f"root-test ρ ≈ {mp.nstr(rho_rt, 8)};  relative gap |ρ/ρ_rt−1| = {mp.nstr(gap, 4) if gap else 'n/a'}")
 
     drift = abs(ss_full - ss_21)
     consistent = bool(gap is not None and gap < mp.mpf("0.15"))
@@ -180,7 +180,8 @@ def main():
         "singularity-estimator gap — deciding whether the k=21 estimator "
         "inconsistency is a finite-k shadow (shrinks) or structural q-Gevrey drift "
         "(persists). Result: at k=31 the class C keeps drifting (0.0774→0.0613), s* "
-        "keeps drifting (0.1865→0.1594), and the estimator gap PERSISTS (~0.172) — "
+        "keeps drifting (0.1865→0.1594), and the relative estimator gap "
+        "|ρ_dlogPadé/ρ_rootTest − 1| PERSISTS (~0.172) — "
         "structural q-Gevrey drift, no single Gevrey index. Reinforces KC22: the "
         "honest resummation is genuine Écalle acceleration / the Φ_b state integral, "
         "not any fixed-order Borel–Leroy. Adjacent: #3683 does Borel resurgence on "
@@ -193,7 +194,7 @@ def main():
                      source=f"exact ℚ(√3) D-ladder built to KMAX={KMAX} (ORD={ORD})")
     wb.add_assertion("qgevrey_drift_persists_not_finite_k_shadow",
                      computed=1.0 if not consistent else 0.0, expected=1.0, tolerance=0.5,
-                     source=f"dlog-Padé vs root-test singularity gap {mp.nstr(gap,4) if gap else 'n/a'} "
+                     source=f"dlog-Padé vs root-test singularity RELATIVE gap |ρ/ρ_rt−1| {mp.nstr(gap,4) if gap else 'n/a'} "
                             f"persists at k={KMAX} (s* still drifting {mp.nstr(drift,4)}) => structural q-Gevrey, "
                             "not a finite-k shadow")
     wb.add_data("measurement", {
