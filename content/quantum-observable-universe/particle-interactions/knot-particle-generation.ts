@@ -5,7 +5,7 @@ export default definition({
     { kind: "note", body: "Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data." },
   ],
   label: "def:knot-particle-generation",
-  defines: ["torus-knot-generators", "linking-operations"],
+  defines: ["torus-knot-generators"],
   title: "Knot-particle generation from $T_{m,n}$ torus knot generators",
   tags: [
     "knot",

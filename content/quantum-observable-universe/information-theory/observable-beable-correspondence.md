@@ -1,4 +1,4 @@
-'t Hooft's :defterm[Cellular Automaton Interpretation]{#cai} of
+'t Hooft's **Cellular Automaton Interpretation** of
 quantum mechanics \cite{thooft2016} introduces the notion of a
 **beable algebra** $\mathcal{A}_{\mathrm{beable}}$ — a maximal
 commuting subalgebra of observables whose simultaneous eigenstates
@@ -8,7 +8,7 @@ $\mathrm{Bun}^{\circ}(\mathbb{P}(V))$
  realises
 this notion structurally, with the following dictionary:
 
-| 't Hooft (:refterm[CAI]{#cai}) | QOU (this framework) |
+| 't Hooft (CAI) | QOU (this framework) |
 |---|---|
 | beable algebra $\mathcal{A}_{\mathrm{beable}}$ | degree-$0$ algebra $\Gamma(\mathcal{S}, A_0)$ |
 | ontological basis | simultaneous eigenstates of the algebra $\Gamma(\mathcal{S}, A_0)$ |

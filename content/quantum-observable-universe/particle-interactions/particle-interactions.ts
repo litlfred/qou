@@ -295,6 +295,7 @@ export default chapter({
         "atomic-braid",
         "atomic-braid-table1-data",
         "knot-particle-generation",
+        "linking-operations",
         "knot-particle-generation-table-data",
         "knot-particle-generation-consequences",
         // Merged from the former auto-split "Skein Generation and
