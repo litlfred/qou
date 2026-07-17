@@ -1,0 +1,103 @@
+{
+  "description": "Murakami deformed-VC route to an anchor-free q0: categorical N-selection analysis. Scope-(a) negative \u2014 no anchor-free categorical selection currently exists; nothing fitted, nothing wired. \u03bc\u2013p Subgoal-2 (#3847).",
+  "computation": "murakami_deformed_vc_q0",
+  "audit_only": true,
+  "tier": "scope-(a) numerical falsification (no fit; not wired; \u03bc\u2013p NOT resolved)",
+  "precision_dps": 60,
+  "timestamp": "2026-07-17T22:03:47.327607+00:00",
+  "inputs": {
+    "q0_muon_pin": "1.10997859555733471989976322048",
+    "q0_proton_pin": "1.10997858275",
+    "Vol_4_1_2Cl2_pi_over_3": "2.02988321281930725004240510855",
+    "mu_p_gap_ppb_to_adjudicate": "11.5"
+  },
+  "branch_b1_undeformed_qindependent": {
+    "hbar_q_squared": "0.00981718851398598439370648689405",
+    "m_mu_over_m_e_from_anchor": "206.76828298931504382",
+    "S_Vol41_dlog_dlogq0": "0.0",
+    "S_hbar2_dlog_dlogq0_exact_2_over_qm1": "18.185356794789652155",
+    "verdict": "Vol(4\u2081) is q-independent (S=0); undeformed anchor's whole q0-sensitivity is in \u210f_q\u207b\u00b2. Determining q0 needs a second q-dependent input; the corpus's is m_\u03bc/m_e (anchor inversion)."
+  },
+  "branch_b3_winding_and_naive_quantization": {
+    "N_required_for_q0_eq_exp_2pi_over_N": "60.2179531940851696",
+    "N_required_is_integer": false,
+    "exp_2pi_over_N_candidates": {
+      "3": {
+        "q0_candidate": "8.12052739666978",
+        "miss_ppb_vs_pin": "6.3159315e+9"
+      },
+      "6": {
+        "q0_candidate": "2.84965390822636",
+        "miss_ppb_vs_pin": "1.5673053e+9"
+      },
+      "59": {
+        "q0_candidate": "1.11237199328613",
+        "miss_ppb_vs_pin": "2156255.7"
+      },
+      "60": {
+        "q0_candidate": "1.11039938300559",
+        "miss_ppb_vs_pin": "379095.1"
+      },
+      "61": {
+        "q0_candidate": "1.10849477648139",
+        "miss_ppb_vs_pin": "-1336799.7"
+      },
+      "120": {
+        "q0_candidate": "1.05375489702567",
+        "miss_ppb_vs_pin": "-50652957.0"
+      }
+    },
+    "substrate_winding_data": {
+      "N3_k1": {
+        "u": "0.3130221956 + -6.283185307i",
+        "abs_u": "6.29097770615",
+        "abs_im_u_eq_2pi_k": "6.28318530718"
+      },
+      "N6_k1": {
+        "u": "0.6260443911 + -6.283185307i",
+        "abs_u": "6.31429720428",
+        "abs_im_u_eq_2pi_k": "6.28318530718"
+      },
+      "N60_k1": {
+        "u": "6.260443911 + -6.283185307i",
+        "abs_u": "8.86969985806",
+        "abs_im_u_eq_2pi_k": "6.28318530718"
+      },
+      "N120_k1": {
+        "u": "12.52088782 + -6.283185307i",
+        "abs_u": "14.0089631835",
+        "abs_im_u_eq_2pi_k": "6.28318530718"
+      },
+      "N60_k2": {
+        "u": "6.260443911 + -12.56637061i",
+        "abs_u": "14.0394739355",
+        "abs_im_u_eq_2pi_k": "12.5663706144"
+      },
+      "N120_k2": {
+        "u": "12.52088782 + -12.56637061i",
+        "abs_u": "17.7393997161",
+        "abs_im_u_eq_2pi_k": "12.5663706144"
+      }
+    },
+    "winding_floor_2pi": "6.28318530718",
+    "verdict": "q0=exp(2\u03c0/N) needs the NON-INTEGER N=60.217953; nearest categorical integer N=60 misses q0 by 379095.0 ppb. The substrate-matched datum u=N\u00b7t\u22122\u03c0ik always has |u|\u22652\u03c0 (off the 4\u2081 geometric component, per #3704). No categorical INTEGER N gives anchor-free q0."
+  },
+  "cross_pin_blindness": {
+    "N_req_muon_pin": "60.2179531940851696",
+    "N_req_proton_pin": "60.2179598531971424",
+    "N_req_continuous_cross_pin_swing_ppb": "110.5835",
+    "nearest_integer_both_pins": 60,
+    "note": "The CONTINUOUS N_req moves ~110 ppb between pins (a reparametrisation of q0, not pin-blind), but the nearest INTEGER is 60 for both. A categorical selection yields one integer N, which cannot produce two distinct q0=exp(2\u03c0/N) \u2014 the integer-N route is degenerate w.r.t. the \u03bc\u2013p split, independent of the 379095 ppb absolute miss."
+  },
+  "overall_verdict": "No anchor-free categorical N-selection currently exists (scope-(a)). B1: undeformed Vol(4\u2081) is q-independent \u21d2 anchor inversion. B3: substrate-matched u=N\u00b7t\u22122\u03c0ik forces |u|\u22652\u03c0 (off-component, #3704); q0=exp(2\u03c0/N) needs the non-integer N=60.218, nearest integer N=60 misses by 3.8e5 ppb (~33000\u00d7 the 11.5 ppb tension); tuning N is a fit. This is scope-(a) (the construction ALONE fails), NOT scope-(b): no proved invariant forbids a future substrate-functor level datum with a small-complex u (the meridian-side surviving direction #3704 flags).",
+  "witness": {
+    "scriptCommitSha": "uncommitted",
+    "scriptHash": "b85cf63507a793eb"
+  },
+  "refs": [
+    "docs/audits/2026-07-17-mu-p-pin-sensitivity-map.md",
+    "docs/scope/2026-07-12-mq0-nk-scan-result.md",
+    "docs/scope/2026-07-12-mq0-unified-boundary-selection.md",
+    "computations/qbeta/qbeta_c3_mq0_nk_scan.py"
+  ]
+}
