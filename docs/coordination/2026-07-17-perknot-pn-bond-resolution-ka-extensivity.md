@@ -58,14 +58,48 @@ degeneracy-break — plausibly the same physics as #3808's bar-parity-fall facto
   caveat (PSLQ-bound discipline): a single <5% match is a lead to verify.
 - **No categorical derivation of "why inverse"** — the open verification step.
 
-## Next (verification of the LEAD, if pursued)
+## Grounding verdict — **GROUNDED (partial)** (2026-07-17, bean qou-r1sr)
 
-1. **Categorical grounding of the inverse-product weight** — is `1/tr_M` a
-   natural per-bond object (dual density / inverse Markov weight)? Without this
-   the −1.38% is numerology-adjacent. Formalize-first: state the bond-weight
-   shape as a lemma before any wider scan.
-2. **Cross-check with #3808's bar-parity-fall** — coordinated on
-   #3808 (comment posted); if their factor already carries the p≠n split,
-   this lead is subsumed and should be recorded as such.
-3. Do **not** widen to a free-coefficient bond fit (adhb gate: no BW / no
-   per-bond tuning to hit targets).
+`computations/deltalambda/perknot-pn-bond-mayer-grounding.witness.json`. The
+"why inverse?" question is answered three ways (all 3 assertions pass):
+
+1. **Structural reduction (exact).** T=(p,n,n) has bonds {pn,pn,nn}; ³He=(p,p,n)
+   has {pp,pn,pn} — the *only* difference is one pp↔nn swap. Under the product
+   aggregate the split reduces **exactly** to `w(nn)/w(pp) = (tr_p/tr_n)²`
+   (verified rel_eps 1e-40). The exponent 2 is a same-type bond's two endpoints
+   — not tuned.
+2. **Categorical home.** `1/(tr_M(a)·tr_M(b))` is the ideal-gas / **Mayer
+   normalization** of the pair correlation `g₂ = tr(ab)/(tr(a)tr(b)) − 1` — the
+   **b₂ (pairwise) level** of the Ursell cluster expansion `B/m_e = Σ_k b_k`
+   that main already uses (`docs/scope/2026-07-05-gap-a4-ursell-*`); `tr_M` is a
+   Plancherel-weighted partition sum `Σ_λ y_λ χ_λ`. So the weight is *not* a
+   free ansatz.
+3. **Physics sign.** `tr_n < tr_p ⇒ w(nn) > w(pp) ⇒` nn binds more `⇒` ³He (two
+   protons) less bound than T — the **correct Coulomb/isospin sign** (AME
+   B(T)=8.482 > B(³He)=7.718 MeV), magnitude −1.38%.
+
+**Net:** the lead upgrades from "1-of-8 numerology-adjacent" to a
+**categorically-grounded p≠n isospin discriminator** (Mayer b₂ normalization,
+correct Coulomb sign, −1.38%).
+
+**Honest bound — orthogonal to the open gap.** This is a **b₂/pairwise** object,
+and main's Ursell frame identifies pairwise b₂ as the **saturated ceiling**; the
+open *magnitude* gap is the **connected b₄**. So this grounds the *isospin
+discriminator* (the T/³He degeneracy-break) but does **not** address the
+extensivity magnitude closure (it does not reproduce the full non-monotone
+μ_ext; ⁴He is not the max). Anti-numerology flag: true exponent 2.097 ≈ 2.093
+(the ⁴He super-pairwise excess) — recorded as a **coincidence, NOT fit** (Rule-14
+hidden-DOF guardrail).
+
+## Next (if pursued)
+
+1. **Feed the discriminator, not the magnitude.** The natural consumer is a
+   factor that already carries the p≠n / isospin split — #3808's bar-parity-fall
+   (comment posted). If their factor derives the same (tr_p/tr_n)²-type split,
+   this is a cross-confirmation; if it uses a free constant, the Mayer b₂
+   normalization is a parameter-free candidate for it.
+2. **Do not** promote to the magnitude gap — that is the connected b₄
+   (`docs/scope/2026-07-05-gap-a4-ursell-operator-magnitude-scoping.md`),
+   a different object; the b₂ ceiling is closed.
+3. **Do not** widen to a free-coefficient bond fit or chase the 2.097≈2.093
+   coincidence (adhb + Ursell-doc guardrails).
