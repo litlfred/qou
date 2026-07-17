@@ -19,6 +19,14 @@ active siblings). **Supersedes the ranked-lever section of**
 > audit names as a wall but does not re-scope. The lever ranking in §"Re-ranked path"
 > stays as an independent second read; where the two audits differ on lever 1, defer
 > to `6a529aa744` (L1 closure + conformal Borel are firmer).
+>
+> **Update (2026-07-17, this session): lever 1 attacked independently — the
+> odd-channel divergence class is characterized (§Lever-1 below).** Per the owner
+> directive not to defer, this session did *not* wait on the parallel line; it
+> measured the bar-odd D-ladder's Gevrey class directly and found the
+> even-channel plain-Borel method (Vol/π on the κ rungs) **does not transfer** to
+> the odd channel (drifting order). That is a non-duplicated constraint on the G3
+> route (#3805), not a re-run of the even-channel Borel.
 
 ## Lever-2 advance (this session): the α_EM per-loop measure is the standard loop unit, not a Betti factor
 
@@ -49,6 +57,40 @@ measure (`2×4π` always); the `π·b₁` reading scales with genus. Not separab
 `g=4` by data, but decisive for any multi-genus construction and consistent with the
 derivability map's own finding that the `b₁`-parallel is unsound. Numerics unchanged
 (form-B proton residual `+0.313 ppb = 2.1σ`). No coefficient fitted.
+
+## Lever-1 advance (this session): the odd-channel Stokes datum is drifting-order q-Gevrey — plain Borel does not transfer
+
+The G3 keystone (`z(q₀) → S` = a Stokes constant `A_ω`) lives in the **bar-odd**
+channel. The parallel line pinned the **even** κ-channel via a plain/conformal
+Borel (`A ≈ 0.646 ≈ Vol(4₁)/π`, "consistent not identified"); the odd channel had
+only been characterized by *negatives* (not q-holonomic base-3; no coupled ℚ(√3)
+recurrence; 2-adic parity grading). This session measures the odd channel's
+divergence class directly (probe
+[`qbeta_odd_channel_stokes_borel_probe.py`](../../computations/qbeta/qbeta_odd_channel_stokes_borel_probe.py)
++ witness; exact ℚ(√3) ladder `d₁…d₂₁` at ORD 44, `d₁…d₂₇` at ORD 56,
+odd-order over-determination = 0):
+
+1. **Root test rises only slowly** — `|dₖ|^{1/k}`: 5.70→5.91 over k=16…21, no
+   doubling. So the ladder is **not q-Gevrey-1 in any base > 1** (that would blow
+   the root test up geometrically).
+2. **The effective Gevrey order DRIFTS DOWN** with the tail:
+   `C(lo=4,8,12) = 0.099, 0.067, 0.058` (ORD 44); `0.081, 0.059, 0.051` (ORD 56).
+   Not a fixed Gevrey-s — no single Borel–Leroy order canonically resums it.
+3. **The Borel–Leroy pole is therefore s-dependent** — `0.147 (s=0.02) → 0.165
+   (s=0.10) → 0.249 (s=0.30)`. The stability-optimal low-s window band is
+   **≈0.147–0.168**, which brackets `1/(2π)=0.1592`, `Vol(4₁)/(4π)=0.1615` (=
+   even-channel `Vol/π` ÷ 4 — the same factor-4 as the α_EM two-channel loop
+   split), and `1/6=0.1667`. The ~12 % s-systematic makes this
+   **consistent-not-identified**, not an identification.
+
+**Honest tier — scope-(a) NEGATIVE** (per AGENTS.md "refuted/ruled-out"): the
+fixed-order Borel–Leroy method, *alone*, does not extract a clean odd-channel
+action; the order drifts. This does **not** exclude an odd-channel Stokes
+constant (no proved invariant forbids one) — it says the **even-channel
+plain-Borel route does not transfer**, and G3 (#3805) needs the true **q-Borel /
+alien-derivative chain** (base `q₀` or base-3), not a fixed-order Leroy. No fit;
+no `c_k` wired; comparison-only. *Constraint delivered to the G3 line:* don't
+apply a fixed-order Borel to the odd ladder — measure/deform the q-Borel base.
 
 ## Headline
 
