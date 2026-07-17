@@ -179,3 +179,32 @@ class), qou-g020 (2-adic, speculative for binding) are lower-confidence.
    (`(A:ℝ) =o[atTop] r^A`), not the boundary. Verified lean-direct sorry-free
    (`#print axioms` = propext/Classical/Quot only). ✓ **LANDED** — done with the real
    growth lemma as requested, no artifact shortcut.
+
+## 2026-07-17 — α_EM front joins the dilog-pentagon spine (#3824)
+
+**New entry (session `0173HPdM`).** Audit #3824 extends this ledger's
+pentagon↔dilog spine into the **α_EM** front: the photon 1-loop determinant
+measure `1/(π b₁)` (the single 2-loop wall) and the additive Bring correction
+`2/(3π)` carry the **same pentagon-forced Bloch–Wigner `π`**, via the flat-torus
+Kronecker-limit determinant on the Bring Jacobian (`ζ_{Δ¹}(0)=−b₁`). Consequence:
+the α_EM measure wall **is** the AG-dilog keystone `conj:alg-geom-dilog-equiv` —
+a Bloch-group computation, not a q-rational search (PSLQ-dead).
+
+**Scope map (α_EM/dilog front, 2026-07-17):**
+
+| PR | Relationship | Action |
+|----|--------------|--------|
+| **#3824** (this) | α_EM ↔ dilog bridge audit | own |
+| **#3810** | **TENSION (§6)** — competing reading: the `1/(πb₁)` `π` is the standard 4D gauge-loop `1/(4π)`, `b₁=8` a genus-4 coincidence (opposite of the dilog-shadow reading) | intent + honest-disagreement posted ([#3810 comment](https://github.com/litlfred/qou/pull/3810#issuecomment-5007182197)); **escalated to owner** — do NOT unilaterally resolve; discriminant = test `D([z])=2/(3π)` for an identified Bring Bloch class vs genus-independence of the loop measure |
+| **#3831** | **dependency** — supplies `ζ_Λ(0)=−b₁` (topological), my load-bearing bridge step | intent posted ([#3831 comment](https://github.com/litlfred/qou/pull/3831#issuecomment-5007183151)) |
+| #3773 | keystone target (`conj:alg-geom-dilog-equiv`) — my wall equates to it | named in #3824 body; ledger already tracks it |
+| #3807 | AG survey — **AG-5 literally poses this claim** (zero-mode `2/3π` = dilog regulator; loop `1/π` = Beilinson?); AG-4 EM-Prym = elliptic curve | cherry-pick AG-5 framing + AG-4 Prym if #3824 is extended constructively |
+| #3812 | α_EM measure obligation-structure | named in #3824 body |
+| #3813 | pentagon-rigidity Lean — upstream Bloch–Wigner uniqueness lemma | intent posted (prior) |
+| #3814 | α_EM per-loop measure attack | intent posted (prior) |
+| #1552 (stale) | precursor of the exact `1/(8π)=1/(π·dim H¹)` identity | superseded by the pentagon-π origin framing |
+
+**Open disagreement to resolve (owner call):** #3810 vs #3824 — is the α_EM
+loop-measure `π` the standard gauge-loop `1/(4π)` (b₁ coincidental) or the
+pentagon-dilog shadow (b₁ structural)? Named kill-criteria on both sides; neither
+should land as canonical until one test runs.
