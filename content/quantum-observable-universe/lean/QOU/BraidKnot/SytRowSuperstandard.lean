@@ -90,4 +90,40 @@ def rowSuperstandardSsyt : SemistandardYoungTableau μ where
 @[simp] theorem rowSuperstandardSsyt_apply (i j : ℕ) :
     (rowSuperstandardSsyt μ) i j = rowSuperstandardEntry μ i j := rfl
 
+/-! ## Stage 2 — `|μ| = ∑ rowLen`, and the `BijOn` toward `Nonempty (StandardYoungTableau μ)` -/
+
+/-- The cells of `μ` are the union of its (finitely many, indexed by `i < colLen 0`) rows;
+distinct rows are disjoint (different first coordinate). -/
+theorem cells_eq_biUnion :
+    μ.cells = (Finset.range (μ.colLen 0)).biUnion μ.row := by
+  ext ⟨i, j⟩
+  simp only [Finset.mem_biUnion, Finset.mem_range, mem_row_iff, mem_cells]
+  constructor
+  · intro h
+    exact ⟨i, mem_iff_lt_colLen.mp (μ.up_left_mem (le_refl i) (Nat.zero_le j) h), h, rfl⟩
+  · rintro ⟨i', -, hmem, rfl⟩
+    exact hmem
+
+theorem rows_disjoint {i i' : ℕ} (hne : i ≠ i') : Disjoint (μ.row i) (μ.row i') := by
+  rw [Finset.disjoint_left]
+  rintro ⟨a, b⟩ ha hb
+  rw [mem_row_iff] at ha hb
+  exact hne (ha.2.symm.trans hb.2)
+
+/-- **`|μ| = ∑_{i < colLen 0} rowLen i`** — the total cell count as the sum of row lengths. -/
+theorem card_eq_sum_rowLen :
+    μ.cells.card = ∑ i ∈ Finset.range (μ.colLen 0), μ.rowLen i := by
+  rw [cells_eq_biUnion, Finset.card_biUnion (fun i _ i' _ hne => rows_disjoint μ hne)]
+  exact Finset.sum_congr rfl (fun i _ => (rowLen_eq_card μ).symm)
+
+/-- The label offset up to and including row `i` is at most the total cell count, whenever row `i`
+contains a cell (so `i < colLen 0`). This is the upper bound the `BijOn`'s `MapsTo` needs. -/
+theorem rowPrefix_succ_le_card {i j : ℕ} (hcell : (i, j) ∈ μ) :
+    rowPrefix μ (i + 1) ≤ μ.cells.card := by
+  rw [card_eq_sum_rowLen]
+  have hi : i < μ.colLen 0 :=
+    mem_iff_lt_colLen.mp (μ.up_left_mem (le_refl i) (Nat.zero_le j) hcell)
+  have hmono : rowPrefix μ (i + 1) ≤ rowPrefix μ (μ.colLen 0) := rowPrefix_mono μ hi
+  simpa [rowPrefix] using hmono
+
 end QOU.BraidKnot
