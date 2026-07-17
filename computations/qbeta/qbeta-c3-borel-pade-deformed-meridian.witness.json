@@ -1,0 +1,149 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-17T15:03:22.393773+00:00",
+  "commitSha": "cabed4f226191f0891b6a7e61ad590a0ed356002",
+  "assertions": [
+    {
+      "name": "phase_law_rung1_exact",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "arg kappa~_1 = -arctan(t/pi) to < 1e-13 (witness-precision exact)"
+    },
+    {
+      "name": "phase_law_all_rungs_within_precision",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "arg kappa~_n + n*arctan(t/pi) = 0 within each rung's confident digits"
+    },
+    {
+      "name": "resummation_truncation_stable",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "Borel-Pade[2/2] resummed Im V within 15% of the 4-rung truncation"
+    },
+    {
+      "name": "imaginary_ray_stokes_safe",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "nearest Borel-Pade pole > 0.5 rad off the imaginary integration ray at u_sub"
+    },
+    {
+      "name": "deformed_action_near_Vol_u_over_pi",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "|A~| within 35% of Vol(u)/pi (3-ratio large-order estimate; lenient band)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 12,
+  "computation": "qbeta-c3-borel-pade-deformed-meridian",
+  "scriptFile": "qbeta_c3_borel_pade_deformed_meridian_probe.py",
+  "scriptHash": "f213d96ffa16",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
+  },
+  "description": "Borel–Padé resummation of the DEFORMED Ohtsuki κ̃-tower at the substrate meridian u=2 ln q₀ (rungs loaded from the #3691 tall-ladder witness): meridian-corrected smooth Im 𝔙̃_b, complex deformed action estimate (singularity off the real axis), and the Stokes-safety angular margin of the imaginary integration ray — extending #3692's u=0 single-valuedness conclusion to the meridian. 4 rungs (indicative); anchor-blind; scope-(a); no fit; no c_k wired.",
+  "contentBlock": "conj:im-q-physical-role",
+  "data": {
+    "inputs": {
+      "u_substrate": "0.20868144063903902463",
+      "rungs_source": "docs/audits/scripts/qbeta-ohtsuki-deformed-kappa3-tall-ladder.witness.json",
+      "rungs": [
+        {
+          "n": 1,
+          "value": "(0.58734338731121242885 - 0.019507249622872478038j)",
+          "conf_digits_re_im": [
+            19,
+            16
+          ]
+        },
+        {
+          "n": 2,
+          "value": "(0.91213672160598223175 - 0.060655923702509204149j)",
+          "conf_digits_re_im": [
+            14,
+            12
+          ]
+        },
+        {
+          "n": 3,
+          "value": "(3.9562908021323882106 - 0.39536049609981547201j)",
+          "conf_digits_re_im": [
+            10,
+            8
+          ]
+        },
+        {
+          "n": 4,
+          "value": "(24.780232535481186432 - 3.3103459615937492858j)",
+          "conf_digits_re_im": [
+            6,
+            4
+          ]
+        }
+      ],
+      "Vol_u": "2.02048069313964"
+    },
+    "deformed_action": {
+      "A_largeorder_n3": "(0.476849639643 + 0.0158374539068j)",
+      "abs_A": "0.4771125693",
+      "arg_A_rad": "0.03320047475",
+      "Vol_u_over_pi": "0.6431389795",
+      "within_35pct": true,
+      "note": "3 ratios only — rough; arg != 0 is the new geometric datum"
+    },
+    "resummation": {
+      "Im_V_deformed_resummed": "0.0585499951473",
+      "Im_V_truncation": "0.0570576566109",
+      "odd_partial_sum_3691": "0.0567896600198",
+      "Im_V_u0_resummed_3692": "0.05545",
+      "meridian_correction": "0.003099995147",
+      "stable_15pct": true
+    },
+    "stokes_safety": {
+      "poles": [
+        "(0.630993368523 + 0.0209569795844j)",
+        "(7.72289821833 + 0.256497804879j)"
+      ],
+      "min_angular_margin_rad": "1.537595853",
+      "ray_safe_gt_0p5rad": true,
+      "conclusion": "single-valued Borel sum extends to the meridian"
+    },
+    "phase_law": {
+      "statement": "arg kappa~_n = -n*arctan(t/pi)  <=>  kappa~_n / xi^n in (-i)^n * R",
+      "phi_arctan_t_over_pi": "0.033200478777946491324",
+      "rung1_identification_residual": "6.1877003e-20",
+      "per_rung_residuals": [
+        "6.1877e-20",
+        "9.8349e-16",
+        "3.32385e-12",
+        "4.02363e-9"
+      ],
+      "interpretation": "deformed tower REAL in the xi-frame; imaginary content is purely the kinematic frame rotation; u=0 parity (#3628) carries to the meridian; A_omega-lane selection rule: no intrinsic perturbative odd phase"
+    },
+    "verdict": "PHASE LAW (exact-tier numerical identification): arg κ̃_n = −n·arctan(t/π) — rung 1 to ~1e-18 relative, rungs 2–4 within their witness precision — equivalently κ̃_n/ξ^n ∈ (−i)^n·ℝ: the deformed Ohtsuki tower is REAL in the ξ-normalized frame, so its entire imaginary content is the kinematic frame rotation and the perturbative tower carries NO intrinsic odd phase (the #3628 u=0 parity structure carries to the meridian unchanged; any genuine odd-channel monodromy phase must be non-perturbative — A_ω-lane selection rule). Deformed Borel–Padé at u_sub: resummed Im 𝔙̃_b = 0.05855 (u=0 reference 0.05545 ⇒ meridian correction 0.0031); truncation-stable (True); deformed action |Ã| ≈ 0.47711 vs Vol(u)/π = 0.64314 with arg Ã = 0.0332 rad (singularity rotates off the real axis — new geometric datum); nearest Borel–Padé pole keeps 88.1° angular margin from the imaginary ray ⇒ #3692's single-valuedness (no Stokes split, no anchor-dependent trans-series) EXTENDS to the substrate meridian. Rungs anchor-blind (7.9e-9) ⇒ still no anchor-dependent piece; sign-flip stays representational. 4 rungs only — indicative, not sharp. Perturbative-side context for the A_ω/G3 lane (#3805/#3813); no integer Stokes constant claimed; no fit; no c_k wired; no tier change."
+  }
+}
