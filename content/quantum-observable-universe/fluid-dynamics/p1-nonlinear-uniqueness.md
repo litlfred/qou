@@ -20,7 +20,7 @@ $$
   \Lambda_q = \frac{C_q^2E_0}{\nu_q} - \nu_q  <  \infty.
 $$
 
-In particular, $\Omega(t) \leq \Omega(0)e^{\Lambda_q t}$ unconditionally for all $t \geq 0$. Enstrophy physically cannot blow up in finite time.
+In particular, $\Omega(t) \leq \Omega(0)e^{\Lambda_q t}$ unconditionally for all $t \geq 0$, so the enstrophy remains finite at every finite time.
 
 **(c) Uniqueness.**
 If $v_1, v_2$ represent two exact solutions with $v_1(0) = v_2(0)$, then $v_1(t) = v_2(t)$ uniformly for all $t \geq 0$.

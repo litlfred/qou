@@ -44,7 +44,7 @@ The absolute blowup occurring at $q = 1$ effectively states that this terminal i
 
 **Connection to the core aspect ratio.**
 
-Operating at an isolated root of unity $q = e^{i\pi/\kappa}$, the exact geometric shape controlling the physical vortex core answers directly to the strict **modular tensor category** structure. The explicit fusion rules $N_{ij}^k$ logically dictate all valid mode interactions. The hard truncation boundary spanning $j \leq (\kappa-2)/2$ completely outlaws high-frequency geometric core deformations: the physical core mathematically **cannot** form fine-scale spatial structure exceeding the strict cutoff. Examining this physically:
+Operating at an isolated root of unity $q = e^{i\pi/\kappa}$, the exact geometric shape controlling the physical vortex core answers directly to the strict **modular tensor category** structure. The explicit fusion rules $N_{ij}^k$ logically dictate all valid mode interactions. The hard truncation boundary spanning $j \leq (\kappa-2)/2$ completely outlaws high-frequency geometric core deformations: the physical core mathematically **cannot** form fine-scale spatial structure exceeding the strict cutoff. At the level of the vortex-core geometry:
 
 - The continuous core aspect ratio $\kappa(t) = a_\perp/a_\parallel$ strictly answers to the isolated Fourier modes spanning the core boundary.
 - Operating at root of unity: exactly $(\kappa-1)/2$ modes logically exist. Consequently, $\kappa(t)$ forms merely a basic trigonometric polynomial obeying a strictly bounded degree.

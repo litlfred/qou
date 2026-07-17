@@ -3,7 +3,7 @@
 We establish the compactness needed for the $\{v_q\}_{q > 1}$ solutions to converge to a distributional solution of the classical Navier--Stokes equation.
 
 **Step 1: Uniform embedding.**
-We define the $q$-independent space $\mathcal{H} = L^2(\mathcal{S}; T\mathcal{S})$. For each $q > 1$, the fibre functor embeds $L^2_q(A) \hookrightarrow \mathcal{H}$ with uniformly bounded embeddings. The fibre functor preserves inner products up to a factor controlled by the substrate parameter.
+Introduce the $q$-independent space $\mathcal{H} = L^2(\mathcal{S}; T\mathcal{S})$. For each $q > 1$, the fibre functor embeds $L^2_q(A) \hookrightarrow \mathcal{H}$ with uniformly bounded embeddings. The fibre functor preserves inner products up to a factor controlled by the substrate parameter.
 
 **Step 2: Uniform energy bound.**
 The energy inequality gives $\sup_{t \geq 0} \lVert v_q(t) \rVert_{L^2_q}^2 \leq 2\lVert v_0 \rVert_{\mathcal{H}}^2$ for $q$ close to $1$. The bound is uniform in $q$.
@@ -12,7 +12,7 @@ The energy inequality gives $\sup_{t \geq 0} \lVert v_q(t) \rVert_{L^2_q}^2 \leq
 The standard $H^1$ bound diverges as $q \to 1$. We get a uniform $H^s$ bound for $s < 1$ by interpolation. For $s = 1/2$, it diverges. We must use truncation. The finite cascade depth means only $N_{\mathrm{eff}}(q)$ modes are active. The truncated family lives in a finite-dimensional subspace. For any fixed $N$, the family is precompact.
 
 **Step 4: Diagonal extraction.**
-We extract a diagonal subsequence $q_n \to 1$ such that for every fixed $N$, the truncated solution converges. We define the limit mode by mode.
+We extract a diagonal subsequence $q_n \to 1$ such that for every fixed $N$, the truncated solution converges. We construct the limit mode by mode.
 
 **Step 5: The limit is a distributional solution.**
 Taking $q = q_n \to 1$ along the diagonal, the viscous term vanishes. The $q$-Laplacian becomes the classical Laplacian. In the limit, the sequence satisfies the truncated Euler equation. Taking $N \to \infty$, the limit satisfies the inviscid Euler equation distributionally. This is consistent with the quantum viscosity vanishing at $q = 1$.

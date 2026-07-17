@@ -1,4 +1,4 @@
-Let $(\mathbf{C}, A, \tau)$ define a [QOU](#def:quantum-observable-universe) carrying [substrate parameter](#def:substrate-parameter) $q > 1$. Let $\Delta_q = d_q\delta_q + \delta_q d_q$ define the [$q$-Laplacian](#rem:q-laplacian-interpretation) operating on $\Omega^1(A)$, and let $\langle \cdot, \cdot \rangle_\varTheta$ supply the [Webster inner product](#rem:hodge-laplacian-relation).
+Let $(\mathbf{C}, A, \tau)$ define a [QOU](#def:quantum-observable-universe) carrying [substrate parameter](#def:substrate-parameter) $q > 1$. Let $\Delta_q = d_q\delta_q + \delta_q d_q$ be the [$q$-Laplacian](#rem:q-laplacian-interpretation) operating on $\Omega^1(A)$, and let $\langle \cdot, \cdot \rangle_\varTheta$ supply the [Webster inner product](#rem:hodge-laplacian-relation).
 
 Then:
 
@@ -28,7 +28,7 @@ $$
 for all $k \geq 1$. In particular, $\mu_k^{(q)} = \Theta(q^{2k})$, establishing strictly exponential growth in $k$.
 
 **(c) Categorical Sobolev embedding.**
-Define the $q$-Sobolev space $H^1_q(A) = \{v \in \Omega^1(A) : \lVert v \rVert_A^2 + \lVert d_q v \rVert_A^2 < \infty\}$. $H^1_q(A)$ embeds continuously into the space of bounded 1-forms:
+Write $H^1_q(A) = \{v \in \Omega^1(A) : \lVert v \rVert_A^2 + \lVert d_q v \rVert_A^2 < \infty\}$ for the $q$-Sobolev space. $H^1_q(A)$ embeds continuously into the space of bounded 1-forms:
 
 $$
   \lVert v \rVert_{L^\infty}
