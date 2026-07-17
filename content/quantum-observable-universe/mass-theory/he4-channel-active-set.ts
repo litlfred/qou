@@ -76,7 +76,7 @@ export default proposition({
   ],
   computation: {
     engine: "scipy",
-    script: "computations/probe_he4_sdp_compositional.py",
+    script: "computations/probes/he4_sdp_compositional_probe.py",
     witness: "computations/he4-sdp-compositional-probe.witness.json",
     status: "verified",
     requires: ["numpy", "scipy"],

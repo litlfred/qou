@@ -1,0 +1,183 @@
+{
+  "engine": "scipy",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-07-17T14:41:39.563153+00:00",
+  "commitSha": "0b4ed888d43cef2bdd5605b40e9d6b8038f572a7",
+  "assertions": [
+    {
+      "name": "unique_primal_optimum_on_Tp",
+      "computed": 13.19687380754797,
+      "expected": 13.19687380754797,
+      "passed": true,
+      "tolerance": 1e-08,
+      "unit": "MeV",
+      "source": "claim 1: x*_{T⊕p} = n_target, all other x*_i = 0 (strict-min cost channel ⇒ unique vertex optimum)"
+    },
+    {
+      "name": "off_Tp_primal_weights_zero",
+      "computed": 0.0,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-09,
+      "source": "claim 1 (complement): x*_{D⊕D} = x*_{³He⊕n} = 0"
+    },
+    {
+      "name": "active_set_is_DD_and_3Hen",
+      "computed": "[0, 2]",
+      "expected": "[0, 2]",
+      "passed": true,
+      "source": "claim 2: 𝒜(⁴He) = {D⊕D, ³He⊕n} (dual-tight constraints)"
+    },
+    {
+      "name": "dual_ordering_yDD_gt_y3Hen_gt_yTp_eq_0",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "source": "claim 3: y*_{D⊕D} > y*_{³He⊕n} > y*_{T⊕p} = 0"
+    },
+    {
+      "name": "strong_duality_gap_zero",
+      "computed": 0.0,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-08,
+      "source": "primal_obj = dual_obj (strong LP duality)"
+    },
+    {
+      "name": "primal_obj_matches_md",
+      "computed": 268.94883815407894,
+      "expected": 268.949,
+      "passed": true,
+      "tolerance": 0.01,
+      "unit": "MeV",
+      "source": "he4-channel-active-set.md §Solution (268.949, 3-decimal)"
+    },
+    {
+      "name": "y0_star_matches_md",
+      "computed": 20.37973857113442,
+      "expected": 20.38,
+      "passed": true,
+      "tolerance": 0.01,
+      "unit": "MeV",
+      "source": "he4-channel-active-set.md §Solution (y0* = 20.380)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 4441,
+  "computation": "he4-sdp-compositional-probe",
+  "scriptFile": "he4_sdp_compositional_probe.py",
+  "scriptHash": "85f2e1788c13",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
+  },
+  "description": "⁴He compositional-channel operator-selection LP (prop:he4-channel-active-set). Channels D⊕D / T⊕p / ³He⊕n with residuals t_i = Δ_cat(⁴He) − ΣΔ_cat(constituents) from the magic-shell empirical anchors; G = I₃, n_target = Δ_coupling(2,2) = Δ_cat(⁴He) − 2·Δ_cat(³He). Solved via the canonical lp_dual_solver.solve_operator_selection_lp; verifies the unique T⊕p primal optimum, the {D⊕D, ³He⊕n} active set, and the dual ordering y*_{D⊕D} > y*_{³He⊕n} > y*_{T⊕p} = 0.",
+  "contentBlock": "prop:he4-channel-active-set",
+  "parameters": {
+    "channels": [
+      "D+D",
+      "T+p",
+      "3He+n"
+    ],
+    "channel_constituents": {
+      "D+D": [
+        "deuteron",
+        "deuteron"
+      ],
+      "T+p": [
+        "tritium",
+        "proton"
+      ],
+      "3He+n": [
+        "he3",
+        "neutron"
+      ]
+    },
+    "G": "I_3 (identity Gram — channels orthogonal at leading order)",
+    "n_target_MeV": 13.19687380754797,
+    "lp_backend": "scipy linprog (HiGHS, f64) via lp_dual_solver.solve_operator_selection_lp"
+  },
+  "data": {
+    "delta_cat_MeV": {
+      "proton": -0.5443703642391706,
+      "neutron": -0.471771245458695,
+      "deuteron": 2.026152020739914,
+      "tritium": 8.375456953223063,
+      "he3": 7.506975676285171,
+      "he4": 28.21082516011831
+    },
+    "t_residuals_MeV": {
+      "D+D": 24.158521118638483,
+      "T+p": 20.37973857113442,
+      "3He+n": 21.175620729291836
+    },
+    "lp_dual": {
+      "x_star": [
+        -0.0,
+        13.19687380754797,
+        -0.0
+      ],
+      "y0_star": 20.37973857113442,
+      "y_star": [
+        3.7787825475040613,
+        0.0,
+        0.7958821581574149
+      ],
+      "active_set": [
+        0,
+        2
+      ],
+      "primal_obj": 268.94883815407894,
+      "dual_obj": 268.94883815407894,
+      "duality_gap": 0.0,
+      "feasible": true
+    },
+    "active_set_channels": [
+      "D+D",
+      "3He+n"
+    ],
+    "upstream_witness_hashes": [
+      {
+        "path": "magic-shell-empirical-instantiation.witness.json",
+        "sha256": "7c9479bfcf30a516500185bac8bda2c99e1475ed6c566238552ea691cc4ceed1",
+        "size_bytes": 5835,
+        "commitSha": "0853dbd6f7802d6aed361df73aada4ff67076ddc",
+        "scriptCommitSha": "ab1e03a2b81c35c88fac6dd6b38f9b35ea2e4c24",
+        "computedAt": "2026-05-12T03:49:33.853723+00:00"
+      }
+    ]
+  },
+  "caveats": [
+    "Δ_cat anchors loaded from computations/_deprecated/magic-shell-empirical-instantiation.witness.json — the anchor witness was moved to _deprecated/ after the .md was written (the .md still cites the top-level path). Values are the PR #638-closure empirical instantiation table the block was authored against."
+  ],
+  "x_star": [
+    -0.0,
+    13.19687380754797,
+    -0.0
+  ],
+  "y0_star": 20.37973857113442,
+  "y_star": [
+    3.7787825475040613,
+    0.0,
+    0.7958821581574149
+  ],
+  "active_set": [
+    0,
+    2
+  ],
+  "primal_obj": 268.94883815407894,
+  "dual_obj": 268.94883815407894,
+  "duality_gap": 0.0,
+  "feasible": true
+}

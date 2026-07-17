@@ -28,8 +28,11 @@ export default proposition({
   ],
   computation: {
     engine: "python+mpmath",
-    script: "computations/probe_q_beta_operator_valued_N2.py",
-    witness: ["computations/q-beta-operator-valued-N2.witness.json"],
+    script:
+      "computations/probes/hecke_1d_irrep_closed_form_character_probe.py",
+    witness: [
+      "computations/probes/hecke-1d-irrep-closed-form-character-probe.witness.json",
+    ],
     status: "experimental",
   },
 });
