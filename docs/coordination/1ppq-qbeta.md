@@ -1122,3 +1122,34 @@ passes* the gate when accelerated at its own per-parity slope-zero order in
 the w = ζ² plane (odd/S-carrier ρ_ζ ≈ 0.152, even ρ_ζ ≈ 0.254, radii 40%
 apart). Likely a methodology difference (shared-s vs per-parity s\*_par;
 ζ vs ζ² plane); queued as a bean — neither reading is wired anywhere.
+
+**2026-07-17 addendum — parity-split ADJUDICATED (bean qou-ffxw closed;
+PR #3818).** Probe
+[`qbeta_dladder_parity_adjudication_probe.py`](../../computations/qbeta/qbeta_dladder_parity_adjudication_probe.py)
+(witness `qbeta-dladder-parity-adjudication.witness.json`) ran BOTH methods on
+the same exact d_k plus four adversarial controls (deliberately hostile to the
+per-parity positive: only ~10–11 coeffs/parity → real Froissart risk).
+**Verdict: undecidable-at-k21.** The exact difference is four ingredients:
+(i) per-parity slope-zero s\* vs a shared fixed s-grid (even's optimum s ≈ 0.465
+lies *outside* the sibling's [0,0.40] grid); (ii) **conformal-mapped** vs
+**raw** dlog-Padé; (iii) gap-only vs gap+spread gate; (iv) tiny fixed Padé order
+vs an M-window. Control outcomes: **C4a** the conformal gate is NOT
+self-referential — the located singularity is seed-invariant to ~1e-13 across
+{0.5,1,1.5,2}×ρ_rt (the "it just returns the root-test seed" artifact
+hypothesis is REFUTED); **C4b** the PASS↔FAIL flip localizes to the **conformal
+map** — raw dlog-Padé at the *ecalle probe's own* per-parity s\* still fails both
+parities (raw Padé ≈ 2× below the root-test radius — the qborel probe's ARM-2
+"branch-cut-biased-low" signature), while the conformal estimator passes;
+**C3** the ecalle probe's real per-parity radii are stable across
+orders/margins/truncation (≤ ~10%). BUT the controls cannot **certify** the
+40%-split as real ℤ/2 structure at this length: on same-length *convergent*
+branch-point synthetics (mismatched to the divergent target) the short-series
+conformal estimator is biased ~30% high (C1a) and fails to recover planted
+distinct parity singularities (C2; Probe B even resolved the even branch 4/9).
+**Bottom line: the qborel probe's "unresolved" is the raw-Padé low bias (not an
+absence of structure); the ecalle probe's "per-parity pass" is the conformal
+cure — but the located radii are not certifiable to 40% at k = 21.** Neither
+parity reading is wired; the ORD-63 / k ≈ 31 extension decides whether the
+odd/even radii stay 40% apart or converge. Audits:
+[`2026-07-17-dladder-ecalle-acceleration.md`](../audits/2026-07-17-dladder-ecalle-acceleration.md),
+[`2026-07-17-dladder-qborel-acceleration.md`](../audits/2026-07-17-dladder-qborel-acceleration.md).

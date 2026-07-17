@@ -119,7 +119,35 @@ independently confirms the K1 full-series gate failure (double-confirmed,
 transform-independent) but reports its parity-split branches *unresolved*,
 in tension with this run's per-parity gate passes. Probable cause: shared-s
 vs per-parity slope-zero order and ζ- vs ζ²-plane methodology; queued for
-adjudication (bean) — neither parity reading is treated as established.
+adjudication (bean qou-ffxw) — neither parity reading is treated as established.
+
+**Adjudication (2026-07-17, bean qou-ffxw closed).** Probe
+[`qbeta_dladder_parity_adjudication_probe.py`](../../computations/qbeta/qbeta_dladder_parity_adjudication_probe.py)
+(witness [`qbeta-dladder-parity-adjudication.witness.json`](../../computations/qbeta/qbeta-dladder-parity-adjudication.witness.json))
+ran **both** methods on the same exact d_k plus four adversarial controls.
+**Verdict: undecidable-at-k21 — but the adversarial worry is partly dismissed
+and the discrepancy is diagnosed.** The exact methodological difference is four
+ingredients: (i) per-parity slope-zero s\* (this run) vs a shared fixed s-grid
+(the sibling; the even branch's optimum s ≈ 0.465 lies *outside* the sibling's
+[0, 0.40] grid); (ii) **conformal-mapped** dlog-Padé (this run) vs **raw**
+dlog-Padé (sibling); (iii) gap-only gate (this run) vs gap+spread gate
+(sibling); (iv) tiny fixed Padé order vs an M-window. Findings: **C4a** — this
+run's conformal gate is *not* self-referential (the located singularity is
+seed-invariant to ~1e-13 across {0.5,1,1.5,2}×ρ_rt, refuting "it just returns
+the root-test seed"); **C4b** — the flip localizes to the **conformal map**:
+raw dlog-Padé at *this run's own* per-parity s\* still fails both parities (raw
+Padé ≈ 2× below the root-test radius — the sibling's "branch-cut-biased-low"
+signature), while the conformal estimator passes; **C3** — this run's real
+per-parity radii are stable across orders/margins/truncation (≤ ~10 %). What the
+controls **cannot** do at ~10–11 coeffs/parity is *certify* the 40 %-split as
+real ℤ/2 structure: on same-length **convergent** branch-point synthetics
+(mismatched to the divergent target) the short-series conformal estimator is
+biased ~30 % high (C1a) and fails to recover planted distinct parity
+singularities (C2). So the sibling's "unresolved" is the raw-Padé low bias and
+this run's "per-parity pass" is the conformal cure — but neither reading is
+established at k = 21. Deferred to the ORD-63 / k ≈ 31 extension (the specific
+question: do the odd/even radii stay 40 % apart or converge?). Ledger:
+[`1ppq-qbeta.md`](../coordination/1ppq-qbeta.md).
 
 ## What the extension's k≈31 terms will decide
 

@@ -5,12 +5,25 @@
 > `qbeta_dladder_ecalle_acceleration_probe.py`) reproduces this document's K1
 > headline — the estimator gate fails at every Borel–Leroy AND exponent-order
 > Jackson setting at k = 21, so the finite-k shadow is double-confirmed.
-> **Open discrepancy (flagged, unadjudicated):** on the parity split this
-> document reports the branches unresolved, while the replication finds each
-> parity subseries individually gate-passing at its own per-parity slope-zero
-> order in the w = ζ² plane (odd ρ_ζ ≈ 0.152, even ≈ 0.254). Likely a
-> shared-s vs per-parity-s\* / ζ-vs-ζ² methodology difference; see the
-> 1ppq-qbeta ledger addendum. Neither reading is wired anywhere.
+> **Open discrepancy (ADJUDICATED 2026-07-17, bean qou-ffxw):** on the parity
+> split this document reports the branches unresolved, while the replication
+> finds each parity subseries individually gate-passing at its own per-parity
+> slope-zero order in the w = ζ² plane (odd ρ_ζ ≈ 0.152, even ≈ 0.254).
+> **Verdict: undecidable-at-k21** — probe
+> [`qbeta_dladder_parity_adjudication_probe.py`](../../computations/qbeta/qbeta_dladder_parity_adjudication_probe.py)
+> (witness [`qbeta-dladder-parity-adjudication.witness.json`](../../computations/qbeta/qbeta-dladder-parity-adjudication.witness.json))
+> ran both methods on the same exact d_k. **This document's "unresolved" is the
+> RAW dlog-Padé low bias, not a real absence of structure:** the flip localizes
+> to the conformal map — raw dlog-Padé at the *replication's own* per-parity s\*
+> still fails (raw Padé ≈ 2× below the root-test radius, this document's ARM-2
+> "branch-cut-biased-low" signature), while the conformal-mapped estimator
+> passes (C4b). The replication's gate is **not** self-referential (seed-invariant
+> to ~1e-13, C4a) and its radii are stable (C3). BUT neither reading is
+> established: on same-length convergent synthetics the short-series conformal
+> estimator is biased ~30% high (C1a) and mis-recovers planted distinct-parity
+> singularities (C2), so the 40%-split cannot be certified as ℤ/2 structure at
+> k = 21. Deferred to the ORD-63 / k ≈ 31 extension. See §5 ARM 3 and the
+> 1ppq-qbeta ledger. Neither reading is wired anywhere.
 
 **Date:** 2026-07-17 · **Branch:** `claude/dladder-qborel-acceleration-2026-07-17` ·
 **Tier:** exact-arithmetic (2-adic transport) + high-precision measurement
@@ -165,7 +178,13 @@ four arms:
 - **ARM 3 — parity-split acceleration** (the 2-adic-grading-motivated
   decomposition, exact and commuting with every scalar `f_k`): gate 0/9 on the
   odd branch (11 terms), 0/9 on the even branch (10 terms) — unresolved at
-  this depth too.
+  this depth too. **Adjudication (bean qou-ffxw, 2026-07-17):** this 0/9 is the
+  **raw dlog-Padé low bias**, not an absence of structure — the sibling probe's
+  conformal-mapped estimator passes both parities at their per-parity s\*, and
+  the flip localizes to the conformal map (C4b). Verdict is
+  *undecidable-at-k21* (the 40%-split is neither certified nor refuted at ~10–11
+  coeffs/parity); see the top-of-doc adjudication blockquote and
+  [`qbeta-dladder-parity-adjudication.witness.json`](../../computations/qbeta/qbeta-dladder-parity-adjudication.witness.json).
 - **ARM 4 — back-transform self-check + A2.** The `Γ(1+sk)` Borel–Leroy
   back-transform reproduces the direct partial sums at the meridian to
   **2.5 × 10⁻²⁶** at both the muon-q₀ and the q\* (A2) points — machinery
