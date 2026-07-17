@@ -1212,3 +1212,24 @@ inherits the open `PentagonRigidity` hypothesis (§3b-cond). lean-direct exit 0.
 No c_k; registry untouched; scope-(a). Also this session: #3704's (N,k) 0/8
 + G2-misframing correction absorbed; bean `8we6` annotated with the H₄
 route-A 9/9 gate-fail state (awaits owner-level framework content).
+
+**2026-07-17 (#3813, cont.) — two Φ_b-lane results: Liouville-elliptic Lean +
+local-monodromy anchor-blind negative.** (a) **Liouville for doubly-periodic
+entire functions** (`QOU.MathlibExt.DoublyPeriodicLiouville`, sorry-free,
+#print axioms = {propext, Classical.choice, Quot.sound}): the "doubly-periodic
+⇒ constant" step L4 `CyclicDilogPentagon` carried as an open hypothesis
+("absent from Mathlib") is now proved from primitives — no ZLattice/measure
+theory, just `Int.fract` coordinate reduction into a closed ball (compact, ℂ
+proper) + Liouville. The bridge `ratio_const_of_doublyPeriodic` **shrinks
+`PentagonRigidity.uniqueUpToScalar`** to two smaller explicit inputs (ratio
+entire = zeros coincide; periods independent), Liouville discharged. (b)
+**Two-route A_ω cross-pin** (`qbeta_c3_two_route_cross_pin_probe.py` + witness,
+2/2 pass): the only fit-free Φ_b monodromy datum computable in-repo — the local
+scale-invariant quasi-period readout `qpRatio` (proved solution-independent in
+`MonodromyDatumRigidity`) — is **anchor-blind** (cross-anchor ratio 1 − 3e-9),
+reproducing neither the S swing (−4.0751) nor any pre-named GGM integer/count.
+**Scope-(a):** the c₃ bar-odd swing is NOT in the local Φ_b monodromy but in the
+dual/large-argument (Stokes) monodromy — the 3d-index/GGM face owned by siblings
+#3805/#3826 (their `I_Δ(0,0)=0.192279` consumed as a cited reference only;
+assembly not touched). Empirical companion of `MonodromyDatumRigidity` + the
+non-perturbative phase law (`c821747763`). No fit; no c_k; registry untouched.
