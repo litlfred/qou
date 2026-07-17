@@ -1,0 +1,52 @@
+{
+  "computation": "keystone-wlambda-unitarity-normalization-gate",
+  "description": "Observable-side reduction of the W_\u03bb geometric wall: W_\u03bb=d_q\u00b2/[n]_q! is sub-normalized (\u03a3_\u03bb W_\u03bb=Z(q)<1 at q\u22601, Z(1)=1 RSK/Burnside, n=5 Z=0.98222). A unitary modular S-matrix has \u03a3W=1 \u21d2 compact/unitary realization excluded by normalization; the geometric object must be non-unitary with defect Z(q). Complements the fibre-\u03b6 colored-LR modulus spec. No q\u2080 derivation; nothing wired.",
+  "auditOnly": "docs/audits/2026-07-17-keystone-wlambda-unitarity-normalization-gate.md",
+  "tier": "symbolic-exact (sympy; q-symbolic identity + RSK/Burnside q=1 anchor)",
+  "computedAt": "2026-07-17T20:15:30.730432+00:00",
+  "commitSha": "0b4ed888d43cef2bdd5605b40e9d6b8038f572a7",
+  "engine": "sympy",
+  "engineVersion": "1.14.0",
+  "scriptFile": "keystone_wlambda_unitarity_normalization_gate_probe.py",
+  "scriptHash": "84b732434cd8",
+  "assertions": [
+    {
+      "name": "Z_equals_one_at_q1_rsk_burnside",
+      "passed": true,
+      "detail": "Z(1)=\u03a3_\u03bb d_1(\u03bb)\u00b2/n! = \u03a3(f^\u03bb)\u00b2/n! = 1 for n=2..5 (RSK/Burnside) \u2014 W_\u03bb is a normalized measure ONLY at q=1"
+    },
+    {
+      "name": "Z_strictly_below_one_at_q0",
+      "passed": true,
+      "detail": "Z(q\u2080) = n=2:0.99458, n=3:0.98744, n=4:0.98216, n=5:0.98222 \u2014 all < 1 \u21d2 \u03a3_\u03bb W_\u03bb < 1: W_\u03bb is SUB-NORMALIZED at q\u22601"
+    },
+    {
+      "name": "matches_ledger_P1_subnormalization_0p98222",
+      "passed": true,
+      "detail": "n=5 (full-Hecke S\u2085 keystone): Z(q\u2080)=0.98222 = the ledger's P1 'sub-normalized Z=0.98222' \u2014 this probe supplies its S-matrix-unitarity framing"
+    },
+    {
+      "name": "unitarity_gate_excludes_compact_modular",
+      "passed": true,
+      "detail": "exact gate \u03a3_\u03bb d_q\u00b2 = Z(q)\u00b7[n]_q! with Z\u22601 (q\u22601) \u21d2 a unitary modular vacuum row (\u03a3W=1) CANNOT equal W_\u03bb at q\u22601 \u21d2 the geometric realization must be NON-unitary (reinforces the non-compact q-Bessel redirect); complements the fibre-\u03b6 modulus spec"
+    }
+  ],
+  "allPassed": true,
+  "result": {
+    "Z_at_q0": {
+      "2": 0.9945809589698911,
+      "3": 0.9874399257823825,
+      "4": 0.9821648951619864,
+      "5": 0.9822237221524119
+    },
+    "Z2_exact": "2*q/(q**2 + 1)",
+    "Z3_exact": "(q**5 + 4*q**3 + q)/(q**6 + 2*q**4 + 2*q**2 + 1)",
+    "verdict": "OBSERVABLE-SIDE NORMALIZATION GATE (formalize-first reduction of the W_\u03bb wall; no q\u2080 derivation, no fit, nothing wired): the full-Hecke q-Plancherel weight W_\u03bb=d_q\u00b2/[n]_q! is SUB-NORMALIZED at real q\u22601 \u2014 \u03a3_\u03bb W_\u03bb = Z(q) = (\u03a3d_q\u00b2)/[n]_q!, with Z(1)=1 (RSK/Burnside) and Z(q\u2080)<1 (n=5: 0.98222, the ledger's P1 number). A UNITARY modular S-matrix vacuum row has \u03a3|S_{0\u03bb}|\u00b2=1, so W_\u03bb is NOT its probability measure at q\u22601 \u2014 a compact/unitary realization is excluded by an exact NORMALIZATION obstruction (not only by q\u2080-independence). The geometric object hosting W_\u03bb at the observable q\u2080 must be NON-unitary with completeness defect exactly Z(q), reinforcing the non-compact q-Bessel redirect. This is the OBSERVABLE-side complement to the sibling's fibre-\u03b6 colored-LR modulus spec (|S_{0\u03bb}(\u03b6)|=d_\u03b6/D). It sharpens the wall + pins a q-symbolic gate; it does NOT close it. NO tier change."
+  },
+  "context": {
+    "complements": "2026-07-17-three-front-attack-specs.md \u00a72 (fibre-\u03b6 colored-LR modulus |S_{0\u03bb}(\u03b6)|=d_\u03b6/D); this is the observable-side (real q\u2080) normalization gate",
+    "reduces": "the W_\u03bb geometric-realization wall \u2014 pins the exact non-unitarity Z(q) any realization must carry; reinforces the non-compact q-Bessel redirect",
+    "frames": "the ledger's P1 'sub-normalized Z=0.98222' as an S-matrix unitarity/completeness obstruction (\u03a3|S_{0\u03bb}|\u00b2=1 for unitary vs \u03a3_\u03bb W_\u03bb=Z<1)",
+    "scope_guard": "does NOT derive q\u2080, does NOT compute the colored-LR amplitude; no fit; nothing wired; no tier change"
+  }
+}
