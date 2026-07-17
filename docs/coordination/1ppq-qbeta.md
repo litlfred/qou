@@ -1171,3 +1171,21 @@ shortcut past the resurgent D-ladder exists. Probe
 `qbeta-eta-square-functional-g-probe.witness.json`; audit
 [`2026-07-17-eta-square-functional-g-refutation.md`](../audits/2026-07-17-eta-square-functional-g-refutation.md).
 No fit; no c_k wired; no tier change.
+
+
+
+**2026-07-17 (#3826) — κ̃₅ PREDECLARED TEST: PHASE LAW SURVIVES (residual 9.2e-9);
+tower extended to 5 rungs; G3 3d-index tranche: engine certified, assembly
+honestly open.** The ξ-frame phase law (#3819, from rungs 1–4 only) predicted
+arg κ̃₅ = −5·arctan(t/π) = −0.166002394 IN ADVANCE (prediction committed before
+the run); the 11-point ladder (N≤524288, dps 1050, 947d cancellation) measured
+−0.166002385 — residual 9.2e-9, LAW SURVIVES. κ̃₅ = 210.675324 − 35.29743·i
+[5d/3d]; rungs 1–4 sharpened to 22/17/13/9 digits; #3691 values reproduced.
+The perturbative-null for A_ω hardens: κ̃_n/ξⁿ ∈ (−i)ⁿ·ℝ verified through
+rung 5. G3 route-1 (owner-uploaded sources now in uploads/): exact-integer
+I_Δ engine + exact triality certificates + substrate convergence
+(I_Δ(0,0)(e^−t)=0.1922789824); DGG anchor (4.20) glyph-verified; assembly of
+the 4₁ TOTAL index NOT yet certified (flat-wing divergence of the bare 4.18;
+q^{−e₂} near-miss; 9 quad frames excluded) — open input is the U=2·log m
+charge dictionary; appendix-B tables next. All open-state recorded in the
+witness (anti-fabrication). No fit; no c_k wired; no tier change.
