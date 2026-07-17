@@ -1,0 +1,321 @@
+{
+  "engine": "mpmath+exact-Q5",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-07-17T15:24:18.233952+00:00",
+  "commitSha": "cabed4f226191f0891b6a7e61ad590a0ed356002",
+  "assertions": [
+    {
+      "name": "corrected_modulus_identity_established",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "Exact character fold == quantum-integer fold (integer tables + Q(sqrt5)); colored Gauss sum chi-linear to machine zero; amplitudes parameter-free-extracted match (2/sqrt5)sin(alpha m pi/5); exact Q(sqrt5) modulus identity |A_m|*D_E8 = 2*|[mark]| at all 9 nodes, both flat connections."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 14,
+  "computation": "lr-modulus-identification-sigma235",
+  "scriptFile": "lr_modulus_identification_sigma235.py",
+  "scriptHash": "6da6d10c62fd",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "The colored Lawrence-Rozansky modulus identification on Sigma(2,3,5) -- the W_lambda keystone's last open piece. VERDICT: CORRECTED EXACT IDENTITY. The color-alpha insertion on the order-5 fibre produces the Hikami odd character chi^(1,1,alpha); computed exactly, the map alpha -> chi factors through the r=5 affine-Weyl fold with the SAME kernel and signs as alpha -> [alpha]_zeta at the fibre root zeta = e^{i pi/5} (chi^(114)=+chi^(111) ~ [4]=+[1]; chi^(113)=+chi^(112) ~ [3]=+[2]; chi^(115)=0 ~ [5]=0; chi^(116)=-chi^(111) ~ [6]=-[1]). The colored Gauss sum tau_N(alpha) (alpha=1 anchors to bare Theorem 10 machine-zero) obeys the fold AT THE FLAT-CONNECTION LEVEL: the class deviations are ELEMENTARY exact identities -- tau_N(4)-tau_N(1) = 1+2cos(2pi/N) and tau_N(3)-tau_N(2) = e^{-6pi i/(5N)} (machine zero at N=7,11,13,25), tau_N(6)+tau_N(1) bounded after Cor-12 normalization, tau_N(5) has NO flat part. Flat-connection amplitudes extracted parameter-free match A_m(alpha) = (2/sqrt5)sin(alpha m pi/5), and the EXACT Q(sqrt5) algebra gives, for every affine-E8 McKay node lambda (marks 1,2,3,4,5,6,4,2,3 = 2I irrep dims) and both flat connections m: |A_m(mark)| * D_E8(zeta^m) = 2*|[mark]_{zeta^m}| with D_E8(zeta^m)^2 = 10 +- 2sqrt5 and core identity (10-2sqrt5)(10+2sqrt5)=80. So |S_0lambda^(m)| = 2*d_{zeta^m}(lambda)/D_E8 = sqrt2*d/D_MTC (D_E8^2 = 2*D_MTC^2, the 2:1 fold of the affine-E8 node set onto the r=5 alcove). Corrections to the conjectured shape: (1) zeta is the FIBRE root e^{m pi i/5} Galois-indexed by the flat connection, not the level root and not e^{2 pi i/30}; (2) global factor 2 (resp. sqrt2); (3) the identity lives at the FOLDED D=2 level -- the 4 generic-q Hecke classes collapse at the fibre root ((3,2) muon class -> [5]=0; electron [5]+1 = 1 = |[6]|, moduli consistent); the 9-independent-moduli reading at a single zeta is (b)-excluded by D(2,3,5)=2 (two irreducible SU(2) flat connections, Fintushel-Stern; machine-validated in-repo). The generic-q/archimedean separation remains the standing open continuation (#3652/#3681). No fit; nothing wired to production.",
+  "data": {
+    "fold_table": {
+      "1": {
+        "base": 1,
+        "sign": 1
+      },
+      "2": {
+        "base": 2,
+        "sign": 1
+      },
+      "3": {
+        "base": 2,
+        "sign": 1
+      },
+      "4": {
+        "base": 1,
+        "sign": 1
+      },
+      "5": {
+        "base": null,
+        "sign": 0
+      },
+      "6": {
+        "base": 1,
+        "sign": -1
+      }
+    },
+    "qint_fold_values": {
+      "1": "(1+0√5)",
+      "2": "(1/2+1/2√5)",
+      "3": "(1/2+1/2√5)",
+      "4": "(1+0√5)",
+      "5": "(0+0√5)",
+      "6": "(-1+0√5)"
+    },
+    "chi_115_identically_zero": true,
+    "qfold_exact": true,
+    "fold_matches_qint_signs": true,
+    "theorem10_residuals": {
+      "3": 2.5568623508337472e-39,
+      "5": 4.2802139649491824e-39,
+      "7": 5.62899903519033e-39
+    },
+    "theorem10_exact": true,
+    "chi_linearity": {
+      "delta4_eq_1_plus_2cos": {
+        "7": 6.0016078763991e-39,
+        "11": 1.2719216217881783e-38,
+        "13": 2.882965477219391e-38,
+        "25": 3.568148812712859e-38
+      },
+      "delta32_eq_exp_m6pi_over_5N": {
+        "7": 6.340110836973996e-39,
+        "11": 1.8267424021213014e-38,
+        "13": 1.9604604085584834e-38,
+        "25": 6.870182923947703e-38
+      },
+      "delta6_normalized_abs": {
+        "7": 1.6912531461587612e-39,
+        "11": 1.8192639907090367,
+        "13": 1.985417748196108,
+        "25": 1.5410264855515785,
+        "51": 0.8359206897735668,
+        "101": 0.432035643952967
+      }
+    },
+    "delta4_exact": true,
+    "delta32_exact": true,
+    "delta6_flat_free": true,
+    "fold_holds_at_flat_level": true,
+    "alpha5_normalized_abs": {
+      "25": 1.1755705045849463,
+      "51": 0.606305348226087,
+      "101": 0.3097963604281694,
+      "201": 0.15613909786142988
+    },
+    "alpha1_normalized_abs": {
+      "25": 6.71299855368077,
+      "51": 3.8549259926507298,
+      "101": 5.225978698142152,
+      "201": 7.43906028466624
+    },
+    "alpha5_bounded": true,
+    "amplitudes": {
+      "1": {
+        "1": {
+          "extracted_pair1": 0.5208226731139665,
+          "extracted_pair2": 0.5270502919187597,
+          "predicted": 0.5257311121191336,
+          "rel_err": 0.0025092290891987764
+        },
+        "2": {
+          "extracted_pair1": 0.8447423415908397,
+          "extracted_pair2": 0.8525118247512842,
+          "predicted": 0.8506508083520399,
+          "rel_err": 0.0021877559875004148
+        }
+      },
+      "2": {
+        "1": {
+          "extracted_pair1": 0.84026209109653,
+          "extracted_pair2": 0.8535815331055813,
+          "predicted": 0.8506508083520399,
+          "rel_err": 0.0034452735773201804
+        },
+        "2": {
+          "extracted_pair1": 0.538111611936621,
+          "extracted_pair2": 0.5218161542092246,
+          "predicted": 0.5257311121191336,
+          "rel_err": 0.007446692462480488
+        }
+      },
+      "3": {
+        "1": {
+          "extracted_pair1": 0.8336922965636787,
+          "extracted_pair2": 0.8557858713370274,
+          "predicted": 0.8506508083520399,
+          "rel_err": 0.006036628584337243
+        },
+        "2": {
+          "extracted_pair1": 0.5454160539351958,
+          "extracted_pair2": 0.5192256569870057,
+          "predicted": 0.5257311121191336,
+          "rel_err": 0.01237411098975189
+        }
+      },
+      "4": {
+        "1": {
+          "extracted_pair1": 0.5007726552189475,
+          "extracted_pair2": 0.53401928219511,
+          "predicted": 0.5257311121191336,
+          "rel_err": 0.01576503631783972
+        },
+        "2": {
+          "extracted_pair1": 0.822857599964967,
+          "extracted_pair2": 0.8608509088534178,
+          "predicted": 0.8506508083520399,
+          "rel_err": 0.011990937293221841
+        }
+      },
+      "6": {
+        "1": {
+          "extracted_pair1": 0.5725016429024579,
+          "extracted_pair2": 0.5086819967643347,
+          "predicted": 0.5257311121191336,
+          "rel_err": 0.03242934451049849
+        },
+        "2": {
+          "extracted_pair1": 0.8975674687353739,
+          "extracted_pair2": 0.8309565374653555,
+          "predicted": 0.8506508083520399,
+          "rel_err": 0.023152003963692266
+        }
+      }
+    },
+    "amplitudes_match_predicted": true,
+    "D2_E8": {
+      "1": "(10+2√5)",
+      "2": "(10+-2√5)"
+    },
+    "core_identity_10m2s5_times_10p2s5_eq_80": true,
+    "D2_MTC": "(5+1√5)",
+    "fold_multiplicity_exact": true,
+    "modulus_identity_exact_all_nodes": true,
+    "numeric_crosscheck_50dps": true,
+    "per_node_table": [
+      {
+        "node": "triv",
+        "mark": 1,
+        "absA_m1": 0.5257311121191336,
+        "dq_over_D_m1": 0.2628655560595668,
+        "ratio_m1": 2.0,
+        "absA_m2": 0.8506508083520399,
+        "dq_over_D_m2": 0.42532540417601994,
+        "ratio_m2": 2.0
+      },
+      {
+        "node": "2s",
+        "mark": 2,
+        "absA_m1": 0.8506508083520399,
+        "dq_over_D_m1": 0.42532540417601994,
+        "ratio_m1": 2.0,
+        "absA_m2": 0.5257311121191336,
+        "dq_over_D_m2": 0.2628655560595668,
+        "ratio_m2": 2.0
+      },
+      {
+        "node": "3",
+        "mark": 3,
+        "absA_m1": 0.8506508083520399,
+        "dq_over_D_m1": 0.42532540417601994,
+        "ratio_m1": 2.0,
+        "absA_m2": 0.5257311121191336,
+        "dq_over_D_m2": 0.2628655560595668,
+        "ratio_m2": 2.0
+      },
+      {
+        "node": "4s",
+        "mark": 4,
+        "absA_m1": 0.5257311121191336,
+        "dq_over_D_m1": 0.2628655560595668,
+        "ratio_m1": 2.0,
+        "absA_m2": 0.8506508083520399,
+        "dq_over_D_m2": 0.42532540417601994,
+        "ratio_m2": 2.0
+      },
+      {
+        "node": "5",
+        "mark": 5,
+        "absA_m1": 3.697619447397311e-43,
+        "dq_over_D_m1": 1.8488097236986555e-43,
+        "ratio_m1": 2.0,
+        "absA_m2": 7.395238894794622e-43,
+        "dq_over_D_m2": 3.697619447397311e-43,
+        "ratio_m2": 2.0
+      },
+      {
+        "node": "6",
+        "mark": 6,
+        "absA_m1": 0.5257311121191336,
+        "dq_over_D_m1": 0.2628655560595668,
+        "ratio_m1": 2.0,
+        "absA_m2": 0.8506508083520399,
+        "dq_over_D_m2": 0.42532540417601994,
+        "ratio_m2": 2.0
+      },
+      {
+        "node": "4",
+        "mark": 4,
+        "absA_m1": 0.5257311121191336,
+        "dq_over_D_m1": 0.2628655560595668,
+        "ratio_m1": 2.0,
+        "absA_m2": 0.8506508083520399,
+        "dq_over_D_m2": 0.42532540417601994,
+        "ratio_m2": 2.0
+      },
+      {
+        "node": "2s'",
+        "mark": 2,
+        "absA_m1": 0.8506508083520399,
+        "dq_over_D_m1": 0.42532540417601994,
+        "ratio_m1": 2.0,
+        "absA_m2": 0.5257311121191336,
+        "dq_over_D_m2": 0.2628655560595668,
+        "ratio_m2": 2.0
+      },
+      {
+        "node": "3'",
+        "mark": 3,
+        "absA_m1": 0.8506508083520399,
+        "dq_over_D_m1": 0.42532540417601994,
+        "ratio_m1": 2.0,
+        "absA_m2": 0.5257311121191336,
+        "dq_over_D_m2": 0.2628655560595668,
+        "ratio_m2": 2.0
+      }
+    ],
+    "s5_class_view": [
+      {
+        "s5_class": "{(5),(1^5)}",
+        "mark": 1,
+        "d_at_zeta": "(1+0√5)",
+        "note": ""
+      },
+      {
+        "s5_class": "{(4,1),(2,1,1,1)}",
+        "mark": 4,
+        "d_at_zeta": "(1+0√5)",
+        "note": ""
+      },
+      {
+        "s5_class": "{(3,2),(2,2,1)}",
+        "mark": 5,
+        "d_at_zeta": "(0+0√5)",
+        "note": ""
+      },
+      {
+        "s5_class": "{(3,1,1)} (electron, split)",
+        "mark": 6,
+        "d_at_zeta": "(1+0√5)",
+        "note": "[5]_z+1 = 1; |[6]_z| = 1 — moduli agree, sign differs"
+      }
+    ],
+    "split_node_moduli_agree": true,
+    "sum_mark_sq_eq_120": true
+  }
+}
