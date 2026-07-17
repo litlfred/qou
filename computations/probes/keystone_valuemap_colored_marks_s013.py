@@ -65,7 +65,9 @@ MARKS = [m for _, m in BWS0_CLASSES]          # [1, 4, 5, 6]
 
 
 def qint(m):
-    return (Q0 ** m - Q0 ** (-m)) / (Q0 - Q0 ** (-1))
+    # Q0 is the real substrate value (≈1.10998); mp.re is defensive insurance
+    # so downstream float() casts are robust even if a complex ζ is ever used.
+    return mp.re((Q0 ** m - Q0 ** (-m)) / (Q0 - Q0 ** (-1)))
 
 
 def bws0_target():
@@ -79,8 +81,8 @@ def bws0_target():
 def tau_N_colored(N, alpha):
     """τ_N(Σ(2,3,5)) with SU(2) colour α on the p₃=5 fibre: the p=5 numerator
     sine sin(nπ/(N·5)) → sin(α·nπ/(N·5)).  α=1 == bare s013.tau_N (checked)."""
-    pref_lhs = mp.e ** (2 * mp.pi * I / N * (s013.phi_235() / 4 - mpf(1) / 2)) \
-        * (mp.e ** (2 * mp.pi * I / N) - 1)
+    pref_lhs = mp.exp(2 * mp.pi * I / N * (s013.phi_235() / 4 - mpf(1) / 2)) \
+        * (mp.exp(2 * mp.pi * I / N) - 1)
     total = mpc(0)
     for n in range(2 * P * N):
         if n % N == 0:
@@ -88,11 +90,11 @@ def tau_N_colored(N, alpha):
         num = mpc(1)
         for pj in PVEC:
             a = alpha if pj == 5 else 1
-            num *= (mp.e ** (a * n * mp.pi * I / (N * pj))
-                    - mp.e ** (-a * n * mp.pi * I / (N * pj)))
-        den = mp.e ** (n * mp.pi * I / N) - mp.e ** (-n * mp.pi * I / N)
-        total += mp.e ** (-n * n * mp.pi * I / (2 * P * N)) * num / den
-    rhs = mp.e ** (mp.pi * I / 4) / (2 * mp.sqrt(mpf(2 * P * N))) * total
+            num *= (mp.exp(a * n * mp.pi * I / (N * pj))
+                    - mp.exp(-a * n * mp.pi * I / (N * pj)))
+        den = mp.exp(n * mp.pi * I / N) - mp.exp(-n * mp.pi * I / N)
+        total += mp.exp(-n * n * mp.pi * I / (2 * P * N)) * num / den
+    rhs = mp.exp(mp.pi * I / 4) / (2 * mp.sqrt(mpf(2 * P * N))) * total
     return rhs / pref_lhs
 
 
