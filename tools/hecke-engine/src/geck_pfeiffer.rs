@@ -778,6 +778,120 @@ fn perm_cycle_type(perm: &Perm) -> Vec<usize> {
     cycles
 }
 
+/// **Exact trivial-representation character** `χ_[n](T_β)` in the
+/// **doubled** convention of [`braid_to_hecke`] (averaged crossings not
+/// divided by `2^k`; that divisor is deferred by the caller, and the
+/// exact-Laurent GP path never applies it — so both sides here carry the
+/// same doubling).
+///
+/// The trivial (index) representation `[n]` of `H_n(q)` is the ALGEBRA
+/// HOMOMORPHISM `T_{s_i} ↦ q`.  Hence `χ_[n]` factorises over the letters
+/// of the braid word, completely independent of any basis reduction:
+///
+/// - `σ`   (`sign > 0`)   ↦ `q`
+/// - `σ⁻¹` (`sign < 0`)   ↦ `q⁻¹`   (since `T_{s_i}⁻¹ = T_{s_i} − h ↦ q − (q − q⁻¹) = q⁻¹`)
+/// - `(σ + σ⁻¹)` (`sign == 0`, doubled averaged crossing) ↦ `q + q⁻¹ = [2]_q`
+/// - a generator out of range (`i + 1 ≥ n`) ↦ `1`  (matches `braid_to_hecke`'s skip)
+///
+/// Because it is a single homomorphism this value is EXACT and cheap — it
+/// is the free necessary-condition cross-check that the GP q-MN path must
+/// satisfy on its `[n]` row.  See [`chi_gp_trivial_rep_consistent`].
+pub fn trivial_rep_char(n: usize, word: &[(i32, u32)]) -> LaurentPolyQ {
+    let q = LaurentPolyQ::q_pow(1);
+    let q_inv = LaurentPolyQ::q_pow(-1);
+    let two_q = LaurentPolyQ::from_terms(vec![(2, 1), (-2, 1)]); // q + q⁻¹ = [2]_q
+    let mut acc = LaurentPolyQ::one();
+    for &(sign, gen) in word {
+        let i = (gen as usize).saturating_sub(1);
+        if i + 1 >= n {
+            continue; // out-of-range generator acts as identity (braid_to_hecke skip)
+        }
+        let factor = if sign > 0 {
+            &q
+        } else if sign < 0 {
+            &q_inv
+        } else {
+            &two_q
+        };
+        acc = acc * factor.clone();
+    }
+    acc
+}
+
+/// The GP q-MN value of the trivial-rep `[n]` row from a reduced basis's
+/// `(cycle_type, coefficient)` data: `Σ_w c_w · χ_[n](cycle_type(w))`.
+fn gp_trivial_rep_from_cycle_data(
+    n: usize,
+    cycle_data: &[(Vec<usize>, LaurentPolyQ)],
+) -> LaurentPolyQ {
+    let full = vec![n];
+    let mut total = LaurentPolyQ::zero();
+    for (mu, c_w) in cycle_data {
+        let chi_w = crate::seminormal_mn::chi_lambda_mn_qdef(&full, mu);
+        total += &(c_w.clone() * chi_w);
+    }
+    total
+}
+
+/// **Necessary-condition self-check for the GP character path (bean
+/// `qou-b2ie`).**  Returns `true` iff the Geck-Pfeiffer q-MN path
+/// reproduces the EXACT trivial-rep `[n]` character `χ_[n](T_β)` on the
+/// given word.
+///
+/// `chi_lambda_via_geck_pfeiffer` is structurally incomplete at `q ≠ 1`:
+/// [`reduce_basis_to_minimal_length`] uses simple-reflection conjugation
+/// only, which does NOT reach genuinely minimal-length representatives for
+/// every conjugacy class once `n` grows (the full Geck-Pfeiffer 2000 §3.2
+/// "good cuspidal moves" are needed).  When the reduction is incomplete,
+/// `χ_[n](cycle_type(w)) = q^{minlen}` is applied to a non-minimal `w`
+/// whose true trivial-rep value is `q^{ℓ(w)} > q^{minlen}`, so the `[n]`
+/// row disagrees with the exact homomorphism value.
+///
+/// This check is the free `q^{writhe}` cross-check named in the bean's
+/// "rule of thumb": a `true` result is a NECESSARY (not sufficient)
+/// condition for the GP characters on this word to be trusted; a `false`
+/// result PROVES the GP path is wrong for this word — route it through the
+/// seminormal kernel (`chi_lambda_braid_mpfr` / `chi_lambda_via_gp_hoefsmit`)
+/// instead.
+pub fn chi_gp_trivial_rep_consistent(n: usize, word: &[(i32, u32)]) -> bool {
+    let basis = braid_to_hecke(n, word);
+    let reduced = reduce_basis_to_minimal_length(&basis);
+    let cycle_data: Vec<(Vec<usize>, LaurentPolyQ)> = reduced
+        .iter()
+        .map(|(w, c)| (perm_cycle_type(w), c.clone()))
+        .collect();
+    gp_trivial_rep_from_cycle_data(n, &cycle_data) == trivial_rep_char(n, word)
+}
+
+/// Refuse-on-disagreement guard: panics if the GP path's `[n]` row does
+/// not match the exact trivial-rep character for this word (per the
+/// compute-author "two independent engines, assert agreement, refuse to
+/// publish on disagreement" discipline — bean `qou-b2ie`).  A panic here
+/// only ever fires when the returned characters WOULD be wrong, converting
+/// a silent-wrong result into a loud failure.
+fn assert_gp_trivial_rep_consistent(
+    n: usize,
+    word: &[(i32, u32)],
+    cycle_data: &[(Vec<usize>, LaurentPolyQ)],
+) {
+    let gp = gp_trivial_rep_from_cycle_data(n, cycle_data);
+    let expected = trivial_rep_char(n, word);
+    if gp != expected {
+        panic!(
+            "chi_via_geck_pfeiffer: GP q-MN path is INCORRECT for this word \
+             (n={n}, word={word:?}).\n  trivial-rep [{n}] character must equal \
+             q^writhe = {}\n  but the GP path returned              {}\n\
+             This means `reduce_basis_to_minimal_length` did not reach \
+             genuinely minimal-length representatives (needs the full \
+             Geck-Pfeiffer cuspidal moves). Route this word through the \
+             seminormal kernel (chi_lambda_braid_mpfr / chi_lambda_via_gp_hoefsmit) \
+             instead. See bean qou-b2ie.",
+            expected.pretty(),
+            gp.pretty(),
+        );
+    }
+}
+
 /// **F3.2.γ wiring**: compute `χ_λ(T_β; q)` for an arbitrary braid
 /// word by expanding `T_β = Σ c_w · T_w` in the Hecke basis and
 /// applying q-MN on each `T_w`.
@@ -832,10 +946,18 @@ pub fn chi_lambda_via_geck_pfeiffer(
     // conjugacy class — at which point q-MN on cycle_type(w) gives
     // the correct character.
     let reduced = reduce_basis_to_minimal_length(&basis_expansion);
+    let cycle_data: Vec<(Vec<usize>, LaurentPolyQ)> = reduced
+        .iter()
+        .map(|(w, c_w)| (perm_cycle_type(w), c_w.clone()))
+        .collect();
+    // Refuse-on-disagreement guard (bean qou-b2ie): the reduction is not
+    // guaranteed to reach minimal length for every class at this n; if it
+    // did not, the characters below are silently wrong.  The trivial-rep
+    // [n] cross-check is exact and free — fail loudly rather than publish.
+    assert_gp_trivial_rep_consistent(n, word, &cycle_data);
     let mut total = LaurentPolyQ::zero();
-    for (w, c_w) in &reduced {
-        let mu = perm_cycle_type(w);
-        let chi_w = crate::seminormal_mn::chi_lambda_mn_qdef(lambda, &mu);
+    for (mu, c_w) in &cycle_data {
+        let chi_w = crate::seminormal_mn::chi_lambda_mn_qdef(lambda, mu);
         total += &(c_w.clone() * chi_w);
     }
     total
@@ -866,6 +988,10 @@ pub fn chi_lambdas_via_geck_pfeiffer(
         .iter()
         .map(|(w, c_w)| (perm_cycle_type(w), c_w.clone()))
         .collect();
+    // Refuse-on-disagreement guard (bean qou-b2ie): one exact trivial-rep
+    // [n] cross-check gates the whole batch — if the reduction is
+    // incomplete for this word, every partition's character is untrusted.
+    assert_gp_trivial_rep_consistent(n, word, &cycle_data);
     // Loop over shapes — Rayon-parallel so multi-core boxes get the
     // shape-loop speedup on top of the shared GP reduction.
     shapes
@@ -1078,5 +1204,70 @@ mod tests {
         // Should reduce to just T_e.
         assert_eq!(after_neg.len(), 1, "after positive*inverse = identity");
         assert_eq!(after_neg.get(&Perm::identity(3)), Some(&LaurentPolyQ::one()));
+    }
+
+    /// **Regression (bean qou-b2ie) — exact trivial-rep character.**
+    /// The trivial (index) rep `[n]` is the homomorphism `T_{s_i} ↦ q`,
+    /// so `χ_[n](T_β) = q^{writhe}` for a pure ±1 word.  The 5-letter
+    /// reproducer `σ₆ σ₇ σ₉⁻¹ σ₈ σ₇⁻¹` at H₁₂ has writhe +1 ⇒ `q`.
+    #[test]
+    fn trivial_rep_char_reproducer_is_q() {
+        let word = vec![(1i32, 6u32), (1, 7), (-1, 9), (1, 8), (-1, 7)];
+        let expected = trivial_rep_char(12, &word);
+        assert_eq!(
+            expected,
+            LaurentPolyQ::q_pow(1),
+            "χ_[12] of the reproducer must equal q^writhe = q; got {}",
+            expected.pretty()
+        );
+    }
+
+    /// `[2]_q` factor for an averaged crossing, in the doubled convention.
+    /// σ_1 (avg) on 3 strands: `χ_[3] = q + q⁻¹`.
+    #[test]
+    fn trivial_rep_char_averaged_is_two_q() {
+        let word = vec![(0i32, 1u32)];
+        let expected = trivial_rep_char(3, &word);
+        assert_eq!(expected, LaurentPolyQ::from_terms(vec![(2, 1), (-2, 1)]));
+    }
+
+    /// **Regression (bean qou-b2ie) — the self-check FLAGS the H₁₂ bug.**
+    /// On the reproducer the simple-reflection reduction does not reach
+    /// minimal length at n=12, so the GP q-MN `[12]` row disagrees with
+    /// the exact `q^{writhe}` — the check must return `false` (rather than
+    /// the kernel silently returning the wrong value from qou-b2ie).
+    #[test]
+    fn gp_trivial_check_flags_reproducer() {
+        let word = vec![(1i32, 6u32), (1, 7), (-1, 9), (1, 8), (-1, 7)];
+        assert!(
+            !chi_gp_trivial_rep_consistent(12, &word),
+            "expected the GP reduction to be flagged INCONSISTENT on the \
+             qou-b2ie reproducer (H12). If this now passes, the full \
+             Geck-Pfeiffer cuspidal-move reduction has landed — update the \
+             guard/tests accordingly."
+        );
+    }
+
+    /// A word whose reduction IS complete (small n) passes the check, and
+    /// the guard does not fire on correct input.
+    #[test]
+    fn gp_trivial_check_ok_on_reduced_word() {
+        // σ_1 σ_2 on 3 strands: writhe +2 ⇒ χ_[3] = q².
+        let word = vec![(1i32, 1u32), (1, 2)];
+        assert!(chi_gp_trivial_rep_consistent(3, &word));
+        assert_eq!(trivial_rep_char(3, &word), LaurentPolyQ::q_pow(2));
+        // The guarded character function must NOT panic here and must
+        // return the correct trivial-rep value.
+        let chi = chi_lambda_via_geck_pfeiffer(&[3], 3, &word);
+        assert_eq!(chi, LaurentPolyQ::q_pow(2));
+    }
+
+    /// The guard fires (panics) when the GP path would return a wrong
+    /// character — the qou-b2ie reproducer at H₁₂.
+    #[test]
+    #[should_panic(expected = "INCORRECT for this word")]
+    fn gp_guard_panics_on_reproducer() {
+        let word = vec![(1i32, 6u32), (1, 7), (-1, 9), (1, 8), (-1, 7)];
+        let _ = chi_lambda_via_geck_pfeiffer(&[12], 12, &word);
     }
 }
