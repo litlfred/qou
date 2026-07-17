@@ -1,0 +1,157 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-17T22:47:18.543594+00:00",
+  "commitSha": "afb32fe555a911730359ac5ed5e04dad56d3fd25",
+  "assertions": [
+    {
+      "name": "exact_dk_reproduced",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "build_d_ladder reproduces the generating function through valid_top (odd_ok) and d_k∈ℚ(√3)"
+    },
+    {
+      "name": "parity_levels_distinct",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "per-parity divergence classes C_odd, C_even differ by >0.01 (two critical times)"
+    },
+    {
+      "name": "borel_leroy_composition_collapses",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "(k!)^{s1}(k!)^{s2}=(k!)^{s1+s2} to 1e-45: fixed-order iteration cannot reach a new critical time"
+    },
+    {
+      "name": "perturbative_resummation_anchor_blind",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "optimal-truncation D(ũ) identical muon vs proton (<1e-6) while S sign-flips ⇒ anchor-dependence is non-perturbative (A_ω)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 31,
+  "computation": "qbeta-dladder-ecalle-phib-resummation",
+  "scriptFile": "qbeta_dladder_ecalle_phib_resummation.py",
+  "scriptHash": "53923dda7979",
+  "scriptCommitSha": "afb32fe555a911730359ac5ed5e04dad56d3fd25",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Écalle acceleration ⟺ Φ_b state-integral resummation of the bar-odd Q_β D-ladder (unowned item #1 of the 1ppQ path reassessment). Reuses the exact d_k (build_d_ladder, ORD 43/k≤21), phi_b saddle vol_of_m, and the merged #3818/#3839 negatives; measures four un-pinned things. M2: the 2-adic bar-parity split gives two DISTINCT divergence classes (C_odd≈0.05, C_even≈0.11, |Δ|≈0.06) ⇒ the 'no single Gevrey index' is consistent with a genuine TWO-LEVEL (accelero-summable) structure — two critical times, not one mis-specified order (per-parity fits still short/noisy at k≤21, consistent with undecidable-at-k21). M3: (k!)^{s1}(k!)^{s2}=(k!)^{s1+s2} ⇒ composing Borel–Leroy transforms stays in the additive monoid of orders and cannot reach a new critical time ⇒ a genuine non-commutative Écalle kernel is necessary (the fixed-order negative is not repairable by iteration). M4: the forward optimal-truncation resummed D(ũ)≈−0.01667 at the meridian is ANCHOR-BLIND to ~9 digits (muon vs proton ũ differ ~2e-9), and h·D≈−0.0035 reproduces NEITHER S(muon)=+0.0097 NOR S(proton)=−0.0395. M4b magnitude tension: the substrate meridian ũ≈0.0095 puts optimal truncation at k*~1e13, so a Stokes jump exp(−ρ/ũ) is ~1e-7..1e-27 — far too small to be the O(0.01) anchor-dependent S; on the SUBSTRATE branch the swing is not a Stokes ambiguity of this ladder. M5: the Φ_b saddle deficit 0.00940 ≈ |S(muon)| — a separate anchor-blind geometric handle on the |S| scale (bridge #3654). VERDICT: acceleration setup complete + two critical times = the two parity levels; the perturbative acceleration at the substrate meridian gives only an anchor-blind floor and does NOT reproduce S; the exact remaining gap is that the anchor-dependent c₃ is either the 1/ũ³ c₃-representational amplification (#3636) or the fibre-saddle (|q|=1, ũ~O(1)) Stokes datum A_ω where the jump is unsuppressed (the G0 branch-mismatch / G3 monodromy datum) — NOT produced here. Scope-(a); no c_k wired; no fit; no tier change; L2 count unchanged (2/7).",
+  "contentBlock": "conj:im-q-physical-role",
+  "data": {
+    "M2_parity_levels": {
+      "C_full_low": "0.15681278",
+      "C_full_all": "0.099077209",
+      "C_full_drift": "0.057735573",
+      "C_odd": "0.052098286",
+      "C_odd_drift": "0.037863883",
+      "B_odd": "1.684244",
+      "C_even": "0.11450151",
+      "C_even_drift": "0.07948799",
+      "B_even": "1.4605426",
+      "parity_C_distinct": true,
+      "parity_C_each_more_stable_than_full": false,
+      "merged_conformal_zeta2_radii": {
+        "odd": "0.152",
+        "even": "0.254",
+        "note": "#3818 context, not recomputed"
+      }
+    },
+    "M3_composition_collapse": {
+      "identity": "(k!)^{s1}·(k!)^{s2} = (k!)^{s1+s2}",
+      "verified": true,
+      "consequence": "Borel–Leroy iteration stays in additive monoid of orders; genuine Écalle kernel necessary"
+    },
+    "M4_meridian_optimal_truncation": [
+      {
+        "anchor": "muon",
+        "u_meridian": "0.009453950030725021792708",
+        "Nstar": 21,
+        "delta_np": "4.9181331e-27",
+        "A_eff_or_lowerbound": "0.57269069",
+        "Nstar_at_edge": true,
+        "D_opt_trunc": "-0.0166749175675",
+        "h_D_eq_S_pred": "-0.003486063636",
+        "S_target": "0.00968298"
+      },
+      {
+        "anchor": "proton",
+        "u_meridian": "0.009453947934943409160564",
+        "Nstar": 21,
+        "delta_np": "4.9181102e-27",
+        "A_eff_or_lowerbound": "0.5726906",
+        "Nstar_at_edge": true,
+        "D_opt_trunc": "-0.016674913533",
+        "h_D_eq_S_pred": "-0.003486062406",
+        "S_target": "-0.03945936"
+      },
+      {
+        "anchor": "qstar",
+        "u_meridian": "0.009453949617773240509614",
+        "Nstar": 21,
+        "delta_np": "4.9181286e-27",
+        "A_eff_or_lowerbound": "0.57269067",
+        "Nstar_at_edge": true,
+        "D_opt_trunc": "-0.0166749167726",
+        "h_D_eq_S_pred": "-0.003486063393",
+        "S_target": "0.0"
+      }
+    ],
+    "M4_anchor_blindness": {
+      "D_opt_muon_minus_proton": "4.0345825e-9",
+      "perturbative_sum_anchor_blind": true,
+      "h_D_opt_muon": "-0.0034860636",
+      "reading": "forward D-ladder sum is anchor-blind and reproduces NEITHER S(muon) NOR S(proton); the anchor swing is not in the perturbative accelerated ladder"
+    },
+    "M4b_magnitude_tension": {
+      "optimal_truncation_k_star_log10": "13.3568",
+      "stokes_jump_exp_minus_rho_over_u": "1.04098e-7",
+      "anchor_residual_S_minus_hDopt": "0.013169",
+      "residual_over_stokes_log10": "5.10211",
+      "reading": "meridian ũ≈0.0095 ⇒ optimal truncation at k*~1e13, Stokes jump exp(−ρ/ũ) is ~1e-7..1e-27 — far too small to be the O(0.01) anchor S; so on the SUBSTRATE branch the swing is not a Stokes ambiguity of this ladder. It is either the 1/ũ³ c₃-representational amplification (#3636) or the fibre-saddle (|q|=1, ũ~O(1)) Stokes datum A_ω where the jump is unsuppressed (G0 branch-mismatch)"
+    },
+    "M5_phib_saddle_crosscheck": [
+      {
+        "anchor": "muon",
+        "Re_V": "2.02048069107",
+        "deficit": "0.009402521753",
+        "abs_S_target": "0.00968298"
+      },
+      {
+        "anchor": "proton",
+        "Re_V": "2.02048069314",
+        "deficit": "0.00940251968",
+        "abs_S_target": "0.03945936"
+      }
+    ],
+    "verdict": {
+      "acceleration_setup_complete": true,
+      "two_critical_times_eq_two_parity_levels": true,
+      "perturbative_resummation_anchor_blind": true,
+      "c3_produced": false,
+      "instanton_action_identified": false,
+      "wired": false,
+      "perturbative_floor_h_D_opt": "-0.0034860636",
+      "exact_remaining_gap": "the anchor-dependent c₃ (S sign-flip) is NOT the substrate-branch perturbative acceleration (anchor-blind, magnitude-too-small for a Stokes jump at ũ≈0.0095); it is either (i) the 1/ũ³ c₃-representational amplification (#3636) of a smooth tail, or (ii) the fibre-saddle (|q|=1, ũ~O(1)) Stokes datum A_ω = Δ_ω log Φ_b where the jump is unsuppressed (G0 branch-mismatch / G3 monodromy datum). Next session: compute the D-ladder / Φ_b expansion at the FIBRE saddle, not the substrate meridian."
+    }
+  }
+}
