@@ -59,3 +59,15 @@ log(Delta(net)_4 / Delta(net)_3) = O(u^4) — appended couplings, pairwise
 extensions, and core replacements all violate it at leading order, mechanically
 corroborating Stage-B "longer braid words, entangled mid-word".
 Audit: docs/audits/2026-07-13-8we6-h4-route-a-three-framings-gate-fail.md
+
+## Status annotation (2026-07-17, session qou-xhjl)
+
+Item 1 (canonical c4_even via H4 route A) executed NEGATIVE 2026-07-13: all
+three owner-authorized 4th-strand framings GATE-FAIL (exact rational c2
+shifts +12, +13/6, -40 — sigma_2 content enters at u^2, not u^4), plus six
+mid-word candidates FAIL/TRIVIAL (9/9 zero survivors). See
+docs/audits/2026-07-13-8we6-h4-route-a-three-framings-gate-fail.md.
+Surviving cheap admission test: log(Delta(net)_4/Delta(net)_3) = O(u^4).
+Per the audit's disposition a genuine c4-first object requires owner-level
+framework content (a construction whose low-order cancellation is DERIVED,
+not arranged) — bean stays in-progress awaiting that input; do not re-scan.
