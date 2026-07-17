@@ -1,0 +1,61 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-17T15:23:32.970615+00:00",
+  "commitSha": "4289ff507b98a0c1d6d92388d0a96761b5499313",
+  "assertions": [
+    {
+      "name": "extended_past_k21",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "exact ℚ(√3) D-ladder built to KMAX=31 (ORD=63)"
+    },
+    {
+      "name": "qgevrey_drift_persists_not_finite_k_shadow",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "dlog-Padé vs root-test singularity RELATIVE gap |ρ/ρ_rt−1| 0.1719 persists at k=31 (s* still drifting 0.02708) => structural q-Gevrey, not a finite-k shadow"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 22,
+  "computation": "qbeta-dladder-extension-singularity",
+  "scriptFile": "qbeta_dladder_extension_singularity_probe.py",
+  "scriptHash": "c05a4d590847",
+  "scriptCommitSha": "4289ff507b98a0c1d6d92388d0a96761b5499313",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "The 'more terms' arm of the D-ladder q-Borel program (follow-up flagged in qbeta_dladder_qborel_leroy_resummation_probe): extend the exact ℚ(√3) bar-odd D-ladder past k=21 (ORD=63, KMAX=31) and re-measure the divergence class C, the Borel–Leroy order s*, and the dlog-Padé vs root-test singularity-estimator gap — deciding whether the k=21 estimator inconsistency is a finite-k shadow (shrinks) or structural q-Gevrey drift (persists). Result: at k=31 the class C keeps drifting (0.0774→0.0613), s* keeps drifting (0.1865→0.1594), and the relative estimator gap |ρ_dlogPadé/ρ_rootTest − 1| PERSISTS (~0.172) — structural q-Gevrey drift, no single Gevrey index. Reinforces KC22: the honest resummation is genuine Écalle acceleration / the Φ_b state integral, not any fixed-order Borel–Leroy. Adjacent: #3683 does Borel resurgence on the EVEN κ-tower (distinct object). Scope-(a) measurement; no c_k wired; no fit; no tier change.",
+  "contentBlock": "prop:phi-b-unitary-bar-odd",
+  "data": {
+    "measurement": {
+      "KMAX": 31,
+      "ORD": 63,
+      "C_k21": "0.077373554",
+      "C_full": "0.061336258",
+      "sstar_k21": "0.18651666",
+      "sstar_full": "0.15943721",
+      "sstar_drift": "0.0270794",
+      "rho_dlog_pade": "0.283037715712",
+      "rho_root_test": "0.241520113023",
+      "estimator_gap": "0.171901",
+      "estimators_consistent": false
+    },
+    "verdict": "D-ladder extended exactly to k=31. Divergence-class C: 0.07737→0.06134; Borel–Leroy s*: 0.1865→0.1594 (drift 0.0271). The estimator inconsistency PERSISTS at k=31 (gap 0.172) — consistent with structural q-Gevrey drift (no single Gevrey index), reinforcing that the honest resummation is the genuine Écalle acceleration / Φ_b state integral, not any fixed-order Borel–Leroy. Scope-(a) measurement. No c_k wired; no fit; no tier change."
+  }
+}
