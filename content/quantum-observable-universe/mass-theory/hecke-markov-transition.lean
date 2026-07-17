@@ -1,5 +1,10 @@
 import Mathlib.Data.Real.Basic
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
+import Mathlib.Algebra.BigOperators.GroupWithZero.Finset
+import Mathlib.Data.Fintype.Basic
+import Mathlib.Tactic.FieldSimp
+import Mathlib.Tactic.Linarith
+import Mathlib.Tactic.Ring
 
 
 /-!
@@ -55,6 +60,7 @@ noncomputable def SpectralIdempotentData.gap (d : SpectralIdempotentData) : ℝ 
 theorem SpectralIdempotentData.gap_pos (d : SpectralIdempotentData) :
     0 < d.gap := by
   unfold gap
+  have hq : 0 < d.q := d.q_pos
   have : 0 < d.q⁻¹ := inv_pos.mpr d.q_pos
   linarith
 
@@ -82,7 +88,8 @@ noncomputable def SpectralIdempotentData.p_minus (d : SpectralIdempotentData) : 
 theorem SpectralIdempotentData.prob_sum_one (d : SpectralIdempotentData) :
     d.p_plus + d.p_minus = 1 := by
   unfold p_plus p_minus gap
-  rw [div_add_div_same, div_self (d.gap_ne_zero)]
+  rw [← add_div]
+  exact div_self d.gap_ne_zero
 
 /-- p₊ > 0. -/
 theorem SpectralIdempotentData.p_plus_pos (d : SpectralIdempotentData) :
@@ -105,9 +112,9 @@ theorem SpectralIdempotentData.p_minus_pos (d : SpectralIdempotentData) :
 theorem SpectralIdempotentData.boltzmann_ratio (d : SpectralIdempotentData) :
     d.p_plus / d.p_minus = d.q ^ 2 := by
   unfold p_plus p_minus
-  rw [div_div_div_cancel_right _ _ (d.gap_ne_zero)]
-  rw [div_inv_eq_mul_inv_inv, inv_inv]
-  ring
+  have hq : d.q ≠ 0 := ne_of_gt d.q_pos
+  have hgap : d.gap ≠ 0 := d.gap_ne_zero
+  field_simp
 
 /-- p₊ > p₋ when q > 1 (the symmetric channel is favoured). -/
 theorem SpectralIdempotentData.p_plus_gt_p_minus
@@ -115,14 +122,14 @@ theorem SpectralIdempotentData.p_plus_gt_p_minus
     d.p_plus > d.p_minus := by
   unfold p_plus p_minus
   apply div_lt_div_of_pos_right _ d.gap_pos
-  exact lt_of_lt_of_le (inv_lt_one_of_one_lt hq) (le_of_lt hq)
+  exact lt_of_lt_of_le (inv_lt_one_of_one_lt₀ hq) (le_of_lt hq)
 
 /-- p₊ = p₋ = 1/2 at q = 1 would give the classical fair walk.
     Here we record the identity: at any q, p₊ − p₋ = (q − q⁻¹)/(q + q⁻¹). -/
 theorem SpectralIdempotentData.bias (d : SpectralIdempotentData) :
     d.p_plus - d.p_minus = (d.q - d.q⁻¹) / d.gap := by
   unfold p_plus p_minus gap
-  rw [div_sub_div_eq_sub_div]
+  rw [← sub_div]
 
 /-! ## Part (iii): Markov property as memorylessness -/
 
@@ -192,7 +199,7 @@ theorem MarkovChainFactorization.trace_ne_zero
     (h : ∀ i, (mcf.steps i).vertexVolume ≠ 0) :
     mcf.totalTrace ≠ 0 := by
   rw [mcf.factorization]
-  exact Finset.prod_ne_zero (fun i _ => h i)
+  exact Finset.prod_ne_zero_iff.mpr (fun i _ => h i)
 
 /-! ## Connecting spectral data to transition steps -/
 
@@ -221,20 +228,21 @@ theorem eigenvalue_expectation (d : SpectralIdempotentData) :
   unfold SpectralIdempotentData.p_plus SpectralIdempotentData.p_minus
     SpectralIdempotentData.gap
   have hq : d.q ≠ 0 := ne_of_gt d.q_pos
+  have hgap : d.q + d.q⁻¹ ≠ 0 := d.gap_ne_zero
   field_simp
   ring
 
 /-! ## Existence -/
 
-/-- **Existence of Markov chain factorization.**
+/- **Existence of Markov chain factorization.**
 
     Given a braid β ∈ B_n with Hecke reduction at each generator,
     the Markov trace factors as a product of vertex volumes.  The
     proof is the recursive application of the Markov property
     (Jones 1987, Theorem 5.1) — formalized in `markov-trace-product.lean`.
 
-    This `sorry` marks the inductive step that references the Markov
-    trace axiom (an external proof). -/
+    The axiom below marks the inductive step that references the Markov
+    trace machinery (an external proof). -/
 /-- **External axiom (Jones 1987 Theorem 5.1; Diaconis-Ram 2000):
     Markov-trace factorisation via per-vertex volumes.**
 
@@ -251,7 +259,7 @@ axiom markov_chain_factorization_axiom :
     ∀ (n : ℕ) (_hn : n ≥ 2)
       (steps : Fin (n - 1) → MarkovTransitionStep)
       (totalTrace : ℝ)
-      (_h_markov : ∀ i, (steps i).z = (steps 0).z),
+      (_h_markov : ∀ i, (steps i).z = (steps ⟨0, by omega⟩).z),
         totalTrace = Finset.univ.prod (fun i => (steps i).vertexVolume)
 
 -- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
@@ -263,7 +271,7 @@ theorem markov_chain_factorization_exists
     (n : ℕ) (hn : n ≥ 2)
     (steps : Fin (n - 1) → MarkovTransitionStep)
     (totalTrace : ℝ)
-    (h_markov : ∀ i, (steps i).z = (steps 0).z) :
+    (h_markov : ∀ i, (steps i).z = (steps ⟨0, by omega⟩).z) :
     totalTrace =
       Finset.univ.prod (fun i => (steps i).vertexVolume) :=
   markov_chain_factorization_axiom n hn steps totalTrace h_markov

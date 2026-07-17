@@ -28,6 +28,8 @@
 import Mathlib.Data.Real.Basic
 import Mathlib.Algebra.Group.Basic
 import Mathlib.Algebra.Order.Field.Basic
+import Mathlib.Tactic.FieldSimp
+import Mathlib.Tactic.Ring
 
 namespace QOU.ParticleInteractions
 
@@ -68,23 +70,14 @@ theorem q_integer_bar_invariant
     (k : ℕ) (q : ℝ) (hq_pos : 0 < q) (hq_ne_one : q ≠ 1) :
     qInteger k (barInvolution q) = qInteger k q := by
   unfold qInteger barInvolution
-  have hq_ne_zero : q ≠ 0 := ne_of_gt hq_pos
-  have hqk_ne_zero : q ^ k ≠ 0 := pow_ne_zero k hq_ne_zero
   -- Rewrite (1/q)^k = (q^k)⁻¹ and (1/q)^{−(k:ℤ)} = q^k via the
-  -- standard Mathlib lemmas.  After these rewrites, both sides
-  -- are rational expressions in `q` and `q^k` with no zpow, and
-  -- field_simp + ring close the equality.
-  rw [show (1 / q : ℝ) = q⁻¹ from one_div q]
-  rw [inv_pow, zpow_neg, zpow_natCast, inv_zpow, zpow_natCast,
-      inv_inv]
-  -- Goal: ((q^k)⁻¹ - q^k) / (q⁻¹ - q⁻¹⁻¹) = (q^k - (q^k)⁻¹) / (q - q⁻¹)
-  -- via inv_inv, q⁻¹⁻¹ = q.
-  rw [inv_inv]
-  -- Goal: ((q^k)⁻¹ - q^k) / (q⁻¹ - q) = (q^k - (q^k)⁻¹) / (q - q⁻¹)
-  -- Both numerator and denominator flip sign together; the
-  -- quotient is preserved.
-  field_simp
-  ring
+  -- standard Mathlib simp lemmas.  After these rewrites the goal is
+  --   ((q^k)⁻¹ - q^k) / (q⁻¹ - q) = (q^k - (q^k)⁻¹) / (q - q⁻¹):
+  -- numerator and denominator both flip sign, and the two sign
+  -- flips cancel via `neg_div_neg_eq`.
+  simp only [one_div, inv_pow, zpow_neg, zpow_natCast, inv_inv]
+  rw [show (q ^ k)⁻¹ - q ^ k = -(q ^ k - (q ^ k)⁻¹) by ring,
+      show q⁻¹ - q = -(q - q⁻¹) by ring, neg_div_neg_eq]
   -- Ref: [kassel1995] Kassel, "Quantum Groups", Ch. IV
   --      (q-integer bar-invariance: `[k]_{q⁻¹} = [k]_q`)
 
@@ -96,14 +89,14 @@ weight `w_λ(q)` is determined by the partition's hook lengths via
 
 /-- Hook-length sequence of a partition (carrier; full structure
     in `Mathlib.Combinatorics.Young.YoungDiagram`). -/
-constant Partition (n : ℕ) : Type
+axiom Partition (n : ℕ) : Type
 
 /-- Hook-length list of a partition. -/
-constant hookLengths {n : ℕ} (lam : Partition n) : List ℕ
+axiom hookLengths {n : ℕ} (lam : Partition n) : List ℕ
 
 /-- The transpose involution (Dynkin fold; cf.
     cpt-orbit-closure-density.lean). -/
-constant partitionTranspose {n : ℕ} : Partition n → Partition n
+axiom partitionTranspose {n : ℕ} : Partition n → Partition n
 
 /-- Hook lengths are preserved by transpose (Mathlib
     `YoungDiagram.transpose_hookLengths` once available). -/
@@ -165,15 +158,15 @@ axiomatise that conjecture as a class (per AGENTS.md §3b-cond)
 and the theorem below has no `sorry` in its proof body. -/
 
 /-- The Hecke normal form carrier (from `hecke-normal-form.lean`). -/
-constant HeckeNormalForm (n : ℕ) : Type
+axiom HeckeNormalForm (n : ℕ) : Type
 
 /-- The bar-involution acting on a Hecke normal form (`q ↦ q⁻¹`,
     crossings reversed). -/
-constant barNormalForm {n : ℕ} : HeckeNormalForm n → HeckeNormalForm n
+axiom barNormalForm {n : ℕ} : HeckeNormalForm n → HeckeNormalForm n
 
 /-- A predicate isolating those normal forms emitted by the
     pair-production engine. -/
-constant isPairProductionOutput {n : ℕ} : HeckeNormalForm n → Prop
+axiom isPairProductionOutput {n : ℕ} : HeckeNormalForm n → Prop
 
 /-- Class-form axiomatisation of conj:symmetric-crystal-pair-production.
     The single field encodes the conjecture content: every emitted
