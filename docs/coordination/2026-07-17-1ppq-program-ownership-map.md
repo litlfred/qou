@@ -85,9 +85,20 @@ Branch `claude/focused-euler-ez3iu4`:
   `scripts/check-sidecars.sh` (agent preflight) + `witness-staleness.yml` (CI
   backup) so the advertised proved-counts can't silently drift again.
 - This ledger.
+- **⁴He binding stage-2 seminormal reverification** (the uncontended
+  support-layer item flagged above) —
+  [`2026-07-17-he4-stage2-seminormal-reverification.md`](../audits/2026-07-17-he4-stage2-seminormal-reverification.md).
+  Rebuilt the `pyhecke_native` wheel, fixed a stale "exact GP χ" verdict-string
+  mislabel, and re-ran the stage-2 witness on the seminormal engine (the
+  committed one was GP-legged; the GP kernel was found buggy 2026-07-14).
+  Result: dominant λ*(K) = **(9,3) survives**, but **(8,4) is near-degenerate
+  (0.276 %)**, and the GP bug had **inflated tr_M(K) ~15 %** (0.06768 → 0.05723
+  at 50 dps; Leg-A/B cross-check 2.09 → 8e-15). Added a fast f64 ranking
+  companion + per-block checkpointing so the ~96-min run is session-boundary
+  robust.
 
-None of the three named computations is picked up here. At first draft they
-were unowned; within the hour the swarm took all three, so this session's
-value stayed in the currency/hygiene/coordination layer and it **deliberately
-did not fork the owned D-ladder thread** (#3817) — the same-day update above
-records that collision-avoidance call.
+None of the three named 1ppQ-wall computations is picked up here (the swarm took
+all three within the hour of the first draft; this session **deliberately did
+not fork the owned D-ladder thread** #3817 — the same-day update above records
+that collision-avoidance call). Its value stayed in the currency / hygiene /
+coordination layer **plus the uncontended ⁴He stage-2 reverification**.
