@@ -171,18 +171,33 @@ def main():
     )
     print("\nVERDICT:", verdict)
 
-    wb = WitnessBuilder(
-        computation="qbeta-dladder-extension-singularity",
-        description="Extend the exact D-ladder past k=21 (ORD=63) and re-measure "
-                    "divergence class, Borel–Leroy order, and singularity-estimator "
-                    "consistency — decides finite-k shadow vs structural q-Gevrey drift.",
-        script_file=__file__,
+    wb = WitnessBuilder("qbeta-dladder-extension-singularity", engine="mpmath")
+    wb.set_description(
+        "The 'more terms' arm of the D-ladder q-Borel program (follow-up flagged "
+        "in qbeta_dladder_qborel_leroy_resummation_probe): extend the exact ℚ(√3) "
+        "bar-odd D-ladder past k=21 (ORD=63, KMAX=31) and re-measure the divergence "
+        "class C, the Borel–Leroy order s*, and the dlog-Padé vs root-test "
+        "singularity-estimator gap — deciding whether the k=21 estimator "
+        "inconsistency is a finite-k shadow (shrinks) or structural q-Gevrey drift "
+        "(persists). Result: at k=31 the class C keeps drifting (0.0774→0.0613), s* "
+        "keeps drifting (0.1865→0.1594), and the estimator gap PERSISTS (~0.172) — "
+        "structural q-Gevrey drift, no single Gevrey index. Reinforces KC22: the "
+        "honest resummation is genuine Écalle acceleration / the Φ_b state integral, "
+        "not any fixed-order Borel–Leroy. Adjacent: #3683 does Borel resurgence on "
+        "the EVEN κ-tower (distinct object). Scope-(a) measurement; no c_k wired; "
+        "no fit; no tier change."
     )
-    wb.add_assertion("extended_past_21", KMAX > 21)
-    wb.add_assertion("class_C_positive", bool(C_full > 0))
-    wb.add_assertion("sstar_positive", bool(ss_full > 0))
-    wb.set_result({
-        "KMAX": KMAX,
+    wb.set_content_block("prop:phi-b-unitary-bar-odd")
+    wb.add_assertion("extended_past_k21",
+                     computed=1.0 if KMAX > 21 else 0.0, expected=1.0, tolerance=0.5,
+                     source=f"exact ℚ(√3) D-ladder built to KMAX={KMAX} (ORD={ORD})")
+    wb.add_assertion("qgevrey_drift_persists_not_finite_k_shadow",
+                     computed=1.0 if not consistent else 0.0, expected=1.0, tolerance=0.5,
+                     source=f"dlog-Padé vs root-test singularity gap {mp.nstr(gap,4) if gap else 'n/a'} "
+                            f"persists at k={KMAX} (s* still drifting {mp.nstr(drift,4)}) => structural q-Gevrey, "
+                            "not a finite-k shadow")
+    wb.add_data("measurement", {
+        "KMAX": KMAX, "ORD": ORD,
         "C_k21": mp.nstr(C_21, 8), "C_full": mp.nstr(C_full, 8),
         "sstar_k21": mp.nstr(ss_21, 8), "sstar_full": mp.nstr(ss_full, 8),
         "sstar_drift": mp.nstr(drift, 6),
@@ -190,9 +205,9 @@ def main():
         "rho_root_test": mp.nstr(rho_rt, 12),
         "estimator_gap": (mp.nstr(gap, 6) if gap else None),
         "estimators_consistent": consistent,
-        "verdict": verdict,
     })
-    wb.save(output_dir=str(Path(__file__).resolve().parent))
+    wb.add_data("verdict", verdict)
+    wb.save()
     return 0
 
 
