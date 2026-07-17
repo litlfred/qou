@@ -1,12 +1,12 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-17T23:09:15.612786+00:00",
-  "commitSha": "e38fee3937eebddbf8408cb02f7cfd6917c3a529",
+  "computedAt": "2026-07-17T23:17:15.624622+00:00",
+  "commitSha": "61c8887b0d4891318c21259817baa18a78c05676",
   "assertions": [
     {
       "name": "no_missing_provenance",
-      "computed": 262,
+      "computed": 261,
       "expected": 0,
       "passed": false,
       "tolerance": 0,
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 72,
+  "durationMs": 14,
   "computation": "witness-provenance-audit",
   "scriptFile": "witness_provenance_audit.py",
   "scriptHash": "1abb80bb6c90",
@@ -47,11 +47,11 @@
   "data": {
     "counts": {
       "total_scanned": 1896,
-      "prov_ok": 1574,
+      "prov_ok": 1575,
       "prov_audit_exempt": 59,
-      "prov_missing": 262,
+      "prov_missing": 261,
       "prov_parse_error": 1,
-      "completeness_ratio": 0.8612869198312236
+      "completeness_ratio": 0.8618143459915611
     },
     "by_verdict": {
       "PROV_OK": [
@@ -3281,6 +3281,10 @@
         },
         {
           "witness": "ocneanu-cancellation-derivation.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "octonion-su3-stabilizer.witness.json",
           "missing_fields": []
         },
         {
@@ -7464,14 +7468,6 @@
         {
           "witness": "nucleus-real-sdp-tritium.witness.json",
           "missing_fields": [
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "octonion-su3-stabilizer.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
             "commitSha"
           ]
         },

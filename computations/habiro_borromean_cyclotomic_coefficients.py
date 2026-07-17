@@ -31,6 +31,8 @@ honestly (per the AGENTS.md c_k banner), whether any C_l(q_0) coincides
 with a corpus precision-ladder c_k — WITHOUT forcing an identification.
 """
 from __future__ import annotations
+import time as _time  # noqa: E402 — wall-clock anchor for witness durationMs
+_T0 = _time.monotonic()
 
 import hashlib
 import json
@@ -206,8 +208,18 @@ def main() -> int:
         "q0_used": str(q0),
         "ck_identification": "none asserted (distinct object; see NOTE)",
     }
-    out = script_path.with_name("habiro-borromean-cyclotomic-coefficients.witness.json")
-    out.write_text(json.dumps(witness, indent=2) + "\n")
+    import sys as _sys  # noqa: E402
+    _sys.path.insert(0, str(script_path.parent / "substrate"))
+    from witness_base import WitnessBuilder  # noqa: E402 — P30 rollup (bean cmiy)
+    _wb = WitnessBuilder.wrap_legacy(
+        "habiro-borromean-cyclotomic-coefficients", witness,
+        script_path=__file__, engine="sympy", start_time=_T0,
+    )
+    # reads the canonical substrate pin as input -> record the upstream edge
+    _qp = script_path.with_name("q-pinning-50-digit.witness.json")
+    if _qp.exists():
+        _wb.add_upstream(_qp)
+    out = _wb.save()
     print(f"\n  written -> {out.name}")
     return 0 if all_consistent else 1
 

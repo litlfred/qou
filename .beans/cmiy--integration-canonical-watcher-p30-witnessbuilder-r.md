@@ -203,3 +203,18 @@ chirality_topology_binding_probe, binding_triangle_3body_cluster_probe (both
 wrap_legacy + _T0; exit 0, keys preserved, prov triple + real durationMs).
 PROV_MISSING 260→258. WORKLIST REFINEMENT: filter candidates by
 `grep -L hoefsmit_symbolic` too, not just native/consumers, when in ad-hoc env.
+
+## 2026-07-17 — batch 15 (2 scripts) + gotcha #8 (TRANSITIVE native dep)
+octonion_su3_stabilizer_probe (wrap_legacy; also fixed a cwd-relative literal
+"computations/..." output path) + habiro_borromean_cyclotomic_coefficients
+(wrap_legacy + add_upstream(q-pinning-50-digit) — it READS the canonical
+substrate pin, so the upstream edge is now machine-checkable; supersedes its
+hand-rolled provenance which had left it PROV_MISSING on the stale committed
+witness). Both exit 0, keys preserved, real durationMs, upstream verified.
+NEW GOTCHA #8: torus_knot_markov_trace_closed_form passed the direct
+grep -L native filter but imports markov_trace_for_knot which TRANSITIVELY
+imports pyhecke_native → ModuleNotFoundError in sandbox. The worklist native
+filter must follow first-level local imports, not just grep the producer body.
+Reverted torus → canonical-env batch. PROV_MISSING drift is inflow (new main
+landings) not regression; the batch-13 guard now catches new raw emits at
+pre-commit.
