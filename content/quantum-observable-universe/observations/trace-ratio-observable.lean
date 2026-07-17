@@ -1,5 +1,7 @@
 import Mathlib.Data.Real.Basic
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
+import Mathlib.Algebra.BigOperators.Intervals
+import Mathlib.Analysis.SpecialFunctions.Pow.Real
 
 
 /-!
@@ -71,7 +73,7 @@ theorem trace_ratio_observable (q : ℝ) (hq : 1 < q)
     intro i hi
     rw [hcancel i hi, div_self (hne i hi), one_pow]
   -- The product over {p+1, ..., A} is 1, so the full product = truncated product
-  rw [← Finset.prod_range_add_prod_Ico _ (by omega : p + 1 ≤ A + 1)]
+  rw [← Finset.prod_range_mul_prod_Ico _ (by omega : p + 1 ≤ A + 1)]
   suffices h : ∏ i ∈ Finset.Ico (p + 1) (A + 1), (V_par i / V_dau i) ^ 2 = 1 by
     rw [h, mul_one]
   apply Finset.prod_eq_one

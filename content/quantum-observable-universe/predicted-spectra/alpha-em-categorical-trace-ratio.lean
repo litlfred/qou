@@ -90,8 +90,7 @@ theorem alpha_em_categorical_trace_ratio
   -- The identity reduces to:
   --   1/(q · ((q^9 - q^-9)/(q - q^-1)) · ((q^10 - q^-10)/(q - q^-1)))
   --   = (q - q^-1)² / (q · (q^9 - q^-9) · (q^10 - q^-10))
-  -- which is `field_simp + ring` modulo the non-zero hypotheses.
+  -- which is `field_simp` modulo the non-zero hypotheses.
   field_simp
-  ring
 
 end QOU.ArchimedeanUniverse
