@@ -1,0 +1,216 @@
+{
+  "computation": "qbeta-h4-screen-calibration-verify",
+  "description": "Critical-eye verification of the O(u^4) screen machinery (bean 8we6 follow-up, qou-tti3): (1) symbolic derivation of the screen-to-ladder calibration identity Dc2=(4/3)phi_4, Dc3=(phi_6-Dc2*U2[6])/U3[6] from the ladder's own u(q); (2) three synthetic test vectors run through the real ladder solver (machinery test, not physics; nothing tuned); (3) two-engine recomputation of phi_4/phi_6 for all nine published candidates (sympy series vs independent mpmath Vandermonde fit) + cross-probe check of the Route-A exact c2 shifts against the identity. Also reports the screen's odd-coefficient blind spot [s^5],[s^7]. auditOnly; no fit; scope-(a).",
+  "audit_only": true,
+  "parameters": {
+    "series_order": 8,
+    "numeric_dps": 60,
+    "numeric_fit_h": "1e-3"
+  },
+  "calibration": {
+    "U2_s4": "3/4",
+    "U2_s6": "31/4",
+    "U3_s6": "3*sqrt(3)/8",
+    "identity": "Dc2=(4/3)*phi_4; Dc3=(phi_6-Dc2*U2[6])/U3[6]"
+  },
+  "synthetic_vectors": {
+    "V1_t4_seed": {
+      "g": "(q - 1)**4 + 1",
+      "phi_4": "1",
+      "phi_6": "0",
+      "dc2_pred": "4/3",
+      "dc2_measured": "4/3",
+      "dc3_pred": "-15.9092074176696877331409886183",
+      "dc3_measured": "-15.9092074176696877331409886183",
+      "dc2_match": true,
+      "dc3_match": true
+    },
+    "V2_t2_seed": {
+      "g": "(q - 1)**2 + 1",
+      "phi_4": "-1/2",
+      "phi_6": "1/3",
+      "dc2_pred": "-2/3",
+      "dc2_measured": "-2/3",
+      "dc3_pred": "8.46780394811451121280084878070",
+      "dc3_measured": "8.46780394811451121280084878070",
+      "dc2_match": true,
+      "dc3_match": true
+    },
+    "V3_t3_seed": {
+      "g": "(q - 1)**3 + 1",
+      "phi_4": "0",
+      "phi_6": "-1/2",
+      "dc2_pred": "0",
+      "dc2_measured": "0",
+      "dc3_pred": "-0.769800358919501019345531707336",
+      "dc3_measured": "-0.769800358919501019345531707336",
+      "dc2_match": true,
+      "dc3_match": true
+    }
+  },
+  "nine_candidates": {
+    "A1_brane_hopf_strand": {
+      "phi": {
+        "s^1": "2",
+        "s^2": "-1",
+        "s^3": "-1/3",
+        "s^4": "9",
+        "s^5": "-48/5",
+        "s^6": "-35/6",
+        "s^7": "1481/14"
+      },
+      "phi_numeric_max_dev": "4.2857e-48",
+      "engines_agree_1e-18": true,
+      "odd_leakage_s5": "-48/5",
+      "odd_leakage_s7": "1481/14",
+      "dc2_pred_from_phi4": "12",
+      "dc2_published": "12",
+      "cross_probe_match": true
+    },
+    "A2_lepton_strand": {
+      "phi": {
+        "s^1": "1",
+        "s^2": "-1",
+        "s^3": "13/3",
+        "s^4": "13/8",
+        "s^5": "-131/20",
+        "s^6": "211/6",
+        "s^7": "-3765/56"
+      },
+      "phi_numeric_max_dev": "3.3333e-49",
+      "engines_agree_1e-18": true,
+      "odd_leakage_s5": "-131/20",
+      "odd_leakage_s7": "-3765/56",
+      "dc2_pred_from_phi4": "13/6",
+      "dc2_published": "13/6",
+      "cross_probe_match": true
+    },
+    "A3_brunnian4_core": {
+      "phi": {
+        "s^1": "0",
+        "s^2": "-8",
+        "s^3": "16",
+        "s^4": "-30",
+        "s^5": "14",
+        "s^6": "-17/3",
+        "s^7": "-403"
+      },
+      "phi_numeric_max_dev": "3.3333e-50",
+      "engines_agree_1e-18": true,
+      "odd_leakage_s5": "14",
+      "odd_leakage_s7": "-403",
+      "dc2_pred_from_phi4": "-40",
+      "dc2_published": "-40",
+      "cross_probe_match": true
+    },
+    "C1_conj_core": {
+      "phi": {
+        "s^1": "0",
+        "s^2": "0",
+        "s^3": "-4",
+        "s^4": "-6",
+        "s^5": "-25",
+        "s^6": "37/2",
+        "s^7": "-253/2"
+      },
+      "phi_numeric_max_dev": "0.0",
+      "engines_agree_1e-18": true,
+      "odd_leakage_s5": "-25",
+      "odd_leakage_s7": "-253/2"
+    },
+    "C2_conj_baryon": {
+      "phi": {
+        "s^1": "-1",
+        "s^2": "0",
+        "s^3": "-10/3",
+        "s^4": "-75/8",
+        "s^5": "-179/20",
+        "s^6": "-32",
+        "s^7": "-3193/56"
+      },
+      "phi_numeric_max_dev": "1.4286e-49",
+      "engines_agree_1e-18": true,
+      "odd_leakage_s5": "-179/20",
+      "odd_leakage_s7": "-3193/56"
+    },
+    "C3_comm_12_append": {
+      "phi": {
+        "s^1": "-2",
+        "s^2": "-3",
+        "s^3": "-11/3",
+        "s^4": "-14",
+        "s^5": "-172/5",
+        "s^6": "-119/2",
+        "s^7": "-2923/14"
+      },
+      "phi_numeric_max_dev": "4.2857e-48",
+      "engines_agree_1e-18": true,
+      "odd_leakage_s5": "-172/5",
+      "odd_leakage_s7": "-2923/14"
+    },
+    "C4_comm_21inv_append": {
+      "phi": {
+        "s^1": "-1",
+        "s^2": "-4",
+        "s^3": "8/3",
+        "s^4": "-11/8",
+        "s^5": "271/20",
+        "s^6": "353/12",
+        "s^7": "3205/56"
+      },
+      "phi_numeric_max_dev": "3.3333e-49",
+      "engines_agree_1e-18": true,
+      "odd_leakage_s5": "271/20",
+      "odd_leakage_s7": "3205/56"
+    },
+    "C5_straddle_core": {
+      "phi": {
+        "s^1": "-4",
+        "s^2": "-13",
+        "s^3": "-88/3",
+        "s^4": "-463/4",
+        "s^5": "-9091/20",
+        "s^6": "-43325/24",
+        "s^7": "-409805/56"
+      },
+      "phi_numeric_max_dev": "3.3333e-47",
+      "engines_agree_1e-18": true,
+      "odd_leakage_s5": "-9091/20",
+      "odd_leakage_s7": "-409805/56"
+    },
+    "C6_crossing_straddle": {
+      "verdict": "TRIVIAL (== Delta(net)_3)"
+    }
+  },
+  "assertions": [
+    {
+      "label": "U2[4] == 3/4 and U3[6] == 3*sqrt(3)/8",
+      "passed": true
+    },
+    {
+      "label": "all synthetic vectors: ladder shifts match identity",
+      "passed": true
+    },
+    {
+      "label": "odd seed V3 does not shift c2 (odd-blindness confirmed)",
+      "passed": true
+    },
+    {
+      "label": "both engines agree on phi to 1e-18 (all candidates)",
+      "passed": true
+    },
+    {
+      "label": "Route-A published exact c2 shifts match (4/3)*phi_4",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "scriptHash": "f027dce201a1",
+  "scriptCommitSha": "4022d4a027871931901c8bb5fa063479a18a100d",
+  "commitSha": "4022d4a027871931901c8bb5fa063479a18a100d",
+  "engine": "sympy",
+  "computedAt": "2026-07-17T20:42:35.201162+00:00",
+  "durationMs": 585825,
+  "engineVersion": "sympy 1.14.0",
+  "scriptFile": "qbeta_h4_screen_calibration_verify.py"
+}
