@@ -1,5 +1,7 @@
 # Jackson q-Borel / Écalle acceleration of the bar-odd D-ladder
 
+> **Execution record (results + verdict):** [`2026-07-17-dladder-ecalle-acceleration.md`](2026-07-17-dladder-ecalle-acceleration.md) — K1 full-series gate fail at ORD 43 (finite-k shadow persists); K2 parity-split: both sub-gates pass with 40%-divergent radii (the 2-adic grading acts on the Borel plane; odd/S-carrier ρ_ζ ≈ 0.152).
+
 **Date:** 2026-07-17 · **Branch:** `claude/dladder-qborel-acceleration-2026-07-17` ·
 **Tier:** exact-arithmetic (2-adic transport) + high-precision measurement
 (acceleration numerics) · **Scope:** (a) throughout — no `c_k` wired, no fit to

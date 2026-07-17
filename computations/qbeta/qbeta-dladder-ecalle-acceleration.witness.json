@@ -1,0 +1,509 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-17T15:26:58.042117+00:00",
+  "commitSha": "94d47b0ce9a15850ff6716ab34cb561d075d4f00",
+  "assertions": [
+    {
+      "name": "exact_dk_reproduce_committed_witness",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "all 21 (a_k, b_k) pairs equal the committed qbeta-dladder-generating-function-structure witness strings, exact Q equality, plus over-determination zero (True)"
+    },
+    {
+      "name": "transform_sanity_zero_order_identity",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "borel_leroy(d, 0) and jackson_qborel(d, q0, 0) reproduce the raw series elementwise, exactly"
+    },
+    {
+      "name": "gate_arithmetic_spot_check",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "prior 0.156-vs-0.32 pair fails the 15% gate (gap 0.51); 0.30-vs-0.32 passes (gap 0.0625); full gate machinery locates the synthetic branch-point (Li_{-1/2}(2 zeta)) singularity rho=0.5 within 2% and passes"
+    },
+    {
+      "name": "q0_prefix_sanity",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "q0 from q-pinning-50-digit.witness.json starts 1.1099"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 28,
+  "computation": "qbeta-dladder-ecalle-acceleration",
+  "scriptFile": "qbeta_dladder_ecalle_acceleration_probe.py",
+  "scriptHash": "bae3e7cf7732",
+  "scriptCommitSha": "94d47b0ce9a15850ff6716ab34cb561d075d4f00",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Jackson q-Borel / Ecalle acceleration machinery for the bar-odd Q_beta D-ladder (odd-channel singularity locator; unowned item #1 of the 2026-07-17 1ppQ reassessment). Arm 1: Borel-Leroy s-scan + conformal dlog-Pade (core imported from the merged even-channel probe) with a pre-stated 15% estimator-consistency gate (dlog-Pade vs root-test radius) — the honest fix for the prior 0.156-vs-0.32 gap. Arm 2: Jackson q-Borel b_k = d_k/q0^{t k(k-1)/2} at substrate q0, same gate. Arm 3: parity-split acceleration in w = zeta^2 per the 2-adic Z/2 grading. Exact d_k at committed ORD 43 (k<=21); core API takes any-length exact (a_k, b_k) pairs so the extension arm's k~31 terms plug in. Scope-(a); no instanton action claimed without the gate; no c_k wired; no fit; no tier change.",
+  "contentBlock": "prop:phi-b-unitary-bar-odd",
+  "parameters": {
+    "ORD_committed": 43,
+    "KMAX": 21,
+    "gate_tolerance": 0.15,
+    "parity_tolerance": 0.25,
+    "q0": "1.1099785955573347198997632204832250266562084087802"
+  },
+  "data": {
+    "arm1_borel_leroy_scan": [
+      {
+        "s": 0.0,
+        "root_slope": "0.0648034",
+        "rho_rt": "0.17145248",
+        "rho_dlog": "0.11202975",
+        "gap": "0.3466",
+        "n_conv": 3,
+        "gate": false
+      },
+      {
+        "s": 0.02,
+        "root_slope": "0.0558331",
+        "rho_rt": "0.17869544",
+        "rho_dlog": "0.1136771",
+        "gap": "0.3639",
+        "n_conv": 3,
+        "gate": false
+      },
+      {
+        "s": 0.04,
+        "root_slope": "0.0474114",
+        "rho_rt": "0.18624405",
+        "rho_dlog": "0.11534763",
+        "gap": "0.3807",
+        "n_conv": 3,
+        "gate": false
+      },
+      {
+        "s": 0.06,
+        "root_slope": "0.0395104",
+        "rho_rt": "0.19411117",
+        "rho_dlog": "0.11704143",
+        "gap": "0.397",
+        "n_conv": 3,
+        "gate": false
+      },
+      {
+        "s": 0.08,
+        "root_slope": "0.0321038",
+        "rho_rt": "0.20231025",
+        "rho_dlog": "0.11875858",
+        "gap": "0.413",
+        "n_conv": 3,
+        "gate": false
+      },
+      {
+        "s": 0.1,
+        "root_slope": "0.0251664",
+        "rho_rt": "0.21085526",
+        "rho_dlog": "0.12049922",
+        "gap": "0.4285",
+        "n_conv": 3,
+        "gate": false
+      },
+      {
+        "s": 0.12,
+        "root_slope": "0.0186741",
+        "rho_rt": "0.2197608",
+        "rho_dlog": "0.1222635",
+        "gap": "0.4437",
+        "n_conv": 3,
+        "gate": false
+      },
+      {
+        "s": 0.14,
+        "root_slope": "0.0126042",
+        "rho_rt": "0.22904205",
+        "rho_dlog": "0.12405157",
+        "gap": "0.4584",
+        "n_conv": 3,
+        "gate": false
+      },
+      {
+        "s": 0.16,
+        "root_slope": "0.00693468",
+        "rho_rt": "0.23871485",
+        "rho_dlog": "0.12586362",
+        "gap": "0.4727",
+        "n_conv": 3,
+        "gate": false
+      },
+      {
+        "s": 0.18,
+        "root_slope": "0.00164491",
+        "rho_rt": "0.24879569",
+        "rho_dlog": "0.12769983",
+        "gap": "0.4867",
+        "n_conv": 3,
+        "gate": false
+      },
+      {
+        "s": 0.2,
+        "root_slope": "-0.00328497",
+        "rho_rt": "0.25930178",
+        "rho_dlog": "0.12956039",
+        "gap": "0.5003",
+        "n_conv": 3,
+        "gate": false
+      },
+      {
+        "s": 0.22,
+        "root_slope": "-0.00787384",
+        "rho_rt": "0.27025103",
+        "rho_dlog": "0.13144553",
+        "gap": "0.5136",
+        "n_conv": 3,
+        "gate": false
+      },
+      {
+        "s": 0.24,
+        "root_slope": "-0.0121397",
+        "rho_rt": "0.28166212",
+        "rho_dlog": "0.13335546",
+        "gap": "0.5265",
+        "n_conv": 3,
+        "gate": false
+      },
+      {
+        "s": 0.26,
+        "root_slope": "-0.0160996",
+        "rho_rt": "0.29355449",
+        "rho_dlog": "0.13529041",
+        "gap": "0.5391",
+        "n_conv": 3,
+        "gate": false
+      },
+      {
+        "s": 0.28,
+        "root_slope": "-0.0197699",
+        "rho_rt": "0.30594843",
+        "rho_dlog": "0.13725063",
+        "gap": "0.5514",
+        "n_conv": 3,
+        "gate": false
+      },
+      {
+        "s": 0.3,
+        "root_slope": "-0.0231661",
+        "rho_rt": "0.31886508",
+        "rho_dlog": "0.13923637",
+        "gap": "0.5633",
+        "n_conv": 3,
+        "gate": false
+      },
+      {
+        "s": 0.32,
+        "root_slope": "-0.0263031",
+        "rho_rt": "0.33232644",
+        "rho_dlog": "0.14124788",
+        "gap": "0.575",
+        "n_conv": 3,
+        "gate": false
+      },
+      {
+        "s": 0.34,
+        "root_slope": "-0.0291949",
+        "rho_rt": "0.34635546",
+        "rho_dlog": "0.14328544",
+        "gap": "0.5863",
+        "n_conv": 3,
+        "gate": false
+      },
+      {
+        "s": 0.36,
+        "root_slope": "-0.0318548",
+        "rho_rt": "0.36097607",
+        "rho_dlog": "0.14534932",
+        "gap": "0.5973",
+        "n_conv": 3,
+        "gate": false
+      },
+      {
+        "s": 0.38,
+        "root_slope": "-0.0342958",
+        "rho_rt": "0.37621317",
+        "rho_dlog": "0.14743979",
+        "gap": "0.6081",
+        "n_conv": 3,
+        "gate": false
+      },
+      {
+        "s": 0.4,
+        "root_slope": "-0.0365298",
+        "rho_rt": "0.39209273",
+        "rho_dlog": "0.14955716",
+        "gap": "0.6186",
+        "n_conv": 3,
+        "gate": false
+      }
+    ],
+    "arm1_s_star": "0.18651666",
+    "arm1_headline_gate_at_s_star": {
+      "rho_rt": "0.2521713625",
+      "rho_dlog": "0.1283033692",
+      "rho_min": "0.1283033392",
+      "rho_max": "0.1283033958",
+      "gap": "0.4912056313",
+      "spread": "4.40761281e-7",
+      "n_conv": 8,
+      "gate": false,
+      "details": {
+        "[6/6],mu=1.5": {
+          "A": "0.1283033392",
+          "iters": 38
+        },
+        "[6/6],mu=2.0": {
+          "A": "0.1283033735",
+          "iters": 38
+        },
+        "[7/7],mu=1.5": {
+          "A": "0.1283033958",
+          "iters": 38
+        },
+        "[7/7],mu=2.0": {
+          "A": "0.1283033956",
+          "iters": 38
+        },
+        "[8/8],mu=1.5": {
+          "A": "0.1283033621",
+          "iters": 38
+        },
+        "[8/8],mu=2.0": {
+          "A": "0.1283033629",
+          "iters": 38
+        },
+        "[9/9],mu=1.5": {
+          "A": "0.1283033624",
+          "iters": 38
+        },
+        "[9/9],mu=2.0": {
+          "A": "0.1283033619",
+          "iters": 38
+        }
+      }
+    },
+    "arm2_jackson_qborel_scan": [
+      {
+        "t": 0.0,
+        "root_slope": "0.0648034",
+        "rho_rt": "0.17145248",
+        "rho_dlog": "0.11202975",
+        "gap": "0.3466",
+        "n_conv": 3,
+        "gate": false
+      },
+      {
+        "t": 0.05,
+        "root_slope": "0.0486669",
+        "rho_rt": "0.17970002",
+        "rho_dlog": "0.11267974",
+        "gap": "0.373",
+        "n_conv": 3,
+        "gate": false
+      },
+      {
+        "t": 0.1,
+        "root_slope": "0.0335791",
+        "rho_rt": "0.18834173",
+        "rho_dlog": "0.11333411",
+        "gap": "0.3983",
+        "n_conv": 3,
+        "gate": false
+      },
+      {
+        "t": 0.15,
+        "root_slope": "0.0194837",
+        "rho_rt": "0.19739634",
+        "rho_dlog": "0.11399264",
+        "gap": "0.4225",
+        "n_conv": 3,
+        "gate": false
+      },
+      {
+        "t": 0.2,
+        "root_slope": "0.00632749",
+        "rho_rt": "0.20688343",
+        "rho_dlog": "0.11465388",
+        "gap": "0.4458",
+        "n_conv": 3,
+        "gate": false
+      },
+      {
+        "t": 0.25,
+        "root_slope": "-0.00594016",
+        "rho_rt": "0.21682353",
+        "rho_dlog": "0.11532131",
+        "gap": "0.4681",
+        "n_conv": 3,
+        "gate": false
+      },
+      {
+        "t": 0.3,
+        "root_slope": "-0.0173673",
+        "rho_rt": "0.22723814",
+        "rho_dlog": "0.11599127",
+        "gap": "0.4896",
+        "n_conv": 3,
+        "gate": false
+      },
+      {
+        "t": 0.35,
+        "root_slope": "-0.0279997",
+        "rho_rt": "0.23814975",
+        "rho_dlog": "0.11666475",
+        "gap": "0.5101",
+        "n_conv": 3,
+        "gate": false
+      },
+      {
+        "t": 0.4,
+        "root_slope": "-0.0378806",
+        "rho_rt": "0.24958191",
+        "rho_dlog": "0.11734165",
+        "gap": "0.5298",
+        "n_conv": 3,
+        "gate": false
+      },
+      {
+        "t": 0.45,
+        "root_slope": "-0.0470512",
+        "rho_rt": "0.26155932",
+        "rho_dlog": "0.11802176",
+        "gap": "0.5488",
+        "n_conv": 3,
+        "gate": false
+      },
+      {
+        "t": 0.5,
+        "root_slope": "-0.0555505",
+        "rho_rt": "0.27410779",
+        "rho_dlog": "0.11870602",
+        "gap": "0.5669",
+        "n_conv": 3,
+        "gate": false
+      }
+    ],
+    "arm2_t_star": "0.22534926",
+    "arm2_headline_gate_at_t_star": {
+      "rho_rt": "0.2118649745",
+      "rho_dlog": "0.1149923328",
+      "rho_min": "0.1149913752",
+      "rho_max": "0.1149926403",
+      "gap": "0.4572376437",
+      "spread": "1.100194609e-5",
+      "n_conv": 8,
+      "gate": false,
+      "details": {
+        "[6/6],mu=1.5": {
+          "A": "0.1149926027",
+          "iters": 38
+        },
+        "[6/6],mu=2.0": {
+          "A": "0.1149913752",
+          "iters": 38
+        },
+        "[7/7],mu=1.5": {
+          "A": "0.1149926403",
+          "iters": 38
+        },
+        "[7/7],mu=2.0": {
+          "A": "0.1149925402",
+          "iters": 38
+        },
+        "[8/8],mu=1.5": {
+          "A": "0.1149926331",
+          "iters": 38
+        },
+        "[8/8],mu=2.0": {
+          "A": "0.1149921803",
+          "iters": 38
+        },
+        "[9/9],mu=1.5": {
+          "A": "0.1149923396",
+          "iters": 38
+        },
+        "[9/9],mu=2.0": {
+          "A": "0.1149923506",
+          "iters": 38
+        }
+      }
+    },
+    "arm3_parity_split": {
+      "odd": {
+        "s_star": "0.0346305",
+        "rho_rt_w": "0.02545922",
+        "rho_dlog_w": "0.022984364",
+        "rho_zeta": "0.15160595",
+        "gap": "0.09721",
+        "n_conv": 3,
+        "gate": true
+      },
+      "even": {
+        "s_star": "0.46473",
+        "rho_rt_w": "0.057147132",
+        "rho_dlog_w": "0.064668179",
+        "rho_zeta": "0.25429939",
+        "gap": "0.1316",
+        "n_conv": 2,
+        "gate": true
+      }
+    },
+    "arm3_parity_coincide": false,
+    "gate_passed_anywhere": false,
+    "candidates_pre_named": {
+      "Vol(4_1)/pi": {
+        "value": "0.6461318944",
+        "consistent_within_spread": null
+      },
+      "Vol(4_1)": {
+        "value": "2.029883213",
+        "consistent_within_spread": null
+      },
+      "pi^2/6": {
+        "value": "1.644934067",
+        "consistent_within_spread": null
+      },
+      "u_substrate=b*hbar_q^2": {
+        "value": "0.00851723634",
+        "consistent_within_spread": null
+      },
+      "u_tilde_substrate=q0*u": {
+        "value": "0.009453950031",
+        "consistent_within_spread": null
+      },
+      "abs_S_muon_KC21": {
+        "value": "0.00968298",
+        "consistent_within_spread": null
+      },
+      "phib_volume_deficit_KC21": {
+        "value": "0.0094",
+        "consistent_within_spread": null
+      },
+      "t_kappa1_KC21": {
+        "value": "0.058",
+        "consistent_within_spread": null
+      }
+    },
+    "consistent_within_spread": [],
+    "verdict": "K1: the estimator-consistency gate (tol 0.15) fails at every Borel–Leroy order s ≤ 0.40, every Jackson q-Borel order t ≤ 0.50, and at s*/t* with the 8-config headline set — the finite-k shadow persists at the committed ORD 43 (k = 21). Scope-(a): a statement about k=21 resolution power, NOT a refutation of resummability or of any singularity candidate. The machinery (exact-pair API, both transforms, the gate) is ready for the extension arm's k≈31 terms. K2: the parity-split estimates diverge beyond 0.25 — recorded as bar-parity ℤ/2 structure acting on the Borel plane (the odd part as the S-carrier), not as failure."
+  },
+  "caveats": [
+    "The gate-pass rho values are accelerated-plane singularity locations (transform-order dependent); consistent-within-spread wording only, no identification claims, no instanton action wired.",
+    "Committed-order run (ORD 43, k<=21) — the ORD-63 / k~31 extension is the running sibling arm; rerun this probe on its exact pairs when it lands (the core API is any-length)."
+  ]
+}

@@ -30,6 +30,12 @@ honestly reported as "not resolved").
 
 ## Method
 
+Formal pre-registration (hypothesis class as the unified two-parameter family
+𝓑_{Q,s} with classical Borel–Leroy as the Q → 1 boundary, closure semantics,
+and refutation criteria):
+[`2026-07-17-dladder-qborel-acceleration.md`](2026-07-17-dladder-qborel-acceleration.md).
+This document is the execution record.
+
 Probe: [`qbeta_dladder_ecalle_acceleration_probe.py`](../../computations/qbeta/qbeta_dladder_ecalle_acceleration_probe.py)
 (witness [`qbeta-dladder-ecalle-acceleration.witness.json`](../../computations/qbeta/qbeta-dladder-ecalle-acceleration.witness.json)).
 The conformal-map + dlog-Padé core is **imported from the merged even-channel
@@ -63,13 +69,49 @@ identity (s=0, t=0 reproduce the raw series exactly); gate arithmetic
 spot-check (the prior 0.156/0.32 pair must fail; a synthetic Li₋₁/₂(2ζ)
 branch point at ρ = 1/2 must pass — it does, located to 5 decimal places).
 
-## Results
+## Results (run 2026-07-17, 342 s wall, 4/4 assertions pass)
 
-<!-- RESULTS_TABLE -->
+| Arm | order scan | slope-zero order | headline gate (8 configs) | ρ_dlog vs ρ_rt |
+|---|---|---|---|---|
+| 1 — Borel–Leroy `(k!)^s` | s ∈ 0…0.40 (21 pts) | s\* = 0.1865 | **fail** | 0.1283 vs 0.2522 (gap 0.49) |
+| 2 — Jackson q-Borel `q₀^{t·k(k−1)/2}` | t ∈ 0…0.50 (11 pts) | t\* = 0.2253 | **fail** | 0.1150 vs 0.2119 (gap 0.46) |
+| 3 — parity-split (w = ζ²) — odd (S-carrier) | per-parity s\*_par = 0.0346 | — | **PASS** (gap 0.097) | ρ_ζ = 0.1516 |
+| 3 — parity-split — even | per-parity s\*_par = 0.4647 | — | **PASS** (gap 0.132) | ρ_ζ = 0.2543 |
+
+The gate fails at **every** (s, t) grid point and at both slope-zero orders
+for the full series — every configuration shows the same ~2× dlog-Padé-below-
+root-test signature as the prior k=21 attempt, now demonstrated to be
+transform-independent across the whole two-parameter family. Per the
+pre-stated rule, **no candidate comparison was run** (no singularity is
+reported as located for the full series).
+
+**The parity-split finding (K2, structure not failure).** Each 2-adic parity
+subseries, accelerated separately at its own Borel–Leroy order, individually
+*passes* the estimator gate — but their back-mapped radii differ by 40%
+(|ρ_odd/ρ_even − 1| = 0.404, tol 0.25). The ℤ/2 bar-parity grading
+(`v₂(den b_k) = 0 ⟺ k odd`) therefore acts on the **Borel plane** itself:
+the full series superposes two singularity structures, which is *why* no
+single fixed-order transform can produce one consistent radius. The odd
+(S-carrier) subseries — the physically load-bearing half — has the nearer,
+cleanly-gated singularity at ρ_ζ ≈ 0.152 (its per-parity slope-zero order
+s\*_par ≈ 0.035, i.e. nearly convergent after the parity split). These
+per-parity radii are reported as *structural data* for the extension arm,
+not as located instanton actions.
 
 ## Verdict
 
-<!-- VERDICT -->
+**K1 (pre-registered): the finite-k shadow persists at ORD 43 (k = 21) for
+the full series** — the estimator-consistency gate fails at every Borel–Leroy
+order s ≤ 0.40, every Jackson q-Borel order t ≤ 0.50, and at both slope-zero
+orders with the 8-config headline set. Scope-(a): a statement about k = 21
+resolution power, not a refutation of resummability or of any singularity
+candidate. **K2: the parity-split radii diverge (40%) with both sub-gates
+passing** — recorded as the 2-adic bar-parity grading acting on the Borel
+plane; the odd/S-carrier singularity at ρ_ζ ≈ 0.152 is the sharpest current
+odd-channel datum. The machinery (exact-pair API, both transforms, the gate,
+the parity split) is committed and order-agnostic — the extension arm's
+k ≈ 31 terms decide whether the full-series gap closes and whether the
+per-parity radii stabilize.
 
 ## What the extension's k≈31 terms will decide
 
