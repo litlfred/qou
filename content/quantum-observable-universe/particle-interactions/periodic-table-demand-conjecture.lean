@@ -1,4 +1,5 @@
 import Mathlib.Data.Nat.Basic
+import Mathlib.Tactic.NormNum
 
 /-!
 # Periodic-table demand conjecture (conjectural)
@@ -72,7 +73,6 @@ instance periodic_table_demand_conjecture : PeriodicTableDemand where
   -- Ref: [manuscript]
   drip_lines_from_demand_divergence := sorry
 
-end QOU.PeriodicTableDemand
 
 /-! ## Special cases (provable from the conjecture)
 
