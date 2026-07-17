@@ -119,8 +119,8 @@ def main() -> int:
     print(f"  eta^2 rungs 1..3: {r[1]}, {r[2]}, {r[3]}")
 
     # ---- T0: pure-series G(eta^2) obstruction at u~^1 ------------------------
-    t0_obstructed = sp.simplify(r[1]) == 0 and sp.simplify(r[2]) == 0 \
-        and sp.simplify(E_rungs[1]) != 0
+    t0_obstructed = r[1].equals(0) and r[2].equals(0) \
+        and not E_rungs[1].equals(0)
     print(f"\n  (T0) eta^2 starts at u~^3 while E_1 = {E_rungs[1]} != 0: "
           f"pure G(eta^2) {'REFUTED at u~^1 (exact)' if t0_obstructed else 'NOT obstructed?!'}")
 
@@ -136,18 +136,18 @@ def main() -> int:
         delta = sp.simplify(E_rungs[m] - pred)
         checks[m] = delta
         print(f"  (T1) rung {m}: E_m - [g1*r_m + g2*(r^2)_m] = {delta}"
-              + ("  ✓" if delta == 0 else "  — OBSTRUCTION"))
-    first_fail = next((m for m in (4, 5, 7, 8) if checks[m] != 0), None)
+              + ("  ✓" if delta.equals(0) else "  — OBSTRUCTION"))
+    first_fail = next((m for m in (4, 5, 7, 8) if not checks[m].equals(0)), None)
     t1_pass = first_fail is None
     print(f"  (T1) g1 = {g1} = {sp.N(g1, 12)}")
     print(f"       g2 = {g2} = {sp.N(g2, 12)}")
     print(f"       verdict: {'PASS (margin 4)' if t1_pass else f'FAIL first at rung {first_fail}'}")
 
     # ---- T2: forced profile constant (only meaningful if T1 passes) ----------
-    a_cosh = sp.radsimp(g1**2 / (6 * g2)) if g2 != 0 else None
+    a_cosh = sp.radsimp(g1**2 / (6 * g2)) if not g2.equals(0) else None
     if t1_pass and a_cosh is not None:
-        tag = ("unit-cosh (+1)" if sp.simplify(a_cosh - 1) == 0 else
-               "zeta4-rotation image (-1)" if sp.simplify(a_cosh + 1) == 0 else
+        tag = ("unit-cosh (+1)" if a_cosh.equals(1) else
+               "zeta4-rotation image (-1)" if a_cosh.equals(-1) else
                "no distinguished value")
         print(f"  (T2) cosh-family constant a = g1^2/(6 g2) = {a_cosh} "
               f"= {sp.N(a_cosh, 12)}  → {tag}")
