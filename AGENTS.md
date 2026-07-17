@@ -81,6 +81,39 @@ above); read the framework's *claims* adversarially. The two rules
 do not conflict — one governs input interpretation, the other
 governs assessment.
 
+## Parallel exploration is valuable — cross-agent duplication is NOT waste (owner directive, 2026-07-17)
+
+**It is explicitly OK to work a problem in parallel with, and even to
+duplicate, what another agent (sibling branch / prior session) is doing
+or has done.** A different agent carries a different context — different
+files loaded, different framing, different corpus paths walked — and
+that difference is exactly what finds the solution the other agent
+missed. Redundant independent attacks on the same open problem are a
+*feature* of the multi-agent workflow, not a coordination failure.
+
+Concretely:
+
+- **Do not decline a probe/derivation solely because a sibling is on the
+  same front.** Coordinate (post intent, per the sibling-branch rules)
+  and then attack it with your own context. Two independent derivations
+  of the same result strengthen it; two independent *failures* on the
+  same route strengthen the negative.
+- **This does NOT loosen the anti-laundering / corpus-grep disciplines.**
+  Before declaring an item "open" you still run the corpus-grep checklist
+  (a prior agent may have *closed* it — duplicating *effort* is fine,
+  but re-declaring a closed item open is still a flag). "OK to duplicate"
+  means it is fine to *re-derive, re-test, or re-attack* — not fine to
+  ignore an existing proof and pass a fresh fit off as new.
+- **This is distinct from "combine related work into one branch."** That
+  rule governs a *single* agent not fragmenting *its own* in-flight work
+  across many branches. It does not tell you to stand down because
+  *another* agent is nearby. When in doubt: coordinate intent, then
+  proceed in parallel.
+- **Scope note.** This complements the Critical-distance license above:
+  independent parallel assessment — like independent adversarial
+  assessment — is a source of robustness. The cheapest way to catch a
+  wrong turn is a second agent walking in from a different direction.
+
 ## Agent work-plan policy (STRICT)
 
 Every session must run from a **prioritized work-plan** maintained
