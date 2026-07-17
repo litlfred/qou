@@ -100,12 +100,44 @@ from the ad-hoc `π²/3` to the canonical regulator `ζ(2)`, and the remaining o
 content is the **cusp-boundary regulator term** at `x=1`, not a functional
 obstruction.
 
+## Grounding: the residual ζ(2) is the extended-Bloch / Rogers normalization
+
+The residual `π²/6 = ζ(2) = Li₂(1)` is **not** a new mystery constant — it is the
+**standard extended-Bloch-group / Rogers-dilogarithm normalization**. With the
+Rogers dilogarithm `R(z) = ½ log z·log(1−z) + Li₂(z)`, at the complete
+figure-eight shape `z = e^{iπ/3}`:
+
+$$
+  2\,R(e^{i\pi/3}) \;-\; \frac{\pi^2}{6} \;=\; i\,\mathrm{Vol}(4_1)
+  \qquad(\text{Re}=-2\times10^{-41},\; \mathrm{Im}=2.0298832=\mathrm{Vol}(4_1)),
+$$
+
+so `Re[2R(e^{iπ/3})] = π²/6` exactly — the `−π²/6` here is the **same** constant
+that normalizes Neumann's / Murakami–Yokota's complex volume
+`f(u) = (1/2π){R(z)+R(w) − π²/6} − (i/2π)Vol(E)`. It is precisely the constant
+that **pairs the algebraic half (Li₂) with the geometric half (Bloch–Wigner
+`D = Im Li₂` → Vol)** — exactly the pairing the conjecture's own statement names
+("supplies the algebraic half of the Kashaev volume conjecture, pairing with the
+Bloch–Wigner geometric half").
+
+So Part B closes numerically as
+
+$$
+  \underbrace{\mathrm{Li}_2(x) - \zeta(2)}_{\text{T}_w\text{-truncated bulk}}
+  \;+\; \underbrace{\zeta(2)}_{\text{extended-Bloch cusp}}
+  \;=\; \mathrm{Li}_2(x),
+$$
+
+and the residual is a **standard, non-fitted regulator**, not a functional
+obstruction.
+
 ## What remains open
 
-1. The **cusp-boundary regulator term** `π²/6 = ζ(2) = Li₂(1)` — the residual after
-   the T_w truncation, the archimedean regulator value at the vanishing cusp
-   factor (`x=1`, the `k*` completeness root). Deriving its sign/normalization
-   from the cusp-boundary of `Φ_q^{[≤k*]}` closes Part B for x∈(0,1).
+1. The **categorical cusp-regulator derivation** — the residual is now identified
+   as the extended-Bloch `ζ(2) = Li₂(1)` (verified above), but deriving its
+   `+ζ(2)` sign/normalization *from the cusp geometry of* `Φ_q^{[≤k*]}` (the
+   Neumann extended-Bloch cusp term at the `k*` completeness root), rather than
+   identifying it, is the remaining step to close Part B for x∈(0,1).
 2. The **x→1⁻ edge** (gap 3), where the Riemann-sum error `ℏ·(−log(1−x))` blows
    up — untouched here.
 3. **Lean/Mathlib** closure of even Part A — the standing infrastructure
