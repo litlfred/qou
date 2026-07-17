@@ -33,6 +33,8 @@ NON-multiplicative / cooperative combiner -- an enhancing interface f>1, or a
 true 3-body operator that is not a product of pairwise factors -- NOT a sign
 convention on a product, and NOT the bond topology.
 """
+import time as _time  # noqa: E402 — wall-clock anchor for witness durationMs
+_T0 = _time.monotonic()
 import json
 import sys
 from pathlib import Path
@@ -113,9 +115,14 @@ def main():
                        "tau_n": str(TAU_N), "free_parameters": 0},
         "data": {"rows": rows, "verdict": "multiplicative_3body_is_destructive_sign_not_fixed_by_triangle"},
     }
-    out = COMP / "binding-triangle-3body-cluster.witness.json"
-    with open(out, "w") as f:
-        json.dump(witness, f, indent=1, default=str)
+    import sys as _sys  # noqa: E402 — P30 rollup (bean cmiy)
+    _sys.path.insert(0, str(COMP / "substrate"))
+    from witness_base import WitnessBuilder  # noqa: E402 — P30 rollup (bean cmiy)
+    out = WitnessBuilder.wrap_legacy(
+        "binding-triangle-3body-cluster", witness,
+        script_path=__file__, engine="mpmath", start_time=_T0,
+        output_dir=str(COMP),
+    ).save()
     print(f"\nwitness -> {out.relative_to(REPO)}")
     return 0
 

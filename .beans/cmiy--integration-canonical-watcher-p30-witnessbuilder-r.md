@@ -190,3 +190,16 @@ borromean_ascaling as _CANON_WITNESS; migration preserves all data keys, only
 adds meta, consumer re-run exit 0), delta_lambda_l1_ceiling_sign_prune
 (docstring-only "consumers", 0 real), binomial_pattern_chebyshev_derivation.
 All: exit 0, keys preserved, real durationMs. PROV_MISSING 262→259.
+
+## 2026-07-17 — batch 14 (2 probes) + GOTCHA #7 (hoefsmit_symbolic canonical-env dep)
+NEW GOTCHA #7: many computations/probes/*.py import `hoefsmit_symbolic` (a
+substrate/ module) at the TOP of main(), BEFORE any P30 path-insert can run —
+so they crash with ModuleNotFoundError in an ad-hoc env and can only be
+migrated+verified under the canonical env (substrate on PYTHONPATH from start).
+Triaged 6 probes this batch; 4 hit this (bn_minus_bp_brane_tower_parity,
+bn_minus_bp_winding_iterate, chi_content_eigenbasis, chi_content_single_mode) →
+DEFERRED to a canonical-env batch. Only self-contained mpmath probes migrated:
+chirality_topology_binding_probe, binding_triangle_3body_cluster_probe (both
+wrap_legacy + _T0; exit 0, keys preserved, prov triple + real durationMs).
+PROV_MISSING 260→258. WORKLIST REFINEMENT: filter candidates by
+`grep -L hoefsmit_symbolic` too, not just native/consumers, when in ad-hoc env.

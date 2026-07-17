@@ -32,6 +32,8 @@ isotopes with no p(3A) partition wall.
 Output: chirality-topology-binding.witness.json
 """
 from __future__ import annotations
+import time as _time  # noqa: E402 — wall-clock anchor for witness durationMs
+_T0 = _time.monotonic()
 
 import json
 import sys
@@ -165,8 +167,14 @@ def main() -> int:
         "he4_alpha_cluster_residual_MeV": he4_resid,
         "discipline": "EXPLORATORY — derive-or-refute, zero free parameters, no production rewire.",
     }
-    out = HERE.parent / "chirality-topology-binding.witness.json"
-    out.write_text(json.dumps(witness, indent=2) + "\n")
+    import os as _os, sys as _sys  # noqa: E402 — P30 rollup (bean cmiy)
+    _sys.path.insert(0, str(HERE.parent / "substrate"))
+    from witness_base import WitnessBuilder  # noqa: E402 — P30 rollup (bean cmiy)
+    out = WitnessBuilder.wrap_legacy(
+        "chirality-topology-binding", witness,
+        script_path=__file__, engine="mpmath", start_time=_T0,
+        output_dir=str(HERE.parent),
+    ).save()
     print(f"\n  witness: {out}")
     return 0
 
