@@ -1,0 +1,9 @@
+---
+# qou-xhjl
+title: 'Session: 1ppq path reevaluation post-week (faddeev branch)'
+status: todo
+type: milestone
+created_at: 2026-07-17T14:34:51Z
+updated_at: 2026-07-17T14:34:51Z
+---
+
