@@ -47,7 +47,7 @@ sensitivity is a property of the formula, not the pin. The exact anchor sensitiv
 
 ### 1a. The structural decomposition
 
-`S(O) = ν_ℏ(O)·[−1/(q−1)] + S_smooth(O)`, where `ν_ℏ(O)` is the net power of `ℏ_q` in `O`.
+`S(O) = ν_ℏ(O)·[1/(q−1)] + S_smooth(O)`, where `ν_ℏ(O)` is the net power of `ℏ_q` in `O` (so `S(ℏ_q) = +1/(q−1)`, and the sign of `S` follows `ν_ℏ`: the anchor `m_μ ∝ ℏ_q⁻²` has `ν_ℏ = −2 → S = −2/(q−1) < 0`).
 **Only the `ℏ_q`-power carries the `1/(q−1) ≈ 9.1` amplification.**
 
 - **Absolute muon anchor** `m_μ ∝ ℏ_q⁻²`: `ν_ℏ = −2` → `S = −2/(q−1) = −18.185`.
