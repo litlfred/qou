@@ -218,3 +218,16 @@ filter must follow first-level local imports, not just grep the producer body.
 Reverted torus → canonical-env batch. PROV_MISSING drift is inflow (new main
 landings) not regression; the batch-13 guard now catches new raw emits at
 pre-commit.
+
+## 2026-07-17 — batch 15 fail-loud hardening (PR #3862 review) + LATENT BUG fix
+Owner chose "harden to fail-loud" on Gemini's habiro upstream comment. Made
+q0_value() REQUIRE the canonical pin (raises FileNotFoundError/KeyError instead
+of falling back to a hardcoded literal) and add_upstream unconditional. This
+SURFACED A LATENT BUG: the pin carries q0 at nested derived_50_digit.q, but the
+old lookup only tried FLAT keys (q0/q_0/q/value) → never found it → silently
+used a 17-digit literal fallback that happened to match the pin to 17 digits
+(so the miss was invisible). Fixed the lookup to read derived_50_digit.q →
+the script now consumes the FULL 50-digit canonical q0. Data change: witness
+cyclotomic_coefficients_at_q0 + q0_used gain precision (17→50 digits); upstream
+edge is now genuine. GENERAL LESSON: fail-loud provenance is not just hygiene —
+it caught a script that had been silently ignoring its canonical input.

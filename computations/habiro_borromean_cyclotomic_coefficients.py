@@ -139,15 +139,37 @@ def extract_cyclotomic(lmax: int):
 
 
 def q0_value():
-    """Substrate q_0 (muon-anchored canonical computations/ value)."""
+    """Substrate q_0 (muon-anchored canonical computations/ value).
+
+    Fail-loud: the canonical pin witness is a required input. We do NOT
+    fall back to a hardcoded constant — a missing pin must surface as an
+    error rather than silently substitute an un-provenanced literal (and
+    emit a witness whose recorded ``upstream_witness_hashes`` would then
+    not reflect the value actually used). See PR #3862 review.
+    """
     wf = Path(__file__).with_name("q-pinning-50-digit.witness.json")
-    if wf.exists():
-        d = json.loads(wf.read_text())
-        for k in ("q0", "q_0", "q", "value", "q0_50dps"):
-            if k in d:
-                return sp.Rational(str(d[k]))
-    # documented fallback (muon anchor, -11.5 ppb)
-    return sp.Rational("1.10997859555733471")
+    if not wf.exists():
+        raise FileNotFoundError(
+            f"Required canonical substrate pin not found: {wf}\n"
+            f"Run the q-pinning producer first (this script does not "
+            f"fall back to a hardcoded q_0)."
+        )
+    d = json.loads(wf.read_text())
+    # The canonical pin carries the 50-digit value under `derived_50_digit.q`;
+    # older flat keys are checked as a fallback for other pin layouts. (Before
+    # PR #3862 only the flat keys were tried, so the nested value was NEVER
+    # found and the script silently used a hardcoded 17-digit literal — the
+    # fail-loud change surfaced this. Read the real pin now.)
+    derived = d.get("derived_50_digit")
+    if isinstance(derived, dict) and "q" in derived:
+        return sp.Rational(str(derived["q"]))
+    for k in ("q0", "q_0", "q", "value", "q0_50dps"):
+        if k in d:
+            return sp.Rational(str(d[k]))
+    raise KeyError(
+        f"{wf.name} present but carries no recognised q_0 key "
+        f"(tried derived_50_digit.q, q0/q_0/q/value/q0_50dps)."
+    )
 
 
 def main() -> int:
@@ -215,10 +237,12 @@ def main() -> int:
         "habiro-borromean-cyclotomic-coefficients", witness,
         script_path=__file__, engine="sympy", start_time=_T0,
     )
-    # reads the canonical substrate pin as input -> record the upstream edge
+    # reads the canonical substrate pin as input -> record the upstream edge.
+    # Fail-loud (PR #3862 review): the pin is a REQUIRED input (q0_value raises
+    # if it is missing), so add_upstream is unconditional — it must not silently
+    # skip recording provenance for a dependency the run actually consumed.
     _qp = script_path.with_name("q-pinning-50-digit.witness.json")
-    if _qp.exists():
-        _wb.add_upstream(_qp)
+    _wb.add_upstream(_qp)
     out = _wb.save()
     print(f"\n  written -> {out.name}")
     return 0 if all_consistent else 1
