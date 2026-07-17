@@ -1,0 +1,72 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-17T20:30:52.775294+00:00",
+  "commitSha": "89e8eff44c438c399af0e8859c8599203d495b48",
+  "assertions": [
+    {
+      "name": "flat_permode_det_is_L_squared_no_pi",
+      "computed": 6.310887241768095e-30,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-20,
+      "source": "det'(−∂²)_{S¹}(L)=L² exactly (ζ'(0)=−2lnL; the 2π cancels) — scale-dependent, no bare 1/π: the naive per-mode-weight route is the μ-absorbable fitting trap"
+    },
+    {
+      "name": "flat_permode_zeta0_is_minus_one",
+      "computed": 0.0,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-25,
+      "source": "ζ_{S¹}(0)=2ζ_R(0)=−1 (consistency with the b₁-count lead)"
+    },
+    {
+      "name": "template_pi_is_gauss_bonnet_2pichi",
+      "computed": 0.0,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-25,
+      "source": "2/(3π)=8/(12π)=b₁/Area with Area=−2πχ=12π (g=4): the template's π is the Euler-characteristic 2π"
+    },
+    {
+      "name": "loop_measure_is_one_over_2pi_g",
+      "computed": 0.0,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-25,
+      "source": "1/(8π)=1/(π·b₁)=1/(2π·g) at g=4 — a genus (2πg) source, not the template's Euler-char (2πχ) area"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 57,
+  "computation": "alpha-em-permode-weight",
+  "scriptFile": "alpha_em_permode_weight_probe.py",
+  "scriptHash": "d50c37cae132",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "α_EM 1/π per-mode weight localization (follow-up to the ζ_Λ(0)=−b₁ lead, PR #3831). Machine-verified: (1) the flat-torus per-mode ζ-determinant det'(−∂²)_{S¹}(L)=L² (no bare 1/π; the fitting-trap route ruled out, scope-(a)); (2) the proved 1/(12π) template's π is Gauss–Bonnet 2πχ (Area=12π, 2/(3π)=b₁/Area); (3) the loop measure 1/(8π)=1/(π·b₁)=1/(2π·g) needs a GENUS (2πg) source, distinct from the template's Euler-char (2πχ). Conclusion: the 1/π is not forced by the ζ-determinant; it reduces to the open conj:dilogarithm-archimedean-limit (Bloch–Suslin archimedean π) plus an explicit 2πg identity on Bring. No fit; nothing wired; not reverse-engineered to 8π.",
+  "data": {
+    "flat_permode_det_by_L": {
+      "1": 1.0,
+      "2": 4.0,
+      "3.14159265": 9.869604378534023,
+      "6.28318531": 39.478417639799794
+    },
+    "area_gauss_bonnet_12pi": 37.69911184307752,
+    "template_pi_source": "Gauss-Bonnet 2πχ (Euler characteristic)",
+    "loop_measure_pi_source": "2πg (genus) — distinct from 2πχ",
+    "reduces_to_open_conjecture": "conj:dilogarithm-archimedean-limit (Bloch-Suslin archimedean π) + explicit 2πg identity on Bring",
+    "verdict": "The 1/π per-mode weight is NOT derivable from the flat ζ-determinant: det'(−∂²)_{S¹}(L)=L² exactly (the 2π cancels), scale-dependent and μ-absorbable — the naive per-mode-weight route is the spec-§3 fitting trap, RULED OUT (scope-(a)). A μ-independent 1/π must be topological. The proved 1/(12π) template's π IS topological — Gauss–Bonnet 2πχ (Area=12π) — but the loop measure is 1/(8π)=1/(2π·g), whose π needs a GENUS (2πg) source, DISTINCT from the template's Euler-char (2πχ). So 1/(8π) is not the same geometric identity as 2/(3π); it does not close by ζ-determinant bookkeeping. The framework's canonical μ-independent π is the archimedean dilogarithm regulator (Bloch–Suslin pentagon-uniqueness → Bloch–Wigner D; conj:dilogarithm-archimedean-limit). CONCLUSION: closing 1/(8π) reduces to that named open conjecture PLUS an explicit 2π·g (genus) identity on Bring's surface — the b₁ count (PR #3831) is topological, but the 1/π per-mode weight is not forced by the ζ-determinant alone. No fit; nothing wired; not reverse-engineered to 8π."
+  }
+}
