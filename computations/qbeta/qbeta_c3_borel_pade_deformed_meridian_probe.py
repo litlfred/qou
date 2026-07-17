@@ -61,8 +61,10 @@ ODD_PARTIAL_3691 = mp.mpf("0.0567896600197945")  # t·κ̃₁ − t³·κ̃₃ (
 def load_deformed_rungs():
     """κ̃₁..κ̃₄(u_sub) from the committed #3691 tall-ladder witness."""
     root = Path(__file__).resolve().parent.parent.parent
-    w = json.load(open(root / "docs" / "audits" / "scripts" /
-                       "qbeta-ohtsuki-deformed-kappa3-tall-ladder.witness.json"))
+    witness_path = (root / "docs" / "audits" / "scripts" /
+                    "qbeta-ohtsuki-deformed-kappa3-tall-ladder.witness.json")
+    with open(witness_path, encoding="utf-8") as f:
+        w = json.load(f)
     rungs = w["result"]["rungs"]
     kap = []
     conf = []
@@ -126,7 +128,7 @@ def main() -> int:
     x = mp.mpc(0, 1) * t
     g = mp.quad(lambda s: mp.e ** (-s) * B(x * s), [0, 5, 20, 60])
     imV = mp.im(g)
-    trunc = mp.im(sum(kap[n] * x ** (n + 1) for n in range(4)))
+    trunc = mp.fsum(mp.im(kap[n] * x ** (n + 1)) for n in range(4))
     print("\n[2] Borel–Padé[2/2] + Laplace at x = i·t (deformed):")
     print(f"    resummed 𝔙̃_b = {mp.nstr(g, 8)}   Im 𝔙̃_b = {mp.nstr(imV, 8)}")
     print(f"    κ̃₁..κ̃₄ truncation Im = {mp.nstr(trunc, 8)};  odd partial sum (#3691) = "
