@@ -1,6 +1,16 @@
 # Jackson q-Borel / Écalle acceleration of the bar-odd D-ladder
 
-> **Execution record (results + verdict):** [`2026-07-17-dladder-ecalle-acceleration.md`](2026-07-17-dladder-ecalle-acceleration.md) — K1 full-series gate fail at ORD 43 (finite-k shadow persists); K2 parity-split: both sub-gates pass with 40%-divergent radii (the 2-adic grading acts on the Borel plane; odd/S-carrier ρ_ζ ≈ 0.152).
+> **Independent replication:** a second implementation
+> ([`2026-07-17-dladder-ecalle-acceleration.md`](2026-07-17-dladder-ecalle-acceleration.md),
+> `qbeta_dladder_ecalle_acceleration_probe.py`) reproduces this document's K1
+> headline — the estimator gate fails at every Borel–Leroy AND exponent-order
+> Jackson setting at k = 21, so the finite-k shadow is double-confirmed.
+> **Open discrepancy (flagged, unadjudicated):** on the parity split this
+> document reports the branches unresolved, while the replication finds each
+> parity subseries individually gate-passing at its own per-parity slope-zero
+> order in the w = ζ² plane (odd ρ_ζ ≈ 0.152, even ≈ 0.254). Likely a
+> shared-s vs per-parity-s\* / ζ-vs-ζ² methodology difference; see the
+> 1ppq-qbeta ledger addendum. Neither reading is wired anywhere.
 
 **Date:** 2026-07-17 · **Branch:** `claude/dladder-qborel-acceleration-2026-07-17` ·
 **Tier:** exact-arithmetic (2-adic transport) + high-precision measurement

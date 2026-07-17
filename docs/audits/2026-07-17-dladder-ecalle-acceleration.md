@@ -113,6 +113,14 @@ the parity split) is committed and order-agnostic — the extension arm's
 k ≈ 31 terms decide whether the full-series gap closes and whether the
 per-parity radii stabilize.
 
+**Replication + discrepancy note.** A parallel implementation on this branch
+([`2026-07-17-dladder-qborel-acceleration.md`](2026-07-17-dladder-qborel-acceleration.md))
+independently confirms the K1 full-series gate failure (double-confirmed,
+transform-independent) but reports its parity-split branches *unresolved*,
+in tension with this run's per-parity gate passes. Probable cause: shared-s
+vs per-parity slope-zero order and ζ- vs ζ²-plane methodology; queued for
+adjudication (bean) — neither parity reading is treated as established.
+
 ## What the extension's k≈31 terms will decide
 
 The machinery is order-agnostic: rerunning this probe on the extension arm's
