@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-17T15:11:36.467399+00:00",
-  "commitSha": "50cfb692a1e38cff588b5112b311572ccd8a568f",
+  "computedAt": "2026-07-17T20:23:51.486197+00:00",
+  "commitSha": "09351705b18cabc7146d57edcdb325adec12cec6",
   "assertions": [
     {
       "name": "parity_split_arithmetic_normalized_estimators_computed",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 39,
+  "durationMs": 23,
   "computation": "qbeta-dladder-parity-split-arithmetic-normalized",
   "scriptFile": "qbeta_dladder_parity_split_arithmetic_normalized_probe.py",
-  "scriptHash": "89bb081ba8c5",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "8f2acb9c5ce7",
+  "scriptCommitSha": "a8873e86b174a579616055234f7c5868c32cb005",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
