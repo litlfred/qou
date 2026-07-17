@@ -24,10 +24,23 @@
 #     AFTER imports resolve. This is the "never compiled standalone" breakage
 #     the gate exists to catch → FAIL.
 #
+#   - STALE IMPORT (bean ckj6, 2026-07-17) — a missing-object-file error whose
+#     module does NOT EXIST at the pinned Mathlib rev (renamed/removed module)
+#     or names a QOU module with no source file. Indistinguishable from a
+#     cache-cone miss by the lean output alone — both print the same
+#     `object file … does not exist` — which is how 64 stale imports hid as
+#     neutral-skips until 2026-07-01. Disambiguated against the COMMITTED
+#     module list `scripts/data/mathlib-modules.txt` (from the pinned rev's
+#     `Mathlib.lean` aggregator; regen recipe in its header) and, for `QOU.*`,
+#     the in-repo source tree → FAIL. If the list's rev no longer matches
+#     `lake-manifest.json` (Mathlib bump without regenerating the list) the
+#     check degrades to the old neutral-skip behavior with a warning.
+#
 # A file is FAIL iff its `lean` output contains an `error:` line that is NOT a
 # missing-object-file error and NOT a known-paper-package `unknown module
-# prefix`. Files whose ONLY errors are those cache-cone misses are skipped with
-# a warning so a cache-subset miss never false-blocks a PR.
+# prefix`, OR any missing module is provably nonexistent (stale import). Files
+# whose ONLY errors are true cache-cone misses are skipped with a warning so a
+# cache-subset miss never false-blocks a PR.
 #
 # Usage:  scripts/lean-verify-siblings.sh <file.lean> [more.lean ...]
 # Exit:   0 = all files pass or neutral-skip; 1 = ≥1 genuine error;
@@ -47,9 +60,35 @@ else
 fi
 
 LP="$(lean_leanpath)"
+
+# Stale-import disambiguation data (bean ckj6): the committed module list is
+# authoritative for the pinned Mathlib rev; on rev mismatch, disable the check.
+MODLIST="$REPO_ROOT/scripts/data/mathlib-modules.txt"
+if [ -f "$MODLIST" ]; then
+  list_rev=$(sed -n 's/^# mathlib-rev: //p' "$MODLIST" | head -1)
+  pin_rev=$(sed -n 's/.*"rev": "\([0-9a-f]\{40\}\)".*/\1/p' "$REPO_ROOT/lake-manifest.json" | head -20 | grep -F "${list_rev:-nomatch}" | head -1)
+  if [ -z "$pin_rev" ]; then
+    echo "::warning::mathlib-modules.txt rev ($list_rev) not found in lake-manifest.json — stale-import check disabled; regenerate the list (header recipe)" >&2
+    MODLIST=""
+  fi
+fi
+QOU_SRC_ROOT="$REPO_ROOT/content/quantum-observable-universe/lean"
+
 fail=0; pass=0; skip=0
 for f in "$@"; do
   out=$(env LEAN_PATH="$LP" ELAN_NO_OVERRIDE_NOTICE=1 lean "$f" 2>&1)
+  # Reclassify missing-object-file misses whose module provably does not exist
+  # (removed/renamed Mathlib module, or QOU module with no source) → stale.
+  stale=""
+  for m in $(echo "$out" | grep -oE "of module '?[A-Za-z0-9_.]+'? does not exist" | sed "s/of module '\{0,1\}//; s/'\{0,1\} does not exist//" | sort -u); do
+    case "$m" in
+      Mathlib|Batteries|Aesop|Qq|Plausible|ImportGraph|LeanSearchClient|ProofWidgets) ;;
+      Mathlib.*)
+        if [ -n "$MODLIST" ] && ! grep -qx "$m" "$MODLIST"; then stale="$stale $m"; fi ;;
+      QOU.*)
+        [ -f "$QOU_SRC_ROOT/$(echo "$m" | tr '.' '/').lean" ] || stale="$stale $m" ;;
+    esac
+  done
   # Genuine = any error: line that is neither a missing-object-file error nor a
   # cross-paper `unknown module prefix '<paper-pkg>'` cache-cone miss. The
   # prefix exclusion is scoped to the known paper-package roots so a genuinely
@@ -57,7 +96,10 @@ for f in "$@"; do
   genuine=$(echo "$out" | grep 'error:' \
     | grep -v "object file '.*' of module .* does not exist" \
     | grep -vE "unknown module prefix '(QOU|UGB|Fred2005)'" || true)
-  if [ -z "$(echo "$out" | grep 'error:')" ]; then
+  if [ -n "$stale" ]; then
+    fail=$((fail+1))
+    echo "::error file=$f::STALE IMPORT — module(s) do not exist at the pinned Mathlib rev / in the QOU source tree:$stale"
+  elif [ -z "$(echo "$out" | grep 'error:')" ]; then
     pass=$((pass+1)); echo "✓ $f"
   elif [ -z "$genuine" ]; then
     skip=$((skip+1))
