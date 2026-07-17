@@ -1,0 +1,71 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-17T20:56:04.664115+00:00",
+  "commitSha": "7217f948de5ed0de59f07427753984c8afb5717f",
+  "assertions": [
+    {
+      "name": "abelian_rs_torsion_is_covolume_not_count",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "Vol(J)=√det G varies with lattice shape while b₁=d fixed => RS torsion is a covolume (1/Area category, data-excluded), not the bare count b₁; abelian RT route does not give 1/(π b₁)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 20,
+  "computation": "alpha-em-rt-abelian-torsion-count-vs-covolume",
+  "scriptFile": "alpha_em_rt_abelian_torsion_count_vs_covolume_probe.py",
+  "scriptHash": "0e012505aa83",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Front-3 continuation of #3842 (which pruned the flat-torus determinant route and named the RT μ-prescription as the wall). Decisive bounded step on the ABELIAN side: does the U(1)-photon RT / Ray–Singer torsion normalization on the Jacobian J(M)=H¹/H¹(ℤ) carry a bare COUNT b₁ or a COVOLUME D? Structural fact: the abelian RS torsion of the trivial U(1) connection is the covolume Vol(J)=√det G (period/intersection Gram) — a b₁-dim VOLUME, shape-dependent, NOT the integer b₁. Demonstrated across 4 lattices: the covolume varies continuously (0.9..6.5-scale) while b₁=d is a fixed integer ⇒ RS torsion is a covolume, in the 1/Area category (data-EXCLUDED at −1419 ppb). So the abelian RT route does NOT give 1/(π b₁) either. The only count-b₁ object stays ζ_{Δ₁}(0)=−b₁ (area-free, #3834), and neither the flat-torus det (μ^{−b₁}) nor the RS torsion (covolume) turns it into the reciprocal 1/b₁. CONSEQUENCE: 1/(π b₁) is not an abelian-normalization object; the reciprocal-count 1/b₁ requires the b₁-democratic per-mode weight — the nonabelian RT S-matrix route (Front 2 / W_λ) or an independent prescription. Scope-(a) route-narrowing; no α_k wired; no fit; does NOT manufacture 1/(π b₁); 1/(8π) stays a phase-4 id.",
+  "contentBlock": "prop:alpha-em-categorical-trace",
+  "data": {
+    "rs_torsion_is_covolume": {
+      "lattices": [
+        {
+          "name": "Z^2 (square)",
+          "covolume": "1.0"
+        },
+        {
+          "name": "hexagonal",
+          "covolume": "1.73205080757"
+        },
+        {
+          "name": "rectangular 1x3",
+          "covolume": "3.0"
+        },
+        {
+          "name": "skew",
+          "covolume": "3.74165738677"
+        }
+      ],
+      "shape_dependent": true,
+      "b1_is_fixed_integer": true,
+      "reading": "abelian RS torsion = Vol(J)=√det G, a shape-dependent covolume (1/Area category), NOT the count b₁"
+    },
+    "only_count_object": {
+      "zeta_delta1_0": -8,
+      "area_free_ref": "#3834",
+      "neither_route_gives_reciprocal": "flat-torus det μ^{−b₁} (#3842) exponential; RS torsion covolume; neither is 1/b₁"
+    },
+    "narrowed_wall": {
+      "abelian_rt_route": "PRUNED — RS torsion is a covolume (1/Area category), not 1/(π b₁)",
+      "residual": "the b₁-democratic per-mode weight 1/b₁ ⇒ nonabelian RT S-matrix (Front 2/W_λ) or independent prescription"
+    }
+  }
+}
