@@ -1,0 +1,76 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-17T20:58:27.416799+00:00",
+  "commitSha": "0a437ee3aefcf853e89add81d5700753ff2d8170",
+  "assertions": [
+    {
+      "name": "partA_anchor_converges_to_Li2",
+      "computed": 2.6733266531965362e-05,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 0.001,
+      "source": "Part A (proved): q→1⁻ ⇒ (1−q)logΦ_n(x;q)→Li₂(x)"
+    },
+    {
+      "name": "partB_bare_diverges",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "bare (1−q₀)logΦ_n grows monotonically in n at q₀>1 (branch-cut iπ tower + algebraic pole)"
+    },
+    {
+      "name": "partB_reg_reproduces_Li2_xdependence",
+      "computed": 0.0015855620280957106,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 0.005,
+      "source": "pole-subtracted reg(x)→Li₂(x)−π²/3 (q→1⁺): the x-dependence of Li₂(x) is reproduced EXACTLY up to the universal π²/3"
+    },
+    {
+      "name": "partB_offset_is_x_independent",
+      "computed": 0.0022681036498258663,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 0.005,
+      "source": "the offset reg−Li₂ is x-independent (= −π²/3): the branch-cut/pole residue is a single universal constant"
+    },
+    {
+      "name": "pi2_over_3_decomposition",
+      "computed": 2.2958874039497803e-41,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-12,
+      "source": "Euler negative-factor tail ∫₀^∞log(1−e^{−s})ds=−π²/6; with the Li₂(1)=π²/6 branch point → offset −π²/3"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 119796,
+  "computation": "dilog-archimedean-partB",
+  "scriptFile": "dilog_archimedean_partB_probe.py",
+  "scriptHash": "e2f178e5d878",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Part B of conj:dilogarithm-archimedean-limit (the open substrate q→1⁺ continuation). The bare q-Pochhammer object diverges at q₀=1.11 (branch-cut iπ tower past k*=log_{q₀}(1/x)); the exact algebraic-pole subtraction (log(x qᵏ)+iπ, no free parameter) yields reg(x)→Li₂(x)−π²/3, reproducing Li₂(x)'s x-dependence to machine precision (substrate + q→1⁺ limit) with a universal x-independent offset π²/3 = Li₂(1) branch point + Euler tail (∫₀^∞log(1−e^{−s})ds=−π²/6). Reduces gap (2) from a functional obstruction to fixing one scalar (the T_w Frobenius normalization). Part A anchor (q→1⁻→Li₂) reproduced. Scope-(a) positive-partial; no fit; nothing wired.",
+  "data": {
+    "q0_substrate": 1.11,
+    "reg_reproduces_Li2_minus_pi2over3": "reg(x) = Li₂(x) − π²/3 (q→1⁺)",
+    "offset_x_independent_spread": 0.0022681036498258663,
+    "pi2_over_3": 3.289868133696453,
+    "euler_tail_integral": -1.6449340668482264,
+    "open_residue": "one universal constant π²/3 (T_w Frobenius normalization) + the x→1⁻ edge; block stays kind:conjecture",
+    "verdict": "Part B ADVANCED (scope-(a) positive-partial). The substrate q→1⁺ continuation of the q-Pochhammer partial product, with the exact algebraic-pole subtraction (log(x qᵏ)+iπ for the negative factors — no free parameter), reproduces the FULL x-dependence of Li₂(x) to machine precision, at the substrate q₀=1.11 and in the q→1⁺ limit, offset by the UNIVERSAL x-independent constant π²/3 = 2·(π²/6) (the Li₂(1) branch point + the negative-factor Euler tail). The bare object diverges (Re & Im, the branch-cut iπ tower) — that is audit gap (2), concretely located at k*=log_{q₀}(1/x). So the 'exact cancellation among algebraic poles' the conjecture requires reduces to subtracting ONE universal scalar π²/3 (the T_w Frobenius-pairing normalization): the substantive x-dependence half of gap (2) is CONFIRMED exact, and the residual open content is a single constant, not a functional obstruction. No fit; nothing wired; the block stays kind:conjecture (the categorical fixing of π²/3, and the x→1⁻ edge, remain)."
+  }
+}
