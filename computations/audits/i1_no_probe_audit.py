@@ -64,7 +64,18 @@ from witness_base import WitnessBuilder  # noqa: E402
 
 REPO_ROOT = HERE.parent.parent
 CONTENT_ROOT = REPO_ROOT / "content"
-WITNESS_DIR = HERE
+# Scan the whole computations/ tree, not the audits/ subdirectory this
+# script was relocated into (Phase-2 refactor 2026-06-02): probe
+# witnesses live in computations/probes/ and other cluster subdirs.
+WITNESS_DIR = HERE.parent
+
+# lean.ref package prefix → Lake library root (mirrors
+# folio-assistant/schemas/lean-packages.ts).
+LEAN_PKG_ROOTS = {
+    "qou": CONTENT_ROOT / "quantum-observable-universe" / "lean",
+    "ugb": CONTENT_ROOT / "unital-groebner-bases" / "lean",
+    "fred2005": CONTENT_ROOT / "fred2005-formal-groups" / "lean",
+}
 
 PROVABLE_KINDS = ("theorem", "proposition", "lemma", "corollary")
 
@@ -82,10 +93,12 @@ LEAN_REF_RX = re.compile(
 def _collect_probe_targets() -> dict[str, list[str]]:
     """Walk *.witness.json files; return label → list-of-witness-paths."""
     by_label: dict[str, list[str]] = {}
-    for w in sorted(WITNESS_DIR.glob("*.witness.json")):
+    for w in sorted(WITNESS_DIR.rglob("*.witness.json")):
         try:
             d = json.loads(w.read_text(encoding="utf-8"))
         except (OSError, UnicodeDecodeError, json.JSONDecodeError):
+            continue
+        if not isinstance(d, dict):
             continue
         cb = d.get("contentBlock")
         candidates: list[str] = []
@@ -97,7 +110,8 @@ def _collect_probe_targets() -> dict[str, list[str]]:
             c = c.strip()
             if c and any(c.startswith(p) for p in
                          ("def:", "thm:", "lem:", "prop:", "cor:", "conj:")):
-                by_label.setdefault(c, []).append(w.name)
+                by_label.setdefault(c, []).append(
+                    str(w.relative_to(WITNESS_DIR)))
     return by_label
 
 
@@ -125,14 +139,35 @@ def _classify_block(ts_path: Path,
         "kind": kind,
     }
 
-    # Check the sibling .lean.
+    # Locate the formalisation: sibling .lean first, else the library
+    # tree via the block's lean.ref (the no-shadowing-stubs rule,
+    # 2026-06-14, moved many formalisations out of sibling files —
+    # pipeline resolution candidate 2: <lakeRoot>/<Decl/Path>.lean,
+    # falling back to the parent module file).
     sibling_lean = ts_path.with_suffix(".lean")
     has_sibling = sibling_lean.exists()
+    lean_file: Path | None = sibling_lean if has_sibling else None
+    lean_source = "sibling" if has_sibling else None
+    if lean_file is None:
+        ref_match = LEAN_REF_RX.search(text)
+        if ref_match:
+            pkg_root = LEAN_PKG_ROOTS.get(ref_match.group(1))
+            if pkg_root is not None:
+                segs = ref_match.group(2).split(".")
+                for cand_segs in (segs, segs[:-1]):
+                    if not cand_segs:
+                        continue
+                    cand = pkg_root.joinpath(*cand_segs).with_suffix(".lean")
+                    if cand.exists():
+                        lean_file = cand
+                        lean_source = "library"
+                        break
+    has_lean = lean_file is not None
     sorry_count = 0
     has_class = False
-    if has_sibling:
+    if has_lean:
         try:
-            lean_text = sibling_lean.read_text(encoding="utf-8")
+            lean_text = lean_file.read_text(encoding="utf-8")
         except (OSError, UnicodeDecodeError):
             lean_text = ""
         # Strip block comments for accurate sorry counting.
@@ -143,6 +178,10 @@ def _classify_block(ts_path: Path,
         has_class = bool(re.search(r"^\s*class\s+\w+", stripped, re.MULTILINE))
 
     row["sibling_lean_exists"] = has_sibling
+    row["lean_source"] = lean_source
+    row["lean_path"] = (
+        str(lean_file.relative_to(REPO_ROOT)) if lean_file else None
+    )
     row["sibling_sorry_count"] = sorry_count
     row["sibling_has_class"] = has_class
 
@@ -152,7 +191,7 @@ def _classify_block(ts_path: Path,
     row["probe_witnesses"] = probes[:5]
 
     # Classify.
-    if not has_sibling:
+    if not has_lean:
         row["result"] = "i1_pre_lean"
     elif sorry_count > 0 and not has_class:
         # sorry without class — really needs proof, not a probe

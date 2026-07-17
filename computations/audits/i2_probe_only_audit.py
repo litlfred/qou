@@ -137,6 +137,8 @@ def _audit_witness(path: Path,
         d = json.loads(path.read_text(encoding="utf-8"))
     except (OSError, UnicodeDecodeError, json.JSONDecodeError):
         return None
+    if not isinstance(d, dict):
+        return None
 
     cb = d.get("contentBlock")
     candidates: list[str] = []
@@ -199,8 +201,15 @@ def main() -> int:
     print(f"  {len(upstream_map)} witnesses named as upstream by others")
 
     rows: list[dict[str, Any]] = []
-    for w in sorted(HERE.glob("*.witness.json")):
-        if w.name == "i2-probe-only-audit.witness.json":
+    # Scan the whole computations/ tree, not the audits/ subdirectory
+    # this script was relocated into (Phase-2 refactor 2026-06-02).
+    for w in sorted((HERE.parent).rglob("*.witness.json")):
+        if w.name in (
+            "i2-probe-only-audit.witness.json",
+            "i1-no-probe-audit.witness.json",
+        ):
+            continue
+        if "_deprecated" in w.parts:
             continue
         result = _audit_witness(w, prod_scripts, upstream_map)
         if result is None:
