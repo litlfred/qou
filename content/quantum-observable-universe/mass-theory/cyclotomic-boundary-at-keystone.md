@@ -98,17 +98,19 @@ said is the dovetail with $S(n)=\sum_{\lambda\vdash n}\dim_q(\lambda)=
 $E_8$ marks carries the Verlinde measure $W_\lambda$. Specific root
 magnitudes are not interpreted.
 
-**Partial formalization.** The Lean module
+**Formalization (fully `sorry`-free).** The Lean module
 [`QOU.Mass.CyclotomicBoundaryKeystone`](../lean/QOU/Mass/CyclotomicBoundaryKeystone.lean)
-formalizes what is honestly provable. *Sorry-free:* the Tier-1 base-case
-factorizations $D(4)=\Phi_1^2\Phi_3$ and $D(5)=2\,\Phi_1^2\Phi_2^2\Phi_3\Phi_6$
-(with the factors verified equal to Mathlib's cyclotomic polynomials); the
-palindrome identity $C_6(z)=z^4\,\tilde C(z+z^{-1})$; and the full n = 6
-non-cyclotomicity of the deg-8 core $C_6$ — that $C_6$ is *not* a product of
-cyclotomic polynomials — derived using only the elementary direction of
-Kronecker's dichotomy (roots of cyclotomics are roots of unity, hence of
-modulus 1), *not* the hard converse. The entire n = 6 chain rests on a
-**single** cited classical input: that $\tilde C(y)=y^4+4y^3+2y^2-10y-8$ has a
-non-real root (immediate from $\mathrm{disc}(\tilde C)=-44208<0$; Mathlib lacks
-the discriminant–root-product bridge). The full Tier-2 claim (non-cyclotomic
-for *all* $n\geq 6$) is not formalized — it remains verified-through-$n=11$.
+formalizes, with no `sorry`: the Tier-1 base-case factorizations
+$D(4)=\Phi_1^2\Phi_3$ and $D(5)=2\,\Phi_1^2\Phi_2^2\Phi_3\Phi_6$ (factors verified
+equal to Mathlib's cyclotomic polynomials); the palindrome identity
+$C_6(z)=z^4\,\tilde C(z+z^{-1})$; and the full n = 6 non-cyclotomicity of the deg-8
+core $C_6$ — that $C_6$ is *not* a product of cyclotomic polynomials — using only
+the elementary direction of Kronecker's dichotomy (roots of cyclotomics are roots of
+unity, hence of modulus 1), *not* the hard converse. The one previously-cited
+classical input, that $\tilde C(y)=y^4+4y^3+2y^2-10y-8$ has a non-real root, is now
+**proved outright** by a sum-of-squares certificate: over $\mathbb{C}$, $\tilde C$
+splits into roots $a,b,c,d$; Vieta gives $e_1{=}{-}4,\,e_2{=}2,\,e_3{=}10,\,e_4{=}{-}8$,
+and $\sum_i(1-r_i^2)^2 = -12$ is a Newton identity (`ring`) in the $e_k$ — but were
+all four roots real it would be a sum of real squares $\geq 0$, a contradiction. The
+full Tier-2 claim (non-cyclotomic for *all* $n\geq 6$) is not formalized — it remains
+verified-through-$n=11$.
