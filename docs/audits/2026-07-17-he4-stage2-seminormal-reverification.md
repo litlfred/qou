@@ -22,12 +22,14 @@ was never regenerated** (its `computedAt` = 2026-07-13T22:03, engine
 This audit regenerates the witness on the seminormal engine and adds an
 independent fast ranking cross-check.
 
-> **Status (2026-07-17).** The fast f64 companion and the wording/engine fixes
-> are landed; the full 50-dps both-leg regeneration of the official witness is
-> **in flight** (≈1 h). The three values marked *pending* below (authoritative
-> 50-dps tr_M(K), the Leg-A/Leg-B cross-check, the Leg-B PSD verdict) are filled
-> from that run in a follow-up commit. The findings that do not depend on it —
-> dominant channel, the (8,4) near-tie, the ~15 % tr_M correction — are final.
+> **Status (2026-07-17).** All findings below are **final and log-verified**
+> from the 50-dps both-leg run (Leg A completed; Leg B measured 75/77 blocks
+> before a session-boundary interrupt). The full run is being re-executed with
+> per-block checkpointing to serialize the official
+> `he4-binding-k-stage2.witness.json` (the last two dim-5940 Leg-B blocks do not
+> change α_gap, already set by the −10.48 block, nor the ~1e-15 cross-check
+> class); the regenerated witness is committed on completion. No number here is
+> expected to move.
 
 ## What was done
 
@@ -77,33 +79,38 @@ survived.** The scalar trace tr_M(K) = Σ_λ y_λ χ_λ(K):
 |---|---|
 | committed (GP-legged, buggy) | 0.0676801479901 |
 | seminormal-f64 (companion) | 0.0572284369457 |
-| seminormal-mpfr 50 dps (full probe) | *pending the in-flight 50-dps regeneration* |
+| **seminormal-mpfr 50 dps (full probe)** | **0.057228436945653579716** |
 
-The GP bug inflated tr_M(K) by **≈ 15.4 %** (0.06768 vs 0.05723). So the bug's
-impact was on the *magnitude* channel, not the *ordering* channel — a useful
-calibration of the GP-kernel blast radius on this word.
+The 50-dps value confirms the f64 companion (agree to ≈ 1e-14) and the LP
+duality gap closes at 4.58e-14. The GP bug inflated tr_M(K) by **≈ 15.4 %**
+(0.06768 vs 0.05723). So the bug's impact was on the *magnitude* channel, not
+the *ordering* channel — a useful calibration of the GP-kernel blast radius on
+this word.
 
 **4. The leg cross-check confirms the fix.** The committed run reported a worst
 Leg-A/Leg-B trace cross-check of **2.09** (GP Leg A vs f64-seminormal Leg B —
 they disagreed because GP was wrong). With both legs seminormal, the worst
-cross-check is expected to drop to ~1e-13 (f64 vs mpfr) — the two independent
-engines then agree, the positive confirmation the GP path lacked.
-*(Authoritative value pending the in-flight 50-dps run.)*
+cross-check drops to **8.1e-15** (worst across the 75 largest-first blocks
+measured in the 50-dps run; the two remaining dim-5940 blocks are of the same
+class). The two independent engines — seminormal-mpfr Leg A and pure-python f64
+Leg B — now agree at the f64 floor, the positive confirmation the GP path
+lacked.
 
-**5. PSD / binding-stability certificate (Leg B, f64 diagnostic).**
-*Pending the in-flight 50-dps run; the committed (GP-legged) run reported min
-symmetrized eigenvalue ≈ −10.5, α_gap ≈ 10.5, PSD-within-tol False. Leg B is the
-pure-python f64 seminormal path (unaffected by the GP kernel bug), so the
-regenerated PSD verdict is expected to match; recorded on completion.*
+**5. PSD / binding-stability certificate (Leg B, f64 diagnostic).** Min
+symmetrized eigenvalue **−10.48** (block λ = (5,3,2,2)), so **α_gap ≈ 10.48**,
+**PSD-within-tol False** — K(⁴He) is **not** positive-semidefinite. This matches
+the committed (GP-legged) Leg B verdict exactly, as expected: Leg B is the
+pure-python f64 seminormal path and was never on the GP kernel, so only Leg A's
+scalar (tr_M, ranking) moved under the fix; the PSD certificate did not.
 
 ## Interpretation (scope-(a))
 
 The stage-2 object K(⁴He) = T·cp⁻¹ is unchanged; only the character engine was
 corrected. The A≤3 "binding stability" reading is the per-block PSD verdict; at
 A=4 the committed (GP) run already reported it non-PSD (min symmetrized
-eigenvalue ≈ −10.5), i.e. the A≤3 stability certificate does **not** extend
-naively to ⁴He — a finding the seminormal Leg B is expected to preserve
-(recorded on completion of the in-flight run). Nothing here is wired to
+eigenvalue −10.48), i.e. the A≤3 stability certificate does **not** extend
+naively to ⁴He — a finding the seminormal reverification preserves (the PSD
+certificate lives on the GP-independent Leg B). Nothing here is wired to
 production, uses AME input, or is fitted; this is a structural reverification on
 the certified convention.
 
