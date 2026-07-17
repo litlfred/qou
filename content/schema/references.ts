@@ -4517,6 +4517,62 @@ export const references: CSLData[] = [
       "academic.oup.com/imrn/article-abstract/1995/8/377/644692.",
   }),
 
+  // ── Dimofte–Gaiotto–Gukov 2013 (3-manifolds and 3d indices; DGG flux-sum gluing rule) ──
+  ref({
+    id: "dimofte-gaiotto-gukov2013",
+    type: "article-journal",
+    title: "3-Manifolds and 3d Indices",
+    author: [
+      { family: "Dimofte", given: "Tudor" },
+      { family: "Gaiotto", given: "Davide" },
+      { family: "Gukov", given: "Sergei" },
+    ],
+    issued: { "date-parts": [[2013]] },
+    "container-title": "Advances in Theoretical and Mathematical Physics",
+    volume: "17",
+    issue: "5",
+    page: "975-1076",
+    DOI: "10.4310/ATMP.2013.v17.n5.a3",
+    URL: "https://arxiv.org/abs/1112.5179",
+    note:
+      "arXiv:1112.5179, Adv. Theor. Math. Phys. 17 (2013) 975-1076. Added " +
+      "2026-07-17 from uploads/1112.5179v1.pdf. The DGG 3d-index: the " +
+      "tetrahedron index $I_\\Delta(m,e)$ and the flux-sum gluing rule " +
+      "(§4.3) that assembles the total index of an ideal triangulation as " +
+      "a sum over internal edge-flux integers subject to the gluing " +
+      "equations — the derivation source for the integer Stokes / " +
+      "Donaldson–Thomas data behind the 1ppq $A_\\omega$ target " +
+      "(G3 route, PR #3805/#3826), including the figure-eight m004 example.",
+  }),
+
+  // ── Garoufalidis–Hodgson–Rubinstein–Segerman 2015 (topological invariance of the 3d index) ──
+  ref({
+    id: "garoufalidis-hodgson-rubinstein-segerman2015",
+    type: "article-journal",
+    title:
+      "1-Efficient Triangulations and the Index of a Cusped Hyperbolic 3-Manifold",
+    author: [
+      { family: "Garoufalidis", given: "Stavros" },
+      { family: "Hodgson", given: "Craig D." },
+      { family: "Rubinstein", given: "J. Hyam" },
+      { family: "Segerman", given: "Henry" },
+    ],
+    issued: { "date-parts": [[2015]] },
+    "container-title": "Geometry & Topology",
+    volume: "19",
+    issue: "5",
+    page: "2619-2689",
+    DOI: "10.2140/gt.2015.19.2619",
+    URL: "https://arxiv.org/abs/1303.5278",
+    note:
+      "arXiv:1303.5278, Geom. Topol. 19 (2015) 2619-2689. Added 2026-07-17 " +
+      "from uploads/1303.5278v1.pdf. Promotes the 3d index of an ideal " +
+      "triangulation to a topological invariant of the cusped hyperbolic " +
+      "3-manifold, with the explicit figure-eight m004 single-flux-sum — " +
+      "the concrete m004 gluing computation for the QOU G3 / $A_\\omega$ " +
+      "Stokes-integer route (companion to dimofte-gaiotto-gukov2013).",
+  }),
+
   // ── Fantini–Rella 2024 (modular resurgent structures) ──
   ref({
     id: "fantini-rella2024",
