@@ -46,6 +46,7 @@ import QOU.MathlibExt.OctonionDerivationProperties
 import QOU.HeckeAlgebra
 import QOU.Glossary
 import QOU.Knot.CuspShapeBarParity
+import QOU.Knot.FigureEightDeformedMeridianWinding
 import QOU.Knot.FigureEightSelfDuality
 import QOU.Knot.FigureEightVolume
 import QOU.Knot.FigureEightVolumeLiterature
