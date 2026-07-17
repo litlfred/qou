@@ -81,6 +81,7 @@ import QOU.Mass.BindingQHermiteOscillator
 import QOU.Mass.BindingEigenfunctionTwoTier
 import QOU.Mass.QWeberInterpolation
 import QOU.Mass.PaddedShapeLevelRational
+import QOU.Mass.QPlancherelSubNormalization
 import QOU.Mass.AdditiveCorrectionConfinement
 import QOU.Mass.QBetaProxyHReduction
 import QOU.Mass.RogersSzegoInhabited
