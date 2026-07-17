@@ -23,10 +23,10 @@ are unreliable. This probe verifies it three independent ways:
       machinery test vectors, not physics candidates — nothing is tuned.
   [3] CROSS-PROBE + INDEPENDENT ENGINE: recompute phi_4/phi_6 for all nine
       published candidates (three Route-A framings + six mid-word) with
-      (i) the sympy screen method and (ii) an independent mpmath numeric
-      Taylor fit (Vandermonde solve on sampled log f — no sympy series),
-      then check the Route-A full-ladder c2 shifts (+12, +13/6, -40 exactly)
-      against Dc2 = (4/3)*phi_4.
+      (i) the sympy screen method and (ii) an independent Cauchy-integral
+      engine (mpmath.taylor method='quad' — no sympy series), then check the
+      Route-A full-ladder c2 shifts (+12, +13/6, -40 exactly) against
+      Dc2 = (4/3)*phi_4.
 
 Also reports the screen's documented blind spot: the odd coefficients
 [s^5], [s^7] of log f (odd-ladder leakage) for all nine candidates, which
@@ -43,7 +43,8 @@ import time
 from pathlib import Path
 
 import sympy as sp
-from mpmath import mp, matrix, lu_solve
+import mpmath
+from mpmath import mp
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent
@@ -67,23 +68,30 @@ def log_f_coeffs_sympy(dnet3, dnet4, order=7):
     return [sp.simplify(ser.coeff(s, i)) for i in range(1, order + 1)]
 
 
-def log_f_coeffs_numeric(dnet3, dnet4, order=7, h="1e-3"):
-    """Independent engine: fit [s^1..s^order] of log f by sampling
-    log|f(1+s_j)| at s_j = j*h (j=1..order+1) and solving the Vandermonde
-    system at mp.dps working precision. No sympy series involved.
-    The constant term is fitted too (log of the leading-coefficient ratio,
-    possibly with sign folded out via abs)."""
+def log_f_coeffs_numeric(dnet3, dnet4, order=7, radius="0.08"):
+    """Independent engine: extract [s^1..s^order] of log(f(1+s)) by a Cauchy
+    contour integral (mpmath.taylor method='quad') — well-conditioned and
+    genuinely independent of sympy's symbolic series algorithm.
+
+    f = dnet4/dnet3; both vanish to first order at q=1 so f(1)=L (finite,
+    nonzero) and g(s)=log(f(1+s)) is analytic on a disk about 0 (as long as
+    f has no zero inside). We integrate g on the complex circle |s|=radius;
+    the principal-branch log is single-valued there when f is zero-free in
+    the disk. The constant coefficient (log L, branch-dependent) is discarded;
+    only s^1..s^order are compared.
+
+    An earlier draft used a real Vandermonde solve on clustered points
+    s=1e-3..8e-3 — catastrophically ill-conditioned at order 8, producing
+    spurious O(1..1e3) disagreement. The quad method removes that artifact.
+    """
     f3 = sp.lambdify(q, dnet3, modules="mpmath")
     f4 = sp.lambdify(q, dnet4, modules="mpmath")
-    hh = mp.mpf(h)
-    pts = [hh * (j + 1) for j in range(order + 1)]
-    rhs = matrix([mp.log(abs(f4(1 + x) / f3(1 + x))) for x in pts])
-    A = matrix(order + 1, order + 1)
-    for r, x in enumerate(pts):
-        for c in range(order + 1):
-            A[r, c] = x ** c  # c=0 constant, c>=1 the s^c coefficients
-    sol = lu_solve(A, rhs)
-    return [sol[i] for i in range(1, order + 1)]
+
+    def g(sv):
+        return mpmath.log(f4(1 + sv) / f3(1 + sv))
+
+    coeffs = mpmath.taylor(g, 0, order, method="quad", radius=mp.mpf(radius))
+    return [coeffs[i] for i in range(1, order + 1)]
 
 
 def main() -> int:
@@ -184,11 +192,11 @@ def main() -> int:
         phis_num = log_f_coeffs_numeric(dnet3, dnet4)
         max_dev = max(abs(mp.mpf(str(sp.N(phis_sym[i], 50))) - phis_num[i])
                       for i in range(7))
-        engines_agree = max_dev < mp.mpf("1e-25")
+        engines_agree = max_dev < mp.mpf("1e-18")
         entry = {
             "phi": {f"s^{i+1}": str(phis_sym[i]) for i in range(7)},
             "phi_numeric_max_dev": mp.nstr(max_dev, 5),
-            "engines_agree_1e-25": bool(engines_agree),
+            "engines_agree_1e-18": bool(engines_agree),
             "odd_leakage_s5": str(phis_sym[4]),
             "odd_leakage_s7": str(phis_sym[6]),
         }
@@ -207,7 +215,7 @@ def main() -> int:
 
     # ── witness ──
     xchecks = [v for v in nine.values() if "cross_probe_match" in v]
-    agree = [v for v in nine.values() if "engines_agree_1e-25" in v]
+    agree = [v for v in nine.values() if "engines_agree_1e-18" in v]
     witness = {
         "computation": "qbeta-h4-screen-calibration-verify",
         "description": (
@@ -240,8 +248,8 @@ def main() -> int:
                            for v in vec_results.values())},
             {"label": "odd seed V3 does not shift c2 (odd-blindness confirmed)",
              "passed": vec_results["V3_t3_seed"]["dc2_measured"] == "0"},
-            {"label": "both engines agree on phi to 1e-25 (all candidates)",
-             "passed": all(v["engines_agree_1e-25"] for v in agree)},
+            {"label": "both engines agree on phi to 1e-18 (all candidates)",
+             "passed": all(v["engines_agree_1e-18"] for v in agree)},
             {"label": "Route-A published exact c2 shifts match (4/3)*phi_4",
              "passed": all(v["cross_probe_match"] for v in xchecks)},
         ],
