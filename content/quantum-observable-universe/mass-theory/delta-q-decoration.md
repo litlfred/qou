@@ -9,4 +9,4 @@ $$
   R^{|\,\mathrm{Par}(n)\,|}.
 $$
 
-This :defterm[$q$-dimension layer]{#q-dimension-layer} preserves the crucial per-irrep structure that the Markov trace normally collapses. It provides the high-fidelity projection data required to map force-carrier knots into exact Wedderburn components. For example, it cleanly extracts the $[9]_q$ and $[10]_q$ $q$-dimensions for the Bring torus-knot force carriers directly from the character evaluations.
+The decoration lands in the $q$-dimension layer $R^{|\mathrm{Par}(n)|}$ ([`def:q-dimension-layer`](#def:q-dimension-layer)), the per-irrep coordinate structure that the Markov trace normally collapses.

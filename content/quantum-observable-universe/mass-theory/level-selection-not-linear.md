@@ -3,7 +3,7 @@
 
 **Proof idea.** The tower bound gives $c\,r^{A} \leq w(A) \leq M\cdot A$ for all $A \geq 1$. But a geometric $c\,r^{A}$ with $r > 1$ eventually outgrows any linear $M\cdot A$ — formally $(A) = o(r^{A})$ as $A \to \infty$ — so the inequality cannot hold for all $A$. Dividing the surviving bound by $c$ and taking $\log_r$ shows $k(A) \leq \log_r\!\big((M/c)\,A\big)$, i.e. at most logarithmic growth.
 
-**Why the hypothesis is restricted to $A \geq 1$.** Extensivity is imposed only for $A \geq 1$, the physical regime. The $A = 0$ case is a boundary artifact — the tower bound forces $w(0) \geq c > 0$ while $M \cdot 0 = 0$, an immediate contradiction that has nothing to do with the exponential-versus-linear mechanism. Excluding it ensures the exclusion is the genuine growth argument rather than a degenerate boundary coincidence.
+**Restriction of the hypothesis to $A \geq 1$.** Extensivity is imposed only for $A \geq 1$, the physical regime. The $A = 0$ case is a boundary artifact — the tower bound forces $w(0) \geq c > 0$ while $M \cdot 0 = 0$, an immediate contradiction that has nothing to do with the exponential-versus-linear mechanism. Excluding it ensures the exclusion is the genuine growth argument rather than a degenerate boundary coincidence.
 
 ## Lean structure
 

@@ -24,7 +24,7 @@ export default definition({
   title:
     "$q$-dimension decoration $\\delta_q : H_n(q) \\to R^{|\\mathrm{Par}(n)|}$ of the NF basis",
   uses: ["prop:operator-selection-lp"],
-  defines: ["delta-q-decoration", "q-dimension-layer"],
+  defines: ["delta-q-decoration"],
   computation: {
     engine: "python",
     script: "computations/delta_q_decoration.py",

@@ -261,6 +261,7 @@ export default chapter({
           label: "sec:hoefsmit-he4-magic-a-binding",
           blocks: [
             "two-row-stratum",
+            "two-row-projection",
             "he4-channel-active-set",
             "he4-two-row-dominance",
             // Ledger §5 orphan integration (2026-07-12): LR-fusion support
@@ -328,6 +329,7 @@ export default chapter({
             "substrate-cohomology-calibration-story",
             "electron-period-base",
             "electron-period-base-proof",
+            "electron-period-base-cohomology",
             "calibration-cohomology-alignment",
             "calibration-cohomology-alignment-proof",
             "bar-parity-split",
@@ -829,6 +831,7 @@ export default chapter({
         "spectral-sequence-collapse",
         "spectral-sequence-collapse-proof",
         "delta-q-decoration",
+        "q-dimension-layer",
         "alpha-basis-knot-delta-q",
         "torus-knot-delta-q-writhe",
         "force-carrier-intertwining-correspondence",
