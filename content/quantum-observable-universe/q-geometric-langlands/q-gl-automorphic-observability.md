@@ -19,6 +19,6 @@ quantum-corrected gauge/matter duality, with the classical
 Langlands programme recovered in the semiclassical limit
 $\hbar_q \to 0$.
 
-**Takeaway.** Observability is exactly what makes the
+**Uniqueness from observability.** Observability is exactly what makes the
 $q$-Langlands equivalence unique — there is one dual pairing
 between gauge and matter, and it is forced, not chosen.

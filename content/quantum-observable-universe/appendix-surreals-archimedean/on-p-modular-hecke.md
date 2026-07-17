@@ -191,8 +191,3 @@ suggesting a different combinatorial replacement is needed.
 for $p = 2, n = 3$ is feasible by hand — a matter of weeks.
 General Layer 2 requires Kazhdan–Lusztig cell theory, a
 substantial multi-year project.
-
-**Significance**: even verifying the smallest case ($p = 2,
-n = 3$) would be the first explicit connection between Hecke
-combinatorics and nim-arithmetic, opening a door to a much
-larger program.

@@ -26,7 +26,7 @@ $$
 | $\mathrm{H_2Se}$ | $4$ | $90.97^\circ$ | $91.0^\circ$ |
 | $\mathrm{H_2Te}$ | $5$ | $90.54^\circ$ | $90.0^\circ$ |
 
-$\mathrm{H_2S}$ and $\mathrm{H_2Se}$ match the observation within $0.1^\circ$. The coefficient is the Bring (quintic) constant $1/\sqrt5$. This reflects the $S^3$-embedding chiral curvature surfacing as the quintic $\sqrt5$ of Bring's surface. The size dependence is inverse-square in the $s$–$p$ gap. The concrete content of the conjecture is that the chiral residue is the $1/\sqrt5$ Bring curvature, inverse-square in central-atom size. This is a Bring-grounded near-match constrained by two data points. The exact $\zeta_\ell$ monodromy remains the formal target.
+$\mathrm{H_2S}$ and $\mathrm{H_2Se}$ match the observation within $0.1^\circ$. The coefficient is the Bring (quintic) constant $1/\sqrt5$, the $S^3$-embedding chiral curvature surfacing as the quintic $\sqrt5$ of Bring's surface. The size dependence is inverse-square in the $s$–$p$ gap. The concrete content of the conjecture is that the chiral residue is the $1/\sqrt5$ Bring curvature, inverse-square in central-atom size. This is a Bring-grounded near-match constrained by two data points. The exact $\zeta_\ell$ monodromy remains the formal target.
 
 The explicit geometry of this $\sqrt5$ is the provable scaffold [`prop:bring-trefoil-cinquefoil-channel`](../brings-surface/bring-trefoil-cinquefoil-channel.md): the chiral channel is the trefoil $T_{2,3}$ (Seifert genus $1$) and the $\zeta_5$ is the cinquefoil $T_{2,5}$ (genus $2$). These are distinct torus knots sharing Bring's $\Sigma_4$ (genus $4$) and linked by $\mathrm{Aut}(B) = S_5$.
 
