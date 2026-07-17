@@ -1,0 +1,433 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-17T20:25:29.955068+00:00",
+  "commitSha": "d3d2b343425b9b7597e078e88b66dc186d0c729b",
+  "assertions": [
+    {
+      "name": "reproduces_probeA_perparity_pass_and_40pct_split",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "Method A (imported Probe-A machinery) reproduces Probe A arm 3 on the same exact d_k: both parities gate-PASS, |rho_odd/rho_even-1| = 0.4038 (Probe A reported 0.404)"
+    },
+    {
+      "name": "reproduces_probeB_parity_unresolved_0of9",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "Method B (imported Probe-B machinery) reproduces Probe B arm 3: gate passes odd 0/9, even 0/9 (Probe B reported 0/9 both)"
+    },
+    {
+      "name": "C4a_conformal_gate_seed_invariant_not_self_referential",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "ADVERSARIAL: the located singularity is invariant to the conformal-iterate seed — max seed-sensitivity across {0.5,1,1.5,2}xrho_rt = 2.6453e-13 (< 0.1); the gate is NOT an artifact of seeding at the root-test radius"
+    },
+    {
+      "name": "C3_methodA_real_radii_stable_across_orders_margins_truncation",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "Method A real per-parity rho_zeta max rel spread = 0.10215 (< 0.15)"
+    },
+    {
+      "name": "C4b_flip_localizes_to_conformal_map",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "raw dlog-Padé at Method A's OWN per-parity s* FAILS both parities (odd gap 0.5095015117367749, even gap 0.47944637984705585) while the conformal estimator passes — the PASS/FAIL discrepancy is driven by the conformal map (Probe B's raw-Padé low bias)"
+    },
+    {
+      "name": "exact_dk_over_determination_zero",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "exact D-ladder built at ORD 43 with zero over-determination"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 17,
+  "computation": "qbeta-dladder-parity-adjudication",
+  "scriptFile": "qbeta_dladder_parity_adjudication_probe.py",
+  "scriptHash": "390accd0a894",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Adjudication of the parity-split discrepancy between the two D-ladder acceleration probes on PR #3818 (bean qou-ffxw). Runs BOTH methods on the same exact d_k: Probe A (per-parity slope-zero s*, conformal dlog-Padé, gap-only gate, seeded at root-test radius) vs Probe B (shared fixed s-grid, raw dlog-Padé, gap+spread gate). Adversarial controls: C1 (single-singularity, no parity structure → does A falsely split 40% apart?), C2 (known two-structure → is B merely underpowered?), C3 (stability of A's real radii across orders/margins/truncation), C4a (seed-sensitivity — is A's gate self-referential?), C4b/C4c (ingredient swaps: raw-Padé at A's s*; conformal on B's grid). Pre-stated decision rule selects A-artifact / B-underpowered / both-consistent-different-questions / undecidable-at-k21. Scope-(a): nothing wired, no fit, no tier change; both probes' machinery imported not reimplemented.",
+  "contentBlock": "prop:phi-b-unitary-bar-odd",
+  "parameters": {
+    "KMAX": 21,
+    "gate_tolerance": 0.15,
+    "spurious_split_tol_C1": 0.2,
+    "stability_tol_C3": 0.15,
+    "seed_sensitivity_tol_C4a": 0.1
+  },
+  "data": {
+    "verdict_key": "undecidable-at-k21",
+    "verdict": "UNDECIDABLE at k=21 — but with the adversarial worry PARTLY DISMISSED and the flip DIAGNOSED. (i) The 'Probe A gate is self-referential because the conformal iterate is seeded at the root-test radius' hypothesis is REFUTED: C4a finds the located singularity seed-invariant to ~1e-13 across {0.5,1,1.5,2}xrho_rt — the fixed point is genuine, not the seed. (ii) Method A's real per-parity radii are STABLE across orders/margins/truncation (C3, spread ≤ ~0.10). (iii) The PASS↔FAIL discrepancy is LOCALIZED to the conformal map: C4b shows that with the conformal map removed (raw dlog-Padé at Method A's OWN per-parity s*) the gate fails both parities, raw Padé sitting ~2x below the root-test radius — exactly Probe B's 'branch-cut-biased-low' signature; C4c shows the conformal estimator still passes on Probe B's shared grid, so per-parity-s* is secondary. What the controls CANNOT do at this length is CERTIFY the 40%-split as real ℤ/2 structure: the synthetic controls are convergent while the real ladder is divergent, and on same-length convergent branch points Method A's short-series conformal estimator is biased high (C1a ~30%) and fails to recover planted distinct parity singularities (C2). So neither 'A-artifact' nor 'A-real-structure' is established at k=21: Probe B's 'unresolved' is the raw-Padé low bias, Probe A's 'per-parity pass' is the conformal cure — but the located values are not certifiable to 40% at ~10–11 coeffs. Defer to the ORD-63 / k≈31 extension terms (both methods' machinery is order-agnostic — rerun with argv 63); the specific thing the new terms must settle is whether the odd/even radii stay 40% apart or converge.",
+    "decision_flags": {
+      "C1_methodA_spurious_split": false,
+      "C3_methodA_radii_wander": false,
+      "C3_max_rel_spread": "0.10215",
+      "C4a_gate_self_referential": false,
+      "C4a_max_seed_sensitivity": "2.6453e-13",
+      "C2_B_fails_two_structure": false,
+      "C2_A_resolves_two_structure": false,
+      "C2_A_near_truth": false,
+      "swaps_localize_to_conformal_and_perparity_s": true,
+      "B_underpowered_conditions_met": false
+    },
+    "results": {
+      "real_methodA": {
+        "odd": {
+          "s_star": "0.0346305",
+          "rho_rt_w": "0.02545922",
+          "rho_dlog_w": "0.022984364",
+          "rho_zeta": "0.15160595",
+          "gap": "0.09721",
+          "n_conv": 3,
+          "gate": true,
+          "details": {
+            "[3/3],mu=1.5": {
+              "A": "0.02276482988",
+              "iters": 37
+            },
+            "[4/4],mu=2.0": {
+              "A": "0.02308149318",
+              "iters": 35
+            },
+            "[4/5],mu=1.5": {
+              "A": "0.02310677018",
+              "iters": 35
+            }
+          }
+        },
+        "even": {
+          "s_star": "0.46473",
+          "rho_rt_w": "0.057147132",
+          "rho_dlog_w": "0.064668179",
+          "rho_zeta": "0.25429939",
+          "gap": "0.1316",
+          "n_conv": 2,
+          "gate": true,
+          "details": {
+            "[3/3],mu=1.5": {
+              "A": "0.0681406698",
+              "iters": 35
+            },
+            "[4/4],mu=2.0": {
+              "A": "0.06119568737",
+              "iters": 36
+            }
+          }
+        }
+      },
+      "real_methodB": {
+        "odd": {
+          "n_gate_pass": 0,
+          "n_terms": 11
+        },
+        "even": {
+          "n_gate_pass": 0,
+          "n_terms": 10
+        }
+      },
+      "real_methodA_split_gap": "0.403829",
+      "C1_single_no_parity": {
+        "C1a_rho0.5_alpha0.5": {
+          "true_rho_zeta": "0.5",
+          "odd_rho_zeta": "0.64280589",
+          "odd_gate": true,
+          "even_rho_zeta": "0.77144532",
+          "even_gate": false,
+          "split_gap": "0.1668",
+          "both_gate_pass": false,
+          "spurious_split": false
+        },
+        "C1b_rho0.5_alpha1.5": {
+          "true_rho_zeta": "0.5",
+          "odd_rho_zeta": "0.49999149",
+          "odd_gate": false,
+          "even_rho_zeta": "0.49988267",
+          "even_gate": false,
+          "split_gap": "0.0002177",
+          "both_gate_pass": false,
+          "spurious_split": false
+        }
+      },
+      "C2_two_structure": {
+        "known_rho_zeta_odd": "0.1516",
+        "known_rho_zeta_even": "0.2543",
+        "methodA": {
+          "odd": {
+            "s_star": "0.226677",
+            "rho_rt_w": "0.038086083",
+            "rho_dlog_w": "0.04435452",
+            "rho_zeta": "0.21060513",
+            "gap": "0.1646",
+            "n_conv": 3,
+            "gate": false,
+            "details": {
+              "[3/3],mu=1.5": {
+                "A": "0.04364759146",
+                "iters": 32
+              },
+              "[4/4],mu=2.0": {
+                "A": "0.04447116247",
+                "iters": 35
+              },
+              "[4/5],mu=1.5": {
+                "A": "0.04494480625",
+                "iters": 35
+              }
+            }
+          },
+          "even": {
+            "s_star": "0.226677",
+            "rho_rt_w": "0.10716689",
+            "rho_dlog_w": "0.12848278",
+            "rho_zeta": "0.35844494",
+            "gap": "0.1989",
+            "n_conv": 2,
+            "gate": false,
+            "details": {
+              "[3/3],mu=1.5": {
+                "A": "0.1279770054",
+                "iters": 33
+              },
+              "[4/4],mu=2.0": {
+                "A": "0.1289885486",
+                "iters": 35
+              }
+            }
+          }
+        },
+        "methodB": {
+          "odd": {
+            "n_gate_pass": 0
+          },
+          "even": {
+            "n_gate_pass": 4
+          }
+        },
+        "B_fails_to_resolve": false,
+        "A_resolves": false,
+        "A_near_truth": false
+      },
+      "C3_stability": {
+        "odd": {
+          "n_variants_converged": 11,
+          "rho_zeta_mean": "0.15030699",
+          "rho_zeta_rel_spread": "0.031273",
+          "variants": {
+            "drop0_[3/3]mu1.5": {
+              "rho_zeta": "0.15088018",
+              "gap": "0.1058"
+            },
+            "drop0_[3/3]mu2.0": {
+              "rho_zeta": "0.15152137",
+              "gap": "0.09822"
+            },
+            "drop0_[4/4]mu1.5": {
+              "rho_zeta": "0.15194154",
+              "gap": "0.09321"
+            },
+            "drop0_[4/4]mu2.0": {
+              "rho_zeta": "0.15192595",
+              "gap": "0.09339"
+            },
+            "drop0_[4/5]mu1.5": {
+              "rho_zeta": "0.15200911",
+              "gap": "0.0924"
+            },
+            "drop1_[3/3]mu1.5": {
+              "rho_zeta": "0.1493061",
+              "gap": "0.1191"
+            },
+            "drop1_[3/3]mu2.0": {
+              "rho_zeta": "0.15000012",
+              "gap": "0.1109"
+            },
+            "drop1_[4/4]mu1.5": {
+              "rho_zeta": "0.1501767",
+              "gap": "0.1088"
+            },
+            "drop1_[4/4]mu2.0": {
+              "rho_zeta": "0.15023761",
+              "gap": "0.1081"
+            },
+            "drop1_[4/5]mu1.5": {
+              "rho_zeta": null,
+              "note": "no conv"
+            },
+            "drop2_[3/3]mu1.5": {
+              "rho_zeta": "0.14730855",
+              "gap": "0.1353"
+            },
+            "drop2_[3/3]mu2.0": {
+              "rho_zeta": "0.14806962",
+              "gap": "0.1264"
+            },
+            "drop2_[4/4]mu1.5": {
+              "rho_zeta": null,
+              "note": "no conv"
+            },
+            "drop2_[4/4]mu2.0": {
+              "rho_zeta": null,
+              "note": "no conv"
+            },
+            "drop2_[4/5]mu1.5": {
+              "rho_zeta": null,
+              "note": "no conv"
+            }
+          }
+        },
+        "even": {
+          "n_variants_converged": 8,
+          "rho_zeta_mean": "0.26182881",
+          "rho_zeta_rel_spread": "0.10215",
+          "variants": {
+            "drop0_[3/3]mu1.5": {
+              "rho_zeta": "0.26103768",
+              "gap": "0.1924"
+            },
+            "drop0_[3/3]mu2.0": {
+              "rho_zeta": "0.26097543",
+              "gap": "0.1918"
+            },
+            "drop0_[4/4]mu1.5": {
+              "rho_zeta": "0.24625627",
+              "gap": "0.06116"
+            },
+            "drop0_[4/4]mu2.0": {
+              "rho_zeta": "0.24737762",
+              "gap": "0.07084"
+            },
+            "drop0_[4/5]mu1.5": {
+              "rho_zeta": null,
+              "note": "no conv"
+            },
+            "drop1_[3/3]mu1.5": {
+              "rho_zeta": "0.26661136",
+              "gap": "0.2215"
+            },
+            "drop1_[3/3]mu2.0": {
+              "rho_zeta": "0.26668715",
+              "gap": "0.2222"
+            },
+            "drop1_[4/4]mu1.5": {
+              "rho_zeta": null,
+              "note": "no conv"
+            },
+            "drop1_[4/4]mu2.0": {
+              "rho_zeta": null,
+              "note": "no conv"
+            },
+            "drop1_[4/5]mu1.5": {
+              "rho_zeta": null,
+              "note": "no conv"
+            },
+            "drop2_[3/3]mu1.5": {
+              "rho_zeta": "0.27268327",
+              "gap": "0.2501"
+            },
+            "drop2_[3/3]mu2.0": {
+              "rho_zeta": "0.27300168",
+              "gap": "0.253"
+            },
+            "drop2_[4/4]mu1.5": {
+              "rho_zeta": null,
+              "note": "no conv"
+            },
+            "drop2_[4/4]mu2.0": {
+              "rho_zeta": null,
+              "note": "no conv"
+            },
+            "drop2_[4/5]mu1.5": {
+              "rho_zeta": null,
+              "note": "no conv"
+            }
+          }
+        }
+      },
+      "C4a_seed_sensitivity": {
+        "odd": {
+          "located_rho_dlog_w_by_seed": {
+            "seed0.5xrho_rt": "0.022984364",
+            "seed1.0xrho_rt": "0.022984364",
+            "seed1.5xrho_rt": "0.022984364",
+            "seed2.0xrho_rt": "0.022984364"
+          },
+          "seed_sensitivity_rel_spread": "3.3497e-14"
+        },
+        "even": {
+          "located_rho_dlog_w_by_seed": {
+            "seed0.5xrho_rt": "0.064668179",
+            "seed1.0xrho_rt": "0.064668179",
+            "seed1.5xrho_rt": "0.064668179",
+            "seed2.0xrho_rt": "0.064668179"
+          },
+          "seed_sensitivity_rel_spread": "2.6453e-13"
+        }
+      },
+      "C4b_raw_pade_at_perparity_sstar": {
+        "odd": {
+          "s_star": "0.0346305",
+          "raw_rho_pade_w": 0.012386893338767307,
+          "rho_root_w": 0.025253683008539477,
+          "raw_gap": 0.5095015117367749,
+          "spread": 0.05334552857988128,
+          "raw_gate_pass": false
+        },
+        "even": {
+          "s_star": "0.46473",
+          "raw_rho_pade_w": 0.030435844770715564,
+          "rho_root_w": 0.05846822227799164,
+          "raw_gap": 0.47944637984705585,
+          "spread": 0.0661070867451362,
+          "raw_gate_pass": false
+        }
+      },
+      "C4c_conformal_on_shared_grid": {
+        "odd": {
+          "n_gate_pass_on_shared_grid": 4,
+          "best": [
+            0.1,
+            0.032988930687121276,
+            "0.16929038"
+          ]
+        },
+        "even": {
+          "n_gate_pass_on_shared_grid": 2,
+          "best": [
+            0.4,
+            0.04913804286901936,
+            "0.23466899"
+          ]
+        }
+      }
+    }
+  },
+  "caveats": [
+    "k=21 adjudication (ORD 43). The verdict concerns RESOLUTION POWER at the committed order, not the existence of a resurgent structure. Rerun on the ORD-63 / k≈31 extension terms when they land (both methods' machinery is order-agnostic).",
+    "Controls are synthetic (branch-point / two-structure series). They calibrate each method's false-positive (C1) and false-negative (C2) behaviour at the real length; they are not the physical D-ladder."
+  ]
+}
