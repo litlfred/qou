@@ -1,0 +1,205 @@
+{
+  "schema": "witness/v1",
+  "witness": {
+    "id": "mu-p-pin-sensitivity-map",
+    "scriptHash": "ed0b39e09a48",
+    "scriptCommitSha": "uncommitted",
+    "producer": "computations/mu_p_pin_sensitivity_map.py",
+    "description": "Relative pin-sensitivity S(O)=dlogO/dlogq of the canonical mass chain. Localizes the 11.5 ppb μ–p tension in the absolute muon anchor ℏ_q²; F_Bor/W_λ/mass-ratios are pin-robust."
+  },
+  "data": {
+    "pin_gap_ppb": 11.5,
+    "S_mmu_exact": "-2/(q-1)",
+    "S_hbar_sq_exact": "2/(q-1)",
+    "proton_pin": {
+      "q0": "1.1099785827513808076",
+      "rows": [
+        {
+          "observable": "hbar_q = (q-1)/q",
+          "value": "0.099081716044258507839",
+          "S_dlogO_dlogq": "9.092679456150245",
+          "exact_S": "9.092679456150245"
+        },
+        {
+          "observable": "hbar_q^2",
+          "value": "0.0098171864542750738106",
+          "S_dlogO_dlogq": "18.18535891230049",
+          "exact_S": "18.18535891230049"
+        },
+        {
+          "observable": "Vol(4_1) [const]",
+          "value": "2.02988321281930725",
+          "S_dlogO_dlogq": "-2.289886364452372e-40",
+          "exact_S": "0.0"
+        },
+        {
+          "observable": "m_mu  [ABS anchor]",
+          "value": "105.65839781134181577",
+          "S_dlogO_dlogq": "-18.18535891230049",
+          "exact_S": "-18.18535891230049"
+        },
+        {
+          "observable": "F_Bor [ratio]",
+          "value": "4.4691387357675225294",
+          "S_dlogO_dlogq": "-2.675293693735074",
+          "exact_S": null
+        },
+        {
+          "observable": "|tr_M(B_Bor)|",
+          "value": "0.99856216383678726595",
+          "S_dlogO_dlogq": "-0.05549871684357912",
+          "exact_S": null
+        },
+        {
+          "observable": "[3]_q!",
+          "value": "6.1205792779150634615",
+          "S_dlogO_dlogq": "0.3802050231085049",
+          "exact_S": null
+        },
+        {
+          "observable": "m_p   [ABS]",
+          "value": "938.27208942732426373",
+          "S_dlogO_dlogq": "-20.99698540389891",
+          "exact_S": null
+        },
+        {
+          "observable": "m_n   [ABS]",
+          "value": "939.56542278829210389",
+          "S_dlogO_dlogq": "-20.97027444794459",
+          "exact_S": null
+        },
+        {
+          "observable": "Q_beta",
+          "value": "0.7823344102778401514",
+          "S_dlogO_dlogq": "-2.632392300867564",
+          "exact_S": null
+        },
+        {
+          "observable": "W_lambda(mark=5)",
+          "value": "0.21052052622686465485",
+          "S_dlogO_dlogq": "0.1851523309757592",
+          "exact_S": null
+        },
+        {
+          "observable": "W_lambda(mark=2)",
+          "value": "0.031236301943417778552",
+          "S_dlogO_dlogq": "-1.245664142539188",
+          "exact_S": null
+        },
+        {
+          "observable": "m_p/m_mu [RATIO]",
+          "value": "8.8802415034028293832",
+          "S_dlogO_dlogq": "-2.811626491598419",
+          "exact_S": null
+        },
+        {
+          "observable": "m_n/m_p [RATIO]",
+          "value": "1.0013784203703184095",
+          "S_dlogO_dlogq": "0.02671095595431786",
+          "exact_S": null
+        },
+        {
+          "observable": "m_mu/m_e [RATIO]",
+          "value": "206.76832637067389029",
+          "S_dlogO_dlogq": "-18.18535891230049",
+          "exact_S": null
+        }
+      ]
+    },
+    "muon_pin": {
+      "q0": "1.1099785955573347",
+      "rows": [
+        {
+          "observable": "hbar_q = (q-1)/q",
+          "value": "0.09908172643825894293",
+          "S_dlogO_dlogq": "9.092678397394828",
+          "exact_S": "9.092678397394828"
+        },
+        {
+          "observable": "hbar_q^2",
+          "value": "0.009817188513985981193",
+          "S_dlogO_dlogq": "18.18535679478966",
+          "exact_S": "18.18535679478966"
+        },
+        {
+          "observable": "Vol(4_1) [const]",
+          "value": "2.02988321281930725",
+          "S_dlogO_dlogq": "-2.289886364452372e-40",
+          "exact_S": "0.0"
+        },
+        {
+          "observable": "m_mu  [ABS anchor]",
+          "value": "105.65837564351300016",
+          "S_dlogO_dlogq": "-18.18535679478966",
+          "exact_S": "-18.18535679478966"
+        },
+        {
+          "observable": "F_Bor [ratio]",
+          "value": "4.4691385978267587957",
+          "S_dlogO_dlogq": "-2.675293670860136",
+          "exact_S": null
+        },
+        {
+          "observable": "|tr_M(B_Bor)|",
+          "value": "0.99856216319741255675",
+          "S_dlogO_dlogq": "-0.05549873548720992",
+          "exact_S": null
+        },
+        {
+          "observable": "[3]_q!",
+          "value": "6.1205793047628035494",
+          "S_dlogO_dlogq": "0.3802050646270735",
+          "exact_S": null
+        },
+        {
+          "observable": "m_p   [ABS]",
+          "value": "938.2718621359253061",
+          "S_dlogO_dlogq": "-20.99698328255075",
+          "exact_S": null
+        },
+        {
+          "observable": "m_n   [ABS]",
+          "value": "939.56519547313347804",
+          "S_dlogO_dlogq": "-20.97027232353373",
+          "exact_S": null
+        },
+        {
+          "observable": "Q_beta",
+          "value": "0.78233438651817193532",
+          "S_dlogO_dlogq": "-2.63239231908671",
+          "exact_S": null
+        },
+        {
+          "observable": "W_lambda(mark=5)",
+          "value": "0.21052052667656267965",
+          "S_dlogO_dlogq": "0.1851523449794848",
+          "exact_S": null
+        },
+        {
+          "observable": "W_lambda(mark=2)",
+          "value": "0.031236301494509175466",
+          "S_dlogO_dlogq": "-1.24566428028975",
+          "exact_S": null
+        },
+        {
+          "observable": "m_p/m_mu [RATIO]",
+          "value": "8.8802412153449704242",
+          "S_dlogO_dlogq": "-2.811626487761091",
+          "exact_S": null
+        },
+        {
+          "observable": "m_n/m_p [RATIO]",
+          "value": "1.0013784206789106606",
+          "S_dlogO_dlogq": "0.02671095901701622",
+          "exact_S": null
+        },
+        {
+          "observable": "m_mu/m_e [RATIO]",
+          "value": "206.76828298931511123",
+          "S_dlogO_dlogq": "-18.18535679478966",
+          "exact_S": null
+        }
+      ]
+    }
+  }
+}
