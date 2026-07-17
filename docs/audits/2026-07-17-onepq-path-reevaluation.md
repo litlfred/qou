@@ -1,9 +1,54 @@
 # Path to 1 ppq — re-evaluation after the 2026-07-11…17 week
 
 **Date:** 2026-07-17 · **Tier:** strategic re-evaluation (survey of main landings +
-active siblings; no new compute). **Supersedes the ranked-lever section of**
+active siblings). **Supersedes the ranked-lever section of**
 [`2026-07-11-path-to-1ppq-alpha-em-opportunity.md`](2026-07-11-path-to-1ppq-alpha-em-opportunity.md)
 (landed `60158ad0`). **No c_k wired; scope-(a); critical-distance.**
+
+> **Coordination (2026-07-17): the general reassessment here is superseded by the
+> merged parallel audit
+> [`2026-07-17-1ppq-path-reassessment.md`](2026-07-17-1ppq-path-reassessment.md)
+> (`6a529aa744`)**, which is more complete — it adds **L1 CLOSED (6/6 atoms
+> 1ppQ-certified, ⁴He 07-13)**, and supersedes any raw-ratio Borel-`A` reading with
+> the **conformal-mapped Borel plane `A ≈ 0.646–0.657 vs Vol(4₁)/π = 0.6461`
+> (Vol/π *back in play*, "consistent not identified")**, with the derived-Stokes
+> route now the **GGM 3d-index counts (G3), under active attack on #3805**. **Lever 1
+> (the odd-channel Stokes datum) is that line's — this session does not duplicate
+> it.** The distinctive, non-duplicated contribution retained here is the **§Lever-2
+> re-scope** below (the α_EM per-loop measure channel-split), which the parallel
+> audit names as a wall but does not re-scope. The lever ranking in §"Re-ranked path"
+> stays as an independent second read; where the two audits differ on lever 1, defer
+> to `6a529aa744` (L1 closure + conformal Borel are firmer).
+
+## Lever-2 advance (this session): the α_EM per-loop measure is the standard loop unit, not a Betti factor
+
+The 2-loop derivability map isolated one underived factor: the per-loop measure
+`1/(πb₁) = 1/(8π)`, labeled "parallel to the zero-mode `1/(π·dim H¹)`" but shown
+inconsistent (the proved `1/Area = 1/(12π)` fails at 1-loop by −1419 ppb). This
+session **re-scopes that wall structurally** (probe
+[`alpha_em_channel_split_loop_measure_probe.py`](../../computations/alpha_em_channel_split_loop_measure_probe.py),
+all steps symbolically verified):
+
+1. **The loop tower factors into the two braiding channels** (re-verified to
+   `O(x¹²)`, sympy): `Σ_{L≥0}(−1)^L[L+1]_q x^L = 1/((1+qx)(1+q⁻¹x))` — the two
+   Hecke eigenchannels `q`, `−q⁻¹` of `A⊗A` (singlet/adjoint idempotents), each a
+   geometric series with per-loop ratio `q^{±1}x`.
+2. **At `q→1` with `x = α/(8π)` the one-loop term is exactly `α/(4π)`** — the
+   *standard 4D gauge-theory loop unit*, carried jointly by the two channels
+   (each `α/(8π)`).
+3. **Therefore `1/(8π) = ½·(1/(4π))` structurally**, and the `π·b₁` form is a
+   **genus-4 coincidence**: `π·b₁ = 2·(4π) ⟺ b₁ = 8 = 2g`. The structural constant
+   is `2×4π` (two channels × loop unit), **not** `π·(Betti number)`.
+
+**Honest tier — a re-scope, not a closure.** The underived *geometric*
+identification `1/(π·dim H¹)` is replaced by **(derived two-channel factorization)
++ (one input: the `q→1` correspondence normalization = the standard gauge loop unit
+`α/(4π)`)**. That input is standard-QFT, not a new geometric claim — but it *is*
+still an input. **Discriminant:** the channel-split predicts a **genus-independent**
+measure (`2×4π` always); the `π·b₁` reading scales with genus. Not separable at fixed
+`g=4` by data, but decisive for any multi-genus construction and consistent with the
+derivability map's own finding that the `b₁`-parallel is unsound. Numerics unchanged
+(form-B proton residual `+0.313 ppb = 2.1σ`). No coefficient fitted.
 
 ## Headline
 
