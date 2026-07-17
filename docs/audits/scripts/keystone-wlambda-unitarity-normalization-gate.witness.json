@@ -3,12 +3,12 @@
   "description": "Observable-side reduction of the W_\u03bb geometric wall: W_\u03bb=d_q\u00b2/[n]_q! is sub-normalized (\u03a3_\u03bb W_\u03bb=Z(q)<1 at q\u22601, Z(1)=1 RSK/Burnside, n=5 Z=0.98222). A unitary modular S-matrix has \u03a3W=1 \u21d2 compact/unitary realization excluded by normalization; the geometric object must be non-unitary with defect Z(q). Complements the fibre-\u03b6 colored-LR modulus spec. No q\u2080 derivation; nothing wired.",
   "auditOnly": "docs/audits/2026-07-17-keystone-wlambda-unitarity-normalization-gate.md",
   "tier": "symbolic-exact (sympy; q-symbolic identity + RSK/Burnside q=1 anchor)",
-  "computedAt": "2026-07-17T20:15:30.730432+00:00",
-  "commitSha": "0b4ed888d43cef2bdd5605b40e9d6b8038f572a7",
+  "computedAt": "2026-07-17T20:51:13.543576+00:00",
+  "commitSha": "08a8e14b695cae15be681ed3d98c370ca9e221e8",
   "engine": "sympy",
   "engineVersion": "1.14.0",
   "scriptFile": "keystone_wlambda_unitarity_normalization_gate_probe.py",
-  "scriptHash": "84b732434cd8",
+  "scriptHash": "6e216f59f35c",
   "assertions": [
     {
       "name": "Z_equals_one_at_q1_rsk_burnside",
@@ -29,6 +29,11 @@
       "name": "unitarity_gate_excludes_compact_modular",
       "passed": true,
       "detail": "exact gate \u03a3_\u03bb d_q\u00b2 = Z(q)\u00b7[n]_q! with Z\u22601 (q\u22601) \u21d2 a unitary modular vacuum row (\u03a3W=1) CANNOT equal W_\u03bb at q\u22601 \u21d2 the geometric realization must be NON-unitary (reinforces the non-compact q-Bessel redirect); complements the fibre-\u03b6 modulus spec"
+    },
+    {
+      "name": "normalization_continuation_trivial_Z_rational",
+      "passed": true,
+      "detail": "Z(q)=\u03a3d_q\u00b2/[n]_q! is a RATIONAL function of q (n=2..5; e.g. n=2: 2q/(q\u00b2+1)) \u21d2 the fibre\u2192archimedean CONTINUATION of the W_\u03bb normalization is trivial (continues everywhere bar poles). So the 'continuation wall' is NOT separate: its substance is entirely the non-rational AMPLITUDE = the LR-modulus front. C's remaining pieces are the amplitude compute + a q\u2080-fixing categorical condition (numerology-gated), not a distinct continuation problem"
     }
   ],
   "allPassed": true,

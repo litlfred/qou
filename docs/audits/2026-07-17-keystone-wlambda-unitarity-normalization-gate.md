@@ -50,6 +50,25 @@ vacuum row (q₀-dependent, non-unitary), the corpus's current geometric target.
   observable q₀ (full, untruncated λ, non-unitary). The two are the two faces of the fibre→archimedean
   passage — the realization must be unitary-at-ζ **and** carry the `Z(q₀)` defect at q₀.
 
+## Corollary — the "continuation wall" is not separate; it *is* the amplitude
+
+The other named wall of C is the **fibre→archimedean continuation** (passing the object from the
+fibre roots of unity ζ to the observable q₀). This audit's normalization decomposes it cleanly:
+
+- **The normalization leg continues trivially.** `Z(q) = Σ_λ d_q(λ)²/[n]_q!` is a **rational
+  function of q** (verified n=2..5; e.g. `n=2: 2q/(q²+1)`). A rational function continues to *any*
+  real q₀ (bar poles) — there is **nothing to derive** in continuing the normalization from ζ to q₀.
+- **The amplitude leg is the whole difficulty.** What does *not* continue trivially is the
+  non-rational Lawrence–Rozansky / WRT q-series (the vacuum-row *amplitude*) — which is exactly the
+  **LR-modulus front** (the sibling's fibre-ζ spec).
+
+So "the fibre→archimedean continuation" is **not an independent wall**: its normalization part is
+trivial (rational `Z`), and its amplitude part *is* the LR-modulus wall. C's genuinely-remaining
+pieces are therefore (i) the colored-LR amplitude compute (fibre spec, deferred) and (ii) a
+**q₀-fixing categorical condition** (the Bring-Jacobian `E⁴` W-plane modulus route — **numerology-
+gated**: the ledger's STRICT rule is *formalize the monodromy operator, never fit `τ(q₀)=2.6424`*).
+There is no distinct "continuation" problem to solve.
+
 ## Scope guard (STRICT)
 
 - **Not a q₀ derivation.** This constrains the *normalization* of the geometric object; it says nothing
