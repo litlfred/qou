@@ -9,4 +9,4 @@ The realised orders in $S_5$ are $\{1, 2, 3, 4, 5, 6\}$. The condition $\gcd(2, 
 Among torus knots $T_{2, s}$ with $s \geq 3$, exactly two admit cyclic-symmetry-preserving embeddings into $\Sigma_4$ (Bring's surface): $T_{2, 3}$ and $T_{2, 5}$. Any other torus knot of this family either breaks the symmetry in the embedding or fails to embed topologically (Seifert genus $> 4$, or $s \geq 11$).
 
 **Comparison with genus-based embedding.**
-Pure topological (Seifert-genus) embedding into $\Sigma_4$ admits four knots: $T_{2, 3}$, $T_{2, 5}$, $T_{2, 7}$, and $T_{2, 9}$. The stronger equivariant criterion retains only $T_{2, 3}$ and $T_{2, 5}$. The knots $T_{2, 7}$ and $T_{2, 9}$ are topologically admissible but symmetry-broken. We interpret this constraint for the particle spectrum in [rem:symmetry-preserving-leptons](#rem:symmetry-preserving-leptons).
+Pure topological (Seifert-genus) embedding into $\Sigma_4$ admits four knots: $T_{2, 3}$, $T_{2, 5}$, $T_{2, 7}$, and $T_{2, 9}$. The stronger equivariant criterion retains only $T_{2, 3}$ and $T_{2, 5}$. The knots $T_{2, 7}$ and $T_{2, 9}$ are topologically admissible but symmetry-broken.
