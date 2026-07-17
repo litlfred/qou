@@ -33,7 +33,7 @@ $$
 
 The classical LR rule \cite{ariki1996} generally produces a sum over many $\nu$, with multiplicities counting LR tableaux. The conjecture dictates that at double-magic levels, the sum collapses to a single term with unit multiplicity. Self-conjugacy ($\lambda = \lambda'$, $\mu = \mu'$) constrains the LR product to $\nu = \nu'$. The saturated-shell content-sum-zero condition ($c(\lambda) = c(\mu) = 0$) constrains $c(\nu) = 0$. Rigidity asserts that these two constraints combined leave at most one admissible $\nu$.
 
-The physical meaning is concrete: there is no Wedderburn block at the double-magic level capable of absorbing further binding energy through Hecke channels. Exceptional double-magic stability is the algebraic absence of decomposition channels, not a fitted shell-correction term.
+No Wedderburn block at the double-magic level can absorb further binding energy through Hecke channels. Exceptional double-magic stability is the algebraic absence of decomposition channels, not a fitted shell-correction term.
 
 ## Examples
 

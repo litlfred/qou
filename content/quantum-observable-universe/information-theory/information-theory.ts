@@ -32,6 +32,7 @@ export default chapter({
         "planck-time-interpretation",
         "reeb-operations-per-planck",
         "reeb-operations-per-planck-proof",
+        "reeb-operations-per-planck-physical",
         "information-theoretic-time",
         "information-theoretic-time-properties",
         "information-theoretic-time-julia-microscopic",
