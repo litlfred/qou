@@ -33,3 +33,16 @@ jobs:
             echo '```';
             echo '_Upstream drift fails the gate once escalated to `--strict`; self-staleness is warn-only until the backlog drains. See `docs/design/2026-06-16-witness-staleness-propagation.md`._';
           } >> "$GITHUB_STEP_SUMMARY"
+
+      - uses: oven-sh/setup-bun@v2
+      - name: Author-note Lean-coverage drift gate (strict)
+        # The introduction's advertised proved-counts (PR #3490 mechanism:
+        # scripts/refresh-authors-note.ts) drift whenever a proof or
+        # conjecture lands. Strict: exits 1 when the committed note
+        # disagrees with a live recount. Fix: bun run
+        # scripts/refresh-authors-note.ts (commit note + lean-coverage.json).
+        # The agent-side gate is scripts/check-sidecars.sh; this is the
+        # CI backup (dispatch-only, per the 2026-06-30 billing directive).
+        run: |
+          ./scripts/setup-folio-assistant.sh
+          bun run scripts/refresh-authors-note.ts --check
