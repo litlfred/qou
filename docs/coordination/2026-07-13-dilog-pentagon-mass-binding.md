@@ -208,3 +208,15 @@ a Bloch-group computation, not a q-rational search (PSLQ-dead).
 loop-measure `π` the standard gauge-loop `1/(4π)` (b₁ coincidental) or the
 pentagon-dilog shadow (b₁ structural)? Named kill-criteria on both sides; neither
 should land as canonical until one test runs.
+
+**Update (same day) — discriminant probe run; leading order favours #3810.** The
+`D([z])=2/(3π)` discriminant was run
+([`alphaem_dilog_bloch_probe.py`](../../computations/alphaem_dilog_bloch_probe.py)):
+**scope-(a) NEGATIVE** for the simplest dilog identification — no natural
+Bring/4₁/golden bare Bloch–Wigner value is a clean rational multiple of `2/(3π)`
+or `1/(8π)`, and `2/(3π)=(2/3)(1/π)` carries a **single power of `π`** (gauge-loop
+signature), not the dilog `π²`/`O(1)` signature. So **#3810 (gauge) is favoured
+at leading order**; #3824 honestly re-scoped to the weaker "if dilog, then at the
+regulator/next-order `Bₙ` level" hypothesis. The tension is thus *provisionally
+resolved toward #3810* at leading order, with the `Bₙ` question open. Conceded on
+[#3810](https://github.com/litlfred/qou/pull/3810#issuecomment-5007182197).
