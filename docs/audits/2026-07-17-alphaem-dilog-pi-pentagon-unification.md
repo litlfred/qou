@@ -21,6 +21,34 @@ carry the **same `π`**, and it is the **pentagon-forced Bloch–Wigner
 dilogarithm shadow** — i.e. the α_EM measure wall *is* the AG-dilog keystone
 `conj:alg-geom-dilog-equiv` (`qou-evo7`, `lw70`), not a separate problem.
 
+> ## ⚠ Update 2026-07-17 — discriminant probe *weakens* this claim; leading order favours the gauge reading (#3810)
+>
+> A direct probe ([`alphaem_dilog_bloch_probe.py`](../../computations/alphaem_dilog_bloch_probe.py),
+> witness `alphaem-dilog-bloch-probe.witness.json`) tested the claim and came
+> back **scope-(a) NEGATIVE for the simplest dilog identification**, and I record
+> it faithfully rather than preserve the thesis:
+>
+> 1. **No clean bare-`D` identification.** No natural Bring / `4₁` / golden
+>    Bloch–Wigner value (`D(e^{iπ/3})`, `D(e^{2πi/5})`, Rogers `π²/10`, `π²/15`,
+>    Catalan) is a clean low-complexity rational multiple of `2/(3π)` or `1/(8π)`.
+> 2. **Decisive — the arithmetic signature is *gauge*, not dilog.** `2/(3π) =
+>    (2/3)·(1/π)` carries a **single power of `π`**, the signature of a gauge-loop
+>    `1/(4π)` factor. Dilogarithm data carries `π²` (Rogers values) or is an
+>    `O(1)` real (`D`). A bare-`D` origin would need `D(z) = 2π/3 = 2.094`, but
+>    the nearest natural value `Vol(4₁) = 2.030` misses by 3%.
+>
+> So **#3810's reading — `1/(πb₁)=1/(8π)` is the standard `½·1/(4π)` gauge loop,
+> `b₁=8` a genus-4 coincidence — is favoured at leading order**, and the strong
+> form of the claim below ("the two `π`'s *are* the same dilog shadow") is **not
+> supported**. What survives is the *weaker* hypothesis: **if** there is dilog
+> content, it lives at the **regulator-normalisation** (Beilinson period `π`) or
+> the **next-order `Bₙ(ℂ)`** level — not in a bare leading `D`-value. That is now
+> the honest open question, and the burden is on the dilog reading to exhibit it.
+> The `2/(3π)` "pentagon-forced" assertion in `alpha-em-derivation-open-problems.md`
+> inherits the same caveat: it is a single-`π`, gauge-shaped quantity at leading
+> order. (The structural bridge below is retained as the *hypothesis that was
+> tested*, not as an established result.)
+
 ## Why the two `π`'s coincide (the Kronecker-limit / Bloch-Wigner bridge)
 
 The open-problems doc already fixes the origin of the `π` in `2/(3π)`:
