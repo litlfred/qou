@@ -205,8 +205,37 @@ def main() -> int:
     anchor_blind_pert = dP < mp.mpf("1e-6")
     print(f"   ⇒ |D_opt(muon) − D_opt(proton)| = {mp.nstr(dP,4)}  "
           f"⇒ perturbative sum ANCHOR-BLIND: {anchor_blind_pert}")
-    print(f"     (S sign-flips +0.0097→−0.0395 while D_opt does not ⇒ the flip is")
-    print(f"      NON-perturbative: the Stokes datum A_ω, not the accelerated ladder.)")
+    print(f"     (S sign-flips +0.0097→−0.0395 while D_opt does not ⇒ the flip is NOT")
+    print(f"      in the accelerated perturbative ladder at this meridian.)")
+
+    # ---- M4b: magnitude tension — is the anchor-dependent S a Stokes jump? -
+    print("\n M4b — magnitude tension (Stokes jump vs the O(0.01) anchor residual):")
+    # log|term_k| = log|d_k| + k·log ũ; optimal truncation where the term turns
+    # around: with log|d_k| ≈ A+Bk+C·k·log k and slope of log-term
+    #   d/dk[(B+log ũ)k + C·k·log k] = (B+log ũ) + C(log k + 1) = 0
+    #   ⇒ log k* = −(B+log ũ)/C − 1 ⇒ k* ≈ exp(…). The non-pert scale is
+    #   δ_np ~ exp(−A_action/ũ) with A_action the leading Borel radius.
+    u_mer_mu = q_muon_at(60) * substrate_ladder_quantities(q_muon_at(60))["u"]
+    _, B_all, C_all = classfit(logabs, all_k)
+    logk_star = -(B_all + mp.log(u_mer_mu)) / C_all - 1
+    k_star = mp.e ** logk_star
+    # non-perturbative amplitude at true optimal truncation (order of magnitude)
+    # ~ exp(−(true action)/ũ); use the merged odd Borel radius as the action proxy
+    A_proxy = RHO_ZETA_MERGED["odd"]
+    delta_true = mp.e ** (-A_proxy / u_mer_mu)
+    h_mu = q_muon_at(60) - 1 / q_muon_at(60)
+    S_residual = abs(S_TARGET["muon"] - h_mu * P_star["muon"])
+    print(f"   optimal-truncation index  k* ≈ e^{mp.nstr(logk_star,4)} ≈ {mp.nstr(k_star,3)}  "
+          f"(≫ 21 ⇒ meridian is deep in the effectively-convergent regime)")
+    print(f"   true non-pert scale  exp(−ρ_odd/ũ) = exp(−{RHO_ZETA_MERGED['odd']}/{mp.nstr(u_mer_mu,4)}) "
+          f"≈ {mp.nstr(delta_true,3)}")
+    print(f"   anchor residual  |S(muon) − h·D_opt| ≈ {mp.nstr(S_residual,4)}  (O(0.01))")
+    ratio_exp = mp.log(S_residual / delta_true) / mp.log(10)
+    print(f"   ⇒ the O(0.01) anchor residual is ~10^{mp.nstr(ratio_exp,4)} LARGER than a")
+    print(f"     naive Stokes jump exp(−ρ/ũ) at the substrate meridian ⇒ the anchor-")
+    print(f"     dependent S is NOT a Stokes ambiguity of THIS ladder at THIS (tiny-ũ)")
+    print(f"     meridian. It is the 1/ũ³ c₃-representational amplification (#3636), or a")
+    print(f"     FIBRE-saddle (|q|=1, ũ~O(1)) object where the jump is unsuppressed (G0).")
 
     # ---- M5: Φ_b state-integral cross-check ------------------------------
     print("\n M5 — Φ_b state-integral saddle cross-check (leading-order scale):")
@@ -226,12 +255,18 @@ def main() -> int:
     print("\n" + "=" * 78)
     print(" VERDICT (tiered; scope-(a); no c_k wired; no fit):")
     print("  • acceleration setup complete: two critical times = the two 2-adic")
-    print("    parity levels (M2); fixed-order composition collapses (M3).")
-    print("  • the odd/S-carrier resummation at the meridian is ANCHOR-BLIND (M4)")
-    print("    and matches the Φ_b saddle scale (M5) — a PERTURBATIVE floor only.")
-    print("  • the anchor-dependent c₃ (the S sign-flip) is the NON-perturbative")
-    print("    Stokes constant A_ω (alien derivative Δ_ω / the G3 monodromy datum),")
-    print("    which the perturbative acceleration provably does NOT supply.")
+    print("    parity levels (M2, distinct); fixed-order composition collapses (M3).")
+    print("  • the forward D-ladder resummation at the substrate meridian is")
+    print("    ANCHOR-BLIND to ~9 digits (M4): D_opt≈−0.01667, h·D≈−0.0035 —")
+    print("    reproducing NEITHER S(muon)=+0.0097 nor S(proton)=−0.0395.")
+    print("  • M4b magnitude tension: the meridian ũ≈0.0095 puts optimal truncation")
+    print("    at k*~10^13, so a Stokes jump exp(−ρ/ũ) is ~10^{-7}..10^{-27} — far")
+    print("    too small to be the O(0.01) anchor-dependent S. So at the substrate")
+    print("    branch the anchor swing is NOT a Stokes ambiguity of this ladder.")
+    print("  ⇒ the exact remaining gap: the anchor-dependent c₃ is either the 1/ũ³")
+    print("    c₃-representational amplification (#3636) of a smooth tail, or the")
+    print("    Stokes datum A_ω computed at the FIBRE saddle |q|=1 (ũ~O(1),")
+    print("    unsuppressed jump) — the G0 branch-mismatch / G3 monodromy datum.")
     print("  ⇒ NO c₃ produced; NO instanton action identified; NOTHING wired.")
     print(f"\n wall {time.time()-t0:.1f}s")
 
@@ -242,22 +277,28 @@ def main() -> int:
         "D-ladder (unowned item #1 of the 1ppQ path reassessment). Reuses the exact "
         "d_k (build_d_ladder, ORD 43/k≤21), phi_b saddle vol_of_m, and the merged "
         "#3818/#3839 negatives; measures four un-pinned things. M2: the 2-adic "
-        "bar-parity split gives two DISTINCT, each-more-stable-than-full divergence "
-        "classes ⇒ the 'no single Gevrey index' is a genuine TWO-LEVEL "
-        "(accelero-summable) structure, not a mis-specified single order. M3: "
+        "bar-parity split gives two DISTINCT divergence classes (C_odd≈0.05, C_even≈0.11, "
+        "|Δ|≈0.06) ⇒ the 'no single Gevrey index' is consistent with a genuine TWO-LEVEL "
+        "(accelero-summable) structure — two critical times, not one mis-specified order "
+        "(per-parity fits still short/noisy at k≤21, consistent with undecidable-at-k21). M3: "
         "(k!)^{s1}(k!)^{s2}=(k!)^{s1+s2} ⇒ composing Borel–Leroy transforms stays in "
         "the additive monoid of orders and cannot reach a new critical time ⇒ a "
         "genuine non-commutative Écalle kernel is necessary (the fixed-order negative "
-        "is not repairable by iteration). M4: the optimal-truncation (least-term) "
-        "resummed D(ũ) at the meridian is ANCHOR-BLIND (muon vs proton ũ differ ~1e-8) "
-        "while S sign-flips +0.0097→−0.0395 ⇒ the anchor-dependence is NON-perturbative "
-        "(the Stokes datum A_ω), not the accelerated ladder. M5: the Φ_b saddle deficit "
-        "0.00940 ≈ |S(muon)| — leading-order near-match, anchor-blind (bridge #3654). "
-        "VERDICT: acceleration setup complete + two critical times = the two parity "
-        "levels; the perturbative acceleration gives only the anchor-blind S SCALE; the "
-        "anchor-dependent c₃ is the alien-derivative Stokes constant A_ω (the G3 "
-        "monodromy datum), NOT produced here. Scope-(a); no c_k wired; no fit; no tier "
-        "change; L2 count unchanged (2/7).")
+        "is not repairable by iteration). M4: the forward optimal-truncation resummed "
+        "D(ũ)≈−0.01667 at the meridian is ANCHOR-BLIND to ~9 digits (muon vs proton ũ "
+        "differ ~2e-9), and h·D≈−0.0035 reproduces NEITHER S(muon)=+0.0097 NOR "
+        "S(proton)=−0.0395. M4b magnitude tension: the substrate meridian ũ≈0.0095 puts "
+        "optimal truncation at k*~1e13, so a Stokes jump exp(−ρ/ũ) is ~1e-7..1e-27 — far "
+        "too small to be the O(0.01) anchor-dependent S; on the SUBSTRATE branch the swing "
+        "is not a Stokes ambiguity of this ladder. M5: the Φ_b saddle deficit 0.00940 ≈ "
+        "|S(muon)| — a separate anchor-blind geometric handle on the |S| scale (bridge "
+        "#3654). VERDICT: acceleration setup complete + two critical times = the two parity "
+        "levels; the perturbative acceleration at the substrate meridian gives only an "
+        "anchor-blind floor and does NOT reproduce S; the exact remaining gap is that the "
+        "anchor-dependent c₃ is either the 1/ũ³ c₃-representational amplification (#3636) or "
+        "the fibre-saddle (|q|=1, ũ~O(1)) Stokes datum A_ω where the jump is unsuppressed "
+        "(the G0 branch-mismatch / G3 monodromy datum) — NOT produced here. Scope-(a); no "
+        "c_k wired; no fit; no tier change; L2 count unchanged (2/7).")
     wb.set_content_block("conj:im-q-physical-role")
     wb.add_data("M2_parity_levels", {
         "C_full_low": mp.nstr(C_full["low"], 8), "C_full_all": mp.nstr(C_full["all"], 8),
@@ -274,16 +315,33 @@ def main() -> int:
     wb.add_data("M4_anchor_blindness", {
         "D_opt_muon_minus_proton": mp.nstr(dP, 8),
         "perturbative_sum_anchor_blind": bool(anchor_blind_pert),
-        "reading": "S flips sign across anchors while D_opt does not ⇒ flip is non-perturbative (Stokes A_ω)"})
+        "h_D_opt_muon": mp.nstr((q_muon_at(60) - 1 / q_muon_at(60)) * P_star["muon"], 8),
+        "reading": "forward D-ladder sum is anchor-blind and reproduces NEITHER S(muon) NOR S(proton); "
+                   "the anchor swing is not in the perturbative accelerated ladder"})
+    wb.add_data("M4b_magnitude_tension", {
+        "optimal_truncation_k_star_log10": mp.nstr(logk_star / mp.log(10), 6),
+        "stokes_jump_exp_minus_rho_over_u": mp.nstr(delta_true, 6),
+        "anchor_residual_S_minus_hDopt": mp.nstr(S_residual, 6),
+        "residual_over_stokes_log10": mp.nstr(ratio_exp, 6),
+        "reading": "meridian ũ≈0.0095 ⇒ optimal truncation at k*~1e13, Stokes jump exp(−ρ/ũ) is "
+                   "~1e-7..1e-27 — far too small to be the O(0.01) anchor S; so on the SUBSTRATE "
+                   "branch the swing is not a Stokes ambiguity of this ladder. It is either the 1/ũ³ "
+                   "c₃-representational amplification (#3636) or the fibre-saddle (|q|=1, ũ~O(1)) "
+                   "Stokes datum A_ω where the jump is unsuppressed (G0 branch-mismatch)"})
     wb.add_data("M5_phib_saddle_crosscheck", m5rows)
     wb.add_data("verdict", {
         "acceleration_setup_complete": True,
         "two_critical_times_eq_two_parity_levels": bool(parity_distinct),
         "perturbative_resummation_anchor_blind": bool(anchor_blind_pert),
         "c3_produced": False, "instanton_action_identified": False, "wired": False,
-        "exact_remaining_gap": "the Stokes constant A_ω = alien derivative Δ_ω log Φ_b at the fibre "
-                               "saddle (the G3 monodromy datum); carries the anchor-dependent c₃; "
-                               "perturbative acceleration provably cannot supply it"})
+        "perturbative_floor_h_D_opt": mp.nstr((q_muon_at(60) - 1 / q_muon_at(60)) * P_star["muon"], 8),
+        "exact_remaining_gap": "the anchor-dependent c₃ (S sign-flip) is NOT the substrate-branch "
+                               "perturbative acceleration (anchor-blind, magnitude-too-small for a "
+                               "Stokes jump at ũ≈0.0095); it is either (i) the 1/ũ³ c₃-representational "
+                               "amplification (#3636) of a smooth tail, or (ii) the fibre-saddle "
+                               "(|q|=1, ũ~O(1)) Stokes datum A_ω = Δ_ω log Φ_b where the jump is "
+                               "unsuppressed (G0 branch-mismatch / G3 monodromy datum). Next session: "
+                               "compute the D-ladder / Φ_b expansion at the FIBRE saddle, not the substrate meridian."})
 
     wb.add_assertion(name="exact_dk_reproduced",
                      computed=1.0 if (odd_ok and in_Qsqrt3) else 0.0, expected=1.0, tolerance=0.5,
