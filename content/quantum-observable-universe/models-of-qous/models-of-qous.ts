@@ -87,6 +87,7 @@ export default chapter({
         "symmetric-point-intro",
         "symmetric-point-channel-collapse",
         "symmetric-point-channel-collapse-proof",
+        "symmetric-point-channel-collapse-remark",
         "physical-units-gap-linear",
         "physical-units-gap-linear-proof",
         "symmetric-point-resolution-loss",

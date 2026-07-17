@@ -80,7 +80,7 @@ $$
   V_{1/2}^{(1)} \oplus V_{1/2}^{(2)}.
 $$
 
-This constructs a rigid 4-dimensional space. It remains **nonzero** if and only if both individual filaments successfully provide nontrivial local sections at $p$ — physically, if the discrete vortex cores have not dissolved into a continuous sheet.
+This constructs a rigid 4-dimensional space. It remains **nonzero** if and only if both individual filaments successfully provide nontrivial local sections at $p$ — equivalently, when the discrete vortex cores have not dissolved into a continuous sheet.
 
 **(d) Connection to core aspect ratio.**
 

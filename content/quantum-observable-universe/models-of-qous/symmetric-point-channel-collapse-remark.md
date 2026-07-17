@@ -1,0 +1,1 @@
+Any family of operator assignments drawn from $\{\sigma,\ \sigma^{-1},\ (\sigma + \sigma^{-1})/2\}$ collapses to a single operator under the specialisation $q = 1$ of the Hecke relation $(\sigma - q)(\sigma + q^{-1}) = 0$, which at $q = 1$ reads $\sigma^2 = 1$.
