@@ -1,0 +1,106 @@
+{
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-07-17T15:12:12.878942+00:00",
+  "commitSha": "7cba36244980f427b757b361e770bc5297ead920",
+  "assertions": [
+    {
+      "name": "untransformed_grading_holds",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "gap_sign_alternates_with_parity",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "gap_invariant_under_all_scalar_bases",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "base2_jackson_preserves_absolute_law",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "classical_borel_destroys_absolute_law",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "v2_qfact_lte_closed_form_verified",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 16,
+  "computation": "qbeta-dladder-qborel-2adic-transport",
+  "scriptFile": "qbeta_dladder_qborel_2adic_transport_probe.py",
+  "scriptHash": "e5abfd6f78e5",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Formalize-first step of the D-ladder Jackson q-Borel acceleration program: exact 2-adic transport of the bar-parity grading (anchor QOU.QBeta.DLadderTwoAdicGrading.bDen_two_adic_graded, KC22) through the scalar acceleration family. Result: the grading in gap form g_k = v2(a_k)-v2(b_k) is invariant under EVERY scalar transform (valuation additivity — one-line, Lean-able), hence permissive: no obstruction to any q-Borel resummation shape. The absolute law v2(den b_k)=0 iff k odd is preserved verbatim exactly by 2-adically-unit factorial bases (notably Jackson base 2, the graded prime's own base) and destroyed by classical /k!. v2([k]_Q!) cross-checked against the LTE closed form. Scope-(a) structural-exact; no c_k wired; no fit.",
+  "contentBlock": "prop:phi-b-unitary-bar-odd",
+  "data": {
+    "KMAX": 21,
+    "gap_g_k": {
+      "1": -3,
+      "2": 4,
+      "3": -10,
+      "4": 9,
+      "5": -14,
+      "6": 15,
+      "7": -22,
+      "8": 28,
+      "9": -26,
+      "10": 27,
+      "11": -34,
+      "12": 32,
+      "13": -40,
+      "14": 39,
+      "15": -43,
+      "16": 43,
+      "17": -50,
+      "18": 51,
+      "19": -57,
+      "20": 60,
+      "21": -61
+    },
+    "gap_sign_alternates_with_parity": true,
+    "absolute_law_untransformed": true,
+    "mirror_law_untransformed": true,
+    "gap_invariant_under_all_tested_bases": true,
+    "absolute_law_survival_by_base": {
+      "classical k! (Borel s=1)": false,
+      "[k]_2! (Jackson base 2)": true,
+      "[k]_3! (Jackson base 3)": false,
+      "[k]_{1/3}! (reciprocal base)": false,
+      "[k]_{1/2}! (reciprocal base 2)": false,
+      "(3;3)_k (unnormalized q-Poch)": false
+    },
+    "v2_qfact_matches_lte_closed_form": true,
+    "lean_anchor": "qou:QOU.QBeta.DLadderTwoAdicGrading.bDen_two_adic_graded",
+    "verdict": "2-adic transport of the bar-parity grading through the scalar q-Borel/acceleration family (exact, k=1..21): the signed component gap g_k = v₂(a_k)−v₂(b_k) is INVARIANT under every scalar transform (valuation additivity), so the ℤ/2 grading survives into every accelerated plane — the invariant is PERMISSIVE (no obstruction to resummation), scope: structural-exact, not a refutation. The absolute law v₂(den b_k)=0 ⟺ k odd transports by −v₂(f_k): preserved verbatim by 2-adically-unit bases (Jackson base 2 — the unique graded prime's own base: [j]_2 = 2^j−1 odd), destroyed by classical ÷k! (Legendre). v₂([k]_Q!) verified against the LTE closed form. No c_k wired; no fit.",
+    "scope": "(a)/structural-exact — permissive invariant; no wiring"
+  }
+}
