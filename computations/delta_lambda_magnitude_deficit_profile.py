@@ -25,6 +25,8 @@ Inputs READ from canonical pinned witnesses (no recompute) — env-skew-immune.
 Producer for: computations/delta-lambda-magnitude-deficit-profile.witness.json
 """
 from __future__ import annotations
+import time as _time  # noqa: E402 — wall-clock anchor for witness durationMs
+_T0 = _time.monotonic()
 import json, math, os, hashlib, datetime
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -127,8 +129,13 @@ def main():
         "parameters": {"q_0": q0, "m_e_MeV": M_E_MEV},
         "data": out_rows,
     }
-    out = os.path.join(HERE, "delta-lambda-magnitude-deficit-profile.witness.json")
-    json.dump(witness, open(out, "w"), indent=1)
+    import sys as _sys  # noqa: E402
+    _sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "substrate"))
+    from witness_base import WitnessBuilder  # noqa: E402 — P30 rollup (bean cmiy)
+    out = WitnessBuilder.wrap_legacy(
+        "delta-lambda-magnitude-deficit-profile", witness,
+        script_path=__file__, engine="mpmath", start_time=_T0,
+    ).save()
 
     for name, r in out_rows.items():
         doms = ", ".join(f"{d['partition']}({d['sign']:+d})" for d in r["dominant_blocks"][:4])

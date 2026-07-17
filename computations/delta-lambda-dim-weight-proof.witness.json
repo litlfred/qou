@@ -1,6 +1,6 @@
 {
-  "engine": "python3",
-  "computedAt": "2026-05-26T16:46:44Z",
+  "engine": "python",
+  "computedAt": "2026-07-17T14:43:40.419484+00:00",
   "computation": "delta-lambda-dim-weight-proof",
   "scriptFile": "delta_lambda_dim_weight_proof.py",
   "description": "PROOF: dim(V_lambda) = f^lambda is the regular-representation multiplicity. The mass equation with Delta_lambda = f^lambda evaluates the regular-rep-weighted Frobenius pairing, which saturates all Wedderburn blocks \u2014 matching the confinement SDP's selection criterion. Verified via Burnside identity for S_2 through S_20.",
@@ -204,5 +204,9 @@
       "passed": true
     }
   ],
-  "allPassed": true
+  "allPassed": true,
+  "scriptHash": "2388dfb2e43f",
+  "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
+  "commitSha": "0b4ed888d43cef2bdd5605b40e9d6b8038f572a7",
+  "durationMs": 0
 }

@@ -202,6 +202,12 @@ witness = {
     "allPassed": True,
 }
 
+import os as _os, sys as _sys  # noqa: E402
+_sys.path.insert(0, _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "substrate"))
+from witness_base import WitnessBuilder  # noqa: E402 — P30 rollup (bean cmiy)
+# Payload carries a top-level `assertions` mapping → stamp (not wrap_legacy) preserves it.
+WitnessBuilder.stamp_staleness_metadata(witness, script_path=__file__, engine="mpmath")
+witness["scriptFile"] = _os.path.basename(__file__)
 with open(HERE / "delta-lambda-multi-atom-crosscheck.witness.json", "w") as f:
     json.dump(witness, f, indent=2, default=str)
 print(f"\nWitness: delta-lambda-multi-atom-crosscheck.witness.json")

@@ -100,5 +100,12 @@
     "verdict recorded: decisive C-finite confirmation": true
   },
   "allPassed": true,
-  "verdict": "DECISIVE: The Δ_λ tower was successfully extended into the α-cluster chain (4He → 8Be → 12C → 16O → 20Ne → 24Mg). The 3-term recurrence coefficient b_ν = (Δ_{ν+1}+Δ_{ν-1})/Δ_ν is remarkably constant around b ≈ 2.0 (specifically: 2.09, 1.96, 1.97, 2.02). This definitively confirms that the Δ_λ sequence is highly C-finite (with roots roughly r ≈ 1), refuting the erratic hypothesis. This validates the q-Lommel framework for the extended tower!"
+  "verdict": "DECISIVE: The Δ_λ tower was successfully extended into the α-cluster chain (4He → 8Be → 12C → 16O → 20Ne → 24Mg). The 3-term recurrence coefficient b_ν = (Δ_{ν+1}+Δ_{ν-1})/Δ_ν is remarkably constant around b ≈ 2.0 (specifically: 2.09, 1.96, 1.97, 2.02). This definitively confirms that the Δ_λ sequence is highly C-finite (with roots roughly r ≈ 1), refuting the erratic hypothesis. This validates the q-Lommel framework for the extended tower!",
+  "scriptHash": "eba34a28ee74",
+  "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
+  "commitSha": "0b4ed888d43cef2bdd5605b40e9d6b8038f572a7",
+  "engine": "python",
+  "computedAt": "2026-07-17T14:43:41.882403+00:00",
+  "durationMs": 0,
+  "scriptFile": "delta_lambda_qlommel_recurrence_precheck.py"
 }

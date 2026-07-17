@@ -58,6 +58,8 @@ Inputs READ from canonical pinned witnesses (mpmath 50 dps on stored y_λ,
 Producer for: computations/delta-lambda-qdim-route-probe.witness.json
 """
 from __future__ import annotations
+import time as _time  # noqa: E402 — wall-clock anchor for witness durationMs
+_T0 = _time.monotonic()
 import json, math, os, hashlib, datetime
 from mpmath import mp, mpf
 
@@ -197,8 +199,13 @@ def main():
             "some_convention_overshoots_target": any_overshoot,
         },
     }
-    out = os.path.join(HERE, "delta-lambda-qdim-route-probe.witness.json")
-    json.dump(witness, open(out, "w"), indent=1)
+    import sys as _sys  # noqa: E402
+    _sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "substrate"))
+    from witness_base import WitnessBuilder  # noqa: E402 — P30 rollup (bean cmiy)
+    out = WitnessBuilder.wrap_legacy(
+        "delta-lambda-qdim-route-probe", witness,
+        script_path=__file__, engine="mpmath", start_time=_T0,
+    ).save()
 
     cols = ["classic"] + list(CONVENTIONS)
     print(f"q_0={float(q0):.5f}   ‖c‖₁(conv)/|target|")

@@ -1,6 +1,6 @@
 {
-  "engine": "python3",
-  "computedAt": "2026-05-26T16:44:24Z",
+  "engine": "python",
+  "computedAt": "2026-07-17T14:43:42.665113+00:00",
   "computation": "delta-lambda-sign-rule-proof",
   "scriptFile": "delta_lambda_sign_rule_proof.py",
   "description": "PROOF: (-1)^{n(lambda)} = sgn(w_0^{S_{lambda prime}}). The sign alternation in the Delta_lambda ansatz is the sign character of the longest element of the CONJUGATE parabolic subgroup. Standard identity (Macdonald I.1.5): n(lambda) = sum C(lambda_j prime, 2). Verified exhaustively for all partitions of S_2 through S_20.",
@@ -167,5 +167,9 @@
       "passed": true
     }
   ],
-  "allPassed": true
+  "allPassed": true,
+  "scriptHash": "d2dbb85ba766",
+  "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
+  "commitSha": "0b4ed888d43cef2bdd5605b40e9d6b8038f572a7",
+  "durationMs": 0
 }
