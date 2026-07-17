@@ -70,3 +70,24 @@ Classes: PARSE/TACTIC/NONCOMPUT = mechanical (no LSP); PROOF = needs LSP goal in
 /tmp/remap.sed in-session; reproduce via the codeload mathlib source at f897ebcf.
 
 > **Resolved 2026-07-05 (swarm 1).** Mathlib import remaps applied + Lean-verified (0 stale imports remain). Merged in PR #3337.
+
+## Wave-3 reevaluation (2026-07-17) — import layer resolved, DEEP defects persist on main
+
+PR #3202 (wave 2, closed as obsolete) drained 45 files on a pre-churn base. Reevaluation
+against current main (0b4ed888d4):
+
+- **Import layer: superseded** — PR #3337 remapped imports corpus-wide (confirmed 0 stale).
+- **2 files deleted on main**: observations/algebraic-gns-embedding, mass-theory/skein-generation.
+- **Deep defects NOT absorbed** — all 40 survivors diverged from both the old broken state and
+  the wave-2 fixes (churn, not fixes). Spot-checks confirm still-broken on main HEAD:
+  - bar-involution-invariance L99-106: Lean 3 `constant` declarations (parse error)
+  - nuclear-spin-parity L61: beta_decay_preserves_spin_parity FALSE at n=0 (needs 1 ≤ n)
+  - c-equals-bar-iff-all-1dim L50: `(-q) - h = q` ⟺ 4q = 0 falsity
+  - computational-horizon L224: theorem over defaulted data field (unprovable)
+- These siblings have no QA sidecar → red on main invisibly (the known verifier blind spot).
+
+**Wave-3 plan (session 2026-07-17, branch claude/stale-mathlib-imports-9xzeul restarted from
+main):** bulk lean-direct verify of all 40 at main HEAD → for each FAIL, 3-way port of the
+wave-2 fix (base=3535f809, ours=main, theirs=49057c2b old tip) or hand-port → fresh PR.
+Plus infra: ckj6 verifier hardening + lake-cache reseed. Wave-2 fix reference blobs live at
+commit 49057c2b (closed PR #3202 head).
