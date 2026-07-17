@@ -5,7 +5,9 @@
 to production; the μ–p tension is NOT resolved.**
 **PR:** #3855 · **Producer:** `computations/murakami_deformed_vc_q0.py`
 (witness `murakami-deformed-vc-q0.witness.json`, 60 dps) · **Lean:**
-`QOU/Knot/FigureEightDeformedMeridianWinding.lean` (sorry-free, winding lower bound).
+`QOU/Knot/FigureEightDeformedMeridianWinding.lean` (sorry-free, lean-direct exit 0
+against the root-workspace Mathlib oleans; theorems `meridian_normSq`,
+`meridian_normSq_ge`, `meridian_normSq_ge_floor`, `meridian_ne_zero`).
 
 ## 0. Why this exact task
 
@@ -125,9 +127,11 @@ regardless of the absolute miss.
 ## 4. Tiered verdict
 
 1. **Structural (proved / exact).** `Vol(4₁)` is q-independent (B1); the
-   substrate-matched meridian has `|u|≥2π` (B3, Lean-carried); `CS(4₁)=0` for the
-   complete structure (`FigureEightSelfDuality`, existing). These are the three
-   exact facts that close the three branches.
+   substrate-matched meridian has `|u|≥2π` (B3 — Lean-carried sorry-free:
+   `meridian_normSq_ge_floor : (2π)² ≤ normSq(u)` for `k≥1`, i.e. `|u|≥2π`,
+   from `Im u = −2πk`); `CS(4₁)=0` for the complete structure
+   (`FigureEightSelfDuality`, existing). These are the three exact facts that
+   close the three branches.
 
 2. **Scope-(a) negative.** **No anchor-free categorical N-selection currently
    exists.** The Murakami deformed-VC route, as the corpus can instantiate it
