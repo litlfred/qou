@@ -12,7 +12,6 @@ export default remark({
     "frobenius-pairing",
     "superselection",
   ],
-  defines: ["cai"],
   uses: [
     "def:observable-subcategory",
     "def:observation",

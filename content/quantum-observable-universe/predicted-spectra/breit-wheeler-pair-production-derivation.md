@@ -1,6 +1,6 @@
 **Derivation (Breit--Wheeler categorical pair production).**
 
-We derive the Breit--Wheeler categorical pair production. We define the bare and colored photon. We compute the normal-form reduction of the pair product. We evaluate linear and circular polarization limits. We identify the four-term extension.
+We derive the Breit--Wheeler categorical pair production. We introduce the bare and colored photon. We compute the normal-form reduction of the pair product. We evaluate linear and circular polarization limits. We identify the four-term extension.
 
 #### Bare photon pair
 
@@ -68,7 +68,7 @@ $$
 #### Polarization limits
 
 **Linear (symmetric) polarization:** 
-We set equal color in both generators, $\varphi_0 = \varphi_1 = \psi_0 = \psi_1 = \phi$.
+We take equal color in both generators, $\varphi_0 = \varphi_1 = \psi_0 = \psi_1 = \phi$.
 - $\gamma$: $1 + 2\phi^2$
 - $\sigma_0$: $2\phi + \phi^2 h$
 - $\sigma_1$: $2\phi + \phi^2 h$
@@ -78,7 +78,7 @@ We set equal color in both generators, $\varphi_0 = \varphi_1 = \psi_0 = \psi_1 
 The equal Hopf link content ($L_+ = L_- = \phi^2$) implies zero chirality. The net valuation is $(1 + 2\phi)^2 + 2\phi^2 h$. Setting $E_{\mathrm{pair}} = 2m_e$ fixes $\phi = 0.0487$.
 
 **Circular (orthogonal) polarization:**
-We set orthogonal polarization, $\varphi_0 = s$, $\varphi_1 = 0$, $\psi_0 = 0$, $\psi_1 = s$.
+We take orthogonal polarization, $\varphi_0 = s$, $\varphi_1 = 0$, $\psi_0 = 0$, $\psi_1 = s$.
 - $\gamma$: $1$
 - $\sigma_0$: $s$
 - $\sigma_1$: $s$

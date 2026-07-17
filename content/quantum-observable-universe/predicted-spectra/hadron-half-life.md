@@ -83,7 +83,7 @@ The decay rate depends on $q$ through four channels:
 
 - $|\mathcal{W}(q)|^2$: The $T_{3,5}$ weak vertex form factor.
 - $[2]_q = q + q^{-1}$: The weak-vertex dimension.
-- $|\mathcal{M}_q|^2$: The Markov trace ratio. This reflects the crossing structure of the nuclear braid at $q$.
+- $|\mathcal{M}_q|^2$: The Markov trace ratio, determined by the crossing structure of the nuclear braid at $q$.
 - $Q^5$: The categorical action difference ([transition energy](#def:Q-value-transition)). This depends on the pair Skein weights $\mathcal{S}_{ab}(q)$. The pair Skein weights depend on $q$ through the dressed quark masses $\mu_{\mathfrak{u}}, \mu_{\mathfrak{d}}$. For $q \neq 1$, the $q$-anomaly $\delta_q$ is nonzero and $Q \neq T_e + T_{\nu^{\sigma}} + T_{\mathrm{recoil}}$.
 
 In the classical limit $q = 1$, we have $s = 0$ and $[2]_1 = 2$. Crossing asymmetry vanishes. Isobars become degenerate ($Q = 0$) and beta decay ceases. For $q > 1$, crossing asymmetry splits the isobars. This yields finite $Q$ and finite half-lives.
