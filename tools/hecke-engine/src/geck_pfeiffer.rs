@@ -1533,4 +1533,55 @@ mod tests {
             );
         }
     }
+
+    /// **Production-scale stress (bean qou-b2ie).** The consumers pass long
+    /// H₁₂ braid words, not the 5-letter reproducer. This drives the
+    /// completed GP path on a ~30-letter deterministic n=12 word across a
+    /// spread of λ ⊢ 12 and asserts (a) it terminates (the cyclic-shift BFS
+    /// does not blow the cap) and (b) it still matches the direct seminormal
+    /// kernel — confirming the completion is production-viable, not just
+    /// correct on toy inputs. Timing is printed for the record.
+    #[test]
+    fn gp_complete_production_scale_n12() {
+        use std::time::Instant;
+        // Deterministic ~30-letter n=12 word spanning strands 1..=11 with
+        // mixed signs (LCG-generated, no Date/rand).
+        let mut state: u64 = 0xdead_beef_cafe_1234;
+        let mut next = |bound: u64| -> u64 {
+            state = state
+                .wrapping_mul(6364136223846793005)
+                .wrapping_add(1442695040888963407);
+            (state >> 33) % bound
+        };
+        let word: Vec<(i32, u32)> = (0..30)
+            .map(|_| {
+                let sign = if next(2) == 0 { -1i32 } else { 1 };
+                let gen = 1 + next(11) as u32; // 1..=11
+                (sign, gen)
+            })
+            .collect();
+        let q = 1.1_f64;
+        let t0 = Instant::now();
+        for lambda in [
+            vec![12usize],
+            vec![11, 1],
+            vec![6, 6],
+            vec![4, 4, 4],
+            vec![3, 3, 3, 3],
+            vec![2; 6],
+            vec![1; 12],
+        ] {
+            let gp = chi_lambda_via_geck_pfeiffer(&lambda, 12, &word).evaluate_f64(q);
+            let semi = crate::seminormal::chi_lambda_braid(&lambda, &word, q);
+            assert!(
+                (gp - semi).abs() < 1e-6,
+                "λ={lambda:?}: GP(complete)={gp} vs seminormal={semi}"
+            );
+        }
+        eprintln!(
+            "gp_complete_production_scale_n12: 30-letter n=12 word, 7 partitions, \
+             {:?} elapsed",
+            t0.elapsed()
+        );
+    }
 }

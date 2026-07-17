@@ -580,12 +580,14 @@ fn chi_via_gp_hoefsmit(
 /// **At q = 1** the result is correct (Hecke ↦ S_n, characters are
 /// class functions on cycle type alone).
 ///
-/// **Correctness guard (bean `qou-b2ie`):** at `q ≠ 1` this path returns
-/// WRONG characters on some plain braid words (min reproducer
-/// `σ₆σ₇σ₉⁻¹σ₈σ₇⁻¹` at H₁₂). It now enforces the exact trivial-rep `[n]`
-/// cross-check `χ_[n] = q^{writhe}` and **panics** on disagreement instead
-/// of returning silently-wrong numbers. Test a word with
-/// [`chi_gp_trivial_rep_consistent`] first if you need graceful fallback.
+/// **Correctness (bean `qou-b2ie`):** at `q ≠ 1` this path previously
+/// returned WRONG characters on some plain braid words (min reproducer
+/// `σ₆σ₇σ₉⁻¹σ₈σ₇⁻¹` at H₁₂). **Fixed** via the Geck–Pfeiffer cyclic-shift
+/// completion (validated vs the seminormal kernel). The exact trivial-rep
+/// `[n]` cross-check `χ_[n] = q^{writhe}` is retained as a safety net that
+/// panics only if a pathological word exceeds the search cap — never
+/// silently wrong. [`chi_gp_trivial_rep_consistent`] remains available as a
+/// pre-check.
 ///
 /// **For correct q ≠ 1 evaluation on arbitrary braids**, prefer
 /// [`chi_via_gp_hoefsmit`] (basis expansion + Hoefsmit per T_w —
@@ -618,18 +620,18 @@ fn chi_q_via_gp(
 /// **Trivial-rep consistency pre-check for the GP path (bean `qou-b2ie`).**
 ///
 /// Returns `True` iff the Geck-Pfeiffer q-MN path reproduces the EXACT
-/// trivial-rep `[n]` character `χ_[n](T_β) = q^{writhe}` on `word`.  A
-/// `False` result PROVES that [`chi_q_via_gp`] / [`chi_lambdas_via_gp`]
-/// would return WRONG characters for this word (the reduction did not
-/// reach minimal length — see the bug in bean `qou-b2ie`); route such
-/// words through the seminormal kernel (`chi_atomic_all_partitions_mpfr`
-/// / `chi_via_gp_hoefsmit`) instead.
+/// trivial-rep `[n]` character `χ_[n](T_β) = q^{writhe}` on `word`. Since
+/// the cyclic-shift completion (bean `qou-b2ie`) landed, this returns
+/// `True` for all validated word-classes; a `False` result now means only
+/// that the completion's search cap was exceeded for a pathological word —
+/// in which case route it through the seminormal kernel
+/// (`chi_atomic_all_partitions_mpfr` / `chi_via_gp_hoefsmit`).
 ///
 /// This is the free `q^{writhe}` cross-check named in the bean's "rule of
-/// thumb". Call it before trusting GP output on a new word-class; the GP
-/// character functions themselves also enforce it and PANIC on
-/// disagreement (refuse-on-disagreement discipline), so this pre-check
-/// lets a caller degrade gracefully rather than catch a `PanicException`.
+/// thumb". Call it before trusting GP output on an unusually long/structured
+/// word; the GP character functions themselves also enforce it as a safety
+/// net and PANIC on disagreement, so this pre-check lets a caller degrade
+/// gracefully rather than catch a `PanicException`.
 #[pyfunction]
 fn chi_gp_trivial_rep_consistent(n: usize, word: Vec<(i32, u32)>) -> bool {
     geck_pfeiffer::chi_gp_trivial_rep_consistent(n, &word)
@@ -642,15 +644,18 @@ fn chi_gp_trivial_rep_consistent(n: usize, word: Vec<(i32, u32)>) -> bool {
 /// not on `λ`); sharing it across the partition loop gives
 /// ~O(p(n))× speedup vs calling `chi_q_via_gp` per partition.
 ///
-/// **Correctness guard (bean `qou-b2ie`):** this path is structurally
-/// incomplete at `q ≠ 1` — the simple-reflection reduction does not reach
-/// minimal-length representatives for every class once `n` grows, giving
-/// WRONG characters on some plain braid words (min reproducer
-/// `σ₆σ₇σ₉⁻¹σ₈σ₇⁻¹` at H₁₂). The function now enforces the exact
-/// trivial-rep `[n]` cross-check and **panics** (Python `PanicException`)
-/// rather than return silently-wrong numbers. Use
-/// [`chi_gp_trivial_rep_consistent`] to test a word first, or the
-/// seminormal kernel for words it rejects.
+/// **Correctness (bean `qou-b2ie`):** this path was structurally incomplete
+/// at `q ≠ 1` — the simple-reflection reduction stalled at non-minimal
+/// representatives for some classes once `n` grows, giving WRONG characters
+/// on some plain braid words (min reproducer `σ₆σ₇σ₉⁻¹σ₈σ₇⁻¹` at H₁₂). This
+/// is **fixed**: the reduction now uses the Geck–Pfeiffer cyclic-shift
+/// completion (`reduce_basis_to_minimal_length_complete`), validated in
+/// Rust against the direct seminormal kernel across the full n≤8 all-
+/// partition random battery plus n=12 production-scale words. The exact
+/// trivial-rep `[n]` cross-check is retained as a **safety net** — it
+/// panics (Python `PanicException`) only if a pathological word ever
+/// exceeds the completion's search cap, so output is never silently wrong.
+/// [`chi_gp_trivial_rep_consistent`] remains available as a pre-check.
 #[pyfunction]
 fn chi_lambdas_via_gp(
     py: Python<'_>,
