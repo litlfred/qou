@@ -1,5 +1,6 @@
 import Mathlib.Algebra.Algebra.Basic
 import Mathlib.LinearAlgebra.LinearIndependent.Basic
+import Mathlib.Data.Real.Basic
 
 /-!
 # Atomic mass as Markov trace of the Gröbner–Shirshov normal form
@@ -45,6 +46,26 @@ namespace QOU.BraidKnot
 universe u
 
 variable (A : Type u) [AddCommGroup A] [Module ℝ A]
+
+/-- Abstract Hecke-style algebra carrying a Markov trace and a
+    confinement filtration ideal `J1` whose elements have zero
+    Markov trace.  Local mirror of `MarkovAlgebra` from the sibling
+    `categorical-mass-markov.lean` (`prop:categorical-mass-markov`);
+    content-block sibling `.lean` files are standalone and cannot
+    import one another. -/
+class MarkovAlgebra (A : Type u) [AddCommGroup A] [Module ℝ A] where
+  /-- The Markov trace, an ℝ-linear functional. -/
+  tr_M : A →ₗ[ℝ] ℝ
+  /-- The GB-filtration submodule `J^1`. -/
+  J1 : Submodule ℝ A
+  /-- Identity element (the `[1]` class). -/
+  one : A
+  /-- Markov trace of the unit. -/
+  tr_M_one : tr_M one = 1
+  /-- Trace vanishes on the confinement ideal. -/
+  tr_M_vanishes_on_J1 : ∀ x ∈ J1, tr_M x = 0
+
+export MarkovAlgebra (tr_M)
 
 /-- Abstract structure for "Hecke algebra carrying a Gröbner–Shirshov
     normal form together with a Markov trace that descends through the

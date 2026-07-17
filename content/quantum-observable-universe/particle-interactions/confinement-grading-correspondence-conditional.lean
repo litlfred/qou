@@ -35,21 +35,21 @@ enough structure to state the conditional theorem. -/
 
 /-- The Iwahori–Hecke algebra `H_n(R, q)` (carrier; full structure
     in `hecke-algebra-from-braiding.lean`). -/
-constant HeckeAlgebra (n : ℕ) (q : ℝ) : Type
+axiom HeckeAlgebra (n : ℕ) (q : ℝ) : Type
 
 /-- Hecke normal form of a closed braid `K` (carrier; full
     definition in `hecke-normal-form.lean`). -/
-constant HeckeNormalForm (n : ℕ) (q : ℝ) : Type
+axiom HeckeNormalForm (n : ℕ) (q : ℝ) : Type
 
 /-- The KLR module attached to a Hecke normal form via Brundan–
     Kleshchev (carrier; full structure conditional on the class). -/
-constant KLRModule (n : ℕ) : Type
+axiom KLRModule (n : ℕ) : Type
 
 /-- Top non-zero graded degree of a KLR module. -/
-constant KLRTopDegree {n : ℕ} (M : KLRModule n) : ℕ
+axiom KLRTopDegree {n : ℕ} (M : KLRModule n) : ℕ
 
 /-- Confinement level `ℓ(K, q)` of a normal form (def:confinement-level). -/
-constant confinementLevel {n : ℕ} {q : ℝ} (T : HeckeNormalForm n q) : ℕ
+axiom confinementLevel {n : ℕ} {q : ℝ} (T : HeckeNormalForm n q) : ℕ
 
 /-! ## Conjectural class
 

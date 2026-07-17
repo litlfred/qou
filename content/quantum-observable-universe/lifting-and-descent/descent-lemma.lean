@@ -27,6 +27,9 @@ structure DescentLemma (R : Type*) [CommRing R] where
   endAlgN : Type*
   /-- The endomorphism algebra at level n-1. -/
   endAlgPrev : Type*
+  /-- Additive structures. -/
+  [addN : AddCommMonoid endAlgN]
+  [addPrev : AddCommMonoid endAlgPrev]
   /-- Module structures. -/
   [instN : Module R endAlgN]
   [instPrev : Module R endAlgPrev]

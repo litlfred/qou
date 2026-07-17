@@ -2,6 +2,7 @@ import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 import Mathlib.Algebra.Order.AbsoluteValue.Basic
 import Mathlib.Algebra.Order.Monoid.Unbundled.Pow
 import Mathlib.Algebra.Polynomial.Basic
+import Mathlib.Data.Real.Basic
 import Mathlib.Tactic.Linarith
 
 /-!
@@ -150,7 +151,7 @@ theorem habiro_truncation_bound
   have h_factor_lt_one : |1 - q ^ (N + 1)| ≤ 1 := by
     have h_qpow_pos : 0 < q ^ (N + 1) := pow_pos hq_pos (N + 1)
     have h_qpow_lt_one : q ^ (N + 1) < 1 :=
-      pow_lt_one (le_of_lt hq_pos) hq_lt (Nat.succ_ne_zero N)
+      pow_lt_one₀ (le_of_lt hq_pos) hq_lt (Nat.succ_ne_zero N)
     rw [abs_of_nonneg (by linarith : (0 : ℝ) ≤ 1 - q ^ (N + 1))]
     linarith
   exact mul_le_of_le_one_right (abs_nonneg _) h_factor_lt_one

@@ -41,8 +41,9 @@ structure SpinLabels where
   /-- The spin label `j`, represented as twice the spin (so `j = 0, 1, 2, 3, ...`
       corresponds to spin `0, 1/2, 1, 3/2, ...`). -/
   twice_j : ℕ
-  /-- The categorical dimension of `V_j` is `2j + 1 = twice_j + 1`. -/
-  cat_dim : ℕ := twice_j + 1
+
+/-- The categorical dimension of `V_j` is `2j + 1 = twice_j + 1`. -/
+def SpinLabels.cat_dim (j : SpinLabels) : ℕ := j.twice_j + 1
 
 /-- **Spin decomposition** in a QOU: the simple objects of `C` are
     indexed by `SpinLabels`, and the fundamental object has spin `1/2`.
