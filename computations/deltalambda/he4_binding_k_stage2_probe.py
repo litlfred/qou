@@ -323,7 +323,7 @@ def main() -> int:
     verdict = (
         f"A=4 STAGE 2 executed on the certified convention: K(⁴He) = T·cp⁻¹ "
         f"evaluated per Wedderburn block at H₁₂(q₀), ALL 77 blocks (no dim "
-        f"cutoff). Leg A (exact GP χ + LP duals): dominant channel λ*(K) = "
+        f"cutoff). Leg A (exact seminormal-mpfr χ + LP duals): dominant channel λ*(K) = "
         f"{tuple(dominant)}, tr_M(K) = {mp.nstr(tr_M_K, 12)}, duality gap "
         f"{lp_dict.get('duality_gap')}. Leg B (f64 diagnostic spectra, the "
         f"A≤3 solver's precision class): min symmetrized eigenvalue "
@@ -341,7 +341,7 @@ def main() -> int:
                        "selection LP with duals) at H12(q0) on the certified "
                        "convention: K = T·cp^{-1} by factor concatenation "
                        "(inverse factors linear in sigma via the Hecke "
-                       "quadratic). Leg A exact GP characters all 77 blocks; "
+                       "quadratic). Leg A exact seminormal-mpfr characters all 77 blocks; "
                        "leg B f64 diagnostic spectra all 77 blocks with "
                        "per-block exact-trace cross-check.",
         "audit_only": True,
