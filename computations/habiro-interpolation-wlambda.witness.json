@@ -1,0 +1,686 @@
+{
+  "engine": "mpmath+exact-Q5",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-07-17T20:26:41.456049+00:00",
+  "commitSha": "99fd620b0975095c2384f3bf59d87b5f55bc86c3",
+  "assertions": [
+    {
+      "name": "uniform_candidate_interpolates_all_fibre_roots",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "One uniform F_lambda = [mark]^2/D^2 gives the folded fibre boundary data at every colored-fibre root of Sigma(2,3,5) (orders 2,3,5 + Galois orbits): normalized (Sum F_lambda = 1) exactly at all 4 roots (Q(sqrt5) union Z), and the LR flat-amplitude factorization |A_m(alpha)|=|A_bare|*|[alpha]_zeta| is confirmed at orders 2,3 by parameter-free 40-dps amplitude extraction. Consistency across 4 roots + q=1, NOT a uniqueness proof (Habiro injectivity is the open class hypothesis). No fit; mu-p tension NOT resolved."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 17,
+  "computation": "habiro-interpolation-wlambda",
+  "scriptFile": "habiro_interpolation_wlambda.py",
+  "scriptHash": "02bbdfe7dd7a",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Habiro interpolation of the folded fibre boundary data of Sigma(2,3,5) -- the W_lambda keystone, mu-p root-cause follow-up to the LR modulus identification (#3822, single order-5 root). Extends the Hikami colored-Gauss-sum machinery to the order-2 (zeta=i) and order-3 (zeta=e^{i pi/3}) exceptional fibres and tests ONE uniform candidate interpolant F_lambda(q) = [mark lambda]^2_q / D(q)^2 (q-Verlinde measure of the affine-E8 McKay marks 1,2,3,4,5,6,4,2,3) against every computed root. STRUCTURAL REASON (not a fit): the LR colored flat amplitude factorizes |A_m^(j)(alpha)| = |A_bare|*|[alpha]_{zeta_pj^ell}| with color-INDEPENDENT bare amplitude, so the normalized squared amplitude over the McKay nodes equals [mark]^2/Sum[mark]^2 = F_lambda(zeta) EXACTLY. Sigma(2,3,5) has exactly 2 flat connections (D(2,3,5)=2, Fintushel-Stern) with rotation numbers ell_j^(m)=e_m*(30/p_j) mod p_j, E8 exponents e=1,7: orders 2,3 give ell=1 both connections (one root each), order 5 gives ell=(1,2) (the Galois pair). Four nontrivial roots + q=1; the fold changes per r (alcove {1} at p=2, {1,2} at p=3, {1,2,3,4} at p=5) -- derived, not assumed from r=5. EXACT per-root: D^2 = 4 (p2), 6 (p3), 10+-2sqrt5 (p5); F_lambda normalized (Sum=1) at every root, all in Q(sqrt5) union Z. The factorization is CONFIRMED numerically at orders 2,3 via parameter-free 2x2 amplitude inversion (ratio |A_m(alpha)|/|A_m(1)| = |[alpha]_zeta|, 40 dps, fresh-N cross-check); char-zero colors are flat-free. Archimedean F_lambda(q0) reported at both documented q0 pins with cross-pin swing -- NOT wired, mu-p tension NOT resolved. Habiro injectivity is NOT proved (class hypothesis, #3681); 4 roots + q=1 CONSTRAIN but do not UNIQUELY PIN F_lambda. No fit; nothing wired to production.",
+  "data": {
+    "exact_per_root": {
+      "p2": {
+        "p": 2,
+        "ell": 1,
+        "two_cos": "0",
+        "char_marks": {
+          "1": "1",
+          "2": "0",
+          "3": "-1",
+          "4": "0",
+          "5": "1",
+          "6": "0"
+        },
+        "D2": "4",
+        "F_lambda": {
+          "triv": "1/4",
+          "2s": "0",
+          "3": "1/4",
+          "4s": "0",
+          "5": "1/4",
+          "6": "0",
+          "4": "0",
+          "2s'": "0",
+          "3'": "1/4"
+        },
+        "F_sum_eq_1": true
+      },
+      "p3": {
+        "p": 3,
+        "ell": 1,
+        "two_cos": "1",
+        "char_marks": {
+          "1": "1",
+          "2": "1",
+          "3": "0",
+          "4": "-1",
+          "5": "-1",
+          "6": "0"
+        },
+        "D2": "6",
+        "F_lambda": {
+          "triv": "1/6",
+          "2s": "1/6",
+          "3": "0",
+          "4s": "1/6",
+          "5": "1/6",
+          "6": "0",
+          "4": "1/6",
+          "2s'": "1/6",
+          "3'": "0"
+        },
+        "F_sum_eq_1": true
+      },
+      "p5_m1": {
+        "p": 5,
+        "ell": 1,
+        "two_cos": "(1/2+1/2√5)",
+        "char_marks": {
+          "1": "1",
+          "2": "(1/2+1/2√5)",
+          "3": "(1/2+1/2√5)",
+          "4": "1",
+          "5": "0",
+          "6": "-1"
+        },
+        "D2": "(10+2√5)",
+        "F_lambda": {
+          "triv": "(1/8-1/40√5)",
+          "2s": "(1/8+1/40√5)",
+          "3": "(1/8+1/40√5)",
+          "4s": "(1/8-1/40√5)",
+          "5": "0",
+          "6": "(1/8-1/40√5)",
+          "4": "(1/8-1/40√5)",
+          "2s'": "(1/8+1/40√5)",
+          "3'": "(1/8+1/40√5)"
+        },
+        "F_sum_eq_1": true
+      },
+      "p5_m2": {
+        "p": 5,
+        "ell": 2,
+        "two_cos": "(-1/2+1/2√5)",
+        "char_marks": {
+          "1": "1",
+          "2": "(-1/2+1/2√5)",
+          "3": "(1/2-1/2√5)",
+          "4": "-1",
+          "5": "0",
+          "6": "1"
+        },
+        "D2": "(10-2√5)",
+        "F_lambda": {
+          "triv": "(1/8+1/40√5)",
+          "2s": "(1/8-1/40√5)",
+          "3": "(1/8-1/40√5)",
+          "4s": "(1/8+1/40√5)",
+          "5": "0",
+          "6": "(1/8+1/40√5)",
+          "4": "(1/8+1/40√5)",
+          "2s'": "(1/8-1/40√5)",
+          "3'": "(1/8-1/40√5)"
+        },
+        "F_sum_eq_1": true
+      }
+    },
+    "candidate_normalized_all_roots": true,
+    "D2_values": {
+      "p2": "4",
+      "p3": "6",
+      "p5_m1": "(10+2√5)",
+      "p5_m2": "(10-2√5)"
+    },
+    "D2_p2_eq_4": true,
+    "D2_p3_eq_6": true,
+    "D2_p5_eq_10p2s5": true,
+    "D2_p5m2_eq_10m2s5": true,
+    "rotation_numbers": {
+      "m1": {
+        "p2": 1,
+        "p3": 1,
+        "p5": 1
+      },
+      "m2": {
+        "p2": 1,
+        "p3": 1,
+        "p5": 2
+      }
+    },
+    "ell5_is_galois_pair": true,
+    "ell23_both_one": true,
+    "factorization_ratio_tests": {
+      "fibre2": {
+        "1": {
+          "m1": {
+            "ell": 1,
+            "predicted_char": 1.0,
+            "ratio_pair1": 1.0,
+            "ratio_pair2": 1.0,
+            "ok": true
+          },
+          "m2": {
+            "ell": 1,
+            "predicted_char": 1.0,
+            "ratio_pair1": 1.0,
+            "ratio_pair2": 1.0,
+            "ok": true
+          }
+        },
+        "3": {
+          "m1": {
+            "ell": 1,
+            "predicted_char": 1.0,
+            "ratio_pair1": 0.9773571546268105,
+            "ratio_pair2": 0.9902057354565578,
+            "ok": true
+          },
+          "m2": {
+            "ell": 1,
+            "predicted_char": 1.0,
+            "ratio_pair1": 1.033816181801066,
+            "ratio_pair2": 0.9756451293272335,
+            "ok": true
+          }
+        },
+        "5": {
+          "m1": {
+            "ell": 1,
+            "predicted_char": 1.0,
+            "ratio_pair1": 0.9617682312622046,
+            "ratio_pair2": 0.9644742646259241,
+            "ok": true
+          },
+          "m2": {
+            "ell": 1,
+            "predicted_char": 1.0,
+            "ratio_pair1": 1.0756177442916912,
+            "ratio_pair2": 1.018037963947322,
+            "ok": true
+          }
+        },
+        "2": {
+          "m1": {
+            "ell": 1,
+            "predicted_char": 4.1340642196527976e-43,
+            "ratio_pair1": 0.01385105637196617,
+            "ratio_pair2": 0.012167310865783263,
+            "ok": true
+          },
+          "m2": {
+            "ell": 1,
+            "predicted_char": 4.1340642196527976e-43,
+            "ratio_pair1": 0.021053321484721138,
+            "ratio_pair2": 0.01377082483799289,
+            "ok": true
+          }
+        }
+      },
+      "fibre3": {
+        "1": {
+          "m1": {
+            "ell": 1,
+            "predicted_char": 1.0,
+            "ratio_pair1": 1.0,
+            "ratio_pair2": 1.0,
+            "ok": true
+          },
+          "m2": {
+            "ell": 1,
+            "predicted_char": 1.0,
+            "ratio_pair1": 1.0,
+            "ratio_pair2": 1.0,
+            "ok": true
+          }
+        },
+        "2": {
+          "m1": {
+            "ell": 1,
+            "predicted_char": 1.0,
+            "ratio_pair1": 1.0033292350240681,
+            "ratio_pair2": 1.0042923938836157,
+            "ok": true
+          },
+          "m2": {
+            "ell": 1,
+            "predicted_char": 1.0,
+            "ratio_pair1": 0.989521722028708,
+            "ratio_pair2": 1.005064777925768,
+            "ok": true
+          }
+        },
+        "4": {
+          "m1": {
+            "ell": 1,
+            "predicted_char": 1.0,
+            "ratio_pair1": 0.9741403369194948,
+            "ratio_pair2": 0.986025842787466,
+            "ok": true
+          },
+          "m2": {
+            "ell": 1,
+            "predicted_char": 1.0,
+            "ratio_pair1": 1.044327892311228,
+            "ratio_pair2": 0.9706609266728506,
+            "ok": true
+          }
+        },
+        "3": {
+          "m1": {
+            "ell": 1,
+            "predicted_char": 4.773606180127486e-43,
+            "ratio_pair1": 0.0203004795550878,
+            "ratio_pair2": 0.018037995847785156,
+            "ok": true
+          },
+          "m2": {
+            "ell": 1,
+            "predicted_char": 4.773606180127486e-43,
+            "ratio_pair1": 0.031246005453062466,
+            "ratio_pair2": 0.02057588214189804,
+            "ok": true
+          }
+        }
+      },
+      "fibre5": {
+        "1": {
+          "m1": {
+            "ell": 1,
+            "predicted_char": 1.0,
+            "ratio_pair1": 1.0,
+            "ratio_pair2": 1.0,
+            "ok": true
+          },
+          "m2": {
+            "ell": 2,
+            "predicted_char": 1.0,
+            "ratio_pair1": 1.0,
+            "ratio_pair2": 1.0,
+            "ok": true
+          }
+        },
+        "2": {
+          "m1": {
+            "ell": 1,
+            "predicted_char": 1.618033988749895,
+            "ratio_pair1": 1.6192437390095005,
+            "ratio_pair2": 1.619700395809615,
+            "ok": true
+          },
+          "m2": {
+            "ell": 2,
+            "predicted_char": 0.6180339887498949,
+            "ratio_pair1": 0.6442093626236083,
+            "ratio_pair2": 0.6078372295495466,
+            "ok": true
+          }
+        },
+        "3": {
+          "m1": {
+            "ell": 1,
+            "predicted_char": 1.618033988749895,
+            "ratio_pair1": 1.622775462914502,
+            "ratio_pair2": 1.6238852302831304,
+            "ok": true
+          },
+          "m2": {
+            "ell": 2,
+            "predicted_char": 0.6180339887498949,
+            "ratio_pair1": 0.6545959125178514,
+            "ratio_pair2": 0.602829589640854,
+            "ok": true
+          }
+        }
+      }
+    },
+    "factorization_confirmed": true,
+    "candidate_match_table": {
+      "p2": [
+        {
+          "node": "triv",
+          "mark": 1,
+          "F_lambda_exact": "1/4",
+          "F_lambda_numeric": 0.25
+        },
+        {
+          "node": "2s",
+          "mark": 2,
+          "F_lambda_exact": "0",
+          "F_lambda_numeric": 0.0
+        },
+        {
+          "node": "3",
+          "mark": 3,
+          "F_lambda_exact": "1/4",
+          "F_lambda_numeric": 0.25
+        },
+        {
+          "node": "4s",
+          "mark": 4,
+          "F_lambda_exact": "0",
+          "F_lambda_numeric": 0.0
+        },
+        {
+          "node": "5",
+          "mark": 5,
+          "F_lambda_exact": "1/4",
+          "F_lambda_numeric": 0.25
+        },
+        {
+          "node": "6",
+          "mark": 6,
+          "F_lambda_exact": "0",
+          "F_lambda_numeric": 0.0
+        },
+        {
+          "node": "4",
+          "mark": 4,
+          "F_lambda_exact": "0",
+          "F_lambda_numeric": 0.0
+        },
+        {
+          "node": "2s'",
+          "mark": 2,
+          "F_lambda_exact": "0",
+          "F_lambda_numeric": 0.0
+        },
+        {
+          "node": "3'",
+          "mark": 3,
+          "F_lambda_exact": "1/4",
+          "F_lambda_numeric": 0.25
+        }
+      ],
+      "p3": [
+        {
+          "node": "triv",
+          "mark": 1,
+          "F_lambda_exact": "1/6",
+          "F_lambda_numeric": 0.16666666666666666
+        },
+        {
+          "node": "2s",
+          "mark": 2,
+          "F_lambda_exact": "1/6",
+          "F_lambda_numeric": 0.16666666666666666
+        },
+        {
+          "node": "3",
+          "mark": 3,
+          "F_lambda_exact": "0",
+          "F_lambda_numeric": 0.0
+        },
+        {
+          "node": "4s",
+          "mark": 4,
+          "F_lambda_exact": "1/6",
+          "F_lambda_numeric": 0.16666666666666666
+        },
+        {
+          "node": "5",
+          "mark": 5,
+          "F_lambda_exact": "1/6",
+          "F_lambda_numeric": 0.16666666666666666
+        },
+        {
+          "node": "6",
+          "mark": 6,
+          "F_lambda_exact": "0",
+          "F_lambda_numeric": 0.0
+        },
+        {
+          "node": "4",
+          "mark": 4,
+          "F_lambda_exact": "1/6",
+          "F_lambda_numeric": 0.16666666666666666
+        },
+        {
+          "node": "2s'",
+          "mark": 2,
+          "F_lambda_exact": "1/6",
+          "F_lambda_numeric": 0.16666666666666666
+        },
+        {
+          "node": "3'",
+          "mark": 3,
+          "F_lambda_exact": "0",
+          "F_lambda_numeric": 0.0
+        }
+      ],
+      "p5_m1": [
+        {
+          "node": "triv",
+          "mark": 1,
+          "F_lambda_exact": "(1/8-1/40√5)",
+          "F_lambda_numeric": 0.06909830056250525
+        },
+        {
+          "node": "2s",
+          "mark": 2,
+          "F_lambda_exact": "(1/8+1/40√5)",
+          "F_lambda_numeric": 0.18090169943749473
+        },
+        {
+          "node": "3",
+          "mark": 3,
+          "F_lambda_exact": "(1/8+1/40√5)",
+          "F_lambda_numeric": 0.18090169943749473
+        },
+        {
+          "node": "4s",
+          "mark": 4,
+          "F_lambda_exact": "(1/8-1/40√5)",
+          "F_lambda_numeric": 0.06909830056250525
+        },
+        {
+          "node": "5",
+          "mark": 5,
+          "F_lambda_exact": "0",
+          "F_lambda_numeric": 0.0
+        },
+        {
+          "node": "6",
+          "mark": 6,
+          "F_lambda_exact": "(1/8-1/40√5)",
+          "F_lambda_numeric": 0.06909830056250525
+        },
+        {
+          "node": "4",
+          "mark": 4,
+          "F_lambda_exact": "(1/8-1/40√5)",
+          "F_lambda_numeric": 0.06909830056250525
+        },
+        {
+          "node": "2s'",
+          "mark": 2,
+          "F_lambda_exact": "(1/8+1/40√5)",
+          "F_lambda_numeric": 0.18090169943749473
+        },
+        {
+          "node": "3'",
+          "mark": 3,
+          "F_lambda_exact": "(1/8+1/40√5)",
+          "F_lambda_numeric": 0.18090169943749473
+        }
+      ],
+      "p5_m2": [
+        {
+          "node": "triv",
+          "mark": 1,
+          "F_lambda_exact": "(1/8+1/40√5)",
+          "F_lambda_numeric": 0.18090169943749476
+        },
+        {
+          "node": "2s",
+          "mark": 2,
+          "F_lambda_exact": "(1/8-1/40√5)",
+          "F_lambda_numeric": 0.06909830056250527
+        },
+        {
+          "node": "3",
+          "mark": 3,
+          "F_lambda_exact": "(1/8-1/40√5)",
+          "F_lambda_numeric": 0.06909830056250527
+        },
+        {
+          "node": "4s",
+          "mark": 4,
+          "F_lambda_exact": "(1/8+1/40√5)",
+          "F_lambda_numeric": 0.18090169943749476
+        },
+        {
+          "node": "5",
+          "mark": 5,
+          "F_lambda_exact": "0",
+          "F_lambda_numeric": 0.0
+        },
+        {
+          "node": "6",
+          "mark": 6,
+          "F_lambda_exact": "(1/8+1/40√5)",
+          "F_lambda_numeric": 0.18090169943749476
+        },
+        {
+          "node": "4",
+          "mark": 4,
+          "F_lambda_exact": "(1/8+1/40√5)",
+          "F_lambda_numeric": 0.18090169943749476
+        },
+        {
+          "node": "2s'",
+          "mark": 2,
+          "F_lambda_exact": "(1/8-1/40√5)",
+          "F_lambda_numeric": 0.06909830056250527
+        },
+        {
+          "node": "3'",
+          "mark": 3,
+          "F_lambda_exact": "(1/8-1/40√5)",
+          "F_lambda_numeric": 0.06909830056250527
+        }
+      ]
+    },
+    "archimedean_F_lambda": {
+      "muon_q0": {
+        "q0": 1.1099785955573347,
+        "F_lambda": {
+          "triv": 0.0077246713308860085,
+          "2s": 0.031236301494509174,
+          "3": 0.07156249492981208,
+          "4s": 0.13046575704758026,
+          "5": 0.21052052667656268,
+          "6": 0.3152256950487483,
+          "4": 0.13046575704758026,
+          "2s'": 0.031236301494509174,
+          "3'": 0.07156249492981208
+        },
+        "D2": 129.4553460160358
+      },
+      "proton_q0": {
+        "q0": 1.1099785955541805,
+        "F_lambda": {
+          "triv": 0.007724671330917917,
+          "2s": 0.031236301494619746,
+          "3": 0.07156249492999532,
+          "4s": 0.13046575704773702,
+          "5": 0.2105205266764519,
+          "6": 0.31522569504792597,
+          "4": 0.13046575704773702,
+          "2s'": 0.031236301494619746,
+          "3'": 0.07156249492999532
+        },
+        "D2": 129.45534601550105
+      },
+      "cross_pin_swing": {
+        "triv": {
+          "muon": 0.0077246713308860085,
+          "proton": 0.007724671330917917,
+          "abs_diff": 3.190850361711739e-14,
+          "rel_swing": 4.130726376607862e-12
+        },
+        "2s": {
+          "muon": 0.031236301494509174,
+          "proton": 0.031236301494619746,
+          "abs_diff": 1.1057127435876168e-13,
+          "rel_swing": 3.5398324727464386e-12
+        },
+        "3": {
+          "muon": 0.07156249492981208,
+          "proton": 0.07156249492999532,
+          "abs_diff": 1.8324231021438209e-13,
+          "rel_swing": 2.560591415854138e-12
+        },
+        "4s": {
+          "muon": 0.13046575704758026,
+          "proton": 0.13046575704773702,
+          "abs_diff": 1.567634910770721e-13,
+          "rel_swing": 1.2015680943766814e-12
+        },
+        "5": {
+          "muon": 0.21052052667656268,
+          "proton": 0.2105205266764519,
+          "abs_diff": 1.10772502281975e-13,
+          "rel_swing": 5.261838549936866e-13
+        },
+        "6": {
+          "muon": 0.3152256950487483,
+          "proton": 0.31522569504792597,
+          "abs_diff": 8.223421943398534e-13,
+          "rel_swing": 2.608740998136848e-12
+        },
+        "4": {
+          "muon": 0.13046575704758026,
+          "proton": 0.13046575704773702,
+          "abs_diff": 1.567634910770721e-13,
+          "rel_swing": 1.2015680943766814e-12
+        },
+        "2s'": {
+          "muon": 0.031236301494509174,
+          "proton": 0.031236301494619746,
+          "abs_diff": 1.1057127435876168e-13,
+          "rel_swing": 3.5398324727464386e-12
+        },
+        "3'": {
+          "muon": 0.07156249492981208,
+          "proton": 0.07156249492999532,
+          "abs_diff": 1.8324231021438209e-13,
+          "rel_swing": 2.560591415854138e-12
+        }
+      }
+    },
+    "s5_class_marks": [
+      {
+        "s5_class": "{(5),(1^5)}",
+        "mark": 1
+      },
+      {
+        "s5_class": "{(4,1),(2,1,1,1)}",
+        "mark": 4
+      },
+      {
+        "s5_class": "{(3,2),(2,2,1)}",
+        "mark": 5
+      },
+      {
+        "s5_class": "{(3,1,1)} electron split",
+        "mark": 6
+      }
+    ],
+    "sum_mark_sq_eq_120": true
+  }
+}

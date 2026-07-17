@@ -106,8 +106,60 @@ orders 2, 3 is verified by the colored Gauss sum (40-dps, parameter-free extract
 
 ## Results
 
-_(filled after the compute — see `computations/habiro_interpolation_wlambda.py` +
-`habiro-interpolation-wlambda.witness.json`.)_
+Probe [`computations/habiro_interpolation_wlambda.py`](../../computations/habiro_interpolation_wlambda.py)
++ witness [`habiro-interpolation-wlambda.witness.json`](../../computations/habiro-interpolation-wlambda.witness.json)
+(1 assertion, passed). **Verdict: one uniform candidate `F_λ = [mark]²/D²` interpolates every
+computed root** — a uniform-candidate win (consistency, not injectivity).
+
+### (E) Exact per-root candidate (ℚ(√5) ∪ ℤ; zero floats)
+
+The candidate is **exactly normalized** (`Σ_λ F_λ = 1`) at every root, with the fold derived per r:
+
+| fibre root | `2cos(π·ℓ/p)` | `D²` | `F_λ` (distinct values) |
+|---|---|---|---|
+| order-2 `ζ=i` | 0 | 4 | `{1/4 (marks 1,3,5), 0 (2,4,6)}` |
+| order-3 `e^{iπ/3}` | 1 | 6 | `{1/6 (marks 1,2,4,5), 0 (3,6)}` |
+| order-5 `e^{iπ/5}` (m=1) | φ | 10+2√5 | `{1/8−√5/40, 1/8+√5/40, 0}` |
+| order-5 `e^{2iπ/5}` (m=2) | φ−1 | 10−2√5 | `{1/8+√5/40, 1/8−√5/40, 0}` |
+
+`D²` values verified exactly (`4, 6, 10±2√5`); the order-5 pair is #3822's `ℚ(√5)` fold. Rotation
+numbers derived: `ℓ_5 = (1,2)` (the Galois pair), `ℓ_2 = ℓ_3 = 1` (both connections).
+
+### (F) LR flat-amplitude factorization confirmed at orders 2, 3 (40 dps)
+
+Parameter-free 2×2 amplitude inversion (fresh N-pairs `(81,113)` / `(121,163)`), ratio
+`|A_m(α)|/|A_m(1)|` against the predicted character `|[α]_{ζ_{p}^{ℓ}}|`:
+
+- **order 2** (`ζ=i`, `ℓ=1` both m): nonzero chars `α=1,3,5 → |[α]_i|=1` matched (ratios
+  0.96–1.02); char-zero `α=2 → |[2]_i|=0` is **flat-free** (ratio ~0.012, no √N growth). ✅
+- **order 3** (`ζ=e^{iπ/3}`, `ℓ=1` both m): `α=1,2,4 → |[α]_ζ|=1` matched (0.97–1.01); char-zero
+  `α=3 → 0` flat-free (~0.018). ✅
+- **order 5** (re-verify #3822 Galois structure): `α=2` gives `|[2]_{ζ}|=φ=1.618` at m=1 (ℓ=1) and
+  `|[2]_{ζ²}|=φ−1=0.618` at m=2 (ℓ=2), both matched — the two connections see the two Galois
+  embeddings, as #3822 found. ✅
+
+The color-independence of the bare amplitude is thus confirmed, so the normalized squared amplitude
+`= [mark]²_ζ/Σ[mark]²_ζ = F_λ(ζ)` at every root — the candidate matches, **structurally, not fitted**.
+
+### (Q) Archimedean `F_λ(q₀)` — reported, NOT wired
+
+`F_λ(q₀) = [mark]²_{q₀}/Σ[mark]²_{q₀}` at both documented pins. The physical blocks
+(#3685 dictionary): electron = mark 6, muon class `(3,2)` = mark 5.
+
+| block (mark) | `F_λ(muon q₀)` | `F_λ(proton q₀)` | rel cross-pin swing |
+|---|---|---|---|
+| electron (6) | 0.31522570 | 0.31522570 | 2.6e-12 |
+| muon (5) | 0.21052053 | 0.21052053 | 5.3e-13 |
+| (4) | 0.13046576 | 0.13046576 | 1.2e-12 |
+| (3) | 0.07156249 | 0.07156249 | 2.6e-12 |
+| (2) | 0.03123630 | 0.03123630 | 3.5e-12 |
+| triv (1) | 0.00772467 | 0.00772467 | 4.1e-12 |
+
+**Finding — `F_λ(q₀)` is pin-robust.** The cross-pin swing (~10⁻¹²) is ~10⁴× *smaller* than the
+11.5 ppb (~10⁻⁸) q₀-pin difference, because `F_λ` is a ratio (the leading q₀-scale cancels). So the
+interpolant's observable `W_λ(q₀)` **does not discriminate** between the μ and p pins at this order —
+tiered **consistent-not-identified**. This is reported as a candidate value only; it is **not** a
+resolution of the μ–p tension (which lives elsewhere in the mass chain, not in `W_λ`'s ratio).
 
 ## Coordination
 
