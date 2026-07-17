@@ -66,24 +66,46 @@ finite-q Richardson + term-cap, the limit is exact).
 
 Sum `= Li₂(x) − π²/3`. Both halves are the same branch-point value `π²/6 = Li₂(1)`.
 
-## Reading
+## Categorical tie-down: the T_w Frobenius truncation removes one π²/6
 
-Part B's substrate continuation reproduces the **substantive content** of the
-conjecture — the full x-dependence of Li₂(x), to machine precision, at q₀ and in
-the q→1⁺ limit — with the branch-cut/pole structure contributing only a **single
-universal x-independent constant π²/3**. So the "exact cancellation among
-algebraic poles" reduces from a *functional obstruction* ("does the continuation
-reproduce Li₂ past the branch cut?") to **fixing one scalar π²/3** — the
-`T_w` Frobenius-pairing normalization the conjecture names. This **resolves the
-x-dependence half of gap (2)** and isolates the residual open content to a
-constant.
+The `T_w` Frobenius-pairing normalization the conjecture names is **not** ad hoc —
+it is the **stratified-truncation corollary** of
+[`prop:quantum-dilogarithm-stratified`](../../content/quantum-observable-universe/mass-theory/quantum-dilogarithm-stratified.md):
+the Frobenius trace `tr_M(Φ_q(z_i)·T_w)` truncates at the NF support depth
+`k_⋆(T_w)`, so *"the analytic infinite product truncates to a finite product … the
+analytic divergence is a side-effect, absent from the categorical mass."* The
+truncation cut is exactly at the sign-flip `k* = log_{q₀}(1/x)`, whose denominator
+root `x = q₀^{−k*}` is the **cusp-completeness address**
+([`conj:shared-denominator-cusp-holonomy`](../../content/quantum-observable-universe/mass-theory/shared-denominator-cusp-holonomy.md)).
+
+Computing the genuine categorical object — the **truncated** product
+`Φ_q^{[≤k*]}` (only the positive factors, `k ≤ k*`) — gives, in the q→1⁺ limit:
+
+$$
+  (1-q)\log \Phi_q^{[\le k_*]}(x;q) \;\longrightarrow\; \mathrm{Li}_2(x) - \frac{\pi^2}{6},
+$$
+
+| x | trunc (q→1⁺) | Li₂(x) − π²/6 |
+|---|---|---|
+| 0.2 | −1.4357 | −1.4339 |
+| 0.5 | −1.0609 | −1.0627 |
+| 0.8 | −0.5707 | −0.5701 |
+
+So the T_w truncation **removes exactly one of the two π²/6 halves** — the
+negative-factor Euler tail (`k > k*`), which is never Frobenius-paired. The
+residual offset is the **single archimedean regulator constant**
+`π²/6 = ζ(2) = Li₂(1)` — the dilogarithm's value at the cusp/branch point `x=1`
+(the last, vanishing, factor). So the categorical mechanism reduces the offset
+from the ad-hoc `π²/3` to the canonical regulator `ζ(2)`, and the remaining open
+content is the **cusp-boundary regulator term** at `x=1`, not a functional
+obstruction.
 
 ## What remains open
 
-1. The **categorical fixing of π²/3** — the constant is not free (it is
-   `2·Li₂(1)`), but tying it to the `T_w` Frobenius-pairing normalization at
-   GB-depth `k_⋆(T_w)` (`prop:quantum-dilogarithm-stratified`,
-   `conj:shared-denominator-cusp-holonomy`) is the remaining derivation.
+1. The **cusp-boundary regulator term** `π²/6 = ζ(2) = Li₂(1)` — the residual after
+   the T_w truncation, the archimedean regulator value at the vanishing cusp
+   factor (`x=1`, the `k*` completeness root). Deriving its sign/normalization
+   from the cusp-boundary of `Φ_q^{[≤k*]}` closes Part B for x∈(0,1).
 2. The **x→1⁻ edge** (gap 3), where the Riemann-sum error `ℏ·(−log(1−x))` blows
    up — untouched here.
 3. **Lean/Mathlib** closure of even Part A — the standing infrastructure
