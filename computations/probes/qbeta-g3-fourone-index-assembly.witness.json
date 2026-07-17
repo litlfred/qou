@@ -1,0 +1,55 @@
+{
+  "engine": "python-int+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-07-17T20:51:38.761238+00:00",
+  "commitSha": "1445ce827620565bf20e2bdff7777d61a1f78f12",
+  "assertions": [
+    {
+      "name": "open_state_recorded",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "honest no-certification record"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 17,
+  "computation": "qbeta-g3-fourone-index-assembly",
+  "scriptFile": "qbeta_g3_fourone_index_assembly.py",
+  "scriptHash": "d93c3206fb16",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
+  },
+  "description": "A_omega route 1 tranche 2 — OPEN STATE record: 4_1 total-index assembly not yet certified against the glyph-verified DGG anchor (4.20); exclusion table of candidate readings recorded (flat-wing divergence of the bare sum; q^{-e2} near-miss; 9 quad frames). Anti-fabrication: no formula reconstructed from memory.",
+  "contentBlock": "conj:im-q-physical-role",
+  "data": {
+    "status": "assembly-not-certified",
+    "anchor_420_glyph_verified": "-q -q^2 +2q^3 +7q^4 +11q^5 +11q^6 +3q^7",
+    "near_miss_q_minus_e2": "-1·q^0 -1·q^1 +2·q^2 +6·q^3 +11·q^4 +10·q^5 +3·q^6 -17·q^7",
+    "excluded": [
+      "bare (4.18) no-prefactor: flat negative wing, divergent",
+      "monomial prefactors q^{ce2}, c in {+-1,+-1/2,+-2,0}: no exact match",
+      "(-1)^{e2} sign dressings: no match",
+      "11 F2-argument variants x prefactors: no match",
+      "9 quad-rotation frames (Def 2.11, derived NZ data): converge to different series or vanish; none match"
+    ],
+    "next_inputs": [
+      "DGG appendix B tables (pages ~70-72) as additional anchors",
+      "charge dictionary for U = 2 log m normalization",
+      "coordination with #3805 (same target)"
+    ]
+  }
+}
