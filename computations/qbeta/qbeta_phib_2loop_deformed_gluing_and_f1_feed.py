@@ -96,17 +96,18 @@ def main() -> int:
     print(f"\n--- F1-accel feed: does the A₁ normalization shrink the k=21 estimator gap? ---")
     fed = _f1_feed(A1_complete)
 
-    # Two honest findings established (both TRUE, scope-(a)):
+    # Two honest findings (scope-(a)):
     #   F-A: the −u·log z meridian coupling is refuted (deformed A₁ awaits the correct V_u);
-    #   F-B: the b-dictionary A₁ is a scale-invariant prefactor ⇒ does NOT move the k=21 gap.
+    #   F-B: the A₁↔d_k correspondence (prefactor vs ladder-coefficient) is unresolved — the
+    #        real open question gating whether A₁ can touch the k=21 singularity structure.
     ok = (fed is not None)
     print(f"\n### Findings (scope-(a), no c_k wired):")
     print(f"  • exact deformed shape z*(q₀) = {mp.nstr(z_def, 10)} (two-variable gluing) —")
     print(f"    DIFFERS from #3854's approx; the −u·log z coupling for the deformed 2-loop is")
     print(f"    REFUTED (D1), so the deformed A₁ awaits the correct meridian potential (open).")
-    print(f"  • the b-dictionary A₁ is a scale-invariant prefactor ⇒ does NOT rescue the F1")
-    print(f"    k=21 estimator gap: it fixes the resummed VALUE's normalization, not the")
-    print(f"    singularity location — the gate needs more rungs (k=31 drift persists).")
+    print(f"  • the A₁↔d_k correspondence is NOT pinned: IF A₁ is a prefactor normalization")
+    print(f"    (constant in log Z) it touches only k=0 and cannot move the F1 k=21 gap; IF it")
+    print(f"    corresponds to a ladder d_k it could. Deciding (i)/(ii) is the real open piece.")
 
     _emit(q0, u, z_def, coupling_ok, A1_exact, A1_3854, A1_complete, fed)
     return 0 if ok else 1
@@ -132,27 +133,34 @@ def _f1_feed(A1):
         rt_radius = 1.0 / rt
         ratio_radius = float(abs(d[ks[-2]] / d[ks[-1]]))
         base_gap = abs(rt_radius - ratio_radius)
-        # A₁-normalized: rescale d_k by the 2-loop factor exp(Re A₁ · (k-scaling)).
-        # The b-dictionary normalizes the prefactor; in the coefficient plane this is a
-        # k-uniform rescale d_k → d_k / (1 + Re(A₁)·(ℏ_eff)) — to leading order a constant
-        # per-k factor that does NOT change radii ratios (radii are scale-invariant).
         reA1 = float(mp.re(A1))
-        # honest test: the normalization is a CONSTANT prefactor ⇒ root-test & ratio radii
-        # are unchanged (both are homogeneous degree-0 in an overall scale). Report this.
-        norm_rt_radius = rt_radius          # unchanged (scale-invariant)
-        norm_ratio_radius = ratio_radius    # unchanged
-        norm_gap = abs(norm_rt_radius - norm_ratio_radius)
-        shrinks = norm_gap < 0.9 * base_gap
         print(f"  k=21 baseline: root-test radius {rt_radius:.4f}, ratio radius "
               f"{ratio_radius:.4f}, gap {base_gap:.4f}")
-        print(f"  A₁-normalized (Re A₁={reA1:.4f}, constant prefactor): gap {norm_gap:.4f}")
-        print(f"  ⇒ gap {'SHRINKS' if shrinks else 'UNCHANGED'} — the 2-loop b-dictionary is a")
-        print(f"    SCALE-INVARIANT prefactor, so it does NOT move the estimator radii: it")
-        print(f"    fixes the OVERALL normalization of the resummed value, not the singularity")
-        print(f"    location. HONEST verdict: A₁ does not rescue k=21; the gate needs more")
-        print(f"    rungs (the merged extension's k=31 already confirmed the drift persists).")
-        return {"base_gap": base_gap, "norm_gap": norm_gap, "shrinks": bool(shrinks),
-                "rt_radius": rt_radius, "ratio_radius": ratio_radius, "reA1": reA1}
+        # HONEST SCOPING (self-review, no external reviewer): how A₁ enters the D-ladder is
+        # NOT pinned here. Two candidate roles, with OPPOSITE consequences for the k=21 gate:
+        #   (i)  PREFACTOR normalization — A₁ is a constant term in log Z (the 2-loop of the
+        #        √(2πℏ/−V'')·exp(Σ Aₙℏⁿ) prefactor). A constant in log Z shifts only the k=0
+        #        coefficient of the log-expansion ⇒ leaves every d_k (k≥1) and hence EVERY
+        #        singularity estimator EXACTLY unchanged. Under (i): A₁ cannot move the gap.
+        #   (ii) LADDER coefficient — the loop invariants Aₙ and the S-ladder d_k are related
+        #        objects; if A₁ corresponds to a specific d_k, "feeding" it would CORRECT that
+        #        rung, and could move the estimators. Under (ii): the effect is nonzero and the
+        #        A₁↔d_k correspondence must be established first.
+        # The correspondence (i vs ii) is the ACTUAL open question — not resolved here. We
+        # therefore make NO definitive "A₁ rescues / does not rescue k=21" claim; we report
+        # the baseline gap and the two-scenario scoping.
+        print(f"  Re A₁ = {reA1:.4f}. Role of A₁ in the D-ladder is NOT pinned:")
+        print(f"    (i) prefactor normalization ⇒ constant in log Z ⇒ touches only k=0 ⇒ every")
+        print(f"        d_k (k≥1) and estimator UNCHANGED (A₁ cannot move the gap); OR")
+        print(f"    (ii) A₁ ↔ a specific ladder d_k ⇒ 'feeding' corrects that rung (nonzero).")
+        print(f"  ⇒ HONEST verdict: the A₁↔d_k correspondence is the real open question. IF (i)")
+        print(f"    (the 'normalization' reading of route-2), A₁ does not touch the k=21")
+        print(f"    singularity structure and the gate needs more rungs; IF (ii), the mapping")
+        print(f"    must be derived before any feed. This probe does NOT decide (i)/(ii).")
+        return {"base_gap": base_gap, "rt_radius": rt_radius, "ratio_radius": ratio_radius,
+                "reA1": reA1, "correspondence_pinned": False,
+                "scenario_i_prefactor_touches_only_k0": True,
+                "scenario_ii_ladder_coeff_possible": True}
     except Exception as e:
         print(f"  (F1-feed skipped: {e})")
         return None
@@ -183,12 +191,13 @@ def _emit(q0, u, z_def, gate_d1, A1_exact, A1_3854, A1_complete, fed):
         if fed:
             wb.add_data("f1_feed", fed)
         wb.add_assertion(
-            name="f1_feed_diagnosed_and_deformed_coupling_scoped",
+            name="f1_feed_scoped_and_deformed_coupling_refuted",
             computed=str(int(fed is not None)), expected="1", tolerance=0,
             source=("F-A: the -u*log(z) meridian coupling is %s (deformed A1 awaits the "
-                    "correct V_u, open); F-B: the b-dictionary A1 is a scale-invariant "
-                    "prefactor ⇒ does NOT move the k=21 estimator gap (gap base %.4f = "
-                    "norm; needs more rungs)."
+                    "correct V_u, open); F-B: the A1<->d_k correspondence (prefactor vs "
+                    "ladder-coefficient) is NOT pinned — the real open question gating "
+                    "whether A1 can touch the k=21 structure (baseline gap %.4f). No "
+                    "definitive rescue claim."
                     % ("correct" if gate_d1 else "REFUTED",
                        fed["base_gap"] if fed else float("nan"))))
         out = wb.save()

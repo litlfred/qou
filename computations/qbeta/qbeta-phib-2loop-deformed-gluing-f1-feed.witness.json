@@ -1,24 +1,24 @@
 {
   "engine": "mpmath+sympy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-17T22:35:32.916989+00:00",
-  "commitSha": "4c803d413b4b86613b94ba160f192dd500094e44",
+  "computedAt": "2026-07-17T22:41:49.356989+00:00",
+  "commitSha": "65d8ea7ab71a5202c0b8a5bb1a57e410b47f94b1",
   "assertions": [
     {
-      "name": "f1_feed_diagnosed_and_deformed_coupling_scoped",
+      "name": "f1_feed_scoped_and_deformed_coupling_refuted",
       "computed": "1",
       "expected": "1",
       "passed": true,
       "tolerance": 0,
-      "source": "F-A: the -u*log(z) meridian coupling is REFUTED (deformed A1 awaits the correct V_u, open); F-B: the b-dictionary A1 is a scale-invariant prefactor ⇒ does NOT move the k=21 estimator gap (gap base 0.0194 = norm; needs more rungs)."
+      "source": "F-A: the -u*log(z) meridian coupling is REFUTED (deformed A1 awaits the correct V_u, open); F-B: the A1<->d_k correspondence (prefactor vs ladder-coefficient) is NOT pinned — the real open question gating whether A1 can touch the k=21 structure (baseline gap 0.0194). No definitive rescue claim."
     }
   ],
   "allPassed": true,
-  "durationMs": 17,
+  "durationMs": 16,
   "computation": "qbeta-phib-2loop-deformed-gluing-f1-feed",
   "scriptFile": "qbeta_phib_2loop_deformed_gluing_and_f1_feed.py",
-  "scriptHash": "46eb766692a0",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "c0f7db595516",
+  "scriptCommitSha": "65d8ea7ab71a5202c0b8a5bb1a57e410b47f94b1",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -49,11 +49,12 @@
     ],
     "f1_feed": {
       "base_gap": 0.01943323202438943,
-      "norm_gap": 0.01943323202438943,
-      "shrinks": false,
       "rt_radius": 0.16919390639595228,
       "ratio_radius": 0.14976067437156285,
-      "reA1": 0.3333333333333333
+      "reA1": 0.3333333333333333,
+      "correspondence_pinned": false,
+      "scenario_i_prefactor_touches_only_k0": true,
+      "scenario_ii_ladder_coeff_possible": true
     }
   }
 }
