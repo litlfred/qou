@@ -1080,3 +1080,29 @@ is FIXED on main (`ser_div`, valuation-aware, credits the #3691 diagnosis);
 corpus sweep finds zero remaining shift-divide offenders. Audit:
 `2026-07-17-deformed-tower-xi-frame-phase-law.md`. No fit; no c_k wired; no
 integer Stokes constant claimed; no tier change.
+**2026-07-17 (PR #3818, `claude/dladder-qborel-acceleration-2026-07-17`) —
+q-Borel acceleration of the D-ladder: transport invariant proved, fixed-base
+Jackson pruned, gate fails at k=21.** The unowned odd-channel front of the
+[07-17 reassessment](../audits/2026-07-17-1ppq-path-reassessment.md) item 1;
+audit [`2026-07-17-dladder-qborel-acceleration.md`](../audits/2026-07-17-dladder-qborel-acceleration.md).
+Formalize-first results: (1) **proved-lean, sorry-free** — the signed 2-adic
+component gap `v₂(a_k)−v₂(b_k)` is invariant under EVERY scalar acceleration
+transform (`DLadderTwoAdicGrading.gap_invariant_under_scalar_transform`), so
+the ℤ/2 bar-parity grading survives into every accelerated plane —
+**permissive**, no obstruction to resummation; the absolute law transports by
+`−v₂(f_k)` (LTE-verified) and is carried verbatim by 2-adically-unit bases
+(Jackson base 2 = the graded prime's own base). (2) **Fixed-base Jackson
+q-Borel pruned** (scope-(a), conditional on the triple-confirmed divergence
+class): `Q>1` over-accelerates to an entire transform, `Q<1` is a geometric
+no-op — only the `Q→1` Borel–Leroy boundary matches the `exp(Bk+Ck·log k)`
+class; do not scan fixed-base q-Borel families on `D(ũ)`. (3) The
+pre-registered 15% estimator-consistency gate **fails at every
+`s ∈ [0,0.40]`** at k=21 (0.15 vs 0.26 persists); parity-split branches
+unresolved too; **observation only** (not a gate): the conformal-mapped core
+at s\*≈0.20 converges to A≈0.236 (0.3% window spread), within 9.5% of the
+root-test radius — the specific datum the ORD-63 extension terms (sibling
+arm, three-front specs §1) must confirm or kill. (4) Back-transform =
+meridian partial sums to 2.5e-26 at muon-q₀ AND q\* (A2); `D` smooth through
+q\* — the S=0 zero is bridge-borne (KC21 smooth-zero reading confirmed from
+the accelerated side). No instanton action identified; no candidate value;
+no c_k wired; no fit; no tier change.

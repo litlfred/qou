@@ -97,17 +97,88 @@ Probe:
 — the `(Q, s)` summability surface, dlog-Padé vs root-test consistency across
 the locus, q-Laplace back-transform meridian self-check, and the A2 cross-check.
 
-## §4. Results — 2-adic transport (exact)
+## §4. Results — 2-adic transport (exact; all 6 witness assertions pass)
 
-*(pending run)*
+Probe run at k = 1…21
+([`qbeta-dladder-qborel-2adic-transport.witness.json`](../../computations/qbeta/qbeta-dladder-qborel-2adic-transport.witness.json)):
 
-## §5. Results — acceleration scan
+1. **Gap invariance — Lean-proved sorry-free.** The signed component gap
+   `g_k = v₂(a_k) − v₂(b_k)` is exactly invariant under **every** scalar
+   transform tested (classical `k!`, `[k]_2!`, `[k]_3!`, `[k]_{1/3}!`,
+   `[k]_{1/2}!`, `(3;3)_k`) — and provably under the whole family:
+   `QOU.QBeta.DLadderTwoAdicGrading.gap_invariant_under_scalar_transform`
+   (`padicValRat.div` twice + `ring`; `lean`-direct exit 0 after lake-cache
+   restore). The grading in gap form (`sign(g_k)` alternates with parity —
+   verified exactly, `g_k` = −3, 4, −10, 9, −14, 15, …, −61) survives into
+   every accelerated plane. **The invariant is PERMISSIVE: the 2-adic grading
+   obstructs no q-Borel resummation shape** — the audit's kill criterion 2
+   does not fire.
+2. **The absolute law transports by `−v₂(f_k)`, computed exactly and matched
+   to the LTE closed form.** It is preserved *verbatim* exactly by 2-adically
+   **unit** bases — notably the **Jackson base-2 q-factorial** (`[j]_2 = 2^j − 1`
+   odd for all `j`): the base matching the unique graded prime is the one
+   whose q-Borel transform carries the absolute grading law unchanged. It is
+   destroyed from `k = 2` on by classical `÷k!` (Legendre `v₂(k!) = k − s₂(k)`)
+   and by base-3 factorials (`v₂([k]_3!) = Σ_{even j ≤ k}(1 + v₂(j))`).
 
-*(pending run)*
+## §5. Results — acceleration scan (k ≤ 21; witness all-pass)
+
+Probe
+([`qbeta-dladder-jackson-qborel-acceleration.witness.json`](../../computations/qbeta/qbeta-dladder-jackson-qborel-acceleration.witness.json)),
+four arms:
+
+- **ARM 1 — fixed-base class mismatch.** Transform-side growth is exact:
+  `log [k]_Q! = (log Q)k²/2 + O(k)` for `Q > 1` (q-factorial), geometric
+  `~ A^k` for `Q < 1`, `s·k·log k + O(k)` on the Leroy boundary `Q = 1`. The
+  ladder grows like `exp(Bk + C·k·log k)` with small drifting `C` (KC22) —
+  strictly between geometric and q-factorial. Numerically confirmed: every
+  `Q > 1` (substrate q₀, 2, 3) over-accelerates (root-test slope < 0, tails
+  falling — entire transform, **no singularity left to locate**); every
+  `Q < 1` (1/2, 1/3) leaves the divergence untouched (slope rescaled by the
+  geometric factor but strictly positive). **Only the Q → 1 Leroy boundary can
+  match** — the "no single q-Gevrey index" of the 07-13 audit is mirrored by
+  "no fixed Jackson base". Scope-(a): transform growth exact; ladder class is
+  the triple-confirmed empirical finding, so this is a class-mismatch
+  conditional on it, not a (b) exclusion.
+- **ARM 2 — Borel–Leroy estimator gate: FAILS at every scanned `s ∈ [0, 0.40]`**
+  (pre-registered 15% dlog-Padé/root-test consistency + Padé-window spread).
+  The k = 21 inconsistency (ρ_Padé ≈ 0.15 vs ρ_root ≈ 0.26 at s\* ≈ 0.20)
+  persists under the formalized gate — **the singularity is not resolved at
+  k = 21; blocked on the ORD-63 extension terms** (sibling arm, three-front
+  specs §1). *Observation (not a gate, not promoted post-hoc):* the merged
+  conformal-mapped core (#3713) at s\* converges across [4/4]/[5/5] windows to
+  **A ≈ 0.236 with 0.3% window spread**, within 9.5% of the root-test radius
+  while raw dlog-Padé stays low — suggestive that raw Padé is the
+  branch-cut-biased outlier; recorded for the extension arm to test.
+- **ARM 3 — parity-split acceleration** (the 2-adic-grading-motivated
+  decomposition, exact and commuting with every scalar `f_k`): gate 0/9 on the
+  odd branch (11 terms), 0/9 on the even branch (10 terms) — unresolved at
+  this depth too.
+- **ARM 4 — back-transform self-check + A2.** The `Γ(1+sk)` Borel–Leroy
+  back-transform reproduces the direct partial sums at the meridian to
+  **2.5 × 10⁻²⁶** at both the muon-q₀ and the q\* (A2) points — machinery
+  validated (kill criterion 3 clean). `D(ũ)` is **smooth and nonzero through
+  q\*** (`D(ũ(q*)) ≈ D(ũ(μ)) ≈ −0.01667`): the S = 0 structural zero lives in
+  the `h·D → S` bridge (the ord17 measured bridge ratio), not in the
+  accelerated ladder — consistent with KC21's smooth-zero,
+  ladder-inversion-amplified reading.
 
 ## §6. Tiered verdicts
 
-*(pending)*
+| # | Finding | Tier |
+|---|---|---|
+| 1 | Gap form of the 2-adic bar-parity grading is invariant under the entire scalar acceleration family (`gap_invariant_under_scalar_transform`, sorry-free) | **proved-lean** |
+| 2 | Absolute grading law preserved verbatim by 2-adically-unit bases (Jackson base 2), destroyed by `÷k!` / base-3; `v₂([k]_Q!)` matches LTE closed form | **structural-exact** (k ≤ 21 machine-checked; closed form verified) |
+| 3 | The grading does **not** obstruct the q-Borel resummation (kill criterion 2 does not fire) | **structural-exact** (consequence of 1) |
+| 4 | Fixed-base Jackson q-Borel (`Q ≠ 1` fixed) cannot resolve the D-ladder singularity: `Q > 1` entire / `Q < 1` no-op; only the Leroy boundary matches the `exp(Bk + Ck log k)` class | **scope-(a)** class-mismatch, conditional on the (triple-confirmed, empirical) divergence class; transform-side growth exact |
+| 5 | Singularity not resolved at k = 21 under the pre-registered estimator gate (fails at every `s`); conformal core gives A ≈ 0.236 (0.3% window spread, 9.5% from root-test) as an **observation only** | **consistent-not-identified** / blocked on extension terms |
+| 6 | Back-transform = direct partial sums to 2.5e-26 at both anchors; `D` smooth through q\* — the S = 0 zero is bridge-borne (A2 cross-check) | **measurement** (self-check clean) |
+
+**No instanton action identified. No candidate value produced. No c₃ proposed.
+Nothing wired.** The productive next step is mechanical: re-run ARM 2/3 (one
+command, `argv[1] = 63`) on the extended `d_k` when the sibling ORD-63 arm
+lands, with the conformal-vs-root observation as the specific thing the new
+terms must confirm or kill.
 
 ## Cross-references
 
