@@ -327,6 +327,36 @@ export const references: CSLData[] = [
     note: "Theorem: matrix coefficients of $E_q(2)$ are Hahn–Exton q-Bessel functions $J_\\nu^{(3)}(x;q)$; the q-Bessel satisfies a second-order q-difference equation and the q-analogue of Bessel's three-term contiguity. Canonical reference for the QOU $c_k$ q-difference kernel = q-Bessel operator identification (\\#1839/\\#1880).",
   }),
 
+  // ── Lawrence–Zagier 1999 — modular forms & quantum invariants of Σ(2,3,5) ──
+  ref({
+    id: "lawrence-zagier-1999",
+    type: "article-journal",
+    title: "Modular forms and quantum invariants of 3-manifolds",
+    author: [
+      { family: "Lawrence", given: "Ruth" },
+      { family: "Zagier", given: "Don" },
+    ],
+    "container-title": "Asian Journal of Mathematics",
+    issued: { "date-parts": [[1999]] },
+    volume: "3",
+    issue: "1",
+    page: "93-107",
+    DOI: "10.4310/AJM.1999.v3.n1.a5",
+    URL: "https://doi.org/10.4310/AJM.1999.v3.n1.a5",
+    note: "The false-theta / quantum-modular-form description of the WRT invariant of the Poincaré sphere Σ(2,3,5)=S³/2I: the Eichler-integral limit Ψ(1/N) and the vector-valued modular family of dimension D(2,3,5)=(p₁−1)(p₂−1)(p₃−1)/4=2. Underpins the QOU keystone colored-Σ(2,3,5) / Lawrence–Rozansky S-matrix probes (the s5-so3 W_λ geometric-realization route); the D=2 collapse of this family is the structural trap the keystone modulus identification must escape.",
+  }),
+
+  // ── Hikami 2005 — quantum invariant for the Brieskorn homology spheres ──
+  ref({
+    id: "hikami2005brieskorn",
+    type: "article-journal",
+    title: "On the quantum invariant for the Brieskorn homology spheres",
+    author: [{ family: "Hikami", given: "Kazuhiro" }],
+    issued: { "date-parts": [[2005]] },
+    DOI: "10.1063/1.1834694",
+    note: "arXiv math-ph/0405028. The genuine finite Gauss-sum WRT invariant τ_N(Σ(p₁,p₂,p₃)) (eq. 2.11), the odd periodic character χ^{(ℓ)} (eq. 3.1), the flat-connection S-matrix (eq. 3.8, normalization √(32/P)), the Eichler-integral limit (eq. 4.2) and the exact finite-N Theorem 10 (eq. 5.5) — the machine-validated anchor for the QOU keystone colored-modulus probes (keystone_valuemap_genuine_smatrix_s013, keystone_lr_colored_modulus). DOI is the corpus-consistent value cited across the existing keystone probes' `-- Ref:` comments; the venue/DOI pairing was not independently machine-verified and should be confirmed against the published Int. J. Math. edition before publication.",
+  }),
+
   // ── Koelink–Swarttouw 1994 — q-Bessel zeros, q-Hankel transform ──
   ref({
     id: "koelink-swarttouw-1994",
