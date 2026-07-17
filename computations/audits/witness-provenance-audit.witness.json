@@ -1,12 +1,12 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-17T20:20:18.300545+00:00",
-  "commitSha": "0ec50f1e17ddcbf67ac724fdd8386ad07616306c",
+  "computedAt": "2026-07-17T20:45:29.152458+00:00",
+  "commitSha": "d29bb3c3748bb9840cddce657bc2457ba8d969a5",
   "assertions": [
     {
       "name": "no_missing_provenance",
-      "computed": 259,
+      "computed": 260,
       "expected": 0,
       "passed": false,
       "tolerance": 0,
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 10,
+  "durationMs": 16,
   "computation": "witness-provenance-audit",
   "scriptFile": "witness_provenance_audit.py",
   "scriptHash": "1abb80bb6c90",
@@ -46,12 +46,12 @@
   },
   "data": {
     "counts": {
-      "total_scanned": 1869,
-      "prov_ok": 1550,
+      "total_scanned": 1874,
+      "prov_ok": 1554,
       "prov_audit_exempt": 59,
-      "prov_missing": 259,
+      "prov_missing": 260,
       "prov_parse_error": 1,
-      "completeness_ratio": 0.860888175494917
+      "completeness_ratio": 0.8607257203842049
     },
     "by_verdict": {
       "PROV_OK": [
@@ -297,6 +297,10 @@
         },
         {
           "witness": "alpha-k-selection-rule-conditional.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "alpha-em-zeta-anomaly-b1-count.witness.json",
           "missing_fields": []
         },
         {
@@ -2812,6 +2816,10 @@
           "missing_fields": []
         },
         {
+          "witness": "lr-modulus-identification-sigma235.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "lw-growth-rate-probe.witness.json",
           "missing_fields": []
         },
@@ -4952,6 +4960,10 @@
           "missing_fields": []
         },
         {
+          "witness": "qbeta-dladder-extension-singularity.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "qbeta-dladder-generating-function-structure.witness.json",
           "missing_fields": []
         },
@@ -4961,6 +4973,10 @@
         },
         {
           "witness": "qbeta-dladder-padic-graded-prime.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "qbeta-dladder-parity-split-arithmetic-normalized.witness.json",
           "missing_fields": []
         },
         {
@@ -6275,6 +6291,14 @@
         },
         {
           "witness": "alpha-k-jones-markov-h4.witness.json",
+          "missing_fields": [
+            "engine",
+            "scriptFile",
+            "commitSha"
+          ]
+        },
+        {
+          "witness": "alphaem-dilog-bloch-probe.witness.json",
           "missing_fields": [
             "engine",
             "scriptFile",
