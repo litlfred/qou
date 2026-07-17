@@ -1,15 +1,15 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-17T20:48:59.718668+00:00",
-  "commitSha": "33ff43c922d70698906d9b47c40db27914793e16",
+  "computedAt": "2026-07-17T21:54:38.747479+00:00",
+  "commitSha": "736dad39fbdddfad57882141819e61fefa3e8eba",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 13,
+  "durationMs": 14,
   "computation": "compute-audit-scan",
   "scriptFile": "compute_audit_scan.py",
   "scriptHash": "8a602c238718",
-  "scriptCommitSha": "592eade9c548e0ce537c7ff63885a554f16089d3",
+  "scriptCommitSha": "16968c2f1a3f92c09c705a456308787a7e754380",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -19,6 +19,7 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0"
@@ -26,7 +27,7 @@
   "description": "Static scan of computations/ for the performance patterns P11/P14/P15/P16/P21/P30/P31 from .claude/skills/local/compute-audit.md.",
   "auditOnly": "docs/audits/2026-05-08-compute-audit-workplan.md",
   "parameters": {
-    "files_scanned": 1116,
+    "files_scanned": 1118,
     "patterns": [
       "P15",
       "P16",
@@ -40,7 +41,7 @@
       "P15": 247,
       "P16": 384,
       "P21": 25,
-      "P30": 143,
+      "P30": 145,
       "P31": 29
     },
     "top_files": [
@@ -634,6 +635,13 @@
         "line": 85,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P30",
+        "file": "alpha_em_perloop_integer_forcedness_probe.py",
+        "line": 1,
+        "snippet": "json.dump → .witness.json without WitnessBuilder",
+        "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
       },
       {
         "pattern": "P16",
@@ -4211,6 +4219,13 @@
         "line": 70,
         "snippet": "CODATA literal \"938.27208816\"",
         "note": "Hardcoded CODATA literal outside the registry inflates the three-calibration count past CAL-1/2/3. Import from codata_constants (validation aliases) or experimental_constants instead. Audit-only scripts may add `# noqa: P31` with a justifying comment. Ref: codata_constants.py:90-145; docs/audits/2026-05-12-canonical-derivation-compute-review.md §3."
+      },
+      {
+        "pattern": "P30",
+        "file": "mu_p_pin_sensitivity_map.py",
+        "line": 1,
+        "snippet": "json.dump → .witness.json without WitnessBuilder",
+        "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
       },
       {
         "pattern": "P30",
