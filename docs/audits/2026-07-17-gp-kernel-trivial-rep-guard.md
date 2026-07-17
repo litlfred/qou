@@ -68,6 +68,16 @@ inconsistent), `gp_trivial_check_ok_on_reduced_word`, and
   passes the `[n]` gate is not *proven* correct on all λ. The full remedy remains
   the Geck–Pfeiffer cuspidal-move reduction (or routing every GP consumer to the
   seminormal kernel). Bean `qou-b2ie` stays open for that milestone.
+- ✓ **Validated migration target (Rust-level, in-sandbox).** The correct
+  Hoefsmit-per-`T_w` path (`chi_lambda_via_gp_hoefsmit` = exact basis expansion +
+  direct seminormal on each reduced word) **agrees with the direct seminormal
+  kernel** (`chi_lambda_braid`) on the reproducer across `λ ∈ {[12], [11,1], [6,6],
+  [2⁶], [1¹²]}` at q=1.1 (`correct_path_agrees_with_seminormal_on_reproducer`,
+  green) — exactly the word where the q-MN path is wrong. So GP consumers that hit
+  the guard route through the seminormal path — in the Python binding,
+  `chi_lambda_all_partitions_mpfr` (Wenzl–LR canonical, all 77 partitions, 50 dps,
+  already exported) — and get correct characters at q₀. No Python binding was
+  needed to certify this: both paths are cross-validated inside `hecke-engine`.
 - **Blast radius (unchanged from the bean):** the certified combiner chain
   (`chi_at_q0_via_hoefsmit_mpfr` → `canonical_tr_m_via_chi_cache`) is seminormal
   throughout and untouched. GP consumers on longer/structured words

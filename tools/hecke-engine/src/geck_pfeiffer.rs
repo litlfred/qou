@@ -1270,4 +1270,40 @@ mod tests {
         let word = vec![(1i32, 6u32), (1, 7), (-1, 9), (1, 8), (-1, 7)];
         let _ = chi_lambda_via_geck_pfeiffer(&[12], 12, &word);
     }
+
+    /// **Validated correct path (bean qou-b2ie).** The Hoefsmit-per-T_w GP
+    /// path (`chi_lambda_via_gp_hoefsmit` = exact basis expansion + direct
+    /// seminormal on each reduced word) AGREES with the direct seminormal
+    /// kernel (`chi_lambda_braid`) on the H₁₂ reproducer — exactly the word
+    /// where the q-MN path (`chi_lambda_via_geck_pfeiffer`) is wrong. This
+    /// certifies the migration target: GP consumers hitting the guard route
+    /// through the seminormal path (`chi_lambda_all_partitions_mpfr` in the
+    /// Python binding) and get correct characters.
+    #[test]
+    fn correct_path_agrees_with_seminormal_on_reproducer() {
+        let word = vec![(1i32, 6u32), (1, 7), (-1, 9), (1, 8), (-1, 7)];
+        let q = 1.1_f64;
+        // Trivial rep [12]: ground truth q^writhe = q^1.
+        let hoef_triv = chi_lambda_via_gp_hoefsmit(&[12], 12, &word, q);
+        let semi_triv = crate::seminormal::chi_lambda_braid(&[12], &word, q);
+        assert!(
+            (hoef_triv - q).abs() < 1e-9 && (semi_triv - q).abs() < 1e-9,
+            "trivial rep must be q^writhe = {q}; hoefsmit={hoef_triv}, seminormal={semi_triv}"
+        );
+        // A battery of non-trivial λ ⊢ 12: the two correct paths must agree
+        // (and, per the bug, differ from the q-MN path).
+        for lambda in [
+            vec![11usize, 1],
+            vec![6, 6],
+            vec![2, 2, 2, 2, 2, 2],
+            vec![1; 12],
+        ] {
+            let hoef = chi_lambda_via_gp_hoefsmit(&lambda, 12, &word, q);
+            let semi = crate::seminormal::chi_lambda_braid(&lambda, &word, q);
+            assert!(
+                (hoef - semi).abs() < 1e-8,
+                "correct paths disagree on λ={lambda:?}: hoefsmit={hoef}, seminormal={semi}"
+            );
+        }
+    }
 }
