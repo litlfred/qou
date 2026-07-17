@@ -50,7 +50,16 @@ import _path_bridge as _pb  # noqa: E402, F401
 import sympy as sp  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
+import os  # noqa: E402
+
 import qbeta_ck_sseries_exact_rational as core  # noqa: E402
+# ORD override (Track-1 extension re-measurement): the dlad module captures ORD
+# from `sys.argv[1]` at import time (its line 76). Default 43 → k ≤ 21;
+# DLADDER_ORD=63 → k ≈ 31 (the three-front-attack Track-1 window). Inject argv
+# BEFORE importing dlad so its import-time capture picks it up.
+_ord_override = os.environ.get("DLADDER_ORD")
+if _ord_override:
+    sys.argv = [sys.argv[0], _ord_override]
 import qbeta_dladder_generating_function_structure_probe as dlad  # noqa: E402
 
 import mpmath as mp  # noqa: E402
