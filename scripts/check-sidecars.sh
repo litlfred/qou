@@ -100,6 +100,23 @@ for f in "${files[@]}"; do
     computations/*.py)
       echo "▸ $f  [compute producer]"
       echo "    → LP/SDP? run python computations/lp_dual_witness_validator.py ; re-run producer to refresh *.witness.json"
+      # P30 raw-emit guard (bean cmiy): a producer that writes a *.witness.json via a
+      # raw json.dump / write_text but never routes through WitnessBuilder emits a witness
+      # with NO provenance (engine/scriptFile/commitSha) — it lands as PROV_MISSING in the
+      # witness_provenance_audit and defeats staleness detection. Flag it so new raw emits
+      # are caught at authoring time instead of being drained batch-by-batch after the fact.
+      pybody=$(sed 's|#.*||' "$f")
+      emits_witness=$(printf '%s\n' "$pybody" | grep -qE '(json\.dump[s]?\(|\.write_text\()' \
+        && printf '%s\n' "$pybody" | grep -qE '\.witness\.json' && echo 1 || echo 0)
+      uses_builder=$(printf '%s\n' "$pybody" | grep -qE '(WitnessBuilder|wrap_legacy|stamp_staleness_metadata|witness_base)' && echo 1 || echo 0)
+      if [ "$emits_witness" = 1 ] && [ "$uses_builder" = 0 ]; then
+        echo "    ⚠ P30: writes a *.witness.json via raw json.dump/write_text with NO WitnessBuilder →"
+        echo "         emitted witness will be PROV_MISSING (no engine/scriptFile/commitSha)."
+        echo "         Route through WitnessBuilder.wrap_legacy(...).save() (assertion-free payloads)"
+        echo "         or WitnessBuilder.stamp_staleness_metadata(payload, script_path=__file__, engine=…)"
+        echo "         (payloads carrying a flat 'assertions'/'allPassed'). See bean cmiy / AGENTS.md."
+        action=1
+      fi
       ;;
     computations/*.witness.json|*/*.witness.json)
       echo "▸ $f  [witness]"

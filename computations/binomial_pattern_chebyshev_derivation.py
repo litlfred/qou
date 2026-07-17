@@ -46,6 +46,8 @@ not pattern matching.
 
 Status: EXPLORATORY VERIFICATION of a genuine derivation.
 """
+import time as _time  # noqa: E402 — wall-clock anchor for witness durationMs
+_T0 = _time.monotonic()
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import json
 import subprocess
@@ -217,8 +219,13 @@ def main():
             .decode().strip()
         ),
     }
-    out_path = Path(__file__).parent / "binomial-pattern-chebyshev-derivation.witness.json"
-    out_path.write_text(json.dumps(witness, indent=2, sort_keys=True) + "\n")
+    import os as _os, sys as _sys  # noqa: E402
+    _sys.path.insert(0, _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "substrate"))
+    from witness_base import WitnessBuilder  # noqa: E402 — P30 rollup (bean cmiy)
+    out_path = WitnessBuilder.wrap_legacy(
+        "binomial-pattern-chebyshev-derivation", witness,
+        script_path=__file__, engine="sympy", start_time=_T0,
+    ).save()
     print(f"\nWitness: {out_path.relative_to(Path.cwd())}")
 
 
