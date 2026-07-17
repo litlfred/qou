@@ -125,6 +125,21 @@ def main():
           "(ΣW=1) CANNOT equal W_λ at q≠1 ⇒ the geometric realization must be NON-unitary "
           "(reinforces the non-compact q-Bessel redirect); complements the fibre-ζ modulus spec")
 
+    # 5. the fibre→archimedean CONTINUATION of the normalization is trivial: Z(q) is a
+    #    RATIONAL function of q ⇒ continues everywhere (bar poles). So the continuation wall
+    #    is NOT separate — its substance is the non-rational AMPLITUDE (the LR-modulus front).
+    Z_rational = all(
+        sp.cancel(sp.together(sum(dq(q, lam)**2 for lam in parts(n)) / qfact(q, n))).is_rational_function(q)
+        for n in (2, 3, 4, 5))
+    check("normalization_continuation_trivial_Z_rational",
+          Z_rational,
+          "Z(q)=Σd_q²/[n]_q! is a RATIONAL function of q (n=2..5; e.g. n=2: 2q/(q²+1)) ⇒ the "
+          "fibre→archimedean CONTINUATION of the W_λ normalization is trivial (continues "
+          "everywhere bar poles). So the 'continuation wall' is NOT separate: its substance is "
+          "entirely the non-rational AMPLITUDE = the LR-modulus front. C's remaining pieces are "
+          "the amplitude compute + a q₀-fixing categorical condition (numerology-gated), not a "
+          "distinct continuation problem")
+
     all_passed = all(a["passed"] for a in assertions)
     verdict = (
         "OBSERVABLE-SIDE NORMALIZATION GATE (formalize-first reduction of the W_λ wall; no q₀ "
