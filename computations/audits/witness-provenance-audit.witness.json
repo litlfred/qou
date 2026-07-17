@@ -1,12 +1,12 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-17T14:45:02.861455+00:00",
-  "commitSha": "0b4ed888d43cef2bdd5605b40e9d6b8038f572a7",
+  "computedAt": "2026-07-17T20:20:18.300545+00:00",
+  "commitSha": "0ec50f1e17ddcbf67ac724fdd8386ad07616306c",
   "assertions": [
     {
       "name": "no_missing_provenance",
-      "computed": 262,
+      "computed": 259,
       "expected": 0,
       "passed": false,
       "tolerance": 0,
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 13,
+  "durationMs": 10,
   "computation": "witness-provenance-audit",
   "scriptFile": "witness_provenance_audit.py",
   "scriptHash": "1abb80bb6c90",
@@ -46,12 +46,12 @@
   },
   "data": {
     "counts": {
-      "total_scanned": 1868,
-      "prov_ok": 1546,
+      "total_scanned": 1869,
+      "prov_ok": 1550,
       "prov_audit_exempt": 59,
-      "prov_missing": 262,
+      "prov_missing": 259,
       "prov_parse_error": 1,
-      "completeness_ratio": 0.8592077087794433
+      "completeness_ratio": 0.860888175494917
     },
     "by_verdict": {
       "PROV_OK": [
@@ -689,6 +689,10 @@
         },
         {
           "witness": "binding-wn-multianchor-tower-refute.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "binomial-pattern-chebyshev-derivation.witness.json",
           "missing_fields": []
         },
         {
@@ -1660,6 +1664,10 @@
           "missing_fields": []
         },
         {
+          "witness": "delta-lambda-cancellation-ascaling-probe.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "delta-lambda-canonical-residual.witness.json",
           "missing_fields": []
         },
@@ -1709,6 +1717,10 @@
         },
         {
           "witness": "delta-lambda-jsj-phase3.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "delta-lambda-l1-ceiling-sign-prune.witness.json",
           "missing_fields": []
         },
         {
@@ -4628,6 +4640,10 @@
           "missing_fields": []
         },
         {
+          "witness": "qbeta-c3-borel-pade-deformed-meridian.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "qbeta-c3-borel-pade-deformed-rungs.witness.json",
           "missing_fields": []
         },
@@ -6328,14 +6344,6 @@
           ]
         },
         {
-          "witness": "binomial-pattern-chebyshev-derivation.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
           "witness": "bn-minus-bp-brane-tower-parity.witness.json",
           "missing_fields": [
             "engine",
@@ -6647,18 +6655,6 @@
         },
         {
           "witness": "delta-lambda-binding-full-evaluation.witness.json",
-          "missing_fields": [
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "delta-lambda-cancellation-ascaling-probe.witness.json",
-          "missing_fields": [
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "delta-lambda-l1-ceiling-sign-prune.witness.json",
           "missing_fields": [
             "commitSha"
           ]

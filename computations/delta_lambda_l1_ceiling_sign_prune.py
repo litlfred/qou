@@ -62,6 +62,8 @@ combinatorics (hook-length + Young-subgroup longest-element sign).
 Producer for: computations/delta-lambda-l1-ceiling-sign-prune.witness.json
 """
 from __future__ import annotations
+import time as _time  # noqa: E402 — wall-clock anchor for witness durationMs
+_T0 = _time.monotonic()
 import json, math, os, hashlib, datetime
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -201,9 +203,13 @@ def main() -> None:
         },
         "allPassed": all_below,
     }
-    out = os.path.join(HERE, "delta-lambda-l1-ceiling-sign-prune.witness.json")
-    with open(out, "w") as f:
-        json.dump(witness, f, indent=1)
+    import sys as _sys  # noqa: E402
+    _sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "substrate"))
+    from witness_base import WitnessBuilder  # noqa: E402 — P30 rollup (bean cmiy)
+    out = WitnessBuilder.wrap_legacy(
+        "delta-lambda-l1-ceiling-sign-prune", witness,
+        script_path=__file__, engine="python", start_time=_T0,
+    ).save()
     # human-readable summary
     print(f"{'iso':>4}{'net/tgt':>9}{'‖c‖₁/tgt':>10}{'net/‖c‖₁':>10}")
     for r in rows:

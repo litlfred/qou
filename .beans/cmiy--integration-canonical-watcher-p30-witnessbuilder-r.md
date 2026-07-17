@@ -176,3 +176,17 @@ exit 0, prov triple present, keys + assertions preserved. PROV_MISSING 268→262
 Root scripts need the substrate/ sys.path insert (gotcha #4); _T0 must go AFTER
 `from __future__` (new micro-gotcha #6). Deferred (1 consumer-hit each):
 cancellation_ascaling_probe, l1_ceiling_sign_prune.
+
+## 2026-07-17 — batch 13 (3 scripts) + P30 PREFLIGHT GUARD (the converging fix)
+GUARD: scripts/check-sidecars.sh computations/*.py case now flags a changed
+producer that writes a *.witness.json via raw json.dump/write_text with NO
+WitnessBuilder (⚠, action=1). This is the inflow-stopper the batch-12
+reevaluation flagged — new raw emits are now caught at authoring/pre-commit
+time instead of drained after the fact. Tested both ways (fires on raw,
+silent on migrated).
+BATCH 13 (3 root scripts, wrap_legacy + _T0): delta_lambda_cancellation_
+ascaling_probe (a REAL upstream — its witness is read by delta_lambda_
+borromean_ascaling as _CANON_WITNESS; migration preserves all data keys, only
+adds meta, consumer re-run exit 0), delta_lambda_l1_ceiling_sign_prune
+(docstring-only "consumers", 0 real), binomial_pattern_chebyshev_derivation.
+All: exit 0, keys preserved, real durationMs. PROV_MISSING 262→259.
