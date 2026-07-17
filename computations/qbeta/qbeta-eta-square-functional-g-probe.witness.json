@@ -1,0 +1,68 @@
+{
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-07-17T15:07:59.886386+00:00",
+  "commitSha": "cabed4f226191f0891b6a7e61ad590a0ed356002",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 11802,
+  "computation": "qbeta-eta-square-functional-g-probe",
+  "scriptFile": "qbeta_eta_square_functional_g_probe.py",
+  "scriptHash": "90ae43c605ac",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
+  },
+  "description": "E = G(eta^2) functional identification (queued follow-up of qbeta-eta-square-fibre-probe): T0 exact u~^1 obstruction for pure-series G; T1 two-rung-carrier tail split with g1 (u~^3), g2 (u~^6) forced and rungs 4,5,7,8 as margin-4 exact checks; T2 forced cosh-family constant a = g1^2/(6 g2) vs unit-cosh (+1) / zeta4 image (-1). 08ds ORD-17 conventions, exact Q(sqrt3).",
+  "audit_only": true,
+  "tier": "exact structural probe (no fit, nothing wired; scope-(a) framing)",
+  "ORD": 17,
+  "E_rungs_exact": {
+    "1": "3*sqrt(3)/4",
+    "2": "-2165/144",
+    "3": "-437041*sqrt(3)/12960",
+    "4": "-16725719/60480",
+    "5": "-822397949021*sqrt(3)/783820800",
+    "6": "-959974411053731/103464345600",
+    "7": "-105789090672195449*sqrt(3)/3012881743872",
+    "8": "-14509769665633858665527/40673903542272000"
+  },
+  "eta_sq_rungs_exact": {
+    "1": "0",
+    "2": "0",
+    "3": "-2 + 193*sqrt(3)/24",
+    "4": "6241/24 - 67*sqrt(3)/6",
+    "5": "-40951/720 + 3205811*sqrt(3)/2880",
+    "6": "27161373871/2177280 - 4945853*sqrt(3)/20160",
+    "7": "-44528468239/26127360 + 82360015763659*sqrt(3)/1567641600",
+    "8": "38715484921600217/68976230400 - 70787167008997*sqrt(3)/17244057600"
+  },
+  "T0_pure_G_obstructed_at_rung_1": true,
+  "T1_g1_exact": "(-84348913 - 6992656*sqrt(3))/19699740",
+  "T1_g2_exact": "(1507448666440424529958016*sqrt(3) + 6531978593027874653245445)/26163129449876709628800",
+  "T1_check_residuals": {
+    "4": "3059287*sqrt(3)/68760 + 28589946199/34655040",
+    "5": "13358677806749/14183812800 + 4228230778768579*sqrt(3)/1143782664192",
+    "7": "-18306407253223549795080118847*sqrt(3)/23617542745749528576000 - 1556054547511786713776239/5406946599301632000",
+    "8": "-1432757114949315220943231753238683/54131407973257919496192000 - 4567008951173431923160508441*sqrt(3)/1126611055054485504000"
+  },
+  "T1_first_failing_rung": 4,
+  "T1_overdetermination_margin": 4,
+  "T1_tail_split_holds": false,
+  "T2_cosh_family_constant_a": "58829489389748*(6531978593027874653245445 - 1507448666440424529958016*sqrt(3))*(16*sqrt(3) + 193)**2/982690712807087800116186935522742517975692697",
+  "T2_tag": "n/a (T1 failed)",
+  "verdict": {
+    "pure_G_of_eta_sq_refuted_scope_a": true,
+    "two_rung_carrier_plus_G_eta_sq": false
+  }
+}
