@@ -845,18 +845,66 @@ theorem seminormalVector_base_exists {k : Type} [Field k] [CharZero k] (μ : You
   -- weight of the Gelfand–Zetlin chain).
   sorry
 
+/-- **`AdjacentSwapStep` is symmetric (sorry-free).** Swapping `a, a+1` back in `T'` returns `T`:
+the content-swap conditions are visibly symmetric in `T ↔ T'`, and the content gap only changes
+*sign* under the swap (`c'_b − c'_a = c_a − c_b = −(c_b − c_a)`), so the admissibility conditions
+`d ≠ 0` and `d² ≠ 1` survive (`omega` / `(a−b)² = (b−a)²`). -/
+theorem adjacentSwapStep_symm (μ : YoungDiagram)
+    {T T' : QOU.BraidKnot.StandardYoungTableau μ}
+    (h : AdjacentSwapStep μ T T') : AdjacentSwapStep μ T' T := by
+  obtain ⟨a, b, hab, hTa, hTb, hoff, hne, hsq⟩ := h
+  refine ⟨a, b, hab, hTb.symm, hTa.symm, fun s hsa hsb => (hoff s hsa hsb).symm, ?_, ?_⟩
+  · rw [hTb, hTa]; omega
+  · rw [hTb, hTa]
+    have hflip :
+        (cellContent ((tableauCellEquiv μ T a : ℕ × ℕ))
+            - cellContent ((tableauCellEquiv μ T b : ℕ × ℕ))) ^ 2
+          = (cellContent ((tableauCellEquiv μ T b : ℕ × ℕ))
+              - cellContent ((tableauCellEquiv μ T a : ℕ × ℕ))) ^ 2 := by ring
+    rw [hflip]; exact hsq
+
+/-- **The admissible-adjacent-swap chain relation is symmetric (sorry-free).** Immediate from
+`adjacentSwapStep_symm` by induction on the chain (reverse each step). Hence
+`Relation.ReflTransGen (AdjacentSwapStep μ)` is an equivalence relation on `SYT(μ)`. -/
+theorem reflTransGen_adjacentSwap_symm (μ : YoungDiagram)
+    {T T' : QOU.BraidKnot.StandardYoungTableau μ}
+    (h : Relation.ReflTransGen (AdjacentSwapStep μ) T T') :
+    Relation.ReflTransGen (AdjacentSwapStep μ) T' T := by
+  induction h with
+  | refl => exact Relation.ReflTransGen.refl
+  | tail _ hstep ih => exact Relation.ReflTransGen.head (adjacentSwapStep_symm μ hstep) ih
+
+/-- **OV existence core 2 (adjacent-swap connectivity — reduced to the one-directional base walk).**
+There is a distinguished standard tableau `T₀` (the row-superstandard tableau) to which *every*
+standard tableau of shape `μ` is connected by a chain of admissible adjacent swaps. This is the
+genuine combinatorial content of Young's exchange argument (§3.10 of Sagan): any standard tableau
+is walked toward the row-superstandard one by repeatedly swapping some `(k, k+1)` whose labels are
+neither row- nor column-adjacent (contents differ by `≥ 2`, giving the `d ≠ 0`, `d² ≠ 1` gap
+conditions), decreasing an inversion measure at each step. The full "any two are connected"
+statement (`syt_adjacentSwap_connected`) is derived from this **sorry-free** via the symmetry
+lemmas above — so the residual cited debt is now the strictly smaller *one-directional, single-base*
+walk, not the two-directional connectivity. -/
+theorem syt_all_connect_to_some (μ : YoungDiagram) :
+    ∃ T₀ : QOU.BraidKnot.StandardYoungTableau μ,
+      ∀ T : QOU.BraidKnot.StandardYoungTableau μ,
+        Relation.ReflTransGen (AdjacentSwapStep μ) T T₀ := by
+  -- Ref: [sagan2001] (The Symmetric Group, §3.10 / the exchange argument: every SYT walks to the
+  -- row-superstandard tableau under admissible adjacent transpositions, by inversion induction).
+  sorry
+
 /-- **OV existence core 2 (adjacent-swap connectivity of standard tableaux — combinatorial).**
 Any two standard Young tableaux of the same shape are connected by a chain of admissible
-adjacent swaps (`AdjacentSwapStep`).  Pure tableau combinatorics — no modules: any standard
-tableau can be walked to the row-superstandard one by repeatedly swapping some `(k, k+1)` whose
-labels are neither row- nor column-adjacent (contents differ by `≥ 2`, giving the `d ≠ 0`,
-`d² ≠ 1` gap conditions).  Needs the diagram/tableau restriction machinery not yet built here. -/
+adjacent swaps (`AdjacentSwapStep`).
+
+**De-abstraction (this proof is sorry-free).** Both `T` and `T'` connect to the common base `T₀`
+(`syt_all_connect_to_some`, core 2); reverse the second leg by symmetry
+(`reflTransGen_adjacentSwap_symm`) and compose (`T ⤳* T₀ ⤳* T'`). The residual cited debt is thus
+the strictly smaller one-directional base walk, with the two-directional plumbing proved here. -/
 theorem syt_adjacentSwap_connected (μ : YoungDiagram)
     (T T' : QOU.BraidKnot.StandardYoungTableau μ) :
     Relation.ReflTransGen (AdjacentSwapStep μ) T T' := by
-  -- Ref: [sagan2001] (The Symmetric Group, §3.10 / the exchange argument: SYT(μ) is connected
-  -- under admissible adjacent transpositions).
-  sorry
+  obtain ⟨T₀, hbase⟩ := syt_all_connect_to_some μ
+  exact (hbase T).trans (reflTransGen_adjacentSwap_symm μ (hbase T'))
 
 /-- **The Okounkov–Vershik existence theorem (Young's seminormal vector), de-abstracted.** For
 every standard Young tableau `T` of shape `μ`, there exists a nonzero vector `v` in the Specht
