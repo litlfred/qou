@@ -6651,6 +6651,61 @@ export const references: CSLData[] = [
     note: "False theta functions as (1,p) singlet log-VOA characters; their quantum modularity is the disk-interior vs root-of-unity rotation (the Lawrence-Zagier Psi already used at the keystone).",
   }),
 
+  // ── Hikami 2005 (Brieskorn quantum invariants) ────────────────
+  ref({
+    id: "hikami2005brieskorn",
+    type: "article-journal",
+    title:
+      "On the quantum invariant for the Brieskorn homology spheres",
+    author: [{ family: "Hikami", given: "Kazuhiro" }],
+    "container-title": "International Journal of Mathematics",
+    volume: "16",
+    issue: "6",
+    page: "661-685",
+    issued: { "date-parts": [[2005]] },
+    DOI: "10.1142/S0129167X05003004",
+    URL: "https://arxiv.org/abs/math-ph/0405028",
+    note: "WRT invariant of Sigma(p1,p2,p3) as a finite Gauss sum (eq. 2.11); odd characters chi^(l1,l2,l3) (eq. 3.1); D x D vector-valued modular S-matrix (eq. 3.8); exact Theorem 10 / Corollary 12 asymptotics. Primary source for the keystone Sigma(2,3,5) transcription, machine-validated in-repo (keystone_valuemap_genuine_smatrix_s013; lr_modulus_identification_sigma235).",
+  }),
+
+  // ── Lawrence & Zagier 1999 ────────────────────────────────────
+  ref({
+    id: "lawrence-zagier-1999",
+    type: "article-journal",
+    title:
+      "Modular forms and quantum invariants of 3-manifolds",
+    author: [
+      { family: "Lawrence", given: "Ruth" },
+      { family: "Zagier", given: "Don" },
+    ],
+    "container-title": "Asian Journal of Mathematics",
+    volume: "3",
+    issue: "1",
+    page: "93-108",
+    issued: { "date-parts": [[1999]] },
+    DOI: "10.4310/AJM.1999.v3.n1.a5",
+    note: "The Poincare-sphere WRT invariant as an Eichler integral of a weight-3/2 false theta; flat-connection asymptotics via near-modularity. Foundation of the Sigma(2,3,5) keystone false-theta machinery.",
+  }),
+
+  // ── Fintushel & Stern 1990 ────────────────────────────────────
+  ref({
+    id: "fintushelstern1990",
+    type: "article-journal",
+    title:
+      "Instanton homology of Seifert fibred homology three spheres",
+    author: [
+      { family: "Fintushel", given: "Ronald" },
+      { family: "Stern", given: "Ronald J." },
+    ],
+    "container-title": "Proceedings of the London Mathematical Society",
+    volume: "s3-61",
+    issue: "1",
+    page: "109-137",
+    issued: { "date-parts": [[1990]] },
+    DOI: "10.1112/plms/s3-61.1.109",
+    note: "Flat SU(2) connections on Seifert homology spheres via rotation numbers; Sigma(2,3,5) carries exactly two irreducible flat SU(2) connections -- the structural D=2 invariant behind the keystone fold.",
+  }),
+
 ];
 
 // ── Lookup helpers ──────────────────────────────────────────────
