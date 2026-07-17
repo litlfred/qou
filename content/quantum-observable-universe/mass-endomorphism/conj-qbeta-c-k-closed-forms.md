@@ -40,4 +40,4 @@ c_6 extracted = +3.4976   (matches empirical sweep exactly)
 c_7 extracted = +57.149   (matches empirical sweep exactly)
 ```
 
-The empirical $c_k$ from `binding_q_target_sweep` are not arbitrary fits. They are tautologically determined by enforcing the precision-ladder structure against CODATA $\mathfrak{Q}_\beta$ values. These conjectures supply the categorical interpretation of those extracted constants.
+The empirical $c_k$ from `binding_q_target_sweep` are not arbitrary fits. They are tautologically determined by enforcing the precision-ladder structure against CODATA $\mathfrak{Q}_\beta$ values. These conjectures assign a categorical reading to those extracted constants.

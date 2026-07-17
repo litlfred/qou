@@ -8,7 +8,7 @@ The $^4\mathrm{He}$ bound state admits three primary compositional channels summ
 | $\mathrm{T} \oplus p$             | $(1,2) + (1,0)$ | $7.83$ | $\mathbf{20.38}$ |
 | ${}^3\mathrm{He} \oplus n$        | $(2,1) + (0,1)$ | $7.04$ | $\mathbf{21.18}$ |
 
-We define the **channel binding residual**:
+The **channel binding residual** is the excess binding beyond the free constituents:
 $$
   t_i \;:=\; \Delta_\mathrm{cat}({}^4\mathrm{He}) \;-\; \sum_{j \in \mathrm{channel}\, i} \Delta_\mathrm{cat}(j).
 $$
@@ -16,7 +16,7 @@ This measures the binding that the magic-shell coupling must explain beyond the 
 
 ## LP formulation
 
-We apply the [`prop:operator-selection-lp`](#prop:operator-selection-lp) canonical form. The vector $t \in \mathbb{R}^3$ holds the residuals. The matrix $G = I_3$ because the channels are orthogonal at leading order. Sub-braid corrections are sub-percent. We set:
+We apply the [`prop:operator-selection-lp`](#prop:operator-selection-lp) canonical form. The vector $t \in \mathbb{R}^3$ holds the residuals. The matrix $G = I_3$ because the channels are orthogonal at leading order. Sub-braid corrections are sub-percent. The binding target is:
 $$
   n_\mathrm{target} \;=\; \Delta_\mathrm{coupling}(2, 2)
   \;=\; \Delta_\mathrm{cat}({}^4\mathrm{He}) - 2\,\Delta_\mathrm{cat}({}^3\mathrm{He})

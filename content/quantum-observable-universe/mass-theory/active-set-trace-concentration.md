@@ -30,6 +30,6 @@ Comparison with the observed fingerprint:
 2. **Two-row dominance is compatible but not implied.** The fusion multiplicities are largest along the two-row strip ($10$ at $(9,3)$, $11$ at $(8,4)$), matching the empirically dominant blocks, but three-row components such as $(8,3,1)$ also sit inside the support (multiplicity $15$) and do contribute ($\approx 4\%$). The support bound explains which blocks *vanish*; the quantitative concentration onto the two-row stratum requires the Wenzl-weight and character factors of the trace itself.
 3. **The $(4,4,4)$ block.** The fusion generates exactly one copy of $(4,4,4)$, identifying it as the unique minimal-length rectangular block inside the active set.
 
-## Consequence
+## Active-set truncation from the fusion bound
 
 If the conjecture holds, any partition outside the fusion support of $[3]^{\otimes A}$ carries no topological information for a ground-state nucleus, and $A$-nucleon binding and mass-operator evaluations may be restricted to the fusion support without loss. This is the structural rationale for the active-set truncation used in the large-$A$ trace computations; the restriction from the full support to the empirically dominant two-row-plus-rectangular blocks is a further, quantitative truncation justified per isotope by the fingerprint data, not by the fusion bound alone.
