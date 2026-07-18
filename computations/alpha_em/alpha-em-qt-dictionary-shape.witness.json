@@ -1,0 +1,70 @@
+{
+  "computation": "alpha-em-qt-dictionary-shape",
+  "description": "Bean qou-tq20 tranche 6: q<->heat-time dictionary shape adjudication. Anchor q=1 <-> t=inf forced (consistency-1); canonical rate lambda = ln q (corpus); reciprocal power-law dictionaries t = c/|lambda|^p (p=1,2) pinned at one point FAIL the overdetermined curve test by 18.9%/31.1% (O(1), structural). Heat family does not realize the Markov deformation in this class; geometric family redirected to the MODULAR direction. Identification stays open. Nothing wired.",
+  "auditOnly": "docs/audits/2026-07-18-alpha-em-qt-dictionary-shape.md",
+  "tier": "pre-stated overdetermined adjudication (exact Markov ratio + 30-dps theta); scope-(a) kills",
+  "computedAt": "2026-07-18T23:21:54.747902+00:00",
+  "commitSha": "841ed1813cbf924ff762db5a5eec998c7219e17e",
+  "engine": "sympy+mpmath",
+  "engineVersion": "1.14.0/1.3.0",
+  "scriptFile": "alpha_em_qt_dictionary_shape_probe.py",
+  "scriptHash": "f671ec43817e",
+  "assertions": [
+    {
+      "name": "anchor_orientation_forced",
+      "passed": true,
+      "detail": "r(1) = 3 exact and R_geo(t\u2192\u221e) = 3 \u2014 consistency-1's anchor forces q=1 \u2194 t=\u221e, so any dictionary in the canonical rate \u03bb = ln q (crossing-energy-decomposition) is reciprocal: t = c/|\u03bb|^p"
+    },
+    {
+      "name": "shape_p1_killed",
+      "passed": true,
+      "detail": "t = c/|\u03bb| (c = 0.1085819962 pinned at q*=0.8): max rel dev 18.89% over the 6-point grid \u2014 O(1) miss vs the pre-stated 1% pass bar. KILLED (scope-(a): this shape, alone, as-is)"
+    },
+    {
+      "name": "shape_p2_killed",
+      "passed": true,
+      "detail": "t = c/\u03bb\u00b2 (c = 0.02422937225): max rel dev 31.15% \u2014 O(1) miss. KILLED (scope-(a))"
+    },
+    {
+      "name": "shape_mismatch_is_O1",
+      "passed": true,
+      "detail": "both deviations exceed 10% \u2014 the heat family and the Markov family have genuinely different shapes in the canonical rate variable; the mismatch is structural, not a tuning failure. REORIENTATION: the geometric realization of the q-deformation, if any, lives in the MODULAR direction (deforming \u03c4\u2080), not the heat direction (proper time at fixed modulus)"
+    }
+  ],
+  "allPassed": true,
+  "result": {
+    "anchor": "q=1 <-> t=inf (forced); rate variable lambda = ln q (corpus canonical)",
+    "shape_tests": {
+      "1": {
+        "c": "0.1085819962",
+        "max_rel_dev": 0.18891711605019923,
+        "devs": [
+          "18.892%",
+          "4.762%",
+          "1.818%",
+          "8.641%",
+          "17.093%",
+          "12.859%"
+        ]
+      },
+      "2": {
+        "c": "0.02422937225",
+        "max_rel_dev": 0.3114941439720653,
+        "devs": [
+          "11.176%",
+          "31.149%",
+          "26.804%",
+          "26.221%",
+          "25.255%",
+          "13.010%"
+        ]
+      }
+    },
+    "conclusion": "reciprocal power-law class killed (scope-(a)); heat family is the wrong geometric realization in this class; next candidate: modular (tau_0-direction) deformation",
+    "verdict": "q\u2194t DICTIONARY SHAPES ADJUDICATED \u2014 RECIPROCAL POWER-LAW CLASS KILLED (scope-(a); pre-stated method and tolerance; no fit; nothing wired): with the anchor q=1 \u2194 t=\u221e forced by consistency-1 and the canonical rate \u03bb = ln q from the corpus, the one-constant dictionaries t = c/|\u03bb|^p (p = 1, 2) pinned at a single point miss the overdetermined curve test by 18.9% / 31.1% \u2014 O(1), structural. Within this class the HEAT family does not realize the Markov deformation. NOT a refutation of the \u03c4-identification: it REDIRECTS the geometric family to the MODULAR direction (deform \u03c4\u2080, not proper time) as the next candidate. The identification remains OPEN. NO tier change."
+  },
+  "context": {
+    "bean": "qou-tq20 (B2 lift) tranche 6; #4019 consistency-1, #4022 structured null merged",
+    "scope_guard": "these shapes alone, as-is; c pinned by pre-stated rule; tolerance pre-stated; no fit; nothing wired; 1/(8pi) stays phase-4"
+  }
+}
