@@ -1549,3 +1549,21 @@ stays the OPEN keystone bridge — characterized, not asserted; the raw odd-k
 growth is O(1) decreasing (3-adic denominator explosion), #3861's mild q-Gevrey
 order is the arithmetic-normalized extraction. ħ↔2πi/N: perturbative κ_n only.
 No c_k wired; scope-(a); no fit.
+
+**2026-07-18 (#3916 cont.) — d↔κ BRIDGE PRUNED (formalize-first): the action is
+Vol(4₁)/π (shared), not new; the keystone narrows to one √3-graded Stokes
+constant.** Before searching for the open d↔κ / meridian↔Q_β map
+(conj:algebraic-geometric-dilog-equivalence), formalize-first pruned the
+hypothesis class (`qbeta_dkappa_bridge_shared_action_probe.py`, 3/3). The
+κ-ladder one-instanton Borel action A_n = n/(|κ_{n+1}|/|κ_n|) increases
+monotonically 0.551→0.630 (n=2..6) toward Vol(4₁)/π=0.6461 (Richardson
+A∞=0.656); the finite-order A_6=0.6303 matches the #3898-tranche-B corpus tower
+singularity Re=0.6310 to 0.1% (same Borel singularity, same Murakami depth);
+Vol/π lands in C1's even-channel band. **⇒ the bridge requires NO NEW instanton
+action** — it is the KNOWN Vol/π, shared across the geometric κ-ladder, the
+even channel (C1), and the corpus tower. The bridge SPLITS by bar-parity:
+bar-even action = Re = Vol/π (known); bar-odd = the tower's Im=0.0210 — the
+√3-graded Stokes constant (matching #3916's √3-graded odd subladder) that
+remains open. This narrows the keystone from "derive a transcendental d↔κ map"
+to "derive one √3-graded Stokes constant against a known action." scope-(a)
+pruning, NOT a derivation; the Stokes constant stays open. No c_k; no fit.
