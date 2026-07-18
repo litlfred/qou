@@ -315,6 +315,8 @@ export default chapter({
             "tower-geometric-lower-bound",
             "level-selection-not-linear",
             "linear-chain-bond-count",
+            "alpha-cluster-activation-gate",
+            "alpha-cluster-model-g-closure",
             "binding-genfun-qdifference",
             "binding-genfun-qdifference-proof",
             "binding-period-involution-statistic",
