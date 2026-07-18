@@ -1,0 +1,47 @@
+{
+  "computation": "alpha-em-b4b-kl-heat-junction",
+  "description": "Bean B4 brick b (qou-1p06): the KL<->heat junction. One loop = one KL insertion ([2]_q = KL eigenvalue on e+, exact); reality forces the equal split of any spectral trace across the conjugate pair (abstract hermitian model + flat-torus bijection, exact); assembly: GIVEN the B2 lift, per-channel weight = (1/2) a0 alpha = alpha/(8pi) with [2]_1 restoring the doubled total. The wall reduces to the single open B2 lift. 1/2 = conjugate-pair share, not 1/b1 (b1=8), not resolvent equal-weight. Nothing wired.",
+  "auditOnly": "docs/audits/2026-07-18-alpha-em-b4b-kl-heat-junction.md",
+  "tier": "symbolic-exact (sympy) + exact-bijection numerics (numpy) + conditional assembly (B2 lift open)",
+  "computedAt": "2026-07-18T17:50:05.082525+00:00",
+  "commitSha": "ca1a0cc7fc6a0bb3ee6cc37cf246e0bec3322254",
+  "engine": "numpy+sympy",
+  "engineVersion": "2.4.6/1.14.0",
+  "scriptFile": "alpha_em_b4b_kl_heat_junction_probe.py",
+  "scriptHash": "a8dfdb4892d7",
+  "assertions": [
+    {
+      "name": "one_loop_is_one_kl_insertion",
+      "passed": true,
+      "detail": "b_s = \u03c3 + q\u207b\u00b9 has channel spectrum ([2]_q, 0): the one-loop coefficient \u2212[2]_q\u00b7x is \u2212(KL eigenvalue on e\u208a)\u00b7x EXACTLY \u2014 the q-dependence of the one-loop term IS the KL eigenvalue, and its q=1 value 2 is the conjugate-pair count"
+    },
+    {
+      "name": "rho_forced_equal_split_abstract",
+      "passed": true,
+      "detail": "for hermitian A (concrete complex-rational 3\u00d73): Tr((conj A)^m) = conj(Tr A^m) = Tr(A^m) for m=1..5, sympy-exact \u2014 an antilinear intertwiner (\u0394|_{H^{0,1}} = conj\u2218\u0394|_{H^{1,0}}\u2218conj) + real spectrum forces EVERY spectral trace to split EQUALLY across the conjugate pair. Reality is the mechanism, not a convention"
+    },
+    {
+      "name": "rho_forced_equal_split_geometric",
+      "passed": true,
+      "detail": "flat-torus H\u00b9: conjugation maps the (1,0) k-mode to the (0,1) (\u2212k)-mode; the component heat traces are term-by-term equal under the bijection k\u2192\u2212k (machine-0 difference at t=1e-2,1e-3; the bijection makes it EXACT) \u2014 the doubled space carries the heat unit half-and-half"
+    },
+    {
+      "name": "assembly_arithmetic_and_disambiguation",
+      "passed": true,
+      "detail": "(1/2)\u00b7a\u2080 = 1/(8\u03c0) exact; per-channel x = a\u2080\u03b1/2 restores the full doubled unit at q=1 ([2]_1\u00b7x = a\u2080\u03b1 \u2014 V1's KL eigenvalue = pair count); and the 1/2 is the CONJUGATE-PAIR share (count 2, #3920), NOT 1/b\u2081 (b\u2081(Bring) = 2g = 8; 1/(\u03c0\u00b7b\u2081) = 1/(8\u03c0) is numerically coincident but a different decomposition), NOT the resolvent equal-weight (q\u00b2=\u22121 locus, excluded by merged F2)"
+    }
+  ],
+  "allPassed": true,
+  "result": {
+    "kl_insertion": "one-loop coefficient = -(KL eigenvalue [2]_q on e+) * x exactly",
+    "rho_split": "antilinear intertwiner + real spectrum => equal spectral traces on the conjugate pair (exact, abstract + geometric model)",
+    "assembly": "GIVEN B2-lift: x = (1/2) a0 alpha = alpha/(8pi); [2]_1 x = a0 alpha",
+    "disambiguation": "1/2 = conjugate-pair share (#3920 count 2); NOT 1/b1 (b1=8); NOT resolvent equal-weight (q^2=-1)",
+    "verdict": "B4b DELIVERED AS THE CONDITIONAL JUNCTION (scope-(a); derives nothing unconditionally; no fit; nothing wired): GIVEN the B2 functorial lift (with its premise that one loop's mode space is carried to the conjugate pair H^{1,0}\u2295H^{0,1}, the #3920 doubling read through \u03c4), the 1/2 of the per-loop measure is FORCED \u2014 reality of the Laplacian (antilinear intertwiner + real spectrum, verified exact abstractly and on the flat-torus model) splits the B3-universal heat unit a\u2080\u03b1 equally across the pair, and the FORCED B2-shadow assignment (q=i\u2192H^{1,0}, #3960) picks the physical channel: per-channel weight = (1/2)\u00b7a\u2080\u00b7\u03b1, i.e. x = \u03b1/(8\u03c0), with the tower's own [2]_q (= the KL eigenvalue, V1) restoring the doubled total at q=1. THE WALL REDUCES TO ONE OPEN STATEMENT: the B2 lift (bean qou-tq20, Mathlib-gated). B4b does not derive the lift. NO tier change."
+  },
+  "context": {
+    "bean": "qou-1p06 (B4) of milestone qou-b5qg; B1 #3955, B2 shadow #3960, B3 #3969, B4a #3973 merged",
+    "reduction": "wall = ONE open statement: the B2 functorial lift (qou-tq20) with its doubled-mode-space premise; everything else in (1/2)*a0 now has a conditional derivation route",
+    "scope_guard": "derives nothing unconditionally; no fit; nothing wired; 1/(8pi) stays phase-4"
+  }
+}
