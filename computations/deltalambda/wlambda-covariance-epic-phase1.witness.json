@@ -1,0 +1,63 @@
+{
+  "engine": "python-exact",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-07-18T19:57:41.834015+00:00",
+  "commitSha": "c5f0223288d473e0807f512743ea34cbea83b9b1",
+  "assertions": [
+    {
+      "name": "covariance_epic_phase1_two_routes_eliminated",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "Route 1 (holonomic recurrence) ruled out: no P-recursion order≤4/deg≤5, k=3..28. Route 2 (β-monotonicity) ruled out: E_β[C₂] non-monotone (4→5 increases) while the kernel E_2≥E_3 holds. Focuses the epic on Śniady genus expansion. No fit; no c_k."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 36,
+  "computation": "wlambda-covariance-epic-phase1",
+  "scriptFile": "wlambda_covariance_epic_phase1.py",
+  "scriptHash": "0d3831c36387",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Phase 1 of the covariance-kernel proof epic (qou-x631): rule out two proof routes for the Δ_λ kernel cov(k)=Σ(f^λ)³(Σc²−C(k,2))≤0. ROUTE 1 (holonomic recurrence ⇒ inductive proof): RULED OUT — cov(k) satisfies no linear recurrence with polynomial coefficients up to order 4/degree 5 (exact, k=3..28; consistent with Σ(f^λ)³ non-holonomic). ROUTE 2 (β-monotonicity of E_β[C₂]=Σf^β C₂/Σf^β): RULED OUT — E_β[C₂] is NOT monotone in β (decreases 2→3→4 but INCREASES 4→5, e.g. k=4: 5.733→5.785), so the kernel is a special β=2→3 fact, not a monotone family; E_2=C(k,2)≥E_3 (the kernel) holds all k≤18. NET: the kernel is non-P-recursive and non-monotone-family — a special analytic statement; the remaining route is Śniady's genus expansion (obstruction: f^λ is the exponential DIMENSION, not a bounded character ratio, so Kerov-CLT is not directly applicable). scope-(a) route-elimination; no fit; nothing wired; no c_k; L2 2/7.",
+  "data": {
+    "route1_holonomic_recurrence_exists": false,
+    "route1_ruled_out": true,
+    "route2_kernel_holds": true,
+    "route2_beta_monotone": false,
+    "route2_ruled_out": true,
+    "beta_monotonicity_violations_4to5": [
+      [
+        4,
+        5.733333333333333,
+        5.7846153846153845
+      ],
+      [
+        8,
+        26.386267083339334,
+        26.397864068283315
+      ]
+    ],
+    "cov_seq_head": [
+      -4,
+      -16,
+      -320,
+      -10400,
+      -163520,
+      -3224704,
+      -106339296,
+      -4722309120
+    ]
+  }
+}
