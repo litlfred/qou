@@ -39,13 +39,28 @@ echo "lean-toolchain-cache-restore: slug=$slug branch=$branch toolchain=$toolcha
 # wrong compiler and defeat the pin). `lean --version` prints e.g.
 # "Lean (version 4.24.0, ...)"; match the numeric part of the pinned version.
 vernum="${toolchain_ver#v}"                        # v4.24.0 -> 4.24.0
-existing="$(find "$dest_root" -maxdepth 3 -type f -name lean -path '*/bin/lean' 2>/dev/null | head -1)"
-if [ -n "${existing:-}" ] && "$existing" --version 2>/dev/null | grep -qF "version $vernum"; then
+
+# First `bin/lean` under $dest_root whose `--version` matches the pinned
+# $vernum. Filtering by version (rather than `find … | head -1`) is robust to
+# multiple installed toolchains — it never selects the wrong compiler, so a
+# valid preinstalled match is not missed and a non-matching one is not mistaken
+# for success. `lean --version` prints e.g. "Lean (version 4.24.0, ...)".
+first_matching_lean() {
+  local bin
+  find "$dest_root" -maxdepth 3 -type f -name lean -path '*/bin/lean' 2>/dev/null \
+    | while read -r bin; do
+        if "$bin" --version 2>/dev/null | grep -qF "version $vernum"; then
+          echo "$bin"; break
+        fi
+      done
+}
+
+# Already present AND matching the pinned version? Only then skip — a different
+# preinstalled toolchain must NOT satisfy this (it would defeat the pin).
+existing="$(first_matching_lean)"
+if [ -n "$existing" ]; then
   echo "lean-toolchain-cache-restore: matching lean $vernum already present at $existing — skipping."
   exit 0
-fi
-if [ -n "${existing:-}" ]; then
-  echo "lean-toolchain-cache-restore: found a lean at $existing but it does not match pinned $vernum — restoring the pinned toolchain."
 fi
 
 if ! git -C "$REPO_ROOT" fetch --depth=1 origin "$branch" 2>/dev/null; then
@@ -78,9 +93,9 @@ tar xzf "$tgz" -C "$dest_root" || {
   exit 1
 }
 
-lean_bin="$(find "$dest_root" -maxdepth 3 -type f -name lean -path '*/bin/lean' 2>/dev/null | head -1)"
-if [ -z "${lean_bin:-}" ]; then
-  echo "lean-toolchain-cache-restore: extracted, but no bin/lean found under $dest_root." >&2
+lean_bin="$(first_matching_lean)"
+if [ -z "$lean_bin" ]; then
+  echo "lean-toolchain-cache-restore: extracted, but no bin/lean matching $vernum found under $dest_root." >&2
   exit 1
 fi
 chmod +x "$lean_bin" 2>/dev/null || true
