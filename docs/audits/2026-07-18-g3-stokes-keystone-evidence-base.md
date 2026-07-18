@@ -113,3 +113,25 @@ Corpus-grep: this synthesizes existing audits (`phib…gap-audit`,
 open-item declaration, no refutation. The even/odd `A_ω` correction (§0) is the
 one durable fix. Anti-laundering: the §3 target proves *rigidity*, not the datum;
 the integer-3 identification (§2) stays explicitly open and falsifiable.
+
+## 6. Update (same day) — dual period LANDED; open input sharpened (NOT closed)
+
+Formalize-first advance on the §3 target, honest scope. The rigidity scaffold
+proved only *one* period of the inter-solution ambiguity (`ratio_ib_periodic`,
+shift `ib`). Landed the **second** period, `lean`-direct **exit 0**:
+- `QOU/QBeta/CyclicDilogPentagon.lean` — new `phi_binv_quasiperiod` (full `i/b`
+  shift from `shift_binv`, guarded off the dual pole lattice) and
+  `ratio_ibinv_periodic` (the ratio `Φ₁/Φ₂` is `i/b`-invariant). With
+  `ratio_ib_periodic` this **proves the ambiguity is doubly periodic** for the
+  lattice `⟨ib, i/b⟩`.
+
+**What this does NOT do (anti-laundering, explicit).** It does **not** prove
+`PentagonRigidity.uniqueUpToScalar`. The remaining gap is now *precisely* named:
+"doubly-periodic ⇒ constant" (Liouville for elliptic functions), which in
+addition needs **holomorphicity/continuity of the ratio** — NOT carried by the
+`FaddeevPhi` conjecture-class (it axiomatizes only the two difference equations;
+the contour-integral `Φ_b` and its analyticity are the open input) — and
+Mathlib's absent elliptic-function boundedness API. `uniqueUpToScalar` stays an
+honest open hypothesis with **no instance**. The advance is that the search
+around it is now closed: the only missing piece is one classical theorem plus a
+holomorphicity endowment, not a vague "Faddeev–Volkov rigidity."
