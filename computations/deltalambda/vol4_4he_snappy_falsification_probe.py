@@ -120,6 +120,11 @@ def main() -> int:
         ],
     }
     wit["allPassed"] = all(a["passed"] for a in wit["assertions"])
+    import sys as _sys  # noqa: E402 — P30 rollup (bean cmiy)
+    _sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "substrate"))
+    from witness_base import WitnessBuilder  # noqa: E402
+    WitnessBuilder.stamp_staleness_metadata(wit, script_path=__file__, engine="python")
+    wit["scriptFile"] = Path(__file__).name
     out = Path(__file__).resolve().parent / "vol4-4he-snappy-falsification.witness.json"
     json.dump(wit, open(out, "w"), indent=1)
     print("witness ->", out.name, " allPassed:", wit["allPassed"])

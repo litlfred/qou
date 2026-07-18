@@ -2,8 +2,8 @@
  "computation": "vol4-4he-snappy-falsification",
  "description": "Pre-registered falsifiable test of the bond-count law's 4He prediction Vol4=8.048 against SnapPy volumes of IN-ADVANCE-named structural candidates (anti-numerology: no census scan). NEGATIVE: no candidate matches; 4-chains at 10.149; naive single-link n=4 reading fails at 4He. A=3 bond-count results untouched. Scope-(a).",
  "audit_only": true,
- "computedAt": "2026-07-13T12:16:09.754646+00:00",
- "engine": "snappy",
+ "computedAt": "2026-07-18T13:38:39.527995+00:00",
+ "engine": "python",
  "predicted_vol4": 8.048,
  "corpus_validation": {
   "L6a4": {
@@ -54,5 +54,10 @@
    "passed": true
   }
  ],
- "allPassed": true
+ "allPassed": true,
+ "scriptHash": "119b6bc0bb4c",
+ "scriptCommitSha": "784c6f9dd4ea500e5c7699887afc7af53718cccb",
+ "commitSha": "68c6dff36581d2135136fc081e000ec34ddbf716",
+ "durationMs": 0,
+ "scriptFile": "vol4_4he_snappy_falsification_probe.py"
 }
