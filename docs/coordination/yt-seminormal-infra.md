@@ -175,3 +175,35 @@ on the entry-mono lemmas) to before L826, then: define
 by 1 on a descent; **every descent is admissible** (same-row/col ⇒ ascent under
 `cellLabel_{T₀}`; consecutive labels never share a diagonal), so WF-recurse on
 `inv(π_T)` to `T₀ = rowSuperstandardBraidKnot μ`.
+
+## 2026-07-18 — measure kernel merged-track (PR #3922): `PermInversion.lean`
+
+**All hard lemmas for closing `syt_all_connect_to_some` are now proven.** The
+realization `adjacentSwapStep_swapCells` is merged; the WF measure kernel
+[`QOU/Mathlib/PermInversion.lean`](../../content/quantum-observable-universe/lean/QOU/Mathlib/PermInversion.lean)
+(PR #3922, sorry-free) supplies:
+
+- `invCount` + `invCount_mul_swap_lt` (adjacent-descent swap strictly lowers the
+  inversion count — the only reversed pair is `(a, a+1)`);
+- `eq_one_of_invCount_eq_zero` (WF base: 0 inversions ⇒ identity);
+- `exists_adjacent_descent_of_ne_one` (WF step: non-identity ⇒ adjacent descent);
+- `eq_one_of_strictMono`, `strictMono_of_adjacent` (general `n`).
+
+### Final assembly — the ONLY remaining step (all inputs proven)
+
+In `JucysMurphy.lean` (imports `PermInversion` + `SytMathlibBridge`), after the
+L1120–1144 reorg:
+
+1. `permOf T := (tableauCellEquiv μ T).trans (Equiv.ofBijective (cellLabel T₀)
+   (cellLabel_bijective T₀))` with `T₀ := rowSuperstandardBraidKnot μ`; then
+   `permOf T₀ = 1` (tableauCellEquiv T₀ = (cellLabel T₀).symm).
+2. `tableauCellEquiv_swapCells_*` (export the realization's internal cell
+   identities: label `a` in `T'` at cell `q`, `b` at `p`, else fixed) ⇒
+   `permOf (swapCellsSYT …) = permOf T * Equiv.swap a b`.
+3. descent of `permOf T` ⇒ diff row & col (same-row/col ⇒ ascent via `T₀`
+   `row_strict`/`col_strict`, using `entryLtRow`/`entryLtCol` on `T₀`) ⇒
+   realization gives the admissible edge; `invCount_mul_swap_lt` ⇒ measure drops.
+4. WF-recurse on `invCount (permOf T)` (`Nat.strong_induction_on`):
+   `invCount = 0` ⇒ `permOf T = 1` ⇒ `T = T₀` (tableauCellEquiv injectivity) ⇒
+   `refl`; else take the descent, step, recurse. Closes the L887 sorry with
+   `T₀ = rowSuperstandardBraidKnot μ`.
