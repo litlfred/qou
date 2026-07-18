@@ -1,0 +1,102 @@
+{
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-07-18T09:26:30.294448+00:00",
+  "commitSha": "7b88e547c2a246ce2fde995b3143e4db53b5fd68",
+  "assertions": [
+    {
+      "name": "control_intersection_form_unimodular",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "|det((+)^4 [[0,1],[-1,0]])|=1 (Poincare duality => genus-g intersection form unimodular); Smith normal form all 1s => discriminant group A_L=L*/L trivial"
+    },
+    {
+      "name": "abelian_jacobian_theory_gives_one_anyon_not_eight",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "|A_L|=1 => the abelian anyonic theory of Jac(Bring) has ONE simple object, Sd_i^2=1 (FORCED by topology, and forces 1 != 8) -- kills candidate (A)"
+    },
+    {
+      "name": "control_2g_equals_8",
+      "computed": 8.0,
+      "expected": 8.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "b1=2g=8 for genus-4 Bring; this is the Betti NUMBER (distinct from |disc|=1)"
+    },
+    {
+      "name": "control_icosahedral_sum_d2_not_eight",
+      "computed": 3.618033988749895,
+      "expected": 3.618033988749895,
+      "passed": true,
+      "tolerance": 1e-09,
+      "source": "Sigma(2,3,5) Sd_i^2=1+phi^2=(5+sqrt5)/2~3.618 != 8 (cross-check vs #3889 genuine S-matrix)"
+    },
+    {
+      "name": "no_natural_object_forces_sum_d2_equals_8",
+      "computed": 0.0,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "(A) forced->1; (B)/(D) fitted (choose level/group); (C) relabels b1 (no categorical content). No candidate FORCES Sd_i^2=8 by topology => scope-(a) NEGATIVE; 1/b1 already derived as the #3834 Betti count zeta_{Delta1}(0)=-b1; only 1/pi remains open."
+    }
+  ],
+  "allPassed": true,
+  "computation": "alpha-em-count-carrying-object",
+  "scriptFile": "alpha_em_count_carrying_object_probe.py",
+  "scriptHash": "95c95c03f438",
+  "scriptCommitSha": "7b88e547c2a246ce2fde995b3143e4db53b5fd68",
+  "candidates": [
+    {
+      "tag": "A",
+      "name": "Abelian theory of Jac(Bring) = discriminant form of (H1(Z), intersection)",
+      "sum_d2": "1",
+      "sum_d2_float": 1.0,
+      "equals_8": false,
+      "count_status": "forced",
+      "verdict": "KILLS the naive abelian-Jacobian route",
+      "why": "The genus-g intersection form is UNIMODULAR (Poincare duality) => discriminant group A_L=L*/L is TRIVIAL (|A_L|=1). The abelian MTC of a lattice has one simple object per discriminant element, so Sd_i^2=|A_L|=1, NOT 8. The count IS forced by topology and the topology gives 1. (2g=8 is the Betti number; |disc|=1 is the lattice invariant -- they are DIFFERENT numbers, and the metric-group anyon count is the latter.)"
+    },
+    {
+      "tag": "B",
+      "name": "Finite level-k / U(1)_k abelian theory on H1 (level chosen)",
+      "sum_d2": "8",
+      "sum_d2_float": 8.0,
+      "equals_8": true,
+      "count_status": "fitted",
+      "verdict": "Sd_i^2=8 only by CHOOSING level k=8",
+      "why": "A U(1)_k / rescaled-lattice theory has k anyons (d_i=1), Sd_i^2=k. Hitting 8 needs k=8. But the Jacobian's polarization is PRINCIPAL (the unimodular form = 'level 1'), so no level is forced -- least of all 8. Choosing k=8 to match b1 is a fit."
+    },
+    {
+      "tag": "C",
+      "name": "2g=8 harmonic 1-forms (Z5 chi1+chi2+chi3+chi4, each 2-dim) as d=1 'objects'",
+      "sum_d2": "8",
+      "sum_d2_float": 8.0,
+      "equals_8": true,
+      "count_status": "relabel",
+      "verdict": "Sd_i^2=8 TRIVIALLY, but = b1 relabelled (no new content)",
+      "why": "Declaring the 8 harmonic 1-forms (or 4 complex (+) 4 conjugate; or the four 2-dim Z5 characters summing to 8) as '8 simple objects d=1' gives Sd_i^2=8 -- but there is no fusion/braiding/modular structure; it is literally the vector space dim H1=b1=8 wearing an object-count costume. Reproduces 8 with ZERO new categorical content -- a relabelling of the Betti number, not a derivation of a Sd_i^2."
+    },
+    {
+      "tag": "D",
+      "name": "Drinfeld-double / group-theoretical from S5 or 2I",
+      "sum_d2": "8",
+      "sum_d2_float": 8.0,
+      "equals_8": true,
+      "count_status": "fitted",
+      "verdict": "Sd_i^2=8 only by CHOOSING Z2^3 / an order-8 subgroup",
+      "why": "D(G) has Sd_i^2=|G|^2 (D(Z2)=4, D(D4)=64 -- neither 8). The metric group Z2^3 gives 8 anyons Sum=8, but Z2^3 is not a Bring invariant. S5 (|S5|=120=2^3*3*5) has NO natural order-8 QUOTIENT; its order-8 Sylow-2 (dihedral D4) is a SUBGROUP -- and it is only ONE of eight subgroup classes giving genus-1 quotients (S4,A4,D6,D4,S3,C6,C2^2,C4, per #2701/E4), so picking the |.|=8 one to match b1 is a fit. 2I (|2I|=120) gives nothing of order 8 naturally."
+    }
+  ],
+  "description": "Sharpened #3889 redirect: does a count-carrying category whose total quantum dimension Sd_i^2=8 exist DERIVED from the genus-4 Bring topology (b1=2g=8), or is 8 a FIT? Enumerates the natural candidate objects from the Bring Jacobian and computes Sd_i^2 EXACTLY for each, tagging the count forced/fitted/relabel. RESULT -- scope-(a) NEGATIVE: (A) the abelian anyonic theory of Jac(Bring) = the discriminant form of (H1(Z), intersection form) has |A_L|=1 because the genus-g intersection form is UNIMODULAR by Poincare duality (Sd_i^2=1, FORCED, and forces 1 != 8 -- kills the naive Jacobian route); (B) a level-k/U(1)_k abelian theory hits 8 only by CHOOSING k=8, but the principal polarization is 'level 1' (fit); (C) the 2g=8 harmonic 1-forms (Z5 chi1+chi2+chi3+chi4) as d=1 objects give 8 TRIVIALLY = b1 relabelled, zero new categorical content; (D) a Drinfeld-double/group-theoretical object from S5 or 2I needs Z2^3 or an order-8 subgroup CHOSEN (S5 has no natural order-8 quotient; D(G) gives |G|^2 in {4,64}, never 8) -- a fit. No natural object FORCES Sd_i^2=8. CONSOLIDATION: 1/b1 is ALREADY DERIVED as the plain Betti count (#3834 zeta_{Delta1}(0)=-b1, area-free); the categorical Sd_i^2 detour reproduces 8 trivially (relabel) or fails -- only 1/pi (archimedean 1-loop, #3882) remains open. Anti-laundering: no CODATA read; no convention tuned to 8; 2g=8 (Betti) distinguished from |disc|=1 (lattice); an honest NEGATIVE is the preferred outcome. No alpha_k wired; no fit; 1/(8pi) stays a phase-4 identification.",
+  "contentBlock": "prop:alpha-em-categorical-trace",
+  "auditOnly": "docs/audits/2026-07-18-alpha-em-count-carrying-object.md",
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0"
+  }
+}
