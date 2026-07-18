@@ -37,3 +37,68 @@ the concrete standard-YT type + seminormal-action model per partition supplying
 the `τ` (`i↔i+1` swap) and `ρ` (axial distance) the general theorem consumes,
 then the wire into the abstract `chiSigma`. This is the shared standard-YT base
 with #3719 — coordinate before building it in either branch.
+
+## 2026-07-18 — base-tableau brick complete (#3843)
+
+`QOU/BraidKnot/SytRowSuperstandard.lean` (new, sorry-free) — the OV
+base-tableau existence brick, complementary to this ledger's χ_λ thread:
+
+- `rowSuperstandardSsyt` (row-reading SSYT), `card_eq_sum_rowLen`
+  (`|μ.cells| = ∑_{i<colLen 0} rowLen i` via `cells = ⨆ rows`), the full
+  `BijOn` (MapsTo/InjOn/SurjOn), `rowSuperstandardStd : StandardYoungTableau μ`,
+  and `instNonemptyStandardYoungTableau`.
+- Also on #3843: `syt_adjacentSwap_connected` proved sorry-free via
+  `adjacentSwapStep_symm` (swap-symmetry de-abstraction), reducing the
+  `JucysMurphy.lean` OV debt to the one-directional `syt_all_connect_to_some`.
+- No file overlap with the `SeminormalCharacterConnector`/`SeminormalWeight`
+  χ_λ work; `seminormalVector_base_exists` left for that thread's `g_ρ` machinery.
+- Remaining for `syt_all_connect_to_some`: inversion measure + exchange step
+  (walk any SYT to `rowSuperstandardStd`).
+
+## 2026-07-18 — two more exchange-argument bricks (#3843, sorry-free)
+
+Two isolated, sorry-free, pushed bricks that de-risk the remaining
+`syt_all_connect_to_some` walk:
+
+- `QOU/BraidKnot/SytMathlibBridge.lean` — `Mathlib.SYT → BraidKnot.SYT`
+  one-down conversion (`entry i j - 1`; off-diagram `0` stays `0`, the BijOn
+  bound `1 ≤ entry ≤ |μ|` makes truncated subtraction faithful). Yields
+  `rowSuperstandardBraidKnot` + `Nonempty (QOU.BraidKnot.StandardYoungTableau μ)`
+  — the base tableau `T₀` **in the exact type** `syt_all_connect_to_some`
+  consumes (the JM machinery uses the bespoke entry-based `BraidKnot.SYT`, not
+  the `bijOn`-based `Mathlib.SYT` the base brick built).
+- `QOU/BraidKnot/SytAdjacentSwap.lean` — `swapCellsSYT`, the consecutive-label
+  cell-swap constructor: given cells `p,q` holding labels `a,a+1` in different
+  rows **and** columns, exchanging their entries is again a `BraidKnot.SYT`.
+  Clean design via the value-level involution `swapSucc a` (swap the integers
+  `a,a+1`): it reverses order only on the pair `(a,a+1)`, and the
+  different-row/col hypotheses (via `inj_on`) guarantee no row/col-adjacent
+  pair carries those values, so strictness transfers with no cell geometry.
+
+### Decomposition of the residual `syt_all_connect_to_some` (for the next session)
+
+The two combinatorial edge/base objects now exist in the right type. What
+remains is best done **inside `JucysMurphy.lean`** (it already has `cellLabel`,
+`tableauCellEquiv`, `entry_tableauCellEquiv`, `row_eq_offset_add_count`), which
+would then `import QOU.BraidKnot.SytAdjacentSwap`:
+
+1. **Realization** `AdjacentSwapStep μ T (swapCellsSYT T p q …)` for
+   `p = tableauCellEquiv T a`, `q = tableauCellEquiv T (a+1)` when their contents
+   differ by `≥ 2` (⟺ different row & col, automatic for consecutive labels in a
+   genuine SYT — same row ⟺ gap `+1`, same col ⟺ gap `−1`, gap `0` impossible).
+   In `T' = swapCellsSYT`, label `a` sits at `q`, label `a+1` at `p`
+   (`swapSucc a a = a+1`, `swapSucc a (a+1) = a`); compute `tableauCellEquiv T'`
+   via `cellLabel T' q = ⟨a,_⟩` + `tableauCellEquiv_cellLabel`. The gap
+   conditions `d≠0`, `d²≠1` are then automatic from the `≥2` separation.
+2. **Measure** `inv(π_T)` with `π_T = cellLabel (rowSuperstandardBraidKnot μ) ∘
+   tableauCellEquiv T` (a permutation of `Fin n`, `= id` at `T₀`). An admissible
+   step right-multiplies `π_T` by the adjacent transposition `(a, a+1)`, changing
+   `inv` by `±1`.
+3. **Exchange lemma** — if `T ≠ T₀` then some adjacent descent `π_T(a) >
+   π_T(a+1)` corresponds to a **valid** (different-row/col) swap, so `inv`
+   strictly decreases. The one obstruction to rule out: an adjacent descent whose
+   labels are row/col-adjacent (gap `±1`); handle by choosing the descent
+   position carefully (Yamanouchi/last-letter order) — the crux, and the only
+   genuinely non-mechanical remaining step.
+4. **WF induction** on `inv(π_T)` closes `syt_all_connect_to_some` with
+   `T₀ = rowSuperstandardBraidKnot μ`.
