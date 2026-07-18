@@ -9,13 +9,13 @@ identification). Resolves the `/coordinate` §6 divergence surfaced across the
 
 The photon per-loop measure `1/(π b₁) = 1/(8π)` (`b₁ = dim H¹(M_Bring) = 8`)
 factors into a **mode count** `b₁` and a **`1/π` per-mode weight**. The count is
-settled — `−ζ_{Δ₁}(0) = b₁`, area-free (merged #3834, and independently #3831).
+settled — `−ζ_Δ₁(0) = b₁`, area-free (merged #3834, and independently #3831).
 The **`1/π` origin** was left with **three different readings** across three PRs:
 
 | # | PR | Reading of the `1/π` |
 |---|----|----|
-| R1 | #3864 (open) + #3842 (merged) | the `(2π)`-Gaussian zero-mode **convention** — μ-sector, **not forced** by anything computed; `Z = 1/(√Im τ·\|η\|²)` is π-free |
-| R2 | #3879 (merged) | the **universal 1-loop** heat-kernel factor `(4π)^{d/2}\|_{d=2}=4π`, so `8π = 2·4π` — π *forced* by loop universality |
+| R1 | #3864 (open) + #3842 (merged) | the `(2π)`-Gaussian zero-mode **convention** — μ-sector, **not forced** by anything computed; `Z = 1/(√Im τ·‖η‖²)` is π-free |
+| R2 | #3879 (merged) | the **universal 1-loop** heat-kernel factor `(4π)^(d/2)|_(d=2) = 4π`, so `8π = 2·4π` — π *forced* by loop universality |
 | R3 | #3831 (merged) | reduces to the open **`conj:dilogarithm-archimedean-limit`** (Bloch–Suslin archimedean π) **+ a `2πg` genus identity** — π *forced* by geometry/the dilog |
 
 These are not three labels for one fact: R1 says the `1/π` is **not derivable**
