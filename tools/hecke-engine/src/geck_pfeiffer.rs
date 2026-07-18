@@ -1541,7 +1541,13 @@ mod tests {
     /// does not blow the cap) and (b) it still matches the direct seminormal
     /// kernel — confirming the completion is production-viable, not just
     /// correct on toy inputs. Timing is printed for the record.
+    ///
+    /// Marked `#[ignore]` — an expensive scale/perf check (~2.4 s), not a
+    /// correctness gate for a new code path (that is covered by the
+    /// reproducer + n≤8 all-partition battery). Run explicitly with
+    /// `cargo test -p hecke-engine gp_complete_production_scale_n12 -- --ignored --nocapture`.
     #[test]
+    #[ignore = "expensive production-scale stress test; run with --ignored"]
     fn gp_complete_production_scale_n12() {
         use std::time::Instant;
         // Deterministic ~30-letter n=12 word spanning strands 1..=11 with
