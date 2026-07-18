@@ -1,0 +1,316 @@
+{
+  "engine": "python+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-07-18T14:55:20.835785+00:00",
+  "commitSha": "be80d32294671da22480701ae355aebd82cc1316",
+  "assertions": [
+    {
+      "name": "no_parameter_free_graph_invariant_matches_all_four",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "unsigned_invariant_isospin_blind_mirror_ratio_1",
+      "computed": "True",
+      "expected": "True",
+      "passed": true,
+      "source": "³H,³He both K₃ ⇒ any f(A) equal (ratio 1.000); data needs 1.223 (isospin split)"
+    },
+    {
+      "name": "data_mirror_split_exceeds_unity",
+      "computed": "True",
+      "expected": "True",
+      "passed": true,
+      "source": "deficit(³H)/deficit(³He) = 1.223 (the isospin DOF a graph invariant cannot carry)"
+    },
+    {
+      "name": "additive_edge_count_matches_He4_only",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "collective_spanning_trees_overshoot_He4",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "signed_graph_mirror_split_wrong_at_g_reeb",
+      "computed": "True",
+      "expected": "True",
+      "passed": true,
+      "source": "signed K₃ det ratio ~2.75× vs data 1.223× (reproduces #3943)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 1,
+  "computation": "deltalambda-k4-complete-graph-collective-magnitude",
+  "scriptFile": "deltalambda_k4_complete_graph_collective_magnitude_probe.py",
+  "scriptHash": "d267303f8911",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Δ_λ attack Vector 1: tests whether a parameter-free invariant of the K_A complete coordination graph (Laplacian spectrum {0,4,4,4}, spanning trees 16, edge count, pseudo-det, algebraic connectivity) supplies the collective deficit the #3943 additive per-pair route missed. Forward test vs the four committed deficits with NO free prefactor + the ³H/³He mirror diagnostic. Double honest negative: unsigned invariants are isospin-blind (scope-(b)), and no invariant reproduces the deficit magnitudes (scope-(a)); the collective DOF is isospin, not a super-additive graph term. No fit, no AME inversion, audit-only.",
+  "tier": "structural forward-test (parameter-free graph invariant -> predicted deficit -> compare; no tuning)",
+  "result": {
+    "hypothesis": "the missing collective Δ_λ term is a parameter-free invariant of the complete coordination graph K_A (²H=K₂, ³H/³He=K₃, ⁴He=K₄), not an additive sum of per-pair terms (#3943)",
+    "constants": {
+      "q0": "1.10997859556",
+      "E0_MeV_m_e/(q(q-1))": "4.1859808",
+      "g_reeb_parameter_free_m": "0.446727067798",
+      "ceiling_1/sqrt5": "0.4472135955"
+    },
+    "derived_inputs_not_fitted": {
+      "B_dim_MeV_single_trace": {
+        "2H": "0.38007125",
+        "3H": "1.9085328",
+        "3He": "2.3446057",
+        "4He": "3.038187"
+      },
+      "B_AME_MeV": {
+        "2H": "2.224566",
+        "3H": "8.481821",
+        "3He": "7.718058",
+        "4He": "28.295673"
+      },
+      "deficit_MeV_target_minus_Bdim": {
+        "2H": "1.8444947",
+        "3H": "6.5732882",
+        "3He": "5.3734523",
+        "4He": "25.257486"
+      },
+      "source": "deltalambda-perpair-bond-magnitude-derive.witness.json (#3943, consumed)"
+    },
+    "partA_graph_invariants": {
+      "2H": {
+        "edge_count_C(A,2)": 1,
+        "spanning_trees_A^(A-2)": 1,
+        "laplacian_pseudo_det_A^(A-1)": 2,
+        "algebraic_connectivity_A": 2
+      },
+      "3H": {
+        "edge_count_C(A,2)": 3,
+        "spanning_trees_A^(A-2)": 3,
+        "laplacian_pseudo_det_A^(A-1)": 9,
+        "algebraic_connectivity_A": 3
+      },
+      "3He": {
+        "edge_count_C(A,2)": 3,
+        "spanning_trees_A^(A-2)": 3,
+        "laplacian_pseudo_det_A^(A-1)": 9,
+        "algebraic_connectivity_A": 3
+      },
+      "4He": {
+        "edge_count_C(A,2)": 6,
+        "spanning_trees_A^(A-2)": 16,
+        "laplacian_pseudo_det_A^(A-1)": 64,
+        "algebraic_connectivity_A": 4
+      },
+      "_K4_laplacian_spectrum": [
+        0,
+        4,
+        4,
+        4
+      ]
+    },
+    "partB_forward_test_per_invariant": {
+      "edge_count_C(A,2)": {
+        "rows": [
+          {
+            "iso": "2H",
+            "A": 2,
+            "invariant": 1,
+            "pred_MeV_E0_times_inv": "4.1859808",
+            "deficit_MeV": "1.8444947",
+            "pred/deficit": "2.26945",
+            "required_prefactor": "0.440636"
+          },
+          {
+            "iso": "3H",
+            "A": 3,
+            "invariant": 3,
+            "pred_MeV_E0_times_inv": "12.557942",
+            "deficit_MeV": "6.5732882",
+            "pred/deficit": "1.91045",
+            "required_prefactor": "0.523437"
+          },
+          {
+            "iso": "3He",
+            "A": 3,
+            "invariant": 3,
+            "pred_MeV_E0_times_inv": "12.557942",
+            "deficit_MeV": "5.3734523",
+            "pred/deficit": "2.33703",
+            "required_prefactor": "0.427893"
+          },
+          {
+            "iso": "4He",
+            "A": 4,
+            "invariant": 6,
+            "pred_MeV_E0_times_inv": "25.115885",
+            "deficit_MeV": "25.257486",
+            "pred/deficit": "0.994394",
+            "required_prefactor": "1.00564"
+          }
+        ],
+        "required_prefactor_spread_max/min": "2.35021",
+        "simultaneous_parameter_free_match": false
+      },
+      "spanning_trees_A^(A-2)": {
+        "rows": [
+          {
+            "iso": "2H",
+            "A": 2,
+            "invariant": 1,
+            "pred_MeV_E0_times_inv": "4.1859808",
+            "deficit_MeV": "1.8444947",
+            "pred/deficit": "2.26945",
+            "required_prefactor": "0.440636"
+          },
+          {
+            "iso": "3H",
+            "A": 3,
+            "invariant": 3,
+            "pred_MeV_E0_times_inv": "12.557942",
+            "deficit_MeV": "6.5732882",
+            "pred/deficit": "1.91045",
+            "required_prefactor": "0.523437"
+          },
+          {
+            "iso": "3He",
+            "A": 3,
+            "invariant": 3,
+            "pred_MeV_E0_times_inv": "12.557942",
+            "deficit_MeV": "5.3734523",
+            "pred/deficit": "2.33703",
+            "required_prefactor": "0.427893"
+          },
+          {
+            "iso": "4He",
+            "A": 4,
+            "invariant": 16,
+            "pred_MeV_E0_times_inv": "66.975693",
+            "deficit_MeV": "25.257486",
+            "pred/deficit": "2.65172",
+            "required_prefactor": "0.377114"
+          }
+        ],
+        "required_prefactor_spread_max/min": "1.38801",
+        "simultaneous_parameter_free_match": false
+      },
+      "laplacian_pseudo_det_A^(A-1)": {
+        "rows": [
+          {
+            "iso": "2H",
+            "A": 2,
+            "invariant": 2,
+            "pred_MeV_E0_times_inv": "8.3719617",
+            "deficit_MeV": "1.8444947",
+            "pred/deficit": "4.53889",
+            "required_prefactor": "0.220318"
+          },
+          {
+            "iso": "3H",
+            "A": 3,
+            "invariant": 9,
+            "pred_MeV_E0_times_inv": "37.673827",
+            "deficit_MeV": "6.5732882",
+            "pred/deficit": "5.73135",
+            "required_prefactor": "0.174479"
+          },
+          {
+            "iso": "3He",
+            "A": 3,
+            "invariant": 9,
+            "pred_MeV_E0_times_inv": "37.673827",
+            "deficit_MeV": "5.3734523",
+            "pred/deficit": "7.0111",
+            "required_prefactor": "0.142631"
+          },
+          {
+            "iso": "4He",
+            "A": 4,
+            "invariant": 64,
+            "pred_MeV_E0_times_inv": "267.90277",
+            "deficit_MeV": "25.257486",
+            "pred/deficit": "10.6069",
+            "required_prefactor": "0.0942786"
+          }
+        ],
+        "required_prefactor_spread_max/min": "2.33688",
+        "simultaneous_parameter_free_match": false
+      },
+      "algebraic_connectivity_A": {
+        "rows": [
+          {
+            "iso": "2H",
+            "A": 2,
+            "invariant": 2,
+            "pred_MeV_E0_times_inv": "8.3719617",
+            "deficit_MeV": "1.8444947",
+            "pred/deficit": "4.53889",
+            "required_prefactor": "0.220318"
+          },
+          {
+            "iso": "3H",
+            "A": 3,
+            "invariant": 3,
+            "pred_MeV_E0_times_inv": "12.557942",
+            "deficit_MeV": "6.5732882",
+            "pred/deficit": "1.91045",
+            "required_prefactor": "0.523437"
+          },
+          {
+            "iso": "3He",
+            "A": 3,
+            "invariant": 3,
+            "pred_MeV_E0_times_inv": "12.557942",
+            "deficit_MeV": "5.3734523",
+            "pred/deficit": "2.33703",
+            "required_prefactor": "0.427893"
+          },
+          {
+            "iso": "4He",
+            "A": 4,
+            "invariant": 4,
+            "pred_MeV_E0_times_inv": "16.743923",
+            "deficit_MeV": "25.257486",
+            "pred/deficit": "0.662929",
+            "required_prefactor": "1.50846"
+          }
+        ],
+        "required_prefactor_spread_max/min": "6.84672",
+        "simultaneous_parameter_free_match": false
+      }
+    },
+    "partC_mirror_diagnostic": {
+      "data_deficit_ratio_3H/3He": "1.22329",
+      "unsigned_graph_invariant_ratio": "1.0",
+      "unsigned_note": "³H (pnn) and ³He (ppn) are the SAME graph K₃; every parameter-free UNSIGNED invariant f(A) gives ratio 1.000 ≠ data 1.223 — isospin-blind (scope-(b), cited invariant).",
+      "signed_graph_det_ratio_at_g_reeb": "2.7513",
+      "signed_note": "the SIGNED graph (pp=+1,nn=−1,pn=+1) is the only K_A graph object that splits ³H/³He, but it needs the GATED per-pair m (so it is not a parameter-free 'collective' object) and at g_reeb gives ~2.75× — WRONG magnitude/direction vs data 1.223× (reproduces #3943)."
+    },
+    "method_guard": "every candidate is a parameter-free graph invariant × E₀ with NO free prefactor; the required prefactor is REPORTED, never solved for. Solving it from the deficits = forbidden 7th fit (AGENTS.md).",
+    "verdict": "DOUBLE HONEST NEGATIVE — a parameter-free K₄ (K_A) GRAPH object does NOT supply the collective Δ_λ deficit; Vector 1 sharpens the search rather than closing it. (b) STRUCTURAL EXCLUSION: an UNSIGNED K_A graph invariant is a function of A=Z+N only, so it predicts deficit(³H)=deficit(³He) (ratio 1.000) vs data 1.223 — isospin-blind; cited invariant = coordination graph K_A depends on A only (ReebPnMagnitude.lean det-conjugation, attack-vector map §2.1). (a) SCOPE-LIMITED: no single parameter-free graph invariant × E₀ reproduces the four-isotope deficit magnitudes (required prefactors span ~1.4–6.8×); the super-additive COLLECTIVE invariants (spanning trees, Laplacian pseudo-det) OVERSHOOT ⁴He 2.6–10.6×, while only the ADDITIVE edge count matches ⁴He (0.99×) yet overshoots the lighter isotopes ~2×. The signed graph — the only K_A object that splits the mirror pair — needs the gated m and gives the wrong 2.75× split. REFINED READING: the residual's collective character is an ISOSPIN (p/n) DOF, not a super-additive graph magnitude. NOT a derivation; NOT wired; deficits NOT inverted (no 7th fit)."
+  },
+  "context": {
+    "axis": "Δ_λ Track-A gate — attack Vector 1 (K₄ collective graph magnitude)",
+    "no_fit": true,
+    "no_ame_inversion": true,
+    "q0_convention": "muon-canonical (computations/ layer)"
+  },
+  "auditOnly": true
+}
