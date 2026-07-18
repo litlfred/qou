@@ -50,9 +50,17 @@ mp.mp.dps = 40
 
 
 def eta(tau):
-    """Dedekind η(τ) = q^{1/24} ∏(1−qⁿ), q = e^{2πiτ}."""
-    q = mp.e ** (2j * mp.pi * tau)
-    return q ** (mp.mpf(1) / 24) * mp.qp(q)
+    """Dedekind η(τ) = q^{1/24} ∏(1−qⁿ), q = e^{2πiτ}.
+
+    The q^{1/24} prefactor is written as the entire function mp.exp(2πiτ/24)
+    (single-valued, never wraps the phase) rather than (e^{2πiτ})^{1/24}, whose
+    principal root picks the wrong branch when Re(τ)∉(−½,½] (Gemini #3864). Note
+    the probe uses only |η| downstream, where the branch is irrelevant anyway
+    (|z^{1/24}|=|z|^{1/24} for a real exponent), but this makes η exact in phase
+    too."""
+    q = mp.exp(2 * mp.j * mp.pi * tau)
+    q_1_24 = mp.exp(mp.j * mp.pi * tau / 12)   # = exp(2πiτ/24), single-valued
+    return q_1_24 * mp.qp(q)
 
 
 def shape(tau):
