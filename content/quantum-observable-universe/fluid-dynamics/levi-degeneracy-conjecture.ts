@@ -20,10 +20,10 @@ export default conjecture({
   ],
   authorNotes: [
     {
-      kind: "caveat",
+      kind: "refined-framing",
       date: "2026-07-18",
       body:
-        "**Dichotomy may not be exhaustive.** The stated \"exactly one of (A) $\\mathcal{C}_L = O(1)$ / (B) $\\mathcal{C}_L \\sim \\kappa$\" is not complementary: an intermediate marginal rate $\\mathcal{C}_L \\sim \\kappa^\\beta$ with $0 < \\beta < 1$ satisfies neither branch, so as written the conjecture could be vacuously false rather than a genuine dichotomy. Recommended restatement as a **trichotomy** keyed on $\\beta = \\limsup_{\\kappa} \\log \\mathcal{C}_L / \\log \\kappa$: $\\beta = 0$ (blow-up), $\\beta = 1$ (regular via sheet-flattening), $0 < \\beta < 1$ (marginal, undetermined) — or a proof that the marginal window is empty. Note the Lean `LeviDegeneracy` class currently encodes only the degeneracy *set*, not the growth rate, so it does not yet capture the dichotomy. Tracked under bean `qou-3g5m`.",
+        "Restated from a two-way dichotomy to an exhaustive **trichotomy** on the growth exponent $\\beta = \\limsup_\\kappa \\log \\mathcal{C}_L / \\log \\kappa \\in [0,1]$: $\\beta = 0$ (blow-up, branch A), $\\beta = 1$ (regular via sheet-flattening, branch B), $0 < \\beta < 1$ (marginal, undetermined). The original \"exactly one of (A)/(B)\" was not a valid partition — it dropped the marginal window. Growth-rate formalisation added in `QOU/FluidDynamics/levi_growth_trichotomy.lean` (`levi_trichotomy_exhaustive`, `levi_marginal_undetermined`, `levi_branches_exclusive`, lean-direct exit 0); the existing `LeviDegeneracy` class encodes only the degeneracy set. Rationale: audit 2026-07-18 Finding 3; bean `qou-3g5m`.",
       see: "../../../../docs/audits/2026-07-18-q-ns-classical-gap-decomposition.md",
     },
   ],
