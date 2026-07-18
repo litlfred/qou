@@ -1,12 +1,12 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-18T01:22:32.298828+00:00",
-  "commitSha": "b9620167b9e0f3f386b64d7f90dc7aefa3767239",
+  "computedAt": "2026-07-18T08:25:13.111387+00:00",
+  "commitSha": "7efc3b7e399f37423e563a5f2baa4925c72e3cf3",
   "assertions": [
     {
       "name": "no_missing_provenance",
-      "computed": 261,
+      "computed": 256,
       "expected": 0,
       "passed": false,
       "tolerance": 0,
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 15,
+  "durationMs": 22,
   "computation": "witness-provenance-audit",
   "scriptFile": "witness_provenance_audit.py",
   "scriptHash": "1abb80bb6c90",
@@ -46,12 +46,12 @@
   },
   "data": {
     "counts": {
-      "total_scanned": 1899,
-      "prov_ok": 1578,
+      "total_scanned": 1910,
+      "prov_ok": 1594,
       "prov_audit_exempt": 59,
-      "prov_missing": 261,
+      "prov_missing": 256,
       "prov_parse_error": 1,
-      "completeness_ratio": 0.8620326487625066
+      "completeness_ratio": 0.8654450261780104
     },
     "by_verdict": {
       "PROV_OK": [
@@ -1872,7 +1872,15 @@
           "missing_fields": []
         },
         {
+          "witness": "perknot-pn-bond-resolved-extensivity.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "pion-radius-and-cusp-volume-gaps.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "r11a-three-factor-separability.witness.json",
           "missing_fields": []
         },
         {
@@ -2560,6 +2568,10 @@
           "missing_fields": []
         },
         {
+          "witness": "interface-factor-enhancing-check.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "interface-quadratic-identity.witness.json",
           "missing_fields": []
         },
@@ -2629,6 +2641,10 @@
         },
         {
           "witness": "keystone-reeb-casimir-chirality-step3.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "keystone-wlambda-defect-dn-subleading.witness.json",
           "missing_fields": []
         },
         {
@@ -3676,6 +3692,10 @@
           "missing_fields": []
         },
         {
+          "witness": "binding-color-vs-charge-tn3he-perknot-rerun.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "binding-depth-stratified-derived-alpha-probe.witness.json",
           "missing_fields": []
         },
@@ -3832,6 +3852,10 @@
           "missing_fields": []
         },
         {
+          "witness": "flavor-split-3strand-derivation-probe.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "flavor-split-alpha-bond-dilog.witness.json",
           "missing_fields": []
         },
@@ -3845,6 +3869,10 @@
         },
         {
           "witness": "flavor-split-geometric-closure-probe.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "flavor-split-partial-derivation-probe.witness.json",
           "missing_fields": []
         },
         {
@@ -3876,11 +3904,23 @@
           "missing_fields": []
         },
         {
+          "witness": "gap-a4-He3-residual-probe-perknot-rerun.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "gap-a4-He3-residual-probe.witness.json",
           "missing_fields": []
         },
         {
+          "witness": "gap-a4-L1-light-series-probe-perknot-rerun.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "gap-a4-L1-light-series-probe.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "gap-a4-S-K-additive-probe-perknot-rerun.witness.json",
           "missing_fields": []
         },
         {
@@ -3924,11 +3964,19 @@
           "missing_fields": []
         },
         {
+          "witness": "gap-a4-T2-per-knot-vol-probe-perknot-rerun.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "gap-a4-T2-per-knot-vol-probe.witness.json",
           "missing_fields": []
         },
         {
           "witness": "gap-a4-T3-mass-pochhammer-probe.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "gap-a4-T4-schur-weyl-icosahedral-probe-perknot-rerun.witness.json",
           "missing_fields": []
         },
         {
@@ -4236,6 +4284,10 @@
           "missing_fields": []
         },
         {
+          "witness": "perknot-additive-sk-vs-kA-extensivity.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "phase2a-flavor-split-higher-order.witness.json",
           "missing_fields": []
         },
@@ -4449,6 +4501,10 @@
         },
         {
           "witness": "reeb-g-structural-identity.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "rho-k-h3a-co-casimir-perknot-rerun.witness.json",
           "missing_fields": []
         },
         {
@@ -6100,6 +6156,10 @@
           "missing_fields": []
         },
         {
+          "witness": "t6-lepton-h3-3channel-convention.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "tau-M-proton-closed-form-phase5l1.witness.json",
           "missing_fields": []
         },
@@ -6365,6 +6425,10 @@
         },
         {
           "witness": "zero-point-channel-energy-probe.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "zhabiro-phiq-wiring.witness.json",
           "missing_fields": []
         }
       ],
@@ -6864,6 +6928,13 @@
           ]
         },
         {
+          "witness": "perknot-pn-bond-mayer-grounding.witness.json",
+          "missing_fields": [
+            "scriptFile",
+            "commitSha"
+          ]
+        },
+        {
           "witness": "saturating-shared-channel.witness.json",
           "missing_fields": [
             "scriptFile",
@@ -7179,13 +7250,6 @@
           ]
         },
         {
-          "witness": "interface-factor-enhancing-check.witness.json",
-          "missing_fields": [
-            "engine",
-            "commitSha"
-          ]
-        },
-        {
           "witness": "interface-quadratic-structure.witness.json",
           "missing_fields": [
             "engine",
@@ -7266,14 +7330,6 @@
         },
         {
           "witness": "keystone-wlambda-defect-coeff-ladder.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "keystone-wlambda-defect-dn-subleading.witness.json",
           "missing_fields": [
             "engine",
             "scriptFile",
@@ -7677,22 +7733,6 @@
         {
           "witness": "delta-lambda-m-pi-constraint-probe.witness.json",
           "missing_fields": [
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "flavor-split-3strand-derivation-probe.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "flavor-split-partial-derivation-probe.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
             "commitSha"
           ]
         },
@@ -8150,14 +8190,6 @@
           ]
         },
         {
-          "witness": "t6-lepton-h3-3channel-convention.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
           "witness": "t6-tau-h5-embedding-probe.witness.json",
           "missing_fields": [
             "engine",
@@ -8302,13 +8334,6 @@
         },
         {
           "witness": "zhabiro-phiq-production-crosscheck.witness.json",
-          "missing_fields": [
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "zhabiro-phiq-wiring.witness.json",
           "missing_fields": [
             "scriptFile",
             "commitSha"

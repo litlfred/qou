@@ -34,6 +34,8 @@ Lean refs: QOU.MassEndomorphism.ZHabiroCauchy.{eulerCoeff,eulerCoeff_succ,
 eulerCoeff_unique,eulerTrunc_eq_cyclotomic,zHabiroLimit_coord_eq_eulerTrunc}
 """
 from __future__ import annotations
+import time as _time  # noqa: E402 — wall-clock anchor for witness durationMs
+_T0 = _time.monotonic()
 
 import json
 import sys
@@ -200,9 +202,14 @@ def main() -> int:
                              "production mass-table rewire is the next step",
         },
     }
-    out = HERE.parent / "zhabiro-phiq-wiring.witness.json"
-    out.write_text(json.dumps(witness, indent=2))
-    print(f"\n  Witness: {out}")
+    import os as _os, sys as _sys  # noqa: E402
+    _sys.path.insert(0, _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "../substrate"))
+    from witness_base import WitnessBuilder  # noqa: E402 — P30 rollup (bean cmiy)
+    _wpath = WitnessBuilder.wrap_legacy(
+        "zhabiro-phiq-wiring", witness,
+        script_path=__file__, engine="mpmath", start_time=_T0, output_dir=str(HERE.parent),
+    ).save()
+    print(f"\nwitness -> {_wpath}")
     return 0 if ok else 1
 
 

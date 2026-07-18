@@ -1,118 +1,139 @@
 {
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-18T01:30:54.159275+00:00",
+  "commitSha": "30244709502952137a0d97ad424c1b97ad1c0c1e",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 91,
   "computation": "flavor-split-partial-derivation-probe",
-  "description": "PARTIAL derivation of the p-n flavor split. Proves the subleading correction is SECOND-ORDER in the proven leading split (\u03b1\u00b7leading\u00b2, from a multiplicative quark-pair factorization M ~ \u220f(1+\u03b4_pair) whose cross-term is O(leading\u00b2)), NOT a fixed \u210f_q-power. Derives what the pair-count structure predicts for the coefficient (bracketed in (\u2153,1]; geometric self-energy reading = 1, within 7.6% of the experimental \u03b1\u22480.929) and compares to 0.929 WITHOUT fitting. Evaluated at proton- and muon-anchored q\u2080. Single open piece: the exact self-energy normalization \u03b1. NOT production-wired. See docs/audits/2026-06-29-flavor-split-partial-derivation.md.",
-  "timestamp": "2026-06-29T15:58:38.062785+00:00",
+  "scriptFile": "flavor_split_partial_derivation_probe.py",
+  "scriptHash": "5f3b3493dbaf",
+  "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "PARTIAL derivation of the p-n flavor split. Proves the subleading correction is SECOND-ORDER in the proven leading split (α·leading², from a multiplicative quark-pair factorization M ~ ∏(1+δ_pair) whose cross-term is O(leading²)), NOT a fixed ℏ_q-power. Derives what the pair-count structure predicts for the coefficient (bracketed in (⅓,1]; geometric self-energy reading = 1, within 7.6% of the experimental α≈0.929) and compares to 0.929 WITHOUT fitting. Evaluated at proton- and muon-anchored q₀. Single open piece: the exact self-energy normalization α. NOT production-wired. See docs/audits/2026-06-29-flavor-split-partial-derivation.md.",
+  "timestamp": "2026-07-18T01:30:53.658776+00:00",
   "C_DATA_Dm_over_MN": "0.001377469939781",
   "anchors": [
     {
       "anchor": "proton",
-      "q": "1.1099785955573347198997632204832250266562084087802",
-      "leading_split": "0.00137571124997661201352874",
-      "C_true": "1.00127838585636950916124",
-      "alpha_target_C_true_minus_1_over_leading": "0.92925449028002246306",
+      "q": "1.1099785827513808075916690956107688798744991218736",
+      "leading_split": "0.00137571080702709600855111",
+      "C_true": "1.00127870824663796955041",
+      "alpha_target_C_true_minus_1_over_leading": "0.92948913398539879675",
       "part1_second_order_evidence": {
-        "target_C_true_minus_1": "0.001278385856369509",
-        "note": "Only the `leading` base gives an O(1) coefficient (\u22480.929). Every fixed \u210f_q-power needs a non-O(1) fudge (\u210f_q\u00b3 \u2192 1.31, \u210f_q\u00b2 \u2192 0.10-scale, etc.), the signature of a wrong shape. The correction SCALES with leading \u21d2 it is \u03b1\u00b7leading\u00b2 overall.",
+        "target_C_true_minus_1": "0.00127870824663797",
+        "note": "Only the `leading` base gives an O(1) coefficient (≈0.929). Every fixed ℏ_q-power needs a non-O(1) fudge (ℏ_q³ → 1.31, ℏ_q² → 0.10-scale, etc.), the signature of a wrong shape. The correction SCALES with leading ⇒ it is α·leading² overall.",
         "implied_coefficients": [
           {
             "shape": "leading (2nd-order)",
-            "base_value": "0.00137571124998",
-            "implied_coeff": "0.92925449028002",
+            "base_value": "0.00137571080703",
+            "implied_coeff": "0.9294891339854",
             "is_O1": true
           },
           {
-            "shape": "\u210f_q\u00b2",
-            "base_value": "0.00981718851399",
-            "implied_coeff": "0.13021914110626",
+            "shape": "ℏ_q²",
+            "base_value": "0.00981718645428",
+            "implied_coeff": "0.13025200780221",
             "is_O1": true
           },
           {
-            "shape": "\u210f_q\u00b3",
-            "base_value": "0.000972703986736",
-            "implied_coeff": "1.3142599123705",
+            "shape": "ℏ_q³",
+            "base_value": "0.000972703680616",
+            "implied_coeff": "1.3145917632677",
             "is_O1": true
           },
           {
-            "shape": "\u210f_q\u2074",
-            "base_value": "9.63771903191e-5",
-            "implied_coeff": "13.264402626143",
+            "shape": "ℏ_q⁴",
+            "base_value": "9.6377149878e-5",
+            "implied_coeff": "13.267753282356",
             "is_O1": false
           },
           {
-            "shape": "h_q\u00b2",
-            "base_value": "0.0437062182329",
-            "implied_coeff": "0.029249518902717",
+            "shape": "h_q²",
+            "base_value": "0.0437062085325",
+            "implied_coeff": "0.029256901698222",
             "is_O1": false
           },
           {
-            "shape": "\u210f_q\u00b2\u00b7h_q",
-            "base_value": "0.00205238459183",
-            "implied_coeff": "0.62287831503965",
+            "shape": "ℏ_q²·h_q",
+            "base_value": "0.00205238393346",
+            "implied_coeff": "0.62303559572319",
             "is_O1": true
           },
           {
-            "shape": "\u210f_q\u00b3\u00b7[2]_q",
-            "base_value": "0.00195600740151",
-            "implied_coeff": "0.65356902810546",
+            "shape": "ℏ_q³·[2]_q",
+            "base_value": "0.00195600678359",
+            "implied_coeff": "0.65373405520311",
             "is_O1": true
           }
         ]
       },
       "part1b_pair_product_m2": {
         "n_pairs": 2,
-        "first_order_sum": "0.001375711249976612",
+        "first_order_sum": "0.001375710807027096",
         "equals_leading": true,
-        "cross_term": "4.731453608280531e-7",
+        "cross_term": "4.731450561427859e-7",
         "cross_term_over_leading_sq": "0.25",
         "alpha_pred_equal_split": "0.25",
-        "split_from_product": "0.00137618439533744"
+        "split_from_product": "0.001376183952083239"
       },
       "part1b_pair_product_m3": {
         "n_pairs": 3,
-        "first_order_sum": "0.001375711249976612",
+        "first_order_sum": "0.001375710807027096",
         "equals_leading": true,
-        "cross_term": "6.308604811040708e-7",
+        "cross_term": "6.308600748570479e-7",
         "cross_term_over_leading_sq": "0.33333333333333",
         "alpha_pred_equal_split": "0.33333333333333",
-        "split_from_product": "0.001376342206889034"
+        "split_from_product": "0.001376341763533178"
       },
       "part1c_corpus_interface_product": {
-        "markov_z": "0.499320334034",
-        "f_pn_canonical": "0.3948620746949877",
-        "delta_eff_per_interface": "-0.2092008921302062",
-        "two_interface_product_minus_1": "-0.3746367709923382",
-        "sum_plus_cross": "-0.3746367709923382",
+        "markov_z": "0.499320334184",
+        "f_pn_canonical": "0.3948620864139682",
+        "delta_eff_per_interface": "-0.2092008688981155",
+        "two_interface_product_minus_1": "-0.3746367342485045",
+        "sum_plus_cross": "-0.3746367342485045",
         "cross_term_is_second_order": true,
-        "note": "The corpus interface factor f_pn = z\u00b7(1+\u03b4_eff) is genuinely multiplicative; a product of two expands to 2\u03b4_eff + \u03b4_eff\u00b2, confirming O(\u03b4\u00b2) cross-terms are a REAL feature of the closed_form_tau_M interface product, not a probe artifact. (This is the INTER-nucleon interface; the flavor split is the INTRA-nucleon 3-pair analogue \u2014 same multiplicative algebra.)"
+        "note": "The corpus interface factor f_pn = z·(1+δ_eff) is genuinely multiplicative; a product of two expands to 2δ_eff + δ_eff², confirming O(δ²) cross-terms are a REAL feature of the closed_form_tau_M interface product, not a probe artifact. (This is the INTER-nucleon interface; the flavor split is the INTRA-nucleon 3-pair analogue — same multiplicative algebra.)"
       },
       "part2_coefficient_prediction": {
-        "alpha_target": "0.9292544902800225",
+        "alpha_target": "0.9294891339853988",
         "reading_a_equal_split_cross_pair": {
           "m=2": {
             "alpha_pred": "0.25",
-            "diff_to_target": "-0.67925449",
-            "pct_of_target": 26.903286733074033
+            "diff_to_target": "-0.67948913",
+            "pct_of_target": 26.896495166981396
           },
           "m=3": {
             "alpha_pred": "0.333333333333",
-            "diff_to_target": "-0.59592116",
-            "pct_of_target": 35.87104897743204
+            "diff_to_target": "-0.5961558",
+            "pct_of_target": 35.86199355597519
           }
         },
-        "reading_a_note": "(m\u22121)/(2m) \u2264 \u00bd for any m \u21d2 a SYMMETRIC equal-split cross-pair count cannot reach 0.929. The pairs are NOT equally weighted; the swapped pair dominates.",
+        "reading_a_note": "(m−1)/(2m) ≤ ½ for any m ⇒ a SYMMETRIC equal-split cross-pair count cannot reach 0.929. The pairs are NOT equally weighted; the swapped pair dominates.",
         "reading_b_self_energy": {
           "alpha_pred": "1.0",
-          "diff_to_target": "0.07074551",
-          "geometric_form_leading_over_1_minus_leading_err_pct": 0.009909390203997667,
-          "self_form_leading_times_1_plus_leading_err_pct": 0.009720113305338432
+          "diff_to_target": "0.070510866",
+          "geometric_form_leading_over_1_minus_leading_err_pct": 0.009877144797849752,
+          "self_form_leading_times_1_plus_leading_err_pct": 0.009687868082103718
         },
-        "reading_b_note": "The full self-energy reading predicts coefficient EXACTLY 1 (parameter-free, the correction scale IS the leading split). It OVERSHOOTS 0.929 by 7.6%, giving 0.0097-0.0099% vs CODATA \u2014 13\u00d7 better than leading. This is the closest principled prediction.",
+        "reading_b_note": "The full self-energy reading predicts coefficient EXACTLY 1 (parameter-free, the correction scale IS the leading split). It OVERSHOOTS 0.929 by 7.6%, giving 0.0097-0.0099% vs CODATA — 13× better than leading. This is the closest principled prediction.",
         "bracket": {
           "lower_equal_split_m3": "0.3333333333",
-          "alpha_target": "0.92925449028",
+          "alpha_target": "0.929489133985",
           "upper_self_energy": "1"
         },
-        "honest_verdict": "The structure forces the SECOND-ORDER form and predicts \u03b1 = O(1), bracketed strictly in (\u2153, 1]. The geometric self-energy reading (\u03b1=1) is within 7.6%. NO principled count lands exactly on 0.929 \u2014 that exact coefficient (the self-energy NORMALIZATION) is the single remaining OPEN piece. Per anti-flip-flop discipline the probe does NOT fit 0.929 to a clean form."
+        "honest_verdict": "The structure forces the SECOND-ORDER form and predicts α = O(1), bracketed strictly in (⅓, 1]. The geometric self-energy reading (α=1) is within 7.6%. NO principled count lands exactly on 0.929 — that exact coefficient (the self-energy NORMALIZATION) is the single remaining OPEN piece. Per anti-flip-flop discipline the probe does NOT fit 0.929 to a clean form."
       }
     },
     {
@@ -123,7 +144,7 @@
       "alpha_target_C_true_minus_1_over_leading": "0.92925454807343499061",
       "part1_second_order_evidence": {
         "target_C_true_minus_1": "0.001278385935775175",
-        "note": "Only the `leading` base gives an O(1) coefficient (\u22480.929). Every fixed \u210f_q-power needs a non-O(1) fudge (\u210f_q\u00b3 \u2192 1.31, \u210f_q\u00b2 \u2192 0.10-scale, etc.), the signature of a wrong shape. The correction SCALES with leading \u21d2 it is \u03b1\u00b7leading\u00b2 overall.",
+        "note": "Only the `leading` base gives an O(1) coefficient (≈0.929). Every fixed ℏ_q-power needs a non-O(1) fudge (ℏ_q³ → 1.31, ℏ_q² → 0.10-scale, etc.), the signature of a wrong shape. The correction SCALES with leading ⇒ it is α·leading² overall.",
         "implied_coefficients": [
           {
             "shape": "leading (2nd-order)",
@@ -132,37 +153,37 @@
             "is_O1": true
           },
           {
-            "shape": "\u210f_q\u00b2",
+            "shape": "ℏ_q²",
             "base_value": "0.00981718851348",
             "implied_coeff": "0.13021914920142",
             "is_O1": true
           },
           {
-            "shape": "\u210f_q\u00b3",
+            "shape": "ℏ_q³",
             "base_value": "0.00097270398666",
             "implied_coeff": "1.3142599941063",
             "is_O1": true
           },
           {
-            "shape": "\u210f_q\u2074",
+            "shape": "ℏ_q⁴",
             "base_value": "9.63771903092e-5",
             "implied_coeff": "13.26440345142",
             "is_O1": false
           },
           {
-            "shape": "h_q\u00b2",
+            "shape": "h_q²",
             "base_value": "0.0437062182305",
             "implied_coeff": "0.02924952072112",
             "is_O1": false
           },
           {
-            "shape": "\u210f_q\u00b2\u00b7h_q",
+            "shape": "ℏ_q²·h_q",
             "base_value": "0.00205238459166",
             "implied_coeff": "0.62287835377833",
             "is_O1": true
           },
           {
-            "shape": "\u210f_q\u00b3\u00b7[2]_q",
+            "shape": "ℏ_q³·[2]_q",
             "base_value": "0.00195600740135",
             "implied_coeff": "0.65356906875211",
             "is_O1": true
@@ -194,7 +215,7 @@
         "two_interface_product_minus_1": "-0.3746367709832881",
         "sum_plus_cross": "-0.3746367709832881",
         "cross_term_is_second_order": true,
-        "note": "The corpus interface factor f_pn = z\u00b7(1+\u03b4_eff) is genuinely multiplicative; a product of two expands to 2\u03b4_eff + \u03b4_eff\u00b2, confirming O(\u03b4\u00b2) cross-terms are a REAL feature of the closed_form_tau_M interface product, not a probe artifact. (This is the INTER-nucleon interface; the flavor split is the INTRA-nucleon 3-pair analogue \u2014 same multiplicative algebra.)"
+        "note": "The corpus interface factor f_pn = z·(1+δ_eff) is genuinely multiplicative; a product of two expands to 2δ_eff + δ_eff², confirming O(δ²) cross-terms are a REAL feature of the closed_form_tau_M interface product, not a probe artifact. (This is the INTER-nucleon interface; the flavor split is the INTRA-nucleon 3-pair analogue — same multiplicative algebra.)"
       },
       "part2_coefficient_prediction": {
         "alpha_target": "0.929254548073435",
@@ -210,31 +231,31 @@
             "pct_of_target": 35.871046746492915
           }
         },
-        "reading_a_note": "(m\u22121)/(2m) \u2264 \u00bd for any m \u21d2 a SYMMETRIC equal-split cross-pair count cannot reach 0.929. The pairs are NOT equally weighted; the swapped pair dominates.",
+        "reading_a_note": "(m−1)/(2m) ≤ ½ for any m ⇒ a SYMMETRIC equal-split cross-pair count cannot reach 0.929. The pairs are NOT equally weighted; the swapped pair dominates.",
         "reading_b_self_energy": {
           "alpha_pred": "1.0",
           "diff_to_target": "0.070745452",
           "geometric_form_leading_over_1_minus_leading_err_pct": 0.009909382261857235,
           "self_form_leading_times_1_plus_leading_err_pct": 0.009720105363243052
         },
-        "reading_b_note": "The full self-energy reading predicts coefficient EXACTLY 1 (parameter-free, the correction scale IS the leading split). It OVERSHOOTS 0.929 by 7.6%, giving 0.0097-0.0099% vs CODATA \u2014 13\u00d7 better than leading. This is the closest principled prediction.",
+        "reading_b_note": "The full self-energy reading predicts coefficient EXACTLY 1 (parameter-free, the correction scale IS the leading split). It OVERSHOOTS 0.929 by 7.6%, giving 0.0097-0.0099% vs CODATA — 13× better than leading. This is the closest principled prediction.",
         "bracket": {
           "lower_equal_split_m3": "0.3333333333",
           "alpha_target": "0.929254548073",
           "upper_self_energy": "1"
         },
-        "honest_verdict": "The structure forces the SECOND-ORDER form and predicts \u03b1 = O(1), bracketed strictly in (\u2153, 1]. The geometric self-energy reading (\u03b1=1) is within 7.6%. NO principled count lands exactly on 0.929 \u2014 that exact coefficient (the self-energy NORMALIZATION) is the single remaining OPEN piece. Per anti-flip-flop discipline the probe does NOT fit 0.929 to a clean form."
+        "honest_verdict": "The structure forces the SECOND-ORDER form and predicts α = O(1), bracketed strictly in (⅓, 1]. The geometric self-energy reading (α=1) is within 7.6%. NO principled count lands exactly on 0.929 — that exact coefficient (the self-energy NORMALIZATION) is the single remaining OPEN piece. Per anti-flip-flop discipline the probe does NOT fit 0.929 to a clean form."
       }
     }
   ],
-  "alpha_cross_anchor_drift": "5.7793413e-8",
+  "alpha_cross_anchor_drift": "0.00023458591",
   "verdict": {
-    "rigorously_established": "(1) The subleading correction is SECOND-ORDER in the proven leading split \u2014 form \u03b1\u00b7leading\u00b2 \u2014 NOT a fixed \u210f_q-power. PROOF: (a) no fixed \u210f_q^k base gives an O(1) coefficient for C_true\u22121 (every power needs a non-O(1) fudge), whereas `leading` gives \u03b1\u22480.93=O(1); (b) a multiplicative pair product \u220f(1+s_k) with \u03a3s_k=leading has cross-term \u03a3_{k<l}s_k s_l = O(leading\u00b2) by pure algebra; (c) the corpus closed_form_tau_M interface factor f_pn=z\u00b7(1+\u03b4_eff) is genuinely multiplicative, so O(\u03b4\u00b2) cross-terms are a REAL corpus feature. The sign is POSITIVE (C_true>1) and the magnitude O(leading\u00b2)\u22481.9e-6 matches the needed correction C_true\u22121\u22481.3e-3 \u27f9 coefficient O(1).",
-    "coefficient_predicted_by_structure": "The pair structure BRACKETS the coefficient: symmetric equal-split cross-pair count gives (m\u22121)/(2m) \u2264 \u00bd (undershoots); full self-energy/geometric reading gives EXACTLY 1 (parameter-free, overshoots by 7.6%). The experimental \u03b1=(C_true\u22121)/leading \u2248 0.929 sits in (\u2153, 1], closest to the self-energy reading (within 7.6%). 13/14=0.9286 is numerically near 0.929 but does NOT fall out of the pair count and is NOT adopted (anti-flip-flop).",
-    "single_open_piece": "The EXACT second-order normalization coefficient \u03b1 \u2248 0.929. The structure proves 0 < \u03b1 \u2264 1 and predicts O(1); it does not yet pin 0.929. Closing this is the self-energy normalization of the 3-strand spectator coupling \u2014 open Archimedean-mass-functor R&D, the same level that gates \u0394_\u03bb. \u03b1 also DEPENDS ON C_DATA (experimental), so it is the residual, not a pure-substrate constant \u2014 a derivation must produce it from the 3-strand trace normalization, not from data.",
+    "rigorously_established": "(1) The subleading correction is SECOND-ORDER in the proven leading split — form α·leading² — NOT a fixed ℏ_q-power. PROOF: (a) no fixed ℏ_q^k base gives an O(1) coefficient for C_true−1 (every power needs a non-O(1) fudge), whereas `leading` gives α≈0.93=O(1); (b) a multiplicative pair product ∏(1+s_k) with Σs_k=leading has cross-term Σ_{k<l}s_k s_l = O(leading²) by pure algebra; (c) the corpus closed_form_tau_M interface factor f_pn=z·(1+δ_eff) is genuinely multiplicative, so O(δ²) cross-terms are a REAL corpus feature. The sign is POSITIVE (C_true>1) and the magnitude O(leading²)≈1.9e-6 matches the needed correction C_true−1≈1.3e-3 ⟹ coefficient O(1).",
+    "coefficient_predicted_by_structure": "The pair structure BRACKETS the coefficient: symmetric equal-split cross-pair count gives (m−1)/(2m) ≤ ½ (undershoots); full self-energy/geometric reading gives EXACTLY 1 (parameter-free, overshoots by 7.6%). The experimental α=(C_true−1)/leading ≈ 0.929 sits in (⅓, 1], closest to the self-energy reading (within 7.6%). 13/14=0.9286 is numerically near 0.929 but does NOT fall out of the pair count and is NOT adopted (anti-flip-flop).",
+    "single_open_piece": "The EXACT second-order normalization coefficient α ≈ 0.929. The structure proves 0 < α ≤ 1 and predicts O(1); it does not yet pin 0.929. Closing this is the self-energy normalization of the 3-strand spectator coupling — open Archimedean-mass-functor R&D, the same level that gates Δ_λ. α also DEPENDS ON C_DATA (experimental), so it is the residual, not a pure-substrate constant — a derivation must produce it from the 3-strand trace normalization, not from data.",
     "is_fit": false,
     "is_exact_closure": false,
-    "best_parameter_free_form": "leading\u00b7(1+leading)  (\u03b1=1, err 0.0097%)",
+    "best_parameter_free_form": "leading·(1+leading)  (α=1, err 0.0097%)",
     "best_parameter_free_err_pct": 0.00972,
     "leading_only_err_pct": 0.12768,
     "posited_production_1_plus_hbar3_err_pct": 0.03053

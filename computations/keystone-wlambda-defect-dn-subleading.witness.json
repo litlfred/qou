@@ -1,5 +1,27 @@
 {
-  "description": "Sub-leading (h\u2074) coefficient D(n) of the W_\u03bb defect 1\u2212Z(n)=C(n)h\u00b2+D(n)h\u2074+O(h\u2076), n=2..10. Tests whether D(n) is a clean polynomial in n (a second q\u2080-free falsifiable target) via Richardson extraction + finite-difference polynomiality test. No fit.",
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-18T01:30:51.930806+00:00",
+  "commitSha": "30244709502952137a0d97ad424c1b97ad1c0c1e",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 4096,
+  "computation": "keystone-wlambda-defect-dn-subleading",
+  "scriptFile": "keystone_wlambda_defect_dn_subleading.py",
+  "scriptHash": "9d1b5fcf29cd",
+  "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Sub-leading (h⁴) coefficient D(n) of the W_λ defect 1−Z(n)=C(n)h²+D(n)h⁴+O(h⁶), n=2..10. Tests whether D(n) is a clean polynomial in n (a second q₀-free falsifiable target) via Richardson extraction + finite-difference polynomiality test. No fit.",
   "dps": 120,
   "h_convention": "h = q - 1/q; D(n) = h^4 Taylor coeff of 1-Z(n) about h=0 via mp.taylor (method-validated against proved-exact C(n), err 0.0; tight 1e-25 rational tol)",
   "leading_C": "C(n) = -n(n-1)(2n-13)/144 (proved+cross-checked, companion probe)",
@@ -134,5 +156,5 @@
     ],
     "held_out_validated": true
   },
-  "verdict": "D(n) IS a clean polynomial in n of degree 6 (constant \u0394^6). The W_\u03bb defect's h\u2074 coefficient is therefore a SECOND exact, q\u2080-free falsifiable target: the geometric index's 4th heat-kernel coefficient must equal D(n). Combined with the leading cubic C(n), the keystone gate now carries two exact polynomial targets per n, not one. No fit \u2014 D(n) extracted by high-precision Taylor expansion (method-validated: the h\u00b2 coeff reproduces the proved-exact C(n) to 0.0), degree proven by finite differences (\u0394\u2076 constant to ~1e-120), closed form by exact interpolation + held-out validation. The exact closed form is D(n) = (828\u00b7n^1 + -625\u00b7n^2 + 5070\u00b7n^3 + -6745\u00b7n^4 + 1572\u00b7n^5 + -100\u00b7n^6)/1036800, interpolated from n=2..8 and VALIDATED on held-out n=[9, 10]."
+  "verdict": "D(n) IS a clean polynomial in n of degree 6 (constant Δ^6). The W_λ defect's h⁴ coefficient is therefore a SECOND exact, q₀-free falsifiable target: the geometric index's 4th heat-kernel coefficient must equal D(n). Combined with the leading cubic C(n), the keystone gate now carries two exact polynomial targets per n, not one. No fit — D(n) extracted by high-precision Taylor expansion (method-validated: the h² coeff reproduces the proved-exact C(n) to 0.0), degree proven by finite differences (Δ⁶ constant to ~1e-120), closed form by exact interpolation + held-out validation. The exact closed form is D(n) = (828·n^1 + -625·n^2 + 5070·n^3 + -6745·n^4 + 1572·n^5 + -100·n^6)/1036800, interpolated from n=2..8 and VALIDATED on held-out n=[9, 10]."
 }

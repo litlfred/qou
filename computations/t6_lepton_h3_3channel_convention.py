@@ -25,6 +25,8 @@ Then apply Li_2^q canonical mass tower to get mass ratios; compare CODATA.
 """
 
 from __future__ import annotations
+import time as _time  # noqa: E402 — wall-clock anchor for witness durationMs
+_T0 = _time.monotonic()
 
 import json
 import sys
@@ -196,9 +198,14 @@ def main() -> int:
     }
 
     here = Path(__file__).resolve().parent
-    out = here / "t6-lepton-h3-3channel-convention.witness.json"
-    out.write_text(json.dumps(witness, indent=2))
-    print(f"Witness: {out}")
+    import os as _os, sys as _sys  # noqa: E402
+    _sys.path.insert(0, _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "substrate"))
+    from witness_base import WitnessBuilder  # noqa: E402 — P30 rollup (bean cmiy)
+    _wpath = WitnessBuilder.wrap_legacy(
+        "t6-lepton-h3-3channel-convention", witness,
+        script_path=__file__, engine="mpmath", start_time=_T0,
+    ).save()
+    print(f"\nwitness -> {_wpath}")
     return 0
 
 

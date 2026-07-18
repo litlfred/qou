@@ -1,132 +1,153 @@
 {
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-18T01:30:53.438909+00:00",
+  "commitSha": "30244709502952137a0d97ad424c1b97ad1c0c1e",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 484,
   "computation": "flavor-split-3strand-derivation-probe",
-  "description": "3-strand categorical correction to the p-n flavor split. Tests whether genuine H_3 / 3-strand Markov-trace objects (spectator strand braiding with the u\u2194d swap pair) reproduce the CODATA correction C_true = (\u0394m_pn/M_N)_CODATA/leading \u2248 1.0012784 that the 2-strand leading object (\u210f_q\u00b2\u00b7h_q\u00b7[2]_q/3) misses. Evaluated at BOTH proton- and muon-anchored q\u2080 (anti-flip-flop guard). NOT production-wired; honest negative/positive report, no fit to C_true\u22121. See docs/audits/2026-06-29-color-weighting-coverage-and-flavor-split-closed-form.md.",
-  "timestamp": "2026-06-29T15:43:14.565125+00:00",
+  "scriptFile": "flavor_split_3strand_derivation_probe.py",
+  "scriptHash": "9af1fcb21416",
+  "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "3-strand categorical correction to the p-n flavor split. Tests whether genuine H_3 / 3-strand Markov-trace objects (spectator strand braiding with the u↔d swap pair) reproduce the CODATA correction C_true = (Δm_pn/M_N)_CODATA/leading ≈ 1.0012784 that the 2-strand leading object (ℏ_q²·h_q·[2]_q/3) misses. Evaluated at BOTH proton- and muon-anchored q₀ (anti-flip-flop guard). NOT production-wired; honest negative/positive report, no fit to C_true−1. See docs/audits/2026-06-29-color-weighting-coverage-and-flavor-split-closed-form.md.",
+  "timestamp": "2026-07-18T01:30:53.053063+00:00",
   "C_DATA_Dm_over_MN": "0.00137746993978",
   "anchors": [
     {
       "anchor": "proton",
-      "q": "1.1099785955573347198997632204832250266562084087802",
-      "leading_split": "0.00137571124997661201352874324364",
-      "C_true": "1.00127838585636950916124348674",
-      "C_true_minus_1": "0.0012783858563695091612",
+      "q": "1.1099785827513808075916690956107688798744991218736",
+      "leading_split": "0.00137571080702709600855110927411",
+      "C_true": "1.0012787082466379695504097365",
+      "C_true_minus_1": "0.0012787082466379695504",
       "candidates": [
         {
-          "label": "production (1+\u210f_q\u00b3) [posited, for reference]",
-          "value": "1.00097270398673557729279",
-          "value_minus_1": "0.000972703986735577293",
-          "pred_split": "0.0013770494097940612484",
-          "err_vs_codata_pct": 0.030529158918425014,
-          "C_true_minus_value": "0.000305681869633931868",
-          "frac_of_correction_supplied": "0.76088450282"
+          "label": "production (1+ℏ_q³) [posited, for reference]",
+          "value": "1.00097270368061602387282",
+          "value_minus_1": "0.000972703680616023873",
+          "pred_split": "0.0013770489659925545054",
+          "err_vs_codata_pct": 0.0305613775167353,
+          "C_true_minus_value": "0.000306004566021945678",
+          "frac_of_correction_supplied": "0.760692427826"
         },
         {
-          "label": "C2: spectator commutator tr_M([\u03c3\u2080,\u03c3\u2081]) ",
-          "value": "0.144932726167383494259302",
-          "value_minus_1": "-0.855067273832616506",
-          "pred_split": "0.00019938558187824917148",
-          "err_vs_codata_pct": 85.52523172230208,
-          "C_true_minus_value": "0.856345659688986015",
-          "frac_of_correction_supplied": "-668.864779419"
+          "label": "C2: spectator commutator tr_M([σ₀,σ₁]) ",
+          "value": "0.144932737870134668866681",
+          "value_minus_1": "-0.855067262129865331",
+          "pred_split": "0.00019938553377996952521",
+          "err_vs_codata_pct": 85.52523521408642,
+          "C_true_minus_value": "0.856345970376503301",
+          "frac_of_correction_supplied": "-668.696134852"
         },
         {
-          "label": "C3: spectator-conjugated swap tr_M(\u03c3\u2081\u03c3\u2080\u03c3\u2081\u207b\u00b9)/tr_M(\u03c3\u2080)",
+          "label": "C3: spectator-conjugated swap tr_M(σ₁σ₀σ₁⁻¹)/tr_M(σ₀)",
           "value": "1.0",
-          "value_minus_1": "0.0",
-          "pred_split": "0.0013757112499766120135",
-          "err_vs_codata_pct": 0.12767536725324757,
-          "C_true_minus_value": "0.00127838585636950916",
-          "frac_of_correction_supplied": "0.0"
+          "value_minus_1": "-7.77876909732642713e-62",
+          "pred_split": "0.0013757108070270960086",
+          "err_vs_codata_pct": 0.1277075239997008,
+          "C_true_minus_value": "0.00127870824663796955",
+          "frac_of_correction_supplied": "-6.0833025186e-59"
         },
         {
           "label": "C4: half-spectator-dressed swap ratio",
-          "value": "0.394790173035764432278035",
-          "value_minus_1": "-0.605209826964235568",
-          "pred_split": "0.00054311728242551443461",
-          "err_vs_codata_pct": 60.57138767675387,
-          "C_true_minus_value": "0.606488212820605077",
-          "frac_of_correction_supplied": "-473.417179914"
+          "value": "0.39479018478587479469802",
+          "value_minus_1": "-0.605209815214125205",
+          "pred_split": "0.00054311712371815217424",
+          "err_vs_codata_pct": 60.57139919841091,
+          "C_true_minus_value": "0.606488523460763175",
+          "frac_of_correction_supplied": "-473.297811917"
         },
         {
-          "label": "C5: (sym tr_M(\u03c3\u2080\u03c3\u2081))/(mixed tr_M(\u03c3\u2080\u03c3\u2081\u207b\u00b9))",
-          "value": "1.72025188908297657120271",
-          "value_minus_1": "0.720251889082976571",
-          "pred_split": "0.0023665698766049698246",
-          "err_vs_codata_pct": 71.8055551165909,
-          "C_true_minus_value": "-0.718973503226607062",
-          "frac_of_correction_supplied": "563.407272925"
+          "label": "C5: (sym tr_M(σ₀σ₁))/(mixed tr_M(σ₀σ₁⁻¹))",
+          "value": "1.72025175121384493546141",
+          "value_minus_1": "0.720251751213844935",
+          "pred_split": "0.0023665689249521738019",
+          "err_vs_codata_pct": 71.80548602958082,
+          "C_true_minus_value": "-0.718973042967206966",
+          "frac_of_correction_supplied": "563.265117831"
         },
         {
-          "label": "C6: 1+\u210f_q\u00b3\u00b7([3]_q/[2]_q)",
-          "value": "1.00147229090581059331347",
-          "value_minus_1": "0.00147229090581059331",
-          "pred_split": "0.0013777366971389739032",
-          "err_vs_codata_pct": 0.019365748045708765,
-          "C_true_minus_value": "-0.000193905049441084152",
-          "frac_of_correction_supplied": "1.15167959539"
+          "label": "C6: 1+ℏ_q³·([3]_q/[2]_q)",
+          "value": "1.00147229043953979578363",
+          "value_minus_1": "0.00147229043953979578",
+          "pred_split": "0.0013777362528958535789",
+          "err_vs_codata_pct": 0.0193334973876367,
+          "C_true_minus_value": "-0.000193582192901826233",
+          "frac_of_correction_supplied": "1.15138886717"
         },
         {
-          "label": "C6: 1+\u210f_q\u00b3\u00b7([2]_q/2)",
-          "value": "1.00097800370075310768812",
-          "value_minus_1": "0.000978003700753107688",
-          "pred_split": "0.0013770567006702568237",
-          "err_vs_codata_pct": 0.0299998641596055,
-          "C_true_minus_value": "0.000300382155616401473",
-          "frac_of_correction_supplied": "0.765030132241"
+          "label": "C6: 1+ℏ_q³·([2]_q/2)",
+          "value": "1.00097800339179262390943",
+          "value_minus_1": "0.000978003391792623909",
+          "pred_split": "0.0013770562568624942764",
+          "err_vs_codata_pct": 0.030032083212067576,
+          "C_true_minus_value": "0.000300704854845345641",
+          "frac_of_correction_supplied": "0.764837009821"
         },
         {
-          "label": "C6: 1+\u210f_q\u00b3\u00b7(z\u00b7[2]_q)",
-          "value": "1.00097667426909220166073",
-          "value_minus_1": "0.000976674269092201661",
-          "pred_split": "0.0013770548717561648402",
-          "err_vs_codata_pct": 0.03013263759002056,
-          "C_true_minus_value": "0.000301711587277307501",
-          "frac_of_correction_supplied": "0.763990202352"
+          "label": "C6: 1+ℏ_q³·(z·[2]_q)",
+          "value": "1.00097667396084535925341",
+          "value_minus_1": "0.000976673960845359253",
+          "pred_split": "0.0013770544279499729281",
+          "err_vs_codata_pct": 0.030164856528459436,
+          "C_true_minus_value": "0.000302034285792610297",
+          "frac_of_correction_supplied": "0.76379734268"
         },
         {
-          "label": "C6: 1+\u210f_q\u00b3\u00b7(1/(2z))",
-          "value": "1.00097402801411868603673",
-          "value_minus_1": "0.000974028014118686037",
-          "pred_split": "0.0013770512312734274682",
-          "err_vs_codata_pct": 0.030396925225796532,
-          "C_true_minus_value": "0.000304357842250823125",
-          "frac_of_correction_supplied": "0.761920205285"
+          "label": "C6: 1+ℏ_q³·(1/(2z))",
+          "value": "1.00097402770728958226261",
+          "value_minus_1": "0.000974027707289582263",
+          "pred_split": "0.0013770507874703581118",
+          "err_vs_codata_pct": 0.030429143937547653,
+          "C_true_minus_value": "0.000304680539348387288",
+          "frac_of_correction_supplied": "0.761727868613"
         },
         {
-          "label": "C6: 1+\u210f_q\u00b3\u00b7(q)",
-          "value": "1.00107968060508977642396",
-          "value_minus_1": "0.00107968060508977642",
-          "pred_split": "0.0013771965787314155747",
-          "err_vs_codata_pct": 0.019845155362040984,
-          "C_true_minus_value": "0.000198705251279732737",
-          "frac_of_correction_supplied": "0.844565511821"
+          "label": "C6: 1+ℏ_q³·(q)",
+          "value": "1.00107968025284722594192",
+          "value_minus_1": "0.00107968025284722594",
+          "pred_split": "0.0013771961348190716848",
+          "err_vs_codata_pct": 0.019877382006780717,
+          "C_true_minus_value": "0.000199027993790743608",
+          "frac_of_correction_supplied": "0.844352302948"
         },
         {
           "label": "C8: 1+leading (3-strand self-interaction)",
-          "value": "1.00137571124997661201353",
-          "value_minus_1": "0.00137571124997661201",
-          "pred_split": "0.0013776038314199242258",
-          "err_vs_codata_pct": 0.009720113305338432,
-          "C_true_minus_value": "-0.0000973253936071028523",
-          "frac_of_correction_supplied": "1.07613146932"
+          "value": "1.00137571080702709600855",
+          "value_minus_1": "0.00137571080702709601",
+          "pred_split": "0.0013776033872516671523",
+          "err_vs_codata_pct": 0.009687868082103718,
+          "C_true_minus_value": "-0.0000970025603891264581",
+          "frac_of_correction_supplied": "1.07585980668"
         },
         {
-          "label": "C8b: 1/(1\u2212leading) (geometric self-energy)",
-          "value": "1.00137760643865230620657",
-          "value_minus_1": "0.00137760643865230621",
-          "pred_split": "0.0013776064386523062066",
-          "err_vs_codata_pct": 0.009909390203997667,
-          "C_true_minus_value": "-0.0000992205822827970453",
-          "frac_of_correction_supplied": "1.07761395496"
+          "label": "C8b: 1/(1−leading) (geometric self-energy)",
+          "value": "1.00137760599448152955875",
+          "value_minus_1": "0.00137760599448152956",
+          "pred_split": "0.0013776059944815295588",
+          "err_vs_codata_pct": 0.009877144797849752,
+          "C_true_minus_value": "-0.0000988977478435600083",
+          "frac_of_correction_supplied": "1.0773419176"
         },
         {
-          "label": "C7: 3-strand bracketed-swap multiplier tr_M(\u03c3\u2080\u03c3\u2081\u03c3\u2080)/tr_M(\u03c3\u2080)",
-          "value": "1.10438806981200371260011",
-          "value_minus_1": "0.104388069812003713",
-          "pred_split": "0.0015193190919803294792",
-          "err_vs_codata_pct": 10.297803828797019,
-          "C_true_minus_value": "-0.103109683955634203",
-          "frac_of_correction_supplied": "81.6561520075"
+          "label": "C7: 3-strand bracketed-swap multiplier tr_M(σ₀σ₁σ₀)/tr_M(σ₀)",
+          "value": "1.10438805825918163783312",
+          "value_minus_1": "0.104388058259181638",
+          "pred_split": "0.0015193185868988262944",
+          "err_vs_codata_pct": 10.297767161463046,
+          "C_true_minus_value": "-0.103109350012543668",
+          "frac_of_correction_supplied": "81.635555674"
         }
       ],
       "spectator_trivial_ratio": "1.0"
@@ -139,7 +160,7 @@
       "C_true_minus_1": "0.0012783859357751754676",
       "candidates": [
         {
-          "label": "production (1+\u210f_q\u00b3) [posited, for reference]",
+          "label": "production (1+ℏ_q³) [posited, for reference]",
           "value": "1.00097270398666017912732",
           "value_minus_1": "0.000972703986660179127",
           "pred_split": "0.0013770494096847516037",
@@ -148,7 +169,7 @@
           "frac_of_correction_supplied": "0.760884455499"
         },
         {
-          "label": "C2: spectator commutator tr_M([\u03c3\u2080,\u03c3\u2081]) ",
+          "label": "C2: spectator commutator tr_M([σ₀,σ₁]) ",
           "value": "0.144932726170265916740788",
           "value_minus_1": "-0.855067273829734083",
           "pred_split": "0.00019938558186640242154",
@@ -157,7 +178,7 @@
           "frac_of_correction_supplied": "-668.864737871"
         },
         {
-          "label": "C3: spectator-conjugated swap tr_M(\u03c3\u2081\u03c3\u2080\u03c3\u2081\u207b\u00b9)/tr_M(\u03c3\u2080)",
+          "label": "C3: spectator-conjugated swap tr_M(σ₁σ₀σ₁⁻¹)/tr_M(σ₀)",
           "value": "1.0",
           "value_minus_1": "-7.77876909732642713e-62",
           "pred_split": "0.0013757112498675122167",
@@ -175,7 +196,7 @@
           "frac_of_correction_supplied": "-473.417150506"
         },
         {
-          "label": "C5: (sym tr_M(\u03c3\u2080\u03c3\u2081))/(mixed tr_M(\u03c3\u2080\u03c3\u2081\u207b\u00b9))",
+          "label": "C5: (sym tr_M(σ₀σ₁))/(mixed tr_M(σ₀σ₁⁻¹))",
           "value": "1.720251889049018990586",
           "value_minus_1": "0.720251889049018991",
           "pred_split": "0.0023665698763705748674",
@@ -184,7 +205,7 @@
           "frac_of_correction_supplied": "563.407237903"
         },
         {
-          "label": "C6: 1+\u210f_q\u00b3\u00b7([3]_q/[2]_q)",
+          "label": "C6: 1+ℏ_q³·([3]_q/[2]_q)",
           "value": "1.00147229090569574941535",
           "value_minus_1": "0.00147229090569574942",
           "pred_split": "0.0013777366970295554877",
@@ -193,7 +214,7 @@
           "frac_of_correction_supplied": "1.15167952376"
         },
         {
-          "label": "C6: 1+\u210f_q\u00b3\u00b7([2]_q/2)",
+          "label": "C6: 1+ℏ_q³·([2]_q/2)",
           "value": "1.0009780037006770097929",
           "value_minus_1": "0.000978003700677009793",
           "pred_split": "0.0013770567005609456382",
@@ -202,7 +223,7 @@
           "frac_of_correction_supplied": "0.765030084662"
         },
         {
-          "label": "C6: 1+\u210f_q\u00b3\u00b7(z\u00b7[2]_q)",
+          "label": "C6: 1+ℏ_q³·(z·[2]_q)",
           "value": "1.00097667426901627953753",
           "value_minus_1": "0.000976674269016279538",
           "pred_split": "0.0013770548716468540415",
@@ -211,7 +232,7 @@
           "frac_of_correction_supplied": "0.763990154839"
         },
         {
-          "label": "C6: 1+\u210f_q\u00b3\u00b7(1/(2z))",
+          "label": "C6: 1+ℏ_q³·(1/(2z))",
           "value": "1.00097402801404311310686",
           "value_minus_1": "0.000974028014043113107",
           "pred_split": "0.0013770512311641174386",
@@ -220,7 +241,7 @@
           "frac_of_correction_supplied": "0.7619201579"
         },
         {
-          "label": "C6: 1+\u210f_q\u00b3\u00b7(q)",
+          "label": "C6: 1+ℏ_q³·(q)",
           "value": "1.0010796806050030180251",
           "value_minus_1": "0.00107968060500301803",
           "pred_split": "0.0013771965786220786304",
@@ -238,7 +259,7 @@
           "frac_of_correction_supplied": "1.07613140239"
         },
         {
-          "label": "C8b: 1/(1\u2212leading) (geometric self-energy)",
+          "label": "C8b: 1/(1−leading) (geometric self-energy)",
           "value": "1.00137760643854290560956",
           "value_minus_1": "0.00137760643854290561",
           "pred_split": "0.0013776064385429056096",
@@ -247,7 +268,7 @@
           "frac_of_correction_supplied": "1.07761388794"
         },
         {
-          "label": "C7: 3-strand bracketed-swap multiplier tr_M(\u03c3\u2080\u03c3\u2081\u03c3\u2080)/tr_M(\u03c3\u2080)",
+          "label": "C7: 3-strand bracketed-swap multiplier tr_M(σ₀σ₁σ₀)/tr_M(σ₀)",
           "value": "1.10438806980915821810461",
           "value_minus_1": "0.104388069809158218",
           "pred_split": "0.0015193190918559263864",
@@ -261,60 +282,60 @@
   ],
   "cross_anchor_drift": [
     {
-      "label": "production (1+\u210f_q\u00b3) [posited, for reference]",
-      "drift": "7.53982e-14"
+      "label": "production (1+ℏ_q³) [posited, for reference]",
+      "drift": "3.06044e-10"
     },
     {
-      "label": "C2: spectator commutator tr_M([\u03c3\u2080,\u03c3\u2081]) ",
-      "drift": "2.88242e-12"
+      "label": "C2: spectator commutator tr_M([σ₀,σ₁]) ",
+      "drift": "1.16999e-8"
     },
     {
-      "label": "C3: spectator-conjugated swap tr_M(\u03c3\u2081\u03c3\u2080\u03c3\u2081\u207b\u00b9)/tr_M(\u03c3\u2080)",
+      "label": "C3: spectator-conjugated swap tr_M(σ₁σ₀σ₁⁻¹)/tr_M(σ₀)",
       "drift": "0.0"
     },
     {
       "label": "C4: half-spectator-dressed swap ratio",
-      "drift": "2.89409e-12"
+      "drift": "1.17472e-8"
     },
     {
-      "label": "C5: (sym tr_M(\u03c3\u2080\u03c3\u2081))/(mixed tr_M(\u03c3\u2080\u03c3\u2081\u207b\u00b9))",
-      "drift": "3.39576e-11"
+      "label": "C5: (sym tr_M(σ₀σ₁))/(mixed tr_M(σ₀σ₁⁻¹))",
+      "drift": "1.37835e-7"
     },
     {
-      "label": "C6: 1+\u210f_q\u00b3\u00b7([3]_q/[2]_q)",
-      "drift": "1.14844e-13"
+      "label": "C6: 1+ℏ_q³·([3]_q/[2]_q)",
+      "drift": "4.66156e-10"
     },
     {
-      "label": "C6: 1+\u210f_q\u00b3\u00b7([2]_q/2)",
-      "drift": "7.60979e-14"
+      "label": "C6: 1+ℏ_q³·([2]_q/2)",
+      "drift": "3.08884e-10"
     },
     {
-      "label": "C6: 1+\u210f_q\u00b3\u00b7(z\u00b7[2]_q)",
-      "drift": "7.59221e-14"
+      "label": "C6: 1+ℏ_q³·(z·[2]_q)",
+      "drift": "3.08171e-10"
     },
     {
-      "label": "C6: 1+\u210f_q\u00b3\u00b7(1/(2z))",
-      "drift": "7.55729e-14"
+      "label": "C6: 1+ℏ_q³·(1/(2z))",
+      "drift": "3.06754e-10"
     },
     {
-      "label": "C6: 1+\u210f_q\u00b3\u00b7(q)",
-      "drift": "8.67584e-14"
+      "label": "C6: 1+ℏ_q³·(q)",
+      "drift": "3.52156e-10"
     },
     {
       "label": "C8: 1+leading (3-strand self-interaction)",
-      "drift": "1.091e-13"
+      "drift": "4.4284e-10"
     },
     {
-      "label": "C8b: 1/(1\u2212leading) (geometric self-energy)",
-      "drift": "1.09401e-13"
+      "label": "C8b: 1/(1−leading) (geometric self-energy)",
+      "drift": "4.44061e-10"
     },
     {
-      "label": "C7: 3-strand bracketed-swap multiplier tr_M(\u03c3\u2080\u03c3\u2081\u03c3\u2080)/tr_M(\u03c3\u2080)",
-      "drift": "2.84549e-12"
+      "label": "C7: 3-strand bracketed-swap multiplier tr_M(σ₀σ₁σ₀)/tr_M(σ₀)",
+      "drift": "1.155e-8"
     }
   ],
   "verdict": {
-    "summary": "The 3-strand SELF-INTERACTION candidate C = 1 + leading (equivalently leading/(1\u2212leading), or [2]_q \u2192 [2]_q\u00b7(1+leading)) lands at ~0.0097% vs CODATA \u2014 a ~13\u00d7 improvement over leading-only (0.128%) and a ~3\u00d7 improvement over the posited production (1+\u210f_q\u00b3) (0.0305%). It is parameter-free (the correction scale IS the derived leading split, not a posited \u210f_q-power) and anchor-stable to ~12 digits (proton vs muon q\u2080). HOWEVER it is a NEAR-MATCH, not an exact closure: the exact factor is (C_true\u22121)/leading \u2248 0.929, not 1.000, so C=1+leading OVER-supplies the correction by ~7.6%. Per AGENTS.md \u00a7refuted/\u00a7open this is a scope-(a) numerical result: the second-order/self-interaction STRUCTURE is strongly indicated, but the exact 0.929 coefficient is NOT closed and must not be fit. Raw H_3 trace-ratio objects (spectator commutator, bracketed-swap, sym/mixed) give O(10\u201370%) corrections \u2014 far too large \u2014 confirming the correction is a DIFFERENCE/self-energy structure, not a raw trace ratio.",
+    "summary": "The 3-strand SELF-INTERACTION candidate C = 1 + leading (equivalently leading/(1−leading), or [2]_q → [2]_q·(1+leading)) lands at ~0.0097% vs CODATA — a ~13× improvement over leading-only (0.128%) and a ~3× improvement over the posited production (1+ℏ_q³) (0.0305%). It is parameter-free (the correction scale IS the derived leading split, not a posited ℏ_q-power) and anchor-stable to ~12 digits (proton vs muon q₀). HOWEVER it is a NEAR-MATCH, not an exact closure: the exact factor is (C_true−1)/leading ≈ 0.929, not 1.000, so C=1+leading OVER-supplies the correction by ~7.6%. Per AGENTS.md §refuted/§open this is a scope-(a) numerical result: the second-order/self-interaction STRUCTURE is strongly indicated, but the exact 0.929 coefficient is NOT closed and must not be fit. Raw H_3 trace-ratio objects (spectator commutator, bracketed-swap, sym/mixed) give O(10–70%) corrections — far too large — confirming the correction is a DIFFERENCE/self-energy structure, not a raw trace ratio.",
     "best_candidate": "C8: 1+leading (3-strand self-interaction)",
     "best_err_vs_codata_pct": 0.00972,
     "leading_only_err_pct": 0.12767,

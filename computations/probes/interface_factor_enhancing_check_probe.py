@@ -12,6 +12,8 @@ for ALL q>0 (AM-GM), so for q>1 no pairwise interface can enhance the trace. The
 enhancing escape is foreclosed; an attractive 3-body force needs a genuine
 non-product operator (Lean: markovParam_le_half).
 """
+import time as _time  # noqa: E402 — wall-clock anchor for witness durationMs
+_T0 = _time.monotonic()
 import json
 import sys
 from pathlib import Path
@@ -69,10 +71,14 @@ def main():
         "data": {"factors": rows, "any_enhances": bool(any_enh),
                  "z_le_half_all_q": True, "verdict": "enhancing_escape_foreclosed"},
     }
-    out = COMP / "interface-factor-enhancing-check.witness.json"
-    with open(out, "w") as f:
-        json.dump(witness, f, indent=1, default=str)
-    print(f"\nwitness -> {out.relative_to(REPO)}")
+    import os as _os, sys as _sys  # noqa: E402
+    _sys.path.insert(0, _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "../substrate"))
+    from witness_base import WitnessBuilder  # noqa: E402 — P30 rollup (bean cmiy)
+    _wpath = WitnessBuilder.wrap_legacy(
+        "interface-factor-enhancing-check", witness,
+        script_path=__file__, engine="mpmath", start_time=_T0, output_dir=str(COMP),
+    ).save()
+    print(f"\nwitness -> {_wpath}")
     return 0
 
 
