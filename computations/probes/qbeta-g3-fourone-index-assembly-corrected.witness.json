@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-18T01:38:34.561908+00:00",
-  "commitSha": "0cc02643c8a6d538c3b79143ac00f49c244e28e3",
+  "computedAt": "2026-07-18T01:53:10.759489+00:00",
+  "commitSha": "46526d9f45e0b1300e82743b322157dea4b72cec",
   "assertions": [
     {
       "name": "dgg_anchor_4_20_reproduced",
@@ -30,11 +30,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 657,
+  "durationMs": 665,
   "computation": "qbeta-g3-fourone-index-assembly-corrected",
   "scriptFile": "qbeta_g3_fourone_index_assembly_corrected.py",
-  "scriptHash": "92e20edfd857",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "e88b4a5091e9",
+  "scriptCommitSha": "e5f3c13ef1e5aa77325a05ac76f56e228924a5f9",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -88,7 +88,26 @@
     },
     "gluing_rule": "DGG 1112.5179 eq (4.18): I_41(m,e) = Σ_{e2∈ℤ} I_Δ(m−e2, m+e−e2)·I_Δ(e−e2, −e2); no prefactor",
     "supersedes": "closes the numerical-bug 'honestly open' state of qbeta_g3_fourone_index_assembly.py (merged #3826): the open verdict was tet_norm under-summing → spurious negative lead → convergent sum wrongly rejected; NOT a missing charge dictionary",
-    "A_omega_next_tranche": "the A_ω VALUE needs the coefficient↔Stokes dictionary (GGM 2012.00062 Peacock patterns): classical Stokes matrix S0=[[1,0],[-3,1]] → load-bearing integer 3; the precise 'which I41 coefficient ↔ which Stokes constant' map is open",
-    "verdict": "4₁ TOTAL 3D-INDEX ASSEMBLED + VALIDATED. DGG eq (4.18) on the validated exact I_Δ engine reproduces the printed anchor (4.20) exactly, is window-stable (convergent), and satisfies the (4.19) amphichiral symmetry; substrate eval converges. This closes the 'honestly open' state as a fixed numerical bug (not a missing formula). The A_ω value remains one tranche away (coefficient↔Stokes dictionary). No c_k; no fit; scope-(a)."
+    "stokes_dictionary_resolved": {
+      "geometric_entry": "S+_σ1σ1(q) = Σ_e I41(0,e)(q) = rotated index (GGM 2007.10190 eq 5/80) = 1−8q−9q²+18q³+46q⁴+90q⁵+62q⁶",
+      "ggm_eq80_reference_qcoef": {
+        "0": 1,
+        "1": -8,
+        "2": -9,
+        "3": 18,
+        "4": 46,
+        "5": 90,
+        "6": 62
+      },
+      "classical_stokes_constant": 3,
+      "e_sum_numerical_reproduction": "deferred — needs per-e higher internal order (shifted-charge truncation subtlety); identification is GGM's theorem, cited not re-derived"
+    },
+    "bar_odd_structural_verdict": {
+      "scope_a": "the c₃ bar-odd real (~0.0097/−0.0395) is NOT read off the u=0 4₁ index: the Stokes constants are INTEGERS (3,−8,−9,46,…) and the q-series diverges at substrate q≈0.90 (growing coeffs)",
+      "scope_b_cited_invariant": "4₁ is AMPHICHIRAL ⇒ CS=0 at u=0 (V(σ1)=i·Vol purely imaginary, GGM 2012.00062 eq 41); the bar-odd/imaginary complex-volume datum is identically zero for the figure-eight at the complete structure — so the u=0 index CANNOT supply it",
+      "live_routes": "the bar-odd A_ω requires either (i) DEFORMED (u≠0) state-integral median/Borel resummation of Φ_b (machinery not in-repo; the winding/meridian face), or (ii) a non-amphichiral knot (e.g. 5₂, CS≠0) — consistent with the local-Φ_b-monodromy anchor-blind result (this PR) and MonodromyDatumRigidity",
+      "anti_numerology": "2·Vol(4₁)=4.0598 ≈ |ratio −4.0751| (0.38%) NOT wired; un-derived coincidence, flagged per AGENTS.md anti-fit"
+    },
+    "verdict": "4₁ TOTAL 3D-INDEX ASSEMBLED + VALIDATED + STOKES DICTIONARY RESOLVED. DGG eq (4.18) on the validated exact I_Δ engine reproduces the printed anchor (4.20) exactly, is window-stable, and satisfies (4.19) amphichiral symmetry. The coefficient↔Stokes dictionary is GGM's theorem (2007.10190 eq 80, cited): S⁺_σ1σ1 = Σ_e I41(0,e) = 1−8q−9q²+18q³+46q⁴+…, classical constant 3. Closes #3826's 'honestly open' state as a numerical bug. STRUCTURAL FINDING: the u=0 4₁ Stokes data is INTEGER-valued (classical constant 3) and BAR-EVEN — 4₁ amphichiral ⇒ CS=0 ⇒ the bar-odd c₃ anchor is NOT in the u=0 index (scope-(b), cited invariant). The bar-odd A_ω needs deformed-state-integral median resummation or a non-amphichiral knot. No c_k; no fit; 2·Vol coincidence not wired."
   }
 }
