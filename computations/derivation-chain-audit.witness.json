@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-18T08:48:16.255454+00:00",
-  "commitSha": "5fd9eff91125da7ad4b6d9652fcb136e342573b1",
+  "computedAt": "2026-07-18T09:19:53.097318+00:00",
+  "commitSha": "77bfacdcc0d169d74c5a391edd7130636b810914",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -559,11 +559,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 5,
+  "durationMs": 3,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "ff40fb7a9d7d",
-  "scriptCommitSha": "1f2e5c766c2e251131b5cb1a3cc43ef5e8bef2cd",
+  "scriptCommitSha": "16968c2f1a3f92c09c705a456308787a7e754380",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -2450,6 +2450,7 @@
         "complex-volume-unification.witness.json",
         "compound-binding-via-differences.witness.json",
         "compound-shift-nf.witness.json",
+        "compute-audit-scan.witness.json",
         "confined-knot-binding.witness.json",
         "confinement-operator-selection.witness.json",
         "connected-magnitude-charge-symmetric.witness.json",
