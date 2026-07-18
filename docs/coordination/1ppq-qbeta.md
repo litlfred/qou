@@ -1899,3 +1899,26 @@ via the bilinear + crossing identity instead of Borel numerics. NEXT
 (part 2c-2): apply (250) at the substrate bar-pair → φ_odd at derived
 precision (vs #3987 preliminary −0.004145). No fit; no c_k wired;
 scope-(a).
+**2026-07-18 (#3993 b3ix odd-locus — AUTHORITATIVE 5₂ cyclotomic coefficients
+from Masbaum, "be critical" colored-Jones gate CLEARED).** The owner flagged
+the self-calibrating `(V_{5_2}-1)/(V_{4_1}-1)` extraction of `C_{5_2,1}` as a
+possibly-erroneous probe and pointed at Masbaum's twist-knot paper (uploaded on
+main, `uploads/agt-v3-n1-p17-p.pdf`, `masbaum2003`, DOI 10.2140/agt.2003.3.537).
+Critical verification (`qbeta_5two_masbaum_cyclotomic_probe.py`, 4/4):
+(1) V_{4_1}, V_{5_2} match KnotInfo; (2) Masbaum Thm 5.1/Rem 5.2 for K_2
+reproduces the standard Jones V_{5_2} at N=2 EXACTLY (fixing t=q⁻¹);
+(3) the DERIVED Kashaev-tail basis bridge `C_{K,n}(q) = (-1)^n q^{n(n+1)/2}
+f̃_{K,n}(q)` is exact — it maps Masbaum's `f̃_{4_1,n}=(-1)^n q^{-n(n+1)/2}` to
+`C_n=1` (Kashaev figure-eight) on the amphichiral knot; (4) the flagged
+self-calibrating heuristic `C_{5_2,1}=-(t⁻²+t⁻⁴)` EQUALS the authoritative
+`C_{5_2,1}(q)=-(q⁴+q²)` exactly — the heuristic STANDS, not erroneous. This
+supersedes the heuristic as the source of record and delivers the authoritative
+higher coefficients (task 2): `C_{5_2,2}(q)=q¹¹+q⁸+q⁷+q⁵`,
+`C_{5_2,3}(q)=-(q²¹+q¹⁷+q¹⁶+q¹⁵+q¹³+q¹²+q¹¹+q⁹)` — all bar-asymmetric (5₂ chiral),
+the genuine 5₂ bar-odd Habiro data for the Q_β odd channel. Lean: c52_2, c52_3
++ bar-odd-term theorems (`QOU.QBeta.HabiroCyclotomicOddLocus`, sorry-free).
+Distinct-route from the sibling state-integral/M-dictionary strip (main
+7d9a6c03aa etc.): the Habiro/cyclotomic-basis face gives the coefficients as
+exact Laurent polynomials; the two converge on the same 5₂ odd datum. Beans
+filed for the other uploads (q-holonomic Garoufalidis-Lê, Takata A-poly, Hitchin
+monodromy). scope-(b): cited exact formula, Jones-cross-checked. No fit; no c_k.

@@ -1,0 +1,57 @@
+{
+  "computation": "qbeta-5two-masbaum-cyclotomic",
+  "description": "Authoritative 5\u2082=K_2 cyclotomic coefficients C_{5_2,n}(q) from Masbaum's twist-knot formula (masbaum2003), via the derived Kashaev-tail basis bridge C_{K,n}=(-1)^n q^{n(n+1)/2} f\u0303_{K,n}. Reproduces V_{5_2} at N=2; the self-calibrating heuristic matches exactly. scope-(b).",
+  "audit_only": true,
+  "tier": "symbolic-exact (cited authoritative formula)",
+  "computedAt": "2026-07-18T22:19:29.880665+00:00",
+  "commitSha": "76944209cd14a37795d665823121b113755b86d0",
+  "engine": "sympy",
+  "engineVersion": "1.14.0",
+  "scriptFile": "qbeta_5two_masbaum_cyclotomic_probe.py",
+  "scriptHash": "44c4960b614a",
+  "assertions": [
+    {
+      "name": "masbaum_reproduces_jones_5two_at_N2",
+      "passed": true,
+      "source": "Masbaum Thm 5.1/Rem 5.2 for K_2 reproduces the standard KnotInfo Jones polynomial V_{5_2}(t) at N=2 under t=q\u207b\u00b9 \u2014 validates the cyclotomic coefficients against an independent authoritative value (masbaum2003, DOI 10.2140/agt.2003.3.537)"
+    },
+    {
+      "name": "bridge_gives_C_n_one_for_fourone",
+      "passed": true,
+      "source": "the derived basis bridge C_{K,n}=(-1)^n q^{n(n+1)/2}\u00b7f\u0303_{K,n} maps Masbaum's f\u0303_{4_1,n}=(-1)^n q^{-n(n+1)/2} to C_n=1, matching Kashaev's figure-eight tail \u2014 the bridge is exact"
+    },
+    {
+      "name": "selfcalibrating_shortcut_matches_masbaum",
+      "passed": true,
+      "source": "the earlier self-calibrating (V_{5_2}-1)/(V_{4_1}-1) heuristic gave C_{5_2,1}=-(t\u207b\u00b2+t\u207b\u2074); at t=q\u207b\u00b9 this equals the authoritative Masbaum-derived C_{5_2,1}(q)=-(q\u2074+q\u00b2) EXACTLY \u2014 the flagged 'colored-jones gate' heuristic is validated, not erroneous"
+    },
+    {
+      "name": "cyclotomic_coeff_bar_asymmetric",
+      "passed": true,
+      "source": "C_{5_2,n}(q) \u2260 C_{5_2,n}(q\u207b\u00b9) for n\u22651 \u2014 5\u2082 is chiral, so its cyclotomic coefficients supply a nonzero bar-odd Habiro datum (the odd-locus, Lean HabiroCyclotomicOddLocus)"
+    }
+  ],
+  "allPassed": true,
+  "result": {
+    "C_5two": {
+      "0": "1",
+      "1": "-a**8 - a**4",
+      "2": "a**22 + a**16 + a**14 + a**10",
+      "3": "-a**42 - a**34 - a**32 - a**30 - a**26 - a**24 - a**22 - a**18"
+    },
+    "ftilde_K2": {
+      "0": "1",
+      "1": "a**6 + a**2",
+      "2": "a**16 + a**10 + a**8 + a**4",
+      "3": "a**30 + a**22 + a**20 + a**18 + a**14 + a**12 + a**10 + a**6"
+    },
+    "basis_bridge": "C_{K,n}(q) = (-1)^n q^{n(n+1)/2} f~_{K,n}(q)",
+    "verdict": "VALIDATED + AUTHORITATIVE. Masbaum's twist-knot formula (masbaum2003) gives the exact 5\u2082 = K_2 cyclotomic coefficients; they reproduce the standard Jones polynomial V_{5_2} at N=2. The derived basis bridge C_{K,n}=(-1)^n q^{n(n+1)/2}\u00b7f\u0303_{K,n} is exact (C_n=1 on 4\u2081). The earlier self-calibrating (V_{5_2}-1)/(V_{4_1}-1) heuristic \u2014 flagged by the owner as a possibly-erroneous probe \u2014 MATCHES the authoritative C_{5_2,1}(q)=-(q\u2074+q\u00b2) exactly, so it stands. Authoritative higher coefficients: C_{5_2,2}=q\u00b9\u00b9+q\u2078+q\u2077+q\u2075, C_{5_2,3}=-(q\u00b2\u00b9+q\u00b9\u2077+q\u00b9\u2076+q\u00b9\u2075+q\u00b9\u00b3+q\u00b9\u00b2+q\u00b9\u00b9+q\u2079). All bar-asymmetric \u2014 the 5\u2082 bar-odd Habiro datum for the Q_\u03b2 odd channel. scope-(b): exact Laurent-polynomial identities from a cited published formula. NO fit; NO c_k wired."
+  },
+  "context": {
+    "axis": "b3ix odd-locus \u2014 authoritative 5\u2082 coefficient (continuation of #3970/#3993; answers 'be critical' colored-jones gate)",
+    "reference": "masbaum2003 (DOI 10.2140/agt.2003.3.537); uploads/agt-v3-n1-p17-p.pdf",
+    "lean": "QOU.QBeta.HabiroCyclotomicOddLocus (c52_1/c52_2/c52_3, sorry-free)",
+    "supports": "#3966 b3ix"
+  }
+}
