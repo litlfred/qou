@@ -1,0 +1,9 @@
+---
+# qou-c5ck
+title: Capstone synthesis doc
+status: todo
+type: task
+created_at: 2026-07-18T14:35:12Z
+updated_at: 2026-07-18T14:35:12Z
+---
+
