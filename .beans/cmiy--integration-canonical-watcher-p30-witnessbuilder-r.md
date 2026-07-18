@@ -294,3 +294,14 @@ deltalambda_sign_pivotal_grading_capstone_probe, nuclear_quotient_jones_torus_li
 All 6: exit 0, keys+assertions preserved, confirmed PROV_OK. The cross-family
 witness-name duplicates in grep are docstring cross-refs (reads=0), not file
 reads. Largest single batch since the substrate drain.
+
+## 2026-07-18 — batch 21 (3 scripts, mixed) — three distinct emit patterns
+Low-collision picks (avoided qbeta/keystone/meson sibling-hot areas):
+- deltalambda/alpha_cluster_volume_additivity_probe (stamp, pathlib _HERE, var=wit)
+- markov_trace_weights_wenzl (wrap_legacy + _T0, here-based)
+- he4_9_3_interface_operator_probe (wrap_legacy + _T0; FIXED a hardcoded
+  cwd-relative "computations/probes/..." path → output_dir=Path(__file__).parent/"probes";
+  the script lives in computations/ but writes to probes/).
+All exit 0, correct output location (verified no strays), keys preserved,
+confirmed PROV_OK. Remaining clean tail is now mostly sibling-hot (qbeta G3,
+keystone s5-so3, meson λ_A) or native/SDP — good stopping point.

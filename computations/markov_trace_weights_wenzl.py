@@ -37,6 +37,8 @@ Witness: markov-trace-weights-wenzl.witness.json
 """
 
 from __future__ import annotations
+import time as _time  # noqa: E402 — wall-clock anchor for witness durationMs
+_T0 = _time.monotonic()
 
 import itertools
 import json
@@ -508,10 +510,14 @@ def main():
         "scriptHash": sha256(src).hexdigest()[:12],
         "scriptCommitSha": sha,
     }
-    out = os.path.join(here, "markov-trace-weights-wenzl.witness.json")
-    with open(out, "w") as fh:
-        json.dump(witness, fh, indent=2)
-        fh.write("\n")
+    import sys as _sys  # noqa: E402 — P30 rollup (bean cmiy)
+    _sys.path.insert(0, os.path.join(here, "substrate"))
+    from witness_base import WitnessBuilder  # noqa: E402
+    out = WitnessBuilder.wrap_legacy(
+        "markov-trace-weights-wenzl", witness,
+        script_path=__file__, engine="python", start_time=_T0,
+        output_dir=here,
+    ).save()
     print("witness written:", out)
     return 0 if all_match else 1
 
