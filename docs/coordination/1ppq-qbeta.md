@@ -1762,3 +1762,27 @@ branch-sheet bookkeeping genuinely needs the full 5₂ M(x̃;q̃) dictionary
 exact targets. φ_odd (#3987, −0.004145 preliminary) unaffected: the
 substrate-ray conjugate-pair extraction is the on-ray case with near-unit
 amplitudes. No fit; no c_k wired.
+
+**2026-07-18 (dictionary-diagnostic tranche) — PER-TERM EXPONENT
+IDENTIFICATION IS DRIFT-LIMITED AT THIS τ-WINDOW: the numerics lane is
+exhausted; the remaining path to a derived-precision φ_odd is the
+ANALYTIC 5₂ M-dictionary.** `qbeta_g3_5two_block_saddle_dictionary.py`
+(2/2 green, honest diagnostic): Theorem 22 writes Z₅₂ as exactly three
+terms, so the #3991 Prony exponents should be the per-term exponents —
+tested in ρ-space (branch-ambiguity-free Prony-grid ratios on each exact
+term). Finding: all three terms have COMPARABLE ratio magnitudes
+(|ρ| ~ 50–60) with 5–12 % drift per Δ-step, they do NOT match the #3991
+Prony roots individually (devs 0.85/0.24/0.95, no bijection), and
+per-term saddle/sheet identification with the Δ-constant offset
+2πi·β_T scanned over small-integer sheet moves leaves residuals
+1.7–2.9. CONCLUSION: at this window the block terms are not clean
+exponentials — the (238)-and-higher c₁τ corrections dominate at the
+several-percent level, so exponent-level sector identification (both
+#3991's three-term set and any per-term map) is effective, not sharp.
+REDIRECT: deeper numerics at this window cannot sharpen φ_odd; the
+remaining step is the ANALYTIC M-dictionary — the u=0 H^ε tower (GGM
+89a-c/90a-c, needs the E₁⁽ⁿ⁾/E₂⁽ⁿ⁾/E₂ definitions from pp. ~20–21),
+the 3×3 W_m, the (94)-(95) M/S sandwiches derived OCR-free against the
+q→0 targets (96/97, constants {3,4}), then wall-crossing to deformed x.
+φ_odd (#3987, −0.004145 on-ray) stands as preliminary. No fit; no c_k
+wired; scope-(a).

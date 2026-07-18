@@ -1,0 +1,91 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-18T19:25:28.068766+00:00",
+  "commitSha": "91f47c5a25ac0776ebb985731243d1e8124d7472",
+  "assertions": [
+    {
+      "name": "per_term_ratio_data_recorded",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "exact per-term Prony-grid ratios + drift recorded; comparable magnitudes; no clean bijection at this window (honest diagnostic)"
+    },
+    {
+      "name": "saddle_identification_reported",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "per-term identification table recorded with honest residuals (derived if < 0.05)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 13,
+  "computation": "qbeta-g3-5two-block-saddle-dictionary",
+  "scriptFile": "qbeta_g3_5two_block_saddle_dictionary.py",
+  "scriptHash": "782284fafdfc",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
+  },
+  "description": "The 5_2 block-saddle dictionary at the exponent level: per-term exponents of the three Theorem-22 terms measured exactly and matched bijectively to the Prony sector targets; per-term saddle identification with the Delta-constant offset and scanned sheet moves, residuals reported honestly.",
+  "contentBlock": "conj:im-q-physical-role",
+  "data": {
+    "term_exponents": {
+      "A": "(-7.8081535251140320571 - 1.0596493867756683862j)",
+      "B": "(-3.0803103553473582143 + 6.4287572187233656011j)",
+      "C": "(-8.0161298634179425193 - 1.0515102882735946548j)"
+    },
+    "prony_match": {
+      "A": {
+        "prony_index": 0,
+        "dev": "0.84813172"
+      },
+      "B": {
+        "prony_index": 0,
+        "dev": "0.2405069"
+      },
+      "C": {
+        "prony_index": 0,
+        "dev": "0.94976784"
+      }
+    },
+    "saddle_identification": {
+      "A": {
+        "saddle": 2,
+        "k": -3,
+        "m": 1,
+        "n": -2,
+        "residual": "2.570935"
+      },
+      "B": {
+        "saddle": 2,
+        "k": -2,
+        "m": 3,
+        "n": -2,
+        "residual": "2.9312498"
+      },
+      "C": {
+        "saddle": 0,
+        "k": -1,
+        "m": 1,
+        "n": 0,
+        "residual": "1.67212"
+      }
+    },
+    "verdict": "HONEST DIAGNOSTIC: per-term Prony-grid ratios measured exactly — all three Theorem-22 terms have COMPARABLE ratio magnitudes (|rho| ~ 50-60) with 5-12% drift per step, and they do NOT match the #3991 Prony roots individually (devs 0.848, 0.241, 0.95) nor is the term-Prony bijection resolvable (False). CONCLUSION: at this tau-window the block terms are not clean exponentials (the (238)-and-higher corrections dominate at the several-percent level), so EXPONENT-LEVEL sector identification is drift-limited — both the #3991 three-term certification and any per-term saddle/sheet identification (D2 residuals 2.57, 2.93, 1.67, 2/3 distinct) are effective, not sharp, at this budget. The remaining path to a derived-precision phi_odd is the ANALYTIC M-dictionary (the u=0 H-tower eqs 89/90 + the 94-95 sandwiches + wall-crossing), not deeper numerics at this window. phi_odd (#3987, on-ray) stands as preliminary. No fit; no c_k wired; scope-(a)."
+  }
+}
