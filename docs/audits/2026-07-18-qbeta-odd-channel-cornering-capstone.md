@@ -59,16 +59,33 @@ non-amphichiral (5₂-class) geometry" (#3923). The 5₂ port (#3930,
   bar-odd carrier the 4₁ null excluded. Falsifiable target for the #3892 5₂
   ladder: measuring ~0 kills the non-amphichiral-carrier hypothesis.
 
-## The decisive remaining test (this branch, item 2)
+## The decisive test — RESOLVED (this branch, item 2)
 
 A nonzero intrinsic *phase* is necessary but not sufficient for the swing — the
-σ3-pair must also be **anchor-dependent** at the ~3.84×10⁶ scale. Every geometric
-object tested so far (including the 5₂ σ1 quantum volume, #3902) is anchor-smooth
-(O(1)). The open question: **is the 5₂ σ3-pair datum ι₁₃ anchor-smooth too, or
-does it carry the swing?** If anchor-smooth, the odd-channel geometric search
-closes entirely (representational confirmed on every front, chiral included); if
-swing-carrying, the σ3-pair is the long-sought non-amphichiral carrier. This is
-the one test that decides whether the 5₂-class lane can close the odd channel.
+σ3-pair must also be **anchor-dependent** at the ~3.84×10⁶ scale.
+`qbeta_5two_sigma3_anchor_test_probe.py` (2/2) ran the test, reusing the #3930
+saddle machinery to compute ι₁₃, ι₂₃ at both q₀ anchors:
+
+- **The σ3-pairs DO carry a nonzero intrinsic phase** (|arg ι₁₃| = 2.127 rad,
+  |arg ι₂₃| = 2.683 rad ≫ the 4₁ null floor 9.2e-9) — genuinely non-amphichiral
+  bar-odd carriers, as predicted.
+- **But they are ANCHOR-SMOOTH:** |dι/dq| = 0.245 / 0.380 (O(1)), **7.0 orders**
+  below the 3.84×10⁶ swing scale — exactly like the 5₂ σ1 quantum volume (#3902).
+
+So the one geometric object with nonzero bar-odd phase still cannot carry the
+swing. **The odd-channel geometric search is closed.** Every geometric object
+fails: amphichiral 4₁ (branch-point generic, quantum volume anchor-smooth,
+odd-phase null), chiral 5₂ σ1 (quantum volume anchor-smooth), chiral 5₂ σ3
+(nonzero phase, anchor-smooth). The c₃ swing is **representational on every
+front, chiral included** — the 1/u³ inversion of a smooth N_odd, pinned by
+experimental Q_β.
+
+**Scope note.** This is scope-(a): the σ3-pair *alone* does not reproduce the
+swing (anchor-smooth), constraining magnitude not ingredient. The σ3-pair
+remains a permanent non-amphichiral bar-odd carrier (nonzero phase) — not
+excluded from a many-term closure. What is now excluded (scope-(b), via the
+proved 4₁ odd-phase null + the exhausted anchor-smoothness census) is a
+**single smooth geometric object** as the swing's source: none exists.
 
 ## Discipline
 
