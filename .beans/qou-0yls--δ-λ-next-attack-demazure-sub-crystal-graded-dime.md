@@ -1,11 +1,11 @@
 ---
 # qou-0yls
 title: 'Δ_λ next attack: Demazure sub-crystal graded dimension (damped [A]_q! resonance state)'
-status: in-progress
+status: completed
 type: task
 priority: high
 created_at: 2026-07-18T23:14:41Z
-updated_at: 2026-07-18T23:18:09Z
+updated_at: 2026-07-18T23:49:09Z
 parent: qou-w1z0
 ---
 
