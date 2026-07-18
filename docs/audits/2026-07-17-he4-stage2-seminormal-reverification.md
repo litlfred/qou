@@ -22,6 +22,17 @@ was never regenerated** (its `computedAt` = 2026-07-13T22:03, engine
 This audit regenerates the witness on the seminormal engine and adds an
 independent fast ranking cross-check.
 
+> **Upstream note (2026-07-17/18).** The GP kernel bug itself was subsequently
+> **fixed on `main`** — the Geck–Pfeiffer cyclic-shift completion
+> (`61c401a610`, bean `qou-b2ie` resolved). That fix and this reverification are
+> complementary and mutually corroborating: this audit corrects the *committed
+> witness* (which `main`'s GP fix did **not** regenerate — `main` still carries
+> the stale GP-legged `he4-binding-k-stage2.witness.json`, tr_M 0.06768,
+> xcheck 2.09), while the engine fix means the GP path is now available as an
+> independent *third* character engine to cross-check the seminormal result on
+> the K word. This reverification does not depend on it — it used the
+> always-correct seminormal path throughout.
+
 > **Status (2026-07-17).** All findings below are **final and log-verified**
 > from the 50-dps both-leg run (Leg A completed; Leg B measured 75/77 blocks
 > before a session-boundary interrupt). The full run is being re-executed with
