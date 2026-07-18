@@ -373,6 +373,449 @@ theorem sigmaOneCharacter_eq_card_mul (h : μ.transpose = μ) (hn : 2 ≤ μ.cel
   rw [hcast, mul_assoc] at key
   exact mul_left_cancel₀ h2 key
 
+/-! ### The per-shape count `c_λ = #SYT(μ)/2` (self-conjugate μ)
+
+For `σ₁` the pair `1, 2` sits in the corner: `1` at `(0,0)` and `2` at the only
+two addable cells `(0,1)` or `(1,0)`. Hence **every** standard tableau is in
+exactly one of the two classes — `sameRow12 ∨ sameCol12` and never both — so
+`rowClass ∪ colClass = univ` disjointly and `|R_row| + |R_col| = #SYT(μ)`. With
+the conjugate-transpose identity `|R_row| = |R_col|`, this closes the per-shape
+count with **no enumeration**: `2·|R_row| = #SYT(μ)`, i.e. `c_λ = #SYT(μ)/2`. -/
+
+/-- **The `(0,0)` corner is minimal**: `T.entry 0 0 ≤ T.entry a b` for every cell
+    `(a,b)` — weak rows to `(0,b)` then strict columns down to `(a,b)`. -/
+theorem entry_le (T : StandardYoungTableau μ) {a b : ℕ} (hab : (a, b) ∈ μ) :
+    T.entry 0 0 ≤ T.entry a b := by
+  have h0b : (0, b) ∈ μ := μ.up_left_mem (Nat.zero_le a) (le_refl b) hab
+  have h1 : T.entry 0 0 ≤ T.entry 0 b := by
+    rcases Nat.eq_zero_or_pos b with hb | hb
+    · subst hb; exact le_rfl
+    · exact T.toSsyt.row_weak hb h0b
+  have h2 : T.entry 0 b ≤ T.entry a b := by
+    rcases Nat.eq_zero_or_pos a with ha | ha
+    · subst ha; exact le_rfl
+    · exact le_of_lt (T.toSsyt.col_strict ha hab)
+  exact le_trans h1 h2
+
+/-- **Entry `1` is at the corner**: `T.entry 0 0 = 1`. The corner is `≥ 1` (in the
+    value range) and `≤` the cell carrying `1` (`entry_le`), so it *is* `1`. -/
+theorem entry_zero_zero_eq_one (T : StandardYoungTableau μ) (hn : 1 ≤ μ.cells.card) :
+    T.entry 0 0 = 1 := by
+  obtain ⟨⟨a, b⟩, hcell, hval⟩ := exists_cell_entry T (Set.mem_Icc.mpr ⟨le_refl 1, hn⟩)
+  have hval2 : T.entry a b = 1 := hval
+  have hab : (a, b) ∈ μ := (YoungDiagram.mem_cells _).mp hcell
+  have h00 : (0, 0) ∈ μ := μ.up_left_mem (Nat.zero_le a) (Nat.zero_le b) hab
+  have hle : T.entry 0 0 ≤ T.entry a b := entry_le T hab
+  rw [hval2] at hle
+  have hge : 1 ≤ T.entry 0 0 :=
+    (Set.mem_Icc.mp (T.mapsTo_cells (StandardYoungTableau.mem_coe_cells h00))).1
+  omega
+
+/-- **`(0,0) ∈ μ`** whenever `μ` has a cell (the diagram is a lower set). -/
+theorem zero_zero_mem_cells (hn : 1 ≤ μ.cells.card) : (0, 0) ∈ μ.cells := by
+  obtain ⟨⟨a, b⟩, hc⟩ := Finset.card_pos.mp (show 0 < μ.cells.card by omega)
+  rw [YoungDiagram.mem_cells] at hc ⊢
+  exact μ.up_left_mem (Nat.zero_le a) (Nat.zero_le b) hc
+
+/-- **`cellOf T 1 = (0,0)`** — the entry `1` lives at the corner. -/
+theorem cellOf_one (T : StandardYoungTableau μ) (hn : 1 ≤ μ.cells.card) :
+    cellOf T 1 = (0, 0) :=
+  cellOf_eq_of_entry T (zero_zero_mem_cells hn) (entry_zero_zero_eq_one T hn)
+
+/-- **`cellOf T 2` sits on the corner row or column**: its row *or* column index is
+    `0`. If both were `≥ 1`, its up-neighbour and left-neighbour would both carry an
+    entry `< 2`, i.e. both `= 1` — two distinct cells with entry `1`, impossible by
+    injectivity of the filling. -/
+theorem cellOf_two_coord_zero (T : StandardYoungTableau μ) (hn : 2 ≤ μ.cells.card) :
+    (cellOf T 2).1 = 0 ∨ (cellOf T 2).2 = 0 := by
+  have h2range : (2 : ℕ) ∈ Set.Icc 1 μ.cells.card := Set.mem_Icc.mpr ⟨by norm_num, hn⟩
+  obtain ⟨⟨a, b⟩, hcell, hval⟩ := exists_cell_entry T h2range
+  have hpin : cellOf T 2 = (a, b) := cellOf_eq_of_entry T hcell hval
+  rw [hpin]
+  show a = 0 ∨ b = 0
+  by_contra hcon
+  push_neg at hcon
+  obtain ⟨ha, hb⟩ := hcon
+  have ha1 : 1 ≤ a := Nat.one_le_iff_ne_zero.mpr ha
+  have hb1 : 1 ≤ b := Nat.one_le_iff_ne_zero.mpr hb
+  have hval2 : T.entry a b = 2 := hval
+  have hab : (a, b) ∈ μ := (YoungDiagram.mem_cells _).mp hcell
+  have hn1_mem : (a - 1, b) ∈ μ := μ.up_left_mem (Nat.sub_le a 1) (le_refl b) hab
+  have hn2_mem : (a, b - 1) ∈ μ := μ.up_left_mem (le_refl a) (Nat.sub_le b 1) hab
+  have hlt1 : T.entry (a - 1) b < T.entry a b := T.toSsyt.col_strict (by omega) hab
+  have hlt2 : T.entry a (b - 1) < T.entry a b := T.row_strict (by omega) hab
+  have hge1 : 1 ≤ T.entry (a - 1) b :=
+    (Set.mem_Icc.mp (T.mapsTo_cells (StandardYoungTableau.mem_coe_cells hn1_mem))).1
+  have hge2 : 1 ≤ T.entry a (b - 1) :=
+    (Set.mem_Icc.mp (T.mapsTo_cells (StandardYoungTableau.mem_coe_cells hn2_mem))).1
+  have he1 : T.entry (a - 1) b = 1 := by rw [hval2] at hlt1; omega
+  have he2 : T.entry a (b - 1) = 1 := by rw [hval2] at hlt2; omega
+  have heq : (a - 1, b) = (a, b - 1) :=
+    T.injOn_cells (StandardYoungTableau.mem_coe_cells hn1_mem)
+      (StandardYoungTableau.mem_coe_cells hn2_mem)
+      (by show T.entry (a - 1) b = T.entry a (b - 1); rw [he1, he2])
+  have : a - 1 = a := congrArg Prod.fst heq
+  omega
+
+/-- **The σ₁ dichotomy**: for every standard tableau of a `≥ 2`-cell shape, `1` and
+    `2` share a row *or* a column. -/
+theorem sameRow12_or_sameCol12 (T : StandardYoungTableau μ) (hn : 2 ≤ μ.cells.card) :
+    sameRow12 T ∨ sameCol12 T := by
+  have h1 : cellOf T 1 = (0, 0) := cellOf_one T (by omega)
+  rcases cellOf_two_coord_zero T hn with hi | hj
+  · exact Or.inl (by unfold sameRow12; rw [h1]; exact hi.symm)
+  · exact Or.inr (by unfold sameCol12; rw [h1]; exact hj.symm)
+
+/-- **The σ₁ classes are disjoint**: `1` and `2` cannot share *both* a row and a
+    column (they would occupy the same cell, but carry different entries). -/
+theorem not_sameRow12_and_sameCol12 (T : StandardYoungTableau μ) (hn : 2 ≤ μ.cells.card) :
+    ¬ (sameRow12 T ∧ sameCol12 T) := by
+  rintro ⟨hr, hc⟩
+  have hcell_eq : cellOf T 1 = cellOf T 2 := Prod.ext_iff.mpr ⟨hr, hc⟩
+  have h1 : (1 : ℕ) ∈ Set.Icc 1 μ.cells.card := Set.mem_Icc.mpr ⟨le_refl 1, by omega⟩
+  have h2 : (2 : ℕ) ∈ Set.Icc 1 μ.cells.card := Set.mem_Icc.mpr ⟨by norm_num, hn⟩
+  obtain ⟨_, v1⟩ := cellOf_spec T (exists_cell_entry T h1)
+  obtain ⟨_, v2⟩ := cellOf_spec T (exists_cell_entry T h2)
+  rw [hcell_eq] at v1
+  exact absurd (v1.symm.trans v2) (by norm_num)
+
+/-- **`R_row ∪ R_col = SYT(μ)`** (as `Finset.univ`) — every tableau is in one class. -/
+theorem rowClass_union_colClass (hn : 2 ≤ μ.cells.card) :
+    rowClass μ ∪ colClass μ = Finset.univ := by
+  rw [Finset.eq_univ_iff_forall]
+  intro T
+  rw [Finset.mem_union, rowClass, colClass, Finset.mem_filter, Finset.mem_filter]
+  rcases sameRow12_or_sameCol12 T hn with h | h
+  · exact Or.inl ⟨Finset.mem_univ _, h⟩
+  · exact Or.inr ⟨Finset.mem_univ _, h⟩
+
+/-- **`R_row` and `R_col` are disjoint** — no tableau is in both. -/
+theorem disjoint_rowClass_colClass (hn : 2 ≤ μ.cells.card) :
+    Disjoint (rowClass μ) (colClass μ) := by
+  rw [Finset.disjoint_left]
+  intro T hT1 hT2
+  rw [rowClass, Finset.mem_filter] at hT1
+  rw [colClass, Finset.mem_filter] at hT2
+  exact not_sameRow12_and_sameCol12 T hn ⟨hT1.2, hT2.2⟩
+
+/-- **The per-shape count** `2·|R_row| = #SYT(μ)` for a self-conjugate shape with
+    `≥ 2` cells (`c_λ = #SYT(μ)/2`): the two σ₁ classes partition `SYT(μ)` and are
+    equinumerous (`card_rowClass_eq_colClass`). No enumeration of tableaux. -/
+theorem two_mul_card_rowClass_eq_card (h : μ.transpose = μ) (hn : 2 ≤ μ.cells.card) :
+    2 * (rowClass μ).card = Fintype.card (StandardYoungTableau μ) := by
+  have hsum : (rowClass μ).card + (colClass μ).card
+      = Fintype.card (StandardYoungTableau μ) := by
+    rw [← Finset.card_union_of_disjoint (disjoint_rowClass_colClass hn),
+      rowClass_union_colClass hn, Finset.card_univ]
+  rw [two_mul]
+  nth_rewrite 2 [card_rowClass_eq_colClass h hn]
+  exact hsum
+
+/-- **`2·χ_λ(σ₁) = #SYT(μ)·h`** — the σ₁ seminormal character in closed form with the
+    per-shape coefficient made explicit: `c_λ = #SYT(μ)/2`. Combines the character
+    factorisation `2·χ = 2·|R_row|·h` with the count `2·|R_row| = #SYT(μ)`. Fully
+    general over any `[Field R]`. -/
+theorem two_mul_sigmaOneCharacter_eq_card (h : μ.transpose = μ) (hn : 2 ≤ μ.cells.card)
+    {R : Type*} [Field R] (q hh : R) (hq : q ≠ 0) :
+    (2 : R) * sigmaOneCharacter μ q hh
+      = ((Fintype.card (StandardYoungTableau μ) : ℕ) : R) * hh := by
+  rw [two_mul_sigmaOneCharacter h hn q hh hq, two_mul_card_rowClass_eq_card h hn]
+
+/-! ### General generator `σ_i`: the diagonal class-count `|R_row^i| = |R_col^i|`
+
+The `σ₁` results above hardcode the value pair `1, 2`. The diagonal half of
+`fullCharacter_two_mul` — the equinumerosity of the same-row and same-column
+classes — holds for **every** generator `σ_i` (value pair `i, i+1`), because
+`cellOf_selfTranspose` swaps the row/column coordinate for *any* entry `k`, not
+just `1, 2`. These generator-indexed versions supply the `hcard` hypothesis of
+`fullCharacter_two_mul` for a general `σ_i` on a self-conjugate shape. -/
+
+/-- Same-row predicate for the generator pair `(i, i+1)`. -/
+def sameRowGen (i : ℕ) (T : StandardYoungTableau μ) : Prop :=
+  (cellOf T i).1 = (cellOf T (i + 1)).1
+
+/-- Same-column predicate for the generator pair `(i, i+1)`. -/
+def sameColGen (i : ℕ) (T : StandardYoungTableau μ) : Prop :=
+  (cellOf T i).2 = (cellOf T (i + 1)).2
+
+/-- The same-row class `R_row^i ⊆ SYT(μ)` for generator `σ_i`. -/
+noncomputable def rowClassGen (μ : YoungDiagram) (i : ℕ) :
+    Finset (StandardYoungTableau μ) :=
+  Finset.univ.filter (fun T => sameRowGen i T)
+
+/-- The same-column class `R_col^i ⊆ SYT(μ)` for generator `σ_i`. -/
+noncomputable def colClassGen (μ : YoungDiagram) (i : ℕ) :
+    Finset (StandardYoungTableau μ) :=
+  Finset.univ.filter (fun T => sameColGen i T)
+
+/-- `selfTranspose` carries the same-row class of `σ_i` to the same-column class,
+    provided `i, i+1` are both in the value range (`1 ≤ i`, `i+1 ≤ |μ|`). -/
+theorem sameRowGen_selfTranspose (h : μ.transpose = μ) (i : ℕ)
+    (hi : 1 ≤ i) (hi2 : i + 1 ≤ μ.cells.card) (T : StandardYoungTableau μ) :
+    sameRowGen i (selfTranspose h T) ↔ sameColGen i T := by
+  have ei : i ∈ Set.Icc 1 μ.cells.card := Set.mem_Icc.mpr ⟨hi, by omega⟩
+  have ei1 : i + 1 ∈ Set.Icc 1 μ.cells.card := Set.mem_Icc.mpr ⟨by omega, hi2⟩
+  have c1 := cellOf_selfTranspose h T (exists_cell_entry T ei)
+  have c2 := cellOf_selfTranspose h T (exists_cell_entry T ei1)
+  unfold sameRowGen sameColGen
+  rw [c1, c2]
+  simp only [Prod.fst_swap]
+
+/-- `selfTranspose` carries the same-column class of `σ_i` to the same-row class. -/
+theorem sameColGen_selfTranspose (h : μ.transpose = μ) (i : ℕ)
+    (hi : 1 ≤ i) (hi2 : i + 1 ≤ μ.cells.card) (T : StandardYoungTableau μ) :
+    sameColGen i (selfTranspose h T) ↔ sameRowGen i T := by
+  have ei : i ∈ Set.Icc 1 μ.cells.card := Set.mem_Icc.mpr ⟨hi, by omega⟩
+  have ei1 : i + 1 ∈ Set.Icc 1 μ.cells.card := Set.mem_Icc.mpr ⟨by omega, hi2⟩
+  have c1 := cellOf_selfTranspose h T (exists_cell_entry T ei)
+  have c2 := cellOf_selfTranspose h T (exists_cell_entry T ei1)
+  unfold sameColGen sameRowGen
+  rw [c1, c2]
+  simp only [Prod.snd_swap]
+
+/-- **The general-`σ_i` diagonal class-count identity** `|R_row^i| = |R_col^i|`.
+    For a self-conjugate shape and any generator `σ_i` (`1 ≤ i`, `i+1 ≤ |μ|`), the
+    same-row and same-column classes of the pair `i, i+1` are equinumerous — the
+    conjugate transpose is the explicit bijection. This is the `hcard` input to
+    `SeminormalWeight.fullCharacter_two_mul` for a general single generator. -/
+theorem card_rowClassGen_eq_colClassGen (h : μ.transpose = μ) (i : ℕ)
+    (hi : 1 ≤ i) (hi2 : i + 1 ≤ μ.cells.card) :
+    (rowClassGen μ i).card = (colClassGen μ i).card := by
+  apply card_row_eq_card_col (rowClassGen μ i) (colClassGen μ i) (selfTranspose h)
+  · intro T hT
+    rw [rowClassGen, Finset.mem_filter] at hT
+    rw [colClassGen, Finset.mem_filter]
+    exact ⟨Finset.mem_univ _, (sameColGen_selfTranspose h i hi hi2 T).mpr hT.2⟩
+  · intro T hT
+    rw [colClassGen, Finset.mem_filter] at hT
+    rw [rowClassGen, Finset.mem_filter]
+    exact ⟨Finset.mem_univ _, (sameRowGen_selfTranspose h i hi hi2 T).mpr hT.2⟩
+  · exact selfTranspose_selfTranspose h
+
+/-! ### General generator `σ_i`: the off-diagonal swap involution `τ`
+
+The off-diagonal class `S_off^i` (`i, i+1` in different rows *and* different
+columns) carries the fixed-point-free involution that `fullCharacter_two_mul`
+consumes: the **value-swap** `i ↔ i+1`. Swapping the two values in a standard
+tableau yields a standard tableau **iff** `i, i+1` are off-diagonal (the classical
+elementary-transposition fact); the swap exchanges the cells of `i` and `i+1`, so
+it negates the generator axial distance `ρ` (`axialDistance_antisymm`). -/
+
+/-- The value transposition `i ↔ i+1` on `ℕ` (identity elsewhere). -/
+def swapSucc (i k : ℕ) : ℕ := if k = i then i + 1 else if k = i + 1 then i else k
+
+/-- `swapSucc i` is an involution. -/
+theorem swapSucc_involutive (i k : ℕ) : swapSucc i (swapSucc i k) = k := by
+  unfold swapSucc; split_ifs <;> omega
+
+/-- `swapSucc i` preserves strict order except on the transposed pair: if `a < b`
+    and `(a, b) ≠ (i, i+1)`, then `swapSucc i a < swapSucc i b`. -/
+theorem swapSucc_lt (i : ℕ) {a b : ℕ} (hab : a < b) (hne : ¬(a = i ∧ b = i + 1)) :
+    swapSucc i a < swapSucc i b := by
+  unfold swapSucc; split_ifs <;> omega
+
+/-- `swapSucc i` is a bijection of the value range `{1,…,n}` (it permutes `i, i+1`,
+    both in range). -/
+theorem swapSucc_bijOn_Icc (i n : ℕ) (hi : 1 ≤ i) (hi2 : i + 1 ≤ n) :
+    Set.BijOn (swapSucc i) (Set.Icc 1 n) (Set.Icc 1 n) := by
+  have hmaps : Set.MapsTo (swapSucc i) (Set.Icc 1 n) (Set.Icc 1 n) := by
+    intro k hk
+    rw [Set.mem_Icc] at hk ⊢
+    unfold swapSucc; split_ifs <;> omega
+  refine ⟨hmaps, ?_, ?_⟩
+  · intro a _ b _ hab
+    have := congrArg (swapSucc i) hab
+    rwa [swapSucc_involutive, swapSucc_involutive] at this
+  · intro k hk
+    exact ⟨swapSucc i k, hmaps hk, swapSucc_involutive i k⟩
+
+/-- **The value-swap `i ↔ i+1` as a semistandard tableau**, valid when `i, i+1` are
+    off-diagonal. Weak rows / strict columns survive the swap because within any
+    single row (resp. column) at most one of `i, i+1` appears (their cells differ in
+    that coordinate), so the swap never inverts an adjacent comparison. -/
+def swapSuccSsyt (T : StandardYoungTableau μ) (i : ℕ)
+    (hrow : (cellOf T i).1 ≠ (cellOf T (i + 1)).1)
+    (hcol : (cellOf T i).2 ≠ (cellOf T (i + 1)).2)
+    (hi : 1 ≤ i) : SemistandardYoungTableau μ where
+  entry a b := swapSucc i (T.entry a b)
+  zeros' := fun {a b} h => by
+    show swapSucc i (T.entry a b) = 0
+    rw [show T.entry a b = 0 from T.toSsyt.zeros h]
+    unfold swapSucc
+    rw [if_neg (by omega : ¬ ((0 : ℕ) = i)), if_neg (by omega : ¬ ((0 : ℕ) = i + 1))]
+  row_weak' := fun {r j1 j2} hj hcell => by
+    show swapSucc i (T.entry r j1) ≤ swapSucc i (T.entry r j2)
+    apply le_of_lt
+    apply swapSucc_lt i (T.row_strict hj hcell)
+    rintro ⟨e1, e2⟩
+    have hj1cell : (r, j1) ∈ μ := μ.up_left_mem (le_refl r) (le_of_lt hj) hcell
+    have hc1 : cellOf T i = (r, j1) :=
+      cellOf_eq_of_entry T ((YoungDiagram.mem_cells _).mpr hj1cell) e1
+    have hc2 : cellOf T (i + 1) = (r, j2) :=
+      cellOf_eq_of_entry T ((YoungDiagram.mem_cells _).mpr hcell) e2
+    exact absurd (by rw [hc1, hc2] : (cellOf T i).1 = (cellOf T (i + 1)).1) hrow
+  col_strict' := fun {r1 r2 c} hr hcell => by
+    show swapSucc i (T.entry r1 c) < swapSucc i (T.entry r2 c)
+    apply swapSucc_lt i (T.toSsyt.col_strict hr hcell)
+    rintro ⟨e1, e2⟩
+    have hr1cell : (r1, c) ∈ μ := μ.up_left_mem (le_of_lt hr) (le_refl c) hcell
+    have hc1 : cellOf T i = (r1, c) :=
+      cellOf_eq_of_entry T ((YoungDiagram.mem_cells _).mpr hr1cell) e1
+    have hc2 : cellOf T (i + 1) = (r2, c) :=
+      cellOf_eq_of_entry T ((YoungDiagram.mem_cells _).mpr hcell) e2
+    exact absurd (by rw [hc1, hc2] : (cellOf T i).2 = (cellOf T (i + 1)).2) hcol
+
+/-- **The value-swap `i ↔ i+1` as a standard tableau** (off-diagonal `i, i+1`). The
+    filling stays bijective: `swapSucc i` permutes the value range `{1,…,|μ|}`. -/
+def swapSuccSYT (T : StandardYoungTableau μ) (i : ℕ)
+    (hrow : (cellOf T i).1 ≠ (cellOf T (i + 1)).1)
+    (hcol : (cellOf T i).2 ≠ (cellOf T (i + 1)).2)
+    (hi : 1 ≤ i) (hi2 : i + 1 ≤ μ.cells.card) : StandardYoungTableau μ where
+  toSsyt := swapSuccSsyt T i hrow hcol hi
+  bijOn := by
+    have hfun : (fun c : ℕ × ℕ => (swapSuccSsyt T i hrow hcol hi).entry c.1 c.2)
+        = swapSucc i ∘ (fun c : ℕ × ℕ => T.toSsyt.entry c.1 c.2) := by funext c; rfl
+    rw [hfun]
+    exact (swapSucc_bijOn_Icc i μ.cells.card hi hi2).comp T.bijOn
+
+/-- The value-swap sends the cell of `i` to the cell of `i+1`. -/
+theorem cellOf_swapSuccSYT_i (T : StandardYoungTableau μ) (i : ℕ)
+    (hrow : (cellOf T i).1 ≠ (cellOf T (i + 1)).1)
+    (hcol : (cellOf T i).2 ≠ (cellOf T (i + 1)).2)
+    (hi : 1 ≤ i) (hi2 : i + 1 ≤ μ.cells.card) :
+    cellOf (swapSuccSYT T i hrow hcol hi hi2) i = cellOf T (i + 1) := by
+  have ei1 : (i + 1) ∈ Set.Icc 1 μ.cells.card := Set.mem_Icc.mpr ⟨by omega, hi2⟩
+  obtain ⟨hmem, hval⟩ := cellOf_spec T (exists_cell_entry T ei1)
+  apply cellOf_eq_of_entry _ hmem
+  show swapSucc i (T.entry (cellOf T (i + 1)).1 (cellOf T (i + 1)).2) = i
+  rw [hval]; unfold swapSucc; split_ifs <;> omega
+
+/-- The value-swap sends the cell of `i+1` to the cell of `i`. -/
+theorem cellOf_swapSuccSYT_i1 (T : StandardYoungTableau μ) (i : ℕ)
+    (hrow : (cellOf T i).1 ≠ (cellOf T (i + 1)).1)
+    (hcol : (cellOf T i).2 ≠ (cellOf T (i + 1)).2)
+    (hi : 1 ≤ i) (hi2 : i + 1 ≤ μ.cells.card) :
+    cellOf (swapSuccSYT T i hrow hcol hi hi2) (i + 1) = cellOf T i := by
+  have ei : i ∈ Set.Icc 1 μ.cells.card := Set.mem_Icc.mpr ⟨hi, by omega⟩
+  obtain ⟨hmem, hval⟩ := cellOf_spec T (exists_cell_entry T ei)
+  apply cellOf_eq_of_entry _ hmem
+  show swapSucc i (T.entry (cellOf T i).1 (cellOf T i).2) = i + 1
+  rw [hval]; unfold swapSucc; split_ifs <;> omega
+
+/-- **The value-swap negates the generator axial distance** `ρ`: it exchanges the
+    cells of `i` and `i+1`, and `axialDistance` is antisymmetric. This is the
+    `ρ(τ t) = −ρ t` hypothesis of `SeminormalWeight.two_mul_characterSum_eq`. -/
+theorem generatorRho_swapSuccSYT (T : StandardYoungTableau μ) (i : ℕ)
+    (hrow : (cellOf T i).1 ≠ (cellOf T (i + 1)).1)
+    (hcol : (cellOf T i).2 ≠ (cellOf T (i + 1)).2)
+    (hi : 1 ≤ i) (hi2 : i + 1 ≤ μ.cells.card) :
+    generatorRho (swapSuccSYT T i hrow hcol hi hi2) i = - generatorRho T i := by
+  unfold generatorRho
+  rw [cellOf_swapSuccSYT_i, cellOf_swapSuccSYT_i1]
+  exact axialDistance_antisymm _ _
+
+/-! ### General generator `σ_i`: the full character `χ_λ(σ_i) = c_λ·h`
+
+Assembles the three classes into `SeminormalWeight.fullCharacter_two_mul`: the
+same-row / same-column diagonal parts (counts equal by
+`card_rowClassGen_eq_colClassGen`) and the off-diagonal part paired by the total
+swap involution `τ`. -/
+
+/-- The off-diagonal class `S_off^i`: `i, i+1` in different rows *and* columns. -/
+noncomputable def offClassGen (μ : YoungDiagram) (i : ℕ) :
+    Finset (StandardYoungTableau μ) :=
+  Finset.univ.filter (fun T => ¬ sameRowGen i T ∧ ¬ sameColGen i T)
+
+theorem mem_offClassGen {i : ℕ} {T : StandardYoungTableau μ} :
+    T ∈ offClassGen μ i ↔
+      (cellOf T i).1 ≠ (cellOf T (i + 1)).1 ∧ (cellOf T i).2 ≠ (cellOf T (i + 1)).2 := by
+  rw [offClassGen, Finset.mem_filter]
+  exact ⟨fun h => h.2, fun h => ⟨Finset.mem_univ _, h⟩⟩
+
+/-- The **total swap involution** `τ`: the value-swap `i ↔ i+1` on the off-diagonal
+    class, the identity elsewhere. This is the fixed-point-free involution
+    `SeminormalWeight.fullCharacter_two_mul` consumes on `S_off^i`. -/
+noncomputable def tauGen (i : ℕ) (hi : 1 ≤ i) (hi2 : i + 1 ≤ μ.cells.card)
+    (T : StandardYoungTableau μ) : StandardYoungTableau μ :=
+  if h : (cellOf T i).1 ≠ (cellOf T (i + 1)).1 ∧ (cellOf T i).2 ≠ (cellOf T (i + 1)).2 then
+    swapSuccSYT T i h.1 h.2 hi hi2
+  else T
+
+theorem tauGen_of_off (i : ℕ) (hi : 1 ≤ i) (hi2 : i + 1 ≤ μ.cells.card)
+    (T : StandardYoungTableau μ)
+    (h : (cellOf T i).1 ≠ (cellOf T (i + 1)).1 ∧ (cellOf T i).2 ≠ (cellOf T (i + 1)).2) :
+    tauGen i hi hi2 T = swapSuccSYT T i h.1 h.2 hi hi2 := by
+  unfold tauGen; rw [dif_pos h]
+
+theorem cellOf_tauGen_i (i : ℕ) (hi : 1 ≤ i) (hi2 : i + 1 ≤ μ.cells.card)
+    (T : StandardYoungTableau μ)
+    (h : (cellOf T i).1 ≠ (cellOf T (i + 1)).1 ∧ (cellOf T i).2 ≠ (cellOf T (i + 1)).2) :
+    cellOf (tauGen i hi hi2 T) i = cellOf T (i + 1) := by
+  rw [tauGen_of_off i hi hi2 T h]; exact cellOf_swapSuccSYT_i T i h.1 h.2 hi hi2
+
+theorem cellOf_tauGen_i1 (i : ℕ) (hi : 1 ≤ i) (hi2 : i + 1 ≤ μ.cells.card)
+    (T : StandardYoungTableau μ)
+    (h : (cellOf T i).1 ≠ (cellOf T (i + 1)).1 ∧ (cellOf T i).2 ≠ (cellOf T (i + 1)).2) :
+    cellOf (tauGen i hi hi2 T) (i + 1) = cellOf T i := by
+  rw [tauGen_of_off i hi hi2 T h]; exact cellOf_swapSuccSYT_i1 T i h.1 h.2 hi hi2
+
+/-- `τ` maps the off-diagonal class to itself (the swap keeps `i, i+1` off-diagonal). -/
+theorem tauGen_maps_off (i : ℕ) (hi : 1 ≤ i) (hi2 : i + 1 ≤ μ.cells.card)
+    (T : StandardYoungTableau μ) (hT : T ∈ offClassGen μ i) :
+    tauGen i hi hi2 T ∈ offClassGen μ i := by
+  rw [mem_offClassGen] at hT ⊢
+  rw [cellOf_tauGen_i i hi hi2 T hT, cellOf_tauGen_i1 i hi hi2 T hT]
+  exact ⟨fun e => hT.1 e.symm, fun e => hT.2 e.symm⟩
+
+/-- `τ` is an involution (total: on the off-diagonal class it is the double
+    value-swap `swapSucc_involutive`; elsewhere it is the identity). -/
+theorem tauGen_involutive (i : ℕ) (hi : 1 ≤ i) (hi2 : i + 1 ≤ μ.cells.card)
+    (T : StandardYoungTableau μ) :
+    tauGen i hi hi2 (tauGen i hi hi2 T) = T := by
+  by_cases h : (cellOf T i).1 ≠ (cellOf T (i + 1)).1 ∧ (cellOf T i).2 ≠ (cellOf T (i + 1)).2
+  · rw [tauGen_of_off i hi hi2 T h]
+    have hci := cellOf_swapSuccSYT_i T i h.1 h.2 hi hi2
+    have hci1 := cellOf_swapSuccSYT_i1 T i h.1 h.2 hi hi2
+    have h' : (cellOf (swapSuccSYT T i h.1 h.2 hi hi2) i).1
+          ≠ (cellOf (swapSuccSYT T i h.1 h.2 hi hi2) (i + 1)).1
+        ∧ (cellOf (swapSuccSYT T i h.1 h.2 hi hi2) i).2
+          ≠ (cellOf (swapSuccSYT T i h.1 h.2 hi hi2) (i + 1)).2 := by
+      rw [hci, hci1]; exact ⟨fun e => h.1 e.symm, fun e => h.2 e.symm⟩
+    rw [tauGen_of_off i hi hi2 _ h']
+    apply StandardYoungTableau.encode_injective
+    funext c
+    apply Fin.ext
+    show swapSucc i (swapSucc i (T.entry c.1.1 c.1.2)) = T.entry c.1.1 c.1.2
+    exact swapSucc_involutive i _
+  · have hid : tauGen i hi hi2 T = T := by unfold tauGen; rw [dif_neg h]
+    rw [hid, hid]
+
+/-- **The full general-`σ_i` seminormal character** `2·χ_λ(σ_i) = (2|R_row^i| +
+    |S_off^i|)·h`, i.e. `χ_λ(σ_i) = c_λ·h` with `c_λ = |R_row^i| + |S_off^i|/2 ∈ ℤ`,
+    for a self-conjugate shape and any generator `σ_i`. The diagonal counts are
+    equal (`card_rowClassGen_eq_colClassGen`); the off-diagonal class is paired by
+    the total swap involution `τ` (`tauGen`), which negates `ρ`. The hypothesis
+    `hnd` (`q^{2ρ} ≠ 1` on the off-diagonal class — no box on the diagonal) is passed
+    through, exactly as in `SeminormalWeight.fullCharacter_two_mul`. Fully general
+    over any `[Field R]`. -/
+theorem fullCharacterGen_two_mul (h : μ.transpose = μ) (i : ℕ)
+    (hi : 1 ≤ i) (hi2 : i + 1 ≤ μ.cells.card)
+    {R : Type*} [Field R] (q hh : R) (hq : q ≠ 0)
+    (hnd : ∀ T ∈ offClassGen μ i, q ^ (2 * generatorRho T i) ≠ 1) :
+    (2 : R) * (((rowClassGen μ i).card : R) * q + ((colClassGen μ i).card : R) * (hh - q)
+        + ∑ T ∈ offClassGen μ i,
+            SeminormalWeight.seminormalWeight q hh (generatorRho T i))
+      = ((2 * (rowClassGen μ i).card + (offClassGen μ i).card : ℕ) : R) * hh :=
+  SeminormalWeight.fullCharacter_two_mul q hh (rowClassGen μ i) (colClassGen μ i)
+    (offClassGen μ i) (fun T => generatorRho T i) (tauGen i hi hi2)
+    (card_rowClassGen_eq_colClassGen h i hi hi2)
+    (fun T hT => tauGen_maps_off i hi hi2 T hT)
+    (fun T _ => tauGen_involutive i hi hi2 T)
+    (fun T hT => by
+      rw [tauGen_of_off i hi hi2 T (mem_offClassGen.mp hT)]
+      exact generatorRho_swapSuccSYT T i _ _ hi hi2)
+    hq hnd
+
 end Closure
 
 end QOU.BraidKnot.SeminormalCharacterConnector

@@ -219,3 +219,42 @@ self-conjugate involution on `SYT(μ)`, `card_rowClass_eq_colClass`
 `SeminormalWeight.fullCharacter_two_mul` at `S_off = ∅`. All lean-direct exit 0.
 Remaining toward `symbolic_character_table` (bean `qou-tqab`): the per-shape
 `|R_row|` counts (`c_λ ∈ {1,3,8,10}`) and the general-`σ_i` off-diagonal case.
+
+## 2026-07-18 — #3978 per-shape count closed: `c_λ = #SYT(μ)/2` (sorry-free)
+
+`SeminormalCharacterConnector.lean` (branch `seminormal-clambda-syt-count`,
+follow-on to merged #3799). Closes the `|R_row|` opaque count *in closed form*
+with **no enumeration** of tableaux. For `σ₁` the pair `1,2` sits in the corner:
+`cellOf_one` (`1` at `(0,0)`, via `entry_le` + `entry_zero_zero_eq_one`) and
+`cellOf_two_coord_zero` (`2` at `(0,1)` or `(1,0)`) give the dichotomy
+`sameRow12_or_sameCol12` + `not_sameRow12_and_sameCol12`, hence
+`rowClass_union_colClass` (disjoint) ⇒ `|R_row| + |R_col| = #SYT(μ)`. With the
+merged `card_rowClass_eq_colClass` (`|R_row| = |R_col|`):
+
+- `two_mul_card_rowClass_eq_card`: `2·|R_row| = #SYT(μ)` (i.e. `c_λ = #SYT(μ)/2`);
+- `two_mul_sigmaOneCharacter_eq_card`: `2·χ_λ(σ₁) = #SYT(μ)·h`.
+
+11 new theorems, sorry-free, lean-direct exit 0. Remaining toward the *tabulated*
+`c_λ ∈ {1,3,8,10}` (bean `qou-tqab`): a closed form / recursion for `#SYT(μ)` on
+self-conjugate shapes (Mathlib has no HLF at the pinned toolchain), and the
+general-`σ_i` off-diagonal case.
+
+### #3978 (cont.) — general-`σ_i` full character `2·χ = (2|R_row^i|+|S_off^i|)·h`
+
+The general single generator `σ_i` closed on the same PR (three commits):
+
+1. **Diagonal count for every `σ_i`** — `sameRowGen`/`sameColGen`/`rowClassGen`/
+   `colClassGen` + `card_rowClassGen_eq_colClassGen` (`|R_row^i| = |R_col^i|` via
+   `selfTranspose`, which is already general in the entry `k`).
+2. **Off-diagonal swap involution core** — `swapSucc` (value transposition
+   `i↔i+1`) + `swapSuccSsyt`/`swapSuccSYT` (a valid `StandardYoungTableau` exactly
+   when `i,i+1` are off-diagonal; the classical elementary-transposition fact,
+   with the semistandard-preservation proof as the crux), `cellOf_swapSuccSYT_{i,i1}`
+   (cell exchange), `generatorRho_swapSuccSYT` (`ρ` negation).
+3. **Full character** — `offClassGen` (S_off^i), the total involution `tauGen`
+   (swap on S_off, identity elsewhere) with maps-off / involution / ρ-negation, and
+   `fullCharacterGen_two_mul`: `2·χ_λ(σ_i) = (2|R_row^i| + |S_off^i|)·h` — the
+   complete abstract `symbolic_character_table` form for a single generator, over
+   any `[Field R]`, `hnd` (`q^{2ρ}≠1`) passed through. All sorry-free, lean-direct
+   exit 0. Remaining (bean `qou-tqab`): the per-shape `#SYT(μ)` / `|R_row^i|` counts
+   (→ tabulated `c_λ ∈ {1,3,8,10}`), and multi-generator products.
