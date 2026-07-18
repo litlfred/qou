@@ -1,0 +1,105 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-18T19:16:25.442049+00:00",
+  "commitSha": "dcaacd7c8b37d11259f72b1f9c0b7202b80b8d75",
+  "assertions": [
+    {
+      "name": "gate_engine_1cable_jones",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "TL engine reproduces corpus V(4₁), V(5₂) at 3 q-points"
+    },
+    {
+      "name": "gate_41_2cable_matches_trusted_tower",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "4₁ 2-cable J'_3 (framing-free) = trusted Masbaum p=−1 tower at 3 q-points"
+    },
+    {
+      "name": "gate_trefoil_framing_calibration",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "trefoil 2-cable framing factor is a consistent integer power of q across test points"
+    },
+    {
+      "name": "certified_41_null_at_qstar",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "B₃(4₁;q*) = 0 to 1e-25 via the validated cable — amphichiral control"
+    },
+    {
+      "name": "certified_N3_no_qstar_zero",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "B₃(5₂;q) via the validated definitional cable: 0 sign changes on q*±2e-8, B₃(q*) ≠ 0 — capstone constraint (2) fails on the CERTIFIED N=3 categorical face"
+    },
+    {
+      "name": "arbitration_decisive",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "the cable agrees with exactly one of {Masbaum-p=2, GZ-(7.9)}"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "qbeta-5two-n3-cable-arbitration",
+  "scriptFile": "qbeta_5two_n3_cable_arbitration_probe.py",
+  "scriptHash": "e1522920cc61",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Definitional N=3 arbitration of the Masbaum-p=2 vs GZ-(7.9) 5₂ discrepancy: J'_3 via a generic TL_n transfer engine (Catalan bases 2..132), e₂ = 1−U/δ inserted in the 2-cabled braid closure. Gates: the engine reproduces the corpus TL₃ Jones (1-cable); the 4₁ 2-cable (w=0, framing-free) equals the trusted p=−1 tower; the trefoil 2-cable calibrates a consistent integer-power framing factor. Arbitration: the cable J'_3(5₂) vs the Masbaum p=2 tower at real q, and vs GZ eq-(7.9) modulus at q=e^{2πi/3}. auditOnly.",
+  "contentBlock": "prop:phi-b-unitary-bar-odd",
+  "data": {
+    "arbitration_A_real_q": {
+      "1.11": {
+        "cable_raw": "(0.275989980407 + 0.0j)",
+        "best_rel_vs_tower": "0.008759"
+      },
+      "0.93": {
+        "cable_raw": "(2.55770408992 + 0.0j)",
+        "best_rel_vs_tower": "0.000123"
+      },
+      "1.037": {
+        "cable_raw": "(0.504486104428 + 0.0j)",
+        "best_rel_vs_tower": "8.532e-6"
+      }
+    },
+    "arbitration_B_root": {
+      "cable_modulus": "20.9523267145919",
+      "gz79_modulus": "20.952326839757",
+      "masbaum_tower_modulus": "16.0934769394311"
+    },
+    "framing_power": 4,
+    "certified_N3_qstar_test": {
+      "B3_qstar": "0.393568380374",
+      "sign_changes": 0,
+      "rel_slope": "8.4052e+01",
+      "note": "zero-framed definitional J'_3 via the 1e-30-validated cable; supersedes the UNCERTIFIED tower diagnostic at N=3"
+    },
+    "verdict": "GZ-(7.9) WINS: the definitional TL-cable J'_3(5₂) agrees with GZ and refutes the Masbaum Thm-5.1 p=2 assembly as printed/transcribed — the fault is upstream in that assembly. Unblocks bean qou-3yxn via the GZ/cable route."
+  }
+}
