@@ -1,0 +1,49 @@
+{
+  "engine": "python (exact; witness-fed R10)",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-07-18T08:24:31.675985+00:00",
+  "commitSha": "263980b2d36b99a54db15352e6da76d334aa05ee",
+  "assertions": [
+    {
+      "name": "interior_max_outside_monotone_cone",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "Farkas certificate: φ=e_{k=4}−e_{k=3} is ≥0 on every non-decreasing basis function hence on the whole non-negative additive cone, but φ(miss)=miss(4)−miss(3)<0 on all three ladders ⇒ miss ∉ monotone cone (scope-(b), proved invariant). The missing channel is non-monotone (resonant); the fall is A_light-dependent (not separable). No fit."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 15,
+  "computation": "r11b-interior-max-monotone-cone-certificate",
+  "scriptFile": "r11b_interior_max_monotone_cone_certificate.py",
+  "scriptHash": "996ded6e5ddd",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "R11-b (z2bn/round-11): Farkas certificate that the ladder-miss k=3 interior maximum is outside the monotone additive cone. For any basis of functions non-decreasing in k (const 1, k, C(k,2), C(k,3), k·A_light, …) the functional φ=e_{k=4}−e_{k=3} is ≥0, so ≥0 on the whole non-negative cone; but miss(4)−miss(3)<0 on all three (kα)+X ladders (n −1.46, d −4.19, t −5.37 MeV), so φ separates the miss from the cone. This is a scope-(b) exclusion (proved invariant monotone⇒φ≥0; the (k=3,k=4) decrease is the Farkas witness), not a scope-(a) near-miss: the missing binding channel is necessarily NON-monotone in k (a resonance). The fall ratio miss(4)/miss(3)=0.485/0.281/0.333 is A_light-dependent ⇒ not a separable parity factor; with R11-a's A_light-dependent k=2 envelope the miss is irreducibly 2D in (k,A_light). Redirects per-isotope closure to the operator-valued branching combiner / confinement SDP; formalize-first target = the R11-b order lemma. Consumes merged R10 witness (no recompute). No fit; magnitudes not interpreted.",
+  "data": {
+    "interior_max_all_ladders": true,
+    "phi_miss_MeV": {
+      "A1": -1.4605426999999933,
+      "A2": -4.185934849999993,
+      "A3": -5.3692798999999996
+    },
+    "fall_ratio_miss4_over_miss3": {
+      "A1": 0.485358081465385,
+      "A2": 0.28054550589992633,
+      "A3": 0.33288476552239965
+    },
+    "cone_phi_nonnegative": true,
+    "fall_separable_parity_factor": false
+  }
+}
