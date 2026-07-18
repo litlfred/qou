@@ -1,0 +1,65 @@
+{
+  "computation": "qbeta-aomega-stokes3-tracefield",
+  "description": "A_omega odd channel (bean qou-t3jv): (a) verifies the exact arithmetic tying the 4_1 '3' across channels — tetra shape e^(i pi/3), trace field Q(sqrt-3) disc -3, Vol=2 Im Li_2(e^(i pi/3)), and the even<->odd bridge sqrt(-3)=i sqrt3 with Q(sqrt3),Q(sqrt-3) both in Q(zeta12) sharing |disc|=3; (b) reads the 4_1 Stokes constants directly from GGM 2012.00062 (Eq 96/98, pymupdf): {3,4}, the DT/BPS invariants. Verdict: the 'Stokes -3 = trace-field disc' identification is REFUTED (scope-a) — the co-occurring 4 shows the Stokes data is the DT/BPS spectrum of T[4_1], not the field discriminant. No fit; no c_k wired; no A_omega value claimed. Scope-(a).",
+  "audit_only": true,
+  "verified_arithmetic": {
+    "V1_tetrahedron_shape_exp_i_pi_3": true,
+    "V2_trace_field_disc_minus3": true,
+    "V2_sqrt_minus3_eq_i_sqrt3": true,
+    "V3_vol41_2cl2_pi3": true,
+    "V4_sqrt3_and_isqrt3_in_Q_zeta12": true
+  },
+  "ggm_stokes_constants": {
+    "matrix_eq98": [
+      [
+        0,
+        4,
+        3
+      ],
+      [
+        -4,
+        0,
+        -3
+      ],
+      [
+        -3,
+        3,
+        0
+      ]
+    ],
+    "distinct_abs_values": [
+      3,
+      4
+    ],
+    "identified_as": "Donaldson-Thomas / BPS invariants (paper §1.2, §5.5)"
+  },
+  "disc_identification": {
+    "claim": "the load-bearing Stokes integer -3 (S(sigma3,sigma1)) equals disc(Q(sqrt-3)) = -3",
+    "status": "REFUTED (scope-a): the 4_1 Stokes constants are {3, 4}, not just 3",
+    "reason": "GGM Eq (96)/(98) give the 4_1 off-diagonal Stokes matrix [[0,4,3],[-4,0,-3],[-3,3,0]] — the DT/BPS invariants are {3,4}. The -3 is the (sigma3,sigma1) DT invariant, but a 4 co-occurs ((sigma1,sigma2)). If -3 were the trace-field discriminant, the co-occurring 4 has no discriminant meaning. The Stokes data is the DT/BPS spectrum of the 3d N=2 theory T[4_1] (Conjecture 4: S+ = rotated 3D-index), NOT the number-field discriminant. Matching the single -3 to disc(Q(sqrt-3)) was the small-integer coincidence the anti-numerology rule guards against.",
+    "scope_note": "scope-(a): refutes the DISC-identification of the Stokes -3; does NOT diminish that Q(sqrt-3) is the 4_1 trace field (V1-V4 stand).",
+    "what_still_stands": "the arithmetic bridge (V1-V4): Q(sqrt-3) trace field, Q(sqrt3) even saddle field, sqrt(-3)=i sqrt3, both in Q(zeta12). The A_omega dictionary needs the DT spectrum {3,4} (rotated 3D-index), which #3872's annihilator / 3D-index route is the correct tool for — not a discriminant identity."
+  },
+  "cross_refs": {
+    "even_saddle_lean": "QOU/QBeta/Qsqrt3SaddleArithmetic.lean (kappa_1=11 sqrt3 pi/108, b_1=sqrt3 pi/54)",
+    "trace_field": "docs/audits/2026-07-11-fmap-action-qsqrt3-saddle-block.md; #3571",
+    "stokes_source": "GGM 2012.00062 Eq 96/98 (read directly); PR #3813, #3872 (A_omega scouts)"
+  },
+  "assertions": [
+    {
+      "label": "V1-V4 exact arithmetic all verified",
+      "passed": true
+    },
+    {
+      "label": "GGM 4_1 Stokes constants read as {3,4} (DT invariants)",
+      "passed": true
+    },
+    {
+      "label": "disc-identification REFUTED scope-a (co-occurring 4)",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "scriptFile": "qbeta_aomega_stokes3_tracefield_probe.py",
+  "durationMs": 130
+}
