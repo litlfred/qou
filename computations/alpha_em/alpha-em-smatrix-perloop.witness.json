@@ -1,0 +1,122 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-18T09:24:43.374935+00:00",
+  "commitSha": "5cebb9145994b0b1c715a8b5d09e05da1807e0ad",
+  "assertions": [
+    {
+      "name": "controls_reproduce_3822_genuine_smatrix",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "C1..C5: D(2,3,5)=2, S²=1, vacuum row=Cor.12 weights, Σ|S0i|²=1, ratio=φ"
+    },
+    {
+      "name": "S00_equals_reciprocal_total_quantum_dimension",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "S_{00} = 1/𝒟 with 𝒟 = √(Σ d_i²) reproduced to 1e-40"
+    },
+    {
+      "name": "total_quantum_dimension_closed_form_sqrt_5plussqrt5_over2",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "Σd_i²=(5+√5)/2, 𝒟=√((5+√5)/2) — algebraic in ℚ(√5), matched to 1e-40"
+    },
+    {
+      "name": "D_is_neither_b1_nor_pi_b1_FALSIFIED_value_axis",
+      "computed": 0.0,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "𝒟≈1.902, Σd_i²≈3.618 ∉ {8, 8π=25.13}; #3853 n=5 reading 11.357 also ∉ — the naive S₀₀=1/D shared-wall value identification is falsified"
+    },
+    {
+      "name": "smatrix_carries_no_bare_pi_structural_pi_axis",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "source": "𝒟,S₀₀ ∈ ℚ(√5) algebraic (cyclotomic quantum dims) ⇒ S-matrix cannot supply the bare π of 1/(π·b₁); π is archimedean (1-loop det 4π²)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 15,
+  "computation": "alpha-em-smatrix-perloop",
+  "scriptFile": "alpha_em_smatrix_perloop_probe.py",
+  "scriptHash": "93f9bfefbe8a",
+  "scriptCommitSha": "e3eee9271ba401ec99cfbfd388808d89948db0fd",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Tests the #3870/#3882 redirect: does the RT/WRT modular-S-matrix total quantum dimension D=√(Σd_i²) (S_{00}=1/D) yield the α_EM per-loop measure 1/(π·b₁)=1/(8π), b₁=dim H¹(M_Bring)=8? REUSES #3822's machine-validated genuine Σ(2,3,5) S-matrix (Hikami math-ph/0405028, eq. 3.8). The genuine family has D(2,3,5)=2 primary fields; quantum dims are the icosahedral/Fibonacci pair {1,φ}, so Σd_i²=(5+√5)/2≈3.618 and 𝒟=√((5+√5)/2)≈1.902 — ALGEBRAIC in ℚ(√5), NO π. Per-axis: (i) area-free ✓ (√Reidemeister-torsion magnitudes); (ii) π-power −1 ✗ (b)-STRUCTURAL — every MTC quantum dimension is a cyclotomic algebraic integer, so S_{00}=1/𝒟 carries no bare π for ANY root-of-unity S-matrix; (iii) reciprocal ✓ FORM (S_{00}=1/𝒟 IS the 1/(total-count) democratic average the redirect predicted) but ✗ VALUE (𝒟≈1.902≠8, ≠8π≈25.13; only 2 primary fields, far too few for the b₁=8 count). Cross-check: the other natural reading (n=5 Hecke hook-content at q₀, #3853) gives 11.357 — also ≠8/8π (robust double-negative). Scope-(a) NEGATIVE: the reciprocal 1/D FORM is confirmed, but the bare π is ARCHIMEDEAN (1-loop det 4π² / heat-kernel), NOT categorical — the only π's in the RT normalization are unit-modulus framing/CS phases (e^{πi/4}, CS=−1/120,−49/120, surgery Gauss sum). This DECIDES the #3853 gate: 𝒟 algebraic ⇒ the 'D=π·b₁=8π (π categorical)' branch is structurally impossible; π is the universal archimedean 1-loop factor. No CODATA read, no convention tuned to 8π. No fit; no α_k wired; 1/(8π) stays a phase-4 identification.",
+  "contentBlock": "prop:alpha-em-categorical-trace",
+  "auditOnly": "docs/audits/2026-07-18-alpha-em-smatrix-perloop-quantum-dimension.md",
+  "parameters": {
+    "compute_dps": 50,
+    "b1_dim_H1_Bring": 8,
+    "target_measure": "1/(pi*b1) = 1/(8*pi)",
+    "q0_computations_layer": "1.1099785955541805"
+  },
+  "data": {
+    "reused_smatrix": {
+      "source": "#3822 keystone_valuemap_genuine_smatrix_s013.s_entry (Hikami eq. 3.8)",
+      "n_primary_fields_D_235": 2,
+      "S00": "0.525731112119133606025669084848",
+      "S01": "0.850650808352039932181540497063",
+      "vacuum_row_ratio": "1.6180339887498948482",
+      "golden_ratio": "1.6180339887498948482"
+    },
+    "total_quantum_dimension": {
+      "quantum_dims": [
+        "1",
+        "1.6180339887498948482"
+      ],
+      "sum_d_squared": "3.61803398874989484820458683437",
+      "sum_d_squared_closed_form": "(5+sqrt(5))/2 = 2+phi",
+      "D_total": "1.90211303259030714423287866676",
+      "D_total_closed_form": "sqrt((5+sqrt(5))/2)",
+      "S00_equals_inv_D": true,
+      "field": "Q(sqrt5) — algebraic, no pi"
+    },
+    "comparison_to_targets": {
+      "b1": 8,
+      "pi_b1_8pi": "25.132741228718345908",
+      "D_over_8": "0.237764129074",
+      "sumd2_over_8": "0.452254248594",
+      "D_over_8pi": "0.0756826728641",
+      "sumd2_over_8pi": "0.143956998396",
+      "D_equals_8_or_8pi": false
+    },
+    "cross_check_n5_hecke_hookcontent": {
+      "source": "#3853 alpha_em_2I_total_quantum_dimension_gate_test_probe",
+      "D_q0": "11.356887116006046877",
+      "equals_8_or_8pi": false,
+      "note": "the OTHER natural keystone-S-matrix reading; also misses 8 and 8π"
+    },
+    "three_axis_verdict": {
+      "axis_i_area_free": "PASS — sqrt(Reidemeister torsion) magnitudes, topological",
+      "axis_ii_pi_power_minus1": "FAIL (b)-structural — D,S00 in Q(sqrt5) algebraic, no bare pi for ANY root-of-unity S-matrix (cyclotomic quantum dimensions)",
+      "axis_iii_reciprocal": "FORM PASS (S00=1/D democratic average) / VALUE FAIL (D~1.902 != b1=8, != 8pi)",
+      "where_pi_must_come_from": "archimedean 1-loop determinant 4pi^2 / heat-kernel (log(4pi^2) in zeta'_Delta0(0)); the RT normalization's only pi's are unit-modulus framing/CS phases (magnitude 1)",
+      "decides_3853_gate": "D algebraic => 'D=pi*b1=8pi (pi categorical)' branch structurally impossible; pi is universal archimedean 1-loop factor"
+    },
+    "scope": {
+      "classification": "(a) scope-limited negative on VALUE + (b) structural exclusion on pi-axis",
+      "not_excluded": "a LARGER MTC (more primary fields than the D=2 Sigma(2,3,5) family) whose total quantum dimension equals b1=8 could still supply the reciprocal count; but no S-matrix can supply the bare pi (that is archimedean)"
+    }
+  }
+}
