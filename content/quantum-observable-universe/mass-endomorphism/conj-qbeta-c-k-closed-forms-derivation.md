@@ -8,7 +8,7 @@ Three formal derivation paths stand open ([`docs/audits/-qbeta-ladder-closure-pa
 
 ## Precision
 
-The baseline $\mathfrak{Q}_\beta$ categorical prediction already achieves a $+6.02$ ppb residual at $N=3$, satisfying the 7.8 ppb L2 target. The higher-order corrections ($c_4$ to $c_7$) drive the residual below $1$ ppb. This pushes precision into the research-grade regime, exceeding experimental requirements by two orders of magnitude.
+The baseline $\mathfrak{Q}_\beta$ categorical prediction achieves a $+6.02$ ppb residual at $N=3$ **against the muon-anchored (ideal-math) $q_0$**. This result has **not** been refreshed since the 2026-05-28 proton-anchor re-pin; under the **experimental (proton-pinned) $q_0$** — the operative L2 convention — $\mathfrak{Q}_\beta$ currently **misses the 7.8 ppb L2 target by $\approx 164\times$** (per the L2 dashboard). The higher-order corrections ($c_4$ to $c_7$) were tuned to the muon-anchored ladder; their proton-anchored precision is open, not established.
 
 Under the three-calibration discipline, we flag these empirical fits as conditional inputs. Any prediction relying on them must declare this dependency explicitly.
 
@@ -25,4 +25,4 @@ c_6 extracted = +3.4976   (matches empirical sweep exactly)
 c_7 extracted = +57.149   (matches empirical sweep exactly)
 ```
 
-The empirical $c_k$ from `binding_q_target_sweep` are not arbitrary fits. They are tautologically determined by enforcing the precision-ladder structure against CODATA $\mathfrak{Q}_\beta$ values. These conjectures supply the categorical interpretation of those extracted constants.
+The empirical $c_k$ from `binding_q_target_sweep` are **extracted (fit) against CODATA $\mathfrak{Q}_\beta$ values** by enforcing the precision-ladder structure — a calibration tautology, **not** a derivation. These conjectures supply a categorical *interpretation* of the extracted constants; they do not derive them.
