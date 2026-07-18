@@ -1,0 +1,46 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-18T08:25:15.976692+00:00",
+  "commitSha": "4c70433c176f87dcd2219599fc03f9e7804f58a1",
+  "assertions": [
+    {
+      "name": "A1_exact_but_not_ohtsuki_kappa1",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "A₁ = 1/3 + 17√3/108 i exact (50+ dps); A₁ ≠ Ohtsuki κ₁=11√3π/108 (best rel 0.633) ⇒ V=Li2(z)-Li2(1/z) is not the 4₁ state integral; #3854's A₁ mis-identified as the b-dictionary — the κ-tower is the physical object. Scope-(a) correction; no c_k wired."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 18,
+  "computation": "qbeta-phib-a1-vs-ohtsuki-kappa1",
+  "scriptFile": "qbeta_phib_a1_vs_ohtsuki_kappa1.py",
+  "scriptHash": "4758ef90d47c",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Self-review correction of the merged Φ_b 2-loop (#3854/#3859). The saddle A₁ of V=Li2(z)-Li2(1/z) at z*=e^{iπ/3} is EXACT: A₁ = 1/3 + (17√3/108)i (50+ dps). But A₁ is NOT the 4₁ Ohtsuki 2-loop invariant κ₁ = 11√3π/108 (corpus Kashaev fit) under any standard normalization (ℏ=2πi/N gives A₁·2πi = −1.713+2.094i ≠ real κ₁; best rel match ~0.6). Since a correct 4₁ state integral's 2-loop equals the Ohtsuki κ₁ (Ohtsuki = perturbative-CS = state-integral loop expansion), V=Li2(z)-Li2(1/z) is NOT the 4₁ state integral — it matches Vol+torsion (the #3854 G1/G2 gates, necessary not sufficient) but diverges at 2-loop. CORRECTION (scope-(a), re-scope not delete): #3854's A₁ is a clean but MIS-IDENTIFIED object; the physical b-dictionary is the corpus κ-tower already derived. A₁↔d_k resolves: A₁ is not a loop invariant of the physical integral. No c_k wired; L2 2/7. Retires the Φ_b-2-loop b-dictionary line.",
+  "data": {
+    "A1": [
+      0.3333333333333333,
+      0.27263762711732326
+    ],
+    "A1_exact_form": "1/3 + (17*sqrt(3)/108)*i",
+    "A1_re_is_one_third": true,
+    "A1_im_is_17sqrt3_over_108": true,
+    "ohtsuki_kappa1": 0.5542164724048999,
+    "best_rel_match_to_kappa1": 0.6331199474749483,
+    "A1_equals_kappa1": false
+  }
+}
