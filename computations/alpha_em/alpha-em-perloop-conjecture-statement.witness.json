@@ -1,0 +1,44 @@
+{
+  "computation": "alpha-em-perloop-conjecture-statement",
+  "description": "States the alpha_EM 1/pi wall as a precise two-clause conjecture (A: per-mode weight = universal heat-kernel unit a0=|chi|/(2*Area); B: multiplicity = 2 = Hecke channels) and machine-checks the exact skeleton: GB identity all-genus (b1 only at g=4), McKean-Singer constant chi/6=-1 on Bring, multiplicity discriminant m=2. Clauses A+B stay conjectural (the wall). Dilog implication runs dilog->wall, not conversely. Nothing wired.",
+  "auditOnly": "docs/audits/2026-07-18-alpha-em-perloop-conjecture-statement.md",
+  "tier": "symbolic-exact skeleton (sympy) + literature anchors (McKean-Singer 1967; D'Hoker-Phong 1986 / Sarnak 1987 in the audit); Clauses A/B conjectural",
+  "computedAt": "2026-07-18T13:38:19.510480+00:00",
+  "commitSha": "71b53e2ddb1949971e1c5c9b208d8e752d20fe30",
+  "engine": "sympy",
+  "engineVersion": "1.14.0",
+  "scriptFile": "alpha_em_perloop_conjecture_statement_probe.py",
+  "scriptHash": "dcf83c5fe246",
+  "assertions": [
+    {
+      "name": "gb_identity_all_genus_b1_only_g4",
+      "passed": true,
+      "detail": "|chi|/(4*Area) - 1/(8pi) == 0 identically in g (Area=2pi|chi|), while 1/(pi*b1)=1/(8pi) has unique solution g=[4] \u2014 corroborates main's GB adjudication (ba606720e): the measure is a (chi,Area) invariant; b1 is a g=4 coincidence"
+    },
+    {
+      "name": "mckean_singer_constant_term_bring_minus1",
+      "passed": true,
+      "detail": "Seeley-DeWitt a1 = IntK/(12pi) = chi/6 (McKean-Singer 1967); Bring (g=4, chi=-6) gives heat-trace constant term EXACTLY -1 \u2014 the unique-S5 genus-4 curve sits at the integer anchor of the a1 coefficient"
+    },
+    {
+      "name": "multiplicity_discriminant_m2_not_b1",
+      "passed": true,
+      "detail": "measure = 1/(m*4pi) matches the working 1/(8pi) iff m=2 (m=b1=8 would give 1/(32pi), ~4x off, excluded by the merged D*=8.003 forcedness). m=2 is DATA-selected; Clause B (m=2 == the two Hecke channels e+/e-) is the open derivation \u2014 this is a scope-(a) statement, not a derivation"
+    }
+  ],
+  "allPassed": true,
+  "result": {
+    "conjecture": "measure = (1/2)*a0; A: a0 = 1/(4pi) = |chi|/(2*Area) universal; B: multiplicity = 2 = Hecke channels (e+, e-)",
+    "gb_identity_all_genus": true,
+    "b1_reading_unique_genus": 4,
+    "mckean_singer_a1_bring": -1,
+    "multiplicity_selected": 2,
+    "dilog_implication": "wall does NOT imply conj:dilogarithm-archimedean-limit (R3 consumes dilog as input)",
+    "verdict": "PER-LOOP WALL STATED AS A PRECISE TWO-CLAUSE CONJECTURE (scope-(a); no fit, nothing wired, 1/(8pi) stays phase-4): measure = (1/2)*a0 with Clause A (per-mode weight = universal heat-kernel unit a0 = 1/(4pi) = |chi|/(2*Area), GB-geometrized) and Clause B (multiplicity EXACTLY 2 = the Hecke channels e+/e-). Machine-checked skeleton: the GB identity holds for ALL genus (b1 reading only at g=4, corroborating main's adjudication); the McKean-Singer heat-trace constant is chi/6 = -1 EXACTLY on Bring; the multiplicity discriminant selects m=2 (m=b1 excluded ~4x). Clauses A and B remain CONJECTURAL \u2014 they are the wall. IMPLICATION: proving them does NOT prove conj:dilogarithm-archimedean-limit (R3 consumes the dilog as input; arrow runs dilog->wall). NO tier change."
+  },
+  "context": {
+    "follows": "main ba606720e/2b562bc7d (GB adjudication, sorry-free Lean) + dd55a5748 (R1 canonical ruling) + #3810 (channel split, owns the 1/2)",
+    "literature": "McKean-Singer 1967 (a1=chi/6); D'Hoker-Phong CMP 1986 + Sarnak CMP 1987 (det'Delta on hyperbolic surfaces = exp(c*chi)*Z'(1): established spectral normalizations are chi-objects, corroborating the GB adjudication); Wilms arXiv:1605.00847 / Faltings delta / Bost (the polarized-Jacobian theta determinant framework for the deferred genus-4 Epstein piece); Zagier/ Bloch-Wigner (the dilog regulator side of R3)",
+    "scope_guard": "states + checks the skeleton; does NOT derive Clause A or B; no fit; nothing wired; 1/(8pi) stays phase-4 (R1 canonical)"
+  }
+}
