@@ -1,12 +1,12 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-18T10:23:06.876921+00:00",
-  "commitSha": "d1fd0f757ef69719d02c450a7394191250ad97df",
+  "computedAt": "2026-07-18T10:29:45.077706+00:00",
+  "commitSha": "2a1c39ec459b3a3576301c3b1e12b4a5db6b2a60",
   "assertions": [
     {
       "name": "no_missing_provenance",
-      "computed": 256,
+      "computed": 253,
       "expected": 0,
       "passed": false,
       "tolerance": 0,
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 15,
+  "durationMs": 10,
   "computation": "witness-provenance-audit",
   "scriptFile": "witness_provenance_audit.py",
   "scriptHash": "1abb80bb6c90",
@@ -48,11 +48,11 @@
   "data": {
     "counts": {
       "total_scanned": 1955,
-      "prov_ok": 1639,
+      "prov_ok": 1642,
       "prov_audit_exempt": 59,
-      "prov_missing": 256,
+      "prov_missing": 253,
       "prov_parse_error": 1,
-      "completeness_ratio": 0.8685421994884911
+      "completeness_ratio": 0.870076726342711
     },
     "by_verdict": {
       "PROV_OK": [
@@ -1869,6 +1869,10 @@
           "missing_fields": []
         },
         {
+          "witness": "alpha-cluster-volume-additivity.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "carrier-saturation-mechanism.witness.json",
           "missing_fields": []
         },
@@ -3053,6 +3057,10 @@
           "missing_fields": []
         },
         {
+          "witness": "markov-trace-weights-wenzl.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "mass-endomorphism.witness.json",
           "missing_fields": []
         },
@@ -4146,6 +4154,10 @@
         },
         {
           "witness": "habiro-frobenius-probe.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "he4-9-3-interface-operator-probe.witness.json",
           "missing_fields": []
         },
         {
@@ -7034,13 +7046,6 @@
           ]
         },
         {
-          "witness": "alpha-cluster-volume-additivity.witness.json",
-          "missing_fields": [
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
           "witness": "deltalambda-extensivity-gap-synthesis.witness.json",
           "missing_fields": [
             "scriptFile",
@@ -7572,14 +7577,6 @@
           ]
         },
         {
-          "witness": "markov-trace-weights-wenzl.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
           "witness": "mass-formula-6term.witness.json",
           "missing_fields": [
             "engine",
@@ -7906,13 +7903,6 @@
         {
           "witness": "delta-lambda-m-pi-constraint-probe.witness.json",
           "missing_fields": [
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "he4-9-3-interface-operator-probe.witness.json",
-          "missing_fields": [
-            "scriptFile",
             "commitSha"
           ]
         },

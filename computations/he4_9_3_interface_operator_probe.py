@@ -4,6 +4,8 @@ Computes the per-block A^(9,3)_{ξν}(I) interface operator for A=4,
 targeting the (2,1) block of ν (S3) which corresponds to the h^4 = -3/4
 coefficient of the Borromean H3(q) Markov trace (S5-SO3 fiber action).
 """
+import time as _time  # noqa: E402 — wall-clock anchor for witness durationMs
+_T0 = _time.monotonic()
 import mpmath as mp
 mp.mp.dps = 60
 
@@ -69,8 +71,14 @@ def run_probe():
         "description": "Option E PROBE 2 A=4 interface operator traces for dominant partitions (nu=(2,1) block).",
         "results": {str(lam): float(total_trace) for lam in results.keys()}
     }
-    with open("computations/probes/he4-9-3-interface-operator-probe.witness.json", "w") as f:
-        json.dump(witness, f, indent=2)
+    import sys as _sys  # noqa: E402 — P30 rollup (bean cmiy)
+    _sys.path.insert(0, str(Path(__file__).parent / "substrate"))
+    from witness_base import WitnessBuilder  # noqa: E402
+    WitnessBuilder.wrap_legacy(
+        "he4-9-3-interface-operator-probe", witness,
+        script_path=__file__, engine="mpmath", start_time=_T0,
+        output_dir=str(Path(__file__).parent / "probes"),
+    ).save()
     print("Wrote computations/probes/he4-9-3-interface-operator-probe.witness.json")
 
 

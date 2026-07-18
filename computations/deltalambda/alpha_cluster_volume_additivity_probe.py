@@ -326,6 +326,11 @@ def main() -> int:
         "gap_isotopes_covered": GAP_ISOTOPES,
     }
     wit["allPassed"] = all(a["passed"] for a in wit["assertions"])
+    import sys as _sys  # noqa: E402 — P30 rollup (bean cmiy)
+    _sys.path.insert(0, str(_HERE.parent / "substrate"))
+    from witness_base import WitnessBuilder  # noqa: E402
+    WitnessBuilder.stamp_staleness_metadata(wit, script_path=__file__, engine="mpmath")
+    wit["scriptFile"] = Path(__file__).name
     out = _HERE / "alpha-cluster-volume-additivity.witness.json"
     json.dump(wit, open(out, "w"), indent=1)
     print(f"\nwitness -> {out.name}   allPassed: {wit['allPassed']}")

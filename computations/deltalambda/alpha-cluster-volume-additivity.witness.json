@@ -2,8 +2,8 @@
  "computation": "alpha-cluster-volume-additivity",
  "description": "A>=5 atom->knot rule constraint quantification + alpha-cluster volume-additivity test: exact AME2020 back-outs, supra-linearity of the linear-chain cluster measure C(A+1,3) vs linear B, the p^Z n^N ordering gap (unassigned ppp/nnn carriers), and zero-fit additivity predictions for 6Li/7Li/8Be/9Be/11B/12C/14N/16O/19F from A<=4 cluster values. Research-queue item research-atom-to-knot-rule-A5plus.",
  "audit_only": true,
- "computedAt": "2026-07-13T20:39:49.704785+00:00",
- "engine": "mpmath (symbolic-exact arithmetic; no census scan)",
+ "computedAt": "2026-07-18T10:28:46.474581+00:00",
+ "engine": "mpmath",
  "inputs": {
   "m_e_MeV": {
    "value": 0.51099895069,
@@ -275,5 +275,11 @@
   "14N",
   "19F"
  ],
- "allPassed": true
+ "allPassed": true,
+ "scriptHash": "990556ad9bc6",
+ "scriptCommitSha": "ffeca233cfddd57ef58764212cca940eda62a0a5",
+ "commitSha": "2a1c39ec459b3a3576301c3b1e12b4a5db6b2a60",
+ "durationMs": 0,
+ "engineVersion": "mpmath 1.3.0",
+ "scriptFile": "alpha_cluster_volume_additivity_probe.py"
 }
