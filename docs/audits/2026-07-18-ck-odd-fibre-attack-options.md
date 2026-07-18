@@ -74,6 +74,29 @@ lattice, branch-point tuning, ratio/W_λ routes (prior scope-(b)); route 3's
 substrate-q₀ is not session-closable (missing categorical level-N selection
 principle — the open problem itself).
 
+## Session results (updated as attacks land)
+
+- **A3 LANDED (falsification confirmed, scope-(a)).**
+  [`qbeta_5two_capstone_carrier_falsification_probe.py`](../../computations/probes/qbeta_5two_capstone_carrier_falsification_probe.py)
+  + witness, 6/6: the 5₂ NZ-saddle bar-odd datum
+  `B(q)=[𝔙(m=q)−𝔙(m=1/q)]/2` is smooth and **nonvanishing at q\***
+  (`|B(q*)|=0.149`, 0 sign changes on a ±2e-8 grid straddling the anchor
+  window); pushing the simple zero into the `u³` normalization's smooth
+  factor would need log-slope ≈ 4×10⁸ (not smooth). Writhe data
+  (capstone's writhe-2 **and** the corrected #3892 writhe-4 `½(q⁴−q⁻⁴)=0.43`)
+  fail identically. **The capstone carrier is not the analytic NZ-saddle
+  datum** — narrows to the categorical H₃(q) Markov-trace 𝔙_q (A5).
+- **Braid landmine (respect in all 5₂ work):** the pre-#3892 corpus "5₂"
+  braid `[1,1,1,-2,1,-2]` is actually **6₂** (det 11, writhe 2); canonical
+  5₂ is `[1,1,1,2,-1,2]` (det 7, writhe 4). The capstone's
+  `D_odd = ½(q²−q⁻²)` is the 6₂-era form; the corrected 5₂ datum is
+  `½(q⁴−q⁻⁴) = sinh(2u_sub)`.
+- **Classical bar-odd home already built:** `qbeta_5two_jones_barodd_probe.py`
+  (validated TL₃ Kauffman bracket; `V(5₂)_odd ≠ 0`, O(1) at q₀,
+  anchor-smooth — the bar-odd home, not the swing). A5's remaining core is
+  the **categorical/quantum** 𝔙_q(5₂), which is H₃(q)-sized (B₃ braid), not
+  H₅ as first beaned.
+
 ## Honest prize statement
 
 Even a successful A1/A2 yields a **derived, anchor-independent bar-odd
