@@ -1407,3 +1407,26 @@ the owner conditional (NOT anomalously close ⇒), the lever is now the
 alien-calculus / resurgence thread (D-ladder Écalle acceleration, sibling
 #3818) — where the swing lives in the transseries of D(u), not in any knot's
 geometry. No c_k; no fit; scope-(a).
+**2026-07-18 (follow-on to merged #3872) — DEFORMED LEG TRANCHE A: GGM §5.2
+4₁ holomorphic blocks implemented; m-structure certified; Theorem-14
+assembly reading OPEN (honest fail); Kashaev-ray frame confirmed as the
+unsuppressed home.** A_m/B_m blocks (q-Hahn Bessel J± eq 127, θ eq 107)
+built exactly (mpmath dps 60, no float64): θ q-difference (109) exact; the
+Theorem-16 annihilator generator kills A_m and B_m (blocks' m-structure
+certified). Exact deformed Z (Theorem 14) evaluated near the Kashaev ray
+τ = 1/10 + 0.05i with |B·B|/|A·A| ∈ {2.5, 6.1, 36.7} at u ∈ {.05,.1,.2} —
+the two-saddle trans-series is UNSUPPRESSED there, confirming (sharpening
+tranche 5) that the O(1) odd channel lives at the Kashaev ray (τ→1/N, q̃
+pure phase), not on the 3d-index ray (|q̃| ≈ 1e-164 even deformed; x̃ =
+e^{u/τ} is a pure phase for real u). OPEN: the Theorem-14 phase/θ assembly
+does not yet reproduce the certified u=0 GK side — O(1) complex ratio
+(≈ −3.93−3.03i at τ=i/2); a 1024-reading derivation scan (θ-arguments ×
+θ-power × Δ(τ) sign patterns × exponent swap) found NO hit, so the
+misreading is structural (Φ_b normalization prefactor between (113) and
+(44) suspected). Next: certify against direct Φ_b quadrature of (125) as
+ground truth, then tranche B (deformed Borel side eq 123 minus exact side
+→ numeric A_ω residual). Wrong-knot escalation posted on #3884 (their "4₁
+Stokes {3,4} from eq 96/98" reads 5₂ data — pages 20–22 are the 5₂ block;
+§5 deformed-4₁ starts p. 24). Probe `qbeta_g3_deformed_blocks_41.py` →
+witness `qbeta-g3-deformed-blocks-41.witness.json` (honest FAILURES by
+design). No fit; no c_k wired.
