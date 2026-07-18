@@ -1,8 +1,8 @@
 {
   "engine": "python-int+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-18T08:21:06.992037+00:00",
-  "commitSha": "a01acd8776ae0d0257bc205d666a3d21dba2129e",
+  "computedAt": "2026-07-18T08:28:34.325688+00:00",
+  "commitSha": "341f84e662b84ccd804bff3b941d966ccc68cae8",
   "assertions": [
     {
       "name": "trefoil_calibrator_pins_actions",
@@ -30,11 +30,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 70,
+  "durationMs": 15,
   "computation": "qbeta-g3-annihilator-certification",
   "scriptFile": "qbeta_g3_annihilator_certification.py",
-  "scriptHash": "7950be74c03b",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "06befa8aa454",
+  "scriptCommitSha": "341f84e662b84ccd804bff3b941d966ccc68cae8",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
