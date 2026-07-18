@@ -111,6 +111,28 @@ principle — the open problem itself).
   cross-check still needs φ_σ to ~30+ orders (coefficient-generation
   engine); with the τ² arbitration the low-order basis is now trustworthy.
   Bean `qou-ea86` stays open; not session-sized.
+- **A5.1 ATTEMPTED — blocked by a certified literature/transcription
+  discrepancy (5/5 on the discrepancy itself).**
+  [`qbeta_5two_colored_tower_barodd_qstar_probe.py`](../../computations/probes/qbeta_5two_colored_tower_barodd_qstar_probe.py)
+  + witness. The Masbaum math/0306345 Thm-5.1 twist-knot tower at p=2
+  (K₂ = 5₂) **fails external validation at N ≥ 3** despite: N=2 = corpus TL₃
+  Jones at 1e-41; p=±1 = the printed Rmk-5.2 values; amphichiral 4₁ bar-odd
+  null at 1e-30; the p=−1 tower reproducing the **proven** 4₁ VC growth
+  (2.0299); and the §5-Example `c'_{n,2}` ≡ the independent §4 skein
+  composition to 1e-31. The arbiter — **GZ 2111.06645 eq (7.9)**, whose
+  growth tracks the proven Vol(5₂) (2.71→2.76→2.80 after the 3π·logN/N
+  subtraction) — disagrees with the tower already at N=3 (16.09 vs 20.95),
+  ratio diverging to 3.6e4 at N=80; the tower's growth constant ≈ 2.03.
+  Mirror variants eliminated. **Either a subtle transcription fault upstream
+  of both my routes, or a genuine fault in the printed Thm-5.1 p≥2
+  assembly** — the session's third caught literature-level fault (GGM τ²
+  misprint; Peacock towers-vs-entries; now this). Arbitration path: an
+  independent N=3 colored Jones of 5₂ via TL 2-cabling. **The B_N q*-scan
+  (no zero found, anchor-smooth, N=3..32) is recorded as an UNCERTIFIED
+  diagnostic — no capstone falsification is claimed on the categorical
+  colored face.** Bean `qou-3yxn` stays open, blocked here. A discarded
+  O(N⁸) R-matrix attempt failed its own braid-relation gate pre-commit —
+  the gates-first discipline caught every fault in this tranche.
 - **A5 disposition (narrowed + first bricks laid).** The A3 falsification +
   sibling #3954's σ3-shape constraint jointly kill the analytic-saddle
   carrier; the capstone carrier search narrows to the **categorical H₃(q)

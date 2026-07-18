@@ -1,0 +1,140 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-18T18:35:12.666584+00:00",
+  "commitSha": "ee28f7a779285f755fa1cb9c2ce21754e1d0c894",
+  "assertions": [
+    {
+      "name": "gate_N2_equals_corpus_jones",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "J'_2(K₋₁), J'_2(K₂) reproduce the validated TL₃ V(4₁), V(5₂) (variable/mirror-tolerant) at 3 q-points"
+    },
+    {
+      "name": "gate_p_pm1_plumbing",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "f̃_{K₁,n}=q^n and f̃_{K₋₁,n}=(−1)^n q^{−n(n+1)/2} (Masbaum Rmk 5.2) from the same c'-machinery as p=2"
+    },
+    {
+      "name": "gate_amphichiral_41_null",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "B_N(4₁) = 0 to 1e-30 for N ≤ 10 — mirror/bar control"
+    },
+    {
+      "name": "gate_41_vc_control",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "4₁ tower growth − 3π·logN/N increasing toward the proven Vol(4₁) = 2.0299 (N=20..80) — assembly machinery validated"
+    },
+    {
+      "name": "p2_tower_vs_gz79_discrepancy_confirmed",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "GZ eq-(7.9) tracks Vol(5₂)=2.828 while the p=2 tower's growth constant ≈ 2.03 and |GZ|/|tower| > 100 at N=80 — the Thm-5.1 p=2 assembly (as transcribed) is NOT J'_N(5₂)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "qbeta-5two-colored-tower-barodd-qstar",
+  "scriptFile": "qbeta_5two_colored_tower_barodd_qstar_probe.py",
+  "scriptHash": "d01f2e3c4ce5",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "A5.1 (bean qou-3yxn): the Masbaum math/0306345 Thm-5.1 twist-knot tower at p=2 (K₂ = 5₂) FAILS external validation at N ≥ 3, and this witness certifies the DISCREPANCY: gates pass (N=2 = corpus TL₃ Jones at 1e-41; p=±1 plumbing = Rmk 5.2; amphichiral 4₁ bar-odd null at 1e-30; 4₁ VC control reproduces the proven Vol(4₁)=2.0299 growth), the §5-Example c'_{n,2} ≡ the independent §4 skein composition to 1e-31, yet the p=2 tower contradicts the independent GZ 2111.06645 eq-(7.9) ⟨5₂⟩ already at N=3 (16.09 vs 20.95) with exponentially diverging ratio, and its growth constant ≈ 2.03 ≠ Vol(5₂) = 2.828 (the VC for 5₂ is a theorem; GZ-(7.9) tracks it). Mirror variants eliminated. OPEN: transcription-vs-literature arbitration needed. The B_N q*-scan is recorded as an UNCERTIFIED diagnostic; no capstone falsification is claimed on this face. auditOnly; no c_k wired; no fit.",
+  "contentBlock": "prop:phi-b-unitary-bar-odd",
+  "data": {
+    "source": "Masbaum math/0306345 (uploads/0306345v1.pdf) Thm 5.1, Rmk 5.2, §5 Example (p=2); arbiter: GZ 2111.06645 eq (7.9)",
+    "kashaev_growth_tower": {
+      "20": "3.304605",
+      "40": "2.789248",
+      "80": "2.488267",
+      "150": "2.312615"
+    },
+    "gz79_discrepancy": {
+      "20": {
+        "gz_growth_sub3pilogN": "2.7065",
+        "ratio_gz_over_tower": "13.33"
+      },
+      "40": {
+        "gz_growth_sub3pilogN": "2.7646",
+        "ratio_gz_over_tower": "216.2"
+      },
+      "80": {
+        "gz_growth_sub3pilogN": "2.7957",
+        "ratio_gz_over_tower": "3.586e+04"
+      }
+    },
+    "eliminated": [
+      "c'_{n,2} transcription (Example = skein composition, 1e-31)",
+      "mirror variants a->1/a in c' and/or f",
+      "K₂ identity (N=2 Jones = V(5₂) exactly)",
+      "assembly machinery (p=-1 gives proven 4₁ VC growth)"
+    ],
+    "qstar_scan_UNCERTIFIED_diagnostic": {
+      "3": {
+        "B_qstar": "-0.03830998751",
+        "sign_changes": 0,
+        "rel_slope": "1.7364e+01"
+      },
+      "4": {
+        "B_qstar": "-0.05569993391",
+        "sign_changes": 0,
+        "rel_slope": "2.1435e+01"
+      },
+      "5": {
+        "B_qstar": "-0.03084781188",
+        "sign_changes": 0,
+        "rel_slope": "9.0457e+01"
+      },
+      "6": {
+        "B_qstar": "-0.3580618729",
+        "sign_changes": 0,
+        "rel_slope": "1.2848e+02"
+      },
+      "7": {
+        "B_qstar": "5.733641137",
+        "sign_changes": 0,
+        "rel_slope": "1.8095e+02"
+      },
+      "8": {
+        "B_qstar": "-188.3530105",
+        "sign_changes": 0,
+        "rel_slope": "2.1160e+02"
+      },
+      "16": {
+        "B_qstar": "-4.992777696e+22",
+        "sign_changes": 0,
+        "rel_slope": "6.4249e+02"
+      },
+      "32": {
+        "B_qstar": "-8.703475773e+107",
+        "sign_changes": 0,
+        "rel_slope": "2.3715e+03"
+      }
+    },
+    "verdict": "DISCREPANCY CERTIFIED, TOWER NOT: the Masbaum Thm-5.1 p=2 assembly (as transcribed, with every cheaper explanation eliminated) contradicts the independent GZ eq-(7.9) ⟨5₂⟩ and the proven VC. The categorical-face q*-test stays OPEN pending arbitration (N=3 TL 2-cable). No falsification claim; bean qou-3yxn blocked here. This is the session's third caught literature/transcription fault (GGM τ², A2 towers-vs-entries, now Thm-5.1 p=2)."
+  }
+}
