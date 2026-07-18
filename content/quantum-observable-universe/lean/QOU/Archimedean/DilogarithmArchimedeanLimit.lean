@@ -1,4 +1,5 @@
 import Mathlib.Analysis.SpecialFunctions.Log.Basic
+import Mathlib.Analysis.SpecialFunctions.Log.Deriv
 import Mathlib.Topology.Algebra.InfiniteSum.Basic
 import Mathlib.NumberTheory.ZetaValues
 import Mathlib.Tactic
@@ -192,6 +193,46 @@ theorem LiTwo_one : LiTwo 1 = Real.pi ^ 2 / 6 := by
   rw [LiTwo_one_eq_tsum, ← hasSum_zeta_two.tsum_eq,
       hasSum_zeta_two.summable.tsum_eq_zero_add]
   push_cast
+  simp
+
+/-! ## Part A primitives — the sub-unity reduction (`x ∈ (0,1)`, `q ∈ (0,1)`)
+
+The elementary (sub-unity) direction of `conj:dilogarithm-archimedean-limit`.
+These are the **sorry-free algebraic steps** that turn `log Φ_n(x; q)` into the
+per-factor `-log(1 - x qᵏ)` series; each factor then expands via the classical
+`-log(1 - y) = Σ_{m≥1} yᵐ/m` power series (Mathlib `hasSum_pow_div_log`).  The
+remaining input of Part A — the *uniform / Tauberian* exchange of the `q → 1⁻`,
+`n → ∞` limit with the `m`-sum that produces `Li₂(x) = Σ x^m/m²` — is the
+analytic core, still carried by the `ArchimedeanLimit` class (not discharged
+here).  These primitives are the scaffolding that a proof of that exchange
+builds on. -/
+
+/-- **Per-factor log expansion.** Each Faddeev factor contributes the classical
+    series `-log(1 - y) = Σ_{m≥1} yᵐ/m` for `|y| < 1` (Mathlib
+    `hasSum_pow_div_log_of_abs_lt_one`).  Applied with `y = x qᵏ` this is the
+    per-crossing term of the archimedean limit. -/
+theorem neg_log_one_sub_hasSum {y : ℝ} (hy : |y| < 1) :
+    HasSum (fun m : ℕ => y ^ (m + 1) / (m + 1)) (-Real.log (1 - y)) :=
+  Real.hasSum_pow_div_log_of_abs_lt_one hy
+
+/-- The recursive `denomPolyLocal` is the finite product of Faddeev factors
+    `∏_{k<n} (1 - x qᵏ)`. -/
+theorem denomPolyLocal_eq_prod (q x : ℝ) (n : ℕ) :
+    denomPolyLocal q x n = ∏ k ∈ Finset.range n, (1 - x * q ^ k) := by
+  induction n with
+  | zero => simp [denomPolyLocal]
+  | succ m ih => rw [denomPolyLocal, Finset.prod_range_succ, ih]; ring
+
+/-- **First Part-A reduction:** the log of the partial product is the finite sum
+    of the per-factor logs, `log Φ_n(x; q) = Σ_{k<n} -log(1 - x qᵏ)`, whenever
+    every factor is positive (guaranteed for `x ∈ [0,1)`, `q ∈ [0,1]`). -/
+theorem partialProduct_log_eq (q x : ℝ) (n : ℕ)
+    (hpos : ∀ k ∈ Finset.range n, (0 : ℝ) < 1 - x * q ^ k) :
+    Real.log (partialProductLocal q x n)
+      = ∑ k ∈ Finset.range n, -Real.log (1 - x * q ^ k) := by
+  unfold partialProductLocal
+  rw [Real.log_inv, denomPolyLocal_eq_prod,
+      Real.log_prod _ _ (fun k hk => (hpos k hk).ne')]
   simp
 
 end QOU.QPochhammer
