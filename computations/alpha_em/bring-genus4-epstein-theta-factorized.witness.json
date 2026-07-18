@@ -1,0 +1,48 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-18T13:58:23.261869+00:00",
+  "commitSha": "f04d130134f5947e49a467324f958eaad8df0cc3",
+  "assertions": [
+    {
+      "name": "genus1_exact",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "genus2_matches_sibling_3949",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "bring-genus4-epstein-theta-factorized",
+  "scriptFile": "bring_genus4_epstein_theta_factorized_probe.py",
+  "scriptHash": "ad34ee8556fb",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Deferred genus-4 Epstein det'Δ on Jac(Bring)≅E_5τ₀³×E_τ₀ via θ-factorization (no Siegel reduction / no 8-dim OOM); validated on genus-1 (exact) + genus-2 (≈3.949).",
+  "auditOnly": "docs/audits/2026-07-18-bring-genus4-epstein-theta-factorized.md",
+  "data": {
+    "genus4_detprime_delta": "7.00187969054504e-26",
+    "genus4_boson_measure": "1472396096180.88",
+    "genus2_measure": "3.94937452288136",
+    "naive_product_g4_retracted": "8.226285222",
+    "measure_over_8": "1.84049512e+11",
+    "measure_over_8pi": "5.858477922e+10",
+    "verdict": "DEFERRED GENUS-4 VALUE COMPUTED (theta-factorization, no Siegel reduction, no OOM). The genus-4 Epstein det'D on Jac(Bring)=E_5t0^3 x E_t0 = 7.001879691e-26; boson measure = 1.472396096e+12 (!= the retracted naive product 8.22629, ratio 1.7899e+11). Method validated: genus-1 reproduces (Im t)^2|eta|^4 exactly, genus-2 reproduces the sibling's Epstein measure ~3.949. The theta of the block-diagonal isogeny lattice factorizes (theta_5t0^3 * theta_t0) even though det'D does not (spectrum {lambda+mu}), so the deferred value needs no 8-dim grid. SCOPE: this is the magnitude leg's numerical value ONLY -- NO claim it equals 8, 8pi, or any alpha_EM coefficient (the reciprocal-form is non-separable, #3918); the 8pi is NOT manufactured. No q0; no fit; nothing wired; no tier change."
+  }
+}
