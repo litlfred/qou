@@ -239,12 +239,30 @@ def main() -> int:
                        sp.Poly(N6.subs(alpha, ar), beta))
             broots = sp.roots(g).keys() if g.degree() > 0 else []
             for br in broots:
-                ca = is_categorical(ar); cb = is_categorical(br) if getattr(br, "is_rational", False) else None
-                deriv = bool(ca) and bool(cb)
+                # CRITICAL: a numerator root on the pole locus (alpha-beta+1=0)
+                # is a 0/0 degeneration, NOT a finite gate pass — phi_4 diverges
+                # there (the 4-strand net loses its leading term). Exclude it and
+                # require phi_4=phi_6=0 as FINITE zeros.
+                on_pole = (ar - br + 1) == 0
+                if on_pole:
+                    print(f"     locus point (alpha,beta)=({ar},{br}) is on the "
+                          f"pole locus alpha-beta+1=0 -> 0/0 degeneration "
+                          f"(phi diverges), NOT a gate pass")
+                    locus_pts.append({"alpha": str(ar), "beta": str(br),
+                                      "on_pole_degeneration": True, "derivable": False})
+                    continue
+                f4v = sp.cancel(phi4.subs({alpha: ar, beta: br}))
+                f6v = sp.cancel(phi6.subs({alpha: ar, beta: br}))
+                finite_zero = (f4v == 0) and (f6v == 0)
+                ca = is_categorical(ar)
+                cb = is_categorical(br) if getattr(br, "is_rational", False) else None
+                deriv = bool(ca) and bool(cb) and finite_zero
                 print(f"     RATIONAL locus point (alpha,beta)=({ar},{br})  "
+                      f"phi4={f4v} phi6={f6v}  finite_zero={finite_zero}  "
                       f"derivable={deriv}")
                 locus_pts.append({"alpha": str(ar), "beta": str(br),
-                                  "derivable": deriv})
+                                  "phi4": str(f4v), "phi6": str(f6v),
+                                  "finite_zero": bool(finite_zero), "derivable": deriv})
         if not rat_roots:
             print("     NO rational alpha on the locus -> every passing (alpha,beta) "
                   "is irrational/tuned (fit-trap wall)")
