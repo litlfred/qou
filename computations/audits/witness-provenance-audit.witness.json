@@ -1,12 +1,12 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-18T18:03:12.549215+00:00",
-  "commitSha": "8027514fec684d79b1cff2b42eaa059c5ff6a370",
+  "computedAt": "2026-07-18T18:18:52.073571+00:00",
+  "commitSha": "b860526b7601f1a3fed649619dd7950ed8afc73e",
   "assertions": [
     {
       "name": "no_missing_provenance",
-      "computed": 165,
+      "computed": 160,
       "expected": 0,
       "passed": false,
       "tolerance": 0,
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 10,
+  "durationMs": 9,
   "computation": "witness-provenance-audit",
   "scriptFile": "witness_provenance_audit.py",
   "scriptHash": "1abb80bb6c90",
@@ -29,7 +29,8 @@
     "python": "3.11.15",
     "numpy": "2.4.6",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "I14 audit per repo-owner directive 2026-05-19: every witness JSON must declare engine, scriptFile, commitSha (WitnessBuilder convention) so it can be reproduced and traced. Witnesses ending in -audit/-scan/-compliance are exempt by glob (state-tracking outputs). Files listed under methodology-deprecation's removed_legacy_compute_artifacts.removed_witnesses are skipped (deleted by design).",
   "parameters": {
@@ -47,12 +48,12 @@
   },
   "data": {
     "counts": {
-      "total_scanned": 2017,
-      "prov_ok": 1792,
+      "total_scanned": 2018,
+      "prov_ok": 1798,
       "prov_audit_exempt": 59,
-      "prov_missing": 165,
+      "prov_missing": 160,
       "prov_parse_error": 1,
-      "completeness_ratio": 0.9176995537927616
+      "completeness_ratio": 0.9202180376610506
     },
     "by_verdict": {
       "PROV_OK": [
@@ -357,6 +358,10 @@
           "missing_fields": []
         },
         {
+          "witness": "alpha-em-b5-assembly.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "alpha-em-channel-swap-involution.witness.json",
           "missing_fields": []
         },
@@ -466,6 +471,10 @@
         },
         {
           "witness": "bring-s4-elliptic-factor-genus-verify.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "ame-registry-routing-triage.witness.json",
           "missing_fields": []
         },
         {
@@ -2053,6 +2062,10 @@
           "missing_fields": []
         },
         {
+          "witness": "he4-binding-k-presentation-correction.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "he4-vol4-prediction-test.witness.json",
           "missing_fields": []
         },
@@ -2909,6 +2922,10 @@
           "missing_fields": []
         },
         {
+          "witness": "items-1-2-3-mw-strongforce-anchor-asymmetry.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "iterative-lp-dual-h6-deuteron.witness.json",
           "missing_fields": []
         },
@@ -2986,6 +3003,10 @@
         },
         {
           "witness": "kite_tail_reconciliation.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "kl-betti-cell-dependence.witness.json",
           "missing_fields": []
         },
         {
@@ -7029,6 +7050,10 @@
           "missing_fields": []
         },
         {
+          "witness": "torus-knot-markov-trace-closed-form.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "torus-knot-markov-trace-generalized.witness.json",
           "missing_fields": []
         },
@@ -7261,14 +7286,6 @@
         {
           "witness": "ame-2020-binding-energies.witness.json",
           "missing_fields": [
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "ame-registry-routing-triage.witness.json",
-          "missing_fields": [
-            "engine",
             "scriptFile",
             "commitSha"
           ]
@@ -7627,13 +7644,6 @@
           ]
         },
         {
-          "witness": "he4-binding-k-presentation-correction.witness.json",
-          "missing_fields": [
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
           "witness": "he4-binding-k-stage2.witness.json",
           "missing_fields": [
             "scriptFile",
@@ -7836,14 +7846,6 @@
           ]
         },
         {
-          "witness": "items-1-2-3-mw-strongforce-anchor-asymmetry.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
           "witness": "joint-tower-sdp-rust.witness.json",
           "missing_fields": [
             "scriptFile",
@@ -7911,12 +7913,6 @@
           "missing_fields": [
             "engine",
             "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "kl-betti-cell-dependence.witness.json",
-          "missing_fields": [
             "commitSha"
           ]
         },
@@ -8376,14 +8372,6 @@
         },
         {
           "witness": "three-term-wedderburn.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "torus-knot-markov-trace-closed-form.witness.json",
           "missing_fields": [
             "engine",
             "scriptFile",

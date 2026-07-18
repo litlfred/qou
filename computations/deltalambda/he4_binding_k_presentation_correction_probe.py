@@ -318,6 +318,14 @@ def main() -> int:
     }
     wit["allPassed"] = all(a["passed"] for a in wit["assertions"])
     out = HERE / "he4-binding-k-presentation-correction.witness.json"
+    import os as _os, sys as _sys  # noqa: E402 — P30 rollup (bean cmiy)
+    _d = _os.path.dirname(_os.path.abspath(__file__))
+    while _d != _os.path.dirname(_d) and not _os.path.isdir(_os.path.join(_d, "substrate")):
+        _d = _os.path.dirname(_d)
+    _sys.path.insert(0, _os.path.join(_d, "substrate"))
+    from witness_base import WitnessBuilder  # noqa: E402
+    WitnessBuilder.stamp_staleness_metadata(wit, script_path=__file__, engine="mpmath")
+    wit["scriptFile"] = _os.path.basename(__file__)
     json.dump(wit, open(out, "w"), indent=1)
     print("witness ->", out.name, " allPassed:", wit["allPassed"])
     return 0 if wit["allPassed"] else 1
