@@ -1,0 +1,69 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-18T20:08:56.646429+00:00",
+  "commitSha": "498bfbd993f24772bc685935ca0a9ef7d7a6faa4",
+  "assertions": [
+    {
+      "name": "sextic_root_exact",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": 0,
+      "source": "sympy Rational: (t²+250t+3125)³ + (121945/32)t⁵ at t = −10 (and 32-cleared integer form) — exact zero."
+    },
+    {
+      "name": "fricke_companion_exact",
+      "computed": "-25/2",
+      "expected": "-25/2",
+      "passed": true,
+      "tolerance": 0,
+      "source": "5³/t₅(τ₀) = 125/(−10) = −25/2 = j(5τ₀) (BDH22 corrected labelling)."
+    },
+    {
+      "name": "eta_quotient_lands_on_minus_10",
+      "computed": 1.6845754483580537e-05,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 0.001,
+      "source": "|(η(τ₀)/η(5τ₀))⁶ + 10| at the 6-d.p. BDH22 τ₀; residual is τ₀-truncation-limited (~2e-5 observed)."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 113,
+  "computation": "bring-hauptmodul-gate-probe",
+  "scriptFile": "bring_hauptmodul_gate_probe.py",
+  "scriptHash": "0e976f9ead7c",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Γ₀(5) hauptmodul gate t₅(τ₀) = −10 for Bring's modulus (uploaded-papers audit idea A2). Exact: t = −10 is a root of (t²+250t+3125)³ + (121945/32)t⁵ (sympy Rational; equivalently 32·(…)³ + 121945·t⁵ = 0 over ℤ), with Fricke companion 5³/(−10) = −25/2 = j(5τ₀). Numeric: the η-quotient (η(τ₀)/η(5τ₀))⁶ at BDH22's 6-d.p. τ₀ = −0.5+0.186676i lands on −10 to the τ₀-truncation scale. Lean arithmetic lock: QOU/Archimedean/BringHauptmodulGate.lean. Gate framing: any q₀ ↦ τ dictionary is physical only through Γ₀(5)-invariants (RR92 Thm 1) and must land on the class t₅ = −10 — discrete pass/fail, no precision search. Audit-only; nothing wired.",
+  "auditOnly": "docs/audits/2026-07-18-uploaded-papers-binding-mass-gap-ideas.md",
+  "data": {
+    "inputs": {
+      "tau0": "-0.5 + 0.186676i (BDH22 §2.2, 6 d.p. print; transcendental)",
+      "j_tau0_exact": "-121945/32",
+      "j_5tau0_exact": "-25/2",
+      "level5_modular_relation": "j = (t^2 + 250t + 3125)^3 / t^5,  t = (eta(tau)/eta(5tau))^6"
+    },
+    "numeric": {
+      "t5_at_tau0": "(-9.99998315425 - 8.38948093831e-71j)",
+      "abs_residual_t5_plus_10": "1.68458e-5",
+      "expected_residual_scale": "~1e-5..1e-4 (|dt5/dtau| ~ 43 x <=5e-7 tau0 truncation)",
+      "j_via_kleinj": "(-3810.87444514 - 1.49106158553e-71j)",
+      "abs_residual_j": "0.0931951"
+    }
+  },
+  "caveats": [
+    "tau0 itself is transcendental (Schneider); only its Γ₀(5)-invariants (t₅ = −10, the j-pair) are exact. The numeric leg is truncation-limited by the 6-d.p. published tau0, not by compute precision."
+  ]
+}

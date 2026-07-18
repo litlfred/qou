@@ -45,6 +45,10 @@ import QOU.Archimedean.TypeBFoldedCrystalCombinatorics
 import QOU.Archimedean.HyperbolicVolumeIndependence
 import QOU.Archimedean.JetOrderIndependence
 import QOU.Archimedean.RealisationVolumeCompatibility
+-- Γ₀(5) hauptmodul gate t₅(τ₀) = −10 (exact ℚ/ℤ arithmetic lock; uploaded-papers
+-- audit idea A2, 2026-07-18). Pure rational arithmetic — no ℝ, consistent with
+-- this module's no-archimedean invariant.
+import QOU.Archimedean.BringHauptmodulGate
 
 /-!
 # Descartes Universe — Module Index
