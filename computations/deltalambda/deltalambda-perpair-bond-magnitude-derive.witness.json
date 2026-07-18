@@ -1,0 +1,198 @@
+{
+  "engine": "python+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-07-18T14:30:26.207415+00:00",
+  "commitSha": "7f4b0230b68828609d205d854c311cd0b44d332f",
+  "assertions": [
+    {
+      "name": "z_naive_unphysical_at_A4",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "g_reeb_below_ceiling",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "g_reeb_physical_all_four",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "g_reeb_no_simultaneous_match",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 3,
+  "computation": "deltalambda-perpair-bond-magnitude-derive",
+  "scriptFile": "deltalambda_perpair_bond_magnitude_derive_probe.py",
+  "scriptHash": "81a320041f59",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Forward (non-fit) test of the parameter-free per-pair bond magnitude m — the one remaining gated Delta_lambda scalar. Both corpus parameter-free magnitudes (z_naive, g_reeb) evaluated on the complete-graph exchange determinant of 2H/3H/3He/4He and checked against the four deficits target-B_dim SIMULTANEOUSLY. z excluded (unphysical at A=4); g_reeb physical but non-monotone (mirror split) => no single parameter-free m closes; the Delta_lambda magnitude gate stands. No fit, no wiring, no inversion.",
+  "tier": "structural forward-test (parameter-free m -> predicted residual -> compare; no tuning)",
+  "result": {
+    "gate": "the ONE remaining gated Delta_lambda scalar = per-pair bond magnitude m; locality/sign/ceiling already DERIVED (#3924)",
+    "constants": {
+      "q0": "1.10997859556",
+      "E0_MeV_m_e/(q(q-1))": "4.1859808",
+      "z_naive_1/[2]_v": "0.499320334034",
+      "g_reeb_1/sqrt(5+(q0-1)^2/q0)": "0.446727067798",
+      "ceiling_1/sqrt5": "0.4472135955"
+    },
+    "derived_inputs_not_fitted": {
+      "B_dim_MeV_single_trace": {
+        "2H": "0.38007125",
+        "3H": "1.9085328",
+        "3He": "2.3446057",
+        "4He": "3.038187"
+      },
+      "B_AME_MeV": {
+        "2H": "2.224566",
+        "3H": "8.481821",
+        "3He": "7.718058",
+        "4He": "28.295673"
+      },
+      "residual_target_over_Bdim": {
+        "2H": "5.853",
+        "3H": "4.444",
+        "3He": "3.292",
+        "4He": "9.313"
+      },
+      "deficit_MeV_target_minus_Bdim": {
+        "2H": "1.8444947",
+        "3H": "6.5732882",
+        "3He": "5.3734523",
+        "4He": "25.257486"
+      },
+      "source": "deltalambda-o1-manybody-residual.witness.json (consumed, not recomputed)"
+    },
+    "forward_test_per_candidate": {
+      "z_naive": {
+        "magnitude": "0.499320334033561272",
+        "below_ceiling_1/sqrt5": false,
+        "physical_all_four": false,
+        "rows": [
+          {
+            "iso": "2H",
+            "A": 2,
+            "det_I_plus_G": "0.7506792",
+            "det_term_MeV": "1.2004425",
+            "deficit_MeV": "1.8444947",
+            "det_term/deficit": "0.650825",
+            "det_term/AME": "0.53963",
+            "(B_dim+det)/AME": "0.710482"
+          },
+          {
+            "iso": "3H",
+            "A": 3,
+            "det_I_plus_G": "0.0030557258",
+            "det_term_MeV": "24.239919",
+            "deficit_MeV": "6.5732882",
+            "det_term/deficit": "3.68764",
+            "det_term/AME": "2.85787",
+            "(B_dim+det)/AME": "3.08288"
+          },
+          {
+            "iso": "3He",
+            "A": 3,
+            "det_I_plus_G": "0.5010195",
+            "det_term_MeV": "2.8929743",
+            "deficit_MeV": "5.3734523",
+            "det_term/deficit": "0.538383",
+            "det_term/AME": "0.374832",
+            "(B_dim+det)/AME": "0.678614"
+          },
+          {
+            "iso": "4He",
+            "A": 4,
+            "det_I_plus_G": "-0.18512048",
+            "det_term_MeV": null,
+            "status": "UNPHYSICAL (det<=0)"
+          }
+        ],
+        "deficit_ratio_spread_max/min": null,
+        "simultaneous_const_match_le5pct": false,
+        "mirror_3H/3He_deficit_ratio": null
+      },
+      "g_reeb": {
+        "magnitude": "0.446727067798147204",
+        "below_ceiling_1/sqrt5": true,
+        "physical_all_four": true,
+        "rows": [
+          {
+            "iso": "2H",
+            "A": 2,
+            "det_I_plus_G": "0.80043493",
+            "det_term_MeV": "0.9317995",
+            "deficit_MeV": "1.8444947",
+            "det_term/deficit": "0.505179",
+            "det_term/AME": "0.418868",
+            "(B_dim+det)/AME": "0.58972"
+          },
+          {
+            "iso": "3H",
+            "A": 3,
+            "det_I_plus_G": "0.22300254",
+            "det_term_MeV": "6.2813661",
+            "deficit_MeV": "6.5732882",
+            "det_term/deficit": "0.95559",
+            "det_term/AME": "0.740568",
+            "(B_dim+det)/AME": "0.965583"
+          },
+          {
+            "iso": "3He",
+            "A": 3,
+            "det_I_plus_G": "0.57960702",
+            "det_term_MeV": "2.2830547",
+            "deficit_MeV": "5.3734523",
+            "det_term/deficit": "0.424877",
+            "det_term/AME": "0.295807",
+            "(B_dim+det)/AME": "0.599589"
+          },
+          {
+            "iso": "4He",
+            "A": 4,
+            "det_I_plus_G": "0.0017406534",
+            "det_term_MeV": "26.595607",
+            "deficit_MeV": "25.257486",
+            "det_term/deficit": "1.05298",
+            "det_term/AME": "0.939918",
+            "(B_dim+det)/AME": "1.04729"
+          }
+        ],
+        "deficit_ratio_spread_max/min": "2.47832",
+        "simultaneous_const_match_le5pct": false,
+        "mirror_3H/3He_deficit_ratio": "2.2491"
+      }
+    },
+    "method_guard": "m fixed PARAMETER-FREE first; deficit PREDICTED; compared FORWARD. No inversion of the residuals (would be the forbidden 7th fit-based ansatz, AGENTS.md Delta_lambda gate).",
+    "verdict": "HONEST NEGATIVE — the Delta_lambda per-pair magnitude gate STANDS. The parameter-free palette is exhausted: z_naive is UNPHYSICAL at A=4 (det<=0, exceeds the 1/sqrt5 ceiling) so it cannot supply the 4He deficit at all; g_reeb is physical for all four but does NOT reproduce the four deficits simultaneously — the det-term/deficit ratios are non-monotone and spread by ~2.5x (the 3H/3He mirror pair, identical B_dim topology, splits ~2.3x while their deficits differ only ~1.2x). No single parameter-free m matches all four; the residual is a collective, non-additive many-body object, not a per-pair det-term at a fixed categorical magnitude. NOT a derivation; NOT wired; m NOT solved-for from the residuals (that would be the forbidden 7th fit)."
+  },
+  "context": {
+    "axis": "Delta_lambda Track-A gate — the per-pair [1^4] bond magnitude m",
+    "no_fit": true,
+    "no_ame_inversion": true,
+    "q0_convention": "muon-canonical (computations/ layer)"
+  },
+  "auditOnly": true
+}
