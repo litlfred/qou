@@ -1,0 +1,51 @@
+{
+  "computation": "alpha-em-b4-classical-half-origin",
+  "description": "Bean B4 brick a (qou-1p06): classical origin of the 1/2 in the per-loop measure. Canonical Jones-Markov n=2 weights are Schur-Weyl (3/4,1/4) at q=1, not Plancherel; three canonical origins of 1/2 coincide exactly at q=1 (1/[2]_q, S2-Plancherel, tr_M(sigma)); x q-independence excludes the q-families \u2014 the 1/2 is a decategorification-point constant with KL carrier b_s/[2]_q (b_s=[2]_q e+, ->1+s at q=1). B4 sharpens to one functorial normalization; remains OPEN. Nothing wired.",
+  "auditOnly": "docs/audits/2026-07-18-alpha-em-b4-classical-half-origin.md",
+  "tier": "symbolic-exact (sympy + corpus canonical y_lambda_at; Hecke channel eigenvalues per AGENTS 7a)",
+  "computedAt": "2026-07-18T17:41:59.684385+00:00",
+  "commitSha": "89d8246755486160660a8b4dfee7eebdae9608fc",
+  "engine": "sympy",
+  "engineVersion": "1.14.0",
+  "scriptFile": "alpha_em_b4_classical_half_origin_probe.py",
+  "scriptHash": "d8c871419722",
+  "assertions": [
+    {
+      "name": "canonical_weights_are_schur_weyl_not_plancherel",
+      "passed": true,
+      "detail": "y_[2]+y_[1,1]=1 identically; at q=1 the canonical Jones-Markov weights are (3/4, 1/4) = (dim spin-1, dim spin-0)/4 \u2014 Schur-Weyl for V\u2297V, NOT the S\u2082-Plancherel (1/2,1/2). The equal-weight reading of the 1/2 is not the canonical Markov weight reading (consistent with merged F2)"
+    },
+    {
+      "name": "triple_coincidence_of_half_at_q1",
+      "passed": true,
+      "detail": "(a) idempotent normalization 1/[2]_q|_{q=1} = 1/2; (b) S\u2082-Plancherel dim\u00b2/2! = 1/2 (both irreps); (c) canonical tr_M(\u03c3)|_{q=1} = 1/2 (= 3/4 \u2212 1/4, the crossing's signed channel content). Three DISTINCT canonical objects, all equal to 1/2 exactly at the decategorification point q=1"
+    },
+    {
+      "name": "q_independence_of_x_discriminates",
+      "passed": true,
+      "detail": "readings (a) 1/[2]_q and (c) tr_M(\u03c3) are q-DEPENDENT (at q=4: 4/17, 2/5 \u2014 both \u2260 1/2), but the 1-loop coefficient is \u2212[2]_q\u00b7x EXACTLY with x q-independent (merged F3): neither q-family can sit inside the measure. The classical normalization is EVALUATED AT q=1 \u2014 the 1/2 is a decategorification-POINT constant, exactly the KL-functor-at-q=1 shape (\u00a77b item 2)"
+    },
+    {
+      "name": "kl_bridge_half_is_kl_to_idempotent_conversion",
+      "passed": true,
+      "detail": "the positive KL element b_s = \u03c3 + q\u207b\u00b9 has channel eigenvalues ([2]_q, 0): b_s = [2]_q\u00b7e\u208a identically, b_s\u00b2 = [2]_q\u00b7b_s; at q=1 it decategorifies to 1+s = 2\u00b7(Young symmetrizer of S\u2082), so e\u208a = b_s/[2]_q and the 1/2 at q=1 IS 1/[2]_1 \u2014 the KL-to-idempotent conversion factor at the decategorification point. The 1/2 has a canonical KL carrier"
+    }
+  ],
+  "allPassed": true,
+  "result": {
+    "canonical_weights_q1": "(3/4, 1/4) \u2014 Schur-Weyl, not Plancherel",
+    "half_origins": {
+      "idempotent_normalization": "1/[2]_q -> 1/2 at q=1 (q-dependent; 4/17 at q=4)",
+      "s2_plancherel": "dim^2/2! = 1/2 (constant)",
+      "markov_trace_of_crossing": "tr_M(sigma) -> 1/2 at q=1 (q-dependent; 2/5 at q=4)"
+    },
+    "discrimination": "x q-independent (merged F3) => normalization evaluated AT q=1; the 1/2 is a decategorification-point constant",
+    "kl_carrier": "b_s = sigma + q^{-1} = [2]_q e+; at q=1 -> 1+s = 2*(Young symmetrizer); 1/2 = 1/[2]_1 = KL-to-idempotent conversion",
+    "verdict": "B4a DELIVERED (scope-(a); derives no clause; no fit; nothing wired): the classical 1/2 of the per-loop measure has THREE canonical origins that coincide exactly at q=1 \u2014 (a) idempotent normalization 1/[2]_q, (b) S\u2082-Plancherel weight, (c) the canonical Markov trace of the crossing (3/4 \u2212 1/4, Schur-Weyl weights \u2014 NOT Plancherel) \u2014 and the established q-independence of the measure x EXCLUDES the q-families (a),(c) as q-carrying forms: the normalization is a decategorification-POINT constant, matching the KL route. The KL bridge is exact at n=2: b_s = [2]_q\u00b7e\u208a, decategorifying at q=1 to twice the Young symmetrizer \u2014 the 1/2 is the KL-to-idempotent conversion 1/[2]_1. B4's open statement SHARPENS to the single functorial normalization: the loop expansion weights the q=1 KL-normalized channel projector by the universal unit a\u2080\u00b7\u03b1. B4 remains OPEN \u2014 this brick derives the carrier and the discrimination, not the normalization. NO tier change."
+  },
+  "context": {
+    "bean": "qou-1p06 (B4) of milestone qou-b5qg; B1 #3955, B2 shadow #3960, B3 #3969 merged",
+    "sharpened_statement": "the loop expansion weights the q=1 KL-normalized channel projector (b_s/[2]_q at q=1) by the universal heat-kernel unit a0*alpha \u2014 the single remaining normalization conjecture",
+    "scope_guard": "derives no clause; no fit; nothing wired; 1/(8pi) stays phase-4"
+  }
+}
