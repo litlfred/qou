@@ -65,16 +65,23 @@ if [ "$PUSH" -ne 1 ]; then
   exit 0
 fi
 
-# 4. commit to a fresh orphan branch and force-push
-CUR="$(git rev-parse --abbrev-ref HEAD)"
-git stash -u >/dev/null 2>&1 || true
-git checkout --orphan "seed-tmp-$SLUG"
-git rm -rf --cached . >/dev/null 2>&1 || true
-git add -f lake-oleans.tgz.part*
-git commit -q -m "seed lean cache: qou+mathlib oleans @ $SLUG (fresh f897ebc rebuild incl ZetaValues cone)"
-git push -f origin "HEAD:$BR"
-git checkout -f "$CUR"
-git branch -D "seed-tmp-$SLUG" || true
-git stash pop >/dev/null 2>&1 || true
-rm -f lake-oleans.tgz.part*
+# 4. commit + force-push from an ISOLATED worktree — never touch the working
+#    branch (no stash/checkout dance on the active PR branch).
+WT="$(mktemp -d)/seed-wt"
+git worktree add --detach -q "$WT"
+# move the split parts into the worktree
+mv lake-oleans.tgz.part* "$WT"/
+(
+  cd "$WT"
+  git checkout -q --orphan "seed-tmp-$SLUG"
+  git reset -q --hard 2>/dev/null || true
+  git rm -rf -q --cached . 2>/dev/null || true
+  # drop any tracked files carried into the orphan
+  find . -maxdepth 1 -type f ! -name 'lake-oleans.tgz.part*' ! -name '.git' -delete 2>/dev/null || true
+  git add -f lake-oleans.tgz.part*
+  git commit -q -m "seed lean cache: qou+mathlib oleans @ $SLUG (fresh f897ebc rebuild incl ZetaValues cone)"
+  for i in 1 2 3 4; do git push -f origin "HEAD:$BR" && break || sleep $((2**i)); done
+)
+git worktree remove --force "$WT" 2>/dev/null || true
+git branch -D "seed-tmp-$SLUG" 2>/dev/null || true
 echo "pushed $BR"
