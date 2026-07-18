@@ -207,3 +207,41 @@ L1120–1144 reorg:
    `invCount = 0` ⇒ `permOf T = 1` ⇒ `T = T₀` (tableauCellEquiv injectivity) ⇒
    `refl`; else take the descent, step, recurse. Closes the L887 sorry with
    `T₀ = rowSuperstandardBraidKnot μ`.
+
+## 2026-07-18 — exchange argument CLOSED; `seminormalVector_base_exists` scoped
+
+`syt_all_connect_to_some` is now **sorry-free on main** (PRs #3843 → #3935: base
+tableau + bridge + `swapCellsSYT` + `d≠0`/`d²≠1` admissibility + realization
+`adjacentSwapStep_swapCells` + `PermInversion` inversion measure + `permOf` WF
+walk). The only remaining `JucysMurphy.lean` sorry is `seminormalVector_base_exists`.
+
+### Coordination (posted on #3799, the SeminormalWeight/χ_λ thread)
+
+`seminormalVector_base_exists` (bean `sp08`) is the OV base seminormal
+**eigenvector** existence — a nonzero JM common eigenvector in `Specht.Mtab` /
+`SpechtSubmodule`. Distinct file/side from the sibling's χ_λ **character-trace**
+work (`SeminormalWeight.fullCharacter_two_mul` → `symbolic_character_table`,
+`qou-tqab`, PR #3799), so low direct conflict — but same seminormal-rep domain.
+
+### Scoping finding (go/no-go on an independent attempt: NO-GO for now)
+
+The theorem needs BOTH:
+1. the JM operators `X_s` **simultaneously diagonalizable** (semisimple) on
+   `S^λ` — i.e. squarefree minimal polynomial over the content range. Mathlib's
+   `Eigenspace/Pi.lean` + `Triangularizable.lean` give *generalized* eigenvectors
+   and only over **algebraically closed** fields; `base_exists` needs an **exact**
+   eigenvector over generic `[Field k] [CharZero k]`. No off-the-shelf lemma.
+2. the common eigenvalue tuple = a **SYT content tuple** — the OV spectrum
+   characterization (Vershik–Okounkov content-vector axioms).
+
+Both are the genuine OV content. The clean route is the **Hoefsmit seminormal
+representation**, in which each `X_s` is *literally diagonal* with content
+eigenvalues, so a basis vector IS the eigenvector — exactly the representation
+the sibling `SeminormalWeight` thread is constructing. Building it independently
+in `JucysMurphy.lean` would duplicate that work.
+
+**Recommendation:** supply `base_exists` by **bridging** the sibling's
+`SeminormalWeight` Hoefsmit rep to `Mtab.rep` (both are the unique irreducible
+`S^λ`, `specht_isSimple`), then transporting a diagonal basis vector — rather
+than reconstructing the seminormal representation. Deferred pending that thread /
+the bridge; not a blind independent build.
