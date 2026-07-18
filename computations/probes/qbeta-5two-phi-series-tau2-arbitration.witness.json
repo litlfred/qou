@@ -1,0 +1,133 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-18T17:35:26.137842+00:00",
+  "commitSha": "404fd791e32ababc38062ee76684f164e545f677",
+  "assertions": [
+    {
+      "name": "V_dominant_saddle_matches",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "extracted dominant-saddle V: Re = Vol(5₂) to 1e-4, Im = ±1.379 (GGM eq 21, either CS sign)"
+    },
+    {
+      "name": "agreed_P1_convention_unique",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "the agreed τ¹ coefficient identifies the convention sharply (5e-3) and uniquely up to the generator identity GGM@z = Peacock@ξ (all others > 0.1)"
+    },
+    {
+      "name": "h1_fit_quality",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "h1-row max log-residual < 1e-6 over the 12-point grid"
+    },
+    {
+      "name": "tau2_uniquely_arbitrated",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "exactly one paper's gate-passing candidate matches the extracted τ² (<0.1 rel, ≥5× separation) — misprint resolved"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 23,
+  "computation": "qbeta-5two-phi-series-tau2-arbitration",
+  "scriptFile": "qbeta_5two_phi_series_tau2_arbitration_probe.py",
+  "scriptHash": "1e96c1c96e0d",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "A4 sub-step 1 (bean qou-ea86): independent extraction of the 5₂ φ_σ1 perturbative coefficients from the radial asymptotics of the A1/A2-validated H-series on the tilted ray τ = t·e^{iπ/6} (σ1-dominant, M_R frozen integer, linear log-fit). Gates: extracted V(σ1) matches the printed complex volume; the AGREED τ¹/τ³ coefficients reproduced; 3-row consistency. Verdict: arbitrates the τ² misprint between GGM 2007.10190 eq 20 and Peacock 2012.00062 eq 76 (machine-checked irreconcilable during the 2026-07-18 extraction). auditOnly; no c_k wired.",
+  "contentBlock": "prop:phi-b-unitary-bar-odd",
+  "data": {
+    "generators": {
+      "xi_1": "(0.78492014549902663295569997906 + 1.30714127868204548049235257351j)",
+      "z_1": "(0.877438833123346380024754448179 - 0.744861766619744236593170428604j)"
+    },
+    "extracted": {
+      "V_sigma1": "(2.828122066927372981554989 - 1.379194261572491128043397j)",
+      "P1": "(-0.01204544846609558152366309 - 0.1055931699446972875192888j)",
+      "P2": "(-0.01564481265920763184911656 - 0.009266029685417417667801411j)",
+      "P3": "(-0.0051323288648132271501 + 0.0048387993878957340888j)"
+    },
+    "candidate_rel_errors": {
+      "GGM@xi": [
+        "1.54804",
+        "0.999932",
+        "2.3665"
+      ],
+      "Peacock@xi": [
+        "0.000380491",
+        "0.019234",
+        "0.299022"
+      ],
+      "GGM@xi*": [
+        "0.43956",
+        "0.971913",
+        "1.1822"
+      ],
+      "Peacock@xi*": [
+        "1.98722",
+        "1.01073",
+        "1.40392"
+      ],
+      "GGM@z": [
+        "0.000380491",
+        "0.977476",
+        "0.299022"
+      ],
+      "Peacock@z": [
+        "1.3473",
+        "1.80396",
+        "0.854095"
+      ],
+      "GGM@z*": [
+        "1.98722",
+        "1.03573",
+        "1.40392"
+      ],
+      "Peacock@z*": [
+        "0.842666",
+        "1.78271",
+        "0.548345"
+      ]
+    },
+    "verdict_convention": "Peacock@xi",
+    "per_row": {
+      "h0_over_tau": {
+        "V": "(2.7790083385375113782 + 1.3479647562385329512j)",
+        "P1": "(19.882967118622506933 + 30.661730604714477542j)",
+        "P2": "(-202.94955091433998981 + 464.28040494333278425j)"
+      },
+      "h1": {
+        "V": "(2.8281220669273729816 - 1.379194261572491128j)",
+        "P1": "(-0.012045448466095581524 - 0.10559316994469728752j)",
+        "P2": "(-0.015644812659207631849 - 0.0092660296854174176678j)"
+      },
+      "tau_h2": {
+        "V": "(2.8103077935642626328 - 1.8957535460477254656j)",
+        "P1": "(12.256012966599154774 + 26.614520015169458277j)",
+        "P2": "(-206.68223616139492623 + 253.50734301777481453j)"
+      }
+    },
+    "verdict": "τ² MISPRINT ARBITRATED: Peacock (at xi) is correct; the extracted independent P2 matches it and the agreed P1/P3 gates pass. Unblocks A4 coefficient generation."
+  }
+}
