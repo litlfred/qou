@@ -2,8 +2,8 @@
  "computation": "alpha-activation-brunnian-derive-or-refute",
  "description": "R6-a derive-or-refute of the k>=3 activation of the alpha.alpha inter-cluster pair term via the Brunnian/Milnor mechanism: (I1) k=2 structural zero (8Be), (I2) k>=3 triple activation, (I3) Milnor-indeterminacy alpha-only gate (9Be adjudication), counting-rule adjudication (Boolean-gated C(k,2) flat vs C(k,3)/spectator-additive ~2x non-flat), the 3*b unification check, and Model G (gated pairs + 0.78*A_light linear term, zero new constants) across all nine witness isotopes. All inputs from committed witnesses; nothing recomputed, nothing tuned.",
  "audit_only": true,
- "computedAt": "2026-07-14T01:20:46.168376+00:00",
- "engine": "mpmath + integer Magnus (witness-fed; no new tr_M compute)",
+ "computedAt": "2026-07-18T17:58:38.137074+00:00",
+ "engine": "mpmath",
  "inputs": {
   "deficit_source": "alpha-cluster-volume-additivity.witness.json (committed; consistency-checked to 1e-9 MeV)",
   "b_linear_MeV_per_nucleon": {
@@ -318,5 +318,11 @@
    "passed": true
   }
  ],
- "allPassed": true
+ "allPassed": true,
+ "scriptHash": "dcd175c50fd7",
+ "scriptCommitSha": "8c1e7bc7e4992efac8e861c9ece815cdd5fdf5a7",
+ "commitSha": "af6ce13124b1a2d61b203aa42f60ee4bc9c8ea12",
+ "durationMs": 0,
+ "engineVersion": "mpmath 1.3.0",
+ "scriptFile": "alpha_activation_brunnian_probe.py"
 }

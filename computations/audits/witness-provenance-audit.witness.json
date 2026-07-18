@@ -1,12 +1,12 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-18T17:56:34.699049+00:00",
-  "commitSha": "a1d21fc9e6705b2cf989d517cf56224a46b25d8a",
+  "computedAt": "2026-07-18T17:58:51.495753+00:00",
+  "commitSha": "af6ce13124b1a2d61b203aa42f60ee4bc9c8ea12",
   "assertions": [
     {
       "name": "no_missing_provenance",
-      "computed": 168,
+      "computed": 166,
       "expected": 0,
       "passed": false,
       "tolerance": 0,
@@ -47,12 +47,12 @@
   },
   "data": {
     "counts": {
-      "total_scanned": 2016,
-      "prov_ok": 1788,
+      "total_scanned": 2017,
+      "prov_ok": 1791,
       "prov_audit_exempt": 59,
-      "prov_missing": 168,
+      "prov_missing": 166,
       "prov_parse_error": 1,
-      "completeness_ratio": 0.9161706349206349
+      "completeness_ratio": 0.917203767972236
     },
     "by_verdict": {
       "PROV_OK": [
@@ -350,6 +350,10 @@
         },
         {
           "witness": "alpha-em-b4-classical-half-origin.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "alpha-em-b4b-kl-heat-junction.witness.json",
           "missing_fields": []
         },
         {
@@ -1974,6 +1978,10 @@
         },
         {
           "witness": "delta-q-h-bracket-identity.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "alpha-activation-brunnian.witness.json",
           "missing_fields": []
         },
         {
@@ -6445,6 +6453,10 @@
           "missing_fields": []
         },
         {
+          "witness": "rho-k-h3a-crystal.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "rho-k-h3a-frobenius-pairing.witness.json",
           "missing_fields": []
         },
@@ -7583,13 +7595,6 @@
           ]
         },
         {
-          "witness": "alpha-activation-brunnian.witness.json",
-          "missing_fields": [
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
           "witness": "deltalambda-extensivity-gap-synthesis.witness.json",
           "missing_fields": [
             "scriptFile",
@@ -8245,12 +8250,6 @@
           "witness": "qou-mass-canonical-wiring-example.witness.json",
           "missing_fields": [
             "scriptFile"
-          ]
-        },
-        {
-          "witness": "rho-k-h3a-crystal.witness.json",
-          "missing_fields": [
-            "commitSha"
           ]
         },
         {

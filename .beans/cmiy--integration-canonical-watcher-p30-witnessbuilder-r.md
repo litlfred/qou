@@ -415,3 +415,10 @@ habiro_coefficients_atomic, inter_cluster_bond_term, mirror_pair_coulomb, mu_p_p
 multi_layer_gap, option_e_kl_betti/h6_entry, qbessel_reeb_order, qbeta c8-c10/closed-form-wiring/
 qbessel_contiguity, rho_k_h3a_refinement, alpha_blend_tower). 9 reverted — mostly option_e_v5-v9
 + deuteron_real_sdp + mass_formula_6term (exit 1, need absent inputs).
+
+## 2026-07-18 — batch 35 (read+write class drained to runnable limit: 2 more)
+2 wired (alpha_activation_brunnian, rho_k_h3a_crystal). Remaining 9 read+write are the
+persistent non-runnable residue (option_e_v5-v9, option_e_probe1, probe_isospin_mirror_v9,
+deuteron_real_sdp, mass_formula_6term) — all exit 1 (need absent input witnesses/deps),
+auto-reverted. read+write runnable class DONE: 18 wired across chunks 5-6.
+NEXT: the 69 unmapped (computed-name / f-string producers).
