@@ -53,6 +53,27 @@ genera + the #2701 irreducibility.
 
 ## Why this sharpens the keystone
 
+> **🟧 Correction (2026-07-18) — the `SL₂(ℤ)` monodromy framing below is structurally
+> excluded (scope-(b)).** The consistency bullet in this section writes "`M ∈ SL₂(ℤ)`
+> acting on `H¹(E)` has char. poly `x² − (tr M)x + 1`" next to the non-integer target
+> `tr B = 3(3q₀⁴+8q₀²+3)/(4q₀(q₀+1)²) ≈ 2.6423863`. Those two statements are jointly
+> impossible: integer matrices have **integer** traces (the cited invariant —
+> automorphisms/Gauss–Manin monodromies of algebraic families act on `H₁(·, ℤ)` by
+> integer symplectic matrices, Riera–Rodríguez 1992 Thm 1 / Braden–Northover 2012
+> §5.2), and `2 < tr B < 3` on the whole documented q₀ interval. Machine-checked
+> sorry-free in
+> [`QOU/BraidKnot/TrBIntegerTracePrune.lean`](../../content/quantum-observable-universe/lean/QOU/BraidKnot/TrBIntegerTracePrune.lean)
+> (`no_SL2Z_realizes_trB`). Per AGENTS.md §Before declaring "refuted", this is a
+> **structural exclusion (b)** of the *integral*-monodromy reading only: the
+> genus-4 → genus-1 reduction and the 2×2 depth-2 `det = 1` recurrence structure below
+> **stand**; the surviving object is a **real-analytic `SL₂(ℝ)` transfer-matrix
+> family** `M(q)` with `tr M(q₀) = 2.6424` — not the integral monodromy of an
+> algebraic elliptic surface. This also prunes the "search algebraic elliptic
+> fibrations / modular monodromies for trace 2.6424" class before anyone runs it.
+> Cross-ref: uploaded-papers audit idea A3,
+> [`2026-07-18-uploaded-papers-binding-mass-gap-ideas.md`](2026-07-18-uploaded-papers-binding-mass-gap-ideas.md).
+> The original text below is retained unedited for the record.
+
 The framework's **rank-2 "W-plane scale + modulus"** (2 real DOF, cheat-sheet) is
 **literally `E = Bring/S₄`**: an elliptic curve's period is exactly a scale and a
 modulus — 2 real DOF. So:
