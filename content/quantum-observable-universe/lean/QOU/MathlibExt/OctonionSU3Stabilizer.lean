@@ -28,22 +28,23 @@ witness `octonion-su3-stabilizer.witness.json`, merged), and its explicit Lean
 proof (a `6×6` image minor + the `⟨e₀,e⟩^⊥` bound from `derivation_annihilates_one`
 and norm-preservation) is the follow-up. Base ring ℚ; nothing archimedean.
 
-**Verification status.** Sorry-free; the proofs are `rfl`/`omega` reductions over
-the corpus's own `Der𝕆`. **CI `lake build QOU` is the machine gate** — the kernel
-was *not* run in the authoring sandbox, where the dependency closure is hard-blocked:
-`OctonionDerivationsUpperBound` transitively imports `Mathlib.Tactic`, whose olean
-(and the ProofWidgets closure) is absent from every reachable `lake-cache` branch,
-and rebuilding it needs the network-gated ProofWidgets `widgetJsAll` JS asset.
-In lieu of the compile, every element was **hand-audited against the actual
-source**:
-- `LinearMap.finrank_range_add_finrank_ker`
-  (`Mathlib/LinearAlgebra/FiniteDimensional/Lemmas.lean`): signature
-  `[FiniteDimensional K V] (f : V →ₗ[K] V₂) : finrank (range f) + finrank (ker f)
-  = finrank V` matches; `[FiniteDimensional ℚ ↥Der𝕆]` is auto-derived (`Der𝕆` is a
-  submodule of the finite-dimensional `(Fin 8→ℚ)→ₗ[ℚ](Fin 8→ℚ)`).
-- `octonion_derivation_dim : Module.finrank ℚ Der𝕆 = 14` sits in the *same*
-  namespace `QOU.MathlibExt.OctonionDerivations`, so the `rw` target matches `h`'s
-  `finrank ℚ ↥Der𝕆`.
+**Verification status.** Machine-validated sorry-free: `lean`-direct (Lean 4.24.0)
+exits `0` on this file, checked against the built `Der𝕆` dependency cone (the
+whole-library `OctonionDerivationsUpperBound` `decide` compiled once, then this file
+`lean`-checked per the repo verify-a-single-file recipe). CI `lake build QOU`
+re-checks it. The proofs are `rfl`/`omega` reductions over the corpus's own `Der𝕆`.
+
+Two instance-resolution subtleties the compile surfaced (both missed by an earlier
+hand-audit — recorded here so the next reader does not "simplify" them back out):
+- `[FiniteDimensional ℚ ↥Der𝕆]` is **not** auto-derived at the use site; it is
+  supplied explicitly via `Submodule.finiteDimensional_of_le le_top` (the sibling
+  `OctonionDerivationsBound` idiom).
+- `LinearMap.finrank_range_add_finrank_ker` must be pinned `(V := ↥Der𝕆)`: `evOct`
+  maps between the *two distinct* finite-dimensional types `↥Der𝕆` and `Fin 8→ℚ`,
+  so an unpinned `FiniteDimensional ?V` search is ambiguous (unlike a `V →ₗ V`
+  endomorphism, e.g. the sibling `leibnizDefect`). The `dim = 14` is threaded via
+  `omega` over `octonion_derivation_dim` — *not* `rw`, which whnf-times-out trying
+  to reduce the giant `Der𝕆` definition.
 - `map_add'`/`map_smul' := rfl` are definitional because `Der𝕆` is a submodule of
   *linear maps*, whose `+`/`•` act pointwise, so `D.1 e` is honest linear-map
   application.
@@ -59,8 +60,8 @@ open Module
 `D`. The stabilizer `𝔰𝔲(3)` is its kernel. -/
 def evOct (e : Fin 8 → ℚ) : Der𝕆 →ₗ[ℚ] (Fin 8 → ℚ) where
   toFun D := D.1 e
-  map_add' D D' := rfl
-  map_smul' c D := rfl
+  map_add' _ _ := rfl
+  map_smul' _ _ := rfl
 
 @[simp] theorem evOct_apply (e : Fin 8 → ℚ) (D : Der𝕆) : evOct e D = D.1 e := rfl
 
@@ -76,8 +77,9 @@ theorem mem_su3_iff {e : Fin 8 → ℚ} {D : Der𝕆} : D ∈ su3 e ↔ D.1 e = 
 `dim Der(𝕆) = 14`. -/
 theorem finrank_su3 (e : Fin 8 → ℚ) :
     finrank ℚ (su3 e) = 14 - finrank ℚ (LinearMap.range (evOct e)) := by
-  have h := (evOct e).finrank_range_add_finrank_ker
-  rw [octonion_derivation_dim] at h
+  haveI : FiniteDimensional ℚ (↥Der𝕆) := Submodule.finiteDimensional_of_le le_top
+  have h := LinearMap.finrank_range_add_finrank_ker (V := ↥Der𝕆) (evOct e)
+  have h14 : finrank ℚ (↥Der𝕆) = 14 := octonion_derivation_dim
   simp only [su3]
   omega
 
@@ -89,8 +91,9 @@ theorem finrank_su3_eq_8_iff_rank_eq_6 (e : Fin 8 → ℚ) :
     finrank ℚ (su3 e) = 8 ↔ finrank ℚ (LinearMap.range (evOct e)) = 6 := by
   have h := finrank_su3 e
   have hle : finrank ℚ (LinearMap.range (evOct e)) ≤ 14 := by
-    have := (evOct e).finrank_range_add_finrank_ker
-    rw [octonion_derivation_dim] at this
+    haveI : FiniteDimensional ℚ (↥Der𝕆) := Submodule.finiteDimensional_of_le le_top
+    have hrn := LinearMap.finrank_range_add_finrank_ker (V := ↥Der𝕆) (evOct e)
+    have h14 : finrank ℚ (↥Der𝕆) = 14 := octonion_derivation_dim
     omega
   omega
 
