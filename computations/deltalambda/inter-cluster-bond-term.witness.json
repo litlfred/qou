@@ -2,8 +2,8 @@
  "computation": "inter-cluster-bond-term-derive-or-refute",
  "description": "R5-a derive-or-refute of the inter-cluster bond term (the alpha-cluster additivity deficit). Pre-registered q-rotational tests deficit = sum_bonds mu0*hbar_q*J_q^2(j) with j from measured cluster spins (H1), the fixed deuteron channel j=3 (H2), and the strand-count rule j=3*A_light/2 (H3); CAL-3 m_pi-scale quantum family; structural characterization (spin non-function, ~linear in light-cluster size, many-body-activated alpha-alpha pair term). All inputs from the committed alpha-cluster-volume-additivity witness; nothing recomputed, nothing tuned.",
  "audit_only": true,
- "computedAt": "2026-07-13T21:03:56.930032+00:00",
- "engine": "mpmath (symbolic-exact; witness-fed, no new tr_M compute)",
+ "computedAt": "2026-07-18T17:55:56.202456+00:00",
+ "engine": "mpmath",
  "inputs": {
   "deficit_source": "alpha-cluster-volume-additivity.witness.json (committed; consistency-checked to 1e-9 MeV)",
   "m_e_MeV": {
@@ -444,5 +444,11 @@
    "passed": true
   }
  ],
- "allPassed": true
+ "allPassed": true,
+ "scriptHash": "7f05059b44f2",
+ "scriptCommitSha": "6619b98a997baedcf82dc8f7098616e4f680a86e",
+ "commitSha": "a1d21fc9e6705b2cf989d517cf56224a46b25d8a",
+ "durationMs": 0,
+ "engineVersion": "mpmath 1.3.0",
+ "scriptFile": "inter_cluster_bond_term_probe.py"
 }

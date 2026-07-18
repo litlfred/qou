@@ -20,9 +20,9 @@
       "reason": "(★) has q^k-dependent coefficients (q-holonomic); C-finite is the rational/q→1 degeneration only",
       "matches_1839": "no low-order constant recurrence fits c_2..c_10 (#1839) — the q-holonomic prediction; the pole survives as the dominant tail root",
       "tail": {
-        "inv_u_substrate": 117.40900102154255,
+        "inv_u_substrate": 117.40897634209196,
         "tail_ratio_c10_over_c9": 117.4097638129516,
-        "rel_error": 6.496873343686847e-06,
+        "rel_error": 6.707075422806199e-06,
         "all_ratios": {
           "c3/c2": 1.9759195528672064,
           "c4/c3": 0.5689974402336719,
@@ -43,5 +43,13 @@
     "#1839 tail ratio c_{k+1}/c_k → 1/u_substrate (the q-difference pole) within 5%": true
   },
   "allPassed": true,
-  "verdict": "q-BESSEL RECURRENCE (★) PROVED (vs closed-form, <1e-40); q→1 CONTRACTION to ordinary Bessel PROVED; and (★)'s q^k-dependent (q-holonomic, NOT C-finite) structure DERIVES the #1839 phenomenology — no low-order constant recurrence, dominant tail root = 1/u_substrate (the q-difference pole). The c_k kernel R is the q-Bessel q-difference operator, not a rational degeneration. No fit; nothing wired; c_k cal-anchored."
+  "verdict": "q-BESSEL RECURRENCE (★) PROVED (vs closed-form, <1e-40); q→1 CONTRACTION to ordinary Bessel PROVED; and (★)'s q^k-dependent (q-holonomic, NOT C-finite) structure DERIVES the #1839 phenomenology — no low-order constant recurrence, dominant tail root = 1/u_substrate (the q-difference pole). The c_k kernel R is the q-Bessel q-difference operator, not a rational degeneration. No fit; nothing wired; c_k cal-anchored.",
+  "scriptHash": "b57d347ffa1c",
+  "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
+  "commitSha": "a1d21fc9e6705b2cf989d517cf56224a46b25d8a",
+  "engine": "sympy",
+  "computedAt": "2026-07-18T17:56:29.184943+00:00",
+  "durationMs": 0,
+  "engineVersion": "sympy 1.14.0",
+  "scriptFile": "qbeta_qbessel_contiguity_cfinite.py"
 }

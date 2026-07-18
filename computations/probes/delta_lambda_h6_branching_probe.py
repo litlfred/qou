@@ -240,6 +240,14 @@ witness = {
     "allPassed": True,
 }
 
+import os as _os, sys as _sys  # noqa: E402 — P30 rollup (bean cmiy)
+_d = _os.path.dirname(_os.path.abspath(__file__))
+while _d != _os.path.dirname(_d) and not _os.path.isdir(_os.path.join(_d, "substrate")):
+    _d = _os.path.dirname(_d)
+_sys.path.insert(0, _os.path.join(_d, "substrate"))
+from witness_base import WitnessBuilder  # noqa: E402
+WitnessBuilder.stamp_staleness_metadata(witness, script_path=__file__, engine="python")
+witness["scriptFile"] = _os.path.basename(__file__)
 with open(HERE / "delta-lambda-h6-branching.witness.json", "w") as f:
     json.dump(witness, f, indent=2, default=str)
 print(f"\nWitness: delta-lambda-h6-branching.witness.json")

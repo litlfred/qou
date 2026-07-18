@@ -407,3 +407,11 @@ one skipped in batch 28), plus habiro_coefficients_extended, metallic_q_jones_si
 yekutieli/qbeta_silver_rationals/six_fifths/z_habiro). 4 reverted (brane_tower_full_channel,
 two/three-quark sweeps — exit1/shared). Clean single-write set now fully drained:
 67 wired via stamper across chunks 1-4. NEXT: read+write class (~55).
+
+## 2026-07-18 — batch 34 (auto-stamper chunk 5: read+write class, 16 producers, 9 reverted)
+First read+write chunk (reads inputs, writes 1 output; stamper targets the output write).
+16 wired (adjacent_vs_full, delta_lambda_h6_branching, e0_lambda_composite,
+habiro_coefficients_atomic, inter_cluster_bond_term, mirror_pair_coulomb, mu_p_pin_sensitivity,
+multi_layer_gap, option_e_kl_betti/h6_entry, qbessel_reeb_order, qbeta c8-c10/closed-form-wiring/
+qbessel_contiguity, rho_k_h3a_refinement, alpha_blend_tower). 9 reverted — mostly option_e_v5-v9
++ deuteron_real_sdp + mass_formula_6term (exit 1, need absent inputs).
