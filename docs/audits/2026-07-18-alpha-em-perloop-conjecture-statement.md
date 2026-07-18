@@ -58,6 +58,33 @@ Clause A ("`a₀` **is** the per-loop weight of *this* tower") and Clause B ("th
 **is** the Hecke channel count") — which is exactly why the wall is a conjecture about the
 framework, not about spectral geometry.
 
+## Clause-B sharpening (same-day follow-on): the ½ reduces to ONE correspondence statement
+
+Probe [`alpha_em_clauseB_channel_sharpening_probe.py`](../../computations/alpha_em/alpha_em_clauseB_channel_sharpening_probe.py)
+→ [witness](../../computations/alpha_em/alpha-em-clauseB-channel-sharpening.witness.json) (3/3),
+building on the lever-2 two-channel factorization (`3f4ebbc1f`, derived):
+
+- **(F1) The channel COUNT 2 is derived, not conjectural.** The Hecke relation is
+  *quadratic*, so `H₂(q)` splits into exactly the two idempotent channels
+  `e₊ = (σ+q⁻¹)/[2]_q`, `e₋ = (q−σ)/[2]_q` (`e₊+e₋=1`, `e₊e₋=0`, `σ = q·e₊ − q⁻¹·e₋` —
+  exact mod the relation).
+- **(F2) The ½ is NOT an equal channel *weight* — excluded.** The resummed tower's
+  partial-fraction weights are `w₊ = q²/(q²−1)`, `w₋ = −1/(q²−1)`: they sum to 1 but equal
+  `(½,½)` **iff `q² = −1`** (never at real q); at the substrate `q₀` they are
+  `(5.31, −4.31)`. Any route deriving the ½ as "equal weights at `q₀`" is dead (scope-(a)).
+- **(F3) Where the ½ actually lives.** The tower's 1-loop coefficient is `−[2]_q·x`
+  **exactly** — the q-dependence sits entirely in `[2]_q`, the measure `x` is
+  q-independent, and matching the working `α[2]_q/(8π)` term forces `x = α/(8π)` with *no*
+  `q→1` limit. The ½ is then the **classical-limit normalization**: at `q=1` the 1-loop
+  total is `2x`, and `x = α/(8π)` **iff** the `q→1` one-loop equals the universal
+  heat-kernel unit `α·a₀ = α/(4π)`.
+
+**Net: all of Clause B collapses to the single correspondence statement — "the `q→1`
+one-loop total of the tower equals `a₀·α`."** Channel count: derived. Weights reading:
+excluded. That one normalization (which is Clause A evaluated at 1-loop) is the entire
+remaining wall — the conjecture is effectively **one clause** now: the tower's classical
+limit is normalized by the universal heat-kernel unit.
+
 ## Scope guard (STRICT)
 
 States and machine-checks the skeleton; **derives neither clause**; no fit; nothing wired;

@@ -1,0 +1,42 @@
+{
+  "computation": "alpha-em-clauseB-channel-sharpening",
+  "description": "Sharpens Clause B (the 1/2 = two Hecke channels) of the per-loop conjecture: (F1) channel count 2 is structural (quadratic Hecke relation, idempotents e+/e- exact); (F2) the 1/2 is NOT an equal channel weight (partial fractions (q^2/(q^2-1), -1/(q^2-1)), equal only at q^2=-1; (5.31,-4.31) at q0) \u2014 excluded; (F3) the 1-loop coefficient is -[2]_q x exactly, so the 1/2 is the classical-limit normalization 2x = alpha*a0. Clause B reduces to that single correspondence statement. Nothing wired.",
+  "auditOnly": "docs/audits/2026-07-18-alpha-em-perloop-conjecture-statement.md",
+  "tier": "symbolic-exact (sympy; quotient-ring identities + partial fractions + series)",
+  "computedAt": "2026-07-18T13:47:41.739096+00:00",
+  "commitSha": "e6e9f5cbfdc13d9cb27a94434f0f322994e66f5c",
+  "engine": "sympy",
+  "engineVersion": "1.14.0",
+  "scriptFile": "alpha_em_clauseB_channel_sharpening_probe.py",
+  "scriptHash": "7799bfb346db",
+  "assertions": [
+    {
+      "name": "channel_count_2_structural_idempotents",
+      "passed": true,
+      "detail": "e+ = (sigma+q^{-1})/[2]_q, e- = (q-sigma)/[2]_q satisfy e+ + e- = 1, e+e- = 0, e+^2 = e+, e-^2 = e-, sigma = q e+ - q^{-1} e- EXACTLY mod the Hecke relation => the channel COUNT is 2 because the Hecke relation is QUADRATIC \u2014 structural, derived (not conjectural)"
+    },
+    {
+      "name": "half_is_not_a_channel_weight",
+      "passed": true,
+      "detail": "partial fractions: w+ = q^2/(q^2-1), w- = -1/(q^2-1) (sum 1, exact); (w+,w-) = (1/2,1/2) iff q^2 = -1 (roots [-I, I], never real); at q0: (5.309, -4.309) \u2014 so deriving the 1/2 as equal channel WEIGHTS at real q is EXCLUDED (scope-(a)); the channels are counted democratically, not weighted democratically"
+    },
+    {
+      "name": "half_lives_in_classical_limit_normalization",
+      "passed": true,
+      "detail": "tower 1-loop coefficient = -[2]_q x EXACTLY (q-dependence all in [2]_q; the measure x is q-independent, matching the working alpha[2]_q/(8pi) with x = alpha/(8pi) and NO q->1 limit); at q=1 the 1-loop total is 2x, so x = alpha/(8pi) IFF the q->1 one-loop equals the standard unit alpha/(4pi) = alpha*a0 \u2014 Clause B REDUCES to this single correspondence normalization"
+    }
+  ],
+  "allPassed": true,
+  "result": {
+    "channel_count": "2 \u2014 structural (degree of the Hecke relation), DERIVED",
+    "half_as_weights": "EXCLUDED (weights equal only at q^2=-1; (5.31,-4.31) at q0)",
+    "half_location": "classical-limit normalization: q->1 one-loop = alpha*a0 = alpha/(4pi)",
+    "clauseB_remaining": "the single correspondence normalization statement",
+    "verdict": "CLAUSE B SHARPENED TO ONE STATEMENT (scope-(a); no fit; nothing wired; 1/(8pi) stays phase-4): (F1) the channel COUNT 2 is structural/derived \u2014 the Hecke relation is quadratic, giving exactly the two idempotent channels e+/e-; (F2) the 1/2 is NOT an equal channel WEIGHT \u2014 partial-fraction weights are (q^2/(q^2-1), -1/(q^2-1)), equal only at q^2 = -1, and (5.31, -4.31) at the substrate q0; (F3) the 1/2 lives in the per-loop parameter via the CLASSICAL-LIMIT NORMALIZATION: the tower's 1-loop is -[2]_q x exactly, so x = alpha/(8pi) iff the q->1 one-loop equals the universal heat-kernel unit alpha*a0 = alpha/(4pi). REMAINING CONJECTURE (all of Clause B): the correspondence normalization 'q->1 one-loop = a0*alpha'. Nothing else is open in Clause B. NO tier change."
+  },
+  "context": {
+    "builds_on": "lever-2 3f4ebbc1f (2-channel factorization, derived) + main ba606720e (GB form) + the two-clause conjecture statement (this PR)",
+    "narrows": "Clause B from 'the 1/2 is the Hecke channel split' to the precise open piece: 'the q->1 one-loop total equals the universal heat-kernel unit a0*alpha' \u2014 channel count derived, weights reading excluded",
+    "scope_guard": "no fit; nothing wired; derives neither clause; 1/(8pi) stays phase-4"
+  }
+}
