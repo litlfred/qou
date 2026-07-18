@@ -8,10 +8,10 @@
     "prop:full-pole-structure-mass-trace",
     "thm:knot-mass-formula-unified"
   ],
-  "timestamp": "2026-06-22T13:19:35.220678+00:00",
+  "timestamp": "2026-07-18T17:42:03.582789+00:00",
   "polynomial_q_not_applicable": true,
   "parameters": {
-    "q_0": 1.1099785955573347,
+    "q_0": 1.1099785827513808,
     "engine": "mpmath 60-digit; Hoefsmit numerical"
   },
   "results": {
@@ -19,22 +19,30 @@
       "Z": 1,
       "N": 0,
       "include_inter": false,
-      "tr_M_q0_numerical_60dps": "1.06541195515740305803510999834546047682012367628649717738189",
-      "walltime_sec": 0.04374980926513672
+      "tr_M_q0_numerical_60dps": "1.06541176800974618826485906217857805937406257729383251664163",
+      "walltime_sec": 0.03945326805114746
     },
     "n (neutron, A=1)": {
       "Z": 0,
       "N": 1,
       "include_inter": false,
-      "tr_M_q0_numerical_60dps": "0.923413454683046278788924788645757193939918567596917303379039",
-      "walltime_sec": 0.000985860824584961
+      "tr_M_q0_numerical_60dps": "0.923413212248394228641660710527817386843536450385891120059384",
+      "walltime_sec": 0.0008833408355712891
     },
     "D (deuteron, A=2)": {
       "Z": 1,
       "N": 1,
       "include_inter": true,
-      "tr_M_q0_numerical_60dps": "0.388471590720051045788905761767379042349223248309842072014072",
-      "walltime_sec": 0.42485690116882324
+      "tr_M_q0_numerical_60dps": "0.388471363214283978934144659973044735120219086547857294601115",
+      "walltime_sec": 0.35454440116882324
     }
-  }
+  },
+  "scriptHash": "1714e7d2d762",
+  "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
+  "commitSha": "ce3567490fc7d470b81700717d308476fcdd2540",
+  "engine": "mpmath",
+  "computedAt": "2026-07-18T17:42:04.027450+00:00",
+  "durationMs": 0,
+  "engineVersion": "mpmath 1.3.0",
+  "scriptFile": "habiro_coefficients_interpolate.py"
 }

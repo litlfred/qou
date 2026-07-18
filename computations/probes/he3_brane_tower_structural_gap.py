@@ -168,6 +168,14 @@ def main() -> None:
         "provenance": ["terms-2-3-atom-per-gen-mpfr-50dps.witness.json", "AME2020"],
     }
     out = self_path.parent.parent / "he3-brane-tower-structural-gap.witness.json"
+    import os as _os, sys as _sys  # noqa: E402 — P30 rollup (bean cmiy)
+    _d = _os.path.dirname(_os.path.abspath(__file__))
+    while _d != _os.path.dirname(_d) and not _os.path.isdir(_os.path.join(_d, "substrate")):
+        _d = _os.path.dirname(_d)
+    _sys.path.insert(0, _os.path.join(_d, "substrate"))
+    from witness_base import WitnessBuilder  # noqa: E402
+    WitnessBuilder.stamp_staleness_metadata(witness, script_path=__file__, engine="mpmath")
+    witness["scriptFile"] = _os.path.basename(__file__)
     out.write_text(json.dumps(witness, indent=2) + "\n")
     print(f"\nwrote {out}")
 

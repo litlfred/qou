@@ -218,6 +218,14 @@ def main() -> int:
         "antiLaundering": "no CODATA read; no convention tuned to 8π; Vol(J)=1 is Poincaré duality, not chosen; 1/2 residual stated open",
     }
     out = REPO / "computations" / "alpha_em" / "alpha-em-reciprocal-form.witness.json"
+    import os as _os, sys as _sys  # noqa: E402 — P30 rollup (bean cmiy)
+    _d = _os.path.dirname(_os.path.abspath(__file__))
+    while _d != _os.path.dirname(_d) and not _os.path.isdir(_os.path.join(_d, "substrate")):
+        _d = _os.path.dirname(_d)
+    _sys.path.insert(0, _os.path.join(_d, "substrate"))
+    from witness_base import WitnessBuilder  # noqa: E402
+    WitnessBuilder.stamp_staleness_metadata(witness, script_path=__file__, engine="sympy")
+    witness["scriptFile"] = _os.path.basename(__file__)
     out.write_text(json.dumps(witness, indent=2) + "\n")
 
     print("=" * 78)

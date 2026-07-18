@@ -376,3 +376,21 @@ it means ADDING a writer = behavior change, not mechanical stamping. Needs a
 separate, coordinated change (flagged to leave for the qbeta owner). This is the
 last cmiy single-write-clean producer; remaining PROV_MISSING are multi-write /
 read+write / native-only / no-writer scripts needing bespoke handling.
+
+## 2026-07-18 — batch 30 (auto-stamper — chunk 1: 8 producers)
+Built a verified auto-stamper (scratchpad/autostamp.py): locates the single
+write site, inserts a depth-independent stamp block (walks up to find substrate/),
+re-runs the producer, and KEEPS the edit only if the audit flips the witness to
+PROV_OK with keys preserved — else auto-reverts. Chunk 1: 10 attempted, 8 OK,
+2 safely auto-reverted (brane_tower_isospin_diagnosis: exit1; d_u_closed_form_proof:
+writes a shared witness → not-prov-ok). 8 wired: binding_bring_enhancement_compare,
+figure_eight_kashaev_volume, d14_theta_bar_side, deuteron_fpn_wlambda_wiring,
+ew_couplings_substrate_derivation, geom_leading_alt_q_locality, h4_h2_cross_algebra_bridge,
+h3_markov_trace_cyclicity_preflight. 76 clean single-write mapped total.
+
+## 2026-07-18 — batch 31 (auto-stamper chunk 2: 19 producers, 6 auto-reverted)
+19 wired incl. the 5 alpha_em/ probes, alpha_k_jones_markov_h4, habiro_coefficients_interpolate,
+he-nu-sdp psd-count, he3 brane-tower/charge-asymmetry, hecke_channel_binding, higgs (2),
+m_tau_knot, markov_weights_symbolic, metallic_q_wenzl_sign_sweep, murakami_deformed_vc_q0,
+binding_alpha_shift, alphaem_dilog_bloch. 6 auto-reverted (shared-witness / input-needing
+scripts). 68 clean remained at chunk start.

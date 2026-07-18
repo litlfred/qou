@@ -1,6 +1,6 @@
 {
   "description": "Wenzl y_\u03bb positive-block count N(q,n) sweep across the first three metallic-ladder intervals plus bar-mirrors. Tests the owner's piecewise-on-q conjecture: if N(q,n) jumps at \u03c6 / \u03b4_silver / \u03b4_bronze and is constant within each interval, the metallic-piecewise structure is empirically confirmed at the Wenzl-weight level (necessary condition for SDP feasibility).",
-  "computed_at": "2026-06-09T04:04:36.145514+00:00",
+  "computed_at": "2026-07-18T17:43:20.383539+00:00",
   "precision_dps": 50,
   "anchors": {
     "q_0_substrate": "1.1099785955541805",
@@ -1323,5 +1323,13 @@
   "follow_ups": [
     "If Wenzl jumps confirm the conjecture: regenerate the chi-* character witnesses at counterfactual q and rerun nucleus_real_sdp.py for the same sweep \u2014 true SDP-feasibility test, not just Wenzl-positivity.",
     "Connect to \u0394_\u03bb option-e v1-v7 regression: do the failing v8 fits gain a piecewise discontinuity at q = \u03c6 that the unitary v1-v7 ansatze cannot capture?"
-  ]
+  ],
+  "scriptHash": "b508e30855a8",
+  "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
+  "commitSha": "ce3567490fc7d470b81700717d308476fcdd2540",
+  "engine": "mpmath",
+  "computedAt": "2026-07-18T17:43:20.873887+00:00",
+  "durationMs": 0,
+  "engineVersion": "mpmath 1.3.0",
+  "scriptFile": "metallic_q_wenzl_sign_sweep.py"
 }

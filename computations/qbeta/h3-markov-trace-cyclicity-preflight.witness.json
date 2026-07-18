@@ -1,7 +1,7 @@
 {
   "engine": "sympy",
-  "engineVersion": "sympy-1.14.0",
-  "computedAt": "2026-06-05T13:24:31.142604+00:00",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-07-18T17:36:45.571790+00:00",
   "computation": "h3-markov-trace-cyclicity-preflight",
   "scriptFile": "h3_markov_trace_cyclicity_preflight.py",
   "tier": "cross-check/provenance",
@@ -83,5 +83,9 @@
     "wiredToProduction": false,
     "note": "validates Markov-trace machinery only; c_3 unchanged."
   },
-  "allPassed": true
+  "allPassed": true,
+  "scriptHash": "369aaab89e18",
+  "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
+  "commitSha": "89d8246755486160660a8b4dfee7eebdae9608fc",
+  "durationMs": 0
 }
