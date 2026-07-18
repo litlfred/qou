@@ -187,4 +187,57 @@ noncomputable instance trivialZero : HabiroResidueSumEquivalence where
     show (Polynomial.map (Int.castRingHom ℝ) 0).eval (Real.sqrt 0) = 0
     simp
 
+/-! ## §3b-cond upgrade — archimedean agreement DERIVED from one algebraic input
+
+The `archimedean_agreement` field above (and the `protonExample` `axiom`)
+axiomatize the *whole* real equality. Per the formalize-first / anti-laundering
+discipline that over-axiomatizes: the two constructions are two representations
+of one Habiro-ring element, and the residue is a Habiro-completion **projection**
+("no analytic continuation", see `full-pole-structure-mass-trace.lean`), so the
+identity is finite-algebraic. The single honest open input is the **algebraic
+same-element identification**; the numeric agreement is then a ring-hom
+consequence.
+
+See `docs/audits/2026-07-18-residue-habiro-tail-algebraic-not-analytic.md`. -/
+
+/-- Bundled data for the §3b-cond agreement: the two polynomial representatives
+    and the GB mass, with the GB side's own internal consistency (`gb_mass` is
+    the archimedean evaluation of the GB polynomial representative — true by the
+    GB residue-sum construction being a Habiro element; *not* the
+    cross-identity). -/
+structure HabiroGBData where
+  q_0 : ℝ
+  /-- Habiro cyclotomic polynomial `Σ a_m (u;u)_m`. -/
+  habiro_trace : Polynomial ℤ
+  /-- GB residue-sum polynomial representative in `Ẑ[q]`. -/
+  gb_trace_poly : Polynomial ℤ
+  /-- The GB mass value. -/
+  gb_mass : ℝ
+  /-- GB internal consistency: the mass is the archimedean eval of the GB
+      polynomial representative. -/
+  gb_mass_is_eval :
+    (gb_trace_poly.map (Int.castRingHom ℝ)).eval (Real.sqrt q_0) = gb_mass
+
+/-- **The single open algebraic input (§3b-cond class, no instance).** The Habiro
+    cyclotomic construction and the GB residue-spectral construction yield the
+    *same* element of `Ẑ[q]` — an equality of polynomial representatives, hence in
+    the Habiro ring. This is the GS-filtration ↔ cyclotomic-projection
+    identification (`prop:graded-markov-trace-from-gs-filtration` +
+    `prop:residue-at-root`), deferred to the algebraic-substrate layer; it is
+    **algebraic**, not an analytic continuation. No instance is provided (the
+    honest open state). -/
+class HabiroGBSameElement (D : HabiroGBData) : Prop where
+  same_element : D.habiro_trace = D.gb_trace_poly
+
+/-- **Archimedean agreement — DERIVED, not axiomatized.** Given the algebraic
+    same-element identification, the archimedean realization `ρ_∞` (evaluation at
+    `u_0 = √q_0`) of the Habiro trace equals the GB mass, because `ρ_∞` is a ring
+    hom that commutes with the finite decomposition. Axiomatizes strictly less
+    than `HabiroResidueSumEquivalence.archimedean_agreement`: one *algebraic*
+    polynomial identity, versus a transcendental real equality. -/
+theorem archimedean_agreement_of_sameElement
+    (D : HabiroGBData) [h : HabiroGBSameElement D] :
+    (D.habiro_trace.map (Int.castRingHom ℝ)).eval (Real.sqrt D.q_0) = D.gb_mass := by
+  rw [h.same_element]; exact D.gb_mass_is_eval
+
 end QOU.BraidKnot

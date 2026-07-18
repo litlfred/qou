@@ -1,13 +1,13 @@
 ---
 # qou-b3ix
 title: 'Deep-dive 2: residue ↔ Habiro cyclotomic-tail identity — what would close habiro-residue-sum-equivalence'
-status: in-progress
+status: completed
 type: task
 priority: high
 tags:
     - alien-habiro
 created_at: 2026-07-18T17:08:37Z
-updated_at: 2026-07-18T17:16:07Z
+updated_at: 2026-07-18T17:43:36Z
 parent: qou-89f9
 ---
 

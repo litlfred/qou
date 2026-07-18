@@ -155,6 +155,41 @@ theorem ratio_ib_periodic {b : ℂ} {Φ₁ Φ₂ : ℂ → ℂ}
   rw [phi_b_quasiperiod (b := b) (Φ := Φ₁) z, phi_b_quasiperiod (b := b) (Φ := Φ₂) z,
     mul_div_mul_left _ _ hP]
 
+/-- **Dual quasi-periodicity under the full `i/b`-shift** (the `1/b`-shift applied
+at `z + i/(2b)`), guarded off the dual pole lattice — the modular-dual companion
+of `phi_b_quasiperiod`:
+`Φ_b(z) = (1 + e^{2π(z + i/(2b))/b})·Φ_b(z + i/b)`. -/
+theorem phi_binv_quasiperiod {b : ℂ} {Φ : ℂ → ℂ} [h : FaddeevPhi b Φ] (z : ℂ)
+    (hpre : (1 : ℂ) + Complex.exp (2 * (Real.pi : ℂ) * (z + I / (2 * b)) / b) ≠ 0) :
+    Φ z = (1 + Complex.exp (2 * (Real.pi : ℂ) * (z + I / (2 * b)) / b)) * Φ (z + I / b) := by
+  have key := h.shift_binv (z + I / (2 * b)) hpre
+  have e1 : (z + I / (2 * b)) - I / (2 * b) = z := by ring
+  have e2 : (z + I / (2 * b)) + I / (2 * b) = z + I / b := by ring
+  rw [e1, e2] at key
+  exact key
+
+/-- **Dual ratio `i/b`-periodicity** (modular-dual companion of
+`ratio_ib_periodic`). For two `FaddeevPhi` solutions at the same `b`, the ratio
+`Φ₁/Φ₂` is invariant under the full `i/b`-shift wherever the shared dual
+quasi-period prefactor is nonzero.
+
+Together with `ratio_ib_periodic` (invariance under `ib`) this proves the
+inter-solution ambiguity `Φ₁/Φ₂` is **doubly periodic** for the lattice
+`⟨ib, i/b⟩` — the exact structural input the Faddeev–Volkov (Liouville) step
+consumes to force `uniqueUpToScalar`. This sharpens `PentagonRigidity`'s open
+field: the remaining gap is *precisely* "doubly-periodic ⇒ constant", which
+additionally needs holomorphicity/continuity of the ratio (NOT carried by the
+`FaddeevPhi` conjecture-class, which axiomatizes only the difference equations)
+and Mathlib's absent elliptic-function boundedness — see §4. Nothing here
+closes that gap; this only makes the double-periodicity explicit and proved. -/
+theorem ratio_ibinv_periodic {b : ℂ} {Φ₁ Φ₂ : ℂ → ℂ}
+    [FaddeevPhi b Φ₁] [FaddeevPhi b Φ₂] (z : ℂ)
+    (hpre : (1 : ℂ) + Complex.exp (2 * (Real.pi : ℂ) * (z + I / (2 * b)) / b) ≠ 0) :
+    Φ₁ z / Φ₂ z = Φ₁ (z + I / b) / Φ₂ (z + I / b) := by
+  rw [phi_binv_quasiperiod (b := b) (Φ := Φ₁) z hpre,
+    phi_binv_quasiperiod (b := b) (Φ := Φ₂) z hpre,
+    mul_div_mul_left _ _ hpre]
+
 /-! ## 4. Conditional global Faddeev–Volkov uniqueness (§3b-cond)
 
 `PentagonRigidity` carries the analytic rigidity the pentagon buys per
