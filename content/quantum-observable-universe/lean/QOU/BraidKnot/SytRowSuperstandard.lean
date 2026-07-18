@@ -1,4 +1,5 @@
 import QOU.Mathlib.StandardYoungTableau
+import Mathlib.Order.Interval.Finset.Nat
 
 /-!
 # QOU.BraidKnot.SytRowSuperstandard — the row-superstandard standard Young tableau
@@ -29,7 +30,7 @@ Ref: [sagan2001] (The Symmetric Group, §3.9 — the superstandard / row-reading
 
 namespace QOU.BraidKnot
 
-open YoungDiagram Finset
+open YoungDiagram Finset QOU.Mathlib
 
 variable (μ : YoungDiagram)
 
@@ -169,5 +170,45 @@ theorem rowSuperstandard_injOn :
   subst hi
   have hj : j1 = j2 := by omega
   rw [hj]
+
+/-- **`SurjOn`**: the row-reading filling hits every label in `{1, …, |μ|}`. It is injective
+(`rowSuperstandard_injOn`) and maps the `|μ|` cells into `{1, …, |μ|}` (also `|μ|` elements), so it
+is onto by counting (`Finset.surjOn_of_injOn_of_card_le`). -/
+theorem rowSuperstandard_surjOn :
+    Set.SurjOn (fun c : ℕ × ℕ => (rowSuperstandardSsyt μ).entry c.1 c.2)
+      (μ.cells : Set (ℕ × ℕ)) (Set.Icc 1 μ.cells.card) := by
+  -- The image of the cells is a subset of `Icc 1 |μ|` of the same cardinality (`|μ|`, by
+  -- injectivity), hence equal to it; so every label is attained.
+  have hsub : μ.cells.image (fun c : ℕ × ℕ => (rowSuperstandardSsyt μ).entry c.1 c.2)
+      ⊆ Finset.Icc 1 μ.cells.card := by
+    intro b hb
+    rw [Finset.mem_image] at hb
+    obtain ⟨c, hc, rfl⟩ := hb
+    have hmap := rowSuperstandard_mapsTo μ (Finset.mem_coe.mpr hc)
+    rw [Set.mem_Icc] at hmap; rw [Finset.mem_Icc]; exact hmap
+  have hcardimg : (μ.cells.image (fun c : ℕ × ℕ => (rowSuperstandardSsyt μ).entry c.1 c.2)).card
+      = μ.cells.card := Finset.card_image_of_injOn (rowSuperstandard_injOn μ)
+  have himg : μ.cells.image (fun c : ℕ × ℕ => (rowSuperstandardSsyt μ).entry c.1 c.2)
+      = Finset.Icc 1 μ.cells.card := by
+    apply Finset.eq_of_subset_of_card_le hsub
+    rw [hcardimg, Nat.card_Icc]; omega
+  intro b hb
+  rw [Set.mem_Icc] at hb
+  have hbIcc : b ∈ Finset.Icc 1 μ.cells.card := Finset.mem_Icc.mpr hb
+  rw [← himg, Finset.mem_image] at hbIcc
+  obtain ⟨c, hc, hfc⟩ := hbIcc
+  exact ⟨c, Finset.mem_coe.mpr hc, hfc⟩
+
+/-- **The row-superstandard standard Young tableau** — the semistandard tableau above upgraded to a
+`StandardYoungTableau` by the `BijOn` onto `{1, …, |μ|}` (`MapsTo` + `InjOn` + `SurjOn`). -/
+noncomputable def rowSuperstandardStd : StandardYoungTableau μ where
+  toSsyt := rowSuperstandardSsyt μ
+  bijOn := ⟨rowSuperstandard_mapsTo μ, rowSuperstandard_injOn μ, rowSuperstandard_surjOn μ⟩
+
+/-- **`StandardYoungTableau μ` is nonempty (sorry-free).** The base-tableau existence brick the
+Okounkov–Vershik exchange argument (`syt_all_connect_to_some`) needs: the row-superstandard tableau
+is an explicit witness. -/
+instance instNonemptyStandardYoungTableau : Nonempty (StandardYoungTableau μ) :=
+  ⟨rowSuperstandardStd μ⟩
 
 end QOU.BraidKnot
