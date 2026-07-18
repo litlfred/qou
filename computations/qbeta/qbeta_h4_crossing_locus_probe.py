@@ -222,8 +222,10 @@ def main() -> int:
     def _alarm(signum, frame):  # noqa: ANN001, ARG001
         raise _Timeout()
 
-    signal.signal(signal.SIGALRM, _alarm)
-    signal.alarm(180)  # hard cap; grid verdict already stands without this
+    has_alarm = hasattr(signal, "alarm")  # Unix-only; guard for portability
+    if has_alarm:
+        signal.signal(signal.SIGALRM, _alarm)
+        signal.alarm(180)  # hard cap; grid verdict already stands without this
     try:
         res = sp.resultant(N4, N6, beta)
         res_ok = True
@@ -273,7 +275,8 @@ def main() -> int:
         print(f"     resultant not completed ({type(e).__name__}: {e}); "
               "relying on the categorical-grid verdict")
     finally:
-        signal.alarm(0)
+        if has_alarm:
+            signal.alarm(0)
 
     any_lead = bool(grid_pass) or any(p["derivable"] for p in locus_pts)
     verdicts = ([{"alpha": a, "beta": b, "source": "grid", "derivable": True}

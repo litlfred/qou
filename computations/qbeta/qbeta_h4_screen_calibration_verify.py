@@ -78,11 +78,8 @@ def log_f_coeffs_numeric(dnet3, dnet4, order=7, radius="0.08"):
     f has no zero inside). We integrate g on the complex circle |s|=radius;
     the principal-branch log is single-valued there when f is zero-free in
     the disk. The constant coefficient (log L, branch-dependent) is discarded;
-    only s^1..s^order are compared.
-
-    An earlier draft used a real Vandermonde solve on clustered points
-    s=1e-3..8e-3 — catastrophically ill-conditioned at order 8, producing
-    spurious O(1..1e3) disagreement. The quad method removes that artifact.
+    only s^1..s^order are compared. (The quad method is well-conditioned at
+    order 8, unlike a Vandermonde fit on clustered points.)
     """
     f3 = sp.lambdify(q, dnet3, modules="mpmath")
     f4 = sp.lambdify(q, dnet4, modules="mpmath")
