@@ -35,7 +35,7 @@ Together: `qDim q (μ[n]) = ∏_{i<K} [n−i]_q / D` — numerator a fixed windo
 `K = |μ|+μ₁` brackets sliding with the level, denominator level-independent. Each
 `[n−i]_q` is Laurent in `qⁿ`, so the family is rational in `(q, qⁿ)` of degree bounded
 by `K` — "polynomial in the level", the q-dimension face of Deligne interpolation
-\cite{deligne2007}.
+\cite{deligne2007-st}.
 
 Ground ring: `ℝ`, matching the canonical `QPartitionCombinatorics` infrastructure this
 file consumes (its nonvanishing lemmas live at `1 < q`); the telescope itself is

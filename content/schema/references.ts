@@ -6954,7 +6954,7 @@ export const references: CSLData[] = [
 
   // ── Deligne 2007 (Rep(S_t) at non-integer t: interpolated tensor categories) ──
   ref({
-    id: "deligne2007",
+    id: "deligne2007-st",
     type: "chapter",
     title:
       "La catégorie des représentations du groupe symétrique S_t, lorsque t n'est pas un entier naturel",
