@@ -1,0 +1,55 @@
+{
+  "$schema": "https://litlfred.github.io/witness-schema/witness.schema.json",
+  "witnessVersion": "1.0",
+  "id": "alpha-em-involution-type",
+  "description": "\u03b1_EM per-loop '2' obstruction is nome-independent: Hecke channel-swap q\u21a6\u2212q\u207b\u00b9 is \u2102-LINEAR (holomorphic), Hodge conjugation is \u2102-ANTI-LINEAR; unification needs an anti-linear real structure R=swap\u2218conj. Strengthens #3941. scope-(a), auditOnly.",
+  "auditOnly": true,
+  "computation": {
+    "script": "computations/alpha_em/alpha_em_involution_type_probe.py",
+    "scriptCommitSha": "26973183b25852920493b30c3687548ecfdc582e",
+    "scriptHash": "3c99e66a9d73"
+  },
+  "controls": [
+    {
+      "name": "swap_involutive",
+      "pass": true,
+      "detail": "swap\u2218swap = id on \u211a(q) (involution)"
+    },
+    {
+      "name": "swap_multiplicative",
+      "pass": true,
+      "detail": "swap(ab) = swap(a)\u00b7swap(b)"
+    },
+    {
+      "name": "swap_additive",
+      "pass": true,
+      "detail": "swap(a+b) = swap(a)+swap(b) \u21d2 swap is a ring homomorphism"
+    }
+  ],
+  "assertions": [
+    {
+      "name": "swap_is_C_linear",
+      "pass": true,
+      "detail": "swap(i\u00b7x) = i\u00b7swap(x) \u21d2 the Hecke channel-swap is \u2102-LINEAR (holomorphic); anti-linear would give \u2212i\u00b7swap(x)"
+    },
+    {
+      "name": "conj_is_C_antilinear",
+      "pass": true,
+      "detail": "conj(i\u00b7w) = \u2212i\u00b7conj(w) \u21d2 Hodge conjugation (fixing H\u00b9(M,\u211d)) is \u2102-ANTI-LINEAR"
+    },
+    {
+      "name": "linear_ne_antilinear_nome_independent",
+      "pass": true,
+      "detail": "swap(i\u00b7w)=+i\u00b7swap(w) but conj(i\u00b7w)=\u2212i\u00b7conj(w) \u21d2 swap (\u2102-linear) and conj (\u2102-anti-linear) act oppositely on i\u00b7w; different analytic TYPE, nome-independent \u2014 the #3941 obstruction is INTRINSIC, not a nome artifact"
+    },
+    {
+      "name": "bridge_R_is_antilinear",
+      "pass": true,
+      "detail": "R := swap\u2218conj satisfies R(i\u00b7w) = \u2212i\u00b7R(w) \u21d2 R is ANTI-LINEAR; a unification needs such an anti-linear real structure R with conj = swap \u2218 R (the named open input)"
+    }
+  ],
+  "allPass": true,
+  "verdict": "The \u03b1_EM per-loop '2' unification obstruction is NOME-INDEPENDENT (scope-(a), exact algebra) \u2014 strengthens #3941. The Hecke channel-swap q\u21a6\u2212q\u207b\u00b9 (#3936) is an involutive \u211a(q)-automorphism, hence \u2102-LINEAR (holomorphic): swap(i\u00b7x)=i\u00b7swap(x). Hodge conjugation (the anti-linear involution fixing H\u00b9(M,\u211d), swapping H^{1,0}\u2194H^{0,1}) is \u2102-ANTI-LINEAR: conj(i\u00b7z)=\u2212i\u00b7conj(z). A \u2102-linear and a \u2102-anti-linear involution are of different analytic TYPE \u2014 no nome/coordinate converts one to the other, so the #3941 obstruction (previously stated under q=e^{2\u03c0i\u03c4}) is INTRINSIC, caveat removed. A unification requires an anti-linear real structure R := swap\u2218conj on the fibre with conj = swap \u2218 R; the existence of a compatible R is the precise open input the \u03c4-functor must supply (the fibre-level reality structure of #3936/#3941, now named). Does not derive the unification or exhibit R. No CODATA read; no nome assumed; no fit; no \u03b1_k wired; 1/(8\u03c0) stays a phase-4 identification.",
+  "scope": "(a) scope-limited \u2014 nome-independent involution-type obstruction; unification stays open (needs anti-linear R)",
+  "antiLaundering": "exact \u211a(q)/\u2102 algebra, machine-checked; no CODATA read; no nome assumed; unification stated open"
+}
