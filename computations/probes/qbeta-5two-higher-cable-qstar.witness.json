@@ -1,0 +1,86 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-18T23:35:47.482464+00:00",
+  "commitSha": "2e2c7677adf77e24a2bfdb039d832603bfa92646",
+  "assertions": [
+    {
+      "name": "gate_N3_regression",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "generalized-JW path = A5.2 colored3_raw at 1e-25"
+    },
+    {
+      "name": "gate_41_N4_matches_trusted_tower",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "4₁ 3-cable J'_4 (framing-free) = trusted p=−1 tower"
+    },
+    {
+      "name": "gate_framing_calibration",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "trefoil N=4 framing factor a consistent power across q"
+    },
+    {
+      "name": "N4_no_qstar_zero",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "B₄(5₂): 0 sign changes on q*±2e-8, B₄(q*) ≠ 0"
+    },
+    {
+      "name": "N4_41_null_control",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "B₄(4₁;q*) = 0 to 1e-20 — mirror/bar control at N=4"
+    },
+    {
+      "name": "anchor_smooth_honest",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "|d ln B₄/dq| ≪ 3.84e6 — anchor-smooth, not the swing"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "qbeta-5two-higher-cable-qstar",
+  "scriptFile": "qbeta_5two_higher_cable_qstar_probe.py",
+  "scriptHash": "28f11566c21d",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "A5.3 (bean qou-3yxn): the certified categorical q*-test extended to N=4 via the 3-cable with the full Jones–Wenzl e₃ (Wenzl recursion in the U-word algebra), on the A5.2-validated TL engine. Gates: N=3 regression vs the A5.2 path; 4₁ 3-cable (w=0) = the trusted Masbaum p=−1 tower at N=4; trefoil framing calibration (consistent ribbon power). TEST: B₄(5₂;q) has no zero on q*±2e-8 and is anchor-smooth; 4₁ null control exact — capstone constraint (2) fails on the certified N=4 categorical face (scope-(a), extending N=3). auditOnly; no c_k wired; no fit.",
+  "contentBlock": "prop:phi-b-unitary-bar-odd",
+  "data": {
+    "framing_power_N4": "fr = -q^7.5 (ribbon twist, unknot-calibrated exactly)",
+    "qstar_test_N4": {
+      "B_qstar": "-10.3376891441",
+      "sign_changes": 0,
+      "rel_slope": "9.4426e+01",
+      "null_41": "3.72286e-29"
+    },
+    "verdict": "CERTIFIED N=4 CATEGORICAL FACE: no q* zero, anchor-smooth, 4₁-null exact — capstone constraint (2) fails at N=4 too (scope-(a), extends the A5.2 N=3 certification). The categorical carrier search continues to genuine limit objects. auditOnly."
+  }
+}
