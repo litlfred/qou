@@ -1,0 +1,48 @@
+{
+  "description": "EXACT-rational s-series extraction promoting c_4^even to a validated ladder rung (KC=4, s^10). Extends qbeta_c3even_exact_sseries_probe by folding log(1+c_4 u^4) at its own order; the s^10 residual is a c_5 conditioning check, not a rung. c_2^even/c_3^even reproduced as gates. Casoratian W_3 = c3e*c4o - c4e*c3o now needs only c_4^odd (gated). auditOnly; no production wiring; no fit.",
+  "audit_only": true,
+  "parameters": {
+    "q0": "1.1099785955573347198997632204832250266562084087802",
+    "series_order": 10,
+    "KC": 4
+  },
+  "exact": {
+    "c2_even_exact": "-1049/144 - 5*sqrt(3)/12",
+    "c3_even_exact": "841/144 + 604739*sqrt(3)/12960",
+    "c4_even_exact": "-2483340421/1451520 - 120701*sqrt(3)/1920"
+  },
+  "numeric_50dps": {
+    "c2_even": "-8.00641005870925442785865819785",
+    "c3_even": "86.6611630646909942600690102713",
+    "c4_even": "-1819.74067252288946759519576958",
+    "c5_even_scale_check_not_a_rung": "63240.994539836873626",
+    "casoratian_W2_shadow": "102.67398318210950312"
+  },
+  "assertions": [
+    {
+      "label": "Delta(net) reconstruction matches witness at q0 (<1e-6)",
+      "passed": true
+    },
+    {
+      "label": "R(q=1) == 1 exactly (ladder normalisation)",
+      "passed": true
+    },
+    {
+      "label": "c_2^even gate (-8.006 +/- 0.05)",
+      "passed": true
+    },
+    {
+      "label": "c_3^even matches 9fnm witness (<1e-6)",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "scriptHash": "d1f3f64e6284",
+  "scriptCommitSha": "492425b7369ddd719581e201998c2fc7d2cefee2",
+  "commitSha": "492425b7369ddd719581e201998c2fc7d2cefee2",
+  "engine": "sympy",
+  "computedAt": "2026-07-18T09:49:51.408422+00:00",
+  "durationMs": 332300,
+  "engineVersion": "sympy 1.14.0",
+  "scriptFile": "qbeta_c4even_exact_sseries_probe.py"
+}
