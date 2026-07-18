@@ -1,0 +1,75 @@
+{
+  "$schema": "https://litlfred.github.io/witness-schema/witness.schema.json",
+  "witnessVersion": "1.0",
+  "id": "alpha-em-multiplicity2-realcomplex",
+  "description": "\u03b1_EM per-loop measure 1/(8\u03c0): real-vs-holomorphic count of the 8\u03c0 = 2\u00b7(4\u03c0) multiplicity. Real b\u2081=8 FORCED (merged real-\u0394\u2081 \u03b6-index + real gauge field); reciprocal normalization FORM stays OPEN. scope-(a), auditOnly.",
+  "auditOnly": true,
+  "computation": {
+    "script": "computations/alpha_em/alpha_em_multiplicity2_realcomplex_probe.py",
+    "scriptCommitSha": "c4ef6e9346a54a9e4c2b84776c071f229f50593a",
+    "scriptHash": "e39960acf13d"
+  },
+  "inputs": {
+    "genus": 4,
+    "betti1_real": 8,
+    "holomorphic_count": 4
+  },
+  "controls": [
+    {
+      "name": "betti1_eq_2g",
+      "pass": true,
+      "detail": "b\u2081 = 2g = 8"
+    },
+    {
+      "name": "holomorphic_count_eq_g",
+      "pass": true,
+      "detail": "dim H^(1,0) = g = 4"
+    },
+    {
+      "name": "real_over_holomorphic_is_2",
+      "pass": true,
+      "detail": "b\u2081/g = 2 = 2"
+    },
+    {
+      "name": "zeta_index_is_real_b1",
+      "pass": true,
+      "detail": "\u2212\u03b6_\u0394\u2081(0) = 8 = b\u2081 (real), \u2260 g = 4 (holomorphic)"
+    }
+  ],
+  "assertions": [
+    {
+      "name": "real_reading_hits_8pi",
+      "pass": true,
+      "detail": "\u03c0\u00b7b\u2081 = 8\u03c0 (real harmonic 1-forms)"
+    },
+    {
+      "name": "holomorphic_reading_is_half",
+      "pass": true,
+      "detail": "\u03c0\u00b7g = 4\u03c0 = (8\u03c0)/2 \u2014 holomorphic count is a factor 2 short \u21d2 excluded"
+    },
+    {
+      "name": "index_selects_real_count",
+      "pass": true,
+      "detail": "the merged real-\u0394\u2081 \u03b6-index \u2212\u03b6_\u0394\u2081(0)=2g selects b\u2081 (real), forcing the factor 2 = real\u2295complex Hodge doubling H\u00b9(M,\u211d)\u2297\u2102 = H^{1,0}\u2295H^{0,1}"
+    },
+    {
+      "name": "readings_P_and_H_agree_numerically",
+      "pass": true,
+      "detail": "\u03c0\u00b7b\u2081 = (4\u03c0)\u00b72 = 8\u03c0 \u2014 the two normalization readings coincide in value"
+    },
+    {
+      "name": "normalization_form_not_forced",
+      "pass": true,
+      "detail": "under reading (H) the 4\u03c0 is the heat-kernel Gaussian (NOT \u03c0\u00b7g), so its residual 2 is a distinct loop multiplicity the real-vs-complex argument does not supply; no proved invariant selects \u03c0\u00b7b\u2081 over (4\u03c0)\u00b72 \u2014 the reciprocal-form derivation stays the OPEN wall (scope-(a))"
+    },
+    {
+      "name": "claims_count_only_not_form",
+      "pass": true,
+      "detail": "a factor of 2 is the single easiest thing to fit; this probe forces the COUNT (real b\u2081, not holomorphic g) and explicitly does NOT claim the normalization form"
+    }
+  ],
+  "allPass": true,
+  "verdict": "REAL-VS-HOLOMORPHIC SUB-QUESTION: CLOSES (scope-(a), forced). The per-loop mode count is the REAL harmonic-1-form count b\u2081 = 2g = 8, NOT the holomorphic g = 4: the merged \u03b6-index \u2212\u03b6_\u0394\u2081(0) = 2g is the REAL Hodge Laplacian on \u03a9\u00b9(M,\u211d), and the photon is a real U(1) gauge field, so its self-energy propagator lives on the same real harmonic sector. The factor 2 in 8\u03c0 = 2\u00b7(4\u03c0) IS the real\u2295complex Hodge doubling H\u00b9(M,\u211d)\u2297\u2102 = H^{1,0}\u2295H^{0,1} \u2014 FORCED by the reality of \u0394\u2081, not a conflation. || NORMALIZATION-FORM SUB-QUESTION: stays OPEN (scope-(a)). 8\u03c0 admits reading (P) \u03c0\u00b7b\u2081 [one bare loop-\u03c0 traced over the b\u2081 real sectors, the #3896 index home] and reading (H) (4\u03c0)\u00b72 [the #3909 heat-kernel Gaussian 4\u03c0 \u00d7 a residual 2]; under (H) the residual 2 is a DISTINCT multiplicity the real-vs-complex argument does not supply. No proved invariant selects (P) over (H). Honest: the count is forced real-b\u2081; the reciprocal normalization FORM is not derived. No 8\u03c0 manufactured; no \u03b1_k wired; no fit; 1/(8\u03c0) stays a phase-4 identification.",
+  "scope": "(a) scope-limited \u2014 real count forced; normalization form open",
+  "antiLaundering": "no CODATA read; no convention tuned to 8\u03c0; factor 2 not fitted (claimed only via the real \u03b6-index); form residual stated open"
+}
