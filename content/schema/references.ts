@@ -203,6 +203,17 @@ export const references: CSLData[] = [
     note: "arXiv:math/0508100. Appendix proves the volume conjecture for the BORROMEAN RINGS using Habiro's cyclotomic expansion (habiro2000) — the strongest published Borromean asymptotic result; no AJ/recurrence-ideal statement for the Borromean exists in the literature as of 2026-07 (ds4b check, PR #3434). Metadata verified via search snippets, PDF body not read in-sandbox.",
   }),
 
+  // ── Hakimoglu-Brown 2025 — analytic dilogarithm identities over ℚ(√5) etc. ──
+  ref({
+    id: "hakimoglu-brown2025",
+    type: "article",
+    title: "Analytic dilogarithm identities",
+    author: [{ family: "Hakimoglu-Brown", given: "Cetin" }],
+    issued: { "date-parts": [[2025]] },
+    URL: "https://arxiv.org/abs/2506.10206",
+    note: "arXiv:2506.10206v2 (2025), MSC 33B30/33B15. A beta-integral technique giving analytic proofs of two-term Li₂ relations and ladder identities with arguments in ℚ(√2), ℚ(√3), ℚ(√5), ℚ(√−7), plus single-term dilogarithm evaluations. Supplies the analytic backing for the golden-ratio (ℚ(√5)) value Li₂(φ⁻²) = π²/15 − ln²φ used to evaluate the 4₁ real-q Habiro-tail resurgent action A₀ = π²/5 (QOU/QBeta/HabiroTailAction.lean; probe qbeta_fourone_habiro_tail_action). PDF read in-sandbox 2026-07-18 (uploads/2506.10206v2-analytic-dilogarithm-identities-hakimoglu-brown.pdf); the Rogers L-function (eq 4), Euler reflection (6), Landen (7) match the corpus derivation.",
+  }),
+
   // ── Sawabe 2024 — the link-AJ formulation (Hopf + Whitehead computed) ──
   ref({
     id: "sawabe2024",
