@@ -34,6 +34,21 @@ jobs:
             echo '_Upstream drift fails the gate once escalated to `--strict`; self-staleness is warn-only until the backlog drains. See `docs/design/2026-06-16-witness-staleness-propagation.md`._';
           } >> "$GITHUB_STEP_SUMMARY"
 
+      - name: q0-anchor flip detector (strict)
+        # A witness whose q0Value disagrees with its q0Anchor is the muon/proton
+        # flip-flop bug (bean tnjb). Unlike the warn-mode staleness backlog, a
+        # flip is a genuine correctness error, so this gate is STRICT: exits 1 on
+        # any Q0_FLIP. Missing anchors (pre-backfill) are NOT failures — a witness
+        # gains its anchor when next produced via WitnessBuilder (PR #4020).
+        run: |
+          python3 computations/audits/q0_anchor_consistency_audit.py --strict | tee /tmp/q0flip.txt
+          {
+            echo '## q0-anchor flip detector (strict)';
+            echo '```';
+            head -14 /tmp/q0flip.txt;
+            echo '```';
+          } >> "$GITHUB_STEP_SUMMARY"
+
       - uses: oven-sh/setup-bun@v2
       - name: Author-note Lean-coverage drift gate (strict)
         # The introduction's advertised proved-counts (PR #3490 mechanism:
