@@ -1,4 +1,8 @@
-Let $(\mathbf{C}, A, \tau)$ be a [quantum universe](#def:quantum-universe) over a Noetherian ring $R$. Let $q$ denote the substrate parameter. Assume the observability condition $\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) = 0$ ([quantum observable universe](#def:quantum-observable-universe)). The brane tower $\{A_n\}_{n \geq 0}$ constructed via [jet prolongation](#prop:jet-prolongation) satisfies the [Quantum lifting condition](#def:yekutieli-lifting-condition). The triple $(\mathbf{C}, A, \tau)$ is a quantum observable universe with the following structural properties:
+Let $(\mathbf{C}, A, \tau)$ be a [quantum universe](#def:quantum-universe) over a Noetherian ring $R$ with substrate parameter $q$, satisfying the observability condition
+$$
+  \mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) = 0
+$$
+([quantum observable universe](#def:quantum-observable-universe)). Assume the brane tower $\{A_n\}_{n \geq 0}$ constructed via [jet prolongation](#prop:jet-prolongation) satisfies the [Quantum lifting condition](#def:yekutieli-lifting-condition). Then $(\mathbf{C}, A, \tau)$ is a quantum observable universe with the following structural properties:
 
 1. *:refterm[Descent]{#descent} terminates.* The geometric :refterm[descent]{#descent} tower has finite length, bounded by $\mathrm{Krulldim} Z(\mathrm{End}_{\mathbf{C}}(A))$. Observability ensures each step is a strict reduction because the $G_q$-action is faithful.
 2. *First obstruction equals the Euler class.* The obstruction $\kappa_0 \in H^2(\mathcal{S}, \mathcal{B})$ equals the Euler class of the Reeb bundle. Under the trace map, $\kappa_0 \mapsto \chi(A) = \mathrm{tr}(\mathrm{id}_A) \in R$.

@@ -135,9 +135,12 @@ export default chapter({
       blocks: [
         "intro-ns-obstruction-tower-mtc",
         "ns-obstruction-tower",
+        "ns-obstruction-tower-summary",
         "ns-obstruction-computation",
+        "ns-obstruction-computation-asymptotic",
         "ns-obstruction-computation-interpretation",
         "ns-kummer-specialisation",
+        "ns-kummer-specialisation-consequence",
         "ns-singularity-descartes",
         "ns-singularity-descartes-proof",
         "ns-singularity-descartes-interpretation",

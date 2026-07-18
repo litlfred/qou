@@ -1,6 +1,11 @@
 **Proposition (conditional on [`conj:classical-limit-stpart`](#conj:classical-limit-stpart) — classical limit).**
 *In the $q \to 1$ limit of the categorical trace, the following degenerations occur:*
 
+$$
+  H_n(R, q) \xrightarrow{\,q \to 1\,} k[S_n], \qquad
+  \mathrm{tr}_M \xrightarrow{\,z \to 0\,} \varepsilon.
+$$
+
 1. **(Hecke $\to$ symmetric group.)**
    *The Hecke relation $(T - q)(T + q^{-1}) = 0$ becomes $T^2 = 1$. The Iwahori--Hecke algebra $H_n(R, q)$ degenerates to the group algebra $k[S_n]$.*
 

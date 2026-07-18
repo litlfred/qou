@@ -1,0 +1,1 @@
+Concretely, given the family of irreducible representations (irreps), the Fourier transform provides a family of projections, each isolating the component of an endomorphism on a given irrep. This structural existence theorem underpins the harmonic analysis on the categorical Frobenius–Hopf algebra $A$.

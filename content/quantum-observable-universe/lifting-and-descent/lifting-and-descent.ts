@@ -93,6 +93,7 @@ export default chapter({
       label: "sec:yekutieli-lifting-kummer-motivic",
       blocks: [
         "yekutieli-lifting-kummer-motivic-intro",
+        "p3-blowup-yekutieli-intro",
         "p3-blowup-yekutieli",
         "blowup-cohomological-address",
         "blowup-regularity-as-lifting",
@@ -130,6 +131,7 @@ export default chapter({
         "vacuum-state-su2",
         "global-gluing",
         "global-gluing-proof",
+        "global-gluing-interpretation",
         "ordering-jet-compatibility",
         "ordering-jet-compatibility-proof",
       ],

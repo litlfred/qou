@@ -1,4 +1,14 @@
-The vertex operator algebra $(V, Y, |0\rangle)$ ([vertex operator](#def:vertex-operator)) inherits every QU and QUO axiom as a relation on the Hecke generators $\sigma_1, \ldots, \sigma_{n-1}$ of $H_n(R, q)$. Below we translate each axiom into **knot coordinates**: braid words in $\sigma_i$, the affine coordinate $z$ on $\mathcal{S}_p$, the Markov trace $\mathrm{tr}_M$, and cup/cap morphisms $\cup\colon \mathbf{1} \to V^{\vee} \otimes V$, $\cap\colon V \otimes V^{\vee} \to \mathbf{1}$.
+The vertex operator algebra $(V, Y, |0\rangle)$ ([vertex operator](#def:vertex-operator)) inherits every QU and QUO axiom as a relation on the Hecke generators $\sigma_1, \ldots, \sigma_{n-1}$ of $H_n(R, q)$, translated into **knot coordinates**: braid words in $\sigma_i$, the affine coordinate $z$ on $\mathcal{S}_p$, the Markov trace $\mathrm{tr}_M$, and cup/cap morphisms $\cup\colon \mathbf{1} \to V^{\vee} \otimes V$, $\cap\colon V \otimes V^{\vee} \to \mathbf{1}$. The generators obey the Hecke relation
+
+$$
+  \sigma_i^2 = (q - q^{-1})\sigma_i + 1 \qquad (1 \leq i \leq n-1),
+$$
+
+and the vertex algebra of a QUO is the quotient of the free algebra on $\{\sigma_i, \cup, \cap, L_{-1}, \mathrm{tr}_M, d, d_q, \star\}$ by **26 relations** — 14 structural (the QU/QUO axioms QU-1 through QUO-4) and 12 cohomological (C-1 through C-10) — catalogued in [Table 2](#tbl:vertex-algebra-relations-table2-data) and [Table 3](#tbl:vertex-algebra-relations-table3-data), coupled with the Hecke--Skein dictionary $\sigma_i \leftrightarrow L_+$, $\sigma_i^{-1} \leftrightarrow L_-$, $1 \leftrightarrow L_0$.
+
+## Proof
+
+Each axiom is translated into knot coordinates below.
 
 ***
 

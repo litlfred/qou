@@ -1,8 +1,16 @@
-Every relation in the QU/QUO presentation ([vertex algebra relations](#prop:vertex-algebra-relations)) lifts to the jet bundle $J^n(A) = A_n$ via the brane tower ([recursive brane tower](#def:recursive-brane-tower)). The jet prolongation $L_{-1}\colon A_n \to A_{n+1}$ promotes each level-$n$ Iwahori--Hecke algebra $H^{(n)}(q)$ to a level-$(n{+}1)$ Hecke algebra $H^{(n+1)}(q)$. The :refterm[descent]{#descent} involution $\hat{\tau}_n = \ell_n \circ \mathfrak{d}_{n+1}$ splits the level-$(n{+}1)$ relations into **descended** (inherited from level $n$) and **transient** (genuinely new at level $n{+}1$).
+Every relation in the QU/QUO presentation ([vertex algebra relations](#prop:vertex-algebra-relations)) lifts to the jet bundle $J^n(A) = A_n$ via the brane tower ([recursive brane tower](#def:recursive-brane-tower)). The jet prolongation $L_{-1}\colon A_n \to A_{n+1}$ promotes each level-$n$ Iwahori--Hecke algebra $H^{(n)}(q)$ to a level-$(n{+}1)$ Hecke algebra $H^{(n+1)}(q)$. Write $\sigma_i^{(n)}$ for the Hecke generators, $\mathrm{tr}_M^{(n)}$ for the level-$n$ Markov trace, and $\check{R}^{(n)}$ for the level-$n$ $R$-matrix; the jet embedding $\ell_n$ and the descent $\mathfrak{d}_{n+1}$ satisfy
 
-Let $\sigma_i^{(n)}$ denote the Hecke generators at brane level $n$, $\mathrm{tr}_M^{(n)}$ the level-$n$ Markov trace, and $\check{R}^{(n)}$ the $R$-matrix at level $n$. The jet embedding is $\ell_n\colon H^{(n)}(q) \hookrightarrow H^{(n+1)}(q)$ with $\ell_n(\sigma_i^{(n)}) = \sigma_i^{(n+1)}$. The :refterm[descent]{#descent} is $\mathfrak{d}_{n+1}\colon H^{(n+1)}(q) \to H^{(n)}(q)$ with $\mathfrak{d}_{n+1} \circ \ell_n = \mathrm{id}$.
+$$
+  \ell_n(\sigma_i^{(n)}) = \sigma_i^{(n+1)}, \qquad
+  \mathfrak{d}_{n+1}\colon H^{(n+1)}(q) \to H^{(n)}(q), \qquad
+  \mathfrak{d}_{n+1} \circ \ell_n = \mathrm{id}.
+$$
 
-***
+The :refterm[descent]{#descent} involution $\hat{\tau}_n = \ell_n \circ \mathfrak{d}_{n+1}$ splits the level-$(n{+}1)$ relations into **descended** (inherited from level $n$) and **transient** (genuinely new at level $n{+}1$). The presentation on $J^n(A)$ comprises 34 relations — 11 structural (level-$n$ lifts of QU/QUO), 4 :refterm[descent]{#descent}, and 9 cohomological, plus the 2 inter-level relations J-3c and J-4a — catalogued in [Table 1](#tbl:vertex-algebra-jet-relations-table1-data), [Table 2](#tbl:vertex-algebra-jet-relations-table2-data), and [Table 3](#tbl:vertex-algebra-jet-relations-table3-data).
+
+## Proof
+
+The relations are exhibited level by level.
 
 ## I. Structural relations on $J^n(A)$
 

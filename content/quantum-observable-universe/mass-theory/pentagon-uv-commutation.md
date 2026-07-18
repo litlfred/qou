@@ -56,7 +56,7 @@ a triple product at jet level $n$ rewrites via pentagon as a
 pair plus a singleton at level $n$, leaving a residual
 $\Phi_q(uv)$ that ascends to level $n+1$.
 
-## Derivation sketch
+## Proof
 
 The pentagon q-factor is a feature of the brane tower's
 $q$-graded jet stratification, not of the scalar $\hat V_i$'s:

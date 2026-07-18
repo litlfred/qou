@@ -1,0 +1,1 @@
+Uniqueness guarantees that the harmonic decomposition of physical states in the quantum observable universe does not depend on the choice of basis or the specific representative of the functor, but is an intrinsic topological invariant of the category.

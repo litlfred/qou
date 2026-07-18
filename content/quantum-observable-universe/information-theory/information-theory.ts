@@ -207,6 +207,7 @@ section({
         // as an intra-section H1 forward ref; swap makes it a
         // backward ref, no new cascade.
         "composite-crossing-parity",
+        "composite-crossing-sublimation-criteria",
         "phase-transition-interpretation",
         "crossing-parity-test",
         "crossing-parity-test-table-data",
@@ -224,6 +225,7 @@ section({
         "incompleteness-horizon-intro",
         "incompleteness-implies-horizon",
         "incompleteness-implies-horizon-proof",
+        "incompleteness-horizon-nontriviality",
         "incompleteness-horizon",
         "stat-mech-computational-horizon",
         "stat-mech-computational-horizon-table-data",

@@ -1,0 +1,99 @@
+## Scope — Jones/TL trace vs. the full-Hecke mass-pipeline trace
+
+This proposition concerns the **Jones / Temperley–Lieb** normalisation of the
+$\mathrm{H}_3(q)$ Markov trace — the trace whose value on a braid closure is the
+**Jones polynomial**. Its defining feature is $y_{(1^3)} \equiv 0$: the
+Temperley–Lieb quotient annihilates the three-row partition.
+
+The framework's **mass and binding computations** use a *different* trace: the
+**full-Hecke Ocneanu** Markov trace, with parameter $z = 1/(q^{1/2}+q^{-1/2})$
+and Wedderburn weights given by the Wenzl Schur-principal specialisation
+(`y_lambda_wenzl_bridge_numeric` $\to$ `closed_form_tau_M`). That trace is proven
+canonical — Path A (ladder linear system) $=$ Path B (Wenzl Schur) as a
+$\mathbb{Z}$-Laurent identity — in the $y_\lambda$–$\mathrm{tr}_M$ equivalence
+proof (`docs/audits/2026-05-05-y-lambda-tr-m-equivalence-proof.md`), and its
+three-row weight is $y_{(1^3)}(q) \neq 0$ for $q \neq 1$.
+
+The two traces **coincide at the symmetric point** $q = 1$ (both give
+$(\tfrac12,\tfrac14,0)$) and on the observable combination carried by
+writhe-$0$, $\pi=\mathrm{id}$ braids — which is why every *physical* mass
+prediction is insensitive to the distinction. They **diverge for $q \neq 1$**:
+the full-Hecke weights at the substrate are $(0.4154,\,0.2809,\,0.0227)$.
+Consequently the closed forms below should be read as the **Jones-polynomial**
+weights, not as the general $\mathrm{tr}_M$ $y_\lambda$ used by the compute
+pipeline.
+
+## Immediate corollary — the Borromean closed form in one line
+
+For any writhe-$0$ braid $\beta \in B_3$ with $\pi(\beta) = \mathrm{id} \in S_3$:
+
+$$
+  \mathrm{tr}_M(\beta)
+  \;=\;
+  1 + \frac{\chi^{(2,1)}(\beta) - 2}{[2]_q^{2}}.
+$$
+
+The entire $h$-dependence of such traces is carried by the single
+standard-channel character; the Borromean closed form is this identity
+evaluated at $\chi^{(2,1)}(\beta_{\mathrm{Bor}}) = 2 - 3h^4 - h^6$.
+
+## Non-uniformity of the weights — chirality of the Jones trace
+
+A bar-involution argument would suggest $y_{(3)} = y_{(1^3)}$ (the
+transpose pair). It fails: the transpose symmetry $\lambda
+\leftrightarrow \lambda^T$ is induced by the sign-twist automorphism
+$\sigma_i \mapsto -q\,\sigma_i^{-1}$, and the Jones-normalised Markov
+trace is **not invariant** under this automorphism — it is chiral,
+weighting the $\sigma$- and $\sigma^{-1}$-eigenchannels asymmetrically.
+The extreme expression of this asymmetry is $y_{(1^3)} \equiv 0$
+against $y_{(3)}(1) = 1/2$.
+
+At $q = 1$ the trace reduces to the cycle-counting trace
+$\mathrm{tr}_M(w) = 2^{\,c(w) - n}$ on $\mathbb{C}[S_3]$ ($c(w)$ =
+number of cycles), and Schur orthogonality reproduces
+$(\tfrac12, \tfrac14, 0)$ directly.
+
+## Notation note — $y_\lambda$, $\mu_\lambda$, $\chi^\lambda$, $w_\lambda$ are distinct
+
+Four $\lambda$-indexed scalars appear in the Hecke-algebra blocks of
+this paper. They are easy to conflate by symbol similarity but encode
+independent data:
+
+- $y_\lambda(q)$ — Wenzl/Markov coefficient: appears in
+  $\mathrm{tr}_M = \sum_\lambda y_\lambda \cdot \chi^\lambda$, normalised by
+  $\sum_\lambda y_\lambda \, d_\lambda = 1$. **This proposition gives the
+  Jones/TL values** ($y_{(1^3)} \equiv 0$); the full-Hecke Ocneanu trace used
+  by the mass pipeline has *different* $y_\lambda$ at $q \neq 1$
+  ($y_{(1^3)} \neq 0$) — see the Scope note above.
+- $\chi^\lambda(g)$ — character: trace of the $V_\lambda$-representation
+  on a specific element $g$ (e.g. a braid).
+- $\mu_\lambda(q)$ — $q$-Laplacian eigenvalue on $V_\lambda$
+  ([`prop:q-heat-kernel-peter-weyl`](../information-theory/q-heat-kernel-peter-weyl.md)):
+  the heat-kernel decay rate, *not* a Markov-trace ingredient.
+- $w_\lambda(q) = [n]_q! / H_q(\lambda)^2$ — Plancherel measure
+  ([`rem:symmetric-point-resolution-loss`](../models-of-qous/symmetric-point-resolution-loss.md)):
+  normalised by $\sum_\lambda w_\lambda = 1$; at $q = 1$ it is
+  non-uniform in a *different* pattern ($\tfrac16, \tfrac23, \tfrac16$
+  for $n = 3$) from the Wenzl weights of this proposition
+  ($\tfrac12, \tfrac14, 0$).
+
+## Significance for the Borromean derivation
+
+The $1/4$ factor in
+[$h^4(\mathrm{tr}_M(\beta_{\mathrm{Bor}})) = (-3) \cdot (1/4) = -3/4$](borromean-h4-categorical-derivation.md)
+is $y_{(2,1)}(q = 1) = 1/[2]_q^2|_{q=1}$ from this proposition — and
+the identity $y_{(2,1)}(q) = 1/[2]_q^2$ holds **exactly for all $q$**,
+not only at the symmetric point. The Borromean $h^4$ separation into
+character coefficient $\times$ Markov normalisation is therefore an
+exact structural fact, with the $(h^2 + 4)$ denominator of the closed
+form being precisely $[2]_q^2 = 1/y_{(2,1)}(q)$.
+
+> **Correction note.** An earlier draft of this proposition claimed the
+> $q = 1$ weights were *uniform* ($y_\lambda(1) = 1/4$ for all
+> $\lambda \vdash 3$) via a bar-involution argument. That claim was
+> wrong — caught in review — for the reason documented in the chirality
+> section above: the Jones trace is not sign-twist invariant. The
+> corrected weights $(\tfrac12, \tfrac14, 0)$ are verified three ways:
+> Schur orthogonality on the $q = 1$ cycle-counting trace, the exact
+> $q$-dependent closed forms above, and canonical reproduction of the
+> Borromean closed form at 30 digits.

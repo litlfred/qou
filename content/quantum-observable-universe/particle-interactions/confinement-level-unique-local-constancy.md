@@ -1,0 +1,1 @@
+There is local uniqueness in $q$. By the continuity of shadow prices on the generic locus, $\ell(K, q')$ is locally constant on a neighborhood of $q$, except at the boundary variety where some $E(\lambda, q) = 0$.

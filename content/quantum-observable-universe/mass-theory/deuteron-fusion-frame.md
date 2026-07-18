@@ -1,5 +1,10 @@
-*Let $v = \sqrt{q_0}$ and write the symmetric $q$-integers
-$[2]_v = v + v^{-1}$, $[3]_v = v^2 + 1 + v^{-2}$. The dimensionless content
+*Let $v = \sqrt{q_0}$ and write the symmetric $q$-integers*
+
+$$
+  [2]_v = v + v^{-1}, \qquad [3]_v = v^2 + 1 + v^{-2}.
+$$
+
+*The dimensionless content
 of the deuteron binding magnitude is fixed by three exact identities:*
 
 1. *(**fusion**) $[2]_v^2 = [3]_v + 1$ — the quantum-dimension form of the

@@ -1,7 +1,5 @@
 *Let $\mathcal{S}$ be a strangelet and $\mathfrak{p}$ an ordinary hadron interacting with it. The interaction occurs in the degree-$2$ fiber of the chiral fibration, governed by the cinquefoil $T_{2,5}^{\sigma}$ ($5$ crossings, genus $2$). This sector is electromagnetically dark: the strangelet has $Q = 0$ ([strangelet crossing energy](#prop:strangelet-crossing-energy)), exchanging no photons.*
 
-*The interaction products become electromagnetically visible only through Skein crossing changes. Each crossing change is a beta decay that lowers the degree from $2$ toward $1$. The minimal path from the degree-$2$ fiber (cinquefoil, $5$ crossings) to the degree-$1$ fiber (trefoil, $3$ crossings) requires two crossing changes: a double beta decay.*
-
 **Skein :refterm[descent]{#descent}.**
 Each crossing change in the Skein relation
 

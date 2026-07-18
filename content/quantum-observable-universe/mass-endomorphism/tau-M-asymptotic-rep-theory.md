@@ -1,6 +1,6 @@
 **$\mathrm{tr}_M$ ladder — representation-theoretic structure.**
 
-**Proposition (conditional on the open recursion kernel of [`prop:q-beta-c-k-recursion-from-habiro-q-difference`](#prop:q-beta-c-k-recursion-from-habiro-q-difference)).** We prove unconditionally the low-order data ($c_0 = 0$, one-dimensional triviality, the $N=1$ coupling $b$, and the bar-even seed $c_2 = -1$) together with the $\hbar_q$-parity. The full ladder $\prod_{k \geq 2}\bigl(1 + c_k^{(\lambda)} u_\lambda^k\bigr)$ is rigorous modulo the substrate derivation of the kernel $R(q,\xi)$ that fixes $c_k$ for $k \geq 3$. This kernel is the open $s5$–$so_3$ keystone. The higher rungs remain conjectural pending that kernel; only the $N \leq 2$ truncation enters the calibrated mass evaluation.
+**Proposition (conditional on the open recursion kernel of [`prop:q-beta-c-k-recursion-from-habiro-q-difference`](#prop:q-beta-c-k-recursion-from-habiro-q-difference); "$\mathrm{tr}_M$ ladder").**
 
 For a typed braid $\beta$ and a Hecke irreducible representation $V_\lambda$ of $H_n(q)$, the Markov-traced character at single wrap admits a canonical factorisation in the substrate ladder variable $u_\lambda = b_\lambda\,\hbar_q^2$ (where $\hbar_q = (q-1)/q$):
 
@@ -33,7 +33,5 @@ The rung coefficients are not free. They are determined by the proved second-ord
 | $k = 2$ | $c_2 = -1$, factor $(1 - b^2\hbar_q^4)$ | proved seed (bar-even); **wired** ($\mathfrak{Q}_\beta$ production) |
 | $k = 3$ | $c_3 \approx -2$, factor $(1 - 2b^3\hbar_q^6)$ | near-match (recursion + open kernel) |
 | $k \geq 4$ | $c_k^{(\lambda)}$ | recursion-generated; kernel open |
-
-For the production mass formula ($\mathfrak{m}_{\mathfrak{n}} = \mathfrak{m}_{\mathfrak{p}} + \mathfrak{Q}_\beta + \mathfrak{m}_{\mathfrak{e}}$), only the $N=1$ envelope and the proved seed $c_2 = -1$ are used (`derived_masses.q_beta_kashiwara_n2_mev`). The higher rungs matter only for the $1\,\mathrm{ppQ}$ stretch target. For this target, the kernel $R(q,\xi)$ required by the recursion is the open $s5$–$so_3$ keystone, which is the same open input required by the absolute-mass $F_{\mathrm{Bor}}$ term-6 Habiro tail.
 
 **Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall. It invokes real- or complex-analytic constructs, including real-valued physical observables, real-analytic bounds, transcendental constants, and numerical evaluation at the substrate parameter $q_0$. Any generic categorical or $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.

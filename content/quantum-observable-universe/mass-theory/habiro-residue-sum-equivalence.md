@@ -1,8 +1,13 @@
 *Let $T_w \in H_n(q)$ be a closed braid word and let
 $\mathrm{tr}_M(T_w, q)$ denote its Markov trace, viewed in the Habiro
-ring $\widehat{\mathbb{Z}[q]}$.  Then the two formulations of $\mathrm{tr}_M$
-arising in this chapter agree on the archimedean realization
-$q \mapsto q_0 \in \mathbb{R}$:*
+ring $\widehat{\mathbb{Z}[q]}$.  The two formulations of $\mathrm{tr}_M$
+arising in this chapter agree on the archimedean realization*
+
+$$
+  \widehat{\mathbb{Z}[q]} \;\xrightarrow{\;\rho_\infty\;}\; \mathbb{R}
+$$
+
+*whenever both correspond to the same braid word $T_w$, namely:*
 
 1. *the **polynomial-ring** value, computed from any
    [Habiro completion](#prop:full-pole-structure-mass-trace) instance
@@ -13,14 +18,7 @@ $q \mapsto q_0 \in \mathbb{R}$:*
    [Gröbner–Shirshov residue spectral sum](#prop:gb-residue-spectral-sum)
    instance $\mathcal{R}$ as $\mathcal{R}.\mathrm{mass}$,*
 
-*coincide whenever both instances correspond to the same braid word $T_w$.
-Equivalently, the diagram*
-
-$$
-  \widehat{\mathbb{Z}[q]} \;\xrightarrow{\;\rho_\infty\;}\; \mathbb{R}
-$$
-
-*commutes for the two distinct constructions of
+*coincide as the two distinct constructions of
 $\mathrm{tr}_M(T_w) \in \widehat{\mathbb{Z}[q]}$.*
 
 This is a

@@ -2,7 +2,13 @@
 *The Taylor coefficients $c_n$ of*
 [`delta_tau_M_surrogate`](qbeta-per-block-chi-closed-forms.md)
 *expanded around the classical point $q = 1$ in the variable
-$w = q - 1$, to order 7:*
+$w = q - 1$, to order 7, are read off the closed form*
+
+$$
+  \Delta\mathrm{tr}_M^{\text{surr}}(q) = \frac{-q^{11} + q^{10} - 2q^9 + q^8 + q^6 - q^5 - q^3 + 2q^2 - q + 1}{4 q^5 (q^2 + q + 1)}
+$$
+
+*by substituting $q = 1 + w$ and extracting the coefficient of $w^n$:*
 
 | Order $n$ | Coefficient $c_n$ | Status in Lean |
 |---|---|---|
@@ -15,35 +21,9 @@ $w = q - 1$, to order 7:*
 | 6 | $111/4$ | catalogued from witness; formal proof deferred |
 | 7 | $-3665/81$ | catalogued from witness; formal proof deferred |
 
-
-## Formal scope
-
-**This block establishes:**
-
-- The named function `delta_tau_M_surrogate_taylor_witness : ℕ → ℚ`
-  in Lean returning the witness-recorded coefficient at each order.
-- Sorry-free reflexivity-level theorems
-  `delta_tau_M_surrogate_taylor_witness_0 = 0` and
-  `delta_tau_M_surrogate_taylor_witness_1 = -5/6` matching the
-  formally-proved Lean theorems on the exact derivative-at-1.
-
-**This block defers:**
-
-- Sorry-free $n$-th derivative theorems for orders 2..7. Each requires a quotient-rule chain $n+1$ levels deep. These remain stated as Lean theorems with
-  `sorry` and `-- Ref:` citations to the witness JSON.
-- A closed-form recursion for the $c_n$. The underlying rational
-  function forms a degree-11/degree-7 quotient, so a finite-order
-  linear recursion on $c_n$ exists, but extracting it remains open.
-
-
-$$
-  \Delta\mathrm{tr}_M^{\text{surr}}(q) = \frac{-q^{11} + q^{10} - 2q^9 + q^8 + q^6 - q^5 - q^3 + 2q^2 - q + 1}{4 q^5 (q^2 + q + 1)}
-$$
-
-substituting $q = 1 + w$ and extracting coefficients of $w^n$. The
-witness records both the closed form and per-order coefficients;
-order-0 and order-1 are independently verified by the sorry-free
-Lean theorems above (orders 0 and 1).
+The witness records both the closed form and per-order coefficients;
+orders 0 and 1 are independently verified by the sorry-free Lean
+theorems named in the table.
 
 ## Cross-references
 

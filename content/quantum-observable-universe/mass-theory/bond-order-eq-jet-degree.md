@@ -4,7 +4,15 @@ nucleons — each nucleon a $3$-strand block, assembled by
 filtration by Coxeter length $\ell(w)$
 ([`prop:gb-spectral-sequence`](#prop:gb-spectral-sequence)) read off through
 the jet-prefix order
-([`prop:jet-prefix-gb-filtration`](#prop:jet-prefix-gb-filtration)). Then:
+([`prop:jet-prefix-gb-filtration`](#prop:jet-prefix-gb-filtration)). Then the
+body-order decomposition of the binding coincides, term by term, with the
+jet-order filtration,
+
+$$
+\sum_{n} (\text{$n$-body term}) \;=\; \sum_{n}\mathrm{gr}_n ,
+$$
+
+where:
 
 1. the sub-braid spanning an $n$-nucleon cluster lies in **jet vertical
    degree $n$** — its Gröbner--Shirshov normal form has filtration degree
@@ -12,28 +20,8 @@ the jet-prefix order
 2. the associated-graded component $\mathrm{gr}_n$ of the filtration is
    exactly the **$n$-body cluster contribution**.
 
-Consequently the body-order decomposition of the binding coincides, term by
-term, with the jet-order filtration:
-
-$$
-\sum_{n} (\text{$n$-body term}) \;=\; \sum_{n}\mathrm{gr}_n .
-$$
-
-This is obligation **(C)** of
-[`conj:binding-manybody-eq-jet-filtration`](#conj:binding-manybody-eq-jet-filtration):
-it identifies the two filtrations, leaving the per-term mass identity
-$B_n = m_e\,a_D^{(n)}$ (the mass identity applied to each graded piece) and
-the kernel of the growth recurrence
-([`prop:binding-genfun-qdifference`](#prop:binding-genfun-qdifference)) as the
-remaining inputs.
-
-The grading rests on the Gröbner--Shirshov filtration (step 7, derived) read
-through the jet-prefix order (step 8); the exhaustiveness of the cluster
-decomposition — every contribution lives in some finite cluster degree — is
-the structural property of the `atom_braid_word_3A` construction (each added
-nucleon raises the normal-form length by its block, so an $n$-cluster
-sub-word sits at degree $n$).
-
-Though the proof reduces to a standard jet-degree equivalence argument, projecting the structural hypothesis onto this geometric form to explicitly equate bond order with the jet-degree of the extracted $S$ field is a mathematically novel physical framing specific to the Quantum Observable Universe.
+The obligation-(C) identification, the exhaustiveness of the cluster
+decomposition, and the physical framing are collected in
+[the bond-order context](#rem:bond-order-eq-jet-degree-context).
 
 **Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall: it invokes real- or complex-analytic constructs — real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.

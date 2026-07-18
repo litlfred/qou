@@ -129,6 +129,7 @@ export default chapter({
         "stochastic-mechanics-orphan-reconnect-intro",
         "lusztig-canonical-basis-q-eq-1",
         "phi-q-aj-machinery-identification",
+        "phi-q-aj-machinery-identification-details",
         "reverse-limit-q-to-infinity",
         "outro-stochastic-mechanics",
       ],

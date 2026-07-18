@@ -1,0 +1,1 @@
+The [vacuum state](#prop:vacuum-state) is well-defined globally despite local non-commutativity. In the archimedean realisation, this manifests as the global gluing of the local algebras $\mathcal{O}_{q(p)}(\mathrm{SU}(2))$ over the manifold $M$.

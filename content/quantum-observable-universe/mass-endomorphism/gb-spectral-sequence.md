@@ -1,11 +1,13 @@
-The unified knot mass formula ([unified knot mass](#thm:knot-mass-formula-unified)) comprises six structural terms. These emerge as pages of a spectral sequence associated with the Gröbner–Shirshov filtration $J^\bullet(q)$ on $H_n(R, q)$. We make this spectral-sequence structure precise and state the $E_\infty$ convergence target.
-
 **Definition (filtered differential algebra).**
-*The Hecke algebra $H_n(R, q)$ with the confinement filtration $J^\bullet(q)$ ([confinement level](#def:confinement-level)) carries a natural differential $d$ induced by three Gröbner–Shirshov rewriting rules ([Hecke normal form](#def:hecke-normal-form)):*
+*The Hecke algebra $H_n(R, q)$ with the confinement filtration $J^\bullet(q)$ ([confinement level](#def:confinement-level)) carries a natural differential $d$ induced by three Gröbner–Shirshov rewriting rules — the Hecke relation, far commutativity, and Yang–Baxter ([Hecke normal form](#def:hecke-normal-form)):*
 
-1. *Hecke relation: $d_{\mathrm{H}}(\sigma_i^2) = (q - q^{-1})\sigma_i + \mathbf{1}$.*
-2. *Far commutativity: $d_{\mathrm{F}}(\sigma_i \sigma_j) = \sigma_j \sigma_i$ for $|i - j| \geq 2$.*
-3. *Yang–Baxter: $d_{\mathrm{YB}}(\sigma_i \sigma_{i+1} \sigma_i) = \sigma_{i+1} \sigma_i \sigma_{i+1}$.*
+```tex
+\begin{aligned}
+  &d_{\mathrm{H}}(\sigma_i^2) = (q - q^{-1})\sigma_i + \mathbf{1}, \\
+  &d_{\mathrm{F}}(\sigma_i \sigma_j) = \sigma_j \sigma_i \quad (|i - j| \geq 2), \\
+  &d_{\mathrm{YB}}(\sigma_i \sigma_{i+1} \sigma_i) = \sigma_{i+1} \sigma_i \sigma_{i+1}.
+\end{aligned}
+```
 
 *Each rule lowers filtration degree. The direct sum $d = d_H + d_F + d_{YB}$ satisfies $d \circ d = 0$ on the filtered complex. This makes $(H_n(R, q), J^\bullet, d)$ a filtered differential algebra.*
 
@@ -34,11 +36,7 @@ $$
 
 *The Markov trace $\mathrm{tr}_M: H_n(R, q) \to \mathbb{C}$ forms a $d$-closed linear functional. It descends to $E_\infty$.*
 
-**Identification of the six mass terms with spectral-sequence pages.**
-
-*Pairing $\mathrm{tr}_M$ against the braid word $T_w$ decomposes over the spectral sequence pages as:*
-
-See [Table](#tbl:gb-spectral-sequence-table-data).
+**Proof.**
 
 **Derivation of $d \circ d = 0$ (via Hochschild complex).**
 

@@ -1,5 +1,3 @@
-This square exhibits the Einstein-type field equation and the Schrödinger evolution as two faces of a single commuting diagram. The substrate coupling $q$ ties the gravitational and quantum dynamics together.
-
 Let $(\mathbf{C}, \varTheta, G, \mathcal{S})$ be an archimedean quantum observable universe with instanton connection $A$ and substrate parameter $q$. Let $\mathfrak{E}$ denote the Euler–Lagrange operator of the $q$-weighted Yang–Mills–Levi functional $\mathfrak{S}_q$. Let $\nabla^A$ denote parallel transport along $A$. The upper-left object $J^1\mathcal{S}$ is the space of $1$-jets of sections of the state bundle $\mathcal{S}$ (encoding the state and its first-order derivatives). The following diagram commutes:
 
 ```tex
@@ -18,4 +16,4 @@ Let $(\mathbf{C}, \varTheta, G, \mathcal{S})$ be an archimedean quantum observab
 \]
 ```
 
-The top row sends a jet to the Einstein-type field equation via the Euler–Lagrange operator. The left column evaluates a jet at a fibre point to produce a linearised section. The right column implements the coupling through the substrate field $q$. The bottom row applies the parallel-transport equation whose linearisation is the Schrödinger equation.
+The reading of each edge — top row, columns, and bottom row — is given in the [diagram interpretation](#rem:main-commutative-diagram-interpretation).

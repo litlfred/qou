@@ -5,5 +5,3 @@
 3. *The set is **nonempty** (it contains $m$ since $J^m = H_n$).*
 
 *Therefore, the minimum exists and is unique. Tied operators enter the filtration together at a single level. The level remains uniquely defined even with degeneracy.*
-
-*We have local uniqueness in $q$. By the continuity of shadow prices on the generic locus, $\ell(K, q')$ is locally constant on a neighborhood of $q$, except at the boundary variety where some $E(\lambda, q) = 0$.*

@@ -54,6 +54,7 @@ export default chapter({
         "models-of-qous-intro",
         "q-yang-mills-levi",
         "main-commutative-diagram",
+        "main-commutative-diagram-interpretation",
         "main-commutative-diagram-proof",
       ],
     }),

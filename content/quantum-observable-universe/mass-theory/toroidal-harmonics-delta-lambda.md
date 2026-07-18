@@ -6,7 +6,13 @@ Bridging the mass calculation from the canonical base $m_{\text{can}}$ to the AM
 
 The Markov parameter recursion $c_k$ drives the strong-force topological trace. It constitutes a discrete evaluation of the knot complement's toroidal structure.
 
-Let $q = e^{-\eta}$. The Markov parameter $z(q) = \frac{\sqrt{q}}{1+q}$ is equivalently parametrised by $w = z^2 = \frac{1}{2(\cosh\eta + 1)}$. Under the change of variables $x = \cosh\eta = \frac{1}{2w} - 1$, the continuous Legendre differential equation for the Toroidal Harmonics of half-integer degree $n-1/2$:
+Let $q = e^{-\eta}$. The Markov parameter
+
+$$
+  z(q) = \frac{\sqrt{q}}{1+q}, \qquad w = z^2 = \frac{1}{2(\cosh\eta + 1)},
+$$
+
+is equivalently parametrised by $w$. Under the change of variables $x = \cosh\eta = \frac{1}{2w} - 1$, the continuous Legendre differential equation for the Toroidal Harmonics of half-integer degree $n-1/2$:
 
 $$ (1 - x^2) y'' - 2x y' + (n^2 - 1/4) y = 0 $$
 

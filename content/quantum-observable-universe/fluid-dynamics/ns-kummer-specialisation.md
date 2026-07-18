@@ -26,7 +26,13 @@ $$
   H^2(\mathcal{S}, \mathbb{G}_m) / nH^2(\mathcal{S}, \mathbb{G}_m).
 $$
 
-This resulting class safely avoids zero if and only if $\kappa_0$ fundamentally **resists** $n$-divisibility.
+The resulting class avoids zero if and only if $\kappa_0$ resists $n$-divisibility. Evaluated against any QOU with $\chi(A) \neq 0$:
+
+1. The exact specialisation $\kappa_0|_{q=1}$ avoids zero within $H^2(\mathcal{S}, \mathbb{G}_m)/n$ for all integers $n \nmid \chi(A)$.
+2. The integer set $\{n : n \nmid \chi(A)\}$ extends to infinity (encompassing all primes not dividing $\chi(A)$), so the obstruction remains **persistently nonzero**, piercing infinitely many levels of the Kummer tower.
+3. The obstruction vanishes only at the finite, isolated Kummer levels $n \mid \chi(A)$, which align with the finite set of roots of unity where the category's truncation is compatible with the fixed Euler class.
+
+**Proof.**
 
 **(a) Divisibility of the Euler class.**
 
@@ -61,18 +67,4 @@ $$
   \qquad\text{for all } \kappa \geq 4.
 $$
 
-The topological component driving the NS obstruction **rigorously avoids vanishing** through the $q \to 1$ classical limit.
-
-**(d) Formal statement.**
-
-Evaluated against any QOU possessing $\chi(A) \neq 0$:
-
-1. The exact specialisation $\kappa_0|_{q=1}$ rigidly avoids zero within $H^2(\mathcal{S}, \mathbb{G}_m)/n$ universally for all integers $n \nmid \chi(A)$.
-2. The integer set $\{n : n \nmid \chi(A)\}$ strictly extends to infinity (safely encompassing all primes avoiding $\chi(A)$). The overall obstruction must remain **persistently nonzero** structurally piercing infinitely many levels inside the Kummer tower.
-3. The absolute obstruction zeroes out exclusively at the finite, isolated Kummer levels matching $n \mid \chi(A)$. These align perfectly with the finite set of roots of unity where the category's truncation operates compatibly alongside the fixed Euler class.
-
-**(e) Consequence for NS regularity.**
-
-A valid QOU constrained by $\chi(A) = -6$ universally executes as **NS-singular**: $\mathrm{Obs}_\partial(A) = 0$. The boundary observability systematically vanishes. The classical Navier--Stokes equation inherently permits finite-time blowup.
-
-This result stems absolutely from (e) bonded to the [complementary-subgroup argument](#thm:qu-to-qou) (item 3). The core topological obstruction $e(\xi)|_\Sigma \neq 0$ lacks any mathematical channel to suffer cancellation against the operative analytic correction $\delta_n|_\Sigma$. They strictly populate complementary summands inside $H^2(\mathcal{S}, \mathbb{G}_m)$.
+The topological component driving the NS obstruction **rigorously avoids vanishing** through the $q \to 1$ classical limit. Items 1–3 follow: the vanishing set is exactly $\{n : n \mid \chi(A)\}$, finite and complementary to the infinitely many levels where $\kappa_0 \bmod n \neq 0$.

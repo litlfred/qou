@@ -1,0 +1,1 @@
+Beyond [smoothness and intrinsic resolution](#prop:brings-smoothness-resolution), the Briggs--Klein chart is regular: the radial parameter $r = \lvert w_1 \rvert^2$ is a regular function on $\mathcal{S}$, and the $C_5$ orbits $w_k \mapsto \zeta^k w_k$ foliate $\mathcal{S}$ without fixed points for $0 < r < \infty$.
