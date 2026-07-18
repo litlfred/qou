@@ -44,11 +44,33 @@ classical volume/Hessian** by conjugate symmetry, so it can only live in the qua
 sibling's certified 2-loop strip is essential, not optional**, and explains why every
 classical/geometric probe returned a null.
 
+## Refinement (2-loop c₁ test) — the "entirely 2-loop" attribution was too strong
+
+A follow-up test
+([`qbeta_5two_phi_odd_twoloop_ansatz_probe.py`](../../computations/probes/qbeta_5two_phi_odd_twoloop_ansatz_probe.py))
+computed the **actual 2-loop coefficient** `c₁ = 2πi(P₀(s)+P₁(s)y+P₂(s)y²)/(24δ³)`
+(the printed (238) polynomials) at the same verified σ₁/σ₂ saddle and used the leading
+2-loop amplitude `a_σ(τ)=(1/√(iδ))(1+c₁_σ·τ)` on the ray. Result: `c₁(σ₁)=−65.09+66.69i`,
+`c₁(σ₂)=+65.09+66.69i`, and the **bar-odd arg-sum phase stays EXACTLY 0** even with the
+c₁ correction (the conjugate structure cancels it); the magnitude ratio becomes nonzero
+but at the substrate `t≈0.209` is `0.46`, **not** the sibling's `0.0864`.
+
+So a truncated leading-saddle model reproduces **neither** `φ_odd=−0.004145` (phase
+stays 0) **nor** `mag_odd_ratio=0.0864` at the substrate t. **Correction:** the claim
+above that φ_odd is "generated **entirely** by the 2-loop (238) correction" is too
+strong — the *leading* 2-loop arg-sum also vanishes. **φ_odd is a genuinely full
+exact-Z effect** (cross-saddle interference + higher orders) that only the sibling's
+2×2 exact-Z extraction captures. **What stands:** the classical (geometric) data
+carries **no** bar-odd datum, so no classical/geometric route reaches φ_odd — the
+mechanism behind the corpus's geometric-route nulls is intact; only the "exactly
+2-loop" localization is retracted.
+
 ## Scope (anti-laundering)
 
-A proved 1-loop **vanishing** (arg-sum `= −π/2` exactly, conjugate symmetry). Does
-**not** compute φ_odd's value — that is the 2-loop amplitude, sibling-owned. No fit;
-no c_k; no tier change.
+A proved 1-loop **vanishing** (arg-sum `= −π/2` exactly, conjugate symmetry), refined
+by an honest 2-loop test showing the leading 2-loop arg-sum also vanishes. Does
+**not** compute φ_odd's value — full exact-Z, sibling-owned. No fit; no c_k; no tier
+change.
 
 ## Cross-references
 
