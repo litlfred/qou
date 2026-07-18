@@ -133,13 +133,8 @@ def main() -> int:
               f"-> leaks BELOW c2. Harder wall; no c4-first object here.")
         verdict["class"] = "leaks_below_c2"
     else:
-        # regularize both to the same order and take phi of the ratio
-        try:
-            phis = phis_of(dnet_conn, dnet3)  # log(Delta_conn/Delta_net3) coeffs? -> use conn as "4"
-        except Exception:  # noqa: BLE001
-            phis = None
-        # phis_of(a,b) returns [s^i] log(b/a) per its signature (dnet3,dnet4)->log(4/3);
-        # here we want log(conn/net3): call with (dnet3, dnet_conn).
+        # phis_of(a, b) returns [s^i] log(b/a); here we want log(conn/net3),
+        # so call with (dnet3, dnet_conn).
         phis = phis_of(dnet3, dnet_conn)
         phi4 = sp.cancel(phis[3])
         phi6 = sp.cancel(phis[5])
