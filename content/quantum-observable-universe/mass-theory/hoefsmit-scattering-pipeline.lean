@@ -50,24 +50,36 @@ noncomputable def scatteringAmplitudeForward
   let h := q - q⁻¹
   h / (1 - q ^ (-2 * rho))
 
-/-- The full pipeline is functorial: each stage commutes with the
-    natural transformations of the categorical framework.
+/-- **Stage 3–4 compositional functoriality (algebraic fragment).**
+    The pipeline's final two stages are scalar multiplications:
 
-    Stage 1: ρ_λ(T_i) = Hoefsmit matrix (R-matrix evaluation)
-    Stage 2: tr_M(ρ_λ(β)) = J_K(q) (Markov trace = Jones polynomial)
-    Stage 3: ω(J_K) = Geom(K) · J_K (observation frame projection)
+    Stage 3: ω(J_K) = Geom(K) · J_K (observation-frame projection)
     Stage 4: 𝔪 = m_e · Geom(K) · J_K (physical mass)
 
-    Stages 3–4 are post-τ and downstream of the Archimedean
-    realisation; only stages 1–2 live at this stub. -/
-def pipeline_functoriality {R : Type u} [Field R] (q : R) :
-    -- The composition of stages is independent of the
-    -- intermediate representations chosen.
-    -- This follows from the universality of the Markov trace
-    -- and the rigidity of the dualizing complex.
-    True := by
-  -- Ref: [manuscript] §5.14
-  trivial
+    so the composite mass map `J_K ↦ m_e · Geom(K) · J_K` is
+    (i) **associative** — independent of how the intermediate scaling
+    is bracketed, i.e. the composition of stages 3 and 4 does not
+    depend on the intermediate representation chosen — and
+    (ii) **additive** in the Markov-trace argument `J_K`.  This is the
+    fragment of the pipeline's functoriality provable at the
+    pre-Archimedean stub: stages 3–4 commute with the additive
+    structure of the Jones-polynomial / Markov-trace values.
+
+    The full stage-1–2 functoriality (Hoefsmit R-matrix evaluation
+    `ρ_λ(T_i)`, Markov trace `tr_M(ρ_λ(β)) = J_K(q)`) requires the
+    categorical functor objects and is downstream of
+    `QOU.ArchimedeanMassFormula`; it is not part of this stub.
+
+    Replaces the previous `: True := trivial` (vacuous) projection,
+    which asserted functoriality in its docstring while concluding
+    `True`.
+
+    Ref: [manuscript] §5.14 -/
+theorem pipeline_functoriality {R : Type u} [Field R]
+    (m_e geom jK jK' : R) :
+    m_e * (geom * jK) = (m_e * geom) * jK ∧
+      (m_e * geom) * (jK + jK') = (m_e * geom) * jK + (m_e * geom) * jK' :=
+  ⟨by ring, by ring⟩
 
 /-- Pipeline truncation at level k: the Plancherel tail of the
     Wedderburn–Artin decomposition bounds the truncation error
