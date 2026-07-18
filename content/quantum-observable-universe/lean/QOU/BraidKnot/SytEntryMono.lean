@@ -130,4 +130,137 @@ theorem content_ne_of_succ (T : StandardYoungTableau μ) {p q : ℕ × ℕ}
       entryLtOfDiagRowLt T p1 (x := (q1, q2)) (y := (p1, p2)) hq hp rfl (by omega) hgt
     omega
 
+/-- Entries strictly increase along a row (general column gap). -/
+theorem entryLtRow (T : StandardYoungTableau μ) {i : ℕ} :
+    ∀ {j1 j2 : ℕ}, (i, j2) ∈ μ → j1 < j2 → T.entry i j1 < T.entry i j2 := by
+  intro j1 j2
+  induction j2 with
+  | zero => intro _ h; omega
+  | succ j IH =>
+    intro hcell hlt
+    rcases lt_or_eq_of_le (Nat.lt_succ_iff.mp hlt) with h | h
+    · exact lt_trans (IH (μ.up_left_mem le_rfl (Nat.le_succ j) hcell) h) (T.row_strict i j hcell)
+    · subst h; exact T.row_strict i j1 hcell
+
+/-- Entries strictly increase down a column (general row gap). -/
+theorem entryLtCol (T : StandardYoungTableau μ) {j : ℕ} :
+    ∀ {i1 i2 : ℕ}, (i2, j) ∈ μ → i1 < i2 → T.entry i1 j < T.entry i2 j := by
+  intro i1 i2
+  induction i2 with
+  | zero => intro _ h; omega
+  | succ i IH =>
+    intro hcell hlt
+    rcases lt_or_eq_of_le (Nat.lt_succ_iff.mp hlt) with h | h
+    · exact lt_trans (IH (μ.up_left_mem (Nat.le_succ i) le_rfl hcell) h) (T.col_strict i j hcell)
+    · subst h; exact T.col_strict i1 j hcell
+
+/-- **Content gap `+1` ⇒ same row** (for consecutive labels).  If `q` carries the successor label
+of `p` and `content q = content p + 1`, then `p` and `q` are in the same row. -/
+theorem sameRow_of_content_succ (T : StandardYoungTableau μ) {p q : ℕ × ℕ}
+    (hp : p ∈ μ) (hq : q ∈ μ)
+    (hval : T.entry q.1 q.2 = T.entry p.1 p.2 + 1)
+    (hgap : (q.2 : ℤ) - (q.1 : ℤ) = ((p.2 : ℤ) - (p.1 : ℤ)) + 1) :
+    p.1 = q.1 := by
+  obtain ⟨p1, p2⟩ := p
+  obtain ⟨q1, q2⟩ := q
+  simp only at hval hgap ⊢
+  rcases lt_trichotomy p1 q1 with hlt | heq | hgt
+  · -- p1 < q1: the cell (q1, q2-1) is on p's diagonal with entry ≤ a; both options contradict
+    exfalso
+    have hq2 : 1 ≤ q2 := by omega
+    have hm : (q1, q2 - 1) ∈ μ := μ.up_left_mem le_rfl (Nat.sub_le q2 1) hq
+    have e : q2 - 1 + 1 = q2 := by omega
+    have hmlt : T.entry q1 (q2 - 1) < T.entry q1 q2 := by
+      have := T.row_strict q1 (q2 - 1) (by rw [e]; exact hq)
+      rwa [e] at this
+    have hmle : T.entry q1 (q2 - 1) ≤ T.entry p1 p2 := by omega
+    have hcm : (p2 : ℤ) - (p1 : ℤ) = ((q2 - 1 : ℕ) : ℤ) - (q1 : ℤ) := by
+      have : ((q2 - 1 : ℕ) : ℤ) = (q2 : ℤ) - 1 := by omega
+      rw [this]; omega
+    rcases lt_or_eq_of_le hmle with hlt2 | heq2
+    · have hclean : T.entry p1 p2 < T.entry q1 (q2 - 1) :=
+        entryLtOfDiagRowLt T q1 (x := (p1, p2)) (y := (q1, q2 - 1)) hp hm rfl hcm hlt
+      omega
+    · have hmp := T.inj_on q1 (q2 - 1) p1 p2 hm hp heq2
+      exact absurd hmp.1 (by omega)
+  · exact heq
+  · -- q1 < p1: entry q < entry p via a column-then-row chain, contradicting a+1 = entry q
+    exfalso
+    have hq2le : q2 ≤ p2 := by omega
+    have hpq2 : (p1, q2) ∈ μ := μ.up_left_mem le_rfl hq2le hp
+    have hc1 : T.entry q1 q2 < T.entry p1 q2 := entryLtCol T hpq2 hgt
+    have hc2 : T.entry p1 q2 ≤ T.entry p1 p2 := by
+      rcases lt_or_eq_of_le hq2le with h | h
+      · exact le_of_lt (entryLtRow T hp h)
+      · exact le_of_eq (by rw [h])
+    omega
+
+/-- **Content gap `−1` ⇒ same column** (for consecutive labels).  The column-transpose of
+`sameRow_of_content_succ`. -/
+theorem sameCol_of_content_pred (T : StandardYoungTableau μ) {p q : ℕ × ℕ}
+    (hp : p ∈ μ) (hq : q ∈ μ)
+    (hval : T.entry q.1 q.2 = T.entry p.1 p.2 + 1)
+    (hgap : (q.2 : ℤ) - (q.1 : ℤ) = ((p.2 : ℤ) - (p.1 : ℤ)) - 1) :
+    p.2 = q.2 := by
+  obtain ⟨p1, p2⟩ := p
+  obtain ⟨q1, q2⟩ := q
+  simp only at hval hgap ⊢
+  rcases lt_trichotomy p2 q2 with hlt | heq | hgt
+  · -- p2 < q2: the cell (q1-1, q2) is on p's diagonal with entry ≤ a; both options contradict
+    exfalso
+    have hq1 : 1 ≤ q1 := by omega
+    have hm : (q1 - 1, q2) ∈ μ := μ.up_left_mem (Nat.sub_le q1 1) le_rfl hq
+    have e : q1 - 1 + 1 = q1 := by omega
+    have hmlt : T.entry (q1 - 1) q2 < T.entry q1 q2 := by
+      have := T.col_strict (q1 - 1) q2 (by rw [e]; exact hq)
+      rwa [e] at this
+    have hmle : T.entry (q1 - 1) q2 ≤ T.entry p1 p2 := by omega
+    have hcm : (p2 : ℤ) - (p1 : ℤ) = (q2 : ℤ) - ((q1 - 1 : ℕ) : ℤ) := by
+      have : ((q1 - 1 : ℕ) : ℤ) = (q1 : ℤ) - 1 := by omega
+      rw [this]; omega
+    rcases lt_or_eq_of_le hmle with hlt2 | heq2
+    · -- entry m < entry p, same diagonal (content p); trichotomy on row(m) = q1-1 vs p1
+      rcases lt_trichotomy (q1 - 1) p1 with hr | hr | hr
+      · -- q1-1 < p1 ⇒ q1 ≤ p1, but p2 < q2 with content = pred is arithmetically impossible
+        omega
+      · -- q1-1 = p1: (q1-1, q2) is p's row; entry p < entry m contradicts hlt2
+        have hpq : (p1, q2) ∈ μ := by rw [← hr]; exact hm
+        have hrow2 : T.entry p1 p2 < T.entry p1 q2 := entryLtRow T hpq hlt
+        have hmrow : T.entry (q1 - 1) q2 = T.entry p1 q2 := by rw [hr]
+        rw [hmrow] at hlt2
+        omega
+      · -- p1 < q1-1: diagonal monotonicity gives entry p < entry m, contradicting hlt2
+        have hclean : T.entry p1 p2 < T.entry (q1 - 1) q2 :=
+          entryLtOfDiagRowLt T (q1 - 1) (x := (p1, p2)) (y := (q1 - 1, q2)) hp hm rfl hcm hr
+        omega
+    · -- entry m = entry p ⇒ m = p ⇒ q2 = p2, contra p2 < q2
+      have hmp := T.inj_on (q1 - 1) q2 p1 p2 hm hp heq2
+      exact absurd hmp.2 (by omega)
+  · exact heq
+  · -- q2 < p2: entry q < entry p via a row-then-column chain, contradicting a+1 = entry q
+    exfalso
+    have hq1le : q1 ≤ p1 := by omega
+    have hpq2 : (q1, p2) ∈ μ := μ.up_left_mem hq1le le_rfl hp
+    have hc1 : T.entry q1 q2 < T.entry q1 p2 := entryLtRow T hpq2 hgt
+    have hc2 : T.entry q1 p2 ≤ T.entry p1 p2 := by
+      rcases lt_or_eq_of_le hq1le with h | h
+      · exact le_of_lt (entryLtCol T hp h)
+      · exact le_of_eq (by rw [h])
+    omega
+
+/-- **`d² ≠ 1`** for consecutive labels in different rows and columns.  Together with
+`content_ne_of_succ` (`d ≠ 0`), this is the full admissibility of an `AdjacentSwapStep`
+between the two cells: `|d| ≥ 2`. -/
+theorem sq_content_gap_ne_one (T : StandardYoungTableau μ) {p q : ℕ × ℕ}
+    (hp : p ∈ μ) (hq : q ∈ μ)
+    (hval : T.entry q.1 q.2 = T.entry p.1 p.2 + 1)
+    (hrow : p.1 ≠ q.1) (hcol : p.2 ≠ q.2) :
+    (((q.2 : ℤ) - (q.1 : ℤ)) - ((p.2 : ℤ) - (p.1 : ℤ))) ^ 2 ≠ 1 := by
+  intro hsq
+  set E : ℤ := ((q.2 : ℤ) - (q.1 : ℤ)) - ((p.2 : ℤ) - (p.1 : ℤ)) with hE
+  have hE2 : E * E = 1 := by rw [pow_two] at hsq; exact hsq
+  rcases mul_self_eq_one_iff.mp hE2 with h | h
+  · exact hrow (sameRow_of_content_succ T hp hq hval (by rw [hE] at h; omega))
+  · exact hcol (sameCol_of_content_pred T hp hq hval (by rw [hE] at h; omega))
+
 end QOU.BraidKnot
