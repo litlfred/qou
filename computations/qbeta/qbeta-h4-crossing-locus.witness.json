@@ -1,0 +1,47 @@
+{
+  "computation": "qbeta-h4-crossing-locus",
+  "description": "Bean 8we6 option-2 (formalize-first): parametrize the 4th-strand categorical coupling strengths (alpha=b-u, beta=b-d; w=HA*theta, forced by regularizability), compute the screen coefficients phi_4,phi_6 as exact rational functions, solve phi_4=phi_6=0, and accept a solution ONLY if both components are nameable categorical values (theta in {0,1/2,1} or small rational). A tuned/ugly root is reported as a structural wall, never wired. Screen calibration verified in qou-tti3. auditOnly; no fit; scope-(a).",
+  "audit_only": true,
+  "regularizability_forces_w_prop_HA": true,
+  "phi4_alpha_beta": "(-32*alpha**8 + 128*alpha**7*beta - 160*alpha**7 - 192*alpha**6*beta**2 + 512*alpha**6*beta - 340*alpha**6 + 128*alpha**5*beta**3 - 576*alpha**5*beta**2 + 848*alpha**5*beta - 88*alpha**5 - 64*alpha**4*beta**4 + 224*alpha**4*beta**3 - 716*alpha**4*beta**2 - 440*alpha**4*beta + 887*alpha**4 + 128*alpha**3*beta**5 - 32*alpha**3*beta**4 + 160*alpha**3*beta**3 + 1200*alpha**3*beta**2 - 3000*alpha**3*beta + 1648*alpha**3 - 192*alpha**2*beta**6 + 192*alpha**2*beta**5 + 52*alpha**2*beta**4 - 976*alpha**2*beta**3 + 2970*alpha**2*beta**2 - 3616*alpha**2*beta + 1309*alpha**2 + 128*alpha*beta**7 - 256*alpha*beta**6 + 80*alpha*beta**5 + 296*alpha*beta**4 - 968*alpha*beta**3 + 2008*alpha*beta**2 - 1894*alpha*beta + 498*alpha - 32*beta**8 + 96*beta**7 - 84*beta**6 + 8*beta**5 + 15*beta**4 - 264*beta**3 + 429*beta**2 - 402*beta + 72)/(8*alpha**4 - 32*alpha**3*beta + 32*alpha**3 + 48*alpha**2*beta**2 - 96*alpha**2*beta + 48*alpha**2 - 32*alpha*beta**3 + 96*alpha*beta**2 - 96*alpha*beta + 32*alpha + 8*beta**4 - 32*beta**3 + 48*beta**2 - 32*beta + 8)",
+  "phi6_alpha_beta": "(-256*alpha**12 + 1536*alpha**11*beta - 1920*alpha**11 - 3840*alpha**10*beta**2 + 9984*alpha**10*beta - 6480*alpha**10 + 5120*alpha**9*beta**3 - 21120*alpha**9*beta**2 + 28896*alpha**9*beta - 9256*alpha**9 - 3840*alpha**8*beta**4 + 23040*alpha**8*beta**3 - 51120*alpha**8*beta**2 + 27408*alpha**8*beta + 6156*alpha**8 + 1536*alpha**7*beta**5 - 13440*alpha**7*beta**4 + 45120*alpha**7*beta**3 - 19320*alpha**7*beta**2 - 57240*alpha**7*beta + 49560*alpha**7 - 512*alpha**6*beta**6 + 3456*alpha**6*beta**5 - 20736*alpha**6*beta**4 - 17000*alpha**6*beta**3 + 147264*alpha**6*beta**2 - 207408*alpha**6*beta + 93672*alpha**6 + 1536*alpha**5*beta**7 + 384*alpha**5*beta**6 + 4032*alpha**5*beta**5 + 30264*alpha**5*beta**4 - 163848*alpha**5*beta**3 + 311856*alpha**5*beta**2 - 266604*alpha**5*beta + 92985*alpha**5 - 3840*alpha**4*beta**8 + 1920*alpha**4*beta**7 + 2304*alpha**4*beta**6 - 14664*alpha**4*beta**5 + 81288*alpha**4*beta**4 - 200664*alpha**4*beta**3 + 225780*alpha**4*beta**2 - 140559*alpha**4*beta + 47670*alpha**4 + 5120*alpha**3*beta**9 - 7680*alpha**3*beta**8 - 960*alpha**3*beta**7 + 4632*alpha**3*beta**6 - 11688*alpha**3*beta**5 + 43896*alpha**3*beta**4 - 19072*alpha**3*beta**3 - 47154*alpha**3*beta**2 + 27426*alpha**3*beta + 5993*alpha**3 - 3840*alpha**2*beta**10 + 9600*alpha**2*beta**9 - 5040*alpha**2*beta**8 - 2040*alpha**2*beta**7 - 1152*alpha**2*beta**6 + 3360*alpha**2*beta**5 - 49224*alpha**2*beta**4 + 152046*alpha**2*beta**3 - 177726*alpha**2*beta**2 + 71943*alpha**2*beta - 5460*alpha**2 + 1536*alpha*beta**11 - 5376*alpha*beta**10 + 5856*alpha*beta**9 - 1200*alpha*beta**8 - 696*alpha*beta**7 - 576*alpha*beta**6 + 16236*alpha*beta**5 - 67527*alpha*beta**4 + 121926*alpha*beta**3 - 102405*alpha*beta**2 + 31506*alpha*beta - 2196*alpha - 256*beta**12 + 1152*beta**11 - 1872*beta**10 + 1176*beta**9 - 84*beta**8 - 24*beta**7 - 1556*beta**6 + 7521*beta**5 - 22224*beta**4 + 28541*beta**3 - 19218*beta**2 + 4068*beta - 140)/(24*alpha**6 - 144*alpha**5*beta + 144*alpha**5 + 360*alpha**4*beta**2 - 720*alpha**4*beta + 360*alpha**4 - 480*alpha**3*beta**3 + 1440*alpha**3*beta**2 - 1440*alpha**3*beta + 480*alpha**3 + 360*alpha**2*beta**4 - 1440*alpha**2*beta**3 + 2160*alpha**2*beta**2 - 1440*alpha**2*beta + 360*alpha**2 - 144*alpha*beta**5 + 720*alpha*beta**4 - 1440*alpha*beta**3 + 1440*alpha*beta**2 - 720*alpha*beta + 144*alpha + 24*beta**6 - 144*beta**5 + 360*beta**4 - 480*beta**3 + 360*beta**2 - 144*beta + 24)",
+  "phi_denominators": "phi_4: 8*(alpha-beta+1)^4 ; phi_6: 24*(alpha-beta+1)^6",
+  "categorical_grid_passes": [],
+  "locus_rational_points": [
+    {
+      "alpha": "-3/2",
+      "beta": "-1/2",
+      "on_pole_degeneration": true,
+      "derivable": false
+    }
+  ],
+  "resultant_completed": true,
+  "solutions": [
+    {
+      "alpha": "-3/2",
+      "beta": "-1/2",
+      "on_pole_degeneration": true,
+      "derivable": false
+    }
+  ],
+  "assertions": [
+    {
+      "label": "Delta(net)_4(q=1)=0 for all (alpha,beta) (w∝HA regularizes)",
+      "passed": true
+    },
+    {
+      "label": "categorical-grid gate evaluated (7x7 nameable couplings)",
+      "passed": true
+    }
+  ],
+  "verdict": "no derivable constant-coupling 4th strand passes the gate (fit-trap wall confirmed structurally); a passer would need q-dependent (higher-Taylor) couplings",
+  "allPassed": true,
+  "scriptHash": "946f0ce8d4df",
+  "scriptCommitSha": "eae3496e006800c88530fa37edefadbe1222b96f",
+  "commitSha": "eae3496e006800c88530fa37edefadbe1222b96f",
+  "engine": "sympy",
+  "computedAt": "2026-07-18T01:35:51.418135+00:00",
+  "durationMs": 52882,
+  "engineVersion": "sympy 1.14.0",
+  "scriptFile": "qbeta_h4_crossing_locus_probe.py"
+}
