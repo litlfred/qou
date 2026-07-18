@@ -51,7 +51,19 @@ def _avg_color_delta():
     `−h·(1/2 − δ/4)`. Lazy + cached; the **single source of δ** for the whole
     braid pipeline (mass_at_3A_proper, chi_lambda_numerical, marshalling).
     Float-context callers wrap with `float()`; mpmath callers use it directly
-    so the high-dps paths keep full precision."""
+    so the high-dps paths keep full precision.
+
+    ⚠ q₀-PIN (STRICT — read before 1ppQ use). δ is evaluated at
+    `q_parameter.Q`, the **PROTON-pinned** q₀ (≈ 1.10998). The canonical
+    `computations/` derivation layer (incl. the L1 Markov-trace cert) is
+    **muon-pinned** (`q-pinning-50-digit.witness.json`, −11.5 ppb). Using this
+    δ to color-weight a **muon-q₀** trace is a mixed pin: δ is off by ~3.2e-7
+    → the trace by ~5.86e-11. Negligible at scope-(a); **WRONG at 1ppQ**.
+    For a muon-q₀ 1ppQ compute call `flavor_split_leading(local_q0)` directly
+    (the closed form takes q as an argument). Do NOT change this default —
+    the muon/proton split is owner-gated (AGENTS.md §"q₀ anchor convention";
+    bean `tnjb`). Full analysis:
+    docs/audits/2026-07-18-avg-color-delta-q0-pin-mismatch.md."""
     global _AVG_COLOR_DELTA
     if _AVG_COLOR_DELTA is None:
         import mpmath as _mp

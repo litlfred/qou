@@ -59,25 +59,35 @@ Reaching 1ppQ required the **exact symbolic** color split
 
 $$\delta = \frac{(q-1)^2\,(1-q^{-4})}{3} \quad\text{at } q_0,$$
 
-the form used by `markov_peel._color_delta`. The convenience accessor
-`canonical_braid_crossings._avg_color_delta()` returns
-`flavor_split_leading(q_0)` — a **leading-order approximation** that differs from
-the exact δ by **≈ 3.2e-7** relative. Using it for the color-weighting caps
-agreement with peel at **≈ 5.86e-11** — far above 1ppQ. The residual is a pure
-δ-value error, not a method error:
+the form used by `markov_peel._color_delta`, **evaluated at the same q₀ pin as
+the L1 traces**.
+
+> **Correction (2026-07-18, this session).** An earlier draft of this audit
+> attributed the 3.2e-7 δ gap to `_avg_color_delta()` being a *"leading-order
+> approximation."* **That was wrong** — `flavor_split_leading(q)` is the exact
+> closed form `(q−1)²(1−q⁻⁴)/3` (verified equal to
+> `markov_peel._color_delta`'s δ_symbolic to 2.6e-54 at a fixed q₀). The real
+> cause is a **q₀-anchor-pin mismatch**: `canonical_braid_crossings._avg_color_delta()`
+> evaluates `flavor_split_leading(_Q0)` with `_Q0 = q_parameter.Q` — the
+> **proton-pinned** q₀ — while peel and the L1 traces use the **muon-pinned** q₀
+> (`q-pinning-50-digit.witness.json`). The two pins differ by ~11.5 ppb, and
+> ∂δ/δ ≈ 2·Δq₀/(q₀−1) turns that into ≈ 3.2e-7 in δ → ≈ 5.86e-11 in tr_M. This
+> is the recurring **bean-`tnjb`** mixed-pin class (`AGENTS.md` §"q₀ anchor
+> convention"). Full analysis: [`2026-07-18-avg-color-delta-q0-pin-mismatch.md`](2026-07-18-avg-color-delta-q0-pin-mismatch.md).
 
 | color split used | deuteron \|Δ\|/ref |
 |---|---|
 | δ = 0 (averaged / color-blind) | 1.82e-4 |
-| `_avg_color_delta()` (leading order) | 5.86e-11 |
-| **exact (q−1)²(1−q⁻⁴)/3** | **1.06e-31** |
+| `_avg_color_delta()` (δ at **proton** q₀) | 5.86e-11 |
+| **`flavor_split_leading(q₀_muon)` = exact form at the muon q₀** | **≤ 7e-49** |
 
-**Implication.** Any consumer that color-weights via `_avg_color_delta()` carries
-a ~5.86e-11 error. This is negligible for scope-(a) structural work (e.g. the
-⁴He binding stage-2 probe, where the seam δ is not 1ppQ-gated), but **must not**
-be used where 1ppQ is asserted — use the exact closed form there. Flagged for
-follow-up: audit `_avg_color_delta()` consumers and route 1ppQ-critical ones to
-the exact δ.
+**Implication.** Any consumer that color-weights via `_avg_color_delta()` uses δ
+at the **proton** q₀. In a **muon-q₀** compute that is a ~5.86e-11 mixed-pin
+error — negligible for scope-(a) structural work (e.g. the ⁴He binding stage-2
+probe, not 1ppQ-gated), but **wrong** where 1ppQ is asserted. The fix is trivial:
+`flavor_split_leading(local_q0)` (the function already takes q as an argument),
+**not** `_avg_color_delta()`. Consumer audit + the do-NOT-mass-migrate ruling:
+[`2026-07-18-avg-color-delta-q0-pin-mismatch.md`](2026-07-18-avg-color-delta-q0-pin-mismatch.md).
 
 ## What was ruled out (the localisation trail)
 
@@ -87,7 +97,9 @@ mpfr); **not** the χ engine choice (seminormal is exact for A=1 at 6e-31);
 **not** `include_inter` (already the default; without it the seam vanishes and
 the trace is 1.5× off); **not** the crossing-classification tolerance (cw is
 detected identically at 1e-9 and 1e-6); **not** the crossing-form encoding
-(matches `markov_peel.crossing_from_cd`). The sole cause was the leading-order δ.
+(matches `markov_peel.crossing_from_cd`). The sole cause was the δ **q₀-pin
+mismatch** — `_avg_color_delta()` at the proton q₀ vs the L1 muon q₀ (see the
+Correction box above).
 
 ## Note — the GP path
 
