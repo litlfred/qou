@@ -85,12 +85,16 @@ fi
 #    seed history); each subsequent part fast-forwards.  FETCH_HEAD's tree still
 #    carries ALL parts, so the restore recipe (`git ls-tree FETCH_HEAD | grep
 #    part`) is unchanged.
+# unique per-run orphan branch + worktree so a prior aborted run can't collide
+git worktree prune 2>/dev/null || true
+TMPBR="seed-tmp-$SLUG-$$"
 WT="$(mktemp -d)/seed-wt"
 git worktree add --detach -q "$WT"
 mv lake-oleans.tgz.part* "$WT"/
+push_ok=1
 (
   cd "$WT"
-  git checkout -q --orphan "seed-tmp-$SLUG"
+  git checkout -q --orphan "$TMPBR"
   git reset -q --hard 2>/dev/null || true
   git rm -rf -q --cached . 2>/dev/null || true
   find . -maxdepth 1 -type f ! -name 'lake-oleans.tgz.part*' ! -name '.git' -delete 2>/dev/null || true
@@ -98,14 +102,15 @@ mv lake-oleans.tgz.part* "$WT"/
   for p in $(ls lake-oleans.tgz.part* | sort); do
     git add -f "$p"
     git commit -q -m "seed lean cache @ $SLUG: $p (fresh f897ebc, incl ZetaValues cone)"
+    ok=0
     if [ "$first" = 1 ]; then
-      for i in 1 2 3 4; do git push -f origin "HEAD:$BR" && { first=0; break; } || sleep $((2**i)); done
+      for i in 1 2 3 4; do git push -f origin "HEAD:$BR" && { first=0; ok=1; break; } || sleep $((2**i)); done
     else
-      for i in 1 2 3 4; do git push origin "HEAD:$BR" && break || sleep $((2**i)); done
+      for i in 1 2 3 4; do git push origin "HEAD:$BR" && { ok=1; break; } || sleep $((2**i)); done
     fi
-    echo "  pushed $p"
+    [ "$ok" = 1 ] && echo "  pushed $p" || { echo "  FAILED $p"; exit 7; }
   done
-)
+) || push_ok=0
 git worktree remove --force "$WT" 2>/dev/null || true
-git branch -D "seed-tmp-$SLUG" 2>/dev/null || true
-echo "pushed $BR (incremental)"
+git branch -D "$TMPBR" 2>/dev/null || true
+[ "$push_ok" = 1 ] && echo "pushed $BR (incremental)" || { echo "SEED PUSH FAILED"; exit 7; }
