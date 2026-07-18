@@ -4,7 +4,7 @@
   "auditOnly": true,
   "probe": true,
   "substrate": {
-    "q0_proton": 1.1099785955573347,
+    "q0_proton": 1.1099785827513808,
     "q0_pin": "proton (canonical)"
   },
   "embedding": {
@@ -116,8 +116,8 @@
     {
       "n": 3,
       "odd_orders_present": true,
-      "single_x": "4.52488546341",
-      "overdet_residual": "0.068350759"
+      "single_x": "4.52488547168",
+      "overdet_residual": "0.06835078"
     },
     {
       "n": 6,
@@ -167,8 +167,15 @@
     }
   ],
   "witness": {
-    "scriptCommitSha": "",
-    "scriptHash": "318c5a219168",
+    "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
+    "scriptHash": "66ce72dd10ba",
     "producer": "computations/probes/bn_minus_bp_brane_tower_parity_probe.py"
-  }
+  },
+  "scriptHash": "66ce72dd10ba",
+  "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
+  "commitSha": "2f1e7a7eee69983b4a18228ff6a006122fe3b7f6",
+  "engine": "python",
+  "computedAt": "2026-07-18T13:52:20.481856+00:00",
+  "durationMs": 0,
+  "scriptFile": "bn_minus_bp_brane_tower_parity_probe.py"
 }

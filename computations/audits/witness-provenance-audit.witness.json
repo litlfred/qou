@@ -1,12 +1,12 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-18T13:28:13.340442+00:00",
-  "commitSha": "9efbe6e6cd42038e00c9812bca049c17ea010730",
+  "computedAt": "2026-07-18T13:58:49.179219+00:00",
+  "commitSha": "2f1e7a7eee69983b4a18228ff6a006122fe3b7f6",
   "assertions": [
     {
       "name": "no_missing_provenance",
-      "computed": 250,
+      "computed": 243,
       "expected": 0,
       "passed": false,
       "tolerance": 0,
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 10,
+  "durationMs": 11,
   "computation": "witness-provenance-audit",
   "scriptFile": "witness_provenance_audit.py",
   "scriptHash": "1abb80bb6c90",
@@ -47,12 +47,12 @@
   },
   "data": {
     "counts": {
-      "total_scanned": 1956,
-      "prov_ok": 1646,
+      "total_scanned": 1961,
+      "prov_ok": 1658,
       "prov_audit_exempt": 59,
-      "prov_missing": 250,
+      "prov_missing": 243,
       "prov_parse_error": 1,
-      "completeness_ratio": 0.871676891615542
+      "completeness_ratio": 0.8755736868944416
     },
     "by_verdict": {
       "PROV_OK": [
@@ -269,6 +269,10 @@
           "missing_fields": []
         },
         {
+          "witness": "alpha-em-perloop-reciprocal-form-forcedness.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "alpha-em-permode-weight.witness.json",
           "missing_fields": []
         },
@@ -334,6 +338,10 @@
         },
         {
           "witness": "alpha-em-flat-torus-maxwell-perloop.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "alpha-em-gauss-bonnet-measure.witness.json",
           "missing_fields": []
         },
         {
@@ -806,6 +814,14 @@
         },
         {
           "witness": "block-swap-spectrum-infra.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "bn-minus-bp-brane-tower-parity.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "bn-minus-bp-winding-iterate.witness.json",
           "missing_fields": []
         },
         {
@@ -1533,6 +1549,14 @@
           "missing_fields": []
         },
         {
+          "witness": "chi-content-eigenbasis.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "chi-content-single-mode.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "chi-convention-trM-ratio-probe.witness.json",
           "missing_fields": []
         },
@@ -1929,6 +1953,10 @@
           "missing_fields": []
         },
         {
+          "witness": "he4-vol4-prediction-test.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "ka-additive-cluster-derivation.witness.json",
           "missing_fields": []
         },
@@ -1986,6 +2014,10 @@
         },
         {
           "witness": "theta-lambda-magnitude-kernel-probe.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "vol4-4he-snappy-falsification.witness.json",
           "missing_fields": []
         },
         {
@@ -2142,6 +2174,10 @@
         },
         {
           "witness": "e-hartree-round25-em-channel-induction.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "eigenbasis-structural-lemmas.witness.json",
           "missing_fields": []
         },
         {
@@ -5085,6 +5121,10 @@
           "missing_fields": []
         },
         {
+          "witness": "qbeta-c4even-exact-sseries.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "qbeta-c4qz-fourone-operator-q1-shadow.witness.json",
           "missing_fields": []
         },
@@ -5289,7 +5329,15 @@
           "missing_fields": []
         },
         {
+          "witness": "qbeta-dladder-parity-odd-singularity-even-order.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "qbeta-dladder-parity-split-arithmetic-normalized.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "qbeta-dladder-parity-split-resummation.witness.json",
           "missing_fields": []
         },
         {
@@ -6730,22 +6778,6 @@
           ]
         },
         {
-          "witness": "bn-minus-bp-brane-tower-parity.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "bn-minus-bp-winding-iterate.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
           "witness": "bring-coordinate-linking-weight-probe.witness.json",
           "missing_fields": [
             "engine",
@@ -6763,22 +6795,6 @@
         },
         {
           "witness": "canonical-with-proper-tower.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "chi-content-eigenbasis.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "chi-content-single-mode.witness.json",
           "missing_fields": [
             "engine",
             "scriptFile",
@@ -7111,13 +7127,6 @@
           ]
         },
         {
-          "witness": "he4-vol4-prediction-test.witness.json",
-          "missing_fields": [
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
           "witness": "inter-cluster-bond-term.witness.json",
           "missing_fields": [
             "scriptFile",
@@ -7133,13 +7142,6 @@
         },
         {
           "witness": "saturating-shared-channel.witness.json",
-          "missing_fields": [
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "vol4-4he-snappy-falsification.witness.json",
           "missing_fields": [
             "scriptFile",
             "commitSha"
@@ -7183,14 +7185,6 @@
         },
         {
           "witness": "e0-lambda-tryall.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "eigenbasis-structural-lemmas.witness.json",
           "missing_fields": [
             "engine",
             "scriptFile",

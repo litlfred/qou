@@ -41,8 +41,15 @@
   "converges_to_single_x_q_bessel": false,
   "reading": "The single-x q-Bessel identification fails even for an isolated content mode; the discrete strand/winding/framing tower variables are not the q-Bessel contraction parameter (or the bar-odd object is not single-x q-Bessel). Combined with PR #2496, the single-x §4a template is refuted across every tower direction tried.",
   "witness": {
-    "scriptCommitSha": "28b53c85390c3d943b450c675a16fb7ec5fffa71",
-    "scriptHash": "43dfb0b8e401",
+    "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
+    "scriptHash": "9db51a2ec000",
     "producer": "computations/probes/chi_content_single_mode_probe.py"
-  }
+  },
+  "scriptHash": "9db51a2ec000",
+  "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
+  "commitSha": "2f1e7a7eee69983b4a18228ff6a006122fe3b7f6",
+  "engine": "python",
+  "computedAt": "2026-07-18T13:54:10.677209+00:00",
+  "durationMs": 0,
+  "scriptFile": "chi_content_single_mode_probe.py"
 }
