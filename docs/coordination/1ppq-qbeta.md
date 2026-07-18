@@ -1661,3 +1661,21 @@ experimental Q_β. Capstone: `docs/audits/2026-07-18-qbeta-odd-channel-cornering
 capstone.md`. scope-(a) (σ3-pair alone; magnitude not ingredient — stays a
 permanent bar-odd carrier); scope-(b) exclusion of a SINGLE smooth geometric
 source (proved null + exhausted census). No c_k wired; no fit.
+**2026-07-18 (exact-Z₅₂ tranche) — THEOREM-22 BLOCKS IMPLEMENTED; ASSEMBLY
+DERIVED ANCHOR-FREE (β = −πi/3 recovered exactly); the 5₂ three-term
+structure measured near the Kashaev ray.** `qbeta_g3_5two_exact_blocks.py`
+(3/3 green): H± q-hypergeometrics (242) + blocks (241) over the certified
+4₁ θ machinery. The assembly ratios derived with NO external anchor —
+Laurent c₋₂/c₋₁ cancellation at the u* = 2πiτ pole family (Theorem 22c
+entirety; block poles are order ≤ 2), verified on the held-out −u* family
+to 1e-43, and the derived ratios fit e^{α+β(τ+τ⁻¹)} with α = −πi,
+β = −πi/3 EXACTLY the printed Theorem-22 constants, c_C = c_B — the 4₁
+derivation discipline confirmed on the 3-saddle knot at 1e-44 precision.
+Kashaev-ray exact term structure (τ = 1/10+0.05i, u ∈ {.05,.1,.2}):
+three O(1)-comparable saddle terms with DISTINCT phases (args e.g.
+−1.68/+1.49/+1.37 at u=0.1) — the non-amphichiral amplitude data whose
+positions are the corrected #3944 targets. The 5₂ odd-channel measurement
+now has BOTH exact sides: singularity positions (saddle closed form) and
+exact term amplitudes (this probe). Remaining: the σ-basis rotation
+(M(x̃;q̃) dictionary) to read the intrinsic odd phase out of the exact
+term data — next tranche. No fit; no c_k wired.
