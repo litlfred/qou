@@ -55,6 +55,9 @@ cited literature, not as `ℝ` defs.
 -- Ref: [braden-disney-hogg-2022] https://arxiv.org/abs/2208.13692
 --       (Bring's curve: Old and New — elliptic quotients, j(τ₀), X₀(5)/X₀(50))
 -- Ref: [riera-rodriguez-1992] The period matrix of Bring's curve, Pacific J. Math. 154 (1992)
+-- Ref: [braden-northover-2012] Bring's Curve: its Period Matrix and the Vector of
+--       Riemann Constants, SIGMA 8 (2012) 065 — explicit anti-holomorphic involution
+--       (real structure) on Jac(Bring); corrects the j(τ₀)/j(5τ₀) labelling.
 -/
 import Init.Data.Int.Basic
 
