@@ -4,8 +4,8 @@
   "engine": "python",
   "engineVersion": "3.11.15",
   "scriptFile": "nuclear_quotient_jones_torus_link_probe.py",
-  "commitSha": "5c06b5dd1db88f454650c31a92111424f42fd59f",
-  "scriptHash": "20f2d46e826c",
+  "commitSha": "b283e19b694f34f5fcbe98ae5292dc08fdd5649d",
+  "scriptHash": "6ed4891b4bf8",
   "description": "(2,k) torus-link Jones values (Markov trace tr_M(sigma_1^k)) for the nuclear quotient braid: unknot/Hopf/trefoil closed forms wired into QOU/BraidKnot/JonesNuclearQuotient.lean; RHS of the OPEN Part-4 conjecture conj:jet-filtered-knot-factor (a(Z,N)=J_beta_bar(q)). Infra provenance only; does NOT prove the conjecture.",
   "generated": "2026-07-11T00:00:00+00:00",
   "assertions": [
@@ -52,5 +52,8 @@
     "hecke_relation": "sigma^2 = h*sigma + 1, h = q - q^{-1} (AGENTS.md Sec 7a)",
     "markov_parameter": "z = 1/(sqrt(q) + 1/sqrt(q))",
     "scope": "infra RHS construction; NOT a closure of the conjecture"
-  }
+  },
+  "scriptCommitSha": "1c32090b4296efd3d8b9fa7c91d3cba6092a11bc",
+  "computedAt": "2026-07-18T10:18:41.701535+00:00",
+  "durationMs": 0
 }

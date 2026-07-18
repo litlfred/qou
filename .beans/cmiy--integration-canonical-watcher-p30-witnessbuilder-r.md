@@ -283,3 +283,14 @@ wlambda_transfer_matrix_connected (dep=3, native) + wlambda_nuclear_braid
 PROV_MISSING count is noisy (corpus grew 1868→1947 from concurrent main
 landings); per-witness PROV_OK confirmation is the reliable check, not the
 aggregate. gotcha #10: hecke_characters needs numpy in-sandbox.
+
+## 2026-07-18 — batch 20 (6 scripts, stamp) — deltalambda sign/grho/nuclear cluster
+6 assertion-bearing deltalambda/ probes via stamp (identical _HERE+json.dump
+emit; each already carried a manual _sha()/now provenance the audit didn't
+recognize — stamp adds the canonical engine/scriptFile/commitSha):
+deltalambda_grho_jet_order_derivation_probe, deltalambda_magnitude_graded_trace_probe,
+deltalambda_sign_cyclotomic_locus_probe, deltalambda_sign_operator_narrowing_probe,
+deltalambda_sign_pivotal_grading_capstone_probe, nuclear_quotient_jones_torus_link_probe.
+All 6: exit 0, keys+assertions preserved, confirmed PROV_OK. The cross-family
+witness-name duplicates in grep are docstring cross-refs (reads=0), not file
+reads. Largest single batch since the substrate drain.
