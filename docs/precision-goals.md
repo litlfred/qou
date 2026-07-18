@@ -318,6 +318,43 @@ reverted by the repo owner. **That reversal has now happened — see the
 > the owner later wants fit-based results themselves wired as canonical, that is
 > a separate ruling not granted here.
 
+### Measurement-limited ceiling on 4 of the 5 L2 misses (2026-07-18)
+
+Two sorry-free Lean theorems from the 07-17→18 window establish that, **absent a
+substrate-derivation of q₀**, four of the five L2 misses are gated on the
+**experimental neutron Q_β measurement**, not on any framework compute:
+
+- **Anchor-invariance prune** — `QOU.QBeta.SRigidity.no_anchor_invariant_realizes_swing`
+  ([`SRigidityPrune.lean`](../content/quantum-observable-universe/lean/QOU/QBeta/SRigidityPrune.lean),
+  sorry-free): no *anchor-invariant* datum can equal the c₃ carrier `S` (which
+  swings 2.44 % between the proton and muon q₀ anchors). This excludes deformed
+  median resummation (anchor-blind) and classical CS/Stokes (anchor-invariant) as
+  c₃ realisations. All four geometric routes to the swing are now closed (median
+  resummation smooth #3813; CS/Stokes prune; 5₂ quantum volume anchor-smooth
+  #3902; branch-point locus generic #3902-cont). c₃/S is intrinsically the
+  anchor-dependent quantum `𝔙_q` at q₀ — the `1/u³` inversion of a smooth
+  numerator crossing zero at q\* — precision-limited by experimental Q_β
+  (`dq*/dQ_β ≈ −0.54`).
+- **μ–p pin-sensitivity map** — `PinRobustnessOfRatios.lean` (sorry-free, #3847):
+  the μ–p tension lives entirely in the absolute anchor `ℏ_q⁻²`; every **ratio**
+  observable (W_λ, m_p/m_μ, m_n/m_p, the McKay keystone) has `ν_ℏ = 0` and is
+  structurally blind to the 11.5 ppb split. The geometric W_λ/Lawrence–Rozansky
+  realisation is separately refuted (D=2 collapse) and structurally excluded
+  (self-duality `S⁴=1`). ⇒ finishing any ratio/geometric-W_λ route will **not**
+  move m_p/m_μ; only an anchor-free absolute q₀ can.
+
+**Consequence for the roadmap.** Q_β (160×), m_n (416×), Δ_pn (159×) — via c₃ —
+and m_p (437×), m_μ (964×) — via q₀ — are, at present, **measurement-limited by a
+next-gen neutron Q_β measurement** (target σ ≈ 0.024 eV) unless a substrate-q₀
+derivation lands. The two open *compute* levers are (i) the c₃ D-ladder Écalle
+acceleration (sibling #3818) — which resolves the transseries structure even
+though the final value is measurement-limited — and (ii) the α_EM per-loop
+theta-factor (#3911). Everything else on these four misses is a proved dead end
+(fixed-order/anchor-invariant resummation; geometric q₀; ratio-based W_λ). This
+is a *ceiling record*, not a target change: the L2 targets stand; what changed is
+the identified gate. Full analysis:
+[`docs/audits/2026-07-18-1ppq-action-plan.md`](audits/2026-07-18-1ppq-action-plan.md).
+
 ## Where measured
 
 Live snapshot: `computations/per-observable-100x-status.witness.json`
