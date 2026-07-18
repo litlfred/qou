@@ -6,7 +6,10 @@
 # only mathlib oleans that were REBUILT this session from the pinned source
 # (listed in $BUILT_FILE) are included — never a mix of pre-/post-pin oleans.
 # Non-mathlib package oleans (batteries/aesop/Qq/…) are rev-independent and
-# included as-is; the qou/ugb/fred2005 package oleans are included if present.
+# included as-is; the qou/ugb/fred2005 PAPER oleans are EXCLUDED by default
+# (they go stale the moment mathlib is rebuilt, since a verification session
+# never writes them) — set SEED_PAPER=1 only right after a `lake build QOU` at
+# the pinned rev.
 #
 # Usage: scripts/lean-olean-cache-seed.sh [--push]
 #   (dry by default: builds the tarball + parts, prints size; --push commits
@@ -40,14 +43,24 @@ if [ -f "$BUILT_FILE" ]; then
 fi
 echo "  fresh mathlib oleans: $n_ml"
 
-# 2. non-mathlib package oleans (rev-independent) + qou paper packages
+# 2. non-mathlib package oleans (rev-independent).
+#    NOTE: qou/ugb/fred2005 PAPER oleans are intentionally EXCLUDED — they are
+#    only rebuilt when the paper lib itself is compiled with `-o`, which a
+#    lean-direct *verification* session does not do.  Any paper oleans present
+#    are therefore the pre-f897ebc restored set (stale); seeding them would make
+#    a restoring agent hit an olean hash-mismatch the moment one qou module
+#    imports another.  The seed is mathlib + rev-independent deps only; the small
+#    paper libs rebuild fast against the restored mathlib.  (Set SEED_PAPER=1 to
+#    include them, e.g. right after a full `lake build QOU` at the pinned rev.)
 for pkg in batteries aesop Qq plausible importGraph LeanSearchClient proofwidgets; do
   d=".lake/packages/$pkg/.lake/build/lib/lean"
   [ -d "$d" ] && find "$d" -name '*.olean' -o -name '*.ilean' 2>/dev/null | sed 's#^\./##' >> "$LIST" || true
 done
-for paperlib in content/*/lean/.lake/build/lib/lean; do
-  [ -d "$paperlib" ] && find "$paperlib" -name '*.olean' -o -name '*.ilean' 2>/dev/null >> "$LIST" || true
-done
+if [ "${SEED_PAPER:-0}" = "1" ]; then
+  for paperlib in content/*/lean/.lake/build/lib/lean; do
+    [ -d "$paperlib" ] && find "$paperlib" -name '*.olean' -o -name '*.ilean' 2>/dev/null >> "$LIST" || true
+  done
+fi
 total=$(wc -l < "$LIST")
 echo "  total files to seed: $total"
 
