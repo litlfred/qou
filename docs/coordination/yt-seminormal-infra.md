@@ -30,7 +30,7 @@ apparatus so the corpus's `χ_λ(σ) = c_λ·h` walls (`symbolic_character_table
   `reducedWeight_pair`.
 - `JonesNuclearQuotient.lean`: `jonesHopfLink_eq_jonesHopf` (rpow bridge).
 
-## Open / next (bean `qou-9vvr`, `qou-tqab`)
+## Concrete construction (bean `qou-tqab`, PRs #3791/#3794/#3798/#3799)
 
 The algebraic core is done. Remaining to *discharge* `symbolic_character_table`:
 the concrete standard-YT type + seminormal-action model per partition supplying
@@ -207,3 +207,15 @@ L1120–1144 reorg:
    `invCount = 0` ⇒ `permOf T = 1` ⇒ `T = T₀` (tableauCellEquiv injectivity) ⇒
    `refl`; else take the descent, step, recurse. Closes the L887 sorry with
    `T₀ = rowSuperstandardBraidKnot μ`.
+
+## 2026-07-18 — #3799 σ₁ seminormal character capstone (sorry-free)
+
+`SeminormalCharacterConnector.lean` (branch `askey-derivation-gap-canonical`):
+`cellOf`/`generatorRho`, the full `StandardYoungTableau μᵀ` `transpose`
+(`swap_bijOn_cells` + `transpose_cells_card` + `T.bijOn.comp`), the
+self-conjugate involution on `SYT(μ)`, `card_rowClass_eq_colClass`
+(`|R_row|=|R_col|`), and the **capstone** `sigmaOneCharacter_eq_card_mul`:
+`χ_λ(σ₁) = |R_row|·h` for self-conjugate `μ` (`c_λ = |R_row| ∈ ℤ`), via
+`SeminormalWeight.fullCharacter_two_mul` at `S_off = ∅`. All lean-direct exit 0.
+Remaining toward `symbolic_character_table` (bean `qou-tqab`): the per-shape
+`|R_row|` counts (`c_λ ∈ {1,3,8,10}`) and the general-`σ_i` off-diagonal case.
