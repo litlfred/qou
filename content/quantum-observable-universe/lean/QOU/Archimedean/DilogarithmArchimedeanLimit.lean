@@ -330,4 +330,89 @@ theorem partialProduct_log_eq_mseries (q x : ℝ) (n : ℕ)
     intro k _; rw [mul_pow, pow_right_comm]; ring
   rw [Finset.sum_congr rfl hrw, ← Finset.mul_sum, geom_sum_eq (hq1 m) n, ← pow_mul]
 
+/-! ## Dilogarithm functional equations
+
+The **duplication (Landen) identity** `Li₂(x) + Li₂(-x) = ½ Li₂(x²)` is a pure
+power-series identity — provable, like `LiTwo_neg_one` (its `x = 1` special case),
+by the even/odd `Function.Injective.hasSum_iff` reindex.  The **Euler reflection**
+`Li₂(x) + Li₂(1-x) = π²/6 - ln x·ln(1-x)` is a *different kind* of identity: it
+mixes the series with logarithms, so its proof needs the derivative
+`d/dx Li₂(x) = -ln(1-x)/x` (a `HasDerivAt` of the `LiTwo` tsum) + FTC — machinery
+Mathlib lacks a `Real.dilog` for.  It is stated below as a **queued formalization**
+(honest `sorry`, not discharged). -/
+
+/-- Absolute summability of the `LiTwo` summand on the open unit disc: dominated,
+    term by term, by the geometric series `Σ |y|^{k+1}` (each `(k+1)⁻² ≤ 1`). -/
+theorem liTwo_summand_summable {y : ℝ} (hy : |y| < 1) :
+    Summable (fun k : ℕ => y ^ (k + 1) / ((k : ℝ) + 1) ^ 2) := by
+  have hgeom : Summable (fun k : ℕ => |y| ^ (k + 1)) := by
+    simpa [pow_succ] using (summable_geometric_of_lt_one (abs_nonneg y) hy).mul_right |y|
+  apply Summable.of_norm_bounded hgeom
+  intro k
+  rw [Real.norm_eq_abs, abs_div, abs_pow,
+      abs_of_pos (by positivity : (0 : ℝ) < ((k : ℝ) + 1) ^ 2)]
+  exact div_le_self (pow_nonneg (abs_nonneg y) _)
+    (by nlinarith [Nat.cast_nonneg (α := ℝ) k])
+
+/-- **Duplication (Landen) identity** `Li₂(x) + Li₂(-x) = ½ Li₂(x²)` for `|x| < 1`.
+    Generalises `LiTwo_neg_one` (the `x = 1` boundary case).  The combined summand
+    vanishes on even indices; its odd reindex `k = 2j+1` collapses `x^{2j+2}` to
+    `(x²)^{j+1}` and halves the weight, via the even/odd
+    `Function.Injective.hasSum_iff` reindex + `HasSum.unique`. -/
+theorem LiTwo_duplication (x : ℝ) (hx : |x| < 1) :
+    LiTwo x + LiTwo (-x) = (1 / 2) * LiTwo (x ^ 2) := by
+  have hxabs : |(-x)| < 1 := by rwa [abs_neg]
+  have hx2abs : |x ^ 2| < 1 := by
+    rw [abs_pow]; exact pow_lt_one₀ (abs_nonneg x) hx (by norm_num)
+  have hxs : HasSum (fun k : ℕ => x ^ (k + 1) / ((k : ℝ) + 1) ^ 2) (LiTwo x) :=
+    (liTwo_summand_summable hx).hasSum
+  have hnxs : HasSum (fun k : ℕ => (-x) ^ (k + 1) / ((k : ℝ) + 1) ^ 2) (LiTwo (-x)) :=
+    (liTwo_summand_summable hxabs).hasSum
+  have hx2s : HasSum (fun k : ℕ => (x ^ 2) ^ (k + 1) / ((k : ℝ) + 1) ^ 2) (LiTwo (x ^ 2)) :=
+    (liTwo_summand_summable hx2abs).hasSum
+  have hg := hxs.add hnxs
+  have hinj : Function.Injective (fun j : ℕ => 2 * j + 1) := by
+    intro a b hab; dsimp only at hab; omega
+  have hvanish : ∀ m ∉ Set.range (fun j : ℕ => 2 * j + 1),
+      (fun k : ℕ => x ^ (k + 1) / ((k : ℝ) + 1) ^ 2 + (-x) ^ (k + 1) / ((k : ℝ) + 1) ^ 2) m = 0 := by
+    intro m hm
+    have hmeven : Even m := by
+      rcases Nat.even_or_odd m with he | ho
+      · exact he
+      · obtain ⟨k, rfl⟩ := ho; exact absurd ⟨k, rfl⟩ hm
+    have hpow : ((-x) : ℝ) ^ (m + 1) = -(x ^ (m + 1)) := by
+      rw [neg_pow, Odd.neg_one_pow hmeven.add_one]; ring
+    simp only [hpow]; ring
+  have hodd := (hinj.hasSum_iff hvanish).mpr hg
+  have hhalf : HasSum (fun j : ℕ => (1 / 2 : ℝ) * ((x ^ 2) ^ (j + 1) / ((j : ℝ) + 1) ^ 2))
+      ((1 / 2) * LiTwo (x ^ 2)) := hx2s.mul_left (1 / 2)
+  have hfun :
+      (fun k : ℕ => x ^ (k + 1) / ((k : ℝ) + 1) ^ 2 + (-x) ^ (k + 1) / ((k : ℝ) + 1) ^ 2)
+        ∘ (fun j : ℕ => 2 * j + 1)
+      = fun j : ℕ => (1 / 2 : ℝ) * ((x ^ 2) ^ (j + 1) / ((j : ℝ) + 1) ^ 2) := by
+    funext j
+    simp only [Function.comp]
+    have hoddpow : ((-x) : ℝ) ^ (2 * j + 1 + 1) = x ^ (2 * j + 1 + 1) := by
+      rw [neg_pow, Even.neg_one_pow ⟨j + 1, by ring⟩]; ring
+    rw [hoddpow, show 2 * j + 1 + 1 = 2 * (j + 1) from by ring, pow_mul]
+    have h2 : (2 * (j : ℝ) + 2) ≠ 0 := by positivity
+    have hj : ((j : ℝ) + 1) ≠ 0 := by positivity
+    push_cast; field_simp; ring
+  rw [hfun] at hodd
+  exact hodd.unique hhalf
+
+/-- **Euler reflection** `Li₂(x) + Li₂(1-x) = π²/6 - ln x · ln(1-x)` for
+    `x ∈ (0,1)`.  Classical (Lewin, *Polylogarithms and Associated Functions*,
+    1981).  **Queued formalization — not discharged.** Unlike the duplication
+    identity this is not a power-series manipulation: it requires the derivative
+    `d/dx Li₂(x) = -ln(1-x)/x` (a `HasDerivAt` of the `LiTwo` tsum) plus the
+    fundamental theorem of calculus, for which Mathlib currently provides no
+    `Real.dilog`.  Stated here (the real proposition, `sorry` + `-- Ref:`) so the
+    target is auditable; discharging it awaits either a `HasDerivAt (LiTwo)`
+    development or an upstream `Real.dilog`. -/
+-- Ref: [manuscript] Euler reflection formula; Lewin, "Polylogarithms and Associated Functions" (1981)
+theorem LiTwo_reflection (x : ℝ) (hx0 : 0 < x) (hx1 : x < 1) :
+    LiTwo x + LiTwo (1 - x) = Real.pi ^ 2 / 6 - Real.log x * Real.log (1 - x) := by
+  sorry
+
 end QOU.QPochhammer
