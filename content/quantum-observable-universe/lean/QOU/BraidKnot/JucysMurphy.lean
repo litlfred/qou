@@ -6,6 +6,8 @@ import Mathlib.Order.Interval.Finset.Fin
 import QOU.BraidKnot.Specht
 import QOU.BraidKnot.SpechtStandardBasis
 import QOU.BraidKnot.RegularRepTrace
+import QOU.BraidKnot.SytAdjacentSwap
+import QOU.BraidKnot.SytEntryMono
 import QOU.BraidKnot.SpechtFinrankWired
 import Mathlib.LinearAlgebra.Dimension.Finrank
 import Mathlib.LinearAlgebra.Dimension.Finite
@@ -1454,5 +1456,69 @@ theorem centralC2_acts_by_contentSqSum {k : Type} [Field k] [CharZero k] (μ : Y
   · simp
   · intro a b _ _ ha hb; rw [map_add, ha, hb, smul_add]
   · intro r a _ ha; rw [map_smul, ha, smul_comm]
+
+/-- **Realization of an admissible adjacent swap (sorry-free).** For adjacent labels `a, a+1`
+whose cells in `T` lie in different rows and columns, the consecutive-label cell-swap tableau
+`swapCellsSYT` realizes an `AdjacentSwapStep μ T ·`.  The gap conditions come from
+`content_ne_of_succ` (`d ≠ 0`) and `sq_content_gap_ne_one` (`d² ≠ 1`); the content-swap
+conditions from computing `tableauCellEquiv` of the swapped tableau via `cellLabel` (label `a`
+lands on cell `q`, label `a+1` on cell `p`, all others fixed). -/
+theorem adjacentSwapStep_swapCells {μ : YoungDiagram}
+    (T : QOU.BraidKnot.StandardYoungTableau μ) (a b : Fin (Specht.nOf μ))
+    (hab : (a : ℕ) + 1 = (b : ℕ))
+    (hrow : ((tableauCellEquiv μ T a : ℕ × ℕ)).1 ≠ ((tableauCellEquiv μ T b : ℕ × ℕ)).1)
+    (hcol : ((tableauCellEquiv μ T a : ℕ × ℕ)).2 ≠ ((tableauCellEquiv μ T b : ℕ × ℕ)).2) :
+    AdjacentSwapStep μ T
+      (QOU.BraidKnot.swapCellsSYT T (tableauCellEquiv μ T a) (tableauCellEquiv μ T b)
+        (tableauCellEquiv_mem T a) (tableauCellEquiv_mem T b)
+        (by rw [entry_tableauCellEquiv, entry_tableauCellEquiv]; omega) hrow hcol) := by
+  set T' := QOU.BraidKnot.swapCellsSYT T (tableauCellEquiv μ T a) (tableauCellEquiv μ T b)
+    (tableauCellEquiv_mem T a) (tableauCellEquiv_mem T b)
+    (by rw [entry_tableauCellEquiv, entry_tableauCellEquiv]; omega) hrow hcol with hT'_def
+  -- injectivity helper: distinct labels ⇒ distinct cells (as pairs)
+  have cell_ne : ∀ s t : Fin (Specht.nOf μ), s ≠ t →
+      ((tableauCellEquiv μ T s : ℕ × ℕ).1, (tableauCellEquiv μ T s : ℕ × ℕ).2)
+        ≠ (tableauCellEquiv μ T t : ℕ × ℕ) := by
+    intro s t hst h
+    rw [Prod.mk.eta] at h
+    exact hst ((tableauCellEquiv μ T).injective (Subtype.ext h))
+  -- cell of label a in T' is the cell of label b in T
+  have hcell_a : tableauCellEquiv μ T' a = tableauCellEquiv μ T b := by
+    have hlab : QOU.BraidKnot.SpechtStandardBasis.cellLabel T' (tableauCellEquiv μ T b) = a := by
+      apply Fin.ext
+      show T'.entry (tableauCellEquiv μ T b : ℕ × ℕ).1 (tableauCellEquiv μ T b : ℕ × ℕ).2 = (a : ℕ)
+      rw [hT'_def, QOU.BraidKnot.swapCellsSYT_entry_at_q, entry_tableauCellEquiv]
+    rw [← hlab, tableauCellEquiv_cellLabel]
+  -- cell of label b in T' is the cell of label a in T
+  have hcell_b : tableauCellEquiv μ T' b = tableauCellEquiv μ T a := by
+    have hlab : QOU.BraidKnot.SpechtStandardBasis.cellLabel T' (tableauCellEquiv μ T a) = b := by
+      apply Fin.ext
+      show T'.entry (tableauCellEquiv μ T a : ℕ × ℕ).1 (tableauCellEquiv μ T a : ℕ × ℕ).2 = (b : ℕ)
+      rw [hT'_def, QOU.BraidKnot.swapCellsSYT_entry_at_p, entry_tableauCellEquiv]
+    rw [← hlab, tableauCellEquiv_cellLabel]
+  -- every other label is fixed
+  have hcell_other : ∀ s : Fin (Specht.nOf μ), s ≠ a → s ≠ b →
+      tableauCellEquiv μ T' s = tableauCellEquiv μ T s := by
+    intro s hsa hsb
+    have hlab : QOU.BraidKnot.SpechtStandardBasis.cellLabel T' (tableauCellEquiv μ T s) = s := by
+      apply Fin.ext
+      show T'.entry (tableauCellEquiv μ T s : ℕ × ℕ).1 (tableauCellEquiv μ T s : ℕ × ℕ).2 = (s : ℕ)
+      rw [hT'_def, QOU.BraidKnot.swapCellsSYT_entry_other
+        (by rw [Prod.mk.eta]; exact tableauCellEquiv_mem T s) (cell_ne s a hsa) (cell_ne s b hsb),
+        entry_tableauCellEquiv]
+    conv_lhs => rw [← hlab]
+    rw [tableauCellEquiv_cellLabel]
+  -- assemble AdjacentSwapStep
+  refine ⟨a, b, hab, ?_, ?_, ?_, ?_, ?_⟩
+  · rw [hcell_a]
+  · rw [hcell_b]
+  · intro s hsa hsb; rw [hcell_other s hsa hsb]
+  · have hne := QOU.BraidKnot.content_ne_of_succ T (tableauCellEquiv_mem T a)
+      (tableauCellEquiv_mem T b) (by rw [entry_tableauCellEquiv, entry_tableauCellEquiv]; omega)
+    simp only [cellContent]; omega
+  · have hsq := QOU.BraidKnot.sq_content_gap_ne_one T (tableauCellEquiv_mem T a)
+      (tableauCellEquiv_mem T b) (by rw [entry_tableauCellEquiv, entry_tableauCellEquiv]; omega)
+      hrow hcol
+    simpa only [cellContent] using hsq
 
 end QOU.BraidKnot.JucysMurphy
