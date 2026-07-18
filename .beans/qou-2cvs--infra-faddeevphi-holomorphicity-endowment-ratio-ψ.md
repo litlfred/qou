@@ -1,14 +1,14 @@
 ---
 # qou-2cvs
 title: 'Infra: FaddeevPhi holomorphicity endowment — ratio Ψ/Φ entire (hratio; closes uniqueUpToScalar via the landed reduction)'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - alien-habiro
 created_at: 2026-07-18T18:06:37Z
-updated_at: 2026-07-18T19:16:14Z
+updated_at: 2026-07-18T22:11:37Z
 parent: qou-89f9
 ---
 
-RE-SCOPED (2026-07-18, PR post-#3966): divisor-cancellation is OFF the critical path of the nowhere-zero scaffold — uniqueUpToScalar_of_entire takes NO separate hratio; ratio-entire is derived from the two entireness fields via hΨ.div hΦ hΦ0 (DoublyPeriodicLiouville:125). The endowment splits into: (A) idealization route — add an entireness FIELD, uniqueUpToScalar closes trivially, BUT the field is FALSE for true Φ_b (meromorphic, has zeros+poles) so it proves nothing physical; (B) meromorphic route — restate rigidity over MeromorphicOn/divisors, prove same-divisor from the shared q-difference eq (ord(Φ)=ord(Ψ) pointwise ⇒ ratio entire+nonvanishing). (B) is the real multi-week target. BLOCKED in sandbox: Mathlib meromorphic API oleans not cached + no mathlib source tree + network-blocked ⇒ cannot compile/verify meromorphic Lean here. Do (B) in a full-build session from MeromorphicOn.divisor. Doc: docs/audits/2026-07-18-endowment-scope-meromorphic-wall.md. Anti-laundering: not axiomatized.
+ROUTE-B IN PROGRESS (github egress authorized 2026-07-18): unblock = clone mathlib source at pinned rev f897ebcf → build Mathlib.Analysis.Meromorphic.Divisor cone (background clone underway). Then reformulate uniqueUpToScalar over MeromorphicOn/divisors: (1) FaddeevPhi.merom field; (2) same-order lemma — Φ,Ψ solve same first-order q-diff eq f(z+c)=P(z)f(z) ⇒ meromorphicOrderAt Ψ − meromorphicOrderAt Φ is c-periodic ⇒ constant over the ⟨ib,i/b⟩ lattice ⇒ 0 at a regular point ⇒ ord Φ=ord Ψ everywhere; (3) empty divisor ⇒ ratio entire+nonvanishing; (4) feed ratio_const_of_doublyPeriodic. Full lemma chain: docs/workplans/2026-07-18-alien-habiro-hard-infra-execution-plan.md §1. Anti-laundering: same-order (step 2) must be DERIVED from the diff eqs, FaddeevPhi.merom proved for PhiBProd or carried as honest conjecture.
