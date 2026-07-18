@@ -1,0 +1,362 @@
+{
+  "engine": "python+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-07-18T19:40:59.241196+00:00",
+  "commitSha": "d106e6bad98069ec8c8ca62775d773ffbbf02429",
+  "assertions": [
+    {
+      "name": "closed_form_det_matches_mp_det_A2_to_12",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "cumulant_saturates_b_A_over_A_monotone_rise",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "rho3_capped_below_C32_strictly_decreasing",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "rho4_capped_below_C42_strictly_decreasing",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "m_to_0_sup_equals_edge_count_C_A_2",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "strong_targets_exceed_cap_exclusion",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "raw_rho4_also_exceeds_cap_robust",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "no_parameter_free_m_hits_both",
+      "computed": "False",
+      "expected": "False",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 138,
+  "computation": "deltalambda-saturation-det-ceiling",
+  "scriptFile": "deltalambda_saturation_det_ceiling_probe.py",
+  "scriptHash": "741f0e19514d",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Nuclear-saturation angle on the Delta_lambda magnitude wall. The isospin-even (unsigned) complete-graph exchange CUMULANT b_A=-ln det(I+m(J-I)) SATURATES (b_A/A -> -ln(1-m)) -- taming the #3952 super-additive overshoot; it IS the extensive term the 2026-06-02 audit said the intensive trace binding lacks. But the saturation PROVABLY caps rho_A=b_A/b_2 <= C(A,2) (exact spectrum + one-line derivative proof), below the isospin-corrected strong targets rho_strong(3)~3.8>3, rho_strong(4)~13>6. The large-magnitude mechanism (the sqrt5 ceiling) is isospin-SIGNED and excluded (strong split proved 0). Scope-(b) exclusion; no fit, audit-only.",
+  "tier": "structural derive+prune (exact spectrum + closed-form cumulant; no fit, no AME inversion)",
+  "result": {
+    "hypothesis": "the det-ceiling cumulant SATURATES (taming the #3952 overshoot) and a parameter-free m lands the light-nucleus rho ratios",
+    "constants": {
+      "q0": "1.10997859556",
+      "E0_MeV": "4.1859808",
+      "g_reeb": "0.446727067798",
+      "z_naive_1/[2]_v": "0.499320334034",
+      "ceiling_1/sqrt5": "0.4472135955"
+    },
+    "part0_algebraic_preflight": {
+      "closed_form": "det(I + m(J-I)) = (1+(A-1)m)(1-m)^{A-1}  [exact spectrum {1+(A-1)m, (1-m)x(A-1)}]",
+      "all_match_mp_det_A2_to_12": true,
+      "rows": [
+        {
+          "A": 2,
+          "closed_form": "0.8004349269",
+          "mp_det": "0.8004349269",
+          "match": true
+        },
+        {
+          "A": 3,
+          "closed_form": "0.5796070206",
+          "mp_det": "0.5796070206",
+          "match": true
+        },
+        {
+          "A": 4,
+          "closed_form": "0.3963398657",
+          "mp_det": "0.3963398657",
+          "match": true
+        },
+        {
+          "A": 5,
+          "closed_form": "0.2611441908",
+          "mp_det": "0.2611441908",
+          "match": true
+        },
+        {
+          "A": 6,
+          "closed_form": "0.1676440565",
+          "mp_det": "0.1676440565",
+          "match": true
+        },
+        {
+          "A": 7,
+          "closed_form": "0.1055667444",
+          "mp_det": "0.1055667444",
+          "match": true
+        },
+        {
+          "A": 8,
+          "closed_form": "0.06549676508",
+          "mp_det": "0.06549676508",
+          "match": true
+        },
+        {
+          "A": 9,
+          "closed_form": "0.04016003944",
+          "mp_det": "0.04016003944",
+          "match": true
+        },
+        {
+          "A": 10,
+          "closed_form": "0.0243896494",
+          "mp_det": "0.0243896494",
+          "match": true
+        },
+        {
+          "A": 11,
+          "closed_form": "0.01469483835",
+          "mp_det": "0.01469483835",
+          "match": true
+        },
+        {
+          "A": 12,
+          "closed_form": "0.008794574164",
+          "mp_det": "0.008794574164",
+          "match": true
+        }
+      ]
+    },
+    "part1_saturation": {
+      "m_used": "g_reeb (parameter-free corpus per-bond magnitude)",
+      "plateau_-ln(1-m)": "0.59190385",
+      "b_A/A_monotone_rising_then_flattening": true,
+      "curve_A_2_to_20": [
+        {
+          "A": 2,
+          "b_A": "0.22260004",
+          "b_A/A": "0.11130002",
+          "frac_of_plateau": "0.188037"
+        },
+        {
+          "A": 3,
+          "b_A": "0.54540496",
+          "b_A/A": "0.18180165",
+          "frac_of_plateau": "0.307147"
+        },
+        {
+          "A": 4,
+          "b_A": "0.92548319",
+          "b_A/A": "0.2313708",
+          "frac_of_plateau": "0.390893"
+        },
+        {
+          "A": 5,
+          "b_A": "1.3426826",
+          "b_A/A": "0.26853651",
+          "frac_of_plateau": "0.453683"
+        },
+        {
+          "A": 6,
+          "b_A": "1.7859123",
+          "b_A/A": "0.29765204",
+          "frac_of_plateau": "0.502872"
+        },
+        {
+          "A": 7,
+          "b_A": "2.2484119",
+          "b_A/A": "0.3212017",
+          "frac_of_plateau": "0.542659"
+        },
+        {
+          "A": 8,
+          "b_A": "2.7257545",
+          "b_A/A": "0.34071932",
+          "frac_of_plateau": "0.575633"
+        },
+        {
+          "A": 9,
+          "b_A": "3.2148828",
+          "b_A/A": "0.3572092",
+          "frac_of_plateau": "0.603492"
+        },
+        {
+          "A": 10,
+          "b_A": "3.7135964",
+          "b_A/A": "0.37135964",
+          "frac_of_plateau": "0.627399"
+        },
+        {
+          "A": 11,
+          "b_A": "4.220259",
+          "b_A/A": "0.38365991",
+          "frac_of_plateau": "0.648179"
+        },
+        {
+          "A": 12,
+          "b_A": "4.7336203",
+          "b_A/A": "0.39446836",
+          "frac_of_plateau": "0.66644"
+        },
+        {
+          "A": 13,
+          "b_A": "5.2527039",
+          "b_A/A": "0.40405414",
+          "frac_of_plateau": "0.682635"
+        },
+        {
+          "A": 14,
+          "b_A": "5.7767322",
+          "b_A/A": "0.41262373",
+          "frac_of_plateau": "0.697113"
+        },
+        {
+          "A": 15,
+          "b_A": "6.3050762",
+          "b_A/A": "0.42033841",
+          "frac_of_plateau": "0.710146"
+        },
+        {
+          "A": 16,
+          "b_A": "6.8372198",
+          "b_A/A": "0.42732624",
+          "frac_of_plateau": "0.721952"
+        },
+        {
+          "A": 17,
+          "b_A": "7.3727341",
+          "b_A/A": "0.43369024",
+          "frac_of_plateau": "0.732704"
+        },
+        {
+          "A": 18,
+          "b_A": "7.9112593",
+          "b_A/A": "0.4395144",
+          "frac_of_plateau": "0.742544"
+        },
+        {
+          "A": 19,
+          "b_A": "8.4524899",
+          "b_A/A": "0.44486789",
+          "frac_of_plateau": "0.751588"
+        },
+        {
+          "A": 20,
+          "b_A": "8.9961649",
+          "b_A/A": "0.44980824",
+          "frac_of_plateau": "0.759935"
+        }
+      ],
+      "model_per_nucleon_rise_A2_to_inf": "5.31809",
+      "empirical_B/A_rise_2H_to_56Fe": "7.90298",
+      "shape_qualitatively_matches_but_rise_too_small": true,
+      "verdict": "DERIVED: the cumulant SATURATES (b_A/A -> -ln(1-m)); qualitatively the right rise-then-flatten SHAPE. But the plateau is approached too SLOWLY: at A=4 b_A/A is only ~39% of its plateau, whereas empirical B/A already peaks at 4He. The full model rise (~5.3x, only at A->inf) is below empirical (~7.9x, reached by 4He) -- wrong A-profile even where the shape agrees."
+    },
+    "part2_proved_rho_cap": {
+      "claim": "rho_A = b_A/b_2 <= C(A,2)=A(A-1)/2 for all m in (0,1); strictly decreasing; sup at m->0",
+      "proof": "g(m):=C(A,2)b_2-b_A, g(0)=0, g'(m)=A(A-1)m/(1-m)[1/(1+m)-1/(1+(A-1)m)]>=0 (exact)",
+      "numerical_confirmation": {
+        "A3": {
+          "C(A,2)_cap": 3,
+          "rho_max_over_sweep": "2.9900744",
+          "rho_min_over_sweep": "2.0620736",
+          "all_below_cap": true,
+          "strictly_decreasing_in_m": true,
+          "m_to_0_sup_equals_C(A,2)": true
+        },
+        "A4": {
+          "C(A,2)_cap": 6,
+          "rho_max_over_sweep": "5.9604446",
+          "rho_min_over_sweep": "3.1496189",
+          "all_below_cap": true,
+          "strictly_decreasing_in_m": true,
+          "m_to_0_sup_equals_C(A,2)": true
+        }
+      },
+      "interpretation": "the det cumulant's saturation drives rho BELOW the additive edge count C(A,2) (the #3952 sup), never above -- turning up m only flattens rho further."
+    },
+    "part3_isospin_corrected_strong_targets": {
+      "rho_raw_AME": {
+        "3H": "3.8128",
+        "3He": "3.46947",
+        "4He": "12.7196"
+      },
+      "E_C_4He_sphere_MeV": "0.771131",
+      "E_C_4He_pair_MeV": "0.642609",
+      "rho_strong_3_(H,Coulomb-free)": "3.8128",
+      "rho_strong_4_(mean_of_geometries)": "13.0374",
+      "cap_C(3,2)": 3,
+      "cap_C(4,2)": 6,
+      "target_3_exceeds_cap": true,
+      "target_4_exceeds_cap": true,
+      "raw_4_also_exceeds_cap_(robust)": true
+    },
+    "part4_forward_test": {
+      "per_magnitude": {
+        "g_reeb": {
+          "m": "0.446727067798",
+          "rho_pred_3": "2.45016",
+          "rho_pred_4": "4.15761",
+          "vs_target_3_ratio_pred/strong": "0.64261",
+          "vs_target_4_ratio_pred/strong": "0.3189",
+          "b4_MeV_at_this_m": "3.87405"
+        },
+        "ceiling_1/sqrt5": {
+          "m": "0.4472135955",
+          "rho_pred_3": "2.44977",
+          "rho_pred_4": "4.15651",
+          "vs_target_3_ratio_pred/strong": "0.64251",
+          "vs_target_4_ratio_pred/strong": "0.31881",
+          "b4_MeV_at_this_m": "3.88249"
+        },
+        "z_naive": {
+          "m": "0.499320334034",
+          "rho_pred_3": "2.40992",
+          "rho_pred_4": "4.04458",
+          "vs_target_3_ratio_pred/strong": "0.63206",
+          "vs_target_4_ratio_pred/strong": "0.31023",
+          "b4_MeV_at_this_m": "4.85528"
+        }
+      },
+      "any_parameter_free_m_hits_both_within_5pct": false,
+      "why_impossible": "rho_4 <= C(4,2)=6 < rho_strong(4)~13 (proved cap); no m can reach it"
+    },
+    "method_guard": "m fixed PARAMETER-FREE; rho PREDICTED forward; compared. The cap rho_A<=C(A,2) is PROVED from the exact spectrum, not fitted. m NEVER inverted from the rho ratios (would be the forbidden 7th fit-based ansatz).",
+    "verdict": "HONEST NEGATIVE with a PROVED structural core (scope-(b)). (1) SATURATION IS PRODUCED: the isospin-even complete-graph exchange CUMULANT b_A=-ln det(I+m(J-I)) has b_A/A -> -ln(1-m) (per-nucleon plateau), so it is EXTENSIVE and does NOT overshoot -- the #3952 super-additive overshoot was an artifact of the BARE determinant/pseudo-det; the log-det cumulant tames it. This is the additive extensive object the 2026-06-02 intensive-vs-extensive audit said the canonical (intensive) trace binding is missing. The b_A/A curve even has the right qualitative SHAPE (monotone rise then flatten). (2) BUT the SATURATION CAPS rho: PROVED (exact spectrum + one-line derivative argument) rho_A = b_A/b_2 <= C(A,2), strictly decreasing in m, sup = C(A,2) at m->0 (= the #3952 edge count). The isospin-corrected STRONG targets rho_strong(3)~3.8 > C(3,2)=3 and rho_strong(4)~13.0 > C(4,2)=6 EXCEED the cap => the isospin-even cumulant cannot supply the strong rho magnitudes for ANY m (robust: even the RAW rho_4=12.7 > 6). (3) The large-magnitude mechanism (the #3924 sqrt5-eigenvalue ceiling 1/sqrt5 driving det->0, b_4->inf) lives entirely in the isospin-SIGNED graph, which is excluded (strong split proved 0). Saturation and the large rho are in tension. NOT a wall-crack; m NEVER solved from the rho ratios (no 7th fit); nothing wired."
+  },
+  "context": {
+    "axis": "Delta_lambda magnitude wall -- nuclear-saturation / det-ceiling angle",
+    "no_fit": true,
+    "no_ame_inversion": true,
+    "q0_convention": "muon-canonical (computations/ layer)"
+  },
+  "auditOnly": true
+}
