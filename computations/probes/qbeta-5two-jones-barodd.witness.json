@@ -1,0 +1,64 @@
+{
+  "engine": "sympy+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-07-18T09:28:46.099315+00:00",
+  "commitSha": "b238d3e719ff034c25bf893eae2d037780412e1c",
+  "assertions": [
+    {
+      "name": "jones_4one_validates",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "TL₃-computed V(4₁) == known q⁻²−q⁻¹+1−q+q² (palindromic)"
+    },
+    {
+      "name": "jones_5two_validates",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "TL₃-computed V(5₂) == known q⁻¹−q⁻²+2q⁻³−q⁻⁴+q⁻⁵−q⁻⁶ (or its mirror) — validates the H₃/TL₃ machinery"
+    },
+    {
+      "name": "jones_4one_bar_even_5two_bar_odd",
+      "computed": 0.0,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "V(4₁) bar-odd = 0 (amphichiral), V(5₂) bar-odd ≠ 0 (chiral) — the complete classical bar-odd datum"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 16,
+  "computation": "qbeta-5two-jones-barodd",
+  "scriptFile": "qbeta_5two_jones_barodd_probe.py",
+  "scriptHash": "10a731ad83af",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
+  },
+  "description": "Full 5₂ Jones via a self-contained Temperley–Lieb Kauffman bracket (TL₃ diagram algebra), validated against known V(4₁), V(5₂). Extracts the complete classical bar-odd datum: V(4₁) bar-odd = 0 (amphichiral), V(5₂) bar-odd ≠ 0 (chiral). Step 2 of the non-amphichiral route — validates the machinery before the quantum-volume step. The classical Jones bar-odd datum is O(1) at q₀, ~1e8× above N_odd=S·u³ and anchor-smooth, so NOT the swing (no_anchor_invariant_realizes_swing binds); it is the complete bar-odd HOME, the swing needs 𝔙_q(5₂). No c_k; no fit; scope-(a).",
+  "contentBlock": "prop:phi-b-unitary-bar-odd",
+  "data": {
+    "V_4_1": "(q**8 - q**6 + q**4 - q**2 + 1)/q**4",
+    "V_5_2": "-q**12 + q**10 - q**8 + 2*q**6 - q**4 + q**2",
+    "V_5_2_bar_odd": "(-q**24 + q**22 - q**20 + 2*q**18 - q**16 + q**14 - q**10 + q**8 - 2*q**6 + q**4 - q**2 + 1)/(2*q**12)",
+    "V_5_2_odd_at_anchors": {
+      "muon": "-0.181541887925444",
+      "proton": "-0.18154182356309"
+    },
+    "scale_contrast": "classical Jones bar-odd V(5₂)_odd(q₀) is O(1), ~1e8× above N_odd=S·u³ (O(1e-8)) and anchor-smooth ⇒ not the S-swing (no_anchor_invariant_realizes_swing). The writhe datum sinh(u) is the leading term of this full bar-odd datum.",
+    "verdict": "5₂ FULL JONES BAR-ODD DATUM validated + extracted. The self-contained TL₃ Kauffman bracket reproduces known V(4₁) (palindromic, bar-odd 0) and V(5₂) (non-palindromic, bar-odd ≠ 0) — the H₃/TL₃ machinery is trusted. The complete classical bar-odd datum V(5₂)_odd is O(1) at q₀ and anchor-smooth, so it is the bar-odd HOME but not the swing (the prune binds); the writhe sinh(u) is its leading term. Step 1 (quantum 𝔙_q(5₂), anchor-dependent) is the swing test. No c_k; no fit; scope-(a)."
+  }
+}
