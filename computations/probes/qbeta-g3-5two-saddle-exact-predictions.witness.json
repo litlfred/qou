@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-18T14:16:56.003589+00:00",
-  "commitSha": "f96b32252c337cf934cab64a1c659c023e4a3281",
+  "computedAt": "2026-07-18T14:32:17.765707+00:00",
+  "commitSha": "d1b9c86d66d2e289d3beb68dd46e29660034d9d5",
   "assertions": [
     {
       "name": "u0_controls_pass",
@@ -30,11 +30,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 14,
+  "durationMs": 12,
   "computation": "qbeta-g3-5two-saddle-exact-predictions",
   "scriptFile": "qbeta_g3_5two_saddle_exact_predictions.py",
-  "scriptHash": "c5ae9b4c5006",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "e05e36312b0c",
+  "scriptCommitSha": "016c58d84b4c2b8fe9756590c72f2d47248c05ef",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -57,10 +57,10 @@
     "u0": {
       "xi1": "(0.78492014549902663296 + 1.3071412786820454805j)",
       "V_sigma1": "(-3.555607890883604086169709 + 2.828122088330783162763899j)",
-      "V_sigma3": "(-7.693190819866829755912318 + 5.300487101313563962774973j)",
+      "V_sigma3": "(-7.693190819866829755912318 + 0.0j)",
       "abs_ImV1_vs_Vol52": "4.62764e-16",
       "iota_12": "(0.90021922005043597664 + 0.0j)",
-      "iota_13": "(-0.39348911294366755122 - 0.65851677560032290195j)"
+      "iota_13": "(0.45010961002521798832 - 0.65851677560032290195j)"
     },
     "deformed_targets": {
       "12": {
@@ -69,21 +69,21 @@
         "arg_minus_kinematic_rad": "-8.352389719e-53"
       },
       "13": {
-        "iota": "(-0.40191088240503163765 - 0.64717131939685599363j)",
-        "pole": "(-0.37999741822480922631 - 0.65979205311668707412j)",
-        "arg_minus_kinematic_rad": "-2.126533572"
+        "iota": "(0.45527883336204965691 - 0.64717131939685599363j)",
+        "pole": "(0.47624778861067666727 - 0.63135385265512713545j)",
+        "arg_minus_kinematic_rad": "-0.9577316275"
       },
       "23": {
-        "iota": "(-1.3124685491291309515 - 0.64717131939685599363j)",
-        "pole": "(-1.2895517716413241656 - 0.6900007933544740643j)",
-        "arg_minus_kinematic_rad": "-2.683484508"
+        "iota": "(-0.45527883336204965691 - 0.64717131939685599363j)",
+        "pole": "(-0.43330656480583827199 - 0.66156259289291412563j)",
+        "arg_minus_kinematic_rad": "-2.183861026"
       }
     },
     "prediction": {
-      "max_arg_dev_rad": "2.683484508",
+      "max_arg_dev_rad": "2.183861026",
       "fourone_null_floor_rad": "9.2e-9",
       "statement": "the 5_2 deformed ladder should measure a non-kinematic Borel pole phase at this scale; measuring ~0 falsifies the non-amphichiral-carrier hypothesis"
     },
-    "verdict": "5_2 exact saddle data derived from the glyph-extracted GGM sec-6.1 potential: cleared cubic x y^3 - (x^2+1)y^2 + (x^2+x+1)y - x (Lean-proved algebraic layer; reduces to (73) at x=1, trace-field discriminant -23), printed root xi_1 reproduced (True), |Im V(sigma1)| = Vol(5_2) to 1e-10 (True), saddle residuals ~1e-46. u=0 singularities include the genuinely COMPLEX iota_13 (True) — the CS != 0 structural difference from 4_1. FALSIFIABLE TARGETS for the #3892 5_2 ladder: deformed pole predictions with max |arg - kinematic| = 2.683 rad vs the 4_1 null floor 9.2e-9 (True) — a NONZERO intrinsic pole phase is predicted for 5_2, exactly the odd-channel carrier the 4_1 null excluded. Forward predictions only; nothing fitted, nothing wired. Scope-(a); no c_k wired."
+    "verdict": "5_2 exact saddle data derived from the glyph-extracted GGM sec-6.1 potential: cleared cubic x y^3 - (x^2+1)y^2 + (x^2+x+1)y - x (Lean-proved algebraic layer; reduces to (73) at x=1, trace-field discriminant -23), printed root xi_1 reproduced (True), |Im V(sigma1)| = Vol(5_2) to 1e-10 (True), saddle residuals ~1e-46. u=0 singularities include the genuinely COMPLEX iota_13 (True) — the CS != 0 structural difference from 4_1. FALSIFIABLE TARGETS for the #3892 5_2 ladder: deformed pole predictions with max |arg - kinematic| = 2.184 rad vs the 4_1 null floor 9.2e-9 (True) — a NONZERO intrinsic pole phase is predicted for 5_2, exactly the odd-channel carrier the 4_1 null excluded. Forward predictions only; nothing fitted, nothing wired. Scope-(a); no c_k wired."
   }
 }

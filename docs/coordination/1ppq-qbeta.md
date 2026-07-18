@@ -1625,3 +1625,19 @@ arctan(t/π), so both frames see only weak odd phase in the deformed 4₁ tower.
 Net: the 4₁ lane is #3923's (COMPLETE); the open frontier is the non-amphichiral
 5₂-class lane (#3892/#3902 — where my 5₂ quantum volume was found anchor-smooth).
 No c_k wired; scope-(a); no fit.
+**2026-07-18 (erratum + refinement to #3937) — σ3 CONVENTION CORRECTED:
+GGM §6.1 keeps only Re(V) at the real connection; updated 5₂ targets.**
+Deeper §6.1/6.2 extraction surfaced the printed convention "for σ3, we
+only keep the real part of V" (the Im at the real branch is a log-branch
+artifact) — the #3937 σ3-pair targets used full complex V₃ and are
+SUPERSEDED. Corrected exact targets (witness regenerated, 3/3):
+u=0: ι_13 = +0.45011 − 0.65852i, ι_23 = −conj(ι_13) (clean bar
+structure; Re ι_13 = Vol(5₂)/2π exactly); deformed (u_sub = 2t):
+ι̃_13 → pole 0.47625 − 0.63135i (arg−kinematic = −0.958 rad),
+ι̃_23 → −0.43331 − 0.66156i (−2.184 rad); ι̃_12 unchanged (kinematic
+exactly). The nonzero-intrinsic-phase prediction STANDS (max 2.184 rad
+vs the 4₁ null floor 9.2e-9). Also extracted for the next tranche:
+Theorem 22 (PROVEN 5₂ three-block factorization, eqs 240–245) + H±
+q-hypergeometrics + the printed deformed 2-loop (238) — the exact-Z₅₂
+implementation is fully sourced. Corrected targets re-posted to #3892.
+No fit; no c_k wired.

@@ -108,6 +108,16 @@ def order_saddles(roots):
     return s1, s2, s3
 
 
+def V_sigma3(u, y):
+    """σ3 (real-connection) action: GGM §6.1 (below eq 237) — "for σ3, we
+    only keep the real part of V": the imaginary part at the real branch
+    is a log-branch artifact, not action data. ERRATUM: the first
+    published version of this probe (merged #3937) used the full complex
+    V₃; the σ3-pair targets now supersede those numbers."""
+    val, resid = V_of(u, y)
+    return mp.mpc(mp.re(val), 0), resid
+
+
 def main() -> int:
     print("=" * 78)
     print(" 5₂ port — exact saddle data + falsifiable pole targets (for #3892)")
@@ -124,7 +134,7 @@ def main() -> int:
     ok_root = abs(s1 - PRINTED_XI1) < mp.mpf("2e-5")
     V1, r1 = V_of(mp.mpf(0), s1)
     V2, r2 = V_of(mp.mpf(0), s2)
-    V3, r3 = V_of(mp.mpf(0), s3)
+    V3, r3 = V_sigma3(mp.mpf(0), s3)
     ok_res = max(r1, r2, r3) < mp.mpf("1e-45")
     vol_meas = abs(mp.im(V1))
     ok_vol = abs(vol_meas - VOL52) / VOL52 < mp.mpf("1e-10")
@@ -153,7 +163,7 @@ def main() -> int:
     d1, d2, d3 = order_saddles(rootsD)
     W1, q1 = V_of(u_sub, d1)
     W2, q2 = V_of(u_sub, d2)
-    W3, q3 = V_of(u_sub, d3)
+    W3, q3 = V_sigma3(u_sub, d3)
     ok_resD = max(q1, q2, q3) < mp.mpf("1e-45")
     print(f"\n[T3] deformed saddles at u_sub = 2t (residuals ≤ "
           f"{mp.nstr(max(q1, q2, q3), 3)}):")
