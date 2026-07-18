@@ -47,6 +47,80 @@ def _repo_root() -> Path:
     return Path(__file__).resolve().parent.parent.parent
 
 
+# ── q₀-anchor provenance ─────────────────────────────────────────
+# The substrate modulus q₀ has two documented pins (AGENTS.md §"q₀ anchor
+# convention"): the IDEAL / canonical 3-CAL value is MUON-anchored, the
+# PHYSICAL-Observations value is PROTON-anchored, ~11.5 ppb apart. A witness
+# value is meaningless without knowing WHICH anchor produced it — the recurring
+# "flip-flop" bug (bean tnjb) is a consumer silently reading a muon value as
+# proton (or vice-versa). Every witness therefore records `q0Anchor` + `q0Value`
+# so the anchor is explicit and the value can never be misread. The anchor is
+# resolved from the SAME source the runtime uses to pick q₀
+# (`computations/q0_anchor_manifest.json` + the QOU_Q0_ANCHOR env override), so
+# the stamped label always matches the value the producer actually computed.
+
+_Q0_VALUE_CACHE: dict = {}
+
+
+def _q0_value_for_anchor(anchor: str) -> Optional[str]:
+    """The 50-digit q₀ string for a given anchor (cached). muon ← the committed
+    q-pinning witness; proton ← the package constant. None if unavailable or the
+    anchor is not one of {muon, proton}."""
+    if anchor in _Q0_VALUE_CACHE:
+        return _Q0_VALUE_CACHE[anchor]
+    val: Optional[str] = None
+    try:
+        if anchor == "muon":
+            p = _repo_root() / "computations" / "q-pinning-50-digit.witness.json"
+            val = json.loads(p.read_text(encoding="utf-8"))["derived_50_digit"]["q"]
+        elif anchor == "proton":
+            from qou_substrate.constants import Q_50_DIGIT_STR  # noqa: PLC0415
+            val = str(Q_50_DIGIT_STR)
+    except Exception:  # noqa: BLE001
+        val = None
+    _Q0_VALUE_CACHE[anchor] = val
+    return val
+
+
+def resolve_q0_anchor(
+    script_path: Union[str, Path], *, env: Optional[Mapping[str, str]] = None,
+) -> tuple:
+    """Return ``(anchor, q0_value)`` for the producer at ``script_path``.
+
+    ``anchor`` ∈ {``"muon"``, ``"proton"``, ``"ambiguous"``}. Precedence mirrors
+    ``q_parameter``: an explicit ``QOU_Q0_ANCHOR`` env var wins; otherwise the
+    producer's file stem is looked up in ``q0_anchor_manifest.json``
+    (``ideal_muon`` ⇒ muon, ``physical_proton`` ⇒ proton, ``ambiguous`` ⇒
+    ambiguous, and — matching the runtime default — anything else ⇒ proton).
+    ``q0_value`` is the matching 50-digit string, or ``None`` for ambiguous.
+    """
+    environ = os.environ if env is None else env
+    e = (environ.get("QOU_Q0_ANCHOR", "") or "").strip().lower()
+    if e in ("ideal", "muon", "canonical"):
+        anchor = "muon"
+    elif e in ("physical", "proton", "experimental"):
+        anchor = "proton"
+    else:
+        anchor = None
+        try:
+            man = json.loads(
+                (_repo_root() / "computations" / "q0_anchor_manifest.json")
+                .read_text(encoding="utf-8")
+            )
+            stem = Path(script_path).stem
+            if stem in man.get("ideal_muon", []):
+                anchor = "muon"
+            elif stem in man.get("physical_proton", []):
+                anchor = "proton"
+            elif stem in man.get("ambiguous", []):
+                anchor = "ambiguous"
+        except Exception:  # noqa: BLE001
+            anchor = None
+        if anchor is None:
+            anchor = "proton"  # runtime default: not-ideal_muon ⇒ proton
+    return anchor, (_q0_value_for_anchor(anchor) if anchor in ("muon", "proton") else None)
+
+
 def _git_head_sha() -> str:
     """Return the current HEAD commit SHA."""
     try:
@@ -521,6 +595,8 @@ class WitnessBuilder:
         script_path: Union[str, Path],
         engine: str = "python",
         engine_version: Optional[str] = None,
+        q0_anchor: Optional[str] = None,
+        q0_value: Optional[str] = None,
     ) -> dict:
         """Public helper: stamp the WitnessBuilder staleness fields onto
         an existing dict in place (used when the legacy filename is
@@ -560,6 +636,16 @@ class WitnessBuilder:
                 pass
         if engine_version is not None:
             payload["engineVersion"] = engine_version
+        # q₀-anchor provenance: make the muon/proton pin explicit so the value
+        # can never be silently misread (bean tnjb flip-flop). Auto-resolved from
+        # the manifest + env unless the caller passes an explicit anchor/value.
+        if q0_anchor is None:
+            q0_anchor, _rv = resolve_q0_anchor(spath)
+            if q0_value is None:
+                q0_value = _rv
+        payload["q0Anchor"] = q0_anchor
+        if q0_value is not None:
+            payload["q0Value"] = q0_value
         return payload
 
     def is_fresh(self) -> bool:
