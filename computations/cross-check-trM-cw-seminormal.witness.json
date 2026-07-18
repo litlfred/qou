@@ -1,0 +1,89 @@
+{
+ "computation": "cross-check-trM-cw-seminormal",
+ "description": "L1 defense-in-depth THIRD method: color-weighted Wedderburn/seminormal tr_M(beta_atom) with exact delta=(q-1)^2(1-q^-4)/3, cross-checked vs the markov_peel reference at 1ppQ. Genuinely independent decomposition (Sigma y_lambda chi_lambda) from peel's Markov-axiom recursion.",
+ "audit_only": true,
+ "computedAt": "2026-07-18T09:33:07.189305+00:00",
+ "engine": "pyhecke_native seminormal-mpfr 50dps (chi_lambda_all_partitions_mpfr); two-branch color-weighting with exact symbolic delta.",
+ "dps": 50,
+ "q_pin": {
+  "used": "canonical muon (QOU_Q0_ANCHOR=ideal)",
+  "value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+ },
+ "exact_delta_at_q0": "0.001375711249976612013528743243635170321902",
+ "tolerance_1ppQ": "1.0e-15",
+ "worst_rel_diff": "7.27777e-49",
+ "results": [
+  {
+   "atom": "proton",
+   "Z": 1,
+   "N": 0,
+   "A": 1,
+   "trM_cw_seminormal": "1.065306228613167059365284546431372557651",
+   "peel_reference": "1.065306228613167059365284546431372557651",
+   "rel_diff": "2.208e-49",
+   "within_1ppQ": true
+  },
+  {
+   "atom": "neutron",
+   "Z": 0,
+   "N": 1,
+   "A": 1,
+   "trM_cw_seminormal": "0.9232332971861535571052533959906860401387",
+   "peel_reference": "0.9232332971861535571052533959906860401387",
+   "rel_diff": "2.403e-49",
+   "within_1ppQ": true
+  },
+  {
+   "atom": "deuteron",
+   "Z": 1,
+   "N": 1,
+   "A": 2,
+   "trM_cw_seminormal": "0.3883571887237810073017724949653460658784",
+   "peel_reference": "0.3883571887237810073017724949653460658784",
+   "rel_diff": "4.387e-49",
+   "within_1ppQ": true
+  },
+  {
+   "atom": "triton",
+   "Z": 1,
+   "N": 2,
+   "A": 3,
+   "trM_cw_seminormal": "0.1040710693020871557159307316568885940776",
+   "peel_reference": "0.1040710693020871557159307316568885940776",
+   "rel_diff": "3.612e-49",
+   "within_1ppQ": true
+  },
+  {
+   "atom": "helium-3",
+   "Z": 2,
+   "N": 1,
+   "A": 3,
+   "trM_cw_seminormal": "0.2065784750874029994758841051371409368753",
+   "peel_reference": "0.2065784750874029994758841051371409368753",
+   "rel_diff": "7.278e-49",
+   "within_1ppQ": true
+  },
+  {
+   "atom": "helium-4",
+   "Z": 2,
+   "N": 2,
+   "A": 4,
+   "trM_cw_seminormal": "0.05535842626678310646985204749843774031633",
+   "peel_reference": "0.05535842626678310646985204749843774031633",
+   "rel_diff": "7.031e-49",
+   "within_1ppQ": true
+  }
+ ],
+ "scope": "(a) \u2014 independent third method for the L1 color-weighted atomic trace; no AME input; no fit; nothing wired.",
+ "assertions": [
+  {
+   "label": "all 6 atoms agree with peel at 1ppQ (rel < 1e-15)",
+   "passed": true
+  },
+  {
+   "label": "exact symbolic delta used (not flavor_split_leading)",
+   "passed": true
+  }
+ ],
+ "allPassed": true
+}
