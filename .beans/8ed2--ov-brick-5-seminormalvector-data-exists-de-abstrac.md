@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-07-03T00:33:16Z
-updated_at: 2026-07-17T23:17:11Z
+updated_at: 2026-07-18T01:43:55Z
 ---
 
-OV brick-5 seminormal existence, JucysMurphy.lean. DELIVERED tranche 1 (#3255, merged): all-T existence assembled from 2 cores. DELIVERED tranche 2 (#3843): (a) syt_adjacentSwap_connected proved sorry-free via AdjacentSwapStep symmetry (adjacentSwapStep_symm + reflTransGen_adjacentSwap_symm) -> reduced to one-directional syt_all_connect_to_some; (b) SytRowSuperstandard.lean: row-superstandard SSYT sorry-free (rowPrefix + rowSuperstandardSsyt). REMAINING for syt_all_connect_to_some: (i) card=Sum rowLen via cells=disjoint-union-of-rows (biUnion + card_biUnion) ~40-60 lines; (ii) BijOn wrap -> Nonempty(StandardYoungTableau) [MapsTo/InjOn easy from rowPrefix_mono; SurjOn via Finset.surjOn_of_injOn_of_card_le] ~60-80 lines; (iii) inversion measure + exchange step -> the walk to base. Parent epic 08a2.
+OV brick-5, JucysMurphy.lean. #3255 (merged): all-T existence from 2 cores. #3843 (open): (a) syt_adjacentSwap_connected sorry-free via swap-symmetry -> one-directional syt_all_connect_to_some; (b) SytRowSuperstandard.lean base-tableau brick NOW COMPLETE sorry-free: rowPrefix + rowSuperstandardSsyt + card_eq_sum_rowLen + BijOn(MapsTo/InjOn/SurjOn) + rowSuperstandardStd + instNonemptyStandardYoungTableau (explicit T_0 witness; axioms [propext,Classical.choice,Quot.sound]). REMAINING for syt_all_connect_to_some: inversion measure m:SYT->N (on reading word / content) + exchange step (T != rowSuperstandard => exists admissible adjacent swap decreasing m; discharge |d|>=2 gap from standardness) + WF induction walking any SYT to the base. Then wire T_0:=rowSuperstandardStd into syt_all_connect_to_some. Parent epic 08a2.
