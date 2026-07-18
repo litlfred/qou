@@ -1,16 +1,29 @@
 {
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-18T08:29:30.287800+00:00",
+  "commitSha": "f6f3ce0e1b10adb9b7ddb1041e819878df1713df",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 10138,
+  "computation": "dilog-archimedean-limit-partA",
+  "scriptFile": "dilog_archimedean_partA_witness.py",
+  "scriptHash": "08f2ab0cd184",
+  "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Numerical confirmation of Part A of conj:dilogarithm-archimedean-limit: (1-q) log Phi_n(x;q) -> Li_2(x) for fixed x in (0,1), q -> 1^-, along Faddeev scaling. Error tracks the elementary monotone-Riemann-sum + tail bound.",
   "schema": "qou-witness/v1",
   "name": "dilog-archimedean-limit-partA",
-  "description": "Numerical confirmation of Part A of conj:dilogarithm-archimedean-limit: (1-q) log Phi_n(x;q) -> Li_2(x) for fixed x in (0,1), q -> 1^-, along Faddeev scaling. Error tracks the elementary monotone-Riemann-sum + tail bound.",
-  "computation": {
-    "engine": "python+mpmath",
-    "dps": 40,
-    "C_n_eps": "30.0",
-    "script": "computations/dilog_archimedean_partA_witness.py"
-  },
-  "scriptCommitSha": "",
-  "scriptHash": "efdd4b1f6974",
-  "computedAt": "2026-06-07T05:04:45.280922+00:00",
   "result": {
     "all_within_bound_and_monotone": true,
     "rows": [

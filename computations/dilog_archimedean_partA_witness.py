@@ -15,6 +15,8 @@ bound  eps * (-log(1-x))  plus the exponential tail  (x/(1-x)) e^{-n eps}.
 With C large the tail is negligible, so the error should fall ~linearly
 in eps. This script checks exactly that and emits a witness JSON.
 """
+import time as _time  # noqa: E402 — wall-clock anchor for witness durationMs
+_T0 = _time.monotonic()
 import json
 import math
 import os
@@ -121,12 +123,14 @@ def main():
             "content/quantum-observable-universe/mass-theory/dilogarithm-archimedean-limit.md",
         ],
     }
-    out = os.path.join(
-        os.path.dirname(script_path),
-        "dilog-archimedean-limit-partA.witness.json",
-    )
-    with open(out, "w") as f:
-        json.dump(witness, f, indent=2)
+    import sys as _sys  # noqa: E402
+    _sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "substrate"))
+    from witness_base import WitnessBuilder  # noqa: E402 — P30 rollup (bean cmiy)
+    out = WitnessBuilder.wrap_legacy(
+        "dilog-archimedean-limit-partA", witness,
+        script_path=__file__, engine="mpmath", start_time=_T0,
+        output_dir=os.path.dirname(script_path),
+    ).save()
     print(f"all_within_bound_and_monotone = {all_ok}")
     for row in results:
         print(f"  x={row['x']}  Li2={row['Li2_x']}")

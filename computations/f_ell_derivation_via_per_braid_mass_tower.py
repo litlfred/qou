@@ -42,6 +42,8 @@ Audit-only; no production wiring.
 """
 
 from __future__ import annotations
+import time as _time  # noqa: E402 — wall-clock anchor for witness durationMs
+_T0 = _time.monotonic()
 
 import json
 import sys
@@ -224,8 +226,14 @@ def main() -> int:
     }
 
     here = Path(__file__).resolve().parent
-    out = here / "f-ell-derivation-via-per-braid-mass-tower.witness.json"
-    out.write_text(json.dumps(witness, indent=2))
+    import sys as _sys  # noqa: E402
+    _sys.path.insert(0, str(here / "substrate"))
+    from witness_base import WitnessBuilder  # noqa: E402 — P30 rollup (bean cmiy)
+    out = WitnessBuilder.wrap_legacy(
+        "f-ell-derivation-via-per-braid-mass-tower", witness,
+        script_path=__file__, engine="mpmath", start_time=_T0,
+        output_dir=str(here),
+    ).save()
     print(f"Witness: {out}")
     return 0
 

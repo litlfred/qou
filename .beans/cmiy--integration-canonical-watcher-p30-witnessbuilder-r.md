@@ -245,3 +245,14 @@ strays. Avoided deuteron_* candidates (active #3808-lineage sibling scope).
 PROV_MISSING 261→256. Worklist: 49 clean PROV_MISSING+zero-consumer picks
 remained pre-batch (minus the deuteron set + slow z_habiro_increment which
 times out in-sandbox).
+
+## 2026-07-18 — batch 17 (3 scripts, wrap_legacy + explicit output_dir)
+3 clean single-emit zero-consumer root scripts: dilog_archimedean_partA_witness
+(mpmath), f_ell_derivation_via_per_braid_mass_tower (mpmath),
+figure_eight_aj_operator (sympy). All wrap_legacy + _T0 anchor + substrate
+sys.path insert; each passes explicit output_dir to land the witness where the
+old code wrote it. Exit 0, computed values bit-identical, prov triple + real
+durationMs. NOTE (gotcha #2 benign instance): f_ell's committed witness
+re-serialized one CODATA input (206.768283) with mpmath trailing digits
+(...2999...) — SAME number, all computed physics values identical; cosmetic
+only. PROV_MISSING 256→253. Avoided deuteron_* (sibling #3808 scope).
