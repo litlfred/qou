@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-18T19:19:48.005635+00:00",
-  "commitSha": "0d1bf307c56907231a7bc23d842cf75c25562a69",
+  "computedAt": "2026-07-18T19:22:00.940969+00:00",
+  "commitSha": "90837409dc44be530521d8b44dcea8288b70a01e",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -153,9 +153,9 @@
     },
     {
       "name": "chain_valid[c-q-q0.derivation]",
-      "computed": false,
+      "computed": true,
       "expected": true,
-      "passed": false
+      "passed": true
     },
     {
       "name": "leaf_value[c-q-q0.derivation]",
@@ -558,7 +558,7 @@
       "tolerance": 9.9124115660574e-11
     }
   ],
-  "allPassed": false,
+  "allPassed": true,
   "durationMs": 4,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
@@ -1187,9 +1187,7 @@
         "computed_value": 9.092678397394828,
         "structural_ok": true,
         "leaf_matches": true,
-        "issues": [
-          "c_q algebra re-eval at q_0=1.1099785827513808 gives 9.092679456150243 vs target 9.092678397394828 (rel_diff 1.16e-07, target_tolerance 1.00e-12)"
-        ],
+        "issues": [],
         "trust_summary": {
           "axiom": 2,
           "derived": 2,
