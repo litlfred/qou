@@ -373,6 +373,154 @@ theorem sigmaOneCharacter_eq_card_mul (h : μ.transpose = μ) (hn : 2 ≤ μ.cel
   rw [hcast, mul_assoc] at key
   exact mul_left_cancel₀ h2 key
 
+/-! ### The per-shape count `c_λ = #SYT(μ)/2` (self-conjugate μ)
+
+For `σ₁` the pair `1, 2` sits in the corner: `1` at `(0,0)` and `2` at the only
+two addable cells `(0,1)` or `(1,0)`. Hence **every** standard tableau is in
+exactly one of the two classes — `sameRow12 ∨ sameCol12` and never both — so
+`rowClass ∪ colClass = univ` disjointly and `|R_row| + |R_col| = #SYT(μ)`. With
+the conjugate-transpose identity `|R_row| = |R_col|`, this closes the per-shape
+count with **no enumeration**: `2·|R_row| = #SYT(μ)`, i.e. `c_λ = #SYT(μ)/2`. -/
+
+/-- **The `(0,0)` corner is minimal**: `T.entry 0 0 ≤ T.entry a b` for every cell
+    `(a,b)` — weak rows to `(0,b)` then strict columns down to `(a,b)`. -/
+theorem entry_le (T : StandardYoungTableau μ) {a b : ℕ} (hab : (a, b) ∈ μ) :
+    T.entry 0 0 ≤ T.entry a b := by
+  have h0b : (0, b) ∈ μ := μ.up_left_mem (Nat.zero_le a) (le_refl b) hab
+  have h1 : T.entry 0 0 ≤ T.entry 0 b := by
+    rcases Nat.eq_zero_or_pos b with hb | hb
+    · subst hb; exact le_rfl
+    · exact T.toSsyt.row_weak hb h0b
+  have h2 : T.entry 0 b ≤ T.entry a b := by
+    rcases Nat.eq_zero_or_pos a with ha | ha
+    · subst ha; exact le_rfl
+    · exact le_of_lt (T.toSsyt.col_strict ha hab)
+  exact le_trans h1 h2
+
+/-- **Entry `1` is at the corner**: `T.entry 0 0 = 1`. The corner is `≥ 1` (in the
+    value range) and `≤` the cell carrying `1` (`entry_le`), so it *is* `1`. -/
+theorem entry_zero_zero_eq_one (T : StandardYoungTableau μ) (hn : 1 ≤ μ.cells.card) :
+    T.entry 0 0 = 1 := by
+  obtain ⟨⟨a, b⟩, hcell, hval⟩ := exists_cell_entry T (Set.mem_Icc.mpr ⟨le_refl 1, hn⟩)
+  have hval2 : T.entry a b = 1 := hval
+  have hab : (a, b) ∈ μ := (YoungDiagram.mem_cells _).mp hcell
+  have h00 : (0, 0) ∈ μ := μ.up_left_mem (Nat.zero_le a) (Nat.zero_le b) hab
+  have hle : T.entry 0 0 ≤ T.entry a b := entry_le T hab
+  rw [hval2] at hle
+  have hge : 1 ≤ T.entry 0 0 :=
+    (Set.mem_Icc.mp (T.mapsTo_cells (StandardYoungTableau.mem_coe_cells h00))).1
+  omega
+
+/-- **`(0,0) ∈ μ`** whenever `μ` has a cell (the diagram is a lower set). -/
+theorem zero_zero_mem_cells (hn : 1 ≤ μ.cells.card) : (0, 0) ∈ μ.cells := by
+  obtain ⟨⟨a, b⟩, hc⟩ := Finset.card_pos.mp (show 0 < μ.cells.card by omega)
+  rw [YoungDiagram.mem_cells] at hc ⊢
+  exact μ.up_left_mem (Nat.zero_le a) (Nat.zero_le b) hc
+
+/-- **`cellOf T 1 = (0,0)`** — the entry `1` lives at the corner. -/
+theorem cellOf_one (T : StandardYoungTableau μ) (hn : 1 ≤ μ.cells.card) :
+    cellOf T 1 = (0, 0) :=
+  cellOf_eq_of_entry T (zero_zero_mem_cells hn) (entry_zero_zero_eq_one T hn)
+
+/-- **`cellOf T 2` sits on the corner row or column**: its row *or* column index is
+    `0`. If both were `≥ 1`, its up-neighbour and left-neighbour would both carry an
+    entry `< 2`, i.e. both `= 1` — two distinct cells with entry `1`, impossible by
+    injectivity of the filling. -/
+theorem cellOf_two_coord_zero (T : StandardYoungTableau μ) (hn : 2 ≤ μ.cells.card) :
+    (cellOf T 2).1 = 0 ∨ (cellOf T 2).2 = 0 := by
+  have h2range : (2 : ℕ) ∈ Set.Icc 1 μ.cells.card := Set.mem_Icc.mpr ⟨by norm_num, hn⟩
+  obtain ⟨⟨a, b⟩, hcell, hval⟩ := exists_cell_entry T h2range
+  have hpin : cellOf T 2 = (a, b) := cellOf_eq_of_entry T hcell hval
+  rw [hpin]
+  show a = 0 ∨ b = 0
+  by_contra hcon
+  push_neg at hcon
+  obtain ⟨ha, hb⟩ := hcon
+  have ha1 : 1 ≤ a := Nat.one_le_iff_ne_zero.mpr ha
+  have hb1 : 1 ≤ b := Nat.one_le_iff_ne_zero.mpr hb
+  have hval2 : T.entry a b = 2 := hval
+  have hab : (a, b) ∈ μ := (YoungDiagram.mem_cells _).mp hcell
+  have hn1_mem : (a - 1, b) ∈ μ := μ.up_left_mem (Nat.sub_le a 1) (le_refl b) hab
+  have hn2_mem : (a, b - 1) ∈ μ := μ.up_left_mem (le_refl a) (Nat.sub_le b 1) hab
+  have hlt1 : T.entry (a - 1) b < T.entry a b := T.toSsyt.col_strict (by omega) hab
+  have hlt2 : T.entry a (b - 1) < T.entry a b := T.row_strict (by omega) hab
+  have hge1 : 1 ≤ T.entry (a - 1) b :=
+    (Set.mem_Icc.mp (T.mapsTo_cells (StandardYoungTableau.mem_coe_cells hn1_mem))).1
+  have hge2 : 1 ≤ T.entry a (b - 1) :=
+    (Set.mem_Icc.mp (T.mapsTo_cells (StandardYoungTableau.mem_coe_cells hn2_mem))).1
+  have he1 : T.entry (a - 1) b = 1 := by rw [hval2] at hlt1; omega
+  have he2 : T.entry a (b - 1) = 1 := by rw [hval2] at hlt2; omega
+  have heq : (a - 1, b) = (a, b - 1) :=
+    T.injOn_cells (StandardYoungTableau.mem_coe_cells hn1_mem)
+      (StandardYoungTableau.mem_coe_cells hn2_mem)
+      (by show T.entry (a - 1) b = T.entry a (b - 1); rw [he1, he2])
+  have : a - 1 = a := congrArg Prod.fst heq
+  omega
+
+/-- **The σ₁ dichotomy**: for every standard tableau of a `≥ 2`-cell shape, `1` and
+    `2` share a row *or* a column. -/
+theorem sameRow12_or_sameCol12 (T : StandardYoungTableau μ) (hn : 2 ≤ μ.cells.card) :
+    sameRow12 T ∨ sameCol12 T := by
+  have h1 : cellOf T 1 = (0, 0) := cellOf_one T (by omega)
+  rcases cellOf_two_coord_zero T hn with hi | hj
+  · exact Or.inl (by unfold sameRow12; rw [h1]; exact hi.symm)
+  · exact Or.inr (by unfold sameCol12; rw [h1]; exact hj.symm)
+
+/-- **The σ₁ classes are disjoint**: `1` and `2` cannot share *both* a row and a
+    column (they would occupy the same cell, but carry different entries). -/
+theorem not_sameRow12_and_sameCol12 (T : StandardYoungTableau μ) (hn : 2 ≤ μ.cells.card) :
+    ¬ (sameRow12 T ∧ sameCol12 T) := by
+  rintro ⟨hr, hc⟩
+  have hcell_eq : cellOf T 1 = cellOf T 2 := Prod.ext_iff.mpr ⟨hr, hc⟩
+  have h1 : (1 : ℕ) ∈ Set.Icc 1 μ.cells.card := Set.mem_Icc.mpr ⟨le_refl 1, by omega⟩
+  have h2 : (2 : ℕ) ∈ Set.Icc 1 μ.cells.card := Set.mem_Icc.mpr ⟨by norm_num, hn⟩
+  obtain ⟨_, v1⟩ := cellOf_spec T (exists_cell_entry T h1)
+  obtain ⟨_, v2⟩ := cellOf_spec T (exists_cell_entry T h2)
+  rw [hcell_eq] at v1
+  exact absurd (v1.symm.trans v2) (by norm_num)
+
+/-- **`R_row ∪ R_col = SYT(μ)`** (as `Finset.univ`) — every tableau is in one class. -/
+theorem rowClass_union_colClass (hn : 2 ≤ μ.cells.card) :
+    rowClass μ ∪ colClass μ = Finset.univ := by
+  rw [Finset.eq_univ_iff_forall]
+  intro T
+  rw [Finset.mem_union, rowClass, colClass, Finset.mem_filter, Finset.mem_filter]
+  rcases sameRow12_or_sameCol12 T hn with h | h
+  · exact Or.inl ⟨Finset.mem_univ _, h⟩
+  · exact Or.inr ⟨Finset.mem_univ _, h⟩
+
+/-- **`R_row` and `R_col` are disjoint** — no tableau is in both. -/
+theorem disjoint_rowClass_colClass (hn : 2 ≤ μ.cells.card) :
+    Disjoint (rowClass μ) (colClass μ) := by
+  rw [Finset.disjoint_left]
+  intro T hT1 hT2
+  rw [rowClass, Finset.mem_filter] at hT1
+  rw [colClass, Finset.mem_filter] at hT2
+  exact not_sameRow12_and_sameCol12 T hn ⟨hT1.2, hT2.2⟩
+
+/-- **The per-shape count** `2·|R_row| = #SYT(μ)` for a self-conjugate shape with
+    `≥ 2` cells (`c_λ = #SYT(μ)/2`): the two σ₁ classes partition `SYT(μ)` and are
+    equinumerous (`card_rowClass_eq_colClass`). No enumeration of tableaux. -/
+theorem two_mul_card_rowClass_eq_card (h : μ.transpose = μ) (hn : 2 ≤ μ.cells.card) :
+    2 * (rowClass μ).card = Fintype.card (StandardYoungTableau μ) := by
+  have hsum : (rowClass μ).card + (colClass μ).card
+      = Fintype.card (StandardYoungTableau μ) := by
+    rw [← Finset.card_union_of_disjoint (disjoint_rowClass_colClass hn),
+      rowClass_union_colClass hn, Finset.card_univ]
+  rw [two_mul]
+  nth_rewrite 2 [card_rowClass_eq_colClass h hn]
+  exact hsum
+
+/-- **`2·χ_λ(σ₁) = #SYT(μ)·h`** — the σ₁ seminormal character in closed form with the
+    per-shape coefficient made explicit: `c_λ = #SYT(μ)/2`. Combines the character
+    factorisation `2·χ = 2·|R_row|·h` with the count `2·|R_row| = #SYT(μ)`. Fully
+    general over any `[Field R]`. -/
+theorem two_mul_sigmaOneCharacter_eq_card (h : μ.transpose = μ) (hn : 2 ≤ μ.cells.card)
+    {R : Type*} [Field R] (q hh : R) (hq : q ≠ 0) :
+    (2 : R) * sigmaOneCharacter μ q hh
+      = ((Fintype.card (StandardYoungTableau μ) : ℕ) : R) * hh := by
+  rw [two_mul_sigmaOneCharacter h hn q hh hq, two_mul_card_rowClass_eq_card h hn]
+
 end Closure
 
 end QOU.BraidKnot.SeminormalCharacterConnector
