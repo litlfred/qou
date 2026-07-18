@@ -55,6 +55,10 @@ import qbeta_dladder_generating_function_structure_probe as dlad  # noqa: E402
 
 mp.mp.dps = 50
 S_SCALE = mp.mpf("0.0097")          # |S(muon)| reference magnitude (the swing scale)
+with mp.workdps(50):
+    VOL41 = +(2 * mp.clsin(2, mp.pi / 3))            # Vol(4_1) = 2.0298832…
+    VOL41_OVER_2PI = +(VOL41 / (2 * mp.pi))
+    KAPPA1 = +(11 * mp.sqrt(3) * mp.pi / 108)        # Ohtsuki kappa_1
 
 
 def to_mpf(v):
@@ -136,6 +140,61 @@ def main() -> int:
     print(f"  max |Im(h.D)| over the fibre = {mp.nstr(max_abs_imS,8)}  "
           f"(S scale ~ {mp.nstr(S_SCALE,4)})", flush=True)
 
+    # --- FINE transition scan: nail the r* crossing + resolve A_eff(|u~|) -------
+    # |u~(th)| = b·|1-e^{-i th}|^2 = 4 b sin^2(th/2)  ⇒  th = 2 asin(sqrt(x/(4b))).
+    # On the substrate N*=KMAX (edge) so A_eff is only a lower bound; on the fibre
+    # N* sweeps the interior, so A_eff = -|u~|·ln(delta_np) is FULLY resolved —
+    # the decisive single-action (A_eff flat) vs two-level/q-Gevrey (A_eff drift) test.
+    def theta_of_absu(x):
+        return 2 * mp.asin(mp.sqrt(x / (4 * b)))
+    print("\n  FINE transition scan (|u~| in [0.10,0.26]): N*, delta_np, "
+          "A_eff=-|u~|ln(delta_np) [interior N* only]", flush=True)
+    xs = [mp.mpf("0.10") + mp.mpf("0.005") * j for j in range(33)]   # 0.10..0.26
+    cross_fine = None
+    aeff_interior = []          # (|u~|, N*, A_eff) for 1 < N* < KMAX
+    fine_rows = []
+    for x in xs:
+        th = theta_of_absu(x)
+        q = mp.e ** (1j * th)
+        u_tilde = q * b * (1 - 1 / q) ** 2
+        Nstar, delta, edge, _ = stokes_at(u_tilde)
+        au = abs(u_tilde)
+        interior = (1 < Nstar < KMAX)
+        A_eff = (-au * mp.log(delta)) if (delta > 0 and interior) else None
+        fine_rows.append({"abs_u": mp.nstr(au, 6), "Nstar": Nstar, "edge": bool(edge),
+                          "delta_np": mp.nstr(delta, 6),
+                          "A_eff": (mp.nstr(A_eff, 6) if A_eff is not None else "-")})
+        if (not edge) and cross_fine is None:
+            cross_fine = au
+        if A_eff is not None:
+            aeff_interior.append((au, Nstar, A_eff))
+        if interior or (float(x) * 100) % 2 < 1:
+            print(f"    |u~|={mp.nstr(au,6):>9}  N*={Nstar:>2}{'' if edge else ' <int>'}  "
+                  f"d_np={mp.nstr(delta,5):>11}  A_eff="
+                  f"{mp.nstr(A_eff,6) if A_eff is not None else '   -   ':>9}", flush=True)
+    # A_eff drift across the interior band (flat ⇒ single action; spread ⇒ two-level)
+    if len(aeff_interior) >= 2:
+        avals = [a for (_, _, a) in aeff_interior]
+        A_lo, A_hi = min(avals), max(avals)
+        A_mid = (A_lo + A_hi) / 2
+        A_spread = (A_hi - A_lo) / A_mid if A_mid != 0 else mp.inf
+    else:
+        A_lo = A_hi = A_mid = A_spread = mp.mpf("nan")
+    print(f"\n  r* crossing (fine) = {mp.nstr(cross_fine,7) if cross_fine else 'n/a'} "
+          f"vs structural r*={mp.nstr(r_star,7)}  "
+          f"(rel.err {mp.nstr(abs(cross_fine/r_star-1),4) if cross_fine else 'n/a'})", flush=True)
+    print(f"  A_eff over interior band: [{mp.nstr(A_lo,6)}, {mp.nstr(A_hi,6)}]  "
+          f"mid={mp.nstr(A_mid,6)}  frac.spread={mp.nstr(A_spread,4)}  "
+          f"(n={len(aeff_interior)} interior pts)", flush=True)
+    # candidate constants for the plateau (report only — NO identification claim)
+    cand = {"Vol41/2pi": VOL41_OVER_2PI, "Vol41": VOL41, "r*": r_star,
+            "kappa1": KAPPA1}
+    if not mp.isnan(A_mid):
+        for nm, cv in cand.items():
+            print(f"      A_mid / {nm}({mp.nstr(cv,5)}) = {mp.nstr(A_mid/cv,5)}", flush=True)
+    aeff_flat = (not mp.isnan(A_spread)) and (A_spread < mp.mpf("0.15"))
+    cross_matches = (cross_fine is not None and abs(cross_fine / r_star - 1) < mp.mpf("0.15"))
+
     # kill criteria: exact ladder; substrate edge reproduced; threshold matches r*
     substrate_suppressed = bool(edge_sub)
     threshold_matches_rstar = (left_edge_at is not None and
@@ -152,7 +211,15 @@ def main() -> int:
         f"SCOPE: measures WHERE the ambiguity is unsuppressed; derives no c3 value, "
         f"wires nothing, no tier change. The genuine non-commutative Écalle accelerator "
         f"(two critical times) is still required to produce the value -- this probe only "
-        f"establishes the branch it must be run on."
+        f"establishes the branch it must be run on. "
+        f"FINE SCAN: the r* crossing sharpens to |u~|={mp.nstr(cross_fine,6) if cross_fine else 'n/a'} "
+        f"({'matches structural r*=%s to %s' % (mp.nstr(r_star,5), mp.nstr(abs(cross_fine/r_star-1),3)) if cross_matches else 'order-of-mag vs r*=%s' % mp.nstr(r_star,5)}). "
+        f"The fibre-resolved effective action A_eff=-|u~|ln(delta_np) over the interior "
+        f"band ({len(aeff_interior)} pts) spans [{mp.nstr(A_lo,5)},{mp.nstr(A_hi,5)}], "
+        f"frac.spread {mp.nstr(A_spread,3)} -- "
+        f"{'FLAT (single effective action on the fibre; the two-level/q-Gevrey drift is NOT visible in the resolved interior at k<=31, favoring a single Borel action here)' if aeff_flat else 'DRIFTS (no single effective action -- consistent with the two-level/q-Gevrey structure; supports the accelero-summable reading)'}. "
+        f"A_mid={mp.nstr(A_mid,5)} vs Vol(4_1)/2pi={mp.nstr(VOL41_OVER_2PI,5)} "
+        f"(ratio {mp.nstr(A_mid/VOL41_OVER_2PI,4)}) -- report only, NO identification (anti-laundering)."
     )
     print("\nVERDICT:", verdict, flush=True)
 
@@ -173,7 +240,17 @@ def main() -> int:
     wb.add_data("threshold_matches_rstar", bool(threshold_matches_rstar))
     wb.add_data("max_abs_im_S_over_fibre", mp.nstr(max_abs_imS, 12))
     wb.add_data("crossed_S_scale", bool(crossed_S_scale))
+    wb.add_data("r_star_crossing_fine", mp.nstr(cross_fine, 12) if cross_fine else "n/a")
+    wb.add_data("r_star_crossing_matches", bool(cross_matches))
+    wb.add_data("A_eff_interior_lo", mp.nstr(A_lo, 12) if not mp.isnan(A_lo) else "nan")
+    wb.add_data("A_eff_interior_hi", mp.nstr(A_hi, 12) if not mp.isnan(A_hi) else "nan")
+    wb.add_data("A_eff_interior_mid", mp.nstr(A_mid, 12) if not mp.isnan(A_mid) else "nan")
+    wb.add_data("A_eff_frac_spread", mp.nstr(A_spread, 8) if not mp.isnan(A_spread) else "nan")
+    wb.add_data("A_eff_flat_single_action", bool(aeff_flat))
+    wb.add_data("A_eff_n_interior_pts", len(aeff_interior))
+    wb.add_data("vol41_over_2pi", mp.nstr(VOL41_OVER_2PI, 12))
     wb.add_data("fibre_rows", rows)
+    wb.add_data("fine_transition_rows", fine_rows)
     wb.add_data("verdict", verdict)
     wb.save()
     return 0 if (odd_ok and substrate_suppressed) else 1

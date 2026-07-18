@@ -47,12 +47,42 @@ the #3654 bridge).
   **unsuppressed** for `|ũ| ≳ 0.19` — exactly what the Φ_b verdict predicted for the
   branch where `A_ω` lives.
 - **Formalize-first structural threshold.** The least term must leave the top of the
-  ladder once `|ũ|` exceeds the last-ratio radius `r* = |d₃₀/d₃₁| = 0.1475`. The
-  measured crossing `0.1891` matches this structural prediction (same order; the grid
-  step straddles it) — the unsuppression is *derived*, not an artifact.
+  ladder once `|ũ|` exceeds the last-ratio radius `r* = |d₃₀/d₃₁| = 0.1475`. A fine
+  transition scan sharpens the measured crossing to `|ũ| = 0.150` — **matching the
+  structural prediction to `1.7%`** (the coarse `0.189` was a grid-straddle). The
+  unsuppression is *derived*, not an artifact.
 - `|Im(h·D)|` reaches the `|S| ≈ 0.0097` swing scale already at `θ = 0.157`
   (`|Im(h·D)| = 0.0085 ≈ S(muon)`) and peaks at `7.24`; it vanishes at `θ = π`
   (`q = −1 ⇒ h = 0`).
+
+## Fibre-resolved effective action A_eff — drifts, not a single action
+
+The optimal-truncation least term `δ_np ≈ exp(−A_eff/|ũ|)` defines a fibre-resolved
+effective action `A_eff(|ũ|) = −|ũ|·ln δ_np`. On the **substrate** this is
+unmeasurable — `N* = 31` sits at the edge, so `A_eff` is only a lower bound (the M4
+obstruction). On the **fibre**, `N*` sweeps the interior (`20 → 12 → 8 → 3`) across
+the transition band, so `A_eff` is fully resolved for the first time:
+
+| `‖ũ‖` | `N*` | `A_eff = −‖ũ‖·ln δ_np` |
+|---|---|---|
+| `0.150` | `20` | `0.3795` |
+| `0.155` | `12` | `0.3156` |
+| `0.160` | `8` | `0.2778` |
+| `0.165` | `3` | `0.2699` |
+| `0.185` | `3` | `0.2392` |
+| `0.190` | `3` | `0.2304` |
+
+`A_eff` **drifts monotonically down** over the interior band `[0.230, 0.380]`
+(fractional spread `0.49`) — it is **not** a single constant action. This is the
+fibre-branch signature of the **two-level / q-Gevrey** structure the substrate
+meridian could not expose (the M2 two-critical-time reading `C_odd ≈ 0.052`,
+`C_even ≈ 0.115`), and it favors the **accelero-summable** interpretation over a
+single Borel action here. *Caveat:* the interior `N*` is small (`3–20`), so the
+optimal-truncation asymptotics are coarse and the monotone drift may carry a
+finite-`N*` component — this is a *measurement* of drift, not a proof of two
+distinct actions. The band midpoint `A_mid = 0.305` sits `0.944 ×` `Vol(4₁)/2π`
+(`0.323`); since `A_eff` drifts, `A_mid` is not a well-defined constant and this
+near-coincidence is **reported only, with no identification claimed** (anti-laundering).
 
 ## Honest scope (anti-laundering)
 
