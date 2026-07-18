@@ -10,3 +10,5 @@ $$
 **Kummer persistence.** The Kummer filtration yields $\kappa_c^{\mathrm{comp}} \bmod n = 0$ if and only if $n \mid 6$. Because $q_0$ is strictly non-torsion, no finite Kummer level applies. The obstruction remains perpetual.
 
 **Corollary.** Resolving $\mathrm{P}$ vs $\mathrm{NP}$ strictly constrains RH, NS, and BSD, and vice versa. Although their evaluation maps differ, the underlying obstruction class remains identical.
+
+**Parallel route.** This obstruction-class formulation (non-vanishing of $\mathrm{res}_{\mathcal{R}}(\chi(A))$ at non-torsion $q_0$) is one of two independent attacks on the same separation. The Reeb--surreal route ([P vs NP in the QOU](#conj:p-vs-np-qou)) instead recovers $\mathrm{P} \neq \mathrm{NP}$ as the standard part of a strict $\mathbf{P} \subsetneq \mathrm{BQP}_q$ inclusion, via the surreal squeeze $\mathrm{ord}_\omega(\text{cost}) > \mathrm{ord}_\omega(\text{budget})$. The two carriers agree on the conclusion but neither is derived from the other; both remain open.
