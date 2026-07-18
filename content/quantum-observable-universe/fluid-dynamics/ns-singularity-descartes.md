@@ -9,4 +9,4 @@ $$
    \neq  0.
 $$
 
-The classical 3-dimensional Navier--Stokes equation mathematically admits smooth initial data designed to force the solution directly into a finite-time singularity.
+The categorical evaluation $\mathrm{NS}(A) \neq 0$ above is unconditional. Its transfer to the **classical** 3-dimensional Navier--Stokes equation — that classical NS admits smooth initial data forced into a finite-time singularity — is **conditional on the categorical→classical bridge**, which is open (`conj:levi-degeneracy`, `conj:regularity-breakdown`). It is therefore *not* established here and does not constitute an unconditional resolution of the classical regularity problem.
