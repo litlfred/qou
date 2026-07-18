@@ -5,6 +5,24 @@
 **Directive:** "build any missing mathlib infra … do slow, do right"
 **Beans:** `qou-4fa1` (build), `qou-1mws` (copy), `qou-t4ij` (rev-skew finding)
 
+> **✅ RESOLVED 2026-07-18 (`claude/litwo-one-basel-zeta-2026-07-18`).** The
+> `lake-cache/qou-v4-24-0` branch was **reseeded clean at f897ebc**: a full
+> from-source lean-direct rebuild produced **6990** single-rev oleans (0
+> rev-skew), pushed as commit `2ab4aa79e6` (was the stale `55dcf154`). Two
+> gotchas fixed in [`scripts/lean-olean-cache-seed.sh`](../../scripts/lean-olean-cache-seed.sh):
+> (1) the lean-direct compile must pass mathlib's `leanOptions`
+> (`-D maxSynthPendingDepth=3 -D autoImplicit=false`) or deep-instance-synthesis
+> modules (`Bilinear`, `RingTheory.TensorProduct.Basic`) fail with a misleading
+> "failed to synthesize" — this, not the `ContDiff.Bounds` boundary alone, is the
+> real cross-rev failure signature; (2) the ~1.5 GB seed must be pushed
+> **incrementally** (one 90 MB part per commit) — a single push returns HTTP 413.
+> Stale qou/ugb/fred2005 paper oleans are excluded from the seed (they would
+> hash-mismatch against the fresh mathlib). 5 non-critical modules remain
+> unbuilt (4 Batteries-blocked `Data.*` + `Analysis.Real.Pi.Chudnovsky`), none in
+> the QOU/ZetaValues closure. The cache now also carries the full
+> `Mathlib.NumberTheory.ZetaValues` cone (Basel `hasSum_zeta_two`), which the old
+> seed lacked.
+
 ## TL;DR
 
 The `lake-cache/qou-v4-24-0` olean cache (reseeded **2026-07-02**) predates the
