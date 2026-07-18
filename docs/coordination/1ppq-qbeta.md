@@ -1856,3 +1856,24 @@ deferral. The u=0 tower layer is fully pinned. NEXT (part 2b): the
 (94)-(95) M/S sandwiches vs the q→0 targets (96/97, constants {3,4}),
 then wall-crossing to deformed x → the derived-precision φ_odd. No
 fit; no c_k wired; scope-(a).
+
+**2026-07-18 (analytic M-dictionary, part 2b) — THE u=0 5₂ STOKES
+DATA (94)-(97) IS FULLY DERIVED: exact sandwiches reproduce the q→0
+factorizations and Stokes integrality from first principles.**
+`qbeta_g3_5two_stokes_sandwich.py` (2/2 green, exact Fractions): the
+(95a/b) sandwiches were glyph-decoded (the L⁺ row-3 minus sat BELOW
+the printed band — caught only by the cmsy minus-offset rule, recorded
+in the probe) as S⁺ = ½L⁺W₋₁(q⁻¹)·antidiag(1,−2,1)·W₋₁(q)ᵀR⁺ and the
+mirrored S⁻, with the SAME antidiag(1,−2,1) pairing as (92) and (82).
+Assembled from the fully-pinned tower layer (σ_c #4011, split #4013):
+S⁺(0) = [[1,4,0],[0,1,0],[−3,−9,1]] and S⁻(0) = [[1,0,3],[−4,1,−3],
+[0,0,1]] EXACTLY equal the glyph-decoded (96/97) three-factor products
+(printed constants {3,4}); every entry is an INTEGER q-series to
+O(q^18); det S± = 1 identically; the unflipped W-orientation wins —
+the same convention the part-1 (92) RHS picked (two independent
+confirmations). The O(q) Stokes coefficients are recorded in the
+witness (new derived data beyond the print). NEXT (part 2c): wall-
+crossing to deformed x — port the sandwich structure onto the #3951
+deformed Theorem-22 blocks, certify the off-ray strip, and sharpen
+φ_odd (#3987, −0.004145 preliminary) to derived precision. No fit;
+no c_k wired; scope-(a).
