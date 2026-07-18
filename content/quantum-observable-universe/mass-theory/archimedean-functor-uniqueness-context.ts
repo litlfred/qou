@@ -5,6 +5,12 @@ export default remark({
   title:
     "Pre-archimedean separation, corollaries, and open problems for the archimedean functor uniqueness",
   interprets: "prop:archimedean-functor-uniqueness",
+  computation: {
+    engine: "mpmath",
+    script: "computations/q_pinning_50_digit.py",
+    witness: "computations/q-pinning-50-digit.witness.json",
+    status: "verified",
+  },
   tags: [
     "archimedean",
     "realization-functor",
