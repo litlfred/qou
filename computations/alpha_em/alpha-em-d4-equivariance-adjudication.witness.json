@@ -1,0 +1,47 @@
+{
+  "computation": "alpha-em-d4-equivariance-adjudication",
+  "description": "Adjudicates D4 of the conjugation-doubling dictionary: the tau identification must carry the 2-strand CHANNEL transpose to conjugation; the 5-letter partition transpose is excluded (isotype std->std(x)sign vs conjugation isotype-preserving, chi_std real). Exact geometry: bar/transpose = the two reflection axes of the fibre circle (fixed pts q=+-1 classical / q=+-i democratic); at q=+-i the Hecke relation degenerates to (sigma-+i)^2 \u2014 channels merge at spec(J). Derives no clause; nothing wired.",
+  "auditOnly": "docs/audits/2026-07-18-alpha-em-conjugation-doubling-dictionary.md",
+  "tier": "symbolic-exact (sympy; S5 characters over all 7 classes + circle geometry + degenerate Hecke relation)",
+  "computedAt": "2026-07-18T14:14:38.130964+00:00",
+  "commitSha": "3c552422813d950dfa9aee1e59152b56b3a72e2c",
+  "engine": "sympy",
+  "engineVersion": "1.14.0",
+  "scriptFile": "alpha_em_d4_equivariance_adjudication_probe.py",
+  "scriptHash": "e330bc191aa5",
+  "assertions": [
+    {
+      "name": "partition_transpose_excluded_isotype_mismatch",
+      "passed": true,
+      "detail": "chi_std real over all 7 classes => conjugation preserves the isotype (H^{0,1}~std); partition transpose sends std->(2,1,1,1)=std(x)sign with chi((12)) = 2 vs -2 \u2014 isotype-CHANGING, so it cannot be conjugation. EXCLUDED (scope-(a))"
+    },
+    {
+      "name": "channel_transpose_S5_neutral_survives",
+      "passed": true,
+      "detail": "the channel transpose phi: q -> -q^{-1} acts on the loop-parameter/channel index only \u2014 every S5 character value is q-independent hence phi-invariant: isotype-PRESERVING like conjugation. The unique surviving candidate of the two"
+    },
+    {
+      "name": "fibre_circle_two_reflections",
+      "passed": true,
+      "detail": "on |q|=1: bar = reflection across R (theta->-theta; fixed q=+-1, the classical points, channels FIXED) and transpose = reflection across iR (theta->pi-theta; fixed q=+-i, the democratic points, channels SWAPPED); composition = antipode q->-q \u2014 the two involutions are the two reflection axes of the fibre circle"
+    },
+    {
+      "name": "channels_merge_exactly_at_specJ",
+      "passed": true,
+      "detail": "at q=+-i the Hecke relation becomes (sigma -+ i)^2 = 0 \u2014 the channel pair MERGES with common eigenvalue +-i; and {+i,-i} = spec(J), the complex-structure eigenvalues whose eigenspaces are H^{1,0}/H^{0,1} and whose swap IS conjugation: the channel doubling collapses exactly at the eigenvalues of the operator whose doubling it is conjectured to match"
+    }
+  ],
+  "allPassed": true,
+  "result": {
+    "excluded": "5-letter partition transpose (isotype-changing: std -> std(x)sign)",
+    "unique_survivor": "2-strand channel transpose q -> -q^{-1} (S5-neutral)",
+    "circle_geometry": "bar = reflection across R (q=+-1 classical); transpose = reflection across iR (q=+-i democratic); composition = antipode",
+    "specJ_coincidence": "Hecke relation degenerates to (sigma-+i)^2 at q=+-i = spec(J)",
+    "verdict": "D4 ADJUDICATED (necessary conditions; scope-(a); derives no clause; no fit; nothing wired): the tau identification must carry the 2-STRAND CHANNEL transpose (q -> -q^{-1}) to complex conjugation on H^1(Bring). The 5-letter PARTITION transpose is EXCLUDED \u2014 it changes the S5 isotype (std -> std(x)sign; chi((12)): 2 vs -2) while conjugation preserves it (chi_std real over all 7 classes, H^{0,1}~std); the channel transpose is S5-neutral and survives. Exact geometry: on the fibre circle bar and transpose are the two reflection axes (fixed points q=+-1 classical / q=+-i democratic; composition = antipode), and at q=+-i the Hecke relation degenerates to (sigma-+i)^2 \u2014 the channels merge exactly at spec(J) = {+-i}, the complex-structure eigenvalues whose eigenspace swap IS conjugation. The full tau-functor derivation (the correspondence wall) remains open; its target is now UNIQUE. NO tier change."
+  },
+  "context": {
+    "attacks": "D4 of brick 1 (the corrected dictionary, this PR); the correspondence wall's unification route now has a UNIQUE target",
+    "partition_transpose_role": "not lost \u2014 it is the flavor-side fermion-boson/spin-flip doubling (cf. the merged SU(4)/Schur-Weyl flavor work), a different doubling from the photon channel pair",
+    "scope_guard": "necessary conditions + one exclusion; derives NO clause; no fit; nothing wired; 1/(8pi) stays phase-4"
+  }
+}

@@ -47,6 +47,34 @@ unification route now has a **corrected, sharper target**: identify the transpos
 tension. The bar involution instead pairs with a structure *respecting* the Hodge
 splitting (consistent with its fixing of the channels and of the classical point `q=1`).
 
+## Brick 2 (same PR): D4 ADJUDICATED — the τ target is unique
+
+Probe [`alpha_em_d4_equivariance_adjudication_probe.py`](../../computations/alpha_em/alpha_em_d4_equivariance_adjudication_probe.py)
+→ [witness](../../computations/alpha_em/alpha-em-d4-equivariance-adjudication.witness.json) (4/4):
+
+- **(E1) The 5-letter partition transpose is EXCLUDED.** Conjugation preserves the
+  S₅-isotype (`χ_std` real over all 7 conjugacy classes ⇒ `H^{0,1} ≅ std`); the partition
+  transpose is isotype-*changing* (`std → std⊗sign`, `χ((12))`: 2 vs −2). An
+  isotype-changing involution cannot be an isotype-preserving one (scope-(a)).
+- **(E2) The 2-strand channel transpose survives** — it acts on the loop-parameter/channel
+  index only, S₅-neutral, isotype-preserving like conjugation. **The τ target is unique.**
+- **(E3) Fibre-circle geometry (exact).** On `|q|=1`: bar = reflection across `ℝ` (fixed
+  `q=±1`, the classical points, channels fixed); transpose = reflection across `iℝ` (fixed
+  `q=±i`, the democratic points, channels swapped); composition = the antipode `q→−q`. The
+  two involutions are the two reflection axes of the fibre circle.
+- **(E4) The spec(J) coincidence (exact).** At `q=±i` the Hecke relation degenerates to
+  `(σ∓i)² = 0` — the channel pair *merges* with common eigenvalue `±i`. And `{+i,−i} =
+  spec(J)`: the complex-structure eigenvalues whose eigenspaces are `H^{1,0}/H^{0,1}` and
+  whose eigenspace-swap **is** conjugation. The channel doubling collapses exactly at the
+  eigenvalues of the operator whose doubling it is conjectured to match.
+
+**Net.** The unification route's target is now unique: *τ carries the 2-strand channel
+transpose `q→−q⁻¹` to complex conjugation on `H¹(Bring)`.* The partition transpose is not
+lost — it is the *flavor*-side fermion–boson/spin-flip doubling (cf. the merged
+SU(4)/Schur–Weyl work), a different doubling from the photon channel pair. The full
+τ-functor derivation (the correspondence wall) remains open; every necessary condition now
+points at one object.
+
 ## Scope guard (STRICT)
 
 Exact structural facts + one exclusion; derives **no** clause of the per-loop conjecture;
