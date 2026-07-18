@@ -49,6 +49,39 @@ nor a ladder coefficient of the right object. The κ-tower is that object. The "
 and the odd-channel resummation's open piece remains what the merged F1 work found — more
 D-ladder rungs, not a new normalization.
 
+## What *does* identify the potential? (answering "the two constraints don't identify a potential — what do we need?")
+
+Vol fixes `V(z*)` (0-loop); torsion fixes `V''(z*)` (1-loop). But the 2-loop
+`A₁ = V⁗/(8V''²) − 5V'''²/(24V''³)` also needs **`V'''(z*)` and `V''''(z*)`**, which those two
+constraints leave completely free. So two constraints cannot fix a 2-loop, let alone the whole
+germ. To identify the potential you need one of:
+
+1. **The genuine analytic potential** — the Andersen–Kashaev / Dimofte 4₁ state integral
+   (the two-tetrahedron Neumann–Zagier action, coupling through the pair `z, w`), which fixes
+   **all** derivatives at once. A Vol+torsion reconstruction (like `Li₂(z)−Li₂(1/z)`) is
+   under-determined and generically wrong from the 2-loop up.
+2. **Equivalently, the next invariant as a constraint:** match the **2-loop κ₁ = 11√3π/108**
+   (then κ₃, κ₄, …). Each `κ_n` is one more condition; the tower pins the germ.
+
+**But the punchline is that we already have it.** The corpus **κ-tower**
+(`κ₁ = 11√3π/108`, `κ₃ = (1081/21870)√3π³`, `κ₄ = (98/729)π⁴`), fit directly from the Kashaev
+invariant `⟨4₁⟩_N`, **is** the physical loop expansion — no reconstruction needed. "What we
+need" for the odd-channel b-dictionary was never a new saddle computation; it is the κ-tower
+already in hand. The genuinely-open piece stays what the merged F1 work found: more D-ladder
+rungs to resolve the q-Gevrey singularity, not a normalization.
+
+## Lean certification of the exact value
+
+Although A₁ is not the physical invariant, its exact value is worth recording rigorously.
+[`QOU/QBeta/PhibSaddleA1Exact.lean`](../../content/quantum-observable-universe/lean/QOU/QBeta/PhibSaddleA1Exact.lean)
+(sorry-free, lean-direct exit 0) proves `A1_eq`: given the exact algebraic saddle derivatives
+`V'' = 3/2 − (√3/2)i`, `V''' = 2 + 3√3·i`, `V'''' = −39/2 + (3√3/2)i` (numerically pinned to
+50+ dps, symbolically confirmed), the 2-loop coefficient is **exactly**
+`V⁗/(8V''²) − 5V'''²/(24V''³) = 1/3 + (17√3/108)·i`. The proof is the division-free core
+`3·V₄·V₂ − 5·V₃² = 24·V₂³·A₁` discharged by `linear_combination` against `(√3)²=3` and `I²=−1`
+(multiplier coefficients from exact polynomial division). The docstring carries the scope note:
+this is the 2-loop of the reconstructed potential, **not** the physical κ₁.
+
 ## Lesson (recorded)
 
 Vol + torsion are two constraints; a state-integral potential has more content than that.

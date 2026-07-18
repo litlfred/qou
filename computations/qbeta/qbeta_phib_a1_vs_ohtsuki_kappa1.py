@@ -97,6 +97,8 @@ def main() -> int:
     print(f"    (κ₁=11√3π/108, κ₃, κ₄), already derived. Retires the 'Φ_b 2-loop' line.")
 
     ok = a1_exact and (not matches)   # the finding is: A₁ exact AND A₁ ≠ κ₁
+    # Catch only ImportError (graceful when witness_base is absent); let real errors in
+    # add_data/save FAIL LOUD per the repo witness-provenance discipline (Gemini #3874).
     try:
         from witness_base import WitnessBuilder
         wb = WitnessBuilder("qbeta-phib-a1-vs-ohtsuki-kappa1", engine="mpmath")
@@ -130,8 +132,8 @@ def main() -> int:
                     % float(best_rel)))
         out = wb.save()
         print(f"\nWitness: {out}")
-    except Exception as e:
-        print(f"\n(witness skipped: {e})")
+    except ImportError as e:
+        print(f"\n(witness skipped — witness_base unavailable: {e})")
     return 0 if ok else 1
 
 
