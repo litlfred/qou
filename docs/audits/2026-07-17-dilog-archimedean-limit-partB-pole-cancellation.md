@@ -100,6 +100,19 @@ from the ad-hoc `π²/3` to the canonical regulator `ζ(2)`, and the remaining o
 content is the **cusp-boundary regulator term** at `x=1`, not a functional
 obstruction.
 
+> **Lean provenance (2026-07-18).** The residual cusp constant
+> `Li₂(1) = ζ(2) = π²/6` is now **machine-verified** as the sorry-free lemma
+> `QOU.QPochhammer.LiTwo_one` in
+> [`DilogarithmArchimedeanLimit.lean`](../../content/quantum-observable-universe/lean/QOU/Archimedean/DilogarithmArchimedeanLimit.lean)
+> (`LiTwo 1 = Real.pi ^ 2 / 6`, via Mathlib's `hasSum_zeta_two` + the
+> vanishing-`n=0` split `Summable.tsum_eq_zero_add`). So the single archimedean
+> regulator this derivation reduces to is no longer an asserted constant — it is
+> a proved value. The pole-subtraction step is likewise Lean-backed
+> (`log_neg_factor_split`), and the sub-unity per-factor expansion is the new
+> `neg_log_one_sub_hasSum` / `partialProduct_log_eq` (Part A primitives). What
+> stays open is the *uniform/Tauberian exchange* (`ArchimedeanLimit` class), not
+> the value of the cusp constant.
+
 ## Grounding: the residual ζ(2) is the extended-Bloch / Rogers normalization
 
 The residual `π²/6 = ζ(2) = Li₂(1)` is **not** a new mystery constant — it is the
