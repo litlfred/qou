@@ -101,4 +101,46 @@ noncomputable def swapCellsSYT (T : StandardYoungTableau μ) (p q : ℕ × ℕ)
       exact Prod.ext this.1 this.2
     exact hcol (by rw [← congrArg Prod.snd hpcell, ← congrArg Prod.snd hqcell])
 
+@[simp] theorem swapSucc_self (a : ℕ) : swapSucc a a = a + 1 := by simp [swapSucc]
+
+@[simp] theorem swapSucc_succ (a : ℕ) : swapSucc a (a + 1) = a := by
+  simp only [swapSucc]; split_ifs <;> omega
+
+section SwapEntry
+variable {T : StandardYoungTableau μ} {p q : ℕ × ℕ}
+  {hp : p ∈ μ} {hq : q ∈ μ} {hval : T.entry q.1 q.2 = T.entry p.1 p.2 + 1}
+  {hrow : p.1 ≠ q.1} {hcol : p.2 ≠ q.2}
+
+/-- On a cell, the swapped tableau applies `swapSucc` to the original entry. -/
+theorem swapCellsSYT_entry_mem {i j : ℕ} (hij : (i, j) ∈ μ) :
+    (swapCellsSYT T p q hp hq hval hrow hcol).entry i j
+      = swapSucc (T.entry p.1 p.2) (T.entry i j) :=
+  if_pos hij
+
+/-- The swapped tableau carries `q`'s label at cell `p`. -/
+theorem swapCellsSYT_entry_at_p :
+    (swapCellsSYT T p q hp hq hval hrow hcol).entry p.1 p.2 = T.entry q.1 q.2 := by
+  rw [swapCellsSYT_entry_mem (by rw [Prod.mk.eta]; exact hp), swapSucc_self]
+  exact hval.symm
+
+/-- The swapped tableau carries `p`'s label at cell `q`. -/
+theorem swapCellsSYT_entry_at_q :
+    (swapCellsSYT T p q hp hq hval hrow hcol).entry q.1 q.2 = T.entry p.1 p.2 := by
+  rw [swapCellsSYT_entry_mem (by rw [Prod.mk.eta]; exact hq), hval, swapSucc_succ]
+
+/-- Away from `p` and `q`, the swapped tableau agrees with the original. -/
+theorem swapCellsSYT_entry_other {i j : ℕ} (hij : (i, j) ∈ μ)
+    (hip : (i, j) ≠ p) (hiq : (i, j) ≠ q) :
+    (swapCellsSYT T p q hp hq hval hrow hcol).entry i j = T.entry i j := by
+  rw [swapCellsSYT_entry_mem hij]
+  have h1 : T.entry i j ≠ T.entry p.1 p.2 := fun h => hip (by
+    have hh := T.inj_on i j p.1 p.2 hij (by rw [Prod.mk.eta]; exact hp) h
+    exact Prod.ext hh.1 hh.2)
+  have h2 : T.entry i j ≠ T.entry p.1 p.2 + 1 := fun h => hiq (by
+    have hh := T.inj_on i j q.1 q.2 hij (by rw [Prod.mk.eta]; exact hq) (by rw [hval]; exact h)
+    exact Prod.ext hh.1 hh.2)
+  simp only [swapSucc]; split_ifs <;> omega
+
+end SwapEntry
+
 end QOU.BraidKnot
