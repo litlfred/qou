@@ -67,7 +67,13 @@
       "atomic-braid-mass-table-modes-sweep.witness.json (T1-modes sweep over the legacy six-term formula; best mode still 22 % mean err)",
       "neutron-mass-codata-50dps.witness.json (legacy mass_endomorphism.py f64 chain; m_n_pred = 0.561 MeV, off by ~1700×)",
       "neutron-mass-full-tower-50dps.witness.json (acknowledged −62.9 % residual structural framework gap)",
-      "neutron-mass-50dps.derivation.json (companion to neutron-mass-codata-50dps)"
+      "neutron-mass-50dps.derivation.json (companion to neutron-mass-codata-50dps)",
+      "gap-a3-cross-atom-overshoot.witness.json (GAP-A-3 tower cross-atom overshoot probe — negative result (tower weight overshoots); refuted route, no consumer)",
+      "gap-a3-deuteron-A-D-overshoot.witness.json (GAP-A-3 deuteron A/D overshoot probe — negative result; refuted route, no consumer)",
+      "gap-a3-deuteron-plambda-flat-baseline.witness.json (GAP-A-3 deuteron p_lambda flat-baseline probe — negative result; refuted route, no consumer)",
+      "gap-a3-overshoot-robustness.witness.json (GAP-A-3 overshoot-robustness probe — negative result; refuted route, no consumer)",
+      "keystone-wrt-schurweyl-higher-colour-foreclosure.witness.json (keystone WRT/Schur-Weyl higher-colour foreclosure — negative result; refuted route, no consumer)",
+      "option-e-probe4-overturning-afunction-sign.witness.json (Option-E PROBE-4 A-function-sign overturning — subsumed by the KL-positivity prune (AGENTS.md); refuted route, no consumer)"
     ],
     "removed_producers": [
       "atomic_braid_mass_table.py",

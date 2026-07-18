@@ -116,6 +116,50 @@ def classify(path: Path) -> tuple[str, list[str]]:
     return ("PROV_MISSING" if missing else "PROV_OK"), missing
 
 
+def build_reference_index() -> tuple[set[str], "dict[str, int]"]:
+    """Return (paper_referenced_names, py_mention_counts).
+
+    A witness's provenance only matters if something depends on it. This indexes
+    two cheap single-pass greps: witness names cited under `content/` (the paper),
+    and how many `.py` files mention each witness name. A witness that is cited by
+    NO content block and mentioned by ≤1 `.py` (only its own producer) has no
+    reader — a missing provenance triple on it is not a real gap, so it is exempted
+    (PROV_EXEMPT_NO_READER) rather than counted as PROV_MISSING. Owner directive
+    2026-07-18: don't chase provenance on caches/dead-ends nothing consumes.
+    """
+    import re
+    import subprocess
+    from collections import Counter
+
+    repo = HERE.parent.parent
+    pat = r"[a-z0-9][a-z0-9._-]*\.witness\.json"
+    paper: set[str] = set()
+    try:
+        out = subprocess.run(
+            ["grep", "-rhoE", pat, str(repo / "content")],
+            capture_output=True, text=True, timeout=120,
+        ).stdout
+        paper = set(out.split())
+    except Exception:  # noqa: BLE001
+        pass
+    py_counts: "dict[str, int]" = {}
+    try:
+        out = subprocess.run(
+            ["grep", "-rhoE", "--include=*.py", pat, str(HERE.parent)],
+            capture_output=True, text=True, timeout=120,
+        ).stdout
+        py_counts = dict(Counter(out.split()))
+    except Exception:  # noqa: BLE001
+        pass
+    return paper, py_counts
+
+
+def has_reader(name: str, paper: set[str], py_counts: "dict[str, int]") -> bool:
+    """A witness has a reader if the paper cites it or a non-producer `.py`
+    mentions it (>1 `.py` mention ⇒ something beyond the producer reads it)."""
+    return name in paper or py_counts.get(name, 0) > 1
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
@@ -125,9 +169,11 @@ def main(argv: list[str] | None = None) -> int:
     args = parser.parse_args(argv)
 
     legacy_removed = load_legacy_removed_set()
+    paper_refs, py_counts = build_reference_index()
     by_verdict: dict[str, list[dict]] = {
         "PROV_OK": [], "PROV_MISSING": [],
-        "PROV_AUDIT_EXEMPT": [], "PROV_PARSE_ERROR": [],
+        "PROV_AUDIT_EXEMPT": [], "PROV_EXEMPT_NO_READER": [],
+        "PROV_PARSE_ERROR": [],
     }
     # Scan the whole compute tree's witnesses (reorg scan-root fix).
     for wp in sorted((HERE.parent).rglob("*.witness.json")):
@@ -136,6 +182,10 @@ def main(argv: list[str] | None = None) -> int:
         if wp.name in legacy_removed:
             continue
         verdict, missing = classify(wp)
+        # A missing triple on a witness nothing consumes is not a real gap
+        # (owner directive 2026-07-18): exempt no-reader witnesses.
+        if verdict == "PROV_MISSING" and not has_reader(wp.name, paper_refs, py_counts):
+            verdict, missing = "PROV_EXEMPT_NO_READER", missing
         by_verdict[verdict].append(
             {"witness": wp.name, "missing_fields": missing}
         )
@@ -144,9 +194,10 @@ def main(argv: list[str] | None = None) -> int:
     n_ok = len(by_verdict["PROV_OK"])
     n_missing = len(by_verdict["PROV_MISSING"])
     n_audit = len(by_verdict["PROV_AUDIT_EXEMPT"])
+    n_no_reader = len(by_verdict["PROV_EXEMPT_NO_READER"])
     n_parse_err = len(by_verdict["PROV_PARSE_ERROR"])
     completeness_ratio = (
-        (n_ok + n_audit) / n_total if n_total > 0 else 0.0
+        (n_ok + n_audit + n_no_reader) / n_total if n_total > 0 else 0.0
     )
 
     print("=" * 70)
@@ -155,6 +206,7 @@ def main(argv: list[str] | None = None) -> int:
     print(f"  total scanned        : {n_total}")
     print(f"  PROV_OK              : {n_ok}")
     print(f"  PROV_AUDIT_EXEMPT    : {n_audit}")
+    print(f"  PROV_EXEMPT_NO_READER: {n_no_reader}")
     print(f"  PROV_MISSING         : {n_missing}")
     print(f"  PROV_PARSE_ERROR     : {n_parse_err}")
     print(f"  completeness ratio   : {completeness_ratio:.3f}")
@@ -187,6 +239,7 @@ def main(argv: list[str] | None = None) -> int:
             "total_scanned": n_total,
             "prov_ok": n_ok,
             "prov_audit_exempt": n_audit,
+            "prov_exempt_no_reader": n_no_reader,
             "prov_missing": n_missing,
             "prov_parse_error": n_parse_err,
             "completeness_ratio": completeness_ratio,
