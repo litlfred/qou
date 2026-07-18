@@ -1,11 +1,11 @@
 ---
 # qou-xauh
 title: 'PR #3683 CLOSED-unmerged: Borel/alien-calculus 8/8 — owner decision to reopen/re-land'
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-07-18T23:14:01Z
-updated_at: 2026-07-18T23:14:01Z
+updated_at: 2026-07-18T23:18:09Z
 parent: qou-w1z0
 ---
 

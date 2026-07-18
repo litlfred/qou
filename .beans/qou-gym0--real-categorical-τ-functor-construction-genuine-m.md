@@ -1,11 +1,11 @@
 ---
 # qou-gym0
 title: Real categorical τ-functor construction (genuine multi-week research; may not close)
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-07-18T23:14:41Z
-updated_at: 2026-07-18T23:14:41Z
+updated_at: 2026-07-18T23:18:09Z
 parent: qou-w1z0
 ---
 

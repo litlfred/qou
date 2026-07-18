@@ -1,11 +1,11 @@
 ---
 # qou-i7f7
 title: 'PR #4009 READY: audit capstone exchange-det no-go — rebase onto main + /prepare-merge'
-status: todo
+status: in-progress
 type: task
 priority: high
 created_at: 2026-07-18T23:14:01Z
-updated_at: 2026-07-18T23:14:01Z
+updated_at: 2026-07-18T23:18:09Z
 parent: qou-w1z0
 ---
 
