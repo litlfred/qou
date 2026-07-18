@@ -1,0 +1,50 @@
+{
+  "computation": "alpha-em-b1-fibre-reality-structure",
+  "description": "Bean B1 (qou-qcz1): the anti-holomorphic ingredient of the tau-correspondence is the fibre parameter conjugation rho: q->conj(q) \u2014 Hodge-type through the nome (tau->-conj tau), = bar pointwise on |q|=1 (brick 3's exchange was rho's restriction), fixes q0 (fibre-only doubling), and completes the type-consistent dictionary. Conjugation pairs with rho, not the transpose. B2 = the functorial statement. Nothing wired.",
+  "auditOnly": "docs/audits/2026-07-18-alpha-em-b1-fibre-reality-structure.md",
+  "tier": "symbolic-exact (sympy; nome analytic types + circle restriction + degenerate actions)",
+  "computedAt": "2026-07-18T15:00:49.146963+00:00",
+  "commitSha": "57f97aed655d539cf6560da2d620b64e000a465b",
+  "engine": "sympy",
+  "engineVersion": "1.14.0",
+  "scriptFile": "alpha_em_b1_fibre_reality_structure_probe.py",
+  "scriptHash": "08208d49a44b",
+  "assertions": [
+    {
+      "name": "rho_is_antiholo_hodge_type",
+      "passed": true,
+      "detail": "conj(e^{2 pi i tau}) = e^{2 pi i (-conj tau)} EXACTLY: the fibre parameter conjugation rho: q->conj(q) corresponds to tau -> -conj(tau) \u2014 the SAME anti-holomorphic type as Hodge conjugation (obstruction table row 3). The pairing {rho <-> Hodge conjugation} has NO type obstruction"
+    },
+    {
+      "name": "rho_restricts_to_bar_on_circle",
+      "passed": true,
+      "detail": "on |q|=1: q^{-1} = conj(q) \u2014 rho coincides POINTWISE with bar on the fibre circle (while differing globally: bar holo, rho anti-holo). Brick 3's 'bar exchanges the degenerate points' is rho seen through its circle restriction; the Lean-locked vertex-family swap (#3942) is rho's geometric action"
+    },
+    {
+      "name": "rho_fixes_archimedean_point",
+      "passed": true,
+      "detail": "q0 in R => conj(q0) = q0: the reality structure is UNBROKEN at the observable point \u2014 the conjugation doubling is fibre-only (consistent with the Im(q) fibre-vs-observable discipline and real masses at q0)"
+    },
+    {
+      "name": "full_dictionary_types_consistently",
+      "passed": true,
+      "detail": "bar: q->q^{-1} <-> tau->-tau (holo=holo); transpose: q->-q^{-1} <-> tau->1/2-tau (holo=holo); rho: q->conj(q) <-> tau->-conj(tau) (anti=anti) \u2014 every row same analytic type; the obstruction barred only the mis-typed {transpose <-> conjugation}. On {+-i}: rho exchanges (conj(i)=-i), transpose fixes (-1/i=i) \u2014 the two-strata role-swap with correct typing"
+    }
+  ],
+  "allPassed": true,
+  "result": {
+    "reality_involution": "rho: q -> conj(q) (anti-holo; not in the q-algebra)",
+    "nome_type": "tau -> -conj(tau) = the Hodge-conjugation type (no obstruction)",
+    "circle_restriction": "rho = bar pointwise on |q|=1",
+    "archimedean": "rho fixes q0 (fibre-only doubling)",
+    "dictionary": "bar<->-tau (holo), transpose<->1/2-tau (holo), rho<->-conj tau (anti-holo)",
+    "verdict": "B1 CLOSED AS SCOPED (scope-(a); derives no clause; no fit; nothing wired): the anti-holomorphic ingredient demanded by the tau-obstruction is the fibre PARAMETER CONJUGATION rho: q->conj(q) \u2014 not in the q-algebra, anti-holomorphic of exactly the Hodge type (tau->-conj(tau) through the nome), coinciding with bar pointwise on the fibre circle (resolving brick 3's bar-exchange as rho's restriction), fixing the archimedean q0 (fibre-only doubling), and completing a TYPE-CONSISTENT dictionary (bar<->-tau, transpose<->1/2-tau, rho<->-conj tau). The conjugation doubling pairs with rho, whose geometric shadow is the Lean-locked vertex-family swap. REMAINING (B2): the functorial statement that tau intertwines rho with the actual Hodge conjugation of H^1(Bring). NO tier change."
+  },
+  "context": {
+    "bean": "qou-qcz1 (B1) of milestone qou-b5qg",
+    "resolves": "the a6d522e0a holo/anti-holo obstruction \u2014 by re-routing the conjugation pairing through rho (the mis-typed {transpose<->conjugation} stays barred)",
+    "geometric_shadow": "the Lean-locked vertex-family swap (#3942 SigmaJGeometricCarrier)",
+    "next": "B2 (qou-tq20): the functorial statement tau(rho) = Hodge conjugation",
+    "scope_guard": "derives NO clause; no fit; nothing wired; 1/(8pi) stays phase-4"
+  }
+}
