@@ -1625,6 +1625,7 @@ arctan(t/π), so both frames see only weak odd phase in the deformed 4₁ tower.
 Net: the 4₁ lane is #3923's (COMPLETE); the open frontier is the non-amphichiral
 5₂-class lane (#3892/#3902 — where my 5₂ quantum volume was found anchor-smooth).
 No c_k wired; scope-(a); no fit.
+
 **2026-07-18 (erratum + refinement to #3937) — σ3 CONVENTION CORRECTED:
 GGM §6.1 keeps only Re(V) at the real connection; updated 5₂ targets.**
 Deeper §6.1/6.2 extraction surfaced the printed convention "for σ3, we
@@ -1641,3 +1642,21 @@ Theorem 22 (PROVEN 5₂ three-block factorization, eqs 240–245) + H±
 q-hypergeometrics + the printed deformed 2-loop (238) — the exact-Z₅₂
 implementation is fully sourced. Corrected targets re-posted to #3892.
 No fit; no c_k wired.
+
+**2026-07-18 (#3945) — ODD-CHANNEL GEOMETRIC SEARCH CLOSED: the chiral 5₂ σ3-pair
+carries nonzero bar-odd phase but is ANCHOR-SMOOTH.** Capstone + the decisive
+5₂-class test. The 4₁ odd-phase null (#3923) pointed the odd channel to
+non-amphichiral 5₂ geometry; the 5₂ port (#3930) predicts the σ3-pairs carry a
+nonzero intrinsic phase. `qbeta_5two_sigma3_anchor_test_probe.py` (2/2, reusing
+the #3930 saddle machinery) tests the necessary second condition: ι₁₃, ι₂₃ at
+both q₀ anchors. RESULT: the σ3-pairs DO carry nonzero phase (|arg ι₁₃|=2.127,
+|arg ι₂₃|=2.683 rad ≫ the null floor 9.2e-9) — genuine non-amphichiral bar-odd
+carriers — BUT are ANCHOR-SMOOTH (|dι/dq|=0.245/0.380, O(1), 7.0 orders below the
+3.84e6 swing). So the ONE geometric object with nonzero bar-odd phase still
+cannot carry the swing. Every geometric object now fails (4₁ branch-point/volume/
+null; 5₂ σ1 volume #3902; 5₂ σ3 phase). The c₃ swing is REPRESENTATIONAL on every
+front, chiral included — the 1/u³ inversion of a smooth N_odd, pinned by
+experimental Q_β. Capstone: `docs/audits/2026-07-18-qbeta-odd-channel-cornering-
+capstone.md`. scope-(a) (σ3-pair alone; magnitude not ingredient — stays a
+permanent bar-odd carrier); scope-(b) exclusion of a SINGLE smooth geometric
+source (proved null + exhausted census). No c_k wired; no fit.
