@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-18T10:13:43.270658+00:00",
-  "commitSha": "6145a911abce8348c7b232d88af00c98c0f8588a",
+  "computedAt": "2026-07-18T10:23:06.876921+00:00",
+  "commitSha": "d1fd0f757ef69719d02c450a7394191250ad97df",
   "assertions": [
     {
       "name": "no_missing_provenance",
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 19,
+  "durationMs": 15,
   "computation": "witness-provenance-audit",
   "scriptFile": "witness_provenance_audit.py",
   "scriptHash": "1abb80bb6c90",
@@ -47,12 +47,12 @@
   },
   "data": {
     "counts": {
-      "total_scanned": 1953,
-      "prov_ok": 1637,
+      "total_scanned": 1955,
+      "prov_ok": 1639,
       "prov_audit_exempt": 59,
       "prov_missing": 256,
       "prov_parse_error": 1,
-      "completeness_ratio": 0.8684075780849975
+      "completeness_ratio": 0.8685421994884911
     },
     "by_verdict": {
       "PROV_OK": [
@@ -4485,6 +4485,10 @@
           "missing_fields": []
         },
         {
+          "witness": "qbeta-5two-quantum-volume.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "qbeta-5two-reeb-trace.witness.json",
           "missing_fields": []
         },
@@ -4626,6 +4630,10 @@
         },
         {
           "witness": "qbeta-qsqrt3-borel-pslq.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "qbeta-substrate-meridian-branchpoint.witness.json",
           "missing_fields": []
         },
         {

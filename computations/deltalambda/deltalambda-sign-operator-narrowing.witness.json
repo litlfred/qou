@@ -3,12 +3,12 @@
   "description": "The \u0394_\u03bb sign carrier q^{2n(\u03bb)} is a central character but not a framing power and not a low-degree JM content-symmetric central element; it is the co-content / principal-specialization (pivotal) grading at \u03b6\u2084. Narrows the operator; does not derive \u0394_\u03bb.",
   "auditOnly": "docs/audits/2026-07-11-deltalambda-sign-operator-narrowing.md",
   "tier": "symbolic-exact (sympy; rational linear algebra + q=i identities)",
-  "computedAt": "2026-07-11T11:41:38.856270+00:00",
-  "commitSha": "e23d2a26a28047742957287b919b7ec1f38c09c6",
-  "engine": "sympy",
+  "computedAt": "2026-07-18T10:18:39.934829+00:00",
+  "commitSha": "b283e19b694f34f5fcbe98ae5292dc08fdd5649d",
+  "engine": "python",
   "engineVersion": "1.14.0",
   "scriptFile": "deltalambda_sign_operator_narrowing_probe.py",
-  "scriptHash": "ce646f1fbc25",
+  "scriptHash": "ea7b65456198",
   "assertions": [
     {
       "name": "not_a_framing_power",
@@ -38,5 +38,7 @@
     "selection_rule": "QOU.SelectionRules (bar-parity + sign-positivity)",
     "open": "exact pivotal element realizing q^{2n(\u03bb)}; magnitude |\u0394_\u03bb|=dim (Track A)",
     "gate": "\u0394_\u03bb gate \u2014 structural narrowing, no fit, nothing wired"
-  }
+  },
+  "scriptCommitSha": "1fdf86045c3db8fad4e0f4626e8fa4ce78b04c74",
+  "durationMs": 0
 }

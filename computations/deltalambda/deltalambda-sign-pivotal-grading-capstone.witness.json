@@ -3,12 +3,12 @@
   "description": "The \u0394_\u03bb chirality sign (-1)^{n(\u03bb)}=q^{2n(\u03bb)}|_{q=i} is the principal (\u03c1) Z-grading, NOT an intrinsic ribbon/pivotal/FS invariant (not FS indicator, not twist ratio, not self-twist). \u0394_\u03bb is a \u03c1-graded dimension. Closes the sign-operator identification; magnitude |\u0394_\u03bb|=dim open.",
   "auditOnly": "docs/audits/2026-07-11-deltalambda-sign-pivotal-grading-capstone.md",
   "tier": "symbolic-exact (sympy; exact identities at q=i + FS-realness theorem)",
-  "computedAt": "2026-07-11T12:05:03.346683+00:00",
-  "commitSha": "370086cbac5cc1d78626e4f8cd48547196cc9c05",
-  "engine": "sympy",
+  "computedAt": "2026-07-18T10:18:40.544486+00:00",
+  "commitSha": "b283e19b694f34f5fcbe98ae5292dc08fdd5649d",
+  "engine": "python",
   "engineVersion": "1.14.0",
   "scriptFile": "deltalambda_sign_pivotal_grading_capstone_probe.py",
-  "scriptHash": "a495343b87c2",
+  "scriptHash": "3d4ad70fec43",
   "assertions": [
     {
       "name": "not_frobenius_schur_indicator",
@@ -52,5 +52,7 @@
     "prior": "computations/deltalambda/deltalambda-sign-operator-narrowing.witness.json (#3523)",
     "open": "magnitude |\u0394_\u03bb|=dim as a categorical closure (Track A / Subgoal-2, gated)",
     "gate": "\u0394_\u03bb gate \u2014 structural closure of the sign question, no fit, nothing wired"
-  }
+  },
+  "scriptCommitSha": "e63b3238f3ad6d1c068f274bf3641d18c7445cc7",
+  "durationMs": 0
 }
