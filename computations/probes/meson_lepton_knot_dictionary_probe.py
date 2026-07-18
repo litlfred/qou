@@ -353,6 +353,11 @@ witness = {
 }
 witness['allPassed'] = all(a['passed'] for a in witness['assertions'])
 
+import sys as _sys  # noqa: E402 — P30 rollup (bean cmiy)
+_sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "substrate"))
+from witness_base import WitnessBuilder  # noqa: E402
+WitnessBuilder.stamp_staleness_metadata(witness, script_path=__file__, engine="python")
+witness["scriptFile"] = Path(__file__).name
 witness_path = Path(__file__).resolve().parent / 'meson-lepton-knot-dictionary-probe.witness.json'
 with open(witness_path, 'w') as f:
     json.dump(witness, f, indent=2, default=str)

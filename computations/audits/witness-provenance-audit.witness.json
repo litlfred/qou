@@ -1,12 +1,12 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-18T13:58:49.179219+00:00",
-  "commitSha": "2f1e7a7eee69983b4a18228ff6a006122fe3b7f6",
+  "computedAt": "2026-07-18T15:00:46.227883+00:00",
+  "commitSha": "26973183b25852920493b30c3687548ecfdc582e",
   "assertions": [
     {
       "name": "no_missing_provenance",
-      "computed": 243,
+      "computed": 242,
       "expected": 0,
       "passed": false,
       "tolerance": 0,
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 11,
+  "durationMs": 12,
   "computation": "witness-provenance-audit",
   "scriptFile": "witness_provenance_audit.py",
   "scriptHash": "1abb80bb6c90",
@@ -47,12 +47,12 @@
   },
   "data": {
     "counts": {
-      "total_scanned": 1961,
-      "prov_ok": 1658,
+      "total_scanned": 1983,
+      "prov_ok": 1681,
       "prov_audit_exempt": 59,
-      "prov_missing": 243,
+      "prov_missing": 242,
       "prov_parse_error": 1,
-      "completeness_ratio": 0.8755736868944416
+      "completeness_ratio": 0.8774583963691377
     },
     "by_verdict": {
       "PROV_OK": [
@@ -329,7 +329,19 @@
           "missing_fields": []
         },
         {
+          "witness": "alpha-em-clauseB-channel-sharpening.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "alpha-em-conjugation-doubling-dictionary.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "alpha-em-count-carrying-object.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "alpha-em-d4-equivariance-adjudication.witness.json",
           "missing_fields": []
         },
         {
@@ -353,6 +365,10 @@
           "missing_fields": []
         },
         {
+          "witness": "alpha-em-perloop-conjecture-statement.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "alpha-em-photon-measure-mu-invariance.witness.json",
           "missing_fields": []
         },
@@ -366,6 +382,10 @@
         },
         {
           "witness": "alpha-em-rt-abelian-torsion-count-vs-covolume.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "alpha-em-sigma-to-J-degenerate-locus.witness.json",
           "missing_fields": []
         },
         {
@@ -1901,6 +1921,10 @@
           "missing_fields": []
         },
         {
+          "witness": "b4-slater-antisymmetrizer-exchange-sign.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "carrier-saturation-mechanism.witness.json",
           "missing_fields": []
         },
@@ -1921,11 +1945,19 @@
           "missing_fields": []
         },
         {
+          "witness": "deltalambda-grho-nakayama-morphism.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "deltalambda-magnitude-graded-trace.witness.json",
           "missing_fields": []
         },
         {
           "witness": "deltalambda-o1-manybody-residual.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "deltalambda-perpair-bond-magnitude-derive.witness.json",
           "missing_fields": []
         },
         {
@@ -2038,6 +2070,10 @@
         },
         {
           "witness": "wlambda-wstd-growth-bound.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "wlambda-wstd-superexp-lower-bound.witness.json",
           "missing_fields": []
         },
         {
@@ -3025,6 +3061,10 @@
           "missing_fields": []
         },
         {
+          "witness": "lr-modulus-bare-amplitude-exact.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "lr-modulus-identification-sigma235.witness.json",
           "missing_fields": []
         },
@@ -3226,6 +3266,14 @@
         },
         {
           "witness": "meson-kaon-pion-derivation.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "meson-mass-from-hecke.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "meson-per-knot-density.witness.json",
           "missing_fields": []
         },
         {
@@ -4269,6 +4317,10 @@
           "missing_fields": []
         },
         {
+          "witness": "kaon-pion-ratio-7-8.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "kappa-writhe-side-decomposition-probe.witness.json",
           "missing_fields": []
         },
@@ -4394,6 +4446,10 @@
         },
         {
           "witness": "meson-gmor-derivation-probe.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "meson-lepton-knot-dictionary-probe.witness.json",
           "missing_fields": []
         },
         {
@@ -4597,6 +4653,10 @@
           "missing_fields": []
         },
         {
+          "witness": "qbeta-dkappa-bridge-shared-action.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "qbeta-exponentiated-per-block.witness.json",
           "missing_fields": []
         },
@@ -4605,7 +4665,27 @@
           "missing_fields": []
         },
         {
+          "witness": "qbeta-g3-5two-saddle-exact-predictions.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "qbeta-g3-annihilator-certification.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "qbeta-g3-aomega-residue-first-number.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "qbeta-g3-aomega-sharpened-amplitude.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "qbeta-g3-deformed-blocks-41.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "qbeta-g3-deformed-saddle-exact-bridge.witness.json",
           "missing_fields": []
         },
         {
@@ -4669,6 +4749,10 @@
           "missing_fields": []
         },
         {
+          "witness": "qbeta-kashaev-vs-btower-phase-distinction.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "qbeta-li2q-spectral-combiner-crossanchor.witness.json",
           "missing_fields": []
         },
@@ -4685,6 +4769,10 @@
           "missing_fields": []
         },
         {
+          "witness": "qbeta-phib-2loop-bdictionary.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "qbeta-phib-saddle-fluctuation-complex-meridian.witness.json",
           "missing_fields": []
         },
@@ -4694,6 +4782,10 @@
         },
         {
           "witness": "qbeta-qsqrt3-borel-pslq.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "qbeta-stokes-constant-kappa-amplitude.witness.json",
           "missing_fields": []
         },
         {
@@ -6715,6 +6807,38 @@
           ]
         },
         {
+          "witness": "alpha-em-channel-swap-involution.witness.json",
+          "missing_fields": [
+            "engine",
+            "scriptFile",
+            "commitSha"
+          ]
+        },
+        {
+          "witness": "alpha-em-multiplicity2-realcomplex.witness.json",
+          "missing_fields": [
+            "engine",
+            "scriptFile",
+            "commitSha"
+          ]
+        },
+        {
+          "witness": "alpha-em-reciprocal-form.witness.json",
+          "missing_fields": [
+            "engine",
+            "scriptFile",
+            "commitSha"
+          ]
+        },
+        {
+          "witness": "alpha-em-tau-correspondence.witness.json",
+          "missing_fields": [
+            "engine",
+            "scriptFile",
+            "commitSha"
+          ]
+        },
+        {
           "witness": "alphaem-dilog-bloch-probe.witness.json",
           "missing_fields": [
             "engine",
@@ -7574,25 +7698,6 @@
           ]
         },
         {
-          "witness": "meson-lepton-knot-dictionary-probe.witness.json",
-          "missing_fields": [
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "meson-mass-from-hecke.witness.json",
-          "missing_fields": [
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "meson-per-knot-density.witness.json",
-          "missing_fields": [
-            "commitSha"
-          ]
-        },
-        {
           "witness": "meson-spectral-analysis.witness.json",
           "missing_fields": [
             "engine",
@@ -7896,22 +8001,9 @@
           ]
         },
         {
-          "witness": "kaon-pion-ratio-7-8.witness.json",
-          "missing_fields": [
-            "commitSha"
-          ]
-        },
-        {
           "witness": "lpdual-active-set-vs-edge-set-negative.witness.json",
           "missing_fields": [
             "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "meson-lepton-knot-dictionary-probe.witness.json",
-          "missing_fields": [
             "scriptFile",
             "commitSha"
           ]

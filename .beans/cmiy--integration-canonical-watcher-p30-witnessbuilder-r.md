@@ -328,3 +328,12 @@ vol4_4he_snappy_falsification) deferred — need pyhecke-native harness.
      misses computations/). Also: `echo exit=$(...)` clobbers $? via the $()
      substitution — the PROV_OK re-audit is the real gate, not the echo. All 5
      confirmed PROV_OK, keys preserved, no strays.
+
+## 2026-07-18 — batch 24 (meson/kaon sector, 4 scripts via stamp) + 1 orphan cleanup
+- meson_mass_from_hecke, meson_per_knot_density (ROOT, HERE=computations)
+- probes/kaon_pion_ratio_7_8_probe (HERE=probes → writes to probes/)
+- probes/meson_lepton_knot_dictionary_probe
+All stamp (var=witness, default=str preserved). Run with PYTHONPATH=. for probes.
+CLEANUP: deleted orphan root copy computations/meson-lepton-knot-dictionary-probe.witness.json
+— stale duplicate, no producer (script writes to probes/ via Path(__file__).parent),
+no consumer; it was a permanent PROV_MISSING nothing could refresh. All 4 PROV_OK.
