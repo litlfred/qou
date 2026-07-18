@@ -1,0 +1,417 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-18T14:32:16.352847+00:00",
+  "commitSha": "f56df3dbc39d1a9e0f29076220a099a11381432b",
+  "assertions": [
+    {
+      "name": "d_ladder_exact_odd_ok",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "substrate_least_term_edge_suppressed",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "fibre_ambiguity_unsuppressed",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 17,
+  "computation": "qbeta-dladder-fibre-branch-stokes-ambiguity",
+  "scriptFile": "qbeta_dladder_fibre_branch_stokes_ambiguity_probe.py",
+  "scriptHash": "e51376f79905",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Leave the substrate meridian: measure the D-ladder optimal-truncation Stokes ambiguity delta_np=min_k|d_k u~^k| along the fibre q=e^{i th} where u~ is complex and |u~| grows to O(1). Tests the Phi_b prediction that the ambiguity is unsuppressed on the fibre (A_omega home), suppressed on the substrate.",
+  "auditOnly": "docs/audits/2026-07-18-dladder-fibre-branch-stokes-ambiguity.md",
+  "data": {
+    "KMAX": 31,
+    "r_star_unsuppression_threshold": "0.147480473132",
+    "u_tilde_substrate_abs": "0.00945394793494",
+    "least_term_leaves_edge_at_abs_u": "0.189122006035",
+    "threshold_matches_rstar": true,
+    "max_abs_im_S_over_fibre": "7.2397545892",
+    "crossed_S_scale": true,
+    "fibre_rows": [
+      {
+        "theta": "0.0785398",
+        "abs_u": "0.0053489443",
+        "Nstar": 31,
+        "edge": true,
+        "delta_np": "1.1671811e-46",
+        "abs_D": "0.0081406812",
+        "abs_imS": "0.001277421"
+      },
+      {
+        "theta": "0.15708",
+        "abs_u": "0.021362799",
+        "Nstar": 31,
+        "edge": true,
+        "delta_np": "5.1313403e-28",
+        "abs_D": "0.027320509",
+        "abs_imS": "0.0085477383"
+      },
+      {
+        "theta": "0.235619",
+        "abs_u": "0.047942834",
+        "Nstar": 31,
+        "edge": true,
+        "delta_np": "3.9197888e-17",
+        "abs_D": "0.043155634",
+        "abs_imS": "0.020148965"
+      },
+      {
+        "theta": "0.314159",
+        "abs_u": "0.084925173",
+        "Nstar": 31,
+        "edge": true,
+        "delta_np": "1.954149e-9",
+        "abs_D": "0.032895809",
+        "abs_imS": "0.020330728"
+      },
+      {
+        "theta": "0.392699",
+        "abs_u": "0.13208181",
+        "Nstar": 31,
+        "edge": true,
+        "delta_np": "0.0017256841",
+        "abs_D": "0.038710045",
+        "abs_imS": "0.029627386"
+      },
+      {
+        "theta": "0.471239",
+        "abs_u": "0.18912201",
+        "Nstar": 3,
+        "edge": false,
+        "delta_np": "0.29326596",
+        "abs_D": "0.020034842",
+        "abs_imS": "0.018191256"
+      },
+      {
+        "theta": "0.549779",
+        "abs_u": "0.25569409",
+        "Nstar": 1,
+        "edge": false,
+        "delta_np": "0.4109134",
+        "abs_D": "0.4109134",
+        "abs_imS": "0.42940332"
+      },
+      {
+        "theta": "0.628319",
+        "abs_u": "0.33138763",
+        "Nstar": 1,
+        "edge": false,
+        "delta_np": "0.53255675",
+        "abs_D": "0.53255675",
+        "abs_imS": "0.62605801"
+      },
+      {
+        "theta": "0.706858",
+        "abs_u": "0.41573593",
+        "Nstar": 1,
+        "edge": false,
+        "delta_np": "0.66810877",
+        "abs_D": "0.66810877",
+        "abs_imS": "0.86780387"
+      },
+      {
+        "theta": "0.785398",
+        "abs_u": "0.50821898",
+        "Nstar": 1,
+        "edge": false,
+        "delta_np": "0.81673372",
+        "abs_D": "0.81673372",
+        "abs_imS": "1.1550359"
+      },
+      {
+        "theta": "0.863938",
+        "abs_u": "0.60826658",
+        "Nstar": 1,
+        "edge": false,
+        "delta_np": "0.97751529",
+        "abs_D": "0.97751529",
+        "abs_imS": "1.4866169"
+      },
+      {
+        "theta": "0.942478",
+        "abs_u": "0.71526189",
+        "Nstar": 1,
+        "edge": false,
+        "delta_np": "1.1494622",
+        "abs_D": "1.1494622",
+        "abs_imS": "1.8598689"
+      },
+      {
+        "theta": "1.02102",
+        "abs_u": "0.82854527",
+        "Nstar": 1,
+        "edge": false,
+        "delta_np": "1.3315144",
+        "abs_D": "1.3315144",
+        "abs_imS": "2.2706052"
+      },
+      {
+        "theta": "1.09956",
+        "abs_u": "0.94741829",
+        "Nstar": 1,
+        "edge": false,
+        "delta_np": "1.5225493",
+        "abs_D": "1.5225493",
+        "abs_imS": "2.7132028"
+      },
+      {
+        "theta": "1.1781",
+        "abs_u": "1.071148",
+        "Nstar": 1,
+        "edge": false,
+        "delta_np": "1.7213893",
+        "abs_D": "1.7213893",
+        "abs_imS": "3.1807127"
+      },
+      {
+        "theta": "1.25664",
+        "abs_u": "1.1989717",
+        "Nstar": 1,
+        "edge": false,
+        "delta_np": "1.9268084",
+        "abs_D": "1.9268084",
+        "abs_imS": "3.6650074"
+      },
+      {
+        "theta": "1.33518",
+        "abs_u": "1.3301012",
+        "Nstar": 1,
+        "edge": false,
+        "delta_np": "2.1375402",
+        "abs_D": "2.1375402",
+        "abs_imS": "4.1569595"
+      },
+      {
+        "theta": "1.41372",
+        "abs_u": "1.463728",
+        "Nstar": 1,
+        "edge": false,
+        "delta_np": "2.3522853",
+        "abs_D": "2.3522853",
+        "abs_imS": "4.6466496"
+      },
+      {
+        "theta": "1.49226",
+        "abs_u": "1.5990284",
+        "Nstar": 1,
+        "edge": false,
+        "delta_np": "2.5697199",
+        "abs_D": "2.5697199",
+        "abs_imS": "5.1235966"
+      },
+      {
+        "theta": "1.5708",
+        "abs_u": "1.7351681",
+        "Nstar": 1,
+        "edge": false,
+        "delta_np": "2.7885034",
+        "abs_D": "2.7885034",
+        "abs_imS": "5.5770067"
+      },
+      {
+        "theta": "1.64934",
+        "abs_u": "1.8713079",
+        "Nstar": 1,
+        "edge": false,
+        "delta_np": "3.0072868",
+        "abs_D": "3.0072868",
+        "abs_imS": "5.9960327"
+      },
+      {
+        "theta": "1.72788",
+        "abs_u": "2.0066082",
+        "Nstar": 1,
+        "edge": false,
+        "delta_np": "3.2247214",
+        "abs_D": "3.2247214",
+        "abs_imS": "6.3700394"
+      },
+      {
+        "theta": "1.80642",
+        "abs_u": "2.1402351",
+        "Nstar": 1,
+        "edge": false,
+        "delta_np": "3.4394665",
+        "abs_D": "3.4394665",
+        "abs_imS": "6.6888676"
+      },
+      {
+        "theta": "1.88496",
+        "abs_u": "2.2713646",
+        "Nstar": 1,
+        "edge": false,
+        "delta_np": "3.6501983",
+        "abs_D": "3.6501983",
+        "abs_imS": "6.9430897"
+      },
+      {
+        "theta": "1.9635",
+        "abs_u": "2.3991882",
+        "Nstar": 1,
+        "edge": false,
+        "delta_np": "3.8556174",
+        "abs_D": "3.8556174",
+        "abs_imS": "7.124252"
+      },
+      {
+        "theta": "2.04204",
+        "abs_u": "2.522918",
+        "Nstar": 1,
+        "edge": false,
+        "delta_np": "4.0544574",
+        "abs_D": "4.0544574",
+        "abs_imS": "7.225096"
+      },
+      {
+        "theta": "2.12058",
+        "abs_u": "2.641791",
+        "Nstar": 1,
+        "edge": false,
+        "delta_np": "4.2454923",
+        "abs_D": "4.2454923",
+        "abs_imS": "7.2397546"
+      },
+      {
+        "theta": "2.19911",
+        "abs_u": "2.7550744",
+        "Nstar": 1,
+        "edge": false,
+        "delta_np": "4.4275445",
+        "abs_D": "4.4275445",
+        "abs_imS": "7.1639175"
+      },
+      {
+        "theta": "2.27765",
+        "abs_u": "2.8620697",
+        "Nstar": 1,
+        "edge": false,
+        "delta_np": "4.5994914",
+        "abs_D": "4.5994914",
+        "abs_imS": "6.9949614"
+      },
+      {
+        "theta": "2.35619",
+        "abs_u": "2.9621173",
+        "Nstar": 1,
+        "edge": false,
+        "delta_np": "4.760273",
+        "abs_D": "4.760273",
+        "abs_imS": "6.7320426"
+      },
+      {
+        "theta": "2.43473",
+        "abs_u": "3.0546003",
+        "Nstar": 1,
+        "edge": false,
+        "delta_np": "4.9088979",
+        "abs_D": "4.9088979",
+        "abs_imS": "6.3761484"
+      },
+      {
+        "theta": "2.51327",
+        "abs_u": "3.1389486",
+        "Nstar": 1,
+        "edge": false,
+        "delta_np": "5.04445",
+        "abs_D": "5.04445",
+        "abs_imS": "5.9301066"
+      },
+      {
+        "theta": "2.59181",
+        "abs_u": "3.2146422",
+        "Nstar": 1,
+        "edge": false,
+        "delta_np": "5.1660933",
+        "abs_D": "5.1660933",
+        "abs_imS": "5.3985527"
+      },
+      {
+        "theta": "2.67035",
+        "abs_u": "3.2812143",
+        "Nstar": 1,
+        "edge": false,
+        "delta_np": "5.273078",
+        "abs_D": "5.273078",
+        "abs_imS": "4.7878547"
+      },
+      {
+        "theta": "2.74889",
+        "abs_u": "3.3382545",
+        "Nstar": 1,
+        "edge": false,
+        "delta_np": "5.3647445",
+        "abs_D": "5.3647445",
+        "abs_imS": "4.1059977"
+      },
+      {
+        "theta": "2.82743",
+        "abs_u": "3.3854111",
+        "Nstar": 1,
+        "edge": false,
+        "delta_np": "5.4405276",
+        "abs_D": "5.4405276",
+        "abs_imS": "3.362431"
+      },
+      {
+        "theta": "2.90597",
+        "abs_u": "3.4223934",
+        "Nstar": 1,
+        "edge": false,
+        "delta_np": "5.4999601",
+        "abs_D": "5.4999601",
+        "abs_imS": "2.5678804"
+      },
+      {
+        "theta": "2.98451",
+        "abs_u": "3.4489735",
+        "Nstar": 1,
+        "edge": false,
+        "delta_np": "5.5426756",
+        "abs_D": "5.5426756",
+        "abs_imS": "1.734131"
+      },
+      {
+        "theta": "3.06305",
+        "abs_u": "3.4649873",
+        "Nstar": 1,
+        "edge": false,
+        "delta_np": "5.5684107",
+        "abs_D": "5.5684107",
+        "abs_imS": "0.87378493"
+      },
+      {
+        "theta": "3.14159",
+        "abs_u": "3.4703363",
+        "Nstar": 1,
+        "edge": false,
+        "delta_np": "5.5770067",
+        "abs_D": "5.5770067",
+        "abs_imS": "1.312366e-50"
+      }
+    ],
+    "verdict": "FIBRE-BRANCH STOKES AMBIGUITY MEASURED (scope-(a); leaves the substrate meridian for the first time). On the substrate (real q0) the least term is at the k=31 edge (suppressed/anchor-blind, reproduces #3818 M4). On the fibre q=e^{i th}, the ambiguity delta_np BECOMES UNSUPPRESSED: the least term leaves the edge at |u~|=0.189122 (structural threshold r*=|d_{KMAX-1}/d_KMAX|=0.14748, matches), so the Stokes jump is O(1) at |u~|~O(1) -- CONFIRMING the Phi_b prediction that A_omega lives on the fibre, NOT the substrate meridian. This NARROWS the c3/A_omega search to the fibre-branch accelero-summation. Max |Im(h.D)| over the fibre = 7.23975 (REACHES the |S|~0.0097 swing scale at some th -- a location, NOT an identification (no fit; the anchor-dependent value still requires the accelero-summation, not this optimal-truncation floor)). SCOPE: measures WHERE the ambiguity is unsuppressed; derives no c3 value, wires nothing, no tier change. The genuine non-commutative Écalle accelerator (two critical times) is still required to produce the value -- this probe only establishes the branch it must be run on."
+  }
+}
