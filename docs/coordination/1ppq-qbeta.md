@@ -1834,3 +1834,25 @@ sandwiches vs the q→0 targets (96/97, constants {3,4}), the (82)
 u=0 state-integral match (pins the split + ties towers to the
 certified #3951 blocks), then wall-crossing to deformed x → the
 derived-precision φ_odd. No fit; no c_k wired; scope-(a).
+
+**2026-07-18 (analytic M-dictionary, part 2a) — THE (c⁺,c⁻) SPLIT IS
+DERIVED (40 digits) AND THE (82) STATE-INTEGRAL READING CERTIFIED;
+towers now TIED to the certified deformed blocks.**
+`qbeta_g3_5two_state_integral_split_pin.py` (2/2 green): eq (82) was
+glyph-decoded (cmsy minus-offset discipline; sub/superscript y-band
+rows) as Z₅₂(0;τ) = −(e^{πi/4}/2)(q/q̃)^{1/8}·(τH₀⁻(q̃)H₂⁺(q) −
+2H₁⁻(q̃)H₁⁺(q) + τ⁻¹H₂⁻(q̃)H₀⁺(q)) — the same antidiag(1,−2,1)
+pairing shape as the part-1 (92) bilinear. Because term 1 carries
+c⁺(q) and term 3 carries c⁻(q̃) at DIFFERENT arguments, the state
+integral separates the split the Theorem-11 bilinears cannot see.
+Matched linearly against the independently certified Theorem-22 exact
+Z₅₂ (#3951 assembly, u→0 circle-average K=20) at two asymmetric
+τ-points (symmetric points make the solve singular — first-run
+failure kept honest in the probe docstring): phase σ = 1 (NO
+convention factor between Thm 22 and (82)), a⁺ = 1/6 to 6e-41,
+b⁺ = −4 to 6e-39, held-out τ rel dev 1.3e-40 — c⁺ = (1/6)E₂,
+c⁻ = (1/12)E₂ (E₂ = 1−24Ê₂) is now DERIVED, completing the part-1
+deferral. The u=0 tower layer is fully pinned. NEXT (part 2b): the
+(94)-(95) M/S sandwiches vs the q→0 targets (96/97, constants {3,4}),
+then wall-crossing to deformed x → the derived-precision φ_odd. No
+fit; no c_k wired; scope-(a).
