@@ -271,11 +271,10 @@ results["any_forced_sum_d2_equals_8"] = any_forced_8
 # WITNESS
 # ----------------------------------------------------------------------------------
 def git(*args: str) -> str:
-    try:
-        return subprocess.check_output(["git", *args], cwd=Path(__file__).resolve().parents[2],
-                                       stderr=subprocess.DEVNULL).decode().strip()
-    except Exception:
-        return "unknown"
+    # Fail-loud: never emit a witness with placeholder ('unknown') provenance —
+    # a broken commit SHA / script hash must abort, not silently mislabel.
+    return subprocess.check_output(["git", *args], cwd=Path(__file__).resolve().parents[2],
+                                   stderr=subprocess.DEVNULL).decode().strip()
 
 
 here = Path(__file__).resolve()
