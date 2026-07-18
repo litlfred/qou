@@ -422,3 +422,26 @@ persistent non-runnable residue (option_e_v5-v9, option_e_probe1, probe_isospin_
 deuteron_real_sdp, mass_formula_6term) — all exit 1 (need absent input witnesses/deps),
 auto-reverted. read+write runnable class DONE: 18 wired across chunks 5-6.
 NEXT: the 69 unmapped (computed-name / f-string producers).
+
+## 2026-07-18 — batch 36 + SESSION-BOUNDARY RESIDUE MAP
++1 wired: deuteron_tr_M_symbolic. This session (batches 20-36) drained the entire
+mechanically-safe, sandbox-runnable portion: ~86 producers hand+auto-stamped,
+PROV_MISSING 232 -> 164. The verified auto-stamper (scratchpad/autostamp.py) is the
+reusable tool: insert stamp at single write site, re-run, keep iff PROV_OK+keys, else revert.
+
+REMAINING 164 — genuinely blocked, NOT mechanical:
+- 67 no-py-producer: .sage scripts (bring_jacobian_isogeny, lever1_bring_period — need
+  Sage), fully-computed f-string names (need loop-aware bespoke stamping), and orphans
+  (some deletable like the meson-lepton orphan cleaned in batch 24).
+- 53 single-write-nonrunnable: exit!=0 in a clean checkout — need input witnesses/deps
+  regenerated FIRST (dependency ordering); e.g. option_e_v5-v9, deuteron_real_sdp.
+- 27 wired-but-reads-missing-input: producer ALREADY wired; clears automatically once
+  its upstream input witness is fixed (pure dependency ordering — no code change needed).
+- 16 native: chi-*/nucleus-sdp rust + snappy — need pyhecke-native wheel built; the
+  canonical chi-*/nucleus muon-q0 set also overlaps the tnjb owner-gate.
+- 1 multi-write.
+
+TO CLOSE cmiy fully: (a) build pyhecke-native wheel for the 16 native; (b) run producers
+in dependency order so the 53+27 input-dependent ones see fresh inputs; (c) loop-aware
+stamper for multi-output computed-name producers; (d) owner call on the canonical
+muon-q0 chi/nucleus set (tnjb). None are blind-stampable.
