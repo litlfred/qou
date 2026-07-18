@@ -23,6 +23,8 @@ pair over the 2 adjacent chain bonds; Mayer: AME - 3*b2 over the triangle), so a
 mismatch is a SCOPE-LIMITED observation about magnitude/sign, NOT a refutation of
 the cluster operator.
 """
+import time as _time  # noqa: E402 — wall-clock anchor for witness durationMs
+_T0 = _time.monotonic()
 import json
 import sys
 from pathlib import Path
@@ -92,10 +94,17 @@ def main():
         "data": {"rows": rows,
                  "verdict": "scale_matches_sign_opposed_scope_limited"},
     }
-    out = COMP / "cluster-operator-vs-mayer-b3.witness.json"
-    with open(out, "w") as f:
-        json.dump(witness, f, indent=1, default=str)
-    print(f"\nwitness -> {out.relative_to(REPO)}")
+    sys.path.insert(0, str(COMP / "substrate"))
+    from witness_base import WitnessBuilder  # noqa: E402 — P30 rollup (bean cmiy)
+    _wb = WitnessBuilder.wrap_legacy(
+        "cluster-operator-vs-mayer-b3", witness,
+        script_path=__file__, engine="mpmath", start_time=_T0,
+        output_dir=str(COMP),
+    )
+    # reads three-body-joint-trace-a3 as input → record the genuine upstream edge
+    _wb.add_upstream(COMP / "three-body-joint-trace-a3.witness.json")
+    out = _wb.save()
+    print(f"\nwitness -> {out}")
     return 0
 
 

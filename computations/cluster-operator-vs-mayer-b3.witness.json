@@ -1,28 +1,41 @@
 {
- "computation": "cluster-operator-vs-mayer-b3",
- "description": "Compare the framework's connected 3-body cluster (Ursell, joint H_9 trace) to the empirical Mayer b3 (AME - 3*b2). Magnitude matches (~1.5 MeV); sign opposed in this chain-adjacent realisation. Scope-limited: not a refutation of the cluster operator.",
- "scriptFile": "computations/probes/binding_cluster_operator_vs_mayer_probe.py",
- "parameters": {
-  "free_parameters": 0,
-  "b2_source": "deuteron"
- },
- "data": {
-  "rows": [
-   {
-    "atom": "T",
-    "framework_c3_MeV": "-1.76877528705",
-    "empirical_b3_MeV": "1.8081",
-    "mag_ratio": "0.97825081",
-    "same_sign": false
-   },
-   {
-    "atom": "3He",
-    "framework_c3_MeV": "-1.40542437684",
-    "empirical_b3_MeV": "1.044345",
-    "mag_ratio": "1.3457472",
-    "same_sign": false
-   }
-  ],
-  "verdict": "scale_matches_sign_opposed_scope_limited"
- }
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-18T09:42:50.556440+00:00",
+  "commitSha": "632fbdd705331bdbe6ca058b2ff2033384c92dbe",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 64,
+  "computation": "cluster-operator-vs-mayer-b3",
+  "scriptFile": "binding_cluster_operator_vs_mayer_probe.py",
+  "scriptHash": "5da9fc085da1",
+  "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Compare the framework's connected 3-body cluster (Ursell, joint H_9 trace) to the empirical Mayer b3 (AME - 3*b2). Magnitude matches (~1.5 MeV); sign opposed in this chain-adjacent realisation. Scope-limited: not a refutation of the cluster operator.",
+  "data": {
+    "upstream_witness_hashes": [
+      {
+        "path": "three-body-joint-trace-a3.witness.json",
+        "sha256": "57abf73f9e4c1cd882068ffb433c5866d45402fb8c676bfacca14a5394e55b23",
+        "size_bytes": 1907,
+        "commitSha": "56e0d96d0785b62b4f6c46c89955d32d3ccf3517",
+        "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
+        "computedAt": "2026-06-22T14:22:04.346803+00:00"
+      }
+    ]
+  },
+  "parameters": {
+    "free_parameters": 0,
+    "b2_source": "deuteron"
+  }
 }

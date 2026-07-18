@@ -1,12 +1,12 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-18T09:37:58.226282+00:00",
-  "commitSha": "12930e1b86d29978c8d6284c2c5eb8a89b4a6962",
+  "computedAt": "2026-07-18T09:50:41.208182+00:00",
+  "commitSha": "1e477d1d863bb48d36afc0c8092aafd70b5a7f38",
   "assertions": [
     {
       "name": "no_missing_provenance",
-      "computed": 255,
+      "computed": 256,
       "expected": 0,
       "passed": false,
       "tolerance": 0,
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 12,
+  "durationMs": 11,
   "computation": "witness-provenance-audit",
   "scriptFile": "witness_provenance_audit.py",
   "scriptHash": "1abb80bb6c90",
@@ -46,12 +46,12 @@
   },
   "data": {
     "counts": {
-      "total_scanned": 1939,
-      "prov_ok": 1624,
+      "total_scanned": 1947,
+      "prov_ok": 1631,
       "prov_audit_exempt": 59,
-      "prov_missing": 255,
+      "prov_missing": 256,
       "prov_parse_error": 1,
-      "completeness_ratio": 0.8679731820526044
+      "completeness_ratio": 0.8680020544427324
     },
     "by_verdict": {
       "PROV_OK": [
@@ -332,6 +332,10 @@
           "missing_fields": []
         },
         {
+          "witness": "alpha-em-nonD-index-route.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "alpha-em-photon-measure-mu-invariance.witness.json",
           "missing_fields": []
         },
@@ -341,6 +345,10 @@
         },
         {
           "witness": "alpha-em-rt-abelian-torsion-count-vs-covolume.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "alpha-em-smatrix-perloop.witness.json",
           "missing_fields": []
         },
         {
@@ -1588,6 +1596,10 @@
           "missing_fields": []
         },
         {
+          "witness": "cluster-operator-vs-mayer-b3.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "co-bond-order-active-set.witness.json",
           "missing_fields": []
         },
@@ -1876,6 +1888,10 @@
           "missing_fields": []
         },
         {
+          "witness": "ka-additive-cluster-derivation.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "li6-h18-amplification-discriminator.witness.json",
           "missing_fields": []
         },
@@ -1892,11 +1908,19 @@
           "missing_fields": []
         },
         {
+          "witness": "mixed-multibond-mubar-integrality.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "nuclear-quotient-jones-torus-link.witness.json",
           "missing_fields": []
         },
         {
           "witness": "packing-exponent-combinatorics.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "perknot-pn-bond-mayer-grounding.witness.json",
           "missing_fields": []
         },
         {
@@ -4436,6 +4460,10 @@
           "missing_fields": []
         },
         {
+          "witness": "qbeta-5two-jones-barodd.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "qbeta-5two-reeb-trace.witness.json",
           "missing_fields": []
         },
@@ -6737,6 +6765,22 @@
           ]
         },
         {
+          "witness": "chi-dineutron-h6-at-q0-50dps.witness.json",
+          "missing_fields": [
+            "engine",
+            "scriptFile",
+            "commitSha"
+          ]
+        },
+        {
+          "witness": "chi-diproton-h6-at-q0-50dps.witness.json",
+          "missing_fields": [
+            "engine",
+            "scriptFile",
+            "commitSha"
+          ]
+        },
+        {
           "witness": "chi-helium-3-free-h9-at-q0-50dps.witness.json",
           "missing_fields": [
             "engine",
@@ -6921,13 +6965,6 @@
           ]
         },
         {
-          "witness": "cluster-operator-vs-mayer-b3.witness.json",
-          "missing_fields": [
-            "engine",
-            "commitSha"
-          ]
-        },
-        {
           "witness": "complete-mass-sweep-2026-05-28.witness.json",
           "missing_fields": [
             "engine",
@@ -6939,6 +6976,13 @@
           "witness": "binding-bring-enhancement-compare.witness.json",
           "missing_fields": [
             "engine",
+            "scriptFile",
+            "commitSha"
+          ]
+        },
+        {
+          "witness": "cross-check-trM-cw-seminormal.witness.json",
+          "missing_fields": [
             "scriptFile",
             "commitSha"
           ]
@@ -7049,13 +7093,6 @@
         },
         {
           "witness": "mixed-multibond-interface.witness.json",
-          "missing_fields": [
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "perknot-pn-bond-mayer-grounding.witness.json",
           "missing_fields": [
             "scriptFile",
             "commitSha"
