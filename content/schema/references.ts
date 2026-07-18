@@ -2478,6 +2478,44 @@ export const references: CSLData[] = [
     URL: "https://arxiv.org/abs/quant-ph/0101025",
   }),
 
+  // ── Jaeger-Vertigan-Welsh 1990: complexity of Jones/Tutte ─────
+  ref({
+    id: "jaeger1990",
+    type: "article-journal",
+    title:
+      "On the computational complexity of the Jones and Tutte polynomials",
+    author: [
+      { family: "Jaeger", given: "F." },
+      { family: "Vertigan", given: "D. L." },
+      { family: "Welsh", given: "D. J. A." },
+    ],
+    "container-title": "Mathematical Proceedings of the Cambridge Philosophical Society",
+    volume: 108,
+    issue: 1,
+    page: "35-53",
+    issued: { "date-parts": [[1990]] },
+    DOI: "10.1017/S0305004100068936",
+  }),
+
+  // ── Aharonov-Jones-Landau 2009: BQP approx of Jones ───────────
+  ref({
+    id: "aharonov2009",
+    type: "article-journal",
+    title: "A Polynomial Quantum Algorithm for Approximating the Jones Polynomial",
+    author: [
+      { family: "Aharonov", given: "D." },
+      { family: "Jones", given: "V." },
+      { family: "Landau", given: "Z." },
+    ],
+    "container-title": "Algorithmica",
+    volume: 55,
+    issue: 3,
+    page: "395-421",
+    issued: { "date-parts": [[2009]] },
+    DOI: "10.1007/s00453-008-9168-0",
+    URL: "https://arxiv.org/abs/quant-ph/0511096",
+  }),
+
   // ── Wigner 1960: Unreasonable effectiveness ───────────────────
   ref({
     id: "wigner1960",
