@@ -64,36 +64,59 @@ the algebraic shortcut is provably obstructed, and the sole remaining step is a 
 computation (Sage/Magma in a network-open environment, or a bespoke mpmath genus-4 period
 integration — deferred, as a rushed numerical build risks a *wrong* τ_E, worse than none).
 
-## Update — τ_Bring is PUBLISHED (not open): j-invariant + magnitude
+## Update — the period is PUBLISHED and now PAPER-CONFIRMED (PDFs in `uploads/`)
 
-The period route is not actually open in the literature — Riera–Rodríguez (1992) and
-**Braden–Disney-Hogg, "Bring's curve: Old and New"** ([arXiv:2208.13692](https://arxiv.org/abs/2208.13692))
-compute it explicitly. The elliptic isogeny factor `E` of `Jac(Bring) ~ E⁴`:
+The period route is not open in the literature. **Braden–Disney-Hogg, "Bring's curve:
+Old and New"** ([arXiv:2208.13692](https://arxiv.org/abs/2208.13692), `uploads/2208.13692v1.pdf`,
+Theorem 2.12 + Prop 4.6) and Riera–Rodríguez (1992) give it explicitly. Read directly
+from the PDF (superseding the earlier search-summary values, which were correct):
 
-- **`τ₀` is a distinguished point on `X₀(5)`**; the elliptic quotients have
-  **`j(τ₀) = −5·29³/2⁵ = −121945/32`** and **`j(5τ₀) = −25/2`** (the 5-isogeny is the
-  `X₀(5)` structure; conductor 50, connection to `X₀(50)`). *(Values via search summary
-  of the paper; verify against the source PDF before wiring.)*
-- **Magnitude leg, evaluated.** Since the #3864 magnitude `1/(√Im τ·|η(τ)|²)` is
-  modular-invariant, `j` alone fixes it. Inverting `j` (mpmath, 40 dps):
+- **The period is `τ₀ = −0.5 + 0.186676 i`** (Theorem 2.12, 6 d.p.; transcendental), with
+  the Riemann matrix `τ_B = τ₀·M`, `M = diag(4)+…`. The elliptic quotients' j-invariants
+  (Thm 2.12, eqns (6),(7), §4):
+  **`j(τ₀) = −29³·5/2⁵ = −121945/32`**, **`j(5τ₀) = −25/2`**, `j(3τ₀) = 5·211³/2¹⁵`,
+  `j(15τ₀) = −5²·241³/2³`. All four curves form one **Q-isogeny class of conductor 50**
+  (`50a`; the 5-isogeny `τ₀↔5τ₀` is the `X₀(5)` point, `X₀(50)` via the genus-2 `C₁`).
 
-  | factor | `j` | `τ` (fund. domain) | `Im τ` | `1/(√Im τ·\|η\|²)` |
-  |---|---|---|---|---|
-  | `E₁` (`j(τ₀)`) | `−121945/32` | `½ + 1.33922 i` | 1.33922 | **1.74146** |
-  | `E₂` (`j(5τ₀)`) | `−25/2` | `½ + 0.93338 i` | 0.93338 | **1.67789** |
+- **Structural correction to #3864 (important).** The Jacobian is **NOT** a single `E⁴`:
+  **`Jac(Bring) ≅ E_{5τ₀}³ × E_{τ₀}` as a complex torus** (Prop 4.6 / [GAR00]; the period
+  is `τ₀·diag(5,5,5,1)`). The C-isogeny class *is* `E⁴` (all four factors isogenous), but
+  the actual complex-torus decomposition is **three copies of `E_{5τ₀}` (`j=−25/2`) + one
+  `E_{τ₀}` (`j=−29³·5/2⁵`)**. And `B/S₄` specifically is genus-1 isogenous to `E_{3τ₀}`
+  (via `A₄`, the residual `S₄/A₄=C₂` acting by a 2-torsion *translation*, not `z→−z` — so
+  it stays genus 1, confirming `dim(std^{S₄})=1`).
 
-So the abelian **magnitude leg is now a concrete number** (`≈ 1.741`, modulo the
-`τ₀`-vs-`5τ₀` isogeny choice — which representative is the polarized Jacobian factor
-must be read from the PDF). This is **not** reverse-engineered from `1/(8π)`: it is
-computed from the *independently published* `j`; the reciprocal `π` remains the
-separate RT/Front-2 prescription (the wall is not thereby closed — `magnitude ≈ 1.74`
-is `O(1)`, and `1/(8π) ≈ 0.0398`, so the RT factor carries the small reciprocal).
+- **Magnitude leg, evaluated from the exact `τ₀`** (the #3864 per-factor measure
+  `1/(√Im τ·|η(τ)|²)` is `SL₂(ℤ)`-invariant, so `j` fixes it; verified against the
+  fund.-domain j-inversions):
 
-**Remaining to close the magnitude leg rigorously:** (i) confirm the `j` values from
-the source PDF (WebFetch proxy-blocked here; the owner is retrieving the PDFs); (ii)
-fix the `τ₀`-vs-`5τ₀` representative via the polarization; (iii) also consult
-Braden–Enolski et al., *"Bring's Curve: its Period Matrix and the Vector of Riemann
-Constants"* for the explicit period matrix.
+  | Jacobian factor | modulus | `j` | `1/(√Im τ·\|η\|²)` |
+  |---|---|---|---|
+  | `E_{5τ₀}` (×3) | `5τ₀`, `Im = 0.93338` | `−25/2` | **1.67789** |
+  | `E_{τ₀}` (×1) | `τ₀`, `Im = 0.186676` | `−29³·5/2⁵` | **1.74146** |
+  | product `m(5τ₀)³·m(τ₀)` | — | — | **8.2263** |
+
+So the abelian magnitude leg is now a **concrete, paper-cited number** — a *product* over
+the `E_{5τ₀}³×E_{τ₀}` factors, **not** a single factor (correcting #3864's "`E=Bring/S₄`"
+framing). It is **not** reverse-engineered from `1/(8π)`; it is computed from the
+independently published period.
+
+**STRICT non-interpretation (anti-fitting).** The product `≈ 8.226` sits near `b₁ = 8`,
+but this is **recorded, not interpreted**: (i) Prop 4.6 states the decomposition is **not**
+an isomorphism of *principally polarized* varieties (the block matrix is *not* symplectic),
+so the true photon determinant on the polarized Jacobian is **not** the naive product of
+per-factor scalar measures — the polarization mixes the factors; (ii) the photon is a
+1-form (analytic torsion + Faddeev–Popov), not a scalar; (iii) `8.226 ≠ 8` and no
+mechanism forces either. Treating `8.226 ≈ 8` as a derivation would be the exact fitting
+trap the spec §3 forbids. **The wall is not closed:** the magnitude leg is now concrete;
+the reciprocal `π` remains RT/Front-2 (and the naive `D(ζ)=8` shared-wall is itself
+falsified on both sides, `677b74277`/#3871).
+
+**What remains** (each now well-posed, not tool-blocked): (i) the **polarized** photon
+determinant on `Jac(Bring)` with the genuine principal polarization (Prop 4.6's non-product
+structure) — the honest replacement for the naive product; (ii) the reciprocal `π` (RT /
+Front-2). Cross-source: `uploads/1206.6004v2.pdf` (Braden–Northover period matrix + RCV)
+and `uploads/the-period-matrix-of-bring-s-curve-1hik02mwva.pdf` (Riera–Rodríguez).
 
 ## Scope guard (STRICT)
 

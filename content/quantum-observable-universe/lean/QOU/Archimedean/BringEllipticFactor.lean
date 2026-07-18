@@ -29,13 +29,19 @@ two transpositions of the sign-twisted action forces every coordinate to vanish)
 So the two 4-dim irreps give genus 1 vs 0; the canonical `{∑xᵢ=0}` embedding is
 `std = (4,1)`, which is what makes `Bring/S₄` genus 1.
 
-Cited literature values (NOT derived here; recorded for reuse): the elliptic factor
-has `j(τ₀) = -5·29³/2⁵ = -121945/32` (conductor 50; the 5-isogeny to
-`j(5τ₀) = -25/2` is the `X₀(5)` structure). Numerically inverting `j` gives
-`τ₀ = ½ + 1.33922·i` and the modular-invariant magnitude
-`1/(√Im τ₀ · |η(τ₀)|²) ≈ 1.74146` — the abelian magnitude leg; the reciprocal `π`
-remains the RT/Front-2 prescription. Verify these against the source PDFs before
-wiring anything.
+Paper-confirmed literature values (NOT derived here; Braden–Disney-Hogg
+arXiv:2208.13692 Thm 2.12 + Prop 4.6, PDF in `uploads/`): the period is
+`τ₀ = -0.5 + 0.186676·i` (transcendental), with `j(τ₀) = -29³·5/2⁵ = -121945/32`,
+`j(5τ₀) = -25/2` (conductor-50 Q-isogeny class `50a`; the 5-isogeny is the `X₀(5)`
+structure). STRUCTURAL: the Jacobian is `Jac(Bring) ≅ E_{5τ₀}³ × E_{τ₀}` as a complex
+torus (period `τ₀·diag(5,5,5,1)`), NOT a single `E⁴`; `B/S₄` is genus-1 isogenous to
+`E_{3τ₀}` (the residual `S₄/A₄ = C₂` acts by a 2-torsion *translation*, so genus stays
+1 — geometric confirmation of `dim(std^{S₄})=1` proved below). The abelian magnitude
+leg (the `SL₂(ℤ)`-invariant per-factor `1/(√Im τ·|η|²)`) is the product
+`m(5τ₀)³·m(τ₀) ≈ 1.67789³·1.74146 ≈ 8.226` — recorded, NOT interpreted (Prop 4.6: the
+decomposition is not principally-polarized, so this naive product is not the polarized
+photon determinant; `8.226 ≈ b₁=8` is a coincidence to be resisted, not a derivation).
+The reciprocal `π` remains the RT/Front-2 prescription.
 
 Base ring `ℤ` (the integral form): the standard representation's integral lattice
 (the `A₄` root lattice) is a `ℤ`-module; the `S₄`-fixed sublattice has **rank 1**,
