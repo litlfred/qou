@@ -6885,6 +6885,60 @@ export const references: CSLData[] = [
     note: "Flat SU(2) connections on Seifert homology spheres via rotation numbers; Sigma(2,3,5) carries exactly two irreducible flat SU(2) connections -- the structural D=2 invariant behind the keystone fold.",
   }),
 
+  // ── Riera–Rodríguez 1992 — the period matrix of Bring's curve ──
+  ref({
+    id: "riera-rodriguez-1992",
+    type: "article-journal",
+    title: "The period matrix of Bring's curve",
+    author: [
+      { family: "Riera", given: "Gonzalo" },
+      { family: "Rodríguez", given: "Rubí E." },
+    ],
+    "container-title": "Pacific Journal of Mathematics",
+    issued: { "date-parts": [[1992]] },
+    volume: "154",
+    issue: "1",
+    page: "179-200",
+    DOI: "10.2140/pjm.1992.154.179",
+    URL: "https://doi.org/10.2140/pjm.1992.154.179",
+    note: "Original explicit period matrix Z = τ₀·C (C the 4×4 matrix with diagonal 4, off-diagonals ±1) of the genus-4 Bring curve (Aut = S₅); the natural isogeny diagonalises Z to (5τ,5τ,5τ,τ), recovering Serre's Jac ~ E⁴. Resolves the Sage tool-block noted in docs/audits/2026-06-24-keystone-bring-jacobian-E4-elliptic-W-plane.md. CAVEAT: this paper SWAPS the two j-invariant equations (a typographical error flagged by Braden–Northover 2012, braden-northover-2012). Registered 2026-07-18 from uploads/ intake; metadata from the uploaded PDF.",
+  }),
+
+  // ── Braden–Northover 2012 — Bring's curve period matrix + Vector of Riemann Constants + real structure ──
+  ref({
+    id: "braden-northover-2012",
+    type: "article-journal",
+    title:
+      "Bring's Curve: its Period Matrix and the Vector of Riemann Constants",
+    author: [
+      { family: "Braden", given: "Harry W." },
+      { family: "Northover", given: "Timothy P." },
+    ],
+    "container-title":
+      "SIGMA (Symmetry, Integrability and Geometry: Methods and Applications)",
+    issued: { "date-parts": [[2012]] },
+    volume: "8",
+    page: "065",
+    DOI: "10.3842/SIGMA.2012.065",
+    URL: "https://doi.org/10.3842/SIGMA.2012.065",
+    note: "Recovers Riera–Rodríguez's period matrix τ₀·C via the Hulek–Craig sextic model, and additionally (i) identifies the Vector of Riemann Constants and (ii) constructs the explicit anti-holomorphic involution (the real structure / complex conjugation on the plane model), whose fixed set is a union of Hilbert ovals. This explicit conjugation on Jac(Bring) is the concrete Hodge-side object of the α_EM per-loop fibre-level correspondence (docs/audits/2026-07-18-alpha-em-involution-type-nome-independent.md). Corrects the j-invariant labelling: j(τ₀) = −5·29³/2⁵, j(5τ₀) = −25/2, flagging the Riera–Rodríguez swap as a typo. Registered 2026-07-18 from uploads/ intake; metadata from the uploaded PDF.",
+  }),
+
+  // ── Braden–Disney-Hogg 2022 — Bring's curve: old and new ──
+  ref({
+    id: "braden-disney-hogg-2022",
+    type: "article",
+    title: "Bring's curve: old and new",
+    author: [
+      { family: "Braden", given: "Harry W." },
+      { family: "Disney-Hogg", given: "Linden" },
+    ],
+    "container-title": "arXiv preprint (European Journal of Mathematics, 2023)",
+    issued: { "date-parts": [[2022]] },
+    URL: "https://arxiv.org/abs/2208.13692",
+    note: "arXiv:2208.13692. Computes the genus-4 Bring period matrix, identifies a new elliptic quotient = the modular curve X₀(50), and gives the S₅-invariant theta-characteristic (divisor of the Szegő kernel). Source of the published j(τ₀) = −5·29³/2⁵ used in docs/coordination/alpha-em.md and QOU/Archimedean/BringEllipticFactor.lean. Registered 2026-07-18 to close the dangling -- Ref: [braden-disney-hogg-2022] in that Lean file (the key was previously unregistered); journal DOI omitted pending verification — arXiv URL is authoritative.",
+  }),
+
 ];
 
 // ── Lookup helpers ──────────────────────────────────────────────

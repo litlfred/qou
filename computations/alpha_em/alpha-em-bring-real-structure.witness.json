@@ -1,0 +1,66 @@
+{
+  "$schema": "https://litlfred.github.io/witness-schema/witness.schema.json",
+  "witnessVersion": "1.0",
+  "id": "alpha-em-bring-real-structure",
+  "description": "\u03b1_EM per-loop fibre-level rho grounded on Bring period data: both elliptic factors of Jac(Bring) have real j-invariants (\u2212121945/32, \u221225/2) \u21d2 the anti-holomorphic real structure (Braden\u2013Northover) exists = concrete target of the sibling's rho. Converges with bean qou-b5qg. scope-(a), auditOnly.",
+  "auditOnly": true,
+  "computation": {
+    "script": "computations/alpha_em/alpha_em_bring_real_structure_probe.py",
+    "scriptCommitSha": "d69e5449415b7175d3e3141affbd1439ce8e74be",
+    "scriptHash": "abb5668d13e2"
+  },
+  "inputs": {
+    "j_tau0": "-121945/32",
+    "j_5tau0": "-25/2",
+    "isogeny": "E_{5\u03c40}^3 \u00d7 E_{\u03c40}"
+  },
+  "controls": [
+    {
+      "name": "j_tau0_value",
+      "pass": true,
+      "detail": "j(\u03c4\u2080) = \u22125\u00b729\u00b3/2\u2075 = -121945/32"
+    },
+    {
+      "name": "j_5tau0_value",
+      "pass": true,
+      "detail": "j(5\u03c4\u2080) = \u221225/2 = -25/2"
+    },
+    {
+      "name": "isogeny_multiplicities",
+      "pass": true,
+      "detail": "Jac(Bring) ~ E_{5\u03c4\u2080}\u00b3 \u00d7 E_\u03c4\u2080 (total dim 4 = genus)"
+    }
+  ],
+  "assertions": [
+    {
+      "name": "j_tau0_is_real",
+      "pass": true,
+      "detail": "j(\u03c4\u2080) is a real rational \u21d2 E_\u03c4\u2080 has a model over \u211d \u21d2 admits an anti-holomorphic involution (real structure)"
+    },
+    {
+      "name": "j_5tau0_is_real",
+      "pass": true,
+      "detail": "j(5\u03c4\u2080) is a real rational \u21d2 E_{5\u03c4\u2080} has a model over \u211d \u21d2 admits a real structure"
+    },
+    {
+      "name": "both_factors_real",
+      "pass": true,
+      "detail": "BOTH elliptic factors of Jac(Bring) ~ E_{5\u03c4\u2080}\u00b3\u00d7E_\u03c4\u2080 have real j \u21d2 Jac(Bring) carries an anti-holomorphic involution \u2014 the one Braden\u2013Northover 2012 construct explicitly (real structure + Hilbert ovals + VRC)"
+    },
+    {
+      "name": "rho_target_exists_concretely",
+      "pass": true,
+      "detail": "the sibling B1's fibre parameter-conjugation rho (q\u21a6conj(q) \u2194 \u03c4\u21a6\u2212conj(\u03c4), Hodge type) has its geometric target = Braden\u2013Northover's explicit anti-holomorphic involution on Jac(Bring); reality of the j-invariants WITNESSES that target's existence (arithmetic fact, not an abstract type argument) \u2014 grounds sibling B2 (\u03c4(rho)=Hodge conjugation)"
+    },
+    {
+      "name": "channelswap_still_holo_not_the_involution",
+      "pass": true,
+      "detail": "the Hecke channel-swap q\u21a6\u2212q\u207b\u00b9 fixes i (\u2102-LINEAR/holo, #3949) \u21d2 it is NOT the anti-holomorphic real structure; rho (anti-holo) is \u2014 consistent with #3949's type-obstruction, resolved by rho not by the channel-swap"
+    }
+  ],
+  "allPass": true,
+  "verdict": "Concrete grounding of the fibre-level rho-correspondence on Bring period data (scope-(a), exact arithmetic) \u2014 CONVERGES with sibling B1/B2 (bean qou-b5qg), does not duplicate. Using the newly-registered period-matrix literature ([riera-rodriguez-1992], [braden-northover-2012]): Jac(Bring) ~ E_{5\u03c4\u2080}\u00b3 \u00d7 E_\u03c4\u2080 with j(\u03c4\u2080)=\u22125\u00b729\u00b3/2\u2075=\u2212121945/32 and j(5\u03c4\u2080)=\u221225/2, BOTH real rationals. Real j \u21d2 each factor has a model over \u211d \u21d2 admits an anti-holomorphic involution (real structure); so Jac(Bring) carries the explicit involution Braden\u2013Northover 2012 construct (real structure + Hilbert ovals + VRC). That involution is the concrete Hodge-side target of the sibling's fibre parameter-conjugation rho (q\u21a6conj(q) \u2194 \u03c4\u21a6\u2212conj(\u03c4)); its EXISTENCE is witnessed by the reality of the j-invariants \u2014 an arithmetic fact, grounding sibling B2 (\u03c4(rho)=Hodge conjugation) on the actual Bring Jacobian. Consistent with #3949: the channel-swap q\u21a6\u2212q\u207b\u00b9 is \u2102-linear (holo, NOT this involution); rho (anti-holo) is. Does NOT prove the functorial identity (sibling B2) or close the wall. No CODATA read; no fit; no \u03b1_k wired; 1/(8\u03c0) stays a phase-4 id.",
+  "scope": "(a) scope-limited \u2014 concrete existence of rho's target on Bring; functorial identity (sibling B2) stays open",
+  "antiLaundering": "exact rational arithmetic; registered literature j-values; no CODATA read; functorial identity stated open",
+  "coordinatesWith": "bean qou-b5qg (sibling B1/B2 fibre reality structure); this grounds B2's target concretely"
+}
