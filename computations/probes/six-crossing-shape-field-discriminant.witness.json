@@ -1,0 +1,71 @@
+{
+  "engine": "mpmath+sympy",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-07-18T15:04:00.378672+00:00",
+  "commitSha": "be80d32294671da22480701ae355aebd82cc1316",
+  "assertions": [
+    {
+      "name": "six_crossing_shape_discriminants_verified",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "Each SnapPy shape is a root of its PARI-algdep minimal polynomial to |p(z)|<1e-60 at 90 digits, and the sympy discriminant equals the stated prime (6_1: 257, 6_2: 1777). Formalized (6_1) as ∏(yi-yj)^2 = 257 in SixOneShapeDiscriminant.lean."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 18,
+  "computation": "six-crossing-shape-field-discriminant",
+  "scriptFile": "six_crossing_shape_field_discriminant.py",
+  "scriptHash": "41f20255adc3",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
+  },
+  "description": "Reproducibility witness for the 6-crossing shape-field arithmetic fingerprints formalized by QOU/QBeta/SixOneShapeDiscriminant.lean. Shapes from snappy.Manifold('6_1'/'6_2') (dec_prec=90), minimal polynomials from PARI algdep; re-verified here with mpmath+sympy only (no SnapPy at run time). 6_1: x^4-3x^3+6x^2-5x+2, disc 257 (prime); 6_2: x^5-3x^4+5x^3-5x^2+4x-1, disc 1777 (prime). Each shape is a root to |p(z)|<1e-60 at 90 digits; discriminants match and are prime. GGM works explicit saddle curves only for 4_1/5_2, so the 6-crossing datum is taken from the hyperbolic geometry (SnapPy) instead. No fit; nothing wired.",
+  "data": {
+    "6_1": {
+      "min_poly_coeffs": [
+        1,
+        -3,
+        6,
+        -5,
+        2
+      ],
+      "min_poly": "x**4 - 3*x**3 + 6*x**2 - 5*x + 2",
+      "shape_is_root": true,
+      "p_at_z_abs": "2.72e-90",
+      "discriminant": 257,
+      "discriminant_expected": 257,
+      "discriminant_matches": true,
+      "discriminant_is_prime": true
+    },
+    "6_2": {
+      "min_poly_coeffs": [
+        1,
+        -3,
+        5,
+        -5,
+        4,
+        -1
+      ],
+      "min_poly": "x**5 - 3*x**4 + 5*x**3 - 5*x**2 + 4*x - 1",
+      "shape_is_root": true,
+      "p_at_z_abs": "1.96e-90",
+      "discriminant": 1777,
+      "discriminant_expected": 1777,
+      "discriminant_matches": true,
+      "discriminant_is_prime": true
+    }
+  }
+}
