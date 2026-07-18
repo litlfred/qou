@@ -195,6 +195,56 @@ theorem LiTwo_one : LiTwo 1 = Real.pi ^ 2 / 6 := by
   push_cast
   simp
 
+/-- **Bar-odd cusp partner** `LiTwo (-1) = -π²/12`.  The alternating Basel value
+    `-η(2) = -ζ(2)/2`, the natural `sinh`/bar-odd companion of the bar-even
+    `LiTwo 1 = π²/6`.  Proved by the duplication `LiTwo 1 + LiTwo (-1) = π²/12`:
+    the combined summand `g n = ((-1)^{n+1} + 1)/(n+1)²` vanishes on even `n`, and
+    its odd reindex `n = 2k+1` is `½·(k+1)⁻²`, so `∑ g = ½·ζ(2) = π²/12` (the
+    even/odd `Function.Injective.hasSum_iff` reindex, as in Mathlib's
+    `hasSum_log_sub_log_of_abs_lt_one`).  Subtracting `∑ (n+1)⁻² = ζ(2)` leaves
+    `LiTwo (-1) = π²/12 - π²/6 = -π²/12`. -/
+theorem LiTwo_neg_one : LiTwo (-1) = -Real.pi ^ 2 / 12 := by
+  -- shifted Basel: ∑_k (k+1)⁻² = π²/6
+  have hone : HasSum (fun k : ℕ => (1 : ℝ) / ((k : ℝ) + 1) ^ 2) (Real.pi ^ 2 / 6) := by
+    have h := (hasSum_nat_add_iff (f := fun n : ℕ => (1 : ℝ) / (n : ℝ) ^ 2) 1).mpr
+                (by simpa using hasSum_zeta_two)
+    simpa using h
+  -- half of it, the odd-reindexed value
+  have hhalf : HasSum (fun k : ℕ => (1 / 2 : ℝ) * (1 / ((k : ℝ) + 1) ^ 2))
+      (Real.pi ^ 2 / 12) := by
+    have := hone.mul_left (1 / 2 : ℝ); convert this using 1; ring
+  -- the combined summand g sums to π²/12 via the odd reindex
+  have hinj : Function.Injective (fun k : ℕ => 2 * k + 1) := by
+    intro a b hab; dsimp only at hab; omega
+  have hg : HasSum
+      (fun n : ℕ => ((-1 : ℝ)) ^ (n + 1) / ((n : ℝ) + 1) ^ 2 + 1 / ((n : ℝ) + 1) ^ 2)
+      (Real.pi ^ 2 / 12) := by
+    rw [← hinj.hasSum_iff]
+    · -- reindexed function equals hhalf's summand
+      have hfun :
+          (fun n : ℕ => ((-1 : ℝ)) ^ (n + 1) / ((n : ℝ) + 1) ^ 2 + 1 / ((n : ℝ) + 1) ^ 2)
+            ∘ (fun k : ℕ => 2 * k + 1)
+          = fun k : ℕ => (1 / 2 : ℝ) * (1 / ((k : ℝ) + 1) ^ 2) := by
+        funext k
+        simp only [Function.comp]
+        have he : ((-1 : ℝ)) ^ (2 * k + 1 + 1) = 1 := Even.neg_one_pow ⟨k + 1, by ring⟩
+        have hk : ((k : ℝ) + 1) ≠ 0 := by positivity
+        rw [he]; push_cast; field_simp; ring
+      rw [hfun]; exact hhalf
+    · -- g vanishes off the odds (i.e. on even m)
+      intro m hm
+      have hmeven : Even m := by
+        rcases Nat.even_or_odd m with he | ho
+        · exact he
+        · obtain ⟨k, rfl⟩ := ho; exact absurd ⟨k, rfl⟩ hm
+      have hpow : ((-1 : ℝ)) ^ (m + 1) = -1 := Odd.neg_one_pow hmeven.add_one
+      simp only [hpow]; ring
+  -- subtract the ζ(2) copy: g n - (n+1)⁻² = (-1)^{n+1}(n+1)⁻²
+  have hfneg := hg.sub hone
+  simp only [add_sub_cancel_right] at hfneg
+  unfold LiTwo
+  rw [hfneg.tsum_eq]; ring
+
 /-! ## Part A primitives — the sub-unity reduction (`x ∈ (0,1)`, `q ∈ (0,1)`)
 
 The elementary (sub-unity) direction of `conj:dilogarithm-archimedean-limit`.
