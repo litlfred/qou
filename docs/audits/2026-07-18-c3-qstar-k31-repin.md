@@ -45,7 +45,7 @@ the experimental neutron `Q_β`. **The extractor carries no `d_k`.**
    `k=1: 1.5e−2 · k=2: 1.4e−3 · k=3: 3.7e−5 · k=6: 7.9e−9 · k=9: 1.6e−12 ·
    k=12: 3.5e−16 · k=20: 7.8e−26`, and `O_K(q*)` is constant at 60+ dps from
    k ≈ 12 onward. The extra terms **k = 22…31 change `O(q*)` by `|O_31 − O_21| ≈`
-   `<FILL_TAIL>`** — nothing at the physical substrate point.
+   `6.94e−29`** — nothing at the physical substrate point.
    (Consistent with #3821: the q-Gevrey divergence is a growth *class* that only
    overtakes `ũ^k` when `C·log k > |log ũ|`, i.e. `k ≳ e^{|log ũ|/C} ≈ 10^{33}`
    at `ũ ≈ 0.0095, C ≈ 0.06` — so at k ≤ 31 the carrier is, in practice,
