@@ -1811,3 +1811,26 @@ mechanism* behind that ladder and pins where the odd channel departs from it:
 
 Audit: [`2026-07-18-knot-operator-gram-recurrence.md`](../audits/2026-07-18-knot-operator-gram-recurrence.md).
 Records the mechanism + its KC22 boundary; no c_k wired, no fit, no tier change.
+**2026-07-18 (analytic M-dictionary, part 1) — THE u=0 5₂ TOWER LAYER IS
+DERIVED AND CERTIFIED OCR-FREE; the (92) orthogonality and the E₂
+constant slots are now EXACT.** `qbeta_g3_5two_analytic_hm_tower.py`
+(4/4 green): the H^ε_{k,m} towers (GGM 89a-c/90a-c with E-series (79))
+implemented and self-certified against Theorem 11 without trusting a
+single ambiguous glyph. (T1) H⁺ satisfies the (86) q-difference
+recurrence and H⁻ its q→q⁻¹ extension recurrence to < 1e-48 — the E₁
+sign is pinned uniquely (flip breaks at > 1e-6) and the (80) extension
+identity is structurally certified. (T2) the k=2 constant slot enters
+as a c·H₀ column operation — proven (86)- and det-invisible. (T3, the
+centerpiece, EXACT rational q-series arithmetic): every Theorem-11
+bilinear carries only the SUM σ_c = c⁺+c⁻, and demanding the (92)
+entries be Laurent POLYNOMIALS derives σ_c = 1/4 − 6·Ê₂ exactly —
+identically the printed "−(1/6)E₂ / −(1/12)E₂" under standard
+E₂ = 1−24Ê₂ — plus the (92) RHS = [[1,0,0],[0,0,1],[0,1,3−q^m]], all
+entries exact to O(q^24), held-out m=2 verified. The (c⁺,c⁻) split is
+Theorem-11-invisible; its pin is honestly deferred to the (82)
+state-integral match. (T4) independent mpmath towers reproduce the
+derived identity to 1e-50. NEXT (part 2): W₋₁-based (94)-(95) M/S
+sandwiches vs the q→0 targets (96/97, constants {3,4}), the (82)
+u=0 state-integral match (pins the split + ties towers to the
+certified #3951 blocks), then wall-crossing to deformed x → the
+derived-precision φ_odd. No fit; no c_k wired; scope-(a).
