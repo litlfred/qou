@@ -1,0 +1,155 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-18T08:56:48.010474+00:00",
+  "commitSha": "896d91d8b707ea984f1fc34716bdf1c6a719d6f0",
+  "assertions": [
+    {
+      "name": "controls_pass",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "zeta_Delta1(0)=-b1 reproduced; circle det zeta'_{S^1}(0)=-2logL (det'=L^2) for L=1,2,3.7; E'_Z(0)=-2log(2pi); torsion weight Sum(-1)^q q C(d,q)=-1(d=1),0(d>=2)"
+    },
+    {
+      "name": "circle_det_closed_form_reproduced",
+      "computed": 3.944304526105059e-31,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-10,
+      "source": "zeta'_{S^1}(0) = -2 log L via the Epstein-derivative machinery vs the closed form"
+    },
+    {
+      "name": "ray_singer_torsion_of_flat_torus_is_trivial",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 1e-08,
+      "source": "tau_RS(T^b1)=exp(1/2 zeta'_Delta0(0) Sum_q(-1)^q q C(b1,q))=exp(0)=1: analytic torsion trivial (pi cancels); fails pi-power=-1 and reciprocal-b1 axes"
+    },
+    {
+      "name": "permode_derivative_is_b1_independent_not_reciprocal",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "d(log Z_Maxwell)/db1 = -1/2 log(2pi) + const is b1-independent; no graded/per-mode determinant object on T^{b1} is reciprocal in b1"
+    },
+    {
+      "name": "no_flat_torus_object_meets_all_three_axes",
+      "computed": 0.0,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "A (torsion=1, covolume residue) and B (alt-ratio=1, per-mode const) each fail area-free + pi^-1 + reciprocal-b1; measure must be the RT/WRT S-matrix total quantum dimension D=Sum d_i^2 (off the flat-torus determinant). No alpha_k wired; no fit."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 28,
+  "computation": "alpha-em-torsion-perloop",
+  "scriptFile": "alpha_em_torsion_perloop_probe.py",
+  "scriptHash": "d9660b7629e1",
+  "scriptCommitSha": "227b64ae06b2d27fb0a73474fc1826286315eb83",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Redirect of the α_EM per-loop measure search after #3870 ruled out the naive Maxwell partition function on the photon target J(M)=T^{b₁} (b₁=8). Tests the next-obvious normalization objects — Ray–Singer analytic torsion (A) and the graded/per-mode determinant ratios (B) — against the three-axis constraint #3870 sharpened: the object must be (i) area/covolume-free, (ii) π-power EXACTLY −1 (bare π), (iii) reciprocal in b₁ (1/b₁). Target: 1/(π·b₁)=1/(8π). Each candidate is measured independently then COMPARED (never fitted); no CODATA read; no convention tuned to 8π. RESULT — scope-(a) NEGATIVE on all: (A) on the flat parallelizable torus Δq=C(d,q)Δ₀ so log τ_RS = ½ ζ'_Δ₀(0)·Σ_q(−1)^q q C(d,q), and Σ_q(−1)^q q C(d,q)=0 for d≥2 ⇒ τ_RS(T^8)=1 (analytic torsion TRIVIAL; the π in ζ'_Δ₀(0)=log(4π²)+E'_Λ(0) CANCELS in the alternating sum) — π-power 0 (not −1), no reciprocal-b₁; the residual metric-on-cohomology normalization is the covolume √det G (Cheeger–Müller=Reidemeister), shape-dependent, in the 1/Area category data-excluded at −1419 ppb (#3842). (B) the alternating det ratio ∏(det'Δq)^{(−1)^q q/2}=1/τ_RS=1 and the per-mode derivative d(logZ)/db₁=−½log(2π)+const is b₁-INDEPENDENT — no graded/per-mode object on T^{b₁} is reciprocal in b₁. CONTROLS all pass: ζ_Δ₁(0)=−b₁ reproduced; the ζ'(0) machinery reproduces the circle closed form ζ'_S¹(0)=−2logL (det'Δ=L²) for L=1,2,3.7 and E'_ℤ(0)=−2log(2π); the torsion weight Σ_q(−1)^q q C(d,q)=−1 (d=1), 0 (d≥2). SHARPENED REDIRECT (C): every flat-torus spectral invariant is EXTENSIVE in b₁ (ζ(0)=−b₁, ζ'(0)∝b₁, logZ∝b₁) or a covolume (torsion) — never 1/b₁; a reciprocal 1/b₁ is a 1/(total count) democratic-average normalization, the hallmark of the RT/WRT modular S-matrix total quantum dimension D=Σd_i² (S_{00}=1/D) / Verlinde per-handle measure, living OFF the flat-torus determinant on the nonabelian S-matrix (Front 2 / W_λ keystone), NOT any determinant/torsion on the Jacobian. No α_k wired; no fit; 1/(8π) stays a phase-4 identification.",
+  "contentBlock": "prop:alpha-em-categorical-trace",
+  "auditOnly": "docs/audits/2026-07-18-alpha-em-torsion-perloop-redirect.md",
+  "parameters": {
+    "compute_dps": 30,
+    "b1_dim_H1_Bring": 8,
+    "target_measure": "1/(pi*b1) = 1/(8*pi)"
+  },
+  "data": {
+    "three_axis_constraint": {
+      "area_covolume_free": "required (as zeta_Delta1(0)=-b1 is; naive Maxwell Z keeps covolume)",
+      "pi_power_exact_minus_1": "required (bare pi, not 2pi; naive Z has (2pi)^{-b1/2})",
+      "reciprocal_in_b1": "required (1/b1, not exponential (2pi)^{-b1/2} nor linear -b1)"
+    },
+    "controls": {
+      "zeta_delta1_0_equals_minus_b1": true,
+      "Eprime_z_d1_vs_minus_2_log_2pi": {
+        "machinery": "-3.675754132818691",
+        "exact": "-3.675754132818691",
+        "err": "0.0",
+        "ok": true
+      },
+      "circle_det_zeta_prime": {
+        "rows": [
+          {
+            "L": "1.0",
+            "zeta_prime_0": "0.0",
+            "exact_minus_2logL": "0.0",
+            "detprime": "1.0",
+            "L_squared": "1.0",
+            "ok": true
+          },
+          {
+            "L": "2.0",
+            "zeta_prime_0": "-1.3862943611199",
+            "exact_minus_2logL": "-1.3862943611199",
+            "detprime": "4.0",
+            "L_squared": "4.0",
+            "ok": true
+          },
+          {
+            "L": "3.7",
+            "zeta_prime_0": "-2.6166656393004",
+            "exact_minus_2logL": "-2.6166656393004",
+            "detprime": "13.69",
+            "L_squared": "13.69",
+            "ok": true
+          }
+        ],
+        "ok": true,
+        "closed_form": "zeta'_{S^1}(0) = -2 log L, det' Delta = L^2"
+      },
+      "torsion_weight_alt_sum": {
+        "1": -1,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "8": 0
+      }
+    },
+    "candidate_A_ray_singer_torsion": {
+      "zeta_prime_delta0_unit_T8": "2.5787422645963",
+      "pi_content_log_4pi2": "3.67575413282",
+      "alt_sum_weight_b1": 0,
+      "log_tau_RS": "0.0",
+      "tau_RS_T8": "1.0",
+      "axis_i_covolume_free": false,
+      "axis_ii_pi_power_minus1": false,
+      "axis_iii_reciprocal_b1": false,
+      "reading": "tau_RS(T^8)=1 (analytic torsion TRIVIAL; pi cancels in alternating sum). Residual metric-on-cohomology normalization = covolume sqrt(det G), shape-dependent (1/Area category, data-excluded -1419 ppb, #3842). Fails all three axes."
+    },
+    "candidate_B_graded_permode_ratio": {
+      "B1_alt_det_ratio": "1.0",
+      "B1_equals_inv_tau_RS": true,
+      "B2_dlogZ_db1": "-0.9189385332",
+      "B2_is_b1_independent_constant": true,
+      "reading": "alt det ratio = 1/tau_RS = 1; per-mode derivative d(logZ)/db1 = -1/2 log(2pi) + const is b1-INDEPENDENT. No graded/per-mode object on T^{b1} is reciprocal in b1."
+    },
+    "candidate_C_redirect": {
+      "flat_torus_invariants_are_extensive_or_covolume": {
+        "zeta_delta1_0": "-b1 (linear numerator count, #3834)",
+        "zeta_prime_delta1_0": "proportional to b1 (extensive)",
+        "log_Z_maxwell": "proportional to b1 (exponential measure, #3870)",
+        "torsion": "tau_RS=1; covolume sqrt(det G) (A / #3842)"
+      },
+      "reciprocal_b1_is": "a 1/(total-count) democratic-average normalization (one photon over b1 harmonic directions)",
+      "must_live": "RT/WRT modular S-matrix total quantum dimension D=Sum d_i^2 (S_00=1/D) / Verlinde per-handle measure — bare pi from the S-matrix; OFF the flat-torus determinant, on the NONABELIAN S-matrix route (Front 2 / W_lambda keystone). NOT a determinant/torsion on the Jacobian."
+    }
+  }
+}
