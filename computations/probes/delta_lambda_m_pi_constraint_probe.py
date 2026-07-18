@@ -264,6 +264,11 @@ witness = {
     "allPassed": True,
 }
 
+import sys as _sys  # noqa: E402 — P30 rollup (bean cmiy)
+_sys.path.insert(0, str(HERE.parent / "substrate"))
+from witness_base import WitnessBuilder  # noqa: E402
+WitnessBuilder.stamp_staleness_metadata(witness, script_path=__file__, engine="python")
+witness["scriptFile"] = Path(__file__).name
 out_path = HERE / "delta-lambda-m-pi-constraint-probe.witness.json"
 with open(out_path, "w") as f:
     json.dump(witness, f, indent=2, default=str)

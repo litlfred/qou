@@ -1,34 +1,34 @@
 {
-  "engine": "python3/mpmath",
+  "engine": "python",
   "engineVersion": "50dps",
-  "computedAt": "2026-05-26T13:47:16Z",
+  "computedAt": "2026-07-18T17:12:00.853814+00:00",
   "computation": "delta-lambda-m-pi-constraint-probe",
   "scriptFile": "delta_lambda_m_pi_constraint_probe.py",
   "description": "Probes whether m_\u03c0 as CAL-3 tightens the \u0394_\u03bb closure problem. Sets up joint 2-equation system (pion + proton) at H_3 level: 2 equations, 3 unknowns \u2192 rank 2 system with 1 free parameter. Tests whether uniform \u0394_\u03bb reproduces m_p/m_\u03c0 ratio.",
   "parameters": {
-    "q0": "1.1099785955541805752815940796095093779932822799587",
-    "h_q": "0.20906032198987946110160842229792190646175630391648",
+    "q0": "1.1099785827513808075916690956107688798744991218736",
+    "h_q": "0.20906029879563931543084621312967494385975749526306",
     "m_e_MeV": "0.51099895069",
     "m_pi_MeV": "139.57039",
     "m_p_MeV": "938.27208816"
   },
   "data": {
     "h3_meson_coefficients": {
-      "(3,)": 0.7768724336867665,
-      "(2, 1)": 0.3378039583682688,
-      "(1, 1, 1)": 0.012161783835887716
+      "(3,)": 0.7768723799228004,
+      "(2, 1)": 0.3378039453859716,
+      "(1, 1, 1)": 0.012161784677551997
     },
     "h3_proton_coefficients": {
       "(3,)": 0.5742823959732429,
       "(2, 1)": 0.5078374320593602,
       "(1, 1, 1)": -0.016813599440214322
     },
-    "meson_coeff_sum": 1.126838175890923,
+    "meson_coeff_sum": 1.126838109986324,
     "proton_coeff_sum": 1.0653062285923887,
-    "det_sym_std": 0.20053003518021806,
+    "det_sym_std": 0.20053001533236836,
     "ratio_mp_mpi_pdg": 6.722572661436283,
-    "ratio_coeff_sums": 0.9453941580831828,
-    "uniform_delta_miss_pct": 85.93701837532541
+    "ratio_coeff_sums": 0.9453942133757953,
+    "uniform_delta_miss_pct": 85.93701755283354
   },
   "assertions": [
     {
@@ -40,5 +40,9 @@
       "passed": true
     }
   ],
-  "allPassed": true
+  "allPassed": true,
+  "scriptHash": "6269330559f7",
+  "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
+  "commitSha": "58abb081414b74321a6be9450d00f24bfbc0f56c",
+  "durationMs": 0
 }

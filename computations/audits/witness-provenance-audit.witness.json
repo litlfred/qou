@@ -1,12 +1,12 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-18T17:07:35.233196+00:00",
-  "commitSha": "498a08c2c47e80c1dd49553ac9fe8c73e96e0b8b",
+  "computedAt": "2026-07-18T17:13:31.526530+00:00",
+  "commitSha": "58abb081414b74321a6be9450d00f24bfbc0f56c",
   "assertions": [
     {
       "name": "no_missing_provenance",
-      "computed": 238,
+      "computed": 237,
       "expected": 0,
       "passed": false,
       "tolerance": 0,
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 29,
+  "durationMs": 11,
   "computation": "witness-provenance-audit",
   "scriptFile": "witness_provenance_audit.py",
   "scriptHash": "1abb80bb6c90",
@@ -47,12 +47,12 @@
   },
   "data": {
     "counts": {
-      "total_scanned": 1990,
-      "prov_ok": 1692,
+      "total_scanned": 1993,
+      "prov_ok": 1696,
       "prov_audit_exempt": 59,
-      "prov_missing": 238,
+      "prov_missing": 237,
       "prov_parse_error": 1,
-      "completeness_ratio": 0.8798994974874372
+      "completeness_ratio": 0.8805820371299549
     },
     "by_verdict": {
       "PROV_OK": [
@@ -2449,6 +2449,10 @@
           "missing_fields": []
         },
         {
+          "witness": "h6-deuteron-free-word-chi-lambda.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "habiro-correction-product.witness.json",
           "missing_fields": []
         },
@@ -4045,6 +4049,10 @@
           "missing_fields": []
         },
         {
+          "witness": "delta-lambda-m-pi-constraint-probe.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "difference-knot-binding.witness.json",
           "missing_fields": []
         },
@@ -4701,6 +4709,10 @@
           "missing_fields": []
         },
         {
+          "witness": "qbeta-g3-5two-barodd-substrate.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "qbeta-g3-5two-exact-blocks.witness.json",
           "missing_fields": []
         },
@@ -4846,6 +4858,10 @@
         },
         {
           "witness": "rho-k-markov-multiplicativity.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "six-crossing-shape-field-discriminant.witness.json",
           "missing_fields": []
         },
         {
@@ -6859,6 +6875,14 @@
           ]
         },
         {
+          "witness": "alpha-em-involution-type.witness.json",
+          "missing_fields": [
+            "engine",
+            "scriptFile",
+            "commitSha"
+          ]
+        },
+        {
           "witness": "alpha-em-multiplicity2-realcomplex.witness.json",
           "missing_fields": [
             "engine",
@@ -7446,14 +7470,6 @@
           ]
         },
         {
-          "witness": "h6-deuteron-free-word-chi-lambda.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
           "witness": "habiro-coefficients-atomic.witness.json",
           "missing_fields": [
             "engine",
@@ -8011,12 +8027,6 @@
         },
         {
           "witness": "delta-lambda-h6-branching.witness.json",
-          "missing_fields": [
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "delta-lambda-m-pi-constraint-probe.witness.json",
           "missing_fields": [
             "commitSha"
           ]
