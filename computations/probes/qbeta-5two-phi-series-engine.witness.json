@@ -1,0 +1,102 @@
+{
+  "engine": "sympy+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-07-18T22:29:26.202024+00:00",
+  "commitSha": "b933d1e08f43d51b717a247c58b1fdcdc75e598f",
+  "assertions": [
+    {
+      "name": "saddle_is_geometric_root",
+      "computed": 1.5557538194652854e-61,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-50,
+      "source": "V₀' = 0 ⇔ (1−x)³ = x² at the geometric ξ₁ branch"
+    },
+    {
+      "name": "P1_matches_agreed",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "engine P₁ = the agreed printed τ¹ (GGM@z = Peacock@ξ) at 1e-30"
+    },
+    {
+      "name": "P2_matches_arbitrated",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "engine P₂ = the arbitrated Peacock-eq-76@ξ value at 1e-30 — independent re-confirmation of the misprint arbitration"
+    },
+    {
+      "name": "borel_singularity_near_iota12",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "Borel nearest-singularity estimate within 20% of the GGM eq-81 ι₁₂ Stokes distance (resurgence gate)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "qbeta-5two-phi-series-engine",
+  "scriptFile": "qbeta_5two_phi_series_engine_probe.py",
+  "scriptHash": "4b132a190417",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "A4.2 (bean qou-ea86): first-principles generation of the 5₂ φ_σ1 perturbative series to order 24 by formal steepest descent of the state integral in the τ-channel (Faddeev asymptotics of Φ_b³; V₀ = 3Li₂(−e^y)+y² whose critical equation is exactly GGM eq-19; all vertices rational in the saddle via the Li_{−k} tower; Wick engine at dps 60). Gates: saddle = the geometric ξ₁; P₁ = the agreed printed value; P₂ = the ARBITRATED (Peacock@ξ) value — the engine independently re-confirms the 2026-07-18 τ² misprint arbitration if these pass at 1e-30. P₃ derived (settles the A4.1 τ³ diagnostic). Borel diagnostics: nearest-singularity ratio estimate vs the GGM eq-81 ι₁₂ = |V(σ1)−V(σ2)|/2π Stokes distance. Unblocks the A4 median Borel–Laplace program. auditOnly; no c_k wired; no fit.",
+  "contentBlock": "prop:phi-b-unitary-bar-odd",
+  "data": {
+    "series_order": 24,
+    "P_coefficients": {
+      "1": "(-0.01208041927486675563400166486275562901068 - 0.1055728779387928195235325513460383799719j)",
+      "2": "(-0.01593779183910940011412494549397133891397 - 0.009469271398593736024411268237420290858678j)",
+      "3": "(-0.00475115247883310820448880219126438385068 + 0.003173406834870495573698049628434888645823j)",
+      "4": "(0.0004022712878050188815831772544599199484217 + 0.0007902403838287640214377045780953017676577j)",
+      "5": "(-0.001286550084904424391260727701623542413081 - 0.0009823028451354449082832131124436308094369j)",
+      "6": "(-0.002895407196451830302960128489177790547807 + 0.001615233259425077183239992458191064426097j)",
+      "7": "(-0.0000004995983152091867790006186874828293751274 + 0.004950718901869512007491009884418580496395j)",
+      "8": "(0.005600587356672272827816745411812946685606 + 0.003531915286866108835246443601716120107259j)",
+      "9": "(0.007421042811616630084419981043913559210571 - 0.002733216838774355551097572535796836744932j)",
+      "10": "(0.00451033252480380596723515771078066856986 - 0.006404995994174842712616554517337970639244j)",
+      "11": "(0.009586574694856515035825978918361747555463 - 0.008868458332216344113573846688569677133225j)",
+      "12": "(0.02000603480165786335801430916428982557131 - 0.04624323954682144076569038390774888238654j)",
+      "13": "(-0.06126637074703352174021926340408575680085 - 0.1478955955463263616989459744092612987301j)",
+      "14": "(-0.4149652646681346935337369742386965755963 - 0.1401880600814175187865334595239990185458j)",
+      "15": "(-0.9630827969366732588241297331241023234417 + 0.4938684481741778186777086788318552292491j)",
+      "16": "(-1.119521108796905315175932005607863873909 + 2.267696615800365216447002410563115168702j)",
+      "17": "(-0.5378455005519315801487288368682100916762 + 6.77938033290287596314652504383400299457j)",
+      "18": "(7.727232452418279034398829912659707323769 + 25.08897928232850878666036047913338739681j)",
+      "19": "(89.78446360390551306731150419410879320078 + 70.92007779741232748638455097093474424443j)",
+      "20": "(473.8040998859776101282994995820542199026 - 23.02243489098443937855027525810929664324j)",
+      "21": "(1323.93306941614206221855464383806947984 - 1285.412997586010872273407462676648050629j)",
+      "22": "(1023.256927403098597834337022931316781152 - 6884.146484539988070590526804457537353147j)",
+      "23": "(-10593.01146951138216425404098024986641589 - 25483.16053655285405549759054393387153165j)",
+      "24": "(-97836.93524371533024200437401058423105035 - 80494.77267917439452863636037849255837782j)"
+    },
+    "P3_engine_vs_printed_rel": "5.265968171e-59",
+    "borel": {
+      "ratio_estimates": [
+        "4.35944260444",
+        "4.82396296391",
+        "5.39841414807",
+        "5.83298977629",
+        "5.80041244893"
+      ],
+      "richardson": "5.79814063999835",
+      "iota12_prediction": "5.65624417666157"
+    },
+    "verdict": "ENGINE VALIDATED + SERIES DELIVERED: φ_σ1 to order 24 from first principles, gates on the agreed P₁ and the arbitrated P₂ (independent re-confirmation of the τ² misprint verdict); P₃ now derived; Borel nearest singularity consistent with the GGM ι₁₂ Stokes distance. The A4 median Borel–Laplace program is unblocked with a trustworthy coefficient basis."
+  }
+}
