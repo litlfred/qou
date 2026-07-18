@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-18T08:25:15.976692+00:00",
-  "commitSha": "4c70433c176f87dcd2219599fc03f9e7804f58a1",
+  "computedAt": "2026-07-18T08:31:44.891495+00:00",
+  "commitSha": "a01996f749edc8ddab7688eda08943bb865842e5",
   "assertions": [
     {
       "name": "A1_exact_but_not_ohtsuki_kappa1",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 18,
+  "durationMs": 13,
   "computation": "qbeta-phib-a1-vs-ohtsuki-kappa1",
   "scriptFile": "qbeta_phib_a1_vs_ohtsuki_kappa1.py",
-  "scriptHash": "4758ef90d47c",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "94a50aad0cbd",
+  "scriptCommitSha": "a01996f749edc8ddab7688eda08943bb865842e5",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
