@@ -1,0 +1,67 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-18T08:19:29.473798+00:00",
+  "commitSha": "27f86c8d5b446a3e8377174b85f4de0ec4e2e482",
+  "assertions": [
+    {
+      "name": "dilog_inversion_constant_is_minus_zeta2",
+      "computed": 2.3665465677525164e-41,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-30,
+      "source": "Li₂(z)+Li₂(1/z)+½log²(−z) = −π²/6 (dilog inversion formula) — the cusp crossing x↔1/x forces this constant"
+    },
+    {
+      "name": "faddeev_inversion_semiclassical_is_minus_zeta2",
+      "computed": 1.6449340668482264e-12,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 0.0001,
+      "source": "the Faddeev inversion constant iπ(b²+b⁻²)/12 at the Li₂ level (×2πib²) → −π²/6 as b→0 — the modular anomaly the bare partial product lacks and Φ_b carries"
+    },
+    {
+      "name": "faddeev_semiclassical_converges",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "monotone convergence of the Faddeev inversion constant to −ζ(2)"
+    },
+    {
+      "name": "same_zeta2_is_extended_bloch_pairing",
+      "computed": 2.2958874039497803e-41,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-30,
+      "source": "2·R(e^{iπ/3})−π²/6 = i·Vol(4₁): the inversion constant = the extended-Bloch/Rogers normalization pairing Li₂ ↔ Bloch–Wigner"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 49,
+  "computation": "dilog-archimedean-partB-cusp-derivation",
+  "scriptFile": "dilog_archimedean_partB_cusp_derivation_probe.py",
+  "scriptHash": "aedd410b9d54",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "DERIVES the Part B cusp regulator ζ(2)=Li₂(1): it is the (quantum-)dilog inversion constant. D1: classical Li₂(z)+Li₂(1/z)+½log²(−z)=−π²/6 (exact); D2: Faddeev inversion constant iπ(b²+b⁻²)/12 → −π²/6 semiclassically (b→0) — the modular anomaly the bare partial product lacks and Φ_b carries; D3: the same ζ(2)=extended-Bloch/Rogers pairing (2R(e^{iπ/3})−π²/6=i·Vol(4₁)). The cusp crossing x=1 inverts x↔1/x, forcing the inversion constant. So the residual is closed at value+origin (a theorem-forced modular anomaly, not a fit); the sign-assembled Lean formalization + x→1⁻ edge remain. Scope-(a) positive; no fit; nothing wired.",
+  "data": {
+    "zeta2": 1.6449340668482264,
+    "dilog_inversion_constant": "Li₂(z)+Li₂(1/z)+½log²(−z) = −ζ(2)",
+    "faddeev_inversion_relation": "Φ_b(z)Φ_b(−z) = e^{iπz²}·e^{iπ(b²+b⁻²)/12}; semiclassical → −ζ(2)",
+    "mechanism": "cusp crossing x=1 inverts x↔1/x ⇒ dilog inversion constant −ζ(2)",
+    "open_residue": "sign-assembled Lean formalization (modular-completion) + x→1⁻ edge; block stays kind:conjecture",
+    "verdict": "DERIVED (scope-(a) positive). The Part B cusp regulator ζ(2)=Li₂(1) is the (quantum-)dilogarithm INVERSION constant — theorem-forced, not fitted. The substrate continuation crosses the cusp x=1 (the k* completeness root), inverting x qᵏ↦(x qᵏ)⁻¹, and the classical inversion formula Li₂(z)+Li₂(1/z)=−ζ(2)−½log²(−z) carries −ζ(2) (D1, exact ∀z∉(0,1)). Its categorical realization is the Faddeev Φ_b inversion relation Φ_b(z)Φ_b(−z)=e^{iπz²}e^{iπ(b²+b⁻²)/12}, whose modular-anomaly constant has the semiclassical b→0 limit −ζ(2) (D2) — exactly the constant the bare / T_w-truncated partial product LACKS and the modular-complete Φ_b (whose semiclassical limit IS Li₂) CARRIES. The same ζ(2) is the extended-Bloch / Rogers normalization pairing the algebraic (Li₂) and geometric (Bloch–Wigner Vol) halves (D3). So the residual is closed at the level of VALUE + ORIGIN: ζ(2) is a standard theorem-forced constant, the modular anomaly of the quantum dilogarithm. Residual open content: the sign-assembled Lean formalization (modular-completion bookkeeping) and the x→1⁻ edge. No fit; nothing wired; block stays kind:conjecture."
+  }
+}
