@@ -1,0 +1,131 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-18T09:54:56.193622+00:00",
+  "commitSha": "17db2ebba35b51f26930d99fda2bca20631a1ed9",
+  "computation": "alpha-em-pi-origin-adjudication",
+  "scriptFile": "alpha_em_pi_origin_adjudication_probe.py",
+  "scriptHash": "56134a37757f",
+  "scriptCommitSha": "17db2ebba35b51f26930d99fda2bca20631a1ed9",
+  "python": "3.11.15",
+  "parameters": {
+    "genus": 4,
+    "b1": 8,
+    "chi": -6,
+    "surface_d": 2,
+    "target_pi_power": -1,
+    "compute_dps": 40
+  },
+  "assertions": [
+    {
+      "name": "control_zero_mode_2_over_3pi",
+      "computed": 0.2122065907891938,
+      "expected": 0.2122065907891938,
+      "passed": true,
+      "tolerance": 1e-25,
+      "source": "DERIVED zero-mode b1/Area = 8/(12pi) = 2/(3pi); Area = 4pi(g-1) = 12pi (Gauss-Bonnet 2pi.chi, chi=-6)"
+    },
+    {
+      "name": "control_zeta_delta1_zero_equals_minus_b1",
+      "computed": -8.0,
+      "expected": -8.0,
+      "passed": true,
+      "tolerance": 1e-25,
+      "source": "zeta_{Delta1}(0) = b1.zeta_Lambda(0) = -b1 (rank-independent Epstein zeta(0)=-1; #3834 area-free count)"
+    },
+    {
+      "name": "control_zeta_S1_prime_det_equals_L2",
+      "computed": 4.0,
+      "expected": 4.0,
+      "passed": true,
+      "tolerance": 1e-18,
+      "source": "zeta'_{S1}(0) machinery: det'(-d2/dx2)_{S1_{L=2}} = L^2 = 4 (the 2pi cancels in the det value)"
+    },
+    {
+      "name": "candidate2_gaussian_pi_power_is_minus_b1_over_2_not_minus_1",
+      "computed": -4.0,
+      "expected": -4.0,
+      "passed": true,
+      "tolerance": 1e-06,
+      "source": "(2pi)-Gaussian per-mode: pi-power -b1/2 = -4, NOT -1 => EXCLUDED (derived, wrong power)"
+    },
+    {
+      "name": "candidate3_heatkernel_pi_power_is_minus_1",
+      "computed": -1.0,
+      "expected": -1.0,
+      "passed": true,
+      "tolerance": 1e-09,
+      "source": "4pi heat-kernel proper-time determinant (4pi.s)^{-d/2}|_{d=2} = 1/(4pi): pi-power -1, DERIVED"
+    },
+    {
+      "name": "candidate3_momentum_route_pi_power_is_minus_2_not_the_determinant",
+      "computed": -2.0,
+      "expected": -2.0,
+      "passed": true,
+      "tolerance": 1e-06,
+      "source": "momentum-space (2pi)^{-d}|_{d=2} = 1/(4pi^2): pi-power -2 (pi^2 reading) -- NOT the determinant normalization"
+    },
+    {
+      "name": "candidate1_dilog_pi_power_is_plus2_or_0_not_minus_1",
+      "computed": 2.0,
+      "expected": 2.0,
+      "passed": true,
+      "tolerance": 1e-09,
+      "source": "Rogers L(z)=rational.pi^2 (pi-power +2), Bloch-Wigner D(z)=O(1) (pi-power 0); bare 1/pi only via CONJECTURAL higher-Bloch regulator"
+    },
+    {
+      "name": "exactly_one_derived_candidate_gives_pi_power_minus_1",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "decision rule: only candidate 3 (heat-kernel) yields a DERIVED pi-power -1 => 1/pi ORIGIN closes to it; (2) gives -4, (1) gives +2/0"
+    },
+    {
+      "name": "per_loop_pi_distinct_from_zero_mode_gauss_bonnet_pi",
+      "computed": 1.5,
+      "expected": 1.5,
+      "passed": true,
+      "tolerance": 1e-20,
+      "source": "per-loop pi (bare 4pi) != zero-mode pi (dressed Area 12pi); SAME heat-kernel mechanism, separated by Area/(pi.b1)=2(g-1)/g=3/2 -- a DISTINCT pi-value, not the same Gauss-Bonnet pi"
+    }
+  ],
+  "allPassed": true,
+  "candidates": [
+    {
+      "id": 1,
+      "name": "open-dilog (Rogers/Bloch–Wigner)",
+      "pi_power": "+2 (Rogers) / 0 (D)",
+      "is_minus1": false,
+      "derived": false,
+      "note": "π² or O(1); bare 1/π only via conjectural higher-Bloch regulator"
+    },
+    {
+      "id": 2,
+      "name": "(2π)-Gaussian per-mode",
+      "pi_power": "-4.0",
+      "is_minus1": false,
+      "derived": true,
+      "note": "−b₁/2 = −4 (linear in b₁) + spurious 2^{−b₁/2}; EXCLUDED"
+    },
+    {
+      "id": 3,
+      "name": "4π heat-kernel (proper-time determinant)",
+      "pi_power": "-1.0",
+      "is_minus1": true,
+      "derived": true,
+      "note": "(4πs)^{−d/2}|_{d=2} = 1/(4π): bare single π, power −1, derived (heat kernel)"
+    }
+  ],
+  "decision": {
+    "closes": true,
+    "canonical_candidate": 3,
+    "canonical_name": "4π heat-kernel (proper-time determinant)",
+    "statement": "CANONICAL = candidate 3 (4π heat-kernel (proper-time determinant)). Exactly one candidate gives a DERIVED π-power −1 ⇒ the 1/π ORIGIN CLOSES to the archimedean 2D heat-kernel (4πs)^{−d/2}.",
+    "residual_open": "the rational coefficient / count-combination (heat-kernel bare 1/(4pi) -> 1/(pi.b1)=1/(8pi) reciprocal-in-b1 democratic average; the 8pi=2.4pi multiplicity 2 vs the count b1) -- a NON-pi question, tracked as the ledger's 'multiplicity 2 vs b1 / why reciprocal' wall",
+    "per_loop_vs_zero_mode_pi": "SAME heat-kernel (4pi.s)^{-d/2} mechanism (both pi-power -1), DISTINCT pi-value: zero-mode dressed to Area=12pi (Gauss-Bonnet 2pi.chi), per-loop bare 4pi; separated by Area/(pi.b1)=2(g-1)/g=3/2"
+  },
+  "scope": "(a) on value, (b)-structural on the pi-power",
+  "auditOnly": "docs/audits/2026-07-18-alpha-em-pi-origin-adjudication.md",
+  "description": "Adjudicates the origin of the BARE 1/pi in the alpha_EM per-loop measure 1/(pi.b1)=1/(8pi) (b1=dim H1(M_Bring)=2g=8, the last open factor after 1/b1 settled as the derived Betti count #3895). Computes the EXACT pi-power the correct 1-loop-determinant normalization produces for each of THREE candidate archimedean origins, against the sharpened constraint (pi-power exactly -1, a bare 1/pi, NOT 1/(2pi), NOT pi^2): (1) OPEN-DILOG (Rogers L=rational.pi^2 => pi-power +2; Bloch-Wigner D=O(1) => 0) -- NEVER -1 at leading order, bare 1/pi only via the CONJECTURAL higher-Bloch regulator (not derived); (2) (2pi)-GAUSSIAN per-mode => (2pi)^{-b1/2}, pi-power -b1/2=-4 (linear in b1) + spurious 2^{-b1/2} -- EXCLUDED (derived, wrong power); (3) 4pi HEAT-KERNEL proper-time DETERMINANT (4pi.s)^{-d/2}|_{d=2}=1/(4pi), pi-power -d/2=-1 -- a bare single pi, DERIVED (the heat kernel is a theorem; the momentum-space (2pi)^{-d}=1/(4pi^2) pi-power -2 is the loop-INTEGRAL bookkeeping, NOT the determinant, which selects the heat-kernel route). DECISION: exactly ONE candidate (3) yields a DERIVED pi-power -1 => by the pre-stated rule the 1/pi ORIGIN CLOSES to the archimedean 2D heat-kernel (4pi.s)^{-d/2} -- DISTINCT from the zero-mode's geometrically-dressed Gauss-Bonnet Area pi (12pi; SAME heat-kernel mechanism, DIFFERENT value, separated by Area/(pi.b1)=2(g-1)/g=3/2) and from the conjectural dilog pi^2 (candidate 1). CONTROLS (pass): the DERIVED zero-mode 1/(12pi)=b1/Area (Gauss-Bonnet Area=12pi); zeta_{Delta1}(0)=-b1 (#3870 (2pi)^{-b1/2} pi-power); the zeta'_{S1}(0) machinery det'(-d2/dx2)_{S1_L}=L^2. HONEST RESIDUAL (non-pi, stays open): the full 1/(8pi)=1/(pi.b1) is NOT thereby fully derived -- the heat-kernel bare form is 1/(4pi) (one loop), and reaching 1/(pi.b1) needs the reciprocal-in-b1 democratic average (coefficient 4<->b1, or the 8pi=2.4pi multiplicity 2), a COUNT question, NOT a pi-power ambiguity; it stays the ledger's separately-tracked wall. So the pi-power axis CLOSES (-1, heat-kernel, candidate 3); the coefficient axis stays open. Anti-laundering respected: NO CODATA read, NO pi inserted by hand to reach 8pi; the -1 is FORCED by the determinant definition, not chosen. No alpha_k wired; no fit; no tier change; 1/(8pi) stays a phase-4 identification."
+}
