@@ -521,6 +521,77 @@ theorem two_mul_sigmaOneCharacter_eq_card (h : μ.transpose = μ) (hn : 2 ≤ μ
       = ((Fintype.card (StandardYoungTableau μ) : ℕ) : R) * hh := by
   rw [two_mul_sigmaOneCharacter h hn q hh hq, two_mul_card_rowClass_eq_card h hn]
 
+/-! ### General generator `σ_i`: the diagonal class-count `|R_row^i| = |R_col^i|`
+
+The `σ₁` results above hardcode the value pair `1, 2`. The diagonal half of
+`fullCharacter_two_mul` — the equinumerosity of the same-row and same-column
+classes — holds for **every** generator `σ_i` (value pair `i, i+1`), because
+`cellOf_selfTranspose` swaps the row/column coordinate for *any* entry `k`, not
+just `1, 2`. These generator-indexed versions supply the `hcard` hypothesis of
+`fullCharacter_two_mul` for a general `σ_i` on a self-conjugate shape. -/
+
+/-- Same-row predicate for the generator pair `(i, i+1)`. -/
+def sameRowGen (i : ℕ) (T : StandardYoungTableau μ) : Prop :=
+  (cellOf T i).1 = (cellOf T (i + 1)).1
+
+/-- Same-column predicate for the generator pair `(i, i+1)`. -/
+def sameColGen (i : ℕ) (T : StandardYoungTableau μ) : Prop :=
+  (cellOf T i).2 = (cellOf T (i + 1)).2
+
+/-- The same-row class `R_row^i ⊆ SYT(μ)` for generator `σ_i`. -/
+noncomputable def rowClassGen (μ : YoungDiagram) (i : ℕ) :
+    Finset (StandardYoungTableau μ) :=
+  Finset.univ.filter (fun T => sameRowGen i T)
+
+/-- The same-column class `R_col^i ⊆ SYT(μ)` for generator `σ_i`. -/
+noncomputable def colClassGen (μ : YoungDiagram) (i : ℕ) :
+    Finset (StandardYoungTableau μ) :=
+  Finset.univ.filter (fun T => sameColGen i T)
+
+/-- `selfTranspose` carries the same-row class of `σ_i` to the same-column class,
+    provided `i, i+1` are both in the value range (`1 ≤ i`, `i+1 ≤ |μ|`). -/
+theorem sameRowGen_selfTranspose (h : μ.transpose = μ) (i : ℕ)
+    (hi : 1 ≤ i) (hi2 : i + 1 ≤ μ.cells.card) (T : StandardYoungTableau μ) :
+    sameRowGen i (selfTranspose h T) ↔ sameColGen i T := by
+  have ei : i ∈ Set.Icc 1 μ.cells.card := Set.mem_Icc.mpr ⟨hi, by omega⟩
+  have ei1 : i + 1 ∈ Set.Icc 1 μ.cells.card := Set.mem_Icc.mpr ⟨by omega, hi2⟩
+  have c1 := cellOf_selfTranspose h T (exists_cell_entry T ei)
+  have c2 := cellOf_selfTranspose h T (exists_cell_entry T ei1)
+  unfold sameRowGen sameColGen
+  rw [c1, c2]
+  simp only [Prod.fst_swap]
+
+/-- `selfTranspose` carries the same-column class of `σ_i` to the same-row class. -/
+theorem sameColGen_selfTranspose (h : μ.transpose = μ) (i : ℕ)
+    (hi : 1 ≤ i) (hi2 : i + 1 ≤ μ.cells.card) (T : StandardYoungTableau μ) :
+    sameColGen i (selfTranspose h T) ↔ sameRowGen i T := by
+  have ei : i ∈ Set.Icc 1 μ.cells.card := Set.mem_Icc.mpr ⟨hi, by omega⟩
+  have ei1 : i + 1 ∈ Set.Icc 1 μ.cells.card := Set.mem_Icc.mpr ⟨by omega, hi2⟩
+  have c1 := cellOf_selfTranspose h T (exists_cell_entry T ei)
+  have c2 := cellOf_selfTranspose h T (exists_cell_entry T ei1)
+  unfold sameColGen sameRowGen
+  rw [c1, c2]
+  simp only [Prod.snd_swap]
+
+/-- **The general-`σ_i` diagonal class-count identity** `|R_row^i| = |R_col^i|`.
+    For a self-conjugate shape and any generator `σ_i` (`1 ≤ i`, `i+1 ≤ |μ|`), the
+    same-row and same-column classes of the pair `i, i+1` are equinumerous — the
+    conjugate transpose is the explicit bijection. This is the `hcard` input to
+    `SeminormalWeight.fullCharacter_two_mul` for a general single generator. -/
+theorem card_rowClassGen_eq_colClassGen (h : μ.transpose = μ) (i : ℕ)
+    (hi : 1 ≤ i) (hi2 : i + 1 ≤ μ.cells.card) :
+    (rowClassGen μ i).card = (colClassGen μ i).card := by
+  apply card_row_eq_card_col (rowClassGen μ i) (colClassGen μ i) (selfTranspose h)
+  · intro T hT
+    rw [rowClassGen, Finset.mem_filter] at hT
+    rw [colClassGen, Finset.mem_filter]
+    exact ⟨Finset.mem_univ _, (sameColGen_selfTranspose h i hi hi2 T).mpr hT.2⟩
+  · intro T hT
+    rw [colClassGen, Finset.mem_filter] at hT
+    rw [rowClassGen, Finset.mem_filter]
+    exact ⟨Finset.mem_univ _, (sameRowGen_selfTranspose h i hi hi2 T).mpr hT.2⟩
+  · exact selfTranspose_selfTranspose h
+
 end Closure
 
 end QOU.BraidKnot.SeminormalCharacterConnector
