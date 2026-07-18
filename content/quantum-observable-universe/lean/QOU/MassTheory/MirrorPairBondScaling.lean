@@ -81,9 +81,8 @@ bond model gives as `1`. Requires `a, b ≠ 0` (the traces are nonzero at `q₀`
 theorem mirror_pair_split (Z d m : ℕ) (a b : R) [Field R] (ha : a ≠ 0) (hb : b ≠ 0) :
     pairAggregate Z (Z + d) m a b / pairAggregate (Z + d) Z m a b = (a / b) ^ (d * m) := by
   unfold pairAggregate bondTraceProduct
-  rw [div_pow, add_mul, add_mul, pow_add, pow_add]
+  simp only [div_pow, add_mul, pow_add]
   field_simp
-  ring
 
 /-- **Recovery of the A=3 identity** `triton_helium3_split`: `(Z,d,A) = (1,1,3)`,
 so `m = A−1 = 2`, giving the T/³He split `(a/b)²`. -/
