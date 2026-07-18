@@ -182,6 +182,36 @@ def main() -> int:
     hoef = json.loads(HOEF_PATH.read_text())
     peel = json.loads(PEEL_PATH.read_text())
 
+    # ── q0-pin guard (fragile-guard hardening, audit 2026-07-18) ──────────
+    # This is a MUON-q0 1ppQ assertion. The color split δ and the atomic
+    # traces are anchor-adaptive (q_parameter.Q → proton by default, muon
+    # under QOU_Q0_ANCHOR=ideal). If this gate is run under the proton
+    # default while the loaded witnesses are muon (or vice versa), the
+    # color-weighted comparison is silently mixed-pin (~5.86e-11 — above the
+    # 1ppQ gate). Verify (a) the runtime anchor and (b) the peel witness's
+    # recorded q0 both equal the canonical muon q0. See
+    # docs/audits/2026-07-18-avg-color-delta-q0-pin-mismatch.md.
+    from q_parameter import Q_50_DIGIT_STR
+    _muon = mpf(json.loads(
+        (HERE / "q-pinning-50-digit.witness.json").read_text()
+    )["derived_50_digit"]["q"])
+    if fabs(mpf(Q_50_DIGIT_STR) - _muon) / _muon > mpf("1e-9"):
+        raise SystemExit(
+            "L1 cross-check must run under the MUON q0 pin, but the runtime "
+            f"q_parameter.Q_50_DIGIT_STR = {Q_50_DIGIT_STR[:18]}… is not the "
+            f"muon q0 ({mp.nstr(_muon, 12)}). Set QOU_Q0_ANCHOR=ideal — else "
+            "peel/chi-cache color-weighting is mixed-pin (audit "
+            "2026-07-18-avg-color-delta-q0-pin-mismatch.md).")
+    _peel_q0 = peel.get("parameters", {}).get("q0")
+    if _peel_q0 is not None:
+        _pv = _peel_q0.get("value") if isinstance(_peel_q0, dict) else _peel_q0
+        if fabs(mpf(str(_pv)) - _muon) / _muon > mpf("1e-9"):
+            raise SystemExit(
+                "peel witness was computed at a q0 that is NOT the muon pin "
+                f"({str(_pv)[:18]}… vs {mp.nstr(_muon, 12)}); regenerate it "
+                "under QOU_Q0_ANCHOR=ideal (mixed-pin, audit 2026-07-18).")
+    # ─────────────────────────────────────────────────────────────────────
+
     # Hoefsmit results: list of dicts, atom name in 'atom'
     hoef_by_atom = {r["atom"]: r for r in hoef["results"]}
     # Markov-peel results: list of dicts keyed on (Z, N) — production
