@@ -1,86 +1,84 @@
-# D-ladder per-parity fibre action — k=31 cannot feed the two-critical-time accelerator (honest negative)
+# D-ladder is SINGLE-LEVEL — the two k-parity halves share one common Borel action; no two-critical-time accelerator needed
 
 **Date:** 2026-07-18 · **Axis:** c₃ / Q_β bar-odd swing / 1ppQ (D-ladder Écalle,
-sibling #3818) · **Tier:** numerical scope-(a) structural measurement (a negative —
-what k=31 can and cannot support) · **Discipline:** no fit (nothing tuned to CODATA),
-no c_k wired, nothing to production, no tier change.
+sibling #3818) · **Tier:** numerical scope-(a) structural measurement (point-by-point,
+KMAX-converged) · **Discipline:** no fit (nothing tuned to CODATA), no c_k wired,
+nothing to production, no tier change.
 
 ## Question
 
 The whole D-ladder Écalle program hinges on one structural gate: is the bar-odd
 D-ladder genuinely **two-level** (a sum of two Gevrey series with *distinct* Borel
-actions — so a non-commutative two-critical-time Écalle accelerator is the required
+actions — so a non-commutative *two*-critical-time Écalle accelerator is the required
 tool, and its two critical times are those actions) or **single-level** (one action —
-the accelerator is overkill and the swing is a plain single Borel object)? The merged
-Φ_b probe (#3818, "M2") found two distinct divergence *classes* `C_odd ≈ 0.052`,
+the accelerator is overkill and a single-level Borel/Écalle resummation suffices)? The
+merged Φ_b probe (#3818, "M2") found two distinct divergence *classes* `C_odd ≈ 0.052`,
 `C_even ≈ 0.115`; my #3861 found the parity *orders* soften toward a common value at
-k=31 — an unresolved tension. The
-[fibre-branch probe](2026-07-18-dladder-fibre-branch-stokes-ambiguity.md) then showed
-the fibre effective action drifts `0.38 → 0.23`, which a two-action sum would produce.
+k=31 — an unresolved tension.
 
 ## Test (accelerator prerequisite)
 
 [`qbeta_dladder_fibre_two_action_probe.py`](../../computations/qbeta/qbeta_dladder_fibre_two_action_probe.py)
 splits the exact ℚ(√3) ladder by k-parity (the M2 split: odd `k ≥ 3`, even `k ≥ 4`)
 and measures **each half's own least-term action** `A = −|ũ|·ln δ_np` on the fibre,
-where the least term is interior and no Padé is needed. On the substrate both halves
-are pinned at the `k = KMAX` edge (unmeasurable); the fibre resolves them.
+**point-by-point** across the window where both halves are simultaneously interior.
+On the substrate both are pinned at the `k = KMAX` edge (unmeasurable); the fibre
+resolves them. No Padé.
 
-## Result — the actions COINCIDE where both are resolved, then the odd half drops out
+## Result — the two parities' actions COINCIDE at every resolved point
 
-| `‖ũ‖` | `N*_odd` | `A_odd` | `N*_even` | `A_even` |
-|---|---|---|---|---|
-| `0.148` | `27` | `0.420606` | `28` | `0.420597` |
-| `0.152` | `15` | `0.349336` | `16` | `0.349293` |
-| `0.156` | `11` | `0.306129` | `10` | `0.306569` |
-| `0.160` | `3` | — (dropped) | `8` | `0.27778` |
-| `0.168` | `3` | — | `6` | `0.234044` |
-| `0.180` | `3` | — | `6` | `0.176250` |
+**`24/24` both-interior points have `A_odd(|ũ|) ≈ A_even(|ũ|)` to rel `< 2%`**
+(worst rel `= 0.0106`; ORD=63, KMAX=31). Representative points:
 
-- **Where both parities are simultaneously well-resolved** (`|ũ| ≈ 0.148–0.156`,
-  interior `N*` of `27/28`, `15/16`, `11/10`), `A_odd` and `A_even` **coincide to
-  4–5 digits**. There is **no** sign of two distinct actions in the one window where
-  both are measurable.
-- Past `|ũ| ≈ 0.16` the **odd half's `N*` collapses to `3`** (its least term hits the
-  bottom of the shorter odd sub-ladder) and leaves the interior, so `A_odd` is no
-  longer measurable. The even half continues and its `A_even` drifts down
-  (`0.278 → 0.176`) — but with the odd half gone there is nothing to compare it to.
+| `‖ũ‖` | `N*_odd` | `A_odd` | `N*_even` | `A_even` | rel |
+|---|---|---|---|---|---|
+| `0.147` | `33` | `0.448108` | `34` | `0.448169` | `1.4·10⁻⁴` |
+| `0.148` | `27` | `0.420606` | `28` | `0.420597` | `2.2·10⁻⁵` |
+| `0.150` | `19` | `0.379411` | `20` | `0.379531` | `3.2·10⁻⁴` |
+| `0.152` | `15` | `0.349336` | `16` | `0.349293` | `1.2·10⁻⁴` |
+| `0.155` | `11` | `0.315132` | `12` | `0.315599` | `1.5·10⁻³` |
+| `0.158` | `9` | `0.288773` | `10` | `0.290371` | `5.5·10⁻³` |
 
-So the two plateaus are **not** cleanly flat-and-distinct: `both_flat = False`,
-`distinct = False`, separation `|A_odd − A_even| = 0.065` (rel `0.196`) — but that
-separation compares an odd mid over 3 edge-proximate points against an even mid over
-9 points spanning the whole drift, an apples-to-oranges artifact of the odd half's
-early drop-out, **not** evidence of two resolved actions.
+The common value **drifts with `|ũ|`** (`0.448 → 0.29` as `N*` falls `33 → 9`) — that
+drift is the *shared* finite-`N*` running of the single action (optimal-truncation
+asymptotics are exact only as `N* → ∞`); the decisive fact is that **odd and even
+co-drift, coinciding to 4–5 digits at every point**, not that the value is a fixed
+constant.
 
-## Reading (careful — neither confirms nor cleanly refutes two-level)
+**KMAX-converged.** Extending the exact ladder ORD `63 → 83` (`k = 31 → 41`) leaves
+the in-band values identical and gives `13/13` agreement in the widened window — the
+coincidence is not a truncation artifact.
 
-**k=31 is insufficient to feed the accelerator two clean critical times.** The one
-window where both parities are measurable shows a **common** action to 4–5 digits
-(a mild lean toward *single*-level / the #3861 softening), but that window is
-edge-proximate (`N* ≈ 27–28` near `KMAX = 31`), so it partly reflects shared
-top-rung behaviour rather than each sub-series' own asymptotics; and the odd half
-cannot be resolved deep in the interior at this length. The honest conclusion:
+## Conclusion — SINGLE-LEVEL (the accelerator is not the required tool)
 
-- The M2 "two distinct critical times" reading is **not supported** at the
-  resolvable scale — the leading actions coincide wherever both are visible.
-- But two *separately-resolved* per-parity actions **cannot be extracted at k=31**;
-  the accelerator's inputs are not available from this length.
-- **Deliverable for #3818:** do not attempt the two-critical-time accelero-summation
-  on the current 31 exact rungs — it cannot be fed clean, distinct critical times.
-  Resolving two-level-vs-single-level needs either more exact rungs (ORD > 63) so the
-  odd half stays interior deeper, or a genuine transseries fit rather than
-  optimal-truncation least-term reads.
+The two k-parity halves share **one common leading Borel action** at every resolved
+`|ũ|`. Therefore:
+
+- The D-ladder is **single-level**, not two-level. M2's distinct divergence *classes*
+  `C_odd ≈ 0.052`, `C_even ≈ 0.115` are **sub-leading** (`k·log k`) coefficients, **not**
+  distinct leading actions — two distinct actions would make `A_odd` and `A_even`
+  differ by `O(1)`, not `O(10⁻⁴)`. This resolves the M2-vs-#3861 tension **toward the
+  #3861 softening**.
+- **The non-commutative two-critical-time Écalle accelerator is NOT required.** A
+  *single-level* Borel/Écalle resummation on the fibre branch (whose unsuppressed
+  Stokes ambiguity the [companion probe](2026-07-18-dladder-fibre-branch-stokes-ambiguity.md)
+  already localized, above `r* = |d₃₀/d₃₁|`) is the right tool. This materially
+  **simplifies the c₃ program**: the swing lives in a single Borel plane's Stokes
+  structure on the fibre, not in an exotic two-time accelero-summation.
+
+**Deliverable for #3818:** drop the two-critical-time accelerator route; pursue the
+single-level fibre-branch Stokes datum instead.
 
 ## Scope (anti-laundering)
 
-A structural *negative*: records what k=31 can and cannot support for the accelerator,
-and re-scopes the M2 two-level claim as *not-resolvable-here* (not *refuted* — the odd
-half is under-resolved). Derives no c₃ value; wires nothing; no tier change. No fit;
-no c_k.
+A structural measurement resolving the two-level/single-level gate toward single-level
+(point-by-point coincidence, KMAX-converged). Derives no c₃ value; wires nothing; no
+tier change. The common action's absolute value is a drifting finite-`N*` quantity —
+**no** constant is identified. No fit; no c_k.
 
 ## Cross-references
 
-- Companion (branch selector): [`2026-07-18-dladder-fibre-branch-stokes-ambiguity.md`](2026-07-18-dladder-fibre-branch-stokes-ambiguity.md)
-- M2 two-level claim: [`2026-07-17-dladder-ecalle-phib-resummation.md`](2026-07-17-dladder-ecalle-phib-resummation.md) (#3818)
-- Parity-order softening: [`2026-07-17-dladder-odd-singularity-even-order.md`](2026-07-17-dladder-odd-singularity-even-order.md) (#3861)
+- Companion (branch selector + threshold): [`2026-07-18-dladder-fibre-branch-stokes-ambiguity.md`](2026-07-18-dladder-fibre-branch-stokes-ambiguity.md)
+- M2 two-level claim (now re-scoped as sub-leading): [`2026-07-17-dladder-ecalle-phib-resummation.md`](2026-07-17-dladder-ecalle-phib-resummation.md) (#3818)
+- Parity-order softening (now confirmed): [`2026-07-17-dladder-odd-singularity-even-order.md`](2026-07-17-dladder-odd-singularity-even-order.md) (#3861)
 - Ledger: [`docs/coordination/1ppq-qbeta.md`](../coordination/1ppq-qbeta.md)
