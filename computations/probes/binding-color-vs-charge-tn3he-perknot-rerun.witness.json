@@ -72,5 +72,7 @@
     "max_weight_difference": "9.86076131526264756764660706603e-32",
     "verdict": "ROBUST — the color-vs-charge T−³He refutation is NOT a λ_A density artifact. λ_A entered the pre-swap original only as the normalization of the color weight w = bw(Z,N,q0)/λ_A, and since bw = λ_A·(1+δ·asym+δ²·sym) by construction, the density base cancels algebraically — the same cancellation holds for any per-knot tr_M base. Both forms give the identical split (≈ −0.034 MeV, ≈ 4.5 % of the needed +0.764 MeV): color at the δ = flavor-split scale is ~20× too small either way; the T−³He split remains CHARGE/Coulomb (α_EM sector). Scope (a): color weighting, alone, at this scale does not supply the split — no ingredient-level exclusion claimed. (Note: the audit's step-2 'λ_A-family-bound' classification was overcautious for THIS script — the bond energies were already per-block tr_M at H_6 and the λ_A base cancels; the refutation is density-base-independent.)",
     "refutation_scope": "scope-limited negative (a) per AGENTS.md"
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

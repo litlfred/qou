@@ -127,5 +127,7 @@
     "scope_a_finding": "Bessel-½ FALLING-FACTORIAL form alone does not reproduce lw (ratio non-constant, monotone-decaying). NOT a structural exclusion of q-Bessel: order ν=1/2 correct, growth class matches.",
     "structural_reason": "lw(n−1)=(1/n)Σ_{λ⊢n} dim_q is a SUM over p(n) partitions; a Bessel-½ falling factorial is a SINGLE product. Per prop:sw-period-residue-sum (residues = per-block Wedderburn weights, summed), the falling factorial is the PER-BLOCK period; lw is the residue SUM over blocks.",
     "z2bn_narrowing": "Kernel target R(q,x) generates the PER-BLOCK period (single branch point); lw aggregates over the Wedderburn decomposition. Prunes the 'lw = single falling factorial' shortcut; q-Bessel-per-block stays open."
-  }
+  },
+  "q0Anchor": "muon",
+  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
 }

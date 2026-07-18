@@ -62,5 +62,7 @@
     ],
     "verdict": "NATURAL_LUSZTIG_DEMAZURE_SIGN_REFUTED_EXOTIC_UNTESTED",
     "interpretation": "The Lusztig involution on the Hecke algebra produces canonical bases that are bar-INVARIANT but POSITIVE at q > 0 (Lusztig's canonical basis is a positive integral basis; this is Lusztig 1990's positivity theorem for type A). So the natural Demazure-Lusztig characters inherit positivity from the unsigned Demazure crystal model. The sign refutation of Composite 1 standard transfers to Composite 1 Lusztig-dual without modification. Exotic signed conventions (Lusztig-Yun-Zhu Whittaker, twisted T_i with sign-flipping) exist mathematically but are not in this corpus's natural categorical framework — they would require an explicit convention specification before the preflight pattern applies. **Net for the KLR program**: the natural reading of cont. 9 Option C is fully refuted (standard + dual variants); the residual escape route is exotic-signed Lusztig variants, which are a separate research-grade scope item rather than a build-cost-saving preflight."
-  }
+  },
+  "q0Anchor": "muon",
+  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
 }

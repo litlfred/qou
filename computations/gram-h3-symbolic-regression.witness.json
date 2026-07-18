@@ -110,5 +110,7 @@
   },
   "caveats": [
     "The Lean symbolic definitions are CATEGORICAL (Laurent polynomials in u = √q over generic positive u); this witness only verifies the q_0-specialisation matches pyhecke and that the determinant is non-zero at q_0. Phase 1b-2 follow-up will discharge the gramMatrix_det_ne_zero sorry via symbolic determinant factorisation."
-  ]
+  ],
+  "q0Anchor": "muon",
+  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
 }

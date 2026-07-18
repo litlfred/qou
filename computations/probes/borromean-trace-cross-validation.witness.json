@@ -125,5 +125,7 @@
       }
     ],
     "synthesis_verdict": "Two-path cross-validation of the Borromean Markov trace on H_3(q): the closed form (4 + h² − 3h⁴ − h⁶)/(h² + 4) of prop:borromean-markov-trace-closed-form agrees with the Frobenius expansion Σ y_λ · χ^λ using the closed-form Wenzl weights ([4]_q/[2]_q³, 1/[2]_q², 0) of prop:h3-markov-wenzl-weights and χ^(2,1)(β_Bor) = 2 − 3h⁴ − h⁶ to 50 dps at every sampled q.  This provides empirical evidence for both propositions on the same Borromean witness — the within-H_3 analogue of the atomic-braid Markov pipeline cross-validator.  Disagreement at any sample would have signalled an error in one of: the closed form, the Wenzl-weight closed forms, or the χ^(2,1) polynomial form."
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

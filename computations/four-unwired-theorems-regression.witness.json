@@ -88,5 +88,7 @@
   },
   "caveats": [
     "These probes verify the algebraic identities at the canonical substrate q_0 to 50-dps precision. The full Lean theorems are CATEGORICAL (proved over generic [Field R] or [CommRing R]); this witness only verifies the canonical specialisation as a regression guard. Lean ↔ compute drift in either layer will now trip an assertion failure."
-  ]
+  ],
+  "q0Anchor": "muon",
+  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
 }

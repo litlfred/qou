@@ -342,5 +342,7 @@
   "caveats": [
     "All values derived from q_0 (50-digit) via canonical Hoefsmit seminormal construction.  No fit constants introduced.  The det-product law and bar-pair count are categorical consequences of bar-involution compatibility (Tier-A1 Property 5, 40eefd6d); this probe reports them as derived (not fitted) at q = q_0.",
     "(4,3,2,1) full β_EW eigendecomposition skipped (dim=768).  Per-generator det computation suffices because det is multiplicative on the braid word and the word contains no inverse generators."
-  ]
+  ],
+  "q0Anchor": "muon",
+  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
 }

@@ -188,5 +188,7 @@
   "caveats": [
     "VERDICT (a, partial): c is DERIVED = 1/2 from def:coulomb-charge (NOT a fit), resolving the linked-channel audit's open coupling. The writhe ladder matches I_3 (sign+ratio, p:+ / n:-, scale-free) and is FALSIFIED as a Y map by the proton/neutron same-Y test. It also does NOT match Q (neutron Q=0 but writhe(n) != 0). So writhe -> I_3 (third isospin component), NOT -> Y and NOT -> Q directly.",
     "VERDICT (b, the precise residual obstruction): Gell-Mann-Nishijima Y = 2(Q - I_3) requires Q (the Coulomb charge, = writhe/2) AND I_3 TOGETHER. Writhe alone gives I_3 (its sign/ratio). The Coulomb charge def gives Q = writhe/2 -- but that is the SAME writhe datum, so on the single inter-nucleon writhe the framework supplies only ONE integer per nucleon, which cannot independently fix both Q and I_3. The MISSING OBJECT is a SECOND, independent crossing invariant (a baryon-number / color-trace charge B distinct from the inter-nucleon writhe) so that Y = B (the baryon Y=+1 common to p,n) is carried by the color-tube trace while I_3 = writhe/2-of-inter-nucleon-arc carries the p/n split. Until that second invariant is derived, Y itself is UNDEFINED -- but it is NOT a free-c problem (c is fixed); it is a missing-second-charge problem. NO FIT was performed."
-  ]
+  ],
+  "q0Anchor": "muon",
+  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
 }

@@ -340,9 +340,9 @@
     }
   ],
   "phase_2_scope_notes": [
-    "PROBE 1 (#1707) consumes 'probe1_data_exposure_tr_sigma_1' to test whether (1 + tr(\u03c1_\u03bb(\u03c3_1)))/2 matches (1+q_0)/2 for some \u03bb or weighted sum.",
-    "PROBE 4 (this PR) consumes 'probe4_data_exposure_w0_diagonal' as the candidate crystal-vertex weight data for the \u0394_\u03bb(K) = \u03a3_w n^w_\u03bb \u00b7 \u03c1_w(K) ansatz.",
-    "Open: derive the n^w_\u03bb coefficients (Kazhdan-Lusztig multiplicities) and verify against probe-1's empirical \u0394_\u03bb(D) under bar-invariance."
+    "PROBE 1 (#1707) consumes 'probe1_data_exposure_tr_sigma_1' to test whether (1 + tr(ρ_λ(σ_1)))/2 matches (1+q_0)/2 for some λ or weighted sum.",
+    "PROBE 4 (this PR) consumes 'probe4_data_exposure_w0_diagonal' as the candidate crystal-vertex weight data for the Δ_λ(K) = Σ_w n^w_λ · ρ_w(K) ansatz.",
+    "Open: derive the n^w_λ coefficients (Kazhdan-Lusztig multiplicities) and verify against probe-1's empirical Δ_λ(D) under bar-invariance."
   ],
   "scriptHash": "c3d3d18fde7c",
   "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
@@ -351,5 +351,7 @@
   "computedAt": "2026-07-18T17:56:18.981247+00:00",
   "durationMs": 0,
   "engineVersion": "mpmath 1.3.0",
-  "scriptFile": "probe_option_e_h6_entry_point.py"
+  "scriptFile": "probe_option_e_h6_entry_point.py",
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

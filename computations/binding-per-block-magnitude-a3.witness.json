@@ -64,5 +64,7 @@
     },
     "chi_source": "atom-chi-rust-{d,t,3he}.witness.json (Rust kernel)",
     "verdict": "per-block magnitude closes A=2 (+3.6%) but FAILS A=3 (T -61.7%, 3He -55.1%) — same ~-60% as all other readings. Operator-valued blockwise |.| is NOT the A>=3 closure. Negative result."
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

@@ -86,5 +86,7 @@
   },
   "audit_reference": "AUDIT-DEEP-2026-05.md §7 P8 (rederived 2026-05-08)",
   "pr": "#564",
-  "rederivation_note": "This file replaces the earlier β-chain frame which produced a 22 M % error at A=2. Categorical inputs only; no Q_β, no AME chain manifest, no fitting. Compatible with the user's explicit \"I do NOT want to derive Q_β\" directive."
+  "rederivation_note": "This file replaces the earlier β-chain frame which produced a 22 M % error at A=2. Categorical inputs only; no Q_β, no AME chain manifest, no fitting. Compatible with the user's explicit \"I do NOT want to derive Q_β\" directive.",
+  "q0Anchor": "muon",
+  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
 }

@@ -311,5 +311,7 @@
   },
   "caveats": [
     "ESCAPE FAILS for the Reeb ROTATION channel: the eigen-phase (q-Reeb rotation) is bit-identical for proton and neutron. The p/n distinction lives entirely in the eigenvalue MODULI (writhe/growth amplitude), not the rotation phase. The proton/neutron canonical braids are not alternating, so their seminormal eigenvalues are real (|arg| ∈ {0, π}, a sign not a rotation); there is no genuine Reeb rotation to distinguish them."
-  ]
+  ],
+  "q0Anchor": "muon",
+  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
 }

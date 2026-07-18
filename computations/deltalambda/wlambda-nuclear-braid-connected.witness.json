@@ -22,7 +22,7 @@
     {
       "name": "extensive_piece_in_nonabelian_std_channel",
       "passed": true,
-      "detail": "4He: W_(2,1)*C_std=0.67286 (connected, non-abelian) vs 1-dim factorized parts 0.33395 \u2014 extensive binding is the std connected part"
+      "detail": "4He: W_(2,1)*C_std=0.67286 (connected, non-abelian) vs 1-dim factorized parts 0.33395 — extensive binding is the std connected part"
     }
   ],
   "allPassed": true,
@@ -99,7 +99,7 @@
       "6Li": 0.027488607863379193,
       "12C": 0.018425061504455845
     },
-    "verdict": "MECHANISM LOCALIZED (no closure): the extensive/connected binding channel is the STANDARD (2,1) rep \u2014 the non-abelian transfer-matrix product over inter-nucleon bonds \u2014 whose connected part C_std vanishes for A=2 and is NON-EMPTY (>0) for A>=3. The 1-dim (sym/alt) reps factorize over bonds and are disconnected/intensive. This is the (2,1) channel that brackets the deuteron f_pn (#2528). HONEST CAVEAT: C_std is NON-MONOTONE in bond count and its per-bond value SHRINKS for heavy nuclei \u2014 the fixed-H_3 braid localizes the channel but does not by itself sustain extensivity past the light nuclei (consistent with the known r18k det-direction non-monotonicity + light-nuclei breakdown). Localizes/confirms the channel is non-empty; does NOT set a scale, land AME magnitudes, or wire anything. No fit."
+    "verdict": "MECHANISM LOCALIZED (no closure): the extensive/connected binding channel is the STANDARD (2,1) rep — the non-abelian transfer-matrix product over inter-nucleon bonds — whose connected part C_std vanishes for A=2 and is NON-EMPTY (>0) for A>=3. The 1-dim (sym/alt) reps factorize over bonds and are disconnected/intensive. This is the (2,1) channel that brackets the deuteron f_pn (#2528). HONEST CAVEAT: C_std is NON-MONOTONE in bond count and its per-bond value SHRINKS for heavy nuclei — the fixed-H_3 braid localizes the channel but does not by itself sustain extensivity past the light nuclei (consistent with the known r18k det-direction non-monotonicity + light-nuclei breakdown). Localizes/confirms the channel is non-empty; does NOT set a scale, land AME magnitudes, or wire anything. No fit."
   },
   "context": {
     "builds_on": "wlambda_transfer_matrix_connected_probe.py + design note",
@@ -109,5 +109,7 @@
   },
   "scriptCommitSha": "6c6044317eb2f26ff2ddf78442dfc797b1a88ff3",
   "computedAt": "2026-07-18T13:27:04.674693+00:00",
-  "durationMs": 0
+  "durationMs": 0,
+  "q0Anchor": "muon",
+  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
 }

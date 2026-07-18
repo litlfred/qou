@@ -55,5 +55,7 @@
     "r9_meets_l2_100x": false,
     "delta_lambda_gate_status": "near-match (fit pattern, not derived)",
     "derivation_status": "R9 = ℏ_q^6 × q / 5 is empirically suggestive but NOT structurally derived. The 'q' multiplier (anti-bar-invariant) and '5' divisor (matching T(2,5) muon knot crossings) hint at categorical content but have no Lean theorem yet. Promotion from 'near-match' to 'derived' requires: (1) Lean ℏ_q^6 categorical origin, (2) Lean q × (1/5) T(2,5)-factor derivation, (3) cross-anchor electron/tau consistency check."
-  }
+  },
+  "q0Anchor": "muon",
+  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
 }

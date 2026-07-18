@@ -365,5 +365,7 @@
     "#603 (Option D, LP-shadow-price)"
   ],
   "notes": "Honesty caveat on the augmented system: the Δ_λ Wenzl bridge yields a UNIQUE algebraic solution (Δ_λ = Δρ_D uniformly), but uniqueness depends on the b_μ = Δρ · z^{n-ℓ(μ)} convention.  Other choices of b_μ correspond to additional physical anchors (e.g. mass shifts of cycle-type-related bound states) that we do not have for the deuteron alone.  The derived Δ_λ profile should be read as the 'maximum-entropy / y_λ-proportional' prior, not as a measurement.  Option D (LP shadow prices, #603) and Option B (Frobenius co-Casimir, #602) give different priors derived from the LP-dual and the categorical structure respectively; the four options together characterise the Δ_λ uniqueness class.",
-  "prior_attempts": "Two earlier Option F attempts halted at: (1) multiprocessing.Pool closure-pickle bug, fixed here by sequential evaluation (deuteron is small enough); (2) Anthropic API rate limit, sidestepped by re-starting the session fresh."
+  "prior_attempts": "Two earlier Option F attempts halted at: (1) multiprocessing.Pool closure-pickle bug, fixed here by sequential evaluation (deuteron is small enough); (2) Anthropic API rate limit, sidestepped by re-starting the session fresh.",
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

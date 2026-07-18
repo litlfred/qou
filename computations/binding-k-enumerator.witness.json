@@ -3457,5 +3457,7 @@
   },
   "caveats": [
     "Restricted to MINIMAL inter-nucleon generators per atom (σ_3 only for ²H; σ_3, σ_6 for ³H / ³He).  This is the natural starting set — the σ_{3k} crossings represent the single-Hopf bindings between adjacent nucleon strand triples.  More elaborate bindings (e.g. L_{6a4} which links all three nucleon pairs symmetrically) require extended generators (σ_4, σ_5, σ_7, σ_8) and a larger search space.  This session ships the minimal-generator framework + the deuteron Hopf confirmation (the simplest non-trivial case)."
-  ]
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

@@ -74,5 +74,7 @@
     },
     "cascade_ratio_mn_over_qbeta": 1.130408857573275,
     "interpretation": "Cascade confirmed 1:1 — Q_β error propagates linearly into m_n + Δ_pn absolute errors via Path C. The c_3 rung closes Q_β to cal-anchored precision; the 3-rung [3]_q/25 Habiro near-match (2.66 ppm on c_3) reproduces it to 2.66e-12 MeV (≪ σ_exp). IF derived, the [3]_q/25 closure would close all three observables. c_3 remains cal-anchored in production; promotion gated on KLR/crystal infra. NO fitted form wired."
-  }
+  },
+  "q0Anchor": "muon",
+  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
 }

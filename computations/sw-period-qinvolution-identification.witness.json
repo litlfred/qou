@@ -182,5 +182,7 @@
     ],
     "telephone_first_fail_n": 4,
     "scope_a_prune": "Naive depth-2 q-telephone T(n)=T(n−1)+[n−1]_q T(n−2) is exact at n=3, drifts for n≥4; no low-degree depth-2 q-holonomic model in q^n closes (separate guess, best held-out ≈1.5e-3). Exact q-coefficient ≠ bare [n−1]_q. NOT a structural exclusion of a depth-2 q-recurrence — the right q-statistic (Rogers–Szegő moment recurrence) is open (z2bn)."
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

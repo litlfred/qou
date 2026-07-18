@@ -122,5 +122,7 @@
     "S_cancels_from_Qbeta_scale_via_Q_A_to_0p17pct": true,
     "S_cancels_from_Qbeta_subppb_normalisation": false,
     "verdict": "PARTIAL (honest). Three structural findings. (i) The Frobenius Gram G_{ij}=τ_M(b_i b_j) is INDEFINITE, so the operator-selection LP min-trace objective is degenerate (optimum ≈ 0, not the physical T_β); the production rule's min-‖x‖² is a DIFFERENT, well-posed selection. (ii) Strict complementarity still fixes a unique ACTIVE SET and the selector DIRECTION x̂ is S-independent and q-rational, so the dimensionless precision-ladder FACTORS (1 + c_k u^k) are S-independent. (iii) The Q_β SCALE is supplied CODATA-Q_β-free by the q-rational Form-A baseline Q_A(q_0) to ~0.17%; the c_k ladder refines it. BUT sub-ppb (7.8 ppb L2) closure needs the c_k ABSOLUTE normalisation, which the production rule pins via n_target = Q_β/E_0 — the CODATA Q_β. So S does NOT fully cancel: the SDP fixes the SHAPE of T_β, not its trace magnitude. NO FIT introduced (direction forced by complementarity); honest PARTIAL — c_k directions + ~0.17% scale are CODATA-Q_β-free, sub-ppb normalisation is not."
-  }
+  },
+  "q0Anchor": "muon",
+  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
 }

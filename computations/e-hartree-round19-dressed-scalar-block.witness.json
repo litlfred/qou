@@ -87,5 +87,7 @@
     "dressed_chi22_K_shell_m5": "(q**4 + 1)*(q**8 - 1)/(q**5*(q**2 + 1))",
     "dressed_chi22_K_shell_value_at_q0": "0.87318958624344676114220965127346080404109925020387",
     "finding": "Round 19 closes rounds 17-18's two open computations exactly: bare support = classical hook theorem (round-17 table exact; (2,2) zero structural); dressed scalar block activates with closed form h[m-1][4]/[2]^2, equal to h*(dim_q V_22)^2 at the K-shell power. Conjecture stays OPEN: remaining gap = archimedean trace-ratio on the activated block + the two standing transports (m_e c^2 unit; LP-kink smoothness)."
-  }
+  },
+  "q0Anchor": "muon",
+  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
 }

@@ -76,5 +76,7 @@
       "(1, 1, 1, 1, 1, 1)": 1.1285335545962272e-06
     },
     "finding": "NEITHER raw max-|μ| ([3,3]) NOR raw |y_λ·χ_λ| ([6]) reproduces the framework empirical deuteron dominant [2,2,1,1] (which has tiny raw contribution ~2e-4). The activation selector is the Φ_q-truncated dilogarithm TOWER |y_λ Σ_a Φ_q^{≤k}(μ_a)| (per-partition-k-lambda-rule.md), a more refined observable than either bare eigenvalue max or raw trace contribution — requires the framework's Φ_q machinery."
-  }
+  },
+  "q0Anchor": "muon",
+  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
 }

@@ -4,7 +4,7 @@
   "computedAt": "2026-07-18T17:12:00.853814+00:00",
   "computation": "delta-lambda-m-pi-constraint-probe",
   "scriptFile": "delta_lambda_m_pi_constraint_probe.py",
-  "description": "Probes whether m_\u03c0 as CAL-3 tightens the \u0394_\u03bb closure problem. Sets up joint 2-equation system (pion + proton) at H_3 level: 2 equations, 3 unknowns \u2192 rank 2 system with 1 free parameter. Tests whether uniform \u0394_\u03bb reproduces m_p/m_\u03c0 ratio.",
+  "description": "Probes whether m_π as CAL-3 tightens the Δ_λ closure problem. Sets up joint 2-equation system (pion + proton) at H_3 level: 2 equations, 3 unknowns → rank 2 system with 1 free parameter. Tests whether uniform Δ_λ reproduces m_p/m_π ratio.",
   "parameters": {
     "q0": "1.1099785827513808075916690956107688798744991218736",
     "h_q": "0.20906029879563931543084621312967494385975749526306",
@@ -36,7 +36,7 @@
       "passed": true
     },
     {
-      "label": "joint system admits positive \u0394 solutions",
+      "label": "joint system admits positive Δ solutions",
       "passed": true
     }
   ],
@@ -44,5 +44,7 @@
   "scriptHash": "6269330559f7",
   "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
   "commitSha": "58abb081414b74321a6be9450d00f24bfbc0f56c",
-  "durationMs": 0
+  "durationMs": 0,
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

@@ -48,5 +48,7 @@
       "Cohomological audit cross-check: this prediction is the candidate replacement for the CAL-3 input pending tower-summation closure."
     ],
     "tolerance_vs_consumers": "All downstream production mass-prediction consumers have ≥ 4% MAE on β-decay sector observables; the +0.18% substrate-Q_β residual is well within these tolerances. The 1ppb gate (per-observable-100x-status.witness.json) is the ONLY consumer the substrate prediction would fail today; that closure is the tower-summation workplan item."
-  }
+  },
+  "q0Anchor": "muon",
+  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
 }

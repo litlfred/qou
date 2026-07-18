@@ -83,5 +83,7 @@
   "caveats": [
     "Flat (n-independent) screening; omits the radial core-overlap envelope (~1/n^3 quantum defect). The bar-even angular weight [2l+1]_q supplies the correct penetration SIGN; the n-decay (radial overlap) that sets the MAGNITUDE without overshoot remains the open structural input.",
     "Real-energy gap-detection closure detector (gap_factor=1.6x median)."
-  ]
+  ],
+  "q0Anchor": "muon",
+  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
 }

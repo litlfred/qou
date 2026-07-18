@@ -730,5 +730,7 @@
   },
   "caveats": [
     "B_3 atoms only this session (proton, neutron, ²H/6_2, ³He/L₆ₐ₄). ³H (B_5 / 8_11) needs Hoefsmit at H_5 — deferred. The Wenzl-Schur weights y_λ(q_0) are loaded from y-lambda-wenzl-witness.json (50 dps mpmath); evaluation here is float64 (sufficient for the argmax-λ* identification).  The 'observed ρ' values are taken from the existing canonical-knot table in conj-rho-prefactor-structural.md / joint-tower-sdp-h6-h9.witness.json. **Critical structural finding:** the H_3-level analysis identifies proton and ³He as Markov-equivalent (their braid words are mutual inverses, χ_λ profiles identical), so no rule of the form 'ρ = f(chi, y) at the braid strand count' can reproduce the observed ρ split (1 vs 2). The conjecture's structural form *requires* evaluation at the atomic strand count n_0 = 3·A, where the binding operator K ∈ H_{3·A} carries the inter-nucleon linking. See `structural_finding` in the summary for the proposed categorical decomposition T_w(𝔥) = K · ⊗_i T_w(const_i)."
-  ]
+  ],
+  "q0Anchor": "muon",
+  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
 }

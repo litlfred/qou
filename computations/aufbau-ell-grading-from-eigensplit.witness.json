@@ -136,5 +136,7 @@
   "caveats": [
     "Mechanical gap-detection closure detector (gap_factor=1.5x median); the noble-gas set is quantitative and Madelung itself is only an approximation, so the discriminating result is the SIGN of the structural l-coefficient (a=-2), not the precise closure set.",
     "NULL/structural-constraint result: the eigenvalue split does NOT derive penetration. Any positive tuned c*l reproducing [2,10,18,36] would be a fit."
-  ]
+  ],
+  "q0Anchor": "muon",
+  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
 }

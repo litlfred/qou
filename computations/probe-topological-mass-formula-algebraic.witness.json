@@ -50,5 +50,7 @@
   },
   "caveats": [
     "Verifies only the algebraic combine mass_alg = phi1/hbar_sq the proposition proves; the geometric inputs (Vol_q, tau_arch) are imported hypotheses, not derived. Not the canonical absolute nucleon mass (that is the muon-anchored Hecke energy via canonical_mass.py)."
-  ]
+  ],
+  "q0Anchor": "muon",
+  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
 }

@@ -45,5 +45,7 @@
   },
   "caveats": [
     "The probe hits the pre-stated failure signature: the derivation diverges at the q_muon anchor. This indicates that a fibre-level Habiro element is required, mirroring the parallel α_EM PR #1511 pattern. The structural derivation based strictly on simple per-cell weights is falsified; cross-anchor stability demands the deeper categorical structure. Session C result is NEGATIVE."
-  ]
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

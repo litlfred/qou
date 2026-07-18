@@ -58,5 +58,7 @@
     ],
     "plain_vs_qbosonic_spread": 0.02414811662923999,
     "verdict": "The q-weighted (E_+) bosonic signal +0.2970 sits within 0.0241 of the plain +0.2729 — because q₀≈1.11≈1 the symmetrizer choice shifts the signal by only ~9%. The conclusion is ROBUST: POSITIVE (symmetrization relieves the under-prediction), O(1 MeV), sub-dominant. The fermionic (Pauli) projector gives -0.3820 — a distinct sector, not the bosonic ground state."
-  }
+  },
+  "q0Anchor": "muon",
+  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
 }

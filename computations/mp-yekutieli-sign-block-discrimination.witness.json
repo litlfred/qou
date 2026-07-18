@@ -48,5 +48,7 @@
     "sign_V_1_1_1_consistent": "yes",
     "verdict": "CROSS-ANCHOR CONSISTENT. Both 1-dim Wedderburn blocks (sign V_(1,1,1) and trivial V_(3)) match the (α_em/π)/6 form at 54 ppb residual at both anchors. Numerical discrimination is not possible — they have identical Plancherel weights. The PHYSICAL discrimination is: proton color singlet = antisymmetric → SIGN rep is the natural Fermi-statistics channel. OPEN: Lean §3b-cond formalization of the conditional class ProtonMassEMSignBlock; Bring zero-mode derivation of the bare per-block (α_em/π); residual 54 ppb characterization.",
     "physical_pick": "sign V_(1,1,1) — proton color antisymmetric"
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

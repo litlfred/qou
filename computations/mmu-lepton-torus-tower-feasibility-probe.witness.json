@@ -53,5 +53,7 @@
     "torus_knots_have_zero_volume": true,
     "structural_note": "Muon canonical knot 4_1 is hyperbolic, NOT a torus knot. T(2,k) torus knots (3_1,5_1,7_1) have Vol=0, so a literal torus tower cannot reuse the Vol(4_1)/ℏ_q² lever. Reducing the 209.8 ppb requires a NON-Vol invariant or accepting the q_0-driven floor (211 ppb tracks the q_0 re-pin shift, H1).",
     "feasibility_verdict": "The 209.8 ppb bare-categorical residual is H1-confirmed as the q_0 re-pin shift (-11.6 ppb) amplified ~18x by the Vol(4_1)/ℏ_q² lever. m_e (CAL-1) is q_0-independent, so q_0 does NOT cancel in m_μ/m_e. The single-term S=0 formula has no shell to add a PROVED categorical correction to without a new invariant. Reducing below ~211 ppb is therefore q_0-limited (Subgoal-2, owner-declined) UNLESS a new lepton-tower categorical term (non-Vol) is derived that shifts the prediction toward CODATA WITHOUT being a fit."
-  }
+  },
+  "q0Anchor": "muon",
+  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
 }

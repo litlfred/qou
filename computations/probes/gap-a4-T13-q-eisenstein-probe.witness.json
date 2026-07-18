@@ -81,5 +81,7 @@
       "E_6_at_q_inner_0.901": "-40366854106.96880732208066910325696424247927868610013323356813227122131"
     },
     "synthesis_verdict": "T13 refutes the q-Eisenstein candidate cross-algebra functor at the expansion-point level: Eisenstein series E_{2k}(q) diverges at q = 1 (the natural h = 0 base point for the Borromean reference), so no Taylor h-coefficient exists to compare to the polynomial h⁴ = −3/4.  Numerical sanity: E_4(0.901) ≈ 12768076 and E_6(0.901) ≈ -4036685 are finite far from the cusp, but the cusp at q = 1 IS the h-expansion point.  The icosahedral q-Eisenstein analogue inherits the same obstruction: the icosahedral modular discriminant Δ_I, being a polynomial in E_4 and E_6, also diverges at the cusp.  This is the 7th candidate cross-algebra functor refuted (after T5 F1/F2/F3, T7 Bratteli, T8 RT/q-Schur, T10 McKay-character).  The h⁴ = −3/4 obstruction stays structurally OPEN; the remaining direction is q-Hermite icosahedral resolvent (T14)."
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

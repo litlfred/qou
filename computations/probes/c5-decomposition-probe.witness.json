@@ -68,5 +68,7 @@
   },
   "caveats": [
     "The Lean identities are PROVED (sorry-free, field_simp; ring over generic [Field R]); this witness only verifies the canonical substrate-q_0 specialisation. The outer empirical claim 'c_5 matches Q_β data to 2.4%' is a separate downstream check, not asserted here."
-  ]
+  ],
+  "q0Anchor": "muon",
+  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
 }

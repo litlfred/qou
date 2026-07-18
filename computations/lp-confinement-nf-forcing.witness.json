@@ -633,5 +633,7 @@
   },
   "caveats": [
     "Conjectural — no Lean proof attempted at this step. The witness compares predicted vs observed NF support across a small bench of compound braids. The Frobenius Gram is taken diagonal (G_{λμ} = δ_{λμ} dim V_λ), reflecting the orthogonality of irreducible Markov channels — a simplification of the full non-diagonal G that would arise from a non-trivial inner product."
-  ]
+  ],
+  "q0Anchor": "muon",
+  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
 }

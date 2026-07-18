@@ -290,5 +290,7 @@
       "tier": "no"
     },
     "finding": "f* = 0.280041 (fraction of the L₊ quadratic on the lone pair that lands exactly on 104.5°); best derived candidate: z^2 = 0.249321 (-10.970%, no). r* = 1.244218. Tiered comparison only — no wiring; promoting a candidate requires a structural derivation (e.g. sharing of the L₊ pair between domains, or a quantum-dimension normalisation) plus stability checks. KERNEL SCAN (demotion): the q² and 1+z/2 near-matches hold ONLY at the Coulomb kernel (n=1; at n=2/3/6 r* drifts to ≈1.28/1.32/1.45) — kernel-conditional near-matches. Coulomb is the physically canonical kernel for charged-domain repulsion, but the identification inherits that assumption."
-  }
+  },
+  "q0Anchor": "muon",
+  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
 }

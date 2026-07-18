@@ -4,7 +4,7 @@
   "computedAt": "2026-07-18T17:22:08.873445+00:00",
   "computation": "qbeta-root-of-unity",
   "scriptFile": "qbeta_root_of_unity_probe.py",
-  "description": "FORCED-knot root-of-unity / Ohtsuki\u2013Habiro test of the Q_\u03b2 c_k ladder. Computes the genuine quantum invariants of the only two framework-forced knots \u2014 figure-eight 4\u2081 (q\u2080 fixed by Vol(4\u2081)=2\u039b(\u03c0/3); Kashaev/Habiro cyclotomic colored Jones + Ohtsuki loop series) and the Hopf link (registry hint c_3=\u22122=J_Hopf(q=1)) \u2014 plus the trefoil 3\u2081 as a non-hyperbolic control. Each formula is verified against a literature value (Habiro unknot norm, V_{4\u2081} Jones poly at N=2, volume-conjecture Kashaev growth \u2192 Vol(4\u2081), V_Hopf(1)=\u22122, V_K(1)=1) BEFORE comparison. PARAMETER-FREE test against c_2=\u22121 (canonical) and c_3=\u22122.0693 (empirical, proton-pinned). NO knot/root-of-unity scan: only forced candidates are admitted, per the anti-fitting discipline (a scan to find a match would BE a fit). This is the complex / root-of-unity follow-up that the real-q falsification (2026-06-04 c3-rigidity audit; PR #2452) left open.",
+  "description": "FORCED-knot root-of-unity / Ohtsuki–Habiro test of the Q_β c_k ladder. Computes the genuine quantum invariants of the only two framework-forced knots — figure-eight 4₁ (q₀ fixed by Vol(4₁)=2Λ(π/3); Kashaev/Habiro cyclotomic colored Jones + Ohtsuki loop series) and the Hopf link (registry hint c_3=−2=J_Hopf(q=1)) — plus the trefoil 3₁ as a non-hyperbolic control. Each formula is verified against a literature value (Habiro unknot norm, V_{4₁} Jones poly at N=2, volume-conjecture Kashaev growth → Vol(4₁), V_Hopf(1)=−2, V_K(1)=1) BEFORE comparison. PARAMETER-FREE test against c_2=−1 (canonical) and c_3=−2.0693 (empirical, proton-pinned). NO knot/root-of-unity scan: only forced candidates are admitted, per the anti-fitting discipline (a scan to find a match would BE a fit). This is the complex / root-of-unity follow-up that the real-q falsification (2026-06-04 c3-rigidity audit; PR #2452) left open.",
   "precisionMetadata": {
     "compute_dps": 60
   },
@@ -44,7 +44,7 @@
       "expected": 5.0,
       "passed": true,
       "tolerance": 0.0,
-      "source": "Habiro unknot norm; V_41 Jones at N=2; Kashaev\u2192Vol(4_1); V_Hopf(1)=-2; V_K(1)=1"
+      "source": "Habiro unknot norm; V_41 Jones at N=2; Kashaev→Vol(4_1); V_Hopf(1)=-2; V_K(1)=1"
     },
     {
       "name": "forced_candidate_reproduces_c2_and_c3_param_free",
@@ -61,11 +61,13 @@
     "fig8_ohtsuki_reproduces_c3": false,
     "any_forced_candidate_reproduces_c2_and_c3_param_free": false,
     "overall": "NEGATIVE",
-    "summary": "No FORCED candidate reproduces c_2 AND c_3 parameter-free. The ONLY near-c_3 value is V_Hopf(q=1) = \u22122, which (i) misses c_3 by 3.35% and (ii) is the q\u21921 CLASSICAL limit (a value, not a root-of-unity / Habiro structure: at q=1 the quantum deformation is trivial, so there is no Ohtsuki series). The 4\u2081 Ohtsuki loop coefficients (11/12, 697/288, \u2026) are knot-canonical but bear NO parameter-free relation to c_3 = \u22122.069. The 4\u2081 colored-Jones values at q0 do not land on c_3 under any natural normalisation. The complex / root-of-unity fibre-element lead is therefore ALSO closed for the forced candidates: c_3 anchor-rigidity (real-q falsification, PR #2452 / 2026-06-04 audit) stands. NOT a fit; no scan performed."
+    "summary": "No FORCED candidate reproduces c_2 AND c_3 parameter-free. The ONLY near-c_3 value is V_Hopf(q=1) = −2, which (i) misses c_3 by 3.35% and (ii) is the q→1 CLASSICAL limit (a value, not a root-of-unity / Habiro structure: at q=1 the quantum deformation is trivial, so there is no Ohtsuki series). The 4₁ Ohtsuki loop coefficients (11/12, 697/288, …) are knot-canonical but bear NO parameter-free relation to c_3 = −2.069. The 4₁ colored-Jones values at q0 do not land on c_3 under any natural normalisation. The complex / root-of-unity fibre-element lead is therefore ALSO closed for the forced candidates: c_3 anchor-rigidity (real-q falsification, PR #2452 / 2026-06-04 audit) stands. NOT a fit; no scan performed."
   },
   "allPassed": true,
   "scriptHash": "dfa5dedbff2a",
   "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
   "commitSha": "4bb980fedca04e4128bc45c44b964a45341c3681",
-  "durationMs": 0
+  "durationMs": 0,
+  "q0Anchor": "muon",
+  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
 }

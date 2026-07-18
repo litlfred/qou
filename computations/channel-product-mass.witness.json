@@ -702,5 +702,7 @@
   },
   "caveats": [
     "The channel sum factorization a^Z · b^N assumes independent nucleon contributions. This misses inter-nucleon correlations (surface, Coulomb, pairing, shell effects). The 7-term BW formula captures these corrections. A full computation would use the per-generator vertex volumes with inter-nucleon crossing matrices, not the summed factorization."
-  ]
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

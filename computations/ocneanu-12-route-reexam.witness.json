@@ -41,5 +41,7 @@
     "relative_pct": "-0.00370690313814",
     "F_Bor_at_q0": "4.469138597826758581370788",
     "verdict": "AUDIT VERDICT STANDS but with NUANCE: the empirical k ≈ 12 is extraordinarily close to integer 12 (~10⁻⁴ relative). The correction commit was right that the Borromean's pole structure doesn't give -1/12 — but the integer 12 itself is so tight (10⁻⁴) that it deserves a NEW structural explanation, not just 'empirical near-match.' Several natural candidates (4·3 = #edge cells × #strands; Σd_λ²·2 = 6·2; 3!·[2]_q at q=1 = 12) hit exactly 12 — deserves categorical investigation."
-  }
+  },
+  "q0Anchor": "muon",
+  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
 }

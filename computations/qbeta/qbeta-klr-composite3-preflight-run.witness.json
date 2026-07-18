@@ -60,5 +60,7 @@
     ],
     "verdict": "TYPEB_FOLDED_CRYSTAL_SIGN_REFUTED_AT_U2",
     "interpretation": "Same structural refutation pattern as Composite 1 standard: positivity of q-monomial sums at q > 0 is convention-robust. Folded crystals (AGENTS.md §7b) inherit positivity from the unfolded sl_n crystal — the σ-fixed subset is a SUBSET of positive basis elements, so its q-weight sum is bounded above by the full sum but still positive. The Composite-3 ansatz has NO q-Pochhammer factor to flip the sign at u², so the refutation is even cleaner than Composite 1 (which had (q;q)_2 > 0 at q > 1 happening to compound the positivity). Combined three-preflight outcome (B + C + D refuted at u^2; A is the only surviving cont. 9 menu option not requiring a separate Demazure-Lusztig preflight scope): ~22-30 sessions of Lean + pyhecke infra build avoided. CAL-3-anchored permanent acceptance is now backed by 3 corpus closures + 3 preflight refutations."
-  }
+  },
+  "q0Anchor": "muon",
+  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
 }

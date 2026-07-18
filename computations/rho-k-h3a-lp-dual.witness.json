@@ -627,5 +627,7 @@
   "audit_reference": "AUDIT-DEEP-2026-05.md §7 P3' / Δ_λ derivation race",
   "pr": "#600 (sibling — Δ_λ option D)",
   "notes": "Categorical caveat: every operator-selection LP needs SOME cost vector to lift the rank-deficient constraint manifold to a unique extremum. Two categorically motivated choices are reported: t_λ = 1/dim_q(λ) (Plancherel weight; default; favours small-dim, low-multiplicity blocks) and t_λ = |χ^λ(β_D)| (Frobenius norm; favours channels the deuteron word actually couples to weakly). Neither is canonical; the active-set y_λ* > 0 channels are the *derived* binding-energy shadow prices and may differ between the two costs. The comparison_to_occam block reports the L∞ between LP and the Occam (3,2,1)/[5,1] singleton-support pick. If LP picks the same single partition as Occam, the methods agree. If LP spreads support across several λ, the LP shadow prices are the *principled* selector and Occam was a degenerate guess.",
-  "follow_up": "Extend to (T, ³He) at n=9 (p(9)=30) with the same LP and compare LP active sets across atoms — if a stable subset of λ is selected by LP for every atom, that subset is the categorically derived binding-channel registry. Also wire the LP-dual cache (lp_dual_cache.py) so witness regenerations do not re-solve the same LPs."
+  "follow_up": "Extend to (T, ³He) at n=9 (p(9)=30) with the same LP and compare LP active sets across atoms — if a stable subset of λ is selected by LP for every atom, that subset is the categorically derived binding-channel registry. Also wire the LP-dual cache (lp_dual_cache.py) so witness regenerations do not re-solve the same LPs.",
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

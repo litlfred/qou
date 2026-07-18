@@ -69,5 +69,7 @@
       "production_residual_ppb": "1246.862",
       "conclusion": "Residual is in the scaling (eigenphase/E_0), per neutron-qvalue-symbolic.md. The cos eigenphase is the only closed-form scaling with the right direction; geometric/Li_2^q towers are refuted. Only c_2 wires (Taylor-exact); c_3+ are q₀-dependent and circular if extracted from Q_codata. All-c_k wiring needs the open Taylor-exact eigenphase refinement (the bridge). Production stays Q_N2."
     }
-  }
+  },
+  "q0Anchor": "muon",
+  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
 }

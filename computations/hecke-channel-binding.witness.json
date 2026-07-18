@@ -172,7 +172,7 @@
     "deuteron_best_channel": "std",
     "deuteron_best_miss_pct": "74.885986413100657278848086042549285833003230488064",
     "f_pn_needed_for_exact_AME": "0.58776243266346022831955909687677931384456770453334",
-    "physical_red_flag": "current std channel binds the UNBOUND pp/nn channels (diproton/dineutron have no bound state) \u2014 a genuine defect; the Hecke channel structure is tested here as the candidate fix."
+    "physical_red_flag": "current std channel binds the UNBOUND pp/nn channels (diproton/dineutron have no bound state) — a genuine defect; the Hecke channel structure is tested here as the candidate fix."
   },
   "_provenance": {
     "channels": "sym=c*q+d, std=z*c+d, alt=-c/q+d; Vfull=w_sym*sym+w_std*std+w_alt*alt",
@@ -190,5 +190,7 @@
   "computedAt": "2026-07-18T17:42:13.675322+00:00",
   "durationMs": 0,
   "engineVersion": "mpmath 1.3.0",
-  "scriptFile": "hecke_channel_binding_probe.py"
+  "scriptFile": "hecke_channel_binding_probe.py",
+  "q0Anchor": "muon",
+  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
 }

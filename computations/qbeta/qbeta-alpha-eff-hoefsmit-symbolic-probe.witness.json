@@ -67,5 +67,7 @@
     "verdict": "ALPHA_EFF_SYMBOLIC_ON_MAIN_LADDER_VARIABLE_RECONCILIATION_OPEN",
     "alpha_eff_symbolic": "(z-1)*h/2 ; z=1/(sqrt(q)+1/sqrt(q)) ; h=q-1/q",
     "interpretation": "α_eff = (z-1)·h/2 is closed-form symbolic on main (not open as the KLR scope lists). It is bar-ODD, confirming #1900. The open piece is narrower than 'derive symbolic α': it is the ladder-variable reconciliation between the producer phase (c_1≠0) and the #1887 reframe (c_1=0, c_2=-1), after which Φ₂ follows from the symbolic α."
-  }
+  },
+  "q0Anchor": "muon",
+  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
 }
