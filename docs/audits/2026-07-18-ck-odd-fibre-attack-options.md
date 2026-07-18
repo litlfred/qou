@@ -91,14 +91,26 @@ principle — the open problem itself).
   lesson: the corpus `log_phi_b` integral rep is valid only in
   `|Im v| < Im c_b`; a contour leaving the strip produces silent garbage
   (first run cost 1033s) — the probe now sizes the bend angle to the strip.
-- **A4 disposition (blocked on coefficient generation — honest).** The
-  median Borel–Laplace cross-check needs the 5₂ perturbative series φ_σ to
-  ~30+ orders; only 5 printed orders exist, **and the printed τ² coefficient
-  is a misprint in one of GGM eq 20 / Peacock eq 76** (machine-checked
-  irreconcilable). First sub-step is arbitrating c₂ via an independent
-  2-loop saddle expansion (corpus 4₁ machinery adaptable), then a
-  coefficient-generation engine. Bean `qou-ea86` stays open; not
-  session-sized.
+- **A4.1 LANDED — the τ² misprint is ARBITRATED (4/4): GGM's eq 20 τ² is the
+  misprint; Peacock eq 76 (at ξ) is correct.**
+  [`qbeta_5two_phi_series_tau2_arbitration_probe.py`](../../computations/probes/qbeta_5two_phi_series_tau2_arbitration_probe.py)
+  + witness: independent extraction of φ_σ1's Taylor coefficients from the
+  radial asymptotics of the A1/A2-validated H-series on the tilted ray
+  `τ = t·e^{iπ/6}` (σ1-dominant; model-guided phase unwrap; two-stage
+  V-then-polynomial fit). Gates: dominant-saddle **V = Vol(5₂) − 1.379i with
+  Re to 2e-8**; fit residual 1.3e-9; the AGREED τ¹ coefficient identifies
+  the convention uniquely at **3.8e-4** (confirming the generator identity
+  `GGM@z = Peacock@ξ`). Verdict: extracted τ² matches **Peacock at 1.9% vs
+  GGM at 98% — 50.8× separation**. Bonus finding: the dominant saddle on
+  this ray carries the **conjugate CS sign** (V = Vol − i·1.379). τ³ is
+  reported as an ill-conditioned diagnostic (0.3 rel, convention twins tie).
+  Three numerics lessons recorded in-file (principal-branch phase hops;
+  \>π phase steps need model-guided unwrap; 1/τ-vs-polynomial collinearity
+  needs the two-stage fit).
+- **A4 remainder (open, now unblocked).** The median Borel–Laplace
+  cross-check still needs φ_σ to ~30+ orders (coefficient-generation
+  engine); with the τ² arbitration the low-order basis is now trustworthy.
+  Bean `qou-ea86` stays open; not session-sized.
 - **A5 disposition (narrowed + first bricks laid).** The A3 falsification +
   sibling #3954's σ3-shape constraint jointly kill the analytic-saddle
   carrier; the capstone carrier search narrows to the **categorical H₃(q)
