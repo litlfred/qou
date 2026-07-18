@@ -1,4 +1,6 @@
 import QOU.Mathlib.StandardYoungTableau
+import QOU.Mathlib.SYTHookGNW
+import QOU.BraidKnot.SpechtClassification
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 import Mathlib.Data.Nat.Factorial.Basic
 
@@ -81,6 +83,22 @@ namespace QOU.Mathlib
 
 open YoungDiagram
 
+/-- **The geometric↔list hook bridge** `∏_{c∈μ} hook(c) = prodHooks (rowLens μ)`: the sole
+    remaining gap in the *geometric* HLF below. The corpus list product
+    `QOU.BraidKnot.IdentityI.prodHooks` uses the identical per-cell hook
+    `(rowLen i − j) + (colLen j − i) − 1` (`hookLength_eq_of_mem`); this states the pure-ℕ
+    reindexing of the cell product by rows (`SchenstedCellsBridge.cells_biUnion`) that identifies
+    the two. The Frame–Robinson–Thrall HLF *itself* is proved
+    (`QOU.Mathlib.SYTEnum.numSYTenum_mul_prodHooks`, axioms-clean); only this list↔diagram
+    reindex remains, so the geometric HLF below is `true modulo a reindexing identity`, not
+    modulo all of FRT. -/
+theorem hookLengthProduct_eq_prodHooks (μ : YoungDiagram) :
+    μ.hookLengthProduct = QOU.BraidKnot.IdentityI.prodHooks μ.rowLens := by
+  -- Ref: [manuscript] pure-ℕ reindexing ∏_{c∈cells} = ∏_rows ∏_cols (cells_biUnion) matching the
+  --   per-cell hook to the corpus list `prodHooks`. The FRT HLF is proved downstream
+  --   (numSYTenum_mul_prodHooks); this list↔diagram bridge is the only remaining gap.
+  sorry
+
 /-- **The hook-length formula (target)**: for every Young diagram `μ` with
     `n = |μ|` cells, the number of standard Young tableaux times the hook-length
     product equals `n!`:
@@ -96,10 +114,18 @@ open YoungDiagram
     the tracked next step — a Mathlib-upstream-scale contribution. -/
 theorem numStandardYoungTableaux_mul_hookLengthProduct (μ : YoungDiagram) :
     numStandardYoungTableaux μ * μ.hookLengthProduct = (μ.cells.card).factorial := by
-  -- Ref: [manuscript] hook-length formula (Frame–Robinson–Thrall 1954). The RSK /
-  --   FRT bijection is not yet in Mathlib at the pinned toolchain; this states the
-  --   target with the definitional layer (arm/leg/hook, hookLengthProduct) proved
-  --   above. Discharging it is the Mathlib-upstream infra step (bean qou-tqab).
-  sorry
+  have hl : (μ.rowLens).Sorted (· ≥ ·) := μ.rowLens_sorted
+  have hpos : ∀ a ∈ μ.rowLens, 0 < a := μ.pos_of_mem_rowLens
+  -- the count bridge: the genuine #SYT equals the brute-force list count of `μ`'s row lengths
+  have hcount : numStandardYoungTableaux μ = SYTEnum.numSYTenum μ.rowLens := by
+    rw [SYTEnum.numSYTenum_eq_numStandardYoungTableaux μ.rowLens hl,
+      YoungDiagram.ofRowLens_to_rowLens_eq_self]
+  -- the size bridge: `sz (rowLens μ) = |μ|`
+  have hsz : QOU.BraidKnot.IdentityI.sz μ.rowLens = μ.cells.card :=
+    (QOU.BraidKnot.SpechtClassification.card_eq_rowLens_sum μ).symm
+  -- the proven Frame–Robinson–Thrall HLF in list form: `#SYT · ∏hooks = n!`
+  have hkey := SYTEnum.numSYTenum_mul_prodHooks μ.rowLens hl hpos
+  rw [hcount, hookLengthProduct_eq_prodHooks μ, ← hsz]
+  exact hkey
 
 end QOU.Mathlib
