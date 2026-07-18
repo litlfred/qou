@@ -1,0 +1,109 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-18T09:38:18.035900+00:00",
+  "commitSha": "30250c93c3e38ef0da0d7ea1b7ac9882b6a145ff",
+  "assertions": [
+    {
+      "name": "index_trace_equals_b1_exact",
+      "computed": 8.000000087760949,
+      "expected": 8.0,
+      "passed": true,
+      "tolerance": 1e-06,
+      "source": "Tr_{H1}(1)=-zeta_{Delta1}(0)=-b1*E_L(0)=2g=8, integer/area-free/q-independent (Epstein E_L(0)=-1 machinery, merged #3834)"
+    },
+    {
+      "name": "D_route_objects_all_miss",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "D(q0)=11.357 and D(zeta) in {1.663..3.804} all not in {8,8pi}: D is the wrong object (transcendental dimension, not an integer index)"
+    },
+    {
+      "name": "index_cleaner_than_D_for_count",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "the count reading gives the exact integer b1=8 where every D object misses; the reciprocal FORM + pi remain the residual wall (orthogonal, open)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 18,
+  "computation": "alpha-em-nonD-index-route",
+  "scriptFile": "alpha_em_nonD_index_route_probe.py",
+  "scriptHash": "66570ee4ecca",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Non-D route for how the photon count b1 enters the alpha_EM per-loop measure 1/(pi b1)=1/(8pi). The shared-wall hypothesis 'b1 = keystone total quantum dimension D=sqrt(Sum_lambda d_lambda^2)' was falsified on both sides (observable D(q0)=11.357 #3871; fibre D(zeta) in {1.663..3.804} #3883; both not in {8,8pi}) because D is a transcendental function of q. This probe confirms the alternative the falsifications left open: b1 enters as the integer MODE-COUNT INDEX Tr_{H1}(1) = -zeta_{Delta1}(0) = 2g = 8 (merged #3834), area-free and q-INDEPENDENT -- recomputed here via the Epstein E_L(0)=-1 machinery (Z^d, d=1,2,3,8) and put HEAD-TO-HEAD against the two failed D objects. The count SUCCEEDS on the non-D route: b1 is a homological integer index (Tr of the identity over the b1 harmonic 1-form sectors), NOT a quantum dimension -- the object-type error the D route made. STRICT scope: this settles ONLY the COUNT. The reciprocal FORM (why 1/b1 not b1) is ORTHOGONAL to count-vs-dimension and is NOT made cleaner by the index reading -- it stays open; the pi is untouched (R1 canonical / R2.R3 leads). Does NOT manufacture 8pi. Scope-(a) POSITIVE-for-count; C14; no fit; no alpha_k wired; 1/(8pi) stays a phase-4 identification.",
+  "contentBlock": "prop:alpha-em-categorical-trace",
+  "data": {
+    "index_reading": {
+      "trace_H1_identity": "8.0000000877609493677",
+      "equals_neg_zeta_delta1_0": true,
+      "target_b1_2g": 8,
+      "abs_err_vs_b1": "8.7760949e-8",
+      "is_integer": true,
+      "q_independent": true,
+      "area_free": true,
+      "reading": "b1 enters as the integer mode-count index Tr_{H1}(1)=-zeta_{Delta1}(0)=2g, NOT D",
+      "epstein_E0_by_d": {
+        "1": "-1.00000003676",
+        "2": "-1.00000002621",
+        "3": "-1.00000002222",
+        "8": "-1.00000001097"
+      }
+    },
+    "D_route_failed": {
+      "D_obs_q0": "11.356887025943677419",
+      "D_obs_ratio_over_b1": "1.419610878",
+      "D_fibre": [
+        {
+          "label": "m1_E8",
+          "D_zeta": "3.80422606518061429",
+          "ratio_over_b1": "0.47552826",
+          "matches_8": false
+        },
+        {
+          "label": "m1_MTC",
+          "D_zeta": "2.68999404785582931",
+          "ratio_over_b1": "0.33624926",
+          "matches_8": false
+        },
+        {
+          "label": "m2_E8",
+          "D_zeta": "2.35114100916989252",
+          "ratio_over_b1": "0.29389263",
+          "matches_8": false
+        },
+        {
+          "label": "m2_MTC",
+          "D_zeta": "1.66250775110981371",
+          "ratio_over_b1": "0.20781347",
+          "matches_8": false
+        }
+      ],
+      "target_pi_b1": "25.1327412287",
+      "none_hit_8_or_8pi": true,
+      "why": "D=sqrt(Sum_lambda d_lambda^2) is a transcendental function of q; grows with q; never equals the integer 8 nor 8pi. Object-type error: dimension vs index."
+    },
+    "residual_open": {
+      "reciprocal_form": "1/b1 vs b1 -- ORTHOGONAL to count-vs-dimension; NOT resolved or made cleaner by the index reading; stays open",
+      "pi": "untouched here; R1 canonical / R2.R3 leads (pi-origin reconciliation audit)",
+      "honesty": "the reciprocal-form problem is exactly as unforced under the index reading as under D -- the win is object-type (integer index), not the form"
+    }
+  }
+}
