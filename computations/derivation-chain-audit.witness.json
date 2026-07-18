@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-18T08:51:44.614633+00:00",
-  "commitSha": "ba0cab93b55e9c03183736a10fd159e5e2b1447c",
+  "computedAt": "2026-07-18T08:48:16.255454+00:00",
+  "commitSha": "5fd9eff91125da7ad4b6d9652fcb136e342573b1",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -559,11 +559,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 4,
+  "durationMs": 5,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "ff40fb7a9d7d",
-  "scriptCommitSha": "50e8851cba171533a8985cca32bf920ead5d7507",
+  "scriptCommitSha": "1f2e5c766c2e251131b5cb1a3cc43ef5e8bef2cd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -573,6 +573,7 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0"
@@ -2449,7 +2450,6 @@
         "complex-volume-unification.witness.json",
         "compound-binding-via-differences.witness.json",
         "compound-shift-nf.witness.json",
-        "compute-audit-scan.witness.json",
         "confined-knot-binding.witness.json",
         "confinement-operator-selection.witness.json",
         "connected-magnitude-charge-symmetric.witness.json",
