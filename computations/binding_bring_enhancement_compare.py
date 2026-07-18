@@ -163,6 +163,14 @@ def main() -> int:
     witness = build_witness()
     out_path = Path(args.out)
     out_path.parent.mkdir(parents=True, exist_ok=True)
+    import os as _os, sys as _sys  # noqa: E402 — P30 rollup (bean cmiy)
+    _d = _os.path.dirname(_os.path.abspath(__file__))
+    while _d != _os.path.dirname(_d) and not _os.path.isdir(_os.path.join(_d, "substrate")):
+        _d = _os.path.dirname(_d)
+    _sys.path.insert(0, _os.path.join(_d, "substrate"))
+    from witness_base import WitnessBuilder  # noqa: E402
+    WitnessBuilder.stamp_staleness_metadata(witness, script_path=__file__, engine="mpmath")
+    witness["scriptFile"] = _os.path.basename(__file__)
     out_path.write_text(json.dumps(witness, indent=2, ensure_ascii=False) + "\n")
     print(f"witness emitted: {out_path}")
     if args.print:
