@@ -40,16 +40,18 @@ reference (loaded live, so this tracks it):
 
 | atom | A | \|Δ\|/ref |
 |---|---|---|
-| proton | 1 | 6.25e-31 |
-| neutron | 1 | 5.88e-31 |
-| deuteron | 2 | 1.06e-31 |
-| triton | 3 | 5.81e-31 |
-| helium-3 | 3 | 6.22e-31 |
-| helium-4 | 4 | *(run in progress — recorded on completion)* |
+| proton | 1 | 2.208e-49 |
+| neutron | 1 | 2.403e-49 |
+| deuteron | 2 | 4.387e-49 |
+| triton | 3 | 3.612e-49 |
+| helium-3 | 3 | 7.278e-49 |
+| **helium-4** | 4 | **7.031e-49** |
 
-All light atoms agree with peel to **≤ 1e-30**, deep inside the 1ppQ (1e-15)
-gate. A third genuinely-independent method now confirms the L1 color-weighted
-atomic traces.
+All **6/6 atoms** agree with peel to **≤ 7.3e-49** (worst-case), ~34 orders of
+magnitude inside the 1ppQ (1e-15) gate. A third genuinely-independent method
+(exact-δ, full-mpf, `mp.fsum`) now confirms the L1 color-weighted atomic traces.
+Witness: `cross-check-trM-cw-seminormal.witness.json` (`allPassed: True`, ⁴He
+n=12 leg ~17.5 min).
 
 ## The debugging finding — exact δ vs `flavor_split_leading` (worth propagating)
 
