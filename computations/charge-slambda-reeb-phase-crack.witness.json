@@ -80,5 +80,7 @@
     "bare_fraction_of_split": 0.04423215355278021,
     "reeb_fraction_of_split": 1.176091038117978,
     "verdict": "Charge-type S_λ SHAPE Z(Z−1)/A^{1/3} is forced (content-sum + BW); the MAGNITUDE cannot come from partition-only C_λ×count (GAP-A-4: p≡n≡³He at H_3). The real S_λ is the free-vs-atom q-Reeb phase |Δθ_λ| at H_{3A}: with universal ρ≈18.5 it gives the split to ~118% (right order) vs the partition-only 4.4% (22.6× short). The Coulomb channel sinh(log q)=h/2 is already inside C_λ=w̃_λ·h/2 (crossing-energy-decomposition.lean). ρ-normalisation push: the cosh(strong)/sinh(Coulomb) channel split BRACKETS the AME split — sinh-only 60% (under), full 118% (over); no no-fit closure to ~100%. The residual is the cosh/sinh mixing of the mirror split (a 5.9% spurious cosh mirror-asymmetry — mirror partners should have equal strong binding), not a missing partition formula. No fit; no rewire."
-  }
+  },
+  "q0Anchor": "muon",
+  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
 }

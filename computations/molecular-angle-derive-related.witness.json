@@ -75,5 +75,7 @@
       }
     },
     "finding": "[2] Double bond = σ² ⇒ weight q² (one q per bond order): ethylene C₂H₄ predicts H–C–H ≈ 117.2° (obs 116.6°) and C–C–H ≈ 121.4° (obs 121.3°) from q²-vs-q domain weights on the trigonal base — no new fit. [1+3] The H₂S correction is an ACTIVE-SET change AMPLIFIED BY CENTRAL-ATOM SIZE: the active set is the bonding orbital channels; whether the s-channel is in it is set by the s–p promotion gap, which scales with the atom's size (strands: O 16 → {s,p} sp³; S 32 → {p} pure-p, s inert). So size↑ ⇒ s drops from the active set ⇒ base flips sp³→pure-p — a DISCRETE flip (group-16 O 104.5° → S/Se/Te ~90° flat confirms it saturates, not a smooth q^k). The residual +2° on the pure-p base is bond-pair repulsion (right sign+scale). Open: derive the size→s–p-gap threshold from the shell braid."
-  }
+  },
+  "q0Anchor": "muon",
+  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
 }

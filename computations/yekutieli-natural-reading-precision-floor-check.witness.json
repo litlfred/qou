@@ -47,5 +47,7 @@
       "(1, 1, 1, 1)": "0.0"
     },
     "verdict": "AUDIT VERDICT STANDS — the natural-reading +0.5 result is exactly 1/2 at 50 dps (no precision-floor margin). The structural mismatch with Reading-A's −G ≈ −0.916 is genuine (sign opposite, magnitude factor 1.83×). This is NOT a meson-Habiro-style precision artifact: there's no truncation parameter that could absorb a sign flip. The +0.5 IS an exact rational arising from partition combinatorics ((1/4) · Σ_classes ((κ_λ + κ_λ^T)/2)); it just doesn't equal −G."
-  }
+  },
+  "q0Anchor": "muon",
+  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
 }

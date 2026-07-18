@@ -70,5 +70,7 @@
     ],
     "verdict": "STANDARD_DEMAZURE_X_QPOCH_SIGN_REFUTED_AT_U2",
     "interpretation": "Same preflight template as Composite-4 (PR #1914 RUN result), applied to Composite-1. Where Composite-4 was refuted by MAGNITUDE (|A_2| ≈ 0.011 vs target 1, off by ~92×), Composite-1 with standard Demazure is refuted by SIGN at the same u² rung. Both cont. 9 Options B (Composite 4) and C (Composite 1 standard reading) are now refuted via formalize-first preflights costing ~1 session each — combined ~10-12 sessions of infra build avoided. Remaining cont. 9 menu: Option A (accept residue A as CAL-3-anchored permanently), Option D (Composite 3 Type-B folded crystal, 12-17 sessions — alignment with §7b but high cost), or amended Composite-1 with Demazure-Lusztig (signed variant, separate preflight needed)."
-  }
+  },
+  "q0Anchor": "muon",
+  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
 }

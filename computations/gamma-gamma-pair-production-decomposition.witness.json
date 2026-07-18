@@ -132,5 +132,7 @@
       "fraction_of_fa_gap_closed_by_jones": "52.907678",
       "interpretation": "Family A (Wedderburn dim sum on H_4) and Jones (H_3 Markov trace of β_Bor, Lean-proved closed form via [2]_q² normalisation) DISAGREE at h² coefficient: Family A's +3/4 vs Jones's 0.  Both are independently Lean-proved theorems about DIFFERENT mathematical objects.  Numerically, the Lean-correct Jones value lands ~47% closer to the CODATA-anchor target than Family A — suggesting the actual `linking_weight` may be the H_3 Markov trace, not the H_4 Wedderburn dim sum.  Open question: which is the categorically-correct `linking_weight`?  The simple bridge `linking_weight = 5/2 + 4·(tr_M − 1)` is itself a hack (forces tr_M(q=1)=1 to equal Family A's 5/2 by adding a constant)."
     }
-  }
+  },
+  "q0Anchor": "muon",
+  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
 }

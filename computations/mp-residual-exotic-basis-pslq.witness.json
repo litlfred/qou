@@ -42,5 +42,7 @@
     "basis_size": 13,
     "matches": 0,
     "verdict": "DEEPER NULL — even the exotic basis (Bloch-Wigner D(z), Mahler measures of golden/quintic/Cassini polynomials, hyperbolic volumes, elliptic integrals) does NOT identify the 54 ppb sub-residual at 120 dps tol 10⁻²². Strongly suggests the residual is at the **CODATA precision floor** for the input anchors (α_em precision 10⁻¹⁰; m_p 10⁻¹⁰; m_μ 10⁻¹⁰; m_e 10⁻¹⁰). A 54 ppb residual on a kg-scale identity is consistent with ~10⁻¹⁰ × propagation factor. Further structural derivation would need improved CODATA inputs."
-  }
+  },
+  "q0Anchor": "muon",
+  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
 }

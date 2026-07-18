@@ -56,5 +56,7 @@
     "observed_theta_hoh_deg": 104.5,
     "observed_fractional_angular_shift": 0.04541103048107627,
     "finding": "Switching the molecular sub-braid score from Φ₁=Σ log|v| to the Markov trace tr_M reverses the sign error of the prior H₂O probe. |v| is a generator-count sum (4-strand bond pair > 3-strand lone pair → wrong sign → angle opened ~140°); tr_M keeps the h z² commutator weight of the intra-block electron pair e⁻, giving tr_M(lone) − tr_M(bond) = h z² > 0 → b > 0 → θ_min < θ₀ (narrows, correct). q-exact sign + right order of magnitude (h z ≈ 10.4 % vs observed 4.5 %). The exact degrees need the geometric angular stiffness a; deliberately not fitted (formalize-first)."
-  }
+  },
+  "q0Anchor": "muon",
+  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
 }

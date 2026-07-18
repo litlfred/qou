@@ -233,5 +233,7 @@
     },
     "g_A_note": "g_A from confinement Frobenius reciprocity (master formula); no external Clebsch-Gordan factor inserted.",
     "interpretation": "g_A is the ratio of two instances of the master formula on the same proton bound state T (operator-selection LP optimum at n_target = 1). The vector channel O_V uses the trivial-rep character (σ_i ↦ q); the axial channel O_A uses the sign-rep character (σ_i ↦ -q⁻¹). The Gram-inverse dual pairing on the LP-active subspace replaces the cyclic-trivial conjugation pattern of the prior implementation. Exact numerical agreement with PDG g_A = 1.2754 requires the categorical Clebsch-Gordan structure to be installed on the same active subspace; this v1 establishes the correct STRUCTURE — the conjugation bug is gone — with refinement (proper isospin projector on T) deferred."
-  }
+  },
+  "q0Anchor": "muon",
+  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
 }

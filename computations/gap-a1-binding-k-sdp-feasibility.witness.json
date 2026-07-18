@@ -364,5 +364,7 @@
   },
   "caveats": [
     "Feasibility probe, not a production mass compute. f64 per-block evaluation at q_0 (11 partitions of 6, max d_λ=16). The substrate-only K = σ_3^2 is taken from binding_k_enumerator.py (PSD-feasible + Markov-fingerprint, no B_AME). B_AME_D enters ONLY the final residual print and the underdetermination illustration; it selects / normalizes NOTHING. The verdict (GAP-A-1 ⊆ Δ_λ) is a clean negative, equal in value to a closure per the task discipline."
-  ]
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

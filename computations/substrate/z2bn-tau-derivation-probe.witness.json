@@ -52,5 +52,7 @@
     "Im_tau_mod_vs_theta": "0.73400705 vs θ=0.78145395 (~6% off, NOT a match)",
     "2cosh_abs_z_q0": "2.01090676786"
   },
-  "verdict": "(a) τ closed form EXACTLY = (a_D^2+a_D^4)/a_D^3 (Lean-formalizable). Curve CONFIRMED: j(q0)=129.86 via period/kleinj. Color-cubic power sums p_n=-(z^n+1) (n<=3). (a)-NEGATIVE on the holonomy: NO bare-period candidate reproduces τ=2.6424; Im(τ_mod)=0.734 is ~6% from θ=0.781 — a near-coincidence, NOT a derivation. The prolongation operator λ_SW^(n)→anchors (the q-family Gauss–Manin monodromy) is the genuine deep residual. No fit; q0 never tuned."
+  "verdict": "(a) τ closed form EXACTLY = (a_D^2+a_D^4)/a_D^3 (Lean-formalizable). Curve CONFIRMED: j(q0)=129.86 via period/kleinj. Color-cubic power sums p_n=-(z^n+1) (n<=3). (a)-NEGATIVE on the holonomy: NO bare-period candidate reproduces τ=2.6424; Im(τ_mod)=0.734 is ~6% from θ=0.781 — a near-coincidence, NOT a derivation. The prolongation operator λ_SW^(n)→anchors (the q-family Gauss–Manin monodromy) is the genuine deep residual. No fit; q0 never tuned.",
+  "q0Anchor": "muon",
+  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
 }

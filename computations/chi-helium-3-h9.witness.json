@@ -67,5 +67,7 @@
   "scriptFile": "delta_lambda_empirical_tabulation.py",
   "commitSha": "06e88b6885fd78860cf1e0d1d01de2a96f5b0811",
   "convention": "averaged-crossings",
-  "convention_inferred_by": "chi_convention_audit.py --fix (producer:delta_lambda_empirical_tabulation.py)"
+  "convention_inferred_by": "chi_convention_audit.py --fix (producer:delta_lambda_empirical_tabulation.py)",
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

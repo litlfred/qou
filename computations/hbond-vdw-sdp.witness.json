@@ -116,5 +116,7 @@
     "sigma1sq_antisym_weight_qinv2": 0.811653754365758,
     "sigma1sq_pct_symmetric": 60.28520386261565,
     "finding": "The operator-selection SDP on the Hopf channel, in two parts. (1) The naive sub-braid basis {1, σ₁, σ₁²} is RANK-DEFICIENT (Gram rank 2, one zero eigenvalue): σ₁² = hσ₁+1 is not independent in H_2(q), so 'the Hopf σ₁² channel' is NOT separate from {1, σ₁} at 2 strands. (2) The independent Wedderburn idempotents ARE the channels: the symmetric block e₊ (trivial rep, q-dim 0.6963) is the Hopf/[2]_q CARRIER (Vol=0); the antisymmetric block e₋ (q-dim 0.3037) is the directional H-bond channel. The Hopf link decomposes σ₁² = q²·e₊ + q⁻²·e₋ = 60.3% symmetric. CORRECTED FRAMING (per prop:vdw-pskew-isolation): e₊ is the RETAINED cosh carrier, NOT van der Waals — vdW is the DISCARDED bar-odd residual sinh(2λ)(e₊−e₋) (small, absent from the main mass/binding formula). The earlier 'vdW = the symmetric block e₊' label is superseded. Exploratory/off-label: the operator-selection SDP is canonically the magic-A binding selector; the channel/target setup is the modelling input."
-  }
+  },
+  "q0Anchor": "muon",
+  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
 }

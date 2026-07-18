@@ -100,5 +100,7 @@
   "caveats": [
     "FINDING: the .md 'transfer matrix IS the polynomial' table lists det(T_mixed) = -1 + (1/4)(q-q^-1)^2, but the T_j matrix the same section writes ([[c h + d, c],[c, d]] with mixed (c,d)=(1,-h/2)) has det = -(q+q^-1)^2/4 = (q**2*(-q**2 - 2) - 1)/(4*q**2). The two disagree (the table value is exact only if det = -1 + h^2/4, which the written matrix does not give). This is a discrepancy in the .md exposition, NOT in the proved Lean theorem (which proves the fold, multiplicativity, and asymptotic ratio — not the det table). Recorded for the content authors; pp/nn unimodularity (det = -1) holds exactly and is the structural fact used.",
     "The transfer-matrix recurrence IS the proposition's machinery, reproduced exactly; the load-bearing check is its agreement with the independent canonical markov_trace_canonical engine (arm 1) plus the proved structural lemmas (multiplicativity, asymptotic ratio). Symbolic arms are exact in Q(q); numerical arms are 50-dps evidence at q0. Probe, not a proof. Does not verify the full nuclear braid word for arbitrary (Z,N) — that requires the canonical atom_braid_word_3A pipeline; arm 1 establishes the per-generator factor against the engine, which the factorization multiplies."
-  ]
+  ],
+  "q0Anchor": "muon",
+  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
 }

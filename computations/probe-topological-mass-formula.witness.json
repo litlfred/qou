@@ -102,5 +102,7 @@
   },
   "caveats": [
     "Verifies the ALGEBRAIC combine the propositions prove (Vol + Vol*(1/hbar^2-1) = Vol/hbar^2 and mass_alg = phi1/hbar_sq). It does NOT verify the geometric inputs (Chern-Simons/volume correspondence, Kashaev dilog evaluation), which the proposition imports as hypotheses (exceptional_sum_eq). Vol(K) values are inputs to the identity, not derived here. This block is the BARE topological core m(K)=Vol(K)/hbar^2; the canonical absolute nucleon mass is the muon-anchored Hecke energy via canonical_mass.py, NOT this expression. Numerical-exact evidence at q0, not a proof."
-  ]
+  ],
+  "q0Anchor": "muon",
+  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
 }

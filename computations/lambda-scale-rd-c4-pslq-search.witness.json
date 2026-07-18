@@ -118,5 +118,7 @@
   },
   "caveats": [
     "R&D probe — does not modify production paths. PSLQ is a numerical heuristic; integer relations it finds at finite precision should be cross-verified at higher precision before claiming a closed form. Negative results (no relation found) constrain but do not exclude existence of one."
-  ]
+  ],
+  "q0Anchor": "muon",
+  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
 }

@@ -60,5 +60,7 @@
     "vdw_residual_imag_at_real_q": 0.0,
     "alpha_em_carrier_2coshlambda": 2.0108968691190756,
     "finding": "van der Waals is the bar-odd (sinh / P_skew) residual of the Hopf link: 2σ₁² = 2cosh(2λ)·𝟙 + 2sinh(2λ)·(e₊−e₋), with the cosh part the retained P_avg carrier and the sinh·(e₊−e₋)=0.0825 part the discarded Coulomb-EM channel = vdW. This narrows the probe to the EXACT bar-odd q-expression (no h^k fit, no cosh-on-covalent factor). The residual is real at real q (P_skew ≠ Im(q)). Lean prop:vdw-pskew-isolation proves the decomposition sorry-free. α_EM Habiro is the bar-even sibling. Open: the archimedean 1/r⁶ separation to the molecular energy (not fitted)."
-  }
+  },
+  "q0Anchor": "muon",
+  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
 }

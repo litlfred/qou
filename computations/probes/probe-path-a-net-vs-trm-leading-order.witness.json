@@ -53,5 +53,7 @@
     "path_a_holds": false,
     "ratio_is_z_at_leading_order": true,
     "verdict": "CROSS-CHECK CONFIRMS prop:qbeta-counit-closed-form (already Lean-proved): Δtr_M/Δnet → 1/2 = z (Markov weight at q→1). Computed here via the Wedderburn Σ_λ y_λ χ^λ route (vs the corpus prop's direct NF-weight route) — agrees. The counit ε (net) and Markov trace tr_M are DERIVED-distinct functionals: tr_M(β)=⟨β,1⟩ (loop/mass), ε(β)=⟨β,ω⟩, ω=G⁻¹1 (transition/decay) per prop:qbeta-counit-transition; β-decay is a transition ⇒ counit. This ratio→z IS the corpus's 'trace falls short by a factor of two'. NOT a novel refutation: the functional selection is derived; the sole open item is the non-perturbative tower convergence conj:qbeta-trace-counit-convergence. This probe is one N=0 boundary data point for it."
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

@@ -274,5 +274,7 @@
       "bar_symmetry": "bar-anti-symmetric (charge/sinh part; c(λ')=−c(λ))"
     },
     "verdict": "C_λ q-integer products computed explicitly (prop:wedderburn-weight-canonical, no fit): Σ_charge C_λ = 0.0331. The bare C_λ·Z(Z−1)·m_e shadow-price ansatz gives 0.034 MeV (~4.4%, 22.6× short) — DECISIVELY insufficient, ruling out S_λ=Z(Z−1) at the m_e scale. The Z(Z−1)/A^{1/3} structure is correct (c(λ)<0 blocks carry it; T=0, ³He nonzero). Three parameter-free estimates span the split: C_λ·Z(Z−1) 4%, derived tanh·B_pp 31%, Skein-a_C 127%. The charge-type S_λ normalisation (the categorical two-like-charge brane-pairing invariant, ~22× the bare C_λ·Z(Z−1)) is OPEN; closing by fit to 0.764 MeV is forbidden (CAL-4 / Δ_λ gate)."
-  }
+  },
+  "q0Anchor": "muon",
+  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
 }

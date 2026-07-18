@@ -1,11 +1,11 @@
 {
-  "description": "vhat_per_crossing_chain \u2014 derive V\u0302_i = z\u00b7a_i+b_i per crossing from the Hoefsmit/seminormal rep for atomic p/n braids; falsification-test vs production vertex_volume",
+  "description": "vhat_per_crossing_chain — derive V̂_i = z·a_i+b_i per crossing from the Hoefsmit/seminormal rep for atomic p/n braids; falsification-test vs production vertex_volume",
   "computation": "vhat_per_crossing_chain",
   "audit_only": true,
-  "missing_input": "yekutieli-volume-join-derivation \u00a75 item 1: per-crossing V\u0302_i",
+  "missing_input": "yekutieli-volume-join-derivation §5 item 1: per-crossing V̂_i",
   "functional": {
-    "name": "Markov trace of the per-generator reduced element a_i\u00b7\u03c3_i + b_i",
-    "form": "V\u0302_i = z\u00b7a_i + b_i  (z = tr_M(\u03c3_i), 1 = tr_M(I))",
+    "name": "Markov trace of the per-generator reduced element a_i·σ_i + b_i",
+    "form": "V̂_i = z·a_i + b_i  (z = tr_M(σ_i), 1 = tr_M(I))",
     "channel": "STANDARD (2,1) Hoefsmit seminormal rep of H_3",
     "derived": true,
     "source_blocks": [
@@ -22,7 +22,7 @@
     "W_alt": "0.16546138476803504"
   },
   "per_crossing": {
-    "proton \u03c3_0 (uud, gen 0)": {
+    "proton σ_0 (uud, gen 0)": {
       "chain": [
         [
           1,
@@ -61,7 +61,7 @@
       "genuine_vs_production_rel_pct": -13.706831571137629,
       "scalar_vs_matrix_agree": true
     },
-    "proton \u03c3_1 (uud, gen 1)": {
+    "proton σ_1 (uud, gen 1)": {
       "chain": [
         [
           1,
@@ -88,7 +88,7 @@
       "genuine_vs_production_rel_pct": 4.471836924960904,
       "scalar_vs_matrix_agree": true
     },
-    "neutron \u03c3_0 (udd, gen 0)": {
+    "neutron σ_0 (udd, gen 0)": {
       "chain": [
         [
           1,
@@ -127,7 +127,7 @@
       "genuine_vs_production_rel_pct": -14.906776418235973,
       "scalar_vs_matrix_agree": true
     },
-    "neutron \u03c3_1 (udd, gen 1)": {
+    "neutron σ_1 (udd, gen 1)": {
       "chain": [
         [
           1,
@@ -159,7 +159,7 @@
   "production_is_genuine_seminormal": false,
   "production_max_rel_pct_vs_genuine": 14.906776418235973,
   "production_consumer_trace": {
-    "note": "terms_2_3_atom_per_gen_mpfr_50dps.atom_per_generator_volumes_mpfr computes BOTH the genuine std channel (Vs = z\u00b7a+b, line 246) AND the W-weighted 3-channel full (Vf, line 247). The genuine V\u0302_i = z\u00b7a+b IS production's 'std' field; the brane tower (_li_2_q_util.compute_t2_t3_from_vols) consumes the 'full' field.",
+    "note": "terms_2_3_atom_per_gen_mpfr_50dps.atom_per_generator_volumes_mpfr computes BOTH the genuine std channel (Vs = z·a+b, line 246) AND the W-weighted 3-channel full (Vf, line 247). The genuine V̂_i = z·a+b IS production's 'std' field; the brane tower (_li_2_q_util.compute_t2_t3_from_vols) consumes the 'full' field.",
     "genuine_equals_production_std_channel": true
   },
   "pn_signal": {
@@ -177,7 +177,7 @@
     "proton_product_genuine": 1.0653062286131674,
     "neutron_product_genuine": 0.9232332971861534
   },
-  "verdict": "V\u0302_i = z\u00b7a_i + b_i is DERIVED from the standard-channel Hoefsmit seminormal rep with zero free parameters (Markov trace of the per-generator reduced element). It DIFFERS for proton vs neutron (p/n signal present in quark-pair crossings). PRODUCTION's vertex_volume is a DIFFERENT object (W-weighted 3-channel sum), NOT the genuine per-generator Markov-trace factor \u2014 flagged RED.",
+  "verdict": "V̂_i = z·a_i + b_i is DERIVED from the standard-channel Hoefsmit seminormal rep with zero free parameters (Markov trace of the per-generator reduced element). It DIFFERS for proton vs neutron (p/n signal present in quark-pair crossings). PRODUCTION's vertex_volume is a DIFFERENT object (W-weighted 3-channel sum), NOT the genuine per-generator Markov-trace factor — flagged RED.",
   "timestamp": "2026-07-18T17:52:31+00:00",
   "scriptHash": "c728b1065ffa",
   "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
@@ -185,5 +185,7 @@
   "engine": "python",
   "computedAt": "2026-07-18T17:52:31.661038+00:00",
   "durationMs": 0,
-  "scriptFile": "vhat_per_crossing_chain.py"
+  "scriptFile": "vhat_per_crossing_chain.py",
+  "q0Anchor": "muon",
+  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
 }

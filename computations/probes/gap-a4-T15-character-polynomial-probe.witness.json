@@ -104,5 +104,7 @@
       "open_combinatorial_question": "Do (2, 0, −3, −1) admit a counting interpretation on the (2,1) Young diagram crossed with β_Bor braid structure? Not proposed as a derivation here per formalize-first / no-7th-ansatz discipline."
     },
     "synthesis_verdict": "T15 derives χ^{(2,1)}(β_Bor) = 2 − 3·h⁴ − h⁶ exactly via the u = q² + q⁻² = h² + 2 substitution applied to the closed form (−q^{12} + 3q^{10} − 3q^8 + 4q^6 − 3q^4 + 3q^2 − 1)/q^6 from prop:borromean-markov-trace-closed-form.  Verified to 50 dps at q_0 and at 4 sample h-values.  Structural triple (h⁰, h², h⁴, h⁶) = (2, 0, −3, −1): h⁰ = 2 = d_(2,1); h² = 0 is the source of the Borromean h² = 0 cancellation at the character level (the (3) and (1³) contributions cancel each other at h² order, leaving (2,1) which already has no h² character correction); h⁴ = −3 is the structural source of the Borromean h⁴ = −3/4 in the full tr_M (combined with Plancherel weight y_(2,1)(0) = 2/3 and the [h²+4]⁻¹ denominator factor).  This closed form OPENS the polynomial-side direction in the audit doc's remaining search space, but the open combinatorial-bijection question — whether the coefficient triple admits a counting interpretation on the (2,1) Young diagram crossed with β_Bor's braid structure — is NOT proposed as a derivation per formalize-first discipline."
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

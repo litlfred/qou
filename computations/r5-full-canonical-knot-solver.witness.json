@@ -2026,5 +2026,7 @@
   },
   "caveats": [
     "Search restricted to B_3 (handles ²H and ³He). Tritium ³H lives in B_5 / 8_11 and needs Hoefsmit at H_5 — deferred (matches existing joint_tower_sdp_solver_v2.py deferred-to-Rust posture). The single-term flagship formula B = m_e · ρ · |tr_M| has the known structural offset documented in probe-sdp-canonical-paper-formula.witness.json; under this single-term cost the ²H/³He historical T_w are PRESENT in the canonical-basis-class search space and are reported with their per-block PSD eigenvalues + rank-by-residual, but they are NOT the unique global winners — the cost-minimising candidates are PSD-trivial near-pure-power braids whose |tr_M| coincidentally fits B_AME / (m_e · ρ).  Wiring the multi-term tower (T2-T6 of thm:knot-mass-formula-unified) into cost_for_candidate is the next-session blocker for unique recovery; the categorical uniqueness theorem (deliverable 3) and the structural ρ(Z, N) rule (deliverable 4) follow."
-  ]
+  ],
+  "q0Anchor": "muon",
+  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
 }

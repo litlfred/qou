@@ -72,5 +72,7 @@
       "mass": "lw(c) IS the VolDensity linking weight (m(K)=m_e·Vol·ρ/ℏ_q² uses it): lw(1)=muon, lw(3)=proton (=Family-A, regression-tied to linking_weight_family_a bit-for-bit). lw(2)=(q+1)²/(3q) is the new c=2 (2-component link, e.g. Hopf) mass prediction. DIRECT, mature use.",
       "binding": "a_D^(n)=lw(n-1) feed the body-order binding generating function G(x;q)=Σ B_n x^n with kernel R=x²−τx+1 (this recurrence). DEEPER use, gated on the SW-period↔selection-rule identification (residual_open)."
     }
-  }
+  },
+  "q0Anchor": "muon",
+  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
 }

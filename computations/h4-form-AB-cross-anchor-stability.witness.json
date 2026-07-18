@@ -43,5 +43,7 @@
     "Form_B_ppb_proton": "4753.80454962",
     "Form_B_ppb_muon": "4752.63366766",
     "verdict": "NUANCED RESULT — Form A/B coefficient values are q-anchor-stable to 10⁻⁹, AND the 54-ppb improvement over the bare baseline is reproduced at both anchors. BUT the absolute residual at q_muon is 4785 ppb — dominated by the m_μ over-determination effect (PR #1581 Probe A), which is a SUBSTRATE property independent of Form A/B. This test therefore neither confirms nor falsifies the structural validity of Form A/B; it shows they are no worse than the bare baseline under anchor variation, but the 54-ppb closure they provide IS proton-anchor-specific (any q anchor would have its own 54-ppb-style residual that they may or may not match). Higher-precision PSLQ (Task 2) and structural derivation attempts (Task 3) remain the deciding tests."
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

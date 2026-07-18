@@ -2717,5 +2717,7 @@
   },
   "caveats": [
     "Numerical evaluation at f64 precision; deuteron uses H_6 (11 partitions, max d_λ = 16), tritium and ³He use H_9 (30 partitions, max d_λ = 42).  The Wenzl-Schur weights y_λ(q_0) for n=6, 9 are loaded from y-lambda-wenzl-witness.json if present; otherwise a uniform 1/|P(n)| fallback is used (the dominant-λ identification is dominated by χ_λ for typical knot elements).  K is computed via the braid-word concatenation T_atom · cp^{-1}, NOT via per-block matrix inversion (avoids ill-conditioned blocks)."
-  ]
+  ],
+  "q0Anchor": "muon",
+  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
 }

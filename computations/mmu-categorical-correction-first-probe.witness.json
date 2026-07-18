@@ -90,5 +90,7 @@
     "best_candidate_err_ppm": 21845.43877502784,
     "any_candidate_passes_10_ppm": false,
     "interpretation": "m_μ categorical-correction first-probe: 8 closed-form δ(q) candidates tested at proton-pinned q₀ against target δ ≈ 2.1e-7. Best: 'D2. hbar_q^6 * b / 4' at 21845.44 ppm. NEGATIVE — no simple categorical correction matches. m_μ residue likely requires upstream-infra-gated search or formal bare-anchored acceptance, paralleling Q_β residue A."
-  }
+  },
+  "q0Anchor": "muon",
+  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
 }

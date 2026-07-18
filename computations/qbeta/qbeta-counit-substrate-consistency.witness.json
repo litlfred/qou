@@ -83,5 +83,7 @@
   "caveats": [
     "N=0 only. The counit value ε(Δ)·𝔈₀ is built from the N=0 neutron−proton normal-form difference; its +0.17 % deviation from CODATA is the N=0 truncation remainder, NOT a fit. The open convergence leg (prove the full per-braid mass-tower difference m(n)−m(p)−m_e → ε(Δ)·𝔈₀, remainder ≤ O(ℏ_q²/(1−ℏ_q²))) is unproved here and is the named structural target — this witness only pins its invariant.",
     "The −56 % trace value is the WRONG functional (Markov trace, a static-loop mass), not a truncation error — it documents why the counit, not the trace, is the correct transition functional (merged PR #2363)."
-  ]
+  ],
+  "q0Anchor": "muon",
+  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
 }

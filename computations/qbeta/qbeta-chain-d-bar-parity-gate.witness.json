@@ -53,5 +53,7 @@
   "caveats": [
     "c₄ even-rung is flagged a normalisation artifact (PR #1786); the gate rests on c₂ (constant) and c₃ (= -2-ℏ_q², fully determined, no Hoefsmit b). The c₁=cos rung needs α(q) and is not tested here.",
     "Structural-constraint (prune) result: refutes Type-B as the c₃ kernel and redirects to a parity-split kernel. Nothing wired; c_k stay cal-anchored."
-  ]
+  ],
+  "q0Anchor": "muon",
+  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
 }

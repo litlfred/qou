@@ -329437,5 +329437,7 @@
   },
   "caveats": [
     "Production tier uses Family A λ_A = 5/2 + (3/4)h² (PROVED, +2.89% from CODATA on m_p) + substrate-pure flavor-split (PROVED, 0.03% ratio match). Strategy I (λ_Y = λ_A − G·h², +1.33%) is NOT used in this mass table — it requires the Yekutieli bijection proof (research-grade; PR #978 / #991). Binding energies for A ≥ 5 are NOT computed — gated on H_12 Phase-2 (≥3500 test words; PR #944 delivered Phase-1 for A ≤ 4). Atlas methodology tags from prop:recursive-atom-knot-atlas."
-  ]
+  ],
+  "q0Anchor": "muon",
+  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
 }

@@ -45,5 +45,7 @@
     "C_q": "(q**2 - 1)*(q**4 + 1)**2/q**5",
     "rho_22": "q**27*(q**2 - 1)**5*(q**4 + 1)**2/((q**18 - 1)**2*(q**20 - 1)**2)",
     "finding": "The round-20 normalizer is NOT a free choice: (q[9][10])² = α_EM^{-2} is the q-dim-layer cost of TWO EM (2,2)-block exchanges — per-exchange cost from prop:em-coupling-projection (round-11 layer, not the round-10-refuted Markov per-crossing weight), exponent 2 from covalent Pauli (2 shared electrons, (2,2)=EM block).  Residual = ONE isolated natural assumption: the molecular EM exchange reuses the bare EM complexity cplx (same Bring complex).  This is the honest successor to the refuted Mechanism B — a sharper, single, physically-natural unproved input rather than an arbitrary normalization."
-  }
+  },
+  "q0Anchor": "muon",
+  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
 }

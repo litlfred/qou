@@ -86,5 +86,7 @@
   },
   "caveats": [
     "The 'active partition' threshold is |χ| > 1e-6, which may miss structurally-active but numerically-tiny channels OR include numerical artifacts. Independent verification at 50-dps mpmath is the natural follow-up. The conjecture's exact prediction (n* + 1 = 3A − Z + 1) is an UPPER BOUND on the active count; fewer-than-predicted active partitions still satisfies the bound."
-  ]
+  ],
+  "q0Anchor": "muon",
+  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
 }

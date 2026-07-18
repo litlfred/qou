@@ -521,5 +521,7 @@
   "caveats": [
     "Algebraic seeds q_0^{-k} are real; PL discriminant roots are complex (three conjugate pairs). The pairing distance is the complex-plane distance from a real seed to its closest PL critical point; under τ_arch the seed acquires an imaginary part matching the critical point. The Newton-Raphson solver uses the real seed as initial guess and converges to the complex SW critical point via a few gradient-flow steps.",
     "This script is a static seeding witness plus a Newton-Raphson driver on the color-tube discriminant Δ(z). It does not yet drive a SnapPy Newton iteration to verify O(1)-step convergence; that integration is the next pipeline step (cf. conj:shared-denominator-cusp-holonomy §implication)."
-  ]
+  ],
+  "q0Anchor": "muon",
+  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
 }

@@ -88,5 +88,7 @@
     "closest_model": "leading (σ vs e⁻)",
     "closest_theta_deg": 107.1896442389442,
     "finding": "The owner's two levers — higher-order GB (the L₊ quadratic NF term) and active-set weighting (the LP-selected inverse-trefoil bonding operator) — both NARROW the trace-weighted VSEPR angle, and TOGETHER they BRACKET the observed 104.5°: leading σ/e⁻ gives 107.19° (+2.7°, too open), GB-quadratic-on-lone gives 98.99° (−5.5°, too narrow), and the inverse-trefoil active-set overshoots to 94.25°. So the 2.69° residual is a REAL higher-order / active-set effect that these levers capture — they overshoot rather than miss. No weight was tuned to 104.5°: a partial GB-truncation (a fraction of L₊ on the lone) would interpolate to observed, but selecting that fraction is the open, NON-FITTED question — the correct GB truncation order + active-set operator identity. This validates the mechanism the residual needs."
-  }
+  },
+  "q0Anchor": "muon",
+  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
 }

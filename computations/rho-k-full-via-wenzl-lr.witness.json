@@ -72,5 +72,7 @@
       "tr_M_q0_unavail_reason": "hecke-tr-m-wenzl-lr binary not built; build via `cd tools/hecke-engine && cargo build --release --bin hecke-tr-m-wenzl-lr` to enable this consumer"
     }
   ],
-  "workplan_ref": "docs/audits/2026-05-17-1ppb-workplan-v4.md §3 Item 1 (superseded by canonical Rust route in docs/audits/2026-05-17-knot-fusion-step1-audit.md). Canonical consumer: canonical_tr_m_via_rust.py."
+  "workplan_ref": "docs/audits/2026-05-17-1ppb-workplan-v4.md §3 Item 1 (superseded by canonical Rust route in docs/audits/2026-05-17-knot-fusion-step1-audit.md). Canonical consumer: canonical_tr_m_via_rust.py.",
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

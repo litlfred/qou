@@ -77,5 +77,7 @@
     ],
     "verdict": "CONSTANT_DEPTH2_KERNEL_REFUTED",
     "interpretation": "The constant depth-2 kernel is over-determined: a_2=-1 (from c_2 via f_0=1), a_1=-c_3 (from c_3 via f_1=0), leaving c_4=1-c_3² as a falsifiable prediction. It fails. The surviving constraints on the open kernel: depth ≥ 2; leading coefficient a_1 = -c_3 = √2·Φ_2 (the #1887 Φ_2 target, bar-ODD per the Reeb-sinh parity wall). These prune the SW-residue/Hoefsmit kernel search (#1871) without deriving it."
-  }
+  },
+  "q0Anchor": "muon",
+  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
 }

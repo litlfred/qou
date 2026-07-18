@@ -411,5 +411,7 @@
   },
   "caveats": [
     "EXPLORATORY / audit-only, HIGHEST re-pitch risk probe. The crystal / canonical basis is a rigorous canonical basis -- the Kashiwara f_i/e_i (crystal_basis.py, validated vs the Weyl dimension formula) are NOT fits. METHOD NOTE (a first-pass error was corrected -- see the audit doc): the LOAD-BEARING selection test acts on the (2,1)-MULTIPLICITY SPACE V_lam, NOT the full S^{lam5}. The Lusztig bar (q->q^{-1}, JM content c->-c) maps V_lam to V_{lam^T} (verified RAW: negate(contents)==contents of transpose), so it is an endomorphism of V_lam only when lam is self-conjugate; the only self-conjugate m=2 case (3,1,1) has its bar SWAP the two copies with no bar-fixed OV vector. This content/transpose computation is EXACT and convention-free; the SYT Schuetzenberger evacuation is validated as an involution only as a corroborating sanity check. h^4 = -3/4 is the Borromean (2,1)-BLOCK invariant used ONLY as a falsification reference; NO crystal convention / orientation / Demazure window is chosen to reproduce it (that would be the §7b / 2026-05-30 re-pitch trap). The lambda_scale mass-formula and Bloch-Wigner / dilog-on-trefoil re-pitches (2026-05-30 KLR-dialog assessment) are NOT re-derived. Changes no production value; emits no LP/SDP solve (no dual required)."
-  ]
+  ],
+  "q0Anchor": "muon",
+  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
 }

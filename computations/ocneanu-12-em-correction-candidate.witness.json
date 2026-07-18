@@ -43,5 +43,7 @@
     "improvement_over_bare_12": "7.71042651357",
     "verdict": "NEAR-MATCH (tier=near-match): k = 12 − (α_em/π)/dim H_3 closes k_required to 4.80783 ppm — a 7.71043× improvement over the bare integer 12 (32 ppm). Both factors are structurally motivated: (α_em/π) is the standard EM prefactor from m_K/m_π's Bring zero-mode closure (PR #1442), and 1/dim H_3 = 1/|S_3| = 1/6 is the natural Plancherel normalization. NOT yet a derivation — the Bring-projection argument that pins the (3q²−1)/(2q²) shape in m_K/m_π hasn't been applied to the proton-mass identity. Open follow-up: derive (α_em/π)/dim H_3 from a Bring zero-mode analog. CRITICAL guard: do not promote this to production without the derivation — per production-vs-exploratory-discipline, the 0.17% precision is below the structural-identity threshold (1 ppm) but above the empirical-fit threshold (1%); it remains a tier=near-match that warrants categorical work, not wiring.",
     "tier": "near-match"
-  }
+  },
+  "q0Anchor": "muon",
+  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
 }

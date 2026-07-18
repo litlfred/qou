@@ -93,5 +93,7 @@
   },
   "caveats": [
     "D9 audit/conjecture mis-attribution surfaced: claimed bar-anti-symmetric leading order, actual parity under bar involution (q ↔ q⁻¹) is 'mixed' because ℏ_q = (q-1)/q is not cleanly bar-classifiable.  Isospin SU(2)_I Z/2 swap is a different involution from bar — must not conflate.  Recommend correction of `2026-05-24-isospin-categorical-source.md` §3 four-factor decomposition + `conj:isospin-from-canonical-bowtie.md` headline.  305 ppm empirical match unchanged."
-  ]
+  ],
+  "q0Anchor": "muon",
+  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
 }

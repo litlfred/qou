@@ -80,5 +80,7 @@
       "eig_antisymmetric_d_dminus1": "2.032809349113825549400581281043120328615548235971844344561345465149453"
     },
     "finding": "Selection-rule candidate (structural, conditional): braid-invariant scalar couplings exist only at even strand counts, with multiplicity 1, 2, 5 at n = 2, 4, 6.  The unique n=2 slot is the established EM coupling (the trivial/unknot channel).  The n=4 sector provides exactly two independent slots — matching the two remaining knot-mediated forces (strong T_{2,9}, weak T_{3,5}); their forced Gram structure [[d^2,d],[d,d^2]] splits into symmetric/antisymmetric channels with eigenvalues d(d+/-1).  Deriving alpha_s/alpha_W VALUES from these slots requires the archimedean trace-ratio functor on the slot space and stays gated on conj:e-hartree-categorical-derivation.  No fitting; no comparison to experiment."
-  }
+  },
+  "q0Anchor": "muon",
+  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
 }

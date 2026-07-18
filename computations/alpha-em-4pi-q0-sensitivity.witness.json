@@ -77,5 +77,7 @@
     "threshold_for_residual_explanation": 0.014090909090909091,
     "verdict": "RESIDUAL EXPLAINED — q_0 uncertainty propagates to ≥0.31 ppb on α; form IS exact",
     "explanation": "The 22 ppb CAL-2 uncertainty on q_0 propagates to 150.335 ppb on α_EM⁻¹, which is >= the observed residual 0.31 ppb. This means the empirical form α_EM⁻¹ = T + α·H·(1-h²α) IS EXACT within precision, and the apparent 0.31 ppb residual is upstream calibration noise from CAL-2."
-  }
+  },
+  "q0Anchor": "muon",
+  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
 }

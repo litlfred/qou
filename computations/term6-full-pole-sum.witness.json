@@ -402,5 +402,7 @@
     "Primitive roots of unity are dense in S¹, so this is NOT a complex-analytic Mittag-Leffler in the ordinary sense. tr_M is a Habiro-ring element; convergence is q-adic. Truncation at n_max=6 captures the dominant Cauchy-kernel weighted residues (smaller n → closer to q_0 = 1.11 → larger 1/|q_0 − ζ| kernel).",
     "Extend habiro-coefficients-atomic.witness.json to T, ³He, ⁴He, ⁶Li, ⁷Li, ⁹Be, ¹¹B, ¹²C, ¹⁶O before this script can answer 'does Term 6 close the A≥5 5-20% errors?' — A≥4 is blocked on symbolic Hoefsmit at H_9+, the numerical-interpolation route in habiro_coefficients_interpolate.py documents A=4 as intractable at 60 dps.",
     "Higher-order pole resolution: when l'Hôpital returns sp.oo, we run a Cauchy contour ∮_{|u-u₀|=0.05} 2u·U(u) du in u-space at u₀ = sqrt(ζ) (principal branch). Radius 0.05 is conservative for ℓ ≤ 12 (nearest neighbour at ≥ 2sin(π/ℓ²) ≥ 0.05). Pole order is detected automatically by the contour identity — no per-pole-order branching."
-  ]
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }
