@@ -64,4 +64,31 @@ theorem fourOne_habiroTerm_bar_even (q : ℝ) (j : ℕ) :
     (1 : ℝ) * habiroFactor q j = (1 : ℝ) * habiroFactor q⁻¹ j :=
   habiroTerm_bar_even_of_coeff_symmetric (fun _ => 1) q j rfl
 
+/-! ## Concrete chiral instance: the leading `5_2` cyclotomic coefficient
+
+`C_{5_2,1}(t) = -(t^{-2} + t^{-4})`, extracted self-calibrating from the
+validated Jones polynomials as `(V_{5_2}-1)/(V_{4_1}-1)` (an exact Laurent
+polynomial, `C_{4_1,1}=1`; probe `qbeta_5two_leading_odd_datum`, det checks
+5, 7).  Unlike `4_1`'s `C_n = 1`, it is bar-asymmetric — the first genuine
+`5_2` bar-odd datum. -/
+
+/-- Leading `5_2` cyclotomic coefficient `C_{5_2,1}(t) = -(t^{-2} + t^{-4})`. -/
+noncomputable def c52_1 (t : ℝ) : ℝ := -((t ^ 2)⁻¹ + (t ^ 4)⁻¹)
+
+/-- **The leading `5_2` bar-odd Habiro term** is the coefficient's bar-asymmetry
+    times the (bar-even) factor — the odd-locus, instantiated on the real `5_2`. -/
+theorem c52_1_bar_odd_term (t : ℝ) (j : ℕ) :
+    c52_1 t * habiroFactor t j - c52_1 t⁻¹ * habiroFactor t⁻¹ j
+      = (c52_1 t - c52_1 t⁻¹) * habiroFactor t j :=
+  habiroTerm_bar_odd_eq_coeff_asymmetry c52_1 t j
+
+/-- The explicit bar-asymmetry of the leading `5_2` coefficient:
+    `C_{5_2,1}(t) - C_{5_2,1}(t^{-1}) = t^4 + t^2 - t^{-2} - t^{-4}` (for `t ≠ 0`),
+    a nonzero Laurent polynomial — chirality made explicit. -/
+theorem c52_1_asymmetry (t : ℝ) (ht : t ≠ 0) :
+    c52_1 t - c52_1 t⁻¹ = t ^ 4 + t ^ 2 - (t ^ 2)⁻¹ - (t ^ 4)⁻¹ := by
+  unfold c52_1
+  field_simp
+  ring
+
 end QOU.QBeta.HabiroCyclotomicOddLocus

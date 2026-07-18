@@ -1,0 +1,48 @@
+{
+  "computation": "qbeta-5two-leading-odd-datum",
+  "description": "Leading 5\u2082 cyclotomic coefficient C_5\u2082,1(t)=\u2212(t^-2+t^-4) via self-calibrating (V_5\u2082\u22121)/(V_4\u2081\u22121) (exact Laurent poly, det-gated); bar-asymmetric \u21d2 leading 5\u2082 odd Habiro datum \u2248\u22120.0139 at substrate. Instantiates #3993 odd-locus on real 5\u2082; full action needs higher C_5\u2082,n (colored Jones N\u22653). scope-(b).",
+  "audit_only": true,
+  "tier": "symbolic-exact (validated Jones extraction)",
+  "computedAt": "2026-07-18T19:26:34.141390+00:00",
+  "commitSha": "228347bb7d90fbb22a777a70aec603efada446d1",
+  "engine": "sympy+mpmath",
+  "engineVersion": "sympy 1.14.0, mpmath 1.3.0",
+  "scriptFile": "qbeta_5two_leading_odd_datum_probe.py",
+  "scriptHash": "bcb2e1abbe04",
+  "assertions": [
+    {
+      "name": "jones_det_checks",
+      "passed": true,
+      "source": "validated Jones polynomials: |V(\u22121)| = knot determinant (5, 7)"
+    },
+    {
+      "name": "leading_coeff_is_exact_laurent_poly",
+      "passed": true,
+      "source": "C_5\u2082,1 = (V_5\u2082\u22121)/(V_4\u2081\u22121) is an EXACT Laurent polynomial (V_4\u2081\u22121)\u00b7C_5\u2082,1 = V_5\u2082\u22121 \u2014 validates the self-calibrating extraction (a genuine cyclotomic coefficient), no faked form"
+    },
+    {
+      "name": "leading_coeff_bar_asymmetric",
+      "passed": true,
+      "source": "C_5\u2082,1 is bar-asymmetric (chiral 5\u2082) \u2014 the leading bar-odd Habiro datum, unlike 4\u2081's bar-symmetric C_n=1"
+    },
+    {
+      "name": "leading_odd_datum_computed",
+      "passed": true,
+      "computed": "-0.013943305",
+      "source": "leading 5\u2082 odd datum (C_5\u2082,1(t)\u2212C_5\u2082,1(1/t))\u00b7f_1 at the substrate \u2248 \u22120.0139 \u2014 a nonzero chiral bar-odd datum, O(1e-2)"
+    }
+  ],
+  "allPassed": true,
+  "result": {
+    "C_5two_1": "(-t**2 - 1)/t**4",
+    "bar_odd_coeff": "t**4 + t**2 - 1/t**2 - 1/t**4",
+    "leading_odd_datum_substrate": "-0.013943305",
+    "verdict": "EXTRACTED (validated, no faked form): the LEADING 5\u2082 cyclotomic coefficient C_5\u2082,1(t) = \u2212(t^{-2}+t^{-4}) via the self-calibrating ratio (V_5\u2082\u22121)/(V_4\u2081\u22121) (exact Laurent poly; det checks 5,7). It is bar-ASYMMETRIC (chiral), so instantiates the #3993 odd-locus on the REAL 5\u2082: the leading bar-odd Habiro datum = (C_5\u2082,1(t)\u2212C_5\u2082,1(1/t))\u00b7f_1 \u2248 \u22120.0139 at the substrate \u2014 the O(1e-2) scale of the corpus deformed bar-odd Im (~0.016), noted not identified. This is the first genuine 5\u2082 odd-channel datum. The full odd action needs the higher C_5\u2082,n (n\u22652), i.e. colored Jones at N\u22653 \u2014 the concrete further input. scope-(b) exact identity from validated Jones. NO fit; NO c_k wired."
+  },
+  "context": {
+    "axis": "leading 5\u2082 odd datum (#3993 continuation; #3966 b3ix)",
+    "method": "self-calibrating (V_5\u2082\u22121)/(V_4\u2081\u22121), C_4\u2081,1=1; no Masbaum needed",
+    "next_input": "higher C_5\u2082,n (n\u22652) = colored Jones at N\u22653",
+    "lean": "QOU.QBeta.HabiroCyclotomicOddLocus (odd-locus instance)"
+  }
+}
