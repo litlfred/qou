@@ -167,6 +167,9 @@ import QOU.BraidKnot.TableauContent
 -- connector (bean qou-tqab): reuses canonical StandardYoungTableau; cellOf +
 -- generatorRho supply the (position, ρ) data the character core ranges over.
 import QOU.BraidKnot.SeminormalCharacterConnector
+-- Concrete #SYT counts for small self-conjugate shapes: the hook (2,1) has
+-- #SYT = 2, hence c_λ(σ₁) = 1 — the first tabulated character coefficient.
+import QOU.BraidKnot.SytSmallShapeCounts
 -- Tier-3 (bean 60iz) general-H_n(q) completion: the arbitrary-braid-word Jones
 -- value + Markov move II (conjugation invariance), on the sibling-landed
 -- IwahoriHeckeAPI element algebra. Move I = IwahoriHeckeAPI.markovTrace_stab_comm;
