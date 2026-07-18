@@ -1,0 +1,94 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-18T15:42:42.668087+00:00",
+  "commitSha": "128aa42dedcdadb684023f98e00f5deef9da9ff2",
+  "assertions": [
+    {
+      "name": "gate_4one_b1_closed_form",
+      "computed": 1.0966730746646413e-19,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-08,
+      "source": "quadrature of ∫Φ₁²e^{−πiv²} matches the exact GK closed form (e^{πi/6}/√3)·2sinh(V/2π), V = Vol(4₁)"
+    },
+    {
+      "name": "gate_5two_quadrature_vs_factorization",
+      "computed": 3.4041802397701307e-14,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-06,
+      "source": "Z_5₂(iβ) by bent-contour quadrature = the GGM/Peacock H-series factorization (independent evaluations)"
+    },
+    {
+      "name": "frame_reduced_split_exact",
+      "computed": 1.4004393044605273e-31,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-25,
+      "source": "Ẑ = even + i·odd with even = R^{1/8}H⁺₁H⁻₁, odd = −(R^{1/8}/2)(βH⁺₂H⁻₀ − (1/β)H⁺₀H⁻₂)"
+    },
+    {
+      "name": "odd_channel_nonzero_chiral",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "Im Ẑ ≠ 0 at the substrate — the 5₂ chirality-odd channel is live in the state integral"
+    },
+    {
+      "name": "anchor_smooth_honest",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "|d ln(odd)/dq| ≪ 3.84e6 — derived odd ingredient, not the swing (SRigidityPrune)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 44,
+  "computation": "qbeta-5two-chirality-state-integral",
+  "scriptFile": "qbeta_5two_chirality_state_integral_probe.py",
+  "scriptHash": "4eaea3601cd9",
+  "scriptCommitSha": "128aa42dedcdadb684023f98e00f5deef9da9ff2",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "A1 (bean qou-u5xq): the 5₂ Andersen–Kashaev state integral Z = ∫Φ_b(v)³e^{−2πiv²}dv on the substrate ray τ = iβ (b = √β·e^{iπ/4}, q = 1/q₀, q̃ ≈ 1e-165), computed TWO independent ways: bent-contour quadrature with the corpus-validated Φ_b evaluator, and the GGM eq-110/Peacock eq-82 H-series factorization (A2-validated machinery). Gated by the exact 4₁ b=1 closed form (GK 1411.6062 eq 2). Measurement: the frame-reduced chirality split Ẑ = e^{−πi/4}Z = [R^{1/8}H⁺₁H⁻₁] + i·[−(R^{1/8}/2)(βH⁺₂H⁻₀ − (1/β)H⁺₀H⁻₂)] — the real part is the bar-even index channel, the imaginary part is the DERIVED chirality-odd datum of 5₂ at the substrate (calibration-free, fibre-level). Honest: anchor-smooth (SRigidityPrune binds — odd ingredient, not the swing). No fit; no c_k wired; auditOnly.",
+  "contentBlock": "prop:phi-b-unitary-bar-odd",
+  "data": {
+    "substrate": {
+      "muon": {
+        "beta": "0.01660634324080984569633929",
+        "b": "(0.09112174065723790182347256 + 0.09112174065723790182347256j)"
+      },
+      "proton": {
+        "beta": "0.0166063414046204952981553",
+        "b": "(0.0911217356195010568296142 + 0.0911217356195010568296142j)"
+      }
+    },
+    "Z_factorization_muon": "(-205890935084619.092778127 + 352915120999620.2138638369j)",
+    "Z_quadrature_muon": "(-205890935084609.5166087874 + 352915120999610.1265135837j)",
+    "chirality_split": {
+      "muon": {
+        "even_ReZhat": "103961798858928.9802518005",
+        "odd_ImZhat": "395135551625275.8073359853"
+      },
+      "proton": {
+        "even_ReZhat": "103961006019138.6902769926",
+        "odd_ImZhat": "395137352695083.2064296253"
+      }
+    },
+    "anchor_rel_log_slope_odd": "3.559365e+02",
+    "verdict": "DERIVED CHIRALITY STATE-INTEGRAL DATUM LANDED: Z_5₂ on the substrate ray computed two independent ways (quadrature vs factorization) and gated by the exact 4₁ closed form; the frame-reduced odd part Im Ẑ is the fibre-level chirality datum at q₀ — the state-integral face of the same odd channel as A2's Stokes datum. Anchor-smooth (honest: not the swing). No fit; no c_k wired; auditOnly."
+  }
+}

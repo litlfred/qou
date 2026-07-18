@@ -76,6 +76,37 @@ principle — the open problem itself).
 
 ## Session results (updated as attacks land)
 
+- **A1 LANDED (derived chirality state-integral datum, 5/5).**
+  [`qbeta_5two_chirality_state_integral_probe.py`](../../computations/probes/qbeta_5two_chirality_state_integral_probe.py)
+  + witness: `Z_{5₂} = ∫Φ_b(v)³e^{−2πiv²}dv` on the substrate ray `τ = iβ`
+  (`b = √β·e^{iπ/4}`, `q = 1/q₀`, `q̃ ≈ 1e-165`) computed **two independent
+  ways** — strip-aware bent-contour quadrature with the corpus Φ_b evaluator,
+  and the GGM/Peacock H-series factorization — agreeing at **3.4e-14**, gated
+  by the exact 4₁ `b=1` closed form at **1.1e-19**. The frame-reduced split
+  `Ẑ = e^{−iπ/4}Z` separates cleanly: `Re Ẑ = R^{1/8}H⁺₁H⁻₁` (the bar-even
+  index channel) and `Im Ẑ = −(R^{1/8}/2)[βH⁺₂H⁻₀ − (1/β)H⁺₀H⁻₂]` — the
+  **derived chirality-odd state-integral datum** at the substrate, the
+  state-integral face of A2's odd-Stokes matrix datum. Honest: anchor-smooth
+  (`|d ln(odd)/dq| = 3.6e2`) — odd ingredient, not the swing. Numerics
+  lesson: the corpus `log_phi_b` integral rep is valid only in
+  `|Im v| < Im c_b`; a contour leaving the strip produces silent garbage
+  (first run cost 1033s) — the probe now sizes the bend angle to the strip.
+- **A4 disposition (blocked on coefficient generation — honest).** The
+  median Borel–Laplace cross-check needs the 5₂ perturbative series φ_σ to
+  ~30+ orders; only 5 printed orders exist, **and the printed τ² coefficient
+  is a misprint in one of GGM eq 20 / Peacock eq 76** (machine-checked
+  irreconcilable). First sub-step is arbitrating c₂ via an independent
+  2-loop saddle expansion (corpus 4₁ machinery adaptable), then a
+  coefficient-generation engine. Bean `qou-ea86` stays open; not
+  session-sized.
+- **A5 disposition (narrowed + first bricks laid).** The A3 falsification +
+  sibling #3954's σ3-shape constraint jointly kill the analytic-saddle
+  carrier; the capstone carrier search narrows to the **categorical H₃(q)
+  Markov-trace 𝔙_q(5₂)** (corrected braid `[1,1,1,2,-1,2]` is B₃ ⇒ H₃, not
+  H₅). Classical H₃ bricks already exist (validated TL₃ Jones + bar-odd
+  datum); the missing object is the *quantum* (colored/Kashaev-tower) trace
+  datum at the substrate. Bean `qou-3yxn` stays open with this scope.
+
 - **A2 LANDED (derived odd-Stokes datum).**
   [`qbeta_5two_stokes_barodd_index_probe.py`](../../computations/probes/qbeta_5two_stokes_barodd_index_probe.py)
   + witness, 8/8: both 5₂ Stokes automorphisms `S⁺(q)`, `S⁻(q)` (GGM
