@@ -1,0 +1,97 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-18T14:27:40.011192+00:00",
+  "commitSha": "86a61492d6bfed81094bc6f58a2bea7d576a41e8",
+  "assertions": [
+    {
+      "name": "gate_vol_5_2_validates",
+      "computed": 4.591774807899561e-41,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-06,
+      "source": "m=1 NZ saddle reproduces Vol(5₂)=2.82812 (merged witness gate)"
+    },
+    {
+      "name": "gate_anchor_slope_O1",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "cross-anchor |d𝔙/dq| = O(1) reproduces the merged qbeta-5two-quantum-volume witness"
+    },
+    {
+      "name": "no_zero_crossing_of_barodd_B_at_qstar",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "B(q) has 0 sign changes (Re and Im) on ±2e-8 grid straddling q*, |B(q*)| > 1e-10 — carrier constraint (2) fails"
+    },
+    {
+      "name": "smooth_factor_cannot_carry_zero",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "placing the zero in f instead needs log-slope > 1e6 across the anchor window — violates 'smooth O(1)'"
+    },
+    {
+      "name": "writhe_D_odd_nonvanishing_at_qstar",
+      "computed": 0.21019936882842152,
+      "expected": 0.21,
+      "passed": true,
+      "tolerance": 0.05,
+      "source": "D_odd(q*) = ½(q*²−q*⁻²) ≈ 0.21 — same constraint-(2) failure"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 13,
+  "computation": "qbeta-5two-capstone-carrier-falsification",
+  "scriptFile": "qbeta_5two_capstone_carrier_falsification_probe.py",
+  "scriptHash": "cda8861c8499",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "A3 capstone-carrier falsification (bean qou-el23): tests whether the 5₂ NZ-saddle bar-odd datum B(q)=[𝔙(m=q)−𝔙(m=1/q)]/2 can be the Im 𝔙_q → N_odd carrier. Constraint (2) of the capstone (simple zero at q*, slope A'≈+2.37) forces the carrier to vanish at q*; measured: B has NO zero crossing in a ±2e-8 window straddling q* and |B(q*)|=O(0.1), and the alternative (zero in the smooth factor f) needs a ~1e8 log-slope — not smooth. Writhe datum D_odd likewise nonvanishing. SCOPE-(a): the analytic NZ-saddle datum is not the carrier; narrows toward the categorical H_5(q) Markov-trace 𝔙_q (A5). Gates reproduce the merged 5₂ quantum-volume witness (Vol=2.82812, O(1) anchor slopes). No c_k; no fit; auditOnly.",
+  "contentBlock": "prop:phi-b-unitary-bar-odd",
+  "data": {
+    "q_star": "1.10997859303152",
+    "B_at_qstar": {
+      "re": "0.148105082923309",
+      "im": "0.0203691256756862"
+    },
+    "fine_grid": {
+      "half_width": "2e-8",
+      "n_points": 17,
+      "sign_changes_reB": 0,
+      "sign_changes_imB": 0,
+      "reB_ends": [
+        "0.148105057082",
+        "0.148105108765"
+      ],
+      "imB_ends": [
+        "0.0203691220783",
+        "0.0203691292731"
+      ]
+    },
+    "smooth_factor_obstruction": {
+      "N_odd_muon_linear_model": "5.986180863e-9",
+      "u_muon_cubed": "6.178685578e-7",
+      "B_magnitude_muon": "0.1481050862",
+      "f_muon": "0.06541596701",
+      "f_log_slope_needed": "3.95912e+8"
+    },
+    "verdict": "CARRIER FALSIFIED for the analytic NZ-saddle datum (scope-(a)): B(q) smooth, nonvanishing at q*, no crossing in the window; the u³·(smooth) normalization cannot manufacture the simple zero. Capstone carrier narrows to the categorical H₅(q) Markov-trace 𝔙_q (A5, bean qou-3yxn). NOT scope-(b): other geometric functionals stay open."
+  }
+}
