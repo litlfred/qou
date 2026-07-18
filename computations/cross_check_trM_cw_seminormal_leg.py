@@ -111,7 +111,9 @@ def cw_trM(Z: int, N: int, q_str: str, q0: "mp.mpf", a_cw, b_cw) -> "mp.mpf":
                    pn.chi_lambda_all_partitions_mpfr(n, signed(br), q_str, 50)}
               for br in (1, -1)}
     chi = {l: a_cw * branch[1][l] + b_cw * branch[-1][l] for l in branch[1]}
-    return abs(sum(y[l] * chi[l] for l in chi))
+    # mp.fsum (not built-in sum): tr_M = Σ y_λ χ_λ has sign cancellation
+    # (χ_λ can be negative), so accurate summation matters at 1ppQ.
+    return abs(mp.fsum(y[l] * chi[l] for l in chi))
 
 
 def main() -> int:
@@ -170,7 +172,8 @@ def main() -> int:
     }
     wit["allPassed"] = all(a["passed"] for a in wit["assertions"])
     out = HERE / "cross-check-trM-cw-seminormal.witness.json"
-    json.dump(wit, open(out, "w"), indent=1)
+    with open(out, "w", encoding="utf-8") as f:
+        json.dump(wit, f, indent=1)
     print(f"\nworst |Δ|/ref = {float(worst):.2e}  ({'ALL 1ppQ' if all_ok else 'FAIL'})")
     print(f"witness -> {out.name}  allPassed: {wit['allPassed']}  "
           f"({time.time()-t0:.0f}s)")
