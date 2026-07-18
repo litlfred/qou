@@ -111,13 +111,13 @@ def d_coeffs():
     KMAX the ORD-extension affords (target k=31). Reuses build_d_ladder() from
     the merged generating-function probe — the SAME object #3821 extended."""
     dk, KMAX, _vt, odd_ok = dlad.build_d_ladder()
-    s3 = mp.sqrt(3)
+    # Evaluate the exact ℚ(√3) ladder coefficient directly to (dps+10) digits and
+    # parse with mpmath — avoids the manual √3-coefficient split + heuristic
+    # nsimplify (which can fail on complex expressions). Precision is tied to the
+    # caller's mp.mp.dps so extra working precision is preserved (Gemini review).
     d = [mp.mpf(0)]
     for k in range(1, KMAX + 1):
-        e = sp.expand(dk[k])
-        bb = sp.Rational(sp.nsimplify(e.coeff(sp.sqrt(3), 1)))
-        aa = sp.Rational(sp.nsimplify(e - bb * sp.sqrt(3)))
-        d.append(mp.mpf(int(aa.p)) / int(aa.q) + (mp.mpf(int(bb.p)) / int(bb.q)) * s3)
+        d.append(mp.mpf(str(sp.sympify(dk[k]).evalf(mp.mp.dps + 10))))
     return d, KMAX, bool(odd_ok)
 
 
@@ -149,6 +149,11 @@ def main() -> int:
 
     print(f"\nbuilding exact D-ladder at ORD={ORD} (reused core) ...", flush=True)
     d, KMAX, odd_ok = d_coeffs()
+    # Fail loud early if the ORD-extension did not afford k=31 (else the k=31
+    # carrier-tail accesses below would IndexError cryptically) — if/raise, not
+    # `assert` (stripped under -O per repo discipline). (Gemini review.)
+    if KMAX < 31:
+        raise RuntimeError(f"expected KMAX >= 31 from ORD={ORD}, got KMAX={KMAX}")
     print(f"  KMAX = {KMAX} (was 21 at the k≤21-era determination); "
           f"odd-order over-determination clean: {odd_ok}", flush=True)
 
