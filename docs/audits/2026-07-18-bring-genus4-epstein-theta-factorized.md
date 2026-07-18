@@ -1,8 +1,8 @@
 # Genus-4 Epstein det′Δ on Jac(Bring) — the deferred α_EM magnitude value, via θ-factorization
 
 **Date:** 2026-07-18 · **Axis:** α_EM 2-loop / 1ppQ (#3612, magnitude leg #3911) ·
-**Tier:** structural-exact machinery (genus-1 EXACT + genus-2 sibling cross-check)
-+ scope-(a) computed magnitude value · **Discipline:** no fit (nothing tuned to
+**Tier:** structural-exact machinery (genus-1 EXACT + genus-2 sibling cross-check),
+plus a scope-(a) computed magnitude value · **Discipline:** no fit (nothing tuned to
 CODATA), no c_k, nothing wired, no tier change.
 
 ## What was deferred
