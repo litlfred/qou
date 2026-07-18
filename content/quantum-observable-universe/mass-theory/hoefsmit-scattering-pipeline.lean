@@ -70,10 +70,6 @@ noncomputable def scatteringAmplitudeForward
     categorical functor objects and is downstream of
     `QOU.ArchimedeanMassFormula`; it is not part of this stub.
 
-    Replaces the previous `: True := trivial` (vacuous) projection,
-    which asserted functoriality in its docstring while concluding
-    `True`.
-
     Ref: [manuscript] §5.14 -/
 theorem pipeline_functoriality {R : Type u} [Field R]
     (m_e geom jK jK' : R) :
