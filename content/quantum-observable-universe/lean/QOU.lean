@@ -289,6 +289,7 @@ import QOU.Mathlib.StandardYoungTableau
 import QOU.Mathlib.RSKBurnsideTarget
 import QOU.Mathlib.StandardYoungTableauBot
 import QOU.Mathlib.HookLengthFormula
+import QOU.Mathlib.ColLenRowLensBridge
 import QOU.Mathlib.RSKSubstrateInstances
 import QOU.Mathlib.IdentityIHLFBridge
 import QOU.Mathlib.SchenstedInsertion
