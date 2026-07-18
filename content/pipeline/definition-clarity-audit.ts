@@ -745,6 +745,23 @@ function checkDefnTight(b: Block): Finding {
     base.evidence = "algorithm specification (Input/Output/steps) — procedural, not rambling prose";
     return base;
   }
+  // Agent-confirmed structural-anatomy FPs (verified during the 2026-07
+  // clarity-defn-tight drain, PRs #3679/#3816): the bold sub-section labels ARE
+  // the definition's anatomy / parallel cases — one definition, not discursive
+  // rambling — and cannot be regex-distinguished from genuine multi-section
+  // rambling without over-correcting genuine cases, so they carry an explicit
+  // label exemption.
+  //   observable-subcategory:            Observability / Complement / Connected components
+  //   per-nucleon-channel-decomposition: Proton / Neutron parallel cases + Channel sum
+  if (
+    b.label === "def:observable-subcategory" ||
+    b.label === "def:per-nucleon-channel-decomposition"
+  ) {
+    base.result = "n/a";
+    base.evidence =
+      "agent-confirmed FP: bold labels are the definition's structural anatomy / parallel cases, not rambling sub-sections";
+    return base;
+  }
   const rambling =
     words > T.defnWords ||
     headers >= T.defnHeaders ||
