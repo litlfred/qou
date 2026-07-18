@@ -181,6 +181,11 @@ def main():
         },
     }
 
+    sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "substrate"))
+    from witness_base import WitnessBuilder  # noqa: E402 — P30 rollup (bean cmiy)
+    # Payload carries a top-level `assertions` mapping → stamp (not wrap_legacy) preserves it.
+    WitnessBuilder.stamp_staleness_metadata(witness, script_path=__file__, engine="mpmath")
+    witness["scriptFile"] = os.path.basename(__file__)
     out = os.path.join(
         os.path.dirname(os.path.abspath(__file__)),
         "perknot-pn-bond-mayer-grounding.witness.json",

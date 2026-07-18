@@ -256,3 +256,16 @@ durationMs. NOTE (gotcha #2 benign instance): f_ell's committed witness
 re-serialized one CODATA input (206.768283) with mpmath trailing digits
 (...2999...) — SAME number, all computed physics values identical; cosmetic
 only. PROV_MISSING 256→253. Avoided deuteron_* (sibling #3808 scope).
+
+## 2026-07-18 — batch 18 (2 scripts) — the input-witness-chain tail
+Two single-output producers that READ input witnesses (the harder tail):
+- probes/binding_cluster_operator_vs_mayer_probe (wrap_legacy + add_upstream):
+  reads three-body-joint-trace-a3 as input → genuine data.upstream_witness_hashes
+  edge recorded (the #3862 lesson applied). engine mpmath, output_dir=COMP.
+- deltalambda/perknot_pn_bond_mayer_grounding_probe (stamp, assertions): the
+  "extensivity-gap-synthesis" name in it is docstring-only, not a file read →
+  clean single output. NOTE: stamp path has no start_time param, so NO _T0
+  anchor (durationMs not tracked by stamp) — gotcha #9: don't add _T0 to
+  stamp-path scripts (unused var).
+Both: exit 0, keys/assertions preserved, prov triple. PROV_MISSING 255→253.
+Sandbox-clean tail now ~single digits; remainder is native/multi-emit/deuteron.
