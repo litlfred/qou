@@ -714,6 +714,108 @@ theorem generatorRho_swapSuccSYT (T : StandardYoungTableau μ) (i : ℕ)
   rw [cellOf_swapSuccSYT_i, cellOf_swapSuccSYT_i1]
   exact axialDistance_antisymm _ _
 
+/-! ### General generator `σ_i`: the full character `χ_λ(σ_i) = c_λ·h`
+
+Assembles the three classes into `SeminormalWeight.fullCharacter_two_mul`: the
+same-row / same-column diagonal parts (counts equal by
+`card_rowClassGen_eq_colClassGen`) and the off-diagonal part paired by the total
+swap involution `τ`. -/
+
+/-- The off-diagonal class `S_off^i`: `i, i+1` in different rows *and* columns. -/
+noncomputable def offClassGen (μ : YoungDiagram) (i : ℕ) :
+    Finset (StandardYoungTableau μ) :=
+  Finset.univ.filter (fun T => ¬ sameRowGen i T ∧ ¬ sameColGen i T)
+
+theorem mem_offClassGen {i : ℕ} {T : StandardYoungTableau μ} :
+    T ∈ offClassGen μ i ↔
+      (cellOf T i).1 ≠ (cellOf T (i + 1)).1 ∧ (cellOf T i).2 ≠ (cellOf T (i + 1)).2 := by
+  rw [offClassGen, Finset.mem_filter]
+  exact ⟨fun h => h.2, fun h => ⟨Finset.mem_univ _, h⟩⟩
+
+/-- The **total swap involution** `τ`: the value-swap `i ↔ i+1` on the off-diagonal
+    class, the identity elsewhere. This is the fixed-point-free involution
+    `SeminormalWeight.fullCharacter_two_mul` consumes on `S_off^i`. -/
+noncomputable def tauGen (i : ℕ) (hi : 1 ≤ i) (hi2 : i + 1 ≤ μ.cells.card)
+    (T : StandardYoungTableau μ) : StandardYoungTableau μ :=
+  if h : (cellOf T i).1 ≠ (cellOf T (i + 1)).1 ∧ (cellOf T i).2 ≠ (cellOf T (i + 1)).2 then
+    swapSuccSYT T i h.1 h.2 hi hi2
+  else T
+
+theorem tauGen_of_off (i : ℕ) (hi : 1 ≤ i) (hi2 : i + 1 ≤ μ.cells.card)
+    (T : StandardYoungTableau μ)
+    (h : (cellOf T i).1 ≠ (cellOf T (i + 1)).1 ∧ (cellOf T i).2 ≠ (cellOf T (i + 1)).2) :
+    tauGen i hi hi2 T = swapSuccSYT T i h.1 h.2 hi hi2 := by
+  unfold tauGen; rw [dif_pos h]
+
+theorem cellOf_tauGen_i (i : ℕ) (hi : 1 ≤ i) (hi2 : i + 1 ≤ μ.cells.card)
+    (T : StandardYoungTableau μ)
+    (h : (cellOf T i).1 ≠ (cellOf T (i + 1)).1 ∧ (cellOf T i).2 ≠ (cellOf T (i + 1)).2) :
+    cellOf (tauGen i hi hi2 T) i = cellOf T (i + 1) := by
+  rw [tauGen_of_off i hi hi2 T h]; exact cellOf_swapSuccSYT_i T i h.1 h.2 hi hi2
+
+theorem cellOf_tauGen_i1 (i : ℕ) (hi : 1 ≤ i) (hi2 : i + 1 ≤ μ.cells.card)
+    (T : StandardYoungTableau μ)
+    (h : (cellOf T i).1 ≠ (cellOf T (i + 1)).1 ∧ (cellOf T i).2 ≠ (cellOf T (i + 1)).2) :
+    cellOf (tauGen i hi hi2 T) (i + 1) = cellOf T i := by
+  rw [tauGen_of_off i hi hi2 T h]; exact cellOf_swapSuccSYT_i1 T i h.1 h.2 hi hi2
+
+/-- `τ` maps the off-diagonal class to itself (the swap keeps `i, i+1` off-diagonal). -/
+theorem tauGen_maps_off (i : ℕ) (hi : 1 ≤ i) (hi2 : i + 1 ≤ μ.cells.card)
+    (T : StandardYoungTableau μ) (hT : T ∈ offClassGen μ i) :
+    tauGen i hi hi2 T ∈ offClassGen μ i := by
+  rw [mem_offClassGen] at hT ⊢
+  rw [cellOf_tauGen_i i hi hi2 T hT, cellOf_tauGen_i1 i hi hi2 T hT]
+  exact ⟨fun e => hT.1 e.symm, fun e => hT.2 e.symm⟩
+
+/-- `τ` is an involution (total: on the off-diagonal class it is the double
+    value-swap `swapSucc_involutive`; elsewhere it is the identity). -/
+theorem tauGen_involutive (i : ℕ) (hi : 1 ≤ i) (hi2 : i + 1 ≤ μ.cells.card)
+    (T : StandardYoungTableau μ) :
+    tauGen i hi hi2 (tauGen i hi hi2 T) = T := by
+  by_cases h : (cellOf T i).1 ≠ (cellOf T (i + 1)).1 ∧ (cellOf T i).2 ≠ (cellOf T (i + 1)).2
+  · rw [tauGen_of_off i hi hi2 T h]
+    have hci := cellOf_swapSuccSYT_i T i h.1 h.2 hi hi2
+    have hci1 := cellOf_swapSuccSYT_i1 T i h.1 h.2 hi hi2
+    have h' : (cellOf (swapSuccSYT T i h.1 h.2 hi hi2) i).1
+          ≠ (cellOf (swapSuccSYT T i h.1 h.2 hi hi2) (i + 1)).1
+        ∧ (cellOf (swapSuccSYT T i h.1 h.2 hi hi2) i).2
+          ≠ (cellOf (swapSuccSYT T i h.1 h.2 hi hi2) (i + 1)).2 := by
+      rw [hci, hci1]; exact ⟨fun e => h.1 e.symm, fun e => h.2 e.symm⟩
+    rw [tauGen_of_off i hi hi2 _ h']
+    apply StandardYoungTableau.encode_injective
+    funext c
+    apply Fin.ext
+    show swapSucc i (swapSucc i (T.entry c.1.1 c.1.2)) = T.entry c.1.1 c.1.2
+    exact swapSucc_involutive i _
+  · have hid : tauGen i hi hi2 T = T := by unfold tauGen; rw [dif_neg h]
+    rw [hid, hid]
+
+/-- **The full general-`σ_i` seminormal character** `2·χ_λ(σ_i) = (2|R_row^i| +
+    |S_off^i|)·h`, i.e. `χ_λ(σ_i) = c_λ·h` with `c_λ = |R_row^i| + |S_off^i|/2 ∈ ℤ`,
+    for a self-conjugate shape and any generator `σ_i`. The diagonal counts are
+    equal (`card_rowClassGen_eq_colClassGen`); the off-diagonal class is paired by
+    the total swap involution `τ` (`tauGen`), which negates `ρ`. The hypothesis
+    `hnd` (`q^{2ρ} ≠ 1` on the off-diagonal class — no box on the diagonal) is passed
+    through, exactly as in `SeminormalWeight.fullCharacter_two_mul`. Fully general
+    over any `[Field R]`. -/
+theorem fullCharacterGen_two_mul (h : μ.transpose = μ) (i : ℕ)
+    (hi : 1 ≤ i) (hi2 : i + 1 ≤ μ.cells.card)
+    {R : Type*} [Field R] (q hh : R) (hq : q ≠ 0)
+    (hnd : ∀ T ∈ offClassGen μ i, q ^ (2 * generatorRho T i) ≠ 1) :
+    (2 : R) * (((rowClassGen μ i).card : R) * q + ((colClassGen μ i).card : R) * (hh - q)
+        + ∑ T ∈ offClassGen μ i,
+            SeminormalWeight.seminormalWeight q hh (generatorRho T i))
+      = ((2 * (rowClassGen μ i).card + (offClassGen μ i).card : ℕ) : R) * hh :=
+  SeminormalWeight.fullCharacter_two_mul q hh (rowClassGen μ i) (colClassGen μ i)
+    (offClassGen μ i) (fun T => generatorRho T i) (tauGen i hi hi2)
+    (card_rowClassGen_eq_colClassGen h i hi hi2)
+    (fun T hT => tauGen_maps_off i hi hi2 T hT)
+    (fun T _ => tauGen_involutive i hi hi2 T)
+    (fun T hT => by
+      rw [tauGen_of_off i hi hi2 T (mem_offClassGen.mp hT)]
+      exact generatorRho_swapSuccSYT T i _ _ hi hi2)
+    hq hnd
+
 end Closure
 
 end QOU.BraidKnot.SeminormalCharacterConnector
