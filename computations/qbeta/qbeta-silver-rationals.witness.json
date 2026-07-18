@@ -26,5 +26,13 @@
     "(P) c_3·c_6 = c_9 (= −7)": true
   },
   "allPassed": true,
-  "verdict": "VERIFIED (exact rational + silver-ratio b² grounding). The Q_β silver-ratio rungs c_8=49/16, c_9=−7, c_10=343/128 and c_4=−49/32 (product identity c_3·c_4=c_8) hold exactly with c_3=−2 and the Hoefsmit b²=7/8, itself exact at q=1+√2. Wires the sorry-free norm_num Lean theorems qbeta_c{8,9,10}_at_silver / c4_eq_c8_div_c3_at_silver. SUBDOMINANT-but-REAL (the silver/Q_A pole is a genuine subdominant kernel root, char ≈3.12, not the dominant ≈117.4); no fit; no c_k≥3 made canonical."
+  "verdict": "VERIFIED (exact rational + silver-ratio b² grounding). The Q_β silver-ratio rungs c_8=49/16, c_9=−7, c_10=343/128 and c_4=−49/32 (product identity c_3·c_4=c_8) hold exactly with c_3=−2 and the Hoefsmit b²=7/8, itself exact at q=1+√2. Wires the sorry-free norm_num Lean theorems qbeta_c{8,9,10}_at_silver / c4_eq_c8_div_c3_at_silver. SUBDOMINANT-but-REAL (the silver/Q_A pole is a genuine subdominant kernel root, char ≈3.12, not the dominant ≈117.4); no fit; no c_k≥3 made canonical.",
+  "scriptHash": "8921ad09870b",
+  "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
+  "commitSha": "9e62944951a74873db36bf96989f5c0cc69d2271",
+  "engine": "sympy",
+  "computedAt": "2026-07-18T17:52:41.875226+00:00",
+  "durationMs": 0,
+  "engineVersion": "sympy 1.14.0",
+  "scriptFile": "qbeta_silver_rationals.py"
 }
