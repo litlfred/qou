@@ -6,8 +6,8 @@
   "auditOnly": true,
   "computation": {
     "script": "computations/alpha_em/alpha_em_involution_type_probe.py",
-    "scriptCommitSha": "26973183b25852920493b30c3687548ecfdc582e",
-    "scriptHash": "3c99e66a9d73"
+    "scriptCommitSha": "8d003c8d5f3d7e74a174eff7167c2825785deeb8",
+    "scriptHash": "da07319e281d"
   },
   "controls": [
     {
@@ -51,5 +51,13 @@
   "allPass": true,
   "verdict": "The \u03b1_EM per-loop '2' unification obstruction is NOME-INDEPENDENT (scope-(a), exact algebra) \u2014 strengthens #3941. The Hecke channel-swap q\u21a6\u2212q\u207b\u00b9 (#3936) is an involutive \u211a(q)-automorphism, hence \u2102-LINEAR (holomorphic): swap(i\u00b7x)=i\u00b7swap(x). Hodge conjugation (the anti-linear involution fixing H\u00b9(M,\u211d), swapping H^{1,0}\u2194H^{0,1}) is \u2102-ANTI-LINEAR: conj(i\u00b7z)=\u2212i\u00b7conj(z). A \u2102-linear and a \u2102-anti-linear involution are of different analytic TYPE \u2014 no nome/coordinate converts one to the other, so the #3941 obstruction (previously stated under q=e^{2\u03c0i\u03c4}) is INTRINSIC, caveat removed. A unification requires an anti-linear real structure R := swap\u2218conj on the fibre with conj = swap \u2218 R; the existence of a compatible R is the precise open input the \u03c4-functor must supply (the fibre-level reality structure of #3936/#3941, now named). Does not derive the unification or exhibit R. No CODATA read; no nome assumed; no fit; no \u03b1_k wired; 1/(8\u03c0) stays a phase-4 identification.",
   "scope": "(a) scope-limited \u2014 nome-independent involution-type obstruction; unification stays open (needs anti-linear R)",
-  "antiLaundering": "exact \u211a(q)/\u2102 algebra, machine-checked; no CODATA read; no nome assumed; unification stated open"
+  "antiLaundering": "exact \u211a(q)/\u2102 algebra, machine-checked; no CODATA read; no nome assumed; unification stated open",
+  "scriptHash": "da07319e281d",
+  "scriptCommitSha": "8d003c8d5f3d7e74a174eff7167c2825785deeb8",
+  "commitSha": "ce3567490fc7d470b81700717d308476fcdd2540",
+  "engine": "sympy",
+  "computedAt": "2026-07-18T17:41:50.641286+00:00",
+  "durationMs": 0,
+  "engineVersion": "sympy 1.14.0",
+  "scriptFile": "alpha_em_involution_type_probe.py"
 }

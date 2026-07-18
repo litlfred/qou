@@ -4,7 +4,7 @@
   "audit_only": true,
   "tier": "scope-(a) numerical falsification (no fit; not wired; \u03bc\u2013p NOT resolved)",
   "precision_dps": 60,
-  "timestamp": "2026-07-17T22:17:42.167804+00:00",
+  "timestamp": "2026-07-18T17:43:21.924594+00:00",
   "inputs": {
     "q0_muon_pin": "1.10997859555733471989976322048",
     "q0_proton_pin": "1.10997858275",
@@ -91,13 +91,21 @@
   },
   "overall_verdict": "No anchor-free categorical N-selection currently exists (scope-(a)). B1: undeformed Vol(4\u2081) is q-independent \u21d2 anchor inversion. B3: substrate-matched u=N\u00b7t\u22122\u03c0ik forces |u|\u22652\u03c0 (off-component, #3704); q0=exp(2\u03c0/N) needs the non-integer N=60.218, nearest integer N=60 misses by 3.8e5 ppb (~33000\u00d7 the 11.5 ppb tension); tuning N is a fit. This is scope-(a) (the construction ALONE fails), NOT scope-(b): no proved invariant forbids a future substrate-functor level datum with a small-complex u (the meridian-side surviving direction #3704 flags).",
   "witness": {
-    "scriptCommitSha": "de5bed8a8578dbfcada480de8c3220e1c44f989e",
-    "scriptHash": "b85cf63507a793eb"
+    "scriptCommitSha": "dbc8da6149e62afde11aad259ed11d34b8672855",
+    "scriptHash": "b4e3891fd5cd2564"
   },
   "refs": [
     "docs/audits/2026-07-17-mu-p-pin-sensitivity-map.md",
     "docs/scope/2026-07-12-mq0-nk-scan-result.md",
     "docs/scope/2026-07-12-mq0-unified-boundary-selection.md",
     "computations/qbeta/qbeta_c3_mq0_nk_scan.py"
-  ]
+  ],
+  "scriptHash": "b4e3891fd5cd",
+  "scriptCommitSha": "dbc8da6149e62afde11aad259ed11d34b8672855",
+  "commitSha": "ce3567490fc7d470b81700717d308476fcdd2540",
+  "engine": "mpmath",
+  "computedAt": "2026-07-18T17:43:22.347220+00:00",
+  "durationMs": 0,
+  "engineVersion": "mpmath 1.3.0",
+  "scriptFile": "murakami_deformed_vc_q0.py"
 }

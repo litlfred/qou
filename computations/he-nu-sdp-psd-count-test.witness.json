@@ -2,7 +2,7 @@
   "computation": "he-nu-sdp-psd-count-test",
   "kind": "exploratory-probe",
   "description": "Tests whether ν_SDP = #{non-trivial Wedderburn blocks λ≠(n) with ρ_λ(T_w) PSD} reproduces the confirmed D/T/³He = 1,2,2. Canonical orthogonal Hoefsmit form. REFUTED: matches D,³He (B₃) but T (8_11,H₅) gives 1≠2. The per-block-PSD shortcut is not ν_SDP; the operator-selection SDP is needed. No fit.",
-  "engine": "numpy",
+  "engine": "python",
   "q0": 1.1099785955573347,
   "candidate_definition": "nu = #{ lambda != (n) : rho_lambda(T_w) sym-part PSD }",
   "atoms": [
@@ -213,5 +213,11 @@
     "computations/hoefsmit_numpy.py (canonical orthogonal seminormal)",
     "computations/lp_dual_solver.py (operator-selection SDP)"
   ],
-  "discipline": "EXPLORATORY — derive-or-refute, no fit, no forced ⁴He number."
+  "discipline": "EXPLORATORY — derive-or-refute, no fit, no forced ⁴He number.",
+  "scriptHash": "8c1a5bdeacb7",
+  "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
+  "commitSha": "ce3567490fc7d470b81700717d308476fcdd2540",
+  "computedAt": "2026-07-18T17:42:07.120329+00:00",
+  "durationMs": 0,
+  "scriptFile": "he_nu_sdp_psd_count_test.py"
 }

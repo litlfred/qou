@@ -1,0 +1,72 @@
+{
+  "schema": "probe/v0",
+  "description": "alpha_EM 2/(3pi) vs Bloch-Wigner dilog discriminant probe (#3824 vs #3810)",
+  "computation": "computations/alphaem_dilog_bloch_probe.py",
+  "targets": {
+    "2/(3pi)": 0.2122065907891938,
+    "1/(8pi)": 0.039788735772973836
+  },
+  "candidate_dilog_values": [
+    {
+      "class": "D(e^{i pi/3}) [4_1]",
+      "D_value": 1.0149416064096537,
+      "ratio_2over3pi": 0.20908256144890205,
+      "clean_rational": null
+    },
+    {
+      "class": "Vol(4_1)",
+      "D_value": 2.0298832128193074,
+      "ratio_2over3pi": 0.10454128072445103,
+      "clean_rational": null
+    },
+    {
+      "class": "D(i)=Catalan",
+      "D_value": 0.915965594177219,
+      "ratio_2over3pi": 0.2316752857729463,
+      "clean_rational": null
+    },
+    {
+      "class": "D(e^{2pi i/5}) [Bring]",
+      "D_value": 0.9973546913984148,
+      "ratio_2over3pi": 0.21276943159675107,
+      "clean_rational": null
+    },
+    {
+      "class": "D(e^{4pi i/5}) [Bring]",
+      "D_value": 0.4250778224013279,
+      "ratio_2over3pi": 0.49921821277432715,
+      "clean_rational": null
+    },
+    {
+      "class": "L_R(1/phi)=pi^2/10",
+      "D_value": 0.9869604401089359,
+      "ratio_2over3pi": 0.21501022955466326,
+      "clean_rational": null
+    },
+    {
+      "class": "L_R(1/phi^2)=pi^2/15",
+      "D_value": 0.6579736267392906,
+      "ratio_2over3pi": 0.3225153443319949,
+      "clean_rational": null
+    }
+  ],
+  "arithmetic_signature": {
+    "target_2over3pi": 0.2122065907891938,
+    "target_1over8pi": 0.039788735772973836,
+    "single_pi_power": true,
+    "gauge_signature": "1/(4pi) single-pi  (favours #3810)",
+    "dilog_signature_would_be": "pi^2 (Rogers) or O(1) real (D)  -- NOT single 1/pi",
+    "D_needed_for_bareD_origin": 2.0943951023931957,
+    "nearest_natural_value_Vol41": 2.0298832128193074,
+    "bareD_mismatch_pct": 3.0802158341648456
+  },
+  "verdict": "scope-(a) NEGATIVE for the simplest dilog identification: no natural Bring/4_1/golden bare Bloch-Wigner D-value reproduces 2/(3pi) or 1/(8pi) as a clean rational multiple, and 2/(3pi)'s single power of pi is the gauge-loop 1/(4pi) signature, not the dilog pi^2/O(1) signature. Leading order favours #3810 (gauge). Any dilog content must be at the regulator-normalisation or next-order B_n(C) level (NOT evidenced here).",
+  "scope": "scope-(a) negative; discriminates AGAINST simplest dilog reading, FOR #3810 gauge at leading order; anti-laundering: numerical, not a derivation",
+  "scriptHash": "e25ca9bcf653",
+  "scriptCommitSha": "dc885569d6f6b726e20ea5d280759a4bfd383298",
+  "commitSha": "ce3567490fc7d470b81700717d308476fcdd2540",
+  "engine": "python",
+  "computedAt": "2026-07-18T17:41:57.541188+00:00",
+  "durationMs": 0,
+  "scriptFile": "alphaem_dilog_bloch_probe.py"
+}

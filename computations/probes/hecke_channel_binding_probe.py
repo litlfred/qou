@@ -210,6 +210,14 @@ def main() -> int:
         },
     }
     out = HERE.parent / "hecke-channel-binding.witness.json"
+    import os as _os, sys as _sys  # noqa: E402 — P30 rollup (bean cmiy)
+    _d = _os.path.dirname(_os.path.abspath(__file__))
+    while _d != _os.path.dirname(_d) and not _os.path.isdir(_os.path.join(_d, "substrate")):
+        _d = _os.path.dirname(_d)
+    _sys.path.insert(0, _os.path.join(_d, "substrate"))
+    from witness_base import WitnessBuilder  # noqa: E402
+    WitnessBuilder.stamp_staleness_metadata(w, script_path=__file__, engine="mpmath")
+    w["scriptFile"] = _os.path.basename(__file__)
     out.write_text(json.dumps(w, indent=2))
     print(f"\n  Witness: {out}")
     return 0
