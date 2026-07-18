@@ -135,3 +135,21 @@ Mathlib's absent elliptic-function boundedness API. `uniqueUpToScalar` stays an
 honest open hypothesis with **no instance**. The advance is that the search
 around it is now closed: the only missing piece is one classical theorem plus a
 holomorphicity endowment, not a vague "Faddeev–Volkov rigidity."
+
+## 7. Update — the elliptic-Liouville step FORMALIZED (standalone), sorry-free
+
+The classical theorem named in §6 as the remaining gap is now landed and
+machine-checked, `lean`-direct **exit 0**:
+[`QOU/Common/EllipticLiouville.lean`](../../content/quantum-observable-universe/lean/QOU/Common/EllipticLiouville.lean)
+— `doublyPeriodic_entire_const`: an entire `f : ℂ → ℂ` with two ℝ-spanning
+periods is constant (fundamental-box compactness ⇒ bounded via lattice
+periodicity ⇒ Mathlib Liouville). Standalone complex analysis, **no** `FaddeevPhi`
+dependency.
+
+**Still open (anti-laundering, explicit):** this does NOT discharge
+`uniqueUpToScalar`. Two hypotheses remain, both open input: (i) endow `FaddeevPhi`
+with holomorphicity of `Φ_b` (the class axiomatizes only the difference
+equations); (ii) prove the ratio `Φ₁/Φ₂` of two solutions is entire (poles
+cancel). Given (i)+(ii), `ratio_ib_periodic` + `ratio_ibinv_periodic` +
+`doublyPeriodic_entire_const` compose to force the ratio constant. The elliptic-
+Liouville *excuse* is removed; the holomorphicity endowment is the surviving gap.
