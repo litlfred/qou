@@ -1,10 +1,10 @@
 {
   "computation": "rho-k-h3a-crystal",
-  "computedAt": "2026-07-05T11:19:09.440649+00:00",
+  "computedAt": "2026-07-18T17:58:50.377208+00:00",
   "description": "Option E for the H_{3A} per-block binding fraction Delta_lambda(K): plug in the Kashiwara symmetric-crystal weight c_lambda(q) := s_lambda(1, q, ..., q^{n-1}) (Macdonald hook-content; equals the Demazure character D_{w_0}(lambda) at principal specialisation, verified by demazure-markov-trace.witness.json) as Delta_lambda. Independent of Occam single-partition heuristic in rho_k_h3a_refinement.py; deuteron-only proof of concept. Reports residual honestly (no scaling).",
-  "engine": "mpmath numeric Hoefsmit at q_0 (50 dps), multiprocessing.Pool(4); Macdonald hook-content for c_lambda; crystal_basis.crystal_B BFS for self-test",
+  "engine": "mpmath",
   "scriptFile": "rho_k_h3a_crystal.py",
-  "scriptHash": "sha256:9059a930bcbff91cdb2716140ea3a30277734302777b92749c6c32e9204cda69",
+  "scriptHash": "1ffd34151200",
   "parameters": {
     "q_0_50dps": "1.1099785827513808075916690956107688798744991218736",
     "atom": "deuteron",
@@ -464,10 +464,10 @@
         5,
         1
       ],
-      "occam_Delta_lambda": "-22.959447669315776828012250177531034211830483407403",
+      "occam_Delta_lambda": "-22.95945076892241172063687511081847073185705034325700994220031826202048",
       "occam_M_pred_MeV": "1875.61294257",
-      "occam_closure_err_MeV": "2.7369110631344083416479093423631174439067616052276e-48",
-      "balanced_321_Delta_lambda": "301.52147316132217071432397223258345677672421364287",
+      "occam_closure_err_MeV": "0.0",
+      "balanced_321_Delta_lambda": "301.5215540090910128166103788693461804844372502201474209088791160033776",
       "crystal_q0_M_pred_MeV": "2795.967079185815615466195068293476881182458895057245685123780788907789",
       "crystal_q0_closure_err_MeV": "920.3541366158156154661950682934768811824588950572456851237807889077894",
       "crystal_q0_ratio_sum_over_target": "-412.7229873630619643758050877652774427450681926267811315152051442964288",
@@ -490,5 +490,9 @@
   },
   "notes": "Definition: c_lambda(q) := s_lambda(1, q, ..., q^{n_strands-1}) = principal q-specialisation of the Schur polynomial = Macdonald hook-content formula = Demazure character D_{w_0}(lambda) at x_i := q^{i-1} (verified by demazure-markov-trace witness). At q -> 1 this equals dim V_lambda for sl_n = |B(lambda, n)| from crystal_basis.crystal_B (Weyl dimension formula). We report BOTH the q-deformed (q_0) and the q -> 1 variants, since AGENTS.md sec.7b shortcut #3 leaves the choice open for the symmetric-crystal case (the Type-B fold-orbit closure work uses crystal *cardinality* at q=1, while the Demazure-fiber Markov-trace functional uses the q-deformed character).",
   "honest_reporting": "Per protocol: c_lambda is NOT scaled to force the mass equation to close. The residual (target - sum) and the diagnostic scalar alpha_E (the would-close-it factor) are both reported. If alpha_E differs significantly from 1, the Kashiwara crystal weights are NOT the correct closed form for Delta_lambda; a flat-transport correction (q -> 0 -> q_0 connection curvature, per rem:ontological-agnosticism) would have to make up the difference, OR a different structural weight (Plancherel-truncated, jet-knot, ...) applies.",
-  "follow_up": "If option E shows |alpha_E - 1| << 1 (close to closure), extend to (T, 3He) at n=9 and 4He at n=12. If alpha_E is far from 1, compare the residual to the four other options (A: crystal-truncated minimum-norm, B: Plancherel bound, C: jet-knot Hochschild, D: Type-B fold-orbit projection) in the parent PR #600 brief; the smallest residual wins."
+  "follow_up": "If option E shows |alpha_E - 1| << 1 (close to closure), extend to (T, 3He) at n=9 and 4He at n=12. If alpha_E is far from 1, compare the residual to the four other options (A: crystal-truncated minimum-norm, B: Plancherel bound, C: jet-knot Hochschild, D: Type-B fold-orbit projection) in the parent PR #600 brief; the smallest residual wins.",
+  "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
+  "commitSha": "af6ce13124b1a2d61b203aa42f60ee4bc9c8ea12",
+  "durationMs": 0,
+  "engineVersion": "mpmath 1.3.0"
 }
