@@ -243,7 +243,8 @@ def main() -> int:
               "extracted P2 recorded as the independent reference value.")
     print(f"  extracted P2 (independent) = {mp.nstr(P2_ex, 12)}")
 
-    wb = WitnessBuilder("qbeta-5two-phi-series-tau2-arbitration", engine="mpmath")
+    wb = WitnessBuilder("qbeta-5two-phi-series-tau2-arbitration", engine="mpmath",
+                        _script_path=__file__)
     wb.set_description(
         "A4 sub-step 1 (bean qou-ea86): independent extraction of the 5₂ φ_σ1 "
         "perturbative coefficients from the radial asymptotics of the "

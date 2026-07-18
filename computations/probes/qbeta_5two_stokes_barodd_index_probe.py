@@ -376,7 +376,8 @@ def main() -> int:
 
     ok_gates = g1 and g2 and g3a and g3b and g4a and g4b and g4c and g5a and g5b and g6
 
-    wb = WitnessBuilder("qbeta-5two-stokes-barodd-index", engine="sympy+mpmath")
+    wb = WitnessBuilder("qbeta-5two-stokes-barodd-index", engine="sympy+mpmath",
+                        _script_path=__file__)
     wb.set_description(
         "A2 (bean qou-ls2y): the 5₂ GGM Stokes automorphisms S⁺(q), S⁻(q) "
         "(2007.10190 eqs 29a/29b, 112-124) evaluated at the substrate point "
