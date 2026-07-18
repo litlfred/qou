@@ -1,4 +1,5 @@
 import QOU.QBeta.CyclicDilogPentagon
+import QOU.QBeta.PeriodLatticeBasis
 import QOU.MathlibExt.DoublyPeriodicLiouville
 
 /-!
@@ -36,6 +37,7 @@ Ref: [manuscript] docs/audits/2026-07-18-g3-stokes-keystone-evidence-base.md §8
 open Complex Module
 open QOU.MathlibExt.FaddeevQuantumDilogarithm
 open QOU.QBeta.CyclicDilogPentagon
+open QOU.QBeta.PeriodLatticeBasis
 open QOU.MathlibExt.DoublyPeriodicLiouville
 
 namespace QOU.QBeta.FaddeevRigidityReduction
@@ -67,5 +69,20 @@ theorem uniqueUpToScalar_of_entire
   refine ratio_const_of_doublyPeriodic (b := bas) hΦe hΨe hΦ0 ?_
   rw [Fin.forall_fin_two]
   exact ⟨fun z => by rw [hb0]; exact hib z, fun z => by rw [hb1]; exact hibinv z⟩
+
+/-- **Cleaner form — the basis is discharged by the substrate non-degeneracy.**
+Given `b² ∉ ℝ` (the substrate branch `arg b = π/4`; fails for real `b`), the
+period lattice `⟨ib, i/b⟩` is automatically a basis
+(`PeriodLatticeBasis.exists_period_basis`), so Faddeev–Volkov rigidity reduces to
+just **two** open inputs: the two solutions are entire, and the ratio is
+`i/b`-periodic everywhere. (The `ib`-period is still derived from nowhere-zero.) -/
+theorem uniqueUpToScalar_of_entire_of_sq_not_real
+    {b : ℂ} {Φ Ψ : ℂ → ℂ} [FaddeevPhi b Φ] [FaddeevPhi b Ψ]
+    (hΦe : Differentiable ℂ Φ) (hΨe : Differentiable ℂ Ψ)
+    (hΦ0 : ∀ z, Φ z ≠ 0) (hb2 : (b ^ 2).im ≠ 0)
+    (hibinv : ∀ z, Ψ (z + I / b) / Φ (z + I / b) = Ψ z / Φ z) :
+    ∃ c, ∀ z, Ψ z = c * Φ z := by
+  obtain ⟨bas, hb0, hb1⟩ := exists_period_basis hb2
+  exact uniqueUpToScalar_of_entire hΦe hΨe hΦ0 bas hb0 hb1 hibinv
 
 end QOU.QBeta.FaddeevRigidityReduction
