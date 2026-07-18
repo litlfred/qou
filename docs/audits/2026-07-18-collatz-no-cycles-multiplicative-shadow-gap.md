@@ -118,6 +118,42 @@ false "coprimality closes it" with an honest, computable target.
 All four paths empty modulo the originating file ⇒ the gap declaration is
 permitted.
 
+## Computational census (period ≤ 18)
+
+The `P₀ = B/(1−A)` reduction is directly testable. An exhaustive census
+of primitive parity words up to period 18
+([`computations/qcollatz_cycle_census.py`](../../computations/qcollatz_cycle_census.py),
+witness [`qcollatz_cycle_census.witness.json`](../../computations/qcollatz_cycle_census.witness.json))
+computes each candidate `P₀` by **exact integer Laurent-polynomial
+division** — clearing the cycle equation to
+`([2]_q^k − [3]_q^{k_odd}) · P₀ = n_k` in `ℤ[q^{±1}]` and testing exact
+divisibility, then checking parity self-consistency and return.
+
+**Result (523,131 primitive words, period ≤ 18):** the *only* integral,
+self-consistent Skein-Collatz cycles are
+
+| Cycle | `P₀` | classical limit `q=1` | in cone? |
+|---|---|---|---|
+| positive 2-cycle `{q⁻¹, 1+q⁻¹}` | `q⁻¹` | `{1, 2}` | ✓ |
+| negative fixed point `{−q⁻²}` | `−q⁻²` | `{−1}` | ✗ (excluded) |
+
+These are the exact `q`-lifts of the classical Collatz cycle structure
+(the only positive cycle is `{1,2}`; the only negative fixed point is
+`{−1}`). **No nontrivial positive `q`-cycle exists up to period 18** —
+negative evidence *consistent with* the conjecture, but **not** a proof
+(the census is bounded; the affine cycle problem stays open).
+
+### Secondary finding — the unknot `1` is outside the map's domain
+
+The census surfaced a precise correction. The conjecture states orbits
+"reach `1`" ([`conj:q-collatz`](../../content/quantum-observable-universe/appendix-surreals/q-collatz-conjecture.md)),
+but the literal element `P = 1` is **neither `q`-even nor `q`-odd**:
+`1|_{q=-1} = 1 ∉ {0, −1}`, so `C_q(1)` is undefined. The genuine positive
+attractor is the 2-cycle `{q⁻¹, 1+q⁻¹}` (the `q`-lift of `{1,2}`), which
+degenerates to `1` only in the classical limit. "Reaches 1" is a
+classical-limit shorthand; at the Skein level the target is the
+fundamental 2-cycle. (Scope (a) clarification, not a refutation.)
+
 ## Action taken
 
 1. Re-scope the prose of

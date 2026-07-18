@@ -1,0 +1,50 @@
+{
+  "schema": "qou-probe/v0",
+  "description": "q-Collatz nontrivial-cycle census: exhaustive parity-word enumeration over the Skein-Collatz map on Z[q^{\u00b11}], testing the affine cycle candidate P0 = n_k/([2]_q^k - [3]_q^{k_odd}) for Skein-integrality (exact Laurent division) + parity self-consistency + return. Exploratory research probe (NOT canonical production).",
+  "map": {
+    "even": "C_q(P) = P/[2]_q  when [2]_q | P",
+    "odd": "C_q(P) = ([3]_q P + 1)/[2]_q  when [2]_q | (P+1)",
+    "q_integers": {
+      "[2]_q": "q+1",
+      "[3]_q": "q^2+q+1"
+    },
+    "parity_read_at": "q = -1  (Z[q^\u00b11]/(q+1) \u2245 Z)"
+  },
+  "method": "exact integer Laurent-polynomial arithmetic; cycle equation ([2]_q^k - [3]_q^{k_odd}) P0 = n_k cleared to Z[q^\u00b11]; integrality via exact Laurent division; primitive words only (imprimitive repetitions skipped).",
+  "result": {
+    "max_period_scanned": 18,
+    "primitive_words_scanned": 523131,
+    "balanced_holonomy_A_eq_1": 0,
+    "integral_candidates": 3,
+    "integral_self_consistent": 3,
+    "distinct_cycles": {
+      "positive": [
+        {
+          "period": 2,
+          "word": "OE",
+          "P0": "1*q^-1"
+        }
+      ],
+      "non_positive": [
+        {
+          "period": 1,
+          "word": "O",
+          "P0": "-1*q^-2"
+        }
+      ]
+    }
+  },
+  "findings": [
+    "Through period 18, the ONLY integral self-consistent Skein-Collatz cycles are the positive 2-cycle {q^{-1}, 1+q^{-1}} and the negative fixed point {-q^{-2}}.",
+    "These are the exact q-lifts of the classical Collatz cycles: {1,2} (positive) and the negative fixed point {-1}. At q=1, q^{-1}->1, 1+q^{-1}->2, -q^{-2}->-1.",
+    "No nontrivial positive q-cycle exists up to period 18 \u2014 negative evidence for the nontrivial-cycle-exclusion half of the no-cycles claim, consistent with (but not proving) the conjecture.",
+    "The unknot polynomial 1 is NOT in the domain of C_q: 1(q=-1)=1 is neither 0 (q-even) nor -1 (q-odd). The genuine positive attractor is the 2-cycle {q^{-1}, 1+q^{-1}}, not the literal element 1. The conjecture's 'reaches 1' is a classical-limit shorthand."
+  ],
+  "scope": "This is a bounded computational census (period <= 18), NOT a proof of nontrivial-cycle exclusion. It does not close the affine cycle problem (see docs/audits/2026-07-18-collatz-no-cycles-multiplicative-shadow-gap.md).",
+  "provenance": {
+    "producer": "computations/qcollatz_cycle_census.py",
+    "scriptHash": "19c4b66167b6",
+    "scriptCommitSha": "fd056d8023ed0090ccbe268aa672f1082650e330",
+    "runtime": "~2 min single-core for period<=18; exact arithmetic, deterministic (no RNG)."
+  }
+}
