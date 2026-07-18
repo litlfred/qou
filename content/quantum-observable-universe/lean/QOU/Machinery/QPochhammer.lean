@@ -33,16 +33,23 @@ Habiro-element promotion of the Q_β residue A and m_μ closure
 
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 import Mathlib.Algebra.GeomSum
-import Mathlib.Analysis.SpecialFunctions.Pow.Real
 
 open BigOperators
 
 namespace QOU.Machinery
 
-/-! ## Finite q-Pochhammer `(a;q)_n` -/
+/-! ## Finite q-Pochhammer `(a;q)_n`
+
+Base ring is a generic `[CommRing R]` per AGENTS.md §7c: the q-Pochhammer
+symbol and its recursion are purely algebraic (`q ^ k` is `Monoid.npow`,
+`k : ℕ`), with no archimedean construct. The archimedean specialisation
+`R := ℝ` at the substrate `q₀` happens at the consumer sites. Only the
+Gaussian q-binomial (which divides) needs `[Field R]`. -/
+
+variable {R : Type*}
 
 /-- Finite q-Pochhammer `(a;q)_n = ∏_{k=0}^{n-1} (1 - a·q^k)`. -/
-noncomputable def qPochhammerFinite (a q : ℝ) (n : ℕ) : ℝ :=
+noncomputable def qPochhammerFinite [CommRing R] (a q : R) (n : ℕ) : R :=
   ∏ k ∈ Finset.range n, (1 - a * q ^ k)
 
 /-- Diagonal q-Pochhammer `(q;q)_n`, defined as `qPochhammerFinite q q n
@@ -50,43 +57,45 @@ noncomputable def qPochhammerFinite (a q : ℝ) (n : ℕ) : ℝ :=
 `∏_{k=0}^{n-1} (1 - q^(k+1))` (provably, via `q·q^k = q^(k+1)`), but the
 two are not definitionally equal — we keep the `q·q^k` form so that
 `qPochhammerDiag` reuses `qPochhammerFinite` directly. -/
-noncomputable def qPochhammerDiag (q : ℝ) (n : ℕ) : ℝ :=
+noncomputable def qPochhammerDiag [CommRing R] (q : R) (n : ℕ) : R :=
   qPochhammerFinite q q n
 
 /-! ## Basic identities (proved) -/
 
 /-- **(a;q)_0 = 1** (empty product). -/
-theorem qPochhammerFinite_zero (a q : ℝ) : qPochhammerFinite a q 0 = 1 := by
+theorem qPochhammerFinite_zero [CommRing R] (a q : R) :
+    qPochhammerFinite a q 0 = 1 := by
   unfold qPochhammerFinite
   simp
 
 /-- **(a;q)_1 = 1 - a**. -/
-theorem qPochhammerFinite_one (a q : ℝ) : qPochhammerFinite a q 1 = 1 - a := by
+theorem qPochhammerFinite_one [CommRing R] (a q : R) :
+    qPochhammerFinite a q 1 = 1 - a := by
   unfold qPochhammerFinite
   simp
 
 /-- **(q;q)_0 = 1** (empty product). -/
-theorem qPochhammerDiag_zero (q : ℝ) : qPochhammerDiag q 0 = 1 := by
+theorem qPochhammerDiag_zero [CommRing R] (q : R) : qPochhammerDiag q 0 = 1 := by
   unfold qPochhammerDiag
   exact qPochhammerFinite_zero q q
 
 /-- **(q;q)_1 = 1 - q**. -/
-theorem qPochhammerDiag_one (q : ℝ) : qPochhammerDiag q 1 = 1 - q := by
+theorem qPochhammerDiag_one [CommRing R] (q : R) : qPochhammerDiag q 1 = 1 - q := by
   unfold qPochhammerDiag
   exact qPochhammerFinite_one q q
 
 /-- **Recursion**: `(a;q)_{n+1} = (a;q)_n · (1 - a·q^n)`. Direct
 application of `Finset.prod_range_succ` (the term closes the goal up
 to beta-reduction of `f n`). -/
-theorem qPochhammerFinite_succ (a q : ℝ) (n : ℕ) :
+theorem qPochhammerFinite_succ [CommRing R] (a q : R) (n : ℕ) :
     qPochhammerFinite a q (n + 1) = qPochhammerFinite a q n * (1 - a * q ^ n) := by
   unfold qPochhammerFinite
   exact Finset.prod_range_succ _ n
 
 /-- **At q = 1**, `(q;q)_n = 0` for all `n ≥ 1` because the `k = 0`
 factor is `1 - q^1 = 0`. -/
-theorem qPochhammerDiag_at_q_one (n : ℕ) (hn : 0 < n) :
-    qPochhammerDiag 1 n = 0 := by
+theorem qPochhammerDiag_at_q_one [CommRing R] (n : ℕ) (hn : 0 < n) :
+    qPochhammerDiag (1 : R) n = 0 := by
   unfold qPochhammerDiag qPochhammerFinite
   apply Finset.prod_eq_zero (i := 0)
   · exact Finset.mem_range.mpr hn
@@ -109,14 +118,14 @@ caller needs. (The balanced one has the proved q-Pascal `qBinom_pascal`.) -/
 `(q;q)` normalization — see the normalization note above; distinct from the
 balanced canonical `QPartitionCombinatorics.qBinom`).
 Well-defined when `(q;q)_k ≠ 0` and `(q;q)_{n-k} ≠ 0`. -/
-noncomputable def qBinomial (n k : ℕ) (q : ℝ) : ℝ :=
+noncomputable def qBinomial [Field R] (n k : ℕ) (q : R) : R :=
   qPochhammerDiag q n / (qPochhammerDiag q k * qPochhammerDiag q (n - k))
 
 /-- `[n 0]_q = 1`, provided the diagonal q-Pochhammer `(q;q)_n` is
 nonzero (needed so the quotient `(q;q)_n / (q;q)_n` cancels to `1`;
 `qBinomial` is defined as a real quotient and is not totalized at the
 `(q;q)_n = 0` locus, e.g. roots of unity). -/
-theorem qBinomial_zero (n : ℕ) (q : ℝ) (hq : qPochhammerDiag q n ≠ 0) :
+theorem qBinomial_zero [Field R] (n : ℕ) (q : R) (hq : qPochhammerDiag q n ≠ 0) :
     qBinomial n 0 q = 1 := by
   unfold qBinomial
   rw [qPochhammerDiag_zero, Nat.sub_zero, one_mul]
@@ -132,7 +141,7 @@ downstream theorems can carry it as a hypothesis. -/
 /-- Conditional class axiomatising the Habiro-ring evaluation of
 q-Pochhammer products at roots of unity. NEAR-MATCH tier — instance
 not constructed (requires upstream Habiro-ring machinery in Mathlib). -/
-class QPochhammerHabiroEvaluation (q : ℝ) : Prop where
+class QPochhammerHabiroEvaluation [CommRing R] (q : R) : Prop where
   /-- The finite q-Pochhammer evaluates consistently at unity-shifted
   arguments (opaque marker for the open derivation). -/
   habiro_evaluation : True

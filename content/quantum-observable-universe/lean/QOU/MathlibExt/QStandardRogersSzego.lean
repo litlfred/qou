@@ -1,6 +1,10 @@
 import QOU.Machinery.QPochhammer
 import QOU.Mass.BindingQHermiteOscillator
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
+-- This file is archimedean (`q > 1` standard Rogers–Szegő); import ℝ
+-- explicitly rather than leach it transitively from the now-generic
+-- `QOU.Machinery.QPochhammer` (AGENTS.md §7c minimal-imports).
+import Mathlib.Analysis.SpecialFunctions.Pow.Real
 
 /-!
 # QOU.MathlibExt.QStandardRogersSzego — standard q-Pascal + the FollowsRogersSzego instance
