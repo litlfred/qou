@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-18T09:09:52.401894+00:00",
-  "commitSha": "365ba09c0e78e95e9285c16b65efeb6b2ca1f57a",
+  "computedAt": "2026-07-18T09:24:43.374935+00:00",
+  "commitSha": "5cebb9145994b0b1c715a8b5d09e05da1807e0ad",
   "assertions": [
     {
       "name": "controls_reproduce_3822_genuine_smatrix",
@@ -45,11 +45,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 50,
+  "durationMs": 15,
   "computation": "alpha-em-smatrix-perloop",
   "scriptFile": "alpha_em_smatrix_perloop_probe.py",
-  "scriptHash": "edcaab4855e4",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "93f9bfefbe8a",
+  "scriptCommitSha": "e3eee9271ba401ec99cfbfd388808d89948db0fd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

@@ -189,7 +189,7 @@ def main() -> int:
 
     # ── cross-check: the OTHER natural reading (#3853 n=5 Hecke hook-content) ────
     # d_q(λ) = [n]_q!/∏[hook]_q at observable q₀; D = √(Σ_{λ⊢5} d_q²) ≈ 11.357.
-    q0 = genuine.Q0
+    q0 = mp.mpf(genuine.Q0)
 
     def qint(m):
         return (q0 ** m - q0 ** (-m)) / (q0 - 1 / q0)
