@@ -1,0 +1,51 @@
+{
+  "computation": "bring-s4-elliptic-factor-genus-verify",
+  "description": "AG-backed verification for the \u03b1_EM 1/(8\u03c0) magnitude leg: genus(Bring/S\u2084)=1 (H^{1,0}=std=(4,1) from the canonical {\u03a3x\u1d62=0} embedding; corpus confirmed, prior genus-0 was a wrong-monodromy artifact), and the algebraic route to \u03c4_E is obstructed (single-root invariant Y=x\u2085\u2075/e\u2085 \u21d2 genus-0 artifact t=Y/(1\u2212Y)\u2075). \u03c4_E needs the numerical period matrix (period-blocked here). Nothing wired.",
+  "auditOnly": "docs/audits/2026-07-18-bring-s4-elliptic-factor-genus-and-period-block.md",
+  "tier": "structural-exact (computational group theory: dim(std^H) invariant-differentials formula; symbolic resultant for the genus-0 artifact)",
+  "computedAt": "2026-07-18T08:45:00.898363+00:00",
+  "commitSha": "2e225f714e601980e552509b5e41af485233881c",
+  "engine": "sympy",
+  "engineVersion": "1.14.0",
+  "scriptFile": "bring_s4_elliptic_factor_genus_verify.py",
+  "scriptHash": "ccc2935992f9",
+  "assertions": [
+    {
+      "name": "genus_Bring_is_4_via_dim_std",
+      "passed": true,
+      "detail": "dim(std^{e}) = 4 = genus(Bring) (canonical genus-4 curve) \u2014 validates the invariant-differentials formula genus(B/H)=dim(std^H)"
+    },
+    {
+      "name": "genus_Bring_mod_S4_is_1_elliptic",
+      "passed": true,
+      "detail": "dim(std^{S\u2084}) = 1: fixed space of S\u2084 (permuting 4 coords, fixing x\u2085) in std={{\u03a3x\u1d62=0}} is {{(a,a,a,a,\u22124a)}}, dim 1 \u21d2 E=Bring/S\u2084 is genus-1 ELLIPTIC (corpus CONFIRMED). H^{1,0}=std because the canonical embedding Bring\u2282P\u2074 {{\u03a3x\u1d62=\u03a3x\u1d62\u00b2=\u03a3x\u1d62\u00b3=0}} has hyperplane coords = the S\u2085 standard rep"
+    },
+    {
+      "name": "rep_discriminator_std_not_signtwist",
+      "passed": true,
+      "detail": "dim(std^{S\u2084})=1 vs dim((2,1,1,1)^{S\u2084})=0: the two 4-dim S\u2085-irreps give genus 1 vs 0. The canonical {{\u03a3x\u1d62=0}} embedding is std=(4,1) (NOT the sign-twist) \u21d2 genus 1 is the correct value; a prior-session genus-0 result came from a wrong assumed (2,4,5) monodromy triple, not from the rep"
+    },
+    {
+      "name": "algebraic_route_gives_genus0_artifact",
+      "passed": true,
+      "detail": "the single-root S\u2084-invariant Y=x\u2085\u2075/e\u2085 satisfies t(1\u2212Y)\u2075=Y \u21d4 t=Y/(1\u2212Y)\u2075, a RATIONAL relation (genus 0) \u2014 NOT the genus-1 E. Natural symmetric/single-root coordinates collapse (restriction & S\u2084-invariants don't commute); \u03c4_E is NOT algebraically accessible \u21d2 needs the numerical PERIOD MATRIX of the genus-4 Bring curve (Sage RiemannSurface/Magma), which is period-blocked here"
+    }
+  ],
+  "allPassed": true,
+  "result": {
+    "genus_Bring": 4,
+    "genus_Bring_mod_S4_std": 1,
+    "genus_Bring_mod_S4_signtwist": 0,
+    "H10_rep": "std=(4,1) (canonical {\u03a3x\u1d62=0} embedding)",
+    "algebraic_route": "obstructed (genus-0 artifact t=Y/(1\u2212Y)^5)",
+    "tau_E": "NOT computed \u2014 requires numerical period matrix (period-blocked)",
+    "verdict": "ELLIPTIC-FACTOR TARGET CONFIRMED + ALGEBRAIC ROUTE OBSTRUCTED (scope-(a); no \u03c4_E computed, nothing wired): the \u03b1_EM 1/(8\u03c0) magnitude leg's curve E=Bring/S\u2084 is RIGOROUSLY genus-1 \u2014 dim(std^{S\u2084})=1 with H^{1,0}=std=(4,1) proved from the canonical {\u03a3x\u1d62=0}\u2282\u2102\u2075 embedding (corpus CONFIRMED; a prior-session genus-0 came from a wrong assumed (2,4,5) monodromy triple, corrected here). But its modulus \u03c4_E is NOT algebraically accessible: every natural symmetric/single-root S\u2084-invariant collapses to a genus-0 artifact (Y=x\u2085\u2075/e\u2085 \u21d2 t=Y/(1\u2212Y)\u2075, rational) \u2014 the corpus's 'restriction & invariants don't commute'. \u03c4_E therefore requires the numerical PERIOD MATRIX of the genus-4 Bring curve (Sage RiemannSurface/Magma), which the corpus flagged tool-blocked (conjugate singularities) and which is not installable in this sandbox (proxy blocks conda/micromamba/GitHub-release; Sage not in apt; Singular+PARI added but algebra-only). NET: the magnitude leg is well-posed but PERIOD-BLOCKED; the wall is not broken, its requirement is now exact. NO tier change."
+  },
+  "context": {
+    "feeds": "#3864 \u03b1_EM 1/(8\u03c0) reduction: 1/(8\u03c0)=[\u03b7-modular value at \u03c4_Bring]\u00d7[RT (2\u03c0)]; this confirms \u03c4_Bring's curve E=Bring/S\u2084 is genuinely genus-1 (elliptic)",
+    "corrects_own_prior": "the prior-session hand Riemann\u2013Hurwitz (genus 0 for B/S\u2084) assumed a (2,4,5) monodromy triple that is NOT Bring's; dim(std^H) is signature-independent and gives genus 1 (corpus confirmed)",
+    "tooling_added": "Singular 4.3.2 + PARI/GP (apt) \u2014 algebra only; Sage/RiemannSurface not installable (proxy blocks conda/micromamba/GitHub-release; not in apt)",
+    "remaining_step": "numerical period matrix of the genus-4 Bring curve \u2192 \u03c4_E \u2192 j(E); corpus-flagged tool-blocked (conjugate singularities), needs Sage/Magma or a bespoke mpmath period computation",
+    "scope_guard": "does NOT compute \u03c4_E/q\u2080, no 8\u03c0, wires nothing, no tier change; scope-(a)"
+  }
+}
