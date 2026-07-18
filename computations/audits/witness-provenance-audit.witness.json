@@ -1,12 +1,12 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-18T15:20:59.531115+00:00",
-  "commitSha": "3f2744fc130ac954c221d932963e14eaa66f0210",
+  "computedAt": "2026-07-18T17:07:35.233196+00:00",
+  "commitSha": "498a08c2c47e80c1dd49553ac9fe8c73e96e0b8b",
   "assertions": [
     {
       "name": "no_missing_provenance",
-      "computed": 241,
+      "computed": 238,
       "expected": 0,
       "passed": false,
       "tolerance": 0,
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 11,
+  "durationMs": 29,
   "computation": "witness-provenance-audit",
   "scriptFile": "witness_provenance_audit.py",
   "scriptHash": "1abb80bb6c90",
@@ -47,12 +47,12 @@
   },
   "data": {
     "counts": {
-      "total_scanned": 1988,
-      "prov_ok": 1687,
+      "total_scanned": 1990,
+      "prov_ok": 1692,
       "prov_audit_exempt": 59,
-      "prov_missing": 241,
+      "prov_missing": 238,
       "prov_parse_error": 1,
-      "completeness_ratio": 0.8782696177062375
+      "completeness_ratio": 0.8798994974874372
     },
     "by_verdict": {
       "PROV_OK": [
@@ -330,6 +330,10 @@
         },
         {
           "witness": "alpha-em-2I-total-quantum-dimension-gate-test.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "alpha-em-b1-fibre-reality-structure.witness.json",
           "missing_fields": []
         },
         {
@@ -2849,6 +2853,14 @@
           "missing_fields": []
         },
         {
+          "witness": "keystone-wlambda-defect-cn-closedform-crosscheck.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "keystone-wlambda-defect-coeff-ladder.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "keystone-wlambda-defect-dn-subleading.witness.json",
           "missing_fields": []
         },
@@ -4630,6 +4642,10 @@
         },
         {
           "witness": "qbeta-5two-sigma3-anchor-test.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "qbeta-5two-sigma3-nodd-shape.witness.json",
           "missing_fields": []
         },
         {
@@ -6741,6 +6757,10 @@
           "missing_fields": []
         },
         {
+          "witness": "wlambda-ladder-higher-rungs.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "y-lambda-at-q0.witness.json",
           "missing_fields": []
         },
@@ -7622,22 +7642,6 @@
         },
         {
           "witness": "keystone-step1-gate-wrt-vs-wlambda.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "keystone-wlambda-defect-cn-closedform-crosscheck.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "keystone-wlambda-defect-coeff-ladder.witness.json",
           "missing_fields": [
             "engine",
             "scriptFile",
@@ -8555,14 +8559,6 @@
         },
         {
           "witness": "wenzl-y-lambda-h9.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "wlambda-ladder-higher-rungs.witness.json",
           "missing_fields": [
             "engine",
             "scriptFile",

@@ -344,3 +344,11 @@ no consumer; it was a permanent PROV_MISSING nothing could refresh. All 4 PROV_O
 alpha needed pyhecke (Layer 2b) — pip install -e tools/pyhecke/ (0.1.1) in-env.
 This unblocks the remaining pyhecke-dependent tail (keystone_*, probe_q_beta_wenzl).
 Both PROV_OK, keys preserved.
+
+## 2026-07-18 — batch 26 (3 keystone_wlambda_* via stamp + 2 path fixes)
+- keystone_wlambda_defect_cn_closedform_crosscheck (var=out, mpmath) — FIXED fragile
+  CWD-relative "computations/..." hardcoded path -> __file__-relative
+- keystone_wlambda_defect_coeff_ladder (var=out, mpmath) — same path fix
+- keystone_wlambda_ladder_higher_rungs (var=witness, already __file__-relative)
+All exit 0, keys preserved, PROV_OK, no nested computations/computations/ stray.
+Coordinated-with: keystone epic 08a2 (mechanical witness wiring only, no math touched).
