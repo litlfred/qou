@@ -64,6 +64,7 @@ import QOU.MassTheory.BodyOrderCumulant
 import QOU.MassTheory.ReebPnMagnitude
 import QOU.MassTheory.SaturationRhoCap
 import QOU.MassTheory.IsospinMirrorInvariance
+import QOU.MassTheory.B4CumulantBarEven
 import QOU.Mass.MassVolDensity
 import QOU.Mass.MixedMultibondMuBarIntegrality
 import QOU.Mass.BindingRecurrenceSpectral
