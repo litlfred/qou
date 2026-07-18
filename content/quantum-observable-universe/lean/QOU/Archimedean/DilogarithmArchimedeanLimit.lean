@@ -141,4 +141,42 @@ instance archimedeanLimit_zero : ArchimedeanLimit 0 where
     rw [faddeev_limit_at_zero]
     simpa using hε
 
+/-! ## Part B primitives — the substrate `q → 1⁺` continuation
+
+Sorry-free primitives for the Part-B derivation
+(`docs/audits/2026-07-17-dilog-archimedean-limit-partB-pole-cancellation.md`,
+`computations/dilog_archimedean_partB_probe.py`): the substrate continuation
+crosses the cusp `x = 1`, where the factors `1 − x qᵏ` with `k > k*` turn
+negative. The two facts formalizable within this module's imports (`Log.Basic`,
+`InfiniteSum.Basic`) are the **algebraic pole-subtraction** and the reduction of
+the **cusp value** `LiTwo 1` to the Basel series.  -/
+
+/-- **Pole-subtraction (algebraic core of Part B).** For a negative factor
+    `1 − w < 0` (i.e. `w > 1`), the principal `log|1 − w| = log(w − 1)` splits as
+    the **algebraic pole** `log w` plus the convergent remainder `log(1 − w⁻¹)`:
+
+    `log(w − 1) = log w + log(1 − w⁻¹)`.
+
+    This is exactly the subtraction that regularizes each `k > k*` factor in the
+    Part-B continuation (the `+iπ` branch phase lives on the complex side and is
+    the Faddeev modular anomaly; here we isolate the real magnitude). -/
+theorem log_neg_factor_split (w : ℝ) (hw : 1 < w) :
+    Real.log (w - 1) = Real.log w + Real.log (1 - w⁻¹) := by
+  have hw0 : 0 < w := lt_trans one_pos hw
+  rw [← Real.log_mul (by positivity)
+        (by nlinarith [inv_pos.mpr hw0, inv_lt_one_iff₀.mpr (Or.inr hw)])]
+  congr 1
+  field_simp
+
+/-- **The cusp value `LiTwo 1` is the Basel series** `∑' 1/(k+1)²` (definitional:
+    `1^(k+1) = 1`). This isolates the entire remaining analytic input of Part B to
+    a single named Mathlib result: `LiTwo 1 = π²/6` follows from
+    `hasSum_zeta_two` (`Mathlib.NumberTheory.ZetaValues`, the Basel problem —
+    `∑' n:ℕ, 1/n² = π²/6`, whose `n=0` term is `0`), the extended-Bloch / Rogers
+    regulator constant `ζ(2) = Li₂(1)` that Part B derives as the quantum-dilog
+    inversion constant. -/
+theorem LiTwo_one_eq_tsum : LiTwo 1 = ∑' k : ℕ, (1 : ℝ) / ((k : ℝ) + 1) ^ 2 := by
+  unfold LiTwo
+  simp
+
 end QOU.QPochhammer
