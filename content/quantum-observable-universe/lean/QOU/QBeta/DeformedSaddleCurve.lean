@@ -34,6 +34,7 @@ file never mentions ℝ.
 -/
 
 import Mathlib.Tactic.Ring
+import Mathlib.Tactic.LinearCombination
 
 namespace QOU.QBeta.DeformedSaddleCurve
 
@@ -77,5 +78,29 @@ theorem curve_root_sum (x y₁ y₂ : R) :
     (y₁ - y₂) * (x * (y₁ + y₂) - (1 + x - x ^ 2))
       = curve x y₁ - curve x y₂ := by
   simp only [curve]; ring
+
+/-- The u = 0 saddles are primitive sixth roots of unity, cube form:
+`y² − y + 1 = 0 → y³ = −1` (so the saddle values `e^{±iπ/3}` and the
+u = 0 volume datum `Li₂(e^{±iπ/3})` sit at the hexagonal point). -/
+theorem cube_at_saddle_one (y : R) (h : y ^ 2 - y + 1 = 0) :
+    y ^ 3 = -1 := by
+  linear_combination (y + 1) * h
+
+/-- The u = 0 saddles are sixth roots of unity: `y² − y + 1 = 0 → y⁶ = 1`. -/
+theorem sixth_power_at_saddle_one (y : R) (h : y ^ 2 - y + 1 = 0) :
+    y ^ 6 = 1 := by
+  linear_combination (y ^ 4 + y ^ 3 - y - 1) * h
+
+/-- Saddle separation: under the Vieta relations of two on-curve saddles,
+`x²·(y₁−y₂)² = (x²−3x+1)(x²+x+1)` — the squared saddle separation IS the
+(119) discriminant product, so the branch locus of the Borel-singularity
+datum `ι̃ ∝ V(σ₁) − V(σ₂)` is exactly the (119) zero set. This is the
+algebraic core of the substrate-meridian-genericity argument. -/
+theorem saddle_separation (x y₁ y₂ : R)
+    (hs : x * (y₁ + y₂) = 1 + x - x ^ 2)
+    (hp : x * (y₁ * y₂) = 1) :
+    x ^ 2 * (y₁ - y₂) ^ 2 = (x ^ 2 - 3 * x + 1) * (x ^ 2 + x + 1) := by
+  linear_combination
+    (x * (y₁ + y₂) + (1 + x - x ^ 2)) * hs - 4 * x * hp
 
 end QOU.QBeta.DeformedSaddleCurve
