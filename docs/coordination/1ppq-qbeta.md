@@ -1567,3 +1567,22 @@ bar-even action = Re = Vol/π (known); bar-odd = the tower's Im=0.0210 — the
 remains open. This narrows the keystone from "derive a transcendental d↔κ map"
 to "derive one √3-graded Stokes constant against a known action." scope-(a)
 pruning, NOT a derivation; the Stokes constant stays open. No c_k; no fit.
+
+**2026-07-18 (#3916 cont.) — STOKES CONSTANT confirmed (integer 3) from the κ
+amplitude; #3916 √3-framing REFINED (parity-blind amplitude).** Reconciliation
+with main's landed G3 tranche-B pt2 (`qbeta-g3-aomega-residue-first-number`),
+which read the u=0 Stokes amplitude 2.753 (ratio 0.918 to the GGM-proved integer
+3, #3872) from Borel-Padé residues. Independent route
+(`qbeta_stokes_constant_kappa_amplitude_probe.py`, 2/2): the κ-ladder
+one-instanton amplitude 2π·C_n (C_n = κ_n·Aⁿ/Γ(n), A=Vol/π) increases 2.25→2.64
+(n=1..7), reproducing the landed 2.753 (rel 4%) — both converge to integer 3.
+**Honest refinement of #3916:** the amplitude is PARITY-BLIND — C_n retains the
+√3 for odd n yet the odd/even traces converge together (top gap 2.4%), so the √3
+is the trace-field dressing that makes both parities SHARE the single integer-3
+Stokes constant, **not** a separate √3-graded odd amplitude. The genuine bar-odd
+datum is the DEFORMED-pole Im (CS, ≈0.0156 at u_sub), which vanishes at the
+amphichiral u=0. Net: the u=0 Stokes constant is settled (integer 3, now
+confirmed from the amplitude too); the OPEN piece is the deformation Im at u≠0
+(= the meridian↔Q_β map, conj:algebraic-geometric-dilog-equivalence) — NOT a √3
+amplitude. Corrects the "√3-graded bar-odd Stokes constant" phrasing two entries
+up. No c_k wired; scope-(a); no fit.
