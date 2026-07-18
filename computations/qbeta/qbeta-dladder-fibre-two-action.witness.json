@@ -1,0 +1,473 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-18T15:26:55.635348+00:00",
+  "commitSha": "d2b8ebaac1eb1b00bc06aae1acb97b8407e3469d",
+  "assertions": [
+    {
+      "name": "d_ladder_exact_odd_ok",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "both_parities_have_interior_samples",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 156,
+  "computation": "qbeta-dladder-fibre-two-action",
+  "scriptFile": "qbeta_dladder_fibre_two_action_probe.py",
+  "scriptHash": "5a7ec5ce2f50",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Accelerator prerequisite: split the D-ladder by k-parity and measure each half's own fibre least-term action to decide two-level (distinct actions, accelerator needed + fed) vs single-level (common action).",
+  "auditOnly": "docs/audits/2026-07-18-dladder-fibre-two-action.md",
+  "data": {
+    "A_odd_mid": "0.363367572034",
+    "A_odd_frac_spread": "0.31504264",
+    "A_even_mid": "0.298423065186",
+    "A_even_frac_spread": "0.81879381",
+    "separation_abs": "0.0649445068474",
+    "separation_rel": "0.19626904",
+    "both_flat": false,
+    "distinct": false,
+    "two_level_confirmed": false,
+    "rows": [
+      {
+        "abs_u": "0.08",
+        "Nstar_odd": 31,
+        "A_odd": "-",
+        "Nstar_even": 30,
+        "A_even": "-"
+      },
+      {
+        "abs_u": "0.084",
+        "Nstar_odd": 31,
+        "A_odd": "-",
+        "Nstar_even": 30,
+        "A_even": "-"
+      },
+      {
+        "abs_u": "0.088",
+        "Nstar_odd": 31,
+        "A_odd": "-",
+        "Nstar_even": 30,
+        "A_even": "-"
+      },
+      {
+        "abs_u": "0.092",
+        "Nstar_odd": 31,
+        "A_odd": "-",
+        "Nstar_even": 30,
+        "A_even": "-"
+      },
+      {
+        "abs_u": "0.096",
+        "Nstar_odd": 31,
+        "A_odd": "-",
+        "Nstar_even": 30,
+        "A_even": "-"
+      },
+      {
+        "abs_u": "0.1",
+        "Nstar_odd": 31,
+        "A_odd": "-",
+        "Nstar_even": 30,
+        "A_even": "-"
+      },
+      {
+        "abs_u": "0.104",
+        "Nstar_odd": 31,
+        "A_odd": "-",
+        "Nstar_even": 30,
+        "A_even": "-"
+      },
+      {
+        "abs_u": "0.108",
+        "Nstar_odd": 31,
+        "A_odd": "-",
+        "Nstar_even": 30,
+        "A_even": "-"
+      },
+      {
+        "abs_u": "0.112",
+        "Nstar_odd": 31,
+        "A_odd": "-",
+        "Nstar_even": 30,
+        "A_even": "-"
+      },
+      {
+        "abs_u": "0.116",
+        "Nstar_odd": 31,
+        "A_odd": "-",
+        "Nstar_even": 30,
+        "A_even": "-"
+      },
+      {
+        "abs_u": "0.12",
+        "Nstar_odd": 31,
+        "A_odd": "-",
+        "Nstar_even": 30,
+        "A_even": "-"
+      },
+      {
+        "abs_u": "0.124",
+        "Nstar_odd": 31,
+        "A_odd": "-",
+        "Nstar_even": 30,
+        "A_even": "-"
+      },
+      {
+        "abs_u": "0.128",
+        "Nstar_odd": 31,
+        "A_odd": "-",
+        "Nstar_even": 30,
+        "A_even": "-"
+      },
+      {
+        "abs_u": "0.132",
+        "Nstar_odd": 31,
+        "A_odd": "-",
+        "Nstar_even": 30,
+        "A_even": "-"
+      },
+      {
+        "abs_u": "0.136",
+        "Nstar_odd": 31,
+        "A_odd": "-",
+        "Nstar_even": 30,
+        "A_even": "-"
+      },
+      {
+        "abs_u": "0.14",
+        "Nstar_odd": 31,
+        "A_odd": "-",
+        "Nstar_even": 30,
+        "A_even": "-"
+      },
+      {
+        "abs_u": "0.144",
+        "Nstar_odd": 31,
+        "A_odd": "-",
+        "Nstar_even": 30,
+        "A_even": "-"
+      },
+      {
+        "abs_u": "0.148",
+        "Nstar_odd": 27,
+        "A_odd": "0.420606",
+        "Nstar_even": 28,
+        "A_even": "0.420597"
+      },
+      {
+        "abs_u": "0.152",
+        "Nstar_odd": 15,
+        "A_odd": "0.349336",
+        "Nstar_even": 16,
+        "A_even": "0.349293"
+      },
+      {
+        "abs_u": "0.156",
+        "Nstar_odd": 11,
+        "A_odd": "0.306129",
+        "Nstar_even": 10,
+        "A_even": "0.306569"
+      },
+      {
+        "abs_u": "0.16",
+        "Nstar_odd": 3,
+        "A_odd": "-",
+        "Nstar_even": 8,
+        "A_even": "0.27778"
+      },
+      {
+        "abs_u": "0.164",
+        "Nstar_odd": 3,
+        "A_odd": "-",
+        "Nstar_even": 8,
+        "A_even": "0.252328"
+      },
+      {
+        "abs_u": "0.168",
+        "Nstar_odd": 3,
+        "A_odd": "-",
+        "Nstar_even": 6,
+        "A_even": "0.234044"
+      },
+      {
+        "abs_u": "0.172",
+        "Nstar_odd": 3,
+        "A_odd": "-",
+        "Nstar_even": 6,
+        "A_even": "0.215333"
+      },
+      {
+        "abs_u": "0.176",
+        "Nstar_odd": 3,
+        "A_odd": "-",
+        "Nstar_even": 6,
+        "A_even": "0.196064"
+      },
+      {
+        "abs_u": "0.18",
+        "Nstar_odd": 3,
+        "A_odd": "-",
+        "Nstar_even": 6,
+        "A_even": "0.17625"
+      },
+      {
+        "abs_u": "0.184",
+        "Nstar_odd": 3,
+        "A_odd": "-",
+        "Nstar_even": 4,
+        "A_even": "-"
+      },
+      {
+        "abs_u": "0.188",
+        "Nstar_odd": 3,
+        "A_odd": "-",
+        "Nstar_even": 4,
+        "A_even": "-"
+      },
+      {
+        "abs_u": "0.192",
+        "Nstar_odd": 3,
+        "A_odd": "-",
+        "Nstar_even": 4,
+        "A_even": "-"
+      },
+      {
+        "abs_u": "0.196",
+        "Nstar_odd": 3,
+        "A_odd": "-",
+        "Nstar_even": 4,
+        "A_even": "-"
+      },
+      {
+        "abs_u": "0.2",
+        "Nstar_odd": 3,
+        "A_odd": "-",
+        "Nstar_even": 4,
+        "A_even": "-"
+      },
+      {
+        "abs_u": "0.204",
+        "Nstar_odd": 3,
+        "A_odd": "-",
+        "Nstar_even": 4,
+        "A_even": "-"
+      },
+      {
+        "abs_u": "0.208",
+        "Nstar_odd": 3,
+        "A_odd": "-",
+        "Nstar_even": 4,
+        "A_even": "-"
+      },
+      {
+        "abs_u": "0.212",
+        "Nstar_odd": 3,
+        "A_odd": "-",
+        "Nstar_even": 4,
+        "A_even": "-"
+      },
+      {
+        "abs_u": "0.216",
+        "Nstar_odd": 3,
+        "A_odd": "-",
+        "Nstar_even": 4,
+        "A_even": "-"
+      },
+      {
+        "abs_u": "0.22",
+        "Nstar_odd": 3,
+        "A_odd": "-",
+        "Nstar_even": 4,
+        "A_even": "-"
+      },
+      {
+        "abs_u": "0.224",
+        "Nstar_odd": 3,
+        "A_odd": "-",
+        "Nstar_even": 4,
+        "A_even": "-"
+      },
+      {
+        "abs_u": "0.228",
+        "Nstar_odd": 3,
+        "A_odd": "-",
+        "Nstar_even": 4,
+        "A_even": "-"
+      },
+      {
+        "abs_u": "0.232",
+        "Nstar_odd": 3,
+        "A_odd": "-",
+        "Nstar_even": 4,
+        "A_even": "-"
+      },
+      {
+        "abs_u": "0.236",
+        "Nstar_odd": 3,
+        "A_odd": "-",
+        "Nstar_even": 4,
+        "A_even": "-"
+      },
+      {
+        "abs_u": "0.24",
+        "Nstar_odd": 3,
+        "A_odd": "-",
+        "Nstar_even": 4,
+        "A_even": "-"
+      },
+      {
+        "abs_u": "0.244",
+        "Nstar_odd": 3,
+        "A_odd": "-",
+        "Nstar_even": 4,
+        "A_even": "-"
+      },
+      {
+        "abs_u": "0.248",
+        "Nstar_odd": 3,
+        "A_odd": "-",
+        "Nstar_even": 4,
+        "A_even": "-"
+      },
+      {
+        "abs_u": "0.252",
+        "Nstar_odd": 3,
+        "A_odd": "-",
+        "Nstar_even": 4,
+        "A_even": "-"
+      },
+      {
+        "abs_u": "0.256",
+        "Nstar_odd": 3,
+        "A_odd": "-",
+        "Nstar_even": 4,
+        "A_even": "-"
+      },
+      {
+        "abs_u": "0.26",
+        "Nstar_odd": 3,
+        "A_odd": "-",
+        "Nstar_even": 4,
+        "A_even": "-"
+      },
+      {
+        "abs_u": "0.264",
+        "Nstar_odd": 3,
+        "A_odd": "-",
+        "Nstar_even": 4,
+        "A_even": "-"
+      },
+      {
+        "abs_u": "0.268",
+        "Nstar_odd": 3,
+        "A_odd": "-",
+        "Nstar_even": 4,
+        "A_even": "-"
+      },
+      {
+        "abs_u": "0.272",
+        "Nstar_odd": 3,
+        "A_odd": "-",
+        "Nstar_even": 4,
+        "A_even": "-"
+      },
+      {
+        "abs_u": "0.276",
+        "Nstar_odd": 3,
+        "A_odd": "-",
+        "Nstar_even": 4,
+        "A_even": "-"
+      },
+      {
+        "abs_u": "0.28",
+        "Nstar_odd": 3,
+        "A_odd": "-",
+        "Nstar_even": 4,
+        "A_even": "-"
+      },
+      {
+        "abs_u": "0.284",
+        "Nstar_odd": 3,
+        "A_odd": "-",
+        "Nstar_even": 4,
+        "A_even": "-"
+      },
+      {
+        "abs_u": "0.288",
+        "Nstar_odd": 3,
+        "A_odd": "-",
+        "Nstar_even": 4,
+        "A_even": "-"
+      },
+      {
+        "abs_u": "0.292",
+        "Nstar_odd": 3,
+        "A_odd": "-",
+        "Nstar_even": 4,
+        "A_even": "-"
+      },
+      {
+        "abs_u": "0.296",
+        "Nstar_odd": 3,
+        "A_odd": "-",
+        "Nstar_even": 4,
+        "A_even": "-"
+      },
+      {
+        "abs_u": "0.3",
+        "Nstar_odd": 3,
+        "A_odd": "-",
+        "Nstar_even": 4,
+        "A_even": "-"
+      },
+      {
+        "abs_u": "0.304",
+        "Nstar_odd": 3,
+        "A_odd": "-",
+        "Nstar_even": 4,
+        "A_even": "-"
+      },
+      {
+        "abs_u": "0.308",
+        "Nstar_odd": 3,
+        "A_odd": "-",
+        "Nstar_even": 4,
+        "A_even": "-"
+      },
+      {
+        "abs_u": "0.312",
+        "Nstar_odd": 3,
+        "A_odd": "-",
+        "Nstar_even": 4,
+        "A_even": "-"
+      },
+      {
+        "abs_u": "0.316",
+        "Nstar_odd": 3,
+        "A_odd": "-",
+        "Nstar_even": 4,
+        "A_even": "-"
+      }
+    ],
+    "verdict": "FIBRE PER-PARITY ACTION TEST (accelerator prerequisite; scope-(a)). Splitting the D-ladder by k-parity (M2 split) and measuring each half's own least-term action on the fibre (interior N*, no Padé): odd-half action mid=0.36337 (spread 0.315, n=3); even-half action mid=0.29842 (spread 0.819, n=9); separation |A_odd-A_even|=0.064945 (rel 0.196). the plateaus are NOT cleanly flat-and-distinct at k<=31 (per-parity actions still drifting -> the two-level inputs are NOT resolvable at k=31 (a legitimate negative: the accelerator cannot be fed clean critical times from this length; more exact rungs or a genuine transseries fit is required)). Honest: does NOT confirm two clean actions; records what k=31 can and cannot support. Caveat: interior N* is modest, so optimal-truncation asymptotics are coarse. No fit; no c_k wired; nothing to production; no tier change."
+  }
+}
