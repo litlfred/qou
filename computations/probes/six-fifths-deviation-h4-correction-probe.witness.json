@@ -1,0 +1,139 @@
+{
+  "best_match": {
+    "deviation_pct_from_required": 0.08326312908139862,
+    "label": "2\u00b7G (Catalan) \u2248 1.832",
+    "value": 1.831931188354438
+  },
+  "candidates": [
+    {
+      "deviation_pct_from_required": 0.31873024171583597,
+      "label": "1 + 4\u00b7h_0 (\u22481.834)",
+      "value": 1.8362411951825572
+    },
+    {
+      "deviation_pct_from_required": 4.592153737312499,
+      "label": "1 + 2\u00b7\u221ah_0",
+      "value": 1.9144622437162495
+    },
+    {
+      "deviation_pct_from_required": -3.1661416804216898,
+      "label": "\u221a(\u03c0) (\u22481.772)",
+      "value": 1.772453850905516
+    },
+    {
+      "deviation_pct_from_required": 17.28264146851912,
+      "label": "\u03c0/\u221a(\u03c0-1) (\u22482.21)",
+      "value": 2.1467498365002973
+    },
+    {
+      "deviation_pct_from_required": 0.08326312908139862,
+      "label": "2\u00b7G (Catalan) \u2248 1.832",
+      "value": 1.831931188354438
+    },
+    {
+      "deviation_pct_from_required": -0.180989600204588,
+      "label": "\u03c6 + h_0 \u2248 1.827",
+      "value": 1.8270942875455343
+    },
+    {
+      "deviation_pct_from_required": 5.010272210559899,
+      "label": "e/\u221a2 \u2248 1.922",
+      "value": 1.9221155140795585
+    },
+    {
+      "deviation_pct_from_required": 39.09543999443063,
+      "label": "\u221a(\u03c0 \u00b7 h_0) \u00b7 \u03c0 (\u22481.85)",
+      "value": 2.5460128568653664
+    },
+    {
+      "deviation_pct_from_required": 0.08326312908139862,
+      "label": "Vol(B_3)/4 \u2248 1.832",
+      "value": 1.831931188354438
+    },
+    {
+      "deviation_pct_from_required": 43.527040868254986,
+      "label": "4 \u00b7 h_0 \u00b7 \u03c0 \u2248 2.62",
+      "value": 2.6271291954146703
+    },
+    {
+      "deviation_pct_from_required": 66.28574877302712,
+      "label": "[3]_q at q_0",
+      "value": 3.043706208532522
+    },
+    {
+      "deviation_pct_from_required": 10.459201485836223,
+      "label": "[2]_q\u00b2 / 2 at q_0 \u2248 2.21",
+      "value": 2.021853104266261
+    },
+    {
+      "deviation_pct_from_required": -8.966077021253465,
+      "label": "1 + h_0 + \u221ah_0 \u2248 1.66",
+      "value": 1.666291420653764
+    },
+    {
+      "deviation_pct_from_required": 1.1890748533257829,
+      "label": "2 - h_0/\u221a2 \u2248 1.853",
+      "value": 1.8521720450447177
+    },
+    {
+      "deviation_pct_from_required": -92.49854848770717,
+      "label": "\u03c0 \u00b7 h_0\u00b2 (\u22480.137)",
+      "value": 0.13730710364203463
+    },
+    {
+      "deviation_pct_from_required": -0.9073265480692473,
+      "label": "\u03c0/\u221a(3) \u2248 1.814",
+      "value": 1.8137993642342178
+    },
+    {
+      "deviation_pct_from_required": 0.15986603084974893,
+      "label": "11/6 (\u22481.833)",
+      "value": 1.8333333333333333
+    },
+    {
+      "deviation_pct_from_required": 1.0719605975544102,
+      "label": "log(6.36) \u2248 1.85",
+      "value": 1.8500283773520307
+    },
+    {
+      "deviation_pct_from_required": 3.9174835562428214,
+      "label": "2 \u00b7 sin(2\u03c0/5) \u2248 1.902",
+      "value": 1.902113032590307
+    },
+    {
+      "deviation_pct_from_required": 51.29496998500148,
+      "label": "\u03c0 \u00b7 cos(\u03b8_W) \u2248 2.77",
+      "value": 2.7693139241394027
+    }
+  ],
+  "commitSha": "9e62944951a74873db36bf96989f5c0cc69d2271",
+  "compute": "six_fifths_deviation_h4_correction_probe",
+  "computedAt": "2026-07-18T17:49:40.573661+00:00",
+  "description": "Investigates whether the 0.35% deviation between 171/143 and 6/5 has structural meaning as a h^4-order correction. If 171/143 = 6/5 \u00b7 (1 - h_0^4 \u00b7 C), seeks substrate-natural C.",
+  "durationMs": 0,
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "interpretation": "If a clean substrate-natural C (matching to <1%) is found, the 0.35% deviation is reframed as a structural h^4 correction and the 6/5 hypothesis becomes the LEADING-ORDER prediction. Otherwise, the deviation remains attributable to measurement noise or higher-order corrections.",
+  "parameters": {
+    "C_REQUIRED": 1.8304071340996575,
+    "DELTA": 0.0034965034965034965,
+    "HYPO_6_5": "1.2",
+    "H_0": "0.20906029879563931543084621312967494385975749526306",
+    "Q_0": "1.1099785827513808075916690956107688798744991218736",
+    "TARGET": "1.1958041958041958041958041958041958041958041958042",
+    "dps": 50,
+    "h0_to_4": 0.001910232664288298,
+    "precision": "mpfr"
+  },
+  "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
+  "scriptFile": "six_fifths_deviation_h4_correction_probe.py",
+  "scriptHash": "e55e5412e1b3",
+  "status": "exploratory",
+  "tags": [
+    "deviation-structural-meaning",
+    "h4-correction",
+    "six-fifths-hypothesis",
+    "leading-order-vs-noise"
+  ],
+  "verdict": "Best match 2\u00b7G (Catalan) \u2248 1.832 differs from required C by +0.083%"
+}

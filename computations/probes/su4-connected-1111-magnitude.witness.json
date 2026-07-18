@@ -1,7 +1,7 @@
 {
-  "engine": "mpmath",
+  "engine": "python",
   "engineVersion": "50dps",
-  "computedAt": "2026-07-06T10:52:50.596200+00:00",
+  "computedAt": "2026-07-18T17:52:22.715193+00:00",
   "computation": "su4-connected-1111-magnitude",
   "scriptFile": "su4_connected_1111_magnitude_probe.py",
   "description": "PROBE 2 magnitude leg: the single connected 4-body [1^4] SU(4)-supermultiplet interface operator, realized as the irreducible connected (Ursell/Mayer) A-body cluster b_A^c of the canonical zero-fit interface graph (g_ij=1\u2212f_ij; f_pp=z, f_nn=z\u2212h, f_pn=z\u2212h(\u00bd\u2212\u03b4/4)), gated by SU(4) dim C(4,A). Tests whether it supplies the measured 2.093\u00d7 super-pairwise excess at \u2074He and vanishes at \u2076Li (C(4,6)=0). Audit-only, no fit, single operator.",
@@ -67,5 +67,9 @@
     "gate_lean": "qou:QOU.MassTheory.SU4SupermultipletGate",
     "locality_witness": "probes/su4-supermultiplet-locality.witness.json",
     "scoping": "docs/scope/2026-07-05-gap-a4-interface-operator-attack-scoping.md \u00a73"
-  }
+  },
+  "scriptHash": "027c9b3f9301",
+  "scriptCommitSha": "37594487c8792014d2f34f302b9f4f374d29c374",
+  "commitSha": "9e62944951a74873db36bf96989f5c0cc69d2271",
+  "durationMs": 0
 }

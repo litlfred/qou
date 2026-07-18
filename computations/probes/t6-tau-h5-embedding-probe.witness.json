@@ -1,0 +1,63 @@
+{
+  "description": "T6 tau probe \u2014 H_5 embedding test for V\u0302_\u03c4 + \u03be_3 conjectural closure",
+  "computation": "t6_tau_h5_embedding_probe",
+  "audit_only": true,
+  "precision_dps": 50,
+  "context": {
+    "purpose": "Test PR #1127's conj:lepton-tower-h-n-plus-1-branching at m=3 (tau)",
+    "method": "per_generator_V_hat_general at n_strands \u2208 {2,3,4,5,6} for \u03c3_1^7 word",
+    "comparison_against": "CODATA m_\u03c4/m_e = 3477.23"
+  },
+  "constants": {
+    "q_0": "1.1099785955541805752815940796095093779932822799587",
+    "h": "0.20906032198987946110160842229792190646175630391646",
+    "z": "0.49932033403359825002066908467672150636931636263446",
+    "\u210f_q\u00b2": "0.0098171885134786714364814119414486823004830901220019",
+    "V_e_h3_3channel": "0.58639039204235943838455380430753729853595332761807",
+    "m_e_dim_li2q": "0.51768928283115347856949138959200466522598523265882",
+    "[4]_q \u00b7 [2]_q / [5]_q": "1.5830361896512796924823783906586667892656003580584",
+    "xi_3_conjectural": "161.25148126450092690715189972187000821900908075167",
+    "CODATA_m_tau_e": "3477.23"
+  },
+  "tau_per_h_n": {
+    "2": {
+      "V_1": "0.792758848598899",
+      "in_convergence_radius": true,
+      "m_tau_dim": 0.6748760912796542,
+      "ratio_m_tau_over_m_e": 1.3036315675473775
+    },
+    "3": {
+      "V_1": "0.7870670240305921",
+      "in_convergence_radius": true,
+      "m_tau_dim": 0.6706768226618952,
+      "ratio_m_tau_over_m_e": 1.2955200057340943
+    },
+    "4": {
+      "V_1": "0.7828625118043938",
+      "in_convergence_radius": true,
+      "m_tau_dim": 0.6675701510141029,
+      "ratio_m_tau_over_m_e": 1.2895189704590304
+    },
+    "5": {
+      "V_1": "0.7829093994858464",
+      "in_convergence_radius": true,
+      "m_tau_dim": 0.6676048179266861,
+      "ratio_m_tau_over_m_e": 1.2895859351688148
+    },
+    "6": {
+      "V_1": "0.7899678256229096",
+      "in_convergence_radius": true,
+      "m_tau_dim": 0.6728178656621131,
+      "ratio_m_tau_over_m_e": 1.2996557741790367
+    }
+  },
+  "timestamp": "2026-07-18T17:52:18+00:00",
+  "scriptHash": "fc479fcfb6bb",
+  "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
+  "commitSha": "9e62944951a74873db36bf96989f5c0cc69d2271",
+  "engine": "mpmath",
+  "computedAt": "2026-07-18T17:52:19.133229+00:00",
+  "durationMs": 0,
+  "engineVersion": "mpmath 1.3.0",
+  "scriptFile": "t6_tau_h5_embedding_probe.py"
+}

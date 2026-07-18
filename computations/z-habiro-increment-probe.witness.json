@@ -2,7 +2,7 @@
   "computation": "z-habiro-increment-probe",
   "kind": "exploratory-probe",
   "content_block": "conj:brane-tower-z-habiro",
-  "engine": "sympy-exact",
+  "engine": "sympy",
   "depth_M": 9,
   "result": {
     "cyclotomic_expansion_exists_over_QQ_q": true,
@@ -135,5 +135,12 @@
     "series_coeff_formula": "[z^m] Phi_q = q^-m / prod_{j=1}^m (1-q^-j)  (Euler)",
     "filtration_basis": "P_n = prod_{k=1}^n (1 - q^-k z)",
     "lean_ref": "QOU.MassEndomorphism.ZHabiroCauchy.IsCauchyFiltration"
-  }
+  },
+  "scriptHash": "fcf94ffad60f",
+  "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
+  "commitSha": "9e62944951a74873db36bf96989f5c0cc69d2271",
+  "computedAt": "2026-07-18T17:52:17.035742+00:00",
+  "durationMs": 0,
+  "engineVersion": "sympy 1.14.0",
+  "scriptFile": "z_habiro_increment_probe.py"
 }

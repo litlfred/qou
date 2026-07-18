@@ -401,3 +401,9 @@ qbeta_reeb_tower_jacobi_anger (the one WITH a writer, distinct from the physical
 one skipped in batch 28), plus habiro_coefficients_extended, metallic_q_jones_sign_sweep,
 3 pentagon/per-knot h4 probes, poly_q_proof, pyhecke_h3_vs_h3a. 2 reverted
 (pentagon_rt_torus_knot_higgs, per_knot_density_borromean_q_locality — exit 1).
+
+## 2026-07-18 — batch 33 (auto-stamper chunk 4: 17 producers) — CLEAN SINGLE-WRITE SET EXHAUSTED
+17 wired (rt_*/t3n/t6_*/vol_density_*/su4/qm_channel/xi_ell/vhat/metallic_q_quark/
+yekutieli/qbeta_silver_rationals/six_fifths/z_habiro). 4 reverted (brane_tower_full_channel,
+two/three-quark sweeps — exit1/shared). Clean single-write set now fully drained:
+67 wired via stamper across chunks 1-4. NEXT: read+write class (~55).

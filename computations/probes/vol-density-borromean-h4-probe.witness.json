@@ -1,0 +1,119 @@
+{
+  "baseline_family_a": {
+    "candidate": "5/2 + (3/4)\u00b7h\u00b2",
+    "gap_vs_codata_pct": 2.960520232102139,
+    "linking_weight_at_q0": 2.5327796563993914,
+    "m_p_pred_MeV": 966.049823162144
+  },
+  "commitSha": "9e62944951a74873db36bf96989f5c0cc69d2271",
+  "compute": "vol_density_borromean_h4_probe",
+  "computedAt": "2026-07-18T17:52:25.984318+00:00",
+  "description": "h\u2074 probe for Borromean linking weight. Per docs/audits/2026-05-24-h4-coefficient-source-trace-and-so3-gap.md, the exact Markov trace closed form has h\u00b2 = 0 and h\u2074 = \u22123/4. This probe (1) solves c_4 such that 5/2 + c_4\u00b7h\u2074 is q-local at q_0, and (2) tests the structural candidate 5/2 \u00b7 tr_M(\u03b2_Bor, q) directly.",
+  "durationMs": 0,
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "parameters": {
+    "G_catalan": "0.91596559417721901505460351493238411077414937428167",
+    "M_E_MEV": "0.51099895",
+    "M_P_CODATA_MEV": "938.27208816",
+    "Q_0": "1.1099785827513808075916690956107688798744991218736",
+    "dps": 50,
+    "precision": "mpfr",
+    "sweep_deltas": [
+      0.001,
+      0.01,
+      0.05
+    ],
+    "tolerance_ppm_per_q": 100000.0
+  },
+  "probe_1_solve_for_c_4": {
+    "c_4_solved": 413.7493619670661,
+    "candidate": "5/2 + 0\u00b7h\u00b2 + c_4\u00b7h\u2074",
+    "closest_natural_value": "\u22123/4 \u00b7 5/2 = \u221215/8  (Markov trace h\u2074 scaled by 5/2)",
+    "closest_relative_difference_pct": 22166.632638243525,
+    "gap_vs_codata_pct": 33.756966910163094,
+    "linking_weight_at_q0": 3.290357546057932,
+    "m_p_pred_MeV": 1255.0042864874674,
+    "natural_values_cross_check": {
+      "+3/4 (Family A's h\u00b2 coefficient, lifted to h\u2074 slot)": {
+        "abs_diff": 412.9993619670661,
+        "relative_diff_pct": 55066.58159560881,
+        "value": 0.75
+      },
+      "\u22122G  (Yekutieli k=2 doubled-cell)": {
+        "abs_diff": 415.5812931554205,
+        "relative_diff_pct": 22685.420489441156,
+        "value": -1.831931188354438
+      },
+      "\u22123/4 (bare Markov trace h\u2074 unscaled)": {
+        "abs_diff": 414.4993619670661,
+        "relative_diff_pct": 55266.58159560881,
+        "value": -0.75
+      },
+      "\u22123/4 \u00b7 5/2 = \u221215/8  (Markov trace h\u2074 scaled by 5/2)": {
+        "abs_diff": 415.6243619670661,
+        "relative_diff_pct": 22166.632638243525,
+        "value": -1.875
+      },
+      "\u2212G   (Yekutieli k=1 scaled to h\u2074)": {
+        "abs_diff": 414.6653275612433,
+        "relative_diff_pct": 45270.84097888231,
+        "value": -0.915965594177219
+      },
+      "\u2212G/2 (Yekutieli k=1 halved)": {
+        "abs_diff": 414.2073447641547,
+        "relative_diff_pct": 90441.68195776462,
+        "value": -0.4579827970886095
+      }
+    },
+    "verification_slopes_at_solved_c_4": [
+      {
+        "delta": 0.001,
+        "slope_ppm_per_q": -3921954.9683961067
+      },
+      {
+        "delta": 0.01,
+        "slope_ppm_per_q": -3860451.7380730025
+      },
+      {
+        "delta": 0.05,
+        "slope_ppm_per_q": -2376474.1240089796
+      }
+    ]
+  },
+  "probe_2_structural_markov_trace": {
+    "candidate": "5/2 \u00b7 (4 + h\u00b2 \u2212 3h\u2074 \u2212 h\u2076) / (h\u00b2 + 4)",
+    "gap_vs_codata_pct": 1.4818636245758254,
+    "linking_weight_at_q0": 2.496405409591968,
+    "m_p_pred_MeV": 952.1760009339911,
+    "q_locality_slopes": [
+      {
+        "delta": 0.001,
+        "pass_q_locality": false,
+        "slope_ppm_per_q": -16194183.099890316
+      },
+      {
+        "delta": 0.01,
+        "pass_q_locality": false,
+        "slope_ppm_per_q": -16184008.878805486
+      },
+      {
+        "delta": 0.05,
+        "pass_q_locality": false,
+        "slope_ppm_per_q": -15936219.269058043
+      }
+    ]
+  },
+  "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
+  "scriptFile": "vol_density_borromean_h4_probe.py",
+  "scriptHash": "26c1cf0b6104",
+  "status": "exploratory",
+  "tags": [
+    "h4-coefficient",
+    "q-locality",
+    "vol-density-refinement",
+    "borromean",
+    "so3-lift",
+    "yekutieli-mi-k2"
+  ]
+}

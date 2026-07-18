@@ -178,5 +178,12 @@
     "neutron_product_genuine": 0.9232332971861534
   },
   "verdict": "V\u0302_i = z\u00b7a_i + b_i is DERIVED from the standard-channel Hoefsmit seminormal rep with zero free parameters (Markov trace of the per-generator reduced element). It DIFFERS for proton vs neutron (p/n signal present in quark-pair crossings). PRODUCTION's vertex_volume is a DIFFERENT object (W-weighted 3-channel sum), NOT the genuine per-generator Markov-trace factor \u2014 flagged RED.",
-  "timestamp": "2026-06-22T13:28:31+00:00"
+  "timestamp": "2026-07-18T17:52:31+00:00",
+  "scriptHash": "c728b1065ffa",
+  "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
+  "commitSha": "9e62944951a74873db36bf96989f5c0cc69d2271",
+  "engine": "python",
+  "computedAt": "2026-07-18T17:52:31.661038+00:00",
+  "durationMs": 0,
+  "scriptFile": "vhat_per_crossing_chain.py"
 }
