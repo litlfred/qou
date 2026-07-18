@@ -64,6 +64,37 @@ the algebraic shortcut is provably obstructed, and the sole remaining step is a 
 computation (Sage/Magma in a network-open environment, or a bespoke mpmath genus-4 period
 integration — deferred, as a rushed numerical build risks a *wrong* τ_E, worse than none).
 
+## Update — τ_Bring is PUBLISHED (not open): j-invariant + magnitude
+
+The period route is not actually open in the literature — Riera–Rodríguez (1992) and
+**Braden–Disney-Hogg, "Bring's curve: Old and New"** ([arXiv:2208.13692](https://arxiv.org/abs/2208.13692))
+compute it explicitly. The elliptic isogeny factor `E` of `Jac(Bring) ~ E⁴`:
+
+- **`τ₀` is a distinguished point on `X₀(5)`**; the elliptic quotients have
+  **`j(τ₀) = −5·29³/2⁵ = −121945/32`** and **`j(5τ₀) = −25/2`** (the 5-isogeny is the
+  `X₀(5)` structure; conductor 50, connection to `X₀(50)`). *(Values via search summary
+  of the paper; verify against the source PDF before wiring.)*
+- **Magnitude leg, evaluated.** Since the #3864 magnitude `1/(√Im τ·|η(τ)|²)` is
+  modular-invariant, `j` alone fixes it. Inverting `j` (mpmath, 40 dps):
+
+  | factor | `j` | `τ` (fund. domain) | `Im τ` | `1/(√Im τ·\|η\|²)` |
+  |---|---|---|---|---|
+  | `E₁` (`j(τ₀)`) | `−121945/32` | `½ + 1.33922 i` | 1.33922 | **1.74146** |
+  | `E₂` (`j(5τ₀)`) | `−25/2` | `½ + 0.93338 i` | 0.93338 | **1.67789** |
+
+So the abelian **magnitude leg is now a concrete number** (`≈ 1.741`, modulo the
+`τ₀`-vs-`5τ₀` isogeny choice — which representative is the polarized Jacobian factor
+must be read from the PDF). This is **not** reverse-engineered from `1/(8π)`: it is
+computed from the *independently published* `j`; the reciprocal `π` remains the
+separate RT/Front-2 prescription (the wall is not thereby closed — `magnitude ≈ 1.74`
+is `O(1)`, and `1/(8π) ≈ 0.0398`, so the RT factor carries the small reciprocal).
+
+**Remaining to close the magnitude leg rigorously:** (i) confirm the `j` values from
+the source PDF (WebFetch proxy-blocked here; the owner is retrieving the PDFs); (ii)
+fix the `τ₀`-vs-`5τ₀` representative via the polarization; (iii) also consult
+Braden–Enolski et al., *"Bring's Curve: its Period Matrix and the Vector of Riemann
+Constants"* for the explicit period matrix.
+
 ## Scope guard (STRICT)
 
 - **Not a closure.** τ_E is not computed; α_EM 1/(8π) stays open.
