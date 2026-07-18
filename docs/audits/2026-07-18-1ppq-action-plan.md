@@ -62,7 +62,31 @@ measurement-limited absent a substrate-q₀ derivation.** L2 stays **2/7**
   *additive-cumulant-of-raw-traces* family is ruled out (raw `tr_M(K)` is itself
   bar-odd ⇒ a **bar-even symmetrized** trace basis must come first).
 
-## Three highest-leverage, non-duplicative next moves
+## Same-day correction (both compute moves 1 & 2 are subsumed/walled)
+
+Two landings/probes *after* this plan's first draft close its two compute moves:
+
+- **Move 1 (α_EM reciprocal-form) is SUBSUMED, not a separate unowned piece.**
+  [`2026-07-18-alpha-em-perloop-reciprocal-form-forcedness.md`](2026-07-18-alpha-em-perloop-reciprocal-form-forcedness.md):
+  **6** natural combinations of `{1/(4π), b₁=8, g=4, P=2}` land on `1/(8π)`, so the
+  coefficient is **not naive-mode-countable** — the reciprocal-form does not
+  separate from the magnitude; the whole α_EM coefficient wall is the #3911
+  theta-factor. There is no separate unowned arithmetic piece.
+- **Move 2 (geometric substrate q₀) is WALLED.** The #3902-cont landing
+  (`docs/coordination/1ppq-qbeta.md`, 07-18) closes the branch-point locus (the
+  substrate meridian is **generic**, 8.6e6× the anchor gap) — **all four geometric
+  routes to the q₀ swing are now closed**; the lever is the D-ladder Écalle thread
+  (sibling **#3818**). The geometric categorical-N-selection framing faces the same
+  "meridian is generic" wall; it is not the uncontended opening this plan assumed.
+
+**Net:** the 1ppQ program's open *compute* fronts are now consolidated onto two
+sibling-owned objects — the α_EM **#3911** theta-factor (magnitude) and the c₃
+**#3818** D-ladder Écalle acceleration — with everything else measurement-limited
+(the two new sorry-free theorems above). The highest-value *independent* action is
+therefore **move 3** (the ledger/precision-goals ceiling record) plus *supporting*
+those two owned fronts, not opening a third compute front.
+
+## Three highest-leverage, non-duplicative next moves (as first drafted — moves 1/2 now corrected above)
 
 1. **α_EM reciprocal-form / `8π = 2·4π` multiplicity joint (UNOWNED).** With the
    π-power settled to `1/(4π)` and `b₁=8` settled, this is the *last unowned*
