@@ -86,10 +86,15 @@ results, one clean stop:
    Computed as a full Laurent series and summed over the lattice, the naive
    `Σ I_Δ(k_1,k_2) I_Δ(k_2,k_1)` does **not** converge (the `q^0…q^5` coefficients
    do not stabilize as the truncation `K` grows, and the negative powers do not
-   cancel) and does **not** reproduce `[1,−8,−9,18,46,90]`. This confirms — from the
-   gluing side — the **normalization prefactor** the triality work already flagged
-   (an overall q-power / `ζ=−q^{1/2}` convention on `I_Δ`): it gates the *gluing*,
-   not only the triality self-test.
+   cancel) and does **not** reproduce `[1,−8,−9,18,46,90]`. Crucially, this is **not
+   a truncation artifact**: an *exact per-power* enumeration — summing only the
+   finitely many `(k_1,k_2)` with `ν(k_1,k_2)+ν(k_2,k_1) ≤ p` to full Laurent depth
+   (928 pairs at `p ≤ q^6`) — **still** leaves hundreds of uncancelled
+   negative-power terms and misses the target. So the mismatch is a genuine
+   **normalization gap**: the formula needs a per-term kernel/prefactor (rotated
+   indices typically carry a `(−1)^{k_1 k_2} q^{k_1 k_2}`-type weight) — the same
+   `ζ=−q^{1/2}` / q-power convention on `I_Δ` the triality work flagged. It gates the
+   *gluing*, not only the triality self-test.
 
 **Honest stop (anti-numerology).** Fitting a per-term prefactor to force
 convergence onto the known `[1,−8,−9,18,46,90]` would be a fit, not a derivation —
