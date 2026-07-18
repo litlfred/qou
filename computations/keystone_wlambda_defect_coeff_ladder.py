@@ -365,7 +365,13 @@ def main():
         "exact_matches_taylor": bool(exact_match),
         "verdict": verdict,
     }
-    wpath = "computations/keystone-wlambda-defect-coeff-ladder.witness.json"
+    import os as _os, sys as _sys  # noqa: E402 — P30 rollup (bean cmiy)
+    _here = _os.path.dirname(_os.path.abspath(__file__))
+    _sys.path.insert(0, _os.path.join(_here, "substrate"))
+    from witness_base import WitnessBuilder  # noqa: E402
+    WitnessBuilder.stamp_staleness_metadata(out, script_path=__file__, engine="mpmath")
+    out["scriptFile"] = _os.path.basename(__file__)
+    wpath = _os.path.join(_here, "keystone-wlambda-defect-coeff-ladder.witness.json")
     with open(wpath, "w") as fh:
         json.dump(out, fh, indent=2)
     print(f"\nwitness -> {wpath}")
