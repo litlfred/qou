@@ -123,3 +123,55 @@ PR #3893 opens the tranche that closes `syt_all_connect_to_some`:
   a pair-projection conclusion `T.entry (a,b).1 (a,b).2` that `omega` treats as
   an atom distinct from `T.entry a b`; ascribe the result to a clean-typed
   `have` (defeq) before feeding `omega`.
+
+## 2026-07-18 — post-#3904 tranche (PR #3910): realization scaffolding
+
+#3893 + #3904 merged (both admissibility halves: `d ≠ 0`, `d² ≠ 1`). PR #3910
+adds the `swapCellsSYT` **entry-computation helpers** in `SytAdjacentSwap.lean`
+(sorry-free): `swapSucc_self`, `swapSucc_succ`, and
+`swapCellsSYT_entry_{mem,at_p,at_q,other}`. These let `JucysMurphy.lean` evaluate
+`cellLabel T'` on the swapped tableau `T' = swapCellsSYT T p q …` (label `a`
+moves to cell `q`, label `a+1` to cell `p`).
+
+### Realization proof — fully worked, ready to type into `JucysMurphy.lean`
+
+Add `import QOU.BraidKnot.SytAdjacentSwap` + `import QOU.BraidKnot.SytEntryMono`.
+Then, with `p := tableauCellEquiv μ T a`, `q := tableauCellEquiv μ T b`,
+`T' := swapCellsSYT T ↑p ↑q (tableauCellEquiv_mem T a) (tableauCellEquiv_mem T b)
+(by rw [entry_tableauCellEquiv, entry_tableauCellEquiv]; omega) hrow hcol`:
+
+```
+theorem adjacentSwapStep_swapCells (T) (a b : Fin (nOf μ)) (hab : ↑a+1 = ↑b)
+    (hrow : (↑p).1 ≠ (↑q).1) (hcol : (↑p).2 ≠ (↑q).2) :
+    AdjacentSwapStep μ T T' := by
+  refine ⟨a, b, hab, ?_, ?_, ?_, ?_, ?_⟩
+```
+The five goals reduce to three cell-identities (each: `cellLabel T' c = ℓ` via
+`Fin.ext` + a `swapCellsSYT_entry_*` rewrite + `entry_tableauCellEquiv`, then
+`tableauCellEquiv_cellLabel` to invert):
+
+- `tableauCellEquiv μ T' a = tableauCellEquiv μ T b` — via
+  `cellLabel T' q = a` (`swapCellsSYT_entry_at_q` → `T.entry p = a`).
+- `tableauCellEquiv μ T' b = tableauCellEquiv μ T a` — via
+  `cellLabel T' p = b` (`swapCellsSYT_entry_at_p` → `T.entry q = b`).
+- `∀ s ≠ a, ≠ b, tableauCellEquiv μ T' s = tableauCellEquiv μ T s` — via
+  `swapCellsSYT_entry_other` (the `≠ ↑p/↑q` side-goals from
+  `(tableauCellEquiv μ T).injective`).
+
+The two content gap conditions (`d ≠ 0`, `d² ≠ 1`) come from `content_ne_of_succ`
+and `sq_content_gap_ne_one` applied at `↑p, ↑q` (rewrite cellContent → the
+explicit `(·.2 − ·.1)` form). **Coercion caution:** `swapCellsSYT_entry_other`
+and the `cellLabel` unfolds cross `μ.cells ↔ ℕ×ℕ`; wrap membership/`≠` args with
+`Prod.mk.eta` to convert `↑cell` ↔ `((↑cell).1, (↑cell).2)`.
+
+### Then: measure + WF induction (to close the 887 sorry — needs a small reorg)
+
+The private `tableauCellEquiv`/`cellLabel` lemmas (JucysMurphy L1120–1144) sit
+*after* `syt_all_connect_to_some` (L887); closing the sorry in place needs them
+earlier. Move L1120–1144 (they depend only on `tableauCellEquiv` + imports, not
+on the entry-mono lemmas) to before L826, then: define
+`π_T := (cellLabel rowSuperstandardBraidKnot) ∘ tableauCellEquiv T` (an `Equiv`,
+`= id` at `T₀`); a step right-multiplies `π_T` by `Equiv.swap a b`; `inv` drops
+by 1 on a descent; **every descent is admissible** (same-row/col ⇒ ascent under
+`cellLabel_{T₀}`; consecutive labels never share a diagonal), so WF-recurse on
+`inv(π_T)` to `T₀ = rowSuperstandardBraidKnot μ`.
