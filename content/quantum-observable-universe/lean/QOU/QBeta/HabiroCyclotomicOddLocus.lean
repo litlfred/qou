@@ -64,16 +64,53 @@ theorem fourOne_habiroTerm_bar_even (q : ℝ) (j : ℕ) :
     (1 : ℝ) * habiroFactor q j = (1 : ℝ) * habiroFactor q⁻¹ j :=
   habiroTerm_bar_even_of_coeff_symmetric (fun _ => 1) q j rfl
 
-/-! ## Concrete chiral instance: the leading `5_2` cyclotomic coefficient
+/-! ## Concrete chiral instance: the `5_2` cyclotomic coefficients (Masbaum)
 
-`C_{5_2,1}(t) = -(t^{-2} + t^{-4})`, extracted self-calibrating from the
-validated Jones polynomials as `(V_{5_2}-1)/(V_{4_1}-1)` (an exact Laurent
-polynomial, `C_{4_1,1}=1`; probe `qbeta_5two_leading_odd_datum`, det checks
-5, 7).  Unlike `4_1`'s `C_n = 1`, it is bar-asymmetric — the first genuine
-`5_2` bar-odd datum. -/
+`5_2 = K_2` is the twist knot with two full twists.  Its cyclotomic coefficients
+are given AUTHORITATIVELY by Masbaum's twist-knot formula (Theorem 4.5 + 5.1 +
+Remark 5.2 of `masbaum2003`, "Skein-theoretical derivation of some formulas of
+Habiro", Algebr. Geom. Topol. 3 (2003) 537–556, DOI 10.2140/agt.2003.3.537):
+for `p = 2`,
+  `c'_{n,2} = (-1)^n a^{(5n²+7n)/2} Σ_{k=0}^n a^{k²-2k-3nk} [n,k]_a`,
+  `f̃_{K2,n} = (-1)^n q^{-n(n+1)/2} a^{n(n+3)/2} c'_{n,2}`   (`q = a²`).
 
-/-- Leading `5_2` cyclotomic coefficient `C_{5_2,1}(t) = -(t^{-2} + t^{-4})`. -/
+**Basis bridge** (derived, verified on `4_1`).  Masbaum's basis is the
+color-dependent `(q^{1-N})_n(q^{1+N})_n`, which at the Kashaev point `q^N = 1`
+becomes `(q;q)_n²`; the framework's tail basis is the bar-even
+`f_n(q) = (q;q)_n (q^{-1};q^{-1})_n`.  Since
+`(q^{-1};q^{-1})_n / (q;q)_n = (-1)^n q^{-n(n+1)/2}`, the two bases give the same
+tail with `C_{K,n}(q) = (-1)^n q^{n(n+1)/2} · f̃_{K,n}(q)`.  On `4_1 = K_{-1}`,
+`f̃_{4_1,n} = (-1)^n q^{-n(n+1)/2}` ⇒ `C_n = 1` (Kashaev's figure-eight), so the
+bridge is exact.  This gives the framework coefficients in `q`:
+  `C_{5_2,1}(q) = -(q⁴+q²)`,
+  `C_{5_2,2}(q) = q¹¹+q⁸+q⁷+q⁵`,
+  `C_{5_2,3}(q) = -(q²¹+q¹⁷+q¹⁶+q¹⁵+q¹³+q¹²+q¹¹+q⁹)`.
+
+Below, `t` is the ordinary Jones variable (`t = q^{-1}`, the mirror of the
+substrate `q`), so `C_{5_2,n}` is written with `q = t^{-1}`; e.g.
+`C_{5_2,1}(t) = -(t^{-2} + t^{-4})`, matching `-(q⁴+q²)` at `t = q^{-1}`.  The
+leading `C_{5_2,1}` was first extracted self-calibrating as `(V_{5_2}-1)/
+(V_{4_1}-1)`; probe `qbeta_5two_masbaum_cyclotomic` CROSS-CHECKS that the
+heuristic equals Masbaum's authoritative value EXACTLY (and that Masbaum
+reproduces the standard Jones polynomial `V_{5_2}` at `N = 2`).  Unlike `4_1`'s
+`C_n = 1`, every `C_{5_2,n}` (`n ≥ 1`) is bar-asymmetric — the genuine `5_2`
+bar-odd data. -/
+
+/-- Leading `5_2` cyclotomic coefficient `C_{5_2,1}(t) = -(t^{-2} + t^{-4})`
+    (Masbaum `C_{5_2,1}(q) = -(q⁴+q²)` at `t = q^{-1}`). -/
 noncomputable def c52_1 (t : ℝ) : ℝ := -((t ^ 2)⁻¹ + (t ^ 4)⁻¹)
+
+/-- Second `5_2` cyclotomic coefficient `C_{5_2,2}(t) = t^{-5}+t^{-7}+t^{-8}+t^{-11}`
+    (Masbaum `C_{5_2,2}(q) = q⁵+q⁷+q⁸+q¹¹` at `t = q^{-1}`). -/
+noncomputable def c52_2 (t : ℝ) : ℝ :=
+  (t ^ 5)⁻¹ + (t ^ 7)⁻¹ + (t ^ 8)⁻¹ + (t ^ 11)⁻¹
+
+/-- Third `5_2` cyclotomic coefficient
+    `C_{5_2,3}(t) = -(t^{-9}+t^{-11}+t^{-12}+t^{-13}+t^{-15}+t^{-16}+t^{-17}+t^{-21})`
+    (Masbaum `C_{5_2,3}(q) = -(q⁹+q¹¹+q¹²+q¹³+q¹⁵+q¹⁶+q¹⁷+q²¹)` at `t = q^{-1}`). -/
+noncomputable def c52_3 (t : ℝ) : ℝ :=
+  -((t ^ 9)⁻¹ + (t ^ 11)⁻¹ + (t ^ 12)⁻¹ + (t ^ 13)⁻¹
+    + (t ^ 15)⁻¹ + (t ^ 16)⁻¹ + (t ^ 17)⁻¹ + (t ^ 21)⁻¹)
 
 /-- **The leading `5_2` bar-odd Habiro term** is the coefficient's bar-asymmetry
     times the (bar-even) factor — the odd-locus, instantiated on the real `5_2`. -/
@@ -90,5 +127,20 @@ theorem c52_1_asymmetry (t : ℝ) (ht : t ≠ 0) :
   unfold c52_1
   field_simp
   ring
+
+/-- **The second `5_2` bar-odd Habiro term** is the coefficient's bar-asymmetry
+    times the (bar-even) factor — the odd-locus on the authoritative Masbaum
+    `C_{5_2,2}`. -/
+theorem c52_2_bar_odd_term (t : ℝ) (j : ℕ) :
+    c52_2 t * habiroFactor t j - c52_2 t⁻¹ * habiroFactor t⁻¹ j
+      = (c52_2 t - c52_2 t⁻¹) * habiroFactor t j :=
+  habiroTerm_bar_odd_eq_coeff_asymmetry c52_2 t j
+
+/-- **The third `5_2` bar-odd Habiro term** — the odd-locus on the authoritative
+    Masbaum `C_{5_2,3}`. -/
+theorem c52_3_bar_odd_term (t : ℝ) (j : ℕ) :
+    c52_3 t * habiroFactor t j - c52_3 t⁻¹ * habiroFactor t⁻¹ j
+      = (c52_3 t - c52_3 t⁻¹) * habiroFactor t j :=
+  habiroTerm_bar_odd_eq_coeff_asymmetry c52_3 t j
 
 end QOU.QBeta.HabiroCyclotomicOddLocus
