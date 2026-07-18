@@ -1,12 +1,12 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-18T17:58:51.495753+00:00",
-  "commitSha": "af6ce13124b1a2d61b203aa42f60ee4bc9c8ea12",
+  "computedAt": "2026-07-18T18:03:12.549215+00:00",
+  "commitSha": "8027514fec684d79b1cff2b42eaa059c5ff6a370",
   "assertions": [
     {
       "name": "no_missing_provenance",
-      "computed": 166,
+      "computed": 165,
       "expected": 0,
       "passed": false,
       "tolerance": 0,
@@ -48,11 +48,11 @@
   "data": {
     "counts": {
       "total_scanned": 2017,
-      "prov_ok": 1791,
+      "prov_ok": 1792,
       "prov_audit_exempt": 59,
-      "prov_missing": 166,
+      "prov_missing": 165,
       "prov_parse_error": 1,
-      "completeness_ratio": 0.917203767972236
+      "completeness_ratio": 0.9176995537927616
     },
     "by_verdict": {
       "PROV_OK": [
@@ -2242,6 +2242,10 @@
         },
         {
           "witness": "deuteron-from-scratch-ledger.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "deuteron_tr_M_symbolic.witness.json",
           "missing_fields": []
         },
         {
@@ -7667,14 +7671,6 @@
         {
           "witness": "deuteron-real-sdp.witness.json",
           "missing_fields": [
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "deuteron_tr_M_symbolic.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
             "commitSha"
           ]
         },

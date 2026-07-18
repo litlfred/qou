@@ -101,11 +101,19 @@
       "source": "cached"
     }
   },
-  "total_compute_seconds": 0.05,
-  "generated_at": "2026-05-31T13:24:49.495405+00:00",
+  "total_compute_seconds": 0.03,
+  "generated_at": "2026-07-18T18:03:10.843208+00:00",
   "lean_uniqueness_ref": {
     "deuteron": "qou:QOU.BraidKnot.deuteron_uniqueness_closed",
     "framework_doc": "content/quantum-observable-universe/lean/QOU/BraidKnot/NucleusEmptySDPUniqueness.lean",
     "note": "Certifies T_w uniqueness at the abstract empty-constraint SDP level (PR #1537 parameterised module). Workplan: docs/workplans/2026-05-31-witness-lean-uniqueness-ref-wiring.md."
-  }
+  },
+  "scriptHash": "3a9c8232b957",
+  "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
+  "commitSha": "8027514fec684d79b1cff2b42eaa059c5ff6a370",
+  "engine": "sympy",
+  "computedAt": "2026-07-18T18:03:11.414392+00:00",
+  "durationMs": 0,
+  "engineVersion": "sympy 1.14.0",
+  "scriptFile": "deuteron_tr_M_symbolic.py"
 }
