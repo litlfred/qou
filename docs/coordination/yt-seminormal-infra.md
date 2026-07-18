@@ -102,3 +102,24 @@ would then `import QOU.BraidKnot.SytAdjacentSwap`:
    genuinely non-mechanical remaining step.
 4. **WF induction** on `inv(π_T)` closes `syt_all_connect_to_some` with
    `T₀ = rowSuperstandardBraidKnot μ`.
+
+## 2026-07-18 — post-#3843 tranche (PR #3893): `SytEntryMono.lean`
+
+#3843 merged (base tableau + bridge + swap constructor + swap-symmetry). New
+PR #3893 opens the tranche that closes `syt_all_connect_to_some`:
+
+- **`SytEntryMono.lean`** (new, sorry-free) — `content_ne_of_succ`: consecutive
+  labels never share a diagonal (`d ≠ 0`). Row trichotomy on `p` vs `q`: same
+  row ⇒ same cell (contra); `q` above `p` ⇒ diagonal-mono contradiction
+  (`a+1 < a`); `p` above `q` ⇒ reduces to `p` = `q`'s diagonal predecessor, then
+  the between-cell `(p₁, p₂+1)` carries an entry strictly between `a` and `a+1`.
+  Also lifts `entryLtDiagSucc` / `entryLtOfDiagRowLt` to public lemmas.
+- **Strategic insight (recorded above, step 3):** every descent of `inv(π_T)` is
+  admissible for *any* `T₀` — same-row/col pairs map to ascents under
+  `cellLabel_{T₀}`. This removes the last-letter/Yamanouchi complication.
+- Remaining bricks on #3893: `d² ≠ 1` (same-row ⟺ gap +1 / same-col ⟺ gap −1),
+  the realization, the `inv` measure, and the WF induction.
+- **Lean gotcha logged:** `entryLtOfDiagRowLt` applied with `x := (a,b)` returns
+  a pair-projection conclusion `T.entry (a,b).1 (a,b).2` that `omega` treats as
+  an atom distinct from `T.entry a b`; ascribe the result to a clean-typed
+  `have` (defeq) before feeding `omega`.
