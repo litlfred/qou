@@ -20,10 +20,10 @@ export default conjecture({
   ],
   authorNotes: [
     {
-      kind: "caveat",
+      kind: "refined-framing",
       date: "2026-07-18",
       body:
-        "**Critical-exponent inconsistency + Hausdorff-dim reconciliation (self-similar clause now re-scoped).** (i) DONE — item 3 re-scoped from continuous backward-self-similar to *discretely* self-similar ($s$-periodic), the continuous case being excluded by Nečas–Růžička–Šverák (Acta Math. 176, 1996); see `prop:leray-profile`. (ii) The critical exponent $\\alpha$ is over-determined, not undetermined: the corpus boxes $\\alpha = 4/3$ (cascade-depth, `p2-critical-exponent`) while the Gronwall bound in the same file gives $\\alpha = 1$; the dissipation closure $\\varepsilon = \\nu_q\\Omega$ also gives $\\alpha = 1$ (Lean `enstrophy_alpha_one_of_dissipation_closure`). Each value is conditional on its named closure; none is rigorous. (iii) The Hausdorff claim $d_H = 2$ should be reconciled with the Caffarelli–Kohn–Nirenberg parabolic bound $\\le 1$. The three obstructions are motivation (energy-supercriticality of 3D NS), not proof ingredients. Remaining (ii)/(iii) tracked under bean `qou-15gb`.",
+        "Three audit-2026-07-18 findings landed. (i) Item 3 re-scoped from continuous backward-self-similar to *discretely* self-similar ($s$-periodic), the continuous case excluded by Nečas–Růžička–Šverák (Acta Math. 176, 1996); see `prop:leray-profile`. (ii) The critical exponent $\\alpha$ is now presented as closure-dependent, not a single boxed value: $\\alpha = 1$ (dissipation closure $\\varepsilon = \\nu_q\\Omega$, Lean `enstrophy_alpha_one_of_dissipation_closure`) vs $\\alpha = 4/3$ (Kolmogorov cascade), neither rigorous — see `p2-critical-exponent`. (iii) Item 2 now flags the $d_H = 2$ (spatial) vs Caffarelli–Kohn–Nirenberg (parabolic $\\le 1$) reconciliation as a required, not-yet-carried-out step. The three obstructions remain motivation (energy-supercriticality of 3D NS), not proof ingredients. Bean `qou-15gb`.",
       see: "../../../../docs/audits/2026-07-18-q-ns-classical-gap-decomposition.md",
     },
   ],
