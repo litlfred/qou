@@ -269,3 +269,17 @@ Two single-output producers that READ input witnesses (the harder tail):
   stamp-path scripts (unused var).
 Both: exit 0, keys/assertions preserved, prov triple. PROV_MISSING 255→253.
 Sandbox-clean tail now ~single digits; remainder is native/multi-emit/deuteron.
+
+## 2026-07-18 — batch 19 (3 scripts, stamp) — wlambda_* deltalambda cluster
+3 assertion-bearing deltalambda/wlambda_* probes via stamp_staleness_metadata:
+wlambda_jet_tower_connected_probe, wlambda_level_selection_kA_probe,
+wlambda_wstd_growth_bound_probe. All exit 0 (needed `pip install numpy` —
+hecke_characters imports it; ordinary sandbox dep, NOT a native blocker),
+keys+assertions preserved, all 3 confirmed PROV_OK in the audit. jet_tower's
+output is read by deltalambda_extensivity_gap_synthesis_probe — migration is
+data-preserving (meta-only add), consumer re-run exit 0. Skipped
+wlambda_transfer_matrix_connected (dep=3, native) + wlambda_nuclear_braid
+(reads q-pinning, needs stamp+manual upstream — defer). NOTE: absolute
+PROV_MISSING count is noisy (corpus grew 1868→1947 from concurrent main
+landings); per-witness PROV_OK confirmation is the reliable check, not the
+aggregate. gotcha #10: hecke_characters needs numpy in-sandbox.

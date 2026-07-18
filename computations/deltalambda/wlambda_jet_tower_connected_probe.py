@@ -157,6 +157,12 @@ def main() -> int:
             "scope": "mechanism triage; positive redirect; no fit; no wiring; no closure; does NOT set k(A)",
         },
     }
+    import sys as _sys  # noqa: E402 — P30 rollup (bean cmiy)
+    _sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "substrate"))
+    from witness_base import WitnessBuilder  # noqa: E402
+    # Payload carries a top-level `assertions` mapping → stamp preserves it.
+    WitnessBuilder.stamp_staleness_metadata(witness, script_path=__file__, engine="python")
+    witness["scriptFile"] = os.path.basename(__file__)
     out = os.path.join(_HERE, "wlambda-jet-tower-connected.witness.json")
     with open(out, "w") as f:
         json.dump(witness, f, indent=2)
