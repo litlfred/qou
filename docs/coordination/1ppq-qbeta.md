@@ -1586,6 +1586,7 @@ confirmed from the amplitude too); the OPEN piece is the deformation Im at u≠0
 (= the meridian↔Q_β map, conj:algebraic-geometric-dilog-equivalence) — NOT a √3
 amplitude. Corrects the "√3-graded bar-odd Stokes constant" phrasing two entries
 up. No c_k wired; scope-(a); no fit.
+
 **2026-07-18 (post-#3930) — 5₂ PORT: exact saddle data + the FALSIFIABLE
 odd-phase targets for the #3892 ladder (Lean-proved curve layer).** The
 completed 4₁ machinery ported to GGM §6.1's 5₂: deformed curve derived
@@ -1607,3 +1608,20 @@ pair); ι̃_13/ι̃_23 → poles with |arg − kinematic| up to 2.683 rad vs the
 4₁ null floor 9.2e-9 — a NONZERO intrinsic pole phase is predicted for
 the 5₂ σ3-pairs, exactly the odd-channel carrier the 4₁ null excluded.
 Forward predictions only; nothing fitted; nothing wired. No c_k wired.
+
+**2026-07-18 (#3938) — the ħ↔2πi/N wall is LOAD-BEARING: Kashaev fluctuation
+tower ≠ b-tower phase law; #3923's 4₁ odd-phase null cannot be term-by-term
+cross-confirmed from the Kashaev frame (but agrees qualitatively).** Item-1
+re-scope after #3923 landed (4₁ deformed Stokes amplitude real; b-tower phase law
+κ̃_n=ρ_n·ωⁿ, ω=e^{−i·arctan(t/π)}). Distinct route
+(`qbeta_kashaev_vs_btower_phase_distinction_probe.py`, 2/2): the Kashaev-saddle
+Wick fluctuation tower deformed to the substrate tilt μ=i·t gives arg(κ_n^K)
+tiny/positive (~+0.0003→+0.012), **not** the b-tower's −n·arctan(t/π). The two
+towers relate by resummation, not term-by-term — the Kashaev route cannot
+term-by-term confirm the null; b-tower amplitudes (r̃, #3805/#3898/#3923) and
+Kashaev-frame numbers are NOT interchangeable (category-error guard). Qualitative
+agreement: the Kashaev per-rung phase stays below the kinematic magnitude
+arctan(t/π), so both frames see only weak odd phase in the deformed 4₁ tower.
+Net: the 4₁ lane is #3923's (COMPLETE); the open frontier is the non-amphichiral
+5₂-class lane (#3892/#3902 — where my 5₂ quantum volume was found anchor-smooth).
+No c_k wired; scope-(a); no fit.
