@@ -3,7 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:magic-numbers-from-q",
   title:
-    "Magic numbers emerge from per-partition nuclear character at $q_0$",
+    "Wedderburn nuclear character signal at $q_0$ is elevated at the magic numbers",
   tags: [
     "magic-numbers",
     "shell-closure",
