@@ -1366,3 +1366,23 @@ label-independent and stands. The complete classical Jones bar-odd datum
 V(5₂)_odd is O(0.1) at q₀, anchor-smooth (swing 6.4e-8), ~1e7× above N_odd ⇒ NOT
 the swing (prune); the bar-odd HOME. Step 1 (anchor-dependent 𝔙_q(5₂)) is the
 swing test. No c_k; no fit; scope-(a).
+
+**2026-07-18 (#3902) — Step 1: 5₂ quantum volume 𝔙_q(5₂) computed — ANCHOR-SMOOTH,
+the decisive non-amphichiral negative.** 5₂ complex volume via the Neumann–Zagier
+saddle (Hikami 0604094 §4.2 eq 4.13), deformed to the substrate meridian at both
+anchors (`qbeta_5two_quantum_volume_probe.py`, 2/2). Vol(5₂)=2.82812208833
+VALIDATED at the m=1 geometric saddle (12 digits vs SnapPy). 5₂ chiral: Re 𝔙=1.91
+≠ 0 (CS-partner), unlike amphichiral 4₁. **The decisive test:** the
+anchor-DEPENDENT quantum volume — the one object `no_anchor_invariant_realizes
+_swing` does NOT exclude — has max |d𝔙/dq| = 1.47, i.e. ANCHOR-SMOOTH (O(1)),
+~6 orders below the 3.84e6 the S-swing needs. So even a chiral knot's
+anchor-dependent quantum volume cannot supply the swing. **Overarching
+conclusion:** the bar-odd swing is carried by NO smooth geometric/topological
+object — 4₁ deformed median resummation (smooth/anchor-blind, directly computed
+#3813), classical CS / Stokes integer (anchor-invariant, prune), and now 5₂
+quantum volume (anchor-smooth O(1), computed) — all fail. The swing is
+intrinsically the 1/u³ inversion of a smooth numerator N_odd crossing zero at q*
+(`BarOddLadderShape`), pinned by experimental Q_β. The ONE locus where
+amplification could still live: the substrate meridian tuned to an A-polynomial
+branch point (the near-singular q₀→u map, `conj:algebraic-geometric-dilog-
+equivalence` — the standing open conjecture). No c_k; no fit; scope-(a).
