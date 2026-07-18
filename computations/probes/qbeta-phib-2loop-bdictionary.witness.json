@@ -1,0 +1,63 @@
+{
+  "computation": "qbeta-phib-2loop-bdictionary",
+  "description": "The \u03a6_b odd b-dictionary at the substrate: bar-parity = the \u221a3-grading of the 4\u2081 cusp trace field \u211a(\u221a3); the bar-odd b-dictionary is the closed-form \u03ba_odd subladder {\u03ba_1,\u03ba_3,\u03ba_5,\u03ba_7}; trace-field compatibility with F1's exact D-ladder d_k=a_k+b_k\u221a3 (G2 parity + q-Gevrey band); leading rung = corpus i\u00b7t\u00b7\u03ba_1. scope-(a); d\u2194\u03ba bridge open.",
+  "audit_only": true,
+  "tier": "symbolic-exact + numerical (trace-field / growth-order)",
+  "computedAt": "2026-07-18T13:35:05.271914+00:00",
+  "commitSha": "85bd878db935409ba29749e9c56c17367fe5f96a",
+  "engine": "sympy+mpmath",
+  "engineVersion": "sympy 1.14.0, mpmath 1.3.0",
+  "scriptFile": "qbeta_phib_2loop_bdictionary_probe.py",
+  "scriptHash": "e53a9731fc46",
+  "assertions": [
+    {
+      "name": "kappa_ladder_parity_is_sqrt3_grading",
+      "passed": true,
+      "source": "\u03ba_odd \u2208 \u211a\u00b7\u221a3\u00b7\u03c0\u207f (bar-odd under t\u2194\u2212t), \u03ba_even \u2208 \u211a\u00b7\u03c0\u207f (bar-even) \u2014 the geometric fluctuation ladder's number-field grading IS the substrate-assembly bar-parity"
+    },
+    {
+      "name": "dladder_in_trace_field_Q_sqrt3",
+      "passed": true,
+      "source": "every bar-odd D-ladder rung d_k = a_k + b_k\u00b7\u221a3 exactly (build_d_ladder over-determination odd_ok); same \u211a(\u221a3) as \u03ba"
+    },
+    {
+      "name": "dladder_G2_2adic_parity_grading",
+      "passed": true,
+      "source": "v\u2082(den b_k)=0 \u27fa k odd (2 the unique graded prime) \u2014 the D-ladder's bar-parity on the \u221a3-part (regression of #3861 G2)"
+    },
+    {
+      "name": "dladder_odd_k_is_sqrt3_dominant_bar_odd",
+      "passed": true,
+      "source": "odd-k D-ladder rungs are \u221a3-DOMINATED (bar-odd), even-k \u211a-dominated (bar-even) \u2014 the G2 2-adic k-parity grading COINCIDES with the \u221a3 bar-parity of the cusp trace field, unifying #3861's grading with the geometric \u03ba-ladder grading"
+    },
+    {
+      "name": "leading_odd_bdictionary_is_it_kappa1",
+      "passed": true,
+      "computed": "(0.0 + 0.0578273459437j)",
+      "expected": "(0.0 + 0.0578273459437j)",
+      "source": "leading odd b-dictionary rung assembled at the substrate = i\u00b7t\u00b7\u03ba_1, the corpus finite-b correction"
+    }
+  ],
+  "allPassed": true,
+  "result": {
+    "kappa_odd_subladder": {
+      "1": "11*sqrt(3)*pi/108",
+      "3": "1081*sqrt(3)*pi**3/21870",
+      "5": "110011*sqrt(3)*pi**5/688905",
+      "7": "32729683*sqrt(3)*pi**7/26572050"
+    },
+    "dladder_rungs": 21,
+    "dladder_odd_raw_gevrey_median_tail": 0.70217,
+    "dladder_odd_raw_gevrey_decreasing": true,
+    "A_prime_qstar_over_kappa1": "4.279194355",
+    "verdict": "ESTABLISHED: the bar-parity split of the \u03a6_b substrate assembly \u03a3(it)\u207f\u03ba_n is EXACTLY the \u221a3-grading of the 4\u2081 cusp trace field \u211a(\u221a3) \u2014 the bar-ODD b-dictionary is the closed-form \u221a3-subladder {\u03ba_1,\u03ba_3,\u03ba_5,\u03ba_7}. F1's exact bar-odd D-ladder d_k = a_k + b_k\u221a3 shares that trace field, and \u2014 the unifying finding \u2014 its odd-k rungs are \u221a3-DOMINATED (bar-odd) while even-k are \u211a-dominated (bar-even), so the G2 2-adic k-parity grading COINCIDES with the \u221a3 bar-parity. The odd-k \u221a3-dominated rungs are F1's \u00c9calle-acceleration target (mild q-Gevrey order per #3861). The leading odd rung assembles at the substrate to the corpus finite-b correction i\u00b7t\u00b7\u03ba_1. This pins the GEOMETRIC generating object F1 should accelerate (the \u221a3-graded \u03ba_odd subladder) and its trace-field compatibility with the D-ladder; the d\u2194\u03ba normalization (the meridian\u2194Q_\u03b2 map) stays the OPEN keystone bridge \u2014 characterized, NOT asserted. \u0127\u21942\u03c0i/N: perturbative \u03ba_n only. NO fit; NO c_k wired; NO tier change; scope-(a)."
+  },
+  "context": {
+    "axis": "\u03a6_b 2-loop b-dictionary (F1 unowned input; bean qou-jzrf)",
+    "kappa_source": "qbeta-phib-saddle-fluctuation-transseries (C6 exact \u03ba_1..\u03ba_7)",
+    "dladder_source": "qbeta_dladder_generating_function_structure_probe.build_d_ladder (exact d_k, \u211a(\u221a3))",
+    "qgevrey_reference": "#3861 odd D-ladder single order ~0.07-0.09 (k=31)",
+    "finite_b_rung1": "i\u00b7t\u00b7\u03ba_1 in qbeta_c3_phib_saddle_state_integral_probe.py",
+    "open_bridge": "d\u2194\u03ba normalization = meridian\u2194Q_\u03b2 map (conj:algebraic-geometric-dilog-equivalence)"
+  }
+}
