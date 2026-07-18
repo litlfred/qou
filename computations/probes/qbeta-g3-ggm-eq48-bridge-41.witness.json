@@ -1,0 +1,96 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-18T09:06:54.643361+00:00",
+  "commitSha": "b6ddbbe84ed295cd08897afd4c54d56a2e345984",
+  "assertions": [
+    {
+      "name": "integer_M_derived",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "M solved from 2 ray points is integer; wrong prefactor reading rejected by the same test"
+    },
+    {
+      "name": "holdout_point_verifies",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "held-out third ray point matches within the order-3 truncation estimate"
+    },
+    {
+      "name": "conjecture10_shape_integer",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "X = (W_-1(0)^T)^-1 M is an integer matrix"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 12,
+  "computation": "qbeta-g3-ggm-eq48-bridge-41",
+  "scriptFile": "qbeta_g3_ggm_eq48_bridge_41.py",
+  "scriptHash": "64b0854b0f33",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
+  },
+  "description": "A_omega step 3, u=0 calibration leg: numeric verification of GGM eq (48) for 4_1 at the substrate ray. Exact convergent G-series side vs order-3 exact asymptotic side; integer connection matrix M_I(0) DERIVED (not OCR-read, not fitted) and cross-checked against the Conjecture-10 W-transpose shape. Records the structural finding that the u=0 non-perturbative channel is ~1e-164 at the substrate while the deformed odd datum is O(1).",
+  "contentBlock": "conj:im-q-physical-role",
+  "data": {
+    "source": "uploads/2012.00062v3.pdf (GGM) eqs 37-48 + Conj 10",
+    "substrate": {
+      "t": "0.1043407203195195123159063",
+      "tau": "i*t/(2*pi)",
+      "log10_qtilde": "-164.31992"
+    },
+    "prefactor_scan": {
+      "3^(-1/4)/4": {
+        "max_int_dev": "1.28623e-5"
+      },
+      "1/(4*sqrt(3))": {
+        "max_int_dev": "0.264313"
+      }
+    },
+    "derived_M_I0": [
+      [
+        4,
+        -4
+      ],
+      [
+        4,
+        4
+      ]
+    ],
+    "conjecture10_X": [
+      [
+        0,
+        -4
+      ],
+      [
+        4,
+        -4
+      ]
+    ],
+    "holdout": {
+      "rel_residual": "7.6402495e-6",
+      "truncation_estimate": "5.7955469e-5"
+    },
+    "physics_note": "u=0 non-perturbative channel invisible at substrate (|q~|~1e-164); measured deformed Im V_b ~ 0.0585 is O(1); A_omega must be deformation-carried (u != 0)",
+    "verdict": "GGM eq-(48) bridge verified numerically at the substrate ray for 4_1 at u=0: the exact side (Theorem-9-certified G-series = the GK state-integral factorization) equals the integer-dressed asymptotic side with DERIVED integer matrix M_I(0) = [[4, -4], [4, 4]] (prefactor 3^(-1/4)/4 selected by integrality; held-out residual 7.64e-6 within the order-3 truncation estimate 5.8e-5; Conjecture-10 shape X = [[0, -4], [4, -4]] integer: True). Structural finding: at u=0 the substrate non-perturbative channel is |q~| ~ 1e-164 (invisible), while the measured deformed Im V_b ~ 0.0585 is O(1) — A_omega is deformation-carried. Calibration leg only; no A_omega identification claimed. Scope-(a); no fit; no c_k wired."
+  }
+}
