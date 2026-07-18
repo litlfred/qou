@@ -37,3 +37,20 @@ the concrete standard-YT type + seminormal-action model per partition supplying
 the `τ` (`i↔i+1` swap) and `ρ` (axial distance) the general theorem consumes,
 then the wire into the abstract `chiSigma`. This is the shared standard-YT base
 with #3719 — coordinate before building it in either branch.
+
+## 2026-07-18 — base-tableau brick complete (#3843)
+
+`QOU/BraidKnot/SytRowSuperstandard.lean` (new, sorry-free) — the OV
+base-tableau existence brick, complementary to this ledger's χ_λ thread:
+
+- `rowSuperstandardSsyt` (row-reading SSYT), `card_eq_sum_rowLen`
+  (`|μ.cells| = ∑_{i<colLen 0} rowLen i` via `cells = ⨆ rows`), the full
+  `BijOn` (MapsTo/InjOn/SurjOn), `rowSuperstandardStd : StandardYoungTableau μ`,
+  and `instNonemptyStandardYoungTableau`.
+- Also on #3843: `syt_adjacentSwap_connected` proved sorry-free via
+  `adjacentSwapStep_symm` (swap-symmetry de-abstraction), reducing the
+  `JucysMurphy.lean` OV debt to the one-directional `syt_all_connect_to_some`.
+- No file overlap with the `SeminormalCharacterConnector`/`SeminormalWeight`
+  χ_λ work; `seminormalVector_base_exists` left for that thread's `g_ρ` machinery.
+- Remaining for `syt_all_connect_to_some`: inversion measure + exchange step
+  (walk any SYT to `rowSuperstandardStd`).
