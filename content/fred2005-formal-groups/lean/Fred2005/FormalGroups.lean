@@ -128,7 +128,21 @@ structure NoncommutativeFormalGroup where
     the formal group law deformed by the bracket as multiplication,
     and the diagonal as comultiplication (group-like elements).
 
-    Reference: [fred2005, Main Theorem]. -/
+    Reference: [fred2005, Main Theorem].
+
+    NOTE (honest disposition, 2026-07-18; AUTHOR TO VERIFY): the witness below is a
+    *faithful* construction — the distribution algebra is `H.coordRing`, the
+    multiplication is the **bracket-deformed product** `mul x y = F(x, π_<(x,y))`,
+    and the comultiplication is the group-like diagonal (per the construction note
+    above). What this existence statement does NOT capture — and must not be read as
+    proving — is the substantive dissertation content: that this data assembles into
+    a genuine non-commutative formal group whose *full* `Dist(G)` satisfies strong
+    multiplicativity at every filtration degree (the diagonal comultiplication makes
+    `comul_hom` hold trivially, so the deep Frobenius-preservation claim is
+    elsewhere). That is [fred2005, Main Theorem], cited, not re-derived here.
+    (A statement pinning `G.mul` to the deformed product cannot be written directly:
+    `G.distAlgebra` is existentially abstract, so `G.mul` and the `H.coordRing`
+    function are not comparable without a carrier identification.) -/
 theorem skew_poisson_integrates
     (H : CommutativeFormalGroup)
     (π : SkewedPoissonStructure H) :
@@ -183,39 +197,53 @@ structure GrobnerShirshovBasis where
 /-- The Gröbner–Shirshov basis for `Dist(G)` exists and yields
     a flat deformation of `Dist(H)`.
 
-    The trivial basis (identity reduction) witnesses existence;
-    the non-trivial content is that the `q`-Serre relations form
-    a Gröbner–Shirshov system.
+    NOTE (honest disposition, 2026-07-18; AUTHOR TO VERIFY): the previous proof
+    discharged `∃ gsb, gsb.formalGroup = G` with the **trivial identity
+    reduction** (`reduce = embed = id`), which its own docstring admitted "the
+    non-trivial content is that the q-Serre relations form a Gröbner–Shirshov
+    system" — i.e. the witness did not capture the theorem. The conclusion is now
+    strengthened to require a **genuinely reductive** basis: distinct elements
+    share a normal form (`∃ a b, a ≠ b ∧ reduce a = reduce b`), which the identity
+    reduction does NOT satisfy, encoding that `Dist(G)` carries real (q-Serre)
+    relations. Constructing the divided-power / Lusztig canonical basis and
+    verifying the composition lemma (confluence) is [fred2005, Prop. 3.8 &
+    Thm 3.15]; it is stated here with `sorry`, cited, not re-derived.
 
     Reference: [fred2005, Proposition 3.8 and Theorem 3.15]. -/
 theorem grobner_shirshov_basis_exists
     (G : NoncommutativeFormalGroup) :
-    ∃ (gsb : GrobnerShirshovBasis), gsb.formalGroup = G :=
-  ⟨{ formalGroup := G
-     normalForms := G.distAlgebra
-     spans := ⟨G.unit⟩
-     reduce := id
-     embed := id
-     composition_lemma := fun _ => rfl }, rfl⟩
+    ∃ (gsb : GrobnerShirshovBasis),
+      gsb.formalGroup = G ∧
+      (∃ a b, a ≠ b ∧ gsb.reduce a = gsb.reduce b) := by
+  -- The non-trivial q-Serre normal-form basis on Dist(G) (divided-power / Lusztig
+  -- canonical basis) and the composition lemma (confluence) are the dissertation's
+  -- result, cited not re-derived:
+  -- Ref: [fred2005] Proposition 3.8 & Theorem 3.15
+  sorry
 
 /-! ## §6  Strong Multiplicativity Theorem -/
 
-/-- **Strong multiplicativity theorem**: the Frobenius relation is
-    preserved under the Gröbner–Shirshov deformation at every
-    filtration degree.
+/-- **Strong multiplicativity** of a non-commutative formal group: the
+    comultiplication is an algebra homomorphism, `Δ(xy) = Δ(x)·Δ(y)` componentwise.
 
-    This is the critical result ensuring that the co-multiplication
-    (encoding the gauge connection in the QOU) survives the passage
-    from characteristic `p` to characteristic `0`.
-
-    The proof extracts the `comul_hom` field from the non-commutative
-    formal group, which encodes [fred2005, Theorem 4.12].
+    NOTE (honest disposition, 2026-07-18; AUTHOR TO VERIFY): this is the
+    **defining `comul_hom` axiom** of `NoncommutativeFormalGroup`, restated as a
+    named accessor. The previous version carried unused `(gsb) (_hgsb)` hypotheses
+    and a docstring claiming it *proved* [fred2005, Thm 4.12] ("preserved under the
+    GS deformation at every filtration degree") — but the proof was `:= G.comul_hom`,
+    a projection of `G`'s own axiom, using neither hypothesis. The misleading
+    hypotheses and framing are removed: this lemma asserts only that a group *which
+    is* a `NoncommutativeFormalGroup` satisfies strong multiplicativity **by
+    definition**. The substantive dissertation result — that the *constructed*
+    `Dist(G)` (from `skew_poisson_integrates`) actually satisfies it, preserved at
+    every filtration degree — is [fred2005, Thm 4.12], cited there, and is NOT a
+    consequence of this accessor. (Expressing "at every filtration degree" needs a
+    filtered-deformation structure the current model does not carry — a genuine
+    follow-up for a fuller fred2005 formalization.)
 
     Reference: [fred2005, Theorem 4.12]. -/
 theorem strong_multiplicativity_holds
-    (G : NoncommutativeFormalGroup)
-    (gsb : GrobnerShirshovBasis)
-    (_hgsb : gsb.formalGroup = G) :
+    (G : NoncommutativeFormalGroup) :
     ∀ (x y : G.distAlgebra),
       G.comul (G.mul x y) =
       (G.mul (G.comul x).1 (G.comul y).1,
