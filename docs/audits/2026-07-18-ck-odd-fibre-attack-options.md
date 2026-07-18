@@ -76,6 +76,29 @@ principle — the open problem itself).
 
 ## Session results (updated as attacks land)
 
+- **A2 LANDED (derived odd-Stokes datum).**
+  [`qbeta_5two_stokes_barodd_index_probe.py`](../../computations/probes/qbeta_5two_stokes_barodd_index_probe.py)
+  + witness, 8/8: both 5₂ Stokes automorphisms `S⁺(q)`, `S⁻(q)` (GGM
+  2007.10190 eqs 29a/29b, 112–124, transcribed from the owner-supplied PDF)
+  evaluated at the substrate point `q = 1/q₀`. Gates: all 18 printed
+  H-series tables exact; `det W = 2`; assembled q→0 limits = the eq-100a/b
+  Stokes-constant products; `(0,0)` entry = `Ind^rot` (eq 102); `det S± = 1`;
+  **Conjecture 1(b) `S⁺ᵀ·S⁻ = 1` at 1.1e-37 with independently-assembled
+  matrices**. The odd chirality datum `O = ½(S⁺−S⁻)` is live:
+  **‖O‖_F = 2.107** — a derived, calibration-free fibre-level odd-Stokes
+  datum of the chiral 5₂ (4₁'s vanishes by amphichirality). Honest:
+  anchor-smooth (max slope 8.2e2 ≪ 3.84e6) — the odd *ingredient*, not the
+  swing. Structural finding: `Ind^rot_{5₂}` is **bar-EVEN** (eq 124) despite
+  5₂'s chirality — the naive "chiral index" intuition is wrong; the odd
+  channel lives in `S⁺ vs S⁻`, not in the index. Lesson: the Peacock eq-99
+  "towers" are per-ray radar factors, **not** entries of the assembled
+  matrix.
+- **Literature flag (for A4):** the printed 5₂ perturbative series carries a
+  **τ² misprint** — GGM eq 20 and Peacock eq 76 agree at τ¹, τ³ under the
+  generator map `z = ξ/(ξ−1)` but disagree irreconcilably at τ²
+  (machine-checked). Any A4 Borel work must first arbitrate c₂ from an
+  independent saddle expansion; do not blind-trust either printed value.
+
 - **A3 LANDED (falsification confirmed, scope-(a)).**
   [`qbeta_5two_capstone_carrier_falsification_probe.py`](../../computations/probes/qbeta_5two_capstone_carrier_falsification_probe.py)
   + witness, 6/6: the 5₂ NZ-saddle bar-odd datum
