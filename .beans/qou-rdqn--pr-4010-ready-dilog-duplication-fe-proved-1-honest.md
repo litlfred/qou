@@ -1,11 +1,11 @@
 ---
 # qou-rdqn
 title: 'PR #4010 READY: dilog duplication FE proved (1 honest cited sorry) — /prepare-merge'
-status: todo
+status: in-progress
 type: task
 priority: high
 created_at: 2026-07-18T23:14:01Z
-updated_at: 2026-07-18T23:14:01Z
+updated_at: 2026-07-18T23:18:09Z
 parent: qou-w1z0
 ---
 

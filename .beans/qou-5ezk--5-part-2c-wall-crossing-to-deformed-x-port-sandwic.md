@@ -1,11 +1,11 @@
 ---
 # qou-5ezk
 title: '5₂ part 2c: wall-crossing to deformed x — port sandwich onto #3951 Theorem-22 blocks; sharpen φ_odd'
-status: todo
+status: in-progress
 type: task
 priority: high
 created_at: 2026-07-18T23:14:41Z
-updated_at: 2026-07-18T23:14:41Z
+updated_at: 2026-07-18T23:18:08Z
 parent: qou-w1z0
 ---
 
