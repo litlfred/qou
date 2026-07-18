@@ -1,0 +1,41 @@
+{
+  "computation": "qbeta-habiro-odd-locus",
+  "description": "The odd-channel Habiro datum is located in the bar-asymmetry of the cyclotomic coefficient C_{K,n}: C_n(q)f\u2212C_n(q\u207b\u00b9)f = (C_n(q)\u2212C_n(q\u207b\u00b9))f (f bar-even). 4\u2081 C_n=1 \u21d2 zero odd datum; chiral C_n supplies it. 5\u2082 needs Masbaum's C_{5_2,n}. Lean: HabiroCyclotomicOddLocus. scope-(b).",
+  "audit_only": true,
+  "tier": "symbolic-exact (bar-parity locator)",
+  "computedAt": "2026-07-18T19:16:10.126747+00:00",
+  "commitSha": "dae44e73c115c8883676e3717eac8374e4c325ed",
+  "engine": "mpmath",
+  "engineVersion": "1.3.0",
+  "scriptFile": "qbeta_habiro_odd_locus_probe.py",
+  "scriptHash": "119fb8041912",
+  "assertions": [
+    {
+      "name": "odd_locus_identity",
+      "passed": true,
+      "source": "C(q)f(q)\u2212C(q\u207b\u00b9)f(q\u207b\u00b9)=(C(q)\u2212C(q\u207b\u00b9))\u00b7f(q) exactly, since the factor f is bar-even \u2014 the odd datum is the coefficient's bar-asymmetry (Lean: habiroTerm_bar_odd_eq_coeff_asymmetry)"
+    },
+    {
+      "name": "fourone_bar_even_zero_odd",
+      "passed": true,
+      "source": "C_n=1 is bar-symmetric \u21d2 zero bar-odd Habiro datum (bar-even tail; the #3970 \u03c0\u00b2/5 action is entirely bar-even)"
+    },
+    {
+      "name": "chiral_coeff_gives_nonzero_odd_datum",
+      "passed": true,
+      "source": "a bar-asymmetric cyclotomic coefficient produces a nonzero bar-odd Habiro datum equal to (C_n(q)\u2212C_n(q\u207b\u00b9))\u00b7f_n(q) \u2014 the odd channel is located in the coefficient asymmetry (demo with a toy C_n; the 5\u2082 coefficient is Masbaum's, to be derived)"
+    }
+  ],
+  "allPassed": true,
+  "result": {
+    "identity_max_err": "5.60519e-45",
+    "fourone_odd": "2.8026e-45",
+    "verdict": "LOCATED: the bar-odd (q\u2194q\u207b\u00b9 antisymmetric) content of any Kashaev/Habiro tail S_K(q)=\u03a3_n C_{K,n}(q)\u00b7f_n(q) is carried ENTIRELY by the cyclotomic coefficient's bar-asymmetry \u2014 C_n(q)f_n(q)\u2212C_n(q\u207b\u00b9)f_n(q\u207b\u00b9) = (C_n(q)\u2212C_n(q\u207b\u00b9))\u00b7f_n(q), since f_n is bar-even (Lean-proved). 4\u2081 has C_n=1 (bar-symmetric) \u21d2 zero odd datum (bar-even tail, the \u03c0\u00b2/5 action all-even); a chiral knot's bar-asymmetric C_{K,n} supplies the odd datum. So the Q_\u03b2 odd-channel resurgence (b3ix) lives in the cyclotomic-coefficient asymmetry \u2014 for 5\u2082 this is the Masbaum twist-knot coefficient C_{5_2,n}, the concrete next input (to be derived from that reference, not invented). scope-(b): a proved q\u2194q\u207b\u00b9 symmetry identity (Lean: HabiroCyclotomicOddLocus). NO fit; NO c_k wired."
+  },
+  "context": {
+    "axis": "b3ix odd-locus (continuation of #3970)",
+    "lean": "QOU.QBeta.HabiroCyclotomicOddLocus (habiroTerm_bar_odd_eq_coeff_asymmetry, sorry-free)",
+    "next_input": "5\u2082 cyclotomic coefficient C_{5_2,n} (Masbaum twist-knot formula) \u2014 to be derived, not invented",
+    "supports": "#3966 b3ix"
+  }
+}
