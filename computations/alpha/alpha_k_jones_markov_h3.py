@@ -211,6 +211,11 @@ out = {
         "expected": {"1": 1, "σ_1": float(z_mark), "σ_1σ_2": float(z_mark**2)}
     }
 }
+import sys as _sys  # noqa: E402 — P30 rollup (bean cmiy)
+_sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "substrate"))
+from witness_base import WitnessBuilder  # noqa: E402
+WitnessBuilder.stamp_staleness_metadata(out, script_path=__file__, engine="mpmath")
+out["scriptFile"] = Path(__file__).name
 out_path = Path(__file__).parent / "alpha-k-jones-markov-h3.witness.json"
 with open(out_path, "w") as fp:
     json.dump(out, fp, indent=2)

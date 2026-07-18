@@ -337,3 +337,10 @@ All stamp (var=witness, default=str preserved). Run with PYTHONPATH=. for probes
 CLEANUP: deleted orphan root copy computations/meson-lepton-knot-dictionary-probe.witness.json
 — stale duplicate, no producer (script writes to probes/ via Path(__file__).parent),
 no consumer; it was a permanent PROV_MISSING nothing could refresh. All 4 PROV_OK.
+
+## 2026-07-18 — batch 25 (interface + alpha, 2 scripts via stamp)
+- probes/interface_4body_assembly_probe (COMP-based, indent4, var=witness, mpmath)
+- alpha/alpha_k_jones_markov_h3 (module-level, var=out, mpmath)
+alpha needed pyhecke (Layer 2b) — pip install -e tools/pyhecke/ (0.1.1) in-env.
+This unblocks the remaining pyhecke-dependent tail (keystone_*, probe_q_beta_wenzl).
+Both PROV_OK, keys preserved.
