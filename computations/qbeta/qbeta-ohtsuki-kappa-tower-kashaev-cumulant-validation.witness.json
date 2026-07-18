@@ -1,0 +1,50 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-18T09:48:06.559643+00:00",
+  "commitSha": "fa5e8b7bcc1245e3ad9adef3429c4cd30d683fec",
+  "assertions": [
+    {
+      "name": "ohtsuki_kappa_tower_validated_as_kashaev_cumulants",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "All four corpus Ohtsuki κ_n reproduced as Kashaev-sum cumulants (complex-volume 𝔙_b=log Z coeffs) to rel err ≤ 2e-11 (κ₁ 1e-23); moment a₂ gives 0.885 ≠ κ₂=0.731 (the Z-vs-logZ category error). No fit; no c_k wired; L2 2/7."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 11,
+  "computation": "qbeta-ohtsuki-kappa-tower-kashaev-cumulant-validation",
+  "scriptFile": "qbeta_ohtsuki_kappa_tower_kashaev_cumulant_validation.py",
+  "scriptHash": "0a2e23d0a01b",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "First-principles validation of the corpus Ohtsuki κ-tower (κ₁=(11/108)√3π, κ₂=(2/27)π², κ₃=(1081/21870)√3π³, κ₄=(98/729)π⁴, derived #3628) from the raw Kashaev sum ⟨4₁⟩_N=Σ|(q)_k|². The κ_n are the CUMULANTS (complex-volume 𝔙_b=log Z coeffs): fitting log(⟨4₁⟩_N/[3^-1/4 N^3/2 e^{N Vol/2π}]) = Σ b_n(2π/N)^n by Vandermonde solve (260 dps, N≤51200, stable across fit order M=5..8) gives (2π)^n b_n = κ_n to rel 1e-23 (κ₁), 1e-18 (κ₂), 1e-14 (κ₃), 1e-11 (κ₄). Pins the moment-vs-cumulant (Z vs log Z) convention: the MOMENT a₂=b₂+b₁²/2 gives (2π)²a₂≈0.885 ≠ κ₂=0.731 (21% off) — a category error; only the cumulant b₂ reproduces κ₂. No fit (Vandermonde on exact Kashaev data); no c_k wired; L2 2/7. Independently validates #3628's tower (grounds the #3692 Borel resummation and the #3805/#3872 A_ω target).",
+  "data": {
+    "kappa1_corpus": 0.5542164724048999,
+    "kappa1_kashaev_cumulant": 0.5542164724048999,
+    "kappa1_rel_err": 9.838772869120093e-24,
+    "kappa2_corpus": 0.7310818074881006,
+    "kappa2_kashaev_cumulant": 0.7310818074881006,
+    "kappa2_rel_err": 7.606661942320663e-19,
+    "kappa3_corpus": 2.6545270569495454,
+    "kappa3_kashaev_cumulant": 2.6545270569495267,
+    "kappa3_rel_err": 7.092899240167624e-15,
+    "kappa4_corpus": 13.094774926381671,
+    "kappa4_kashaev_cumulant": 13.094774926652645,
+    "kappa4_rel_err": 2.0693279200028158e-11,
+    "kappa2_from_moment_wrong": 0.8846597566305662,
+    "cumulants_stable_across_fit_order": true
+  }
+}
