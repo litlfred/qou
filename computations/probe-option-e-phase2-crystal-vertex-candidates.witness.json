@@ -1,7 +1,7 @@
 {
   "computation": "option-e-phase2-crystal-vertex-candidates",
   "auditOnly": true,
-  "description": "Option-E PROBE 4 cheap pass: tests four crystal-vertex-weight candidate rules for \u0394_\u03bb at H_6 / deuteron against the empirical target. Reads canonical witness data only. NOT a fit. Asserts refutation (expected-negative).",
+  "description": "Option-E PROBE 4 cheap pass: tests four crystal-vertex-weight candidate rules for Δ_λ at H_6 / deuteron against the empirical target. Reads canonical witness data only. NOT a fit. Asserts refutation (expected-negative).",
   "timestamp_utc": "2026-06-02T16:37:18.967801+00:00",
   "inputs": {
     "h6_gram_witness": "option-e-phase1-gram-h6.witness.json",
@@ -17,7 +17,7 @@
   },
   "candidates": {
     "A_longest_word_char": {
-      "description": "\u0394_\u03bb = \u03c7^\u03bb(w_0): character at longest word (#1697 direct)",
+      "description": "Δ_λ = χ^λ(w_0): character at longest word (#1697 direct)",
       "S_candidate": "-0.007362189963010553373714733565995380470519752301252539286880587429060908",
       "rel_err_vs_target": "0.9983088516345333825062689701535759730128739130255831636037871086797403",
       "closes_within_10pct": false,
@@ -102,7 +102,7 @@
       ]
     },
     "B_longest_word_abs": {
-      "description": "\u0394_\u03bb = |\u03c7^\u03bb(w_0)|: magnitude of longest-word character",
+      "description": "Δ_λ = |χ^λ(w_0)|: magnitude of longest-word character",
       "S_candidate": "0.9023970392867565514514668855891357767535175788120712784872733870607247",
       "rel_err_vs_target": "1.20728713679749501654384214029756054915737338621036111650201956180936",
       "closes_within_10pct": false,
@@ -187,7 +187,7 @@
       ]
     },
     "C_sign_times_dim": {
-      "description": "\u0394_\u03bb = sgn(\u03c7^\u03bb(w_0)) \u00b7 dim_\u03bb: sign carried by trivial-equiv channel, magnitude by SYT count",
+      "description": "Δ_λ = sgn(χ^λ(w_0)) · dim_λ: sign carried by trivial-equiv channel, magnitude by SYT count",
       "S_candidate": "-1.459570123338501684166276707780537964368341566604301632186309234299473",
       "rel_err_vs_target": "0.6647261696900772909903769849818885669226706174283338338142306296671932",
       "closes_within_10pct": false,
@@ -272,7 +272,7 @@
       ]
     },
     "D_peak_w0_diag": {
-      "description": "\u0394_\u03bb = max_i |\u03c1_\u03bb(w_0)_{ii}|: peak weight in the Hoefsmit-seminormal w_0 diagonal",
+      "description": "Δ_λ = max_i |ρ_λ(w_0)_{ii}|: peak weight in the Hoefsmit-seminormal w_0 diagonal",
       "S_candidate": "0.7599751674053651268507981724739265237211792474439703832279174169594115",
       "rel_err_vs_target": "1.1745718011366341475854699021716623004738091097709202490999755263747",
       "closes_within_10pct": false,
@@ -363,10 +363,18 @@
       "expected_closes": false,
       "actual_closes": false,
       "passed": true,
-      "note": "Negative-shape assertion: all four cheap candidates miss the deuteron target by \u2265 10%. If this assertion FAILS, one of the candidates accidentally closed and we have a POSITIVE finding to escalate."
+      "note": "Negative-shape assertion: all four cheap candidates miss the deuteron target by ≥ 10%. If this assertion FAILS, one of the candidates accidentally closed and we have a POSITIVE finding to escalate."
     }
   ],
   "allPassed": true,
-  "verdict": "ALL FOUR cheap candidates REFUTED (consistent with both PR #1709's volume-Wedderburn refutation AND the upstream rho_w_crystal_vertex_trace.py result on main \u2014 regular-multiplicity \u03a3_w \u03c1_w = \u03c7^\u03bb does not close; four ad-hoc closed-form variants also do not close). Remaining live in-Option-E direction: full Kazhdan-Lusztig multiplicity machinery n^w_\u03bb (non-trivial KL multiplicities, not n^w_\u03bb = 1) summed across multiple vertices w \u2014 requires extending kazhdan_lusztig.py past its n \u2264 4 cap to S_6. Otherwise: pivot to GAP-A-3/A-4 per AGENTS.md \u00a7L2.",
-  "upstream_reference": "rho_w_crystal_vertex_trace.py (on main, design doc docs/audits/2026-05-31-rho-w-crystal-vertex-trace-design.md) implements the genuine per-vertex \u03c1_w from Hoefsmit/Young seminormal at first principles; its regular-multiplicity sum \u03a3_w \u03c1_w(K) collapses to \u03c7^\u03bb(\u03b2_K) by trace identity and is shown not to close. This probe complements that work by testing four ad-hoc closed-form variants that ARE NOT \u03a3_w \u03c1_w; results refute the closed-form direction as well."
+  "verdict": "ALL FOUR cheap candidates REFUTED (consistent with both PR #1709's volume-Wedderburn refutation AND the upstream rho_w_crystal_vertex_trace.py result on main — regular-multiplicity Σ_w ρ_w = χ^λ does not close; four ad-hoc closed-form variants also do not close). Remaining live in-Option-E direction: full Kazhdan-Lusztig multiplicity machinery n^w_λ (non-trivial KL multiplicities, not n^w_λ = 1) summed across multiple vertices w — requires extending kazhdan_lusztig.py past its n ≤ 4 cap to S_6. Otherwise: pivot to GAP-A-3/A-4 per AGENTS.md §L2.",
+  "upstream_reference": "rho_w_crystal_vertex_trace.py (on main, design doc docs/audits/2026-05-31-rho-w-crystal-vertex-trace-design.md) implements the genuine per-vertex ρ_w from Hoefsmit/Young seminormal at first principles; its regular-multiplicity sum Σ_w ρ_w(K) collapses to χ^λ(β_K) by trace identity and is shown not to close. This probe complements that work by testing four ad-hoc closed-form variants that ARE NOT Σ_w ρ_w; results refute the closed-form direction as well.",
+  "scriptHash": "597b8fc13964",
+  "scriptCommitSha": "unknown",
+  "commitSha": "6365f51b0d3d47b312850b42a14e1dcb5d143bc2",
+  "engine": "mpmath",
+  "computedAt": "2026-07-18T19:19:22.253912+00:00",
+  "durationMs": 0,
+  "engineVersion": "mpmath 1.3.0",
+  "scriptFile": "probe_option_e_phase2_crystal_vertex_candidates.py"
 }

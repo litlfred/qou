@@ -1,9 +1,9 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11",
-  "computedAt": "2026-06-17T02:11:30.591938+00:00",
+  "computedAt": "2026-07-18T19:19:20.129965+00:00",
   "computation": "option-e-deuteron-delta-lambda-probe",
-  "description": "Option E candidate \u0394_\u03bb rules tested against AME deuteron binding energy via Path-D mass prediction. Companion to QOU.OptionE.DeuteronVerification Lean infrastructure.",
+  "description": "Option E candidate Δ_λ rules tested against AME deuteron binding energy via Path-D mass prediction. Companion to QOU.OptionE.DeuteronVerification Lean infrastructure.",
   "scriptFile": "option_e_deuteron_delta_lambda_probe.py",
   "precisionMetadata": {
     "compute_dps": 50,
@@ -510,6 +510,10 @@
     "rel_error_pct": "65.598893126824692683991162694082834715102386519815",
     "closes_within_10pct": false
   },
-  "verdict": "FAILS \u2014 all 7 candidate rules miss AME 10% threshold",
-  "honest_assessment": "These are 7 simple substrate-derived rules. None is the canonical Option E rule (which requires crystal-graph depth from explicit SYT enumeration + Brundan-Kleshchev lift). The probe verifies the verification harness works and quantifies how far simple rules are from closure."
+  "verdict": "FAILS — all 7 candidate rules miss AME 10% threshold",
+  "honest_assessment": "These are 7 simple substrate-derived rules. None is the canonical Option E rule (which requires crystal-graph depth from explicit SYT enumeration + Brundan-Kleshchev lift). The probe verifies the verification harness works and quantifies how far simple rules are from closure.",
+  "scriptHash": "cf2d5a4546e4",
+  "scriptCommitSha": "unknown",
+  "commitSha": "6365f51b0d3d47b312850b42a14e1dcb5d143bc2",
+  "durationMs": 0
 }

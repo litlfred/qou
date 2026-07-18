@@ -1,10 +1,10 @@
 {
   "engine": "python3/mpmath+numpy",
   "engineVersion": "50dps",
-  "computedAt": "2026-05-26T15:04:51Z",
+  "computedAt": "2026-07-18T19:19:16.897866+00:00",
   "computation": "delta-lambda-bar-involution-multi-atom",
   "scriptFile": "delta_lambda_bar_involution_probe.py",
-  "description": "\u0394_\u03bb with bar-involution (\u0394_\u03bb = \u0394_{\u03bb^T}) + minimum-norm selection on the deuteron. Reduces 11 free params to 8 via conjugate-pair identification. Single-atom minimum-norm gives the unique smallest-L2 bar-symmetric \u0394.",
+  "description": "Δ_λ with bar-involution (Δ_λ = Δ_{λ^T}) + minimum-norm selection on the deuteron. Reduces 11 free params to 8 via conjugate-pair identification. Single-atom minimum-norm gives the unique smallest-L2 bar-symmetric Δ.",
   "data": {
     "n_self_conjugate": 1,
     "n_conjugate_pairs": 5,
@@ -92,17 +92,17 @@
     "B_D_predicted_MeV": -2952.1389868895894,
     "B_D_AME_MeV": 2.22452,
     "option_E_comparison": {
-      "description": "Option E (\u0394_\u03bb = principal specialization) vs bar-inv min-norm",
+      "description": "Option E (Δ_λ = principal specialization) vs bar-inv min-norm",
       "cosine_similarity": -0.512,
       "option_E_sum_yc_delta": 614.83,
       "target": -4.3534,
-      "verdict": "RULED OUT \u2014 wrong sign by 140x, opposite direction (cos=-0.51)",
+      "verdict": "RULED OUT — wrong sign by 140x, opposite direction (cos=-0.51)",
       "option_E_all_positive": true,
       "min_norm_mixed_sign": true
     },
     "gap_decomposition": {
-      "description": "The \u00d716 gap between signed-dim_q and target decomposes as color-tube \u00d7 trace \u00d7 factorial",
-      "formula": "gap \u2248 (1/|tr_M|) \u00d7 linking_weight_A \u00d7 sqrt([3]_q!) = 2.575 \u00d7 2.533 \u00d7 2.474 = 16.14",
+      "description": "The ×16 gap between signed-dim_q and target decomposes as color-tube × trace × factorial",
+      "formula": "gap ≈ (1/|tr_M|) × linking_weight_A × sqrt([3]_q!) = 2.575 × 2.533 × 2.474 = 16.14",
       "predicted_gap": 16.14,
       "observed_gap": 16.44,
       "miss_pct": 1.8,
@@ -124,5 +124,9 @@
       "passed": true
     }
   ],
-  "allPassed": true
+  "allPassed": true,
+  "scriptHash": "68265158b81d",
+  "scriptCommitSha": "unknown",
+  "commitSha": "6365f51b0d3d47b312850b42a14e1dcb5d143bc2",
+  "durationMs": 0
 }

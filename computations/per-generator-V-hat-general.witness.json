@@ -1,11 +1,11 @@
 {
-  "description": "per_generator_V_hat_general \u2014 Plancherel-weighted Wedderburn V\u0302_i for arbitrary H_n; applied to canonical lepton braids",
+  "description": "per_generator_V_hat_general — Plancherel-weighted Wedderburn V̂_i for arbitrary H_n; applied to canonical lepton braids",
   "computation": "per_generator_V_hat_general",
   "audit_only": true,
   "precision_dps": 50,
   "context": {
     "closes": "compute infra gap for individual leptons identified in docs/audits/2026-05-25-t6-f-ell-derivation-attempt.md",
-    "method": "Plancherel-weighted character sum V\u0302_i = \u03a3_\u03bb (d_q(\u03bb)\u00b2/[n]_q!) \u00b7 \u03c7_\u03bb(W_i) / d_\u03bb",
+    "method": "Plancherel-weighted character sum V̂_i = Σ_λ (d_q(λ)²/[n]_q!) · χ_λ(W_i) / d_λ",
     "generalises": "mass_at_3A_proper.per_generator_V_hat_3A (was atomic-only)"
   },
   "constants": {
@@ -14,7 +14,7 @@
     "z": "0.49932033403359825002067994493580750360052408362741"
   },
   "leptons": {
-    "electron \u03c3_1\u00b3 T(2,3) in H_2": {
+    "electron σ_1³ T(2,3) in H_2": {
       "n_strands": 2,
       "word": [
         [
@@ -47,7 +47,7 @@
         "total_mass_dim": "0.29449815487134439915567798133630021981195475346002"
       }
     },
-    "muon T(2,5) \u03c3_1\u2075 in H_2": {
+    "muon T(2,5) σ_1⁵ in H_2": {
       "n_strands": 2,
       "word": [
         [
@@ -90,7 +90,7 @@
         "total_mass_dim": "0.4830476335377178091779698529718368614444416406023"
       }
     },
-    "muon 4_1 (\u03c3_1\u03c3_2\u207b\u00b9)\u00b2 in H_3": {
+    "muon 4_1 (σ_1σ_2⁻¹)² in H_3": {
       "n_strands": 3,
       "word": [
         [
@@ -130,7 +130,7 @@
         "total_mass_dim": "1.8669350978364016672991886622865281141774744117448"
       }
     },
-    "tau T(2,7) \u03c3_1\u2077 in H_2": {
+    "tau T(2,7) σ_1⁷ in H_2": {
       "n_strands": 2,
       "word": [
         [
@@ -189,5 +189,13 @@
     "computed_value": 0.31643502548433217,
     "matches_within_001": false
   },
-  "timestamp": "2026-05-25T03:16:00+00:00"
+  "timestamp": "2026-05-25T03:16:00+00:00",
+  "scriptHash": "a19b7d1d9094",
+  "scriptCommitSha": "unknown",
+  "commitSha": "6365f51b0d3d47b312850b42a14e1dcb5d143bc2",
+  "engine": "mpmath",
+  "computedAt": "2026-07-18T19:19:21.839679+00:00",
+  "durationMs": 0,
+  "engineVersion": "mpmath 1.3.0",
+  "scriptFile": "per_generator_V_hat_general.py"
 }

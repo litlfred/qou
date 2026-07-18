@@ -1,9 +1,9 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11",
-  "computedAt": "2026-05-31T13:24:08.262923+00:00",
+  "computedAt": "2026-07-18T19:19:20.414470+00:00",
   "computation": "option-e-multi-isotope-delta-lambda-probe-v3",
-  "description": "Option E v3: extends v2's content_sum_negated rule to T and \u00b3He + tests 5 per-knot offset corrections derived from substrate data (no AME fitting). User insight: f should depend on the knot K, not just \u03bb.",
+  "description": "Option E v3: extends v2's content_sum_negated rule to T and ³He + tests 5 per-knot offset corrections derived from substrate data (no AME fitting). User insight: f should depend on the knot K, not just λ.",
   "scriptFile": "option_e_multi_isotope_delta_lambda_probe_v3.py",
   "precisionMetadata": {
     "compute_dps": 50,
@@ -236,5 +236,9 @@
     "name": "minus_dim_max_over_A",
     "max_rel_error_pct_across_atoms": 53.99737387185253,
     "uniform_closure_10pct": false
-  }
+  },
+  "scriptHash": "9ebe34352ed3",
+  "scriptCommitSha": "unknown",
+  "commitSha": "6365f51b0d3d47b312850b42a14e1dcb5d143bc2",
+  "durationMs": 0
 }

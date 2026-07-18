@@ -1,6 +1,6 @@
 {
   "computation": "bar-pairing-binding-observable-extension",
-  "description": "Extension of PR #1742's bar-pairing observable to T, \u00b3He, \u2074He using the PR #1748 patched Rust kernel.  Confirms or refutes the deuteron's 'mirror underbinds by ~70%' finding across the light series.",
+  "description": "Extension of PR #1742's bar-pairing observable to T, ³He, ⁴He using the PR #1748 patched Rust kernel.  Confirms or refutes the deuteron's 'mirror underbinds by ~70%' finding across the light series.",
   "results": [
     {
       "atom": "deuteron",
@@ -16,5 +16,12 @@
       "growth_channels_free": 4,
       "growth_channels_atom": 5
     }
-  ]
+  ],
+  "scriptHash": "1e9518e4eef9",
+  "scriptCommitSha": "unknown",
+  "commitSha": "6365f51b0d3d47b312850b42a14e1dcb5d143bc2",
+  "engine": "rust+mpmath",
+  "computedAt": "2026-07-18T19:19:16.105127+00:00",
+  "durationMs": 0,
+  "scriptFile": "bar_pairing_binding_observable.py"
 }

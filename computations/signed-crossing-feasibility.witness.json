@@ -19,7 +19,7 @@
     "n_close_with_edge_absence_of_4": 1,
     "deuteron_pn_bond_count_needed": "0.57191327489729785123527090678756852407598399242699",
     "verdict": "signed-ILP-pure-chirality-refuted",
-    "note": "pure chirality (signs only, canonical graph fixed) closes 0/4; adding edge absence (= edge selection, the fitting freedom) closes 1/4 \u2014 only 3He, via selection not signs. Deuteron needs 0.572 pn bonds (fractional)."
+    "note": "pure chirality (signs only, canonical graph fixed) closes 0/4; adding edge absence (= edge selection, the fitting freedom) closes 1/4 — only 3He, via selection not signs. Deuteron needs 0.572 pn bonds (fractional)."
   },
   "atoms": [
     {
@@ -126,5 +126,11 @@
       "prearchimedean_bond_factor.py",
       "ame-2020-binding-energies.witness.json"
     ]
-  }
+  },
+  "scriptHash": "e1bd6586cc3f",
+  "scriptCommitSha": "unknown",
+  "commitSha": "6365f51b0d3d47b312850b42a14e1dcb5d143bc2",
+  "computedAt": "2026-07-18T19:19:23.301804+00:00",
+  "durationMs": 0,
+  "scriptFile": "signed_crossing_feasibility_probe.py"
 }

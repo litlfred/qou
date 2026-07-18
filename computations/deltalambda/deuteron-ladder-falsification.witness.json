@@ -1,129 +1,134 @@
 {
- "computation": "deuteron-ladder-falsification",
- "description": "R10 falsification test of the R9 'resonance at k=A_light' reading. Deuteron ladder (6Li/10B/14N/18F, A_light=2) Model-G miss, computed with the SAME R8/R9 ledger (b + 14N reused from committed witnesses; 10B/18F/13C/17O deficits fresh from vendored AME2020). Pre-registered: resonance => peak at k=2; falsifier => peak at k=3 (fixed 3-alpha Brunnian onset). Result: peak at k=3 on the deuteron ladder AND the triton ladder AND the neutron (A_light=1) ladder \u2014 the peak is FIXED at k=3, does not track A_light; resonance FALSIFIED. R9's P1/P2 structural prunes stand. Falsification test, not a fit; nothing recomputed beyond the fresh AME deficits; nothing wired.",
- "audit_only": true,
- "computedAt": "2026-07-14T02:31:40.384356+00:00",
- "engine": "mpmath (witness-fed; no new tr_M compute)",
- "inputs": {
-  "model_G_source": "alpha-activation-brunnian.witness.json (committed; 6Li/14N/9Be misses reused, ledger reused)",
-  "R9_source": "saturating-shared-channel.witness.json (committed; the resonance reading under test)",
-  "b_linear_MeV_per_nucleon": {
-   "value": 0.7819231499999993,
-   "source": "alpha-activation-brunnian.witness.json inputs (committed R5-a; reused not re-fit)"
+  "computation": "deuteron-ladder-falsification",
+  "description": "R10 falsification test of the R9 'resonance at k=A_light' reading. Deuteron ladder (6Li/10B/14N/18F, A_light=2) Model-G miss, computed with the SAME R8/R9 ledger (b + 14N reused from committed witnesses; 10B/18F/13C/17O deficits fresh from vendored AME2020). Pre-registered: resonance => peak at k=2; falsifier => peak at k=3 (fixed 3-alpha Brunnian onset). Result: peak at k=3 on the deuteron ladder AND the triton ladder AND the neutron (A_light=1) ladder — the peak is FIXED at k=3, does not track A_light; resonance FALSIFIED. R9's P1/P2 structural prunes stand. Falsification test, not a fit; nothing recomputed beyond the fresh AME deficits; nothing wired.",
+  "audit_only": true,
+  "computedAt": "2026-07-18T19:19:17.270845+00:00",
+  "engine": "mpmath (witness-fed; no new tr_M compute)",
+  "inputs": {
+    "model_G_source": "alpha-activation-brunnian.witness.json (committed; 6Li/14N/9Be misses reused, ledger reused)",
+    "R9_source": "saturating-shared-channel.witness.json (committed; the resonance reading under test)",
+    "b_linear_MeV_per_nucleon": {
+      "value": 0.7819231499999993,
+      "source": "alpha-activation-brunnian.witness.json inputs (committed R5-a; reused not re-fit)"
+    },
+    "AME2020": "vendored via codata_constants._ame_binding_mev (10B/18F/13C/17O deficits — fresh)"
   },
-  "AME2020": "vendored via codata_constants._ame_binding_mev (10B/18F/13C/17O deficits \u2014 fresh)"
- },
- "pre_registration": {
-  "resonance_prediction": "deuteron ladder (A_light=2) peaks at k=2 (10B); miss(10B) > miss(14N) > miss(18F)",
-  "null_falsifier": "deuteron ladder peaks at k=3 (14N) again -> fixed 3-alpha Brunnian onset, independent of A_light",
-  "stated_before_fresh_compute": true
- },
- "deuteron_ladder_A_light_2": {
-  "6Li": {
-   "k": 1,
-   "miss_MeV": -0.0900877000000027
+  "pre_registration": {
+    "resonance_prediction": "deuteron ladder (A_light=2) peaks at k=2 (10B); miss(10B) > miss(14N) > miss(18F)",
+    "null_falsifier": "deuteron ladder peaks at k=3 (14N) again -> fixed 3-alpha Brunnian onset, independent of A_light",
+    "stated_before_fresh_compute": true
   },
-  "10B": {
-   "k": 2,
-   "miss_MeV": 2.807251400000003
+  "deuteron_ladder_A_light_2": {
+    "6Li": {
+      "k": 1,
+      "miss_MeV": -0.0900877000000027
+    },
+    "10B": {
+      "k": 2,
+      "miss_MeV": 2.807251400000003
+    },
+    "14N": {
+      "k": 3,
+      "miss_MeV": 5.818206550000011
+    },
+    "18F": {
+      "k": 4,
+      "miss_MeV": 1.6322717000000182
+    }
   },
-  "14N": {
-   "k": 3,
-   "miss_MeV": 5.818206550000011
+  "triton_ladder_A_light_3": {
+    "7Li": {
+      "k": 1,
+      "miss_MeV": 0.121852650000002
+    },
+    "11B": {
+      "k": 2,
+      "miss_MeV": 6.440395399999994
+    },
+    "15N": {
+      "k": 3,
+      "miss_MeV": 8.048504400000002
+    },
+    "19F": {
+      "k": 4,
+      "miss_MeV": 2.679224500000003
+    }
   },
-  "18F": {
-   "k": 4,
-   "miss_MeV": 1.6322717000000182
-  }
- },
- "triton_ladder_A_light_3": {
-  "7Li": {
-   "k": 1,
-   "miss_MeV": 0.121852650000002
+  "neutron_ladder_A_light_1": {
+    "9Be": {
+      "k": 2,
+      "miss_MeV": 0.0088526000000013
+    },
+    "13C": {
+      "k": 3,
+      "miss_MeV": 2.8379785000000086
+    },
+    "17O": {
+      "k": 4,
+      "miss_MeV": 1.3774358000000153
+    }
   },
-  "11B": {
-   "k": 2,
-   "miss_MeV": 6.440395399999994
+  "peak_locations": {
+    "deuteron_A_light_2": 3,
+    "triton_A_light_3": 3,
+    "neutron_A_light_1": 3,
+    "all_peak_at_k_3": true
   },
-  "15N": {
-   "k": 3,
-   "miss_MeV": 8.048504400000002
+  "peak_heights_at_k3_vs_A_light": {
+    "A_light_1_13C": 2.8379785000000086,
+    "A_light_2_14N": 5.818206550000011,
+    "A_light_3_15N": 8.048504400000002,
+    "note": "location fixed at k=3; amplitude grows ~ with A_light"
   },
-  "19F": {
-   "k": 4,
-   "miss_MeV": 2.679224500000003
-  }
- },
- "neutron_ladder_A_light_1": {
-  "9Be": {
-   "k": 2,
-   "miss_MeV": 0.0088526000000013
+  "cross_check": {
+    "deuteron_14N_dev_from_committed_R8_MeV": 0.0,
+    "deuteron_6Li_miss_MeV": -0.0900877000000027
   },
-  "13C": {
-   "k": 3,
-   "miss_MeV": 2.8379785000000086
+  "result": {
+    "peak_tracks_A_light_CONFIRMS": false,
+    "peak_fixed_at_3_FALSIFIES": true,
+    "verdict": "FALSIFIES"
   },
-  "17O": {
-   "k": 4,
-   "miss_MeV": 1.3774358000000153
-  }
- },
- "peak_locations": {
-  "deuteron_A_light_2": 3,
-  "triton_A_light_3": 3,
-  "neutron_A_light_1": 3,
-  "all_peak_at_k_3": true
- },
- "peak_heights_at_k3_vs_A_light": {
-  "A_light_1_13C": 2.8379785000000086,
-  "A_light_2_14N": 5.818206550000011,
-  "A_light_3_15N": 8.048504400000002,
-  "note": "location fixed at k=3; amplitude grows ~ with A_light"
- },
- "cross_check": {
-  "deuteron_14N_dev_from_committed_R8_MeV": 0.0,
-  "deuteron_6Li_miss_MeV": -0.0900877000000027
- },
- "result": {
-  "peak_tracks_A_light_CONFIRMS": false,
-  "peak_fixed_at_3_FALSIFIES": true,
-  "verdict": "FALSIFIES"
- },
- "scope_note": "scope-(a) correction of the R9 INTERPRETATION only. R9's P1 (additive non-negative cone) and P2 (monotone-saturating 1-prod class) structural prunes are NOT under test and STAND; the interior-maximum invariant holds on all three ladders. Only the 'resonance at k=A_light' reading is refuted.",
- "verdict": "FALSIFIED (scope-(a) correction of R9's interpretation). The deuteron ladder (fixed light cluster = deuteron, A_light=2) has Model-G miss [-0.090, 2.807, 5.818, 1.632] at k=[1,2,3,4], a strict interior maximum at k=3 (14N) \u2014 NOT at k=2 (10B) as the resonance-at-k=A_light reading predicted. The peak sits at the SAME k=3 as the triton ladder (A_light=3), and the neutron ladder (A_light=1) ALSO peaks at k=3 (13C), where the resonance shape is degenerate (no positive peak) \u2014 three ladders, three A_light values (1,2,3), one peak location k=3. The peak therefore does NOT track A_light; it is a FIXED-k=3 effect: the 3-alpha Brunnian onset (the k>=3 alpha.alpha gate turn-on of Model G). The 'resonance at k=A_light' INTERPRETATION from R9 is refuted. What A_light DOES control is the peak AMPLITUDE (k=3 heights ~2.8/5.8/8.0 MeV for A_light=1/2/3), not its location. R9's structural prunes P1 (additive non-negative cone) and P2 (monotone-saturating 1-prod class) are NOT under test and STAND \u2014 the interior-maximum invariant they rest on holds (indeed is strengthened) on all three ladders. This is a falsification test, not a fit: b and the ledger reused from committed witnesses; only the fresh AME deficits read. Nothing wired; no tier change.",
- "assertions": [
-  {
-   "label": "deuteron 14N miss reproduces the committed R8 value to < 1e-6 MeV",
-   "passed": true
-  },
-  {
-   "label": "deuteron 6Li miss ~ 0 (Model-G closed, |miss| < 0.15 MeV)",
-   "passed": true
-  },
-  {
-   "label": "deuteron ladder rises k=1->2->3 then falls k=3->4 (strict interior maximum)",
-   "passed": true
-  },
-  {
-   "label": "DECISIVE: deuteron ladder (A_light=2) peaks at k=3 (14N), NOT k=2 (10B) -> resonance-at-k=A_light FALSIFIED",
-   "passed": true
-  },
-  {
-   "label": "two-ladder cross-check: deuteron AND triton both peak at k=3 (peak does not track A_light)",
-   "passed": true
-  },
-  {
-   "label": "triangulation: neutron ladder (A_light=1) also peaks at k=3 (13C); resonance shape degenerate there",
-   "passed": true
-  },
-  {
-   "label": "all three ladders (A_light=1,2,3) peak at the SAME k=3 -> fixed 3-alpha Brunnian onset",
-   "passed": true
-  },
-  {
-   "label": "honest falsification: R9 resonance INTERPRETATION refuted; R9 P1/P2 structural prunes stand (not under test)",
-   "passed": true
-  }
- ],
- "allPassed": true
+  "scope_note": "scope-(a) correction of the R9 INTERPRETATION only. R9's P1 (additive non-negative cone) and P2 (monotone-saturating 1-prod class) structural prunes are NOT under test and STAND; the interior-maximum invariant holds on all three ladders. Only the 'resonance at k=A_light' reading is refuted.",
+  "verdict": "FALSIFIED (scope-(a) correction of R9's interpretation). The deuteron ladder (fixed light cluster = deuteron, A_light=2) has Model-G miss [-0.090, 2.807, 5.818, 1.632] at k=[1,2,3,4], a strict interior maximum at k=3 (14N) — NOT at k=2 (10B) as the resonance-at-k=A_light reading predicted. The peak sits at the SAME k=3 as the triton ladder (A_light=3), and the neutron ladder (A_light=1) ALSO peaks at k=3 (13C), where the resonance shape is degenerate (no positive peak) — three ladders, three A_light values (1,2,3), one peak location k=3. The peak therefore does NOT track A_light; it is a FIXED-k=3 effect: the 3-alpha Brunnian onset (the k>=3 alpha.alpha gate turn-on of Model G). The 'resonance at k=A_light' INTERPRETATION from R9 is refuted. What A_light DOES control is the peak AMPLITUDE (k=3 heights ~2.8/5.8/8.0 MeV for A_light=1/2/3), not its location. R9's structural prunes P1 (additive non-negative cone) and P2 (monotone-saturating 1-prod class) are NOT under test and STAND — the interior-maximum invariant they rest on holds (indeed is strengthened) on all three ladders. This is a falsification test, not a fit: b and the ledger reused from committed witnesses; only the fresh AME deficits read. Nothing wired; no tier change.",
+  "assertions": [
+    {
+      "label": "deuteron 14N miss reproduces the committed R8 value to < 1e-6 MeV",
+      "passed": true
+    },
+    {
+      "label": "deuteron 6Li miss ~ 0 (Model-G closed, |miss| < 0.15 MeV)",
+      "passed": true
+    },
+    {
+      "label": "deuteron ladder rises k=1->2->3 then falls k=3->4 (strict interior maximum)",
+      "passed": true
+    },
+    {
+      "label": "DECISIVE: deuteron ladder (A_light=2) peaks at k=3 (14N), NOT k=2 (10B) -> resonance-at-k=A_light FALSIFIED",
+      "passed": true
+    },
+    {
+      "label": "two-ladder cross-check: deuteron AND triton both peak at k=3 (peak does not track A_light)",
+      "passed": true
+    },
+    {
+      "label": "triangulation: neutron ladder (A_light=1) also peaks at k=3 (13C); resonance shape degenerate there",
+      "passed": true
+    },
+    {
+      "label": "all three ladders (A_light=1,2,3) peak at the SAME k=3 -> fixed 3-alpha Brunnian onset",
+      "passed": true
+    },
+    {
+      "label": "honest falsification: R9 resonance INTERPRETATION refuted; R9 P1/P2 structural prunes stand (not under test)",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "scriptHash": "ff4998d1b7fc",
+  "scriptCommitSha": "unknown",
+  "commitSha": "6365f51b0d3d47b312850b42a14e1dcb5d143bc2",
+  "durationMs": 0,
+  "scriptFile": "deuteron_ladder_falsification_probe.py"
 }

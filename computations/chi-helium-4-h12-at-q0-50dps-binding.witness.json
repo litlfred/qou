@@ -960,5 +960,12 @@
     }
   ],
   "gate_vs_f64_atomic_same_word_max_rel": "7.5441967e-14",
-  "y_lambda_source": "y-lambda-at-q0.witness.json (canonical); was _load_y_lambda (off ~8e-7)"
+  "y_lambda_source": "y-lambda-at-q0.witness.json (canonical); was _load_y_lambda (off ~8e-7)",
+  "scriptHash": "212c59d7c56f",
+  "scriptCommitSha": "unknown",
+  "commitSha": "6365f51b0d3d47b312850b42a14e1dcb5d143bc2",
+  "engine": "rust+mpmath",
+  "computedAt": "2026-07-18T19:19:16.625330+00:00",
+  "durationMs": 0,
+  "scriptFile": "chi_4he_binding_lossless.py"
 }

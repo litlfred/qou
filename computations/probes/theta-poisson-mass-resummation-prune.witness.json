@@ -1,6 +1,6 @@
 {
   "computation": "theta-poisson-mass-resummation-prune",
-  "description": "Prune probe: framework Markov-trace MASS observables (fixed n) are NOT theta-shaped \u2014 their q-exponent supports are content/hook-based (dense, non-quadratic gaps), so direct Poisson/theta resummation does not apply. The theta self-duality (positive control) lives only in a quadratic-lattice sum. Bridge to root-of-unity requires reindexing the whole H_n(q) tower, not the fixed-n observable.",
+  "description": "Prune probe: framework Markov-trace MASS observables (fixed n) are NOT theta-shaped — their q-exponent supports are content/hook-based (dense, non-quadratic gaps), so direct Poisson/theta resummation does not apply. The theta self-duality (positive control) lives only in a quadratic-lattice sum. Bridge to root-of-unity requires reindexing the whole H_n(q) tower, not the fixed-n observable.",
   "criterion": "theta_compatible = (sorted exponent support has constant positive second difference, i.e. lies on {a n^2 + b n + c}); needs >= 4 points.",
   "objects": {
     "proton_J_numerator": {
@@ -72,5 +72,12 @@
       "theta_compatible": true
     }
   },
-  "verdict": "REFUTED for fixed-n mass observables; theta structure confined to the control (quadratic lattice). Poisson/theta bridge is NOT a fixed-n resummation."
+  "verdict": "REFUTED for fixed-n mass observables; theta structure confined to the control (quadratic lattice). Poisson/theta bridge is NOT a fixed-n resummation.",
+  "scriptHash": "67c1fc4f205e",
+  "scriptCommitSha": "unknown",
+  "commitSha": "6365f51b0d3d47b312850b42a14e1dcb5d143bc2",
+  "engine": "python",
+  "computedAt": "2026-07-18T19:19:23.575689+00:00",
+  "durationMs": 0,
+  "scriptFile": "theta_poisson_mass_resummation_prune.py"
 }
