@@ -1,5 +1,6 @@
 import Mathlib.Analysis.SpecialFunctions.Log.Basic
 import Mathlib.Topology.Algebra.InfiniteSum.Basic
+import Mathlib.NumberTheory.ZetaValues
 import Mathlib.Tactic
 
 
@@ -177,6 +178,20 @@ theorem log_neg_factor_split (w : ℝ) (hw : 1 < w) :
     inversion constant. -/
 theorem LiTwo_one_eq_tsum : LiTwo 1 = ∑' k : ℕ, (1 : ℝ) / ((k : ℝ) + 1) ^ 2 := by
   unfold LiTwo
+  simp
+
+/-- **The cusp value is `ζ(2) = π²/6`.** Closes the last analytic input of the
+    Part-B derivation: the residual `LiTwo 1` left after the pole-subtraction and
+    the `T_w` Frobenius truncation is the Basel constant, obtained here from
+    Mathlib's `hasSum_zeta_two` (Basel problem, `∑' n:ℕ, 1/n² = π²/6`) by splitting
+    off the vanishing `n = 0` term.  This is the extended-Bloch / Rogers regulator
+    constant `ζ(2) = Li₂(1)` that Part B identifies as the (quantum-)dilogarithm
+    inversion constant. -/
+-- Ref: [manuscript] conj:dilogarithm-archimedean-limit
+theorem LiTwo_one : LiTwo 1 = Real.pi ^ 2 / 6 := by
+  rw [LiTwo_one_eq_tsum, ← hasSum_zeta_two.tsum_eq,
+      hasSum_zeta_two.summable.tsum_eq_zero_add]
+  push_cast
   simp
 
 end QOU.QPochhammer
