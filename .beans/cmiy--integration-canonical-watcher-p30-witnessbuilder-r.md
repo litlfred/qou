@@ -352,3 +352,10 @@ Both PROV_OK, keys preserved.
 - keystone_wlambda_ladder_higher_rungs (var=witness, already __file__-relative)
 All exit 0, keys preserved, PROV_OK, no nested computations/computations/ stray.
 Coordinated-with: keystone epic 08a2 (mechanical witness wiring only, no math touched).
+
+## 2026-07-18 — batch 27 (deltalambda-probes pair via stamp)
+- probes/h6_deuteron_free_word_chi_lambda_probe (var=out, here/.. → computations/)
+  — needed qou_substrate (Layer 2a); pip install -e tools/qou-substrate/ (0.1.2)
+- probes/delta_lambda_m_pi_constraint_probe (var=witness, HERE=probes)
+Both PROV_OK, keys preserved. Env now has snappy + pyhecke + qou_substrate installed,
+which covers the runtime deps for the remaining qbeta tail.
