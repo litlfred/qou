@@ -60,6 +60,9 @@ set_compute_dps()
 
 # DGG eq (4.20): I_41(1,1) = −q −q² +2q³ +7q⁴ +11q⁵ +11q⁶ +3q⁷ (q-coeffs, q^1..q^7)
 ANCHOR_420_QCOEF = {1: -1, 2: -1, 3: 2, 4: 7, 5: 11, 6: 11, 7: 3}
+# GGM 2007.10190 eq (80)/(61): the ROTATED index = geometric Stokes entry
+#   S⁺_{σ1σ1}(q) = Σ_e I_41(0,e)(q) = 1 −8q −9q² +18q³ +46q⁴ +90q⁵ +62q⁶
+ROTATED_INDEX_QCOEF = {0: 1, 1: -8, 2: -9, 3: 18, 4: 46, 5: 90, 6: 62}
 
 
 def prod2(s1, s2, order):
@@ -178,11 +181,27 @@ def main() -> int:
     got00 = " ".join(f"{('+' if q00.get(p,0)>=0 else '')}{q00.get(p,0)}q^{p}"
                      for p in range(0, 8))
     print(f"\n  I_41(0,0) q^0..q^7 : {got00}")
-    print("\n  [substrate numerical eval deferred: the flux sum converges only in "
-          "the COLLECTED q-series (individual I_Δ factors carry formal q^{-e₂²} "
-          "pieces that cancel per q-order), so a numerical value needs a "
-          "high-order exact assembly — not required for the coefficient↔Stokes "
-          "A_ω tranche, which consumes the coefficient series above.]")
+
+    # ---- (5) coefficient↔Stokes dictionary (documented; GGM cited) ----
+    # GGM 2007.10190 eq (5)/(80): S⁺_{σ1σ1}(q) = Ind^rot(q) = Σ_e I_41(0,e)(q),
+    # = 1−8q−9q²+18q³+46q⁴+90q⁵+62q⁶. Numerically reproducing this from the
+    # assembly requires each I_41(0,e) to higher INTERNAL order than the target
+    # (shifted-charge factors carry very negative leading degree — same subtlety
+    # as the single-flip symmetry), so a clean e-sum reproduction is deferred;
+    # the identification itself is GGM's theorem (cited), not re-derived here.
+    print(f"\n  coefficient↔Stokes dictionary (GGM 2007.10190 eq 80, cited):")
+    print(f"    S⁺_σ1σ1(q) = Σ_e I_41(0,e) = 1 −8q −9q² +18q³ +46q⁴ +90q⁵ +62q⁶")
+    print(f"    → leading (classical) Stokes constant of 4₁ = 3  (S⁻(0)=[[1,0],[-3,1]])")
+    print(f"    [e-sum numerical reproduction deferred: needs per-e higher "
+          f"internal order — truncation-sensitive, like the single-flip symmetry]")
+
+    print("\n  [STRUCTURAL VERDICT: 4₁ is AMPHICHIRAL ⇒ CS = 0 at the u=0 complete "
+          "structure (V(σ1)=i·Vol, purely imaginary; GGM 2012.00062 eq 41). The "
+          "u=0 4₁ Stokes data (integer 3, rotated index) is BAR-EVEN/real — it "
+          "does NOT carry the bar-odd c₃ anchor (~0.0097/−0.0395). The bar-odd A_ω "
+          "requires the DEFORMED (u≠0) state-integral median resummation (not "
+          "in-repo) or a non-amphichiral knot. 2·Vol(4₁)=4.06 ≈ |ratio −4.0751| "
+          "(0.38%) is anti-numerology — NOT wired.]")
 
     # ---- assertions ----
     wb.add_assertion("dgg_anchor_4_20_reproduced",
@@ -198,7 +217,6 @@ def main() -> int:
                      computed=1.0 if sym_ok else 0.0, expected=1.0, tolerance=0.5,
                      source="mirror symmetry I41(m,e)=I41(-m,-e) for (1,1) and "
                             "(2,1) through q^{ORD//2-2} (DGG eq 4.19, amphichiral 4₁)")
-
     ok = all(a.passed for a in wb.assertions)
     wb.add_data("I41_1_1_qcoef", {str(p): q11.get(p, 0) for p in range(1, 16)})
     wb.add_data("I41_0_0_qcoef", {str(p): q00.get(p, 0) for p in range(0, 16)})
@@ -209,19 +227,44 @@ def main() -> int:
                 "qbeta_g3_fourone_index_assembly.py (merged #3826): the open "
                 "verdict was tet_norm under-summing → spurious negative lead → "
                 "convergent sum wrongly rejected; NOT a missing charge dictionary")
-    wb.add_data("A_omega_next_tranche",
-                "the A_ω VALUE needs the coefficient↔Stokes dictionary (GGM "
-                "2012.00062 Peacock patterns): classical Stokes matrix "
-                "S0=[[1,0],[-3,1]] → load-bearing integer 3; the precise "
-                "'which I41 coefficient ↔ which Stokes constant' map is open")
+    wb.add_data("stokes_dictionary_resolved", {
+        "geometric_entry": "S+_σ1σ1(q) = Σ_e I41(0,e)(q) = rotated index "
+                           "(GGM 2007.10190 eq 5/80) = 1−8q−9q²+18q³+46q⁴+90q⁵+62q⁶",
+        "ggm_eq80_reference_qcoef": {str(p): ROTATED_INDEX_QCOEF[p] for p in ROTATED_INDEX_QCOEF},
+        "classical_stokes_constant": 3,
+        "e_sum_numerical_reproduction": "deferred — needs per-e higher internal "
+                           "order (shifted-charge truncation subtlety); "
+                           "identification is GGM's theorem, cited not re-derived"})
+    wb.add_data("bar_odd_structural_verdict", {
+        "scope_a": "the c₃ bar-odd real (~0.0097/−0.0395) is NOT read off the u=0 "
+                   "4₁ index: the Stokes constants are INTEGERS (3,−8,−9,46,…) and "
+                   "the q-series diverges at substrate q≈0.90 (growing coeffs)",
+        "scope_b_cited_invariant": "4₁ is AMPHICHIRAL ⇒ CS=0 at u=0 (V(σ1)=i·Vol "
+                   "purely imaginary, GGM 2012.00062 eq 41); the bar-odd/imaginary "
+                   "complex-volume datum is identically zero for the figure-eight "
+                   "at the complete structure — so the u=0 index CANNOT supply it",
+        "live_routes": "the bar-odd A_ω requires either (i) DEFORMED (u≠0) "
+                   "state-integral median/Borel resummation of Φ_b (machinery not "
+                   "in-repo; the winding/meridian face), or (ii) a non-amphichiral "
+                   "knot (e.g. 5₂, CS≠0) — consistent with the local-Φ_b-monodromy "
+                   "anchor-blind result (this PR) and MonodromyDatumRigidity",
+        "anti_numerology": "2·Vol(4₁)=4.0598 ≈ |ratio −4.0751| (0.38%) NOT wired; "
+                   "un-derived coincidence, flagged per AGENTS.md anti-fit"})
     wb.add_data("verdict",
-                ("4₁ TOTAL 3D-INDEX ASSEMBLED + VALIDATED. DGG eq (4.18) on the "
-                 "validated exact I_Δ engine reproduces the printed anchor (4.20) "
-                 "exactly, is window-stable (convergent), and satisfies the (4.19) "
-                 "amphichiral symmetry; substrate eval converges. This closes the "
-                 "'honestly open' state as a fixed numerical bug (not a missing "
-                 "formula). The A_ω value remains one tranche away (coefficient↔"
-                 "Stokes dictionary). No c_k; no fit; scope-(a)."
+                ("4₁ TOTAL 3D-INDEX ASSEMBLED + VALIDATED + STOKES DICTIONARY "
+                 "RESOLVED. DGG eq (4.18) on the validated exact I_Δ engine "
+                 "reproduces the printed anchor (4.20) exactly, is window-stable, "
+                 "and satisfies (4.19) amphichiral symmetry. The coefficient↔Stokes "
+                 "dictionary is GGM's theorem (2007.10190 eq 80, cited): "
+                 "S⁺_σ1σ1 = Σ_e I41(0,e) = 1−8q−9q²+18q³+46q⁴+…, classical constant "
+                 "3. Closes "
+                 "#3826's 'honestly open' state as a numerical bug. STRUCTURAL "
+                 "FINDING: the u=0 4₁ Stokes data is INTEGER-valued (classical "
+                 "constant 3) and BAR-EVEN — 4₁ amphichiral ⇒ CS=0 ⇒ the bar-odd "
+                 "c₃ anchor is NOT in the u=0 index (scope-(b), cited invariant). "
+                 "The bar-odd A_ω needs deformed-state-integral median resummation "
+                 "or a non-amphichiral knot. No c_k; no fit; 2·Vol coincidence not "
+                 "wired."
                  if ok else "INCONCLUSIVE — an assertion failed; inspect output."))
     wb.save()
     print(f"\n  all assertions passed: {ok}")
