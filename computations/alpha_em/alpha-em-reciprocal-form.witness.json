@@ -1,0 +1,81 @@
+{
+  "$schema": "https://litlfred.github.io/witness-schema/witness.schema.json",
+  "witnessVersion": "1.0",
+  "id": "alpha-em-reciprocal-form",
+  "description": "\u03b1_EM per-loop measure 1/(8\u03c0): reciprocal-form consolidation. Vol(J)=1 (unimodular) selects reading (H), excludes the covolume route (scope-(b)), and locates the wall as a single underived 1/2. scope-(a) partial, auditOnly.",
+  "auditOnly": true,
+  "computation": {
+    "script": "computations/alpha_em/alpha_em_reciprocal_form_probe.py",
+    "scriptCommitSha": "484c86462f9b238c40449a1835fb39acb1f352a2",
+    "scriptHash": "9c7e344e4c03"
+  },
+  "inputs": {
+    "genus": 4,
+    "betti1": 8,
+    "det_intersection_form": 1,
+    "jacobian_covolume": 1
+  },
+  "controls": [
+    {
+      "name": "intersection_form_dim",
+      "pass": true,
+      "detail": "Q is 8\u00d78"
+    },
+    {
+      "name": "intersection_form_unimodular",
+      "pass": true,
+      "detail": "det Q = 1 (unimodular)"
+    },
+    {
+      "name": "jacobian_covolume_is_one",
+      "pass": true,
+      "detail": "Vol(J) = \u221a|det Q| = 1"
+    },
+    {
+      "name": "betti1_is_8",
+      "pass": true,
+      "detail": "b\u2081 = 2g = 8"
+    }
+  ],
+  "assertions": [
+    {
+      "name": "derived_1loop_is_quarter_over_pi",
+      "pass": true,
+      "detail": "heat-kernel (4\u03c0)^{-1} \u00d7 Vol(J)=1 \u21d2 derived 1-loop measure = 1/(4\u03c0)"
+    },
+    {
+      "name": "derived_is_factor_2_from_target",
+      "pass": true,
+      "detail": "1/(4\u03c0) = 2 \u00d7 1/(8\u03c0) \u2014 the derived object is a factor 2 LARGER than data"
+    },
+    {
+      "name": "readings_agree_numerically",
+      "pass": true,
+      "detail": "(4\u03c0)\u00b72 = \u03c0\u00b7b\u2081 = 8\u03c0 (both readings coincide in value)"
+    },
+    {
+      "name": "determinant_structure_selects_H",
+      "pass": true,
+      "detail": "the 1-loop determinant carries the heat-kernel base 4\u03c0 (derived #3909) and Vol(J)=1 shows it is undressed \u21d2 reading (H) [(4\u03c0)\u00b72] is structural; the bare-\u03c0-per-sector reading (P) does not match a determinant"
+    },
+    {
+      "name": "residual_2_not_a_covolume",
+      "pass": true,
+      "detail": "scope-(b): the intersection form is UNIMODULAR (det=1) \u21d2 Vol(J)=1 carries no factor 2; the residual multiplicity is NOT a lattice/covolume effect (cite: Poincar\u00e9-duality unimodularity, #3895)"
+    },
+    {
+      "name": "wall_is_single_half",
+      "pass": true,
+      "detail": "data/derived = 1/(8\u03c0) \u00f7 1/(4\u03c0) = 1/2 \u2014 the ENTIRE underived residual is a single factor 1/2, located between the derived heat-kernel-on-unimodular-Jacobian 1/(4\u03c0) and the data 1/(8\u03c0)"
+    },
+    {
+      "name": "half_origin_open",
+      "pass": true,
+      "detail": "the 1/2 is NOT derived \u2014 candidate origins (photon 2 polarizations / real\u2295complex doubling #3920; \u03b8-graph symmetry factor; Gaussian exponent \u00bd) enumerated, none forced; a factor of 2 is trivially fittable \u21d2 claimed as OPEN, not closed"
+    }
+  ],
+  "allPass": true,
+  "verdict": "RECIPROCAL-FORM wall CONSOLIDATED (scope-(a) partial + one scope-(b) exclusion) \u2014 NOT closed. New structural input: Vol(J_Bring) = \u221a|det Q| = 1 (intersection form UNIMODULAR, Poincar\u00e9 duality, #3895). Consequences: (1) the 1-loop photon determinant on the moduli = heat-kernel (4\u03c0)^{-1} \u00d7 Vol(J)=1 = DERIVED 1/(4\u03c0), a factor 2 LARGER than the data 1/(8\u03c0); (2) this SELECTS reading (H) [(4\u03c0)\u00b72, heat-kernel base \u00d7 residual 2] over reading (P) [bare-\u03c0-per-sector], which #3920 left unselected \u2014 the determinant has the heat-kernel base, Vol=1 undresses it; (3) scope-(b) EXCLUSION: the residual factor 2 is NOT a Jacobian/lattice covolume (Vol(J)=1, unimodular); (4) the ENTIRE underived residual is a single factor 1/2, located precisely between the derived 1/(4\u03c0) and the data 1/(8\u03c0). The 1/2 origin (photon polarizations / real\u2295complex #3920; \u03b8-graph symmetry; Gaussian \u00bd) is enumerated but NOT derived \u2014 a factor of 2 is trivially fittable, so it is claimed OPEN. This does NOT derive 1/(8\u03c0); it consolidates the wall to a located 1/2 and excludes the covolume route. No CODATA read; no convention tuned; no \u03b1_k wired; no fit; 1/(8\u03c0) stays a phase-4 identification.",
+  "scope": "(a) partial + (b) exclusion \u2014 wall consolidated to a located 1/2; covolume route excluded; 1/2 origin open",
+  "antiLaundering": "no CODATA read; no convention tuned to 8\u03c0; Vol(J)=1 is Poincar\u00e9 duality, not chosen; 1/2 residual stated open"
+}
