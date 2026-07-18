@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-18T08:58:19.456733+00:00",
-  "commitSha": "38d22c1e607059ced96257de46e5273243565339",
+  "computedAt": "2026-07-18T09:14:41.281730+00:00",
+  "commitSha": "da5376ba3e1dbe708ed781246a8266867e7466d8",
   "assertions": [
     {
       "name": "qstar_reproduced_ladder_independent",
@@ -30,10 +30,10 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 30,
+  "durationMs": 487,
   "computation": "qbeta-c3-qstar-k31-repin",
   "scriptFile": "qbeta_c3_qstar_k31_repin_probe.py",
-  "scriptHash": "714bfd190f11",
+  "scriptHash": "3caddd6ab61d",
   "scriptCommitSha": "24072b139a379bfd0fd6a56479ec9272ea1c0107",
   "precisionMetadata": {
     "compute_dps": 70,
