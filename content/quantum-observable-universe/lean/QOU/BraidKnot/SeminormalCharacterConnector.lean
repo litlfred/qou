@@ -592,6 +592,128 @@ theorem card_rowClassGen_eq_colClassGen (h : μ.transpose = μ) (i : ℕ)
     exact ⟨Finset.mem_univ _, (sameRowGen_selfTranspose h i hi hi2 T).mpr hT.2⟩
   · exact selfTranspose_selfTranspose h
 
+/-! ### General generator `σ_i`: the off-diagonal swap involution `τ`
+
+The off-diagonal class `S_off^i` (`i, i+1` in different rows *and* different
+columns) carries the fixed-point-free involution that `fullCharacter_two_mul`
+consumes: the **value-swap** `i ↔ i+1`. Swapping the two values in a standard
+tableau yields a standard tableau **iff** `i, i+1` are off-diagonal (the classical
+elementary-transposition fact); the swap exchanges the cells of `i` and `i+1`, so
+it negates the generator axial distance `ρ` (`axialDistance_antisymm`). -/
+
+/-- The value transposition `i ↔ i+1` on `ℕ` (identity elsewhere). -/
+def swapSucc (i k : ℕ) : ℕ := if k = i then i + 1 else if k = i + 1 then i else k
+
+/-- `swapSucc i` is an involution. -/
+theorem swapSucc_involutive (i k : ℕ) : swapSucc i (swapSucc i k) = k := by
+  unfold swapSucc; split_ifs <;> omega
+
+/-- `swapSucc i` preserves strict order except on the transposed pair: if `a < b`
+    and `(a, b) ≠ (i, i+1)`, then `swapSucc i a < swapSucc i b`. -/
+theorem swapSucc_lt (i : ℕ) {a b : ℕ} (hab : a < b) (hne : ¬(a = i ∧ b = i + 1)) :
+    swapSucc i a < swapSucc i b := by
+  unfold swapSucc; split_ifs <;> omega
+
+/-- `swapSucc i` is a bijection of the value range `{1,…,n}` (it permutes `i, i+1`,
+    both in range). -/
+theorem swapSucc_bijOn_Icc (i n : ℕ) (hi : 1 ≤ i) (hi2 : i + 1 ≤ n) :
+    Set.BijOn (swapSucc i) (Set.Icc 1 n) (Set.Icc 1 n) := by
+  have hmaps : Set.MapsTo (swapSucc i) (Set.Icc 1 n) (Set.Icc 1 n) := by
+    intro k hk
+    rw [Set.mem_Icc] at hk ⊢
+    unfold swapSucc; split_ifs <;> omega
+  refine ⟨hmaps, ?_, ?_⟩
+  · intro a _ b _ hab
+    have := congrArg (swapSucc i) hab
+    rwa [swapSucc_involutive, swapSucc_involutive] at this
+  · intro k hk
+    exact ⟨swapSucc i k, hmaps hk, swapSucc_involutive i k⟩
+
+/-- **The value-swap `i ↔ i+1` as a semistandard tableau**, valid when `i, i+1` are
+    off-diagonal. Weak rows / strict columns survive the swap because within any
+    single row (resp. column) at most one of `i, i+1` appears (their cells differ in
+    that coordinate), so the swap never inverts an adjacent comparison. -/
+def swapSuccSsyt (T : StandardYoungTableau μ) (i : ℕ)
+    (hrow : (cellOf T i).1 ≠ (cellOf T (i + 1)).1)
+    (hcol : (cellOf T i).2 ≠ (cellOf T (i + 1)).2)
+    (hi : 1 ≤ i) : SemistandardYoungTableau μ where
+  entry a b := swapSucc i (T.entry a b)
+  zeros' := fun {a b} h => by
+    show swapSucc i (T.entry a b) = 0
+    rw [show T.entry a b = 0 from T.toSsyt.zeros h]
+    unfold swapSucc
+    rw [if_neg (by omega : ¬ ((0 : ℕ) = i)), if_neg (by omega : ¬ ((0 : ℕ) = i + 1))]
+  row_weak' := fun {r j1 j2} hj hcell => by
+    show swapSucc i (T.entry r j1) ≤ swapSucc i (T.entry r j2)
+    apply le_of_lt
+    apply swapSucc_lt i (T.row_strict hj hcell)
+    rintro ⟨e1, e2⟩
+    have hj1cell : (r, j1) ∈ μ := μ.up_left_mem (le_refl r) (le_of_lt hj) hcell
+    have hc1 : cellOf T i = (r, j1) :=
+      cellOf_eq_of_entry T ((YoungDiagram.mem_cells _).mpr hj1cell) e1
+    have hc2 : cellOf T (i + 1) = (r, j2) :=
+      cellOf_eq_of_entry T ((YoungDiagram.mem_cells _).mpr hcell) e2
+    exact absurd (by rw [hc1, hc2] : (cellOf T i).1 = (cellOf T (i + 1)).1) hrow
+  col_strict' := fun {r1 r2 c} hr hcell => by
+    show swapSucc i (T.entry r1 c) < swapSucc i (T.entry r2 c)
+    apply swapSucc_lt i (T.toSsyt.col_strict hr hcell)
+    rintro ⟨e1, e2⟩
+    have hr1cell : (r1, c) ∈ μ := μ.up_left_mem (le_of_lt hr) (le_refl c) hcell
+    have hc1 : cellOf T i = (r1, c) :=
+      cellOf_eq_of_entry T ((YoungDiagram.mem_cells _).mpr hr1cell) e1
+    have hc2 : cellOf T (i + 1) = (r2, c) :=
+      cellOf_eq_of_entry T ((YoungDiagram.mem_cells _).mpr hcell) e2
+    exact absurd (by rw [hc1, hc2] : (cellOf T i).2 = (cellOf T (i + 1)).2) hcol
+
+/-- **The value-swap `i ↔ i+1` as a standard tableau** (off-diagonal `i, i+1`). The
+    filling stays bijective: `swapSucc i` permutes the value range `{1,…,|μ|}`. -/
+def swapSuccSYT (T : StandardYoungTableau μ) (i : ℕ)
+    (hrow : (cellOf T i).1 ≠ (cellOf T (i + 1)).1)
+    (hcol : (cellOf T i).2 ≠ (cellOf T (i + 1)).2)
+    (hi : 1 ≤ i) (hi2 : i + 1 ≤ μ.cells.card) : StandardYoungTableau μ where
+  toSsyt := swapSuccSsyt T i hrow hcol hi
+  bijOn := by
+    have hfun : (fun c : ℕ × ℕ => (swapSuccSsyt T i hrow hcol hi).entry c.1 c.2)
+        = swapSucc i ∘ (fun c : ℕ × ℕ => T.toSsyt.entry c.1 c.2) := by funext c; rfl
+    rw [hfun]
+    exact (swapSucc_bijOn_Icc i μ.cells.card hi hi2).comp T.bijOn
+
+/-- The value-swap sends the cell of `i` to the cell of `i+1`. -/
+theorem cellOf_swapSuccSYT_i (T : StandardYoungTableau μ) (i : ℕ)
+    (hrow : (cellOf T i).1 ≠ (cellOf T (i + 1)).1)
+    (hcol : (cellOf T i).2 ≠ (cellOf T (i + 1)).2)
+    (hi : 1 ≤ i) (hi2 : i + 1 ≤ μ.cells.card) :
+    cellOf (swapSuccSYT T i hrow hcol hi hi2) i = cellOf T (i + 1) := by
+  have ei1 : (i + 1) ∈ Set.Icc 1 μ.cells.card := Set.mem_Icc.mpr ⟨by omega, hi2⟩
+  obtain ⟨hmem, hval⟩ := cellOf_spec T (exists_cell_entry T ei1)
+  apply cellOf_eq_of_entry _ hmem
+  show swapSucc i (T.entry (cellOf T (i + 1)).1 (cellOf T (i + 1)).2) = i
+  rw [hval]; unfold swapSucc; split_ifs <;> omega
+
+/-- The value-swap sends the cell of `i+1` to the cell of `i`. -/
+theorem cellOf_swapSuccSYT_i1 (T : StandardYoungTableau μ) (i : ℕ)
+    (hrow : (cellOf T i).1 ≠ (cellOf T (i + 1)).1)
+    (hcol : (cellOf T i).2 ≠ (cellOf T (i + 1)).2)
+    (hi : 1 ≤ i) (hi2 : i + 1 ≤ μ.cells.card) :
+    cellOf (swapSuccSYT T i hrow hcol hi hi2) (i + 1) = cellOf T i := by
+  have ei : i ∈ Set.Icc 1 μ.cells.card := Set.mem_Icc.mpr ⟨hi, by omega⟩
+  obtain ⟨hmem, hval⟩ := cellOf_spec T (exists_cell_entry T ei)
+  apply cellOf_eq_of_entry _ hmem
+  show swapSucc i (T.entry (cellOf T i).1 (cellOf T i).2) = i + 1
+  rw [hval]; unfold swapSucc; split_ifs <;> omega
+
+/-- **The value-swap negates the generator axial distance** `ρ`: it exchanges the
+    cells of `i` and `i+1`, and `axialDistance` is antisymmetric. This is the
+    `ρ(τ t) = −ρ t` hypothesis of `SeminormalWeight.two_mul_characterSum_eq`. -/
+theorem generatorRho_swapSuccSYT (T : StandardYoungTableau μ) (i : ℕ)
+    (hrow : (cellOf T i).1 ≠ (cellOf T (i + 1)).1)
+    (hcol : (cellOf T i).2 ≠ (cellOf T (i + 1)).2)
+    (hi : 1 ≤ i) (hi2 : i + 1 ≤ μ.cells.card) :
+    generatorRho (swapSuccSYT T i hrow hcol hi hi2) i = - generatorRho T i := by
+  unfold generatorRho
+  rw [cellOf_swapSuccSYT_i, cellOf_swapSuccSYT_i1]
+  exact axialDistance_antisymm _ _
+
 end Closure
 
 end QOU.BraidKnot.SeminormalCharacterConnector
