@@ -1693,3 +1693,19 @@ bar-odd carrier but NEITHER N_odd's zero NOR its slope; the A3 u³·smooth prefa
 must carry the zero at q* AND amplify the slope ~12× (not a passive
 normalization). scope-(a): raw σ3 alone; magnitude/shape mismatch, not ingredient
 exclusion — stays a valid carrier in the composed A3 form. No c_k wired; no fit.
+**2026-07-18 (bar-pair tranche) — EXACT 5₂ SUBSTRATE BAR-PAIR COMPUTED;
+raw split honestly DEGENERATE; the open step precisely localized.**
+`qbeta_g3_5two_barodd_substrate.py` (3/3 green): Theorem-22 Z₅₂ evaluated
+exactly at the substrate bar-pair (τ = it/2π and −τ, i.e. q₀-side vs
+q₀⁻¹) with the #3951-certified assembly; the substrate point sits EXACTLY
+on the block-pole lattice (x = q⁻² since u_sub = 2t) — handled by the
+entire-Z circle average; implementation certified by exact u-evenness
+(3e-44). HONEST FINDING: the raw bar-split is degenerate — the bar image
+is exponentially suppressed (|Z_q̄/Z_q| ~ 1e-30; the classical
+e^{V/2πiτ} prefactor flips exponent sign under τ→−τ), so D_odd ≈ D_even
+measures the classical asymmetry, not an intrinsic odd datum. Log-split
+recorded: 𝔏_odd = 34.4318219 + 2.2721850i. THE REMAINING OPEN STEP is
+now precisely localized: strip the classical exponential (the
+normalization derivation) from the bar-pair — with every exact
+ingredient on main (singularity positions #3944, term amplitudes #3951,
+the bar-pair here). No identification claimed; no fit; no c_k wired.
