@@ -1333,3 +1333,21 @@ just 7 printed) + the 25 annihilator equations. NOT claimed: identification
 of the integer 3 with the corpus A_ω normalization (step 3's residual test
 decides). Probe `qbeta_g3_ggm_stokes_41.py` → witness
 `qbeta-g3-ggm-stokes-41.witness.json` (3/3 green). No fit; no c_k wired.
+
+**2026-07-18 (#3872) — G3 STEP 3 (u=0 LEG) DONE: GGM eq-(48) bridge verified
+at the substrate; integer M_I(0) derived; A_ω is DEFORMATION-CARRIED.** The
+exact side (Theorem-9-certified G-series = GK state-integral factorization,
+eq 44) equals the integer-dressed Borel side (exact printed order-3 φ_σ1,
+eq 42; Φ_σ2(τ) = iΦ_σ1(−τ)) at τ = it/2π: connection matrix DERIVED from
+two ray points, integer to 1.3e-5 (= order-3 truncation floor),
+M_I(0) = [[4,−4],[4,4]]; wrong prefactor reading rejected by the same
+integrality test (dev 0.26); held-out point verifies; Conjecture-10 shape
+X = (W₋₁(0)ᵀ)⁻¹·M = [[0,−4],[4,−4]] exactly integer (4× the (56a) glyph —
+a pure normalization gauge). STRUCTURAL FINDING: at u=0 the substrate
+non-perturbative channel is |q̃| = e^{−4π²/t} ≈ 1e-164 — invisible — while
+the measured DEFORMED odd datum Im 𝔙̃_b ≈ 0.0585 (#3819) is O(1). So A_ω
+cannot be a u=0 Stokes effect: it is deformation-carried (u≠0), consistent
+with the ξ-frame phase law (#3819/#3826). Next: the deformed leg — GGM's
+x̃-dependent Stokes structure (§5) at the substrate meridian. Probe
+`qbeta_g3_ggm_eq48_bridge_41.py` → witness
+`qbeta-g3-ggm-eq48-bridge-41.witness.json` (3/3 green). No fit; no c_k wired.
