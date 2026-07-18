@@ -47,3 +47,25 @@ theorem meromorphicOrderAt_sharedPrefactor_balance
       = meromorphicOrderAt (P * Φ) x + meromorphicOrderAt Ψ x := by
   rw [meromorphicOrderAt_mul hP hΨ, meromorphicOrderAt_mul hP hΦ]
   abel
+
+/-- **Route-B step 2 (conclusion): order-difference periodicity.** Two solutions
+`Φ, Ψ` of the *same* first-order q-difference equation `f(·+c) = P·f` have their
+order-difference preserved by one `c`-shift:
+`ord Ψ (x+c) + ord Φ x = ord Φ (x+c) + ord Ψ x`, i.e. `ord Ψ − ord Φ` is
+`c`-periodic. Composes `meromorphicOrderAt_sharedPrefactor_balance` (proved) with
+the order-translation invariance `htr` — **brick (a)**, carried here as an
+explicit hypothesis (§3b-cond): a separate lemma
+`meromorphicOrderAt (g ∘ (·+c)) x = meromorphicOrderAt g (x+c)` will discharge it.
+Not axiomatized — `htr` is a genuine sub-hypothesis, proved elsewhere. -/
+theorem meromorphicOrderAt_orderDiff_shift
+    {Φ Ψ P : ℂ → ℂ} {x c : ℂ}
+    (hΦ : MeromorphicAt Φ x) (hΨ : MeromorphicAt Ψ x) (hP : MeromorphicAt P x)
+    (hΦeq : ∀ z, Φ (z + c) = P z * Φ z) (hΨeq : ∀ z, Ψ (z + c) = P z * Ψ z)
+    (htr : ∀ g : ℂ → ℂ, meromorphicOrderAt (fun z => g (z + c)) x
+                          = meromorphicOrderAt g (x + c)) :
+    meromorphicOrderAt Ψ (x + c) + meromorphicOrderAt Φ x
+      = meromorphicOrderAt Φ (x + c) + meromorphicOrderAt Ψ x := by
+  have eΦ : (fun z => Φ (z + c)) = P * Φ := funext hΦeq
+  have eΨ : (fun z => Ψ (z + c)) = P * Ψ := funext hΨeq
+  rw [← htr Ψ, ← htr Φ, eΨ, eΦ]
+  exact meromorphicOrderAt_sharedPrefactor_balance hΦ hΨ hP
