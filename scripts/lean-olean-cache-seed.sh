@@ -78,23 +78,34 @@ if [ "$PUSH" -ne 1 ]; then
   exit 0
 fi
 
-# 4. commit + force-push from an ISOLATED worktree — never touch the working
-#    branch (no stash/checkout dance on the active PR branch).
+# 4. commit + push from an ISOLATED worktree — never touch the working branch.
+#    INCREMENTAL: one commit per 90 MB part, pushed one at a time, so no single
+#    push exceeds the git server's request-size limit (a full-set single push of
+#    ~1.5 GB returns HTTP 413).  The first commit force-pushes (replacing the old
+#    seed history); each subsequent part fast-forwards.  FETCH_HEAD's tree still
+#    carries ALL parts, so the restore recipe (`git ls-tree FETCH_HEAD | grep
+#    part`) is unchanged.
 WT="$(mktemp -d)/seed-wt"
 git worktree add --detach -q "$WT"
-# move the split parts into the worktree
 mv lake-oleans.tgz.part* "$WT"/
 (
   cd "$WT"
   git checkout -q --orphan "seed-tmp-$SLUG"
   git reset -q --hard 2>/dev/null || true
   git rm -rf -q --cached . 2>/dev/null || true
-  # drop any tracked files carried into the orphan
   find . -maxdepth 1 -type f ! -name 'lake-oleans.tgz.part*' ! -name '.git' -delete 2>/dev/null || true
-  git add -f lake-oleans.tgz.part*
-  git commit -q -m "seed lean cache: qou+mathlib oleans @ $SLUG (fresh f897ebc rebuild incl ZetaValues cone)"
-  for i in 1 2 3 4; do git push -f origin "HEAD:$BR" && break || sleep $((2**i)); done
+  first=1
+  for p in $(ls lake-oleans.tgz.part* | sort); do
+    git add -f "$p"
+    git commit -q -m "seed lean cache @ $SLUG: $p (fresh f897ebc, incl ZetaValues cone)"
+    if [ "$first" = 1 ]; then
+      for i in 1 2 3 4; do git push -f origin "HEAD:$BR" && { first=0; break; } || sleep $((2**i)); done
+    else
+      for i in 1 2 3 4; do git push origin "HEAD:$BR" && break || sleep $((2**i)); done
+    fi
+    echo "  pushed $p"
+  done
 )
 git worktree remove --force "$WT" 2>/dev/null || true
 git branch -D "seed-tmp-$SLUG" 2>/dev/null || true
-echo "pushed $BR"
+echo "pushed $BR (incremental)"
