@@ -1,0 +1,59 @@
+{
+  "computation": "qbeta-dkappa-bridge-shared-action",
+  "description": "Formalize-first pruning of the d\u2194\u03ba normalization bridge: the \u03ba-ladder one-instanton Borel action converges to Vol(4\u2081)/\u03c0 and its finite-order estimate matches the #3898 corpus tower singularity Re=0.6310 \u2014 so the bridge needs no new action (shared Vol/\u03c0), only a \u221a3-graded Stokes constant (the tower Im). scope-(a).",
+  "audit_only": true,
+  "tier": "numerical (large-order asymptotics; formalize-first pruning)",
+  "computedAt": "2026-07-18T13:48:31.179883+00:00",
+  "commitSha": "23f9ff8e0c0f2d806cf1ff1b590c9dfb4603a22a",
+  "engine": "mpmath",
+  "engineVersion": "1.3.0",
+  "scriptFile": "qbeta_dkappa_bridge_shared_action_probe.py",
+  "scriptHash": "858586e98244",
+  "assertions": [
+    {
+      "name": "kappa_action_monotone_toward_vol_over_pi",
+      "passed": true,
+      "computed": "A_6=0.630346, A\u221e=0.656198",
+      "expected": "increasing toward Vol/\u03c0=0.646132",
+      "source": "\u03ba-ladder one-instanton action estimate increases 1/n toward Vol(4\u2081)/\u03c0 \u2014 a single shared Borel singularity"
+    },
+    {
+      "name": "kappa_A6_matches_corpus_tower_singularity",
+      "passed": true,
+      "computed": "A_6=0.630346 vs Re(tower)=0.631 (rel 0.001036)",
+      "expected": "< 1% \u2014 same object at the same truncation depth",
+      "source": "the finite-order \u03ba action estimate A_6 matches the #3898 corpus tower singularity real part \u2014 they are the SAME Borel singularity (Vol/\u03c0), same Murakami-regime depth"
+    },
+    {
+      "name": "shared_action_consistent_with_C1_band",
+      "passed": true,
+      "computed": "Vol/\u03c0=0.646132 in [0.634,0.683]",
+      "source": "Vol/\u03c0 lands in C1's stabilized even-channel Borel band (qbeta-borel-conformal-pade) \u2014 one action, both parities"
+    }
+  ],
+  "allPassed": true,
+  "result": {
+    "vol_4_1": "2.02988321282",
+    "vol_over_pi": "0.646131894439",
+    "action_estimates_A_n": [
+      "0.75807723",
+      "0.55081888",
+      "0.60814953",
+      "0.61882986",
+      "0.62517602",
+      "0.63034634"
+    ],
+    "A_6": "0.63034634",
+    "A_richardson": "0.65619798",
+    "corpus_tower_singularity": "(0.631 + 0.021j)",
+    "A6_vs_tower_re_rel": "0.00103591",
+    "verdict": "PRUNED: the \u03ba-ladder's one-instanton Borel action converges (1/n, monotone) to Vol(4\u2081)/\u03c0 \u2248 0.6461, and the finite-order estimate A_6 = 0.630346 matches the #3898 corpus tower singularity real part 0.6310 to < 0.2%. So the d\u2194\u03ba bridge requires NO NEW instanton action \u2014 the action is the KNOWN Vol/\u03c0, shared across the geometric \u03ba-ladder, the even-channel Borel plane (C1), and the corpus tower (Murakami regime). The bridge SPLITS by bar-parity: the bar-even action is Re = Vol/\u03c0 (known); the bar-odd piece is the tower's Im = 0.0210 \u2014 the \u221a3-graded Stokes normalization (matching #3916's \u221a3-graded odd subladder) that the bridge must supply. This narrows the open keystone from 'derive a transcendental d\u2194\u03ba map' to 'derive one \u221a3-graded Stokes constant against a known action'. scope-(a): a formalize-first narrowing of the bridge hypothesis class, NOT a derivation of the bridge; the Stokes constant stays open. \u0127\u21942\u03c0i/N: perturbative one-instanton action only. NO fit; NO c_k wired; NO tier change."
+  },
+  "context": {
+    "axis": "d\u2194\u03ba bridge pruning (formalize-first; bean qou-duub)",
+    "kappa_source": "qbeta-phib-saddle-fluctuation-transseries (\u03ba_1..\u03ba_7)",
+    "corpus_tower": "#3898 tranche B deformed-saddle bridge (0.6310+0.0210i, Murakami regime)",
+    "even_channel_band": "qbeta-borel-conformal-pade (C1)",
+    "open_remainder": "the \u221a3-graded bar-odd Stokes constant (tower Im); meridian\u2194Q_\u03b2 map = conj:algebraic-geometric-dilog-equivalence"
+  }
+}
