@@ -187,6 +187,10 @@ import QOU.BraidKnot.WedderburnSn
 -- ⟨Res^{S₃}_{S₂} V_(2,1), V_(2)⟩ = 1 proved by finite computation (GAP-1 closure
 -- path 2, docs/audits/2026-07-13-pion-radius-and-vol-to-radius-gaps.md).
 import QOU.BraidKnot.SpechtBranchingMultiplicityOne
+-- Integer-trace prune of the lever-1 "SL₂(ℤ) monodromy" framing: tr B ∈ (2,3) is
+-- non-integer, so no integral monodromy realizes it (scope-(b); uploaded-papers
+-- audit idea A3, 2026-07-18); the surviving object is an SL₂(ℝ) transfer family.
+import QOU.BraidKnot.TrBIntegerTracePrune
 
 /-!
 # BraidKnot — Module Index
