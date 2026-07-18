@@ -73,7 +73,12 @@ def main():
             "W_4_val": str(W4)
         }
     }
-    with open("computations/q-beta-c3-wenzl-decomposition.witness.json", "w") as f:
+    import sys as _sys  # noqa: E402 — P30 rollup (bean cmiy)
+    _sys.path.insert(0, str(HERE / "substrate"))
+    from witness_base import WitnessBuilder  # noqa: E402
+    WitnessBuilder.stamp_staleness_metadata(witness, script_path=__file__, engine="python")
+    witness["scriptFile"] = Path(__file__).name
+    with open(HERE / "q-beta-c3-wenzl-decomposition.witness.json", "w") as f:
         json.dump(witness, f, indent=2)
 
     return 0

@@ -3,10 +3,10 @@
   "description": "Modular-resurgence signature probe on the exact Ohtsuki kappa_1..7 ladder: action + beta=3/2 quantum-modular weight trends, Stokes-normalisation candidate grid with entropy accounting, L-function tower blocked at k=7.",
   "computation": "qbeta-modular-resurgence-stokes",
   "engine": "mpmath",
-  "scriptFile": "computations/probes/qbeta_modular_resurgence_stokes_probe.py",
-  "scriptCommitSha": "a868d6990f7c91ee9b116227e10077e31774c14e",
-  "computedAt": "2026-07-14T01:59:18Z",
-  "durationMs": 18,
+  "scriptFile": "qbeta_modular_resurgence_stokes_probe.py",
+  "scriptCommitSha": "abe5dcddea3f5fb84d96cc9b2653f8707624516b",
+  "computedAt": "2026-07-18T17:21:32.228319+00:00",
+  "durationMs": 0,
   "auditOnly": true,
   "auditDoc": "docs/audits/2026-07-13-alien-calculus-surreal-integration-review.md",
   "parameters": {
@@ -109,5 +109,8 @@
       "passed": true,
       "source": "Fantini-Rella L-function tower test needs the sub-leading Borel singularities (l*A, l >= 2); unresolvable from 7 rungs (dladder witness: singularity NOT resolved at k=21). Recorded as blocked; no claim."
     }
-  ]
+  ],
+  "scriptHash": "d9bb07e53668",
+  "commitSha": "4bb980fedca04e4128bc45c44b964a45341c3681",
+  "engineVersion": "mpmath 1.3.0"
 }

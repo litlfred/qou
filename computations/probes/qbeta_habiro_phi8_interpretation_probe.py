@@ -431,6 +431,14 @@ def main() -> dict[str, Any]:
     # Write witness JSON
     # =================================================================
     here = os.path.dirname(os.path.abspath(__file__))
+    import sys as _sys  # noqa: E402 — P30 rollup (bean cmiy)
+    _sys.path.insert(0, os.path.join(here, "..", "substrate"))
+    from witness_base import WitnessBuilder  # noqa: E402
+    _dm = out.get("durationMs")
+    WitnessBuilder.stamp_staleness_metadata(out, script_path=__file__, engine="mpmath")
+    if _dm is not None:
+        out["durationMs"] = _dm
+    out["scriptFile"] = os.path.basename(__file__)
     witness_path = os.path.join(here, "qbeta-habiro-phi8-interpretation.witness.json")
     with open(witness_path, "w") as f:
         json.dump(to_jsonable(out), f, indent=2, sort_keys=False)
