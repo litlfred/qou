@@ -1,0 +1,124 @@
+{
+  "engine": "python-exact",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-07-18T20:16:35.184872+00:00",
+  "commitSha": "244e87220cd06aa211d30b16d3b46b0a53b5694a",
+  "assertions": [
+    {
+      "name": "m004_general_machinery_matches_validated_probe",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "4 peripheral classes of m004 from SnapPy NZ rows match figure_eight_3d_index.py (GHHR Ex 4.1) to q^10"
+    },
+    {
+      "name": "index_is_power_series",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "no negative q-powers (GHHR Cor 10.21)"
+    },
+    {
+      "name": "constant_term_is_one",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "I_B3(0)(0) = 1"
+    },
+    {
+      "name": "s3_cusp_permutation_symmetry",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "I_B3(b) invariant under permuting the three cusp Z^2 blocks on 2 nonzero orbits to q^6"
+    },
+    {
+      "name": "retriangulation_independence",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "8-tet retriangulation, I(0) to q^6 matches"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 43,
+  "computation": "borromean-3d-index",
+  "scriptFile": "borromean_3d_index.py",
+  "scriptHash": "598dd0df8147",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "GHHR 3D-index of the Borromean rings complement B3 (SnapPy L6a4, 8 ideal tetrahedra, 3 cusps, positively oriented => strict angle structure => 1-efficient => index well-defined; GHRS 1303.5278 Thm 1.5/1.2/1.1, Rmk 1.10). General GHHR 1604.02688 Section-4 gluing formula: I_T(b) = sum over the Z^5 basic-edge sublattice (GHRS 4.6 integer-basis choice, machine-verified) of q^{sum k} times the product of 8 symmetric tetrahedron indices J_D with charges linear in (k, b). Machinery validated by rebuilding the 4_1 index from SnapPy m004 NZ data and matching the Ex-4.1-validated probe to q^10. Audit-only; scope-(a); comparison-only; NO comparison to F_Bor / masses in this probe (no canonical index->rho bridge is derived; none is fitted).",
+  "contentBlock": "def:borromean-baryon",
+  "auditOnly": "docs/audits/2026-07-18-borromean-3d-index.md",
+  "data": {
+    "manifold": "L6a4 (Borromean rings complement)",
+    "n_tetrahedra": 8,
+    "n_cusps": 3,
+    "volume": 7.327724753417752,
+    "solution_type": "all tetrahedra positively oriented",
+    "basic_edges": [
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "I_B3_0_q0_qN": [
+      1,
+      0,
+      13,
+      -16,
+      -97,
+      16,
+      586,
+      992,
+      -514,
+      -5600,
+      -11451
+    ],
+    "I_B3_0_max_order": 10,
+    "I_B3_mu_h_q0_q6": [
+      0,
+      0,
+      8,
+      -16,
+      -64,
+      48,
+      464
+    ],
+    "S3_orbit_mu_h_note": "direct",
+    "I_B3_mu_h_plus_lam_h_q0_q6": [
+      0,
+      0,
+      0,
+      -8,
+      8,
+      64,
+      96
+    ],
+    "S3_orbit_mu_h_plus_lam_h_note": "direct",
+    "m004_general_machinery_sign_map": {
+      "(0, 0)": "(1, 1)",
+      "(0, 1)": "(1, 1)",
+      "(2, 0)": "(1, 1)",
+      "(1, 0)": "(1, 1)"
+    },
+    "formula": "I_T(b) = sum_{k in Z^{n-r}} q^{sum_i k_i} prod_j J_D(charges_j(k,b))  (GHHR 1604.02688 eq 15/16; GHRS 1303.5278 eq 17 + Thm 4.3)"
+  }
+}
