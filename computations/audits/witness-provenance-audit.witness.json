@@ -1,12 +1,12 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-18T15:00:46.227883+00:00",
-  "commitSha": "26973183b25852920493b30c3687548ecfdc582e",
+  "computedAt": "2026-07-18T15:20:59.531115+00:00",
+  "commitSha": "3f2744fc130ac954c221d932963e14eaa66f0210",
   "assertions": [
     {
       "name": "no_missing_provenance",
-      "computed": 242,
+      "computed": 241,
       "expected": 0,
       "passed": false,
       "tolerance": 0,
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 12,
+  "durationMs": 11,
   "computation": "witness-provenance-audit",
   "scriptFile": "witness_provenance_audit.py",
   "scriptHash": "1abb80bb6c90",
@@ -47,12 +47,12 @@
   },
   "data": {
     "counts": {
-      "total_scanned": 1983,
-      "prov_ok": 1681,
+      "total_scanned": 1988,
+      "prov_ok": 1687,
       "prov_audit_exempt": 59,
-      "prov_missing": 242,
+      "prov_missing": 241,
       "prov_parse_error": 1,
-      "completeness_ratio": 0.8774583963691377
+      "completeness_ratio": 0.8782696177062375
     },
     "by_verdict": {
       "PROV_OK": [
@@ -206,6 +206,10 @@
         },
         {
           "witness": "alpha-high-precision.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "alpha-k-jones-markov-h3.witness.json",
           "missing_fields": []
         },
         {
@@ -386,6 +390,10 @@
         },
         {
           "witness": "alpha-em-sigma-to-J-degenerate-locus.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "alpha-em-sigmaJ-geometric-carrier.witness.json",
           "missing_fields": []
         },
         {
@@ -2053,6 +2061,10 @@
           "missing_fields": []
         },
         {
+          "witness": "wlambda-D-reduction-content-covariance.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "wlambda-jet-tower-connected.witness.json",
           "missing_fields": []
         },
@@ -2750,6 +2762,10 @@
         },
         {
           "witness": "inter-nucleon-linked-channel.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "interface-4body-assembly.witness.json",
           "missing_fields": []
         },
         {
@@ -4613,6 +4629,10 @@
           "missing_fields": []
         },
         {
+          "witness": "qbeta-5two-sigma3-anchor-test.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "qbeta-borel-conformal-pade.witness.json",
           "missing_fields": []
         },
@@ -4662,6 +4682,10 @@
         },
         {
           "witness": "qbeta-fmap-power-class-prune.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "qbeta-g3-5two-exact-blocks.witness.json",
           "missing_fields": []
         },
         {
@@ -7530,13 +7554,6 @@
           "missing_fields": [
             "engine",
             "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "interface-4body-assembly.witness.json",
-          "missing_fields": [
-            "engine",
             "commitSha"
           ]
         },

@@ -170,6 +170,11 @@ def main():
                                         "complete": mp.nstr(sc_comp, 12),
                                         "AME": mp.nstr(sc_ame, 12)}},
     }
+    import sys as _sys  # noqa: E402 — P30 rollup (bean cmiy)
+    _sys.path.insert(0, str(COMP / "substrate"))
+    from witness_base import WitnessBuilder  # noqa: E402
+    WitnessBuilder.stamp_staleness_metadata(witness, script_path=__file__, engine="mpmath")
+    witness["scriptFile"] = Path(__file__).name
     out = COMP / "interface-4body-assembly.witness.json"
     with open(out, "w") as f:
         json.dump(witness, f, indent=1, default=str)

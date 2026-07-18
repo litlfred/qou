@@ -1,7 +1,7 @@
 {
  "computation": "interface-4body-assembly",
  "description": "Task 2: linear-chain vs complete-graph (tetrahedral) interface topology for B=E0*tau_vac*(1-PROD f). Many-body topology moves the 4He/D binding ratio only marginally; the interface deficit saturates.",
- "scriptFile": "computations/probes/interface_4body_assembly_probe.py",
+ "scriptFile": "interface_4body_assembly_probe.py",
  "parameters": {
   "q_0": "1.1099785827513808075916690956107688798744991218736",
   "E0_MeV": "4.1859813632944758969450621587590084101434868908797",
@@ -66,5 +66,12 @@
    "complete": "2.88613465964",
    "AME": "12.7196374484"
   }
- }
+ },
+ "scriptHash": "db2d9d844f62",
+ "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
+ "commitSha": "3f2744fc130ac954c221d932963e14eaa66f0210",
+ "engine": "mpmath",
+ "computedAt": "2026-07-18T15:19:56.605436+00:00",
+ "durationMs": 0,
+ "engineVersion": "mpmath 1.3.0"
 }
