@@ -386,6 +386,11 @@ def main():
     out["allPassed"] = all(a["passed"] for a in out["assertions"])
 
     here = os.path.dirname(os.path.abspath(__file__))
+    import sys as _sys  # noqa: E402 — P30 rollup (bean cmiy)
+    _sys.path.insert(0, os.path.join(here, "..", "substrate"))
+    from witness_base import WitnessBuilder  # noqa: E402
+    WitnessBuilder.stamp_staleness_metadata(out, script_path=__file__, engine="mpmath")
+    out["scriptFile"] = os.path.basename(__file__)
     wpath = os.path.join(here, "qbeta-root-of-unity.witness.json")
     with open(wpath, "w") as f:
         json.dump(out, f, indent=2)

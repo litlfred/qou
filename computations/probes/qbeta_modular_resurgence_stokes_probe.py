@@ -279,6 +279,11 @@ def main():
         },
         "assertions": assertions,
     }
+    import sys as _sys  # noqa: E402 — P30 rollup (bean cmiy)
+    _sys.path.insert(0, os.path.join(root, "computations", "substrate"))
+    from witness_base import WitnessBuilder  # noqa: E402
+    WitnessBuilder.stamp_staleness_metadata(witness, script_path=__file__, engine="mpmath")
+    witness["scriptFile"] = os.path.basename(__file__)
     out = os.path.join(root, "computations", "probes",
                        "qbeta-modular-resurgence-stokes.witness.json")
     with open(out, "w") as fh:

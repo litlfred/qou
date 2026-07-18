@@ -1,11 +1,11 @@
 {
   "computation": "joint-tower-sdp-h6-h9",
-  "computedAt": "2026-06-22T04:28:43.818995+00:00",
+  "computedAt": "2026-07-18T17:22:31.897566+00:00",
   "description": "Phase 3b: extend joint-tower SDP solver from H_3 ground truth to H_6 (²H), H_9 (³H, ³He). Historical knot identifications (6_2, 8_11, L6a4) consumed; cvxpy SDP feasibility checked on H_3 Hoefsmit blocks for ²H and ³He (B_3 braids); ³H (B_5 braid) deferred to Rust.",
   "design_spec": "prop:joint-tower-sdp-confinement",
   "consumed_by": "prop:atom-knot-mass-derivation",
   "phase": "3b",
-  "q_0_numeric": 1.1099785955573347,
+  "q_0_numeric": 1.1099785827513808,
   "registry": [
     {
       "name": "deuteron",
@@ -57,7 +57,7 @@
       ],
       "binding_link": "T_3 trefoil-like",
       "rho_factor": 2,
-      "B_AME_MeV": 8.481796200000002,
+      "B_AME_MeV": 8.4817962,
       "methodology": "manual-historical-volume-match"
     },
     {
@@ -7085,7 +7085,7 @@
       "atomic_n_0": 9,
       "knot_name": "8_11",
       "binding_link": "T_3 trefoil-like",
-      "B_AME_MeV": 8.481796200000002,
+      "B_AME_MeV": 8.4817962,
       "methodology": "manual-historical-volume-match",
       "sdp_feasibility_status": "DEFERRED to Rust (tools/hecke-engine): braid in B_5 requires Hoefsmit seminormal at H_5; existing infra in tools/hecke-engine/src/seminormal_mn.rs"
     },
@@ -7538,5 +7538,11 @@
       "Rust integration: extend tools/hecke-engine to emit design-spec joint-tower-SDP certificate format (per-grade filtration, jet log, Wedderburn-block sparsity, cross-level consistency edges).",
       "Once Rust emitter lands, ³H (B_5 / 8_11) gets its Hoefsmit-PSD check for free."
     ]
-  }
+  },
+  "scriptHash": "0982905d9b7d",
+  "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
+  "commitSha": "4bb980fedca04e4128bc45c44b964a45341c3681",
+  "engine": "python",
+  "durationMs": 0,
+  "scriptFile": "joint_tower_sdp_solver_v2.py"
 }

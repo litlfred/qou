@@ -1,12 +1,12 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-18T17:13:31.526530+00:00",
-  "commitSha": "58abb081414b74321a6be9450d00f24bfbc0f56c",
+  "computedAt": "2026-07-18T17:23:16.514300+00:00",
+  "commitSha": "4bb980fedca04e4128bc45c44b964a45341c3681",
   "assertions": [
     {
       "name": "no_missing_provenance",
-      "computed": 237,
+      "computed": 232,
       "expected": 0,
       "passed": false,
       "tolerance": 0,
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 11,
+  "durationMs": 10,
   "computation": "witness-provenance-audit",
   "scriptFile": "witness_provenance_audit.py",
   "scriptHash": "1abb80bb6c90",
@@ -48,11 +48,11 @@
   "data": {
     "counts": {
       "total_scanned": 1993,
-      "prov_ok": 1696,
+      "prov_ok": 1701,
       "prov_audit_exempt": 59,
-      "prov_missing": 237,
+      "prov_missing": 232,
       "prov_parse_error": 1,
-      "completeness_ratio": 0.8805820371299549
+      "completeness_ratio": 0.8830908178625189
     },
     "by_verdict": {
       "PROV_OK": [
@@ -2821,6 +2821,10 @@
           "missing_fields": []
         },
         {
+          "witness": "joint-tower-sdp-h6-h9.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "jones-markov-atlas-all-atoms.witness.json",
           "missing_fields": []
         },
@@ -4777,6 +4781,10 @@
           "missing_fields": []
         },
         {
+          "witness": "qbeta-habiro-phi8-interpretation.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "qbeta-habiro-phi8-squared-from-z-squared-probe.witness.json",
           "missing_fields": []
         },
@@ -4809,6 +4817,10 @@
           "missing_fields": []
         },
         {
+          "witness": "qbeta-modular-resurgence-stokes.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "qbeta-multiblock-ck-lambda-probe.witness.json",
           "missing_fields": []
         },
@@ -4834,6 +4846,10 @@
         },
         {
           "witness": "qbeta-qsqrt3-borel-pslq.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "qbeta-root-of-unity.witness.json",
           "missing_fields": []
         },
         {
@@ -4962,6 +4978,10 @@
         },
         {
           "witness": "prototype-gs-nf-shell-binding.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "q-beta-c3-wenzl-decomposition.witness.json",
           "missing_fields": []
         },
         {
@@ -7610,14 +7630,6 @@
           ]
         },
         {
-          "witness": "joint-tower-sdp-h6-h9.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
           "witness": "joint-tower-sdp-rust.witness.json",
           "missing_fields": [
             "scriptFile",
@@ -8070,24 +8082,6 @@
           ]
         },
         {
-          "witness": "qbeta-habiro-phi8-interpretation.witness.json",
-          "missing_fields": [
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "qbeta-modular-resurgence-stokes.witness.json",
-          "missing_fields": [
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "qbeta-root-of-unity.witness.json",
-          "missing_fields": [
-            "commitSha"
-          ]
-        },
-        {
           "witness": "qbk2-reeb-vs-lp-dual-active-channel.witness.json",
           "missing_fields": [
             "engine",
@@ -8125,14 +8119,6 @@
         },
         {
           "witness": "pyhecke-h3-vs-h3a-impact-comparison.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "q-beta-c3-wenzl-decomposition.witness.json",
           "missing_fields": [
             "engine",
             "scriptFile",

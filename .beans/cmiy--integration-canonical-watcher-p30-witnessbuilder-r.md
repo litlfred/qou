@@ -359,3 +359,20 @@ Coordinated-with: keystone epic 08a2 (mechanical witness wiring only, no math to
 - probes/delta_lambda_m_pi_constraint_probe (var=witness, HERE=probes)
 Both PROV_OK, keys preserved. Env now has snappy + pyhecke + qou_substrate installed,
 which covers the runtime deps for the remaining qbeta tail.
+
+## 2026-07-18 — batch 28 (qbeta cluster + SDP, 5 via stamp; +1 path fix, +1 SKIP)
+Coordinated: posted intent on sibling #3927 (c4even qbeta ladder) before touching.
+- probes/qbeta_habiro_phi8_interpretation_probe (var=out, dumps to_jsonable(out);
+  PRESERVED script's own durationMs across the stamp)
+- probes/qbeta_modular_resurgence_stokes_probe (var=witness, root-based; script
+  returns 1 on 3/4 assertions but WRITES the witness first — exit!=0 is a verdict)
+- probes/qbeta_root_of_unity_probe (var=out)
+- probe_q_beta_wenzl_projectors (var=witness) — FIXED hardcoded CWD path -> HERE-relative
+- joint_tower_sdp_solver_v2 (var=witness, base-based) [cons=11 but emit-metadata only]
+All 5 PROV_OK, keys preserved, no strays.
+SKIPPED qbeta/qbeta_reeb_tower_jacobi_anger_physical_weight: it has NO file-write
+(only print(json.dumps(out))); its committed witness was captured manually. Wiring
+it means ADDING a writer = behavior change, not mechanical stamping. Needs a
+separate, coordinated change (flagged to leave for the qbeta owner). This is the
+last cmiy single-write-clean producer; remaining PROV_MISSING are multi-write /
+read+write / native-only / no-writer scripts needing bespoke handling.

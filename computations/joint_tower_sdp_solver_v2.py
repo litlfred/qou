@@ -366,6 +366,11 @@ def main():
             ],
         },
     }
+    import sys as _sys  # noqa: E402 — P30 rollup (bean cmiy)
+    _sys.path.insert(0, str(base / "substrate"))
+    from witness_base import WitnessBuilder  # noqa: E402
+    WitnessBuilder.stamp_staleness_metadata(witness, script_path=__file__, engine="python")
+    witness["scriptFile"] = Path(__file__).name
     with open(out_path, "w") as f:
         json.dump(witness, f, indent=2, ensure_ascii=False, default=str)
     print(f"\n→ wrote {out_path}")
