@@ -1,0 +1,47 @@
+{
+  "computation": "alpha-em-sigmaJ-geometric-carrier",
+  "description": "Brick 4: the sigma->J map's geometric carrier \u2014 the Bring vertex V=[1:i:-1:-i:0] (on-curve exact) is fixed by the (2,4,5) order-4 rotation with multiplier exactly i = the democratic q, so dU|_V = J|_V (J automorphism-realized); conjugation swaps the +-i multiplier families (= bar on the degenerate pair = conjugation on spec(J)); the order-4 quotient is genus-1 = E_{5tau0}, the dominant Jacobian factor. The tau target is now concrete. Derives no clause; nothing wired.",
+  "auditOnly": "docs/audits/2026-07-18-alpha-em-sigmaJ-geometric-carrier.md",
+  "tier": "symbolic-exact (sympy; on-curve check, projective multipliers, Riemann-Hurwitz)",
+  "computedAt": "2026-07-18T14:31:38.898198+00:00",
+  "commitSha": "7f4b0230b68828609d205d854c311cd0b44d332f",
+  "engine": "sympy",
+  "engineVersion": "1.14.0",
+  "scriptFile": "alpha_em_sigmaJ_geometric_carrier_probe.py",
+  "scriptHash": "b52d3a3570dd",
+  "assertions": [
+    {
+      "name": "vertex_on_bring_exact",
+      "passed": true,
+      "detail": "V=[1:i:-1:-i:0] satisfies H1=H2=H3=0 exactly \u2014 the vertex coordinates are the 4th roots of unity (+0); Bring's 30 vertices are the permutations of this point (Braden-Disney-Hogg Prop 3.9)"
+    },
+    {
+      "name": "order4_multiplier_is_democratic_q",
+      "passed": true,
+      "detail": "the 4-cycle maps V to i*V exactly \u2014 projectively fixed with MULTIPLIER i; at a holomorphic fixed point the differential acts on the tangent line by the multiplier, and multiplication by i on the holomorphic tangent line IS J: dU|_V = i = J|_V. The (2,4,5) order-4 rotation realizes J by an automorphism, with multiplier = the democratic q = i"
+    },
+    {
+      "name": "conjugation_swaps_multiplier_families",
+      "passed": true,
+      "detail": "conj(V)=[1:-i:-1:i:0] is fixed with multiplier -i \u2014 complex conjugation swaps the (+i)- and (-i)-multiplier vertex families EXACTLY as bar exchanges the degenerate points q=+-i (brick-3 B3) and as conjugation exchanges spec(J): the degenerate involution structure is geometrically realized"
+    },
+    {
+      "name": "order4_quotient_is_E5tau0_factor",
+      "passed": true,
+      "detail": "Riemann-Hurwitz with exactly the two multiplier-+-i vertices ramified (index 4): 2*g_B-2 = 4*(2g'-2) + 2*3 => g' = 1 \u2014 the elliptic quotient; per the paper (SS4.3, Weber's T) it has j = -25/2 = j(5*tau0), the SAME E_{5tau0} appearing with multiplicity 3 in Jac(Bring) ~ E_{5tau0}^3 x E_{tau0} (Prop 4.6): the democratic/order-4 structure quotients onto the dominant Jacobian factor"
+    }
+  ],
+  "allPassed": true,
+  "result": {
+    "vertex": "[1:i:-1:-i:0] on Bring (H1=H2=H3=0 exact)",
+    "multiplier": "i at V (dU|_V = J|_V); -i at conj(V); conjugation swaps the families",
+    "quotient": "genus(B/<U>)=1 = E_{5tau0} (j=-25/2), the x3 Jacobian factor",
+    "tau_target": "dU at the vertex pair \u2014 concrete geometric target for sigma_ss(q=+-i)",
+    "verdict": "GEOMETRIC CARRIER FOUND (scope-(a); derives no clause; no fit; nothing wired): the degenerate braiding data is realized ON the Bring surface exactly \u2014 V=[1:i:-1:-i:0] lies on Bring (G1); the (2,4,5) order-4 rotation fixes it with multiplier exactly i = the democratic q, so dU|_V = J|_V (J is automorphism-realized at the vertices, G2); complex conjugation swaps the +-i multiplier families exactly as bar swaps the degenerate points / conjugation swaps spec(J) (G3); and the order-4 quotient is the genus-1 E_{5tau0} \u2014 the dominant Jacobian factor (G4). The tau target of sigma_ss(q=+-i)=+-i is now CONCRETE: dU at the vertex pair. Remaining wall (unchanged): the functorial statement tau(braiding) = this automorphism action, whose classical limit inherits the conformal structure and hence a0 (Clause A). NO tier change."
+  },
+  "context": {
+    "builds_on": "merged #3933 (bricks 1-3: corrected dictionary, unique tau target, sigma->J at the degenerate locus) + Braden-Disney-Hogg Prop 3.9/SS4.3/Prop 4.6 (PDF in uploads/)",
+    "remaining": "the functorial statement tau(braiding) = the order-4 automorphism action; its classical limit inherits the conformal structure J defines, hence a0 (Clause A)",
+    "scope_guard": "derives NO clause; no fit; nothing wired; 1/(8pi) stays phase-4"
+  }
+}
