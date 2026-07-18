@@ -1,0 +1,115 @@
+# G3 monodromy / Stokes-constant keystone — evidence base + formalize-first target
+
+**Date:** 2026-07-18
+**Bean:** `qou-vr3q` (deep-dive 1 of the alien-calculus ↔ Habiro review, milestone `qou-89f9`)
+**Branch:** `claude/alien-calculus-habiro-50257v`
+**Status:** AUDIT (evidence synthesis + framing correction). No derivation, no
+number claimed, no wiring.
+
+## 0. Framing correction (READ FIRST — recurring conflation)
+
+There are **two distinct `A_ω` objects**; earlier chat in this session conflated
+them:
+
+| | EVEN face | ODD face = **the G3 keystone** |
+|---|---|---|
+| object | binding period `a_D` (mass) | Q_β / Φ_b decay ladder |
+| `A_ω` | `4√2·e^{−3/8} ≈ 3.8884` **measured** | **un-measured** |
+| regime | q=1, EGF `e^{x+x²/2}` **entire** ⇒ **co-equational** (coefficient-plane); bar-even, stationary at q=1 to O((q−1)²) | irregular q-difference connection; **categorical Stokes/monodromy datum**, not a resummation constant |
+| source | `computations/lever1_bridge_alien_datum_probe.py` + `lever1-bridge-alien-datum.witness.json` | `docs/audits/2026-07-13-phib-proof-status-and-monodromy-datum-gap-audit.md` §2 |
+
+**The measured 3.8884 is NOT the keystone.** It only demonstrates the
+derive-then-verify template and confirms the odd part vanishes at q=1 (bar-even).
+
+## 1. Exact open statement of G3
+
+From `2026-07-13-phib-proof-status-and-monodromy-datum-gap-audit.md` §2:
+
+> **G3 — the argument-identification / monodromy datum `z(q₀) → S`.** No
+> `FaddeevPhi` argument has been exhibited whose archimedean evaluation
+> reproduces the anchor targets `S(muon) = +0.00968298`,
+> `S(proton) = −0.03945936`. The fibre→observable passage is **not analytic
+> continuation** but a **categorical Stokes / monodromy datum** (an irregular
+> q-difference connection) — a **monodromy** (Stokes automorphism), not a
+> resummation *constant*.
+
+Bridge equation defining it: `Δ_ω f̃ = A_ω · ∂f̃/∂z`; leading singularity at
+`ω ≈ Vol(4₁)/π ≈ 0.646` (same Borel action as the even-face κ-tower, PR #3683).
+
+## 2. The derivation target (not a fit): the exact integer 3
+
+The anti-fit route requires `A_ω` to **emerge as an integer count**
+(Donaldson–Thomas / 3d-index), not be inverted from the anchors. Already in
+hand, exact:
+
+- `computations/probes/qbeta_g3_ggm_stokes_41.py` — implements the GGM (2012.00062)
+  4₁ Stokes data: `S⁰ = [[1,0],[−3,1]]`, singularity at `ι = ±Vol(4₁)/π`, integer
+  Stokes constant **3**, descendant tower `S⁺₁₁ = 1 − 8q − 9q² + …`. Internally
+  certified exact (det W_m = 2; q-difference eq 49; eq-59a sandwich). The
+  identification of this integer with the corpus `A_ω` normalization
+  (`Im 𝔙 → N_odd`) is the **explicitly-not-claimed** remaining bridge.
+- Trace-field hypothesis (bean `qou-t3jv`,
+  `computations/qbeta/qbeta_aomega_stokes3_tracefield_probe.py`): Stokes `−3`
+  = `disc(ℚ(√−3)) = −3`, unifying even (ℚ(√3)) and odd (ℚ(√−3)) channels via
+  `√−3 = i√3 ∈ ℚ(ζ₁₂)`. **H1 hypothesis, NOT verified** — "matching two −3's is
+  not a derivation."
+
+Literature already cited (`content/schema/references.ts`):
+`garoufalidis-gu-marino2021/2023peacock` (Stokes constants = DT integers),
+`dimofte-gaiotto-gukov2013` + `garoufalidis-hodgson-rubinstein-segerman2015`
+(3d-index / m004 flux-sum), `fantini-rella2024` (modular resurgent ⇒ Stokes =
+L-function coefficients).
+
+**One prior probe already tested the L-function/integer comparison numerically**
+(`qbeta_modular_resurgence_stokes_probe.py`, Option D): action consistent within
+spread with Vol(4₁)/π (5.2%, not identified); β=3/2 modular weight **fails**;
+Stokes not identifiable at 7 rungs (below the 1/210 entropy bar); L-tower
+**blocked**. Verdict: the derivation route is the **exact GGM state-integral /
+3d-index algebra**, not float extraction from finitely many rungs.
+
+## 3. Formalize-first target (the cleanest prune)
+
+The corpus already carries the rigidity scaffold, sorry-free, with **one** honest
+open input:
+
+- `QOU/QBeta/CyclicDilogPentagon.lean:192` `faddeevPhi_unique_of_pentagon`
+  (sorry-free) and `QOU/QBeta/MonodromyDatumRigidity.lean:80`
+  `monodromy_datum_rigidity` (sorry-free): **every scale-invariant readout of any
+  FaddeevPhi solution is the same** ⇒ `A_ω` "carries no fitting freedom."
+- The **single open input** is `PentagonRigidity.uniqueUpToScalar`
+  (`CyclicDilogPentagon.lean:174–181`, **no instance**): the Faddeev–Volkov
+  "doubly-periodic ⇒ constant" **Liouville step, not in Mathlib**.
+
+> **Formalize-first target:** prove `PentagonRigidity` (the Liouville step). This
+> discharges the uniqueness leg and converts G3 from "find a function `z(q₀)→S`"
+> to "**verify the pentagon pins** the already-proved inversion / unitarity /
+> self-duality bundle." It is the structural prune: it does not compute `A_ω`,
+> but it proves `A_ω` is *forced* (zero fitting freedom), so the only remaining
+> content is the integer identification of §2 — turning a search over functions
+> into a check of one integer.
+
+This is the honest division: the Liouville step is a genuine multi-week Mathlib
+gap (do **not** axiomatize it to "close" G3 — that is the §Axiomatization-is-not-
+a-proof trap); the integer-3 identification is the physics content and stays a
+falsifiable open step.
+
+## 4. Status corrections captured (for currency)
+
+- `2026-07-13-alien-calculus-surreal-integration-review.md` §2 calls
+  `BorelWatsonUniqueness.lean` "1 sorry" — **stale**; current file is sorry-free
+  (`watson_uniqueness_rhp:97`), residual is the `z↦1/z` sector-transport assembly,
+  not a `sorry`. The only live `sorry` in the QBeta tree is
+  `ToroidalHarmonicsBasis.lean:114` (unrelated to G3).
+- "k=21 singularity unresolved" is now **k=31 confirmed structurally unresolvable
+  by fixed-order Borel–Leroy** (`qbeta-dladder-extension-singularity.witness.json`,
+  2026-07-17: dlog-Padé vs root-test gap persists at 0.172; q-Gevrey drift, no
+  single Gevrey index) — needs the Φ_b state-integral / GGM route, consistent
+  with §2/§3.
+
+## 5. Discipline
+
+Corpus-grep: this synthesizes existing audits (`phib…gap-audit`,
+`alien-calculus-surreal-integration-review` Option D, `dladder-*`) — no new
+open-item declaration, no refutation. The even/odd `A_ω` correction (§0) is the
+one durable fix. Anti-laundering: the §3 target proves *rigidity*, not the datum;
+the integer-3 identification (§2) stays explicitly open and falsifiable.
