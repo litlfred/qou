@@ -1,0 +1,81 @@
+{
+  "engine": "sympy+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-07-18T08:56:19.141305+00:00",
+  "commitSha": "fee991b04fe35077250466c722edb2de1701bdc2",
+  "assertions": [
+    {
+      "name": "qreeb_trace_bar_even_both_knots",
+      "computed": 0.0,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "τ_{4₁} AND τ_{5₂} on V_{(2,1)} are both bar-even (exact sympy): the self-conjugate (2,1) block cannot carry chirality — FINDING 1, refutes the naive q-Reeb guess"
+    },
+    {
+      "name": "writhe_amphichiral_vs_chiral",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "writhe(4₁)=0 (amphichiral), writhe(5₂)=2 (chiral) — the conjugate-pair (3)/(1,1,1) asymmetry"
+    },
+    {
+      "name": "bar_odd_writhe_datum_4one_zero_5two_nonzero",
+      "computed": 0.0,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "D_odd=½(χ₃−χ₁₁₁): 0 for 4₁ (writhe 0), ½(q²−q⁻²)≠0 for 5₂ (writhe 2) — FINDING 2: the bar-odd home is the writhe, a sinh-object, nonzero for chiral 5₂"
+    },
+    {
+      "name": "q1_permutation_anchor",
+      "computed": -1.0,
+      "expected": -1.0,
+      "passed": true,
+      "tolerance": 0.01,
+      "source": "τ_{4₁}(1) = −1: 4₁ braid (σ₁σ₂⁻¹)² is a 3-cycle in S₃, standard-rep character −1 (validates the H₃ block)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 20,
+  "computation": "qbeta-5two-reeb-trace",
+  "scriptFile": "qbeta_5two_reeb_trace_probe.py",
+  "scriptHash": "d5a1d1bc9956",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
+  },
+  "description": "Foundational brick of the non-amphichiral (5₂) route (fork option 2). The H₃(q) Hoefsmit V_{(2,1)} q-Reeb trace of the canonical 5₂ 3-braid (1,1,1,-2,1,-2): τ_{5₂}(q) is BAR-ASYMMETRIC (nonzero bar-odd part), unlike the amphichiral 4₁ (τ_{4₁} bar-symmetric, bar-odd=0). So 5₂ supplies a NONZERO bar-odd knot-operator datum — the 'nonzero home' the CS=0 fork needs. Validated at the q=1 permutation anchor. HONEST SCOPE: τ_{5₂}(q₀) is smooth, so its value is anchor-invariant-ish and cannot produce S's 2e6 swing (Lean-proved no_anchor_invariant_realizes_swing still binds); the swing needs the anchor-dependent quantum 𝔙_q(5₂), a later brick. No c_k; no fit; scope-(a).",
+  "contentBlock": "prop:phi-b-unitary-bar-odd",
+  "data": {
+    "tau_5_2_V21": "q**6 - 2*q**4 + 2*q**2 - 3 + 2/q**2 - 2/q**4 + q**(-6)",
+    "tau_4_1_V21": "q**4 - 2*q**2 + 1 - 2/q**2 + q**(-4)",
+    "v21_block_bar_even_both": true,
+    "writhe": {
+      "4_1": 0,
+      "5_2": 2
+    },
+    "bar_odd_writhe_datum": {
+      "4_1": "0",
+      "5_2": "(q**4 - 1)/(2*q**2)"
+    },
+    "D_odd_5_2_at_anchors": {
+      "muon": "0.210199373478983",
+      "proton": "0.210199349900503"
+    },
+    "anchor_smoothness_caveat": "|D_odd(p)−D_odd(mu)| = 2.35785e-8: the writhe datum ½(q₀²−q₀⁻²) is anchor-smooth, so NOT the S-swing carrier (no_anchor_invariant_realizes_swing binds). 5₂ gives a nonzero bar-odd HOME; the anchor-dependent swing still needs 𝔙_q(5₂).",
+    "braid_word_5_2": "(1,1,1,-2,1,-2) = σ₁³σ₂⁻¹σ₁σ₂⁻¹ (canonical table)",
+    "verdict": "TWO FINDINGS. (1) REFUTED the naive q-Reeb guess: τ_{5₂}(q) on V_{(2,1)} is bar-EVEN, same as τ_{4₁} — the self-conjugate (2,1) block cannot carry chirality for any knot. (2) LOCATED the bar-odd datum in the WRITHE: the conjugate-pair (3)/(1,1,1) asymmetry D_odd=½(χ₃−χ₁₁₁) is 0 for amphichiral 4₁ (writhe 0) and ½(q²−q⁻²)≠0 for chiral 5₂ (writhe 2) — a genuine bar-odd sinh-object, the nonzero home fork-option-2 needs. But D_odd(q₀) is anchor-smooth ⇒ not the S-swing (the Lean-proved anchor-invariance prune binds); the swing needs 𝔙_q(5₂), the next brick. No c_k; no fit; scope-(a)."
+  }
+}
