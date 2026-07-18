@@ -264,6 +264,7 @@ import QOU.Archimedean.EmCouplingBringZeroMode
 import QOU.Archimedean.BringEllipticFactor
 import QOU.Archimedean.SigmaJGeometricCarrier
 import QOU.Archimedean.TauRhoHodgeShadow
+import QOU.Archimedean.PerLoopMeasureShadowAssembly
 import QOU.Molecular.PalindromicityOrbitalType
 import QOU.Molecular.ShellCapacitySelfSquare
 import QOU.Molecular.ShellClosureNfTermCount

@@ -1,0 +1,52 @@
+{
+  "computation": "alpha-em-b5-assembly",
+  "description": "Bean B5 (qou-61lh): the assembled conditional theorem \u2014 IF the B2 lift THEN per-loop measure = (1/2) a0 = 1/(8pi), a0 via B3, 1/2 rho-forced via B4b + forced shadow #3960, [2]_q = KL eigenvalue restoring the doubled total at q=1 (B4a). Shadow assembly Lean sorry-free (PerLoopMeasureShadowAssembly); lift enters only as explicit hypotheses. Single open wall: the B2 lift (qou-tq20). Nothing wired.",
+  "auditOnly": "docs/audits/2026-07-18-alpha-em-b5-assembly.md",
+  "tier": "conditional theorem (hypothesis = B2 lift, OPEN) + sorry-free Lean shadow + symbolic-exact/numeric brick re-verification",
+  "computedAt": "2026-07-18T18:06:01.349889+00:00",
+  "commitSha": "59379cb64150b50ea722673d15a202ab45093679",
+  "engine": "numpy+sympy+lean-core",
+  "engineVersion": "2.4.6/1.14.0",
+  "scriptFile": "alpha_em_b5_assembly_probe.py",
+  "scriptHash": "4df19189dd98",
+  "assertions": [
+    {
+      "name": "factor_chain_assembles",
+      "passed": true,
+      "detail": "(1/2)\u00b7a\u2080 = 1/(8\u03c0) exactly, and = |\u03c7|/(4\u00b7Area) on Bring (\u03c7=\u22126, Area=12\u03c0 \u2014 the merged GB Lean identity): the conditional decomposition lands on the geometrized form"
+    },
+    {
+      "name": "brick_cores_reverified",
+      "passed": true,
+      "detail": "B3 heat universality (skew metric ratio 1.00000000 \u2248 1); B4b \u03c1-split (Tr((conj A)^m)=Tr(A^m) exact, hermitian); B4a KL spectrum ([2]_q, 0) with [2]_1 = 2 \u2014 each brick's machine-checkable core reproduced in one pass"
+    },
+    {
+      "name": "conditional_composition",
+      "passed": true,
+      "detail": "GIVEN the lift: per-channel x = a\u2080\u03b1/2 (\u03c1-split + FORCED shadow channel), the q\u21921 one-loop total [2]_1\u00b7x = a\u2080\u03b1 is exactly B4's target statement, and x = \u03b1/(8\u03c0) under a\u2080 = 1/(4\u03c0) \u2014 the working coefficient, reached with every factor carried by a derived brick"
+    },
+    {
+      "name": "single_wall_honestly_open",
+      "passed": true,
+      "detail": "the Lean shadow assembly carries the lift ONLY as explicit hypotheses (no axiom, no sorry \u2014 machine-checked here on the source); pair count 2 \u2260 b\u2081 = 8 (the 1/(\u03c0\u00b7b\u2081) coincidence stays disambiguated); the single open wall is the B2 functorial lift (bean qou-tq20, Mathlib-gated)"
+    }
+  ],
+  "allPassed": true,
+  "result": {
+    "conditional_theorem": "B2-lift => measure = (1/2)*a0 = 1/(8pi) = |chi|/(4*Area)",
+    "factor_provenance": {
+      "a0": "B3 #3969 (conformal inheritance; universality verified)",
+      "one_half": "B4b #3977 (rho-forced split) + B2 shadow #3960 (forced channel)",
+      "2_q_restoration": "B4a #3973 (KL eigenvalue; [2]_1 = pair count)",
+      "channel_count_2": "clauseB F1 #3921 (Hecke relation quadratic, derived)",
+      "geometrization": "GB identity |chi|/(4 Area) = 1/(8 pi) (main, Lean)"
+    },
+    "lean": "QOU/Archimedean/PerLoopMeasureShadowAssembly.lean \u2014 sorry-free, lean-direct exit 0; lift as explicit hypotheses only",
+    "open_wall": "the B2 functorial lift (bean qou-tq20, Mathlib-gated)",
+    "verdict": "B5 ASSEMBLED (conditional theorem stated; scope-(a); nothing derived unconditionally; no fit; nothing wired): IF the B2 functorial lift holds THEN the per-loop measure is (1/2)\u00b7a\u2080 = 1/(8\u03c0) with every factor derived under the hypothesis \u2014 a\u2080 inherited through the conformal class (B3 #3969), the 1/2 forced by reality + the FORCED shadow channel (B4b #3977 + B2s #3960), the tower's [2]_q (= KL eigenvalue, B4a #3973) restoring the doubled total at q=1 (B4's target). Shadow assembly proved sorry-free in Lean core (PerLoopMeasureShadowAssembly: shadow_assembly composes shadow_unique with the \u03c1-split; lift enters only as explicit hypotheses, never an axiom). THE WALL IS ONE STATEMENT: the B2 lift (qou-tq20, Mathlib-gated) \u2014 its shadow is forced and obstruction-free; the lift itself remains OPEN. NO tier change; 1/(8\u03c0) stays phase-4."
+  },
+  "context": {
+    "bean": "qou-61lh (B5) of milestone qou-b5qg \u2014 plan complete at shadow level",
+    "scope_guard": "conditional; nothing unconditional; no fit; nothing wired; 1/(8pi) stays phase-4 (dd55a5748)"
+  }
+}
