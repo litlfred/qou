@@ -261,6 +261,7 @@ import QOU.HyperellipticQuintic.zeta5_residue_monodromy
 import QOU.Archimedean.BorromeanQuark
 import QOU.Interactions.QIntegerMassFormula
 import QOU.Archimedean.EmCouplingBringZeroMode
+import QOU.Archimedean.BringEllipticFactor
 import QOU.Molecular.PalindromicityOrbitalType
 import QOU.Molecular.ShellCapacitySelfSquare
 import QOU.Molecular.ShellClosureNfTermCount
