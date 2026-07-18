@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-18T08:47:02.145372+00:00",
-  "commitSha": "9ab39a4e2f11b9ceb23b7650d2559ea4c3d635ad",
+  "computedAt": "2026-07-18T08:56:48.010474+00:00",
+  "commitSha": "896d91d8b707ea984f1fc34716bdf1c6a719d6f0",
   "assertions": [
     {
       "name": "controls_pass",
@@ -14,7 +14,7 @@
     },
     {
       "name": "circle_det_closed_form_reproduced",
-      "computed": 0.0,
+      "computed": 3.944304526105059e-31,
       "expected": 0.0,
       "passed": true,
       "tolerance": 1e-10,
@@ -49,8 +49,8 @@
   "durationMs": 28,
   "computation": "alpha-em-torsion-perloop",
   "scriptFile": "alpha_em_torsion_perloop_probe.py",
-  "scriptHash": "3429290dfdd0",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "d9660b7629e1",
+  "scriptCommitSha": "227b64ae06b2d27fb0a73474fc1826286315eb83",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

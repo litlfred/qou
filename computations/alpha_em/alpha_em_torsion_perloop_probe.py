@@ -119,7 +119,7 @@ def epstein_deriv_zero_cubic(d: int, M: int = 60) -> mp.mpf:
     return I - 2 / mp.mpf(d) - mp.euler - mp.log(mp.pi)
 
 
-def zeta_prime_delta0_torus(d: int, L: mp.mpf = mp.mpf(1)) -> mp.mpf:
+def zeta_prime_delta0_torus(d: int, L: mp.mpf | float = 1.0) -> mp.mpf:
     """ζ'_{Δ₀}(0) for the scalar Laplacian on ℝ^d/(Lℤ)^d.
 
     Eigenvalues (2π k / L)² = (4π²/L²)|k|², so ζ_{Δ₀}(s) = (L²/4π²)^s E(s) and
@@ -164,14 +164,17 @@ def main() -> int:
 
     print("\n[C3] Control — circle determinant ζ'_{S¹}(0) = −2 log L (det'Δ = L²) via same machinery:")
     c3_ok = True
+    c3_err_max = mp.mpf(0)
     c3_rows = []
     for L in (mp.mpf("1"), mp.mpf("2"), mp.mpf("3.7")):
         zp = zeta_prime_delta0_torus(1, L)                 # d=1 scalar torus = circle
         exact = -2 * mp.log(L)
         err = abs(zp - exact)
+        if err > c3_err_max:
+            c3_err_max = err
         ok = err < mp.mpf("1e-10")
         c3_ok = c3_ok and ok
-        detp = mp.e ** (-zp)                                # det'Δ = exp(−ζ'(0)) = L²
+        detp = mp.exp(-zp)                                # det'Δ = exp(−ζ'(0)) = L²
         print(f"     L={mp.nstr(L,4):>5}: ζ'_S¹(0)={mp.nstr(zp,12)}  exact −2logL={mp.nstr(exact,12)}"
               f"  det'Δ={mp.nstr(detp,10)}  (L²={mp.nstr(L*L,10)})  ok={ok}")
         c3_rows.append({"L": mp.nstr(L, 6), "zeta_prime_0": mp.nstr(zp, 14),
@@ -196,7 +199,7 @@ def main() -> int:
           f"[contains log(4π²)={mp.nstr(pi_in_zp0,8)} — the π source]")
     # log τ_RS = ½ ζ'_{Δ₀}(0) · Σ_q (−1)^q q C(d,q) = ½ ζ'_{Δ₀}(0) · 0  (d=b₁=8)
     log_tau = mp.mpf("0.5") * zp0_unit * weights[B1]
-    tau = mp.e ** log_tau
+    tau = mp.exp(log_tau)
     print(f"     Σ_q(−1)^q q C({B1},q) = {weights[B1]}  ⇒  log τ_RS = ½·ζ'_Δ₀(0)·{weights[B1]} = {mp.nstr(log_tau,6)}")
     print(f"     τ_RS(T^{B1}) = {mp.nstr(tau,10)}  ⇒ analytic torsion is TRIVIAL; the π in ζ'_Δ₀(0) CANCELS.")
     print("     Residual metric-on-cohomology normalization (Cheeger–Müller = Reidemeister)")
@@ -211,7 +214,7 @@ def main() -> int:
     print("[B] Graded / per-mode determinant ratio (honest reciprocal-count analogs)")
     print("-" * 78)
     # B1: alternating det ratio ∏_q (det'Δq)^{(−1)^q q/2} = exp(−log τ_RS) = 1/τ_RS = 1.
-    B1_ratio = mp.e ** (-log_tau)
+    B1_ratio = mp.exp(-log_tau)
     print(f"     (B1) ∏_q (det'Δq)^{{(−1)^q q/2}} = 1/τ_RS = {mp.nstr(B1_ratio,10)}  (= 1, by A) — no reciprocal-b₁.")
     # B2: per-mode derivative d(log Z_Maxwell)/db₁. From #3870,
     #     log Z = log Vol(J) + ½ ζ_Δ₁(0) log(2π) + …,  ½ ζ_Δ₁(0) = −b₁/2 (linear in b₁),
@@ -317,7 +320,7 @@ def main() -> int:
                      "per-handle measure — bare pi from the S-matrix; OFF the flat-torus determinant, on the "
                      "NONABELIAN S-matrix route (Front 2 / W_lambda keystone). NOT a determinant/torsion on the Jacobian."})
 
-    c3_err_max = max(float(abs(mp.mpf(r["zeta_prime_0"]) - mp.mpf(r["exact_minus_2logL"]))) for r in c3_rows)
+    c3_err_max = float(c3_err_max)
     wb.add_assertion("controls_pass",
                      computed=1.0 if controls_ok else 0.0, expected=1.0, tolerance=0.5,
                      source="zeta_Delta1(0)=-b1 reproduced; circle det zeta'_{S^1}(0)=-2logL (det'=L^2) "
