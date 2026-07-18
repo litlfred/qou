@@ -1,24 +1,24 @@
 {
-  "engine": "python3/mpmath",
+  "engine": "python",
   "engineVersion": "50dps",
-  "computedAt": "2026-05-26T14:26:59Z",
+  "computedAt": "2026-07-18T14:57:43.626937+00:00",
   "computation": "kaon-pion-ratio-7-8",
   "scriptFile": "kaon_pion_ratio_7_8_probe.py",
-  "description": "Closed-form candidate: m_K/m_\u03c0 = 7(q\u2080+q\u2080\u207b\u00b9)\u00b2/8 at 318 ppm. 450\u00d7 improvement over uncorrected [2]_q\u00b2 (14.3%). Categorical interpretation: 7/8 = (n_K\u22121)/n_K where n_K=8 (kaon total quark crossings 3+5), or equivalently (Vol(\ud835\udcd1\u2083)\u2212G)/Vol(\ud835\udcd1\u2083) = 7/8 (one octahedron removed).",
+  "description": "EXPLORATORY numerical observation (NOT a derivation): m_K/m_\u03c0 \u2248 7(q\u2080+q\u2080\u207b\u00b9)\u00b2/8 at 318 ppm. The 7/8 factor is a NUMEROLOGICAL FIT found by scanning fractions \u2014 no categorical derivation exists. Recorded for future investigation, not as a framework prediction. Per AGENTS.md: fits to PDG are forbidden as framework claims.",
   "parameters": {
-    "q0": "1.1099785955541805752815940796095093779932822799587",
+    "q0": "1.1099785827513808075916690956107688798744991218736",
     "m_pi_MeV": "139.57039",
     "m_K_pdg_MeV": "493.677"
   },
   "data": {
     "formula": "m_K/m_\u03c0 = 7(q\u2080+q\u2080\u207b\u00b9)\u00b2/8",
-    "two_q_squared": "4.0437062182305120777582798882746249244006324020999",
-    "predicted_ratio": "3.5382429409516980680384949022402968088505533518374",
+    "two_q_squared": "4.0437062085325219894020193356773883097682139607135",
+    "predicted_ratio": "3.5382429324659567407267669187177147710471872156243",
     "pdg_ratio": "3.5371184389468281918535872830906326191393461034249",
-    "err_ppm": 317.91471625267235,
-    "m_K_predicted_MeV": "493.83394718337547051837926851869009932702718303175",
+    "err_ppm": 317.9123171977711,
+    "m_K_predicted_MeV": "493.8339459990172440263637422845297505038166280877",
     "m_K_pdg_MeV": "493.677",
-    "miss_MeV": 0.1569471833754705,
+    "miss_MeV": 0.15694599901724401,
     "correction_factor": "7/8",
     "categorical_interpretations": [
       "(n_crossings_K \u2212 1)/n_crossings_K = 7/8 where K has 8 quark crossings (3+5)",
@@ -35,5 +35,9 @@
       "passed": true
     }
   ],
-  "allPassed": true
+  "allPassed": true,
+  "scriptHash": "810817f48526",
+  "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
+  "commitSha": "26973183b25852920493b30c3687548ecfdc582e",
+  "durationMs": 0
 }
