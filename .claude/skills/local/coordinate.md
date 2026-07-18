@@ -35,6 +35,23 @@ context.  Without coordination they will:
 - miss new sibling PRs that opened mid-session (new branches landing
   on `main` with overlapping scope).
 
+> **Measured research-overlap is PERMITTED (owner relaxation, 2026-07-18).**
+> The "duplicate work" item above is relaxed for **genuinely open research
+> topics** — an unsolved math/physics question whose *outcome is unknown and
+> multiple routes are viable* (α_EM per-loop measure, a Stokes-constant
+> extraction, a Δ_λ closure, a c_k identification). A different agent context
+> may crack the wall by a different route, so overlapping such a topic is
+> acceptable even when a sibling is on it. **A small relax, not a licence to
+> duplicate:** (1) only *open-outcome* research qualifies — *mechanical /
+> settled* work (sweeps, witness/sidecar regen, refactors, wiring an
+> already-derived result, migrations) still has one owner, do not overlap it;
+> (2) still post intent naming the parallel attempt **and your distinct
+> route** ("you're on the torsion determinant; I'm on the Bloch-group lift");
+> (3) when one route lands, the other re-scopes to *verify / extend / refute*
+> and cites it — two independent confirmations are valuable, two identical
+> re-derivations are waste. Full text: AGENTS.md §"Coordinate intent with
+> sibling branches".
+
 `/coordinate` is the protocol that prevents this.  None of the agents
 has all the answers; they look to the author for clarification on
 inconsistencies, and they cherry-pick from each other.
