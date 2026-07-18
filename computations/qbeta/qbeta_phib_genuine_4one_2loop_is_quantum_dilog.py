@@ -73,10 +73,10 @@ def _naive_2loop(Vfun, xstar):
 def coordinate_dependence():
     Vz = lambda z: mp.polylog(2, z) - mp.polylog(2, 1 / z)
     coords = {
-        "z  (z*=e^{iπ/3})": (Vz, mp.exp(1j * mp.pi / 3)),
-        "t  (z=e^{2πit})": (lambda t: Vz(mp.exp(2j * mp.pi * t)), mp.mpf(1) / 6),
-        "w  (z=e^{w})": (lambda w: Vz(mp.exp(w)), 1j * mp.pi / 3),
-        "s  (z=1/(1-s))": (lambda s: Vz(1 / (1 - s)), 1 - mp.exp(-1j * mp.pi / 3)),
+        "z  (z*=e^{iπ/3})": (Vz, mp.exp(mp.j * mp.pi / 3)),
+        "t  (z=e^{2πit})": (lambda t: Vz(mp.exp(mp.j * 2 * mp.pi * t)), mp.mpf(1) / 6),
+        "w  (z=e^{w})": (lambda w: Vz(mp.exp(w)), mp.j * mp.pi / 3),
+        "s  (z=1/(1-s))": (lambda s: Vz(1 / (1 - s)), 1 - mp.exp(-mp.j * mp.pi / 3)),
     }
     vals = {}
     for name, (Vf, xs) in coords.items():
@@ -93,7 +93,7 @@ def _kashaev_log(N):
         running += mp.log(4 * mp.sin(mp.pi * k / N) ** 2)
         logterms.append(running)
     m = max(logterms)
-    return m + mp.log(sum(mp.e ** (t - m) for t in logterms))
+    return m + mp.log(mp.fsum(mp.e ** (t - m) for t in logterms))
 
 
 def kashaev_2loop(Vol):
