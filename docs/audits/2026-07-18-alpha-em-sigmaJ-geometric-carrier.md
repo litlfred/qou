@@ -42,6 +42,29 @@ paper-confirmed `E_{5τ₀}`. **Remaining wall (unchanged):** the functorial sta
 `τ(braiding) = this automorphism action`; its classical limit would inherit the conformal
 structure `J` defines — and hence the heat-kernel unit `a₀` (Clause A).
 
+## Lean formalization (same PR) + reconciliation with the τ-obstruction (`a6d522e0a`)
+
+**Lean (sorry-free, `lean`-direct exit 0, core-only):**
+[`QOU/Archimedean/SigmaJGeometricCarrier.lean`](../../content/quantum-observable-universe/lean/QOU/Archimedean/SigmaJGeometricCarrier.lean)
+— models `ℤ[i]` as `Int` pairs (no Mathlib) and machine-verifies G1–G3 plus the brick-3
+role-swap: `H₁=H₂=H₃=0` at `V`; `U·V=i·V`; `U·conj(V)=−i·conj(V)`; conjugation swaps the
+families; `i²=−1`; bar exchanges `{±i}` while the transpose fixes them. Registered in
+`QOU.lean`.
+
+**Reconciliation.** The same-day sibling τ-correspondence probe (`a6d522e0a`, merged)
+found the *obstruction*: through the nome, the channel-swap `q↦−q⁻¹` is a **holomorphic**
+modular involution (`τ↦½−τ`) while Hodge conjugation is **anti-holomorphic** (`τ↦−τ̄`) —
+so a holomorphic τ-functor cannot identify them directly, and "the anti-holomorphic
+ingredient must enter through the fibre." **The brick-3/4 role-swap is exactly that
+ingredient, now with its geometric carrier:** on the degenerate stratum the conjugation
+doubling is carried by **bar = parameter conjugation** (anti-holomorphic; on `|q|=1`,
+`q⁻¹=q̄`), which exchanges the degenerate pair `{±i}` — and its geometric realization is
+coordinate conjugation exchanging the two vertex families (G3, Lean-verified). So the
+obstruction and this brick compose rather than conflict: *holomorphic transpose swaps the
+channels at generic q; anti-holomorphic bar/conjugation swaps the degenerate points and
+the vertex families* — the two-strata structure is the resolution shape the obstruction
+audit called for.
+
 ## Scope guard (STRICT)
 
 Exact geometry only; derives **no** clause; no fit; nothing wired. Builds on merged #3933 +
