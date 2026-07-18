@@ -37,6 +37,31 @@ The Auslander–Wenzl one-recurrence positivity test needs
 still gated). `W₂ ≈ 102.67` (odd shadow `c₂^odd=−1` proved, `c₃^odd→−2`). AW
 positivity predicts `W₃/W₂ > 0`; that test is one `c₄^odd` measurement away.
 
+## c₄^even *used* in a laddered reconstruction — representation vs accuracy (2026-07-18)
+
+Follow-on probe
+[`qbeta_c4even_ladder_reconstruction_probe.py`](../../computations/qbeta/qbeta_c4even_ladder_reconstruction_probe.py)
++ witness. This actually **wires** the merged c₄^even rung — folds it into the
+even partial sum `R_even = Π_{k≥2}(1+c_k^even u^k)` at the substrate anchor —
+and sizes what it buys, separating the two legs that get conflated:
+
+| measurement | result |
+|---|---|
+| **M1: c₄^even is a real sub-leading even rung** | at `u(q₀)≈0.00852`, `|c₂u²|=5.81e-4 > |c₃u³|=5.35e-5 > |c₄u⁴|=9.58e-6` (ratios 0.092, 0.179) — a well-behaved asymptotic series; c₄^even's incremental effect on the reconstructed Q_β is **0.0075 keV** |
+| **M2: the odd channel dominates the whole even ladder** | `log R_exact=+7.37e-3`, `log R_even(N=4)=−5.37e-4`; the odd factor `R_exact/R_even` is `log=+7.91e-3` — **14.7× larger and opposite sign** to the entire even ladder |
+| **accuracy vs CODATA** | odd-channel-controlled: the exact object misses by `+0.75%` (≈6.2 keV gap); c₄^even's 0.0075 keV is **~830× too small** to touch it |
+
+**Wiring verdict.** c₄^even is correctly *used* and is a genuine sub-leading
+even rung, but the accuracy vs CODATA is bottlenecked by the bar-odd channel —
+a proved representational prune (swings 2.44% between the proton/muon q₀
+anchors, `dc₃/dq≈4.6e6`;
+[`2026-07-07-c3-even-solved-s-complex-volume-rigidity.md`](2026-07-07-c3-even-solved-s-complex-volume-rigidity.md)).
+Running the L2 dashboard confirms production **unchanged**: `beats_100x = 2/7`
+(m_e, m_K/m_π), Q_β still `160.1×` miss. The even ladder cannot — and does
+not — move `beats_100x`. This is the honest answer to "wire c₄^even": the rung
+is real, sized, and folded, and its measured effect is dwarfed by the gated
+odd channel.
+
 ## Discipline
 
 `c_k^even` here is the **net-route bar-even (binding-side) ladder**, distinct
