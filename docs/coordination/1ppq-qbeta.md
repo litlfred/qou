@@ -1746,3 +1746,19 @@ carry their own modular e^{1/τ} growth) — the Stokes-sector bookkeeping
 (the 5₂ M(x̃;q̃) dictionary, GGM 94-95 analogues) is the remaining step
 to certify the strip and sharpen φ_odd beyond preliminary. No fit; no
 c_k wired.
+
+**2026-07-18 (sector-Prony tranche) — SECTOR CONTENT DERIVED
+REPRESENTATIVE-FREE: the generic sector holds ALL THREE saddle terms
+(rank-3 Prony beats rank-2, holdout 0.0049 vs 0.185) — the derived cause
+of the #3987 off-ray strip failure; sheet identification honestly OPEN.**
+`qbeta_g3_5two_sector_prony.py` (2/2 green): exact Theorem-22 Z₅₂ sampled
+equally in 1/τ along the S2-failure direction; rank-2/rank-3 Prony with
+held-out certification — the three-term model wins decisively, exponents
+E = (−2.7385+6.4091i, −3.0508+3.8801i, −2.7935+5.3053i) recorded. The
+exponents sit OUTSIDE the small-integer scan of my saddle-branch
+representatives' multivaluedness moves (residuals ~1.2–1.8) — the
+branch-sheet bookkeeping genuinely needs the full 5₂ M(x̃;q̃) dictionary
+(the honest remaining step), for which these Prony exponents are now the
+exact targets. φ_odd (#3987, −0.004145 preliminary) unaffected: the
+substrate-ray conjugate-pair extraction is the on-ray case with near-unit
+amplitudes. No fit; no c_k wired.
