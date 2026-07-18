@@ -1725,3 +1725,24 @@ factor tuned to q* (anti-fit-forbidden as a derivation). Confirms the
 representational conclusion from the prefactor side; complements main's "open step
 localized to the classical-prefactor strip" (96a42b8ab9). scope-(a) (excludes the
 obvious candidates, not a proof no factor exists). No c_k wired; no fit.
+
+**2026-07-18 (strip tranche) — SUBSTRATE PAIR AMPLITUDES EXTRACTED (near-
+unit, exact solve): PRELIMINARY intrinsic bar data φ_odd = −0.004145 rad;
+generic-direction strip honestly OPEN (needs the M-dictionary).**
+`qbeta_g3_5two_classical_strip.py` (2/2 green): with the Theorem-22 exact
+Z₅₂ and the saddle classical prefactors e^{V/2πiτ}/√(iδ) (V per (231), δ
+per (235), branches mod-2πi per the #3944 convention), the substrate-ray
+conjugate-pair amplitudes were extracted by exact 2×2 solve on BOTH bar
+sides: |a_σ2| = 0.958, |b_σ2| = 1.041 (near-unit — the expected
+transseries-coefficient scale; σ1 nearly absent from the contour, ~1e-3 —
+consistent Picard–Lefschetz). PRELIMINARY intrinsic bar data (conj-
+symmetry predicts 0): φ_odd = arg a₂ + arg b₂ = −0.004145 rad and
+|b₂|/|a₂|−1 = +0.0864 — the first normalized bar-odd numbers from the
+non-amphichiral sector, same ORDER as the S anchors (S_muon +0.00968,
+S_proton −0.03946) but at O(τ²)-instrument precision and with NO
+identification claimed. HONEST OPEN (S2): off the ray the single-saddle
+strip is structurally wrong (V_eff matches no saddle mod 2π²; blocks
+carry their own modular e^{1/τ} growth) — the Stokes-sector bookkeeping
+(the 5₂ M(x̃;q̃) dictionary, GGM 94-95 analogues) is the remaining step
+to certify the strip and sharpen φ_odd beyond preliminary. No fit; no
+c_k wired.
