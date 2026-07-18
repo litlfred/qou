@@ -1661,6 +1661,7 @@ experimental Q_β. Capstone: `docs/audits/2026-07-18-qbeta-odd-channel-cornering
 capstone.md`. scope-(a) (σ3-pair alone; magnitude not ingredient — stays a
 permanent bar-odd carrier); scope-(b) exclusion of a SINGLE smooth geometric
 source (proved null + exhausted census). No c_k wired; no fit.
+
 **2026-07-18 (exact-Z₅₂ tranche) — THEOREM-22 BLOCKS IMPLEMENTED; ASSEMBLY
 DERIVED ANCHOR-FREE (β = −πi/3 recovered exactly); the 5₂ three-term
 structure measured near the Kashaev ray.** `qbeta_g3_5two_exact_blocks.py`
@@ -1679,3 +1680,16 @@ now has BOTH exact sides: singularity positions (saddle closed form) and
 exact term amplitudes (this probe). Remaining: the σ-basis rotation
 (M(x̃;q̃) dictionary) to read the intrinsic odd phase out of the exact
 term data — next tranche. No fit; no c_k wired.
+
+**2026-07-18 (#3954, supports #3927 A3) — the σ3 bar-odd datum supplies the
+anchor-independent CARRIER but not the N_odd shape; the A3 u³·smooth prefactor is
+constrained.** Follow-on to #3945 (σ3-pair anchor-smooth). Shape half of #3927's
+A3 falsification (`u³·smooth × Im 𝔙_q(5₂) vs N_odd`):
+`qbeta_5two_sigma3_nodd_shape_probe.py` (2/2, erratum V_sigma3=Re(V)) finds
+Im 𝔙_q(5₂)=Im(ι₁₃) smooth and MONOTONE across [1.02,1.50] — no zero crossing near
+the substrate (N_odd's defining zero-at-q* absent) — with slope 0.1965 at q₀,
+12.1× SMALLER than A′(q*)=2.37. So the σ3 datum gives the anchor-independent
+bar-odd carrier but NEITHER N_odd's zero NOR its slope; the A3 u³·smooth prefactor
+must carry the zero at q* AND amplify the slope ~12× (not a passive
+normalization). scope-(a): raw σ3 alone; magnitude/shape mismatch, not ingredient
+exclusion — stays a valid carrier in the composed A3 form. No c_k wired; no fit.
