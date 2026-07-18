@@ -1,0 +1,114 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-18T18:32:32.819763+00:00",
+  "commitSha": "94211d49e03989f4c4a7c4f3f9055bdf1251c2e1",
+  "assertions": [
+    {
+      "name": "strong_split_zero_premise_lean",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "The strong 3H/3He split is proved exactly 0 by QOU.MassTheory.isospinExchange_det_mirror_invariant (PR #3986, sorry-free, lean-direct exit 0): p<->n mirror s->-s fixes every strong bond entry, so B(3H)-B(3He)=E_C(3He). Scope-(b) structural premise."
+    },
+    {
+      "name": "uniform_sphere_over_predicts",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "uniform-sphere 3/5 Coulomb E_C(3He)=0.8487 MeV = 1.1113x AME split 0.764 (over-predicts ~1.11x); parameter-free radius, no fit"
+    },
+    {
+      "name": "pairwise_under_predicts",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "pairwise 1/2 Coulomb E_C(3He)=0.7073 MeV = 0.9261x AME split (under-predicts ~0.93x)"
+    },
+    {
+      "name": "AME_split_brackets_geometries",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "pairwise 0.7073 < AME 0.7638 < uniform-sphere 0.8487: the two model geometries bracket the data — the parameter-free Coulomb lands near 0.764 MeV"
+    },
+    {
+      "name": "magnitude_wall_untouched",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "absolute magnitude ratios rho=B/B_D are strong: Coulomb fraction E_C/B <= 0.110 (<0.12), so Coulomb cannot supply rho_4/rho_3He/rho_3H — the Delta_lambda magnitude wall is untouched"
+    },
+    {
+      "name": "reconfirms_continuum_em_partial",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "this 3/5 A=3 pred 0.8487 equals the 2026-07-13 mirror_split_continuum_em pred via its exact code path — a reconfirmation of a known PARTIAL, not a new crack"
+    },
+    {
+      "name": "radius_is_yukawa_selection_not_derived",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "m_pi is the CLOSEST scale to radius-coefficient 1 (0.900) and the a-priori Yukawa scale; the mass extremes m_e (246x) and m_p (0.13x) are excluded by orders of magnitude, m_mu (1.19x) is the nearest rival — a SOFT 2-bit Yukawa SELECTION, the underived step (PARTIAL not crack)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 19,
+  "computation": "deltalambda-coulomb-mirror-split",
+  "scriptFile": "deltalambda_coulomb_mirror_split_probe.py",
+  "scriptHash": "5f6b073e8af6",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "The 3H/3He mirror binding split as the Coulomb energy of the pp pair, on the machine-verified strong-split-zero premise (PR #3986, isospinExchange_det_mirror_invariant). With a PARAMETER-FREE pion-Compton radius R=lambda_pi*A^(1/3) (lambda_pi=hbar c/m_pi, CAL-3; no empirical r0) and derived alpha=1/(q0[9]_q[10]_q), the AME split 0.764 MeV BRACKETS between two geometries: pairwise 1/2 -> 0.707 (0.93x) < AME < uniform-sphere 3/5 -> 0.849 (1.11x); the ~1.10x mirror ratio is reproduced from Coulomb alone. PARTIAL not a crack: the radius coefficient=1 is a Yukawa selection (GAP1 0.985+-0.069) and 3/5-vs-1/2 is a geometry model factor, both underived; reconfirms the 2026-07-13 continuum-EM PARTIAL. The absolute magnitude ratios rho=B/B_D (4He 12.72/3He 3.47/3H 3.81) are isospin-even STRONG quantities (Coulomb shifts them by <=11%) and remain the OPEN Delta_lambda magnitude wall. Scope-(a), no fit, no wiring.",
+  "contentBlock": "conj:binding-manybody-eq-jet-filtration",
+  "data": {
+    "split_AME_MeV": 0.76375488,
+    "E_C_3He_uniform_sphere_MeV": 0.8487393706040641,
+    "E_C_3He_pairwise_MeV": 0.7072828088367201,
+    "ratio_uniform_sphere": 1.111271944480491,
+    "ratio_pairwise": 0.9260599537337426,
+    "mirror_ratio_AME": 1.0989570861742937,
+    "mirror_ratio_pred_sphere": 1.1111925915886613,
+    "mirror_ratio_pred_pair": 1.0909745437753875,
+    "rho_AME": {
+      "⁴He": 12.719631539848084,
+      "³He": 3.469459043295722,
+      "³H": 3.81278660082132
+    },
+    "coulomb_fraction_E_C_over_B": {
+      "³He": 0.10996823357303095,
+      "⁴He": 0.027252618554567468
+    },
+    "lambda_pi_fm": 1.4138169306541308,
+    "alpha_derived": 0.007308701560055657,
+    "alpha_rel_diff_vs_codata": 0.0015552202890163687,
+    "length_scale_selection_coefficients": {
+      "m_e (CAL-1)": 245.78361839162048,
+      "m_μ (CAL-2 proxy)": 1.188691104709531,
+      "m_π (CAL-3)": 0.8998697438253878,
+      "m_p (phys pin)": 0.1338579421788071
+    },
+    "lean_premise": "QOU.MassTheory.isospinExchange_det_mirror_invariant (PR #3986, sorry-free): strong 3H/3He split = 0 exactly (scope-(b))."
+  }
+}
