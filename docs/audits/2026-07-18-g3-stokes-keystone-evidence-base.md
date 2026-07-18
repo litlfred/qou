@@ -153,3 +153,22 @@ equations); (ii) prove the ratio `Φ₁/Φ₂` of two solutions is entire (poles
 cancel). Given (i)+(ii), `ratio_ib_periodic` + `ratio_ibinv_periodic` +
 `doublyPeriodic_entire_const` compose to force the ratio constant. The elliptic-
 Liouville *excuse* is removed; the holomorphicity endowment is the surviving gap.
+
+## 8. Update — the endowment SCOPED and machine-checked (reduction landed)
+
+`QOU/QBeta/FaddeevRigidityReduction.lean` — `uniqueUpToScalar_of_ratio_entire`,
+`lean`-direct **exit 0**. It proves `∃ c, Ψ = c·Φ` from **exactly three explicit
+hypotheses**, deriving the `ib`-periodicity from nowhere-zero. So the entire G3
+rigidity leg now rests on three named, ranked inputs:
+
+| input | what it is | difficulty |
+|---|---|---|
+| `hratio` — `Ψ/Φ` entire | **THE endowment.** NOT "`Φ_b` entire" (false — `Φ_b` is meromorphic, poles on the `1/b`-lattice). Decomposes into (i) `Φ_b` holomorphic/meromorphic (open — `FaddeevPhi` axiomatizes only the difference equations) + (ii) **divisor cancellation**: two solutions share zeros+poles ⇒ ratio has only removable singularities ⇒ entire, nowhere-zero. | hard (real math) |
+| `hspan` — `⟨ib, i/b⟩` ℝ-spans `ℂ` | non-degeneracy `b² ∉ ℝ`; the substrate branch `arg b = π/4`. **Fails for real `b`** (both periods imaginary ⇒ lattice collapses) — a genuine constraint, not a nuisance. | easy (algebraic; provable/citable) |
+| `hibinv` — `i/b`-periodicity everywhere | derivable off the dual pole lattice from `ratio_ibinv_periodic`; extending across that discrete set needs the identity theorem. | medium |
+
+**Net:** the endowment scope is `hratio`, and its hard half is (ii) divisor
+cancellation of two `Φ_b` solutions — a meromorphic-divisor argument (Mathlib's
+meromorphic API is thin). `hspan` and `hibinv` are lighter and separable. Nothing
+is axiomatized; the reduction is a proved implication, so any future proof of the
+three inputs closes `uniqueUpToScalar` by direct application.
