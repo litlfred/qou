@@ -4,10 +4,10 @@
   "engine": "python",
   "engineVersion": "3.11.15",
   "scriptFile": "wlambda_level_selection_kA_probe.py",
-  "commitSha": "a574b742cb4e340e1f6352ddd62dc609e619cfd9",
-  "scriptHash": "dad3daf6ffd0",
+  "commitSha": "e1d833da5a02c3887ac391be577be47aae754b23",
+  "scriptHash": "62ba2ffb97d0",
   "description": "Scale-free k(A) form test: inverting exact w_std(k) against AME B(A) ratios (ref=2H), k_implied is strongly sub-linear in A -> falsifies naive k~A and k~bond-count; best-fitting named form is logarithmic. Constrains GAP-A-3 to a log-type rule; no scale, no wiring, no closure.",
-  "generated": "2026-07-11T17:14:26.643487+00:00",
+  "generated": "2026-07-18T09:55:42.497576+00:00",
   "assertions": [
     {
       "name": "k_implied_strongly_sublinear_in_A",
@@ -102,5 +102,8 @@
     "open_object": "GAP-A-3 level selection k(A); constrains its FORM to log-type",
     "scope": "FORM of k(A) only; scale-free; no absolute magnitude; no fit search; no closure",
     "AME_source": "AME2020 binding energies (light nuclei)"
-  }
+  },
+  "scriptCommitSha": "494d31587a638430adb78e587033fb3d0b94f422",
+  "computedAt": "2026-07-18T09:55:42.671649+00:00",
+  "durationMs": 0
 }
