@@ -33,6 +33,15 @@ built to consume more terms, and #3805 owns the *even*-channel GGM A_ω — but 
 would let the merged F1 acceleration convert its (gate-failing) numerical singularity
 locator into a *derived* Stokes datum.
 
+> **Update (2026-07-18, on merge).** This Φ_b 2-loop piece has since been taken up. The
+> saddle 2-loop is now understood to be the **quantum dilogarithm**, not any classical
+> potential — the naive classical-potential 2-loop is coordinate-dependent, so the
+> coordinate-invariant object is Φ_b's `ℏ¹` quantum-content (merged #3890). Independently,
+> the full Ohtsuki κ-tower (κ₁..κ₄) is validated first-principles from the Kashaev sum as
+> the complex-volume `log Z` **cumulants** (merged #3905). The deformed b-dictionary
+> normalization at `m = q₀` remains #3596's domain; the "unowned" status above is
+> superseded for the 2-loop identification and the κ-tower convention.
+
 **Recommendation (owner decision):** rather than race the merged F1 machinery or #3805,
 the non-duplicative high-leverage move is the **Φ_b 2-loop saddle b-dictionary at
 `m = q₀`** — feeding F1's odd channel. It should be coordinated with #3805 (adjacent:
