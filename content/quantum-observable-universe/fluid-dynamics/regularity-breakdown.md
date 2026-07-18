@@ -5,7 +5,7 @@ There exist smooth, finite-energy initial data $v_0$ such that the classical Nav
 
 1. **Blowup of enstrophy.** There exists a time $T^* < \infty$ such that $\lim_{t \to T^{*-}} \int_{\mathbb{R}^3} |\omega(x, t)|^2dx = +\infty$, where $\omega = \nabla \times v$ is the vorticity.
 2. **Vortex sheet concentration.** The blowup occurs by concentration of vorticity onto a codimension-1 surface (vortex sheet). The Hausdorff dimension of the singular set is $d_H = 2$.
-3. **Self-similar asymptotics.** Near the blowup time, the solution approaches a self-similar profile $v(x, t) \approx \frac{1}{\sqrt{T^* - t}} V\!\left(\frac{x - x_0}{\sqrt{T^* - t}}\right)$, where $V(\xi)$ solves the Leray equations.
+3. **Discretely self-similar asymptotics.** Near the blowup time, the solution approaches a *discretely* self-similar profile: in Leray's similarity variables $y = (x - x_0)/\sqrt{T^* - t}$, $s = -\log(T^* - t)$, the profile is periodic in $s$ (with period set by the root-of-unity scaling $\lambda_\kappa$) rather than steady. The continuous ($s$-independent) self-similar profile solving the Leray equations is excluded \cite{necas-ruzicka-sverak1996}; see [`prop:leray-profile`](#prop:leray-profile).
 
 **The three obstructions.**
 
