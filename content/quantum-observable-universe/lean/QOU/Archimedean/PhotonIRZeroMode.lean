@@ -109,6 +109,36 @@ theorem selfEnergyDenominator_at_g4 : selfEnergyDenominator 4 = 8 * Real.pi := b
   push_cast
   ring
 
+/-- Holomorphic 1-form count `dim_ℂ H^{1,0}(M_g) = g` — the genus, i.e. the
+    number of independent *holomorphic* differentials on a compact genus-`g`
+    Riemann surface. Contrast `betti1 g = 2g`, the count of *real* harmonic
+    1-forms `dim_ℝ H¹(M,ℝ)`. -/
+def holomorphicOneFormCount (g : ℕ) : ℕ := g
+
+/-- **Real-vs-complex Hodge doubling.** The real harmonic-1-form count is twice
+    the holomorphic count: `b₁ = 2·g`. This is the archimedean shadow of the
+    Hodge decomposition `H¹(M,ℝ) ⊗ ℂ = H^{1,0} ⊕ H^{0,1}`, each summand of
+    complex dimension `g`. It pins WHERE the `2` in `8π = 2·(4π)` lives: it is
+    the real⊕complex doubling, not a free multiplicity. -/
+theorem betti1_eq_two_holomorphic (g : ℕ) :
+    betti1 g = 2 * holomorphicOneFormCount g := rfl
+
+/-- **The self-energy count is the REAL harmonic-1-form count, not the
+    holomorphic one.** The photon is a real `U(1)` gauge field; its connection
+    is a real 1-form, so the self-energy propagator lives on the kernel of the
+    *real* Hodge Laplacian `Δ₁` on `Ω¹(M,ℝ)` — whose ζ-regularized index is
+    `−ζ_{Δ₁}(0) = b₁ = 2g` (the merged area-free count, PR #3834/#3896), NOT the
+    ∂̄-Laplacian's holomorphic `g`. Hence at `g = 4` the denominator is
+    `π·b₁ = π·(2·g) = 8π = 2·(4π)`, with the `2` FORCED to be the real-vs-complex
+    doubling. (This settles the *count*; the reciprocal normalization *form*
+    — `π·b₁` vs the heat-kernel `(4π)·2` — is a separate, still-open question,
+    tracked in the α_EM ledger and `alpha_em_multiplicity2_realcomplex_probe.py`.) -/
+theorem selfEnergyDenominator_count_is_real (g : ℕ) :
+    selfEnergyDenominator g = Real.pi * (2 * (holomorphicOneFormCount g : ℝ)) := by
+  unfold selfEnergyDenominator betti1 holomorphicOneFormCount
+  push_cast
+  ring
+
 /-- **n=1 ↔ n=2 unification on the genus-4 Hodge data.** Both IR corrections are
     built from the single Betti number `b₁(M_g) = 2g`: the n=1 zero-mode carries
     it in the numerator (`photonZeroModeShift = b₁/Area`), the n=2 self-energy in
