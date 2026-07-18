@@ -1,0 +1,50 @@
+{
+  "$schema": "https://litlfred.github.io/witness-schema/witness.schema.json",
+  "witnessVersion": "1.0",
+  "id": "alpha-em-tau-correspondence",
+  "description": "\u03b1_EM per-loop '2' unification: the Hecke channel-swap q\u21a6\u2212q\u207b\u00b9 \u2259 the holomorphic modular involution \u03c4\u21a6\u00bd\u2212\u03c4 (nome q=e^{2\u03c0i\u03c4}), NOT anti-holomorphic conjugation \u03c4\u21a6\u2212\u03c4\u0304 \u2014 a holo-vs-anti-holo obstruction placing the unification at fibre level. scope-(a), auditOnly.",
+  "auditOnly": true,
+  "computation": {
+    "script": "computations/alpha_em/alpha_em_tau_correspondence_probe.py",
+    "scriptCommitSha": "016c58d84b4c2b8fe9756590c72f2d47248c05ef",
+    "scriptHash": "a11b3f71e01d"
+  },
+  "controls": [
+    {
+      "name": "nome_welldefined",
+      "pass": true,
+      "detail": "q = e^(2\u03c0i\u03c4), Im \u03c4 = 0.77 > 0, |q| = 0.007922"
+    }
+  ],
+  "assertions": [
+    {
+      "name": "bar_is_tau_to_neg_tau",
+      "pass": true,
+      "detail": "q \u21a6 q\u207b\u00b9 (bar)  \u2259  \u03c4 \u21a6 \u2212\u03c4  (holomorphic)"
+    },
+    {
+      "name": "channelswap_is_tau_to_half_minus_tau",
+      "pass": true,
+      "detail": "q \u21a6 \u2212q\u207b\u00b9 (Hecke channel-swap, #3936)  \u2259  \u03c4 \u21a6 \u00bd \u2212 \u03c4  (HOLOMORPHIC involution)"
+    },
+    {
+      "name": "half_minus_tau_is_involution",
+      "pass": true,
+      "detail": "\u03c4 \u21a6 \u00bd \u2212 \u03c4 is an involution (applied twice = id)"
+    },
+    {
+      "name": "conjugation_is_antiholomorphic",
+      "pass": true,
+      "detail": "complex conjugation H^{1,0}\u2194H^{0,1}  \u2259  \u03c4 \u21a6 \u2212\u03c4\u0304 (ANTI-holomorphic), here \u2212\u03c4\u0304 = (-0.31 + 0.77j)"
+    },
+    {
+      "name": "holo_vs_antiholo_differ",
+      "pass": true,
+      "detail": "\u03c4\u21a6\u00bd\u2212\u03c4 (channel-swap image (0.19 - 0.77j)) \u2260 \u03c4\u21a6\u2212\u03c4\u0304 (conjugation image (-0.31 + 0.77j)) \u21d2 a holomorphic \u03c4-functor CANNOT identify the Hecke channel-swap with Hodge conjugation directly (different analytic type)"
+    }
+  ],
+  "allPass": true,
+  "verdict": "\u03c4-CORRESPONDENCE for the '2' unification \u2014 sharpened to a holo-vs-anti-holo OBSTRUCTION (scope-(a)), NOT closed. Under the standard nome q = e^(2\u03c0i\u03c4): the bar involution q\u21a6q\u207b\u00b9 \u2259 \u03c4\u21a6\u2212\u03c4 (holomorphic); the Hecke channel-swap q\u21a6\u2212q\u207b\u00b9 (#3936) \u2259 \u03c4\u21a6\u00bd\u2212\u03c4, a HOLOMORPHIC modular involution (half-period shift \u2218 \u03c4\u21a6\u2212\u03c4, Atkin\u2013Lehner type); complex conjugation swapping H^{1,0}\u2194H^{0,1} \u2259 \u03c4\u21a6\u2212\u03c4\u0304, ANTI-holomorphic. So the channel-swap is holomorphic and conjugation is anti-holomorphic \u2014 a holomorphic \u03c4-functor CANNOT identify them directly (they differ in analytic type at any Re \u03c4 \u2260 \u00bc). The unification can therefore hold only at the FIBRE level, where q is formal/complex and the reality structure differs from the archimedean q\u2080\u2208\u211d (AGENTS.md Im(q) banner): the anti-holomorphic (conjugation) ingredient must enter through the fibre's complex structure, not the holomorphic nome. CAVEAT: computed for the standard nome; the framework's actual q\u2080\u2194period dictionary is the open input and could give a different modular involution. This localizes the remaining wall (the categorical\u2192archimedean bridge) to a precise obstruction; it does not close it. No CODATA read; no fit; no \u03b1_k wired; 1/(8\u03c0) stays a phase-4 identification.",
+  "scope": "(a) scope-limited (standard nome) \u2014 holo-vs-anti-holo obstruction; unification stays open at fibre level",
+  "antiLaundering": "standard nome q=e^{2\u03c0i\u03c4} (caveated choice); no CODATA read; no convention tuned to 8\u03c0; unification stated open"
+}
