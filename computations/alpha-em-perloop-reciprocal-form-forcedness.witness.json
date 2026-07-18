@@ -1,0 +1,52 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-18T13:25:44.877761+00:00",
+  "commitSha": "26ec1de5eb9ad915563db85e28b85d6b7298b69c",
+  "assertions": [
+    {
+      "name": "multiple_combinations_hit_target",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "not_naive_mode_countable",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "alpha-em-perloop-reciprocal-form-forcedness",
+  "scriptFile": "alpha_em_perloop_reciprocal_form_forcedness_probe.py",
+  "scriptHash": "5312696cc9de",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Enumerate natural {1/(4π), b₁=8, g=4, P=2} combinations landing on the per-loop measure 1/(8π); test whether the coefficient is naive-mode-countable (forced) or requires the #3911 theta-factor (not separable).",
+  "auditOnly": "docs/audits/2026-07-18-alpha-em-perloop-reciprocal-form-forcedness.md",
+  "data": {
+    "n_combinations_hitting_8pi": 6,
+    "combinations": [
+      "hk /count P=2",
+      "hk /count b1/g=2",
+      "hk/2 /count 1",
+      "hk/2 *count 1",
+      "2hk /count g=4",
+      "2hk /count b1/P=4"
+    ],
+    "forced_unique": false,
+    "verdict": "The α_EM per-loop measure 1/(8π) is reproduced by 6 distinct natural combinations of the settled data {1/(4π), b₁=8, g=4, P=2} (hk /count P=2; hk /count b1/g=2; hk/2 /count 1; hk/2 *count 1; 2hk /count g=4; 2hk /count b1/P=4). Since MORE THAN ONE lands on 1/(8π) and no forcing principle singles one out, the coefficient is NOT naive-mode-countable: the reciprocal-form and the `8π = 2·4π` multiplicity do NOT separate from the magnitude, so `8π` cannot be honestly derived by arithmetic bookkeeping — it must come from the genuine polarized-Jacobian genus-4 theta-factor computation (#3911). This is the anti-laundering result: it forecloses reverse-engineering 8π from a hand-picked combination. The count b₁=8 and π-power 1/(4π) are settled; the JOINT coefficient is one object with the magnitude leg, not a separable arithmetic piece. No fit; no c_k; nothing wired; no tier change."
+  }
+}
