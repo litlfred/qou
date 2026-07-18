@@ -67,12 +67,11 @@ so the normalization's fibre→archimedean continuation is trivial. -/
 theorem Z2_eq (q : ℝ) (hq : q ≠ 0) : Z2 q = 2 * q / (q ^ 2 + 1) := by
   have hq2 : q ^ 2 + 1 ≠ 0 := by positivity
   have hden : q + q⁻¹ ≠ 0 := by
-    have h : q + q⁻¹ = (q ^ 2 + 1) / q := by field_simp; ring
+    have h : q + q⁻¹ = (q ^ 2 + 1) / q := by field_simp
     rw [h]; exact div_ne_zero hq2 hq
   unfold Z2 bracket2
   rw [div_eq_div_iff hden hq2]
   field_simp
-  ring
 
 /-- **Classical normalization.** `Z₂(1) = 1` (Plancherel at `q = 1`). -/
 theorem Z2_at_one : Z2 1 = 1 := by
@@ -103,7 +102,7 @@ theorem Z3_eq (q : ℝ) (hq : q ≠ 0) :
   have h1 : q ^ 2 + 1 ≠ 0 := by positivity
   have h2 : q ^ 4 + q ^ 2 + 1 ≠ 0 := by positivity
   have hb2 : q + q⁻¹ ≠ 0 := by
-    have h : q + q⁻¹ = (q ^ 2 + 1) / q := by field_simp; ring
+    have h : q + q⁻¹ = (q ^ 2 + 1) / q := by field_simp
     rw [h]; exact div_ne_zero h1 hq
   have hb3 : q ^ 2 + 1 + (q⁻¹) ^ 2 ≠ 0 := by positivity
   unfold Z3 bracket3 bracket2
