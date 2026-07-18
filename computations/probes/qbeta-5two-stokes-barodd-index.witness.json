@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-18T14:58:20.313686+00:00",
-  "commitSha": "d34ec0a8e84b69b45e38be8f952d015e44c37927",
+  "computedAt": "2026-07-18T17:52:55.488437+00:00",
+  "commitSha": "80bd9ad75cd025ccb05177289a22b62020530d06",
   "assertions": [
     {
       "name": "printed_H_tables_exact",
@@ -70,11 +70,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 18,
+  "durationMs": 0,
   "computation": "qbeta-5two-stokes-barodd-index",
   "scriptFile": "qbeta_5two_stokes_barodd_index_probe.py",
-  "scriptHash": "0d408a4826cb",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "d7c1bd5f8a7f",
+  "scriptCommitSha": "c4df210824c148c3fc6c9f1ad2c7a5aca10aa864",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
