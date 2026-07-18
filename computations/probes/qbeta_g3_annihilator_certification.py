@@ -123,7 +123,7 @@ def _assemble(m, e, order, pref_qcoef):
 # --------------------- calibrator: trefoil annihilation, symbolic ----------
 def trefoil_calibrate():
     """Verify (ℓ̂ + q^{3/2}M̂³)·δ_{e,3m} = 0 on a grid with the pinned actions,
-    and that the 31 other action-convention combinations FAIL."""
+    and that the 15 other action-convention combinations FAIL."""
     def delta(m, e):
         return 1 if e == 3 * m else 0
 
