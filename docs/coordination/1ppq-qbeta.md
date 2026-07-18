@@ -1502,3 +1502,26 @@ y⁶ = 1 via linear_combination) and `saddle_separation` — x²(y₁−y₂)² 
 (x²−3x+1)(x²+x+1) from the Vieta pair, tying ι̃'s branch locus to the
 proven (119) factorization (the algebraic core of meridian genericity).
 No fit; no c_k wired.
+
+**2026-07-18 (post-#3923) — POLE-PINNED AMPLITUDES + THE ODD-PHASE NULL:
+the 4₁ non-perturbative sector is FULLY phase-law-kinematic — A_ω is not
+a 4₁ Stokes phase (direct-measurement confirmation of #3813's
+non-amphichiral verdict).** Probe `qbeta_g3_aomega_sharpened_amplitude.py`
+(3/3 green): (i) pole-pinned residue extraction with the Lean-backed exact
+singularity — u=0 calibration |2πi·r| = 2.807 (ratio 0.936 to the proved
+integer 3, tail spread 1.6%, monotone toward 3); deformed
+|2πi·r̃|(u_sub) = 1.024 (tail spread 10.6%; supersedes the free-Padé
+1.296). (ii) The exact pole satisfies arg(ζ₀) = arctan(t/π) to 8e-53 —
+the singularity POSITION carries no intrinsic odd phase (exact: ι̃ real ×
+the 2πi/ξ rotation). (iii) THE NULL: arg(r̃) = 9.2e-9 rad from real —
+equal to the κ̃₅ phase-test floor (9.24e-9, #3826), i.e. rung-precision-
+limited — the deformed Stokes AMPLITUDE is real: the phase law extends to
+the full non-perturbative datum. CONSEQUENCE: the bar-odd A_ω channel is
+NOT a 4₁ Stokes phase at any level (perturbative tower #3819, singularity
+position, amplitude — all kinematic); the odd channel must source from
+non-amphichiral geometry — the 5₂-class lane (#3892), independently
+confirming #3813's fork resolution by direct measurement. Capstone
+(Seq-1) ingredient rows recorded; N_odd stays O(1e-8), no identification
+claimed. The 4₁/GGM lane of the g3 campaign is now COMPLETE: exact Stokes
+towers, certified blocks, Lean-proved saddle curve, calibrated residue
+dictionary, and the odd-phase null. No fit; no c_k wired.
