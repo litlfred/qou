@@ -1,0 +1,44 @@
+{
+  "computation": "qbeta-h4-connected-sigma2",
+  "description": "Bean 8we6 subtracted-object (qou-8u91): canonical split of the symbolic H4 4th-strand baryon into disconnected (sigma_0/sigma_1 words, route-B-pruned) + connected (sigma_2-supported) parts; test whether the CONNECTED object is c4-first (phi_4=phi_6=0 at a derivable coupling) or also leaks to c2. Vanishing-order diagnostic + categorical-grid gate with the pole-locus finite-zero guard. Canonical projection (no tuned coefficient) => not a fit; a tuned root would be a wall. auditOnly; no wiring; scope-(a).",
+  "audit_only": true,
+  "reconstruct_ok": true,
+  "ord_q1": {
+    "connected": 1,
+    "disconnected": 2,
+    "h3": 1
+  },
+  "disconnected_is_h3_scalar_dressing": false,
+  "disconnected_ratio": null,
+  "verdict_detail": {
+    "phi4_samples": {
+      "(0,0)": "9",
+      "(1/2,1/2)": "31/4",
+      "(1,1)": "-27",
+      "(0,1)": "zoo",
+      "(1,0)": "1897/64"
+    },
+    "class": "leaks_at_c2"
+  },
+  "connected_c4_first_lead": false,
+  "assertions": [
+    {
+      "label": "disc+conn split reconstructs the full object",
+      "passed": true
+    },
+    {
+      "label": "connected-part ladder classified (lead or wall)",
+      "passed": true
+    }
+  ],
+  "verdict": "connected sigma_2 object also leaks to/below c2 — route-B prune extends to the connected part; the 4th-strand baryon family is walled for a genuine c4^even rung (scope-a)",
+  "allPassed": true,
+  "scriptHash": "8379af322ff0",
+  "scriptCommitSha": "7eb781ad86773407f6beb7fe853c4b232142d81d",
+  "commitSha": "7eb781ad86773407f6beb7fe853c4b232142d81d",
+  "engine": "sympy",
+  "computedAt": "2026-07-18T08:55:10.984499+00:00",
+  "durationMs": 48886,
+  "engineVersion": "sympy 1.14.0",
+  "scriptFile": "qbeta_h4_connected_sigma2_probe.py"
+}
