@@ -1,0 +1,66 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-18T01:43:55.138420+00:00",
+  "commitSha": "9d035abf3fe7a59d6dced5af2c79ef97c2e4ddc4",
+  "assertions": [
+    {
+      "name": "cyclic_generator_greens_all",
+      "computed": 49.0,
+      "expected": 49.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "(-q^½)^m·I_Δ(-e-m,m) reproduces I_Δ on grid"
+    },
+    {
+      "name": "reflection_generator_greens_all",
+      "computed": 49.0,
+      "expected": 49.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "I_Δ(-e,-m) reproduces I_Δ on grid (no prefactor)"
+    },
+    {
+      "name": "cyclic_order3_identity",
+      "computed": 2.61012178719941e-54,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-25,
+      "source": "C³ prefactors multiply to 1, returns I_Δ(m,e)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 12,
+  "computation": "tetrahedron-index-triality-pin",
+  "scriptFile": "tetrahedron_index_triality_pin.py",
+  "scriptHash": "7ba651308ad9",
+  "scriptCommitSha": "9d035abf3fe7a59d6dced5af2c79ef97c2e4ddc4",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Pins the full S₃ triality of the DGG tetrahedron index I_Δ(m,e)(q) empirically (no guessed convention). ℤ/3 generator: I_Δ(m,e)=(-q^½)^m·I_Δ(-e-m,m) (order-3, prefactors→1); ℤ/2 generator: I_Δ(m,e)=I_Δ(-e,-m) (no prefactor). Both green on the full (m,e)∈[-3,3]² grid incl. negative e, cross-checked at two q. Corrects the #3805 test (-q^?)^e — the prefactor depends on m, not e — unblocking the 4₁ two-tetrahedron gluing (G3 route). Audit-only; no wiring.",
+  "contentBlock": "conj:faddeev-phi-b-quasiperiod",
+  "data": {
+    "cyclic_relation": "I_Delta(m,e) = (-q^(1/2))^m * I_Delta(-e-m, m)",
+    "reflection_relation": "I_Delta(m,e) = I_Delta(-e, -m)",
+    "cyclic_greens": [
+      49,
+      49
+    ],
+    "reflect_greens": [
+      49,
+      49
+    ],
+    "cyclic_order3_residual": 2.61012178719941e-54,
+    "corrects_3805_convention": "prefactor is (-q^(1/2))^m, not (+-q^?)^e"
+  }
+}
