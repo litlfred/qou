@@ -1,24 +1,24 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11",
-  "computedAt": "2026-05-31T13:27:12.246255+00:00",
+  "computedAt": "2026-07-18T19:19:20.706477+00:00",
   "computation": "option-e-q-reeb-phase-probe-v4",
-  "description": "Option E v4: canonical q-Reeb phase \u0394_\u03bb = arccos(\u03c7^\u03bb/d_\u03bb) per docs/canonical-derivation-cheat-sheet.md item 4 (A\u22653 binding campaign, PR #1417). Tests on D, T, \u00b3He.",
+  "description": "Option E v4: canonical q-Reeb phase Δ_λ = arccos(χ^λ/d_λ) per docs/canonical-derivation-cheat-sheet.md item 4 (A≥3 binding campaign, PR #1417). Tests on D, T, ³He.",
   "scriptFile": "option_e_q_reeb_phase_probe_v4.py",
   "precisionMetadata": {
     "compute_dps": 50,
     "output_dps": 30
   },
-  "rule": "\u0394_\u03bb(K) = \u03b8_\u03bb(K) = arccos(\u03c7^\u03bb(\u03b2_K) / d_\u03bb)",
-  "reference": "docs/canonical-derivation-cheat-sheet.md \u00a7'Bind' row + A\u22653 binding campaign summary item 4",
+  "rule": "Δ_λ(K) = θ_λ(K) = arccos(χ^λ(β_K) / d_λ)",
+  "reference": "docs/canonical-derivation-cheat-sheet.md §'Bind' row + A≥3 binding campaign summary item 4",
   "variants_tested": [
-    "variant_A_with_chi: B = m_e \u00b7 \u03a3 y_\u03bb \u03c7^\u03bb \u03b8_\u03bb (Markov standard)",
-    "variant_B_phase_only: B = m_e \u00b7 \u03a3 y_\u03bb \u03b8_\u03bb (phase-only)"
+    "variant_A_with_chi: B = m_e · Σ y_λ χ^λ θ_λ (Markov standard)",
+    "variant_B_phase_only: B = m_e · Σ y_λ θ_λ (phase-only)"
   ],
   "results": {
     "variant_A_with_chi": {
       "deuteron": {
-        "variant": "Markov + \u03c7 + \u03b8_\u03bb",
+        "variant": "Markov + χ + θ_λ",
         "atom": "deuteron",
         "B_pred_MeV": "0.13016847848755662526863390292269102697151877793306",
         "B_target_MeV": "2.2245659999999998213127128110500052571296691894531",
@@ -72,7 +72,7 @@
         ]
       },
       "tritium": {
-        "variant": "Markov + \u03c7 + \u03b8_\u03bb",
+        "variant": "Markov + χ + θ_λ",
         "atom": "tritium",
         "B_pred_MeV": "0.061182700582589490412755333672477762308601518599675",
         "B_target_MeV": "8.4817979999999995044390743714757263660430908203125",
@@ -126,7 +126,7 @@
         ]
       },
       "helium-3": {
-        "variant": "Markov + \u03c7 + \u03b8_\u03bb",
+        "variant": "Markov + χ + θ_λ",
         "atom": "helium-3",
         "B_pred_MeV": "0.10800375664277741182680720849249248092210668212936",
         "B_target_MeV": "7.7180600000000003646505319920834153890609741210938",
@@ -182,7 +182,7 @@
     },
     "variant_B_phase_only": {
       "deuteron": {
-        "variant": "y_\u03bb + \u03b8_\u03bb (no \u03c7)",
+        "variant": "y_λ + θ_λ (no χ)",
         "atom": "deuteron",
         "B_pred_MeV": "0.073592555918435425633790552685767165675396246226284",
         "B_target_MeV": "2.2245659999999998213127128110500052571296691894531",
@@ -236,7 +236,7 @@
         ]
       },
       "tritium": {
-        "variant": "y_\u03bb + \u03b8_\u03bb (no \u03c7)",
+        "variant": "y_λ + θ_λ (no χ)",
         "atom": "tritium",
         "B_pred_MeV": "0.017481986682504460453125615153543809617053676233414",
         "B_target_MeV": "8.4817979999999995044390743714757263660430908203125",
@@ -290,7 +290,7 @@
         ]
       },
       "helium-3": {
-        "variant": "y_\u03bb + \u03b8_\u03bb (no \u03c7)",
+        "variant": "y_λ + θ_λ (no χ)",
         "atom": "helium-3",
         "B_pred_MeV": "0.014679504735376970193874076183638506013219957519027",
         "B_target_MeV": "7.7180600000000003646505319920834153890609741210938",
@@ -382,5 +382,9 @@
       "sign_match": "+",
       "rel_err_pct": "99.80980317935625"
     }
-  ]
+  ],
+  "scriptHash": "8ade10eeeddc",
+  "scriptCommitSha": "unknown",
+  "commitSha": "6365f51b0d3d47b312850b42a14e1dcb5d143bc2",
+  "durationMs": 0
 }

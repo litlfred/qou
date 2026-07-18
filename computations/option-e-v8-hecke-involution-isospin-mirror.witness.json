@@ -1,9 +1,9 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11",
-  "computedAt": "2026-05-31T22:29:03.513832+00:00",
+  "computedAt": "2026-07-18T19:19:21.188921+00:00",
   "computation": "option-e-v8-hecke-involution-isospin-mirror",
-  "description": "Option E v8: isospin-mirror identity test \u03c7_\u03bb(\u03b2_T) vs \u03c7_\u03bb\u1d40(\u03b2_\u00b3He) + cross-isotope bar-(anti)symmetric combinations. Probes whether Z\u2194N + \u03bb\u2194\u03bb\u1d40 together produce the canonical isospin-mirror residual.",
+  "description": "Option E v8: isospin-mirror identity test χ_λ(β_T) vs χ_λᵀ(β_³He) + cross-isotope bar-(anti)symmetric combinations. Probes whether Z↔N + λ↔λᵀ together produce the canonical isospin-mirror residual.",
   "scriptFile": "option_e_v8_hecke_involution_isospin_mirror.py",
   "precisionMetadata": {
     "compute_dps": 50,
@@ -137,76 +137,80 @@
   },
   "test_C_results_top10": [
     {
-      "formula": "m_\u03c0\u00b7\u210f_q \u00b7 \u03a3 y M_sym atom",
+      "formula": "m_π·ℏ_q · Σ y M_sym atom",
       "value_MeV": 0.7167625537276926,
       "rel_err_pct": -6.1507279030644755,
       "closes_2pct": false,
       "closes_10pct": true
     },
     {
-      "formula": "m_\u03c0\u00b7\u210f_q \u00b7 \u03a3 y M_asym atom",
+      "formula": "m_π·ℏ_q · Σ y M_asym atom",
       "value_MeV": 0.712823452158274,
       "rel_err_pct": -6.666493986383447,
       "closes_2pct": false,
       "closes_10pct": true
     },
     {
-      "formula": "\u03bc\u2080 \u00b7 \u03a3 y M_sym atom",
+      "formula": "μ₀ · Σ y M_sym atom",
       "value_MeV": 0.08484411630517245,
       "rel_err_pct": -88.89093952308612,
       "closes_2pct": false,
       "closes_10pct": false
     },
     {
-      "formula": "\u03bc\u2080 \u00b7 \u03a3 y M_asym atom",
+      "formula": "μ₀ · Σ y M_asym atom",
       "value_MeV": 0.08437783972591269,
       "rel_err_pct": -88.95199142560502,
       "closes_2pct": false,
       "closes_10pct": false
     },
     {
-      "formula": "m_\u03c0\u00b7\u210f_q\u00b2 \u00b7 \u03a3 y M_sym atom",
+      "formula": "m_π·ℏ_q² · Σ y M_sym atom",
       "value_MeV": 0.07086120693790435,
       "rel_err_pct": -90.72179111974205,
       "closes_2pct": false,
       "closes_10pct": false
     },
     {
-      "formula": "m_\u03c0\u00b7\u210f_q\u00b2 \u00b7 \u03a3 y M_asym atom",
+      "formula": "m_π·ℏ_q² · Σ y M_asym atom",
       "value_MeV": 0.07047177603082318,
       "rel_err_pct": -90.7727812376989,
       "closes_2pct": false,
       "closes_10pct": false
     },
     {
-      "formula": "m_e \u00b7 \u03a3 y M_sym atom",
+      "formula": "m_e · Σ y M_sym atom",
       "value_MeV": 0.026544147832337626,
       "rel_err_pct": -96.52444322106041,
       "closes_2pct": false,
       "closes_10pct": false
     },
     {
-      "formula": "m_e \u00b7 \u03a3 y M_asym atom",
+      "formula": "m_e · Σ y M_asym atom",
       "value_MeV": 0.026398269544135416,
       "rel_err_pct": -96.54354378803524,
       "closes_2pct": false,
       "closes_10pct": false
     },
     {
-      "formula": "\u03bc\u2080\u00b7\u210f_q \u00b7 \u03a3 y M_sym atom",
+      "formula": "μ₀·ℏ_q · Σ y M_sym atom",
       "value_MeV": 0.008387933286549099,
       "rel_err_pct": -98.90172633985095,
       "closes_2pct": false,
       "closes_10pct": false
     },
     {
-      "formula": "\u03bc\u2080\u00b7\u210f_q \u00b7 \u03a3 y M_asym atom",
+      "formula": "μ₀·ℏ_q · Σ y M_asym atom",
       "value_MeV": 0.008341835843258589,
       "rel_err_pct": -98.90776210647387,
       "closes_2pct": false,
       "closes_10pct": false
     }
   ],
-  "best_mirror_formula": "m_\u03c0\u00b7\u210f_q \u00b7 \u03a3 y M_sym atom",
-  "best_mirror_err": -6.1507279030644755
+  "best_mirror_formula": "m_π·ℏ_q · Σ y M_sym atom",
+  "best_mirror_err": -6.1507279030644755,
+  "scriptHash": "f0f772e395b5",
+  "scriptCommitSha": "unknown",
+  "commitSha": "6365f51b0d3d47b312850b42a14e1dcb5d143bc2",
+  "durationMs": 0
 }

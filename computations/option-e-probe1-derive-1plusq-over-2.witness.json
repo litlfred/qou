@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
-  "computedAt": "2026-06-02T06:33:52.977288+00:00",
+  "computedAt": "2026-07-18T19:19:20.557584+00:00",
   "computation": "option-e-probe1-derive-1plusq-over-2",
-  "scriptCommitSha": "4851a3ace93e0923161ed5d76b07806e93e3282d",
+  "scriptCommitSha": "unknown",
   "auditOnly": true,
   "trigger": "author directive 'work on Delta_lambda binding-energy Gram closure' -> docs/coordination/option-e.md PROBE 1 (next-session keystone): derive-or-falsify v9 (1+q)/2",
   "description": "Tests whether the v9 mirror-pair closure factor (1+q)/2 is structurally FORCED (= [2]_q/2 unbalanced) or a near-match/fit. Refreshes the v9 residual at canonical proton q0 (v9 source hardcodes the stale muon-anchor literal 1.1097090249); tests 4 structural hypotheses for an algebraic identity with (1+q)/2; runs the proton-pin vs muon-pin required-factor discriminator. AUDIT-ONLY: no production wiring, no v10 ansatz, no fit.",
@@ -92,5 +92,10 @@
       "rel_pct_vs_1plusq_over_2": -50.13584077413674,
       "ALGEBRAIC_IDENTITY_with_1plusq_over_2": false
     }
-  }
+  },
+  "scriptHash": "e4243aadb3bd",
+  "commitSha": "6365f51b0d3d47b312850b42a14e1dcb5d143bc2",
+  "durationMs": 0,
+  "engineVersion": "python 3.11 + mpmath 1.3.0",
+  "scriptFile": "option_e_probe1_derive_1plusq_over_2.py"
 }

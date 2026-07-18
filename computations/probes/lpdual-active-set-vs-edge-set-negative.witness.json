@@ -232,5 +232,12 @@
   ],
   "deuteron_lp_duality_gap": 43938.58869605584,
   "connection_holds": false,
-  "verdict": "NEGATIVE — NO connection. (1) The LP-dual active set is Wedderburn BLOCKS (partitions λ⊢6); lever-2's edge-set is nucleon BONDS (p-n vs p-p/n-n) + Z·N occupancy — different objects. (2) No simple block statistic (rows/cols/n(λ)/chirality) separates active from inactive. (3) Only the Pauli endpoints agree ([6] active, [1⁶] inactive); the interior breaks any symmetry rule ([2,1,1,1,1] near-antisymmetric is the MOST active block, [3,2,1] balanced is inactive). (4) Moot — the raw LP-dual is degenerate (duality_gap=43938.58869605584), so shadow-price magnitudes are unreliable. The block-active-set is NOT lever-2's bond-occupancy answer; only the two Pauli endpoints, which lever-2 already has from PauliChannelBinding.lean, agree."
+  "verdict": "NEGATIVE — NO connection. (1) The LP-dual active set is Wedderburn BLOCKS (partitions λ⊢6); lever-2's edge-set is nucleon BONDS (p-n vs p-p/n-n) + Z·N occupancy — different objects. (2) No simple block statistic (rows/cols/n(λ)/chirality) separates active from inactive. (3) Only the Pauli endpoints agree ([6] active, [1⁶] inactive); the interior breaks any symmetry rule ([2,1,1,1,1] near-antisymmetric is the MOST active block, [3,2,1] balanced is inactive). (4) Moot — the raw LP-dual is degenerate (duality_gap=43938.58869605584), so shadow-price magnitudes are unreliable. The block-active-set is NOT lever-2's bond-occupancy answer; only the two Pauli endpoints, which lever-2 already has from PauliChannelBinding.lean, agree.",
+  "scriptHash": "6b81f264b490",
+  "scriptCommitSha": "unknown",
+  "commitSha": "6365f51b0d3d47b312850b42a14e1dcb5d143bc2",
+  "engine": "python",
+  "computedAt": "2026-07-18T19:19:19.077750+00:00",
+  "durationMs": 0,
+  "scriptFile": "lpdual_active_set_vs_edge_set_negative.py"
 }

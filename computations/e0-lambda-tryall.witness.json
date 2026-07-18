@@ -1,6 +1,6 @@
 {
   "computation": "e0-lambda-tryall",
-  "description": "Falsification harness for 5 substrate-derived \u03c7^\u03bb\u2192M_\u03bb (per-block energy E_0^\u03bb) maps. Each candidate produces a per-block weight w_\u03bb from cached substrate data (q\u2080, \u03c7^\u03bb, y_\u03bb, dim, content-sum, dim_q, ribbon twist, seminormal eigenphases) \u2014 NEVER from B_AME or the deprecated fit_three_E0. The per-block ENERGY scale E_0^\u03bb maps the genuine per-block STRUCTURAL masses m^\u03bb(particle) (from per_block_phi_q.mass_per_block \u2014 orders-of-magnitude different across e\u207b in H_2 vs p,n in H_3) onto observed MeV: M(particle) = C\u00b7\u03a3_\u03bb E_0^\u03bb\u00b7m^\u03bb(particle). ONE global C is pinned from the proton; the electron AND neutron residuals are the test. PASS = one positive C fits all three within 1%; LATENT-FIT = nucleons fit but the electron (different Hecke order) needs a separate scale (hidden parameter); FAIL = one C fails even on nucleons or C \u2264 0. The {e\u207b,p,n} observed masses are the falsification test, NOT fit targets. No tuning, no back-solve. If all fail, that is the reported result \u2014 no 6th fit (the \u0394_\u03bb gate already exhausted six ans\u00e4tze).",
+  "description": "Falsification harness for 5 substrate-derived χ^λ→M_λ (per-block energy E_0^λ) maps. Each candidate produces a per-block weight w_λ from cached substrate data (q₀, χ^λ, y_λ, dim, content-sum, dim_q, ribbon twist, seminormal eigenphases) — NEVER from B_AME or the deprecated fit_three_E0. The per-block ENERGY scale E_0^λ maps the genuine per-block STRUCTURAL masses m^λ(particle) (from per_block_phi_q.mass_per_block — orders-of-magnitude different across e⁻ in H_2 vs p,n in H_3) onto observed MeV: M(particle) = C·Σ_λ E_0^λ·m^λ(particle). ONE global C is pinned from the proton; the electron AND neutron residuals are the test. PASS = one positive C fits all three within 1%; LATENT-FIT = nucleons fit but the electron (different Hecke order) needs a separate scale (hidden parameter); FAIL = one C fails even on nucleons or C ≤ 0. The {e⁻,p,n} observed masses are the falsification test, NOT fit targets. No tuning, no back-solve. If all fail, that is the reported result — no 6th fit (the Δ_λ gate already exhausted six ansätze).",
   "timestamp": "2026-06-22T13:19:02Z",
   "q_0_50dps": "1.1099785955573347",
   "h_50dps": "0.20906032199559364293038225977644035771894821644089",
@@ -38,7 +38,7 @@
   "candidates": [
     {
       "candidate": "1_archimedean_per_block",
-      "notes": "VolDensity is a knot-level scalar (no per-block split); tested w_\u03bb = VolDensity\u00b7\u03c7^\u03bb as the charitable reading",
+      "notes": "VolDensity is a knot-level scalar (no per-block split); tested w_λ = VolDensity·χ^λ as the charitable reading",
       "weights": {
         "(3,)": "2121.3563594586501418",
         "(2, 1)": "3215.5502416298764871",
@@ -65,7 +65,7 @@
     },
     {
       "candidate": "2_qdim",
-      "notes": "w_\u03bb = dim_q(\u03bb) (q-hook-content) at q\u2080",
+      "notes": "w_λ = dim_q(λ) (q-hook-content) at q₀",
       "weights": {
         "(3,)": "10.669048397161834358",
         "(2, 1)": "8.2641475429096297645",
@@ -92,7 +92,7 @@
     },
     {
       "candidate": "2b_qdim_sq",
-      "notes": "variant: w_\u03bb = dim_q(\u03bb)\u00b2",
+      "notes": "variant: w_λ = dim_q(λ)²",
       "weights": {
         "(3,)": "113.82859370098150681",
         "(2, 1)": "68.296134610979270929",
@@ -119,7 +119,7 @@
     },
     {
       "candidate": "3_rho_w_energy_functional",
-      "notes": "w_\u03bb = \u03a3_{T\u2208SYT(\u03bb)} \u03a3_i a_{T,i}\u00b2  (L\u00b2 of seminormal eigenphases \u2014 a NON-linear per-vertex energy functional, distinct from the linear trace \u03a3_w \u03c1_w = \u03c7^\u03bb)",
+      "notes": "w_λ = Σ_{T∈SYT(λ)} Σ_i a_{T,i}²  (L² of seminormal eigenphases — a NON-linear per-vertex energy functional, distinct from the linear trace Σ_w ρ_w = χ^λ)",
       "weights": {
         "(3,)": "2.4641049651908663996",
         "(2, 1)": "2.5820082087753942472",
@@ -146,7 +146,7 @@
     },
     {
       "candidate": "4_casimir_content_sum",
-      "notes": "w_\u03bb = \u03a3_box content(box) (quadratic Casimir eigenvalue)",
+      "notes": "w_λ = Σ_box content(box) (quadratic Casimir eigenvalue)",
       "weights": {
         "(3,)": "3.0",
         "(2, 1)": "0.0",
@@ -169,11 +169,11 @@
       },
       "worst_resid_rel_excl_proton": 7362.801194112623,
       "verdict": "LATENT-FIT",
-      "reason": "nucleons fit (n resid -2.07e-03) but electron off by 7.36e+03 \u2014 needs a per-Hecke-order scale (hidden parameter)"
+      "reason": "nucleons fit (n resid -2.07e-03) but electron off by 7.36e+03 — needs a per-Hecke-order scale (hidden parameter)"
     },
     {
       "candidate": "4b_casimir_q_exp",
-      "notes": "variant: w_\u03bb = q^{content-sum} (Casimir as a q-exponential)",
+      "notes": "variant: w_λ = q^{content-sum} (Casimir as a q-exponential)",
       "weights": {
         "(3,)": "1.3675518842842064973",
         "(2, 1)": "1.0",
@@ -200,7 +200,7 @@
     },
     {
       "candidate": "5_ribbon_twist",
-      "notes": "w_\u03bb = \u03b8_\u03bb = q^{2\u00b7content-sum} (ribbon twist eigenvalue)",
+      "notes": "w_λ = θ_λ = q^{2·content-sum} (ribbon twist eigenvalue)",
       "weights": {
         "(3,)": "1.8701981562092837178",
         "(2, 1)": "1.0",
@@ -237,5 +237,12 @@
   },
   "any_pass": false,
   "compute_time_sec": 0.06,
-  "design_note": "docs/audits/2026-06-01-e0-lambda-tryall-results.md"
+  "design_note": "docs/audits/2026-06-01-e0-lambda-tryall-results.md",
+  "scriptHash": "1acc45a8fc26",
+  "scriptCommitSha": "unknown",
+  "commitSha": "6365f51b0d3d47b312850b42a14e1dcb5d143bc2",
+  "engine": "python",
+  "computedAt": "2026-07-18T19:19:17.396135+00:00",
+  "durationMs": 0,
+  "scriptFile": "e0_lambda_tryall.py"
 }

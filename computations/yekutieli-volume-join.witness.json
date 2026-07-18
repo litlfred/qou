@@ -158,17 +158,24 @@
     "note": "prop:vol-through-tau says Vol(K)=ln|Vol_q|=ln|tr_M|; the SnapPy 8G is a different (classical-geometry) number. Production uses 8G, not ln|tr_M|."
   },
   "raw_mass_readings": {
-    "production (8G/\u210f\u00b2\u00b7linking_weight)": {
+    "production (8G/ℏ²·linking_weight)": {
       "m_MeV": "966.04982446659753565797793103937409734667618179462",
       "rel_err_vs_codata_mavg": "0.028896083358221928849517523256803740841980396913595"
     },
-    "8G/\u210f\u00b2\u00b7tr_M(proton)": {
+    "8G/ℏ²·tr_M(proton)": {
       "m_MeV": "406.32781105136741556414044847640027144558289227828",
       "rel_err_vs_codata_mavg": "-0.56723858049339475267253907915205626530987596926967"
     },
-    "8G/\u210f\u00b2 alone (linking_weight=1)": {
+    "8G/ℏ² alone (linking_weight=1)": {
       "m_MeV": "381.4188186586816553999362294040082276529301148819",
       "rel_err_vs_codata_mavg": "-0.59376802448701588353631639648903781327944498405011"
     }
-  }
+  },
+  "scriptHash": "9d4761a97964",
+  "scriptCommitSha": "unknown",
+  "commitSha": "6365f51b0d3d47b312850b42a14e1dcb5d143bc2",
+  "engine": "rust+mpmath",
+  "computedAt": "2026-07-18T19:19:24.283423+00:00",
+  "durationMs": 0,
+  "scriptFile": "yekutieli_volume_join.py"
 }

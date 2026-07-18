@@ -1,7 +1,7 @@
 {
   "computation": "mass-formula-6term",
   "closed_form_used": true,
-  "description": "Integrated 6-term mass formula computation for light isotopes. Reports each term separately plus binding predictions via different subsets. Clarifies that n/p discrepancy is calibration-dependent; \u03b2-calibration fixes it by construction. A\u22653 errors come from missing structural terms, not n/p.",
+  "description": "Integrated 6-term mass formula computation for light isotopes. Reports each term separately plus binding predictions via different subsets. Clarifies that n/p discrepancy is calibration-dependent; β-calibration fixes it by construction. A≥3 errors come from missing structural terms, not n/p.",
   "reference_blocks": [
     "thm:knot-mass-formula-unified",
     "thm:frobenius-codim-universal",
@@ -14,13 +14,13 @@
     "E_0_MeV": 7.390664053669786,
     "frobenius_n3_pervortex_MeV": 1.2761128480673734,
     "sigma_inv_dim_q_at_q0_3A": {},
-    "term4_convention": "per-3A canonical (m_e \u00b7 \u03a3_{\u03bb\u22a23A} 1/dim_q(\u03bb))"
+    "term4_convention": "per-3A canonical (m_e · Σ_{λ⊢3A} 1/dim_q(λ))"
   },
   "A1_calibration": {
     "tr_p_q0": 0.702250772648002,
     "tr_n_q0": 0.5963964943816857,
     "Q_cat": -0.10585427826631622,
-    "note": "\u03b2-decay calibration sets m_p and m_n to CODATA by construction; n/p discrepancy only arises WITHOUT this calibration (upstream raw tower: m_n=411 vs 940)."
+    "note": "β-decay calibration sets m_p and m_n to CODATA by construction; n/p discrepancy only arises WITHOUT this calibration (upstream raw tower: m_n=411 vs 940)."
   },
   "rows": {
     "D": {
@@ -146,5 +146,13 @@
         "term5_only": 0.8564977468871162
       }
     }
-  }
+  },
+  "scriptHash": "43f6642517a6",
+  "scriptCommitSha": "unknown",
+  "commitSha": "6365f51b0d3d47b312850b42a14e1dcb5d143bc2",
+  "engine": "mpmath",
+  "computedAt": "2026-07-18T19:19:19.240150+00:00",
+  "durationMs": 0,
+  "engineVersion": "mpmath 1.3.0",
+  "scriptFile": "mass_formula_6term.py"
 }

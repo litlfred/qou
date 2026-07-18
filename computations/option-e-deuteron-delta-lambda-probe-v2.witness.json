@@ -1,9 +1,9 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11",
-  "computedAt": "2026-05-31T13:13:19.928939+00:00",
+  "computedAt": "2026-07-18T19:19:19.990536+00:00",
   "computation": "option-e-deuteron-delta-lambda-probe-v2",
-  "description": "Option E v2: 11 richer \u0394_\u03bb candidate rules grounded in Brundan-Kleshchev content-residue framework (Young-diagram cell contents). Tests against AME deuteron via Path-D.",
+  "description": "Option E v2: 11 richer Δ_λ candidate rules grounded in Brundan-Kleshchev content-residue framework (Young-diagram cell contents). Tests against AME deuteron via Path-D.",
   "scriptFile": "option_e_deuteron_delta_lambda_probe_v2.py",
   "precisionMetadata": {
     "compute_dps": 50,
@@ -1720,6 +1720,10 @@
     "rel_error_pct": "17.356393206989639456820606667767439500047761467692",
     "closes_within_10pct": false
   },
-  "verdict": "FAILS \u2014 all 11 BK-content candidate rules miss AME 10%",
-  "honest_assessment": "These 11 rules use canonical BK content-residue inputs (\u03a3 content, \u03a3 content\u00b2, spread, shifted depth, etc.) \u2014 the substrate-derived data that Option E was designed to leverage. If all still fail, the conclusion is that Option E needs MULTIPLICATIVE composition (not just linear functions of contents), or extra structural data beyond the partition (e.g. per-vertex SYT data, not just per-partition summaries). This narrows the open research question to those richer composition structures."
+  "verdict": "FAILS — all 11 BK-content candidate rules miss AME 10%",
+  "honest_assessment": "These 11 rules use canonical BK content-residue inputs (Σ content, Σ content², spread, shifted depth, etc.) — the substrate-derived data that Option E was designed to leverage. If all still fail, the conclusion is that Option E needs MULTIPLICATIVE composition (not just linear functions of contents), or extra structural data beyond the partition (e.g. per-vertex SYT data, not just per-partition summaries). This narrows the open research question to those richer composition structures.",
+  "scriptHash": "fe62a98c9b23",
+  "scriptCommitSha": "unknown",
+  "commitSha": "6365f51b0d3d47b312850b42a14e1dcb5d143bc2",
+  "durationMs": 0
 }

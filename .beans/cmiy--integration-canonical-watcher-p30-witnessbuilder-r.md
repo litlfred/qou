@@ -455,3 +455,16 @@ ame_registry_routing_triage, kl_betti_cell_dependence, items_1_2_3_mw_strongforc
 NOTE: stamper EXC path does NOT auto-revert (only the PROV-fail path does) — manually reverted.
 Remaining native are computed-name (chi-*/nucleus-sdp) multi-output — need loop-aware stamping
 + tnjb owner-gate. PROV_MISSING 164 -> 160.
+
+## 2026-07-18 — batch 38 (IN-PLACE stamp: 59 unambiguous-producer witnesses, VALUE-PRESERVING)
+Per owner "1 2": stamp-in-place (no re-run) + hard value-verification. Built inplace_stamp.py:
+adds ONLY provenance fields to the committed witness JSON, refuses if any non-provenance
+key/value would change. Pre-validated 59 witnesses with EXACTLY ONE literal writer (correct
+scriptFile, not a consumer — the mis-attribution trap that made me revert the first attempt:
+rho_w_crystal_vertex_trace READS chi-deuteron, doesn't produce it). Fixes across 3 iterations:
+ensure_ascii=False (preserve unicode bytes), preserve trailing newline, preserve existing
+engine/engineVersion (was clobbering numpy+scipy->python). Final: 59 OK, 0 value-integrity
+violations (every non-provenance key byte-identical vs HEAD). Includes nonrunnable scripts
+(he_nu_sdp_*, option_e sweeps) since in-place needs no run. PROV_MISSING 159 -> 100.
+Remaining 100 = computed-name/orphan (canonical chi-*-at-q0 set: f-string producers, no
+unambiguous literal writer) — still need the chi-pipeline producer map or owner input.

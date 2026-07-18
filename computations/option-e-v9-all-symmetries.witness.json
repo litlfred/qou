@@ -1,15 +1,15 @@
 {
   "engine": "python",
-  "computedAt": "2026-05-31T22:29:03.590702+00:00",
+  "computedAt": "2026-07-18T19:19:21.358441+00:00",
   "computation": "option-e-v9-all-symmetries",
-  "description": "Option E v9: tries all remaining symmetries on top of v8's 6.15% closure baseline. Tests 9 scales \u00d7 9 input combinations = 81 candidates. Goal: close mirror pair below 2%.",
+  "description": "Option E v9: tries all remaining symmetries on top of v8's 6.15% closure baseline. Tests 9 scales × 9 input combinations = 81 candidates. Goal: close mirror pair below 2%.",
   "mirror_target_MeV": "0.76373799999999913978854237939231097698211669921875",
   "base_quantities": {
     "v8 base (y M_sym)": "0.052412334537282787825480634779053833703788975287042",
     "v8 alt (y M_asym)": "0.051639794456613178308990920095338093002420605842741",
     "dim M_sym": "-2.0434285635349936499999999999999999999999999999985",
     "dim M_asym": "68.45344819392287435",
-    "y\u00b2 M_sym": "0.00029292372054537656195589502012468209870880719685237",
+    "y² M_sym": "0.00029292372054537656195589502012468209870880719685237",
     "phase M_sym": "0.042645743800242154612026580899650844975386132529398",
     "self-conj y M_sym": "0.00046673309036169215930405255458237764426230727504654",
     "chiral-only y M_sym": "0.000038394448029429171486216929666744665837514122153224",
@@ -17,88 +17,88 @@
   },
   "results_top15": [
     {
-      "formula": "m_\u03c0\u00b7\u210f_q\u00b7(1+\u210f_q) \u00b7 (v8 alt (y M_asym))",
+      "formula": "m_π·ℏ_q·(1+ℏ_q) · (v8 alt (y M_asym))",
       "value_MeV": 0.7829869705421778,
       "err_pct": 2.5203630750569883
     },
     {
-      "formula": "m_\u03c0\u00b7\u210f_q\u00b7(1+h/2) \u00b7 (v8 alt (y M_asym))",
+      "formula": "m_π·ℏ_q·(1+h/2) · (v8 alt (y M_asym))",
       "value_MeV": 0.7868511441540199,
       "err_pct": 3.026318469687352
     },
     {
-      "formula": "m_\u03c0\u00b7\u210f_q\u00b7q \u00b7 (v8 alt (y M_asym))",
+      "formula": "m_π·ℏ_q·q · (v8 alt (y M_asym))",
       "value_MeV": 0.7907153177658619,
       "err_pct": 3.532273864317716
     },
     {
-      "formula": "m_\u03c0\u00b7\u210f_q\u00b7(1+\u210f_q) \u00b7 (v8 base (y M_sym))",
+      "formula": "m_π·ℏ_q·(1+ℏ_q) · (v8 base (y M_sym))",
       "value_MeV": 0.7947005883780142,
       "err_pct": 4.054085089129401
     },
     {
-      "formula": "m_\u03c0\u00b7\u210f_q\u00b7(1+h/2) \u00b7 (v8 base (y M_sym))",
+      "formula": "m_π·ℏ_q·(1+h/2) · (v8 base (y M_sym))",
       "value_MeV": 0.7986225706822654,
       "err_pct": 4.5676096622488735
     },
     {
-      "formula": "m_\u03c0\u00b7\u210f_q\u00b7(q+q\u207b\u00b9)/2 \u00b7 (v8 base (y M_sym))",
+      "formula": "m_π·ℏ_q·(q+q⁻¹)/2 · (v8 base (y M_sym))",
       "value_MeV": 0.727124673260862,
       "err_pct": -4.7939642572632435
     },
     {
-      "formula": "m_\u03c0\u00b7\u210f_q\u00b7q \u00b7 (v8 base (y M_sym))",
+      "formula": "m_π·ℏ_q·q · (v8 base (y M_sym))",
       "value_MeV": 0.8025445529865166,
       "err_pct": 5.081134235368345
     },
     {
-      "formula": "m_\u03c0\u00b7\u210f_q \u00b7 (v8 base (y M_sym))",
+      "formula": "m_π·ℏ_q · (v8 base (y M_sym))",
       "value_MeV": 0.7232026909566108,
       "err_pct": -5.307488830382716
     },
     {
-      "formula": "m_\u03c0\u00b7\u210f_q\u00b7(q+q\u207b\u00b9)/2 \u00b7 (v8 alt (y M_asym))",
+      "formula": "m_π·ℏ_q·(q+q⁻¹)/2 · (v8 alt (y M_asym))",
       "value_MeV": 0.7164071015538008,
       "err_pct": -6.197269017149649
     },
     {
-      "formula": "m_\u03c0\u00b7\u210f_q \u00b7 (v8 alt (y M_asym))",
+      "formula": "m_π·ℏ_q · (v8 alt (y M_asym))",
       "value_MeV": 0.7125429279419587,
       "err_pct": -6.703224411780013
     },
     {
-      "formula": "m_\u03c0\u00b7\u210f_q\u00b7(1+h) \u00b7 (phase M_sym)",
+      "formula": "m_π·ℏ_q·(1+h) · (phase M_sym)",
       "value_MeV": 0.7111721074762952,
       "err_pct": -6.882712726576916
     },
     {
-      "formula": "m_\u03c0\u00b7\u210f_q\u00b7\u221a[2]_q \u00b7 (phase M_sym)",
+      "formula": "m_π·ℏ_q·√[2]_q · (phase M_sym)",
       "value_MeV": 0.8344333330695966,
       "err_pct": 9.256490192919232
     },
     {
-      "formula": "m_\u03c0\u00b7\u210f_q\u00b7(1+h) \u00b7 (v8 alt (y M_asym))",
+      "formula": "m_π·ℏ_q·(1+h) · (v8 alt (y M_asym))",
       "value_MeV": 0.8611593603660811,
       "err_pct": 12.755861351154717
     },
     {
-      "formula": "m_\u03c0\u00b7\u210f_q\u00b7(1+h) \u00b7 (v8 base (y M_sym))",
+      "formula": "m_π·ℏ_q·(1+h) · (v8 base (y M_sym))",
       "value_MeV": 0.87404245040792,
       "err_pct": 14.442708154880462
     },
     {
-      "formula": "m_\u03c0\u00b7\u210f_q\u00b7q \u00b7 (phase M_sym)",
+      "formula": "m_π·ℏ_q·q · (phase M_sym)",
       "value_MeV": 0.6529972323708896,
       "err_pct": -14.499837330224457
     }
   ],
-  "best_formula": "m_\u03c0\u00b7\u210f_q\u00b7(1+\u210f_q) \u00b7 (v8 alt (y M_asym))",
+  "best_formula": "m_π·ℏ_q·(1+ℏ_q) · (v8 alt (y M_asym))",
   "best_err_pct": 2.5203630750569883,
   "correction_factor_search": {
     "v8_base_MeV": 0.7232026909566108,
     "target_factor": 1.0560497209845425,
     "candidates": {
-      "1 + h_q\u00b2": {
+      "1 + h_q²": {
         "value": 1.0097738681040356,
         "err_vs_target_pct": -4.381976715770963
       },
@@ -122,18 +122,23 @@
         "value": 1.0054230748216153,
         "err_vs_target_pct": -4.7939642572632435
       },
-      "(q\u00b2+1)/(q\u00b2)": {
+      "(q²+1)/(q²)": {
         "value": 1.8120481175904968,
         "err_vs_target_pct": 71.5873866148221
       },
-      "(q+1)\u00b2/4q": {
+      "(q+1)²/4q": {
         "value": 1.0027115374108075,
         "err_vs_target_pct": -5.05072654382298
       },
-      "1 + h_q + h_q\u00b2": {
+      "1 + h_q + h_q²": {
         "value": 1.1086367433608049,
         "err_vs_target_pct": 4.979597203741153
       }
     }
-  }
+  },
+  "scriptHash": "f7b33243ea6b",
+  "scriptCommitSha": "unknown",
+  "commitSha": "6365f51b0d3d47b312850b42a14e1dcb5d143bc2",
+  "durationMs": 0,
+  "scriptFile": "option_e_v9_all_symmetries.py"
 }

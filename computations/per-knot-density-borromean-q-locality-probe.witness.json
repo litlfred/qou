@@ -6,7 +6,7 @@
     "faddeev_x_bring_1_over_1_minus_hq_q010": "-1.5e7 ppm/q",
     "family_a_canonical_5_2_plus_3h2_over_4": "-1.69e7 ppm/q (PR #951)",
     "strategy_g_5_2_minus_hbar2_borr_trace": "-1.69e7 ppm/q (PR #916)",
-    "upstream_q_locality_tolerance": "\u2264 1e5 ppm/q",
+    "upstream_q_locality_tolerance": "≤ 1e5 ppm/q",
     "v_7_strategy_h": "-1.86e7 ppm/q (PR #916)",
     "yekutieli_purged_5_2_plus_3_4_minus_G_h2": "-1.69e7 ppm/q (PR #951)"
   },
@@ -54,7 +54,7 @@
       }
     ]
   },
-  "scriptCommitSha": "5dc2c25f916bea59d5ad5687ef82d75f0bd896ac",
+  "scriptCommitSha": "unknown",
   "status": "exploratory",
   "tags": [
     "q-locality",
@@ -65,7 +65,14 @@
   ],
   "verdict": {
     "all_deltas_pass": false,
-    "interpretation": "FAIL \u2014 PerKnotDensity's linking weight does NOT track \u03bb_p_codata locally; slope dominated by \u210f_q\u00b2 prefactor as in all prior bare-polynomial probes. Production Family A linking weight (5/2 + 3h\u00b2/4) is not structurally q-local with respect to the CODATA target near q_0. Closure requires refinement of PerKnotDensity at higher h\u00b2 orders (S_4\u2193S_3 bijection + S_5\u2194SO(3) fiber action \u2014 see docs/audits/2026-05-24-family-a-gap-audit.md).",
+    "interpretation": "FAIL — PerKnotDensity's linking weight does NOT track λ_p_codata locally; slope dominated by ℏ_q² prefactor as in all prior bare-polynomial probes. Production Family A linking weight (5/2 + 3h²/4) is not structurally q-local with respect to the CODATA target near q_0. Closure requires refinement of PerKnotDensity at higher h² orders (S_4↓S_3 bijection + S_5↔SO(3) fiber action — see docs/audits/2026-05-24-family-a-gap-audit.md).",
     "max_abs_slope_ppm_per_q": 15661140.098367414
-  }
+  },
+  "scriptHash": "94de57a78062",
+  "commitSha": "6365f51b0d3d47b312850b42a14e1dcb5d143bc2",
+  "engine": "mpmath",
+  "computedAt": "2026-07-18T19:19:21.977496+00:00",
+  "durationMs": 0,
+  "engineVersion": "mpmath 1.3.0",
+  "scriptFile": "per_knot_density_borromean_q_locality_probe.py"
 }

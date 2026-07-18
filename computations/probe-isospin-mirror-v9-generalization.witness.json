@@ -1,6 +1,6 @@
 {
   "engine": "python-decimal",
-  "computedAt": "2026-05-31T20:42:09.654579+00:00",
+  "computedAt": "2026-07-18T19:19:22.114890+00:00",
   "computation": "probe-isospin-mirror-v9-generalization",
   "exploratory": true,
   "description": "EXPLORATORY falsification probe (Option 3 of the PR #1570 discipline gate). Tests whether the v9 scale*(1+q)/2*Sigma y_lambda chi^lambda(atom) structure that hit the 3H/3He binding DIFFERENCE to 0.11% also reproduces the ABSOLUTE binding energies of D, T, 3He. If absolute errors stay large, the (1+q)/2 factor did not generalize -> 0.11% was specific to the back-solved difference (overfitting tell).",
@@ -94,5 +94,9 @@
       "source": "Option-3 falsification: (1+q)/2 was back-solved for the difference; it does not reproduce absolute B(D,T,3He)."
     }
   ],
-  "allPassed": true
+  "allPassed": true,
+  "scriptHash": "47332b33ac09",
+  "scriptCommitSha": "unknown",
+  "commitSha": "6365f51b0d3d47b312850b42a14e1dcb5d143bc2",
+  "durationMs": 0
 }

@@ -208,5 +208,12 @@
     "(2) qbk2 correction is SUPPORTED on the active set (>85% of weight)": true
   },
   "allPassed": true,
-  "verdict": "CONFIRMED (multi-channel). Deuteron binding is genuinely MULTI-CHANNEL — the LP-dual has 7 active blocks, not one — so the right test is multi-channel SUPPORT, not a single dominant channel. [5,1] IS one of the active channels (y_star=0.692>0), and 95% of the qbk2 +1/2 form-B correction is supported on the active set; the inactive blocks (including the LARGEST, [3, 2, 1] dim 16) carry only 5.1% — so the qbk2 correction lives on the active binding manifold and is NOT merely tracking dimension. The qbk2 propagator and the LP shadow prices weight that shared manifold differently (qbk2 peaks [5, 1]; shadow price peaks [2, 1, 1, 1, 1] where y_λ is tiny), as expected for two distinct quantities on a multi-channel state. So the [5,1]-concentration is NOT a fragile artifact: it is the qbk2 correction sitting on the multi-channel active binding manifold. No fit; canonical duals consumed, not re-solved."
+  "verdict": "CONFIRMED (multi-channel). Deuteron binding is genuinely MULTI-CHANNEL — the LP-dual has 7 active blocks, not one — so the right test is multi-channel SUPPORT, not a single dominant channel. [5,1] IS one of the active channels (y_star=0.692>0), and 95% of the qbk2 +1/2 form-B correction is supported on the active set; the inactive blocks (including the LARGEST, [3, 2, 1] dim 16) carry only 5.1% — so the qbk2 correction lives on the active binding manifold and is NOT merely tracking dimension. The qbk2 propagator and the LP shadow prices weight that shared manifold differently (qbk2 peaks [5, 1]; shadow price peaks [2, 1, 1, 1, 1] where y_λ is tiny), as expected for two distinct quantities on a multi-channel state. So the [5,1]-concentration is NOT a fragile artifact: it is the qbk2 correction sitting on the multi-channel active binding manifold. No fit; canonical duals consumed, not re-solved.",
+  "scriptHash": "7d27df08654d",
+  "scriptCommitSha": "unknown",
+  "commitSha": "6365f51b0d3d47b312850b42a14e1dcb5d143bc2",
+  "engine": "python",
+  "computedAt": "2026-07-18T19:19:22.542690+00:00",
+  "durationMs": 0,
+  "scriptFile": "qbk2_reeb_vs_lp_dual_active_channel.py"
 }

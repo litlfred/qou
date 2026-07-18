@@ -54,5 +54,12 @@
       "QOU.MassEndomorphism.ZHabiroCauchy.zHabiroLimit_coord_eq_eulerTrunc"
     ],
     "wiring_status": "production phi_q UTILITY == Lean eulerCoeff/cyclotomic algebraic Cauchy-limit CERTIFIED at q_0 (the surviving half). Phi_q production mass-wire REFUTED (regresses; n-star refuted x6) -- see docs/audits/2026-06-18-zhabiro-physical-z-pin-and-wiring-verdict.md SS5-6. Bounded-continuation direction: Rogers/real-q face, see docs/audits/2026-06-22-zhabiro-bounded-rogers-continuation-direction.md."
-  }
+  },
+  "scriptHash": "8ae942655334",
+  "scriptCommitSha": "unknown",
+  "commitSha": "6365f51b0d3d47b312850b42a14e1dcb5d143bc2",
+  "computedAt": "2026-07-18T19:19:24.418360+00:00",
+  "durationMs": 0,
+  "engineVersion": "mpmath 1.3.0",
+  "scriptFile": "zhabiro_phiq_production_crosscheck.py"
 }

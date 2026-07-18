@@ -3,7 +3,7 @@
   "engineVersion": "50dps",
   "computation": "option-e-a4-full-reconciliation",
   "scriptFile": "option_e_a4_full_reconciliation.py",
-  "description": "Full A=4 (\u2074He/S\u2081\u2082) Option-E binding: B=m_e\u00b7|\u03a3_\u03bb y\u00b7\u03c7\u00b7sgn\u00b7M_\u03bb|, M_\u03bb\u2208{f^\u03bb, KL-Betti B_\u03bb}. \u03c7 77/77 (chi_q_via_gp), B_\u03bb via kl_betti_sum_rust cheapest-cell-first under a wall budget; f^\u03bb fallback for uncomputed deep cells. Tests #2839's single-scalar 'closure' against the full signed sum.",
+  "description": "Full A=4 (⁴He/S₁₂) Option-E binding: B=m_e·|Σ_λ y·χ·sgn·M_λ|, M_λ∈{f^λ, KL-Betti B_λ}. χ 77/77 (chi_q_via_gp), B_λ via kl_betti_sum_rust cheapest-cell-first under a wall budget; f^λ fallback for uncomputed deep cells. Tests #2839's single-scalar 'closure' against the full signed sum.",
   "data": {
     "nucleus": "4He (H_12/S_12)",
     "sum_f_lambda": "-10.866621221429757438347534235089627792981400002536",
@@ -27,5 +27,10 @@
       "passed": true
     }
   ],
-  "allPassed": true
+  "allPassed": true,
+  "scriptHash": "c8f99a166bf2",
+  "scriptCommitSha": "unknown",
+  "commitSha": "6365f51b0d3d47b312850b42a14e1dcb5d143bc2",
+  "computedAt": "2026-07-18T19:19:19.713794+00:00",
+  "durationMs": 0
 }
