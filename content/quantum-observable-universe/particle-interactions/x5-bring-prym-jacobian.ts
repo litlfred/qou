@@ -6,5 +6,5 @@ export default remark({
   tags: ["jacobian", "prym", "z5", "bring", "hyperelliptic"],
   uses: ["prop:x5-bring-weight-identification"],
   interprets: "prop:x5-bring-weight-identification",
-  cites: ["edge1978"],
+  cites: ["edge1978", "riera-rodriguez-1992", "braden-northover-2012"],
 });
