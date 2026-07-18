@@ -1,0 +1,51 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-18T18:27:01.495729+00:00",
+  "commitSha": "083a4a8f31e1485dce1e746f14cbc4bf05f6fe65",
+  "assertions": [
+    {
+      "name": "d_ladder_exact_odd_ok",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "growth_form_unresolved_at_kmax",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 15,
+  "computation": "qbeta-dladder-single-instanton-extraction",
+  "scriptFile": "qbeta_dladder_single_instanton_extraction_probe.py",
+  "scriptHash": "ca7f46e14755",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Attempt to extract the single-level resurgence parameters (Gevrey order kappa, action A) of the D-ladder; honest outcome: at k=41 the growth FORM is unresolved (neither log|d|/(k log k) nor log|d|/k^2 plateaus), so (kappa,A) are length-blocked.",
+  "auditOnly": "docs/audits/2026-07-18-dladder-single-instanton-extraction.md",
+  "data": {
+    "KMAX": 41,
+    "log_over_klogk_last": "0.4963972525",
+    "log_over_k2_last": "0.04496114563",
+    "tail_slope_klogk": "4.155652298",
+    "tail_slope_k2": "1.738714656",
+    "delta2_intercept": "-0.0008194936142",
+    "klogk_plateaus": false,
+    "k2_plateaus": false,
+    "kappa_A_extractable": false,
+    "verdict": "SINGLE-LEVEL RESURGENCE PARAMETERS ARE LENGTH-BLOCKED AT k=41 (scope-(a) negative). Now that two-level is ruled out, the single-instanton |d_k|~C(k!)^kappa/A^k extraction is well-posed IN PRINCIPLE, but at k=41 the growth FORM is not resolved: log|d|/(k log k) drifts (tail slope 4.156, no plateau => not ordinary Gevrey with a settled kappa) AND log|d|/k^2 drifts (tail slope 1.739, no plateau => not clean q-Gevrey either); the second difference Delta^2 log|d| has intercept -0.0008195 as 1/k->0 (~0 (consistent with kappa/k for the small drifting local kappa), mildly favoring ORDINARY Gevrey over q-Gevrey -- but with kappa still decreasing (0.064->0.026), far from a settled value). So (kappa, A) CANNOT be extracted here -- a Neville extrapolation of the non-converged local kappa_k sequence overshoots to nonsense (kappa~-11), the SYMPTOM of an unresolved form, not a result. This is the growth-form face of the merged 'no single Gevrey index' (#3839). DELIVERABLE: the single-level fibre Stokes datum's (kappa,A) parametrization needs far more exact rungs than k=41; the length-robust handle is the direct optimal-truncation Stokes floor already measured on the fibre (2026-07-18-dladder-fibre-branch-stokes-ambiguity). No fit; no c_k wired; no tier change."
+  }
+}
