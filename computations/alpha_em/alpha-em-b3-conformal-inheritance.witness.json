@@ -1,0 +1,45 @@
+{
+  "computation": "alpha-em-b3-conformal-inheritance",
+  "description": "Bean B3 (qou-cncc): conformal inheritance J => conformal class => Laplacian => a0. Verified core: a0-universality \u2014 Tr e^{t\u0394}\u00b7(4\u03c0t)/Area -> 1 for square/hex/skew/9:1-anisotropic metrics (<=1e-6 at t=1e-3, exponential approach); consistent with the proved GB identity + \u03c7/6=\u22121. Conditional: IF B2-lift THEN the loop geometry carries the universal a0; Clause A reduces to B2-lift + B4. Nothing wired.",
+  "auditOnly": "docs/audits/2026-07-18-alpha-em-b3-conformal-inheritance.md",
+  "tier": "verified core (numpy lattice heat traces + sympy exact GB arithmetic) + conditional chain (J<=>conformal cited; B2-lift open; B4 open)",
+  "computedAt": "2026-07-18T17:23:25.402183+00:00",
+  "commitSha": "4e5e42f0330271d71148fd2f0a03f64db6563e22",
+  "engine": "numpy+sympy",
+  "engineVersion": "2.4.6/1.14.0",
+  "scriptFile": "alpha_em_b3_conformal_inheritance_probe.py",
+  "scriptHash": "d53ce8798c03",
+  "assertions": [
+    {
+      "name": "a0_universality_across_metrics",
+      "passed": true,
+      "detail": "Tr e^{t\u0394}\u00b7(4\u03c0t)/Area = square:1.00000000, hexagonal:1.00000000, skew:1.00000000, anisotropic_9to1:0.99999999 at t=1e-3 \u2014 the leading heat coefficient is 1/(4\u03c0) PER UNIT AREA for every metric shape (square/hex/skew/9:1): the per-mode weight carries no metric data beyond area \u2014 a0 is UNIVERSAL"
+    },
+    {
+      "name": "convergence_uniform_in_shape",
+      "passed": true,
+      "detail": "anisotropic 9:1 ratios at t=1e-2,3e-3,1e-3: ['1.00000000', '1.00000000', '0.99999999'] \u2014 flat-family approach is exponential (dual-lattice term), already exact at the checked scales even for the worst-conditioned shape"
+    },
+    {
+      "name": "consistency_with_proved_chi_side",
+      "passed": true,
+      "detail": "|\u03c7|/(4\u00b7Area)=1/(8\u03c0) identically (the merged GB Lean identity) with Bring \u03c7=\u22126, Area=12\u03c0, heat-trace constant \u03c7/6=\u22121 (merged) \u2014 the SAME universal a\u2080 sits in the measure on the curved side; V1's universality is what makes it a\u2080 and not a metric-dependent weight"
+    }
+  ],
+  "allPassed": true,
+  "result": {
+    "a0_universality": {
+      "square": 1.0,
+      "hexagonal": 1.0,
+      "skew": 1.0000000000000002,
+      "anisotropic_9to1": 0.9999999856158625
+    },
+    "chain": "(i) J<=>conformal std cited; (ii) a0 universal VERIFIED; (iii) conditional on B2-lift + B4",
+    "verdict": "B3 DELIVERED AS A CONDITIONAL CHAIN (scope-(a); derives no clause unconditionally; no fit; nothing wired): the machine-checkable core of J => conformal class => Laplacian => a0 is VERIFIED \u2014 the leading heat coefficient is 1/(4\u03c0) per unit area for every metric shape in the computable flat family (ratios = 1 to <=1e-6 incl. a 9:1 anisotropic case; exponential approach), and it is consistent with the proved curved-side facts (GB identity, \u03c7/6=\u22121 on Bring). Chain status: (i) J<=>conformal class \u2014 standard, cited; (ii) a0-universality \u2014 VERIFIED here; (iii) the CONDITIONAL: IF the B2 functorial lift (shadow FORCED, #3960) THEN the loop geometry inherits J's conformal class and the universal a0 \u2014 Clause A reduces to (B2-lift) + (B4 classical-limit normalization). B4 remains the open analytic piece. NO tier change."
+  },
+  "context": {
+    "bean": "qou-cncc (B3) of milestone qou-b5qg; B1 merged #3955, B2 shadow merged #3960",
+    "conditional_shape": "IF tau carries the braiding's degenerate pair to J (B2 lift) THEN the loop geometry inherits J's conformal class and the universal a0 = 1/(4pi); Clause A = B2-lift + B4",
+    "scope_guard": "derives no clause unconditionally; no fit; nothing wired; 1/(8pi) stays phase-4"
+  }
+}
