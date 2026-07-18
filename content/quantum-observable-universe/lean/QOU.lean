@@ -298,4 +298,5 @@ import QOU.Mathlib.SYTHookFormulaBetaProd
 import QOU.Mathlib.SYTHookFormulaRows
 import QOU.MassTheory.MirrorPairBondScaling
 import QOU.QBeta.CubicSaddleDiscriminant
+import QOU.QBeta.SixOneShapeDiscriminant
 import QOU.MassTheory.BarParityClusterObstruction
