@@ -7,8 +7,17 @@ priority: normal
 tags:
     - alien-habiro
 created_at: 2026-07-18T18:06:37Z
-updated_at: 2026-07-18T23:21:58Z
+updated_at: 2026-07-18T23:31:28Z
 parent: qou-89f9
 ---
 
-ROUTE-B STEP-2 CORE LANDED (2026-07-18, lean exit 0): built the 7-module Meromorphic cone in-sandbox from pinned mathlib source (github egress works; release-server cache blocked, source build not). QOU/QBeta/MeromorphicSameOrder.lean — meromorphicOrderAt_sharedPrefactor_balance: ord(P·Ψ)+ord Φ = ord(P·Φ)+ord Ψ (prefactor cancels; via meromorphicOrderAt_mul + WithTop ℤ abel). This is the algebraic heart of 'order-difference preserved by the q-diff equation'. REMAINING route-B bricks (honest, not axiomatized): (a) meromorphicOrderAt of a c-shift = order at shifted point (translation lemma); (b) lattice ⟨ib,i/b⟩ ⇒ order-diff constant ⇒ 0 at regular point ⇒ ord Φ=ord Ψ (same divisor); (c) empty divisor ⇒ ratio AnalyticOnNhd + nonvanishing; (d) assemble → uniqueUpToScalar via ratio_const_of_doublyPeriodic. Cone build recipe: cd clone, LEAN_PATH=cache (absolute, no overlay), lean -o into cache dir, topo order.
+ROUTE-B STEP 2 LANDED (2026-07-18, both lean exit 0) in QOU/QBeta/MeromorphicSameOrder.lean, against the in-sandbox-built Meromorphic cone:
+1. meromorphicOrderAt_sharedPrefactor_balance — ord(P·Ψ)+ord Φ = ord(P·Φ)+ord Ψ (prefactor cancels; mul + WithTop ℤ abel). PROVED.
+2. meromorphicOrderAt_orderDiff_shift — ord Ψ(x+c)+ord Φ x = ord Φ(x+c)+ord Ψ x (order-diff c-periodic), composing (1) with the order-translation invariance htr carried as explicit §3b-cond hypothesis. PROVED modulo htr.
+
+REMAINING BRICKS (honest, not axiomatized):
+(a) htr = meromorphicOrderAt (g∘(·+c)) x = meromorphicOrderAt g (x+c) — translation invariance. Filter-level Mathlib-gap: punctured-nhds pushforward Tendsto (·+c) (𝓝[≠]x)(𝓝[≠](x+c)) + witness transport across eq_top_iff/eq_int_iff. Best done with LSP. This is now the SINGLE isolated analytic input for step 2.
+(b) lattice ⟨ib,i/b⟩ ⇒ order-diff constant ⇒ 0 at a regular point ⇒ ord Φ=ord Ψ everywhere (uses orderDiff_shift + exists_period_basis).
+(c) empty divisor ⇒ ratio AnalyticOnNhd + nonvanishing (MeromorphicOn.divisor).
+(d) assemble → uniqueUpToScalar via ratio_const_of_doublyPeriodic.
+Cone build recipe recorded in prior bean note + workplan.
