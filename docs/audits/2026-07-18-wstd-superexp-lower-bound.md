@@ -35,11 +35,21 @@ using `max_λ f^λ ≥ √(k!/p(k))` (since `Σ(f^λ)² = k!` over `p(k)` partit
 mean). By Stirling `√(k!) = (k/e)^{k/2}·poly` beats every fixed `C^k`, while `p(k) = exp(π√(2k/3))·poly`
 is sub-exponential, so the bound → ∞ **super-exponentially**.
 
-**(D) Transfer to w_std** via the clean sub-lemma `w_std(k) ≥ E_Planch[f^{λ/(3)}]` (the (2,1)
-channel dominates the (3) channel in expectation; verified k≤12). Then (B) gives
+**(D) Transfer to w_std** via the sub-lemma `w_std(k) ≥ E_Planch[f^{λ/(3)}]` (the (2,1)
+channel dominates the (3) channel in expectation; verified k≤14). Then (B) gives
 `Σ(f^λ)³/k! = 2w_std + 2E[f^{λ/(3)}] ≤ 4·w_std`, so
 
     w_std(k)  ≥  ¼·Σ(f^λ)³/k!  ≥  ¼·√(k!)/p(k)^{3/2}  →  super-exponential.
+
+**(D-reform) Sagan–Stanley reduction of (D).** The classical identity
+`Σ_{λ⊢k} f^λ f^{λ/μ} = (k!/m!)·f^μ` (verified exactly for every μ⊢3, k≤14) says that in the joint
+(Plancherel λ, uniform SYT) law the **first-3-cell shape is Plancherel-distributed on μ⊢3**:
+`P(shape₃=μ) = (f^μ)²/6`. This reformulates (D) into the clean conditional-expectation inequality
+
+    2·E[f^λ | shape₃=(2,1)]  ≥  E[f^λ | shape₃=(3)].
+
+The Sagan–Stanley backbone is rigorous; the conditional inequality itself remains verified-not-proved
+(the one open sub-goal).
 
 ## The Lean lemma (rigorous core C)
 
@@ -52,6 +62,12 @@ The analytic heart of (C) is the **pigeonhole cube–square inequality**, formal
 Applied with `aᵢ = f^λ`, `S = Σ(f^λ)² = k!`, `N = p(k)`, this is `(k!)³ ≤ p(k)³·(Σ(f^λ)³)²`, i.e.
 `Σ(f^λ)³ ≥ (k!)^{3/2}/p(k)^{3/2}`, whence `Σ(f^λ)³/k! ≥ √(k!)/p(k)^{3/2}` — exactly (C). The proof
 is pigeonhole (some square ≥ the mean `S/N`) + single-term-≤-sum + cube/square monotonicity.
+
+A second lemma `wstd_ge_quarter_lower_bound` formalizes the **(B)+(D) algebraic transfer**: from
+`cube = 2·w_std + 2·e`, `0 ≤ e`, `e ≤ w_std`, and a lower bound `L ≤ cube`, conclude `L/4 ≤ w_std`
+(`linarith`). Together the two lemmas discharge the entire analytic/algebraic skeleton of the bound;
+the residual inputs are the SYT-combinatorial facts (A), (B)'s identity, Sagan–Stanley, and (D)'s
+inequality — verified computationally (k≤14), and Lean-targets pending Mathlib SYT machinery.
 
 ## Status of the pieces
 

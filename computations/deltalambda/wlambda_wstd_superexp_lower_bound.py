@@ -60,7 +60,7 @@ sys.path.insert(0, str(HERE))
 sys.path.insert(0, str(HERE.parent))
 sys.path.insert(0, str(HERE.parent / "substrate"))
 
-KMAX = 12
+KMAX = 14
 
 
 def partitions_of(n, m=None):
@@ -142,6 +142,7 @@ def main() -> int:
     conj_ok = True
     dominates_ok = True   # (D): w_std >= E[f^{λ/(3)}]
     lb_ok = True          # (C): cube >= sqrt(k!)/p(k)^{3/2}
+    ss_ok = True          # Sagan-Stanley backbone of the (D) reformulation
     rows = []
     for k in ks:
         parts = list(partitions_of(k))
@@ -168,6 +169,13 @@ def main() -> int:
         lb = math.sqrt(kf) / pk ** 1.5
         if cube < lb - 1e-9:
             lb_ok = False
+        # Sagan–Stanley backbone: Σ_λ f^λ f^{λ/μ} = (k!/3!)·f^μ for every μ⊢3 (classical, exact).
+        # ⇒ in the joint (Plancherel λ, uniform SYT) law the first-3-cell shape is Plancherel on
+        #   μ⊢3: P(shape₃=μ)=(f^μ)²/6. This reformulates (D) w_std ≥ E[f^{λ/(3)}] as the clean
+        #   conditional inequality 2·E[f^λ | shape₃=(2,1)] ≥ E[f^λ | shape₃=(3)].
+        for mu, fmu in (((3,), 1), ((2, 1), 2), ((1, 1, 1), 1)):
+            if sum(dim_int(l) * sk(l, mu) for l in parts) != kf // 6 * fmu:
+                ss_ok = False
         rows.append((k, wstd, E3, cube, lb, wstd / cube))
 
     print(f"{'k':>3} {'w_std':>12} {'E[f^{λ/3}]':>12} {'Σ(fλ)³/k!':>13} "
@@ -185,11 +193,13 @@ def main() -> int:
     print(f"\n(A) level-3 branching  f^λ = f^{{λ/(3)}} + 2f^{{λ/(2,1)}} + f^{{λ/(1³)}}  exact: {branch_ok}")
     print(f"(B) Σ(fλ)³/k! = 2·w_std + 2·E[f^{{λ/(3)}}]  exact: {idB_ok}  (conj-sym E3=E111: {conj_ok})")
     print(f"(C) Σ(fλ)³/k! ≥ √(k!)/p(k)^{{3/2}}  (rigorous, max-term + max f^λ≥√(k!/p)): {lb_ok}")
-    print(f"(D) w_std ≥ E[f^{{λ/(3)}}]  (clean sub-lemma, verified k≤{KMAX}): {dominates_ok}")
+    print(f"(D) w_std ≥ E[f^{{λ/(3)}}]  (sub-lemma, verified k≤{KMAX}): {dominates_ok}")
+    print(f"    Sagan–Stanley backbone Σ_λ f^λ f^{{λ/μ}} = (k!/3!)f^μ (μ⊢3) exact: {ss_ok}")
+    print(f"    ⇒ P(shape₃=μ)=(f^μ)²/6 (Plancherel on μ⊢3); (D) ⇔ 2·E[f^λ|shape₃=(2,1)] ≥ E[f^λ|shape₃=(3)]")
     print(f"    ⇒ w_std ≥ (1/4)·Σ(fλ)³/k! ≥ (1/4)·√(k!)/p(k)^{{3/2}}  → super-exponential (Stirling)")
     print(f"    corroboration: actual w_std/2^k increasing in the tail: {wstd_super_exp}")
 
-    ok = bool(branch_ok and idB_ok and conj_ok and dominates_ok and lb_ok and wstd_super_exp)
+    ok = bool(branch_ok and idB_ok and conj_ok and dominates_ok and lb_ok and ss_ok and wstd_super_exp)
     print(f"\nRESULT: rigorous super-exponential lower bound on w_std established: {ok}")
 
     try:
@@ -212,6 +222,8 @@ def main() -> int:
         w.add_data("plancherel_cube_identity_exact", bool(idB_ok))
         w.add_data("conjugation_symmetry_E3_eq_E111", bool(conj_ok))
         w.add_data("wstd_dominates_E3", bool(dominates_ok))
+        w.add_data("sagan_stanley_backbone_exact", bool(ss_ok))
+        w.add_data("D_reformulation", "P(shape3=mu)=(f^mu)^2/6; (D) <=> 2 E[f^lam|shape3=(2,1)] >= E[f^lam|shape3=(3)]")
         w.add_data("cube_ge_sqrt_kfac_over_p32", bool(lb_ok))
         w.add_data("table", [{"k": r[0], "w_std": r[1], "E_f_lam_3": r[2], "cube_moment": r[3],
                               "lower_bound_sqrt_kfac_over_p32": r[4], "w_over_cube": r[5]} for r in rows])

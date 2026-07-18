@@ -61,4 +61,15 @@ theorem cube_sum_sq_ge {ι : Type*} [Fintype ι] [Nonempty ι]
               apply mul_le_mul_of_nonneg_left _ (by positivity)
               exact pow_le_pow_left₀ hcube_nn hterm 2
 
+/-- **Algebraic transfer (B)+(D).** From the exact Plancherel identity
+`cube = 2·w_std + 2·e` (B, with `e = E_Planch[f^{λ/(3)}]`) together with `0 ≤ e` and the
+dominance `e ≤ w_std` (D), the tower weight carries at least a quarter of the cube moment:
+`cube ≤ 4·w_std`. Combined with a lower bound `L ≤ cube` (the pigeonhole `cube_sum_sq_ge`,
+applied with `L = √(k!)/p(k)^{3/2}`), this gives `L/4 ≤ w_std` — the super-exponential
+lower bound on `w_std`, modulo the (SYT-combinatorial) identity `cube = 2w+2e` and the
+inequality `e ≤ w`. -/
+theorem wstd_ge_quarter_lower_bound {wstd e cube L : ℝ}
+    (hid : cube = 2 * wstd + 2 * e) (_he : 0 ≤ e) (hdom : e ≤ wstd) (hL : L ≤ cube) :
+    L / 4 ≤ wstd := by linarith
+
 end QOU.BraidsAndKnots.WstdSuperExpBound
