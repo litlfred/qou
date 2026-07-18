@@ -85,6 +85,32 @@ excluded. That one normalization (which is Clause A evaluated at 1-loop) is the 
 remaining wall — the conjecture is effectively **one clause** now: the tower's classical
 limit is normalized by the universal heat-kernel unit.
 
+## §6 reconciliation with #3920 (landed on main during this PR): three readings of the "2"
+
+#3920 (`484c86462`) adjudicated the real-vs-holomorphic count sub-question — the per-loop
+count is the **real** `b₁ = 2g` (the photon is a real U(1) 1-form; real Hodge Laplacian),
+with the `2` in `8π = 2·(4π)` read as the **real-vs-complex Hodge doubling**
+`H¹(M,ℝ)⊗ℂ = H^{1,0}⊕H^{0,1}`. This does **not** conflict with F1–F3 (exact algebra,
+reading-independent) but it does put **three readings of the "2"** on main simultaneously:
+
+| reading | the "2" | genus scaling | source |
+|---|---|---|---|
+| GB | `|χ|/(4·Area)` — no `2` per se | **independent** | `ba606720e` + Lean |
+| Hodge doubling | `b₁ = 2·g` (real vs holomorphic) | `π·b₁ = 2πg` — **dependent** | #3920 |
+| Hecke channels | `e₊/e₋` (quadratic Hecke relation) | independent (with Clause A) | lever-2 + this PR |
+
+The GB and Hodge readings **disagree at g≠4** (the GB audit explicitly adjudicated
+genus-independence; `π·b₁` scales) — flagged, not resolved here. **Natural unification
+hypothesis (named, not derived):** the Hecke `2` and the Hodge `2` are the *same*
+conjugation doubling — the bar involution `q ↔ q⁻¹` swaps `e₊/e₋` exactly as complex
+conjugation swaps `H^{1,0}/H^{0,1}`, so a τ-functor correspondence would identify the two
+channel pairs and reduce all three readings to one object (with the GB form as its
+genus-independent evaluation). Deriving that identification **is** (a form of) the
+remaining correspondence statement above. What F2/F3 contribute to *any* reading: the "2"
+cannot be resummation weights (excluded at real q), and the per-loop parameter is
+q-independent (`−[2]_q·x` exact), so every reading must place its "2" in the
+classical-limit normalization, not in q-dependent weights.
+
 ## Scope guard (STRICT)
 
 States and machine-checks the skeleton; **derives neither clause**; no fit; nothing wired;
