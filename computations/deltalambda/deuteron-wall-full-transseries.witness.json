@@ -2,9 +2,9 @@
  "computation": "deuteron-wall-full-transseries",
  "description": "FULL level-1/2 Borel\u2013Laplace median resummation of the Gevrey-1/2 binding period a_D^(n)=I(n)/n for the Hopf-deuteron (perturbative Vol=0), parameter-free at the substrate coupling. Undershoots B_D by ~40\u00d7 (m_e\u00b7ReP \u2264 0.06 MeV vs 2.225); reaches B_D only at the Borel singularity 1/\u221a2 (not a substrate qty). The full alien calculus of the dualized entanglement energy does NOT close the deuteron parameter-free; distinct-mechanism (q-rotational) route indicated. Scope-(a) negative; no fit.",
  "audit_only": true,
- "computedAt": "2026-07-13T10:01:57.633211+00:00",
+ "computedAt": "2026-07-18T13:27:45.994664+00:00",
  "engine": "mpmath",
- "engineVersion": "1.3.0",
+ "engineVersion": "mpmath 1.3.0",
  "borel_singularity": "1/sqrt(2)",
  "borel_level": "1/2 (Gevrey-1/2)",
  "target_B_D_over_m_e": "4.353277",
@@ -48,5 +48,10 @@
    "passed": true
   }
  ],
- "allPassed": true
+ "allPassed": true,
+ "scriptHash": "b50b2d04e148",
+ "scriptCommitSha": "38781fed50517a459bf9e4c8f31f962a2fab18dd",
+ "commitSha": "9efbe6e6cd42038e00c9812bca049c17ea010730",
+ "durationMs": 0,
+ "scriptFile": "deuteron_wall_full_transseries_probe.py"
 }

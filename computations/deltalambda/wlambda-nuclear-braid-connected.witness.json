@@ -1,13 +1,13 @@
 {
   "schema": "witness/v1",
   "computation": "wlambda-nuclear-braid-connected",
-  "engine": "python+mpmath",
-  "engineVersion": "3.11.15",
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
   "scriptFile": "wlambda_nuclear_braid_connected_probe.py",
-  "commitSha": "830526025a7316b8c7d287d255827ac07c7a0452",
-  "scriptHash": "eb0ea09a15f4",
+  "commitSha": "9efbe6e6cd42038e00c9812bca049c17ea010730",
+  "scriptHash": "9d670132b5b9",
   "description": "Connected part of the W_lambda-weighted nuclear-braid standard-rep transfer-matrix product for 2H/3He/3H/4He/6Li/12C: localizes the extensive binding channel to the non-abelian (2,1) rep (C_std=0 at A=2, grows with bonds for A>=3). Mechanism probe; NOT a binding closure; no fit.",
-  "generated": "2026-07-11T15:20:08.828456+00:00",
+  "generated": "2026-07-18T13:27:04.452811+00:00",
   "assertions": [
     {
       "name": "A2_single_bond_connected_zero",
@@ -106,5 +106,8 @@
     "channel": "(2,1) standard rep = deuteron f_pn channel (#2528)",
     "structural": "1-dim reps factorize (disconnected); (2,1) is the non-abelian transfer-matrix product (connected)",
     "scope": "mechanism localization; NOT a closure; no scale/wiring/fit"
-  }
+  },
+  "scriptCommitSha": "6c6044317eb2f26ff2ddf78442dfc797b1a88ff3",
+  "computedAt": "2026-07-18T13:27:04.674693+00:00",
+  "durationMs": 0
 }

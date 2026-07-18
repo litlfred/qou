@@ -1,12 +1,12 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-18T10:29:45.077706+00:00",
-  "commitSha": "2a1c39ec459b3a3576301c3b1e12b4a5db6b2a60",
+  "computedAt": "2026-07-18T13:28:13.340442+00:00",
+  "commitSha": "9efbe6e6cd42038e00c9812bca049c17ea010730",
   "assertions": [
     {
       "name": "no_missing_provenance",
-      "computed": 253,
+      "computed": 250,
       "expected": 0,
       "passed": false,
       "tolerance": 0,
@@ -47,12 +47,12 @@
   },
   "data": {
     "counts": {
-      "total_scanned": 1955,
-      "prov_ok": 1642,
+      "total_scanned": 1956,
+      "prov_ok": 1646,
       "prov_audit_exempt": 59,
-      "prov_missing": 253,
+      "prov_missing": 250,
       "prov_parse_error": 1,
-      "completeness_ratio": 0.870076726342711
+      "completeness_ratio": 0.871676891615542
     },
     "by_verdict": {
       "PROV_OK": [
@@ -374,6 +374,10 @@
         },
         {
           "witness": "alpha-em-zeta-anomaly-b1-count.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "bring-polarized-epstein-determinant.witness.json",
           "missing_fields": []
         },
         {
@@ -1910,6 +1914,18 @@
         },
         {
           "witness": "deltalambda-sign-pivotal-grading-capstone.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "deuteron-coupling-s00-derive-or-refute.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "deuteron-wall-alien-resummation.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "deuteron-wall-full-transseries.witness.json",
           "missing_fields": []
         },
         {
@@ -7053,28 +7069,7 @@
           ]
         },
         {
-          "witness": "deuteron-coupling-s00-derive-or-refute.witness.json",
-          "missing_fields": [
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
           "witness": "deuteron-ladder-falsification.witness.json",
-          "missing_fields": [
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "deuteron-wall-alien-resummation.witness.json",
-          "missing_fields": [
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "deuteron-wall-full-transseries.witness.json",
           "missing_fields": [
             "scriptFile",
             "commitSha"

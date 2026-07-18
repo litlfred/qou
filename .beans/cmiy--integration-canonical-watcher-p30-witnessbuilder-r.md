@@ -305,3 +305,14 @@ Low-collision picks (avoided qbeta/keystone/meson sibling-hot areas):
 All exit 0, correct output location (verified no strays), keys preserved,
 confirmed PROV_OK. Remaining clean tail is now mostly sibling-hot (qbeta G3,
 keystone s5-so3, meson λ_A) or native/SDP — good stopping point.
+
+## 2026-07-18 — batch 22 (5 deltalambda probes, all stamp)
+Cleared the remaining clean (non-native) deltalambda tail:
+- wlambda_nuclear_braid_connected_probe (stamp, os _HERE, var=witness)
+- wlambda_transfer_matrix_connected_probe (stamp, os _HERE, var=witness)
+- deuteron_coupling_s00_probe (stamp, pathlib, var=wit)
+- deuteron_wall_alien_resummation_probe (stamp, pathlib, var=wit)
+- deuteron_wall_full_transseries_probe (stamp, pathlib, var=wit)
+All assertion-bearing (allPassed preserved), engine=mpmath. Exit 0, keys
+preserved, PROV_OK. Native deltalambda producers (he4_vol4_prediction_test,
+vol4_4he_snappy_falsification) deferred — need pyhecke-native harness.
