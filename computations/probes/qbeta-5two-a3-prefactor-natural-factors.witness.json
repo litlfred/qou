@@ -1,0 +1,57 @@
+{
+  "computation": "qbeta-5two-a3-prefactor-natural-factors",
+  "description": "No natural 5\u2082 structural smooth factor (\u03c31 Vol, \u03c33 bar-even part, [3]_q, [5]_q, \u03c33/\u03c31 ratio, \u03c31\u2013\u03c33 saddle separation) supplies the N_odd zero-at-q* the A3 prefactor requires \u2014 all monotone, bounded from zero across the substrate window; the zero is representational, not geometric. scope-(a); supports #3927 A3 (distinct route).",
+  "audit_only": true,
+  "tier": "numerical (structural enumeration; A3 support)",
+  "computedAt": "2026-07-18T17:09:25.260947+00:00",
+  "commitSha": "df3128c5c5c71d6d8479300b8fa1c8d6b88305a1",
+  "engine": "mpmath",
+  "engineVersion": "1.3.0",
+  "scriptFile": "qbeta_5two_a3_prefactor_natural_factors_probe.py",
+  "scriptHash": "982e78059530",
+  "assertions": [
+    {
+      "name": "no_natural_5two_factor_zeros_near_substrate",
+      "passed": true,
+      "computed": "6 candidates, min |\u00b7| over window all \u2265 0.4503",
+      "source": "none of the six natural 5\u2082 structural smooth factors (\u03c31 Vol, \u03c33 bar-even part, [3]_q, [5]_q, \u03c33/\u03c31 action ratio, \u03c31\u2013\u03c33 saddle separation Im) crosses zero in the substrate window \u2014 no natural factor supplies the N_odd zero-at-q* the A3 prefactor requires"
+    }
+  ],
+  "allPassed": true,
+  "result": {
+    "candidates": {
+      "Im V(\u03c31) [Vol]": {
+        "crosses_zero": false,
+        "min_abs": "2.82929"
+      },
+      "Re(\u03b9\u2081\u2083)": {
+        "crosses_zero": false,
+        "min_abs": "0.450296"
+      },
+      "[3]_q": {
+        "crosses_zero": false,
+        "min_abs": "3.00157"
+      },
+      "[5]_q": {
+        "crosses_zero": false,
+        "min_abs": "5.00785"
+      },
+      "|\u03b9\u2081\u2083/\u03b9\u2081\u2082|": {
+        "crosses_zero": false,
+        "min_abs": "0.785909"
+      },
+      "|y_\u03c31\u2212y_\u03c33|": {
+        "crosses_zero": false,
+        "min_abs": "1.35462"
+      }
+    },
+    "any_zero": false,
+    "verdict": "SUPPORT for #3927 A3 (distinct route): NO natural 5\u2082 structural smooth factor supplies the N_odd zero-at-q* that the A3 prefactor requires. All six enumerated candidates (\u03c31 quantum volume, \u03c33 bar-even part, [3]_q, [5]_q, \u03c33/\u03c31 action ratio, \u03c31\u2013\u03c33 saddle separation) are smooth, monotone, and bounded away from zero across q\u2208[1.02,1.30] (the smallest, |\u03b9\u2081\u2083/\u03b9\u2081\u2082|\u22480.79\u20130.89, never approaches 0). So the zero at q* is NOT a manifest geometric/algebraic feature of any natural 5\u2082 object \u2014 it is representational: q* is the S=A/u\u00b3 crossing, a property of the CODATA-vs-ladder N_odd (pinned by experimental Q_\u03b2). A3's prefactor can produce the zero only by a NON-structural factor tuned to q*, which the anti-fit discipline forbids as a derivation. This confirms the campaign's representational conclusion from the prefactor side. scope-(a): excludes the obvious natural candidates (magnitude/shape), NOT a proof that no factor exists; a future structural object with a zero at q* would reopen it. NO fit; NO c_k wired; \u03bc never fixed from QOU data."
+  },
+  "context": {
+    "axis": "A3 prefactor natural-factor census (supports #3927 A3)",
+    "follows": "#3954 (\u03c33 carrier no N_odd zero, slope 12\u00d7 short)",
+    "saddle_machinery": "qbeta_g3_5two_saddle_exact_predictions (V_sigma3=Re(V) erratum)",
+    "nodd_zero": "q* = S=A/u\u00b3 crossing (representational; BarOddLadderShape)"
+  }
+}

@@ -1693,6 +1693,7 @@ bar-odd carrier but NEITHER N_odd's zero NOR its slope; the A3 u³·smooth prefa
 must carry the zero at q* AND amplify the slope ~12× (not a passive
 normalization). scope-(a): raw σ3 alone; magnitude/shape mismatch, not ingredient
 exclusion — stays a valid carrier in the composed A3 form. No c_k wired; no fit.
+
 **2026-07-18 (bar-pair tranche) — EXACT 5₂ SUBSTRATE BAR-PAIR COMPUTED;
 raw split honestly DEGENERATE; the open step precisely localized.**
 `qbeta_g3_5two_barodd_substrate.py` (3/3 green): Theorem-22 Z₅₂ evaluated
@@ -1709,3 +1710,18 @@ now precisely localized: strip the classical exponential (the
 normalization derivation) from the bar-pair — with every exact
 ingredient on main (singularity positions #3944, term amplitudes #3951,
 the bar-pair here). No identification claimed; no fit; no c_k wired.
+
+**2026-07-18 (#3964, supports #3927 A3) — no natural 5₂ factor supplies the N_odd
+zero-at-q*; the A3 prefactor zero is representational.** Distinct-route follow-on
+to #3954 (σ3 carrier monotone, slope 12× short). Structural enumeration
+(`qbeta_5two_a3_prefactor_natural_factors_probe.py`, 1/1, NOT a fit) of six
+natural 5₂ smooth factors — σ1 quantum volume, σ3 bar-even part, [3]_q, [5]_q,
+σ3/σ1 action ratio, σ1–σ3 saddle separation — across q∈[1.02,1.30]: ALL smooth,
+monotone, bounded away from zero (smallest |ι₁₃/ι₁₂|≈0.79–0.89). No natural factor
+crosses zero. ⇒ the N_odd zero at q* is NOT a manifest geometric feature of any
+natural 5₂ object — it is representational (q* = the S=A/u³ crossing, pinned by
+experimental Q_β). A3's prefactor can produce the zero only by a non-structural
+factor tuned to q* (anti-fit-forbidden as a derivation). Confirms the
+representational conclusion from the prefactor side; complements main's "open step
+localized to the classical-prefactor strip" (96a42b8ab9). scope-(a) (excludes the
+obvious candidates, not a proof no factor exists). No c_k wired; no fit.
