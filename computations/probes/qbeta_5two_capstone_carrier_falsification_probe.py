@@ -143,11 +143,17 @@ def main() -> int:
           f"~{mp.nstr(f_log_slope/mp.mpf(1),3)}×)")
     t2_f_not_smooth = f_log_slope > mp.mpf("1e6")
 
-    # ---- T3: the writhe ingredient D_odd(q) = ½(q²−q⁻²) — same test, cheap ----
-    D_star = (Q_STAR**2 - Q_STAR**-2) / 2
-    print(f"\n[T3] writhe datum D_odd(q*) = {mp.nstr(D_star,10)}  "
-          f"(≈0.21, no zero — same failure of constraint (2))")
-    t3_D_no_zero = abs(D_star) > mp.mpf("0.1")
+    # ---- T3: the writhe ingredient — same test, cheap. Both forms: the
+    # capstone's D_odd = ½(q²−q⁻²) (writhe-2, computed with the pre-#3892 braid
+    # that is actually 6₂) and the CORRECTED 5₂ datum ½(q⁴−q⁻⁴) (canonical braid
+    # [1,1,1,2,-1,2], writhe 4, hyperbolic_knot_db_extended.py). Both fail
+    # constraint (2) identically: smooth, O(0.2)/O(0.4), no zero at q*.
+    D_star_w2 = (Q_STAR**2 - Q_STAR**-2) / 2
+    D_star_w4 = (Q_STAR**4 - Q_STAR**-4) / 2
+    print(f"\n[T3] writhe data at q*: capstone (writhe-2, 6₂-braid era) = "
+          f"{mp.nstr(D_star_w2,10)};  corrected 5₂ (writhe-4) = "
+          f"{mp.nstr(D_star_w4,10)}  — neither has a zero (constraint (2) fails)")
+    t3_D_no_zero = abs(D_star_w2) > mp.mpf("0.1") and abs(D_star_w4) > mp.mpf("0.2")
 
     verdict_fail = t1_no_zero and t2_f_not_smooth and t3_D_no_zero
     print("\n" + "=" * 78)
@@ -192,8 +198,13 @@ def main() -> int:
                      source="placing the zero in f instead needs log-slope > 1e6 "
                             "across the anchor window — violates 'smooth O(1)'")
     wb.add_assertion("writhe_D_odd_nonvanishing_at_qstar",
-                     computed=float(abs(D_star)), expected=0.21, tolerance=0.05,
-                     source="D_odd(q*) = ½(q*²−q*⁻²) ≈ 0.21 — same constraint-(2) failure")
+                     computed=float(abs(D_star_w2)), expected=0.21, tolerance=0.05,
+                     source="capstone D_odd(q*) = ½(q*²−q*⁻²) ≈ 0.21 (writhe-2, "
+                            "pre-#3892 6₂-braid era) — constraint-(2) failure")
+    wb.add_assertion("corrected_writhe4_D_odd_nonvanishing_at_qstar",
+                     computed=float(abs(D_star_w4)), expected=0.42, tolerance=0.05,
+                     source="corrected 5₂ (braid [1,1,1,2,-1,2], writhe 4, #3892): "
+                            "½(q*⁴−q*⁻⁴) ≈ 0.42 — same constraint-(2) failure")
     ok = all(a.passed for a in wb.assertions)
 
     wb.add_data("q_star", mp.nstr(Q_STAR, 20))
