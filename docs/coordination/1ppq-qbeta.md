@@ -1253,3 +1253,28 @@ hand: `I_41(0,0) = 1−2q−3q²+2q³+8q⁴+18q⁵+18q⁶+14q⁷−12q⁸−52q�
 VALUE remains one tranche away — the coefficient↔Stokes dictionary (GGM
 2012.00062, classical Stokes matrix `S⁰=[[1,0],[−3,1]]` → load-bearing integer
 3). No c_k wired; no fit; scope-(a).
+
+**2026-07-18 (#3813) — STOKES DICTIONARY resolved + STRUCTURAL VERDICT: 4₁
+CS=0 bars the bar-odd A_ω from the u=0 index.** Extending the validated 4₁
+total-index assembly with the coefficient↔Stokes dictionary (GGM 2007.10190
+eq 80, cited): the geometric Stokes entry `S⁺_σ1σ1(q) = Σ_e I_41(0,e) =
+1−8q−9q²+18q³+46q⁴+90q⁵+62q⁶`; the leading (classical) Stokes constant of 4₁ is
+**3** (= the `S⁻(0)=[[1,0],[−3,1]]` off-diagonal). **Key structural finding
+(reframes the A_ω search):** the c₃ bar-odd real (~0.0097/−0.0395) is NOT
+extractable from the u=0 4₁ index —
+- **scope-(a):** the 4₁ Stokes constants are INTEGERS (3,−8,−9,46,…) and the
+  q-series diverges at substrate q≈0.90 (growing coefficients);
+- **scope-(b), cited invariant:** 4₁ is **AMPHICHIRAL ⇒ CS=0** at the u=0
+  complete structure (`V(σ1)=i·Vol` purely imaginary, GGM 2012.00062 eq 41), so
+  the bar-odd/imaginary complex-volume datum is **identically zero** for the
+  figure-eight at u=0.
+
+So the u=0 4₁ Stokes data is bar-EVEN (the integer 3); the **bar-odd A_ω lives
+only in the DEFORMED (u≠0) state integral** — needing Φ_b median/Borel
+resummation (machinery not in-repo; the winding/meridian face) OR a
+non-amphichiral knot (5₂, CS≠0). This is fully consistent with this PR's
+local-Φ_b-monodromy anchor-blind result and `MonodromyDatumRigidity` (the
+bar-odd datum is dual/non-perturbative, not in the u=0 readout). `2·Vol(4₁)=4.06
+≈ |ratio −4.0751|` (0.38%) is flagged anti-numerology — NOT wired. Probe/witness
+`qbeta_g3_fourone_index_assembly_corrected` (3/3: anchor 4.20, window stability,
+amphichiral symmetry). No c_k; no fit.
