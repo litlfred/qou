@@ -1,80 +1,95 @@
-# `_avg_color_delta()` evaluates the color split at the *proton* q₀ — a mixed-pin (bean-`tnjb`) hazard for muon-q₀ 1ppQ computes
+# `_avg_color_delta()` is anchor-adaptive — a *fragile-guard* pattern, not a live mixed-pin bug (self-correction)
 
 **Date:** 2026-07-18 · **Axis:** q₀-anchor convention / L1 precision hygiene ·
-**Tier:** finding + guidance (scope-(a); no mass migration — owner-gated per
-AGENTS.md). **Branch:** `claude/focused-euler-ez3iu4`.
+**Tier:** finding + guidance (scope-(a); no code behavior change; no witness
+rewritten). **Branch:** `claude/focused-euler-ez3iu4`.
 
-## The finding
+> **Self-correction.** An earlier version of this audit (and the #3906 PR body /
+> the #3891 Correction box) claimed `_avg_color_delta()` is *"proton-pinned"* and
+> flagged a *"mixed-pin hazard."* **Both over-stated the problem.** The 5.86e-11
+> I measured came from my *diagnostic* running standalone **without**
+> `QOU_Q0_ANCHOR=ideal`, not from any consumer. Verified below; a background
+> classification of all ~40 consumers finds **0 live mixed-pin bugs**. This
+> version is the corrected record.
 
-`computations/canonical_braid_crossings._avg_color_delta()` caches
+## What is actually true
 
-```python
-from q_parameter import Q as _Q0
-_AVG_COLOR_DELTA = flavor_split_leading(mp.mpf(str(_Q0)))
-```
+`_avg_color_delta()` = `flavor_split_leading(mp.mpf(str(q_parameter.Q)))`, and
+`q_parameter.Q` is **anchor-adaptive** (`tools/qou-substrate/.../q_parameter.py`):
 
-`q_parameter.Q` is the **proton-pinned** q₀ (the package layer,
-`tools/qou-substrate/.../constants.py`, `_solve_q_proton_f64`). But the canonical
-`computations/` derivation layer — including the L1 Markov-trace certification —
-is **muon-pinned** (`q-pinning-50-digit.witness.json`,
-`1.109978595557…`, −11.5 ppb from the proton pin). See AGENTS.md
-§"q₀ anchor convention (STRICT)".
+| context | `_avg_color_delta()` | δ error vs 50-dps muon |
+|---|---|---|
+| default (no anchor) | 0.001375710807027… (**proton** pin) | 3.2e-7 |
+| `QOU_Q0_ANCHOR=ideal` (or producer in `q0_anchor_manifest.json` `ideal_muon`) | 0.0013757112499766… (**muon** pin) | **5.0e-16** |
 
-So a compute that reads the **muon** q₀ for its trace but takes its color split δ
-from `_avg_color_delta()` gets δ at the **proton** q₀ — a **mixed pin**.
+Under the ideal anchor the accessor **redefines `q_parameter.Q` from the muon
+witness**, so a script whose trace and δ both flow from `q_parameter` stays
+pin-consistent. `flavor_split_leading(q) = (q−1)²(1−q⁻⁴)/3` is the **exact**
+closed form either way (= `markov_peel._color_delta`'s δ_symbolic to 2.6e-54 at a
+fixed q₀); the only variable is which q₀ it is evaluated at.
 
-## Why it is exactly 3.2e-7 in δ (and ~5.86e-11 in tr_M)
+So the 5.86e-11 residual is **not** intrinsic to `_avg_color_delta()` — it is what
+you get **only** if a muon-q₀ trace is color-weighted by a **default-anchor**
+(proton) δ. No production consumer does that.
 
-`flavor_split_leading(q) = (q−1)²(1−q⁻⁴)/3` is the **exact** closed form — it
-equals `markov_peel._color_delta`'s δ_symbolic to 2.6e-54 at a fixed q₀ (verified).
-The error is **not** the formula; it is the q₀ argument. With
-δ ∝ (q−1)² to leading order,
+## The genuine finding — a fragile guard + a precision ceiling
 
-$$\frac{\partial \delta}{\delta} \approx \frac{2\,\Delta q_0}{q_0-1} \approx \frac{2\,(11.5\text{ ppb})}{0.11} \approx 3.2\times10^{-7},$$
+1. **Fragile guard.** A muon-q₀ 1ppQ compute is correct **only because** it (or
+   the manifest) sets `QOU_Q0_ANCHOR=ideal`. Drop that env-var / manifest entry
+   and δ silently reverts to proton → 5.86e-11. That is exactly the trap my own
+   standalone diagnostic fell into. The 4 watch-list files below carry the guard;
+   an edit removing it would create a real MIXED-PIN-1ppQ.
+2. **Precision ceiling under the anchor.** Even correctly muon-anchored,
+   `_avg_color_delta()` is δ to only **~5e-16** (it reads the **f64** `q_parameter.Q`,
+   not the 50-dps `Q_50_DIGIT_STR`) → tr_M to ~1e-16, inside 1ppQ but only ~10×.
+   For **deep**-1ppQ, evaluate the closed form at the 50-dps muon q₀:
+   `flavor_split_leading(q0_muon_50dps)` (or `markov_peel._color_delta`). The new
+   L1 third method (`cross_check_trM_cw_seminormal_leg.py`) does exactly this and
+   lands at ~7e-49 — the robust pattern, independent of the ambient anchor.
 
-matching the measured `|Δδ|/δ = 3.220e-7` between `_avg_color_delta()` and
-`flavor_split_leading(q₀_muon)`. Propagated through the color-weighted seam of an
-atomic Markov trace this is **≈ 5.86e-11** — the exact residual seen in the L1
-third-method investigation
-([`2026-07-18-l1-third-method-cw-seminormal.md`](2026-07-18-l1-third-method-cw-seminormal.md)),
-whose earlier "leading-order approximation" framing this audit **corrects**.
+## Consumer classification (40 files)
 
-## The fix (per consumer, trivial — no shared-util change, no mass migration)
+Background sweep of every `_avg_color_delta` / `flavor_split_leading` consumer:
 
-`flavor_split_leading(q)` already takes q as an argument. A muon-q₀ 1ppQ compute
-should call
+| bucket | count | meaning |
+|---|---|---|
+| **MIXED-PIN-1ppQ (live bug)** | **0** | none |
+| **MIXED-PIN-scopeA** | **0** | none |
+| **CONSISTENT** | **34** | pin-aligned (see breakdown) |
+| **N/A** (witness `.json`) | 6 | data, not code |
 
-```python
-delta = flavor_split_leading(q0_muon)   # q0 from q-pinning-50-digit.witness.json
-```
+**CONSISTENT breakdown**
+- **C1 — muon-trace + `_avg_color_delta`, mitigated by `QOU_Q0_ANCHOR=ideal`
+  (4, the *watch list*):** `deltalambda/he4_binding_k_presentation_correction_probe.py`,
+  `deltalambda/he4_binding_k_stage2_probe.py`,
+  `deltalambda/he4_stage2_ranking_seminormal_xcheck.py`,
+  `cross_check_trM_cw_seminormal_leg.py` (this one uses the **exact symbolic δ**,
+  not `_avg_color_delta` — robust by construction).
+- **C2 — trace + δ both from anchor-adaptive `q_parameter`, move as a unit
+  (17):** incl. `markov/markov_peel.py` (the L1 peel reference; δ + trace at the
+  same `q_parameter.Q` — the correct pattern), `chi_at_q0_via_hoefsmit_mpfr.py`
+  (tol 1e-12, not 1ppQ), `mass_at_3A_proper.py` (couples q → both proton or both
+  muon), and 14 further probes.
+- **C3 — δ is a *physical flavor-split observable* (Δm/M_N), not a trace weight;
+  local q throughout (9):** `_li_2_q_util` (definer), `closed_form_tau_M`, and 7
+  `flavor_split_*` / `charge_symmetry` probes.
+- **C4 — threshold / harness / comment / drift-tool (4):**
+  `canonical_braid_crossings` (classify threshold + definer),
+  `chi_monotone_transfer` (a harness that *compares* the two δ functions),
+  `binding_combiner_markov_peel_fallback` (comment-only), `fr_pullback_borromean_h3a_test`
+  (the muon/proton δ delta **is** its deliverable).
 
-instead of `_avg_color_delta()`. **Do NOT** change `_avg_color_delta()`'s default
-or mass-migrate consumers: per AGENTS.md §"q₀ anchor convention" STRICT rule 4
-and bean `tnjb`, the muon/proton split is deliberate and owner-gated. This is a
-**reporting/precision-layer** correction applied only where 1ppQ is asserted on a
-muon-q₀ trace — not a rewrite of the ~840 muon-q₀ witnesses.
+## Actions taken (guidance only — no behavior change, no migration)
 
-## Consumer classification
-
-*Background classification sweep in progress (~40 `_avg_color_delta` consumers →
-MIXED-PIN-1ppQ / MIXED-PIN-scopeA / CONSISTENT buckets); the table is filled in a
-follow-up commit.* Preliminary: the L1 cert path is CONSISTENT (peel + the new
-seminormal leg both use the muon q₀); the ⁴He binding stage-2 probe is
-MIXED-PIN-scopeA (uses `_avg_color_delta` on a muon-q₀ trace but is not
-1ppQ-gated, so the ~5.86e-11 is within tolerance — the trailing ~15 digits of its
-serialized tr_M(K) are not pin-independent, but no precision claim rests on them).
-
-## Scope note
-
-The L1 certification path is **not** affected: `cross_check_trM_1ppb.py` uses
-`markov_peel` (exact δ at the muon q₀) and the chi-cache combiner; the new L1
-third method (`cross_check_trM_cw_seminormal_leg.py`) computes δ inline as
-`(q₀−1)²(1−q₀⁻⁴)/3` at the **muon** q₀ — both correct. The mixed-pin hazard is
-latent in `_avg_color_delta()` consumers, quantified and bucketed above so any
-future 1ppQ work on those paths uses the local-q₀ δ.
+- **In-code note** on `_avg_color_delta()`: it is anchor-adaptive; muon-q₀
+  callers must set `QOU_Q0_ANCHOR=ideal` (or be in the manifest), and deep-1ppQ
+  callers should use `flavor_split_leading(local_q0_50dps)`.
+- **No mass migration** (owner-gated per AGENTS.md §"q₀ anchor convention"); no
+  witness rewritten. `markov_peel` self-aligns to its caller's anchor — worth a
+  guard only if ever run standalone as a muon-1ppQ reference.
 
 ## Cross-references
 
-- L1 third method + the corrected framing: [`2026-07-18-l1-third-method-cw-seminormal.md`](2026-07-18-l1-third-method-cw-seminormal.md)
+- L1 third method (corrected framing): [`2026-07-18-l1-third-method-cw-seminormal.md`](2026-07-18-l1-third-method-cw-seminormal.md)
 - q₀ convention: AGENTS.md §"q₀ anchor convention (STRICT)"; bean `tnjb`
 - δ closed form: `computations/_li_2_q_util.py::flavor_split_leading` (`prop:flavor-split-substrate`)

@@ -53,14 +53,17 @@ def _avg_color_delta():
     Float-context callers wrap with `float()`; mpmath callers use it directly
     so the high-dps paths keep full precision.
 
-    ⚠ q₀-PIN (STRICT — read before 1ppQ use). δ is evaluated at
-    `q_parameter.Q`, the **PROTON-pinned** q₀ (≈ 1.10998). The canonical
-    `computations/` derivation layer (incl. the L1 Markov-trace cert) is
-    **muon-pinned** (`q-pinning-50-digit.witness.json`, −11.5 ppb). Using this
-    δ to color-weight a **muon-q₀** trace is a mixed pin: δ is off by ~3.2e-7
-    → the trace by ~5.86e-11. Negligible at scope-(a); **WRONG at 1ppQ**.
-    For a muon-q₀ 1ppQ compute call `flavor_split_leading(local_q0)` directly
-    (the closed form takes q as an argument). Do NOT change this default —
+    ⚠ q₀-PIN (read before 1ppQ use). δ is evaluated at `q_parameter.Q`, which
+    is **anchor-adaptive**: PROTON-pinned by default, but MUON-pinned under
+    `QOU_Q0_ANCHOR=ideal` (or when the producer stem is in
+    `q0_anchor_manifest.json` `ideal_muon`). So a muon-q₀ compute is correct
+    ONLY IF it sets that anchor — otherwise δ silently reverts to proton and a
+    color-weighted muon-q₀ trace is off by ~5.86e-11 (fine at scope-(a), WRONG
+    at 1ppQ). Two rules: (1) muon-q₀ callers must set `QOU_Q0_ANCHOR=ideal`;
+    (2) for **deep**-1ppQ, this accessor only reaches ~5e-16 (it reads the f64
+    `q_parameter.Q`, not the 50-dps string) — call
+    `flavor_split_leading(local_q0_50dps)` directly (the closed form takes q as
+    an argument; = `markov_peel._color_delta`). Do NOT change this default —
     the muon/proton split is owner-gated (AGENTS.md §"q₀ anchor convention";
     bean `tnjb`). Full analysis:
     docs/audits/2026-07-18-avg-color-delta-q0-pin-mismatch.md."""
