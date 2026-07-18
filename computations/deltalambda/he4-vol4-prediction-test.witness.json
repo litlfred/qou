@@ -2,8 +2,8 @@
  "computation": "he4-vol4-prediction-test",
  "description": "4He Vol4=8.05 falsifiable prediction test of the bond-count tower B = m_e*Sum (n-1)*Vol_n: exact AME back-out of the implied Vol4 (from AME2020 B(4He), CODATA m_e, corpus Vol(L6a4)/Vol(8_11)), SnapPy comparison against in-advance-named structural candidates, and a guarded 4-component census density tabulation. NEGATIVE for the single-link linear-chain reading; link assignment itself is the open model input (gated on R5-full SDP #604). Scope-(a).",
  "audit_only": true,
- "computedAt": "2026-07-13T15:44:56.834022+00:00",
- "engine": "mpmath+snappy",
+ "computedAt": "2026-07-18T13:38:38.620769+00:00",
+ "engine": "mpmath",
  "inputs": {
   "m_e_MeV": {
    "value": 0.51099895069,
@@ -153,5 +153,11 @@
    "passed": true
   }
  ],
- "allPassed": true
+ "allPassed": true,
+ "scriptHash": "a90fe50236ca",
+ "scriptCommitSha": "9042c79a55e804c3d7dec2e3fedb1932eb057f53",
+ "commitSha": "68c6dff36581d2135136fc081e000ec34ddbf716",
+ "durationMs": 0,
+ "engineVersion": "mpmath 1.3.0",
+ "scriptFile": "he4_vol4_prediction_test_probe.py"
 }
