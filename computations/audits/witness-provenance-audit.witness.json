@@ -1,12 +1,12 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-18T17:23:16.514300+00:00",
-  "commitSha": "4bb980fedca04e4128bc45c44b964a45341c3681",
+  "computedAt": "2026-07-18T17:30:50.860024+00:00",
+  "commitSha": "7f9474204b81a19d3044c75259238003c8c47037",
   "assertions": [
     {
       "name": "no_missing_provenance",
-      "computed": 232,
+      "computed": 231,
       "expected": 0,
       "passed": false,
       "tolerance": 0,
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 10,
+  "durationMs": 9,
   "computation": "witness-provenance-audit",
   "scriptFile": "witness_provenance_audit.py",
   "scriptHash": "1abb80bb6c90",
@@ -47,12 +47,12 @@
   },
   "data": {
     "counts": {
-      "total_scanned": 1993,
-      "prov_ok": 1701,
+      "total_scanned": 1994,
+      "prov_ok": 1703,
       "prov_audit_exempt": 59,
-      "prov_missing": 232,
+      "prov_missing": 231,
       "prov_parse_error": 1,
-      "completeness_ratio": 0.8830908178625189
+      "completeness_ratio": 0.8836509528585758
     },
     "by_verdict": {
       "PROV_OK": [
@@ -4641,6 +4641,10 @@
           "missing_fields": []
         },
         {
+          "witness": "qbeta-5two-a3-prefactor-natural-factors.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "qbeta-5two-jones-barodd.witness.json",
           "missing_fields": []
         },
@@ -5030,6 +5034,10 @@
         },
         {
           "witness": "q-dirac-vs-empirical-dominant-lambda-50dps.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "q-pinning-50-digit.witness.json",
           "missing_fields": []
         },
         {
@@ -8119,14 +8127,6 @@
         },
         {
           "witness": "pyhecke-h3-vs-h3a-impact-comparison.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "q-pinning-50-digit.witness.json",
           "missing_fields": [
             "engine",
             "scriptFile",
