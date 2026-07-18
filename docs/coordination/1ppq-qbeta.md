@@ -1449,3 +1449,29 @@ Witness now 3/3 green. Follow-ups: complex-τ branch alignment
 (bookkeeping; raw (112) drifts off-axis in this frame map), then tranche
 B — deformed Borel at the Kashaev ray minus this exact side → numeric A_ω
 residual vs Im 𝔙̃_b = 0.0585. No fit; no c_k wired.
+
+**2026-07-18 (#3898) — TRANCHE B PART 1: fixed-x saddle data exact (Lean-
+proved algebraic layer) + STRUCTURAL FINDING: the corpus tower is a
+DIFFERENT double-scaling limit — part-2 redirect to the Kashaev limit of
+the block factorization.** The deformed 4₁ saddle curve was re-derived from
+GGM (115) with the glyph-lost minus restored: x·y² + (x²−x−1)·y + 1 = 0
+(self-certified: reduces to (38) at x=1; y-discriminant = the printed (119)
+product identically; γ² = (x+x⁻¹−3)(x+x⁻¹+1) → −3 at u=0). The algebraic
+layer is now LEAN-PROVED sorry-free over generic CommRing
+(`QOU/QBeta/DeformedSaddleCurve.lean`: discriminant factorization, x=1
+reduction, γ²-locus identity, Vieta product/sum — lean-direct exit 0);
+the transcendental part stays in the witness per the §7c wall. Exact
+saddle actions at the substrate meridian: V(σa,b) = −1.68848201 ±
+1.41228159i (residuals 1e-61), ι̃ = (Va−Vb)/(2πi) = 0.44954319 (real);
+u=0 control ι̃ = Vol/π exact. SCOPE-(a) NEGATIVE: ι̃(u_sub) does NOT
+reproduce the corpus's measured tower singularity 0.6310+0.0210i (29%
+off; u-rescaling dictionaries also fail; Im 𝔙̃_b candidates all fail).
+CAUSE IDENTIFIED: different double-scalings — GGM §5.1 fixes x = e^u as
+τ→0, while the corpus tower fixes the MERIDIAN in J_N(e^{ξ/N}) where
+x̃ = e^{u/τ} ~ e^{uN} → ∞; consistently the measured pole sits near the
+u=0 Vol/π with weak u-dependence (Murakami regime). REDIRECT (part 2):
+the exact side of the A_ω residual is the Kashaev-limit of the certified
+Theorem-14 block factorization (τ → 1/N + iε with the meridian scaling),
+which the deformed-blocks probe already evaluates. Probe
+`qbeta_g3_deformed_saddle_exact_bridge.py` → witness 2/2 green. No fit;
+no c_k wired.

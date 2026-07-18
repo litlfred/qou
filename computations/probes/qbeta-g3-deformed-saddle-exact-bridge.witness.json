@@ -1,0 +1,90 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-18T13:29:03.722448+00:00",
+  "commitSha": "20dfbade848ea9a991f017ec115d7d260dac4ac6",
+  "assertions": [
+    {
+      "name": "curve_and_u0_controls_exact",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "(119) identity, (38) reduction, gamma^2, and iota(u=0) = Vol/pi all exact"
+    },
+    {
+      "name": "fixed_x_and_meridian_frames_distinct",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "scope-(a) structural finding: the fixed-x saddle difference (0.4495) is NOT the corpus meridian-frame tower singularity (0.6310+0.0210i) — different double-scaling limits; part-2 redirect to the Kashaev limit of the block factorization"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 11,
+  "computation": "qbeta-g3-deformed-saddle-exact-bridge",
+  "scriptFile": "qbeta_g3_deformed_saddle_exact_bridge.py",
+  "scriptHash": "50681cd1c941",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
+  },
+  "description": "A_omega tranche B part 1: closed-form deformed Borel singularity iota~(u) = (V_sigma1 - V_sigma2)/(2 pi i) from the GGM sec-5.1 saddle data (curve re-derived from (115) with self-checks), compared against the corpus's measured deformed-meridian Borel-Pade pole and resummed Im V_b (#3819 witness, loaded).",
+  "contentBlock": "conj:im-q-physical-role",
+  "data": {
+    "source": "uploads/2012.00062v3.pdf (GGM) eqs 113-121 + corpus witness qbeta-c3-borel-pade-deformed-meridian",
+    "curve": "x*y^2 + (x^2-x-1)*y + 1 = 0  [(115)-derived; minus sign restored vs the (116) glyph]",
+    "controls": {
+      "identity_119": true,
+      "x1_roots_e_pm_ipi3": true,
+      "gamma1_sq_minus3": true,
+      "iota_u0_eq_Vol_over_pi": true,
+      "saddle_residuals_max": "1.75022e-61"
+    },
+    "substrate": {
+      "u_sub": "0.20868144063903902463",
+      "V_sigma_a": "(-1.68848201051541120463275377605 + 1.41228159469612398731643941301j)",
+      "V_sigma_b": "(-1.68848201051541120463275377605 - 1.41228159469612398731643941301j)",
+      "iota_exact": "(0.449543193667185613734191124457 + 0.0j)",
+      "abs_iota": "0.4495431936671856137341911"
+    },
+    "pole_bridge": {
+      "convention": "2πi/ξ",
+      "pole_pred": "(0.4490478569246342704 + 0.014914084038207308552j)",
+      "pole_measured": "(0.63099336852300003109 + 0.020956979584400001193j)",
+      "rel_diff": "0.28834774",
+      "note": "measurement-limited (finite-rung Pade); closed form is exact"
+    },
+    "im_vb_candidates": {
+      "Im V(σa)": {
+        "rel": "2.83897",
+        "form": "/2π sgn 1"
+      },
+      "−Im V(σa)": {
+        "rel": "2.83897",
+        "form": "/2π sgn -1"
+      },
+      "Im (Va+Vb)/2": {
+        "rel": "1.0",
+        "form": "×1 sgn 1"
+      },
+      "Re(Va−Vb)/2 (rotated)": {
+        "rel": "2.83897",
+        "form": "/2π sgn 1"
+      }
+    },
+    "verdict": "Fixed-x deformed saddle data DERIVED exactly (curve xy^2+(x^2-x-1)y+1=0 re-derived from (115), self-certified: (38) at x=1, (119) discriminant identity, gamma(1)^2=-3; iota~(u=0) = Vol/pi exact; saddle residuals ~1e-61) — and the STRUCTURAL FINDING is scope-(a) NEGATIVE for the naive bridge: iota~(u_sub) = 0.4495 (real) does NOT reproduce the corpus's measured tower singularity 0.6310+0.0210i (0.288 rel; u-rescalings also fail). Cause identified: DIFFERENT double-scaling limits — GGM sec-5.1 fixes x = e^u as tau->0, the corpus tower fixes the meridian in J_N(e^(xi/N)) where x~ = e^(u/tau) ~ e^(uN) -> infinity; consistently the measured pole sits near the u=0 value Vol/pi (weak u-dependence, Murakami regime). REDIRECT for part 2: the exact side of the A_omega residual is the Kashaev-limit of the Theorem-14 block factorization, not fixed-x. Im V_b candidates all fail at fixed x (consistent). No identification claimed; no fit; no c_k wired."
+  }
+}
