@@ -25,12 +25,12 @@ source "$(dirname "$0")/lib/lean-env.sh"
 
 slug="$(lean_toolchain_slug)"                      # e.g. v4-24-0
 branch="lake-cache/toolchain-$slug"
-# elan's on-disk directory name for `leanprover/lean4:v4.24.0`:
+# Pinned toolchain name/version (used for logging + the version-match check).
+# The extracted directory name (elan uses `leanprover--lean4---v4.24.0`) is NOT
+# recomputed here — detection is by `find … -path '*/bin/lean'`, which is
+# name-agnostic, so it stays correct regardless of elan's dash convention.
 toolchain_name="$(cut -d: -f1 "$REPO_ROOT/lean-toolchain" | tr -d '\r')"   # leanprover/lean4
 toolchain_ver="$(cut -d: -f2 "$REPO_ROOT/lean-toolchain" | tr -d '\r')"    # v4.24.0
-elan_dir_name="$(printf '%s:%s' "$toolchain_name" "$toolchain_ver" | tr '/' '-' | tr ':' '-')"
-# -> leanprover-lean4-v4.24.0  (elan uses this convention; both `--` and
-#    single `-` variants exist historically, so we probe for either)
 dest_root="$HOME/.elan/toolchains"
 echo "lean-toolchain-cache-restore: slug=$slug branch=$branch toolchain=$toolchain_name:$toolchain_ver"
 
@@ -39,7 +39,7 @@ echo "lean-toolchain-cache-restore: slug=$slug branch=$branch toolchain=$toolcha
 # wrong compiler and defeat the pin). `lean --version` prints e.g.
 # "Lean (version 4.24.0, ...)"; match the numeric part of the pinned version.
 vernum="${toolchain_ver#v}"                        # v4.24.0 -> 4.24.0
-existing="$(find "$dest_root" -maxdepth 2 -type f -name lean -path '*/bin/lean' 2>/dev/null | head -1)"
+existing="$(find "$dest_root" -maxdepth 3 -type f -name lean -path '*/bin/lean' 2>/dev/null | head -1)"
 if [ -n "${existing:-}" ] && "$existing" --version 2>/dev/null | grep -qF "version $vernum"; then
   echo "lean-toolchain-cache-restore: matching lean $vernum already present at $existing — skipping."
   exit 0
@@ -78,7 +78,7 @@ tar xzf "$tgz" -C "$dest_root" || {
   exit 1
 }
 
-lean_bin="$(find "$dest_root" -maxdepth 2 -type f -name lean -path '*/bin/lean' 2>/dev/null | head -1)"
+lean_bin="$(find "$dest_root" -maxdepth 3 -type f -name lean -path '*/bin/lean' 2>/dev/null | head -1)"
 if [ -z "${lean_bin:-}" ]; then
   echo "lean-toolchain-cache-restore: extracted, but no bin/lean found under $dest_root." >&2
   exit 1
