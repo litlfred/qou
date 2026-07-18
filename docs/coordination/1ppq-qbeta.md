@@ -1313,3 +1313,23 @@ open target is the geometric `Im 𝔙_q → N_odd` normalization (the capstone) 
 where the anchor-dependence enters — and the odd-channel D-ladder q-Borel/Écalle
 acceleration (sibling #3818) operating on `D(u)` where the swing lives. No c_k;
 no fit; scope-(a).
+**2026-07-18 (#3872) — G3 STEP 2 DONE: GGM 4₁ Stokes data exact — Theorem 9
+certified, (59a) DERIVED OCR-free, integer Stokes 3 at ι = Vol(4₁)/π; new
+exact anchor for the step-1 assembly.** Exact-integer implementation of the
+GGM (2012.00062v3, §§4–5) machinery: G⁰_m/G¹_m (51a/b), det W_m = 2 and the
+q-difference (49) exact through q^30. The (59a) sandwich was derived rather
+than OCR-read: glyph-verified magnitudes, all sign patterns × both ᵀ
+placements scanned against the q→0 limit (60) + all four printed towers
+(61)–(64) (28 coefficients; cmsy sign rows decoded via the baseline−9.2
+glyph offset, calibrated on (63) = −(62) forced by symmetry (65)). Result:
+8 sign-pattern gauges, ONE distinct S⁺(q), ᵀ on the second W as the glyphs
+read. S⁺₁₁ = 1 − 8q − 9q² + 18q³ + 46q⁴ + 90q⁵ + 62q⁶ + 10q⁷ + …;
+substrate S⁺₁₁(e^{−t}) = 0.25843626726140844236 (40 stable digits). The
+Borel singularity is ι = Vol(4₁)/π ≈ 0.64613 — the SAME object as the
+corpus's measured A (#3692/#3819) — with INTEGER Stokes constant 3. Via the
+PROVEN (for 4₁) dictionary eq (21), S⁺_{σ1σ1} = Σ_e I(0,e): the step-1
+assembly search now has ~30 exact target coefficients (own-computed, not
+just 7 printed) + the 25 annihilator equations. NOT claimed: identification
+of the integer 3 with the corpus A_ω normalization (step 3's residual test
+decides). Probe `qbeta_g3_ggm_stokes_41.py` → witness
+`qbeta-g3-ggm-stokes-41.witness.json` (3/3 green). No fit; no c_k wired.
