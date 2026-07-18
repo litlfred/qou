@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-18T19:22:00.940969+00:00",
-  "commitSha": "90837409dc44be530521d8b44dcea8288b70a01e",
+  "computedAt": "2026-07-18T23:49:38.124525+00:00",
+  "commitSha": "399abd6d54bd2ed52ac45a29f25d1c4aebd5b2a9",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -153,9 +153,9 @@
     },
     {
       "name": "chain_valid[c-q-q0.derivation]",
-      "computed": true,
+      "computed": false,
       "expected": true,
-      "passed": true
+      "passed": false
     },
     {
       "name": "leaf_value[c-q-q0.derivation]",
@@ -558,12 +558,12 @@
       "tolerance": 9.9124115660574e-11
     }
   ],
-  "allPassed": true,
-  "durationMs": 4,
+  "allPassed": false,
+  "durationMs": 3,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "ff40fb7a9d7d",
-  "scriptCommitSha": "909e4e3c58d7423994256f68f268a7075fa94b8d",
+  "scriptCommitSha": "7cff53fbc673cdd608ae6026b2b950eca58444f1",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -574,7 +574,8 @@
     "python": "3.11.15",
     "numpy": "2.4.6",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "Per-chain validation + computational-trust audit per the QOU methodology directive: every numerical claim must trace back to first-principles axioms via a DerivationChain.",
   "auditOnly": "docs/audits/2026-05-02-pr503-ci-failure-postmortem.md",
@@ -1187,7 +1188,9 @@
         "computed_value": 9.092678397394828,
         "structural_ok": true,
         "leaf_matches": true,
-        "issues": [],
+        "issues": [
+          "c_q algebra re-eval at q_0=1.1099785827513808 gives 9.092679456150243 vs target 9.092678397394828 (rel_diff 1.16e-07, target_tolerance 1.00e-12)"
+        ],
         "trust_summary": {
           "axiom": 2,
           "derived": 2,
@@ -2580,10 +2583,6 @@
         "full-twist-delta-n2-verification.witness.json",
         "gamma-gamma-pair-production-decomposition.witness.json",
         "gap-a1-binding-k-sdp-feasibility.witness.json",
-        "gap-a3-cross-atom-overshoot.witness.json",
-        "gap-a3-deuteron-A-D-overshoot.witness.json",
-        "gap-a3-deuteron-plambda-flat-baseline.witness.json",
-        "gap-a3-overshoot-robustness.witness.json",
         "gap1-max-contact-a5plus.witness.json",
         "gap2-borromean-triple-count.witness.json",
         "gap2b-irreducible-demand.witness.json",
@@ -2722,7 +2721,6 @@
         "keystone-wlambda-defect-coeff-ladder.witness.json",
         "keystone-wlambda-defect-dn-subleading.witness.json",
         "keystone-wrt-color-schurweyl.witness.json",
-        "keystone-wrt-schurweyl-higher-colour-foreclosure.witness.json",
         "keystone-wrt-schurweyl-plancherel-4count.witness.json",
         "kite-tail-reconciliation.witness.json",
         "kite_tail_reconciliation.witness.json",
