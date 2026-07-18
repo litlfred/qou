@@ -63,6 +63,7 @@ import QOU.MassTheory.SU4SupermultipletGate
 import QOU.MassTheory.BodyOrderCumulant
 import QOU.MassTheory.ReebPnMagnitude
 import QOU.Mass.MassVolDensity
+import QOU.Mass.MixedMultibondMuBarIntegrality
 import QOU.Mass.BindingRecurrenceSpectral
 import QOU.Mass.BindingClassicalKernel
 import QOU.Mass.BindingInteriorMaxObstruction
