@@ -235,4 +235,21 @@ theorem partialProduct_log_eq (q x : ℝ) (n : ℕ)
       Real.log_prod _ _ (fun k hk => (hpos k hk).ne')]
   simp
 
+/-- **Second Part-A reduction:** each per-factor log becomes the `Li`-type power
+    series, so `log Φ_n(x; q) = Σ_{k<n} Σ'_{m} (x qᵏ)^{m+1}/(m+1)`.  Requires each
+    Faddeev factor to be both positive and inside the radius of convergence
+    (`|x qᵏ| < 1`), automatic for `x ∈ [0,1)`, `q ∈ [0,1]`.  This is the exact,
+    finite-`n` reduction of the log partial product to the double `(k, m)` series
+    whose `q → 1⁻` limit is `Li₂`; the outstanding Part-A input is the uniform
+    (Tauberian) exchange of that limit with the `m`-sum, still carried by
+    `ArchimedeanLimit`. -/
+theorem partialProduct_log_eq_tsum (q x : ℝ) (n : ℕ)
+    (hpos : ∀ k ∈ Finset.range n, (0 : ℝ) < 1 - x * q ^ k)
+    (hlt : ∀ k ∈ Finset.range n, |x * q ^ k| < 1) :
+    Real.log (partialProductLocal q x n)
+      = ∑ k ∈ Finset.range n, ∑' m : ℕ, (x * q ^ k) ^ (m + 1) / (m + 1) := by
+  rw [partialProduct_log_eq q x n hpos]
+  exact Finset.sum_congr rfl
+    (fun k hk => ((neg_log_one_sub_hasSum (hlt k hk)).tsum_eq).symm)
+
 end QOU.QPochhammer
