@@ -229,6 +229,10 @@ import QOU.QBeta.CAL3AnchorStructure
 import QOU.QBeta.SRigidityPrune
 import QOU.QBeta.HopfCubicOddCarrier
 import QOU.QBeta.Zeta4DescentCarrier
+-- Écalle-acceleration composition collapse: composing a single fixed-order
+-- Borel–Leroy transform reaches only ℤ-multiples of its order, never an
+-- incommensurate critical time — a genuine multi-level Écalle kernel is needed.
+import QOU.QBeta.DLadderAccelerationComposition
 -- Bar-parity selection rule of the Ohtsuki κ-tower at the imaginary substrate
 -- 2πb²=i·t: even rungs → Re 𝔙 (Vol/mass), odd rungs → Im 𝔙 (bar-odd S / CS).
 import QOU.QBeta.OhtsukiTowerBarParity
