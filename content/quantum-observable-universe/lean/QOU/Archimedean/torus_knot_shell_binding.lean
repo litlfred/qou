@@ -56,7 +56,17 @@ def magicNumber : ℕ → ℕ
 
 /-- **Magic numbers** (manuscript claim (iii)).  The first seven shell
     occupancies are `(2, 8, 20, 28, 50, 82, 126)`.  Pattern A —
-    discharged by `decide` on the concrete `magicNumber`. -/
+    discharged by `decide` on the concrete `magicNumber`.
+
+    HONESTY NOTE.  This verifies the *tabulated target values* of the
+    `magicNumber` definition above; it is **not** a derivation of the
+    magic-number sequence from the torus-knot shell construction.  That
+    derivation — reconciling the `r×s` shell capacities with the shell
+    occupancies as a from-`q` result — is the open problem
+    `conj:magic-numbers-bring` (see `prop:torus-knot-shell-binding`,
+    `rem:shell-construction-rules`).  The proposition asserts the
+    *construction* (`torusCD_recurrence`, GS normal-form preservation);
+    the *recovery* is conjectural. -/
 theorem magicNumber_values :
     magicNumber 0 = 2 ∧ magicNumber 1 = 8 ∧ magicNumber 2 = 20 ∧
     magicNumber 3 = 28 ∧ magicNumber 4 = 50 ∧ magicNumber 5 = 82 ∧
