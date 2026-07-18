@@ -1,0 +1,48 @@
+{
+  "computation": "alpha-em-conjugation-doubling-dictionary",
+  "description": "Corrects the unification-hypothesis dictionary for the 1/pi correspondence statement: bar FIXES both Hecke channels (naive {bar<->conjugation} refuted); the channel-swapper is the transpose duality q->-q^{-1} ({transpose<->conjugation} corrected dictionary); transpose-fixed locus q^2=-1 == equal-weight locus (F2); S5-equivariance tension recorded (std vs std(x)sign). Derives no clause; nothing wired.",
+  "auditOnly": "docs/audits/2026-07-18-alpha-em-conjugation-doubling-dictionary.md",
+  "tier": "symbolic-exact (sympy; quotient-ring involution identities + character values)",
+  "computedAt": "2026-07-18T14:09:37.347043+00:00",
+  "commitSha": "5664d6bf555c0275541d144f10decd1bd02124a0",
+  "engine": "sympy",
+  "engineVersion": "1.14.0",
+  "scriptFile": "alpha_em_conjugation_doubling_dictionary_probe.py",
+  "scriptHash": "ed638ee674e8",
+  "assertions": [
+    {
+      "name": "naive_bar_conjugation_dictionary_refuted",
+      "passed": true,
+      "detail": "bar(e+) = e+ and bar(e-) = e- EXACTLY (bar: q->q^{-1}, sigma->sigma^{-1}) \u2014 the bar involution FIXES each channel, while complex conjugation SWAPS H^{1,0}<->H^{0,1}; the naive dictionary {bar <-> conjugation} is EXCLUDED (scope-(a))"
+    },
+    {
+      "name": "transpose_is_the_channel_swapper",
+      "passed": true,
+      "detail": "phi: q -> -q^{-1} preserves the Hecke relation and swaps e+ <-> e- EXACTLY \u2014 the eigenvalue swap q <-> -q^{-1} (symmetric/antisymmetric = partition-transpose duality). Corrected dictionary: {transpose <-> complex conjugation}"
+    },
+    {
+      "name": "transpose_fixed_locus_equals_equal_weight_locus",
+      "passed": true,
+      "detail": "transpose-fixed locus [-I, I] == equal-channel-weight locus [-I, I] == q^2=-1 EXACTLY: channel democracy (w+=w-=1/2, merged F2) occurs precisely at the transpose-symmetric point; the classical limit q=1 is bar-fixed \u2014 the two involutions organize the two special loci"
+    },
+    {
+      "name": "equivariance_tension_recorded",
+      "passed": true,
+      "detail": "chi_std is real => H^{0,1} ~ H^{1,0} = std as S5-reps (conjugation IS S5-equivariant on the Hodge side), but the PARTITION transpose maps std=(4,1) to (2,1,1,1)=std(x)sign \u2014 distinct irrep (chi((12)): 2 vs -2). The corrected dictionary matches the 2-element channel sets, but the S5-equivariant content of the tau identification (2-strand channel transpose vs 5-letter partition transpose vs conjugation) is the precise remaining question"
+    }
+  ],
+  "allPassed": true,
+  "result": {
+    "bar_action": "fixes e+ and e- individually (exact)",
+    "transpose_action": "swaps e+ <-> e- (exact); preserves the Hecke relation",
+    "corrected_dictionary": "{transpose duality q->-q^{-1}} <-> {complex conjugation on H^1}",
+    "fixed_locus_coincidence": "q^2=-1 (transpose-fixed) == equal-weight locus (F2)",
+    "open_subquestion": "S5-equivariant content: conjugation equivariant (H^{0,1}~std) vs partition transpose (std -> std(x)sign)",
+    "verdict": "CONJUGATION-DOUBLING DICTIONARY \u2014 CORRECTED (scope-(a); derives no clause; no fit; nothing wired): the naive {bar <-> complex conjugation} dictionary of the unification hypothesis is REFUTED \u2014 bar FIXES both Hecke channels (bar(e\u00b1)=e\u00b1 exact) while conjugation swaps the Hodge pair. The genuine channel-swapper is the TRANSPOSE duality phi: q -> -q^{-1} (preserves the Hecke relation, swaps e+<->e- exactly), so the corrected dictionary is {transpose <-> conjugation}. Exact bonus: the transpose-fixed locus q^2=-1 IS the equal-channel-weight locus (F2) \u2014 democracy at the transpose-symmetric point, classical limit at the bar-fixed point. Open sharp sub-question (recorded): the S5-equivariant content \u2014 conjugation is equivariant with H^{0,1}~std, but partition transpose maps std to std(x)sign. The correspondence statement remains open; this narrows its dictionary. NO tier change."
+  },
+  "context": {
+    "attacks": "the correspondence statement (the single remaining 1/pi wall, merged conjecture-statement PR) via its unification hypothesis",
+    "builds_on": "merged F1-F3 (channel count derived, weights excluded, classical-limit normalization) + #3920 (Hodge doubling) + ba606720e (GB form)",
+    "scope_guard": "exact structural facts + one exclusion; derives NO clause; no fit; nothing wired; 1/(8pi) stays phase-4"
+  }
+}
