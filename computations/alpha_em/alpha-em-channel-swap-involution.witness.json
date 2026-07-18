@@ -1,0 +1,70 @@
+{
+  "$schema": "https://litlfred.github.io/witness-schema/witness.schema.json",
+  "witnessVersion": "1.0",
+  "id": "alpha-em-channel-swap-involution",
+  "description": "\u03b1_EM per-loop '2' unification: which involution swaps the Hecke channels e\u208a/e\u208b. bar (q\u21a6q\u207b\u00b9) FIXES them (refutes the named hypothesis); q\u21a6\u2212q\u207b\u00b9 SWAPS them and flips [2]_q (the global sign). Corrected \u03c4-bridge is fibre-level. scope-(a), auditOnly.",
+  "auditOnly": true,
+  "computation": {
+    "script": "computations/alpha_em/alpha_em_channel_swap_involution_probe.py",
+    "scriptCommitSha": "5a1f5e0ff74929adbca08617d72c9abe0cf77c55",
+    "scriptHash": "65d993b84597"
+  },
+  "controls": [
+    {
+      "name": "idempotents_sum_to_one",
+      "pass": true,
+      "detail": "e\u208a + e\u208b = 1"
+    },
+    {
+      "name": "e_plus_eigen_q",
+      "pass": true,
+      "detail": "\u03c3\u00b7e\u208a = q\u00b7e\u208a (eigenvalue q)"
+    },
+    {
+      "name": "e_minus_eigen_negqinv",
+      "pass": true,
+      "detail": "\u03c3\u00b7e\u208b = \u2212q\u207b\u00b9\u00b7e\u208b (eigenvalue \u2212q\u207b\u00b9)"
+    }
+  ],
+  "assertions": [
+    {
+      "name": "bar_fixes_e_plus",
+      "pass": true,
+      "detail": "bar(e\u208a) = e\u208a \u2014 the bar involution q\u21a6q\u207b\u00b9 FIXES e\u208a (does NOT swap)"
+    },
+    {
+      "name": "bar_fixes_e_minus",
+      "pass": true,
+      "detail": "bar(e\u208b) = e\u208b \u2014 bar FIXES e\u208b too"
+    },
+    {
+      "name": "bar_does_not_swap",
+      "pass": true,
+      "detail": "bar(e\u208a) \u2260 e\u208b \u2014 the NAMED hypothesis ('bar swaps the channels') is REFUTED"
+    },
+    {
+      "name": "eigswap_swaps_plus_to_minus",
+      "pass": true,
+      "detail": "under q\u21a6\u2212q\u207b\u00b9: e\u208a \u21a6 e\u208b  (SWAPS the channels \u2014 this is the correct involution)"
+    },
+    {
+      "name": "eigswap_swaps_minus_to_plus",
+      "pass": true,
+      "detail": "under q\u21a6\u2212q\u207b\u00b9: e\u208b \u21a6 e\u208a"
+    },
+    {
+      "name": "eigswap_flips_bracket_sign",
+      "pass": true,
+      "detail": "under q\u21a6\u2212q\u207b\u00b9: [2]_q \u21a6 \u2212[2]_q \u2014 the sign flip IS the global '\u2212' alternation (derivability map's separate underived global dressing sign)"
+    },
+    {
+      "name": "eigswap_real_q0_is_real_negative",
+      "pass": true,
+      "detail": "q\u2080 \u2248 1.10998 \u21a6 \u2212q\u2080\u207b\u00b9 \u2248 -0.9009 (real-negative) \u21d2 at the observable anchor (Im q\u2080 = 0) the swap is NOT conjugation; the unification is a FIBRE-level statement (formal/complex q, per the Im(q) banner)"
+    }
+  ],
+  "allPass": true,
+  "verdict": "Unification hypothesis for the '2' CORRECTED (scope-(a), exact \u211a(q) algebra) \u2014 the wall is NOT closed. The sibling conjecture-statement audit named 'the bar involution q\u21a6q\u207b\u00b9 swaps e\u208a/e\u208b as conjugation swaps H^{1,0}/H^{0,1}'. Machine-checked result: the Hecke bar involution (q\u21a6q\u207b\u00b9, \u03c3\u21a6\u03c3\u207b\u00b9) FIXES each idempotent \u2014 bar(e\u208a)=e\u208a, bar(e\u208b)=e\u208b \u2014 it does NOT swap them, so the literal hypothesis is REFUTED. The involution that DOES swap e\u208a\u2194e\u208b is the eigenvalue-exchange q\u21a6\u2212q\u207b\u00b9; it also sends [2]_q\u21a6\u2212[2]_q, so the same operation carries the derivability map's separate underived global '\u2212' alternation. CORRECTED bridge: a \u03c4-functor unifying the Hodge 2 (conjugation on H^{1,0}\u2295H^{0,1}, #3920) with the Hecke 2 (e\u208a\u2194e\u208b) must map complex conjugation to q\u21a6\u2212q\u207b\u00b9, NOT the bar involution. Since q\u21a6\u2212q\u207b\u00b9 sends real q\u2080\u22481.11 to \u2248\u22120.90 (real-negative, not a conjugation of a real), the identification is FIBRE-level (complex/formal q, Im q unconstrained per the AGENTS.md banner); at observable q\u2080 it is not conjugation. This sharpens WHICH involution the correspondence must implement; it does NOT derive it. No CODATA read; no fit; no \u03b1_k wired; 1/(8\u03c0) stays a phase-4 identification.",
+  "scope": "(a) scope-limited \u2014 refutes the literal bar-swap; identifies q\u21a6\u2212q\u207b\u00b9 as the channel-swap; unification stays open (fibre-level)",
+  "antiLaundering": "exact \u211a(q) algebra, machine-checked; no CODATA read; no convention tuned to 8\u03c0; correspondence stated open"
+}
