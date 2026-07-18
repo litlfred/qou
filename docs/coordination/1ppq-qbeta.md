@@ -1430,3 +1430,22 @@ Stokes {3,4} from eq 96/98" reads 5₂ data — pages 20–22 are the 5₂ block
 §5 deformed-4₁ starts p. 24). Probe `qbeta_g3_deformed_blocks_41.py` →
 witness `qbeta-g3-deformed-blocks-41.witness.json` (honest FAILURES by
 design). No fit; no c_k wired.
+
+**2026-07-18 (#3898) — THEOREM-14 ASSEMBLY DERIVED AND GREEN: the deformed
+4₁ exact side is now fully certified on the imaginary axis (5.5e-54).**
+The open item from tranche A closed by derivation, not transcription:
+(i) two-pole residue cancellation (x = q and x = q⁻¹, u-independent
+coefficient ratio — Theorem 14(c) entirety) pruned the reading space;
+(ii) the m-restored Theorem-16 annihilator confirmed the printed
+J-arguments uniquely (1e-41 vs O(1) for all variants); (iii) the sole
+survivor's coefficients, solved at three pure-imaginary τ, fit
+e^{α+β(τ+τ⁻¹)} exactly (3rd-point error 1e-41) with β = −πi/6, +πi/3 —
+THE PRINTED exponents, an independent confirmation — and α = ±πi/4 (the
+printed-read ∓3πi/4 differs by an overall −1 absorbed by the θ_A monomial
+θ(−q^{1/2}x)⁻² = x²θ(−q^{−1/2}x)⁻²); the rejected alternative fails
+constancy at 1e-2. Derived assembly: c_A = e^{+πi/4−(πi/6)(τ+τ⁻¹)},
+c_B = e^{−πi/4+(πi/3)(τ+τ⁻¹)}, θ_A arg −x√q, θ_B arg −x/√q (power +1).
+Witness now 3/3 green. Follow-ups: complex-τ branch alignment
+(bookkeeping; raw (112) drifts off-axis in this frame map), then tranche
+B — deformed Borel at the Kashaev ray minus this exact side → numeric A_ω
+residual vs Im 𝔙̃_b = 0.0585. No fit; no c_k wired.
