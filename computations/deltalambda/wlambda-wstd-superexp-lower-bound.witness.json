@@ -1,8 +1,8 @@
 {
   "engine": "python-exact",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-18T14:09:38.399304+00:00",
-  "commitSha": "699932022df3ca9716be69864303726228936b5b",
+  "computedAt": "2026-07-18T14:30:03.067118+00:00",
+  "commitSha": "1f112b916f8d6d369a46892fb71346fd3e66cf1b",
   "assertions": [
     {
       "name": "wstd_rigorous_super_exponential_lower_bound",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 18,
+  "durationMs": 24,
   "computation": "wlambda-wstd-superexp-lower-bound",
   "scriptFile": "wlambda_wstd_superexp_lower_bound.py",
-  "scriptHash": "9560684965e7",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "476ca440a4e3",
+  "scriptCommitSha": "1f112b916f8d6d369a46892fb71346fd3e66cf1b",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -36,6 +36,8 @@
     "plancherel_cube_identity_exact": true,
     "conjugation_symmetry_E3_eq_E111": true,
     "wstd_dominates_E3": true,
+    "sagan_stanley_backbone_exact": true,
+    "D_reformulation": "P(shape3=mu)=(f^mu)^2/6; (D) <=> 2 E[f^lam|shape3=(2,1)] >= E[f^lam|shape3=(3)]",
     "cube_ge_sqrt_kfac_over_p32": true,
     "table": [
       {
@@ -117,6 +119,22 @@
         "cube_moment": 4406.200745083106,
         "lower_bound_sqrt_kfac_over_p32": 32.39159951817121,
         "w_over_cube": 0.3357139774085371
+      },
+      {
+        "k": 13,
+        "w_std": 4736.780777180638,
+        "E_f_lam_3": 2327.6959293471446,
+        "cube_moment": 14128.953413055566,
+        "lower_bound_sqrt_kfac_over_p32": 77.74242753748123,
+        "w_over_cube": 0.3352534783506126
+      },
+      {
+        "k": 14,
+        "w_std": 15873.692631633689,
+        "E_f_lam_3": 7809.680285154293,
+        "cube_moment": 47366.745833575966,
+        "lower_bound_sqrt_kfac_over_p32": 188.23636310517085,
+        "w_over_cube": 0.3351231407664405
       }
     ]
   }
