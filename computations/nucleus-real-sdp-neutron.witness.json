@@ -1,7 +1,7 @@
 {
   "engine": "nucleus_real_sdp_barfold",
   "engineVersion": "0.1.0",
-  "computation": "neutron real-SDP with bar-fold symmetry reduction \u2014 bounded positive-norm-subspace operator-selection. operator-selection-lp / lp-dual.",
+  "computation": "neutron real-SDP with bar-fold symmetry reduction — bounded positive-norm-subspace operator-selection. operator-selection-lp / lp-dual.",
   "scriptFile": "nucleus_real_sdp.py",
   "lean_uniqueness_ref": "qou:QOU.BraidKnot.neutron_uniqueness_closed",
   "data": {
@@ -45,6 +45,11 @@
       "dual_obj": -0.019124992645005678,
       "duality_gap": 7.525116477084558e-14
     },
-    "note": "Full real SDP needs Phase B color-flavor constraints (LR branching H_{3A} \u2283 (H_3)^Z\u00d7(H_3)^N); this is the bar-fold symmetry-reduced bounded baseline. Partial character tables cannot close the fold (conjugates absent) \u2014 see conjugates_all_present."
-  }
+    "note": "Full real SDP needs Phase B color-flavor constraints (LR branching H_{3A} ⊃ (H_3)^Z×(H_3)^N); this is the bar-fold symmetry-reduced bounded baseline. Partial character tables cannot close the fold (conjugates absent) — see conjugates_all_present."
+  },
+  "scriptHash": "e376dec214d2",
+  "scriptCommitSha": "unknown",
+  "commitSha": "ce2369422e676ba4614ce2e0c9b851f9a332f196",
+  "computedAt": "2026-07-18T19:28:52.170293+00:00",
+  "durationMs": 0
 }

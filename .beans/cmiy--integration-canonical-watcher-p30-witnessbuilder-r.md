@@ -487,3 +487,13 @@ NEXT STEP to finish cmiy: build the chi/nucleus producer map by reading the ~6 p
 scripts (chi_*_lossless, chi_at_q0_via_matrix_m_mpfr, nucleus_real_sdp, ...) to see which
 computed name each emits, then run inplace_stamp.py with that map. Owner input optional
 since in-place is value-preserving, but the map itself is the gated/bespoke work.
+
+## 2026-07-18 — batch 39 (verified chi/nucleus producers: 7 more in-place)
+Read the pipeline scripts to attribute producers CORRECTLY (not regex-guess): verified
+chi_4he_via_rust_lossless.py hardcodes atom="helium-4" (so it produces ONLY
+chi-helium-4-h12-matrix-m — the regex over-match to deuteron/lithium/etc was a trap I
+caught), and nucleus_real_sdp.py loops its 6-atom ATOMS dict writing nucleus-real-sdp-<atom>.
+Stamped those 7 in-place, 0 value violations, all PROV_OK. PROV_MISSING 101 -> 94.
+The remaining ~94 each need this same per-producer read (atom/name scope) to attribute
+safely — genuine per-script work, not a bulk sweep; the hardcoded-atom trap proves regex
+attribution is unsafe on the canonical set.

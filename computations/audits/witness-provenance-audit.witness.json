@@ -1,12 +1,12 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-18T19:20:08.830012+00:00",
-  "commitSha": "6365f51b0d3d47b312850b42a14e1dcb5d143bc2",
+  "computedAt": "2026-07-18T19:28:53.547320+00:00",
+  "commitSha": "ce2369422e676ba4614ce2e0c9b851f9a332f196",
   "assertions": [
     {
       "name": "no_missing_provenance",
-      "computed": 101,
+      "computed": 94,
       "expected": 0,
       "passed": false,
       "tolerance": 0,
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 10,
+  "durationMs": 12,
   "computation": "witness-provenance-audit",
   "scriptFile": "witness_provenance_audit.py",
   "scriptHash": "1abb80bb6c90",
@@ -48,12 +48,12 @@
   },
   "data": {
     "counts": {
-      "total_scanned": 2023,
-      "prov_ok": 1862,
+      "total_scanned": 2024,
+      "prov_ok": 1870,
       "prov_audit_exempt": 59,
-      "prov_missing": 101,
+      "prov_missing": 94,
       "prov_parse_error": 1,
-      "completeness_ratio": 0.9495798319327731
+      "completeness_ratio": 0.9530632411067194
     },
     "by_verdict": {
       "PROV_OK": [
@@ -1671,6 +1671,10 @@
         },
         {
           "witness": "chi-helium-4-h12-at-q0-50dps-binding.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "chi-helium-4-h12-at-q0-50dps-matrix-m.witness.json",
           "missing_fields": []
         },
         {
@@ -3778,6 +3782,30 @@
           "missing_fields": []
         },
         {
+          "witness": "nucleus-real-sdp-deuteron.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "nucleus-real-sdp-he3.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "nucleus-real-sdp-he4.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "nucleus-real-sdp-neutron.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "nucleus-real-sdp-proton.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "nucleus-real-sdp-tritium.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "nv-pslq-extended-basis.witness.json",
           "missing_fields": []
         },
@@ -5143,6 +5171,10 @@
         },
         {
           "witness": "qbeta-g3-5two-saddle-exact-predictions.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "qbeta-g3-5two-sector-prony.witness.json",
           "missing_fields": []
         },
         {
@@ -7691,14 +7723,6 @@
           ]
         },
         {
-          "witness": "chi-helium-4-h12-at-q0-50dps-matrix-m.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
           "witness": "chi-helium-4-h12-at-q0-50dps.witness.json",
           "missing_fields": [
             "engine",
@@ -8034,42 +8058,6 @@
           "missing_fields": [
             "engine",
             "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "nucleus-real-sdp-deuteron.witness.json",
-          "missing_fields": [
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "nucleus-real-sdp-he3.witness.json",
-          "missing_fields": [
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "nucleus-real-sdp-he4.witness.json",
-          "missing_fields": [
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "nucleus-real-sdp-neutron.witness.json",
-          "missing_fields": [
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "nucleus-real-sdp-proton.witness.json",
-          "missing_fields": [
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "nucleus-real-sdp-tritium.witness.json",
-          "missing_fields": [
             "commitSha"
           ]
         },
