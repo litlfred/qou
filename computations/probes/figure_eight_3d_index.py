@@ -72,15 +72,28 @@ def _qpoch(n):
     return tuple(sorted(r.items()))
 
 
+@lru_cache(maxsize=None)
+def _inv_qpoch_product(n, n_plus_e):
+    """1/((q)_n (q)_{n+e}) in Q — depends only on (n, n+e), not m; cached."""
+    return _inv(_mul(dict(_qpoch(n)), dict(_qpoch(n_plus_e))))
+
+
 def I_D(m, e):
     """Tetrahedron index I_Delta(m,e)(q) as a dict in Q=q^{1/2} (may be Laurent)."""
     lo = max(0, -e)
     tot = {}
     n = lo
+    # For m <= 0 (the only case J_D calls) expo = n^2+n-(2n+e)m is monotone
+    # increasing in n, so `expo > HI` lets us break early. For m > 0 (never
+    # reached here) fall back to scanning the fixed window.
+    mono = m <= 0
     while n <= lo + HI + 8:
         expo = n * (n + 1) - (2 * n + e) * m
-        if expo <= HI:
-            invd = _inv(_mul(dict(_qpoch(n)), dict(_qpoch(n + e))))
+        if expo > HI:
+            if mono:
+                break
+        else:
+            invd = _inv_qpoch_product(n, n + e)
             for p, c in invd.items():
                 pp = p + expo
                 if pp <= HI:
