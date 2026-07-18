@@ -1,0 +1,84 @@
+{
+  "description": "Laddered Qb reconstruction *using* the merged exact rung c_4^even in the even partial sum. Measurement 1: |c_k^even u^k| shrinks with k at u(q0), so c_4^even is a real sub-leading even rung. Measurement 2: the odd channel (R_exact/R_even) dominates the entire even ladder by ~O(10x) and controls accuracy vs CODATA. c_4^even's Qb effect (~1e-2 keV) is dwarfed by the odd-channel gap (~6 keV) -> cannot move beats_100x. auditOnly; no production wiring; no fit.",
+  "audit_only": true,
+  "parameters": {
+    "q0": "1.1099785955573347198997632204832250266562084087802",
+    "u_q0": "0.0085172363404849214399331129023",
+    "c2_even": "-8.00641005870925442785865819785",
+    "c3_even": "86.6611630646909942600690102713",
+    "c4_even": "-1819.74067252288946759519576958",
+    "m_e_MeV": "0.51099895069",
+    "Q_beta_codata_MeV": "0.78233341"
+  },
+  "measurement_1_even_rungs": {
+    "abs_c2_u2": "0.0005808115259447584727",
+    "abs_c3_u3": "0.000053545207835928372284",
+    "abs_c4_u4": "9.5764444921069879268e-6",
+    "shrinks_with_k": true,
+    "qb_c4_incremental_keV": "0.0074885745701"
+  },
+  "measurement_2_odd_channel": {
+    "log_R_exact": "0.0073728649261513054672",
+    "log_R_even_N4": "-0.00053701297830235566816",
+    "log_odd_factor": "0.0079098779044536611354",
+    "odd_over_even_ratio": "14.7293980296",
+    "opposite_sign": true,
+    "odd_dominates": true
+  },
+  "reconstruction": [
+    {
+      "N": 1,
+      "R_even": "1.0",
+      "dlogR_from_rung": "0.0",
+      "Qb_pred_MeV": "0.7823911437652731"
+    },
+    {
+      "N": 2,
+      "R_even": "0.99941918847405524153",
+      "dlogR_from_rung": "-0.00058098026",
+      "Qb_pred_MeV": "0.7819367219711771"
+    },
+    {
+      "N": 3,
+      "R_even": "0.99947270258221729968",
+      "dlogR_from_rung": "5.3543774e-5",
+      "Qb_pred_MeV": "0.7819785909354696"
+    },
+    {
+      "N": 4,
+      "R_even": "0.99946313118735964492",
+      "dlogR_from_rung": "-9.5764903e-6",
+      "Qb_pred_MeV": "0.7819711023608995"
+    }
+  ],
+  "accuracy_vs_codata": {
+    "Qb_exact_MeV": "0.78818092539937079734",
+    "acc_exact_rel": "0.0074744544009322027299",
+    "acc_exact_ppb": "7474454.40093",
+    "Qb_even_MeV": "0.78197110236089952806",
+    "acc_even_rel": "0.00046311155125085600436"
+  },
+  "assertions": [
+    {
+      "label": "Delta(net) reconstruction matches witness at q0 (<1e-6)",
+      "passed": true
+    },
+    {
+      "label": "M1: |c_k^even u^k| shrinks with k at u(q0) (c4^even is a real sub-leading even rung)",
+      "passed": true
+    },
+    {
+      "label": "M2: odd channel (R_exact/R_even) dominates the even ladder (>3x) and controls accuracy",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "scriptHash": "7ff98ca5ee61",
+  "scriptCommitSha": "9e557f4ea850c50ac2eca73509444f1c7984f978",
+  "commitSha": "9e557f4ea850c50ac2eca73509444f1c7984f978",
+  "engine": "sympy",
+  "computedAt": "2026-07-18T13:55:34.890927+00:00",
+  "durationMs": 2579,
+  "engineVersion": "sympy 1.14.0",
+  "scriptFile": "qbeta_c4even_ladder_reconstruction_probe.py"
+}
