@@ -34,23 +34,31 @@ Refs:
 
 namespace QOU.MathlibExt.QPartitionCombinatorics
 
+/-! Base ring for the **algebraic** q-integer core (§7c): a generic `[Field R]`.
+The q-bracket / q-factorial / q-dimension / q-binomial and their algebraic
+identities hold over any field (the balanced `[n]_q` needs `q⁻¹` and division,
+hence a field, but no ordering). The `1 < q` positivity / nonvanishing lemmas
+below stay over `ℝ` — they are genuinely archimedean — and reference the generic
+`qBracket` etc. with `R := ℝ` inferred. -/
+variable {R : Type*} [Field R]
+
 /-! ## q-bracket and q-factorial -/
 
 /-- The **q-bracket** `[n]_q = (q^n − q^{-n}) / (q − q⁻¹)` for `n : ℕ`.
     At `n = 0` we set `[0]_q := 0`; for `n ≥ 1` the formula reduces to
     `1 + q² + q⁴ + … + q^{2(n−1)}` (up to a `q^{-(n-1)}` factor). -/
-noncomputable def qBracket (q : ℝ) (n : ℕ) : ℝ :=
+noncomputable def qBracket (q : R) (n : ℕ) : R :=
   if n = 0 then 0
   else (q ^ n - q ^ (-(n : ℤ))) / (q - q⁻¹)
 
 @[simp]
-theorem qBracket_zero (q : ℝ) : qBracket q 0 = 0 := by
+theorem qBracket_zero (q : R) : qBracket q 0 = 0 := by
   unfold qBracket; simp
 
 /-- **`[1]_q = 1` whenever the denominator is well-defined.**
 
     Proved directly: `(q^1 - q^(-1)) / (q - q⁻¹) = (q - q⁻¹)/(q - q⁻¹) = 1`. -/
-theorem qBracket_one {q : ℝ} (h_denom_ne : q - q⁻¹ ≠ 0) :
+theorem qBracket_one {q : R} (h_denom_ne : q - q⁻¹ ≠ 0) :
     qBracket q 1 = 1 := by
   unfold qBracket
   rw [if_neg (by decide : (1 : ℕ) ≠ 0), zpow_neg, zpow_natCast, pow_one]
@@ -61,7 +69,7 @@ theorem qBracket_one {q : ℝ} (h_denom_ne : q - q⁻¹ ≠ 0) :
     Proved via difference of squares:
       `(q² − q⁻²) = (q − q⁻¹)(q + q⁻¹)`,
     then `mul_div_cancel_left₀`. -/
-theorem qBracket_two {q : ℝ} (hq_ne : q ≠ 0)
+theorem qBracket_two {q : R} (hq_ne : q ≠ 0)
     (h_denom_ne : q - q⁻¹ ≠ 0) :
     qBracket q 2 = q + q⁻¹ := by
   unfold qBracket
@@ -76,7 +84,7 @@ theorem qBracket_two {q : ℝ} (hq_ne : q ≠ 0)
 /-- **The if-guard is redundant: the closed formula already vanishes at `n = 0`.**
 `qBracket q n = (q^n − q^{-n}) / (q − q⁻¹)` for *every* `n` (at `n = 0` both sides are
 `0`), so downstream proofs may use the uniform formula without case-splitting. -/
-theorem qBracket_eq_formula (q : ℝ) (n : ℕ) :
+theorem qBracket_eq_formula (q : R) (n : ℕ) :
     qBracket q n = (q ^ n - q ^ (-(n : ℤ))) / (q - q⁻¹) := by
   rcases Nat.eq_zero_or_pos n with h | h
   · subst h; simp [qBracket]
@@ -86,28 +94,28 @@ theorem qBracket_eq_formula (q : ℝ) (n : ℕ) :
 The defining relation behind the q-Pascal rule for the Gaussian binomial (and hence the
 Rogers–Szegő / continuous q-Hermite three-term recurrence). Verified at the formula level:
 `q^b(q^a−q^{-a}) + q^{-a}(q^b−q^{-b}) = q^{a+b} − q^{-a-b}`. -/
-theorem qBracket_add (q : ℝ) (hq : q ≠ 0) (a b : ℕ) :
+theorem qBracket_add (q : R) (hq : q ≠ 0) (a b : ℕ) :
     qBracket q (a + b) = q ^ b * qBracket q a + q ^ (-(a : ℤ)) * qBracket q b := by
   simp only [qBracket_eq_formula]
   rw [mul_div_assoc', mul_div_assoc', ← add_div]
   congr 1
-  have e1 : (q : ℝ) ^ (a + b) = q ^ a * q ^ b := pow_add q a b
+  have e1 : q ^ (a + b) = q ^ a * q ^ b := pow_add q a b
   have e2 : q ^ (-((a + b : ℕ) : ℤ)) = q ^ (-(a : ℤ)) * q ^ (-(b : ℤ)) := by
-    rw [← zpow_add₀ hq]; congr 1; push_cast; ring
+    rw [← zpow_add₀ hq]; congr 1; omega
   rw [e1, e2, ← zpow_natCast q a, ← zpow_natCast q b]
   ring
 
 /-- The **q-factorial** `[n]_q! = ∏_{k=1}^n [k]_q`.
 
     Empty product convention: `[0]_q! = 1`. -/
-noncomputable def qFactorial (q : ℝ) : ℕ → ℝ
+noncomputable def qFactorial (q : R) : ℕ → R
   | 0     => 1
   | n + 1 => qBracket q (n + 1) * qFactorial q n
 
 @[simp]
-theorem qFactorial_zero (q : ℝ) : qFactorial q 0 = 1 := rfl
+theorem qFactorial_zero (q : R) : qFactorial q 0 = 1 := rfl
 
-theorem qFactorial_succ (q : ℝ) (n : ℕ) :
+theorem qFactorial_succ (q : R) (n : ℕ) :
     qFactorial q (n + 1) = qBracket q (n + 1) * qFactorial q n := rfl
 
 /-! ## Positivity at q > 1 (axiomatised pending Mathlib API stability) -/
@@ -259,7 +267,7 @@ end Partition
 
     Computed as a fold over rows × columns, using
     `Partition.hookLength` for each cell. -/
-noncomputable def qDim (q : ℝ) (lam : Partition) : ℝ :=
+noncomputable def qDim (q : R) (lam : Partition) : R :=
   qFactorial q lam.size /
     (List.range lam.length).foldl
       (fun acc i =>
@@ -269,7 +277,7 @@ noncomputable def qDim (q : ℝ) (lam : Partition) : ℝ :=
       1
 
 @[simp]
-theorem qDim_nil (q : ℝ) : qDim q [] = qFactorial q 0 / 1 := by
+theorem qDim_nil (q : R) : qDim q [] = qFactorial q 0 / 1 := by
   unfold qDim
   simp
 
@@ -322,7 +330,7 @@ Consolidates the third standard q-analog primitive alongside `qBracket`
     * `QOU.Machinery.QPochhammer.qBinomial` — the **standard** form
       `(q;q)ₙ/((q;q)ₖ(q;q)_{n-k})`, a *different* normalization (e.g. `[2 choose 1]`
       is `q+q⁻¹` here vs `1+q` there). Not interchangeable. -/
-noncomputable def qBinom (q : ℝ) (n k : ℕ) : ℝ :=
+noncomputable def qBinom (q : R) (n k : ℕ) : R :=
   qFactorial q n / (qFactorial q k * qFactorial q (n - k))
 
 /-- `[n choose 0]_q = 1` (for `q > 1`, so `[n]_q! ≠ 0`). -/
@@ -347,7 +355,7 @@ theorem qBinom_pos {q : ℝ} (hq : 1 < q) (n k : ℕ) :
     (mul_pos (qFactorial_pos hq k) (qFactorial_pos hq (n - k)))
 
 /-- **Symmetry** `[n choose k]_q = [n choose n-k]_q` when `k ≤ n`. -/
-theorem qBinom_symm {q : ℝ} (n k : ℕ) (hk : k ≤ n) :
+theorem qBinom_symm {q : R} (n k : ℕ) (hk : k ≤ n) :
     qBinom q n k = qBinom q n (n - k) := by
   unfold qBinom
   rw [Nat.sub_sub_self hk, mul_comm (qFactorial q k) (qFactorial q (n - k))]
