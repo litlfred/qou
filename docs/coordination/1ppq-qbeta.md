@@ -1278,3 +1278,38 @@ bar-odd datum is dual/non-perturbative, not in the u=0 readout). `2·Vol(4₁)=4
 ≈ |ratio −4.0751|` (0.38%) is flagged anti-numerology — NOT wired. Probe/witness
 `qbeta_g3_fourone_index_assembly_corrected` (3/3: anchor 4.20, window stability,
 amphichiral symmetry). No c_k; no fit.
+
+**2026-07-18 (#3813) — the A_ω fork resolved: BOTH branches hit the same
+Lean-proved anchor-invariance wall.** Owner steered "try 1" (deformed u≠0
+median resummation) + "for 2, look at knot operators." Both scoped + settled:
+
+- **Lane 1 (deformed median resummation) — DIRECTLY settled, anchor-blind.**
+  New probe `qbeta_c3_deformed_median_discontinuity_probe.py` (2/2) computes the
+  lateral Borel sums the corpus only *inferred*: on-ray reproduces Im 𝔙̃_b =
+  0.0585; the lateral discontinuity scales LINEARLY with straddle δ (ratios
+  1.988, 1.997 ≈ 2) ⇒ **smooth, no Stokes jump** on the physical substrate ray
+  (a genuine jump would be δ-constant). The across-singularity Stokes magnitude
+  |2πi·Res| = 0.656 ≈ Vol(4₁)/π = 0.646 (action-consistent, anchor-blind, ~2 sig
+  figs — not a new identification, per T3). Single-valued + anchor-blind.
+- **Lane 2 (non-amphichiral knot 5₂) — scoped; blocked by the SAME prune.** The
+  knot-operator census (`2026-06-01-knot-operator-census-group-actions.md`) +
+  the 5₂ falsification protocol (`chirality-period-pairing.md`, proposes
+  CS(5₂)≈−0.153π²) show 5₂ *fixes* the CS=0 structural problem (nonzero bar-odd
+  home) but needs its own H₅(q) Hecke cell + Markov trace + `τ_{5₂}(q)` +
+  verified CS(5₂) + `𝔙_q(5₂)` — new machinery (the H₅(q) cell is the flagged
+  obstacle). And classical CS(5₂) is **anchor-invariant**, so it too is excluded
+  as the swing carrier.
+- **The unifying invariant (Lean-proved, sorry-free):
+  `QOU.QBeta.SRigidity.no_anchor_invariant_realizes_swing`** — any anchor-
+  invariant datum `g(datum)` (datum constant across anchors) cannot equal an S
+  that swings (verified this session). This subsumes BOTH branches: the deformed
+  tower/its Stokes constant AND a fixed classical CS(K) are anchor-invariant.
+
+**Conclusion:** the bar-odd swing is intrinsically the ANCHOR-DEPENDENT quantum
+`𝔙_q` at q₀ = the 1/u³ ladder-inversion of a smooth numerator `N_odd = S·u³`
+(`BarOddLadderShape`), precision-limited by the experimental Q_β
+(`dq*/dQ_β ≈ −0.54`), NOT by any resummation or knot choice. The one genuinely-
+open target is the geometric `Im 𝔙_q → N_odd` normalization (the capstone) —
+where the anchor-dependence enters — and the odd-channel D-ladder q-Borel/Écalle
+acceleration (sibling #3818) operating on `D(u)` where the swing lives. No c_k;
+no fit; scope-(a).
