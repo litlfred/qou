@@ -51,6 +51,14 @@ non-result — it was never the right quantity; #3864 already refused to interpr
   makes the 8-dim dual-lattice `θ` converge slowly and the naïve `Z^8` truncation OOM at
   `R≥5`; a clean value needs **Siegel reduction** of `τ₀·M` to the fundamental domain first
   (a well-posed but non-trivial step). No number is claimed rather than a wrong one.
+  - **LLL update (2026-07-18):** LLL-reducing the two quadratic forms (relabel the θ-sum by
+    `U∈GL(n,Z)`) **converges the genus-2 measure fast** — `E_{5τ₀}×E_{τ₀} → 3.949` (R=2,3,4:
+    3.934, 3.949, 3.949), tightening the R=5 value 3.944 and confirming `≠` the product 2.922.
+    But LLL fixes only the lattice *shape*; it does **not** raise the genuinely thin `τ₀` factor
+    (`Im=0.187`, deep in the cusp), so the **genus-4** truncation still diverges (garbage
+    product-form values at small `R`). The genus-4 value therefore genuinely needs the Siegel
+    **`S`-transform** (`τ→−1/τ`, raising `Im`), not just `GL(n,Z)` LLL — confirming the deferral.
+    No genus-4 number is published.
 
 ## Scope guard (STRICT)
 
