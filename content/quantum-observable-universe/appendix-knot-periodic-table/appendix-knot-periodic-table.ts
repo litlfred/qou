@@ -26,6 +26,7 @@ export default chapter({
       blocks: [
         "knot-periodic-table",
         "recursive-atom-knot-atlas",
+        "recursive-atom-knot-atlas-registry",
         "recursive-atom-knot-atlas-interpretation",
         "recursive-atom-knot-atlas-sdp-uniqueness-wiring",
         "recursive-atom-knot-atlas-open-problems",

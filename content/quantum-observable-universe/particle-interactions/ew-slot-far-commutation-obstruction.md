@@ -1,20 +1,7 @@
-*Let $A$ be a ring. Let $\sigma_1, \sigma_3, \sigma_5 \in A$ be the braid generators hosting the electroweak carriers on the disjoint strand-pairs. These are subject to the braid far-commutation relation $\sigma_i \sigma_j = \sigma_j \sigma_i$ for $|i - j| \ge 2$. Let $\mathcal{A}_{\mathrm{slot}} \subseteq A$ be the subalgebra they generate. Suppose $J_1, J_2, J_3 \in A$ realise an $\mathfrak{su}(2)_L$ adjoint structure relation $\lbrack J_1, J_2 \rbrack = J_3$ with $J_3 \ne 0$. Then $J_1$ and $J_2$ cannot both lie in $\mathcal{A}_{\mathrm{slot}}$. The non-abelian $\mathrm{SU}(2)_L$ structure therefore cannot be realised purely among the far-commuting slots.*
+*Let $A$ be a ring. Let $\sigma_1, \sigma_3, \sigma_5 \in A$ be the braid generators hosting the electroweak carriers on the disjoint strand-pairs, subject to the braid far-commutation relation
 
-### Statement (formal)
+$$
+  \sigma_i \sigma_j = \sigma_j \sigma_i \qquad (|i - j| \ge 2),
+$$
 
-The slot indices $1, 3, 5$ are pairwise far apart. Thus $\sigma_1, \sigma_3, \sigma_5$ pairwise commute. Consequently, the subalgebra $\mathcal{A}_{\mathrm{slot}} = \langle \sigma_1, \sigma_3, \sigma_5 \rangle$ is commutative. Every commutator $\lbrack x, y \rbrack = xy - yx$ vanishes for $x, y \in \mathcal{A}_{\mathrm{slot}}$. The three carriers $W \leftrightarrow \sigma_1^{4}$, $Z \leftrightarrow \sigma_3^{6}$, $H \leftrightarrow \sigma_5^{8}$ pairwise commute.
-
-The obstruction is the incompatibility of two facts:
-
-1. **Commuting operators have vanishing bracket.** For $x, y \in \mathcal{A}_{\mathrm{slot}}$, $\lbrack x, y \rbrack = 0$.
-2. **The $\mathfrak{su}(2)_L$ adjoint is non-abelian.** Its generators satisfy $\lbrack J_a, J_b \rbrack = \varepsilon_{abc} J_c \ne 0$. A nonzero bracket forbids commutation.
-
-If both $J_1, J_2 \in \mathcal{A}_{\mathrm{slot}}$, then $\lbrack J_1, J_2 \rbrack = 0$ by (1), contradicting $J_3 \ne 0$ by (2). At least one $\mathfrak{su}(2)_L$ generator must escape the slot subalgebra.
-
-### Forced constraints
-
-This result is a structural exclusion. It proves an impossibility, not a numerical near-miss. It establishes where the missing structure must reside.
-
-The far-commutation relation covers only pairs with $|i - j| \ge 2$. The adjacent generators $\sigma_2, \sigma_4$ bridge strand-pairs $2\text{--}3$ and $4\text{--}5$. These do not commute with the slots. The categorical linking operation $\mathrm{Lk}_R^{(k)}$ braids between strand-pairs through precisely these generators. The non-abelian $\mathrm{SU}(2)_L$ structure must therefore be carried by the inter-slot linking, not by the individual slots.
-
-This narrows the group-assignment postulate. The residual $\mathrm{SU}(2)_L \times \mathrm{U}(1)_Y$ input is a property of the bracket-carrying linking data, not of the mutually commuting slots. The label lives where the non-abelianness lives: in the linking, not the slots.
+and let $\mathcal{A}_{\mathrm{slot}} \subseteq A$ be the subalgebra they generate. Suppose $J_1, J_2, J_3 \in A$ realise an $\mathfrak{su}(2)_L$ adjoint structure relation $[J_1, J_2] = J_3$ with $J_3 \ne 0$. Then $J_1$ and $J_2$ cannot both lie in $\mathcal{A}_{\mathrm{slot}}$: the non-abelian $\mathrm{SU}(2)_L$ structure cannot be realised purely among the far-commuting slots.*

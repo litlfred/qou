@@ -1,5 +1,3 @@
-> **Summary.** We identify finite-time Navier-Stokes (NS) blowup with a finite obstruction level $n^*$ in the brane tower. At this level, a velocity field ceases to lift. We encode a counter-example by the cohomological address $(v_0, T^*, \Sigma, n^*, \kappa_{n^*})$. The local cohomology at the unit defect $z=1$ controls the singular set $\Sigma$.
-
 The [regularity breakdown](#conj:regularity-breakdown) at $q = 1$ is a **cohomological obstruction** in the [Yekutieli lifting](#prop:yekutieli-lifting) framework.
 
 ## Brane tower and regularity

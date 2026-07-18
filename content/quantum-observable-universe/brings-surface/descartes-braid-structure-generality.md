@@ -1,0 +1,1 @@
+The braid-group structure of [a Descartes universe](#cor:descartes-braid-structure) holds over any base ring $R$ with $30 \in R^{\times}$. It applies directly to the $\mathfrak{p}$-adic realisation ([$p$-adic realisation](#ex:p-adic-realisation)), where knot complements and skein relations remain unavailable.

@@ -1,8 +1,13 @@
 # Unitary phases are bar-odd: the fibre-saddle rigidity
 
 **Proposition.** *Let $R$ be a commutative ring with a ring involution
-$\sigma$, and call $u \in R$ **$\sigma$-unitary** when $\sigma(u)\,u = 1$
-(the ring-involution form of $|u| = 1$). Then:*
+$\sigma$, and call $u \in R$ **$\sigma$-unitary** when*
+
+$$
+  \sigma(u)\,u = 1
+$$
+
+*(the ring-involution form of $|u| = 1$). Then:*
 
 1. *$1$ is $\sigma$-unitary, and $\sigma$-unitaries are closed under
    multiplication;*

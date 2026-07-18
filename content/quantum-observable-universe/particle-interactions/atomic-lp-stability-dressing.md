@@ -1,0 +1,3 @@
+The $\mathcal{B}_3$ dressing (proton internal structure) **stabilises** the atom. The Borromean braid $(\sigma_1\sigma_2)^3$ is the identity in the standard (degree-2) representation of $H_3(q)$. This changes the annihilation ratio from $\lambda_s/\lambda_a = 0.537$ (bare) to $q^{-10} = 0.352$ (dressed). The original annihilator $X^*$ cannot satisfy the dressed condition, so the atom is stable.
+
+For composite nuclei ($A \geq 2$): nuclear crossings ($\mathfrak{p}\mathfrak{p}$, $\mathfrak{n}\mathfrak{n}$, $\mathfrak{p}\mathfrak{n}$) break the simple $H_2(q)$ structure, providing LP stability without explicit $\mathcal{B}_3$ dressing.

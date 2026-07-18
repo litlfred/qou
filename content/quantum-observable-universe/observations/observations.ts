@@ -26,6 +26,7 @@ export default chapter({
         "substrate-consistency-window-table1-data",
         "three-calibration-discipline",
         "three-calibration-discipline-proof",
+        "three-calibration-discipline-discussion",
       ],
     }),
 
@@ -227,6 +228,7 @@ export default chapter({
         // trace-ratio-interpretation.md.
         "trace-ratio-interpretation-table-data",
         "diagrammatic-double-magic-lr-fusion",
+        "diagrammatic-double-magic-lr-fusion-context",
         "double-magic-Ca40-diagram",
         "double-magic-Ca40-diagram-table-data",
         "double-magic-delta-i-bound",
@@ -240,6 +242,7 @@ export default chapter({
         "double-magic-delta-i-bound-table2-data",
         "double-magic-delta-i-bound-table1-data",
         "magic-numbers-from-q",
+        "magic-numbers-from-q-computation",
         // Relocated from quantum-observable-universes/
         // sec:algebraic-substrate-reeb (2026-07-07): the conjectured
         // full-seven-magic-numbers ↔ S₅-stable Bring period-lattice
@@ -332,6 +335,7 @@ export default chapter({
         "cfl-neutron-star-observables",
         "strangelet-merger-signature",
         "strangelet-double-beta",
+        "strangelet-double-beta-minimal-path",
         "strangelet-double-beta-interpretation",
       ],
     }),

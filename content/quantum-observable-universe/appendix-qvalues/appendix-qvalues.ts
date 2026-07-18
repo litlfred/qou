@@ -20,6 +20,7 @@ export default chapter({
       blocks: [
         "proton-borromean-assembly",
         "proton-mass-substrate-identity",
+        "proton-mass-substrate-identity-derivation",
         "per-observable-100x-status-dashboard",
       ],
     },

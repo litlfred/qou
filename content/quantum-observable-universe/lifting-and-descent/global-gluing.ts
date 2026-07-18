@@ -10,7 +10,6 @@ export default proposition({
   uses: [
     "def:quantum-planck-constant",
     "def:quantum-characteristic-classes",
-    "prop:vacuum-state",
   ],
   proofs: ["prf:global-gluing"],
 });

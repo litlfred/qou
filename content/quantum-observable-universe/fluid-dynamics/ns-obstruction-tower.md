@@ -25,6 +25,8 @@ $$
 
 The QOU is [NS-singular](#def:ns-regular-qou) (mandating blowup) if and only if $\mathrm{res}_\Sigma(\kappa_n) \neq 0$ for at least one $n$. It is NS-regular if and only if $\mathrm{res}_\Sigma(\kappa_n) = 0$ for all $n$.
 
+**Proof.**
+
 **(a) Where the obstruction sits.**
 
 Following the [QU-to-QOU theorem](#thm:qu-to-qou), the base obstruction is exactly $\kappa_0 = e(\xi)$, the Euler class of the Reeb bundle, carrying $\mathrm{tr}(\kappa_0) = \chi(A)$. The obstruction at arbitrary level $n$ takes the form
@@ -80,7 +82,7 @@ $$
   V_{1/2}^{(1)} \oplus V_{1/2}^{(2)}.
 $$
 
-This constructs a rigid 4-dimensional space. It remains **nonzero** if and only if both individual filaments successfully provide nontrivial local sections at $p$ — equivalently, when the discrete vortex cores have not dissolved into a continuous sheet.
+This constructs a rigid 4-dimensional space. It remains **nonzero** if and only if both individual filaments successfully provide nontrivial local sections at $p$ — that is, when the discrete vortex cores have not dissolved into a continuous sheet.
 
 **(d) Connection to core aspect ratio.**
 
@@ -113,5 +115,3 @@ $$
 where $\mathrm{lk}(\varrho_1, \varrho_2)$ tracks the explicit linking number separating the two filaments, and $e(\xi)|_\Sigma$ evaluates the Euler class of the Reeb bundle precisely on $\Sigma$.
 
 Mapped onto the Descartes universe ($\chi(A) = -6$, anchored on Bring's surface): $e(\xi) = -6 \cdot [\Sigma_4]$ evaluated inside $H^2(\Sigma_4, \mathbb{Z})$. The local restriction $e(\xi)|_\Sigma$ registers as nonzero strictly when $\Sigma$ behaves homologically nontrivially inside $\Sigma_4$. The anti-parallel pair (carrying linking number 1) satisfies this identically.
-
-**Summary.** We measure the NS obstruction consistently across every level of the brane tower by forcibly restricting $\kappa_n$ onto the collision locus $\Sigma$. It remains nonzero (confirming NS-singular blowup) if and only if the local cohomology $H^1_{\mathfrak{m}_p}(A)$ holds a nonzero value at collision points. This matches the exact condition where the Levi form successfully evades degeneracy (maintaining a bounded core aspect ratio). The [Levi degeneracy conjecture](#conj:levi-degeneracy) isolates whether $\kappa_n|_\Sigma$ collapses or survives through the strict $q \to 1$ limit.

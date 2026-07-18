@@ -1,22 +1,5 @@
-The confinement LP selects the Borromean link $\mathcal{B}_3$ as the unique optimizer over the $6$-element NF basis of $H_3(q)$. We formulate the general LP for knot operator selection in $H_n(q)$ for arbitrary strand number $n$. The confinement LP is the special case $n = 3$, $d = 6$.
-
-## Input / Output
-
-**Input.**
-- Strand number $n \geq 2$.
-- A basis $\{b_1, \ldots, b_d\}$ of $H_n(q)$ (the NF basis, with $d = n!$).
-- Markov traces $t_i = \mathrm{tr}_M(b_i)$ for each basis element.
-- The $d \times d$ Frobenius Gram matrix $G_{ij} = \mathrm{tr}_M(b_i \cdot b_j)$.
-- A target net value $n_{\mathrm{target}} \in \mathbb{R}_{>0}$ (the normalised categorical mass of the desired state).
-
-**Output.**
-- The optimal coefficient vector $x^* \in \mathbb{R}^d$ such that $\Phi^* = \sum_{i=1}^{d} x_i^* b_i$ is the minimum-action knot operator satisfying all Frobenius positivity and net constraints.
-- The dual certificate $(y_0^*, y^*)$ proving optimality.
-
-## Primal program (operator selection)
-
-**Proposition (general operator selection LP).**
-*The knot operator $\Phi = \sum_{i=1}^{d} x_i b_i \in H_n(q)$ for a target interaction with net value $n_{\mathrm{target}}$ is the solution of the linear program:*
+**Proposition (general operator-selection LP).**
+*Let $n \geq 2$, let $\{b_1, \ldots, b_d\}$ be a basis of $H_n(q)$ (the NF basis, with $d = n!$), let $t_i = \mathrm{tr}_M(b_i)$ be the Markov traces, let $G_{ij} = \mathrm{tr}_M(b_i \cdot b_j)$ be the $d \times d$ Frobenius Gram matrix, and let $n_{\mathrm{target}} \in \mathbb{R}_{>0}$ be a target net value. The knot operator $\Phi = \sum_{i=1}^{d} x_i b_i \in H_n(q)$ for a target interaction with net value $n_{\mathrm{target}}$ is the solution $x^* \in \mathbb{R}^d$ of the linear program*
 
 $$
   \min_{x \in \mathbb{R}^d} \quad \sum_{i=1}^{d} t_i \, x_i
@@ -40,14 +23,7 @@ $$
   \qquad (\text{boundedness})
 $$
 
-*where $M > 0$ is a constant large enough to ensure boundedness of the feasible polyhedron.*
-
-The objective $\sum_{i} t_i x_i = \mathrm{tr}_M(\Phi)$ is the categorical action. Minimizing it selects the operator of least action among all operators compatible with the Frobenius structure.
-
-The Frobenius positivity constraints $Gx \geq 0$ encode the demand–supply balance: $\Phi$ must pair non-negatively with every basis element under the Frobenius inner product. No channel carries unbounded demand.
-
-**LP over motivic shadows, not real numbers.**
-*The data feeding the LP—Markov traces $t_i = \mathrm{tr}_M(b_i)$ and Frobenius Gram entries $G_{ij} = \mathrm{tr}_M(b_i \cdot b_j)$—are formal elements of $\mathbb{Z}[q^{± 1/2}, (q-q^{-1})^{-1}]$, hence elements of the Habiro completion $\widehat{\mathbb{Z}[q]}$. The selection of the operator $\Phi^* = \sum_i x_i^* b_i$ is a combinatorial problem over the motivic shadows of the motivic substrate (the algebraic data of the Hecke algebra independently of any place-realization). Strong duality is a purely algebraic consequence of the LP. Only after the optimizer is selected does the archimedean realization $\rho_\infty$ project the dual prices and objective value into physical binding energies in $\mathbb{R}$. The non-archimedean realizations $\rho_p$ recover the LP's cyclotomic shadows at each finite place $p$.*
+*where $M > 0$ is a constant large enough to ensure boundedness of the feasible polyhedron. The optimizer $\Phi^* = \sum_{i} x_i^* b_i$ is the minimum-action knot operator satisfying all Frobenius positivity and net constraints; the dual certificate $(y_0^*, y^*)$ proves its optimality.*
 
 ## Dual program (demand pricing)
 

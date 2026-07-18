@@ -1,18 +1,1 @@
-The file [`upstream-mathlib-additions.lean`](upstream-mathlib-additions.lean) provides three unconditional additions for Mathlib:
-
-See [Table 1](#tbl:upstream-mathlib-additions-table1-data).
-
-## Advances
-
-**(A) `Real.dilog` and `Complex.dilog`.**
-The `complexLiTwo` definition implements a concrete `tsum`-based dilogarithm. The $1/k^2$ factor guarantees summability on the closed unit disk. Mathlib provides `Summable` for geometric series. Appending absolute-convergence proofs makes this a candidate Mathlib PR.
-
-**(B) `BlochWigner`.**
-The `blochWigner` definition utilizes `Complex.log` and `Complex.arg` from Mathlib. Proving the standard five-term pentagon identity for `blochWigner` closes gap (2). This proof reduces to the absolute convergence of `complexLiTwo` and the Spence-style functional equations for the real and imaginary parts of $\mathrm{Li}_2$.
-
-**(C) $\mathrm{Cl}_2$ functional equations.**
-The reflection identity `Cl_2(-θ) = -Cl_2(θ)` is an unconditional Lean theorem. The proof applies `Real.sin_neg` and `tsum_neg`. This establishes the simplest $\mathrm{Cl}_2$ functional equation. Analogous `tsum` rearrangements extend this technique to periodicity identities such as `Cl_2(θ + 2π) = Cl_2(θ)`.
-
-## Target translation
-
-The §3b-cond chain provides unconditional functional identities (`Cl_2_neg`, `complexLiTwo_zero`, `blochWigner_zero`) alongside concrete Lean definitions for `complexLiTwo` and `blochWigner`. This translates a prior axiomatic gap into specific, named Lean targets ready for upstreaming.
+The file [`upstream-mathlib-additions.lean`](upstream-mathlib-additions.lean) provides three unconditional additions for Mathlib (see [Table 1](#tbl:upstream-mathlib-additions-table1-data)): (A) a concrete `tsum`-based complex dilogarithm `complexLiTwo`, a candidate for `Real.dilog` / `Complex.dilog`; (B) `blochWigner`, built from `Complex.log` and `Complex.arg`; and (C) the Clausen reflection identity $\mathrm{Cl}_2(-\theta) = -\mathrm{Cl}_2(\theta)$, an unconditional Lean theorem.

@@ -19,74 +19,9 @@ $\chi^{(2,1)}(\beta_{\mathrm{Bor}}) = 2 - 3h^4 - h^6$, derived from the
 $U_q(\mathfrak{sl}_2)$ R-matrix on $V_{1/2}^{\otimes 3}$ via Schur–Weyl
 duality; and $1/4 = 1/[2]_q^2|_{q=1}$ is the standard Markov-trace
 normalisation for $c = 3$-component link closure.*
-## Connection to the wider framework on `main`
 
-The two ingredients each have a categorical home that landed on `main`
-after the initial derivation:
-
-- **Step 1 (the polynomial form `χ^{(2,1)}(β_Bor) = 2 − 3h⁴ − h⁶`)**
-  shares its Wedderburn partition-indexed framework with the
-  [q-heat-kernel Peter–Weyl
-  decomposition](../information-theory/q-heat-kernel-peter-weyl.md)
-  and the [Habiro residue-sum equivalence](habiro-residue-sum-equivalence.md).
-  Note the q-heat-kernel proposition supplies the
-  $q$-Laplacian eigenvalues $\mu_\lambda(q)$ — heat-flow decay rates,
-  *not* the braid-character values $\chi^\lambda(\beta)$; the
-  polynomial form itself comes from the projector route below or
-  from direct substitution on the closed-form trace.
-  The categorical projector onto the (2,1) channel is the
-  $\mathbf{e}_-$ minus-eigenspace idempotent of the Hecke quadratic
-  relation $q\sigma^2 = (q^2 − 1)\sigma + q$, formalised sorry-free
-  in `QOU.Hecke.SpectralProjector` (`eminus_idem`,
-  `eplus_eminus_orthogonal`, `eplus_add_eminus = 1`).
-  Closed-form trace computation on $V^{\otimes 3}$ can be done via
-  the Cayley–Hamilton block reduction
-  `QOU.Braiding.HeckeGenPolyReduction.hecke_gen_poly_reduction`.
-
-- **Step 2 (the Markov normalisation `y_{(2,1)}(q=1) = 1/4`)**
-  is the $q = 1$ evaluation of the exact closed-form Wenzl weight
-  $y_{(2,1)}(q) = 1/[2]_q^2$ established in
-  [`prop:h3-markov-wenzl-weights`](h3-markov-wenzl-weights.md).
-  The full $\mathrm{H}_3$ weight vector is
-  $\bigl([4]_q/[2]_q^3,\ 1/[2]_q^2,\ 0\bigr)$, evaluating at $q = 1$
-  to the non-uniform $(\tfrac12, \tfrac14, 0)$ — the sign channel
-  carries zero weight identically (Temperley–Lieb quotient), and the
-  Jones-normalised trace is chiral, so no bar-involution uniformity
-  applies.
-
-Concretely, the R-matrix derivation in **Step 1** of this proof can
-be reformulated equivalently as: extract the $\mathbf{e}_-$ component
-of $\sigma_1^{-1}\sigma_2$ on $V_{1/2}^{\otimes 3}$, take the $h^4$
-coefficient of its trace.  The $\mathbf{e}_-$ idempotent is the
-categorical replacement for the explicit $8 \times 8$ R-matrix
-computation; both are now valid Lean entry points to the same
-`χ^{(2,1)}(β_Bor) = 2 − 3h⁴ − h⁶` identity.
-
-## Significance
-
-The Borromean $h^4 = -3/4$ — the *first topological invariant* of the
-Borromean linking, the part of the Jones polynomial that distinguishes
-$\mathcal{B}_3$ from the trivial 3-component unlink — is now derived
-*from first principles* within $\mathrm{H}_3(q)$. The chain is:
-
-| Step | Source | Result |
-|---|---|---|
-| 1 | $U_q(\mathfrak{sl}_2)$ R-matrix on $V_{1/2}^{\otimes 3}$ | $\chi^{(2,1)}(\beta_{\mathrm{Bor}}) = 2 - 3h^4 - h^6$ |
-| 2 | Markov normalisation for $c = 3$ link closure | $y_{(2,1)}(q=1) = 1/4 = 1/[2]_q^2|_{q=1}$ |
-| 3 | Combined Frobenius expansion | $h^4(\mathrm{tr}_M) = (-3) \cdot (1/4) = -3/4$ |
-
-The derivation is purely categorical — no empirical fitting, no
-free parameters. Each ingredient ($\check{R}$, the Hecke relation, the
-Schur–Weyl decomposition, the Markov normalisation $[2]_q^{c-1}$) is a
-standard categorical / topological object whose form is determined by
-the framework's existing structure.
-
-> **Scope note.** This closes the *within-$\mathrm{H}_3$* categorical
-> chain (the 3-strand side of the Borromean story). It does **not**
-> resolve the *cross-algebra* obstruction linking 5-strand $A_5$ fiber
-> action to 3-strand $\mathrm{H}_3$ — that was the original GAP-A-4
-> question (`conj:s5-so3-fiber-action`) and remains open per the
-> [T4–T14 retrospective](../../../docs/audits/2026-06-06-gap-a4-T9-T14-followup-retrospective.md)
-> (eight candidate cross-algebra functors refuted).
+The connection to the wider framework and the significance of the
+factorisation are collected in
+[the Borromean $h^4$ context](#rem:borromean-h4-categorical-derivation-context).
 
 **Archimedean specialisation (§7c).** The factor $1/4 = [2]_q^{-2}\big|_{q=1}$ is the archimedean $q = 1$ numerical evaluation of the exact Wenzl weight; the companion Lean states the rational factorisation $(-3)\cdot(1/4) = -3/4$ over $\mathbb{R}$, on the archimedean side of the substrate wall.

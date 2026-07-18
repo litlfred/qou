@@ -10,6 +10,5 @@ export default proposition({
   },
   uses: [
     "rem:color-bundles",
-    "def:briggs-klein-chart",
   ],
 });

@@ -31,3 +31,36 @@ attained at the irrep with largest quantum dimension times
 character evaluation.  For pair production at our $q_0 = 1.109978595554181\ldots$ (50 dps),
 this is $T_{2,3}$ (trefoil, $e^-$) — the lowest-crossing
 operator that unconditionally opens the degree-3 channel.
+
+## Explicit dual construction
+
+Consider a state $K \in H_3(q)$ with decomposition $K = \sum_i c_i b_i$. The Frobenius dual $K^\vee$ is the unique element satisfying
+
+$$
+  \langle K^\vee, b_i \rangle_F = c_i
+  \quad \forall i.
+$$
+
+By non-degeneracy, $K^\vee$ exists and is unique. In the basis, $K^\vee = \sum_i c_i (G^{-1})_{ij} b_j$, where $G_{ij} = \langle b_i, b_j \rangle_F = \mathrm{tr}_M(b_i \cdot b_j)$ is the $6 \times 6$ Gram matrix of $H_3(q)$.
+
+The demand vector of $K$ is the negative part:
+
+$$
+  \mathrm{dem}(K) = \sum_{i : c_i < 0} |c_i| \, b_i^\vee.
+$$
+
+The operator that fills the demand at minimum crossing energy is
+
+$$
+  \Phi_{\mathrm{min}}
+  =
+  \arg\min_{\Phi \in \mathrm{End}(A)_{\mathrm{on-shell}}}
+  \left\{
+    \mathfrak{E}_{\mathrm{cross}}(\Phi)
+    \ \Big|\ 
+    \langle \Phi, \mathrm{dem}(K) \rangle_F \geq
+    \|\mathrm{dem}(K)\|_F
+  \right\}.
+$$
+
+For the positron ($e^+ = \sigma_0^{-1}\sigma_1^{-1}\sigma_0^{-1}$), the demand profile is $\{-0.218\gamma, -0.209 L_+, -0.209 L_-\}$. The mirror trefoil demands vacuum energy and Hopf content. The minimum-energy supply is the coevaluation $\mathrm{coev}_A \colon \mathbf{1} \to A \otimes A^\vee$, which provides exactly the identity and Hopf content from the rigid structure. Its cost is $\mathrm{tr}(\mathrm{id}_A) = [2]_q = q + q^{-1} \approx 2.011$.

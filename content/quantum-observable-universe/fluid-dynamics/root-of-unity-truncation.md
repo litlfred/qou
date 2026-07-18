@@ -7,6 +7,20 @@ and
 [`conj:regularity-breakdown`](#conj:regularity-breakdown);
 "Root-of-unity truncation").**
 
+Let $(\mathbf{C}, A, \tau)$ be a QOU with substrate parameter $q$ not a root of unity ([QOU axiom](#def:substrate-parameter)). As $q \to 1$ through the roots of unity $q = e^{i\pi/\kappa}$, the representation category truncates to a finite modular tensor category; blowup arises only in the $\kappa \to \infty$ accumulation. For an anti-parallel vortex pair with core aspect ratio $\kappa(t)$:
+
+$$
+  \boxed{
+    \text{NS blows up}
+    \iff
+    \text{Levi form stays non-degenerate at collision}
+    \iff
+    \kappa(t) = O(1).
+  }
+$$
+
+**Proof.**
+
 The governing [QOU axiom](#def:substrate-parameter) rigorously demands that $q$ remains **not** a root of unity. However, forcibly passing the limit $q \to 1$ directly through the dense set of unity roots triggers a radical truncation across the representation theory that forcibly **strengthens** classical regularity. The resulting macroscopic blowup operating at $q = 1$ behaves merely as the pure mathematical accumulation gathering these infinite truncations.
 
 The core truncation mechanism — driven exclusively by the vanishing of the $q$-integer $[\kappa]_q$ executing exactly at $q = e^{i\pi/\kappa}$, which cleanly collapses the spanning $q$-Laplacian spectral tower $[k]_q^2$ straight into the constrained finite Verlinde/ADE set — finds derivation strictly within [the $q$-Laplacian spectral tower](#prop:q-laplacian-spectral-tower). The following formally extracts the resulting fluid-dynamical consequence.
@@ -44,7 +58,7 @@ The absolute blowup occurring at $q = 1$ effectively states that this terminal i
 
 **Connection to the core aspect ratio.**
 
-Operating at an isolated root of unity $q = e^{i\pi/\kappa}$, the exact geometric shape controlling the physical vortex core answers directly to the strict **modular tensor category** structure. The explicit fusion rules $N_{ij}^k$ logically dictate all valid mode interactions. The hard truncation boundary spanning $j \leq (\kappa-2)/2$ completely outlaws high-frequency geometric core deformations: the physical core mathematically **cannot** form fine-scale spatial structure exceeding the strict cutoff. At the level of the vortex-core geometry:
+Operating at an isolated root of unity $q = e^{i\pi/\kappa}$, the exact geometric shape controlling the physical vortex core answers directly to the strict **modular tensor category** structure. The explicit fusion rules $N_{ij}^k$ logically dictate all valid mode interactions. The hard truncation boundary spanning $j \leq (\kappa-2)/2$ completely outlaws high-frequency geometric core deformations: the physical core mathematically **cannot** form fine-scale spatial structure exceeding the strict cutoff. In geometric terms:
 
 - The continuous core aspect ratio $\kappa(t) = a_\perp/a_\parallel$ strictly answers to the isolated Fourier modes spanning the core boundary.
 - Operating at root of unity: exactly $(\kappa-1)/2$ modes logically exist. Consequently, $\kappa(t)$ forms merely a basic trigonometric polynomial obeying a strictly bounded degree.
@@ -68,16 +82,6 @@ The baseline [vorticity lower bound](#prop:vorticity-lower-bound) strictly manda
 - Assuming $\kappa(t) \sim \kappa$ (exhibiting purely linear growth): the physical core safely flattens exactly mirroring the rate unlocking new modes. Physical vorticity safely spreads forming a wide sheet. The strict lower bound $\omega \geq c/(T^*-t)$ potentially fails. NS may function as completely regular.
 - Assuming $\kappa(t) \sim \kappa^\beta$ spanning $0 < \beta < 1$: an intermediate regime triggers. The firm lower bound holds cleanly provided $\beta < 1/2$ (confirming the physical flattening remains mathematically slower than the approach).
 
-The explicit [Levi form condition number](#def:levi-form-defect) governing the vortex core rigidly evaluates to $\lambda_{\max}/\lambda_{\min}$, perfectly equating to $\kappa(t)^2$. The underlying contact structure mathematically degenerates (flipping completely integrable) exactly if and only if $\lambda_{\min} \to 0$, driving $\kappa(t) \to \infty$. Consequently:
-
-$$
-  \boxed{
-    \text{NS blows up}
-    \iff
-    \text{Levi form stays non-degenerate at collision}
-    \iff
-    \kappa(t) = O(1).
-  }
-$$
+The explicit [Levi form condition number](#def:levi-form-defect) governing the vortex core rigidly evaluates to $\lambda_{\max}/\lambda_{\min}$, perfectly equating to $\kappa(t)^2$. The underlying contact structure mathematically degenerates (flipping completely integrable) exactly if and only if $\lambda_{\min} \to 0$, driving $\kappa(t) \to \infty$. This establishes the boxed equivalence stated above.
 
 **Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall: it invokes real- or complex-analytic constructs — real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.

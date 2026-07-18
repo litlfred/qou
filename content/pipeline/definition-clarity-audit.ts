@@ -764,12 +764,22 @@ function checkDefnTight(b: Block): Finding {
   return base;
 }
 
+/** Bold section-headers in a statement, EXCLUDING enumerated-part labels
+ *  (`**(a)**`, `**(b)**`, `**(ii)**`, `**1.**`, `**A.**`). Those are the
+ *  *parts* of a single multi-part claim — the anatomy of the statement — not
+ *  discursive rambling sub-sections, so they must not count toward the
+ *  sub-section rambling threshold. */
+function stmtRamblingHeaders(md: string): string[] {
+  const ENUM_RX = /^\(?([a-z]|[0-9]{1,2}|[ivxlc]{1,5})\)?[.:]?$/i;
+  return boldHeaders(md).filter((h) => !ENUM_RX.test(h.trim()));
+}
+
 function checkStmtTight(b: Block): Finding {
   // Measure the STATEMENT only — exclude any inline proof (see stripProof).
   const stmtMd = stripProof(b.md);
   const p = prose(stmtMd);
   const words = wordCount(p);
-  const headers = boldHeaders(stmtMd).length;
+  const headers = stmtRamblingHeaders(stmtMd).length;
   const dispIdx = firstDisplayIdx(stmtMd);
   const preamble = dispIdx < 0 ? words : wordCount(prose(stmtMd.slice(0, dispIdx)));
   const base = mkFinding(b, "clarity-stmt-tight");

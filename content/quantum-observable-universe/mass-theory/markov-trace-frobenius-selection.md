@@ -4,9 +4,10 @@
 |---|---:|---:|---|:---:|
 | Jones–Markov $\mathrm{tr}_M$ | $1$ | $z = 1/[q^{1/2}+q^{-1/2}]$ | Wenzl-bridge $y_\lambda$ | yes, on $H_n(q)$ |
 
-## The chain: cat-action to Markov trace
+## Proof
 
-We trace each step from the QOU substrate:
+The chain from the QOU substrate to the Markov trace runs through four
+steps:
 
 ### Step 1: Cat-action of $\mathbf{C}$ on the state bundle
 

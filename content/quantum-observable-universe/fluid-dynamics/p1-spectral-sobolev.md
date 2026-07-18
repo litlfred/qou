@@ -2,11 +2,9 @@ Let $(\mathbf{C}, A, \tau)$ define a [QOU](#def:quantum-observable-universe) car
 
 Then:
 
-**(a) Compact resolvent and discrete spectrum.**
-The operator $\Delta_q$ on $\Omega^1(A)$ guarantees compact resolvent: for any $\lambda \notin \mathrm{spec}(\Delta_q)$, the resolvent $(\lambda\mathrm{id} - \Delta_q)^{-1}$ functions as a compact operator across the Hilbert completion $\overline{\Omega^1(A)}^{\langle\cdot,\cdot\rangle_\varTheta}$. Consequently, the spectrum is fully discrete: $\mathrm{spec}(\Delta_q) = \{\mu_k^{(q)}\}_{k \geq 0}$, ordered as $0 \leq \mu_0^{(q)} \leq \mu_1^{(q)} \leq \cdots$, with $\mu_k^{(q)} \to \infty$.
+*(a) Compact resolvent and discrete spectrum.* For any $\lambda \notin \mathrm{spec}(\Delta_q)$ the resolvent $(\lambda\mathrm{id} - \Delta_q)^{-1}$ is compact on the Hilbert completion $\overline{\Omega^1(A)}^{\langle\cdot,\cdot\rangle_\varTheta}$, so the spectrum is discrete: $\mathrm{spec}(\Delta_q) = \{\mu_k^{(q)}\}_{k \geq 0}$, ordered $0 \leq \mu_0^{(q)} \leq \mu_1^{(q)} \leq \cdots$, with $\mu_k^{(q)} \to \infty$.
 
-**(b) Exponential eigenvalue growth.**
-The precise eigenvalues read
+*(b) Exponential eigenvalue growth.* The precise eigenvalues read
 
 $$
   \mu_k^{(q)} = [k]_q^2,
@@ -27,8 +25,7 @@ $$
 
 for all $k \geq 1$. In particular, $\mu_k^{(q)} = \Theta(q^{2k})$, establishing strictly exponential growth in $k$.
 
-**(c) Categorical Sobolev embedding.**
-Write $H^1_q(A) = \{v \in \Omega^1(A) : \lVert v \rVert_A^2 + \lVert d_q v \rVert_A^2 < \infty\}$ for the $q$-Sobolev space. $H^1_q(A)$ embeds continuously into the space of bounded 1-forms:
+*(c) Categorical Sobolev embedding.* Write $H^1_q(A) = \{v \in \Omega^1(A) : \lVert v \rVert_A^2 + \lVert d_q v \rVert_A^2 < \infty\}$ for the $q$-Sobolev space. $H^1_q(A)$ embeds continuously into the space of bounded 1-forms:
 
 $$
   \lVert v \rVert_{L^\infty}

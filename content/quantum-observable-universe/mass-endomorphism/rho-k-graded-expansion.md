@@ -15,7 +15,9 @@ $$
 
 where $\alpha = m_e \cdot 8G$ ([binding scale](#prop:binding-scale-catalan)) and $z = 1/(q^{1/2} + q^{-1/2})$ forms the Markov parameter. The graded expansion truncates at the single-generator level to achieve the empirical $0.18\%$ accuracy reported in [atomic braid mass](#thm:wedderburn-mass-formula).
 
-## The three pieces
+## Proof
+
+The graded expansion splits into three pieces.
 
 ### Leading-order piece (proved)
 

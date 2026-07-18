@@ -1,9 +1,5 @@
 *Let $R$ be a field of characteristic $0$ and let $q \in R$ be generic (not a root of unity, $q \neq 1$). Equip $H_n(q)$ with the bar involution $* \colon \sigma_i \mapsto \sigma_i^{-1}$, $q \mapsto q^{-1}$ (extended antilinearly). Then $H_n(q)$ is a Baer-*-ring. A self-adjoint idempotent (a projection) generates its right (resp. left) annihilator ideal.*
 
-### Corollary
-
-The central primitive idempotents $\{e_\lambda\}_{\lambda \vdash n}$ form a complete system of orthogonal projections for $H_n(q)$, indexed by partitions of $n$. They are explicit ([`prop:explicit-central-idempotent`](#prop:explicit-central-idempotent)) and bar-aware. Self-conjugate $\lambda$ yield bar-fixed projections (real period witnesses). Conjugate pairs yield bar-swapped projections (chirality-twisted witnesses).
-
 ### Failure locus — explicit characterisation
 
 The Baer-* property fails exactly where $H_n(q)$ ceases to be semisimple:

@@ -1,4 +1,10 @@
-*Let $\sigma_{pn}$ and $\sigma_{pn}'$ be two p-n interface averaging functionals on $H_{3A}(R, q)$. Assume both satisfy: (a) bar-invariance $\sigma_{pn}(q) = \sigma_{pn}(q^{-1})$, (b) color-flavor compatibility, and (c) standard normalisation $\sigma_{pn} = z$. Then they are equal block-wise. The canonical p-n averaging is uniquely determined.*
+*Let $\sigma_{pn}$ and $\sigma_{pn}'$ be two p-n interface averaging functionals on $H_{3A}(R, q)$. Assume both satisfy: (a) bar-invariance*
+
+$$
+  \sigma_{pn}(q) = \sigma_{pn}(q^{-1}),
+$$
+
+*(b) color-flavor compatibility, and (c) standard normalisation $\sigma_{pn} = z$. Then they are equal block-wise. The canonical p-n averaging is uniquely determined.*
 
 ## Setting
 

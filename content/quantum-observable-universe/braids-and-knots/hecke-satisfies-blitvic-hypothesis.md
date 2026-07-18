@@ -1,6 +1,4 @@
-The non-commutative random variables $\sigma_i \in H_\infty(q)$ under the Markov trace $\mathrm{tr}_M$ satisfy the pair-partition combinatorial hypothesis of Blitvić's non-commutative central limit theorem. 
-
-Blitvić's theorem applies when joint moments $\mathrm{tr}_M(\sigma_{i_1} \sigma_{i_2} \cdots \sigma_{i_k})$ decompose as a sum over pair-partitions $\pi$ with weights depending only on $\pi$ and $q$. The Hecke relation $\sigma_i^2 = (q - q^{-1})\sigma_i + 1$ reduces every generator word to a combination of square-free products. The Markov property then evaluates the trace as a sum over matchings. 
+The non-commutative random variables $\sigma_i \in H_\infty(q)$ under the Markov trace $\mathrm{tr}_M$ satisfy the pair-partition combinatorial hypothesis of Blitvić's non-commutative central limit theorem.
 
 Explicitly, for the centred generator $\tilde\sigma_i := \sigma_i - \mathrm{tr}_M(\sigma_i) \cdot 1$, the joint moment vanishes for odd $k$. For even $k$, it decomposes as:
 $$

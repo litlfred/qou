@@ -1,4 +1,10 @@
-*Let $D \subset \mathcal{S}_p$ be a small open disc around a foundry boundary. Let $\widetilde{D} \subset \mathcal{R}_p$ denote the preimage $\pi_H^{-1}(D)$ together with the three colour-tube sections. Then:*
+*Let $D \subset \mathcal{S}_p$ be a small open disc around a foundry boundary, and let*
+
+$$
+  \widetilde{D} = \pi_H^{-1}(D) \subset \mathcal{R}_p
+$$
+
+*denote the preimage together with the three colour-tube sections. Then:*
 
 1. **Fusion.** *$\widetilde{D}$ is a single connected topological disc with degree-$3$ ramification at the centre. The three sectors coalesce at the centre.*
 2. **Monodromy.** *The monodromy around $\partial D$ is the cyclic group $C_3 = \langle (rgb) \rangle$. The full Galois group of the regular closure is the symmetric group $S_3$.*

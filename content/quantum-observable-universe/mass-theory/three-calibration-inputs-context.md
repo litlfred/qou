@@ -1,0 +1,124 @@
+| ID | Canonical observable | canonical proxy | What it fixes | DOF of $H^1 = 2W$ |
+|----|-----------|-------------|--------------|-------------------|
+| **CAL-1** | $m_\mathfrak{e}$ (leptonic mass scale, order $h^0$) | electron mass (Penning trap) | the dimensional unit | $W$-plane scale |
+| **CAL-2** | $\mathfrak{D}_\beta$ (neutron $\beta$-decay width, order $h^2$) | $\mathfrak{Q}_\beta = \hbar/\mathfrak{D}_\beta$; the modulus is overdetermined, pinned most precisely by $m_\mu/m_\mathfrak{e} = \mathrm{Vol}(4_1)/\hbar_q^2$, $\hbar_q = 1-q_0^{-1}$ | substrate $q_0$ | $W$-plane modulus |
+| **CAL-3** | $\mathfrak{D}_\pi$ (pion decay width, order $h^3$) | charged-pion mass $m_\pi$ (PDG); independent of $(m_\mathfrak{e}, q_0)$ via $\mathrm{Vol}(\mathrm{Hopf})=0$ | meson scale | orthogonal class |
+
+All three are the three real degrees of freedom of the single $H^1 = 2W$
+(rank-2 $W$-plane scale + modulus, plus one orthogonal class: $2+1=3$),
+**not** three distinct degrees $H^0/H^1/H^2$.
+
+The three canonical inputs are **weak-sector observables** — a leptonic
+mass scale and two decay widths $(m_\mathfrak{e}, \mathfrak{D}_\beta,
+\mathfrak{D}_\pi)$, entering at successive orders $h^0, h^2, h^3$. They
+are read off their most precisely measured **proxies** — the masses
+$m_\mathfrak{e}$, $m_\pi$ and the $Q$-value $\mathfrak{Q}_\beta =
+\hbar/\mathfrak{D}_\beta$. $m_\mathfrak{e}$ sets the unit, so the
+(dimensionless) modulus $q_0$ is pinned by the ratio $m_\mu/m_\mathfrak{e}$
+— the most precise anchor for CAL-2.
+
+$\mathfrak{Q}_\beta$ is the **measured proxy for CAL-2** ($\mathfrak{D}_\beta$),
+the bar-odd $\sinh$ partner of the bar-even $\cosh$ meson scale $m_\pi$;
+it is **not** a fourth calibration. Because the modulus is overdetermined,
+$\mathfrak{Q}_\beta$ and the lepton ratio $m_\mu/m_\mathfrak{e}$ are
+alternative handles on the *same* CAL-2 — whichever is used to pin $q_0$,
+the other becomes a cross-check prediction. In the
+**Physical-Observations** layer $q_0$ may instead be anchored on the
+more-precise proton ratio $m_p/m_\mathfrak{e}$ (the
+muon ratio is then a $9.5\sigma$ cross-check), a precision substitution
+within the same $H^1$ datum — not a fourth calibration.
+
+*The three inputs are independent: one dimensionless ratio plus two
+dimensional scales. They align to the three (co)homological degrees
+of freedom that survive on-shell quotient by
+$\star_q F_\nabla = F_\nabla$ and gauge invariance
+$\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) = 0$ —
+namely the three Wedderburn blocks (sym, std, alt) of
+$H_3(R, q)$ ([three parameters from Wedderburn](#prop:three-parameters-wedderburn)).*
+
+## Allowed substitutions
+
+- $q_0$ is a canonical constant *only* via CAL-2; downstream compute
+  must carry $q_0$ symbolically as long as possible and substitute
+  the CAL-2 exact algebraic values at the final reporting step
+  ([symbolic-in-$q$ throughout](https://github.com/litlfred/qou/blob/main/docs/audits/-math-framework-workplan.md#p25)).
+- $\mathfrak{E}_0$ has two framework-derived forms and one CODATA
+  cross-check, all related by the brane-tower correction $1/(1-\hbar_q^2)$:
+    - $\mathfrak{E}_0^{(N=0)} = m_e/(q_0(q_0-1)) \approx 4.186$ MeV
+      (single Planck-tick, CAL-1 + CAL-2 only),
+    - $\mathfrak{E}_0^{\text{full}} = \mathfrak{E}_0^{(N=0)}/(1-\hbar_q^2) \approx 4.228$ MeV
+      (tower-summed, CAL-1 + CAL-2 only),
+    - $\mathfrak{E}_0^{(\text{cal})} = \mathfrak{Q}_\beta(n)/|\Delta(\mathrm{net})| \approx 4.155$ MeV
+      (CAL-3 cross-check via CODATA).
+  See the [notation register](../notation/notation-register.md) energy
+  row and the [collisions note](../notation/notation-collisions.md)
+  for the convention $\mathfrak{E}_0 \neq \mathfrak{Q}_\beta(n)$ (they differ by
+  the dimensionless factor $1/|\Delta(\mathrm{net})| \approx 5.31$).
+- $m_e$ enters as the unique dimensional bridge from $\mathbb{Q}(q_0)$
+  to MeV.
+
+## Forbidden substitutions
+
+The framework forbids:
+
+- *Free parameters* beyond CAL-1, CAL-2, CAL-3.
+- *Coefficient fits* to AME, CODATA, PDG, or any external dataset
+  (e.g. "ad hoc" or "approx" tags on Bethe-Weizsäcker coefficients
+  must be derived to symbolic $\mathbb{Q}(q_0)$ form, not retained
+  as fits).
+- *Numerological substitutions* (e.g. magic numbers
+  $\{2, 8, 20, 28, 50, 82, 126\}$ asserted as data; they must be
+  derived from Bring's surface period structure or the BB / LR
+  homological framework).
+- *A second pinning of $q_0$*. The substrate uncertainty floor
+  $\delta q_0$ propagated from CODATA $m_\mu/m_e$ is a CAL-2 cross-check;
+  it may not be supplemented by independent fits to $m_e$, $m_\mu$,
+  $m_\tau$, or any other mass.
+- *A second hadronic scale*. $m_{\pi^{±}}$ is the CAL-3 proxy; the
+  hadronic energy scale $\mathfrak{E}_0$ is derived from CAL-1 + CAL-2,
+  and $\mathfrak{Q}_\beta(n)$ is the CAL-2 proxy — neither is an
+  independent fourth input. Proton mass, neutron mass,
+  and all nuclear binding energies must be derived from
+  $\{m_e, q_0, m_{\pi^{±}}\}$, not introduced as inputs.
+
+## (Co)homological alignment
+
+The Wedderburn-Artin decomposition
+$H_3(R, q) \cong M_1^{\mathrm{sym}} \oplus M_2^{\mathrm{std}} \oplus M_1^{\mathrm{alt}}$
+gives three independent block characters $\chi_\lambda$ for
+$\lambda \in \{(3), (2,1), (1^3)\}$, with degrees $1, 2, 1$. The
+three on-shell parameters of the categorical action survive as the
+three independent traces $\mathrm{tr}_\lambda$, one per block.
+
+The calibration map is:
+
+| Wedderburn block | Calibration | Role |
+|------------------|-------------|------|
+| $\mathrm{alt}$ ($\lambda = (1^3)$) | CAL-2: $\mathfrak{D}_\beta$ (proxy $m_\mu/m_e$) $\mapsto q_0$ | Sets the deformation scale (alt is the "antisymmetric" / antimatter channel; $q_0 = 1$ collapses it). |
+| $\mathrm{std}$ ($\lambda = (2,1)$) | CAL-1: $m_e$ | Sets the leptonic mass quantum (std is the 2-dimensional "matter" channel where $\mathrm{tr}_M(\sigma_i\sigma_j) = z^2$). |
+| $\mathrm{sym}$ ($\lambda = (3)$) | CAL-3: $\mathfrak{D}_\pi$ (proxy $m_{\pi^{±}}$) | Sets the chiral / Goldstone scale (sym is the "all crossings positive" / hadronic channel). The pion mass is the pseudo-Goldstone boson of broken chiral $\mathrm{SU}(2)_A$; its mass encodes the chiral condensate $\langle\bar{q}q\rangle^{1/3} \approx 240\;\mathrm{MeV}$ which is absent from $(m_e, q_0)$. $\mathfrak{Q}_\beta(n)$ is the **measured proxy for CAL-2** ($\mathfrak{D}_\beta$); when $q_0$ is pinned by the alternative anchor $m_\mu/m_e$, the relation $\mathfrak{Q}_\beta = m_e \lvert q_0^2 - 2q_0 - 1\rvert(q_0+1)/(2q_0^3) \approx 0.784\;\mathrm{MeV}$ (0.17% miss) makes it a cross-check on the same modulus, not a fourth input. |
+
+This is the meaning of "aligned to (co)homology": the three
+calibrations correspond bijectively to the three irreducible
+characters of $H_3(R, q)$, which are the three cohomology classes
+that survive the on-shell / gauge-invariance quotient. The
+framework is rigid in this sense: increasing or decreasing the
+number of calibrations would require deforming the categorical
+substrate to a different on-shell quotient, which would no longer
+satisfy the QOU axioms.
+
+## Comparison with the Standard Model
+
+The Standard Model has 19 free parameters (6 quark masses, 3 lepton
+masses, 3 CKM angles + 1 phase, 3 gauge couplings, Higgs mass, Higgs
+VEV, QCD theta angle). The QOU framework replaces all 19 with these
+**3** ([calibration inputs context](#rem:calibration-inputs)):
+
+- particle content is topological (from $\chi(A) = -6$), not chosen;
+- mass ratios are knot invariants (from algebraic quantum volume and
+  $\mathrm{tr}_M$), not free;
+- coupling constants are $R$-matrix eigenvalues (from $q_0$);
+- mixing angles are Clebsch-Gordan coefficients of the knot eigenbasis
+  decomposition.
+
+The 19 $\to$ 3 reduction forms a testable claim. Any prediction requiring a fourth calibration falsifies the framework.

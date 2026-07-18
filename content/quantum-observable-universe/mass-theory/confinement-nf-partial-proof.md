@@ -6,6 +6,10 @@ per AGENTS.md §3b-cond).**
 *The three claims of [`conj:confinement-nf-structure-forcing`](#conj:confinement-nf-structure-forcing)
 decompose as follows.*
 
+## Proof
+
+The three claims $T_1, T_2, T_3$ decompose and are discharged as follows.
+
 1. *(Wedderburn maximizer in active set, $T_1$.)*
    $\lambda^\star := \arg\max_{\lambda \vdash n} \mathrm{ord}_{q=0}^{(-)} \chi^\lambda(T_\beta) \in A$.
    **Fully proved** by LP complementary slackness applied to the
@@ -36,7 +40,7 @@ decompose as follows.*
    bounded (Wedderburn dimension is finite) and feasible (the
    trivial primal point exists).
 
-## Proof
+### Formal theorems
 
 ### Theorem $T_3$ (strong duality)
 

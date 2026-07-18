@@ -3,16 +3,21 @@ The Hecke algebra $H_n(R, q)$ and the Jones-Markov trace admit a direct probabil
 **Proposition.**
 *Let $H_n(R, q)$ be the Iwahori-Hecke algebra.*
 
-**(i) Spectral idempotents.**
-*The orthogonal idempotents $e_+^{(i)} = (\sigma_i + q^{-1})/(q + q^{-1})$ and $e_-^{(i)} = (q - \sigma_i)/(q + q^{-1})$ satisfy $e_+^{(i)} + e_-^{(i)} = 1$, $(e_±^{(i)})^2 = e_±^{(i)}$, and $e_+^{(i)} e_-^{(i)} = 0$. They reconstruct the generator as $\sigma_i = q \cdot e_+^{(i)} - q^{-1} \cdot e_-^{(i)}$.*
+**(i)** *Spectral idempotents.*
+*The orthogonal idempotents*
+$$
+  e_+^{(i)} = \frac{\sigma_i + q^{-1}}{q + q^{-1}}, \qquad
+  e_-^{(i)} = \frac{q - \sigma_i}{q + q^{-1}}
+$$
+*satisfy $e_+^{(i)} + e_-^{(i)} = 1$, $(e_±^{(i)})^2 = e_±^{(i)}$, and $e_+^{(i)} e_-^{(i)} = 0$. They reconstruct the generator as $\sigma_i = q \cdot e_+^{(i)} - q^{-1} \cdot e_-^{(i)}$.*
 
-**(ii) Transition probabilities.**
+**(ii)** *Transition probabilities.*
 *The symmetric and antisymmetric transition probabilities are $p_+ = q^2/(q^2 + 1)$ and $p_- = 1/(q^2 + 1)$. The stochastic transition operator at generator $i$ is $K_i = p_+ \cdot \mathrm{id} + p_- \cdot s_i$, a row-stochastic matrix. The system stays in its configuration with probability $p_+$ or transposes with probability $p_-$.*
 
-**(iii) Markov property as memorylessness.**
+**(iii)** *Markov property as memorylessness.*
 *The Markov trace property requires the transition at generator $n$ to depend only on the eigenvalue structure of $\sigma_n$, not on the history in $H_{n-1}(q)$. The expectation value of the $i$-th crossing is $\mathbb{E}[\hat{V}_i] = z \cdot a_i + b_i = \hat{V}_i$, recovering the vertex volume.*
 
-**(iv) Independence and factorization.**
+**(iv)** *Independence and factorization.*
 *The product formula factors as independent one-step expectations. Each vertex volume is determined locally without dependence on other generators.*
 
 **Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall. It applies $q$-deformation identities over an abstract coefficient ring and specializes them to real-valued observables at $q_0$.

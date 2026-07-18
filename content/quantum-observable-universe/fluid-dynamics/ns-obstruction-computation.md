@@ -1,6 +1,15 @@
 Let $(\mathbf{C}, A, \tau)$ define the Descartes universe spanning $\chi(A) = -6$ (Bring's surface of genus 4). Let $\Sigma$ designate the precise collision locus governing an anti-parallel vortex pair marked by linking number $\mathrm{lk} = 1$.
 
-The [NS obstruction](#prop:ns-obstruction-tower) at level $n$, strictly restricted to $\Sigma$, evaluates as $\kappa_n|_\Sigma = \mathrm{lk} \cdot e(\xi)|_\Sigma + \delta_n|_\Sigma$. We systematically compute both terms.
+The [NS obstruction](#prop:ns-obstruction-tower) at level $n$, strictly restricted to $\Sigma$, evaluates as $\kappa_n|_\Sigma = \mathrm{lk} \cdot e(\xi)|_\Sigma + \delta_n|_\Sigma$. Computing both terms gives
+
+$$
+  \kappa_n\big|_\Sigma  \neq  0
+  \qquad\text{for all } n \geq 1,
+$$
+
+so $\mathrm{Obs}_\partial(A) = 0$: the Descartes universe operates uniformly as **NS-singular**.
+
+**Proof.**
 
 **(a) The Euler class term.**
 
@@ -67,5 +76,3 @@ $$
 The analytic component $\delta_n|_\Sigma$ absolutely avoids zero because the nested jets composing the Biot--Savart velocity field mathematically diverge at the exact collision point. The paired topological term evaluates either as zero (lacking a Reeb zero) or nonzero (possessing a Reeb zero). In all permutations, the isolated $\delta_n$ term prevents the total obstruction from collapsing, as the complementary structure forbids any potential cancellation.
 
 Therefore $\mathrm{Obs}_\partial(A) = 0$. The Descartes universe operates uniformly as **NS-singular**.
-
-*Formal asymptotic content. The absolute jet divergence $|j^n v|_\Sigma \sim 1/(T^*-t)^{(n+1)/2}$ translates cleanly into $\ordw(\lvert j^n v \rvert_\Sigma) = -\tfrac{n+1}{2}\,\ordw(T^*-t)$ as $t \to T^*$. The complete recursive jet tower establishes the [surreal blow-up calculus](#def:surreal-blowup-calculus), while the exact $q \to 1$ classical-limit extraction requires the [standard-part map](#def:standard-part-functor). See also [Big-O via $\ordw$](#rem:conway-normal-form) alongside the [body asymptotics catalog](#rem:body-asymptotics-catalog).*

@@ -92,6 +92,7 @@ export default chapter({
         "birthday-grading-archimedean",
         "birthday-grading-substrate",
         "hoefsmit-is-surreal-construction",
+        "hoefsmit-is-surreal-construction-context",
         "hoefsmit-is-surreal-construction-proof",
         "sign-sequence-of-braid",
         "sign-sequence-of-braid-invariant",
@@ -170,6 +171,7 @@ export default chapter({
       label: "sec:surreal-rate-calculus",
       blocks: [
         "surreal-rate-calculus",
+        "surreal-rate-calculus-setup",
         "surreal-rate-calculus-proof",
         "surreal-rate-calculus-interpretation",
         "surreal-squeeze",

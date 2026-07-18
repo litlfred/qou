@@ -1,0 +1,41 @@
+## Relation to the Fermi constant
+
+Standard Fermi theory sets the decay rate as $\Gamma = G_F^2m_e^5/(2\pi^3) \cdot |M|^2 \cdot f(Z, Q)$. This effective theory formula packages two distinct mass scales. The electron mass is $m_e = 3\mathfrak{E}_{\times}(q) \cdot \mu_0$ ([building blocks](#rem:building-block-knots)). The crossing energy is $\mathfrak{E}_{\times} = \frac{1}{2}(q - q^{-1})$. The weak scale is $v \approx 246$ GeV, entering via $G_F = 1/(\sqrt{2}v^2)$.
+
+Both scales originate from distinct knot structures: $m_e$ from the $3$ crossings of the trefoil, and $v$ from the electroweak topology. The parameters $q$ and $\mu_0$ fix both scales. The pure number ratio $v / m_e \approx 4.8 \times 10^5$ derives strictly from topology.
+
+The half-life depends on the combination
+
+$$
+  G_F^2m_e^5
+  = 
+  \frac{m_e^5}{2v^4}
+  = 
+  \frac{(3\mathfrak{E}_{\times})^5}{2(N_v\mathfrak{E}_{\times})^4}
+   \cdot  \mu_0
+  = 
+  \frac{243\mathfrak{E}_{\times}}{2N_v^4}
+   \cdot  \mu_0,
+$$
+
+with effective weak-scale crossing count $N_v = v / (\mathfrak{E}_{\times}\mu_0)$. This reduces to a pure function of $q$ times $\mu_0$: the Fermi constant is not an independent parameter.
+
+## $q$-dependence of the decay rate
+
+The decay rate depends on $q$ through four channels:
+
+- $|\mathcal{W}(q)|^2$: The $T_{3,5}$ weak vertex form factor.
+- $[2]_q = q + q^{-1}$: The weak-vertex dimension.
+- $|\mathcal{M}_q|^2$: The Markov trace ratio. This reflects the crossing structure of the nuclear braid at $q$.
+- $Q^5$: The categorical action difference ([transition energy](#def:Q-value-transition)). This depends on the pair Skein weights $\mathcal{S}_{ab}(q)$, which depend on $q$ through the dressed quark masses $\mu_{\mathfrak{u}}, \mu_{\mathfrak{d}}$. For $q \neq 1$, the $q$-anomaly $\delta_q$ is nonzero and $Q \neq T_e + T_{\nu^{\sigma}} + T_{\mathrm{recoil}}$.
+
+In the classical limit $q = 1$, $s = 0$ and $[2]_1 = 2$; crossing asymmetry vanishes, isobars become degenerate ($Q = 0$) and beta decay ceases. For $q > 1$, crossing asymmetry splits the isobars, yielding finite $Q$ and finite half-lives.
+
+## Parameter count
+
+The half-life formula depends on $q$ (the substrate parameter, fixed by the muon-electron mass ratio), $\mu_0$ (a unit choice), and the nuclear quantum numbers $(p, n)$. Every standard-physics constant decomposes into $q$-dependent factors times $\mu_0$: the electron mass is $m_e = 3\mathfrak{E}_{\times}\mu_0$, the weak scale is $v = N_v\mathfrak{E}_{\times}\mu_0$, and the fine structure constant is $\alpha = q^{-1}/([9]_q \cdot [10]_q)$ via the Chern-Simons correction ([EM coupling projection](#prop:em-coupling-projection)), a $2.1\;\mathrm{ppm}$ deviation from CODATA.
+
+## Open computations
+
+1. **Weak scale crossing count** $N_v$. This must be derived (equivalently, $v$) from the Skein algebra. The $T_{3,5}$ knot mediates the weak interaction, with the mass scale $v$ emerging from the $10$-crossing structure of the $T_{3,5}$ braid: the vertex form factor $\mathcal{W}(q)$ supplies the coupling and $v$ provides the range.
+2. **Weak vertex form factor** $\mathcal{W}(q)$, the Markov trace of $(\sigma_1\sigma_2)^5$ in $H_3(q)$ evaluated at $q$. It replaces the single-crossing approximation $s^2$, resolving the systematic $10$–$17\%$ overshoot in heavy-nucleus half-life predictions.

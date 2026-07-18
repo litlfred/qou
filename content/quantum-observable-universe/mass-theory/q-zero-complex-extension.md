@@ -1,4 +1,10 @@
-*Let $R$ be a commutative ring and $q \in R^\times$ a unit. Every pre-Archimedean substrate identity—the Hecke quadratic $\sigma_i^2 = (q - q^{-1})\sigma_i + 1$, the bar involution $q \leftrightarrow q^{-1}$, $\sigma_i \leftrightarrow \sigma_i^{-1}$, the Frobenius pairing $\langle\cdot,\cdot\rangle_F$, and the Markov trace $\mathrm{tr}_M$—is stated polymorphically in $R$. The specialization $R = \mathbb{C}$ with $q_0 \in \mathbb{C}$ and $\lvert q_0 \rvert > 1$ is admissible. The substrate identities transfer verbatim, with $\lvert q \rvert > 1$ replacing the archimedean ordering $q > 1$ as the substrate-level non-degeneracy condition.*
+*Let $R$ be a commutative ring and $q \in R^\times$ a unit. Every pre-Archimedean substrate identity—the Hecke quadratic*
+
+$$
+  \sigma_i^2 = (q - q^{-1})\sigma_i + 1,
+$$
+
+*the bar involution $q \leftrightarrow q^{-1}$, $\sigma_i \leftrightarrow \sigma_i^{-1}$, the Frobenius pairing $\langle\cdot,\cdot\rangle_F$, and the Markov trace $\mathrm{tr}_M$—is stated polymorphically in $R$. The specialization $R = \mathbb{C}$ with $q_0 \in \mathbb{C}$ and $\lvert q_0 \rvert > 1$ is admissible. The substrate identities transfer verbatim, with $\lvert q \rvert > 1$ replacing the archimedean ordering $q > 1$ as the substrate-level non-degeneracy condition.*
 
 ## Significance
 

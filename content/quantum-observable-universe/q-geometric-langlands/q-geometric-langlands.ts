@@ -146,6 +146,7 @@ export default chapter({
       blocks: [
         "intro-orphan-reconnect",
         "cyclotomic-l-value-decomposition",
+        "cyclotomic-l-value-decomposition-details",
         "mirror-3d-3d-correspondence",
         "modular-s-transform-q-q-tilde",
         "mutant-jones-bloch-group-intro",

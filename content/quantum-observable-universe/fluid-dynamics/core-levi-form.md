@@ -7,14 +7,9 @@ and
 [`conj:regularity-breakdown`](#conj:regularity-breakdown);
 "Core Levi form").**
 
-Let $\varrho$ track a [geodesic vortex](#rem:geodesic-vortices) traversing the [state bundle](#ex:c-quantum-observable-universe) $(\mathcal{S}, \varTheta)$ constrained by contact form $\varTheta$ and [Levi form](#def:levi-form-defect) $\mathcal{L}_\varTheta(V, W) = -id\varTheta(V, \bar{W})$. At any point $p \in \varrho$, isolate the horizontal normal plane $N_p\varrho \subset \ker(\varTheta_p)$. Specify:
+Let $\varrho$ track a [geodesic vortex](#rem:geodesic-vortices) on the [state bundle](#ex:c-quantum-observable-universe) $(\mathcal{S}, \varTheta)$ with [Levi form](#def:levi-form-defect) $\mathcal{L}_\varTheta(V, W) = -id\varTheta(V, \bar{W})$. At $p \in \varrho$ take the horizontal normal plane $N_p\varrho \subset \ker(\varTheta_p)$, with Levi eigenvalues $\lambda_\parallel(p), \lambda_\perp(p)$ ($\lambda_\parallel$ toward an adjacent filament, $\lambda_\perp$ perpendicular) and core radii $a_\parallel(p), a_\perp(p)$ from the half-maximum boundaries of $|\psi|^2$ along $N_p\varrho$. Then:
 
-- $\lambda_\parallel(p)$, $\lambda_\perp(p)$: eigenvalues extracted from $\mathcal{L}_\varTheta|_{N_p\varrho}$. $\lambda_\parallel$ aligns toward an adjacent filament; $\lambda_\perp$ sits strictly perpendicular.
-- $a_\parallel(p)$, $a_\perp(p)$: structural core radii mapping the vortex cross-section, defined by the half-maximum boundaries of $|\psi|^2$ along $N_p\varrho$.
-
-Then:
-
-**(a)** The Levi eigenvalue ratio tightly bounds the core aspect ratio:
+*(a)* The Levi eigenvalue ratio tightly bounds the core aspect ratio:
 
 $$
   \frac{a_\perp(p)}{a_\parallel(p)}
@@ -24,7 +19,7 @@ $$
   \bigl(1 + O(\hbar_q^2)\bigr).
 $$
 
-**(b)** The Levi form condition number over $N_p\varrho$ evaluates as
+*(b)* The Levi form condition number over $N_p\varrho$ evaluates as
 
 $$
   \mathrm{cond}(\mathcal{L}_\varTheta|_{N_p})
@@ -40,7 +35,7 @@ $$
   \bigl(1 + O(\hbar_q^2)\bigr).
 $$
 
-**(c)** The following assertions are strictly equivalent:
+*(c)* The following assertions are strictly equivalent:
 
 1. Core aspect ratio stays bounded: $\sup_{t < T^*} a_\perp(t) / a_\parallel(t) \leq C$.
 2. Levi form condition number stays bounded: $\sup_{t < T^*} \mathrm{cond}(\mathcal{L}_\varTheta|_{N_p}) \leq C^2$.
@@ -48,7 +43,7 @@ $$
 4. The local [observability axiom](#def:quantum-observable-universe) $\mathrm{Hom}_{\mathbf{C}}(\mathbf{1}, \mathrm{Ad}(A)) = 0$ holds at all $p \in \Sigma$.
 5. Frobenius integrability fails cleanly: no 2-dimensional integral submanifold of $\ker(\varTheta)$ nucleates at $\Sigma$.
 
-**(d)** Evaluated for $q > 1$, the continuous [quantum pressure](#rem:madelung-fluid) mechanically enforces
+*(d)* Evaluated for $q > 1$, the continuous [quantum pressure](#rem:madelung-fluid) mechanically enforces
 
 $$
   \mathrm{cond}(\mathcal{L}_\varTheta|_{N_p})
@@ -59,6 +54,6 @@ $$
 
 Conditions (1)--(5) uniformly hold. The [well-posedness theorem](#thm:q-ns-wellposedness) remains structurally inviolate.
 
-**(e)** Evaluated at $q = 1$, $\hbar_q = 0$ and isotropic resistance zeroes out. The [vorticity lower bound](#prop:vorticity-lower-bound) and the [counter-example](#conj:ns-counterexample) trigger if and only if condition (3) holds rigidly at $q = 1$.
+*(e)* Evaluated at $q = 1$, $\hbar_q = 0$ and isotropic resistance zeroes out. The [vorticity lower bound](#prop:vorticity-lower-bound) and the [counter-example](#conj:ns-counterexample) trigger if and only if condition (3) holds rigidly at $q = 1$.
 
 **Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall: it invokes real- or complex-analytic constructs — real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.
