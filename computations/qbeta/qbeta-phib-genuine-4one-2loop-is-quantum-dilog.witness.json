@@ -1,0 +1,55 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-18T09:14:35.675096+00:00",
+  "commitSha": "6b53be6e98218725430eecf66dd7d43dffd6c3af",
+  "assertions": [
+    {
+      "name": "genuine_2loop_is_quantum_dilog_not_classical_potential",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "Kashaev-sum dimensionless 2-loop = 0.088207159 = 11/(72√3) (rel err 9.8e-06, no fit); naive classical 2-loop coordinate-dependent (4 distinct of 4, t pure-imag, none=0.08819) ⇒ genuine object = quantum dilogarithm, κ₁=2π·11/(72√3)=11√3π/108. Scope-(a); no c_k wired."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 13,
+  "computation": "qbeta-phib-genuine-4one-2loop-is-quantum-dilog",
+  "scriptFile": "qbeta_phib_genuine_4one_2loop_is_quantum_dilog.py",
+  "scriptHash": "e87462982a65",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Constructive completion of the #3874 correction: the genuine 4₁ 2-loop invariant is the quantum dilogarithm / Kashaev sum, NOT any classical potential. (A) First-principles (no fit): the dimensionless 2-loop of ⟨4₁⟩_N=Σ|(q)_k|², extracted by 70-dps Richardson to N=3200, is 0.08820589 vs 11/(72√3)=0.08820629 (rel err 4.5e-6); so κ₁=2π·11/(72√3)=11√3π/108 (coeff 1/N) — CONVENTION RESOLVED. (B) The naive saddle 2-loop of V=Li2(z)-Li2(1/z) is coordinate-dependent (z:1/3+17√3/108 i; t,w:-0.016038 i; s:-1/3+17√3/108 i) — 4 coords, ≥3 distinct values, none=0.08819 — so it is not the knot invariant. CORRECTS the pre-#3874 't-coord gives real 0.1008≈κ₁' claim: the true t-value is -0.016038 i (real part 0 to 65 dps). (C) The coordinate-invariant 2-loop is the naive Feynman 2-loop PLUS the ℏ¹ quantum-content (Dimofte-Garoufalidis) of Φ_b, = κ₁, already in the corpus via the Kashaev fit. Scope-(a): #3874's number stands as the z-coord naive 2-loop; only 'the state integral' identification was wrong. No c_k wired; L2 2/7.",
+  "data": {
+    "a1_phys_kashaev": 0.08820715897573024,
+    "dg_dimensionless_2loop": 0.08820629112619283,
+    "ohtsuki_kappa1": 0.5542164724048999,
+    "kashaev_rel_err": 9.838862130239357e-06,
+    "naive_2loop_z": [
+      0.3333333333333333,
+      0.27263762711732326
+    ],
+    "naive_2loop_t": [
+      0.0,
+      -0.016037507477489603
+    ],
+    "naive_2loop_s": [
+      -0.3333333333333333,
+      0.27263762711732326
+    ],
+    "naive_2loop_distinct_of_4": 4,
+    "t_coord_is_pure_imaginary": true,
+    "convention_kappa1_eq_2pi_times_dg": true
+  }
+}
