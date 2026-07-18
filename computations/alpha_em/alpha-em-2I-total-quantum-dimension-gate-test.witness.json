@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-18T08:20:32.636006+00:00",
-  "commitSha": "f1c1e2140a180fad2f24d256850d0f4139dcd34b",
+  "computedAt": "2026-07-18T08:29:02.595620+00:00",
+  "commitSha": "b8f0d444ba29017b16f87465f77a557fa02e05df",
   "assertions": [
     {
       "name": "shared_wall_D_equals_b1_or_pi_b1_FALSIFIED",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 122,
+  "durationMs": 28,
   "computation": "alpha-em-2I-total-quantum-dimension-gate-test",
   "scriptFile": "alpha_em_2I_total_quantum_dimension_gate_test_probe.py",
-  "scriptHash": "a6aebeb99956",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "2f6e2fb48dc7",
+  "scriptCommitSha": "b8f0d444ba29017b16f87465f77a557fa02e05df",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

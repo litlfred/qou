@@ -86,7 +86,7 @@ def dq(q, lam):
 
 
 def total_D(q, n):
-    return mp.sqrt(sum(dq(q, lam) ** 2 for lam in kg.parts(n)))
+    return mp.sqrt(mp.fsum(dq(q, lam) ** 2 for lam in kg.parts(n)))
 
 
 def main() -> int:
