@@ -1,0 +1,46 @@
+{
+  "computation": "bring-polarized-epstein-determinant",
+  "description": "Genus-g Epstein det'\u0394 machinery for the \u03b1_EM polarized photon-determinant leg. VALIDATED on genus 1 (reproduces (Im \u03c4)\u00b2|\u03b7|\u2074 + measure 1/(\u221aIm \u03c4|\u03b7|\u00b2) exactly). CORRECTS #3864: genus-2 measure(E_5\u03c4\u2080\u00d7E_\u03c4\u2080)\u22483.94 \u2260 naive product 2.92 (ratio 1.35) \u21d2 the torus boson measure is NOT a per-factor product; the #3864 '8.226' is the wrong object and is retracted as the magnitude value. Full genus-4 number deferred (thin Bring modulus needs Siegel reduction). No q\u2080; no 8\u03c0; nothing wired.",
+  "auditOnly": "docs/audits/2026-07-18-bring-polarized-epstein-determinant.md",
+  "tier": "structural-exact machinery (genus-1 EXACT validation) + scope-(a) genus-2 finding",
+  "computedAt": "2026-07-18T10:09:33.677686+00:00",
+  "commitSha": "0f4c911df30ae18dd5eca4edfd69de5e63ee0c42",
+  "engine": "numpy+mpmath",
+  "engineVersion": "2.4.6/1.3.0",
+  "scriptFile": "bring_polarized_epstein_determinant_probe.py",
+  "scriptHash": "3eb1b08baf01",
+  "assertions": [
+    {
+      "name": "genus1_machinery_validated_exact",
+      "passed": true,
+      "detail": "det'\u0394=0.45251018=(Im \u03c4)\u00b2|\u03b7|\u2074=0.45251018; measure=1.75893520=1/(\u221aIm \u03c4|\u03b7|\u00b2)=1.75893520 \u2014 machinery reproduces #3864's per-factor form EXACTLY"
+    },
+    {
+      "name": "genus2_measure_not_the_naive_product",
+      "passed": true,
+      "detail": "measure(E_5\u03c4\u2080\u00d7E_\u03c4\u2080)=3.94373 (R=3,4,5: 3.8142,3.9276,3.9437, converging up) vs naive product m(5\u03c4\u2080)\u00b7m(\u03c4\u2080)=2.92198: ratio=1.3497\u22601 \u21d2 the T\u2074 boson measure is NOT the per-factor product (spectrum {\u03bb+\u03bc}, not a product)"
+    },
+    {
+      "name": "product_framing_superseded_8p226_wrong_object",
+      "passed": true,
+      "detail": "since even the genus-2 product framing fails by \u00d71.35, the #3864 genus-4 naive product m(5\u03c4\u2080)\u00b3\u00b7m(\u03c4\u2080)=8.2263 (\u22488.226) is NOT the polarized photon-determinant measure; the genuine object is the full genus-4 Epstein det'\u0394 on Jac(Bring) (deferred: thin Bring modulus needs Siegel reduction). This RETRACTS the 8.226 as the magnitude value; only the machinery + structure stand"
+    }
+  ],
+  "allPassed": true,
+  "result": {
+    "genus1_detprime": 0.4525101839112728,
+    "genus1_exact_ImTau2_eta4": 0.4525101839112727,
+    "genus2_measure_R5": 3.9437282500685407,
+    "genus2_naive_product": 2.9219840301303086,
+    "genus2_ratio": 1.349674813209936,
+    "naive_g4_product_8p226_retracted": 8.226285221978587,
+    "verdict": "GENUS-g EPSTEIN det'\u0394 MACHINERY \u2014 VALIDATED + PRODUCT-FRAMING CORRECTED (scope-(a) self-correction; no q\u2080, no 8\u03c0, nothing wired): the Chowla\u2013Selberg heat-kernel \u03b6'(0) reproduces the genus-1 det'\u0394=(Im \u03c4)\u00b2|\u03b7|\u2074 and measure 1/(\u221aIm \u03c4|\u03b7|\u00b2) EXACTLY. Applied at genus 2, measure(E_5\u03c4\u2080\u00d7E_\u03c4\u2080)\u22483.94 \u2260 the naive product 2.92 (ratio\u22481.35) \u2014 the torus boson measure is NOT a product of per-T\u00b2 factors (spectrum {\u03bb+\u03bc}). CONSEQUENCE: the #3864 per-factor product 'm(5\u03c4\u2080)\u00b3\u00b7m(\u03c4\u2080)\u22488.226' is the WRONG object for the polarized photon determinant and is RETRACTED as the magnitude value; the genuine magnitude leg is the full genus-4 Epstein det'\u0394 on Jac(Bring) (numerically deferred \u2014 the thin Bring modulus Im \u03c4\u2080=0.187 needs Siegel reduction). The machinery + the Jac\u2245E_5\u03c4\u2080\u00b3\u00d7E_\u03c4\u2080 structure + genus-1 anchor stand; the naive product does not. \u03c0 stays RT/Front-2. NO tier change."
+  },
+  "context": {
+    "validated": "genus-1 Epstein det'\u0394 = (Im \u03c4)\u00b2|\u03b7|\u2074 EXACTLY \u21d2 machinery correct",
+    "corrects": "#3864 2026-07-18 update \u2014 the per-factor product m(5\u03c4\u2080)\u00b3\u00b7m(\u03c4\u2080)\u22488.226 is NOT the T\u2078 boson measure (genus-2 shows measure\u2260product by \u00d71.35); retracted",
+    "structure_source": "Jac(Bring)\u2245E_5\u03c4\u2080\u00b3\u00d7E_\u03c4\u2080, period \u03c4\u2080\u00b7M (Braden\u2013Disney-Hogg Thm 2.12 + Prop 4.6; PDF uploads/2208.13692v1.pdf)",
+    "deferred": "full genus-4 Epstein det'\u0394 at the thin Bring modulus (Im \u03c4\u2080=0.187) \u2014 needs Siegel reduction for numerical convergence",
+    "scope_guard": "no q\u2080, no 8\u03c0 manufactured, nothing wired, no tier change; scope-(a)"
+  }
+}
