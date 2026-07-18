@@ -193,39 +193,48 @@ def main() -> int:
                 w.append((cw_branch, g1))
         return w
 
-    # Resume cache: Leg A (the ~34-min mpfr eval) is idempotent in the
-    # K word, so cache the two branch-character dicts and skip the
-    # recompute on a resumed run (this compute is ~96 min total and can
-    # outlive a single session; the cache self-cleans on completion).
+    # Resume cache: Leg A per-(branch, shape-chunk). The full mpfr eval is
+    # ~34 min — longer than one sandbox session — so checkpoint at
+    # shape-chunk granularity. `chi_lambdas_braid_mpfr` is rayon-parallel
+    # across the shape group, so chunking preserves the parallelism while
+    # giving sub-session resume points. Self-cleans on completion.
     t0 = time.time()
     chi_exact: dict[tuple, mp.mpf] = {}
-    branch_res = {}
-    legA_cache = HERE / ".he4_stage2_legA_cache.json"
-    if legA_cache.exists():
-        try:
-            _c = json.loads(legA_cache.read_text())
-            if _c.get("n_factors") == len(K_kinds):
-                branch_res = {int(b): {tuple(int(x) for x in k.split(",")):
-                                       mp.mpf(v) for k, v in d.items()}
-                              for b, d in _c["branch_res"].items()}
-                print(f"  Leg A loaded from cache {legA_cache.name} "
-                      f"({time.time()-t0:.0f}s)", flush=True)
-        except Exception:
-            branch_res = {}
-    if not branch_res:
-        for br in (1, -1):
-            branch_res[br] = {tuple(lam): mp.mpf(chi) for lam, chi in
-                              pn.chi_lambda_all_partitions_mpfr(
-                                  N, signed_letters(br), q_str, 50)}
-            print(f"  branch {br:+d} done at {time.time()-t0:.0f}s", flush=True)
-        legA_cache.write_text(json.dumps({
-            "n_factors": len(K_kinds),
-            "branch_res": {str(br): {",".join(map(str, k)): mp.nstr(v, 50)
-                                     for k, v in d.items()}
-                           for br, d in branch_res.items()}}))
-    for lam in map(tuple, shapes):
-        chi_exact[lam] = scalar * (a_cw * branch_res[1][lam]
-                                   + b_cw * branch_res[-1][lam])
+    legA_prog = HERE / ".he4_stage2_legA_progress.jsonl"
+    branch_chi: dict[int, dict[tuple, mp.mpf]] = {1: {}, -1: {}}
+    if legA_prog.exists():
+        for _line in legA_prog.read_text().splitlines():
+            if not _line.strip():
+                continue
+            try:
+                _r = json.loads(_line)
+            except Exception:
+                continue
+            if _r.get("nf") != len(K_kinds):
+                continue
+            branch_chi[_r["br"]][tuple(_r["lam"])] = mp.mpf(_r["chi"])
+        _n = len(branch_chi[1]) + len(branch_chi[-1])
+        if _n:
+            print(f"  Leg A resumed: {_n}/{2 * len(shapes)} characters from "
+                  f"{legA_prog.name}", flush=True)
+    shapes_t = [tuple(s) for s in shapes]
+    LEGA_CHUNK = 8
+    for br in (1, -1):
+        w = signed_letters(br)
+        todo = [lam for lam in shapes_t if lam not in branch_chi[br]]
+        for i in range(0, len(todo), LEGA_CHUNK):
+            grp = todo[i:i + LEGA_CHUNK]
+            res = pn.chi_lambdas_braid_mpfr([list(l) for l in grp], w, q_str, 50)
+            with open(legA_prog, "a") as _pf:
+                for lam, chi in zip(grp, res):
+                    branch_chi[br][lam] = mp.mpf(chi)
+                    _pf.write(json.dumps({"nf": len(K_kinds), "br": br,
+                                          "lam": list(lam), "chi": chi}) + "\n")
+            print(f"  branch {br:+d}: {len(branch_chi[br])}/{len(shapes_t)} "
+                  f"chars at {time.time()-t0:.0f}s", flush=True)
+    for lam in shapes_t:
+        chi_exact[lam] = scalar * (a_cw * branch_chi[1][lam]
+                                   + b_cw * branch_chi[-1][lam])
     print(f"  seminormal-mpfr evals done in {time.time()-t0:.1f}s")
 
     per_lambda = sorted(
@@ -462,7 +471,7 @@ def main() -> int:
     out = HERE / "he4-binding-k-stage2.witness.json"
     json.dump(wit, open(out, "w"), indent=1)
     # Completed cleanly — drop the resume caches so the next run is fresh.
-    for _c in (legA_cache, legB_prog):
+    for _c in (legA_prog, legB_prog):
         try:
             _c.unlink()
         except FileNotFoundError:
