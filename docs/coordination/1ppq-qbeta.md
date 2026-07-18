@@ -1313,6 +1313,7 @@ open target is the geometric `Im 𝔙_q → N_odd` normalization (the capstone) 
 where the anchor-dependence enters — and the odd-channel D-ladder q-Borel/Écalle
 acceleration (sibling #3818) operating on `D(u)` where the swing lives. No c_k;
 no fit; scope-(a).
+
 **2026-07-18 (#3872) — G3 STEP 2 DONE: GGM 4₁ Stokes data exact — Theorem 9
 certified, (59a) DERIVED OCR-free, integer Stokes 3 at ι = Vol(4₁)/π; new
 exact anchor for the step-1 assembly.** Exact-integer implementation of the
@@ -1351,3 +1352,17 @@ with the ξ-frame phase law (#3819/#3826). Next: the deformed leg — GGM's
 x̃-dependent Stokes structure (§5) at the substrate meridian. Probe
 `qbeta_g3_ggm_eq48_bridge_41.py` → witness
 `qbeta-g3-ggm-eq48-bridge-41.witness.json` (3/3 green). No fit; no c_k wired.
+
+**2026-07-18 (#3892) — Step 2: full 5₂ Jones bar-odd datum validated + corpus
+braid-word CORRECTION.** Self-contained TL₃ Kauffman bracket (`qbeta_5two_jones_
+barodd_probe.py`, 3/3) reproduces known V(4₁) (det 5) and V(5₂) (det 7). **Caught
+a corpus data error:** the canonical-table braid `(1,1,1,-2,1,-2)` labelled "5_2"
+(`_deprecated/hyperbolic_knot_db_extended.py:44`) actually has det 11 ⇒ it is
+**6₂, not 5₂**. The real 5₂ is `(1,1,1,2,-1,2)` (det 7, writhe 4). The merged
+#3813 5₂-writhe brick used the corpus braid, so its knot was 6₂ (writhe 2,
+D_odd=sinh(u_sub)); the real 5₂ has writhe 4, D_odd=½(q⁴−q⁻⁴)=sinh(2·u_sub). The
+qualitative finding (chiral ⇒ nonzero bar-odd datum; amphichiral 4₁ ⇒ 0) is
+label-independent and stands. The complete classical Jones bar-odd datum
+V(5₂)_odd is O(0.1) at q₀, anchor-smooth (swing 6.4e-8), ~1e7× above N_odd ⇒ NOT
+the swing (prune); the bar-odd HOME. Step 1 (anchor-dependent 𝔙_q(5₂)) is the
+swing test. No c_k; no fit; scope-(a).
