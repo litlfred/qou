@@ -34,6 +34,16 @@ volume → more binding.
 | **`Vol(K)` IS the binding scale** (the load-bearing claim) | ⚠️ **CONDITIONAL — but now PER-LINK, and mostly on PROVEN instances (narrowed 2026-07-13, citation verified).** The framework needs only the volume-conjecture instances for its specific links, not full KMM: **L6a4 = Borromean rings** — **PROVEN** (a Whitehead chain; R. van der Veen, *Proof of the volume conjecture for Whitehead chains*, [arXiv:math/0611181](https://arxiv.org/abs/math/0611181), Acta Math. Vietnam. 2008 — family explicitly includes the Borromean rings; web-verified 2026-07-13). **4₁ (muon anchor)** — proven (Ekholm/Andersen–Hansen). **8₁₁ (³H)** — **open** (the one remaining open instance). So the ³He and 𝓑₃-anchored scale identifications are conditional on *proven theorems*; only ³H rides an open instance. Per "conditional-proved ≠ premise-established," the general claim stays conditional. |
 | **the 3% accuracy** of `m_e·2·Vol` vs AME | empirical (measured; the −3% ³He residual is the Coulomb/EM piece, 31% derived) |
 
+> **8₁₁ (³H) has two open legs, not one** (2026-07-17,
+> [audit](../audits/2026-07-17-8-11-vc-open-and-id-unverified.md)): besides the
+> open VC instance, the **8₁₁ = ³H assignment itself** is a
+> `manual-historical-volume-match` (chosen for the −0.16 % fit, not returned by
+> the SDP knot-ID). No citation closes 8₁₁'s VC (it lies in no proven family and
+> is beyond the individually-verified frontier). The honest closure is the
+> **canonical SDP knot-ID at H₉** for the true A=3 link — which may land a
+> van-der-Veen-closable link (as L6a4 did) or *derive* 8₁₁, replacing the
+> historical guess. Not a refutation of either leg; both are scope-(a) open.
+
 **Bottom line for Lean:** the *combinatorics* of the scale (the bond count) is
 proved; the *identity* that makes `Vol` the scale is the open volume conjecture.
 So "binding = m_e·Vol" is a **rigorous conditional result** modulo one named,
