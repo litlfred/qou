@@ -1,0 +1,157 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-07-18T13:48:01.720462+00:00",
+  "commitSha": "68c6dff36581d2135136fc081e000ec34ddbf716",
+  "assertions": [
+    {
+      "name": "rank_sequence_equals_C4A",
+      "computed": "[1, 4, 6, 4, 1, 0, 0, 0]",
+      "expected": "[1, 4, 6, 4, 1, 0, 0, 0]",
+      "passed": true
+    },
+    {
+      "name": "first_vanishing_A_is_5",
+      "computed": "5",
+      "expected": "5",
+      "passed": true
+    },
+    {
+      "name": "A4_is_unique_rank1_singlet",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "det_closed_form_holds_both_magnitudes",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "negative_eigenvalue_always_present",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "physicality_ceiling_equals_writhe_cap",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "z_naive_excluded_g_reeb_physical",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "b4-slater-antisymmetrizer-exchange-sign",
+  "scriptFile": "b4_slater_antisymmetrizer_exchange_sign.py",
+  "scriptHash": "ef75b035e41b",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "[1^4] value leg: exact Lambda^A(C^4) antisymmetrizer rank = C(4,A) (He4-locality, A=4 unique rank-1 singlet) + exchange spectrum {+-sqrt5,+-1} closed-form det=(1-5m^2)(1-m^2) with attractive negative eigenvalue and physicality ceiling = writhe cap 1/sqrt5. Derives locality/sign/ceiling; the magnitude scalar (the Delta_lambda gate) stays open. No fit, audit-only.",
+  "tier": "structural (exact combinatorics + closed-form spectrum; no fit, no AME inversion)",
+  "result": {
+    "part1_locality": {
+      "antisymmetrizer_rank_identity": "rank Lambda^A(C^4) = (1/A!) sum_sigma sgn(sigma) 4^{c(sigma)} = C(4,A)",
+      "rank_sequence_A_0_to_7": [
+        1,
+        4,
+        6,
+        4,
+        1,
+        0,
+        0,
+        0
+      ],
+      "matches_binomial_C(4,A)": true,
+      "first_vanishing_A": 5,
+      "he4_local_b4_vanishes_for_A_gt_4": true,
+      "A_with_rank1_singlet_shell": [
+        4
+      ],
+      "he4_A4_is_unique_doubly_magic_singlet": true,
+      "parameter_free": true,
+      "verdict": "DERIVED (exact, q-independent): the 4-body [1^4] channel is He4-LOCAL (C(4,A)=0 for A>4; A=5 first vanishing) and He4 (A=4) is the unique rank-1 fully-antisymmetric singlet -- the Wigner-supermultiplet closed shell."
+    },
+    "part2_exchange_sign_and_ceiling": {
+      "S_spectrum_exact": "{+sqrt5, -sqrt5, +1, -1}",
+      "det_closed_form": "det(I + mag*S) = (1 - 5*mag^2)(1 - mag^2)",
+      "physicality_ceiling": "0.4472135955",
+      "ceiling_equals_writhe_cap_1_over_sqrt5": true,
+      "z_naive_excluded_above_ceiling": true,
+      "g_reeb_physical_below_ceiling": true,
+      "negative_eigenvalue_always_present": true,
+      "attractive_channel_confirmed": true,
+      "rows": {
+        "z_naive": {
+          "magnitude": "0.499320334033561272",
+          "eigs": [
+            "-1.11651420945",
+            "-0.499320334034",
+            "0.499320334034",
+            "1.11651420945"
+          ],
+          "det_I_plus_G": "-0.185120479337347141",
+          "det_closed_form_(1-5m2)(1-m2)": "-0.185120479337347141",
+          "det_matches_closed_form": true,
+          "physical_det_gt_0": false,
+          "has_negative_eigenvalue": true,
+          "binding_det_lt_1": true,
+          "minus_ln_det_dimensionless": "undefined(det<=0)"
+        },
+        "g_reeb": {
+          "magnitude": "0.446727067798147204",
+          "eigs": [
+            "-0.998912090986",
+            "-0.446727067798",
+            "0.446727067798",
+            "0.998912090986"
+          ],
+          "det_I_plus_G": "0.00174065339290472883",
+          "det_closed_form_(1-5m2)(1-m2)": "0.00174065339290472883",
+          "det_matches_closed_form": true,
+          "physical_det_gt_0": true,
+          "has_negative_eigenvalue": true,
+          "binding_det_lt_1": true,
+          "minus_ln_det_dimensionless": "6.35349472308"
+        }
+      },
+      "verdict": "DERIVED (parameter-free, no fit): a negative eigenvalue (-sqrt5*mag) is always present so the dictionary's net-attractive branch (s=-1, B=-ln det(I+G)) is realized for any magnitude; det<1 => binding; and PHYSICALITY det>0 requires mag<1/sqrt5, EXACTLY the derived writhe cap. Naive z=0.4993 is excluded (det<0); reeb g=0.4467 sits just below the ceiling."
+    },
+    "residual_open_scalar": {
+      "what_is_derived": [
+        "He4-locality (exact C(4,A))",
+        "attractive sign / -ln det branch (negative eigenvalue always present)",
+        "physicality ceiling = writhe cap 1/sqrt5 (closed form)"
+      ],
+      "what_is_NOT_derived": "the per-pair magnitude selection inside (0, 1/sqrt5) and the E0->MeV dressing -- i.e. the b4 MeV VALUE.",
+      "identification": "that magnitude selection IS the Delta_lambda / E_unit gate (reeb audit 2026-07-06 sec 2j: the A-flattened normalization = the Delta_lambda closure); six parameter-free ansatze have failed and a seventh fit-based ansatz is forbidden (AGENTS.md).",
+      "classification": "CONSTRAINED-NOT-CLOSED. The b4 form's locality + sign + ceiling are derived parameter-free; the remaining scalar (the bond magnitude, hence the MeV magnitude) is the standing Delta_lambda gate and is NOT wired."
+    }
+  },
+  "context": {
+    "axis": "GAP-A-4 class-D -- [1^4] connected b4 value leg (locality + exchange sign)",
+    "spec": "docs/design/2026-07-06-gap-a4-b4-branching-projector-construction-spec.md",
+    "q0_convention": "muon-canonical (computations/ layer)",
+    "no_fit": true
+  },
+  "auditOnly": true
+}
