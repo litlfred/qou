@@ -28,6 +28,8 @@ is exact interpolation through the first 7 points, VALIDATED on held-out n=9,10.
 
 No fit; q-hooks + mpmath only; q₀ never used (this is the h→0 limit, anchor-free).
 """
+import time as _time  # noqa: E402 — wall-clock anchor for witness durationMs
+_T0 = _time.monotonic()
 import json
 import sys
 import mpmath as mp
@@ -294,10 +296,14 @@ def main():
         "closed_form": closed_form,
         "verdict": verdict,
     }
-    wpath = "computations/keystone-wlambda-defect-dn-subleading.witness.json"
-    with open(wpath, "w") as fh:
-        json.dump(out, fh, indent=2)
-    print(f"\nwitness -> {wpath}")
+    import os as _os, sys as _sys  # noqa: E402
+    _sys.path.insert(0, _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "substrate"))
+    from witness_base import WitnessBuilder  # noqa: E402 — P30 rollup (bean cmiy)
+    _wpath = WitnessBuilder.wrap_legacy(
+        "keystone-wlambda-defect-dn-subleading", out,
+        script_path=__file__, engine="mpmath", start_time=_T0,
+    ).save()
+    print(f"\nwitness -> {_wpath}")
     return 0
 
 

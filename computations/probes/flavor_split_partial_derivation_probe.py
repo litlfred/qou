@@ -48,6 +48,8 @@ the single remaining open piece.
 Output: flavor-split-partial-derivation-probe.witness.json + stdout.
 """
 from __future__ import annotations
+import time as _time  # noqa: E402 — wall-clock anchor for witness durationMs
+_T0 = _time.monotonic()
 
 import json
 import sys
@@ -447,9 +449,14 @@ def main():
                      for i in range(0, len(verdict[key]), 92)]:
             print("  " + line)
 
-    wpath = HERE / "flavor-split-partial-derivation-probe.witness.json"
-    wpath.write_text(json.dumps(out, indent=2))
-    print(f"\nWitness: {wpath}")
+    import os as _os, sys as _sys  # noqa: E402
+    _sys.path.insert(0, _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "../substrate"))
+    from witness_base import WitnessBuilder  # noqa: E402 — P30 rollup (bean cmiy)
+    _wpath = WitnessBuilder.wrap_legacy(
+        "flavor-split-partial-derivation-probe", out,
+        script_path=__file__, engine="mpmath", start_time=_T0, output_dir=str(HERE),
+    ).save()
+    print(f"\nwitness -> {_wpath}")
 
 
 if __name__ == "__main__":

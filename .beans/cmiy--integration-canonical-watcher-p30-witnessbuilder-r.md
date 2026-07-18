@@ -231,3 +231,17 @@ the script now consumes the FULL 50-digit canonical q0. Data change: witness
 cyclotomic_coefficients_at_q0 + q0_used gain precision (17→50 digits); upstream
 edge is now genuine. GENERAL LESSON: fail-loud provenance is not just hygiene —
 it caught a script that had been silently ignoring its canonical input.
+
+## 2026-07-18 — batch 16 (6 scripts, wrap_legacy + _T0 + explicit output_dir)
+6 clean zero-consumer scripts (2 root, 4 probes/), all mpmath, assertion-free:
+keystone_wlambda_defect_dn_subleading, t6_lepton_h3_3channel_convention,
+probes/{flavor_split_3strand_derivation,flavor_split_partial_derivation,
+interface_factor_enhancing_check,zhabiro_phiq}. Heterogeneous emit dirs — used
+explicit output_dir on wrap_legacy so each witness lands where the old code
+wrote (probes/ writers that targeted the parent computations/ dir → output_dir
+= HERE.parent/COMP). keystone also fixed a cwd-relative "computations/..." path.
+All: exit 0, keys preserved, prov triple, real durationMs, correct location, no
+strays. Avoided deuteron_* candidates (active #3808-lineage sibling scope).
+PROV_MISSING 261→256. Worklist: 49 clean PROV_MISSING+zero-consumer picks
+remained pre-batch (minus the deuteron set + slow z_habiro_increment which
+times out in-sandbox).
