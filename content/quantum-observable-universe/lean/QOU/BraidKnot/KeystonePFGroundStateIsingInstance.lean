@@ -43,9 +43,6 @@ noncomputable def isingRho : ℝ := Real.sqrt 2
 
 private lemma sqrt2_pos : (0 : ℝ) < Real.sqrt 2 := Real.sqrt_pos.mpr (by norm_num)
 
-private lemma sqrt2_sq : Real.sqrt 2 * Real.sqrt 2 = 2 :=
-  Real.mul_self_sqrt (by norm_num)
-
 /-- The SU(2)₂ (Ising) instance of the keystone PF ground-state class. -/
 noncomputable instance instIsingPFGroundState :
     PerronFrobeniusGroundState isingN isingRho isingD where
