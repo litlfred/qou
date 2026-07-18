@@ -20,14 +20,30 @@ reduces exactly to the polynomial generating function ODE of the $z$-recursion:
 
 $$ 4w^2(4w - 1) f'' + 16w^2 f' + (4n^2 - 1) f = 0 $$
 
-This explicit map establishes that the topological evaluation $B_{\text{sym}}$ is the discrete shadow of the Toroidal JSJ decomposition. Evaluating $P_{n-1/2}^m(\cosh\eta)$ over the SU(4) Plancherel measure resolves the missing normalization factor $\Delta_\lambda$ for heavy nuclei analytically.
+This explicit map establishes that the topological evaluation $B_{\text{sym}}$ is the discrete shadow of the Toroidal JSJ decomposition. Evaluating $P_{n-1/2}^m(\cosh\eta)$ over the SU(4) Plancherel measure is *proposed* as a candidate route to the $\Delta_\lambda$ normalization for heavy nuclei; that closure itself remains **open** (the $\Delta_\lambda$ gate — see the three-calibration discipline).
 
-## The Golden Ratio Anchor for $\Delta_\lambda$
+## An exploratory golden-ratio near-match ($\Delta_\lambda$ remains open)
 
-The toroidal ratio $P_{-1/2}/P_{1/2}$ drives the scaling gap $c_\lambda$. Setting the topological boundary condition to the known TQFT Fibonacci anyon root $q_0 = 1/\phi = \frac{\sqrt{5}-1}{2}$ fixes the geometric coordinate to $\cosh \eta = \frac{\sqrt{5}}{2} \approx 1.1180$.
+> **Exploratory near-match — not a derivation, not a $\Delta_\lambda$ closure.**
+> The evaluation below anchors on the Fibonacci-anyon value
+> $q_0 = 1/\phi \approx 0.618$, which is **not** the substrate modulus
+> $q_0 \approx 1.110$. It is a numerical coincidence at an unrelated anchor,
+> not a parameter-free evaluation on the substrate, and it does **not** close
+> the $\Delta_\lambda$ gate (open per the three-calibration discipline; six
+> ansätze have failed). It is recorded as a candidate Bring/Fibonacci lead to
+> be *derived or refuted*, not as a result.
 
-Evaluating the toroidal harmonics at this geometric anchor yields:
+The toroidal ratio $P_{-1/2}/P_{1/2}$ drives the scaling gap $c_\lambda$. At the
+Fibonacci-anyon anchor $q_0 = 1/\phi = \frac{\sqrt{5}-1}{2}$ (the fivefold Bring
+structure), the geometric coordinate is $\cosh \eta = \frac{\sqrt{5}}{2} \approx 1.1180$.
 
-$$ c_\lambda^{\text{topological}} = \frac{P_{-1/2}\left(\frac{\sqrt{5}}{2}\right)}{P_{1/2}\left(\frac{\sqrt{5}}{2}\right)} \approx 0.944649 $$
+Evaluating the toroidal harmonics at this anchor yields
 
-This parameter-free constant matches the empirical macroscopic shell-filling fraction for ${}^4\text{He}$ ($c_\lambda^{\text{exp}} \approx 0.943503$) to within $0.1\%$. The residual difference stems from higher-order entanglement terms beyond the 2-row stratum.
+$$ c_\lambda^{\text{topological}} = \frac{P_{-1/2}\left(\frac{\sqrt{5}}{2}\right)}{P_{1/2}\left(\frac{\sqrt{5}}{2}\right)} \approx 0.944649. $$
+
+This is numerically close to the empirical ${}^4\text{He}$ shell-filling fraction
+$c_\lambda^{\text{exp}} \approx 0.943503$ ($\approx 0.1\%$) — but at an anchor
+unrelated to the substrate $q_0$. Absent a derivation linking the Bring golden
+ratio to the ${}^4\text{He}$ $\Delta_\lambda$ normalization (and an evaluation at
+the actual substrate $q_0$), it is an exploratory coincidence, not a
+parameter-free constant and not a closure of $\Delta_\lambda$.
