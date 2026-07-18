@@ -4,7 +4,7 @@
   "auditOnly": true,
   "probe": true,
   "substrate": {
-    "q0_proton": 1.1099785955573347,
+    "q0_proton": 1.1099785827513808,
     "q0_pin": "proton (canonical)"
   },
   "candidate": {
@@ -70,7 +70,7 @@
         3,
         5
       ],
-      "single_x": "4.52488546341",
+      "single_x": "4.52488547168",
       "res_W5": "0.0683508",
       "res_max": "0.0683508"
     },
@@ -125,7 +125,7 @@
         45,
         47
       ],
-      "single_x": "2.89151597102",
+      "single_x": "2.8915159549",
       "res_W5": "0.95118",
       "res_max": "1.00001"
     },
@@ -169,9 +169,9 @@
         67,
         69
       ],
-      "single_x": "4.16743713722",
+      "single_x": "4.1674371528",
       "res_W5": "0.134882",
-      "res_max": "34.2638"
+      "res_max": "34.2524"
     }
   ],
   "verdict": {
@@ -194,8 +194,15 @@
     }
   ],
   "witness": {
-    "scriptCommitSha": "",
-    "scriptHash": "c37557cb9012",
+    "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
+    "scriptHash": "3e42732e95da",
     "producer": "computations/probes/bn_minus_bp_winding_iterate_probe.py"
-  }
+  },
+  "scriptHash": "3e42732e95da",
+  "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
+  "commitSha": "2f1e7a7eee69983b4a18228ff6a006122fe3b7f6",
+  "engine": "python",
+  "computedAt": "2026-07-18T13:52:59.363182+00:00",
+  "durationMs": 0,
+  "scriptFile": "bn_minus_bp_winding_iterate_probe.py"
 }

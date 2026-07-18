@@ -320,6 +320,11 @@ def _emit_witness(level_data, n3_bar, n9_parity, tower, assertions, q0):
         "witness": {"scriptCommitSha": sha, "scriptHash": script_hash,
                     "producer": "computations/probes/bn_minus_bp_brane_tower_parity_probe.py"},
     }
+    import sys as _sys  # noqa: E402 — P30 rollup (bean cmiy)
+    _sys.path.insert(0, os.path.join(here, "..", "substrate"))
+    from witness_base import WitnessBuilder  # noqa: E402
+    WitnessBuilder.stamp_staleness_metadata(out, script_path=__file__, engine="python")
+    out["scriptFile"] = os.path.basename(__file__)
     dest = os.path.join(here, "..", "bn-minus-bp-brane-tower-parity.witness.json")
     with open(dest, "w", encoding="utf-8") as f:
         json.dump(out, f, indent=2, ensure_ascii=False, default=str)

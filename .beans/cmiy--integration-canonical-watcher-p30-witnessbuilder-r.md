@@ -316,3 +316,15 @@ Cleared the remaining clean (non-native) deltalambda tail:
 All assertion-bearing (allPassed preserved), engine=mpmath. Exit 0, keys
 preserved, PROV_OK. Native deltalambda producers (he4_vol4_prediction_test,
 vol4_4he_snappy_falsification) deferred — need pyhecke-native harness.
+
+## 2026-07-18 — batch 23 (2 snappy deltalambda + 5 probes/ cluster)
+23a: he4_vol4_prediction_test + vol4_4he_snappy_falsification (stamp; snappy 3.3.2
+     pip-installed in-env to run them). deltalambda/ now fully PROV_OK.
+23b: probes/ brane-tower+eigenbasis cluster via stamp (out var, writes to ../ =
+     computations/): bn_minus_bp_brane_tower_parity, bn_minus_bp_winding_iterate,
+     chi_content_eigenbasis, chi_content_single_mode, eigenbasis_structural_lemmas.
+     GOTCHA: these import hoefsmit_symbolic from computations/ but live in probes/,
+     so must run as `PYTHONPATH=. python3 probes/x.py` (script-dir-only sys.path
+     misses computations/). Also: `echo exit=$(...)` clobbers $? via the $()
+     substitution — the PROV_OK re-audit is the real gate, not the echo. All 5
+     confirmed PROV_OK, keys preserved, no strays.

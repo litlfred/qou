@@ -83,8 +83,15 @@
     }
   ],
   "witness": {
-    "scriptCommitSha": "c94e7c22a0868b038cbba9ee6a177e7bc766420f",
-    "scriptHash": "001723cbbcbf",
+    "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
+    "scriptHash": "edd33c98fd73",
     "producer": "computations/probes/chi_content_eigenbasis_probe.py"
-  }
+  },
+  "scriptHash": "edd33c98fd73",
+  "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
+  "commitSha": "2f1e7a7eee69983b4a18228ff6a006122fe3b7f6",
+  "engine": "python",
+  "computedAt": "2026-07-18T13:53:02.150631+00:00",
+  "durationMs": 0,
+  "scriptFile": "chi_content_eigenbasis_probe.py"
 }

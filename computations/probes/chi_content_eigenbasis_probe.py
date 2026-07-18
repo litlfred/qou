@@ -200,6 +200,11 @@ def _emit_witness(thetas, gf, baro, abs_contents, assertions):
         "witness": {"scriptCommitSha": sha, "scriptHash": script_hash,
                     "producer": "computations/probes/chi_content_eigenbasis_probe.py"},
     }
+    import sys as _sys  # noqa: E402 — P30 rollup (bean cmiy)
+    _sys.path.insert(0, os.path.join(here, "..", "substrate"))
+    from witness_base import WitnessBuilder  # noqa: E402
+    WitnessBuilder.stamp_staleness_metadata(out, script_path=__file__, engine="python")
+    out["scriptFile"] = os.path.basename(__file__)
     dest = os.path.join(here, "..", "chi-content-eigenbasis.witness.json")
     with open(dest, "w", encoding="utf-8") as f:
         json.dump(out, f, indent=2, ensure_ascii=False, default=str)
