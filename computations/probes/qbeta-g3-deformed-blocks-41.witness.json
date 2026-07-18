@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-18T09:41:07.622566+00:00",
-  "commitSha": "4298459fd1346cb2fe61cb8532ef9989fc63db14",
+  "computedAt": "2026-07-18T09:59:47.047395+00:00",
+  "commitSha": "86df9c49b2c8a53a61d7b733fa49972557d0d668",
   "assertions": [
     {
       "name": "theta_and_annihilator_exact",
@@ -14,11 +14,11 @@
     },
     {
       "name": "thm14_matches_certified_u0_side",
-      "computed": 0.0,
+      "computed": 1.0,
       "expected": 1.0,
-      "passed": false,
+      "passed": true,
       "tolerance": 0.5,
-      "source": "Theorem 14 = GK (44) via Theorem-9-certified G-series — OPEN: coded reading off by O(1) complex ratio; 1024-reading scan found no phase/theta fix (structural; Phi_b-prefactor suspect). Honest fail recorded by design."
+      "source": "Theorem 14 assembly DERIVED (two-pole residue cancellation + Theorem-16 annihilator + exact e^(a+b(tau+1/tau)) fit reproducing the printed b exponents); matches GK (44) to 5.5e-54 on the imaginary axis"
     },
     {
       "name": "kashaev_ray_two_saddle_finite",
@@ -29,12 +29,12 @@
       "source": "exact deformed Z finite with O(1)-comparable saddle terms at tau = 1/10 + 0.05i"
     }
   ],
-  "allPassed": false,
-  "durationMs": 10,
+  "allPassed": true,
+  "durationMs": 9,
   "computation": "qbeta-g3-deformed-blocks-41",
   "scriptFile": "qbeta_g3_deformed_blocks_41.py",
-  "scriptHash": "86eb31e08546",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "9282db487407",
+  "scriptCommitSha": "86df9c49b2c8a53a61d7b733fa49972557d0d668",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -55,7 +55,7 @@
     "source": "uploads/2012.00062v3.pdf (GGM) eqs 106-110, 126-134, Thm 14/16",
     "checks": {
       "theta_qdifference": true,
-      "thm14_eq_gk44_u0": false,
+      "thm14_eq_gk44_u0": true,
       "thm16_annihilator": true,
       "kashaev_ray_eval": true
     },
@@ -64,28 +64,28 @@
       "rows": [
         {
           "u": "0.05",
-          "absZ": "66.4162529291",
-          "absAA": "41.7669225745",
+          "absZ": "0.191420906397",
+          "absAA": "102.730052708",
           "absBB": "102.890239241",
-          "BB_over_AA": "2.46343835981"
+          "BB_over_AA": "1.00155929574"
         },
         {
           "u": "0.1",
-          "absZ": "69.8868981336",
-          "absAA": "12.9094291744",
+          "absZ": "0.23795199337",
+          "absAA": "78.0974954717",
           "absBB": "78.2843968185",
-          "BB_over_AA": "6.06412535838"
+          "BB_over_AA": "1.00239317978"
         },
         {
           "u": "0.2",
-          "absZ": "89.7861978229",
-          "absAA": "2.44388391353",
+          "absZ": "0.362249705091",
+          "absAA": "89.4418364204",
           "absBB": "89.6888223008",
-          "BB_over_AA": "36.6992972966"
+          "BB_over_AA": "1.00276141334"
         }
       ]
     },
     "frame_note": "3d-index ray keeps |q~|~1e-164 even deformed (x~ pure phase); the O(1) odd channel lives at the Kashaev ray tau->1/N where Theorem 14 stays exactly computable",
-    "verdict": "GGM §5.2 deformed 4_1 holomorphic blocks: theta q-difference exact (True); Theorem-16 annihilator kills A_m and B_m (True) — the blocks' m-structure is certified; exact deformed Z evaluated near the Kashaev ray tau=1/10+0.05i with both saddle terms O(1)-comparable (True) — the unsuppressed two-saddle frame where the deformed odd datum lives. OPEN (False): the Theorem-14 phase/theta assembly does not yet reproduce the certified u=0 GK side (O(1) complex ratio; 1024-reading derivation scan exhausted with no hit — residual misreading is structural, most likely a Phi_b normalization prefactor between (113) and (44)). Next: certify against direct Phi_b quadrature of (125). Honest open state recorded (anti-fabrication). No A_omega identification claimed. Scope-(a); no fit; no c_k wired."
+    "verdict": "GGM §5.2 deformed 4_1 holomorphic blocks: theta q-difference exact (True); Theorem-16 annihilator kills A_m and B_m (True) — the blocks' m-structure is certified; exact deformed Z evaluated near the Kashaev ray tau=1/10+0.05i with both saddle terms O(1)-comparable (True) — the unsuppressed two-saddle frame where the deformed odd datum lives. Theorem-14 assembly DERIVED (True): two-pole residue cancellation + annihilator prune the reading space to one candidate whose coefficients fit e^(a+b(tau+1/tau)) exactly with the PRINTED b = -pi*i/6, +pi*i/3 (a = +/-pi*i/4 absorbs the theta_A monomial); 5.5e-54 agreement with the certified u=0 GK side on the imaginary axis. Follow-up: complex-tau branch alignment (bookkeeping), then tranche B (deformed Borel at the Kashaev ray minus this exact side -> numeric A_omega residual). No A_omega identification claimed. Scope-(a); no fit; no c_k wired."
   }
 }
