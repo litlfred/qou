@@ -1,15 +1,15 @@
 {
   "computation": "habiro-coefficients-atomic",
-  "description": "Habiro / cyclotomic expansion tr_M(T_w, q) = \u03a3_m a_m\u00b7(check_q;check_q)_m (check_q = q^{1/2}) for atomic braids p, n, D. Verifies the integrality and termination properties of the Habiro coefficients claimed in habiro-ring.md and full-pole-structure-mass-trace.md.",
+  "description": "Habiro / cyclotomic expansion tr_M(T_w, q) = \u03a3_m a_m\u00b7(check_q;check_q)_m (check_q = q^{1/2}) for atomic braids p, n (default), D (HABIRO_WITH_DEUTERON=1), and T / \u00b3He (HABIRO_WITH_A3=1). Verifies the integrality and termination properties of the Habiro coefficients claimed in habiro-ring.md and full-pole-structure-mass-trace.md.",
   "reference_blocks": [
     "def:habiro-ring",
     "prop:full-pole-structure-mass-trace",
     "thm:knot-mass-formula-unified",
     "prop:e-infinity-page-identifications"
   ],
-  "timestamp": "2026-06-28T16:56:15.986134+00:00",
+  "timestamp": "2026-07-18T17:55:54.282640+00:00",
   "parameters": {
-    "q_0": 1.1099785955573347,
+    "q_0": 1.1099785827513808,
     "engine": "sympy Poly + sequential cyclotomic division"
   },
   "results": {
@@ -89,7 +89,7 @@
       ],
       "all_integral": true,
       "reconstruction_matches": true,
-      "tr_M_at_q0": "1.06530622861316626170946619823"
+      "tr_M_at_q0": "1.06530614425445002702019792196"
     },
     "n (neutron, A=1)": {
       "Z": 0,
@@ -167,7 +167,7 @@
       ],
       "all_integral": true,
       "reconstruction_matches": true,
-      "tr_M_at_q0": "0.923233297186152879199028120638"
+      "tr_M_at_q0": "0.923233229911637143239033775899"
     },
     "D (deuteron, A=2)": {
       "Z": 1,
@@ -275,5 +275,13 @@
       "reconstruction_matches": true,
       "tr_M_at_q0": "0.388286471559408430387350108504"
     }
-  }
+  },
+  "scriptHash": "8d2281c23446",
+  "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
+  "commitSha": "a1d21fc9e6705b2cf989d517cf56224a46b25d8a",
+  "engine": "mpmath",
+  "computedAt": "2026-07-18T17:55:54.718701+00:00",
+  "durationMs": 0,
+  "engineVersion": "mpmath 1.3.0",
+  "scriptFile": "habiro_coefficients_atomic.py"
 }

@@ -1,10 +1,10 @@
 {
   "computation": "rho-k-h3a-refinement",
-  "computedAt": "2026-07-05T11:19:15.341466+00:00",
+  "computedAt": "2026-07-18T17:56:31.859354+00:00",
   "description": "Deuteron proof-of-concept for the H_{3A} Wedderburn refinement of \u03c1_K per prop:rho-k-h3a-refinement (PR #564). Computes y_\u03bb(q_0) \u03c7^\u03bb(\u03b2_D) for all 11 partitions \u03bb \u22a2 6, verifies the Schur-Weyl identity \u03a3_\u03bb y_\u03bb \u03c7^\u03bb = tr_M(\u03b2_D) to 50 dps, then extracts \u0394_\u03bb(D) under the singleton-support hypothesis (\u0394 supported on one partition).  Reports the Occam's-razor pick (smallest |\u0394|) and the prior heuristic (balanced partition (3,2,1)).  Both reconstruct M(D) = 1875.61294257 MeV exactly by construction (single equation, single unknown).",
-  "engine": "mpmath numeric Hoefsmit at q_0 (50 dps), multiprocessing.Pool(4)",
+  "engine": "mpmath",
   "scriptFile": "rho_k_h3a_refinement.py",
-  "scriptHash": "sha256:311d846eaf82ac8bdfd43bf80ffd4f34d4e8401a3f3cee0e99abe200199e03f2",
+  "scriptHash": "18703bbada3d",
   "parameters": {
     "q_0_50dps": "1.1099785827513808075916690956107688798744991218736",
     "atom": "deuteron",
@@ -302,5 +302,9 @@
   "audit_reference": "AUDIT-DEEP-2026-05.md \u00a77 P3 / P3'",
   "pr": "#564",
   "notes": "The single mass equation  \u03c1_K^codata - \u03c1_K^LO = (1/|tr_M|) \u03a3_\u03bb y_\u03bb \u03c7^\u03bb \u0394_\u03bb  is **underdetermined**: 11 unknowns (\u0394_\u03bb for \u03bb \u22a2 6), 1 constraint.  This proof-of-concept assumes singleton support for \u0394_\u03bb and reports (a) the Occam's-razor pick (minimum |\u0394|), and (b) the balanced-partition heuristic (3,2,1).  Both reproduce M(D) exactly by construction.  The categorical question \u2014 *which* \u03bb carries the binding, and why \u2014 is the open P3' problem.  Likely resolution paths: (i) Plancherel-truncation bound MAE(k) \u2264 C\u2080\u00b7[2]_q^{-2(k-3)} via k_max = 12; (ii) jet-knot Hochschild-cohomology obstruction selecting a privileged Wedderburn block; (iii) variational principle minimising \u03a3_\u03bb |\u0394_\u03bb|\u00b2 subject to the mass constraint (Tikhonov / minimum-norm solution = Moore-Penrose pseudoinverse).",
-  "follow_up": "Extend to (T, \u00b3He) at n=9 (p(9)=30) using the same pipeline; then to \u2074He at n=12 (p(12)=77).  Add a minimum-norm \u0394_\u03bb extraction (least-squares against all atoms simultaneously) once \u2265 2 atoms are wired."
+  "follow_up": "Extend to (T, \u00b3He) at n=9 (p(9)=30) using the same pipeline; then to \u2074He at n=12 (p(12)=77).  Add a minimum-norm \u0394_\u03bb extraction (least-squares against all atoms simultaneously) once \u2265 2 atoms are wired.",
+  "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
+  "commitSha": "a1d21fc9e6705b2cf989d517cf56224a46b25d8a",
+  "durationMs": 0,
+  "engineVersion": "mpmath 1.3.0"
 }
