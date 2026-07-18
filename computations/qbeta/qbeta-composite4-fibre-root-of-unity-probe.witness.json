@@ -1,7 +1,7 @@
 {
-  "engine": "mpmath",
+  "engine": "python",
   "engineVersion": "mpmath",
-  "computedAt": "2026-06-22T13:27:32.909750+00:00",
+  "computedAt": "2026-07-18T17:46:26.981969+00:00",
   "computation": "qbeta-composite4-fibre-root-of-unity-probe",
   "scriptFile": "qbeta_composite4_fibre_root_of_unity_probe.py",
   "precisionMetadata": {
@@ -190,5 +190,9 @@
       "conclusion": "Independently re-derives #1801 (self-contained): q-deformed /[5]_q\u2080\u00b2 is WORSE (982 ppm) than undeformed /25 (2.66 ppm). [5]_\u03b6\u00b2 at roots of unity is REAL (=(sin5\u03b8/sin\u03b8)\u00b2) and discrete; no finite root reproduces 25 \u2014 only the N\u2192\u221e (q\u21921) classical limit does. So /25 = [5]_q\u00b2 at the q=1 fibre point, rest of c_3 at archimedean q\u2080 (a real fibre/observable split). A full residue-A derivation still needs the Habiro element (cyclotomic coefficients over all roots of unity) + \u03c4, which a single denominator-swap cannot supply. EXPLORATORY; nothing wired."
     }
   },
-  "allPassed": true
+  "allPassed": true,
+  "scriptHash": "f46c61e714cb",
+  "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
+  "commitSha": "5fd004f3a5f1057cc20b55f89c1febcbeacdf28a",
+  "durationMs": 0
 }

@@ -189,6 +189,14 @@ def main() -> int:
             "remains outside the product algebra."),
     }
     out_path = COMPUTATIONS_ROOT / "qbeta-c4-structural-product-identities.witness.json"
+    import os as _os, sys as _sys  # noqa: E402 — P30 rollup (bean cmiy)
+    _d = _os.path.dirname(_os.path.abspath(__file__))
+    while _d != _os.path.dirname(_d) and not _os.path.isdir(_os.path.join(_d, "substrate")):
+        _d = _os.path.dirname(_d)
+    _sys.path.insert(0, _os.path.join(_d, "substrate"))
+    from witness_base import WitnessBuilder  # noqa: E402
+    WitnessBuilder.stamp_staleness_metadata(out, script_path=__file__, engine="mpmath")
+    out["scriptFile"] = _os.path.basename(__file__)
     out_path.write_text(json.dumps(out, indent=2))
     print(f"\n  Witness: {out_path.name}")
     return 0

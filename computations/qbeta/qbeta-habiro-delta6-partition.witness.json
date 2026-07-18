@@ -1,10 +1,10 @@
 {
-  "engine": "python+sympy",
-  "computedAt": "2026-07-07T13:39:33+00:00",
+  "engine": "sympy",
+  "computedAt": "2026-07-18T17:47:03.337524+00:00",
   "computation": "qbeta-habiro-delta6-partition",
   "scriptFile": "qbeta_habiro_delta6_partition_check.py",
-  "scriptHash": "auto",
-  "scriptCommitSha": "auto",
+  "scriptHash": "bf06306473d0",
+  "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
   "precisionMetadata": {
     "compute_dps": 50,
     "output_dps": 50,
@@ -12,7 +12,7 @@
     "truncation_bound": "1e-50"
   },
   "environment": {
-    "python": "3.13.12",
+    "python": "3.11.15",
     "sympy": "1.14.0"
   },
   "description": "Check whether -\u0394a_6 = u^4 + 3u^3 + 5u^2 + 8u + 15 (coeffs (1,3,5,8,15)) has a partition-function or other categorical interpretation, paralleling the a_8 = p(1..5) match.",
@@ -47,5 +47,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 46
+  "durationMs": 0,
+  "commitSha": "5fd004f3a5f1057cc20b55f89c1febcbeacdf28a",
+  "engineVersion": "sympy 1.14.0"
 }

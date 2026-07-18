@@ -1,7 +1,7 @@
 {
-  "engine": "pyhecke.trace_formal",
-  "engineVersion": "sympy-1.14.0+mpmath",
-  "computedAt": "2026-06-22T14:48:08.142053+00:00",
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-07-18T17:46:18.683107+00:00",
   "computation": "qbeta-c3-hopf-habiro-profile",
   "scriptFile": "qbeta_c3_hopf_habiro_profile_probe.py",
   "tier": "NEGATIVE/exploratory",
@@ -141,5 +141,9 @@
     "wiredToProduction": false,
     "productionC3": "c_3 = -2 (proven J_Hopf(1), 112\u00d7 tightening)"
   },
-  "allPassed": true
+  "allPassed": true,
+  "scriptHash": "e1330da928b2",
+  "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
+  "commitSha": "5fd004f3a5f1057cc20b55f89c1febcbeacdf28a",
+  "durationMs": 0
 }

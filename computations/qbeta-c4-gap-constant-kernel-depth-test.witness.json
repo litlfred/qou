@@ -61,5 +61,13 @@
       "match": false
     }
   },
-  "verdict": "Both tests REFUTE constant-kernel recursion covering the c_4 gap. c_4 has a structurally distinct categorical origin from c_6+ (the \u03c3-action tower) \u2014 fixing the gap requires either a k-dependent kernel (CKRecursion R allows this in principle) or a separate derivation of c_4."
+  "verdict": "Both tests REFUTE constant-kernel recursion covering the c_4 gap. c_4 has a structurally distinct categorical origin from c_6+ (the \u03c3-action tower) \u2014 fixing the gap requires either a k-dependent kernel (CKRecursion R allows this in principle) or a separate derivation of c_4.",
+  "scriptHash": "a11007614e8a",
+  "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
+  "commitSha": "5fd004f3a5f1057cc20b55f89c1febcbeacdf28a",
+  "engine": "mpmath",
+  "computedAt": "2026-07-18T17:46:20.388580+00:00",
+  "durationMs": 0,
+  "engineVersion": "mpmath 1.3.0",
+  "scriptFile": "qbeta_constant_kernel_depth_test.py"
 }

@@ -394,3 +394,10 @@ he-nu-sdp psd-count, he3 brane-tower/charge-asymmetry, hecke_channel_binding, hi
 m_tau_knot, markov_weights_symbolic, metallic_q_wenzl_sign_sweep, murakami_deformed_vc_q0,
 binding_alpha_shift, alphaem_dilog_bloch. 6 auto-reverted (shared-witness / input-needing
 scripts). 68 clean remained at chunk start.
+
+## 2026-07-18 — batch 32 (auto-stamper chunk 3: 23 producers, 2 reverted)
+Heavy qbeta/qbessel cluster (coordinated on #3927): 8 qbessel_* + 10 qbeta_* incl.
+qbeta_reeb_tower_jacobi_anger (the one WITH a writer, distinct from the physical_weight
+one skipped in batch 28), plus habiro_coefficients_extended, metallic_q_jones_sign_sweep,
+3 pentagon/per-knot h4 probes, poly_q_proof, pyhecke_h3_vs_h3a. 2 reverted
+(pentagon_rt_torus_knot_higgs, per_knot_density_borromean_q_locality — exit 1).

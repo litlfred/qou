@@ -38,5 +38,13 @@
     "c_3\u00b7c_6_eq_c_9": true
   },
   "all_silver_match": true,
-  "verdict": "Two product identities found. c_8 = c_3\u00b7c_4 derives c_4 = -2\u00b7b\u2074 from c_3 (J_Hopf) and c_8 (\u03c3-action seed) \u2014 closing the c_4 categorical-origin question modulo proof of the underlying multiplicative law. c_5 (averaging-resonance) remains outside the product algebra."
+  "verdict": "Two product identities found. c_8 = c_3\u00b7c_4 derives c_4 = -2\u00b7b\u2074 from c_3 (J_Hopf) and c_8 (\u03c3-action seed) \u2014 closing the c_4 categorical-origin question modulo proof of the underlying multiplicative law. c_5 (averaging-resonance) remains outside the product algebra.",
+  "scriptHash": "e0908bc08ffa",
+  "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
+  "commitSha": "5fd004f3a5f1057cc20b55f89c1febcbeacdf28a",
+  "engine": "mpmath",
+  "computedAt": "2026-07-18T17:46:22.391039+00:00",
+  "durationMs": 0,
+  "engineVersion": "mpmath 1.3.0",
+  "scriptFile": "qbeta_c4_structural_product_identities.py"
 }
