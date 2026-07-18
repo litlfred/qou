@@ -302,4 +302,32 @@ theorem partialProduct_log_eq_tsum (q x : ℝ) (n : ℕ)
   exact Finset.sum_congr rfl
     (fun k hk => ((neg_log_one_sub_hasSum (hlt k hk)).tsum_eq).symm)
 
+/-- **Third Part-A reduction (the `m`-series):** interchanging the finite `k`-sum
+    with the `m`-tsum (`Summable.tsum_finsetSum`) and summing the geometric
+    `k`-series (`geom_sum_eq`) puts `log Φ_n(x; q)` in closed `m`-series form
+
+    `log Φ_n(x; q) = Σ'_m  x^{m+1}/(m+1) · (q^{(m+1)n} − 1)/(q^{m+1} − 1)`.
+
+    This is the exact, finite-`n` object whose `q → 1⁻` limit is `Li₂(x)`: each
+    `(q^{(m+1)n} − 1)/(q^{m+1} − 1) → n → ∞`-regularised factor tends to `1/(m+1)`
+    as `q → 1⁻`, turning the summand into `x^{m+1}/(m+1)²`.  The termwise limit +
+    dominated-convergence exchange with the `m`-sum is the remaining analytic core
+    (the `ArchimedeanLimit` class), NOT discharged here. -/
+theorem partialProduct_log_eq_mseries (q x : ℝ) (n : ℕ)
+    (hpos : ∀ k ∈ Finset.range n, (0 : ℝ) < 1 - x * q ^ k)
+    (hlt : ∀ k ∈ Finset.range n, |x * q ^ k| < 1)
+    (hq1 : ∀ m : ℕ, q ^ (m + 1) ≠ 1) :
+    Real.log (partialProductLocal q x n)
+      = ∑' m : ℕ, x ^ (m + 1) / ((m : ℝ) + 1)
+          * ((q ^ ((m + 1) * n) - 1) / (q ^ (m + 1) - 1)) := by
+  rw [partialProduct_log_eq_tsum q x n hpos hlt,
+      ← Summable.tsum_finsetSum
+        (fun k hk => (neg_log_one_sub_hasSum (hlt k hk)).summable)]
+  refine tsum_congr (fun m => ?_)
+  have hrw : ∀ k ∈ Finset.range n,
+      (x * q ^ k) ^ (m + 1) / ((m : ℝ) + 1)
+        = x ^ (m + 1) / ((m : ℝ) + 1) * (q ^ (m + 1)) ^ k := by
+    intro k _; rw [mul_pow, pow_right_comm]; ring
+  rw [Finset.sum_congr rfl hrw, ← Finset.mul_sum, geom_sum_eq (hq1 m) n, ← pow_mul]
+
 end QOU.QPochhammer
