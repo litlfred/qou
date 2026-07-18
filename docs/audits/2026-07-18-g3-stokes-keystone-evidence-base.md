@@ -191,3 +191,21 @@ FaddeevPhi-specific content — the compact `ib`-period of the ratio is **derive
 from nowhere-zero (via `phi_b_quasiperiod`), not assumed, so a caller supplies
 only the dual `i/b`-period, entireness, and the basis. The §8 open-input table
 is unchanged (hratio / hspan / hibinv).
+
+## 10. Update — `hspan` CLOSED (the easy input of §8), rigidity now on 2 inputs
+
+The §8 `hspan` input (lattice `⟨ib, i/b⟩` ℝ-spans ℂ) is now proved, `lean`-direct
+**exit 0**: `QOU/QBeta/PeriodLatticeBasis.lean` — `exists_period_basis`:
+`(b^2).im ≠ 0 ⇒ ∃` basis with entries `I·b, I/b` (via `periods_linearIndependent`
++ `finrank ℝ ℂ = 2`). `FaddeevRigidityReduction.uniqueUpToScalar_of_entire_of_sq_not_real`
+now consumes it, so Faddeev–Volkov rigidity reduces to **two** open inputs:
+
+| input | status |
+|---|---|
+| `hspan` — lattice non-degenerate | **CLOSED** (`exists_period_basis`, exit 0); needs only the scalar `b² ∉ ℝ` (substrate `arg b = π/4`; fails real `b`) |
+| `hibinv` — `i/b`-period everywhere | open (identity theorem off dual lattice; bean `qou-q95i`) |
+| `hratio`/entireness | open — the endowment: `Φ_b` holomorphic + divisor cancellation (bean `qou-2cvs`) |
+
+Physical content preserved: the non-degeneracy `b² ∉ ℝ` is exactly the substrate
+branch requirement — rigidity provably **fails** for real `b`, where both periods
+are imaginary and the lattice collapses.
