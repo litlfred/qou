@@ -1508,6 +1508,42 @@ export const references: CSLData[] = [
   }),
 
   ref({
+    id: "necas-ruzicka-sverak1996",
+    type: "article-journal",
+    title:
+      "On Leray's self-similar solutions of the Navier-Stokes equations",
+    author: [
+      { family: "Nečas", given: "Jindřich" },
+      { family: "Růžička", given: "Michael" },
+      { family: "Šverák", given: "Vladimír" },
+    ],
+    "container-title": "Acta Mathematica",
+    issued: { "date-parts": [[1996]] },
+    volume: "176",
+    issue: "2",
+    page: "283-294",
+    DOI: "10.1007/BF02551584",
+    URL: "https://doi.org/10.1007/BF02551584",
+  }),
+
+  ref({
+    id: "tsai1998",
+    type: "article-journal",
+    title:
+      "On Leray's self-similar solutions of the Navier-Stokes equations satisfying local energy estimates",
+    author: [
+      { family: "Tsai", given: "Tai-Peng" },
+    ],
+    "container-title": "Archive for Rational Mechanics and Analysis",
+    issued: { "date-parts": [[1998]] },
+    volume: "143",
+    issue: "1",
+    page: "29-51",
+    DOI: "10.1007/s002050050099",
+    URL: "https://doi.org/10.1007/s002050050099",
+  }),
+
+  ref({
     id: "leitner-2018",
     type: "article-journal",
     title: "The first eigenvalue of the Kohn-Dirac operator on CR manifolds",
