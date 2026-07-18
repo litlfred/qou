@@ -107,10 +107,26 @@ principle — the open problem itself).
   Three numerics lessons recorded in-file (principal-branch phase hops;
   \>π phase steps need model-guided unwrap; 1/τ-vs-polynomial collinearity
   needs the two-stage fit).
-- **A4 remainder (open, now unblocked).** The median Borel–Laplace
-  cross-check still needs φ_σ to ~30+ orders (coefficient-generation
-  engine); with the τ² arbitration the low-order basis is now trustworthy.
-  Bean `qou-ea86` stays open; not session-sized.
+- **A4.2 LANDED — the coefficient engine (all gates at full precision).**
+  [`qbeta_5two_phi_series_engine_probe.py`](../../computations/probes/qbeta_5two_phi_series_engine_probe.py)
+  + witness: φ_σ1 generated to **order 24** from first principles (τ-channel
+  steepest descent; `V₀ = 3Li₂(−e^y)+y²` reproducing GGM eq-19 exactly;
+  vertices rational in the saddle via the `Li_{−k}` tower; Wick engine at
+  dps 60). Three convention faults found + fixed empirically against
+  validated references: the balanced Φ_b expansion uses **Bernoulli
+  polynomials at ½** (`B_{2n}(1/2) = (2^{1−2n}−1)B_{2n}`; the naive form
+  overshoots O(ħ) by exactly 3×; corrected form converges to 9e-25 by n=6
+  against the corpus `log_phi_b`); the `P_k = phi_h[2k]` unit map; and the
+  exact `e^{−ħ/8}` alignment for the Thm-3 `(q/q̃)^{1/8}` prefactor (found
+  as a +1/8 shift in P₁). **Result: P₁ = printed at 9e-62; P₂ = the
+  arbitrated Peacock@ξ value at 2e-60 — a third independent confirmation of
+  the τ² misprint verdict; P₃ = printed at 5e-59** (the A4.1 τ³ diagnostic
+  settled exactly). Borel diagnostics: nearest singularity 5.798 vs the
+  predicted Stokes distance `|V(σ1)−V(σ2)| = 5.656` (2.5%, in the
+  `x = 2πiτ` Borel plane — resurgence structure confirmed). **The A4 median
+  Borel–Laplace program is unblocked with a full-precision 24-order basis.**
+  Remaining A4 work (bean `qou-ea86`): the lateral/median resummation and
+  the bar-odd split on this basis.
 - **A5.1 ATTEMPTED — blocked by a certified literature/transcription
   discrepancy (5/5 on the discrepancy itself).**
   [`qbeta_5two_colored_tower_barodd_qstar_probe.py`](../../computations/probes/qbeta_5two_colored_tower_barodd_qstar_probe.py)
