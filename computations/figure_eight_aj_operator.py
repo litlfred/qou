@@ -23,6 +23,8 @@ Correctness anchors:
 Audit-only.
 """
 from __future__ import annotations
+import time as _time  # noqa: E402 — wall-clock anchor for witness durationMs
+_T0 = _time.monotonic()
 
 import json
 import sys
@@ -110,8 +112,15 @@ def main() -> int:
         "explicit_operator": "proved strong-AJ operator [nguyen-tran-2021]; coefficients = qZeilberger, not re-derived here",
         "timestamp": datetime.now(timezone.utc).isoformat(timespec="seconds"),
     }
-    out = Path(__file__).resolve().parent / "figure-eight-aj-operator.witness.json"
-    out.write_text(json.dumps(witness, indent=2))
+    _here = Path(__file__).resolve().parent
+    import sys as _sys  # noqa: E402
+    _sys.path.insert(0, str(_here / "substrate"))
+    from witness_base import WitnessBuilder  # noqa: E402 — P30 rollup (bean cmiy)
+    out = WitnessBuilder.wrap_legacy(
+        "figure-eight-aj-operator", witness,
+        script_path=__file__, engine="sympy", start_time=_T0,
+        output_dir=str(_here),
+    ).save()
     print(f"\n  Witness: {out}")
     return 0
 
