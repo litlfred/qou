@@ -29,14 +29,24 @@ proof (a `6×6` image minor + the `⟨e₀,e⟩^⊥` bound from `derivation_anni
 and norm-preservation) is the follow-up. Base ring ℚ; nothing archimedean.
 
 **Verification status.** Sorry-free; the proofs are `rfl`/`omega` reductions over
-the corpus's own `Der𝕆`. These were **not** machine-validated in the authoring
-sandbox: the sole nontrivial dependency `octonion_derivation_dim`
-(`finrank ℚ Der𝕆 = 14`) lives in the `decide`-heavy
-`OctonionDerivationsUpperBound` (50×50 `decide`, prohibitively slow to compile
-in-sandbox), so **CI `lake build QOU` is the gate**. The `evOct` `map_add'` /
-`map_smul' := rfl` proofs are sound because `Der𝕆` is a submodule of *linear
-maps* (`(Fin 8 → ℚ) →ₗ[ℚ] (Fin 8 → ℚ)`), whose `+`/`•` act pointwise, so `D.1 e`
-is honest linear-map application and the module operations are definitional.
+the corpus's own `Der𝕆`. **CI `lake build QOU` is the machine gate** — the kernel
+was *not* run in the authoring sandbox, where the dependency closure is hard-blocked:
+`OctonionDerivationsUpperBound` transitively imports `Mathlib.Tactic`, whose olean
+(and the ProofWidgets closure) is absent from every reachable `lake-cache` branch,
+and rebuilding it needs the network-gated ProofWidgets `widgetJsAll` JS asset.
+In lieu of the compile, every element was **hand-audited against the actual
+source**:
+- `LinearMap.finrank_range_add_finrank_ker`
+  (`Mathlib/LinearAlgebra/FiniteDimensional/Lemmas.lean`): signature
+  `[FiniteDimensional K V] (f : V →ₗ[K] V₂) : finrank (range f) + finrank (ker f)
+  = finrank V` matches; `[FiniteDimensional ℚ ↥Der𝕆]` is auto-derived (`Der𝕆` is a
+  submodule of the finite-dimensional `(Fin 8→ℚ)→ₗ[ℚ](Fin 8→ℚ)`).
+- `octonion_derivation_dim : Module.finrank ℚ Der𝕆 = 14` sits in the *same*
+  namespace `QOU.MathlibExt.OctonionDerivations`, so the `rw` target matches `h`'s
+  `finrank ℚ ↥Der𝕆`.
+- `map_add'`/`map_smul' := rfl` are definitional because `Der𝕆` is a submodule of
+  *linear maps*, whose `+`/`•` act pointwise, so `D.1 e` is honest linear-map
+  application.
 
 -- Ref: [manuscript] docs/audits/2026-07-17-octonion-su3-stabilizer-in-g2.md
 -/

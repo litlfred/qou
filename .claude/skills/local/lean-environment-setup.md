@@ -529,6 +529,70 @@ both occur with **no** `insteadOf` redirect set (so they are additive to
 > without the `pkill -f` pattern matching its own argv, use a bracket
 > escape: `pkill -f 'lake buil[d]'`.)
 
+### ProofWidgets `widgetJsAll` release-fetch block — build the JS from source (2026-07-18)
+
+When the **full** `lake build` path is genuinely needed (e.g. verifying a
+new library `.lean` whose dependency is a `decide`-heavy sibling that
+`lean`-direct can't cheaply seed), `lake build` in a web sandbox dies at:
+
+```
+✖ [n/m] Building proofwidgets/widgetJsAll
+error: ProofWidgets not up-to-date. Please run `lake exe cache get` to fetch the latest ProofWidgets.
+```
+
+**Diagnosis.** It fails in *seconds* (every prior job succeeded), and the
+release asset
+`github.com/leanprover-community/ProofWidgets4/releases/download/v0.0.74/ProofWidgets4.tar.gz`
+returns **403** — the release-download redirect (→ `objects.githubusercontent.com`)
+is policy-denied even though **github.com `git clone` egresses fine** and
+`registry.npmjs.org` is in the proxy `noProxy` allowlist. The message is a
+**red herring**: it is emitted by a guard in **Mathlib's** lakefile —
+
+```
+-- .lake/packages/mathlib/lakefile.lean
+require "leanprover-community" / "proofwidgets" @ git "v0.0.74"
+  with NameMap.empty.insert `errorOnBuild "ProofWidgets not up-to-date. …"
+```
+
+which makes proofwidgets' `widgetJsAllTarget` hit `get_config? errorOnBuild
+→ error msg` the instant lake attempts a **source** build, instead of
+falling through to its own `npm clean-install && npm run build` fallback.
+Flipping `preferReleaseBuild` in *proofwidgets'* lakefile does **not** help
+— the guard is in *Mathlib's* require.
+
+**Fix (offline; needs `node`+`npm`, both usually pre-installed at
+`/opt/node22/bin`).** Two local edits under `.lake/packages` — gitignored,
+never touches the repo:
+
+```bash
+LP=content/quantum-observable-universe/lean/.lake/packages
+# 1. Build the 19 widget JS bundles from source (deps from allowlisted npmjs).
+#    Rollup emits straight into .lake/packages/proofwidgets/.lake/build/js/ .
+( cd "$LP/proofwidgets/widget" && export PATH="/opt/node22/bin:$PATH" \
+  && npm ci && npm run build )                 # ~1 min ci + ~1 min rollup
+# 2. Remove the errorOnBuild guard so widgetJsAll runs its source path
+#    (delete the `with NameMap.empty.insert `errorOnBuild "…"` clause on the
+#     proofwidgets require in $LP/mathlib/lakefile.lean — 4 lines).
+# 3. Reconfigure + build the target; -R is REQUIRED (lakefile changed).
+( cd content/quantum-observable-universe/lean \
+  && export PATH="$HOME/.elan/bin:/opt/node22/bin:$PATH" \
+  && lake build -R QOU.MathlibExt.<YourModule> )
+```
+
+After step 2, `lake build -R` proceeds past `widgetJsAll` (runs npm, finds
+the JS/`lake.trace` up-to-date) into the real Lean build.
+
+**Scope caveat — this alone is not enough if Mathlib isn't cached.** The
+fix unblocks the *proofwidgets* target only. If the `lake-cache/*` restore
+is **partial** (the `qou-v4-24-0` branches carry only ~753 Mathlib oleans —
+the QOU cone — *not* the full `Mathlib.Tactic` closure, and **no**
+`Mathlib.Tactic.olean` / ProofWidgets oleans), lake still has to build that
+closure from source (multi-hour). Confirm with
+`find .lake/packages/mathlib -name '*.olean' | wc -l` (full is ~5000+):
+if it's ~753, budget hours or fall back to the rigorous hand-audit
+(verify each lemma signature against `.lake/packages/mathlib/Mathlib/**`
+source — which *is* fully present — and say the kernel didn't run).
+
 **When to use which:**
 
 - LSP iteration on one or two files → cache 403 fallback above (warm
