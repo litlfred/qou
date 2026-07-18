@@ -1,8 +1,8 @@
 {
   "engine": "python-exact",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-18T09:05:20.349822+00:00",
-  "commitSha": "52d569172366a65bba14349c0fc8bc564636a497",
+  "computedAt": "2026-07-18T09:07:14.554049+00:00",
+  "commitSha": "09e3bf8fb9423e447887defa4462b39c3ed75b51",
   "assertions": [
     {
       "name": "index_matches_primary_source",
@@ -22,10 +22,10 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 20,
+  "durationMs": 12,
   "computation": "figure-eight-3d-index",
   "scriptFile": "figure_eight_3d_index.py",
-  "scriptHash": "4d65c3718618",
+  "scriptHash": "2bc34356bc22",
   "scriptCommitSha": "afc8a148311f8116bfcec795eb952b19fd1bfea6",
   "precisionMetadata": {
     "compute_dps": 70,
