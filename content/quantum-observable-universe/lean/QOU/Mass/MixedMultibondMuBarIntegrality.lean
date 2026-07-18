@@ -1,4 +1,6 @@
 import Mathlib.Data.Int.Cast.Lemmas
+import Mathlib.Algebra.BigOperators.Group.Finset.Basic
+import Mathlib.Algebra.Field.Basic
 import Mathlib.Tactic.Ring
 
 /-!
@@ -64,5 +66,28 @@ theorem mubar_common_weight_refuted
     (hmodel : ∀ m, channel m = w * (S m : R)) (hunit : S 2 = 1) (m : ℕ)
     (hnonmult : ∀ k : ℤ, channel m ≠ (k : R) * channel 2) : False :=
   hnonmult (S m) (mubar_common_weight_forces_integer_multiple channel w S hmodel hunit m)
+
+/-! ## The surviving q-weighted form is under-determined per level (anti-laundering)
+
+The refutation above kills the **common-weight** form (one scalar `w`, over-
+determined by the several `channel m`). What survives is a **per-triple weighted**
+sum `channel m = Σ_{i ∈ triples m} w_i · μ̄_i` with the weights `w_i` *not* common.
+This lemma states the honest epistemic status of that survivor: at a single level
+with `N ≥ 1` triples and a nonzero μ̄, the `N` free weights can reproduce **any**
+target `channel` value — so the q-weighted form is **unfalsifiable from the channel
+value alone**. It is therefore a *fit* unless the weights are supplied by an
+independent derivation (the confinement-SDP per-block LP duals, #3802) rather than
+read off the observable. This is the anti-laundering companion to the refutation:
+"q-weighted survives" is not a free closure. Base ring `[Field R]` (division). -/
+theorem qweighted_matches_any_single_level
+    {R : Type*} [Field R] {ι : Type*} [DecidableEq ι]
+    (triples : Finset ι) (i₀ : ι) (hi₀ : i₀ ∈ triples) (mubar : ι → R)
+    (h : mubar i₀ ≠ 0) (c : R) :
+    ∃ w : ι → R, ∑ i ∈ triples, w i * mubar i = c := by
+  refine ⟨fun i => if i = i₀ then c / mubar i₀ else 0, ?_⟩
+  rw [Finset.sum_eq_single i₀]
+  · dsimp only; rw [if_pos rfl]; exact div_mul_cancel₀ c h
+  · intro b _ hb; dsimp only; rw [if_neg hb, zero_mul]
+  · intro h'; exact absurd hi₀ h'
 
 end QOU.Mass.MixedMultibondMuBarIntegrality
