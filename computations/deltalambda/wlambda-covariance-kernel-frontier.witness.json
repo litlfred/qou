@@ -1,0 +1,44 @@
+{
+  "engine": "python-exact",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-07-18T19:12:38.809601+00:00",
+  "commitSha": "7274dcb91488b9e2e2e82b233da862ed1b62f968",
+  "assertions": [
+    {
+      "name": "covariance_kernel_verified_and_framed_open",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "T₃<0 verified k≤30; Kerov polynomial Σ̂₃=R₄+R₂ and E_Planch[R₄]=−k exact (k≤14) ⇒ kernel ⇔ Cov(f^λ,R₄)≤0; elementary approaches recorded-excluded. OPEN (Biane-Sniady / Kerov-CLT). No fit; no c_k."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 13,
+  "computation": "wlambda-covariance-kernel-frontier",
+  "scriptFile": "wlambda_covariance_kernel_frontier.py",
+  "scriptHash": "0eadb6a2aabd",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Attack log + free-cumulant framing of the open covariance kernel Cov_Planch(f^λ, Σ_□c(□)²) ≤ 0 (residual gap of the Δ_λ growth bound #3939/#3959). (A) T₃=Σ(f^λ)²χ^λ(3-cycle) < 0 verified k=3..30 (margin −4T₃/T₁ → 0⁺, matching the sharp E[f^{λ/(2,1)}]/E[f^λ]→1/3⁺). (B) Kerov-polynomial framing, exact per λ (k≤14): Σ̂₃=R₄+R₂ (R₂=k, R₄=M₄−2M₂² of the transition measure), and E_Planch[R₄]=−k exactly, so the kernel ⇔ Cov_Planch(f^λ, R₄) ≤ 0 (dimension anti-correlates with the 4th free cumulant). (C) RSK form T₃=Σ_{w∈S_k}χ^{sh(w)}(3-cycle). Records why elementary approaches fail: per-λ sign false (row→+1); undivided Σχ³ is not a connection-coefficient count (no positivity model); |χ³/f^λ|≤1 attained at extremes (no uniform bound). Verdict: a Biane–Śniady / Kerov-CLT character-ratio anti-correlation; closing machinery = Śniady's genus expansion / the Kerov CLT covariance. NOT closed; maps the frontier. scope-(a); no fit; nothing wired; no c_k; L2 2/7.",
+  "data": {
+    "T3_negative_verified_to_k": 30,
+    "T3_negative_all": true,
+    "margin_first_k3": 0.8,
+    "margin_last": 0.007560182545634015,
+    "kerov_polynomial_sigma3_eq_R4_plus_R2": true,
+    "E_Planch_R4_eq_minus_k": true,
+    "kernel_equiv_cov_f_R4_le_0": true,
+    "status": "OPEN — Biane-Sniady / Kerov-CLT anti-correlation; framed not proved"
+  }
+}
