@@ -126,3 +126,36 @@ recording so it is not re-walked:
 the genuinely keystone-gated parts (`E(q)` and `tr M(q₀) = 2.6424`). The structural
 reduction above (genus-4 → elliptic, `M` a 2×2 `SL₂`) stands independent of the
 explicit `j(E)`.
+
+### Resolution — the tool-block is removed by the literature (2026-07-18, `uploads/`)
+
+The `RiemannSurface` tool-block above (option (b)) is **superseded**: two Bring
+period-matrix papers landed in `uploads/` and are now registered in
+`references.ts`. They supply the explicit period matrix **analytically** — no Sage
+`RiemannSurface` computation on the conjugate singularities is needed:
+
+- **Riera–Rodríguez 1992** (`[riera-rodriguez-1992]`, Pacific J. Math. 154): the
+  explicit period matrix `Z = τ₀·C` (`C` = the 4×4 matrix with diagonal `4`,
+  off-diagonals `±1`); the natural isogeny diagonalises `Z` to `(5τ, 5τ, 5τ, τ)`,
+  i.e. `E_{5τ}³ × E_τ`, recovering `Jac ~ E⁴`. Gives the elliptic model
+  `E: y² = x³ − 675x − 79650`.
+- **Braden–Northover 2012** (`[braden-northover-2012]`, SIGMA 8 065): recovers the
+  same `τ₀·C` via the Hulek–Craig sextic, adds the Vector of Riemann Constants and
+  the explicit anti-holomorphic **real structure** (conjugation) on `Jac(Bring)`.
+
+**Explicit j-invariants (Braden–Northover convention, authoritative):**
+`j(τ₀) = −5·29³/2⁵` and `j(5τ₀) = −25/2`. **Convention caveat:** Riera–Rodríguez
+**swap** these two equations — a typographical error flagged by Braden–Northover.
+Any corpus site quoting Riera–Rodríguez as the `j` source must use the
+Braden–Northover labelling (the `alpha-em.md` ledger's `j(τ₀) = −5·29³/2⁵` already
+matches it, via `[braden-disney-hogg-2022]`). So `j(E)` is **no longer a bounded
+open step — it is in the literature**; option (b) is closed analytically, option (a)
+(fixed-field) is unnecessary.
+
+**Bearing on the fibre-level correspondence.** Braden–Northover's explicit
+anti-holomorphic involution on `Jac(Bring)` is the **concrete Hodge-side object** of
+the α_EM per-loop `1/(8π)` fibre-level correspondence — the geometric realisation of
+the abstract anti-linear `R` named in
+[`2026-07-18-alpha-em-involution-type-nome-independent.md`](2026-07-18-alpha-em-involution-type-nome-independent.md)
+(merged #3949). It is the object to compare against the Hecke channel-swap
+`q ↦ −q⁻¹` image.
