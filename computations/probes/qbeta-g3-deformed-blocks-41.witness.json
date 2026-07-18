@@ -1,0 +1,91 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-18T09:41:07.622566+00:00",
+  "commitSha": "4298459fd1346cb2fe61cb8532ef9989fc63db14",
+  "assertions": [
+    {
+      "name": "theta_and_annihilator_exact",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "theta (109) and Theorem-16 generator to ~1e-45"
+    },
+    {
+      "name": "thm14_matches_certified_u0_side",
+      "computed": 0.0,
+      "expected": 1.0,
+      "passed": false,
+      "tolerance": 0.5,
+      "source": "Theorem 14 = GK (44) via Theorem-9-certified G-series — OPEN: coded reading off by O(1) complex ratio; 1024-reading scan found no phase/theta fix (structural; Phi_b-prefactor suspect). Honest fail recorded by design."
+    },
+    {
+      "name": "kashaev_ray_two_saddle_finite",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "exact deformed Z finite with O(1)-comparable saddle terms at tau = 1/10 + 0.05i"
+    }
+  ],
+  "allPassed": false,
+  "durationMs": 10,
+  "computation": "qbeta-g3-deformed-blocks-41",
+  "scriptFile": "qbeta_g3_deformed_blocks_41.py",
+  "scriptHash": "86eb31e08546",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
+  },
+  "description": "A_omega deformed leg, tranche A: GGM sec 5.2 holomorphic blocks A_m/B_m of the deformed 4_1 (q-Hahn Bessel + theta), certified by the theta q-difference, the PROVEN Theorem-14 factorization against the certified u=0 GK/G-series side, and the Theorem-16 annihilator. Exact deformed Z evaluated near the Kashaev ray where the two-saddle trans-series is unsuppressed.",
+  "contentBlock": "conj:im-q-physical-role",
+  "data": {
+    "source": "uploads/2012.00062v3.pdf (GGM) eqs 106-110, 126-134, Thm 14/16",
+    "checks": {
+      "theta_qdifference": true,
+      "thm14_eq_gk44_u0": false,
+      "thm16_annihilator": true,
+      "kashaev_ray_eval": true
+    },
+    "kashaev_ray": {
+      "tau": "1/10 + 0.05i",
+      "rows": [
+        {
+          "u": "0.05",
+          "absZ": "66.4162529291",
+          "absAA": "41.7669225745",
+          "absBB": "102.890239241",
+          "BB_over_AA": "2.46343835981"
+        },
+        {
+          "u": "0.1",
+          "absZ": "69.8868981336",
+          "absAA": "12.9094291744",
+          "absBB": "78.2843968185",
+          "BB_over_AA": "6.06412535838"
+        },
+        {
+          "u": "0.2",
+          "absZ": "89.7861978229",
+          "absAA": "2.44388391353",
+          "absBB": "89.6888223008",
+          "BB_over_AA": "36.6992972966"
+        }
+      ]
+    },
+    "frame_note": "3d-index ray keeps |q~|~1e-164 even deformed (x~ pure phase); the O(1) odd channel lives at the Kashaev ray tau->1/N where Theorem 14 stays exactly computable",
+    "verdict": "GGM §5.2 deformed 4_1 holomorphic blocks: theta q-difference exact (True); Theorem-16 annihilator kills A_m and B_m (True) — the blocks' m-structure is certified; exact deformed Z evaluated near the Kashaev ray tau=1/10+0.05i with both saddle terms O(1)-comparable (True) — the unsuppressed two-saddle frame where the deformed odd datum lives. OPEN (False): the Theorem-14 phase/theta assembly does not yet reproduce the certified u=0 GK side (O(1) complex ratio; 1024-reading derivation scan exhausted with no hit — residual misreading is structural, most likely a Phi_b normalization prefactor between (113) and (44)). Next: certify against direct Phi_b quadrature of (125). Honest open state recorded (anti-fabrication). No A_omega identification claimed. Scope-(a); no fit; no c_k wired."
+  }
+}
