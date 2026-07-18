@@ -1386,3 +1386,24 @@ intrinsically the 1/u³ inversion of a smooth numerator N_odd crossing zero at q
 amplification could still live: the substrate meridian tuned to an A-polynomial
 branch point (the near-singular q₀→u map, `conj:algebraic-geometric-dilog-
 equivalence` — the standing open conjecture). No c_k; no fit; scope-(a).
+
+**2026-07-18 (#3902 cont.) — BRANCH-POINT LOCUS CLOSED: substrate meridian is
+GENERIC, ~8.6e6× the anchor gap from any 4₁/5₂ branch point.** The #3902 entry
+named the last geometric hope: q₀ tuned to an A-polynomial branch point, where
+the saddle degenerates (det J → 0) and an otherwise-smooth quantum volume can
+blow up. Direct test (`qbeta_substrate_meridian_branchpoint_probe.py`, 2/2):
+4₁ branch points via the m-discriminant of A_{4₁} (B²−4m⁸, B=1−m²−2m⁴−m⁶+m⁸) —
+nearest real root at m*=0.61803 (golden-ratio conjugate), 0.492 from q₀; the
+|m|=1 branch locus is q₀−1=0.10998 away. 5₂ branch points via the gluing-saddle
+Jacobian det J (eq 4.13): det J(q₀)=4.37, O(1), NON-DEGENERATE; nearest real
+det J=0 far off. NEAREST branch point of either knot: 0.10998 from q₀ —
+~8.6e6× the 1.28e-8 proton↔muon anchor gap. The substrate meridian is generic;
+the swing is NOT a geometric near-singularity. **All four geometric routes now
+closed** (median resummation smooth #3813; classical CS/Stokes anchor-invariant
+prune; 5₂ quantum volume anchor-smooth #3902; branch-point locus generic). The
+c₃ bar-odd swing is confirmed representational — the 1/u³ inversion of a smooth
+N_odd (BarOddLadderShape) crossing zero at q*, pinned by experimental Q_β. Per
+the owner conditional (NOT anomalously close ⇒), the lever is now the
+alien-calculus / resurgence thread (D-ladder Écalle acceleration, sibling
+#3818) — where the swing lives in the transseries of D(u), not in any knot's
+geometry. No c_k; no fit; scope-(a).
