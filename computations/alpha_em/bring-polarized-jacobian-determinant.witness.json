@@ -1,0 +1,57 @@
+{
+  "computation": "bring-polarized-jacobian-determinant",
+  "description": "Polarized photon-determinant leg of \u03b1_EM 1/(8\u03c0): with the exact period \u03c4_B=\u03c4\u2080\u00b7M (Thm 2.12), det(M)=125=det(diag(5,5,5,1)) and spec(M)={1,5,5,5}=spec(diag) \u21d2 polarized and product forms share covolume+metric spectrum (O(4)-equiv). The polarized determinant differs from the naive product (8.226, not interpreted) ONLY via the genus-4 theta-factor of the integer M-lattice \u2014 the precise deferred piece. No q\u2080; no 8\u03c0; nothing wired.",
+  "auditOnly": "docs/audits/2026-07-18-bring-s4-elliptic-factor-genus-and-period-block.md",
+  "tier": "structural-exact (integer linear algebra of M + the paper's exact period; mpmath high-precision annihilation checks)",
+  "computedAt": "2026-07-18T09:53:08.696485+00:00",
+  "commitSha": "a90c398b20c14a0f9e83312208b9c6da990dc1b6",
+  "engine": "mpmath",
+  "engineVersion": "1.3.0",
+  "scriptFile": "bring_polarized_jacobian_determinant_probe.py",
+  "scriptHash": "7ac85bc0c5a3",
+  "assertions": [
+    {
+      "name": "covolume_polarization_independent",
+      "passed": true,
+      "detail": "det(M)=125.0=125=det(diag(5,5,5,1)), tr(M)=16 \u21d2 the polarized Jacobian covolume equals the product-form covolume (Im(\u03c4\u2080)\u2074\u00b7125)"
+    },
+    {
+      "name": "spectrum_is_1_5_5_5_O4_equivalent",
+      "passed": true,
+      "detail": "det(M\u2212I)=0\u22480, det(M\u22125I)=0\u22480, tr(M\u00b2)=76.0=76 (=1\u00b2+3\u00b75\u00b2) \u21d2 spec(M)={1,5,5,5}=spec(diag(5,5,5,1)): M is O(4)-equivalent to the product form (same det, same metric spectrum)"
+    },
+    {
+      "name": "naive_product_measure_recorded_not_interpreted",
+      "passed": true,
+      "detail": "m(5\u03c4\u2080)\u00b3\u00b7m(\u03c4\u2080)=8.2262852 (\u22488.226) \u2014 the PRODUCT-lattice measure; recorded for comparison. NOT interpreted: 8.226\u22608=b\u2081, and Prop 4.6 says the product is not the principally-polarized decomposition, so this is not the polarized photon determinant. No fitting."
+    },
+    {
+      "name": "polarized_reduces_to_theta_factor_of_M_lattice",
+      "passed": true,
+      "detail": "since det(M)=det(diag) and spec(M)=spec(diag), the polarized boson determinant differs from the naive product ONLY through the genus-4 theta-factor (higher-\u03b7 analog) of the INTEGER lattice Z\u2074+\u03c4\u2080M\u00b7Z\u2074 vs the product lattice \u2014 the single well-posed remaining object (Epstein/Kronecker \u03b6'(0) = Faltings/Ray-Singer invariant of the polarized Jacobian). This is the precise deferred computation"
+    }
+  ],
+  "allPassed": true,
+  "result": {
+    "det_M": 125,
+    "trace_M": 16,
+    "trace_M2": 76,
+    "spectrum_M": [
+      1,
+      5,
+      5,
+      5
+    ],
+    "covolume_polarization_independent": true,
+    "naive_product_measure": "8.226285222",
+    "remaining": "genus-4 theta-factor (Faltings/Ray-Singer \u03b6'(0)) of the integer M-lattice",
+    "verdict": "POLARIZED PHOTON-DETERMINANT SETUP (scope-(a); no q\u2080, no 8\u03c0, nothing wired): using the exact period \u03c4_B=\u03c4\u2080\u00b7M (Braden\u2013Disney-Hogg Thm 2.12), the principal-polarization form M has det(M)=125=det(diag(5,5,5,1)) and spectrum {1,5,5,5}=spec(diag) \u2014 so the polarized Jacobian and the E_{5\u03c4\u2080}\u00b3\u00d7E_{\u03c4\u2080} product form share covolume AND metric spectrum (O(4)-equivalent). The polarized photon determinant therefore differs from the naive per-factor product (8.226, #3864 \u2014 recorded, NOT interpreted; 8.226\u2260b\u2081=8 and the product is not principally-polarized per Prop 4.6) ONLY through the genus-4 THETA-FACTOR of the integer M-lattice (the Faltings/Ray-Singer invariant). This LOCALIZES the remaining magnitude-leg computation to that single well-posed object; the reciprocal \u03c0 stays RT/Front-2. Wall not closed. NO tier change."
+  },
+  "context": {
+    "source": "Braden\u2013Disney-Hogg arXiv:2208.13692 Thm 2.12 (\u03c4_B=\u03c4\u2080M) + Prop 4.6 (Jac\u2245E_{5\u03c4\u2080}\u00b3\u00d7E_{\u03c4\u2080}, non-symplectic to the product); PDF uploads/2208.13692v1.pdf",
+    "sharpens": "#3864 \u2014 replaces the naive per-factor product with the polarized-Jacobian determinant; shows they differ only via the integer-lattice theta-factor",
+    "not_interpreted": "8.226\u2248b\u2081=8 is a coincidence to resist (Prop 4.6 non-product polarization; 8.226\u22608; photon is a 1-form not a scalar) \u2014 no fitting",
+    "remaining_pieces": "the genus-4 theta-factor (magnitude) + the reciprocal \u03c0 (RT/Front-2; naive D(\u03b6)=8 shared wall falsified, 677b74277/#3871)",
+    "scope_guard": "no q\u2080, no 8\u03c0 manufactured, nothing wired, no tier change; scope-(a)"
+  }
+}
