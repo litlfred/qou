@@ -1,0 +1,89 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-18T14:16:56.003589+00:00",
+  "commitSha": "f96b32252c337cf934cab64a1c659c023e4a3281",
+  "assertions": [
+    {
+      "name": "u0_controls_pass",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "printed (73) root + Vol(5_2) + iota_12 = Vol/pi + saddle residuals (mod 2pi i, per the C/2pi^2 Z-valued V) all reproduced"
+    },
+    {
+      "name": "cs_complex_singularity_present",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "iota_13 genuinely complex at u=0 (CS != 0)"
+    },
+    {
+      "name": "nonzero_intrinsic_phase_predicted",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "deformed pole-phase deviation from kinematic well above the 4_1 null floor"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 14,
+  "computation": "qbeta-g3-5two-saddle-exact-predictions",
+  "scriptFile": "qbeta_g3_5two_saddle_exact_predictions.py",
+  "scriptHash": "c5ae9b4c5006",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
+  },
+  "description": "Port of the completed 4_1 machinery to 5_2: exact closed-form saddle data from the GGM sec-6.1 potential (curve Lean-proved) and the falsifiable deformed pole-position/phase targets for the #3892 5_2 ladder. A nonzero intrinsic pole phase is predicted — the odd-channel carrier the 4_1 null excluded.",
+  "contentBlock": "conj:im-q-physical-role",
+  "data": {
+    "source": "uploads/2012.00062v3.pdf (GGM) eqs 230-233 + 73/75",
+    "curve": "x*y^3 - (x^2+1)*y^2 + (x^2+x+1)*y - x = 0 [(232)-derived; Lean: FiveTwoSaddleCurve.lean]",
+    "u0": {
+      "xi1": "(0.78492014549902663296 + 1.3071412786820454805j)",
+      "V_sigma1": "(-3.555607890883604086169709 + 2.828122088330783162763899j)",
+      "V_sigma3": "(-7.693190819866829755912318 + 5.300487101313563962774973j)",
+      "abs_ImV1_vs_Vol52": "4.62764e-16",
+      "iota_12": "(0.90021922005043597664 + 0.0j)",
+      "iota_13": "(-0.39348911294366755122 - 0.65851677560032290195j)"
+    },
+    "deformed_targets": {
+      "12": {
+        "iota": "(0.91055766672409931382 + 0.0j)",
+        "pole": "(0.90955435341651493926 + 0.030208740237786990186j)",
+        "arg_minus_kinematic_rad": "-8.352389719e-53"
+      },
+      "13": {
+        "iota": "(-0.40191088240503163765 - 0.64717131939685599363j)",
+        "pole": "(-0.37999741822480922631 - 0.65979205311668707412j)",
+        "arg_minus_kinematic_rad": "-2.126533572"
+      },
+      "23": {
+        "iota": "(-1.3124685491291309515 - 0.64717131939685599363j)",
+        "pole": "(-1.2895517716413241656 - 0.6900007933544740643j)",
+        "arg_minus_kinematic_rad": "-2.683484508"
+      }
+    },
+    "prediction": {
+      "max_arg_dev_rad": "2.683484508",
+      "fourone_null_floor_rad": "9.2e-9",
+      "statement": "the 5_2 deformed ladder should measure a non-kinematic Borel pole phase at this scale; measuring ~0 falsifies the non-amphichiral-carrier hypothesis"
+    },
+    "verdict": "5_2 exact saddle data derived from the glyph-extracted GGM sec-6.1 potential: cleared cubic x y^3 - (x^2+1)y^2 + (x^2+x+1)y - x (Lean-proved algebraic layer; reduces to (73) at x=1, trace-field discriminant -23), printed root xi_1 reproduced (True), |Im V(sigma1)| = Vol(5_2) to 1e-10 (True), saddle residuals ~1e-46. u=0 singularities include the genuinely COMPLEX iota_13 (True) — the CS != 0 structural difference from 4_1. FALSIFIABLE TARGETS for the #3892 5_2 ladder: deformed pole predictions with max |arg - kinematic| = 2.683 rad vs the 4_1 null floor 9.2e-9 (True) — a NONZERO intrinsic pole phase is predicted for 5_2, exactly the odd-channel carrier the 4_1 null excluded. Forward predictions only; nothing fitted, nothing wired. Scope-(a); no c_k wired."
+  }
+}

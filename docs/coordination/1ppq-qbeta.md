@@ -1586,3 +1586,24 @@ confirmed from the amplitude too); the OPEN piece is the deformation Im at u≠0
 (= the meridian↔Q_β map, conj:algebraic-geometric-dilog-equivalence) — NOT a √3
 amplitude. Corrects the "√3-graded bar-odd Stokes constant" phrasing two entries
 up. No c_k wired; scope-(a); no fit.
+**2026-07-18 (post-#3930) — 5₂ PORT: exact saddle data + the FALSIFIABLE
+odd-phase targets for the #3892 ladder (Lean-proved curve layer).** The
+completed 4₁ machinery ported to GGM §6.1's 5₂: deformed curve derived
+from the (232) saddle equation — cleared cubic x·y³ − (x²+1)·y² +
+(x²+x+1)·y − x = 0 (x↔x⁻¹ palindromic: the potential (231) is u-EVEN;
+the chirality lives in the complex saddle values). Lean-proved sorry-free
+(`FiveTwoSaddleCurve.lean`, lean-direct exit 0): x=1 reduction to the
+printed (73) cubic y³−2y²+3y−1, discriminant −23 = the printed trace
+field, the pairwise Vieta certificate, and divisor-free palindromy
+(x·z = 1 ⇒ x²·curve(z,y) = curve(x,y)). Probe controls (3/3 green):
+printed root ξ₁ = 0.78492+1.30714i reproduced; |Im V(σ1)| = Vol(5₂) to
+1e-10; ι_12(0) = Vol(5₂)/π exact; saddle residuals 1e-50 (V is ℂ/2π²ℤ-
+valued — σ3-pair positions are lattice representatives, documented).
+STRUCTURAL CONTRAST WITH 4₁: the u=0 singularities already include the
+genuinely COMPLEX ι_13 = −0.39349 − 0.65852i (CS(5₂) ≠ 0). FALSIFIABLE
+TARGETS for #3892: deformed (u_sub = 2t) ξ-frame pole predictions —
+ι̃_12 → 0.90955+0.03021i (kinematic phase EXACTLY, like 4₁'s conjugate
+pair); ι̃_13/ι̃_23 → poles with |arg − kinematic| up to 2.683 rad vs the
+4₁ null floor 9.2e-9 — a NONZERO intrinsic pole phase is predicted for
+the 5₂ σ3-pairs, exactly the odd-channel carrier the 4₁ null excluded.
+Forward predictions only; nothing fitted; nothing wired. No c_k wired.
