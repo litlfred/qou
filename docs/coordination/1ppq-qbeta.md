@@ -1475,3 +1475,30 @@ Theorem-14 block factorization (τ → 1/N + iε with the meridian scaling),
 which the deformed-blocks probe already evaluates. Probe
 `qbeta_g3_deformed_saddle_exact_bridge.py` → witness 2/2 green. No fit;
 no c_k wired.
+
+**2026-07-18 (post-#3898) — TRANCHE B PART 2: FIRST A_ω-ADJACENT NUMBERS —
+u=0 dictionary CONFIRMED against the GGM integer 3 (ratio 0.92); deformed
+amplitude |2πi·r̃|(u_sub) ≈ 1.296; SELF-CORRECTION: the tower singularity
+IS the fixed-x closed form.** Borel–Padé residue probe
+(`qbeta_g3_aomega_residue_first_number.py`, 4/4 green): (i) u=0 CONTROL on
+the 12 EXACT symbolic rungs — leading pole 0.25% from Vol/π and
+|2πi·res| = 2.753, ratio 0.918 to the GGM-PROVED integer Stokes constant 3
+(#3872 exact S⁺(0)) — the resurgence normalization dictionary (tower Borel
+residue = Stokes amplitude) is confirmed at the ~8% Padé-instrument level;
+(ii) DEFORMED leg on the measured κ̃₁..κ̃₅: first amplitude estimate
+|2πi·r̃|(u_sub) ≈ 1.296 (spread 5%) — the A_ω-adjacent number, honest
+instrument precision, NOT wired; (iii) SELF-CORRECTION of the part-1
+scope-(a) negative: the deformed Padé poles trend 5.9%→4.9%→3.8% onto the
+EXACT fixed-x closed form ι̃·2πi/ξ = 0.44905+0.01491i — the corpus ladder
+holds x = e^u fixed, so it IS the fixed-x limit; the part-1 negative is
+RE-SCOPED to the #3819 Borel construction only (its pole 0.631 is a
+different-instrument number). The closed form (V(σ1)−V(σ2))/(2πi) — whose
+algebraic layer is Lean-proved — is now the leading candidate for the
+deformed tower singularity, with the amplitude ratio 1.296/2.753 ≈ 0.47
+measuring the deformation of the Stokes constant from its u=0 integer 3.
+LEAN EXTENSION (owner ask): `DeformedSaddleCurve.lean` +3 sorry-free
+lemmas (lean-direct exit 0): cube/sixth-power at the u=0 saddles (y³ = −1,
+y⁶ = 1 via linear_combination) and `saddle_separation` — x²(y₁−y₂)² =
+(x²−3x+1)(x²+x+1) from the Vieta pair, tying ι̃'s branch locus to the
+proven (119) factorization (the algebraic core of meridian genericity).
+No fit; no c_k wired.
