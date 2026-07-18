@@ -65,3 +65,39 @@ formalize-first derivation-vs-fit check against the even-face action
 
 No `A_ω` or `c_k` wired; nothing reaches production until a Stokes constant
 is genuinely *derived* from the index (not fitted). scope-(a).
+
+## Follow-on: 4₁ gluing — ground truth found, normalization blocker localized
+
+With the triality green I attempted the 4₁ two-tetrahedron gluing. Two concrete
+results, one clean stop:
+
+1. **Ground-truth target (citable).** The rotated 3d-index of the figure-eight is
+   the double lattice sum
+   $$\mathrm{Ind}_{4_1}(q)=\sum_{k_1,k_2\in\mathbb Z} I_\Delta(k_1,k_2)\,I_\Delta(k_2,k_1)
+   = 1-8q-9q^2+18q^3+46q^4+90q^5+\cdots$$
+   (Garoufalidis, *The 3D-index and normal surfaces*; the two tetrahedra carry the
+   **swapped** charge pair `(k_1,k_2)`, `(k_2,k_1)`). SnapPy confirms the
+   2-tetrahedron triangulation and supplies the NZ gluing equations
+   (`Manifold('4_1').gluing_equations()`), so the NZ data is *not* guessed.
+
+2. **The raw `I_Δ` is a Laurent series and the naive sum diverges — a
+   normalization prefactor is required.** The canonical `I_Δ(m,e)` has **negative**
+   q^{1/2}-powers with min-degree ≈ `−k²` (e.g. `I_Δ(2,2)` starts at `q^{−3}`).
+   Computed as a full Laurent series and summed over the lattice, the naive
+   `Σ I_Δ(k_1,k_2) I_Δ(k_2,k_1)` does **not** converge (the `q^0…q^5` coefficients
+   do not stabilize as the truncation `K` grows, and the negative powers do not
+   cancel) and does **not** reproduce `[1,−8,−9,18,46,90]`. This confirms — from the
+   gluing side — the **normalization prefactor** the triality work already flagged
+   (an overall q-power / `ζ=−q^{1/2}` convention on `I_Δ`): it gates the *gluing*,
+   not only the triality self-test.
+
+**Honest stop (anti-numerology).** Fitting a per-term prefactor to force
+convergence onto the known `[1,−8,−9,18,46,90]` would be a fit, not a derivation —
+forbidden. The exact index-normalization of `I_Δ` (the min-degree function
+`ν(m,e)` and any `ζ`-power) must come from the primary source (Garoufalidis
+arXiv:1208.1663 §index; DGG arXiv:1112.5179), which is proxy-blocked in this
+sandbox. **Handoff for #3805:** pin `ν(m,e)` from the source, apply it to the
+triality-validated `I_Δ`, and validate the rotated sum against the target sequence
+above before reading the GGM Stokes data. The triality relations from this PR
+(`(−q^{1/2})^m·I_Δ(−e−m,m)`; `I_Δ(−e,−m)`) then simplify the double sum along its
+S₃ orbits.
