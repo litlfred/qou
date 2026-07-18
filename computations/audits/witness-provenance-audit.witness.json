@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-17T23:17:15.624622+00:00",
-  "commitSha": "61c8887b0d4891318c21259817baa18a78c05676",
+  "computedAt": "2026-07-18T01:22:32.298828+00:00",
+  "commitSha": "b9620167b9e0f3f386b64d7f90dc7aefa3767239",
   "assertions": [
     {
       "name": "no_missing_provenance",
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 14,
+  "durationMs": 15,
   "computation": "witness-provenance-audit",
   "scriptFile": "witness_provenance_audit.py",
   "scriptHash": "1abb80bb6c90",
@@ -46,12 +46,12 @@
   },
   "data": {
     "counts": {
-      "total_scanned": 1896,
-      "prov_ok": 1575,
+      "total_scanned": 1899,
+      "prov_ok": 1578,
       "prov_audit_exempt": 59,
       "prov_missing": 261,
       "prov_parse_error": 1,
-      "completeness_ratio": 0.8618143459915611
+      "completeness_ratio": 0.8620326487625066
     },
     "by_verdict": {
       "PROV_OK": [
@@ -241,6 +241,10 @@
         },
         {
           "witness": "alpha-em-bring-jacobian-zeta-determinant.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "alpha-em-channel-split-loop-measure.witness.json",
           "missing_fields": []
         },
         {
@@ -5273,6 +5277,14 @@
         },
         {
           "witness": "qbeta-odd-carrier-sector-decomposition.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "qbeta-odd-channel-saddle-crosslink.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "qbeta-odd-channel-stokes-borel.witness.json",
           "missing_fields": []
         },
         {
