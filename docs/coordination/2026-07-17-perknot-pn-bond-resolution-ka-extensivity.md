@@ -63,11 +63,16 @@ degeneracy-break — plausibly the same physics as #3808's bar-parity-fall facto
 `computations/deltalambda/perknot-pn-bond-mayer-grounding.witness.json`. The
 "why inverse?" question is answered three ways (all 3 assertions pass):
 
-1. **Structural reduction (exact).** T=(p,n,n) has bonds {pn,pn,nn}; ³He=(p,p,n)
-   has {pp,pn,pn} — the *only* difference is one pp↔nn swap. Under the product
-   aggregate the split reduces **exactly** to `w(nn)/w(pp) = (tr_p/tr_n)²`
-   (verified rel_eps 1e-40). The exponent 2 is a same-type bond's two endpoints
-   — not tuned.
+1. **Structural reduction (exact — now Lean-proved).** T=(p,n,n) has bonds
+   {pn,pn,nn}; ³He=(p,p,n) has {pp,pn,pn} — the *only* difference is one pp↔nn
+   swap. Under the product aggregate the split reduces **exactly** to
+   `w(nn)/w(pp) = (tr_p/tr_n)²`. This algebraic identity is now formalized
+   sorry-free over a generic field (§7c, no ℝ) in
+   `content/quantum-observable-universe/lean/QOU/MassTheory/BondWeightIsospinSplit.lean`
+   (`triton_helium3_split`: aggregate ratio = `(a/b)²`; `split_is_nn_over_pp_swap`:
+   the two shared pn bonds cancel, leaving the nn-for-pp swap). The exponent 2 is
+   a same-type bond's two endpoints — not tuned. Numerically `(tr_p/tr_n)² ≈
+   1.3315` vs target 1.3501, −1.38% (verified rel_eps 1e-40 in the witness).
 2. **Categorical home.** `1/(tr_M(a)·tr_M(b))` is the ideal-gas / **Mayer
    normalization** of the pair correlation `g₂ = tr(ab)/(tr(a)tr(b)) − 1` — the
    **b₂ (pairwise) level** of the Ursell cluster expansion `B/m_e = Σ_k b_k`
