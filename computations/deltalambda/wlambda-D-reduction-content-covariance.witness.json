@@ -1,0 +1,151 @@
+{
+  "engine": "python-exact",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-07-18T15:11:37.337995+00:00",
+  "commitSha": "883269e6327a23c0c0e6669aaec75d4046fcb8a8",
+  "assertions": [
+    {
+      "name": "D_reduced_to_content_covariance_kernel",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "(D) ⇔ 4T₃≤T₁ with T₂=0 exact and χ-identities positive-controlled vs direct skew counts; via JM content formula ⇔ Cov(f^λ,Σc²)≤0. Verified k≤20 (T₃<0 strict); residual open kernel = the covariance inequality. No fit; no c_k."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 202,
+  "computation": "wlambda-D-reduction-content-covariance",
+  "scriptFile": "wlambda_D_reduction_content_covariance.py",
+  "scriptHash": "caf4f24c85db",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Rigorous reduction of the Δ_λ growth sub-lemma (D) w_std=E_Planch[f^{λ/(2,1)}] ≥ E_Planch[f^{λ/(3)}] (open input of #3939) to a single clean kernel: the Plancherel covariance inequality Cov(f^λ, Σ_□ c(□)²) ≤ 0. Via exact S_k character identities f^{λ/(2,1)}=(f^λ−χ₃)/3, f^{λ/(3)}=(f^λ+3χ₂+2χ₃)/6 (χ₂=char on transposition, χ₃=on 3-cycle): Σ(f^λ)²(f^{λ/(2,1)}−f^{λ/(3)})=(T₁−4T₃−3T₂)/6 with T₁=Σ(f^λ)³, T₂=Σ(f^λ)²χ₂, T₃=Σ(f^λ)²χ₃. T₂=0 EXACT (conjugation sgn), so (D)⇔4T₃≤T₁⇐T₃≤0. Jucys–Murphy content formula χ^λ(3-cycle)=3f^λ(Σc²−C(k,2))/(k(k-1)(k-2)) ⇒ T₃≤0 ⇔ Σ(f^λ)³(Σc²−C(k,2))≤0 = Cov(f^λ,Σc²)≤0 (dimension & content-spread anti-correlate). Positive-controlled: the per-λ χ-identities reproduce direct Aitken skew counts for all λ. Verified T₂=0, T₃<0, (D), Cov≤0 for k=3..20 (agent k≤32); margin stronger than needed (E[f^{λ/(2,1)}]/E[f^λ]→1/3⁺). No closed form for T₃ (Morales–Pak–Panova) ⇒ the covariance is the residual open kernel, to be proved as an anti-correlation (Kerov CLT / Fulman). scope-(a); no fit; nothing wired; no c_k; L2 2/7.",
+  "data": {
+    "positive_control_char_identities_ok": true,
+    "T2_zero_exact": true,
+    "T3_strictly_negative": true,
+    "D_equiv_4T3_le_T1": true,
+    "kernel": "Cov_Planch(f^lambda, sum_cell content^2) <= 0",
+    "table": [
+      {
+        "k": 3,
+        "T2": 0,
+        "T3": -2,
+        "E_sk21_over_E_f": 0.4
+      },
+      {
+        "k": 4,
+        "T2": 0,
+        "T3": -2,
+        "E_sk21_over_E_f": 0.34375
+      },
+      {
+        "k": 5,
+        "T2": 0,
+        "T3": -16,
+        "E_sk21_over_E_f": 0.3422818791946309
+      },
+      {
+        "k": 6,
+        "T2": 0,
+        "T3": -260,
+        "E_sk21_over_E_f": 0.34409136047666333
+      },
+      {
+        "k": 7,
+        "T2": 0,
+        "T3": -2336,
+        "E_sk21_over_E_f": 0.33930323846908733
+      },
+      {
+        "k": 8,
+        "T2": 0,
+        "T3": -28792,
+        "E_sk21_over_E_f": 0.3371193233818285
+      },
+      {
+        "k": 9,
+        "T2": 0,
+        "T3": -632972,
+        "E_sk21_over_E_f": 0.3368602556840957
+      },
+      {
+        "k": 10,
+        "T2": 0,
+        "T3": -19676288,
+        "E_sk21_over_E_f": 0.33714993943998317
+      },
+      {
+        "k": 11,
+        "T2": 0,
+        "T3": -536156728,
+        "E_sk21_over_E_f": 0.3364823185995405
+      },
+      {
+        "k": 12,
+        "T2": 0,
+        "T3": -15073599368,
+        "E_sk21_over_E_f": 0.33571397740853715
+      },
+      {
+        "k": 13,
+        "T2": 0,
+        "T3": -506810488304,
+        "E_sk21_over_E_f": 0.3352534783506126
+      },
+      {
+        "k": 14,
+        "T2": 0,
+        "T3": -22172234503696,
+        "E_sk21_over_E_f": 0.33512314076644056
+      },
+      {
+        "k": 15,
+        "T2": 0,
+        "T3": -1192602485739392,
+        "E_sk21_over_E_f": 0.335153687591792
+      },
+      {
+        "k": 16,
+        "T2": 0,
+        "T3": -66317362326945680,
+        "E_sk21_over_E_f": 0.33505853148268555
+      },
+      {
+        "k": 17,
+        "T2": 0,
+        "T3": -3739005858421579852,
+        "E_sk21_over_E_f": 0.33484893433455654
+      },
+      {
+        "k": 18,
+        "T2": 0,
+        "T3": -221652176124179610176,
+        "E_sk21_over_E_f": 0.3346247041296881
+      },
+      {
+        "k": 19,
+        "T2": 0,
+        "T3": -14586861263905671449384,
+        "E_sk21_over_E_f": 0.3344626191587256
+      },
+      {
+        "k": 20,
+        "T2": 0,
+        "T3": -1105899474864697741281712,
+        "E_sk21_over_E_f": 0.3343842711400159
+      }
+    ]
+  }
+}
