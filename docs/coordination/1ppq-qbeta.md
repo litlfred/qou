@@ -1877,3 +1877,25 @@ crossing to deformed x — port the sandwich structure onto the #3951
 deformed Theorem-22 blocks, certify the off-ray strip, and sharpen
 φ_odd (#3987, −0.004145 preliminary) to derived precision. No fit;
 no c_k wired; scope-(a).
+
+**2026-07-18 (analytic M-dictionary, part 2c-1) — THE DEFORMED LAYER
+IS CERTIFIED AND THE EXACT BAR-TRANSFORM TOOL IS IN HAND: descendant
+blocks, the deformed bilinear (245), and the (250) wall-crossing
+identity all stand at 1e-34..1e-46.** `qbeta_g3_5two_deformed_bilinear.py`
+(2/2 green): the descendant blocks A_m/B_m/C_m (GGM 241a-c, z-slot
+q^m·x^{±2} + x^{±m}/θ⁻² structure), the deformed W_m(x;q) (244), and
+the bilinear W_{m,μ}(u;τ) = W_{−μ}(x̃;q̃⁻¹)·Δ(τ)·W_m(x;q)ᵀ (245/246 —
+the deformed analogue of the (92) sandwich). Certified: [W₀,₀]₁₁
+reproduces the #3951-certified Z₅₂ (2e-45); the (247) x↔x⁻¹ symmetry
+holds at descendant order m=2 (1e-45); Theorem 22(c) u-ENTIRETY holds
+at the lattice point u* = log q at descendant (m,μ) = (1,2)
+(two-radius circle-average, 5e-34); and the (250) WALL-CROSSING
+determinant identity — H(x,y,z;q⁻¹) = det(2×2 of H⁺'s)/(y·θ-triple),
+the exact q→q⁻¹ bar-transform of the deformed blocks — holds at
+generic (x,y,z,q) to 1e-45 with the printed reading (no scan needed).
+This is the structural tool the barodd probe (#3962) said was missing:
+the intrinsic bar-odd extraction can now strip the classical prefactor
+via the bilinear + crossing identity instead of Borel numerics. NEXT
+(part 2c-2): apply (250) at the substrate bar-pair → φ_odd at derived
+precision (vs #3987 preliminary −0.004145). No fit; no c_k wired;
+scope-(a).
