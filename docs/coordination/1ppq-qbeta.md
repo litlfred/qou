@@ -1233,3 +1233,23 @@ dual/large-argument (Stokes) monodromy — the 3d-index/GGM face owned by siblin
 #3805/#3826 (their `I_Δ(0,0)=0.192279` consumed as a cited reference only;
 assembly not touched). Empirical companion of `MonodromyDatumRigidity` + the
 non-perturbative phase law (`c821747763`). No fit; no c_k; registry untouched.
+
+**2026-07-18 (#3813) — 4₁ TOTAL 3d-index assembled + validated; #3826's
+"honestly open" state closed as a NUMERICAL BUG.** DGG 1112.5179 eq (4.18)
+`I_41(m,e) = Σ_{e₂∈ℤ} I_Δ(m−e₂,m+e−e₂)·I_Δ(e−e₂,−e₂)` assembled on the
+validated tranche-1 exact I_Δ engine
+(`qbeta_g3_fourone_index_assembly_corrected.py` + witness, 3/3 pass):
+reproduces the paper's PRINTED anchor eq (4.20)
+`I_41(1,1) = −q−q²+2q³+7q⁴+11q⁵+11q⁶+3q⁷` **exactly**, is window-stable
+(convergent), and satisfies the (4.19) amphichiral symmetry
+`I_41(m,e)=I_41(−m,−e)`. **Key finding for the G3 route-1 sibling:** the merged
+#3826 assembly's "honestly open / no-certification" verdict was a *numerical
+bug* — its `tet_norm` under-summed the per-factor series, reported a spurious
+negative lead for large-argument I_Δ, and its convergence guard then wrongly
+rejected the convergent bare sum as a "flat divergent wing." There is **no
+missing 'U=2·log m charge dictionary'**: (4.18)'s arguments ARE the resolved
+dictionary (DGG §4.3 scout of uploads/1112.5179). Validated coefficients now in
+hand: `I_41(0,0) = 1−2q−3q²+2q³+8q⁴+18q⁵+18q⁶+14q⁷−12q⁸−52q⁹−106q¹⁰−…`. The A_ω
+VALUE remains one tranche away — the coefficient↔Stokes dictionary (GGM
+2012.00062, classical Stokes matrix `S⁰=[[1,0],[−3,1]]` → load-bearing integer
+3). No c_k wired; no fit; scope-(a).
