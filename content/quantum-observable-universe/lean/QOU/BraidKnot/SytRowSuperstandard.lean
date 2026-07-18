@@ -126,4 +126,48 @@ theorem rowPrefix_succ_le_card {i j : ℕ} (hcell : (i, j) ∈ μ) :
   have hmono : rowPrefix μ (i + 1) ≤ rowPrefix μ (μ.colLen 0) := rowPrefix_mono μ hi
   simpa [rowPrefix] using hmono
 
+/-- The row-superstandard entry on a cell `(i, j) ∈ μ` is `rowPrefix μ i + j + 1`. -/
+theorem rowSuperstandardSsyt_entry_of_mem {i j : ℕ} (h : (i, j) ∈ μ) :
+    (rowSuperstandardSsyt μ).entry i j = rowPrefix μ i + j + 1 := by
+  show rowSuperstandardEntry μ i j = _
+  rw [rowSuperstandardEntry, if_pos h]
+
+/-- **`MapsTo`**: the row-reading filling sends each cell into `{1, …, |μ|}`. Upper bound from
+`rowPrefix_succ_le_card` (`j + 1 ≤ rowLen i`, then `rowPrefix (i+1) ≤ |μ|`). -/
+theorem rowSuperstandard_mapsTo :
+    Set.MapsTo (fun c : ℕ × ℕ => (rowSuperstandardSsyt μ).entry c.1 c.2)
+      (μ.cells : Set (ℕ × ℕ)) (Set.Icc 1 μ.cells.card) := by
+  rintro ⟨i, j⟩ hc
+  rw [Finset.mem_coe, mem_cells] at hc
+  simp only [rowSuperstandardSsyt_entry_of_mem μ hc, Set.mem_Icc]
+  refine ⟨by omega, ?_⟩
+  have hj : j < μ.rowLen i := mem_iff_lt_rowLen.mp hc
+  have hb : rowPrefix μ (i + 1) ≤ μ.cells.card := rowPrefix_succ_le_card μ hc
+  rw [rowPrefix_succ] at hb
+  omega
+
+/-- **`InjOn`**: distinct cells get distinct row-reading labels. If the labels agree, the rows must
+agree (a later row's first label already exceeds any earlier row's last label, by
+`rowPrefix_mono` + `j < rowLen`), and then the columns agree by cancellation. -/
+theorem rowSuperstandard_injOn :
+    Set.InjOn (fun c : ℕ × ℕ => (rowSuperstandardSsyt μ).entry c.1 c.2)
+      (μ.cells : Set (ℕ × ℕ)) := by
+  rintro ⟨i1, j1⟩ hc1 ⟨i2, j2⟩ hc2 heq
+  rw [Finset.mem_coe, mem_cells] at hc1 hc2
+  simp only [rowSuperstandardSsyt_entry_of_mem μ hc1, rowSuperstandardSsyt_entry_of_mem μ hc2] at heq
+  have hj1 : j1 < μ.rowLen i1 := mem_iff_lt_rowLen.mp hc1
+  have hj2 : j2 < μ.rowLen i2 := mem_iff_lt_rowLen.mp hc2
+  have hi : i1 = i2 := by
+    rcases lt_trichotomy i1 i2 with h | h | h
+    · exfalso
+      have h1 : rowPrefix μ (i1 + 1) ≤ rowPrefix μ i2 := rowPrefix_mono μ (by omega)
+      rw [rowPrefix_succ] at h1; omega
+    · exact h
+    · exfalso
+      have h1 : rowPrefix μ (i2 + 1) ≤ rowPrefix μ i1 := rowPrefix_mono μ (by omega)
+      rw [rowPrefix_succ] at h1; omega
+  subst hi
+  have hj : j1 = j2 := by omega
+  rw [hj]
+
 end QOU.BraidKnot
