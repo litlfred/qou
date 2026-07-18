@@ -133,6 +133,26 @@ principle — the open problem itself).
   colored face.** Bean `qou-3yxn` stays open, blocked here. A discarded
   O(N⁸) R-matrix attempt failed its own braid-relation gate pre-commit —
   the gates-first discipline caught every fault in this tranche.
+- **A5.2 ARBITRATION LANDED (6/6) — GZ (7.9) correct, Masbaum Thm-5.1 p=2
+  REFUTED; the N=3 categorical q\*-test is now CERTIFIED.**
+  [`qbeta_5two_n3_cable_arbitration_probe.py`](../../computations/probes/qbeta_5two_n3_cable_arbitration_probe.py)
+  + witness: a generic TL_n transfer engine computes the **definitional**
+  `J'₃ = ⟨K(e₂)⟩/⟨e₂⟩` via 2-cabled braid closures. Gates: corpus TL₃ Jones
+  at 1e-31; the 4₁ 2-cable = the trusted p=−1 tower at **1e-30** (key:
+  `q_Masbaum = q_cable²` — "recall a = A²"); trefoil calibrates the framing
+  factor to exactly `q⁴` = the standard ribbon twist `q_M²` on V₃.
+  **Verdict:** at the radial root limit (`⟨e₂⟩ = [3]` vanishes at the N=3
+  root — genuine 0/0, handled by limit) the cable gives
+  `|J'₃(5₂)| = 20.95232671` = **GZ eq (7.9)** to the ε-residual — not the
+  Masbaum tower's 16.09; at real q the tower deviates measurably (8.5e-6 at
+  q=1.037, growing with |q−1|). **The printed Thm-5.1 p≥2 assembly is not
+  the 5₂ colored Jones** — resolved, not just flagged. **Certified [C]:**
+  the bar-odd datum `B₃(5₂;q*) = 0.394` via the validated cable has **no
+  zero** on q\*±2e-8 and is anchor-smooth (8.4e1; 4₁ null control 6.8e-31)
+  — capstone constraint (2) fails on the certified N=3 categorical face
+  (scope-(a)), superseding the earlier uncertified tower diagnostic. Higher
+  N needs e_{N−1} cables (Catalan growth) — open but now on a validated
+  foundation.
 - **A5 disposition (narrowed + first bricks laid).** The A3 falsification +
   sibling #3954's σ3-shape constraint jointly kill the analytic-saddle
   carrier; the capstone carrier search narrows to the **categorical H₃(q)
