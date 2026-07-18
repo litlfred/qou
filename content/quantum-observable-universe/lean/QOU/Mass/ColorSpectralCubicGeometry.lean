@@ -1,4 +1,4 @@
-import Mathlib.Data.Real.Basic
+import Mathlib.Algebra.Field.Basic
 import Mathlib.Tactic.Ring
 import Mathlib.Tactic.FieldSimp
 
@@ -36,23 +36,28 @@ geometry beneath it. The bare differential's residue route is already pinned
 negative (`Res(X dz)=0` at every finite branch point, PR #2755); the open core
 is the explicit `λ_SW^(n)` on `S_c`, not this geometry.
 
-Ground ring `ℝ` (substrate-anchor regime; the identities are q-rational at the
-fibre level). AGENTS.md §7c: pure field algebra, closed by `ring` / `field_simp`.
+Ground ring is a generic `[CommRing R]` (§7c): the identities are q-rational at
+the fibre level — pure field algebra, closed by `ring` / `field_simp`, with no
+archimedean construct (the substrate-anchor specialisation `R := ℝ` at the
+spacetime ratio `z = √q − 1/√q` happens at the consumer). Only the palindromic
+lemma (which inverts `z`) needs `[Field R]`.
 -/
 
 namespace QOU.Mass.ColorSpectralCubicGeometry
 
+variable {R : Type*}
+
 /-- The **branch-locus sextic** `D(z) := 16z⁶+24z⁵+35z⁴+50z³+35z²+24z+16`
 (`= −disc_X C_z`). Its six zeros are the ramification points of the color
 spectral curve — the bases of the exceptional divisors `S_c`. -/
-def branchSextic (z : ℝ) : ℝ :=
+def branchSextic [CommRing R] (z : R) : R :=
   16 * z ^ 6 + 24 * z ^ 5 + 35 * z ^ 4 + 50 * z ^ 3 + 35 * z ^ 2 + 24 * z + 16
 
 /-- **Discriminant of the color spectral cubic.** For
 `C_z(X) = X³ + bX² + cX + d` with `b = z+1`, `c = z²+z+1`, `d = z³+z²+z+1`, the
 monic-cubic discriminant `b²c² − 4c³ − 4b³d + 18bcd − 27d²` equals the negative
 branch-locus sextic `−branchSextic z` (cross-checked against `sympy.discriminant`). -/
-theorem color_cubic_discriminant (z : ℝ) :
+theorem color_cubic_discriminant [CommRing R] (z : R) :
     (z ^ 2 + z + 1) ^ 2 * (z + 1) ^ 2 - 4 * (z ^ 2 + z + 1) ^ 3
         - 4 * (z + 1) ^ 3 * (z ^ 3 + z ^ 2 + z + 1)
         + 18 * (z + 1) * (z ^ 2 + z + 1) * (z ^ 3 + z ^ 2 + z + 1)
@@ -66,7 +71,7 @@ theorem color_cubic_discriminant (z : ℝ) :
 (coefficients `[16,24,35,50,35,24,16]` read the same both ways). The reciprocal
 symmetry of the branch locus is a constraint any prolongation residue sum on the
 `S_c` must respect. -/
-theorem branchSextic_palindromic (z : ℝ) (hz : z ≠ 0) :
+theorem branchSextic_palindromic [Field R] (z : R) (hz : z ≠ 0) :
     z ^ 6 * branchSextic z⁻¹ = branchSextic z := by
   unfold branchSextic
   field_simp
