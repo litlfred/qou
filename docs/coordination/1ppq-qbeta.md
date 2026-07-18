@@ -1786,3 +1786,28 @@ the 3×3 W_m, the (94)-(95) M/S sandwiches derived OCR-free against the
 q→0 targets (96/97, constants {3,4}), then wall-crossing to deformed x.
 φ_odd (#3987, −0.004145 on-ray) stands as preliminary. No fit; no c_k
 wired; scope-(a).
+
+## 2026-07-18 — knot-operator/Gram recurrence framing ↔ the c_k/Ohtsuki ladder (structural, no wire)
+
+The c_k precision ladder is "conceptually the Ohtsuki invariants ... ladder +
+Habiro–Pochhammer bridges" (cheat-sheet, above). This session formalizes the *recurrence
+mechanism* behind that ladder and pins where the odd channel departs from it:
+
+- **Even/geometric channel = knot-operator + Gram recurrence (q-holonomic / quantum
+  A-polynomial).** A knot operator that is a power of a braiding element acts on a
+  finite-dimensional Hecke/TL module; Cayley–Hamilton ⇒ an order-`d` linear recurrence
+  (`d = N+1` at colour `N`), and the Markov-pairing **Gram matrix** makes it self-adjoint so
+  `G⁻¹` builds the projector basis that diagonalises it. Lean: `QOU/BraidKnot/`
+  `KnotOperatorRecurrence.lean` (twist 2×2: `charpoly_two` → `trace_two_step`,
+  `twist_gram_selfAdjoint`; PR #3995) + `ColoredJonesRecurrence.lean` (general order-`d`:
+  `pow_recurrence_of_relation`, `trace_recurrence_of_relation`). This IS the AJ / quantum
+  A-polynomial structure the Ohtsuki-invariant ladder rides on — the same Gram inverse that
+  gives the LP/SDP confinement dual.
+- **Bar-odd `Q_β` channel escapes it (KC22).** The D-ladder `D(ũ)` is proven **not** low-order
+  `(q-)holonomic` in any tested class (KC22, prime-certified). In this language: the odd
+  channel is *not* the trace of powers of a knot operator on any finite-dimensional Gram
+  module — it has no quantum-A-polynomial recurrence, hence the resurgent/Écalle route. The
+  even(μ–p) vs odd(`Q_β`) split is exactly "has a Gram recurrence" vs "does not."
+
+Audit: [`2026-07-18-knot-operator-gram-recurrence.md`](../audits/2026-07-18-knot-operator-gram-recurrence.md).
+Records the mechanism + its KC22 boundary; no c_k wired, no fit, no tier change.
