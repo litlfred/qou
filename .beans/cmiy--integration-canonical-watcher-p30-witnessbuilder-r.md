@@ -468,3 +468,22 @@ violations (every non-provenance key byte-identical vs HEAD). Includes nonrunnab
 (he_nu_sdp_*, option_e sweeps) since in-place needs no run. PROV_MISSING 159 -> 100.
 Remaining 100 = computed-name/orphan (canonical chi-*-at-q0 set: f-string producers, no
 unambiguous literal writer) — still need the chi-pipeline producer map or owner input.
+
+## 2026-07-18 — SESSION CLOSE (232 -> 101 PROV_MISSING; batches 20-38, 19 PRs merged)
+Remaining 101 = the canonical chi-*-at-q0 / nucleus-sdp set. Attribution wall CONFIRMED:
+these producers write via `_pb.witness_path(<computed name>, HERE).write_text(...)` — the
+witness name is built (f-string / name_map) and passed through the witness_path() helper,
+so it never sits adjacent to the write call. Neither literal-writer nor f-string-template
+matching resolves a UNIQUE producer (0/101 auto-resolved). Reliable scriptFile attribution
+now requires per-script reading of each producer's naming logic — bespoke, and error-prone
+on the GATED canonical set (mis-attribution writes false provenance; already reverted once
+when rho_w_crystal_vertex_trace, a READER, was picked as the chi-deuteron producer).
+
+TOOLS LEFT FOR NEXT PASS (all in scratchpad, reusable):
+- autostamp.py: re-run + audit-gated stamp (for runnable single/read-write producers)
+- inplace_stamp.py: value-preserving metadata-only stamp (0 value violations guarantee);
+  feed it a hand-built {witness: correct_producer.py} map for the chi/nucleus set.
+NEXT STEP to finish cmiy: build the chi/nucleus producer map by reading the ~6 pipeline
+scripts (chi_*_lossless, chi_at_q0_via_matrix_m_mpfr, nucleus_real_sdp, ...) to see which
+computed name each emits, then run inplace_stamp.py with that map. Owner input optional
+since in-place is value-preserving, but the map itself is the gated/bespoke work.
