@@ -172,3 +172,22 @@ cancellation of two `Φ_b` solutions — a meromorphic-divisor argument (Mathlib
 meromorphic API is thin). `hspan` and `hibinv` are lighter and separable. Nothing
 is axiomatized; the reduction is a proved implication, so any future proof of the
 three inputs closes `uniqueUpToScalar` by direct application.
+
+## 9. Update (prepare-merge integration) — converged with upstream elliptic-Liouville
+
+The reuse-and-simplify pass against the 42 upstream commits caught a **parallel
+duplicate**: `origin/main` landed `QOU/MathlibExt/DoublyPeriodicLiouville.lean`
+(`const_of_doublyPeriodic` + `ratio_const_of_doublyPeriodic`, sorry-free) — the
+same elliptic-Liouville step this branch proved as `EllipticLiouville.lean`.
+Per the discipline, the branch's duplicate was **deleted** and its work
+re-pointed to the upstream lemma; two independent proofs of the same Liouville
+step are a confirmation, not waste (supersedes §7's `EllipticLiouville.lean`
+reference).
+
+Net after convergence: `QOU/QBeta/FaddeevRigidityReduction.lean`
+(`uniqueUpToScalar_of_entire`, `lean`-direct exit 0) now **consumes** upstream
+`ratio_const_of_doublyPeriodic`, retaining only the branch's novel
+FaddeevPhi-specific content — the compact `ib`-period of the ratio is **derived**
+from nowhere-zero (via `phi_b_quasiperiod`), not assumed, so a caller supplies
+only the dual `i/b`-period, entireness, and the basis. The §8 open-input table
+is unchanged (hratio / hspan / hibinv).
