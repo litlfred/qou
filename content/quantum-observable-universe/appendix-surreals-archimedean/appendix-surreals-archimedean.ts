@@ -29,6 +29,7 @@ export default chapter({
         "analytic-obstructions-table2-data",
         "ecalle-borel-resummation",
         "ecalle-borel-resurgence-vocabulary",
+        "habiro-tail-archimedean-action",
         "st-is-median-resummation",
         "standard-part-functor",
         "standard-part-classical-limit",
