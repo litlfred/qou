@@ -226,15 +226,13 @@ def main() -> int:
     signal.alarm(180)  # hard cap; grid verdict already stands without this
     try:
         res = sp.resultant(N4, N6, beta)
-        res = sp.factor(res)
         res_ok = True
-        # rational roots first (exact categorical check)
         num_res = sp.numer(sp.together(sp.expand(res)))
         poly_a = sp.Poly(num_res, alpha)
-        rat_roots = [r for r in sp.roots(poly_a).keys() if r.is_rational]
-        real_roots = [r for r in poly_a.nroots(n=30) if abs(sp.im(r)) < mp.mpf("1e-20")]
+        # rational roots exactly (rational-root theorem, no numerics needed)
+        rat_roots = [r for r in poly_a.ground_roots().keys() if r.is_rational]
         print(f"     resultant degree {poly_a.degree()}; "
-              f"{len(rat_roots)} rational root(s), {len(real_roots)} real root(s)")
+              f"{len(rat_roots)} rational alpha root(s)")
         for ar in rat_roots:
             # solve for beta at this alpha (common root of N4, N6)
             g = sp.gcd(sp.Poly(N4.subs(alpha, ar), beta),
