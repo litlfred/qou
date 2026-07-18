@@ -33,14 +33,11 @@ independent fast ranking cross-check.
 > the K word. This reverification does not depend on it — it used the
 > always-correct seminormal path throughout.
 
-> **Status (2026-07-17).** All findings below are **final and log-verified**
-> from the 50-dps both-leg run (Leg A completed; Leg B measured 75/77 blocks
-> before a session-boundary interrupt). The full run is being re-executed with
-> per-block checkpointing to serialize the official
-> `he4-binding-k-stage2.witness.json` (the last two dim-5940 Leg-B blocks do not
-> change α_gap, already set by the −10.48 block, nor the ~1e-15 cross-check
-> class); the regenerated witness is committed on completion. No number here is
-> expected to move.
+> **Status (2026-07-18).** **Complete.** The full 50-dps both-leg run finished
+> under per-block checkpointing (7 sandbox sessions; caches self-cleaned) and the
+> official `he4-binding-k-stage2.witness.json` is regenerated on the seminormal
+> engine (`computedAt` 2026-07-18T04:55, `allPassed: True`, all 77 blocks). Every
+> number below is from that committed witness.
 
 ## What was done
 
@@ -101,14 +98,12 @@ this word.
 **4. The leg cross-check confirms the fix.** The committed run reported a worst
 Leg-A/Leg-B trace cross-check of **2.09** (GP Leg A vs f64-seminormal Leg B —
 they disagreed because GP was wrong). With both legs seminormal, the worst
-cross-check drops to **8.1e-15** (worst across the 75 largest-first blocks
-measured in the 50-dps run; the two remaining dim-5940 blocks are of the same
-class). The two independent engines — seminormal-mpfr Leg A and pure-python f64
-Leg B — now agree at the f64 floor, the positive confirmation the GP path
-lacked.
+cross-check drops to **8.08e-15** (worst across **all 77 blocks** at 50 dps).
+The two independent engines — seminormal-mpfr Leg A and pure-python f64 Leg B —
+now agree at the f64 floor, the positive confirmation the GP path lacked.
 
 **5. PSD / binding-stability certificate (Leg B, f64 diagnostic).** Min
-symmetrized eigenvalue **−10.48** (block λ = (5,3,2,2)), so **α_gap ≈ 10.48**,
+symmetrized eigenvalue **−10.477** (block λ = (5,3,2,2)), so **α_gap = 10.477**,
 **PSD-within-tol False** — K(⁴He) is **not** positive-semidefinite. This matches
 the committed (GP-legged) Leg B verdict exactly, as expected: Leg B is the
 pure-python f64 seminormal path and was never on the GP kernel, so only Leg A's
@@ -119,7 +114,7 @@ scalar (tr_M, ranking) moved under the fix; the PSD certificate did not.
 The stage-2 object K(⁴He) = T·cp⁻¹ is unchanged; only the character engine was
 corrected. The A≤3 "binding stability" reading is the per-block PSD verdict; at
 A=4 the committed (GP) run already reported it non-PSD (min symmetrized
-eigenvalue −10.48), i.e. the A≤3 stability certificate does **not** extend
+eigenvalue −10.477), i.e. the A≤3 stability certificate does **not** extend
 naively to ⁴He — a finding the seminormal reverification preserves (the PSD
 certificate lives on the GP-independent Leg B). Nothing here is wired to
 production, uses AME input, or is fitted; this is a structural reverification on
