@@ -445,3 +445,13 @@ TO CLOSE cmiy fully: (a) build pyhecke-native wheel for the 16 native; (b) run p
 in dependency order so the 53+27 input-dependent ones see fresh inputs; (c) loop-aware
 stamper for multi-output computed-name producers; (d) owner call on the canonical
 muon-q0 chi/nucleus set (tnjb). None are blind-stampable.
+
+## 2026-07-18 — batch 37 (native unblock: built pyhecke-native wheel)
+Built pyhecke-native 0.9.0 (cargo 1.94 + maturin build --release, ~3min) and pip-installed
+the wheel — unlocks the native producer class. Ran stamper over native single-write set:
+5 wired (he4_binding_k_presentation_correction, torus_knot_markov_trace_closed_form,
+ame_registry_routing_triage, kl_betti_cell_dependence, items_1_2_3_mw_strongforce_anchor_asymmetry).
+1 (he4_binding_k_stage2) timed out at 400s stamper limit — reverted cleanly (needs longer run).
+NOTE: stamper EXC path does NOT auto-revert (only the PROV-fail path does) — manually reverted.
+Remaining native are computed-name (chi-*/nucleus-sdp) multi-output — need loop-aware stamping
++ tnjb owner-gate. PROV_MISSING 164 -> 160.
