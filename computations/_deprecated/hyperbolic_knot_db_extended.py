@@ -41,7 +41,11 @@ sys.path.insert(0, str(Path(__file__).parent))
 # (name, braid_word, crossings, volume)
 KNOWN_4_TO_7 = [
     ("4_1",  (1, -2, 1, -2),                    4, 2.0298832),
-    ("5_2",  (1, 1, 1, -2, 1, -2),              5, 2.8281220),
+    # 5_2 braid corrected 2026-07-18 (#3892): the old (1,1,1,-2,1,-2) has
+    # determinant 11 (it is 6_2), not 5_2's determinant 7. The Jones polynomial
+    # of (1,1,1,2,-1,2) is validated = V(5_2), det 7 (writhe 4), by the TL_3
+    # Kauffman bracket in computations/probes/qbeta_5two_jones_barodd_probe.py.
+    ("5_2",  (1, 1, 1, 2, -1, 2),               5, 2.8281220),
     ("6_1",  (1, 1, -2, 1, -2, -2),             6, 3.1639633),
     ("6_2",  (1, 1, 1, -2, 1, -2, -2),          6, 4.4015175),
     ("6_3",  (1, 1, -2, 1, -2, 1, -2),          6, 5.6927297),
