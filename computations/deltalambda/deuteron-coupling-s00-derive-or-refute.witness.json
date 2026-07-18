@@ -2,9 +2,9 @@
  "computation": "deuteron-coupling-s00-derive-or-refute",
  "description": "Derive-or-refute of an independent deuteron entanglement coupling x ~ 1/sqrt(2) for the Gevrey-1/2 trans-series route. Symbolic survivor: S_00(n=2) = d_q/D = 1/sqrt(2) exact (bwS0 at n=2, all d_q = 1, Lean-witnessed). Numeric refutation: median Borel-Laplace at x=1/sqrt(2) gives <= 41% of B_D (eps-prescription-sensitive, on-singularity) and the median sum plateaus at ~21% of B_D over the whole coupling axis \u2014 the resummation never reaches B_D at any coupling. Scope-(a); no fit.",
  "audit_only": true,
- "computedAt": "2026-07-13T15:02:33.063126+00:00",
+ "computedAt": "2026-07-18T13:27:42.007017+00:00",
  "engine": "mpmath",
- "engineVersion": "1.3.0",
+ "engineVersion": "mpmath 1.3.0",
  "target_B_D_MeV": "2.22452",
  "symbolic_candidates": {
   "C2_S00_n2": {
@@ -154,5 +154,10 @@
    "passed": true
   }
  ],
- "allPassed": true
+ "allPassed": true,
+ "scriptHash": "37a66820520e",
+ "scriptCommitSha": "8ef019ca60ebe5289df144463dc07123dbae3277",
+ "commitSha": "9efbe6e6cd42038e00c9812bca049c17ea010730",
+ "durationMs": 0,
+ "scriptFile": "deuteron_coupling_s00_probe.py"
 }
