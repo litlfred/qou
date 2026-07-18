@@ -66,11 +66,13 @@ A nonzero intrinsic *phase* is necessary but not sufficient for the swing — th
 `qbeta_5two_sigma3_anchor_test_probe.py` (2/2) ran the test, reusing the #3930
 saddle machinery to compute ι₁₃, ι₂₃ at both q₀ anchors:
 
-- **The σ3-pairs DO carry a nonzero intrinsic phase** (|arg ι₁₃| = 2.127 rad,
-  |arg ι₂₃| = 2.683 rad ≫ the 4₁ null floor 9.2e-9) — genuinely non-amphichiral
-  bar-odd carriers, as predicted.
-- **But they are ANCHOR-SMOOTH:** |dι/dq| = 0.245 / 0.380 (O(1)), **7.0 orders**
-  below the 3.84×10⁶ swing scale — exactly like the 5₂ σ1 quantum volume (#3902).
+- **The σ3-pairs DO carry a nonzero intrinsic phase** (|arg ι₁₃| = 0.958 rad,
+  |arg ι₂₃| = 2.184 rad ≫ the 4₁ null floor 9.2e-9; using the erratum σ3
+  convention `V_sigma3 = Re(V)` per GGM §6.1, the probe reproduces the corrected
+  #3937-erratum targets exactly, with ι₂₃ = −conj(ι₁₃)) — genuinely
+  non-amphichiral bar-odd carriers, as predicted.
+- **But they are ANCHOR-SMOOTH:** |dι/dq| = 0.216 (O(1)), **7.25 orders** below
+  the 3.84×10⁶ swing scale — exactly like the 5₂ σ1 quantum volume (#3902).
 
 So the one geometric object with nonzero bar-odd phase still cannot carry the
 swing. **The odd-channel geometric search is closed.** Every geometric object

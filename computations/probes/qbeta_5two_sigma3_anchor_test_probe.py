@@ -7,18 +7,20 @@ CONTEXT (bean qou-9w95; capstone item 2). The 4₁ odd-phase null (#3923) pointe
 the odd channel to non-amphichiral (5₂-class) geometry, and the 5₂ port (#3930,
 `qbeta_g3_5two_saddle_exact_predictions.py`, Lean-proved `FiveTwoSaddleCurve`)
 made it falsifiable: 5₂ is chiral (CS ≠ 0), and its **σ3-pairs carry a nonzero
-intrinsic phase** at the substrate deformation (ι̃₁₃ −2.127 rad, ι̃₂₃ −2.683 rad)
-— the bar-odd carrier the 4₁ null excluded (whose floor is 9.2e-9).
+intrinsic phase** at the substrate deformation (ι̃₁₃ −0.958 rad, ι̃₂₃ −2.184 rad,
+using the erratum σ3 convention V_sigma3 = Re(V) per GGM §6.1) — the bar-odd
+carrier the 4₁ null excluded (whose floor is 9.2e-9).
 
 A nonzero phase is NECESSARY but not SUFFICIENT for the swing: the σ3-pair must
 ALSO be anchor-dependent at the ~3.84×10⁶ scale (S swings 2.44 % while q₀ moves
 ~1.28e-8). This probe runs that test, reusing the #3930 saddle machinery: compute
 ι₁₃, ι₂₃ = (V_i − V_j)/(2πi) at BOTH q₀ anchors and measure |dι/dq|.
 
-RESULT. |dι₁₃/dq| ≈ 0.245 (O(1)) — ANCHOR-SMOOTH, ~7 orders below the 3.84×10⁶
-the swing needs, exactly like the 5₂ σ1 quantum volume (#3902, 1.47) and every
-other geometric object. So the chiral σ3-pair distinguishes chirality (nonzero
-phase) but NOT the swing (anchor-smooth). This CLOSES the odd-channel geometric
+RESULT. |dι₁₃/dq| ≈ 0.216 (O(1)) — ANCHOR-SMOOTH, ~7.25 orders below the
+3.84×10⁶ the swing needs, exactly like the 5₂ σ1 quantum volume (#3902, 1.47) and
+every other geometric object. So the chiral σ3-pair distinguishes chirality
+(nonzero phase 0.958/2.184 rad, matching the erratum) but NOT the swing
+(anchor-smooth). This CLOSES the odd-channel geometric
 search: every geometric object — amphichiral 4₁ (branch-point generic, quantum
 volume anchor-smooth, odd-phase null), chiral 5₂ σ1 (quantum volume
 anchor-smooth), chiral 5₂ σ3 (nonzero phase, anchor-smooth) — fails the swing.
@@ -96,10 +98,13 @@ def main() -> int:
     import qbeta_g3_5two_saddle_exact_predictions as p  # noqa
 
     def iota(q, i, j):
+        # σ1/σ2 use the full complex action V_of; σ3 (index 2) uses V_sigma3
+        # (GGM §6.1 "keep only Re(V)" — the erratum convention, superseding the
+        # #3937 full-complex V₃).
         u = 2 * mp.log(q)                       # u_sub = 2·ln q₀
         d = p.order_saddles(p.saddle_roots(mp.e ** u))
-        Vi, _ = p.V_of(u, d[i])
-        Vj, _ = p.V_of(u, d[j])
+        Vi = p.V_sigma3(u, d[i])[0] if i == 2 else p.V_of(u, d[i])[0]
+        Vj = p.V_sigma3(u, d[j])[0] if j == 2 else p.V_of(u, d[j])[0]
         return (Vi - Vj) / (2 * mp.pi * mp.mpc(0, 1))
 
     dq = Q0_PROTON - Q0_MUON

@@ -1649,10 +1649,11 @@ carries nonzero bar-odd phase but is ANCHOR-SMOOTH.** Capstone + the decisive
 non-amphichiral 5₂ geometry; the 5₂ port (#3930) predicts the σ3-pairs carry a
 nonzero intrinsic phase. `qbeta_5two_sigma3_anchor_test_probe.py` (2/2, reusing
 the #3930 saddle machinery) tests the necessary second condition: ι₁₃, ι₂₃ at
-both q₀ anchors. RESULT: the σ3-pairs DO carry nonzero phase (|arg ι₁₃|=2.127,
-|arg ι₂₃|=2.683 rad ≫ the null floor 9.2e-9) — genuine non-amphichiral bar-odd
-carriers — BUT are ANCHOR-SMOOTH (|dι/dq|=0.245/0.380, O(1), 7.0 orders below the
-3.84e6 swing). So the ONE geometric object with nonzero bar-odd phase still
+both q₀ anchors. RESULT: the σ3-pairs DO carry nonzero phase (|arg ι₁₃|=0.958,
+|arg ι₂₃|=2.184 rad ≫ the null floor 9.2e-9; erratum σ3 convention V_sigma3=Re(V),
+reproducing the corrected #3937-erratum targets exactly, ι₂₃=−conj(ι₁₃)) — genuine
+non-amphichiral bar-odd carriers — BUT are ANCHOR-SMOOTH (|dι/dq|=0.216, O(1), 7.25
+orders below the 3.84e6 swing). So the ONE geometric object with nonzero bar-odd phase still
 cannot carry the swing. Every geometric object now fails (4₁ branch-point/volume/
 null; 5₂ σ1 volume #3902; 5₂ σ3 phase). The c₃ swing is REPRESENTATIONAL on every
 front, chiral included — the 1/u³ inversion of a smooth N_odd, pinned by
