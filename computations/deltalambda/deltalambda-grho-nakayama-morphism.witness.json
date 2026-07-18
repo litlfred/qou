@@ -1,0 +1,403 @@
+{
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-07-18T14:02:15.715521+00:00",
+  "commitSha": "7e81fdf3619a1c9bb7b97fe3c6df94b39f43614e",
+  "assertions": [
+    {
+      "name": "coinvariant_hilbert_series_is_qfactorial",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "tolerance": 0,
+      "source": "Hilb(R_n)=[n]_q!=sum_lambda f^lambda R_lambda(q) for n=3..6 (V_lambda enters R_n with fake degree R_lambda)"
+    },
+    {
+      "name": "coinvariant_bottom_degree_is_n_lambda",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "tolerance": 0,
+      "source": "n(lambda)=min maj(SYT(lambda)) = lowest degree at which V_lambda enters R_n"
+    },
+    {
+      "name": "commutative_R_n_nakayama_id_diverges_from_grho",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "tolerance": 0,
+      "source": "R_n commutative => nu=id => +1 on all V_lambda; but g_rho=q^{2 n(lambda)} gives -1 on the odd-n(lambda) partitions (exists for every n>=3) => nu != g_rho. INV-1 refutes the coinvariant route."
+    },
+    {
+      "name": "seminormal_reps_self_validated_H3",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "tolerance": 0,
+      "source": "Hecke+braid relations hold, sum dim^2=6=|S_3| => character traces correct"
+    },
+    {
+      "name": "H3_symmetrizing_trace_is_symmetric",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "tolerance": 0,
+      "source": "tau_reg(ab)=tau_reg(ba) on 8 random word pairs => Frobenius form symmetric (combination of irreducible characters, each symmetric)"
+    },
+    {
+      "name": "semisimple_nakayama_id_not_grho",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "tolerance": 0,
+      "source": "semisimple => nu=id => +1 on every V_lambda; g_rho=q^{2 n(lambda)} != 1 for n(lambda)>0 (e.g. [2,1],[1^3]) => nu != g_rho. INV-2 refutes the CS_n / H_n(q) route."
+    },
+    {
+      "name": "zero_hecke_simples_not_partition_indexed",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "tolerance": 0,
+      "source": "p(n) vs 2^{n-1}: n=3:3!=4, n=4:5!=8, n=5:7!=16, n=6:11!=32 => H_n(0) composition-indexed simples cannot carry a partition scalar q^{2 n(lambda)}"
+    },
+    {
+      "name": "associated_graded_is_zero_hecke_type",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "tolerance": 0,
+      "source": "gr T_i^2 leading term = (q-q^{-1}) T_i != 0 => gr H_n(q) ~ 0-Hecke-type (T_i^2 prop T_i), composition-indexed -- the associated graded has the wrong simple index too"
+    },
+    {
+      "name": "nilcoxeter_local_single_simple",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "tolerance": 0,
+      "source": "NC_n is local (unique simple, u_i^2=0 nilpotent) => 1 simple != p(n)>1 partitions => its nontrivial Nakayama automorphism cannot express q^{2 n(lambda)} either"
+    },
+    {
+      "name": "grho_row_zeta4_reproduces_lean_deltaSign",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "tolerance": 0,
+      "source": "q^{2 n(lambda)}|_{q=i}=i^{2 n(lambda)}=(-1)^{n(lambda)}=sgn(w0^{S_{lambda'}}) (Lean deltaSign) for lambda|-3,5,6 => g_rho is the zeta_4-evaluated ROW grading"
+    },
+    {
+      "name": "content_grading_differs_from_row_grading",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "tolerance": 0,
+      "source": "the CONTENT grading n(lambda')-n(lambda) (Markov-trace pivotal twist, pruned #3529) gives a DIFFERENT zeta_4 sign than the ROW grading n(lambda) for some lambda => the one natural pivotal 'Nakayama-like' twist is the wrong (content) grading, not g_rho"
+    },
+    {
+      "name": "grho_is_genuine_z2_grading_not_identity",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "tolerance": 0,
+      "source": "both bar-even and bar-odd V_lambda exist at every n>=3 => g_rho is a nontrivial ZZ/2 grading at zeta_4 => categorically != a Nakayama automorphism (=id on symmetric H_n(q)/CS_n)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 18,
+  "computation": "deltalambda-grho-nakayama-morphism",
+  "scriptFile": "deltalambda_grho_nakayama_probe.py",
+  "scriptHash": "ea31f2f4fc43",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Formalize-first test of Delta_lambda open problem (i): is g_rho the Nakayama automorphism of a natural graded Frobenius structure? NO -- refuted. Symmetric algebras carrying V_lambda (coinvariant R_n commutative; CS_n/H_n(q) semisimple) have Nakayama=id (proved invariants) => +1, never the ROW grading q^{2 n(lambda)}; non-symmetric candidates (0-Hecke, nilCoxeter, gr H_n(q)) index simples by the wrong set; the one natural pivotal twist is the CONTENT grading (+1 at zeta_4, already pruned). g_rho is a pivotal/central ROW grading, not a Nakayama automorphism. No fit; nothing wired.",
+  "contentBlock": "conj:binding-manybody-eq-jet-filtration",
+  "data": {
+    "nakayama_id_vs_grho_row_zeta4_divergence_l1": "22.0",
+    "per_partition_zeta4": [
+      {
+        "lambda": [
+          3
+        ],
+        "n_lambda": 0,
+        "grho_row_at_zeta4": 1,
+        "nu_id_at_zeta4": 1
+      },
+      {
+        "lambda": [
+          2,
+          1
+        ],
+        "n_lambda": 1,
+        "grho_row_at_zeta4": -1,
+        "nu_id_at_zeta4": 1
+      },
+      {
+        "lambda": [
+          1,
+          1,
+          1
+        ],
+        "n_lambda": 3,
+        "grho_row_at_zeta4": -1,
+        "nu_id_at_zeta4": 1
+      },
+      {
+        "lambda": [
+          4
+        ],
+        "n_lambda": 0,
+        "grho_row_at_zeta4": 1,
+        "nu_id_at_zeta4": 1
+      },
+      {
+        "lambda": [
+          3,
+          1
+        ],
+        "n_lambda": 1,
+        "grho_row_at_zeta4": -1,
+        "nu_id_at_zeta4": 1
+      },
+      {
+        "lambda": [
+          2,
+          2
+        ],
+        "n_lambda": 2,
+        "grho_row_at_zeta4": 1,
+        "nu_id_at_zeta4": 1
+      },
+      {
+        "lambda": [
+          2,
+          1,
+          1
+        ],
+        "n_lambda": 3,
+        "grho_row_at_zeta4": -1,
+        "nu_id_at_zeta4": 1
+      },
+      {
+        "lambda": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "n_lambda": 6,
+        "grho_row_at_zeta4": 1,
+        "nu_id_at_zeta4": 1
+      },
+      {
+        "lambda": [
+          5
+        ],
+        "n_lambda": 0,
+        "grho_row_at_zeta4": 1,
+        "nu_id_at_zeta4": 1
+      },
+      {
+        "lambda": [
+          4,
+          1
+        ],
+        "n_lambda": 1,
+        "grho_row_at_zeta4": -1,
+        "nu_id_at_zeta4": 1
+      },
+      {
+        "lambda": [
+          3,
+          2
+        ],
+        "n_lambda": 2,
+        "grho_row_at_zeta4": 1,
+        "nu_id_at_zeta4": 1
+      },
+      {
+        "lambda": [
+          3,
+          1,
+          1
+        ],
+        "n_lambda": 3,
+        "grho_row_at_zeta4": -1,
+        "nu_id_at_zeta4": 1
+      },
+      {
+        "lambda": [
+          2,
+          2,
+          1
+        ],
+        "n_lambda": 4,
+        "grho_row_at_zeta4": 1,
+        "nu_id_at_zeta4": 1
+      },
+      {
+        "lambda": [
+          2,
+          1,
+          1,
+          1
+        ],
+        "n_lambda": 6,
+        "grho_row_at_zeta4": 1,
+        "nu_id_at_zeta4": 1
+      },
+      {
+        "lambda": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "n_lambda": 10,
+        "grho_row_at_zeta4": 1,
+        "nu_id_at_zeta4": 1
+      },
+      {
+        "lambda": [
+          6
+        ],
+        "n_lambda": 0,
+        "grho_row_at_zeta4": 1,
+        "nu_id_at_zeta4": 1
+      },
+      {
+        "lambda": [
+          5,
+          1
+        ],
+        "n_lambda": 1,
+        "grho_row_at_zeta4": -1,
+        "nu_id_at_zeta4": 1
+      },
+      {
+        "lambda": [
+          4,
+          2
+        ],
+        "n_lambda": 2,
+        "grho_row_at_zeta4": 1,
+        "nu_id_at_zeta4": 1
+      },
+      {
+        "lambda": [
+          4,
+          1,
+          1
+        ],
+        "n_lambda": 3,
+        "grho_row_at_zeta4": -1,
+        "nu_id_at_zeta4": 1
+      },
+      {
+        "lambda": [
+          3,
+          3
+        ],
+        "n_lambda": 3,
+        "grho_row_at_zeta4": -1,
+        "nu_id_at_zeta4": 1
+      },
+      {
+        "lambda": [
+          3,
+          2,
+          1
+        ],
+        "n_lambda": 4,
+        "grho_row_at_zeta4": 1,
+        "nu_id_at_zeta4": 1
+      },
+      {
+        "lambda": [
+          3,
+          1,
+          1,
+          1
+        ],
+        "n_lambda": 6,
+        "grho_row_at_zeta4": 1,
+        "nu_id_at_zeta4": 1
+      },
+      {
+        "lambda": [
+          2,
+          2,
+          2
+        ],
+        "n_lambda": 6,
+        "grho_row_at_zeta4": 1,
+        "nu_id_at_zeta4": 1
+      },
+      {
+        "lambda": [
+          2,
+          2,
+          1,
+          1
+        ],
+        "n_lambda": 7,
+        "grho_row_at_zeta4": -1,
+        "nu_id_at_zeta4": 1
+      },
+      {
+        "lambda": [
+          2,
+          1,
+          1,
+          1,
+          1
+        ],
+        "n_lambda": 10,
+        "grho_row_at_zeta4": 1,
+        "nu_id_at_zeta4": 1
+      },
+      {
+        "lambda": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "n_lambda": 15,
+        "grho_row_at_zeta4": -1,
+        "nu_id_at_zeta4": 1
+      }
+    ],
+    "proved_invariants": {
+      "INV-1": "commutative => symmetric => Nakayama nu=id (lambda(ab)=lambda(ba) trivially)",
+      "INV-2": "semisimple => every Frobenius form = sum c_lambda chi_lambda symmetric => nu=id"
+    },
+    "candidates_swept": {
+      "coinvariant_R_n": "commutative => nu=id [scope-(b)]",
+      "CS_n_and_generic_H_n_q": "semisimple symmetric => nu=id [scope-(b)]",
+      "zero_hecke_H_n_0": "2^{n-1} composition simples != p(n) [scope-(a) wrong index]",
+      "nilcoxeter_NC_n": "local, single simple [scope-(a) wrong index]",
+      "gr_H_n_q_length_filtration": "0-Hecke-type => composition-indexed [scope-(a)]",
+      "markov_trace_pivotal_twist": "CONTENT grading q^{2(n(lambda')-n(lambda))}, +1 at zeta_4, already pruned #3529 -- wrong (content, not row) grading"
+    },
+    "verdict": "NO -- Angle A (g_rho = Nakayama automorphism of a natural graded Frobenius structure) is REFUTED, honestly and decisively. (1) On EVERY algebra whose simples are indexed by partitions lambda -- the coinvariant algebra R_n (COMMUTATIVE, INV-1) and the semisimple CS_n / generic H_n(q) (INV-2: every Frobenius form is a combination of symmetric characters) -- the Nakayama automorphism is the IDENTITY, acting as +1 (=q^0) on every V_lambda, NEVER the nontrivial ROW-grading scalar q^{2 n(lambda)} (= -1 on the odd-n(lambda) partitions). PROVED INVARIANTS [scope-(b)], not numeric near-misses. (2) The natural NON-symmetric graded Frobenius candidates with nontrivial Nakayama -- 0-Hecke H_n(0) (2^{n-1} composition simples), nilCoxeter NC_n (local, one simple), and the length-associated-graded gr H_n(q) (0-Hecke-type) -- index their simples by the WRONG set (p(n) != 2^{n-1} != 1), so structurally cannot carry a partition-indexed q^{2 n(lambda)} [scope-(a)]. (3) The ONE natural pivotal / ribbon 'Nakayama-like' twist theta_lambda = q^{2(n(lambda')-n(lambda))} is graded by the CONTENT sum (col-row), is +1 at zeta_4, and was ALREADY pruned (#3529/#3523) -- it is the CONTENT grading, NOT the ROW grading g_rho. CONSEQUENCE for open problem (i): the Nakayama route does NOT provide a self-contained categorical morphism for g_rho; the correct, already-derived home remains the GS/jet-order (fake-degree valuation) pivotal ROW grading. This negative SAVES the nakayama_eq_principalGrading Lean effort and refines the search. No fit; nothing wired.",
+    "answer": "NO -- Nakayama automorphism of a natural graded Frobenius structure is NOT g_rho (the row grading q^{2 rho}); Angle A refuted",
+    "scope": "(a)+(b) NEGATIVE -- symmetric cases by proved invariant (b), non-symmetric cases by wrong-index structural (a)",
+    "still_open": "open problem (i) -- a self-contained categorical morphism for g_rho -- remains open; the pivotal/jet-order (fake-degree) ROW-grading route is the correct home; the Nakayama route is closed",
+    "auditDoc": "docs/audits/2026-07-18-deltalambda-grho-nakayama-morphism.md",
+    "allPassed": true
+  }
+}
