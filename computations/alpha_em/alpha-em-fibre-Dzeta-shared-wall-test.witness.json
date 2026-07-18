@@ -1,0 +1,191 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-18T08:55:40.069541+00:00",
+  "commitSha": "0fed735fa22e18f2a2c04eca2e44b8eedb5ffa0a",
+  "assertions": [
+    {
+      "name": "fibre_shared_wall_D_zeta_equals_b1_or_pi_b1_FALSIFIED",
+      "computed": 0.0,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "D(ζ)=√(Σ_admissible d_ζ²) ∈ {√(5±√5), √(10±2√5)} = {1.66, 2.35, 2.69, 3.80} ∉ {8, 8π} for ALL four corpus-fixed readings (ζ=e^{iπ/5}, McKay-Ê₈/folded-MTC admissible set, no scan) => the shared-wall 'photon b₁ = keystone D' is falsified on the fibre side too; combined with #3871 (observable D(q₀)=11.357), falsified on BOTH sides"
+    },
+    {
+      "name": "fibre_D_zeta_matches_corpus_exact_closed_forms",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "numeric D_Ê₈(ζ^m)²=10±2√5, D_MTC(ζ^m)²=5±√5, D_Ê₈²=2·D_MTC² to <1e-35 — matches the exact ℚ(√5) values #3822 established (corpus-fixed data reused, not re-derived)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 29,
+  "computation": "alpha-em-fibre-Dzeta-shared-wall-test",
+  "scriptFile": "alpha_em_fibre_Dzeta_shared_wall_test_probe.py",
+  "scriptHash": "22e0b1cc7488",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "FIBRE-side self-test of the merged α_EM↔W_λ shared-wall acceptance gate (#3853), completing the ONE piece #3871's observable-side run explicitly left open. Uses the corpus's OWN fixed fibre data (NO scan): root ζ = e^{iπ/5} (order 2p₃=10, order-5-fibre holonomy, Galois-indexed by flats m=1,2), admissible set = 9 affine-Ê₈ McKay marks (1,2,3,4,5,6,4,2,3 = 2I irrep dims, Σmark²=120=|2I|; mark-5 truncates [5]_ζ=0, folding 2:1 onto the SU(2)_3 alcove {1,2,3,4}), value map d_ζ(λ)=[mark]_ζ (#3685). The four corpus-fixed fibre total quantum dimensions (established exact-ℚ(√5) by #3822): D_Ê₈(ζ^m)²=10±2√5 → {3.8042, 2.3511}; D_MTC(ζ^m)²=5±√5 → {2.6900, 1.6625} (=SU(2)_3 √5/(√2 sin(π/5)); D_Ê₈²=2·D_MTC²). GATE: D(ζ)∈{8, 8π≈25.133}? For ALL FOUR readings NO (D/8 ∈ {0.208…0.476}). ⇒ FALSIFIED on the fibre side. Combined with #3871 (observable D(q₀)=11.357 ∉{8,8π}), the α_EM↔W_λ shared wall is FALSIFIED ON BOTH SIDES: b₁=8 (genus-4 homology count) is bracketed by the two sides (fibre <8< observable) but equals NEITHER the fibre-truncated keystone D(ζ) nor the observable untruncated D(q₀). The α_EM per-loop measure 1/(π b₁) and the W_λ keystone 1/D are DISTINCT normalizations at every corpus-fixed evaluation — the two walls are fully distinct objects. Scope-(a) NEGATIVE (not a structural exclusion): refutes 'photon b₁ = keystone total quantum dimension D' against fixed data; does NOT exclude a non-D route (per-irrep d_λ, an index, a different combination). No fit; no α_k wired; 1/(8π) stays a phase-4 identification.",
+  "contentBlock": "prop:alpha-em-categorical-trace",
+  "data": {
+    "fixed_root_of_unity": {
+      "zeta": "e^{i pi/5}",
+      "order": 10,
+      "reason": "order 2*p3=10 fibre holonomy of Sigma(2,3,5)",
+      "flat_connections_m": [
+        1,
+        2
+      ],
+      "galois_indexed": true,
+      "NOT": [
+        "level root zeta_N",
+        "e^{2 pi i/30}"
+      ],
+      "fixed_by": "#3822 / #3685 (no scan)"
+    },
+    "fixed_admissible_set": {
+      "mckay_marks_E8": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        4,
+        2,
+        3
+      ],
+      "sum_mark_sq": 120,
+      "mtc_alcove_SU2_level3": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "value_map": "d_zeta(lambda) = [mark(lambda)]_zeta",
+      "truncation": "mark-5 node has [5]_zeta=0; 9-node set folds 2:1 onto the r=5 alcove"
+    },
+    "truncation_by_flat": {
+      "1": {
+        "vanishing_marks": [
+          5
+        ],
+        "qint": {
+          "1": "1.0",
+          "2": "1.618033989",
+          "3": "1.618033989",
+          "4": "1.0",
+          "5": "7.03329014e-43",
+          "6": "-1.0"
+        }
+      },
+      "2": {
+        "vanishing_marks": [
+          5
+        ],
+        "qint": {
+          "1": "1.0",
+          "2": "0.6180339887",
+          "3": "-0.6180339887",
+          "4": "-1.0",
+          "5": "-8.693624719e-43",
+          "6": "1.0"
+        }
+      }
+    },
+    "D_by_flat": [
+      {
+        "m": 1,
+        "D_E8": "3.8042260651806142885",
+        "D_E8_sq": "14.47213595499958",
+        "D_MTC": "2.6899940478558293078",
+        "D_MTC_sq": "7.23606797749979",
+        "closed_form_E8_sq": "10+2sqrt5",
+        "closed_form_MTC_sq": "5+sqrt5",
+        "exact_match": true
+      },
+      {
+        "m": 2,
+        "D_E8": "2.3511410091698925167",
+        "D_E8_sq": "5.527864045000421",
+        "D_MTC": "1.6625077511098137144",
+        "D_MTC_sq": "2.76393202250021",
+        "closed_form_E8_sq": "10-2sqrt5",
+        "closed_form_MTC_sq": "5-sqrt5",
+        "exact_match": true
+      }
+    ],
+    "su2_3_closed_form": {
+      "value": "2.6899940478558293078",
+      "matches_D_MTC_zeta": true
+    },
+    "gate_results": {
+      "E8_m1": {
+        "D": "3.804226065180614",
+        "D_over_8": "0.4755282581",
+        "D_over_8pi": "0.1513653457",
+        "matches_8": false,
+        "matches_8pi": false,
+        "passes_gate": false
+      },
+      "MTC_m1": {
+        "D": "2.689994047855829",
+        "D_over_8": "0.336249256",
+        "D_over_8pi": "0.1070314624",
+        "matches_8": false,
+        "matches_8pi": false,
+        "passes_gate": false
+      },
+      "E8_m2": {
+        "D": "2.351141009169893",
+        "D_over_8": "0.2938926261",
+        "D_over_8pi": "0.09354892838",
+        "matches_8": false,
+        "matches_8pi": false,
+        "passes_gate": false
+      },
+      "MTC_m2": {
+        "D": "1.662507751109814",
+        "D_over_8": "0.2078134689",
+        "D_over_8pi": "0.06614908163",
+        "matches_8": false,
+        "matches_8pi": false,
+        "passes_gate": false
+      }
+    },
+    "both_sides": {
+      "fibre_D_zeta": [
+        "1.6625 (MTC,m2)",
+        "2.3511 (E8,m2)",
+        "2.6900 (MTC,m1)",
+        "3.8042 (E8,m1)"
+      ],
+      "observable_D_q0": "11.357 (#3871)",
+      "b1": 8,
+      "reading": "b1=8 bracketed by the two sides (fibre<8<observable), equals neither => shared wall falsified on BOTH sides"
+    },
+    "exact_closed_form_check": {
+      "all_match_10pm2sqrt5_and_5pmsqrt5": true
+    },
+    "scope": {
+      "classification": "(a) scope-limited negative",
+      "refuted": "photon b1=8 = keystone total quantum dimension D, at the corpus-fixed fibre root ζ=e^{iπ/5} (the last untested case after #3871's observable side)",
+      "not_excluded": "b1 entering the photon measure via a route other than the total quantum dimension (per-irrep d_lambda, an index, or a different combination)"
+    }
+  }
+}
