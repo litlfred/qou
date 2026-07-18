@@ -1,0 +1,60 @@
+{
+  "computation": "qbeta-fourone-habiro-tail-action",
+  "description": "b3ix distinct route: the 4\u2081 Habiro cyclotomic tail is bar-even (no odd datum) and its archimedean resurgent action is exactly \u03c0\u00b2/5 (golden-ratio dilog), distinct from the geometric Vol/\u03c0 \u2014 the \u0127\u21942\u03c0i/N wall made exact. Odd b3ix needs the 5\u2082 chiral tail. scope-(b).",
+  "audit_only": true,
+  "tier": "symbolic-exact + numerical (resurgent action closed form)",
+  "computedAt": "2026-07-18T17:58:15.929549+00:00",
+  "commitSha": "c0c6526e403bc21493383606dbf1c325cd03b802",
+  "engine": "mpmath",
+  "engineVersion": "1.3.0",
+  "scriptFile": "qbeta_fourone_habiro_tail_action_probe.py",
+  "scriptHash": "15eb4a2a1cba",
+  "assertions": [
+    {
+      "name": "fourone_habiro_tail_is_bar_even",
+      "passed": true,
+      "source": "S(q)=\u03a3_n (q;q)_n(q\u207b\u00b9;q\u207b\u00b9)_n is invariant under q\u2194q\u207b\u00b9 (each factor is) \u2014 the 4\u2081 Habiro tail carries no bar-odd datum (amphichirality; #3923 null). Odd b3ix needs the 5\u2082 tail"
+    },
+    {
+      "name": "habiro_tail_action_is_pi2_over_5_exact",
+      "passed": true,
+      "computed": "A\u2080=1.97392088022",
+      "expected": "\u03c0\u00b2/5=1.97392088022",
+      "source": "the 4\u2081 archimedean Habiro-tail optimal-truncation action is exactly \u03c0\u00b2/5 (golden-ratio dilog: arcsinh\u00bd=ln \u03c6, Landen Li\u2082(\u03c6\u207b\u00b2)=\u03c0\u00b2/15\u2212ln\u00b2\u03c6, \u222b\u2080^{ln \u03c6}ln(2 sinh s)ds=\u2212\u03c0\u00b2/20)"
+    },
+    {
+      "name": "habiro_action_distinct_from_geometric_vol",
+      "passed": true,
+      "computed": "\u03c0\u00b2/5=1.97392 vs Vol/\u03c0=0.646132",
+      "source": "the archimedean \u03c1_\u221e Habiro-tail action \u03c0\u00b2/5 differs from the geometric (root-of-unity/state-integral) action Vol(4\u2081)/\u03c0 \u2014 the \u0127\u21942\u03c0i/N wall (#3938) made exact; a residue\u2194tail identity must fix which evaluation face it is on"
+    },
+    {
+      "name": "discrete_action_converges_to_pi2_5",
+      "passed": true,
+      "source": "the finite-t minimal-term action increases monotonically toward \u03c0\u00b2/5 as t\u21920 \u2014 confirming \u03c0\u00b2/5 is the resurgent action"
+    }
+  ],
+  "allPassed": true,
+  "result": {
+    "habiro_tail_bar_even": true,
+    "S_opt_at_q0": "0.989538780898",
+    "minimal_term_n": 9,
+    "action_A0": "1.97392088021787",
+    "pi2_over_5": "1.97392088021787",
+    "action_is_pi2_over_5": true,
+    "geometric_vol_over_pi": "0.646131894439",
+    "discrete_action_t_005_002_001": [
+      "1.7322945",
+      "1.8588959",
+      "1.9094923"
+    ],
+    "verdict": "b3ix DISTINCT-ROUTE RESULT: the 4\u2081 Habiro cyclotomic tail S(q)=\u03a3_n (q;q)_n(q\u207b\u00b9;q\u207b\u00b9)_n, at real q (the archimedean \u03c1_\u221e face), is (1) BAR-EVEN (S(q)=S(q\u207b\u00b9) exactly \u2014 no bar-odd datum, so the odd b3ix needs the chiral 5\u2082 tail), and (2) a resurgent asymptotic series whose optimal-truncation action is EXACTLY \u03c0\u00b2/5 (golden-ratio dilog: arcsinh\u00bd=ln \u03c6, Li\u2082(\u03c6\u207b\u00b2)=\u03c0\u00b2/15\u2212ln\u00b2\u03c6), DISTINCT from the geometric Vol(4\u2081)/\u03c0\u22480.6461. So the archimedean Habiro-tail resums at action \u03c0\u00b2/5, not Vol/\u03c0 \u2014 the \u0127\u21942\u03c0i/N wall (#3938) made exact. The residue\u2194tail identity (b3ix) must therefore fix its evaluation face; for the odd channel the same programme runs on the 5\u2082 chiral tail. scope-(b): bar-even is a proved q\u2194q\u207b\u00b9 symmetry; A\u2080=\u03c0\u00b2/5 is an exact closed form (Landen identity). NO fit; NO c_k wired; \u03bc never fixed from QOU data."
+  },
+  "context": {
+    "axis": "b3ix Habiro residue\u2194tail (distinct route; bean qou-dku0)",
+    "supports": "#3966 deep-dive 2 (b3ix)",
+    "closed_form": "A\u2080 = \u22124\u222b\u2080^{ln \u03c6} ln(2 sinh s) ds = \u03c0\u00b2/5; arcsinh\u00bd=ln \u03c6; Li\u2082(\u03c6\u207b\u00b2)=\u03c0\u00b2/15\u2212ln\u00b2\u03c6",
+    "wall_ref": "#3938 \u0127\u21942\u03c0i/N (Habiro object vs archimedean \u03c1_\u221e eval)",
+    "odd_channel_note": "4\u2081 tail bar-even \u21d2 odd b3ix needs 5\u2082 chiral tail"
+  }
+}
