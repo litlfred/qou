@@ -1,0 +1,423 @@
+{
+  "commitSha": "5fd004f3a5f1057cc20b55f89c1febcbeacdf28a",
+  "compute": "pentagon_multipair_borromean_h4_probe",
+  "computedAt": "2026-07-18T17:45:49.936692+00:00",
+  "description": "T2b: multi-pair Pentagon-sum for the Borromean braid h\u2074 coefficient. Single-pair (T2, commit 49839f96) was NEGATIVE; this probe tests 6 weighting schemes \u00d7 4 (u,v) lifts (24 configurations). Matches indicate candidate Pentagon \u2192 -3/4 lifting; none indicates the categorical chain requires deeper machinery.",
+  "durationMs": 0,
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "matches_within_5pct": [],
+  "n_matches_20pct": 0,
+  "n_matches_5pct": 0,
+  "parameters": {
+    "H_0": "0.20906029879563931543084621312967494385975749526306",
+    "Q_0": "1.1099785827513808075916690956107688798744991218736",
+    "dps": 50,
+    "lifts_tested": [
+      "small_uniform",
+      "h_squared",
+      "asymmetric_z",
+      "h_quartic"
+    ],
+    "precision": "mpfr",
+    "schemes_tested": [
+      "uniform",
+      "generator_weighted",
+      "cyclic_monodromy",
+      "strand_distance",
+      "jones_coefficient",
+      "borromean_squared_minus_third"
+    ],
+    "strand_pairs": [
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        1,
+        3
+      ]
+    ],
+    "target_h4": "-0.75"
+  },
+  "results": [
+    {
+      "abs_diff": 0.7517517082457047,
+      "c_4": 0.0017517082457047244,
+      "lift": "small_uniform",
+      "matches_within_20pct": false,
+      "matches_within_5pct": false,
+      "relative_diff_pct": 100.23356109942729,
+      "scheme": "uniform",
+      "target": -0.75,
+      "weights": {
+        "(1, 2)": 1.0,
+        "(1, 3)": 1.0,
+        "(2, 3)": 1.0
+      }
+    },
+    {
+      "abs_diff": 0.7535034164914094,
+      "c_4": 0.003503416491409449,
+      "lift": "small_uniform",
+      "matches_within_20pct": false,
+      "matches_within_5pct": false,
+      "relative_diff_pct": 100.4671221988546,
+      "scheme": "generator_weighted",
+      "target": -0.75,
+      "weights": {
+        "(1, 2)": 3.0,
+        "(1, 3)": 0.0,
+        "(2, 3)": 3.0
+      }
+    },
+    {
+      "abs_diff": 0.75,
+      "c_4": 0.0,
+      "lift": "small_uniform",
+      "matches_within_20pct": false,
+      "matches_within_5pct": false,
+      "relative_diff_pct": 100.0,
+      "scheme": "cyclic_monodromy",
+      "target": -0.75,
+      "weights": {
+        "(1, 2)": -3.0,
+        "(1, 3)": 0.0,
+        "(2, 3)": 3.0
+      }
+    },
+    {
+      "abs_diff": 0.7514597568714206,
+      "c_4": 0.0014597568714206036,
+      "lift": "small_uniform",
+      "matches_within_20pct": false,
+      "matches_within_5pct": false,
+      "relative_diff_pct": 100.19463424952275,
+      "scheme": "strand_distance",
+      "target": -0.75,
+      "weights": {
+        "(1, 2)": 1.0,
+        "(1, 3)": 0.5,
+        "(2, 3)": 1.0
+      }
+    },
+    {
+      "abs_diff": 0.7517517082457047,
+      "c_4": 0.0017517082457047244,
+      "lift": "small_uniform",
+      "matches_within_20pct": false,
+      "matches_within_5pct": false,
+      "relative_diff_pct": 100.23356109942729,
+      "scheme": "jones_coefficient",
+      "target": -0.75,
+      "weights": {
+        "(1, 2)": 2.0,
+        "(1, 3)": -1.0,
+        "(2, 3)": 2.0
+      }
+    },
+    {
+      "abs_diff": 0.7599263467256601,
+      "c_4": 0.009926346725660104,
+      "lift": "small_uniform",
+      "matches_within_20pct": false,
+      "matches_within_5pct": false,
+      "relative_diff_pct": 101.32351289675468,
+      "scheme": "borromean_squared_minus_third",
+      "target": -0.75,
+      "weights": {
+        "(1, 2)": 9.0,
+        "(1, 3)": -1.0,
+        "(2, 3)": 9.0
+      }
+    },
+    {
+      "abs_diff": 0.7500062650237235,
+      "c_4": 6.265023723487177e-06,
+      "lift": "h_squared",
+      "matches_within_20pct": false,
+      "matches_within_5pct": false,
+      "relative_diff_pct": 100.00083533649646,
+      "scheme": "uniform",
+      "target": -0.75,
+      "weights": {
+        "(1, 2)": 1.0,
+        "(1, 3)": 1.0,
+        "(2, 3)": 1.0
+      }
+    },
+    {
+      "abs_diff": 0.750012530047447,
+      "c_4": 1.2530047446974354e-05,
+      "lift": "h_squared",
+      "matches_within_20pct": false,
+      "matches_within_5pct": false,
+      "relative_diff_pct": 100.00167067299293,
+      "scheme": "generator_weighted",
+      "target": -0.75,
+      "weights": {
+        "(1, 2)": 3.0,
+        "(1, 3)": 0.0,
+        "(2, 3)": 3.0
+      }
+    },
+    {
+      "abs_diff": 0.75,
+      "c_4": 0.0,
+      "lift": "h_squared",
+      "matches_within_20pct": false,
+      "matches_within_5pct": false,
+      "relative_diff_pct": 100.0,
+      "scheme": "cyclic_monodromy",
+      "target": -0.75,
+      "weights": {
+        "(1, 2)": -3.0,
+        "(1, 3)": 0.0,
+        "(2, 3)": 3.0
+      }
+    },
+    {
+      "abs_diff": 0.750005220853103,
+      "c_4": 5.22085310290598e-06,
+      "lift": "h_squared",
+      "matches_within_20pct": false,
+      "matches_within_5pct": false,
+      "relative_diff_pct": 100.00069611374705,
+      "scheme": "strand_distance",
+      "target": -0.75,
+      "weights": {
+        "(1, 2)": 1.0,
+        "(1, 3)": 0.5,
+        "(2, 3)": 1.0
+      }
+    },
+    {
+      "abs_diff": 0.7500062650237235,
+      "c_4": 6.265023723487177e-06,
+      "lift": "h_squared",
+      "matches_within_20pct": false,
+      "matches_within_5pct": false,
+      "relative_diff_pct": 100.00083533649646,
+      "scheme": "jones_coefficient",
+      "target": -0.75,
+      "weights": {
+        "(1, 2)": 2.0,
+        "(1, 3)": -1.0,
+        "(2, 3)": 2.0
+      }
+    },
+    {
+      "abs_diff": 0.7500355018010998,
+      "c_4": 3.550180109976067e-05,
+      "lift": "h_squared",
+      "matches_within_20pct": false,
+      "matches_within_5pct": false,
+      "relative_diff_pct": 100.00473357347997,
+      "scheme": "borromean_squared_minus_third",
+      "target": -0.75,
+      "weights": {
+        "(1, 2)": 9.0,
+        "(1, 3)": -1.0,
+        "(2, 3)": 9.0
+      }
+    },
+    {
+      "abs_diff": 0.7577950409830385,
+      "c_4": 0.0077950409830384775,
+      "lift": "asymmetric_z",
+      "matches_within_20pct": false,
+      "matches_within_5pct": false,
+      "relative_diff_pct": 101.03933879773847,
+      "scheme": "uniform",
+      "target": -0.75,
+      "weights": {
+        "(1, 2)": 1.0,
+        "(1, 3)": 1.0,
+        "(2, 3)": 1.0
+      }
+    },
+    {
+      "abs_diff": 0.7729528497652216,
+      "c_4": 0.02295284976522158,
+      "lift": "asymmetric_z",
+      "matches_within_20pct": false,
+      "matches_within_5pct": false,
+      "relative_diff_pct": 103.06037996869621,
+      "scheme": "generator_weighted",
+      "target": -0.75,
+      "weights": {
+        "(1, 2)": 3.0,
+        "(1, 3)": 0.0,
+        "(2, 3)": 3.0
+      }
+    },
+    {
+      "abs_diff": 0.75,
+      "c_4": 4.479493927528819e-45,
+      "lift": "asymmetric_z",
+      "matches_within_20pct": false,
+      "matches_within_5pct": false,
+      "relative_diff_pct": 100.0,
+      "scheme": "cyclic_monodromy",
+      "target": -0.75,
+      "weights": {
+        "(1, 2)": -3.0,
+        "(1, 3)": 0.0,
+        "(2, 3)": 3.0
+      }
+    },
+    {
+      "abs_diff": 0.7577229954523895,
+      "c_4": 0.0077229954523895025,
+      "lift": "asymmetric_z",
+      "matches_within_20pct": false,
+      "matches_within_5pct": false,
+      "relative_diff_pct": 101.02973272698527,
+      "scheme": "strand_distance",
+      "target": -0.75,
+      "weights": {
+        "(1, 2)": 1.0,
+        "(1, 3)": 0.5,
+        "(2, 3)": 1.0
+      }
+    },
+    {
+      "abs_diff": 0.7651578087821831,
+      "c_4": 0.015157808782183105,
+      "lift": "asymmetric_z",
+      "matches_within_20pct": false,
+      "matches_within_5pct": false,
+      "relative_diff_pct": 102.02104117095774,
+      "scheme": "jones_coefficient",
+      "target": -0.75,
+      "weights": {
+        "(1, 2)": 2.0,
+        "(1, 3)": -1.0,
+        "(2, 3)": 2.0
+      }
+    },
+    {
+      "abs_diff": 0.8187144582343668,
+      "c_4": 0.0687144582343668,
+      "lift": "asymmetric_z",
+      "matches_within_20pct": false,
+      "matches_within_5pct": false,
+      "relative_diff_pct": 109.16192776458225,
+      "scheme": "borromean_squared_minus_third",
+      "target": -0.75,
+      "weights": {
+        "(1, 2)": 9.0,
+        "(1, 3)": -1.0,
+        "(2, 3)": 9.0
+      }
+    },
+    {
+      "abs_diff": 0.7500000004913747,
+      "c_4": 4.913747658207831e-10,
+      "lift": "h_quartic",
+      "matches_within_20pct": false,
+      "matches_within_5pct": false,
+      "relative_diff_pct": 100.00000006551663,
+      "scheme": "uniform",
+      "target": -0.75,
+      "weights": {
+        "(1, 2)": 1.0,
+        "(1, 3)": 1.0,
+        "(2, 3)": 1.0
+      }
+    },
+    {
+      "abs_diff": 0.7500000009827495,
+      "c_4": 9.827495316415661e-10,
+      "lift": "h_quartic",
+      "matches_within_20pct": false,
+      "matches_within_5pct": false,
+      "relative_diff_pct": 100.00000013103327,
+      "scheme": "generator_weighted",
+      "target": -0.75,
+      "weights": {
+        "(1, 2)": 3.0,
+        "(1, 3)": 0.0,
+        "(2, 3)": 3.0
+      }
+    },
+    {
+      "abs_diff": 0.75,
+      "c_4": 0.0,
+      "lift": "h_quartic",
+      "matches_within_20pct": false,
+      "matches_within_5pct": false,
+      "relative_diff_pct": 100.0,
+      "scheme": "cyclic_monodromy",
+      "target": -0.75,
+      "weights": {
+        "(1, 2)": -3.0,
+        "(1, 3)": 0.0,
+        "(2, 3)": 3.0
+      }
+    },
+    {
+      "abs_diff": 0.750000000409479,
+      "c_4": 4.0947897151731924e-10,
+      "lift": "h_quartic",
+      "matches_within_20pct": false,
+      "matches_within_5pct": false,
+      "relative_diff_pct": 100.0000000545972,
+      "scheme": "strand_distance",
+      "target": -0.75,
+      "weights": {
+        "(1, 2)": 1.0,
+        "(1, 3)": 0.5,
+        "(2, 3)": 1.0
+      }
+    },
+    {
+      "abs_diff": 0.7500000004913747,
+      "c_4": 4.913747658207831e-10,
+      "lift": "h_quartic",
+      "matches_within_20pct": false,
+      "matches_within_5pct": false,
+      "relative_diff_pct": 100.00000006551663,
+      "scheme": "jones_coefficient",
+      "target": -0.75,
+      "weights": {
+        "(1, 2)": 2.0,
+        "(1, 3)": -1.0,
+        "(2, 3)": 2.0
+      }
+    },
+    {
+      "abs_diff": 0.750000002784457,
+      "c_4": 2.784457006317771e-09,
+      "lift": "h_quartic",
+      "matches_within_20pct": false,
+      "matches_within_5pct": false,
+      "relative_diff_pct": 100.00000037126094,
+      "scheme": "borromean_squared_minus_third",
+      "target": -0.75,
+      "weights": {
+        "(1, 2)": 9.0,
+        "(1, 3)": -1.0,
+        "(2, 3)": 9.0
+      }
+    }
+  ],
+  "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
+  "scriptFile": "pentagon_multipair_borromean_h4_probe.py",
+  "scriptHash": "8f245d7e2774",
+  "status": "exploratory",
+  "summary": {
+    "verdict": "NEGATIVE: no multi-pair sum matches -3/4 within 5%. The categorical Pentagon \u2192 -3/4 chain requires more structure than 3-pair Pentagon residual summation. Candidate next steps: (a) Pachner-coherent state-sum via 8 ideal octahedra; (b) Ding-Iohara-Miki master Pentagon; (c) Habiro cyclotomic expansion of colored Jones J_N(B_3) (see docs/audits/2026-05-24-pentagon-identity-broad-context.md \u00a74 for the four candidate routes)."
+  },
+  "tags": [
+    "pentagon-archimedean",
+    "multi-pair",
+    "borromean",
+    "h4-coefficient",
+    "categorical-derivation"
+  ]
+}

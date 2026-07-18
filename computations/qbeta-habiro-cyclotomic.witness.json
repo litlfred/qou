@@ -2,7 +2,7 @@
   "computation": "qbeta-habiro-cyclotomic",
   "kind": "exploratory-probe",
   "content_block": "prop:q-beta-categorical-precision-ladder",
-  "engine": "sympy-exact",
+  "engine": "sympy",
   "description": "q-side analogue of z_habiro_increment_probe: tests whether the Q_\u03b2 precision-ladder c_k coefficients form a cyclotomic-in-q Habiro element \u03a3_n a_n (q;q)_n with a_n \u2208 \u2124[q^\u00b11]. EXACT over \u211a(q). Verdict: NO \u2014 the c_3 rung has no q-rational representative (refuted, anchor-rigid), and even the c_3\u2192\u22122 b\u00b2-backbone sits in the cyclotomic localisation at (q\u00b2+1), not the integral ring.",
   "substrate": {
     "b_sq_q": "(q**4 + q**2 + 1)/(q**4 + 2*q**2 + 1)",
@@ -154,7 +154,7 @@
         "name": "J_Hopf \u2212 \u210f_q\u00b2(q)",
         "form": "-2 - (q - 1)**2/q**2",
         "rational_in_q": true,
-        "value_at_q0": "-2.0098171865",
+        "value_at_q0": "-2.0098171885",
         "err_pct": "2.8765"
       }
     ],
@@ -176,5 +176,12 @@
     "c3_falsification": "docs/audits/2026-06-04-c3-habiro-3rung-crossanchor-rigidity-falsification.md",
     "lean_z_analog": "QOU.MassEndomorphism.ZHabiroCauchy",
     "alpha_em_precedent": "PR #1511 ([2]_q\u00b7(1\u2212h\u00b2\u03b1))"
-  }
+  },
+  "scriptHash": "7cf68405e606",
+  "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
+  "commitSha": "5fd004f3a5f1057cc20b55f89c1febcbeacdf28a",
+  "computedAt": "2026-07-18T17:47:01.309644+00:00",
+  "durationMs": 0,
+  "engineVersion": "sympy 1.14.0",
+  "scriptFile": "qbeta_habiro_cyclotomic_probe.py"
 }

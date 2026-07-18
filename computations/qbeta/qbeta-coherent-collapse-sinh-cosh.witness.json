@@ -19,10 +19,10 @@
     "cancellation": {
       "coherent_opp": "(y1-y2)·s",
       "observe_last_opp": "(y1+y2)·s",
-      "q0": "4439914331/4000000000",
-      "eta0": 0.10434072031827551,
+      "q0": "27749464889/25000000000",
+      "eta0": 0.10434073185903867,
       "coherent_at_equal_weight": 0.0,
-      "observe_last_at_equal_weight": 0.20906029879313776
+      "observe_last_at_equal_weight": 0.20906032200042224
     },
     "phi2_reconciliation": {
       "Phi1": "sqrt(2) (bar-EVEN, cross-anchor swing 0)",
@@ -55,5 +55,13 @@
     "Φ₂ swing == c_3 swing  ⇒  Φ₂ carries the bar-ODD part (Φ₁ bar-EVEN, swing 0)": true
   },
   "allPassed": true,
-  "verdict": "MECHANISM-INGREDIENTS-PROVEN. The exp(kη)=cosh±sinh grading, h=2sinhη (bar-odd), [2]_q=2coshη (bar-even), χ^(2,1)(σ_1)=h (pure sinh, growth channel), torus pure-cosh, and the coherent-vs-observe-last gap are all exact. OPEN (heavy per-λ probe): whether the ACTUAL c_3 cancellation occurs depends on the real Wenzl weights y_λ and the proton↔neutron character difference — and the cancellation is a rotation((1-dim))-vs-growth((2,1)) effect, NOT a 1-dim transpose-pair effect (both 1-dim reps are rotation channels)."
+  "verdict": "MECHANISM-INGREDIENTS-PROVEN. The exp(kη)=cosh±sinh grading, h=2sinhη (bar-odd), [2]_q=2coshη (bar-even), χ^(2,1)(σ_1)=h (pure sinh, growth channel), torus pure-cosh, and the coherent-vs-observe-last gap are all exact. OPEN (heavy per-λ probe): whether the ACTUAL c_3 cancellation occurs depends on the real Wenzl weights y_λ and the proton↔neutron character difference — and the cancellation is a rotation((1-dim))-vs-growth((2,1)) effect, NOT a 1-dim transpose-pair effect (both 1-dim reps are rotation channels).",
+  "scriptHash": "8be40c4ed96c",
+  "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
+  "commitSha": "5fd004f3a5f1057cc20b55f89c1febcbeacdf28a",
+  "engine": "sympy",
+  "computedAt": "2026-07-18T17:46:25.276190+00:00",
+  "durationMs": 0,
+  "engineVersion": "sympy 1.14.0",
+  "scriptFile": "qbeta_coherent_collapse_sinh_cosh.py"
 }

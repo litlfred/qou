@@ -1,10 +1,10 @@
 {
-  "engine": "python+sympy",
-  "computedAt": "2026-06-01T03:37:36+00:00",
+  "engine": "sympy",
+  "computedAt": "2026-07-18T17:46:29.072886+00:00",
   "computation": "qbeta-habiro-a7-partition",
   "scriptFile": "qbeta_habiro_a7_partition_check.py",
-  "scriptHash": "auto",
-  "scriptCommitSha": "auto",
+  "scriptHash": "94953333703d",
+  "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
   "precisionMetadata": {
     "compute_dps": 50,
     "output_dps": 50,
@@ -80,5 +80,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 331
+  "durationMs": 0,
+  "commitSha": "5fd004f3a5f1057cc20b55f89c1febcbeacdf28a",
+  "engineVersion": "sympy 1.14.0"
 }

@@ -7,7 +7,7 @@
     "prop:rho-k-graded-expansion",
     "prop:hecke-branching-trace-decomposition"
   ],
-  "computedAt": "2026-07-17T14:41:34.064877+00:00",
+  "computedAt": "2026-07-18T17:46:00.925596+00:00",
   "claimed_polynomial": "q^20 + q^18 + 2*q^12 - 2*q^8 - q^2 - 1",
   "claimed_denominator": "12 * q^10",
   "numerical_verification": [
@@ -60,5 +60,12 @@
   "leading_coefficient_at_zero": "-1/12",
   "polynomial_value_at_zero": "-1",
   "roots_real_count": 1,
-  "roots_complex_count": 0
+  "roots_complex_count": 0,
+  "scriptHash": "75bab736c6a7",
+  "scriptCommitSha": "df568b650af29b1c4f2119777ad92a95a2482fd0",
+  "commitSha": "5fd004f3a5f1057cc20b55f89c1febcbeacdf28a",
+  "engine": "mpmath",
+  "durationMs": 0,
+  "engineVersion": "mpmath 1.3.0",
+  "scriptFile": "poly_q_proof_probe.py"
 }

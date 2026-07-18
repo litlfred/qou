@@ -56,5 +56,12 @@
       "delta_contrib_canonical": -0.003901636602494783
     }
   ],
-  "verdict": "S2 REFUTED — NO cancellation (Plancherel ratio 1.000, canonical-Wenzl 1.000). All per-λ n-p contributions are SAME sign (Δχ^λ<0 every block; all y_λ>0) ⇒ coherent = incoherent; observe-last recovers nothing. The c_3 order gap is NOT a collapse artifact ⇒ amplification is the genuine f-map / anchor-dependent brane-tower level (consistent with #1887). Owner-confirmed collapse-cancellation hypothesis (PR #1895) is the NEGATIVE branch it anticipated."
+  "verdict": "S2 REFUTED — NO cancellation (Plancherel ratio 1.000, canonical-Wenzl 1.000). All per-λ n-p contributions are SAME sign (Δχ^λ<0 every block; all y_λ>0) ⇒ coherent = incoherent; observe-last recovers nothing. The c_3 order gap is NOT a collapse artifact ⇒ amplification is the genuine f-map / anchor-dependent brane-tower level (consistent with #1887). Owner-confirmed collapse-cancellation hypothesis (PR #1895) is the NEGATIVE branch it anticipated.",
+  "scriptHash": "9715f5bd9380",
+  "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
+  "commitSha": "5fd004f3a5f1057cc20b55f89c1febcbeacdf28a",
+  "engine": "python",
+  "computedAt": "2026-07-18T17:47:05.272157+00:00",
+  "durationMs": 0,
+  "scriptFile": "qbeta_perlambda_collapse_cancellation_probe.py"
 }
