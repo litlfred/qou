@@ -365,3 +365,43 @@ deceleration** (2.14→1.71). Posted as the one ask on
 [#3537](https://github.com/litlfred/qou/pull/3537#issuecomment-4945856508).
 Un-refuted forward route stays option #1 (hyperbolic link-volume `w_n`).
 Cherry-pick pointer: [`binding_wn_kernel_derive_refute.py`](../../computations/binding_wn_kernel_derive_refute.py) §5–6.
+
+## 2026-07-18 — Δ_λ two-front session (magnitude structure + sign-morphism) (coordination)
+
+Two clean, disciplined results this session (gate open for all; no fit; nothing
+wired; honest negatives where they fell).
+
+**Front (ii) — many-body magnitude structure DERIVED (#3924, merged).** The
+missing ≥4-body `[1⁴]` term's structure is now parameter-free:
+- **⁴He-locality is structural:** the SU(4) `[1⁴]` antisymmetrizer trace
+  `(1/A!)Σ_{σ∈S_A} sgn(σ)·4^{c(σ)} = C(4,A)`, rank `{1,4,6,4,1,0,0,0}` ⇒
+  `b₄(A>4)=0`, and **A=4 is the unique rank-1 `[1⁴]` singlet** (Wigner closed
+  shell) — a structural reason the residual peaks at doubly-magic ⁴He.
+- **Exchange sign + ceiling fixed:** the `[1⁴]` complete-graph exchange matrix
+  spectrum is exactly `{±√5,±1}` ⇒ `det(I+G)=(1−5m²)(1−m²)`; the attractive
+  `−ln det` branch is realised and physicality `det>0 ⇔ m<1/√5` **reproduces the
+  derived writhe cap** parameter-free.
+- **Residual = one gated scalar:** the per-pair bond magnitude (`E_unit`) — this
+  *is* the standing Δ_λ gate (six ansätze failed; 7th fit forbidden). The `−ln det`
+  form's locality/sign/ceiling are derived; its magnitude remains the gate,
+  unwired. Coordinated on the binding-frontier #3808 (R11 additive-split owner).
+  Probe `b4_slater_antisymmetrizer_exchange_sign.py` (7/7).
+
+**Front (i) — sign-morphism Angle A REFUTED (#3931, open).** Tested whether the
+sign carrier `g_ρ` (the principal **row** grading `q^{2ρ}`, `n(λ)=Σ row`) is the
+**Nakayama automorphism** of a natural graded Frobenius algebra — a route to
+replace the cited fake-degree theorem with a self-contained categorical morphism.
+**Verdict: NO** (12/12, proved): coinvariant `R_n` commutative⇒symmetric⇒`ν=id`
+(+1, INV-1); `V_λ`-carriers (ℂS_n, generic `H_n(q)`) semisimple⇒`ν=id` (+1,
+INV-2); non-symmetric candidates (0-Hecke, nilCoxeter, `gr H_n(q)`) index the
+wrong simples; the one pivotal "Nakayama-like" twist `θ_λ=q^{2(n(λ′)−n(λ))}` is
+the **content** grading (+1 at ζ₄, already pruned #3529). Saves the
+`nakayama_eq_principalGrading` Lean effort (false) — problem (i) stays open, the
+correct home remains the GS/jet-order fake-degree valuation (#3537-line). Probe
+`deltalambda_grho_nakayama_probe.py` (12/12); hand-audited Lean
+`NakayamaGradingObstruction.lean` (NOT machine-verified — sandbox 403).
+
+**Net Δ_λ state:** sign fully derived (`g_ρ` jet-order valuation; Nakayama route
+now excluded as an alternative construction); single-trace magnitude = `dim(λ)`;
+the whole remaining wall is the **≥4-body per-pair bond magnitude scalar** — its
+locality/sign/ceiling derived, its value the standing gate. No §6 escalation.
