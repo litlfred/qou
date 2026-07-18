@@ -75,6 +75,35 @@ SU(4)/Schur–Weyl work), a different doubling from the photon channel pair. The
 τ-functor derivation (the correspondence wall) remains open; every necessary condition now
 points at one object.
 
+## Brick 3 (same PR): the σ↦J map constructed at the degenerate locus
+
+Probe [`alpha_em_sigma_to_J_degenerate_locus_probe.py`](../../computations/alpha_em/alpha_em_sigma_to_J_degenerate_locus_probe.py)
+→ [witness](../../computations/alpha_em/alpha-em-sigma-to-J-degenerate-locus.witness.json) (4/4):
+
+- **(B1) Triple coincidence.** `{[2]_q = 0} = {φ-fixed} = {w₊=w₋=½} = {±i}` — the democratic
+  points are exactly the **quantum-dimension-zero** points; the idempotents blow up as
+  `[2]_q→0` and the E4 merge is the Jones–Wenzl-type degeneration.
+- **(B2) The semisimplified braiding is a square root of −1.** Mod the nilradical at
+  `q=±i`: `σ_ss = ±i`, `σ_ss² = −1` — **type-correct with J**.
+- **(B3) Involution role-swap.** On the degenerate pair, the transpose *fixes* each point
+  (`φ(±i)=±i`) while **bar exchanges them** (`bar(±i)=∓i`): on the degenerate stratum the
+  residual doubling is the *point* pair, and **bar is the conjugation there**. The
+  dihedral pair (bar, transpose) trades roles between the generic stratum (channel pair,
+  transpose-swapped) and the degenerate stratum (point pair, bar-swapped).
+- **(B4) The constructed map is equivariant.** `{q=+i ↦ σ_ss=+i (~J on H^{1,0}),
+  q=−i ↦ σ_ss=−i (~J on H^{0,1})}` satisfies `σ_ss(bar(q)) = conj(σ_ss(q))` exactly.
+
+**Net.** The σ↦J identification is now *constructed* at the degenerate locus —
+type-correct and involution-equivariant. The remaining wall is unchanged but **maximally
+localized**: promote this map to the τ functor. Since `J` on a surface **is** the conformal
+structure — which defines the Laplacian and hence the heat-kernel unit `a₀ = 1/(4π)` —
+σ↦J is precisely the missing Clause-A normalization: the braiding's degenerate pair would
+hand the loop tower the very structure that defines `a₀`. *Named as the route; not derived.*
+
+**Honest caveats:** `[2]_q=0` puts the democratic points outside the unitary regime (the
+quantum dimension of `A` vanishes; semisimplification = quotient by the nilradical); B1–B4
+are type-correctness + equivariance of a constructed map, not the functorial derivation.
+
 ## Scope guard (STRICT)
 
 Exact structural facts + one exclusion; derives **no** clause of the per-loop conjecture;

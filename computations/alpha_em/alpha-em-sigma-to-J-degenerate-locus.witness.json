@@ -1,0 +1,48 @@
+{
+  "computation": "alpha-em-sigma-to-J-degenerate-locus",
+  "description": "Constructs the sigma->J map at the degenerate locus: triple coincidence (democratic = transpose-fixed = [2]_q=0 locus = {\u00b1i}); semisimplified braiding sigma_ss=\u00b1i squares to -1 (type-correct with J); involution role-swap (transpose fixes the degenerate points, bar exchanges them = conjugation on that stratum); the map q=\u00b1i -> sigma_ss=\u00b1i ~ J|H^{1,0}/H^{0,1} is bar/conjugation-equivariant exactly. Remaining: promote to the tau functor (J = conformal structure => a0) \u2014 the Clause-A wall, maximally localized. Nothing wired.",
+  "auditOnly": "docs/audits/2026-07-18-alpha-em-conjugation-doubling-dictionary.md",
+  "tier": "symbolic-exact (sympy; locus solves, quotient-by-nilradical, involution equivariance)",
+  "computedAt": "2026-07-18T14:20:40.690171+00:00",
+  "commitSha": "ffc884aa15b3f4f38153052317774e0d93b95fb7",
+  "engine": "sympy",
+  "engineVersion": "1.14.0",
+  "scriptFile": "alpha_em_sigma_to_J_degenerate_locus_probe.py",
+  "scriptHash": "6b2cd5102092",
+  "assertions": [
+    {
+      "name": "triple_coincidence_dim0_transposefixed_equalweight",
+      "passed": true,
+      "detail": "{[2]_q=0} = ['-I', 'I'] = {phi-fixed} = {w+=w-=1/2} \u2014 the democratic points are exactly the quantum-dimension-zero points; the channel idempotents blow up as [2]_q->0 and the merge (E4) is the Jones-Wenzl-type degeneration"
+    },
+    {
+      "name": "semisimplified_braiding_squares_to_minus1",
+      "passed": true,
+      "detail": "mod the nilradical at q=+-i: sigma_ss = +-i with sigma_ss^2 = -1 (exact; also directly from the Hecke relation sigma^2 = 2i*sigma + 1 at sigma=i) \u2014 TYPE-CORRECT with the complex structure J^2 = -1"
+    },
+    {
+      "name": "involution_role_swap_on_degenerate_pair",
+      "passed": true,
+      "detail": "phi(+-i) = +-i (transpose FIXES each degenerate point) while bar(+-i) = -+i (bar EXCHANGES them) \u2014 on the degenerate stratum the residual doubling is the POINT pair {q=i,q=-i} and BAR acts as the conjugation; the dihedral pair (bar, transpose) trades roles between generic (channel pair / transpose-swapped) and degenerate (point pair / bar-swapped) strata"
+    },
+    {
+      "name": "sigma_to_J_map_equivariant",
+      "passed": true,
+      "detail": "the constructed map {q=+i |-> sigma_ss=+i (~J on H^{1,0}), q=-i |-> sigma_ss=-i (~J on H^{0,1})} satisfies sigma_ss(bar(q)) = conj(sigma_ss(q)) EXACTLY \u2014 type-correct (B2) and involution-equivariant: the sigma->J identification is consistent at the degenerate locus; promoting it to the tau functor (J = the conformal structure that defines the Laplacian and hence a0) is the remaining Clause-A wall, now maximally localized"
+    }
+  ],
+  "allPassed": true,
+  "result": {
+    "triple_coincidence": "{[2]_q=0} = {phi-fixed} = {w+=w-=1/2} = {+i,-i}",
+    "sigma_ss": "\u00b1i at q=\u00b1i; sigma_ss^2 = -1 (J-type)",
+    "role_swap": "transpose fixes the degenerate points; bar exchanges them (= conjugation there)",
+    "constructed_map": "q=\u00b1i -> sigma_ss=\u00b1i ~ J on H^{1,0}/H^{0,1}; bar/conj-equivariant exact",
+    "remaining_wall": "promote to tau: sigma->J = conformal structure => Laplacian => a0 (Clause A), maximally localized",
+    "verdict": "SIGMA->J CONSTRUCTED AT THE DEGENERATE LOCUS (scope-(a); derives no clause; no fit; nothing wired): triple coincidence \u2014 the democratic/transpose-fixed/equal-weight locus IS the quantum-dimension-zero locus {q=+-i} ([2]_q=0; the E4 merge is the Jones-Wenzl-type degeneration). There the semisimplified braiding sigma_ss = +-i squares to -1 (type-correct with J), the involutions ROLE-SWAP (transpose fixes the two points, bar exchanges them \u2014 bar is the conjugation on the degenerate stratum), and the assignment q=+-i |-> sigma_ss=+-i ~ J|_{H^{1,0}/H^{0,1}} is bar/conjugation-equivariant EXACTLY. Remaining wall (unchanged, maximally localized): promote this map to the tau functor \u2014 sigma -> J = the conformal structure defining the Laplacian and a0=1/(4pi), i.e. exactly the Clause-A normalization. Honest caveats: [2]_q=0 puts the democratic points outside the unitary regime; B1-B4 are type-correctness + equivariance, not the functorial derivation. NO tier change."
+  },
+  "context": {
+    "builds_on": "bricks 1-2 (this PR): corrected dictionary + unique tau target + E4 spec(J) merge",
+    "caveats": "[2]_q=0 at the democratic points (quantum dimension of A vanishes \u2014 outside the unitary regime; semisimplification = quotient by nilradical); type-correctness + equivariance, not the functorial derivation",
+    "scope_guard": "derives NO clause; no fit; nothing wired; 1/(8pi) stays phase-4"
+  }
+}
