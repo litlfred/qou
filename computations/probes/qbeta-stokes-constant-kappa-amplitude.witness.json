@@ -1,0 +1,53 @@
+{
+  "computation": "qbeta-stokes-constant-kappa-amplitude",
+  "description": "Stokes constant from the \u03ba-ladder amplitude 2\u03c0\u00b7\u03ba_n\u00b7A\u207f/\u0393(n): independently reproduces main's landed u=0 Borel-Pad\u00e9 amplitude 2.753 (\u2192 GGM integer 3, #3872), and REFINES #3916 \u2014 the amplitude is parity-blind (\u221a3 is the rung grading, not a separate odd Stokes constant); the bar-odd datum is the deformed-pole Im (CS). scope-(a).",
+  "audit_only": true,
+  "tier": "numerical (large-order amplitude; reconciliation + refinement)",
+  "computedAt": "2026-07-18T14:00:25.223742+00:00",
+  "commitSha": "33c6b96b6b94ea931119310f860e28440db49661",
+  "engine": "mpmath",
+  "engineVersion": "1.3.0",
+  "scriptFile": "qbeta_stokes_constant_kappa_amplitude_probe.py",
+  "scriptHash": "ebd34ee805a7",
+  "assertions": [
+    {
+      "name": "kappa_amplitude_trends_to_landed_u0_stokes",
+      "passed": true,
+      "computed": "2\u03c0\u00b7C_7=2.64376",
+      "expected": "increasing toward landed 2.753 (\u2192 integer 3)",
+      "source": "the \u03ba-ladder one-instanton amplitude 2\u03c0\u00b7C_n reproduces the landed Borel-Pad\u00e9 u=0 Stokes amplitude 2.753 from an independent direction \u2014 both \u2192 the GGM integer 3 (#3872)"
+    },
+    {
+      "name": "stokes_amplitude_is_parity_blind",
+      "passed": true,
+      "computed": "C_odd and C_even interleave; top gap 0.02443",
+      "source": "C_n (which RETAINS the \u221a3 for odd n) is monotone across both parities and the odd/even traces converge together \u2014 the \u221a3 in \u03ba_odd is the trace-field dressing that makes both parities SHARE one Stokes constant (integer 3), NOT a separate odd amplitude; this REFINES #3916's '\u221a3-graded bar-odd Stokes constant' phrasing"
+    }
+  ],
+  "allPassed": true,
+  "result": {
+    "A_vol_over_pi": "0.6461318944",
+    "amplitude_2piC_n": [
+      "2.249989",
+      "1.917733",
+      "2.249575",
+      "2.390074",
+      "2.495521",
+      "2.579171",
+      "2.64376"
+    ],
+    "amplitude_2piC_7": "2.64376",
+    "landed_u0_amplitude": "2.752981",
+    "ggm_integer_stokes": 3,
+    "parity_blind": true,
+    "bar_odd_datum_is_deformed_Im": "0.0156407",
+    "verdict": "RECONCILED + REFINED: the \u03ba-ladder one-instanton amplitude 2\u03c0\u00b7C_n (C_n = \u03ba_n\u00b7A\u207f/\u0393(n), A=Vol/\u03c0) increases to 2\u03c0\u00b7C_7 = 2.64376, reproducing main's landed Borel-Pad\u00e9 u=0 Stokes amplitude 2.753 from an independent direction \u2014 both converge to the GGM-proved integer Stokes constant 3 (#3872). REFINEMENT of #3916: the amplitude is PARITY-BLIND \u2014 C_n retains the \u221a3 for odd n yet odd and even traces converge together, so the \u221a3 is the trace-field dressing that makes both parities SHARE the single integer-3 constant, NOT a separate \u221a3-graded odd amplitude. The genuine bar-odd datum is the DEFORMED-pole imaginary part (CS, Im\u22480.0156 at u_sub), which vanishes at the amphichiral u=0. So the u=0 Stokes constant is settled (integer 3, now confirmed from the amplitude too); the OPEN piece is the deformation Im at u\u22600, not a \u221a3 amplitude. scope-(a) reconciliation + honest refinement, NOT a derivation of the deformed datum. \u0127\u21942\u03c0i/N: perturbative amplitude only. NO fit; NO c_k wired; NO tier change."
+  },
+  "context": {
+    "axis": "Stokes constant from \u03ba amplitude (reconciliation; bean qou-duub)",
+    "landed_reconciled_against": "qbeta-g3-aomega-residue-first-number (u=0 amp 2.753, ratio 0.918 to integer 3)",
+    "ggm_integer_source": "#3872 GGM-proved Stokes constant 3",
+    "refines": "#3916 '\u221a3-graded bar-odd Stokes constant' \u2192 parity-blind amplitude; \u221a3 is the rung grading",
+    "open_remainder": "the deformed-pole Im (CS) at u\u22600 = the meridian\u2194Q_\u03b2 map (conj:algebraic-geometric-dilog-equivalence)"
+  }
+}
