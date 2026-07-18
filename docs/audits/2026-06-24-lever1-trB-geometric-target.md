@@ -16,6 +16,22 @@ curve) is never computed. So the identification `a_D^(n)=lw(n−1)` is unverifie
 
 ## The target (the result)
 
+> **🟧 Correction (2026-07-18) — no *integral* monodromy can realize this target
+> (scope-(b)).** The closed-form target below is non-integer (`2 < tr B < 3` on the
+> whole documented q₀ interval), while any monodromy acting on `H₁(·, ℤ)` — in
+> particular the `SL₂(ℤ)` reading in the companion keystone audit
+> [`2026-06-24-keystone-bring-jacobian-E4-elliptic-W-plane.md`](2026-06-24-keystone-bring-jacobian-E4-elliptic-W-plane.md)
+> — has **integer** trace (invariant: integrality of traces of integer matrices;
+> RR92 Thm 1 / BN12 §5.2 integer symplectic homology action). Machine-checked
+> sorry-free in
+> [`QOU/BraidKnot/TrBIntegerTracePrune.lean`](../../content/quantum-observable-universe/lean/QOU/BraidKnot/TrBIntegerTracePrune.lean).
+> The target itself **stands** — only its realization class is re-scoped: the family
+> with `tr M(q₀) = 2.6424` is a real-analytic **`SL₂(ℝ)` transfer-matrix family**,
+> not the integral Gauss–Manin monodromy of an algebraic elliptic surface. Cross-ref:
+> uploaded-papers audit idea A3,
+> [`2026-07-18-uploaded-papers-binding-mass-gap-ideas.md`](2026-07-18-uploaded-papers-binding-mass-gap-ideas.md).
+> Original text retained unedited below.
+
 Depth-2 + `det B = 1` are proved, so the only unknown is `τ = tr B`. The
 identification holds **iff** the geometric Bring W-plane monodromy trace equals
 
