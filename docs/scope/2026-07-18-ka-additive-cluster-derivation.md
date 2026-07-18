@@ -42,10 +42,15 @@ per-knot traces already on main; no new fitted constants.
 `C₂(A) = Σ_{bonds (a,b)} 1/(tr_M(a)·tr_M(b))` on the p≠n-distinct traces (the
 merged, Lean-grounded object). No freedom here.
 
-**Step 2 — read off the residual `C₃(A) = (μ_ext − μ_base) − C₂(A)`** for
-D/T/³He/⁴He and test whether it is a **clean connected-3-cluster object** — the
-connected triple Markov trace `tr_M(triple)_connected = tr_M(abc) −
-(disconnected 2+1 parts)` — with the k=3-peak structure #3808 found. It must be:
+**Step 2 — read off the residual** $C_3(A) = (\mu_{\text{ext}} - \mu_{\text{base}}) - C_2(A)$
+for D/T/³He/⁴He and test whether it is a **clean connected-3-cluster object** — the
+connected triple Markov trace (full Mayer/Ursell cumulant, subtracting **both**
+the $2{+}1$ and the $1{+}1{+}1$ disconnected partitions)
+
+$$\mathrm{tr}_M(abc)_{\text{conn}} = \mathrm{tr}_M(abc) - \sum_{\text{2+1}} \mathrm{tr}_M(xy)\,\mathrm{tr}_M(z) + 2\,\mathrm{tr}_M(a)\,\mathrm{tr}_M(b)\,\mathrm{tr}_M(c)$$
+
+(the $1{+}1{+}1$ term enters with the standard cumulant coefficient $+2$) — with
+the $k=3$-peak structure #3808 found. It must be:
 - **bar-EVEN** (I-par gate — the absolute scale is bar-even; a bar-odd residual
   is the p−n channel, wrong object). *Prove parity before fitting.*
 - **genuinely connected** (I-conn — not a saturating pairwise product; else it
