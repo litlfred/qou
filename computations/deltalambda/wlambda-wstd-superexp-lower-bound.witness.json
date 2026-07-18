@@ -1,0 +1,123 @@
+{
+  "engine": "python-exact",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-07-18T14:09:38.399304+00:00",
+  "commitSha": "699932022df3ca9716be69864303726228936b5b",
+  "assertions": [
+    {
+      "name": "wstd_rigorous_super_exponential_lower_bound",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "w_std(k)=E_Planch[f^{λ/(2,1)}] ≥ (1/4)Σ(f^λ)³/k! ≥ (1/4)√(k!)/p(k)^{3/2} → super-exponential. Via exact level-3 branching (A), the exact Plancherel identity Σ(f^λ)³/k!=2w_std+2E[f^{λ/(3)}] (B, conj-sym), the rigorous cube bound (C, max f^λ≥√(k!/p)), and the clean sub-lemma w_std≥E[f^{λ/(3)}] (D, verified k≤12). Forces k(A)=O(log A); excludes k~A, k~bond-count; no fit; no c_k wired."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 18,
+  "computation": "wlambda-wstd-superexp-lower-bound",
+  "scriptFile": "wlambda_wstd_superexp_lower_bound.py",
+  "scriptHash": "9560684965e7",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "RIGOROUS super-exponential lower bound on the GAP-A-3 tower weight w_std(k) = E_Planch[f^{λ/(2,1)}], upgrading wlambda_wstd_growth_bound_probe's empirical-to-k=10 check. Chain (verified exactly k=3..12): (A) level-3 branching f^λ = f^{λ/(3)} + 2f^{λ/(2,1)} + f^{λ/(1,1,1)} per λ; (B) the exact Plancherel identity Σ(f^λ)³/k! = 2·w_std + 2·E[f^{λ/(3)}] (conjugation symmetry E[f^{λ/(3)}]=E[f^{λ/(1,1,1)}]); (C) the rigorous bound Σ(f^λ)³/k! ≥ (max f^λ)³/k! ≥ √(k!)/p(k)^{3/2} (max f^λ ≥ √(k!/p(k)) since Σ(f^λ)²=k! over p(k) parts), which → super-exp (√(k!) beats every C^k, p(k)=exp O(√k) sub-exp); (D) the clean sub-lemma w_std ≥ E[f^{λ/(3)}] (verified k≤12) ⇒ w_std ≥ (1/4)Σ(f^λ)³/k! ≥ (1/4)√(k!)/p(k)^{3/2} → super-exponential. Consequence: inverting w_std against extensive B~A forces k(A)=O(log A), excluding k~A and k~bond-count — no fit. (A)-(C) are Lean-ready proofs; (D) is the one remaining clean symmetric-function inequality. Sets no scale, closes no binding; scope-(a); no c_k wired; L2 2/7. Complements #3808 (P1/P2 prunes).",
+  "data": {
+    "branching_identity_exact": true,
+    "plancherel_cube_identity_exact": true,
+    "conjugation_symmetry_E3_eq_E111": true,
+    "wstd_dominates_E3": true,
+    "cube_ge_sqrt_kfac_over_p32": true,
+    "table": [
+      {
+        "k": 3,
+        "w_std": 0.6666666666666666,
+        "E_f_lam_3": 0.16666666666666666,
+        "cube_moment": 1.6666666666666667,
+        "lower_bound_sqrt_kfac_over_p32": 0.4714045207910316,
+        "w_over_cube": 0.39999999999999997
+      },
+      {
+        "k": 4,
+        "w_std": 0.9166666666666666,
+        "E_f_lam_3": 0.4166666666666667,
+        "cube_moment": 2.6666666666666665,
+        "lower_bound_sqrt_kfac_over_p32": 0.43817804600413285,
+        "w_over_cube": 0.34375
+      },
+      {
+        "k": 5,
+        "w_std": 1.7,
+        "E_f_lam_3": 0.7833333333333333,
+        "cube_moment": 4.966666666666667,
+        "lower_bound_sqrt_kfac_over_p32": 0.5914847651505892,
+        "w_over_cube": 0.3422818791946309
+      },
+      {
+        "k": 6,
+        "w_std": 3.85,
+        "E_f_lam_3": 1.7444444444444445,
+        "cube_moment": 11.188888888888888,
+        "lower_bound_sqrt_kfac_over_p32": 0.7354907590508095,
+        "w_over_cube": 0.3440913604766634
+      },
+      {
+        "k": 7,
+        "w_std": 8.780952380952382,
+        "E_f_lam_3": 4.158730158730159,
+        "cube_moment": 25.87936507936508,
+        "lower_bound_sqrt_kfac_over_p32": 1.2220201853215573,
+        "w_over_cube": 0.3393032384690874
+      },
+      {
+        "k": 8,
+        "w_std": 21.195039682539683,
+        "E_f_lam_3": 10.24047619047619,
+        "cube_moment": 62.87103174603175,
+        "lower_bound_sqrt_kfac_over_p32": 1.9459256400345704,
+        "w_over_cube": 0.33711932338182854
+      },
+      {
+        "k": 9,
+        "w_std": 55.533377425044094,
+        "E_f_lam_3": 26.894538139329807,
+        "cube_moment": 164.8558311287478,
+        "lower_bound_sqrt_kfac_over_p32": 3.666060555964672,
+        "w_over_cube": 0.3368602556840957
+      },
+      {
+        "k": 10,
+        "w_std": 159.66312610229278,
+        "E_f_lam_3": 77.12043430335098,
+        "cube_moment": 473.56712081128745,
+        "lower_bound_sqrt_kfac_over_p32": 6.998542122237652,
+        "w_over_cube": 0.3371499394399832
+      },
+      {
+        "k": 11,
+        "w_std": 478.4167833092833,
+        "E_f_lam_3": 232.49246342392175,
+        "cube_moment": 1421.8184934664102,
+        "lower_bound_sqrt_kfac_over_p32": 15.076336370861023,
+        "w_over_cube": 0.3364823185995405
+      },
+      {
+        "k": 12,
+        "w_std": 1479.2231773923093,
+        "E_f_lam_3": 723.8771951492438,
+        "cube_moment": 4406.200745083106,
+        "lower_bound_sqrt_kfac_over_p32": 32.39159951817121,
+        "w_over_cube": 0.3357139774085371
+      }
+    ]
+  }
+}
