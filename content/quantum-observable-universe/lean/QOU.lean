@@ -270,6 +270,7 @@ import QOU.Machinery.DerivedCharacterCatalogue
 -- MatrixSemisimple.
 import QOU.Machinery.HeckeH2WedderburnReal
 import QOU.Machinery.HeckeH3Semisimple
+import QOU.Machinery.HeckeH4BlockRep
 import QOU.Machinery.HeckeTowerBasicConstruction
 import QOU.MathlibExt.EndSemisimple
 import QOU.HyperellipticQuintic.zeta5_residue_monodromy
