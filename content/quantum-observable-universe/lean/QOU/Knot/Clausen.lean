@@ -288,28 +288,111 @@ theorem hasDerivAt_g_r {r : ℝ} (hr : |r| < 1) (θ : ℝ) :
         _ = |r| ^ n := one_mul _
   exact hasDerivAt_tsum hu hg hbound hg0 θ
 
-/-- **The atom — WIRED via the derivative-under-limit (brick 5 scaffold).**
-    `Cl_2'(θ) = -log(2 sin(θ/2))` on `(0, 2π)`. Proved by
-    `hasDerivAt_of_tendstoLocallyUniformlyOn` from three inputs, two already
-    machine-proved: `hasDerivAt_g_r` (brick 4, the regularised derivatives) and
-    `tendsto_Cl_2_reg` (brick 1, the `r→1⁻` pointwise limit `g_r → Cl_2`). The
-    single remaining `sorry` is `hf'` — the LOCAL-UNIFORM convergence of
-    `g_r' → -log(2 sin(·/2))` as `r→1⁻` on `(0,2π)`. This is the genuine hard
-    analysis piece (no Mathlib shortcut: Dini needs monotonicity, this family is
-    not monotone). It follows from the closed form `g_r'(θ) = -log‖1-r e^{iθ}‖`
-    (brick 2b `tsum_rpow_cos_div`) + the boundary norm (brick 3
-    `norm_one_sub_exp_ofReal_mul_I`) + joint continuity where `‖1-e^{iθ}‖ > 0`.
-    (bean qou-6fkd) -/
-theorem hasDerivAt_Cl_2_series {θ : ℝ} (h0 : 0 < θ) (h2 : θ < 2 * π) :
-    HasDerivAt QOU.Archimedean.Cl_2 (-Real.log (2 * Real.sin (θ / 2))) θ := by
-  have hf' : TendstoLocallyUniformlyOn
+/-- **Assembly brick 5 — `hf'`, the local-uniform convergence (sorry-free).**
+    As `r → 1⁻`, the regularised derivatives `g_r' = ∑ₙ rⁿ cos(n·)/n` converge
+    locally uniformly on `(0, 2π)` to `-log(2 sin(·/2))`. The closing trick: the
+    series equals its closed form `F(r,t) = -log‖1 - r e^{it}‖` (brick 2b), and
+    `F` is jointly continuous THROUGH `r = 1` away from `t ∈ 2πℤ` (the only zeros
+    of `1 - r e^{it}` for `r > 0`, via `Complex.exp_eq_one_iff`); on a compact
+    `K ⊆ (0,2π)` the compact product `[½,3/2] ×ˢ K` gives uniform continuity
+    (Heine–Cantor), hence uniform convergence as `r → 1` within `[½,3/2]`. The
+    conditional-convergence "wall" was an artifact of the series representation —
+    no Dirichlet-kernel estimate is needed. (bean qou-6fkd) -/
+theorem tendstoLocallyUniformlyOn_tsum_rpow_cos :
+    TendstoLocallyUniformlyOn
       (fun (r : ℝ) (t : ℝ) => ∑' n : ℕ, r ^ n * Real.cos ((n : ℝ) * t) / n)
       (fun t : ℝ => -Real.log (2 * Real.sin (t / 2)))
       (nhdsWithin 1 (Set.Iio 1)) (Set.Ioo (0 : ℝ) (2 * π)) := by
-    -- Ref: [zagier1986] g_r'(θ) = -log‖1-r e^{iθ}‖ (brick 2b) → -log(2 sin(θ/2))
-    -- locally uniformly on (0,2π); joint continuity where ‖1-e^{iθ}‖ > 0. The one
-    -- remaining hard analysis piece; everything else in the atom is now proved.
-    sorry
+  have hpi := Real.pi_pos
+  rw [tendstoLocallyUniformlyOn_iff_forall_isCompact isOpen_Ioo]
+  intro K hKsub hKc
+  -- nonvanishing of `1 - r e^{it}` on the product window
+  have hne : ∀ p : ℝ × ℝ, p ∈ Set.Icc (1/2 : ℝ) (3/2) ×ˢ K →
+      (1 : ℂ) - (p.1 : ℂ) * Complex.exp ((p.2 : ℂ) * Complex.I) ≠ 0 := by
+    rintro ⟨r, t⟩ ⟨hrU, htK⟩ heq
+    obtain ⟨ht0, ht2⟩ := hKsub htK
+    have hr0 : 0 < r := lt_of_lt_of_le (by norm_num) hrU.1
+    have hw : (r : ℂ) * Complex.exp ((t : ℂ) * Complex.I) = 1 :=
+      (sub_eq_zero.mp heq).symm
+    have hr1 : r = 1 := by
+      have hnrm := congrArg norm hw
+      rwa [norm_mul, Complex.norm_exp_ofReal_mul_I, mul_one, Complex.norm_real,
+        Real.norm_eq_abs, norm_one, abs_of_pos hr0] at hnrm
+    have hexp : Complex.exp ((t : ℂ) * Complex.I) = 1 := by
+      rw [hr1, Complex.ofReal_one, one_mul] at hw
+      exact hw
+    obtain ⟨n, hn⟩ := Complex.exp_eq_one_iff.mp hexp
+    have htn : t = (n : ℝ) * (2 * π) := by
+      have him := congrArg Complex.im hn
+      simpa using him
+    rw [htn] at ht0 ht2
+    have hn0 : (0 : ℤ) < n := by
+      have : (0 : ℝ) < (n : ℝ) := by nlinarith
+      exact_mod_cast this
+    have hn1 : n < (1 : ℤ) := by
+      have : (n : ℝ) < 1 := by nlinarith
+      exact_mod_cast this
+    omega
+  -- joint continuity on the compact product ⇒ uniform continuity (Heine–Cantor)
+  have hcont : ContinuousOn
+      (Function.uncurry fun (r t : ℝ) =>
+        -Real.log ‖1 - (r : ℂ) * Complex.exp ((t : ℂ) * Complex.I)‖)
+      (Set.Icc (1/2 : ℝ) (3/2) ×ˢ K) := by
+    have hbase : Continuous (fun p : ℝ × ℝ =>
+        (1 : ℂ) - (p.1 : ℂ) * Complex.exp ((p.2 : ℂ) * Complex.I)) := by fun_prop
+    exact ((hbase.norm.continuousOn).log fun p hp => norm_ne_zero_iff.mpr (hne p hp)).neg
+  have hunif : UniformContinuousOn
+      (Function.uncurry fun (r t : ℝ) =>
+        -Real.log ‖1 - (r : ℂ) * Complex.exp ((t : ℂ) * Complex.I)‖)
+      (Set.Icc (1/2 : ℝ) (3/2) ×ˢ K) :=
+    (isCompact_Icc.prod hKc).uniformContinuousOn_of_continuous hcont
+  -- uniform convergence of the closed form as r → 1 within the window
+  have hFu : TendstoUniformlyOn
+      (fun (r t : ℝ) => -Real.log ‖1 - (r : ℂ) * Complex.exp ((t : ℂ) * Complex.I)‖)
+      (fun t : ℝ => -Real.log ‖1 - ((1 : ℝ) : ℂ) * Complex.exp ((t : ℂ) * Complex.I)‖)
+      (nhdsWithin 1 (Set.Icc (1/2 : ℝ) (3/2))) K :=
+    hunif.tendstoUniformlyOn (by norm_num [Set.mem_Icc])
+  have hle : nhdsWithin (1 : ℝ) (Set.Iio 1) ≤ nhdsWithin 1 (Set.Icc (1/2 : ℝ) (3/2)) :=
+    nhdsWithin_le_of_mem (nhdsWithin_le_nhds (Icc_mem_nhds (by norm_num) (by norm_num)))
+  -- swap the limit (brick 3: `‖1-e^{it}‖ = 2 sin(t/2)` on K)
+  have hlim : Set.EqOn
+      (fun t : ℝ => -Real.log ‖1 - ((1 : ℝ) : ℂ) * Complex.exp ((t : ℂ) * Complex.I)‖)
+      (fun t : ℝ => -Real.log (2 * Real.sin (t / 2))) K := by
+    intro t htK
+    obtain ⟨ht0, ht2⟩ := hKsub htK
+    have hs : 0 < Real.sin (t / 2) :=
+      Real.sin_pos_of_pos_of_lt_pi (by linarith) (by linarith)
+    simp only [Complex.ofReal_one, one_mul]
+    rw [norm_one_sub_exp_ofReal_mul_I, abs_of_pos hs]
+  -- swap the family (brick 2b), eventually `|r| < 1`
+  have hev : ∀ᶠ (r : ℝ) in nhdsWithin (1 : ℝ) (Set.Iio 1), Set.EqOn
+      (fun t : ℝ => -Real.log ‖1 - (r : ℂ) * Complex.exp ((t : ℂ) * Complex.I)‖)
+      (fun t : ℝ => ∑' n : ℕ, r ^ n * Real.cos ((n : ℝ) * t) / n) K := by
+    have h1 : ∀ᶠ r in nhdsWithin (1 : ℝ) (Set.Iio 1), r < 1 :=
+      eventually_mem_nhdsWithin.mono fun r hr => hr
+    have h2 : ∀ᶠ r in nhdsWithin (1 : ℝ) (Set.Iio 1), (-1 : ℝ) < r :=
+      (isOpen_Ioi.eventually_mem (by norm_num : (1 : ℝ) ∈ Set.Ioi (-1 : ℝ))).filter_mono
+        nhdsWithin_le_nhds
+    filter_upwards [h1, h2] with r hr1 hr2 t _
+    exact (tsum_rpow_cos_div t (abs_lt.mpr ⟨hr2, hr1⟩)).symm
+  have hFu' : TendstoUniformlyOn
+      (fun (r t : ℝ) => -Real.log ‖1 - (r : ℂ) * Complex.exp ((t : ℂ) * Complex.I)‖)
+      (fun t : ℝ => -Real.log ‖1 - ((1 : ℝ) : ℂ) * Complex.exp ((t : ℂ) * Complex.I)‖)
+      (nhdsWithin 1 (Set.Iio 1)) K :=
+    fun u hu => (hFu u hu).filter_mono hle
+  exact (hFu'.congr_right hlim).congr hev
+
+/-- **The atom — CLOSED, sorry-free.** `Cl_2'(θ) = -log(2 sin(θ/2))` on
+    `(0, 2π)`: the term-by-term derivative of the Fourier-series Clausen — the
+    identity the filler file deferred to "Fourier-series infrastructure not in
+    Mathlib". Proved by `hasDerivAt_of_tendstoLocallyUniformlyOn` from
+    `hasDerivAt_g_r` (brick 4), `tendsto_Cl_2_reg` (brick 1), and
+    `tendstoLocallyUniformlyOn_tsum_rpow_cos` (brick 5, the former `hf'`).
+    With this the whole file is sorry-free: the Zagier series↔integral bridge
+    (`clausen_eq_series`) and the `Cl_2` derivative are machine-proved. -/
+theorem hasDerivAt_Cl_2_series {θ : ℝ} (h0 : 0 < θ) (h2 : θ < 2 * π) :
+    HasDerivAt QOU.Archimedean.Cl_2 (-Real.log (2 * Real.sin (θ / 2))) θ := by
+  have hf' := tendstoLocallyUniformlyOn_tsum_rpow_cos
   have hf : ∀ᶠ r in nhdsWithin (1 : ℝ) (Set.Iio 1),
       ∀ x ∈ Set.Ioo (0 : ℝ) (2 * π),
         HasDerivAt (fun t : ℝ => ∑' n : ℕ, Real.sin ((n : ℝ) * t) / (n : ℝ) ^ 2 * r ^ n)
@@ -330,7 +413,7 @@ theorem hasDerivAt_Cl_2_series {θ : ℝ} (h0 : 0 < θ) (h2 : θ < 2 * π) :
     fun x _ => tendsto_Cl_2_reg x
   exact hasDerivAt_of_tendstoLocallyUniformlyOn isOpen_Ioo hf' hf hfg ⟨h0, h2⟩
 
-/-- **Reduction (Route-B brick 2, sorry-free modulo the atom).** `clausen` and
+/-- **Reduction (Route-B brick 2, sorry-free).** `clausen` and
     `Cl_2` agree on `(0, 2π)`: both have derivative `-log(2 sin(θ/2))` there
     (`hasDerivAt_clausen`, `hasDerivAt_Cl_2_series`) and agree at the interior
     point `θ = π` (`clausen_pi`, `Cl_2_pi`), so they are equal on the connected
@@ -347,17 +430,16 @@ theorem clausen_eqOn_Cl_2 :
   · rw [(hasDerivAt_clausen hθ.1 hθ.2).deriv, (hasDerivAt_Cl_2_series hθ.1 hθ.2).deriv]
   · rw [clausen_pi, QOU.Archimedean.Cl_2_pi]
 
-/-- **Series↔integral bridge (sorry-free modulo the atom).** On `(0, 2π)`,
-    `∫₀^θ -log(2 sin(t/2)) = ∑ sin(kθ)/k²` — now *derived* from
-    `clausen_eqOn_Cl_2`, not posited. The sole remaining `sorry` is the atom
-    `hasDerivAt_Cl_2_series`. -/
+/-- **Series↔integral bridge (sorry-free).** On `(0, 2π)`,
+    `∫₀^θ -log(2 sin(t/2)) = ∑ sin(kθ)/k²` — the classical Zagier identity,
+    fully machine-proved via `clausen_eqOn_Cl_2`. -/
 theorem clausen_eq_series {θ : ℝ} (hθ : θ ∈ Set.Ioo (0:ℝ) (2 * π)) :
     clausen θ = QOU.Archimedean.Cl_2 θ :=
   clausen_eqOn_Cl_2 hθ
 
 /-- **The series Clausen's derivative** `Cl_2'(θ) = -log(2 sin(θ/2))` for
     `θ ∈ (0, 2π)` — the derivative the filler flagged as needing Fourier
-    infrastructure, now exactly the atom. Dual-purpose: `V'(θ)` of
+    infrastructure, now machine-proved (`hasDerivAt_Cl_2_series`). Dual-purpose: `V'(θ)` of
     `rem:dilog-saddle-regime`, zero at the `θ = π/3` saddle. -/
 theorem hasDerivAt_cl_2 {θ : ℝ} (h0 : 0 < θ) (h2 : θ < 2 * π) :
     HasDerivAt QOU.Archimedean.Cl_2 (-Real.log (2 * Real.sin (θ / 2))) θ :=
