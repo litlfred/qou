@@ -1,11 +1,11 @@
 {
   "$schema": "block-qa/v1",
-  "label": "thm:binding-closure-conditional",
+  "label": "thm:binding-closure",
   "kind": "theorem",
   "paths": {
-    "ts": "../qou/content/quantum-observable-universe/mass-theory/binding-closure-conditional.ts",
-    "md": "../qou/content/quantum-observable-universe/mass-theory/binding-closure-conditional.md",
-    "lean": "../qou/content/quantum-observable-universe/mass-theory/binding-closure-conditional.lean"
+    "ts": "../qou/content/quantum-observable-universe/mass-theory/binding-closure.ts",
+    "md": "../qou/content/quantum-observable-universe/mass-theory/binding-closure.md",
+    "lean": "../qou/content/quantum-observable-universe/mass-theory/binding-closure.lean"
   },
   "source_hashes": {
     "md": "69e6d83d8caf",
@@ -1165,7 +1165,7 @@
         "reviewed_at": "2026-07-07T14:26:56.831409Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean theorem statement matches the mathematical statement in the markdown file.",
-        "evidence": "content/quantum-observable-universe/mass-theory/binding-closure-conditional.lean:1 — Lean file exists",
+        "evidence": "content/quantum-observable-universe/mass-theory/binding-closure.lean:1 — Lean file exists",
         "severity": "minor"
       }
     ],
@@ -1365,7 +1365,7 @@
         "reviewed_at": "2026-07-07T14:26:56.831409Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-false-claim.",
-        "evidence": "content/quantum-observable-universe/mass-theory/binding-closure-conditional.ts:1",
+        "evidence": "content/quantum-observable-universe/mass-theory/binding-closure.ts:1",
         "severity": "minor"
       },
       {
@@ -1432,7 +1432,7 @@
         "reviewed_at": "2026-07-07T14:26:56.831409Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-circular.",
-        "evidence": "content/quantum-observable-universe/mass-theory/binding-closure-conditional.ts:1",
+        "evidence": "content/quantum-observable-universe/mass-theory/binding-closure.ts:1",
         "severity": "minor"
       },
       {
@@ -1499,7 +1499,7 @@
         "reviewed_at": "2026-07-07T14:26:56.831409Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-hidden-dof.",
-        "evidence": "content/quantum-observable-universe/mass-theory/binding-closure-conditional.ts:1",
+        "evidence": "content/quantum-observable-universe/mass-theory/binding-closure.ts:1",
         "severity": "minor"
       },
       {
@@ -1533,7 +1533,7 @@
         "reviewed_at": "2026-07-07T14:26:56.831409Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-non-sequitur.",
-        "evidence": "content/quantum-observable-universe/mass-theory/binding-closure-conditional.ts:1",
+        "evidence": "content/quantum-observable-universe/mass-theory/binding-closure.ts:1",
         "severity": "minor"
       },
       {
@@ -1600,7 +1600,7 @@
         "reviewed_at": "2026-07-07T14:26:56.831409Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-citation-misuse.",
-        "evidence": "content/quantum-observable-universe/mass-theory/binding-closure-conditional.ts:1",
+        "evidence": "content/quantum-observable-universe/mass-theory/binding-closure.ts:1",
         "severity": "minor"
       },
       {
@@ -1634,7 +1634,7 @@
         "reviewed_at": "2026-07-07T14:26:56.831409Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-definitional-ambiguity.",
-        "evidence": "content/quantum-observable-universe/mass-theory/binding-closure-conditional.ts:1",
+        "evidence": "content/quantum-observable-universe/mass-theory/binding-closure.ts:1",
         "severity": "minor"
       },
       {
@@ -1668,7 +1668,7 @@
         "reviewed_at": "2026-07-07T14:26:56.831409Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-empirical-fragility.",
-        "evidence": "content/quantum-observable-universe/mass-theory/binding-closure-conditional.ts:1",
+        "evidence": "content/quantum-observable-universe/mass-theory/binding-closure.ts:1",
         "severity": "minor"
       },
       {
@@ -1702,7 +1702,7 @@
         "reviewed_at": "2026-07-07T14:26:56.831409Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-physical-implausibility.",
-        "evidence": "content/quantum-observable-universe/mass-theory/binding-closure-conditional.ts:1",
+        "evidence": "content/quantum-observable-universe/mass-theory/binding-closure.ts:1",
         "severity": "minor"
       },
       {
@@ -1736,7 +1736,7 @@
         "reviewed_at": "2026-07-07T14:26:56.831409Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-reproducibility.",
-        "evidence": "content/quantum-observable-universe/mass-theory/binding-closure-conditional.ts:1",
+        "evidence": "content/quantum-observable-universe/mass-theory/binding-closure.ts:1",
         "severity": "minor"
       },
       {

@@ -4,9 +4,9 @@ export default remark({
   label: "rem:bk-coordination-multiplicity",
   title:
     "The light-nucleus binding multiplicity is the coordination number of $\\mathcal{B}_K$",
-  interprets: "conj:binding-manybody-eq-jet-filtration",
+  interprets: "thm:binding-manybody-eq-jet-filtration",
   uses: [
-    "conj:binding-manybody-eq-jet-filtration",
+    "thm:binding-manybody-eq-jet-filtration",
     "prop:magic-A-binding-formula",
   ],
   tags: [

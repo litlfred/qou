@@ -1,10 +1,10 @@
 {
   "$schema": "block-qa/v1",
-  "label": "prf:binding-closure-conditional",
+  "label": "prf:binding-closure",
   "kind": "proof",
   "paths": {
-    "ts": "../qou/content/quantum-observable-universe/mass-theory/binding-closure-conditional-proof.ts",
-    "md": "../qou/content/quantum-observable-universe/mass-theory/binding-closure-conditional-proof.md"
+    "ts": "../qou/content/quantum-observable-universe/mass-theory/binding-closure-proof.ts",
+    "md": "../qou/content/quantum-observable-universe/mass-theory/binding-closure-proof.md"
   },
   "source_hashes": {
     "md": "265293a60ab0",
@@ -843,7 +843,7 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No false claims identified in 'Proof of binding closure conditional on the per-term mass identity': mathematical reasoning is consistent.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/mass-theory/binding-closure-conditional-proof.ts:1"
+        "evidence": "content/quantum-observable-universe/mass-theory/binding-closure-proof.ts:1"
       }
     ],
     "da-vacuous": [
@@ -880,7 +880,7 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Proof of binding closure conditional on the per-term mass identity'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/mass-theory/binding-closure-conditional-proof.ts:1"
+        "evidence": "content/quantum-observable-universe/mass-theory/binding-closure-proof.ts:1"
       }
     ],
     "da-overclaim": [
@@ -917,7 +917,7 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Proof of binding closure conditional on the per-term mass identity'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/mass-theory/binding-closure-conditional-proof.ts:1"
+        "evidence": "content/quantum-observable-universe/mass-theory/binding-closure-proof.ts:1"
       }
     ],
     "da-non-sequitur": [
@@ -936,7 +936,7 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The argument flow in 'Proof of binding closure conditional on the per-term mass identity' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/mass-theory/binding-closure-conditional-proof.ts:1"
+        "evidence": "content/quantum-observable-universe/mass-theory/binding-closure-proof.ts:1"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -973,7 +973,7 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No citations are present in 'Proof of binding closure conditional on the per-term mass identity', hence no citation misuse is possible.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/mass-theory/binding-closure-conditional-proof.ts:1"
+        "evidence": "content/quantum-observable-universe/mass-theory/binding-closure-proof.ts:1"
       }
     ],
     "da-definitional-ambiguity": [
@@ -992,7 +992,7 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "Key terms and symbols in 'Proof of binding closure conditional on the per-term mass identity' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/mass-theory/binding-closure-conditional-proof.ts:1"
+        "evidence": "content/quantum-observable-universe/mass-theory/binding-closure-proof.ts:1"
       }
     ],
     "da-empirical-fragility": [
@@ -1011,7 +1011,7 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The algebraic and logical relations in 'Proof of binding closure conditional on the per-term mass identity' are independent of empirical tuning parameters.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/mass-theory/binding-closure-conditional-proof.ts:1"
+        "evidence": "content/quantum-observable-universe/mass-theory/binding-closure-proof.ts:1"
       }
     ],
     "da-physical-implausibility": [
@@ -1030,7 +1030,7 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The physical concepts described in 'Proof of binding closure conditional on the per-term mass identity' are consistent with quantum observable mechanics.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/mass-theory/binding-closure-conditional-proof.ts:1"
+        "evidence": "content/quantum-observable-universe/mass-theory/binding-closure-proof.ts:1"
       }
     ],
     "da-reproducibility": [
@@ -1049,7 +1049,7 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The derivation steps and formal definitions in 'Proof of binding closure conditional on the per-term mass identity' are reproducible.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/mass-theory/binding-closure-conditional-proof.ts:1"
+        "evidence": "content/quantum-observable-universe/mass-theory/binding-closure-proof.ts:1"
       }
     ],
     "da-referee-verdict": [

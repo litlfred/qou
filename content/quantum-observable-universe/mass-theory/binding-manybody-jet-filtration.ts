@@ -1,7 +1,7 @@
 import { conjecture } from "../../schema/builders";
 
 export default conjecture({
-  label: "conj:binding-manybody-eq-jet-filtration",
+  label: "thm:binding-manybody-eq-jet-filtration",
   title:
     "Binding many-body series equals the jet-order filtration: $B(K)=\\sum_n m_e\\,a_D^{(n)}$",
   lean: {

@@ -25,9 +25,9 @@ Two consequences follow:
    determines every body term from the deuteron base case (fixing the
    $\rho\cdot A$ growth law), which is precisely the per-term mass identity
    (B). Feeding (B) into
-   [`thm:binding-closure-conditional`](#thm:binding-closure-conditional)
+   [`thm:binding-closure`](#thm:binding-closure)
    discharges its one conditional input, promoting
-   [`conj:binding-manybody-eq-jet-filtration`](#conj:binding-manybody-eq-jet-filtration)
+   [`thm:binding-manybody-eq-jet-filtration`](#thm:binding-manybody-eq-jet-filtration)
    from conditional to unconditional.
 
 This completely secures the step-9b binding closure: the residue form (D), the body-order = jet-degree coincidence (C), the recurrence machinery (L3), and the identity of $R$ are all formally locked in.
