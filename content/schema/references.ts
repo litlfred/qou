@@ -2516,6 +2516,21 @@ export const references: CSLData[] = [
     URL: "https://arxiv.org/abs/quant-ph/0511096",
   }),
 
+  // ── Geck-Pfeiffer 2000: Schur elements / symmetrizing trace ───
+  ref({
+    id: "geck2000",
+    type: "book",
+    title:
+      "Characters of Finite Coxeter Groups and Iwahori-Hecke Algebras",
+    author: [
+      { family: "Geck", given: "M." },
+      { family: "Pfeiffer", given: "G." },
+    ],
+    publisher: "Oxford University Press",
+    issued: { "date-parts": [[2000]] },
+    ISBN: "9780198502500",
+  }),
+
   // ── Wenzl 1988: Hecke algebra semisimplicity criterion ────────
   ref({
     id: "wenzl1988",

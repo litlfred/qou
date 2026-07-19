@@ -136,4 +136,124 @@ theorem wenzlNormalisation_ne_zero {n : ℕ} {Q X : ℝ}
     div_ne_zero h_num_ne h_denom_ne
   exact pow_ne_zero n h_ratio_ne
 
+/-! ## Schur-element non-vanishing at the substrate regime
+     (Wenzl-bridge stage 2, bean `qou-vndn`)
+
+Semisimplicity of $H_n(q)$ with Markov parameter $X$ is governed by the
+Schur elements of the symmetrizing trace: the algebra is semisimple iff
+every $s_{\lambda}$ is nonzero (Geck--Pfeiffer [geck2000] Thm 7.2.6).
+Here we prove — **sorry-free, on the concrete `schurElement` above** —
+that in the substrate regime $Q > 1$, $X \leq 0$ every Schur element is
+nonzero, carry the Geck--Pfeiffer criterion as a cited hypothesis class
+(`SchurElementCriterion`, no instance — the symmetrizing-trace theory
+is not in Mathlib), and compose: semisimplicity at every rank.
+
+**Scope note (honest regime bound).**  Physical Markov specialisations
+use $X > 0$ (e.g. $X = Q^{-N}$), where the numerator factors
+$1 - X\,Q^{c(x)}$ genuinely vanish at cells of content $c = N$ — that
+vanishing locus *is* the Temperley--Lieb / level-rank quotient
+structure, not a defect.  The $X \leq 0$ bound proves the
+generic-parameter statement; the $X = Q^{-N}$ stratification is a
+follow-on with real combinatorial content. -/
+
+/-- In-range cells have positive hook length (sorry-free). -/
+theorem hookLength_pos {lam : Partition} {i j : ℕ}
+    (hj : j < (lam.get? i).getD 0) :
+    0 < Partition.hookLength lam i j := by
+  unfold Partition.hookLength
+  cases h : lam.get? i with
+  | none => rw [h] at hj; simp at hj
+  | some row =>
+      rw [h] at hj
+      simp only [Option.getD_some] at hj
+      simp [hj]
+
+private theorem foldl_mul_div_ne_zero (f g : ℕ → ℝ) :
+    ∀ (l : List ℕ) (c : ℝ), c ≠ 0 → (∀ j ∈ l, f j ≠ 0) → (∀ j ∈ l, g j ≠ 0) →
+      l.foldl (fun a j => a * f j / g j) c ≠ 0
+  | [], _, hc, _, _ => hc
+  | j :: tl, c, hc, hf, hg => by
+      simp only [List.foldl_cons]
+      exact foldl_mul_div_ne_zero f g tl _
+        (div_ne_zero (mul_ne_zero hc (hf j (by simp))) (hg j (by simp)))
+        (fun x hx => hf x (by simp [hx]))
+        (fun x hx => hg x (by simp [hx]))
+
+private theorem foldl_mul_ne_zero (F : ℕ → ℝ) :
+    ∀ (l : List ℕ) (c : ℝ), c ≠ 0 → (∀ i ∈ l, F i ≠ 0) →
+      l.foldl (fun a i => a * F i) c ≠ 0
+  | [], _, hc, _ => hc
+  | i :: tl, c, hc, hF => by
+      simp only [List.foldl_cons]
+      exact foldl_mul_ne_zero F tl _
+        (mul_ne_zero hc (hF i (by simp)))
+        (fun x hx => hF x (by simp [hx]))
+
+/-- For $Q > 1$ the hook denominator $1 - Q^{h}$ is nonzero at every
+    positive hook length (sorry-free). -/
+theorem one_sub_pow_ne_zero_of_one_lt {Q : ℝ} (hQ : 1 < Q) {h : ℕ}
+    (hh : h ≠ 0) : 1 - Q ^ h ≠ 0 :=
+  ne_of_lt (by have := one_lt_pow₀ hQ hh; linarith)
+
+/-- For $Q > 0$, $X \leq 0$ the content numerator $1 - X\,Q^{c}$ is
+    nonzero (indeed positive) at every content $c \in \mathbb{Z}$
+    (sorry-free). -/
+theorem one_sub_mul_zpow_ne_zero {Q X : ℝ} (hQ : 0 < Q) (hX : X ≤ 0)
+    (c : ℤ) : 1 - X * Q ^ c ≠ 0 := by
+  have hz : (0 : ℝ) < Q ^ c := zpow_pos hQ c
+  have h1 : 0 ≤ -(X * Q ^ c) := by
+    rw [← neg_mul]
+    exact mul_nonneg (neg_nonneg.mpr hX) hz.le
+  refine ne_of_gt ?_
+  linarith
+
+/-- **Schur-element non-vanishing at the substrate regime
+    (sorry-free).**  For $Q > 1$ and $X \leq 0$, every Wenzl Schur
+    element is nonzero: every content numerator is positive, every hook
+    denominator is strictly negative (hook lengths are positive), and
+    the prefactor $Q^{n(\lambda)}$ is a nonzero power of a positive
+    real.  This is the computational heart of Wenzl semisimplicity,
+    proved on the concrete `schurElement`. -/
+theorem schurElement_ne_zero {Q X : ℝ} (hQ : 1 < Q) (hX : X ≤ 0)
+    (lam : Partition) : schurElement Q X lam ≠ 0 := by
+  have hQ0 : (0 : ℝ) < Q := lt_trans one_pos hQ
+  unfold schurElement
+  refine mul_ne_zero (zpow_ne_zero _ (ne_of_gt hQ0)) ?_
+  refine foldl_mul_ne_zero _ _ _ one_ne_zero ?_
+  intro i _
+  refine foldl_mul_div_ne_zero _ _ _ _ one_ne_zero ?_ ?_
+  · intro j _
+    exact one_sub_mul_zpow_ne_zero hQ0 hX _
+  · intro j hj
+    exact one_sub_pow_ne_zero_of_one_lt hQ
+      (hookLength_pos (List.mem_range.mp hj)).ne'
+
+/-- **Cited Geck--Pfeiffer criterion** (hypothesis class, not a theorem
+    of this development): if every Schur element at rank $n$ is
+    nonzero, the algebra is semisimple at rank $n$.  `semisimple n` is
+    an opaque per-rank `Prop`; **no instance is declared** — the
+    symmetrizing-trace theory is not in Mathlib, and a fabricated
+    instance would launder [geck2000] into a Lean proof.
+
+    Ref: [geck2000] Geck--Pfeiffer, Thm 7.2.6. -/
+class SchurElementCriterion (Q X : ℝ) (semisimple : ℕ → Prop) : Prop where
+  /-- Schur-element non-vanishing implies semisimplicity, carried as a
+      hypothesis. -/
+  semisimple_of_schur_ne_zero :
+    ∀ n : ℕ,
+      (∀ lam : Partition, lam.size = n → schurElement Q X lam ≠ 0) →
+      semisimple n
+
+/-- **Semisimplicity at every rank in the substrate regime (sorry-free
+    modulo the cited criterion).**  For $Q > 1$, $X \leq 0$: every rank
+    is semisimple, with the Schur-element leg *computed*, not assumed.
+    This is the Schur-theoretic discharge of the `WenzlCriterion`
+    hypothesis of `QOU.Information.PNeqNpEquivalence` — the two cited
+    classes state the same literature theorem from two equivalent
+    angles (parameter genericity vs. Schur-element non-vanishing). -/
+theorem semisimple_of_substrate {Q X : ℝ} {ss : ℕ → Prop}
+    [C : SchurElementCriterion Q X ss] (hQ : 1 < Q) (hX : X ≤ 0)
+    (n : ℕ) : ss n :=
+  C.semisimple_of_schur_ne_zero n fun lam _ => schurElement_ne_zero hQ hX lam
+
 end QOU.MathlibExt.WenzlSchurElement
