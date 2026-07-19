@@ -427,7 +427,7 @@ pub fn jw_terms_f64(m: usize, delta: f64) -> Vec<(f64, Vec<usize>)> {
 /// Apply a bare generator `U_{gi+1}` to a dense f64 state, into `out`.
 #[inline]
 fn apply_generator_f64(v: &[f64], gi: usize, eng: &TlEngine, dpow: &[f64], out: &mut [f64]) {
-    out.iter_mut().for_each(|x| *x = 0.0);
+    out.fill(0.0);
     let idx = &eng.tab_idx[gi];
     let lp = &eng.tab_lp[gi];
     for (i, &c) in v.iter().enumerate() {
@@ -479,7 +479,7 @@ pub fn jp_f64(
         let (c_a, c_b) = if g > 0 { (a, a_inv) } else { (a_inv, a) };
         let idx = &eng.tab_idx[gi];
         let lp = &eng.tab_lp[gi];
-        nxt.iter_mut().for_each(|x| *x = 0.0);
+        nxt.fill(0.0);
         for (i, &c) in cur.iter().enumerate() {
             if c != 0.0 {
                 nxt[i] += c * c_a;
@@ -516,7 +516,7 @@ pub fn jp_f64(
     let mut sbuf = vec![0.0f64; engd.ndiag];
     let mut dbuf = vec![0.0f64; engd.ndiag];
     for (coef, gword) in &ejw {
-        sbuf.iter_mut().for_each(|x| *x = 0.0);
+        sbuf.fill(0.0);
         sbuf[engd.ident_idx as usize] = 1.0;
         for &g in gword {
             apply_generator_f64(&sbuf, g - 1, engd, &dpow, &mut dbuf);
@@ -535,12 +535,9 @@ type State = FxHashMap<u32, Float>;
 
 #[inline]
 fn add_scaled(map: &mut State, key: u32, val: &Float) {
-    match map.get_mut(&key) {
-        Some(e) => *e += val,
-        None => {
-            map.insert(key, val.clone());
-        }
-    }
+    map.entry(key)
+        .and_modify(|e| *e += val)
+        .or_insert_with(|| val.clone());
 }
 
 /// Powers `δ^0 .. δ^maxp` precomputed once per evaluation (δ fixed, integer
