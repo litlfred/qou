@@ -215,13 +215,32 @@ theorem tsum_rpow_cos_div (θ : ℝ) {r : ℝ} (hr : |r| < 1) :
   simp only [hsummand] at hs
   rw [hs.tsum_eq, Complex.neg_re, Complex.log_re]
 
+/-- **Assembly brick 3 (sorry-free)** — the boundary norm identity. For every θ,
+    `‖1 - e^{iθ}‖ = 2 |sin(θ/2)|`. Hence the `r→1⁻` limit of brick 2b's closed
+    form `-log‖1 - r e^{iθ}‖` is `-log(2 sin(θ/2))` on `(0,2π)` (where
+    `sin(θ/2) > 0`) — the boundary log value the atom needs. (bean qou-cdxw) -/
+theorem norm_one_sub_exp_ofReal_mul_I (θ : ℝ) :
+    ‖1 - Complex.exp ((θ : ℂ) * Complex.I)‖ = 2 * |Real.sin (θ / 2)| := by
+  have hc : Real.cos θ = 2 * Real.cos (θ / 2) ^ 2 - 1 := by
+    have h := Real.cos_two_mul (θ / 2)
+    rw [show 2 * (θ / 2) = θ by ring] at h; linarith
+  have hnn : (0 : ℝ) ≤ 2 * |Real.sin (θ / 2)| := by positivity
+  have hnormsq : ‖1 - Complex.exp ((θ : ℂ) * Complex.I)‖ ^ 2
+      = (2 * |Real.sin (θ / 2)|) ^ 2 := by
+    rw [Complex.sq_norm, Complex.normSq_apply, Complex.sub_re, Complex.sub_im,
+      Complex.one_re, Complex.one_im, Complex.exp_ofReal_mul_I_re, Complex.exp_ofReal_mul_I_im,
+      mul_pow, sq_abs]
+    nlinarith [Real.sin_sq_add_cos_sq θ, Real.sin_sq_add_cos_sq (θ / 2), hc]
+  rw [← Real.sqrt_sq (norm_nonneg _), hnormsq, Real.sqrt_sq hnn]
+
 /-- **The atom (single CITED sorry) — the series Clausen's term-by-term
-    derivative.** `Cl_2'(θ) = -log(2 sin(θ/2))` on `(0, 2π)`. This IS the
-    Fourier/Abel content Mathlib lacks: differentiating `∑ sin(kθ)/k²`
-    term-by-term gives `∑ cos(kθ)/k`, whose boundary summation equals
-    `-log(2 sin(θ/2))` (classical, Zagier). I verified Mathlib has the log power
-    series only for `|x|<1` and no Abel/boundary summation. Everything
-    downstream (the bridge, the constant-pinning) is *proved* from this one. -/
+    derivative.** `Cl_2'(θ) = -log(2 sin(θ/2))` on `(0, 2π)`. Differentiating
+    `∑ sin(kθ)/k²` term-by-term gives `∑ cos(kθ)/k`, whose `r→1⁻` boundary value
+    is `-log(2 sin(θ/2))` (classical, Zagier). This is an ASSEMBLY of existing
+    Mathlib pieces (Abel's limit theorem `AbelLimit`, the complex log series
+    `hasSum_taylorSeries_log`, `hasDerivAt_tsum` for `r<1`, and a derivative-
+    under-limit step), NOT a Mathlib gap — bricks 1/2a/2b/3 above are the
+    completed pieces; the remaining wiring (bricks 4-5) is tracked in beans. -/
 theorem hasDerivAt_Cl_2_series {θ : ℝ} (h0 : 0 < θ) (h2 : θ < 2 * π) :
     HasDerivAt QOU.Archimedean.Cl_2 (-Real.log (2 * Real.sin (θ / 2))) θ := by
   -- Ref: [zagier1986] term-by-term d/dθ ∑ sin(kθ)/k² = ∑ cos(kθ)/k = -log(2 sin(θ/2))
