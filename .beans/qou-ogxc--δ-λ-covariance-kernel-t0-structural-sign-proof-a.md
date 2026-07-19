@@ -1,11 +1,11 @@
 ---
 # qou-ogxc
 title: Δ_λ covariance kernel T₃≤0 — structural sign proof attempt (formalize-first)
-status: in-progress
+status: completed
 type: task
 priority: high
 created_at: 2026-07-19T03:39:14Z
-updated_at: 2026-07-19T03:39:14Z
+updated_at: 2026-07-19T04:17:38Z
 parent: qou-x631
 ---
 
