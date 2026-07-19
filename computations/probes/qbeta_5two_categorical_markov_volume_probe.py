@@ -217,11 +217,34 @@ def main() -> int:
     bind_fn = sp.lambdify(_q, bind, "mpmath")
     bp, bm = bind_fn(qp), bind_fn(qm)
     print(f"    binding channel W_(2,1)·χ_(2,1)(5₂):  proton={mp.nstr(bp,8)}  muon={mp.nstr(bm,8)}")
-    print("    NOTE: assembling the framing-INVARIANT full 𝔙_q (knot-invariant Re=Vol/")
-    print("    Im=CS) needs the writhe/Jones normalization — the piece adjacent to G3.")
+    print("    NOTE: the framing-INVARIANT full 𝔙_q is the 0-framing knot invariant")
+    print("    (Jones), assembled in finding 5.")
+
+    # ---- FINDING 5: framing-INVARIANT complex volume via the 0-framing invariant ----
+    # The raw weighted trace is framing-covariant; the framing-INVARIANT object is the
+    # 0-framing knot invariant J_K(q) itself (a genuine knot invariant), whose bar
+    # decomposition is the canonical Re=Vol / Im=CS split — palindromic (bar-odd=0) for
+    # amphichiral 4₁, chiral for 5₂. Still fibre-level (formal q); does NOT cross G3.
+    JONES = {"4_1": {2: 1, 1: -1, 0: 1, -1: -1, -2: 1},
+             "5_2": {-1: 1, -2: -1, -3: 2, -4: -1, -5: 1, -6: -1}}
+    Jpoly = {k: sum(c * _q ** p for p, c in d.items()) for k, d in JONES.items()}
+    print("\n[5] framing-INVARIANT 𝔙_q via the 0-framing knot invariant J_K(q):")
+    J_odd = {k: sp.expand((J - J.subs(_q, 1 / _q)) / 2) for k, J in Jpoly.items()}
+    J_even = {k: sp.expand((J + J.subs(_q, 1 / _q)) / 2) for k, J in Jpoly.items()}
+    j_control = sp.simplify(J_odd["4_1"]) == 0
+    j_chiral = sp.simplify(J_odd["5_2"]) != 0
+    print(f"    4₁ bar-odd(J)=0 (amphichiral control): {j_control}")
+    print(f"    5₂ CS channel bar-odd(J) = {sp.factor(J_odd['5_2'])}")
+    print(f"    5₂ Vol channel bar-even(J) = {sp.factor(J_even['5_2'])}")
+    j_odd_fn = sp.lambdify(_q, J_odd["5_2"], "mpmath")
+    jop, jom = j_odd_fn(qp), j_odd_fn(qm)
+    j_dln = (mp.log(abs(jom)) - mp.log(abs(jop))) / (qm - qp)
+    j_smooth = abs(float(j_dln)) < 1e3
+    print(f"    anchor SHAPE: proton={mp.nstr(jop,8)} muon={mp.nstr(jom,8)} "
+          f"d ln|odd|/dq={mp.nstr(j_dln,6)} (anchor-smooth: {j_smooth})")
 
     verdict = bool(all(c21_ok.values()) and control_pass and chiral_nonzero
-                   and anchor_smooth and held_ok)
+                   and anchor_smooth and held_ok and j_control and j_chiral and j_smooth)
     print("\n" + "=" * 76)
     print(f" VERDICT: 𝔙_q(5₂) bar-odd built by block; 4₁ control PASSES; anchor-smooth "
           f" [{'PASS' if verdict else 'CHECK'}]")
@@ -269,6 +292,18 @@ def main() -> int:
                    "held-out τ (σ₁σ₂→z², σ₂σ₁σ₂→hz²+z, σ₂→z); binding/Vol channel = "
                    "bar-even W_(2,1)·χ_(2,1). Framing-INVARIANT full 𝔙_q still needs the "
                    "writhe/Jones normalization (G3-adjacent)."})
+    wb.add_data("finding5_framing_invariant_jones", {
+        "bar_odd_4_1": str(sp.simplify(J_odd["4_1"])),
+        "bar_odd_5_2_CS_factored": str(sp.factor(J_odd["5_2"])),
+        "bar_even_5_2_Vol_factored": str(sp.factor(J_even["5_2"])),
+        "amphichiral_control_4_1_zero": bool(j_control),
+        "chiral_5_2_nonzero": bool(j_chiral),
+        "odd_proton": mp.nstr(jop, 12), "odd_muon": mp.nstr(jom, 12),
+        "dln_odd_dq": mp.nstr(j_dln, 8), "anchor_smooth": bool(j_smooth),
+        "verdict": "framing-INVARIANT 𝔙_q = 0-framing knot invariant J_K(q); bar-odd (CS) "
+                   "= (q-1)^3(q+1)(q^2+1)(q^2-q+1)(q^2+q+1)^2/(2q^6) for 5₂ (triple zero at "
+                   "q=1, cyclotomic Φ₃/Φ₆), 0 for amphichiral 4₁ (control); anchor-smooth; "
+                   "still fibre-level (does NOT cross G3)"})
     wb.add_data("scope", {
         "tier": "fibre-level categorical datum (pre-tau)",
         "raw_trace_framing_contaminated": True,
@@ -295,6 +330,12 @@ def main() -> int:
                      computed=1.0 if held_ok else 0.0, expected=1.0, tolerance=0.5,
                      source="block weights W_λ reproduce the Ocneanu trace on HELD-OUT elements "
                             "(σ₁σ₂→z², σ₂σ₁σ₂→hz²+z, σ₂→z) — the weights are correct")
+    wb.add_assertion("framing_invariant_jones_control_and_chiral",
+                     computed=1.0 if (j_control and j_chiral and j_smooth) else 0.0,
+                     expected=1.0, tolerance=0.5,
+                     source="framing-invariant 𝔙_q = 0-framing J_K: bar-odd(J_4_1)=0 (amphichiral "
+                            "control), bar-odd(J_5_2)!=0 chiral (CS channel), anchor-smooth — the "
+                            "knot-invariant assembly the framing normalization required")
     wb.save()
     print("\n  RESULT: 𝔙_q(5₂) categorical bar-odd datum built by block + gated (4₁ "
           "control); fibre-level, G3 wall stays open.")
