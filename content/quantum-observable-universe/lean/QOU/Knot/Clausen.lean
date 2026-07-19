@@ -724,6 +724,122 @@ theorem integral_le_sum_log_sin_falling {N k₁ k₂ : ℕ} (hN : 1 ≤ N) (h12 
           Real.log (2 * Real.sin ((i : ℝ) * (π / N))) :=
         mul_le_mul_of_nonneg_left hlib (le_of_lt hh)
 
+/-- The unhalved log-sine integrand is interval-integrable (transport of the
+    halved version through `t = 2u`). -/
+theorem intervalIntegrable_log_two_sin (a b : ℝ) :
+    IntervalIntegrable (fun u => Real.log (2 * Real.sin u)) volume a b := by
+  have h := (intervalIntegrable_log_two_sin_half (2 * a) (2 * b)).comp_mul_left (c := 2)
+  have hfun : (fun x : ℝ => Real.log (2 * Real.sin (2 * x / 2)))
+      = fun u : ℝ => Real.log (2 * Real.sin u) := by
+    funext x; norm_num
+  rw [hfun] at h
+  simpa using h
+
+/-- **`clausen` is continuous (E4d support, sorry-free).** The primitive of an
+    everywhere interval-integrable function is continuous
+    (`intervalIntegral.continuous_primitive`). -/
+theorem continuous_clausen : Continuous clausen := by
+  unfold clausen
+  exact intervalIntegral.continuous_primitive
+    (fun a b => (intervalIntegrable_log_two_sin_half a b).neg) 0
+
+@[simp] theorem clausen_zero : clausen 0 = 0 := by
+  unfold clausen
+  simp
+
+/-- **Saddle brick E4d-1 (sorry-free).** The cell integral `∫₀^{C·π/N}` of the
+    log-sine vanishes as `N → ∞` — the singular first cell contributes nothing
+    in the limit. Via E4a + continuity of `clausen` at `0`. (bean qou-x5mg) -/
+theorem tendsto_integral_cell (C : ℝ) :
+    Filter.Tendsto (fun N : ℕ => ∫ u in (0:ℝ)..(C * (π / N)), Real.log (2 * Real.sin u))
+      Filter.atTop (nhds 0) := by
+  have hrw : ∀ N : ℕ, (∫ u in (0:ℝ)..(C * (π / N)), Real.log (2 * Real.sin u))
+      = -clausen (2 * (C * (π / N))) / 2 := fun N => integral_log_two_sin _
+  simp only [hrw]
+  have h1 : Filter.Tendsto (fun N : ℕ => 2 * C * π / N) Filter.atTop (nhds 0) :=
+    tendsto_const_div_atTop_nhds_zero_nat (2 * C * π)
+  have h2 : Filter.Tendsto (fun N : ℕ => clausen (2 * (C * (π / N))))
+      Filter.atTop (nhds 0) := by
+    have hcomp := (continuous_clausen.tendsto 0).comp
+      (by simpa [mul_div_assoc, mul_assoc] using h1)
+    simpa [clausen_zero, Function.comp_def, mul_div_assoc, mul_assoc] using hcomp
+  simpa using (h2.neg).div_const 2
+
+/-- **Saddle brick E4d-2 (sorry-free).** The scaled first grid term
+    `(π/N)·log(2 sin(π/N)) → 0`: squeezed between the primitive differences
+    `∫₀^{π/N} ≤ (π/N)·f(π/N) ≤ ∫_{π/N}^{2π/N}` (monotonicity of the integrand
+    near `0`), both of which vanish by E4d-1 — no `x·log x` special-function
+    limit needed. (bean qou-x5mg) -/
+theorem tendsto_first_term :
+    Filter.Tendsto (fun N : ℕ => (π / N) * Real.log (2 * Real.sin (π / N)))
+      Filter.atTop (nhds 0) := by
+  have hpi := Real.pi_pos
+  have hlow : Filter.Tendsto (fun N : ℕ => ∫ u in (0:ℝ)..(1 * (π / N)),
+      Real.log (2 * Real.sin u)) Filter.atTop (nhds 0) := tendsto_integral_cell 1
+  have hupp0 := tendsto_integral_cell 2
+  have hupp : Filter.Tendsto (fun N : ℕ =>
+      (∫ u in (0:ℝ)..(2 * (π / N)), Real.log (2 * Real.sin u))
+        - ∫ u in (0:ℝ)..(1 * (π / N)), Real.log (2 * Real.sin u))
+      Filter.atTop (nhds 0) := by
+    simpa using hupp0.sub hlow
+  refine tendsto_of_tendsto_of_tendsto_of_le_of_le' (by simpa using hlow)
+    (by simpa using hupp) ?_ ?_
+  · -- ∫₀^{π/N} f ≤ (π/N)·f(π/N)  (f ≤ f(π/N) a.e. on [0, π/N])
+    filter_upwards [Filter.eventually_ge_atTop 2] with N hN
+    have hNpos : (0:ℝ) < N := by exact_mod_cast (by omega : 0 < N)
+    have hh : (0:ℝ) < π / N := by positivity
+    have h2N : (2:ℝ) ≤ N := by exact_mod_cast hN
+    have hhalf : π / (N:ℝ) ≤ π / 2 := by gcongr <;> linarith
+    have hmono : (∫ u in (0:ℝ)..(π / N), Real.log (2 * Real.sin u))
+        ≤ ∫ _u in (0:ℝ)..(π / N), Real.log (2 * Real.sin (π / N)) := by
+      apply intervalIntegral.integral_mono_ae_restrict (le_of_lt hh)
+        (intervalIntegrable_log_two_sin _ _) intervalIntegrable_const
+      have hvol : ∀ᵐ x ∂(volume : MeasureTheory.Measure ℝ), x ≠ 0 := by
+        rw [MeasureTheory.ae_iff]
+        simpa [Set.setOf_eq_eq_singleton] using Real.volume_singleton (x := 0)
+      have hne : ∀ᵐ x ∂(volume.restrict (Set.Icc (0:ℝ) (π / N))), x ≠ 0 :=
+        hvol.filter_mono (MeasureTheory.ae_mono MeasureTheory.Measure.restrict_le_self)
+      have hmem : ∀ᵐ x ∂(volume.restrict (Set.Icc (0:ℝ) (π / N))),
+          x ∈ Set.Icc (0:ℝ) (π / N) :=
+        MeasureTheory.ae_restrict_mem measurableSet_Icc
+      filter_upwards [hne, hmem] with x hx hxmem
+      exact monotoneOn_log_two_sin
+        ⟨lt_of_le_of_ne hxmem.1 (Ne.symm hx), le_trans hxmem.2 hhalf⟩
+        ⟨hh, hhalf⟩ hxmem.2
+    rw [intervalIntegral.integral_const, smul_eq_mul, sub_zero] at hmono
+    simpa using hmono
+  · -- (π/N)·f(π/N) ≤ ∫_{π/N}^{2π/N} f  (f(π/N) ≤ f on [π/N, 2π/N])
+    filter_upwards [Filter.eventually_ge_atTop 4] with N hN
+    have hNpos : (0:ℝ) < N := by exact_mod_cast (by omega : 0 < N)
+    have hh : (0:ℝ) < π / N := by positivity
+    have h4N : (4:ℝ) ≤ N := by exact_mod_cast hN
+    have hquarter : 2 * (π / (N:ℝ)) ≤ π / 2 := by
+      have hstep : π / (N:ℝ) ≤ π / 4 := by gcongr <;> linarith
+      calc 2 * (π / (N:ℝ)) ≤ 2 * (π / 4) := by linarith
+        _ = π / 2 := by ring
+    have hsplit : (∫ u in ((π:ℝ) / N)..(2 * (π / N)), Real.log (2 * Real.sin u))
+        = (∫ u in (0:ℝ)..(2 * (π / N)), Real.log (2 * Real.sin u))
+          - ∫ u in (0:ℝ)..(π / N), Real.log (2 * Real.sin u) := by
+      rw [eq_sub_iff_add_eq]
+      rw [add_comm]
+      exact intervalIntegral.integral_add_adjacent_intervals
+        (intervalIntegrable_log_two_sin _ _) (intervalIntegrable_log_two_sin _ _)
+    have hmono : (∫ _u in ((π:ℝ) / N)..(2 * (π / N)), Real.log (2 * Real.sin (π / N)))
+        ≤ ∫ u in ((π:ℝ) / N)..(2 * (π / N)), Real.log (2 * Real.sin u) := by
+      refine intervalIntegral.integral_mono_on ?_ _root_.intervalIntegrable_const
+        (intervalIntegrable_log_two_sin _ _) ?_
+      · nlinarith
+      intro x hxmem
+      exact monotoneOn_log_two_sin ⟨hh, by nlinarith⟩
+        ⟨lt_of_lt_of_le hh hxmem.1, le_trans hxmem.2 hquarter⟩ hxmem.1
+    rw [intervalIntegral.integral_const, smul_eq_mul] at hmono
+    have harith : (2 * (π / N) - π / N) * Real.log (2 * Real.sin (π / N))
+        = (π / N) * Real.log (2 * Real.sin (π / N)) := by ring
+    rw [harith] at hmono
+    calc (π / N) * Real.log (2 * Real.sin (π / N))
+        ≤ ∫ u in ((π:ℝ) / N)..(2 * (π / N)), Real.log (2 * Real.sin u) := hmono
+      _ = _ := hsplit
+
 /-- **The series Clausen's derivative** `Cl_2'(θ) = -log(2 sin(θ/2))` for
     `θ ∈ (0, 2π)` — the derivative the filler flagged as needing Fourier
     infrastructure, now machine-proved (`hasDerivAt_Cl_2_series`). Dual-purpose: `V'(θ)` of
