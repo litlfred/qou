@@ -22,12 +22,12 @@ At a torsion root of unity of order $n \mid 6$ the Iwahori--Hecke algebra degene
 
 **Kummer persistence.** The Kummer filtration yields $\kappa_c^{\mathrm{comp}} \bmod n = 0$ if and only if $n \mid 6$ — precisely the JVW classically-tractable set. Because $q_0$ is strictly non-torsion, no finite Kummer level applies: $q_0$ sits permanently outside the transparent set.
 
-**What is conjectural (the irreducible gap).** The step from the *established* "$\#\mathrm{P}$-hard exact Jones evaluation at $q_0$" to the *asserted* "$\mathrm{P} \neq \mathrm{NP}$" is an **analogy, not a theorem**. Two things are unproven and constitute the single `sorry` on the Lean carrier [`QouPNeqNp`](qou-p-neq-np.lean):
+**What is conjectural (the irreducible gap).** The step from the *established* "$\#\mathrm{P}$-hard exact Jones evaluation at $q_0$" to the *asserted* "$\mathrm{P} \neq \mathrm{NP}$" is an **analogy, not a theorem**. Two things are unproven and constitute the single `sorry` on the Lean carrier [`QouPNeqNp`](../lean/QOU/Information/QouPNeqNp.lean):
 
 1. that the resolution-tree residue $\mathrm{res}_{\mathcal{R}}(\chi(A))$ is a faithful invariant of the $\mathrm{P}$-vs-$\mathrm{NP}$ decision boundary, rather than of the (easier-to-obstruct) counting problem; and
 2. that its non-vanishing at $q_0$ is *equivalent* to $\mathrm{P} \neq \mathrm{NP}$ rather than merely *implied by* it.
 
-A concrete non-vanishing of $\chi(A)$ at generic $q_0$ is a Zariski-open (hence generically true, easy) condition; it therefore **cannot** by itself discharge the conjecture without collapsing the claimed equivalence. This is the chippable boundary: everything above the line is cited or provable; only the analogy remains open.
+A concrete non-vanishing of $\chi(A)$ at generic $q_0$ is a Zariski-open (hence generically true, easy) condition; it therefore **cannot** by itself discharge the conjecture without collapsing the claimed equivalence. This genericity is itself Lean-proved, sorry-free, in the companion module [`ObstructionGenericity`](../lean/QOU/Information/ObstructionGenericity.lean): a nonzero polynomial obstruction vanishes at only finitely many parameter values (`obstruction_vanishing_locus_finite`), so its non-vanishing locus over an infinite domain is cofinite, hence infinite (`obstruction_nonvanishing_locus_infinite`) — stated over a generic integral domain, with no archimedean input. This is the chippable boundary: everything above the line is cited or provable; only the analogy remains open.
 
 **The fourth millennium evaluation.** The QOU obstruction reduction *conjectures* that all classical-limit obstructions map to the scalar class $\chi(A) \in HH^2 \cong k$, so that $\mathrm{P}$ vs $\mathrm{NP}$ becomes a fourth restriction of the same class alongside RH, NS, and BSD. The proportionality of the four evaluations is part of the conjecture, not a consequence of it.
 
