@@ -1,11 +1,11 @@
 ---
 # qou-la8r
 title: Hodge-side facts as non-closing Lean lemma (class instantiable by Hodge Gram; conjugated from Hodge reality)
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-07-18T23:14:40Z
-updated_at: 2026-07-18T23:53:03Z
+updated_at: 2026-07-19T00:12:12Z
 parent: qou-w1z0
 ---
 
