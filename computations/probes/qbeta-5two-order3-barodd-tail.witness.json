@@ -1,0 +1,55 @@
+{
+  "computation": "qbeta-5two-order3-barodd-tail",
+  "description": "The 5\u2082 order-3 bar-odd Habiro tail T_odd=\u03a3_{n=1}^3 (C_n(q0)\u2212C_n(1/q0))f_n(q0) \u2248 +0.019 (O(10\u207b\u00b2)) is order-of-magnitude consistent with the corpus bar-odd anchors S_muon/S_proton; 4\u2081 (order-2) gives exactly 0. Consistency, NOT identification (sign convention-dependent; strip \u03c6_odd 5\u00d7 smaller). scope-(a).",
+  "audit_only": true,
+  "tier": "numerical consistency (order-of-magnitude)",
+  "computedAt": "2026-07-19T03:22:53.671316+00:00",
+  "commitSha": "e2b30fe278e16797e56214a7ae85a1856deb2b04",
+  "engine": "mpmath",
+  "engineVersion": "1.3.0",
+  "scriptFile": "qbeta_5two_order3_barodd_tail_probe.py",
+  "scriptHash": "eadd0b76205d",
+  "assertions": [
+    {
+      "name": "f_n_bar_even",
+      "passed": true,
+      "source": "\u220f(1\u2212q^j)(1\u2212q^{-j}) is q\u2194q\u207b\u00b9 invariant \u2014 the bar-even factor, so the entire bar-odd datum is carried by the cyclotomic coefficient"
+    },
+    {
+      "name": "fourone_order2_zero_odd_datum",
+      "passed": true,
+      "source": "4\u2081's order-2 recursion has C_n=1 (bar-symmetric) \u21d2 zero bar-odd datum exactly \u2014 the amphichiral / bar-even baseline the order-3 chiral 5\u2082 departs from"
+    },
+    {
+      "name": "order3_tail_within_decade_of_anchors",
+      "passed": true,
+      "source": "|T_odd/S_muon|=1.98 and |T_odd/S_proton|=0.49 \u2014 both within a factor of 10, i.e. T_odd (\u2248+0.019) is the same order of magnitude O(10\u207b\u00b2) as the corpus bar-odd anchors. NOT an identification: an O(10\u207b\u00b2) chiral bar-asymmetry at q0 is generic, and the SIGN is convention-dependent (Masbaum q vs Jones t=q\u207b\u00b9 flips it \u2014 prior n=1 probe reads \u22120.0139, this q-convention +0.0139)"
+    }
+  ],
+  "allPassed": true,
+  "result": {
+    "T_odd": "0.01916053432",
+    "T_leading_n1": "0.0139433098726",
+    "per_term": {
+      "0": "0.0",
+      "1": "0.01394330987",
+      "2": "0.003519316247",
+      "3": "0.001697908201"
+    },
+    "anchors": {
+      "S_muon": "0.00968298",
+      "S_proton": "-0.03945936",
+      "phi_odd_strip": "-0.004145"
+    },
+    "sign_convention_caveat": "Masbaum q vs framework Jones t=q\u207b\u00b9 flips the odd part; magnitude is convention-independent",
+    "verdict": "CONSISTENCY (scope-(a)), NOT an identification. The order-3 content that distinguishes chiral 5\u2082 from amphichiral 4\u2081 (which gives EXACTLY zero) yields a bar-odd tail T_odd \u2248 +0.019 at the muon q0 \u2014 O(10\u207b\u00b2), the same decade as the corpus bar-odd anchors S_muon (+0.00968) and S_proton (\u22120.03946). This structurally supports 'the order-jump 2\u21923 is where the Q_\u03b2 bar-odd datum lives' (4\u2081\u21920, 5\u2082\u2192O(10\u207b\u00b2) matching the anchor scale), but cannot promote it past consistency: (i) an O(10\u207b\u00b2) magnitude is generic; (ii) the sign is convention-dependent (q vs t=q\u207b\u00b9); (iii) the strip \u03c6_odd (\u22120.004145) is ~5\u00d7 smaller and its intrinsic value needs the open classical-exponential stripping (qbeta_g3_5two_barodd_substrate); (iv) the tail converges slowly (ratio ~0.4), so N\u22654 colored Jones still adds O(10\u207b\u00b3). No scope-(b) invariant is invoked. No fit; no c_k wired; only Masbaum-authoritative C_n + standard f_n."
+  },
+  "context": {
+    "axis": "b3ix order-jump 2\u21923 (bean qou-9ghx; ATTACK 3 of qou-do3a)",
+    "coefficients": "authoritative Masbaum C_{5\u2082,n} (masbaum2003, #3993, witness qbeta-5two-masbaum-cyclotomic)",
+    "related": [
+      "qbeta_5two_leading_odd_datum_probe (n=1 only)",
+      "qbeta_g3_5two_barodd_substrate (intrinsic strip, open)"
+    ]
+  }
+}
