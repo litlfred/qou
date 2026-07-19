@@ -27,3 +27,12 @@ CONSTRUCTION (keystone: bwS0_eq_hecke S³/2I localization; b₄: a forward selec
 the identified S-matrix datum). Note the keystone's λ⊢5 Hecke S-matrix has sub-ceiling entries
 (0.088/0.362/0.460), unlike the 2-block Fibonacci vacuum row (0.526/0.851) my ceiling probe used — so
 "which icosahedral S-matrix" is itself part of the forward-m question. Neither is a continuation problem.
+
+## #2 pn-sign attack (2026-07-19) — ALREADY SETTLED (corpus ahead; Frontier-A overstatement corrected)
+The Frontier-A scoping listed "open pn sign" as a b₄ piece. Corpus check: it's PROVEN irrelevant for the
+uniform b₄ magnitude — `QOU.MassTheory.ReebPnMagnitude.pn_sign_det_invariant` (sorry-free): conjugating
+the uniform [1⁴] complete-graph exchange matrix by D=diag(1,1,−1,−1) flips every pn sign while fixing
+pp/nn ⇒ det(1+S(a,w))=det(1+S(a,−w)). So NO determinant-class observable at uniform magnitude
+distinguishes the two pn signs — the "open pn sign" (PR #3426) is unobservable in this class. Only
+per-pair NON-UNIFORM framings break it (a separate, harder item — the ³H/³He mirror split, distinct
+probes). So the only genuinely-open b₄ piece is the scalar m (Frontier A above), NOT the pn sign.
