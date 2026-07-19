@@ -58,7 +58,8 @@ no `ℝ`, no ordering, no archimedean construct.
 -- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
 -/
 import QOU.Machinery.HeckeDihedralBraidReduction
-import Mathlib.Algebra.Module.End
+import Mathlib.Algebra.Module.LinearMap.End
+import Mathlib.Algebra.Module.Pi
 
 namespace QOU.Machinery.HeckeGeneral
 
@@ -73,10 +74,10 @@ Iwahori–Hecke length-rule action `mulStep D h` (proved additive and
 lives on: composition in `Module.End` is the ring multiplication in which the
 F2 relations below are genuine ring identities. -/
 noncomputable def braidingEnd (D : DescentStructure W) (h : R) :
-    Module.End R (W → R) where
-  toFun := mulStep D h
-  map_add' := mulStep_add D h
-  map_smul' := fun c v => mulStep_smul D h c v
+    Module.End R (W → R) :=
+  ({ toFun := mulStep D h
+     map_add' := mulStep_add D h
+     map_smul' := fun c v => mulStep_smul D h c v } : (W → R) →ₗ[R] (W → R))
 
 @[simp] lemma braidingEnd_apply (D : DescentStructure W) (h : R) (v : W → R) :
     braidingEnd D h v = mulStep D h v := rfl
@@ -91,8 +92,6 @@ This is the ring-element form of `mulStep_quadratic` — the exact shape of the
 theorem braidingEnd_quadratic (D : DescentStructure W) (h : R) :
     braidingEnd D h * braidingEnd D h = h • braidingEnd D h + 1 := by
   refine LinearMap.ext fun v => ?_
-  simp only [LinearMap.mul_apply, LinearMap.add_apply, LinearMap.smul_apply,
-    Module.End.one_apply, braidingEnd_apply]
   exact mulStep_quadratic D h v
 
 /-! ## The F2 braid relation as a ring identity in `Module.End` -/
@@ -108,7 +107,6 @@ theorem braidingEnd_braid (S : DihedralCosetStructure W) (h : R) :
     braidingEnd S.Di h * braidingEnd S.Dj h * braidingEnd S.Di h
       = braidingEnd S.Dj h * braidingEnd S.Di h * braidingEnd S.Dj h := by
   refine LinearMap.ext fun v => ?_
-  simp only [LinearMap.mul_apply, braidingEnd_apply]
   exact S.braid_of_dihedral h v
 
 /-! ## Proved concrete slices (n = 2, n = 3) -/
@@ -150,7 +148,6 @@ theorem braidingEnd_braid_h3 (h : R) :
     braidingEnd descentH3σ₀ h * braidingEnd descentH3σ₁ h * braidingEnd descentH3σ₀ h
       = braidingEnd descentH3σ₁ h * braidingEnd descentH3σ₀ h * braidingEnd descentH3σ₁ h := by
   refine LinearMap.ext fun v => ?_
-  simp only [LinearMap.mul_apply, braidingEnd_apply]
   exact DihedralCosetStructure.cell_braid h v
 
 /-! ## The two packaged `HeckeBraidedPresentation` field shapes
