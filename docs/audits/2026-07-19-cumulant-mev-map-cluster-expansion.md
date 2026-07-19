@@ -58,6 +58,35 @@ dimensional anchor. So the linear and log forms are **different orders of one cl
   (entropy bound) — and the `b₄` magnitude (#4084). This note fixes the **framework** the
   two live in; it does not derive either.
 
+## 4. `E_unit` — attempted; it is a documented wall (exchange sector is scale-free)
+
+The cluster expansion isolates `E_unit` as *the* remaining dimensional open. Attempting it
+(bean `qou-6kgu`/`qou-4uk9` follow-up) resolves to the corpus's already-exhaustive record
+(`2026-07-06-reeb-flow-…` §2f–§2i), **not** a new number — and a numerical search is
+**forbidden** by the §2e entropy bound (a ~0.4% two-factor match carries no evidence). The
+documented state:
+
+- **The exchange sector is scale-free (§2h.2, Lean-motivated).** The amplitude `g` and the
+  ceiling `√5` are dimensionless Hecke-operator data; `m_e` enters only downstream via the
+  `τ`-functor. So `B = √5·E_unit` *requires* an **external** `E_unit`, and no internal QOU
+  scale supplies `0.99594 MeV` to the law's precision — nearest is `2m_e` at **+2.6%**
+  (6× the law's own +0.41% residual); `m_e[2]_v` +2.8%, `E_0/[2]_v²` +4.8%, `Q_β` −21%.
+- **Single-factor `m_e × (bond q-integer)` is exhausted-negative** (§3d).
+- **The counit-defect functional** supplies the sign but its magnitude explodes with `A`
+  (scope-(a) negative *as normalized*; an `A`-flattened variant is not excluded).
+- **Additive open+loop decomposition fails** (§2i, −36% to −64%): binding is collective.
+
+**Cluster-expansion sharpening (the one thing this branch adds to the `E_unit` picture).**
+Item 1 shows `E_unit` is the **single universal per-bond quantum shared across *all* cluster
+orders** (the pair-linear term *and* the many-body cumulants carry the same `E_unit`). That
+*explains* §2h.2 structurally: a quantity common to every order of the exchange-algebra
+expansion cannot originate *inside* the (dimensionless, scale-free) exchange algebra — it
+must be the one external `τ`-archimedean scale. So the two open routes narrow to: **(i)** an
+external `~1 MeV` `τ`-sector scale the framework does not yet canonically contain, or
+**(ii)** the `A`-flattened counit variant (§2f). This branch does **not** close either —
+`E_unit` remains open, and per the anti-laundering rule no axiom/class carrying it counts as
+a derivation.
+
 Refs: probe `computations/deltalambda/cumulant_mev_cluster_expansion_probe.py`;
 #4093 `docs/audits/2026-07-19-b4-collective-coordinate-regulator-wall.md`;
 provenance `docs/audits/2026-07-06-reeb-flow-pn-magnitude-provenance-and-1four-extension.md`
