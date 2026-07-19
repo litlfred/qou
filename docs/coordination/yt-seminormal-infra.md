@@ -298,9 +298,17 @@ Nothing imported the opaque class, so the restatement is non-breaking.
 open items on the wider program (not this thread):
 
 - **OV base vector** — `seminormalVector_base_exists` / `seminormalVector_data_exists`
-  (`JucysMurphy.lean`, bean `sp08`): the famous Okounkov–Vershik / Gelfand–Zetlin
-  eigenvector-existence theorem (JM-spectrum semisimplicity + Young-idempotent
-  nonvanishing). Hard, low-priority, independent — **not** in an active PR.
+  (`JucysMurphy.lean`, beans `sp08` / `qou-kskn`): the famous Okounkov–Vershik /
+  Gelfand–Zetlin eigenvector-existence theorem. **Now the ONLY live sorry in its
+  cone** (Specht foundation — `Mtab`, `polytabloid`, `SpechtSubmodule`, standard
+  basis, 2×2 seminormal block, subrepresentation, swap-transport, all-`T`
+  connectivity — is all sorry-free; PR #4048). **Formalize-first check (2026-07-19,
+  [audit](../audits/2026-07-19-ov-base-vector-column-superstandard-verification.md)):**
+  the **column-superstandard** polytabloid `e_{T₀}` IS the base JM eigenvector
+  (`X_s·e = content(cell_s)·e`, verified `[2,1]/[2,2]/[3,1]/[3,1,1]`); the
+  **row-superstandard** one is NOT (would be proving a false statement — the repo's
+  ready `rowSuperstandardStd` is the wrong target). Reduces `base_exists` to the
+  single eigen-equation on the column-superstandard polytabloid.
 - **Multi-generator characters** `χ_λ(σ_iσ_j…)` — natural extension of
   `fullCharacterGen_two_mul`; open.
 - `QHeckeSeminormalCharacterClosure` — conditional class (`claim_paths_agree`
