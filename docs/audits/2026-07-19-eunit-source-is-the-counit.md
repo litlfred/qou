@@ -69,6 +69,19 @@ expansion; it **relocates the open** from "find an external ~1 MeV unit" (a scan
 scale `μ₀`" — a formalize-first target, not a search. `E_unit` is **not** closed; the anti-laundering
 rule stands (no axiom/class carrying it counts as a derivation).
 
+**The concrete shape of that expansion (exact identity, not a fit).** The two deuteron forms live at
+*different deformation levels* related by an **exact ring identity**:
+
+  `(q − q⁻¹) = (v − v⁻¹)·[2]_v`,  `v = √q`, `[2]_v = v + v⁻¹`.
+
+`μ₀` uses the **q-level** `(q − q⁻¹)` (the counit skein); the 5g-form ladder uses the **v-level**
+`x = (v − v⁻¹)²` (the `√q` level — exactly the `√λ_₋ = i` square-root structure of
+`commutative-crossing-energy.md`). So the first-order counit weight is the v-level weight *dressed by
+`[2]_v`*, and the higher-order (co)unit / NA-Stokes expansion must organize along this q ↔ √q
+square-root passage. This **identifies the shape** of the correction; it does **not** close the −9%
+(that would require deriving the higher orders sum to the correct magnitude — and scanning
+`[2]_v`-powers for the fit is the forbidden §2e search, explicitly not done here).
+
 Refs: probe [`eunit_counit_mu0_tracing_probe.py`](../../computations/deltalambda/eunit_counit_mu0_tracing_probe.py); cheat sheet lines 213/237;
 `climax-volume-mass/crossing-energy-*`; `observations/crossing-energy-interpretation.md`;
 `categorical-action.lean`; reeb provenance §2f/§2h.2 (scope-corrected); merged #4101 cluster-expansion
