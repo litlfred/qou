@@ -24,11 +24,17 @@ subalgebra membership predicate `memB`):
 Together with the trivial `Hₙ×Hₙ` case (IH directly), these discharge every
 coset-pair case of the inductive step **except the two-`g` case**
 `tr((u·g·v)(p·g·q))`, whose middle `g·(v·p)·g` requires the Hecke relation
-`g² = 1 + h·g` together with the finer tower structure (`H_{n-1} ⊂ Hₙ` and the
+`g² = 1 + hh·g` together with the finer tower structure (`H_{n-1} ⊂ Hₙ` and the
 braid interaction of `σₙ` with `σ_{n-1}`) to reduce back into `Hₙ + Hₙ·g·Hₙ`.
-That two-`g` reduction is the residual hard core — the point where the Hecke
-tower's braid structure is genuinely needed — and is left for a follow-up brick
-(not axiomatised or `sorry`'d here).
+
+The **`g·w·g` reduction sub-bricks** for that two-`g` core are proved here
+(`gwg_of_lower`, `gwg_of_mid`), using the far-commutation of `g = σₙ` with
+`H_{n-1}`, the Hecke relation, and the braid relation `g·f·g = f·g·f`
+(`f = σ_{n-1}`). What remains is the **assembly**: decompose an arbitrary
+`w ∈ Hₙ` over its `H_{n-1}` cosets (`w = a + b·f·c`), apply these sub-bricks
+term-by-term to land `g·w·g ∈ Hₙ + Hₙ·g·Hₙ`, then trace-reduce both sides of the
+two-`g` product via one Markov step + the IH. That assembly is the residual crux;
+it is documented, not axiomatised or `sorry`'d.
 -/
 
 namespace QOU.Machinery.MarkovInductive
@@ -82,5 +88,33 @@ theorem cyclic_one_g (tr : A → R) (g : A) (z : R)
     rw [hIH (x * u) v (hmul x u hx hu) hv, hIH u (v * x) hu (hmul v x hv hx),
         mul_assoc]
   rw [key]
+
+/-! ## Two-`g` core: the `g·w·g` reduction sub-bricks
+
+These use the Hecke tower's braid structure — far-commutation of `g = σₙ` with
+`H_{n-1}`, the Hecke relation `g² = 1 + hh·g` (`hh` the central Hecke parameter,
+`= q − q⁻¹` in the algebra), and the braid `g·f·g = f·g·f` (`f = σ_{n-1}`) — to
+push a `g·w·g` (`w ∈ Hₙ`) back into `Hₙ + Hₙ·g·Hₙ`, term-by-term over `w`'s
+`H_{n-1}` coset decomposition `w = a + b·f·c`. -/
+
+/-- **Sub-brick — `g·a·g` for `a ∈ H_{n-1}`.** Far-commutation (`g·a = a·g`) + the
+Hecke relation `g² = 1 + hh·g` give `g·a·g = a + a·hh·g ∈ Hₙ + Hₙ·g`. -/
+theorem gwg_of_lower (g a hh : A)
+    (hfar : g * a = a * g) (hhecke : g * g = 1 + hh * g) :
+    g * a * g = a + a * hh * g := by
+  rw [hfar, mul_assoc, hhecke, mul_add, mul_one, ← mul_assoc]
+
+/-- **Sub-brick — `g·(b·f·c)·g` for `b,c ∈ H_{n-1}`.** Far-commutation of `g` with
+`b, c` + the braid relation `g·f·g = f·g·f` give `g·(b·f·c)·g = b·(f·g·f)·c`, a
+single `Hₙ·g·Hₙ` term. -/
+theorem gwg_of_mid (g f b c : A)
+    (hfarb : g * b = b * g) (hfarc : c * g = g * c)
+    (hbraid : g * f * g = f * g * f) :
+    g * (b * f * c) * g = b * (f * g * f) * c := by
+  have step : g * (b * f * c) * g = b * (g * f * g) * c := by
+    rw [show g * (b * f * c) * g = g * b * f * (c * g) by simp only [mul_assoc],
+        hfarb, hfarc]
+    simp only [mul_assoc]
+  rw [step, hbraid]
 
 end QOU.Machinery.MarkovInductive
