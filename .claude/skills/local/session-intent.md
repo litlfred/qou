@@ -76,6 +76,8 @@ Three places, all required:
   `beans update <child-id> --status in-progress`
 If working on an existing bean, just run `beans update <id> --status in-progress --body-append "Claimed by <branch>"`
 
+> **Crucial Plan Check (Formalize-first):** Before finalizing the intent, verify that the workplan prioritizes Lean artifacts. For any new math or physics derivation, the first tasks *must* be writing the Lean structure, class, or proof scaffold in `.lean` files. Do not plan Python fitting scripts or `.md` prose until the Lean axioms compile.
+
 **c. PR body** — at branch-open, the PR body must include:
 
 ```markdown

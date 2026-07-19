@@ -665,6 +665,10 @@ odd THEN a₁ is odd"). Rules:
 History: the a₁ parity-shadow incident,
 [`docs/audits/2026-07-07-a1-bar-odd-parity-shadow-investigation.md`](docs/audits/2026-07-07-a1-bar-odd-parity-shadow-investigation.md).
 
+## Formalize-first policy (STRICT)
+
+For any new math or physics derivation, agents MUST begin by writing the Lean structure, class, or proof scaffold in `.lean` files. Explicitly forbidden: agents must NOT start with Python fitting scripts or prose `.md` files until the Lean axioms compile.
+
 ## Formalize-first probe discipline (STRICT — narrow the search before running it)
 
 **Too much time is lost chasing numerical rainbows that a one-line
