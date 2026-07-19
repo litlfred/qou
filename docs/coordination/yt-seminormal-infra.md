@@ -258,3 +258,25 @@ The general single generator `σ_i` closed on the same PR (three commits):
    any `[Field R]`, `hnd` (`q^{2ρ}≠1`) passed through. All sorry-free, lean-direct
    exit 0. Remaining (bean `qou-tqab`): the per-shape `#SYT(μ)` / `|R_row^i|` counts
    (→ tabulated `c_λ ∈ {1,3,8,10}`), and multi-generator products.
+
+## 2026-07-19 — tabulated `c_λ = {3,8,10}` closed (PR #4044)
+
+`SytSmallShapeCountsLarger.lean` (new, sorry-free) pins the three remaining
+self-conjugate shapes, completing the manuscript table `c_λ ∈ {1,3,8,10}`. The
+enumeration count `numSYTenum_eq_numStandardYoungTableaux` (all `n`) is now on
+main, so the **forward** route needs no explicit tableau construction:
+
+- `#SYT(μ)` via `numSYTenum` (kernel `decide`) → `numStandardYoungTableaux`
+  (`Nat.card` bridge) → `Fintype.card (StandardYoungTableau μ)`
+  (`Nat.card_eq_fintype_card`) → `c_λ = |R_row| = #SYT/2`
+  (`two_mul_card_rowClass_eq_card`, self-conjugacy).
+- `[3,1,1]` #SYT=6 → `c=3` (`card_rowClass_mu311`); `[3,2,1]` #SYT=16 → `c=8`
+  (`card_rowClass_mu321`); `[4,1,1,1]` #SYT=20 → `c=10` (`card_rowClass_mu4111`).
+- Self-conjugacy `μᵀ=μ` via `YoungDiagram.ext` + `decide`; n=6/n=7 counts are
+  axiom-free kernel `decide`.
+
+Remaining on the χ_λ thread (bean `qou-tqab`): the **opaque `chiSigma`** in
+`symbolic_character_table.lean:83` (unprovable as stated — a design decision to
+restate that block, owner call), and **multi-generator products** `χ_λ(σ_iσ_j…)`.
+Separately, the OV thread now bottoms out on the single `sorry`
+`seminormalVector_base_exists` (`JucysMurphy.lean:850`, Vershik–Kerov base vector).
