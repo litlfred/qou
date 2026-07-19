@@ -1,0 +1,47 @@
+{
+  "computation": "alpha-em-f-t1-cover-structure",
+  "description": "F-construction T1 (qou-bi1u): Bring -> Bring/<U> = E as a degree-4 cyclic cover. RH closure selects total branching at exactly the two #3942 carrier vertices; the branch-cycle sum rule derives the multiplier pair (i,-i); Chevalley-Weil derives the (3,1) isotypic split with zero adjustable input (consistency-1 upgraded to a structural derivation); the chi=i eigenline is 1-dim (geometric home of the forced B2 shadow). Lit-grounded route (Deligne-Mostow; McMullen 2013; Chevalley-Weil). T2-T5 open. Nothing wired.",
+  "auditOnly": "docs/audits/2026-07-19-alpha-em-f-t1-cover-structure.md",
+  "tier": "exact integer/rational arithmetic (RH + branch-cycle + Chevalley-Weil); structural derivation",
+  "computedAt": "2026-07-19T00:02:08.135337+00:00",
+  "commitSha": "d5368d7388c2a138a926f36bc190195c6ed003e7",
+  "engine": "sympy",
+  "engineVersion": "1.14.0",
+  "scriptFile": "alpha_em_f_t1_cover_structure_probe.py",
+  "scriptHash": "7814d7e77543",
+  "assertions": [
+    {
+      "name": "riemann_hurwitz_closure_and_selection",
+      "passed": true,
+      "detail": "2g_B\u22122 = 6 = 4\u00b7(2g_E\u22122) + \u03a3(e_p\u22121) \u27f9 \u03a3(e_p\u22121) = 6; \u2124\u2084 solutions (n\u2082,n\u2084) \u2208 [(0, 2), (3, 1), (6, 0)]; the #3942 carrier (TWO fixed points V,W with derivative multipliers i,\u2212i \u27fa total ramification e=4) SELECTS (0,2): branched at exactly the two carrier vertices, totally"
+    },
+    {
+      "name": "monodromy_sum_rule_forces_multipliers",
+      "passed": true,
+      "detail": "a_V + a_W \u2261 0 (mod 4) with both of order 4 forces {a_V,a_W} = {1,3} \u2014 deck derivatives (i, i\u00b3=\u2212i): the #3942 multiplier pair (i,\u2212i) DERIVED from the cover axioms (branch-cycle sum rule), not read off"
+    },
+    {
+      "name": "chevalley_weil_derives_31",
+      "passed": true,
+      "detail": "dim H^{1,0}_{\u03c7^k} = g_E\u22121+\u27e8k\u00b7a_V/4\u27e9+\u27e8k\u00b7a_W/4\u27e9 = {1: 1, 2: 1, 3: 1} (k=1,2,3), invariant part = g_E = 1; total 4 = g_B \u2713. The (3,1) isotypic split is DERIVED (moving \u2194 E_{5\u03c4\u2080}\u00b3, invariant \u2194 E_{\u03c4\u2080} = pullback H\u00b9(E); the spec(M)={5,5,5,1} multiplicities) with ZERO adjustable input \u2014 consistency-1 upgraded from low-entropy match to structural derivation"
+    },
+    {
+      "name": "chi_i_eigenline_one_dimensional",
+      "passed": true,
+      "detail": "dim H^{1,0}_\u03c7 = 1 for the faithful character (and 1 for its inverse) \u2014 the vertex-local line of the B2 shadow: T2's Hecke module at q = i acts on this line and its conjugate; the FORCED 2-point shadow (#3960) acquires its geometric home"
+    }
+  ],
+  "allPassed": true,
+  "result": {
+    "cover": "Bring -> E = Bring/<U>, degree 4 cyclic, branched totally at V, W",
+    "multipliers": "(i, -i) derived from the branch-cycle sum rule",
+    "cw_dims": "H^{1,0}: chi^k dims (1,1,1) for k=1,2,3 + invariant 1 \u2014 the (3,1) split DERIVED",
+    "chi_i_line": "1-dimensional \u2014 the B2 shadow's geometric home",
+    "verdict": "F-CONSTRUCTION T1 DELIVERED (scope-(a); no fit; nothing wired): the cover side of the archimedean \u03c4-functor is established \u2014 Bring \u2192 Bring/\u27e8U\u27e9 \u2245 E is a degree-4 cyclic cover branched TOTALLY at exactly the two #3942 carrier vertices (RH closure selects it; the branch-cycle sum rule DERIVES the multiplier pair (i,\u2212i)); Chevalley\u2013Weil then DERIVES the (3,1) isotypic split with zero adjustable input (moving {k=1,2,3} \u2194 E_{5\u03c4\u2080}\u00b3, invariant \u2194 E_{\u03c4\u2080}) \u2014 consistency-1 upgraded to a structural derivation \u2014 and the \u03c7=i eigenline is 1-dim, the geometric home of the forced B2 shadow. Route literature-grounded (Deligne\u2013Mostow; McMullen 2013; Chevalley\u2013Weil). OPEN (T2\u2013T5): the Hecke module via braid monodromy at q=i, the \u03c1-equivariance theorem, the WEIGHT transport (dims derived; weight VALUES not yet), and the residual identification F = framework-\u03c4. NO tier change."
+  },
+  "context": {
+    "bean": "qou-bi1u (T1) of milestone qou-a46k (F-construction)",
+    "literature": "Deligne-Mostow 1986; McMullen, Braid groups and Hodge theory, 2013; Chevalley-Weil 1934",
+    "scope_guard": "cover side only; F not constructed; weight VALUES not derived (T4); F = framework-tau not identified (T5); no fit; nothing wired; 1/(8pi) stays phase-4"
+  }
+}
