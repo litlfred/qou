@@ -133,3 +133,43 @@ orphan (generalise + wire-in).
   *scaled-argument* q-difference relation, not the standard `(1−qⁿ)` 3-term.
   Instantiating the standard class needs the **standard** q-Pascal (for
   `QPochhammer.qBinomial`) — the genuine remaining `5ldf` follow-on.
+
+## Faddeev–Volkov rigidity (route B) — meromorphic reduction (2026-07-19, #4018 merged + #4060 open)
+
+Bean `qou-2cvs`/`qou-7xvy` (parent `qou-08a2`). Branch
+`claude/faddeev-rigidity-bricks-bcd-2026-07-19`.
+
+- **#4018 (MERGED):** route-B step 2 — `MeromorphicSameOrder.lean`. Brick (a)
+  `meromorphicOrderAt_comp_add` (translation invariance of the meromorphic order —
+  a genuine Mathlib gap, now closed) + unconditional order-difference periodicity.
+  **Honest correction landed:** double-periodicity makes the ratio `r = Ψ/Φ`
+  *elliptic*, which does **not** force `ord Φ = ord Ψ` (nonconstant ℘ admissible) —
+  so same-divisor is an **independent analytic input**, not a step-1/2 consequence.
+- **#4060 (OPEN):** `FaddeevRigidityMeromorphic.lean` — brick (d) assembly
+  (`uniqueUpToScalar_meromorphic`) + bricks (b/c) internalized
+  (`uniqueUpToScalar_of_ratio_dense_periodic`, periodicity on a dense set promoted
+  by the merged `Common.periodic_of_continuous_of_eqOn_dense`). **Net:** the whole
+  reduction bottoms out at **one** open input — `hr_entire`: `r` extends across
+  removable singularities to an entire function. Verified `lean`-direct exit 0,
+  sorry-free.
+- **The single open input = `MathlibExt/PhiBProd`** (Φ_b's holomorphicity/divisor
+  characterization). Gated on Mathlib contour-integration (the class
+  `FaddeevQuantumDilogarithm.FaddeevPhi` carries only the two shift equations, not
+  the divisor — verified). Not axiomatized; carried as the open `qou-7xvy` bean.
+
+**Sibling coordination:**
+- **#4062** (`claude/faddeev-phi-b-construction-wwblhu`) — branch-named for the Φ_b
+  construction but body pivoted to the Δ_λ cyclotomic-sign attack (honest negative,
+  scope-(a)). Posted intent (#4062 comment): asked whether they're still headed
+  toward the integral/product Φ_b build (would discharge my `hr_entire` and close
+  route B), and flagged the `qou-my68` overlap — my `qou-uqen` (my68 N1
+  polynomial-shadow injectivity) is a *deliberate parallel* at a different angle
+  from their N4 GS↔cyclotomic route.
+- No other open sibling touches the Faddeev/Liouville/rigidity files (keyword scan
+  of all 20 open PR bodies: zero overlap on `FaddeevRigidity*` /
+  `DoublyPeriodicLiouville` / `PeriodicDense` / `CyclicDilogPentagon` /
+  `MeromorphicSameOrder`).
+
+**Queued follow-ons:** `qou-7xvy` (b/c ← PhiBProd, gated), `qou-qb9e` (L2
+Subgoal-1 Borromean tower — the achievable precision win, non-overlapping),
+`qou-uqen` (my68 N1), `qou-42b6` (prepare-merge #4060).
