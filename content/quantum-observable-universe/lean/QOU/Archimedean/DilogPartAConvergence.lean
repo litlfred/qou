@@ -127,4 +127,61 @@ theorem h_integral_ge_left {x a b : ℝ} (hx0 : 0 < x) (hx1 : x < 1) (ha : 0 < a
           (h_intervalIntegrable hx0 hx1 hb1 ha hab) (fun u hu => ?_)
         exact h_monotoneOn hx0 hx1 hamem ⟨lt_of_lt_of_le ha hu.1, le_trans hu.2 hb1⟩ hu.1
 
+/-! ### B3.3b — the telescoping Riemann-sum error bound -/
+
+/-- **B3.3b — the Riemann-sum error bound.**  The left-Riemann sum
+    `S_n = Σ_{k<n} h(qᵏ)·(qᵏ − qᵏ⁺¹)` over-estimates `∫_{qⁿ}^1 h` by at most
+    `(1-q)·(h(1) − h(qⁿ))`:  `0 ≤ S_n − ∫_{qⁿ}^1 h ≤ (1-q)·(h(1) − h(qⁿ))`.
+    Proof by induction: each step adds a cell whose error is squeezed by the
+    per-cell bounds (B3.3a) and telescopes. -/
+theorem riemann_error_bound {x q : ℝ} (hx0 : 0 < x) (hx1 : x < 1)
+    (hq0 : 0 < q) (hq1 : q < 1) (n : ℕ) :
+    0 ≤ (∑ k ∈ Finset.range n,
+            (-Real.log (1 - x * q ^ k) / q ^ k) * (q ^ k - q ^ (k + 1)))
+          - ∫ u in q ^ n..(1 : ℝ), -Real.log (1 - x * u) / u
+      ∧ (∑ k ∈ Finset.range n,
+            (-Real.log (1 - x * q ^ k) / q ^ k) * (q ^ k - q ^ (k + 1)))
+          - ∫ u in q ^ n..(1 : ℝ), -Real.log (1 - x * u) / u
+        ≤ (1 - q) * ((-Real.log (1 - x * 1) / 1)
+            - (-Real.log (1 - x * q ^ n) / q ^ n)) := by
+  induction n with
+  | zero => refine ⟨?_, ?_⟩ <;> simp [intervalIntegral.integral_same]
+  | succ m ih =>
+    obtain ⟨ih_lo, ih_hi⟩ := ih
+    have hqm1_pos : (0 : ℝ) < q ^ (m + 1) := pow_pos hq0 _
+    have hqm_pos : (0 : ℝ) < q ^ m := pow_pos hq0 _
+    have hqm_le1 : q ^ m ≤ 1 := pow_le_one₀ hq0.le hq1.le
+    have hq_le : q ^ (m + 1) ≤ q ^ m := by
+      rw [pow_succ]; exact mul_le_of_le_one_right (pow_nonneg hq0.le m) hq1.le
+    -- per-cell squeeze on the new cell [qᵐ⁺¹, qᵐ]
+    have hJ_le := h_integral_le_right hx0 hx1 hqm1_pos hqm_le1 hq_le
+    have hJ_ge := h_integral_ge_left hx0 hx1 hqm1_pos hqm_le1 hq_le
+    -- integral split ∫_{qᵐ⁺¹}^1 = ∫_{qᵐ⁺¹}^{qᵐ} + ∫_{qᵐ}^1
+    have hsplit :
+        (∫ u in q ^ (m + 1)..(1 : ℝ), -Real.log (1 - x * u) / u)
+          = (∫ u in q ^ (m + 1)..q ^ m, -Real.log (1 - x * u) / u)
+            + ∫ u in q ^ m..(1 : ℝ), -Real.log (1 - x * u) / u :=
+      (intervalIntegral.integral_add_adjacent_intervals
+        (h_intervalIntegrable hx0 hx1 hqm_le1 hqm1_pos hq_le)
+        (h_intervalIntegrable hx0 hx1 le_rfl hqm_pos hqm_le1)).symm
+    -- monotone gap h(qᵐ) − h(qᵐ⁺¹) ≥ 0 and width qᵐ − qᵐ⁺¹ ≤ 1 − q
+    have hmono := h_monotoneOn hx0 hx1
+      ⟨hqm1_pos, le_trans hq_le hqm_le1⟩ ⟨hqm_pos, hqm_le1⟩ hq_le
+    have hwidth : q ^ m - q ^ (m + 1) ≤ 1 - q := by
+      have : q ^ m - q ^ (m + 1) = q ^ m * (1 - q) := by rw [pow_succ]; ring
+      rw [this]
+      calc q ^ m * (1 - q) ≤ 1 * (1 - q) :=
+            mul_le_mul_of_nonneg_right hqm_le1 (by linarith)
+        _ = 1 - q := one_mul _
+    have hprod :
+        ((-Real.log (1 - x * q ^ m) / q ^ m) - (-Real.log (1 - x * q ^ (m + 1)) / q ^ (m + 1)))
+            * (q ^ m - q ^ (m + 1))
+          ≤ ((-Real.log (1 - x * q ^ m) / q ^ m) - (-Real.log (1 - x * q ^ (m + 1)) / q ^ (m + 1)))
+            * (1 - q) :=
+      mul_le_mul_of_nonneg_left hwidth (by simp only [Function.const] at hmono ⊢; linarith)
+    rw [Finset.sum_range_succ, hsplit]
+    constructor
+    · nlinarith [ih_lo, hJ_le]
+    · nlinarith [ih_hi, hJ_ge, hprod]
+
 end QOU.Archimedean
