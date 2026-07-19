@@ -183,8 +183,14 @@ form breaks (the ss-condensation threshold). Witness:
   `PrincipalGradingJetOrder.lean`; #3931 `NakayamaGradingObstruction.lean`
 - Magnitude structure: #3924 `b4_slater_antisymmetrizer_exchange_sign.py`
 - Vector 2 re-scope (deformed ss-pole, sector split):
-  `b4_deformed_sspole_sector_probe.py` (PR #4084);
-  provenance `docs/audits/2026-07-06-reeb-flow-pn-magnitude-provenance-and-1four-extension.md` §2b
+  `b4_deformed_sspole_sector_probe.py` + Lean `B4CumulantBarEven.he4DetViaEig_zero_at_pole` /
+  `he4DetReduced_gt_one_at_pole` (PR #4084);
+  provenance `docs/audits/2026-07-06-reeb-flow-pn-magnitude-provenance-and-1four-extension.md` §2b.
+  Complements the landed A5+B4 pincer (merged #4006,
+  `docs/audits/2026-07-18-vector2-double-pincer-a5-b4.md`): that audit refutes the
+  period-Gram √-identity exactly and leaves the "object-level √5 bridge OPEN"; §4a here explains
+  why there is no *distinct* sub-ceiling `m` to bridge to (the physical `m` sits on the deformed
+  boundary), re-scoping the open object from the scalar to the α-condensation pole regulator.
 - Forward test (honest negative): #3943
   `deltalambda_perpair_bond_magnitude_derive_probe.py`
 - PROBE-4 prune: `docs/audits/2026-06-16-option-e-probe4-kl-positivity-prune.md`;
