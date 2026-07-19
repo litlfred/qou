@@ -1,0 +1,46 @@
+{
+  "computation": "alpha-em-r1-n3-eigenline",
+  "description": "R1/N3: via the canonical embedding H^{1,0}(Bring) = std S_5 rep. Deck 4-cycle eigenvalues {1,i,-1,-i} reproduce T1 CW dims independently; the corpus's spectral twist (x_j -> x_{2j}, w_k -> w_{3k}) is S_5-conjugate to the deck generator (explicit conjugator); its +-i eigenlines are conjugation-paired as F's channel pair. R1 closes at the semisimplified level; the unipotent residual merges into R2 (phase-4). Nothing wired.",
+  "auditOnly": "docs/audits/2026-07-19-alpha-em-r1-n3-eigenline.md",
+  "tier": "symbolic-exact (permutation linear algebra on the canonical model)",
+  "computedAt": "2026-07-19T03:32:53.785316+00:00",
+  "commitSha": "f435dc1394706b43fc1650cffa01c60932f7655d",
+  "engine": "sympy",
+  "engineVersion": "1.14.0",
+  "scriptFile": "alpha_em_r1_n3_eigenline_probe.py",
+  "scriptHash": "06b4de6edaa7",
+  "assertions": [
+    {
+      "name": "canonical_model_matches_CW",
+      "passed": true,
+      "detail": "H^{1,0} = the standard S\u2085 rep (canonical embedding, K = O(1)): the deck 4-cycle has \u2102\u2075 eigenvalues {-1: 1, 1: 2, -I: 1, I: 1} \u27f9 std eigenvalues {1, i, \u22121, \u2212i} \u2014 ONE per deck character, exactly the T1 Chevalley\u2013Weil dims. Two independent derivations (branch-point CW vs canonical-embedding linear algebra) agree"
+    },
+    {
+      "name": "corpus_twist_is_deck_up_to_conjugacy",
+      "passed": true,
+      "detail": "m\u2082: x_j \u21a6 x_{2j} has order 4 and acts on resolvents as w_k \u21a6 w_{3k} ({1: 3, 2: 1, 3: 4, 4: 2} \u2014 the corpus's spectral twist permuting the frequency pairs); explicit g \u2208 S\u2085 conjugates the deck 4-cycle P to m\u2082 \u2014 the corpus's own braid twist and F's deck generator are ONE element up to conjugacy"
+    },
+    {
+      "name": "corpus_twist_eigenline_pair_rho_exchange",
+      "passed": true,
+      "detail": "m\u2082's \u00b1i eigenlines are 1-dim, lie in the standard rep (\u03a3 = 0), and conjugation carries the +i line to the \u2212i line (m\u2082 real \u2014 the T3 theorem instance): the corpus twist carries the SAME conjugation-paired channel structure as F"
+    },
+    {
+      "name": "residual_merges_into_R2",
+      "passed": true,
+      "detail": "labeling fixed by the FORCED shadow (#3960 \u2014 no freedom); the unipotent (Jordan) part of the T2 monodromy is invisible to finite-order automorphisms \u2014 its naturality IS the framework's \u03c4-assignment on the braiding, i.e. it merges into R2 (phase-4, owner-gated). R1 has no remaining computational content at the linear/semisimplified level"
+    }
+  ],
+  "allPassed": true,
+  "result": {
+    "canonical_model": "H^{1,0} = std S_5 rep; deck eigenvalues {1,i,-1,-i} = T1 CW dims (independent derivation)",
+    "corpus_twist": "x_j -> x_{2j} = resolvent 4-cycle w_k -> w_{3k}; S_5-conjugate to the deck generator",
+    "eigenlines": "+-i lines 1-dim, in std, conjugation-paired (T3 instance)",
+    "r1_status": "closed at the semisimplified level; unipotent residual merges into R2",
+    "verdict": "R1/N3 COMPUTED \u2014 R1 CLOSES AT THE SEMISIMPLIFIED LEVEL (scope-(a); no fit; nothing wired): via the canonical embedding, H^{1,0}(Bring) is the standard S\u2085 rep, and (V1) the deck 4-cycle's eigenvalues {1,i,\u22121,\u2212i} reproduce the T1 Chevalley\u2013Weil dims by an INDEPENDENT derivation; (V2) the corpus's own spectral twist (x_j \u21a6 x_{2j}, = w_k \u21a6 w_{3k}) is S\u2085-conjugate to the deck generator (explicit conjugator); (V3) its \u00b1i eigenlines are conjugation-paired exactly as F's channel pair (T3 instance). The naturality square commutes at the linear/semisimplified level with the labeling fixed by the forced shadow. RESIDUAL: only the unipotent part of the monodromy \u2014 invisible to automorphisms \u2014 whose naturality is the framework's \u03c4-assignment itself: R1's remainder MERGES INTO R2 (phase-4, owner-gated). NO tier change."
+  },
+  "context": {
+    "follows": "#4070 (R1 walk); T1-T5 milestone qou-a46k complete",
+    "scope_guard": "linear/semisimplified level; unipotent naturality = R2 (phase-4, owner-gated); no fit; nothing wired; 1/(8pi) stays phase-4"
+  }
+}
