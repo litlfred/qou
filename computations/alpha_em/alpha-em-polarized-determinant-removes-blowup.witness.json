@@ -1,0 +1,53 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-19T00:23:02.694641+00:00",
+  "commitSha": "e5e9d132d7c906b0ac7f792993d44961004e6f19",
+  "assertions": [
+    {
+      "name": "polarization_removes_blowup",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "polarized_measure_not_8pi",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "nearest_candidate_is_b1_2p8pct_off",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 116,
+  "computation": "alpha-em-polarized-determinant-removes-blowup",
+  "scriptFile": "alpha_em_polarized_determinant_removes_blowup_probe.py",
+  "scriptHash": "468c530c4823",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "α_EM T3: the polarized (holomorphic, factorized) determinant measure on Jac(Bring) = 8.226 — O(1), removes the unpolarized 1.47e12 blow-up (polarization essential, #3941). But 8.226 is not a clean α_EM coefficient (nearest b₁=8, 2.8% off; not 8π) — a residual normalization (compact-* projection / ½·a₀) remains.",
+  "auditOnly": "docs/audits/2026-07-19-alpha-em-polarized-determinant-removes-blowup.md",
+  "data": {
+    "polarized_measure": "8.22628522197859",
+    "polarized_det": "0.0147772109607529",
+    "unpolarized_measure_reference": "~1.47e12",
+    "measure_over_8pi": "0.3273134891",
+    "measure_over_8_b1": "1.028285653",
+    "verdict": "POLARIZATION REMOVES THE BLOW-UP BUT DOES NOT LAND ON 8π (scope-(a), α_EM T3). The polarized (holomorphic, factorized) determinant measure on Jac(Bring)=E_5τ₀³×E_τ₀ = 8.226285222 — O(1), vs the unpolarized real det′Δ's ~1.47e12. So polarization IS essential (confirms #3941) and the polarized object is the factorized holomorphic measure that the genus-4 work retracted for the WRONG (unpolarized) reason. BUT 8.22629 is NOT a clean α_EM coefficient: nearest simple candidate is b₁=8 (measure/8=1.02829, 2.8% off); it is NOT 8π (measure/8π=0.32731), 4π, 2π, or π². Polarization fixes the SCALE; a residual normalization (the compact-`*` projection / #3941's ½·a₀) is unaccounted. No 8π manufactured. No fit; no c_k wired; no tier change."
+  }
+}
