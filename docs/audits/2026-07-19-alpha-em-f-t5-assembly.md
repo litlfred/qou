@@ -60,3 +60,10 @@ Every step is machine-verified (17 merged PRs of probes + sorry-free Lean),
 nothing is fitted, and nothing is wired. The natural next tranche — for a
 fresh session — is **R1**: walk the brings-surface chapter's braid-action
 blocks and check the naturality square against F.
+
+---
+
+> **🟧 Ruling update (2026-07-19, owner):** *R2 is NOT Lean/derived-proved.*
+> R2 remains an unproven physics identification; `1/(8π)` stays phase-4; the
+> program-outcome statement is "derived **conditional on R2**; R2 is open."
+> Read-first: [`2026-07-19-alpha-em-r2-owner-ruling.md`](2026-07-19-alpha-em-r2-owner-ruling.md).

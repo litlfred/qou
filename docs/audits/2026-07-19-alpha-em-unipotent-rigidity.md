@@ -49,3 +49,10 @@ Every functorial question raised by the τ-correspondence program — from the
 first obstruction (`a6d522e0a`) through the B-plan, the numerical
 exclusions, and the F-construction — is now answered and machine-verified.
 What remains is exactly the statement only the owner can canonize.
+
+---
+
+> **🟧 Ruling update (2026-07-19, owner):** *R2 is NOT Lean/derived-proved.*
+> R2 remains an unproven physics identification; `1/(8π)` stays phase-4; the
+> program-outcome statement is "derived **conditional on R2**; R2 is open."
+> Read-first: [`2026-07-19-alpha-em-r2-owner-ruling.md`](2026-07-19-alpha-em-r2-owner-ruling.md).

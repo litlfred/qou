@@ -52,3 +52,10 @@ conditional on ONE owner-gated identification:
        substrate braiding, with the tower's one-loop insertion
        F(b_s/[2]_q at q=1) weighted by a₀·α.   [phase-4]
 ```
+
+---
+
+> **🟧 Ruling update (2026-07-19, owner):** *R2 is NOT Lean/derived-proved.*
+> R2 remains an unproven physics identification; `1/(8π)` stays phase-4; the
+> program-outcome statement is "derived **conditional on R2**; R2 is open."
+> Read-first: [`2026-07-19-alpha-em-r2-owner-ruling.md`](2026-07-19-alpha-em-r2-owner-ruling.md).
