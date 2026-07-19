@@ -20,3 +20,22 @@ top-down Matrix.cons indexing re-derives inner-word entries per outer index
 Tractable path: Matrix.Reflection re-encode (needs Matrix.Notation olean,
 absent from sandbox cache) OR abstract regular-rep trace tr(AB)=tr(BA).
 Audit: docs/audits/2026-07-19-h4-cyclicity-whnf-explosion.md. Sorry kept honest.
+
+## Both approaches assessed (2026-07-19)
+Owner asked to try BOTH (reflection re-encode + abstract trace). Result:
+neither closes trM_cyclic in-sandbox, but the assessment is now definitive.
+- Approach 1 (Matrix.Reflection): BLOCKED — Matrix.Notation olean absent +
+  source 404s at pinned rev (reorganized); needs full lake build (wipe risk).
+  Also dubious: reflection is for small matrices, not 24x24 depth-6 (~83k ops).
+- Approach 2 (abstract regular-rep trace): the regular trace is cyclic for free
+  (Matrix.trace_mul_comm) but trM4 is NOT the regular trace (Ocneanu weights
+  differ). Connecting the Markov functional to a cyclic-by-construction trace
+  still needs Fin-24 compute [blocked] OR Ocneanu word-length induction = the
+  general-n MarkovStabilization class on main, which stays OPEN. The abstract
+  route IS the open item, not a shortcut.
+Key contrast: mulNF_assoc closed at Fin 6 via funext+fin_cases+ring, proving the
+wall is Fin-24 depth-6 grinding (assoc would explode too), NOT cyclicity-specific.
+Convergence: confirms main's abstract-algebra/MarkovStabilization direction is
+the only path; brute Fin-24 compute is a dead end. This module's n=4 mulNF is
+complementary to main's H4 rung (mulσ/trace only), not a duplicate.
+Next actionable: upstream abstract cyclic-trace lemma (discharges all n at once).
