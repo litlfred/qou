@@ -42,32 +42,35 @@ def _from_witness() -> tuple[float, float] | None:
     return float(preds["m_p_MeV"]), float(preds["m_n_MeV"])
 
 
-def _from_formula() -> tuple[float, float]:
-    """Compute the muon-anchored F_Bor identity directly (fallback)."""
-    import mpmath as mp
-    from m_p_substrate_identity_50dps import F_Bor
-    from q_parameter import Q as q0, vol_4_1_at
-    from codata_constants import M_E_MEV
-    q = mp.mpf(str(q0))
-    m_e = mp.mpf(str(M_E_MEV))
-    hbar_q_sq = ((q - 1) / q) ** 2
-    m_mu = m_e * vol_4_1_at(50) / hbar_q_sq           # muon anchor (Vol(4₁))
-    # dim V_(2,1)=2, |S_3|=6 — the RAW identity, matching the raw proton
-    # pin (owner ruling 2026-07-03, habiro tower stripped from q_at as a
-    # fit; see m_p_substrate_identity_50dps.habiro_ratio_s5bb for the
-    # fit-tier dressing the producer still reports separately)
-    m_p = 2 * (m_mu * F_Bor(q) - 6 * m_e)
-    from derived_masses import q_beta_toroidal_mev
-    m_n = m_p + q_beta_toroidal_mev() + m_e        # n→p+e+ν̄: Toroidal/Weber limit Q_β
-    return float(m_p), float(m_n)
-
-
 def proton_neutron_mass_mev() -> tuple[float, float]:
     """Canonical (m_p, m_n) in MeV via the muon-anchored Hecke energy.
 
-    Prefers the precomputed substrate-identity witness (50 dps); falls back
-    to computing the F_Bor identity directly."""
-    return _from_witness() or _from_formula()
+    Single canonical source: the git-tracked substrate-identity witness
+    (50 dps), produced by ``m_p_substrate_identity_50dps.py``.
+
+    There is deliberately NO formula fallback (owner directive 2026-07-19:
+    "canonical derivation only — no silent fallback"). The prior fallback
+    recomputed m_p from the F_Bor identity but derived m_n from the
+    ``q_beta_toroidal_mev()`` near-match tower, whose Q_β (0.7823334279…)
+    *diverges* from the canonical witness Q_β (0.7823343865… =
+    ``q_beta_kashiwara_n2_mev``). A missing witness therefore raises with a
+    regeneration instruction rather than silently substituting a
+    non-canonical m_n. (Toroidal-tower over-claim audit:
+    docs/audits/2026-07-19-qbeta-toroidal-tower-overclaim-audit.md; the
+    2026-07-06 ruling "do not re-wire q_beta_toroidal_mev into
+    canonical_mass.py".)
+    """
+    result = _from_witness()
+    if result is None:
+        raise FileNotFoundError(
+            f"Canonical mass witness not found: {_WITNESS}\n"
+            "Regenerate it with:\n"
+            "    python3 computations/m_p_substrate_identity_50dps.py\n"
+            "No formula fallback is provided — the canonical (m_p, m_n) come "
+            "only from this witness (muon-anchored F_Bor identity + the "
+            "canonical Kashiwara-N2 Q_β for m_n)."
+        )
+    return result
 
 
 def proton_mass_mev() -> float:
