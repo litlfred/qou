@@ -353,4 +353,12 @@ theorem LiTwo_reflection' (x : ℝ) (hx0 : 0 < x) (hx1 : x < 1) :
   simp only [hg] at hgx
   linarith
 
+/-- **Special value** `Li₂(½) = π²/12 − (ln 2)²/2`, the reflection FE at
+    `x = ½` (Lewin 1.16).  A clean immediate corollary of `LiTwo_reflection'`. -/
+theorem LiTwo_half : LiTwo (1 / 2) = Real.pi ^ 2 / 12 - Real.log 2 ^ 2 / 2 := by
+  have h := LiTwo_reflection' (1 / 2) (by norm_num) (by norm_num)
+  rw [show (1 : ℝ) - 1 / 2 = 1 / 2 by norm_num,
+    show Real.log (1 / 2) = -Real.log 2 by rw [one_div, Real.log_inv]] at h
+  nlinarith [h]
+
 end QOU.Archimedean
