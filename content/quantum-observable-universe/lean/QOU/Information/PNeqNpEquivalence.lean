@@ -194,4 +194,83 @@ theorem faithfulness_of_transfer
     (hr : r ≠ 0) : ¬PeqNP :=
   transfer fun hJ => hFP (C.jvw_sharp_p_hard (bridge hr) hJ)
 
+/-! ## The Wenzl bridge (stage 1, bean `qou-f0p8`)
+
+The residue–semisimplicity bridge, parameter side.  Wenzl's criterion
+[wenzl1988] characterises semisimplicity of the Iwahori--Hecke algebra
+$H_n(q)$ by *genericity of the parameter*: $H_n(q)$ is semisimple iff
+$q^k \neq 1$ for every $2 \leq k \leq n$ (equivalently
+$[n]_q! \neq 0$).  Stage 1 formalises the parameter-side condition
+(`WenzlGeneric`, over a generic monoid per §7c), proves — sorry-free —
+that any real $q > 1$ satisfies it at **every** rank, carries the
+criterion itself as a cited hypothesis class (`WenzlCriterion`, no
+instance: the Hecke radical theory is stage 2, bean `qou-vndn`), and
+composes end-to-end: for the substrate $q_0 > 1$ the semisimplicity
+hypothesis of `counting_faithfulness` is *discharged*, so the
+companion faithfulness needs only the two cited classes plus
+$\mathrm{FP} \neq \#\mathrm{P}$.  Notably the residual drops out: the
+reachable counting statement is purely about genericity of $q_0$. -/
+
+/-- **Wenzl genericity** (parameter-side semisimplicity condition,
+    generic monoid per §7c): `q` is not a `k`-th root of unity for any
+    `2 ≤ k ≤ n`.  Equivalent to `[n]_q! ≠ 0` over a field; the form
+    here is the one Wenzl's criterion consumes.
+
+    Ref: [wenzl1988] https://doi.org/10.1007/BF01404457 -/
+def WenzlGeneric {M : Type*} [Monoid M] (q : M) (n : ℕ) : Prop :=
+  ∀ k : ℕ, 2 ≤ k → k ≤ n → q ^ k ≠ 1
+
+/-- Genericity is antitone in the rank (sorry-free). -/
+theorem wenzlGeneric_of_le {M : Type*} [Monoid M] {q : M} {m n : ℕ}
+    (hmn : m ≤ n) (h : WenzlGeneric q n) : WenzlGeneric q m :=
+  fun k h2 hk => h k h2 (hk.trans hmn)
+
+/-- Non-torsion implies Wenzl genericity at every rank (sorry-free). -/
+theorem wenzlGeneric_of_nontorsion {M : Type*} [Monoid M] {q : M}
+    (h : ∀ k : ℕ, k ≠ 0 → q ^ k ≠ 1) (n : ℕ) : WenzlGeneric q n :=
+  fun k h2 _ => h k (by omega)
+
+/-- **The substrate is Wenzl-generic at every rank (sorry-free).**
+    Any real $q > 1$ — in particular $q_0 \approx 1.10998$ — satisfies
+    the Wenzl genericity condition for all $n$: the semisimplicity
+    *hypothesis* is discharged by pure order arithmetic. -/
+theorem wenzlGeneric_of_one_lt {q : ℝ} (hq : 1 < q) (n : ℕ) :
+    WenzlGeneric q n :=
+  fun _ h2 _ => ne_of_gt (one_lt_pow₀ hq (by omega))
+
+/-- **Cited Wenzl criterion** (hypothesis class, not a theorem of this
+    development): parameter genericity implies semisimplicity of
+    $H_n(q)$.  `semisimple n` is an opaque per-rank `Prop` pending the
+    stage-2 Hecke radical formalisation (bean `qou-vndn`).  **No
+    instance is declared** — a fabricated instance would launder
+    [wenzl1988] into a Lean proof.
+
+    Ref: [wenzl1988] https://doi.org/10.1007/BF01404457 -/
+class WenzlCriterion {M : Type*} [Monoid M] (q : M)
+    (semisimple : ℕ → Prop) : Prop where
+  /-- Wenzl's semisimplicity criterion, carried as a hypothesis. -/
+  semisimple_of_generic : ∀ n, WenzlGeneric q n → semisimple n
+
+/-- **Bridge discharged (sorry-free modulo the cited criterion).**
+    For real $q > 1$, $H_n(q)$ is semisimple at every rank. -/
+theorem semisimple_of_one_lt {q : ℝ} {ss : ℕ → Prop}
+    [W : WenzlCriterion q ss] (hq : 1 < q) (n : ℕ) : ss n :=
+  W.semisimple_of_generic n (wenzlGeneric_of_one_lt hq n)
+
+/-- **End-to-end companion faithfulness, bridge discharged (sorry-free
+    modulo the two cited classes).**  For the real substrate
+    $q_0 > 1$: given $\mathrm{FP} \neq \#\mathrm{P}$, exact Jones
+    evaluation at $q_0$ is not polynomial-time.  The semisimplicity
+    leg is *supplied* (Wenzl genericity from $q_0 > 1$), no longer
+    assumed — and the obstruction residual does not appear: the
+    reachable counting statement depends only on the genericity of the
+    substrate parameter.  What remains open beyond citations is
+    exactly the pair displayed by `faithfulness_of_transfer`. -/
+theorem counting_faithfulness_of_one_lt {q : ℝ} {ss : ℕ → Prop}
+    {JonesInFP FPeqSharpP PeqNP : Prop}
+    [C : JonesComplexityCitations (∀ n, ss n) JonesInFP FPeqSharpP PeqNP]
+    [WenzlCriterion q ss]
+    (hq : 1 < q) (hFP : ¬FPeqSharpP) : ¬JonesInFP :=
+  fun hJ => hFP (C.jvw_sharp_p_hard (fun n => semisimple_of_one_lt hq n) hJ)
+
 end QOU.Information
