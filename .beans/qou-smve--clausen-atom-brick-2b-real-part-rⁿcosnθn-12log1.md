@@ -1,6 +1,6 @@
 ---
 # qou-smve
-title: 'Clausen atom brick 2b: real part → ∑rⁿcos(nθ)/n = -(1/2)log(1-2r cosθ+r²)'
+title: 'Clausen atom brick 2b: real part → Σrⁿcos(nθ)/n = -(1/2)log(1-2r cosθ+r²)'
 status: completed
 type: task
 priority: normal

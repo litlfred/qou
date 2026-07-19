@@ -1,6 +1,6 @@
 ---
 # qou-6r0y
-title: 'Clausen atom brick 2a: complex ∑wⁿ/n = -log(1-w) for ‖w‖<1'
+title: 'Clausen atom brick 2a: complex Σwⁿ/n = -log(1-w) for ‖w‖<1'
 status: completed
 type: task
 priority: normal
