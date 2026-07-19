@@ -1,0 +1,46 @@
+{
+  "computation": "alpha-em-r1-naturality-walk",
+  "description": "R1 first walk: (N1) the T1 deck generator is a coordinate 4-cycle in the corpus's own S_5 action (P V = i V, P W = -i W, V on the defining equations, exact) \u2014 F is corpus-internal; (N2) the corpus P^1-cover (R=14, 6 pts) and the T1 E-cover (R=6, 2 pts) coexist RH-exactly; (N3) R1's remaining content = one bounded computation (braid generators on the chi=+-i eigenlines in the resolvent differential basis vs the T2 half-twist). Nothing wired.",
+  "auditOnly": "docs/audits/2026-07-19-alpha-em-r1-naturality-walk.md",
+  "tier": "symbolic-exact (N1/N2) + named remaining core (N3)",
+  "computedAt": "2026-07-19T03:25:59.746235+00:00",
+  "commitSha": "3e182c186010ce88351ecc00dd3ee4378e74de46",
+  "engine": "sympy",
+  "engineVersion": "1.14.0",
+  "scriptFile": "alpha_em_r1_naturality_walk_probe.py",
+  "scriptHash": "c8e20ab5e4cd",
+  "assertions": [
+    {
+      "name": "deck_generator_is_corpus_S5_element",
+      "passed": true,
+      "detail": "the coordinate 4-cycle P \u2208 S\u2085 (the corpus's own action on (x\u2080..x\u2084), brings-curve) satisfies P\u00b7V = i\u00b7V and P\u00b7W = \u2212i\u00b7W with P\u2074 = 1 \u2014 the #3942 carrier/T1 deck generator IS a corpus-internal S\u2085 element: F imports no new geometry"
+    },
+    {
+      "name": "carrier_vertex_on_brings_curve",
+      "passed": true,
+      "detail": "V = [1:i:\u22121:\u2212i:0] satisfies \u03a3x = \u03a3x\u00b2 = \u03a3x\u00b3 = 0 exactly \u2014 the carrier vertex lies on the corpus's defining equations (brings-curve block)"
+    },
+    {
+      "name": "two_covers_reconciled",
+      "passed": true,
+      "detail": "corpus canonical \u03a3\u2084\u2192\u2119\u00b9 (deg 4): R = 14 over 6 branch points (brings-riemann-hurwitz, exact); T1 cyclic Bring\u2192E (deg 4): R = 6 over 2 points \u2014 different maps, different bases, both RH-exact for g=4: no conflict; the corpus block is the linear projection, T1 is the \u27e8U\u27e9-quotient"
+    },
+    {
+      "name": "r1_core_named",
+      "passed": true,
+      "detail": "R1's irreducible remaining content: compute the corpus braid generators' action (braid-group-action: explicit affine resolvent shifts / M\u00f6bius involutions) on the \u03c7=\u00b1i eigenlines of H^{1,0}(Bring) in the resolvent differential basis, and compare with the T2 monodromy half-twist. Bounded computation; requires the \u03c9_k differential basis; next tranche"
+    }
+  ],
+  "allPassed": true,
+  "result": {
+    "N1": "deck generator = corpus S_5 coordinate 4-cycle; V,W eigenvectors, multipliers (i,-i); V on Bring \u2014 F corpus-internal",
+    "N2": "P^1-cover (R=14) and E-cover (R=6) coexist, both RH-exact",
+    "N3": "remaining: braid generators on chi=+-i eigenlines (resolvent differential basis) vs T2 half-twist",
+    "verdict": "R1 FIRST WALK DELIVERED (scope-(a); no fit; nothing wired): the naturality check is two-thirds structural and now verified \u2014 (N1) the T1 deck generator is a coordinate 4-cycle inside the corpus's own S\u2085 action with the carrier vertex on the defining equations (exact; the #3942 Lean fact in S\u2085-permutation form): F is built entirely from corpus-internal data; (N2) the corpus's canonical \u2119\u00b9-cover (R=14, 6 branch points) and the T1 cyclic E-cover (R=6, 2 points) are different maps that coexist RH-exactly \u2014 no conflict. R1's ENTIRE remaining content is one bounded computation (N3): the corpus braid generators' action on the \u03c7=\u00b1i eigenlines in the resolvent differential basis vs the T2 half-twist. R2 untouched (phase-4, owner-gated). NO tier change."
+  },
+  "context": {
+    "milestone": "post-qou-a46k; R1 of T5 #4068",
+    "corpus_blocks": "brings-curve, braid-group-action, brings-riemann-hurwitz, x5-bring-weight-identification",
+    "scope_guard": "N3 named, not derived; R2 untouched (phase-4); no fit; nothing wired; 1/(8pi) stays phase-4"
+  }
+}
