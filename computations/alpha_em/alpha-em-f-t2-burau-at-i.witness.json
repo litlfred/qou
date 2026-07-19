@@ -1,0 +1,46 @@
+{
+  "computation": "alpha-em-f-t2-burau-at-i",
+  "description": "F-construction T2 (qou-yuff): the local braid monodromy of the T1 cover reproduces the H2(i) Jordan module exactly. Dictionary q_B = q_H^{-2} sends q_H = i to the Burau integral point q_B = -1 = chi(deck)^2 (Gambaudo-Ghys jump locus); Burau there is a genuine Jordan block; rescaled generator conjugate to !![i,1;0,i] (VertexLocalTauModel) with the rho-partner under conjugation. First potential failure point of the McMullen route passes. T3-T5 open. Nothing wired.",
+  "auditOnly": "docs/audits/2026-07-19-alpha-em-f-t2-burau-at-i.md",
+  "tier": "symbolic-exact (sympy; Burau/Hecke specializations + explicit conjugation)",
+  "computedAt": "2026-07-19T00:12:45.032206+00:00",
+  "commitSha": "9b20131e76b810d407f0a8cf580a09a5a0dd711c",
+  "engine": "sympy",
+  "engineVersion": "1.14.0",
+  "scriptFile": "alpha_em_f_t2_burau_at_i_probe.py",
+  "scriptHash": "5764e3c3685c",
+  "assertions": [
+    {
+      "name": "parameter_dictionary",
+      "passed": true,
+      "detail": "Burau eigenvalues {1, \u2212q_B}; Hecke {q_H, \u2212q_H\u207b\u00b9}; projective matching forces q_B = q_H\u207b\u00b2; at q_H = i: q_B = \u22121 = \u03c7(deck)\u00b2 (\u03c7 = i, the T1 multiplier) \u2014 the Hecke degenerate locus = the Burau INTEGRAL point = the Gambaudo\u2013Ghys signature-jump locus = the deck-character square. Three readings coincide"
+    },
+    {
+      "name": "jordan_structure_at_specialization",
+      "passed": true,
+      "detail": "\u03c3_B(\u22121) = [[2,\u22121],[1,0]]: char poly (lambda - 1)**2 = (\u03bb\u22121)\u00b2, \u03c3_B \u2260 1, (\u03c3_B\u22121)\u00b2 = 0 \u2014 a genuine Jordan block: the local monodromy at the degenerate locus is NON-semisimple (the first potential failure point of the F-construction \u2014 and it does not fail)"
+    },
+    {
+      "name": "exact_module_match",
+      "passed": true,
+      "detail": "\u03c3_H := i\u00b7\u03c3_B(\u22121) satisfies the \u00a77a Hecke relation at q_H = i \u2014 (\u03c3_H\u2212i)\u00b2 = 0, \u03c3_H not scalar \u2014 and S\u00b7P = P\u00b7J with J = !![i,1;0,i] and det P \u2260 0 (explicit conjugation): the cover's local monodromy module IS the VertexLocalTauModel H\u2082(i) Jordan module, exactly"
+    },
+    {
+      "name": "rho_partner_on_monodromy_side",
+      "passed": true,
+      "detail": "entrywise conjugation sends \u03c3_H to a generator with (\u03c3+i)\u00b2 = 0 (not scalar) \u2014 the q = \u2212i partner module: rho_carries_module (#3992) reproduced on the monodromy side"
+    }
+  ],
+  "allPassed": true,
+  "result": {
+    "dictionary": "q_Burau = q_Hecke^{-2}; q_H = i -> q_B = -1 = chi(deck)^2",
+    "coincident_readings": "Hecke degenerate = Burau integral = Gambaudo-Ghys signature-jump = deck-character square",
+    "module_match": "i*Burau(-1) ~ !![i,1;0,i] (explicit conjugation); rho-partner reproduced",
+    "verdict": "F-CONSTRUCTION T2 DELIVERED (scope-(a); no fit; nothing wired): the local braid monodromy of the T1 cover reproduces EXACTLY the framework's H\u2082(i) Jordan module \u2014 the parameter dictionary q_B = q_H\u207b\u00b2 sends the Hecke degenerate locus q_H = i to the Burau integral point q_B = \u22121 = \u03c7(deck)\u00b2 (also the Gambaudo\u2013Ghys signature-jump locus), where Burau is a genuine Jordan block; the rescaled generator satisfies the \u00a77a Hecke relation and is explicitly conjugate to !![i,1;0,i] (VertexLocalTauModel), with the \u03c1-partner reproduced under conjugation. The first potential failure point of the McMullen route does NOT fail. OPEN (T3\u2013T5): global monodromy on H\u00b9_\u03c7(Bring), \u03c1-equivariance globally, weight-value transport, and the residual identification F = framework-\u03c4. NO tier change."
+  },
+  "context": {
+    "bean": "qou-yuff (T2) of milestone qou-a46k; T1 merged #4039",
+    "literature": "uploads/mcmullen-braids-hodge-2013.pdf; uploads/squier-burau-unitary-1984.pdf; uploads/gambaudo-ghys-braids-signatures-2005.pdf; uploads/deligne-mostow-1986.pdf",
+    "scope_guard": "local model only (disk around the two branch points); global monodromy = T3/T5; no fit; nothing wired; 1/(8pi) stays phase-4"
+  }
+}
