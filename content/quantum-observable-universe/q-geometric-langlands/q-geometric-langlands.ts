@@ -127,6 +127,7 @@ export default chapter({
         "local-q-zeta-function",
         "hasse-weil-bound",
         "hasse-weil-bound-proof",
+        "hasse-weil-bound-proof-part2",
         "spectral-half-line",
         // P3 reorder (2026-05-19): unitary-stability moved before
         // geometric-rh-exposition. unitary-stability uses
@@ -138,6 +139,7 @@ export default chapter({
         // swap makes it a backward ref, no new cascade.
         "unitary-stability",
         "geometric-rh-exposition",
+        "geometric-rh-critical-line",
       ],
     }),
     section({
@@ -146,8 +148,11 @@ export default chapter({
       blocks: [
         "intro-orphan-reconnect",
         "cyclotomic-l-value-decomposition",
+        "cyclotomic-l-value-significance",
         "mirror-3d-3d-correspondence",
         "modular-s-transform-q-q-tilde",
+        "modular-s-transform-tqft",
+        "modular-s-transform-diagnostics",
         "mutant-jones-bloch-group-intro",
         "quantum-langlands-dual",
         "outro-q-geometric-langlands",
