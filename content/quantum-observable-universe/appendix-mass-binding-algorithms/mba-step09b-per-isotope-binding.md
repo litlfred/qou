@@ -3,8 +3,8 @@
 
 ### Input
 
-- *Topological trace constants: $r_{\mathrm{gluonic}} = 3$ and $r_{\mathrm{residual}} = 2.5$.*
-- *The universal bar-even structural prior $a_0 = 1/2$.*
+- *Topological trace constants: $r_{\mathrm{gluonic}} = 3$.*
+- *The `Prolongation Kernel` macroscopic sequence $B_n$.*
 - *SU(4)/$S_3$ isospin representation anomaly shifts (e.g., $+1.4947 m_e$).*
 
 ### Output
@@ -14,9 +14,9 @@
 ### Algorithm
 
 ```
-1. Compute the exact residual trace r_{res} evaluated at the substrate root q_0 (yields ~2.596).
-2. Seed the depth-2 CKRecursion engine: w_{n+1} = 0.5 * w_n + r_{res} * w_{n-1}.
-3. The engine natively generates the multi-body binding hierarchy (w_2 = 4.35, w_3 = 8.60, w_4 = 15.60).
+1. Extract the exact Prolongation Kernel macroscopic sequence B_n satisfying B_{n+2} = (q+q^{-1})B_{n+1} - B_n.
+2. Evaluate the sequence at the substrate root q_0 to yield the universal weights w_n.
+3. The sequence natively generates the multi-body binding hierarchy (w_2 = 4.35, w_3 = 8.60, w_4 = 15.60).
 4. Scale weights by the nucleon parameters to yield baseline binding energies.
 5. Apply exact categorical SU(4) anomaly splits to resolve degeneracies (e.g., 3H vs 3He).
 ```
@@ -28,8 +28,7 @@ These are **fit residuals of the experimental model**, not derived error bounds:
 1. *With the seed constants calibrated, the generating function reproduces $^4$He ($n=4$) to within $\sim 3.4$ keV of the AME value — a fit residual, not a parameter-free bound ($^4$He remains open, the $\mathrm{Vol}_4$ census gap).*
 2. *The isospin anomaly correction resolves the $n=3$ doublet ordering ($^3$H vs $^3$He); the residual is a calibrated near-match, not an accuracy claim against the L2 target.*
 
-**Scope (open gate, not a closure).** The $\Delta_\lambda(K)$ closure — the Track A gate — remains **open** (AGENTS.md §"Δ_λ gate"; six ansätze have failed). This module is an **experimental / phenomenological** generating-function model: the depth-2 `CKRecursion` reproduces the multi-body binding hierarchy from a small set of seed constants ($r_{\mathrm{res}} \approx 2.596$, $a_0 = 1/2$, the isospin anomaly shift $\approx +1.4947\,m_e$) that are **calibrated, not derived** from the 13 categorical drivers. It is a structural fit, **not** a parameter-free derivation — the `status: "experimental"` and `open-gate` labels on this block's manifest are authoritative.
-
+**Scope (open gate, not a closure).** The $\Delta_\lambda(K)$ closure — the Track A gate — remains **open** (AGENTS.md §"Δ_λ gate"; six ansätze have failed). This module uses the `Prolongation Kernel` macroscopic sequence $B_{n+2} = (q+q^{-1})B_{n+1} - B_n$ to structurally generate the multi-body binding hierarchy, replacing previous phenomenological traces with a rigid algebraic object. However, the exact categorical SU(4) anomaly splits (e.g., the $+1.4947\,m_e$ shift) remain **calibrated, not derived** from the 13 categorical drivers.
 ### Python API entry point
 
 ```python
