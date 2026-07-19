@@ -252,6 +252,39 @@ theorem colGarnir_fullgroup_sum (t : Specht.Tableau μ)
   rw [Finset.sum_congr rfl (fun x _ => inner x), ← Finset.smul_sum,
     starSum_rep_polytabloid t C s hs]
 
+section Cancellation
+variable {k : Type} [Field k] [CharZero k] {μ : YoungDiagram}
+
+/-- **Single-column Garnir relation from the full-group annihilation (sorry-free,
+    conditional).** Over a characteristic-zero field, once the full-group
+    annihilation `∑_{σ∈S_{C∪{s}}} sgn(σ)·σ·e_t = 0` is known, the coset factorisation
+    `colGarnir_fullgroup_sum` gives `|S_C|·(e_t − ∑_{j∈C} e_{(j\,s)·t}) = 0`, and
+    dividing by `|S_C| = |C|! ≠ 0` yields the single-column relation
+    `∑_{j∈C} e_{(j\,s)·t} = e_t`. This isolates the **only** remaining debt of brick 3b
+    as the annihilation itself (the collision-dependent piece). -/
+theorem colGarnir_single_column_of_annihilation (t : Specht.Tableau μ)
+    (C : Finset (Fin (Specht.nOf μ))) (s : Fin (Specht.nOf μ)) (hs : s ∉ C)
+    (hCcol : ∀ π ∈ permFixingOutside (μ := μ) C, π ∈ Specht.colStab t)
+    (hann : ∑ σ ∈ permFixingOutside (μ := μ) (insert s C), (Equiv.Perm.sign σ : ℤ) •
+        Specht.Mtab.rep (k := k) μ σ (Specht.polytabloid (k := k) t) = 0) :
+    ∑ j ∈ C, Specht.polytabloid (k := k) ((Equiv.swap j s) • t)
+      = Specht.polytabloid (k := k) t := by
+  have hkey := colGarnir_fullgroup_sum (k := k) t C s hs hCcol
+  rw [hann] at hkey
+  set n := (permFixingOutside (μ := μ) C).card with hn
+  have hne : (n : k) ≠ 0 := by
+    have hpos : 0 < n := by
+      rw [hn]
+      exact Finset.card_pos.mpr ⟨1, (mem_permFixingOutside (μ := μ)).mpr (fun l _ => rfl)⟩
+    exact Nat.cast_ne_zero.mpr hpos.ne'
+  have h0 : (n : k) • (Specht.polytabloid (k := k) t
+      - ∑ j ∈ C, Specht.polytabloid (k := k) ((Equiv.swap j s) • t)) = 0 := by
+    rw [Nat.cast_smul_eq_nsmul]; exact hkey.symm
+  have hv := (smul_eq_zero.mp h0).resolve_left hne
+  exact (sub_eq_zero.mp hv).symm
+
+end Cancellation
+
 /-! ## Brick 3a — the same-column contribution of the JM sum
 
 Splitting the reduction sum `Σ_{j<s} e_{(j s)·t}` (brick 1) by whether `swap j s`
