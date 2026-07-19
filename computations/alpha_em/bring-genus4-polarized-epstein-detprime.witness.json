@@ -1,0 +1,57 @@
+{
+  "computation": "bring-genus4-polarized-epstein-detprime",
+  "description": "Computes the deferred genus-4 Epstein det'\u0394 measures on Jac(Bring) at the principally polarized period \u03c4\u2080\u00b7M (Thm 2.12) and the diagonal period \u03c4\u2080\u00b7diag(5,5,5,1), via Fincke\u2013Pohst norm-cutoff enumeration (unblocks the thin Bring modulus that stalled the 2026-07-18 box enumeration). Validated genus-1 exact (\u03b7-form) + independent factorized-theta cross-checks at genus 2 and genus 4. No q\u2080; no 8\u03c0; nothing wired.",
+  "auditOnly": "docs/audits/2026-07-19-bring-genus4-polarized-epstein-detprime.md",
+  "tier": "structural-exact machinery (genus-1 exact + factorized-theta cross-checks) + scope-(a) genus-4 numbers",
+  "computedAt": "2026-07-19T00:45:20.116160+00:00",
+  "commitSha": "a2215e3240b9f06da189559aaf354ada82330ab5",
+  "engine": "numpy+mpmath",
+  "engineVersion": "2.4.6/1.4.1",
+  "scriptFile": "bring_genus4_polarized_epstein_detprime_probe.py",
+  "scriptHash": "8cd363e2e7f8",
+  "assertions": [
+    {
+      "name": "genus1_fp_reproduces_eta_form",
+      "passed": true,
+      "detail": "FP measure=1.7589351955 vs 1/(\u221aIm \u03c4|\u03b7|\u00b2)=1.7589351955"
+    },
+    {
+      "name": "genus2_fp_eq_factorized_theta",
+      "passed": true,
+      "detail": "FP=3.9493745229 vs factorized=3.9493745229 (pts 174/5516)"
+    },
+    {
+      "name": "genus2_refines_sibling_box_value",
+      "passed": true,
+      "detail": "FP(Q=14)=3.94937452 vs sibling box R=5 3.94372825 (was converging up)"
+    },
+    {
+      "name": "genus4_diag_fp_eq_factorized_theta",
+      "passed": true,
+      "detail": "FP=1472396096180.93847656 vs factorized=1472396096130.50122070 (pts 22106/1032604)"
+    },
+    {
+      "name": "genus4_polarized_cutoff_converged",
+      "passed": true,
+      "detail": "Q=11: 1.3875799111 vs Q=14: 1.3875799111 (pts 21646/1033044)"
+    }
+  ],
+  "allPassed": true,
+  "result": {
+    "measure_polarized_M": 1.3875799110753446,
+    "measure_diagonal": 1472396096180.9385,
+    "polarization_theta_factor_ratio_pol_over_diag": 9.42395809574891e-13,
+    "retracted_naive_product": 8.226285221978587,
+    "ratio_pol_over_naive": 0.16867636772039904,
+    "ratio_pol_over_8pi": 0.05521005044566342,
+    "ratio_pol_over_8": 0.17344748888441808,
+    "ratio_diag_over_naive": 178986754829.14966,
+    "verdict": "GENUS-4 POLARIZED EPSTEIN det'\u0394 \u2014 DEFERRED PIECE COMPUTED (scope-(a); no q\u2080, no 8\u03c0 manufactured, nothing wired): Fincke\u2013Pohst norm-cutoff enumeration unblocks the thin Bring modulus. measure(\u03c4\u2080\u00b7M, principally polarized) = 1.38757991 (O(1)); measure(\u03c4\u2080\u00b7diag(5,5,5,1)) = 1.472396e+12 (the product-period BLOW-UP); polarization theta-factor = 9.424e-13 \u2014 the integer M-lattice theta is precisely what removes the ~12-orders blow-up of the near-degenerate product period. Both differ from the retracted naive product 8.226 (pol/naive = 0.168676) and neither is 8\u03c0 (pol/8\u03c0 = 0.055210). Machinery validated genus-1 exact + genus-2/genus-4 factorized-theta cross-checks. \u03c0 stays RT/Front-2; NO tier change."
+  },
+  "context": {
+    "unblocks": "the 'deferred' item of bring-polarized-epstein-determinant.witness.json (full genus-4 Epstein det'\u0394 at Im \u03c4\u2080=0.187, was Siegel-reduction-blocked)",
+    "structure_source": "\u03c4_B=\u03c4\u2080\u00b7M, M=[[4,1,-1,1],[1,4,1,-1],[-1,1,4,1],[1,-1,1,4]] (Braden\u2013Disney-Hogg arXiv:2208.13692 Thm 2.12) + Prop 4.6 diag(5,5,5,1); PDF uploads/2208.13692v1.pdf",
+    "method": "Fincke\u2013Pohst exact norm-cutoff (Q=14, tail<8.5e-20) + Chowla\u2013Selberg heat-kernel split identical to the 2026-07-18 sibling",
+    "scope_guard": "no q\u2080, no 8\u03c0 manufactured, nothing wired, no tier change; scope-(a)"
+  }
+}
