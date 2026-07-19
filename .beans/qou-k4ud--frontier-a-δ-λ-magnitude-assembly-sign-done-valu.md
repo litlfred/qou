@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-07-19T03:32:44Z
-updated_at: 2026-07-19T03:59:53Z
+updated_at: 2026-07-19T07:00:00Z
 ---
 
 
@@ -37,3 +37,26 @@ pp/nn ⇒ det(1+S(a,w))=det(1+S(a,−w)). So NO determinant-class observable at 
 distinguishes the two pn signs — the "open pn sign" (PR #3426) is unobservable in this class. Only
 per-pair NON-UNIFORM framings break it (a separate, harder item — the ³H/³He mirror split, distinct
 probes). So the only genuinely-open b₄ piece is the scalar m (Frontier A above), NOT the pn sign.
+
+## RE-SCOPE (2026-07-19, PR #4084) — the b₄ scalar m is FOUND; the pole regulator is the open object
+`b4_deformed_sspole_sector_probe.py` (forward, no fit, 6/6). Two exact facts resolve "icosahedral
+overshoots the ceiling" and re-scope the open item:
+- **FACT 1.** `(1+[2]_v²)·g_reeb² = 1` EXACTLY. The corpus-derived magnitude
+  `g_reeb = 1/√(5+(q₀−1)²/q₀) = 1/√(1+[2]_v²)` IS the q-deformed A=4 ss-sector eigenvalue-criticality
+  (I2, 2026-07-06 reeb provenance §2b), not a value "below 1/√5". The 4.9e-4 sub-ceiling gap is the
+  classical(integer-5)-vs-deformed artifact (`1−5g²=2.2e-3>0` only via the q=1 integer). So there is NO
+  sub-ceiling icosahedral entry to select — the physical m sits ON the deformed boundary. The
+  reconciliation's "keystone λ⊢5 Hecke sub-ceiling entries" lead is therefore NOT a distinct forward-m
+  source either: the boundary equals the derived magnitude.
+- **FACT 2.** K₄(ppnn) writhe spectrum splits: ±√5 = species-SYMMETRIC (pp-sym,nn-sym) ss-modes
+  (carry the pole, factor 1−5m²); ±1 = Pauli intra-pair antisym (finite at g_reeb, factor 1−m²). The
+  divergent factor is the NON-Pauli α-condensation mode.
+- **Consequence.** m=g_reeb is forward-derived (deuteron +0.41%); the single-scalar det(I+g_reeb·S)
+  DIVERGES at the ss-pole — that IS the #3952 ⁴He 2.6–10.6× overshoot and the bareven ρ₄-forces-ρ₃
+  failure, seen through the classical ceiling. Open b₄ object re-scoped: NOT "the scalar", but the
+  POLE REGULATOR of the α-condensation mode (the near-critical ss-mode → finite ⁴He binding, ρ₄=13).
+  Fully projecting the pole out (Pauli sector only) undershoots (b=0.223, deuteron-scale), so the
+  regulator keeps the near-pole enhancement — a genuine open item, NOT to be fit (anti-fit stands).
+
+Status: b₄ SCALAR m = g_reeb SETTLED (deformed ss-criticality); Vector 2 (icosahedral-entry=m) REFUTED
+as stated; the open magnitude object is now the α-condensation pole regulator. Attack map §4a updated.
