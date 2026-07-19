@@ -1,0 +1,96 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-07-19T17:28:09.673746+00:00",
+  "commitSha": "4bc68d9b6963d7ded16cd901d8c569e1ece00519",
+  "assertions": [
+    {
+      "name": "counit_3crossing_matches_table",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "mu0_derived_matches_cheatsheet",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "mu0_form_deuteron_near_minus9pct",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "mu0_first_order_deficit_plausible",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "eunit-counit-mu0-tracing",
+  "scriptFile": "eunit_counit_mu0_tracing_probe.py",
+  "scriptHash": "d9434a2a1fee",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "mpmath": "1.4.1"
+  },
+  "description": "Traces E_unit's source to the COUNIT: the per-crossing weight (q−q⁻¹) is the Hecke counit-character / skein difference (proved + in-paper); the deuteron 3-crossing net energy 3(q−q⁻¹) bridges to MeV via μ₀=m_e/(3(q−q⁻¹)/2)=1.63 (DERIVED, deuteron −9%). Corrects the reeb §2h.2 'external/scale-free' over-claim (a counit-derived per-crossing scale exists, μ₀, just unconnected to the 5g E_unit=0.996 +0.4% form). μ₀ is FIRST-ORDER in (q−q⁻¹); the −9% is the missing higher-order (co)unit/NA-Stokes terms. Answers 'where does E_unit come from = counit'; does NOT close it. Owner steer; forward, no fit.",
+  "contentBlock": "rem:ohtsuki-tower-bar-parity",
+  "audit_only": true,
+  "tier": "structural tracing (corpus-documented counit/crossing-energy + derived μ₀ arithmetic)",
+  "result": {
+    "counit_skein_weight_q_minus_qinv": "0.209060322",
+    "counit_provenance": "h=q−q⁻¹ = antisymmetric Hecke eigenvalue diff = skein L₊−L₋ = counit-character difference; PROVED + in-paper (crossing-energy-categorical-origin; categorical-action.lean matter=unit≫counit).",
+    "deuteron_3crossing_net_skein": "0.627181",
+    "matches_crossing_energy_table_0p630": true,
+    "mu0_derived_per_crossing_MeV": "1.6295104",
+    "mu0_matches_cheatsheet_1p6295": true,
+    "deuteron_mu0_form": {
+      "E_rot_mu0_hbarq_Jq2_3_MeV": "2.0195829",
+      "AME_2H_MeV": "2.224566",
+      "err_pct": "-9.215",
+      "note": "DERIVED (0 free params) but −9% — the counit-derived scale."
+    },
+    "deuteron_5g_form": {
+      "B_5g_E_unit_ladder_MeV": "2.22456679",
+      "err_pct": "3.536e-5",
+      "E_unit_external_MeV": "0.99594",
+      "note": "+0.4% (6-dig match) but E_unit external/scale-free (§2h.2)."
+    },
+    "the_ununified_gap": {
+      "E_unit_over_mu0": "0.61119",
+      "note": "the two forms use the SAME counit (q−q⁻¹) structure but different dimensional realizations (μ₀=1.63 derived −9% vs E_unit=0.996 external +0.4%); never unified — this is the 'why not clear'."
+    },
+    "mu0_first_order_assessment": {
+      "mu0_uses_leading_q_minus_qinv": true,
+      "full_crossing_energy_has_higher_orders": "𝔈 = baseline + Q·(q−q⁻¹) + … (holonomy)",
+      "deficit_consistent_with_missing_higher_order": true,
+      "note": "μ₀ ∝ 1/(q−q⁻¹) is the leading antisymmetric counit combination; the −9% is the missing higher-order (co)unit / NA-Stokes terms. Deriving them (owner steer) is the route to close the derived-scale form to +0.4%."
+    },
+    "verdict": {
+      "answer_where_E_unit_comes_from": "the COUNIT: q-structure = (q−q⁻¹) (Hecke counit/skein difference, proved+in-paper), dimension = m_e (τ-functor); realized as μ₀ = m_e/(3(q−q⁻¹)/2), FIRST-ORDER, deuteron −9%.",
+      "corrects": "the §2h.2 'external/scale-free' over-claim — a per-crossing MeV scale IS derived from the counit (μ₀); it was just not connected to the 5g E_unit.",
+      "still_open": "μ₀ is −9%; unifying it with the +0.4% 5g form requires the DERIVED higher-order counit expansion (the NA-Stokes route). E_unit NOT closed.",
+      "no_fit": true
+    }
+  },
+  "context": {
+    "axis": "Δ_λ binding magnitude — E_unit source via counit (owner steer 2026-07-19)",
+    "builds_on": "merged #4101 (cluster expansion §4 E_unit wall) + cheat sheet μ₀",
+    "provenance": "climax-volume-mass/crossing-energy-*; observations/crossing-energy-interpretation.md; docs/audits/2026-07-06-reeb-…-provenance §2h.2",
+    "q0_convention": "muon-canonical (computations/ layer)",
+    "no_fit": true
+  },
+  "auditOnly": true
+}
