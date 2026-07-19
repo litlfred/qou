@@ -80,6 +80,26 @@ theorem polytabloid_swap_colStab (t : Specht.Tableau μ) {j s : Fin (Specht.nOf 
     Equiv.Perm.sign_swap hjs]
   simp
 
+/-- **C-antisymmetry sum collapse (the coset-inner-sum).** For any finite set `H`
+    of permutations all lying in the column stabilizer of `t`, the signed
+    representation sum collapses to `|H| · e_t`: each term is
+    `sgn(σ) · (sgn(σ) · e_t) = sgn(σ)² · e_t = e_t` by brick 2
+    (`rep_colStab_polytabloid`) and `sgn(σ)² = 1`. This is the inner sum over a
+    full-column subgroup `S_C ⊆ colStab t` in the coset decomposition of the
+    single-column Garnir relation (brick 3b): it turns `∑_{π ∈ S_C} sgn(π)·π·e_t`
+    into `|C|! · e_t`. Collision-independent — pure column antisymmetry. -/
+theorem colStab_subset_sum_rep_polytabloid (t : Specht.Tableau μ)
+    (H : Finset (Equiv.Perm (Fin (Specht.nOf μ))))
+    (hH : ∀ σ ∈ H, σ ∈ Specht.colStab t) :
+    ∑ σ ∈ H, (Equiv.Perm.sign σ : ℤ) •
+        Specht.Mtab.rep (k := k) μ σ (Specht.polytabloid (k := k) t)
+      = H.card • Specht.polytabloid (k := k) t := by
+  classical
+  rw [← Finset.sum_const]
+  refine Finset.sum_congr rfl (fun σ hσ => ?_)
+  rw [rep_colStab_polytabloid t (hH σ hσ), smul_smul, ← Units.val_mul,
+    Int.units_mul_self, Units.val_one, one_smul]
+
 /-! ## Brick 3a — the same-column contribution of the JM sum
 
 Splitting the reduction sum `Σ_{j<s} e_{(j s)·t}` (brick 1) by whether `swap j s`

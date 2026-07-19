@@ -83,5 +83,41 @@ label at that row — the antisymmetrizer kills the tabloid.
 `hfam` (mirroring `garnir_full_annihilation`'s proof but for this single-column
 transversal and the `s`-row `< colLen(c)` collision), and rearrange to the
 single-column relation; then sum over `c < c_s` and combine with the same-column
-count `= row(s)` (brick 3a) to close `base_exists`. Substantial but fully
-de-risked — every ingredient is a proved upstream lemma or a specified collision.
+count `= row(s)` (brick 3a) to close `base_exists`.
+
+## Correction (2026-07-19, second pass) — brick 3b is a multi-session build, not trivial assembly
+
+The "fully de-risked — every ingredient a proved upstream lemma" wording above
+was **over-optimistic** (the mirror of the "open" over-claim: do not over-claim
+"de-risked" either). On reading the Garnir machinery in
+[`SpechtStandardBasisCore`](../../content/quantum-observable-universe/lean/QOU/BraidKnot/SpechtStandardBasisCore.lean):
+
+1. **`garnirG t i j = S_{A∪B}` is the FULL symmetric group on `A∪B`**, and `garnirA/garnirB`
+   are **hard-coded to adjacent columns** `j, j+1` at a fixed row `i`
+   (`garnirA = col j, rows ≥ i`; `garnirB = col j+1, rows ≤ i`). The existing
+   `garnir_full_annihilation` / `garnir_row_collision` therefore do **not** transfer to
+   the single later-column cell `s` vs an entire earlier column `C` — that needs a
+   **new** collision lemma (the `s`-row `< colLen(c) = |C|` argument is clean and
+   direct — the `C`-labels fill rows `0…|C|−1`, `s` lands at a row `< colLen(c_s) ≤ |C|`
+   — but it is not the adjacent-column pigeonhole `garnir_row_collision` proves).
+
+2. **The single-column relation is the COSET-transversal sum, not the full-group sum.**
+   The transversal `{id} ∪ {(j s) : j ∈ C}` is **not** closed under right-multiplication
+   by the collision swap, so `mtab_sum_sign_smul_of_eq_zero` does not apply to it directly.
+   The honest route is: prove the **full-group** annihilation `∑_{σ ∈ S_{C∪{s}}} sgn σ · σ·e_t = 0`
+   (new collision, full group trivially swap-closed), then **decompose `S_{C∪{s}}` into the
+   `|C|+1` left cosets of `S_C`** with reps `{(x s) : x ∈ C∪{s}}`, use column antisymmetry
+   `∑_{π∈S_C} sgn π · π·e_t = |C|!·e_t` (now landed — `colStab_subset_sum_rep_polytabloid`
+   + `rep_colStab_polytabloid`) on each coset's inner sum, and cancel `|C|! ≠ 0` (char 0)
+   to reach `∑_{j∈C} e_{(j s)·t} = e_t`.
+
+**Landed this pass (sorry-free):** `colStab_subset_sum_rep_polytabloid` — the coset-inner-sum
+collapse `∑_{σ∈H} sgn σ · σ·e_t = |H|·e_t` for any `H ⊆ colStab t`, the reusable ingredient
+for the coset decomposition (collision-independent).
+
+**Still open (the multi-session remainder):** (i) the full-group annihilation for `(C,{s})`
+with its new row-collision; (ii) the `S_{C∪{s}}`→`⊔ (x s)·S_C` coset decomposition and
+`|C|!` cancellation; (iii) the column-superstandard geometry (`colLen` weakly decreasing ⇒
+`s`-row `< |C|`); (iv) summing over `c < c_s` + brick 3a to the eigen-equation; (v) the two
+side conjuncts (`polytabloid_mem_specht`, `≠ 0`) and discharging `seminormalVector_base_exists`.
+Each is tractable but the chain is a genuine multi-lemma effort, not one assembly step.
