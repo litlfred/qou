@@ -56,8 +56,7 @@ theorem octDer_span_eq_top : Submodule.span ℚ (Set.range octDer) = ⊤ := by
       mul_one, mul_zero]
     rw [Finset.sum_ite_eq]
     simp
-  have hinj : Function.Injective L14 := fun a b hab => by
-    have ha := hsec a; rw [hab, hsec b] at ha; exact ha.symm
+  have hinj : Function.Injective L14 := Function.LeftInverse.injective hsec
   have hfr : Module.finrank ℚ (Fin 14 → ℚ) = Module.finrank ℚ (↥Der𝕆) := by
     rw [octonion_derivation_dim, Module.finrank_pi, Fintype.card_fin]
   have hsurj : Function.Surjective L14 := by
