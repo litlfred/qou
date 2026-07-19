@@ -1,0 +1,528 @@
+{
+  "schema": "witness/v1",
+  "computation": "fl_kernel_sign_structure",
+  "description": "Structural narrowings of the \u0394_\u03bb covariance-kernel sign: FKG-on-dominance dead + transpose-parity cannot sign T\u2083 (only kills T\u2082).",
+  "generated": "2026-07-19T03:46:59.361336+00:00",
+  "discipline": "scope-(a) structural narrowing; no fit; nothing wired; no c_k; L2 2/7",
+  "cov_all_nonpos": true,
+  "cov_values": {
+    "3": -4,
+    "4": -16,
+    "5": -320,
+    "6": -10400,
+    "7": -163520,
+    "8": -3224704,
+    "9": -106339296,
+    "10": -4722309120,
+    "11": -176931720240,
+    "12": -6632383721920,
+    "13": -289895599309888,
+    "14": -16141386718690688,
+    "15": -1085268262022846720,
+    "16": -74275445806179161600,
+    "17": -5085047967453348598720,
+    "18": -361736351434661123807232,
+    "19": -28269337129449191268906192,
+    "20": -2521450802691510850122303360,
+    "21": -255023311556775799099676884480,
+    "22": -27617660095224884275848745734400,
+    "23": -3084489058824207210752764888840448,
+    "24": -352371745706505642553410925855106048,
+    "25": -41752700622052642448964075261404969600,
+    "26": -5247651058948266935384135898447799168000,
+    "27": -713710143479690319516080778479787379329600,
+    "28": -105642975455564286065192862316998972767506944,
+    "29": -16765098150459295097150551275488169213921591936,
+    "30": -2790456767742096675547617121347642102096084843520
+  },
+  "transpose_summand_invariant": true,
+  "selfconjugate_contentsum_zero": true,
+  "t2_content_form_all_zero": true,
+  "narrowing_B": "transpose involution fixes every cov summand (f even-power, \u03a3c\u00b2 even) \u21d2 cannot sign T\u2083; it makes \u03a3c odd \u21d2 \u03a3(f^\u03bb)\u00b3\u03a3c = 0 \u21d2 T\u2082=0 only.",
+  "fkg_dominance_dead": true,
+  "fkg_per_k": {
+    "4": {
+      "n_covers": 4,
+      "f_nonmonotone": true,
+      "contentsq_nonmonotone": true,
+      "df_increasing_example": [
+        [
+          3,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        1
+      ],
+      "df_decreasing_example": [
+        [
+          4
+        ],
+        [
+          3,
+          1
+        ],
+        -2
+      ],
+      "row_extreme": {
+        "f": 1,
+        "csq": 14
+      },
+      "col_extreme": {
+        "f": 1,
+        "csq": 14
+      },
+      "extremes_coincide": true
+    },
+    "5": {
+      "n_covers": 6,
+      "f_nonmonotone": true,
+      "contentsq_nonmonotone": true,
+      "df_increasing_example": [
+        [
+          3,
+          1,
+          1
+        ],
+        [
+          2,
+          2,
+          1
+        ],
+        1
+      ],
+      "df_decreasing_example": [
+        [
+          5
+        ],
+        [
+          4,
+          1
+        ],
+        -3
+      ],
+      "row_extreme": {
+        "f": 1,
+        "csq": 30
+      },
+      "col_extreme": {
+        "f": 1,
+        "csq": 30
+      },
+      "extremes_coincide": true
+    },
+    "6": {
+      "n_covers": 12,
+      "f_nonmonotone": true,
+      "contentsq_nonmonotone": true,
+      "df_increasing_example": [
+        [
+          4,
+          2
+        ],
+        [
+          3,
+          3
+        ],
+        4
+      ],
+      "df_decreasing_example": [
+        [
+          6
+        ],
+        [
+          5,
+          1
+        ],
+        -4
+      ],
+      "row_extreme": {
+        "f": 1,
+        "csq": 55
+      },
+      "col_extreme": {
+        "f": 1,
+        "csq": 55
+      },
+      "extremes_coincide": true
+    },
+    "7": {
+      "n_covers": 17,
+      "f_nonmonotone": true,
+      "contentsq_nonmonotone": true,
+      "df_increasing_example": [
+        [
+          4,
+          2,
+          1
+        ],
+        [
+          4,
+          1,
+          1,
+          1
+        ],
+        15
+      ],
+      "df_decreasing_example": [
+        [
+          7
+        ],
+        [
+          6,
+          1
+        ],
+        -5
+      ],
+      "row_extreme": {
+        "f": 1,
+        "csq": 91
+      },
+      "col_extreme": {
+        "f": 1,
+        "csq": 91
+      },
+      "extremes_coincide": true
+    },
+    "8": {
+      "n_covers": 28,
+      "f_nonmonotone": true,
+      "contentsq_nonmonotone": true,
+      "df_increasing_example": [
+        [
+          5,
+          3
+        ],
+        [
+          4,
+          4
+        ],
+        14
+      ],
+      "df_decreasing_example": [
+        [
+          8
+        ],
+        [
+          7,
+          1
+        ],
+        -6
+      ],
+      "row_extreme": {
+        "f": 1,
+        "csq": 140
+      },
+      "col_extreme": {
+        "f": 1,
+        "csq": 140
+      },
+      "extremes_coincide": true
+    },
+    "9": {
+      "n_covers": 41,
+      "f_nonmonotone": true,
+      "contentsq_nonmonotone": true,
+      "df_increasing_example": [
+        [
+          6,
+          3
+        ],
+        [
+          5,
+          4
+        ],
+        6
+      ],
+      "df_decreasing_example": [
+        [
+          9
+        ],
+        [
+          8,
+          1
+        ],
+        -7
+      ],
+      "row_extreme": {
+        "f": 1,
+        "csq": 204
+      },
+      "col_extreme": {
+        "f": 1,
+        "csq": 204
+      },
+      "extremes_coincide": true
+    },
+    "10": {
+      "n_covers": 62,
+      "f_nonmonotone": true,
+      "contentsq_nonmonotone": true,
+      "df_increasing_example": [
+        [
+          7,
+          2,
+          1
+        ],
+        [
+          7,
+          1,
+          1,
+          1
+        ],
+        76
+      ],
+      "df_decreasing_example": [
+        [
+          10
+        ],
+        [
+          9,
+          1
+        ],
+        -8
+      ],
+      "row_extreme": {
+        "f": 1,
+        "csq": 285
+      },
+      "col_extreme": {
+        "f": 1,
+        "csq": 285
+      },
+      "extremes_coincide": true
+    },
+    "11": {
+      "n_covers": 87,
+      "f_nonmonotone": true,
+      "contentsq_nonmonotone": true,
+      "df_increasing_example": [
+        [
+          8,
+          2,
+          1
+        ],
+        [
+          8,
+          1,
+          1,
+          1
+        ],
+        111
+      ],
+      "df_decreasing_example": [
+        [
+          11
+        ],
+        [
+          10,
+          1
+        ],
+        -9
+      ],
+      "row_extreme": {
+        "f": 1,
+        "csq": 385
+      },
+      "col_extreme": {
+        "f": 1,
+        "csq": 385
+      },
+      "extremes_coincide": true
+    },
+    "12": {
+      "n_covers": 128,
+      "f_nonmonotone": true,
+      "contentsq_nonmonotone": true,
+      "df_increasing_example": [
+        [
+          9,
+          2,
+          1
+        ],
+        [
+          9,
+          1,
+          1,
+          1
+        ],
+        155
+      ],
+      "df_decreasing_example": [
+        [
+          12
+        ],
+        [
+          11,
+          1
+        ],
+        -10
+      ],
+      "row_extreme": {
+        "f": 1,
+        "csq": 506
+      },
+      "col_extreme": {
+        "f": 1,
+        "csq": 506
+      },
+      "extremes_coincide": true
+    },
+    "13": {
+      "n_covers": 175,
+      "f_nonmonotone": true,
+      "contentsq_nonmonotone": true,
+      "df_increasing_example": [
+        [
+          10,
+          2,
+          1
+        ],
+        [
+          10,
+          1,
+          1,
+          1
+        ],
+        209
+      ],
+      "df_decreasing_example": [
+        [
+          13
+        ],
+        [
+          12,
+          1
+        ],
+        -11
+      ],
+      "row_extreme": {
+        "f": 1,
+        "csq": 650
+      },
+      "col_extreme": {
+        "f": 1,
+        "csq": 650
+      },
+      "extremes_coincide": true
+    },
+    "14": {
+      "n_covers": 247,
+      "f_nonmonotone": true,
+      "contentsq_nonmonotone": true,
+      "df_increasing_example": [
+        [
+          11,
+          2,
+          1
+        ],
+        [
+          11,
+          1,
+          1,
+          1
+        ],
+        274
+      ],
+      "df_decreasing_example": [
+        [
+          14
+        ],
+        [
+          13,
+          1
+        ],
+        -12
+      ],
+      "row_extreme": {
+        "f": 1,
+        "csq": 819
+      },
+      "col_extreme": {
+        "f": 1,
+        "csq": 819
+      },
+      "extremes_coincide": true
+    },
+    "15": {
+      "n_covers": 335,
+      "f_nonmonotone": true,
+      "contentsq_nonmonotone": true,
+      "df_increasing_example": [
+        [
+          12,
+          2,
+          1
+        ],
+        [
+          12,
+          1,
+          1,
+          1
+        ],
+        351
+      ],
+      "df_decreasing_example": [
+        [
+          15
+        ],
+        [
+          14,
+          1
+        ],
+        -13
+      ],
+      "row_extreme": {
+        "f": 1,
+        "csq": 1015
+      },
+      "col_extreme": {
+        "f": 1,
+        "csq": 1015
+      },
+      "extremes_coincide": true
+    },
+    "16": {
+      "n_covers": 459,
+      "f_nonmonotone": true,
+      "contentsq_nonmonotone": true,
+      "df_increasing_example": [
+        [
+          13,
+          2,
+          1
+        ],
+        [
+          13,
+          1,
+          1,
+          1
+        ],
+        441
+      ],
+      "df_decreasing_example": [
+        [
+          16
+        ],
+        [
+          15,
+          1
+        ],
+        -14
+      ],
+      "row_extreme": {
+        "f": 1,
+        "csq": 1240
+      },
+      "col_extreme": {
+        "f": 1,
+        "csq": 1240
+      },
+      "extremes_coincide": true
+    }
+  },
+  "narrowing_A": "f^\u03bb and \u03a3c\u00b2 are BOTH non-monotone on the dominance lattice (extremal at both extremes (k),(1^k); opposite in the middle) \u21d2 no Harris/FKG correlation inequality on dominance order can yield Cov(f,\u03a3c\u00b2) \u2264 0. Complements ruled-out \u03b2-monotonicity (Phase 1).",
+  "verdict": "Kernel still OPEN. Two structural proof-routes further eliminated: FKG-on-dominance (NARROWING A) and transpose-parity-signs-T\u2083 (NARROWING B, now Lean sorry-free). The sign is a genuine middle-vs-extremes concentration effect, order-blind and parity-blind."
+}
