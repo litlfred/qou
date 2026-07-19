@@ -3,7 +3,7 @@
   "n_target": 5,
   "cable_width": 4,
   "tl_strands": 12,
-  "durationSec": 99.0,
+  "durationSec": 111.0,
   "assertions": [
     {"name": "gate_unknot_ribbon_framing_N5", "computed": 1e0, "expected": 1, "tolerance": 5e-1, "passed": true, "source": "fr = +q^{12} (θ_V ribbon magnitude; sign (−1)^cN) from writhe-1 unknot"},
     {"name": "gate_41_N5_matches_trusted_tower", "computed": 1.4434689958717603e-52, "expected": 0, "tolerance": 1e-15, "passed": true, "source": "4₁ 4-cable J' (framing-free) = trusted p=−1 tower"},
