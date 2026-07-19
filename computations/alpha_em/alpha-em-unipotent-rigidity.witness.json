@@ -1,0 +1,48 @@
+{
+  "computation": "alpha-em-unipotent-rigidity",
+  "description": "Unipotent rigidity (owner-directed): the unipotent part of the T2 monodromy carries no naturality freedom. U1 regular rep of H_2(i) = Jordan (intrinsic); U2 full twist = PL transvection 1+2N (exact); U3 the Jordan module is unique up to iso (constructive, both branches); U4 skein holds identically, two classes, monodromy selects Jordan. R1 closed in full; the wall's surviving open content is exactly R2 (pure physics provenance, phase-4, owner-gated). Nothing wired.",
+  "auditOnly": "docs/audits/2026-07-19-alpha-em-unipotent-rigidity.md",
+  "tier": "symbolic-exact (constructive rigidity on the full parameter family)",
+  "computedAt": "2026-07-19T03:40:04.061424+00:00",
+  "commitSha": "75d31897334007d65543637e62b89266b02f81b2",
+  "engine": "sympy",
+  "engineVersion": "1.14.0",
+  "scriptFile": "alpha_em_unipotent_rigidity_probe.py",
+  "scriptHash": "01032166a851",
+  "assertions": [
+    {
+      "name": "algebra_side_intrinsically_nonsemisimple",
+      "passed": true,
+      "detail": "the regular representation of H\u2082(i) = \u2102[\u03c3]/((\u03c3\u2212i)\u00b2) in the basis {1, \u03c3\u2212i} is the Jordan block (explicit basis-swap conjugation to !![i,1;0,i]) \u2014 the framework's own algebra at the degenerate point carries the unipotent part intrinsically"
+    },
+    {
+      "name": "full_twist_is_PL_transvection",
+      "passed": true,
+      "detail": "\u03c3_B(\u22121)\u00b2 = 1 + 2N with N = [[1, -1], [1, -1]] rank-1 nilpotent \u2014 the full twist (Dehn twist about the two branch points) acts as a Picard\u2013Lefschetz TRANSVECTION on the \u03c7-eigenspace: the unipotent is standard vanishing-cycle geometry, at the same integral point as the Gambaudo\u2013Ghys signature jump (T2)"
+    },
+    {
+      "name": "jordan_module_unique_up_to_iso",
+      "passed": true,
+      "detail": "every nonzero 2\u00d72 nilpotent N' = [[p,q],[r,\u2212p]] (p\u00b2+qr = 0) is explicitly conjugate to [[0,1],[0,0]] on both parameter branches (q\u22600: det P = q; q=0,r\u22600: det P = \u2212r) \u2014 the 2-dim module with (\u03c3\u2212i)\u00b2 = 0, \u03c3 \u2260 i\u00b71 is UNIQUE up to isomorphism: any \u03c4 matching the semisimplified data (R1/N3) matches the unipotent part AUTOMATICALLY"
+    },
+    {
+      "name": "skein_consistency_and_two_classes",
+      "passed": true,
+      "detail": "on the Jordan module \u03c3\u207b\u00b9 = \u03c3 \u2212 2i exactly, so \u03c3 \u2212 \u03c3\u207b\u00b9 = (q\u2212q\u207b\u00b9)|_{q=i}\u00b71 \u2014 the \u00a77a skein relation holds identically; the Hecke relation at q=i admits exactly two module classes (scalar i, Jordan) and T2's monodromy selects Jordan \u2014 no further freedom anywhere"
+    }
+  ],
+  "allPassed": true,
+  "result": {
+    "U1": "regular rep of H_2(i) = Jordan block (intrinsic non-semisimplicity)",
+    "U2": "full twist = 1 + 2N, N rank-1 nilpotent \u2014 Picard-Lefschetz transvection",
+    "U3": "Jordan module unique up to iso (explicit conjugators, both branches)",
+    "U4": "skein identically satisfied; two classes; monodromy selects Jordan",
+    "r1_status": "CLOSED IN FULL (semisimplified by N3 + unipotent by rigidity)",
+    "wall": "surviving open content = R2 only (physics provenance, phase-4)",
+    "verdict": "UNIPOTENT RIGIDITY ESTABLISHED \u2014 R1 CLOSED IN FULL (scope-(a); no fit; nothing wired): the 'invisible' unipotent part carries no naturality freedom \u2014 (U1) the framework's own H\u2082(i) is intrinsically non-semisimple (regular rep = Jordan, explicit conjugation); (U2) the geometric unipotent is the Picard\u2013Lefschetz transvection of the full twist (1+2N exact, rank-1 nilpotent, the Gambaudo\u2013Ghys jump point); (U3) the Jordan module is UNIQUE up to isomorphism (constructive, both parameter branches) \u2014 any \u03c4 matching the R1/N3-closed semisimplified data matches the unipotent automatically; (U4) the \u00a77a skein relation holds identically on the module and the q=i classification has exactly two classes with monodromy selecting Jordan. THE \u03b1_EM PER-LOOP WALL'S SURVIVING OPEN CONTENT IS EXACTLY R2 \u2014 the loop-weight provenance, a pure physics identification with zero functorial residue \u2014 phase-4, owner-gated. NO tier change."
+  },
+  "context": {
+    "follows": "#4072 (R1/N3); owner directive 'work on the only invisible piece'",
+    "scope_guard": "R2 not asserted; no fit; nothing wired; 1/(8pi) stays phase-4"
+  }
+}
