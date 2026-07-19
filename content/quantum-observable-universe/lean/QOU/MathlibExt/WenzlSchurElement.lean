@@ -256,4 +256,123 @@ theorem semisimple_of_substrate {Q X : ℝ} {ss : ℕ → Prop}
     (n : ℕ) : ss n :=
   C.semisimple_of_schur_ne_zero n fun lam _ => schurElement_ne_zero hQ hX lam
 
+/-! ## The Temperley–Lieb stratification at the physical parameter
+     $X = Q^{-N}$ (follow-on to the $X \leq 0$ regime bound)
+
+At the physical Markov specialisation $X = Q^{-N}$ the content
+numerator $1 - Q^{-N} Q^{c(x)}$ vanishes **exactly** at cells of
+content $c(x) = N$.  So the vanishing locus of the Schur element is
+precisely the set of partitions containing a content-$N$ cell — the
+Temperley--Lieb / level-rank quotient stratification, proved here as
+a sorry-free iff on the concrete `schurElement`.  Vanishing Schur
+elements are the *structure* at physical $X$, not a defect: they cut
+out the quotient category. -/
+
+/-- `lam` contains an in-range cell of content `N`. -/
+def HasContentCell (lam : Partition) (N : ℤ) : Prop :=
+  ∃ i, i < lam.length ∧ ∃ j, j < (lam.get? i).getD 0 ∧ cellContent i j = N
+
+private theorem foldl_mul_div_eq_zero (f g : ℕ → ℝ) :
+    ∀ l : List ℕ, l.foldl (fun a j => a * f j / g j) 0 = 0
+  | [] => rfl
+  | j :: tl => by
+      simp only [List.foldl_cons, zero_mul, zero_div]
+      exact foldl_mul_div_eq_zero f g tl
+
+private theorem foldl_mul_div_eq_zero_of_mem (f g : ℕ → ℝ) {j₀ : ℕ} :
+    ∀ (l : List ℕ) (c : ℝ), j₀ ∈ l → f j₀ = 0 →
+      l.foldl (fun a j => a * f j / g j) c = 0
+  | [], _, h, _ => absurd h (by simp)
+  | j :: tl, c, hmem, hf => by
+      simp only [List.foldl_cons]
+      rcases List.mem_cons.mp hmem with h | h
+      · subst h
+        rw [hf, mul_zero, zero_div]
+        exact foldl_mul_div_eq_zero f g tl
+      · exact foldl_mul_div_eq_zero_of_mem f g tl _ h hf
+
+private theorem foldl_mul_eq_zero (F : ℕ → ℝ) :
+    ∀ l : List ℕ, l.foldl (fun a i => a * F i) 0 = 0
+  | [] => rfl
+  | i :: tl => by
+      simp only [List.foldl_cons, zero_mul]
+      exact foldl_mul_eq_zero F tl
+
+private theorem foldl_mul_eq_zero_of_mem (F : ℕ → ℝ) {i₀ : ℕ} :
+    ∀ (l : List ℕ) (c : ℝ), i₀ ∈ l → F i₀ = 0 →
+      l.foldl (fun a i => a * F i) c = 0
+  | [], _, h, _ => absurd h (by simp)
+  | i :: tl, c, hmem, hF => by
+      simp only [List.foldl_cons]
+      rcases List.mem_cons.mp hmem with h | h
+      · subst h
+        rw [hF, mul_zero]
+        exact foldl_mul_eq_zero F tl
+      · exact foldl_mul_eq_zero_of_mem F tl _ h hF
+
+/-- At $X = Q^{-N}$ the content numerator vanishes exactly at content
+    $c = N$ (sorry-free): $1 - Q^{-N} Q^{c} = 0 \iff c = N$. -/
+theorem tl_numerator_eq_zero_iff {Q : ℝ} (hQ : 1 < Q) (N c : ℤ) :
+    1 - Q ^ (-N) * Q ^ c = 0 ↔ c = N := by
+  have hQ0 : (0 : ℝ) < Q := lt_trans one_pos hQ
+  rw [← zpow_add₀ (ne_of_gt hQ0)]
+  constructor
+  · intro h
+    have h1 : Q ^ (-N + c) = 1 := by linarith
+    have h2 : -N + c = 0 :=
+      (zpow_eq_one_iff_right₀ hQ0.le (ne_of_gt hQ)).mp h1
+    omega
+  · intro h
+    subst h
+    simp
+
+/-- **TL vanishing (sorry-free).**  A content-$N$ cell kills the Schur
+    element at $X = Q^{-N}$. -/
+theorem schurElement_tl_eq_zero {Q : ℝ} (hQ : 1 < Q) {N : ℤ}
+    {lam : Partition} (h : HasContentCell lam N) :
+    schurElement Q (Q ^ (-N)) lam = 0 := by
+  obtain ⟨i, hi, j, hj, hc⟩ := h
+  have hQ0 : (0 : ℝ) < Q := lt_trans one_pos hQ
+  unfold schurElement
+  rw [mul_eq_zero]
+  right
+  refine foldl_mul_eq_zero_of_mem _ _ _ (List.mem_range.mpr hi) ?_
+  refine foldl_mul_div_eq_zero_of_mem _ _ _ _ (List.mem_range.mpr hj) ?_
+  rw [hc, ← zpow_add₀ (ne_of_gt hQ0)]
+  simp
+
+/-- **TL non-vanishing (sorry-free).**  With no content-$N$ cell, the
+    Schur element at $X = Q^{-N}$ survives. -/
+theorem schurElement_tl_ne_zero {Q : ℝ} (hQ : 1 < Q) {N : ℤ}
+    {lam : Partition} (h : ¬HasContentCell lam N) :
+    schurElement Q (Q ^ (-N)) lam ≠ 0 := by
+  have hQ0 : (0 : ℝ) < Q := lt_trans one_pos hQ
+  unfold schurElement
+  refine mul_ne_zero (zpow_ne_zero _ (ne_of_gt hQ0)) ?_
+  refine foldl_mul_ne_zero _ _ _ one_ne_zero ?_
+  intro i hi
+  refine foldl_mul_div_ne_zero _ _ _ _ one_ne_zero ?_ ?_
+  · intro j hj
+    intro heq
+    exact h ⟨i, List.mem_range.mp hi, j, List.mem_range.mp hj,
+      (tl_numerator_eq_zero_iff hQ N _).mp heq⟩
+  · intro j hj
+    exact one_sub_pow_ne_zero_of_one_lt hQ
+      (hookLength_pos (List.mem_range.mp hj)).ne'
+
+/-- **The Temperley--Lieb stratification (sorry-free iff).**  At the
+    physical Markov parameter $X = Q^{-N}$, $Q > 1$, the Schur element
+    of $\lambda$ vanishes **iff** $\lambda$ contains a cell of content
+    $N$.  Combined with the cited `SchurElementCriterion`, this locates
+    the semisimplicity boundary exactly: the level-rank / TL quotient
+    is cut out by the content-$N$ hyperplane of the cell lattice. -/
+theorem schurElement_tl_eq_zero_iff {Q : ℝ} (hQ : 1 < Q) (N : ℤ)
+    (lam : Partition) :
+    schurElement Q (Q ^ (-N)) lam = 0 ↔ HasContentCell lam N := by
+  constructor
+  · intro h
+    by_contra hn
+    exact schurElement_tl_ne_zero hQ hn h
+  · exact schurElement_tl_eq_zero hQ
+
 end QOU.MathlibExt.WenzlSchurElement
