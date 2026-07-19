@@ -1,0 +1,91 @@
+{
+  "computation": "deltalambda-cyclotomic-sign-map",
+  "description": "Tests whether the Masbaum cyclotomic coefficient mixed-sign supplies the \u0394_\u03bb row-grading sign (-1)^{n(\u03bb)}. Identity sgn(w_0^{S_{\u03bb'}})=(-1)^{n(\u03bb)} confirmed; cyclotomic sign is per-integer-n while \u0394_\u03bb sign is per-partition \u2014 index-matching wall. scope-(a): needs GS-filtration refinement (qou-my68). No fit; no c_k.",
+  "audit_only": true,
+  "tier": "symbolic-exact (partition combinatorics)",
+  "computedAt": "2026-07-19T00:23:06.753887+00:00",
+  "commitSha": "a41c33d32bcbf864eb84c8d0857883cf1b19d9cc",
+  "engine": "sympy",
+  "engineVersion": "1.14.0",
+  "scriptFile": "deltalambda_cyclotomic_sign_map_probe.py",
+  "scriptHash": "33304affeead",
+  "assertions": [
+    {
+      "name": "chirality_sign_eq_row_grading",
+      "passed": true,
+      "source": "sgn(w_0^{S_{\u03bb'}}) = (-1)^{\u03a3_j C(\u03bb'_j,2)} = (-1)^{n(\u03bb)} \u2014 the \u0394_\u03bb chirality sign IS the row-grading (-1)^{n(\u03bb)} (= q^{2n(\u03bb)} at q\u00b2=-1). Confirms the Nakayama-witness framing."
+    },
+    {
+      "name": "cyclotomic_coeff_sign_is_minus1_pow_n",
+      "passed": true,
+      "source": "the Masbaum 5\u2082 cyclotomic coefficient has sgn(C_{5\u2082,n})=(-1)^n at real q\u2080>1 (the (-1)^n prefactor times a positive q-binomial sum) \u2014 one sign per INTEGER n"
+    },
+    {
+      "name": "index_matching_wall_is_real",
+      "passed": true,
+      "source": "(-1)^{n(\u03bb)} is MIXED across partitions of the same n (e.g. n=3: \u03bb=(3)\u2192+, (2,1)\u2192-, (1\u00b3)\u2192-), while the cyclotomic coefficient gives ONE sign per integer n. So the cyclotomic mixed-sign is at the WRONG RESOLUTION \u2014 it cannot, alone, supply the per-partition \u0394_\u03bb sign. scope-(a) narrowing, not an ingredient refutation: the per-\u03bb resolution is the GS-filtration refinement (bean qou-my68). This check PASSES when the wall is confirmed real."
+    },
+    {
+      "name": "aggregate_also_fails_to_match",
+      "passed": true,
+      "source": "the SYT-weighted aggregate \u03a3_{\u03bb\u22a2n}(-1)^{n(\u03bb)} f^\u03bb sign does NOT match the cyclotomic per-n sign (-1)^n (mismatch at n=1,2,4,5,6) \u2014 so the cyclotomic coefficient does not even carry the correctly signed tr_M-level aggregate chirality. The negative is STRENGTHENED: cyclotomic sign fails to supply \u0394_\u03bb both per-partition AND in aggregate. Passes = confirmed non-match (the strengthened negative)."
+    }
+  ],
+  "allPassed": true,
+  "result": {
+    "aggregate_table": [
+      {
+        "n": 1,
+        "sum_unweighted": 1,
+        "sum_syt": 1,
+        "cyc_sign": -1
+      },
+      {
+        "n": 2,
+        "sum_unweighted": 0,
+        "sum_syt": 0,
+        "cyc_sign": 1
+      },
+      {
+        "n": 3,
+        "sum_unweighted": -1,
+        "sum_syt": -2,
+        "cyc_sign": -1
+      },
+      {
+        "n": 4,
+        "sum_unweighted": 1,
+        "sum_syt": -2,
+        "cyc_sign": 1
+      },
+      {
+        "n": 5,
+        "sum_unweighted": 3,
+        "sum_syt": 6,
+        "cyc_sign": -1
+      },
+      {
+        "n": 6,
+        "sum_unweighted": 1,
+        "sum_syt": 16,
+        "cyc_sign": 1
+      },
+      {
+        "n": 7,
+        "sum_unweighted": -3,
+        "sum_syt": -20,
+        "cyc_sign": -1
+      }
+    ],
+    "verdict": "HONEST NEGATIVE (scope-(a)) \u2014 the direct cyclotomic-sign route does NOT close \u0394_\u03bb. What holds: (i) the \u0394_\u03bb chirality sign sgn(w_0^{S_{\u03bb'}}) = (-1)^{n(\u03bb)} EXACTLY (row-grading at q\u00b2=-1; the per-n spread 1+/2- (n=3), 6+/5- (n=6) reproduces the corpus PROBE-4 deltaSign, cross-validating the identity); (ii) the Masbaum coefficients ARE mixed-sign, sgn(C_{5\u2082,n})=(-1)^n. What FAILS: the mixed sign is at the WRONG RESOLUTION \u2014 (-1)^{n(\u03bb)} is mixed WITHIN each n (per-partition), while the cyclotomic coefficient carries ONE sign per INTEGER n, so it cannot resolve the per-\u03bb sign; and the SYT-weighted AGGREGATE \u03a3(-1)^{n(\u03bb)}f^\u03bb does not even sign-match (-1)^n (n=1,2,4,5,6), so it is not the signed tr_M aggregate either. CONCLUSION: the KL-prune EVASION via cyclotomic signs is REFUTED as a direct \u0394_\u03bb source \u2014 a real mixed sign exists but neither resolves per-partition nor matches in aggregate. This NARROWS the search: any cyclotomic\u2192\u0394_\u03bb route MUST go through a partition-refinement that splits C_{K,n} into per-\u03bb pieces (the GS-filtration bridge, bean qou-my68) \u2014 the naive sign-transfer is closed. No fit; no c_k wired."
+  },
+  "context": {
+    "axis": "\u0394_\u03bb closure \u2014 cyclotomic mixed-sign KL-prune evasion test",
+    "beans": [
+      "qou-42u7",
+      "qou-do3a",
+      "qou-my68"
+    ],
+    "relatedPrune": "Option-E PROBE-4 KL-positivity (PartitionOf5.deltaSign_mixed); Nakayama refutation (deltalambda-grho-nakayama-morphism)"
+  }
+}
