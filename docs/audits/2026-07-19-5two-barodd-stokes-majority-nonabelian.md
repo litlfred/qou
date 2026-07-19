@@ -84,6 +84,37 @@ does: it **reframes where the bar-odd datum lives** and gives a proved-structura
 reason (majority off-diagonal + non-normal) that scalar routes cannot reach it — a
 scope-(a) narrowing of the whole bar-odd front, not an ingredient exclusion.
 
+## Even/odd = meson/lepton: where the mixing lives (owner follow-up)
+
+Owner: *"explains mixing of lepton/meson. odd/even channels?"* The bar-split of the
+Stokes matrix is `E = ½(S⁺+S⁻)` (bar-EVEN) and `O = ½(S⁺−S⁻)` (bar-ODD); the corpus
+dictionary reads **even (cosh) = meson** (m_π, CAL-3) and **odd (sinh) = weak/leptonic**
+(𝔇_β/Q_β, CAL-2). Off-diagonal Stokes entries are the transition amplitudes *between*
+the flat connections — the non-abelian channel **mixing**; the diagonal is each saddle's
+pure contribution.
+
+[`qbeta_5two_meson_lepton_channel_mixing_probe.py`](../../computations/probes/qbeta_5two_meson_lepton_channel_mixing_probe.py)
+(4/4) decomposes both:
+
+| channel | ‖diag‖ (abelian) | ‖offdiag‖ (mixing) | off-share |
+|---|---|---|---|
+| **E — even / meson** (m_π, CAL-3) | 2.23 | 1.58 | **33%** (majority diagonal) |
+| **O — odd / lepton-weak** (Q_β, CAL-2) | 1.45 | 1.53 | **53%** (majority off-diagonal) |
+
+**The off-share flips across the even/odd (meson/lepton) boundary.** The meson channel
+is 67% diagonal — its saddles are nearly *pure* (little non-abelian mixing); the
+lepton/weak channel is where the saddle-mixing concentrates. This is the Stokes-matrix
+signature of two corpus facts: **m_π** (bar-even) is cleanly independent + SDP-validated
+(an abelian/diagonal-dominated channel is directly computable), while **Q_β / c₃**
+(bar-odd) resists every scalar closed form (a non-abelian/off-diagonal-dominated channel
+cannot be reached by a scalar). Anchor-stable to 4 sig figs.
+
+**Interpretation (flagged, not derived).** The odd-channel off-diagonal is the natural
+home of a lepton/meson channel-mixing reading. The probe reports the matrix
+decomposition only — it derives **no** mixing angle and **no** physical observable, and
+asserts no ontological identification; the physical reading is an interpretation to be
+made precise, consistent with the corpus even/odd dictionary (§anti-laundering).
+
 ## Next (concrete)
 
 Feed the c₃/Q_β combiner the **matrix** `O` (or a non-abelian invariant that survives
