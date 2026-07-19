@@ -17,3 +17,13 @@ downstream of E_unit and the pair-order sum — NOT a standalone determinant of 
 numerology). Net: this item is not a separate open closure — it is subsumed under
 "derive E_unit + the b₄ magnitude within the cluster framework". Not re-attacking the
 standalone Vol. Leave open as a pointer; real work is E_unit (provenance §2e) + b₄ (#4084).
+
+## E_unit attempt (2026-07-19, PR #4101) — DOCUMENTED WALL, no numerical attempt (anti-scan)
+Attempting E_unit resolves to the corpus's exhaustive §2f–§2i record: the exchange sector is
+scale-free (§2h.2, Lean-motivated), so E_unit is EXTERNAL; nearest internal scale 2m_e misses
++2.6% (6× the law's residual); single-factor exhausted (§3d); counit A-exploding; additive
+decomposition fails (§2i, collective). A numerical search is FORBIDDEN (entropy bound). Cluster
+expansion (Item 1) SHARPENS: E_unit is the universal per-bond quantum across ALL cluster orders,
+which structurally explains why it cannot come from the dimensionless exchange algebra. Two open
+routes remain (external τ-scale, or A-flattened counit). NOT closed; recorded in the Item-1
+audit doc §4. No fit, no axiom-laundering.
