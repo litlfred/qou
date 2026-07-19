@@ -1,19 +1,55 @@
 {
-  "engine": "hecke-engine (rust, tl_cable, 192-bit MPFR)",
-  "n_target": 5,
-  "cable_width": 4,
-  "tl_strands": 12,
-  "durationSec": 111.0,
-  "assertions": [
-    {"name": "gate_unknot_ribbon_framing_N5", "computed": 1e0, "expected": 1, "tolerance": 5e-1, "passed": true, "source": "fr = +q^{12} (θ_V ribbon magnitude; sign (−1)^cN) from writhe-1 unknot"},
-    {"name": "gate_41_N5_matches_trusted_tower", "computed": 1.4434689958717603e-52, "expected": 0, "tolerance": 1e-15, "passed": true, "source": "4₁ 4-cable J' (framing-free) = trusted p=−1 tower"},
-    {"name": "gate_41_N5_null_at_qstar", "computed": 8.82419790134158e-53, "expected": 0, "tolerance": 1e-18, "passed": true, "source": "B(4₁;q*) = 0 — mirror/bar control"},
-    {"name": "N5_no_qstar_zero_certificate", "computed": 1e0, "expected": 1, "tolerance": 5e-1, "passed": true, "source": "3-point + slope-bound certificate: same sign at q*±2e-8 and q*, slope·window ≪ 1"}
+  "B_qstar": 593.6076935978306,
+  "B_samples": [
+    593.6061096299757,
+    593.6076935978306,
+    593.609277513562
   ],
   "allPassed": true,
-  "B_qstar": 5.93607693593812e2,
-  "B_samples": [5.936061096367613e2, 5.93607693593812e2, 5.936092775549042e2],
-  "rel_slope": 1.3341800389059182e2,
-  "certificate_s2h": 5.3367201556236725e-6,
-  "framing_measured_fr": "3.498450596935638"
+  "all_present": true,
+  "assertions": [
+    {
+      "computed": 1.0,
+      "expected": 1.0,
+      "name": "gate_unknot_ribbon_framing_N5",
+      "passed": true,
+      "source": "fr = ±q^{cN(cN+2)/2} ribbon framing (sign (−1)^cN) from the writhe-1 unknot",
+      "tolerance": 0.5
+    },
+    {
+      "computed": 1.1723926822553249e-11,
+      "expected": 0.0,
+      "name": "gate_41_N5_matches_trusted_tower",
+      "passed": true,
+      "source": "4₁ 4-cable J' (framing-free) = trusted Masbaum p=−1 tower",
+      "tolerance": 1e-15
+    },
+    {
+      "computed": 3.119461396823928e-12,
+      "expected": 0.0,
+      "name": "gate_41_N5_null_at_qstar",
+      "passed": true,
+      "source": "B(4₁;q*) = 0 — mirror/bar control",
+      "tolerance": 1e-18
+    },
+    {
+      "computed": 1.0,
+      "expected": 1.0,
+      "name": "N5_no_qstar_zero_certificate",
+      "passed": true,
+      "source": "3-point + slope-bound certificate: same sign at q*±2e-8 and q*, slope·window ≪ 1",
+      "tolerance": 0.5
+    }
+  ],
+  "cable_width": 4,
+  "certificate_s2h": 5.3366619410586104e-6,
+  "engine": "hecke-engine (rust, tl_cable, 192-bit MPFR)",
+  "n_target": 5,
+  "rel_slope": 133.41654852646525,
+  "signs": [
+    1,
+    1,
+    1
+  ],
+  "tl_strands": 12
 }

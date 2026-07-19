@@ -383,6 +383,151 @@ pub fn jw_terms(m: usize, delta: &Float) -> Vec<(Float, Vec<usize>)> {
         .collect()
 }
 
+// ------------------------ fast dense-f64 colored-Jones ------------------------
+//
+// The MPFR path above is the high-precision reference (used to validate against
+// the certified N=5 witness). For the TL₁₅ (N=6) pass, 192-bit MPFR over 9.7M
+// elements is prohibitive (~20 min/Jp, >11 GB). At a real substrate q the
+// colored-Jones value is well-conditioned, so an f64 evaluation with **dense**
+// state vectors is ~100× faster and ~10× smaller (78 MB/vector vs ~1 GB),
+// bringing a full N=6 run to a few minutes. The accumulated f64 error
+// (~1e-10) is far below what the 3-point certificate needs (~1e-6); the tight
+// control gates (G2/G3) are reported at f64-realistic tolerances.
+
+/// Jones–Wenzl `e_m` terms with f64 coefficients (δ-Chebyshev).
+pub fn jw_terms_f64(m: usize, delta: f64) -> Vec<(f64, Vec<usize>)> {
+    let mut br = vec![0.0f64, 1.0];
+    for k in 2..m + 2 {
+        let v = delta * br[k - 1] - br[k - 2];
+        br.push(v);
+    }
+    let mut terms: FxHashMap<Vec<usize>, f64> = FxHashMap::default();
+    terms.insert(Vec::new(), 1.0);
+    for k in 2..=m {
+        let coef = br[k - 1] / br[k];
+        let snapshot: Vec<(Vec<usize>, f64)> =
+            terms.iter().map(|(w, c)| (w.clone(), *c)).collect();
+        for (w1, c1) in &snapshot {
+            for (w2, c2) in &snapshot {
+                let mut w = Vec::with_capacity(w1.len() + 1 + w2.len());
+                w.extend_from_slice(w1);
+                w.push(k - 1);
+                w.extend_from_slice(w2);
+                *terms.entry(w).or_insert(0.0) -= coef * c1 * c2;
+            }
+        }
+    }
+    terms
+        .into_iter()
+        .filter(|(_, c)| c.abs() > 1e-40)
+        .map(|(w, c)| (c, w))
+        .collect()
+}
+
+/// Apply a bare generator `U_{gi+1}` to a dense f64 state, into `out`.
+#[inline]
+fn apply_generator_f64(v: &[f64], gi: usize, eng: &TlEngine, dpow: &[f64], out: &mut [f64]) {
+    out.iter_mut().for_each(|x| *x = 0.0);
+    let idx = &eng.tab_idx[gi];
+    let lp = &eng.tab_lp[gi];
+    for (i, &c) in v.iter().enumerate() {
+        if c != 0.0 {
+            out[idx[i] as usize] += c * dpow[lp[i] as usize];
+        }
+    }
+}
+
+#[inline]
+fn closure_sum_f64(v: &[f64], eng: &TlEngine, dpow: &[f64]) -> f64 {
+    let mut t = 0.0;
+    for (i, &c) in v.iter().enumerate() {
+        if c != 0.0 {
+            t += c * dpow[eng.closure[i] as usize - 1];
+        }
+    }
+    t
+}
+
+/// Fast f64 colored-Jones `J'_{cN+1}`; dense state, common-prefix optimization,
+/// numerator parallelized over Jones–Wenzl terms. See module note above.
+pub fn jp_f64(
+    word: &[i32],
+    k_strands: usize,
+    c_n: usize,
+    q: f64,
+    engines: &FxHashMap<usize, TlEngine>,
+) -> f64 {
+    let a = q.powf(-0.5);
+    let a_inv = 1.0 / a;
+    let delta = -a * a - a_inv * a_inv;
+    let n = c_n * k_strands;
+    let eng = &engines[&n];
+    let engd = &engines[&c_n];
+    let maxp = n + 2;
+    let mut dpow = vec![1.0f64];
+    for _ in 1..=maxp {
+        dpow.push(dpow.last().unwrap() * delta);
+    }
+
+    // ---- apply the cabled braid word once (dense ping-pong buffers) ----
+    let cw = cable(word, c_n);
+    let mut cur = vec![0.0f64; eng.ndiag];
+    let mut nxt = vec![0.0f64; eng.ndiag];
+    cur[eng.ident_idx as usize] = 1.0;
+    for &g in &cw {
+        let gi = g.unsigned_abs() as usize - 1;
+        let (c_a, c_b) = if g > 0 { (a, a_inv) } else { (a_inv, a) };
+        let idx = &eng.tab_idx[gi];
+        let lp = &eng.tab_lp[gi];
+        nxt.iter_mut().for_each(|x| *x = 0.0);
+        for (i, &c) in cur.iter().enumerate() {
+            if c != 0.0 {
+                nxt[i] += c * c_a;
+                nxt[idx[i] as usize] += c * c_b * dpow[lp[i] as usize];
+            }
+        }
+        std::mem::swap(&mut cur, &mut nxt);
+    }
+
+    let ejw = jw_terms_f64(c_n, delta);
+
+    // ---- numerator: parallel over JW terms (read-only shared prefix) ----
+    let num: f64 = ejw
+        .par_iter()
+        .map(|(coef, gword)| {
+            let s = if gword.is_empty() {
+                closure_sum_f64(&cur, eng, &dpow)
+            } else {
+                let mut src = vec![0.0f64; eng.ndiag];
+                apply_generator_f64(&cur, gword[0] - 1, eng, &dpow, &mut src);
+                let mut dst = vec![0.0f64; eng.ndiag];
+                for &g in &gword[1..] {
+                    apply_generator_f64(&src, g - 1, eng, &dpow, &mut dst);
+                    std::mem::swap(&mut src, &mut dst);
+                }
+                closure_sum_f64(&src, eng, &dpow)
+            };
+            coef * s
+        })
+        .sum();
+
+    // ---- denominator: closure of e_{cN} alone on cN strands ----
+    let mut den = 0.0;
+    let mut sbuf = vec![0.0f64; engd.ndiag];
+    let mut dbuf = vec![0.0f64; engd.ndiag];
+    for (coef, gword) in &ejw {
+        sbuf.iter_mut().for_each(|x| *x = 0.0);
+        sbuf[engd.ident_idx as usize] = 1.0;
+        for &g in gword {
+            apply_generator_f64(&sbuf, g - 1, engd, &dpow, &mut dbuf);
+            std::mem::swap(&mut sbuf, &mut dbuf);
+        }
+        den += coef * closure_sum_f64(&sbuf, engd, &dpow);
+    }
+
+    num / den
+}
+
 // ----------------------------- colored-Jones Jp -------------------------------
 
 /// Sparse real state vector over a TL basis: `index → coefficient`.
