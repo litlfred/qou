@@ -1,0 +1,124 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-07-18T23:59:34.378613+00:00",
+  "commitSha": "5b5415069e35023585ecf1bec28f61c9eca12da7",
+  "assertions": [
+    {
+      "name": "substrate_geometry_certified",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "real bar-pair + x=q^-2 on lattice + (250) theta-triple vanishing"
+    },
+    {
+      "name": "crossing_tool_certified_near_substrate",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "(250) printed reading reproduces H^- branch off-lattice near the substrate scale"
+    },
+    {
+      "name": "phi_odd_preliminary_is_two_loop_truncation",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "2-loop reproduces -0.004145 while 1-loop differs >3x: the preliminary is truncation-dominated"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 15,
+  "computation": "qbeta-g3-5two-wall-crossing-barpair",
+  "scriptFile": "qbeta_g3_5two_wall_crossing_barpair.py",
+  "scriptHash": "652a3f043889",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "mpmath": "1.4.1"
+  },
+  "description": "Analytic 5_2 M-dictionary part 2c-2: wall-cross the certified (250) determinant identity onto the substrate bar-pair and attempt to sharpen the intrinsic bar-odd phase phi_odd beyond the #3987 preliminary -0.004145. Substrate geometry (real bar-pair, x=q^-2 on the pole lattice, (250) theta-triple vanishing) certified; the (250) tool certified in the substrate neighbourhood; the exact multi-loop ray extraction reports convergence/conditioning honestly.",
+  "contentBlock": "conj:im-q-physical-role",
+  "data": {
+    "substrate_geometry": {
+      "q": "0.9009182839557414921608229",
+      "q_bar": "1.109978582751380807591669",
+      "bar_pair_real": true,
+      "x_on_pole_lattice": true,
+      "theta_triple_at_substrate": "(0.0 + 0.0j)",
+      "theta_triple_vanishes": true
+    },
+    "crossing_neighbourhood_dev": "4.376990019e-53",
+    "phi_odd_precision_sweep": [
+      {
+        "dps": 45,
+        "phi_odd": "-0.004144702346",
+        "abs_a2": "0.95783",
+        "branch": "physical"
+      },
+      {
+        "dps": 50,
+        "phi_odd": "0.8992359914",
+        "abs_a2": "4.3837e-53",
+        "branch": "spurious"
+      },
+      {
+        "dps": 80,
+        "phi_odd": "-0.004144702346",
+        "abs_a2": "0.95783",
+        "branch": "physical"
+      },
+      {
+        "dps": 150,
+        "phi_odd": "-0.004144702346",
+        "abs_a2": "0.95783",
+        "branch": "physical"
+      }
+    ],
+    "phi_odd_loop_sensitivity": {
+      "one_loop_dps60": "-0.000162546697305",
+      "two_loop_dps60": "-0.00414470234574",
+      "swing_factor": "25.498533",
+      "physical_branch_count": 3,
+      "physical_branch_value": "-0.0041447023",
+      "reproduces_3987_preliminary": true
+    },
+    "multiloop_sequence": [
+      {
+        "loops": 1,
+        "phi_odd": "-0.00444183924659",
+        "cond": "156.153"
+      },
+      {
+        "loops": 2,
+        "phi_odd": "-0.00107285193452",
+        "cond": "1.99893e+6"
+      },
+      {
+        "loops": 3,
+        "phi_odd": "-0.00169391078946",
+        "cond": "4.50497e+9"
+      },
+      {
+        "loops": 4,
+        "phi_odd": "-0.00177094115018",
+        "cond": "3.80363e+13"
+      },
+      {
+        "loops": 5,
+        "phi_odd": "-0.00178390389909",
+        "cond": "4.92598e+17"
+      }
+    ],
+    "converged": false,
+    "verdict": "φ_odd sharpening OBSTRUCTED (honest, localized). Substrate geometry certified (C1: real bar-pair q,q̄; x=q⁻² on the block pole lattice; the (250) θ-triple = 0 — φ_odd lives exactly at the 0/0 lattice node where the classical factor the (250) identity strips vanishes, so the wall-crossing tool cannot dissolve the degeneracy, only relocate it into the vanishing θ-triple); (250) tool re-certified in the substrate neighbourhood (C2, 4.38e-53). Two obstructions: (S1) the #3987 σ3-pair strip is PRECISION-UNSTABLE — the classical prefactor on the ray is e^(−V/t), |Re| ≈ 34.5 (~1e15), and the 2 %-spaced 2×2 rows are near-parallel, so the ~1e-2 phase residual is cancellation-limited and the solve tips between the physical near-unit branch (|a₂|≈0.96, φ_odd≈−0.004) and a spurious null branch (|a₂|≈1e-53, φ_odd≈+0.9) NON-monotonically in dps (physical at 3/4 swept precisions); the physical-branch value ≈ −0.004 carries ~4 % circle-average-scheme sensitivity (good to ~1 sig fig). (S2) the exact multi-loop ray extraction (adding c₂,c₃,… beyond the printed 2-loop) does not give a TRUSTWORTHY limit — at this precision φ_odd spans [-0.004442, -0.001073] rad while cond explodes to 4.93e+17; the small-Δ tail sits at cond > 1e12 (untrustworthy) AND is a precision-branch artifact — the whole S2 sequence lands in a DIFFERENT range at the spurious-collapse precisions, so any apparent limit is not precision-robust (the n_phys=4 gate fails). At τ ≈ 0.01661 the τ^k loop columns are numerically degenerate and the contour-absent σ3-real saddle leaks. The 1→2-loop swing is 25.5× so even the stable value is loop-truncation-dominated. THE REMAINING STEP is precisely localized: a derived φ_odd needs higher-loop (238)-type coefficients (c₂,c₃,… — printed-data-blocked in 2012.00062v3 §6.2) or a σ3-transseries resummation, NOT deeper numerics; the (250) block identity is exact but does not isolate the saddle Stokes constants φ_odd is built from. φ_odd = −0.004145 stands as a 2-loop PRELIMINARY (dictionary datum for the anchor-smooth, permanent 5₂ σ3-pair carrier). No fit; no c_k wired; scope-(a) (constrains the METHOD, not the σ3-pair ingredient)."
+  }
+}
