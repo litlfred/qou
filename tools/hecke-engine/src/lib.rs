@@ -53,6 +53,8 @@ pub mod certificate;
 pub mod cross_level_embedding;
 #[cfg(feature = "mpfr")]
 pub mod dense_la_mpfr;
+#[cfg(feature = "mpfr")]
+pub mod tl_cable;
 pub mod gb_nf_reducer;
 #[cfg(feature = "mpfr")]
 pub mod geck_pfeiffer;
