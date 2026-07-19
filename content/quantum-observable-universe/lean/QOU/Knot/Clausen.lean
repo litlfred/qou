@@ -453,6 +453,41 @@ theorem Cl_2_two_pi_sub (θ : ℝ) :
       = ((k + 1 : ℤ) : ℝ) * (2 * π) - ((k : ℝ) + 1) * θ := by push_cast; ring
   rw [h, Real.sin_int_mul_two_pi_sub, neg_div]
 
+/-- **`clausen(π/3) > 0` (saddle brick E3b, integral side, sorry-free).** On
+    `(0, π/3)` the integrand `-log(2 sin(t/2))` is strictly positive
+    (`2 sin(t/2) < 2 sin(π/6) = 1` by strict monotonicity of `sin`), so the
+    integral is positive. -/
+theorem clausen_pi_div_three_pos : 0 < clausen (π / 3) := by
+  have hpi := Real.pi_pos
+  unfold clausen
+  apply intervalIntegral_pos_of_pos_on
+    ((intervalIntegrable_log_two_sin_half 0 (π / 3)).neg)
+  · intro t ht
+    have h1 : 0 < Real.sin (t / 2) :=
+      Real.sin_pos_of_pos_of_lt_pi (by linarith [ht.1]) (by linarith [ht.2])
+    have h2 : Real.sin (t / 2) < 1 / 2 := by
+      have hmono := Real.strictMonoOn_sin
+        (Set.mem_Icc.mpr ⟨by linarith [ht.1], by linarith [ht.2]⟩)
+        (Set.mem_Icc.mpr ⟨by linarith, by linarith⟩)
+        (by linarith [ht.2] : t / 2 < π / 6)
+      rwa [Real.sin_pi_div_six] at hmono
+    have hlog : Real.log (2 * Real.sin (t / 2)) < 0 :=
+      Real.log_neg (by linarith) (by linarith)
+    simp only [Pi.neg_apply]
+    linarith
+  · linarith
+
+/-- **`Cl₂(π/3) > 0` (saddle brick E3b, sorry-free).** Transported from the
+    integral side through the machine-proved bridge `clausen_eq_series`. This is
+    the strict positivity that makes the Kashaev saddle value
+    `2 Cl₂(π/3) = Vol(4₁)` a genuine maximum (the `θ = 5π/3` minimum of `Cl₂`
+    equals `−Cl₂(π/3) < 0 <` the endpoint values `0`; bean qou-yzs2). -/
+theorem Cl_2_pi_div_three_pos : 0 < QOU.Archimedean.Cl_2 (π / 3) := by
+  have hpi := Real.pi_pos
+  have h := clausen_eq_series (θ := π / 3) ⟨by linarith, by linarith⟩
+  rw [← h]
+  exact clausen_pi_div_three_pos
+
 /-- **The series Clausen's derivative** `Cl_2'(θ) = -log(2 sin(θ/2))` for
     `θ ∈ (0, 2π)` — the derivative the filler flagged as needing Fourier
     infrastructure, now machine-proved (`hasDerivAt_Cl_2_series`). Dual-purpose: `V'(θ)` of

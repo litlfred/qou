@@ -84,6 +84,38 @@ theorem saddle_critical_point {θ : ℝ} (h0 : 0 < θ) (hπ : θ < π) :
     rw [h, show π / 3 / 2 = π / 6 by ring, Real.sin_pi_div_six]
     norm_num
 
+/-- **Saddle brick E3a (sorry-free).** On the full interval `(0, 2π)` the
+    critical-point equation has exactly TWO roots:
+    `2 sin(θ/2) = 1 ↔ θ = π/3 ∨ θ = 5π/3`. Extends `saddle_critical_point`
+    (which covers `(0, π)`) by reflecting through `sin(π − x) = sin x` on the
+    upper half. `θ = 5π/3` is where `Cl₂` attains its minimum `−Cl₂(π/3)` —
+    the Kashaev saddle the volume emerges from (bean qou-yzs2). -/
+theorem saddle_critical_point_two_pi {θ : ℝ} (h0 : 0 < θ) (h2 : θ < 2 * π) :
+    2 * Real.sin (θ / 2) = 1 ↔ θ = π / 3 ∨ θ = 5 * π / 3 := by
+  have hpi := Real.pi_pos
+  constructor
+  · intro h
+    rcases le_or_gt (θ / 2) (π / 2) with hle | hgt
+    · rcases lt_or_eq_of_le (by linarith : θ ≤ π) with hlt | heq
+      · exact Or.inl ((saddle_critical_point h0 hlt).mp h)
+      · exfalso
+        rw [heq] at h
+        norm_num [Real.sin_pi_div_two] at h
+    · right
+      have hs : Real.sin (π - θ / 2) = Real.sin (π / 6) := by
+        rw [Real.sin_pi_sub, Real.sin_pi_div_six]; linarith
+      have hmem1 : π - θ / 2 ∈ Set.Icc (-(π / 2)) (π / 2) :=
+        ⟨by linarith, by linarith⟩
+      have hmem2 : π / 6 ∈ Set.Icc (-(π / 2)) (π / 2) :=
+        ⟨by linarith, by linarith⟩
+      have := Real.injOn_sin hmem1 hmem2 hs
+      linarith
+  · rintro (h | h) <;> rw [h]
+    · rw [show π / 3 / 2 = π / 6 by ring, Real.sin_pi_div_six]; norm_num
+    · rw [show 5 * π / 3 / 2 = π - π / 6 by ring, Real.sin_pi_sub,
+        Real.sin_pi_div_six]
+      norm_num
+
 /-- The largest Kashaev term is at least `1` (witnessed by the `k = 0` empty
     product) — the positivity the log-squeeze needs. -/
 theorem one_le_sup_kashaevProd (N : ℕ) (hN : 1 ≤ N) :
