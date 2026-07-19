@@ -635,6 +635,95 @@ theorem sum_log_sin_le_integral {N k : ℕ} (hN : 1 ≤ N) (hk : 1 ≤ k)
           Real.log (2 * Real.sin u) := by
         field_simp
 
+/-- **E4c helper, falling half (sorry-free).** On the unit grid `[c₁, c₂]`, the
+    rescaled `v ↦ log(2 sin(v·h))` inherits E4b's antitonicity when
+    `π/2 ≤ c₁·h` and `c₂·h < π`. -/
+theorem antitoneOn_log_two_sin_mul {h : ℝ} (hh : 0 < h) {c₁ c₂ : ℝ}
+    (hc1 : π / 2 ≤ c₁ * h) (hc2 : c₂ * h < π) :
+    AntitoneOn (fun v : ℝ => Real.log (2 * Real.sin (v * h))) (Set.Icc c₁ c₂) := by
+  intro u hu v hv huv
+  have h1 : u * h ∈ Set.Ico (π / 2) π :=
+    ⟨by nlinarith [hu.1], by nlinarith [hu.2]⟩
+  have h2 : v * h ∈ Set.Ico (π / 2) π :=
+    ⟨by nlinarith [hv.1], by nlinarith [hv.2]⟩
+  exact antitoneOn_log_two_sin h1 h2 (by nlinarith)
+
+/-- **Saddle brick E4c, falling-half lower bound (sorry-free).** On a window
+    `[k₁π/N, k₂π/N] ⊆ [π/2, π)`, the right-endpoint log-sine sum is dominated
+    by the integral — library `AntitoneOn.sum_le_integral_Ico`, transported by
+    `u = v·π/N`. (bean qou-x5mg) -/
+theorem sum_log_sin_le_integral_falling {N k₁ k₂ : ℕ} (hN : 1 ≤ N) (h12 : k₁ ≤ k₂)
+    (hlo : π / 2 ≤ (k₁ : ℝ) * (π / N)) (hhi : (k₂ : ℝ) * (π / N) < π) :
+    (π / N) * ∑ i ∈ Finset.Ico k₁ k₂,
+        Real.log (2 * Real.sin (((i : ℝ) + 1) * (π / N)))
+      ≤ ∫ u in ((k₁ : ℝ) * (π / N))..((k₂ : ℝ) * (π / N)),
+          Real.log (2 * Real.sin u) := by
+  have hNpos : (0 : ℝ) < N := by exact_mod_cast hN
+  have hh : (0 : ℝ) < π / N := by positivity
+  have hanti : AntitoneOn (fun v : ℝ => Real.log (2 * Real.sin (v * (π / N))))
+      (Set.Icc ((k₁ : ℕ) : ℝ) ((k₂ : ℕ) : ℝ)) := by
+    simpa using antitoneOn_log_two_sin_mul hh (c₁ := (k₁ : ℝ)) (c₂ := (k₂ : ℝ)) hlo hhi
+  have hlib := AntitoneOn.sum_le_integral_Ico (a := k₁) (b := k₂) h12 hanti
+  have hcov : (∫ v in ((k₁ : ℕ) : ℝ)..((k₂ : ℕ) : ℝ),
+        Real.log (2 * Real.sin (v * (π / N))))
+      = (π / N)⁻¹ * ∫ u in ((k₁ : ℝ) * (π / N))..((k₂ : ℝ) * (π / N)),
+          Real.log (2 * Real.sin u) := by
+    rw [intervalIntegral.integral_comp_mul_right
+      (f := fun u => Real.log (2 * Real.sin u)) (ne_of_gt hh)]
+    norm_num
+  have hsum : (∑ i ∈ Finset.Ico k₁ k₂,
+        (fun v : ℝ => Real.log (2 * Real.sin (v * (π / N)))) ((i + 1 : ℕ) : ℝ))
+      = ∑ i ∈ Finset.Ico k₁ k₂,
+          Real.log (2 * Real.sin (((i : ℝ) + 1) * (π / N))) := by
+    refine Finset.sum_congr rfl (fun i _ => ?_)
+    push_cast
+    ring_nf
+  rw [hcov, hsum] at hlib
+  calc (π / N) * ∑ i ∈ Finset.Ico k₁ k₂,
+        Real.log (2 * Real.sin (((i : ℝ) + 1) * (π / N)))
+      ≤ (π / N) * ((π / N)⁻¹ * ∫ u in ((k₁ : ℝ) * (π / N))..((k₂ : ℝ) * (π / N)),
+          Real.log (2 * Real.sin u)) :=
+        mul_le_mul_of_nonneg_left hlib (le_of_lt hh)
+    _ = ∫ u in ((k₁ : ℝ) * (π / N))..((k₂ : ℝ) * (π / N)),
+          Real.log (2 * Real.sin u) := by
+        field_simp
+
+/-- **Saddle brick E4c, falling-half upper bound (sorry-free).** On a window
+    `[k₁π/N, k₂π/N] ⊆ [π/2, π)`, the integral is dominated by `π/N` times the
+    left-endpoint log-sine sum — library `AntitoneOn.integral_le_sum_Ico`,
+    same transport. (bean qou-x5mg) -/
+theorem integral_le_sum_log_sin_falling {N k₁ k₂ : ℕ} (hN : 1 ≤ N) (h12 : k₁ ≤ k₂)
+    (hlo : π / 2 ≤ (k₁ : ℝ) * (π / N)) (hhi : (k₂ : ℝ) * (π / N) < π) :
+    (∫ u in ((k₁ : ℝ) * (π / N))..((k₂ : ℝ) * (π / N)), Real.log (2 * Real.sin u))
+      ≤ (π / N) * ∑ i ∈ Finset.Ico k₁ k₂,
+          Real.log (2 * Real.sin ((i : ℝ) * (π / N))) := by
+  have hNpos : (0 : ℝ) < N := by exact_mod_cast hN
+  have hh : (0 : ℝ) < π / N := by positivity
+  have hanti : AntitoneOn (fun v : ℝ => Real.log (2 * Real.sin (v * (π / N))))
+      (Set.Icc ((k₁ : ℕ) : ℝ) ((k₂ : ℕ) : ℝ)) := by
+    simpa using antitoneOn_log_two_sin_mul hh (c₁ := (k₁ : ℝ)) (c₂ := (k₂ : ℝ)) hlo hhi
+  have hlib := AntitoneOn.integral_le_sum_Ico (a := k₁) (b := k₂) h12 hanti
+  have hcov : (∫ v in ((k₁ : ℕ) : ℝ)..((k₂ : ℕ) : ℝ),
+        Real.log (2 * Real.sin (v * (π / N))))
+      = (π / N)⁻¹ * ∫ u in ((k₁ : ℝ) * (π / N))..((k₂ : ℝ) * (π / N)),
+          Real.log (2 * Real.sin u) := by
+    rw [intervalIntegral.integral_comp_mul_right
+      (f := fun u => Real.log (2 * Real.sin u)) (ne_of_gt hh)]
+    norm_num
+  have hsum : (∑ x ∈ Finset.Ico k₁ k₂,
+        (fun v : ℝ => Real.log (2 * Real.sin (v * (π / N)))) ((x : ℕ) : ℝ))
+      = ∑ i ∈ Finset.Ico k₁ k₂,
+          Real.log (2 * Real.sin ((i : ℝ) * (π / N))) :=
+    Finset.sum_congr rfl (fun i _ => rfl)
+  rw [hcov, hsum] at hlib
+  calc (∫ u in ((k₁ : ℝ) * (π / N))..((k₂ : ℝ) * (π / N)), Real.log (2 * Real.sin u))
+      = (π / N) * ((π / N)⁻¹ * ∫ u in ((k₁ : ℝ) * (π / N))..((k₂ : ℝ) * (π / N)),
+          Real.log (2 * Real.sin u)) := by
+        field_simp
+    _ ≤ (π / N) * ∑ i ∈ Finset.Ico k₁ k₂,
+          Real.log (2 * Real.sin ((i : ℝ) * (π / N))) :=
+        mul_le_mul_of_nonneg_left hlib (le_of_lt hh)
+
 /-- **The series Clausen's derivative** `Cl_2'(θ) = -log(2 sin(θ/2))` for
     `θ ∈ (0, 2π)` — the derivative the filler flagged as needing Fourier
     infrastructure, now machine-proved (`hasDerivAt_Cl_2_series`). Dual-purpose: `V'(θ)` of
