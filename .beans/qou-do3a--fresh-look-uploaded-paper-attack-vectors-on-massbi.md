@@ -1,10 +1,11 @@
 ---
 # qou-do3a
 title: 'Fresh-look: uploaded-paper attack vectors on mass/binding gaps + q-diff order 2vs3 finding'
-status: todo
+status: completed
 type: task
+priority: normal
 created_at: 2026-07-19T00:00:34Z
-updated_at: 2026-07-19T00:00:34Z
+updated_at: 2026-07-19T03:59:53Z
 ---
 
 
