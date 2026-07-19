@@ -471,6 +471,9 @@ theorem rightExchange : RightExchangeProp cs := by
   obtain ⟨j, -, hj⟩ := strong_exchange cs ω
     ((cs.isRightInversion_simple_iff_isRightDescent (π ω) c).mpr hdesc)
   exact ⟨j, hj⟩
+-- Note: `strong_exchange` returns a bounded existential `∃ j < ω.length, …`
+-- while `RightExchangeProp` asks the unbounded `∃ r, …`, so the destructure
+-- re-packages the witness; a direct `exact` does not typecheck.
 
 /-- **The Bourbaki lifting lemma, UNCONDITIONAL**: a minimal coset
 representative `u` and a reduced `J`-word `p` satisfy
