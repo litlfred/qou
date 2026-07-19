@@ -31,6 +31,7 @@
 //! diagram→index map, and the final colored-Jones value is independent of the
 //! enumeration order, so we enumerate in convenient position order.
 
+use rayon::prelude::*;
 use rug::ops::Pow;
 use rug::Float;
 use rustc_hash::FxHashMap;
@@ -280,7 +281,6 @@ impl TlEngine {
     /// over the basis with rayon (each diagram's `n−1` generator images are
     /// independent).
     pub fn build(n: usize) -> Self {
-        use rayon::prelude::*;
         assert!(2 * n <= MAXP, "n={n} exceeds MAXP/2");
         let (basis, index) = build_basis(n);
         let ndiag = basis.len();
@@ -434,6 +434,59 @@ fn closure_sum(v: &State, eng: &TlEngine, dpow: &[Float]) -> Float {
     tot
 }
 
+/// Threshold below which a parallel scatter is not worth the fold/reduce +
+/// map-merge overhead. Tuned so TL₁₂ (support ≤ 208K) stays sequential — it is
+/// already fast serially — and only the TL₁₅ prefix (support grows into the
+/// millions) pays for parallelism.
+const PAR_THRESHOLD: usize = 500_000;
+
+/// One cabled-braid transition step: `v[i] ↦ c_a·v[i] (same i) + c_b·δ^{lp}·v[i]
+/// (at dest j)`, summed over collisions. Parallelized over rayon chunks of the
+/// source support when the state is large.
+fn transition_cable(
+    v: &State,
+    idx: &[u32],
+    lp: &[u8],
+    c_a: &Float,
+    c_b: &Float,
+    dpow: &[Float],
+) -> State {
+    let step = |acc: &mut State, i: u32, c: &Float| {
+        let va = Float::with_val(PREC, c * c_a);
+        add_scaled(acc, i, &va);
+        let j = idx[i as usize];
+        let l = lp[i as usize] as usize;
+        let vb = Float::with_val(PREC, c * c_b) * &dpow[l];
+        add_scaled(acc, j, &vb);
+    };
+    if v.len() < PAR_THRESHOLD {
+        let mut new: State =
+            FxHashMap::with_capacity_and_hasher(v.len() * 2, Default::default());
+        for (&i, c) in v {
+            step(&mut new, i, c);
+        }
+        new
+    } else {
+        v.par_iter()
+            .fold(
+                || FxHashMap::with_capacity_and_hasher(0, Default::default()),
+                |mut acc, (&i, c)| {
+                    step(&mut acc, i, c);
+                    acc
+                },
+            )
+            .reduce(
+                || FxHashMap::with_capacity_and_hasher(0, Default::default()),
+                |mut m1, m2| {
+                    for (k, val) in m2 {
+                        add_scaled(&mut m1, k, &val);
+                    }
+                    m1
+                },
+            )
+    }
+}
+
 /// Raw colored-Jones `J'_{cN+1}` of the closure of `word ∈ B_{k_strands}` via
 /// the `cN`-cable + Jones–Wenzl `e_{cN}` insertion, **without** framing factor.
 /// `engines[n]` must provide the TL engine on `n = cN·k_strands` strands and
@@ -460,38 +513,30 @@ pub fn jp(
     let dpow = delta_powers(&delta, maxp);
 
     // ---- apply the cabled braid word once ----
+    // Each generator step is a scatter over the current support; steps are
+    // sequential (each depends on the last) but the inner scatter is
+    // parallelized (fold per rayon chunk, then merge). This is the prefix cost
+    // that dominates at TL₁₅ (~100–150 cable letters over a support that grows
+    // toward the full 9.7M basis).
     let cw = cable(word, c_n);
     let mut v: State = FxHashMap::default();
     v.insert(eng.ident_idx, f(1));
     for &g in &cw {
         let gi = g.unsigned_abs() as usize - 1;
-        let (c_a, c_b) = if g > 0 {
-            (&a, &a_inv)
-        } else {
-            (&a_inv, &a)
-        };
+        let (c_a, c_b) = if g > 0 { (&a, &a_inv) } else { (&a_inv, &a) };
         let idx = &eng.tab_idx[gi];
         let lp = &eng.tab_lp[gi];
-        let mut new: State =
-            FxHashMap::with_capacity_and_hasher(v.len() * 2, Default::default());
-        for (&i, c) in &v {
-            // identity part: coefficient c_a on the same basis element
-            let va = Float::with_val(PREC, c * c_a);
-            add_scaled(&mut new, i, &va);
-            // U part: c_b · δ^{lp} at destination
-            let j = idx[i as usize];
-            let l = lp[i as usize] as usize;
-            let vb = Float::with_val(PREC, c * c_b) * &dpow[l];
-            add_scaled(&mut new, j, &vb);
-        }
-        v = new;
+        v = transition_cable(&v, idx, lp, c_a, c_b, &dpow);
     }
 
     let ejw = jw_terms(c_n, &delta);
 
     // ---- numerator: Σ coef · closure(v · U-suffix) ----
-    let mut num = f(0);
-    for (coef, gword) in &ejw {
+    // Embarrassingly parallel over Jones–Wenzl terms: each term applies its own
+    // short U-suffix to a *read-only* clone-free view of the shared prefix `v`,
+    // then reduces to a scalar. No shared mutation ⇒ near-linear speedup, and
+    // this is the second dominant cost at TL₁₅.
+    let term_val = |coef: &Float, gword: &[usize]| -> Float {
         let s = if gword.is_empty() {
             closure_sum(&v, eng, &dpow)
         } else {
@@ -501,8 +546,19 @@ pub fn jp(
             }
             closure_sum(&vv, eng, &dpow)
         };
-        num += Float::with_val(PREC, coef * &s);
-    }
+        Float::with_val(PREC, coef * &s)
+    };
+    let num: Float = if eng.ndiag >= PAR_THRESHOLD {
+        ejw.par_iter()
+            .map(|(coef, gword)| term_val(coef, gword))
+            .reduce(|| f(0), |x, y| Float::with_val(PREC, x + y))
+    } else {
+        let mut num = f(0);
+        for (coef, gword) in &ejw {
+            num += &term_val(coef, gword);
+        }
+        num
+    };
 
     // ---- denominator: closure of e_{cN} alone on cN strands ----
     let mut den = f(0);
