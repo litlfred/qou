@@ -2516,6 +2516,20 @@ export const references: CSLData[] = [
     URL: "https://arxiv.org/abs/quant-ph/0511096",
   }),
 
+  // ── Arora-Barak 2009: complexity textbook (NP ⊆ P^#P) ─────────
+  ref({
+    id: "arora2009",
+    type: "book",
+    title: "Computational Complexity: A Modern Approach",
+    author: [
+      { family: "Arora", given: "S." },
+      { family: "Barak", given: "B." },
+    ],
+    publisher: "Cambridge University Press",
+    issued: { "date-parts": [[2009]] },
+    DOI: "10.1017/CBO9780511804090",
+  }),
+
   // ── Wigner 1960: Unreasonable effectiveness ───────────────────
   ref({
     id: "wigner1960",

@@ -105,4 +105,93 @@ theorem nontorsion_of_one_lt {q : ℝ} (hq : 1 < q) :
   intro n hn
   exact ne_of_gt (one_lt_pow₀ hq hn)
 
+/-! ## The cited complexity layer and the counting–decision gap
+
+Everything citable about hardness at $q_0$ concerns **counting**:
+Jaeger--Vertigan--Welsh give $\#\mathrm{P}$-hardness of exact Jones
+evaluation away from the lattice roots of unity, and the textbook
+inclusion $\mathrm{NP} \subseteq \mathrm{P}^{\#\mathrm{P}}$ makes
+$\mathrm{FP} = \#\mathrm{P} \Rightarrow \mathrm{P} = \mathrm{NP}$.
+Lean has no complexity-theory library, so these are carried as a
+**cited hypothesis class** — never proved, never instantiated (a
+fabricated instance would launder literature into a Lean proof; per
+AGENTS.md §Axiomatization is NOT a Proof).  The theorems below are
+sorry-free *given* the class, and isolate exactly what a proof of the
+conjecture must add. -/
+
+/-- **Cited complexity layer** (hypotheses, not theorems of this
+    development).  All four parameters are opaque `Prop`s:
+    `semisimple` = $H_n(q_0)$ is semisimple (no radical pruning of the
+    resolution tree), `JonesInFP` = exact Jones evaluation at $q_0$ is
+    polynomial-time, `FPeqSharpP` = $\mathrm{FP} = \#\mathrm{P}$,
+    `PeqNP` = $\mathrm{P} = \mathrm{NP}$.  **No instance is declared**:
+    the fields are established literature results that Lean cannot
+    currently express, carried honestly in the type. -/
+class JonesComplexityCitations
+    (semisimple JonesInFP FPeqSharpP PeqNP : Prop) : Prop where
+  /-- Jaeger--Vertigan--Welsh: at a semisimple (non-root-of-unity)
+      parameter, exact Jones evaluation is $\#\mathrm{P}$-hard — so a
+      polynomial-time evaluator collapses $\mathrm{FP} = \#\mathrm{P}$.
+
+      Ref: [jaeger1990] https://doi.org/10.1017/S0305004100068936 -/
+  jvw_sharp_p_hard : semisimple → JonesInFP → FPeqSharpP
+  /-- $\mathrm{NP} \subseteq \mathrm{P}^{\#\mathrm{P}}$: if counting is
+      easy, decision is easy.
+
+      Ref: [arora2009] https://doi.org/10.1017/CBO9780511804090 -/
+  counting_dominates_decision : FPeqSharpP → PeqNP
+
+variable {semisimple JonesInFP FPeqSharpP PeqNP : Prop} {r : ℝ}
+
+/-- $\mathrm{FP} \neq \#\mathrm{P}$ is the *weaker* separation:
+    it already follows from $\mathrm{P} \neq \mathrm{NP}$ (sorry-free
+    given the cited layer). -/
+theorem counting_sep_of_decision_sep
+    [C : JonesComplexityCitations semisimple JonesInFP FPeqSharpP PeqNP] :
+    ¬PeqNP → ¬FPeqSharpP :=
+  mt C.counting_dominates_decision
+
+/-- **Composition (sorry-free modulo citations).**  Given the
+    residue–semisimplicity bridge (the open front (a), tracked as its
+    own epic), a surviving residue makes polynomial-time exact Jones
+    evaluation collapse $\mathrm{FP} = \#\mathrm{P}$. -/
+theorem intractability_of_residual_ne_zero
+    [C : JonesComplexityCitations semisimple JonesInFP FPeqSharpP PeqNP]
+    (bridge : r ≠ 0 → semisimple) (hr : r ≠ 0) :
+    JonesInFP → FPeqSharpP :=
+  C.jvw_sharp_p_hard (bridge hr)
+
+/-- **Companion (counting) faithfulness — provable, unlike the
+    $\mathrm{P} \neq \mathrm{NP}$ faithfulness.**  Given
+    $\mathrm{FP} \neq \#\mathrm{P}$ and the bridge, a surviving residue
+    forces exact Jones evaluation at $q_0$ out of $\mathrm{FP}$. -/
+theorem counting_faithfulness
+    [C : JonesComplexityCitations semisimple JonesInFP FPeqSharpP PeqNP]
+    (bridge : r ≠ 0 → semisimple) (hFP : ¬FPeqSharpP) (hr : r ≠ 0) :
+    ¬JonesInFP :=
+  fun hJ => hFP (C.jvw_sharp_p_hard (bridge hr) hJ)
+
+/-- **Isolation of the open kernel.**  The conjectured faithfulness
+    ($\mathrm{res} \neq 0 \Rightarrow \mathrm{P} \neq \mathrm{NP}$)
+    follows from the cited layer + bridge + **two open inputs**, and
+    this theorem exists to display them:
+
+    * `hFP` — the counting separation $\mathrm{FP} \neq \#\mathrm{P}$
+      itself (open; weaker than $\mathrm{P} \neq \mathrm{NP}$ by
+      `counting_sep_of_decision_sep`), and
+    * `transfer` — a counting$\to$decision transfer
+      ($\text{Jones} \notin \mathrm{FP} \Rightarrow
+       \mathrm{P} \neq \mathrm{NP}$), which **no known result
+      supplies**: $\#\mathrm{P}$-hardness of one invariant does not
+      imply $\mathrm{P} \neq \mathrm{NP}$.
+
+    Discharging these two hypotheses IS proving `conj:qou-p-neq-np`. -/
+theorem faithfulness_of_transfer
+    [C : JonesComplexityCitations semisimple JonesInFP FPeqSharpP PeqNP]
+    (bridge : r ≠ 0 → semisimple)
+    (hFP : ¬FPeqSharpP)
+    (transfer : ¬JonesInFP → ¬PeqNP)
+    (hr : r ≠ 0) : ¬PeqNP :=
+  transfer fun hJ => hFP (C.jvw_sharp_p_hard (bridge hr) hJ)
+
 end QOU.Information
