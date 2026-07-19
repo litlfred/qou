@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-07-19T17:28:09.673746+00:00",
-  "commitSha": "4bc68d9b6963d7ded16cd901d8c569e1ece00519",
+  "computedAt": "2026-07-19T17:35:55.225099+00:00",
+  "commitSha": "8a2e541858a8757d784c975daf75fb1c2c86c4f6",
   "assertions": [
     {
       "name": "counit_3crossing_matches_table",
@@ -33,8 +33,8 @@
   "durationMs": 0,
   "computation": "eunit-counit-mu0-tracing",
   "scriptFile": "eunit_counit_mu0_tracing_probe.py",
-  "scriptHash": "d9434a2a1fee",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "b4ce1b9b91dd",
+  "scriptCommitSha": "8a2e541858a8757d784c975daf75fb1c2c86c4f6",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
