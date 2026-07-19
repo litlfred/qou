@@ -19,6 +19,25 @@ export default remark({
   authorNotes: [
     {
       kind: "note",
+      date: "2026-07-19",
+      body:
+        "The block's DERIVATIVE claim `V'(θ) = −log(2 sin(θ/2))` is now " +
+        "Lean-proved sorry-free on both sides of the series↔integral bridge: " +
+        "integral side `QOU.Knot.hasDerivAt_clausen` (FTC) and series side " +
+        "`QOU.Knot.hasDerivAt_cl_2` (Abel-regularised assembly closing the " +
+        "term-by-term derivative of `Cl_2`), with the classical Zagier bridge " +
+        "itself machine-proved as `QOU.Knot.clausen_eq_series` " +
+        "(`QOU/Knot/Clausen.lean`, 14 sorry-free theorems; PR #3787). Combined " +
+        "with `saddle_critical_point` (2026-07-13 note below), the full " +
+        "critical-point analysis `V'(θ) = 0 ⟺ θ = π/3` is machine-checked. " +
+        "The VALUE `V(π/3) = Cl₂(π/3)` (hence `Vol(4₁) = 2 Cl₂(π/3)`) remains " +
+        "narrative — no elementary closed form exists (it is the " +
+        "ideal-tetrahedron volume; transcendental), tracked in bean qou-44ma. " +
+        "This also does NOT discharge the 4₁ volume-conjecture sorry (saddle " +
+        "existence/value, Andersen–Hansen/Ohtsuki).",
+    },
+    {
+      kind: "note",
       date: "2026-07-13",
       body:
         "The central saddle critical-point claim of this block — `V'(θ) = " +
