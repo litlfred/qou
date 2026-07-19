@@ -401,18 +401,19 @@ theorem LiTwo_duplication (x : ℝ) (hx : |x| < 1) :
   rw [hfun] at hodd
   exact hodd.unique hhalf
 
-/-- **Euler reflection** `Li₂(x) + Li₂(1-x) = π²/6 - ln x · ln(1-x)` for
-    `x ∈ (0,1)`.  Classical (Lewin, *Polylogarithms and Associated Functions*,
-    1981).  **Queued formalization — not discharged.** Unlike the duplication
-    identity this is not a power-series manipulation: it requires the derivative
-    `d/dx Li₂(x) = -ln(1-x)/x` (a `HasDerivAt` of the `LiTwo` tsum) plus the
-    fundamental theorem of calculus, for which Mathlib currently provides no
-    `Real.dilog`.  Stated here (the real proposition, `sorry` + `-- Ref:`) so the
-    target is auditable; discharging it awaits either a `HasDerivAt (LiTwo)`
-    development or an upstream `Real.dilog`. -/
+/-
+**Euler reflection** `Li₂(x) + Li₂(1-x) = π²/6 - ln x · ln(1-x)` for `x ∈ (0,1)`
+is now **PROVED sorry-free** in the downstream module
+`QOU.Archimedean.DilogReflection` as `LiTwo_reflection'`.  The proof required
+building the dilogarithm derivative `d/dx Li₂(x) = -ln(1-x)/x` (a `HasDerivAt`
+of the `LiTwo` tsum, which Mathlib lacks — no `Real.dilog`), Abel's limit
+theorem, continuity of `Li₂` at 0, and `ln x·ln(1-x) → 0`.  That development
+lives downstream because it needs the heavy analytic imports
+(`Mathlib.Analysis.Complex.AbelLimit`, `SmoothSeries`, `MeanValue`,
+`Pow.Asymptotics`, `Log.NegMulLog`); folding them into this base file — imported
+by six modules — would bloat every consumer's dependency cone.  The formerly
+`sorry`-carrying stub here was removed 2026-07-19; use `LiTwo_reflection'`.
 -- Ref: [manuscript] Euler reflection formula; Lewin, "Polylogarithms and Associated Functions" (1981)
-theorem LiTwo_reflection (x : ℝ) (hx0 : 0 < x) (hx1 : x < 1) :
-    LiTwo x + LiTwo (1 - x) = Real.pi ^ 2 / 6 - Real.log x * Real.log (1 - x) := by
-  sorry
+-/
 
 end QOU.QPochhammer
