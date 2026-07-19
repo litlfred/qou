@@ -31,7 +31,7 @@ export default chapter({
     section({
       title: "Positioning against canonical quantum-gravity programmes",
       label: "sec:gravity-spacetime-lqg-comparison",
-      blocks: ["intro-gravity-spacetime-lqg-comparison", "lqg-adm-ashtekar-comparison", "lqg-entropy-qdim-partition-pole", "outro-gravity-spacetime"],
+      blocks: ["intro-gravity-spacetime-lqg-comparison", "lqg-adm-ashtekar-comparison", "lqg-adm-ashtekar-advantages", "lqg-adm-ashtekar-limitations", "lqg-entropy-qdim-partition-pole", "outro-gravity-spacetime"],
     }),
   ],
 });
