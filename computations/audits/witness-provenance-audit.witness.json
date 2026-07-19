@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-19T03:10:16.085463+00:00",
-  "commitSha": "0f3335b38f3939f0e021462dc87a9ab73cde1ee1",
+  "computedAt": "2026-07-19T03:20:43.420385+00:00",
+  "commitSha": "a8fef6c30bd344be50eaec189ed0b7a5cc08f9f7",
   "assertions": [
     {
       "name": "no_missing_provenance",
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 14,
+  "durationMs": 11,
   "computation": "witness-provenance-audit",
   "scriptFile": "witness_provenance_audit.py",
   "scriptHash": "2c77ad98e8f6",
@@ -48,13 +48,13 @@
   },
   "data": {
     "counts": {
-      "total_scanned": 2051,
-      "prov_ok": 1924,
+      "total_scanned": 2066,
+      "prov_ok": 1940,
       "prov_audit_exempt": 60,
-      "prov_exempt_no_reader": 63,
+      "prov_exempt_no_reader": 62,
       "prov_missing": 3,
       "prov_parse_error": 1,
-      "completeness_ratio": 0.9980497318381277
+      "completeness_ratio": 0.9980638915779284
     },
     "by_verdict": {
       "PROV_OK": [
@@ -399,6 +399,10 @@
           "missing_fields": []
         },
         {
+          "witness": "alpha-em-f-t4-weight-value-transport.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "alpha-em-fibre-Dzeta-shared-wall-test.witness.json",
           "missing_fields": []
         },
@@ -495,11 +499,23 @@
           "missing_fields": []
         },
         {
+          "witness": "bring-genus4-epstein-theta-factorized.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "bring-genus4-polarized-epstein-detprime.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "bring-polarized-epstein-determinant.witness.json",
           "missing_fields": []
         },
         {
           "witness": "bring-polarized-jacobian-determinant.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "bring-polarized-q-dictionary-endpoint-blindness.witness.json",
           "missing_fields": []
         },
         {
@@ -3179,6 +3195,10 @@
           "missing_fields": []
         },
         {
+          "witness": "joint-tower-sdp-rust.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "jones-markov-atlas-all-atoms.witness.json",
           "missing_fields": []
         },
@@ -4867,6 +4887,10 @@
           "missing_fields": []
         },
         {
+          "witness": "hecke-h4-nf-table-preflight.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "hecke-log-decomposition-probe.witness.json",
           "missing_fields": []
         },
@@ -5235,6 +5259,18 @@
           "missing_fields": []
         },
         {
+          "witness": "qbeta-5two-dilog-qsqrt7-closed-form.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "qbeta-5two-habiro-archimedean-action-setup.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "qbeta-5two-habiro-tail-barodd-action.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "qbeta-5two-higher-cable-qstar.witness.json",
           "missing_fields": []
         },
@@ -5256,6 +5292,14 @@
         },
         {
           "witness": "qbeta-5two-n3-cable-arbitration.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "qbeta-5two-phi-odd-oneloop-vanishing.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "qbeta-5two-phi-odd-twoloop-ansatz.witness.json",
           "missing_fields": []
         },
         {
@@ -5284,6 +5328,10 @@
         },
         {
           "witness": "qbeta-5two-stokes-barodd-index.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "qbeta-5two-theorem3-shape-u.witness.json",
           "missing_fields": []
         },
         {
@@ -5380,6 +5428,10 @@
         },
         {
           "witness": "qbeta-g3-5two-stokes-sandwich.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "qbeta-g3-5two-wall-crossing-barpair.witness.json",
           "missing_fields": []
         },
         {
@@ -6247,6 +6299,14 @@
           "missing_fields": []
         },
         {
+          "witness": "qbeta-dladder-fibre-branch-stokes-ambiguity.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "qbeta-dladder-fibre-two-action.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "qbeta-dladder-generating-function-structure.witness.json",
           "missing_fields": []
         },
@@ -6288,6 +6348,10 @@
         },
         {
           "witness": "qbeta-dladder-qborel-leroy-resummation.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "qbeta-dladder-single-instanton-extraction.witness.json",
           "missing_fields": []
         },
         {
@@ -7757,8 +7821,9 @@
       ],
       "PROV_MISSING": [
         {
-          "witness": "joint-tower-sdp-rust.witness.json",
+          "witness": "canonical-mass-table-242ppb.witness.json",
           "missing_fields": [
+            "engine",
             "scriptFile",
             "commitSha"
           ]
@@ -8057,14 +8122,6 @@
         },
         {
           "witness": "bring-coordinate-linking-weight-probe.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "canonical-mass-table-242ppb.witness.json",
           "missing_fields": [
             "engine",
             "scriptFile",
