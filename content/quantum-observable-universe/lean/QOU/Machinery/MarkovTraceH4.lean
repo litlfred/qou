@@ -98,11 +98,25 @@ theorem trM_markov_σ2 (z h : R) (v : Fin 24 → R) (z1 : v 1 = 0) (z4 : v 4 = 0
 /-- **(M2) Trace cyclicity** `tr_M(u·v) = tr_M(v·u)` — the defining trace property.
     Machine-validated in the compute infra
     (`computations/markov/hecke_regular_nf_table.py`, `self_validate`: cyclicity holds
-    on all sampled pairs, alongside the Hecke + braid + commutation relations).  The
-    brute-force `simp`/`ring` expansion is infeasible at `Fin 24` (48 variables,
-    depth-6 `mulσ` compositions — heartbeat timeout); a structural proof (bilinearity
-    ⇒ reduce to the `24²` basis identities, or an abstract trace argument) is the
-    follow-up.  Held as an honest `sorry`, not a vacuous `True`. -/
+    on all sampled pairs, alongside the Hecke + braid + commutation relations).
+
+    Formalization status (tactic study 2026-07-19, bean `qou-g6vb`, audit
+    `docs/audits/2026-07-19-h4-cyclicity-whnf-explosion.md`): the obstruction is a
+    **kernel/elaborator `whnf` explosion**, not merely a `ring`-size issue.  The
+    bilinearity reduction *does* isolate each side into 24 per-word functionals
+    `tr_M(W_j u)` (linearity is cheap), but evaluating a single `W_j` — a depth-≤6
+    composition of the `mulσ` `![…]`-vectors — already times out: the top-down
+    `Matrix.cons` indexing re-derives inner-word entries per outer index
+    (exponential, non-memoized).  Six strategies were shown infeasible (brute
+    `simp`; per-word `simp`; per-word `rfl`; incremental `have`-chain `rfl`;
+    incremental `fin_cases`; all at ≥200k, one at 4M heartbeats).  The tractable
+    path is a representation change — re-encode the generator right-actions as
+    concrete `Matrix (Fin 24) (Fin 24) R` and evaluate via
+    `Mathlib.Data.Matrix.Reflection` (List-fold, not `Fin.sum_univ_succ`), or an
+    abstract regular-representation trace argument (`tr(AB)=tr(BA)` on left-mult
+    operators).  The reflection route needs the `Matrix.Notation` olean, absent
+    from the sandbox cache, so it awaits a full-build session.  Held as an honest
+    `sorry`, not a vacuous `True`. -/
 -- Ref: [manuscript] §mass-theory (H₄ Markov trace); compute hecke_regular_nf_table.py self_validate
 theorem trM_cyclic (z h : R) (u v : Fin 24 → R) :
     trM z h (mulNF h u v) = trM z h (mulNF h v u) := by
