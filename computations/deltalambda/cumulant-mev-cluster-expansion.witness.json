@@ -1,0 +1,87 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-07-19T13:38:52.488236+00:00",
+  "commitSha": "0faae5a69238cee2b346a2c8b36d0c10076568cd",
+  "assertions": [
+    {
+      "name": "deuteron_pair_order_matches_AME_6dig",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "linear_and_log_are_different_orders",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "He4_many_body_remainder_positive",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "cumulant-mev-cluster-expansion",
+  "scriptFile": "cumulant_mev_cluster_expansion_probe.py",
+  "scriptHash": "ad6bcec92ee1",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "mpmath": "1.4.1"
+  },
+  "description": "Item 1: the cumulant->MeV map is a cluster expansion — the deuteron's LINEAR B=√5·E_unit·ladder is the pair order, the He4-local LOG b₄=−ln det is a connected many-body order; same E_unit anchor. Resolves the #4093 'linear-vs-log inconsistency' as a category error (pair term vs 4-body cumulant; 5g linear vs -ln det2 ~ g^2 quadratic). Deuteron pair-order matches AME to 6 digits; 4He = 6 pair terms + many-body (b3+b4) remainder. Does not derive E_unit or close the b4 magnitude. Forward, no fit, audit-only.",
+  "contentBlock": "rem:ohtsuki-tower-bar-parity",
+  "audit_only": true,
+  "tier": "structural reconciliation (corpus-documented deuteron law + exact cluster arithmetic)",
+  "result": {
+    "shared_anchor_E_unit_MeV": "0.99594",
+    "E_unit_status": "the ONE open dimensional anchor (provenance audit §2e); used here as the shared MeV unit across cluster orders, NOT fitted.",
+    "cluster_expansion": "B(K) = E_unit * [ Σ_pairs (linear pair term) + Σ_{k>=3} b_k (connected k-body cumulants) ]",
+    "V1_deuteron_pair_order_linear": {
+      "sqrt5_E_unit_ladder_MeV": "2.224566787",
+      "AME_2H_MeV": "2.224566",
+      "matches_AME_6dig": true,
+      "note": "the ladder (1 - x/10 + 3x^2/200) fixes the +0.41% that bare 5g=2.2336 carries."
+    },
+    "V2_category_error_different_orders": {
+      "pair_order_5g": "2.2336353",
+      "cumulant_b2_minus_ln_det": "0.22260004",
+      "leading_cumulant_is_g_squared": "0.19956507",
+      "ratio_5g_over_b2": "10.0343",
+      "different_orders_confirmed": true,
+      "note": "5g is LINEAR in g (pair order); -ln det2 ~ g^2 is QUADRATIC (4-body cumulant). Different powers => different cluster orders, not a normalization mismatch. This is the #4093 category error, resolved."
+    },
+    "V3_He4_cluster_structure": {
+      "pair_additive_baseline_MeV": "13.347396",
+      "AME_4He_MeV": "28.295673",
+      "many_body_remainder_MeV": "14.948277",
+      "rho4_pair_baseline": 6,
+      "rho4_observed": "12.7196",
+      "many_body_positive": true,
+      "note": "4He = 6 pair terms (13.35 MeV) + connected many-body (b3+b4, ~15 MeV), with b4 the #4084 near-pole enhancement; same E_unit. Coheres with observed rho4~13 >> 6."
+    },
+    "verdict": {
+      "classification": "RESOLUTION (forward, no new fit) — the #4093 cumulant->MeV 'inconsistency' is a category error; linear (pair) and log (many-body) are different orders of one cluster expansion with a single E_unit anchor.",
+      "still_open": "E_unit itself (the dimensional anchor, provenance §2e) and the b4 magnitude (#4084) remain open; this fixes the FRAMEWORK, not those two.",
+      "no_fit": true
+    }
+  },
+  "context": {
+    "axis": "Δ_λ magnitude — cumulant→MeV map (Item 1, bean qou-4uk9)",
+    "builds_on": "PR #4093 (regulator wall) + #4084 (b4 ss-pole)",
+    "provenance": "docs/audits/2026-07-06-reeb-flow-pn-magnitude-provenance-and-1four-extension.md §2e/§3",
+    "q0_convention": "muon-canonical (computations/ layer)",
+    "no_fit": true
+  },
+  "auditOnly": true
+}
