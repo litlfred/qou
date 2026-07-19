@@ -1,6 +1,8 @@
 import Mathlib.Algebra.BigOperators.Pi
 import Mathlib.Algebra.BigOperators.Fin
 import Mathlib.Tactic.Ring
+import Mathlib.LinearAlgebra.Matrix.Trace
+import Mathlib.Algebra.Algebra.Hom
 
 /-!
 # Abstract bilinear-trace cyclicity: cyclic ⟺ Gram-symmetric
@@ -50,7 +52,6 @@ theorem B_sum_left (hBaddl : ∀ u u' v, B (u + u') v = B u v + B u' v)
 
 /-- `B u ·` commutes with finite sums in the right argument. -/
 theorem B_sum_right (hBaddr : ∀ u v v', B u (v + v') = B u v + B u v')
-    (hBsmulr : ∀ (c : R) u v, B u (c • v) = c • B u v)
     (u : ι → R) (s : Finset ι) (f : ι → (ι → R)) :
     B u (∑ j ∈ s, f j) = ∑ j ∈ s, B u (f j) := by
   have hBzeror : B u 0 = 0 := by
@@ -61,7 +62,6 @@ theorem B_sum_right (hBaddr : ∀ u v v', B u (v + v') = B u v + B u v')
 
 /-- `τ` commutes with finite sums (additivity). -/
 theorem tau_sum (hτadd : ∀ u v, τ (u + v) = τ u + τ v)
-    (hτsmul : ∀ (c : R) v, τ (c • v) = c * τ v)
     (s : Finset ι) (f : ι → (ι → R)) :
     τ (∑ i ∈ s, f i) = ∑ i ∈ s, τ (f i) := by
   have hτzero : τ (0 : ι → R) = 0 := by
@@ -80,7 +80,7 @@ theorem tau_B_left_expand
     (u v : ι → R) :
     τ (B u v) = ∑ i, u i * τ (B (e i) v) := by
   conv_lhs => rw [basis_decomp u]
-  rw [B_sum_left B hBaddl hBzerol, tau_sum τ hτadd hτsmul]
+  rw [B_sum_left B hBaddl hBzerol, tau_sum τ hτadd]
   refine Finset.sum_congr rfl (fun i _ => ?_)
   rw [hBsmull, hτsmul]
 
@@ -93,7 +93,7 @@ theorem tau_B_right_expand
     (w v : ι → R) :
     τ (B w v) = ∑ j, v j * τ (B w (e j)) := by
   conv_lhs => rw [basis_decomp v]
-  rw [B_sum_right B hBaddr hBsmulr, tau_sum τ hτadd hτsmul]
+  rw [B_sum_right B hBaddr, tau_sum τ hτadd]
   refine Finset.sum_congr rfl (fun j _ => ?_)
   rw [hBsmulr, hτsmul]
 
@@ -135,5 +135,52 @@ theorem cyclic_of_gram_symm
   rw [hsymm y x]; ring
 
 end Reduction
+
+/-! ## Character route to Gram symmetry (bricks toward the all-`n` closure)
+
+The `whnf`-free reduction above leaves the finite Gram symmetry itself. The
+light, level-agnostic way to discharge it: a Markov/Ocneanu trace on a
+semisimple algebra is a nonnegative combination of irreducible **characters**
+`tr_M = ∑_λ w_λ · χ_λ`, and every character `χ_λ = trace ∘ ρ_λ` is cyclic for
+free via `Matrix.trace_mul_comm`. These bricks build that argument abstractly;
+the remaining keystone is the concrete decomposition (the `ρ_λ`, e.g. Hoefsmit /
+seminormal reps of `H_n(q)`, and the weights `w_λ`), which supplies the `∑`. -/
+
+section Character
+
+variable {A : Type*} [Ring A] [Algebra R A]
+
+/-- A functional `τ : A → R` is **cyclic** (a trace) if `τ (x·y) = τ (y·x)`. -/
+def IsCyclic (τ : A → R) : Prop := ∀ x y : A, τ (x * y) = τ (y * x)
+
+/-- **Brick — characters are cyclic.** The trace of any matrix representation
+`ρ : A →ₐ[R] Matrix n n R` is a cyclic functional (`Matrix.trace_mul_comm`). -/
+theorem isCyclic_trace_comp {n : Type*} [Fintype n] [DecidableEq n]
+    (ρ : A →ₐ[R] Matrix n n R) : IsCyclic (R := R) (fun x => (ρ x).trace) := by
+  intro x y
+  simp only [map_mul]
+  rw [Matrix.trace_mul_comm]
+
+/-- **Brick — cyclic functionals are closed under `+`.** -/
+theorem IsCyclic.add {σ τ : A → R} (hσ : IsCyclic σ) (hτ : IsCyclic τ) :
+    IsCyclic (fun x => σ x + τ x) := by
+  intro x y; show σ (x * y) + τ (x * y) = σ (y * x) + τ (y * x); rw [hσ x y, hτ x y]
+
+/-- **Brick — cyclic functionals are closed under a scalar multiple.** -/
+theorem IsCyclic.smul {τ : A → R} (c : R) (hτ : IsCyclic τ) :
+    IsCyclic (fun x => c * τ x) := by
+  intro x y; show c * τ (x * y) = c * τ (y * x); rw [hτ x y]
+
+/-- **Brick — a finite weighted sum of cyclic functionals is cyclic.** This is
+the shape of `tr_M = ∑_λ w_λ · χ_λ`: given each `χ_λ` cyclic (the previous
+bricks), the Markov trace is cyclic, hence Gram-symmetric. -/
+theorem isCyclic_weighted_sum {κ : Type*} (s : Finset κ) (w : κ → R) (χ : κ → A → R)
+    (hχ : ∀ k ∈ s, IsCyclic (χ k)) :
+    IsCyclic (fun x => ∑ k ∈ s, w k * χ k x) := by
+  intro x y
+  show ∑ k ∈ s, w k * χ k (x * y) = ∑ k ∈ s, w k * χ k (y * x)
+  exact Finset.sum_congr rfl (fun k hk => by rw [hχ k hk x y])
+
+end Character
 
 end QOU.Machinery.BilinearTrace
