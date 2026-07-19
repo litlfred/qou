@@ -1,0 +1,124 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-07-19T06:30:23.751292+00:00",
+  "commitSha": "a0be9c3252815f72a59c2b44179bb1fc6f56eb88",
+  "assertions": [
+    {
+      "name": "g_reeb_eq_deformed_criticality",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "g_reeb_on_deformed_ss_pole",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "g_below_classical_ceiling_artifact",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "sqrt5_modes_species_symmetric",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "pauli_intrapair_p_is_eigenvector",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "pauli_sector_finite",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "b4-deformed-sspole-sector",
+  "scriptFile": "b4_deformed_sspole_sector_probe.py",
+  "scriptHash": "71b12c89ab27",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "mpmath": "1.4.1"
+  },
+  "description": "The derived b_4 magnitude g_reeb=1/sqrt(1+[2]_v^2) sits EXACTLY on the q-deformed A=4 ss-sector determinant pole ((1+[2]_v^2)g^2=1), and the pole lives in the species-SYMMETRIC (non-Pauli, alpha-condensation) sector while the Pauli intra-pair sector (lam=+-1) stays finite. Resolves 'icosahedral lead overshoots the ceiling' (no sub-ceiling entry -- m is on the deformed boundary) and re-scopes the open b_4 object from 'the scalar m' to 'the pole regulator'. scope-(b) facts + scope-(a) construction negative; no fit, audit-only.",
+  "contentBlock": "rem:ohtsuki-tower-bar-parity",
+  "audit_only": true,
+  "tier": "structural (exact deformed-criticality identity + eigen-sector decomposition; no fit)",
+  "result": {
+    "fact1_derived_magnitude_on_deformed_ss_pole": {
+      "q0": "1.10997859555733471",
+      "two_v_balanced": "2.00272236446270199",
+      "g_reeb": "0.446727067798147204",
+      "g_reeb_eq_deformed_criticality_1_over_sqrt_1p2v2": true,
+      "classical_ceiling_1_over_sqrt5": "0.447213595499957939",
+      "g_below_classical_ceiling": true,
+      "classical_gap_artifact": "0.000486528",
+      "deformed_ss_pole_residual_(1p2v2)g2_minus_1": "0.0",
+      "on_deformed_pole": true,
+      "classical_ss_factor_1_minus_5g2": "0.0021746345",
+      "deformed_ss_factor_1_minus_(1p2v2)g2": "0.0",
+      "reading": "g_reeb is EXACTLY the deformed A=4 ss-sector eigenvalue-criticality (1+[2]_v^2)g^2=1, not merely below the classical 1/sqrt5 ceiling; the 4.9e-4 sub-ceiling gap is the classical(integer-5)-vs-deformed artifact. Hence Vector 2 has no sub-ceiling icosahedral entry to select as m: the physical m sits ON the deformed boundary."
+    },
+    "fact2_pole_in_species_symmetric_non_pauli_sector": {
+      "K4_ppnn_spectrum": [
+        "-2.236068",
+        "-1.0",
+        "1.0",
+        "2.236068"
+      ],
+      "pauli_intrapair_modes_are_eigenvectors": {
+        "p_intrapair_antisym (1,-1,0,0)": {
+          "rayleigh": "-1.0",
+          "is_eigenvector": true
+        },
+        "n_intrapair_antisym (0,0,1,-1)": {
+          "rayleigh": "1.0",
+          "is_eigenvector": true
+        }
+      },
+      "sqrt5_eigenvectors_are_species_symmetric": true,
+      "pauli_sector_factor_1_minus_g2": "0.8004349269",
+      "pauli_sector_b_finite": "0.2226000404",
+      "reading": "lam=+-sqrt5 are the species-SYMMETRIC (pp-sym, nn-sym) center-of-mass modes (the ss-sector that carries the pole); lam=+-1 are the Pauli-required intra-pair antisymmetric modes, FINITE at m=g_reeb. The divergent factor is the NON-Pauli species-symmetric (alpha-condensation) mode."
+    },
+    "consequence_single_scalar_determinant_diverges": {
+      "full_det_classical_integer5": "0.0017406534",
+      "full_b_classical_shadow": "6.3534947",
+      "full_det_deformed": "0.0",
+      "full_b_deformed": "+inf (deformed ss factor = 0)",
+      "reading": "single-scalar b_4 = -ln det(I+g_reeb S) diverges (deformed) / is a large classical shadow -- this IS the #3952 4He overshoot and the bareven-probe rho4-forces-rho3 failure. The b_4 SCALAR m=g_reeb is found; the open object is the pole REGULATOR of the alpha-condensation mode, not the scalar."
+    },
+    "verdict": {
+      "classification": "scope-(b) structural facts + scope-(a) construction negative.",
+      "scope_b_facts": "(1+[2]_v^2)g_reeb^2 = 1 exactly (deformed ss-criticality); the K4 writhe +-sqrt5 modes are species-symmetric and +-1 are Pauli intra-pair -- both proved invariants, AME-independent.",
+      "scope_a_negative": "the single-scalar full-determinant b_4 = -ln det(I+g_reeb S) construction, alone, diverges at the derived magnitude and cannot give a finite 4He binding; it needs a pole regulator. Does NOT exclude the per-bond factor g_reeb (permanence: deuteron +0.41%).",
+      "vector2_rescoped": "icosahedral-entry = m REFUTED: no sub-ceiling entry exists to select because m sits on the deformed boundary; the icosahedral 'overshoot' is the classical shadow of the exact deformed pole.",
+      "no_fit": true
+    }
+  },
+  "context": {
+    "axis": "Delta_lambda magnitude wall -- b_4 scalar m (Vector 2 re-scope)",
+    "attack_vector_map": "docs/audits/2026-07-18-deltalambda-attack-vector-map.md",
+    "provenance": "docs/audits/2026-07-06-reeb-flow-pn-magnitude-provenance-and-1four-extension.md",
+    "q0_convention": "muon-canonical (computations/ layer)",
+    "no_fit": true
+  },
+  "auditOnly": true
+}
