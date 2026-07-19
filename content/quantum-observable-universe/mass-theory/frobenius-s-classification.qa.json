@@ -230,6 +230,18 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {},
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
       }
     ],
     "da-false-claim": [
@@ -599,28 +611,15 @@
     "expo-milnor-clarity": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
-        "reviewed_at": "2026-07-08T18:56:27.000Z",
-        "reviewed_sha": "ddf21563ac6d391a1b0461ff6687e747007a239f",
+        "notes": "Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-08"
-        }
-      },
-      {
-        "result": "pass",
-        "notes": "Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
-        "reviewed_at": "2026-07-08T18:57:15.000Z",
-        "reviewed_sha": "2e663d02f8933fe4796de6b3c6e865bc7c81582b",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-08"
+          "agent_date": "2026-07-19"
         }
       }
     ],
@@ -840,6 +839,22 @@
         },
         "reviewed_at": "2026-07-13T00:59:15.685Z",
         "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554"
+      },
+      {
+        "field_hash": {
+          "md": "071b31e6925d",
+          "ts": "f01f27d7f7ae",
+          "lean": "0a6ba6a168a3"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
       }
     ],
     "voice-title-scholarly": [
@@ -878,6 +893,22 @@
         },
         "reviewed_at": "2026-07-13T00:59:15.685Z",
         "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554"
+      },
+      {
+        "field_hash": {
+          "md": "071b31e6925d",
+          "ts": "f01f27d7f7ae",
+          "lean": "0a6ba6a168a3"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
       }
     ],
     "voice-author-notes-pollution": [

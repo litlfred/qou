@@ -144,6 +144,22 @@
         },
         "reviewed_at": "2026-07-13T00:59:15.685Z",
         "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554"
+      },
+      {
+        "field_hash": {
+          "md": "f118559f0111",
+          "ts": "7b2eea85c89c",
+          "lean": "a774e36eb26c"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
       }
     ],
     "voice-title-scholarly": [
@@ -182,6 +198,22 @@
         },
         "reviewed_at": "2026-07-13T00:59:15.685Z",
         "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554"
+      },
+      {
+        "field_hash": {
+          "md": "f118559f0111",
+          "ts": "7b2eea85c89c",
+          "lean": "a774e36eb26c"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
       }
     ],
     "voice-author-notes-pollution": [
@@ -1111,6 +1143,22 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "cee070bb785e",
+          "ts": "7b2eea85c89c",
+          "lean": "a774e36eb26c"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
       }
     ],
     "wall-side-statement": [
@@ -2021,15 +2069,15 @@
     "expo-milnor-clarity": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound categorization successfully structuring empirical limits cleanly into complex physical states.",
-        "reviewed_at": "2026-07-08T14:59:30.000Z",
-        "reviewed_sha": "227da360a893fca857a801004b6ae936ce5840fd",
+        "notes": "Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-08"
+          "agent_date": "2026-07-19"
         }
       }
     ],

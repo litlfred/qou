@@ -1,21 +1,22 @@
 {
   "audit": "lean-vacuity-axiom-audit",
-  "generated": "2026-07-12T21:08:39.032Z",
+  "generated": "2026-07-19T17:20:11.021Z",
   "script": "content/pipeline/lean-vacuity-axiom-audit.ts",
-  "scanned_files": 1990,
-  "files_flagged": 104,
-  "total_defects": 43,
+  "scanned_files": 1961,
+  "files_flagged": 105,
+  "total_defects": 44,
   "total_exempt": 82,
   "categories": {
     "proof-no-self-assuming-projection": 5,
     "proof-no-trivial-true": 6,
     "proof-no-false-premise": 28,
+    "lean-import-after-content": 1,
     "proof-no-decide-masking": 1,
     "proof-no-provable-axiom": 2,
     "proof-claims-unencoded": 1
   },
   "conjecture_graph": {
-    "total": 231,
+    "total": 232,
     "primary": [
       {
         "name": "AeonRecycling",
@@ -873,6 +874,11 @@
         "line": 88
       },
       {
+        "name": "RealisationVolumeCompatibility",
+        "file": "content/quantum-observable-universe/lean/QOU/Archimedean/RealisationVolumeCompatibility.lean",
+        "line": 50
+      },
+      {
         "name": "RegularityBreakdown",
         "file": "content/quantum-observable-universe/appendix-surreals/surreal-squeeze.lean",
         "line": 43
@@ -1338,7 +1344,7 @@
     ],
     "content/quantum-observable-universe/lean/QOU/BraidKnot/JucysMurphy.lean": [
       {
-        "line": 106,
+        "line": 124,
         "category": "proof-no-false-premise",
         "pattern": "discharged-impossible-hyp",
         "snippet": "@[simp] theorem jucysMurphy_zero (n : ℕ) (h : 0 < n) :",
@@ -1346,7 +1352,7 @@
         "severity": "critical"
       },
       {
-        "line": 646,
+        "line": 1100,
         "category": "proof-no-false-premise",
         "pattern": "discharged-impossible-hyp",
         "snippet": "private lemma row_eq_offset_add_count {μ : YoungDiagram}",
@@ -2029,6 +2035,15 @@
         "pattern": "discharged-impossible-hyp",
         "snippet": "theorem zero_not_isAlgebraicallyPrime (q : ℝ) :",
         "decl": "zero_not_isAlgebraicallyPrime",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/IwahoriHecke/AvgCrossing.lean": [
+      {
+        "line": 56,
+        "category": "lean-import-after-content",
+        "pattern": "import-after-docstring-or-command",
+        "snippet": "import QOU.IwahoriHecke.Quotient",
         "severity": "critical"
       }
     ],

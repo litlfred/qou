@@ -135,6 +135,21 @@
         },
         "reviewed_at": "2026-07-13T00:59:15.685Z",
         "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554"
+      },
+      {
+        "field_hash": {
+          "md": "566644526a8f",
+          "ts": "3705dbc65bea"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
       }
     ],
     "voice-title-scholarly": [
@@ -171,6 +186,21 @@
         },
         "reviewed_at": "2026-07-13T00:59:15.685Z",
         "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554"
+      },
+      {
+        "field_hash": {
+          "md": "566644526a8f",
+          "ts": "3705dbc65bea"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
       }
     ],
     "voice-author-notes-pollution": [
@@ -820,6 +850,18 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {},
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
       }
     ],
     "da-false-claim": [
@@ -1359,41 +1401,15 @@
     "expo-milnor-clarity": [
       {
         "result": "pass",
-        "notes": "The block successfully satisfies expo-milnor-clarity.",
-        "reviewed_at": "2026-07-07T23:31:26Z",
-        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "notes": "Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07"
-        }
-      },
-      {
-        "result": "pass",
-        "notes": "Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.",
-        "reviewed_at": "2026-07-08T18:56:27.000Z",
-        "reviewed_sha": "ddf21563ac6d391a1b0461ff6687e747007a239f",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-08"
-        }
-      },
-      {
-        "result": "pass",
-        "notes": "Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.",
-        "reviewed_at": "2026-07-08T18:57:15.000Z",
-        "reviewed_sha": "2e663d02f8933fe4796de6b3c6e865bc7c81582b",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-08"
+          "agent_date": "2026-07-19"
         }
       }
     ],

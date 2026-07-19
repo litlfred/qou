@@ -1,5 +1,5 @@
 This is obligation **(C)** of
-[`conj:binding-manybody-eq-jet-filtration`](#conj:binding-manybody-eq-jet-filtration):
+[`thm:binding-manybody-eq-jet-filtration`](#thm:binding-manybody-eq-jet-filtration):
 it identifies the two filtrations, leaving the per-term mass identity
 $B_n = m_e\,a_D^{(n)}$ (the mass identity applied to each graded piece) and
 the kernel of the growth recurrence

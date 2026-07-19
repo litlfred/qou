@@ -1,11 +1,11 @@
 {
   "$schema": "block-qa/v1",
-  "label": "thm:binding-closure-conditional",
+  "label": "thm:binding-closure",
   "kind": "theorem",
   "paths": {
-    "ts": "../qou/content/quantum-observable-universe/mass-theory/binding-closure-conditional.ts",
-    "md": "../qou/content/quantum-observable-universe/mass-theory/binding-closure-conditional.md",
-    "lean": "../qou/content/quantum-observable-universe/mass-theory/binding-closure-conditional.lean"
+    "ts": "../qou/content/quantum-observable-universe/mass-theory/binding-closure.ts",
+    "md": "../qou/content/quantum-observable-universe/mass-theory/binding-closure.md",
+    "lean": "../qou/content/quantum-observable-universe/mass-theory/binding-closure.lean"
   },
   "source_hashes": {
     "md": "69e6d83d8caf",
@@ -144,6 +144,22 @@
         },
         "reviewed_at": "2026-07-13T00:59:15.685Z",
         "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554"
+      },
+      {
+        "field_hash": {
+          "md": "69e6d83d8caf",
+          "ts": "85e75c9b1c9f",
+          "lean": "9d859da88c03"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
       }
     ],
     "voice-title-scholarly": [
@@ -182,6 +198,22 @@
         },
         "reviewed_at": "2026-07-13T00:59:15.685Z",
         "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554"
+      },
+      {
+        "field_hash": {
+          "md": "69e6d83d8caf",
+          "ts": "85e75c9b1c9f",
+          "lean": "9d859da88c03"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
       }
     ],
     "voice-author-notes-pollution": [
@@ -1098,6 +1130,22 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "110d2f07a033",
+          "ts": "85e75c9b1c9f",
+          "lean": "9d859da88c03"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
       }
     ],
     "wall-side-statement": [
@@ -1117,7 +1165,7 @@
         "reviewed_at": "2026-07-07T14:26:56.831409Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean theorem statement matches the mathematical statement in the markdown file.",
-        "evidence": "content/quantum-observable-universe/mass-theory/binding-closure-conditional.lean:1 — Lean file exists",
+        "evidence": "content/quantum-observable-universe/mass-theory/binding-closure.lean:1 — Lean file exists",
         "severity": "minor"
       }
     ],
@@ -1317,7 +1365,7 @@
         "reviewed_at": "2026-07-07T14:26:56.831409Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-false-claim.",
-        "evidence": "content/quantum-observable-universe/mass-theory/binding-closure-conditional.ts:1",
+        "evidence": "content/quantum-observable-universe/mass-theory/binding-closure.ts:1",
         "severity": "minor"
       },
       {
@@ -1384,7 +1432,7 @@
         "reviewed_at": "2026-07-07T14:26:56.831409Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-circular.",
-        "evidence": "content/quantum-observable-universe/mass-theory/binding-closure-conditional.ts:1",
+        "evidence": "content/quantum-observable-universe/mass-theory/binding-closure.ts:1",
         "severity": "minor"
       },
       {
@@ -1451,7 +1499,7 @@
         "reviewed_at": "2026-07-07T14:26:56.831409Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-hidden-dof.",
-        "evidence": "content/quantum-observable-universe/mass-theory/binding-closure-conditional.ts:1",
+        "evidence": "content/quantum-observable-universe/mass-theory/binding-closure.ts:1",
         "severity": "minor"
       },
       {
@@ -1485,7 +1533,7 @@
         "reviewed_at": "2026-07-07T14:26:56.831409Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-non-sequitur.",
-        "evidence": "content/quantum-observable-universe/mass-theory/binding-closure-conditional.ts:1",
+        "evidence": "content/quantum-observable-universe/mass-theory/binding-closure.ts:1",
         "severity": "minor"
       },
       {
@@ -1552,7 +1600,7 @@
         "reviewed_at": "2026-07-07T14:26:56.831409Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-citation-misuse.",
-        "evidence": "content/quantum-observable-universe/mass-theory/binding-closure-conditional.ts:1",
+        "evidence": "content/quantum-observable-universe/mass-theory/binding-closure.ts:1",
         "severity": "minor"
       },
       {
@@ -1586,7 +1634,7 @@
         "reviewed_at": "2026-07-07T14:26:56.831409Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-definitional-ambiguity.",
-        "evidence": "content/quantum-observable-universe/mass-theory/binding-closure-conditional.ts:1",
+        "evidence": "content/quantum-observable-universe/mass-theory/binding-closure.ts:1",
         "severity": "minor"
       },
       {
@@ -1620,7 +1668,7 @@
         "reviewed_at": "2026-07-07T14:26:56.831409Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-empirical-fragility.",
-        "evidence": "content/quantum-observable-universe/mass-theory/binding-closure-conditional.ts:1",
+        "evidence": "content/quantum-observable-universe/mass-theory/binding-closure.ts:1",
         "severity": "minor"
       },
       {
@@ -1654,7 +1702,7 @@
         "reviewed_at": "2026-07-07T14:26:56.831409Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-physical-implausibility.",
-        "evidence": "content/quantum-observable-universe/mass-theory/binding-closure-conditional.ts:1",
+        "evidence": "content/quantum-observable-universe/mass-theory/binding-closure.ts:1",
         "severity": "minor"
       },
       {
@@ -1688,7 +1736,7 @@
         "reviewed_at": "2026-07-07T14:26:56.831409Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-reproducibility.",
-        "evidence": "content/quantum-observable-universe/mass-theory/binding-closure-conditional.ts:1",
+        "evidence": "content/quantum-observable-universe/mass-theory/binding-closure.ts:1",
         "severity": "minor"
       },
       {
@@ -1743,15 +1791,15 @@
     "expo-milnor-clarity": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.",
-        "reviewed_at": "2026-07-08T18:45:21.000Z",
-        "reviewed_sha": "5bb7fc3928d5085db61f1d8c377bd56862d2e384",
+        "notes": "Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-08"
+          "agent_date": "2026-07-19"
         }
       }
     ],

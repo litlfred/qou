@@ -46,6 +46,22 @@
         "reviewed_at": "2026-07-07T14:26:54.947849Z",
         "reviewed_sha": "a60319f319d74654752b4454b7d03890ca907d1a",
         "notes": "Auto-drained by agent"
+      },
+      {
+        "field_hash": {
+          "md": "a4b56fd9bfb0",
+          "ts": "042c72a79f69",
+          "lean": "c4ab24905ef9"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
       }
     ],
     "wall-side-statement": [
@@ -221,6 +237,22 @@
         "reviewed_sha": "112805b8753ec0251cbec0dd84bea59bfea434da",
         "notes": "False positive: the flagged docstring 'Right multiplier in B.' is a terse, correct field doc — scholarly register, nothing informal.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "a4b56fd9bfb0",
+          "ts": "042c72a79f69",
+          "lean": "c4ab24905ef9"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
       }
     ],
     "voice-title-scholarly": [
@@ -259,6 +291,22 @@
         },
         "reviewed_at": "2026-07-13T00:59:15.685Z",
         "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554"
+      },
+      {
+        "field_hash": {
+          "md": "a4b56fd9bfb0",
+          "ts": "042c72a79f69",
+          "lean": "c4ab24905ef9"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
       }
     ],
     "voice-author-notes-pollution": [

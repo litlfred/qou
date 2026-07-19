@@ -144,6 +144,22 @@
         },
         "reviewed_at": "2026-07-13T00:59:15.685Z",
         "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554"
+      },
+      {
+        "field_hash": {
+          "md": "1143d1e7af7c",
+          "ts": "fb9cbebfb22c",
+          "lean": "286799263f71"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
       }
     ],
     "voice-title-scholarly": [
@@ -184,6 +200,22 @@
         "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554",
         "severity": "critical",
         "evidence": "content/quantum-observable-universe/observations/color-superconductivity-borromean.md:50: The superconducting gap $\\Delta_{\\mathrm{CFL}}$ represents the energy required to break a Cooper pair. It equals the crossing energy of the binding Hopf link:"
+      },
+      {
+        "field_hash": {
+          "md": "1143d1e7af7c",
+          "ts": "fb9cbebfb22c",
+          "lean": "286799263f71"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
       }
     ],
     "voice-author-notes-pollution": [
@@ -911,6 +943,22 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.543280Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
+      },
+      {
+        "field_hash": {
+          "md": "1143d1e7af7c",
+          "ts": "fb9cbebfb22c",
+          "lean": "286799263f71"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1454,16 +1502,16 @@
     ],
     "expo-milnor-clarity": [
       {
-        "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
-        "reviewed_at": "2026-07-08T20:02:14.000Z",
-        "reviewed_sha": "b0f9a01c829b9593474b8ca1cfa370eb0b82b0ea",
+        "result": "warn",
+        "notes": "Block is quite long, consider breaking it up for clarity.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-08"
+          "agent_date": "2026-07-19"
         }
       }
     ],

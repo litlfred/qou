@@ -8,7 +8,7 @@ import Mathlib.Tactic.Linarith
 # QOU.Mass.JetFiltrationExtensive — the extensive property of the jet-filtration binding
 
 Formalises the **provable core** of the body-order (jet-filtration) binding
-(`conj:binding-manybody-eq-jet-filtration`), the compute consumer implemented in
+(`thm:binding-manybody-eq-jet-filtration`), the compute consumer implemented in
 `computations/binding_manybody_jet_filtration.py`:
 
   `B(K) = Σ_{n=2}^{A} m_e · a_D^(n) · w_n(K)`,

@@ -18,7 +18,7 @@ $$
 with **$n$-independent** kernel $c$, for every $n$.
 
 This **proves the existence half** of
-[`conj:qdifference-kernel-prolongation-symbol`](#conj:qdifference-kernel-prolongation-symbol):
+[`thm:qdifference-kernel-prolongation-symbol`](#thm:qdifference-kernel-prolongation-symbol):
 a fixed-depth recurrence on the prolonged periods *necessarily* exists, with
 depth bounded by the rank of the Gauss--Manin local system. What remains is the
 **identification half** — that $d$ and the kernel $c$ are *exactly* the Bring

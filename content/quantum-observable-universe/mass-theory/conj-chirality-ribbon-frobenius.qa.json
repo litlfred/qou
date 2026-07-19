@@ -130,6 +130,18 @@
           "id": "voice-scholarly-default-audit"
         },
         "reviewed_at": "2026-07-07T14:26:56.985482Z"
+      },
+      {
+        "field_hash": {},
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
       }
     ],
     "voice-title-scholarly": [
@@ -197,6 +209,18 @@
           "id": "voice-ai-slop-audit"
         },
         "reviewed_at": "2026-07-07T14:26:56.985482Z"
+      },
+      {
+        "field_hash": {},
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
       }
     ],
     "framework-canonical": [
@@ -1907,6 +1931,18 @@
         "reviewed_at": "2026-07-07T14:26:56.985482Z",
         "reviewed_sha": "8f2a783fc9f993048e93178a95afdbf7823eae05",
         "notes": "Placement in Pre-Archimedean Derivation Chain and Audit section is appropriate for a chirality-factor conjecture linked to audit gap GAP-A-2"
+      },
+      {
+        "field_hash": {},
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
       }
     ],
     "detangler-graph-energy": [

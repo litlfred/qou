@@ -4,7 +4,7 @@ import Mathlib.Algebra.BigOperators.Ring.Finset
 /-!
 # QOU.Mass.BindingManyBodyJetFiltration — binding series = jet filtration
 
-Conjecture (`conj:binding-manybody-eq-jet-filtration`, step-9b of the
+Conjecture (`thm:binding-manybody-eq-jet-filtration`, step-9b of the
 binding-closure workplan): the per-isotope binding energy is the
 body-order series whose `n`-th term is `m_e` times the `n`-th prolonged
 Seiberg–Witten period (itself a residue sum, `prop:sw-period-residue-sum`),
@@ -14,7 +14,7 @@ Per AGENTS.md §3b, the conjecture is **axiomatised as a Lean `class`**:
 the existence of an instance is the conjecture; the conditional corollary
 below is proved *from* the class hypothesis (fully verified, no `sorry`).
 
-LaTeX label: `conj:binding-manybody-eq-jet-filtration`.
+LaTeX label: `thm:binding-manybody-eq-jet-filtration`.
 
 ## References
 

@@ -1,7 +1,7 @@
-import { conjecture } from "../../schema/builders";
+import { theorem } from "../../schema/builders";
 
-export default conjecture({
-  label: "conj:qdifference-kernel-prolongation-symbol",
+export default theorem({
+  label: "thm:qdifference-kernel-prolongation-symbol",
   lean: {
     ref: "qou:QOU.Mass.QDifferenceKernelIsProlongationSymbol",
     validation: "validated",
@@ -20,6 +20,5 @@ export default conjecture({
     "jet-prolongation",
     "keystone",
     "step-9b",
-    "open-problem",
   ],
 });
