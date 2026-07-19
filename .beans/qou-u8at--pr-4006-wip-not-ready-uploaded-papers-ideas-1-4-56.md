@@ -1,11 +1,11 @@
 ---
 # qou-u8at
 title: 'PR #4006 WIP (NOT ready): uploaded-papers ideas 1-4 — 5/6 checklist items open'
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-07-18T23:14:01Z
-updated_at: 2026-07-18T23:14:01Z
+updated_at: 2026-07-19T03:39:14Z
 parent: qou-w1z0
 ---
 
