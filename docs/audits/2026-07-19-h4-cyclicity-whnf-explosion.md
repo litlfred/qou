@@ -144,6 +144,52 @@ scaffolding, not a duplicate; `trM_cyclic` should ultimately be discharged as an
 instance of the abstract cyclic-trace lemma once that lemma is proved on the
 `MarkovStabilization` class, rather than re-attempted by computation here.
 
+## Resolving the two named blockers (2026-07-19, "resolve" follow-up)
+
+The prior write-up named two blockers — "a full Mathlib build or Mathlib-absent
+machinery." Both were run down to a definitive verdict.
+
+### Full Mathlib build — infeasible in-sandbox AND would not help
+
+- **`lake exe cache get` is firewalled.** It aborts installing `leantar` (the
+  cache-extraction binary): the GitHub *release asset* returns the agent proxy's
+  out-of-scope JSON block (only `litlfred/qou` is in session scope), and `leangz`
+  (the crate that builds `leantar`) is **not published to crates.io** (which *is*
+  allowlisted), so `cargo install` can't substitute.
+- **Build-from-source is out:** the restored `lake-cache` is olean-only; Mathlib
+  *source* is absent locally. Mathlib *is* clonable (GitHub git is allowlisted),
+  but only HEAD came down, where `Mathlib.Data.Matrix.Notation` has been
+  **reorganized away**; the pinned-rev (`f897ebc`) source needs an exact-commit
+  fetch + a single-module compile.
+- **Even if obtained, it likely would not close cyclicity.** A follow-up probe
+  computed a *single* Gram entry `trM(mulNF e_i e_j)` on **sparse basis vectors**
+  (`e_i = ![0,…,1,…,0]`) with the deepest word — it **also whnf-times-out**. The
+  explosion is *value-independent*: it is the depth-6 Fin-24 `mulσ`-cons
+  unfolding itself, not the size of the entries. `Matrix.Reflection` (the only
+  route that dodges `Fin.sum_univ_succ`) is engineered for ≤4×4; a depth-6
+  product of 24×24 matrices (~83k kernel mults) is very unlikely to beat the
+  wall. So the full build is both infeasible here and low-probability even
+  elsewhere.
+
+### Mathlib-absent machinery (F3 / F1) — genuinely absent, not a cache gap
+
+The F3 (Śniady genus expansion for the Δ_λ covariance kernel) and F1 (Stanley
+q-hook / major-index + RSK for the general-n involution identity) machinery is
+**not formalized in Mathlib at all** — a full build does not supply it; closing
+those needs original formalization (large, separate projects), not
+infrastructure.
+
+### The real resolution routes around both
+
+F4 cyclicity's only viable path is the **abstract Ocneanu-induction cyclic-trace
+lemma** on the `MarkovStabilization` algebra framework
+(`HeckeBraidedCategoryScaffold` + `HeckeH3AlgebraInstance`, both on `main`): it
+needs **neither** a full build **nor** absent machinery — only formalization
+labor, and it discharges `trM_cyclic` for *every* n at once (not an H₄-specific
+retry). That work is the general-n `MarkovStabilization` instance `main` already
+tracks as OPEN; this is where the effort converges, and doing it here would
+duplicate the active sibling effort.
+
 ## Disposition
 
 - `trM_cyclic` stays an honest cited `sorry`; its docstring points at the
