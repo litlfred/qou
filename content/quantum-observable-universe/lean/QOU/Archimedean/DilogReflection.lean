@@ -6,6 +6,7 @@ import Mathlib.NumberTheory.ZetaValues
 import Mathlib.Analysis.SpecialFunctions.Pow.Asymptotics
 import Mathlib.Analysis.SpecialFunctions.Log.NegMulLog
 import Mathlib.Analysis.SpecialFunctions.Log.Deriv
+import Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus
 
 /-!
 # Dilogarithm derivative + Euler reflection — the V1 bar-even keystone infra
@@ -360,5 +361,65 @@ theorem LiTwo_half : LiTwo (1 / 2) = Real.pi ^ 2 / 12 - Real.log 2 ^ 2 / 2 := by
   rw [show (1 : ℝ) - 1 / 2 = 1 / 2 by norm_num,
     show Real.log (1 / 2) = -Real.log 2 by rw [one_div, Real.log_inv]] at h
   nlinarith [h]
+
+/-! ## Integral representation — Part A of `conj:dilogarithm-archimedean-limit`
+
+`Li₂(x) = ∫₀ˣ −log(1-t)/t dt` for `0 < x < 1`, the FTC applied to
+`hasDerivAt_LiTwo` (Brick A) + `LiTwo_zero`.  This is the integral-representation
+half of the conjecture's **Part A** (the elementary `q → 1⁻` side, per
+`docs/audits/2026-06-07-dilog-archimedean-limit-part-A-elementary.md`).  The
+integrand is bounded by `1/(1-x)` on `(0,x]` — from
+`Real.one_sub_inv_le_log_of_pos` — so interval-integrability needs no
+removable-singularity limit. -/
+
+open MeasureTheory in
+/-- **Integral representation** `Li₂(x) = ∫₀ˣ −log(1-t)/t dt` for `0 < x < 1`. -/
+theorem LiTwo_eq_integral {x : ℝ} (hx0 : 0 < x) (hx1 : x < 1) :
+    LiTwo x = ∫ t in (0 : ℝ)..x, -Real.log (1 - t) / t := by
+  -- the integrand is continuous on the half-open interval (0, x]
+  have hcontOn : ContinuousOn (fun t : ℝ => -Real.log (1 - t) / t) (Set.Ioc 0 x) := by
+    refine ContinuousOn.div ?_ continuousOn_id (fun t ht => ne_of_gt ht.1)
+    refine ContinuousOn.neg (ContinuousOn.log
+      ((continuous_const.sub continuous_id).continuousOn) (fun t ht => ?_))
+    exact ne_of_gt (by have := ht.2; linarith)
+  -- interval-integrability via the uniform bound 1/(1-x) on (0,x]
+  have hint : IntervalIntegrable (fun t => -Real.log (1 - t) / t) volume 0 x := by
+    rw [intervalIntegrable_iff_integrableOn_Ioc_of_le hx0.le]
+    have hmeas : AEStronglyMeasurable (fun t => -Real.log (1 - t) / t)
+        (volume.restrict (Set.Ioc 0 x)) := hcontOn.aestronglyMeasurable measurableSet_Ioc
+    haveI : IsFiniteMeasure (volume.restrict (Set.Ioc (0 : ℝ) x)) :=
+      ⟨by rw [Measure.restrict_apply_univ]; exact measure_Ioc_lt_top⟩
+    refine Integrable.mono' (g := fun _ => 1 / (1 - x)) (integrable_const _) hmeas ?_
+    refine ae_restrict_of_forall_mem measurableSet_Ioc (fun t ht => ?_)
+    obtain ⟨ht0, htx⟩ := ht
+    have h1t : (0 : ℝ) < 1 - t := by linarith
+    have h1x : (0 : ℝ) < 1 - x := by linarith
+    have hnn : (0 : ℝ) ≤ -Real.log (1 - t) := by
+      have hlp : Real.log (1 - t) ≤ 0 := Real.log_nonpos (by linarith) (by linarith)
+      linarith
+    have hlog2 : -Real.log (1 - t) * (1 - t) ≤ t := by
+      have hmul : (1 - (1 - t)⁻¹) * (1 - t) ≤ Real.log (1 - t) * (1 - t) :=
+        mul_le_mul_of_nonneg_right (Real.one_sub_inv_le_log_of_pos h1t) h1t.le
+      have hlhs : (1 - (1 - t)⁻¹) * (1 - t) = -t := by field_simp; ring
+      rw [hlhs] at hmul; nlinarith [hmul]
+    rw [Real.norm_eq_abs, abs_of_nonneg (div_nonneg hnn ht0.le), div_le_iff₀ ht0,
+      one_div, inv_mul_eq_div, le_div_iff₀ h1x]
+    have hle : -Real.log (1 - t) * (1 - x) ≤ -Real.log (1 - t) * (1 - t) :=
+      mul_le_mul_of_nonneg_left (by linarith) hnn
+    linarith [hle, hlog2]
+  -- derivative on the open interval + continuity on the closed interval
+  have hderiv : ∀ t ∈ Set.Ioo (0 : ℝ) x,
+      HasDerivWithinAt LiTwo (-Real.log (1 - t) / t) (Set.Ioi t) t :=
+    fun t ht => (hasDerivAt_LiTwo ht.1 (lt_trans ht.2 hx1)).hasDerivWithinAt
+  have hcont : ContinuousOn LiTwo (Set.Icc 0 x) := by
+    intro t ht
+    rcases eq_or_lt_of_le ht.1 with rfl | h0
+    · show Tendsto LiTwo (𝓝[Set.Icc 0 x] 0) (𝓝 (LiTwo 0))
+      rw [LiTwo_zero]
+      exact tendsto_LiTwo_nhds_zero.mono_left nhdsWithin_le_nhds
+    · exact ((hasDerivAt_LiTwo h0 (lt_of_le_of_lt ht.2 hx1)).continuousAt).continuousWithinAt
+  have hftc := intervalIntegral.integral_eq_sub_of_hasDeriv_right_of_le hx0.le hcont hderiv hint
+  rw [LiTwo_zero, sub_zero] at hftc
+  exact hftc.symm
 
 end QOU.Archimedean
