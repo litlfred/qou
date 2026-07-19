@@ -1,0 +1,151 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-07-19T13:04:50.195172+00:00",
+  "commitSha": "327e5881ba83c4c4222a9d6874533ff717da62b6",
+  "assertions": [
+    {
+      "name": "g_reeb_fixed_no_fit",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "deformed_A4_exactly_on_pole",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "He4_uniquely_at_pole",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "monotone_approach_over_He4_domain",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "A_le_3_subcritical",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "A_ge_5_C4A_zero_past_pole",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "b4-isotope-pole-approach",
+  "scriptFile": "b4_isotope_pole_approach_probe.py",
+  "scriptHash": "f90e46ee5be4",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "mpmath": "1.4.1"
+  },
+  "description": "alpha-magic as criticality: the species-symmetric exchange criticality g_reeb*lambda_ss(A) rises monotonically across the He4-local domain and hits the ss-condensation pole EXACTLY at 4He (the [1^4] closed shell, C(4,4)=1), with A<=3 sub-critical and A>=5 off-domain (C(4,A)=0). Forward, g_reeb fixed from q0, no fit. Explains WHICH isotope is critical and WHY alpha is magic; the finite 4He magnitude (pole regulator = Vol*rho) stays open. Connects the b4 ss-pole (PR #4084) to the corpus non-constant inter-cluster volume (2026-07-13). Audit-only.",
+  "contentBlock": "rem:ohtsuki-tower-bar-parity",
+  "audit_only": true,
+  "tier": "structural (fixed g_reeb + pure graph eigenvalues; no fit, no AME inversion)",
+  "result": {
+    "g_reeb": "0.446727067798147204",
+    "g_reeb_fixed_from_q0_no_fit": true,
+    "deformed_A4_ss_eigenvalue": "2.23850326538048091",
+    "deformed_A4_exactly_on_pole": true,
+    "isotope_sweep": [
+      {
+        "isotope": "2H",
+        "A": 2,
+        "C4A_rank": 6,
+        "lambda_ss": "1.0",
+        "g_reeb_times_lambda_ss": "0.44672707",
+        "det_I_plus_gS": "0.800435",
+        "regime": "sub_critical",
+        "he4_local": true
+      },
+      {
+        "isotope": "3H",
+        "A": 3,
+        "C4A_rank": 4,
+        "lambda_ss": "2.0",
+        "g_reeb_times_lambda_ss": "0.89345414",
+        "det_I_plus_gS": "0.223003",
+        "regime": "sub_critical",
+        "he4_local": true
+      },
+      {
+        "isotope": "3He",
+        "A": 3,
+        "C4A_rank": 4,
+        "lambda_ss": "2.0",
+        "g_reeb_times_lambda_ss": "0.89345414",
+        "det_I_plus_gS": "0.579607",
+        "regime": "sub_critical",
+        "he4_local": true
+      },
+      {
+        "isotope": "4He",
+        "A": 4,
+        "C4A_rank": 1,
+        "lambda_ss": "2.236068",
+        "g_reeb_times_lambda_ss": "0.99891209",
+        "det_I_plus_gS": "0.00174065",
+        "regime": "AT_POLE",
+        "he4_local": true
+      },
+      {
+        "isotope": "5He_offdomain",
+        "A": 5,
+        "C4A_rank": 0,
+        "lambda_ss": "3.3722813",
+        "g_reeb_times_lambda_ss": "1.5064893",
+        "det_I_plus_gS": "-1.20809",
+        "regime": "past_pole_offdomain",
+        "he4_local": false
+      },
+      {
+        "isotope": "6Li_offdomain",
+        "A": 6,
+        "C4A_rank": 0,
+        "lambda_ss": "3.6055513",
+        "g_reeb_times_lambda_ss": "1.6106973",
+        "det_I_plus_gS": "-1.02149",
+        "regime": "past_pole_offdomain",
+        "he4_local": false
+      }
+    ],
+    "monotone_approach_to_pole_over_He4_local_domain": true,
+    "He4_uniquely_at_pole": true,
+    "A_le_3_subcritical": true,
+    "A_ge_5_past_pole_and_C4A_zero": true,
+    "reading": {
+      "alpha_magic": "4He is the UNIQUE light isotope on the species-symmetric condensation pole at the derived g_reeb ([1^4] closed shell, C(4,4)=1). g_reeb*lambda_ss rises monotonically 2H<3H<4He and hits the pole (=1; exactly 1 under consistent deformation) only at A=4 -- the structural origin of alpha-magic (rho4>>pair-additive).",
+      "off_domain": "A>=5 have C(4,A)=0 (no [1^4] channel); det<0 is the single-scalar b4 correctly signalling the He4-local term is ABSENT, not a spurious prediction. Model breakdown past A=4 = He4-locality.",
+      "inter_cluster_link": "the corpus's non-constant implied per-bond volume (2.9->12.8, 2026-07-13) and the refuted single-link Vol4 are what a near-pole enhancement looks like: the near-critical ss-mode's moduli volume grows toward the pole; 4He (AT the pole) has the largest/formally-divergent enhancement.",
+      "still_open": "the FINITE 4He magnitude = the pole regulator / collective-coordinate moduli volume (Vol*rho), open (PR #4084). This probe fixes WHICH isotope is critical and WHY alpha is magic; it does not close the magnitude."
+    },
+    "verdict": "scope-(a) forward structural result: alpha-magic = A=4 ss-condensation criticality; g_reeb fixed from q0, lambda_ss(A) pure graph eigenvalues, no fit. Sharpens the open regulator target to a critical-point moduli volume."
+  },
+  "context": {
+    "axis": "Delta_lambda magnitude -- b4 pole regulator / alpha-magic (Frontier A cont.)",
+    "builds_on": "PR #4084 b4_deformed_sspole_sector_probe.py + B4CumulantBarEven.lean",
+    "inter_cluster_audit": "docs/audits/2026-07-13-inter-cluster-bond-term-derive-or-refute.md",
+    "q0_convention": "muon-canonical (computations/ layer)",
+    "no_fit": true
+  },
+  "auditOnly": true
+}
