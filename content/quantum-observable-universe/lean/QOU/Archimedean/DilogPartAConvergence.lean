@@ -1,5 +1,7 @@
 import QOU.Archimedean.DilogReflection
 import QOU.Archimedean.DilogPartARiemannSum
+import Mathlib.Analysis.Convex.Slope
+import Mathlib.Analysis.Convex.SpecificFunctions.Basic
 
 /-!
 # Part A of `conj:dilogarithm-archimedean-limit` — the convergence core (Brick 3)
@@ -40,5 +42,38 @@ theorem integral_zero_one_eq_LiTwo {x : ℝ} (hx0 : 0 < x) (hx1 : x < 1) :
   refine intervalIntegral.integral_congr (fun u _ => ?_)
   simp only [smul_eq_mul]
   rw [← mul_div_assoc, mul_div_mul_left _ _ (ne_of_gt hx0)]
+
+/-- Convexity of `g(u) = −log(1 - x u)` on `[0,1]` — `log` is concave on `(0,∞)`,
+    `u ↦ 1 - x u` is affine mapping `[0,1]` into `(0,∞)` (since `x u ≤ x < 1`),
+    and negation flips concave to convex. -/
+theorem convexOn_neg_log_one_sub_mul {x : ℝ} (hx0 : 0 < x) (hx1 : x < 1) :
+    ConvexOn ℝ (Set.Icc (0 : ℝ) 1) (fun u => -Real.log (1 - x * u)) := by
+  set g : ℝ →ᵃ[ℝ] ℝ := AffineMap.const ℝ ℝ 1 - x • AffineMap.id ℝ ℝ with hg_def
+  have hg_eval : ∀ u : ℝ, g u = 1 - x * u := by
+    intro u; simp [hg_def]
+  have hsub : Set.Icc (0 : ℝ) 1 ⊆ g ⁻¹' Set.Ioi 0 := by
+    intro u hu
+    rw [Set.mem_preimage, hg_eval, Set.mem_Ioi]
+    obtain ⟨hu0, hu1⟩ := hu
+    nlinarith [mul_le_mul_of_nonneg_left hu1 hx0.le]
+  have hconc : ConcaveOn ℝ (Set.Icc (0 : ℝ) 1) (fun u => Real.log (1 - x * u)) := by
+    have h1 := (strictConcaveOn_log_Ioi.concaveOn).comp_affineMap g
+    have h2 := h1.subset hsub (convex_Icc 0 1)
+    convert h2 using 1
+  exact hconc.neg
+
+/-- **B3.2 — monotonicity.**  `h(u) = −log(1 - x u)/u` is monotone increasing on
+    `(0,1]` for `0 < x < 1`.  Convex-slope: with `g(u) = −log(1 - x u)` convex and
+    `g(0) = 0`, `h(u) = (g u − g 0)/(u − 0)` is a secant slope from `0`, which is
+    monotone for a convex function (`ConvexOn.secant_mono`). -/
+theorem h_monotoneOn {x : ℝ} (hx0 : 0 < x) (hx1 : x < 1) :
+    MonotoneOn (fun u : ℝ => -Real.log (1 - x * u) / u) (Set.Ioc (0 : ℝ) 1) := by
+  have hconv := convexOn_neg_log_one_sub_mul hx0 hx1
+  intro u hu v hv huv
+  have h0mem : (0 : ℝ) ∈ Set.Icc (0 : ℝ) 1 := ⟨le_refl 0, zero_le_one⟩
+  have humem : u ∈ Set.Icc (0 : ℝ) 1 := ⟨hu.1.le, hu.2⟩
+  have hvmem : v ∈ Set.Icc (0 : ℝ) 1 := ⟨hv.1.le, hv.2⟩
+  have hsec := hconv.secant_mono h0mem humem hvmem (ne_of_gt hu.1) (ne_of_gt hv.1) huv
+  simpa [Real.log_one] using hsec
 
 end QOU.Archimedean
