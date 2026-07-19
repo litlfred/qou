@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-25T21:48:18.912071+00:00",
-  "commitSha": "a1993be2c90b2a559920d05b3ba5b49eb33d13cd",
+  "computedAt": "2026-07-26T20:32:35.180680+00:00",
+  "commitSha": "19fb1baca81de9f4a503ee69023d33393adbe39a",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -153,9 +153,9 @@
     },
     {
       "name": "chain_valid[c-q-q0.derivation]",
-      "computed": false,
+      "computed": true,
       "expected": true,
-      "passed": false
+      "passed": true
     },
     {
       "name": "leaf_value[c-q-q0.derivation]",
@@ -558,12 +558,12 @@
       "tolerance": 9.9124115660574e-11
     }
   ],
-  "allPassed": false,
+  "allPassed": true,
   "durationMs": 4,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "ff40fb7a9d7d",
-  "scriptCommitSha": "909e4e3c58d7423994256f68f268a7075fa94b8d",
+  "scriptCommitSha": "47a340cab0d78f10088bbe407261a19994e0cd1b",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -574,7 +574,8 @@
     "python": "3.11.15",
     "numpy": "2.4.6",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "Per-chain validation + computational-trust audit per the QOU methodology directive: every numerical claim must trace back to first-principles axioms via a DerivationChain.",
   "auditOnly": "docs/audits/2026-05-02-pr503-ci-failure-postmortem.md",
@@ -1187,9 +1188,7 @@
         "computed_value": 9.092678397394828,
         "structural_ok": true,
         "leaf_matches": true,
-        "issues": [
-          "c_q algebra re-eval at q_0=1.1099785827513808 gives 9.092679456150243 vs target 9.092678397394828 (rel_diff 1.16e-07, target_tolerance 1.00e-12)"
-        ],
+        "issues": [],
         "trust_summary": {
           "axiom": 2,
           "derived": 2,
@@ -2220,6 +2219,7 @@
         "borromean-diagonal-recurrence-hunt.witness.json",
         "borromean-diagonal-recurrence-reconstruct.witness.json",
         "borromean-h3-2-1-irrep-derivation.witness.json",
+        "borromean-kashaev-positive-sum-probe.witness.json",
         "borromean-markov-trace-h-expansion-50dps.witness.json",
         "borromean-qzeil-fixedq.witness.json",
         "borromean-qzeil-minimal-telescoper.witness.json",
