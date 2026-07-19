@@ -28,3 +28,13 @@ Practical rule for agents: run the five drift validators with
 `QOU_Q0_ANCHOR=ideal`; treat a `cross_check` import error as an
 environment gap and either build the wheel or document the skip — do not
 report either failure as a branch defect without the clean-main control.
+
+## Confirmation (same day)
+
+Fix verified end-to-end in this sandbox: after `pip install numpy`,
+`maturin build --release` in `tools/pyhecke-native/` (3 min) + wheel
+install, **both validators exit 0** under `QOU_Q0_ANCHOR=ideal`
+(`cross_check_trM_1ppb.py --strict`: 6/6 atoms certified 1 ppQ, worst
+|Δ| = 4.5e-50; `derivation_chain_validator.py`: all assertions pass).
+The five-validator drift battery is therefore fully green here — future
+prepare-merge runs in this environment need no skip caveat.
