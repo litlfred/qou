@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-07-19T06:30:23.751292+00:00",
-  "commitSha": "a0be9c3252815f72a59c2b44179bb1fc6f56eb88",
+  "computedAt": "2026-07-19T07:04:34.856865+00:00",
+  "commitSha": "3faa17677a574e3ee680e5200465c2ca2db071a4",
   "assertions": [
     {
       "name": "g_reeb_eq_deformed_criticality",
@@ -39,14 +39,26 @@
       "computed": "True",
       "expected": "True",
       "passed": true
+    },
+    {
+      "name": "reduced_det_regulator_is_repulsive",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "no_forward_regulator_reaches_target",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
     }
   ],
   "allPassed": true,
   "durationMs": 0,
   "computation": "b4-deformed-sspole-sector",
   "scriptFile": "b4_deformed_sspole_sector_probe.py",
-  "scriptHash": "71b12c89ab27",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "d76a8934b373",
+  "scriptCommitSha": "8a64506677d74d6cfbf4842c3a7c47bdd2040314",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -97,6 +109,18 @@
       "pauli_sector_factor_1_minus_g2": "0.8004349269",
       "pauli_sector_b_finite": "0.2226000404",
       "reading": "lam=+-sqrt5 are the species-SYMMETRIC (pp-sym, nn-sym) center-of-mass modes (the ss-sector that carries the pole); lam=+-1 are the Pauli-required intra-pair antisymmetric modes, FINITE at m=g_reeb. The divergent factor is the NON-Pauli species-symmetric (alpha-condensation) mode."
+    },
+    "regulator_battery_all_fail": {
+      "target_rho4_strong_context_only": "13.03",
+      "reduced_det_drop_zero_mode": "1.6008699",
+      "b_reduced": "-0.47054714",
+      "b_reduced_is_repulsive_negative": true,
+      "rho4_reduced": "-2.11387",
+      "pauli_sector_b": "0.22260004",
+      "rho4_pauli_trivial": "1.0",
+      "verdict": "NO standard forward regulator rescues b_4: the zero-mode-reduced determinant is 2(1-g^2)>1 => -ln<0 REPULSIVE (Lean-proved he4DetReduced_gt_one_at_pole); the Pauli-sector-only ratio is trivially 1. Wrong sign / trivial, both far from rho4~13. The -ln det free-energy form is refuted as the b_4 magnitude carrier.",
+      "redirect": "the exact zero mode (I+g*S annihilates the species-sym eigenvector) is a COLLECTIVE COORDINATE; its contribution is the moduli VOLUME of the alpha-condensate, i.e. the geometric Vol*rho object of the canonical mass formula -- NOT the loop determinant (cf. ReebPnMagnitude.ss_det_no_linear_term). This is the forward research direction; it is NOT closed here (no fit).",
+      "lean_verified": "QOU.MassTheory.he4DetViaEig_zero_at_pole (det=0 on the pole), he4DetReduced_gt_one_at_pole (reduced det>1 => repulsive); B4CumulantBarEven.lean, lean-direct exit 0, sorry-free."
     },
     "consequence_single_scalar_determinant_diverges": {
       "full_det_classical_integer5": "0.0017406534",

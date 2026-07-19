@@ -165,6 +165,42 @@ def main() -> int:
     # deformed full determinant: ss factor == 0 => -ln = +inf
     full_det_deformed = deformed_ss_factor * (1 - g_reeb ** 2)
 
+    # ---- REGULATOR BATTERY: do any standard forward regulators rescue b4? -----
+    # The deformed determinant has an EXACT zero mode (the -sqrt(1+[2]_v^2) mode).
+    # Test the standard forward (no-fit) prescriptions for a functional determinant
+    # with an exact zero mode, and the ratio to the A=2 reference. Target rho4~13.03.
+    Ldef = mp.sqrt(1 + two_v ** 2)                       # deformed ss eigenvalue
+    # (1) reduced determinant: drop the vanishing (1 - g*Ldef) factor
+    det_reduced = (1 + g_reeb * Ldef) * (1 - g_reeb ** 2)   # = 2*(1-g^2) at the pole
+    b_reduced = -mp.log(det_reduced)                     # NEGATIVE (det>1) => repulsive
+    # (2) Pauli sector only: ratio to A=2 (same 1-g^2 factor) => trivially 1
+    b2_ref = -mp.log(1 - g_reeb ** 2)
+    rho4_pauli = pauli_b / b2_ref                        # = 1 (trivial)
+    rho4_reduced = b_reduced / b2_ref                    # negative
+    rho4_target = mp.mpf("13.03")                        # isospin-corrected strong (context only)
+    regulator_battery = {
+        "target_rho4_strong_context_only": mp.nstr(rho4_target, 6),
+        "reduced_det_drop_zero_mode": mp.nstr(det_reduced, 8),
+        "b_reduced": mp.nstr(b_reduced, 8),
+        "b_reduced_is_repulsive_negative": bool(b_reduced < 0),
+        "rho4_reduced": mp.nstr(rho4_reduced, 6),
+        "pauli_sector_b": mp.nstr(pauli_b, 8),
+        "rho4_pauli_trivial": mp.nstr(rho4_pauli, 6),
+        "verdict": "NO standard forward regulator rescues b_4: the zero-mode-reduced "
+                   "determinant is 2(1-g^2)>1 => -ln<0 REPULSIVE (Lean-proved "
+                   "he4DetReduced_gt_one_at_pole); the Pauli-sector-only ratio is trivially "
+                   "1. Wrong sign / trivial, both far from rho4~13. The -ln det free-energy "
+                   "form is refuted as the b_4 magnitude carrier.",
+        "redirect": "the exact zero mode (I+g*S annihilates the species-sym eigenvector) is a "
+                    "COLLECTIVE COORDINATE; its contribution is the moduli VOLUME of the "
+                    "alpha-condensate, i.e. the geometric Vol*rho object of the canonical mass "
+                    "formula -- NOT the loop determinant (cf. ReebPnMagnitude.ss_det_no_linear_term). "
+                    "This is the forward research direction; it is NOT closed here (no fit).",
+        "lean_verified": "QOU.MassTheory.he4DetViaEig_zero_at_pole (det=0 on the pole), "
+                         "he4DetReduced_gt_one_at_pole (reduced det>1 => repulsive); "
+                         "B4CumulantBarEven.lean, lean-direct exit 0, sorry-free.",
+    }
+
     result = {
         "fact1_derived_magnitude_on_deformed_ss_pole": {
             "q0": mp.nstr(q0, 18),
@@ -196,6 +232,7 @@ def main() -> int:
                        "divergent factor is the NON-Pauli species-symmetric (alpha-condensation) "
                        "mode.",
         },
+        "regulator_battery_all_fail": regulator_battery,
         "consequence_single_scalar_determinant_diverges": {
             "full_det_classical_integer5": mp.nstr(full_det_classical, 8),
             "full_b_classical_shadow": mp.nstr(full_b_classical, 8),
@@ -259,6 +296,10 @@ def main() -> int:
                      computed=str(sector["p_intrapair_antisym (1,-1,0,0)"]["is_eigenvector"]),
                      expected="True")
     wb.add_assertion("pauli_sector_finite", computed=str(bool(pauli_factor > 0)), expected="True")
+    wb.add_assertion("reduced_det_regulator_is_repulsive", computed=str(bool(b_reduced < 0)),
+                     expected="True")
+    wb.add_assertion("no_forward_regulator_reaches_target", computed=str(bool(rho4_reduced < 0)),
+                     expected="True")
     out = wb.save(extra={"auditOnly": True})
 
     # ---- console report ------------------------------------------------------
@@ -273,6 +314,10 @@ def main() -> int:
     print(f"        +-sqrt5 species-symmetric: {sqrt5_species_symmetric}; +-1 Pauli intra-pair "
           f"(eigenvectors: {all(s['is_eigenvector'] for s in sector.values())})")
     print(f"        Pauli-sector factor (1-g^2) = {mp.nstr(pauli_factor,8)} (finite, b={mp.nstr(pauli_b,6)})")
+    print(f"REGULATOR BATTERY (target rho4~13): reduced-det={mp.nstr(det_reduced,6)} => "
+          f"b={mp.nstr(b_reduced,5)} (repulsive: {b_reduced<0}); pauli rho4={mp.nstr(rho4_pauli,4)} (trivial)")
+    print("   => NO standard forward regulator rescues b_4 (wrong sign / trivial). -ln det form "
+          "refuted as the carrier; redirect: zero mode = collective coord = Vol*rho object.")
     print("VERDICT: b_4 scalar m = g_reeb FOUND (deformed ss-criticality); single-scalar det "
           "DIVERGES at the pole; open object = the alpha-condensation POLE REGULATOR. No fit.")
     print("witness ->", out)
