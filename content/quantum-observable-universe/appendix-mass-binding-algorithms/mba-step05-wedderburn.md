@@ -38,6 +38,11 @@ Step 3.*
 3. *[`prop:wedderburn-as-noncomm-fourier`](#prop:wedderburn-as-noncomm-fourier)
    establishes the algebra-level isomorphism as a non-commutative
    Fourier transform.*
+4. *The $q=1$ dimension of step 2a — the Frame–Robinson–Thrall hook-length
+   formula $d_\lambda = n!/\prod_{c} h_\lambda(c)$ — is machine-checked in Lean
+   (`QOU.Mathlib.numStandardYoungTableaux_mul_hookLengthProduct`, sorry-free),
+   so the block dimensions entering $\mathrm{tr}_M = \sum_\lambda y_\lambda\,\chi^\lambda$
+   are exact integers, not floating-point.*
 
 ### Complexity
 
