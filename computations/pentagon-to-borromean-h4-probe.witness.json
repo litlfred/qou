@@ -1,6 +1,6 @@
 {
   "compute": "pentagon_to_borromean_h4_probe",
-  "description": "Tests whether the post-\u03c4 Pentagon archimedean refinement (Rogers log\u00b2 correction h\u00b2 \u2192 h\u2074 residual) at a natural Borromean (u, v) specialization gives the empirical h\u2074 = \u22123/4 coefficient of the Borromean Markov-trace closed form. Multiple specializations tested; matches indicate candidates for the categorical Pentagon \u2192 h\u2074 derivation.",
+  "description": "Tests whether the post-τ Pentagon archimedean refinement (Rogers log² correction h² → h⁴ residual) at a natural Borromean (u, v) specialization gives the empirical h⁴ = −3/4 coefficient of the Borromean Markov-trace closed form. Multiple specializations tested; matches indicate candidates for the categorical Pentagon → h⁴ derivation.",
   "parameters": {
     "H_0": "0.20855554654411102099666576552221321077768766333243",
     "Q_0": "1.1097",
@@ -10,7 +10,7 @@
     "precision": "mpfr",
     "target_h4_borromean": "-0.75"
   },
-  "scriptCommitSha": "227a113941f1d3cc1f33567cd8f8a52bd83d1ee4",
+  "scriptCommitSha": "unknown",
   "specializations": [
     {
       "absolute_difference": 0.7607093848856132,
@@ -403,7 +403,7 @@
   "status": "exploratory",
   "summary": {
     "best_match_name": "half_h_squared",
-    "interpretation": "T2 status: partial. Pentagon residual h\u2074 extracted empirically at multiple specializations. If a clean Borromean specialization matches \u22123/4, T2 is computationally complete (Lean formalization queued). If not, the categorical Pentagon \u2192 h\u2074 derivation requires the explicit Borromean q-shuffle lifting, which is itself an open structural step.",
+    "interpretation": "T2 status: partial. Pentagon residual h⁴ extracted empirically at multiple specializations. If a clean Borromean specialization matches −3/4, T2 is computationally complete (Lean formalization queued). If not, the categorical Pentagon → h⁴ derivation requires the explicit Borromean q-shuffle lifting, which is itself an open structural step.",
     "n_converging": 9,
     "n_matches_within_1pct": 0,
     "n_specializations_tested": 9
@@ -414,5 +414,13 @@
     "h4-coefficient",
     "borromean",
     "li2-q"
-  ]
+  ],
+  "scriptHash": "f5969aad00fc",
+  "commitSha": "dcd8299892b77a5c17b4be77dded017be21ef57d",
+  "engine": "mpmath",
+  "computedAt": "2026-07-18T23:59:55.092535+00:00",
+  "durationMs": 0,
+  "engineVersion": "mpmath 1.3.0",
+  "q0Anchor": "ambiguous",
+  "scriptFile": "pentagon_to_borromean_h4_probe.py"
 }

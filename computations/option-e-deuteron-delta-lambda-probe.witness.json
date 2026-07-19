@@ -1,7 +1,7 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11",
-  "computedAt": "2026-07-18T23:31:23.135580+00:00",
+  "computedAt": "2026-07-18T23:59:54.955699+00:00",
   "computation": "option-e-deuteron-delta-lambda-probe",
   "description": "Option E candidate Δ_λ rules tested against AME deuteron binding energy via Path-D mass prediction. Companion to QOU.OptionE.DeuteronVerification Lean infrastructure.",
   "scriptFile": "option_e_deuteron_delta_lambda_probe.py",
@@ -514,8 +514,8 @@
   "honest_assessment": "These are 7 simple substrate-derived rules. None is the canonical Option E rule (which requires crystal-graph depth from explicit SYT enumeration + Brundan-Kleshchev lift). The probe verifies the verification harness works and quantifies how far simple rules are from closure.",
   "scriptHash": "cf2d5a4546e4",
   "scriptCommitSha": "unknown",
-  "commitSha": "841ed1813cbf924ff762db5a5eec998c7219e17e",
+  "commitSha": "dcd8299892b77a5c17b4be77dded017be21ef57d",
   "durationMs": 0,
-  "q0Anchor": "proton",
+  "q0Anchor": "ambiguous",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

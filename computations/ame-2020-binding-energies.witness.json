@@ -3,11 +3,11 @@
   "version": "1",
   "engine": "manual-entry",
   "engineVersion": "ame-2020",
-  "scriptFile": null,
-  "scriptHash": null,
-  "scriptCommitSha": null,
-  "commitSha": null,
-  "computedAt": "2026-06-16T00:00:00Z",
+  "scriptFile": "binding_canonical.py",
+  "scriptHash": "6a6dd187656d",
+  "scriptCommitSha": "unknown",
+  "commitSha": "dcd8299892b77a5c17b4be77dded017be21ef57d",
+  "computedAt": "2026-07-18T23:59:56.849702+00:00",
   "description": "AME 2020 atomic binding energies for the canonical light isotopes (D, T, 3He, 4He, 5Li, 6Li, 7Li, 8Be, 9Be) plus the two alpha-conjugate cluster / shell-closure points 12C (3-alpha) and 16O (doubly-magic, 2nd magic point) — comparison-only validation values, NOT prediction inputs. Used by binding-energy-prediction scripts to compute `err = pred - AME_B_<X>_MEV_VALIDATION`. Per AGENTS.md three-calibration discipline (CAL-1 m_e, CAL-2 m_µ/m_e, CAL-3 Q_β), these values are PREDICTIONS of the framework; importing them as upstream inputs to a mass / binding pipeline would inflate the calibration count beyond the allowed 3.",
   "parameters": {
     "source": "AME 2020 (Wang, M. et al., 'The AME 2020 atomic mass evaluation', Chinese Physics C 45.3 (2021) 030003)",
@@ -28,5 +28,8 @@
     "B_be9_MeV": "58.1640237",
     "B_c12_MeV": "92.16173",
     "B_o16_MeV": "127.61931"
-  }
+  },
+  "durationMs": 0,
+  "q0Anchor": "muon",
+  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
 }

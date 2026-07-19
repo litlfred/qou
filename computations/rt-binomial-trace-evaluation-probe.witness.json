@@ -17,15 +17,15 @@
       "predicted": 0.8678899138878183
     }
   },
-  "description": "Cherry-picks the unified binomial pattern from sibling PR #1125 (c_{2j}(T(2,2m)) = C(m+j, 2j)/2, sympy-proved) and evaluates the trace polynomial P_m(h_0) for W=T(2,4), Z=T(2,6), H=T(2,8). Reports cross-particle ratios + structural-limitation analysis. Honest follow-up to PR #1126's retraction of the W = \u221a[2]_q substrate-point fit.",
+  "description": "Cherry-picks the unified binomial pattern from sibling PR #1125 (c_{2j}(T(2,2m)) = C(m+j, 2j)/2, sympy-proved) and evaluates the trace polynomial P_m(h_0) for W=T(2,4), Z=T(2,6), H=T(2,8). Reports cross-particle ratios + structural-limitation analysis. Honest follow-up to PR #1126's retraction of the W = √[2]_q substrate-point fit.",
   "honest_limits": [
     "Trace polynomial values P_m(h_0) are in [0.5, 0.75] range; actual masses span [80, 125] GeV",
     "Mass-to-trace ratio varies per particle (no clean single normalization)",
     "W/Z 1% match is the best signal; Z/H and W/H both off ~20%",
     "Cannot fix all 3 ratios with a single multiplicative/additive correction",
-    "Full SM derivation requires gauge couplings (g, g', \u03bb) categorically"
+    "Full SM derivation requires gauge couplings (g, g', λ) categorically"
   ],
-  "interpretation": "The trace polynomial P_m(h_0) using PR #1125's binomial coefficients gives W/Z within 1% of SM cos \u03b8_W \u2014 suggestive structural pattern. But Z/H and W/H deviations remain ~20%, showing the trace polynomial alone CANNOT predict all 3 SM ratios simultaneously. Structural conclusion: full SM mass spectrum derivation requires gauge-coupling chain (g, g', \u03bb) currently absent from framework. The CategoricalHiggsIdempotent class (existing placeholder) is the structural target for this extension (per PR #1126 retraction audit \u00a73).",
+  "interpretation": "The trace polynomial P_m(h_0) using PR #1125's binomial coefficients gives W/Z within 1% of SM cos θ_W — suggestive structural pattern. But Z/H and W/H deviations remain ~20%, showing the trace polynomial alone CANNOT predict all 3 SM ratios simultaneously. Structural conclusion: full SM mass spectrum derivation requires gauge-coupling chain (g, g', λ) currently absent from framework. The CategoricalHiggsIdempotent class (existing placeholder) is the structural target for this extension (per PR #1126 retraction audit §3).",
   "parameters": {
     "H_0": "0.20855554654411102099666576552221321077768766333243",
     "Q_0": "1.1097",
@@ -49,7 +49,7 @@
       "n_torus": 8,
       "spin": 0
     },
-    "W\u00b1": {
+    "W±": {
       "P_m_at_h0": 0.5661890495977284,
       "actual_mass_GeV": 80.379,
       "c_2j_coefficients": [
@@ -77,7 +77,7 @@
       "spin": 1
     }
   },
-  "scriptCommitSha": "321ec92df835c24b75e0a270e70c717a91692c21",
+  "scriptCommitSha": "unknown",
   "status": "exploratory",
   "tags": [
     "rt-route",
@@ -88,12 +88,20 @@
   ],
   "what_is_kept": [
     "Sibling PR #1125's binomial pattern c_{2j} = C(m+j, 2j)/2 (sympy-proved)",
-    "PR #1119's Z/H ratio match (twist-count 6/8 \u2248 SM 0.729)",
+    "PR #1119's Z/H ratio match (twist-count 6/8 ≈ SM 0.729)",
     "PR #1116's foundational chain separation (hyperbolic vs torus)",
     "RT-chain SM particle map W=T(2,4), Z=T(2,6), H=T(2,8) (existing content)"
   ],
   "what_is_retracted": [
-    "PR #1122's 'W = \u221a[2]_q closes ratios to 7% (STRONG)' \u2014 substrate-point fit, jet-order shows 20% per jet",
-    "PR #1122's '\u221a[2]_q is the quantum spinor norm' interpretation \u2014 it's the SM Higgs-VEV doublet convention"
-  ]
+    "PR #1122's 'W = √[2]_q closes ratios to 7% (STRONG)' — substrate-point fit, jet-order shows 20% per jet",
+    "PR #1122's '√[2]_q is the quantum spinor norm' interpretation — it's the SM Higgs-VEV doublet convention"
+  ],
+  "scriptHash": "b96ba5837b84",
+  "commitSha": "dcd8299892b77a5c17b4be77dded017be21ef57d",
+  "engine": "mpmath",
+  "computedAt": "2026-07-18T23:59:55.234361+00:00",
+  "durationMs": 0,
+  "engineVersion": "mpmath 1.3.0",
+  "q0Anchor": "ambiguous",
+  "scriptFile": "rt_binomial_trace_evaluation_probe.py"
 }

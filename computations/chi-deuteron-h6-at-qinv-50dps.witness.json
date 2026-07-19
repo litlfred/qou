@@ -109,5 +109,14 @@
     "pr_consumer": 1742
   },
   "convention": "averaged-crossings",
-  "convention_inferred_by": "chi_convention_audit.py --fix (computation-id:/^chi-(?!.*-free-).*-at-qinv-50dps$/)"
+  "convention_inferred_by": "chi_convention_audit.py --fix (computation-id:/^chi-(?!.*-free-).*-at-qinv-50dps$/)",
+  "scriptHash": "94cf3688a91a",
+  "scriptCommitSha": "unknown",
+  "commitSha": "dcd8299892b77a5c17b4be77dded017be21ef57d",
+  "engine": "mpmath",
+  "computedAt": "2026-07-18T23:59:56.500897+00:00",
+  "durationMs": 0,
+  "engineVersion": "mpmath 1.3.0",
+  "q0Anchor": "ambiguous",
+  "scriptFile": "chi_at_q_inv_via_native_mpfr.py"
 }

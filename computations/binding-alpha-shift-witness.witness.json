@@ -84,5 +84,13 @@
       }
     }
   ],
-  "honest_gap_report": "Deuteron-pinned ρ_0 reproduces B(D) by construction. For heavier nuclei the simple alpha_shift proportionality miss is substantial: worst case ⁴He at α_shift = 8 predicts 5.932 MeV vs experimental 28.296 MeV (-79% from 1×). Consistent with the file's narrative that ρ may not be substrate-universal; per-A scaling (or a richer force-carrier identification) is needed for A ≥ 3. For doubly-magic ⁴He the existing-but-unwired magic_A formula B = ρ_F·m_e·A·8G predicts 29.956 MeV (+5.9% miss), closing the alpha_shift gap by 13.5× (|rel_err| 0.7904 → 0.0587) — wiring this in is the next concrete step (see audit docs/audits/2026-05-31-binding-magic-A-wireup.md)."
+  "honest_gap_report": "Deuteron-pinned ρ_0 reproduces B(D) by construction. For heavier nuclei the simple alpha_shift proportionality miss is substantial: worst case ⁴He at α_shift = 8 predicts 5.932 MeV vs experimental 28.296 MeV (-79% from 1×). Consistent with the file's narrative that ρ may not be substrate-universal; per-A scaling (or a richer force-carrier identification) is needed for A ≥ 3. For doubly-magic ⁴He the existing-but-unwired magic_A formula B = ρ_F·m_e·A·8G predicts 29.956 MeV (+5.9% miss), closing the alpha_shift gap by 13.5× (|rel_err| 0.7904 → 0.0587) — wiring this in is the next concrete step (see audit docs/audits/2026-05-31-binding-magic-A-wireup.md).",
+  "scriptHash": "f8d231e3ad2f",
+  "scriptCommitSha": "unknown",
+  "commitSha": "dcd8299892b77a5c17b4be77dded017be21ef57d",
+  "engine": "python",
+  "computedAt": "2026-07-18T23:59:56.615691+00:00",
+  "durationMs": 0,
+  "q0Anchor": "ambiguous",
+  "scriptFile": "binding_alpha_shift_witness.py"
 }

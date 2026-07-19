@@ -1,12 +1,12 @@
 {
   "engine": "deuteron_real_sdp",
   "engineVersion": "0.1.0",
-  "computation": "Deuteron real per-nucleus SDP (Phase A cost + Phase C dual solve) \u2014 replaces the abstract empty-constraint SDP. operator-selection-lp / lp-dual.",
+  "computation": "Deuteron real per-nucleus SDP (Phase A cost + Phase C dual solve) — replaces the abstract empty-constraint SDP. operator-selection-lp / lp-dual.",
   "scriptFile": "deuteron_real_sdp.py",
   "lean_uniqueness_ref": "qou:QOU.BraidKnot.deuteron_uniqueness_closed",
   "data": {
     "n_strands": 6,
-    "nucleus": "deuteron (\u00b2H, Z=1, N=1, A=2)",
+    "nucleus": "deuteron (²H, Z=1, N=1, A=2)",
     "partitions": [
       "(6,)",
       "(5, 1)",
@@ -168,7 +168,7 @@
     "duality_gap": 43938.58869605584,
     "strong_duality_holds": false,
     "real_sdp_well_posed_without_constraints": false,
-    "diagnostic": "Real SDP UNBOUNDED at q_0 \u2014 Frobenius Gram is indefinite (negative-norm blocks forbidden). Phase B color-flavor constraints required for a well-posed bounded program.",
+    "diagnostic": "Real SDP UNBOUNDED at q_0 — Frobenius Gram is indefinite (negative-norm blocks forbidden). Phase B color-flavor constraints required for a well-posed bounded program.",
     "symmetry_conjugate_pairing": [
       {
         "block": "(6,)",
@@ -276,7 +276,7 @@
         "(4, 1, 1)"
       ]
     ],
-    "symmetry_note": "Every negative-norm forbidden block is the conjugate \u03bb\u21a6\u03bb' of a dominant positive block with tr_M(P_\u03bb) sign-flipped \u2014 the \u00a77b bar-involution (q\u21a6q\u207b\u00b9) / Type-B-folding signature. (3,2,1) is the self-conjugate fixed point.",
+    "symmetry_note": "Every negative-norm forbidden block is the conjugate λ↦λ' of a dominant positive block with tr_M(P_λ) sign-flipped — the §7b bar-involution (q↦q⁻¹) / Type-B-folding signature. (3,2,1) is the self-conjugate fixed point.",
     "phase_B_interim": {
       "positive_norm_blocks": [
         "(6,)",
@@ -346,7 +346,7 @@
     },
     "phase_B_full_methods": {
       "1_bar_involution_fold": {
-        "description": "x_\u03bb = x_\u03bb' (bar-involution/Type-B fold, \u00a77b) \u2014 symmetry regulariser",
+        "description": "x_λ = x_λ' (bar-involution/Type-B fold, §7b) — symmetry regulariser",
         "ansatz_flag": false,
         "result": {
           "status": 0,
@@ -390,9 +390,9 @@
         }
       },
       "2_character_projection_colorflavor": {
-        "description": "per-pair \u03c7^\u03bb projection rows + AME-apportioned RHS",
+        "description": "per-pair χ^λ projection rows + AME-apportioned RHS",
         "ansatz_flag": true,
-        "ansatz_warning": "UN-VETTED: pair\u2192block map invented here; flag to canonical-watcher / CAL-4 discipline before any production use.",
+        "ansatz_warning": "UN-VETTED: pair→block map invented here; flag to canonical-watcher / CAL-4 discipline before any production use.",
         "result": {
           "status": 2,
           "feasible": false,
@@ -442,7 +442,7 @@
         }
       },
       "4_ame_binding_equality": {
-        "description": "t\u00b7x = B_D_AME (physical binding-energy target)",
+        "description": "t·x = B_D_AME (physical binding-energy target)",
         "ansatz_flag": false,
         "production_default": false,
         "non_default_reason": "imposes the AME binding as an equality (consumes the experimental answer); a validation anchor, not a substrate derivation.",
@@ -484,7 +484,7 @@
         }
       },
       "5_lr_branching_canonical": {
-        "description": "Littlewood-Richardson H_6\u2283H_3\u00d7H_3 branching rows: \u03a3_\u03bb[\u03a3_\u03bd c^\u03bb_{\u03bc\u03bd} \u03c7^\u03bd(n)] x_\u03bb = \u03c7^\u03bc(p)\u00b7tr_M_neutron, tr_M_neutron = \u03a3_\u03bd y_\u03bd \u03c7^\u03bd(n) (canonical, no fit).",
+        "description": "Littlewood-Richardson H_6⊃H_3×H_3 branching rows: Σ_λ[Σ_ν c^λ_{μν} χ^ν(n)] x_λ = χ^μ(p)·tr_M_neutron, tr_M_neutron = Σ_ν y_ν χ^ν(n) (canonical, no fit).",
         "ansatz_flag": false,
         "canonical": true,
         "production_default": true,
@@ -532,7 +532,7 @@
         "description": "single 9-pair weighted-ratio row (FITTED; bar-flip on mixed channel)",
         "ansatz_flag": true,
         "production_default": false,
-        "discipline_label": "near-match / exploratory \u2014 NOT substrate-canonical (CAL-4)",
+        "discipline_label": "near-match / exploratory — NOT substrate-canonical (CAL-4)",
         "result": {
           "status": 0,
           "feasible": true,
@@ -572,10 +572,16 @@
       }
     },
     "production_default_encoding": "5_lr_branching_canonical",
-    "production_default_note": "The canonical (substrate-derived, no-fit) LR-branching encoding is the production default. Encoding 4 (AME equality) consumes the experimental binding and is a validation anchor only; encoding 6 is fitted; encoding 2 is an un-vetted ansatz. The canonical encoding does NOT yet reproduce the deuteron binding \u2014 that closure is the open \u0394_\u03bb gate (AGENTS.md); production reports the honest canonical result, not a fit.",
+    "production_default_note": "The canonical (substrate-derived, no-fit) LR-branching encoding is the production default. Encoding 4 (AME equality) consumes the experimental binding and is a validation anchor only; encoding 6 is fitted; encoding 2 is an un-vetted ansatz. The canonical encoding does NOT yet reproduce the deuteron binding — that closure is the open Δ_λ gate (AGENTS.md); production reports the honest canonical result, not a fit.",
     "phase_A_cost": "done",
     "phase_B_constraints": "interim (bounded subspace) + 4 full encodings compared (method 2 un-vetted ansatz); full color-flavor 9-pair + AME2020 RHS",
     "phase_C_dual_solve": "diagnostic (unbounded on full space; bounded on positive subspace)",
     "phase_D_lean_wiring": "pending (deuteron_emptySDP -> deuteron_realSDP)"
-  }
+  },
+  "scriptHash": "b4f4b385bd87",
+  "scriptCommitSha": "unknown",
+  "commitSha": "dcd8299892b77a5c17b4be77dded017be21ef57d",
+  "computedAt": "2026-07-18T23:59:54.684921+00:00",
+  "durationMs": 0,
+  "q0Anchor": "ambiguous"
 }

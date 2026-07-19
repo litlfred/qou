@@ -1,12 +1,12 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-18T23:33:49.143275+00:00",
-  "commitSha": "841ed1813cbf924ff762db5a5eec998c7219e17e",
+  "computedAt": "2026-07-19T00:02:28.628385+00:00",
+  "commitSha": "dcd8299892b77a5c17b4be77dded017be21ef57d",
   "assertions": [
     {
       "name": "no_missing_provenance",
-      "computed": 27,
+      "computed": 6,
       "expected": 0,
       "passed": false,
       "tolerance": 0,
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 13,
+  "durationMs": 11,
   "computation": "witness-provenance-audit",
   "scriptFile": "witness_provenance_audit.py",
   "scriptHash": "2c77ad98e8f6",
-  "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
+  "scriptCommitSha": "5b5415069e35023585ecf1bec28f61c9eca12da7",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -48,13 +48,13 @@
   },
   "data": {
     "counts": {
-      "total_scanned": 2041,
-      "prov_ok": 1891,
+      "total_scanned": 2044,
+      "prov_ok": 1915,
       "prov_audit_exempt": 60,
       "prov_exempt_no_reader": 62,
-      "prov_missing": 27,
+      "prov_missing": 6,
       "prov_parse_error": 1,
-      "completeness_ratio": 0.986281234688878
+      "completeness_ratio": 0.9965753424657534
     },
     "by_verdict": {
       "PROV_OK": [
@@ -120,6 +120,10 @@
         },
         {
           "witness": "active-set-truncation-prototype.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "adjacent-vs-full-probe.witness.json",
           "missing_fields": []
         },
         {
@@ -407,6 +411,10 @@
           "missing_fields": []
         },
         {
+          "witness": "alpha-em-modular-family.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "alpha-em-multiplicity2-realcomplex.witness.json",
           "missing_fields": []
         },
@@ -432,6 +440,10 @@
         },
         {
           "witness": "alpha-em-pi-origin-adjudication.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "alpha-em-qt-dictionary-shape.witness.json",
           "missing_fields": []
         },
         {
@@ -488,6 +500,10 @@
         },
         {
           "witness": "alphaem-dilog-bloch-probe.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "ame-2020-binding-energies.witness.json",
           "missing_fields": []
         },
         {
@@ -663,6 +679,10 @@
           "missing_fields": []
         },
         {
+          "witness": "binding-alpha-shift-witness.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "binding-bar-even-odd-probe.witness.json",
           "missing_fields": []
         },
@@ -672,6 +692,10 @@
         },
         {
           "witness": "binding-bond-extensive-derivation.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "binding-bring-enhancement-compare.witness.json",
           "missing_fields": []
         },
         {
@@ -1667,11 +1691,27 @@
           "missing_fields": []
         },
         {
+          "witness": "chi-deuteron-h6-at-q0-50dps-matrix-m.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "chi-deuteron-h6-at-q0-50dps.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "chi-deuteron-h6-at-qinv-50dps.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "chi-deuteron-h6.witness.json",
           "missing_fields": []
         },
         {
           "witness": "chi-free-via-lr.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "chi-helium-3-h9-at-q0-50dps.witness.json",
           "missing_fields": []
         },
         {
@@ -1687,6 +1727,10 @@
           "missing_fields": []
         },
         {
+          "witness": "chi-helium-4-h12-at-q0-50dps.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "chi-helium-4-h12-numeric.witness.json",
           "missing_fields": []
         },
@@ -1699,11 +1743,35 @@
           "missing_fields": []
         },
         {
+          "witness": "chi-lithium-5-h15-at-q0-50dps-matrix-m.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "chi-lithium-6-h18-at-q0-50dps-matrix-m.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "chi-neutron-h3-at-q0-50dps.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "chi-neutron-h3.witness.json",
           "missing_fields": []
         },
         {
+          "witness": "chi-proton-h3-at-q0-50dps.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "chi-proton-h3.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "chi-tritium-h9-at-q0-50dps-matrix-m.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "chi-tritium-h9-at-q0-50dps.witness.json",
           "missing_fields": []
         },
         {
@@ -2347,6 +2415,10 @@
           "missing_fields": []
         },
         {
+          "witness": "deuteron-binding-interface-closure.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "deuteron-binding-plancherel-channel.witness.json",
           "missing_fields": []
         },
@@ -2356,6 +2428,10 @@
         },
         {
           "witness": "deuteron-from-scratch-ledger.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "deuteron-real-sdp.witness.json",
           "missing_fields": []
         },
         {
@@ -2808,6 +2884,10 @@
         },
         {
           "witness": "habiro-coefficients-deuteron.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "habiro-coefficients-extended.witness.json",
           "missing_fields": []
         },
         {
@@ -3999,6 +4079,10 @@
           "missing_fields": []
         },
         {
+          "witness": "pentagon-to-borromean-h4-probe.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "per-atom-audit-witnesses.witness.json",
           "missing_fields": []
         },
@@ -4971,6 +5055,10 @@
           "missing_fields": []
         },
         {
+          "witness": "option-e-deuteron-delta-lambda-probe.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "option-e-isospin-probe.witness.json",
           "missing_fields": []
         },
@@ -5120,6 +5208,10 @@
         },
         {
           "witness": "qbeta-5two-colored-tower-barodd-qstar.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "qbeta-5two-higher-cable-qstar.witness.json",
           "missing_fields": []
         },
         {
@@ -6855,6 +6947,10 @@
           "missing_fields": []
         },
         {
+          "witness": "rt-binomial-trace-evaluation-probe.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "rt-c23-singlet-sign-core.witness.json",
           "missing_fields": []
         },
@@ -7625,37 +7721,6 @@
       ],
       "PROV_MISSING": [
         {
-          "witness": "adjacent-vs-full-probe.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "ame-2020-binding-energies.witness.json",
-          "missing_fields": [
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "binding-alpha-shift-witness.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "binding-bring-enhancement-compare.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
           "witness": "canonical-mass-table-242ppb.witness.json",
           "missing_fields": [
             "engine",
@@ -7672,38 +7737,6 @@
           ]
         },
         {
-          "witness": "chi-deuteron-h6-at-q0-50dps-matrix-m.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "chi-deuteron-h6-at-q0-50dps.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "chi-deuteron-h6-at-qinv-50dps.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "chi-helium-3-h9-at-q0-50dps.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
           "witness": "chi-helium-4-free-h12-at-q0-50dps.witness.json",
           "missing_fields": [
             "engine",
@@ -7712,106 +7745,8 @@
           ]
         },
         {
-          "witness": "chi-helium-4-h12-at-q0-50dps.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "chi-lithium-5-h15-at-q0-50dps-matrix-m.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "chi-lithium-6-h18-at-q0-50dps-matrix-m.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "chi-neutron-h3-at-q0-50dps.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "chi-proton-h3-at-q0-50dps.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "chi-tritium-h9-at-q0-50dps-matrix-m.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "chi-tritium-h9-at-q0-50dps.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "deuteron-binding-interface-closure.witness.json",
-          "missing_fields": [
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "deuteron-real-sdp.witness.json",
-          "missing_fields": [
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "habiro-coefficients-extended.witness.json",
-          "missing_fields": [
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
           "witness": "joint-tower-sdp-rust.witness.json",
           "missing_fields": [
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "pentagon-to-borromean-h4-probe.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "option-e-deuteron-delta-lambda-probe.witness.json",
-          "missing_fields": [
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "rt-binomial-trace-evaluation-probe.witness.json",
-          "missing_fields": [
-            "engine",
             "scriptFile",
             "commitSha"
           ]
