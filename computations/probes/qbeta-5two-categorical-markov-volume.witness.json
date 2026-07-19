@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-19T13:27:05.770955+00:00",
-  "commitSha": "1064300fb6e8480a1f9df459a0b2f3c8e488be10",
+  "computedAt": "2026-07-19T17:17:32.312899+00:00",
+  "commitSha": "9cbd4f4b6fc9c43a39142550ab490d86a4ecec9b",
   "assertions": [
     {
       "name": "block21_bar_even_target_knots",
@@ -27,14 +27,22 @@
       "passed": true,
       "tolerance": 0.5,
       "source": "5_2 (chiral, e=2) bar-odd = 1/2(q^2-q^-2) != 0, anchor-smooth O(10^0) — odd ingredient, value measurement-limited"
+    },
+    {
+      "name": "ocneanu_weights_held_out_gate",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "block weights W_λ reproduce the Ocneanu trace on HELD-OUT elements (σ₁σ₂→z², σ₂σ₁σ₂→hz²+z, σ₂→z) — the weights are correct"
     }
   ],
   "allPassed": true,
-  "durationMs": 23,
+  "durationMs": 33,
   "computation": "qbeta-5two-categorical-markov-volume",
   "scriptFile": "qbeta_5two_categorical_markov_volume_probe.py",
-  "scriptHash": "d84de188819f",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "3905d3dd0268",
+  "scriptCommitSha": "9cbd4f4b6fc9c43a39142550ab490d86a4ecec9b",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -68,13 +76,22 @@
       "anchor_smooth": true,
       "verdict": "anchor-smooth O(10^0); odd ingredient not swing value (measurement-limited)"
     },
+    "finding4_ocneanu_weights": {
+      "W_3": "(q**(9/2) + q**(7/2) + 2*q**(5/2) + 2*q**(3/2) + q**5 + q**3 + q**2 + 2*q + 1)/(q**8 + 2*q**7 + 3*q**6 + 4*q**5 + 4*q**4 + 4*q**3 + 3*q**2 + 2*q + 1)",
+      "W_2_1": "(q**(9/2) + q**(7/2) - q**(5/2) - q**(3/2) + q**4 + q**3 + q**2)/(q**6 + 2*q**5 + 2*q**4 + 2*q**3 + 2*q**2 + 2*q + 1)",
+      "W_1_1_1": "(-2*q**(13/2) - 2*q**(11/2) - q**(9/2) - q**(7/2) + q**8 + 2*q**7 + q**6 + q**5 + q**3)/(q**8 + 2*q**7 + 3*q**6 + 4*q**5 + 4*q**4 + 4*q**3 + 3*q**2 + 2*q + 1)",
+      "held_out_gate_ok": true,
+      "binding_channel_5_2_proton": "-0.241924505549",
+      "binding_channel_5_2_muon": "-0.241924498947",
+      "verdict": "Ocneanu block weights W_λ determined (t=√q) and VALIDATED against held-out τ (σ₁σ₂→z², σ₂σ₁σ₂→hz²+z, σ₂→z); binding/Vol channel = bar-even W_(2,1)·χ_(2,1). Framing-INVARIANT full 𝔙_q still needs the writhe/Jones normalization (G3-adjacent)."
+    },
     "scope": {
       "tier": "fibre-level categorical datum (pre-tau)",
       "raw_trace_framing_contaminated": true,
       "markov_weight_fix": "tau(sigma1 sigma2 sigma1) = h*z^2 + z, NOT z^3",
       "g3_wall": "does NOT cross argument->S resurgent-monodromy wall (open, not laundered)",
       "value_status": "swing value measurement-limited (no_anchor_invariant_realizes_swing)",
-      "ocneanu_weights_W_lambda": "messy; not required for the bar-odd channel (remaining piece)",
+      "ocneanu_weights_W_lambda": "DETERMINED + held-out-gated (finding 4); framing-invariant assembly needs the writhe normalization (G3-adjacent)",
       "c_k_wired": false,
       "fit": false
     }
