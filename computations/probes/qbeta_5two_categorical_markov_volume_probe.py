@@ -120,6 +120,53 @@ def bar_even(expr):
     return sp.cancel((expr + bar(expr)) / 2)
 
 
+def ocneanu_weights():
+    """Solve the Ocneanu/Markov block weights W_λ of H₃(q) from three basis
+    values (τ(1)=1, τ(σ₁)=z, τ(σ₁σ₂σ₁)=h·z²+z), in t=√q for clean algebra.
+    Returns (W in q, held_out_ok)."""
+    t = sp.symbols("t", positive=True)
+    q = t ** 2
+    h = q - 1 / q
+    z = 1 / (t + 1 / t)
+
+    def s():
+        s0 = sp.Matrix([[q, 0], [0, -1 / q]])
+        a = -1 / (q * (q ** 2 + 1))
+        c = (q ** 2 - q + 1) * (q ** 2 + q + 1) / (q ** 2 + 1) ** 2
+        dd = q ** 3 / (q ** 2 + 1)
+        return s0, sp.Matrix([[a, sp.Integer(1)], [c, dd]])
+
+    s0, s1 = s()
+    gen = {1: s0, 2: s1, -1: s0.inv(), -2: s1.inv()}
+
+    def c21(word):
+        M = sp.eye(2)
+        for g in word:
+            M = M * gen[g]
+        return sp.trace(M)
+
+    def es(word):
+        return sum(1 if g > 0 else -1 for g in word)
+
+    c3 = lambda w: q ** es(w)
+    c111 = lambda w: (-1 / q) ** es(w)
+    W3, W21, W111 = sp.symbols("W3 W21 W111")
+    rows = [([], sp.Integer(1)), ([1], z), ([1, 2, 1], h * z * z + z)]
+    sol = sp.solve([sp.Eq(W3 * c3(w) + W21 * c21(w) + W111 * c111(w), tau)
+                    for w, tau in rows], [W3, W21, W111], dict=True)[0]
+    Wt = {"3": sol[W3], "21": sol[W21], "111": sol[W111]}
+
+    def trM(word):
+        return sp.cancel(Wt["3"] * c3(word) + Wt["21"] * c21(word) + Wt["111"] * c111(word))
+
+    # held-out Ocneanu gate: elements NOT used in the solve must reproduce τ.
+    held = all(sp.simplify(trM(w) - exp) == 0
+               for w, exp in [([1, 2], z * z), ([2, 1, 2], h * z * z + z), ([2], z)])
+    tq = sp.symbols("q", positive=True)  # re-express in q for reporting
+    Wq = {k: sp.simplify(v.subs(t, sp.sqrt(tq))) for k, v in Wt.items()}
+    return Wq, held
+
+
 def main() -> int:
     print("=" * 76)
     print(" categorical Markov-trace complex volume 𝔙_q(5₂) by Wedderburn block (A5)")
@@ -161,7 +208,20 @@ def main() -> int:
     print(f"    d ln|odd|/dq ≈ {mp.nstr(dln, 6)}  (O(10⁰) ⇒ anchor-smooth: odd")
     print("      ingredient, not the ~3.84e6 swing — value measurement-limited)")
 
-    verdict = bool(all(c21_ok.values()) and control_pass and chiral_nonzero and anchor_smooth)
+    # ---- FINDING 4: the Ocneanu block weights W_λ (validated, held-out gate) ----
+    print("\n[4] Ocneanu block weights W_λ (the '𝔙_q magnitude' piece #4099 flagged):")
+    Wq, held_ok = ocneanu_weights()
+    print(f"    held-out Ocneanu gate (τ(σ₁σ₂)=z², τ(σ₂σ₁σ₂), τ(σ₂)=z): {held_ok}")
+    # binding / Vol channel = the bar-even (2,1) block, weighted, at the anchors
+    bind = sp.simplify(Wq["21"] * chi_21(BRAID_5_2))
+    bind_fn = sp.lambdify(_q, bind, "mpmath")
+    bp, bm = bind_fn(qp), bind_fn(qm)
+    print(f"    binding channel W_(2,1)·χ_(2,1)(5₂):  proton={mp.nstr(bp,8)}  muon={mp.nstr(bm,8)}")
+    print("    NOTE: assembling the framing-INVARIANT full 𝔙_q (knot-invariant Re=Vol/")
+    print("    Im=CS) needs the writhe/Jones normalization — the piece adjacent to G3.")
+
+    verdict = bool(all(c21_ok.values()) and control_pass and chiral_nonzero
+                   and anchor_smooth and held_ok)
     print("\n" + "=" * 76)
     print(f" VERDICT: 𝔙_q(5₂) bar-odd built by block; 4₁ control PASSES; anchor-smooth "
           f" [{'PASS' if verdict else 'CHECK'}]")
@@ -200,13 +260,23 @@ def main() -> int:
         "odd_proton": mp.nstr(op, 12), "odd_muon": mp.nstr(om, 12),
         "dln_odd_dq": mp.nstr(dln, 8), "anchor_smooth": bool(anchor_smooth),
         "verdict": "anchor-smooth O(10^0); odd ingredient not swing value (measurement-limited)"})
+    wb.add_data("finding4_ocneanu_weights", {
+        "W_3": str(Wq["3"]), "W_2_1": str(Wq["21"]), "W_1_1_1": str(Wq["111"]),
+        "held_out_gate_ok": bool(held_ok),
+        "binding_channel_5_2_proton": mp.nstr(bp, 12),
+        "binding_channel_5_2_muon": mp.nstr(bm, 12),
+        "verdict": "Ocneanu block weights W_λ determined (t=√q) and VALIDATED against "
+                   "held-out τ (σ₁σ₂→z², σ₂σ₁σ₂→hz²+z, σ₂→z); binding/Vol channel = "
+                   "bar-even W_(2,1)·χ_(2,1). Framing-INVARIANT full 𝔙_q still needs the "
+                   "writhe/Jones normalization (G3-adjacent)."})
     wb.add_data("scope", {
         "tier": "fibre-level categorical datum (pre-tau)",
         "raw_trace_framing_contaminated": True,
         "markov_weight_fix": "tau(sigma1 sigma2 sigma1) = h*z^2 + z, NOT z^3",
         "g3_wall": "does NOT cross argument->S resurgent-monodromy wall (open, not laundered)",
         "value_status": "swing value measurement-limited (no_anchor_invariant_realizes_swing)",
-        "ocneanu_weights_W_lambda": "messy; not required for the bar-odd channel (remaining piece)",
+        "ocneanu_weights_W_lambda": "DETERMINED + held-out-gated (finding 4); framing-invariant "
+                                    "assembly needs the writhe normalization (G3-adjacent)",
         "c_k_wired": False, "fit": False})
     wb.add_assertion("block21_bar_even_target_knots",
                      computed=1.0 if all(c21_ok.values()) else 0.0, expected=1.0, tolerance=0.5,
@@ -221,6 +291,10 @@ def main() -> int:
                      expected=1.0, tolerance=0.5,
                      source="5_2 (chiral, e=2) bar-odd = 1/2(q^2-q^-2) != 0, anchor-smooth "
                             "O(10^0) — odd ingredient, value measurement-limited")
+    wb.add_assertion("ocneanu_weights_held_out_gate",
+                     computed=1.0 if held_ok else 0.0, expected=1.0, tolerance=0.5,
+                     source="block weights W_λ reproduce the Ocneanu trace on HELD-OUT elements "
+                            "(σ₁σ₂→z², σ₂σ₁σ₂→hz²+z, σ₂→z) — the weights are correct")
     wb.save()
     print("\n  RESULT: 𝔙_q(5₂) categorical bar-odd datum built by block + gated (4₁ "
           "control); fibre-level, G3 wall stays open.")

@@ -53,10 +53,25 @@ This is the **fibre-level** (pre-τ) categorical datum only. It does **not** cro
 the **G3 argument→S resurgent-monodromy wall** — the analytic continuation from
 the formal-q block characters to the archimedean decay projection `S` — which
 **stays open (not laundered)**. No archimedean `S` value is claimed; the swing
-value stays measurement-limited; no `c_k` is wired. The full Ocneanu weights
-`W_λ` (needed for the bar-even/binding magnitude, not for the bar-odd channel)
-came out messy under symbolic solve and are recorded as the remaining piece of
-the block construction.
+value stays measurement-limited; no `c_k` is wired.
+
+## The Ocneanu block weights `W_λ` — determined and held-out-gated (finding 4)
+
+The earlier symbolic solve for the full weights was numerically unstable; redoing
+it in `t = √q` gives clean weights, and they are **validated against a held-out
+Ocneanu gate**: `tr_M = Σ_λ W_λ χ_λ` reproduces `τ(σ₁σ₂)=z²`, `τ(σ₂σ₁σ₂)=h·z²+z`,
+and `τ(σ₂)=z` — elements **not** used in the solve — exactly (q-exact). So the
+weights are correct; the "messy/remaining" flag is closed. The bar-even / **Vol
+(binding)** channel is then `W_(2,1)·χ_(2,1)`, evaluated at the anchors in the
+witness. (Note: the `z = 1/(√q+1/√q)` used here is the QOU Markov convention, not
+the Jones-polynomial specialization, so the raw trace is not the Jones polynomial;
+the probe makes no Jones claim.)
+
+**What remains** is assembling the framing-**invariant** full `𝔙_q` (the
+knot-invariant `Re = Vol` / `Im = CS`), which needs the writhe/Jones
+normalization — the piece adjacent to the G3 wall. The raw weighted trace is
+framing-covariant (as the raw-trace amphichirality failure above shows), so the
+knot-invariant `𝔙_q` requires that normalization, not just the weights.
 
 The brick advances bean `qou-3yxn`: the categorical Markov-trace `𝔙_q(5₂)`
 bar-odd channel is now built and gated. The value-leg closure (measurement floor)
