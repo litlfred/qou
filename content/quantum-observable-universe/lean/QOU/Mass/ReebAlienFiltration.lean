@@ -14,7 +14,7 @@ end QOU.Mass
 # QOU.Mass.ReebAlienFiltration — Alien calculus on the Reeb-twisted jet bundle
 
 This file formalises the non-perturbative Stokes extraction for the binding keystone
-(`conj:qdifference-kernel-prolongation-symbol`) by feeding the Reeb-twisted 
+(`thm:qdifference-kernel-prolongation-symbol`) by feeding the Reeb-twisted 
 jet filtration into the alien derivations `Δ_ω`.
 
 ## The Resolution of the SU(2) Compactness Trap
@@ -82,7 +82,7 @@ theorem tau_derived_from_alien_filtration
   unfold alien_eigenvalue_gap
   rfl
 
-/-- The final structural keystone (conj:qdifference-kernel-prolongation-symbol):
+/-- The final structural keystone (thm:qdifference-kernel-prolongation-symbol):
     The q-difference transfer matrix $R(q,x)$ is identically the jet-prolongation
     symbol evaluated by the alien derivative. -/
 class AlienProlongationMatch (R : Type*) [Field R] [ReebJetFiltration R] [AlienStokesBridge R] extends QDifferenceKernelIsProlongationSymbol R where

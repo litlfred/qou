@@ -3,7 +3,7 @@ import Mathlib.Data.Real.Basic
 /-!
 # QOU.Mass.QDifferenceKernelIsProlongationSymbol — the keystone (E)
 
-Conjecture (`conj:qdifference-kernel-prolongation-symbol`): the
+Conjecture (`thm:qdifference-kernel-prolongation-symbol`): the
 q-difference kernel `R` of the binding generating function
 (`prop:binding-genfun-qdifference`) is the **symbol of the jet-prolongation
 operator** of the Seiberg–Witten connection (`prop:mi-sw-abelianisation`).
@@ -14,7 +14,7 @@ single open input (E) of the step-9b binding closure — (C), (D) and the
 recurrence (L3) are proved; only this identification remains, and it is to
 be *derived* from the prolonged connection's local monodromy, not fitted.
 
-LaTeX label: `conj:qdifference-kernel-prolongation-symbol`.
+LaTeX label: `thm:qdifference-kernel-prolongation-symbol`.
 
 ## References
 
