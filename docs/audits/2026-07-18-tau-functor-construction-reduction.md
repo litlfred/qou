@@ -80,6 +80,19 @@ where `𝐂` is the substrate braided category — concretely the category of fi
    in Lean.
 3. **F3 at general `n`** is proved only at `n=2,3`; general `n` needs the
    `Ind_{H_n}^{H_{n+1}}` Markov stabilization (documented open in `MarkovTraceOnHecke.lean`).
+   - **`n=4` rung (2026-07-19, PR #4046, `Machinery/MarkovTraceH4.lean`):** the concrete
+     `Fin 24` NF module now carries (M1) linearity, (M3) Markov-σ₂ reduction, and a
+     **sorry-free cyclicity *reduction*** `trM_cyclic_of_gram_symm` — `mulNF` bilinearity
+     (with the `mulσ` actions kept opaque, so the depth-6 `whnf` wall is untouched) lifts
+     to the Gram form `tr_M(u·v)=∑ u_i v_j G_{ij}`, whence `trM_cyclic` is *derived* modulo
+     the single residual `gram_symm` (the finite `24²` base `G_{ij}=G_{ji}`, still
+     `whnf`-blocked; audit `2026-07-19-h4-cyclicity-whnf-explosion.md`, beans `qou-svnb`).
+     The clean closure is the abstract cyclic-trace lemma on `MarkovStabilization`
+     (`HeckeBraidedCategoryScaffold`), which supplies this reduction generically for all
+     `n` and discharges `gram_symm` — bean `qou-0vsu`. NB: `MarkovTraceH4` (concrete
+     `mulNF` + reduction) is complementary to `HeckeH4StabilizationRung` (concrete
+     `mulσ`/`TRM4` + Hecke/braid/stabilization, no `mulNF`); the two should be reconciled
+     when the abstract lemma lands.
 4. **F5 (`TauRhoHodgeLift`)** — the apex, genuinely open. No instance.
 
 Gaps 1–2 are **categorical-infrastructure** gaps (Mathlib cannot yet *express* the Hecke

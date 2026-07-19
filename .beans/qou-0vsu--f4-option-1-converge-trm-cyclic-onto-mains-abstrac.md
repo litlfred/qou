@@ -50,3 +50,20 @@ trM_cyclic is either (a) discharged by an abstract instance (sorry gone), or
 (b) still a documented sorry BUT the duplication with HeckeH4StabilizationRung is
 reconciled and the intent is posted so the upstream lemma lands it. Either is a
 clean, non-duplicative state.
+
+## Coordination done (2026-07-19)
+No ACTIVE sibling PR is working the abstract MarkovStabilization cyclic-trace
+lemma — the framework (HeckeBraidedCategoryScaffold, H2A/H3A) is all merged to
+main; the general-n abstract lemma is the OPEN class nobody has a live branch for.
+So option-1 coordination = make my contribution discoverable from the canonical
+open-item-A home and record the convergence:
+- Added a convergence note to docs/audits/2026-07-18-tau-functor-construction-
+  reduction.md (F3 general-n section): the n=4 rung now has a sorry-free cyclicity
+  REDUCTION (trM_cyclic_of_gram_symm, from option 2 / qou-svnb); the abstract
+  MarkovStabilization lemma supplies it generically and discharges gram_symm.
+- Noted the MarkovTraceH4 (mulNF+reduction) vs HeckeH4StabilizationRung
+  (mulσ/TRM4, no mulNF) duplication — complementary, reconcile when abstract
+  lemma lands.
+Definition-of-done (b) met: documented residual sorry + duplication noted +
+convergence/intent recorded in the canonical doc. Full closure (a) awaits the
+abstract lemma (no live owner yet). Bean stays open pending that.
