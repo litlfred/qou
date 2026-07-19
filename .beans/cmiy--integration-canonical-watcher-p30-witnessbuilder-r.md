@@ -497,3 +497,17 @@ Stamped those 7 in-place, 0 value violations, all PROV_OK. PROV_MISSING 101 -> 9
 The remaining ~94 each need this same per-producer read (atom/name scope) to attribute
 safely — genuine per-script work, not a bulk sweep; the hardcoded-atom trap proves regex
 attribution is unsafe on the canonical set.
+
+## 2026-07-19 — CLOSED. Load-bearing PROV_MISSING 232 -> 0 (ratio 1.000).
+Final floor of 3 documented + audit-exempted (PROV_EXEMPT_ACKNOWLEDGED, reasons in
+computations/audits/provenance-acknowledged-floor.json), so they are on the record
+and NEVER re-chased:
+- canonical-mass-table-242ppb: hand-authored by design (self-documents "no producer
+  script was run"); auto-resolves when a Delta_lambda-backed producer regenerates it.
+- wenzl-y-lambda-h9 / h12: legacy y_λ caches at an old muon pin (1.109978595554,
+  differs at digit 12); producer removed; still read by nucleus_real_sdp.py. Resolve
+  only via an owner-gated regenerate at the live q0.
+Session arc: mechanical batches + auto-stamper + native wheel + in-place stamper +
+per-producer map + rust-producer archaeology; q0 parameterized (q0Anchor/q0Value on
+every witness), backfilled on 573, flip-detector CI-gated. Discussion CLOSED — do not
+revisit the floor of 3; each has a documented reason + resolution path.

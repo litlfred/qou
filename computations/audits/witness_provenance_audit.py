@@ -116,6 +116,24 @@ def classify(path: Path) -> tuple[str, list[str]]:
     return ("PROV_MISSING" if missing else "PROV_OK"), missing
 
 
+def load_acknowledged_floor() -> "dict[str, str]":
+    """Load-bearing witnesses that cannot carry a producer-backed provenance
+    triple, each with an investigated reason (hand-authored by design, or a
+    legacy artifact whose producer was removed). Returns {witness_name: reason}.
+    These are classified PROV_EXEMPT_ACKNOWLEDGED — on the record, never
+    re-chased. See provenance-acknowledged-floor.json for the discipline (a
+    reason from a completed investigation is required; not a silencing list)."""
+    path = HERE / "provenance-acknowledged-floor.json"
+    if not path.exists():
+        return {}
+    try:
+        d = json.loads(path.read_text())
+    except json.JSONDecodeError:
+        return {}
+    return {e["witness"]: e.get("reason", "")
+            for e in d.get("acknowledged", []) if e.get("witness")}
+
+
 def build_reference_index() -> tuple[set[str], "dict[str, int]"]:
     """Return (paper_referenced_names, py_mention_counts).
 
@@ -169,11 +187,12 @@ def main(argv: list[str] | None = None) -> int:
     args = parser.parse_args(argv)
 
     legacy_removed = load_legacy_removed_set()
+    acknowledged_floor = load_acknowledged_floor()
     paper_refs, py_counts = build_reference_index()
     by_verdict: dict[str, list[dict]] = {
         "PROV_OK": [], "PROV_MISSING": [],
         "PROV_AUDIT_EXEMPT": [], "PROV_EXEMPT_NO_READER": [],
-        "PROV_PARSE_ERROR": [],
+        "PROV_EXEMPT_ACKNOWLEDGED": [], "PROV_PARSE_ERROR": [],
     }
     # Scan the whole compute tree's witnesses (reorg scan-root fix).
     for wp in sorted((HERE.parent).rglob("*.witness.json")):
@@ -186,6 +205,10 @@ def main(argv: list[str] | None = None) -> int:
         # (owner directive 2026-07-18): exempt no-reader witnesses.
         if verdict == "PROV_MISSING" and not has_reader(wp.name, paper_refs, py_counts):
             verdict, missing = "PROV_EXEMPT_NO_READER", missing
+        # Investigated, documented floor: load-bearing but no attributable
+        # producer (hand-authored / legacy orphan). On the record, not a gap.
+        elif verdict == "PROV_MISSING" and wp.name in acknowledged_floor:
+            verdict, missing = "PROV_EXEMPT_ACKNOWLEDGED", [acknowledged_floor[wp.name]]
         by_verdict[verdict].append(
             {"witness": wp.name, "missing_fields": missing}
         )
@@ -195,21 +218,23 @@ def main(argv: list[str] | None = None) -> int:
     n_missing = len(by_verdict["PROV_MISSING"])
     n_audit = len(by_verdict["PROV_AUDIT_EXEMPT"])
     n_no_reader = len(by_verdict["PROV_EXEMPT_NO_READER"])
+    n_ack = len(by_verdict["PROV_EXEMPT_ACKNOWLEDGED"])
     n_parse_err = len(by_verdict["PROV_PARSE_ERROR"])
     completeness_ratio = (
-        (n_ok + n_audit + n_no_reader) / n_total if n_total > 0 else 0.0
+        (n_ok + n_audit + n_no_reader + n_ack) / n_total if n_total > 0 else 0.0
     )
 
     print("=" * 70)
     print("I14 audit — witness provenance completeness")
     print("=" * 70)
-    print(f"  total scanned        : {n_total}")
-    print(f"  PROV_OK              : {n_ok}")
-    print(f"  PROV_AUDIT_EXEMPT    : {n_audit}")
-    print(f"  PROV_EXEMPT_NO_READER: {n_no_reader}")
-    print(f"  PROV_MISSING         : {n_missing}")
-    print(f"  PROV_PARSE_ERROR     : {n_parse_err}")
-    print(f"  completeness ratio   : {completeness_ratio:.3f}")
+    print(f"  total scanned          : {n_total}")
+    print(f"  PROV_OK                : {n_ok}")
+    print(f"  PROV_AUDIT_EXEMPT      : {n_audit}")
+    print(f"  PROV_EXEMPT_NO_READER  : {n_no_reader}")
+    print(f"  PROV_EXEMPT_ACKNOWLEDGED: {n_ack}")
+    print(f"  PROV_MISSING           : {n_missing}")
+    print(f"  PROV_PARSE_ERROR       : {n_parse_err}")
+    print(f"  completeness ratio     : {completeness_ratio:.3f}")
     print(f"  legacy_removed_skipped: {len(legacy_removed)}")
     if n_missing:
         print()
@@ -240,6 +265,7 @@ def main(argv: list[str] | None = None) -> int:
             "prov_ok": n_ok,
             "prov_audit_exempt": n_audit,
             "prov_exempt_no_reader": n_no_reader,
+            "prov_exempt_acknowledged": n_ack,
             "prov_missing": n_missing,
             "prov_parse_error": n_parse_err,
             "completeness_ratio": completeness_ratio,
