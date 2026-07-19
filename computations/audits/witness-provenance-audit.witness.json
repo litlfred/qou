@@ -1,23 +1,23 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-19T03:20:43.420385+00:00",
-  "commitSha": "a8fef6c30bd344be50eaec189ed0b7a5cc08f9f7",
+  "computedAt": "2026-07-19T03:28:40.979730+00:00",
+  "commitSha": "f435dc1394706b43fc1650cffa01c60932f7655d",
   "assertions": [
     {
       "name": "no_missing_provenance",
-      "computed": 3,
+      "computed": 0,
       "expected": 0,
-      "passed": false,
+      "passed": true,
       "tolerance": 0,
       "source": "every witness must declare engine/scriptFile/commitSha"
     }
   ],
-  "allPassed": false,
-  "durationMs": 11,
+  "allPassed": true,
+  "durationMs": 9,
   "computation": "witness-provenance-audit",
   "scriptFile": "witness_provenance_audit.py",
-  "scriptHash": "2c77ad98e8f6",
+  "scriptHash": "78954454e283",
   "scriptCommitSha": "5b5415069e35023585ecf1bec28f61c9eca12da7",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -48,13 +48,14 @@
   },
   "data": {
     "counts": {
-      "total_scanned": 2066,
-      "prov_ok": 1940,
+      "total_scanned": 2068,
+      "prov_ok": 1942,
       "prov_audit_exempt": 60,
       "prov_exempt_no_reader": 62,
-      "prov_missing": 3,
+      "prov_exempt_acknowledged": 3,
+      "prov_missing": 0,
       "prov_parse_error": 1,
-      "completeness_ratio": 0.9980638915779284
+      "completeness_ratio": 0.9995164410058027
     },
     "by_verdict": {
       "PROV_OK": [
@@ -400,6 +401,14 @@
         },
         {
           "witness": "alpha-em-f-t4-weight-value-transport.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "alpha-em-f-t4-weight-values.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "alpha-em-f-t5-assembly.witness.json",
           "missing_fields": []
         },
         {
@@ -7819,32 +7828,7 @@
           "missing_fields": []
         }
       ],
-      "PROV_MISSING": [
-        {
-          "witness": "canonical-mass-table-242ppb.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "wenzl-y-lambda-h12.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "wenzl-y-lambda-h9.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        }
-      ],
+      "PROV_MISSING": [],
       "PROV_AUDIT_EXEMPT": [
         {
           "witness": "alpha-k-split-pole-order-audit.witness.json",
@@ -8578,6 +8562,26 @@
             "engine",
             "scriptFile",
             "commitSha"
+          ]
+        }
+      ],
+      "PROV_EXEMPT_ACKNOWLEDGED": [
+        {
+          "witness": "canonical-mass-table-242ppb.witness.json",
+          "missing_fields": [
+            "HAND-AUTHORED by design — the witness's own `provenance` field states 'no producer script was run to generate this file'. Per-isotope B(K) values carried from a prior-session mass-table sweep; provisional pending a producer-backed regeneration once the Delta_lambda closure lands. There is nothing to attribute."
+          ]
+        },
+        {
+          "witness": "wenzl-y-lambda-h12.witness.json",
+          "missing_fields": [
+            "LEGACY y_lambda cache at an OLD muon pin (as wenzl-y-lambda-h9). Producing script removed; still read by nucleus_real_sdp.py."
+          ]
+        },
+        {
+          "witness": "wenzl-y-lambda-h9.witness.json",
+          "missing_fields": [
+            "LEGACY y_lambda cache at an OLD muon pin (q0=1.109978595554..., differs from the current muon pin at digit 12). The producing script is no longer in the repo (no writer found in Python or Rust; still READ by nucleus_real_sdp.py so cannot be deleted). Attributing a current script would mislabel a stale-q0 artifact."
           ]
         }
       ],

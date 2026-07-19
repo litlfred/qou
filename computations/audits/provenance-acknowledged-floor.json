@@ -1,0 +1,22 @@
+{
+  "_schema": "provenance-acknowledged-floor/v1",
+  "_purpose": "Load-bearing witnesses that CANNOT carry a producer-backed provenance triple, each with an investigated reason. The witness_provenance_audit classifies these PROV_EXEMPT_ACKNOWLEDGED (not PROV_MISSING) so they are on the record and never re-chased. Adding an entry REQUIRES a documented reason from a completed investigation — this is not a silencing list. Session cmiy dig, 2026-07-19.",
+  "_history": "cmiy provenance rollup drove load-bearing PROV_MISSING 232 -> 0. These 3 are the irreducible floor after full git archaeology (all bulk-imported 2026-06-30 in commit c790dd29fe as fresh Adds, never renames).",
+  "acknowledged": [
+    {
+      "witness": "canonical-mass-table-242ppb.witness.json",
+      "reason": "HAND-AUTHORED by design — the witness's own `provenance` field states 'no producer script was run to generate this file'. Per-isotope B(K) values carried from a prior-session mass-table sweep; provisional pending a producer-backed regeneration once the Delta_lambda closure lands. There is nothing to attribute.",
+      "resolution_path": "auto-resolves when a Delta_lambda-backed mass-table producer is written and regenerates this witness through WitnessBuilder."
+    },
+    {
+      "witness": "wenzl-y-lambda-h9.witness.json",
+      "reason": "LEGACY y_lambda cache at an OLD muon pin (q0=1.109978595554..., differs from the current muon pin at digit 12). The producing script is no longer in the repo (no writer found in Python or Rust; still READ by nucleus_real_sdp.py so cannot be deleted). Attributing a current script would mislabel a stale-q0 artifact.",
+      "resolution_path": "regenerate via a current y_lambda producer at the live q0 (a value-changing recompute, owner-gated) — then it stamps normally and leaves this list."
+    },
+    {
+      "witness": "wenzl-y-lambda-h12.witness.json",
+      "reason": "LEGACY y_lambda cache at an OLD muon pin (as wenzl-y-lambda-h9). Producing script removed; still read by nucleus_real_sdp.py.",
+      "resolution_path": "same as wenzl-y-lambda-h9: owner-gated regenerate at the live q0."
+    }
+  ]
+}
