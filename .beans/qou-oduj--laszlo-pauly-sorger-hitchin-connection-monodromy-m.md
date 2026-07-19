@@ -1,10 +1,11 @@
 ---
 # qou-oduj
 title: 'Laszlo-Pauly-Sorger Hitchin connection monodromy (MonodromyHitchinY): WZW/Stokes monodromy — hbar<->2pi i/N wall + s5-so3 keystone'
-status: todo
+status: completed
 type: task
+priority: normal
 created_at: 2026-07-18T22:17:25Z
-updated_at: 2026-07-18T22:17:25Z
+updated_at: 2026-07-19T03:59:53Z
 ---
 
 
