@@ -46,5 +46,5 @@ of the valuation ring $\mathcal{O}$.
 -- The conjecture itself.  The `sorry` represents the **open
 -- conjecture** per §3b — not a missing proof.
 -- Ref: [manuscript] quantum-observable-universe/appendix-surreals/spectral-normal-form.ts
-noncomputable instance : SpectralNormalForm := ⟨0, rfl⟩
+noncomputable instance : SpectralNormalForm := sorry
 end QOU.AppendixSurreals
