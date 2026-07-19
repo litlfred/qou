@@ -1,0 +1,47 @@
+{
+  "computation": "bring-polarized-q-dictionary-endpoint-blindness",
+  "description": "Formalize-first method-class constraint for the \u03b1_EM magnitude leg: the two non-vacuous (endpoint) observables of any period-side q-deformation dictionary are identical for the polarized (\u03c4\u2080\u00b7M) and product (\u03c4\u2080\u00b7diag) periods \u2014 t\u21920 exactly (Jacobi + det equality), t\u2192\u221e trivially \u2014 while the ~12-orders polarization effect (#4043) is confined to the dictionary-gated interior. The q-route collapses onto the \u03c4-functor wall (independent convergence with #4030). Scope-(a); no dictionary fitted; no 8\u03c0; nothing wired.",
+  "auditOnly": "docs/audits/2026-07-19-bring-polarized-q-dictionary-endpoint-blindness.md",
+  "tier": "symbolic-exact (t\u21920 equality via Jacobi inversion + det identity; t\u2192\u221e trivial) + numeric confirmation; scope-(a) method-class constraint",
+  "computedAt": "2026-07-19T01:09:50.742220+00:00",
+  "commitSha": "5c641fd0f7d959f22a7b9f000233653d0a8388c5",
+  "engine": "numpy+mpmath",
+  "engineVersion": "2.4.6/1.4.1",
+  "scriptFile": "bring_polarized_q_dictionary_endpoint_blindness_probe.py",
+  "scriptHash": "80c091e9edfb",
+  "assertions": [
+    {
+      "name": "covolume_polarization_independent",
+      "passed": true,
+      "detail": "det G_pol = 2.304241094858e-02 = det G_diag = 2.304241094858e-02"
+    },
+    {
+      "name": "endpoint_t_to_0_identical",
+      "passed": true,
+      "detail": "\u03b8_pol/\u03b8_diag at t=0.2,0.1,0.05: 0.9999998914, 1.0000000000, 1.0000000000 \u2192 1 (Jacobi: both ~ t\u207b\u2074/\u221adet, det equal \u21d2 EXACT)"
+    },
+    {
+      "name": "endpoint_t_to_inf_identical",
+      "passed": true,
+      "detail": "\u03b8_pol/\u03b8_diag at t=10,20,40: 0.97504618, 0.99968571, 0.9999999506 \u2192 1 monotonically (both \u03b8 \u2192 1; deviation decays at the shortest-vector rate e^{\u2212\u03c0\u00b70.139\u00b7t})"
+    },
+    {
+      "name": "interior_carries_polarization",
+      "passed": true,
+      "detail": "\u03b8_pol/\u03b8_diag at t=1: 0.720853 \u2260 1 \u2014 the interior differs while both endpoints agree; integrated over the heat kernel this is the ~12-orders determinant separation of #4043 (1.38758 vs 1.4724e12)"
+    }
+  ],
+  "allPassed": true,
+  "result": {
+    "theta_ratio_t_0p05": 0.999999999999989,
+    "theta_ratio_t_1": 0.7208527171494672,
+    "theta_ratio_t_40": 0.9999999506008428,
+    "measure_polarized_4043": 1.38757991,
+    "measure_diagonal_4043": 1472396000000.0,
+    "verdict": "ENDPOINT-ANCHORED q-DICTIONARIES ARE POLARIZATION-BLIND (scope-(a), method-class constraint): both dictionary-content endpoints of the period-side q-deformation \u2014 the t\u21920 Jacobi asymptote \u03b8~t\u207b\u2074/\u221adet (det polarization-independent, so EXACTLY equal) and the trivial t\u2192\u221e limit \u03b8\u21921 \u2014 coincide for the principally polarized period \u03c4\u2080\u00b7M and the product period \u03c4\u2080\u00b7diag(5,5,5,1), while the ~12-orders determinant separation (#4043: 1.38758 vs 1.4724e12) lives entirely in the dictionary-gated interior where matching is vacuous (tranche-5 prune). The magnitude leg's period-side q-deformation route therefore carries no dictionary-independent polarization content: the route collapses onto the \u03c4-functor (categorical) wall \u2014 independent geometric convergence with #4030's 'irreducibly categorical'. Constrains the METHOD, not any ingredient; the \u03c4-functor route is untouched. No dictionary fitted; no 8\u03c0; nothing wired."
+  },
+  "context": {
+    "builds_on": "#4043 (polarized/diagonal genus-4 measures + FP machinery); alpha_em_period_qdeformation_probe (tranche-5 endpoint-only prune); #4030 + TauFunctorTargetSpec (per-loop leg irreducibly categorical)",
+    "scope_guard": "scope-(a) method-class constraint; \u03c4-functor route untouched; no dictionary fitted; no 8\u03c0; nothing wired; no tier change"
+  }
+}
