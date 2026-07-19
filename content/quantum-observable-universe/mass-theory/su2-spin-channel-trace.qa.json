@@ -1,0 +1,45 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "thm:su2-spin-channel-trace",
+  "kind": "theorem",
+  "paths": {
+    "ts": "../qou/content/quantum-observable-universe/mass-theory/su2-spin-channel-trace.ts",
+    "md": "../qou/content/quantum-observable-universe/mass-theory/su2-spin-channel-trace.md",
+    "lean": "../qou/content/quantum-observable-universe/lean/QOU/MassTheory/SU2SpinChannelTrace.lean"
+  },
+  "source_hashes": {
+    "md": "c4ca4238a0b9",
+    "ts": "c81e728d9d4c",
+    "lean": "eccbc87e4b5c"
+  },
+  "criteria": {
+    "voice-status-leak": [
+      {
+        "field_hash": {
+          "md": "c4ca4238a0b9",
+          "ts": "c81e728d9d4c",
+          "lean": "eccbc87e4b5c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "name": "qa-sweep.ts"
+        },
+        "timestamp": "2026-07-19T16:10:00.000Z"
+      }
+    ],
+    "lean-vacuity-axiom-audit": [
+      {
+        "field_hash": {
+          "lean": "eccbc87e4b5c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "name": "lean-vacuity-axiom-audit.ts"
+        },
+        "timestamp": "2026-07-19T16:10:00.000Z"
+      }
+    ]
+  }
+}

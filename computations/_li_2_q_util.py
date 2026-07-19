@@ -194,18 +194,18 @@ def linking_weight_family_a(q: mpf, q_inv: mpf | None = None) -> mpf:
     """Family A linking weight (single source of truth for the
     production multiplier).
 
-    This is the linking-weight component of VolDensity(𝓑₃, q) — older
-    docs called it `λ_scale` before PR #1080 absorbed it into the
-    per-knot Geom evaluation.  See
-    `docs/lambda-scale-absorbed-into-vol-density.md` for the framing.
-
+    This is the linking-weight component of VolDensity(𝓑₃, q).
+    
     The closed-form algebraic identity is proved exactly in
     `lambda_scale_all_c_i_family_a.py` (Python) and
-    `lambda-scale-substrate-form.lean` (Lean):
+    `SU2SpinChannelTrace.lean` (Lean):
 
-        linking_weight_A(q) = (1/4) · Σ_{λ ⊢ 4} dim_q V_λ
+        linking_weight_A(q) = (3 * dim_q(triplet) + 1 * dim_q(singlet)) / 4
                             = (3q² + 4 + 3q⁻²) / 4
                             = 5/2 + (3/4) h²,    h = q − q⁻¹
+    
+    It natively evaluates the SU(2) two-nucleon spin channels,
+    bridging the 2.38x gap without relying on H4 globals.
 
     The h-series TERMINATES exactly at h²: all higher h^{2k} coefficients
     are identically zero. Both the closed form and the termination are
