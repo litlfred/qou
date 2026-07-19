@@ -1,0 +1,42 @@
+{
+  "computation": "tau-binding-hitchin-wzw-wall",
+  "description": "The Hitchin/WZW monodromy (Laszlo\u2013Pauly\u2013Sorger) is the right object type for \u03c4=tr B and confirms A\u2085=level-8, but its root-of-unity monodromy is unitary/elliptic (|tr|\u22642) while \u03c4=2.6424>2 is hyperbolic \u2014 the archimedean-continuation wall. Structural analogy (ii), not a derivation. scope-(a)+(b).",
+  "audit_only": true,
+  "tier": "structural assessment (scope-(a) mismatch + scope-(b) exclusion)",
+  "computedAt": "2026-07-19T03:27:34.724361+00:00",
+  "commitSha": "317ea55baf271c225901d7646e46819c7df697f0",
+  "engine": "mpmath",
+  "engineVersion": "1.3.0",
+  "scriptFile": "tau_binding_hitchin_wzw_wall_probe.py",
+  "scriptHash": "7edf04fec597",
+  "assertions": [
+    {
+      "name": "lps_element_neq_tau_binding",
+      "passed": true,
+      "source": "LPS \u03c3\u2081\u207b\u00b9\u03c3\u2082 real-q0 trace = [2]\u00b2\u2212[2] = 2.03281 \u2260 \u03c4_binding = 2.64239 \u2014 the right object TYPE (SL\u2082 det-1 bar-even WZW/Hecke trace) but a distinct [2]_q-rational function. scope-(a)."
+    },
+    {
+      "name": "tau_binding_bareven_form_consistent",
+      "passed": true,
+      "source": "\u03c4_binding = 3(3[2]\u00b2+2)/(4([2]+2)) reproduces the closed form \u2014 bar-even in [2]_q (Lean BindingTauAnchorClosure)"
+    },
+    {
+      "name": "wzw_root_of_unity_always_elliptic",
+      "passed": true,
+      "source": "at every level l the WZW/WRT monodromy trace \u2208 [\u22122,2] (elliptic) \u2014 it is UNITARY (positive-definite Gilmer\u2013Masbaum form; det-1 unitary \u21d2 eigenvalues on the unit circle \u21d2 tr=2Re(\u03bb)\u2208[\u22122,2]). including l=8 (A\u2085 keystone, tr\u22481.0). It CANNOT carry the hyperbolic \u03c4_binding=2.6424>2. scope-(b) exclusion, cited invariant WRT unitarity \u2014 the fibre(root-of-unity)/observable(real-q) archimedean-continuation wall."
+    }
+  ],
+  "allPassed": true,
+  "result": {
+    "tau_binding_q0": "2.642386313",
+    "lps_sigma_real_q0": "2.032809349",
+    "l8_A5_trace": "1.0",
+    "verdict": "CLASSIFICATION (ii) structural analogy needing a bridge \u2014 NOT a derivation. The Hitchin/WZW monodromy (Laszlo\u2013Pauly\u2013Sorger) supplies exactly the right OBJECT TYPE for \u03c4=tr B (SL\u2082 det-1 bar-even WZW/Hecke trace, Prop 5.1 = [2]\u00b2\u2212[2]) and confirms the keystone's A\u2085 as the finite level-8 SU(2) monodromy image (Prop 5.3). But it does NOT bridge to \u03c4_binding=2.6424: (a) the specific element \u03c3\u2081\u207b\u00b9\u03c3\u2082 at real q0 = 2.033 \u2260 2.6424 (distinct [2]_q-rationals); (b) at every root of unity the monodromy is UNITARY \u21d2 elliptic |tr|\u22642 (l=8 A\u2085 gives 1.0), so no literal WZW element carries the hyperbolic \u03c4>2 (cited invariant: WRT unitarity). This is the SAME archimedean-continuation wall the corpus already names (fibre root-of-unity unitary vs observable real-q hyperbolic; keystone \u00a7Frontier bwS0_eq_hecke). The Hitchin paper makes the wall vivid (A\u2085 = level-8 finite monodromy; binding \u03c4 = its hyperbolic continuation) but leaves the owner-gated keystone continuation as the sole route. Not passed off as a closure. No fit; no c_k wired."
+  },
+  "context": {
+    "axis": "\u03c4=tr B geometric derivation \u2014 Hitchin route (ATTACK 2 of qou-do3a; beans qou-oduj/qou-1gdc/z2bn)",
+    "paper": "Laszlo\u2013Pauly\u2013Sorger, On the monodromy of the Hitchin connection (uploads/MonodromyHitchinY.pdf)",
+    "corpus": "BindingTauAnchorClosure.lean (\u03c4 closed form); s5-so3 keystone (bwS0_eq_hecke, archimedean continuation, owner-gated)",
+    "correction": "\u03c4 is NOT an open number \u2014 it has a Lean-proved closed form; only its GEOMETRIC derivation is open"
+  }
+}

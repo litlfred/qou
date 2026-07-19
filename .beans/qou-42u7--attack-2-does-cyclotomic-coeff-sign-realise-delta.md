@@ -27,3 +27,15 @@ Probe `deltalambda_cyclotomic_sign_map_probe.py` (4/4, exit 0):
   the shortcut around it. scope-(a); no fit; no c_k.
 
 Status: test complete. Follow-up = qou-my68 (GS-filtration partition-refinement).
+
+## FOLLOW-UP CORRECTION (2026-07-19, ATTACK 1) — cyclotomic route fully CLOSED; my qou-my68 pointer was WRONG
+Probe `computations/deltalambda/deltalambda_sign_valuation_not_coefficient_probe.py` (3/3, scope-(b)):
+- The Δ_λ sign (-1)^{n(λ)} is the fake-degree VALUATION (bottom jet-order monomial q^{2n(λ)}),
+  ALREADY DERIVED (witness deltalambda-grho-jet-order-derivation; n(λ)=min maj(SYT), Steinberg/Lusztig).
+- route V (valuation) reproduces it ∀λ; route C (cyclotomic residue R_λ(i) of the FULL trace) is
+  NON-REAL ((2,1)→-1+i), ZERO ((2,2)), or sign-mismatched — the cyclotomic COEFFICIENT does NOT carry
+  the sign. The "cyclotomic→Δ_λ refinement" collapses to the derived valuation → CLOSED.
+- CORRECTION: my earlier "route through qou-my68" pointer was WRONG — qou-my68 is the Q_β Habiro
+  same-element task (HabiroGBSameElement), NOT the Δ_λ bridge. The Δ_λ sign is not blocked on it.
+- OPEN Δ_λ leg (redirect): the MAGNITUDE assembly Δ_λ = tr(g_ρ) into B = m_e Σ y_λ χ^λ Δ_λ — a
+  magnitude problem, not a sign/cyclotomic one.
