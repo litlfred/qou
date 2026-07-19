@@ -441,12 +441,17 @@ def q_beta_kashiwara_n2_mev() -> mp.mpf:
 
 @lru_cache(maxsize=None)
 def q_beta_toroidal_mev() -> mp.mpf:
-    """Q_β via the exact Toroidal Harmonic basis / Weber ODE limit (N=4).
+    """Q_β via the Toroidal Harmonic basis / Weber ODE ansatz (N=4 probe).
 
-    Replaces the empirical Kashiwara N2 truncation with the rigorous
-    Toroidal projection derived from the global Markov trace on the
-    solid torus (prop:qbeta-toroidal-harmonics-basis):
-    
+    ⚠ PROBE / near-match — NOT canonical, NOT wired to production.
+    The canonical production Q_β for the neutron mass is
+    ``q_beta_kashiwara_n2_mev`` (what the m-p-substrate-identity witness
+    and ``canonical_mass.py`` use); this toroidal tower is an exploratory
+    N=4 fixed-real-coefficient variant kept for comparison only. It was
+    unwired from ``canonical_mass.py`` on 2026-07-19 (owner directive
+    "canonical derivation only — no silent fallback"; the 2026-07-06
+    ruling "do not re-wire q_beta_toroidal_mev into canonical_mass.py").
+
         Q_A   = m_e·|q²−2q−1|(q+1)/(2q³)
         z     = 1/(√q + 1/√q),  h = q − q⁻¹,  ℏ_q = (q−1)/q
         α     = (z − 1)·h / 2
@@ -455,9 +460,18 @@ def q_beta_toroidal_mev() -> mp.mpf:
         Q_N1  = Q_A · cos(α − u/2)
         Q_Tor = Q_N1 · (1 - u² - 2·u³ + 2·u⁴)
 
-    The coefficients (c_2=-1, c_3=-2, c_4=2) correspond exactly to
-    the Parabolic Cylinder limit (A=2, C=-22) enforced by the
-    half-integer toroidal mode basis P_{n-1/2}^m.
+    Coefficient tiers (ck-dk-canonical-registry.md §3 — NOT "exact"):
+      • c_2 = −1 : PROVED, Taylor-exact, anchor-stable (the only canonical rung).
+      • c_3 = −2 : EMPIRICAL — near-match, REFUTED as a real-q fibre element
+                   (~2.6–3% cross-anchor swing; dc_3/dq ≈ 4.6×10⁶; no fixed
+                   real c_3 holds across anchors — SRigidityPrune).
+      • c_4 = +2 : Parabolic-Cylinder ansatz ESTIMATE; the registry's
+                   CODATA-residual fit for c_4 is −0.97157 (a fit/artifact),
+                   not +2 — the two disagree, so +2 is not derived either.
+
+    The (A=2, C=−22) Parabolic Cylinder / half-integer toroidal basis
+    P_{n-1/2}^m is the ansatz that motivates the coefficients, not a proof
+    of them. Audit: docs/audits/2026-07-19-qbeta-toroidal-tower-overclaim-audit.md.
     """
     q = _q_0()
     Q_A = q_beta_predicted_mev()
