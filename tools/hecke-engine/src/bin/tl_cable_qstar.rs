@@ -86,15 +86,6 @@ fn j_twist(n_order: i32, p: i32, q: &Float) -> Float {
 
 // -------------------------------- gate runner ---------------------------------
 
-struct Assertion {
-    name: String,
-    computed: f64,
-    expected: f64,
-    tolerance: f64,
-    passed: bool,
-    source: String,
-}
-
 fn log(t0: Instant, msg: &str) {
     println!("  [{:7.0}s] {}", t0.elapsed().as_secs_f64(), msg);
     std::io::stdout().flush().ok();
@@ -133,9 +124,20 @@ fn main() {
     );
     println!("{}", "=".repeat(78));
 
-    // engines: framing needs cN·2 (unknot 2-strand), gates need cN·3, plus the
-    // cN denominator engine.
-    let mut strand_counts = vec![c_n, c_n * 2, c_n * k];
+    // Optional gate selector for checkpointed runs across container windows:
+    //   all (default) | G1 | G2 | G3 | T1 | T2 | T3
+    let sel: String = std::env::args().nth(2).unwrap_or_else(|| "all".to_string());
+    let want = |g: &str| sel == "all" || sel == g;
+
+    // engines: G1 framing needs cN·2 (unknot 2-strand); G2/G3/T need cN·k, plus
+    // the cN denominator engine (always). Build only what the selected gate uses.
+    let mut strand_counts = vec![c_n];
+    if want("G1") {
+        strand_counts.push(c_n * 2);
+    }
+    if want("G2") || want("G3") || want("T1") || want("T2") || want("T3") {
+        strand_counts.push(c_n * k);
+    }
     strand_counts.sort_unstable();
     strand_counts.dedup();
     log(t0, &format!("building TL engines {:?} ...", strand_counts));
@@ -147,109 +149,92 @@ fn main() {
     }
 
     let q_star = Float::with_val(PREC, Float::parse(Q_STAR_STR).unwrap());
-    let mut assertions: Vec<Assertion> = Vec::new();
+    let ckpt_dir = format!("computations/probes/checkpoints/n{}-cable-qstar", n_target);
+    std::fs::create_dir_all(&ckpt_dir).ok();
+    let write_ckpt = |gate: &str, v: serde_json::Value| {
+        let p = format!("{}/{}.json", ckpt_dir, gate);
+        let body = serde_json::to_string_pretty(&v).unwrap();
+        if std::fs::write(&p, &body).is_err() {
+            let b = format!("n{}-{}.json", n_target, gate);
+            std::fs::write(&b, &body).ok();
+        }
+        println!("  checkpoint -> {}", p);
+    };
 
     // ---- G1: unknot ribbon framing at N (cheap, TL_{cN·2}) ----
-    log(t0, "[G1] unknot framing ...");
-    let mut g1_ok = true;
-    let mut fr_measured = String::new();
-    for qs in [fl(1.11), fl(0.95)] {
-        let jr = jp(&[1], 2, c_n, &qs, &engines);
-        let fr = Float::with_val(PREC, fi(1) / &jr);
-        let expect = Float::with_val(PREC, fl(fr_sign) * fpow(&qs, &fl(fe)));
-        let dev = rel_diff(&fr, &expect).abs().to_f64();
-        g1_ok &= dev < 1e-18;
-        if fr_measured.is_empty() {
-            fr_measured = fr.to_f64().to_string();
+    if want("G1") {
+        log(t0, "[G1] unknot framing ...");
+        let mut g1_ok = true;
+        let mut fr_measured = String::new();
+        for qs in [fl(1.11), fl(0.95)] {
+            let jr = jp(&[1], 2, c_n, &qs, &engines);
+            let fr = Float::with_val(PREC, fi(1) / &jr);
+            let expect = Float::with_val(PREC, fl(fr_sign) * fpow(&qs, &fl(fe)));
+            let dev = rel_diff(&fr, &expect).abs().to_f64();
+            g1_ok &= dev < 1e-18;
+            if fr_measured.is_empty() {
+                fr_measured = fr.to_f64().to_string();
+            }
+            log(t0, &format!("    q={}: fr={:.6}  rel={:.2e}", qs, fr.to_f64(), dev));
         }
-        log(
-            t0,
-            &format!("    q={}: fr={:.6}  |fr - sign·q^fe| rel={:.2e}", qs, fr.to_f64(), dev),
+        println!("    G1 ribbon framing: {}", if g1_ok { "PASS" } else { "FAIL" });
+        write_ckpt(
+            "G1",
+            serde_json::json!({
+                "gate": "G1", "passed": g1_ok, "computed": if g1_ok {1.0} else {0.0},
+                "fr_measured": fr_measured, "fr_sign": fr_sign, "fe": fe,
+            }),
         );
     }
-    assertions.push(Assertion {
-        name: format!("gate_unknot_ribbon_framing_N{}", n_target),
-        computed: if g1_ok { 1.0 } else { 0.0 },
-        expected: 1.0,
-        tolerance: 0.5,
-        passed: g1_ok,
-        source: format!(
-            "fr = {}q^{{{}}} (θ_V ribbon magnitude; sign (−1)^cN) from writhe-1 unknot",
-            if fr_sign > 0.0 { "+" } else { "−" },
-            fe
-        ),
-    });
-    println!("    G1 ribbon framing: {}", if g1_ok { "PASS" } else { "FAIL" });
 
     // ---- G2: 4₁ (w=0, framing-free) vs trusted p=−1 tower at one q ----
-    log(t0, "[G2] 4₁ vs trusted p=−1 tower ...");
-    let q2 = fl(1.06);
-    let jc = jp(&BRAID_4_1, k, c_n, &q2, &engines);
-    let jt = j_twist(n_target, -1, &Float::with_val(PREC, q2.clone().pow(2u32)));
-    let jt2 = j_twist(
-        n_target,
-        -1,
-        &Float::with_val(PREC, fi(1) / &q2.clone().pow(2u32)),
-    );
-    let e_a = rel_diff(&jc, &jt).abs().to_f64();
-    let e_b = {
-        let d = Float::with_val(PREC, &jc - &jt2);
-        Float::with_val(PREC, d / &jt).abs().to_f64()
-    };
-    let err2 = e_a.min(e_b);
-    let g2_ok = err2 < 1e-15;
-    log(
-        t0,
-        &format!(
-            "    q={}: cable={:.10} tower={:.10} rel={:.2e}  {}",
-            q2,
-            jc.to_f64(),
-            jt.to_f64(),
-            err2,
-            if g2_ok { "PASS" } else { "FAIL" }
-        ),
-    );
-    assertions.push(Assertion {
-        name: format!("gate_41_N{}_matches_trusted_tower", n_target),
-        computed: err2,
-        expected: 0.0,
-        tolerance: 1e-15,
-        passed: g2_ok,
-        source: format!("4₁ {}-cable J' (framing-free) = trusted p=−1 tower", c_n),
-    });
+    if want("G2") {
+        log(t0, "[G2] 4₁ vs trusted p=−1 tower ...");
+        let q2 = fl(1.06);
+        let jc = jp(&BRAID_4_1, k, c_n, &q2, &engines);
+        let jt = j_twist(n_target, -1, &Float::with_val(PREC, q2.clone().pow(2u32)));
+        let jt2 = j_twist(n_target, -1, &Float::with_val(PREC, fi(1) / &q2.clone().pow(2u32)));
+        let e_a = rel_diff(&jc, &jt).abs().to_f64();
+        let e_b = {
+            let d = Float::with_val(PREC, &jc - &jt2);
+            Float::with_val(PREC, d / &jt).abs().to_f64()
+        };
+        let err2 = e_a.min(e_b);
+        let g2_ok = err2 < 1e-15;
+        log(t0, &format!("    cable={:.10} tower={:.10} rel={:.2e} {}",
+            jc.to_f64(), jt.to_f64(), err2, if g2_ok { "PASS" } else { "FAIL" }));
+        write_ckpt(
+            "G2",
+            serde_json::json!({"gate": "G2", "passed": g2_ok, "computed": err2, "tolerance": 1e-15}),
+        );
+    }
 
     // ---- G3: 4₁ amphichiral null at q* ----
-    log(t0, "[G3] 4₁ null at q* ...");
-    let a41 = jp(&BRAID_4_1, k, c_n, &q_star, &engines);
-    let q_star_inv = Float::with_val(PREC, fi(1) / &q_star);
-    let b41 = jp(&BRAID_4_1, k, c_n, &q_star_inv, &engines);
-    let null_rel = rel_diff(&a41, &b41).abs().to_f64();
-    let g3_ok = null_rel < 1e-18;
-    log(
-        t0,
-        &format!("    |B(4₁;q*)|/|J| = {:.2e}  {}", null_rel, if g3_ok { "PASS" } else { "FAIL" }),
-    );
-    assertions.push(Assertion {
-        name: format!("gate_41_N{}_null_at_qstar", n_target),
-        computed: null_rel,
-        expected: 0.0,
-        tolerance: 1e-18,
-        passed: g3_ok,
-        source: "B(4₁;q*) = 0 — mirror/bar control".to_string(),
-    });
+    if want("G3") {
+        log(t0, "[G3] 4₁ null at q* ...");
+        let a41 = jp(&BRAID_4_1, k, c_n, &q_star, &engines);
+        let q_star_inv = Float::with_val(PREC, fi(1) / &q_star);
+        let b41 = jp(&BRAID_4_1, k, c_n, &q_star_inv, &engines);
+        let null_rel = rel_diff(&a41, &b41).abs().to_f64();
+        let g3_ok = null_rel < 1e-18;
+        log(t0, &format!("    |B(4₁;q*)|/|J| = {:.2e} {}", null_rel, if g3_ok { "PASS" } else { "FAIL" }));
+        write_ckpt(
+            "G3",
+            serde_json::json!({"gate": "G3", "passed": g3_ok, "computed": null_rel, "tolerance": 1e-18}),
+        );
+    }
 
-    // ---- T: the 3-point + slope-bound certificate at q* ----
+    // ---- T1/T2/T3: B(5₂) at q*−h, q*, q*+h (each an independent checkpoint) ----
     let h = fl(2e-8);
     let pts = [
         Float::with_val(PREC, &q_star - &h),
         q_star.clone(),
         Float::with_val(PREC, &q_star + &h),
     ];
-    let j5f = |q: &Float, engines: &FxHashMap<usize, TlEngine>| -> Float {
-        let jj = jp(&BRAID_5_2, k, c_n, q, engines);
-        let jm = jp(&BRAID_5_2, k, c_n, &Float::with_val(PREC, fi(1) / q), engines);
-        // B = (q^fp·J(q) − (1/q)^fp·J(1/q))/2   (fp = framing_pow_5two)
-        let fp = framing_pow_5two;
+    let j5f = |q: &Float| -> Float {
+        let jj = jp(&BRAID_5_2, k, c_n, q, &engines);
+        let jm = jp(&BRAID_5_2, k, c_n, &Float::with_val(PREC, fi(1) / q), &engines);
+        let fp = framing_pow_5two; // fr⁴ = q^{4·fe}
         let fac_p = fpow(q, &fl(fp));
         let fac_m = fpow(&Float::with_val(PREC, fi(1) / q), &fl(fp));
         let bp = Float::with_val(PREC, &fac_p * &jj);
@@ -257,103 +242,110 @@ fn main() {
         let d = Float::with_val(PREC, &bp - &bm);
         Float::with_val(PREC, d / fi(2))
     };
-
-    log(t0, "[T] B(5₂) at 3 sample points ...");
-    let mut bv: Vec<f64> = Vec::new();
-    for (i, qq) in pts.iter().enumerate() {
-        let b = j5f(qq, &engines);
-        bv.push(b.to_f64());
-        log(t0, &format!("    point {}/3: B = {:.8}", i + 1, b.to_f64()));
-    }
-    let b_star = bv[1];
-    let sign_changes = bv
-        .windows(2)
-        .filter(|w| w[0].signum() != w[1].signum())
-        .count();
-    let slope_rel = ((bv[2] - bv[0]).abs() / b_star.abs()) / (2.0 * 2e-8);
-    let cert = slope_rel * (2.0 * 2e-8);
-    let no_zero = sign_changes == 0 && b_star.abs() > 0.0 && cert < 0.01;
-    println!(
-        "\n    B(q*) = {:.6}   signs = {:?}   |d ln B/dq| ≈ {:.3e}",
-        b_star,
-        bv.iter().map(|v| v.signum() as i32).collect::<Vec<_>>(),
-        slope_rel
-    );
-    println!(
-        "    certificate: s·2h = {:.3e} ≪ 1 — no zero can hide: {}",
-        cert,
-        if no_zero { "PASS" } else { "FAIL" }
-    );
-    assertions.push(Assertion {
-        name: format!("N{}_no_qstar_zero_certificate", n_target),
-        computed: if no_zero { 1.0 } else { 0.0 },
-        expected: 1.0,
-        tolerance: 0.5,
-        passed: no_zero,
-        source: "3-point + slope-bound certificate: same sign at q*±2e-8 and q*, slope·window ≪ 1"
-            .to_string(),
-    });
-
-    let all_passed = assertions.iter().all(|a| a.passed);
-    println!("\n{}", "=".repeat(78));
-    for a in &assertions {
-        println!(
-            "  [{}] {}  computed={:.3e} tol={:.0e}",
-            if a.passed { "PASS" } else { "FAIL" },
-            a.name,
-            a.computed,
-            a.tolerance
-        );
-    }
-    println!("  allPassed = {}   ({:.0}s total)", all_passed, t0.elapsed().as_secs_f64());
-
-    // ---- emit raw results JSON (witness wrapping is a downstream step) ----
-    let out_path = format!(
-        "computations/probes/qbeta-5two-n{}-cable-qstar-rust.results.json",
-        n_target
-    );
-    let mut j = String::new();
-    j.push_str("{\n");
-    j.push_str(&format!("  \"engine\": \"hecke-engine (rust, tl_cable, {}-bit MPFR)\",\n", PREC));
-    j.push_str(&format!("  \"n_target\": {},\n", n_target));
-    j.push_str(&format!("  \"cable_width\": {},\n", c_n));
-    j.push_str(&format!("  \"tl_strands\": {},\n", c_n * k));
-    j.push_str(&format!("  \"durationSec\": {:.1},\n", t0.elapsed().as_secs_f64()));
-    j.push_str("  \"assertions\": [\n");
-    for (i, a) in assertions.iter().enumerate() {
-        j.push_str(&format!(
-            "    {{\"name\": \"{}\", \"computed\": {:e}, \"expected\": {}, \"tolerance\": {:e}, \"passed\": {}, \"source\": {:?}}}{}\n",
-            a.name, a.computed, a.expected, a.tolerance, a.passed, a.source,
-            if i + 1 < assertions.len() { "," } else { "" }
-        ));
-    }
-    j.push_str("  ],\n");
-    j.push_str(&format!("  \"allPassed\": {},\n", all_passed));
-    j.push_str(&format!("  \"B_qstar\": {:e},\n", b_star));
-    j.push_str(&format!(
-        "  \"B_samples\": [{:e}, {:e}, {:e}],\n",
-        bv[0], bv[1], bv[2]
-    ));
-    j.push_str(&format!("  \"rel_slope\": {:e},\n", slope_rel));
-    j.push_str(&format!("  \"certificate_s2h\": {:e},\n", cert));
-    j.push_str(&format!("  \"framing_measured_fr\": {:?}\n", fr_measured));
-    j.push_str("}\n");
-    if let Some(parent) = std::path::Path::new(&out_path).parent() {
-        std::fs::create_dir_all(parent).ok();
-    }
-    match std::fs::write(&out_path, &j) {
-        Ok(()) => println!("  results -> {}", out_path),
-        Err(e) => {
-            // Fall back to the current directory so results are never lost.
-            let base = std::path::Path::new(&out_path)
-                .file_name()
-                .unwrap()
-                .to_string_lossy()
-                .to_string();
-            std::fs::write(&base, &j).expect("write results (fallback)");
-            println!("  results -> ./{} (primary path failed: {})", base, e);
+    for i in 0..3 {
+        let gate = format!("T{}", i + 1);
+        if want(&gate) {
+            log(t0, &format!("[{}] B(5₂) at point {}/3 ...", gate, i + 1));
+            let b = j5f(&pts[i]);
+            log(t0, &format!("    B = {:.8}", b.to_f64()));
+            write_ckpt(&gate, serde_json::json!({"gate": gate, "B": b.to_f64()}));
         }
     }
 
+    println!("  ({:.0}s total)", t0.elapsed().as_secs_f64());
+
+    // ---- aggregate: combine the 6 checkpoints into the final results witness ----
+    if sel == "all" || sel == "aggregate" {
+        aggregate(n_target, c_n, k, &ckpt_dir);
+    }
+}
+
+/// Read a checkpoint JSON field.
+fn ckpt_read(dir: &str, gate: &str) -> Option<serde_json::Value> {
+    let p = format!("{}/{}.json", dir, gate);
+    let s = std::fs::read_to_string(&p).ok()?;
+    serde_json::from_str(&s).ok()
+}
+
+/// Combine the six gate checkpoints (G1,G2,G3,T1,T2,T3) into the final results
+/// witness + the 3-point certificate. Missing checkpoints are reported so a
+/// partially-run N=6 is transparent.
+fn aggregate(n_target: i32, c_n: usize, k: usize, ckpt_dir: &str) {
+    let mut assertions: Vec<serde_json::Value> = Vec::new();
+    let mut all_present = true;
+    let mut all_passed = true;
+    let get_bool = |v: &serde_json::Value, key: &str| v.get(key).and_then(|x| x.as_bool());
+    let get_f64 = |v: &serde_json::Value, key: &str| v.get(key).and_then(|x| x.as_f64());
+
+    // G1, G2, G3
+    for (gate, name, tol, src) in [
+        ("G1", format!("gate_unknot_ribbon_framing_N{}", n_target), 0.5,
+         "fr = ±q^{cN(cN+2)/2} ribbon framing (sign (−1)^cN) from the writhe-1 unknot".to_string()),
+        ("G2", format!("gate_41_N{}_matches_trusted_tower", n_target), 1e-15,
+         format!("4₁ {}-cable J' (framing-free) = trusted Masbaum p=−1 tower", c_n)),
+        ("G3", format!("gate_41_N{}_null_at_qstar", n_target), 1e-18,
+         "B(4₁;q*) = 0 — mirror/bar control".to_string()),
+    ] {
+        match ckpt_read(ckpt_dir, gate) {
+            Some(v) => {
+                let passed = get_bool(&v, "passed").unwrap_or(false);
+                let computed = get_f64(&v, "computed").unwrap_or(f64::NAN);
+                all_passed &= passed;
+                assertions.push(serde_json::json!({
+                    "name": name, "computed": computed, "expected": if gate=="G1" {1.0} else {0.0},
+                    "tolerance": tol, "passed": passed, "source": src,
+                }));
+            }
+            None => { all_present = false; println!("  MISSING checkpoint {}", gate); }
+        }
+    }
+
+    // T certificate from the 3 B samples
+    let bs: Vec<Option<f64>> = (1..=3)
+        .map(|i| ckpt_read(ckpt_dir, &format!("T{}", i)).and_then(|v| get_f64(&v, "B")))
+        .collect();
+    let (b_star, slope_rel, cert, no_zero, signs) = if bs.iter().all(|b| b.is_some()) {
+        let bv: Vec<f64> = bs.iter().map(|b| b.unwrap()).collect();
+        let b_star = bv[1];
+        let sc = bv.windows(2).filter(|w| w[0].signum() != w[1].signum()).count();
+        let slope_rel = ((bv[2] - bv[0]).abs() / b_star.abs()) / (2.0 * 2e-8);
+        let cert = slope_rel * (2.0 * 2e-8);
+        let no_zero = sc == 0 && b_star.abs() > 0.0 && cert < 0.01;
+        all_passed &= no_zero;
+        assertions.push(serde_json::json!({
+            "name": format!("N{}_no_qstar_zero_certificate", n_target),
+            "computed": if no_zero {1.0} else {0.0}, "expected": 1.0, "tolerance": 0.5,
+            "passed": no_zero,
+            "source": "3-point + slope-bound certificate: same sign at q*±2e-8 and q*, slope·window ≪ 1",
+        }));
+        (b_star, slope_rel, cert, no_zero,
+         bv.iter().map(|v| v.signum() as i32).collect::<Vec<_>>())
+    } else {
+        all_present = false;
+        for i in 1..=3 { if bs[i-1].is_none() { println!("  MISSING checkpoint T{}", i); } }
+        (f64::NAN, f64::NAN, f64::NAN, false, vec![])
+    };
+
+    let all_passed = all_passed && all_present;
+    println!("{}", "=".repeat(78));
+    println!("  N={} aggregate: all_present={} allPassed={}", n_target, all_present, all_passed);
+    if !b_star.is_nan() {
+        println!("  B(q*) = {:.6}  signs = {:?}  slope ≈ {:.3e}  cert = {:.3e}  no_zero={}",
+            b_star, signs, slope_rel, cert, no_zero);
+    }
+
+    let out = serde_json::json!({
+        "engine": format!("hecke-engine (rust, tl_cable, {}-bit MPFR)", PREC),
+        "n_target": n_target, "cable_width": c_n, "tl_strands": c_n * k,
+        "assertions": assertions, "allPassed": all_passed, "all_present": all_present,
+        "B_qstar": b_star, "B_samples": [bs[0], bs[1], bs[2]],
+        "rel_slope": slope_rel, "certificate_s2h": cert, "signs": signs,
+    });
+    let out_path = format!("computations/probes/qbeta-5two-n{}-cable-qstar-rust.results.json", n_target);
+    let body = serde_json::to_string_pretty(&out).unwrap();
+    if std::fs::write(&out_path, &body).is_err() {
+        std::fs::write(format!("n{}-results.json", n_target), &body).ok();
+    }
+    println!("  results -> {}", out_path);
     std::process::exit(if all_passed { 0 } else { 1 });
 }
