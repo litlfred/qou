@@ -1,7 +1,7 @@
 {
   "auditOnly": "docs/audits/2026-05-02-tier3-final-state.md",
   "computation": "adjacent-vs-full-probe",
-  "description": "Empirical probe of prop:mass-endomorphism-tower. Compares (cross_mode, phi_q_variant) combinations: cross_mode \u2208 {adjacent, full} and phi_q_variant \u2208 {raw, series, noresonance, resonance_sum}.  The (1-q) series / resonance-regularized \u03a6_q variants are finite for V\u0302_i > q\u2080, allowing 7Li-type blow-ups to evaluate without diverging.  The 'full' cross_mode adds far-commuting (|i\u2212j|\u22652) quadratic terms that the prop forbids \u2014 empirically closing the heavy-atom 2-3% bias on A \u2265 6 atoms, challenging claim 1.",
+  "description": "Empirical probe of prop:mass-endomorphism-tower. Compares (cross_mode, phi_q_variant) combinations: cross_mode ∈ {adjacent, full} and phi_q_variant ∈ {raw, series, noresonance, resonance_sum}.  The (1-q) series / resonance-regularized Φ_q variants are finite for V̂_i > q₀, allowing 7Li-type blow-ups to evaluate without diverging.  The 'full' cross_mode adds far-commuting (|i−j|≥2) quadratic terms that the prop forbids — empirically closing the heavy-atom 2-3% bias on A ≥ 6 atoms, challenging claim 1.",
   "timestamp": "2026-05-30T20:07:04.981339+00:00",
   "parameters": {
     "q0": 1.1099785827513808,
@@ -383,5 +383,13 @@
       "dm_m_pct_all_subsets_noresonance": 4.0378525578348325,
       "E0_all_subsets_noresonance": 0.007420936199598764
     }
-  ]
+  ],
+  "scriptHash": "42a393e407ff",
+  "scriptCommitSha": "unknown",
+  "commitSha": "dcd8299892b77a5c17b4be77dded017be21ef57d",
+  "engine": "python",
+  "computedAt": "2026-07-18T23:59:54.440530+00:00",
+  "durationMs": 0,
+  "q0Anchor": "ambiguous",
+  "scriptFile": "adjacent_vs_full_probe.py"
 }

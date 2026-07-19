@@ -1,6 +1,6 @@
 {
   "computation": "habiro-coefficients-extended",
-  "computedAt": "2026-05-29T14:47:27.025213+00:00",
+  "computedAt": "2026-07-18T23:59:54.817581+00:00",
   "description": "Cyclotomic Habiro coefficients a_m(u) of tr_M(T_w, q) for atomic braids A = 2..6 via the markov_peel symbolic-q pipeline (vs the original habiro_coefficients_atomic.py Hoefsmit-symbolic pipeline which was intractable for A ≥ 3). Each row contains the full integer expansion p(u) = Σ_m a_m(u) · (u; u)_m together with D(u) (the Markov-normalisation denominator, factored) and verification that every a_m has integer coefficients (the cyclotomic integrality witness).  Resolves the D(u) blocker noted in habiro-coefficients-interpolate.witness.json.",
   "reference_blocks": [
     "def:habiro-ring",
@@ -553,5 +553,11 @@
       },
       "sympy_ops_raw": 38840
     }
-  }
+  },
+  "scriptHash": "6fdad0d63cff",
+  "scriptCommitSha": "unknown",
+  "commitSha": "dcd8299892b77a5c17b4be77dded017be21ef57d",
+  "durationMs": 0,
+  "q0Anchor": "ambiguous",
+  "scriptFile": "habiro_coefficients_extended.py"
 }
