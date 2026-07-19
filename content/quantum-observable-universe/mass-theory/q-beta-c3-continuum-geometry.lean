@@ -85,6 +85,7 @@ axiom log_integrable (θ : ℝ) (h : 0 < θ) :
 /-- Lemma 1: The singularity of the Lobachevsky integrand at t=0 is integrable.
     This asserts the local integrability required by Lebesgue measure theory, 
     derived from the logarithmic bound (Lemma 1.1 and 1.2). -/
+-- Ref: [mathlib] Mathlib.MeasureTheory.Integral.IntervalIntegral
 axiom f_integrable (θ : ℝ) (h : 0 < θ ∧ θ < 2 * π) :
   IntervalIntegrable (fun t => Real.log |2 * Real.sin (t / 2)|) MeasureTheory.volume 0 θ
 

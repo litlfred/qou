@@ -1,6 +1,6 @@
-import { conjecture } from "../../schema/builders";
+import { theorem } from "../../schema/builders";
 
-export default conjecture({
+export default theorem({
   label: "thm:binding-manybody-eq-jet-filtration",
   title:
     "Binding many-body series equals the jet-order filtration: $B(K)=\\sum_n m_e\\,a_D^{(n)}$",

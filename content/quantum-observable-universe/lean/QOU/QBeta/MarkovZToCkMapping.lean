@@ -35,6 +35,7 @@ namespace QOU.QBeta
 /-- The abstract f-map from the Markov $a_n$ coefficients to the Q_β ladder 
     $c_k$ coefficients. It is parametrised by $q$ since the categorical 
     derivation (e.g. Hexagon equations) introduces $q$-dependent weights. -/
+-- Ref: [local] open-problem-f-map
 axiom qBetaFMap : ℝ → (ℕ → ℝ) → (ℕ → ℝ)
 
 /-- 

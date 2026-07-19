@@ -1,11 +1,11 @@
-import { proposition } from "../../schema/builders";
+import { conjecture } from "../../schema/builders";
 
 /**
  * Wedderburn trace identity: the Markov trace of the identity is unit,
  * Σ_λ d_λ · y_λ(q) = 1 — the normalization that partitions the total
  * Markov weight among the Wedderburn blocks.
  */
-export default proposition({
+export default conjecture({
   label: "prop:wedderburn-trace-identity",
   title: "Markov-trace normalization for $H_n(q)$",
   tags: [

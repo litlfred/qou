@@ -1,6 +1,6 @@
-import { proposition } from "../../schema/builders";
+import { conjecture } from "../../schema/builders";
 
-export default proposition({
+export default conjecture({
   label: "audit:delta-max-numerical-scale",
   title: "Numerical scale of the uniform bound",
   tags: ["binding-energy", "numerical-scale", "probe"],

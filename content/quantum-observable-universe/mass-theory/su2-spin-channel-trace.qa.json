@@ -8,17 +8,17 @@
     "lean": "../qou/content/quantum-observable-universe/lean/QOU/MassTheory/SU2SpinChannelTrace.lean"
   },
   "source_hashes": {
-    "md": "c4ca4238a0b9",
-    "ts": "c81e728d9d4c",
-    "lean": "eccbc87e4b5c"
+    "md": "31923ed86f62",
+    "ts": "2d1933dddeba",
+    "lean": "18958e029777"
   },
   "criteria": {
     "voice-status-leak": [
       {
         "field_hash": {
-          "md": "c4ca4238a0b9",
-          "ts": "c81e728d9d4c",
-          "lean": "eccbc87e4b5c"
+          "md": "31923ed86f62",
+          "ts": "2d1933dddeba",
+          "lean": "18958e029777"
         },
         "result": "pass",
         "reviewer": {
@@ -31,7 +31,7 @@
     "lean-vacuity-axiom-audit": [
       {
         "field_hash": {
-          "lean": "eccbc87e4b5c"
+          "lean": "18958e029777"
         },
         "result": "pass",
         "reviewer": {

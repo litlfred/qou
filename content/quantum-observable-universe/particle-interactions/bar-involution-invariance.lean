@@ -96,6 +96,7 @@ axiom hookLengths {n : ℕ} (lam : Partition n) : List ℕ
 
 /-- The transpose involution (Dynkin fold; cf.
     cpt-orbit-closure-density.lean). -/
+-- Ref: [mathlib] Mathlib.Combinatorics.Young.YoungDiagram
 axiom partitionTranspose {n : ℕ} : Partition n → Partition n
 
 /-- Hook lengths are preserved by transpose (Mathlib
@@ -158,14 +159,17 @@ axiomatise that conjecture as a class (per AGENTS.md §3b-cond)
 and the theorem below has no `sorry` in its proof body. -/
 
 /-- The Hecke normal form carrier (from `hecke-normal-form.lean`). -/
+-- Ref: [local] hecke-normal-form.lean
 axiom HeckeNormalForm (n : ℕ) : Type
 
 /-- The bar-involution acting on a Hecke normal form (`q ↦ q⁻¹`,
     crossings reversed). -/
+-- Ref: [local] hecke-normal-form.lean
 axiom barNormalForm {n : ℕ} : HeckeNormalForm n → HeckeNormalForm n
 
 /-- A predicate isolating those normal forms emitted by the
     pair-production engine. -/
+-- Ref: [local] symmetric-crystal-pair-production
 axiom isPairProductionOutput {n : ℕ} : HeckeNormalForm n → Prop
 
 /-- Class-form axiomatisation of conj:symmetric-crystal-pair-production.
