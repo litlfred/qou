@@ -1,4 +1,5 @@
 import QOU.MathlibExt.DoublyPeriodicLiouville
+import QOU.Common.PeriodicDense
 
 /-!
 # Route-B assembly (brick d): meromorphic Faddeev rigidity from the entire ratio
@@ -82,5 +83,40 @@ theorem ratio_const_meromorphic
   refine ⟨c, hc, fun z hz => ?_⟩
   have hratio : Ψ z / Φ z = c := by rw [← hr_ratio z hz, hc z]
   exact (div_eq_iff hz).mp hratio
+
+/-- **Sharper reduction — periodicity only on a dense set (bricks b/c internalized).**
+The existing `FaddeevPhi` ratio lemmas (`CyclicDilogPentagon.ratio_ib_periodic`,
+`ratio_ibinv_periodic`) give the two periodicities of `r = Ψ/Φ` only **where the
+shared quasi-period prefactor is nonzero** — a *dense* locus, not all of `ℂ`. This
+theorem consumes exactly that: `r` entire, and `r` periodic under each basis vector
+on a **dense** set `Sᵢ`. The merged dense-extension core
+(`QOU.Common.periodic_of_continuous_of_eqOn_dense`) promotes each dense-set
+periodicity to everywhere (a continuous function periodic on a dense set is periodic
+everywhere), then `uniqueUpToScalar_meromorphic` finishes.
+
+After this, the **sole** genuinely-open analytic input for the meromorphic `Φ_b` is
+`hr_entire` — that `r` extends across the removable singularities to an entire
+function (the divisor-rigidity fact bricks b/c name). The periodicity is no longer an
+input: it is derived from the difference equations on the dense prefactor-nonzero
+locus and promoted by continuity. Density of that locus is a discreteness fact about
+`Φ_b`'s zero/pole lattice, folded into the `Dense Sᵢ` hypotheses and gated — like
+`hr_entire` — on the `PhiBProd` construction; neither is axiomatized here. -/
+theorem uniqueUpToScalar_of_ratio_dense_periodic
+    {Φ Ψ r : ℂ → ℂ} {bas : Basis (Fin 2) ℝ ℂ}
+    (hr_entire : Differentiable ℂ r)
+    (hr_ratio : ∀ z, Φ z ≠ 0 → r z = Ψ z / Φ z)
+    {S₀ S₁ : Set ℂ} (hS₀ : Dense S₀) (hS₁ : Dense S₁)
+    (hper₀ : ∀ z ∈ S₀, r (z + bas 0) = r z)
+    (hper₁ : ∀ z ∈ S₁, r (z + bas 1) = r z) :
+    ∃ c, ∀ z, Φ z ≠ 0 → Ψ z = c * Φ z := by
+  have h0 : ∀ z, r (z + bas 0) = r z :=
+    QOU.Common.periodic_of_continuous_of_eqOn_dense hr_entire.continuous hS₀ hper₀
+  have h1 : ∀ z, r (z + bas 1) = r z :=
+    QOU.Common.periodic_of_continuous_of_eqOn_dense hr_entire.continuous hS₁ hper₁
+  have hper : ∀ i, ∀ z, r (z + bas i) = r z := by
+    intro i z; fin_cases i
+    · exact h0 z
+    · exact h1 z
+  exact uniqueUpToScalar_meromorphic hr_entire hr_ratio hper
 
 end QOU.QBeta.FaddeevRigidityMeromorphic
