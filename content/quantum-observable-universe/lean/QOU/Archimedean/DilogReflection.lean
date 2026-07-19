@@ -1,6 +1,11 @@
 import QOU.Archimedean.DilogarithmArchimedeanLimit
 import Mathlib.Analysis.Calculus.SmoothSeries
 import Mathlib.Analysis.Calculus.MeanValue
+import Mathlib.Analysis.Complex.AbelLimit
+import Mathlib.NumberTheory.ZetaValues
+import Mathlib.Analysis.SpecialFunctions.Pow.Asymptotics
+import Mathlib.Analysis.SpecialFunctions.Log.NegMulLog
+import Mathlib.Analysis.SpecialFunctions.Log.Deriv
 
 /-!
 # Dilogarithm derivative + Euler reflection — the V1 bar-even keystone infra
@@ -115,5 +120,237 @@ theorem hasDerivAt_LiTwo {x : ℝ} (hx0 : 0 < x) (hx1 : x < 1) :
     dilogDerivSeries_tsum (ne_of_gt hx0) (by rw [abs_of_pos hx0]; exact hx1)
   rw [hval] at hkey
   exact hkey
+
+/-! ## Brick B — the Euler reflection functional equation
+
+The reflection `Li₂(x) + Li₂(1-x) = π²/6 − ln x·ln(1-x)` for `0 < x < 1`.
+The proof: the function `g(x) = Li₂ x + Li₂(1-x) + ln x·ln(1-x)` has `g' ≡ 0`
+on `(0,1)` (from `hasDerivAt_LiTwo` + chain/product rule), hence is constant;
+the constant is pinned to `π²/6` by the `x → 1⁻` boundary limit, which needs
+Abel's theorem (`Li₂ x → π²/6`), continuity of `Li₂` at `0` (`Li₂(1-x) → 0`),
+and the standard `ln x·ln(1-x) → 0`. -/
+
+open Filter Set
+
+/-- The `LiTwo` power series in Abel-normalized form: `Li₂(x) = ∑ₙ (1/n²)·xⁿ`
+    (the `n = 0` term vanishes since `1/0² = 0`). -/
+theorem LiTwo_eq_powerSeries {x : ℝ} (hx : |x| < 1) :
+    ∑' n : ℕ, (1 / (n : ℝ) ^ 2) * x ^ n = LiTwo x := by
+  rw [LiTwo]
+  have hsum : Summable (fun n : ℕ => (1 / (n : ℝ) ^ 2) * x ^ n) := by
+    refine Summable.of_norm_bounded
+      (summable_geometric_of_lt_one (abs_nonneg x) hx) (fun n => ?_)
+    rw [Real.norm_eq_abs, abs_mul, abs_pow]
+    rcases Nat.eq_zero_or_pos n with hn | hn
+    · subst hn; simp
+    · have hcoef : |1 / (n : ℝ) ^ 2| ≤ 1 := by
+        rw [abs_of_nonneg (by positivity), div_le_one (by positivity)]
+        have : (1 : ℝ) ≤ (n : ℝ) := by exact_mod_cast hn
+        nlinarith
+      calc |1 / (n : ℝ) ^ 2| * |x| ^ n ≤ 1 * |x| ^ n := by gcongr
+        _ = |x| ^ n := one_mul _
+  rw [hsum.tsum_eq_zero_add]
+  have h0 : (1 / ((0 : ℕ) : ℝ) ^ 2) * x ^ (0 : ℕ) = 0 := by simp
+  rw [h0, zero_add]
+  refine tsum_congr (fun n => ?_)
+  push_cast
+  ring
+
+/-- **Abel's limit for the dilogarithm.**  `Li₂(x) → π²/6` as `x → 1⁻`.
+    Mathlib's `Real.tendsto_tsum_powerSeries_nhdsWithin_lt` applied to the
+    Basel series `∑ 1/n² = π²/6`. -/
+theorem tendsto_LiTwo_nhdsWithin_lt_one :
+    Tendsto LiTwo (𝓝[<] (1 : ℝ)) (𝓝 (Real.pi ^ 2 / 6)) := by
+  have habel := Real.tendsto_tsum_powerSeries_nhdsWithin_lt
+    (f := fun n : ℕ => 1 / (n : ℝ) ^ 2) (l := Real.pi ^ 2 / 6)
+    hasSum_zeta_two.tendsto_sum_nat
+  have hmem : Set.Ioo (-1 : ℝ) 1 ∈ 𝓝[<] (1 : ℝ) := by
+    have := inter_mem_nhdsWithin (Set.Iio (1 : ℝ))
+      (Ioi_mem_nhds (show (-1 : ℝ) < 1 by norm_num))
+    rwa [Set.Iio_inter_Ioi] at this
+  refine habel.congr' ?_
+  filter_upwards [hmem] with x hx
+  exact LiTwo_eq_powerSeries (abs_lt.mpr ⟨hx.1, hx.2⟩)
+
+/-- Derivative of `x ↦ Li₂(1-x)`:  `log x / (1-x)` for `0 < x < 1` (chain rule
+    on Brick A). -/
+theorem hasDerivAt_LiTwo_one_sub {x : ℝ} (hx0 : 0 < x) (hx1 : x < 1) :
+    HasDerivAt (fun x => LiTwo (1 - x)) (Real.log x / (1 - x)) x := by
+  have h1 : (0 : ℝ) < 1 - x := by linarith
+  have h2 : (1 : ℝ) - x < 1 := by linarith
+  have hinner : HasDerivAt (fun x : ℝ => 1 - x) (-1) x := by
+    simpa using (hasDerivAt_id x).const_sub 1
+  have hcomp := (hasDerivAt_LiTwo (x := 1 - x) h1 h2).comp x hinner
+  have hval : (-Real.log (1 - (1 - x)) / (1 - x)) * (-1) = Real.log x / (1 - x) := by
+    rw [show (1 : ℝ) - (1 - x) = x by ring]; ring
+  rw [hval] at hcomp
+  exact hcomp
+
+/-- Derivative of `x ↦ log x · log(1-x)`:  `log(1-x)/x − log x/(1-x)` for
+    `0 < x < 1` (product + chain rule). -/
+theorem hasDerivAt_log_mul_log_one_sub {x : ℝ} (hx0 : 0 < x) (hx1 : x < 1) :
+    HasDerivAt (fun x => Real.log x * Real.log (1 - x))
+      (Real.log (1 - x) / x - Real.log x / (1 - x)) x := by
+  have h1x : (0 : ℝ) < 1 - x := by linarith
+  have hxne : x ≠ 0 := ne_of_gt hx0
+  have h1xne : (1 : ℝ) - x ≠ 0 := ne_of_gt h1x
+  have hlogx : HasDerivAt Real.log x⁻¹ x := Real.hasDerivAt_log hxne
+  have hlog1x : HasDerivAt (fun x => Real.log (1 - x)) (-(1 - x)⁻¹) x := by
+    have hinner : HasDerivAt (fun x : ℝ => 1 - x) (-1) x := by
+      simpa using (hasDerivAt_id x).const_sub 1
+    have hc := (Real.hasDerivAt_log h1xne).comp x hinner
+    simpa [mul_comm] using hc
+  have hmul := hlogx.mul hlog1x
+  have hval : x⁻¹ * Real.log (1 - x) + Real.log x * -(1 - x)⁻¹
+      = Real.log (1 - x) / x - Real.log x / (1 - x) := by
+    field_simp
+    ring
+  rw [hval] at hmul
+  exact hmul
+
+/-- The reflection auxiliary `g(x) = Li₂ x + Li₂(1-x) + log x·log(1-x)` has
+    zero derivative on `(0,1)`. -/
+theorem hasDerivAt_reflectionAux {x : ℝ} (hx0 : 0 < x) (hx1 : x < 1) :
+    HasDerivAt (fun x => LiTwo x + LiTwo (1 - x) + Real.log x * Real.log (1 - x)) 0 x := by
+  have hsum := ((hasDerivAt_LiTwo hx0 hx1).add
+    (hasDerivAt_LiTwo_one_sub hx0 hx1)).add (hasDerivAt_log_mul_log_one_sub hx0 hx1)
+  have hval : -Real.log (1 - x) / x + Real.log x / (1 - x)
+      + (Real.log (1 - x) / x - Real.log x / (1 - x)) = 0 := by ring
+  rw [hval] at hsum
+  exact hsum
+
+/-- Per-term norm bound `‖xᵏ⁺¹/(k+1)²‖ ≤ |x|ᵏ⁺¹` for the `LiTwo` series. -/
+private theorem norm_LiTwo_term_le {x : ℝ} (k : ℕ) :
+    ‖x ^ (k + 1) / ((k : ℝ) + 1) ^ 2‖ ≤ |x| ^ (k + 1) := by
+  rw [Real.norm_eq_abs, abs_div, abs_pow,
+    abs_of_nonneg (show (0 : ℝ) ≤ ((k : ℝ) + 1) ^ 2 by positivity)]
+  have hk0 : (0 : ℝ) ≤ (k : ℝ) := Nat.cast_nonneg k
+  have hb : (1 : ℝ) ≤ ((k : ℝ) + 1) ^ 2 := by nlinarith [hk0]
+  exact div_le_self (pow_nonneg (abs_nonneg x) (k + 1)) hb
+
+set_option maxHeartbeats 800000 in
+/-- **Continuity of the dilogarithm at 0**:  `Li₂(x) → 0` as `x → 0`.  Squeeze
+    against `|x|/(1-|x|)` using `‖Li₂ x‖ ≤ ∑ₖ |x|ᵏ⁺¹ = |x|/(1-|x|)`. -/
+theorem tendsto_LiTwo_nhds_zero : Tendsto LiTwo (𝓝 (0 : ℝ)) (𝓝 0) := by
+  have hbound : ∀ᶠ x in 𝓝 (0 : ℝ), ‖LiTwo x‖ ≤ |x| / (1 - |x|) := by
+    filter_upwards [Metric.ball_mem_nhds (0 : ℝ) (by norm_num : (0 : ℝ) < 1 / 2)] with x hx
+    rw [Metric.mem_ball, dist_zero_right, Real.norm_eq_abs] at hx
+    have hx1 : |x| < 1 := by linarith
+    have hsummG : Summable (fun k : ℕ => |x| ^ (k + 1)) := by
+      simpa [pow_succ] using (summable_geometric_of_lt_one (abs_nonneg x) hx1).mul_right |x|
+    have hsummN : Summable (fun k : ℕ => ‖x ^ (k + 1) / ((k : ℝ) + 1) ^ 2‖) :=
+      Summable.of_nonneg_of_le (fun k => norm_nonneg _) (fun k => norm_LiTwo_term_le k) hsummG
+    rw [LiTwo]
+    calc ‖∑' k : ℕ, x ^ (k + 1) / ((k : ℝ) + 1) ^ 2‖
+        ≤ ∑' k : ℕ, ‖x ^ (k + 1) / ((k : ℝ) + 1) ^ 2‖ := norm_tsum_le_tsum_norm hsummN
+      _ ≤ ∑' k : ℕ, |x| ^ (k + 1) :=
+          Summable.tsum_le_tsum (fun k => norm_LiTwo_term_le k) hsummN hsummG
+      _ = |x| / (1 - |x|) := by
+          have hfactor : ∑' k : ℕ, |x| ^ (k + 1) = |x| * ∑' k : ℕ, |x| ^ k := by
+            rw [← tsum_mul_left]; exact tsum_congr (fun k => by rw [pow_succ'])
+          rw [hfactor, tsum_geometric_of_lt_one (abs_nonneg x) hx1, div_eq_mul_inv]
+  have hg : Tendsto (fun x : ℝ => |x| / (1 - |x|)) (𝓝 (0 : ℝ)) (𝓝 0) := by
+    have hcont : Tendsto (fun x : ℝ => |x| / (1 - |x|)) (𝓝 0)
+        (𝓝 (|(0 : ℝ)| / (1 - |(0 : ℝ)|))) :=
+      (continuous_abs.tendsto 0).div ((continuous_const.sub continuous_abs).tendsto 0)
+        (by norm_num)
+    simpa using hcont
+  exact squeeze_zero_norm' hbound hg
+
+/-- Boundary limit `Li₂(1-x) → 0` as `x → 1⁻` (continuity at 0 ∘ `x ↦ 1-x`). -/
+theorem tendsto_LiTwo_one_sub_nhdsWithin_lt_one :
+    Tendsto (fun x => LiTwo (1 - x)) (𝓝[<] (1 : ℝ)) (𝓝 0) := by
+  have hinner : Tendsto (fun x : ℝ => 1 - x) (𝓝[<] (1 : ℝ)) (𝓝 0) := by
+    have h : Tendsto (fun x : ℝ => 1 - x) (𝓝 (1 : ℝ)) (𝓝 0) := by
+      have hcont : Continuous (fun x : ℝ => 1 - x) := continuous_const.sub continuous_id
+      simpa using hcont.tendsto (1 : ℝ)
+    exact h.mono_left nhdsWithin_le_nhds
+  exact tendsto_LiTwo_nhds_zero.comp hinner
+
+/-- Boundary limit `log x · log(1-x) → 0` as `x → 1⁻`.  Reduce to `u = 1-x → 0⁺`
+    and squeeze `|log(1-u)·log u| ≤ 2·|log u · u| → 0`. -/
+theorem tendsto_log_mul_log_one_sub_nhdsWithin_lt_one :
+    Tendsto (fun x => Real.log x * Real.log (1 - x)) (𝓝[<] (1 : ℝ)) (𝓝 0) := by
+  -- the u → 0⁺ statement
+  have hcomp : Tendsto (fun u : ℝ => Real.log (1 - u) * Real.log u)
+      (𝓝[>] (0 : ℝ)) (𝓝 0) := by
+    have hbaseline : Tendsto (fun u : ℝ => 2 * |Real.log u * u|) (𝓝[>] (0 : ℝ)) (𝓝 0) := by
+      have h0 := tendsto_log_mul_rpow_nhdsGT_zero (r := 1) one_pos
+      have h1 : Tendsto (fun u : ℝ => Real.log u * u) (𝓝[>] (0 : ℝ)) (𝓝 0) := by
+        refine h0.congr' (Filter.Eventually.of_forall (fun u => ?_))
+        rw [Real.rpow_one]
+      simpa using (h1.abs.const_mul 2)
+    have hmem2 : Set.Ioo (0 : ℝ) (1 / 2) ∈ 𝓝[>] (0 : ℝ) := by
+      have := inter_mem_nhdsWithin (Set.Ioi (0 : ℝ))
+        (Iio_mem_nhds (show (0 : ℝ) < 1 / 2 by norm_num))
+      rwa [Set.Ioi_inter_Iio] at this
+    refine squeeze_zero_norm' ?_ hbaseline
+    filter_upwards [hmem2] with u hu
+    obtain ⟨hu0, hu2⟩ := hu
+    have h1u : (0 : ℝ) < 1 - u := by linarith
+    have hlognonpos : Real.log (1 - u) ≤ 0 := Real.log_nonpos (by linarith) (by linarith)
+    have h1une : (1 : ℝ) - u ≠ 0 := ne_of_gt h1u
+    have heq : (1 : ℝ) - (1 - u)⁻¹ = -u / (1 - u) := by field_simp; ring
+    have hle : -u / (1 - u) ≤ Real.log (1 - u) := heq ▸ Real.one_sub_inv_le_log_of_pos h1u
+    have hlogbound : |Real.log (1 - u)| ≤ 2 * u := by
+      rw [abs_of_nonpos hlognonpos]
+      rw [neg_div] at hle
+      have hstep : -Real.log (1 - u) ≤ u / (1 - u) := by linarith
+      have hfrac : u / (1 - u) ≤ 2 * u := by
+        rw [div_le_iff₀ h1u]; nlinarith
+      linarith
+    rw [Real.norm_eq_abs, abs_mul]
+    calc |Real.log (1 - u)| * |Real.log u|
+        ≤ (2 * u) * |Real.log u| :=
+          mul_le_mul_of_nonneg_right hlogbound (abs_nonneg _)
+      _ = 2 * |Real.log u * u| := by rw [abs_mul, abs_of_pos hu0]; ring
+  -- transport back via x ↦ 1-x : 𝓝[<]1 → 𝓝[>]0
+  have htend : Tendsto (fun x : ℝ => 1 - x) (𝓝[<] (1 : ℝ)) (𝓝[>] (0 : ℝ)) := by
+    apply tendsto_nhdsWithin_of_tendsto_nhds_of_eventually_within
+    · have h : Tendsto (fun x : ℝ => 1 - x) (𝓝 (1 : ℝ)) (𝓝 0) := by
+        have hcont : Continuous (fun x : ℝ => 1 - x) := continuous_const.sub continuous_id
+        simpa using hcont.tendsto (1 : ℝ)
+      exact h.mono_left nhdsWithin_le_nhds
+    · filter_upwards [self_mem_nhdsWithin] with x hx
+      simp only [Set.mem_Ioi]
+      have : x < 1 := hx
+      linarith
+  have := hcomp.comp htend
+  refine this.congr (fun x => ?_)
+  simp only [Function.comp_apply, sub_sub_cancel]
+
+/-- **Brick B — the Euler reflection functional equation.**
+    `Li₂(x) + Li₂(1-x) = π²/6 − log x·log(1-x)` for `0 < x < 1`.  The
+    auxiliary `g = Li₂ x + Li₂(1-x) + log x·log(1-x)` is constant on `(0,1)`
+    (`g' ≡ 0`), and its `x → 1⁻` boundary value is `π²/6`. -/
+theorem LiTwo_reflection' (x : ℝ) (hx0 : 0 < x) (hx1 : x < 1) :
+    LiTwo x + LiTwo (1 - x) = Real.pi ^ 2 / 6 - Real.log x * Real.log (1 - x) := by
+  set g : ℝ → ℝ :=
+    fun x => LiTwo x + LiTwo (1 - x) + Real.log x * Real.log (1 - x) with hg
+  -- g is constant on Ioo 0 1
+  have hconst : ∀ y ∈ Set.Ioo (0 : ℝ) 1, g y = g x := by
+    intro y hy
+    refine IsOpen.is_const_of_deriv_eq_zero isOpen_Ioo isPreconnected_Ioo ?_ ?_ hy ⟨hx0, hx1⟩
+    · intro z hz
+      exact (hasDerivAt_reflectionAux hz.1 hz.2).differentiableAt.differentiableWithinAt
+    · intro z hz
+      exact (hasDerivAt_reflectionAux hz.1 hz.2).deriv
+  -- boundary value of g at x → 1⁻ is π²/6
+  have hgtend : Tendsto g (𝓝[<] (1 : ℝ)) (𝓝 (Real.pi ^ 2 / 6)) := by
+    have := (tendsto_LiTwo_nhdsWithin_lt_one.add
+      tendsto_LiTwo_one_sub_nhdsWithin_lt_one).add
+      tendsto_log_mul_log_one_sub_nhdsWithin_lt_one
+    simpa using this
+  -- but g ≡ g x near 1⁻, so g x = π²/6
+  have hmem : Set.Ioo (0 : ℝ) 1 ∈ 𝓝[<] (1 : ℝ) := by
+    have := inter_mem_nhdsWithin (Set.Iio (1 : ℝ))
+      (Ioi_mem_nhds (show (0 : ℝ) < 1 by norm_num))
+    rwa [Set.Iio_inter_Ioi] at this
+  have hgconst : Tendsto g (𝓝[<] (1 : ℝ)) (𝓝 (g x)) := by
+    refine tendsto_const_nhds.congr' ?_
+    filter_upwards [hmem] with y hy using (hconst y hy).symm
+  have hgx : g x = Real.pi ^ 2 / 6 := tendsto_nhds_unique hgconst hgtend
+  simp only [hg] at hgx
+  linarith
 
 end QOU.Archimedean
