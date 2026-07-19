@@ -292,3 +292,10 @@ path = "src/bin/v19_nuclear_mass.rs"
 [[bin]]
 name = "faddeev_ck"
 path = "src/bin/faddeev_ck.rs"
+
+# Certified categorical q*-test runner (N=5 validation, N=6 rung). Uses the
+# tl_cable engine (rug/MPFR), so it requires the default mpfr feature.
+[[bin]]
+name = "tl-cable-qstar"
+path = "src/bin/tl_cable_qstar.rs"
+required-features = ["mpfr"]
