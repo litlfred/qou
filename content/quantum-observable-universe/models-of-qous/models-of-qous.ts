@@ -69,7 +69,11 @@ export default chapter({
       blocks: [
         "headline-conjectures-intro",
         "yang-mills-mass-gap",
+        "yang-mills-mass-gap-translation",
         "yang-mills-mass-gap-table-data",
+        "yang-mills-mass-gap-naturality",
+        "yang-mills-mass-gap-obstruction",
+        "yang-mills-mass-gap-confinement",
         "gr-substrate-geometry",
       ],
     }),

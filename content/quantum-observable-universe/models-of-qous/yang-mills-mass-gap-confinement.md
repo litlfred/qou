@@ -1,0 +1,2 @@
+**Relation to confinement.**
+In the archimedean realisation, the mass gap implies that the lightest glueball (the simplest non-trivial closed vortex $arrho \colon \mathbf{1} 	o A$ with no quark endpoints) has mass $\mathfrak{m}_{\mathrm{glue}} \geq \Delta_q > 0$. Isolated colour charges would require a vortex of infinite length (and hence infinite mass). Confinement follows: all finite-energy excitations are colour singlets.
