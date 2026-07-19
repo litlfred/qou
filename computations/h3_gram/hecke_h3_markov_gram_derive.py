@@ -1,5 +1,8 @@
-import sympy as sp
+from pathlib import Path
 import json
+import sympy as sp
+
+HERE = Path(__file__).parent
 
 z, h, q = sp.symbols('z h q')
 
@@ -37,5 +40,5 @@ data = {
   "detG_zh": str(detG),
   "detG_z_q": str(detG_q),
 }
-with open('h3_gram/gram_data.json','w') as f: json.dump(data,f,indent=1)
-print("symmetric: OK; written h3_gram/gram_data.json")
+(HERE / "hecke-h3-markov-gram.data.json").write_text(json.dumps(data, indent=1), encoding="utf-8")
+print("symmetric: OK; written hecke-h3-markov-gram.data.json")
