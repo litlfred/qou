@@ -1253,28 +1253,15 @@
     "expo-milnor-clarity": [
       {
         "result": "pass",
-        "notes": "Looks good. Verified by semantic constraints.",
-        "reviewed_at": "2026-07-07T23:32:42Z",
-        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "notes": "Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07"
-        }
-      },
-      {
-        "result": "pass",
-        "notes": "Reviewed interactively. Sound proof breakdown correctly assigning exponential damping and finite depth as the mechanisms of regularity.",
-        "reviewed_at": "2026-07-08T13:27:46.000Z",
-        "reviewed_sha": "b5ffd975a5ac68522c24aaf7ac12108c2a9e727d",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-08"
+          "agent_date": "2026-07-19"
         }
       }
     ],

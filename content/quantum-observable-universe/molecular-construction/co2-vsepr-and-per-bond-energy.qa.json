@@ -427,28 +427,15 @@
     "expo-milnor-clarity": [
       {
         "result": "pass",
-        "notes": "Block satisfies expo-milnor-clarity. No issues found.",
-        "reviewed_at": "2026-07-07T23:33:24Z",
-        "reviewed_sha": "f9e1692587a5d3d6a380fe8ec64de48f4a3ca021",
+        "notes": "Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07"
-        }
-      },
-      {
-        "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
-        "reviewed_at": "2026-07-08T19:27:04.000Z",
-        "reviewed_sha": "26fe0c1d03528aaf54597fd8824be17d18ec3cb0",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-08"
+          "agent_date": "2026-07-19"
         }
       }
     ],

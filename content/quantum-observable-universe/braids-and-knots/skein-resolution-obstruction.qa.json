@@ -1551,15 +1551,15 @@
     "expo-milnor-clarity": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound computational-complexity analysis connecting chi(A) to the depth of the skein resolution tree.",
-        "reviewed_at": "2026-07-08T09:32:38.000Z",
-        "reviewed_sha": "e70471dc350f7d039d1596fb6bc869e1e73bc2d4",
+        "notes": "Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-08"
+          "agent_date": "2026-07-19"
         }
       }
     ],

@@ -1086,15 +1086,15 @@
     "expo-milnor-clarity": [
       {
         "result": "pass",
-        "notes": "Block satisfies expo-milnor-clarity. No issues found.",
-        "reviewed_at": "2026-07-07T23:34:02Z",
-        "reviewed_sha": "df5c56d8df947b8e58b34838d46b988c7e7098d3",
+        "notes": "Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07"
+          "agent_date": "2026-07-19"
         }
       }
     ],

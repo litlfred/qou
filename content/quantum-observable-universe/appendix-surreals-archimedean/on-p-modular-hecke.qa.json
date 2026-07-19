@@ -1282,16 +1282,16 @@
     ],
     "expo-milnor-clarity": [
       {
-        "result": "pass",
-        "notes": "Reviewed interactively. Fascinating conjectural extension linking modular Hecke fusion to nim-arithmetic. Hygienically marked as non-load-bearing.",
-        "reviewed_at": "2026-07-08T09:15:25.000Z",
-        "reviewed_sha": "55baf82d70481fcd90ae0e99c050211c4d6d5065",
+        "result": "warn",
+        "notes": "Block is quite long, consider breaking it up for clarity.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-08"
+          "agent_date": "2026-07-19"
         }
       }
     ],

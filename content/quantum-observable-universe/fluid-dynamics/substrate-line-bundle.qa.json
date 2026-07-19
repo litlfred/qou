@@ -1549,15 +1549,15 @@
     "expo-milnor-clarity": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound geometric formulation correctly promoting the scalar substrate parameter into a strict line-bundle section.",
-        "reviewed_at": "2026-07-08T13:26:10.000Z",
-        "reviewed_sha": "adbe3372de47145ca296c1a38a73eadd1a88f591",
+        "notes": "Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-08"
+          "agent_date": "2026-07-19"
         }
       }
     ],

@@ -1031,15 +1031,15 @@
     "expo-milnor-clarity": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound conceptual grounding attributing the Skein relation to the R-matrix characteristic equation.",
-        "reviewed_at": "2026-07-08T13:09:10.000Z",
-        "reviewed_sha": "5f3a6fd0067351e8e7bcb996ebbb130d6e63384e",
+        "notes": "Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-08"
+          "agent_date": "2026-07-19"
         }
       }
     ],

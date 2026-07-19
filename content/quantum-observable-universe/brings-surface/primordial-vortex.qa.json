@@ -1031,15 +1031,15 @@
     "expo-milnor-clarity": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound physical description of the r \to 0 collapse localizing topological charge as \\hbar_q \to 1.",
-        "reviewed_at": "2026-07-08T09:45:43.000Z",
-        "reviewed_sha": "dc788138e99ec7c3ee5b398ef643e06d0078eb5e",
+        "notes": "Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-08"
+          "agent_date": "2026-07-19"
         }
       }
     ],

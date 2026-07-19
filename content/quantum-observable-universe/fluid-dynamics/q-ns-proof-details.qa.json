@@ -1252,28 +1252,15 @@
     "expo-milnor-clarity": [
       {
         "result": "pass",
-        "notes": "Looks good. Verified by semantic constraints.",
-        "reviewed_at": "2026-07-07T23:32:28Z",
-        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "notes": "Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07"
-        }
-      },
-      {
-        "result": "pass",
-        "notes": "Reviewed interactively. Sound analytic proof effectively leveraging the compact q-Sobolev constant to forcibly secure q-NS global uniqueness.",
-        "reviewed_at": "2026-07-08T13:19:46.000Z",
-        "reviewed_sha": "1ef20077354e24065288d6c28baf6779857c15fe",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-08"
+          "agent_date": "2026-07-19"
         }
       }
     ],

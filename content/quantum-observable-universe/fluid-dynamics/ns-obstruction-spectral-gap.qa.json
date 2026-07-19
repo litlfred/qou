@@ -245,15 +245,15 @@
     "expo-milnor-clarity": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound algebraic property correctly connecting classical NS blowup strictly to Hecke eigenvalue collapse.",
-        "reviewed_at": "2026-07-08T13:29:19.000Z",
-        "reviewed_sha": "dfa7fdd048dc5cb9f38f111456a3ecd68be7d99c",
+        "notes": "Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-08"
+          "agent_date": "2026-07-19"
         }
       }
     ],

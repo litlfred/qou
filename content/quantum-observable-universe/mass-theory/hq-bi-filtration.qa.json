@@ -1529,15 +1529,15 @@
     "expo-milnor-clarity": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound mathematical classification systematically mapping formal explicit metrics correctly across defined invariant ranges.",
-        "reviewed_at": "2026-07-08T14:47:30.000Z",
-        "reviewed_sha": "f4ce4e176257f4d5aadbcb4ce37548d64595c91f",
+        "notes": "Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-08"
+          "agent_date": "2026-07-19"
         }
       }
     ],

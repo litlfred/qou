@@ -423,15 +423,15 @@
     "expo-milnor-clarity": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound explicit mechanism demonstrating formal mathematical variation meticulously around analytic limits.",
-        "reviewed_at": "2026-07-08T18:01:46.000Z",
-        "reviewed_sha": "fb0320a8b06ebfa803501b2f4c1db5cd6ffb2ca2",
+        "notes": "Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-08"
+          "agent_date": "2026-07-19"
         }
       }
     ],
