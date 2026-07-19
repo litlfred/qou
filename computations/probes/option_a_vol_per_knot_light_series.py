@@ -85,7 +85,7 @@ set_compute_dps()
 from witness_base import WitnessBuilder  # noqa: E402
 
 from _li_2_q_util import (  # noqa: E402
-    vol_density_borromean,
+    vol_density_per_block, linking_weight_family_a,
     vol_density_per_block,
 )
 from substrate.knot_volumes import (  # noqa: E402
@@ -319,7 +319,7 @@ def main() -> int:
     q_inv = mp.mpf(1) / q_0
     m_e = mp.mpf(M_E_MEV_50DPS)
 
-    geom_uniform = vol_density_borromean(q_0, q_inv)
+    geom_uniform = vol_density_per_block(8 * mp.catalan, linking_weight_family_a(q_0, q_inv), q_0, q_inv)
     m_avg_uniform_MeV = m_e * geom_uniform
 
     w.add_parameter("q_0_50dps", q_0_str)

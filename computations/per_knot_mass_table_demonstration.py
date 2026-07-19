@@ -74,7 +74,7 @@ if str(HERE) not in sys.path:
     sys.path.insert(0, str(HERE))
 
 from _li_2_q_util import (  # noqa: E402
-    vol_density_borromean,
+    linking_weight_family_a,
     vol_density_per_block,
     geom_leading,
 )
@@ -133,7 +133,7 @@ def main() -> int:
     ]
 
     # Production uniform-Vol baseline (same for every atom)
-    vol_density_uniform = vol_density_borromean(q)
+    vol_density_uniform = vol_density_per_block(vol_K, linking_weight_family_a(q), q)
     m_avg_production = m_e * vol_density_uniform
 
     # H_3 building blocks for the Phase 5q closed form (sub-second compute)

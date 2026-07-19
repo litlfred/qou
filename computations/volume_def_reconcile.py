@@ -44,7 +44,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from _precision import COMPUTE_DPS  # noqa: E402
 from _li_2_q_util import (  # noqa: E402
     load_q_50dps,
-    vol_density_borromean,
+    vol_density_per_block, linking_weight_family_a,
 )
 from codata_constants import (  # noqa: E402
     M_E_MEV,
@@ -107,7 +107,7 @@ def main() -> None:
     # --- Raw m_avg readings (no fit) at each chain stage --------------------
     geom_leading_A = vol_8G / hbar_q**2
     m_avg_A_bare = M_E * geom_leading_A
-    m_avg_A_prod = M_E * vol_density_borromean(q, qi)
+    m_avg_A_prod = M_E * vol_density_per_block(8 * mp.catalan, linking_weight_family_a(q, qi), q, qi)
     m_avg_B_wrongstage = M_E * (ln_trM_norm / hbar_q**2)  # negative — category error
 
     readings = {

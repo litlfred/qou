@@ -151,10 +151,10 @@ _VOL_B3_LIT = 8 * _CATALAN_G
 # the DeprecationWarning is suppressed because this retention is the
 # intentional, documented audit use.
 import warnings as _warnings
-from _li_2_q_util import vol_density_borromean as _vol_density_borromean
+from _li_2_q_util import vol_density_per_block, linking_weight_family_a
 with _warnings.catch_warnings():
     _warnings.simplefilter("ignore", DeprecationWarning)
-    GEOM_FULL_BORROMEAN_Q0 = _vol_density_borromean(_Q_0)
+    GEOM_FULL_BORROMEAN_Q0 = vol_density_per_block(8 * _CATALAN_G, linking_weight_family_a(_Q_0), _Q_0)
 
 # Empirical legacy (falsified, retained for the comparison column
 # in the audit witness).

@@ -50,7 +50,7 @@ from mpmath import mp, mpf, acos  # noqa: E402
 
 # Substrate constants — canonical, B_AME-independent.
 from qou_substrate.constants import Q, HA, Q_INV  # noqa: E402
-from _li_2_q_util import vol_density_borromean  # noqa: E402
+from _li_2_q_util import vol_density_per_block, linking_weight_family_a  # noqa: E402
 
 mp.dps = 50
 
@@ -267,7 +267,7 @@ def candidate_1_archimedean() -> tuple[dict, str]:
     scaled by the knot-level VolDensity (i.e. w_λ = VolDensity · χ^λ), which is
     the most charitable reading of 'archimedean per-block'. We test that."""
     nuc = load_nucleon_blocks()
-    g = vol_density_borromean(Q0, QI0)
+    g = vol_density_per_block(8 * mp.catalan, linking_weight_family_a(Q0, QI0), Q0, QI0)
     weights = {lam: g * nuc[lam]["chi"] for lam in H3_BLOCKS}
     return weights, ("VolDensity is a knot-level scalar (no per-block split); "
                      "tested w_λ = VolDensity·χ^λ as the charitable reading")

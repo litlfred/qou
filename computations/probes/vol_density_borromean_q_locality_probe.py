@@ -67,7 +67,7 @@ mp.mp.dps = 50
 
 # Import canonical infrastructure
 sys.path.insert(0, str(Path(__file__).parent))
-from _li_2_q_util import vol_density_borromean  # noqa: E402
+from _li_2_q_util import vol_density_per_block, linking_weight_family_a  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 
 # Constants — anchored on the registry / CODATA values
@@ -99,7 +99,7 @@ def vol_density_linking_weight(q: mpf) -> mpf:
     hbar_q = (q - 1) / q
     vol_b3 = 8 * mp.catalan
     geom_leading = vol_b3 / hbar_q ** 2
-    return vol_density_borromean(q) / geom_leading
+    return vol_density_per_block(8 * mp.catalan, linking_weight_family_a(q), q) / geom_leading
 
 
 def slope_ppm_per_q(f, q_center: mpf, delta: mpf) -> mpf:
@@ -134,7 +134,7 @@ def run_probe() -> dict:
     gap_ppm = mpf("1e6") * gap_at_q0 / target_q0
 
     # Production prediction
-    gf_q0 = vol_density_borromean(Q_0)
+    gf_q0 = vol_density_per_block(8 * mp.catalan, linking_weight_family_a(Q_0), Q_0)
     m_p_pred = M_E_MEV * gf_q0
     relative_err = (m_p_pred - M_P_CODATA_MEV) / M_P_CODATA_MEV
 

@@ -62,7 +62,7 @@ from experimental_constants import m_n_derived_3input  # noqa: E402
 from murnaghan_nakayama import partitions_of  # noqa: E402
 from q_parameter import Q_MP  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
-from _li_2_q_util import vol_density_per_block, vol_density_borromean  # noqa: E402
+from _li_2_q_util import vol_density_per_block, linking_weight_family_a  # noqa: E402
 
 VOL_B3 = 8 * mp.catalan  # Vol(𝓑₃), Adams 1985 — same constant the density routines use
 
@@ -146,7 +146,7 @@ def main() -> int:
         warnings.simplefilter("ignore", DeprecationWarning)  # λ_A route is
         # deprecated-for-absolute-mass by design; this rerun uses it ONLY as
         # the refutation-era baseline under audit, not as production mass.
-        m_lambdaA = M_E_MEV * vol_density_borromean(Q_MP)
+        m_lambdaA = M_E_MEV * vol_density_per_block(VOL_B3, linking_weight_family_a(Q_MP), Q_MP)
     m_p_pk = M_E_MEV * vol_density_per_block(VOL_B3, tr_p, Q_MP)
     m_n_pk = M_E_MEV * vol_density_per_block(VOL_B3, tr_n, Q_MP)
 

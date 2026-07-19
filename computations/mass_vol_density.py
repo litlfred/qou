@@ -64,7 +64,7 @@ if str(HERE) not in sys.path:
 import _path_bridge  # noqa: F401, E402
 from _li_2_q_util import (  # noqa: E402
     linking_weight_family_a,
-    vol_density_borromean,
+    vol_density_per_block, linking_weight_family_a,
     vol_density_per_block,
 )
 
@@ -263,7 +263,7 @@ def _emit_witness() -> None:
         return
     from q_parameter import Q_50_DIGIT_STR as Qs
     q = mp.mpf(Qs)
-    eq = abs(vol_density_borromean(q) - vol_density_vd(vol_borromean(), q))
+    eq = abs(vol_density_per_block(vol_borromean(), linking_weight_family_a(q), q) - vol_density_vd(vol_borromean(), q))
     h_id = abs((q - 1 / q) - h_from_rapidity(q))
     b2_id = abs((q + 1 / q) - bracket2_from_rapidity(q))
     O0, th = mp.mpf("938.9"), mp.mpf("0.01")
@@ -340,7 +340,7 @@ if __name__ == "__main__":
     print("Mass = Vol × Density — wired-up compute")
     print(f"  [2]_q = 2cosh(log q₀) = {mp.nstr(bracket2_from_rapidity(q), 12)} (recurring Hecke weight)")
     print(f"  vol_density ≡ Vol·ρ/ℏ²: |Δ| = "
-          f"{mp.nstr(abs(vol_density_borromean(q) - vol_density_vd(vol_borromean(), q)), 3)}")
+          f"{mp.nstr(abs(vol_density_per_block(vol_borromean(), linking_weight_family_a(q), q) - vol_density_vd(vol_borromean(), q)), 3)}")
     try:
         _tr = _load_tr_M_proton_at_q0()
         _c = compare_density_readings(q, _tr)

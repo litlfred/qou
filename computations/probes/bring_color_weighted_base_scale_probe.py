@@ -34,7 +34,7 @@ import mpmath as mp  # noqa: E402
 
 from _li_2_q_util import (  # noqa: E402
     bring_color_weighted_linking_weight,
-    vol_density_borromean,
+    vol_density_per_block, linking_weight_family_a,
     vol_density_borromean_bring_color_weighted,
     linking_weight_family_a,
     flavor_split_subleading,
@@ -72,7 +72,7 @@ for (Z, N, label) in [(1, 0, "proton"), (0, 1, "neutron"),
 print()
 
 # Mass predictions (using vol_density_borromean directly for m_p, m_n)
-m_p_family_a = m_e * vol_density_borromean(q)  # H_4 average (production)
+m_p_family_a = m_e * vol_density_per_block(8 * mp.catalan, linking_weight_family_a(q), q)  # H_4 average (production)
 m_p_bring = m_e * vol_density_borromean_bring_color_weighted(1, 0, q)
 m_n_bring = m_e * vol_density_borromean_bring_color_weighted(0, 1, q)
 m_avg_family_a = m_p_family_a

@@ -58,7 +58,7 @@ if str(HERE) not in sys.path:
 
 from _li_2_q_util import (  # noqa: E402
     geom_leading,
-    vol_density_borromean,
+    vol_density_per_block, linking_weight_family_a,
     vol_density_per_block,
     linking_weight_family_a,
 )
@@ -102,7 +102,7 @@ def main() -> int:
 
     gl = geom_leading(VOL_B3, q0)            # Vol(𝓑₃)/ℏ_q²
     lw = linking_weight_family_a(q0)         # global H₄ scalar ≈ 2.53
-    geom_prod = vol_density_borromean(q0)      # production VolDensity
+    geom_prod = vol_density_per_block(8 * mp.catalan, linking_weight_family_a(q0), q0)      # production VolDensity
 
     trM = {
         "proton": _load_trM("proton", 3),

@@ -321,96 +321,6 @@ def vol_density_borromean_bring_color_weighted(
     return geom_leading * bring_color_weighted_linking_weight(Z, N, q, qi)
 
 
-def vol_density_borromean(q: mpf, q_inv: mpf | None = None) -> mpf:
-    """[SHORTCUT — global-scalar collapse, NOT the paper's per-block sum.]
-
-    VolDensity(𝓑₃, q) — the complete per-knot Geom evaluation for the
-    Borromean baryon mass formula (canonical post-PR #1080, 2026-05-23).
-
-    ⚠ **Discipline note (2026-06-01, PR vol-density-perblock-wiring-fix).**
-    This routine multiplies the bare hyperbolic Geom_leading =
-    Vol(𝓑₃)/ℏ_q² by a GLOBAL scalar `linking_weight_family_a(q)` =
-    (3q²+4+3q⁻²)/4 ≈ 2.53. That scalar is the H₄ (partitions of 4)
-    half-symmetric Wedderburn count — it is NOT the paper's Stage-4
-    per-block character sum `Σ_λ w_λ χ_λ(β)/dim λ` over partitions of
-    the knot's own strand count.  For 𝓑₃ the paper's per-block sum is
-    the H₃ Markov trace tr_M(𝓑₃) ≈ 1.065 (proton) / 0.923 (neutron),
-    not 2.53.  The two differ by ≈ 2.38×; this routine therefore does
-    NOT compute the formula in `prop:hoefsmit-scattering-pipeline`
-    Stage 4 — the 2.53 is a CODATA-implied-λ near-match that lands
-    near `λ = m_p/(m_e·Vol/ℏ²) ≈ 2.46` (the value that round-trips m_p).
-    Use `vol_density_per_block(vol_K, tr_M_K, q, ...)` for the
-    paper-faithful per-block evaluation.  This routine is retained ONLY until the
-    per-block version is validated and the owner approves a production
-    switch (the switch changes the m_p computation).
-
-    The mass formula is:
-        m(B) = m_e × VolDensity(𝓑₃, q₀)            (single Geom call)
-
-    where VolDensity = Geom_leading × linking_weight:
-        Geom_leading = Vol(𝓑₃) / ℏ_q²           (bare hyperbolic volume)
-        linking_weight = what Geom assigns to multi-component links
-                         beyond bare volume (= 1 for knots, > 1 for links)
-
-    Currently: linking_weight = linking_weight_family_a(q) (PROVED Family A
-    categorical Wedderburn identity).  The −G·h² Yekutieli correction
-    is NOT included — purged 2026-05-24 as non-canonical (PR #985
-    bijection NEGATIVE).
-
-    NAMING: older docs called the linking_weight component `λ_scale`
-    before it was absorbed into the per-knot Geom evaluation.  There is
-    no separate λ_scale constant.  For knots (muon = 4₁): linking_weight
-    = 1 (Geom = Vol/ℏ_q²).  For links (proton = 𝓑₃): linking_weight
-    ≈ 2.46.
-
-    LEAN COVERAGE:
-      - PROVED: linking_weight identity (`lambda-scale-substrate-form.lean`)
-      - NOT PROVED: Vol(𝓑₃) = 8·G (Adams 1985 cited from literature);
-        VolDensity per-knot decomposition (prop:geom-universality has
-        no Lean theorem yet) — flagged as potential source of error.
-
-    CANONICAL FORM (VolDensity → Vol × Density purge, Stage 2):
-      This routine is the GLOBAL-density reading of the M=Vol×Density
-      formula. It is bit-identical to
-      ``mass_vol_density.vol_density_vd(vol_borromean(), q)`` — i.e.
-      Vol(𝓑₃)·ρ_global(q)/ℏ_q² with ρ_global = linking_weight_family_a.
-      See `mass_vol_density.py` for the proper-definition module exposing
-      both the global ρ and the per-block ρ_pb = tr_M side-by-side. The
-      primitive factoring (geom_leading × density) lives HERE; the M=VD
-      module is the narrative/parity layer that re-exports it.
-
-    Returns VolDensity = Vol(𝓑₃)/ℏ_q² × linking_weight(q).
-
-    ⚠ DEPRECATED FOR ABSOLUTE NUCLEON/ATOM MASS (owner ruling 2026-06-24):
-    this is the λ_A fit (→ m_p ≈ 966, +2.96%). Route absolute mass through the
-    `canonical_mass` facade (muon-anchored Hecke energy → 938.27). See
-    docs/canonical-mass-formula-guardrail.md.
-    """
-    import warnings as _warnings
-    _warnings.warn(
-        "vol_density_borromean is the λ_A fit (Vol(𝓑₃)·ρ_global/ℏ_q² → 966 MeV) "
-        "— NOT the canonical absolute nucleon mass. Use the canonical_mass "
-        "facade (muon-anchored Hecke energy). See "
-        "docs/canonical-mass-formula-guardrail.md.",
-        DeprecationWarning,
-        stacklevel=2,
-    )
-    qi = mpf(1) / q if q_inv is None else q_inv
-    hbar_q = 1 - qi  # ℏ_q = (q - 1)/q = 1 - q⁻¹; reuse qi (Gemini PR #1089)
-    vol_b3 = 8 * mp.catalan  # Adams 1985 (NOT Lean-formalized — see docstring)
-    geom_leading = vol_b3 / hbar_q ** 2
-    linking_weight = linking_weight_family_a(q, qi)
-    # PROVED production formula: Vol(𝓑₃)/ℏ_q² × Family-A linking weight
-    # (lw = (3q²+4+3q⁻²)/4, Lean: lambda-scale-substrate-form.lean).
-    # m_e × this = m_avg ≈ 966 MeV (+2.89 % vs CODATA m_avg); the 2.89 %
-    # is an OPEN R&D gap (categorical-exactness refinement at h² order).
-    # The exploratory spectral-phase correction (spectral_correction_
-    # borromean, −819 ppm on m_avg) is NOT applied here: it is unproved
-    # (trivial Lean stub) so it must not enter production. Use it only
-    # via the explicitly-exploratory vol_density_borromean_spectral().
-    return geom_leading * linking_weight
-
-
 def geom_leading(vol_K: mpf, q: mpf, q_inv: mpf | None = None) -> mpf:
     """Bare hyperbolic Geom_leading(K, q) = Vol(K) / ℏ_q².
 
@@ -518,7 +428,8 @@ def vol_density_borromean_spectral(q: mpf, q_inv: mpf | None = None) -> mpf:
     Production uses vol_density_borromean (proved Family A, +2.89 %).
     """
     qi = mpf(1) / q if q_inv is None else q_inv
-    return vol_density_borromean(q, qi) * spectral_correction_borromean(q, qi)
+    geom_leading = (8 * mp.catalan) / ((q - (qi if qi is not None else 1/q)) / q)**2
+    return geom_leading * linking_weight_family_a(q, qi) * spectral_correction_borromean(q, qi)
 
 
 def yekutieli_correction_h2(q: mpf, q_inv: mpf | None = None) -> mpf:
