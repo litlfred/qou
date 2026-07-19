@@ -113,21 +113,23 @@ def main() -> int:
     lam_ss_deformed_A4 = mp.sqrt(1 + two_v ** 2)         # deformed A=4 ss eigenvalue
 
     rows = []
+    raw_vals = {}                                        # name -> (crit, det) at full mpf precision
     prev_crit = mp.mpf(0)
     monotone = True
     for name, w in _ISOTOPES:
         A = len(w)
         S = writhe_S(w)
         E, _V = mp.eig(S)
-        eigs = sorted((mp.re(E[k]) for k in range(A)))
+        eigs = sorted(mp.re(x) for x in E)
         lam_max = max(abs(x) for x in eigs)
         crit = g_reeb * lam_max                          # g * lambda_ss
         det = mp.det(mp.eye(A) + g_reeb * S)
         in_domain = A <= 4
         if in_domain and name != "2H":
-            monotone = monotone and (crit >= prev_crit - mp.mpf(10) ** -30)
+            monotone = monotone and (crit >= prev_crit - mp.mpf("1e-30"))
         if in_domain:
             prev_crit = crit
+        raw_vals[name] = (crit, det)                     # keep raw mpf for assertions (no round-trip)
         rows.append({
             "isotope": name, "A": A, "C4A_rank": c4A(A),
             "lambda_ss": mp.nstr(lam_max, 8),
@@ -141,19 +143,19 @@ def main() -> int:
     # A=4 is the unique in-domain isotope at the pole
     he4 = next(r for r in rows if r["isotope"] == "4He")
     he4_at_pole = he4["regime"] == "AT_POLE"
+    he4_crit = raw_vals["4He"][0]
     subcritical_below = all(
-        (mp.mpf(r["g_reeb_times_lambda_ss"]) < mp.mpf(he4["g_reeb_times_lambda_ss"]))
-        for r in rows if r["A"] < 4
+        raw_vals[r["isotope"]][0] < he4_crit for r in rows if r["A"] < 4
     )
     offdomain_pastpole = all(
-        (mp.mpf(r["det_I_plus_gS"]) < 0) for r in rows if r["A"] > 4
+        raw_vals[r["isotope"]][1] < 0 for r in rows if r["A"] > 4
     )
 
     result = {
         "g_reeb": mp.nstr(g_reeb, 18),
         "g_reeb_fixed_from_q0_no_fit": True,
         "deformed_A4_ss_eigenvalue": mp.nstr(lam_ss_deformed_A4, 18),
-        "deformed_A4_exactly_on_pole": bool(abs(g_reeb * lam_ss_deformed_A4 - 1) < mp.mpf(10) ** -40),
+        "deformed_A4_exactly_on_pole": bool(abs(g_reeb * lam_ss_deformed_A4 - 1) < mp.mpf("1e-40")),
         "isotope_sweep": rows,
         "monotone_approach_to_pole_over_He4_local_domain": bool(monotone),
         "He4_uniquely_at_pole": bool(he4_at_pole),
