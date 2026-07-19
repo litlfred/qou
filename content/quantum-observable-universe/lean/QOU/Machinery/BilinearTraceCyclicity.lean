@@ -183,4 +183,36 @@ theorem isCyclic_weighted_sum {κ : Type*} (s : Finset κ) (w : κ → R) (χ : 
 
 end Character
 
+/-! ## Bridge — Gram symmetry from a representation decomposition
+
+The keystone brick that connects the character route back to the concrete
+`whnf`-free reduction. It needs **no ring/associativity structure** on the NF
+module (so the `Fin 24` associativity `whnf` wall is avoided): only that the
+trace `τ` decomposes as a finite weighted sum of representation-traces, each
+representation being multiplicative on the bilinear product `B`. Then the finite
+Gram symmetry — the residual left by `cyclic_of_gram_symm` — holds. What remains
+for a concrete level is exactly the *content*: the representations `ρ_λ` (e.g.
+Hoefsmit / seminormal at `H_n(q)`) and the Markov weights `w_λ`. -/
+
+section Bridge
+
+variable {Λ : Type*} {dim : Λ → Type*} [∀ l, Fintype (dim l)] [∀ l, DecidableEq (dim l)]
+
+/-- **Bridge brick.** If `τ = ∑_λ w_λ · trace ∘ ρ_λ` with each `ρ_λ` multiplicative
+on the bilinear product `B` (`ρ_λ (B u v) = ρ_λ u * ρ_λ v`), then the Gram matrix
+`G_{i,j} = τ (B (e i) (e j))` is symmetric. Combined with `cyclic_of_gram_symm`,
+this gives full cyclicity with no per-pair `Fin`-computation. -/
+theorem gram_symm_of_rep_decomp
+    (B : (ι → R) → (ι → R) → (ι → R)) (τ : (ι → R) → R)
+    (s : Finset Λ) (w : Λ → R) (ρ : ∀ l, (ι → R) → Matrix (dim l) (dim l) R)
+    (hmul : ∀ l u v, ρ l (B u v) = ρ l u * ρ l v)
+    (hdecomp : ∀ x, τ x = ∑ l ∈ s, w l * (ρ l x).trace)
+    (i j : ι) :
+    τ (B (e i) (e j)) = τ (B (e j) (e i)) := by
+  rw [hdecomp, hdecomp]
+  refine Finset.sum_congr rfl (fun l _ => ?_)
+  rw [hmul, hmul, Matrix.trace_mul_comm]
+
+end Bridge
+
 end QOU.Machinery.BilinearTrace
