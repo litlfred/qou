@@ -299,6 +299,30 @@ framework does not canonically contain, or (ii) the $A$-flattened counit
 variant left open in §2f. Both remain genuinely open; the exchange sector
 alone is exhausted for the unit.
 
+> **🟧 Scope correction (2026-07-19, owner-directed — "resolve the external
+> issues"; PR #4102, `eunit_counit_mu0_tracing_probe.py`).** The clause "an
+> external ~1 MeV scale **the framework does not canonically contain**" (route
+> (i)) is **too strong** — re-scoped, original text retained. The *exchange
+> sector* is scale-free (that stands: the Hecke data `g`, `√5` are
+> dimensionless). But the **counit sector** — also internal — *does* supply a
+> derived per-crossing MeV scale, which this §2h.2 candidate sweep (`2m_e`,
+> `m_e[2]_v`, `E_0/[2]_v²`, `Q_β`) **omitted**: the cheat-sheet's
+> **`μ₀ = m_e/(3(q−q⁻¹)/2) ≈ 1.63 MeV`**, where `(q−q⁻¹)` is the counit-character
+> / skein weight (`def:coulomb-charge`; the deuteron pn-pair's `3(q−q⁻¹)`
+> 3-crossing net energy) and `m_e` is the τ-functor dimension. It is **derived,
+> 0 free params**, giving the deuteron `μ₀·ℏ_q·J_q²(3) = 2.020 MeV` (**−9.2%**).
+> So `E_unit`'s **source is internal (the counit), not external** — route (i) as
+> phrased is withdrawn; route (ii) (the counit variant) **is** this same object
+> seen from §2f. What remains genuinely open is *not the existence of an internal
+> scale* but its **accuracy**: `μ₀` is **first-order** in `(q−q⁻¹)` and misses by
+> −9.2%; closing it to the 5g-form's +0.4% needs the **higher-order (co)unit /
+> non-abelian-Stokes expansion** (`𝔈 = baseline + Q·(q−q⁻¹) + …`). The two
+> deuteron forms (`μ₀`-rotational, derived, −9%; `5g·E_unit`, +0.4%, `E_unit`
+> external-looking `= 0.611·μ₀`) use the *same* counit `(q−q⁻¹)` structure at
+> different dimensional realizations and have never been unified — that
+> unification, not "an external unit", is the open work. Full tracing:
+> [`docs/audits/2026-07-19-eunit-source-is-the-counit.md`](2026-07-19-eunit-source-is-the-counit.md).
+
 ## 2i. Does the dichotomy decompose the many-body shell? — no; binding is collective (tranche 7)
 
 The §2h dichotomy is a *single-bond* result (open ⇒ linear, loop ⇒
