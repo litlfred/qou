@@ -558,7 +558,7 @@
         "reviewed_at": "2026-07-12T00:35:49.657Z",
         "reviewed_sha": "10ed8efff13c5d92a5de950298e7383be95a80fa",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/q-geometric-langlands/cyclotomic-l-value-decomposition.md:27: Beilinson conjecture — named result, no citation in block | content/quantum-observable-universe/q-geometric-langlands/cyclotomic-l-value-decomposition.md:27: Beilinson conjecture — named result, no citation in block"
+        "evidence": "content/quantum-observable-universe/q-geometric-langlands/cyclotomic-l-value-decomposition.md:27: Beilinson conjecture \u2014 named result, no citation in block | content/quantum-observable-universe/q-geometric-langlands/cyclotomic-l-value-decomposition.md:27: Beilinson conjecture \u2014 named result, no citation in block"
       }
     ],
     "voice-agent-speak": [
@@ -839,7 +839,7 @@
         "reviewed_at": "2026-07-13T00:59:15.685Z",
         "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554",
         "severity": "critical",
-        "evidence": "content/quantum-observable-universe/lean/QOU/BraidKnot/CyclotomicLValueDecomposition.lean:1: Lean file uses archimedean constructs but neither the .md narrative nor the .ts authorNotes acknowledge archimedean specialisation. Add a §7c-style note (in authorNotes, per §4d) or move the archimedean evaluation to a sibling block."
+        "evidence": "content/quantum-observable-universe/lean/QOU/BraidKnot/CyclotomicLValueDecomposition.lean:1: Lean file uses archimedean constructs but neither the .md narrative nor the .ts authorNotes acknowledge archimedean specialisation. Add a \u00a77c-style note (in authorNotes, per \u00a74d) or move the archimedean evaluation to a sibling block."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1617,6 +1617,13 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-19"
         }
+      },
+      {
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "version": "gemini-3.1-pro"
+        }
       }
     ],
     "milnor-brevity": [
@@ -1631,6 +1638,15 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "proof-narrative-lean-equivalence": [
+      {
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "version": "gemini-3.1-pro"
         }
       }
     ]

@@ -1,4 +1,4 @@
-The Frobenius eigenvalues must satisfy $|\alpha_i| = q^{1/2}$. We establish the geometric origin of this constraint.
+The Frobenius eigenvalues must satisfy $|\alpha_i| = q^{1/2}$. This constraint arises geometrically.
 
 **Concrete example: $\mathrm{SU}(2)$.** In the archimedean
 realisation $\mathbf{C} = \mathbf{Rep}(\mathrm{SU}(2))$, the
@@ -14,7 +14,7 @@ $\alpha = q^{1/2} e^{i\phi}$, with $|\alpha| = q^{1/2}$ by
 construction --- the critical-line property is visibly forced by the
 compactness of the gauge group.
 
-With this concrete picture in mind, the general mechanism unfolds
+The general mechanism unfolds
 in three steps.
 
 **Step 1: Global coherence demands vanishing Chern classes.**

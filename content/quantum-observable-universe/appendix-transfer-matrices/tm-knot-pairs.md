@@ -1,4 +1,4 @@
-A transfer matrix records how a single crossing between two knotted strands acts on the Hecke chain. Each knot pair contributes a $2 \times 2$ block determined by its crossing coefficients $c$ and $d$. Every nuclear and electromagnetic crossing reduces to one of just three classes (Section 5). This section lists every transfer matrix for each knot pair over $\mathbb{Z}[q^{± 1/2}]$.
+A transfer matrix records how a single crossing between two knotted strands acts on the Hecke chain. Each knot pair contributes a $2 \times 2$ block determined by its crossing coefficients $c$ and $d$. Every nuclear and electromagnetic crossing reduces to one of just three classes (Section 5). The transfer matrices for each knot pair over $\mathbb{Z}[q^{± 1/2}]$ are listed below.
 
 ## 1. Trivial transfer matrices
 

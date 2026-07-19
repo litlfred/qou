@@ -1,4 +1,4 @@
-These examples work the complete transfer matrix computation for small nuclei by hand. The light nuclei are small enough that the abstract construction can be verified by eye. Walking through them makes the $\binom{A}{2}$ cost concrete: one transfer-matrix multiplication per nucleon pair.
+These examples detail the complete transfer matrix computation for small nuclei. The light nuclei are small enough that the abstract construction can be verified directly. This makes the $\binom{A}{2}$ cost concrete: one transfer-matrix multiplication per nucleon pair.
 
 Recall: $z = 1/(q^{1/2} + q^{-1/2})$.
 

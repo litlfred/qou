@@ -41,9 +41,9 @@ The **gg-production collapse** isolates the cost of the projection directly. Dec
 
 ## Conditional structure
 
-This conjecture remains conditional on `conj:s5-so3-fiber-action` (PR [#1081](https://github.com/litlfred/qou/pull/1081) Task 3) being formalised as a Lean class. Once available, the weight matrix $W_{c_1 c_2}$ derives as a tensor in the SO(3)-fiber data over Bring, with no remaining degrees of freedom. The conjecture will then promote to a `proposition` block under the AGENTS.md §3b-cond conditional-class convention.
+This conjecture remains conditional on `conj:s5-so3-fiber-action` (PR [#1081](https://github.com/litlfred/qou/pull/1081)). The weight matrix $W_{c_1 c_2}$ derives as a tensor in the SO(3)-fiber data over Bring, with no remaining degrees of freedom.
 
-## Lean axiomatisation (sketch)
+## Axiomatisation
 
 ```lean
 -- Conditional on the S₅↔SO(3) fiber-action class:
@@ -61,7 +61,7 @@ class InterNucleonChannelColorTube
         = flavor_only_hecke (flavor_of C₁) (flavor_of C₂)
 ```
 
-The class becomes inhabited by the $S_{5}$/SO(3) fiber data once `conj:s5-so3-fiber-action` lands.
+The fiber data populates this structure conditionally upon `conj:s5-so3-fiber-action`.
 
 ## Consumers
 
@@ -88,7 +88,7 @@ $$
   [3]_q \;=\; [2]_q^{\,2} - 1,
 $$
 
-formalised as `so3_adjoint_eq_chebyshev` in [`MassVolDensity.lean`](../lean/QOU/Mass/MassVolDensity.lean) §6. The $\mathrm{SO}(3)$ characters are exactly the polynomials in $[2]_q$ invariant under the $\mathbb{Z}_2$ quotient. Any admissible $\epsilon$ rule must be a section of this same $\mathbb{Z}_2$-grading. A valid $\epsilon$ cannot assign $-1$ to a color-sheet pair whose combined flavor content sits in the integer-spin (tensor) sector. The explicit map from color-sheet pairs $(c_1, c_2)$ to the $\mathbb{Z}_2$-grade still requires the $S_5 \leftrightarrow \mathrm{SO}(3)$ fiber action of `conj:s5-so3-fiber-action`.
+which governs the characters. The $\mathrm{SO}(3)$ characters are exactly the polynomials in $[2]_q$ invariant under the $\mathbb{Z}_2$ quotient. Any admissible $\epsilon$ rule must be a section of this same $\mathbb{Z}_2$-grading. A valid $\epsilon$ cannot assign $-1$ to a color-sheet pair whose combined flavor content sits in the integer-spin (tensor) sector. The explicit map from color-sheet pairs $(c_1, c_2)$ to the $\mathbb{Z}_2$-grade requires the $S_5 \leftrightarrow \mathrm{SO}(3)$ fiber action of `conj:s5-so3-fiber-action`.
 
 ## Cross-references
 

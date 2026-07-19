@@ -13,7 +13,7 @@ $$
 
 ## Disentanglement of D6 from CPT
 
-[`conj:cpt-orbit-closure-density`](#conj:cpt-orbit-closure-density) formalises the **composite** CPT action. The framework historically collapses C, P, T into the single bar-involution [`def:bar-involution`](#def:bar-involution) on Hecke generators ($q \mapsto q^{-1}$ together with $\sigma_i \mapsto \sigma_i^{-1}$). That conflation suppresses the **distinct categorical sources** of the three discrete symmetries:
+[`conj:cpt-orbit-closure-density`](#conj:cpt-orbit-closure-density) establishes the **composite** CPT action. The framework historically collapses C, P, T into the single bar-involution [`def:bar-involution`](#def:bar-involution) on Hecke generators ($q \mapsto q^{-1}$ together with $\sigma_i \mapsto \sigma_i^{-1}$). That conflation suppresses the **distinct categorical sources** of the three discrete symmetries:
 
 | Symmetry | Categorical source | Acts on |
 |----------|--------------------|---------|
@@ -41,7 +41,7 @@ Per [`.claude/skills/local/canonical-watcher.md`](../../../.claude/skills/local/
 - **Jet order**: $h^0$ (the C-action is independent of $q$; the flavor-conjugation map forms a structural Z/2 lifting through the color-tube tensor).
 - **Bar-symmetry status**: $C$ is bar-symmetric. It preserves $q$ and commutes with $\sigma_i \leftrightarrow \sigma_i$ (it acts on color-sheet labels, not on Hecke generators). C composed with PT yields the bar-involution. C itself is bar-trivial in [`bar-involution-table4-data`](bar-involution.md#tbl:bar-involution-table4-data).
 
-## Lean axiomatisation (sketch)
+## Axiomatisation
 
 ```lean
 -- Conditional on the color-tube channel-assignment class:
@@ -63,7 +63,7 @@ class CFromColorFlavorSwap
     bar_involution = c_action ∘ p_braid_mirror ∘ t_trace_reverse
 ```
 
-The class becomes inhabited by the color-tube data once [`conj:inter-nucleon-channel-color-tube`](#conj:inter-nucleon-channel-color-tube) is instantiated.
+The color-tube data populates this structure conditionally upon [`conj:inter-nucleon-channel-color-tube`](#conj:inter-nucleon-channel-color-tube).
 
 ## Consumers / downstream
 
@@ -81,6 +81,6 @@ The class becomes inhabited by the color-tube data once [`conj:inter-nucleon-cha
 
 - [`docs/duality-tracker.md`](../../docs/duality-tracker.md) §1 D6 (this conjecture) + §2 Cluster A (CPT decomposition D5 $\to$ D6 + D7 + D8)
 - Upstream class: [`conj:inter-nucleon-channel-color-tube`](#conj:inter-nucleon-channel-color-tube) (PR [#1111](https://github.com/litlfred/qou/pull/1111) merged)
-- [`conj:cpt-orbit-closure-density`](#conj:cpt-orbit-closure-density) (CPT composite already formalised)
+- [`conj:cpt-orbit-closure-density`](#conj:cpt-orbit-closure-density) (CPT composite)
 - [`bar-involution.md`](bar-involution.md)—the bar-involution = CPT composite identification at the algebraic level
 - AGENTS.md §7b—Type-B folding for chirality / CPT (symmetric-crystal authoring shortcut, D22)

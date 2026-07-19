@@ -118,7 +118,7 @@
         },
         "reviewed_at": "2026-06-28T16:14:57.000Z",
         "reviewed_sha": "223e2e140539d2820d219061638d69029acfe2bd",
-        "notes": "False positive: the flagged sentence is the introduction's central thesis (the observable universe *is* the mathematical structure its own observations force) — axiomatic framing appropriate to an introduction, not editorializing. Emphasis on *is*/*axiomatized* marks the notions being posited.",
+        "notes": "False positive: the flagged sentence is the introduction's central thesis (the observable universe *is* the mathematical structure its own observations force) \u2014 axiomatic framing appropriate to an introduction, not editorializing. Emphasis on *is*/*axiomatized* marks the notions being posited.",
         "severity": "minor"
       },
       {
@@ -1086,6 +1086,13 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-19"
         }
+      },
+      {
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "version": "gemini-3.1-pro"
+        }
       }
     ],
     "milnor-brevity": [
@@ -1155,6 +1162,15 @@
         },
         "reviewed_at": "2026-07-12T00:33:39.518Z",
         "reviewed_sha": "32e33e378091ec7964f26c8d5131e9c6d9e05a58"
+      }
+    ],
+    "proof-narrative-lean-equivalence": [
+      {
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "version": "gemini-3.1-pro"
+        }
       }
     ]
   },

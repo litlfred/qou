@@ -1046,6 +1046,13 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-19"
         }
+      },
+      {
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "version": "gemini-3.1-pro"
+        }
       }
     ],
     "milnor-brevity": [
@@ -1115,6 +1122,15 @@
         },
         "reviewed_at": "2026-07-12T10:57:06.088Z",
         "reviewed_sha": "f67226fd9d495d89555d04ba33509f2c3d5fa41e"
+      }
+    ],
+    "proof-narrative-lean-equivalence": [
+      {
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "version": "gemini-3.1-pro"
+        }
       }
     ]
   },

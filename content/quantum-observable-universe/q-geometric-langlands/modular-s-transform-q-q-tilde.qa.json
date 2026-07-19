@@ -145,7 +145,7 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.212353Z",
         "reviewed_sha": "112805b8753ec0251cbec0dd84bea59bfea434da",
-        "notes": "False positive: 'so the S-duality is not vacuous' is precise — the nondegenerate field exists to keep the conjecture carrier non-vacuous (the content-bearing-carrier requirement, AGENTS.md s3b-tax); 'not vacuous' is the project's technical vocabulary, not informal.",
+        "notes": "False positive: 'so the S-duality is not vacuous' is precise \u2014 the nondegenerate field exists to keep the conjecture carrier non-vacuous (the content-bearing-carrier requirement, AGENTS.md s3b-tax); 'not vacuous' is the project's technical vocabulary, not informal.",
         "severity": "minor"
       },
       {
@@ -1714,6 +1714,13 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-19"
         }
+      },
+      {
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "version": "gemini-3.1-pro"
+        }
       }
     ],
     "milnor-brevity": [
@@ -1728,6 +1735,15 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "proof-narrative-lean-equivalence": [
+      {
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "version": "gemini-3.1-pro"
         }
       }
     ]

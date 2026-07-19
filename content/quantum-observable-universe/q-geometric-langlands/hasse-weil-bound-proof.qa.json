@@ -488,7 +488,7 @@
         "reviewed_at": "2026-07-12T00:35:49.657Z",
         "reviewed_sha": "10ed8efff13c5d92a5de950298e7383be95a80fa",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/q-geometric-langlands/hasse-weil-bound-proof.md:1: Severi inequality — named result, no citation in block"
+        "evidence": "content/quantum-observable-universe/q-geometric-langlands/hasse-weil-bound-proof.md:1: Severi inequality \u2014 named result, no citation in block"
       }
     ],
     "voice-agent-speak": [
@@ -1266,6 +1266,13 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-19"
         }
+      },
+      {
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "version": "gemini-3.1-pro"
+        }
       }
     ],
     "milnor-brevity": [
@@ -1280,6 +1287,15 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "proof-narrative-lean-equivalence": [
+      {
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "version": "gemini-3.1-pro"
         }
       }
     ]
