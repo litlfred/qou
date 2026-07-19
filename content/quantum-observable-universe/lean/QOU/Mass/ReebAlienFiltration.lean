@@ -2,7 +2,6 @@ import Mathlib.Data.Real.Basic
 import Mathlib.Algebra.Quaternion
 import QOU.QuaternionicElectroweak
 import QOU.Mass.NaStokesKeystone
-import QOU.Mass.QDifferenceKernelIsProlongationSymbol
 
 /-!
 # QOU.Mass.ReebAlienFiltration — Alien calculus on the Reeb-twisted jet bundle

@@ -1,6 +1,6 @@
 {
   "$schema": "lean-vacuity-review/v1",
-  "updated_at": "2026-07-13T10:28:57Z",
+  "updated_at": "2026-07-19T17:20:11.022Z",
   "entries": {
     "content/quantum-observable-universe/lean/QOU/Archimedean/BetaDecay.lean::interaction_completeness::proof-no-false-premise": {
       "category": "proof-no-false-premise",
@@ -255,39 +255,6 @@
       "reviewer": "agent",
       "reviewed_at": "2026-07-03T19:59:05Z"
     },
-    "content/quantum-observable-universe/lifting-and-descent/qu-to-qou.lean::qu_to_qou_exists::proof-no-trivial-true": {
-      "category": "proof-no-trivial-true",
-      "pattern": "exists-true-tautology",
-      "line": 100,
-      "verdict": "legit",
-      "file_sha": "f0cc57a64ad6",
-      "disposition": "no-fix",
-      "evidence": "'exists q : QuToQou, True' == Nonempty QuToQou over a constrained structure (trace_map, perpetual obstruction, branch data) — a real existence claim, honestly sorry'd with -- Ref: [manuscript]. Advisory: restate as Nonempty for clarity. | Re-verified 2026-07-13 (file_sha drift; decl re-read, substance unchanged — still legit).",
-      "reviewer": "agent",
-      "reviewed_at": "2026-07-13T10:28:57Z"
-    },
-    "content/quantum-observable-universe/mass-theory/habiro-expansion-atomic.lean::habiro_expansion_atomic::proof-no-trivial-true": {
-      "category": "proof-no-trivial-true",
-      "pattern": "exists-true-tautology",
-      "line": 165,
-      "verdict": "legit",
-      "file_sha": "1e07bfaf5a27",
-      "disposition": "no-fix",
-      "evidence": "Derives the witness from the CITED external axiom habiro_expansion_exists (Habiro 2002) via rcases; existential-of-structure = Nonempty packaging. Resting on a cited upstream axiom is the sanctioned pattern. | Re-verified 2026-07-13 (file_sha drift; decl re-read, substance unchanged — still legit).",
-      "reviewer": "agent",
-      "reviewed_at": "2026-07-13T10:28:57Z"
-    },
-    "content/quantum-observable-universe/mass-theory/knot-operator-lp-selection.lean::knot_operator_lp_selection::proof-no-trivial-true": {
-      "category": "proof-no-trivial-true",
-      "pattern": "exists-true-tautology",
-      "line": 136,
-      "verdict": "legit",
-      "file_sha": "f1c5d1904903",
-      "disposition": "no-fix",
-      "evidence": "Prior genuine issue RESOLVED in code (verified lean-direct, exit 0, sorry-free). The theorem no longer projects a contentless '∃ _oStar, True'; it now DERIVES '∃ oStar ∃ x, ops.Optimal x n_T ∧ (∀ o, x o ≠ 0 ↔ o = oStar)' by composing two content-bearing class hypotheses — strongDuality (Schrijver §7.2: an LP-optimum exists) and complementarySlackness (Schrijver §7.4: its support is a singleton). The Optimal predicate (feasible + objective-maximal) encodes the LP-optimality the old ∃-True stub lacked; §3b-cond conditional-class, non-degenerate. Re-reviewed 2026-07-13 after file_sha drift f8af9f7→f1c5d19.",
-      "reviewer": "agent",
-      "reviewed_at": "2026-07-13T10:28:57Z"
-    },
     "content/quantum-observable-universe/quantum-observable-universes/categorical-reeb-derivation.lean::CategoricalReebDerivation::proof-claims-unencoded": {
       "category": "proof-claims-unencoded",
       "pattern": "docstring-claims-gap",
@@ -298,6 +265,146 @@
       "evidence": "Detector false positive: both enumerated properties ARE encoded as Prop fields (reeb_normalizes : reeb >> contact = contact; reeb_periodic : (reeb : End obj)^period = 1). The third (Leibniz) is explicitly documented as deferred to the preadditive specialisation.",
       "reviewer": "agent",
       "reviewed_at": "2026-07-03T19:59:05Z"
+    },
+    "content/quantum-observable-universe/lean/QOU/Appendix/DeltaMaxNumericalScale.lean::delta_max_numerical_scale::proof-no-self-assuming-projection": {
+      "category": "proof-no-self-assuming-projection",
+      "pattern": "field-projection",
+      "line": 9,
+      "verdict": "needs-agent",
+      "file_sha": "e04fbfcd5d7d"
+    },
+    "content/quantum-observable-universe/lean/QOU/BraidKnot/SpechtStandardBasisCore.lean::mtab_sum_sign_smul_of_eq_zero::proof-no-false-premise": {
+      "category": "proof-no-false-premise",
+      "pattern": "discharged-impossible-hyp",
+      "line": 472,
+      "verdict": "needs-agent",
+      "file_sha": "9c061cc76424"
+    },
+    "content/quantum-observable-universe/lean/QOU/BraidKnot/SpechtStandardBasisCore.lean::sum_sign_rep_eq_zero_of_fixed::proof-no-false-premise": {
+      "category": "proof-no-false-premise",
+      "pattern": "discharged-impossible-hyp",
+      "line": 626,
+      "verdict": "needs-agent",
+      "file_sha": "9c061cc76424"
+    },
+    "content/quantum-observable-universe/lean/QOU/BraidKnot/SpechtStandardBasisCore.lean::before_of_cmajSig_lt::proof-no-false-premise": {
+      "category": "proof-no-false-premise",
+      "pattern": "discharged-impossible-hyp",
+      "line": 931,
+      "verdict": "needs-agent",
+      "file_sha": "9c061cc76424"
+    },
+    "content/quantum-observable-universe/lean/QOU/BraidsAndKnots/PlancherelViaRecipe.lean::plancherel_via_recipe::proof-no-self-assuming-projection": {
+      "category": "proof-no-self-assuming-projection",
+      "pattern": "field-projection",
+      "line": 10,
+      "verdict": "needs-agent",
+      "file_sha": "582b1a26e769"
+    },
+    "content/quantum-observable-universe/lean/QOU/IwahoriHecke/AvgCrossing.lean::file::lean-import-after-content": {
+      "category": "lean-import-after-content",
+      "pattern": "import-after-docstring-or-command",
+      "line": 56,
+      "verdict": "needs-agent",
+      "file_sha": "7c305838db6d"
+    },
+    "content/quantum-observable-universe/lean/QOU/Mathlib/SchenstedInsertion.lean::insert_colStrict::proof-no-false-premise": {
+      "category": "proof-no-false-premise",
+      "pattern": "discharged-impossible-hyp",
+      "line": 684,
+      "verdict": "needs-agent",
+      "file_sha": "f30d3eaf8ee9"
+    },
+    "content/quantum-observable-universe/lean/QOU/Mathlib/SchenstedInsertion.lean::insertRec_snd_colValStrict::proof-no-false-premise": {
+      "category": "proof-no-false-premise",
+      "pattern": "discharged-impossible-hyp",
+      "line": 1166,
+      "verdict": "needs-agent",
+      "file_sha": "f30d3eaf8ee9"
+    },
+    "content/quantum-observable-universe/lean/QOU/Mathlib/SchenstedTableau.lean::mem_shape_iff::proof-no-false-premise": {
+      "category": "proof-no-false-premise",
+      "pattern": "discharged-impossible-hyp",
+      "line": 50,
+      "verdict": "needs-agent",
+      "file_sha": "1fc40555e808"
+    },
+    "content/quantum-observable-universe/lean/QOU/Observations/AlgebraicGnsEmbedding.lean::markov_gns_embedding::proof-no-self-assuming-projection": {
+      "category": "proof-no-self-assuming-projection",
+      "pattern": "tuple-projection",
+      "line": 89,
+      "verdict": "needs-agent",
+      "file_sha": "d2b73a071ad8"
+    },
+    "content/quantum-observable-universe/lean/QOU/QBeta/MarkovFrobeniusCollapse/General.lean::markov_frobenius_min_norm_lift::proof-no-self-assuming-projection": {
+      "category": "proof-no-self-assuming-projection",
+      "pattern": "field-projection",
+      "line": 11,
+      "verdict": "needs-agent",
+      "file_sha": "30b4a2af2362"
+    },
+    "content/quantum-observable-universe/lean/QOU/QBeta/MarkovZToCkMapping.lean::qBetaFMap::proof-no-provable-axiom": {
+      "category": "proof-no-provable-axiom",
+      "pattern": "uncited-axiom",
+      "line": 38,
+      "verdict": "needs-agent",
+      "file_sha": "eaca2b3825b3"
+    },
+    "content/quantum-observable-universe/lean/QOU/QBeta/QPochhammerPoles.lean::qPochDenom_eq_zero_at_pole::proof-no-false-premise": {
+      "category": "proof-no-false-premise",
+      "pattern": "discharged-impossible-hyp",
+      "line": 42,
+      "verdict": "needs-agent",
+      "file_sha": "0436a6d263d3"
+    },
+    "content/quantum-observable-universe/mass-theory/algebraic-geometric-dilog-equivalence.lean::denomPolyLocal_eq_zero_at_pole::proof-no-false-premise": {
+      "category": "proof-no-false-premise",
+      "pattern": "discharged-impossible-hyp",
+      "line": 108,
+      "verdict": "needs-agent",
+      "file_sha": "09a4fae99934"
+    },
+    "content/quantum-observable-universe/mass-theory/q-beta-c3-continuum-geometry.lean::f_integrable::proof-no-provable-axiom": {
+      "category": "proof-no-provable-axiom",
+      "pattern": "uncited-axiom",
+      "line": 88,
+      "verdict": "needs-agent",
+      "file_sha": "8a71387a05b1"
+    },
+    "content/quantum-observable-universe/mass-theory/universal-braid-branching.lean::oneCellRemovals_sum_succ::proof-no-false-premise": {
+      "category": "proof-no-false-premise",
+      "pattern": "discharged-impossible-hyp",
+      "line": 42,
+      "verdict": "needs-agent",
+      "file_sha": "2d35407ae9ce"
+    },
+    "content/quantum-observable-universe/mass-theory/universal-braid-branching.lean::oneCellRemovals_pres::proof-no-false-premise": {
+      "category": "proof-no-false-premise",
+      "pattern": "discharged-impossible-hyp",
+      "line": 142,
+      "verdict": "needs-agent",
+      "file_sha": "2d35407ae9ce"
+    },
+    "content/quantum-observable-universe/mass-theory/zeta8-witness-level2-su2.lean::qPoch_seven_eq_eight::proof-no-false-premise": {
+      "category": "proof-no-false-premise",
+      "pattern": "discharged-impossible-hyp",
+      "line": 64,
+      "verdict": "needs-agent",
+      "file_sha": "21b690eda41c"
+    },
+    "content/quantum-observable-universe/mass-theory/zeta8-witness-level2-su2.lean::qInt_four_eq_zero::proof-no-false-premise": {
+      "category": "proof-no-false-premise",
+      "pattern": "discharged-impossible-hyp",
+      "line": 118,
+      "verdict": "needs-agent",
+      "file_sha": "21b690eda41c"
+    },
+    "content/quantum-observable-universe/particle-interactions/electroweak-triplet-charge-spin-from-involution.lean::writheI3_does_not_select_neutral_slot::proof-no-false-premise": {
+      "category": "proof-no-false-premise",
+      "pattern": "discharged-impossible-hyp",
+      "line": 504,
+      "verdict": "needs-agent",
+      "file_sha": "89c323a45829"
     }
   }
 }
