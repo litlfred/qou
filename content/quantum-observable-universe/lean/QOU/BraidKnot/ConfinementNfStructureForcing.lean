@@ -44,5 +44,5 @@ LP/SDP
 -- The conjecture itself.  The `sorry` represents the **open
 -- conjecture** per §3b — not a missing proof.
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/confinement-nf-structure-forcing.ts
-noncomputable instance : ConfinementNfStructureForcing := ⟨0, rfl⟩
+noncomputable instance : ConfinementNfStructureForcing := sorry
 end QOU.BraidKnot

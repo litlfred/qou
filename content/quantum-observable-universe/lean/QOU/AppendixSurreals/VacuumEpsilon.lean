@@ -49,6 +49,6 @@ particle masses.
 -- `conj:vacuum-epsilon`, refined into class fields as the
 -- formalisation matures (per §3b).
 -- Ref: [manuscript] quantum-observable-universe/appendix-surreals/vacuum-epsilon.ts
-noncomputable instance : VacuumEpsilon := ⟨0, rfl⟩
+noncomputable instance : VacuumEpsilon := sorry
 
 end QOU.AppendixSurreals
