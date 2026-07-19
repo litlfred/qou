@@ -280,3 +280,28 @@ Remaining on the χ_λ thread (bean `qou-tqab`): the **opaque `chiSigma`** in
 restate that block, owner call), and **multi-generator products** `χ_λ(σ_iσ_j…)`.
 Separately, the OV thread now bottoms out on the single `sorry`
 `seminormalVector_base_exists` (`JucysMurphy.lean:850`, Vershik–Kerov base vector).
+
+## 2026-07-19 — `symbolic_character_table` sorry discharged (PR #4044)
+
+`symbolic_character_table.lean` **restated concretely and proved** (`sorry`
+removed). The opaque `chiSigma` class field is gone; `chiSigma` is now a
+`def` = `sigmaOneCharacter (shapeOf λ) q h` (the σ₁ seminormal character), and
+
+  `symbolic_character_table (q h) (hq : q ≠ 0) (lam) : chiSigma q h lam = c_λ·h`
+
+is proved via `sigmaOneCharacter_eq_card_mul` + `card_rowClass_shapeOf`
+(`|R_row(shapeOf λ)| = c_λ ∈ {1,3,8,10}`). Theorem name preserved for the
+`.ts` `lean.ref`; the `[3,1,1]` pair/triple polynomial identities retained.
+Nothing imported the opaque class, so the restatement is non-breaking.
+
+**χ_λ single-generator thread is now complete and sorry-free.** Remaining
+open items on the wider program (not this thread):
+
+- **OV base vector** — `seminormalVector_base_exists` / `seminormalVector_data_exists`
+  (`JucysMurphy.lean`, bean `sp08`): the famous Okounkov–Vershik / Gelfand–Zetlin
+  eigenvector-existence theorem (JM-spectrum semisimplicity + Young-idempotent
+  nonvanishing). Hard, low-priority, independent — **not** in an active PR.
+- **Multi-generator characters** `χ_λ(σ_iσ_j…)` — natural extension of
+  `fullCharacterGen_two_mul`; open.
+- `QHeckeSeminormalCharacterClosure` — conditional class (`claim_paths_agree`
+  assumed); discharge or leave conditional.
