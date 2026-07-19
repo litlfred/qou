@@ -1,0 +1,89 @@
+{
+  "engine": "python-exact",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-07-19T03:17:17.967814+00:00",
+  "commitSha": "9b210b5b6073087a981c1cd2d7b0ef4ccb22661b",
+  "assertions": [
+    {
+      "name": "rsk_form_and_bijection_exact",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "Literal Schensted enumeration of S_k (k≤7): shape-count = (f^λ)² (RSK bijection) and Σ_{w}χ^{sh(w)}(3-cycle) = Σ_λ(f^λ)²χ³ = 3cov/(k)₃ < 0, all exact. Verifies the RSK form; open kernel T₃≤0 unproved. No fit; no c_k."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 4,
+  "computation": "fl-sniady-rsk-form-verify",
+  "scriptFile": "fl_sniady_rsk_form_verify.py",
+  "scriptHash": "00d56ea76d8c",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "mpmath": "1.4.1"
+  },
+  "description": "DIRECT RSK-enumeration verification of the RSK form of the Δ_λ covariance kernel T₃ (epic qou-x631 / bean qou-joi7 Phase 2). Existing probes compute only the closed form Σ_λ(f^λ)²χ^λ(3-cycle) via hook dimensions; this probe LITERALLY enumerates S_k and applies Schensted row-insertion to every permutation word, confirming EXACTLY (k=3..7): (i) #{w∈S_k : sh(w)=λ} = (f^λ)² (RSK bijection S_k ≅ ⊔_λ SYT(λ)²); (ii) Σ_{w∈S_k} χ^{sh(w)}(3-cycle) = Σ_λ(f^λ)²χ^λ(3-cycle) = T₃ (the RSK form); (iii) T₃ = 3·cov(k)/(k)₃ < 0 with cov(k)=Σ(f^λ)³(Σc²−C(k,2)). χ^λ(3-cycle) by Murnaghan–Nakayama (signed 3-ribbon removal). Verifies the RSK form the Phase-2 genus expansion rests on; does NOT prove the open kernel T₃≤0. scope-(a); no fit; nothing wired; no c_k.",
+  "data": {
+    "kmax": 7,
+    "per_k": [
+      {
+        "k": 3,
+        "T3_rsk_enum": -2,
+        "T3_closed_form": -2,
+        "T3_from_cov": -2,
+        "cov": -4,
+        "rsk_form_matches": true,
+        "rsk_bijection_ok": true,
+        "T3_negative": true
+      },
+      {
+        "k": 4,
+        "T3_rsk_enum": -2,
+        "T3_closed_form": -2,
+        "T3_from_cov": -2,
+        "cov": -16,
+        "rsk_form_matches": true,
+        "rsk_bijection_ok": true,
+        "T3_negative": true
+      },
+      {
+        "k": 5,
+        "T3_rsk_enum": -16,
+        "T3_closed_form": -16,
+        "T3_from_cov": -16,
+        "cov": -320,
+        "rsk_form_matches": true,
+        "rsk_bijection_ok": true,
+        "T3_negative": true
+      },
+      {
+        "k": 6,
+        "T3_rsk_enum": -260,
+        "T3_closed_form": -260,
+        "T3_from_cov": -260,
+        "cov": -10400,
+        "rsk_form_matches": true,
+        "rsk_bijection_ok": true,
+        "T3_negative": true
+      },
+      {
+        "k": 7,
+        "T3_rsk_enum": -2336,
+        "T3_closed_form": -2336,
+        "T3_from_cov": -2336,
+        "cov": -163520,
+        "rsk_form_matches": true,
+        "rsk_bijection_ok": true,
+        "T3_negative": true
+      }
+    ],
+    "all_verified": true
+  }
+}
