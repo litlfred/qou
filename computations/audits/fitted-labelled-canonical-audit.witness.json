@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-19T04:02:03.723812+00:00",
-  "commitSha": "ae4a5949f1f41a3eee1453293eacfedb35516d1e",
+  "computedAt": "2026-07-19T17:17:00.457261+00:00",
+  "commitSha": "2ed28bd88416e23349ab709bc483334bb49d6ac9",
   "assertions": [
     {
       "name": "no_fitted_labelled_canonical",
@@ -13,11 +13,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 24,
+  "durationMs": 9,
   "computation": "fitted-labelled-canonical-audit",
   "scriptFile": "fitted_labelled_canonical_audit.py",
   "scriptHash": "34338951a64d",
-  "scriptCommitSha": "7cff53fbc673cdd608ae6026b2b950eca58444f1",
+  "scriptCommitSha": "47a340cab0d78f10088bbe407261a19994e0cd1b",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -26,17 +26,15 @@
   },
   "environment": {
     "python": "3.11.15",
-    "numpy": "2.4.6",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.3.0"
   },
   "description": "Audits production scripts in computations/ for the CAL-4-disguised-as-canonical pattern: a hardcoded numerical literal at module level combined with a 'substrate/canonical/derived' claim in the docstring, where neither the variable name nor the surrounding context tags the literal as validation/CODATA/acknowledged. Introduced 2026-05-22 after the LAMBDA_PROTON_DOC discovery in m_p_borromean_verification_50dps.py (see docs/canonical-derivation-cheat-sheet.md §5 fix #1).",
   "contentBlock": "prop:three-calibration-inputs",
   "data": {
     "total_issues": 5,
     "flagged_script_count": 4,
-    "scripts_scanned": 2195,
+    "scripts_scanned": 2209,
     "rows": [
       {
         "path": "computations/metallic_q_n4_character_sweep.py",
