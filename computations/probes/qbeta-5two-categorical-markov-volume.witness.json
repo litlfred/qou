@@ -1,0 +1,82 @@
+{
+  "engine": "sympy+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-07-19T13:27:05.770955+00:00",
+  "commitSha": "1064300fb6e8480a1f9df459a0b2f3c8e488be10",
+  "assertions": [
+    {
+      "name": "block21_bar_even_target_knots",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "chi_(2,1) bar-even (q-exact) for 4_1 and 5_2 — self-conjugate block carries no chirality"
+    },
+    {
+      "name": "amphichiral_4_1_control_bar_odd_zero",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "4_1 (amphichiral, e=0) bar-odd datum = 0 — the control the raw-trace route fails; validates the block construction"
+    },
+    {
+      "name": "chiral_5_2_bar_odd_nonzero_anchor_smooth",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "5_2 (chiral, e=2) bar-odd = 1/2(q^2-q^-2) != 0, anchor-smooth O(10^0) — odd ingredient, value measurement-limited"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 23,
+  "computation": "qbeta-5two-categorical-markov-volume",
+  "scriptFile": "qbeta_5two_categorical_markov_volume_probe.py",
+  "scriptHash": "d84de188819f",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Categorical Markov-trace complex volume 𝔙_q(5₂) by Wedderburn block (A5 brick, bean qou-3yxn) — the 'later brick' the reeb-trace probe flagged, now built and GATED. Gates-first finding: the RAW NF Markov trace bar-decomposed under q↦q⁻¹ is framing-contaminated (amphichiral 4₁ gives bar-odd≠0, WRONG); the correct object is tr_M=Σ_λ W_λ χ_λ with the bar-odd in the (3)/(1,1,1) conjugate pair and the self-conjugate (2,1) block bar-even. Also caught: τ(σ₁σ₂σ₁)=h·z²+z, not z³. FINDINGS (q-exact): (1) χ_(2,1) bar-even for 4₁ and 5₂ (Vol channel). (2) AMPHICHIRAL CONTROL PASSES: bar-odd (CS) datum = 0 for 4₁ (e=0), ½(q²−q⁻²)≠0 for 5₂ (e=2) — matches the reeb-trace writhe result; the gate the raw route fails. (3) the 5₂ bar-odd is anchor-smooth (d ln|odd|/dq O(10⁰)) — odd ingredient, not the 3.84e6 swing value (proved measurement-limited); a fifth anchor-smoothness confirmation. SCOPE: fibre-level; does NOT cross the G3 argument→S resurgent-monodromy wall (open, not laundered); no c_k wired; no fit; no tier change; full Ocneanu weights W_λ messy, not required for the bar-odd channel.",
+  "contentBlock": "conj:binding-qbeta-complex-volume",
+  "data": {
+    "finding1_block21_bar_even": {
+      "chi21_4_1_bar_even": true,
+      "chi21_5_2_bar_even": true,
+      "verdict": "self-conjugate (2,1) block bar-even for target knots (Vol/binding channel)"
+    },
+    "finding2_amphichiral_control": {
+      "bar_odd_4_1": "0",
+      "bar_odd_5_2": "(q**4 - 1)/(2*q**2)",
+      "control_pass_4_1_zero": true,
+      "chiral_5_2_nonzero": true,
+      "verdict": "4₁ amphichiral bar-odd=0 (control), 5₂ chiral bar-odd=½(q²−q⁻²) (reeb-trace match); raw-trace route FAILS this control (framing-contaminated)"
+    },
+    "finding3_anchor_shape": {
+      "odd_proton": "0.210199349901",
+      "odd_muon": "0.210199373473",
+      "dln_odd_dq": "8.7593619",
+      "anchor_smooth": true,
+      "verdict": "anchor-smooth O(10^0); odd ingredient not swing value (measurement-limited)"
+    },
+    "scope": {
+      "tier": "fibre-level categorical datum (pre-tau)",
+      "raw_trace_framing_contaminated": true,
+      "markov_weight_fix": "tau(sigma1 sigma2 sigma1) = h*z^2 + z, NOT z^3",
+      "g3_wall": "does NOT cross argument->S resurgent-monodromy wall (open, not laundered)",
+      "value_status": "swing value measurement-limited (no_anchor_invariant_realizes_swing)",
+      "ocneanu_weights_W_lambda": "messy; not required for the bar-odd channel (remaining piece)",
+      "c_k_wired": false,
+      "fit": false
+    }
+  }
+}
