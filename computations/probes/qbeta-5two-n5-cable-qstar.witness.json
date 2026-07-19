@@ -1,0 +1,80 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-19T03:39:18.287889+00:00",
+  "commitSha": "0a97485c3a2f93bd020bc19667a59564a6878ce5",
+  "assertions": [
+    {
+      "name": "gate_unknot_ribbon_framing_N5",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "fr = +q^{12} exactly (θ_{V₅} ribbon magnitude; sign alternates with cable width: −q^{7.5} at cN=3, +q^{12} at cN=4) from the writhe-1 unknot at 2 q points"
+    },
+    {
+      "name": "gate_41_N5_matches_trusted_tower",
+      "computed": 7.065556047240567e-26,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-15,
+      "source": "4₁ 4-cable J'_5 (framing-free) = trusted p=−1 tower"
+    },
+    {
+      "name": "gate_41_N5_null_at_qstar",
+      "computed": 4.907344347264942e-26,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-18,
+      "source": "B₅(4₁;q*) = 0 — mirror/bar control at N=5"
+    },
+    {
+      "name": "N5_no_qstar_zero_certificate",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "3-point + slope-bound certificate: same sign at q*±2e-8 and q*, slope·window ≪ 1"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 1,
+  "computation": "qbeta-5two-n5-cable-qstar",
+  "scriptFile": "qbeta_5two_n5_cable_qstar_probe.py",
+  "scriptHash": "641cd6ca4abe",
+  "scriptCommitSha": "29bccc26c1795eb24bdc0b5bd5f794d1694db8e2",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "A5.4 (bean qou-3yxn): the certified categorical q*-test extended to N=5 via the Jones–Wenzl 4-cable on TL₁₂ (208012 diagrams; common-prefix optimized). Gates: unknot framing = the ribbon twist −q^{12} exactly; 4₁ 4-cable (w=0) = the trusted Masbaum p=−1 tower at N=5; 4₁ amphichiral null at q*. TEST: the 3-point + slope-bound certificate — B₅(5₂) sampled at q*±2e-8 and q*, all same sign, slope·window ≪ 1 so no zero can hide between samples — capstone constraint (2) fails on the certified N=5 categorical face (scope-(a), extending N=3,4). auditOnly; no c_k wired; no fit.",
+  "contentBlock": "prop:phi-b-unitary-bar-odd",
+  "data": {
+    "framing": {
+      "fr_formula": "+q^12 (ribbon magnitude; sign alternates with cable width)",
+      "measured": {
+        "1.11": "(3.49845059694 + 0.0j)",
+        "0.95": "(0.540360087663 + 0.0j)"
+      }
+    },
+    "qstar_test_N5": {
+      "B_qstar": "593.607693594",
+      "B_samples": [
+        "593.606109637",
+        "593.607693594",
+        "593.609277555"
+      ],
+      "rel_slope": "1.3342e+02",
+      "certificate_s2h": "5.3367e-06"
+    },
+    "verdict": "CERTIFIED N=5 CATEGORICAL FACE: no q* zero (3-point + slope-bound certificate), anchor-smooth, 4₁-null exact — capstone constraint (2) fails at N=5 (scope-(a), extending the N=3,4 certifications). Fixed colored levels 3..5 are now all excluded on certified ground. auditOnly."
+  }
+}
