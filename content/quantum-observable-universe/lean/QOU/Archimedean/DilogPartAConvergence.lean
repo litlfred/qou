@@ -184,4 +184,69 @@ theorem riemann_error_bound {x q : ℝ} (hx0 : 0 < x) (hx1 : x < 1)
     · nlinarith [ih_lo, hJ_le]
     · nlinarith [ih_hi, hJ_ge, hprod]
 
+/-! ### B3.4 — the tail `∫₀^b h` -/
+
+/-- `0 ≤ h(u) ≤ x/(1-x)` on `(0,1]` (the integrand is bounded near `0`). -/
+theorem h_bounds_Ioc {x u : ℝ} (hx0 : 0 < x) (hx1 : x < 1) (hu0 : 0 < u) (hu1 : u ≤ 1) :
+    0 ≤ -Real.log (1 - x * u) / u ∧ -Real.log (1 - x * u) / u ≤ x / (1 - x) := by
+  have hxu1 : x * u < 1 := by nlinarith [mul_le_mul_of_nonneg_left hu1 hx0.le]
+  have h1xu : (0 : ℝ) < 1 - x * u := by linarith
+  have h1x : (0 : ℝ) < 1 - x := by linarith
+  have hnn : (0 : ℝ) ≤ -Real.log (1 - x * u) := by
+    have hlp : Real.log (1 - x * u) ≤ 0 :=
+      Real.log_nonpos h1xu.le (by nlinarith [mul_nonneg hx0.le hu0.le])
+    linarith
+  refine ⟨div_nonneg hnn hu0.le, ?_⟩
+  have hlog2 : -Real.log (1 - x * u) * (1 - x * u) ≤ x * u := by
+    have h := Real.one_sub_inv_le_log_of_pos h1xu
+    have hmul : (1 - (1 - x * u)⁻¹) * (1 - x * u) ≤ Real.log (1 - x * u) * (1 - x * u) :=
+      mul_le_mul_of_nonneg_right h h1xu.le
+    have hlhs : (1 - (1 - x * u)⁻¹) * (1 - x * u) = -(x * u) := by field_simp; ring
+    rw [hlhs] at hmul; nlinarith [hmul]
+  rw [div_le_iff₀ hu0, div_mul_eq_mul_div, le_div_iff₀ h1x]
+  have hle : -Real.log (1 - x * u) * (1 - x) ≤ -Real.log (1 - x * u) * (1 - x * u) :=
+    mul_le_mul_of_nonneg_left (by nlinarith [mul_le_mul_of_nonneg_left hu1 hx0.le]) hnn
+  linarith [hle, hlog2]
+
+/-- Tail integrability: `h` is interval-integrable on `[0,b]` for `0 < b ≤ 1`
+    (continuous on `(0,b]`, bounded by `x/(1-x)`). -/
+theorem h_intervalIntegrable_zero {x b : ℝ} (hx0 : 0 < x) (hx1 : x < 1) (hb0 : 0 < b)
+    (hb1 : b ≤ 1) :
+    IntervalIntegrable (fun u => -Real.log (1 - x * u) / u) volume 0 b := by
+  rw [intervalIntegrable_iff_integrableOn_Ioc_of_le hb0.le]
+  have hcontOn : ContinuousOn (fun u => -Real.log (1 - x * u) / u) (Set.Ioc 0 b) := by
+    have hnum : ContinuousOn (fun u : ℝ => -Real.log (1 - x * u)) (Set.Ioc 0 b) := by
+      refine ContinuousOn.neg (ContinuousOn.log
+        ((by fun_prop : Continuous (fun u : ℝ => 1 - x * u)).continuousOn) (fun u hu => ?_))
+      have : x * u < 1 := by nlinarith [mul_le_mul_of_nonneg_left (le_trans hu.2 hb1) hx0.le]
+      exact ne_of_gt (by linarith)
+    exact hnum.div continuousOn_id (fun u hu => ne_of_gt hu.1)
+  have hmeas : AEStronglyMeasurable (fun u => -Real.log (1 - x * u) / u)
+      (volume.restrict (Set.Ioc (0 : ℝ) b)) := hcontOn.aestronglyMeasurable measurableSet_Ioc
+  haveI : IsFiniteMeasure (volume.restrict (Set.Ioc (0 : ℝ) b)) :=
+    ⟨by rw [Measure.restrict_apply_univ]; exact measure_Ioc_lt_top⟩
+  refine Integrable.mono' (g := fun _ => x / (1 - x)) (integrable_const _) hmeas ?_
+  refine ae_restrict_of_forall_mem measurableSet_Ioc (fun u hu => ?_)
+  obtain ⟨hb, hub⟩ := (h_bounds_Ioc hx0 hx1 hu.1 (le_trans hu.2 hb1))
+  rw [Real.norm_eq_abs, abs_of_nonneg hb]; exact hub
+
+/-- **B3.4 — tail bound.**  `0 ≤ ∫₀^b h ≤ b·x/(1-x)` for `0 < b ≤ 1`. -/
+theorem tail_bound {x b : ℝ} (hx0 : 0 < x) (hx1 : x < 1) (hb0 : 0 < b) (hb1 : b ≤ 1) :
+    0 ≤ (∫ u in (0 : ℝ)..b, -Real.log (1 - x * u) / u)
+      ∧ (∫ u in (0 : ℝ)..b, -Real.log (1 - x * u) / u) ≤ b * (x / (1 - x)) := by
+  have hint := h_intervalIntegrable_zero hx0 hx1 hb0 hb1
+  constructor
+  · refine intervalIntegral.integral_nonneg hb0.le (fun u hu => ?_)
+    rcases eq_or_lt_of_le hu.1 with h0 | h0
+    · rw [← h0]; simp
+    · exact (h_bounds_Ioc hx0 hx1 h0 (le_trans hu.2 hb1)).1
+  · calc (∫ u in (0 : ℝ)..b, -Real.log (1 - x * u) / u)
+        ≤ ∫ _ in (0 : ℝ)..b, x / (1 - x) := by
+          refine intervalIntegral.integral_mono_on hb0.le hint intervalIntegrable_const
+            (fun u hu => ?_)
+          rcases eq_or_lt_of_le hu.1 with h0 | h0
+          · rw [← h0]; simp; exact div_nonneg hx0.le (by linarith)
+          · exact (h_bounds_Ioc hx0 hx1 h0 (le_trans hu.2 hb1)).2
+      _ = b * (x / (1 - x)) := by rw [intervalIntegral.integral_const, smul_eq_mul]; ring
+
 end QOU.Archimedean
