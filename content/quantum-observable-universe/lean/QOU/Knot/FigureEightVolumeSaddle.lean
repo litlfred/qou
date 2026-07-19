@@ -84,4 +84,53 @@ theorem saddle_critical_point {θ : ℝ} (h0 : 0 < θ) (hπ : θ < π) :
     rw [h, show π / 3 / 2 = π / 6 by ring, Real.sin_pi_div_six]
     norm_num
 
+/-- The largest Kashaev term is at least `1` (witnessed by the `k = 0` empty
+    product) — the positivity the log-squeeze needs. -/
+theorem one_le_sup_kashaevProd (N : ℕ) (hN : 1 ≤ N) :
+    1 ≤ (Finset.range N).sup'
+      (Finset.nonempty_range_iff.mpr (by omega)) (kashaevProd N) := by
+  have h0 : (0 : ℕ) ∈ Finset.range N := Finset.mem_range.mpr (by omega)
+  calc (1 : ℝ) = kashaevProd N 0 := (kashaevProd_zero N).symm
+    _ ≤ _ := Finset.le_sup' (kashaevProd N) h0
+
+/-- **Saddle brick E1, lower half (sorry-free).** The max log-term bounds
+    `log kashaev` below: a single nonneg term is at most the sum. -/
+theorem log_sup_le_log_kashaev (N : ℕ) (hN : 1 ≤ N) :
+    Real.log ((Finset.range N).sup'
+        (Finset.nonempty_range_iff.mpr (by omega)) (kashaevProd N))
+      ≤ Real.log (kashaev N) := by
+  have hne : (Finset.range N).Nonempty := Finset.nonempty_range_iff.mpr (by omega)
+  have hsup1 := one_le_sup_kashaevProd N hN
+  obtain ⟨k, hk, hEq⟩ := Finset.exists_mem_eq_sup' hne (kashaevProd N)
+  have hle : (Finset.range N).sup' hne (kashaevProd N) ≤ kashaev N := by
+    rw [hEq]
+    unfold kashaev
+    exact Finset.single_le_sum (fun i _ => kashaevProd_nonneg N i) hk
+  exact Real.log_le_log (by linarith) hle
+
+/-- **Saddle brick E1, upper half (sorry-free).** `log kashaev` exceeds the max
+    log-term by at most `log N`: the sum of `N` terms is at most `N · max`.
+    Together with the lower half, `(2π/N)·log kashaev` and `(2π/N)·max log-term`
+    differ by at most `(2π/N)·log N → 0` — the `log(Σ) ≈ max log-term` step of
+    the saddle asymptotic at exponential scale (bean qou-3g69). -/
+theorem log_kashaev_le_log_add (N : ℕ) (hN : 1 ≤ N) :
+    Real.log (kashaev N)
+      ≤ Real.log N + Real.log ((Finset.range N).sup'
+          (Finset.nonempty_range_iff.mpr (by omega)) (kashaevProd N)) := by
+  have hne : (Finset.range N).Nonempty := Finset.nonempty_range_iff.mpr (by omega)
+  have hsup1 := one_le_sup_kashaevProd N hN
+  have hNpos : (0 : ℝ) < (N : ℝ) := by exact_mod_cast hN
+  have hsum : kashaev N ≤ (N : ℝ) * (Finset.range N).sup' hne (kashaevProd N) := by
+    unfold kashaev
+    calc ∑ k ∈ Finset.range N, kashaevProd N k
+        ≤ ∑ _k ∈ Finset.range N, (Finset.range N).sup' hne (kashaevProd N) :=
+          Finset.sum_le_sum (fun i hi => Finset.le_sup' (kashaevProd N) hi)
+      _ = (N : ℝ) * (Finset.range N).sup' hne (kashaevProd N) := by
+          rw [Finset.sum_const, Finset.card_range, nsmul_eq_mul]
+  calc Real.log (kashaev N)
+      ≤ Real.log ((N : ℝ) * (Finset.range N).sup' hne (kashaevProd N)) :=
+        Real.log_le_log (kashaev_pos N hN) hsum
+    _ = Real.log N + Real.log ((Finset.range N).sup' hne (kashaevProd N)) :=
+        Real.log_mul (ne_of_gt hNpos) (by linarith)
+
 end QOU.Knot.FigureEightVolume
