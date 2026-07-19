@@ -1,0 +1,190 @@
+{
+  "computation": "hecke-h4-nf-table-preflight",
+  "description": "Symbolic preflight pinning the H\u2084(q) NF tables (24-word S\u2084 basis, H\u2083 prefix, exact length-rule generator actions) and UNIQUELY deriving the 24 Markov-trace weights; tr\u2084\u2218\u03b9 = tr\u2083 exact. Provenance for QOU/Machinery/HeckeH4StabilizationRung.lean. Nothing wired.",
+  "auditOnly": "docs/audits/2026-07-19-hecke-h4-stabilization-rung.md",
+  "tier": "symbolic-exact (sympy over \u211a(z,h))",
+  "computedAt": "2026-07-19T02:06:14.163914+00:00",
+  "commitSha": "d0554a38f540667ce60fe9833867bb1313b92468",
+  "engine": "sympy",
+  "engineVersion": "1.14.0",
+  "scriptFile": "hecke_h4_nf_table_preflight.py",
+  "scriptHash": "0a04a476006f",
+  "assertions": [
+    {
+      "name": "basis_is_S4_with_H3_prefix",
+      "passed": true,
+      "detail": "24 canonical words; first 6 = H3 Lean order [(), (0,), (1,), (1, 0), (0, 1), (0, 1, 0)]"
+    },
+    {
+      "name": "presentation_laws_exact",
+      "passed": true,
+      "detail": "Hecke quadratic \u00d73, adjacent braid \u00d72, far commutation \u03c3\u2080\u03c3\u2082=\u03c3\u2082\u03c3\u2080 \u2014 all exact over \u211a(z,h); far commutation non-vacuous for the first time at n=4"
+    },
+    {
+      "name": "trace_weights_unique_derived",
+      "passed": true,
+      "detail": "24 weights are the unique solution of tr(1)=1 + full cyclicity + Markov-\u03c3\u2082 reduction \u2014 derived, not chosen"
+    },
+    {
+      "name": "stabilization_tr4_iota_eq_tr3",
+      "passed": true,
+      "detail": "first-6 H\u2084 weights == H\u2083 weights [1,z,z,z\u00b2,z\u00b2,hz\u00b2+z] \u21d2 tr\u2084\u2218\u03b9 = tr\u2083 EXACT"
+    },
+    {
+      "name": "lean_table_emission_matches_matrices",
+      "passed": true,
+      "detail": "per-entry emitted formulas reproduce the 24\u00d724 matrices exactly"
+    }
+  ],
+  "allPassed": true,
+  "result": {
+    "basis_words": [
+      [],
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        1,
+        0
+      ],
+      [
+        2
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        0,
+        1,
+        2
+      ],
+      [
+        1,
+        2,
+        0
+      ],
+      [
+        1,
+        2,
+        1
+      ],
+      [
+        2,
+        0,
+        1
+      ],
+      [
+        2,
+        1,
+        0
+      ],
+      [
+        0,
+        1,
+        2,
+        0
+      ],
+      [
+        0,
+        1,
+        2,
+        1
+      ],
+      [
+        1,
+        2,
+        0,
+        1
+      ],
+      [
+        1,
+        2,
+        1,
+        0
+      ],
+      [
+        2,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        1,
+        2,
+        0,
+        1
+      ],
+      [
+        0,
+        1,
+        2,
+        1,
+        0
+      ],
+      [
+        1,
+        2,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        1,
+        2,
+        0,
+        1,
+        0
+      ]
+    ],
+    "trace_weights": [
+      "1",
+      "z",
+      "z",
+      "z**2",
+      "z**2",
+      "h*z**2 + z",
+      "z",
+      "z**2",
+      "z**2",
+      "z**2",
+      "z**3",
+      "z**3",
+      "h*z**2 + z",
+      "z**3",
+      "z**3",
+      "h*z**3 + z**2",
+      "h*z**3 + z**2",
+      "h*z**3 + z**2",
+      "h*z**3 + z**2",
+      "h*z**3 + z**2",
+      "h**2*z**3 + h*z**2 + z**3",
+      "h**2*z**3 + 2*h*z**2 + z",
+      "h**2*z**3 + h*z**2 + z**3",
+      "h**3*z**3 + h**2*z**2 + 2*h*z**3 + z**2"
+    ],
+    "verdict": "H\u2084 NF TABLE PREFLIGHT \u2014 EXACT (provenance for HeckeH4StabilizationRung.lean): 24-word S\u2084 basis with the H\u2083 Lean basis as its prefix; generator actions by the exact Iwahori\u2013Hecke length rule; presentation laws (quadratic \u00d73, braid \u00d72, far commutation) verified over \u211a(z,h); the 24 Markov weights UNIQUELY derived from cyclicity + Markov reduction + tr(1)=1, with tr\u2084\u2218\u03b9 = tr\u2083 exact. General-n MarkovStabilization instance stays OPEN. Nothing wired; no q\u2080."
+  }
+}
