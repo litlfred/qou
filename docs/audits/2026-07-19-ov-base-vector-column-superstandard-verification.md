@@ -111,13 +111,30 @@ was **over-optimistic** (the mirror of the "open" over-claim: do not over-claim
    + `rep_colStab_polytabloid`) on each coset's inner sum, and cancel `|C|! ≠ 0` (char 0)
    to reach `∑_{j∈C} e_{(j s)·t} = e_t`.
 
-**Landed this pass (sorry-free):** `colStab_subset_sum_rep_polytabloid` — the coset-inner-sum
-collapse `∑_{σ∈H} sgn σ · σ·e_t = |H|·e_t` for any `H ⊆ colStab t`, the reusable ingredient
-for the coset decomposition (collision-independent).
+**Landed this pass (all sorry-free, `lean`-direct exit 0, in
+[`OVBaseSeminormalVector.lean`](../../content/quantum-observable-universe/lean/QOU/BraidKnot/OVBaseSeminormalVector.lean)):**
 
-**Still open (the multi-session remainder):** (i) the full-group annihilation for `(C,{s})`
-with its new row-collision; (ii) the `S_{C∪{s}}`→`⊔ (x s)·S_C` coset decomposition and
-`|C|!` cancellation; (iii) the column-superstandard geometry (`colLen` weakly decreasing ⇒
-`s`-row `< |C|`); (iv) summing over `c < c_s` + brick 3a to the eigen-equation; (v) the two
-side conjuncts (`polytabloid_mem_specht`, `≠ 0`) and discharging `seminormalVector_base_exists`.
-Each is tractable but the chain is a genuine multi-lemma effort, not one assembly step.
+- `colStab_subset_sum_rep_polytabloid` — the coset-inner-sum collapse
+  `∑_{σ∈H} sgn σ · σ·e_t = |H|·e_t` for any `H ⊆ colStab t` (collision-independent).
+- `starSum_rep_polytabloid` — the outer star-sum
+  `∑_{x∈{s}∪C} sgn(x\,s)·(x\,s)·e_t = e_t − ∑_{j∈C} e_{(j\,s)·t}`.
+- `permFixingOutside D` (= `S_D` as a `Finset`) + `mem_permFixingOutside`.
+- **`colGarnir_fullgroup_sum`** — the coset-reindexing core (item (ii) below, done):
+  `∑_{σ∈S_{C∪{s}}} sgn σ · σ·e_t = |S_C|·(e_t − ∑_{j∈C} e_{(j\,s)·t})`, via
+  `Finset.sum_nbij'` (bijection `(x,π) ↦ (x\,s)·π`) + `Finset.sum_product'` + the two
+  bricks above. Collision-independent, over generic `[CommRing k]`.
+- **`colGarnir_single_column_of_annihilation`** `[Field k] [CharZero k]` — the
+  conditional closer: **given** the annihilation `= 0`, divide by `|S_C| = |C|! ≠ 0`
+  to get the single-column relation `∑_{j∈C} e_{(j\,s)·t} = e_t`.
+
+**Net effect:** items (ii) [coset decomposition + `|C|!` cancellation] are **done**.
+The single-column relation now reduces to the **single** remaining debt:
+
+**Still open (the collision-dependent remainder):** (i) the full-group **annihilation**
+`∑_{σ∈S_{C∪{s}}} sgn σ · σ·e_t = 0` — via `sum_sign_rep_polytabloid_eq_zero_of_family`
++ `mtab_sum_sign_smul_of_eq_zero`, needing a **new** row-collision for `(C,{s})`;
+(iii) the column-superstandard geometry (`colLen` weakly decreasing ⇒ `s`-row `< |C|`)
+that supplies the collision; (iv) summing the single-column relations over `c < c_s`
++ brick 3a to the eigen-equation; (v) the two side conjuncts (`polytabloid_mem_specht`,
+`≠ 0`) and discharging `seminormalVector_base_exists`. The collision (i)+(iii) is the
+substantive next chunk; (iv)+(v) are assembly.
