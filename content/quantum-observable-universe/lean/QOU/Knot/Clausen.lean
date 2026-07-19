@@ -191,6 +191,30 @@ theorem hasSum_pow_div_neg_log {w : ℂ} (hw : ‖w‖ < 1) :
   rw [hfun]
   exact h.neg
 
+/-- **Assembly brick 2b (sorry-free)** — the real cos-series closed form. For
+    `|r| < 1`, `∑ₙ rⁿ cos(nθ)/n = -log‖1 - r e^{iθ}‖`. Real part of brick 2a
+    (`hasSum_pow_div_neg_log`) at `w = r e^{iθ}`, using Euler
+    (`exp_ofReal_mul_I_re`) and `Complex.log_re`. (bean qou-smve) -/
+theorem tsum_rpow_cos_div (θ : ℝ) {r : ℝ} (hr : |r| < 1) :
+    ∑' n : ℕ, r ^ n * Real.cos ((n : ℝ) * θ) / n
+      = -Real.log ‖1 - (r : ℂ) * Complex.exp ((θ : ℂ) * Complex.I)‖ := by
+  have hnorm : ‖(r : ℂ) * Complex.exp ((θ : ℂ) * Complex.I)‖ < 1 := by
+    rw [norm_mul, Complex.norm_exp_ofReal_mul_I, mul_one, Complex.norm_ofReal]
+    exact hr
+  have hsummand : ∀ n : ℕ,
+      (((r : ℂ) * Complex.exp ((θ : ℂ) * Complex.I)) ^ n / (n : ℂ)).re
+        = r ^ n * Real.cos ((n : ℝ) * θ) / n := by
+    intro n
+    have heq : ((r : ℂ) * Complex.exp ((θ : ℂ) * Complex.I)) ^ n / (n : ℂ)
+        = ((r ^ n / n : ℝ) : ℂ) * Complex.exp (((n : ℝ) * θ : ℝ) * Complex.I) := by
+      rw [mul_pow, ← Complex.exp_nat_mul]
+      push_cast
+      ring
+    rw [heq, Complex.re_ofReal_mul, Complex.exp_ofReal_mul_I_re]
+  have hs := (hasSum_pow_div_neg_log hnorm).re
+  simp only [hsummand] at hs
+  rw [hs.tsum_eq, Complex.neg_re, Complex.log_re]
+
 /-- **The atom (single CITED sorry) — the series Clausen's term-by-term
     derivative.** `Cl_2'(θ) = -log(2 sin(θ/2))` on `(0, 2π)`. This IS the
     Fourier/Abel content Mathlib lacks: differentiating `∑ sin(kθ)/k²`
