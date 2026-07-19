@@ -1,11 +1,11 @@
 ---
 # qou-2fdj
 title: 'F3: Δ_λ binding closure — non-dup formalize-first slice (scoping agent running). Swarm-owned: PRs #3808/#3802/#4006. Jet-filtration graded-dim derivation route (owner-opened 2026-07-13); anti-fit stands.'
-status: in-progress
+status: todo
 type: task
 priority: normal
 created_at: 2026-07-19T00:42:34Z
-updated_at: 2026-07-19T00:46:18Z
+updated_at: 2026-07-19T00:50:36Z
 ---
 
 

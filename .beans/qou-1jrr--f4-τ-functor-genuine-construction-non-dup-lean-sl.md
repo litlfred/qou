@@ -1,10 +1,11 @@
 ---
 # qou-1jrr
 title: 'F4: τ-functor genuine construction — non-dup Lean slice (scoping agent running). Swarm-owned: beans qou-pbjv/ep0a/la8r. My Hecke/Markov-trace adjacency (F1-F5 laws / braided-monoidal scaffold).'
-status: todo
+status: in-progress
 type: task
+priority: normal
 created_at: 2026-07-19T00:42:35Z
-updated_at: 2026-07-19T00:42:35Z
+updated_at: 2026-07-19T01:15:06Z
 ---
 
 
