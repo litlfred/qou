@@ -1,5 +1,6 @@
 import Mathlib.Data.Nat.Factorial.Basic
 import Mathlib.Algebra.BigOperators.Ring.List
+import Mathlib.Tactic.IntervalCases
 
 /-!
 # QOU.BraidsAndKnots.YoungDiagramKernel — elementary Lean infrastructure for the Δ_λ covariance kernel
@@ -68,5 +69,12 @@ anti-correlation; verified `k ≤ 30` computationally. Not proved.
 -- Ref: [manuscript] docs/audits/2026-07-18-deltalambda-covariance-kernel-frontier.md -/
 theorem covariance_kernel_conjecture (k : ℕ) : kernelValue k ≤ 0 := by
   sorry
+
+/-- **Base cases (sorry-free).** The covariance-kernel conjecture holds for every `k ≤ 7`,
+proved outright by kernel evaluation (`decide`) rather than the computational spot-check.
+This discharges the small-`k` tail of `covariance_kernel_conjecture` in Lean; the general
+`∀ k` statement remains the open epic input (Śniady genus expansion, `qou-x631`). -/
+theorem kernelValue_nonpos_of_le_seven (k : ℕ) (hk : k ≤ 7) : kernelValue k ≤ 0 := by
+  interval_cases k <;> decide
 
 end QOU.BraidsAndKnots.YoungDiagramKernel
