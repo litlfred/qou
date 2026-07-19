@@ -170,6 +170,9 @@ import QOU.BraidKnot.SeminormalCharacterConnector
 -- Concrete #SYT counts for small self-conjugate shapes: the hook (2,1) has
 -- #SYT = 2, hence c_λ(σ₁) = 1 — the first tabulated character coefficient.
 import QOU.BraidKnot.SytSmallShapeCounts
+-- The full tabulated c_λ ∈ {1,3,8,10} column of symbolic_character_table, proved
+-- as #SYT/2 via the seminormal count + the Frame–Robinson–Thrall HLF.
+import QOU.BraidKnot.ClambdaColumn
 -- Tier-3 (bean 60iz) general-H_n(q) completion: the arbitrary-braid-word Jones
 -- value + Markov move II (conjugation invariance), on the sibling-landed
 -- IwahoriHeckeAPI element algebra. Move I = IwahoriHeckeAPI.markovTrace_stab_comm;
