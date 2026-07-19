@@ -72,6 +72,45 @@ the Δ_λ magnitude ingredient, and the q₀ zero `q*` are three shadows of that
 continuation. The real-`q` / real-resolvent / sign-only shadows are provably
 insufficient — exactly because the object is fibre-complex, not archimedean-real.
 
+## Correction (2026-07-19, post-frontier-grep): the surviving object splits into a proved-closed VALUE leg and an open SHAPE leg
+
+A follow-up corpus-grep of the fibre frontier
+([`2026-07-18-ck-odd-fibre-attack-options.md`](2026-07-18-ck-odd-fibre-attack-options.md);
+~24 landed/in-progress 5₂ probes) sharpens "the surviving open object": it is
+**not simply open**. It has two legs that must be kept apart:
+
+- **VALUE leg — PROVED-CLOSED (measurement-limited).** The *numeric position* of
+  `q*` — hence the swing value — is not derivable below the experimental `Q_β`
+  floor. Sorry-free Lean: `QOU.QBeta.SRigidity.no_anchor_invariant_realizes_swing`
+  (no anchor-invariant fibre datum equals the swinging `S`; scope-(b)) +
+  `QOU.QBeta.MeasurementLimitedFloor` (the L2 gate arithmetic). The `2026-07-18`
+  attack map records the same as its structural fact 1 (`dq*/dQ_β ≈ −0.54`; a
+  fibre derivation supplies the **shape**, not the sub-floor **value**).
+- **SHAPE leg — open, actively worked.** A fibre derivation must produce the
+  bar-odd carrier `N_odd` with the right shape (simple zero at `q*`, slope
+  `≈ +2.37`). This is the 5₂-chiral fibre program (4₁ is amphichiral ⇒ its
+  bar-odd channel vanishes identically, so the odd datum needs the chiral 5₂);
+  A1 (chirality state integral), A4.1/A4.2 (φ-series engine to order 24), and
+  A5.2 (N=3 cable arbitration) have landed there.
+
+This corrects the headline above: the swing/Δ_λ/`q*` shadows converge on a fibre
+object whose **value is proved un-derivable** and whose **shape** is the live
+front — not a single wholly-open object.
+
+## Typed target (this branch): `SelfDualLocusTargetSpec.lean`
+
+To make the SHAPE leg a *typed* object rather than prose, this branch adds
+[`QOU/QBeta/SelfDualLocusTargetSpec.lean`](../../content/quantum-observable-universe/lean/QOU/QBeta/SelfDualLocusTargetSpec.lean)
+(sorry-free, generic-`R`, §7c), mirroring the honest
+`QOU.Archimedean.TauFunctorTargetSpec` pattern: `BarOddCarrierTarget` types the
+interface a fibre derivation must supply (a bar-odd carrier `N` with `σ(N x)=−N x`
+and a zero at `qStar`), a proved consequence (`even_symmetrization_at_star`: the
+odd carrier contributes nothing to the bar-even channel at `q*`), and a
+machine-checked honesty theorem (`trivial` / `trivial_carrier_zero`: the `N ≡ 0`
+carrier satisfies every field, so the interface *alone* is content-free — the wall
+is the fibre provenance of the specific `N` plus the proved-closed value leg,
+never the interface). Nothing is wired; `q*`'s value stays measurement-limited.
+
 ## Recommended next step (typed, no-fit; not executed here)
 
 Per the #3 scout's plan, the cheapest way to convert the surviving "shared simple
