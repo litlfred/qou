@@ -262,6 +262,16 @@ import QOU.Machinery.MarkovTraceOnHecke
 -- §3b-cond R-matrix-derivation provenance classes; 0 sorries. Was an
 -- orphan under `Machinery/` (not imported ⇒ never built by CI).
 import QOU.Machinery.DerivedCharacterCatalogue
+-- The explicit Wedderburn ladder (ranks 2-3), the tower-induction
+-- interface, and the two Mathlib proof_wanted fills (PRs #4054, #4094,
+-- #4095, and this branch). Were orphans (not imported ⇒ never built by
+-- CI); registered here for coverage. Transitively pulls HeckeH3Characters,
+-- HeckeH3BlockRep, HeckeH2Wedderburn, HeckeBraidedCategoryScaffold,
+-- MatrixSemisimple.
+import QOU.Machinery.HeckeH2WedderburnReal
+import QOU.Machinery.HeckeH3Semisimple
+import QOU.Machinery.HeckeTowerBasicConstruction
+import QOU.MathlibExt.EndSemisimple
 import QOU.HyperellipticQuintic.zeta5_residue_monodromy
 
 import QOU.Archimedean.BorromeanQuark
