@@ -45,6 +45,14 @@ Mathlib gaps remaining after this file:
 * Functional equation `Cl_2(2θ) = 2 Cl_2(θ) - 2 Cl_2(π - θ)` —
   requires Fourier-series identities not currently in Mathlib.
 
+CLOSED 2026-07-19 (no longer gaps): the derivative
+`Cl_2'(θ) = -log(2 sin(θ/2))` and the series↔integral bridge
+`Cl_2(θ) = -∫₀^θ log(2 sin(t/2)) dt` (Zagier) are machine-proved
+sorry-free in `QOU/Knot/Clausen.lean` (`hasDerivAt_cl_2`,
+`clausen_eq_series`, via an Abel-regularised assembly), along with
+`Cl_2` continuity (`continuous_Cl_2`) and the boundary lemmas
+`Cl_2_pi` / `Cl_2_two_pi` below.
+
 -- Ref: [manuscript] rem:figure-8-archimedean-illustration
 -- Ref: [manuscript] prop:em-coupling-bring-zero-mode
 -- Ref: [manuscript] binding-scale-catalan
