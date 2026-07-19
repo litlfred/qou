@@ -82,6 +82,13 @@ right optimization:
 - accumulated f64 error ~1e-8 at TL₁₅ (vs ~1e-11 at TL₁₂), **far** below the
   3-point certificate's ~1e-6 need.
 
+**Reproducibility note.** The numerator is reduced in parallel over Jones–Wenzl
+terms, so the f64 summation order varies run-to-run; committed values therefore
+jitter at ~1e-14 relative (e.g. the G1 framing last three digits). This is
+~6 orders of magnitude below the tightest reported residual and far below every
+gate tolerance, so all verdicts are stable — but the witness values are not
+bit-reproducible, by design of the parallel reduction.
+
 **Honest tolerance note (not fitting).** The G2/G3 control tolerance is
 size-calibrated to the f64 error floor: 1e-9 at TL₁₂ (N = 5), 1e-7 at TL₁₅
 (N = 6). The N = 6 G2 residual (1.5e-8, i.e. 7–8 significant figures of
