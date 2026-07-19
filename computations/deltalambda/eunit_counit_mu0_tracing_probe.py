@@ -42,7 +42,6 @@ EXPLORATORY — audit + witness only; no production wiring, no fit, no AME inver
 """
 from __future__ import annotations
 
-import os
 import sys
 from pathlib import Path
 
@@ -55,7 +54,6 @@ for _p in (str(_COMP), str(_COMP / "substrate")):
         sys.path.insert(0, _p)
 from substrate.witness_base import WitnessBuilder  # noqa: E402
 
-COMP = str(_COMP)
 mp.mp.dps = 40
 
 Q0_STR = "1.10997859555733471"
@@ -91,8 +89,8 @@ def main() -> int:
 
     # 4. the two forms share the counit structure; different dimensional realization
     #    5g form: B = 5g·E_unit·ladder (+0.4%, external E_unit)
-    v = mp.sqrt(q); two_v = v + 1 / v; g = 1 / mp.sqrt(1 + two_v ** 2)
-    x = (v - 1 / v) ** 2
+    v = mp.sqrt(q)
+    x = (v - 1 / v) ** 2                                   # deformation param = (q-1)^2/q
     B_5g = mp.sqrt(5) * E_unit * (1 - x / 10 + 3 * x ** 2 / 200)
     err_5g_form = (B_5g / B2H - 1) * 100                   # ≈ +0.4% (matches to 6 dig)
     E_unit_over_mu0 = E_unit / mu0                         # 0.611 (the un-unified gap)
@@ -173,7 +171,7 @@ def main() -> int:
     }
     wb = WitnessBuilder.wrap_legacy(
         "eunit-counit-mu0-tracing", payload,
-        script_path=__file__, engine="mpmath", output_dir=os.path.join(COMP, "deltalambda"),
+        script_path=__file__, engine="mpmath", output_dir=str(_COMP / "deltalambda"),
     )
     wb.set_description(payload["description"])
     wb.set_content_block("rem:ohtsuki-tower-bar-parity")

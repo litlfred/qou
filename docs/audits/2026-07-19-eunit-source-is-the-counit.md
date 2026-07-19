@@ -69,7 +69,7 @@ expansion; it **relocates the open** from "find an external ~1 MeV unit" (a scan
 scale `μ₀`" — a formalize-first target, not a search. `E_unit` is **not** closed; the anti-laundering
 rule stands (no axiom/class carrying it counts as a derivation).
 
-Refs: probe `computations/deltalambda/eunit_counit_mu0_tracing_probe.py`; cheat sheet lines 213/237;
+Refs: probe [`eunit_counit_mu0_tracing_probe.py`](../../computations/deltalambda/eunit_counit_mu0_tracing_probe.py); cheat sheet lines 213/237;
 `climax-volume-mass/crossing-energy-*`; `observations/crossing-energy-interpretation.md`;
 `categorical-action.lean`; reeb provenance §2f/§2h.2 (scope-corrected); merged #4101 cluster-expansion
 §4.
