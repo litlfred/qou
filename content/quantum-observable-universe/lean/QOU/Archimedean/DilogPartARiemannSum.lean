@@ -54,4 +54,24 @@ theorem log_partialProduct_eq_neg_sum {q x : ℝ} (hx0 : 0 < x) (hx1 : x < 1)
   unfold partialProductLocal
   rw [Real.log_inv, denomPolyLocal_eq_prod, Real.log_prod _ _ hfac]
 
+/-- **Brick 2 — the Riemann-sum structure.**  The rescaled sum
+    `(1-q)·Σ_{k<n} −log(1 - x qᵏ)` is *exactly* the left-endpoint Riemann sum of
+    the integrand `h(u) = −log(1 - x u)/u` over the geometric partition
+    `1 = q⁰ > q¹ > ⋯ > qⁿ`, whose `k`-th cell has width `qᵏ − qᵏ⁺¹ = qᵏ(1-q)`:
+
+    `(1-q)·Σ_{k<n} −log(1 - x qᵏ) = Σ_{k<n} h(qᵏ)·(qᵏ − qᵏ⁺¹)`.
+
+    As `q → 1⁻` (mesh → 0) with `qⁿ → 0` (the partition fills `(0,1]`), this
+    Riemann sum converges to `∫₀¹ −log(1 - x u)/u du = Li₂(x)` — the remaining
+    analytic core of Part A. -/
+theorem riemann_sum_form {q x : ℝ} (hq0 : 0 < q) (n : ℕ) :
+    (1 - q) * ∑ k ∈ Finset.range n, -Real.log (1 - x * q ^ k)
+      = ∑ k ∈ Finset.range n,
+          -Real.log (1 - x * q ^ k) / q ^ k * (q ^ k - q ^ (k + 1)) := by
+  rw [Finset.mul_sum]
+  refine Finset.sum_congr rfl (fun k _ => ?_)
+  have hqk : q ^ k ≠ 0 := ne_of_gt (pow_pos hq0 k)
+  rw [pow_succ]
+  field_simp
+
 end QOU.QPochhammer
