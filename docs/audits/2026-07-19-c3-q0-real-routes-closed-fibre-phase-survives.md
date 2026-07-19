@@ -90,8 +90,14 @@ A follow-up corpus-grep of the fibre frontier
   bar-odd carrier `N_odd` with the right shape (simple zero at `q*`, slope
   `≈ +2.37`). This is the 5₂-chiral fibre program (4₁ is amphichiral ⇒ its
   bar-odd channel vanishes identically, so the odd datum needs the chiral 5₂);
-  A1 (chirality state integral), A4.1/A4.2 (φ-series engine to order 24), and
-  A5.2 (N=3 cable arbitration) have landed there.
+  A1 (chirality state integral), A4.1/A4.2 (φ-series engine to order 24), A4.3
+  (median Borel resummation; bean `qou-ea86` completed), and A5.2 (N=3 cable
+  arbitration) have landed there. Every landed odd datum is **anchor-smooth** —
+  `d ln|odd|/dq` is O(10¹–10²) across the two anchors (A1: 3.6e2, A2: 8.2e2, A4:
+  8.6), never the ~3.84e6 swing — a **three-way independent** confirmation that
+  the fibre supplies the *ingredient/shape* while the *value* stays measurement-
+  limited (VALUE leg above). The open odd-ingredient frontier is A5 (the
+  categorical H₃(q) quantum `𝔙_q(5₂)`, bean `qou-3yxn`).
 
 This corrects the headline above: the swing/Δ_λ/`q*` shadows converge on a fibre
 object whose **value is proved un-derivable** and whose **shape** is the live

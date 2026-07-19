@@ -125,8 +125,20 @@ principle — the open problem itself).
   predicted Stokes distance `|V(σ1)−V(σ2)| = 5.656` (2.5%, in the
   `x = 2πiτ` Borel plane — resurgence structure confirmed). **The A4 median
   Borel–Laplace program is unblocked with a full-precision 24-order basis.**
-  Remaining A4 work (bean `qou-ea86`): the lateral/median resummation and
-  the bar-odd split on this basis.
+- **A4.3 LANDED — the resummation + bar-odd split (bean `qou-ea86` COMPLETED,
+  2026-07-18).** [`qbeta_5two_median_borel_resummation_probe.py`](../../computations/probes/qbeta_5two_median_borel_resummation_probe.py)
+  + witness (committed, 4/4): Borel–Padé [11/12] pole map locating `ζ₁₂ =
+  i(V₁−V₂)` to 2.2 %; directional Laplace along the substrate ray (`arg x = 180°`
+  never meets a Stokes ray, so the median prescription is not needed for the
+  physical evaluation); exact-object cross-check `F = h₁·e^{−V/2πτ}` beating raw
+  truncation at `|x| = 1,2,3`; and the bar-odd datum `[φ(x)−φ(−x)]/2`,
+  truncation↔resummation-consistent to ~1e-19 at the substrate. Two-anchor
+  follow-up (proton `q_at` / muon `q_muon_at`): the bar-odd datum is
+  **anchor-smooth** (`d ln|odd|/dq ≈ 8.6`, O(10¹)) — the odd **ingredient**, not
+  the swing, a **third** independent anchor-smoothness confirmation after A1
+  (3.6e2) and A2 (8.2e2), consistent with the proved measurement-limited scope-(b)
+  (`no_anchor_invariant_realizes_swing`). **A4 is closed.** The open odd-ingredient
+  frontier is now A5 (categorical H₃(q) quantum `𝔙_q(5₂)`, bean `qou-3yxn`).
 - **A5.1 ATTEMPTED — blocked by a certified literature/transcription
   discrepancy (5/5 on the discrepancy itself).**
   [`qbeta_5two_colored_tower_barodd_qstar_probe.py`](../../computations/probes/qbeta_5two_colored_tower_barodd_qstar_probe.py)
