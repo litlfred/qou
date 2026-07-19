@@ -1,0 +1,96 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-07-19T06:31:35.125022+00:00",
+  "commitSha": "a0be9c3252815f72a59c2b44179bb1fc6f56eb88",
+  "assertions": [
+    {
+      "name": "qstar_is_simple_zero_no_pole",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "S'(q*) and S''(q*) both finite => analytic simple zero; S (hence Phi_odd) does not diverge at q*, so the 'rigidity divergence at the self-dual locus' mechanism has no support at q*"
+    },
+    {
+      "name": "selfdual_pole_form_refuted_by_scale",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "1/|u^2-1| ~ 1.00007 (O(1)) is ~6 orders of magnitude below the measured swing S'(q*) ~ 3.84e6; scale gap = 1/u^3 up to O(1); q0 not near a u^2->1 locus"
+    },
+    {
+      "name": "swing_is_ladder_1_over_u3_smooth_prefactor",
+      "computed": 2.3716291316445135,
+      "expected": 2.37,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "S'(q*) = 2.37 x (1/u^3), smooth O(1) prefactor -- the merged 1/u^3 capstone (#3636) stands; the swing is a representation artifact, not a self-dual pole"
+    },
+    {
+      "name": "anchors_reproduced_exactly",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "S(proton)/S(muon) from c3_target_at match the committed anchor-blind witness (genuine opposite-sign crossing at q*)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 4,
+  "computation": "qbeta-c3-swing-selfdual-pole-vs-ladder",
+  "scriptFile": "qbeta_c3_swing_selfdual_pole_vs_ladder_probe.py",
+  "scriptHash": "9ea530de1ec8",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "mpmath": "1.4.1"
+  },
+  "description": "Discriminate the c₃ bar-odd swing's functional form: the PR #4064 synthesis's self-dual/CS-degeneration POLE form (swing ≈ 1/|u²−1|, a 'rigidity divergence' at q*) vs the MERGED capstone's 1/u³ LADDER artifact (#3600/#3636/#3654). Deterministic extractor S(q)=c3_target_at+Vol(4₁), full precision. (1) q* is a SIMPLE zero — S'(q*)≈3.84e6 and S''(q*)≈−3.70e8 both FINITE ⇒ no pole/branch point, so Φ_odd∝S does not diverge at q*; the 'rigidity divergence at the self-dual locus' has no support there. (2) The pole form 1/|u²−1|≈1.00007 (u=b·ℏ_q²≈0.0085, u²≈7.3e-5) is O(1) — ~6 orders of magnitude below the measured swing; q₀ is NOT near a u²→1 locus. (3) The swing IS 1/u³: S'(q*)=2.37×(1/u³), smooth O(1) prefactor (capstone). Scope-(a) REFUTATION of the pole reinterpretation; the 1/u³ capstone stands. SURVIVES: q* remains a fixed simple zero (CS→0/ε=0), a third decay-sector determination of q₀ — but the swing and q* are separate facts coinciding at q*, not evidence for a pole. No c_k wired; no fit; C14; no tier change.",
+  "contentBlock": "conj:im-q-physical-role",
+  "data": {
+    "q_star": {
+      "value": "1.109978593031523288402328",
+      "frac_muon_ward_pct": "80.29605",
+      "S_at_qstar": "-8.042e-56",
+      "anchors_reproduced": true,
+      "meaning": "S=0: c3 = -Vol(4_1) exactly (pure bar-even, eps=0, CS->0 locus)"
+    },
+    "finding1_simple_zero": {
+      "S_prime_qstar": "3838404.458",
+      "S_double_prime_qstar": "-370304982.9",
+      "is_simple_zero": true,
+      "verdict": "finite S', S'' => analytic simple zero, no pole/branch point; Phi_odd ∝ S does not diverge at q* (rigidity-divergence mechanism unsupported)"
+    },
+    "finding2_pole_vs_ladder": {
+      "u": "0.00851723598737",
+      "u_squared": "7.25433088645e-5",
+      "pole_form_1_over_abs_u2_minus_1": "1.00007254857",
+      "inv_u_cubed": "1618467.41",
+      "measured_swing_S_prime": "3838404.458",
+      "scale_gap_uladder_over_pole": "1618350.001",
+      "pole_form_dead": true,
+      "verdict": "1/|u^2-1| ~ 1 is ~6 orders below the swing; q0 not near a u^2->1 self-dual locus; pole reinterpretation refuted (scope-(a))"
+    },
+    "finding3_ladder_form": {
+      "smooth_prefactor": "2.3716291",
+      "ladder_form_ok": true,
+      "verdict": "S'(q*) = 2.37 x (1/u^3), smooth O(1) prefactor -- the 1/u^3 capstone (merged #3636) stands"
+    },
+    "scope": {
+      "tier": "scope-(a) consistency check / refutation of a reinterpretation",
+      "structural_exclusion": false,
+      "note": "This is a scope-(a) negative on a FUNCTIONAL FORM (1/|u^2-1| does not reproduce the swing), supported by the computed simple-zero fact (S',S'' finite). It does NOT exclude the c3<->q0 unification's shared target q*; it removes the swing as evidence for a POLE at q*.",
+      "c_k_wired": false,
+      "fit": false,
+      "canonical_flip": null
+    }
+  }
+}
