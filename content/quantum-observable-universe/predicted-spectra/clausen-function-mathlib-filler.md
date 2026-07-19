@@ -17,7 +17,7 @@ $$
   \mathrm{Vol}(\mathcal{B}_3)\;=\;8\,\mathrm{Cl}_2(\pi/4)\;=\;8G\;\approx\;7.327724.
 $$
 
-The Lean library file [`QOU/Archimedean/ClausenFunctionMathlibFiller.lean`](../lean/QOU/Archimedean/ClausenFunctionMathlibFiller.lean) provides the `Cl_2` series definition and the boundary/volume carriers; the integral-side definition, the derivative `Cl_2'(\theta) = -\log(2\sin(\theta/2))`, and the series–integral bridge (the classical Zagier identity) are machine-proved sorry-free in [`QOU/Knot/Clausen.lean`](../lean/QOU/Knot/Clausen.lean) (fundamental theorem of calculus plus an Abel-regularised assembly).
+The Lean library file [`QOU/Archimedean/ClausenFunctionMathlibFiller.lean`](../lean/QOU/Archimedean/ClausenFunctionMathlibFiller.lean) provides the `Cl_2` series definition and the boundary/volume carriers; the integral-side definition, the derivative `Cl_2'(\theta) = -\log(2\sin(\theta/2))`, and the series–integral bridge (the classical Zagier identity) are machine-proved in [`QOU/Knot/Clausen.lean`](../lean/QOU/Knot/Clausen.lean) (fundamental theorem of calculus plus an Abel-regularised assembly).
 
 See [Table 1](#tbl:clausen-function-mathlib-filler-table1-data).
 
