@@ -1,11 +1,11 @@
 ---
 # qou-msof
 title: 'Infra: braided morphism action on H_n(q) reps in Lean — τ-functor F2'
-status: todo
+status: in-progress
 type: feature
 priority: normal
 created_at: 2026-07-18T23:52:24Z
-updated_at: 2026-07-18T23:52:24Z
+updated_at: 2026-07-19T03:08:22Z
 parent: 08a2
 ---
 
