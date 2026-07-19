@@ -1,0 +1,46 @@
+{
+  "computation": "alpha-em-r2core-schwinger",
+  "description": "R2-core fuller context (owner-directed; info-theory corpus + E=mc_q^2). Shape rigidity Lean-proved (SchwingerMeasureShape); unit = nat-count per proper-time e-fold (k_B=1) \u2014 same species as discrete-planck-step's unit convention; E=mc_q^2 yields the open half-adjudication (rho-split vs E-Jacobian, mutually exclusive, each giving 1/(8pi) \u2014 new reading of the 2). R2 remains unproven per the ruling. Nothing wired.",
+  "auditOnly": "docs/audits/2026-07-19-alpha-em-r2core-schwinger.md",
+  "tier": "sorry-free Lean shell + symbolic-exact context; residue = unit convention + one adjudication (open)",
+  "computedAt": "2026-07-19T04:16:35.839758+00:00",
+  "commitSha": "a3378d943e092b91a05f09bc23f171c480897bf5",
+  "engine": "sympy+lean",
+  "engineVersion": "1.14.0",
+  "scriptFile": "alpha_em_r2core_schwinger_probe.py",
+  "scriptHash": "b6aadcd88cae",
+  "assertions": [
+    {
+      "name": "corpus_inputs_recorded",
+      "passed": true,
+      "detail": "c_q = 1/(q\u22121) (E = m\u00b7c_q\u00b2, mass-energy-equivalence); \u210f_q = (q\u22121)/q = k_B\u00b7T (boltzmann-constant, k_B = 1 \u27f9 nats); \u03b7_q(q\u2080) \u2248 0.89207246 q-bits/crossing (fibre-channel-capacity) \u2014 recorded, exact"
+    },
+    {
+      "name": "shape_rigidity_and_nat_reading",
+      "passed": true,
+      "detail": "c/s satisfies the scale-invariance equation (and the Lean proves uniqueness); \u222b over one e-fold [s, e\u00b7s] = c exactly \u2014 with k_B = 1, c is the NAT-count per proper-time e-fold. R2-core corpus-natively: 'one nat per e-fold' \u2014 the same species as discrete-planck-step's 'one Reeb circuit = one unit of time'"
+    },
+    {
+      "name": "half_adjudication_table",
+      "passed": true,
+      "detail": "(a) \u03c1-split only: 1\u00b7a\u2080\u03b1\u00b7\u00bd = \u03b1/(8\u03c0) \u2713; (b) E-Jacobian only (energy-e-fold convention, s ~ E\u207b\u00b2 \u27f9 c_s = \u00bd): \u00bd\u00b7a\u2080\u03b1 = \u03b1/(8\u03c0) \u2713; (a)+(b) together: \u03b1/(16\u03c0) \u2717 \u2014 MUTUALLY EXCLUSIVE, each consistent alone. A NEW reading of the '2' (flagged into the readings saga); adjudication = which e-fold variable the unit convention counts \u2014 OPEN, owner-level"
+    },
+    {
+      "name": "honest_status",
+      "passed": true,
+      "detail": "R2-core restated fully corpus-natively: 'the loop measure assigns one nat per proper-time e-fold (k_B = 1)'. Provable shell Lean-proved (shape rigidity, nat reading, Jacobian, assembly \u2014 SchwingerMeasureShape, sorry-free); residue = the unit convention + the \u00bd-adjudication. Per the 2026-07-19 ruling: NOT proved, NOT asserted"
+    }
+  ],
+  "allPassed": true,
+  "result": {
+    "lean": "QOU/Archimedean/SchwingerMeasureShape.lean \u2014 shape rigidity, one nat per e-fold, E-Jacobian 2, c=1 assembly (sorry-free)",
+    "corpus_native_r2core": "'the loop measure assigns one nat per proper-time e-fold (k_B = 1)' \u2014 same species as discrete-planck-step",
+    "half_adjudication": "rho-split vs E-Jacobian: mutually exclusive, each -> 1/(8pi); both -> 1/(16pi) excluded; OPEN (owner-level)",
+    "verdict": "R2-CORE GIVEN ITS FULLER CONTEXT (scope-(a); R2 remains UNPROVEN per the ruling; no fit; nothing wired): the proper-time measure's SHAPE is rigid (scale invariance, corpus-motivated by horizon rescaling invariance \u2014 Lean-proved), and its unit is the NAT-count per proper-time e-fold in the corpus's own k_B = 1 convention \u2014 making R2-core the same SPECIES of unit convention the corpus already canonized in discrete-planck-step. The E = m\u00b7c_q\u00b2 bridge yields a well-posed OPEN adjudication: the \u00bd has two mutually exclusive readings (\u03c1-split channel share vs energy-vs-proper-time e-fold Jacobian), each alone giving 1/(8\u03c0) \u2014 a new entry in the readings-of-2 saga, owner-level. Residue after this tranche: ONE unit convention ('one nat per e-fold') + ONE adjudication (which e-fold variable) \u2014 both stated in corpus-native information-theoretic language. NO tier change."
+  },
+  "context": {
+    "corpus_blocks": "mass-energy-equivalence, boltzmann-constant, fibre-channel-capacity, horizon-conformal-invariance, discrete-planck-step",
+    "ruling": "2026-07-19: R2 not lean/derived-proved \u2014 respected; nothing asserted",
+    "scope_guard": "no fit; nothing wired; 1/(8pi) stays phase-4"
+  }
+}
