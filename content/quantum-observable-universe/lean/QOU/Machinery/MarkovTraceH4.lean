@@ -223,7 +223,7 @@ vectors — never unfolding the whole tower at once — each step is depth-1 and
 mostly-zero entries resolve fast, so the `whnf` wall is never hit. Demonstrated:
 a full basis row (all 24 words, incl. the deepest) compiles `lean`-direct exit 0.
 The full `24²` closure is emitted on demand by
-[`computations/markov/gen_gram_closure.py`](../../../../../computations/markov/gen_gram_closure.py)
+`computations/markov/gen_gram_closure.py`
 — a `MarkovTraceH4Gram` module proving every `G_{i,j}` sorry-free via this
 have-chain, hence `gram_symm` and cyclicity. It is **not committed**: the
 generated file is ~6.3k lines / ~35-min compile (576 depth-≤6 evaluations), too
