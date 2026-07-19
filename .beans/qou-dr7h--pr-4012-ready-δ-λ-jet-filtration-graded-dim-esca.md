@@ -1,11 +1,11 @@
 ---
 # qou-dr7h
 title: 'PR #4012 READY: Δ_λ jet-filtration graded-dim escape — /prepare-merge'
-status: in-progress
+status: completed
 type: task
 priority: high
 created_at: 2026-07-18T23:14:01Z
-updated_at: 2026-07-18T23:18:09Z
+updated_at: 2026-07-19T00:09:24Z
 parent: qou-w1z0
 ---
 
