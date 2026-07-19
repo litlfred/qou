@@ -29,10 +29,14 @@ Difficulty split (see audit
 * **Part A** — fixed `x ∈ (0,1)`, convergence side `q → 1⁻` — is
   mathematically ELEMENTARY (a monotone left-Riemann-sum limit, an
   exponential tail bound, and the factor `(1-q)/ℏ → 1`; no Tauberian
-  theorem, no branch cut, since `1 - x q^k ≥ 1 - x > 0`). A sorry-free
-  Lean proof of Part A is gated only on Mathlib Riemann-sum-to-integral
-  convergence plus the identity `∫₀ˣ -log(1-t)/t = Σ_{k≥1} xᵏ/k²` — the
-  infrastructure bottleneck noted in the 2026-05-30 closure audit.
+  theorem, no branch cut, since `1 - x q^k ≥ 1 - x > 0`). The identity
+  `Li₂(x) = ∫₀ˣ -log(1-t)/t` — the integral-representation bottleneck
+  noted in the 2026-05-30 / 2026-06-07 closure audits — is now **proved
+  sorry-free** as `QOU.Archimedean.DilogReflection.LiTwo_eq_integral`
+  (FTC on the dilogarithm derivative `hasDerivAt_LiTwo`, which Mathlib
+  lacked; built 2026-07-19). A sorry-free Lean proof of Part A is now
+  gated only on the remaining Mathlib Riemann-sum-to-integral convergence
+  of `(1-q) log Φ_n → ∫`.
 * **Part B** — the substrate continuation `q → 1⁺` (to `q₀ ≈ 1.11`) and
   uniformity as `x → 1⁻` — is the genuine open content: there the factors
   `1 - x q^k` change sign (the poles of `Φ_n` approach the `Li₂` branch
