@@ -36,3 +36,12 @@ worked by sibling threads — coordinate before touching its Lean (anti-duplicat
 
 **Genuine wall:** both cores (bwS0_eq_hecke construction; SW prolongation operator) are hard, multi-session
 gauge/algebro-geometric CONSTRUCTIONS — not continuation, not fit. Same hard wall, now correctly named.
+
+## #1 fibre-amplitude Lean (2026-07-19) — the ALGEBRAIC identity is ALREADY proved; the "~1%" is the core gate
+Checked KeystoneLRModulusFold.lean: the algebraic modulus identity ((2/√5)sin(mπ/5))²·D²=4 is ALREADY
+Lean-proved sorry-free over generic R/K (theorems core_normalization, vacuum_modulus_identity_first/
+second, golden_of_sqrt5, D2_E8_second_fold; s²=5, φ²=φ+1). The file EXPLICITLY states the "~1%
+machine-evidence" is the ANALYTIC input A_m(α)=±(2/√5)sin(αmπ/5) (LR flat-connection amplitude, Hikami
+Thm 10 anchor ~1e-38) which is "not a Lean theorem" and whose q₀ continuation "remains open" = the
+loc_matches core gate. So there is NO cheap sorry-free Lean win here — the algebraic part is done, the
+rest is the core construction wall (formalizing the state-integral). No sibling keystone branch active.
