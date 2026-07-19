@@ -199,7 +199,7 @@ theorem tsum_rpow_cos_div (θ : ℝ) {r : ℝ} (hr : |r| < 1) :
     ∑' n : ℕ, r ^ n * Real.cos ((n : ℝ) * θ) / n
       = -Real.log ‖1 - (r : ℂ) * Complex.exp ((θ : ℂ) * Complex.I)‖ := by
   have hnorm : ‖(r : ℂ) * Complex.exp ((θ : ℂ) * Complex.I)‖ < 1 := by
-    rw [norm_mul, Complex.norm_exp_ofReal_mul_I, mul_one, Complex.norm_ofReal]
+    rw [norm_mul, Complex.norm_exp_ofReal_mul_I, mul_one, Complex.norm_real, Real.norm_eq_abs]
     exact hr
   have hsummand : ∀ n : ℕ,
       (((r : ℂ) * Complex.exp ((θ : ℂ) * Complex.I)) ^ n / (n : ℂ)).re
@@ -210,8 +210,8 @@ theorem tsum_rpow_cos_div (θ : ℝ) {r : ℝ} (hr : |r| < 1) :
       rw [mul_pow, ← Complex.exp_nat_mul]
       push_cast
       ring
-    rw [heq, Complex.re_ofReal_mul, Complex.exp_ofReal_mul_I_re]
-  have hs := (hasSum_pow_div_neg_log hnorm).re
+    rw [heq, Complex.re_ofReal_mul, Complex.exp_ofReal_mul_I_re]; ring
+  have hs := Complex.hasSum_re (hasSum_pow_div_neg_log hnorm)
   simp only [hsummand] at hs
   rw [hs.tsum_eq, Complex.neg_re, Complex.log_re]
 
