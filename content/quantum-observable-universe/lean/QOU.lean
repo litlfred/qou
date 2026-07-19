@@ -272,6 +272,7 @@ import QOU.Archimedean.TauRhoHodgeLiftInterface
 import QOU.Archimedean.VertexLocalTauModel
 import QOU.Archimedean.LiftFromReality
 import QOU.Archimedean.TauFunctorTargetSpec
+import QOU.Archimedean.DeckRealityEquivariance
 import QOU.Molecular.PalindromicityOrbitalType
 import QOU.Molecular.ShellCapacitySelfSquare
 import QOU.Molecular.ShellClosureNfTermCount
