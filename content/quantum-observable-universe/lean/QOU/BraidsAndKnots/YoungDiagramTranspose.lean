@@ -1,5 +1,5 @@
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
-import Mathlib.Algebra.Ring.Int
+import Mathlib.Algebra.Ring.Int.Defs
 import Mathlib.Data.Prod.Basic
 import Mathlib.Logic.Embedding.Basic
 import Mathlib.Tactic.Ring
