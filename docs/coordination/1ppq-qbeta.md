@@ -1922,3 +1922,50 @@ Distinct-route from the sibling state-integral/M-dictionary strip (main
 exact Laurent polynomials; the two converge on the same 5₂ odd datum. Beans
 filed for the other uploads (q-holonomic Garoufalidis-Lê, Takata A-poly, Hitchin
 monodromy). scope-(b): cited exact formula, Jones-cross-checked. No fit; no c_k.
+
+**2026-07-18 (analytic M-dictionary, part 2c-2) — φ_odd SHARPENING
+OBSTRUCTED (honest, localized): the substrate is EXACTLY the (250)
+0/0 lattice node, the σ3-pair strip is precision-UNSTABLE, and the
+multi-loop solve diverges — the #3987 −0.004145 stands as a 2-loop
+preliminary (~1 sig fig).** `qbeta_g3_5two_wall_crossing_barpair.py`
+(C1/C2 green; S1/S2 honest negatives). [C1] at q₀ the bar-pair
+(q=e^−t=0.90092, q̄=q⁻¹=q₀=1.10998) is REAL, the substrate sits
+EXACTLY on the block pole lattice (x=q⁻², u_sub=2t, dev 0), and the
+(250) θ-triple prefactor VANISHES there (0/0 node) — φ_odd lives
+exactly where the classical factor the (250) identity strips is zero,
+so the tool cannot dissolve the degeneracy, only relocate it into the
+vanishing θ-triple. [C2] the (250) tool is re-certified in the
+substrate NEIGHBOURHOOD (off-lattice, q near e^−t) to 6.3e-50. [S1]
+the #3987 σ3-pair strip is PRECISION-UNSTABLE: the ray classical
+prefactor is e^{−V/t}, |Re| ≈ 34.5 (~1e15), and the 2%-spaced 2×2
+rows are near-parallel, so the ~1e-2 phase residual is
+cancellation-limited — the solve tips between the physical near-unit
+branch (|a₂|≈0.96, φ_odd≈−0.004) and a spurious null branch
+(|a₂|≈1e-53, φ_odd≈+0.9) NON-monotonically in dps (physical at
+40/45/60/80/150/200; collapse at 50/100/300 — recurs even at high
+precision), and the physical value carries ~4% circle-average-scheme
+sensitivity (−0.003999 K=40 vs −0.004145 K=12), i.e. good to ~1 sig
+fig. [S2] the exact multi-loop ray extraction (solving c₂,c₃,… beyond
+the printed 2-loop, transseries form inverted against exact data — not
+a fit) gives NO trustworthy limit: cond explodes with loop order
+(156 → 2e6 → 4.5e9 → 3.8e13 → 4.9e17 at dps 60) and the result is
+precision-branch-dependent (dps 60 sequence −0.0044→−0.0011→−0.0017→
+−0.00177→−0.00178, but dps 50 lands in [0.5,4.2]). The small-Δ dps-60
+tail (≈−0.0018) is a spurious ill-conditioned + precision-branch
+artifact — a lax "last-3 within 1e-4" check flags it as "converged",
+but it sits at cond>1e12 AND fails the precision-stability gate, so
+reporting it would launder an ill-conditioned fit as a derivation; the
+probe's strict gate (tractable cond<1e12 AND n_phys=4) rejects it. At
+τ_sub≈0.0166 the τ^k loop columns are numerically degenerate and the
+contour-absent σ3-real saddle leaks. CONCLUSION: φ_odd = −0.004145
+stands as a 2-loop
+PRELIMINARY (dictionary datum for the anchor-smooth, permanent 5₂
+σ3-pair carrier per the odd-channel capstone — NOT the c₃ swing
+carrier, which is representational); a derived value needs higher-loop
+(238)-type c₂,c₃ (printed-data-blocked in 2012.00062v3 §6.2) or a
+σ3-transseries resummation — NOT deeper numerics, and the (250) block
+identity is exact but does not isolate the saddle Stokes constants
+φ_odd is built from. Audit:
+`docs/audits/2026-07-18-5two-part2c-wall-crossing-barpair.md`. No fit;
+no c_k wired; scope-(a) (constrains the METHOD, not the σ3-pair
+ingredient — it remains a valid bar-odd carrier).
