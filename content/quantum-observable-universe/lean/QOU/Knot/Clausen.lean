@@ -488,6 +488,59 @@ theorem Cl_2_pi_div_three_pos : 0 < QOU.Archimedean.Cl_2 (π / 3) := by
   rw [← h]
   exact clausen_pi_div_three_pos
 
+/-- **Saddle brick E4a (sorry-free).** The log-sine integral is the Clausen
+    primitive under `t = 2u`: `∫₀^a log(2 sin u) du = −clausen(2a)/2` — the
+    continuum limit the Kashaev Riemann sums converge to (bean qou-x5mg). -/
+theorem integral_log_two_sin (a : ℝ) :
+    ∫ u in (0:ℝ)..a, Real.log (2 * Real.sin u) = -clausen (2 * a) / 2 := by
+  have h := intervalIntegral.integral_comp_div
+    (f := fun u => Real.log (2 * Real.sin u)) (a := (0:ℝ)) (b := 2 * a)
+    (c := 2) two_ne_zero
+  simp only [zero_div, smul_eq_mul] at h
+  rw [show (2 * a) / 2 = a by ring] at h
+  have hcl : clausen (2 * a)
+      = -∫ t in (0:ℝ)..(2 * a), Real.log (2 * Real.sin (t / 2)) := by
+    unfold clausen
+    rw [intervalIntegral.integral_neg]
+  rw [hcl, h]
+  ring
+
+/-- **Saddle brick E4b, rising half (sorry-free).** `log(2 sin)` is monotone on
+    `(0, π/2]` (strict monotonicity of `sin` + monotonicity of `log` on
+    positives). The point `0` is excluded: `log(2 sin 0) = log 0 = 0` exceeds
+    nearby negative values under Mathlib's `log 0 = 0` convention. -/
+theorem monotoneOn_log_two_sin :
+    MonotoneOn (fun u => Real.log (2 * Real.sin u)) (Set.Ioc 0 (π / 2)) := by
+  have hpi := Real.pi_pos
+  intro u hu v hv huv
+  have hsu : 0 < Real.sin u :=
+    Real.sin_pos_of_pos_of_lt_pi hu.1 (by linarith [hu.2])
+  have hsv : Real.sin u ≤ Real.sin v := by
+    rcases eq_or_lt_of_le huv with h | h
+    · rw [h]
+    · exact le_of_lt (Real.strictMonoOn_sin
+        (Set.mem_Icc.mpr ⟨by linarith [hu.1], hu.2⟩)
+        (Set.mem_Icc.mpr ⟨by linarith [hv.1], hv.2⟩) h)
+  exact Real.log_le_log (by linarith) (by linarith)
+
+/-- **Saddle brick E4b, falling half (sorry-free).** `log(2 sin)` is antitone on
+    `[π/2, π)` — by the reflection `sin u = sin(π − u)` and the rising half. -/
+theorem antitoneOn_log_two_sin :
+    AntitoneOn (fun u => Real.log (2 * Real.sin u)) (Set.Ico (π / 2) π) := by
+  have hpi := Real.pi_pos
+  intro u hu v hv huv
+  have hsv : 0 < Real.sin v :=
+    Real.sin_pos_of_pos_of_lt_pi (by linarith [hv.1]) hv.2
+  have hsvu : Real.sin v ≤ Real.sin u := by
+    rw [← Real.sin_pi_sub u, ← Real.sin_pi_sub v]
+    rcases eq_or_lt_of_le huv with h | h
+    · rw [h]
+    · exact le_of_lt (Real.strictMonoOn_sin
+        (Set.mem_Icc.mpr ⟨by linarith [hv.2], by linarith [hv.1]⟩)
+        (Set.mem_Icc.mpr ⟨by linarith [hu.2], by linarith [hu.1]⟩)
+        (by linarith))
+  exact Real.log_le_log (by linarith) (by linarith)
+
 /-- **The series Clausen's derivative** `Cl_2'(θ) = -log(2 sin(θ/2))` for
     `θ ∈ (0, 2π)` — the derivative the filler flagged as needing Fourier
     infrastructure, now machine-proved (`hasDerivAt_Cl_2_series`). Dual-purpose: `V'(θ)` of
