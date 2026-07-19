@@ -104,4 +104,25 @@ theorem sameColumn_sum_polytabloid (s : Fin (Specht.nOf μ)) (t : Specht.Tableau
   obtain ⟨_, hlt, hmem⟩ := hj
   exact polytabloid_swap_colStab t (ne_of_lt (Fin.lt_def.mpr hlt)) hmem
 
+/-- **The JM sum, split by column** (brick 1 + brick 3a). The JM action on `e_t`
+    is `(same-column count) · (−e_t)` plus the **off-column** sum
+    `Σ_{j<s, swap j s ∉ colStab t} e_{(j s)·t}`. This isolates the off-column
+    (Garnir) part as the sole remaining piece of the eigen-equation. -/
+theorem jm_polytabloid_split (s : Fin (Specht.nOf μ)) (t : Specht.Tableau μ) :
+    (Specht.Mtab.rep (k := k) μ).asAlgebraHom (jucysMurphy (k := k) (Specht.nOf μ) s)
+        (Specht.polytabloid (k := k) t)
+      = (Finset.univ.filter (fun j : Fin (Specht.nOf μ) =>
+            j.val < s.val ∧ Equiv.swap j s ∈ Specht.colStab t)).card
+            • (- Specht.polytabloid (k := k) t)
+        + ∑ j ∈ Finset.univ.filter (fun j : Fin (Specht.nOf μ) =>
+            j.val < s.val ∧ Equiv.swap j s ∉ Specht.colStab t),
+              Specht.polytabloid (k := k) ((Equiv.swap j s) • t) := by
+  classical
+  rw [jm_smul_polytabloid,
+    ← Finset.sum_filter_add_sum_filter_not
+        (Finset.univ.filter (fun j : Fin (Specht.nOf μ) => j.val < s.val))
+        (fun j => Equiv.swap j s ∈ Specht.colStab t)]
+  simp only [Finset.filter_filter]
+  rw [sameColumn_sum_polytabloid]
+
 end QOU.BraidKnot.OVBaseSeminormalVector
