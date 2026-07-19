@@ -1,0 +1,431 @@
+{
+  "computation": "deltalambda-sign-valuation-not-coefficient",
+  "description": "The \u0394_\u03bb chirality sign (\u22121)^{n(\u03bb)} is the fake-degree VALUATION (bottom monomial), not the cyclotomic residue of the full trace: route V reproduces it, route C (R_\u03bb(i)) is non-real/zero/mismatched. Closes the cyclotomic\u2192\u0394_\u03bb sign refinement (collapses to the derived jet-order route). scope-(b).",
+  "audit_only": true,
+  "tier": "symbolic-exact (partition combinatorics, root of unity)",
+  "computedAt": "2026-07-19T03:26:05.637987+00:00",
+  "commitSha": "317ea55baf271c225901d7646e46819c7df697f0",
+  "engine": "sympy",
+  "engineVersion": "1.14.0",
+  "scriptFile": "deltalambda_sign_valuation_not_coefficient_probe.py",
+  "scriptHash": "129dc3261622",
+  "assertions": [
+    {
+      "name": "valuation_eq_n_lambda",
+      "passed": true,
+      "source": "min_T maj(SYT(\u03bb)) = n(\u03bb) for all \u03bb\u22a2n, n=2..7 \u2014 the fake-degree valuation IS n(\u03bb) (Steinberg/Lusztig/Macdonald I.5)"
+    },
+    {
+      "name": "route_V_valuation_gives_row_grading",
+      "passed": true,
+      "source": "i^{2n(\u03bb)} = (\u22121)^{n(\u03bb)} \u2014 the associated-graded bottom monomial reproduces the \u0394_\u03bb chirality sign (= corpus deltaSign; already derived, deltalambda-grho-jet-order-derivation)"
+    },
+    {
+      "name": "route_C_cyclotomic_residue_fails",
+      "passed": true,
+      "source": "the full fake-degree R_\u03bb(i) is NON-REAL (15 \u03bb), ZERO (10 \u03bb), or SIGN-MISMATCHED (8 \u03bb) \u2014 the cyclotomic RESIDUE of the full trace does NOT carry (\u22121)^{n(\u03bb)}. The sign is a VALUATION property, not a coefficient property. Passes = the cyclotomic-coefficient route is confirmed CLOSED."
+    }
+  ],
+  "allPassed": true,
+  "result": {
+    "rows": [
+      {
+        "lam": "(2,)",
+        "n_lam": 0,
+        "R": "1",
+        "R_at_i": "+1.00+0.00i",
+        "route_V": 1,
+        "route_C": 1,
+        "tag": "match"
+      },
+      {
+        "lam": "(1, 1)",
+        "n_lam": 1,
+        "R": "q",
+        "R_at_i": "+0.00+1.00i",
+        "route_V": -1,
+        "route_C": null,
+        "tag": "NONREAL"
+      },
+      {
+        "lam": "(3,)",
+        "n_lam": 0,
+        "R": "1",
+        "R_at_i": "+1.00+0.00i",
+        "route_V": 1,
+        "route_C": 1,
+        "tag": "match"
+      },
+      {
+        "lam": "(2, 1)",
+        "n_lam": 1,
+        "R": "q**2 + q",
+        "R_at_i": "-1.00+1.00i",
+        "route_V": -1,
+        "route_C": null,
+        "tag": "NONREAL"
+      },
+      {
+        "lam": "(1, 1, 1)",
+        "n_lam": 3,
+        "R": "q**3",
+        "R_at_i": "+0.00-1.00i",
+        "route_V": -1,
+        "route_C": null,
+        "tag": "NONREAL"
+      },
+      {
+        "lam": "(4,)",
+        "n_lam": 0,
+        "R": "1",
+        "R_at_i": "+1.00+0.00i",
+        "route_V": 1,
+        "route_C": 1,
+        "tag": "match"
+      },
+      {
+        "lam": "(3, 1)",
+        "n_lam": 1,
+        "R": "q**3 + q**2 + q",
+        "R_at_i": "-1.00+0.00i",
+        "route_V": -1,
+        "route_C": -1,
+        "tag": "match"
+      },
+      {
+        "lam": "(2, 2)",
+        "n_lam": 2,
+        "R": "q**4 + q**2",
+        "R_at_i": "+0.00+0.00i",
+        "route_V": 1,
+        "route_C": 0,
+        "tag": "ZERO"
+      },
+      {
+        "lam": "(2, 1, 1)",
+        "n_lam": 3,
+        "R": "q**5 + q**4 + q**3",
+        "R_at_i": "+1.00+0.00i",
+        "route_V": -1,
+        "route_C": 1,
+        "tag": "SIGN-MISMATCH"
+      },
+      {
+        "lam": "(1, 1, 1, 1)",
+        "n_lam": 6,
+        "R": "q**6",
+        "R_at_i": "-1.00+0.00i",
+        "route_V": 1,
+        "route_C": -1,
+        "tag": "SIGN-MISMATCH"
+      },
+      {
+        "lam": "(5,)",
+        "n_lam": 0,
+        "R": "1",
+        "R_at_i": "+1.00+0.00i",
+        "route_V": 1,
+        "route_C": 1,
+        "tag": "match"
+      },
+      {
+        "lam": "(4, 1)",
+        "n_lam": 1,
+        "R": "q**4 + q**3 + q**2 + q",
+        "R_at_i": "+0.00+0.00i",
+        "route_V": -1,
+        "route_C": 0,
+        "tag": "ZERO"
+      },
+      {
+        "lam": "(3, 2)",
+        "n_lam": 2,
+        "R": "q**6 + q**5 + q**4 + q**3 + q**2",
+        "R_at_i": "-1.00+0.00i",
+        "route_V": 1,
+        "route_C": -1,
+        "tag": "SIGN-MISMATCH"
+      },
+      {
+        "lam": "(3, 1, 1)",
+        "n_lam": 3,
+        "R": "q**7 + q**6 + 2*q**5 + q**4 + q**3",
+        "R_at_i": "+0.00+0.00i",
+        "route_V": -1,
+        "route_C": 0,
+        "tag": "ZERO"
+      },
+      {
+        "lam": "(2, 2, 1)",
+        "n_lam": 4,
+        "R": "q**8 + q**7 + q**6 + q**5 + q**4",
+        "R_at_i": "+1.00+0.00i",
+        "route_V": 1,
+        "route_C": 1,
+        "tag": "match"
+      },
+      {
+        "lam": "(2, 1, 1, 1)",
+        "n_lam": 6,
+        "R": "q**9 + q**8 + q**7 + q**6",
+        "R_at_i": "+0.00+0.00i",
+        "route_V": 1,
+        "route_C": 0,
+        "tag": "ZERO"
+      },
+      {
+        "lam": "(1, 1, 1, 1, 1)",
+        "n_lam": 10,
+        "R": "q**10",
+        "R_at_i": "-1.00+0.00i",
+        "route_V": 1,
+        "route_C": -1,
+        "tag": "SIGN-MISMATCH"
+      },
+      {
+        "lam": "(6,)",
+        "n_lam": 0,
+        "R": "1",
+        "R_at_i": "+1.00+0.00i",
+        "route_V": 1,
+        "route_C": 1,
+        "tag": "match"
+      },
+      {
+        "lam": "(5, 1)",
+        "n_lam": 1,
+        "R": "q**5 + q**4 + q**3 + q**2 + q",
+        "R_at_i": "+0.00+1.00i",
+        "route_V": -1,
+        "route_C": null,
+        "tag": "NONREAL"
+      },
+      {
+        "lam": "(4, 2)",
+        "n_lam": 2,
+        "R": "q**8 + q**7 + 2*q**6 + q**5 + 2*q**4 + q**3 + q**2",
+        "R_at_i": "+0.00-1.00i",
+        "route_V": 1,
+        "route_C": null,
+        "tag": "NONREAL"
+      },
+      {
+        "lam": "(4, 1, 1)",
+        "n_lam": 3,
+        "R": "q**9 + q**8 + 2*q**7 + 2*q**6 + 2*q**5 + q**4 + q**3",
+        "R_at_i": "+0.00+0.00i",
+        "route_V": -1,
+        "route_C": 0,
+        "tag": "ZERO"
+      },
+      {
+        "lam": "(3, 3)",
+        "n_lam": 3,
+        "R": "q**9 + q**7 + q**6 + q**5 + q**3",
+        "R_at_i": "-1.00+0.00i",
+        "route_V": -1,
+        "route_C": -1,
+        "tag": "match"
+      },
+      {
+        "lam": "(3, 2, 1)",
+        "n_lam": 4,
+        "R": "q**11 + 2*q**10 + 2*q**9 + 3*q**8 + 3*q**7 + 2*q**6 + 2*q**5 + q**4",
+        "R_at_i": "+0.00+0.00i",
+        "route_V": 1,
+        "route_C": 0,
+        "tag": "ZERO"
+      },
+      {
+        "lam": "(3, 1, 1, 1)",
+        "n_lam": 6,
+        "R": "q**12 + q**11 + 2*q**10 + 2*q**9 + 2*q**8 + q**7 + q**6",
+        "R_at_i": "+0.00+0.00i",
+        "route_V": 1,
+        "route_C": 0,
+        "tag": "ZERO"
+      },
+      {
+        "lam": "(2, 2, 2)",
+        "n_lam": 6,
+        "R": "q**12 + q**10 + q**9 + q**8 + q**6",
+        "R_at_i": "+0.00+1.00i",
+        "route_V": 1,
+        "route_C": null,
+        "tag": "NONREAL"
+      },
+      {
+        "lam": "(2, 2, 1, 1)",
+        "n_lam": 7,
+        "R": "q**13 + q**12 + 2*q**11 + q**10 + 2*q**9 + q**8 + q**7",
+        "R_at_i": "+1.00+0.00i",
+        "route_V": -1,
+        "route_C": 1,
+        "tag": "SIGN-MISMATCH"
+      },
+      {
+        "lam": "(2, 1, 1, 1, 1)",
+        "n_lam": 10,
+        "R": "q**14 + q**13 + q**12 + q**11 + q**10",
+        "R_at_i": "-1.00+0.00i",
+        "route_V": 1,
+        "route_C": -1,
+        "tag": "SIGN-MISMATCH"
+      },
+      {
+        "lam": "(1, 1, 1, 1, 1, 1)",
+        "n_lam": 15,
+        "R": "q**15",
+        "R_at_i": "+0.00-1.00i",
+        "route_V": -1,
+        "route_C": null,
+        "tag": "NONREAL"
+      },
+      {
+        "lam": "(7,)",
+        "n_lam": 0,
+        "R": "1",
+        "R_at_i": "+1.00+0.00i",
+        "route_V": 1,
+        "route_C": 1,
+        "tag": "match"
+      },
+      {
+        "lam": "(6, 1)",
+        "n_lam": 1,
+        "R": "q**6 + q**5 + q**4 + q**3 + q**2 + q",
+        "R_at_i": "-1.00+1.00i",
+        "route_V": -1,
+        "route_C": null,
+        "tag": "NONREAL"
+      },
+      {
+        "lam": "(5, 2)",
+        "n_lam": 2,
+        "R": "q**10 + q**9 + 2*q**8 + 2*q**7 + 2*q**6 + 2*q**5 + 2*q**4 + q**3 + q**2",
+        "R_at_i": "+0.00+0.00i",
+        "route_V": 1,
+        "route_C": 0,
+        "tag": "ZERO"
+      },
+      {
+        "lam": "(5, 1, 1)",
+        "n_lam": 3,
+        "R": "q**11 + q**10 + 2*q**9 + 2*q**8 + 3*q**7 + 2*q**6 + 2*q**5 + q**4 + q**3",
+        "R_at_i": "+0.00-1.00i",
+        "route_V": -1,
+        "route_C": null,
+        "tag": "NONREAL"
+      },
+      {
+        "lam": "(4, 3)",
+        "n_lam": 3,
+        "R": "q**12 + q**11 + q**10 + 2*q**9 + 2*q**8 + 2*q**7 + 2*q**6 + q**5 + q**4 + q**3",
+        "R_at_i": "+1.00-1.00i",
+        "route_V": -1,
+        "route_C": null,
+        "tag": "NONREAL"
+      },
+      {
+        "lam": "(4, 2, 1)",
+        "n_lam": 4,
+        "R": "q**14 + 2*q**13 + 3*q**12 + 4*q**11 + 5*q**10 + 5*q**9 + 5*q**8 + 4*q**7 + 3*q**6 + 2*q**5 + q**4",
+        "R_at_i": "+0.00+1.00i",
+        "route_V": 1,
+        "route_C": null,
+        "tag": "NONREAL"
+      },
+      {
+        "lam": "(4, 1, 1, 1)",
+        "n_lam": 6,
+        "R": "q**15 + q**14 + 2*q**13 + 3*q**12 + 3*q**11 + 3*q**10 + 3*q**9 + 2*q**8 + q**7 + q**6",
+        "R_at_i": "+0.00+0.00i",
+        "route_V": 1,
+        "route_C": 0,
+        "tag": "ZERO"
+      },
+      {
+        "lam": "(3, 3, 1)",
+        "n_lam": 5,
+        "R": "q**15 + q**14 + 2*q**13 + 2*q**12 + 3*q**11 + 3*q**10 + 3*q**9 + 2*q**8 + 2*q**7 + q**6 + q**5",
+        "R_at_i": "-1.00+0.00i",
+        "route_V": -1,
+        "route_C": -1,
+        "tag": "match"
+      },
+      {
+        "lam": "(3, 2, 2)",
+        "n_lam": 6,
+        "R": "q**16 + q**15 + 2*q**14 + 2*q**13 + 3*q**12 + 3*q**11 + 3*q**10 + 2*q**9 + 2*q**8 + q**7 + q**6",
+        "R_at_i": "+0.00-1.00i",
+        "route_V": 1,
+        "route_C": null,
+        "tag": "NONREAL"
+      },
+      {
+        "lam": "(3, 2, 1, 1)",
+        "n_lam": 7,
+        "R": "q**17 + 2*q**16 + 3*q**15 + 4*q**14 + 5*q**13 + 5*q**12 + 5*q**11 + 4*q**10 + 3*q**9 + 2*q**8 + q**7",
+        "R_at_i": "+1.00+0.00i",
+        "route_V": -1,
+        "route_C": 1,
+        "tag": "SIGN-MISMATCH"
+      },
+      {
+        "lam": "(3, 1, 1, 1, 1)",
+        "n_lam": 10,
+        "R": "q**18 + q**17 + 2*q**16 + 2*q**15 + 3*q**14 + 2*q**13 + 2*q**12 + q**11 + q**10",
+        "R_at_i": "-1.00+0.00i",
+        "route_V": 1,
+        "route_C": -1,
+        "tag": "SIGN-MISMATCH"
+      },
+      {
+        "lam": "(2, 2, 2, 1)",
+        "n_lam": 9,
+        "R": "q**18 + q**17 + q**16 + 2*q**15 + 2*q**14 + 2*q**13 + 2*q**12 + q**11 + q**10 + q**9",
+        "R_at_i": "-1.00+1.00i",
+        "route_V": -1,
+        "route_C": null,
+        "tag": "NONREAL"
+      },
+      {
+        "lam": "(2, 2, 1, 1, 1)",
+        "n_lam": 11,
+        "R": "q**19 + q**18 + 2*q**17 + 2*q**16 + 2*q**15 + 2*q**14 + 2*q**13 + q**12 + q**11",
+        "R_at_i": "+0.00+0.00i",
+        "route_V": -1,
+        "route_C": 0,
+        "tag": "ZERO"
+      },
+      {
+        "lam": "(2, 1, 1, 1, 1, 1)",
+        "n_lam": 15,
+        "R": "q**20 + q**19 + q**18 + q**17 + q**16 + q**15",
+        "R_at_i": "+1.00-1.00i",
+        "route_V": -1,
+        "route_C": null,
+        "tag": "NONREAL"
+      },
+      {
+        "lam": "(1, 1, 1, 1, 1, 1, 1)",
+        "n_lam": 21,
+        "R": "q**21",
+        "R_at_i": "+0.00+1.00i",
+        "route_V": -1,
+        "route_C": null,
+        "tag": "NONREAL"
+      }
+    ],
+    "n_nonreal": 15,
+    "n_zero": 10,
+    "n_sign_mismatch": 8,
+    "verdict": "CLOSED (scope-(b)): the \u0394_\u03bb chirality sign (\u22121)^{n(\u03bb)} is the fake-degree VALUATION (bottom jet-order monomial q^{2n(\u03bb)}), a PROVED structural property distinct from the full-polynomial-at-root value. route V (valuation) reproduces it for every \u03bb; route C (cyclotomic residue of the full graded trace at \u03b6_4) does NOT (15 non-real, 10 zero, 8 sign-mismatch). CONSEQUENCE: the 'cyclotomic C_{K,n} \u2192 per-partition \u0394_\u03bb sign' refinement is CLOSED \u2014 honestly done it collapses to the ALREADY-DERIVED jet-order valuation (deltalambda-grho-jet-order-derivation), not a new coefficient split. This CONFIRMS and STRENGTHENS the sign-map negative (qou-42u7): there is no surviving cyclotomic\u2192\u0394_\u03bb sign route. CORRECTION: the earlier follow-up pointer to bean qou-my68 was wrong \u2014 qou-my68 is the Q_\u03b2 Habiro same-element task, not the \u0394_\u03bb bridge; the \u0394_\u03bb sign is not blocked on it. The genuinely-open \u0394_\u03bb leg is the MAGNITUDE assembly \u0394_\u03bb = tr(g_\u03c1) into B = m_e \u03a3 y_\u03bb \u03c7^\u03bb \u0394_\u03bb (a magnitude, not sign/cyclotomic, problem). No fit; no c_k wired."
+  },
+  "context": {
+    "axis": "\u0394_\u03bb sign closure \u2014 cyclotomic-coefficient route CLOSED (ATTACK 1 of qou-do3a; strengthens qou-42u7)",
+    "cited": "n(\u03bb)=min maj(SYT(\u03bb)) fake-degree valuation (Steinberg/Lusztig/Macdonald I.5); corpus witness deltalambda-grho-jet-order-derivation",
+    "correction": "bean qou-my68 is the Q_\u03b2 Habiro same-element task, NOT the \u0394_\u03bb bridge; \u0394_\u03bb sign not blocked on it",
+    "open_delta_lambda": "MAGNITUDE assembly \u0394_\u03bb = tr(g_\u03c1) (not sign)"
+  }
+}
