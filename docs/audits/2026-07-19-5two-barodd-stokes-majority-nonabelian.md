@@ -115,6 +115,25 @@ decomposition only — it derives **no** mixing angle and **no** physical observ
 asserts no ontological identification; the physical reading is an interpretation to be
 made precise, consistent with the corpus even/odd dictionary (§anti-laundering).
 
+## The swing is not in `O` either — the exceptional-point test (negative)
+
+Because `O` is non-normal, it could sit near an **exceptional point** (coalescing
+eigenvalues), where eigenvalue derivatives blow up like `1/√(distance)` — a candidate
+swing mechanism the scalar norm (slope ~819) missed. Tested at the two anchors
+(muon/proton, `Δq ≈ 1.28·10⁻⁸`):
+
+- eigenvalues of `O` are **well-separated** — `spec ≈ {−1.134, −0.179, +1.287}`, min gap
+  `0.954` (**not** near an exceptional point);
+- their slopes are `|dλ/dq| ∈ {532, 912, 1191}` and `|d(gap)/dq| = 1723` — all `~10³`,
+  the same order as the scalar baseline `819`, **nowhere near the swing target
+  `~3.84·10⁶`**.
+
+So the swing is **not** in `O`'s spectrum either: `O` is smooth in *every* invariant
+tested (norm, entries, eigenvalues, gap). This confirms `O` is the derived odd
+**ingredient the capstone dresses**, and the swing lives in the **dressing** (the
+capstone combiner's nonlinearity), not in `O`. Feeding the matrix is the structurally
+correct carrier but does **not** by itself close c₃.
+
 ## Next (concrete)
 
 Feed the c₃/Q_β combiner the **matrix** `O` (or a non-abelian invariant that survives

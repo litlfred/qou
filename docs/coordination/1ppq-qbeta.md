@@ -1969,3 +1969,38 @@ identity is exact but does not isolate the saddle Stokes constants
 `docs/audits/2026-07-18-5two-part2c-wall-crossing-barpair.md`. No fit;
 no c_k wired; scope-(a) (constrains the METHOD, not the σ3-pair
 ingredient — it remains a valid bar-odd carrier).
+
+---
+
+**2026-07-19 · bar-odd datum is NON-ABELIAN — stop scalar extraction (branch
+`claude/z-c-k-f-map-keystone-ub5yix`, PR #4064).** Owner asked whether we're
+using non-abelian ("na") Stokes where the bar-odd resurgence needs it, and
+what the non-abelian analogue of Écalle resurgence is. Answer + finding:
+
+- The non-abelian analogue of resurgence is the **Stokes-matrix / Riemann–Hilbert**
+  structure (KS wall-crossing, physics-side) — NOT a scalar Borel apparatus. The
+  corpus already HAS it for 5₂: the GGM Stokes matrix `S±(q)` (producer
+  `qbeta_5two_stokes_barodd_index_probe.py`, bean `qou-ls2y`). The gap is
+  **downstream**: the bar-odd carriers feeding c₃/Q_β (scalar φ_odd σ1/σ2
+  arg-sum, the 5₂ Habiro-tail action, any single Stokes constant) **collapse the
+  matrix `O = ½(S⁺−S⁻)` to a scalar**.
+- Decomposing `O` (from the GGM witness): off-diagonal (non-abelian) carries
+  **52.8 %** of `‖O‖²` — MORE than the diagonal; `O` is **non-normal**
+  (`‖O−Oᵀ‖=1.71`, no scalar diagonalization). So every scalar bar-odd closed-form
+  search fails **structurally** — it discards the majority of the datum. This is
+  the diagnosis for the whole scalar-search history (φ_odd full-Z; 5₂ Habiro-tail
+  "no π²/5-analog").
+- **Even/odd = meson/lepton:** even part `E` (meson, m_π) is 33 % off-diagonal
+  (abelian, computable — matches m_π SDP-validated/independent); odd part `O`
+  (weak, Q_β) is 53 % off-diagonal (non-abelian mixing lives in the weak channel).
+- **Honest limit:** `O` is smooth in ALL invariants at the substrate (norm,
+  entries, eigenvalues — slope ~10³, swing needs ~3.8·10⁶; NOT near an exceptional
+  point), so `O` is the ingredient the capstone **dresses**, not the swing itself.
+  Feeding the matrix is structurally correct but does NOT close c₃.
+- **Coordination ask (to all bar-odd siblings — #4062 phi-b/5₂, option-e,
+  deltalambda):** do not extract the bar-odd datum as a scalar; consume the matrix
+  `O` (or a non-abelian invariant). Canonical warning added to the cheat-sheet
+  Q_β open-axis bullet. Probes: `qbeta_5two_barodd_stokes_nonabelian_share_probe.py`,
+  `qbeta_5two_meson_lepton_channel_mixing_probe.py`. Audit:
+  `docs/audits/2026-07-19-5two-barodd-stokes-majority-nonabelian.md`. scope-(a);
+  no fit; no c_k wired; no tier change.
