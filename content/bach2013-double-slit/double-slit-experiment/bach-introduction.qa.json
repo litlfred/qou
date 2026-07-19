@@ -156,6 +156,21 @@
         "reviewed_sha": "223e2e140539d2820d219061638d69029acfe2bd",
         "notes": "False positive: the flagged informal phrasing is a direct Feynman quotation ('that you should not try to set up'), properly attributed with \\cite{feynman1965} — quoted source text, not the paper's own voice.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "0f6a0e869b3f",
+          "ts": "49c1596eafd9"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
       }
     ],
     "voice-title-scholarly": [
@@ -192,6 +207,21 @@
         },
         "reviewed_at": "2026-07-13T00:59:15.685Z",
         "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554"
+      },
+      {
+        "field_hash": {
+          "md": "0f6a0e869b3f",
+          "ts": "49c1596eafd9"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
       }
     ],
     "voice-author-notes-pollution": [
