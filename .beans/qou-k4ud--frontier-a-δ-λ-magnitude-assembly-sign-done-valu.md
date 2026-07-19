@@ -19,3 +19,11 @@ updated_at: 2026-07-19T03:32:44Z
 **KEY CROSS-LINK (Frontier A ↔ B):** the Σ(2,3,5) S-matrix lives at the root-of-unity FIBRE (|q|=1, unitary); the physical m (and τ=tr B, Frontier B qou-2v7k) live at real q₀. Both frontiers share the SAME fibre→observable archimedean-continuation wall (AGENTS.md Im(q) table). The continuation is the common bottleneck.
 
 Status: magnitude sign+|Δ_λ| settled; b₄ structure derived; m/pn-sign open; icosahedral lead narrowed to "needs the archimedean continuation". Next = Frontier B (the shared wall).
+
+## RECONCILIATION with Frontier B (2026-07-19): the shared wall is CONSTRUCTION, not continuation
+Frontier B found the fibre→observable CONTINUATION is trivial (well-posed). So the A↔B cross-link is
+sharper: the shared object is the icosahedral/Hecke S-matrix, and the shared WALL is the categorical
+CONSTRUCTION (keystone: bwS0_eq_hecke S³/2I localization; b₄: a forward selection principle for m from
+the identified S-matrix datum). Note the keystone's λ⊢5 Hecke S-matrix has sub-ceiling entries
+(0.088/0.362/0.460), unlike the 2-block Fibonacci vacuum row (0.526/0.851) my ceiling probe used — so
+"which icosahedral S-matrix" is itself part of the forward-m question. Neither is a continuation problem.
