@@ -1,5 +1,6 @@
 import QOU.Mathlib.StandardYoungTableau
 import QOU.Mathlib.SYTHookGNW
+import QOU.Mathlib.ColLenRowLensBridge
 import QOU.BraidKnot.SpechtClassification
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 import Mathlib.Data.Nat.Factorial.Basic
@@ -14,14 +15,19 @@ tabulated character coefficients `c_λ ∈ {1,3,8,10}` of `symbolic_character_ta
 `c_λ = 1` case that this generalises).
 
 This file supplies the **definitional layer** — arm, leg, and hook lengths of a
-cell, and the hook-length product over a diagram — sorry-free, plus the small
-structural facts (positivity, the closed arm+leg+1 form on cells). The HLF itself,
+cell, and the hook-length product over a diagram — plus the **geometric hook-length
+formula itself, sorry-free**:
 
-  `#SYT(μ) · ∏_{c ∈ μ} hook(c) = |μ|!`,
+  `#SYT(μ) · ∏_{c ∈ μ} hook(c) = |μ|!`.
 
-is stated as the target with a single cited `sorry`: its proof (via RSK or the
-Frame–Robinson–Thrall / Novelli–Pak–Stoyanovskii bijection) is a substantial
-Mathlib-upstream-scale contribution, tracked as the next step.
+The proof does *not* re-derive the FRT/RSK bijection: the corpus already proves the
+list-form HLF `QOU.Mathlib.SYTEnum.numSYTenum_mul_prodHooks` (via the GNW corner
+recursion; axiom-clean). This file identifies the geometric cell-hook product with the
+corpus list `prodHooks` (`hookLengthProduct_eq_prodHooks` — a pure-ℕ reindex of the cell
+product by rows and columns, matching per-cell hooks via `hookLength_eq_of_mem` +
+`ColLenRowLensBridge.colLen_rowLens`), wires through the count bridge
+(`numSYTenum_eq_numStandardYoungTableaux`) and `SpechtClassification.card_eq_rowLens_sum`,
+and thereby discharges the geometric HLF on the genuine `numStandardYoungTableaux` count.
 
 ## Main definitions
 
@@ -30,11 +36,13 @@ Mathlib-upstream-scale contribution, tracked as the next step.
 
 ## Main statements
 
-* `hookLength_pos` — hook lengths are positive.
-* `hookLengthProduct_pos` — the product is positive.
-* `numStandardYoungTableaux_mul_hookLengthProduct` — the HLF (stated; one cited `sorry`).
+* `hookLength_pos`, `hookLengthProduct_pos` — positivity.
+* `hookLength_eq_of_mem` — the closed `(rowLen−j)+(colLen−i)−1` form on cells.
+* `hookLengthProduct_eq_prodHooks` — geometric cell product = corpus list `prodHooks`.
+* `numStandardYoungTableaux_mul_hookLengthProduct` — **the geometric HLF, sorry-free**.
 
--- Ref: [manuscript] hook-length formula (Frame–Robinson–Thrall 1954); Mathlib-upstream target
+Reference: the Frame–Robinson–Thrall hook-length formula (1954); proved here via the
+corpus GNW list-form HLF rather than re-deriving the bijection.
 -/
 
 open scoped BigOperators
@@ -83,21 +91,69 @@ namespace QOU.Mathlib
 
 open YoungDiagram
 
-/-- **The geometric↔list hook bridge** `∏_{c∈μ} hook(c) = prodHooks (rowLens μ)`: the sole
-    remaining gap in the *geometric* HLF below. The corpus list product
-    `QOU.BraidKnot.IdentityI.prodHooks` uses the identical per-cell hook
-    `(rowLen i − j) + (colLen j − i) − 1` (`hookLength_eq_of_mem`); this states the pure-ℕ
-    reindexing of the cell product by rows (`SchenstedCellsBridge.cells_biUnion`) that identifies
-    the two. The Frame–Robinson–Thrall HLF *itself* is proved
-    (`QOU.Mathlib.SYTEnum.numSYTenum_mul_prodHooks`, axioms-clean); only this list↔diagram
-    reindex remains, so the geometric HLF below is `true modulo a reindexing identity`, not
-    modulo all of FRT. -/
+/-- `List.prod` of a mapped range = `Finset.prod` over `Finset.range`. -/
+private theorem list_prod_map_range (n : ℕ) (f : ℕ → ℕ) :
+    ((List.range n).map f).prod = ∏ i ∈ Finset.range n, f i := by
+  induction n with
+  | zero => simp
+  | succ k ih =>
+      rw [List.range_succ, List.map_append, List.prod_append, ih, Finset.prod_range_succ]
+      simp
+
+/-- Cells partition into rows `{0, …, colLen 0 − 1}`. -/
+private theorem cells_biUnion' (μ : YoungDiagram) :
+    μ.cells = (Finset.range (μ.colLen 0)).biUnion μ.row := by
+  ext ⟨i, j⟩
+  simp only [mem_cells, Finset.mem_biUnion, Finset.mem_range, mem_row_iff]
+  constructor
+  · intro hij
+    exact ⟨i, lt_of_lt_of_le (mem_iff_lt_colLen.mp hij)
+      (μ.colLen_anti 0 j (Nat.zero_le j)), hij, rfl⟩
+  · rintro ⟨i', _, hij, rfl⟩; exact hij
+
+private theorem rows_disjoint (μ : YoungDiagram) (n : ℕ) :
+    (↑(Finset.range n) : Set ℕ).PairwiseDisjoint μ.row := by
+  intro i _ i' _ hne
+  rw [Function.onFun, Finset.disjoint_left]
+  rintro ⟨a, b⟩ hc hc'
+  rw [mem_row_iff] at hc hc'
+  exact hne (hc.2.symm.trans hc'.2)
+
+/-- Product over a row = product over its column range. -/
+private theorem row_prod (μ : YoungDiagram) (f : ℕ × ℕ → ℕ) (i : ℕ) :
+    ∏ c ∈ μ.row i, f c = ∏ j ∈ Finset.range (μ.rowLen i), f (i, j) := by
+  rw [show μ.row i = (Finset.range (μ.rowLen i)).image (fun j => (i, j)) from ?_,
+    Finset.prod_image (fun a _ b _ h => by simpa using h)]
+  ext ⟨a, b⟩
+  simp only [mem_row_iff, Finset.mem_image, Finset.mem_range]
+  constructor
+  · rintro ⟨hab, rfl⟩; exact ⟨b, mem_iff_lt_rowLen.mp hab, rfl⟩
+  · rintro ⟨j, hj, heq⟩
+    obtain ⟨rfl, rfl⟩ := Prod.ext_iff.mp heq
+    exact ⟨mem_iff_lt_rowLen.mpr hj, rfl⟩
+
+/-- **The geometric↔list hook bridge** `∏_{c∈μ} hook(c) = prodHooks (rowLens μ)` (sorry-free).
+    Reindexes the cell product by rows (`cells_biUnion'`) and columns (`row_prod`), converts the
+    corpus list `prodHooks` product to a `Finset` product (`list_prod_map_range`), and identifies
+    the per-cell hook `(rowLen i − j) + (colLen j − i) − 1` (`hookLength_eq_of_mem` +
+    `ColLenRowLensBridge.colLen_rowLens`) with the corpus list term. Together with the proved
+    list-form HLF (`QOU.Mathlib.SYTEnum.numSYTenum_mul_prodHooks`) this fully discharges the
+    geometric Frame–Robinson–Thrall HLF below. -/
 theorem hookLengthProduct_eq_prodHooks (μ : YoungDiagram) :
     μ.hookLengthProduct = QOU.BraidKnot.IdentityI.prodHooks μ.rowLens := by
-  -- Ref: [manuscript] pure-ℕ reindexing ∏_{c∈cells} = ∏_rows ∏_cols (cells_biUnion) matching the
-  --   per-cell hook to the corpus list `prodHooks`. The FRT HLF is proved downstream
-  --   (numSYTenum_mul_prodHooks); this list↔diagram bridge is the only remaining gap.
-  sorry
+  rw [YoungDiagram.hookLengthProduct, cells_biUnion' μ,
+    Finset.prod_biUnion (rows_disjoint μ (μ.colLen 0)),
+    QOU.BraidKnot.IdentityI.prodHooks, list_prod_map_range, ← length_rowLens]
+  refine Finset.prod_congr rfl (fun i hi => ?_)
+  rw [Finset.mem_range, length_rowLens] at hi
+  rw [row_prod]
+  have hgetD : μ.rowLens.getD i 0 = μ.rowLen i := by
+    rw [List.getD_eq_getElem?_getD, List.getElem?_eq_getElem (by rw [length_rowLens]; exact hi),
+      Option.getD_some, get_rowLens]
+  rw [hgetD, list_prod_map_range]
+  refine Finset.prod_congr rfl (fun j hj => ?_)
+  rw [Finset.mem_range] at hj
+  rw [YoungDiagram.hookLength_eq_of_mem μ (mem_iff_lt_rowLen.mpr hj), colLen_rowLens]
 
 /-- **The hook-length formula (target)**: for every Young diagram `μ` with
     `n = |μ|` cells, the number of standard Young tableaux times the hook-length
