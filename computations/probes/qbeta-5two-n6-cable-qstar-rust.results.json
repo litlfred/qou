@@ -1,0 +1,55 @@
+{
+  "B_qstar": -99594.24719597516,
+  "B_samples": [
+    -99593.88634092546,
+    -99594.24719597516,
+    -99594.60820888136
+  ],
+  "allPassed": true,
+  "all_present": true,
+  "assertions": [
+    {
+      "computed": 1.0,
+      "expected": 1.0,
+      "name": "gate_unknot_ribbon_framing_N6",
+      "passed": true,
+      "source": "fr = ±q^{cN(cN+2)/2} ribbon framing (sign (−1)^cN) from the writhe-1 unknot",
+      "tolerance": 0.5
+    },
+    {
+      "computed": 1.5105334872617534e-8,
+      "expected": 0.0,
+      "name": "gate_41_N6_matches_trusted_tower",
+      "passed": true,
+      "source": "4₁ 5-cable J' (framing-free) = trusted Masbaum p=−1 tower",
+      "tolerance": 1e-7
+    },
+    {
+      "computed": 4.5008214512348607e-10,
+      "expected": 0.0,
+      "name": "gate_41_N6_null_at_qstar",
+      "passed": true,
+      "source": "B(4₁;q*) = 0 — mirror/bar control",
+      "tolerance": 1e-7
+    },
+    {
+      "computed": 1.0,
+      "expected": 1.0,
+      "name": "N6_no_qstar_zero_certificate",
+      "passed": true,
+      "source": "3-point + slope-bound certificate: same sign at q*±2e-8 and q*, slope·window ≪ 1",
+      "tolerance": 0.5
+    }
+  ],
+  "cable_width": 5,
+  "certificate_s2h": 7.248088882890155e-6,
+  "engine": "hecke-engine (rust, tl_cable, 192-bit MPFR)",
+  "n_target": 6,
+  "rel_slope": 181.20222207225387,
+  "signs": [
+    -1,
+    -1,
+    -1
+  ],
+  "tl_strands": 15
+}
