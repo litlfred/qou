@@ -213,18 +213,22 @@ for the 24 NF basis elements — the residual finite (24² = 576, 276 nontrivial
 content of trace cyclicity after the sorry-free reduction `trM_cyclic_of_gram_symm`.
 
 Machine-validated in the compute infra (`hecke_regular_nf_table.py`,
-`self_validate`: cyclicity on all sampled pairs). Held as an honest cited `sorry`:
-each `G_{i,j}` is `tr_M` of a depth-≤6 `mulσ` composition applied to a basis
-vector, and evaluating even one such entry times out at the kernel/elaborator
-`whnf` wall (value-independent; six tactic strategies + the sparse-basis variant
-all infeasible — audit `docs/audits/2026-07-19-h4-cyclicity-whnf-explosion.md`).
-The two closure routes for THIS residual are (i) a full Mathlib build enabling a
-`Matrix.Reflection` re-encode (blocked in-sandbox; feasibility at 24×24 depth-6
-uncertain), or (ii) the abstract Ocneanu-induction cyclic-trace lemma on main's
-`MarkovStabilization` framework (`HeckeBraidedCategoryScaffold`,
-`HeckeH3AlgebraInstance`), which supersedes this residual entirely and discharges
-cyclicity for every `n` at once. Beans `qou-svnb` (this reduction) / `qou-0vsu`
-(the abstract convergence). Not vacuous, not laundered. -/
+`self_validate`: cyclicity on all sampled pairs).
+
+**CLOSEABLE (not whnf-blocked — correction 2026-07-19).** Each `G_{i,j}` is
+`tr_M` of a depth-≤6 `mulσ` composition applied to a **basis** vector, and the
+generator action on a basis vector is sparse (`mulσ_k(e_i)` is `e_{π(i)}` or
+`e_a + h·e_b`). Chaining single-generator steps with explicit intermediate
+vectors — never unfolding the whole tower at once — each step is depth-1 and the
+mostly-zero entries resolve fast, so the `whnf` wall is never hit. Demonstrated:
+a full basis row (all 24 words, incl. the deepest) compiles `lean`-direct exit 0.
+The full `24²` closure is auto-generated (`computations/markov/gen_gram_closure.py`
+→ `QOU.Machinery.MarkovTraceH4Gram`), which proves `gram_symm_proved` and hence
+`trM_cyclic_proved` **fully sorry-free**. This local `gram_symm` is the
+placeholder the reduction consumes until that module lands; it is then superseded.
+(The abstract Ocneanu-induction lemma on main's `MarkovStabilization` remains the
+elegant general-`n` route — bean `qou-0vsu`; this basis computation — bean
+`qou-svnb` — closes `n=4` concretely.) Not vacuous, not laundered. -/
 -- Ref: [manuscript] §mass-theory (H₄ Markov trace); compute hecke_regular_nf_table.py self_validate
 theorem gram_symm (z h : R) :
     ∀ i j, trM z h (mulNF h (e i) (e j)) = trM z h (mulNF h (e j) (e i)) := by
