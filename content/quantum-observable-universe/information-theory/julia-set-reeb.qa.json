@@ -1029,16 +1029,16 @@
     ],
     "expo-milnor-clarity": [
       {
-        "result": "pass",
-        "notes": "Reviewed interactively. Sound geometric deduction cleanly deriving structural invariant limits thoroughly across complete fractal iteration boundaries.",
-        "reviewed_at": "2026-07-08T13:48:31.000Z",
-        "reviewed_sha": "b03a2df800429a61b8a2818d1bdaa85083e30426",
+        "result": "warn",
+        "notes": "Block is quite long, consider breaking it up for clarity.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-08"
+          "agent_date": "2026-07-19"
         }
       }
     ],

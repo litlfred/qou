@@ -425,29 +425,16 @@
     ],
     "expo-milnor-clarity": [
       {
-        "result": "pass",
-        "notes": "Block appears sound and meets expo-milnor-clarity.",
-        "reviewed_at": "2026-07-07T23:32:15.134078+00:00",
-        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "result": "warn",
+        "notes": "Block is quite long, consider breaking it up for clarity.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07"
-        }
-      },
-      {
-        "result": "pass",
-        "notes": "Reviewed interactively. High epistemic hygiene here. Notes the non-canonical nature of Loeb measure and strictly relies on the Berarducci-Mantova framework for differentiation.",
-        "reviewed_at": "2026-07-08T09:06:09.000Z",
-        "reviewed_sha": "d8685708172b644d6eca5066a811785bd277aad7",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-08"
+          "agent_date": "2026-07-19"
         }
       }
     ],

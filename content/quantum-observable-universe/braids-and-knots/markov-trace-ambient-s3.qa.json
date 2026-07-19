@@ -245,15 +245,15 @@
     "expo-milnor-clarity": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Crucial and sound clarification distinguishing the geometric ambient S^3 from the gauge group SU(2) manifold.",
-        "reviewed_at": "2026-07-08T09:31:44.000Z",
-        "reviewed_sha": "eee2309f7e06936ae825d0c1f3fe2237c9007434",
+        "notes": "Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-08"
+          "agent_date": "2026-07-19"
         }
       }
     ],

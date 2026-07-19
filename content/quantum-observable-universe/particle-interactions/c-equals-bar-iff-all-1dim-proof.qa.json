@@ -1031,16 +1031,16 @@
     ],
     "expo-milnor-clarity": [
       {
-        "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
-        "reviewed_at": "2026-07-11T03:40:54.000Z",
-        "reviewed_sha": "6ffefb7e9acebbcc6e701d8945f106e53cff0e48",
+        "result": "warn",
+        "notes": "Block is quite long, consider breaking it up for clarity.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-11"
+          "agent_date": "2026-07-19"
         }
       }
     ],

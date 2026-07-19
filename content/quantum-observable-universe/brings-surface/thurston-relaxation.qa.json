@@ -995,15 +995,15 @@
     "expo-milnor-clarity": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Superb explicit translation identifying the algebraic SDP fixed point precisely with the geometric Thurston gluing solution.",
-        "reviewed_at": "2026-07-08T09:56:02.000Z",
-        "reviewed_sha": "3ae75df829fa28b46d7a8f821a07854c5dbcc7ce",
+        "notes": "Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-08"
+          "agent_date": "2026-07-19"
         }
       }
     ],

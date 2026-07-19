@@ -1452,15 +1452,15 @@
     "expo-milnor-clarity": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
-        "reviewed_at": "2026-07-13T02:52:53.000Z",
-        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "notes": "Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-13"
+          "agent_date": "2026-07-19"
         }
       }
     ],

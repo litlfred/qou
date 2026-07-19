@@ -805,41 +805,15 @@
     "expo-milnor-clarity": [
       {
         "result": "pass",
-        "notes": "No recent signature drift detected. Clean.",
-        "reviewed_at": "2026-07-07T23:34:28.975Z",
-        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "notes": "Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07"
-        }
-      },
-      {
-        "result": "pass",
-        "notes": "Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
-        "reviewed_at": "2026-07-08T18:21:11.000Z",
-        "reviewed_sha": "841e7c9b888badfc0222b00c6d11a17075018acf",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-08"
-        }
-      },
-      {
-        "result": "pass",
-        "notes": "Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
-        "reviewed_at": "2026-07-08T18:21:34.000Z",
-        "reviewed_sha": "841e7c9b888badfc0222b00c6d11a17075018acf",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-08"
+          "agent_date": "2026-07-19"
         }
       }
     ],

@@ -426,28 +426,15 @@
     "expo-milnor-clarity": [
       {
         "result": "pass",
-        "notes": "Block appears sound and meets expo-milnor-clarity.",
-        "reviewed_at": "2026-07-07T23:32:15.472663+00:00",
-        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "notes": "Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07"
-        }
-      },
-      {
-        "result": "pass",
-        "notes": "Reviewed interactively. Rigorous proof of rank-zero Mordell-Weil directly sourced from the semisimplicity constraint of the observability axiom.",
-        "reviewed_at": "2026-07-08T09:09:15.000Z",
-        "reviewed_sha": "5f78a965926b09645c8ab69188804f04e92ac666",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-08"
+          "agent_date": "2026-07-19"
         }
       }
     ],

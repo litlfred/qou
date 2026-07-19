@@ -423,15 +423,15 @@
     "expo-milnor-clarity": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Excellent algebraic reduction matching the Hecke centered generator moments to Blitvic's pair-partition combinatorial weights.",
-        "reviewed_at": "2026-07-08T09:20:33.000Z",
-        "reviewed_sha": "1259ccb47148f3bd1f4c33a8a81b0e0c26e4be63",
+        "notes": "Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-08"
+          "agent_date": "2026-07-19"
         }
       }
     ],

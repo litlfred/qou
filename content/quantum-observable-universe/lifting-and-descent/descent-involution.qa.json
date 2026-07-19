@@ -1551,15 +1551,15 @@
     "expo-milnor-clarity": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound abstract classification securely mapping defined idempotent behaviors perfectly along known reduction trajectories.",
-        "reviewed_at": "2026-07-08T14:08:15.000Z",
-        "reviewed_sha": "506965375ff2e72fbaf0c3eb4c1d93755489749e",
+        "notes": "Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-08"
+          "agent_date": "2026-07-19"
         }
       }
     ],

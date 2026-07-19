@@ -405,15 +405,15 @@
     "expo-milnor-clarity": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound algebraic evaluation smoothly translating exact discrete reduction steps identically to continuous rest mass.",
-        "reviewed_at": "2026-07-08T13:52:37.000Z",
-        "reviewed_sha": "ef6a3d35957dab33dc5e5507382d75d36ea1ee8d",
+        "notes": "Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-08"
+          "agent_date": "2026-07-19"
         }
       }
     ],

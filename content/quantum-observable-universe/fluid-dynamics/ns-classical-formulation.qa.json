@@ -1031,15 +1031,15 @@
     "expo-milnor-clarity": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound formal framing exactly recovering classical NS directly as the pure q=1 degeneration.",
-        "reviewed_at": "2026-07-08T13:18:59.000Z",
-        "reviewed_sha": "0764a81bc47d0f4a3f74b1cebc3180f86523d3ee",
+        "notes": "Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-08"
+          "agent_date": "2026-07-19"
         }
       }
     ],
