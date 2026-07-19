@@ -31,14 +31,11 @@ class BorelZagierQouVolumes where
       **Conjecture (Borel--Zagier for QOU volumes).**
 The three QOU hyperbolic volumes are $\mathbb{Q}$-linearly independent.
 
-      History note: an earlier placeholder carried
-      `residual_eq_zero : residual = 0` — the **wrong sign** for an
-      independence claim, which asserts that every *nontrivial*
-      rational combination is **non**-vanishing (sign-audit bean
-      `qou-847i`).  The field now asserts the conjecture's actual
-      shape.  The three volume fields are data pinned by the
-      manuscript's definitions; tying them to formalised values is
-      the remaining refinement. -/
+      The field asserts the conjecture's shape: every *nontrivial*
+      rational combination of the three volumes is non-vanishing.
+      The three volume fields are data pinned by the manuscript's
+      definitions; tying them to formalised values is the remaining
+      refinement. -/
   vol41 : ℝ
   vol52 : ℝ
   volBorromean : ℝ
