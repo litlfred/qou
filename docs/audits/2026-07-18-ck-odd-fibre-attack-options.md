@@ -176,6 +176,31 @@ principle — the open problem itself).
   H₅). Classical H₃ bricks already exist (validated TL₃ Jones + bar-odd
   datum); the missing object is the *quantum* (colored/Kashaev-tower) trace
   datum at the substrate. Bean `qou-3yxn` stays open with this scope.
+- **A5.3 LANDED (N=4 certified, merged #4032).**
+  [`qbeta_5two_higher_cable_qstar_probe.py`](../../computations/probes/qbeta_5two_higher_cable_qstar_probe.py)
+  + witness, 6/6: generic c-cable + Wenzl-recursion JW projectors extend the
+  validated A5.2 foundation to N=4 (3-cable, TL₉). Framing measured on the
+  writhe-±1 unknot: `fr₃ = −q^{7.5}` (magnitude = ribbon `θ_{V₄}`, sign
+  negative — the unknot-control calibration discipline, after three garbled
+  trefoil-first attempts). Certified: `B₄(5₂;q*) = −10.34`, **no zero** on
+  q\*±2e-8, anchor-smooth; 4₁ null control exact. Capstone constraint (2)
+  fails on the certified N=4 categorical face (scope-(a)).
+- **A5.4 LANDED (N=5 certified — 3-point + slope-bound certificate).**
+  [`qbeta_5two_n5_cable_qstar_probe.py`](../../computations/probes/qbeta_5two_n5_cable_qstar_probe.py)
+  + witness: N=5 via the JW 4-cable on TL₁₂ (Catalan(12) = 208012 diagrams;
+  ~31 min/run). A full 7-point scan is cost-prohibitive, so the test is the
+  rigorous **3-point + slope-bound certificate**: B₅ sampled at q\*±2e-8 and
+  q\*, all same sign, measured `s = |d ln B/dq| ≈ 1.33e2`, so
+  `s·2h = 5.3e-6 ≪ 1` — a zero cannot hide between samples. Gates: 4₁
+  4-cable = trusted p=−1 tower at 7.1e-26; 4₁ null at q\* = 4.9e-26; unknot
+  framing `fr₄ = +q^{12}` (magnitude = ribbon `θ_{V₅}` exactly; **measured
+  sign finding**: the framing sign alternates with cable width — `+q⁴` at
+  cN=2, `−q^{7.5}` at cN=3, `+q^{12}` at cN=4 — the first run's only failure
+  was my −q^{12} sign prediction, a pure sign flip; the framed test uses
+  `fr⁴ = q^{48}` and is sign-independent). **Certified:**
+  `B₅(5₂;q*) = 593.61`, **no zero**, anchor-smooth — capstone constraint (2)
+  fails on the certified N=5 categorical face (scope-(a), extending N=3,4).
+  The categorical q\*-test is now certified at **N = 3, 4, 5**.
 
 - **A2 LANDED (derived odd-Stokes datum).**
   [`qbeta_5two_stokes_barodd_index_probe.py`](../../computations/probes/qbeta_5two_stokes_barodd_index_probe.py)
