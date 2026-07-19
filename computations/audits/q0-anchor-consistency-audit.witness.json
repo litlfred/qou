@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-19T00:01:09.707432+00:00",
-  "commitSha": "dcd8299892b77a5c17b4be77dded017be21ef57d",
+  "computedAt": "2026-07-19T03:10:18.366120+00:00",
+  "commitSha": "0f3335b38f3939f0e021462dc87a9ab73cde1ee1",
   "assertions": [
     {
       "name": "no_q0_flip",
@@ -36,8 +36,8 @@
   "data": {
     "counts": {
       "Q0_OK": 565,
-      "Q0_AMBIGUOUS": 19,
-      "Q0_ANCHOR_MISSING": 1399,
+      "Q0_AMBIGUOUS": 22,
+      "Q0_ANCHOR_MISSING": 1403,
       "Q0_VALUE_MISSING": 0,
       "Q0_AUDIT_EXEMPT": 60,
       "Q0_PARSE_ERROR": 1,
@@ -300,6 +300,14 @@
         },
         {
           "witness": "alpha-em-d4-equivariance-adjudication.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "alpha-em-f-t1-cover-structure.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "alpha-em-f-t2-burau-at-i.witness.json",
           "detail": ""
         },
         {
@@ -911,10 +919,6 @@
           "detail": ""
         },
         {
-          "witness": "chi-deuteron-free-h6-at-q0-50dps.witness.json",
-          "detail": ""
-        },
-        {
           "witness": "chi-deuteron-free-h6-at-qinv-50dps.witness.json",
           "detail": ""
         },
@@ -944,10 +948,6 @@
         },
         {
           "witness": "chi-helium-3-h9-at-qinv-50dps.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "chi-helium-4-free-h12-at-q0-50dps.witness.json",
           "detail": ""
         },
         {
@@ -1207,6 +1207,10 @@
           "detail": ""
         },
         {
+          "witness": "deltalambda-demazure-subcrystal-magnitude.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "deltalambda-extensivity-gap-synthesis.witness.json",
           "detail": ""
         },
@@ -1220,6 +1224,10 @@
         },
         {
           "witness": "deltalambda-icosahedral-smatrix-magnitude.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "deltalambda-jet-filtration-magnitude.witness.json",
           "detail": ""
         },
         {
@@ -3411,10 +3419,6 @@
           "detail": ""
         },
         {
-          "witness": "option-e-deuteron-delta-lambda-probe.witness.json",
-          "detail": ""
-        },
-        {
           "witness": "option-e-kashiwara-crystal-delta-lambda-probe.witness.json",
           "detail": ""
         },
@@ -3544,6 +3548,14 @@
         },
         {
           "witness": "qbeta-5two-jones-barodd.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "qbeta-5two-leading-odd-datum.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "qbeta-5two-masbaum-cyclotomic.witness.json",
           "detail": ""
         },
         {
@@ -3728,6 +3740,10 @@
         },
         {
           "witness": "qbeta-habiro-integrality-kill-test.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "qbeta-habiro-odd-locus.witness.json",
           "detail": ""
         },
         {
@@ -7915,6 +7931,10 @@
           "detail": ""
         },
         {
+          "witness": "chi-deuteron-free-h6-at-q0-50dps.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "chi-deuteron-h6-at-q0-50dps-matrix-m.witness.json",
           "detail": ""
         },
@@ -7928,6 +7948,10 @@
         },
         {
           "witness": "chi-helium-3-h9-at-q0-50dps.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "chi-helium-4-free-h12-at-q0-50dps.witness.json",
           "detail": ""
         },
         {
@@ -7976,6 +8000,10 @@
         },
         {
           "witness": "pentagon-to-borromean-h4-probe.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "option-e-deuteron-delta-lambda-probe.witness.json",
           "detail": ""
         },
         {

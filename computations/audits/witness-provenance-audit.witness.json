@@ -1,12 +1,12 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-19T00:02:28.628385+00:00",
-  "commitSha": "dcd8299892b77a5c17b4be77dded017be21ef57d",
+  "computedAt": "2026-07-19T03:10:16.085463+00:00",
+  "commitSha": "0f3335b38f3939f0e021462dc87a9ab73cde1ee1",
   "assertions": [
     {
       "name": "no_missing_provenance",
-      "computed": 6,
+      "computed": 3,
       "expected": 0,
       "passed": false,
       "tolerance": 0,
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 11,
+  "durationMs": 14,
   "computation": "witness-provenance-audit",
   "scriptFile": "witness_provenance_audit.py",
   "scriptHash": "2c77ad98e8f6",
@@ -48,13 +48,13 @@
   },
   "data": {
     "counts": {
-      "total_scanned": 2044,
-      "prov_ok": 1915,
+      "total_scanned": 2051,
+      "prov_ok": 1924,
       "prov_audit_exempt": 60,
-      "prov_exempt_no_reader": 62,
-      "prov_missing": 6,
+      "prov_exempt_no_reader": 63,
+      "prov_missing": 3,
       "prov_parse_error": 1,
-      "completeness_ratio": 0.9965753424657534
+      "completeness_ratio": 0.9980497318381277
     },
     "by_verdict": {
       "PROV_OK": [
@@ -388,6 +388,14 @@
         },
         {
           "witness": "alpha-em-d4-equivariance-adjudication.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "alpha-em-f-t1-cover-structure.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "alpha-em-f-t2-burau-at-i.witness.json",
           "missing_fields": []
         },
         {
@@ -1691,6 +1699,10 @@
           "missing_fields": []
         },
         {
+          "witness": "chi-deuteron-free-h6-at-q0-50dps.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "chi-deuteron-h6-at-q0-50dps-matrix-m.witness.json",
           "missing_fields": []
         },
@@ -1716,6 +1728,10 @@
         },
         {
           "witness": "chi-helium-3-h9.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "chi-helium-4-free-h12-at-q0-50dps.witness.json",
           "missing_fields": []
         },
         {
@@ -2135,6 +2151,10 @@
           "missing_fields": []
         },
         {
+          "witness": "deltalambda-demazure-subcrystal-magnitude.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "deltalambda-extensivity-gap-synthesis.witness.json",
           "missing_fields": []
         },
@@ -2148,6 +2168,10 @@
         },
         {
           "witness": "deltalambda-icosahedral-smatrix-magnitude.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "deltalambda-jet-filtration-magnitude.witness.json",
           "missing_fields": []
         },
         {
@@ -5219,6 +5243,14 @@
           "missing_fields": []
         },
         {
+          "witness": "qbeta-5two-leading-odd-datum.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "qbeta-5two-masbaum-cyclotomic.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "qbeta-5two-median-borel-resummation.witness.json",
           "missing_fields": []
         },
@@ -5400,6 +5432,10 @@
         },
         {
           "witness": "qbeta-habiro-integrality-kill-test.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "qbeta-habiro-odd-locus.witness.json",
           "missing_fields": []
         },
         {
@@ -7721,30 +7757,6 @@
       ],
       "PROV_MISSING": [
         {
-          "witness": "canonical-mass-table-242ppb.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "chi-deuteron-free-h6-at-q0-50dps.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "chi-helium-4-free-h12-at-q0-50dps.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
           "witness": "joint-tower-sdp-rust.witness.json",
           "missing_fields": [
             "scriptFile",
@@ -8045,6 +8057,14 @@
         },
         {
           "witness": "bring-coordinate-linking-weight-probe.witness.json",
+          "missing_fields": [
+            "engine",
+            "scriptFile",
+            "commitSha"
+          ]
+        },
+        {
+          "witness": "canonical-mass-table-242ppb.witness.json",
           "missing_fields": [
             "engine",
             "scriptFile",
