@@ -41,6 +41,7 @@ import Mathlib.Analysis.Calculus.SmoothSeries
 import Mathlib.Analysis.SpecialFunctions.Integrals.LogTrigonometric
 import Mathlib.Analysis.Complex.AbelLimit
 import Mathlib.Analysis.SpecialFunctions.Complex.LogBounds
+import Mathlib.Analysis.SumIntegralComparisons
 import QOU.Archimedean.ClausenFunctionMathlibFiller
 
 namespace QOU.Knot
@@ -540,6 +541,99 @@ theorem antitoneOn_log_two_sin :
         (Set.mem_Icc.mpr ⟨by linarith [hu.2], by linarith [hu.1]⟩)
         (by linarith))
   exact Real.log_le_log (by linarith) (by linarith)
+
+/-- **E4c helper (sorry-free).** On the unit grid `[1, c]`, the rescaled
+    `v ↦ log(2 sin(v·h))` inherits E4b's monotonicity when `c·h ≤ π/2`. -/
+theorem monotoneOn_log_two_sin_mul {h : ℝ} (hh : 0 < h) {c : ℝ}
+    (hc : c * h ≤ π / 2) :
+    MonotoneOn (fun v : ℝ => Real.log (2 * Real.sin (v * h))) (Set.Icc 1 c) := by
+  intro u hu v hv huv
+  have h1 : u * h ∈ Set.Ioc 0 (π / 2) :=
+    ⟨by nlinarith [hu.1], by nlinarith [hu.2]⟩
+  have h2 : v * h ∈ Set.Ioc 0 (π / 2) :=
+    ⟨by nlinarith [hv.1], by nlinarith [hv.2]⟩
+  exact monotoneOn_log_two_sin h1 h2 (by nlinarith)
+
+/-- **Saddle brick E4c, rising-half lower bound (sorry-free).** On the shifted
+    window `[π/N, kπ/N]` inside the rising half, the integral is dominated by
+    `π/N` times the right-endpoint log-sine sum — library
+    `MonotoneOn.integral_le_sum_Ico` on the unit grid, transported by the
+    change of variables `u = v·π/N`. (bean qou-x5mg) -/
+theorem integral_le_sum_log_sin {N k : ℕ} (hN : 1 ≤ N) (hk : 1 ≤ k)
+    (hhalf : (k : ℝ) * (π / N) ≤ π / 2) :
+    (∫ u in ((π : ℝ) / N)..((k : ℝ) * (π / N)), Real.log (2 * Real.sin u))
+      ≤ (π / N) * ∑ i ∈ Finset.Ico 1 k,
+          Real.log (2 * Real.sin (((i : ℝ) + 1) * (π / N))) := by
+  have hNpos : (0 : ℝ) < N := by exact_mod_cast hN
+  have hh : (0 : ℝ) < π / N := by positivity
+  have hmono : MonotoneOn (fun v : ℝ => Real.log (2 * Real.sin (v * (π / N))))
+      (Set.Icc ((1 : ℕ) : ℝ) ((k : ℕ) : ℝ)) := by
+    simpa using monotoneOn_log_two_sin_mul hh (c := (k : ℝ)) hhalf
+  have hlib := MonotoneOn.integral_le_sum_Ico (a := 1) (b := k) hk hmono
+  have hcov : (∫ v in ((1 : ℕ) : ℝ)..((k : ℕ) : ℝ),
+        Real.log (2 * Real.sin (v * (π / N))))
+      = (π / N)⁻¹ * ∫ u in ((π : ℝ) / N)..((k : ℝ) * (π / N)),
+          Real.log (2 * Real.sin u) := by
+    rw [intervalIntegral.integral_comp_mul_right
+      (f := fun u => Real.log (2 * Real.sin u)) (ne_of_gt hh)]
+    norm_num
+  have hsum : (∑ i ∈ Finset.Ico 1 k,
+        (fun v : ℝ => Real.log (2 * Real.sin (v * (π / N)))) ((i + 1 : ℕ) : ℝ))
+      = ∑ i ∈ Finset.Ico 1 k,
+          Real.log (2 * Real.sin (((i : ℝ) + 1) * (π / N))) := by
+    refine Finset.sum_congr rfl (fun i _ => ?_)
+    push_cast
+    ring_nf
+  rw [hcov, hsum] at hlib
+  calc (∫ u in ((π : ℝ) / N)..((k : ℝ) * (π / N)), Real.log (2 * Real.sin u))
+      = (π / N) * ((π / N)⁻¹ * ∫ u in ((π : ℝ) / N)..((k : ℝ) * (π / N)),
+          Real.log (2 * Real.sin u)) := by
+        field_simp
+    _ ≤ (π / N) * ∑ i ∈ Finset.Ico 1 k,
+          Real.log (2 * Real.sin (((i : ℝ) + 1) * (π / N))) :=
+        mul_le_mul_of_nonneg_left hlib (le_of_lt hh)
+
+/-- **Saddle brick E4c, rising-half upper bound (sorry-free).** `π/N` times the
+    left-endpoint log-sine sum `Σ_{j=1}^{k}` is dominated by the integral over
+    the widened window `[π/N, (k+1)π/N]` — library
+    `MonotoneOn.sum_le_integral_Ico`, same transport. (bean qou-x5mg) -/
+theorem sum_log_sin_le_integral {N k : ℕ} (hN : 1 ≤ N) (hk : 1 ≤ k)
+    (hhalf : ((k : ℝ) + 1) * (π / N) ≤ π / 2) :
+    (π / N) * ∑ i ∈ Finset.Ico 1 (k + 1),
+        Real.log (2 * Real.sin ((i : ℝ) * (π / N)))
+      ≤ ∫ u in ((π : ℝ) / N)..(((k : ℝ) + 1) * (π / N)),
+          Real.log (2 * Real.sin u) := by
+  have hNpos : (0 : ℝ) < N := by exact_mod_cast hN
+  have hh : (0 : ℝ) < π / N := by positivity
+  have hmono : MonotoneOn (fun v : ℝ => Real.log (2 * Real.sin (v * (π / N))))
+      (Set.Icc ((1 : ℕ) : ℝ) (((k + 1 : ℕ)) : ℝ)) := by
+    have := monotoneOn_log_two_sin_mul hh (c := (k : ℝ) + 1) hhalf
+    have hcast : (((k + 1 : ℕ)) : ℝ) = (k : ℝ) + 1 := by push_cast; ring
+    simpa [hcast] using this
+  have hlib := MonotoneOn.sum_le_integral_Ico (a := 1) (b := k + 1)
+    (by omega) hmono
+  have hcov : (∫ v in ((1 : ℕ) : ℝ)..(((k + 1 : ℕ)) : ℝ),
+        Real.log (2 * Real.sin (v * (π / N))))
+      = (π / N)⁻¹ * ∫ u in ((π : ℝ) / N)..(((k : ℝ) + 1) * (π / N)),
+          Real.log (2 * Real.sin u) := by
+    rw [intervalIntegral.integral_comp_mul_right
+      (f := fun u => Real.log (2 * Real.sin u)) (ne_of_gt hh)]
+    push_cast
+    norm_num
+  have hsum : (∑ x ∈ Finset.Ico 1 (k + 1),
+        (fun v : ℝ => Real.log (2 * Real.sin (v * (π / N)))) ((x : ℕ) : ℝ))
+      = ∑ i ∈ Finset.Ico 1 (k + 1),
+          Real.log (2 * Real.sin ((i : ℝ) * (π / N))) := by
+    refine Finset.sum_congr rfl (fun i _ => rfl)
+  rw [hcov, hsum] at hlib
+  calc (π / N) * ∑ i ∈ Finset.Ico 1 (k + 1),
+        Real.log (2 * Real.sin ((i : ℝ) * (π / N)))
+      ≤ (π / N) * ((π / N)⁻¹ * ∫ u in ((π : ℝ) / N)..(((k : ℝ) + 1) * (π / N)),
+          Real.log (2 * Real.sin u)) :=
+        mul_le_mul_of_nonneg_left hlib (le_of_lt hh)
+    _ = ∫ u in ((π : ℝ) / N)..(((k : ℝ) + 1) * (π / N)),
+          Real.log (2 * Real.sin u) := by
+        field_simp
 
 /-- **The series Clausen's derivative** `Cl_2'(θ) = -log(2 sin(θ/2))` for
     `θ ∈ (0, 2π)` — the derivative the filler flagged as needing Fourier
