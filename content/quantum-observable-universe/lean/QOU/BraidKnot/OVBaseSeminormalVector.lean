@@ -80,4 +80,28 @@ theorem polytabloid_swap_colStab (t : Specht.Tableau μ) {j s : Fin (Specht.nOf 
     Equiv.Perm.sign_swap hjs]
   simp
 
+/-! ## Brick 3a — the same-column contribution of the JM sum
+
+Splitting the reduction sum `Σ_{j<s} e_{(j s)·t}` (brick 1) by whether `swap j s`
+lies in the column stabilizer: the **same-column** part evaluates outright to
+`(count) · (−e_t)` via brick 2, isolating the **off-column** (Garnir) part as the
+sole remaining debt toward the eigen-equation. -/
+
+/-- **Same-column contribution.** The same-column part of the JM polytabloid sum
+    (`j < s` with `swap j s ∈ colStab t`) is `(count) · (−e_t)` — each term is
+    `−e_t` by `polytabloid_swap_colStab`. -/
+theorem sameColumn_sum_polytabloid (s : Fin (Specht.nOf μ)) (t : Specht.Tableau μ) :
+    ∑ j ∈ Finset.univ.filter (fun j : Fin (Specht.nOf μ) =>
+        j.val < s.val ∧ Equiv.swap j s ∈ Specht.colStab t),
+          Specht.polytabloid (k := k) ((Equiv.swap j s) • t)
+      = (Finset.univ.filter (fun j : Fin (Specht.nOf μ) =>
+          j.val < s.val ∧ Equiv.swap j s ∈ Specht.colStab t)).card
+            • (- Specht.polytabloid (k := k) t) := by
+  classical
+  rw [← Finset.sum_const]
+  refine Finset.sum_congr rfl (fun j hj => ?_)
+  rw [Finset.mem_filter] at hj
+  obtain ⟨_, hlt, hmem⟩ := hj
+  exact polytabloid_swap_colStab t (ne_of_lt (Fin.lt_def.mpr hlt)) hmem
+
 end QOU.BraidKnot.OVBaseSeminormalVector
