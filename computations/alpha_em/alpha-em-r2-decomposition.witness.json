@@ -1,0 +1,46 @@
+{
+  "computation": "alpha-em-r2-decomposition",
+  "description": "R2 decomposition under the 2026-07-19 ruling. R2a (one KL insertion) corpus-derived (#1511+B4a); R2b (home = H^1(Bring)) by expansion-coherence from the canonical n=1 identification (zero retuning, ratio 16/3); R2c (weight = 1/2 a0) by universality (#1511) + pi-origin (#3909) + rho-split (B4b). Residue R2-core: 'standard Schwinger proper-time measure, unit normalization, one per-mode unit on the pair' \u2014 a QFT-dictionary convention, no longer about Bring/Hecke/F. R2 remains unproven; nothing asserted; nothing wired.",
+  "auditOnly": "docs/audits/2026-07-19-alpha-em-r2-decomposition.md",
+  "tier": "symbolic-exact leg re-verification + decomposition bookkeeping; R2 remains unproven (owner ruling)",
+  "computedAt": "2026-07-19T04:03:00.514133+00:00",
+  "commitSha": "387cbf3d3e8974820c2ee3986e1a936a153dbf79",
+  "engine": "sympy",
+  "engineVersion": "1.14.0",
+  "scriptFile": "alpha_em_r2_decomposition_probe.py",
+  "scriptHash": "49471e12177f",
+  "assertions": [
+    {
+      "name": "R2a_insertion_derived",
+      "passed": true,
+      "detail": "the one-loop coefficient of the DERIVED Habiro element [2]_q(1\u2212h\u00b2\u03b1) (#1511) is \u2212[2]_q\u00b7h\u00b2 \u2014 and [2]_q is the KL eigenvalue of b_s on e\u208a (B4a): 'one loop = one KL insertion' is corpus-derived arithmetic, NOT part of the unproven core"
+    },
+    {
+      "name": "R2b_coherence_zero_retuning",
+      "passed": true,
+      "detail": "n=1 (b\u2081/Area, CANONICAL: sorry-free Lean #2114/#3920) and n=2 (\u00bd\u00b7a\u2080) are coefficients of ONE self-energy expansion; a single expansion does not change spaces between orders, so the n=2 home is the same H\u00b9(Bring). Zero-retuning evidence: both live in one (b\u2081, Area, a\u2080) vocabulary, exact ratio 16/3"
+    },
+    {
+      "name": "R2c_universality_squeeze",
+      "passed": true,
+      "detail": "(i) #1511's binomial coefficients are geometry-independent \u27f9 x carries NO Bring moduli (not 1/Area, not b\u2081-dependent) \u2014 x is UNIVERSAL; (ii) #3909 DERIVED that the \u03c0-power \u22121 has exactly one origin among the adjudicated candidates \u2014 the heat kernel (4\u03c0s)^{\u2212d/2} \u27f9 x = rational\u00b7a\u2080; (iii) B4b's \u03c1-split FORCES the rational = \u00bd given the pair premise \u27f9 x = \u03b1/(8\u03c0) with no rational degree of freedom remaining \u2014 exact"
+    },
+    {
+      "name": "R2_core_named",
+      "passed": true,
+      "detail": "the unproven residue, at its sharpest: 'the framework's loop expansion weighs proper time by the STANDARD Schwinger measure with unit normalization \u2014 one per-mode unit on the doubled pair.' A QFT-dictionary normalization convention: no longer about Bring, Hecke, or F (all those legs derived/canonized). Per the 2026-07-19 owner ruling it is NOT proved and is not asserted here"
+    }
+  ],
+  "allPassed": true,
+  "result": {
+    "R2a": "derived (#1511 element + B4a KL eigenvalue)",
+    "R2b": "coherence from the canonical n=1 home; zero retuning (16/3 exact)",
+    "R2c": "universality (#1511) + pi-origin (#3909) + rho-split (B4b) => x = alpha/(8pi), no rational freedom",
+    "R2_core": "standard Schwinger proper-time measure, unit normalization, per-mode unit on the pair \u2014 QFT-dictionary convention; OPEN",
+    "verdict": "R2 DECOMPOSED \u2014 THE UNPROVEN CORE SHRINKS TO A QFT-NORMALIZATION CONVENTION (scope-(a); R2 remains UNPROVEN per the 2026-07-19 owner ruling; no fit; nothing wired): of R2's four legs, R2a (one loop = one KL insertion) is corpus-derived arithmetic; R2b (the n=2 home = H\u00b9(Bring)) follows by expansion-coherence from the ALREADY-CANONICAL n=1 identification with zero-retuning evidence; R2c (the weight is rational\u00b7a\u2080 with rational = \u00bd) follows from the universality of the derived Habiro element (#1511) + the derived \u03c0-origin adjudication (#3909) + the proved \u03c1-split (B4b). The residue \u2014 R2-core \u2014 is precisely: 'the loop expansion uses the standard Schwinger proper-time measure with unit normalization, one per-mode unit on the pair' \u2014 a textbook-QFT dictionary convention, no longer a statement about Bring/Hecke/F. Smaller, sharper, still open, still owner-gated. NO tier change."
+  },
+  "context": {
+    "ruling": "2026-07-19: R2 is not lean/derived proved \u2014 respected throughout; this probe shrinks and names the core, it does not prove it",
+    "scope_guard": "R2b is coherence (not a theorem); R2-core open; no fit; nothing wired; 1/(8pi) stays phase-4"
+  }
+}
