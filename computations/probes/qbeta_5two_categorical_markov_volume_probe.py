@@ -75,9 +75,10 @@ BRAID_4_1 = [1, -2, 1, -2]         # (σ₁σ₂⁻¹)², amphichiral, writhe 0 
 _q = sp.symbols("q", positive=True)
 
 
-def _seminormal():
+def _seminormal(q=None):
     """2×2 Hoefsmit seminormal blocks of (σ₁, σ₂) on V_{(2,1)} of H₃(q)."""
-    q = _q
+    if q is None:
+        q = _q
     s0 = sp.Matrix([[q, 0], [0, -1 / q]])
     a = -1 / (q * (q ** 2 + 1))
     b = sp.Integer(1)
@@ -91,8 +92,8 @@ def e_sum(word):
     return sum(1 if g > 0 else -1 for g in word)
 
 
-def chi_21(word):
-    s0, s1 = _seminormal()
+def chi_21(word, q=None):
+    s0, s1 = _seminormal(q)
     gen = {1: s0, 2: s1, -1: s0.inv(), -2: s1.inv()}
     M = sp.eye(2)
     for g in word:
@@ -129,41 +130,21 @@ def ocneanu_weights():
     h = q - 1 / q
     z = 1 / (t + 1 / t)
 
-    def s():
-        s0 = sp.Matrix([[q, 0], [0, -1 / q]])
-        a = -1 / (q * (q ** 2 + 1))
-        c = (q ** 2 - q + 1) * (q ** 2 + q + 1) / (q ** 2 + 1) ** 2
-        dd = q ** 3 / (q ** 2 + 1)
-        return s0, sp.Matrix([[a, sp.Integer(1)], [c, dd]])
-
-    s0, s1 = s()
-    gen = {1: s0, 2: s1, -1: s0.inv(), -2: s1.inv()}
-
-    def c21(word):
-        M = sp.eye(2)
-        for g in word:
-            M = M * gen[g]
-        return sp.trace(M)
-
-    def es(word):
-        return sum(1 if g > 0 else -1 for g in word)
-
-    c3 = lambda w: q ** es(w)
-    c111 = lambda w: (-1 / q) ** es(w)
+    c3 = lambda w: q ** e_sum(w)
+    c111 = lambda w: (-1 / q) ** e_sum(w)
     W3, W21, W111 = sp.symbols("W3 W21 W111")
     rows = [([], sp.Integer(1)), ([1], z), ([1, 2, 1], h * z * z + z)]
-    sol = sp.solve([sp.Eq(W3 * c3(w) + W21 * c21(w) + W111 * c111(w), tau)
+    sol = sp.solve([sp.Eq(W3 * c3(w) + W21 * chi_21(w, q) + W111 * c111(w), tau)
                     for w, tau in rows], [W3, W21, W111], dict=True)[0]
     Wt = {"3": sol[W3], "21": sol[W21], "111": sol[W111]}
 
     def trM(word):
-        return sp.cancel(Wt["3"] * c3(word) + Wt["21"] * c21(word) + Wt["111"] * c111(word))
+        return sp.cancel(Wt["3"] * c3(word) + Wt["21"] * chi_21(word, q) + Wt["111"] * c111(word))
 
     # held-out Ocneanu gate: elements NOT used in the solve must reproduce τ.
     held = all(sp.simplify(trM(w) - exp) == 0
                for w, exp in [([1, 2], z * z), ([2, 1, 2], h * z * z + z), ([2], z)])
-    tq = sp.symbols("q", positive=True)  # re-express in q for reporting
-    Wq = {k: sp.simplify(v.subs(t, sp.sqrt(tq))) for k, v in Wt.items()}
+    Wq = {k: sp.simplify(v.subs(t, sp.sqrt(_q))) for k, v in Wt.items()}  # re-express in q
     return Wq, held
 
 
