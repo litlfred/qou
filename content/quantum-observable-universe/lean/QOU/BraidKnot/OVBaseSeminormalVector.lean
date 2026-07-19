@@ -100,6 +100,38 @@ theorem colStab_subset_sum_rep_polytabloid (t : Specht.Tableau μ)
   rw [rep_colStab_polytabloid t (hH σ hσ), smul_smul, ← Units.val_mul,
     Int.units_mul_self, Units.val_one, one_smul]
 
+/-- **The outer star-sum evaluation.** The signed transposition sum over the
+    `|C|+1` coset representatives `{(x\,s) : x ∈ {s} ∪ C}` (with `(s\,s) = 1`)
+    evaluates to `e_t − ∑_{j∈C} e_{(j\,s)·t}`: the `x = s` term contributes `+e_t`
+    (identity), and each `x = j ∈ C` term contributes `−e_{(j\,s)·t}`
+    (`sgn(swap j s) = −1`, `rep_polytabloid`). This is the RHS of the single-column
+    Garnir cancellation `0 = |C|!·(e_t − ∑_{j∈C} e_{(j\,s)·t})`; collision-independent. -/
+theorem starSum_rep_polytabloid (t : Specht.Tableau μ)
+    (C : Finset (Fin (Specht.nOf μ))) (s : Fin (Specht.nOf μ)) (hs : s ∉ C) :
+    ∑ x ∈ insert s C, (Equiv.Perm.sign (Equiv.swap x s) : ℤ) •
+        Specht.Mtab.rep (k := k) μ (Equiv.swap x s) (Specht.polytabloid (k := k) t)
+      = Specht.polytabloid (k := k) t
+        - ∑ j ∈ C, Specht.polytabloid (k := k) ((Equiv.swap j s) • t) := by
+  classical
+  rw [Finset.sum_insert hs]
+  have hid : (Equiv.Perm.sign (Equiv.swap s s) : ℤ) •
+      Specht.Mtab.rep (k := k) μ (Equiv.swap s s) (Specht.polytabloid (k := k) t)
+      = Specht.polytabloid (k := k) t := by
+    rw [Equiv.swap_self]
+    show (Equiv.Perm.sign (1 : Equiv.Perm (Fin (Specht.nOf μ))) : ℤ) •
+        Specht.Mtab.rep (k := k) μ 1 (Specht.polytabloid (k := k) t) = _
+    simp
+  rw [hid]
+  have hC : ∑ j ∈ C, (Equiv.Perm.sign (Equiv.swap j s) : ℤ) •
+        Specht.Mtab.rep (k := k) μ (Equiv.swap j s) (Specht.polytabloid (k := k) t)
+      = - ∑ j ∈ C, Specht.polytabloid (k := k) ((Equiv.swap j s) • t) := by
+    rw [← Finset.sum_neg_distrib]
+    refine Finset.sum_congr rfl (fun j hj => ?_)
+    have hjs : j ≠ s := fun h => hs (h ▸ hj)
+    rw [Equiv.Perm.sign_swap hjs, QOU.BraidKnot.JucysMurphy.rep_polytabloid]
+    simp
+  rw [hC, ← sub_eq_add_neg]
+
 /-! ## Brick 3a — the same-column contribution of the JM sum
 
 Splitting the reduction sum `Σ_{j<s} e_{(j s)·t}` (brick 1) by whether `swap j s`
