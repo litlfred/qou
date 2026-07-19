@@ -86,11 +86,70 @@ though it isolates the words, does not make any individual word tractable.
    `tr(AB) = tr(BA)` (`Matrix.trace_mul_comm`). Heavier setup, but no
    per-element computation.
 
+## Both forward paths assessed (2026-07-19 follow-up — owner asked to try "both")
+
+After the whnf-explosion finding, both candidate paths were investigated against
+the sibling algebra framework that landed on `origin/main`
+(`HeckeH2/H3AlgebraInstance`, `HeckeH3AlgebraLaws`, `HeckeH4StabilizationRung`,
+`HeckeBraidedCategoryScaffold`). Neither closes `trM_cyclic` in this sandbox;
+the investigation *sharpened* why.
+
+### The wall is Fin-24 depth-6 grinding, not cyclicity
+
+`HeckeH3AlgebraLaws.mulNF_assoc` (Fin 6) is proved `funext i; fin_cases i <;>
+simp [...] <;> ring` — it works because each of the 6 *output entries* is
+computed independently and the H₃ words are depth ≤ 3. Cyclicity is a **scalar**
+(the `trM` sum collapses the vector — no `funext` to split), and at Fin 24 the
+words are **depth 6**. Associativity at Fin 24 would explode by the *same*
+mechanism; the main-branch H₄ rung only proves *local* depth-1/2 facts
+(`mulσ_hecke`, `braid`, `far_commute`, `stabilizes`, `markov_σ₂`). So the
+blocker is intrinsic to Fin-24 depth-6 concrete evaluation — no per-tactic
+cleverness escapes it.
+
+### Approach 1 — Matrix.Reflection re-encode: BLOCKED + dubious
+
+`Mathlib.Data.Matrix.Reflection` (List-fold evaluation, the one route that could
+beat `Fin.sum_univ_succ`) imports `Mathlib.Data.Matrix.Notation`, whose olean is
+**absent** from the restored `lake-cache` and whose source **404s at the pinned
+rev `f897ebc`** (the module was reorganized upstream). Obtaining it needs a full
+`lake build` (which wipes the restored oleans — the AGENTS.md hazard) or a
+network cache fetch (was 403). Beyond availability: reflection is engineered for
+*small* matrices (2–4×4); a depth-6 product of **24×24** matrices is ~83k kernel
+multiplications, so feasibility is doubtful even with a full build. Not pursued
+— high cost, dubious payoff.
+
+### Approach 2 — abstract regular-representation trace: reduces to the OPEN general-n class
+
+`origin/main` now makes the NF module a genuine `Ring`/`Algebra` (`H3A`, mul =
+`mulNF`, `mulNF_assoc`/unit/bilinearity all sorry-free) and defines the
+`MarkovStabilization` class. On such an algebra, the **regular-representation
+trace** `a ↦ trace(leftMul a)` is cyclic for free (`Matrix.trace_mul_comm`).
+**But `trM4` is not that trace** — it is the Ocneanu/Markov functional with the
+specific weights `TRM4`, which are *not* the regular-rep weights. Identifying
+`trM4` with a cyclic-by-construction trace therefore still requires either (a)
+the blocked Fin-24 computation, or (b) the standard **Ocneanu induction**
+(`tr(ab)=tr(ba)` by induction on word length via `tr(x·σ_top·y)=z·tr(xy)`) —
+which is exactly the general-n `MarkovStabilization` instance that main leaves
+**OPEN** (its binders quantify the H_∞ generator family). So the abstract route
+does not shortcut the open item; it *is* the open item.
+
+### Convergence / coordination
+
+This confirms the main-branch direction — build the abstract algebra +
+`MarkovStabilization` framework and prove cyclicity by Ocneanu induction — is
+the correct and only path; brute Fin-24 computation is a dead end. This module's
+`MarkovTraceH4.lean` supplies the concrete **n=4 `mulNF`** (which main's H₄ rung
+does *not* — main did n=3 algebra + n=4 mulσ/trace only), so it is complementary
+scaffolding, not a duplicate; `trM_cyclic` should ultimately be discharged as an
+instance of the abstract cyclic-trace lemma once that lemma is proved on the
+`MarkovStabilization` class, rather than re-attempted by computation here.
+
 ## Disposition
 
-- `trM_cyclic` stays an honest cited `sorry`; its docstring is updated with the
-  precise `whnf`-explosion finding and the two forward paths.
+- `trM_cyclic` stays an honest cited `sorry`; its docstring points at the
+  abstract-route reduction (not a computation retry).
 - No wiring, no axiom, no vacuous body. The other H₄ results (`trM_add`,
   `trM_smul`, `trM_markov_σ2`) remain sorry-free.
-- Bean `qou-g6vb` records the finding; the re-encode is the next actionable step
-  once a full Mathlib build is available.
+- Bean `qou-g6vb` records the full assessment. Next actionable step is upstream:
+  an abstract cyclic-trace lemma on `MarkovStabilization` (Ocneanu induction),
+  which discharges `trM_cyclic` for every n at once — not an H₄-specific retry.

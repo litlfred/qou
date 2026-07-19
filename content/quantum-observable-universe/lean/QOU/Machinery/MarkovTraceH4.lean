@@ -110,13 +110,19 @@ theorem trM_markov_σ2 (z h : R) (v : Fin 24 → R) (z1 : v 1 = 0) (z4 : v 4 = 0
     (exponential, non-memoized).  Six strategies were shown infeasible (brute
     `simp`; per-word `simp`; per-word `rfl`; incremental `have`-chain `rfl`;
     incremental `fin_cases`; all at ≥200k, one at 4M heartbeats).  The tractable
-    path is a representation change — re-encode the generator right-actions as
-    concrete `Matrix (Fin 24) (Fin 24) R` and evaluate via
-    `Mathlib.Data.Matrix.Reflection` (List-fold, not `Fin.sum_univ_succ`), or an
-    abstract regular-representation trace argument (`tr(AB)=tr(BA)` on left-mult
-    operators).  The reflection route needs the `Matrix.Notation` olean, absent
-    from the sandbox cache, so it awaits a full-build session.  Held as an honest
-    `sorry`, not a vacuous `True`. -/
+    path is **not** more tactic cleverness (the `mulNF_assoc` contrast shows the
+    wall is Fin-24 depth-6 grinding itself — associativity would explode too) but
+    the **abstract Ocneanu-induction cyclic-trace argument** on the
+    `MarkovStabilization` algebra framework (`HeckeBraidedCategoryScaffold`,
+    `HeckeH3AlgebraInstance`): `tr(ab)=tr(ba)` by induction on word length via the
+    Markov reduction `tr(x·σ_top·y)=z·tr(xy)`.  That is the general-n open class;
+    once its abstract cyclic-trace lemma is proved, `trM_cyclic` follows for every
+    n as an instance.  (The `Matrix.Reflection` re-encode was assessed and
+    rejected: its `Matrix.Notation` dep is absent from the sandbox cache and
+    reflection is engineered for small matrices, not 24×24 depth-6.  The
+    regular-rep trace is cyclic for free but is *not* this Ocneanu functional.)
+    Full assessment: `docs/audits/2026-07-19-h4-cyclicity-whnf-explosion.md`.
+    Held as an honest `sorry`, not a vacuous `True`. -/
 -- Ref: [manuscript] §mass-theory (H₄ Markov trace); compute hecke_regular_nf_table.py self_validate
 theorem trM_cyclic (z h : R) (u v : Fin 24 → R) :
     trM z h (mulNF h u v) = trM z h (mulNF h v u) := by
