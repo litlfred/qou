@@ -190,6 +190,34 @@ retry). That work is the general-n `MarkovStabilization` instance `main` already
 tracks as OPEN; this is where the effort converges, and doing it here would
 duplicate the active sibling effort.
 
+## Option 2 landed — the bilinear reduction is proved sorry-free (2026-07-19)
+
+Bean `qou-svnb` executed: `trM_cyclic` is no longer a monolithic cited `sorry`.
+It is now **derived** from a proved, Fin-24-free reduction plus a single,
+precisely-scoped residual. Added to `MarkovTraceH4.lean` (all sorry-free,
+`lean`-direct exit 0):
+
+- Generator linearity `mulσ{0,1,2}_{add,smul,zero}` (depth-1, `fin_cases`).
+- `mulNF` bilinearity `mulNF_{add,smul}_{left,right}` + `mulNF_zero_left`, proved
+  with **`mulσ` kept opaque** — only the linearity lemmas fire, so the depth-6
+  `whnf` wall is never touched (the insight the six failed strategies lacked).
+- Basis decomposition `basis_decomp`, sum-push `mulNF_sum_{left,right}` / `trM_sum`.
+- `trM_mulNF_gram` : `tr_M(u·v) = ∑_{i,j} u_i v_j·G_{i,j}` (`G_{i,j}=tr_M(b_i·b_j)`).
+- `trM_cyclic_of_gram_symm` : `(∀ i j, G_{i,j}=G_{j,i}) → ∀ u v, tr_M(u·v)=tr_M(v·u)`
+  — **sorry-free**, by bilinear expansion + `Finset.sum_comm` + index swap.
+
+`trM_cyclic := trM_cyclic_of_gram_symm z h (gram_symm z h) u v`. The lone
+remaining `sorry` is `gram_symm` — the finite `24²` (276 nontrivial) Gram-symmetry
+base identities `tr_M(b_i·b_j)=tr_M(b_j·b_i)`. Each is `tr_M` of a depth-≤6 word on
+a basis vector, still blocked by the value-independent `whnf` wall (confirmed
+above). So the sorry **count is unchanged (1)**, but its *content* shrank from
+"all of cyclicity" to "a finite symmetric-Gram base," and the whole bilinear half
+is now machine-checked. This is the concrete-basis instance of the reduction the
+abstract `MarkovStabilization` lemma (option 1, `qou-0vsu`) would supply
+generically; whichever lands the Gram base / abstract lemma first closes it.
+Not laundered: a proved reduction is not a proved theorem — `gram_symm` is an
+honest cited `sorry`, machine-validated in Python only.
+
 ## Disposition
 
 - `trM_cyclic` stays an honest cited `sorry`; its docstring points at the

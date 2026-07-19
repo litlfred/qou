@@ -1,10 +1,11 @@
 ---
 # qou-svnb
 title: 'F4 option-2: prove abstract cyclic_iff_gram_symm reduction; refactor trM_cyclic into proved-reduction + scoped Gram residual'
-status: todo
+status: in-progress
 type: task
+priority: normal
 created_at: 2026-07-19T03:00:12Z
-updated_at: 2026-07-19T03:00:12Z
+updated_at: 2026-07-19T06:19:25Z
 ---
 
 
@@ -64,3 +65,15 @@ abstract MarkovStabilization cyclic-trace lemma (option-1) supplies generically.
 If option-1 lands the abstract lemma first, option-2 is subsumed. If option-2
 lands first, it is the concrete-basis instance of that reduction. OK to pursue
 in parallel (different route, different context).
+
+## LANDED (2026-07-19) — reduction proved sorry-free
+trM_cyclic is now DERIVED (no new sorry) from the sorry-free reduction
+trM_cyclic_of_gram_symm + single residual gram_symm. All added lemmas compile
+(lean-direct exit 0): mulσk_{add,smul,zero}, mulNF_{add,smul}_{left,right},
+mulNF_zero_left, e, basis_decomp, mulNF_sum_{left,right}, trM_sum,
+trM_mulNF_{left,right}_expand, trM_mulNF_gram, trM_cyclic_of_gram_symm.
+KEY: mulNF bilinearity proved with mulσ kept OPAQUE (only linearity lemmas fire)
+— never touches the depth-6 whnf wall. Sorry count unchanged (1) but content
+shrank from "all cyclicity" to the finite 276-entry Gram-symmetry base
+(gram_symm), still whnf-blocked. Stop-condition was NOT hit — bilinearity and
+expansion did NOT grind. Honest partial as planned; not a closure. Audit updated.

@@ -1,4 +1,5 @@
 import Mathlib.Algebra.BigOperators.Fin
+import Mathlib.Algebra.BigOperators.Pi
 import Mathlib.Data.Fin.VecNotation
 import Mathlib.Tactic.Ring
 import Mathlib.Tactic.FinCases
@@ -95,37 +96,147 @@ theorem trM_markov_σ2 (z h : R) (v : Fin 24 → R) (z1 : v 1 = 0) (z4 : v 4 = 0
     z17, z18, z19, z20, z21, z22, z23]
   ring
 
-/-- **(M2) Trace cyclicity** `tr_M(u·v) = tr_M(v·u)` — the defining trace property.
-    Machine-validated in the compute infra
-    (`computations/markov/hecke_regular_nf_table.py`, `self_validate`: cyclicity holds
-    on all sampled pairs, alongside the Hecke + braid + commutation relations).
+/-! ## Bilinearity machinery for the cyclicity reduction
 
-    Formalization status (tactic study 2026-07-19, bean `qou-g6vb`, audit
-    `docs/audits/2026-07-19-h4-cyclicity-whnf-explosion.md`): the obstruction is a
-    **kernel/elaborator `whnf` explosion**, not merely a `ring`-size issue.  The
-    bilinearity reduction *does* isolate each side into 24 per-word functionals
-    `tr_M(W_j u)` (linearity is cheap), but evaluating a single `W_j` — a depth-≤6
-    composition of the `mulσ` `![…]`-vectors — already times out: the top-down
-    `Matrix.cons` indexing re-derives inner-word entries per outer index
-    (exponential, non-memoized).  Six strategies were shown infeasible (brute
-    `simp`; per-word `simp`; per-word `rfl`; incremental `have`-chain `rfl`;
-    incremental `fin_cases`; all at ≥200k, one at 4M heartbeats).  The tractable
-    path is **not** more tactic cleverness (the `mulNF_assoc` contrast shows the
-    wall is Fin-24 depth-6 grinding itself — associativity would explode too) but
-    the **abstract Ocneanu-induction cyclic-trace argument** on the
-    `MarkovStabilization` algebra framework (`HeckeBraidedCategoryScaffold`,
-    `HeckeH3AlgebraInstance`): `tr(ab)=tr(ba)` by induction on word length via the
-    Markov reduction `tr(x·σ_top·y)=z·tr(xy)`.  That is the general-n open class;
-    once its abstract cyclic-trace lemma is proved, `trM_cyclic` follows for every
-    n as an instance.  (The `Matrix.Reflection` re-encode was assessed and
-    rejected: its `Matrix.Notation` dep is absent from the sandbox cache and
-    reflection is engineered for small matrices, not 24×24 depth-6.  The
-    regular-rep trace is cyclic for free but is *not* this Ocneanu functional.)
-    Full assessment: `docs/audits/2026-07-19-h4-cyclicity-whnf-explosion.md`.
-    Held as an honest `sorry`, not a vacuous `True`. -/
--- Ref: [manuscript] §mass-theory (H₄ Markov trace); compute hecke_regular_nf_table.py self_validate
-theorem trM_cyclic (z h : R) (u v : Fin 24 → R) :
+The Fin-24-free half of trace cyclicity.  Each generator right-action `mulσk` is
+`R`-linear (depth-1, proved by `fin_cases` over the 24 entries); `mulNF` is then
+`R`-bilinear with the `mulσk` **kept opaque** — only their linearity lemmas are
+used, so the depth-6 `whnf` wall is never touched.  This lifts to the Gram
+expansion `tr_M(u·v) = ∑_{i,j} u_i v_j · G_{i,j}` (`G_{i,j} = tr_M(b_i·b_j)`),
+from which cyclicity reduces to symmetry of `G` (`trM_cyclic_of_gram_symm`). -/
+
+theorem mulσ0_add (h : R) (u u' : Fin 24 → R) : mulσ0 h (u + u') = mulσ0 h u + mulσ0 h u' := by
+  funext i; fin_cases i <;> simp [mulσ0, Pi.add_apply] <;> ring
+theorem mulσ1_add (h : R) (u u' : Fin 24 → R) : mulσ1 h (u + u') = mulσ1 h u + mulσ1 h u' := by
+  funext i; fin_cases i <;> simp [mulσ1, Pi.add_apply] <;> ring
+theorem mulσ2_add (h : R) (u u' : Fin 24 → R) : mulσ2 h (u + u') = mulσ2 h u + mulσ2 h u' := by
+  funext i; fin_cases i <;> simp [mulσ2, Pi.add_apply] <;> ring
+theorem mulσ0_smul (h c : R) (u : Fin 24 → R) : mulσ0 h (c • u) = c • mulσ0 h u := by
+  funext i; fin_cases i <;> simp [mulσ0, Pi.smul_apply, smul_eq_mul] <;> ring
+theorem mulσ1_smul (h c : R) (u : Fin 24 → R) : mulσ1 h (c • u) = c • mulσ1 h u := by
+  funext i; fin_cases i <;> simp [mulσ1, Pi.smul_apply, smul_eq_mul] <;> ring
+theorem mulσ2_smul (h c : R) (u : Fin 24 → R) : mulσ2 h (c • u) = c • mulσ2 h u := by
+  funext i; fin_cases i <;> simp [mulσ2, Pi.smul_apply, smul_eq_mul] <;> ring
+theorem mulσ0_zero (h : R) : mulσ0 h (0 : Fin 24 → R) = 0 := by funext i; fin_cases i <;> simp [mulσ0]
+theorem mulσ1_zero (h : R) : mulσ1 h (0 : Fin 24 → R) = 0 := by funext i; fin_cases i <;> simp [mulσ1]
+theorem mulσ2_zero (h : R) : mulσ2 h (0 : Fin 24 → R) = 0 := by funext i; fin_cases i <;> simp [mulσ2]
+
+/-- `mulNF` is additive in its left argument (`mulσ` kept opaque). -/
+theorem mulNF_add_left (h : R) (u u' v : Fin 24 → R) :
+    mulNF h (u + u') v = mulNF h u v + mulNF h u' v := by
+  funext i; simp only [mulNF, mulσ0_add, mulσ1_add, mulσ2_add, Pi.add_apply]; ring
+/-- `mulNF` is additive in its right argument. -/
+theorem mulNF_add_right (h : R) (u v v' : Fin 24 → R) :
+    mulNF h u (v + v') = mulNF h u v + mulNF h u v' := by
+  funext i; simp only [mulNF, Pi.add_apply]; ring
+/-- `mulNF` is homogeneous in its left argument. -/
+theorem mulNF_smul_left (h c : R) (u v : Fin 24 → R) :
+    mulNF h (c • u) v = c • mulNF h u v := by
+  funext i; simp only [mulNF, mulσ0_smul, mulσ1_smul, mulσ2_smul, Pi.smul_apply, smul_eq_mul]; ring
+/-- `mulNF` is homogeneous in its right argument. -/
+theorem mulNF_smul_right (h c : R) (u v : Fin 24 → R) :
+    mulNF h u (c • v) = c • mulNF h u v := by
+  funext i; simp only [mulNF, Pi.smul_apply, smul_eq_mul]; ring
+theorem mulNF_zero_left (h : R) (v : Fin 24 → R) : mulNF h (0 : Fin 24 → R) v = 0 := by
+  funext i; simp only [mulNF, mulσ0_zero, mulσ1_zero, mulσ2_zero, Pi.zero_apply]; ring
+
+/-- The standard basis vector `e i = b_i` (the `i`-th NF basis element). -/
+def e (i : Fin 24) : Fin 24 → R := Pi.single i (1 : R)
+
+/-- Basis decomposition `u = ∑ᵢ uᵢ · eᵢ`. -/
+theorem basis_decomp (u : Fin 24 → R) : u = ∑ i, u i • (e (R := R) i) := by
+  funext j
+  rw [Finset.sum_apply]
+  simp [e, Pi.single_apply, smul_eq_mul, Finset.sum_ite_eq]
+
+/-- `mulNF · v` commutes with finite sums in the left argument. -/
+theorem mulNF_sum_left (h : R) (s : Finset (Fin 24)) (f : Fin 24 → (Fin 24 → R)) (v : Fin 24 → R) :
+    mulNF h (∑ i ∈ s, f i) v = ∑ i ∈ s, mulNF h (f i) v := by
+  induction s using Finset.induction with
+  | empty => simp [mulNF_zero_left]
+  | @insert a s h1 ih => rw [Finset.sum_insert h1, Finset.sum_insert h1, mulNF_add_left, ih]
+
+/-- `mulNF w ·` commutes with finite sums in the right argument. -/
+theorem mulNF_sum_right (h : R) (w : Fin 24 → R) (s : Finset (Fin 24)) (f : Fin 24 → (Fin 24 → R)) :
+    mulNF h w (∑ j ∈ s, f j) = ∑ j ∈ s, mulNF h w (f j) := by
+  induction s using Finset.induction with
+  | empty => funext i; simp [mulNF]
+  | @insert a s h1 ih => rw [Finset.sum_insert h1, Finset.sum_insert h1, mulNF_add_right, ih]
+
+/-- `trM` commutes with finite sums (linearity). -/
+theorem trM_sum (z h : R) (s : Finset (Fin 24)) (f : Fin 24 → (Fin 24 → R)) :
+    trM z h (∑ i ∈ s, f i) = ∑ i ∈ s, trM z h (f i) := by
+  induction s using Finset.induction with
+  | empty => simp [trM]
+  | @insert a s h1 ih => rw [Finset.sum_insert h1, Finset.sum_insert h1, trM_add, ih]
+
+/-- Expand the trace of the NF product over the left basis. -/
+theorem trM_mulNF_left_expand (z h : R) (u v : Fin 24 → R) :
+    trM z h (mulNF h u v) = ∑ i, u i * trM z h (mulNF h (e i) v) := by
+  conv_lhs => rw [basis_decomp u]
+  rw [mulNF_sum_left, trM_sum]
+  refine Finset.sum_congr rfl (fun i _ => ?_)
+  rw [mulNF_smul_left, trM_smul]
+
+/-- Expand the trace of the NF product over the right basis. -/
+theorem trM_mulNF_right_expand (z h : R) (w v : Fin 24 → R) :
+    trM z h (mulNF h w v) = ∑ j, v j * trM z h (mulNF h w (e j)) := by
+  conv_lhs => rw [basis_decomp v]
+  rw [mulNF_sum_right, trM_sum]
+  refine Finset.sum_congr rfl (fun j _ => ?_)
+  rw [mulNF_smul_right, trM_smul]
+
+/-- **Gram form** — the trace of the NF product is the bilinear Gram expansion
+`tr_M(u·v) = ∑_{i,j} u_i v_j · G_{i,j}` with `G_{i,j} = tr_M(b_i·b_j)`. -/
+theorem trM_mulNF_gram (z h : R) (u v : Fin 24 → R) :
+    trM z h (mulNF h u v) = ∑ i, ∑ j, u i * v j * trM z h (mulNF h (e i) (e j)) := by
+  rw [trM_mulNF_left_expand]
+  refine Finset.sum_congr rfl (fun i _ => ?_)
+  rw [trM_mulNF_right_expand, Finset.mul_sum]
+  refine Finset.sum_congr rfl (fun j _ => ?_)
+  ring
+
+/-- **(M2) Cyclicity from Gram symmetry** — the Fin-24-**free** reduction of trace
+cyclicity to symmetry of the Gram matrix `G_{i,j} = tr_M(b_i·b_j)`.  Proved
+sorry-free: given `G` symmetric, `tr_M(u·v) = tr_M(v·u)` for all `u, v` follows by
+bilinear expansion + index swap, never touching the depth-6 `whnf` wall. -/
+theorem trM_cyclic_of_gram_symm (z h : R)
+    (hsymm : ∀ i j, trM z h (mulNF h (e i) (e j)) = trM z h (mulNF h (e j) (e i)))
+    (u v : Fin 24 → R) :
     trM z h (mulNF h u v) = trM z h (mulNF h v u) := by
+  rw [trM_mulNF_gram z h u v, trM_mulNF_gram z h v u, Finset.sum_comm]
+  refine Finset.sum_congr rfl (fun x _ => Finset.sum_congr rfl (fun y _ => ?_))
+  rw [hsymm y x]; ring
+
+/-- **Gram symmetry** `G_{i,j} = G_{j,i}`, i.e. `tr_M(b_i·b_j) = tr_M(b_j·b_i)`
+for the 24 NF basis elements — the residual finite (24² = 576, 276 nontrivial)
+content of trace cyclicity after the sorry-free reduction `trM_cyclic_of_gram_symm`.
+
+Machine-validated in the compute infra (`hecke_regular_nf_table.py`,
+`self_validate`: cyclicity on all sampled pairs). Held as an honest cited `sorry`:
+each `G_{i,j}` is `tr_M` of a depth-≤6 `mulσ` composition applied to a basis
+vector, and evaluating even one such entry times out at the kernel/elaborator
+`whnf` wall (value-independent; six tactic strategies + the sparse-basis variant
+all infeasible — audit `docs/audits/2026-07-19-h4-cyclicity-whnf-explosion.md`).
+The two closure routes for THIS residual are (i) a full Mathlib build enabling a
+`Matrix.Reflection` re-encode (blocked in-sandbox; feasibility at 24×24 depth-6
+uncertain), or (ii) the abstract Ocneanu-induction cyclic-trace lemma on main's
+`MarkovStabilization` framework (`HeckeBraidedCategoryScaffold`,
+`HeckeH3AlgebraInstance`), which supersedes this residual entirely and discharges
+cyclicity for every `n` at once. Beans `qou-svnb` (this reduction) / `qou-0vsu`
+(the abstract convergence). Not vacuous, not laundered. -/
+-- Ref: [manuscript] §mass-theory (H₄ Markov trace); compute hecke_regular_nf_table.py self_validate
+theorem gram_symm (z h : R) :
+    ∀ i j, trM z h (mulNF h (e i) (e j)) = trM z h (mulNF h (e j) (e i)) := by
   sorry
+
+/-- **(M2) Trace cyclicity** `tr_M(u·v) = tr_M(v·u)` — the defining trace property.
+Derived (no new `sorry`) from the **sorry-free** bilinear reduction
+`trM_cyclic_of_gram_symm` and the single residual `gram_symm`.  The reduction —
+the Fin-24-free half — is genuinely proved; only the finite Gram-symmetry base
+`gram_symm` remains open (blocked at the depth-6 `whnf` wall; see its docstring). -/
+theorem trM_cyclic (z h : R) (u v : Fin 24 → R) :
+    trM z h (mulNF h u v) = trM z h (mulNF h v u) :=
+  trM_cyclic_of_gram_symm z h (gram_symm z h) u v
 
 end QOU.Machinery.H4
