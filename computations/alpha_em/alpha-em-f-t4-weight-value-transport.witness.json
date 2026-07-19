@@ -1,0 +1,56 @@
+{
+  "computation": "alpha-em-f-t4-weight-value-transport",
+  "description": "F-construction T4: the canonical H\u2082 Jones\u2013Markov weight VALUES (\u00be,\u00bc) equal the T1 Chevalley\u2013Weil dims (3,1)/4 exactly at q=1; the anchor q=1 is forced (unique positive matching point, factorization + positivity); the weights are singular at the T2 monodromy point q=i ((q+1)(q\u00b2+1) pole). Dims (T1) + values (T4) of the #3999 premise both derived; T5 assembly remains the wall. No fit; no 8\u03c0; nothing wired.",
+  "auditOnly": "docs/audits/2026-07-19-alpha-em-f-t4-weight-value-transport.md",
+  "tier": "symbolic-exact (sympy identities + factorization; corpus y_lambda_at cross-check) \u2014 Lean sibling QOU/Archimedean/MarkovWeightValueTransport.lean",
+  "computedAt": "2026-07-19T01:24:39.418294+00:00",
+  "commitSha": "feb416bb5a6a430ccab6d47c3366de14550c383b",
+  "engine": "sympy+mpmath",
+  "engineVersion": "1.14.0/1.3.0",
+  "scriptFile": "alpha_em_f_t4_weight_value_transport_probe.py",
+  "scriptHash": "1694d8d5e7bb",
+  "assertions": [
+    {
+      "name": "closed_forms_equal_corpus_y_lambda",
+      "passed": true,
+      "detail": "y_[2] \u2212 closed = 0; y_[1,1] \u2212 closed = 0 (symbolic zero, s=\u221aq)"
+    },
+    {
+      "name": "weights_normalized",
+      "passed": true,
+      "detail": "y_[2]+y_[1,1]\u22121 = 0"
+    },
+    {
+      "name": "values_at_one_are_cw_dim_fractions",
+      "passed": true,
+      "detail": "y_[2](1) = 3/4 = 3/4 (moving dim 3 / g=4); y_[1,1](1) = 1/4 = 1/4 (invariant dim 1 / g=4) \u2014 T1 Chevalley\u2013Weil dims transported to values"
+    },
+    {
+      "name": "anchor_q1_forced_unique",
+      "passed": true,
+      "detail": "4\u00b7num \u2212 3\u00b7den = \u2212(s\u22121)\u00b7(3s\u2075+3s\u2074+6s\u00b3+2s\u00b2+s+1); quintic has all-positive coefficients \u21d2 y_[2](s)=3/4 has s=1 as its ONLY positive solution (grid-confirmed) \u2014 the transport anchor is derived, not chosen"
+    },
+    {
+      "name": "weights_singular_at_monodromy_q_i",
+      "passed": true,
+      "detail": "q\u00b3+q\u00b2+q+1 = (q+1)(q\u00b2+1) \u2192 0 at q=i (T2 Hecke point): the Markov weights have a pole exactly at the monodromy evaluation \u2014 value transport is anchored at q=1, module structure at q=i; complementary, never interchangeable"
+    }
+  ],
+  "allPassed": true,
+  "result": {
+    "y2_at_1": "3/4",
+    "y11_at_1": "1/4",
+    "cw_dims": [
+      3,
+      1
+    ],
+    "genus": 4,
+    "anchor": "q = 1 (unique positive matching point \u2014 forced)",
+    "monodromy_pole": "q = i, denominator (q+1)(q^2+1)",
+    "verdict": "T4 WEIGHT-VALUE TRANSPORT \u2014 DERIVED (scope-(a) within the F-construction plan; T5 stays the wall): the canonical H\u2082 Jones\u2013Markov weights equal the T1 Chevalley\u2013Weil dimension fractions (\u00be,\u00bc) = (3,1)/4 EXACTLY at q=1; the anchor q=1 is the unique positive matching point (factorization + positivity \u2014 forced, not chosen); and the weights are singular at the T2 monodromy point q=i, so the value leg and the module leg are structurally complementary. The #3999 premise now has dims (T1) AND values (T4) derived. Nothing inhabits the target spec with provenance \u2014 T5 (F = framework-\u03c4) remains open. No fit; no 8\u03c0; nothing wired; 1/(8\u03c0) stays phase-4."
+  },
+  "context": {
+    "plan": "milestone qou-a46k: T1 #4039 (dims), T2 #4040 (module at q=i), T3 merged (rho-equivariance), T4 THIS (values), T5 open (assembly)",
+    "scope_guard": "T5 functorial provenance untouched \u2014 nothing inhabits ArchimedeanTauRealization with provenance; no fit; no 8\u03c0; nothing wired; no tier change"
+  }
+}
