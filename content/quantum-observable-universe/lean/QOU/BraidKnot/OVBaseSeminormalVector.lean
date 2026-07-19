@@ -42,4 +42,42 @@ theorem jm_smul_polytabloid (s : Fin (Specht.nOf μ)) (t : Specht.Tableau μ) :
   rw [Representation.asAlgebraHom_single, one_smul,
     QOU.BraidKnot.JucysMurphy.rep_polytabloid]
 
+/-! ## Brick 2 — column antisymmetry of the polytabloid -/
+
+/-- **Column antisymmetry.** For `σ` in the column stabilizer of `t`, permuting the
+    columns signs the polytabloid: `rep σ (e_t) = sgn(σ) · e_t`. Reindex the
+    column-stabilizer sum by left-multiplication by `σ` (a bijection of `colStab t`,
+    as `σ ∈ colStab t`); `sgn(σ·π) = sgn(σ)·sgn(π)` and `sgn(σ)² = 1` collapse the
+    signs. -/
+theorem rep_colStab_polytabloid (t : Specht.Tableau μ)
+    {σ : Equiv.Perm (Fin (Specht.nOf μ))} (hσ : σ ∈ Specht.colStab t) :
+    Specht.Mtab.rep (k := k) μ σ (Specht.polytabloid (k := k) t)
+      = (Equiv.Perm.sign σ : ℤ) • Specht.polytabloid (k := k) t := by
+  classical
+  rw [Specht.polytabloid, map_sum, Finset.smul_sum]
+  refine Fintype.sum_equiv (Equiv.mulLeft (⟨σ, hσ⟩ : Specht.colStab t)) _ _ (fun π => ?_)
+  rw [map_zsmul, Specht.Mtab.rep_of]
+  show (Equiv.Perm.sign (π : Equiv.Perm (Fin (Specht.nOf μ))) : ℤ)
+        • Specht.Mtab.of (k := k) (σ • (π : Equiv.Perm (Fin (Specht.nOf μ))) • t)
+      = (Equiv.Perm.sign σ : ℤ)
+        • ((Equiv.Perm.sign (σ * (π : Equiv.Perm (Fin (Specht.nOf μ))))  : ℤ)
+            • Specht.Mtab.of (k := k) ((σ * (π : Equiv.Perm (Fin (Specht.nOf μ)))) • t))
+  have hw : (σ * (π : Equiv.Perm (Fin (Specht.nOf μ)))) • t
+      = σ • (π : Equiv.Perm (Fin (Specht.nOf μ))) • t := mul_smul _ _ _
+  rw [hw, ← mul_smul (Equiv.Perm.sign σ : ℤ)
+        (Equiv.Perm.sign (σ * (π : Equiv.Perm (Fin (Specht.nOf μ)))) : ℤ),
+      map_mul, Units.val_mul, ← mul_assoc, ← Units.val_mul, Int.units_mul_self,
+      Units.val_one, one_mul]
+
+/-- **A same-column transposition negates the polytabloid.** If the transposition
+    `swap j s` lies in the column stabilizer of `t` (i.e. `j, s` are in the same
+    column), then `e_{(j\,s)·t} = − e_t` — the sign of a transposition. -/
+theorem polytabloid_swap_colStab (t : Specht.Tableau μ) {j s : Fin (Specht.nOf μ)}
+    (hjs : j ≠ s) (hmem : Equiv.swap j s ∈ Specht.colStab t) :
+    Specht.polytabloid (k := k) ((Equiv.swap j s) • t)
+      = - Specht.polytabloid (k := k) t := by
+  rw [← QOU.BraidKnot.JucysMurphy.rep_polytabloid, rep_colStab_polytabloid t hmem,
+    Equiv.Perm.sign_swap hjs]
+  simp
+
 end QOU.BraidKnot.OVBaseSeminormalVector
