@@ -35,11 +35,42 @@ open Module
 (`octDer_linearIndependent`) and `dim Der(𝕆) = 14` (`octonion_derivation_dim`), so they
 form a basis. -/
 theorem octDer_span_eq_top : Submodule.span ℚ (Set.range octDer) = ⊤ := by
-  have hcard : Fintype.card (Fin 14) = finrank ℚ (↥Der𝕆) := by
-    rw [octonion_derivation_dim, Fintype.card_fin]
-  have hspan := (basisOfLinearIndependentOfCardEqFinrank
-      octDer_linearIndependent hcard).span_eq
-  rwa [coe_basisOfLinearIndependentOfCardEqFinrank] at hspan
+  -- The card/finrank → basis lemmas (`basisOfLinearIndependentOfCardEqFinrank`,
+  -- `eq_top_of_finrank_eq`, …) all materialise a `Basis` on the double-subtype
+  -- `↥Der𝕆` and `whnf`-time out reducing the giant `Der𝕆` (even at 2M heartbeats).
+  -- Instead mirror `octDer_finrank_ge`: the linear-combination map `L14` has the
+  -- left inverse `projDer`, so it is injective; equal finrank (14 = dim Der𝕆) makes
+  -- it surjective; hence every `x ∈ Der𝕆` is a ℚ-combination of the `octDer`, i.e.
+  -- lies in their span.  Only the `finrank_range_add_finrank_ker` idiom is used —
+  -- no basis on `↥Der𝕆`.
+  haveI : FiniteDimensional ℚ (↥Der𝕆) := Submodule.finiteDimensional_of_le le_top
+  let L14 : (Fin 14 → ℚ) →ₗ[ℚ] Der𝕆 := ∑ i, (LinearMap.proj i).smulRight (octDer i)
+  have hLc : ∀ c, L14 c = ∑ i, c i • octDer i := fun c => by
+    simp [L14, LinearMap.sum_apply, LinearMap.smulRight_apply, LinearMap.proj_apply]
+  have hsec : ∀ c, projDer (L14 c) = c := by
+    intro c
+    rw [hLc, map_sum]
+    funext t
+    rw [Finset.sum_apply]
+    simp only [map_smul, projDer_octDer, Pi.smul_apply, Pi.single_apply, smul_eq_mul, mul_ite,
+      mul_one, mul_zero]
+    rw [Finset.sum_ite_eq]
+    simp
+  have hinj : Function.Injective L14 := fun a b hab => by
+    have ha := hsec a; rw [hab, hsec b] at ha; exact ha.symm
+  have hfr : Module.finrank ℚ (Fin 14 → ℚ) = Module.finrank ℚ (↥Der𝕆) := by
+    rw [octonion_derivation_dim, Module.finrank_pi, Fintype.card_fin]
+  have hsurj : Function.Surjective L14 := by
+    have key : Function.Injective L14 ↔ Function.Surjective L14 :=
+      LinearMap.injective_iff_surjective_of_finrank_eq_finrank
+        (V := Fin 14 → ℚ) (V₂ := ↥Der𝕆) (f := L14) hfr
+    exact key.mp hinj
+  rw [Submodule.eq_top_iff']
+  intro x
+  obtain ⟨c, rfl⟩ := hsurj x
+  rw [hLc]
+  exact Submodule.sum_mem _ fun i _ =>
+    Submodule.smul_mem _ _ (Submodule.subset_span (Set.mem_range_self i))
 
 /-- **`range(evOct e)` is the span of the 14 concrete image vectors** `evOct e (octDer i)`,
 because `octDer` spans `Der(𝕆)`. -/
