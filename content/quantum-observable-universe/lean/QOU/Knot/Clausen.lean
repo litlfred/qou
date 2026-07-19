@@ -288,33 +288,47 @@ theorem hasDerivAt_g_r {r : ℝ} (hr : |r| < 1) (θ : ℝ) :
         _ = |r| ^ n := one_mul _
   exact hasDerivAt_tsum hu hg hbound hg0 θ
 
-/-- **The atom (single CITED sorry) — the series Clausen's term-by-term
-    derivative.** `Cl_2'(θ) = -log(2 sin(θ/2))` on `(0, 2π)`. Differentiating
-    `∑ sin(kθ)/k²` term-by-term gives `∑ cos(kθ)/k`, whose `r→1⁻` boundary value
-    is `-log(2 sin(θ/2))` (classical, Zagier). This is an ASSEMBLY of existing
-    Mathlib pieces (Abel's limit theorem `AbelLimit`, the complex log series
-    `hasSum_taylorSeries_log`, `hasDerivAt_tsum` for `r<1`, and a derivative-
-    under-limit step), NOT a Mathlib gap — bricks 1/2a/2b/3 above are the
-    completed pieces; the remaining wiring (bricks 4-5) is tracked in beans. -/
+/-- **The atom — WIRED via the derivative-under-limit (brick 5 scaffold).**
+    `Cl_2'(θ) = -log(2 sin(θ/2))` on `(0, 2π)`. Proved by
+    `hasDerivAt_of_tendstoLocallyUniformlyOn` from three inputs, two already
+    machine-proved: `hasDerivAt_g_r` (brick 4, the regularised derivatives) and
+    `tendsto_Cl_2_reg` (brick 1, the `r→1⁻` pointwise limit `g_r → Cl_2`). The
+    single remaining `sorry` is `hf'` — the LOCAL-UNIFORM convergence of
+    `g_r' → -log(2 sin(·/2))` as `r→1⁻` on `(0,2π)`. This is the genuine hard
+    analysis piece (no Mathlib shortcut: Dini needs monotonicity, this family is
+    not monotone). It follows from the closed form `g_r'(θ) = -log‖1-r e^{iθ}‖`
+    (brick 2b `tsum_rpow_cos_div`) + the boundary norm (brick 3
+    `norm_one_sub_exp_ofReal_mul_I`) + joint continuity where `‖1-e^{iθ}‖ > 0`.
+    (bean qou-6fkd) -/
 theorem hasDerivAt_Cl_2_series {θ : ℝ} (h0 : 0 < θ) (h2 : θ < 2 * π) :
     HasDerivAt QOU.Archimedean.Cl_2 (-Real.log (2 * Real.sin (θ / 2))) θ := by
-  -- Ref: [zagier1986] term-by-term d/dθ ∑ sin(kθ)/k² = ∑ cos(kθ)/k = -log(2 sin(θ/2))
-  --
-  -- ASSEMBLY (not a wall — CORRECTED 2026-07-14: an earlier note here wrongly
-  -- claimed "Mathlib lacks Abel's theorem"; it does NOT).  The standard Abel-
-  -- regularized proof assembles pieces that ALL exist in Mathlib:
-  --   • g_r(θ) := ∑ r^k sin(kθ)/k² converges absolutely for r<1, so term-by-term
-  --     diff (`hasDerivAt_tsum`, summable bound r^k) gives
-  --     g_r'(θ) = ∑ r^k cos(kθ)/k — the conditional-convergence obstruction only
-  --     bites at r=1, and is dissolved by regularising.
-  --   • g_r'(θ) = Re(-log(1 - r e^{iθ})) via `hasSum_taylorSeries_log` (‖z‖<1,
-  --     Complex.LogBounds), whose r→1⁻ limit is -log‖1-e^{iθ}‖ = -log(2 sin(θ/2)).
-  --   • the r→1⁻ limits g_r→Cl_2 and g_r'→-log(2 sin(θ/2)) are exactly
-  --     `Real.tendsto_tsum_powerSeries_nhdsWithin_lt` (Analysis.Complex.AbelLimit).
-  --   • the remaining subtlety is the derivative-under-limit step (needs locally-
-  --     uniform convergence of g_r', e.g. `hasDerivAt_of_tendstoLocallyUniformly`).
-  -- Attemptable multi-brick assembly, NOT an open-in-Mathlib gap. Tracked qou-reab.
-  sorry
+  have hf' : TendstoLocallyUniformlyOn
+      (fun (r : ℝ) (t : ℝ) => ∑' n : ℕ, r ^ n * Real.cos ((n : ℝ) * t) / n)
+      (fun t : ℝ => -Real.log (2 * Real.sin (t / 2)))
+      (nhdsWithin 1 (Set.Iio 1)) (Set.Ioo (0 : ℝ) (2 * π)) := by
+    -- Ref: [zagier1986] g_r'(θ) = -log‖1-r e^{iθ}‖ (brick 2b) → -log(2 sin(θ/2))
+    -- locally uniformly on (0,2π); joint continuity where ‖1-e^{iθ}‖ > 0. The one
+    -- remaining hard analysis piece; everything else in the atom is now proved.
+    sorry
+  have hf : ∀ᶠ r in nhdsWithin (1 : ℝ) (Set.Iio 1),
+      ∀ x ∈ Set.Ioo (0 : ℝ) (2 * π),
+        HasDerivAt (fun t : ℝ => ∑' n : ℕ, Real.sin ((n : ℝ) * t) / (n : ℝ) ^ 2 * r ^ n)
+          ((fun (r : ℝ) (t : ℝ) => ∑' n : ℕ, r ^ n * Real.cos ((n : ℝ) * t) / n) r x) x := by
+    have hmem : ∀ᶠ r in nhdsWithin (1 : ℝ) (Set.Iio 1), |r| < 1 := by
+      have h1 : ∀ᶠ r in nhdsWithin (1 : ℝ) (Set.Iio 1), r < 1 :=
+        eventually_mem_nhdsWithin.mono fun r hr => hr
+      have h2 : ∀ᶠ r in nhdsWithin (1 : ℝ) (Set.Iio 1), (-1 : ℝ) < r :=
+        (isOpen_Ioi.eventually_mem (by norm_num : (1 : ℝ) ∈ Set.Ioi (-1 : ℝ))).filter_mono
+          nhdsWithin_le_nhds
+      filter_upwards [h1, h2] with r hr1 hr2
+      rw [abs_lt]; exact ⟨hr2, hr1⟩
+    filter_upwards [hmem] with r hr x _
+    exact hasDerivAt_g_r hr x
+  have hfg : ∀ x ∈ Set.Ioo (0 : ℝ) (2 * π),
+      Filter.Tendsto (fun r : ℝ => ∑' n : ℕ, Real.sin ((n : ℝ) * x) / (n : ℝ) ^ 2 * r ^ n)
+        (nhdsWithin 1 (Set.Iio 1)) (nhds (QOU.Archimedean.Cl_2 x)) :=
+    fun x _ => tendsto_Cl_2_reg x
+  exact hasDerivAt_of_tendstoLocallyUniformlyOn isOpen_Ioo hf' hf hfg ⟨h0, h2⟩
 
 /-- **Reduction (Route-B brick 2, sorry-free modulo the atom).** `clausen` and
     `Cl_2` agree on `(0, 2π)`: both have derivative `-log(2 sin(θ/2))` there
