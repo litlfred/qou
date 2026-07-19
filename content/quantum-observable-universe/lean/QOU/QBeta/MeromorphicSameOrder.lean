@@ -25,10 +25,20 @@ This file proves **route-B step 2 in full** (sorry-free):
   `ord Ψ − ord Φ` preserved by one `c`-shift. Brick (a) discharges the
   translation input; nothing is assumed.
 
-Over the `⟨ib, i/b⟩` lattice (`PeriodLatticeBasis.exists_period_basis`) the
-periodic order-difference is constant, hence `0` at a regular point, hence
-`ord Φ = ord Ψ` everywhere (same divisor), hence the ratio is entire +
-nonvanishing — the input `ratio_const_of_doublyPeriodic` consumes.
+Applied to both quasi-periods `ib, i/b`, this makes the order-difference
+`ord Ψ − ord Φ` **doubly periodic** — equivalently, the divisor of the ratio
+`r = Ψ/Φ` is `⟨ib, i/b⟩`-periodic (`r` is `c`-periodic for each `c`, so `r` is
+an **elliptic function**).
+
+**Honest scope correction (2026-07-19).** Double periodicity does **not** force
+`ord Φ = ord Ψ`. A doubly-periodic meromorphic ratio can be a *nonconstant*
+elliptic function (Weierstrass ℘), so the two solutions need **not** share a
+divisor from the equations alone — there is genuine elliptic freedom. Hence
+"same divisor ⇒ ratio entire" is an **independent analytic input** (the
+Φ_b-specific characterization pinning the ratio to have no elliptic freedom),
+NOT a consequence of steps 1–2. Route B closes `uniqueUpToScalar` only with that
+extra input (≡ brick (c)'s premise); step 2 supplies the periodicity, not the
+constancy.
 
 **Build note.** `Mathlib.Analysis.Meromorphic.*` is outside the QOU library's
 usual import cone; verified `lean`-direct after building the Meromorphic cone from
