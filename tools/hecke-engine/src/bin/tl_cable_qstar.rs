@@ -17,25 +17,13 @@ use rustc_hash::FxHashMap;
 use std::io::Write;
 use std::time::Instant;
 
-fn fl(v: f64) -> Float {
-    Float::with_val(PREC, v)
-}
 fn fi(v: i32) -> Float {
     Float::with_val(PREC, v)
 }
 
-/// Real power `base^exp` (exp real, base > 0).
-fn fpow(base: &Float, exp: &Float) -> Float {
-    Float::with_val(PREC, base.pow(exp))
-}
 /// Integer power `base^k` (exact sign for negative base).
 fn fpowi(base: &Float, k: i32) -> Float {
     Float::with_val(PREC, base.pow(k))
-}
-/// Relative difference `(a − b) / b` (subtraction materialized first).
-fn rel_diff(a: &Float, b: &Float) -> Float {
-    let d = Float::with_val(PREC, a - b);
-    Float::with_val(PREC, d / b)
 }
 
 const BRAID_5_2: [i32; 6] = [1, 1, 1, 2, -1, 2]; // B₃, writhe 4
@@ -135,15 +123,7 @@ fn main() {
         n_target,
         c_n,
         c_n * k,
-        {
-            // Catalan(cN·k)
-            let m = c_n * k;
-            let mut cat: u128 = 1;
-            for i in 0..m as u128 {
-                cat = cat * (2 * (m as u128) - i) / (i + 1);
-            }
-            cat / (m as u128 + 1)
-        }
+        catalan(c_n * k)
     );
     println!("{}", "=".repeat(78));
 
@@ -365,7 +345,13 @@ fn aggregate(n_target: i32, c_n: usize, k: usize, ckpt_dir: &str) {
         let bv: Vec<f64> = bs.iter().map(|b| b.unwrap()).collect();
         let b_star = bv[1];
         let sc = bv.windows(2).filter(|w| w[0].signum() != w[1].signum()).count();
-        let slope_rel = ((bv[2] - bv[0]).abs() / b_star.abs()) / (2.0 * 2e-8);
+        // Guard against a q* zero: a vanishing B(q*) would make the relative
+        // slope ill-defined; treat it as infinite so the no_zero test fails.
+        let slope_rel = if b_star != 0.0 {
+            ((bv[2] - bv[0]).abs() / b_star.abs()) / (2.0 * 2e-8)
+        } else {
+            f64::INFINITY
+        };
         let cert = slope_rel * (2.0 * 2e-8);
         let no_zero = sc == 0 && b_star.abs() > 0.0 && cert < 0.01;
         all_passed &= no_zero;
