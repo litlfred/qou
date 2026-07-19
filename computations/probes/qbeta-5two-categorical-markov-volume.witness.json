@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-19T17:17:32.312899+00:00",
-  "commitSha": "9cbd4f4b6fc9c43a39142550ab490d86a4ecec9b",
+  "computedAt": "2026-07-19T17:23:00.499035+00:00",
+  "commitSha": "aa193157b730c9c96b98c8a21718378cf4971aa9",
   "assertions": [
     {
       "name": "block21_bar_even_target_knots",
@@ -35,14 +35,22 @@
       "passed": true,
       "tolerance": 0.5,
       "source": "block weights W_λ reproduce the Ocneanu trace on HELD-OUT elements (σ₁σ₂→z², σ₂σ₁σ₂→hz²+z, σ₂→z) — the weights are correct"
+    },
+    {
+      "name": "framing_invariant_jones_control_and_chiral",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "framing-invariant 𝔙_q = 0-framing J_K: bar-odd(J_4_1)=0 (amphichiral control), bar-odd(J_5_2)!=0 chiral (CS channel), anchor-smooth — the knot-invariant assembly the framing normalization required"
     }
   ],
   "allPassed": true,
-  "durationMs": 33,
+  "durationMs": 35,
   "computation": "qbeta-5two-categorical-markov-volume",
   "scriptFile": "qbeta_5two_categorical_markov_volume_probe.py",
-  "scriptHash": "3905d3dd0268",
-  "scriptCommitSha": "9cbd4f4b6fc9c43a39142550ab490d86a4ecec9b",
+  "scriptHash": "69141d2c0d02",
+  "scriptCommitSha": "aa193157b730c9c96b98c8a21718378cf4971aa9",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -84,6 +92,18 @@
       "binding_channel_5_2_proton": "-0.241924505549",
       "binding_channel_5_2_muon": "-0.241924498947",
       "verdict": "Ocneanu block weights W_λ determined (t=√q) and VALIDATED against held-out τ (σ₁σ₂→z², σ₂σ₁σ₂→hz²+z, σ₂→z); binding/Vol channel = bar-even W_(2,1)·χ_(2,1). Framing-INVARIANT full 𝔙_q still needs the writhe/Jones normalization (G3-adjacent)."
+    },
+    "finding5_framing_invariant_jones": {
+      "bar_odd_4_1": "0",
+      "bar_odd_5_2_CS_factored": "(q - 1)**3*(q + 1)*(q**2 + 1)*(q**2 - q + 1)*(q**2 + q + 1)**2/(2*q**6)",
+      "bar_even_5_2_Vol_factored": "-(q**12 - q**11 + q**10 - 2*q**9 + q**8 - q**7 - q**5 + q**4 - 2*q**3 + q**2 - q + 1)/(2*q**6)",
+      "amphichiral_control_4_1_zero": true,
+      "chiral_5_2_nonzero": true,
+      "odd_proton": "0.0209909269357",
+      "odd_muon": "0.0209909340185",
+      "dln_odd_dq": "26.355227",
+      "anchor_smooth": true,
+      "verdict": "framing-INVARIANT 𝔙_q = 0-framing knot invariant J_K(q); bar-odd (CS) = (q-1)^3(q+1)(q^2+1)(q^2-q+1)(q^2+q+1)^2/(2q^6) for 5₂ (triple zero at q=1, cyclotomic Φ₃/Φ₆), 0 for amphichiral 4₁ (control); anchor-smooth; still fibre-level (does NOT cross G3)"
     },
     "scope": {
       "tier": "fibre-level categorical datum (pre-tau)",

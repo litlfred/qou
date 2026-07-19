@@ -67,11 +67,26 @@ witness. (Note: the `z = 1/(√q+1/√q)` used here is the QOU Markov convention
 the Jones-polynomial specialization, so the raw trace is not the Jones polynomial;
 the probe makes no Jones claim.)
 
-**What remains** is assembling the framing-**invariant** full `𝔙_q` (the
-knot-invariant `Re = Vol` / `Im = CS`), which needs the writhe/Jones
-normalization — the piece adjacent to the G3 wall. The raw weighted trace is
-framing-covariant (as the raw-trace amphichirality failure above shows), so the
-knot-invariant `𝔙_q` requires that normalization, not just the weights.
+## Framing-invariant full `𝔙_q(5₂)` — assembled via the 0-framing knot invariant (finding 5)
+
+The raw weighted trace is framing-**covariant** (the amphichirality failure above),
+so the knot-invariant `𝔙_q` needs the framing normalization. The framing-**invariant**
+object is the **0-framing knot invariant** `J_K(q)` itself (a genuine knot invariant),
+whose bar decomposition is the canonical `Re = Vol` / `Im = CS` split:
+
+- **Amphichiral control PASSES:** `bar-odd(J_{4₁}) = 0` (the 4₁ Jones is palindromic).
+- **5₂ CS channel** (bar-odd): `(q−1)³(q+1)(q²+1)(q²−q+1)(q²+q+1)²/(2q⁶)` — a **triple
+  zero at `q=1`** with cyclotomic factors `Φ₃ = q²+q+1` (squared) and `Φ₆ = q²−q+1`.
+- **5₂ Vol channel** (bar-even): the degree-12 palindrome
+  `−(q¹²−q¹¹+q¹⁰−2q⁹+q⁸−q⁷−q⁵+q⁴−2q³+q²−q+1)/(2q⁶)`.
+- Anchor-smooth (`d ln|odd|/dq ≈ 26`), q-exact.
+
+This completes the categorical `𝔙_q(5₂)` at the fibre level: both channels
+(Re = Vol/binding, Im = CS/Q_β) as framing-invariant knot-invariant Laurent
+polynomials, with the amphichirality control passing. It is still **fibre-level**
+(formal `q`) — it does **not** cross the **G3 argument→S wall**, which is the only
+remaining A5 piece: the resurgent-monodromy continuation from this formal-`q`
+complex volume to the archimedean decay projection `S` (open, not laundered).
 
 The brick advances bean `qou-3yxn`: the categorical Markov-trace `𝔙_q(5₂)`
 bar-odd channel is now built and gated. The value-leg closure (measurement floor)
