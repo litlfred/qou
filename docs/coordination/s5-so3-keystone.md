@@ -589,3 +589,29 @@ pre-existing — plus a capstone introduced by **this PR** (#3391, not yet on
 physical instance (the fusion category whose PF eigenvector is the Hecke `d_q`).
 Both q-Bessel uploads (1208.2521, math/9805023) are retired as redirect-(ii)
 node-screen material — superseded by this structural narrowing.
+
+## Self-conjugate sector: gate EXACT, no continuation (2026-07-19, PR #4084, bean qou-2v7k)
+
+The de-opaqued gate's remaining open piece is the archimedean continuation of the fibre
+root-of-unity modulus out to `q₀ > 1` (`BWVacuumRowConcrete` shows the concrete row
+`S₀·θ^f` equals `S₀` **iff** `θ_λ^f = 1`, false off-diagonal at real `q₀`). New sorry-free
+Lean (`QOU/BraidKnot/KeystoneElectronBlockExact.lean`) closes that residue **on the
+self-conjugate sector, exactly and continuation-free**:
+
+- `selfConj_contentSum_zero`: `contentSum_conjugate` (`c(λ')=−c(λ)`) forces `c(λ)=0` on a
+  self-conjugate block (over ℤ).
+- `theta_selfConj_eq_one`: hence `θ_λ = q^{c(λ)} = q^0 = 1` for **every** `q` — no `q₀>1`,
+  no root-of-unity fibre.
+- `bwS0Concrete_selfConj_exact`: so `θ^f = 1` for all framings `f`, and
+  `bwS0Concrete_of_twist_pow_one` gives `bwS0Concrete = S₀` **exactly** — the framing
+  obstruction that refutes the gate off-diagonal is structurally absent here.
+- `bwS0Concrete_electron_block_exact`: flagship instance — the physical **electron block**
+  `[3,1,1]` (self-conjugate, `c=0`); value `d_q([3,1,1]) = [3]_q[4]_q/[2]_q`
+  (`qFactorial_shape_311`). Lean-izes ledger #3701 (was a Python probe only).
+
+Scope: open-for-all per the 2026-07-11 general Subgoal-2 reversal (the pre-existing
+`bwS0_eq_hecke` "owner-gated" docstrings are stale). Does **not** close the
+non-self-conjugate blocks (`c(λ)≠0`, `θ^f≠1` at `q₀>1`) — that fibre continuation stays open.
+Verification: risky proof steps machine-checked vs real Mathlib via faithful replicas
+(exit 0); full lean-direct blocked in-sandbox by the QOU-cone/lake-build-Mathlib-wipe
+catch-22; CI to confirm exit 0.
