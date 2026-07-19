@@ -72,9 +72,10 @@ noncomputable def tauAssignmentH3 : TauAssignmentData descentH3σ₀ where
     fin_cases u <;>
       simp [monodromyN, mulStep, descentH3σ₀, Pi.sub_apply, Pi.smul_apply,
         smul_eq_mul] <;>
-      try linear_combination (v 1) * Complex.I_mul_I
-    all_goals try linear_combination (v 3) * Complex.I_mul_I
-    all_goals try linear_combination (v 5) * Complex.I_mul_I
+      first
+      | linear_combination (v 1) * I_mul_I
+      | linear_combination (v 3) * I_mul_I
+      | linear_combination (v 5) * I_mul_I
   rho_compat v u := by
     fin_cases u <;>
       simp [Complex.star_def, Complex.conj_I] <;>
@@ -117,8 +118,9 @@ theorem tauAssignmentH3_ker_le_range_monodromyN (v : Fin 6 → ℂ)
   fin_cases u <;>
     simp [monodromyN, mulStep, descentH3σ₀, Pi.sub_apply, Pi.smul_apply,
       smul_eq_mul] <;>
-    try linear_combination I * h0 - v 1 * Complex.I_mul_I
-  all_goals try linear_combination I * h1 - v 3 * Complex.I_mul_I
-  all_goals try linear_combination I * h2 - v 5 * Complex.I_mul_I
+    first
+    | linear_combination I * h0 - v 1 * I_mul_I
+    | linear_combination I * h1 - v 3 * I_mul_I
+    | linear_combination I * h2 - v 5 * I_mul_I
 
 end QOU.Machinery.HeckeGeneral
