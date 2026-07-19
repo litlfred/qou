@@ -3,6 +3,7 @@ import Mathlib.Algebra.BigOperators.Pi
 import Mathlib.Data.Fin.VecNotation
 import Mathlib.Tactic.Ring
 import Mathlib.Tactic.FinCases
+import QOU.Machinery.BilinearTraceCyclicity
 
 /-!
 # QOU.Machinery.H4 — the H₄(q) Markov trace on the Fin-24 GB normal-form module
@@ -140,73 +141,22 @@ theorem mulNF_smul_right (h c : R) (u v : Fin 24 → R) :
 theorem mulNF_zero_left (h : R) (v : Fin 24 → R) : mulNF h (0 : Fin 24 → R) v = 0 := by
   funext i; simp only [mulNF, mulσ0_zero, mulσ1_zero, mulσ2_zero, Pi.zero_apply]; ring
 
-/-- The standard basis vector `e i = b_i` (the `i`-th NF basis element). -/
+/-- The standard basis vector `e i = b_i` (the `i`-th NF basis element).
+Definitionally `QOU.Machinery.BilinearTrace.e i` at `ι = Fin 24`. -/
 def e (i : Fin 24) : Fin 24 → R := Pi.single i (1 : R)
 
-/-- Basis decomposition `u = ∑ᵢ uᵢ · eᵢ`. -/
-theorem basis_decomp (u : Fin 24 → R) : u = ∑ i, u i • (e (R := R) i) := by
-  funext j
-  rw [Finset.sum_apply]
-  simp [e, Pi.single_apply, smul_eq_mul, Finset.sum_ite_eq]
-
-/-- `mulNF · v` commutes with finite sums in the left argument. -/
-theorem mulNF_sum_left (h : R) (s : Finset (Fin 24)) (f : Fin 24 → (Fin 24 → R)) (v : Fin 24 → R) :
-    mulNF h (∑ i ∈ s, f i) v = ∑ i ∈ s, mulNF h (f i) v := by
-  induction s using Finset.induction with
-  | empty => simp [mulNF_zero_left]
-  | @insert a s h1 ih => rw [Finset.sum_insert h1, Finset.sum_insert h1, mulNF_add_left, ih]
-
-/-- `mulNF w ·` commutes with finite sums in the right argument. -/
-theorem mulNF_sum_right (h : R) (w : Fin 24 → R) (s : Finset (Fin 24)) (f : Fin 24 → (Fin 24 → R)) :
-    mulNF h w (∑ j ∈ s, f j) = ∑ j ∈ s, mulNF h w (f j) := by
-  induction s using Finset.induction with
-  | empty => funext i; simp [mulNF]
-  | @insert a s h1 ih => rw [Finset.sum_insert h1, Finset.sum_insert h1, mulNF_add_right, ih]
-
-/-- `trM` commutes with finite sums (linearity). -/
-theorem trM_sum (z h : R) (s : Finset (Fin 24)) (f : Fin 24 → (Fin 24 → R)) :
-    trM z h (∑ i ∈ s, f i) = ∑ i ∈ s, trM z h (f i) := by
-  induction s using Finset.induction with
-  | empty => simp [trM]
-  | @insert a s h1 ih => rw [Finset.sum_insert h1, Finset.sum_insert h1, trM_add, ih]
-
-/-- Expand the trace of the NF product over the left basis. -/
-theorem trM_mulNF_left_expand (z h : R) (u v : Fin 24 → R) :
-    trM z h (mulNF h u v) = ∑ i, u i * trM z h (mulNF h (e i) v) := by
-  conv_lhs => rw [basis_decomp u]
-  rw [mulNF_sum_left, trM_sum]
-  refine Finset.sum_congr rfl (fun i _ => ?_)
-  rw [mulNF_smul_left, trM_smul]
-
-/-- Expand the trace of the NF product over the right basis. -/
-theorem trM_mulNF_right_expand (z h : R) (w v : Fin 24 → R) :
-    trM z h (mulNF h w v) = ∑ j, v j * trM z h (mulNF h w (e j)) := by
-  conv_lhs => rw [basis_decomp v]
-  rw [mulNF_sum_right, trM_sum]
-  refine Finset.sum_congr rfl (fun j _ => ?_)
-  rw [mulNF_smul_right, trM_smul]
-
-/-- **Gram form** — the trace of the NF product is the bilinear Gram expansion
-`tr_M(u·v) = ∑_{i,j} u_i v_j · G_{i,j}` with `G_{i,j} = tr_M(b_i·b_j)`. -/
-theorem trM_mulNF_gram (z h : R) (u v : Fin 24 → R) :
-    trM z h (mulNF h u v) = ∑ i, ∑ j, u i * v j * trM z h (mulNF h (e i) (e j)) := by
-  rw [trM_mulNF_left_expand]
-  refine Finset.sum_congr rfl (fun i _ => ?_)
-  rw [trM_mulNF_right_expand, Finset.mul_sum]
-  refine Finset.sum_congr rfl (fun j _ => ?_)
-  ring
-
 /-- **(M2) Cyclicity from Gram symmetry** — the Fin-24-**free** reduction of trace
-cyclicity to symmetry of the Gram matrix `G_{i,j} = tr_M(b_i·b_j)`.  Proved
-sorry-free: given `G` symmetric, `tr_M(u·v) = tr_M(v·u)` for all `u, v` follows by
-bilinear expansion + index swap, never touching the depth-6 `whnf` wall. -/
+cyclicity to symmetry of the Gram matrix `G_{i,j} = tr_M(b_i·b_j)`.  A direct
+instance of the level-agnostic `BilinearTrace.cyclic_of_gram_symm`: `mulNF` is
+`R`-bilinear (with `mulσ` opaque, so the depth-6 `whnf` wall is untouched) and
+`trM` is `R`-linear, so given `G` symmetric, `tr_M(u·v) = tr_M(v·u)` for all `u,v`. -/
 theorem trM_cyclic_of_gram_symm (z h : R)
     (hsymm : ∀ i j, trM z h (mulNF h (e i) (e j)) = trM z h (mulNF h (e j) (e i)))
     (u v : Fin 24 → R) :
-    trM z h (mulNF h u v) = trM z h (mulNF h v u) := by
-  rw [trM_mulNF_gram z h u v, trM_mulNF_gram z h v u, Finset.sum_comm]
-  refine Finset.sum_congr rfl (fun x _ => Finset.sum_congr rfl (fun y _ => ?_))
-  rw [hsymm y x]; ring
+    trM z h (mulNF h u v) = trM z h (mulNF h v u) :=
+  QOU.Machinery.BilinearTrace.cyclic_of_gram_symm (mulNF h) (trM z h)
+    (mulNF_add_left h) (mulNF_add_right h) (mulNF_smul_left h) (mulNF_smul_right h)
+    (mulNF_zero_left h) (trM_add z h) (trM_smul z h) hsymm u v
 
 /-- **Gram symmetry** `G_{i,j} = G_{j,i}`, i.e. `tr_M(b_i·b_j) = tr_M(b_j·b_i)`
 for the 24 NF basis elements — the residual finite (24² = 576, 276 nontrivial)
