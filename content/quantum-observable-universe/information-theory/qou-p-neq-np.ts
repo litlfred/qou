@@ -14,6 +14,10 @@ export default conjecture({
     "substrate-parameter",
     "computational-horizon",
   ],
-  uses: ["prop:p-vs-np-boundary"],
+  uses: [
+    "prop:p-vs-np-boundary",
+    "ex:chi-minus-six-derivation",
+    "prf:qou-obstruction-reduction",
+  ],
   cites: ["jaeger1990", "aharonov2009", "freedman2003", "cook1971"],
 });
