@@ -1,0 +1,50 @@
+{
+  "computation": "alpha-em-r2-n1-crosscheck",
+  "description": "R2 cross-check 1, adversarially hardened. First draft's 'two ends of one heat trace' claim self-refuted (dim Lambda^1 = 2 component factor; silent /2 removed) and withdrawn. Survives: full shared vocabulary between the accepted n=1 identification and R2 (zero retuned constants; exact ratio 16/3); the component factor explicit \u2014 R2's irreducible content = the per-mode-unit-on-the-pair premise, pinned by the working coefficient's q=1 total; species alignment with the already-canonical n=1 identification. Ruling stays owner's. Nothing wired.",
+  "auditOnly": "docs/audits/2026-07-19-alpha-em-r2-n1-crosscheck.md",
+  "tier": "symbolic-exact + 30-dps model numerics; adversarially self-reviewed (overstated claim withdrawn in-probe)",
+  "computedAt": "2026-07-19T03:53:20.944380+00:00",
+  "commitSha": "daa1bfdfce16f0b6e484056196c12fb1816cec37",
+  "engine": "sympy+mpmath",
+  "engineVersion": "1.14.0/1.3.0",
+  "scriptFile": "alpha_em_r2_n1_crosscheck_probe.py",
+  "scriptHash": "775b8539f4f6",
+  "assertions": [
+    {
+      "name": "canonical_n1_data_reverified",
+      "passed": true,
+      "detail": "photonZeroModeShift(4) = b\u2081/Area = 8/(12\u03c0) = 2/(3\u03c0) exact; Area = 4\u03c0(g\u22121) = \u22122\u03c0\u03c7 \u2014 the Lean-proved (#2114/#3920) n=1 values reproduced"
+    },
+    {
+      "name": "shared_vocabulary_audit",
+      "passed": true,
+      "detail": "b\u2081 = 2g and Area = \u22122\u03c0\u03c7 are the SAME derived quantities in the n=1 identification and in R2's measure chain; the operator class (real \u0394\u2081 on H\u00b9(Bring)) is shared (the B4b/T3 reality mechanism). End-specific pieces, both pinned: the \u03c1-FORCED \u00bd and the per-mode normalization (V3). No constant retuned"
+    },
+    {
+      "name": "component_factor_explicit",
+      "passed": true,
+      "detail": "model 1-form UV coefficient = 2.0 = dim \u039b\u00b9 = 2 per a\u2080\u00b7Area (NO hidden division \u2014 the first draft's silent /2 removed); the working coefficient's q=1 total is [2]\u2081\u00b7\u03b1/(8\u03c0) = \u03b1/(4\u03c0) = ONE per-mode unit a\u2080\u03b1. The per-mode conversion (\u00f7 dim \u039b\u00b9) is R2's premise made explicit \u2014 pinned by the working coefficient, not chosen here"
+    },
+    {
+      "name": "parameter_free_ratio",
+      "passed": true,
+      "detail": "(n=1 shift)/(n=2 measure) = 16/3 exact \u2014 arithmetic of derived quantities; evidence of shared vocabulary (the 'two ends of one object' rigidity claim of the first draft is WITHDRAWN as overstated)"
+    },
+    {
+      "name": "species_alignment",
+      "passed": true,
+      "detail": "the accepted n=1 statement 'b\u2081/Area is the physical zero-mode shift' is a physics identification of the SAME species as R2, already canonical in the corpus (Lean-backed, #2114/#3920, ledger-wired). R2 extends that identification's vocabulary from the IR (harmonic-count) end to the UV (per-mode-unit) end \u2014 McKean\u2013Singer interpolates between them \u2014 with zero retuned constants"
+    }
+  ],
+  "allPassed": true,
+  "result": {
+    "withdrawn": "'two ends of one object' rigidity (component factor dim \u039b\u00b9 = 2)",
+    "survives": "shared vocabulary (zero retuned constants), exact ratio 16/3, species alignment with the canonical n=1 identification",
+    "r2_irreducible_content": "the per-mode-unit-on-the-pair premise \u2014 pinned by the working coefficient's q=1 total; still an identification; owner-gated",
+    "verdict": "R2 CROSS-CHECK 1 PASSES IN ADVERSARIALLY-HARDENED FORM (scope-(a); consistency + species alignment, NOT a derivation; no fit; nothing wired): the first draft's 'two ends of one heat trace' claim was SELF-REFUTED (the 1-form UV coefficient carries dim \u039b\u00b9 = 2; the draft's model check divided by 2 silently) and is withdrawn; what SURVIVES adversarial review: (1) full shared vocabulary between the accepted n=1 identification and R2 (b\u2081 = 2g, Area = \u22122\u03c0\u03c7, real \u0394\u2081 \u2014 zero retuned constants; exact parameter-free ratio 16/3); (2) the component factor is now EXPLICIT \u2014 R2's irreducible content is the per-mode-unit-on-the-pair premise, pinned numerically by the working coefficient's q=1 total but still an identification; (3) R2 is the same SPECIES of claim as the already-canonical n=1 identification \u2014 an extension of an accepted dictionary, not a new kind of claim. The ruling remains the owner's, now with the premise stated at full precision. NO tier change."
+  },
+  "context": {
+    "follows": "#4074; owner directives: option 1 then 'take adversarial view; if you can resolve issues then proceed'",
+    "scope_guard": "consistency + species alignment; ruling remains the owner's; no fit; nothing wired; 1/(8pi) stays phase-4"
+  }
+}
