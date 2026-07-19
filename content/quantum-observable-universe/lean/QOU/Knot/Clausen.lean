@@ -437,6 +437,22 @@ theorem clausen_eq_series {θ : ℝ} (hθ : θ ∈ Set.Ioo (0:ℝ) (2 * π)) :
     clausen θ = QOU.Archimedean.Cl_2 θ :=
   clausen_eqOn_Cl_2 hθ
 
+/-- **Antisymmetry of `Cl_2` about `π` (saddle brick E2, sorry-free).**
+    `Cl_2(2π − θ) = −Cl_2(θ)`: termwise `sin((k+1)(2π−θ)) = −sin((k+1)θ)` by
+    `2π`-periodicity (`Real.sin_int_mul_two_pi_sub`). Locates the minimum of
+    `Cl_2` on `(0,2π)` at `θ = 5π/3` with value `−Cl_2(π/3)` — the value the
+    Kashaev saddle max `−2Cl_2(2πx)` attains at `x = 5/6`, feeding the
+    existence/value program for `VolumeConjecture41` (bean qou-yrog). -/
+theorem Cl_2_two_pi_sub (θ : ℝ) :
+    QOU.Archimedean.Cl_2 (2 * π - θ) = -QOU.Archimedean.Cl_2 θ := by
+  unfold QOU.Archimedean.Cl_2
+  rw [← tsum_neg]
+  congr 1
+  funext k
+  have h : ((k : ℝ) + 1) * (2 * π - θ)
+      = ((k + 1 : ℤ) : ℝ) * (2 * π) - ((k : ℝ) + 1) * θ := by push_cast; ring
+  rw [h, Real.sin_int_mul_two_pi_sub, neg_div]
+
 /-- **The series Clausen's derivative** `Cl_2'(θ) = -log(2 sin(θ/2))` for
     `θ ∈ (0, 2π)` — the derivative the filler flagged as needing Fourier
     infrastructure, now machine-proved (`hasDerivAt_Cl_2_series`). Dual-purpose: `V'(θ)` of
