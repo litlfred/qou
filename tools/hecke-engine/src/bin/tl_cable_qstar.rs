@@ -339,7 +339,7 @@ fn aggregate(n_target: i32, c_n: usize, k: usize, ckpt_dir: &str) {
     }
 
     let out = serde_json::json!({
-        "engine": format!("hecke-engine (rust, tl_cable, {}-bit MPFR)", PREC),
+        "engine": "hecke-engine (rust, tl_cable, dense-f64 gates)",
         "n_target": n_target, "cable_width": c_n, "tl_strands": c_n * k,
         "assertions": assertions, "allPassed": all_passed, "all_present": all_present,
         "B_qstar": b_star, "B_samples": [bs[0], bs[1], bs[2]],
