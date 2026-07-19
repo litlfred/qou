@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-07-19T13:04:50.195172+00:00",
-  "commitSha": "327e5881ba83c4c4222a9d6874533ff717da62b6",
+  "computedAt": "2026-07-19T13:11:18.635291+00:00",
+  "commitSha": "d616db2a54f7d303e979d58f4b5306a00ea06f02",
   "assertions": [
     {
       "name": "g_reeb_fixed_no_fit",
@@ -45,8 +45,8 @@
   "durationMs": 0,
   "computation": "b4-isotope-pole-approach",
   "scriptFile": "b4_isotope_pole_approach_probe.py",
-  "scriptHash": "f90e46ee5be4",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "7b43aa1dc22c",
+  "scriptCommitSha": "d616db2a54f7d303e979d58f4b5306a00ea06f02",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
