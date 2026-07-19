@@ -177,3 +177,88 @@ def emit_witness():
                "basis_perms":[list(p) for p in H4.S]}}
     json.dump(out,open("computations/markov/hecke-regular-nf-h4.witness.json","w"),indent=1)
     print("witness written; markov_reduction_H4:",mk_ok,"parab:",par4)
+
+def emit_lean_module():
+    H4=Hecke(4); tr4=markov_trace(H4)
+    words=[reduced_word(p) for p in H4.S]
+    TRM=", ".join(str(t).replace('**','^') for t in tr4)
+    def sigma(i): return emit_mulsigma(H4,i)
+    # mulNF: for basis j with word w=[g1,...], (u·b_j) = mulσ_{g_last}(...mulσ_{g1} u...) since
+    # right-mult anti-hom R_{ab}=R_b∘R_a and T_{b_j}=T_{s_{w0}}···: u·b_j = R_{w}(u) applied left-to-right.
+    # H3 used b3 word (1,0) -> mulσ₀(mulσ₁ u): apply w reversed (outermost = last letter). Mirror that.
+    nf_terms=[]
+    for j,w in enumerate(words):
+        expr="u"
+        for g in w:            # H3: word (1,0) => mulσ₀(mulσ₁ u): apply letters left->right as nested, first letter innermost
+            expr=f"mulσ{g} h ({expr})"
+        nf_terms.append(f"    v {j} * ({expr}) i" if j==0 and not w else (f"    v {j} * u i" if not w else f"  + v {j} * ({expr}) i"))
+    # fix first-term formatting
+    nf_lines=[]
+    for j,w in enumerate(words):
+        expr="u"
+        for g in w: expr=f"mulσ{g} h ({expr})"
+        term=f"v {j} * ({expr}) i" if w else f"v {j} * u i"
+        nf_lines.append(("    " if j==0 else "  + ")+term)
+    lean = LEAN_TEMPLATE.replace("__TRM__",TRM)\
+        .replace("__SIG0__",sigma(0)).replace("__SIG1__",sigma(1)).replace("__SIG2__",sigma(2))\
+        .replace("__MULNF__","\n".join(nf_lines))
+    open("content/quantum-observable-universe/lean/QOU/Machinery/MarkovTraceH4.lean","w").write(lean)
+    print("wrote MarkovTraceH4.lean")
+
+LEAN_TEMPLATE = r'''import Mathlib.Algebra.BigOperators.Fin
+import Mathlib.Data.Fin.VecNotation
+import Mathlib.Tactic.Ring
+import Mathlib.Tactic.FinCases
+
+/-!
+# QOU.Machinery.H4 — the H₄(q) Markov trace on the Fin-24 GB normal-form module
+
+Extends the `H3` block of `MarkovTraceOnHecke.lean` (Fin 6) to `H₄(q)` (Fin 24 =
+`|S₄|`), the base case for the general-`n` Markov stabilization (τ-functor open
+item A, `docs/audits/2026-07-18-tau-functor-construction-reduction.md`).
+
+All data (trace values `TRM`, generator right-actions `mulσ0/1/2`, the reduced
+words behind `mulNF`) is generated and cross-validated by
+`computations/markov/hecke_regular_nf_table.py` (Hecke + braid + commutation
+relations, trace cyclicity, and the Markov reduction — all machine-checked;
+reproduces the hardcoded `H3` block exactly).  Convention: `T_{s_i}² = 1 + h·T_{s_i}`
+(`h = q − q⁻¹`), Ocneanu/Markov trace `tr(1)=1`, `tr(x·T_{top}) = z·tr(x)`.
+-/
+
+namespace QOU.Machinery.H4
+
+variable {R : Type*} [CommRing R]
+
+/-- Markov-trace values on the 24 NF basis elements of `H₄(q)`. -/
+def TRM (z h : R) : Fin 24 → R := ![__TRM__]
+
+/-- The Markov trace as the linear functional `v ↦ ∑ᵢ vᵢ · TRMᵢ`. -/
+def trM (z h : R) (v : Fin 24 → R) : R := ∑ i, v i * TRM z h i
+
+/-- Right action of `σ₀` on the NF basis. -/
+def mulσ0 (h : R) (v : Fin 24 → R) : Fin 24 → R := __SIG0__
+
+/-- Right action of `σ₁` on the NF basis. -/
+def mulσ1 (h : R) (v : Fin 24 → R) : Fin 24 → R := __SIG1__
+
+/-- Right action of `σ₂` (the top strand — the Markov generator) on the NF basis. -/
+def mulσ2 (h : R) (v : Fin 24 → R) : Fin 24 → R := __SIG2__
+
+/-- The full algebra product `u · v` on the NF module: `∑_j v_j · (u · b_j)`,
+    `u · b_j` = the composite of `mulσ` along the reduced word of `b_j`. -/
+def mulNF (h : R) (u v : Fin 24 → R) : Fin 24 → R := fun i =>
+__MULNF__
+
+/-- (M1) Additivity. -/
+theorem trM_add (z h : R) (u v : Fin 24 → R) :
+    trM z h (u + v) = trM z h u + trM z h v := by
+  simp only [trM, Pi.add_apply, add_mul, Finset.sum_add_distrib]
+
+/-- (M1) Homogeneity. -/
+theorem trM_smul (z h c : R) (v : Fin 24 → R) :
+    trM z h (c • v) = c * trM z h v := by
+  simp only [trM, Pi.smul_apply, smul_eq_mul, Finset.mul_sum]
+  ring_nf
+
+end QOU.Machinery.H4
+'''
