@@ -1,11 +1,11 @@
 ---
 # qou-joi7
 title: 'f^λ genus expansion: Śniady on (f^λ)³-biased measure (T₃ = Σ_{w∈S_k} χ^{sh(w)}(3-cycle))'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-07-18T23:14:41Z
-updated_at: 2026-07-19T03:08:21Z
+updated_at: 2026-07-19T03:37:10Z
 parent: qou-w1z0
 ---
 
