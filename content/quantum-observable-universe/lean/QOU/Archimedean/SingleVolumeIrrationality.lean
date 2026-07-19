@@ -36,13 +36,23 @@ class SingleVolumeIrrationality where
   \mathrm{Vol}(\mathcal{B}_3) \notin \mathbb{Q}.
 $$
 
-      Field schema below is a structural placeholder; refine per §3b
-      to match the conjecture's actual content. The single sorry on
-      the `noncomputable instance` is the conjecture itself. -/
-  residual : ℝ
-  /-- The residual vanishes (the conjecture is the assertion that
-      this holds). -/
-  residual_eq_zero : residual = 0
+      History note: an earlier placeholder carried
+      `residual_eq_zero : residual = 0` — the **wrong sign** for a
+      non-membership claim (the QouPNeqNp-precedent bug, sign-audit
+      bean `qou-847i`).  The fields now assert the conjecture's actual
+      shape: irrationality of each volume.  The three volume fields
+      are data pinned by the manuscript's definitions
+      ($2\,\mathrm{Cl}_2(\pi/3)$ etc.); tying them to formalised
+      Clausen/Lobachevsky values is the remaining refinement. -/
+  vol41 : ℝ
+  vol52 : ℝ
+  volBorromean : ℝ
+  /-- $\mathrm{Vol}(4_1) \notin \mathbb{Q}$. -/
+  vol41_irrational : Irrational vol41
+  /-- $\mathrm{Vol}(5_2) \notin \mathbb{Q}$. -/
+  vol52_irrational : Irrational vol52
+  /-- $\mathrm{Vol}(\mathcal{B}_3) \notin \mathbb{Q}$. -/
+  volBorromean_irrational : Irrational volBorromean
 
 -- The conjecture itself.  The `sorry` represents the **open
 -- conjecture** per §3b — not a missing proof.
