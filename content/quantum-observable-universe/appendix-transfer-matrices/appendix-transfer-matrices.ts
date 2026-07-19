@@ -38,6 +38,7 @@ export default chapter({
       blocks: [
         "tm-knot-pairs-intro",
         "tm-knot-pairs",
+        "tm-knot-pairs-em",
 
         "tm-knot-pairs-table1-data",
         "tm-knot-pairs-table2-data",
@@ -64,6 +65,7 @@ export default chapter({
       blocks: [
         "tm-worked-examples-intro",
         "tm-worked-examples",
+        "tm-worked-examples-tritium",
         "tm-worked-examples-table10-data",
         "tm-worked-examples-table9-data",
         "tm-worked-examples-table8-data",
@@ -81,6 +83,7 @@ export default chapter({
       label: "sec:tm-inductive-construction",
       blocks: [
         "tm-inductive-construction",
+        "tm-inductive-construction-signatures",
         "tm-gs-normal-form",
         "tm-gs-normal-form-proof",
       ],
@@ -91,6 +94,9 @@ export default chapter({
       blocks: [
         "tm-heavy-atom-examples-intro",
         "tm-heavy-atom-examples",
+        "tm-heavy-atom-examples-carbon",
+        "tm-heavy-atom-examples-cobalt",
+        "tm-heavy-atom-examples-bismuth",
 
         "tm-heavy-atom-examples-table1-data",
         "tm-heavy-atom-examples-table2-data",
