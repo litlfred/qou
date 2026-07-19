@@ -34,7 +34,10 @@ export default chapter({
       title: "Gluon-model comparison vs experimental Q-values",
       label: "sec:knot-ops-archi-gluon-model",
       blocks: [
-        "gluon-model-comparison",
+        "gluon-model-definitions",
+        "gluon-model-comparison-table",
+        "gluon-model-borromean-interpretation",
+        "gluon-model-a-confirmation",
       ],
     }),
   ],

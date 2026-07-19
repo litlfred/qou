@@ -1,21 +1,21 @@
 {
   "$schema": "block-qa/v1",
-  "label": "rem:gluon-model-comparison",
+  "label": "rem:gluon-model-definitions",
   "kind": "remark",
   "paths": {
-    "ts": "../qou/content/quantum-observable-universe/appendix-knot-operations-archimedean/gluon-model-comparison.ts",
-    "md": "../qou/content/quantum-observable-universe/appendix-knot-operations-archimedean/gluon-model-comparison.md"
+    "ts": "../qou/content/quantum-observable-universe/appendix-knot-operations-archimedean/gluon-model-definitions.ts",
+    "md": "../qou/content/quantum-observable-universe/appendix-knot-operations-archimedean/gluon-model-definitions.md"
   },
   "source_hashes": {
-    "md": "2f2e4ccaa743",
-    "ts": "9178e64f4bc7"
+    "md": "",
+    "ts": ""
   },
   "criteria": {
     "voice-status-leak": [
       {
         "field_hash": {
-          "md": "2f2e4ccaa743",
-          "ts": "9178e64f4bc7"
+          "md": "",
+          "ts": ""
         },
         "result": "pass",
         "reviewer": {
@@ -32,8 +32,8 @@
     "voice-emoji-content": [
       {
         "field_hash": {
-          "md": "2f2e4ccaa743",
-          "ts": "9178e64f4bc7"
+          "md": "",
+          "ts": ""
         },
         "result": "pass",
         "reviewer": {
@@ -50,8 +50,8 @@
     "voice-first-person-work": [
       {
         "field_hash": {
-          "md": "2f2e4ccaa743",
-          "ts": "9178e64f4bc7"
+          "md": "",
+          "ts": ""
         },
         "result": "pass",
         "reviewer": {
@@ -68,8 +68,8 @@
     "voice-time-stamped-notes": [
       {
         "field_hash": {
-          "md": "2f2e4ccaa743",
-          "ts": "9178e64f4bc7"
+          "md": "",
+          "ts": ""
         },
         "result": "pass",
         "reviewer": {
@@ -86,8 +86,8 @@
     "voice-unicode-crash": [
       {
         "field_hash": {
-          "md": "2f2e4ccaa743",
-          "ts": "9178e64f4bc7"
+          "md": "",
+          "ts": ""
         },
         "result": "pass",
         "reviewer": {
@@ -104,8 +104,8 @@
     "voice-editorializing": [
       {
         "field_hash": {
-          "md": "2f2e4ccaa743",
-          "ts": "9178e64f4bc7"
+          "md": "",
+          "ts": ""
         },
         "result": "pass",
         "reviewer": {
@@ -122,8 +122,8 @@
     "voice-scholarly-default": [
       {
         "field_hash": {
-          "md": "2f2e4ccaa743",
-          "ts": "9178e64f4bc7"
+          "md": "",
+          "ts": ""
         },
         "result": "pass",
         "reviewer": {
@@ -138,8 +138,8 @@
       },
       {
         "field_hash": {
-          "md": "2f2e4ccaa743",
-          "ts": "9178e64f4bc7"
+          "md": "",
+          "ts": ""
         },
         "result": "pass",
         "notes": "Agentic heuristic check: pass.",
@@ -155,8 +155,8 @@
     "voice-title-scholarly": [
       {
         "field_hash": {
-          "md": "2f2e4ccaa743",
-          "ts": "9178e64f4bc7"
+          "md": "",
+          "ts": ""
         },
         "result": "pass",
         "reviewer": {
@@ -173,8 +173,8 @@
     "voice-ai-slop": [
       {
         "field_hash": {
-          "md": "2f2e4ccaa743",
-          "ts": "9178e64f4bc7"
+          "md": "",
+          "ts": ""
         },
         "result": "pass",
         "reviewer": {
@@ -189,8 +189,8 @@
       },
       {
         "field_hash": {
-          "md": "2f2e4ccaa743",
-          "ts": "9178e64f4bc7"
+          "md": "",
+          "ts": ""
         },
         "result": "pass",
         "notes": "Agentic heuristic check: pass.",
@@ -206,8 +206,8 @@
     "voice-author-notes-pollution": [
       {
         "field_hash": {
-          "md": "2f2e4ccaa743",
-          "ts": "9178e64f4bc7"
+          "md": "",
+          "ts": ""
         },
         "result": "pass",
         "reviewer": {
@@ -224,8 +224,8 @@
     "voice-status-section": [
       {
         "field_hash": {
-          "md": "2f2e4ccaa743",
-          "ts": "9178e64f4bc7"
+          "md": "",
+          "ts": ""
         },
         "result": "pass",
         "reviewer": {
@@ -242,8 +242,8 @@
     "framework-canonical": [
       {
         "field_hash": {
-          "md": "2f2e4ccaa743",
-          "ts": "9178e64f4bc7"
+          "md": "",
+          "ts": ""
         },
         "result": "pass",
         "reviewer": {
@@ -260,8 +260,8 @@
     "wall-side-correct": [
       {
         "field_hash": {
-          "md": "2f2e4ccaa743",
-          "ts": "9178e64f4bc7"
+          "md": "",
+          "ts": ""
         },
         "result": "n/a",
         "reviewer": {
@@ -279,8 +279,8 @@
     "wall-base-ring-minimal": [
       {
         "field_hash": {
-          "md": "2f2e4ccaa743",
-          "ts": "9178e64f4bc7"
+          "md": "",
+          "ts": ""
         },
         "result": "n/a",
         "reviewer": {
@@ -298,8 +298,8 @@
     "q-usage-regime-detected": [
       {
         "field_hash": {
-          "md": "2f2e4ccaa743",
-          "ts": "9178e64f4bc7"
+          "md": "",
+          "ts": ""
         },
         "result": "pass",
         "reviewer": {
@@ -316,8 +316,8 @@
     "q-usage-fixed-q0-leak": [
       {
         "field_hash": {
-          "md": "2f2e4ccaa743",
-          "ts": "9178e64f4bc7"
+          "md": "",
+          "ts": ""
         },
         "result": "n/a",
         "reviewer": {
@@ -334,8 +334,8 @@
     "q-usage-archimedean-in-categorical-chapter": [
       {
         "field_hash": {
-          "md": "2f2e4ccaa743",
-          "ts": "9178e64f4bc7"
+          "md": "",
+          "ts": ""
         },
         "result": "n/a",
         "reviewer": {
@@ -352,8 +352,8 @@
     "q-usage-positivity-implicit": [
       {
         "field_hash": {
-          "md": "2f2e4ccaa743",
-          "ts": "9178e64f4bc7"
+          "md": "",
+          "ts": ""
         },
         "result": "n/a",
         "reviewer": {
@@ -371,8 +371,8 @@
     "q-usage-modulus-vs-real-mismatch": [
       {
         "field_hash": {
-          "md": "2f2e4ccaa743",
-          "ts": "9178e64f4bc7"
+          "md": "",
+          "ts": ""
         },
         "result": "n/a",
         "reviewer": {
@@ -389,8 +389,8 @@
     "q-usage-root-of-unity-undeclared": [
       {
         "field_hash": {
-          "md": "2f2e4ccaa743",
-          "ts": "9178e64f4bc7"
+          "md": "",
+          "ts": ""
         },
         "result": "pass",
         "reviewer": {
@@ -407,8 +407,8 @@
     "q-usage-narrative-chapter-mismatch": [
       {
         "field_hash": {
-          "md": "2f2e4ccaa743",
-          "ts": "9178e64f4bc7"
+          "md": "",
+          "ts": ""
         },
         "result": "n/a",
         "reviewer": {
@@ -425,8 +425,8 @@
     "canonical-calibration-count": [
       {
         "field_hash": {
-          "md": "2f2e4ccaa743",
-          "ts": "9178e64f4bc7"
+          "md": "",
+          "ts": ""
         },
         "result": "pass",
         "reviewer": {
@@ -443,8 +443,8 @@
     "canonical-no-numerology": [
       {
         "field_hash": {
-          "md": "2f2e4ccaa743",
-          "ts": "9178e64f4bc7"
+          "md": "",
+          "ts": ""
         },
         "result": "pass",
         "reviewer": {
@@ -461,8 +461,8 @@
     "canonical-witness-pinned": [
       {
         "field_hash": {
-          "md": "2f2e4ccaa743",
-          "ts": "9178e64f4bc7"
+          "md": "",
+          "ts": ""
         },
         "result": "pass",
         "reviewer": {
@@ -479,8 +479,8 @@
     "canonical-script-not-deprecated": [
       {
         "field_hash": {
-          "md": "2f2e4ccaa743",
-          "ts": "9178e64f4bc7"
+          "md": "",
+          "ts": ""
         },
         "result": "pass",
         "reviewer": {
@@ -497,8 +497,8 @@
     "canonical-dilogarithm-context": [
       {
         "field_hash": {
-          "md": "2f2e4ccaa743",
-          "ts": "9178e64f4bc7"
+          "md": "",
+          "ts": ""
         },
         "result": "pass",
         "reviewer": {
@@ -515,8 +515,8 @@
     "canonical-no-hardcoded-observable": [
       {
         "field_hash": {
-          "md": "2f2e4ccaa743",
-          "ts": "9178e64f4bc7"
+          "md": "",
+          "ts": ""
         },
         "result": "pass",
         "reviewer": {
@@ -533,8 +533,8 @@
     "canonical-ck-tiered-not-binary": [
       {
         "field_hash": {
-          "md": "2f2e4ccaa743",
-          "ts": "9178e64f4bc7"
+          "md": "",
+          "ts": ""
         },
         "result": "pass",
         "reviewer": {
@@ -551,8 +551,8 @@
     "canonical-no-negative-result-in-paper": [
       {
         "field_hash": {
-          "md": "2f2e4ccaa743",
-          "ts": "9178e64f4bc7"
+          "md": "",
+          "ts": ""
         },
         "result": "pass",
         "reviewer": {
@@ -569,8 +569,8 @@
     "compute-witness-exists": [
       {
         "field_hash": {
-          "md": "2f2e4ccaa743",
-          "ts": "9178e64f4bc7"
+          "md": "",
+          "ts": ""
         },
         "result": "pass",
         "reviewer": {
@@ -587,8 +587,8 @@
     "compute-lp-dual-present": [
       {
         "field_hash": {
-          "md": "2f2e4ccaa743",
-          "ts": "9178e64f4bc7"
+          "md": "",
+          "ts": ""
         },
         "result": "pass",
         "reviewer": {
@@ -605,8 +605,8 @@
     "detangler-no-forward-ref": [
       {
         "field_hash": {
-          "md": "2f2e4ccaa743",
-          "ts": "9178e64f4bc7"
+          "md": "",
+          "ts": ""
         },
         "result": "n/a",
         "reviewer": {
@@ -623,8 +623,8 @@
     "detangler-section-band": [
       {
         "field_hash": {
-          "md": "2f2e4ccaa743",
-          "ts": "9178e64f4bc7"
+          "md": "",
+          "ts": ""
         },
         "result": "n/a",
         "reviewer": {
@@ -641,8 +641,8 @@
     "detangler-no-xchapter-fwd": [
       {
         "field_hash": {
-          "md": "2f2e4ccaa743",
-          "ts": "9178e64f4bc7"
+          "md": "",
+          "ts": ""
         },
         "result": "n/a",
         "reviewer": {
@@ -659,8 +659,8 @@
     "detangler-archimedean-wall": [
       {
         "field_hash": {
-          "md": "2f2e4ccaa743",
-          "ts": "9178e64f4bc7"
+          "md": "",
+          "ts": ""
         },
         "result": "n/a",
         "reviewer": {
@@ -678,8 +678,8 @@
     "detangler-block-tanglement": [
       {
         "field_hash": {
-          "md": "2f2e4ccaa743",
-          "ts": "9178e64f4bc7"
+          "md": "",
+          "ts": ""
         },
         "result": "n/a",
         "reviewer": {
@@ -696,8 +696,8 @@
     "detangler-graph-energy": [
       {
         "field_hash": {
-          "md": "2f2e4ccaa743",
-          "ts": "9178e64f4bc7"
+          "md": "",
+          "ts": ""
         },
         "result": "n/a",
         "reviewer": {
@@ -714,8 +714,8 @@
     "detangler-topic-coherence": [
       {
         "field_hash": {
-          "md": "2f2e4ccaa743",
-          "ts": "9178e64f4bc7"
+          "md": "",
+          "ts": ""
         },
         "result": "n/a",
         "reviewer": {
@@ -732,8 +732,8 @@
     "detangler-no-dependency-cycle": [
       {
         "field_hash": {
-          "md": "2f2e4ccaa743",
-          "ts": "9178e64f4bc7"
+          "md": "",
+          "ts": ""
         },
         "result": "n/a",
         "reviewer": {
@@ -750,8 +750,8 @@
     "bib-cite-resolves": [
       {
         "field_hash": {
-          "md": "2f2e4ccaa743",
-          "ts": "9178e64f4bc7"
+          "md": "",
+          "ts": ""
         },
         "result": "n/a",
         "reviewer": {
@@ -770,8 +770,8 @@
     "bib-cited-ref-has-url": [
       {
         "field_hash": {
-          "md": "2f2e4ccaa743",
-          "ts": "9178e64f4bc7"
+          "md": "",
+          "ts": ""
         },
         "result": "n/a",
         "reviewer": {
@@ -790,8 +790,8 @@
     "bib-cited-ref-metadata-ok": [
       {
         "field_hash": {
-          "md": "2f2e4ccaa743",
-          "ts": "9178e64f4bc7"
+          "md": "",
+          "ts": ""
         },
         "result": "n/a",
         "reviewer": {
@@ -810,8 +810,8 @@
     "bib-cited-ref-has-screenshot": [
       {
         "field_hash": {
-          "md": "2f2e4ccaa743",
-          "ts": "9178e64f4bc7"
+          "md": "",
+          "ts": ""
         },
         "result": "n/a",
         "reviewer": {
@@ -830,8 +830,8 @@
     "proof-no-trivial-skeleton": [
       {
         "field_hash": {
-          "md": "2f2e4ccaa743",
-          "ts": "9178e64f4bc7"
+          "md": "",
+          "ts": ""
         },
         "result": "n/a",
         "reviewer": {
@@ -862,7 +862,10 @@
         }
       },
       {
-        "field_hash": {},
+        "field_hash": {
+          "md": "",
+          "ts": ""
+        },
         "result": "pass",
         "notes": "Agentic heuristic check: pass.",
         "reviewed_at": "2026-07-19T17:19:09.000Z",
@@ -1072,16 +1075,16 @@
     "milnor-amalgamated-flow": [],
     "expo-milnor-clarity": [
       {
-        "result": "warn",
-        "notes": "Block is quite long, consider breaking it up for clarity.",
-        "reviewed_at": "2026-07-19T17:16:30.000Z",
-        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
+        "field_hash": {
+          "md": "",
+          "ts": ""
+        },
+        "result": "pass",
+        "notes": "Resolved over-length block via split.",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-19"
+          "id": "exposition-swarm-agent",
+          "version": "claude-3.5-sonnet"
         }
       }
     ],
@@ -1089,8 +1092,8 @@
     "voice-probe-narrative": [
       {
         "field_hash": {
-          "md": "2f2e4ccaa743",
-          "ts": "9178e64f4bc7"
+          "md": "",
+          "ts": ""
         },
         "result": "pass",
         "reviewer": {
@@ -1107,8 +1110,8 @@
     "cite-named-theorem": [
       {
         "field_hash": {
-          "md": "2f2e4ccaa743",
-          "ts": "9178e64f4bc7"
+          "md": "",
+          "ts": ""
         },
         "result": "pass",
         "reviewer": {
@@ -1125,8 +1128,8 @@
     "voice-agent-speak": [
       {
         "field_hash": {
-          "md": "2f2e4ccaa743",
-          "ts": "9178e64f4bc7"
+          "md": "",
+          "ts": ""
         },
         "result": "pass",
         "reviewer": {
