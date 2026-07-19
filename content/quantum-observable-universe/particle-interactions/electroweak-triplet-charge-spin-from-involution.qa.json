@@ -230,6 +230,22 @@
         "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554",
         "severity": "major",
         "evidence": "content/quantum-observable-universe/particle-interactions/electroweak-triplet-charge-spin-from-involution.lean:52: so the concrete `swap₂` instance and its projection facts are recomputed here; | content/quantum-observable-universe/particle-interactions/electroweak-triplet-charge-spin-from-involution.lean:433: So the surviving map assigns them a uniformly positive, strictly monotone"
+      },
+      {
+        "field_hash": {
+          "md": "b360725dc26f",
+          "ts": "816034935aac",
+          "lean": "89c323a45829"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
       }
     ],
     "voice-title-scholarly": [
@@ -268,6 +284,22 @@
         },
         "reviewed_at": "2026-07-13T00:59:15.685Z",
         "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554"
+      },
+      {
+        "field_hash": {
+          "md": "b360725dc26f",
+          "ts": "816034935aac",
+          "lean": "89c323a45829"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
       }
     ],
     "voice-author-notes-pollution": [
@@ -1145,6 +1177,18 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-13"
+        }
+      },
+      {
+        "field_hash": {},
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
         }
       }
     ],

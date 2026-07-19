@@ -135,6 +135,21 @@
         },
         "reviewed_at": "2026-07-13T00:59:15.685Z",
         "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554"
+      },
+      {
+        "field_hash": {
+          "md": "2fd0776485b2",
+          "ts": "7cedcf251bc8"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
       }
     ],
     "voice-title-scholarly": [
@@ -171,6 +186,21 @@
         },
         "reviewed_at": "2026-07-13T00:59:15.685Z",
         "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554"
+      },
+      {
+        "field_hash": {
+          "md": "2fd0776485b2",
+          "ts": "7cedcf251bc8"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
       }
     ],
     "voice-author-notes-pollution": [
@@ -280,6 +310,21 @@
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "Proof block (kind=proof) of prop:sl2-period-conserved-quantity, co-located in mass-theory with its proposition; correctly a proof block carrying the derivation of the depth-2 first integral, not a misfiled new claim."
+      },
+      {
+        "field_hash": {
+          "md": "2fd0776485b2",
+          "ts": "7cedcf251bc8"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
       }
     ],
     "da-false-claim": [

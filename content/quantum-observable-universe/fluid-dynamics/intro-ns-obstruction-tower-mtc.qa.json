@@ -124,7 +124,20 @@
         "reviewed_sha": "d4a8cf462aeef2262429b13571ddd385968bce63"
       }
     ],
-    "fit-section-chapter": [],
+    "fit-section-chapter": [
+      {
+        "field_hash": {},
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
     "wall-side-statement": [],
     "wall-side-proof": [],
     "voice-statement-no-interpretation": [],
