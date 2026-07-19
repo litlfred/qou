@@ -105,52 +105,66 @@ fn label_at_pos(p: usize, n: usize) -> u8 {
     }
 }
 
-/// Enumerate all non-crossing perfect matchings of `2n` circular positions,
-/// converting each to a label-space partner array. Backtracking: always match
-/// the lowest unmatched position to a later position that leaves an even count
-/// strictly between — this yields exactly the Catalan(n) non-crossing
-/// matchings with no duplicates.
-fn build_basis(n: usize) -> (Vec<Diagram>, FxHashMap<Diagram, u32>) {
-    let m = 2 * n;
-    let mut out: Vec<Diagram> = Vec::new();
-    // partner in POSITION space during recursion; 255 = unmatched.
-    let mut pos_partner = [255u8; MAXP];
-
-    fn rec(pos_partner: &mut [u8; MAXP], m: usize, n: usize, out: &mut Vec<Diagram>) {
-        // lowest unmatched position
-        let a = match (0..m).find(|&p| pos_partner[p] == 255) {
-            None => {
-                // complete matching: convert position pairs -> label partners
-                let mut d: Diagram = [0u8; MAXP];
-                for p in 0..m {
-                    let q = pos_partner[p] as usize;
-                    let la = label_at_pos(p, n);
-                    let lb = label_at_pos(q, n);
-                    d[la as usize] = lb;
-                }
-                out.push(d);
-                return;
+/// All non-crossing perfect matchings of a set of circular positions, as pair
+/// lists. Splits on the lowest position `a`: it pairs with some `b` such that
+/// the positions strictly *inside* `(a,b)` form an even set matched only among
+/// themselves (never crossing the `a–b` chord), and the *outside* is matched
+/// independently. This inside/outside separation — not a mere even-count test —
+/// is what enforces non-crossing. Direct transcription of the Python
+/// `tl_basis` recursion.
+fn nc_matchings(avail: &[usize]) -> Vec<Vec<(usize, usize)>> {
+    if avail.is_empty() {
+        return vec![Vec::new()];
+    }
+    let a = avail[0]; // lowest position
+    let mut out: Vec<Vec<(usize, usize)>> = Vec::new();
+    for k in 1..avail.len() {
+        let b = avail[k]; // a < b since a is the minimum
+        let inside: Vec<usize> = avail[1..]
+            .iter()
+            .copied()
+            .filter(|&x| x != b && a < x && x < b)
+            .collect();
+        if inside.len() % 2 != 0 {
+            continue;
+        }
+        let outside: Vec<usize> = avail[1..]
+            .iter()
+            .copied()
+            .filter(|&x| x != b && !(a < x && x < b))
+            .collect();
+        let ins = nc_matchings(&inside);
+        let outs = nc_matchings(&outside);
+        for ri in &ins {
+            for ro in &outs {
+                let mut mm = Vec::with_capacity(1 + ri.len() + ro.len());
+                mm.push((a, b));
+                mm.extend_from_slice(ri);
+                mm.extend_from_slice(ro);
+                out.push(mm);
             }
-            Some(a) => a,
-        };
-        let mut b = a + 1;
-        while b < m {
-            if pos_partner[b] == 255 {
-                // count unmatched strictly between a and b
-                let between = (a + 1..b).filter(|&p| pos_partner[p] == 255).count();
-                if between % 2 == 0 {
-                    pos_partner[a] = b as u8;
-                    pos_partner[b] = a as u8;
-                    rec(pos_partner, m, n, out);
-                    pos_partner[a] = 255;
-                    pos_partner[b] = 255;
-                }
-            }
-            b += 1;
         }
     }
+    out
+}
 
-    rec(&mut pos_partner, m, n, &mut out);
+/// Enumerate the TL_n basis (Catalan(n) non-crossing matchings) as label-space
+/// partner arrays, with the diagram→index map.
+fn build_basis(n: usize) -> (Vec<Diagram>, FxHashMap<Diagram, u32>) {
+    let m = 2 * n;
+    let positions: Vec<usize> = (0..m).collect();
+    let matchings = nc_matchings(&positions);
+    let mut out: Vec<Diagram> = Vec::with_capacity(matchings.len());
+    for mm in &matchings {
+        let mut d: Diagram = [0u8; MAXP];
+        for &(p, q) in mm {
+            let la = label_at_pos(p, n) as usize;
+            let lb = label_at_pos(q, n) as usize;
+            d[la] = lb as u8;
+            d[lb] = la as u8;
+        }
+        out.push(d);
+    }
     let mut index: FxHashMap<Diagram, u32> =
         FxHashMap::with_capacity_and_hasher(out.len(), Default::default());
     for (i, d) in out.iter().enumerate() {
@@ -282,6 +296,8 @@ impl TlEngine {
                 .par_iter()
                 .map(|d| {
                     let (dg, lp) = compose(d, u, n);
+                    // Composition of two planar diagrams is planar, so `dg` is
+                    // always a basis element; a miss would be an engine bug.
                     (index[&dg], lp as u8)
                 })
                 .collect();

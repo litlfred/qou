@@ -338,8 +338,22 @@ fn main() {
     j.push_str(&format!("  \"certificate_s2h\": {:e},\n", cert));
     j.push_str(&format!("  \"framing_measured_fr\": {:?}\n", fr_measured));
     j.push_str("}\n");
-    std::fs::write(&out_path, j).expect("write results");
-    println!("  results -> {}", out_path);
+    if let Some(parent) = std::path::Path::new(&out_path).parent() {
+        std::fs::create_dir_all(parent).ok();
+    }
+    match std::fs::write(&out_path, &j) {
+        Ok(()) => println!("  results -> {}", out_path),
+        Err(e) => {
+            // Fall back to the current directory so results are never lost.
+            let base = std::path::Path::new(&out_path)
+                .file_name()
+                .unwrap()
+                .to_string_lossy()
+                .to_string();
+            std::fs::write(&base, &j).expect("write results (fallback)");
+            println!("  results -> ./{} (primary path failed: {})", base, e);
+        }
+    }
 
     std::process::exit(if all_passed { 0 } else { 1 });
 }
