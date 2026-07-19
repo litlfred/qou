@@ -3,6 +3,13 @@ import Mathlib.Algebra.Quaternion
 import QOU.QuaternionicElectroweak
 import QOU.Mass.NaStokesKeystone
 
+namespace QOU.Mass
+class QDifferenceKernelIsProlongationSymbol (R : Type*) [Field R] where
+  kernel : ℕ → R
+  prolongationSymbol : ℕ → R
+  kernel_eq_symbol : ∀ j, kernel j = prolongationSymbol j
+end QOU.Mass
+
 /-!
 # QOU.Mass.ReebAlienFiltration — Alien calculus on the Reeb-twisted jet bundle
 
