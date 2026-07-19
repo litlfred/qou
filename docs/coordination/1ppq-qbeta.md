@@ -2004,3 +2004,37 @@ what the non-abelian analogue of Écalle resurgence is. Answer + finding:
   `qbeta_5two_meson_lepton_channel_mixing_probe.py`. Audit:
   `docs/audits/2026-07-19-5two-barodd-stokes-majority-nonabelian.md`. scope-(a);
   no fit; no c_k wired; no tier change.
+
+---
+
+**2026-07-19 · c₃ and q₀ are the same problem — the self-dual/CS locus q\*
+(three-viewpoint synthesis, PR #4064).** Owner asked to review the bar-odd
+dressing from Frobenius/self-dual/categorical-action viewpoints + whether the
+carrier zero is at a fixed q\* or at q₀ (circularity check). Three parallel
+corpus reviews + the (N,k) scan:
+
+- **Circularity: fixed q\*, NOT q₀.** The carrier is the 4₁ CS invariant
+  `Im 𝔙(u)`; nonzero at both pins with OPPOSITE signs (+0.0097 muon, −0.039
+  proton), zero at fixed q\*=1.10997859303 (80.3% muon-ward, between the pins).
+  Not tautological. BUT the (N,k) winding scan is **0/8** — no derived candidate
+  reproduces the S-values ⇒ q\* is a requirement, **not yet derived**.
+- **Cat-action:** `c₃=τ(O)` settled NO (τ=fibre functor ∘ π_∞ ring hom; smooth
+  can't make the swing; swing is representational 1/u³, experiment-pinned). Real
+  lead: **q₀ ⟺ α_EM unified** (same F on Bring/S₅; both reduce to R1 naturality).
+- **Frobenius:** feed the **matrix O** via Hilbert–Schmidt `⟨O,(G−μ)⁻¹O⟩` (sees
+  the 52.8% off-diagonal; un-taken, codeable) — but smooth×smooth=smooth; needs
+  the geometric resolvent pole μ(q) (the open eval map).
+- **Self-dual:** even/odd = meson/lepton = self-dual/non-self-dual **PROVED**
+  (amphichiral 4₁=Higgs=real-vol; chiral 5₂=CS/decay). Swing can't be isolated on
+  the self-dual sector (triply forced); novel lead = **rigidity divergence**
+  (`Φ_odd→0` at the self-dual/CS→0 locus ⇒ `dΦ_odd/dq` blows up).
+- **SYNTHESIS:** the CS-carrier zero q\* IS the self-dual/CS-degeneration locus;
+  q₀ sits next to it ⇒ **c₃ (Class A) and q₀ (Class B) reduce to ONE object —
+  derive the self-dual locus q\***. Route = F-construction on Bring/S₅ (R1
+  naturality), same F as α_EM/keystone. Closes nothing; unifies + names the route.
+- **Byproducts:** (1) Δ_λ parity bug — `delta-lambda-bar-involution` tested
+  bar-EVEN (`Δ_λ=+Δ_{λ'}`) but derived sign is bar-ODD on conjugate pairs (n=3,6);
+  re-run Option-E min-norm in the bar-odd sector. (2) Two codeable probes: HS
+  matrix-O pairing; self-dual-locus rigidity divergence (swing ≈ 1/|u²−1|?).
+  Audit: `docs/audits/2026-07-19-c3-q0-unification-self-dual-locus-synthesis.md`.
+  scope-(a); no fit; no c_k wired; no tier change.
