@@ -37,6 +37,7 @@ import Mathlib.Analysis.SpecialFunctions.Integrability.LogMeromorphic
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus
 import Mathlib.Analysis.Normed.Group.FunctionSeries
 import Mathlib.Analysis.PSeries
+import Mathlib.Analysis.Calculus.SmoothSeries
 import Mathlib.Analysis.SpecialFunctions.Integrals.LogTrigonometric
 import Mathlib.Analysis.Complex.AbelLimit
 import Mathlib.Analysis.SpecialFunctions.Complex.LogBounds
@@ -232,6 +233,60 @@ theorem norm_one_sub_exp_ofReal_mul_I (θ : ℝ) :
       mul_pow, sq_abs]
     nlinarith [Real.sin_sq_add_cos_sq θ, Real.sin_sq_add_cos_sq (θ / 2), hc]
   rw [← Real.sqrt_sq (norm_nonneg _), hnormsq, Real.sqrt_sq hnn]
+
+/-- **Assembly brick 4 (sorry-free)** — term-by-term derivative of the Abel-
+    regularised `g_r`. For `|r| < 1`,
+    `d/dθ ∑ₙ sin(nθ)/n² · rⁿ = ∑ₙ rⁿ cos(nθ)/n`. Absolute convergence at `r<1`
+    (derivative bound `|r|ⁿ`, summable geometric) makes `hasDerivAt_tsum` apply —
+    the conditional-convergence obstruction bites only at `r=1`. (bean qou-7lj2) -/
+theorem hasDerivAt_g_r {r : ℝ} (hr : |r| < 1) (θ : ℝ) :
+    HasDerivAt (fun t : ℝ => ∑' n : ℕ, Real.sin ((n : ℝ) * t) / (n : ℝ) ^ 2 * r ^ n)
+      (∑' n : ℕ, r ^ n * Real.cos ((n : ℝ) * θ) / n) θ := by
+  have hu : Summable (fun n : ℕ => |r| ^ n) :=
+    summable_geometric_of_lt_one (abs_nonneg r) hr
+  have hg : ∀ (n : ℕ) (t : ℝ),
+      HasDerivAt (fun t : ℝ => Real.sin ((n : ℝ) * t) / (n : ℝ) ^ 2 * r ^ n)
+        (r ^ n * Real.cos ((n : ℝ) * t) / n) t := by
+    intro n t
+    have hinner : HasDerivAt (fun t : ℝ => (n : ℝ) * t) ((n : ℝ) * 1) t :=
+      (hasDerivAt_id t).const_mul (n : ℝ)
+    have hsin : HasDerivAt (fun t : ℝ => Real.sin ((n : ℝ) * t))
+        ((n : ℝ) * Real.cos ((n : ℝ) * t)) t := by
+      have h := (Real.hasDerivAt_sin ((n : ℝ) * t)).comp t hinner
+      simp only [Function.comp_def] at h
+      convert h using 1
+      ring
+    have hmain := (hsin.div_const ((n : ℝ) ^ 2)).mul_const (r ^ n)
+    convert hmain using 1
+    rcases Nat.eq_zero_or_pos n with hn | hn
+    · simp [hn]
+    · have hnpos : (0 : ℝ) < (n : ℝ) := by exact_mod_cast hn
+      field_simp
+  have hbound : ∀ (n : ℕ) (t : ℝ), ‖r ^ n * Real.cos ((n : ℝ) * t) / n‖ ≤ |r| ^ n := by
+    intro n t
+    rcases Nat.eq_zero_or_pos n with hn | hn
+    · simp [hn]
+    · have hnn : (1 : ℝ) ≤ (n : ℝ) := by exact_mod_cast hn
+      rw [Real.norm_eq_abs, abs_div, abs_mul, abs_pow, abs_of_nonneg (by positivity : (0:ℝ) ≤ (n:ℝ))]
+      have hcos : |Real.cos ((n : ℝ) * t)| ≤ 1 :=
+        abs_le.mpr ⟨Real.neg_one_le_cos _, Real.cos_le_one _⟩
+      calc |r| ^ n * |Real.cos ((n : ℝ) * t)| / (n : ℝ)
+          ≤ |r| ^ n * 1 / 1 := by gcongr
+        _ = |r| ^ n := by ring
+  have hg0 : Summable (fun n : ℕ => Real.sin ((n : ℝ) * θ) / (n : ℝ) ^ 2 * r ^ n) := by
+    refine hu.of_norm_bounded (fun n => ?_)
+    rcases Nat.eq_zero_or_pos n with hn | hn
+    · simp [hn]
+    · have hnn : (1 : ℝ) ≤ (n : ℝ) := by exact_mod_cast hn
+      have hn2 : (1 : ℝ) ≤ (n : ℝ) ^ 2 := by nlinarith [hnn]
+      rw [Real.norm_eq_abs, abs_mul, abs_pow]
+      have h1 : |Real.sin ((n : ℝ) * θ) / (n : ℝ) ^ 2| ≤ 1 := by
+        rw [abs_div, abs_of_nonneg (by positivity : (0:ℝ) ≤ (n:ℝ) ^ 2), div_le_one (by positivity)]
+        exact le_trans (abs_le.mpr ⟨Real.neg_one_le_sin _, Real.sin_le_one _⟩) hn2
+      calc |Real.sin ((n : ℝ) * θ) / (n : ℝ) ^ 2| * |r| ^ n
+          ≤ 1 * |r| ^ n := by gcongr
+        _ = |r| ^ n := one_mul _
+  exact hasDerivAt_tsum hu hg hbound hg0 θ
 
 /-- **The atom (single CITED sorry) — the series Clausen's term-by-term
     derivative.** `Cl_2'(θ) = -log(2 sin(θ/2))` on `(0, 2π)`. Differentiating
