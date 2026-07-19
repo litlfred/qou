@@ -90,6 +90,28 @@ a genuine confirmation at the f64 floor, not a discrepancy; the tolerance tracks
 the numerical method, and every achieved residual is reported verbatim in the
 witness.
 
+## N=7 (TL₁₈): a hardware wall, not a code limit
+
+The next rung, N=7 (`cN=6`, `n=18`), is **infeasible on this host** and the runner
+now refuses it cleanly (exit 3) rather than OOM-crashing:
+
+| quantity | TL₁₅ (N=6) | TL₁₈ (N=7) |
+|----------|-----------|-----------|
+| diagrams (Catalan) | 9 694 845 | **477 638 700** |
+| basis Vec | 0.3 GB | 17.2 GB |
+| index map | 0.4 GB | 19.1 GB |
+| generator tables | 0.7 GB | 40.6 GB |
+| 1 dense f64 state | 0.08 GB | 3.8 GB |
+| **build peak** | **~1.4 GB** | **~77 GB** |
+
+Two walls: (1) `MAXP = 30` (supports `n ≤ 15`); `n = 18` needs 36 boundary
+points. (2) The ~77 GB build peak is ~5× a ~64 GB host and ~55× this 14 GB box.
+A preflight in the runner computes Catalan(cN·k) + the build-peak estimate,
+compares to `/proc/meminfo` `MemAvailable`, and refuses with the numbers when
+either wall is hit. N=7 is therefore **engine-blocked on hardware** (needs a
+~96 GB host, or a matrix-free rank/unrank rewrite that never materializes the
+basis — a separate, larger project), not on the mathematics or the port.
+
 ## Process note (ephemeral-container resilience)
 
 The ~27-min TL₁₅ run exceeded a single container window, and the prior session's

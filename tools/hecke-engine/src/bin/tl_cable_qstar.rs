@@ -10,7 +10,7 @@
 //!
 //! auditOnly; no c_k wired; no fit.
 
-use hecke_engine::tl_cable::{jp_f64, TlEngine, PREC};
+use hecke_engine::tl_cable::{jp_f64, TlEngine, MAXP, PREC};
 use rug::ops::Pow;
 use rug::Float;
 use rustc_hash::FxHashMap;
@@ -86,6 +86,29 @@ fn j_twist(n_order: i32, p: i32, q: &Float) -> Float {
 
 // -------------------------------- gate runner ---------------------------------
 
+/// Catalan(n) = C(2n,n)/(n+1), the TL_n basis size.
+fn catalan(n: usize) -> u128 {
+    let mut c: u128 = 1;
+    for i in 0..n as u128 {
+        c = c * (2 * (n as u128) - i) / (i + 1);
+    }
+    c / (n as u128 + 1)
+}
+
+/// Available RAM in GB from /proc/meminfo (MemAvailable); 14.0 fallback.
+fn mem_available_gb() -> f64 {
+    std::fs::read_to_string("/proc/meminfo")
+        .ok()
+        .and_then(|s| {
+            s.lines()
+                .find(|l| l.starts_with("MemAvailable:"))
+                .and_then(|l| l.split_whitespace().nth(1))
+                .and_then(|kb| kb.parse::<f64>().ok())
+                .map(|kb| kb / 1e6)
+        })
+        .unwrap_or(14.0)
+}
+
 fn log(t0: Instant, msg: &str) {
     println!("  [{:7.0}s] {}", t0.elapsed().as_secs_f64(), msg);
     std::io::stdout().flush().ok();
@@ -140,6 +163,36 @@ fn main() {
     }
     strand_counts.sort_unstable();
     strand_counts.dedup();
+
+    // ---- feasibility preflight: refuse cleanly rather than OOM-crash ----
+    // The largest engine (TL_{cN·k}) sets the wall. Build peak ≈ basis + index
+    // map + generator tables; TL₁₅ (N=6) ≈ 1.4 GB, TL₁₈ (N=7) ≈ 77 GB.
+    let big = *strand_counts.last().unwrap();
+    let cat = catalan(big);
+    let build_peak_gb =
+        (cat as f64) * (36.0 + 40.0 + ((big.saturating_sub(1)) as f64) * 5.0) / 1e9;
+    let avail_gb = mem_available_gb();
+    println!(
+        "  feasibility: TL{} = {} diagrams; est. build peak ≈ {:.1} GB; available ≈ {:.1} GB",
+        big, cat, build_peak_gb, avail_gb
+    );
+    if 2 * big > MAXP {
+        eprintln!(
+            "  REFUSED: TL{} needs {} boundary points but the engine's MAXP = {} \
+             (supports up to n = {}). N={} (cN={}, n={}) requires raising MAXP.",
+            big, 2 * big, MAXP, MAXP / 2, n_target, c_n, big
+        );
+        std::process::exit(3);
+    }
+    if build_peak_gb > 0.85 * avail_gb {
+        eprintln!(
+            "  REFUSED: estimated build peak {:.1} GB exceeds 85% of available {:.1} GB. \
+             TL{} (N={}) needs a larger host (~{:.0} GB); this is a hardware wall, not a code limit.",
+            build_peak_gb, avail_gb, big, n_target, build_peak_gb * 1.3
+        );
+        std::process::exit(3);
+    }
+
     log(t0, &format!("building TL engines {:?} ...", strand_counts));
     let mut engines: FxHashMap<usize, TlEngine> = FxHashMap::default();
     for &nn in &strand_counts {
