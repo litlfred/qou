@@ -50,12 +50,14 @@ substrate→archimedean cut.
 -- Ref: [braden-disney-hogg-2022] https://arxiv.org/abs/2208.13692
 -/
 import QOU.Machinery.MarkovTraceOnHecke
+import QOU.Machinery.HeckeBraidedCategoryScaffold
 import QOU.Archimedean.TauRhoHodgeLiftInterface
 import Mathlib.Data.Real.Basic
 
 namespace QOU.Archimedean.TauFunctorReduction
 
 open QOU.Machinery
+open QOU.Machinery.HeckeBraidedCategory
 open QOU.Archimedean.TauRhoHodgeLiftInterface
 open Matrix
 
@@ -142,5 +144,24 @@ theorem tau_construction_reduces {R H : Type*} [CommRing R] [Ring H] [Algebra R 
     observationFrame ev tr (x * y) = observationFrame ev tr (y * x)
       ∧ Wbar.trace = W.trace :=
   ⟨observationFrame_cyclic ev tr x y, TauRhoHodgeLift.equal_split⟩
+
+/-- **Tower-stability of the observation frame, DERIVED from the Markov
+stabilization (bean `qou-ep0a`).** Given the general-`n` Markov stabilization
+`[MarkovStabilization …]` (the dependent conjecture in
+`HeckeBraidedCategoryScaffold`), the observation frame is compatible with the
+Hecke tower inclusion `ι`: `τ_∞(ι x) = τ_∞(x)`. This is the consequence that
+makes `observationFrame` well-defined on the inductive-limit algebra — the
+stabilization feeds the derived frame. Sorry-free, derived (not assumed);
+`MarkovStabilization` still has no instance (general-`n` stays OPEN). -/
+theorem observationFrame_stabilizes {R Hn Hn1 : Type*} [Field R] {q : R}
+    [Ring Hn] [Ring Hn1] [Algebra R Hn] [Algebra R Hn1]
+    {σn : ℕ → Hn} {σn1 : ℕ → Hn1}
+    [HeckeBraidedPresentation R q Hn σn] [HeckeBraidedPresentation R q Hn1 σn1]
+    {ι : Hn →ₐ[R] Hn1} {trn : Hn → R} {trn1 : Hn1 → R}
+    [MarkovStabilization R q Hn Hn1 σn σn1 ι trn trn1]
+    (ev : R →+* ℝ) (x : Hn) :
+    observationFrame ev trn1 (ι x) = observationFrame ev trn x := by
+  show ev (trn1 (ι x)) = ev (trn x)
+  rw [‹MarkovStabilization R q Hn Hn1 σn σn1 ι trn trn1›.stabilizes x]
 
 end QOU.Archimedean.TauFunctorReduction

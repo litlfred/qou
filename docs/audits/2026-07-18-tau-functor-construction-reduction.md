@@ -123,17 +123,78 @@ lacks."
 
 ---
 
+## 3b. Infra built in (owner directive — two pieces, both NON-CLOSING)
+
+Following the owner's request to build the needed infra into this PR (still
+honest, no laundering):
+
+### Piece 1 — Hodge-side instantiation of `TauRhoHodgeLift` (bean qou-la8r)
+
+New file `.../lean/QOU/Archimedean/HodgeGramLift.lean`. It proves the B2 class
+`TauRhoHodgeLift` **IS instantiable by the Hodge Gram matrix**:
+
+- `complexify M` — the `H^{1,0} ⊕ H^{0,1}` embedding (`M.map ofReal`);
+- `complexify_isHermitian` — a real *symmetric* matrix, complexified, is
+  Hermitian (the `hermitian` field);
+- `complexify_map_conj` — **Hodge reality**: a real matrix is fixed by entrywise
+  conjugation `ρ` (the `conjugated` field, with `Wbar = W`);
+- `hodgeGramLift B` — the real **Gram** `Bᵀ·B` (symmetric, PSD), complexified,
+  **instantiates** `TauRhoHodgeLift g (complexify (Bᵀ·B)) (complexify (Bᵀ·B))`;
+- `LoopWeightIsHodgeGram W` — the **single remaining open identification** as a
+  named `Prop`: `∃ B, W = complexify (Bᵀ·B)`;
+- `tauRhoHodgeLift_of_loopWeightIsHodgeGram` — the wall-tightening theorem: **IF**
+  the loop weight is a Hodge Gram, **THEN** `TauRhoHodgeLift` holds. Sorry-free.
+
+**This does NOT close the wall.** No instance/witness is given for the *actual*
+α_EM loop weight. The wall is *tightened* from "construct τ + prove the ρ→Hodge
+lift" to the single identification **"loop weight = Hodge Gram."** That
+identification is `LoopWeightIsHodgeGram`, and it stays OPEN.
+
+### Piece 2 — Hecke braided-monoidal source-category scaffold (beans qou-pbjv, qou-ep0a)
+
+New file `.../lean/QOU/Machinery/HeckeBraidedCategoryScaffold.lean`, tiered:
+
+- **Tier 1 (proved slice + open apex).** `HeckeBraidedPresentation` — a §3b
+  PRIMARY conjecture class carrying the three real relations of the braided
+  presentation (Hecke quadratic = R-matrix eigenvalue; braid relation =
+  Yang–Baxter/hexagon shadow = F2; far commutation = F1). Content-bearing (no
+  `True`, no empty `: Prop`), **no general-n instance** (the F1/F2 source-category
+  gap Mathlib lacks). A concrete n=2 slice `heckeQuadratic_h2` is **proved**
+  (the diagonal generator with eigenvalues `q, −q⁻¹`), complementing the proved
+  n=3 identities in `MarkovTraceOnHecke` (`H3.mulσ₀_hecke`).
+- **Tier 2 (dependent open apex).** `MarkovStabilization` — a §3b DEPENDENT
+  conjecture class (bean qou-ep0a): `tr_{n+1}(ι x) = tr_n x`. The dependency on
+  the primary is **threaded through the type** — two `[HeckeBraidedPresentation …]`
+  instance binders are the dependency edge. Content-bearing, **no instance**;
+  base cases n=2,3 are the proved Markov reductions (`H3.trM_markov_σ₁`).
+- **Bridge (derived).** `TauFunctorReduction.observationFrame_stabilizes` —
+  GIVEN `MarkovStabilization`, the derived observation frame is tower-stable
+  (`τ_∞(ι x) = τ_∞(x)`). Sorry-free; feeds the stabilization into the
+  observation frame. `MarkovStabilization` still has no instance (general-n OPEN).
+
+**lean-direct status (all sorry-free, exit 0 on `v4.24.0` restored oleans):**
+`HodgeGramLift.lean` ✓, `HeckeBraidedCategoryScaffold.lean` ✓,
+`TauFunctorReduction.lean` ✓ (imports both).
+
+---
+
 ## 4. Honest assessment — how far from closing
 
 **Far.** This does not close τ, and does not pretend to:
 
-- **F5 (the wall) is untouched as a *theorem*.** `TauRhoHodgeLift` still has no instance;
-  the reduction *uses* it as a hypothesis, it does not discharge it. The Hodge-side sibling
-  (`qou-la8r`) is the effort that would supply it, and it too is a non-closing scaffold.
-- **F1/F2 need a Hecke category Mathlib does not have.** Until `H_n(q)` and its braided
+- **F5 (the wall) is now TIGHTENED, not closed.** `TauRhoHodgeLift` is proved
+  **instantiable by a Hodge Gram** (§3b Piece 1), so the wall reduces to the single
+  open identification `LoopWeightIsHodgeGram` ("the categorical loop weight equals a
+  Hodge Gram `Bᵀ·B`"). No instance/witness for the *actual* α_EM loop weight is given —
+  that identification stays OPEN. The class is instantiable; the identification is not
+  discharged.
+- **F1/F2 are now SCAFFOLDED (content-bearing conjecture classes), not built.**
+  `HeckeBraidedPresentation` (primary) + `MarkovStabilization` (dependent) state the
+  braided-presentation and Markov-stabilization content honestly, with proved n=2/n=3
+  slices — but **neither has a general-n instance**. Until `H_n(q)` and its braided
   monoidal structure exist in Lean for general `n`, the full functor `τ : 𝐂 → 𝐕𝐞𝐜_ℝ`
-  cannot even be *stated*, let alone built. This is the dominant obstruction and is
-  infrastructure-scale (a Mathlib contribution in its own right).
+  cannot be *built*. This remains the dominant obstruction (a Mathlib contribution in
+  its own right); the scaffold names it precisely rather than closing it.
 - **What genuinely moved:** the observation frame is now a *derived* cyclic functional
   (not an assumed one), its `n=3` instance is concrete and proved, and the open apex is
   pinned to two named classes rather than a diffuse "construct τ." That is real, modest
@@ -148,7 +209,9 @@ gates *how*). None is closed here.
 
 ## Files
 
-- `content/quantum-observable-universe/lean/QOU/Archimedean/TauFunctorReduction.lean` (new)
+- `content/quantum-observable-universe/lean/QOU/Archimedean/TauFunctorReduction.lean` (new; + `observationFrame_stabilizes`)
+- `content/quantum-observable-universe/lean/QOU/Archimedean/HodgeGramLift.lean` (new — Piece 1)
+- `content/quantum-observable-universe/lean/QOU/Machinery/HeckeBraidedCategoryScaffold.lean` (new — Piece 2)
 - `docs/audits/2026-07-18-tau-functor-construction-reduction.md` (this doc)
 
 Cross-refs: `docs/audits/2026-07-11-archimedean-functor-taxonomy.md` (the functor-vs-map
