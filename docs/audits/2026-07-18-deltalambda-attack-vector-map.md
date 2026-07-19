@@ -120,6 +120,45 @@ is pinned to that S-matrix entry, it is a **derivation**, not a fit. This is
 the first vector that connects the magnitude wall to an object the corpus
 already derives independently.
 
+### 4a. Vector 2 RE-SCOPED (2026-07-19, `b4_deformed_sspole_sector_probe.py`) — the scalar is found; the pole is the open object
+
+The "icosahedral entry = `m`" identification of Vector 2 is **refuted as stated**,
+and the reason sharpens the whole magnitude front. Two exact facts (forward, no
+fit; scope-(b) proved invariants, AME-independent):
+
+- **FACT 1 — the derived magnitude is ON the deformed ss-pole, not below a
+  ceiling.** The classical ceiling `√5 = √(1+2²)` is the eigenvalue of the 2×2
+  ss-reduction `[[1,2],[2,−1]]` (pp−nn asymmetry 1, *integer* pn-degree 2).
+  Deforming the pn-degree `2 → [2]_v` (the §2b-I2 deformed-criticality of
+  `2026-07-06-reeb-flow-…`) sends `√5 → √(1+[2]_v²)`, and the corpus-derived
+  magnitude satisfies **exactly**
+  `(1 + [2]_v²)·g_reeb² = 1`  (`g_reeb = 1/√(5+(q₀−1)²/q₀) = 1/√(1+[2]_v²)`,
+  verified to 50 dps). So `g_reeb` is *not* "just below `1/√5`" — the 4.9×10⁻⁴
+  sub-ceiling gap is purely the classical(integer-5)-vs-deformed artifact
+  (`1−5g² = 2.2×10⁻³ > 0` only because it uses the `q=1` integer). **Consistently
+  deformed, the physical `m` sits ON the boundary.** Hence there is no admissible
+  *sub*-ceiling icosahedral entry to select as `m`; the icosahedral "overshoot"
+  (`b4_icosahedral_m_ceiling_probe.py`) is the classical shadow of an exact pole.
+- **FACT 2 — the pole is in the species-symmetric (non-Pauli) sector.** The K₄
+  (ppnn) writhe spectrum splits: `±√5` = species-**symmetric** (pp-sym, nn-sym)
+  centre-of-mass modes (the ss-sector carrying the pole, det factor `1−5m²`);
+  `±1` = Pauli intra-pair antisymmetric modes (`p₁−p₂`, `n₁−n₂`; det factor
+  `1−m²`, **finite** at `m=g_reeb`). The divergent factor is the **non-Pauli
+  α-condensation** mode.
+
+**Consequence (re-scope of §1b).** The b₄ *scalar* is **found**: `m = g_reeb`, the
+deformed ss-criticality, forward-derived, deuteron +0.41%. What the single-scalar
+determinant construction gets wrong is the **form**: at `m=g_reeb` the
+species-symmetric sector is exactly critical, so `−ln det = +∞`. The large-but-
+finite ⁴He binding (`ρ₄ ≈ 13 ≫ 6` pair-additive) is a **near-pole enhancement** of
+the α-condensation mode; the #3952 ⁴He 2.6–10.6× overshoot and the bar-even probe's
+`ρ₄`-forces-`ρ₃` failure are both this pole seen through the classical ceiling. The
+open b₄ object is therefore the **pole regulator** of the α-condensation mode, *not*
+the choice of scalar. Permanence: this does **not** exclude the per-bond factor
+`g_reeb` (the derived, deuteron-correct value); it locates where the determinant
+form breaks (the ss-condensation threshold). Witness:
+`computations/deltalambda/b4-deformed-sspole-sector.witness.json`.
+
 ## 5. What stays closed
 
 - The **six original ansätze** — no re-open; the anti-fit rule catches a
@@ -130,6 +169,10 @@ already derives independently.
   shared-wall sides; inherits the hidden-`q` DOF.
 - **Additive per-pair magnitude** — #3943 honest negative; retry only at the
   **graph / collective** level (Vectors 1, 4).
+- **Vector 2 "icosahedral entry = `m`"** — refuted as stated (§4a): the physical
+  `m=g_reeb` sits ON the deformed ss-pole, so no sub-ceiling entry exists to
+  select. The `√5` bridge survives as the *ceiling = deformed-criticality*
+  identity; what is closed is the search for a distinct icosahedral `m`.
 
 ## Cross-references
 
@@ -139,6 +182,9 @@ already derives independently.
 - Sign front: `deltalambda_grho_jet_order_derivation_probe.py`;
   `PrincipalGradingJetOrder.lean`; #3931 `NakayamaGradingObstruction.lean`
 - Magnitude structure: #3924 `b4_slater_antisymmetrizer_exchange_sign.py`
+- Vector 2 re-scope (deformed ss-pole, sector split):
+  `b4_deformed_sspole_sector_probe.py` (PR #4084);
+  provenance `docs/audits/2026-07-06-reeb-flow-pn-magnitude-provenance-and-1four-extension.md` §2b
 - Forward test (honest negative): #3943
   `deltalambda_perpair_bond_magnitude_derive_probe.py`
 - PROBE-4 prune: `docs/audits/2026-06-16-option-e-probe4-kl-positivity-prune.md`;
