@@ -1,7 +1,8 @@
 # Covariance-kernel epic (qou-x631) — kernel-SIGN structural narrowing + transpose-parity no-go (Lean)
 
 **Date:** 2026-07-19 · **Branch:** `claude/deltalambda-kernel-sign-2026-07-19` · **Bean:** `qou-ogxc` ·
-**Epic:** `qou-x631` · **Tier:** structural narrowing (exact) + sorry-free Lean no-go ·
+**Epic:** `qou-x631` · **Tier:** structural narrowing (exact, machine-verified) + Lean no-go (no
+`sorry`; hand-audited, machine-verification pending — see caveat) ·
 **Discipline:** scope-(a); no fit; nothing wired; no `c_k`; L2 unchanged (2/7). **Follows:**
 #3998 (frontier + Lean infra), Phase 1 (routes 1,2 eliminated), Phase 2 / #4066 (RSK form + tilt
 heuristic).
@@ -18,7 +19,8 @@ honest §3b `sorry`; every prior route is a narrowing, none a closure. **The ker
 ## What this note adds
 
 Two **decisive structural narrowings** of *how* a proof can go — each a scope-(a) exact fact, not a
-numerical near-match — plus a **sorry-free Lean** formalization of the second. Neither closes the
+numerical near-match — plus a **Lean** formalization of the second (no `sorry`; hand-audited,
+machine-verification pending). Neither closes the
 kernel; together with Phase 1 they pin the sign as an *order-blind, parity-blind concentration
 effect*, which is exactly the regime where elementary correlation-inequality machinery fails and the
 tilted-limit-shape (Śniady genus / large-deviation) analysis is required.
@@ -58,27 +60,39 @@ This is the rigorous form of the Phase-2 "one candidate scope-(b)" remark: the t
 provably closes only the **odd** moment (`T₂`), never the **even** one (`T₃`). At self-conjugate
 `λ = λ'` the odd quantity `Σc` vanishes, consistent with the pairing (verified `k ≤ 16`).
 
-**Formalized sorry-free in Lean** — `YoungDiagramTranspose.lean`:
+**Formalized in Lean** — `YoungDiagramTranspose.lean` (no `sorry`; see verification caveat below):
 
-- an **abstract parity no-go** over a generic `CommRing`: an involution with an invariant weight and
-  an odd quantity forces the odd moment to vanish (`sum_involution_weight_odd_eq_zero`), while an
-  *even* quantity's weighted sum is fixed by the involution (`sum_weight_even_involution_invariant`)
-  — so an involution *can* kill an odd moment but *never* signs an even one;
-- the **concrete instances**: `contentSum` is transpose-odd (`content_sum_conj`) and `contentSq` is
-  transpose-even (`content_sq_conj`) on the elementary `List ℕ` diagram machinery, hence each kernel
-  summand is transpose-invariant (`kernel_summand_conj_invariant`).
+- the **abstract summand parity** over a generic `CommRing`: an even quantity's weighted summand is
+  fixed by the involution (`even_summand_involution_invariant`) — so it gives no sign information —
+  while an odd quantity's paired summands cancel (`odd_summand_involution_cancels`), the mechanism of
+  the `T₂` vanishing;
+- the **concrete cell-model instances** on `Finset (ℕ × ℕ)` with transpose = coordinate swap:
+  `csum` is transpose-odd (`csum_transpose`, ⇒ kills `T₂`) and `csq` is transpose-even
+  (`csq_transpose`), hence each kernel summand is transpose-invariant
+  (`kernel_summand_transpose_invariant`).
+
+> **Verification caveat (STRICT honesty).** The Lean file was authored and **hand-audited** but
+> **not machine-compiled** in this session: the sandbox Lean toolchain was destroyed during a disk
+> cleanup and both documented re-install hosts (`github.com/leanprover/lean4/releases`,
+> `release.lean-lang.org`) were org-egress-blocked (403), a hard network block. The file contains no
+> `sorry` (grep-confirmed) and follows the standalone-library pattern of `YoungDiagramKernel` /
+> `DeltaLambdaDReduction` (imported by no `QOU` module, so outside the `lake build QOU` cone). CI /
+> a follow-up session must run `scripts/lean-verify.sh` to confirm `exit 0` before the sorry-free
+> claim is treated as machine-checked. Only the Python narrowings below are machine-verified
+> (exit 0).
 
 ## Formalize-first assessment
 
 The invariant that would justify a scope-(b) closure **is** the open kernel `T₃ ≤ 0`; NARROWING B
-proves the *only* clean involution available (transpose) is provably insufficient — a genuine
-sorry-free structural result, not a fake scope-(b). NARROWING A rules out the natural
+shows the *only* clean involution available (transpose) is provably insufficient — a genuine
+structural result (Lean, no `sorry`), not a fake scope-(b). NARROWING A rules out the natural
 correlation-inequality lattice. No sorry smuggling, no axiomatized kernel, nothing wired.
 
 ## Verdict
 
 Kernel **still OPEN**. Delivered: FKG-on-dominance no-go (NARROWING A, exact, with covering-pair
-witnesses); transpose-parity-cannot-sign-`T₃` no-go (NARROWING B, exact + **Lean sorry-free**); a
+witnesses); transpose-parity-cannot-sign-`T₃` no-go (NARROWING B, exact + **Lean, no `sorry`,
+machine-verification pending**); a
 re-anchor of `cov(k) ≤ 0` for `k ≤ 30`. The residual gap is unchanged and sharp: a large-deviation /
 tilted-limit-shape bound on `E_{(f^λ)³}[Σc²] < C(k,2)` — order-blind and parity-blind, so genuinely
 analytic. scope-(a); no fit; nothing wired; no `c_k`.
@@ -87,7 +101,8 @@ analytic. scope-(a); no fit; nothing wired; no `c_k`.
 
 - Structural probe: [`computations/deltalambda/fl_kernel_sign_structure.py`](../../computations/deltalambda/fl_kernel_sign_structure.py)
   (exit 0), witness `fl-kernel-sign-structure.witness.json`
-- Lean (sorry-free): `QOU/BraidsAndKnots/YoungDiagramTranspose.lean`
+- Lean (no `sorry`; hand-audited, `lean`-direct verification pending — toolchain unavailable this
+  session): `QOU/BraidsAndKnots/YoungDiagramTranspose.lean`
 
 ## Cross-references
 
@@ -97,5 +112,5 @@ analytic. scope-(a); no fit; nothing wired; no `c_k`.
 - Reduction to the kernel (#3959): [`2026-07-18-deltalambda-D-reduction-content-covariance.md`](2026-07-18-deltalambda-D-reduction-content-covariance.md)
 - Lean: `QOU/BraidsAndKnots/DeltaLambdaDReduction.lean` (reduction, sorry-free),
   `QOU/BraidsAndKnots/YoungDiagramKernel.lean` (kernel conjecture),
-  `QOU/BraidsAndKnots/YoungDiagramTranspose.lean` (transpose no-go, sorry-free)
+  `QOU/BraidsAndKnots/YoungDiagramTranspose.lean` (transpose no-go, no `sorry`, verification pending)
 - Literature: Śniady (PTRF 2006, arXiv:math/0305423), Biane (Adv. Math. 1998)
