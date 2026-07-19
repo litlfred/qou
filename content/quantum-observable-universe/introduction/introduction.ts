@@ -17,7 +17,9 @@ export default chapter({
       title: "Overview",
       label: "sec:introduction-overview",
       blocks: [
-        "intro",
+        "intro-premise",
+        "intro-thesis",
+        "intro-particles",
       ],
     }),
     section({

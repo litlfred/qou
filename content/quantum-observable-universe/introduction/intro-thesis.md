@@ -1,0 +1,5 @@
+The central thesis is that these physical requirements strictly single out one algebraic structure: a rigid monoidal category equipped with a self-dual algebra object, a fibre functor representing measurement, and a trace representing integration. We term a structure satisfying these demands a **quantum observable universe** (QOU).
+
+The categorical language natively recovers the physical dictionary as internal structures rather than external postulates. The Lagrangian manifests as a categorical trace. The action manifests as an integral. Curvature, gauge fields, and matter currents emerge as specific endomorphisms. The Dirac operator emerges uniquely as a connection twisted by the system's internal time-flow. 
+
+Symmetries are not imposed by hand. The requirement of viewpoint-independence—the consistency between multiple observers—structurally forces the emergence of an internal rotation group. The uncertainty principle is not postulated; it appears as the geometric signature of unresolved degrees of freedom. The state space is not freely chosen; the axioms rigidly force it to be a surface of fixed genus.

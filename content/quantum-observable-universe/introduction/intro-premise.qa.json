@@ -1,10 +1,10 @@
 {
   "$schema": "block-qa/v1",
-  "label": "sec:introduction-overview",
+  "label": "sec:intro-premise",
   "kind": "prose",
   "paths": {
-    "ts": "../qou/content/quantum-observable-universe/introduction/intro.ts",
-    "md": "../qou/content/quantum-observable-universe/introduction/intro.md"
+    "ts": "../qou/content/quantum-observable-universe/introduction/intro-premise.ts",
+    "md": "../qou/content/quantum-observable-universe/introduction/intro-premise.md"
   },
   "source_hashes": {
     "md": "7d9bbd4cf5ec",
@@ -118,7 +118,7 @@
         },
         "reviewed_at": "2026-06-28T16:14:57.000Z",
         "reviewed_sha": "223e2e140539d2820d219061638d69029acfe2bd",
-        "notes": "False positive: the flagged sentence is the introduction's central thesis (the observable universe *is* the mathematical structure its own observations force) — axiomatic framing appropriate to an introduction, not editorializing. Emphasis on *is*/*axiomatized* marks the notions being posited.",
+        "notes": "False positive: the flagged sentence is the introduction's central thesis (the observable universe *is* the mathematical structure its own observations force) \u2014 axiomatic framing appropriate to an introduction, not editorializing. Emphasis on *is*/*axiomatized* marks the notions being posited.",
         "severity": "minor"
       },
       {
