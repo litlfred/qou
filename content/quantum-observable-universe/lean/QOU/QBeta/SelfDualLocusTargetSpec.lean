@@ -96,4 +96,78 @@ zero. This is the machine-checked witness that the interface does not constrain
 the physics. -/
 theorem trivial_carrier_zero (σ : R →+* R) (x : R) : (trivial σ).N x = 0 := rfl
 
+/-! ## Simple-zero refinement (the "slope ≠ 0 at q*" shape, algebraically)
+
+The `2026-07-18` frontier fixes the SHAPE of the bar-odd numerator `N_odd` as a
+*simple* zero at `q*` (slope `≈ +2.37`). A numeric slope is archimedean; the
+algebraic content of "simple zero" — valid over a generic `CommRing` with **no**
+`ℝ`, no derivative (§7c) — is that `N` **factors** as `(x − qStar) · cofactor`
+with the cofactor a **unit at `qStar`** (nonzero there). That is the typed shape
+requirement a fibre derivation must meet. -/
+
+/-- A bar-odd carrier with a **simple** zero at the self-dual locus, encoded
+algebraically: `N x = (x − qStar) · cofactor x` with `cofactor qStar ≠ 0`. -/
+structure SimpleZeroBarOddCarrier (σ : R →+* R) where
+  /-- the bar-odd carrier. -/
+  N : R → R
+  /-- **content:** bar-odd parity. -/
+  barOdd : ∀ x, σ (N x) = -(N x)
+  /-- the self-dual locus. -/
+  qStar : R
+  /-- the cofactor exhibiting the linear factor `(x − qStar)`. -/
+  cofactor : R → R
+  /-- **content:** the simple-zero factorization. -/
+  factor : ∀ x, N x = (x - qStar) * cofactor x
+  /-- **content:** the cofactor is a unit at the locus — the zero is *simple*
+      (the algebraic "slope ≠ 0"). -/
+  cofactorNeZero : cofactor qStar ≠ 0
+
+/-- A simple-zero carrier **vanishes at the locus** — derived from the
+factorization, not assumed. -/
+theorem simpleZero_vanishAtStar (T : SimpleZeroBarOddCarrier σ) : T.N T.qStar = 0 := by
+  rw [T.factor T.qStar, sub_self, zero_mul]
+
+/-- A simple-zero carrier refines the plain `BarOddCarrierTarget`: it forgets the
+factorization and keeps the (now-derived) vanishing. -/
+def SimpleZeroBarOddCarrier.toTarget (T : SimpleZeroBarOddCarrier σ) :
+    BarOddCarrierTarget σ where
+  N := T.N
+  barOdd := T.barOdd
+  qStar := T.qStar
+  vanishAtStar := simpleZero_vanishAtStar T
+
+/-! ## Capstone connection: `q*` is the pure-bar-even (`ε = 0`) point
+
+The wall-resolution capstone (`2026-07-12`) identifies `q*` as the point where the
+full carrier `S` is **pure bar-even** — its bar-odd part vanishes, `ε = 0`. Typed:
+decompose `S = even + odd` under the bar-involution; if `odd` vanishes at `qStar`,
+then `S` is **bar-fixed** there (`σ (S q*) = S q*`). -/
+
+/-- The full c₃ carrier `S`, bar-decomposed, with a bar-odd part vanishing at the
+self-dual locus. -/
+structure BarDecomposedCarrier (σ : R →+* R) where
+  /-- the full carrier `S = Q_β/E₀`. -/
+  S : R → R
+  /-- its bar-even part (`Re 𝔙` / meson-cosh channel). -/
+  even : R → R
+  /-- its bar-odd part (`Im 𝔙` / decay-sinh channel). -/
+  odd : R → R
+  /-- **content:** the decomposition. -/
+  decomp : ∀ x, S x = even x + odd x
+  /-- **content:** the even part is bar-fixed. -/
+  evenBarFixed : ∀ x, σ (even x) = even x
+  /-- **content:** the odd part is bar-odd. -/
+  oddBarOdd : ∀ x, σ (odd x) = -(odd x)
+  /-- the self-dual locus. -/
+  qStar : R
+  /-- **content:** the odd part vanishes at the locus. -/
+  oddVanishAtStar : odd qStar = 0
+
+/-- **`q*` is the pure-bar-even point (capstone `ε = 0`).** The full carrier is
+bar-fixed at the self-dual locus. -/
+theorem pure_bar_even_at_star (T : BarDecomposedCarrier σ) :
+    σ (T.S T.qStar) = T.S T.qStar := by
+  rw [T.decomp, map_add, T.evenBarFixed, T.oddBarOdd, T.oddVanishAtStar, neg_zero,
+      add_zero]
+
 end QOU.QBeta.SelfDualLocusTargetSpec
