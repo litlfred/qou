@@ -40,11 +40,14 @@ the factor made explicit (V3).
    dictionary from the IR (harmonic-count) end to the UV (per-mode-unit)
    end — it does not introduce a new kind of claim.
 
-## Bottom line for the ruling
+## Bottom line — ruling made
 
-R2 now stands with: a second independent leg (the n=1 species alignment),
-its premise stated at full precision (per-mode unit on the pair, component
+R2 stands with: a second independent leg (the n=1 species alignment), its
+premise stated at full precision (per-mode unit on the pair, component
 factor explicit), zero remaining functorial or numerical freedom, and one
-withdrawn over-claim on the record. The decision — canonize, or leave
-phase-4 as "derived conditional on R2" — is unchanged in substance and
-entirely the owner's.
+withdrawn over-claim on the record.
+
+> **🟧 Owner ruling (2026-07-19): R2 is NOT Lean/derived-proved.** It
+> remains an unproven physics identification; `1/(8π)` stays phase-4; the
+> program's outcome is "derived **conditional on R2**; R2 is open."
+> Read-first: [`2026-07-19-alpha-em-r2-owner-ruling.md`](2026-07-19-alpha-em-r2-owner-ruling.md).
