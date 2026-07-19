@@ -71,7 +71,11 @@ while git status 2>/dev/null | grep -q "rebase in progress"; do
            audits/fitted_labelled_canonical_audit; do
     args=()
     case "$s" in cross_check_trM_1ppb|audits/e0_calibration_audit) args=(--strict);; esac
-    if ! python3 "computations/${s}.py" "${args[@]}" \
+    # QOU_Q0_ANCHOR=ideal: the derivation JSONs / L1 cross-check are
+    # muon-q₀ canonical (AGENTS.md §q₀ anchor convention); without the
+    # env the runtime proton pin makes c-q-q0 (and the L1 gate) fail
+    # spuriously at rel_diff ≈ 1e-7 (diagnosed 2026-07-19).
+    if ! QOU_Q0_ANCHOR=ideal python3 "computations/${s}.py" "${args[@]}" \
            >/dev/null 2>&1; then
       echo "FAIL: ${s}.py exited non-zero — halting auto-resolve"
       loop_break=1; break
@@ -101,11 +105,12 @@ if all four succeed:
 
 ```bash
 set -e
-python3 computations/compute_audit_scan.py >/dev/null 2>&1
-python3 computations/derivation_chain_validator.py >/dev/null 2>&1
-python3 computations/cross_check_trM_1ppb.py --strict >/dev/null 2>&1
-python3 computations/audits/e0_calibration_audit.py --strict >/dev/null 2>&1
-python3 computations/audits/fitted_labelled_canonical_audit.py >/dev/null 2>&1
+# QOU_Q0_ANCHOR=ideal — muon-q₀ canonical layer; see comment in the loop above.
+QOU_Q0_ANCHOR=ideal python3 computations/compute_audit_scan.py >/dev/null 2>&1
+QOU_Q0_ANCHOR=ideal python3 computations/derivation_chain_validator.py >/dev/null 2>&1
+QOU_Q0_ANCHOR=ideal python3 computations/cross_check_trM_1ppb.py --strict >/dev/null 2>&1
+QOU_Q0_ANCHOR=ideal python3 computations/audits/e0_calibration_audit.py --strict >/dev/null 2>&1
+QOU_Q0_ANCHOR=ideal python3 computations/audits/fitted_labelled_canonical_audit.py >/dev/null 2>&1
 set +e
 git add "${WITNESS_REGEN_TARGETS[@]}" 2>/dev/null
 git diff --cached --quiet || git commit -m "fix(witness-pipeline): post-rebase drift refresh"
