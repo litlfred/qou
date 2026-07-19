@@ -1,0 +1,63 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-19T03:41:56.623653+00:00",
+  "commitSha": "1a1bce3e8071fd26d4275332b1f474d81fdd1a73",
+  "assertions": [
+    {
+      "name": "offdiagonal_carries_majority_of_datum",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "O_is_genuinely_non_normal_no_scalar_diagonalization",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "scalar_reduction_is_structurally_lossy",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "decomposition_anchor_stable",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 12,
+  "computation": "qbeta-5two-barodd-stokes-nonabelian-share",
+  "scriptFile": "qbeta_5two_barodd_stokes_nonabelian_share_probe.py",
+  "scriptHash": "e881356dfea5",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "The bar-odd 5₂ Stokes datum O=½(S⁺−S⁻) (GGM Stokes matrix — the non-abelian analogue of resurgence) is MAJORITY non-abelian: off-diagonal carries 52.8% of ‖O‖² (> diagonal), and O is non-normal (no scalar diagonalization). This is the structural reason the scalar closed-form searches (φ_odd, 5₂ Habiro-tail, c₃ swing) fail — they are scalar projections of an irreducibly-matrix object. Correct carrier = the matrix, not a scalar phase.",
+  "auditOnly": "docs/audits/2026-07-19-5two-barodd-stokes-majority-nonabelian.md",
+  "data": {
+    "source_witness": "qbeta-5two-stokes-barodd-index.witness.json",
+    "fro_O_muon": "2.10697368884198",
+    "fro_diag_abelian_muon": "1.44820029196225",
+    "fro_offdiag_nonabelian_muon": "1.53037709073052",
+    "off_over_diag_ratio_muon": "1.05674408383",
+    "nonabelian_share_of_datum_muon": "0.527568293659",
+    "nonnormality_muon": "1.71163963907",
+    "trace_scalar_muon": "-0.0260999453258",
+    "nonabelian_share_proton": "0.527571696789",
+    "verdict": "THE BAR-ODD 5₂ STOKES DATUM IS MAJORITY NON-ABELIAN (scope-(a) structural). O = ½(S⁺−S⁻) (GGM Stokes matrix, the non-abelian analogue of the resurgent Borel datum): ‖O‖_F=2.10697, split ‖diag‖=1.4482 (abelian / formal-monodromy) vs ‖offdiag‖=1.53038 (non-abelian / Stokes). off/diag=1.0567; the off-diagonal carries 52.76% of ‖O‖² — MORE than the diagonal. O is non-normal (‖O−Oᵀ‖=1.7116≠0) so no scalar diagonalizes it; trace(O)=-0.0261 (the one clean scalar) captures almost none of it. CONCLUSION: the scalar closed-form searches (φ_odd σ1/σ2 arg-sum; 5₂ Habiro-tail 'no π²/5-analog'; c₃ swing carriers) fail STRUCTURALLY — they are scalar projections of an object 52.8% of which is off-diagonal and scalar-invisible. The correct bar-odd carrier is the MATRIX O (non-abelian invariants), not a scalar phase. Does NOT close c₃ (O is smooth, not the swing — SRigidityPrune binds); reframes where the datum lives. No fit; no c_k; no tier change."
+  }
+}
