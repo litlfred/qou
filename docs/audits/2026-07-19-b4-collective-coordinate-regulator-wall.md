@@ -38,9 +38,19 @@ not a scalar in `(0,1/√5)`, but one volume.
 
 ## 2. The forward test (pre-registered substrate candidates; the required Vol is a diagnostic)
 
-Under the (explicitly **unverified**) log-linear normalization `B ∝ b^reg` calibrated
-on the deuteron `b₂ = −ln(1−g²) = 0.2226` (the deuteron has no zero mode), the ⁴He
-ratio `ρ₄` implies a required `Vol` — an AME **back-out diagnostic**, not a wired input:
+> **⚠ The normalization is worse than "unverified" — it contradicts the one
+> established datapoint.** The test below maps the cumulant to MeV via `B ∝ b^reg`
+> (log-linear), calibrated on the deuteron `b₂ = −ln(1−g²) = 0.2226`. But the corpus's
+> *actual* deuteron law is `B(²H) = 5·g = 2.234` MeV — **linear** in the magnitude `g`,
+> not logarithmic in a determinant (`5g / b₂ = 10.03`, not a shared map). So there is
+> **no established cumulant→MeV map**: `b₄ = −ln det` (log) and the deuteron `5g`
+> (linear) are different functional forms, and the "required Vol" back-out silently
+> assumes a log map that the only known datapoint refutes. The diagnostic below is
+> therefore **ill-posed at the normalization level**, before any Vol candidate is even
+> considered. This is the load-bearing gap.
+
+Under that (refuted) log-linear normalization, the ⁴He ratio `ρ₄` implies a required
+`Vol` — an AME **back-out diagnostic**, not a wired input:
 
 | `ρ₄` source | required `Vol` |
 |---|---|
@@ -65,10 +75,15 @@ Pre-registered substrate volume candidates (named in advance, **no census scan**
 substrate candidates, does not supply a forced forward `Vol`.** Three reasons this is
 a wall, not a closure:
 
-1. **Normalization is assumed.** The `B ∝ b^reg` log-linear law rests on the deuteron
-   `B = 5g` law, which the provenance audit
-   (`2026-07-06-reeb-flow-pn-magnitude-provenance-and-1four-extension.md` §2) records as
-   **asserted**, not derived. The "required Vol" inherits that assumption.
+1. **The cumulant→MeV map is not just assumed — it is refuted by the deuteron.** The
+   `B ∝ b^reg` log-linear map used for the back-out contradicts the only established
+   datapoint: the corpus deuteron law is `B(²H) = 5·g` (**linear** in `g`), not
+   `−ln det` (log); `5g/b₂ = 10.03`. So the "required Vol ≈ 23" is computed with a
+   normalization the framework's own deuteron result rules out. **Fixing the
+   cumulant→MeV map is the prior, load-bearing gap** — the Vol question is downstream of
+   it and cannot be posed cleanly until it is settled (and note the deuteron is
+   *sub-critical* while ⁴He is *at the pole*, so any single map is a cross-regime
+   extrapolation across exactly the criticality this whole line concerns).
 2. **⚠ The closest match, `e^π ≈ 23.14` (0.6%), is numerology.** `e^π` has **no**
    structural derivation as a zero-mode moduli volume in this framework. It is recorded
    here **only to warn future agents off wiring it** — per the standing anti-numerology
@@ -86,11 +101,15 @@ only the `Vol` input is unsupplied.
 
 ## 4. What would actually close it (for the next agent)
 
-A *derivation* of the zero-mode moduli volume from the substrate geometry — e.g. the
-collective-coordinate range of the species-symmetric condensation mode as an
-S³/2I-localized or coordination-graph volume — **not** a transcendental near-match to
-the back-out. Until then the ⁴He magnitude is open, and the honest state is: structure
-derived (`b₄^reg = ln Vol − ½ ln det′`, `det′` exact), `Vol` unsupplied.
+**First**, a derived **cumulant→MeV map** — reconcile the deuteron's linear `5g` with
+the `−ln det` cumulant, or establish which is the correct observable and how a
+sub-critical (deuteron) value and an at-the-pole (⁴He) value share one scale. Only then
+is the Vol question well-posed. **Second**, a *derivation* of the zero-mode moduli
+volume from the substrate geometry — e.g. the collective-coordinate range of the
+species-symmetric condensation mode as an S³/2I-localized or coordination-graph volume —
+**not** a transcendental near-match to the back-out. Until both hold, the ⁴He magnitude
+is open; the honest state is: regulator *structure* derived (`b₄^reg = ln Vol − ½ ln det′`,
+`det′` exact), but neither the cumulant→MeV map nor `Vol` is supplied.
 
 Refs: probe `computations/deltalambda/b4_isotope_pole_approach_probe.py`;
 #4084 `B4CumulantBarEven.lean` (`he4DetViaEig_zero_at_pole`,
