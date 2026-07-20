@@ -1,0 +1,80 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "1.3.0",
+  "computedAt": "2026-07-20T16:28:22.943770+00:00",
+  "commitSha": "d75200546682bb93e3a5ba7bb15cd382f4b732b3",
+  "assertions": [
+    {
+      "name": "ggm_stokes_datum_anchor_invariant",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "GGM S⁺₁₁ tower swings only 5.99e-06% across the two 11.5-ppb-separated anchors, and the leading Stokes constant −3 is q-independent — the datum is the RIGHT TYPE (anchor-invariant) for a derivation. Passes the type test; the value test is what fails below."
+    },
+    {
+      "name": "smooth_c3_is_anchor_flat",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "The smooth Habiro closed form c_3 swings only 6.18 ppb across the anchors — NOT the ~2–3.5% swing of the EXTRACTED c_3 (dc_3/dq≈4.6e6, PR #1821). The extracted swing is 1/u³ ladder-inversion hyper-sensitivity, not physical anchor-dependence. So a Stokes datum being anchor-invariant is CORRECT — the swing is not the obstruction."
+    },
+    {
+      "name": "stokes_integer_value_refuted_as_c3",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "H1 (c_3 = raw GGM order-3 Stokes integer −3) gives a Q_β c_3-rung residual of 575.6 ppb — 74× the 7.8 ppb 100× target, and WORSE than even the crude −2 near-match (42.9 ppb). The anchor-invariant Stokes integer (−3) simply is not c_3 (≈−2.069): off ~45%. scope-(a) NEGATIVE — value mismatch, not a fit failure."
+    },
+    {
+      "name": "substrate_stokes_jump_suppressed",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "Per 2026-07-18-dladder-fibre-branch-stokes-ambiguity: on the substrate meridian (real q₀) the least term sits at the ladder edge and the Stokes jump exp(−A/u) is ~10⁻²⁷–10⁻³⁹ (anchor-blind) — orders below the ppm-level c_3 rung. The unsuppressed A_ω lives on the fibre branch (|q|=1, u~O(1)), leaving the edge at |u|≳0.19. So no substrate-meridian Stokes ambiguity can source c_3; the open route is the normalized §4e quantum-modularity / 3d-index bridge, not a bare integer."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 23,
+  "computation": "qbeta-c3-stokes-ggm-order3",
+  "scriptFile": "qbeta_c3_stokes_ggm_order3_probe.py",
+  "scriptHash": "b8b25c211208",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
+  },
+  "description": "c_3 via the colored-Jones / GGM-resurgence (Stokes) route: a falsifiable two-anchor test. The anchor-invariant GGM order-3 Stokes datum for 4₁ (integer constant 3 on the ι=Vol(4₁)/π singularity; S⁺₁₁ tower eq 61, certified in qbeta-g3-ggm-stokes-41) is the RIGHT TYPE for a derivation (anchor-invariant), but its value (−3) does NOT equal the cal-anchored c_3≈−2.069: plugged into the Q_β ladder it gives a 576 ppb residual (74× the 7.8 ppb 100× target), worse than even the crude −2 near-match (43 ppb). Substrate-meridian Stokes jump is 10⁻²⁷-suppressed (dladder-fibre-branch audit). VERDICT: NEGATIVE, scope-(a) — c_3 is NOT the raw GGM order-3 Stokes constant; the open bridge is the §4e quantum-modularity normalization / 3d-index assembly, not a bare integer. No fit; nothing inverted from Q_β; no c_k wired.",
+  "contentBlock": "conj:binding-qbeta-complex",
+  "auditOnly": "docs/audits/2026-07-20-c3-stokes-route.md",
+  "data": {
+    "q0_proton": "1.109978582751380807592",
+    "q0_muon": "1.109978595554180575282",
+    "anchor_separation_ppb": -11.534276396536173,
+    "ggm_S11_tower_proton": "116.521282393968",
+    "ggm_S11_tower_muon": "116.5212754171885",
+    "ggm_stokes_integer": -3,
+    "c3_habiro_closed_form_proton": "-2.069348062472493",
+    "c3_habiro_closed_form_muon": "-2.069348075266139",
+    "c3_cal_anchored_target": "-2.0693425771151678379",
+    "qbeta_residual_ppb": {
+      "stokes_integer_-3": 575.5838899083261,
+      "near_match_-2": 42.88631809167389,
+      "cal_-2.069": 0.0
+    },
+    "target_100x_ppb": 7.8,
+    "verdict": "NEGATIVE scope-(a): the GGM colored-Jones/Stokes route supplies a correctly anchor-invariant order-3 datum (integer Stokes constant −3, 4₁ singularity at Vol(4₁)/π), the right TYPE for a derivation — but its value is not c_3. c_3 = −3 gives a 576 ppb Q_β residual (74× the 7.8 ppb target), worse than the −2 near-match (43 ppb); off ~45% from the cal c_3 ≈ −2.069. The substrate-meridian Stokes jump is 10⁻²⁷-suppressed. c_3 is NOT a bare GGM order-3 Stokes constant. The open bridge is the §4e quantum-modularity normalization / 3d-index assembly (a fixed-basis normalization of the anchor-invariant datum), not a raw integer. No fit; nothing inverted from Q_β; no c_k wired; no tier change. Honest NEGATIVE."
+  }
+}
