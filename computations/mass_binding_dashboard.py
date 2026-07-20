@@ -655,7 +655,7 @@ def main(argv=None) -> int:
         mu_can = Z * mp_can + r["N"] * mn_can
         e_layer = Z * me - _electron_binding_mev(Z)        # Z·m_e − B_el(Z)
         m_atom_ame = r["M_atom_AME"]
-        b = r["B_gate"] if (r["A"] == 4 and r["Z"] == 2 and r.get("B_gate") is not None) else r["B_sym"]
+        b = r["E_gate"] if (r["A"] == 4 and r["Z"] == 2 and r.get("E_gate") is not None) else r["B_sym"]
         m_atom_pred = (mu_can - b) + e_layer if b is not None else None
         err = ((m_atom_pred - m_atom_ame) / m_atom_ame * 1e9
                if (m_atom_pred is not None and m_atom_ame) else None)
