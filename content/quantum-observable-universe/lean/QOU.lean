@@ -79,6 +79,8 @@ import QOU.Knot.FigureEightVolumeSaddle
 import QOU.Mass.BindingTauAnchorClosure
 import QOU.Mass.QDifferenceConfluentObstruction
 import QOU.Mass.QbetaC3DMCubic
+import QOU.Mass.QbetaC3Habiro
+import QOU.Mass.QbetaC3Stokes
 import QOU.Mass.KeystoneBridgeC1Binding
 import QOU.Mass.ThetaSlopeArithmetic
 import QOU.Mass.DoorVParityNoIdentity
@@ -324,7 +326,9 @@ import QOU.Mathlib.QGevreyOrder
 -- Liouville's third theorem (Σ ord = 0) stated open; f'/f-periodicity + divisor-
 -- lattice-periodicity bricks proved sorry-free.
 import QOU.Mathlib.EllipticDivisorDegree
-import QOU.Mathlib.HadamardFactorization
+-- QOU.Mathlib.HadamardFactorization: PARKED (not imported) — PI-1 deep leg, 3 cited
+-- sorries, env-can't-compile, off the critical path (AP routed around it). Kept for
+-- the later-project infra epic (bean qou-osdh / qou-afys); re-import when discharged.
 -- Argument-principle scaffold (epic qou-lbth / bean qou-bmyx, brick PI-3):
 -- (1/2πi)∮ f'/f = #zeros − #poles stated open (residue-of-logDeriv = order is the
 -- Mathlib gap); #zeros−#poles=Σ ord counting brick + 2πi≠0 proved sorry-free.
