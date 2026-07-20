@@ -3,8 +3,12 @@
 **Date:** 2026-07-20 **Bean:** `qou-bmyx` (PI-3, epic `qou-lbth` pentagon-infra)
 **Branch:** `claude/qlift-borel-kernel-derivation-2026-07-20`
 **File:** `content/quantum-observable-universe/lean/QOU/Mathlib/ArgumentPrinciple.lean`
-**Status:** BEGUN — bricks proved sorry-free; deep theorem stated open (cited `sorry`).
-**✅ VERIFICATION:** `lean`-direct **exit 0** here (3 intended sorries on the deep theorems) — see note below.
+**Status:** REDUCED — 6 bricks sorry-free (incl. 3 new analytic bricks); the local
+argument principle `residue_logDeriv_eq_order` is reduced from a full `sorry` to ONE
+residual `sorry` (the global closed-disc factorization) with its whole residue-
+computation tail sorry-free.
+**✅ VERIFICATION:** `lean`-direct **exit 0** here (3 intended sorries:
+`residue_logDeriv_eq_order` one residual, `argument_principle`, `entire_zero_count`) — see note below.
 
 ## The theorem
 
@@ -62,9 +66,41 @@ lemma + a contour-deformation sum.
   pole parts. **The entire right-hand side, analysis-free and complete.**
 * `two_pi_I_ne_zero'` — `2πi ≠ 0`, well-definedness of the `(1/2πi)` prefactor.
 
-## Stated open (cited `sorry` — not vacuous, not axiomatized)
+### New analytic bricks (2026-07-20 — the residue computation, sorry-free)
 
-* `residue_logDeriv_eq_order` — the local argument principle (THE gap lemma).
+* `logDeriv_zpow_sub_mul_split` — **brick 1**: `logDeriv((·-w)^n·g) z =
+  n·(z-w)⁻¹ + logDeriv g z` for `g` differentiable+nonvanishing at `z ≠ w`. Pure
+  `logDeriv` algebra (`logDeriv_mul`, `logDeriv_fun_zpow`, `DifferentiableAt.zpow`).
+* `inv_two_pi_I_mul_integral_nat_sub_center_inv` — **brick 2**: the Cauchy simple-pole
+  term `(2πi)⁻¹ ∮_{C(w,r)} n·(z-w)⁻¹ = n`, direct from
+  `circleIntegral.integral_sub_center_inv` + `circleIntegral.integral_const_mul`.
+* `circleIntegral_logDeriv_eq_zero_of_analyticOnNhd` — **brick 3**: Cauchy–Goursat,
+  `∮_{C(w,r)} logDeriv g = 0` for `g` analytic + nonvanishing on `closedBall w r`.
+  Uses `logDeriv g = (deriv g)/g` analytic (`AnalyticOnNhd.deriv` + `.div`) then
+  `Complex.circleIntegral_eq_zero_of_differentiable_on_off_countable`.
+
+## `residue_logDeriv_eq_order` — reduced to ONE residual `sorry`
+
+The theorem now `obtain`s a nonvanishing analytic `g` on an OPEN neighborhood `U` of
+`closedBall w r`, with `f = (·-w)^n·g` on the punctured `U \ {w}` (the single
+residual `sorry`); then **everything downstream is sorry-free**:
+
+1. On the sphere, `logDeriv f = n·(z-w)⁻¹ + logDeriv g` — because `f =ᶠ[𝓝 z]
+   (·-w)^n·g` on the open `U \ {w}` (so `deriv`s agree) and brick 1 splits it.
+2. Both pieces are `CircleIntegrable` (continuous on the sphere).
+3. `∮` splits (`circleIntegral.integral_add`); brick 2 gives `n·2πi`, brick 3 gives
+   `0`; the `(2πi)⁻¹` prefactor cancels to `n`.
+
+**The ONLY remaining sorry** is the global closed-disc factorization: extend the
+germ that `meromorphicOrderAt_eq_int_iff` supplies in `𝓝[≠] w` to a nonvanishing
+analytic `g` on an open nbhd of the disc, using `hsmall` (order 0 elsewhere) and
+`hclean` (no zeros on the circle). This is the removable-singularity / analytic-
+continuation core — genuinely absent from Mathlib v4.24.0 — and is honestly the hard
+residual, not fitted or axiomatized-as-proved.
+
+## Still stated open (cited `sorry` — not vacuous, not axiomatized)
+
+* `residue_logDeriv_eq_order` — ONE residual sorry (the factorization; tail proved).
 * `argument_principle` — global contour integral = interior divisor sum.
 * `entire_zero_count` — PI-3 payload: entire `f` (canonical product) ⇒ integral
   = `zeroCount` = #zeros; the tool that pins `phiBProd` among its elliptic multiples.
