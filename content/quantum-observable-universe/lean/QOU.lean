@@ -80,6 +80,7 @@ import QOU.Mass.BindingTauAnchorClosure
 import QOU.Mass.QDifferenceConfluentObstruction
 import QOU.Mass.KeystoneBridgeC1Binding
 import QOU.Mass.ThetaSlopeArithmetic
+import QOU.Mass.DoorVParityNoIdentity
 import QOU.Mass.ColorCubicPowerSums
 import QOU.Mass.TauQuantumIntegerForm
 import QOU.Mass.ColorSpectralCubicGeometry
