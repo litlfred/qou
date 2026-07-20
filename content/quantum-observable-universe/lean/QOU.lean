@@ -74,6 +74,7 @@ import QOU.Mass.BindingInteriorMaxObstruction
 import QOU.Mass.Lever1Depth2Exclusion
 import QOU.Mass.Lever1TauClosedForm
 import QOU.Mass.BindingTauAnchorClosure
+import QOU.Mass.QDifferenceConfluentObstruction
 import QOU.Mass.ColorCubicPowerSums
 import QOU.Mass.TauQuantumIntegerForm
 import QOU.Mass.ColorSpectralCubicGeometry
