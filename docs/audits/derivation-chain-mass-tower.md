@@ -266,3 +266,17 @@ are all downstream of either (a) the `List.Shortlex` API hunt or
 - Does **not** invent witness values for link 8. Constructing the
   `MassEvaluation` instance is research; the audit just maps which
   upstream pieces are needed.
+
+### 9. Deuteron ($B_2$) Topological Binding Gap
+
+**File:** `content/quantum-observable-universe/lean/QOU/HadronicMass.lean` (and dashboard probe `deuteron_fpn_wlambda_wiring.py`)
+**Status:** ⚠️ 1 topological/categorical gap (owner-gated).
+
+The deuteron binding energy anchor ($B_2 = 2.224566$ MeV) lacks a closed-form derivation from pure topology. 
+- The standard Hecke channel $V_{std}$ over-binds (yielding 3.89 MeV).
+- The algebraic NA-Stokes $W_\lambda$ at the $H_3$ level under-binds (yielding 1.74 MeV).
+- A pure categorical exponential evaluation ($Q \cdot \exp(-K)$ where $Q=2.277455$ and $K=1/32$) yields ~2.207 MeV, leaving a ~17 keV deficit. 
+
+Per the repository rules against numerological fitting, this 17 keV deficit is flagged as a genuine mathematical gap in the derivation chain. The exact $0.58776$ phase factor required to hit AME exactly remains an open geometric target.
+
+- **Gap to close:** Discover the genuine geometric $W_\lambda$ realization (e.g. over the Bring surface) that intrinsically yields the exact empirical magnitude $0.588$ without ad-hoc parameter fitting. This is tracked in bean `qou-z5cu`.
