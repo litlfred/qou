@@ -3,18 +3,26 @@
 **Date:** 2026-07-20 **Bean:** `qou-bmyx` (PI-3, epic `qou-lbth` pentagon-infra)
 **Branch:** `claude/qlift-borel-kernel-derivation-2026-07-20`
 **File:** `content/quantum-observable-universe/lean/QOU/Mathlib/ArgumentPrinciple.lean`
-**Status:** GLOBAL ARGUMENT PRINCIPLE REDUCED TO ONE TOPOLOGICAL GAP, now FURTHER
-REDUCED (2026-07-20, bean `qou-95qq` CDS). `residue_logDeriv_eq_order` (local) is
-sorry-free; `argument_principle` + `entire_zero_count` are sorry-free, *derived* from
-the deformation layer. That layer is now split into three:
-**`exists_puncture_radii`** (radius selection, metric topology) — **PROVED sorry-free**;
-the **`|S| = 0` base case** (Cauchy–Goursat) inside `contour_deformation_sum` — **PROVED
-sorry-free** (so the empty-puncture instance of the argument principle is fully closed);
-and **`residue_theorem_deformation`** — the single remaining `sorry`, the `|S| ≥ 1`
-multiply-connected Cauchy deformation (off-centre / multi-hole homology), fully isolated
-from the proved analysis.
-**✅ VERIFICATION:** `lean`-direct **exit 0** here (exactly 1 intended sorry:
-`residue_theorem_deformation`) — see note below.
+**Status:** ✅ **FULLY SORRY-FREE (2026-07-20, bean `qou-95qq`, commit `ff1f8163`).**
+The single remaining topological `sorry` (`residue_theorem_deformation`) was
+**eliminated** — not by proving the multiply-connected deformation, but by **re-proving
+`argument_principle` through the global Weierstrass zero/pole factorization**
+`MeromorphicOn.extract_zeros_poles`, which needs no contour deformation at all. On the
+closed disc `f = (∏ᶠ_w (·-w)^{ord_w f})·g` with `g` analytic nonvanishing, so on the
+bounding circle `logDeriv f = Σ_w (ord_w f)·(·-w)⁻¹ + logDeriv g`; integrating gives
+`∮ logDeriv f = Σ_w (ord_w f)·2πi + 0`. The off-centre difficulty **dissolves** because
+`∮_{C(c,R)} (z-w)⁻¹ = 2πi` holds for **every interior** `w`
+(`circleIntegral.integral_sub_inv_of_mem_ball`), and the analytic remainder integrates to
+0 by Cauchy–Goursat. `residue_theorem_deformation` + `contour_deformation_sum` +
+`exists_puncture_radii` were **removed** (deformation scaffolding, now unnecessary);
+`residue_logDeriv_eq_order` (local AP) is retained as an independently useful lemma; two
+new sorry-free lemmas (`circleIntegrable_sum_simple_poles`, `circleIntegral_sum_simple_poles`)
+carry the interior simple-pole sum.
+**✅ VERIFICATION:** `lean`-direct **exit 0, zero sorry warnings**;
+`#print axioms argument_principle` / `entire_zero_count` report only
+`[propext, Classical.choice, Quot.sound]` (no `sorryAx`). The general-`h`
+multiply-connected homology deformation remains a genuine Mathlib v4.24.0 gap, but is
+**not needed** for the argument principle. See "Update" section below.
 
 ## The theorem
 
@@ -217,3 +225,70 @@ sorry-free (the last three modulo the isolated `residue_theorem_deformation`). (
 **root** `.lake/packages/*/.lake/build/lib/lean` — the per-package `content/.../lean/
 .lake` mathlib olean set here is partial.) `lake build QOU` on a full-Analysis host
 remains the CI gate. Nothing is wired to production, fitted, or axiomatized-as-proved.
+
+---
+
+## Update (2026-07-20, commit `ff1f8163`) — the gap was DISSOLVED via factorization
+
+The earlier revisions of this file isolated a single cited `sorry`,
+`residue_theorem_deformation`: the multiply-connected Cauchy deformation
+`∮_{C(c,R)} h = Σ_{w∈S} ∮_{C(w,ρ w)} h` for **general** holomorphic `h` on the punctured
+disc. Re-verifying the Mathlib v4.24.0 surface confirmed the previous survey: an olean
+declaration sweep of `Analysis/Complex/CauchyIntegral` + `MeasureTheory/Integral/CircleIntegral`
+shows **only** the concentric annulus deformation
+`circleIntegral_eq_of_differentiable_on_annulus_off_countable` (puncture at the centre
+`w = c`), the on-disc Cauchy integral formula, and the rectangle vanishing. No
+`Complex.residue`, no `windingNumber`, no off-centre / keyhole / multi-hole homology
+deformation. So the general-`h` deformation is a **genuine irreducible Mathlib gap**, and
+the crosscut/keyhole route is not tractable (no path-composition contour-integral
+primitive to build a keyhole from, and no homology engine).
+
+**Key realization:** the argument principle does **not need** that deformation. `logDeriv f`
+is not an arbitrary `h`; it is the log-derivative of a meromorphic `f`, and Mathlib **does**
+have the global Weierstrass zero/pole extraction `MeromorphicOn.extract_zeros_poles`
+(`Analysis/Meromorphic/FactorizedRational`):
+
+> `f = (∏ᶠ_w (·-w)^{ord_w f}) · g` on the closed disc, with `g` analytic and nonvanishing.
+
+Taking log-derivatives on the bounding circle,
+`logDeriv f = Σ_{w∈S} (ord_w f)·(·-w)⁻¹ + logDeriv g`, and integrating:
+
+- each **bare** simple pole gives `∮_{C(c,R)} (z-w)⁻¹ = 2πi` for **every interior** `w`
+  via `circleIntegral.integral_sub_inv_of_mem_ball` — this is the crucial off-centre fact,
+  the Cauchy integral formula with `f ≡ 1`, and it needs **no** deformation;
+- the analytic remainder `logDeriv g` integrates to `0` by Cauchy–Goursat.
+
+Multiplying by `(2πi)⁻¹` yields `Σ_{w∈S} ord_w f`. The off-centre / multi-puncture
+difficulty simply never arises: we do not move any contour, we compute the single big
+contour integral directly. `argument_principle` and `entire_zero_count` are now fully
+sorry-free; their statements are unchanged (a sibling imports them).
+
+### Discharge of the `extract_zeros_poles` hypotheses
+
+- `∀ u : closedBall c R, meromorphicOrderAt f u ≠ ⊤` — from a boundary witness
+  (`c + R`, on the sphere hence off `S`, where `f` is analytic and nonvanishing so order
+  `= 0`) propagated by `MeromorphicOn.exists_meromorphicOrderAt_ne_top_iff_forall`
+  (closedBall is connected).
+- `(divisor f U).support.Finite` — `Function.locallyFinsuppWithin.finiteSupport` +
+  `isCompact_closedBall`.
+- `f =ᶠ[𝓝 z] F` at each boundary point (to transfer `logDeriv`) —
+  `MeromorphicAt.eventuallyEq_nhdsNE_of_eventuallyEq_codiscreteWithin` (needs `AccPt z (𝓟 U)`,
+  proved for sphere points via `closure_ball`) + continuity to upgrade `𝓝[≠]` to `𝓝`.
+
+### Reusable for a RECTANGULAR outer contour (sibling `parallelogram_argument_principle`)
+
+The factorization route is **boundary-shape-agnostic** — it is the transferable core the
+coordinator asked for, and it is *stronger* than a shape-agnostic crosscut lemma because
+it avoids the missing homology engine entirely. A rectangular-outer-contour argument
+principle follows **identically**:
+
+- replace `∮_{C(c,R)} (z-w)⁻¹ = 2πi` with the **rectangle** Cauchy integral value for an
+  interior `w` (the rectangle analogue of `integral_sub_inv_of_mem_ball`);
+- replace the circle Cauchy–Goursat with the rectangle vanishing
+  `integral_boundary_rect_eq_zero_of_differentiable_on_off_countable` (present in Mathlib);
+- the factorization `extract_zeros_poles` and the `logDeriv` split are contour-independent.
+
+No crosscut / keyhole construction is needed for either shape. The general-`h` residue-sum
+deformation (arbitrary holomorphic `h`, not a `logDeriv`) is still genuinely absent from
+Mathlib and would still require a winding-number / homology development to state — but the
+argument principle (circle *or* rectangle outer contour) does not depend on it.
