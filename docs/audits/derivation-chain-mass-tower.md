@@ -280,3 +280,26 @@ The deuteron binding energy anchor ($B_2 = 2.224566$ MeV) lacks a closed-form de
 Per the repository rules against numerological fitting, this 17 keV deficit is flagged as a genuine mathematical gap in the derivation chain. The exact $0.58776$ phase factor required to hit AME exactly remains an open geometric target.
 
 - **Gap to close:** Discover the genuine geometric $W_\lambda$ realization (e.g. over the Bring surface) that intrinsically yields the exact empirical magnitude $0.588$ without ad-hoc parameter fitting. This is tracked in bean `qou-z5cu`.
+
+### 10. Helium-4 () Integration Limit Gap
+### 10. Helium-4 ($^4$He) Integration Limit Gap
+
+**File:** `computations/mass_binding_dashboard.py`
+**Status:** ⚠️ 1 geometric integration limit gap (owner-gated).
+
+The SU(4) dynamic occupancy $E_{gate}$ model for the (3,3,3,3) partition yields 29.99 MeV, over-binding relative to the AME target of 28.30 MeV. 
+- A Toroidal JSJ integration limit $P_{-1/2}(\sqrt{5}/2) / P_{1/2}(\sqrt{5}/2) \approx 0.944649$ successfully scales this to 28.33 MeV.
+- However, this topological ratio has not yet been formalized in Lean 4.
+
+Per the strict anti-numerology rules, the code remains on the uncorrected baseline until a formal Lean proof validates the geometric JSJ multiplier. Tracked in bean `qou-st8z`.
+
+### 11. Lithium-6 ($^6$Li) B_gate Derivation Gap
+
+**File:** `computations/mass_binding_dashboard.py`
+**Status:** ⚠️ 1 representation scaling gap (owner-gated).
+
+The default $B_{sym}$ logic heavily under-binds 6Li (A=6), yielding ~18.4 MeV vs the AME target of 31.99 MeV. 
+- The exact $E_{gate}$ derivation for the (5,5,4,4) partition requires an explicit geometric missing-strand correction of $[10]_q / [6]_q$ to hit the target.
+- Like the 4He gap, this modifier is strictly embargoed from the python compute until a passing `.lean` proof formally derives it from the category.
+
+Tracked in bean `qou-ob0a`.
