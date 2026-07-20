@@ -2,27 +2,30 @@ import Mathlib.Data.Real.Basic
 import Mathlib.Algebra.BigOperators.Ring.Finset
 
 /-!
-# QOU.Mass.binding_closure — binding closure
+# QOU.Mass.binding_closure_conditional — rigorous-conditional binding closure
 
 Conditional on the per-term mass identity (input B), the per-isotope
-binding closes to `m_e · Σ_n a_D^{(n)}`. This establishes the many-body identity (`thm:binding-manybody-eq-jet-filtration`).
+binding closes to `m_e · Σ_n a_D^{(n)}`. This upgrades the many-body
+conjecture (`conj:binding-manybody-eq-jet-filtration`) to a §3b-cond
+**rigorous-conditional theorem**: fully verified modulo a single named
+class instance.
 
 The class `BindingClosureInput` bundles the two structural inputs:
 * `body_is_series` — obligation **(C)**, the body-order = jet-graded
   decomposition (`lem:bond-order-eq-jet-degree`, proved as a separate
   lemma);
 * `term_id` — obligation **(B)**, the per-term mass identity
-  `B_n = m_e · a_D^{(n)}` (derived via the q-difference kernel; equivalently the q-difference
+  `B_n = m_e · a_D^{(n)}` (the open input; equivalently the q-difference
   kernel realising the prolongation symbol).
 
 The residue form of `a_D^{(n)}` (obligation D) is
-`prop:sw-period-residue-sum`. With (B) derived, this is fully unconditional.
+`prop:sw-period-residue-sum`. Only (B) remains open.
 
-LaTeX label: `thm:binding-closure`.
+LaTeX label: `thm:binding-closure-conditional`.
 
 ## References
 
-- [manuscript] §mass-theory/binding-closure
+- [manuscript] §mass-theory/binding-closure-conditional
 
 **Ground ring**: `ℝ` (binding energies). See `GroundRingAnnotations.lean`.
 -/
@@ -50,11 +53,11 @@ class BindingClosureInput where
   /-- (B) — open: each body term is `m_e` times the `n`-th SW period. -/
   term_id : ∀ n, bodyTerm n = m_e * swPeriod n
 
-/-- **Binding closure.** The total binding is `m_e`
+/-- **Binding closure (conditional on B).** The total binding is `m_e`
     times the sum of the prolonged Seiberg–Witten periods. Proved from the
-    class; the instance is supplied by the q-difference kernel derivation. -/
--- Ref: [manuscript] §mass-theory/binding-closure
-theorem binding_closure [H : BindingClosureInput] :
+    class; the instance is input (B). -/
+-- Ref: [manuscript] §mass-theory/binding-closure-conditional
+theorem binding_closure_conditional [H : BindingClosureInput] :
     H.total = H.m_e * ∑ n ∈ Finset.range H.maxOrder, H.swPeriod n := by
   rw [H.body_is_series, Finset.mul_sum]
   exact Finset.sum_congr rfl (fun n _ => H.term_id n)

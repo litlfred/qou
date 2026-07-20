@@ -128,30 +128,15 @@ def main() -> int:
         prev = aD
     print()
 
-    # ── 2. Body-order (jet-filtration) binding with exact P-recursive residue weights w_n(K)
-    print("  Jet-filtration binding  B(K) = Σ_{n=2}^{A} m_e·a_D^(n)·w_n(K)  (NO fit):")
-    print("  (w_n is precisely determined by the q-difference recursion B_{n+2} = [2]_q B_{n+1} - B_n)")
-    
-    # Generate the sequence of body-order terms analytically
-    tau = float(q + 1.0/q)
-    # Physical boundary conditions: B_1 = 0, B_2 = 2.224573 MeV (deuteron)
-    B_n_seq = [0.0, 0.0, float(AME_B["D"])]
-    for n in range(3, max(NUCLEONS.values()) + 1):
-        B_n_seq.append(tau * B_n_seq[-1] - B_n_seq[-2])
-
+    # ── 2. Body-order (jet-filtration) binding, unit weights w_n=1 (null) ──────
+    print("  Jet-filtration binding  B(K) = Σ_{n=2}^{A} m_e·a_D^(n)  (w_n=1, NO fit):")
     Bjet = {}
     for K, A in NUCLEONS.items():
-        # The sum of body-order terms directly
-        B = sum(B_n_seq[2:A+1])
+        B = mp.fsum(M_E * periods[n] for n in range(2, A + 1))
         Bjet[K] = B
-        err = (B - float(AME_B[K])) / float(AME_B[K])
-        
-        # Calculate the implied w_n(K) for display
-        w_n_vals = [B_n_seq[n] / float(M_E * periods[n]) for n in range(2, A+1)]
-        w_str = ", ".join(f"{w:.3f}" for w in w_n_vals)
-        
+        err = (B - AME_B[K]) / AME_B[K]
         print(f"     {K:<4} A={A}  B_jet={float(B):8.4f}  AME={float(AME_B[K]):8.4f}"
-              f"  err={float(err)*100:+8.1f}%   [w_n: {w_str}]")
+              f"  err={float(err)*100:+8.1f}%")
 
     # ── 3. The decisive metric: EXTENSIVE GROWTH ratio vs experiment ──────────
     #     (the intensive arccos-phase probe could NOT track this ~13× growth) ──
@@ -159,7 +144,7 @@ def main() -> int:
     growth_exp = AME_B["4He"] / AME_B["D"]
     print(f"\n  ⁴He/D binding-growth ratio:")
     print(f"     experiment          = {float(growth_exp):6.2f}×")
-    print(f"     jet-filtration (exact w_n) = {float(growth_pred):6.2f}×   "
+    print(f"     jet-filtration (lw) = {float(growth_pred):6.2f}×   "
           f"(intensive arccos-phase was ~flat ⇒ could not grow)")
 
     # single global scale (diagnostic only — reports how close the SHAPE is)
@@ -173,17 +158,20 @@ def main() -> int:
         err = (Bs - AME_B[K]) / AME_B[K]
         worst = max(worst, abs(err))
         print(f"     {K:<4} B={float(Bs):8.4f}  AME={float(AME_B[K]):8.4f}  err={float(err)*100:+7.1f}%")
-    print(f"     worst |err| = {float(worst)*100:.1f}%  (diagnostic only)")
+    print(f"     worst |err| = {float(worst)*100:.1f}%  (w_n=1; residue-weight ρ·A rule is the open refinement)")
 
     # ── verdict ───────────────────────────────────────────────────────────────
     print("\n### Reading")
     print("  • The super-exponential SW period a_D^(n)=lw(n−1) (na-Stokes / mean")
     print("    quantum-dim) IS the EXTENSIVE channel — a_D^(n) grows without bound,")
     print("    unlike the bounded arccos-rotation phase that failed to track A-growth.")
-    print(f"  • Using the exact P-recursive residue weights w_n(K) produces a {float(growth_pred):.1f}× ⁴He/D")
-    print(f"    growth (exp {float(growth_exp):.1f}×) — the EXTENSIVE mechanism is exactly satisfied")
-    print("    by the q-difference recursion output, fixing the ρ·A scale rule.")
-    print("  • This completely closes the θ_λ magnitude gate without any empirical fitting.")
+    print(f"  • Unit-weight jet-filtration already produces a {float(growth_pred):.1f}× ⁴He/D")
+    print(f"    growth (exp {float(growth_exp):.1f}×) — the EXTENSIVE mechanism is present;")
+    print("    the residual is the per-body residue weight w_n(K) (the ρ·A scale rule,")
+    print("    a q-difference recursion OUTPUT per the conjecture — NOT fitted here).")
+    print("  • This closes the *mechanism* half of the θ_λ magnitude gate (extensive")
+    print("    growth from the knot-operator compute-time via na-Stokes); the weight")
+    print("    w_n(K) is the remaining derive-or-refute (q-difference kernel R(q,x)).")
 
     if _HAVE_WB:
         try:
@@ -191,17 +179,17 @@ def main() -> int:
             wb.set_description(
                 "EXPLORATORY: implements the jet-filtration binding consumer "
                 "B(K)=Σ_{n=2}^A m_e·a_D^(n)·w_n(K), a_D^(n)=lw(n−1) (super-exp SW "
-                "period / na-Stokes hyperbolic-volume channel). Tests exact recursive "
-                "weight w_n extensive growth vs D/T/³He/⁴He. Mechanism (extensive) exactly matched. "
-                "No fit.")
+                "period / na-Stokes hyperbolic-volume channel). Tests unit-weight "
+                "extensive growth vs D/T/³He/⁴He. Mechanism (extensive) present; "
+                "residue weight w_n(K) (ρ·A q-difference rule) open. No fit.")
             wb.add_data("sw_periods_a_D", {str(n): float(periods[n]) for n in periods})
-            wb.add_data("B_jet_exact_weight", {K: float(Bjet[K]) for K in Bjet})
+            wb.add_data("B_jet_unit_weight", {K: float(Bjet[K]) for K in Bjet})
             wb.add_data("growth_ratio_4He_over_D",
-                        {"pred": float(growth_pred), "exp": float(growth_exp)})
+                        {"pred_lw": float(growth_pred), "exp": float(growth_exp)})
             wb.add_assertion(
                 name="sw_period_is_extensive_channel",
                 computed=str(int(float(growth_pred) > 3.0)), expected="1", tolerance=0,
-                source=(f"exact-weight jet-filtration ⁴He/D growth = {float(growth_pred):.2f}× "
+                source=(f"unit-weight jet-filtration ⁴He/D growth = {float(growth_pred):.2f}× "
                         f"(exp {float(growth_exp):.2f}×) — the super-exp SW period supplies "
                         "extensive A-growth the intensive arccos-phase could not."))
             out = wb.save()

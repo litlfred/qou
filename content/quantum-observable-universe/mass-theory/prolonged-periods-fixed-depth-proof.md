@@ -30,5 +30,5 @@ a depth-$d$ linear recurrence with $n$-independent kernel $c$. Hence a fixed-dep
 recurrence on the prolonged periods exists, with depth bounded by
 $\mathrm{rank}\, V$. Identifying $d$ and $c$ with the Bring Picard--Fuchs
 operator is the remaining (identification) half of
-[`thm:qdifference-kernel-prolongation-symbol`](#thm:qdifference-kernel-prolongation-symbol).
+[`conj:qdifference-kernel-prolongation-symbol`](#conj:qdifference-kernel-prolongation-symbol).
 $\qquad\blacksquare$

@@ -43,7 +43,7 @@ export default conjecture({
   title:
     "The Habiro-tail cyclotomic boundary sits at the keystone order: $D(n)$ is cyclotomic $\\iff n \\leq 5$",
   uses: [
-    "thm:binding-manybody-eq-jet-filtration",
+    "conj:binding-manybody-eq-jet-filtration",
     "prop:sw-period-residue-sum",
     "prop:calibration-cohomology-alignment",
   ],

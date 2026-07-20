@@ -15,7 +15,7 @@ export default proposition({
   },
   uses: [
     "prop:jet-filtration-binding-extensive",
-    "thm:binding-manybody-eq-jet-filtration",
+    "conj:binding-manybody-eq-jet-filtration",
   ],
   tags: [
     "binding",
