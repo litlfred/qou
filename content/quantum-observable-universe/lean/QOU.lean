@@ -286,6 +286,7 @@ import QOU.Machinery.QuantumTorus
 import QOU.Machinery.QuantumTorusAJ
 import QOU.Machinery.QuantumTorusDivision
 import QOU.Machinery.QuantumTorusSymbol
+import QOU.Machinery.QProlongation
 import QOU.Machinery.StrongAJFigureEight
 import QOU.Machinery.AJTorusAnnihilation
 import QOU.Machinery.AJMinimality
