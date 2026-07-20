@@ -123,4 +123,39 @@ theorem doubling_of_involution_recurrence (f : ℕ → ℕ)
   -- f(k+3) = f(k+2) + (k+2)·f(k+1) ≥ f(k+2) + f(k+2)
   omega
 
+/-- **The survivor kernel exists at q = 1 (audit §5) — the classical fibre
+    of the re-targeted keystone, proved.** On the Gevrey-normalized (EGF)
+    carrier `b n = f n / n!`, the involution recurrence becomes the EXACT
+    depth-2 kernel relation
+        `(n+2)·b_{n+2} = b_{n+1} + b_n` ,
+    i.e. the q-difference keystone's confluent (q → 1) shadow is a
+    bona-fide bounded-depth (d = 2) kernel — precisely where the raw-OGF
+    obstruction above vanishes. This salvages the depth-2 recurrence
+    instinct of the reverted #4129 wiring on its correct carrier: the open
+    content that remains is the q-LIFT (a `[n+2]_q`-type relation on the
+    q-Borel transform) and the identification of its kernel with the
+    SW prolongation symbol — stated as `conj:qdifference-kernel-
+    prolongation-symbol`, which stays a conjecture. -/
+theorem normalized_classical_kernel_exists (f : ℕ → ℕ)
+    (hrec : ∀ n, f (n + 2) = f (n + 1) + (n + 1) * f n) (n : ℕ) :
+    ((n : ℚ) + 2) * ((f (n + 2) : ℚ) / (n + 2).factorial)
+      = (f (n + 1) : ℚ) / (n + 1).factorial + (f n : ℚ) / n.factorial := by
+  have hfac2 : ((n + 2).factorial : ℚ)
+      = ((n : ℚ) + 2) * ((n + 1).factorial : ℚ) := by
+    rw [Nat.factorial_succ (n + 1)]; push_cast; ring
+  have hfac1 : ((n + 1).factorial : ℚ)
+      = ((n : ℚ) + 1) * (n.factorial : ℚ) := by
+    rw [Nat.factorial_succ n]; push_cast; ring
+  have hne0 : (n.factorial : ℚ) ≠ 0 := by
+    exact_mod_cast Nat.factorial_ne_zero n
+  have hne1 : ((n + 1).factorial : ℚ) ≠ 0 := by
+    exact_mod_cast Nat.factorial_ne_zero (n + 1)
+  have hne2 : ((n + 2).factorial : ℚ) ≠ 0 := by
+    exact_mod_cast Nat.factorial_ne_zero (n + 2)
+  have hcast : (f (n + 2) : ℚ) = (f (n + 1) : ℚ) + ((n : ℚ) + 1) * (f n : ℚ) := by
+    rw [hrec n]; push_cast; ring
+  rw [← mul_div_assoc, div_add_div _ _ hne1 hne0,
+    div_eq_div_iff hne2 (mul_ne_zero hne1 hne0), hcast, hfac2, hfac1]
+  ring
+
 end QOU.Mass.QDifferenceConfluentObstruction
