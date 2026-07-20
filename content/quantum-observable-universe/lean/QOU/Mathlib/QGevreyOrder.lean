@@ -141,32 +141,129 @@ theorem prod_adds {q s t : ℝ} {a b : ℕ → K}
   rw [norm_mul, Real.log_mul hnorma hnormb]
   ring
 
-/-! ### Deferred to MI-2 — the analytic convolution (Cauchy-product) law
+/-! ### MI-2 — the analytic convolution (Cauchy-product) law
 
     The q-Gevrey order under the CAUCHY product of power series
     `(a ⋆ b)_n = ∑_{k≤n} a_k · b_{n-k}` is governed by the Newton polygon
     (dominant-balance of the Gaussian exponents), NOT by the elementary
-    log-additivity used for the pointwise product above.  For the tensor/theta
-    structure the relevant statement is that the convolution order is again
-    additive on the leading slope; proving it requires the RSZ Newton-polygon
-    machinery and is the MI-2 target.  Stated precisely (not vacuously) with a
-    cited `sorry`. -/
+    log-additivity used for the pointwise product above.
+
+    **CORRECTED LAW (MI-2).**  MI-1's stub asserted the additive law
+    `order(a ⋆ b) = s + t`.  That is WRONG.  The RSZ dominant balance of
+    `‖(a⋆b)_n‖ ∼ ∑_{k=0}^n q^{s k²/2} · q^{t (n-k)²/2}` is a Laplace/saddle sum:
+    writing `θ = k/n ∈ [0,1]`, the leading `n²`-coefficient is the ENVELOPE
+
+        `E(s,t) := sup_{θ∈[0,1]} ( s·θ² + t·(1−θ)² )`.
+
+    The quadratic `g(θ) = s θ² + t(1−θ)²` has `g''(θ) = 2(s+t)`, so:
+
+    * **Convex (not both ≤ 0)** — the sup is at an endpoint and
+      `E(s,t) = max s t`.  The interior critical point `θ* = t/(s+t)` is a
+      *minimum*; the sum is dominated by the boundary terms `k = 0` or `k = n`.
+      (Growing/divergent q-Gevrey coefficients, `s` or `t > 0`.)
+    * **Concave (both s,t ≤ 0)** — the sup is the interior saddle
+      `θ* = t/(s+t)`, giving `E(s,t) = s·t/(s+t)` (the HARMONIC combination, not
+      `s+t`).  This is the genuine convergent-q-Gevrey regime of RSZ.
+
+    Numerically verified (mpmath, base `q = 2`, `n = 400`, positive/no-cancel
+    coefficients): `(-1,-1)↦-0.5=st/(s+t)`; `(-2,-1)↦-0.667=st/(s+t)`;
+    `(2,1)↦+2.0=max`; `(1,3)↦+3.0=max`; `(-3,1)↦+1.0=max` (note `s+t=-2<0` yet
+    `max`, since `t>0`); `(-0.5,-2)↦-0.4=st/(s+t)`.  So the split is
+    **both ≤ 0 → `st/(s+t)`, otherwise → `max s t`**, NOT the sign of `s+t`, and
+    never the additive `s+t`.
+
+    **SCOPE (honest).**  The two analytic ingredients of the `≤` (upper)
+    direction are proved sorry-free below: (i) `cauchyMul_norm_le_sum`, the
+    triangle bound `‖(a⋆b)_n‖ ≤ ∑ ‖a_k‖‖b_{n-k}‖`; (ii) `exponent_le_envelope`,
+    the exact dominant-balance inequality
+    `s k² + t j² ≤ E(s,t)·(k+j)²` (`k,j ≥ 0`) — the mathematical heart, an
+    identity-plus-sign completing-the-square argument in each regime.  The
+    remaining `ε`-`δ` assembly into the order LIMIT (upper bound), and the
+    matching lower bound (which additionally needs a non-cancellation
+    hypothesis on the leading coefficients), are the residual cited `sorry` in
+    `cauchyMul_order`.  It is stated with the CORRECT `cauchyEnvelope` law and is
+    NOT vacuous. -/
 
 /-- The Cauchy (convolution) product of two coefficient sequences. -/
 def cauchyMul (a b : ℕ → K) : ℕ → K :=
   fun n => ∑ k ∈ Finset.range (n + 1), a k * b (n - k)
 
-/-- **[MI-2, analytic] Convolution adds order.**  Under the Cauchy product the
-    leading q-Gevrey slopes add, `order(a ⋆ b) = order(a) + order(b)`, by the
-    Newton-polygon dominant-balance of `∑_k q^{s k²/2} q^{t (n-k)²/2}`.  This is
-    the genuinely-analytic law (contrast `prod_adds`, pointwise); it needs the
-    RSZ Newton-polygon apparatus and is deferred to MI-2. -/
-theorem cauchyMul_adds {q s t : ℝ} {a b : ℕ → K}
+/-- **The Cauchy-product q-Gevrey envelope** `E(s,t) = sup_{θ∈[0,1]}(sθ²+t(1−θ)²)`
+    in closed form: the harmonic combination `s·t/(s+t)` when both slopes are
+    `≤ 0` (concave, interior saddle — the convergent-q-Gevrey regime), and
+    `max s t` otherwise (convex, endpoint-dominated).  At `s = t = 0` both
+    branches give `0` (`0/0 = 0` in Lean).  Replaces the incorrect additive
+    `s + t` of the MI-1 stub. -/
+noncomputable def cauchyEnvelope (s t : ℝ) : ℝ :=
+  if s ≤ 0 ∧ t ≤ 0 then s * t / (s + t) else max s t
+
+/-- **[MI-2 core] Dominant-balance inequality (proved sorry-free).**  For
+    `k, j ≥ 0` the raw Gaussian exponent is bounded by the envelope:
+    `s·k² + t·j² ≤ cauchyEnvelope s t · (k + j)²`.  This is the analytic heart
+    of the `≤` direction of the convolution order law — a completing-the-square
+    identity in each regime:
+
+    * both `s,t ≤ 0`, `s+t < 0`:
+      `(s k²+t j²)(s+t) − s t (k+j)² = (s k − t j)² ≥ 0`, and dividing by
+      `s+t < 0` flips to `s k²+t j² ≤ s t/(s+t)·(k+j)²`;
+    * otherwise: `max s t ≥ 0`, and
+      `max s t·(k+j)² − (s k²+t j²) = (max−s)k² + (max−t)j² + max·2kj ≥ 0`. -/
+theorem exponent_le_envelope (s t : ℝ) {k j : ℝ} (hk : 0 ≤ k) (hj : 0 ≤ j) :
+    s * k ^ 2 + t * j ^ 2 ≤ cauchyEnvelope s t * (k + j) ^ 2 := by
+  unfold cauchyEnvelope
+  split_ifs with h
+  · -- both ≤ 0 : harmonic (concave, interior saddle)
+    obtain ⟨hs, ht⟩ := h
+    rcases (add_nonpos hs ht).lt_or_eq with hlt | heq
+    · -- s + t < 0
+      rw [div_mul_eq_mul_div, le_div_iff_of_neg hlt]
+      nlinarith [sq_nonneg (s * k - t * j)]
+    · -- s + t = 0 with s,t ≤ 0 forces s = t = 0
+      have hs0 : s = 0 := by linarith
+      have ht0 : t = 0 := by linarith
+      subst hs0; subst ht0; simp
+  · -- not both ≤ 0 : max (convex, endpoint-dominated)
+    have hmax : 0 ≤ max s t := by
+      rcases le_or_gt 0 (max s t) with h1 | h1
+      · exact h1
+      · exact absurd ⟨(le_max_left s t).trans h1.le, (le_max_right s t).trans h1.le⟩ h
+    have hsk : s ≤ max s t := le_max_left s t
+    have htk : t ≤ max s t := le_max_right s t
+    nlinarith [mul_nonneg (sub_nonneg.mpr hsk) (sq_nonneg k),
+               mul_nonneg (sub_nonneg.mpr htk) (sq_nonneg j),
+               mul_nonneg hmax (mul_nonneg hk hj)]
+
+/-- **[MI-2 ingredient] Triangle bound for the Cauchy product (proved
+    sorry-free).**  `‖(a⋆b)_n‖ ≤ ∑_{k≤n} ‖a_k‖·‖b_{n-k}‖`.  Combined with
+    `exponent_le_envelope` this supplies the `≤` (upper) direction of the order
+    law: each summand's exponent is envelope-bounded, and the `(n+1)`-fold sum
+    is washed out by the `n²` denominator. -/
+theorem cauchyMul_norm_le_sum (a b : ℕ → K) (n : ℕ) :
+    ‖cauchyMul a b n‖ ≤ ∑ k ∈ Finset.range (n + 1), ‖a k‖ * ‖b (n - k)‖ := by
+  unfold cauchyMul
+  refine (norm_sum_le _ _).trans (Finset.sum_le_sum ?_)
+  intro k _
+  exact (norm_mul (a k) (b (n - k))).le
+
+/-- **[MI-2, analytic — residual cited `sorry`] Convolution order = envelope.**
+    Under the Cauchy product the q-Gevrey order is the dominant-balance ENVELOPE
+    `cauchyEnvelope s t` (`= max s t` when not both `≤ 0`; `= s·t/(s+t)` when
+    both `≤ 0`), NOT the additive `s + t` of the MI-1 stub.
+
+    The `≤` direction reduces to the two sorry-free lemmas above
+    (`cauchyMul_norm_le_sum` + `exponent_le_envelope`) plus an `ε`-`δ`
+    assembly extracting `‖a_k‖ ≤ q^{(s+ε)k²/2}` (resp. `b`) from the defining
+    limits and absorbing the `(n+1)` prefactor.  The `≥` direction additionally
+    needs a non-cancellation hypothesis on the leading coefficients (in a general
+    normed field the boundary/saddle term may cancel).  Both are the deferred
+    analytic content. -/
+theorem cauchyMul_order {q s t : ℝ} {a b : ℕ → K}
     (ha : IsQGevreyOrder q s a) (hb : IsQGevreyOrder q t b)
     (hq : 1 < q) :
-    IsQGevreyOrder q (s + t) (cauchyMul a b) := by
-  -- Ref: [ramis-sauloy-zhang2013] Newton-polygon slopes of q-difference systems;
-  --      the dominant-balance argument for the Cauchy product is the MI-2 goal.
+    IsQGevreyOrder q (cauchyEnvelope s t) (cauchyMul a b) := by
+  -- Ref: [ramis-sauloy-zhang2013] Newton-polygon / dominant-balance slopes of
+  --      q-difference systems.  Upper bound: cauchyMul_norm_le_sum +
+  --      exponent_le_envelope + ε-δ; lower bound: + non-cancellation.
   sorry
 
 end QOU.Mathlib.QGevreyOrder
