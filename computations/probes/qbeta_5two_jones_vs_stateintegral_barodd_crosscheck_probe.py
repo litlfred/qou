@@ -179,11 +179,14 @@ def main() -> int:
                      expected=1.0, tolerance=0.5,
                      source="both the Jones bar-odd and the state-integral Im(L_odd) are nonzero "
                             "(chiral 5₂ carries a bar-odd datum on both faces)")
-    wb.add_assertion("crosscheck_verdict_recorded",
-                     computed=1.0, expected=1.0, tolerance=0.5,
-                     source=f"kill-criterion ({'a' if matched else 'b'}): best derived "
-                            f"normalization '{best_name}' rel={float(best_rel):.4g} vs 1% floor "
-                            f"— {'MATCH' if matched else 'DISTINCT normalizations, bridge is open §4e'}")
+    wb.add_assertion("crosscheck_verdict_distinct_normalizations",
+                     computed=1.0 if best_rel > mp.mpf("0.01") else 0.0,
+                     expected=1.0, tolerance=0.5,
+                     source=f"kill-criterion (b) PINNED as regression guard: best derived "
+                            f"normalization '{best_name}' rel={float(best_rel):.4g} exceeds the "
+                            f"1% floor — DISTINCT normalizations, bridge is the open §4e "
+                            f"quantum-modularity. A rerun finding a sub-floor match flips this "
+                            f"assertion so a human re-adjudicates the verdict.")
     wb.save()
     print(f"\n  RESULT: 5₂ bar-odd faces cross-checked ⇒ kill-criterion "
           f"({'a' if matched else 'b'}); {'match' if matched else 'distinct normalizations'}.")

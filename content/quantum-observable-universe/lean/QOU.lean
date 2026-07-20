@@ -73,6 +73,9 @@ import QOU.Mass.BindingClassicalKernel
 import QOU.Mass.BindingInteriorMaxObstruction
 import QOU.Mass.Lever1Depth2Exclusion
 import QOU.Mass.Lever1TauClosedForm
+import QOU.Machinery.HeckeTauAssignmentTower
+import QOU.Machinery.CoxeterCommutingTransversal
+import QOU.Knot.FigureEightVolumeSaddle
 import QOU.Mass.BindingTauAnchorClosure
 import QOU.Mass.QDifferenceConfluentObstruction
 import QOU.Mass.ColorCubicPowerSums
