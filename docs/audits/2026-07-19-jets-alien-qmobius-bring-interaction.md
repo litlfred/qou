@@ -73,7 +73,85 @@ Two wired contact points for `K_q(s,t)`
    languages** — the citation-graph direction (resurgence blocks cite the
    `st = 𝓛^med` block, not vice versa) is already fixed there.
 
-### 1.4 Glyph cautions (do not transfer attributes)
+### 1.4 Where the Galois group sits (owner follow-up question)
+
+The Galois group enters the triangle at **three distinct levels**, and the
+corpus already carries all three — they should not be conflated:
+
+1. **Differential / wild Galois (Ramis–Écalle): the alien derivations
+   generate it.** The `Δ_ω` are, by Écalle's construction, the infinitesimal
+   generators of the Stokes automorphism; together with the formal monodromy
+   and exponential torus they generate the differential Galois group of the
+   irregular (q-)difference connection (Ramis density). The G3 keystone
+   ([`2026-07-18-g3-stokes-keystone-evidence-base.md`](2026-07-18-g3-stokes-keystone-evidence-base.md) §1)
+   already says this in corpus language: the fibre→observable passage is a
+   "categorical Stokes / **monodromy** datum," i.e. an element of this Galois
+   action — not a resummation constant. So "the role of the Galois group" on
+   the analytic face is: **`Δ_ω` data = its Lie algebra; `A_ω` = the matrix
+   entry G3 wants.**
+2. **Number-theoretic Galois: the coefficient field of the Stokes data.**
+   The trace-field hypothesis (bean `qou-t3jv`,
+   `qbeta_aomega_stokes3_tracefield_probe.py`): even face over `ℚ(√3)`, odd
+   face over `ℚ(√−3)`, related inside `ℚ(ζ₁₂)` via `√−3 = i√3` — the
+   even/odd `A_ω` faces of §1.1 would be a single `Gal(ℚ(ζ₁₂)/ℚ)`-orbit
+   (H1 hypothesis, **not verified**). The corpus-wide carrier is the motivic
+   Galois character
+   ([`def:motivic-galois-character`](../../content/quantum-observable-universe/index-of-definitions/definition-index.md));
+   on Bring's surface specifically, the cyclotomic Galois orbits on the six
+   branch points give the three-generation count
+   ([`archimedean-yekutieli.md`](../../content/quantum-observable-universe/brings-surface/archimedean-yekutieli.md))
+   — "a Galois-theoretic statement, not an analytic count."
+3. **Quintic Galois `A₅` = the Möbius group.** The Bring quintic's Galois
+   group `A₅` is the icosahedral **Möbius** group — the q-Möbius/PSL₂ face of
+   §1.4-caution (b) below. The corpus states the fixed-point dictionary
+   explicitly: the golden quartet is "the complete real Galois orbit … the
+   full set of phase boundaries and **Möbius fixed points**"
+   ([`golden-quartet-galois-proof.md`](../../content/quantum-observable-universe/predicted-spectra/golden-quartet-galois-proof.md)).
+   Realising this `A₅` as **one** Möbius action on `ℙ(V)` is exactly the
+   open Klein-resolvent conjecture of `klein-bring-icosahedral-bridge.lean`.
+
+The three levels commute where the corpus has checked: the joint
+motivic-Galois × braid action is **discharged**
+([`joint-galois-braid-discharged-proof.md`](../../content/quantum-observable-universe/stochastic-mechanics/joint-galois-braid-discharged-proof.md)
+— Galois acts on the coefficient ring/shape parameter, braids act on the
+Hecke cell, disjoint factors commute). That is why the interaction map of
+§1.1–1.3 can route everything through `tr_M` without a Galois obstruction.
+
+### 1.5 Functional equations live on the pre-archimedean side (owner follow-up question)
+
+Yes — and the corpus's recent Lean is precisely a *functional-equation
+inventory* on the fibre (formal-`q` / algebraic) side, per the Im(q)
+fibre-vs-observable two-level table (AGENTS.md):
+
+| Functional equation (fibre level) | Carrier | Status |
+|---|---|---|
+| bar involution `q ↦ q⁻¹` (bar-even/odd split of `A_ω` faces) | corpus-wide; `AntiInvolutionPalindrome.lean` | proved (structural) |
+| pentagon identity of the cyclic dilog | `CyclicDilogPentagon.lean` (`solution_*`, `PentagonClosure.solution_periodic`) | sorry-free |
+| Φ_b inversion / unitarity / self-duality / quasi-periodicity (`phi_binv_quasiperiod`) | `CyclicDilogPentagon.lean`, `MonodromyDatumRigidity.lean` | sorry-free bundle |
+| GGM descendant-tower linear q-difference equation (eq 49) | `qbeta_g3_ggm_stokes_41.py` | exact (numeric-certified) |
+| Habiro-ring elements (`[2]_q·(1−h²α)` pattern) | α_EM PR #1511 lineage | fibre-level, evaluated per anchor |
+
+Two consequences:
+
+1. **The functional equations are the Galois action's fixed-point
+   conditions.** Each row is an equivariance statement under one of the §1.4
+   groups (bar = the `ℤ/2` in `G_mot`; pentagon/quasi-periodicity = the
+   q-difference connection whose Galois group the Stokes data generates).
+   Seeing them "on the algebraic side" is exactly right: they constrain the
+   fibre object *before* any archimedean evaluation, and each `q₀` anchor is
+   then just an evaluation of the constrained object — this is why cross-anchor
+   swings (the c_k saga) are fibre structure, not noise.
+2. **The rigidity theorems say the functional equations almost suffice.**
+   `faddeevPhi_unique_of_pentagon` + `monodromy_datum_rigidity`: the
+   functional-equation bundle pins the solution up to scalar, modulo one
+   analytic fact. Sibling PR #4120 (landed on `claude/agent-pickup-stalled-rtugin`
+   after this audit's first draft) discharges the period-independence leg
+   sorry-free — `PentagonRigidity` is now down to **one** open leg (the ratio
+   `Φ₁/Φ₂` is entire). So the honest statement is: *the pre-archimedean
+   functional equations + one Liouville-type analytic fact ⇒ `A_ω` is forced.*
+   That is the sharpest current form of the derivation-gap answer in §3.
+
+### 1.6 Glyph cautions (do not transfer attributes)
 
 - The surreal `ω` in `ord_ω` (infinite ordinal) and the alien-calculus `ω`
   (Borel-plane singularity location) are **unrelated objects** sharing a glyph.
@@ -129,7 +207,9 @@ How they compose against the gaps:
    `3`) — *once* the Liouville step (`PentagonRigidity.uniqueUpToScalar`,
    doubly-periodic ⇒ constant, not in Mathlib) is proved. That step remains
    **the** formalize-first target
-   ([`2026-07-18-g3-stokes-keystone-evidence-base.md`](2026-07-18-g3-stokes-keystone-evidence-base.md) §3);
+   ([`2026-07-18-g3-stokes-keystone-evidence-base.md`](2026-07-18-g3-stokes-keystone-evidence-base.md) §3)
+   — narrowed by sibling PR #4120 (`periods_linearIndependent`, sorry-free) to
+   the single "ratio is entire" leg, see §1.5;
    nothing in this audit shortcuts it, and axiomatising it would be the
    §Axiomatization-is-not-a-proof trap.
 2. **The saddle Lean upgrades the Borel-action identification from numerology
