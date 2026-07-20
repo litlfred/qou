@@ -274,6 +274,21 @@ export const references: CSLData[] = [
     note: "§1 'The cubic condition': a family of abelian varieties admits a Lagrangian (ACIHS) structure iff there is a FIELD OF CUBICS on the tangent bundle to the base such that the differential of the period map at each point is contraction with the cubic — i.e. the symmetric 3-tensor $c_{ijk}\\in\\mathrm{Sym}^3 T^*B$ IS the infinitesimal-period-map / second-order prolongation datum (for a CY family the cubic is Yukawa's, equivalent to the symplectic structure on the total space). In QOU this is THE primary citable anchor for the MATHEMATICAL Seiberg–Witten jet-prolongation object of conj:qdifference-kernel-prolongation-symbol — a standard name-bearing object, no notation collision with Sauloy's 'symbol'. arXiv:alg-geom/9408004, 28pp; VERIFIED from PDF (uploads/9408004v1.pdf, quote at §1; 2026-07-20 lit review).",
   }),
 
+  // ── Freed 1999 — Special Kähler Manifolds (intrinsic form of the DM cubic) ──
+  ref({
+    id: "freed1999specialkahler",
+    type: "article-journal",
+    title: "Special Kähler manifolds",
+    author: [{ family: "Freed", given: "Daniel S." }],
+    "container-title": "Communications in Mathematical Physics",
+    issued: { "date-parts": [[1999]] },
+    volume: "203",
+    page: "31-52",
+    DOI: "10.1007/s002200050604",
+    URL: "https://arxiv.org/abs/hep-th/9712042",
+    note: "Intrinsic definition of (rigid) special Kähler geometry: the base of an algebraic integrable system carries a flat torsion-free symplectic connection $\\nabla$ whose difference from Levi-Civita is a canonical holomorphic symmetric cubic form (the coordinate-free form of the Donagi–Markman cubic $c_{ijk}=\\partial^3 F$), with the flatness/prolongation identity $\\nabla_{[m}W_{i]jk}=0$. In QOU the recommended CO-ANCHOR (special-Kähler face) for the MATHEMATICAL SW jet-prolongation object of conj:qdifference-kernel-prolongation-symbol, paired with donagi-markman1996cubics (integrable-system face). arXiv:hep-th/9712042, CMP 203 (1999) 31–52. NOTE: metadata NOT PDF-verified in-sandbox (Freed PDF not uploaded); WebSearch/recall-sourced — verify before relying on page range/DOI.",
+  }),
+
   // ── Braden–Marshakov 2006 — WDVV as functional relations (SW cubic; caveat) ──
   ref({
     id: "braden-marshakov2006wdvv",
