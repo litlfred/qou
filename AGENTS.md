@@ -114,6 +114,12 @@ Concretely:
   assessment — is a source of robustness. The cheapest way to catch a
   wrong turn is a second agent walking in from a different direction.
 
+## Subagent Swarm Directives (STRICT)
+
+1. **Mandatory Rule Reading:** Any invoked subagent MUST read `AGENTS.md` using `view_file` as its first action to understand the repository's strict anti-laundering and accessibility disciplines. Parent agents invoking subagents must include this instruction in the prompt.
+2. **NO NUMEROLOGICAL FITS (Anti-numerology rule):** Subagents engaged in parallel exploration of binding/mass gaps must NEVER wire geometric multipliers, limits, or fractions into the Python compute simply because they match the AME target. Naked fits are strictly banned.
+3. **LEAN PROOF FIRST:** Any mathematical resolution to a gap must be formally derived and proven in a `.lean` file. Wiring a derived constant into Python (`computations/*`) is strictly gated on the existence of that Lean proof.
+
 ## Agent work-plan policy (STRICT)
 
 Every session must run from a **prioritized work-plan** maintained
