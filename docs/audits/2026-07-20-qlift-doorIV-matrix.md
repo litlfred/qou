@@ -32,14 +32,12 @@ Door-i's isoclinicity (b)-exclusion of *C1 itself* does **not** forbid this rout
 
 [`qlift_doorIV_matrix_crossterm_probe.py`](../../computations/probes/qlift_doorIV_matrix_crossterm_probe.py)
 (mpmath dps=70, q ∈ {0.9, 1.05, 1.10998}, m=0..60; fit m=0..20, extrapolate
-m=40..60; recessive C1/GGM via Miller from m=200). **Matrix ansatz:** for each
-GGM solution fit `y_m = a(x)f₊² + b(x)f₊f₋ + c(x)f₋²`, `x=q^m`, with `a,b,c`
-polynomials in `q^m` of degree ≤4 — the "2×2 GL₂ `M(q^m)` rational in `q^m`"
-reading, the `f₊f₋` column being `M`'s off-diagonal coupler. **Kill:** tail
-residual `<1e-45` AND GGM-recurrence residual `<1e-30` ⇒ LANDS; O(1) drift ⇒
-REFUTED. Solver self-test recovers an in-span rational-coeff target to `≤4e-59`
-at every q, so an O(1) residual is genuine. Cross-term-essential = with-cross vs
-no-cross residual.
+m=40..60; recessive C1/GGM via Miller from m=200). **Matrix ansatz:** per GGM
+solution fit `y_m = a(x)f₊² + b(x)f₊f₋ + c(x)f₋²`, `x=q^m`, `a,b,c` polynomials
+in `q^m` of degree ≤4 — the "2×2 GL₂ `M(q^m)` rational in `q^m`" reading, `f₊f₋`
+being `M`'s off-diagonal coupler. **Kill:** tail residual `<1e-45` AND
+GGM-recurrence residual `<1e-30` ⇒ LANDS; O(1) drift ⇒ REFUTED. Solver self-test
+recovers an in-span target to `≤4e-59`, so an O(1) residual is genuine.
 
 ## 2. Precondition — MET (the owner's structural fix works)
 
@@ -69,13 +67,12 @@ slope-0 cross term is *grabbed* by the fit but supplies **no** identifying
 power. The intertwiner `M(q^m)` that would map `Sym²/⊗²(C1) → GGM` is **not
 rational of low degree**.
 
-**Localization of the remaining gap (the informative part).** The obstruction
-has moved: it is no longer at the Newton-polygon / slope level (that is now
-matched — {+1,0,−1} ⊇ {+1,−1}) but at the **sub-leading (Stokes / theta
-fine-structure)** level. The tensor square and GGM share a graded module yet
-differ in their formal-monodromy data. This is scope-(a) ("this construction
-alone misses"); Door-i owns the module-level (b)-exclusion for C1 itself, which
-this tensor route was explicitly *outside*.
+**Localization of the remaining gap.** The obstruction has moved: no longer at
+the Newton-polygon / slope level (now matched — {+1,0,−1} ⊇ {+1,−1}) but at the
+**sub-leading (Stokes / theta fine-structure)** level — the tensor square and
+GGM share a graded module yet differ in formal-monodromy data. scope-(a) ("this
+construction alone misses"); Door-i owns the module-level (b)-exclusion for C1
+itself, which this tensor route was explicitly *outside*.
 
 ## 4. Effect on the conjecture + recommendation
 
