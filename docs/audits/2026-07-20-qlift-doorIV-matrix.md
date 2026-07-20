@@ -50,10 +50,10 @@ Measured theta exponent γ (`|·| ~ q^{γm²}`) at substrate **q=1.10998**:
 | **`f₊f₋` (cross)** | **−0.010 ≈ 0** | **slope 0 — GATE PASSED** |
 | NAIVE both-forward cross | **−0.527** | slope −1 (Door-iii's mis-measurement) |
 
-The branch separation delivers a genuinely slope-0 cross term at every tested
-q>1 (q=1.05: −0.025). **For the first time a C1-derived construction has the
-right anisoclinic slope multiset {+1,0,−1} to *contain* GGM {+1,−1}** — the
-Newton-polygon (graded-module) obstruction of Door-i is genuinely circumvented.
+Slope-0 cross term at every q>1 (q=1.05: −0.025). **For the first time a
+C1-derived construction has the right anisoclinic slope multiset {+1,0,−1} to
+*contain* GGM {+1,−1}** — Door-i's Newton-polygon (graded-module) obstruction is
+genuinely circumvented.
 
 ## 3. Verdict — REFUTED (scope-(a))
 
@@ -88,10 +88,9 @@ is now matched.
 
 ## 5. Discipline
 
-scope-(a) vocabulary per AGENTS.md refuted-discipline; pre-stated kill criterion
-+ slope-precondition GATE + solver self-test; NON-module tensor realization by
-design (Door-i excludes module maps, explicitly not this route); the only "fit"
-is the polynomial-coefficient solve for the extrapolation kill-test; no AME data.
-Corpus-grep: the whole C1↔GGM trail is this branch's 2026-07-20 files; no closed
-item re-opened. Witness:
+scope-(a) vocabulary; pre-stated kill criterion + slope-precondition GATE +
+solver self-test; NON-module tensor realization by design (Door-i excludes module
+maps, explicitly not this route); the only "fit" is the polynomial-coefficient
+solve for the kill-test; no AME data. Corpus-grep: the whole C1↔GGM trail is this
+branch's 2026-07-20 files; no closed item re-opened. Witness:
 [`…doorIV…witness.json`](../../computations/probes/qlift_doorIV_matrix_crossterm_probe.witness.json).
