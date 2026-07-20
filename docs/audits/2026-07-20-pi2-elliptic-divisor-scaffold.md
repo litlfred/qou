@@ -3,7 +3,11 @@
 **Date:** 2026-07-20 **Bean:** `qou-toqt` (PI-2, epic `qou-lbth` pentagon-infra)
 **Branch:** `claude/qlift-borel-kernel-derivation-2026-07-20`
 **File:** `content/quantum-observable-universe/lean/QOU/Mathlib/EllipticDivisorDegree.lean`
-**Status:** BEGUN — bricks proved sorry-free; deep theorem stated open (cited `sorry`).
+**Status:** REDUCED (update 2026-07-20, bean `qou-cfxy`, branch
+`claude/argument-principle-residue-sum-2026-07-20`) — roadmap brick 1 landed
+(boundary integral `∮_{∂P} = 0` PROVED sorry-free) and `elliptic_divisor_degree_zero`
+is now **derived sorry-free** from it, reducing the theorem to a single named gap
+`parallelogram_argument_principle`. See §"Update 2026-07-20" below.
 
 ## The theorem
 
@@ -84,5 +88,49 @@ by `lean`-direct `#check`.
    composed with brick 1.
 4. **(Alt) Hadamard factorization** — an independent route flagged in the
    pentagon-entire-leg audit; equally absent from Mathlib.
+
+Nothing here is wired to production, fitted, or axiomatized-as-proved.
+
+## Update 2026-07-20 — roadmap brick 1 landed; theorem REDUCED to one gap
+
+Bean `qou-cfxy`, branch `claude/argument-principle-residue-sum-2026-07-20`. Made
+possible by the sibling ARG-SUM branch, on which
+`QOU.Mathlib.ArgumentPrinciple.argument_principle` became **derived sorry-free**
+(transitively depending only on the single isolated topological gap
+`contour_deformation_sum` / `residue_theorem_deformation`).
+
+**Landed (all `lean`-direct exit 0):**
+
+* **Roadmap brick 1 — `∮_{∂P} logDeriv f = 0` — PROVED sorry-free.** New def
+  `paraBoundaryLogDeriv f a ω₁ ω₂` (the four-edge parallelogram contour of `f'/f`)
+  and theorem `paraBoundaryLogDeriv_eq_zero`. The proof is *pure periodicity*: the
+  two return edges cancel the two forward edges via
+  `intervalIntegral.integral_comp_sub_left` (the `s = 1-t` substitution) +
+  `periodic_logDeriv` (the `ω_i`-periodicity of `logDeriv f`). No integrability
+  side-conditions needed — the integrands are pointwise equal after substitution.
+  This is exactly the "opposite edges carry the same doubly-periodic integrand with
+  opposite orientation" cancellation, now fully rigorous.
+* **`elliptic_divisor_degree_zero` — now DERIVED sorry-free.** The `sorry` is gone
+  from the theorem body: it composes `paraBoundaryLogDeriv_eq_zero` (`∮ = 0`) with
+  the identity `2πi·Σ ord = ∮_{∂P} logDeriv f` and cancels the nonzero `2πi`
+  (`Int.cast` injectivity finishes). The theorem is sorry-free **modulo** the single
+  residual below.
+
+**The single remaining gap — `parallelogram_argument_principle`.** The identity
+`2πi·Σ_{z∈S} ord_z f = ∮_{∂P} logDeriv f`, carried as one cited `sorry`. This is the
+argument principle over a **parallelogram/rectangle contour** — a *sibling* of the
+circle argument principle's `contour_deformation_sum`, **not literally it**: it
+deforms a rectangle contour (not a circle) onto small circles around the interior
+punctures. Mathlib v4.24.0 has the rectangle *vanishing*
+(`integral_boundary_rect_eq_zero_of_differentiable_on_off_countable`, for a
+holomorphic integrand) but **no rectangle-contour residue sum**, so the circle
+`argument_principle` is not reusable verbatim. The same multiply-connected Cauchy
+topology that `residue_theorem_deformation` isolates is the underlying content.
+
+**Answer to "does PI-2 reduce to the same gap as the argument principle?"** Not
+*literally* — it reduces to the parallelogram-contour sibling gap, a distinct Lean
+statement. But it is the **same topological family** (multiply-connected Cauchy
+deformation / residue theorem). Roadmap bricks 2 (in-cell finiteness) and 4 (Hadamard
+alt route) remain as before; brick 3 is now precisely `parallelogram_argument_principle`.
 
 Nothing here is wired to production, fitted, or axiomatized-as-proved.

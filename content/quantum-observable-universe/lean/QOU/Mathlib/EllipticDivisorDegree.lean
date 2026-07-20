@@ -6,6 +6,7 @@ import Mathlib.Analysis.Complex.Basic
 import Mathlib.Algebra.Ring.Periodic
 import Mathlib.LinearAlgebra.LinearIndependent.Defs
 import Mathlib.Data.Fin.VecNotation
+import Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic
 
 /-!
 # The elliptic divisor-degree theorem — scaffold (PI-2, bean `qou-toqt`)
@@ -44,22 +45,38 @@ identically, killing the elliptic-freedom obstruction.
   to keep this file's dependency cone Mathlib-only and `lean`-direct verifiable;
   the un-namespaced original lives in `QOU.QBeta.MeromorphicSameOrder`.)
 
-**Stated open (the deep analytic core — a genuine Mathlib gap):**
+* `paraBoundaryLogDeriv` / `paraBoundaryLogDeriv_eq_zero` — **the boundary
+  integral `∮_{∂P} logDeriv f` and its vanishing, now PROVED sorry-free**
+  (2026-07-20). The four-edge parallelogram contour of `f'/f` is `0` for elliptic
+  `f`: opposite edges cancel via `intervalIntegral` change-of-variables + the
+  `periodic_logDeriv` established above. This is the *analysis-free* half of the
+  classical `Σ ord = (1/2πi)∮_{∂P} f'/f = 0` argument.
 
-* `elliptic_divisor_degree_zero` — the degree-zero theorem itself, carried as a
-  cited `sorry`. Mathlib v4.24.0 has Liouville, Cauchy estimates,
-  `meromorphicOrderAt`, `MeromorphicOn.divisor`, `Complex.CauchyIntegral` and
-  `circleIntegral`, but it has **no elliptic-function theory, no argument
-  principle / residue theorem** (`Σ ord = (1/2πi)∮ f'/f`), and no
-  Hadamard-factorization. The proof route
-  `Σ ord = (1/2πi)∮_{∂P} f'/f = 0` (boundary integrals cancel by the periodicity
-  of `logDeriv f` proved above) needs the argument principle to identify the sum
-  of orders with the contour integral of `logDeriv f`; that identification is the
-  absent theorem. The boundary *cancellation* half is formalizable now (it is
-  `isElliptic_logDeriv`); the *argument principle* half is not.
+**Now DERIVED sorry-free (modulo the single gap `parallelogram_argument_principle`):**
+
+* `elliptic_divisor_degree_zero` — the degree-zero theorem itself, now **derived
+  sorry-free** by composing the proved boundary-vanishing `∮_{∂P} logDeriv f = 0`
+  with the identity `2πi · Σ ord = ∮_{∂P} logDeriv f` and cancelling the nonzero
+  `2πi`. The `sorry` no longer lives in this theorem.
+
+**Stated open (the single remaining analytic core — a genuine Mathlib gap):**
+
+* `parallelogram_argument_principle` — the argument principle over a *parallelogram
+  contour*: `2πi · Σ ord = ∮_{∂P} logDeriv f`. Mathlib v4.24.0 has Liouville,
+  `meromorphicOrderAt`, `MeromorphicOn.divisor`, `Complex.CauchyIntegral`,
+  `circleIntegral`, and the rectangle *vanishing*
+  `integral_boundary_rect_eq_zero_of_differentiable_on_off_countable`, but **no
+  rectangle-contour residue sum** and no elliptic-function theory. This gap is a
+  *sibling* of the circle argument principle's
+  `QOU.Mathlib.ArgumentPrinciple.contour_deformation_sum` /
+  `residue_theorem_deformation` — the same multiply-connected Cauchy topology, but
+  a **distinct** Lean statement (rectangle vs circle contour), so the circle
+  `argument_principle` is not reusable verbatim. Carried as one cited `sorry`.
 
 This is honest scaffolding of a known gap: **not** vacuous `True`, **not**
-axiomatized-as-proved. See `docs/audits/2026-07-20-pi2-elliptic-divisor-scaffold.md`.
+axiomatized-as-proved. The boundary-cancellation half is fully discharged; only the
+parallelogram-contour deformation remains.
+See `docs/audits/2026-07-20-pi2-elliptic-divisor-scaffold.md`.
 
 -- Ref: [manuscript] Liouville's third theorem (degree of an elliptic divisor is
 --   zero); docs/audits/2026-07-20-pentagon-entire-leg.md (§"exact residual analytic fact").
@@ -210,7 +227,107 @@ theorem divisor_translate {f : ℂ → ℂ} {c : ℂ}
       MeromorphicOn.divisor_apply hf (Set.mem_univ _),
       meromorphicOrderAt_translate hper z]
 
-/-! ### The degree-zero theorem (deep analytic core — stated open) -/
+/-! ### The parallelogram boundary integral and its periodicity-cancellation
+
+The classical proof of the degree-zero theorem is
+`Σ_{p∈P} ord_p f = (1/2πi) ∮_{∂P} logDeriv f = 0`. The second equality — the
+**boundary-integral cancellation** — is now proved sorry-free below
+(`paraBoundaryLogDeriv_eq_zero`): it is *pure periodicity*, needing no analysis
+beyond `periodic_logDeriv`. The first equality (the argument principle over a
+parallelogram contour) is the single remaining gap, isolated as
+`parallelogram_argument_principle`. -/
+
+/-- **The contour integral of `logDeriv f` over the boundary `∂P` of the
+fundamental parallelogram** anchored at corner `a`, traversed counterclockwise
+`a → a+ω₁ → a+ω₁+ω₂ → a+ω₂ → a`. Each of the four edges is a real
+`intervalIntegral` of `logDeriv f · (edge tangent)`; the two return edges carry the
+`(1-t)` parametrization and the `-ω_i` tangent (opposite orientation). This is the
+`∮_{∂P} f'/f` that the argument principle equates with `2πi · Σ ord`. -/
+noncomputable def paraBoundaryLogDeriv (f : ℂ → ℂ) (a ω₁ ω₂ : ℂ) : ℂ :=
+    (∫ t in (0:ℝ)..1, logDeriv f (a + (t:ℝ) • ω₁) * ω₁)
+  + (∫ t in (0:ℝ)..1, logDeriv f (a + ω₁ + (t:ℝ) • ω₂) * ω₂)
+  + (∫ t in (0:ℝ)..1, logDeriv f (a + ω₂ + ((1:ℝ) - t) • ω₁) * (-ω₁))
+  + (∫ t in (0:ℝ)..1, logDeriv f (a + ((1:ℝ) - t) • ω₂) * (-ω₂))
+
+/-- **The boundary integral vanishes — pure periodicity, sorry-free.** For an
+elliptic `f`, `∮_{∂P} logDeriv f = 0`: the "top" edge (`←ω₁`) cancels the "bottom"
+edge (`→ω₁`) after the substitution `s = 1-t` and the `ω₂`-periodicity of
+`logDeriv f`, and the "left" edge (`←ω₂`) cancels the "right" edge (`→ω₂`) via
+`ω₁`-periodicity. This is exactly the "opposite edges of a period-parallelogram
+carry the same doubly-periodic integrand with opposite orientation" cancellation
+(`isElliptic_logDeriv`), made fully rigorous with only `intervalIntegral`
+change-of-variables + the proved `periodic_logDeriv`. No argument principle, no
+residue theory. -/
+theorem paraBoundaryLogDeriv_eq_zero {f : ℂ → ℂ} {ω₁ ω₂ : ℂ}
+    (hf : IsElliptic f ω₁ ω₂) (a : ℂ) :
+    paraBoundaryLogDeriv f a ω₁ ω₂ = 0 := by
+  have hp1 : Function.Periodic (logDeriv f) ω₁ := periodic_logDeriv hf.periodic₁
+  have hp2 : Function.Periodic (logDeriv f) ω₂ := periodic_logDeriv hf.periodic₂
+  unfold paraBoundaryLogDeriv
+  -- top edge (`←ω₁`) = −(bottom edge `→ω₁`), via `s = 1-t` + `ω₂`-periodicity.
+  have he3 : (∫ t in (0:ℝ)..1, logDeriv f (a + ω₂ + ((1:ℝ) - t) • ω₁) * (-ω₁))
+      = -(∫ t in (0:ℝ)..1, logDeriv f (a + (t:ℝ) • ω₁) * ω₁) := by
+    rw [intervalIntegral.integral_comp_sub_left
+          (fun s : ℝ => logDeriv f (a + ω₂ + s • ω₁) * (-ω₁)) 1]
+    simp only [sub_self, sub_zero]
+    rw [← intervalIntegral.integral_neg]
+    apply intervalIntegral.integral_congr
+    intro s _
+    simp only [mul_neg]
+    congr 2
+    rw [show a + ω₂ + s • ω₁ = (a + s • ω₁) + ω₂ by ring]
+    exact hp2 (a + s • ω₁)
+  -- left edge (`←ω₂`) = −(right edge `→ω₂`), via `s = 1-t` + `ω₁`-periodicity.
+  have he4 : (∫ t in (0:ℝ)..1, logDeriv f (a + ((1:ℝ) - t) • ω₂) * (-ω₂))
+      = -(∫ t in (0:ℝ)..1, logDeriv f (a + ω₁ + (t:ℝ) • ω₂) * ω₂) := by
+    rw [intervalIntegral.integral_comp_sub_left
+          (fun s : ℝ => logDeriv f (a + s • ω₂) * (-ω₂)) 1]
+    simp only [sub_self, sub_zero]
+    rw [← intervalIntegral.integral_neg]
+    apply intervalIntegral.integral_congr
+    intro s _
+    simp only [mul_neg]
+    congr 2
+    rw [show a + ω₁ + s • ω₂ = (a + s • ω₂) + ω₁ by ring]
+    exact (hp1 (a + s • ω₂)).symm
+  rw [he3, he4]; ring
+
+/-! ### The degree-zero theorem — REDUCED to the parallelogram argument principle -/
+
+/-- **The parallelogram (rectangle-contour) argument principle — the single
+remaining gap.** For an elliptic `f`, some corner-translate `a` of the fundamental
+cell has no divisor points on `∂P`, and there the contour integral of `f'/f`
+counts the interior divisor: `2πi · Σ_{z∈S} ord_z f = ∮_{∂P} logDeriv f`.
+
+**OPEN.** This is the argument principle for a *parallelogram* contour. It is the
+sibling of `QOU.Mathlib.ArgumentPrinciple.contour_deformation_sum` (the *circle*
+argument principle), but a **distinct** Lean statement: it deforms `∂P` — a
+rectangle/parallelogram contour, not a circle — onto small circles around the
+interior punctures. Mathlib v4.24.0 has the rectangle *vanishing*
+(`integral_boundary_rect_eq_zero_of_differentiable_on_off_countable`, for a
+holomorphic integrand) but **no** rectangle-contour residue sum, so the circle
+`argument_principle` cannot be reused verbatim; the same multiply-connected Cauchy
+topology that `residue_theorem_deformation` isolates is what this needs. Left as a
+single cited `sorry`; the boundary-vanishing half (`paraBoundaryLogDeriv_eq_zero`)
+is proved sorry-free above. -/
+theorem parallelogram_argument_principle {f : ℂ → ℂ} {ω₁ ω₂ : ℂ}
+    (hf : IsElliptic f ω₁ ω₂)
+    (hindep : LinearIndependent ℝ ![ω₁, ω₂])
+    (hnc : ¬ ∃ c, ∀ z, f z = c)
+    (S : Finset ℂ)
+    (hS : (S : Set ℂ) =
+      {z | z ∈ fundamentalParallelogram ω₁ ω₂ ∧
+        (MeromorphicOn.divisor f Set.univ) z ≠ 0}) :
+    ∃ a : ℂ, (2 * (Real.pi : ℂ) * Complex.I) *
+        ((∑ z ∈ S, (MeromorphicOn.divisor f Set.univ) z : ℤ) : ℂ)
+      = paraBoundaryLogDeriv f a ω₁ ω₂ := by
+  -- Ref: [manuscript] argument principle over a fundamental-parallelogram contour
+  --   (Ahlfors, *Complex Analysis*, Ch. 7 §2, elliptic functions; the rectangle
+  --   analogue of the circle residue theorem). Absent from Mathlib v4.24.0 — the
+  --   multiply-connected Cauchy deformation of a parallelogram contour, sibling of
+  --   `QOU.Mathlib.ArgumentPrinciple.residue_theorem_deformation`. See
+  --   docs/audits/2026-07-20-pi2-elliptic-divisor-scaffold.md.
+  sorry
 
 /-- **Liouville's third theorem: the degree of an elliptic divisor is zero.**
 For a nonconstant elliptic function `f` with `ℝ`-independent periods, the sum of
@@ -219,13 +336,19 @@ parallelogram vanishes. `S` enumerates the finitely many divisor points inside t
 cell (the finiteness — support locally finite ∩ compact cell — is a separate,
 tractable brick; it is passed as `hS` so that the analytic core is isolated).
 
-**OPEN.** The classical proof is
-`Σ_{p∈P} ord_p f = (1/2πi) ∮_{∂P} logDeriv f = 0`, where the contour integral
-vanishes because `logDeriv f` is elliptic (`isElliptic_logDeriv`, proved above) so
-opposite edges cancel. The first equality is the **argument principle**, which is
-absent from Mathlib v4.24.0 (no elliptic-function theory, no residue theorem). The
-boundary-cancellation half is formalized here; the argument-principle half is the
-genuine gap. -/
+**DERIVED (sorry-free modulo the single gap `parallelogram_argument_principle`).**
+The proof composes the two halves of the classical argument
+`Σ_{p∈P} ord_p f = (1/2πi) ∮_{∂P} logDeriv f = 0`:
+
+* the boundary-integral cancellation `∮_{∂P} logDeriv f = 0`
+  (`paraBoundaryLogDeriv_eq_zero`) is **proved sorry-free** — pure periodicity; and
+* the identity `2πi · Σ ord = ∮_{∂P} logDeriv f` is
+  `parallelogram_argument_principle`, the *single* remaining gap (the
+  parallelogram-contour argument principle, absent from Mathlib v4.24.0).
+
+Given both, `2πi · Σ ord = 0`, and since `2πi ≠ 0` the (integer-cast) divisor sum
+vanishes. The gap is a **rectangle-contour** residue-deformation — a *sibling* of
+the circle argument principle's `contour_deformation_sum`, not literally it. -/
 theorem elliptic_divisor_degree_zero {f : ℂ → ℂ} {ω₁ ω₂ : ℂ}
     (hf : IsElliptic f ω₁ ω₂)
     (hindep : LinearIndependent ℝ ![ω₁, ω₂])
@@ -235,8 +358,14 @@ theorem elliptic_divisor_degree_zero {f : ℂ → ℂ} {ω₁ ω₂ : ℂ}
       {z | z ∈ fundamentalParallelogram ω₁ ω₂ ∧
         (MeromorphicOn.divisor f Set.univ) z ≠ 0}) :
     ∑ z ∈ S, (MeromorphicOn.divisor f Set.univ) z = 0 := by
-  -- Ref: [manuscript] Liouville's third theorem; argument principle absent from
-  --   Mathlib v4.24.0. See docs/audits/2026-07-20-pi2-elliptic-divisor-scaffold.md.
-  sorry
+  obtain ⟨a, ha⟩ := parallelogram_argument_principle hf hindep hnc S hS
+  rw [paraBoundaryLogDeriv_eq_zero hf a] at ha
+  -- `ha : 2πi · (Σ ord : ℂ) = 0`; cancel the nonzero `2πi`.
+  have h2 : (2 * (Real.pi : ℂ) * Complex.I) ≠ 0 := by
+    have hpi : (Real.pi : ℂ) ≠ 0 := by exact_mod_cast Real.pi_ne_zero
+    exact mul_ne_zero (mul_ne_zero two_ne_zero hpi) Complex.I_ne_zero
+  have hcast : (((∑ z ∈ S, (MeromorphicOn.divisor f Set.univ) z : ℤ)) : ℂ) = 0 :=
+    (mul_eq_zero.mp ha).resolve_left h2
+  exact_mod_cast hcast
 
 end QOU.Mathlib.EllipticDivisorDegree
