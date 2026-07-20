@@ -99,6 +99,14 @@ Stokes-matrix / prolonged-SW-monodromy route):
 - **inhomogeneous shifts** `b_m = g_m y_m + h_m` (cf. the 4₁ colored-Jones
   recurrence being minimally order-2 *inhomogeneous*);
 - **q-Borel / summation-type transforms mixing all m** (Ramis–Zhang kernels).
+  **Route-D follow-up (2026-07-20):** the *formal* (coefficient-level) q-Borel
+  transform is itself a diagonal weight, hence falls **inside** this doc's
+  exclusion — verified independently via the complete diagonal-gauge invariant
+  `I_m = C_m A_{m−1}/(B_m B_{m−1})` (= `−[m]_q` for C1 under every kernel
+  convention) in
+  [`2026-07-20-qlift-routeD-qborel-transform.md`](2026-07-20-qlift-routeD-qborel-transform.md).
+  Only the **analytic summation step** (Borel-plane continuation + discrete
+  q-Laplace, RSZ ch. 5) remains live under this bullet.
 
 Consequently C1 (q-involution/q-Borel form) and GGM eq 49 are **genuinely
 distinct order-2 q-lifts of the same classical depth-2 shadow**, and any
