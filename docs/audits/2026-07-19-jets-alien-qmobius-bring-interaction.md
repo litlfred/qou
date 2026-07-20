@@ -144,10 +144,10 @@ Two consequences:
 2. **The rigidity theorems say the functional equations almost suffice.**
    `faddeevPhi_unique_of_pentagon` + `monodromy_datum_rigidity`: the
    functional-equation bundle pins the solution up to scalar, modulo one
-   analytic fact. Sibling PR #4120 (landed on `claude/agent-pickup-stalled-rtugin`
-   after this audit's first draft) discharges the period-independence leg
-   sorry-free — `PentagonRigidity` is now down to **one** open leg (the ratio
-   `Φ₁/Φ₂` is entire). So the honest statement is: *the pre-archimedean
+   analytic fact. Sibling PR #4120 (merged to `main` as `5000f5d6` while this
+   audit was in flight) discharges the period-independence leg sorry-free —
+   `PentagonRigidity` is now down to **one** open leg (the ratio `Φ₁/Φ₂` is
+   entire). So the honest statement is: *the pre-archimedean
    functional equations + one Liouville-type analytic fact ⇒ `A_ω` is forced.*
    That is the sharpest current form of the derivation-gap answer in §3.
 
@@ -208,8 +208,8 @@ How they compose against the gaps:
    doubly-periodic ⇒ constant, not in Mathlib) is proved. That step remains
    **the** formalize-first target
    ([`2026-07-18-g3-stokes-keystone-evidence-base.md`](2026-07-18-g3-stokes-keystone-evidence-base.md) §3)
-   — narrowed by sibling PR #4120 (`periods_linearIndependent`, sorry-free) to
-   the single "ratio is entire" leg, see §1.5;
+   — narrowed by PR #4120 (`periods_linearIndependent`, sorry-free, merged to
+   main) to the single "ratio is entire" leg, see §1.5;
    nothing in this audit shortcuts it, and axiomatising it would be the
    §Axiomatization-is-not-a-proof trap.
 2. **The saddle Lean upgrades the Borel-action identification from numerology
