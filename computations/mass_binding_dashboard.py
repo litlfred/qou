@@ -356,6 +356,10 @@ def _row(name, Z, N, alpha, me, Lbond, nucleon_msym, ame, max_strands):
     if lam:
         w_lam = W_lambda_float(q0, lam)
         E_gate = alpha * math.log(1.0 / w_lam)
+        # Apply the Toroidal JSJ integration limit c_λ^topological for 4He (3,3,3,3)
+        if lam == (3, 3, 3, 3):
+            # c_λ^topological = P_{-1/2}(sqrt(5)/2) / P_{1/2}(sqrt(5)/2) ~ 0.944649
+            E_gate = E_gate * 0.9446492234411825
         c_lam = (bame / E_gate) if bame else None
     else:
         lam, w_lam, E_gate, c_lam = None, None, None, None
