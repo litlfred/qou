@@ -284,6 +284,7 @@ import QOU.Machinery.QuantumTorus
 import QOU.Machinery.QuantumTorusAJ
 import QOU.Machinery.QuantumTorusDivision
 import QOU.Machinery.StrongAJFigureEight
+import QOU.Machinery.AJTorusAnnihilation
 import QOU.MathlibExt.EndSemisimple
 import QOU.HyperellipticQuintic.zeta5_residue_monodromy
 
