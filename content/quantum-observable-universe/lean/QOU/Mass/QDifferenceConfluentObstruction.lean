@@ -158,4 +158,40 @@ theorem normalized_classical_kernel_exists (f : ℕ → ℕ)
     div_eq_div_iff hne2 (mul_ne_zero hne1 hne0), hcast, hfac2, hfac1]
   ring
 
+/-- q-integer `[k]_q = Σ_{i<k} qⁱ` (polynomial form — no division, generic). -/
+def qint {K : Type*} [Field K] (q : K) (k : ℕ) : K := ∑ i ∈ range k, q ^ i
+
+/-- q-factorial `[k]_q! = ∏ [j]_q`. -/
+def qfact {K : Type*} [Field K] (q : K) : ℕ → K
+  | 0 => 1
+  | k + 1 => qint q (k + 1) * qfact q k
+
+/-- **The q-lift exists (probe `qlift_kernel_candidate_crosscheck` → proved).**
+    Over any field with nonvanishing q-integers, any sequence satisfying the
+    q-involution recurrence `f(n+2) = f(n+1) + [n+1]_q·f(n)` has, on the
+    q-factorial-normalized carrier `b_n = f_n/[n]_q!`, the EXACT depth-2
+    q-difference kernel `[n+2]_q·b_{n+2} = b_{n+1} + b_n` — the q-lift of
+    `normalized_classical_kernel_exists` with `c(q) = 1`, no free constant.
+    At `q = 1` (`qint 1 k = k`) this specializes to the classical fibre.
+    The identification of THIS kernel with the GGM eq-49 / prolongation-
+    symbol carrier remains open (`conj:qdifference-kernel-prolongation-
+    symbol`); the diagonal-gauge comparison is the sibling probe's scope. -/
+theorem qlift_normalized_kernel_exists {K : Type*} [Field K] (q : K)
+    (f : ℕ → K) (hq : ∀ k, 1 ≤ k → qint q k ≠ 0)
+    (hrec : ∀ n, f (n + 2) = f (n + 1) + qint q (n + 1) * f n) (n : ℕ) :
+    qint q (n + 2) * (f (n + 2) / qfact q (n + 2))
+      = f (n + 1) / qfact q (n + 1) + f n / qfact q n := by
+  have hfz : ∀ m, qfact q m ≠ 0 := by
+    intro m
+    induction m with
+    | zero => simp [qfact]
+    | succ k ih =>
+        exact mul_ne_zero (hq (k + 1) (Nat.succ_le_succ (Nat.zero_le k))) ih
+  have hf2 : qfact q (n + 2) = qint q (n + 2) * qfact q (n + 1) := rfl
+  have hf1 : qfact q (n + 1) = qint q (n + 1) * qfact q n := rfl
+  rw [← mul_div_assoc, div_add_div _ _ (hfz (n + 1)) (hfz n),
+    div_eq_div_iff (hfz (n + 2)) (mul_ne_zero (hfz (n + 1)) (hfz n)),
+    hrec n, hf2, hf1]
+  ring
+
 end QOU.Mass.QDifferenceConfluentObstruction
