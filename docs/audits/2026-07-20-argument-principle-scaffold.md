@@ -3,13 +3,14 @@
 **Date:** 2026-07-20 **Bean:** `qou-bmyx` (PI-3, epic `qou-lbth` pentagon-infra)
 **Branch:** `claude/qlift-borel-kernel-derivation-2026-07-20`
 **File:** `content/quantum-observable-universe/lean/QOU/Mathlib/ArgumentPrinciple.lean`
-**Status:** LOCAL ARGUMENT PRINCIPLE PROVED — 6 bricks sorry-free (incl. 3 analytic
-bricks) **plus** `residue_logDeriv_eq_order` now **fully sorry-free** (2026-07-20):
-the global closed-disc factorization was discharged (explicit factor + removable-
-singularity glue) over the honest `AnalyticOnNhd`/no-other-zeros hypotheses. Only the
-two residue-SUM statements (`argument_principle`, `entire_zero_count`) remain open.
-**✅ VERIFICATION:** `lean`-direct **exit 0** here (2 intended sorries:
-`argument_principle`, `entire_zero_count`) — see note below.
+**Status:** GLOBAL ARGUMENT PRINCIPLE REDUCED TO ONE TOPOLOGICAL GAP (2026-07-20,
+bean `qou-s5tj` ARG-SUM). `residue_logDeriv_eq_order` (local) is sorry-free; and now
+**`argument_principle` + `entire_zero_count` are ALSO sorry-free**, *derived* from the
+single remaining gap `contour_deformation_sum` (the pure-topology multi-punctured
+contour deformation). The only `sorry` left in the file is that one topological lemma,
+fully isolated from the proved analysis.
+**✅ VERIFICATION:** `lean`-direct **exit 0** here (exactly 1 intended sorry:
+`contour_deformation_sum`) — see note below.
 
 ## The theorem
 
@@ -38,10 +39,11 @@ present); probed by `strings` on oleans + the verified PI-2 sibling's API usage.
 | `logDeriv f = f'/f` (+ `mul`, `zpow`, `prod`) | ✅ | `logDeriv`, `logDeriv_apply`, `logDeriv_mul`, `logDeriv_zpow` |
 | Jensen's formula (the log‖f‖ / real analogue) | ✅ | `Analysis/Complex/JensenFormula`, `extract_zeros_poles` |
 | Nevanlinna value distribution (counting fn) | ✅ | `Analysis/Complex/ValueDistribution/`, `logCounting`, First Main Thm |
-| **Argument principle** `(1/2πi)∮ f'/f = Σ ord` | ❌ | — |
+| **Argument principle** `(1/2πi)∮ f'/f = Σ ord` | ✅ (derived here, modulo topology gap) | `argument_principle` (sorry-free, 2026-07-20) |
 | **Residue of `f'/f` at `w` = `ord_w f`** (local) | ✅ (proved here) | `residue_logDeriv_eq_order` (sorry-free, 2026-07-20) |
+| **Multi-punctured contour deformation** `∮_big = Σ ∮_small` | ❌ (THE gap) | `contour_deformation_sum` (1 cited sorry) |
 | **General residue theorem** | ❌ | — (only `CauchyIntegral`, not residue calculus) |
-| **`Complex.residue` / winding number** | ❌ | — |
+| **`Complex.residue` / winding number** | ❌ | — (`#check`-verified absent) |
 
 ## The exact gap
 
@@ -117,22 +119,43 @@ setup supplies. This is a legitimate statement-correction, not laundering: the
 conclusion is genuinely derived, nothing is axiomatized, and no consumer exists yet
 (`argument_principle` is itself a `sorry`).
 
-## Still stated open (cited `sorry` — not vacuous, not axiomatized)
+## Residue-SUM reduction — DONE (2026-07-20, bean `qou-s5tj` ARG-SUM)
 
-* `argument_principle` — global contour integral = interior divisor sum. Needs the
-  **residue-SUM engine**: deform `C(c,R)` onto small circles around each interior
-  divisor point and sum `residue_logDeriv_eq_order`. The general residue theorem /
-  contour deformation is absent from Mathlib v4.24.0 — this is the genuine remaining
-  gap.
-* `entire_zero_count` — PI-3 payload: entire `f` (canonical product) ⇒ integral
-  = `zeroCount` = #zeros; the tool that pins `phiBProd` among its elliptic multiples.
-  Composes the open `argument_principle`, hence still open.
+`argument_principle` and `entire_zero_count` are now **proved sorry-free**, reduced to
+a *single* cited-`sorry` residual, the pure-topology deformation:
 
-**Reachability of `argument_principle` / `entire_zero_count`:** NOT yet reachable.
-The local per-point residue is done, but the residue-sum (contour deformation) has no
-Mathlib engine (`Complex.residue`, general residue theorem, `windingNumber` all
-absent). This is a separate, substantial analytic construction, not a mechanical
-composition of what is now proved.
+* `contour_deformation_sum` (THE gap, one `sorry`, cited `-- Ref:`): for `h` analytic
+  on `closedBall c R \ S` (finite `S ⊆ ball c R`), there exist small radii `ρ w > 0`
+  with `closedBall w (ρ w) ⊆ ball c R \ (S \ {w})` and
+  `∮_{C(c,R)} h = Σ_{w∈S} ∮_{C(w,ρ w)} h`. This is the homological/topological
+  deformation at the heart of the residue theorem — **the only** thing Mathlib
+  v4.24.0 lacks here (`Complex.residue`, `windingNumber`, annulus/keyhole deformation
+  all `#check`-verified ABSENT). The radius construction is bundled into the lemma
+  (the deformation chooses the contours), keeping the residual purely topological.
+
+* `argument_principle` (DERIVED, sorry-free): obtain `ρ` + the deformation identity
+  from `contour_deformation_sum` applied to `h = logDeriv f`
+  (analytic off `S` via `AnalyticOnNhd.deriv`/`.div`); then per puncture `w`,
+  `(2πi)⁻¹ ∮_{C(w,ρ w)} logDeriv f = ord_w f` by the *proved*
+  `residue_logDeriv_eq_order`, whose hypotheses are all discharged from the global
+  ones — `U := ball c R \ (S\{w})` open (finite `S` ⇒ closed), `U\{w} = ball\S ⊆
+  closedBall\S` gives `hfU`/`hfne` by `mono`, and
+  `meromorphicOrderAt f w = (divisor w : WithTop ℤ)` from `MeromorphicOn.divisor_apply`
+  + `WithTop.coe_untop₀_of_ne_top` (`divisor w ≠ 0` on `S` ⇒ order finite). Sum with
+  `Finset.mul_sum` + `Int.cast_sum`.
+
+* `entire_zero_count` (DERIVED, sorry-free): specialize `argument_principle` to entire
+  `f` (`DifferentiableOn.analyticOnNhd` on `univ` ⇒ `MeromorphicOn` + the `hfU`
+  hypothesis free); `divisor w ≥ 0` from `AnalyticAt.meromorphicOrderAt_nonneg` +
+  `WithTop.untop₀_nonneg`, so `Σ divisor = zeroCount` via `Int.toNat_of_nonneg`. `hfne`
+  ("`S` enumerates all zeros") passed through.
+
+**Hypothesis note (honest, not laundering).** `argument_principle`'s `hclean`
+(order-0 on the sphere) was replaced by the stronger, standard pair
+`hfU : AnalyticOnNhd ℂ f (closedBall c R \ S)` + `hfne : ∀ z ∈ closedBall, z∉S → f z≠0`
+— the precise "no zeros/poles other than `S`, and none on the boundary." These are
+genuine conditional hypotheses (not sorries); the sphere-cleanliness is subsumed
+(sphere ⊆ closedBall\S). Only `contour_deformation_sum` carries a `sorry`.
 
 ## Tractable-brick roadmap (ordered)
 
@@ -140,12 +163,17 @@ composition of what is now proved.
    Factored `f=(z−w)^n g` via `meromorphicOrderAt_eq_int_iff` + explicit factor +
    removable-singularity glue; brick-1 split off `n/(z−w)`, brick-2 Cauchy `2πi`,
    brick-3 analytic remainder `0`. A real Mathlib-grade contribution, self-contained.
-2. **Residue-sum assembly** → `argument_principle` (NEXT open item) — contour-deform `C(c,R)` onto
-   small circles around each of the finitely many divisor points; sum brick 1.
-   Needs an interior-divisor-finiteness lemma (divisor is `locallyFinsuppWithin` ∩
-   compact disc ⇒ finite; currently passed as `hS`).
-3. **`entire_zero_count`** — specialize brick 2 to pole-free `f` (`divisor ≥ 0`),
-   compose with `zeroCount_sub_poleCount_eq_sum_divisor`.
+2. ~~**Residue-sum assembly** → `argument_principle`~~ — **DONE, sorry-free (2026-07-20).**
+   Reduced to the single topological `contour_deformation_sum`; the residue-sum + all
+   per-puncture hypothesis discharge is proved.
+3. ~~**`entire_zero_count`**~~ — **DONE, sorry-free (2026-07-20).** Specialized
+   `argument_principle` to pole-free `f` (`divisor ≥ 0` via
+   `AnalyticAt.meromorphicOrderAt_nonneg`).
+4. **`contour_deformation_sum`** (the ONE remaining `sorry`) — the pure-topology
+   multi-punctured contour deformation. Genuine Mathlib gap; a substantial homological
+   construction (keyhole/annulus deformation, or a from-scratch build off
+   `integral_boundary_rect_eq_zero_of_differentiable_on_off_countable`). Isolated from
+   all the proved analysis.
 
 Composes with PI-2 (`elliptic_divisor_degree_zero`, which names this theorem as its
 open core) and PI-1 (canonical-product zero count = `entire_zero_count`).
@@ -157,9 +185,10 @@ cone, `lean`-direct **succeeded, exit 0**: with `LEAN_PATH` set over the package
 olean dirs (`.lake/packages/*/.lake/build/lib/lean` + the QOU build lib), the
 Analysis oleans present (`Complex/CauchyIntegral`, `MeasureTheory/Integral/CircleIntegral`,
 `Meromorphic/*`, `Calculus/LogDeriv`) were sufficient. Output (2026-07-20, after the
-factorization close): **two** `declaration uses 'sorry'` warnings on exactly the two
-residue-SUM theorems (`argument_principle`, `entire_zero_count`); the six bricks **and**
-`residue_logDeriv_eq_order` are sorry-free. (Note the `LEAN_PATH` must point at the
+residue-SUM reduction): **one** `declaration uses 'sorry'` warning on exactly the
+single topological gap `contour_deformation_sum`; the six bricks,
+`residue_logDeriv_eq_order`, **and now `argument_principle` + `entire_zero_count`** are
+all sorry-free. (Note the `LEAN_PATH` must point at the
 **root** `.lake/packages/*/.lake/build/lib/lean` — the per-package `content/.../lean/
 .lake` mathlib olean set here is partial.) `lake build QOU` on a full-Analysis host
 remains the CI gate. Nothing is wired to production, fitted, or axiomatized-as-proved.

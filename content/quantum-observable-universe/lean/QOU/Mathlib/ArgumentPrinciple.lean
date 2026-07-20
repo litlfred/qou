@@ -64,19 +64,27 @@ argument principle is the tool that turns "a contour integral of `f'/f`" into
   factor and is replaced by the honest `AnalyticOnNhd`/no-other-zeros pair — exactly
   what a real argument-principle setup provides.
 
-**Still stated open (`sorry` with cited `-- Ref:` — the residue-SUM engine):**
+**Now DERIVED sorry-free (2026-07-20 — the global statements, modulo one gap):**
 
-* `argument_principle` — the global statement (contour integral = divisor sum),
-  the composition of the local residue with the residue theorem over the finitely
-  many divisor points in the disc.
-* `entire_zero_count` — the PI-3 **canonical-product application**: for an entire
-  `f` (no poles ⇒ `divisor ≥ 0`), `(2πi)⁻¹ ∮_{C(c,R)} f'/f` equals the number of
-  zeros in `B(c,R)` with multiplicity. This is what counts the zeros of a Hadamard
-  canonical product (PI-1).
+* `argument_principle` — the global statement (contour integral = divisor sum), now
+  **proved sorry-free** by composing `contour_deformation_sum` (the topological
+  residual, below) with the *proved* per-puncture residue `residue_logDeriv_eq_order`.
+  Its per-puncture hypotheses (`f` meromorphic at `w`, analytic + nonvanishing on
+  `B(c,R) \ S`, `ord_w f = divisor value`) are discharged from the global hypotheses
+  via `MeromorphicOn.divisor_apply` + `WithTop.coe_untop₀_of_ne_top`.
+* `entire_zero_count` — the PI-3 **canonical-product application**, now **proved
+  sorry-free** by specializing `argument_principle` to entire `f`: no poles ⇒
+  `divisor ≥ 0` (`AnalyticAt.meromorphicOrderAt_nonneg`), so `Σ ord = zeroCount`.
 
-Each `sorry` carries `-- Ref:`. **Not** vacuous `True`, **not** axiomatized as
-proved (§Axiomatization-is-NOT-a-Proof): the deep theorem is stated with its real
-content and left open.
+**The single remaining `sorry` — the pure-topology residue-SUM engine:**
+
+* `contour_deformation_sum` — the multi-punctured contour deformation
+  `∮_{C(c,R)} h = Σ_{w∈S} ∮_{C(w,ρ w)} h` for `h` holomorphic off the finite puncture
+  set `S`. This is the *only* residual `sorry` and it is **pure topology** (the
+  homological deformation at the heart of the residue theorem), fully isolated from the
+  analysis: everything analytic is proved. It carries a cited `-- Ref:`. **Not**
+  vacuous `True`, **not** axiomatized as proved (§Axiomatization-is-NOT-a-Proof): the
+  topological theorem is stated with its real content and left open.
 
 ## Mathlib v4.24.0 gap — exactly what is present vs. absent
 
@@ -95,10 +103,14 @@ pole of residue `ord_w f` at each zero/pole `w`) is now **proved here** as
 `residue_logDeriv_eq_order`, assembled from the Cauchy formula for a bare `(z-c)⁻¹`
 factor (present) plus the germ factorization (`meromorphicOrderAt_eq_int_iff`, present).
 What remains absent is the *global* half: `Complex.residue`, a general residue theorem,
-and `windingNumber` are all missing, so deforming the big contour `C(c,R)` onto small
-circles around each divisor point and summing has no Mathlib engine. So the residual
-gap `(1/2πi)∮ f'/f = #zeros − #poles` is now exactly the residue-sum assembly
-(`argument_principle`), no longer the local lemma.
+and `windingNumber` are all missing (re-verified 2026-07-20 by `#check` — only the
+single-puncture Cauchy integral formula
+`circleIntegral_sub_inv_smul_of_differentiable_on_off_countable` and the rectangle
+vanishing `integral_boundary_rect_eq_zero_of_differentiable_on_off_countable` are
+present), so deforming the big contour `C(c,R)` onto small circles around each divisor
+point and summing has no Mathlib engine. The residual gap is now **exactly** that pure
+topological deformation, isolated as `contour_deformation_sum`; the residue-sum
+*assembly* (`argument_principle`, `entire_zero_count`) is derived from it sorry-free.
 
 -- Ref: [manuscript] Argument principle / residue of the logarithmic derivative;
 --   standard complex analysis (Ahlfors, *Complex Analysis*, Ch. 5 §2; Conway
@@ -115,14 +127,13 @@ cone via `LEAN_PATH` over the package olean dirs). Sorry-free bricks:
 and the three new analytic bricks `logDeriv_zpow_sub_mul_split`,
 `inv_two_pi_I_mul_integral_nat_sub_center_inv`,
 `circleIntegral_logDeriv_eq_zero_of_analyticOnNhd`. `residue_logDeriv_eq_order` is now
-**fully sorry-free** (2026-07-20): its global closed-disc factorization was discharged
-by building the nonvanishing analytic factor explicitly and gluing it across `w` by
-removable singularity, over the honest `AnalyticOnNhd`/no-other-zeros hypotheses. The
-only warnings are two intended `declaration uses 'sorry'` (`argument_principle`,
-`entire_zero_count`), each with a cited `-- Ref:` — both awaiting the residue-SUM /
-contour-deformation engine still absent from Mathlib v4.24.0. Not vacuous `True`, not
-axiomatized as proved. A full `lake build QOU` on a host with the complete Analysis
-cone remains the CI gate.
+**fully sorry-free** (2026-07-20), and `argument_principle` + `entire_zero_count` are
+**also sorry-free** (2026-07-20), *derived* from the single remaining topological gap
+`contour_deformation_sum`. The only warning is one intended `declaration uses 'sorry'`
+(`contour_deformation_sum`), with a cited `-- Ref:` — the multi-punctured
+contour-deformation / residue-theorem engine still absent from Mathlib v4.24.0. Not
+vacuous `True`, not axiomatized as proved. A full `lake build QOU` on a host with the
+complete Analysis cone remains the CI gate.
 -/
 
 open Filter Topology Complex
