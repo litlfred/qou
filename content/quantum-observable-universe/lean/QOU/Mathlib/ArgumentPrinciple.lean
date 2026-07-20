@@ -353,33 +353,118 @@ theorem residue_logDeriv_eq_order {f : ℂ → ℂ} {w : ℂ} {r : ℝ} {n : ℤ
     mul_comm (n : ℂ) (2 * (Real.pi : ℂ) * Complex.I), ← mul_assoc,
     inv_mul_cancel₀ two_pi_I_ne_zero', one_mul]
 
-/-! ### The global argument principle (deep core — stated open) -/
+/-! ### The residue-SUM engine — the single remaining topological gap
+
+The one genuine Mathlib v4.24.0 gap. The *analytic* per-puncture residue is proved
+(`residue_logDeriv_eq_order`); what remains is the *topological* deformation of the
+big contour onto small circles around each puncture. `Complex.residue`,
+`windingNumber`, and every annulus/keyhole contour-deformation lemma are **absent**
+from Mathlib v4.24.0 (verified 2026-07-20 by `#check`), so this deformation has no
+engine and is stated with a single cited `sorry`, isolated from the proved analysis. -/
+
+/-- **Multi-punctured contour deformation (the residue theorem's topological core).**
+For `h` analytic on the closed disc `\overline B(c,R)` minus a finite puncture set
+`S ⊆ B(c,R)`, the big contour integral equals the sum of the small contour integrals
+around the punctures. Concretely there is a choice of radii `ρ w > 0` whose closed
+small discs lie in `B(c,R)` and avoid every *other* puncture (`closedBall w (ρ w) ⊆
+B(c,R) \ (S \ {w})`), for which
+`∮_{C(c,R)} h = Σ_{w∈S} ∮_{C(w,ρ w)} h`.
+
+**OPEN — the single topological gap.** This is the homological deformation at the
+heart of the residue theorem. It is the *only* residual `sorry` of the argument
+principle: every analytic ingredient downstream — the per-puncture residue
+`residue_logDeriv_eq_order` and the divisor bookkeeping — is proved sorry-free, and
+`argument_principle` / `entire_zero_count` are *derived* from this lemma with no
+further `sorry`. Absent from Mathlib v4.24.0 (`Complex.residue`, `windingNumber`,
+annulus/keyhole deformation all missing). -/
+theorem contour_deformation_sum {h : ℂ → ℂ} {c : ℂ} {R : ℝ} (hR : 0 < R)
+    (S : Finset ℂ) (hSball : ∀ w ∈ S, w ∈ Metric.ball c R)
+    (hh : AnalyticOnNhd ℂ h (Metric.closedBall c R \ (S : Set ℂ))) :
+    ∃ ρ : ℂ → ℝ,
+      (∀ w ∈ S, 0 < ρ w) ∧
+      (∀ w ∈ S, Metric.closedBall w (ρ w) ⊆ Metric.ball c R \ ((S : Set ℂ) \ {w})) ∧
+      (∮ z in C(c, R), h z) = ∑ w ∈ S, (∮ z in C(w, ρ w), h z) := by
+  -- Ref: [manuscript] residue theorem = deform the big contour onto small circles
+  --   around each interior puncture and sum (Ahlfors, *Complex Analysis*, Ch. 5 §1,
+  --   Cauchy's theorem for multiply-connected regions; Conway VI.2). Absent from
+  --   Mathlib v4.24.0: no `Complex.residue`, no winding number, no annulus/keyhole
+  --   deformation. See docs/audits/2026-07-20-argument-principle-scaffold.md.
+  sorry
+
+/-! ### The global argument principle — DERIVED (sorry-free modulo `contour_deformation_sum`) -/
 
 /-- **The argument principle.** For `f` meromorphic on the closed disc
-`\overline B(c,R)`, with no zeros or poles on the boundary circle, the contour
-integral of `f'/f` counts the interior divisor:
+`\overline B(c,R)`, analytic and nonvanishing off a finite set `S ⊆ B(c,R)` of
+zeros/poles (`hfU`, `hfne` — the precise "no zeros or poles other than `S`, and none
+on the boundary circle" hypotheses), the contour integral of `f'/f` counts the
+interior divisor:
 `(2πi)⁻¹ ∮_{C(c,R)} logDeriv f = Σ_{w∈S} ord_w f`,
-where `S` enumerates the finitely many interior points where the divisor is
-nonzero. Combined with `zeroCount_sub_poleCount_eq_sum_divisor`, the RHS is
-`#zeros − #poles` with multiplicity.
+where `S` enumerates the finitely many interior points where the divisor is nonzero.
+Combined with `zeroCount_sub_poleCount_eq_sum_divisor`, the RHS is `#zeros − #poles`
+with multiplicity.
 
-**OPEN.** Classical proof: `residue_logDeriv_eq_order` at each point of `S`, summed
-by the residue theorem (contour deformation onto small circles around each divisor
-point). The residue theorem for meromorphic functions is itself absent from
-Mathlib v4.24.0; the per-point residue is `residue_logDeriv_eq_order`. Finiteness of
-`S` (`MeromorphicOn.divisor` is `locallyFinsuppWithin`, intersected with the compact
-disc) is passed as `hS` to isolate the analytic core. -/
+**PROVED sorry-free modulo the single topological gap `contour_deformation_sum`.**
+The deformation supplies the small-circle radii and the identity
+`∮_{C(c,R)} logDeriv f = Σ_w ∮_{C(w,ρ w)} logDeriv f`; each small-circle term is then
+evaluated by the *proved* local residue `residue_logDeriv_eq_order`
+(`(2πi)⁻¹ ∮_{C(w,ρ w)} logDeriv f = ord_w f`), whose per-puncture hypotheses (`f`
+meromorphic at `w`, analytic + nonvanishing on `U \ {w}` for `U = B(c,R) \ (S\{w})`,
+`ord_w f = divisor value`) are all discharged from `hf`, `hfU`, `hfne`, `hS` here.
+The `sorry` lives only in `contour_deformation_sum`. -/
 theorem argument_principle {f : ℂ → ℂ} {c : ℂ} {R : ℝ} (hR : 0 < R)
     (hf : MeromorphicOn f (Metric.closedBall c R))
-    (hclean : ∀ z ∈ Metric.sphere c R, meromorphicOrderAt f z = 0)
     (S : Finset ℂ)
+    (hfU : AnalyticOnNhd ℂ f (Metric.closedBall c R \ (S : Set ℂ)))
+    (hfne : ∀ z ∈ Metric.closedBall c R, z ∉ S → f z ≠ 0)
     (hS : (S : Set ℂ) =
       {z | z ∈ Metric.ball c R ∧ (MeromorphicOn.divisor f (Metric.closedBall c R)) z ≠ 0}) :
     (2 * (Real.pi : ℂ) * Complex.I)⁻¹ * (∮ z in C(c, R), logDeriv f z)
       = ((∑ w ∈ S, (MeromorphicOn.divisor f (Metric.closedBall c R)) w : ℤ) : ℂ) := by
-  -- Ref: [manuscript] argument principle = Σ residues of f'/f; Mathlib gap. See
-  --   docs/audits/2026-07-20-argument-principle-scaffold.md.
-  sorry
+  classical
+  -- Each puncture is interior to the disc.
+  have hSball : ∀ w ∈ S, w ∈ Metric.ball c R := by
+    intro w hw
+    have hmem : w ∈ {z | z ∈ Metric.ball c R ∧
+        (MeromorphicOn.divisor f (Metric.closedBall c R)) z ≠ 0} := hS ▸ Finset.mem_coe.mpr hw
+    exact hmem.1
+  -- `logDeriv f = f'/f` is analytic on the disc minus the punctures.
+  have hlog : AnalyticOnNhd ℂ (logDeriv f) (Metric.closedBall c R \ (S : Set ℂ)) := by
+    have hne : ∀ z ∈ Metric.closedBall c R \ (S : Set ℂ), f z ≠ 0 := fun z hz =>
+      hfne z hz.1 (by simpa using hz.2)
+    simpa only [logDeriv] using (hfU.deriv).div hfU hne
+  -- Deform the big contour onto small circles around the punctures.
+  obtain ⟨ρ, hρpos, hρsub, hdef⟩ := contour_deformation_sum hR S hSball hlog
+  rw [hdef, Finset.mul_sum, Int.cast_sum]
+  refine Finset.sum_congr rfl (fun w hw => ?_)
+  -- Per puncture: apply the local residue over `U = B(c,R) \ (S \ {w})`.
+  have hwball : w ∈ Metric.ball c R := hSball w hw
+  have hwcb : w ∈ Metric.closedBall c R := Metric.ball_subset_closedBall hwball
+  have hUopen : IsOpen (Metric.ball c R \ ((S : Set ℂ) \ {w})) :=
+    Metric.isOpen_ball.sdiff (S.finite_toSet.diff.isClosed)
+  have hUsub : Metric.closedBall w (ρ w) ⊆ Metric.ball c R \ ((S : Set ℂ) \ {w}) := hρsub w hw
+  -- order at `w` equals the (nonzero) divisor value there
+  have hdivne : (MeromorphicOn.divisor f (Metric.closedBall c R)) w ≠ 0 := by
+    have hmem : w ∈ {z | z ∈ Metric.ball c R ∧
+        (MeromorphicOn.divisor f (Metric.closedBall c R)) z ≠ 0} := hS ▸ Finset.mem_coe.mpr hw
+    exact hmem.2
+  have hdiv : (MeromorphicOn.divisor f (Metric.closedBall c R)) w
+      = (meromorphicOrderAt f w).untop₀ := hf.divisor_apply hwcb
+  have hordne : meromorphicOrderAt f w ≠ ⊤ := by
+    intro htop; apply hdivne; rw [hdiv, htop]; simp
+  have horder : meromorphicOrderAt f w
+      = (((MeromorphicOn.divisor f (Metric.closedBall c R)) w : ℤ) : WithTop ℤ) := by
+    rw [hdiv]; exact (WithTop.coe_untop₀_of_ne_top hordne).symm
+  -- analytic + nonvanishing on `U \ {w} = B(c,R) \ S`
+  have hfU' : AnalyticOnNhd ℂ f ((Metric.ball c R \ ((S : Set ℂ) \ {w})) \ {w}) := by
+    intro z hz
+    have hzw : z ≠ w := by simpa using hz.2
+    have hznotS : z ∉ (S : Set ℂ) := fun hzin => hz.1.2 ⟨hzin, by simpa using hzw⟩
+    exact hfU z ⟨Metric.ball_subset_closedBall hz.1.1, hznotS⟩
+  have hfne' : ∀ z ∈ Metric.ball c R \ ((S : Set ℂ) \ {w}), z ≠ w → f z ≠ 0 := by
+    intro z hzU hzw
+    have hznotS : z ∉ (S : Set ℂ) := fun hzin => hzU.2 ⟨hzin, by simpa using hzw⟩
+    exact hfne z (Metric.ball_subset_closedBall hzU.1) (by simpa using hznotS)
+  exact residue_logDeriv_eq_order (hf w hwcb) (hρpos w hw) hUopen hUsub horder hfU' hfne'
 
 /-! ### PI-3 canonical-product application: zero-counting for entire `f` -/
 
@@ -392,20 +477,41 @@ This is the PI-3 payload for the pentagon program: it makes the number of zeros 
 the canonical minimal Faddeev product `phiBProd` inside a disc an explicit contour
 integral, the tool that pins `phiBProd` among its elliptic multiples.
 
-**OPEN** — specialization of `argument_principle` to the entire (pole-free) case
-(`hf` entire ⇒ `divisor f` supported on zeros only, so `Σ ord = zeroCount`). Stated
-open because it composes the open `argument_principle`. -/
+**PROVED sorry-free modulo `contour_deformation_sum`** — a specialization of
+`argument_principle` to the entire (pole-free) case. `f` entire ⇒ analytic
+everywhere (so the `hfU` hypothesis is free) and `meromorphicOrderAt f w ≥ 0` at
+every `w` (`AnalyticAt.meromorphicOrderAt_nonneg`), hence `divisor f ≥ 0` on `S`, so
+`Σ_{w∈S} divisor w = zeroCount`. `hfne` (no zeros off `S`) is passed through — it is
+the precise "`S` enumerates all zeros in the disc" hypothesis. -/
 theorem entire_zero_count {f : ℂ → ℂ} {c : ℂ} {R : ℝ} (hR : 0 < R)
     (hf : Differentiable ℂ f)
-    (hclean : ∀ z ∈ Metric.sphere c R, f z ≠ 0)
     (S : Finset ℂ)
+    (hfne : ∀ z ∈ Metric.closedBall c R, z ∉ S → f z ≠ 0)
     (hS : (S : Set ℂ) =
       {z | z ∈ Metric.ball c R ∧
         (MeromorphicOn.divisor f (Metric.closedBall c R)) z ≠ 0}) :
     (2 * (Real.pi : ℂ) * Complex.I)⁻¹ * (∮ z in C(c, R), logDeriv f z)
       = (zeroCount (fun z => (MeromorphicOn.divisor f (Metric.closedBall c R)) z) S : ℂ) := by
-  -- Ref: [manuscript] argument principle for entire f (pole-free ⇒ counts zeros);
-  --   Mathlib gap. See docs/audits/2026-07-20-argument-principle-scaffold.md.
-  sorry
+  classical
+  have hAuniv : AnalyticOnNhd ℂ f Set.univ := hf.differentiableOn.analyticOnNhd isOpen_univ
+  have hMero : MeromorphicOn f (Metric.closedBall c R) :=
+    (hAuniv.mono (Set.subset_univ _)).meromorphicOn
+  have hfU : AnalyticOnNhd ℂ f (Metric.closedBall c R \ (S : Set ℂ)) :=
+    hAuniv.mono (Set.subset_univ _)
+  have key := argument_principle hR hMero S hfU hfne hS
+  -- Entire ⇒ no poles ⇒ divisor ≥ 0 on `S`, so `Σ divisor = zeroCount`.
+  have hnn : ∀ w ∈ S, 0 ≤ (MeromorphicOn.divisor f (Metric.closedBall c R)) w := by
+    intro w hw
+    have hwcb : w ∈ Metric.closedBall c R := by
+      have hmem : w ∈ {z | z ∈ Metric.ball c R ∧
+          (MeromorphicOn.divisor f (Metric.closedBall c R)) z ≠ 0} := hS ▸ Finset.mem_coe.mpr hw
+      exact Metric.ball_subset_closedBall hmem.1
+    rw [hMero.divisor_apply hwcb]
+    exact WithTop.untop₀_nonneg.mpr ((hAuniv w (Set.mem_univ w)).meromorphicOrderAt_nonneg)
+  have hZ : (∑ w ∈ S, (MeromorphicOn.divisor f (Metric.closedBall c R)) w)
+      = ((zeroCount (fun z => (MeromorphicOn.divisor f (Metric.closedBall c R)) z) S : ℕ) : ℤ) := by
+    rw [zeroCount, Nat.cast_sum]
+    exact (Finset.sum_congr rfl (fun w hw => (Int.toNat_of_nonneg (hnn w hw)).symm))
+  rw [key, hZ, Int.cast_natCast]
 
 end QOU.Mathlib.ArgumentPrinciple
