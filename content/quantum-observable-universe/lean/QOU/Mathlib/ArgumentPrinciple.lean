@@ -2,6 +2,7 @@ import Mathlib.Analysis.Meromorphic.Divisor
 import Mathlib.Analysis.Meromorphic.Order
 import Mathlib.Analysis.Calculus.LogDeriv
 import Mathlib.Analysis.Complex.Basic
+import Mathlib.Analysis.Complex.CauchyIntegral
 import Mathlib.MeasureTheory.Integral.CircleIntegral
 
 /-!
@@ -41,13 +42,23 @@ argument principle is the tool that turns "a contour integral of `f'/f`" into
 * `two_pi_I_ne_zero'` — the normalization `2πi ≠ 0`, making the `(2πi)⁻¹` factor
   well-defined (Mathlib also has `Complex.two_pi_I_ne_zero`; reproved locally to
   keep the cone explicit).
+* `logDeriv_zpow_sub_mul_split` — **brick 1**: the log-derivative split
+  `logDeriv ((·-w)^n·g) = n·(z-w)⁻¹ + logDeriv g` (pure `logDeriv` algebra).
+* `inv_two_pi_I_mul_integral_nat_sub_center_inv` — **brick 2**: the Cauchy simple-pole
+  term `(2πi)⁻¹ ∮_{C(w,r)} n·(z-w)⁻¹ = n`.
+* `circleIntegral_logDeriv_eq_zero_of_analyticOnNhd` — **brick 3**: the Cauchy–Goursat
+  vanishing `∮_{C(w,r)} logDeriv g = 0` for `g` analytic + nonvanishing on the disc.
 
-**Stated open (the genuinely-hard analytic core — a real Mathlib v4.24.0 gap):**
+**Reduced to a single residual `sorry` (the genuinely-hard analytic core):**
 
 * `residue_logDeriv_eq_order` — the **local** argument principle: for `f`
   meromorphic at `w`, the small-circle integral `(2πi)⁻¹ ∮_{C(w,r)} f'/f` equals the
-  order `ord_w f`. This is the single-point residue-of-a-logarithmic-derivative fact
-  (`f'/f` has a simple pole at `w` with residue `ord_w f`). It is THE missing brick.
+  order `ord_w f`. **The residue-computation is now DONE sorry-free** — bricks 1–3
+  assemble the split + integrate. The ONLY remaining `sorry` is the *global
+  factorization on the closed disc*: extending the germ `f = (·-w)^n·g` (which
+  `meromorphicOrderAt_eq_int_iff` gives in `𝓝[≠] w`) to a nonvanishing analytic `g`
+  on an OPEN neighborhood of the closed disc. Everything downstream of that single
+  `obtain … := sorry` is fully verified by Lean.
 * `argument_principle` — the global statement (contour integral = divisor sum),
   the composition of the local residue with the residue theorem over the finitely
   many divisor points in the disc.
@@ -91,13 +102,17 @@ assembly.
 **COMPILE-VERIFIED `lean`-direct, exit 0** (2026-07-20, this environment; the
 Analysis oleans present — `Complex.CauchyIntegral`, `CircleIntegral`,
 `Meromorphic/*`, `Calculus/LogDeriv` — turned out sufficient to elaborate the import
-cone via `LEAN_PATH` over the package olean dirs). The three elementary bricks
-(`toNat_sub_toNat_neg`, `zeroCount_sub_poleCount_eq_sum_divisor`, `two_pi_I_ne_zero'`)
-are **sorry-free**; the only warnings are the three intended
-`declaration uses 'sorry'` on the deep open theorems below
-(`residue_logDeriv_eq_order`, `argument_principle`, `entire_zero_count`), each with a
-cited `-- Ref:`. Not vacuous `True`, not axiomatized as proved. A full `lake build QOU`
-on a host with the complete Analysis cone remains the CI gate.
+cone via `LEAN_PATH` over the package olean dirs). Sorry-free bricks:
+`toNat_sub_toNat_neg`, `zeroCount_sub_poleCount_eq_sum_divisor`, `two_pi_I_ne_zero'`,
+and the three new analytic bricks `logDeriv_zpow_sub_mul_split`,
+`inv_two_pi_I_mul_integral_nat_sub_center_inv`,
+`circleIntegral_logDeriv_eq_zero_of_analyticOnNhd`. `residue_logDeriv_eq_order` is now
+**reduced from a full `sorry` to ONE residual `sorry`** (the global closed-disc
+factorization); its entire residue-computation tail is sorry-free. The only warnings
+are three intended `declaration uses 'sorry'` (`residue_logDeriv_eq_order` — one
+residual; `argument_principle`; `entire_zero_count`), each with a cited `-- Ref:`.
+Not vacuous `True`, not axiomatized as proved. A full `lake build QOU` on a host with
+the complete Analysis cone remains the CI gate.
 -/
 
 open Filter Topology Complex
@@ -147,7 +162,61 @@ theorem two_pi_I_ne_zero' : (2 * (Real.pi : ℂ) * Complex.I) ≠ 0 := by
 /-! ### The local argument principle (deep core — stated open)
 
 The single missing Mathlib brick: the residue of the logarithmic derivative at a
-point equals the meromorphic order there. Everything global is this, summed. -/
+point equals the meromorphic order there. Everything global is this, summed.
+
+The three lemmas below are the **sorry-free** analytic bricks the local argument
+principle assembles from — the log-derivative split, the Cauchy simple-pole term,
+and the Cauchy–Goursat vanishing of the analytic part. Only the *global
+factorization on the closed disc* (extending the germ `meromorphicOrderAt_eq_int_iff`
+gives to a nonvanishing analytic `g` on a neighborhood of the disc) remains open. -/
+
+/-- **Log-derivative split at a zero/pole (brick 1).** If `f = (·−w)^n · g` locally
+with `g` differentiable and nonvanishing at `z` and `z ≠ w`, then the logarithmic
+derivative splits into the simple-pole part `n·(z−w)⁻¹` and the analytic part
+`logDeriv g`. Pure `logDeriv` algebra — sorry-free. -/
+lemma logDeriv_zpow_sub_mul_split {g : ℂ → ℂ} {w z : ℂ} {n : ℤ}
+    (hz : z ≠ w) (hg : DifferentiableAt ℂ g z) (hgz : g z ≠ 0) :
+    logDeriv (fun ζ => (ζ - w) ^ n * g ζ) z = (n : ℂ) * (z - w)⁻¹ + logDeriv g z := by
+  have hzw : z - w ≠ 0 := sub_ne_zero.2 hz
+  have hdf : DifferentiableAt ℂ (fun ζ => ζ - w) z := (differentiableAt_id).sub_const w
+  have hdpow : DifferentiableAt ℂ (fun ζ => (ζ - w) ^ n) z := hdf.zpow (Or.inl hzw)
+  have hpne : ((z - w) ^ n) ≠ 0 := zpow_ne_zero n hzw
+  rw [logDeriv_mul z hpne hgz hdpow hg]
+  congr 1
+  rw [logDeriv_fun_zpow hdf n]
+  have h2 : logDeriv (fun ζ => ζ - w) z = (z - w)⁻¹ := by
+    rw [logDeriv_apply]
+    have hd1 : deriv (fun ζ : ℂ => ζ - w) z = 1 :=
+      ((hasDerivAt_id z).sub_const w).deriv
+    rw [hd1, one_div]
+  rw [h2]
+
+/-- **Cauchy simple-pole term (brick 2).** The normalized small-circle integral of
+the simple pole `n·(z−w)⁻¹` recovers the integer `n`:
+`(2πi)⁻¹ ∮_{C(w,r)} n·(z−w)⁻¹ = n`. Direct from `circleIntegral.integral_sub_center_inv`
+— sorry-free. -/
+lemma inv_two_pi_I_mul_integral_nat_sub_center_inv {w : ℂ} {r : ℝ} (hr : 0 < r) (n : ℤ) :
+    (2 * (Real.pi : ℂ) * Complex.I)⁻¹ * (∮ z in C(w, r), (n : ℂ) * (z - w)⁻¹) = (n : ℂ) := by
+  rw [circleIntegral.integral_const_mul, circleIntegral.integral_sub_center_inv w hr.ne',
+    mul_comm (n : ℂ) (2 * (Real.pi : ℂ) * Complex.I), ← mul_assoc,
+    inv_mul_cancel₀ two_pi_I_ne_zero', one_mul]
+
+/-- **Cauchy–Goursat vanishing of the analytic part (brick 3).** For `g` analytic and
+nonvanishing on a neighborhood of the closed disc `\overline B(w,r)`, its logarithmic
+derivative `logDeriv g = g'/g` is analytic there, hence integrates to `0` over the
+bounding circle (Cauchy–Goursat). Sorry-free, via
+`circleIntegral_eq_zero_of_differentiable_on_off_countable`. -/
+lemma circleIntegral_logDeriv_eq_zero_of_analyticOnNhd {g : ℂ → ℂ} {w : ℂ} {r : ℝ}
+    (hr : 0 ≤ r) (hg : AnalyticOnNhd ℂ g (Metric.closedBall w r))
+    (hgne : ∀ z ∈ Metric.closedBall w r, g z ≠ 0) :
+    (∮ z in C(w, r), logDeriv g z) = 0 := by
+  have hA : AnalyticOnNhd ℂ (logDeriv g) (Metric.closedBall w r) := by
+    have hd := (hg.deriv).div hg hgne
+    exact hd
+  refine Complex.circleIntegral_eq_zero_of_differentiable_on_off_countable hr Set.countable_empty
+    hA.continuousOn ?_
+  intro z hz
+  exact (hA z (Metric.ball_subset_closedBall hz.1)).differentiableAt
 
 /-- **Residue of the logarithmic derivative = order** (the local argument
 principle). For `f` meromorphic at `w` with finite order `n = ord_w f`, and all
@@ -170,9 +239,68 @@ theorem residue_logDeriv_eq_order {f : ℂ → ℂ} {w : ℂ} {r : ℝ} {n : ℤ
     (hclean : ∀ z ∈ Metric.sphere w r, f z ≠ 0)
     (hsmall : ∀ z ∈ Metric.closedBall w r, z ≠ w → meromorphicOrderAt f z = 0) :
     (2 * (Real.pi : ℂ) * Complex.I)⁻¹ * (∮ z in C(w, r), logDeriv f z) = (n : ℂ) := by
-  -- Ref: [manuscript] Ahlfors §5.2 (residue of f'/f = order); Mathlib gap. See
-  --   docs/audits/2026-07-20-argument-principle-scaffold.md.
-  sorry
+  -- === The genuine analytic core (residual): global factorization on the disc. ===
+  -- From `meromorphicOrderAt f w = n` (`meromorphicOrderAt_eq_int_iff` supplies the
+  -- germ `f = (·-w)^n • g` in `𝓝[≠] w`) together with `hsmall` (order 0 elsewhere in
+  -- the disc) and `hclean` (no zeros on the circle), produce a single nonvanishing
+  -- analytic `g` on an OPEN neighborhood `U` of the closed disc, with the
+  -- factorization holding on the punctured `U \ {w}`. This is the removable-
+  -- singularity / analytic-continuation step and is the ONLY remaining `sorry`.
+  obtain ⟨U, g, hU_open, hball_sub, hg_an, hg_ne, hf_eq⟩ :
+      ∃ (U : Set ℂ) (g : ℂ → ℂ), IsOpen U ∧ Metric.closedBall w r ⊆ U ∧
+        AnalyticOnNhd ℂ g U ∧ (∀ z ∈ U, g z ≠ 0) ∧
+        Set.EqOn f (fun z => (z - w) ^ n * g z) (U \ {w}) := by
+    -- Ref: [manuscript] Ahlfors §5.2 — removable-singularity / analytic-continuation
+    --   producing the global nonvanishing analytic factor `g` from the point germ.
+    --   Absent from Mathlib v4.24.0. See
+    --   docs/audits/2026-07-20-argument-principle-scaffold.md.
+    sorry
+  -- === Everything below is sorry-free: the three bricks assembled. ===
+  have hg_an_cb : AnalyticOnNhd ℂ g (Metric.closedBall w r) := hg_an.mono hball_sub
+  have hg_ne_cb : ∀ z ∈ Metric.closedBall w r, g z ≠ 0 := fun z hz => hg_ne z (hball_sub hz)
+  have hopen : IsOpen (U \ {w}) := hU_open.sdiff isClosed_singleton
+  have hsphere_ne : ∀ z ∈ Metric.sphere w r, z ≠ w := by
+    intro z hz h
+    rw [h, Metric.mem_sphere, dist_self] at hz
+    exact hr.ne' hz.symm
+  -- The integrand splits on the sphere: `logDeriv f = n·(z-w)⁻¹ + logDeriv g`.
+  have hEqOn : Set.EqOn (logDeriv f)
+      (fun z => (n : ℂ) * (z - w)⁻¹ + logDeriv g z) (Metric.sphere w r) := by
+    intro z hz
+    have hzU : z ∈ U := hball_sub (Metric.sphere_subset_closedBall hz)
+    have hzw : z ≠ w := hsphere_ne z hz
+    have hmem : z ∈ U \ {w} := ⟨hzU, by simpa using hzw⟩
+    have hev : f =ᶠ[nhds z] fun ζ => (ζ - w) ^ n * g ζ :=
+      hf_eq.eventuallyEq_of_mem (hopen.mem_nhds hmem)
+    have hgz : DifferentiableAt ℂ g z := (hg_an z hzU).differentiableAt
+    have hgnz : g z ≠ 0 := hg_ne z hzU
+    have step : logDeriv f z = logDeriv (fun ζ => (ζ - w) ^ n * g ζ) z := by
+      unfold logDeriv
+      rw [Pi.div_apply, Pi.div_apply, hev.deriv_eq, hev.eq_of_nhds]
+    rw [step]
+    exact logDeriv_zpow_sub_mul_split hzw hgz hgnz
+  -- Both pieces are circle-integrable (continuous on the sphere).
+  have hInt1 : CircleIntegrable (fun z => (n : ℂ) * (z - w)⁻¹) w r := by
+    apply ContinuousOn.circleIntegrable hr.le
+    apply continuousOn_const.mul
+    apply ContinuousOn.inv₀ (continuousOn_id.sub continuousOn_const)
+    intro z hz
+    exact sub_ne_zero.2 (hsphere_ne z hz)
+  have hlogA : AnalyticOnNhd ℂ (logDeriv g) (Metric.closedBall w r) := by
+    have hd := (hg_an_cb.deriv).div hg_an_cb hg_ne_cb
+    exact hd
+  have hInt2 : CircleIntegrable (logDeriv g) w r :=
+    ContinuousOn.circleIntegrable hr.le
+      (hlogA.continuousOn.mono Metric.sphere_subset_closedBall)
+  -- Compute the split integral: Cauchy term gives `n·2πi`, Goursat term gives `0`.
+  have hint : (∮ z in C(w, r), ((n : ℂ) * (z - w)⁻¹ + logDeriv g z))
+      = (n : ℂ) * (2 * (Real.pi : ℂ) * Complex.I) := by
+    rw [circleIntegral.integral_add hInt1 hInt2,
+      circleIntegral.integral_const_mul, circleIntegral.integral_sub_center_inv w hr.ne',
+      circleIntegral_logDeriv_eq_zero_of_analyticOnNhd hr.le hg_an_cb hg_ne_cb, add_zero]
+  rw [circleIntegral.integral_congr hr.le hEqOn, hint,
+    mul_comm (n : ℂ) (2 * (Real.pi : ℂ) * Complex.I), ← mul_assoc,
+    inv_mul_cancel₀ two_pi_I_ne_zero', one_mul]
 
 /-! ### The global argument principle (deep core — stated open) -/
 
