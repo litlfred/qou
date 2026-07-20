@@ -98,4 +98,33 @@ theorem ggm_bar_stable :
 theorem c1_not_bar_fixed : bar c1Slope ≠ c1Slope := by
   simp only [bar, c1Slope]; norm_num
 
+/-! ### GS/jet-filtration cumulative degree (the categorical side)
+
+    The theta-order probe (docs/audits/2026-07-20-theta-jet-gb-filtration.md)
+    observed NUMERICALLY that the binding kernel's leading Gaussian `θ_m ~ m²/4`
+    is HALF the Gröbner–Shirshov cumulative q-degree `C(m,2) ~ m²/2`. Per the
+    proof≠probe discipline, only the GS side is Lean-provable here (pure
+    combinatorics); the analytic identification `θ-coeff = ¼` is probe evidence
+    (Route B curvature `Δ²θ → ½`), NOT proved, and is deliberately NOT
+    asserted in Lean. -/
+
+/-- **GS-filtration cumulative q-degree = C(m,2).** The Hecke reducer's
+    Gröbner–Shirshov normal forms are graded by Coxeter/word length; level `k`
+    contributes degree `k`, so the cumulative degree through level `m` is
+    `∑_{k<m} k = m(m−1)/2 = C(m,2)` — the top degree `ℓ(w₀)` of the longest
+    element (corpus witness `gb-filtration-jet-order`). Pure ℕ combinatorics
+    (`Finset.sum_range_id_mul_two`). This is the categorical grading the theta
+    Gaussian is (numerically) half of. -/
+theorem gs_cumulative_degree (m : ℕ) :
+    (∑ k ∈ Finset.range m, k) * 2 = m * (m - 1) :=
+  Finset.sum_range_id_mul_two m
+
+/-- The GS cumulative degree in the `C(m,2)` closed form. Records the top-degree
+    identity `∑_{k<m} k = ℓ(w₀) = C(m,2)` explicitly. -/
+theorem gs_cumulative_degree_choose (m : ℕ) :
+    (∑ k ∈ Finset.range m, k) = m.choose 2 := by
+  have h := Finset.sum_range_id_mul_two m
+  rw [Nat.choose_two_right]
+  omega
+
 end QOU.Mass.ThetaSlopeArithmetic
