@@ -1,0 +1,234 @@
+{
+  "description": "Route B numeric connection matrix A_m = B_m M Y_m^{-1} between the C1 kernel [m+2]_q b_{m+2} = b_{m+1} + b_m and GGM eq-49 y_{m+1} = (2-q^m) y_m - y_{m-1}: sanity intertwining A_{m+1} = P_m A_m Q_m^{-1} + entry growth classification (rational-in-q^m vs theta q^{gamma m^2})",
+  "computation": "mpmath dps=60; fundamental 2x2 solution matrices from independent initial data (columns of I); exact-determinant adjugate inverses (det Y_m = det Q_m = 1); tail first/second differences of log max|A_m entries| normalized by log q; pre-stated criterion |gamma|>=0.15 theta vs |gamma|<0.05 and |d|<=2.5 rational-plausible; robustness across M = I and one generic M in GL_2",
+  "generated": "2026-07-20T03:34:34+00:00",
+  "parameters": {
+    "dps": 60,
+    "m_max": 80,
+    "tail_window_spec": [
+      28,
+      38
+    ],
+    "tail_window_asymptotic": [
+      60,
+      78
+    ],
+    "q_values": [
+      "0.9",
+      "1.05",
+      "1.10998"
+    ],
+    "tol_sanity": "1e-45",
+    "gamma_theta_threshold": "0.15",
+    "gamma_flat_threshold": "0.05",
+    "degree_rational_threshold": "2.5",
+    "M_generic": [
+      [
+        2,
+        1
+      ],
+      [
+        1,
+        1
+      ]
+    ]
+  },
+  "results": {
+    "per_q": [
+      {
+        "q": "0.9",
+        "runs": [
+          {
+            "M": "I",
+            "sanity_max_rel_residual": "5.693e-61",
+            "spec_window": {
+              "tail": [
+                28,
+                38
+              ],
+              "d_est": "9.4871895",
+              "gamma_est": "-0.11697059"
+            },
+            "asym_window": {
+              "tail": [
+                60,
+                78
+              ],
+              "d_est": "9.6420922",
+              "gamma_est": "0.0064299198"
+            },
+            "entry_gammas_asym": [
+              "0.00634898",
+              "0.00642992",
+              "0.00632893",
+              "0.00640987"
+            ],
+            "class": "EXP-NONRATIONAL",
+            "why": "flat curvature but effective degree > 2.5 -- degree-<=2 rational gauge excluded numerically at this q"
+          },
+          {
+            "M": "generic",
+            "sanity_max_rel_residual": "5.493e-61",
+            "spec_window": {
+              "tail": [
+                28,
+                38
+              ],
+              "d_est": "9.1897377",
+              "gamma_est": "-0.10707814"
+            },
+            "asym_window": {
+              "tail": [
+                60,
+                78
+              ],
+              "d_est": "10.100288",
+              "gamma_est": "0.031081085"
+            },
+            "entry_gammas_asym": [
+              "0.0373591",
+              "0.0310811",
+              "0.037339",
+              "0.031061"
+            ],
+            "class": "EXP-NONRATIONAL",
+            "why": "flat curvature but effective degree > 2.5 -- degree-<=2 rational gauge excluded numerically at this q"
+          }
+        ],
+        "class": "EXP-NONRATIONAL"
+      },
+      {
+        "q": "1.05",
+        "runs": [
+          {
+            "M": "I",
+            "sanity_max_rel_residual": "1.941e-61",
+            "spec_window": {
+              "tail": [
+                28,
+                38
+              ],
+              "d_est": "-24.739363",
+              "gamma_est": "0.98110656"
+            },
+            "asym_window": {
+              "tail": [
+                60,
+                78
+              ],
+              "d_est": "3.3420616",
+              "gamma_est": "0.27428152"
+            },
+            "entry_gammas_asym": [
+              "0.274282",
+              "0.276457",
+              "0.274827",
+              "0.277003"
+            ],
+            "class": "THETA",
+            "why": "THETA growth |A| ~ q^{+gamma m^2} -- needs q-Laplace/theta factor"
+          },
+          {
+            "M": "generic",
+            "sanity_max_rel_residual": "2.777e-61",
+            "spec_window": {
+              "tail": [
+                28,
+                38
+              ],
+              "d_est": "-24.540415",
+              "gamma_est": "0.91773182"
+            },
+            "asym_window": {
+              "tail": [
+                60,
+                78
+              ],
+              "d_est": "3.3420673",
+              "gamma_est": "0.27427941"
+            },
+            "entry_gammas_asym": [
+              "0.274279",
+              "0.276455",
+              "0.274829",
+              "0.277005"
+            ],
+            "class": "THETA",
+            "why": "THETA growth |A| ~ q^{+gamma m^2} -- needs q-Laplace/theta factor"
+          }
+        ],
+        "class": "THETA"
+      },
+      {
+        "q": "1.10998",
+        "runs": [
+          {
+            "M": "I",
+            "sanity_max_rel_residual": "1.686e-61",
+            "spec_window": {
+              "tail": [
+                28,
+                38
+              ],
+              "d_est": "5.9735562",
+              "gamma_est": "0.26903919"
+            },
+            "asym_window": {
+              "tail": [
+                60,
+                78
+              ],
+              "d_est": "24.203231",
+              "gamma_est": "0.24949193"
+            },
+            "entry_gammas_asym": [
+              "0.249492",
+              "0.249578",
+              "0.24954",
+              "0.249626"
+            ],
+            "class": "THETA",
+            "why": "THETA growth |A| ~ q^{+gamma m^2} -- needs q-Laplace/theta factor"
+          },
+          {
+            "M": "generic",
+            "sanity_max_rel_residual": "2.068e-61",
+            "spec_window": {
+              "tail": [
+                28,
+                38
+              ],
+              "d_est": "5.9735337",
+              "gamma_est": "0.26904603"
+            },
+            "asym_window": {
+              "tail": [
+                60,
+                78
+              ],
+              "d_est": "24.203226",
+              "gamma_est": "0.24949234"
+            },
+            "entry_gammas_asym": [
+              "0.249492",
+              "0.249578",
+              "0.249539",
+              "0.249625"
+            ],
+            "class": "THETA",
+            "why": "THETA growth |A| ~ q^{+gamma m^2} -- needs q-Laplace/theta factor"
+          }
+        ],
+        "class": "THETA"
+      }
+    ],
+    "theta_at_q_gt_1": true,
+    "verdict": "SCOPE-(a): at q > 1 (incl. substrate 1.10998) the connection matrix A_m = B_m M Y_m^{-1} shows THETA-class entry growth, gamma_est ~ 0.2619 (|A_m| ~ q^{gamma m^2}; Newton-polygon prediction +1/4 from C1 q-Gevrey decay -1/4 times GGM growth +1/2), robust across two constant-M gauge choices. In this construction NO rational (degree-<=2 in q^m) gauge links C1 to GGM eq 49 at these q; the identification, if any, needs a theta / q-Borel-Laplace factor bridging the q-Gevrey order mismatch. Numerical growth measurement, not a structural exclusion; the conjecture-level status of the q-lift is unchanged."
+  },
+  "context": {
+    "workplan": "docs/workplans/2026-07-20-qlift-borel-kernel-workplan.md (step 3, Route B)",
+    "audit_doc": "docs/audits/2026-07-20-qlift-ggm-gauge-prune.md (diagonal prune; non-diagonal 2x2 left live -> this probe)",
+    "ggm_source": "uploads/2012.00062v3.pdf p.14 (eq 49)",
+    "discipline": "scope-(a) vocabulary per AGENTS.md; pre-stated discrimination criterion; no AME data; sanity check is by-construction, growth class is the only measurement"
+  }
+}
