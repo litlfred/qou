@@ -1,0 +1,98 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-20T16:17:31.310453+00:00",
+  "commitSha": "945a72c00defd830790a3e501b5477d3235283f3",
+  "assertions": [
+    {
+      "name": "dm_cubic_3jet_anchor_invariant",
+      "computed": 1.1144838769263824e-05,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 0.001
+    },
+    {
+      "name": "berezinian_crossterm_anchor_invariant_all_mixings",
+      "computed": 2.2905743706690648e-05,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 0.001
+    },
+    {
+      "name": "empirical_c3_swings_far_more_than_derived",
+      "computed": 4.58154921837348e-06,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 0.001
+    },
+    {
+      "name": "dm_cubic_3jet_does_not_value_match_empirical",
+      "computed": 0.0,
+      "expected": 0.0,
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 15,
+  "computation": "qbeta-c3-dm-cubic-berezinian-probe",
+  "scriptFile": "qbeta_c3_dm_cubic_berezinian_probe.py",
+  "scriptHash": "0e7dcee56ac1",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
+  },
+  "description": "DERIVATION ATTEMPT for Q_β ladder c_3 via the Donagi–Markman cubic 3-jet / Berezinian even-odd cross-term (bean qou-1dnr; super-Berezinian route landed 2026-07-20). Builds two CODATA-INDEPENDENT realizations of the 3-jet (categorical phase ∂³F; Berezinian B·D⁻¹·C from the H_3 super-period matrix) and runs the anchor-invariance falsification. VERDICT: scope-(a) NEGATIVE — both realizations are anchor-invariant smooth real-q objects (swing ~1e-5%) and CANNOT reproduce the empirical c_3 that swings 2.43% (dc_3/dq ≈ 3.8e6, the 1/u³ ladder-inversion artifact of a smooth zero). Re-confirms Lean-proved KC20/KC21/KC22; the odd channel is resurgent/transcendental, not a recurrence output. NOT a derivation, NOT a near-match; nothing wired.",
+  "contentBlock": "conj:qdifference-kernel-prolongation-symbol",
+  "auditOnly": "docs/audits/2026-07-20-c3-dm-cubic-derivation-attempt.md",
+  "data": {
+    "anchors": {
+      "q_proton": "1.10997858275138080759166909561076887987449912187357873607281",
+      "q_muon": "1.10997859555418057528159407960950937799328227995868622546675",
+      "delta_q": "-0.0000000128027997676899249839987404981187831580851074893939374489719"
+    },
+    "empirical_c3_target": {
+      "proton": "-2.06934257711516783787971951724962858902203099810343886691284",
+      "muon": "-2.02020023502125517138232674988576251890206061330068660325496",
+      "swing_pct": "2.43254808320501082573876831602094387592528556954632134543913",
+      "dc3_dq": "3838405.89446160431949491363114975124255764532867792648940790",
+      "note": "CODATA-inverted (FIT side, qbeta_utils.c3_target_at) — the swinging target."
+    },
+    "dm_cubic_3jet_from_phase": {
+      "proton": "0.0272833108176590061334841167499077257090075449677157661531119",
+      "muon": "0.0272833138583403465577289895796757593089242543693254407314611",
+      "swing_pct": "-0.0000111448387692638249520155951351502694900060669790413373013159",
+      "dc3_dq": "0.237501280625971286862680371156386793787162519327477933130222",
+      "note": "∂³F of the categorical producer phase cos(α−u/2)(1−u²); α from substrate, not CODATA. Anchor-invariant; value +0.027 does not even near-match empirical −2.07 at either anchor."
+    },
+    "berezinian_cross_fraction": {
+      "markov": {
+        "proton": "-44.2851296859368505235094336329686743327871319244276575092719",
+        "muon": "-44.2851195421008680083095010253205333795421063715198935993505",
+        "swing_pct": "0.0000229057437066906481043415908723812671004532472869470565068419"
+      },
+      "hbar": {
+        "proton": "-1.74375897248899258502352727456434844024238332114242049118856",
+        "muon": "-1.74375893987849225338403118408375096105308301893904859209383",
+        "swing_pct": "0.00000187012663194786802468382267803490362301121498561111824384788"
+      },
+      "mixed": {
+        "proton": "-18.5417292477810083451196536435582239461945207149526406194304",
+        "muon": "-18.5417270633503605035669913952164707497043170218729575896751",
+        "swing_pct": "0.0000117811606242403684149150992790280756980857846926666277149781"
+      }
+    },
+    "interpretation": "The empirical c_3 swing (2.43%) lives ENTIRELY in the 1/u³ ladder inversion (u, α, b are anchor-invariant to 8+ digits). Any real-q algebraic Berezinian cross-term / DM 3-jet is a smooth function of the substrate ⇒ anchor-invariant (dc_3/dq = O(1)) ⇒ structurally unable to reproduce a target needing dc_3/dq ≈ 3.8e6. Per KC21 the genuine derivation target is the SMOOTH bar-odd object S = h·D(ũ) (|S(substrate)| ≈ 0.0094), NOT the swinging empirical c_3; the Berezinian route is structurally consistent with a bar-odd cross-term but produces no such derived closure. Approach #1 (recurrence output) is refuted a priori by KC22 (odd channel non-holonomic).",
+    "verdict": "SCOPE_A_NEGATIVE_ANCHOR_INVARIANT_SMOOTH_CANNOT_TRACK_SWINGING_EMPIRICAL_C3",
+    "qbeta_100x_met_via_this_route": false
+  }
+}
