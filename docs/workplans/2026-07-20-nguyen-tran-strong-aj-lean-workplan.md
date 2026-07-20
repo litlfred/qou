@@ -103,6 +103,39 @@ honest only as §3b-cond conditional on named [Tr4]/[FGL] classes until those ar
 formalized — per the anti-laundering rule, that conditional instance must NOT be
 reported as "strong AJ proved in Lean".
 
+## 4a. NT-T2 build status (B1, B2, B3 landed 2026-07-20)
+
+Branch `claude/qlift-borel-kernel-derivation-2026-07-20`, bean `qou-s9ap`.
+
+- **B1 — `QOU.Machinery.QuantumTorus` (sorry-free).** The quantum torus
+  realised as the skew-Laurent ring on Mathlib `SkewMonoidAlgebra A
+  (Multiplicative ℤ)`: `sigma` (σ-twist), `emb : A →+* T`, `Lgen`/`Linv` +
+  `LUnit` (L a unit), the q-Weyl commutation `Lgen_mul_emb` (`L·a = σ(a)·L`)
+  and `qWeyl_eigen_commutation` (`LM = c·ML`), coeff/support basics, the
+  `ℕ→K` function-model operators `shiftFwd`/`mulPow` + `funcModel_qWeyl`
+  (interoperates with `QOU.BraidKnot.AJFigureEight`), and the universal
+  ring-hom evaluation `torusEval` (via `liftNCRingHom`). Generic
+  `{A}[CommRing A]`; no ℝ (§7c).
+- **B2 — degree/basis layer (sorry-free, same file).** `monomial` (`L^n·a`),
+  `monomial_mul_monomial` (twisted product), `expSupport`/`coeffAt`/`topDeg`
+  (top L-degree, ⊥ for 0) + `coeffAt_eq_zero_of_topDeg_lt`.
+- **B3 — `QOU.Machinery.QuantumTorusDivision` (scaffold + honest wall).** The
+  reduction **engine is proved sorry-free**: `reductionQuotient`,
+  `reduction_leading_coeff_match` (product's `L^e` coeff = `f`'s, via
+  `coeff_single_mul` + `Ring.inverse_mul_cancel` on the σ-image unit),
+  `reduction_top_coeff_cancel` (one step kills the `L^e` term),
+  `isUnit_smul_of_isUnit`, `coeffAt_sub`. **Honest wall (two cited
+  `sorry`s, NOT vacuous):** `skew_right_division_degree_drop` (the
+  `topDeg`-monotonicity calculus over `WithBot ℤ` that upgrades the proved
+  top-coeff cancellation to a strict degree drop) and
+  `exists_skew_right_division` (`f = q·g + r`, assembled by well-founded
+  recursion on `topDeg`). Both are the **genuine v4.24.0 Mathlib gap**: no
+  Ore/skew-polynomial extension, no skew-Laurent Euclidean algorithm, no
+  noncommutative PID/Euclidean theory. Per the anti-laundering rule, B3 does
+  **not** claim skew-Euclidean division is proved in Lean — only the reduction
+  step is; the recursion assembly and the degree-calculus remain open (NT-T4
+  gate, class (c)/(d)).
+
 ## 5. What is NOT claimed
 
 - No Lean was written in NT-T1; classifications (a)–(d) are assessments, not builds.

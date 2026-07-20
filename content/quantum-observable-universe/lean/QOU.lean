@@ -280,6 +280,7 @@ import QOU.Machinery.HeckeH3GramNondegeneracy
 import QOU.Machinery.HeckeH4BlockRep
 import QOU.Machinery.HeckeTowerBasicConstruction
 import QOU.Machinery.QuantumTorus
+import QOU.Machinery.QuantumTorusDivision
 import QOU.MathlibExt.EndSemisimple
 import QOU.HyperellipticQuintic.zeta5_residue_monodromy
 
