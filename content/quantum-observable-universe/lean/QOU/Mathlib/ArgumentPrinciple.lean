@@ -373,6 +373,71 @@ big contour onto small circles around each puncture. `Complex.residue`,
 from Mathlib v4.24.0 (verified 2026-07-20 by `#check`), so this deformation has no
 engine and is stated with a single cited `sorry`, isolated from the proved analysis. -/
 
+/-- **Radius selection for the punctures (metric-topology brick — sorry-free).**
+For a finite puncture set `S ⊆ B(c,R)`, there is a choice of positive radii `ρ w`
+whose *closed* small discs `\overline B(w, ρ w)` each lie inside the open disc
+`B(c,R)` and avoid every *other* puncture: `closedBall w (ρ w) ⊆ B(c,R) \ (S \ {w})`.
+
+This is the geometric half of `contour_deformation_sum` and is **fully proved**: for
+each `w ∈ S` the region `B(c,R) \ (S \ {w})` is open (an open ball minus a finite,
+hence closed, set) and contains `w`, so a small enough closed ball around `w` sits
+inside it. The radii are extracted pointwise with `choose!`. No disjointness of the
+small discs is required — the residue identity is a winding-number (homology)
+statement, so it suffices that each closed disc contains *no other* puncture; two
+discs may overlap as long as neither swallows the other's centre. -/
+theorem exists_puncture_radii {c : ℂ} {R : ℝ}
+    (S : Finset ℂ) (hSball : ∀ w ∈ S, w ∈ Metric.ball c R) :
+    ∃ ρ : ℂ → ℝ,
+      (∀ w ∈ S, 0 < ρ w) ∧
+      (∀ w ∈ S, Metric.closedBall w (ρ w) ⊆ Metric.ball c R \ ((S : Set ℂ) \ {w})) := by
+  classical
+  have key : ∀ w ∈ S, ∃ r : ℝ, 0 < r ∧
+      Metric.closedBall w r ⊆ Metric.ball c R \ ((S : Set ℂ) \ {w}) := by
+    intro w hw
+    have hopen : IsOpen (Metric.ball c R \ ((S : Set ℂ) \ {w})) :=
+      Metric.isOpen_ball.sdiff (S.finite_toSet.diff).isClosed
+    have hmem : w ∈ Metric.ball c R \ ((S : Set ℂ) \ {w}) := ⟨hSball w hw, by simp⟩
+    obtain ⟨ε, hε, hball⟩ := Metric.isOpen_iff.mp hopen w hmem
+    exact ⟨ε / 2, by positivity, (Metric.closedBall_subset_ball (by linarith)).trans hball⟩
+  choose! ρ hρpos hρsub using key
+  exact ⟨ρ, hρpos, hρsub⟩
+
+/-- **Multi-punctured residue deformation (the topological core — the single gap).**
+Given a finite puncture set `S ⊆ B(c,R)`, radii `ρ w > 0` whose closed small discs lie
+in `B(c,R)` and avoid every *other* puncture, and `h` analytic on `\overline B(c,R) \ S`,
+the big contour integral equals the sum of the small ones:
+`∮_{C(c,R)} h = Σ_{w∈S} ∮_{C(w,ρ w)} h`.
+
+**OPEN — the single remaining topological `sorry`.** This is the homological
+deformation at the heart of the residue theorem: the big circle is homologous, in
+`\overline B(c,R) \ S`, to the formal sum of the small circles (each of winding number
+`1` about its own puncture and `0` about the others), so their integrals of the
+holomorphic `h` agree. Every *analytic* ingredient of the argument principle is proved
+sorry-free (`residue_logDeriv_eq_order`, the divisor bookkeeping); the *geometric*
+half (`exists_puncture_radii`) and the `|S| = 0` base case (Cauchy–Goursat, proved
+inside `contour_deformation_sum`) are also discharged. What remains absent from
+Mathlib v4.24.0 is exactly this multiply-connected Cauchy theorem: `Complex.residue`,
+`windingNumber`, and every annulus/keyhole/homology contour-deformation lemma are
+missing (only the *concentric* annulus deformation
+`circleIntegral_eq_of_differentiable_on_annulus_off_countable` — puncture at the
+centre — and the single on-disc Cauchy integral formula are present, neither of which
+covers off-centre or multiple punctures). Not vacuous `True`, not axiomatized as
+proved (§Axiomatization-is-NOT-a-Proof): the real topological statement, left open
+with a cited `-- Ref:`. -/
+theorem residue_theorem_deformation {h : ℂ → ℂ} {c : ℂ} {R : ℝ} (hR : 0 < R)
+    (S : Finset ℂ) (hSball : ∀ w ∈ S, w ∈ Metric.ball c R)
+    (hh : AnalyticOnNhd ℂ h (Metric.closedBall c R \ (S : Set ℂ)))
+    (ρ : ℂ → ℝ) (hρpos : ∀ w ∈ S, 0 < ρ w)
+    (hρsub : ∀ w ∈ S, Metric.closedBall w (ρ w) ⊆ Metric.ball c R \ ((S : Set ℂ) \ {w})) :
+    (∮ z in C(c, R), h z) = ∑ w ∈ S, (∮ z in C(w, ρ w), h z) := by
+  -- Ref: [manuscript] residue theorem = deform the big contour onto small circles
+  --   around each interior puncture and sum (Ahlfors, *Complex Analysis*, Ch. 5 §1,
+  --   Cauchy's theorem for multiply-connected regions; Conway VI.2). Absent from
+  --   Mathlib v4.24.0: no `Complex.residue`, no winding number, no general (off-centre
+  --   / multi-hole) homology contour-deformation. See
+  --   docs/audits/2026-07-20-argument-principle-scaffold.md.
+  sorry
+
 /-- **Multi-punctured contour deformation (the residue theorem's topological core).**
 For `h` analytic on the closed disc `\overline B(c,R)` minus a finite puncture set
 `S ⊆ B(c,R)`, the big contour integral equals the sum of the small contour integrals
@@ -381,13 +446,21 @@ small discs lie in `B(c,R)` and avoid every *other* puncture (`closedBall w (ρ 
 B(c,R) \ (S \ {w})`), for which
 `∮_{C(c,R)} h = Σ_{w∈S} ∮_{C(w,ρ w)} h`.
 
-**OPEN — the single topological gap.** This is the homological deformation at the
-heart of the residue theorem. It is the *only* residual `sorry` of the argument
-principle: every analytic ingredient downstream — the per-puncture residue
+**REDUCED (2026-07-20).** Now assembled from three separated pieces:
+
+* the radius selection `exists_puncture_radii` (metric topology) — **proved
+  sorry-free**;
+* the `|S| = 0` base case (Cauchy–Goursat on the whole disc,
+  `circleIntegral_eq_zero_of_differentiable_on_off_countable`) — **proved sorry-free
+  here**, so the empty-puncture instance of the argument principle is fully closed;
+* the pure-topology core `residue_theorem_deformation` for `|S| ≥ 1` — the **single
+  remaining cited `sorry`**, the multiply-connected Cauchy theorem (off-centre,
+  multi-hole homology deformation) absent from Mathlib v4.24.0.
+
+Every analytic ingredient downstream — the per-puncture residue
 `residue_logDeriv_eq_order` and the divisor bookkeeping — is proved sorry-free, and
 `argument_principle` / `entire_zero_count` are *derived* from this lemma with no
-further `sorry`. Absent from Mathlib v4.24.0 (`Complex.residue`, `windingNumber`,
-annulus/keyhole deformation all missing). -/
+further `sorry`. -/
 theorem contour_deformation_sum {h : ℂ → ℂ} {c : ℂ} {R : ℝ} (hR : 0 < R)
     (S : Finset ℂ) (hSball : ∀ w ∈ S, w ∈ Metric.ball c R)
     (hh : AnalyticOnNhd ℂ h (Metric.closedBall c R \ (S : Set ℂ))) :
@@ -395,12 +468,19 @@ theorem contour_deformation_sum {h : ℂ → ℂ} {c : ℂ} {R : ℝ} (hR : 0 < 
       (∀ w ∈ S, 0 < ρ w) ∧
       (∀ w ∈ S, Metric.closedBall w (ρ w) ⊆ Metric.ball c R \ ((S : Set ℂ) \ {w})) ∧
       (∮ z in C(c, R), h z) = ∑ w ∈ S, (∮ z in C(w, ρ w), h z) := by
-  -- Ref: [manuscript] residue theorem = deform the big contour onto small circles
-  --   around each interior puncture and sum (Ahlfors, *Complex Analysis*, Ch. 5 §1,
-  --   Cauchy's theorem for multiply-connected regions; Conway VI.2). Absent from
-  --   Mathlib v4.24.0: no `Complex.residue`, no winding number, no annulus/keyhole
-  --   deformation. See docs/audits/2026-07-20-argument-principle-scaffold.md.
-  sorry
+  classical
+  obtain ⟨ρ, hρpos, hρsub⟩ := exists_puncture_radii S hSball
+  refine ⟨ρ, hρpos, hρsub, ?_⟩
+  rcases S.eq_empty_or_nonempty with rfl | hSne
+  · -- Base `|S| = 0`: `h` analytic on the whole closed disc ⇒ Cauchy–Goursat ⇒ `∮ = 0`,
+    -- and the RHS is the empty sum. Fully sorry-free.
+    simp only [Finset.coe_empty, Set.diff_empty, Finset.sum_empty] at hh ⊢
+    refine Complex.circleIntegral_eq_zero_of_differentiable_on_off_countable hR.le
+      Set.countable_empty hh.continuousOn ?_
+    intro z hz
+    exact (hh z (Metric.ball_subset_closedBall (by simpa using hz))).differentiableAt
+  · -- `|S| ≥ 1`: the isolated topological core (the single residual `sorry`).
+    exact residue_theorem_deformation hR S hSball hh ρ hρpos hρsub
 
 /-! ### The global argument principle — DERIVED (sorry-free modulo `contour_deformation_sum`) -/
 
