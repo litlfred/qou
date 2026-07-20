@@ -14,18 +14,20 @@ leading L-coefficient is a unit and Euclidean right-division by L-degree
 terminates; this is what makes the recurrence ideal `A_K` principal (paper
 §1.2).
 
-## Mathlib gap (verified at the pinned toolchain v4.24.0)
+## Mathlib gap closed (at the pinned toolchain v4.24.0)
 
 Mathlib **has** ring-level `RingTheory.OreLocalization.*` but has **no**
 skew-polynomial / Ore-extension ring `R[x;σ,δ]`, **no** skew-Laurent
 Euclidean/division algorithm, and **no** noncommutative PID/Euclidean-domain
-theory.  So the division algorithm is hand-built here on the B1/B2
-skew-Laurent ring.
+theory.  So the division algorithm is **hand-built, sorry-free**, here on the
+B1/B2 skew-Laurent ring — the `WithBot ℤ` degree calculus and the termination
+recursion that the missing Ore theory would otherwise supply are both proved
+below (2026-07-20).
 
 ## Honest status of this file (§3b, anti-laundering STRICT)
 
-What is **proved sorry-free** (the reduction engine — the real degree-drop
-content):
+The whole file is now **sorry-free**.  The reduction engine (the real
+degree-drop content):
 
 * `reductionQuotient` — the quotient monomial that cancels the `L^e` term.
 * `reduction_leading_coeff_match` — its product with `g` matches `f`'s `L^e`
@@ -34,25 +36,25 @@ content):
 * `reduction_top_coeff_cancel` — hence the one reduction step
   `f - reductionQuotient·g` **kills the `L^e` coefficient**.
 
-What is stated with a **real proposition + `sorry` + `-- Ref: [manuscript]`**
-(the genuinely-missing Mathlib pieces — NOT vacuous `True`, NOT a
-conclusion-as-field class):
+The induction/termination layer built on top (the pieces Mathlib does not
+provide as Ore-extension theory, discharged directly here):
 
-* `skew_right_division_degree_drop` — the full **`topDeg` strictly drops**
-  after one step.  The `L^e` coefficient is proved to vanish
-  (`reduction_top_coeff_cancel`); what remains open is the `topDeg`
-  monotonicity calculus over `WithBot ℤ` (`topDeg (x - y) ≤ max …`,
-  `topDeg (single·g) ≤ k + topDeg g` from `support_single_mul_subset`) —
-  routine but unbuilt for `SkewMonoidAlgebra`.
-* `exists_skew_right_division` — the division existence theorem
-  `∃ q r, f = q·g + r ∧ (r = 0 ∨ topDeg r < topDeg g)`.  Assembling the
-  quotient by **well-founded recursion on `topDeg`** is the Ore-extension
-  gap above; the per-step engine it would iterate is the proved
-  `reduction_top_coeff_cancel`.
+* `topDeg_lt_of_forall_ge_eq_zero` / `topDeg_eq_bot_iff` — the `WithBot ℤ` /
+  `Finset.max` degree calculus.
+* `skew_right_division_degree_drop` — one reduction step **strictly drops
+  `topDeg`**.  The `L^e` coefficient vanishes (`reduction_top_coeff_cancel`)
+  and every higher coefficient vanishes because `topDeg f = e` and the
+  reduction monomial `L^{e-d}·g` has top degree `≤ e` (computed directly via
+  `coeff_single_mul` + `coeffAt_eq_zero_of_topDeg_lt`).
+* `exists_skew_right_division_fuel` / `exists_skew_right_division` — the
+  division existence theorem `∃ q r, f = q·g + r ∧ (r = 0 ∨ topDeg r < topDeg g)`,
+  by a `ℕ`-fuel induction: each step lowers `topDeg` by `≥ 1`, so a fuel
+  bound read off `f`'s finite top degree terminates the recursion.  This is
+  the constructive replacement for the (absent) skew-Laurent Euclidean
+  algorithm.
 
-Per the anti-laundering rule this file therefore does **NOT** claim
-skew-Euclidean division is proved in Lean — only the reduction step is.  The
-wall is recorded in the workplan (NT-T4 gate) and in these two docstrings.
+Verified lean-direct (`lean QuantumTorusDivision.lean`, exit 0, sorry-free) at
+toolchain v4.24.0.
 
 ## Base ring (§7c)
 
