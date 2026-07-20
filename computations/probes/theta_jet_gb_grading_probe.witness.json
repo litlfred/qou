@@ -1,0 +1,60 @@
+{
+  "description": "theta-order (slope-1/2 Gaussian exponent of the C1 q-lift kernel) vs jet/body order m vs Groebner-Shirshov (Hecke) Poincare q-degree deg_q[m]_q! = C(m,2). Tests whether the theta-order is constant across m (intrinsic) or jet-graded, and whether the m^2/4 Gaussian = (1/2) cumulative GS degree.",
+  "computation": "mpmath dps=60; C1 recurrence [m+2]_q b_{m+2}=b_{m+1}+b_m seeded b_0=b_1=1; theta_m=-log_q|b_m|; s_m=theta_m/C(m,2); bridge=theta_m/(m(m-1)/4); involution effective Gevrey order 2 log I(m)/log(m!); flatness via window means/drift.",
+  "generated": "2026-07-20T04:05:41+00:00",
+  "parameters": {
+    "dps": 60,
+    "m_max": 200,
+    "q0": "1.1099785955573347199",
+    "q0_anchor": "muon (computations layer canonical)"
+  },
+  "results": {
+    "curvature_2nd_diff_theta": {
+      "target_2a": "1/2",
+      "window_20_40": "0.540749665814",
+      "window_140_180": "0.499980646728",
+      "sd": "0.00168887",
+      "drift": "0.00059225983",
+      "gaussian_coeff_a": "0.249990323364",
+      "constant_not_jet_graded": true
+    },
+    "quadratic_fit_120_180": {
+      "a_target_1_4": "0.250019262144",
+      "b_linear": "11.07160766",
+      "b_pred_framing_half_logq_inv_qm1": "10.57817728",
+      "c": "-97.4613"
+    },
+    "gs_bridge_leading": {
+      "claim": "a = 1/4 = (1/2)*(1/2); leading theta Gaussian = (1/2) cumulative GS deg_q[m]_q! = C(m,2)",
+      "a_fit": "0.250019262144",
+      "identity_C_m_2_eq_cumulative_gs_degree": true,
+      "deg_q_k_q_eq_k_minus_1": true,
+      "subleading_linear_is_framing": true,
+      "verdict": true
+    },
+    "slope_s_m_diagnostic_linear_polluted": {
+      "window_20_40": "1.087462091",
+      "window_160_180": "0.6273839911",
+      "drift": "0.4600781",
+      "note": "polluted by framing b; NOT the constancy invariant"
+    },
+    "gevrey_effective_order": {
+      "target": "1",
+      "window_20_40": "1.09946162",
+      "window_160_180": "1.030363862",
+      "drift": "0.069097757"
+    },
+    "verdict": "SCOPE-(a): the theta-order is CONSTANT across jet order m -- the curvature (2nd diff theta_m) is flat at 0.499981 (drift 0.000592), so the Gaussian coefficient a = 0.250019 -> 1/4 is intrinsic, NOT jet-graded. What grades with m is the cumulative Gaussian theta_m ~ m^2/4, whose leading coefficient 1/4 = (1/2) x (1/2), the 1/2 being the leading coefficient of the GS/Hecke Poincare top degree deg_q[m]_q! = C(m,2). So the LEADING theta Gaussian = HALF the cumulative GS filtration q-degree; theta_m ~ deg_q(([m]_q!)^{1/2}). The 1/2 is the depth-2 (involution-recurrence) structure; C1's denominators ARE the GS quantum integers [k]_q. The subleading linear term b=11.07 ~ b_pred=10.58 is the [k]_q-vs-q^(k-1) framing (known transient), not the slope. Growth measurement + exact arithmetic identity; no fit, no AME."
+  },
+  "context": {
+    "bean": "qou-mlog",
+    "audit_doc": "docs/audits/2026-07-20-theta-jet-gb-filtration.md",
+    "consumers": [
+      "content/quantum-observable-universe/lean/QOU/Mass/BindingGevreyHalf.lean",
+      "content/unital-groebner-bases/lean/UGB/GrobnerShirshov/JetOrder.lean",
+      "computations/gb-filtration-jet-order.witness.json"
+    ],
+    "route_b": "computations/probes/qlift_routeB_connection_matrix_probe.py (measured C1 decay leg gamma ~ -1/4)",
+    "discipline": "scope-(a); pre-stated discriminants; no AME data; the GS-bridge identification is leading-q-order + conjectural (C1 = binding module is the standing keystone conjecture)"
+  }
+}
