@@ -78,6 +78,7 @@ import QOU.Machinery.CoxeterCommutingTransversal
 import QOU.Knot.FigureEightVolumeSaddle
 import QOU.Mass.BindingTauAnchorClosure
 import QOU.Mass.QDifferenceConfluentObstruction
+import QOU.Mass.KeystoneBridgeC1Binding
 import QOU.Mass.ThetaSlopeArithmetic
 import QOU.Mass.ColorCubicPowerSums
 import QOU.Mass.TauQuantumIntegerForm
