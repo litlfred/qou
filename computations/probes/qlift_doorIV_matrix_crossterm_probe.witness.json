@@ -1,0 +1,812 @@
+{
+  "description": "Door-iv: does a TENSOR-SQUARE MATRIX realization y_m = a(q^m) f+^2 + b(q^m) f+f- + c(q^m) f-^2 (a,b,c rational in q^m; f+ = q-factorial carrier lift ~q^{+m^2/4}, f- = forward C1 ~q^{-m^2/4}, so f+f- is SLOPE-0) reproduce the GGM eq-49 solutions, with the cross term as the essential anisoclinic {+1,-1} connector? Upgrades Door-iii's refuted SCALAR combo to an m-dependent matrix ansatz and fixes its slope-1 cross-term mis-measurement.",
+  "computation": "mpmath dps=70; C1 [m+2]_q b_{m+2}=b_{m+1}+b_m, growing companion g_m=[m]_q! b_m (recursion g_{m+2}=g_{m+1}+[m+1]_q g_m), GGM y_{m+1}=(2-q^m)y_m-y_{m-1}, m=0..60; fit a,b,c as degree<=4 polynomials in x=q^m on m=0..20, extrapolate m=40..60; also verify the reconstruction solves the GGM recurrence; recessive GGM/C1 via Miller backward recursion from m=200; cross-term-essential = with-cross vs no-cross residual; solver self-test on an in-span rational-coeff target",
+  "generated": "2026-07-20T04:59:18+00:00",
+  "parameters": {
+    "dps": 70,
+    "m_max": 60,
+    "n_fit": 20,
+    "tail_window": [
+      40,
+      60
+    ],
+    "m_miller": 200,
+    "q_values": [
+      "0.9",
+      "1.05",
+      "1.10998"
+    ],
+    "coeff_degree_grid": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "tol_lands": "1e-45",
+    "kill_criterion": "tail relative residual < 1e-45 AND GGM-recurrence residual < 1e-30 => LANDS (scope-(a) positive); O(1) drift at every degree => REFUTED"
+  },
+  "results": {
+    "per_q": [
+      {
+        "q": "0.9",
+        "slopes_theta_gamma": {
+          "fplus_carrier_growing": "-0.00676524",
+          "fminus_forward_decaying": "0.00818517",
+          "crossterm_fplus_fminus": "0.00141993",
+          "fplus_sq": "-0.0135305",
+          "fminus_sq": "0.0163703",
+          "NAIVE_bothforward_cross": "0.0164852",
+          "c1_dom_forward": "0.00818517",
+          "c1_miller_recessive": "0.00587142",
+          "GGM_ya_forward": "-0.0468898",
+          "GGM_recessive": "-0.049181"
+        },
+        "precondition_slope0_cross_ok": true,
+        "matrix_ansatz": {
+          "y_a_forward": {
+            "with_cross_best_tail": "2.5046e+44",
+            "with_cross_best_deg": 0,
+            "with_cross_ggm_resid": "0.859279",
+            "without_cross_best_tail": "3.69014e+44",
+            "cross_term_helps": false,
+            "lands": false,
+            "best_coeffs_withcross": [
+              "-1.62458e-17",
+              "0.0151179",
+              "0.600842"
+            ],
+            "per_degree_withcross": [
+              {
+                "deg": 0,
+                "tail_resid": "2.5046e+44",
+                "ggm_resid": "0.859279",
+                "err": null
+              },
+              {
+                "deg": 1,
+                "tail_resid": "5.7644e+46",
+                "ggm_resid": "0.900231",
+                "err": null
+              },
+              {
+                "deg": 2,
+                "tail_resid": "6.08441e+48",
+                "ggm_resid": "0.920944",
+                "err": null
+              },
+              {
+                "deg": 3,
+                "tail_resid": "6.60416e+48",
+                "ggm_resid": "0.929361",
+                "err": null
+              },
+              {
+                "deg": 4,
+                "tail_resid": "5.98053e+49",
+                "ggm_resid": "0.946444",
+                "err": null
+              }
+            ],
+            "per_degree_nocross": [
+              {
+                "deg": 0,
+                "tail_resid": "3.69014e+44",
+                "ggm_resid": "0.859279",
+                "err": null
+              },
+              {
+                "deg": 1,
+                "tail_resid": "4.6132e+46",
+                "ggm_resid": "0.897655",
+                "err": null
+              },
+              {
+                "deg": 2,
+                "tail_resid": "2.15919e+48",
+                "ggm_resid": "0.918962",
+                "err": null
+              },
+              {
+                "deg": 3,
+                "tail_resid": "4.61073e+49",
+                "ggm_resid": "0.931904",
+                "err": null
+              },
+              {
+                "deg": 4,
+                "tail_resid": "2.15473e+50",
+                "ggm_resid": "0.942922",
+                "err": null
+              }
+            ]
+          },
+          "y_b_forward": {
+            "with_cross_best_tail": "1.9992e+45",
+            "with_cross_best_deg": 0,
+            "with_cross_ggm_resid": "0.859279",
+            "without_cross_best_tail": "7.60946e+43",
+            "cross_term_helps": false,
+            "lands": false,
+            "best_coeffs_withcross": [
+              "3.66725e-17",
+              "-0.0132725",
+              "0.263286"
+            ],
+            "per_degree_withcross": [
+              {
+                "deg": 0,
+                "tail_resid": "1.9992e+45",
+                "ggm_resid": "0.859279",
+                "err": null
+              },
+              {
+                "deg": 1,
+                "tail_resid": "2.28252e+47",
+                "ggm_resid": "0.899378",
+                "err": null
+              },
+              {
+                "deg": 2,
+                "tail_resid": "9.00069e+48",
+                "ggm_resid": "0.920181",
+                "err": null
+              },
+              {
+                "deg": 3,
+                "tail_resid": "3.40305e+50",
+                "ggm_resid": "0.93432",
+                "err": null
+              },
+              {
+                "deg": 4,
+                "tail_resid": "3.0432e+51",
+                "ggm_resid": "0.942792",
+                "err": null
+              }
+            ],
+            "per_degree_nocross": [
+              {
+                "deg": 0,
+                "tail_resid": "7.60946e+43",
+                "ggm_resid": "0.859279",
+                "err": null
+              },
+              {
+                "deg": 1,
+                "tail_resid": "6.1385e+46",
+                "ggm_resid": "0.896256",
+                "err": null
+              },
+              {
+                "deg": 2,
+                "tail_resid": "5.99423e+48",
+                "ggm_resid": "0.918358",
+                "err": null
+              },
+              {
+                "deg": 3,
+                "tail_resid": "2.34944e+50",
+                "ggm_resid": "0.931328",
+                "err": null
+              },
+              {
+                "deg": 4,
+                "tail_resid": "4.58328e+51",
+                "ggm_resid": "0.939954",
+                "err": null
+              }
+            ]
+          },
+          "recessive": {
+            "with_cross_best_tail": "2.65111e+44",
+            "with_cross_best_deg": 0,
+            "with_cross_ggm_resid": "0.859279",
+            "without_cross_best_tail": "3.65285e+44",
+            "cross_term_helps": false,
+            "lands": false,
+            "best_coeffs_withcross": [
+              "-3.52147e-18",
+              "0.00315047",
+              "0.120414"
+            ],
+            "per_degree_withcross": [
+              {
+                "deg": 0,
+                "tail_resid": "2.65111e+44",
+                "ggm_resid": "0.859279",
+                "err": null
+              },
+              {
+                "deg": 1,
+                "tail_resid": "5.90734e+46",
+                "ggm_resid": "0.900202",
+                "err": null
+              },
+              {
+                "deg": 2,
+                "tail_resid": "6.10885e+48",
+                "ggm_resid": "0.920934",
+                "err": null
+              },
+              {
+                "deg": 3,
+                "tail_resid": "3.69774e+48",
+                "ggm_resid": "0.926998",
+                "err": null
+              },
+              {
+                "deg": 4,
+                "tail_resid": "8.48003e+49",
+                "ggm_resid": "0.945164",
+                "err": null
+              }
+            ],
+            "per_degree_nocross": [
+              {
+                "deg": 0,
+                "tail_resid": "3.65285e+44",
+                "ggm_resid": "0.859279",
+                "err": null
+              },
+              {
+                "deg": 1,
+                "tail_resid": "4.62598e+46",
+                "ggm_resid": "0.897639",
+                "err": null
+              },
+              {
+                "deg": 2,
+                "tail_resid": "2.19132e+48",
+                "ggm_resid": "0.918948",
+                "err": null
+              },
+              {
+                "deg": 3,
+                "tail_resid": "4.76894e+49",
+                "ggm_resid": "0.931879",
+                "err": null
+              },
+              {
+                "deg": 4,
+                "tail_resid": "2.52067e+50",
+                "ggm_resid": "0.942397",
+                "err": null
+              }
+            ]
+          }
+        }
+      },
+      {
+        "q": "1.05",
+        "slopes_theta_gamma": {
+          "fplus_carrier_growing": "0.2917",
+          "fminus_forward_decaying": "-0.31666",
+          "crossterm_fplus_fminus": "-0.0249595",
+          "fplus_sq": "0.583401",
+          "fminus_sq": "-0.63332",
+          "NAIVE_bothforward_cross": "-0.635347",
+          "c1_dom_forward": "-0.31666",
+          "c1_miller_recessive": "-0.346336",
+          "GGM_ya_forward": "0.774126",
+          "GGM_recessive": "-0.433712"
+        },
+        "precondition_slope0_cross_ok": true,
+        "matrix_ansatz": {
+          "y_a_forward": {
+            "with_cross_best_tail": "4.18945e+60",
+            "with_cross_best_deg": 0,
+            "with_cross_ggm_resid": "1.04326",
+            "without_cross_best_tail": "3.78786e+60",
+            "cross_term_helps": false,
+            "lands": false,
+            "best_coeffs_withcross": [
+              "-2.86417e-22",
+              "0.00891768",
+              "0.699192"
+            ],
+            "per_degree_withcross": [
+              {
+                "deg": 0,
+                "tail_resid": "4.18945e+60",
+                "ggm_resid": "1.04326",
+                "err": null
+              },
+              {
+                "deg": 1,
+                "tail_resid": "1.14847e+64",
+                "ggm_resid": "1.04084",
+                "err": null
+              },
+              {
+                "deg": 2,
+                "tail_resid": "9.91107e+67",
+                "ggm_resid": "1.03857",
+                "err": null
+              },
+              {
+                "deg": 3,
+                "tail_resid": "1.56639e+71",
+                "ggm_resid": "1.03644",
+                "err": null
+              },
+              {
+                "deg": 4,
+                "tail_resid": "1.13067e+75",
+                "ggm_resid": "1.03444",
+                "err": null
+              }
+            ],
+            "per_degree_nocross": [
+              {
+                "deg": 0,
+                "tail_resid": "3.78786e+60",
+                "ggm_resid": "1.04326",
+                "err": null
+              },
+              {
+                "deg": 1,
+                "tail_resid": "2.44543e+63",
+                "ggm_resid": "1.04083",
+                "err": null
+              },
+              {
+                "deg": 2,
+                "tail_resid": "4.77961e+67",
+                "ggm_resid": "1.03857",
+                "err": null
+              },
+              {
+                "deg": 3,
+                "tail_resid": "3.23897e+70",
+                "ggm_resid": "1.03645",
+                "err": null
+              },
+              {
+                "deg": 4,
+                "tail_resid": "7.73088e+73",
+                "ggm_resid": "1.03445",
+                "err": null
+              }
+            ]
+          },
+          "y_b_forward": {
+            "with_cross_best_tail": "1.75126e+59",
+            "with_cross_best_deg": 0,
+            "with_cross_ggm_resid": "1.04326",
+            "without_cross_best_tail": "8.04106e+58",
+            "cross_term_helps": false,
+            "lands": false,
+            "best_coeffs_withcross": [
+              "-2.36471e-23",
+              "0.0112076",
+              "0.17439"
+            ],
+            "per_degree_withcross": [
+              {
+                "deg": 0,
+                "tail_resid": "1.75126e+59",
+                "ggm_resid": "1.04326",
+                "err": null
+              },
+              {
+                "deg": 1,
+                "tail_resid": "1.52882e+64",
+                "ggm_resid": "1.04084",
+                "err": null
+              },
+              {
+                "deg": 2,
+                "tail_resid": "1.14142e+67",
+                "ggm_resid": "1.03857",
+                "err": null
+              },
+              {
+                "deg": 3,
+                "tail_resid": "1.26314e+71",
+                "ggm_resid": "1.03644",
+                "err": null
+              },
+              {
+                "deg": 4,
+                "tail_resid": "1.09358e+75",
+                "ggm_resid": "1.03444",
+                "err": null
+              }
+            ],
+            "per_degree_nocross": [
+              {
+                "deg": 0,
+                "tail_resid": "8.04106e+58",
+                "ggm_resid": "1.04326",
+                "err": null
+              },
+              {
+                "deg": 1,
+                "tail_resid": "9.67092e+63",
+                "ggm_resid": "1.04084",
+                "err": null
+              },
+              {
+                "deg": 2,
+                "tail_resid": "1.56491e+67",
+                "ggm_resid": "1.03857",
+                "err": null
+              },
+              {
+                "deg": 3,
+                "tail_resid": "2.42803e+70",
+                "ggm_resid": "1.03644",
+                "err": null
+              },
+              {
+                "deg": 4,
+                "tail_resid": "4.34362e+73",
+                "ggm_resid": "1.03445",
+                "err": null
+              }
+            ]
+          },
+          "recessive": {
+            "with_cross_best_tail": "4.97524e+109",
+            "with_cross_best_deg": 0,
+            "with_cross_ggm_resid": "1.04326",
+            "without_cross_best_tail": "4.22618e+109",
+            "cross_term_helps": false,
+            "lands": false,
+            "best_coeffs_withcross": [
+              "2.5562e-22",
+              "-0.0125006",
+              "-0.674614"
+            ],
+            "per_degree_withcross": [
+              {
+                "deg": 0,
+                "tail_resid": "4.97524e+109",
+                "ggm_resid": "1.04326",
+                "err": null
+              },
+              {
+                "deg": 1,
+                "tail_resid": "4.33574e+112",
+                "ggm_resid": "1.04084",
+                "err": null
+              },
+              {
+                "deg": 2,
+                "tail_resid": "9.99666e+116",
+                "ggm_resid": "1.03857",
+                "err": null
+              },
+              {
+                "deg": 3,
+                "tail_resid": "3.45675e+119",
+                "ggm_resid": "1.03643",
+                "err": null
+              },
+              {
+                "deg": 4,
+                "tail_resid": "4.2283e+122",
+                "ggm_resid": "1.03439",
+                "err": null
+              }
+            ],
+            "per_degree_nocross": [
+              {
+                "deg": 0,
+                "tail_resid": "4.22618e+109",
+                "ggm_resid": "1.04326",
+                "err": null
+              },
+              {
+                "deg": 1,
+                "tail_resid": "8.23644e+112",
+                "ggm_resid": "1.04084",
+                "err": null
+              },
+              {
+                "deg": 2,
+                "tail_resid": "3.66449e+116",
+                "ggm_resid": "1.03857",
+                "err": null
+              },
+              {
+                "deg": 3,
+                "tail_resid": "6.4599e+119",
+                "ggm_resid": "1.03645",
+                "err": null
+              },
+              {
+                "deg": 4,
+                "tail_resid": "3.86118e+122",
+                "ggm_resid": "1.03445",
+                "err": null
+              }
+            ]
+          }
+        }
+      },
+      {
+        "q": "1.10998",
+        "slopes_theta_gamma": {
+          "fplus_carrier_growing": "0.252614",
+          "fminus_forward_decaying": "-0.262817",
+          "crossterm_fplus_fminus": "-0.0102035",
+          "fplus_sq": "0.505227",
+          "fminus_sq": "-0.525634",
+          "NAIVE_bothforward_cross": "-0.52729",
+          "c1_dom_forward": "-0.262817",
+          "c1_miller_recessive": "-0.465316",
+          "GGM_ya_forward": "0.541635",
+          "GGM_recessive": "-0.535459"
+        },
+        "precondition_slope0_cross_ok": true,
+        "matrix_ansatz": {
+          "y_a_forward": {
+            "with_cross_best_tail": "6.34356e+40",
+            "with_cross_best_deg": 0,
+            "with_cross_ggm_resid": "1.10288",
+            "without_cross_best_tail": "6.12774e+40",
+            "cross_term_helps": false,
+            "lands": false,
+            "best_coeffs_withcross": [
+              "1.36543e-21",
+              "-7.97376",
+              "9.23054"
+            ],
+            "per_degree_withcross": [
+              {
+                "deg": 0,
+                "tail_resid": "6.34356e+40",
+                "ggm_resid": "1.10288",
+                "err": null
+              },
+              {
+                "deg": 1,
+                "tail_resid": "6.77406e+44",
+                "ggm_resid": "1.09251",
+                "err": null
+              },
+              {
+                "deg": 2,
+                "tail_resid": "4.71963e+48",
+                "ggm_resid": "1.0832",
+                "err": null
+              },
+              {
+                "deg": 3,
+                "tail_resid": "3.5604e+52",
+                "ggm_resid": "1.07484",
+                "err": null
+              },
+              {
+                "deg": 4,
+                "tail_resid": "4.78286e+56",
+                "ggm_resid": "1.06733",
+                "err": null
+              }
+            ],
+            "per_degree_nocross": [
+              {
+                "deg": 0,
+                "tail_resid": "6.12774e+40",
+                "ggm_resid": "1.10288",
+                "err": null
+              },
+              {
+                "deg": 1,
+                "tail_resid": "5.88875e+44",
+                "ggm_resid": "1.09251",
+                "err": null
+              },
+              {
+                "deg": 2,
+                "tail_resid": "3.28867e+48",
+                "ggm_resid": "1.0832",
+                "err": null
+              },
+              {
+                "deg": 3,
+                "tail_resid": "1.57281e+52",
+                "ggm_resid": "1.07484",
+                "err": null
+              },
+              {
+                "deg": 4,
+                "tail_resid": "6.85054e+55",
+                "ggm_resid": "1.06733",
+                "err": null
+              }
+            ]
+          },
+          "y_b_forward": {
+            "with_cross_best_tail": "6.34358e+40",
+            "with_cross_best_deg": 0,
+            "with_cross_ggm_resid": "1.10288",
+            "without_cross_best_tail": "6.12774e+40",
+            "cross_term_helps": false,
+            "lands": false,
+            "best_coeffs_withcross": [
+              "-2.16094e-21",
+              "12.6202",
+              "-13.2826"
+            ],
+            "per_degree_withcross": [
+              {
+                "deg": 0,
+                "tail_resid": "6.34358e+40",
+                "ggm_resid": "1.10288",
+                "err": null
+              },
+              {
+                "deg": 1,
+                "tail_resid": "6.77507e+44",
+                "ggm_resid": "1.09251",
+                "err": null
+              },
+              {
+                "deg": 2,
+                "tail_resid": "4.73004e+48",
+                "ggm_resid": "1.0832",
+                "err": null
+              },
+              {
+                "deg": 3,
+                "tail_resid": "3.45802e+52",
+                "ggm_resid": "1.07484",
+                "err": null
+              },
+              {
+                "deg": 4,
+                "tail_resid": "3.76648e+56",
+                "ggm_resid": "1.06733",
+                "err": null
+              }
+            ],
+            "per_degree_nocross": [
+              {
+                "deg": 0,
+                "tail_resid": "6.12774e+40",
+                "ggm_resid": "1.10288",
+                "err": null
+              },
+              {
+                "deg": 1,
+                "tail_resid": "5.88873e+44",
+                "ggm_resid": "1.09251",
+                "err": null
+              },
+              {
+                "deg": 2,
+                "tail_resid": "3.28847e+48",
+                "ggm_resid": "1.0832",
+                "err": null
+              },
+              {
+                "deg": 3,
+                "tail_resid": "1.57148e+52",
+                "ggm_resid": "1.07484",
+                "err": null
+              },
+              {
+                "deg": 4,
+                "tail_resid": "6.79152e+55",
+                "ggm_resid": "1.06733",
+                "err": null
+              }
+            ]
+          },
+          "recessive": {
+            "with_cross_best_tail": "6.27539e+184",
+            "with_cross_best_deg": 0,
+            "with_cross_ggm_resid": "1.10288",
+            "without_cross_best_tail": "3.03391e+183",
+            "cross_term_helps": false,
+            "lands": false,
+            "best_coeffs_withcross": [
+              "-2.93426e-27",
+              "0.000527998",
+              "0.767721"
+            ],
+            "per_degree_withcross": [
+              {
+                "deg": 0,
+                "tail_resid": "6.27539e+184",
+                "ggm_resid": "1.10288",
+                "err": null
+              },
+              {
+                "deg": 1,
+                "tail_resid": "4.22798e+190",
+                "ggm_resid": "1.09251",
+                "err": null
+              },
+              {
+                "deg": 2,
+                "tail_resid": "4.39092e+195",
+                "ggm_resid": "1.0832",
+                "err": null
+              },
+              {
+                "deg": 3,
+                "tail_resid": "4.31962e+200",
+                "ggm_resid": "1.07484",
+                "err": null
+              },
+              {
+                "deg": 4,
+                "tail_resid": "4.28828e+205",
+                "ggm_resid": "1.06733",
+                "err": null
+              }
+            ],
+            "per_degree_nocross": [
+              {
+                "deg": 0,
+                "tail_resid": "3.03391e+183",
+                "ggm_resid": "1.10288",
+                "err": null
+              },
+              {
+                "deg": 1,
+                "tail_resid": "7.53449e+188",
+                "ggm_resid": "1.09251",
+                "err": null
+              },
+              {
+                "deg": 2,
+                "tail_resid": "8.28637e+193",
+                "ggm_resid": "1.0832",
+                "err": null
+              },
+              {
+                "deg": 3,
+                "tail_resid": "5.5991e+198",
+                "ggm_resid": "1.07484",
+                "err": null
+              },
+              {
+                "deg": 4,
+                "tail_resid": "2.49041e+203",
+                "ggm_resid": "1.06733",
+                "err": null
+              }
+            ]
+          }
+        }
+      }
+    ],
+    "any_lands": false,
+    "any_cross_term_helps": false,
+    "all_precondition_slope0_ok": true,
+    "solver_selftest": [
+      {
+        "q": "0.9",
+        "tail_resid": "1.35207e-64",
+        "pass": true
+      },
+      {
+        "q": "1.05",
+        "tail_resid": "3.85805e-59",
+        "pass": true
+      },
+      {
+        "q": "1.10998",
+        "tail_resid": "2.21625e-60",
+        "pass": true
+      }
+    ],
+    "verdict": "SCOPE-(a) REFUTED: PRECONDITION MET: the carrier-lift cross term f+f- is cleanly slope-0 at every q (fixing Door-iii's slope-1 mis-measurement), so the anisoclinic coupler EXISTS; yet the tensor-square matrix ansatz y_m = a(x) f+^2 + b(x) f+f- + c(x) f-^2 with a,b,c polynomials in x=q^m (degree <= 4) does NOT reproduce any GGM solution across the extrapolation tail (O(1) drift) at any tested q. The slope-0 cross term supplies the correct anisoclinic {+1,0,-1} grading and is grabbed by the fit, but the SUB-LEADING theta fine-structure of the GGM sequence is still not reachable from the C1 tensor square -- the matrix M(q^m) that would intertwine them is not rational of low degree. scope-(a) only (this construction alone misses); Door-i owns the module-level (b)-exclusion (isoclinicity), which this tensor route was explicitly outside. Reinforces reading R1: C1's tensor square is a distinct object from the GGM/Stokes carrier. Report: whether the cross term helped is in cross_term_helps per target."
+  },
+  "context": {
+    "bean": "qou-vim1",
+    "audit_doc": "docs/audits/2026-07-20-qlift-doorIV-matrix.md",
+    "owner_insight": "GGM realized WITHIN a matrix / the tensor square C1(x)C1, with the SLOPE-0 cross term f+f- as the off-diagonal anisoclinic coupler a scalar combo structurally cannot provide; the FIX vs Door-iii is to separate the growing branch (q-factorial carrier lift, ~q^{+m^2/4}) from the decaying branch (forward C1, ~q^{-m^2/4}) so f+f- is genuinely slope-0",
+    "builds_on": [
+      "docs/audits/2026-07-20-qlift-doorIII-followup.md (scalar twist + cross-term-lead REFUTED; cross measured at slope -1 because both branches were forward/decaying)",
+      "docs/audits/2026-07-20-qlift-gauge-gap-synthesis.md (Door-i isoclinicity {1/2,1/2} vs {-1,+1}: no MODULE map; NON-module / tensor routes are the surviving carve-out)"
+    ],
+    "ggm_source": "uploads/2012.00062v3.pdf p.14 (eq 49)",
+    "discipline": "scope-(a) vocabulary per AGENTS.md refuted-discipline; pre-stated kill criterion + slope precondition GATE + solver self-test; NON-module tensor realization by design (Door-i excludes module maps, explicitly not this route); the only 'fit' is the polynomial-coefficient solve for the extrapolation kill-test; no AME data; a landing is triple-verified (extrapolation + GGM-recurrence + cross-essential), a refutation measures the residual"
+  }
+}
