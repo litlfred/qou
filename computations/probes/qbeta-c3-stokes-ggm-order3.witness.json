@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "1.3.0",
-  "computedAt": "2026-07-20T16:28:22.943770+00:00",
-  "commitSha": "d75200546682bb93e3a5ba7bb15cd382f4b732b3",
+  "computedAt": "2026-07-20T16:55:35.535089+00:00",
+  "commitSha": "91411eb8434d26f4fdec24311ad3029538e6ebd3",
   "assertions": [
     {
       "name": "ggm_stokes_datum_anchor_invariant",
@@ -38,11 +38,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 23,
+  "durationMs": 26,
   "computation": "qbeta-c3-stokes-ggm-order3",
   "scriptFile": "qbeta_c3_stokes_ggm_order3_probe.py",
   "scriptHash": "b8b25c211208",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "f12892e38ccc49ccb33571ad5898c3b159a842f2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

@@ -30,14 +30,16 @@ NOT fit a c_3 (forbidden; anti-laundering).  It re-confirms the documented
 c_3 cross-anchor swing to certify the falsifiable-honesty test = FAIL (fit).
 """
 import sys, math
-sys.path.insert(0, "tools/qou-substrate/python")
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent.parent / "tools" / "qou-substrate" / "python"))
 from qou_substrate import constants as C  # noqa: E402
 
 try:
     import mpmath as mp
     mp.mp.dps = 60
     HAVE_MP = True
-except Exception:
+except ImportError:
+    mp = None
     HAVE_MP = False
 
 
