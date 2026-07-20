@@ -1,0 +1,144 @@
+{
+  "description": "C1 q-Hermite/q-involution vs C2 GGM eq-49: candidate q-lifts of the proved classical kernel (n+2) b_{n+2} = b_{n+1} + b_n -- structural cross-check, workplan step 2",
+  "computation": "mpmath dps=50; T1 exactness of [n+2]_q b_{n+2} = b_{n+1} + b_n for b_n = I_q(n)/[n]_q!; T2 scalar-gauge quadratic solve + residual scan vs GGM eq-49; T3 bar (q->1/q) covariance checks",
+  "generated": "2026-07-20T03:11:42+00:00",
+  "parameters": {
+    "dps": 50,
+    "tol_exact": "1e-45",
+    "tol_gauge": "1e-30",
+    "n_max_t1": 20,
+    "m_max_t2": 12,
+    "q_values_t1": [
+      "0.9",
+      "0.99",
+      "1.01",
+      "1.05",
+      "1.10998",
+      "1 (classical limit)"
+    ]
+  },
+  "results": {
+    "t1_c1_exactness": {
+      "tolerance": "1e-45",
+      "n_max": 20,
+      "rows": [
+        {
+          "q": "0.9",
+          "max_rel_residual": "1.34e-51",
+          "pass": true
+        },
+        {
+          "q": "0.99",
+          "max_rel_residual": "3.18e-51",
+          "pass": true
+        },
+        {
+          "q": "1.01",
+          "max_rel_residual": "1.62e-51",
+          "pass": true
+        },
+        {
+          "q": "1.05",
+          "max_rel_residual": "1.34e-51",
+          "pass": true
+        },
+        {
+          "q": "1.10998",
+          "max_rel_residual": "6.68e-52",
+          "pass": true
+        },
+        {
+          "q": "1 (classical limit)",
+          "max_rel_residual": "2.47e-51",
+          "pass": true
+        }
+      ],
+      "pass": true,
+      "verdict": "CONSISTENT: c(q)=1 holds to 1e-45 at every tested q incl. q=1.10998 and the q=1 classical limit"
+    },
+    "t2_gauge_comparison": {
+      "q_1.05": {
+        "roots": [
+          {
+            "lambda": "(0.486875 + 0.887667017735j)",
+            "max_rel_residual_m2_to_m11": "0.9139"
+          },
+          {
+            "lambda": "(0.486875 - 0.887667017735j)",
+            "max_rel_residual_m2_to_m11": "0.9139"
+          }
+        ],
+        "gauge_mapped": false
+      },
+      "q_1": {
+        "roots": [
+          {
+            "lambda": "(0.5 + 0.866025403784j)",
+            "max_rel_residual_m2_to_m11": "0.7985"
+          },
+          {
+            "lambda": "(0.5 - 0.866025403784j)",
+            "max_rel_residual_m2_to_m11": "0.7985"
+          }
+        ],
+        "gauge_mapped": false
+      },
+      "verdict": "DISTINCT: the C1 (q-Borel/[n]_q!-normalized) kernel and the C2 (GGM eq-49 q-holonomic normal form) kernel share the order-2 depth and a classical shadow but are NOT related by any scalar gauge b_m -> lam^m b_m (tested both quadratic roots incl. complex lam, q=1.05 and q=1, m<=12); identification, if any, requires a non-scalar (m-dependent) gauge / q-Borel transform -- workplan step 3 territory, not claimed here",
+      "pass": true
+    },
+    "t3_bar_symmetry": {
+      "c1_coeff_covariance": {
+        "identity": "[k]_{1/q} = q^{-(k-1)} [k]_q",
+        "max_rel_err": "9.58e-51",
+        "pass": true
+      },
+      "c1_solution_bar": {
+        "classification": "neither",
+        "ratios_n0_to_n12": [
+          "1.0",
+          "1.0",
+          "1.05",
+          "1.129722222",
+          "1.251601679",
+          "1.428344022",
+          "1.671175893",
+          "2.015030221",
+          "2.488777034",
+          "3.165827065",
+          "4.125285858",
+          "5.531948239",
+          "7.60116169"
+        ],
+        "logq_ratios_n0_to_n12": [
+          "0.0",
+          "0.0",
+          "1.0",
+          "2.4999256",
+          "4.5997811",
+          "7.3071233",
+          "10.525226",
+          "14.360152",
+          "18.688017",
+          "23.619809",
+          "29.045512",
+          "35.059117",
+          "41.571926"
+        ],
+        "note": "b_n is bar-NEITHER even nor odd, and not a single q-power rescale; contrast GGM Thm 9 where the SOLUTIONS G^j_m have proved bar parity G^j_m(1/q) = (-1)^j G^j_m(q)"
+      },
+      "c2_kernel_bar": {
+        "identity": "coeff(1/q, m) = coeff(q, -m); kernel invariant under combined (q->1/q, m->-m), not under q->1/q alone",
+        "max_abs_err": "1.34e-50",
+        "pass": true
+      },
+      "verdict": "C1 kernel: bar-covariant (leading coeff picks up q^{-(n+1)}), solution bar-NEITHER; C2 kernel: bar-invariant only jointly with m -> -m (its solutions carry the proved (-1)^j parity, GGM Thm 9). Bar behaviors are structurally different -- CONSISTENT with the T2 DISTINCT verdict"
+    },
+    "verdict": "T1 CONSISTENT (c(q)=1 exact to 1e-45, incl. q=1.10998); T2 DISTINCT (no scalar gauge maps C1 onto GGM eq-49, q=1.05 and q=1, m<=12); T3 bar behaviors structurally different (C1 solution bar-neither, C2 kernel bar-invariant only with m->-m). Scope-(a): both q-lift candidates remain live; identification would need a non-scalar transform (workplan step 3). Nothing here is 'derived'."
+  },
+  "context": {
+    "workplan": "docs/workplans/2026-07-20-qlift-borel-kernel-workplan.md (step 2)",
+    "literature_check": "docs/audits/2026-07-20-qlift-literature-check.md (S2 c(q)=1 inference; S4 GGM eq-49 verified from uploads/2012.00062v3.pdf pp.14-15)",
+    "classical_kernel_lean": "QOU.Mass.QDifferenceConfluentObstruction.normalized_classical_kernel_exists",
+    "discipline": "scope-(a) structural comparison; no AME data; CONSISTENT/DISTINCT vocabulary only; anti-fit"
+  }
+}
