@@ -36,8 +36,8 @@ Proof"):
       (`QOU.BraidKnot.AJFigureEightAnnihilation.figureEightOperator_annihilates`,
       division-free qZeilberger telescope) once translated to the torus.
     - `division` — skew-Euclidean right-division by `Â` (brick B3
-      `exists_skew_right_division`; two documented `sorry`s in
-      `QuantumTorusDivision`).
+      `exists_skew_right_division`, now **PROVED sorry-free** in
+      `QuantumTorusDivision` — 2026-07-20).
     - `minimality` — `Â` is the minimal-order annihilator ([Tr4, L3.1–3.3]: the
       paper's cited, un-reproved transfer input).
 
@@ -53,9 +53,12 @@ Proof"):
   corpus-PROVED `aj_mem` and the [Tr4] `minimality` wall.
 
 **No `TransferLemmas` instance is provided** — providing one is the open work
-(`aj_mem` needs the torus module action + operator lift; `division` inherits the
-two B3 `sorry`s; `minimality` is the [Tr4] wall).  Per the anti-laundering rule,
-the absence of an instance is the honest "primary conjecture open" state.
+(`aj_mem` needs the torus module action + operator lift; `division` is now
+**discharged sorry-free** by brick B3's `exists_skew_right_division`;
+`minimality` is the [Tr4] wall).  Per the anti-laundering rule, the absence of
+an instance is the honest "primary conjecture open" state — with the B3
+division wall now removed, the two remaining inputs are `aj_mem` and the [Tr4]
+`minimality` transfer.
 
 ## Base ring (§7c)
 
