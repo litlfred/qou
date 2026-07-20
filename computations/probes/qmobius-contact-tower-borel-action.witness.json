@@ -1,0 +1,142 @@
+{
+  "description": "q-M\u00f6bius contact tower vs saddle-predicted Borel action Vol(4_1)/pi \u2014 bean qou-4cb9, PR #4122",
+  "computation": "Kashaev sin-form sum (Lean kashaevProd_eq_sin echo); exact 4x4 volume-limit solve; consecutive-ratio Borel-action inverse on main-witness kappa rungs",
+  "generated": "2026-07-19T17:55:25+00:00",
+  "parameters": {
+    "dps": 80,
+    "C1_band": [
+      "0.6338",
+      "0.6833"
+    ]
+  },
+  "results": {
+    "t1a_exact_anchor": {
+      "kashaev_N2": 5,
+      "abs_jones_at_minus1": 5.0,
+      "determinant": 5,
+      "pass": true
+    },
+    "t1b_sin_form_echo": [
+      {
+        "N": 3,
+        "k": 1,
+        "value": "3.0",
+        "pass": true
+      },
+      {
+        "N": 3,
+        "k": 1,
+        "value": "3.0",
+        "pass": true
+      },
+      {
+        "N": 3,
+        "k": 2,
+        "value": "9.0",
+        "pass": true
+      },
+      {
+        "N": 5,
+        "k": 1,
+        "value": "1.3819660112501051518",
+        "pass": true
+      },
+      {
+        "N": 5,
+        "k": 2,
+        "value": "5.0",
+        "pass": true
+      },
+      {
+        "N": 5,
+        "k": 4,
+        "value": "25.0",
+        "pass": true
+      },
+      {
+        "N": 8,
+        "k": 1,
+        "value": "0.5857864376269049512",
+        "pass": true
+      },
+      {
+        "N": 8,
+        "k": 4,
+        "value": "16.0",
+        "pass": true
+      },
+      {
+        "N": 8,
+        "k": 7,
+        "value": "64.0",
+        "pass": true
+      }
+    ],
+    "t2_volume_limit": {
+      "grid_primary": [
+        200,
+        400,
+        800,
+        1600
+      ],
+      "grid_secondary": [
+        150,
+        300,
+        600,
+        1200
+      ],
+      "vol_estimate_2pi_a": "2.0298831569252316506",
+      "vol_target_2cl2_pi3": "2.02988321281930725",
+      "abs_error": "5.58941e-8",
+      "two_grid_spread": "7.83021e-8",
+      "b_exponent_estimate": "1.500017913",
+      "b_expected": "3/2 (diagnostic only)",
+      "b_secondary": "1.500032221",
+      "pass": true
+    },
+    "t3_borel_action": {
+      "ratio_ladder": [
+        {
+          "pair": [
+            4,
+            5
+          ],
+          "A": "0.65324687258",
+          "beta": "0.22246509"
+        },
+        {
+          "pair": [
+            5,
+            6
+          ],
+          "A": "0.651917914918",
+          "beta": "0.21387496"
+        }
+      ],
+      "A_range_with_digit_propagation": [
+        "0.6519179146",
+        "0.6532468729"
+      ],
+      "dA_from_kappa6_confidence": "3.399e-10",
+      "vol_over_pi_target": "0.646131894438901",
+      "target_in_ladder_range": false,
+      "target_in_C1_band": true,
+      "pass": true
+    },
+    "exact_anchors_pass": true,
+    "verdict": "CONSISTENT scope-(a): the q-M\u00f6bius contact tower anchors on the fundamental Jones datum (T1), grows at the E3-proved saddle value 2*Cl2(pi/3) (T2), and its Ohtsuki-ladder Borel action is consistent with the saddle-predicted Vol(4_1)/pi (T3). NOT 'derived': tier upgrade awaits the E4/E5 saddle bricks."
+  },
+  "context": {
+    "audit": "docs/audits/2026-07-19-jets-alien-qmobius-bring-interaction.md \u00a74",
+    "lean_anchors": [
+      "QOU.Braiding.JonesMobiusDiagonal.markov_eq_mobius_contact",
+      "QOU.Knot.FigureEightVolume.kashaevProd_eq_sin",
+      "QOU.Knot.FigureEightVolume.saddle_critical_point"
+    ],
+    "kappa_source": "origin/main docs/audits/scripts/qbeta-even-borel-singularity.witness.json (commit 4c4a936) via qbeta_kappa_large_order_bridge_probe.py",
+    "siblings": [
+      "PR #4120 (G3 pentagon-rigidity prune)",
+      "PR #4121 (E4c saddle bricks)"
+    ]
+  }
+}
