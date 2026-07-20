@@ -87,28 +87,63 @@ hold both without prematurely collapsing them:
 Distinguishing R1 from R2 is exactly Door-i's job (§4). Neither is asserted
 here; both are recorded so the next agent does not over-collapse to one.
 
-## 4. The one surviving bridge door (Door-i, under investigation)
+## 4. Door-i RESOLVED — (c) OBSTRUCTED: no q-difference-module transform bridges them
 
-Only a **slope-changing analytic (transcendental) summation functor** — not
-any formal or algebraic transform — can connect `½` to `{−1,+1}` (RSZ ch. 5
-q-summation / q-Stokes). The half-integer slope specifically suggests a
-**ramified pullback `x → x^{1/2}` (a 2-cover)**, after which the slope `½`
-becomes integral and *could* match the GGM ±1 datum. Bean `qou-jwbq` /
-[`doorI audit`](2026-07-20-qlift-doorI-analytic-summation.md) (in progress)
-decides: (a) realizable by one q-summation, (b) realizable after the
-ramified pullback, or (c) obstructed even analytically (which would promote
-R1 to near-certainty and re-scope the conjecture's GGM clause).
+Door-i is closed ([`doorI audit`](2026-07-20-qlift-doorI-analytic-summation.md),
+bean `qou-jwbq`), and the verdict is **(c) obstruction — even analytic
+summation and ramified pullback fail.** The decisive invariant is
+**isoclinicity**:
+
+- RSZ ch. 5 analytic q-Borel–Laplace summation stays *inside one formal
+  class*: it realizes a module with fixed `gr M`, indexed by q-Stokes data
+  (Thm 5.5.7: Stokes matrices are unipotent on `gr`; §2.3: formal class =
+  `gr M`). **Summation never changes the slope multiset.**
+- C1 at ∞ is **pure isoclinic** `{½,½}` (irreducible `E(2,1,·)`); GGM is
+  **anisoclinic** `{−1,+1}`. Different `gr` ⇒ no summation functor bridges
+  them.
+- Ramified pullback `x → x^{1/ℓ}` scales slopes *uniformly* (Thm 2.2.1(iv)):
+  `{½,½} → {ℓ/2, ℓ/2}` — an **equal pair for every ℓ**, which can never
+  equal the distinct pair `{−1,+1}`. (ℓ=2 lands C1 on pure isoclinic slope
+  1, still one slope.) **Isoclinicity survives summation, Borel shear, and
+  ramification** — it is the permanent obstruction.
+
+So **no q-difference-module transform of any kind — meromorphic gauge
+(Route A), formal q-Borel weight (Route D), analytic q-summation, or
+ramified pullback (Door-i) — maps C1 to GGM.** The only carve-outs left are
+non-module maps (arbitrary sequence-level identifications, inhomogeneous
+correspondences), which lie *outside* q-difference-module theory entirely
+and carry none of the structural meaning the conjecture intends.
+
+**This promotes R1 (§3) to the favored reading** and refutes, at the module
+level, the conjecture's literal "identify with the GGM Stokes datum" clause:
+the binding q-lift kernel C1 is a genuinely distinct object — its own
+pure-isoclinic Gevrey-½ module — not a transform of the colored-Jones /
+Stokes carrier. Re-scoping the conjecture accordingly is an owner-level
+framing decision (see §5).
 
 ## 5. Effect on the conjecture
 
-`conj:qdifference-kernel-prolongation-symbol` stays a conjecture. Its
-`authorNotes` is extended with the four-route verdict: the *algebraic*
-identification (any meromorphic gauge, any formal Borel weight) is
-**excluded**; the identification, if it exists, is necessarily an
-*analytic/ramified* summation (Door-i), and the live possibility R1 (C1
-itself is the carrier, GGM a distinct face) must be weighed. This sharpens
-the conjecture from "find the transform" to "decide R1 vs R2 and, under R2,
-exhibit the analytic summation" — a falsifiable, well-posed target.
+`conj:qdifference-kernel-prolongation-symbol` stays a conjecture, but its
+content is now sharply constrained. **Five routes** (A slopes, B theta-growth,
+C module-embedding, D formal q-Borel, Door-i analytic summation + ramified
+pullback) exclude *every* q-difference-module identification of C1 with GGM,
+the last by a permanent invariant (isoclinicity). The honest options for the
+block, an **owner-level framing decision**:
+
+- **(F1) Re-scope to R1** — rewrite the conjecture as "the prolongation
+  symbol is the binding module C1 (`qlift_normalized_kernel_exists`)", and
+  demote the GGM/Stokes identification to a *separate, distinct-face*
+  relationship (or drop it). This is the reading the five routes favor.
+- **(F2) Keep both, mark the GGM clause module-refuted** — retain the
+  conjecture but annotate that the C1↔GGM identification is excluded as
+  q-difference modules, leaving only non-module correspondences as the
+  (weak, structure-free) surviving possibility.
+- **(F3) Split** — one conjecture for "C1 is the prolongation carrier"
+  (well-posed, R1), one for "C1 and GGM are two faces of one order-≥3 SW
+  object" (R2, Route C's `L3` embedding target).
+
+The `authorNotes` records the five-route verdict; the choice among F1–F3 is
+deferred to the owner (it rewrites the conjecture's core claim).
 
 ## 6. Discipline
 
