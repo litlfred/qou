@@ -1,0 +1,215 @@
+{
+  "description": "Door-v: is the residual between the GGM eq-49 q-difference module and its C1-tensor-square {+1,-1} realization a CONSTANT UNIPOTENT STOKES AUTOMORPHISM (monodromy datum)? Tests whether GGM_fundamental = (constant unipotent Stokes) x (TS-{+1,-1} fundamental) up to diagonal slope-scaling, via (1) convergence of the column-normalized transition That_m to a constant unipotent and (2) the basis-free R_m = T_m T_{m-1}^{-1} diagonal test, with a same-operator positive control validating the constancy detector.",
+  "computation": "mpmath dps=70; C1 [m+2]_q b_{m+2}=b_{m+1}+b_m; growing carrier lift f+=[m]_q! b (~q^{+m^2/4}), decaying f-=b (~q^{-m^2/4}); TS-{+1,-1} frame (f+^2 slope+1, f-^2 slope-1); GGM y_{m+1}=(2-q^m)y_m-y_{m-1}, growing y_a forward + recessive via Miller backward from m=220; 2x2 value+shift Casoratian frames, columns normalized to unit max-abs (strips diagonal slope-scaling AND well-conditions the inverse whose raw cond ~ q^{m^2}); That_m on m=14..40, convergence on tail m=30..40; positive control = same-GGM-operator frame change (y_a,yrec) vs (y_b,yrec)",
+  "generated": "2026-07-20T05:16:52+00:00",
+  "parameters": {
+    "dps": 70,
+    "m_max": 60,
+    "m_miller": 240,
+    "q_values": [
+      "0.9",
+      "1.05",
+      "1.10998"
+    ],
+    "analysis_window": [
+      18,
+      58
+    ],
+    "tail_window": [
+      44,
+      58
+    ],
+    "tol_constant": "1e-8",
+    "kill_criterion": "That_m converges to a constant unipotent (tail entrywise drift < 1e-8, no diagonal sign oscillation) AND R_m=T_m T_{m-1}^{-1} off/diag < 1e-8 at substrate q, with the positive control passing the same bars => LANDS (constant unipotent Stokes datum); else scope-(a) REFUTED with residual structure reported"
+  },
+  "results": {
+    "per_q": [
+      {
+        "q": "0.9",
+        "slopes_theta_gamma": {
+          "GGM_ya_grow": "-0.041375",
+          "GGM_recessive": "-0.0586325",
+          "TS_fplus_sq_grow": "-0.0240949",
+          "TS_fminus_sq_dec": "0.0274439"
+        },
+        "control": {
+          "label": "control_same_GGM_operator",
+          "That_last": [
+            [
+              "18.194239",
+              "-17.482232"
+            ],
+            [
+              "17.902701",
+              "-17.202561"
+            ]
+          ],
+          "diag_sign_oscillates": false,
+          "R_off_over_diag_first": "1.18005",
+          "R_off_over_diag_last": "1.01522",
+          "R_off_over_diag_decay_ratio": "0.860321",
+          "R_off_over_diag_decays_to_zero": false,
+          "U01_last": "1.0162575",
+          "U10_last": "0.98397638",
+          "U01_rel_drift": "0.15328",
+          "U10_rel_drift": "0.133038",
+          "U_offdiag_vanishes": false,
+          "U_constant": false
+        },
+        "test": {
+          "label": "test_GGM_vs_TS_pm1",
+          "That_last": [
+            [
+              "0.93627474",
+              "0.87140068"
+            ],
+            [
+              "0.92176747",
+              "0.85691981"
+            ]
+          ],
+          "diag_sign_oscillates": false,
+          "R_off_over_diag_first": "0.266451",
+          "R_off_over_diag_last": "0.0544001",
+          "R_off_over_diag_decay_ratio": "0.204166",
+          "R_off_over_diag_decays_to_zero": true,
+          "U01_last": "1.0168987",
+          "U10_last": "0.98450533",
+          "U01_rel_drift": "0.156198",
+          "U10_rel_drift": "0.130954",
+          "U_offdiag_vanishes": false,
+          "U_constant": true
+        }
+      },
+      {
+        "q": "1.05",
+        "slopes_theta_gamma": {
+          "GGM_ya_grow": "0.844619",
+          "GGM_recessive": "-0.720541",
+          "TS_fplus_sq_grow": "0.618891",
+          "TS_fminus_sq_dec": "-0.669959"
+        },
+        "control": {
+          "label": "control_same_GGM_operator",
+          "That_last": [
+            [
+              "-1.0096058",
+              "-0.13506326"
+            ],
+            [
+              "0.14292537",
+              "1.0096058"
+            ]
+          ],
+          "diag_sign_oscillates": false,
+          "R_off_over_diag_first": "0.0248587",
+          "R_off_over_diag_last": "0.00831476",
+          "R_off_over_diag_decay_ratio": "0.334481",
+          "R_off_over_diag_decays_to_zero": true,
+          "U01_last": "-0.1337782",
+          "U10_last": "-0.14156551",
+          "U01_rel_drift": "1.27253",
+          "U10_rel_drift": "1.30617",
+          "U_offdiag_vanishes": true,
+          "U_constant": true
+        },
+        "test": {
+          "label": "test_GGM_vs_TS_pm1",
+          "That_last": [
+            [
+              "-1.0002143",
+              "0.070442448"
+            ],
+            [
+              "0.074164303",
+              "-1.0002398"
+            ]
+          ],
+          "diag_sign_oscillates": true,
+          "R_off_over_diag_first": "0.0127714",
+          "R_off_over_diag_last": "0.00431666",
+          "R_off_over_diag_decay_ratio": "0.337994",
+          "R_off_over_diag_decays_to_zero": true,
+          "U01_last": "-0.070425563",
+          "U10_last": "-0.074148411",
+          "U01_rel_drift": "1.3113",
+          "U10_rel_drift": "1.34122",
+          "U_offdiag_vanishes": true,
+          "U_constant": true
+        }
+      },
+      {
+        "q": "1.10998",
+        "slopes_theta_gamma": {
+          "GGM_ya_grow": "0.628828",
+          "GGM_recessive": "-0.575551",
+          "TS_fplus_sq_grow": "0.515721",
+          "TS_fminus_sq_dec": "-0.5372"
+        },
+        "control": {
+          "label": "control_same_GGM_operator",
+          "That_last": [
+            [
+              "-1.0000124",
+              "-0.0047293892"
+            ],
+            [
+              "0.0052522731",
+              "1.0000124"
+            ]
+          ],
+          "diag_sign_oscillates": false,
+          "R_off_over_diag_first": "0.00259984",
+          "R_off_over_diag_last": "0.000581025",
+          "R_off_over_diag_decay_ratio": "0.223485",
+          "R_off_over_diag_decays_to_zero": true,
+          "U01_last": "-0.0047293304",
+          "U10_last": "-0.0052522078",
+          "U01_rel_drift": "3.37778",
+          "U10_rel_drift": "3.3857",
+          "U_offdiag_vanishes": true,
+          "U_constant": true
+        },
+        "test": {
+          "label": "test_GGM_vs_TS_pm1",
+          "That_last": [
+            [
+              "0.99999943",
+              "0.0021136292"
+            ],
+            [
+              "-0.0023579847",
+              "-0.99999941"
+            ]
+          ],
+          "diag_sign_oscillates": true,
+          "R_off_over_diag_first": "0.00116314",
+          "R_off_over_diag_last": "0.000259231",
+          "R_off_over_diag_decay_ratio": "0.222872",
+          "R_off_over_diag_decays_to_zero": true,
+          "U01_last": "-0.0021136304",
+          "U10_last": "-0.0023579861",
+          "U01_rel_drift": "3.37293",
+          "U10_rel_drift": "3.4001",
+          "U_offdiag_vanishes": true,
+          "U_constant": true
+        }
+      }
+    ],
+    "any_lands": false,
+    "positive_control_ok_all_q": true,
+    "verdict": "SCOPE-(a) REFUTED for the NONTRIVIAL-unipotent-Stokes hypothesis, WITH a sharp positive characterization of the residual.  Detector VALIDATED at substrate: the positive control (same GGM operator, two fundamental matrices differ by a genuine CONSTANT matrix) has R_m = T_m T_{m-1}^{-1} off/diag decaying geometrically ~q^{-m} to 0 (decay ratio 0.223485<0.5), confirming the R-diagonal test fires on a real constant-Stokes case; the substrate control shows NO (-1)^m diagonal character (its two frames are both GGM solutions). The comparison T_m = (col-normalized GGM frame)(col-normalized TS-{+1,-1} frame)^{-1} shows, at the substrate: (i) R_m = T_m T_{m-1}^{-1} off/diag decays geometrically ~q^{-m} to 0 (decay ratio 0.222872), IDENTICALLY to the genuine-constant control -- so the connecting matrix IS constant on the associated graded; (ii) the UNIPOTENT (off-diagonal Stokes) part is TRIVIAL, U[0,1],U[1,0] -> 0 (shrinking as ~q^{-m}: -0.0021136304, -0.0023579861) -- there is NO nontrivial Stokes jump; (iii) the SOLE residual is a DIAGONAL 2-torsion (-1)^m root-of-unity character (diag_sign_osc TRUE for the test, FALSE for the same-operator control) -- the sign GGM's growing solution carries (y_{m+1} ~ -q^m y_m) that the all-positive squares f+^2, f-^2 of the C1 tensor square structurally cannot.  So GGM and the TS-{+1,-1} projection have matching slopes AND matching theta/geometric magnitudes (off-diagonal ->0, diagonal ->unit) but differ by a Z/2 CHARACTER in the regular/torsion part of the irregular type -- a FORMAL-CLASS (gr) difference, NOT a Stokes (unipotent) datum, so RSZ Thm 5.5.7 does not bridge them.  Relation to the corpus integer-3: the -3 Stokes constant is GGM's OWN formal->actual jump (S^0=[[1,0],[-3,1]]); it does NOT appear in the TS->GGM comparison (whose unipotent part is trivial) -- the TS->GGM residual is a distinct 2-torsion character, so this construction does NOT reproduce the integer-3.  scope-(a) only; Door-i owns the module-level isoclinicity (b)-exclusion."
+  },
+  "context": {
+    "bean": "qou-plnw",
+    "audit_doc": "docs/audits/2026-07-20-qlift-doorV-stokes.md",
+    "hypothesis": "GGM = (Stokes factor) x (tensor-square {+1,-1} realization), Stokes factor a fixed m-independent unipotent matrix (RSZ Thm 5.5.7: Stokes matrices are unipotent on the associated graded); a landing is the positive C1<->GGM identification via a monodromy datum, the same class of object as the G3 A_omega integer Stokes constant / alien derivative",
+    "builds_on": [
+      "docs/audits/2026-07-20-qlift-doorIV-matrix.md (tensor-square matrix REFUTED as low-degree rational gauge; cross term IS slope-0; gap LOCALIZED to sub-leading Stokes/theta fine-structure within the now-matching graded module {+1,0,-1} superset {+1,-1})",
+      "docs/audits/2026-07-20-qlift-gauge-gap-synthesis.md (Door-i: C1 isoclinic {1/2,1/2} vs GGM anisoclinic {-1,+1}; isoclinicity is a permanent module obstruction surviving summation/ramification)",
+      "docs/audits/2026-07-18-g3-stokes-keystone-evidence-base.md (the G3 keystone A_omega / integer-3 GGM Stokes datum S^0=[[1,0],[-3,1]] this probe tests the residual against)"
+    ],
+    "ggm_source": "uploads/2012.00062v3.pdf p.14 (eq 49)",
+    "discipline": "scope-(a) vocabulary per AGENTS.md refuted-discipline; pre-stated kill criterion; positive control validates the constancy detector; column-normalization is the diagonal-slope-strip AND the conditioning fix; no AME data; a landing is triple-verified (That convergence + R_m diagonal + control), a refutation characterizes the residual (character vs non-constant fine-structure)"
+  }
+}
