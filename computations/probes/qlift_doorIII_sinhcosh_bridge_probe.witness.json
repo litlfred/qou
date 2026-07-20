@@ -1,0 +1,278 @@
+{
+  "description": "Door-iii sinh/cosh (bar-even/odd) NON-module bridge C1^2 -> GGM eq-49: does a fixed m-independent linear combination of the C1 symmetric-square sequences {f+^2,f+f-,f-^2} and their bar-conjugates (q->1/q) reproduce the GGM solutions?",
+  "computation": "mpmath dps=60; C1 [m+2]_q b_{m+2}=b_{m+1}+b_m and GGM y_{m+1}=(2-q^m)y_m-y_{m-1}, m=0..50; two independent C1 solutions squared into a rank-3 sym^2 basis + bar (1/q) copy -> 6-col basis; column-scaled least-squares fit on m=0..14, extrapolation residual on m=34..50; TEST B extracts GGM's minimal (forward-decaying) solution by Miller backward recursion from m=140 and tests it against the 3-col unbarred sym^2 basis (slope-matched)",
+  "generated": "2026-07-20T04:04:27+00:00",
+  "parameters": {
+    "dps": 60,
+    "m_max": 50,
+    "n_fit": 14,
+    "tail_window": [
+      34,
+      50
+    ],
+    "m_miller": 140,
+    "q_values": [
+      "0.9",
+      "1.05",
+      "1.10998"
+    ],
+    "tol_consistent": "1e-40",
+    "kill_criterion": "tail relative residual < 1e-40 => CONSISTENT (bridge lands); O(1) drift => REFUTED at that q"
+  },
+  "results": {
+    "per_q": [
+      {
+        "q": "0.9",
+        "test_A_forward": {
+          "y_a": {
+            "coeffs": [
+              "9784.3229",
+              "-10401.842",
+              "2820.5306",
+              "-9783.3242",
+              "9879.6552",
+              "-2820.5255"
+            ],
+            "bar_even": [
+              "0.49933804",
+              "-261.09342",
+              "0.0025550562"
+            ],
+            "bar_odd": [
+              "9783.8235",
+              "-10140.749",
+              "2820.5281"
+            ],
+            "tail_rel_residual": "1.0",
+            "tail_abs_residual": "3.78655",
+            "consistent": false
+          },
+          "y_b": {
+            "coeffs": [
+              "-8707.4962",
+              "9218.7673",
+              "-2507.3353",
+              "8707.4966",
+              "-8746.6584",
+              "2508.3337"
+            ],
+            "bar_even": [
+              "0.00020819172",
+              "236.05447",
+              "0.49916677"
+            ],
+            "bar_odd": [
+              "-8707.4964",
+              "8982.7129",
+              "-2507.8345"
+            ],
+            "tail_rel_residual": "1.0",
+            "tail_abs_residual": "3.34131",
+            "consistent": false
+          }
+        },
+        "test_B_recessive": {
+          "recessive_recursion_residual": "2.33363e-61",
+          "coeffs_sym2_3": [
+            "0.23293098",
+            "-1.266562",
+            "-0.06698081"
+          ],
+          "tail_rel_residual_3col": "1.0",
+          "tail_rel_residual_6col": "1.0",
+          "consistent_3col": false,
+          "consistent_6col": false
+        },
+        "growth_diagnostics": {
+          "C1_fplus_theta_gamma": "0.010867",
+          "sym2_fplus2_theta_gamma": "0.021734",
+          "GGM_ya_theta_gamma": "-0.077529",
+          "GGM_recessive_theta_gamma": "-0.099516"
+        }
+      },
+      {
+        "q": "1.05",
+        "test_A_forward": {
+          "y_a": {
+            "coeffs": [
+              "-12431.693",
+              "12712.569",
+              "-3567.5231",
+              "12432.693",
+              "-13022.951",
+              "3567.5219"
+            ],
+            "bar_even": [
+              "0.50017149",
+              "-155.19101",
+              "-0.00058294795"
+            ],
+            "bar_odd": [
+              "-12432.193",
+              "12867.76",
+              "-3567.5225"
+            ],
+            "tail_rel_residual": "1.0",
+            "tail_abs_residual": "8.29752e+12",
+            "consistent": false
+          },
+          "y_b": {
+            "coeffs": [
+              "-2307.9891",
+              "2498.9195",
+              "-686.05443",
+              "2307.9878",
+              "-2542.308",
+              "687.0592"
+            ],
+            "bar_even": [
+              "-0.000636478",
+              "-21.694266",
+              "0.5023853"
+            ],
+            "bar_odd": [
+              "-2307.9885",
+              "2520.6138",
+              "-686.55682"
+            ],
+            "tail_rel_residual": "1.0",
+            "tail_abs_residual": "1.63883e+13",
+            "consistent": false
+          }
+        },
+        "test_B_recessive": {
+          "recessive_recursion_residual": "7.77877e-62",
+          "coeffs_sym2_3": [
+            "-0.88708367",
+            "3.9246156",
+            "-0.34123896"
+          ],
+          "tail_rel_residual_3col": "1.0",
+          "tail_rel_residual_6col": "1.0",
+          "consistent_3col": false,
+          "consistent_6col": false
+        },
+        "growth_diagnostics": {
+          "C1_fplus_theta_gamma": "-0.33077",
+          "sym2_fplus2_theta_gamma": "-0.66154",
+          "GGM_ya_theta_gamma": "0.83512",
+          "GGM_recessive_theta_gamma": "-0.3673"
+        }
+      },
+      {
+        "q": "1.10998",
+        "test_A_forward": {
+          "y_a": {
+            "coeffs": [
+              "-4042.9343",
+              "4031.3238",
+              "-1152.6802",
+              "4043.9353",
+              "-4255.2443",
+              "1152.6766"
+            ],
+            "bar_even": [
+              "0.50046698",
+              "-111.96026",
+              "-0.001790972"
+            ],
+            "bar_odd": [
+              "-4043.4348",
+              "4143.284",
+              "-1152.6784"
+            ],
+            "tail_rel_residual": "1.0",
+            "tail_abs_residual": "4.88121e+48",
+            "consistent": false
+          },
+          "y_b": {
+            "coeffs": [
+              "-4771.8257",
+              "4879.8629",
+              "-1385.5437",
+              "4771.8246",
+              "-5118.2489",
+              "1386.5481"
+            ],
+            "bar_even": [
+              "-0.00055064264",
+              "-119.19302",
+              "0.50217342"
+            ],
+            "bar_odd": [
+              "-4771.8252",
+              "4999.0559",
+              "-1386.0459"
+            ],
+            "tail_rel_residual": "1.0",
+            "tail_abs_residual": "7.72501e+48",
+            "consistent": false
+          }
+        },
+        "test_B_recessive": {
+          "recessive_recursion_residual": "1.55575e-61",
+          "coeffs_sym2_3": [
+            "0.94664381",
+            "-4.1064866",
+            "0.48491935"
+          ],
+          "tail_rel_residual_3col": "1.0",
+          "tail_rel_residual_6col": "2.66863e+15",
+          "consistent_3col": false,
+          "consistent_6col": false
+        },
+        "growth_diagnostics": {
+          "C1_fplus_theta_gamma": "-0.26632",
+          "sym2_fplus2_theta_gamma": "-0.53265",
+          "GGM_ya_theta_gamma": "0.55565",
+          "GGM_recessive_theta_gamma": "-0.5473"
+        }
+      }
+    ],
+    "any_consistent": false,
+    "solver_selftest": [
+      {
+        "q": "0.9",
+        "recovered_coeffs": [
+          "2.0",
+          "-3.0",
+          "0.5"
+        ],
+        "tail_rel_residual": "4.35649e-61",
+        "pass": true
+      },
+      {
+        "q": "1.05",
+        "recovered_coeffs": [
+          "2.0",
+          "-3.0",
+          "0.5"
+        ],
+        "tail_rel_residual": "1.55493e-61",
+        "pass": true
+      },
+      {
+        "q": "1.10998",
+        "recovered_coeffs": [
+          "2.0",
+          "-3.0",
+          "0.5"
+        ],
+        "tail_rel_residual": "0.0",
+        "pass": true
+      }
+    ],
+    "verdict": "SCOPE-(a) REFUTED: at every tested q NO fixed (m-independent) linear combination of the C1 sym^2 or bar-sym^2 sequences reproduces the GGM solutions across the extrapolation tail (residual O(1) drift). The specific sinh/cosh bar-even/odd sym^2 construction, ALONE, does not reproduce GGM; the growth diagnostics record the leading-order mismatch (see growth_diagnostics per q). This does NOT exclude other non-module identifications -- it measures the size of the miss for THIS construction only. No scope-(b) claim (Door-i already supplies the module-level isoclinicity exclusion)."
+  },
+  "context": {
+    "bean": "qou-ceg6",
+    "audit_doc": "docs/audits/2026-07-20-qlift-doorIII-sinhcosh-bridge.md",
+    "builds_on": [
+      "docs/audits/2026-07-20-qlift-gauge-gap-synthesis.md (five routes: C1 != GGM as q-difference modules)",
+      "docs/audits/2026-07-20-qlift-doorI-analytic-summation.md (isoclinicity: no module map bridges them; NON-module maps explicitly left as the only carve-out)"
+    ],
+    "ggm_source": "uploads/2012.00062v3.pdf p.14 (eq 49)",
+    "hypothesis": "GGM solutions are the bar-even (cosh) / bar-odd (sinh) combinations of the SQUARES of C1 solutions (slope-1/2 products -> slope-1); 2*(1/2)=1",
+    "discipline": "scope-(a) vocabulary per AGENTS.md refuted-discipline; pre-stated kill criterion; NON-module correspondence by design (Door-i excludes module maps); the only 'fit' is the m-independent linear coefficient solve whose sole purpose is the extrapolation kill-test; no AME data"
+  }
+}
