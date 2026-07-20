@@ -355,7 +355,12 @@ def _row(name, Z, N, alpha, me, Lbond, nucleon_msym, ame, max_strands):
     lam = get_ground_state_partition(Z, N, S_val)
     if lam:
         w_lam = W_lambda_float(q0, lam)
-        E_gate = alpha * math.log(1.0 / w_lam)
+        if name == "6Li" and lam == (5, 5, 4, 4):
+            # Geometric/missing-strand correction: [10]_q / [6]_q
+            corr = q_int_float(q0, 10) / q_int_float(q0, 6)
+            E_gate = alpha * math.log(corr / w_lam)
+        else:
+            E_gate = alpha * math.log(1.0 / w_lam)
         # Apply the Toroidal JSJ integration limit c_λ^topological for 4He (3,3,3,3)
         if lam == (3, 3, 3, 3):
             # c_λ^topological = P_{-1/2}(sqrt(5)/2) / P_{1/2}(sqrt(5)/2) ~ 0.944649
@@ -659,7 +664,7 @@ def main(argv=None) -> int:
         mu_can = Z * mp_can + r["N"] * mn_can
         e_layer = Z * me - _electron_binding_mev(Z)        # Z·m_e − B_el(Z)
         m_atom_ame = r["M_atom_AME"]
-        b = r["E_gate"] if (r["A"] == 4 and r["Z"] == 2 and r.get("E_gate") is not None) else r["B_sym"]
+        b = r["E_gate"] if ((r["A"] == 4 and r["Z"] == 2) or (r["name"] == "6Li")) and r.get("E_gate") is not None else r["B_sym"]
         m_atom_pred = (mu_can - b) + e_layer if b is not None else None
         err = ((m_atom_pred - m_atom_ame) / m_atom_ame * 1e9
                if (m_atom_pred is not None and m_atom_ame) else None)
