@@ -41,6 +41,7 @@
 
 import Mathlib.Tactic
 import Mathlib.Analysis.SpecialFunctions.Log.Basic
+import Mathlib.Analysis.SpecialFunctions.Pow.Real
 import Mathlib.Analysis.SpecificLimits.Basic
 import Mathlib.Analysis.Normed.Field.Lemmas
 
@@ -265,5 +266,129 @@ theorem cauchyMul_order {q s t : ℝ} {a b : ℕ → K}
   --      q-difference systems.  Upper bound: cauchyMul_norm_le_sum +
   --      exponent_le_envelope + ε-δ; lower bound: + non-cancellation.
   sorry
+
+/-! ### MI-3 — bound-form extraction and the θ = ½·C(m,2) payoff bridge
+
+    Two consumptions of the MI-1/MI-2 infra, both proved sorry-free.
+
+    (a) **Bound-form extraction.**  The limit-form `IsQGevreyOrder` yields a
+        two-sided *eventual bound* on the leading Gaussian coefficient — the
+        `ε`-`δ` step the `≤` direction of `cauchyMul_order` explicitly cites.
+        This is only the LIMIT ⟹ BOUND direction; the reverse (BOUND ⟹ LIMIT)
+        is genuinely FALSE (a bound controls only the `limsup`/`liminf`, not the
+        limit), so there is no full equivalence to state — recorded honestly,
+        not axiomatised.
+
+    (b) **θ = ½·C(m,2) payoff bridge (Tier-2 #4).**  The Route-B binding kernel
+        has proved growth `q^{m²/4}` (docs/audits/2026-07-20-theta-jet-gb-
+        filtration.md).  Since `IsQGevreyOrder q s a` reads `‖a n‖ ∼ q^{s n²/2}`,
+        that growth is order `s = ½` (`routeB_gaussian_order_half`).  The GS
+        cumulative degree `C(m,2) = m(m−1)/2` (corpus `gs_cumulative_degree`,
+        `QOU.Mass.ThetaSlopeArithmetic`) has leading Gaussian coefficient `½`
+        (`gs_degree_leading_coeff_half`).  The **single value `½`** is thus
+        simultaneously the Route-B q-Gevrey order and the GS-degree leading
+        coefficient (`theta_eq_half_gs_bridge`) — and `½·(½) = ¼` is exactly the
+        θ-coefficient of the `q^{m²/4}` exponent, closing the numerical
+        `θ = ½·C(m,2)` identity at the level of leading coefficients.  What
+        stays probe-only is that the kernel's *actual* coefficient sequence
+        realises this order (the RSZ slope=order theorem, MI-2's harder
+        direction); this bridge compiles the leading-coefficient arithmetic, not
+        that identification. -/
+
+/-- **[MI-3(a), sorry-free] Limit form ⟹ eventual upper bound.**  If `a` has
+    q-Gevrey order `s`, then for every `ε > 0` the leading Gaussian coefficient
+    is eventually `≤ s + ε`.  Equivalently `‖a n‖ ≤ q^{(s+ε) n²/2}` eventually —
+    the one-sided envelope the `≤` direction of `cauchyMul_order` extracts from
+    the defining limit. -/
+theorem order_eventually_le {q s : ℝ} {a : ℕ → K}
+    (ha : IsQGevreyOrder q s a) {ε : ℝ} (hε : 0 < ε) :
+    ∀ᶠ n in atTop, 2 * logb q ‖a n‖ / (n : ℝ) ^ 2 ≤ s + ε := by
+  have hmem : ∀ᶠ y in 𝓝 s, y ≤ s + ε := by
+    filter_upwards [Iio_mem_nhds (show s < s + ε by linarith)] with y hy
+    exact le_of_lt hy
+  exact ha.eventually hmem
+
+/-- **[MI-3(a), sorry-free] Limit form ⟹ eventual lower bound.**  Dually, for
+    every `ε > 0` the leading Gaussian coefficient is eventually `≥ s − ε`.
+    Together with `order_eventually_le` this is the full two-sided bound form. -/
+theorem order_eventually_ge {q s : ℝ} {a : ℕ → K}
+    (ha : IsQGevreyOrder q s a) {ε : ℝ} (hε : 0 < ε) :
+    ∀ᶠ n in atTop, s - ε ≤ 2 * logb q ‖a n‖ / (n : ℝ) ^ 2 := by
+  have hmem : ∀ᶠ y in 𝓝 s, s - ε ≤ y := by
+    filter_upwards [Ioi_mem_nhds (show s - ε < s by linarith)] with y hy
+    exact le_of_lt hy
+  exact ha.eventually hmem
+
+/-- **[MI-3(b), sorry-free] Explicit Gaussian sequence has its named order.**
+    The real sequence `n ↦ q^{s n²/2}` (`Real.rpow`) has q-Gevrey order exactly
+    `s`, for any `q > 1`.  This is the concrete realiser that turns the abstract
+    slope `s` into an actual coefficient sequence: `logb q (q^{s n²/2}) = s n²/2`,
+    so the leading coefficient `2·log_q‖a n‖/n² = s` for every `n ≥ 1`, a
+    constant sequence whose limit is `s`. -/
+theorem order_of_rpow_gaussian (q s : ℝ) (hq : 1 < q) :
+    IsQGevreyOrder q s (fun n : ℕ => q ^ (s * (n : ℝ) ^ 2 / 2)) := by
+  have hq0 : 0 < q := by linarith
+  have hlogq : Real.log q ≠ 0 := ne_of_gt (Real.log_pos hq)
+  unfold IsQGevreyOrder
+  refine Tendsto.congr' ?_ (tendsto_const_nhds (x := s))
+  filter_upwards [eventually_ge_atTop 1] with n hn
+  have hnpos : 0 < n := by omega
+  have hn0 : (n : ℝ) ≠ 0 := by
+    have : (0 : ℝ) < n := by exact_mod_cast hnpos
+    exact ne_of_gt this
+  have hpos : (0 : ℝ) < q ^ (s * (n : ℝ) ^ 2 / 2) := Real.rpow_pos_of_pos hq0 _
+  rw [Real.norm_eq_abs, abs_of_pos hpos]
+  unfold logb
+  rw [Real.log_rpow hq0]
+  field_simp
+
+/-- **[MI-3(b), sorry-free] Route-B kernel has q-Gevrey order ½.**  The proved
+    Route-B growth `q^{m²/4}` is q-Gevrey order `½`, since
+    `q^{m²/4} = q^{(½)·m²/2}` matches the order-`½` Gaussian.  This grounds
+    `ThetaSlopeArithmetic.c1Slope = ½` for the actual coefficient sequence. -/
+theorem routeB_gaussian_order_half (q : ℝ) (hq : 1 < q) :
+    IsQGevreyOrder q (1 / 2) (fun n : ℕ => q ^ ((n : ℝ) ^ 2 / 4)) := by
+  have hfun : (fun n : ℕ => q ^ ((n : ℝ) ^ 2 / 4))
+      = (fun n : ℕ => q ^ ((1 / 2) * (n : ℝ) ^ 2 / 2)) := by
+    funext n; congr 1; ring
+  rw [hfun]
+  exact order_of_rpow_gaussian q (1 / 2) hq
+
+/-- **[MI-3(b), sorry-free] GS cumulative degree has leading coefficient ½.**
+    The Gröbner–Shirshov cumulative q-degree `C(m,2) = m(m−1)/2` (corpus
+    `QOU.Mass.ThetaSlopeArithmetic.gs_cumulative_degree`) has leading Gaussian
+    coefficient `lim_{m→∞} C(m,2)/m² = ½`.  (`C(m,2)/m² = ½ − 1/(2m) → ½`.) -/
+theorem gs_degree_leading_coeff_half :
+    Tendsto (fun m : ℕ => ((m : ℝ) * ((m : ℝ) - 1) / 2) / (m : ℝ) ^ 2)
+      atTop (𝓝 (1 / 2)) := by
+  have key : (fun m : ℕ => ((m : ℝ) * ((m : ℝ) - 1) / 2) / (m : ℝ) ^ 2)
+      =ᶠ[atTop] (fun m : ℕ => 1 / 2 - (2 * (m : ℝ))⁻¹) := by
+    filter_upwards [eventually_ge_atTop 1] with m hm
+    have hm0 : (m : ℝ) ≠ 0 := by
+      have : (0 : ℝ) < m := by exact_mod_cast (by omega : 0 < m)
+      exact ne_of_gt this
+    field_simp
+  refine Tendsto.congr' key.symm ?_
+  have h2 : Tendsto (fun m : ℕ => 2 * (m : ℝ)) atTop atTop :=
+    Tendsto.const_mul_atTop (by norm_num) tendsto_natCast_atTop_atTop
+  have hinv : Tendsto (fun m : ℕ => (2 * (m : ℝ))⁻¹) atTop (𝓝 0) :=
+    h2.inv_tendsto_atTop
+  simpa using (tendsto_const_nhds (x := (1 / 2 : ℝ))).sub hinv
+
+/-- **[MI-3(b), sorry-free] The θ = ½·C(m,2) bridge — leading-coefficient form.**
+    The single value `s = ½` is simultaneously (i) the q-Gevrey ORDER of the
+    Route-B kernel (its proved `q^{m²/4}` growth, `routeB_gaussian_order_half`)
+    and (ii) the leading Gaussian coefficient of the GS cumulative degree
+    `C(m,2)` (`gs_degree_leading_coeff_half`).  Hence the θ-coefficient of the
+    kernel exponent `q^{m²/4}` is `½·s = ½·½ = ¼`, i.e. `θ = ½·C(m,2)` at leading
+    order — the compiled half of the numerical probe.  What remains probe-only
+    (NOT asserted here) is that the kernel's actual coefficient sequence realises
+    order ½ (the RSZ slope=order theorem). -/
+theorem theta_eq_half_gs_bridge :
+    ∃ s : ℝ,
+      (∀ q : ℝ, 1 < q → IsQGevreyOrder q s (fun n : ℕ => q ^ ((n : ℝ) ^ 2 / 4)))
+      ∧ Tendsto (fun m : ℕ => ((m : ℝ) * ((m : ℝ) - 1) / 2) / (m : ℝ) ^ 2)
+          atTop (𝓝 s) :=
+  ⟨1 / 2, fun q hq => routeB_gaussian_order_half q hq, gs_degree_leading_coeff_half⟩
 
 end QOU.Mathlib.QGevreyOrder
