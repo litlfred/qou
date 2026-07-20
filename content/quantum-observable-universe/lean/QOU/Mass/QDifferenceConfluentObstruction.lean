@@ -194,4 +194,45 @@ theorem qlift_normalized_kernel_exists {K : Type*} [Field K] (q : K)
     hrec n, hf2, hf1]
   ring
 
+/-! ### Keystone bridge: the binding period is the C1 carrier, factorial-stripped
+
+    The binding period is `p_n = a_D^{(n)} = f_n / n` (`f` = involution numbers,
+    `sw-classical-jet-exactness`). The C1 carrier proved above is
+    `b_n = f_n / n!` (the involution EGF coefficient, `e^{x+x²/2}`). Since
+    `n! = n·(n−1)!`, they differ by exactly the Gevrey (factorial) strip
+    `b_n = p_n / (n−1)!`. Composed with `normalized_classical_kernel_exists`,
+    this says the `(n−1)!`-stripped binding period satisfies the proved depth-2
+    kernel — the classical NORMALIZATION leg of
+    `conj:qdifference-kernel-prolongation-symbol`.
+
+    HONEST RESIDUAL (still conjectural, NOT proved here): that this carrier is
+    THE Seiberg–Witten prolongation symbol (the geometric identification). The
+    bridge below discharges only the *normalization* leg (period ↔ carrier). -/
+
+/-- **Binding period ↔ C1 carrier (the Gevrey strip).** `f_{m+1}/(m+1) =
+    (f_{m+1}/(m+1)!)·m!` — the binding period at index `m+1` equals the C1
+    carrier times `m! = (n−1)!`. Over ℚ (a generic field can have
+    `(m+1) = 0`); indexed by `m+1` to avoid `ℕ`-subtraction. -/
+theorem binding_period_is_carrier_stripped (f : ℕ → ℕ) (m : ℕ) :
+    (f (m + 1) : ℚ) / (m + 1)
+      = ((f (m + 1) : ℚ) / ((m + 1).factorial)) * (m.factorial : ℚ) := by
+  have hm : (m.factorial : ℚ) ≠ 0 := by exact_mod_cast m.factorial_ne_zero
+  have hm1 : ((m : ℚ) + 1) ≠ 0 := by positivity
+  rw [Nat.factorial_succ]
+  push_cast
+  field_simp
+
+/-- **The stripped binding period satisfies the C1 kernel.** For the binding
+    period `p_n = f_n/n` (any `f` with the involution recurrence), its
+    `(n−1)!`-strip `b_n = p_n/(n−1)! = f_n/n!` satisfies the proved depth-2
+    kernel `(n+2)·b_{n+2} = b_{n+1} + b_n`. This is the classical keystone
+    normalization leg: C1 governs the binding series up to the explicit Gevrey
+    normalization (the geometric prolongation-symbol identification remains
+    conjectural). -/
+theorem binding_carrier_satisfies_kernel (f : ℕ → ℕ)
+    (hrec : ∀ n, f (n + 2) = f (n + 1) + (n + 1) * f n) (n : ℕ) :
+    ((n : ℚ) + 2) * ((f (n + 2) : ℚ) / ((n + 2).factorial))
+      = (f (n + 1) : ℚ) / ((n + 1).factorial) + (f n : ℚ) / (n.factorial) :=
+  normalized_classical_kernel_exists f hrec n
+
 end QOU.Mass.QDifferenceConfluentObstruction
