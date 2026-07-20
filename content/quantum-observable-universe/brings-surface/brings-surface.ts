@@ -286,6 +286,7 @@ export default chapter({
         "bring-fibre-q0-figure",
         "bring-fibre-qhalf-figure",
         "inter-nucleon-channel-color-tube",
+        "categorical-lagrangian-dm-cubic",
         "c-from-color-flavor-swap",
         "outro-brings-surface",
       ],
