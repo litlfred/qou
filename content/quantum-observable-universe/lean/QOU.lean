@@ -132,6 +132,7 @@ import QOU.BringsSurface.PentagonTwistAssociator
 import QOU.BringsSurface.OctonionCocycle
 import QOU.Brings.RamificationParityMonodromy
 import QOU.Brings.CategoricalLagrangianDMCubic
+import QOU.Brings.SuperDMBerezinian
 import QOU.BringCone
 import QOU.QuaternionicElectroweak
 import QOU.ArchimedeanUniverse
