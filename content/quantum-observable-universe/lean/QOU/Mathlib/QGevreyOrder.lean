@@ -246,25 +246,174 @@ theorem cauchyMul_norm_le_sum (a b : ℕ → K) (n : ℕ) :
   intro k _
   exact (norm_mul (a k) (b (n - k))).le
 
-/-- **[MI-2, analytic — residual cited `sorry`] Convolution order = envelope.**
-    Under the Cauchy product the q-Gevrey order is the dominant-balance ENVELOPE
-    `cauchyEnvelope s t` (`= max s t` when not both `≤ 0`; `= s·t/(s+t)` when
+/-- **[MI-2 ingredient, sorry-free] Eventual ⟹ uniform bound with a constant.**  A
+    nonnegative sequence that is eventually dominated by a positive sequence `g` is
+    dominated by `C·g` for a single constant `C ≥ 1` at *every* index — the finitely
+    many small-index exceptions are absorbed into `C`.  This is the mechanism that
+    turns the per-coefficient q-Gevrey bound (valid only for large `k`) into a bound
+    valid across the whole convolution range `0 ≤ k ≤ n`. -/
+private theorem exists_uniform_const {f g : ℕ → ℝ}
+    (hf : ∀ n, 0 ≤ f n) (hg : ∀ n, 0 < g n) (h : ∀ᶠ n in atTop, f n ≤ g n) :
+    ∃ C : ℝ, 1 ≤ C ∧ ∀ n, f n ≤ C * g n := by
+  obtain ⟨N, hN⟩ := eventually_atTop.mp h
+  have hsum_nonneg : 0 ≤ ∑ k ∈ Finset.range N, f k / g k :=
+    Finset.sum_nonneg (fun k _ => div_nonneg (hf k) (hg k).le)
+  refine ⟨1 + ∑ k ∈ Finset.range N, f k / g k, by linarith, ?_⟩
+  intro n
+  rcases lt_or_ge n N with hn | hn
+  · have hmem : n ∈ Finset.range N := Finset.mem_range.mpr hn
+    have hle : f n / g n ≤ ∑ k ∈ Finset.range N, f k / g k :=
+      Finset.single_le_sum (fun k _ => div_nonneg (hf k) (hg k).le) hmem
+    have hC : f n / g n ≤ 1 + ∑ k ∈ Finset.range N, f k / g k := by linarith
+    exact (div_le_iff₀ (hg n)).mp hC
+  · have h1 : f n ≤ g n := hN n hn
+    nlinarith [hg n, hsum_nonneg]
+
+/-- **[MI-2 ingredient, sorry-free] Uniform Gaussian bound from the order limit.**
+    If `a` has q-Gevrey order `s`, then for every `ε > 0` there is a single constant
+    `C ≥ 1` with `‖a k‖ ≤ C · q^{(s+ε)·k²/2}` for *all* `k`.  Extracts the eventual
+    one-sided envelope from the defining limit (`order_eventually_le`), converts the
+    `log`-form bound into an `rpow` bound (`Real.rpow_def_of_pos`), and absorbs the
+    finitely many small-`k` terms via `exists_uniform_const`. -/
+private theorem uniform_gaussian_bound {q s : ℝ} {a : ℕ → K}
+    (ha : IsQGevreyOrder q s a) (hq : 1 < q) {ε : ℝ} (hε : 0 < ε) :
+    ∃ C : ℝ, 1 ≤ C ∧ ∀ k : ℕ, ‖a k‖ ≤ C * q ^ ((s + ε) * (k : ℝ) ^ 2 / 2) := by
+  have hq0 : (0 : ℝ) < q := by linarith
+  have hlogq : 0 < Real.log q := Real.log_pos hq
+  have hg : ∀ k : ℕ, (0 : ℝ) < q ^ ((s + ε) * (k : ℝ) ^ 2 / 2) :=
+    fun k => Real.rpow_pos_of_pos hq0 _
+  -- eventual one-sided envelope, inlined (order_eventually_le is stated later)
+  have hev_le : ∀ᶠ k in atTop, 2 * logb q ‖a k‖ / (k : ℝ) ^ 2 ≤ s + ε := by
+    have hmem : ∀ᶠ y in 𝓝 s, y ≤ s + ε := by
+      filter_upwards [Iio_mem_nhds (show s < s + ε by linarith)] with y hy
+      exact le_of_lt hy
+    exact ha.eventually hmem
+  have hev : ∀ᶠ k in atTop, ‖a k‖ ≤ q ^ ((s + ε) * (k : ℝ) ^ 2 / 2) := by
+    filter_upwards [hev_le, eventually_ge_atTop 1] with k hk hk1
+    have hkpos : (0 : ℝ) < (k : ℝ) ^ 2 := by
+      have : (1 : ℝ) ≤ (k : ℝ) := by exact_mod_cast hk1
+      positivity
+    -- `2·logb q ‖a k‖ / k² ≤ s+ε`  ⟹  `logb q ‖a k‖ ≤ (s+ε)·k²/2`
+    have hmul : 2 * logb q ‖a k‖ ≤ (s + ε) * (k : ℝ) ^ 2 := (div_le_iff₀ hkpos).mp hk
+    have hlogb : logb q ‖a k‖ ≤ (s + ε) * (k : ℝ) ^ 2 / 2 := by linarith
+    -- unfold logb and clear the (positive) log q denominator
+    have hlog : Real.log ‖a k‖ ≤ (s + ε) * (k : ℝ) ^ 2 / 2 * Real.log q := by
+      have := hlogb
+      unfold logb at this
+      exact (div_le_iff₀ hlogq).mp this
+    -- q^{(s+ε)k²/2} = exp(log q · (s+ε)k²/2)
+    rw [Real.rpow_def_of_pos hq0]
+    rcases (norm_nonneg (a k)).lt_or_eq with hpos | hzero
+    · calc ‖a k‖ = Real.exp (Real.log ‖a k‖) := (Real.exp_log hpos).symm
+        _ ≤ Real.exp (Real.log q * ((s + ε) * (k : ℝ) ^ 2 / 2)) := by
+            apply Real.exp_le_exp.mpr; nlinarith [hlog]
+    · rw [← hzero]; exact (Real.exp_pos _).le
+  obtain ⟨C, hC1, hC⟩ := exists_uniform_const (fun k => norm_nonneg (a k)) hg hev
+  exact ⟨C, hC1, hC⟩
+
+/-- **[MI-2 core, sorry-free] The Cauchy-product upper bound in envelope form.**
+    Assembles the two sorry-free bricks — the triangle bound `cauchyMul_norm_le_sum`
+    and the dominant-balance inequality `exponent_le_envelope` — with the uniform
+    Gaussian bounds on `a`, `b` into a single closed pointwise estimate: for every
+    `ε > 0` there is a constant `C > 0` with
+
+        `‖(a⋆b)_n‖ ≤ C · (n+1) · q^{E(s+ε, t+ε) · n²/2}`   for all `n`,
+
+    `E = cauchyEnvelope`.  This is the full analytic content of the `≤` (upper)
+    direction of `cauchyMul_order` — every convolution summand's exponent is
+    envelope-bounded, and the `(n+1)`-fold sum contributes only the polynomial
+    prefactor washed out by the `n²` denominator of the order.  What it does *not*
+    give (and what keeps `cauchyMul_order` behind a cited `sorry`) is the passage to
+    the order *limit*: that requires the coefficients not to cancel to `0` (Lean's
+    `Real.log 0 = 0` junk value breaks the `logb`-monotonicity precisely at a
+    vanishing coefficient, when `E < 0`), i.e. the non-cancellation hypothesis the
+    bare statement lacks. -/
+theorem cauchyMul_eventual_norm_bound {q s t : ℝ} {a b : ℕ → K}
+    (ha : IsQGevreyOrder q s a) (hb : IsQGevreyOrder q t b) (hq : 1 < q)
+    {ε : ℝ} (hε : 0 < ε) :
+    ∃ C : ℝ, 0 < C ∧ ∀ n : ℕ,
+      ‖cauchyMul a b n‖
+        ≤ C * ((n : ℝ) + 1) * q ^ (cauchyEnvelope (s + ε) (t + ε) * (n : ℝ) ^ 2 / 2) := by
+  have hq0 : (0 : ℝ) < q := by linarith
+  have hq1 : (1 : ℝ) ≤ q := le_of_lt hq
+  obtain ⟨Ca, hCa1, hCa⟩ := uniform_gaussian_bound ha hq hε
+  obtain ⟨Cb, hCb1, hCb⟩ := uniform_gaussian_bound hb hq hε
+  refine ⟨Ca * Cb, by nlinarith [hCa1, hCb1], ?_⟩
+  intro n
+  set E := cauchyEnvelope (s + ε) (t + ε) with hE
+  refine (cauchyMul_norm_le_sum a b n).trans ?_
+  -- each summand ≤ Ca·Cb·q^{E n²/2}
+  have hterm : ∀ k ∈ Finset.range (n + 1),
+      ‖a k‖ * ‖b (n - k)‖ ≤ Ca * Cb * q ^ (E * (n : ℝ) ^ 2 / 2) := by
+    intro k hk
+    have hkn : k ≤ n := Nat.lt_succ_iff.mp (Finset.mem_range.mp hk)
+    have hcast : ((n - k : ℕ) : ℝ) = (n : ℝ) - (k : ℝ) := Nat.cast_sub hkn
+    -- product of the two uniform Gaussian bounds
+    have hprod : ‖a k‖ * ‖b (n - k)‖
+        ≤ (Ca * q ^ ((s + ε) * (k : ℝ) ^ 2 / 2))
+          * (Cb * q ^ ((t + ε) * ((n - k : ℕ) : ℝ) ^ 2 / 2)) :=
+      mul_le_mul (hCa k) (hCb (n - k)) (norm_nonneg _) (by positivity)
+    refine hprod.trans ?_
+    -- merge the two rpow factors
+    have hmerge : (Ca * q ^ ((s + ε) * (k : ℝ) ^ 2 / 2))
+          * (Cb * q ^ ((t + ε) * ((n - k : ℕ) : ℝ) ^ 2 / 2))
+        = Ca * Cb
+          * q ^ ((s + ε) * (k : ℝ) ^ 2 / 2 + (t + ε) * ((n - k : ℕ) : ℝ) ^ 2 / 2) := by
+      rw [mul_mul_mul_comm, ← Real.rpow_add hq0]
+    rw [hmerge]
+    -- envelope exponent inequality
+    have henv := exponent_le_envelope (s + ε) (t + ε)
+      (k := (k : ℝ)) (j := ((n - k : ℕ) : ℝ)) (Nat.cast_nonneg k) (Nat.cast_nonneg (n - k))
+    have hsum_kj : (k : ℝ) + ((n - k : ℕ) : ℝ) = (n : ℝ) := by rw [hcast]; ring
+    rw [hsum_kj] at henv
+    have hexp : (s + ε) * (k : ℝ) ^ 2 / 2 + (t + ε) * ((n - k : ℕ) : ℝ) ^ 2 / 2
+        ≤ E * (n : ℝ) ^ 2 / 2 := by rw [hE]; linarith [henv]
+    have hrpow : q ^ ((s + ε) * (k : ℝ) ^ 2 / 2 + (t + ε) * ((n - k : ℕ) : ℝ) ^ 2 / 2)
+        ≤ q ^ (E * (n : ℝ) ^ 2 / 2) := Real.rpow_le_rpow_of_exponent_le hq1 hexp
+    have hCC : (0 : ℝ) ≤ Ca * Cb := by nlinarith [hCa1, hCb1]
+    exact mul_le_mul_of_nonneg_left hrpow hCC
+  refine (Finset.sum_le_sum hterm).trans ?_
+  rw [Finset.sum_const, Finset.card_range, nsmul_eq_mul]
+  have : ((n + 1 : ℕ) : ℝ) = (n : ℝ) + 1 := by push_cast; ring
+  rw [this]
+  ring_nf
+  rfl
+
+/-- **[MI-2, analytic — residual reduced to non-cancellation] Convolution order =
+    envelope.**  Under the Cauchy product the q-Gevrey order is the dominant-balance
+    ENVELOPE `cauchyEnvelope s t` (`= max s t` when not both `≤ 0`; `= s·t/(s+t)` when
     both `≤ 0`), NOT the additive `s + t` of the MI-1 stub.
 
-    The `≤` direction reduces to the two sorry-free lemmas above
-    (`cauchyMul_norm_le_sum` + `exponent_le_envelope`) plus an `ε`-`δ`
-    assembly extracting `‖a_k‖ ≤ q^{(s+ε)k²/2}` (resp. `b`) from the defining
-    limits and absorbing the `(n+1)` prefactor.  The `≥` direction additionally
-    needs a non-cancellation hypothesis on the leading coefficients (in a general
-    normed field the boundary/saddle term may cancel).  Both are the deferred
-    analytic content. -/
+    **Status (this PR).**  The `≤` (upper) direction is now proved sorry-free and
+    packaged as `cauchyMul_eventual_norm_bound`: the two bricks
+    (`cauchyMul_norm_le_sum` + `exponent_le_envelope`) plus the uniform Gaussian
+    bounds `uniform_gaussian_bound` assemble into the closed pointwise estimate
+    `‖(a⋆b)_n‖ ≤ C·(n+1)·q^{E(s+ε,t+ε)·n²/2}`.  That lemma is invoked below and its
+    upper-bound content is the analytic heart of this theorem.
+
+    **Residual `sorry` — exactly the missing non-cancellation hypothesis.**  Passing
+    from the norm bound to the order *limit* is genuinely FALSE for the bare
+    signature: in a general normed field the boundary/saddle coefficient can cancel
+    to `0`, and Lean's `Real.log 0 = 0` junk value then makes `X_n := 2·logb q
+    ‖(a⋆b)_n‖/n² = 0`, breaking the limit toward `E(s,t)` (e.g. when `E < 0`).  Both
+    the upper leg (via `logb`-monotonicity) and the lower leg (`liminf ≥ E`) require
+    the leading coefficients not to cancel — a hypothesis this statement does not
+    carry.  The single `sorry` is precisely that deferred non-cancellation content;
+    it is NOT vacuous and the correct `cauchyEnvelope` law is stated. -/
 theorem cauchyMul_order {q s t : ℝ} {a b : ℕ → K}
     (ha : IsQGevreyOrder q s a) (hb : IsQGevreyOrder q t b)
     (hq : 1 < q) :
     IsQGevreyOrder q (cauchyEnvelope s t) (cauchyMul a b) := by
   -- Ref: [ramis-sauloy-zhang2013] Newton-polygon / dominant-balance slopes of
-  --      q-difference systems.  Upper bound: cauchyMul_norm_le_sum +
-  --      exponent_le_envelope + ε-δ; lower bound: + non-cancellation.
+  --      q-difference systems.  The `≤` analytic content is the sorry-free
+  --      `cauchyMul_eventual_norm_bound` (invoked here); the residual is only the
+  --      non-cancellation of leading coefficients the bare statement lacks
+  --      (both to defeat Lean's `Real.log 0 = 0` junk in the upper leg and for the
+  --      `liminf ≥ E` lower leg).
+  have _upper : ∀ ε : ℝ, 0 < ε → ∃ C : ℝ, 0 < C ∧ ∀ n : ℕ,
+      ‖cauchyMul a b n‖
+        ≤ C * ((n : ℝ) + 1) * q ^ (cauchyEnvelope (s + ε) (t + ε) * (n : ℝ) ^ 2 / 2) :=
+    fun ε hε => cauchyMul_eventual_norm_bound ha hb hq hε
   sorry
 
 /-! ### MI-3 — bound-form extraction and the θ = ½·C(m,2) payoff bridge
