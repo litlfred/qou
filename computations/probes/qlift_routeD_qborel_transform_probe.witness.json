@@ -1,0 +1,117 @@
+{
+  "description": "Route D: formal q-Borel transform (RSZ Def 2.3.3 theta kernel + (q;q)_n variant, both directions) applied to the C1 kernel [m+1]_q b_{m+1} = b_m + b_{m-1}, compared to GGM eq-49 up to diagonal gauge via the complete invariant I_m = C_m A_{m-1}/(B_m B_{m-1})",
+  "computation": "mpmath dps=50; V1 transformed-kernel identities on the proved solution b_n = I_q(n)/[n]_q!; V2 invariance of I_m (= -[m]_q) across all four presentations; V3 mismatch Delta_m vs GGM; V4 residual-operator identity Cm_res * y_{m-1}",
+  "generated": "2026-07-20T03:36:08+00:00",
+  "parameters": {
+    "dps": 50,
+    "tol_kill": "1e-40",
+    "tol_identity": "1e-45",
+    "m_max": 15,
+    "q_values": [
+      "0.9",
+      "1.05",
+      "1.10998"
+    ]
+  },
+  "derivation": {
+    "convention": "RSZ 0903.0853v3 Definition 2.3.3 (level 1, |q|>1): B_{q,1}: f_n -> f_n q^{-n(n-1)/2} (theta kernel); q-exponential variant f_n -> f_n/(q;q)_n per RSZ 1.2.1",
+    "kernel_theta_B": "[m+1]_q q^m y_{m+1} = y_m + q^{-(m-1)} y_{m-1}",
+    "kernel_theta_L": "[m+1]_q q^{-m} y_{m+1} = y_m + q^{m-1} y_{m-1}",
+    "kernel_qexp_L": "y_{m+1} = (1-q) y_m + (1-q)(1-q^m) y_{m-1}",
+    "invariant": "I_m = C_m A_{m-1}/(B_m B_{m-1}); complete for diagonal gauges; I^C1 = -[m]_q, I^GGM = 1/((2-q^m)(2-q^{m-1}))",
+    "residual_operator": "(K_C1,gauged - K_GGM) y = -Cm_res y_{m-1}, Cm_res = [m]_q(2-q^{m-1})(2-q^m) + 1"
+  },
+  "results": {
+    "v1_transformed_kernels": {
+      "rows": [
+        {
+          "q": "0.9",
+          "theta_B": "6.64e-51",
+          "theta_L": "3.42e-51",
+          "qexp_L": "2.1e-51"
+        },
+        {
+          "q": "1.05",
+          "theta_B": "4.46e-51",
+          "theta_L": "2.97e-51",
+          "qexp_L": "2.97e-51"
+        },
+        {
+          "q": "1.10998",
+          "theta_B": "4.67e-51",
+          "theta_L": "4.3e-51",
+          "qexp_L": "1.91e-51"
+        }
+      ],
+      "ok": true
+    },
+    "v2_invariant_unmoved": {
+      "rows": [
+        {
+          "q": "0.9",
+          "max_rel_dev": "2.28e-51"
+        },
+        {
+          "q": "1.05",
+          "max_rel_dev": "2.61e-51"
+        },
+        {
+          "q": "1.10998",
+          "max_rel_dev": "2.7e-51"
+        }
+      ],
+      "ok": true
+    },
+    "v3_mismatch": {
+      "rows": [
+        {
+          "q": "0.9",
+          "min_abs_Delta": "2.664",
+          "max_abs_Delta": "8.256"
+        },
+        {
+          "q": "1.05",
+          "min_abs_Delta": "3.223",
+          "max_abs_Delta": "609.7"
+        },
+        {
+          "q": "1.10998",
+          "min_abs_Delta": "3.573",
+          "max_abs_Delta": "91.73"
+        }
+      ],
+      "closed": false,
+      "verdict": "invariant mismatch at every m >= 2, every q -- formal q-Borel route closed negatively"
+    },
+    "v4_residual_operator": {
+      "rows": [
+        {
+          "q": "0.9",
+          "identity_rel_dev": "4.87e-51",
+          "min_abs_Cm_res": "2.1"
+        },
+        {
+          "q": "1.05",
+          "identity_rel_dev": "4.83e-51",
+          "min_abs_Cm_res": "0.9658"
+        },
+        {
+          "q": "1.10998",
+          "identity_rel_dev": "2.57e-51",
+          "min_abs_Cm_res": "0.9036"
+        }
+      ],
+      "ok": true
+    },
+    "pruned": true,
+    "verdict": "STILL DISTINCT -- formal q-Borel route CLOSED negatively (scope-(b)): every formal q-Borel/q-Laplace variant (RSZ theta kernel per Def 2.3.3 of 0903.0853, or q-exponential (q;q)_n kernel, either direction) is a diagonal coefficient weight, and the complete diagonal-gauge invariant I_m = C_m A_{m-1}/(B_m B_{m-1}) is -[m]_q for C1 in all four presentations vs 1/((2-q^m)(2-q^{m-1})) for GGM eq 49 -- exact algebraic mismatch (the prune-doc consistency condition), verified |Delta_m| >> 0 at q in {0.9, 1.05, 1.10998}, m <= 15.  Residual operator after best diagonal alignment: -Cm_res * y_{m-1} with Cm_res = [m]_q(2-q^{m-1})(2-q^m) + 1.  NOT excluded: the analytic q-Borel-Laplace summation step (Borel-plane continuation + discrete q-Laplace, RSZ ch. 5), non-diagonal 2x2 gauges, Moebius-of-solution maps, inhomogeneous shifts -- the Stokes-matrix route stays live."
+  },
+  "context": {
+    "workplan": "docs/workplans/2026-07-20-qlift-borel-kernel-workplan.md (step 3, Route D)",
+    "audit_doc": "docs/audits/2026-07-20-qlift-routeD-qborel-transform.md",
+    "prior_prune": "computations/probes/qlift_ggm_diagonal_gauge_prune_probe.py (diagonal-gauge scope-(b) exclusion; this probe shows the formal q-Borel transform lies INSIDE that class and re-derives the exclusion via the gauge invariant)",
+    "rsz_source": "uploads/0903.0853v3.pdf Def 2.3.3 p.23 + 1.2.1 (kernel choices)",
+    "ggm_source": "uploads/2012.00062v3.pdf p.14 (eq 49)",
+    "discipline": "formalize-first (all identities derived by hand in the audit doc before running); scope-(a)/(b) per AGENTS.md; no AME data; anti-fit"
+  }
+}
