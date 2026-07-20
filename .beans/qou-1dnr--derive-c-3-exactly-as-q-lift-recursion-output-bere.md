@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-07-20T16:02:13Z
-updated_at: 2026-07-20T17:03:38Z
+updated_at: 2026-07-20T17:30:46Z
 ---
 
 
@@ -81,3 +81,12 @@ qbeta_c3_hopf_cubic_residue_probe.py. Audit
 2026-07-20-c3-hopf-cubic-residue-exploration.md. **Bean STAYS OPEN**: the §4e
 geometric normalization of D(ũ) fixing |S| is the genuine open target
 (conj:qdifference-kernel-prolongation-symbol).
+
+
+
+## 2026-07-20 — Pochhammer-phase route (QOU/Mass/QbetaC3PochhammerPhase.lean), bean qou-cj8z. STILL OPEN.
+Parallel to the Hopf-residue route. PROVED sorry-free (lean-direct exit 0; axioms propext+Quot.sound only):
+- qPochhammer3_h_factor: (q;q)_3 = h·pochCofactor via (1−q²)=−q·h — the order-3 q-Pochhammer carries the SAME automatic bar-odd h as S=h·D, so phase S/(q;q)_3 = D/pochCof is bar-even (pochhammer_normalization_is_barEven).
+- phase_is_unit_of_magnitude_match: anchor-blind |S|_geom=|(q;q)_3| forces phase²=1 ⇒ phase = ±1 (phase_sign_dichotomy): proton +1 / muon −1, the sign-swing carrier.
+- pochhammer_phase_decomposition: S=(q;q)_3·phase, PROVED modulo §3b-cond class [ResurgentPhaseFromAlienDatum] (genuine composition, not self-assuming projection).
+OPEN core (no instance): the Δ_ω-sourced bar-even phase = D(ũ)/pochCofactor; class encodes Écalle bridge Δ_ω f̃ = A_ω ∂f̃, A_ω=Vol(4₁)/π, GGM Stokes −3. NARROWS the open piece; does NOT derive c_3.
