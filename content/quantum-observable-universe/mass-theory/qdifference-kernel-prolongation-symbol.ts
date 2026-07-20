@@ -29,7 +29,15 @@ export default conjecture({
         "TERMINUS of the C1<->GGM investigation (Door-iv + Door-v, owner-steered 'direct product / really within a matrix' + 'cross/quadratic term'). Door-iv: the TENSOR SQUARE C1(x)C1 is anisoclinic {+1,0,-1} superset GGM {+1,-1} — the FIRST C1-construction with the right graded module, circumventing Door-i's Newton-polygon obstruction. Door-v: the residual between the tensor-square {+1,-1} realization and GGM is NOT a Stokes datum (unipotent part trivial, U->I; connecting matrix constant on gr) — the SOLE difference is a diagonal Z/2 (-1)^m sign character: GGM's growing solution alternates sign (y_{m+1}~-q^m y_m) while the all-positive squares f+^2,f-^2 provably cannot (parity). So C1(x)C1 and GGM agree as graded+Stokes modules, differing by EXACTLY the bar-parity (-1)^m twist. This IS the framework's cosh/sinh (bar-even mass / bar-odd decay) distinction, now machine-measured as the single named minimal residual: the binding kernel C1 is the bar-even (cosh) face, GGM the bar-odd (sinh) face. Sharpens R1: not an identification (the parity genuinely separates them) but the exact, minimal, named difference. Probes: docs/audits/2026-07-20-qlift-doorIV-matrix.md, 2026-07-20-qlift-doorV-stokes.md.",
       see: "docs/audits/2026-07-20-qlift-doorV-stokes.md",
     },
+    {
+      kind: "note",
+      date: "2026-07-20",
+      body:
+        "LITERATURE ASSESSMENT (docs/audits/2026-07-20-c1-sw-prolongation-lit-review.md). No published paper states 'difference-kernel = SW-prolongation-symbol' — the identification is QOU-original (novel framing, not a corpus/literature duplication). REFEREE FLAG: 'symbol of a q-difference operator' already has Sauloy's fixed meaning (the top-slope / Newton-polygon datum of the canonical slope filtration, ramis-sauloy-zhang2013 / math:0210430), so the bespoke 'symbol = jet-prolongation' use is a NOTATION COLLISION; keep this block a conjecture (not a theorem) and anchor to established bridges. The two mathematical halves DO exist separately and are the citable anchors: (1) PROLONGATION half = the Donagi–Markman cubic c_{ijk}=∂³F/∂aⁱ∂aʲ∂aᵏ, the special-geometry 3-jet (donagi1997swintegrable); (2) DIFFERENCE-OPERATOR half = the quantum SW curve as an actual difference operator, classical-limit = curve (grassi-gu-marino2019qsw). The closest published 'difference kernel ↔ curve' is strong-AJ (nguyen-tran-2021) but its curve is the SL₂(ℂ) character variety, not the SW curve, and the map is a q→1 limit, not a symbol. The QOU-original step is welding (1)+(2); cite both.",
+      see: "docs/audits/2026-07-20-c1-sw-prolongation-lit-review.md",
+    },
   ],
+  cites: ["donagi1997swintegrable", "grassi-gu-marino2019qsw", "nguyen-tran-2021", "ramis-sauloy-zhang2013"],
   uses: [
     "prop:binding-genfun-qdifference",
     "prop:mi-sw-abelianisation",

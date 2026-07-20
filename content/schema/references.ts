@@ -257,6 +257,35 @@ export const references: CSLData[] = [
     note: "Proves the strong AJ conjecture (Sikora) — the recurrence ideal equals the A-ideal — for the figure-eight knot $4_1$. In QOU $4_1$ is the Higgs (the simplest hyperbolic knot); this is the literature anchor that the AJ operator $\\hat A_{4_1}$ is explicit and the colored-Jones $q$-difference recurrence is known, underwriting the AJ-saddle identification ($\\Phi_q$ at root-of-unity vs $\\mathrm{Li}_2^q$ at real $q$) in phi-q-aj-machinery-identification.md. arXiv:2006.02042.",
   }),
 
+  // ── Donagi 1997 — Seiberg–Witten integrable systems / Donagi–Markman cubic ──
+  ref({
+    id: "donagi1997swintegrable",
+    type: "article",
+    title: "Seiberg-Witten integrable systems",
+    author: [{ family: "Donagi", given: "Ron" }],
+    issued: { "date-parts": [[1997]] },
+    URL: "https://arxiv.org/abs/alg-geom/9705010",
+    note: "Seiberg–Witten theory as an algebraically integrable system; the Donagi–Markman cubic $c_{ijk}=\\partial^3 F/\\partial a^i\\partial a^j\\partial a^k$ (third derivative of the prepotential) is the symmetric cubic form / second-order prolongation datum of the special-geometry connection on the SW base. In QOU this is the MATHEMATICAL Seiberg–Witten jet-prolongation object (the citable anchor for conj:qdifference-kernel-prolongation-symbol's prolongation half), distinct from Sauloy's Newton-polygon 'symbol'. arXiv:alg-geom/9705010; metadata WebSearch-sourced, PDF not read in-sandbox (2026-07-20 lit review).",
+  }),
+
+  // ── Grassi–Gu–Mariño 2019 — quantum Seiberg–Witten curve as a difference operator ──
+  ref({
+    id: "grassi-gu-marino2019qsw",
+    type: "article-journal",
+    title: "Non-perturbative approaches to the quantum Seiberg-Witten curve",
+    author: [
+      { family: "Grassi", given: "Alba" },
+      { family: "Gu", given: "Jie" },
+      { family: "Mariño", given: "Marcos" },
+    ],
+    "container-title": "Journal of High Energy Physics",
+    issued: { "date-parts": [[2020]] },
+    volume: "2020",
+    DOI: "10.1007/JHEP07(2020)106",
+    URL: "https://arxiv.org/abs/1908.07065",
+    note: "Quantizes the classical Seiberg–Witten curve into an actual difference operator whose classical limit is the curve; WKB / quantum periods carry the prolongation data, with resurgent (bridge-equation/TBA) structure on the Borel plane. In QOU this is the published 'prolongation on SW geometry ↔ difference kernel' touch-point (as quantization ↔ classical limit, NOT an identity) — the citable anchor for conj:qdifference-kernel-prolongation-symbol's difference-operator half. arXiv:1908.07065, JHEP 07 (2020) 106; metadata WebSearch-sourced, PDF not read in-sandbox (2026-07-20 lit review).",
+  }),
+
   // ── Koelink–Stokman 2003 — Askey-Wilson functions & quantum groups ──
   ref({
     id: "koelink-stokman-2003",
