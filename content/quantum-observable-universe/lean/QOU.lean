@@ -309,6 +309,8 @@ import QOU.Conjectures.WeakSpectralCompleteness
 import QOU.Conjectures.MagicNumbersBring
 import QOU.Conjectures.QuantumLanglandsDual
 
+-- q-Gevrey / Newton-polygon Mathlib infra (epic qou-7b7v, brick MI-1).
+import QOU.Mathlib.QGevreyOrder
 -- Identity-I / RSK infrastructure (verified library files; wired in for CI build coverage).
 import QOU.Mathlib.PartitionListBridge
 import QOU.Mathlib.PartitionsOfBridge
