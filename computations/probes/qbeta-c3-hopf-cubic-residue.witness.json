@@ -1,0 +1,109 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-20T16:52:09.835875+00:00",
+  "commitSha": "91411eb8434d26f4fdec24311ad3029538e6ebd3",
+  "assertions": [
+    {
+      "name": "carrier_anchor_invariant",
+      "computed": 1.1291237074813505e-05,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 0.001
+    },
+    {
+      "name": "bar_odd_S_swings_sign",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true
+    },
+    {
+      "name": "no_corpus_normalization_matches_untuned",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 11,
+  "computation": "qbeta-c3-hopf-cubic-residue",
+  "scriptFile": "qbeta_c3_hopf_cubic_residue_probe.py",
+  "scriptHash": "9940c21309ad",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
+  },
+  "description": "EXPLORATION (bean qou-1dnr): does the EXACT categorical bar-odd carrier Δ_net^odd = (h/4)·C(y) (KC20, Lean-proved; C irreducible cubic, Hopf double-crossing sector) evaluated at the substrate, normalized by a CORPUS-PRINCIPLED quantity, reproduce the bar-odd part of the Q_β ladder c_3 (S = c_3 + Vol(4₁))? The carrier is ANCHOR-INVARIANT (correct type, route C); the target S swings sign (1/u³ artifact, KC21) with anchor-blind |S| scale ≈ 0.0094 (Φ_b state integral). No corpus-named normalization (h², u^k, KC19 kernel, 1/4q⁷, …) maps the carrier onto |S| un-tuned ⇒ the residue/§4e normalization is the OPEN keystone (conj:qdifference-kernel-prolongation-symbol). NOT a full derivation; nothing inverted from Q_β; no c_k wired; no tier change.",
+  "contentBlock": "conj:qdifference-kernel-prolongation-symbol",
+  "auditOnly": "docs/audits/2026-07-20-c3-hopf-cubic-residue-exploration.md",
+  "data": {
+    "anchors": {
+      "q_proton": "1.10997858275138080759166909561076887987449912187357873607281",
+      "q_muon": "1.10997859555418057528159407960950937799328227995868622546675",
+      "delta_q": "-0.0000000128027997676899249839987404981187831580851074893939374489719",
+      "vol_4_1": "2.02988321281930694794937153346836566925048828125000000000000"
+    },
+    "exact_carrier_hopf_cubic": {
+      "proton": "-0.211140566583373423828310629348826560864924073716407893538819",
+      "muon": "-0.211140590423758049735812829009847880781235985116667195230274",
+      "swing_pct": "-0.0000112912370748135051533124306147534449701684647258813920479492",
+      "dcarrier_dq": "-1.86212274334500081194271722263943499020984437793595244096670",
+      "y0_proton": "2.04370620853252198940201933567738830976821396071350610903595",
+      "C_y0_proton": "-4.03980225417677437408055527830306491224873204188094107233226",
+      "hopf_sector_piece_proton": "-0.109094402345094808889464743310775119093673786397836344782292",
+      "note": "(h/4)·C(y_0), C(y)=y³−4y²+3y−2 (KC20). Anchor-invariant (flat)."
+    },
+    "empirical_c3": {
+      "proton": "-2.06934257711516783787971951724962858902203099810343886691284",
+      "muon": "-2.02020023502125517138232674988576251890206061330068660325496",
+      "swing_pct": "2.43254808320501082573876831602094387592528556954632134543913",
+      "dc3_dq": "3838405.89446160431949491363114975124255764532867792648940790",
+      "note": "CODATA-anchored (c3_target_at); comparison target only, not inverted to fit."
+    },
+    "c3_bar_split": {
+      "bar_even_part_approx": "-2.02988321281930694794937153346836566925048828125000000000000",
+      "bar_odd_S_proton": "-0.0394593642958608899303479837812629197715427168534388669128384",
+      "bar_odd_S_muon": "0.00968297779805177656704478358260315034842766794931339674504454",
+      "S_swing_pct": "-507.512700316220366116889736823584524962009945544392166443828",
+      "S_geom_anchor_blind": "0.00940000000000000000000000000000000000000000000000000000000000",
+      "note": "S = c_3 + Vol(4₁) (capstone 2026-07-12). S swings SIGN; |S|_geom ≈ 0.0094 (Φ_b state integral, anchor-blind)."
+    },
+    "normalization_analysis": {
+      "N_carrier_to_S_proton": "0.186886702704188802382114308453187854295868450472306888102087",
+      "N_carrier_to_S_muon": "-0.0458603330540001392998231723392654033781437170316497915650377",
+      "N_carrier_to_S_geom": "0.0445201040809379778451028088266430643797714533723145820370329",
+      "corpus_candidates": {
+        "h_sq": "0.0437062085325219894020193356773883097682139607135061090359508",
+        "h": "0.209060298795639315430846213129674943859757495263024555381696",
+        "u_sub": "0.00851723455015614218925557360330920296919422161162716337301758",
+        "u_sub_sq": "0.0000725432843823735017981048009316117990891751709994341356983871",
+        "u_sub_cubed": "0.000000617868168123354067758558795187435146531251717220613307981695",
+        "u_sub_4th": "0.00000000526252810898191521623834934883601406938215516248176941249307",
+        "one_over_4q7": "0.120430867623383773419143216384497126154736833601449293853230",
+        "hbar_q_sq": "0.00981718645427507381056905717956425288904928457539794617042750",
+        "z": "0.499320334183694452413442680257666303751948164041532194568092"
+      },
+      "closest_candidate": "h_sq (0.0437, 1.8% below N_geom) — near-coincidence, NOT a match",
+      "any_corpus_candidate_matches_untuned": false,
+      "note": "No corpus-named normalization maps the carrier onto |S|_geom un-tuned; a hand-picked N is a FIT."
+    },
+    "bar_odd_factorization": {
+      "implied_D_proton": "-0.188746330715011649749834436410306398959751568321905630114545",
+      "implied_D_muon": "0.0463166693033244549406798381592402584010859672008609242655494",
+      "N_eq_4D_over_C_proton": "0.186886702704188802382114308453187854295868450472306888102087",
+      "note": "Both S = h·D(ũ) (KC21) and carrier = (h/4)·C(y) are bar-odd ⇒ both = h·(bar-even). The shared h is AUTOMATIC bookkeeping, not a match. The open normalization N = S/carrier = 4·D(ũ)/C(y) is bar-even; D(ũ) is the KC22 resurgent/non-holonomic ℚ(√3) ladder ⇒ N is as transcendental as D. The fixed cubic C(y) does NOT supply the bar-even ratio."
+    },
+    "verdict": "DERIVED_MODULO_OPEN_NORMALIZATION — exact flat carrier (correct type) but NO corpus-named normalization maps it onto |S|; the residue/§4e normalization stays the open keystone. NOT a full derivation; scope-(a), nothing wired.",
+    "qbeta_100x_met_via_this_route": false
+  }
+}

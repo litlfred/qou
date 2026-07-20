@@ -81,6 +81,7 @@ import QOU.Mass.QDifferenceConfluentObstruction
 import QOU.Mass.QbetaC3DMCubic
 import QOU.Mass.QbetaC3Habiro
 import QOU.Mass.QbetaC3Stokes
+import QOU.Mass.QbetaC3HopfResidue
 import QOU.Mass.KeystoneBridgeC1Binding
 import QOU.Mass.ThetaSlopeArithmetic
 import QOU.Mass.DoorVParityNoIdentity

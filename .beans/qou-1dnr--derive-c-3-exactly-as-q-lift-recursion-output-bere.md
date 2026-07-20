@@ -46,3 +46,38 @@ no c_k wired; no tier change. Lean QOU.Mass.QbetaC3Stokes sorry-free
 NormalizedStokesC3Bridge class, no instance). audit 2026-07-20-c3-stokes-route.md.
 Bean STAYS OPEN: genuine target is the normalized/resurgent bar-odd datum, not a
 bare integer.
+
+
+
+## 2026-07-20 — Hopf-cubic ANALYTIC-RESIDUE exploration: DERIVED-MODULO-OPEN-NORMALIZATION (scope-a)
+
+The redirect the DM-cubic/Habiro/Stokes routes all triangulated to. The corpus
+EXACT carrier (KC20, Lean-proved) is Δ_net^odd=(h/4)·C(y), C(y)=y³−4y²+3y−2 (Hopf
+double-crossing sector). Evaluated at substrate BOTH anchors: (h/4)·C(y₀) =
+−0.21114, FLAT (swing 1e-5%) — the CORRECT type per route C (extracted-c_3 swing
+is a 1/u³ artifact, KC21). Bar-EVEN part of c_3 confirmed = −Vol(4₁) exactly.
+
+Target: bar-ODD part S = c_3+Vol(4₁) SWINGS SIGN (p −0.0395 / μ +0.0097;
+|S|_geom≈0.0094 anchor-blind, Φ_b state integral). No flat object = S at both
+anchors (Lean flatCarrier_cannot_match_swinging_S).
+
+NORMALIZATION VERDICT: no corpus-named quantity (h², u^k, ℏ_q², 1/4q⁷, z, KC19
+kernel) maps carrier onto |S|_geom (N_geom=0.0445) un-tuned (closest h²=0.0437,
+1.8% off — near-coincidence, NOT a match). A hand-picked N is a FIT.
+
+SHARP STRUCTURAL NARROWING (honest positive): both S=h·D(ũ) (KC21) and
+carrier=(h/4)·C are bar-odd ⇒ both = h·(bar-even). The h CANCELS: N = S/carrier =
+4·D(ũ)/C(y), a BAR-EVEN ratio (Lean carrier_to_S_normalization_is_barEven,
+sorry-free). The shared h is AUTOMATIC (any bar-odd = h·bar-even), NOT a match.
+The open piece is exactly 4D/C, and D(ũ) is the KC22 resurgent/non-holonomic
+ℚ(√3) ladder (radius→0) ⇒ N is as transcendental as D. Fixed cubic C does NOT
+supply it.
+
+c_3 bar-odd channel NOT derived; Q_β does NOT meet 100× via this route; nothing
+wired; no tier change; c_3 stays EMPIRICAL. Lean QOU.Mass.QbetaC3HopfResidue
+sorry-free (factorization + anchor-invariance thms + open HopfCubicResidueBridge
+primary conjecture class, no instance). Probe
+qbeta_c3_hopf_cubic_residue_probe.py. Audit
+2026-07-20-c3-hopf-cubic-residue-exploration.md. **Bean STAYS OPEN**: the §4e
+geometric normalization of D(ũ) fixing |S| is the genuine open target
+(conj:qdifference-kernel-prolongation-symbol).
