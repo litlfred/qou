@@ -281,6 +281,7 @@ import QOU.Machinery.HeckeH3GramNondegeneracy
 import QOU.Machinery.HeckeH4BlockRep
 import QOU.Machinery.HeckeTowerBasicConstruction
 import QOU.Machinery.QuantumTorus
+import QOU.Machinery.QuantumTorusAJ
 import QOU.Machinery.QuantumTorusDivision
 import QOU.Machinery.StrongAJFigureEight
 import QOU.MathlibExt.EndSemisimple
