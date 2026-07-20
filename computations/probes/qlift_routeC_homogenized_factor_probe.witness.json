@@ -1,0 +1,174 @@
+{
+  "description": "Route C homogenized order-3 factorization test: are the q-lift kernel candidates C1 (q-involution, [m+2]_q b_{m+2} = b_{m+1} + b_m) or C2 (GGM eq-49) right factors of the homogenized order-3 recurrence of the 4_1 colored Jones? Locates both kernels relative to the actual colored-Jones q-holonomic module.",
+  "computation": "P1 Habiro sum symbolic sanity; P2 minimal inhomogeneous order-2 recurrence recovered by mod-p undetermined coefficients and CERTIFIED exactly per-m as a Z[q,1/q] Laurent identity for m=2..40 (minimality per garoufalidis-le-2005, not re-proved); P3 homogenization L3 = (beta_{m+1} - beta_m S) o L; P4 exact-rational solution-space membership tests with positive controls; reporting at mp.dps=50",
+  "generated": "2026-07-20T03:42:50+00:00",
+  "parameters": {
+    "dps": 50,
+    "q_values": [
+      "21/20",
+      "55499/50000"
+    ],
+    "test_m_range": [
+      2,
+      28
+    ],
+    "sequences_to_m": 30,
+    "certification_m_max": 40,
+    "guess_prime": "2^61 - 1",
+    "seed": 20260720,
+    "kill_criterion": "EMBEDS iff residual exactly 0 (Fraction) for all m and both fundamental ICs (rel < 1e-40 at dps 50); probe aborts if a positive control fails"
+  },
+  "recurrence": {
+    "form": "A(q,x) J_{m+1} + B(q,x) J_m + C(q,x) J_{m-1} + E(q,x) = 0, x = q^m; J_1 = 1 Habiro-sum normalization",
+    "window": {
+      "x_degree": 7,
+      "q_degree": 2
+    },
+    "coefficients_expanded": [
+      "A(J_{m+1}) = -1*x^2*q^1 + 1*x^3*q^2 + 1*x^4*q^0 + -1*x^5*q^1",
+      "B(J_m) = 1*x^0*q^1 + -2*x^1*q^1 + -1*x^2*q^0 + -1*x^2*q^2 + 1*x^3*q^0 + 1*x^3*q^1 + 1*x^3*q^2 + 1*x^4*q^0 + 1*x^4*q^1 + 1*x^4*q^2 + -1*x^5*q^0 + -1*x^5*q^2 + -2*x^6*q^1 + 1*x^7*q^1",
+      "C(J_{m-1}) = -1*x^2*q^1 + 1*x^3*q^0 + 1*x^4*q^2 + -1*x^5*q^1",
+      "E(inhom) = 1*x^1*q^1 + 1*x^2*q^1 + -1*x^3*q^0 + -1*x^3*q^2 + -1*x^4*q^0 + -1*x^4*q^2 + 1*x^5*q^1 + 1*x^6*q^1"
+    ],
+    "coefficients_factored": [
+      "A = -x^2 (x^2 - q)(q x - 1)",
+      "B = q - 2qx - (1+q^2)x^2 + (1+q+q^2)(x^3+x^4) - (1+q^2)x^5 - 2qx^6 + qx^7",
+      "C = -x^2 (x - q)(q x^2 - 1)",
+      "E = x (1 + x)(x^2 - q)(q x^2 - 1)"
+    ],
+    "certification": "exact integer-Laurent identity per m = 2..40; mod-p guess stage carries no epistemic weight",
+    "minimality": "inhomogeneous order 2 is minimal per garoufalidis-le-2005 (cited, not re-proved); strong AJ for 4_1 per nguyen-tran-2021 (arXiv:2006.02042; PDF proxy-blocked in sandbox, recurrence derived from the Habiro sum instead)"
+  },
+  "results": {
+    "sanity": {
+      "j2_matches_jones_41": true,
+      "jN_at_1_is_1": true,
+      "bar_symmetric": true,
+      "n_checked": 12
+    },
+    "factor_tests": [
+      {
+        "q": "21/20",
+        "rows": [
+          {
+            "label": "control: J (colored Jones)",
+            "exact_zero": true
+          },
+          {
+            "label": "control: ker(L_hom)",
+            "exact_zero": true
+          },
+          {
+            "label": "C1 [m+2]_q kernel ics=(1, 0)",
+            "exact_zero": false,
+            "max_rel_residual": "0.637045539549",
+            "max_at_m": 15,
+            "min_rel_residual": "0.00308709252235"
+          },
+          {
+            "label": "C1 [m+2]_q kernel ics=(0, 1)",
+            "exact_zero": false,
+            "max_rel_residual": "0.634281420651",
+            "max_at_m": 14,
+            "min_rel_residual": "0.00475704365674"
+          },
+          {
+            "label": "C1 [m+2]_q kernel ics=(1, 1)",
+            "exact_zero": false,
+            "max_rel_residual": "0.632670425096",
+            "max_at_m": 15,
+            "min_rel_residual": "0.0041839863885"
+          },
+          {
+            "label": "GGM eq-49 kernel ics=(1, 0)",
+            "exact_zero": false,
+            "max_rel_residual": "1.0",
+            "max_at_m": 26,
+            "min_rel_residual": "0.0356181597658"
+          },
+          {
+            "label": "GGM eq-49 kernel ics=(0, 1)",
+            "exact_zero": false,
+            "max_rel_residual": "1.0",
+            "max_at_m": 24,
+            "min_rel_residual": "0.0266643636295"
+          },
+          {
+            "label": "GGM eq-49 kernel ics=(1, 1)",
+            "exact_zero": false,
+            "max_rel_residual": "1.0",
+            "max_at_m": 25,
+            "min_rel_residual": "0.0535994293198"
+          }
+        ],
+        "c1_embeds": false,
+        "ggm_embeds": false
+      },
+      {
+        "q": "55499/50000",
+        "rows": [
+          {
+            "label": "control: J (colored Jones)",
+            "exact_zero": true
+          },
+          {
+            "label": "control: ker(L_hom)",
+            "exact_zero": true
+          },
+          {
+            "label": "C1 [m+2]_q kernel ics=(1, 0)",
+            "exact_zero": false,
+            "max_rel_residual": "0.781021504085",
+            "max_at_m": 28,
+            "min_rel_residual": "0.029562568763"
+          },
+          {
+            "label": "C1 [m+2]_q kernel ics=(0, 1)",
+            "exact_zero": false,
+            "max_rel_residual": "0.779630619292",
+            "max_at_m": 28,
+            "min_rel_residual": "0.00623724867284"
+          },
+          {
+            "label": "C1 [m+2]_q kernel ics=(1, 1)",
+            "exact_zero": false,
+            "max_rel_residual": "0.780106982617",
+            "max_at_m": 28,
+            "min_rel_residual": "0.00601957474913"
+          },
+          {
+            "label": "GGM eq-49 kernel ics=(1, 0)",
+            "exact_zero": false,
+            "max_rel_residual": "1.0",
+            "max_at_m": 12,
+            "min_rel_residual": "0.0280901502249"
+          },
+          {
+            "label": "GGM eq-49 kernel ics=(0, 1)",
+            "exact_zero": false,
+            "max_rel_residual": "1.0",
+            "max_at_m": 13,
+            "min_rel_residual": "0.215106172415"
+          },
+          {
+            "label": "GGM eq-49 kernel ics=(1, 1)",
+            "exact_zero": false,
+            "max_rel_residual": "1.0",
+            "max_at_m": 11,
+            "min_rel_residual": "0.163970633916"
+          }
+        ],
+        "c1_embeds": false,
+        "ggm_embeds": false
+      }
+    ],
+    "verdict": "NEITHER EMBEDS: C1 ([m+2]_q b_{m+2} = b_{m+1} + b_m) and GGM eq-49 (y_{m+1} = (2-q^m) y_m - y_{m-1}) solutions, as-is (ungauged), are NOT right factors of the homogenized order-3 colored-Jones operator L3 of 4_1 -- residuals are exact nonzero rationals of relative size O(1) at every tested m, both q values, all ICs. Positive controls (J itself and ker(L_hom)) embed with residual exactly 0, so the order-2 right factor of L3 is the AJ homogeneous part L_hom = (A, B, C), and BOTH q-lift kernel candidates sit OUTSIDE the 4_1 colored-Jones q-holonomic module in the ungauged sense. Scope-(a): non-diagonal GL2 gauges, Mobius transforms, and q-Borel/summation transforms are untested and remain live; nothing here is a 'derivation' of the q-lift."
+  },
+  "context": {
+    "workplan": "docs/workplans/2026-07-20-qlift-borel-kernel-workplan.md (step 3, route C)",
+    "gauge_prune": "docs/audits/2026-07-20-qlift-ggm-gauge-prune.md (scope-(b) diagonal-gauge exclusion C1 <-> GGM)",
+    "literature_check": "docs/audits/2026-07-20-qlift-literature-check.md S3 (4_1 minimal order-2 inhomogeneous, homogeneous order 3)",
+    "ggm_eq49_source": "uploads/2012.00062v3.pdf p.14 (arXiv:2012.00062)",
+    "discipline": "scope-(a) verdict vocabulary; exact arithmetic; no AME data; anti-fit; positive controls gate the pipeline"
+  }
+}
