@@ -154,17 +154,47 @@ Consequences:
    "quaternionic monodromy" scaffold is the first step — its cross-check
    against this audit's obstruction is tracked in §6.
 
-## 6. Cross-check against the #4129 landing (merged as `68736287`)
+## 6. Cross-check against the #4129 landing (merged as `68736287`) — FILLED
 
-PR #4129 ("Formalize local quaternionic monodromy for the keystone
-R(q,x)") landed Lean scaffolding around the same conjecture
-(`ReebAlienFiltration`, prolonged-periods, kernel-symbol files) while this
-audit was in progress. The critical question is whether any landed
-statement *encodes the raw bounded-depth OGF form* that §4 excludes — if
-so, that statement's hypothesis class is empty and it holds vacuously; if
-it is normalization-agnostic, it composes with §5 unchanged. This
-cross-check is running as a separate adversarial review; its findings land
-as a follow-up commit to this doc rather than being pre-judged here.
+The adversarial review of the landed keystone work completed; full findings
+in the PR #4122 thread. The load-bearing intersections with this audit:
+
+1. **The landed compute realises exactly the excluded form.** The
+   production dashboard (`computations/mass_binding_dashboard.py`) was
+   rewired to `B_{n+2} = [2]_q·B_{n+1} − B_n` — a **constant-coefficient
+   depth-2 kernel on the raw coefficients**, i.e. the hypothesis class §4
+   proves empty against the Gevrey-1/2 growth. Its solutions are geometric;
+   the true `B_n(1) = I(n)/n` are super-geometric. The sibling
+   `NaStokesKeystone` docstring itself concedes the recurrence "is
+   geometric … an effective fit to the three anchors n=2,3,4 … splits at
+   n=6" — the split at n = 6 is this audit's `(∗∗)` obstruction showing up
+   numerically. Two independent routes, same negative.
+2. **`B_2` is seeded from the AME deuteron value** while the surrounding
+   text claims "without any empirical fitting" — an anchor is a fit input;
+   the label is wrong.
+3. **Status laundering in the manuscript layer.** `conjecture → theorem`
+   label flips (`qdifference-kernel-prolongation-symbol`,
+   `binding-manybody-jet-filtration`), `open-problem` tag removal,
+   `binding_closure_conditional → binding_closure` rename with a "fully
+   unconditional" docstring, and cheat-sheet step-9b "proved" — with **no
+   Lean instance or proof discharging any conjectural input** (all new
+   classes are conclusion-as-field with zero instances; the anti-laundering
+   rule's textbook pattern).
+4. **`ReebAlienFiltration.lean` is orphaned** (imported nowhere, so never
+   compiled by the default target) and its `alien_eval : alien_deriv = 1`
+   field trivialises the quaternion structure — for generic `q` the field
+   set appears unsatisfiable, which is *why* no instance can exist. The
+   "quaternionic monodromy" is currently naming, not structure.
+
+**Consequence for this audit:** §4's exclusion is not merely theoretical —
+the excluded carrier is live on `main` in a production dashboard column
+labelled as fit-free. The recommended remediation (owner decision, since it
+reverts merged material): revert the status flips and the `B_precur`
+dashboard wiring (or relabel as the effective fit the `NaStokesKeystone`
+docstring honestly describes), and re-target the keystone at the §5
+q-Borel/depth-2 normalized carrier, where the growth obstruction vanishes
+and the prolongation-symbol identification remains a well-posed open
+conjecture.
 
 ## 7. Discipline
 
