@@ -318,6 +318,7 @@ import QOU.Mathlib.QGevreyOrder
 -- Liouville's third theorem (Σ ord = 0) stated open; f'/f-periodicity + divisor-
 -- lattice-periodicity bricks proved sorry-free.
 import QOU.Mathlib.EllipticDivisorDegree
+import QOU.Mathlib.HadamardFactorization
 -- Identity-I / RSK infrastructure (verified library files; wired in for CI build coverage).
 import QOU.Mathlib.PartitionListBridge
 import QOU.Mathlib.PartitionsOfBridge
