@@ -320,6 +320,11 @@ import QOU.Mathlib.QGevreyOrder
 -- lattice-periodicity bricks proved sorry-free.
 import QOU.Mathlib.EllipticDivisorDegree
 import QOU.Mathlib.HadamardFactorization
+-- Argument-principle scaffold (epic qou-lbth / bean qou-bmyx, brick PI-3):
+-- (1/2πi)∮ f'/f = #zeros − #poles stated open (residue-of-logDeriv = order is the
+-- Mathlib gap); #zeros−#poles=Σ ord counting brick + 2πi≠0 proved sorry-free.
+-- lean-direct exit 0 (3 intended sorries on the deep theorems); lake build QOU is CI gate.
+import QOU.Mathlib.ArgumentPrinciple
 -- Identity-I / RSK infrastructure (verified library files; wired in for CI build coverage).
 import QOU.Mathlib.PartitionListBridge
 import QOU.Mathlib.PartitionsOfBridge
