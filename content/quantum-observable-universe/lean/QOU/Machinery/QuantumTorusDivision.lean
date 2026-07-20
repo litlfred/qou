@@ -169,20 +169,69 @@ theorem skew_right_division_degree_drop (f g : QuantumTorus A) {d e : ℤ}
         smul_zero, mul_zero]
     rw [hf0, hrg0, sub_zero]
 
-/-- **Skew-Euclidean right-division (STATED — Ore-extension recursion gap).**
-    In the localized torus (leading coefficient of `g` a unit) every `f`
-    admits `f = q·g + r` with remainder of strictly smaller L-degree.  The
-    per-step reduction is the proved `reduction_top_coeff_cancel`; assembling
-    the quotient by well-founded recursion on `topDeg` is the genuine v4.24.0
-    Mathlib gap (no Ore extension / skew-Laurent Euclidean algorithm).
+/-- `topDeg f = ⊥` exactly for the zero element. -/
+theorem topDeg_eq_bot_iff (f : QuantumTorus A) : topDeg f = ⊥ ↔ f = 0 := by
+  rw [topDeg, Finset.max_eq_bot, expSupport, Finset.image_eq_empty, support_eq_empty]
+
+/-- **Fuel form of skew right-division.**  If `topDeg f < d + k` (the divisor
+    has top degree `d`), then `f = q·g + r` with `r = 0` or `topDeg r < topDeg g`.
+    Proof by induction on the fuel `k : ℕ`: each reduction step
+    (`skew_right_division_degree_drop`) lowers `topDeg f` by at least one, so
+    `k` steps suffice.  This is the concrete termination the (missing) Ore
+    Euclidean algorithm would provide. -/
+theorem exists_skew_right_division_fuel (g : QuantumTorus A) {d : ℤ}
+    (hg : topDeg g = (d : WithBot ℤ)) (hu : IsUnit (coeffAt g d)) :
+    ∀ (k : ℕ) (f : QuantumTorus A), topDeg f < ((d + (k : ℤ) : ℤ) : WithBot ℤ) →
+      ∃ q r : QuantumTorus A, f = q * g + r ∧ (r = 0 ∨ topDeg r < topDeg g) := by
+  intro k
+  induction k with
+  | zero =>
+    intro f hf
+    refine ⟨0, f, by rw [zero_mul, zero_add], Or.inr ?_⟩
+    rw [hg]; simpa using hf
+  | succ k ih =>
+    intro f hf
+    by_cases hlt : topDeg f < (d : WithBot ℤ)
+    · exact ⟨0, f, by rw [zero_mul, zero_add], Or.inr (by rw [hg]; exact hlt)⟩
+    · push_neg at hlt
+      -- `topDeg f ≠ ⊥`, so `topDeg f = ↑e`; extract the top exponent `e`.
+      have hfb : topDeg f ≠ ⊥ := by
+        intro hb; rw [hb] at hlt; exact absurd hlt (by simp)
+      obtain ⟨e, he⟩ := WithBot.ne_bot_iff_exists.mp hfb
+      -- `d ≤ e` (top degree at least the divisor's) and `e ≤ d + k` (from fuel).
+      have hde : d ≤ e := by rw [← he] at hlt; exact_mod_cast hlt
+      have hek : e ≤ d + (k : ℤ) := by
+        rw [← he] at hf
+        have h1 : e < d + ((k + 1 : ℕ) : ℤ) := by exact_mod_cast hf
+        push_cast at h1; omega
+      -- One reduction step strictly drops the degree, keeping it under the
+      -- fuel budget for the inductive hypothesis.
+      have hdrop := skew_right_division_degree_drop f g hg he.symm hde hu
+      have hbound : topDeg (f - reductionQuotient f d e (coeffAt g d) * g)
+          < ((d + (k : ℤ) : ℤ) : WithBot ℤ) :=
+        lt_of_lt_of_le hdrop (by exact_mod_cast hek)
+      obtain ⟨q', r', hqr', hr'⟩ := ih _ hbound
+      refine ⟨reductionQuotient f d e (coeffAt g d) + q', r', ?_, hr'⟩
+      rw [add_mul, add_assoc, ← hqr']; abel
+
+/-- **Skew-Euclidean right-division (PROVED).**  In the localized torus
+    (leading coefficient of `g` a unit) every `f` admits `f = q·g + r` with
+    remainder `0` or of strictly smaller L-degree.  Proof: pick a fuel bound
+    from the finite top degree of `f` (`topDeg_eq_bot_iff` gives an exponent
+    when `f ≠ 0`) and run `exists_skew_right_division_fuel`.
     -- Ref: [manuscript] NT-T2 brick B3, paper §1.2 (Ã_K principal);
     --      docs/workplans/2026-07-20-nguyen-tran-strong-aj-lean-workplan.md -/
 theorem exists_skew_right_division (f g : QuantumTorus A) {d : ℤ}
     (hg : topDeg g = (d : WithBot ℤ)) (hu : IsUnit (coeffAt g d)) :
     ∃ q r : QuantumTorus A, f = q * g + r ∧ (r = 0 ∨ topDeg r < topDeg g) := by
-  -- Iterating `reductionQuotient` / `reduction_top_coeff_cancel` by
-  -- well-founded recursion on `topDeg f`; the recursion framework is unbuilt.
-  -- Ref: [manuscript]
-  sorry
+  by_cases hf0 : f = 0
+  · exact ⟨0, 0, by rw [hf0, zero_mul, add_zero], Or.inl rfl⟩
+  · have hfb : topDeg f ≠ ⊥ := fun hb => hf0 ((topDeg_eq_bot_iff f).mp hb)
+    obtain ⟨e, he⟩ := WithBot.ne_bot_iff_exists.mp hfb
+    apply exists_skew_right_division_fuel g hg hu ((e - d).toNat + 1) f
+    rw [← he]
+    have : e < d + (((e - d).toNat + 1 : ℕ) : ℤ) := by
+      push_cast; omega
+    exact_mod_cast this
 
 end QOU.Machinery.QuantumTorus
