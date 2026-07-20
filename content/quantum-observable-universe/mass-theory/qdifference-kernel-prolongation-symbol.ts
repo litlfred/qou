@@ -37,7 +37,7 @@ export default conjecture({
       see: "docs/audits/2026-07-20-c1-sw-prolongation-lit-review.md",
     },
   ],
-  cites: ["donagi1997swintegrable", "grassi-gu-marino2019qsw", "nguyen-tran-2021", "ramis-sauloy-zhang2013"],
+  cites: ["donagi-markman1996cubics", "donagi1997swintegrable", "grassi-gu-marino2019qsw", "braden-marshakov2006wdvv", "nguyen-tran-2021", "ramis-sauloy-zhang2013"],
   uses: [
     "prop:binding-genfun-qdifference",
     "prop:mi-sw-abelianisation",

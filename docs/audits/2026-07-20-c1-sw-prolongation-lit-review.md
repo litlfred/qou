@@ -30,27 +30,50 @@ jet-prolongation operator. Literature verdict:
 ## Two mathematical halves that DO exist (the citable anchors)
 
 Setting the word "symbol" aside, the two mathematical objects the claim welds
-are both published:
+are both published. **The three primary PDFs were uploaded by the owner
+(commits `1ad4cf9e`, `c1f3047a`) and READ from source — metadata + the key
+statements below are VERIFIED, not WebSearch-guessed.**
 
-### (1) Prolongation half — the Donagi–Markman cubic
-Special / rigid-special-Kähler geometry on the SW base carries a symmetric
-cubic form `c_{ijk} = ∂³F/∂aⁱ∂aʲ∂aᵏ` (third derivative of the prepotential
-`F`). This is the second-order deformation / prolongation datum of the
-special-geometry connection — mathematically "the SW prolongation," under a
-different name. Anchors: Donagi, *Seiberg–Witten integrable systems*
-(`alg-geom/9705010`); Donagi–Markman, *Cubics, integrable systems, and
-Calabi–Yau threefolds*; Freed, *Special Kähler manifolds* (`hep-th/9712042`).
+### (1) Prolongation half — the Donagi–Markman cubic  [PRIMARY ANCHOR]
+`donagi-markman1996cubics` (arXiv:`alg-geom/9408004`, 28pp, Israel Math. Conf.
+Proc. 9 (1996) 199–221). **Verified quote, §1 "The cubic condition":** a family
+of abelian varieties admits a Lagrangian (ACIHS) structure iff there is *"a
+field of cubics on the tangent bundle to the base, such that the differential
+of the period map at each point is given by contraction with the cubic."* So
+the symmetric 3-tensor `c_{ijk} ∈ Sym³T*B` **is** the infinitesimal-period-map /
+second-order prolongation datum — mathematically "the SW prolongation," a
+standard name-bearing object with **no** notation collision with Sauloy's
+"symbol." Donagi, *Seiberg–Witten integrable systems* (`donagi1997swintegrable`,
+arXiv:`alg-geom/9705010`, 41pp — verified) specializes it to SW: `τ_{ij}=∂²F`,
+`c_{ijk}=∂³F`. Freed, *Special Kähler manifolds* (`hep-th/9712042`) is the
+intrinsic special-Kähler form of the *same* cubic (recommended co-anchor;
+**PDF not uploaded — cite unverified**).
 
 ### (2) Difference-operator half — the quantum SW curve
-Grassi–Gu–Mariño, *Non-perturbative approaches to the quantum Seiberg–Witten
-curve* (`1908.07065`, JHEP 07 (2020) 106) quantize the classical SW curve into
-an **actual difference operator** whose classical limit is the curve; its
-WKB/quantum periods carry the prolongation data. This is the published place
-where "prolongation on SW geometry" and "difference kernel" mathematically
-touch — as **quantization ↔ classical limit**, not as an identity.
+`grassi-gu-marino2019qsw` (arXiv:`1908.07065v3`, JHEP 07 (2020) 106 — verified).
+Quantizes the SW curve of N=2 SU(2) SYM (≈ the modified Mathieu operator) into
+an **actual difference/differential operator** whose classical limit is the
+curve; quantum WKB periods are resurgent, encoded in the Gaiotto–Moore–Neitzke
+TBA of the BPS spectrum, with a Painlevé III τ-function link. The published
+place where "prolongation on SW geometry" and "difference kernel"
+mathematically touch — as **quantization ↔ classical limit**, not an identity.
+
+### Caveat anchor — SW is NOT a Frobenius manifold
+`braden-marshakov2006wdvv` (arXiv:`hep-th/0205308v2`, 9pp — verified from PDF).
+**Correction: WebSearch mis-attributed this to Marshakov–Mironov–Morozov; the
+actual authors are Braden & Marshakov.** It rewrites WDVV
+`F_i F_j^{-1} F_k = F_k F_j^{-1} F_i` (with `F_{ijk}=∂³F/∂aⁱ∂aʲ∂aᵏ`) as
+functional relations. SW prepotentials solve WDVV via the **residue mechanism**,
+**not** a Dubrovin/Saito Frobenius flat structure (SW base has no unit field;
+its special-Kähler metric is a *2nd*, not 3rd, derivative). **Do NOT claim "the
+SW base is a Frobenius manifold"** — cite this to keep the genuine "cubic =
+3-jet of the prepotential" fact while avoiding that over-claim.
 
 The honest QOU-original step is welding (1) and (2) into "the kernel *is* the
-prolongation symbol"; it should **cite both** as anchors.
+prolongation symbol"; it should **cite (1) [primary] and (2)**, and heed the
+caveat. The literature gives the cubic (classical) and the difference operator
+(quantum) as *separate* objects linked by a ħ→0 / q→1 limit, never by a
+symbol-identity — that identity is the QOU-original strengthening.
 
 ## Per-topic ranked hits
 

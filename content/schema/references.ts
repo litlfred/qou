@@ -257,6 +257,37 @@ export const references: CSLData[] = [
     note: "Proves the strong AJ conjecture (Sikora) — the recurrence ideal equals the A-ideal — for the figure-eight knot $4_1$. In QOU $4_1$ is the Higgs (the simplest hyperbolic knot); this is the literature anchor that the AJ operator $\\hat A_{4_1}$ is explicit and the colored-Jones $q$-difference recurrence is known, underwriting the AJ-saddle identification ($\\Phi_q$ at root-of-unity vs $\\mathrm{Li}_2^q$ at real $q$) in phi-q-aj-machinery-identification.md. arXiv:2006.02042.",
   }),
 
+  // ── Donagi–Markman 1996 — the cubic condition (SW jet-prolongation datum) ──
+  ref({
+    id: "donagi-markman1996cubics",
+    type: "chapter",
+    title: "Cubics, integrable systems, and Calabi-Yau threefolds",
+    author: [
+      { family: "Donagi", given: "Ron" },
+      { family: "Markman", given: "Eyal" },
+    ],
+    "container-title":
+      "Proceedings of the Hirzebruch 65 Conference on Algebraic Geometry (Israel Mathematical Conference Proceedings 9)",
+    issued: { "date-parts": [[1996]] },
+    page: "199-221",
+    URL: "https://arxiv.org/abs/alg-geom/9408004",
+    note: "§1 'The cubic condition': a family of abelian varieties admits a Lagrangian (ACIHS) structure iff there is a FIELD OF CUBICS on the tangent bundle to the base such that the differential of the period map at each point is contraction with the cubic — i.e. the symmetric 3-tensor $c_{ijk}\\in\\mathrm{Sym}^3 T^*B$ IS the infinitesimal-period-map / second-order prolongation datum (for a CY family the cubic is Yukawa's, equivalent to the symplectic structure on the total space). In QOU this is THE primary citable anchor for the MATHEMATICAL Seiberg–Witten jet-prolongation object of conj:qdifference-kernel-prolongation-symbol — a standard name-bearing object, no notation collision with Sauloy's 'symbol'. arXiv:alg-geom/9408004, 28pp; VERIFIED from PDF (uploads/9408004v1.pdf, quote at §1; 2026-07-20 lit review).",
+  }),
+
+  // ── Braden–Marshakov 2006 — WDVV as functional relations (SW cubic; caveat) ──
+  ref({
+    id: "braden-marshakov2006wdvv",
+    type: "article",
+    title: "WDVV equations as functional relations",
+    author: [
+      { family: "Braden", given: "Harry W." },
+      { family: "Marshakov", given: "Andrei" },
+    ],
+    issued: { "date-parts": [[2006]] },
+    URL: "https://arxiv.org/abs/hep-th/0205308",
+    note: "Rewrites the associativity (WDVV) equations $F_i F_j^{-1} F_k = F_k F_j^{-1} F_i$ — with $F_{ijk}=\\partial^3 F/\\partial a^i\\partial a^j\\partial a^k$ the third derivative of the (SW) prepotential — as functional relations between second derivatives, dispersionless-Hirota-like. In QOU: the CAVEAT anchor — SW prepotentials solve WDVV via the residue mechanism, NOT via a Dubrovin/Saito Frobenius-manifold flat structure (the SW base is generally not a Frobenius manifold: no unit field, special-Kähler metric is a 2nd not 3rd derivative). Cite to AVOID the 'SW base = Frobenius manifold' over-claim while using the genuine 'cubic = 3-jet of the prepotential' fact. arXiv:hep-th/0205308v2, 9pp, Braden (Edinburgh) + Marshakov (FIAN/ITEP); VERIFIED from PDF (uploads/0205308v2.pdf, 2026-07-20). NOTE: WebSearch mis-attributed this to Marshakov–Mironov–Morozov; the actual authors are Braden–Marshakov.",
+  }),
+
   // ── Donagi 1997 — Seiberg–Witten integrable systems / Donagi–Markman cubic ──
   ref({
     id: "donagi1997swintegrable",
@@ -265,7 +296,8 @@ export const references: CSLData[] = [
     author: [{ family: "Donagi", given: "Ron" }],
     issued: { "date-parts": [[1997]] },
     URL: "https://arxiv.org/abs/alg-geom/9705010",
-    note: "Seiberg–Witten theory as an algebraically integrable system; the Donagi–Markman cubic $c_{ijk}=\\partial^3 F/\\partial a^i\\partial a^j\\partial a^k$ (third derivative of the prepotential) is the symmetric cubic form / second-order prolongation datum of the special-geometry connection on the SW base. In QOU this is the MATHEMATICAL Seiberg–Witten jet-prolongation object (the citable anchor for conj:qdifference-kernel-prolongation-symbol's prolongation half), distinct from Sauloy's Newton-polygon 'symbol'. arXiv:alg-geom/9705010; metadata WebSearch-sourced, PDF not read in-sandbox (2026-07-20 lit review).",
+    "container-title": "Proceedings of Symposia in Pure Mathematics",
+    note: "Seiberg–Witten theory as an algebraically integrable system (§2 'Why integrable systems?', §3 'Which integrable system?'). Specializes the Donagi–Markman cubic to SW: the prepotential $F$, period matrix $\\tau_{ij}=\\partial^2 F/\\partial a^i\\partial a^j$, and the cubic $c_{ijk}=\\partial^3 F/\\partial a^i\\partial a^j\\partial a^k$ (the special-geometry / second-order prolongation datum on the SW base). In QOU this is the MATHEMATICAL Seiberg–Witten jet-prolongation object (the citable anchor for conj:qdifference-kernel-prolongation-symbol's prolongation half), distinct from Sauloy's Newton-polygon 'symbol'. arXiv:alg-geom/9705010, 41pp, MSC 81T13/81T60/58F07/14D20/14H40; metadata VERIFIED from PDF (uploads/9705010v1.pdf, 2026-07-20).",
   }),
 
   // ── Grassi–Gu–Mariño 2019 — quantum Seiberg–Witten curve as a difference operator ──
@@ -283,7 +315,7 @@ export const references: CSLData[] = [
     volume: "2020",
     DOI: "10.1007/JHEP07(2020)106",
     URL: "https://arxiv.org/abs/1908.07065",
-    note: "Quantizes the classical Seiberg–Witten curve into an actual difference operator whose classical limit is the curve; WKB / quantum periods carry the prolongation data, with resurgent (bridge-equation/TBA) structure on the Borel plane. In QOU this is the published 'prolongation on SW geometry ↔ difference kernel' touch-point (as quantization ↔ classical limit, NOT an identity) — the citable anchor for conj:qdifference-kernel-prolongation-symbol's difference-operator half. arXiv:1908.07065, JHEP 07 (2020) 106; metadata WebSearch-sourced, PDF not read in-sandbox (2026-07-20 lit review).",
+    note: "Quantizes the SW curve of N=2 SU(2) super-Yang–Mills (closely related to the modified Mathieu operator) into an actual difference/differential operator whose classical limit is the curve; quantum WKB periods are resurgent, encoded in the Gaiotto–Moore–Neitzke TBA equations of the BPS spectrum, with a Fredholm-determinant (TS/ST) closed form and a Painlevé III τ-function connection via blowup equations. In QOU this is the published 'prolongation on SW geometry ↔ difference kernel' touch-point (as quantization ↔ classical limit, NOT an identity) — the citable anchor for conj:qdifference-kernel-prolongation-symbol's difference-operator half. arXiv:1908.07065v3, JHEP 07 (2020) 106, Grassi (Simons Center, Stony Brook) + Gu + Mariño (Genève); metadata VERIFIED from PDF (uploads/1908.07065v3.pdf, 2026-07-20).",
   }),
 
   // ── Koelink–Stokman 2003 — Askey-Wilson functions & quantum groups ──
