@@ -3,14 +3,18 @@
 **Date:** 2026-07-20 **Bean:** `qou-bmyx` (PI-3, epic `qou-lbth` pentagon-infra)
 **Branch:** `claude/qlift-borel-kernel-derivation-2026-07-20`
 **File:** `content/quantum-observable-universe/lean/QOU/Mathlib/ArgumentPrinciple.lean`
-**Status:** GLOBAL ARGUMENT PRINCIPLE REDUCED TO ONE TOPOLOGICAL GAP (2026-07-20,
-bean `qou-s5tj` ARG-SUM). `residue_logDeriv_eq_order` (local) is sorry-free; and now
-**`argument_principle` + `entire_zero_count` are ALSO sorry-free**, *derived* from the
-single remaining gap `contour_deformation_sum` (the pure-topology multi-punctured
-contour deformation). The only `sorry` left in the file is that one topological lemma,
-fully isolated from the proved analysis.
+**Status:** GLOBAL ARGUMENT PRINCIPLE REDUCED TO ONE TOPOLOGICAL GAP, now FURTHER
+REDUCED (2026-07-20, bean `qou-95qq` CDS). `residue_logDeriv_eq_order` (local) is
+sorry-free; `argument_principle` + `entire_zero_count` are sorry-free, *derived* from
+the deformation layer. That layer is now split into three:
+**`exists_puncture_radii`** (radius selection, metric topology) — **PROVED sorry-free**;
+the **`|S| = 0` base case** (Cauchy–Goursat) inside `contour_deformation_sum` — **PROVED
+sorry-free** (so the empty-puncture instance of the argument principle is fully closed);
+and **`residue_theorem_deformation`** — the single remaining `sorry`, the `|S| ≥ 1`
+multiply-connected Cauchy deformation (off-centre / multi-hole homology), fully isolated
+from the proved analysis.
 **✅ VERIFICATION:** `lean`-direct **exit 0** here (exactly 1 intended sorry:
-`contour_deformation_sum`) — see note below.
+`residue_theorem_deformation`) — see note below.
 
 ## The theorem
 
@@ -41,7 +45,10 @@ present); probed by `strings` on oleans + the verified PI-2 sibling's API usage.
 | Nevanlinna value distribution (counting fn) | ✅ | `Analysis/Complex/ValueDistribution/`, `logCounting`, First Main Thm |
 | **Argument principle** `(1/2πi)∮ f'/f = Σ ord` | ✅ (derived here, modulo topology gap) | `argument_principle` (sorry-free, 2026-07-20) |
 | **Residue of `f'/f` at `w` = `ord_w f`** (local) | ✅ (proved here) | `residue_logDeriv_eq_order` (sorry-free, 2026-07-20) |
-| **Multi-punctured contour deformation** `∮_big = Σ ∮_small` | ❌ (THE gap) | `contour_deformation_sum` (1 cited sorry) |
+| Radius selection for punctures (metric topology) | ✅ (proved here) | `exists_puncture_radii` (sorry-free, 2026-07-20) |
+| `\|S\| = 0` deformation (Cauchy–Goursat, empty sum) | ✅ (proved here) | base case inside `contour_deformation_sum` |
+| Concentric annulus deformation (puncture at centre) | ✅ | `circleIntegral_eq_of_differentiable_on_annulus_off_countable` |
+| **Off-centre / multi-punctured deformation** `∮_big = Σ ∮_small`, `\|S\| ≥ 1` | ❌ (THE gap) | `residue_theorem_deformation` (1 cited sorry) |
 | **General residue theorem** | ❌ | — (only `CauchyIntegral`, not residue calculus) |
 | **`Complex.residue` / winding number** | ❌ | — (`#check`-verified absent) |
 
@@ -124,14 +131,26 @@ conclusion is genuinely derived, nothing is axiomatized, and no consumer exists 
 `argument_principle` and `entire_zero_count` are now **proved sorry-free**, reduced to
 a *single* cited-`sorry` residual, the pure-topology deformation:
 
-* `contour_deformation_sum` (THE gap, one `sorry`, cited `-- Ref:`): for `h` analytic
+* `contour_deformation_sum` (the packaged statement, **compiles**): for `h` analytic
   on `closedBall c R \ S` (finite `S ⊆ ball c R`), there exist small radii `ρ w > 0`
   with `closedBall w (ρ w) ⊆ ball c R \ (S \ {w})` and
-  `∮_{C(c,R)} h = Σ_{w∈S} ∮_{C(w,ρ w)} h`. This is the homological/topological
-  deformation at the heart of the residue theorem — **the only** thing Mathlib
-  v4.24.0 lacks here (`Complex.residue`, `windingNumber`, annulus/keyhole deformation
-  all `#check`-verified ABSENT). The radius construction is bundled into the lemma
-  (the deformation chooses the contours), keeping the residual purely topological.
+  `∮_{C(c,R)} h = Σ_{w∈S} ∮_{C(w,ρ w)} h`. Now **assembled from three pieces** (further
+  reduction, bean `qou-95qq`, 2026-07-20):
+  - `exists_puncture_radii` (**PROVED sorry-free**) — the radius selection: for each
+    `w ∈ S`, `ball c R \ (S\{w})` is open and contains `w`, so a small enough closed
+    ball sits inside it; extracted pointwise with `choose!`. No disjointness needed —
+    the residue identity is a winding-number (homology) statement, so it suffices that
+    each closed disc contains no *other* puncture (overlapping discs are fine).
+  - the **`|S| = 0` base case** (**PROVED sorry-free**) — `h` analytic on the whole
+    closed disc ⇒ `∮ = 0` by `circleIntegral_eq_zero_of_differentiable_on_off_countable`,
+    RHS empty sum. So the empty-puncture instance is fully closed.
+  - `residue_theorem_deformation` (**THE gap, one `sorry`, cited `-- Ref:`**) — the
+    `|S| ≥ 1` deformation `∮_big = Σ ∮_small` *given* the radii. The
+    homological/topological deformation at the heart of the residue theorem — **the
+    only** thing Mathlib v4.24.0 lacks here (`Complex.residue`, `windingNumber`, and
+    every off-centre/multi-hole deformation `#check`-verified ABSENT; only the
+    *concentric* annulus deformation and the on-disc Cauchy formula are present, so even
+    `|S| = 1` with `w ≠ c` is uncovered). Purely topological, isolated from the analysis.
 
 * `argument_principle` (DERIVED, sorry-free): obtain `ρ` + the deformation identity
   from `contour_deformation_sum` applied to `h = logDeriv f`
@@ -155,7 +174,7 @@ a *single* cited-`sorry` residual, the pure-topology deformation:
 `hfU : AnalyticOnNhd ℂ f (closedBall c R \ S)` + `hfne : ∀ z ∈ closedBall, z∉S → f z≠0`
 — the precise "no zeros/poles other than `S`, and none on the boundary." These are
 genuine conditional hypotheses (not sorries); the sphere-cleanliness is subsumed
-(sphere ⊆ closedBall\S). Only `contour_deformation_sum` carries a `sorry`.
+(sphere ⊆ closedBall\S). Only `residue_theorem_deformation` carries a `sorry`.
 
 ## Tractable-brick roadmap (ordered)
 
@@ -169,11 +188,16 @@ genuine conditional hypotheses (not sorries); the sphere-cleanliness is subsumed
 3. ~~**`entire_zero_count`**~~ — **DONE, sorry-free (2026-07-20).** Specialized
    `argument_principle` to pole-free `f` (`divisor ≥ 0` via
    `AnalyticAt.meromorphicOrderAt_nonneg`).
-4. **`contour_deformation_sum`** (the ONE remaining `sorry`) — the pure-topology
-   multi-punctured contour deformation. Genuine Mathlib gap; a substantial homological
-   construction (keyhole/annulus deformation, or a from-scratch build off
-   `integral_boundary_rect_eq_zero_of_differentiable_on_off_countable`). Isolated from
-   all the proved analysis.
+4. ~~**Radius selection + `|S| = 0` base**~~ — **DONE, sorry-free (2026-07-20, bean
+   `qou-95qq`).** `exists_puncture_radii` (metric topology) + the Cauchy–Goursat base
+   case inside `contour_deformation_sum`.
+5. **`residue_theorem_deformation`** (the ONE remaining `sorry`) — the pure-topology
+   `|S| ≥ 1` off-centre / multi-punctured contour deformation. Genuine Mathlib gap; a
+   substantial homological construction (winding-number / keyhole deformation, or a
+   from-scratch build off
+   `integral_boundary_rect_eq_zero_of_differentiable_on_off_countable`; the concentric
+   annulus lemma covers only the `w = c` sub-case). Isolated from all the proved
+   analysis.
 
 Composes with PI-2 (`elliptic_divisor_degree_zero`, which names this theorem as its
 open core) and PI-1 (canonical-product zero count = `entire_zero_count`).
@@ -185,10 +209,11 @@ cone, `lean`-direct **succeeded, exit 0**: with `LEAN_PATH` set over the package
 olean dirs (`.lake/packages/*/.lake/build/lib/lean` + the QOU build lib), the
 Analysis oleans present (`Complex/CauchyIntegral`, `MeasureTheory/Integral/CircleIntegral`,
 `Meromorphic/*`, `Calculus/LogDeriv`) were sufficient. Output (2026-07-20, after the
-residue-SUM reduction): **one** `declaration uses 'sorry'` warning on exactly the
-single topological gap `contour_deformation_sum`; the six bricks,
-`residue_logDeriv_eq_order`, **and now `argument_principle` + `entire_zero_count`** are
-all sorry-free. (Note the `LEAN_PATH` must point at the
+contour-deformation reduction, bean `qou-95qq`): **one** `declaration uses 'sorry'`
+warning on exactly the single topological gap `residue_theorem_deformation`; the six
+bricks, `residue_logDeriv_eq_order`, `exists_puncture_radii`, the `|S| = 0` base case,
+`contour_deformation_sum`, **and `argument_principle` + `entire_zero_count`** are all
+sorry-free (the last three modulo the isolated `residue_theorem_deformation`). (Note the `LEAN_PATH` must point at the
 **root** `.lake/packages/*/.lake/build/lib/lean` — the per-package `content/.../lean/
 .lake` mathlib olean set here is partial.) `lake build QOU` on a full-Analysis host
 remains the CI gate. Nothing is wired to production, fitted, or axiomatized-as-proved.

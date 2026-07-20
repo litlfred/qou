@@ -76,15 +76,24 @@ argument principle is the tool that turns "a contour integral of `f'/f`" into
   sorry-free** by specializing `argument_principle` to entire `f`: no poles ⇒
   `divisor ≥ 0` (`AnalyticAt.meromorphicOrderAt_nonneg`), so `Σ ord = zeroCount`.
 
-**The single remaining `sorry` — the pure-topology residue-SUM engine:**
+**The contour-deformation layer — REDUCED (2026-07-20) to a single topological `sorry`:**
 
-* `contour_deformation_sum` — the multi-punctured contour deformation
-  `∮_{C(c,R)} h = Σ_{w∈S} ∮_{C(w,ρ w)} h` for `h` holomorphic off the finite puncture
-  set `S`. This is the *only* residual `sorry` and it is **pure topology** (the
-  homological deformation at the heart of the residue theorem), fully isolated from the
-  analysis: everything analytic is proved. It carries a cited `-- Ref:`. **Not**
-  vacuous `True`, **not** axiomatized as proved (§Axiomatization-is-NOT-a-Proof): the
-  topological theorem is stated with its real content and left open.
+* `exists_puncture_radii` — the **geometric half**: a choice of positive radii whose
+  closed small discs lie in `B(c,R)` and avoid every *other* puncture. **PROVED
+  sorry-free** (metric topology: `B(c,R) \ (S\{w})` is open and contains `w`).
+* `contour_deformation_sum` — the packaged statement (existential radii + the deformation
+  identity), now **assembled** from the radius selection, the `|S| = 0` **base case**
+  (Cauchy–Goursat on the whole disc — **proved sorry-free here**, so the empty-puncture
+  instance of the argument principle is fully closed), and the topological core below.
+* `residue_theorem_deformation` — the **single remaining `sorry`**: the multiply-connected
+  Cauchy theorem for `|S| ≥ 1` (`∮_{C(c,R)} h = Σ_{w∈S} ∮_{C(w,ρ w)} h`, given the radii).
+  Pure topology — the off-centre / multi-hole **homology** deformation at the heart of
+  the residue theorem, fully isolated from the analysis (everything analytic is proved).
+  Carries a cited `-- Ref:`. **Not** vacuous `True`, **not** axiomatized as proved
+  (§Axiomatization-is-NOT-a-Proof): the real topological statement, left open. Mathlib
+  v4.24.0 has only the *concentric* annulus deformation (puncture at the centre) and the
+  on-disc Cauchy integral formula — neither covers an off-centre or multiple puncture,
+  so even `|S| = 1` with `w ≠ c` is absent.
 
 ## Mathlib v4.24.0 gap — exactly what is present vs. absent
 
@@ -127,13 +136,15 @@ cone via `LEAN_PATH` over the package olean dirs). Sorry-free bricks:
 and the three new analytic bricks `logDeriv_zpow_sub_mul_split`,
 `inv_two_pi_I_mul_integral_nat_sub_center_inv`,
 `circleIntegral_logDeriv_eq_zero_of_analyticOnNhd`. `residue_logDeriv_eq_order` is now
-**fully sorry-free** (2026-07-20), and `argument_principle` + `entire_zero_count` are
-**also sorry-free** (2026-07-20), *derived* from the single remaining topological gap
-`contour_deformation_sum`. The only warning is one intended `declaration uses 'sorry'`
-(`contour_deformation_sum`), with a cited `-- Ref:` — the multi-punctured
-contour-deformation / residue-theorem engine still absent from Mathlib v4.24.0. Not
-vacuous `True`, not axiomatized as proved. A full `lake build QOU` on a host with the
-complete Analysis cone remains the CI gate.
+**fully sorry-free** (2026-07-20); the geometric brick `exists_puncture_radii` and the
+`|S| = 0` base case inside `contour_deformation_sum` are **also sorry-free** (2026-07-20);
+and `contour_deformation_sum` + `argument_principle` + `entire_zero_count` compile,
+*derived* from the single remaining topological gap `residue_theorem_deformation`
+(the `|S| ≥ 1` multiply-connected Cauchy deformation). The only warning is one intended
+`declaration uses 'sorry'` (`residue_theorem_deformation`), with a cited `-- Ref:` — the
+off-centre / multi-hole homology contour-deformation engine still absent from Mathlib
+v4.24.0. Not vacuous `True`, not axiomatized as proved. A full `lake build QOU` on a
+host with the complete Analysis cone remains the CI gate.
 -/
 
 open Filter Topology Complex
