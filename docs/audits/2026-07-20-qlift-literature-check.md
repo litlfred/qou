@@ -112,10 +112,11 @@ Existing keys: `garoufalidis2004`, `garoufalidis-le-2005`, `le2006`,
 2004cyclotomic`, `askey1989qhermite`, `ismail-masson1994`, `atakishiyev-suslov1990`,
 `sokal1980`, `costin1995`, Écalle (resurgence founding entry).
 
-**Missing (add if the q-lift lands):** Zhang 1999 (AIF 49); Marotte–Zhang 2000
-(AIF 50); Di Vizio–Zhang 2009 (DOI 10.5802/aif.2433); Ramis–Sauloy–Zhang 2013
-(Astérisque 355 / arXiv:0903.0853); Cigler–Zeng (arXiv:0905.0228); optionally
-Josuat-Vergès Touchard–Riordan generalization.
+**Added (this branch):** Zhang 1999 (AIF 49, `zhang1999`); Marotte–Zhang 2000
+(AIF 50, `marotte-zhang2000`); Di Vizio–Zhang 2009 (DOI 10.5802/aif.2433,
+`divizio-zhang2009`); Ramis–Sauloy–Zhang 2013 (Astérisque 355 / arXiv:0903.0853,
+`ramis-sauloy-zhang2013`); Cigler–Zeng (arXiv:0905.0228, `cigler-zeng2009`).
+The optional Josuat-Vergès Touchard–Riordan generalization was not added.
 
 ## 6. Ranked shortlist
 

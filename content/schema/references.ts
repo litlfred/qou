@@ -6791,6 +6791,90 @@ export const references: CSLData[] = [
     note: "The q-harmonic oscillator: second-order q-difference eigenproblem replacing the Schrodinger operator, with continuous q-Hermite bound states and q-integer spectrum — the QOU analogue home of the oscillator equation (parabolic-cylinder channel-interpolation audit, 2026-07-03).",
   }),
 
+  // ── Zhang 1999 (q-Gevrey asymptotics; Gq-summability via q-Borel–q-Laplace) ──
+  ref({
+    id: "zhang1999",
+    type: "article-journal",
+    title: "Développements asymptotiques q-Gevrey et séries Gq-sommables",
+    author: [{ family: "Zhang", given: "Changgui" }],
+    "container-title": "Annales de l'Institut Fourier",
+    volume: "49",
+    issue: "1",
+    page: "227-261",
+    issued: { "date-parts": [[1999]] },
+    DOI: "10.5802/aif.1672",
+    URL: "https://doi.org/10.5802/aif.1672",
+    note: "q-Gevrey order-1 asymptotic expansions and Gq-summability characterized via the q-Borel–q-Laplace transform pair: a power-series solution of a linear analytic q-difference equation whose Newton polygon has unique slope 1 is Gq-summable of order 1. Analytic frame for the QOU binding q-lift on the q-Borel carrier (q-lift literature check, 2026-07-20).",
+  }),
+
+  // ── Marotte–Zhang 2000 (Gq-multisummability of formal q-difference solutions) ──
+  ref({
+    id: "marotte-zhang2000",
+    type: "article-journal",
+    title: "Multisommabilité des séries entières solutions formelles d'une équation aux q-différences linéaire analytique",
+    author: [
+      { family: "Marotte", given: "Fabienne" },
+      { family: "Zhang", given: "Changgui" },
+    ],
+    "container-title": "Annales de l'Institut Fourier",
+    volume: "50",
+    issue: "6",
+    page: "1859-1890",
+    issued: { "date-parts": [[2000]] },
+    URL: "http://www.numdam.org/item/AIF_2000__50_6_1859_0/",
+    note: "q-analogue of Écalle–Martinet–Ramis acceleration: every formal power-series solution of a linear analytic q-difference equation is Gq-multisummable. Numdam AIF_2000__50_6_1859_0. Guarantees summability of the order-2 q-lift solution independent of slope structure (q-lift literature check, 2026-07-20).",
+  }),
+
+  // ── Di Vizio–Zhang 2009 (q-summation and confluence: q→1 shadow statements) ──
+  ref({
+    id: "divizio-zhang2009",
+    type: "article-journal",
+    title: "On q-summation and confluence",
+    author: [
+      { family: "Di Vizio", given: "Lucia" },
+      { family: "Zhang", given: "Changgui" },
+    ],
+    "container-title": "Annales de l'Institut Fourier",
+    volume: "59",
+    issue: "1",
+    page: "347-392",
+    issued: { "date-parts": [[2009]] },
+    DOI: "10.5802/aif.2433",
+    URL: "https://doi.org/10.5802/aif.2433",
+    note: "Confluence for q-summation: Borel sums of divergent ODE solutions are uniformly approximated on sectors by meromorphic solutions of q-difference deformations; compares four q-Borel summation processes. The statement shape for proving the QOU classical depth-2 kernel is the confluent shadow of its q-lift rather than an analogy (q-lift literature check, 2026-07-20).",
+  }),
+
+  // ── Ramis–Sauloy–Zhang 2013 (local analytic classification of q-difference equations) ──
+  ref({
+    id: "ramis-sauloy-zhang2013",
+    type: "article-journal",
+    title: "Local analytic classification of q-difference equations",
+    author: [
+      { family: "Ramis", given: "Jean-Pierre" },
+      { family: "Sauloy", given: "Jacques" },
+      { family: "Zhang", given: "Changgui" },
+    ],
+    "container-title": "Astérisque",
+    volume: "355",
+    issued: { "date-parts": [[2013]] },
+    URL: "https://arxiv.org/abs/0903.0853",
+    note: "arXiv:0903.0853. Local analytic classification of irregular q-difference equations: q-Stokes phenomena, filtration by the slopes of the Newton polygon, and the q-analogue of the Stokes sheaf. The q-Stokes frame behind the GGM Stokes-matrix identification target for the 4₁ descendant equation (q-lift literature check, 2026-07-20).",
+  }),
+
+  // ── Cigler–Zeng 2009 (curious q-analogue of Hermite; crossing-weighted combinatorics) ──
+  ref({
+    id: "cigler-zeng2009",
+    type: "article",
+    title: "A curious q-analogue of Hermite polynomials",
+    author: [
+      { family: "Cigler", given: "Johann" },
+      { family: "Zeng", given: "Jiang" },
+    ],
+    issued: { "date-parts": [[2009]] },
+    URL: "https://arxiv.org/abs/0905.0228",
+    note: "arXiv:0905.0228; published version in Journal of Combinatorial Theory, Series A 118 (2011). Touchard–Riordan-style q-Hermite with crossing-weighted matching combinatorics — the combinatorial tradition behind the q-involution recurrence I_q(n+1) = I_q(n) + [n]_q·I_q(n−1) underlying the QOU c(q)=1 q-lift candidate (q-lift literature check, 2026-07-20).",
+  }),
+
   // ── DLMF ch. 12 (parabolic cylinder functions D_nu: Weber equation, Gamma-pole parity selection) ──
   ref({
     id: "dlmf-ch12",
