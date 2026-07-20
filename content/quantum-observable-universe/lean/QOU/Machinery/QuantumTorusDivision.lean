@@ -120,25 +120,54 @@ theorem reduction_top_coeff_cancel (f g : QuantumTorus A) (d e : ℤ)
     coeffAt (f - reductionQuotient f d e (coeffAt g d) * g) e = 0 := by
   rw [coeffAt_sub, reduction_leading_coeff_match f g d e hu, sub_self]
 
-/-- **Full degree drop after one step (STATED — `topDeg` monotonicity gap).**
-    When `topDeg g = d`, `topDeg f = e`, `d ≤ e` and the leading coefficient of
-    `g` is a unit, one reduction step strictly lowers the top L-degree.  The
-    `L^e` coefficient is proved to vanish (`reduction_top_coeff_cancel`); the
-    remaining content — that no higher coefficient is created, i.e. the
-    `topDeg (x - y) ≤ max (topDeg x) (topDeg y)` and
-    `topDeg (single·g) ≤ k + topDeg g` calculus over `WithBot ℤ` — is routine
-    but unbuilt for `SkewMonoidAlgebra` at v4.24.0.
+/-- **`topDeg` upper bound from vanishing high coefficients.**  If every
+    L-coefficient of `f` at exponent `≥ e` vanishes, then `topDeg f < e`.  This
+    is the `WithBot ℤ`/`Finset.max` calculus that upgrades a coefficient-level
+    cancellation to a strict top-degree drop. -/
+theorem topDeg_lt_of_forall_ge_eq_zero (f : QuantumTorus A) {e : ℤ}
+    (h : ∀ n : ℤ, e ≤ n → coeffAt f n = 0) : topDeg f < (e : WithBot ℤ) := by
+  rw [topDeg]
+  rcases (expSupport f).eq_empty_or_nonempty with he | he
+  · rw [he, Finset.max_empty]; exact WithBot.bot_lt_coe e
+  · rw [← Finset.coe_max' he, WithBot.coe_lt_coe]
+    by_contra hle
+    push_neg at hle
+    have hmem : (expSupport f).max' he ∈ expSupport f := Finset.max'_mem _ he
+    rw [mem_expSupport_iff] at hmem
+    exact hmem (h _ hle)
+
+/-- **Full degree drop after one step (PROVED).**  When `topDeg g = d`,
+    `topDeg f = e`, `d ≤ e` and the leading coefficient of `g` is a unit, one
+    reduction step strictly lowers the top L-degree.  Proof: the `L^e`
+    coefficient vanishes (`reduction_top_coeff_cancel`) and every higher
+    coefficient vanishes because `f`'s top degree is `e` and the reduction
+    monomial `L^{e-d}·g` has top degree `≤ e` (computed directly via
+    `coeff_single_mul`), so `topDeg_lt_of_forall_ge_eq_zero` applies.
     -- Ref: [manuscript] NT-T2 brick B3;
     --      docs/workplans/2026-07-20-nguyen-tran-strong-aj-lean-workplan.md -/
 theorem skew_right_division_degree_drop (f g : QuantumTorus A) {d e : ℤ}
     (hg : topDeg g = (d : WithBot ℤ)) (hf : topDeg f = (e : WithBot ℤ))
     (hde : d ≤ e) (hu : IsUnit (coeffAt g d)) :
     topDeg (f - reductionQuotient f d e (coeffAt g d) * g) < (e : WithBot ℤ) := by
-  -- The engine is proved: `reduction_top_coeff_cancel` gives the `L^e`
-  -- coefficient = 0.  The `WithBot ℤ` degree-monotonicity that upgrades this
-  -- to a strict `topDeg` drop is the Mathlib gap.
-  -- Ref: [manuscript]
-  sorry
+  apply topDeg_lt_of_forall_ge_eq_zero
+  intro n hn
+  rcases eq_or_lt_of_le hn with hne | hlt
+  · -- n = e: the proved leading-term cancellation.
+    rw [← hne]; exact reduction_top_coeff_cancel f g d e hu
+  · -- e < n: neither `f` nor the reduction monomial has a coefficient this high.
+    rw [coeffAt_sub]
+    have hf0 : coeffAt f n = 0 :=
+      coeffAt_eq_zero_of_topDeg_lt f (by rw [hf]; exact_mod_cast hlt)
+    have hrg0 : coeffAt (reductionQuotient f d e (coeffAt g d) * g) n = 0 := by
+      have hidx : (Multiplicative.ofAdd (e - d))⁻¹ * Multiplicative.ofAdd n
+          = Multiplicative.ofAdd (n - (e - d)) := by
+        rw [← ofAdd_neg, ← ofAdd_add]; congr 1; ring
+      have hgc : g.coeff (Multiplicative.ofAdd (n - (e - d))) = 0 :=
+        coeffAt_eq_zero_of_topDeg_lt g
+          (by rw [hg]; exact_mod_cast (show d < n - (e - d) by omega))
+      rw [reductionQuotient, monomial, coeffAt, coeff_single_mul, hidx, hgc,
+        smul_zero, mul_zero]
+    rw [hf0, hrg0, sub_zero]
 
 /-- **Skew-Euclidean right-division (STATED — Ore-extension recursion gap).**
     In the localized torus (leading coefficient of `g` a unit) every `f`
