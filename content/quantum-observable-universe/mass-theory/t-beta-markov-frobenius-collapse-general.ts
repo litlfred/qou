@@ -1,6 +1,6 @@
-import { conjecture } from "../../schema/builders";
+import { proposition } from "../../schema/builders";
 
-export default conjecture({
+export default proposition({
   label: "prop:t-beta-markov-frobenius-collapse-general",
   title:
     "Min-Frobenius-norm collapse: T_β = S · 1_A — general unital R-algebra lift of [prop:t-beta-markov-frobenius-collapse]",
