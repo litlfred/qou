@@ -314,6 +314,10 @@ import QOU.Conjectures.QuantumLanglandsDual
 
 -- q-Gevrey / Newton-polygon Mathlib infra (epic qou-7b7v, brick MI-1).
 import QOU.Mathlib.QGevreyOrder
+-- Elliptic divisor-degree scaffold (epic qou-lbth / bean qou-toqt, brick PI-2):
+-- Liouville's third theorem (Σ ord = 0) stated open; f'/f-periodicity + divisor-
+-- lattice-periodicity bricks proved sorry-free.
+import QOU.Mathlib.EllipticDivisorDegree
 -- Identity-I / RSK infrastructure (verified library files; wired in for CI build coverage).
 import QOU.Mathlib.PartitionListBridge
 import QOU.Mathlib.PartitionsOfBridge
