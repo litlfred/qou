@@ -49,16 +49,23 @@ argument principle is the tool that turns "a contour integral of `f'/f`" into
 * `circleIntegral_logDeriv_eq_zero_of_analyticOnNhd` — **brick 3**: the Cauchy–Goursat
   vanishing `∮_{C(w,r)} logDeriv g = 0` for `g` analytic + nonvanishing on the disc.
 
-**Reduced to a single residual `sorry` (the genuinely-hard analytic core):**
+**Now PROVED sorry-free (the full local argument principle):**
 
 * `residue_logDeriv_eq_order` — the **local** argument principle: for `f`
-  meromorphic at `w`, the small-circle integral `(2πi)⁻¹ ∮_{C(w,r)} f'/f` equals the
-  order `ord_w f`. **The residue-computation is now DONE sorry-free** — bricks 1–3
-  assemble the split + integrate. The ONLY remaining `sorry` is the *global
-  factorization on the closed disc*: extending the germ `f = (·-w)^n·g` (which
-  `meromorphicOrderAt_eq_int_iff` gives in `𝓝[≠] w`) to a nonvanishing analytic `g`
-  on an OPEN neighborhood of the closed disc. Everything downstream of that single
-  `obtain … := sorry` is fully verified by Lean.
+  meromorphic at `w` and analytic + nonvanishing on the punctured open neighborhood
+  `U \ {w}` of the closed disc, the small-circle integral `(2πi)⁻¹ ∮_{C(w,r)} f'/f`
+  equals the order `ord_w f`. **Fully sorry-free (2026-07-20):** the residue-
+  computation (bricks 1–3) plus the global factorization `f = (·-w)^n·g` are both
+  discharged. The factor is built explicitly, `g := (·-w)^(-n)·f` off `w` patched to
+  the germ value `g₀ w` at `w` (`meromorphicOrderAt_eq_int_iff` supplies `g₀`); it
+  agrees with `g₀` on a full neighborhood of `w` (removable singularity ⇒ analytic
+  at `w`) and is a product of analytic nonvanishing factors away from `w`. The
+  earlier pointwise-`hsmall` hypothesis was too weak to build an OPEN-neighborhood
+  factor and is replaced by the honest `AnalyticOnNhd`/no-other-zeros pair — exactly
+  what a real argument-principle setup provides.
+
+**Still stated open (`sorry` with cited `-- Ref:` — the residue-SUM engine):**
+
 * `argument_principle` — the global statement (contour integral = divisor sum),
   the composition of the local residue with the residue theorem over the finitely
   many divisor points in the disc.
@@ -82,15 +89,16 @@ the Cauchy integral / residue of a *simple explicit* pole `(z-c)⁻¹`),
 `extract_zeros_poles`), and the Nevanlinna value-distribution cone
 (`Analysis/Complex/ValueDistribution/`, `logCounting`, First Main Theorem).
 
-Absent: the **argument principle itself** — the identity linking `(1/2πi)∮ f'/f`
-to `Σ ord`. Concretely, the missing link is `residue_logDeriv_eq_order`: that the
-residue of `logDeriv f` at `w` equals `meromorphicOrderAt f w`. Mathlib has the
-Cauchy formula for a bare `(z-c)⁻¹` factor but NOT the computation that `f'/f`
-develops a simple pole of residue `ord_w f` at each zero/pole `w`, nor the residue
-theorem summing those residues over a contour. `Complex.residue`, a general residue
-theorem, and `windingNumber` are all absent. So the gap `(1/2πi)∮ f'/f = #zeros −
-#poles` is exactly ONE local lemma (`residue_logDeriv_eq_order`) plus a residue-sum
-assembly.
+Absent: the **residue-SUM engine** — the contour-deformation that sums the local
+residues over the interior divisor points. The *local* half (`f'/f` develops a simple
+pole of residue `ord_w f` at each zero/pole `w`) is now **proved here** as
+`residue_logDeriv_eq_order`, assembled from the Cauchy formula for a bare `(z-c)⁻¹`
+factor (present) plus the germ factorization (`meromorphicOrderAt_eq_int_iff`, present).
+What remains absent is the *global* half: `Complex.residue`, a general residue theorem,
+and `windingNumber` are all missing, so deforming the big contour `C(c,R)` onto small
+circles around each divisor point and summing has no Mathlib engine. So the residual
+gap `(1/2πi)∮ f'/f = #zeros − #poles` is now exactly the residue-sum assembly
+(`argument_principle`), no longer the local lemma.
 
 -- Ref: [manuscript] Argument principle / residue of the logarithmic derivative;
 --   standard complex analysis (Ahlfors, *Complex Analysis*, Ch. 5 §2; Conway
@@ -107,12 +115,14 @@ cone via `LEAN_PATH` over the package olean dirs). Sorry-free bricks:
 and the three new analytic bricks `logDeriv_zpow_sub_mul_split`,
 `inv_two_pi_I_mul_integral_nat_sub_center_inv`,
 `circleIntegral_logDeriv_eq_zero_of_analyticOnNhd`. `residue_logDeriv_eq_order` is now
-**reduced from a full `sorry` to ONE residual `sorry`** (the global closed-disc
-factorization); its entire residue-computation tail is sorry-free. The only warnings
-are three intended `declaration uses 'sorry'` (`residue_logDeriv_eq_order` — one
-residual; `argument_principle`; `entire_zero_count`), each with a cited `-- Ref:`.
-Not vacuous `True`, not axiomatized as proved. A full `lake build QOU` on a host with
-the complete Analysis cone remains the CI gate.
+**fully sorry-free** (2026-07-20): its global closed-disc factorization was discharged
+by building the nonvanishing analytic factor explicitly and gluing it across `w` by
+removable singularity, over the honest `AnalyticOnNhd`/no-other-zeros hypotheses. The
+only warnings are two intended `declaration uses 'sorry'` (`argument_principle`,
+`entire_zero_count`), each with a cited `-- Ref:` — both awaiting the residue-SUM /
+contour-deformation engine still absent from Mathlib v4.24.0. Not vacuous `True`, not
+axiomatized as proved. A full `lake build QOU` on a host with the complete Analysis
+cone remains the CI gate.
 -/
 
 open Filter Topology Complex
@@ -230,31 +240,72 @@ analytic `logDeriv g` integrates to `0` (Cauchy), and `∮ (z-w)⁻¹ = 2πi`
 (`circleIntegral_sub_center_inv_smul_of_differentiable_on_off_countable`), leaving
 `n`. Mathlib has BOTH ingredients but not this composition.
 
-**OPEN — the genuine Mathlib v4.24.0 gap.** Hypotheses (finiteness of the order,
-smallness of `r`, pole-avoidance on the circle) are packaged so the analytic core
-is isolated. -/
-theorem residue_logDeriv_eq_order {f : ℂ → ℂ} {w : ℂ} {r : ℝ} {n : ℤ}
+**PROVED (sorry-free).** The factorization core is now discharged from the standard
+argument-principle hypotheses: `f` meromorphic at `w`, analytic and nonvanishing on
+the punctured open neighborhood `U \ {w}` of the closed disc. These are exactly the
+hypotheses a real argument-principle setup provides; the earlier pointwise-`hsmall`
+formulation was too weak to build an OPEN-neighborhood factor (an open `U ⊇
+closedBall w r` necessarily reaches points outside the disc, where a pointwise-order
+hypothesis says nothing), so it is replaced here by the honest `AnalyticOnNhd`/
+no-other-zeros pair. -/
+theorem residue_logDeriv_eq_order {f : ℂ → ℂ} {w : ℂ} {r : ℝ} {n : ℤ} {U : Set ℂ}
     (hf : MeromorphicAt f w) (hr : 0 < r)
+    (hU_open : IsOpen U) (hball_sub : Metric.closedBall w r ⊆ U)
     (horder : meromorphicOrderAt f w = (n : WithTop ℤ))
-    (hclean : ∀ z ∈ Metric.sphere w r, f z ≠ 0)
-    (hsmall : ∀ z ∈ Metric.closedBall w r, z ≠ w → meromorphicOrderAt f z = 0) :
+    (hfU : AnalyticOnNhd ℂ f (U \ {w}))
+    (hfne : ∀ z ∈ U, z ≠ w → f z ≠ 0) :
     (2 * (Real.pi : ℂ) * Complex.I)⁻¹ * (∮ z in C(w, r), logDeriv f z) = (n : ℂ) := by
-  -- === The genuine analytic core (residual): global factorization on the disc. ===
+  -- === The analytic core: global factorization `f = (·-w)^n·g` on `U`, now PROVED. ===
   -- From `meromorphicOrderAt f w = n` (`meromorphicOrderAt_eq_int_iff` supplies the
-  -- germ `f = (·-w)^n • g` in `𝓝[≠] w`) together with `hsmall` (order 0 elsewhere in
-  -- the disc) and `hclean` (no zeros on the circle), produce a single nonvanishing
-  -- analytic `g` on an OPEN neighborhood `U` of the closed disc, with the
-  -- factorization holding on the punctured `U \ {w}`. This is the removable-
-  -- singularity / analytic-continuation step and is the ONLY remaining `sorry`.
-  obtain ⟨U, g, hU_open, hball_sub, hg_an, hg_ne, hf_eq⟩ :
-      ∃ (U : Set ℂ) (g : ℂ → ℂ), IsOpen U ∧ Metric.closedBall w r ⊆ U ∧
-        AnalyticOnNhd ℂ g U ∧ (∀ z ∈ U, g z ≠ 0) ∧
+  -- germ `f = (·-w)^n • g₀` in `𝓝[≠] w`) together with `hfU` (analytic away from `w`)
+  -- and `hfne` (no other zeros), build the single nonvanishing analytic factor
+  -- `g := (·-w)^(-n)·f` off `w`, patched to `g₀ w` at `w`. It agrees with the germ
+  -- `g₀` on a full neighborhood of `w` (removable singularity), giving analyticity at
+  -- `w`; away from `w` it is a product of analytic nonvanishing factors.
+  obtain ⟨g, hg_an, hg_ne, hf_eq⟩ :
+      ∃ (g : ℂ → ℂ), AnalyticOnNhd ℂ g U ∧ (∀ z ∈ U, g z ≠ 0) ∧
         Set.EqOn f (fun z => (z - w) ^ n * g z) (U \ {w}) := by
-    -- Ref: [manuscript] Ahlfors §5.2 — removable-singularity / analytic-continuation
-    --   producing the global nonvanishing analytic factor `g` from the point germ.
-    --   Absent from Mathlib v4.24.0. See
-    --   docs/audits/2026-07-20-argument-principle-scaffold.md.
-    sorry
+    obtain ⟨g₀, hg₀_an, hg₀_ne, hg₀_eq⟩ := (meromorphicOrderAt_eq_int_iff hf).mp horder
+    set G : ℂ → ℂ := Function.update (fun z => (z - w) ^ (-n) * f z) w (g₀ w) with hG
+    have hGaway : ∀ z, z ≠ w → G z = (z - w) ^ (-n) * f z := by
+      intro z hz; rw [hG, Function.update_of_ne hz]
+    have hGw : G w = g₀ w := by rw [hG, Function.update_self]
+    refine ⟨G, ?_, ?_, ?_⟩
+    · -- `AnalyticOnNhd ℂ G U`
+      intro z hz
+      by_cases hzw : z = w
+      · -- at `w`: `G =ᶠ[𝓝 w] g₀`, and `g₀` is analytic at `w`
+        have hpunc : G =ᶠ[𝓝[≠] w] g₀ := by
+          filter_upwards [hg₀_eq, self_mem_nhdsWithin] with x hx hxne
+          have hxw : x ≠ w := hxne
+          rw [hGaway x hxw, hx]
+          show (x - w) ^ (-n) * ((x - w) ^ n * g₀ x) = g₀ x
+          rw [← mul_assoc, ← zpow_add₀ (sub_ne_zero.2 hxw), neg_add_cancel, zpow_zero, one_mul]
+        have hEq : G =ᶠ[𝓝 w] g₀ := eventuallyEq_nhds_of_eventuallyEq_nhdsNE hpunc hGw
+        rw [hzw]
+        exact (analyticAt_congr hEq).mpr hg₀_an
+      · -- away from `w`: product of analytic factors
+        have hUz : z ∈ U \ {w} := ⟨hz, by simpa using hzw⟩
+        have hfz : AnalyticAt ℂ f z := hfU z hUz
+        have hne_nhds : G =ᶠ[𝓝 z] (fun x => (x - w) ^ (-n) * f x) := by
+          have hmem : {w}ᶜ ∈ 𝓝 z := isClosed_singleton.isOpen_compl.mem_nhds (by simpa using hzw)
+          filter_upwards [hmem] with x hx
+          exact hGaway x (by simpa using hx)
+        rw [analyticAt_congr hne_nhds]
+        have hbase : AnalyticAt ℂ (fun x : ℂ => x - w) z := analyticAt_id.sub analyticAt_const
+        exact (AnalyticAt.fun_zpow hbase (sub_ne_zero.2 hzw)).mul hfz
+    · -- nonvanishing on `U`
+      intro z hz
+      by_cases hzw : z = w
+      · rw [hzw, hGw]; exact hg₀_ne
+      · rw [hGaway z hzw]
+        exact mul_ne_zero (zpow_ne_zero _ (sub_ne_zero.2 hzw)) (hfne z hz hzw)
+    · -- factorization on `U \ {w}`
+      intro z hz
+      have hzw : z ≠ w := by simpa using hz.2
+      show f z = (z - w) ^ n * G z
+      rw [hGaway z hzw, ← mul_assoc, ← zpow_add₀ (sub_ne_zero.2 hzw), add_neg_cancel, zpow_zero,
+        one_mul]
   -- === Everything below is sorry-free: the three bricks assembled. ===
   have hg_an_cb : AnalyticOnNhd ℂ g (Metric.closedBall w r) := hg_an.mono hball_sub
   have hg_ne_cb : ∀ z ∈ Metric.closedBall w r, g z ≠ 0 := fun z hz => hg_ne z (hball_sub hz)

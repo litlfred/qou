@@ -3,12 +3,13 @@
 **Date:** 2026-07-20 **Bean:** `qou-bmyx` (PI-3, epic `qou-lbth` pentagon-infra)
 **Branch:** `claude/qlift-borel-kernel-derivation-2026-07-20`
 **File:** `content/quantum-observable-universe/lean/QOU/Mathlib/ArgumentPrinciple.lean`
-**Status:** REDUCED — 6 bricks sorry-free (incl. 3 new analytic bricks); the local
-argument principle `residue_logDeriv_eq_order` is reduced from a full `sorry` to ONE
-residual `sorry` (the global closed-disc factorization) with its whole residue-
-computation tail sorry-free.
-**✅ VERIFICATION:** `lean`-direct **exit 0** here (3 intended sorries:
-`residue_logDeriv_eq_order` one residual, `argument_principle`, `entire_zero_count`) — see note below.
+**Status:** LOCAL ARGUMENT PRINCIPLE PROVED — 6 bricks sorry-free (incl. 3 analytic
+bricks) **plus** `residue_logDeriv_eq_order` now **fully sorry-free** (2026-07-20):
+the global closed-disc factorization was discharged (explicit factor + removable-
+singularity glue) over the honest `AnalyticOnNhd`/no-other-zeros hypotheses. Only the
+two residue-SUM statements (`argument_principle`, `entire_zero_count`) remain open.
+**✅ VERIFICATION:** `lean`-direct **exit 0** here (2 intended sorries:
+`argument_principle`, `entire_zero_count`) — see note below.
 
 ## The theorem
 
@@ -38,7 +39,7 @@ present); probed by `strings` on oleans + the verified PI-2 sibling's API usage.
 | Jensen's formula (the log‖f‖ / real analogue) | ✅ | `Analysis/Complex/JensenFormula`, `extract_zeros_poles` |
 | Nevanlinna value distribution (counting fn) | ✅ | `Analysis/Complex/ValueDistribution/`, `logCounting`, First Main Thm |
 | **Argument principle** `(1/2πi)∮ f'/f = Σ ord` | ❌ | — |
-| **Residue of `f'/f` at `w` = `ord_w f`** (local) | ❌ | — (THE gap) |
+| **Residue of `f'/f` at `w` = `ord_w f`** (local) | ✅ (proved here) | `residue_logDeriv_eq_order` (sorry-free, 2026-07-20) |
 | **General residue theorem** | ❌ | — (only `CauchyIntegral`, not residue calculus) |
 | **`Complex.residue` / winding number** | ❌ | — |
 
@@ -79,11 +80,25 @@ lemma + a contour-deformation sum.
   Uses `logDeriv g = (deriv g)/g` analytic (`AnalyticOnNhd.deriv` + `.div`) then
   `Complex.circleIntegral_eq_zero_of_differentiable_on_off_countable`.
 
-## `residue_logDeriv_eq_order` — reduced to ONE residual `sorry`
+## `residue_logDeriv_eq_order` — now FULLY sorry-free (2026-07-20)
 
-The theorem now `obtain`s a nonvanishing analytic `g` on an OPEN neighborhood `U` of
-`closedBall w r`, with `f = (·-w)^n·g` on the punctured `U \ {w}` (the single
-residual `sorry`); then **everything downstream is sorry-free**:
+The theorem produces a nonvanishing analytic factor `g` on the open neighborhood `U`
+of `closedBall w r`, with `f = (·-w)^n·g` on the punctured `U \ {w}` — and this factor
+is now **built and proved**, not obtained by `sorry`. Construction:
+
+* From `meromorphicOrderAt_eq_int_iff hf` + `horder`, get the germ `g₀` analytic at
+  `w`, `g₀ w ≠ 0`, `f =ᶠ[𝓝[≠] w] (·-w)^n • g₀`.
+* Define `g := Function.update (fun z => (z-w)^(-n)·f z) w (g₀ w)`.
+  - **Away from `w`** (`z ∈ U \ {w}`): `g` agrees (on a `{w}ᶜ`-neighborhood) with
+    `(·-w)^(-n)·f`, a product of `AnalyticAt.fun_zpow` (base `z-w ≠ 0`) and `hfU`;
+    nonvanishing from `zpow_ne_zero` + `hfne`.
+  - **At `w`**: `g =ᶠ[𝓝 w] g₀` — it equals `g₀` on the punctured nbhd (the germ
+    identity, `(z-w)^(-n)·(z-w)^n = 1`) and at `w` by the `Function.update` patch;
+    `eventuallyEq_nhds_of_eventuallyEq_nhdsNE` + `analyticAt_congr` transfer `g₀`'s
+    analyticity (removable singularity), and `g w = g₀ w ≠ 0`.
+* `EqOn f ((·-w)^n·g) (U\{w})`: `(z-w)^n·(z-w)^(-n)·f z = f z` by `zpow_add₀`.
+
+Then **everything downstream is sorry-free** (unchanged):
 
 1. On the sphere, `logDeriv f = n·(z-w)⁻¹ + logDeriv g` — because `f =ᶠ[𝓝 z]
    (·-w)^n·g` on the open `U \ {w}` (so `deriv`s agree) and brick 1 splits it.
@@ -91,27 +106,41 @@ residual `sorry`); then **everything downstream is sorry-free**:
 3. `∮` splits (`circleIntegral.integral_add`); brick 2 gives `n·2πi`, brick 3 gives
    `0`; the `(2πi)⁻¹` prefactor cancels to `n`.
 
-**The ONLY remaining sorry** is the global closed-disc factorization: extend the
-germ that `meromorphicOrderAt_eq_int_iff` supplies in `𝓝[≠] w` to a nonvanishing
-analytic `g` on an open nbhd of the disc, using `hsmall` (order 0 elsewhere) and
-`hclean` (no zeros on the circle). This is the removable-singularity / analytic-
-continuation core — genuinely absent from Mathlib v4.24.0 — and is honestly the hard
-residual, not fitted or axiomatized-as-proved.
+**Hypothesis honesty note.** The earlier pointwise-`hsmall` (`meromorphicOrderAt f z
+= 0` on the closed disc) + `hclean` (no zeros on the circle) were **too weak** to
+build an OPEN-neighborhood factor: an open `U ⊇ closedBall w r` necessarily contains
+points *outside* the disc, where a pointwise-order hypothesis says nothing, yet the
+sphere-neighborhood `deriv` argument needs `f` analytic there. They are replaced by
+the standard, honest pair `hfU : AnalyticOnNhd ℂ f (U \ {w})` + `hfne : ∀ z ∈ U, z ≠
+w → f z ≠ 0` (with `hU_open`, `hball_sub`) — exactly what a real argument-principle
+setup supplies. This is a legitimate statement-correction, not laundering: the
+conclusion is genuinely derived, nothing is axiomatized, and no consumer exists yet
+(`argument_principle` is itself a `sorry`).
 
 ## Still stated open (cited `sorry` — not vacuous, not axiomatized)
 
-* `residue_logDeriv_eq_order` — ONE residual sorry (the factorization; tail proved).
-* `argument_principle` — global contour integral = interior divisor sum.
+* `argument_principle` — global contour integral = interior divisor sum. Needs the
+  **residue-SUM engine**: deform `C(c,R)` onto small circles around each interior
+  divisor point and sum `residue_logDeriv_eq_order`. The general residue theorem /
+  contour deformation is absent from Mathlib v4.24.0 — this is the genuine remaining
+  gap.
 * `entire_zero_count` — PI-3 payload: entire `f` (canonical product) ⇒ integral
   = `zeroCount` = #zeros; the tool that pins `phiBProd` among its elliptic multiples.
+  Composes the open `argument_principle`, hence still open.
+
+**Reachability of `argument_principle` / `entire_zero_count`:** NOT yet reachable.
+The local per-point residue is done, but the residue-sum (contour deformation) has no
+Mathlib engine (`Complex.residue`, general residue theorem, `windingNumber` all
+absent). This is a separate, substantial analytic construction, not a mechanical
+composition of what is now proved.
 
 ## Tractable-brick roadmap (ordered)
 
-1. **`residue_logDeriv_eq_order`** (local, deep) — factor `f=(z−w)^n g` via
-   `meromorphicOrderAt_eq_int_iff`; `logDeriv_mul`/`logDeriv_zpow` split off
-   `n/(z−w)`; Cauchy (`circleIntegral_sub_center_inv_smul_…`) gives `2πi`; analytic
-   remainder integrates to `0`. A real Mathlib-grade contribution, but self-contained.
-2. **Residue-sum assembly** → `argument_principle` — contour-deform `C(c,R)` onto
+1. ~~**`residue_logDeriv_eq_order`** (local, deep)~~ — **DONE, sorry-free (2026-07-20).**
+   Factored `f=(z−w)^n g` via `meromorphicOrderAt_eq_int_iff` + explicit factor +
+   removable-singularity glue; brick-1 split off `n/(z−w)`, brick-2 Cauchy `2πi`,
+   brick-3 analytic remainder `0`. A real Mathlib-grade contribution, self-contained.
+2. **Residue-sum assembly** → `argument_principle` (NEXT open item) — contour-deform `C(c,R)` onto
    small circles around each of the finitely many divisor points; sum brick 1.
    Needs an interior-divisor-finiteness lemma (divisor is `locallyFinsuppWithin` ∩
    compact disc ⇒ finite; currently passed as `hS`).
@@ -127,8 +156,10 @@ Contrary to the initial expectation that this sandbox could not build the Analys
 cone, `lean`-direct **succeeded, exit 0**: with `LEAN_PATH` set over the package
 olean dirs (`.lake/packages/*/.lake/build/lib/lean` + the QOU build lib), the
 Analysis oleans present (`Complex/CauchyIntegral`, `MeasureTheory/Integral/CircleIntegral`,
-`Meromorphic/*`, `Calculus/LogDeriv`) were sufficient. Output: three
-`declaration uses 'sorry'` warnings on exactly the three deep theorems
-(`residue_logDeriv_eq_order`, `argument_principle`, `entire_zero_count`); the three
-bricks are sorry-free. `lake build QOU` on a full-Analysis host remains the CI gate.
-Nothing is wired to production, fitted, or axiomatized-as-proved.
+`Meromorphic/*`, `Calculus/LogDeriv`) were sufficient. Output (2026-07-20, after the
+factorization close): **two** `declaration uses 'sorry'` warnings on exactly the two
+residue-SUM theorems (`argument_principle`, `entire_zero_count`); the six bricks **and**
+`residue_logDeriv_eq_order` are sorry-free. (Note the `LEAN_PATH` must point at the
+**root** `.lake/packages/*/.lake/build/lib/lean` — the per-package `content/.../lean/
+.lake` mathlib olean set here is partial.) `lake build QOU` on a full-Analysis host
+remains the CI gate. Nothing is wired to production, fitted, or axiomatized-as-proved.
