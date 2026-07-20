@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-18T23:49:38.124525+00:00",
-  "commitSha": "399abd6d54bd2ed52ac45a29f25d1c4aebd5b2a9",
+  "computedAt": "2026-07-19T18:13:35.436236+00:00",
+  "commitSha": "7263314856d282ca9e68f9b6152940589f50404d",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -153,9 +153,9 @@
     },
     {
       "name": "chain_valid[c-q-q0.derivation]",
-      "computed": false,
+      "computed": true,
       "expected": true,
-      "passed": false
+      "passed": true
     },
     {
       "name": "leaf_value[c-q-q0.derivation]",
@@ -558,12 +558,12 @@
       "tolerance": 9.9124115660574e-11
     }
   ],
-  "allPassed": false,
-  "durationMs": 3,
+  "allPassed": true,
+  "durationMs": 4,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "ff40fb7a9d7d",
-  "scriptCommitSha": "7cff53fbc673cdd608ae6026b2b950eca58444f1",
+  "scriptCommitSha": "e97fc42930f5618a2fd23b431971bf73ee313151",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -572,10 +572,8 @@
   },
   "environment": {
     "python": "3.11.15",
-    "numpy": "2.4.6",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.3.0"
   },
   "description": "Per-chain validation + computational-trust audit per the QOU methodology directive: every numerical claim must trace back to first-principles axioms via a DerivationChain.",
   "auditOnly": "docs/audits/2026-05-02-pr503-ci-failure-postmortem.md",
@@ -1188,9 +1186,7 @@
         "computed_value": 9.092678397394828,
         "structural_ok": true,
         "leaf_matches": true,
-        "issues": [
-          "c_q algebra re-eval at q_0=1.1099785827513808 gives 9.092679456150243 vs target 9.092678397394828 (rel_diff 1.16e-07, target_tolerance 1.00e-12)"
-        ],
+        "issues": [],
         "trust_summary": {
           "axiom": 2,
           "derived": 2,
