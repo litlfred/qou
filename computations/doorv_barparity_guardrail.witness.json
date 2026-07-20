@@ -1,0 +1,67 @@
+{
+  "description": "Door-v bar-parity GUARDRAIL: STRUCTURAL CONFIRMATION that a bar-even (mass/binding, cosh, non-negative-cone) quantity and a bar-odd (Q_beta/decay, sinh, (-1)^m alternating) quantity have OPPOSITE (-1)^m parity and cannot be gauge/transform-related. Verifies the parity relationship on model bar-even/bar-odd corpus objects and exposes check_parity_derivable() to FLAG any future compute that tries to derive a bar-odd observable from a bar-even one by a parity-preserving map. Adds NO new physical number.",
+  "computation": "mpmath dps=50; bar-even sector = tensor-square carriers f+^2, f-^2 (real squares, pointwise >= 0) of the C1 kernel; bar-odd sector = growing GGM/eq-49 solution modelled by its (-1)^m sign character. Checks: (i) both squares classify bar-even (no consecutive flip); (ii) GGM classifies bar-odd (genuine flip); (iii) guardrail check_parity_derivable([f+^2,f-^2], GGM) returns violation=True (parity wall fires); (iv) negative control (bar-even target) returns violation=False. Sampled at q in {0.9,1.05,1.10998} to show q-independence. SIGN structure only \u2014 no magnitude, no fit, no data.",
+  "generated": "2026-07-20T05:52:49.157746+00:00",
+  "framing": "structural-confirmation",
+  "adds_new_number": false,
+  "parameters": {
+    "dps": 50,
+    "n_terms": 24,
+    "q_samples": [
+      "0.9",
+      "1.05",
+      "1.10998"
+    ],
+    "sectors": {
+      "bar_even": "mass / binding \u2014 cosh \u2014 C1 kernel \u2014 non-negative cone",
+      "bar_odd": "Q_beta / decay \u2014 sinh \u2014 GGM/eq-49 \u2014 (-1)^m alternating"
+    }
+  },
+  "results": {
+    "structural_confirmation": true,
+    "per_q": [
+      {
+        "q": "0.9",
+        "bar_even_fplus_sq": "bar-even",
+        "bar_even_fminus_sq": "bar-even",
+        "bar_odd_ggm": "bar-odd",
+        "opposite_parity": true,
+        "guardrail_flags_derivation": true,
+        "negative_control_no_flag": true,
+        "wall_holds": true
+      },
+      {
+        "q": "1.05",
+        "bar_even_fplus_sq": "bar-even",
+        "bar_even_fminus_sq": "bar-even",
+        "bar_odd_ggm": "bar-odd",
+        "opposite_parity": true,
+        "guardrail_flags_derivation": true,
+        "negative_control_no_flag": true,
+        "wall_holds": true
+      },
+      {
+        "q": "1.10998",
+        "bar_even_fplus_sq": "bar-even",
+        "bar_even_fminus_sq": "bar-even",
+        "bar_odd_ggm": "bar-odd",
+        "opposite_parity": true,
+        "guardrail_flags_derivation": true,
+        "negative_control_no_flag": true,
+        "wall_holds": true
+      }
+    ],
+    "assertion": "mass/binding is bar-EVEN (cosh, non-negative cone); Q_beta/decay is bar-ODD (sinh, (-1)^m alternating); they have OPPOSITE (-1)^m parity and cannot be gauge/transform-related by any parity-preserving map. Decay observables must NOT be derived from the binding kernel."
+  },
+  "context": {
+    "bean": "qou-fawf",
+    "kind": "producer-side structural guardrail (no new physical number)",
+    "audit_doc": "docs/audits/2026-07-20-doorv-guardrail.md",
+    "builds_on": [
+      "docs/audits/2026-07-20-qlift-doorV-stokes.md (the (-1)^m residual finding)",
+      "docs/audits/2026-07-20-sinhcosh-scale-impact-analysis.md (impact: guard the decay compute)"
+    ],
+    "lean_backing": "QOU.Mass.DoorVParityNoIdentity \u2014 doorV_parity_no_identity (sorry-free scope-(b) exclusion): no non-negative-cone combination of the bar-even squares equals a sign-alternating bar-odd target. Invariant = non-negativity of a real square (0 <= x^2), the same invariant as the KL-positivity prune.",
+    "discipline": "STRUCTURAL CONFIRMATION only. No AME data, no fit, no q0-derived prediction. Verifies the parity relationship holds on model bar-even/bar-odd objects and would flag a parity-preserving bar-even -> bar-odd derivation. scope-(b) exclusion cites a proved invariant (real square >= 0)."
+  }
+}
