@@ -326,6 +326,11 @@ import QOU.Mathlib.HadamardFactorization
 -- Mathlib gap); #zeros−#poles=Σ ord counting brick + 2πi≠0 proved sorry-free.
 -- lean-direct exit 0 (3 intended sorries on the deep theorems); lake build QOU is CI gate.
 import QOU.Mathlib.ArgumentPrinciple
+-- q-jet-bundle geometry infra for the keystone geometric-attachment step
+-- (conj:qdifference-kernel-prolongation-symbol). Concrete q-jet/prolongation
+-- infra proved sorry-free; the geometric attachment is an OPEN conjecture class
+-- (no instance). lean-direct exit 0.
+import QOU.Mathlib.QJetBundle
 -- Identity-I / RSK infrastructure (verified library files; wired in for CI build coverage).
 import QOU.Mathlib.PartitionListBridge
 import QOU.Mathlib.PartitionsOfBridge
