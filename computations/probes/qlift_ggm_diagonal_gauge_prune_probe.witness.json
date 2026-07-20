@@ -1,0 +1,186 @@
+{
+  "description": "Diagonal-gauge prune: b_m = g_m*y_m from C1 kernel [m+1]_q b_{m+1} = b_m + c b_{m-1} into GGM eq-49 y_{m+1} - (2-q^m) y_m + y_{m-1} = 0 -- consistency condition derived symbolically, verified numerically",
+  "computation": "mpmath dps=50; P1 residual of derived consistency identity; P2 direct (A)-gauge construction + eq-49 residual on the proved C1 solution b_n = I_q(n)/[n]_q!; P3 constant-c(q) and index-shift non-rescue",
+  "generated": "2026-07-20T03:19:29+00:00",
+  "parameters": {
+    "dps": 50,
+    "tol_kill": "1e-40",
+    "m_max": 15,
+    "q_values": [
+      "0.9",
+      "1.05",
+      "1.10998"
+    ],
+    "shifts_tested": [
+      -2,
+      -1,
+      0,
+      1,
+      2
+    ]
+  },
+  "derivation": {
+    "constraint_A": "g_m/g_{m+1} = [m+1]_q (2 - q^m)",
+    "constraint_B": "g_{m-1}/g_{m+1} = -[m+1]_q / c",
+    "consistency": "c * [m]_q * (2 - q^{m-1}) * (2 - q^m) = -1 for all m",
+    "why_it_fails": "LHS non-constant in m (equals c*m at q=1, and positive for real 0 < q^m < 2), RHS constant -1"
+  },
+  "results": {
+    "p1_consistency": {
+      "rows": [
+        {
+          "q": "0.9",
+          "min_abs_C": "2.1",
+          "max_abs_C": "26.24",
+          "survives": false
+        },
+        {
+          "q": "1.05",
+          "min_abs_C": "0.9658",
+          "max_abs_C": "4.248",
+          "survives": false
+        },
+        {
+          "q": "1.10998",
+          "min_abs_C": "0.9036",
+          "max_abs_C": "222.1",
+          "survives": false
+        }
+      ],
+      "survived": false,
+      "verdict": "consistency condition fails identically: |C_m| = O(1..10^2) at every m <= 15, every q -- diagonal gauge over-determined"
+    },
+    "p2_direct_residual": {
+      "rows": [
+        {
+          "q": "0.9",
+          "min_rel_residual": "0.6831",
+          "max_rel_residual": "0.9545",
+          "obstructed": true
+        },
+        {
+          "q": "1.05",
+          "min_rel_residual": "0.7958",
+          "max_rel_residual": "1.52",
+          "obstructed": true
+        },
+        {
+          "q": "1.10998",
+          "min_rel_residual": "0.8369",
+          "max_rel_residual": "1.42",
+          "obstructed": true
+        }
+      ],
+      "all_obstructed": true,
+      "verdict": "obstructed at every m for every q"
+    },
+    "p3_no_constant_c_no_shift": {
+      "rows": [
+        {
+          "q": "0.9",
+          "spread_S": "24.14",
+          "shifts": [
+            {
+              "s": -2,
+              "c_best": "-0.661161",
+              "max_abs_C": "14.67"
+            },
+            {
+              "s": -1,
+              "c_best": "-0.763942",
+              "max_abs_C": "17.72"
+            },
+            {
+              "s": 0,
+              "c_best": "-0.909091",
+              "max_abs_C": "21.94"
+            },
+            {
+              "s": 1,
+              "c_best": "-0.478469",
+              "max_abs_C": "11.39"
+            },
+            {
+              "s": 2,
+              "c_best": "-0.335458",
+              "max_abs_C": "7.882"
+            }
+          ]
+        },
+        {
+          "q": "1.05",
+          "spread_S": "3.283",
+          "shifts": [
+            {
+              "s": -2,
+              "c_best": "-1.3227",
+              "max_abs_C": "1.86"
+            },
+            {
+              "s": -1,
+              "c_best": "-1.17285",
+              "max_abs_C": "2.121"
+            },
+            {
+              "s": 0,
+              "c_best": "-1.05263",
+              "max_abs_C": "2.419"
+            },
+            {
+              "s": 1,
+              "c_best": "-0.513479",
+              "max_abs_C": "1.019"
+            },
+            {
+              "s": 2,
+              "c_best": "-0.333904",
+              "max_abs_C": "1.014"
+            }
+          ]
+        },
+        {
+          "q": "1.10998",
+          "spread_S": "221.2",
+          "shifts": [
+            {
+              "s": -2,
+              "c_best": "-2.05896",
+              "max_abs_C": "345.8"
+            },
+            {
+              "s": -1,
+              "c_best": "-1.46309",
+              "max_abs_C": "282.0"
+            },
+            {
+              "s": 0,
+              "c_best": "-1.12357",
+              "max_abs_C": "247.4"
+            },
+            {
+              "s": 1,
+              "c_best": "-0.532503",
+              "max_abs_C": "133.1"
+            },
+            {
+              "s": 2,
+              "c_best": "-0.336193",
+              "max_abs_C": "95.14"
+            }
+          ]
+        }
+      ],
+      "any_rescue": false,
+      "verdict": "S_m non-constant in m at every q (spread >> 0); no constant c(q), no shift s in [-2,2] zeroes the residual"
+    },
+    "pruned": true,
+    "verdict": "SCOPE-(b) EXCLUSION of DIAGONAL gauges: the derived consistency condition c*[m+s]_q*(2-q^(m-1))*(2-q^m) = -1 (all m) fails identically -- one gauge freedom, two coefficient constraints, over-determined; verified |C_m| = O(1..10^2) at q in {0.9, 1.05, 1.10998}, m <= 15, c and s free.  Invariant cited: the exact algebraic identity displayed in the module docstring / audit doc. NOT excluded (scope stated explicitly): non-diagonal 2x2 gauge transforms, Moebius-of-solution-ratio maps, inhomogeneous shifts b_m = g_m y_m + h_m, and q-Borel-type summation transforms mixing all m.  C1 and GGM eq-49 remain two genuinely distinct order-2 q-lifts of the same classical shadow."
+  },
+  "context": {
+    "workplan": "docs/workplans/2026-07-20-qlift-borel-kernel-workplan.md (step 3)",
+    "audit_doc": "docs/audits/2026-07-20-qlift-ggm-gauge-prune.md",
+    "prior_probe": "computations/probes/qlift_kernel_candidate_crosscheck_probe.py (T2 scalar-gauge DISTINCT verdict; this probe upgrades scalar -> arbitrary diagonal)",
+    "ggm_source": "uploads/2012.00062v3.pdf pp.14-15 (eq 49, Thm 9 bar parity)",
+    "discipline": "formalize-first (derivation before any scan); scope-(a)/(b) vocabulary per AGENTS.md; no AME data; anti-fit"
+  }
+}
