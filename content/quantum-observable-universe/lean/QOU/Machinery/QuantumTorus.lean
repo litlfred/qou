@@ -179,6 +179,77 @@ theorem support_single_of_ne {n : Ldeg} {a : A} (ha : a ≠ 0) :
   · simp [hx, ha]
   · simp [hx]
 
+/-! ### B2 — ℤ-monomial basis, product law, and L-degree normal form
+
+The skew-Laurent ring's `ℤ`-graded monomial basis `L^n·a = single (ofAdd n) a`,
+the twisted product law `L^m a · L^n b = L^{m+n} (a · σᵐ b)`, and the L-degree
+functions (`expSupport`, `coeffAt`, `topDeg`) that brick B3's skew-Euclidean
+division reduces on.  All sorry-free. -/
+
+/-- The `ℤ`-indexed monomial `L^n · a = single (ofAdd n) a`. -/
+def monomial (n : ℤ) (a : A) : QuantumTorus A := single (Multiplicative.ofAdd n) a
+
+@[simp] theorem monomial_zero_left (a : A) : monomial 0 a = emb a := by
+  rw [monomial, emb_apply]; rfl
+
+theorem Lgen_eq_monomial : (Lgen : QuantumTorus A) = monomial 1 1 := rfl
+theorem Linv_eq_monomial : (Linv : QuantumTorus A) = monomial (-1) 1 := rfl
+
+/-- **The twisted monomial product law** (`ℤ`-exponent form of
+    `single_mul_single`): `L^m a · L^n b = L^{m+n} (a · σᵐ b)`, where
+    `σᵐ = (ofAdd m) •`. -/
+theorem monomial_mul_monomial (m n : ℤ) (a b : A) :
+    (monomial m a * monomial n b : QuantumTorus A)
+      = monomial (m + n) (a * (Multiplicative.ofAdd m • b)) := by
+  rw [monomial, monomial, single_mul_single, monomial, ← ofAdd_add]
+
+@[simp] theorem coeff_monomial (n : ℤ) (a : A) (x : ℤ) :
+    (monomial n a : QuantumTorus A).coeff (Multiplicative.ofAdd x)
+      = if x = n then a else 0 := by
+  rw [monomial, coeff_single, Pi.single_apply]
+  simp only [EmbeddingLike.apply_eq_iff_eq]
+
+/-- The set of `ℤ`-exponents (L-degrees) appearing in `f`. -/
+def expSupport (f : QuantumTorus A) : Finset ℤ := f.support.image Multiplicative.toAdd
+
+/-- The coefficient of `f` at L-degree `n` (the `L^n`-component). -/
+def coeffAt (f : QuantumTorus A) (n : ℤ) : A := f.coeff (Multiplicative.ofAdd n)
+
+theorem mem_expSupport_iff (f : QuantumTorus A) (n : ℤ) :
+    n ∈ expSupport f ↔ coeffAt f n ≠ 0 := by
+  rw [expSupport, coeffAt, Finset.mem_image]
+  constructor
+  · rintro ⟨x, hx, rfl⟩
+    exact mem_support_iff.mp hx
+  · intro h
+    exact ⟨Multiplicative.ofAdd n, mem_support_iff.mpr h, rfl⟩
+
+@[simp] theorem coeffAt_monomial (n : ℤ) (a : A) (x : ℤ) :
+    coeffAt (monomial n a) x = if x = n then a else 0 := by
+  rw [coeffAt, coeff_monomial]
+
+/-- **Top L-degree** of `f` (`⊥` for `0`): the largest exponent in
+    `expSupport`.  This is the degree brick B3 divides down. -/
+def topDeg (f : QuantumTorus A) : WithBot ℤ := (expSupport f).max
+
+@[simp] theorem topDeg_zero : topDeg (0 : QuantumTorus A) = ⊥ := by
+  rw [topDeg, expSupport]
+  simp
+
+theorem topDeg_monomial (n : ℤ) {a : A} (ha : a ≠ 0) :
+    topDeg (monomial n a) = (n : WithBot ℤ) := by
+  rw [topDeg, expSupport, monomial, support_single_of_ne ha]
+  simp
+
+/-- **Coefficients above the top L-degree vanish** — the key fact the skew
+    division uses to certify the remainder's degree drop. -/
+theorem coeffAt_eq_zero_of_topDeg_lt (f : QuantumTorus A) {n : ℤ}
+    (hn : topDeg f < (n : WithBot ℤ)) : coeffAt f n = 0 := by
+  by_contra h
+  have hmem : n ∈ expSupport f := (mem_expSupport_iff f n).mpr h
+  have : (n : WithBot ℤ) ≤ topDeg f := Finset.le_max hmem
+  exact absurd this (not_le.mpr hn)
+
 /-! ### Evaluation to the function model `ℕ → K` (interoperates with
 `QOU.BraidKnot.AJFigureEight`) -/
 
