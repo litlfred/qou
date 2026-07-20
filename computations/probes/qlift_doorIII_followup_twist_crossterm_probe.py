@@ -178,8 +178,8 @@ def leading_log_slope(seq, q, ms):
         return None, None
     d1 = [(L[m + 1] - L[m]) for m in ms_ok]
     d2 = [(L[m + 2] - 2 * L[m + 1] + L[m]) for m in ms_ok]
-    deg = sum(d1) / len(d1)
-    gamma = (sum(d2) / len(d2)) / 2
+    deg = mp.fsum(d1) / len(d1)
+    gamma = (mp.fsum(d2) / len(d2)) / 2
     return deg, gamma
 
 

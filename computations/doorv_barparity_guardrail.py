@@ -63,7 +63,7 @@ from __future__ import annotations
 import json
 import os
 from datetime import datetime, timezone
-from typing import Callable, Sequence
+from typing import Sequence
 
 from mpmath import mp, mpf
 

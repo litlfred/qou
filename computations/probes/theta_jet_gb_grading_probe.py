@@ -78,8 +78,8 @@ def involution(mmax):
 
 def window_stats(vals, lo, hi):
     xs = vals[lo:hi + 1]
-    mean = sum(xs) / len(xs)
-    var = sum((x - mean) ** 2 for x in xs) / len(xs)
+    mean = mp.fsum(xs) / len(xs)
+    var = mp.fsum((x - mean) ** 2 for x in xs) / len(xs)
     return mean, var ** mpf("0.5")
 
 
@@ -107,9 +107,9 @@ def main():
         ms = list(range(mlo, mhi + 1))
         n = len(ms)
         S0, S1, S2, S3, S4 = (mpf(sum(m ** p for m in ms)) for p in range(5))
-        Ty = sum(theta[m] for m in ms)
-        Tmy = sum(m * theta[m] for m in ms)
-        Tm2y = sum(m * m * theta[m] for m in ms)
+        Ty = mp.fsum(theta[m] for m in ms)
+        Tmy = mp.fsum(m * theta[m] for m in ms)
+        Tm2y = mp.fsum(m * m * theta[m] for m in ms)
         # normal equations for [a,b,c] with basis (m^2, m, 1)
         A = [[S4, S3, S2], [S3, S2, S1], [S2, S1, S0]]
         rhs = [Tm2y, Tmy, Ty]
