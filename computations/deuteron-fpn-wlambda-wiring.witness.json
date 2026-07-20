@@ -1,7 +1,7 @@
 {
   "computation": "deuteron-fpn-wlambda-wiring",
   "kind": "exploratory-probe",
-  "description": "Wires the owner-gated deuteron f_pn = 0.588 magnitude against the keystone Step-1 W_λ = d_q²/[n]_q! gate. Extracts f_pn (required / std) and the gate's W_(2,1) at n=3 (the pn std-channel block), reports the falsifiable bracket. Reuses hecke_channel_binding_probe (channel) and keystone_wlambda_Z_defect_n_scaling (W_λ emitter, PR #2525). No fit.",
+  "description": "Wires the owner-gated deuteron f_pn = 0.588 magnitude against the keystone Step-1 W_\u03bb = d_q\u00b2/[n]_q! gate. Extracts f_pn (required / std) and the gate's W_(2,1) at n=3 (the pn std-channel block), reports the falsifiable bracket. Reuses hecke_channel_binding_probe (channel) and keystone_wlambda_Z_defect_n_scaling (W_\u03bb emitter, PR #2525). No fit.",
   "engine": "mpmath",
   "dps": 50,
   "q0": "1.1099785955573347198997632204832250266562084087802",
@@ -22,7 +22,7 @@
     "C3_times_h2": "0.012747646984596215480321483283550884236016344299706",
     "defect_Z3": "0.01255977297281035948807762149375716642408973653868",
     "sign_change_n": 7,
-    "note": "Exact leading defect coefficient (sibling closed form). The geometric W_λ realization must reproduce this Z(n) structure (C(3)=7/24, sign change at n=7), not just the per-block weights."
+    "note": "Exact leading defect coefficient (sibling closed form). The geometric W_\u03bb realization must reproduce this Z(n) structure (C(3)=7/24, sign change at n=7), not just the per-block weights."
   },
   "pn_block": "(2, 1)",
   "f_pn_pred_from_gate_Wlambda": "0.66067377234802625540747175676965352962546626411232",
@@ -39,24 +39,24 @@
     "yekutieli_b3_stokes_kappa": "0.1875",
     "trM_b3_q0": "1.00673",
     "bring_color_on_lower_bracket": true,
-    "note": "The PRODUCTION Bring-color-weighted convention (f_pn=z−h(½−δ/4), closed_form_tau_M.py::bring_color_weighted) gives 0.39486 — the same lower bracket as the abstract std channel (δ-split negligible). It rides z=√q/(q+1), NOT the color-fibre z₀=√q−1/√q (0.10439) where the open geometric W_λ lives. The genuine Bring-surface geometric object that DOES exist (Yekutieli non-abelian Stokes h²-action of 𝓑₃, κ=3/16, tr_M(𝓑₃,q₀)=1.00673) is an action/trace >1, not a per-bond suppression. So no available compute — algebraic OR Bring-coordinate — lands 0.588; it remains the open color-fibre (z₀) geometric W_λ."
+    "note": "The PRODUCTION Bring-color-weighted convention (f_pn=z\u2212h(\u00bd\u2212\u03b4/4), closed_form_tau_M.py::bring_color_weighted) gives 0.39486 \u2014 the same lower bracket as the abstract std channel (\u03b4-split negligible). It rides z=\u221aq/(q+1), NOT the color-fibre z\u2080=\u221aq\u22121/\u221aq (0.10439) where the open geometric W_\u03bb lives. The genuine Bring-surface geometric object that DOES exist (Yekutieli non-abelian Stokes h\u00b2-action of \ud835\udcd1\u2083, \u03ba=3/16, tr_M(\ud835\udcd1\u2083,q\u2080)=1.00673) is an action/trace >1, not a per-bond suppression. So no available compute \u2014 algebraic OR Bring-coordinate \u2014 lands 0.588; it remains the open color-fibre (z\u2080) geometric W_\u03bb."
   },
-  "verdict": "REFUTE (naive direct-weight map): the algebraic W_λ the gate emits under-binds (W_(2,1)=0.661, E=1.74) while the std channel over-binds (0.395, E=3.89); the required f_pn=0.58776 (E=2.2246) is strictly bracketed between them. The magnitude stays owner-gated to the GEOMETRIC W_λ realization (WRT(S³/2I)), for which this is now a sharp, second binding-side falsifiable target alongside the m_τ tower: any index reproducing W_λ must land f_pn in (0.395, 0.661) and at 0.58776.",
-  "discipline": "EXPLORATORY — derive-or-refute, zero free parameters, no production rewire.",
+  "verdict": "REFUTE (naive direct-weight map): the algebraic W_\u03bb the gate emits under-binds (W_(2,1)=0.661, E=1.74) while the std channel over-binds (0.395, E=3.89); the required f_pn=0.58776 (E=2.2246) is strictly bracketed between them. The magnitude stays owner-gated to the GEOMETRIC W_\u03bb realization (WRT(S\u00b3/2I)), for which this is now a sharp, second binding-side falsifiable target alongside the m_\u03c4 tower: any index reproducing W_\u03bb must land f_pn in (0.395, 0.661) and at 0.58776.",
+  "discipline": "EXPLORATORY \u2014 derive-or-refute, zero free parameters, no production rewire.",
   "refs": [
     "PR #2503 (DG attack plan + f_pn wiring offer)",
-    "PR #2507 (chirality × topology binding; f_pn=0.588 localization)",
-    "PR #2525 (W_λ Z(n) defect gate emitter)",
+    "PR #2507 (chirality \u00d7 topology binding; f_pn=0.588 localization)",
+    "PR #2525 (W_\u03bb Z(n) defect gate emitter)",
     "docs/audits/2026-06-20-chirality-forces-complete-graph-topology.md",
     "docs/coordination/s5-so3-keystone.md"
   ],
   "scriptHash": "43336b89f108",
-  "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
-  "commitSha": "89d8246755486160660a8b4dfee7eebdae9608fc",
-  "computedAt": "2026-07-18T17:36:38.794912+00:00",
+  "scriptCommitSha": "ce3567490fc7d470b81700717d308476fcdd2540",
+  "commitSha": "8012ae1dd6960b04e34acd8b6b2e17a7fdddb47a",
+  "computedAt": "2026-07-20T01:53:09.397409+00:00",
   "durationMs": 0,
   "engineVersion": "mpmath 1.3.0",
-  "scriptFile": "deuteron_fpn_wlambda_wiring.py",
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "scriptFile": "deuteron_fpn_wlambda_wiring.py"
 }

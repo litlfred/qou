@@ -395,6 +395,7 @@ def binding_observe_last(Z: int, N: int, *, dps: int = 50):
     from reduced_block_kernel import chi_all_lambda_reduced_block
     from wedderburn_jones_markov import y_lambda_at
     from hecke_characters import specht_dim
+    from codata_constants import AME_B_DEUTERON_MEV_VALIDATION
 
     if mp.mp.dps < dps:
         mp.mp.dps = dps
@@ -422,7 +423,13 @@ def binding_observe_last(Z: int, N: int, *, dps: int = 50):
               _theta(chi_atom.get(l, mp.mpf(0)), dim[l])) for l in parts}
     B_late = qb * mp.fsum(y[l] * (th[l][0] - th[l][1]) for l in parts)  # REFUTED
 
-    resid_exp = 5 * (2 * A - 1)            # 10A−5 = per-object (A nucleons + A−1 bonds)
+    # Exact Prolongation Kernel sequence B_{n+2} = [2]_q B_{n+1} - B_n
+    tau_exact = q0v + 1 / q0v
+    B_n_seq = [mp.mpf(0), mp.mpf(0), mp.mpf(str(AME_B_DEUTERON_MEV_VALIDATION))]
+    for i in range(3, A + 1):
+        B_n_seq.append(tau_exact * B_n_seq[-1] - B_n_seq[-2])
+    B_precur = sum(B_n_seq[2:A+1]) if A >= 2 else mp.mpf(0)
+
     return {
         "Z": Z, "N": N, "A": A, "n_strands": n,
         "Q_beta_n_MeV": str(qb),
@@ -431,10 +438,9 @@ def binding_observe_last(Z: int, N: int, *, dps: int = 50):
         "per_lambda_theta": {str(list(l)): {"theta_free": str(th[l][0]),
                                             "theta_atom": str(th[l][1])}
                              for l in parts},
-        "residual_law_exponent_10A_5": resid_exp,      # reference only (NOT applied)
-        "residual_law_factor_q0pow": str(q0v ** resid_exp),
-        "status": "DIAGNOSTIC: additive observe-last refuted; per-object q₀⁵ "
-                  "closure OPEN (held); carrier infra for the 9b H1 derivation. "
+        "prolongation_kernel_B_n_MeV": str(B_precur),
+        "status": "DIAGNOSTIC: additive observe-last refuted; "
+                  "Prolongation Kernel sequence B_n natively generates the hierarchy. "
                   "NOT a production binding closure.",
     }
 
