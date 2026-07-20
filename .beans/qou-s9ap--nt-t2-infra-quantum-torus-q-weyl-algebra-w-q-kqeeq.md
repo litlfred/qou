@@ -1,9 +1,10 @@
 ---
 # qou-s9ap
 title: 'NT-T2: infra — quantum torus / q-Weyl algebra W_q = K⟨Q,E⟩/(EQ−qQE) + localization over K(q)(Q) in Lean (reusable: keystone kernel, GGM eq-49 module, RSZ classification)'
-status: todo
+status: in-progress
 type: task
+priority: normal
 created_at: 2026-07-20T03:21:57Z
-updated_at: 2026-07-20T03:21:57Z
+updated_at: 2026-07-20T03:46:25Z
 ---
 
