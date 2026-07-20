@@ -249,6 +249,13 @@ single-session target.
 `spectral-sequence-h3-explicit.{ts,md}` — narrative + manifest, no
 Lean. Out of scope for proof-gap audit.
 
+## Remaining Physics Gaps
+
+1. **Deuteron 17 keV Binding Gap (`qou-z5cu`)**
+   - **Status:** Unclosed. The geometric topological correction `kappa = 3/16` derived from the non-abelian Stokes action partially shifts the magnitude (from 1.74 MeV to 2.25 MeV, compared to the target 2.22 MeV). While it overbinds by ~29 keV, the lean-proven coefficient is physically motivated and is approved to be wired in despite not closing the gap fully. The exact algebraic `W_alg` channel normalization remains unresolved.
+2. **4He and 6Li Toroidal JSJ Gaps**
+   - **Status:** Owner-gated. Pending strict formal Lean proofs before wiring the correction factors directly into the compute pipeline. No naked fits allowed per `AGENTS.md`.
+
 ### Bottom line for jet/GB/spectral
 
 The bookkeeping is ready (`JetOrder`, `JetStratifiedSystem`,
