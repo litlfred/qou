@@ -5,7 +5,7 @@ import Mathlib.Data.Fintype.Card
 /-!
 # QOU.Mass.prolongation_fixed_depth_recurrence — existence half of the keystone
 
-The keystone (`thm:qdifference-kernel-prolongation-symbol`) splits into
+The keystone (`conj:qdifference-kernel-prolongation-symbol`) splits into
 EXISTENCE (a fixed-depth recurrence on the prolonged periods exists) and
 IDENTIFICATION (its kernel is the Bring Picard–Fuchs operator). This file
 **proves the existence half.**

@@ -58,7 +58,7 @@ ring-membership claim about the leading structure, NOT a purely-cyclotomic claim
   the `q₀`-values do not. So no q-Fourier eigenfunction property for `S(n)` is
   asserted here — only the seed + first-order-deviation algebra.
 * It does **not** close the per-atom residue weight `w_n(K)` (the open
-  q-difference kernel `R(q,x)` of `thm:binding-manybody-eq-jet-filtration`), and
+  q-difference kernel `R(q,x)` of `conj:binding-manybody-eq-jet-filtration`), and
   it does **not** improve any mass or binding prediction. The two-tier structure
   is a *derived, parameter-free target* the weight kernel must reproduce, per the
   AGENTS.md permanence principle (a proved algebraic piece is a correct

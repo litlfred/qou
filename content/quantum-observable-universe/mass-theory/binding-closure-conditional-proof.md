@@ -13,7 +13,7 @@ Rewriting each period through the residue form
 displayed equality of the statement; the growth law of the $a_D^{(n)}$ is the
 solution of the $q$-difference recurrence
 ([`prop:binding-genfun-qdifference`](#prop:binding-genfun-qdifference)). The
-Lean witness [`QOU.Mass.binding_closure_conditional`](#thm:binding-closure)
+Lean witness [`QOU.Mass.binding_closure_conditional`](#thm:binding-closure-conditional)
 carries (C) and (B) as the fields of the class `BindingClosureInput` and
 derives the closed form by `Finset.mul_sum` and `Finset.sum_congr` — fully
 verified modulo the class instance, which is exactly input (B). $\qquad\blacksquare$

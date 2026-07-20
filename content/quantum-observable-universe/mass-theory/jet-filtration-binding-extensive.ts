@@ -14,7 +14,7 @@ export default proposition({
     ref: "qou:QOU.Mass.jetBinding_mono",
     validation: "not_checked",
   },
-  uses: ["thm:binding-manybody-eq-jet-filtration"],
+  uses: ["conj:binding-manybody-eq-jet-filtration"],
   tags: [
     "binding",
     "jet-filtration",

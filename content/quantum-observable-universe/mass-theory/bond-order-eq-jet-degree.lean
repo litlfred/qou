@@ -4,7 +4,7 @@ import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 /-!
 # QOU.Mass.bodyorder_eq_jet_total — body order = jet degree
 
-Workplan obligation **(C)** of `thm:binding-manybody-eq-jet-filtration`.
+Workplan obligation **(C)** of `conj:binding-manybody-eq-jet-filtration`.
 The canonical atomic braid's body-order (cluster) filtration coincides
 with the Gröbner–Shirshov / jet-prefix filtration: the `n`-nucleon
 cluster term is the degree-`n` associated-graded component `gr_n`. Hence
