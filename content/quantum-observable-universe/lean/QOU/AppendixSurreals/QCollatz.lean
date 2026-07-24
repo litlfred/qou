@@ -175,6 +175,16 @@ theorem qcollatz_neg_qinv_sq_is_odd_fixed {R : Type u} [CommRing R]
     (q ^ 2 + q + 1) * (-qinv ^ 2) + 1 = (q + 1) * (-qinv ^ 2) := by
   linear_combination (-(q * qinv) - 1) * hq
 
+/-- **Even-branch fixed points force `q·P = 0`.** A fixed point of the even
+    branch (`[2]_q·P = P`) forces `q·P = 0`, hence `P = 0` when `q` is a
+    non-zero-divisor (as in `ℤ[q^{±1}]`). Together with
+    `qcollatz_odd_fixed_point`, the only fixed points of the Skein-Collatz
+    map are `0` (even) and `-q⁻²` (odd) — **neither positive** — completing
+    the period-1 case of nontrivial-cycle exclusion. -/
+theorem qcollatz_even_fixed_point {R : Type u} [CommRing R] (q P : R)
+    (h : (q + 1) * P = P) : q * P = 0 := by
+  linear_combination h
+
 /-- **Domain non-invariance (concrete counterexample, proved).**
 
     The Skein-Collatz map is partial: `P` is in its domain iff `P` is
