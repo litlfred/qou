@@ -2049,3 +2049,31 @@ re-extraction with engine input. EMITTED (witness): engine c₁..c₃ at
 u = 0.17, 0.30 and the substrate u_sub = 2t, all three saddles. NEXT:
 re-run the σ₂/σ₃-pair φ_odd extraction with the engine 3-loop
 transseries. No fit; no c_k wired; scope-(a).
+
+**2026-07-24 (W2 part 3) — THE SUBSTRATE IS A TRANSSERIES-RESONANT
+POINT: x̃ = 1 EXACTLY, the ℓ-tower degenerates, and finite-rank
+amplitude extraction is structurally inadequate there — the σ-pair
+φ_odd channel closes; the derived-grade route is the MASBAUM FACE.**
+`qbeta_g3_5two_phiodd_engine_reextraction.py` (2/2 green, honest
+diagnostic): the re-extraction was run with the corrected instrument
+(engine 3-loop models replacing the superseded (238) transcription,
+rank-3 solve closing the σ₁ leak, sector-constancy sweep as sheet
+certification). The sweep FAILED its own gates — and localized WHY:
+on the imaginary-τ ray |x̃| = 1 identically, so the GGM (13)-(14)
+ℓ-tower Φσ·q̃^k·x̃^ℓ is non-decaying, and at the substrate itself
+x̃ = e^{−4πi} = 1 EXACTLY: the entire ℓ-tower DEGENERATES onto the
+bare saddle exponents (a resonance locus — the same coincidence
+lattice as the 2c-2 0/0 node and the W1 pole-family swap). The
+drifting pseudo-amplitudes are the tower aliasing into finite rank;
+tilting the ray (θ = 0.1–0.35) suppresses the tower but explodes the
+saddle magnitude hierarchy (|a₂| ~ 1e20) — recorded. CONSEQUENCES
+(scope-(a), method-level): the #3987 φ_odd = −0.004145 (2-term model
++ superseded 2-loop, AT the resonance) cannot be a derived σ-pair
+amplitude phase; an on-ray derived value needs ℓ-tower resummation
+(lateral machinery), not finite-rank numerics; the near-term
+derived-grade route to the 5₂ bar-odd datum is the Masbaum
+cyclotomic face (exact C_{5₂,n} Laurent polynomials, already
+landed). The campaign's function-value/state-integral lane is now
+cleanly closed with derived structure at every dead end: 4₁ odd-phase
+null → W1 reality null → 2c-2 obstruction → the x̃ = 1 resonance.
+No fit; no c_k wired.
