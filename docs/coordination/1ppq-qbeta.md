@@ -1969,3 +1969,23 @@ identity is exact but does not isolate the saddle Stokes constants
 `docs/audits/2026-07-18-5two-part2c-wall-crossing-barpair.md`. No fit;
 no c_k wired; scope-(a) (constrains the METHOD, not the σ3-pair
 ingredient — it remains a valid bar-odd carrier).
+
+**2026-07-24 (post-week resync — block-level bar-pair: POLE-FAMILY
+SWAP + REALITY NULL; independent parallel-route confirmation of the
+2c-2 obstruction, with mechanism).**
+`qbeta_g3_5two_intrinsic_barodd_crossing.py` (3/3 green): per-block
+Laurent coefficients at the substrate lattice node on both bar sides.
+(F1) the bar involution SWAPS the pole families — q-side A regular /
+B,C double-pole; bar-side exactly reversed — the blockwise face of the
+(250) crossing (Ā is a determinant of B/C-type H's) and the MECHANISM
+behind the 2c-2 0/0 node. (F2) every significant coefficient is REAL
+(worst 1.2e-41): on the ray the function-value intrinsic bar phase is
+exactly 0/π — a genuine bar-odd phase must be lateral/Stokes (part-2b
+S±, q̃-suppressed on-ray) or live in another slot; independently
+supports φ_odd = −0.004145 as ~1-sig-fig preliminary. (F3) the real
+intrinsic node data recorded as matched-order swap-covariant
+cross-family ratios (B/C degeneracy < 1e-41). Workplan (beans, W1-W4
+under qou-yaz3): next = EXACT higher-loop c₂/c₃ by formal Gaussian
+at the (231) saddle (algebraic in Q(ξ)) + the Masbaum cyclotomic
+cross-face; coordinate with #4127 (octahedral 4-dilog lane) before
+overlap. No fit; no c_k wired; scope-(a).

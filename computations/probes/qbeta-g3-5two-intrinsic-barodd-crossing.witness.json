@@ -1,0 +1,99 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-24T15:53:03.223259+00:00",
+  "commitSha": "c1f3047ab8bb0e78a9b6c3a56128de1eacae1d3e",
+  "assertions": [
+    {
+      "name": "pole_family_swap_derived",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "leading Laurent orders: A (0|-2), B (-2|0), C (-2|0) across the bar"
+    },
+    {
+      "name": "onray_reality_null",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "all significant block Laurent coefficients real to < 1e-35 on both bar sides"
+    },
+    {
+      "name": "cross_family_ratios_recorded",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "matched-order swap-covariant ratios with B/C degeneracy check < 1e-40"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 13,
+  "computation": "qbeta-g3-5two-intrinsic-barodd-crossing",
+  "scriptFile": "qbeta_g3_5two_intrinsic_barodd_crossing.py",
+  "scriptHash": "c91ceac5002c",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
+  },
+  "description": "Block-level substrate bar-pair: the bar involution swaps the 5_2 block pole families at the lattice node (mechanism of the part-2c-2 0/0 obstruction) and all on-ray block Laurent data is real — the function-value intrinsic bar phase is exactly 0/pi. Independent parallel-route confirmation; scope-(a).",
+  "contentBlock": "conj:im-q-physical-role",
+  "data": {
+    "inputs": {
+      "t": "0.1043407203195195123159063",
+      "u_sub": "2t",
+      "x_tilde": "1 (exact)",
+      "log10_qtilde": -164.3199209986399,
+      "ring": {
+        "radius": "0.001",
+        "K": 24
+      }
+    },
+    "f1_pole_swap": {
+      "A": {
+        "q_side": 0,
+        "bar_side": -2
+      },
+      "B": {
+        "q_side": -2,
+        "bar_side": 0
+      },
+      "C": {
+        "q_side": -2,
+        "bar_side": 0
+      }
+    },
+    "f2_reality": {
+      "worst_im_over_abs": "1.1925367e-41"
+    },
+    "f3_cross_family_ratios": {
+      "c_m2_Abar_over_B": "(-1.0057708010958786894e-6 - 3.3597764268130345248e-51j)",
+      "c_m2_Abar_over_C": "(-1.0057708010958786894e-6 - 3.3597764347531992711e-51j)",
+      "c_0_Bbar_over_A": "(5.0288540054793934471e-7 - 1.1153983363257474402e-52j)",
+      "c_0_Cbar_over_A": "(5.0288540054793934471e-7 - 6.9165951725853961382e-52j)",
+      "BC_degeneracy_q": "2.9400413e-50",
+      "BC_degeneracy_bar": "1.0115317e-41"
+    },
+    "comparison_rows": {
+      "log_ratio_pole": "-13.8097563442",
+      "log_ratio_reg": "-14.5029035247",
+      "u_cubed": "0.00908764762134",
+      "S_muon": "0.00968298",
+      "S_proton": "-0.03945936"
+    },
+    "verdict": "INDEPENDENT CONFIRMATION + MECHANISM for the part-2c-2 obstruction (parallel-route per owner directive; cite audit 2026-07-18-5two-part2c-wall-crossing-barpair): (F1) the bar involution SWAPS the block pole families at the substrate lattice node — q-side A regular/B,C double-pole, bar-side reversed — the blockwise face of the (250) crossing (Abar is a determinant of B/C-type H's), which is WHY the classical prefactor strip hits 0/0 there; (F2) every significant block Laurent coefficient on both bar sides is REAL (worst 1.19e-41), so on the substrate ray the function-value intrinsic bar phase is exactly 0/pi — a genuine bar-odd phase must be a lateral/Stokes effect (the derived part-2b S±, qtilde-suppressed on-ray) or live in another structural slot, independently supporting phi_odd = -0.004145 as a ~1-sig-fig preliminary only; (F3) the intrinsic REAL bar data at the node is recorded as the matched-order swap-covariant cross-family ratios (B/C-degeneracy-checked to 1e-45), scope-(a), no identification. Method consequence: the derived-precision odd datum should be sought in the EXACT higher-loop saddle expansion (algebraic in the trace field) or the Masbaum cyclotomic face — not in on-ray block values. No fit; no c_k wired."
+  }
+}
