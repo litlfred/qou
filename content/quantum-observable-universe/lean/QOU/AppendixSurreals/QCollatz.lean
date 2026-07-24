@@ -1,4 +1,5 @@
 import Mathlib.Tactic
+import Mathlib.Algebra.Polynomial.Laurent
 
 /-!
 # QOU.AppendixSurreals.QCollatz — the $q$-Collatz conjecture (content-bearing class)
@@ -262,5 +263,38 @@ theorem qcollatz_attractor_orbit_bounded (Skein : Type u) [CommRing Skein]
       = QCollatz.C QCollatz.attractor :=
   iterate_period_two_mem (QCollatz.C (Skein := Skein)) QCollatz.attractor
     QCollatz.attractor_period_two
+
+/-! ### Concrete grounding in the Skein module `ℤ[q^{±1}]` (non-vacuity)
+
+The abstract fundamental-cycle and fixed-point lemmas realise in the actual
+Skein module `LaurentPolynomial ℤ = ℤ[T;T⁻¹]`, with `q = T 1` (a unit,
+inverse `T (-1)`, since `T 1 · T (-1) = T 0 = 1`). This exhibits the
+fundamental 2-cycle `{T(-1), 1 + T(-1)}` (the `q`-lift of classical `{1,2}`)
+and the negative odd-branch fixed point `-T(-2) = -(T(-1))²` (the `q`-lift of
+`-1`) as genuine Skein elements — the cluster is non-vacuous. -/
+
+open LaurentPolynomial in
+/-- `T 1` is a unit in `ℤ[T;T⁻¹]` with inverse `T (-1)`. -/
+theorem qcollatz_laurent_qunit :
+    (T 1 : LaurentPolynomial ℤ) * T (-1) = 1 := by
+  rw [← T_add]; norm_num
+
+open LaurentPolynomial in
+/-- **Fundamental 2-cycle in `ℤ[q^{±1}]`.** The odd branch sends
+    `q⁻¹ = T(-1) ↦ 1 + T(-1)` and the even branch sends it back. -/
+theorem qcollatz_laurent_fundamental_cycle :
+    (1 + T (-1) : LaurentPolynomial ℤ) * (T 1 + 1)
+      = ((T 1) ^ 2 + T 1 + 1) * T (-1) + 1
+    ∧ (T (-1) : LaurentPolynomial ℤ) * (T 1 + 1) = 1 + T (-1) :=
+  ⟨qcollatz_fundamental_odd_step (T 1) (T (-1)) qcollatz_laurent_qunit,
+   qcollatz_fundamental_even_step (T 1) (T (-1)) qcollatz_laurent_qunit⟩
+
+open LaurentPolynomial in
+/-- **Negative odd-branch fixed point in `ℤ[q^{±1}]`**: `-T(-2) = -(T(-1))²`
+    satisfies `[3]_q·P + 1 = [2]_q·P`. -/
+theorem qcollatz_laurent_neg_fixed :
+    ((T 1) ^ 2 + T 1 + 1 : LaurentPolynomial ℤ) * (-(T (-1)) ^ 2) + 1
+      = (T 1 + 1) * (-(T (-1)) ^ 2) :=
+  qcollatz_neg_qinv_sq_is_odd_fixed (T 1) (T (-1)) qcollatz_laurent_qunit
 
 end QOU.AppendixSurreals

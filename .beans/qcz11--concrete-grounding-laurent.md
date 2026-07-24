@@ -1,12 +1,12 @@
 ---
 # qcz11
 title: 'qcz11 (ACHIEVABLE): ground the abstract QCollatz theorems in LaurentPolynomial Z'
-status: todo
+status: completed
 type: task
 priority: medium
 parent: qcz10
 created_at: 2026-07-24T21:52:00Z
-updated_at: 2026-07-24T21:52:00Z
+updated_at: 2026-07-24T20:59:12Z
 ---
 
 Non-vacuity / grounding (mirrors the sibling q-ns 'concrete Descartes QOU'
@@ -20,3 +20,5 @@ R = LaurentPolynomial Z, q = T 1, qinv = T(-1):
 Deliverable: a QCollatz_Laurent.lean (or section) with the fundamental
 2-cycle {T(-1), 1+T(-1)} and fixed point -T(-2) realized in the ACTUAL Skein
 module. Verifies the abstract cluster is non-vacuous. lean-direct exit 0.
+
+DONE: qcollatz_laurent_qunit (T 1 unit, inv T(-1)) + qcollatz_laurent_fundamental_cycle (2-cycle {T(-1),1+T(-1)}) + qcollatz_laurent_neg_fixed (-T(-2)) — all sorry-free in LaurentPolynomial Z. Abstract cluster grounded in the actual Skein module (non-vacuity).
