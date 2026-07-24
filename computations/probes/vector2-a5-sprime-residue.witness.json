@@ -1,0 +1,436 @@
+{
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-07-24T16:56:02.297212+00:00",
+  "commitSha": "94bbe54b4ed2ce8253d78c1f4aa180b3648d8305",
+  "assertions": [
+    {
+      "name": "sprime_transcription_property_gates",
+      "computed": "True",
+      "expected": "True",
+      "passed": true,
+      "tolerance": 0,
+      "source": "All 7 BN12 transcription gates pass exactly: C antisym det 1; S'^2=I; S'CS'^T=-C; B42^T C B42=J; T^T J T=J det T=1; (T·B42^T)S'(T·B42^T)^{-1}=[[I,I],[0,-I]]; A^5=I, ACA^T=C, S'AS'=A^{-1}."
+    },
+    {
+      "name": "twisted_charpoly_irreducible_deg8",
+      "computed": "x**8 + x**7 - 22*x**6 - 9*x**5 + 38*x**4 + 4*x**3 - 16*x**2 + x + 1",
+      "expected": "x**8 + x**7 - 22*x**6 - 9*x**5 + 38*x**4 + 4*x**3 - 16*x**2 + x + 1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "charpoly(S'C) is x^8+x^7-22x^6-9x^5+38x^4+4x^3-16x^2+x+1, irreducible over ℚ — no ±1 or ±√5 eigenvalues."
+    },
+    {
+      "name": "no_x2_minus_5_factor_in_natural_family",
+      "computed": "True",
+      "expected": "True",
+      "passed": true,
+      "tolerance": 0,
+      "source": "None of charpoly(C·A^k·S') (k=0..4), the two block restrictions, or the S'-eigenspace restrictions is divisible by (x²−5)."
+    },
+    {
+      "name": "block_spectra_exact",
+      "computed": "(x**2 - 2*x - 1)*(x**2 + 2*x - 1); (x + 1)*(x**3 - 3*x + 1)",
+      "expected": "(x**2 - 2*x - 1)*(x**2 + 2*x - 1); (x + 1)*(x**3 - 3*x + 1)",
+      "passed": true,
+      "tolerance": 0,
+      "source": "A-stable block twists: silver-ratio units ±(1+√2), ±(√2−1) (ℚ(√2)) and −1, 2cos(2πk/9) (ℚ(ζ₉)⁺) — wrong number fields for {±√5, ±1}."
+    },
+    {
+      "name": "discriminant_class_obstruction",
+      "computed": "det(S'C)=1, det(S_ex)=5",
+      "expected": "det(S'C)=1, det(S_ex)=5",
+      "passed": true,
+      "tolerance": 0,
+      "source": "ℚ-congruence preserves det mod squares; 1 and 5 are distinct square classes ⇒ the Bring twisted form is not congruent to the exchange form in ANY basis (basis-independent falsifier; signatures both 0, so disc is the discriminating invariant)."
+    },
+    {
+      "name": "canonical_frame_golden_units_recorded",
+      "computed": "(x**2 + x - 1)**4",
+      "expected": "(x**2 + x - 1)**4",
+      "passed": true,
+      "tolerance": 0,
+      "source": "J·S (canonical frame) has charpoly (x²+x−1)⁴ — golden units (−1±√5)/2 ×4. Universal for the one-nondividing-oval type, not Bring-specific; ≠ {±√5, ±1}. Recorded-not-interpreted."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 182,
+  "computation": "vector2-a5-sprime-residue",
+  "scriptFile": "vector2_a5_sprime_residue_probe.py",
+  "scriptHash": "a424767e598d",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "A5 residue of the Vector-2 double pincer: the BN12 (SIGMA 8 (2012) 065) real-structure anti-involution S' and intersection form C were transcribed from the paper's rendered PDF and property-verified exactly (S'^2=I; S'CS'^T=-C; B42^T C B42=J; T symplectic; (T·B42^T)S'(T·B42^T)^{-1} = [[I,I],[0,-I]]; order-5 A with S'AS'=A^{-1}). Decision: NO natural involution-twisted form reproduces the He4 [1^4] exchange spectrum {±√5,±1} — the 8×8 twisted form S'C has an IRREDUCIBLE degree-8 charpoly over ℚ; none of the five C·A^k·S' charpolys is divisible by (x²−5); the two A-stable 4-dim block restrictions live in ℚ(√2) (silver units ±(1+√2),±(√2−1)) and ℚ(ζ₉)⁺ ((x+1)(x³−3x+1)); and the basis-independent discriminant square class (det 1 vs det 5) obstructs ℚ-congruence in ANY presentation. Recorded coincidence: the canonical-frame universal twist J·S has charpoly (x²+x−1)⁴ (golden units), universal for the one-oval topological type, not Bring-specific. Scope-(a): the Bring leg of Vector 2 closes; the magnitude scalar m stays OPEN; nothing wired.",
+  "auditOnly": "docs/audits/2026-07-24-vector2-residues-sprime-d5.md",
+  "data": {
+    "bn12_matrices_verified": {
+      "source": "uploads/sigma12-065.pdf pp.8,13,14 (visual transcription)",
+      "intersection_C": [
+        [
+          0,
+          1,
+          -1,
+          1,
+          -1,
+          0,
+          1,
+          -1
+        ],
+        [
+          -1,
+          0,
+          1,
+          -1,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          -1,
+          0,
+          1,
+          -1,
+          1,
+          -1,
+          0
+        ],
+        [
+          -1,
+          1,
+          -1,
+          0,
+          1,
+          -1,
+          1,
+          0
+        ],
+        [
+          1,
+          -1,
+          1,
+          -1,
+          0,
+          1,
+          -1,
+          1
+        ],
+        [
+          0,
+          0,
+          -1,
+          1,
+          -1,
+          0,
+          1,
+          -1
+        ],
+        [
+          -1,
+          0,
+          1,
+          -1,
+          1,
+          -1,
+          0,
+          1
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          -1,
+          1,
+          -1,
+          0
+        ]
+      ],
+      "anti_involution_S_prime": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          -1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          -1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          -1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          -1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          -1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          -1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          -1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1
+        ]
+      ],
+      "symplectic_T": [
+        [
+          -1,
+          2,
+          1,
+          2,
+          -1,
+          1,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          0,
+          -3,
+          0,
+          0,
+          0,
+          -1
+        ],
+        [
+          -2,
+          1,
+          2,
+          -1,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          -1,
+          0,
+          -1,
+          0,
+          -1,
+          0
+        ],
+        [
+          2,
+          -2,
+          -3,
+          -2,
+          0,
+          -1,
+          -1,
+          -1
+        ],
+        [
+          -1,
+          0,
+          1,
+          3,
+          0,
+          1,
+          0,
+          1
+        ],
+        [
+          1,
+          -1,
+          -1,
+          -2,
+          0,
+          -1,
+          0,
+          -1
+        ],
+        [
+          -1,
+          2,
+          3,
+          2,
+          0,
+          1,
+          1,
+          1
+        ]
+      ],
+      "basis_change_4_2": [
+        [
+          1,
+          0,
+          0,
+          0,
+          -2,
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          -1,
+          0,
+          -1,
+          -1,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          -1,
+          0,
+          0,
+          -1,
+          2,
+          1,
+          -1
+        ],
+        [
+          0,
+          -1,
+          0,
+          0,
+          1,
+          2,
+          0,
+          0
+        ],
+        [
+          1,
+          -1,
+          1,
+          0,
+          -1,
+          1,
+          -1,
+          -1
+        ],
+        [
+          1,
+          -1,
+          1,
+          -1,
+          0,
+          0,
+          -1,
+          1
+        ],
+        [
+          1,
+          -1,
+          1,
+          -1,
+          0,
+          1,
+          0,
+          1
+        ],
+        [
+          0,
+          -1,
+          0,
+          -1,
+          1,
+          1,
+          1,
+          2
+        ]
+      ],
+      "property_gates": "C antisym det1; S'^2=I; S'CS'^T=-C; B42^T C B42=J; T^T J T=J det1; (T B42^T)S'(T B42^T)^-1=Scan; A^5=I ACA^T=C charpoly=Phi5^2; S'AS'=A^-1",
+      "note_on_bn12_statement": "BN12 print 'S := TS'T^{-1}'; the exact reproduction from the printed α-basis S' requires composing with the (4.2) canonicalisation first: U = T·B42^T gives USU^{-1}... US'U^{-1} = S exactly (machine-checked)."
+    },
+    "twisted_spectra_exact": {
+      "charpoly_SprimeC": "x**8 + x**7 - 22*x**6 - 9*x**5 + 38*x**4 + 4*x**3 - 16*x**2 + x + 1",
+      "charpoly_SprimeC_irreducible_over_Q": true,
+      "family_C_Ak_Sprime": {
+        "0": "x**8 + x**7 - 22*x**6 - 9*x**5 + 38*x**4 + 4*x**3 - 16*x**2 + x + 1",
+        "1": "(x + 1)*(x**7 - 22*x**5 + 39*x**4 - 9*x**3 - 12*x**2 + 3*x + 1)",
+        "2": "x**8 + x**7 - 21*x**6 - 20*x**5 + 29*x**4 + 21*x**3 - 10*x**2 - 3*x + 1",
+        "3": "x**8 - 2*x**7 - 21*x**6 + 13*x**5 + 32*x**4 - 8*x**3 - 14*x**2 + 1",
+        "4": "x**8 - x**7 - 22*x**6 - x**5 + 38*x**4 + 4*x**3 - 16*x**2 - 2*x + 1"
+      },
+      "block_odd": "(x**2 - 2*x - 1)*(x**2 + 2*x - 1)  (silver-ratio units, field Q(sqrt2))",
+      "block_even": "(x + 1)*(x**3 - 3*x + 1)  (field Q(zeta9)+)",
+      "sprime_eigenspace_restrictions": [
+        "x**2*(x - 2)*(x + 3)",
+        "x**2*(x - 1)*(x + 2)"
+      ],
+      "signature_SprimeC": 0,
+      "det_SprimeC": 1,
+      "det_exchange": 5,
+      "canonical_frame_J_S": "(x**2 + x - 1)**4  (golden units (−1±√5)/2; universal for one-nondividing-oval genus-4 real structures)",
+      "target_exchange_charpoly": "(x - 1)*(x + 1)*(x**2 - 5)"
+    }
+  },
+  "caveats": [
+    "Scope-(a): 'the natural involution-twisted forms, alone, do not reproduce the exchange spectrum {±√5, ±1}' — plus the basis-independent discriminant-class obstruction to ℚ-congruence. This does NOT structurally exclude level-5 geometry from the Δ_λ magnitude wall (that would be scope-(b), needing a proved invariant about the wall itself). m ∈ (0, 1/√5) remains OPEN; nothing wired. The J·S golden-unit coincidence is recorded, not interpreted."
+  ]
+}
