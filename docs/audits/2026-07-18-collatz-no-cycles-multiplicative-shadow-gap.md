@@ -170,3 +170,46 @@ fundamental 2-cycle. (Scope (a) clarification, not a refutation.)
   no-cycles hypothesis, it does not prove it. No Lean edit needed.
 - The coprimality identity itself (`qInt_coprime`, `skein_divisibility`
   in `QOU/QCollatz.lean`) is correct and stays.
+
+## Proof progress + honest walls (2026-07-24)
+
+Lean tranche proved sorry-free this session (all in `QCollatz.lean` /
+`collatz_no_cycles.lean`, `lean`-direct exit 0):
+
+| Theorem | Content |
+|---|---|
+| `qi3_sub_q_qi2` | Skein-Bézout `[3]_q − q[2]_q = 1` |
+| `balanced_holonomy_excluded` | `[3]_q^{k_odd} = [2]_q^k` impossible for `k≥1` (A=1 core) |
+| `qcollatz_fundamental_odd_step` / `even_step` | `{q⁻¹,1+q⁻¹}` is a genuine 2-cycle |
+| `qcollatz_odd_fixed_point` / `neg_qinv_sq_is_odd_fixed` | odd-branch fixed point is exactly `−q⁻²` (negative) |
+| `qcollatz_even_fixed_point` | even-branch fixed point forces `q·P=0` (⟹ `P=0`) |
+| `iterate_period_two_mem` / `qcollatz_attractor_orbit_bounded` | attractor orbit ⊆ `{attractor, C attractor}` (bounded invariant set) |
+| `qcollatz_domain_not_forward_invariant` | domain is not forward-invariant |
+| `reaches_cycle_of_descent` | convergence **reduces** to a strictly-descending measure `μ` |
+
+**Period-1 case of nontrivial-cycle exclusion is fully closed**: the only
+fixed points are `0` (even) and `−q⁻²` (odd), neither positive.
+
+### The two genuine walls (not fabricated)
+
+1. **Convergence (`reaches_cycle`).** `reaches_cycle_of_descent` reduces it
+   to the existence of a measure `μ : Skein → ℕ` strictly decreasing off
+   the attractor. Constructing `μ` is the hard content — the `q`-analog of
+   a Collatz *stopping-time* bound. The intended witness is the `[2]_q`-adic
+   valuation descent (`⟨v_[2]⟩ ≥ 2`, `prop:collatz-contact-boundary`), but
+   turning it into a provably-well-founded `ℕ`-measure requires a Lean
+   valuation on `ℤ[q^{±1}]` and a proof that the per-cycle contraction
+   `[3]_q/[2]_q³ < 1` forces global descent — the same difficulty as the
+   open classical problem. **No elementary construction is known.**
+
+2. **Period-≥2 affine exclusion.** The candidate cycle value is
+   `P₀ = n_w/([2]_q^k − [3]_q^{k_odd})`; exclusion requires
+   `([2]_q^k − [3]_q^{k_odd}) ∤ n_w` (plus positivity + parity-word
+   consistency) for every admissible word. This is the `q`-analog of the
+   classical cycle-value bounds (Steiner; Simons–de Weger), which classically
+   need deep transcendence input (linear forms in logarithms). The census
+   (`qcollatz_cycle_census`, ≤ period 18) is negative evidence only.
+
+Both are honestly **open**; neither is fabricated or wired to production.
+The next real attack step for (1) is a Lean `[2]_q`-adic valuation over
+`LaurentPolynomial ℤ`; for (2), a `q`-Steiner-style height/valuation bound.
