@@ -1,0 +1,62 @@
+{
+  "engine": "python-exact",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-07-24T21:00:59.012705+00:00",
+  "commitSha": "c5f81c94d247e9189d7987e34b2b0a3f84eb4e33",
+  "assertions": [
+    {
+      "name": "covariance_epic_phase5b_dirichlet_peredge",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "Kernel = Dirichlet-form sign ℰ(f,ω₃)≤0 (identity ℰ=τ₃·cov/n! verified n≤9); per-edge sign certificate ELIMINATED (bad edges grow with n; max-dim shape not most balanced at finite n). Remaining path = joint Stein CLT effective error. No fit; no c_k."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 17,
+  "computation": "wlambda-covariance-epic-phase5b-dirichlet-peredge",
+  "scriptFile": "wlambda_covariance_epic_phase5b_dirichlet_peredge.py",
+  "scriptHash": "78c7936e9e59",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Phase 5b of the covariance-kernel proof epic (qou-x631): the kernel is a Dirichlet-form sign, and the per-edge (local) certificate fails. Symmetrising the Phase-5 exchangeable pair gives E_P[(Δf)(Δω₃)]=2ℰ(f,ω₃) with ℰ(f,ω₃)=τ₃⟨f,ω₃⟩_P=(3/n)cov(n)/n! (verified exactly n≤9), so cov(n)≤0 ⇔ ℰ(f,ω₃)≤0. ℰ is a sum over chain edges with non-negative weights P(λ)K(λ,λ*) of (Δf)(Δω₃), Δω₃=c_add²−c_rm². PER-EDGE SIGN CERTIFICATE ELIMINATED: bad edges (ΔfΔω₃>0, dimension and content-spread move the same way) exist and grow with n (0,4,4,12,16,32,40 for n=3..9); archetype (3,1)→(2,2) at n=4 has Δf=−1,Δω₃=−4 (the more balanced square (2,2) has LOWER dimension than the hook-like (3,1)). So 'max-dim=most balanced' is false at finite n (VKLS only asymptotic), and the kernel sign is a weighted cancellation, not a local fact. Remaining Route-1 path = joint Stein CLT with effective Berry–Esseen error. scope-(a); no fit; nothing wired; no c_k; L2 2/7.",
+  "data": {
+    "dirichlet_identity": "E(f,om3) = tau3 * cov(n)/n!, tau3=3/n",
+    "dirichlet_identity_verified": true,
+    "kernel_iff": "cov(n) <= 0  <=>  Dirichlet form E(f,om3) <= 0",
+    "per_edge_bad_counts_n3to9": [
+      0,
+      4,
+      4,
+      12,
+      16,
+      32,
+      40
+    ],
+    "per_edge_certificate_fails": true,
+    "archetype_bad_edge_n4": {
+      "from": [
+        3,
+        1
+      ],
+      "to": [
+        2,
+        2
+      ],
+      "Df": -1,
+      "Dom3": -4
+    },
+    "remaining_route": "joint Stein CLT with effective Berry-Esseen error"
+  }
+}
