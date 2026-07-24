@@ -1,5 +1,6 @@
 import Mathlib.Data.Real.Basic
 import Mathlib.Tactic.Ring
+import Mathlib.Algebra.Ring.GeomSum
 
 /-!
 # QOU.AlgebraicSubstrate.collatz_no_cycles
@@ -108,5 +109,38 @@ theorem collatz_no_cycles [ctx : CollatzNoCyclesContext] :
       rw [ctx.q_int_2_def, ctx.q_int_3_def]
       ring
     exact ⟨h_coprime, ctx.no_cycles_of_coprime h_coprime⟩
+
+/-- **Balanced-holonomy cycle exclusion (proved, sorry-free).**
+
+    Given a QOU whose Skein `q`-integers satisfy the Skein divisibility
+    relation `[3]_q = q·[2]_q + 1` with `[2]_q` a non-unit (as holds for
+    `[2]_q = q + 1` in the Skein module `ℤ[q^{±1}]`), the equation
+    `[3]_q^{k_odd} = [2]_q^{k}` has **no** solution with `k ≥ 1`.
+
+    A Skein-Collatz periodic orbit of *balanced* multiplicative holonomy
+    (`A = [3]_q^{k_odd}/[2]_q^{k} = 1`) would force exactly this equation,
+    so this lemma discharges the `A = 1` sub-case of no-cycles by
+    coprimality — unconditionally, over a generic commutative ring. It
+    does **not** settle the affine (`A ≠ 1`) case, which is part of the
+    open `conj:q-collatz`.
+
+    Proof: `[3]_q ≡ 1 (mod [2]_q)` from the divisibility relation, so
+    `[2]_q ∣ [3]_q^{k_odd} − 1`; and `[2]_q ∣ [2]_q^{k}` for `k ≥ 1`.
+    Equality would give `[2]_q ∣ 1`, i.e. `[2]_q` a unit — contradiction. -/
+-- Ref: [collatz1937]
+theorem balanced_holonomy_excluded {R : Type*} [CommRing R]
+    (two three q : R) (hdiv : three = q * two + 1) (hnu : ¬ IsUnit two)
+    {ko k : ℕ} (hk : 1 ≤ k) : three ^ ko ≠ two ^ k := by
+  intro h
+  have hdvd1 : two ∣ three - 1 := ⟨q, by rw [hdiv]; ring⟩
+  have hstep : three - 1 ∣ three ^ ko - 1 := by
+    simpa using sub_dvd_pow_sub_pow three 1 ko
+  have hdvd_pow : two ∣ three ^ ko - 1 := hdvd1.trans hstep
+  have hdvd_two_k : two ∣ two ^ k := dvd_pow_self two (Nat.one_le_iff_ne_zero.mp hk)
+  have hdvd_three_pow : two ∣ three ^ ko := h ▸ hdvd_two_k
+  have hone : two ∣ (1 : R) := by
+    have := dvd_sub hdvd_three_pow hdvd_pow
+    simpa using this
+  exact hnu (isUnit_of_dvd_one hone)
 
 end QOU.AlgebraicSubstrate
