@@ -375,4 +375,31 @@ theorem schurElement_tl_eq_zero_iff {Q : ℝ} (hQ : 1 < Q) (N : ℤ)
     exact schurElement_tl_ne_zero hQ hn h
   · exact schurElement_tl_eq_zero hQ
 
+/-- **The substrate regime lies strictly outside the TL degeneracy
+    locus (sorry-free).**  Every Temperley--Lieb wall sits at a
+    *positive* Markov parameter $X = Q^{-N}$ (since $Q > 1 \Rightarrow
+    Q^{-N} > 0$), whereas the physical substrate regime is $X \le 0$.
+    Hence at the substrate no content level $N$ can place $X$ on a wall:
+    $X \ne Q^{-N}$ for every $N$.  This is the structural reason
+    `schurElement_ne_zero` holds for *all* $\lambda$ at $X \le 0$ — the
+    vanishing criterion `schurElement_tl_eq_zero_iff` can never fire, so
+    the substrate sits in the semisimple stratum away from every
+    level-rank wall. -/
+theorem substrate_avoids_tl_locus {Q X : ℝ} (hQ : 1 < Q) (hX : X ≤ 0)
+    (N : ℤ) : X ≠ Q ^ (-N) := by
+  have hpos : (0 : ℝ) < Q ^ (-N) := zpow_pos (lt_trans one_pos hQ) _
+  exact fun h => absurd (h ▸ hX) (not_le.mpr hpos)
+
+/-- **The substrate never lands on a TL wall of any partition
+    (sorry-free).**  Packaging `substrate_avoids_tl_locus` against
+    `schurElement_tl_eq_zero_iff`: for $Q > 1$, $X \le 0$ and any
+    $\lambda$, if the level-$N$ vanishing criterion held then $X$ would
+    equal the positive wall $Q^{-N}$, contradicting $X \le 0$.  So no
+    content level can degenerate the Schur element at the substrate —
+    the semisimple-stratum reason behind `schurElement_ne_zero`. -/
+theorem substrate_not_tl_degenerate {Q X : ℝ} (hQ : 1 < Q) (hX : X ≤ 0)
+    {N : ℤ} {lam : Partition} (hdeg : X = Q ^ (-N) ∧ HasContentCell lam N) :
+    False :=
+  substrate_avoids_tl_locus hQ hX N hdeg.1
+
 end QOU.MathlibExt.WenzlSchurElement
