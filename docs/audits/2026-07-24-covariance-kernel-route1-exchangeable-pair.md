@@ -70,6 +70,33 @@ exact but, on its own, circular (it restates `Cov_P(f,ω₃)`). Closing requires
 Neither is in the literature for the 3-cycle-with-dimension covariance (Fulman gives only the
 *marginal* transposition CLT at rate `40.1 n^{−1/4}`). This is genuine further research.
 
+## The Dirichlet-form sign, and why the per-edge certificate fails (Phase 5b)
+
+Symmetrising the exchangeable pair (both `λ, λ*` Plancherel-distributed) gives, for `Δg := g(λ*)−g(λ)`,
+
+> `E_P[(Δf)(Δω₃)] = 2·ℰ(f, ω₃)`,  where `ℰ(g,h) := ½ Σ_{λ,λ*} P(λ)K(λ,λ*)·(Δg)(Δh)`
+
+is the **Dirichlet form** of the reversible chain, and `ℰ(f,ω₃) = ⟨f,(I−K)ω₃⟩_P = τ₃⟨f,ω₃⟩_P =
+(3/n)·cov(n)/n!` (verified exactly, `n ≤ 9`). So the kernel is exactly a **Dirichlet-form sign**:
+
+> **`cov(n) ≤ 0  ⇔  ℰ(f, ω₃) ≤ 0`.**
+
+`ℰ(f,ω₃)` sums over chain **edges** with **non-negative** weights `P(λ)K(λ,λ*)`, of `(Δf)(Δω₃)` where
+`Δω₃ = c_add² − c_rm²` (contents of the moved box). The clean hope: `(Δf)(Δω₃) ≤ 0` on **every** edge
+(dimension and content-spread always move oppositely) ⇒ `ℰ ≤ 0` ⇒ done.
+
+**This per-edge certificate is ELIMINATED.** "Bad" edges (`(Δf)(Δω₃) > 0`) exist and their count grows
+with `n` (`n=3..9`: `0, 4, 4, 12, 16, 32, 40`). Archetype at `n=4`: the move `(3,1) → (2,2)` has
+`Δf = −1`, `Δω₃ = −4` — the **more balanced** square `(2,2)` has **lower** dimension (2) than the
+hook-like `(3,1)` (dim 3). So **"max-dimension diagram = most balanced" is false at finite `n`** (it
+holds only asymptotically, VKLS), and the kernel's sign is a **weighted cancellation** over edges, not
+a local per-edge fact — mirroring every earlier phase. The Dirichlet-form sign `ℰ(f,ω₃) ≤ 0` therefore
+still requires the full (joint Stein CLT / effective-error) analysis; there is no shortcut via a
+local edge certificate.
+
+- Probe (5b): [`computations/deltalambda/wlambda_covariance_epic_phase5b_dirichlet_peredge.py`](../../computations/deltalambda/wlambda_covariance_epic_phase5b_dirichlet_peredge.py) (exit 0)
+- Witness: `computations/deltalambda/wlambda-covariance-epic-phase5b-dirichlet-peredge.witness.json`
+
 ## Compute
 
 - Probe: [`computations/deltalambda/wlambda_covariance_epic_phase5_route1_exchangeable_pair.py`](../../computations/deltalambda/wlambda_covariance_epic_phase5_route1_exchangeable_pair.py) (exit 0)
