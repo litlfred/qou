@@ -97,11 +97,23 @@ class QCollatz (Skein : Type u) [CommRing Skein] where
   attractor_period_two : C (C attractor) = attractor
   /-- …and not a fixed point (the fundamental cycle is truly 2-periodic). -/
   attractor_not_fixed : C attractor ≠ attractor
+  /-- **Domain-stability of the positive cone (well-posedness).** The
+      Skein-Collatz map is *partial*: it is defined at `P` only when `P`
+      is `q`-even (`[2]_q ∣ P`) or `q`-odd (`[2]_q ∣ P + 1`). Unlike the
+      integers — where every element is even or odd — this domain is
+      **not** forward-invariant on the naive positive cone: almost every
+      positive Laurent element leaves it within a few steps
+      (computations/qcollatz_divergence_probe: 6042/6045 escape, most in
+      one step). So the conjecture's cone `pos` is the **domain-stable**
+      subset — elements whose entire forward orbit stays in the domain.
+      This field records that requirement; it has no classical analog. -/
+  pos_domain_stable : ∀ P : Skein, pos P →
+    ∀ k : ℕ, qi2 ∣ (C^[k] P) ∨ qi2 ∣ (C^[k] P + 1)
   /-- **The $q$-Collatz conjecture (within the QOU).** Every element of
-      the positive cone reaches the fundamental cycle — i.e. reaches
-      `attractor` — under finitely many iterations of the Skein-Collatz
-      map. The `sorry`-free absence of an instance is the honest "open"
-      state per §3b-tax. -/
+      the (domain-stable) positive cone reaches the fundamental cycle —
+      i.e. reaches `attractor` — under finitely many iterations of the
+      Skein-Collatz map. The `sorry`-free absence of an instance is the
+      honest "open" state per §3b-tax. -/
   reaches_cycle : ∀ P : Skein, pos P → ∃ k : ℕ, C^[k] P = attractor
 
 /-- **Skein-Bézout coprimality**, derived sorry-free from the class

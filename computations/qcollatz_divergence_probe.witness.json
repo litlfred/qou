@@ -1,0 +1,62 @@
+{
+  "schema": "qou-probe/v0",
+  "description": "q-Collatz divergence-half probe: forward-orbit classification of the Skein-Collatz map from positive Laurent seeds. Exact \u2124[q^\u00b11] arithmetic. Exploratory research probe (NOT canonical production).",
+  "map": {
+    "even": "C(P)=P/[2]_q when P(-1)=0",
+    "odd": "C(P)=([3]_q P+1)/[2]_q when P(-1)=-1",
+    "undefined_off": "P(-1) \u2209 {0,-1}",
+    "attractor_cycle": [
+      "q^-1",
+      "1+q^-1"
+    ]
+  },
+  "result": {
+    "seeds": 6045,
+    "window": [
+      -3,
+      5
+    ],
+    "cmax": 2,
+    "max_steps": 400,
+    "tally": {
+      "ESCAPE_DOMAIN": 6042,
+      "CONVERGED": 3
+    },
+    "max_excursion_height": 35,
+    "escape_depth_histogram": {
+      "1": 5369,
+      "2": 622,
+      "3": 49,
+      "4": 2
+    },
+    "max_indomain_prefix_before_escape": 4,
+    "converged_seeds": [
+      {
+        "seed": "{-1: 1}",
+        "steps": 0
+      },
+      {
+        "seed": "{-1: 1, 0: 1}",
+        "steps": 0
+      },
+      {
+        "seed": "{-1: 1, 0: 2, 1: 1}",
+        "steps": 1
+      }
+    ],
+    "rogue_cycles": [],
+    "unresolved_sample": []
+  },
+  "findings": [
+    "The map's domain {P : P(-1) \u2208 {0,-1}} is NOT forward-invariant: 6042/6045 positive Laurent seeds leave the domain (C_q undefined at some iterate), 5369 of them after a single step; max in-domain prefix before escape = 4.",
+    "No divergent orbit and no rogue cycle found: all non-escaping orbits reach the fundamental 2-cycle {q^-1, 1+q^-1}. The only convergents are the cycle elements and backward-tree preimages (e.g. q+2+q^-1 -> 1+q^-1).",
+    "Structural consequence for conj:q-collatz: the convergence claim 'for all P in \u2124[q^\u00b11]_{>0}' is ill-posed on the naive positive cone (C_q is undefined on ~all of it). The correct hypothesis is the DOMAIN-STABLE cone \u2014 elements whose entire forward orbit stays in {P(-1) \u2208 {0,-1}} \u2014 a Cantor-thin set (the backward orbit of the cycle). This partiality has NO classical analog: over \u2124 every integer is even or odd, so the domain is everything."
+  ],
+  "scope": "Bounded forward probe (window q^-3..q^5, coeffs 0..2, 400 steps). Evidence for domain non-invariance + absence of divergence in this family; NOT a proof.",
+  "provenance": {
+    "producer": "computations/qcollatz_divergence_probe.py",
+    "scriptHash": "de17984444d2",
+    "scriptCommitSha": "a1d1bd6d766a28a318e6ec2b7ac86308da54e401",
+    "runtime": "seconds, exact deterministic (no RNG)"
+  }
+}
