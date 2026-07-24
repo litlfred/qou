@@ -8,6 +8,12 @@ Structural backing for the Finding-1 re-scope of the Leray profile
 backward-self-similar to **discretely self-similar** (DSS), per the q-NS gap
 audit ([`docs/audits/2026-07-18-q-ns-classical-gap-decomposition.md`](../../../../../../docs/audits/2026-07-18-q-ns-classical-gap-decomposition.md)).
 
+**Scope discipline (owner directive 2026-07-24).** The profile `U(s)` is the
+QOU's own internal blow-up profile in similarity time. This file is a structural
+fact about the steady-vs-periodic profile *classes*; it explains why scoping the
+QOU-internal profile to discretely self-similar is consistent with the NRŠ no-go.
+It is a statement about QOUs / profile classes, not about the classical `ℝ³` PDE.
+
 ## The point
 
 In Leray's similarity variables the profile is a function `U = U(s)` of
