@@ -28,6 +28,7 @@ genuine analytic core of Part A — scoped here, not yet discharged.  Part B
 namespace QOU.QPochhammer
 
 open scoped BigOperators
+open Filter Topology
 
 -- `denomPolyLocal_eq_prod` (the finite `q`-Pochhammer product form) is imported
 -- from `QOU.Archimedean.DilogarithmArchimedeanLimit`, where the identical lemma
@@ -71,5 +72,45 @@ theorem riemann_sum_form {q x : ℝ} (hq0 : 0 < q) (n : ℕ) :
   have hqk : q ^ k ≠ 0 := ne_of_gt (pow_pos hq0 k)
   rw [pow_succ]
   field_simp
+
+/-- **Part-A Brick 3 — the per-term coefficient limit.**  In the `m`-series form
+    of `(1-q)·log Φ_n` (`partialProduct_log_eq_mseries`), the `q`-dependent
+    rescaling of the `m`-th term is `(1-q)/(q^{m+1}-1)`, and it tends to the
+    Riemann weight `-1/(m+1)` as `q → 1`.  Proof: for `q ≠ 1`,
+    `q^{m+1}-1 = (q-1)·Σ_{j≤m} qʲ` (`geom_sum_eq`), so the ratio equals
+    `-1/Σ_{j≤m} qʲ`, which is continuous at `q = 1` with value `-1/(m+1)`.
+    Combined with `qⁿ⁽ᵐ⁺¹⁾ → 0` (when `n(1-q) → ∞`) this gives the termwise limit
+    `x^{m+1}/(m+1)²`; the dominated-convergence exchange with the `m`-sum is the
+    remaining core (still open). -/
+theorem tendsto_one_sub_div_pow_sub_one (m : ℕ) :
+    Tendsto (fun q : ℝ => (1 - q) / (q ^ (m + 1) - 1)) (𝓝[≠] 1)
+      (𝓝 (-1 / ((m : ℝ) + 1))) := by
+  have hcong : (fun q : ℝ => (1 - q) / (q ^ (m + 1) - 1))
+      =ᶠ[𝓝[≠] 1] fun q : ℝ => -1 / (∑ j ∈ Finset.range (m + 1), q ^ j) := by
+    filter_upwards [self_mem_nhdsWithin] with q hq
+    have hsub : q - 1 ≠ 0 := sub_ne_zero.mpr hq
+    have hgm : q ^ (m + 1) - 1 = (q - 1) * (∑ j ∈ Finset.range (m + 1), q ^ j) := by
+      rw [← geom_sum_mul]; ring
+    rw [hgm, show (1 : ℝ) - q = (q - 1) * (-1 : ℝ) by ring, mul_div_mul_left _ _ hsub]
+  rw [tendsto_congr' hcong]
+  have hcont : Tendsto (fun q : ℝ => ∑ j ∈ Finset.range (m + 1), q ^ j) (𝓝 1)
+      (𝓝 ((m : ℝ) + 1)) := by
+    have h := tendsto_finset_sum (Finset.range (m + 1))
+      (fun j _ => (continuous_pow j).tendsto (1 : ℝ))
+    simpa using h
+  have hne : ((m : ℝ) + 1) ≠ 0 := by positivity
+  exact (tendsto_const_nhds.div hcont hne).mono_left nhdsWithin_le_nhds
+
+/-- **Part-A Brick 4 — the tail factor vanishes.**  For `0 < q < 1` the numerator
+    tail `q^{(m+1)n} → 0` as `n → ∞` (`= (q^{m+1})ⁿ` with `0 < q^{m+1} < 1`).  This
+    is the `n → ∞` half of the `q^{(m+1)n} → 0` behaviour that, jointly with
+    `n(1-q) → ∞`, sends the numerator `(q^{(m+1)n} − 1) → −1`; combined with
+    Brick 3 the `m`-th term tends to the Riemann weight `x^{m+1}/(m+1)²`. -/
+theorem tendsto_pow_mul_nhds_zero {q : ℝ} (hq0 : 0 < q) (hq1 : q < 1) (m : ℕ) :
+    Tendsto (fun n : ℕ => q ^ ((m + 1) * n)) atTop (𝓝 0) := by
+  have hbase0 : (0 : ℝ) ≤ q ^ (m + 1) := (pow_pos hq0 _).le
+  have hbase1 : q ^ (m + 1) < 1 := pow_lt_one₀ hq0.le hq1 (Nat.succ_ne_zero m)
+  have h := tendsto_pow_atTop_nhds_zero_of_lt_one hbase0 hbase1
+  simpa [pow_mul] using h
 
 end QOU.QPochhammer
