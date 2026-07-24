@@ -1,0 +1,114 @@
+{
+  "engine": "python-exact+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-07-24T16:30:16.561056+00:00",
+  "commitSha": "76810e1fbf48f8646e0cca4bb4ff6cc74be22fe7",
+  "assertions": [
+    {
+      "name": "covariance_epic_phase3_beta_reframing_and_route1",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "β-ensemble reframing verified (no positive excursion of E_β[ω₃] on (2,60], 60-dps, k≤16; H'(2)=Cov(ln f,ω₃)<0 all k≤19); Descartes route eliminated (sign changes grow). Surviving attack: β=2 maximises E_β[C₂] on [2,∞). No fit; no c_k."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 14,
+  "computation": "wlambda-covariance-epic-phase3",
+  "scriptFile": "wlambda_covariance_epic_phase3.py",
+  "scriptHash": "21476cb37875",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Phase 3 of the covariance-kernel proof epic (qou-x631). REFRAMING: the kernel cov(k)=Σ(f^λ)³ω₃ (β=3) is one instance of the β-Plancherel (Jack) ensemble inequality E_β[C₂] ≤ C(k,2) ∀β≥2 (equality at β=2, i.e. β=2 maximises the β-biased content-spread). Boundary data: H(2)=0; H'(2)=Cov_Planch(ln f,ω₃)<0 (strict, all k≤19); H(∞)<0 (max-dimension diagram is balanced ⇒ ω₃<0); and NO positive excursion of H(β)=E_β[ω₃] on β∈(2,60] at 60-dps for all k≤16 (global sup <0). ROUTE 1 (Stein/log-covariance): PARTIAL — Cov_Planch(ln f,ω₃)<0 confirmed (Kerov CLT makes (ln f,Σ3) jointly asymp. Gaussian, Stein ⇒ sign transfer), transfer factor A/(E[f]B) positive & bounded (≈0.55–0.88) but NOT →1 (finite-k non-Gaussian), so a rigorous proof needs error control or the β-family. ROUTE (Descartes/variation-diminishing): RULED OUT — sign changes of ω₃ ordered by dimension grow with k (1→111 at k=21), bound vacuous; ties are exact conjugate pairs. NET: kernel lives in the Jack/β-ensemble literature; surviving attack = prove β=2 maximises E_β[C₂] on [2,∞). scope-(a); no fit; nothing wired; no c_k; L2 2/7.",
+  "data": {
+    "beta_ensemble_conjecture": "E_beta[C2] <= C(k,2) for all beta>=2, equality at beta=2",
+    "no_positive_excursion_kmax": 16,
+    "no_positive_excursion_global_sup": -5.439443277798895e-11,
+    "log_covariance_negative_all_k": true,
+    "log_covariance_kmax": 19,
+    "stein_transfer_factor_positive_bounded_not_one": true,
+    "descartes_sign_changes_grow": true,
+    "descartes_sign_changes_head": [
+      1,
+      1,
+      1,
+      3,
+      3,
+      5,
+      7,
+      5,
+      15,
+      15,
+      15,
+      19,
+      29,
+      37,
+      49,
+      56,
+      73,
+      93,
+      111
+    ],
+    "log_covariance_head": [
+      [
+        3,
+        -0.6667,
+        -0.462098,
+        0.8656
+      ],
+      [
+        4,
+        -0.6667,
+        -0.462098,
+        0.541
+      ],
+      [
+        5,
+        -2.6667,
+        -0.834004,
+        0.6438
+      ],
+      [
+        6,
+        -14.4444,
+        -1.476487,
+        0.8743
+      ],
+      [
+        7,
+        -32.4444,
+        -1.812964,
+        0.6915
+      ],
+      [
+        8,
+        -79.9778,
+        -2.103972,
+        0.6046
+      ],
+      [
+        9,
+        -293.0426,
+        -2.704843,
+        0.6572
+      ],
+      [
+        10,
+        -1301.3418,
+        -3.479451,
+        0.7898
+      ]
+    ]
+  }
+}
