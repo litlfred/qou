@@ -182,6 +182,15 @@ anomaly), not a fit.
    value and origin of `ζ(2)`; the modular-completion bookkeeping that assembles
    `[T_w-truncated bulk] + [Φ_b modular anomaly] = Li₂(x)` sorry-free in Lean is
    the remaining formal step.
+   - **Building block landed (2026-07-24):** the exact **per-factor pole + phase
+     decomposition** is now formalized sorry-free —
+     [`DilogPartBBranchPhase.lean`](../../content/quantum-observable-universe/lean/QOU/Archimedean/DilogPartBBranchPhase.lean):
+     `clog_one_sub_of_gt_one` (`Log(1−w) = log(w−1) + iπ` for `w>1`) and
+     `clog_one_sub_pole_phase_split` (`Log(1−w) = log w + log(1−w⁻¹) + iπ`, i.e.
+     algebraic pole ⊕ regularized piece ⊕ branch-cut phase). This makes the
+     per-factor bookkeeping the audit subtracts exact in Lean; the *uniform*
+     cancellation of the `iπ` tower + linear pole across the cusp (yielding
+     `Li₂(x) − π²/3`) is still the open analytic step.
 2. The **x→1⁻ edge** (gap 3), where the Riemann-sum error `ℏ·(−log(1−x))` blows
    up — untouched here.
 3. **Lean/Mathlib** closure of even Part A — the standing infrastructure
