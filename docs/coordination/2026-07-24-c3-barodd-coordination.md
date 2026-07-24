@@ -23,15 +23,27 @@
   bar-even via the `h`-factorization; open residual `ResurgentPhaseFromAlienDatum`
   (no instance) = the fibre Δ_ω phase.
 
-## Division of labour (agreed via intent comments)
+## Division of labour — CORRECTED 2026-07-24
 
-- **#4140 (this branch):** the SUBSTRATE side — the odd-channel *determined solve*
-  (Borel-sum the derived `d_k` at substrate to `~10⁻³⁹`), giving c₃'s bar-odd
-  **magnitude**. In progress (agent relaunched 2026-07-24 after the prior run was
-  lost to a session gap).
-- **#3805:** the FIBRE side — A_ω as a derived integer (GGM 3d-index), giving the
-  anchor **sign**. Their A_ω plugs into my `ResurgentPhaseFromAlienDatum`.
-- Convergence: when both land, `c₃^odd = h·D(ũ)_substrate · sign(A_ω)`; cite both.
+> **⛔ The original "substrate magnitude / fibre sign" split below was WRONG.**
+> The substrate Borel sum is an anchor-blind floor (`h·D_opt ≈ −0.0035`) that does
+> NOT reproduce `S` (`−0.0395`/`+0.0097`) — magnitude included (Écalle witness M4;
+> `docs/audits/2026-07-24-c3-barodd-fork-correction.md`). So `#4140` does **not**
+> own a derived magnitude.
+
+- **The dominant anchor-dependent `c₃^odd` is open in BOTH magnitude and sign**, via
+  either the `1/ũ³` representational amplification (#3636) or the fibre `A_ω`
+  (#3805) — neither derived. The odd-channel substrate Borel-sum route is a
+  **known negative** (do not re-run; cite the Écalle witness).
+- **#3805's `A_ω`** remains the most promising handle for the fibre-saddle branch,
+  but it supplies the *whole* anchor-dependent object there, not merely a sign on an
+  already-derived magnitude.
+- Correction comments posted on #3805 + #4146 withdrawing the "magnitude derived"
+  claim.
+
+### Original (withdrawn) split
+- ~~#4140 owns the substrate magnitude; #3805 owns the sign; `c₃^odd =
+  h·D(ũ)_substrate · sign(A_ω)`.~~ — withdrawn per M4.
 
 ## Anti-double-derive note
 

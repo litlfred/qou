@@ -5,6 +5,34 @@
 **Tier:** corpus-corroborated resolution of the Lean-surfaced fork; scope-(a);
 no fit, no c_k wired, no tier change.
 
+> **⛔ CORRECTION (2026-07-24) — §2 and §4 below are WRONG; superseded.**
+> This audit mislabelled the number **`0.00945`**: it is **‖ũ‖** (the
+> expansion-variable magnitude `|ũ_substrate|`), **not** `|S|_geom`. The actual
+> `|S|` is **anchor-dependent** — `S(proton) = −0.0395`, `S(muon) = +0.0097` — so
+> the derived "`|phase| = 0.00945/0.00938 = 1.0074`, a 0.74% correction" is
+> **spurious** (it divided ‖ũ‖ by `|(q;q)_3|`, two unrelated ~0.0094 numbers).
+> The real `|phase| = |S|/|(q;q)_3|` is ≈ **4.2 (proton) / 1.03 (muon)** — the
+> phase is *not* near-unity and there is *no* small correction.
+>
+> **§4 is also wrong:** the substrate perturbative Borel/Écalle sum does **NOT**
+> derive `c₃^odd`'s magnitude. The pre-existing witness
+> `qbeta-dladder-ecalle-phib-resummation.witness.json` **M4/M4b** (from #3818/#3839,
+> which this audit failed to account for) shows `h·D_opt ≈ −0.0035` is an
+> **anchor-blind floor** reproducing **neither** `S(muon)=+0.0097` **nor**
+> `S(proton)=−0.0395`, and the substrate Stokes jump (`~10⁻⁷…10⁻²⁷`) is far too
+> small to be the `O(0.01)` swing. So on the substrate branch the swing is **not**
+> a Stokes ambiguity of this ladder at all.
+>
+> **Corrected open state:** the dominant anchor-dependent part of `c₃^odd` is
+> **not derived — neither magnitude nor sign**. It is either (a) the `1/ũ³`
+> `c₃`-representational amplification (#3636) or (b) the **fibre-saddle** (`|q|=1`,
+> `ũ~O(1)`) Stokes datum `A_ω` (#3805) — neither settled. The "narrowed to just
+> the fibre sign" framing is withdrawn. What still stands: the `d_k ∈ ℚ(√3)` are
+> categorically derived (§"machinery" below is unaffected), and the Lean
+> `QbetaC3PochhammerPhase` is a *conditional* proof (`IF |S|=|(q;q)_3| THEN
+> phase=±1`) — sound; the error was asserting its antecedent numerically.
+> Full correction: `docs/audits/2026-07-24-c3-barodd-fork-correction.md`.
+
 ## The fork (from the Lean proof `QOU.Mass.QbetaC3PochhammerPhase`)
 
 The proved decomposition `S = c₃ + Vol(4₁) = (q;q)_3 · phase` (phase bar-even,
