@@ -5,6 +5,8 @@ We use the combinatorial $q$-integer $[n]_q = (q^n - 1)/(q - 1)$, giving $[2]_q 
 
 An element $P \in \mathbb{Z}[q^{± 1}]$ is $q$-even if $[2]_q \mid P$ and $q$-odd if $[2]_q \mid (P + 1)$. At $q = 1$, we recover integer parity ($[2]_1 = 2$).
 
+Unlike the integers — where every element is even or odd — a Laurent polynomial need be neither: $P$ is $q$-even iff $P(-1) = 0$ and $q$-odd iff $P(-1) = -1$ (evaluating modulo $[2]_q$, i.e. at $q = -1$), so $\mathcal{C}_q$ is a **partial** map, undefined when $P(-1) \notin \{0, -1\}$. Moreover this domain is not forward-invariant: almost every positive element leaves it within a few steps. Accordingly the positive cone below is the **domain-stable** cone — the elements whose entire forward orbit remains $q$-even-or-$q$-odd — a feature with no classical analog.
+
 Define the Skein-Collatz map $\mathcal{C}_q \colon \mathbb{Z}[q^{± 1}] \to \mathbb{Z}[q^{± 1}]$ by:
 
 $$
