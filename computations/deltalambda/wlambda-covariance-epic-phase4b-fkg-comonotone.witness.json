@@ -1,0 +1,106 @@
+{
+  "engine": "python-exact",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-07-24T20:44:50.626168+00:00",
+  "commitSha": "1bc44fa18d7923c48f03ebf2bb841e3dc9c241f4",
+  "assertions": [
+    {
+      "name": "covariance_epic_phase4b_off_the_shelf_closers_eliminated",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "C₂/Σln h not dominance-monotone (U-shaped); FKG eliminated (f not log-supermodular, fails k=8); Chebyshev eliminated (~77% concordant). Interval reduction stands but lowers dimension power only; Cov_β(C₂,ln f)≤0 on [2,3] open. No fit; no c_k."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 11,
+  "computation": "wlambda-covariance-epic-phase4b-fkg-comonotone",
+  "scriptFile": "wlambda_covariance_epic_phase4b_fkg_comonotone.py",
+  "scriptHash": "bc1af45e010f",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Phase 4b of the covariance-kernel proof epic (qou-x631): test the two off-the-shelf closers for the Phase-4 interval reduction Cov_β(C₂,ln f)≤0 on [2,3], and CORRECT two Phase-4 over-statements. CORRECTION 1: C₂ and Σln h are NOT dominance-monotone — both are conjugation-invariant and U-shaped (large at row/column extremes, small in the middle). ROUTE FKG (needs (f^λ)^β log-supermodular on the dominance lattice): ELIMINATED — f is log-supermodular for k≤7 but FAILS at k=8 (λ=(4,2,1,1),μ=(3,3,2): f_λf_μ=3780>f_∨f_∧=3136). ROUTE Chebyshev (needs C₂,Σln h comonotone): ELIMINATED — only ~77–80% pairwise concordant (systematic discordant family (m,2) vs (m,1,1)). CORRECTION 3: the reduction does NOT sidestep the dimension — Σln h=ln k!−ln f still contains the log-dimension (∉ Ivanov–Olshanski algebra A); it lowers the dimension POWER (from (f)³-weighting to a ln f-covariance), a genuine simplification but not an escape. NET: the interval reduction stands; both off-the-shelf correlation-inequality closers fail; Cov_β(C₂,ln f)≤0 on [2,3] remains open. scope-(a); no fit; nothing wired; no c_k; L2 2/7.",
+  "data": {
+    "c2_dominance_monotone": false,
+    "fkg_log_supermodular_first_failure_k": 8,
+    "fkg_counterexample": {
+      "lambda": [
+        4,
+        2,
+        1,
+        1
+      ],
+      "mu": [
+        3,
+        3,
+        2
+      ],
+      "f_lam_f_mu": 3780,
+      "f_join_f_meet": 3136
+    },
+    "fkg_eliminated": true,
+    "comonotone_fraction_head": [
+      [
+        3,
+        1.0
+      ],
+      [
+        4,
+        0.75
+      ],
+      [
+        5,
+        0.8889
+      ],
+      [
+        6,
+        0.6957
+      ],
+      [
+        7,
+        0.8085
+      ],
+      [
+        8,
+        0.7656
+      ],
+      [
+        9,
+        0.7852
+      ],
+      [
+        10,
+        0.7674
+      ],
+      [
+        11,
+        0.8058
+      ],
+      [
+        12,
+        0.7809
+      ],
+      [
+        13,
+        0.7973
+      ],
+      [
+        14,
+        0.7981
+      ]
+    ],
+    "chebyshev_eliminated": true,
+    "dimension_not_sidestepped_note": "Sln h = ln k! - ln f; still the log-dimension, not in algebra A"
+  }
+}

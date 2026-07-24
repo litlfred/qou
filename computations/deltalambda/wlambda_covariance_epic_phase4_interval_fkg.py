@@ -19,11 +19,12 @@ integrated from H(2) = 0.  And since `ln f^λ = ln(k!) − Σ_□ ln h(□)` (ho
     Cov_β( Σ_□ c(□)²,  Σ_□ ln h(□) ) ≥ 0   for β ∈ [2,3],
 
 a **positive correlation between two explicit box-sum statistics** — the content-spread and the
-log-hook-sum — under the `(f^λ)^β` measure.  This is a Griffiths-II / FKG / Harris-type correlation
-inequality, which is a far better-developed toolkit (the "by analogy with these papers" route:
-Fulman's Stein/eigenfunction-drift, and the correlation-inequality machinery) than the intractable
-raw `Cov(dim, ω₃)` — because `dim` is not a polynomial function of the diagram, but `Σc²` and `Σln h`
-both are explicit box-sums.
+log-hook-sum — under the `(f^λ)^β` measure.  This is the "by analogy with these papers" route
+(Fulman's Stein/eigenfunction-drift + the correlation-inequality machinery).  NOTE (see Phase 4b):
+this reduction LOWERS THE DIMENSION POWER (from the `(f^λ)³`-weighted sum to a `ln f`-covariance) but
+does **not** sidestep the dimension — `Σ ln h = ln k! − ln f` still contains the log-dimension, which
+is NOT a polynomial function of the diagram (`∉ A`).  Both off-the-shelf closers (FKG-on-dominance,
+Chebyshev-comonotone) are ELIMINATED in Phase 4b; the reduced inequality remains open.
 
 This probe verifies, at 40 dps on a fine β-grid over [2,3]:
   (a) `E_β[C₂]` is monotone non-increasing on [2,3]  (β=3 inside the monotone window);
@@ -144,13 +145,14 @@ def main() -> int:
             "method. The kernel cov(k)=Σ(f^λ)³ω₃≤0 is H(3)≤0 for H(β)=E_β[C₂]−C(k,2). β=3 lies inside "
             "the monotone-decreasing window (E_β[C₂] decreases 2→3→4; only rises 4→5, Phase 1), so the "
             "kernel needs only the INTERVAL statement d/dβ E_β[C₂]=Cov_β(C₂,ln f)≤0 on [2,3], integrated "
-            "from H(2)=0. Since ln f=ln k!−Σln h, this is Cov_β(Σc², Σln h)≥0 on [2,3] — a Griffiths-II/"
-            "FKG-type POSITIVE correlation between two explicit box-sum statistics (content-spread, "
-            "log-hook-sum), which sidesteps the dimension-not-polynomial obstruction (dim∉A but Σc², "
-            "Σln h are explicit box-sums). Verified 40 dps on a fine β-grid over [2,3], all k≤14: "
-            "(a) E_β[C₂] monotone non-increasing; (b) Cov_β(C₂,ln f)≤0; (c) Cov_β(Σc²,Σln h)≥0. This "
-            "SHARPENS the open target; it does not close it. scope-(a); no fit; nothing wired; no c_k; "
-            "L2 2/7.")
+            "from H(2)=0. Since ln f=ln k!−Σln h, this is Cov_β(Σc², Σln h)≥0 on [2,3] — a POSITIVE "
+            "correlation between two explicit box-sum statistics (content-spread, log-hook-sum). NOTE "
+            "(Phase 4b): this LOWERS THE DIMENSION POWER (from (f)³-weighting to a ln f-covariance) but "
+            "does NOT sidestep the dimension — Σln h=ln k!−ln f still contains the log-dimension (∉A); "
+            "and both off-the-shelf closers (FKG-on-dominance, Chebyshev-comonotone) are eliminated in "
+            "Phase 4b. Verified 40 dps on a fine β-grid over [2,3], all k≤14: (a) E_β[C₂] monotone "
+            "non-increasing; (b) Cov_β(C₂,ln f)≤0; (c) Cov_β(Σc²,Σln h)≥0. This SHARPENS the open "
+            "target; it does not close it. scope-(a); no fit; nothing wired; no c_k; L2 2/7.")
         w.add_data("interval", "[2,3]")
         w.add_data("kmax", NMAX)
         w.add_data("beta_grid_step", f"1/{GRID}")
