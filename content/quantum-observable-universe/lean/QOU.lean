@@ -304,6 +304,7 @@ import QOU.Archimedean.VertexLocalTauModel
 import QOU.Archimedean.LiftFromReality
 import QOU.Archimedean.TauFunctorTargetSpec
 import QOU.Archimedean.DeckRealityEquivariance
+import QOU.Archimedean.LoopWeightRealSymmReduction
 import QOU.Molecular.PalindromicityOrbitalType
 import QOU.Molecular.ShellCapacitySelfSquare
 import QOU.Molecular.ShellClosureNfTermCount
