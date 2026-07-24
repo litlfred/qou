@@ -297,4 +297,31 @@ theorem qcollatz_laurent_neg_fixed :
       = (T 1 + 1) * (-(T (-1)) ^ 2) :=
   qcollatz_neg_qinv_sq_is_odd_fixed (T 1) (T (-1)) qcollatz_laurent_qunit
 
+/-! ### `[2]_q`-adic valuation infrastructure (qcz12)
+
+The `[2]_q`-adic valuation `v_[2](P) = max{k : [2]_q^k ∣ P}` on `ℤ[q]`, as
+the multiplicity of the factor `[2]_q = q + 1` — i.e. of the root `q = -1`.
+(On `ℤ[q^{±1}]` it agrees, since `q` is a unit and coprime to `q + 1`.) The
+per-step bookkeeping below is honest reusable infrastructure; it does **not**
+by itself furnish a globally-descending measure for `reaches_cycle` (the
+even branch lowers `v_[2]` by exactly one, but the odd branch's effect is the
+uncontrolled part — precisely the open content, per the 2026-07-18 audit). -/
+
+open Polynomial in
+/-- The `[2]_q`-adic valuation on `ℤ[q]`: multiplicity of the root `q = -1`
+    (equivalently, of the factor `[2]_q = q + 1`). -/
+noncomputable def qTwoValuation (P : Polynomial ℤ) : ℕ := P.rootMultiplicity (-1)
+
+open Polynomial in
+/-- **Even-branch valuation bookkeeping.** Multiplying by `[2]_q = q + 1`
+    raises `v_[2]` by exactly one (for `P ≠ 0`); equivalently the even branch
+    `P ↦ P/[2]_q` lowers it by one. -/
+theorem qTwoValuation_mul_qplus_one (P : Polynomial ℤ) (hP : P ≠ 0) :
+    qTwoValuation (P * (X + 1)) = qTwoValuation P + 1 := by
+  have hXC : (X + 1 : Polynomial ℤ) = X - C (-1) := by
+    rw [map_neg, map_one]; ring
+  unfold qTwoValuation
+  rw [hXC, rootMultiplicity_mul (mul_ne_zero hP (X_sub_C_ne_zero (-1))),
+    rootMultiplicity_X_sub_C_self]
+
 end QOU.AppendixSurreals
