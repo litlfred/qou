@@ -129,4 +129,49 @@ theorem qi3_sub_q_qi2 (Skein : Type u) [CommRing Skein] [QCollatz Skein] :
   rw [QCollatz.qi2_def (Skein := Skein), QCollatz.qi3_def (Skein := Skein)]
   ring
 
+/-! ### The fundamental attractor cycle `{q⁻¹, 1 + q⁻¹}` (proved)
+
+The two lemmas below discharge, sorry-free over any commutative ring in
+which `q` is invertible (as in the Skein module `ℤ[q^{±1}]`), the
+branch-defining equations of the fundamental 2-cycle — the `q`-lift of the
+classical `{1, 2}`. Writing `[2]_q = q + 1`, `[3]_q = q² + q + 1`:
+
+* the **odd** branch sends `q⁻¹ ↦ 1 + q⁻¹`
+  (`(1 + q⁻¹)·[2]_q = [3]_q·q⁻¹ + 1`);
+* the **even** branch sends `1 + q⁻¹ ↦ q⁻¹` (`q⁻¹·[2]_q = 1 + q⁻¹`).
+
+Together they show `{q⁻¹, 1 + q⁻¹}` is a genuine period-2 orbit of the
+Skein-Collatz map — the concrete realisation of the `attractor` field. -/
+
+/-- Odd-branch step of the fundamental cycle: `(1 + q⁻¹)·[2]_q = [3]_q·q⁻¹ + 1`. -/
+theorem qcollatz_fundamental_odd_step {R : Type u} [CommRing R]
+    (q qinv : R) (hq : q * qinv = 1) :
+    (1 + qinv) * (q + 1) = (q ^ 2 + q + 1) * qinv + 1 := by
+  linear_combination (-q) * hq
+
+/-- Even-branch step of the fundamental cycle: `q⁻¹·[2]_q = 1 + q⁻¹`. -/
+theorem qcollatz_fundamental_even_step {R : Type u} [CommRing R]
+    (q qinv : R) (hq : q * qinv = 1) :
+    qinv * (q + 1) = 1 + qinv := by
+  linear_combination hq
+
+/-- **Domain non-invariance (concrete counterexample, proved).**
+
+    The Skein-Collatz map is partial: `P` is in its domain iff `P` is
+    `q`-even (`φ P = 0`) or `q`-odd (`φ P = -1`), where `φ : R →+* ℤ` is
+    the parity evaluation sending `q ↦ -1` (so `φ [2]_q = 0`). The domain
+    is **not** forward-invariant: `[2]_q = q + 1` is `q`-even, its
+    even-branch image is `1` (since `1·[2]_q = [2]_q`), yet `φ 1 = 1`, which
+    is neither `0` nor `-1` — so `1` has left the domain. This is the
+    structural obstruction with no classical analog (over `ℤ` every element
+    is even or odd), backing the `pos_domain_stable` well-posedness field. -/
+theorem qcollatz_domain_not_forward_invariant {R : Type u} [CommRing R]
+    (q : R) (φ : R →+* ℤ) (hq : φ q = -1) :
+    φ (q + 1) = 0 ∧ (1 : R) * (q + 1) = q + 1 ∧ φ (1 : R) ≠ 0 ∧ φ (1 : R) ≠ -1 := by
+  refine ⟨?_, ?_, ?_, ?_⟩
+  · rw [map_add, hq, map_one]; ring
+  · ring
+  · rw [map_one]; decide
+  · rw [map_one]; decide
+
 end QOU.AppendixSurreals
