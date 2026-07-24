@@ -174,4 +174,38 @@ theorem qcollatz_domain_not_forward_invariant {R : Type u} [CommRing R]
   · rw [map_one]; decide
   · rw [map_one]; decide
 
+/-- **Convergence reduces to a descent measure (proved reduction).**
+
+    Given a QOU's `QCollatz` structure, suppose there is a measure
+    `μ : Skein → ℕ` that strictly decreases along the Skein-Collatz map on
+    the positive cone away from the attractor (`hdesc`), and the positive
+    cone is forward-invariant there (`hclosed`). Then **every** positive
+    element reaches the fundamental cycle.
+
+    This factors the open conjecture `reaches_cycle` into (i) this proved
+    termination-from-descent lemma and (ii) the existence of such a `μ` —
+    the genuinely open content (the `q`-analog of a Collatz stopping-time
+    bound; the paper's `⟨v_[2]⟩ ≥ 2` contact condition is the intended
+    witness). It wires nothing: `μ` is a hypothesis, not supplied. -/
+theorem reaches_cycle_of_descent {Skein : Type u} [CommRing Skein]
+    [QCollatz Skein] (μ : Skein → ℕ)
+    (hclosed : ∀ P : Skein, QCollatz.pos P → P ≠ QCollatz.attractor →
+      QCollatz.pos (QCollatz.C P))
+    (hdesc : ∀ P : Skein, QCollatz.pos P → P ≠ QCollatz.attractor →
+      μ (QCollatz.C P) < μ P) :
+    ∀ P : Skein, QCollatz.pos P →
+      ∃ k : ℕ, QCollatz.C^[k] P = QCollatz.attractor := by
+  suffices H : ∀ n P, μ P = n → QCollatz.pos P →
+      ∃ k, QCollatz.C^[k] P = QCollatz.attractor from
+    fun P hP => H (μ P) P rfl hP
+  intro n
+  induction n using Nat.strong_induction_on with
+  | _ n IH =>
+    intro P hμ hP
+    by_cases hc : P = QCollatz.attractor
+    · exact ⟨0, by simpa using hc⟩
+    · have hlt : μ (QCollatz.C P) < n := hμ ▸ hdesc P hP hc
+      obtain ⟨k, hk⟩ := IH (μ (QCollatz.C P)) hlt (QCollatz.C P) rfl (hclosed P hP hc)
+      exact ⟨k + 1, by rw [Function.iterate_succ_apply]; exact hk⟩
+
 end QOU.AppendixSurreals
