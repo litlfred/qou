@@ -13,10 +13,13 @@ This module states the manuscript claim over a context class so the `lean.ref` U
 namespace QOU.AlgebraicSubstrate
 
 
-/-- Abstract context for the `collatz_no_cycles` claim — manuscript-themed
-    typed fields below; `holds` carries the residual `Prop` claim. -/
+/-- QOU-furnished context for the `collatz_no_cycles` claim: the fields
+    below are the Skein data provided by a quantum observable universe
+    `(𝐂, A, τ)` — `q` is its substrate parameter and the Skein-Collatz
+    `is_periodic` predicate lives on its Skein module. The `_of_coprime`
+    field carries the manuscript no-cycle content conditionally. -/
 class CollatzNoCyclesContext where
-  /-- Substrate parameter `q : ℝ`. -/
+  /-- Substrate parameter `q : ℝ` of the QOU. -/
   q : ℝ
   /-- The q-integer `[2]_q`. -/
   q_int_2 : ℝ
@@ -34,17 +37,14 @@ class CollatzNoCyclesContext where
 
 /-- **Manuscript statement** (full body):
 
-**Proposition (conditional on
-[`conj:q-aubin-lions`](#conj:q-aubin-lions),
-[`conj:ns-counterexample`](#conj:ns-counterexample),
-[`conj:critical-exponent`](#conj:critical-exponent),
-[`conj:blowup-yekutieli`](#conj:blowup-yekutieli),
-and
-[`conj:regularity-breakdown`](#conj:regularity-breakdown);
-"no periodic Collatz cycles").**
-The Skein-Collatz map $\mathcal{C}_q$ on
-$\mathcal{S}(q) \cong \mathbb{Z}[q^{\pm 1}]$
-has no periodic orbits other than the fixed point $P = 1$.
+**Proposition (balanced-holonomy cycle exclusion, within a QOU).**
+Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe with
+substrate parameter $q$ and Skein module
+$\mathcal{S}(q) \cong \mathbb{Z}[q^{\pm 1}]$.
+The Skein-Collatz map $\mathcal{C}_q$ has no periodic orbit of balanced
+multiplicative holonomy ($A = 1$) other than the degenerate fixed point;
+equivalently $[3]_q^{k_{\mathrm{odd}}} = [2]_q^{k}$ has no solution with
+$k_{\mathrm{odd}} \geq 1$, by coprimality of $[2]_q$ and $[3]_q$.
 
 *Proof.* A periodic orbit of length $k$ with $k_{\mathrm{odd}}$
 odd steps and $k_{\mathrm{even}}$ even steps satisfies

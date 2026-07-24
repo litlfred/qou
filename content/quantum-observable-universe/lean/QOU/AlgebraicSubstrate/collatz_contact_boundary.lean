@@ -12,10 +12,13 @@ This module states the manuscript claim over a context class so the `lean.ref` U
 namespace QOU.AlgebraicSubstrate
 
 
-/-- Abstract context for the `collatz_contact_boundary` claim — manuscript-themed
-    typed fields below; `holds` carries the residual `Prop` claim. -/
+/-- QOU-furnished context for the `collatz_contact_boundary` claim: the
+    fields below are the Skein/Reeb data provided by a quantum observable
+    universe `(𝐂, A, τ)` — `q` is its substrate parameter. The
+    `obstruction_removable_of_even_chi` field carries the manuscript
+    Kummer-removability content conditionally. -/
 class CollatzContactBoundaryContext where
-  /-- Substrate parameter `q : ℝ`. -/
+  /-- Substrate parameter `q : ℝ` of the QOU. -/
   q : ℝ
   /-- The q-integer `[2]_q = q + 1`. -/
   q_int_2 : ℝ
@@ -30,16 +33,12 @@ class CollatzContactBoundaryContext where
 
 /-- **Manuscript statement** (full body):
 
-**Proposition (conditional on
-[`conj:q-aubin-lions`](#conj:q-aubin-lions),
-[`conj:ns-counterexample`](#conj:ns-counterexample),
-[`conj:critical-exponent`](#conj:critical-exponent),
-[`conj:blowup-yekutieli`](#conj:blowup-yekutieli),
-and
-[`conj:regularity-breakdown`](#conj:regularity-breakdown);
-"$[2]_q$-contact boundary").**
-Let $\mathcal{R}_p = (S^3 \xrightarrow{\pi_H} S^2, \xi_q)$
-be the Reeb bundle
+**Proposition (within a QOU; conditional on
+[`conj:q-collatz`](#conj:q-collatz); "$[2]_q$-contact boundary").**
+Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe with
+substrate parameter $q$, and let
+$\mathcal{R}_p = (S^3 \xrightarrow{\pi_H} S^2, \xi_q)$
+be its Reeb bundle
 ([Reeb bundle](#def:reeb-bundle)) with $U(1)$ fiber
 parametrized by $q = e^{i\varTheta}$, $\varTheta \in [0, 2\pi)$.
 
