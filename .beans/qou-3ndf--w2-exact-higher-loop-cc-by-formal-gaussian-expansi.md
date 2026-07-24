@@ -1,0 +1,10 @@
+---
+# qou-3ndf
+title: 'W2: EXACT higher-loop c₂/c₃ by formal Gaussian expansion at the (231) saddle (algebraic in trace field Q(ξ)) — unblocks the sibling''s printed-data-blocked φ_odd derivation'
+status: todo
+type: task
+created_at: 2026-07-24T15:49:42Z
+updated_at: 2026-07-24T15:49:42Z
+parent: qou-yaz3
+---
+
