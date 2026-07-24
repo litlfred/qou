@@ -6,7 +6,7 @@ type: task
 priority: medium
 parent: qcz6
 created_at: 2026-07-24T16:46:17Z
-updated_at: 2026-07-24T20:48:58Z
+updated_at: 2026-07-24T21:14:30Z
 ---
 
 Goal: no periodic orbit with holonomy A = [3]_q^{ko}/[2]_q^k ≠ 1 other than
@@ -36,3 +36,5 @@ in durable artifacts without the (a)/(b) scope classification.
 PROGRESS (period-1 case CLOSED): qcollatz_odd_fixed_point (odd fixed pt forces q^2 P = -1) + qcollatz_neg_qinv_sq_is_odd_fixed (-qinv^2 is that fixed pt), both sorry-free. => the ONLY odd-branch fixed point is -q^-2 (negative), no POSITIVE fixed point exists; fundamental cycle is genuinely 2-periodic. Still open: period>=2 affine cycles (B1 integrality obstruction).
 
 PERIOD-1 CLOSED (odd fixed pt -q^-2, even fixed pt 0, neither positive). WALL: period>=2 affine exclusion = q-analog Steiner/Simons-de Weger cycle-value bound (needs height/valuation input). Census (<=period 18) is negative evidence only. Documented in the 2026-07-18 audit.
+
+PERIOD-2 CLOSED: qcollatz_period2_eveneven (EE => q(q+2)P=0 => P=0), _oddodd (OO => (q^2+2q+2)(P-P1)=0 => P=P1, degenerates), _evenodd (EO => q*P1=1 => P1=q^-1, the fundamental). Only positive 2-cycle is {q^-1,1+q^-1}. Sorry-free. Period>=3 still open (q-Steiner).
