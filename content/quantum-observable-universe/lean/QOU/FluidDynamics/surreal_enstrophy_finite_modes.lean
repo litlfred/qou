@@ -547,4 +547,84 @@ theorem surreal_finite_of_classical_bounded_subclassical {ε : K}
   push_cast
   linarith
 
+/-! ### W — the super-classical side `q = 1 + ε`
+
+The remaining open side of the bridge. Here the domination **reverses**:
+`[k]_{1+ε} ≥ k` termwise, so the surreal enstrophy dominates the classical one
+and the *forward* direction (classical blow-up ⇒ surreal infinite) is immediate
+— no infinitesimality needed. The *converse* is the genuine open side; the
+dissipation closure (`enstrophy_alpha_one_of_dissipation_closure`,
+`q_ns_classical_bridge`) caps the possible blow-up at **ω-grade 1**
+(`FiniteOfGrade`), the surreal reading of the critical exponent `α = 1`. The
+open content is thereby sharpened from "is `Ω(1+ε)` finite?" to "grade 1 vs
+grade 0" — exactly the `α` question of `p2-critical-exponent`. -/
+
+/-- **Termwise classical domination, reversed:** for `0 ≤ ε`,
+    `k ≤ [k]_{1+ε}` — each super-classical q-integer is at least its classical
+    value (every power `(1+ε)^j ≥ 1`). -/
+theorem qInt_ge_self {ε : K} (h0 : 0 ≤ ε) (k : ℕ) :
+    (k : K) ≤ qInt (1 + ε) k := by
+  have hb : ∀ j ∈ Finset.range k, (1 : K) ≤ (1 + ε) ^ j :=
+    fun j _ => one_le_pow₀ (by linarith)
+  calc (k : K) = ∑ _j ∈ Finset.range k, (1 : K) := by simp
+    _ ≤ qInt (1 + ε) k := Finset.sum_le_sum hb
+
+/-- **Enstrophy domination, reversed:** with non-negative amplitudes the
+    super-classical enstrophy dominates the classical one at every truncation. -/
+theorem enstrophyN_ge_classical {ε : K} (h0 : 0 ≤ ε)
+    (a : ℕ → K) (ha0 : ∀ k, 0 ≤ a k) (M : ℕ) :
+    enstrophyN 1 a M ≤ enstrophyN (1 + ε) a M := by
+  refine Finset.sum_le_sum fun k _ => ?_
+  have hk0 : (0 : K) ≤ (k : K) := Nat.cast_nonneg k
+  have hge : (k : K) ≤ qInt (1 + ε) k := qInt_ge_self h0 k
+  have hsq : qInt 1 k ^ 2 ≤ qInt (1 + ε) k ^ 2 := by
+    rw [qInt_one]; nlinarith
+  exact mul_le_mul_of_nonneg_right hsq (ha0 k)
+
+/-- **Forward direction on the super-classical side.** If the total surreal
+    enstrophy dominates every truncation and the classical enstrophy is
+    unbounded, the surreal observable at `q = 1 + ε` is infinite — immediate
+    from the reversed domination; no infinitesimality of `ε` needed. -/
+-- Ref: [manuscript] fluid-dynamics/regularity-breakdown (enstrophy blow-up)
+theorem superclassical_infinite_of_classical_unbounded {ε : K} (h0 : 0 ≤ ε)
+    (a : ℕ → K) (ha0 : ∀ k, 0 ≤ a k) (Ω_tot : K)
+    (hdom : ∀ N, enstrophyN (1 + ε) a N ≤ Ω_tot)
+    (hunb : ∀ n : ℕ, ∃ N, (n : K) < enstrophyN 1 a N) :
+    ¬ IsFinite Ω_tot := by
+  rintro ⟨m, hm⟩
+  obtain ⟨N, hN⟩ := hunb m
+  have h1 := enstrophyN_ge_classical h0 a ha0 N
+  have h2 := hdom N
+  have habs : Ω_tot ≤ |Ω_tot| := le_abs_self Ω_tot
+  linarith
+
+/-- `x` is **finite of ω-grade `n`** (relative to the infinitesimal `ε`):
+    `ε^n · x` is finite. Grade `0` is ordinary finiteness; grade `1` allows one
+    factor of the infinite surreal `ε⁻¹` — the surreal bookkeeping of the
+    blow-up order `ord_ω` (`def:surreal-blowup-calculus`, §7ab). -/
+def FiniteOfGrade (ε : K) (n : ℕ) (x : K) : Prop := IsFinite (ε ^ n * x)
+
+/-- **Grade cap from the dissipation closure.** Under the dissipation closure
+    `ε · Ω = 2(1+ε) · D` (the `q = 1+ε` reading of
+    `enstrophy_alpha_one_of_dissipation_closure` with `ν_q · Ω = D` cleared of
+    denominators) with finite mean dissipation `D` and finite `ε`, the
+    super-classical enstrophy is **finite of ω-grade 1**: `ε · Ω` is finite, so
+    `Ω` blows up at most like `ε⁻¹` — the surreal statement of the critical
+    exponent `α = 1`. The remaining open content of the super-classical side is
+    thereby the gap **grade 1 vs grade 0**: whether the flow saturates the
+    closure's `ε⁻¹` cap (blow-up, `α = 1`) or stays at grade 0 (regular) — the
+    `α` question of `p2-critical-exponent`, not decided here. -/
+-- Ref: [manuscript] fluid-dynamics/p2-critical-exponent, regularity-breakdown;
+-- Ref: [manuscript] appendix-surreals/surreal-blowup-calculus (§7ab ord_ω)
+theorem enstrophy_grade_one_of_dissipation_closure {ε D Ω : K}
+    (hD : IsFinite D) (hεf : IsFinite ε)
+    (hclosure : ε * Ω = 2 * (1 + ε) * D) :
+    FiniteOfGrade ε 1 Ω := by
+  unfold FiniteOfGrade
+  rw [pow_one, hclosure]
+  have h2 : IsFinite (2 : K) := by
+    simpa using isFinite_natCast (K := K) 2
+  have h1ε : IsFinite (1 + ε : K) := isFinite_one.add hεf
+  exact (h2.mul h1ε).mul hD
+
 end QOU.FluidDynamics

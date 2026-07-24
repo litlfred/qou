@@ -73,12 +73,20 @@ hypothesis at all**. Together with
 the sub-classical approach**, given only the definitional limit pair
 (truncations below the total; the total a lub) and non-negative amplitudes.
 
-**Honest remaining open content:** the **super-classical approach**
-`q = 1 + ε`, where `[k]_{1+ε} ≥ k` reverses the domination and the UV tail
-question is genuine — i.e. whether the physically-preferred `q → 1⁺` limit
-(the direction of `thm:q-ns-wellposedness`) satisfies the analogous finiteness
-correspondence. Only that side is still carried by this hypothesis; it remains
-open and is not asserted.
+**Super-classical side (`q = 1 + ε`) — forward direction proved, blow-up
+grade-capped.** The reversed domination `[k]_{1+ε} ≥ k` (`qInt_ge_self`) makes
+the forward direction immediate
+(`superclassical_infinite_of_classical_unbounded`: classical unbounded ⇒
+surreal infinite, no infinitesimality needed), and the dissipation closure caps
+the blow-up at **ω-grade 1** (`enstrophy_grade_one_of_dissipation_closure`:
+`ε·Ω` finite — the surreal reading of the critical exponent `α = 1`).
+
+**Honest remaining open content:** on the physically-preferred `q → 1⁺`
+direction (the side of `thm:q-ns-wellposedness`), the gap is now **grade 1 vs
+grade 0**: whether the flow saturates the closure's `ε⁻¹` cap (blow-up,
+`α = 1`) or stays at grade 0 (regular) — the critical-exponent question of
+`p2-critical-exponent`. Only that graded question is still carried by this
+hypothesis; it remains open and is not asserted.
 
 ## Base ring (§7c)
 Generic: `S` is an abstract surreal line, all other data are `Prop`s. `L²(ℝ³)`
