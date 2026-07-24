@@ -249,4 +249,107 @@ theorem tail_bound {x b : ℝ} (hx0 : 0 < x) (hx1 : x < 1) (hb0 : 0 < b) (hb1 : 
           · exact (h_bounds_Ioc hx0 hx1 h0 (le_trans hu.2 hb1)).2
       _ = b * (x / (1 - x)) := by rw [intervalIntegral.integral_const, smul_eq_mul]; ring
 
+/-! ### B3.5 — assembling the `ArchimedeanLimit x` instance -/
+
+/-- `qⁿ ≤ exp(−n·(1−q))` for `0 < q` (from `log q ≤ q − 1`). -/
+theorem pow_le_exp_neg_mul {q : ℝ} (hq0 : 0 < q) (n : ℕ) :
+    q ^ n ≤ Real.exp (-((n : ℝ) * (1 - q))) := by
+  have hlog : Real.log (q ^ n) ≤ -((n : ℝ) * (1 - q)) := by
+    rw [Real.log_pow]
+    have hlq : Real.log q ≤ q - 1 := Real.log_le_sub_one_of_pos hq0
+    have hn : (0 : ℝ) ≤ (n : ℝ) := Nat.cast_nonneg n
+    nlinarith [mul_le_mul_of_nonneg_left hlq hn]
+  calc q ^ n = Real.exp (Real.log (q ^ n)) := (Real.exp_log (pow_pos hq0 n)).symm
+    _ ≤ Real.exp (-((n : ℝ) * (1 - q))) := Real.exp_le_exp.mpr hlog
+
+/-- **B3.5 — Part-A convergence.**  For `0 < x < 1`, the Faddeev-scaling limit
+    `(1-q)·log Φ_n(x;q) → Li₂(x)` holds: `ArchimedeanLimit x`.  Assembled from the
+    Riemann-sum identity (Bricks 1–2), the telescoping error bound
+    (`riemann_error_bound`), the tail bound (`tail_bound`), and the target integral
+    (`integral_zero_one_eq_LiTwo`).  This discharges the last open field of Part A
+    of `conj:dilogarithm-archimedean-limit`. -/
+theorem archimedeanLimit_Ioo {x : ℝ} (hx0 : 0 < x) (hx1 : x < 1) :
+    ArchimedeanLimit x := by
+  refine ⟨fun ε hε => ?_⟩
+  have h1x : (0 : ℝ) < 1 - x := by linarith
+  have hL_pos : 0 < -Real.log (1 - x) := neg_pos.mpr (Real.log_neg h1x (by linarith))
+  have hC_pos : 0 < x / (1 - x) := div_pos hx0 h1x
+  set L := -Real.log (1 - x) with hLdef
+  set C := x / (1 - x) with hCdef
+  set D := max 1 (Real.log (2 * C / ε)) with hDdef
+  have hD1 : (1 : ℝ) ≤ D := le_max_left _ _
+  have hDpos : 0 < D := lt_of_lt_of_le one_pos hD1
+  set δ := min (ε / (2 * L)) (1 / D) with hδdef
+  have hδ_pos : 0 < δ := lt_min (by positivity) (by positivity)
+  refine ⟨δ, hδ_pos, fun q n hyp => ?_⟩
+  obtain ⟨hq_lo, hq1, hn⟩ := hyp
+  have hδ_le1 : δ ≤ 1 := le_trans (min_le_right _ _) ((div_le_one hDpos).mpr hD1)
+  have hq0 : 0 < q := by linarith
+  have hq1le : q ≤ 1 := hq1.le
+  have hqn_pos : 0 < q ^ n := pow_pos hq0 n
+  have hqn_le1 : q ^ n ≤ 1 := pow_le_one₀ hq0.le hq1le
+  -- two ε/2 bounds
+  have hbound1 : (1 - q) * L < ε / 2 := by
+    have h1 : 1 - q < δ := by linarith
+    calc (1 - q) * L < δ * L := mul_lt_mul_of_pos_right h1 hL_pos
+      _ ≤ (ε / (2 * L)) * L := mul_le_mul_of_nonneg_right (min_le_left _ _) hL_pos.le
+      _ = ε / 2 := by field_simp
+  have hbound2 : q ^ n * C < ε / 2 := by
+    have hqn_le : q ^ n ≤ Real.exp (-((n : ℝ) * (1 - q))) := pow_le_exp_neg_mul hq0 n
+    have hlt : Real.exp (-((n : ℝ) * (1 - q))) < Real.exp (-δ⁻¹) :=
+      Real.exp_lt_exp.mpr (by linarith [hn])
+    have hDδinv : D ≤ δ⁻¹ := by
+      have hδD : δ ≤ 1 / D := min_le_right _ _
+      rw [← one_div, le_div_iff₀ hδ_pos, mul_comm]
+      exact (le_div_iff₀ hDpos).mp hδD
+    have hexp_le : Real.exp (-δ⁻¹) ≤ ε / (2 * C) := by
+      have hy : (0 : ℝ) < 2 * C / ε := by positivity
+      have hstep : Real.exp (-δ⁻¹) ≤ Real.exp (-Real.log (2 * C / ε)) :=
+        Real.exp_le_exp.mpr (by linarith [le_max_right (1 : ℝ) (Real.log (2 * C / ε))])
+      have hval : Real.exp (-Real.log (2 * C / ε)) = ε / (2 * C) := by
+        rw [Real.exp_neg, Real.exp_log hy, inv_div]
+      rwa [hval] at hstep
+    calc q ^ n * C ≤ Real.exp (-((n : ℝ) * (1 - q))) * C :=
+          mul_le_mul_of_nonneg_right hqn_le hC_pos.le
+      _ < Real.exp (-δ⁻¹) * C := mul_lt_mul_of_pos_right hlt hC_pos
+      _ ≤ (ε / (2 * C)) * C := mul_le_mul_of_nonneg_right hexp_le hC_pos.le
+      _ = ε / 2 := by field_simp
+  -- (1-q)·log Φ_n = S_n (Bricks 1+2)
+  rw [Real.norm_eq_abs,
+      show (1 - q) * Real.log (partialProductLocal q x n)
+        = ∑ k ∈ Finset.range n,
+            -Real.log (1 - x * q ^ k) / q ^ k * (q ^ k - q ^ (k + 1)) by
+        have hlog : Real.log (partialProductLocal q x n)
+            = ∑ k ∈ Finset.range n, -Real.log (1 - x * q ^ k) := by
+          rw [log_partialProduct_eq_neg_sum hx0 hx1 hq0 hq1le n]; simp
+        rw [hlog, riemann_sum_form hq0 n]]
+  obtain ⟨hE_lo, hE_hi⟩ := riemann_error_bound hx0 hx1 hq0 hq1 n
+  obtain ⟨hT_lo, hT_hi⟩ := tail_bound hx0 hx1 hqn_pos hqn_le1
+  have hI : LiTwo x
+      = (∫ u in (0 : ℝ)..q ^ n, -Real.log (1 - x * u) / u)
+        + ∫ u in q ^ n..(1 : ℝ), -Real.log (1 - x * u) / u := by
+    rw [← integral_zero_one_eq_LiTwo hx0 hx1]
+    exact (intervalIntegral.integral_add_adjacent_intervals
+      (h_intervalIntegrable_zero hx0 hx1 hqn_pos hqn_le1)
+      (h_intervalIntegrable hx0 hx1 le_rfl hqn_pos hqn_le1)).symm
+  have hhqn_nonneg : 0 ≤ -Real.log (1 - x * q ^ n) / q ^ n :=
+    (h_bounds_Ioc hx0 hx1 hqn_pos hqn_le1).1
+  have hE_hi' :
+      (∑ k ∈ Finset.range n, -Real.log (1 - x * q ^ k) / q ^ k * (q ^ k - q ^ (k + 1)))
+        - ∫ u in q ^ n..(1 : ℝ), -Real.log (1 - x * u) / u ≤ (1 - q) * L := by
+    refine le_trans hE_hi ?_
+    have hh1 : -Real.log (1 - x * 1) / 1 = L := by rw [mul_one, div_one]
+    rw [hh1]
+    nlinarith [hhqn_nonneg, hq1, mul_nonneg (by linarith : (0:ℝ) ≤ 1 - q) hhqn_nonneg]
+  rw [abs_lt]
+  have hsplit :
+      (∑ k ∈ Finset.range n, -Real.log (1 - x * q ^ k) / q ^ k * (q ^ k - q ^ (k + 1)))
+        - LiTwo x
+      = ((∑ k ∈ Finset.range n, -Real.log (1 - x * q ^ k) / q ^ k * (q ^ k - q ^ (k + 1)))
+            - ∫ u in q ^ n..(1 : ℝ), -Real.log (1 - x * u) / u)
+        - ∫ u in (0 : ℝ)..q ^ n, -Real.log (1 - x * u) / u := by
+    rw [hI]; ring
+  rw [hsplit]
+  refine ⟨by nlinarith [hE_lo, hT_hi, hbound2, hε], by nlinarith [hE_hi', hT_lo, hbound1, hε]⟩
+
 end QOU.Archimedean
