@@ -9,6 +9,12 @@ on the growth exponent of the Levi condition number, per the q-NS gap audit
 Finding 3
 ([`docs/audits/2026-07-18-q-ns-classical-gap-decomposition.md`](../../../../../../docs/audits/2026-07-18-q-ns-classical-gap-decomposition.md)).
 
+**Scope discipline (owner directive 2026-07-24).** *Given a QOU*, `C_L(κ)` is the
+Levi condition number of the QOU's own vortex-core geometry along its
+root-of-unity ladder, and "NS-singular / NS-regular" below mean the QOU's
+**internal** `q = 1` flow. This is a statement about QOUs; it does not decide the
+classical `ℝ³` Navier–Stokes problem.
+
 ## The problem with the dichotomy
 
 `conj:levi-degeneracy` states "*exactly one* of (A) `C_L(κ) = O(1)` / (B)
