@@ -1,12 +1,12 @@
 ---
 # qcz9
 title: 'Chip: scope contact-boundary to a QOU with 2|χ(A) (Descartes), map is χ-independent'
-status: todo
+status: completed
 type: task
 priority: high
 parent: qcz6
 created_at: 2026-07-24T16:46:17Z
-updated_at: 2026-07-24T16:46:17Z
+updated_at: 2026-07-24T17:33:11Z
 ---
 
 Corpus-verified: χ(A)=-6 is NOT implied by a general QOU — it is the
@@ -21,3 +21,5 @@ Update collatz-contact-boundary.md + collatz_contact_boundary.lean
 (the context class already has chi_A=-6 as a FIELD — good, that IS the
 hypothesis; make the narrative banner match, don't imply general QOU).
 Cheap, do first. Render-QA + lean-direct verify.
+
+DONE: contact-boundary banner (md+lean) scoped to 'QOU with 2|χ(A), e.g. Descartes χ=-6'; noted core Skein-Collatz results are χ-independent. lean-direct exit 0; render-QA clean.

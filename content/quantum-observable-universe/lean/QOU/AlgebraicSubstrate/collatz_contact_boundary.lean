@@ -33,11 +33,14 @@ class CollatzContactBoundaryContext where
 
 /-- **Manuscript statement** (full body):
 
-**Proposition (within a QOU; conditional on
+**Proposition (within a QOU with `2 ∣ χ(A)`; conditional on
 [`conj:q-collatz`](#conj:q-collatz); "$[2]_q$-contact boundary").**
 Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe with
-substrate parameter $q$, and let
-$\mathcal{R}_p = (S^3 \xrightarrow{\pi_H} S^2, \xi_q)$
+substrate parameter $q$ whose Frobenius–Hopf object satisfies
+$2 \mid \chi(A)$ — e.g. the Descartes universe, $\chi(A) = -6$; this
+parity is what makes the $[2]_q$-divisor Kummer-removable, and
+$\chi(A) = -6$ is a Descartes-universe property, not a general-QOU one —
+and let $\mathcal{R}_p = (S^3 \xrightarrow{\pi_H} S^2, \xi_q)$
 be its Reeb bundle
 ([Reeb bundle](#def:reeb-bundle)) with $U(1)$ fiber
 parametrized by $q = e^{i\varTheta}$, $\varTheta \in [0, 2\pi)$.
