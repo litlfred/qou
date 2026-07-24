@@ -98,6 +98,43 @@ theorem σ_quadratic_factored (i : Fin n) :
     noncomm_ring
   rw [key, hq]; abel
 
+section Units
+
+variable [Invertible q]
+
+/-- The explicit inverse of a generator: `σ_i⁻¹ = q⁻¹·(σ_i - (q-1))`,
+    read off the quadratic relation `σ_i(σ_i - (q-1)) = q`. -/
+noncomputable def σInv (i : Fin n) : IwahoriHecke K q n :=
+  ⅟q • (σ K q n i - (q - 1) • 1)
+
+/-- `σ_i · σ_i⁻¹ = 1` when `q` is invertible (sorry-free). -/
+theorem σ_mul_σInv (i : Fin n) :
+    σ K q n i * σInv K q n i = 1 := by
+  have hquad := σ_quadratic K q n i
+  simp only [σInv, mul_smul_comm, mul_sub, mul_one, hquad]
+  rw [add_sub_cancel_left, smul_smul, invOf_mul_self, one_smul]
+
+/-- `σ_i⁻¹ · σ_i = 1` when `q` is invertible (sorry-free). -/
+theorem σInv_mul_σ (i : Fin n) :
+    σInv K q n i * σ K q n i = 1 := by
+  have hquad := σ_quadratic K q n i
+  simp only [σInv, smul_mul_assoc, sub_mul, one_mul, hquad]
+  rw [add_sub_cancel_left, smul_smul, invOf_mul_self, one_smul]
+
+/-- **The generators are units (sorry-free).**  When `q` is invertible
+    each `σ_i` is a unit of `H_n(q)` with inverse `σInv`; hence the braid
+    group maps into `H_n(q)ˣ` (the Hecke representation of braids). -/
+noncomputable def σUnit (i : Fin n) : (IwahoriHecke K q n)ˣ where
+  val := σ K q n i
+  inv := σInv K q n i
+  val_inv := σ_mul_σInv K q n i
+  inv_val := σInv_mul_σ K q n i
+
+theorem isUnit_σ (i : Fin n) : IsUnit (σ K q n i) :=
+  ⟨σUnit K q n i, rfl⟩
+
+end Units
+
 end IwahoriHecke
 
 end QOU.Hecke
