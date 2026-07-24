@@ -69,6 +69,13 @@ structure QOUFluidUniverse (k : Type*) [CommRing k] where
   /-- **Step 3 (`ns-obstruction-tower`, `blowup-yekutieli`):** a nonzero NS
       obstruction *is*, by definition, the QOU's internal q-NS singularity. -/
   obstruction_iff_internal_blowup : obstruction ≠ 0 ↔ internalBlowup
+  /-- "The QOU's Levi form is non-degenerate along its ladder" (both eigenvalues
+      positive; branch A of `conj:levi-degeneracy`). -/
+  leviNonDegenerate : Prop
+  /-- **Yekutieli–Levi unification (`ns-obstruction-tower` (c)/(d), = the T8
+      result `ns_obstruction_iff_levi`):** the NS obstruction is nonzero iff the
+      Levi form is non-degenerate. A QOU-structural categorical fact. -/
+  obstruction_iff_levi : obstruction ≠ 0 ↔ leviNonDegenerate
 
 variable {k : Type*} [CommRing k]
 
@@ -88,6 +95,17 @@ theorem qou_internal_ns_singular (U : QOUFluidUniverse k) : U.internalBlowup :=
 -- Ref: [manuscript] fluid-dynamics/ns-obstruction, ns-kummer-specialisation
 theorem qou_obstruction_nonzero (U : QOUFluidUniverse k) : U.obstruction ≠ 0 :=
   U.chi_forces_obstruction (U.observability_forces_chi U.observability_holds)
+
+/-- **Given a QOU, its internal q-NS is forced into the non-degenerate branch.**
+    The Levi form is non-degenerate — branch A of `conj:levi-degeneracy` (the
+    `β = 0`, blow-up side). *In a QOU* the trichotomy branch is decided: the
+    obstruction is nonzero (`qou_obstruction_nonzero`), and by the
+    Yekutieli–Levi unification that forces non-degeneracy. This decides the
+    branch **inside the QOU only** — the general growth-rate `β` of a classical
+    flow is untouched. -/
+-- Ref: [manuscript] fluid-dynamics/ns-obstruction-tower, levi-degeneracy-conjecture
+theorem qou_levi_nondegenerate (U : QOUFluidUniverse k) : U.leviNonDegenerate :=
+  U.obstruction_iff_levi.mp (qou_obstruction_nonzero U)
 
 /-- **Contrapositive scope check.** If a QOU's internal q-NS flow were regular,
     its NS obstruction would vanish — impossible for a genuine QOU
