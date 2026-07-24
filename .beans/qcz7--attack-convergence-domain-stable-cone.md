@@ -1,12 +1,12 @@
 ---
 # qcz7
 title: 'Attack A: reaches_cycle — convergence over the domain-stable cone'
-status: todo
+status: in-progress
 type: task
 priority: medium
 parent: qcz6
 created_at: 2026-07-24T16:46:17Z
-updated_at: 2026-07-24T16:46:17Z
+updated_at: 2026-07-24T20:34:38Z
 ---
 
 Goal: every domain-stable positive Skein element reaches {q^-1,1+q^-1}.
@@ -31,3 +31,5 @@ A3. If A1/A2 stall: prove the WEAKER conditional "if v_[2] descent holds
 Deliverable per route: a sorry-free Lean lemma OR an honest documented
 wall. Preflight: lean_leansearch for well-founded-recursion / valuation
 descent lemmas before hand-rolling.
+
+PROGRESS (A2/A3): reaches_cycle_of_descent PROVED sorry-free (QCollatz.lean) — convergence follows from ANY strictly-descending measure mu + forward-invariance. Factors the open conjecture into (proved reduction) + (open: existence of mu, the q-analog stopping-time / <v_[2]>>=2 contact bound). Still open: construct mu (A1 D-infinity characterization + A2 [2]_q-adic descent).
