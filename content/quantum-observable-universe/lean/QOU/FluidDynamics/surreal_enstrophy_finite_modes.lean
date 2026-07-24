@@ -353,4 +353,129 @@ theorem surreal_finite_of_classical_bounded
   push_cast
   linarith
 
+/-! ### U1 — golden-window membership: `1/φ² < 1 − ε < 1`
+
+The corpus confinement window (`rem:golden-ratio-degeneration`,
+`deconfinement-golden-threshold`): the elliptic fiber is smooth and the
+confinement machinery intact on the **classical band** `q_gold < q < 1`, where
+`q_gold = 1/φ² = s²` with `s = 1/φ` the positive root of `s² + s = 1`. The
+substrate point `q = 1 − ε` of the surreal bridge lies in this band
+*automatically* for every positive infinitesimal `ε`, because
+`1 − q_gold = 1/φ > 1/2` is a non-infinitesimal margin. -/
+
+/-- **Golden-window membership.** For every positive infinitesimal `ε` the
+    surreal substrate point `q = 1 − ε` lies strictly inside the classical band
+    `q_gold < q < 1` (`q_gold = s²`, `s` the positive root of `s² + s = 1`,
+    i.e. `s = 1/φ`): the elliptic fiber is smooth and the confinement window's
+    hypotheses apply at the infinitesimally-perturbed substrate. -/
+-- Ref: [manuscript] observations/golden-ratio-degeneration, deconfinement-golden-threshold
+theorem golden_window_mem {ε s : K} (hε : Infinitesimal ε) (hε0 : 0 < ε)
+    (hs0 : 0 < s) (hgold : s ^ 2 + s = 1) :
+    s ^ 2 < 1 - ε ∧ 1 - ε < 1 := by
+  have hshalf : (1 : K) / 2 < s := by
+    by_contra hle
+    push_neg at hle
+    nlinarith
+  have hε2 : ε < 1 / 2 := by
+    have h2 := hε 2
+    rw [abs_of_pos hε0] at h2
+    have hcast : ((2 : ℕ) : K) = 2 := by norm_num
+    rw [hcast] at h2
+    linarith
+  constructor
+  · nlinarith
+  · linarith
+
+/-! ### U2 — uniform UV damping at `q = 1 − ε` -/
+
+/-- **Exact geometric identity:** `ε · [k]_{1−ε} = 1 − (1−ε)^k`. -/
+theorem eps_mul_qInt (ε : K) (k : ℕ) :
+    ε * qInt (1 - ε) k = 1 - (1 - ε) ^ k := by
+  induction k with
+  | zero => simp [qInt]
+  | succ k ih =>
+      have hstep : qInt (1 - ε) (k + 1) = qInt (1 - ε) k + (1 - ε) ^ k := by
+        rw [qInt, qInt, Finset.sum_range_succ]
+      have hpow : (1 - ε) ^ (k + 1) = (1 - ε) ^ k * (1 - ε) := pow_succ _ _
+      rw [hstep, mul_add, ih, hpow]
+      ring
+
+/-- **Uniform UV damping.** On the `q = 1 − ε < 1` side the q-integers are
+    bounded *uniformly in the mode index*: `[k]_{1−ε} ≤ ε⁻¹` for every `k`
+    (an infinite surreal bound, but `k`-independent) — in sharp contrast to
+    `[k]_1 = k`, which is unbounded. This is the algebraic seed of UV
+    exhaustion: at the infinitesimally-perturbed substrate the spectral tower
+    retains one-sided UV control that the classical point `q = 1` has lost
+    (`conj:regularity-breakdown` Obstruction 1). -/
+-- Ref: [manuscript] fluid-dynamics/regularity-breakdown (Obstruction 1)
+theorem qInt_le_inv {ε : K} (h0 : 0 < ε) (h1 : ε ≤ 1) (k : ℕ) :
+    qInt (1 - ε) k ≤ ε⁻¹ := by
+  have hpow : (0 : K) ≤ (1 - ε) ^ k := pow_nonneg (by linarith) k
+  have hle : ε * qInt (1 - ε) k ≤ 1 := by
+    rw [eps_mul_qInt]; linarith
+  have h2 : ε * qInt (1 - ε) k ≤ ε * ε⁻¹ := by
+    rw [mul_inv_cancel₀ (ne_of_gt h0)]
+    exact hle
+  exact le_of_mul_le_mul_left h2 h0
+
+/-! ### U3 — UV exhaustion from a uniform tail bound -/
+
+/-- Monotonicity of the truncated enstrophy in the cutoff (non-negative
+    amplitudes): more modes, more enstrophy. -/
+theorem enstrophyN_mono (q : K) (a : ℕ → K) (ha0 : ∀ k, 0 ≤ a k)
+    {M N : ℕ} (h : M ≤ N) :
+    enstrophyN q a M ≤ enstrophyN q a N :=
+  Finset.sum_le_sum_of_subset_of_nonneg
+    (fun _ hx => Finset.mem_range.mpr
+      (lt_of_lt_of_le (Finset.mem_range.mp hx) h))
+    (fun k _ _ => mul_nonneg (sq_nonneg _) (ha0 k))
+
+/-- **UV exhaustion from a uniform tail bound.** If the truncations are
+    monotone (non-negative amplitudes), `Ω_tot` is a least-upper-bound-type
+    limit of the truncations (`hlub`), and the tower satisfies a **uniform tail
+    bound** past some level `N` (`htail`: every deeper truncation exceeds
+    `Ω_N(1−ε)` by at most a finite `c` — the surreal `N_eff` cutoff physics,
+    cf. the `k_max ≈ 4` active-mode truncation of `prop:leray-profile`), then
+    the **UV-exhaustion hypothesis of `surreal_finite_of_classical_bounded`
+    holds**. Combined with that theorem and
+    `classical_unbounded_implies_surreal_infinite`, the bridge biconditional is
+    proved modulo the uniform tail bound alone — which is exactly where the
+    uniform damping `[k]_{1−ε} ≤ ε⁻¹` (`qInt_le_inv`) gives the tail sum
+    `Σ_{k≥N} [k]² a_k ≤ ε⁻² Σ_{k≥N} a_k` a chance to be finite that the
+    classical point `q = 1` does not have. Whether the QOU's amplitude tail
+    mass is `O(ε²)` past `N_eff` remains the open spectral question; it is not
+    asserted. -/
+-- Ref: [manuscript] fluid-dynamics/leray-profile (finite truncation), regularity-breakdown
+theorem uv_exhaustion_of_uniform_tail {ε : K} (a : ℕ → K) (ha0 : ∀ k, 0 ≤ a k)
+    (Ω_tot : K)
+    (hlub : ∀ b : K, (∀ M, enstrophyN (1 - ε) a M ≤ b) → Ω_tot ≤ b)
+    (htail : ∃ (N c : ℕ), ∀ M, N ≤ M →
+      enstrophyN (1 - ε) a M ≤ enstrophyN (1 - ε) a N + (c : K)) :
+    ∃ (N c : ℕ), Ω_tot ≤ enstrophyN (1 - ε) a N + (c : K) := by
+  obtain ⟨N, c, hNc⟩ := htail
+  refine ⟨N, c, hlub _ fun M => ?_⟩
+  rcases le_or_gt N M with h | h
+  · exact hNc M h
+  · have hmono := enstrophyN_mono (1 - ε) a ha0 (le_of_lt h)
+    have hc : (0 : K) ≤ (c : K) := Nat.cast_nonneg c
+    linarith
+
+/-- **Combined reduction.** Given a QOU's surreal enstrophy data with
+    non-negative finite amplitudes, the lub property, a uniform tail bound, and
+    bounded classical enstrophy, the surreal observable is finite — the full
+    converse half assembled from `uv_exhaustion_of_uniform_tail` +
+    `surreal_finite_of_classical_bounded`. The open remainder of the whole
+    bridge is now the single **uniform tail bound** hypothesis. -/
+-- Ref: [manuscript] appendix-surreals/surreal-blowup-calculus
+theorem surreal_finite_of_uniform_tail {ε : K} (hε : Infinitesimal ε)
+    (a : ℕ → K) (ha : ∀ k, IsFinite (a k)) (ha0 : ∀ k, 0 ≤ a k)
+    (Ω_tot : K) (hnn : 0 ≤ Ω_tot)
+    (hlub : ∀ b : K, (∀ M, enstrophyN (1 - ε) a M ≤ b) → Ω_tot ≤ b)
+    (htail : ∃ (N c : ℕ), ∀ M, N ≤ M →
+      enstrophyN (1 - ε) a M ≤ enstrophyN (1 - ε) a N + (c : K))
+    (hbnd : ∃ B : ℕ, ∀ N, enstrophyN 1 a N < (B : K)) :
+    IsFinite Ω_tot :=
+  surreal_finite_of_classical_bounded hε a ha Ω_tot hnn
+    (uv_exhaustion_of_uniform_tail a ha0 Ω_tot hlub htail) hbnd
+
 end QOU.FluidDynamics
