@@ -1,0 +1,94 @@
+{
+  "engine": "python-exact+float",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-07-24T21:13:31.167372+00:00",
+  "commitSha": "a6f00d13765b6b542a6a4e5119cf1595dc2cb69b",
+  "assertions": [
+    {
+      "name": "covariance_epic_phase6_marginal_stein_step1",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "Marginal Stein ingredients A(n),B(n) for the ω₃ (3-cycle) content-spread computed on the Plancherel down-up chain; eigenfunction identity E[(ΔW)²]=2τ₃ (τ₃=3/n) verified n≤12. First step of the effective-Stein program; the joint (ln f,ω₃) BE bound remains open. No fit; no c_k."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 11,
+  "computation": "wlambda-covariance-epic-phase6-marginal-stein",
+  "scriptFile": "wlambda_covariance_epic_phase6_marginal_stein.py",
+  "scriptHash": "c1a356b66dff",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Phase 6 (effective-Stein program) STEP 1 of the covariance-kernel epic (qou-x631): the marginal Stein/Berry–Esseen ingredients for the 3-cycle content-spread ω₃ (Fulman math/0305423 did only k=2/transposition; this is k=3). On the Plancherel-reversible down-up chain, W=ω₃/σ (σ²=Var_P(ω₃)) has E[W*|W]=(1−3/n)W; the exchangeable-pair BE bound is governed by A(n)=(1/τ₃)√Var_P(E[(ΔW)²|λ]) and B(n)=√(E_P|ΔW|³/τ₃), τ₃=3/n. Computed both across n and estimated their log-log decay rate (the k=3 analogue of Fulman's n^-1/4 transposition rate). Consistency verified: E_P[(ΔW)²]=2τ₃, E_P[W]=0, Var_P(W)=1 all n≤12. SCOPE: this is the MARGINAL CLT ingredient (stepping stone); it does NOT bound the kernel (the JOINT covariance Cov(f,ω₃)) — the joint effective Berry–Esseen on (ln f,ω₃) is the open core (STEP 2+, multi-session, not in the literature). scope-(a); no fit; nothing wired; no c_k; L2 2/7.",
+  "data": {
+    "tau3": "3/n",
+    "W_normalized": "W = omega3 / sqrt(Var_P(omega3))",
+    "marginal_rate_A_loglog_slope": -0.326,
+    "marginal_rate_B_loglog_slope": -0.289,
+    "eigenfunction_identity_E_dW2_eq_2tau": true,
+    "A_B_table": [
+      [
+        3,
+        0.707107,
+        2.059767
+      ],
+      [
+        4,
+        1.825742,
+        2.171185
+      ],
+      [
+        5,
+        1.919201,
+        2.024712
+      ],
+      [
+        6,
+        1.884144,
+        1.923503
+      ],
+      [
+        7,
+        1.81921,
+        1.839518
+      ],
+      [
+        8,
+        1.749149,
+        1.76856
+      ],
+      [
+        9,
+        1.681482,
+        1.708906
+      ],
+      [
+        10,
+        1.61847,
+        1.65797
+      ],
+      [
+        11,
+        1.560562,
+        1.613587
+      ],
+      [
+        12,
+        1.507557,
+        1.574342
+      ]
+    ],
+    "scope_note": "marginal only; kernel needs joint (ln f, omega3) effective BE (open)"
+  }
+}
