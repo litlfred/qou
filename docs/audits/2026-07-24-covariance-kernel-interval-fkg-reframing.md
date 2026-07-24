@@ -32,21 +32,33 @@ integrated from `H(2) = 0`. And since `ln f^λ = ln(k!) − Σ_□ ln h(□)` (h
 > **`Cov_β( Σ_□ c(□)²,  Σ_□ ln h(□) ) ≥ 0`  for `β ∈ [2,3]`**
 
 — a **positive correlation between two explicit box-sum statistics** (content-spread and log-hook-sum)
-under the `(f^λ)^β` measure. This is a **Griffiths-II / FKG / Harris-type** correlation inequality.
+under the `(f^λ)^β` measure.
 
-## Why this is progress
+## Why this is progress (and its precise limits)
 
-- **Sidesteps the dimension obstruction.** The literature stalls because `f^λ = χ^λ(e)` is not a
-  polynomial function of the diagram (`∉ A`). Here `Σc²` and `Σ ln h` are **both explicit box-sums** —
-  the covariance is between two honest diagram statistics, the natural input to a correlation
-  inequality, not a covariance with the transcendental dimension.
 - **Compact interval, not a ray.** Only `β ∈ [2,3]` matters (β=3 inside the monotone window [2,4]);
-  the global-`β` non-monotonicity (the `4→5` rise) is irrelevant to the kernel.
-- **Names a concrete, well-populated toolkit.** Griffiths-II second correlation inequality and FKG
-  give `Cov ≥ 0` for pairs of monotone (increasing) functions under log-supermodular / ferromagnetic
-  measures. The remaining work is to establish log-supermodularity (or the relevant association) of
-  the `(f^λ)^β` measure on the appropriate order, and monotonicity of `Σc²`, `Σ ln h` — a definite,
-  checkable program.
+  the global-`β` non-monotonicity (the `4→5` rise) is irrelevant to the kernel. *(Valid.)*
+- **Lowers the dimension POWER** (not an escape). The reduction goes from the `(f^λ)³`-weighted sum to
+  a `ln f`-covariance. Since `ln f` has a convergent Kerov expansion in the `Σ_μ` while `f` does not,
+  this is a genuine simplification. **But it does NOT sidestep the dimension**: `Σ ln h = ln k! − ln f`
+  still *is* the log-dimension, which is **not** a polynomial function of the diagram (`∉` the
+  Ivanov–Olshanski algebra `A`). An earlier version of this note claimed the reduction escaped the
+  dimension — that was wrong; corrected here (Phase 4b).
+
+## Off-the-shelf closers — both ELIMINATED (Phase 4b)
+
+The natural attempt is a Griffiths/FKG or Chebyshev correlation inequality. Both **fail**:
+
+- **FKG on the dominance lattice — ELIMINATED.** FKG needs `(f^λ)^β` log-supermodular
+  (`f^{λ∨μ}·f^{λ∧μ} ≥ f^λ·f^μ`). This holds for `k ≤ 7` but **fails at `k = 8`** (counterexample
+  `λ=(4,2,1,1), μ=(3,3,2)`: `f_λ f_μ = 3780 > f_∨ f_∧ = 3136`). Moreover the two functions are **not**
+  dominance-monotone: `C₂` and `Σ ln h` are conjugation-invariant and **U-shaped** (large at row and
+  column extremes, small in the balanced middle), so a monotone-function FKG hypothesis cannot hold.
+  *(An earlier version claimed `C₂`, `Σ ln h` monotone — wrong; corrected.)*
+- **Chebyshev / comonotonicity — ELIMINATED.** If `C₂` and `Σ ln h` were comonotone, `Cov ≥ 0` under
+  *every* measure (which would even contradict the Phase-1 `4→5` rise). They are only **~77–80 %
+  pairwise concordant**; the systematic discordant family is the near-hook pair `(m,2)` vs `(m,1,1)`
+  (`ΔC₂ = −4` while `ΔΣln h > 0`).
 
 ## Verification
 
@@ -56,13 +68,16 @@ under the `(f^λ)^β` measure. This is a **Griffiths-II / FKG / Harris-type** co
 |---|---|
 | `E_β[C₂]` monotone non-increasing on `[2,3]` | ✓ all k |
 | `Cov_β(C₂, ln f) ≤ 0` on `[2,3]` | ✓ all k |
-| `Cov_β(Σc², Σ ln h) ≥ 0` on `[2,3]` (the FKG target) | ✓ all k |
+| `Cov_β(Σc², Σ ln h) ≥ 0` on `[2,3]` | ✓ all k |
+| `(f^λ)^β` log-supermodular on dominance | ✗ fails at k=8 |
+| `C₂`, `Σ ln h` comonotone | ✗ ~77% concordant |
 
 ## Honesty
 
-This **sharpens** the open target; it does **not** close it. The kernel remains an honest §3b
-conjecture-`sorry`. What is *not* yet proved: the correlation inequality `Cov_β(Σc², Σ ln h) ≥ 0`
-itself (the log-supermodularity / association of the `(f^λ)^β` measure is not established).
+This **sharpens** the open target (interval reduction + lower dimension power); it does **not** close
+it, and the two obvious closers (FKG, Chebyshev) are eliminated. The kernel remains an honest §3b
+conjecture-`sorry`. The reduced inequality `Cov_β(C₂, ln f) ≤ 0 on [2,3]` is still genuinely open, and
+still involves the log-dimension `ln f ∉ A`.
 
 ## Compute
 
