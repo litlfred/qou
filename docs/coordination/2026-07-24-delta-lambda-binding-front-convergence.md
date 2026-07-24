@@ -81,3 +81,36 @@ derived), and `e872909145` already un-laundered the fitted `B_precur`.
 - A_ω evidence base: `docs/audits/2026-07-18-g3-stokes-keystone-evidence-base.md`,
   `2026-07-18-figure-eight-3d-index-closed.md`,
   `2026-07-18-aomega-stokes3-is-dt-invariant-not-tracefield-disc.md`.
+
+## A_ω capstone scoping — no unowned one-session win (2026-07-24)
+
+Background scoping of `conj:algebraic-geometric-dilog-equivalence` (the redirect
+target) found:
+
+- **The conjecture's structure is settled and honest.** §1 pole side is a
+  sorry-free theorem (`pole_cusp_bijection_proved`); §2 Bloch–Wigner asymptotic
+  is *derived conditionally* from two class fields — `vc_asymptotic` (a
+  literature theorem for 4₁ via Ohtsuki / Andersen–Hansen) and `pole_cusp_matched`
+  (= `conj:shared-denominator-cusp-holonomy`). The bar-odd shape `S = A/u³` is
+  fully characterised (`BarOddLadderShape`), and `no_anchor_invariant_realizes_swing`
+  (`SRigidityPrune`) is a scope-(b) proof that no anchor-invariant datum realises
+  the 2.44 % swing.
+- **The genuine remaining gap is the A_ω *value* — the geometric `Im 𝔙_q → N_odd`
+  normalization** (downstream of the general volume conjecture; the GGM 3d-index
+  integer-3 Stokes identification). This is multi-week+ and partly
+  non-Lean-able physics — **not** a formalization win.
+- **The one tractable formalization brick** (density of the dual-pole-lattice
+  complement `Dense {z : 1 + exp(2πz/b) ≠ 0}`, the discrete-zero-set discreteness
+  fact in `Common/PeriodicDense.lean`) is **mechanical/settled work already owned
+  by the active sibling `claude/alien-calculus-habiro-50257v`** (route-B
+  `qou-2cvs`: brick (a) closed, b/c/d open). Per the anti-overlap rule for
+  mechanical work (one right answer, one owner) this session **stands off** it.
+  It advances only the *uniqueness* leg ("A_ω carries no fitting freedom"), not
+  the value capstone — closing it is **not** closing the conjecture
+  (axiomatization ≠ proof).
+
+**Net:** the A_ω redirect has no unowned one-session brick; the capstone stays
+open. This session does not force a make-work brick. Unowned high-value work
+remaining on the front is the Cluster-A convergence (above) — the binding-PR
+untangle — not the A_ω leg (owned) nor a fresh probe (duplication risk vs the
+~15 existing aomega probes).
