@@ -73,7 +73,9 @@ theorem riemann_sum_form {q x : ℝ} (hq0 : 0 < q) (n : ℕ) :
   rw [pow_succ]
   field_simp
 
-/-- **Part-A Brick 3 — the per-term coefficient limit.**  In the `m`-series form
+/-- **m-series termwise-limit ingredient (1) — the per-term coefficient limit.**
+    (Independent of the leading Riemann-sum route in `DilogPartAConvergence.lean`
+    / PR #4106; this is the parallel `m`-series route.)  In the `m`-series form
     of `(1-q)·log Φ_n` (`partialProduct_log_eq_mseries`), the `q`-dependent
     rescaling of the `m`-th term is `(1-q)/(q^{m+1}-1)`, and it tends to the
     Riemann weight `-1/(m+1)` as `q → 1`.  Proof: for `q ≠ 1`,
@@ -101,7 +103,7 @@ theorem tendsto_one_sub_div_pow_sub_one (m : ℕ) :
   have hne : ((m : ℝ) + 1) ≠ 0 := by positivity
   exact (tendsto_const_nhds.div hcont hne).mono_left nhdsWithin_le_nhds
 
-/-- **Part-A Brick 4 — the tail factor vanishes.**  For `0 < q < 1` the numerator
+/-- **m-series termwise-limit ingredient (2) — the tail factor vanishes.**  For `0 < q < 1` the numerator
     tail `q^{(m+1)n} → 0` as `n → ∞` (`= (q^{m+1})ⁿ` with `0 < q^{m+1} < 1`).  This
     is the `n → ∞` half of the `q^{(m+1)n} → 0` behaviour that, jointly with
     `n(1-q) → ∞`, sends the numerator `(q^{(m+1)n} − 1) → −1`; combined with
