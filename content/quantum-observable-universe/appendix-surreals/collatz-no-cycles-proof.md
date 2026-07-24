@@ -38,45 +38,46 @@ $P \mapsto P/[2]_q^k = P$, forcing $P = 0$. So the coprimality identity
 excludes every periodic orbit whose holonomy is *balanced* ($A = 1$),
 other than the degenerate fixed point. $\square$
 
-**Scope (do not over-claim).** This settles only the $A = 1$ sub-case.
-The generic cycle has $A \neq 1$ — indeed coprimality *guarantees*
-$A \neq 1$ for $k_{\mathrm{odd}} \geq 1$ — and then the cycle condition
-has a **unique candidate solution**
+**Scope.** This settles only the $A = 1$ sub-case. The generic cycle has
+$A \neq 1$ — indeed coprimality *guarantees* $A \neq 1$ for
+$k_{\mathrm{odd}} \geq 1$ — and the cycle condition then has a unique
+candidate solution
 
 $$
   P_0 = \frac{B}{1 - A} \in \mathbb{Q}(q),
 $$
 
-which in the contractive regime ($A < 1$, i.e.
-$[3]_q^{k_{\mathrm{odd}}} < [2]_q^{k}$) is positive. Coprimality makes
-this candidate *solvable*, not impossible; excluding it requires showing
+positive in the contractive regime ($A < 1$, i.e.
+$[3]_q^{k_{\mathrm{odd}}} < [2]_q^{k}$). Coprimality makes this candidate
+*solvable*, not impossible; excluding it requires showing that
 $B/(1-A)$ never lands in $\mathbb{Z}[q^{\pm 1}]_{>0}$ consistently with
 its own parity word — the $q$-analog of classical nontrivial-cycle
-exclusion, which is **open**. See
-[audit 2026-07-18](https://github.com/litlfred/qou/blob/claude/q-collatz-status-1v0pxv/docs/audits/2026-07-18-collatz-no-cycles-multiplicative-shadow-gap.md).
+exclusion, which remains open. A computational census over all primitive
+parity words through period $18$ finds no nontrivial positive cycle: the
+only Skein-Collatz cycles are the positive $2$-cycle
+$\{q^{-1},\, 1 + q^{-1}\}$ and the negative fixed point $-q^{-2}$, the
+$q$-lifts of the classical $\{1, 2\}$ and $\{-1\}$ respectively.
 
 **Classical limit.** At $q = 1$: $\gcd(2, 3) = 1$ and
 $3^a \neq 2^b$ for $a, b > 0$ (unique prime factorization).
 The $q$-deformation lifts this to polynomial coprimality.
 
 **The full $(a, a+1)$ family.** The identity
-$\gcd([a]_q, [b]_q) = [\gcd(a,b)]_q$ shows that all
-Collatz-type maps $(a, a+1)$ exclude periodic cycles,
-since $\gcd(a, a+1) = 1$ for all $a$.  Cycle exclusion
+$\gcd([a]_q, [b]_q) = [\gcd(a,b)]_q$ shows that every
+Collatz-type map $(a, a+1)$ excludes *balanced-holonomy* cycles,
+since $\gcd(a, a+1) = 1$ for all $a$.  This exclusion
 is a consequence of consecutive integers being coprime
 — a fact that lifts from $\mathbb{Z}$ to $\mathbb{Z}[q]$
-via the $q$-integer functor.
+via the $q$-integer functor. Like the base case above, it
+constrains the $A = 1$ locus and does not by itself reach the
+affine ($A \neq 1$) cycle problem.
 
-**Remaining work.** This proposition settles only the
-balanced-holonomy ($A = 1$) sub-case of cycle exclusion, not the full
-no-cycles half. Two pieces remain open:
+**Open directions.** This proposition settles the balanced-holonomy
+($A = 1$) sub-case of cycle exclusion. Two pieces remain open:
 
 1. **Nontrivial-cycle exclusion** ($A \neq 1$): show the candidate
-   $P_0 = B/(1-A)$ never realises a genuine positive Skein-module cycle
-   — the $q$-analog of classical nontrivial-cycle exclusion.
+   $P_0 = B/(1-A)$ never realises a positive Skein-module cycle — the
+   $q$-analog of classical nontrivial-cycle exclusion.
 2. **No divergent orbits**: the contact condition
    $\langle v_{[2]} \rangle \geq 2$
    ([contact boundary](#prop:collatz-contact-boundary)).
-
-The classical $(a, a+1)$ remark below concerns the same $A = 1$
-balanced sub-case; it does not extend to the affine problem.
