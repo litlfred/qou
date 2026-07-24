@@ -1989,3 +1989,24 @@ under qou-yaz3): next = EXACT higher-loop c₂/c₃ by formal Gaussian
 at the (231) saddle (algebraic in Q(ξ)) + the Masbaum cyclotomic
 cross-face; coordinate with #4127 (octahedral 4-dilog lane) before
 overlap. No fit; no c_k wired; scope-(a).
+
+**2026-07-24 (W2 part 1) — THE FORMAL-GAUSSIAN LOOP ENGINE IS
+CERTIFIED: the printed 4₁ loop coefficients (42) reproduced EXACTLY at
+all three orders (1e-59) — the well-conditioned algebraic route to the
+unprinted 5₂ c₂/c₃ that the 2c-2 obstruction called for is open.**
+`qbeta_g3_formal_gaussian_loops_41gate.py` (2/2 green): Feynman-rule
+expansion at the state-integral saddle with the Faddeev vertices —
+(G0) the expansion log Φ_b = Σ ħ^{2n−1}B_{2n}(1/2)/(2n)!·Li_{2−2n}(−e^w)
+was certified against the exact Φ_b product formula at small b (1.5e-9
+= |ħ|⁵ floor), NOT trusted from memory; (G1) the δ = √−3 saddle branch
+(ξ = e^{iπ/3} of curve (38) via ξ = −e^w); (G2) the universal
+e^{−ħ/24} normalization derived from c₁'s constant part by exact hand
+computation, then VERIFIED on the two held-out orders; (G3)
+c₁ = 11/(72√−3), c₂ = (697/2)/(72√−3)², c₃ = (724351/30)/(72√−3)³ all
+matched to ~1e-59 at dps 60 (EPS_ORD = 18; six-cubic-vertex diagrams
+needed for c₃). No ill-conditioned inversion anywhere — loop data is
+rational in the saddle (GGM (12)). NEXT (W2 part 2, bean qou-3ndf):
+run the engine on the deformed 5₂ potential (231) at the σ-saddles →
+gate on the printed u=0 (76) + deformed 2-loop (238), emit the
+unprinted exact c₂/c₃, then re-extract φ_odd with the extended
+transseries. No fit; no c_k wired; scope-(a).
