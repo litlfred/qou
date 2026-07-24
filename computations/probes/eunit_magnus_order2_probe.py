@@ -287,7 +287,7 @@ def forward_layer(q_str) -> dict:
     E_even_D = m_e * J_D / 3
     E_rot_D = mu0 * hbar_q * J_D
     decomp_residual = abs(E_rot_D - E_even_D * (1 - t))
-    varpi2_measured = (B_D / E_even_D - 1) / h**2
+    g2_gap_measured = (B_D / E_even_D - 1) / h**2
 
     return {
         "q0_used": mp.nstr(q, 20),
@@ -301,17 +301,17 @@ def forward_layer(q_str) -> dict:
             "E_rot_eq_Eeven_times_1_minus_t_residual": mp.nstr(decomp_residual, 5),
             "t_pct": mp.nstr(t * 100, 6),
             "bar_even_gap_pct": mp.nstr((B_D / E_even_D - 1) * 100, 6),
-            "varpi2_measured_equals_gap_over_h2": mp.nstr(varpi2_measured, 8),
+            "g2_gap_measured_equals_gap_over_h2": mp.nstr(g2_gap_measured, 8),
         },
         "_flags": {
             "decomp_exact": bool(decomp_residual < mp.mpf("1e-40")),
             "D_err_matches_canonical_witness": bool(
                 abs((E_rot_D / B_D - 1) * 100 + mp.mpf("9.2")) < mp.mpf("0.15")),
-            "varpi2_near_unity_0p9_1p1": bool(mp.mpf("0.9") < varpi2_measured < mp.mpf("1.1")),
+            "g2_gap_near_unity_0p9_1p1": bool(mp.mpf("0.9") < g2_gap_measured < mp.mpf("1.1")),
             "A3_untouched": all(
                 mp.mpf(table[iso]["err_even_h2_pct"]) < -35 for iso in ("T", "3He", "4He")),
         },
-        "_varpi2": varpi2_measured,
+        "_g2gap": g2_gap_measured,
     }
 
 
@@ -321,7 +321,7 @@ def main() -> int:
     mat = matrix_layer(q_env)
     fwd_env = forward_layer(Q_50_DIGIT_STR)
     fwd_muon = forward_layer(Q0_MUON_STR)
-    pin_delta_varpi2 = abs(fwd_env["_varpi2"] - fwd_muon["_varpi2"])
+    pin_delta_g2gap = abs(fwd_env["_g2gap"] - fwd_muon["_g2gap"])
 
     wb = WitnessBuilder("eunit-magnus-order2", engine="mpmath",
                         output_dir=str(_HERE))
@@ -347,16 +347,16 @@ def main() -> int:
     wb.add_parameter("q0_muon_canonical", Q0_MUON_STR)
     wb.add_parameter("pin_note",
                      "muon-vs-proton q0 differ ~11.5 ppb — immaterial at this audit's 1e-4 "
-                     "relative scale; varpi2 shift between pins recorded below")
+                     "relative scale; g2 gap-coefficient shift between pins recorded below")
     wb.add_data("symbolic", sym)
     wb.add_data("matrix_layer", {k: v for k, v in mat.items() if k != "_flags"})
     wb.add_data("forward_env_pin", {k: v for k, v in fwd_env.items()
-                                    if k not in ("_flags", "_varpi2")})
+                                    if k not in ("_flags", "_g2gap")})
     wb.add_data("forward_muon_pin_deuteron",
                 fwd_muon["rotational_tier_forward"]["D"])
-    wb.add_data("pin_robustness", {"varpi2_shift_between_pins": mp.nstr(pin_delta_varpi2, 5)})
+    wb.add_data("pin_robustness", {"g2_gap_shift_between_pins": mp.nstr(pin_delta_g2gap, 5)})
     wb.add_caveat(
-        "NEAR-MATCH tier: the bar-even order-2 coefficient varpi2 (varpi chosen as corpus-unused; NOT the Q_beta ladder c_k) ≈ 1.008 is measured forward, "
+        "NEAR-MATCH tier: the bar-even order-2 gap coefficient g2 (g for gap, owner-picked; NOT the Q_beta ladder c_k) ≈ 1.008 is measured forward, "
         "NOT derived. Deriving it (octahedral e₂ / surface-curvature term) is the open object. "
         "The parity projection E⁺ assumes the corpus mass-side bar-even discipline applies to "
         "the rotational tier — a structural assumption, stated, not proved.")
@@ -371,8 +371,8 @@ def main() -> int:
         wb.add_assertion(f"mat_{name}", computed=str(bool(flag)), expected="True")
     for name, flag in fwd_env["_flags"].items():
         wb.add_assertion(f"fwd_{name}", computed=str(bool(flag)), expected="True")
-    wb.add_assertion("pin_robust_varpi2_shift_below_1e6",
-                     computed=str(bool(pin_delta_varpi2 < mp.mpf("1e-6"))), expected="True")
+    wb.add_assertion("pin_robust_g2_gap_shift_below_1e6",
+                     computed=str(bool(pin_delta_g2gap < mp.mpf("1e-6"))), expected="True")
     out = wb.save()
 
     print("=== E_unit Magnus order-2 (NA-Stokes route A; complementary to #4127 route B) ===")
@@ -393,8 +393,8 @@ def main() -> int:
     print("VERDICT: inter-crossing Magnus order-2 = 0 for the deuteron (proved); trace/counit "
           "kill all Omega_k (k>=2) linearly; order-3 trace term = 0 by two-letter cyclicity; "
           "first inter-crossing trace correction is order 4 (~h^4 = 0.19%) << 9.2%. "
-          "Residual decomposes as bar-odd impurity t (5.21%) + bar-even gap ~ h^2 (varpi2 = "
-          f"{mp.nstr(fwd_env['_varpi2'], 6)}, NEAR-MATCH, underived). A>=3 untouched. No fit.")
+          "Residual decomposes as bar-odd impurity t (5.21%) + bar-even gap ~ h^2 (g2 = "
+          f"{mp.nstr(fwd_env['_g2gap'], 6)}, NEAR-MATCH, underived). A>=3 untouched. No fit.")
     print("witness ->", out)
     return 0
 
