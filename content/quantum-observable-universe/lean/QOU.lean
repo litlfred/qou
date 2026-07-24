@@ -306,6 +306,7 @@ import QOU.Archimedean.TauFunctorTargetSpec
 import QOU.Archimedean.DeckRealityEquivariance
 import QOU.Archimedean.LoopWeightRealSymmReduction
 import QOU.Archimedean.MarkovGramRealSymm
+import QOU.Archimedean.SchurInvariantFormProportional
 import QOU.Molecular.PalindromicityOrbitalType
 import QOU.Molecular.ShellCapacitySelfSquare
 import QOU.Molecular.ShellClosureNfTermCount
