@@ -10,19 +10,27 @@ Formalize-first scaffolding for the **classical** (`q → 1`) side of the q-NS
 program, per the gap-decomposition audit
 [`docs/audits/2026-07-18-q-ns-classical-gap-decomposition.md`](../../../../../../docs/audits/2026-07-18-q-ns-classical-gap-decomposition.md).
 
+**Scope discipline (owner directive 2026-07-24).** Everything here is *given a
+QOU*. `globallyRegular` / `blowsUp` denote the states of the **QOU's own
+internal `q = 1` flow** (`ns-obstruction-tower`), NOT the classical incompressible
+Navier–Stokes flow on `ℝ³`. Identifying the QOU-internal `q = 1` limit with the
+external PDE is a *separate* hypothesis (B2), and that identification — hence any
+claim about the actual Clay problem — is the **open wall**, deliberately not
+asserted.
+
 This file does two honest things and closes nothing famous:
 
-1. **Names the master gap (Bridge B) as a primary-conjecture class with no
-   instance.** The categorical obstruction `NS(A) = e(ξ)|_Σ ≠ 0` is proved
-   *unconditionally* on the categorical side (`ns_singularity_descartes.lean`,
-   over generic `CommRing`). Whether that entails a *classical* 3D-NS
-   finite-time singularity is the **Clay Millennium problem in the blow-up
-   direction** — an open analytic wall, not a code-closable item. We encode the
-   transfer as a class `CategoricalClassicalNSBridge` carrying the bridge
-   *hypotheses* (B1 the obstruction-is-a-faithful-regularity-criterion, B2 the
-   classical-flow identification) and **derive** the classical-blow-up
-   implication from them. Per AGENTS.md §3b-tax an unproved primary is honestly
-   an open class **with no instance** — none is provided here.
+1. **Names Bridge B as a primary-conjecture class with no instance.** The
+   categorical obstruction `NS(A) = e(ξ)|_Σ ≠ 0` is proved *unconditionally* on
+   the categorical side (`ns_singularity_descartes.lean`, generic `CommRing`).
+   The class `CategoricalClassicalNSBridge` carries the bridge *hypotheses* —
+   B1, that the obstruction is a faithful regularity criterion for the *QOU's
+   internal* flow; B2, the (open) identification of that internal flow with the
+   external PDE — and **derives** the internal blow-up implication from them.
+   The `q → 1` limit inside a QOU is well-defined categorically; whether it *is*
+   the classical `ℝ³` PDE (B2) is the Clay-sized open wall. Per AGENTS.md §3b-tax
+   an unproved primary is honestly an open class **with no instance** — none is
+   provided.
 
 2. **Records the critical-exponent closure α = 1 as a conditional identity.**
    Under the standard dissipation closure `ε = ν_q · Ω` the enstrophy order
@@ -54,43 +62,44 @@ as if it did.
 
 namespace QOU.FluidDynamics
 
-/-- **Bridge (B): the categorical→classical NS transfer.**  `@conjecture:
-    primary` — an *open* conjecture (the Clay problem), axiomatised as a
+/-- **Bridge (B): the obstruction ↔ internal-flow transfer, given a QOU.**
+    `@conjecture: primary` — an *open* conjecture, axiomatised as a
     content-bearing class with **no instance**.
 
     Fields are the bridge *hypotheses*, never its conclusion (§3b-cond cond. 5,
     non-degenerate):
 
-    * `globallyRegular` / `blowsUp` — the two states of the classical
-      incompressible 3D-NS flow obtained by specialising the q-NS system at
-      `q = 1` (B2: this very identification is part of the bridge hypothesis).
-    * `blowup_iff_not_regular` — blow-up is exactly the failure of global
-      regularity (a BKM-type dichotomy for the classical flow).
+    * `globallyRegular` / `blowsUp` — the two states of the **QOU's own internal
+      `q = 1` flow** (`ns-obstruction-tower`), NOT the classical `ℝ³` PDE. The
+      identification of this internal flow with the external PDE is the separate
+      open hypothesis B2 (see the module docstring) and is not encoded here.
+    * `blowup_iff_not_regular` — internal blow-up is exactly the failure of
+      internal global regularity (a BKM-type dichotomy for the internal flow).
     * `obstruction_is_regularity_criterion` — **B1, the transfer statement**:
-      the categorical obstruction is a *faithful* regularity criterion, i.e. it
-      vanishes iff the classical flow is globally regular. This is the
-      Clay-sized hypothesis. -/
+      the categorical obstruction is a *faithful* regularity criterion for the
+      QOU-internal flow, i.e. it vanishes iff that flow is globally regular. -/
 -- Ref: [manuscript] fluid-dynamics/ns-obstruction, ns-singularity-descartes
 class CategoricalClassicalNSBridge {R : Type*} [CommRing R] (NS_A : R) where
-  /-- Global regularity of the classical `q = 1` NS flow. -/
+  /-- Global regularity of the QOU's internal `q = 1` NS flow. -/
   globallyRegular : Prop
-  /-- Finite-time singularity of the classical `q = 1` NS flow. -/
+  /-- Finite-time singularity of the QOU's internal `q = 1` NS flow. -/
   blowsUp : Prop
-  /-- Blow-up ⟺ failure of global regularity. -/
+  /-- Internal blow-up ⟺ failure of internal global regularity. -/
   blowup_iff_not_regular : blowsUp ↔ ¬ globallyRegular
   /-- **B1 (the bridge criterion).** The categorical obstruction is a faithful
-      regularity criterion for the classical flow. -/
+      regularity criterion for the QOU-internal flow. -/
   obstruction_is_regularity_criterion : NS_A = 0 ↔ globallyRegular
 
-/-- **Classical blow-up transfers from a non-vanishing obstruction — CONDITIONAL
+/-- **Internal blow-up transfers from a non-vanishing obstruction — CONDITIONAL
     on Bridge (B).**
 
-    Given `NS_A ≠ 0`, the classical NS flow blows up.  *Derived* from the bridge
-    criterion (`NS_A = 0 ↔ globallyRegular`) and the blow-up dichotomy
-    (`blowsUp ↔ ¬ globallyRegular`) — not asserted.  The instance
-    `[CategoricalClassicalNSBridge NS_A]` is the **open wall** (Clay); this
-    theorem shows only that the (unconditional) categorical side transfers
-    *given* the bridge.  It does not resolve the Clay problem. -/
+    Given `NS_A ≠ 0`, the QOU's internal `q = 1` flow blows up.  *Derived* from
+    the bridge criterion (`NS_A = 0 ↔ globallyRegular`) and the internal blow-up
+    dichotomy (`blowsUp ↔ ¬ globallyRegular`) — not asserted.  The instance
+    `[CategoricalClassicalNSBridge NS_A]` is the **open wall**; this theorem
+    shows only that the (unconditional) categorical side transfers to the
+    *QOU-internal* flow *given* the bridge.  It says nothing about the external
+    `ℝ³` PDE and does not resolve the Clay problem. -/
 -- Ref: [manuscript] fluid-dynamics/ns-singularity-descartes
 theorem classical_blowup_of_obstruction {R : Type*} [CommRing R] (NS_A : R)
     [br : CategoricalClassicalNSBridge NS_A] (h : NS_A ≠ 0) : br.blowsUp := by
