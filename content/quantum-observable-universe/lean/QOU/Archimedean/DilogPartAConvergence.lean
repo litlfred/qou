@@ -352,4 +352,17 @@ theorem archimedeanLimit_Ioo {x : ℝ} (hx0 : 0 < x) (hx1 : x < 1) :
   rw [hsplit]
   refine ⟨by nlinarith [hE_lo, hT_hi, hbound2, hε], by nlinarith [hE_hi', hT_lo, hbound1, hε]⟩
 
+/-- **Unconditional Part-A limit on `(0,1)`.**  With `archimedeanLimit_Ioo` the
+    `[ArchimedeanLimit x]` typeclass gate on the conditional consumer
+    `partialProduct_to_LiTwo` is discharged for every `x ∈ (0,1)`: the Faddeev-
+    scaling convergence `(1-q)·log Φ_n(x;q) → Li₂(x)` holds outright, no instance
+    hypothesis required. -/
+theorem partialProduct_to_LiTwo_Ioo {x : ℝ} (hx0 : 0 < x) (hx1 : x < 1)
+    (ε : ℝ) (hε : 0 < ε) :
+    ∃ δ > (0 : ℝ), ∀ (q : ℝ) (n : ℕ),
+      (1 - δ < q) ∧ (q < 1) ∧ (n : ℝ) * (1 - q) > δ⁻¹ →
+        ‖(1 - q) * Real.log (partialProductLocal q x n) - LiTwo x‖ < ε :=
+  haveI := archimedeanLimit_Ioo hx0 hx1
+  partialProduct_to_LiTwo x ε hε
+
 end QOU.Archimedean
