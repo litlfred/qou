@@ -10,13 +10,18 @@ Sobolev regularity, sharpening the categorical→classical bridge (Bridge B, B2)
 of the q-NS classical-gap program
 ([`docs/audits/2026-07-18-q-ns-classical-gap-decomposition.md`](../../../../../../docs/audits/2026-07-18-q-ns-classical-gap-decomposition.md)).
 
+**Scope discipline (owner directive 2026-07-24).** *Given a QOU*, `s(t)` is the
+Sobolev regularity of the **QOU's own internal `q = 1` flow**, not of a classical
+`ℝ³` Navier–Stokes solution. This file fixes the QOU-internal obstruction↔Sobolev
+bookkeeping; it makes no claim about the external PDE.
+
 ## What this adds
 
 `p3-blowup-yekutieli` (`blowup_yekutieli`) reformulates smoothness as lifting
 through the whole brane tower: `v smooth ⟺ κ_n(v) = 0 ∀ n`, and blow-up as the
 existence of a finite obstruction level `n*`. That block also records the
-*mechanism* connecting the categorical obstruction to the **classical** Sobolev
-regularity `s(t)` of the velocity:
+*mechanism* connecting the categorical obstruction to the Sobolev regularity
+`s(t)` of the QOU-internal `q = 1` flow:
 
 > at `q = 1` the `n`-th brane-tower class `κ_n(v)` is nonzero **iff** the `n`-th
 > jet of `v` is undefined, i.e. **iff `n > s(t)`**; a finite-time singularity has
@@ -52,7 +57,8 @@ namespace QOU.FluidDynamics
 
 /-- Yekutieli obstruction–Sobolev correspondence at a fixed time.
 
-    `sobolev` is the terminal Sobolev regularity `s = s(t)` of the velocity
+    `sobolev` is the terminal Sobolev regularity `s = s(t)` of the QOU-internal
+    `q = 1` flow's velocity
     (`0 ≤ s`, finite — the finite-time-blow-up regime); `obstruction n` is the
     proposition "`κ_n(v) ≠ 0`", i.e. lifting fails at brane-tower level `n`. The
     single field `obstruction_iff_exceeds` is the manuscript's mechanism

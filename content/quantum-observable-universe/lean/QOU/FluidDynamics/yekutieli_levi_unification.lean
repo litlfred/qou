@@ -10,6 +10,11 @@ from the Yekutieli obstruction tower
 steps (c)–(e)) and part of the q-NS classical-gap program
 ([`docs/audits/2026-07-18-q-ns-classical-gap-decomposition.md`](../../../../../../docs/audits/2026-07-18-q-ns-classical-gap-decomposition.md)).
 
+**Scope discipline (owner directive 2026-07-24).** Every statement is *given a
+QOU*: `κ_n|_Σ`, `leviNonDegenerate`, and the local cohomology are the QOU's own
+categorical data. This is a statement *about QOUs*, not about the classical `ℝ³`
+Navier–Stokes problem.
+
 ## The unification
 
 `ns-obstruction-tower` establishes, at a collision point `p ∈ Σ` of an
