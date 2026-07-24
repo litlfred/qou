@@ -6,7 +6,7 @@ type: task
 priority: medium
 parent: qcz6
 created_at: 2026-07-24T16:46:17Z
-updated_at: 2026-07-24T20:34:38Z
+updated_at: 2026-07-24T20:48:58Z
 ---
 
 Goal: every domain-stable positive Skein element reaches {q^-1,1+q^-1}.
@@ -33,3 +33,5 @@ wall. Preflight: lean_leansearch for well-founded-recursion / valuation
 descent lemmas before hand-rolling.
 
 PROGRESS (A2/A3): reaches_cycle_of_descent PROVED sorry-free (QCollatz.lean) — convergence follows from ANY strictly-descending measure mu + forward-invariance. Factors the open conjecture into (proved reduction) + (open: existence of mu, the q-analog stopping-time / <v_[2]>>=2 contact bound). Still open: construct mu (A1 D-infinity characterization + A2 [2]_q-adic descent).
+
+WALL (honest): reaches_cycle_of_descent + qcollatz_attractor_orbit_bounded PROVED. Remaining hard core = construct the descent measure mu (q-analog Collatz stopping-time). Needs a Lean [2]_q-adic valuation over LaurentPolynomial Z + global-descent proof. No elementary construction known — documented in the 2026-07-18 audit.

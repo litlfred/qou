@@ -6,7 +6,7 @@ type: task
 priority: medium
 parent: qcz6
 created_at: 2026-07-24T16:46:17Z
-updated_at: 2026-07-24T20:40:52Z
+updated_at: 2026-07-24T20:48:58Z
 ---
 
 Goal: no periodic orbit with holonomy A = [3]_q^{ko}/[2]_q^k ≠ 1 other than
@@ -34,3 +34,5 @@ A<1 contractive words) OR an honest wall. Do NOT write 'REFUTED/excluded'
 in durable artifacts without the (a)/(b) scope classification.
 
 PROGRESS (period-1 case CLOSED): qcollatz_odd_fixed_point (odd fixed pt forces q^2 P = -1) + qcollatz_neg_qinv_sq_is_odd_fixed (-qinv^2 is that fixed pt), both sorry-free. => the ONLY odd-branch fixed point is -q^-2 (negative), no POSITIVE fixed point exists; fundamental cycle is genuinely 2-periodic. Still open: period>=2 affine cycles (B1 integrality obstruction).
+
+PERIOD-1 CLOSED (odd fixed pt -q^-2, even fixed pt 0, neither positive). WALL: period>=2 affine exclusion = q-analog Steiner/Simons-de Weger cycle-value bound (needs height/valuation input). Census (<=period 18) is negative evidence only. Documented in the 2026-07-18 audit.
