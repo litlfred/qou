@@ -1,0 +1,139 @@
+{
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-07-24T16:52:50.494125+00:00",
+  "commitSha": "94bbe54b4ed2ce8253d78c1f4aa180b3648d8305",
+  "assertions": [
+    {
+      "name": "D5_functional_equation_exact",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": 0,
+      "source": "D₅(ζ₅x)⁵(1−x⁵) − D₅(x)⁵(1−x)⁵ ≡ 0 in ℚ(ζ₅)[x] (GK eq after (9)), exact polynomial identity."
+    },
+    {
+      "name": "slashD5_pow5_minpolys_exact",
+      "computed": "x**4 - 46*x**3 - 94*x**2 + 79*x + 1; x**4 + 29*x**3 - 69*x**2 + 29*x + 1",
+      "expected": "x**4 - 46*x**3 - 94*x**2 + 79*x + 1; x**4 + 29*x**3 - 69*x**2 + 29*x + 1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "(/D₅(θ;ζ₅))⁵ real for both 4₁ θ's; degree-4 minpolys ⇒ the values generate ℚ(ζ₃₀)⁺, NOT ℚ(√5)."
+    },
+    {
+      "name": "G5plus_minpolys_exact",
+      "computed": "x**4 - 60*x**3 + 960*x**2 - 5175*x + 6525; x**4 - 60*x**3 + 885*x**2 - 4500*x + 6525",
+      "expected": "x**4 - 60*x**3 + 960*x**2 - 5175*x + 6525; x**4 - 60*x**3 + 885*x**2 - 4500*x + 6525",
+      "passed": true,
+      "tolerance": 0,
+      "source": "state sums G₅⁺(θ±) real; degree-4 minpolys — same field ℚ(ζ₃₀)⁺."
+    },
+    {
+      "name": "zeta5_branch_invariance_exact",
+      "computed": "True",
+      "expected": "True",
+      "passed": true,
+      "tolerance": 0,
+      "source": "G₅⁺(ζ₅θ)⁵·(/D₅(θ)⁵)² = G₅⁺(θ)⁵·(/D₅(ζ₅θ)⁵)² exactly for both θ's — GK Remarks 1.4/1.5 verified at N=5."
+    },
+    {
+      "name": "quadrature_validated_at_N1",
+      "computed": 5.2161532140519286e-09,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 5e-07,
+      "source": "direct Faddeev-integral quadrature vs GK closed form (2) at b=1: |Δ| ≈ 5e-9 (double-precision tensor Gauss–Legendre)."
+    },
+    {
+      "name": "assembled_cor12_equals_direct_integral",
+      "computed": 1.8920673032500315e-09,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 5e-07,
+      "source": "assembled Cor 1.2 evaluation at b²=1/5 vs direct state integral ∫Φ_b(x)²e^{−πix²}dx — end-to-end gold check of the entire transcription (root of unity, Rogers branches, (1−z)^{13/10}, 1-loop (1+z)/(1−z), /D₅ branches, G₅⁺)."
+    },
+    {
+      "name": "no_vacuum_row_match_exact",
+      "computed": "False",
+      "expected": "False",
+      "passed": true,
+      "tolerance": 0,
+      "source": "exact in-field comparisons |c±|¹⁰ = ((5∓√5)/10)⁵ (i.e. |c±| = (2/√5)sin(kπ/5)) are all FALSE; 40-digit numerics separated by factors ≈7–11. The D₅ product does NOT reproduce the Σ(2,3,5) vacuum row."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 14005,
+  "computation": "gk-d5-cyclic-dilog-4one",
+  "scriptFile": "gk_d5_cyclic_dilog_4one_probe.py",
+  "scriptHash": "498abe400e0e",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "B4 residue of the Vector-2 double pincer: the Garoufalidis–Kashaev (arXiv:1411.6062) cyclic quantum dilogarithm D₅ product evaluated on the explicit 4₁ state-integral data ((A,B)=(1,2), g(z)=−z(1−z)⁻², z± = e(±1/6)) at b² = 1/5. Exact results in ℚ(ζ₃₀): (/D₅(θ;ζ₅))⁵ is real with minpoly x⁴−46x³−94x²+79x+1 (θ₊=ζ₃₀) / x⁴+29x³−69x²+29x+1 (θ₋=ζ₆); the state sums G₅⁺ are real with minpolys x⁴−60x³+960x²−5175x+6525 / x⁴−60x³+885x²−4500x+6525 — all degree 4, generating the FULL real quartic field ℚ(ζ₃₀)⁺, not ℚ(√5). The assembled Cor 1.2 evaluation I_{1,2}(1/√5) = (1/√5)[c₊e^{−V/10π} + c₋e^{V/10π}] (|c₊|≈5.97438, |c₋|≈5.53868) matches the DIRECT Faddeev state integral to quadrature precision (~2e-9 scale; quadrature itself validated at b=1 against GK eq (2)). The icosahedral Σ(2,3,5) vacuum-row entries (2/√5)sin(kπ/5) do NOT appear: exact in-field comparisons |c±|¹⁰ = ((5∓√5)/10)⁵ all FALSE. Scope-(a): the GK leg closes; the only √5 in the 4₁ evaluation remains the Gauss-sum prefactor 1/√N = 1/√5; m stays OPEN; nothing wired.",
+  "auditOnly": "docs/audits/2026-07-24-vector2-residues-sprime-d5.md",
+  "parameters": {
+    "N": 5,
+    "M": 1,
+    "A_B": "(1, 2)  — the 4₁ state integral (GK §2.2)",
+    "theta_plus_of_z_plus": "e^{iπ/15} = ζ₃₀  (log z₊ = 2πi/6)",
+    "theta_plus_of_z_minus": "e^{iπ/3}  (log z₋ = 10πi/6)"
+  },
+  "data": {
+    "exact_values": {
+      "slashD5_pow5_theta_plus": {
+        "minpoly": "x**4 - 46*x**3 - 94*x**2 + 79*x + 1",
+        "value_30dps": "-0.0124742071347974084081698988851 + 0.e-40*I",
+        "real": true
+      },
+      "slashD5_pow5_theta_minus": {
+        "minpoly": "x**4 + 29*x**3 - 69*x**2 + 29*x + 1",
+        "value_30dps": "-0.0320117823345469316426738006964 - 0.e-37*I",
+        "real": true
+      },
+      "G5plus_theta_plus": {
+        "minpoly": "x**4 - 60*x**3 + 960*x**2 - 5175*x + 6525",
+        "value_30dps": "1.79167267033889894189432673187 - 0.e-37*I",
+        "real": true
+      },
+      "G5plus_theta_minus": {
+        "minpoly": "x**4 - 60*x**3 + 885*x**2 - 4500*x + 6525",
+        "value_30dps": "2.42153475029653207377703001702 - 0.e-38*I",
+        "real": true
+      },
+      "field": "all four values generate the full real quartic ℚ(ζ₃₀)⁺; each minpoly factors over ℚ(√5) into two quadratics (ℚ(√5) is the quadratic subfield) but none lies in ℚ(√5)"
+    },
+    "evaluation_structure": {
+      "form": "I_{1,2}(1/√5) = (1/√5)[c₊ e^{−V/(10π)} + c₋ e^{V/(10π)}]",
+      "c_plus_50dps": "(-1.2421435013302361519319549423060024245978251623054 - 5.843825716651219369392453779476001702073996582011j)",
+      "c_minus_50dps": "(1.1515559578872090589849387203429133689382386520188 + 5.4176448322254665881406864663380533681112571064256j)",
+      "abs_c_plus_40dps": "5.974380259448763613875674467617021846292",
+      "abs_c_minus_40dps": "5.538678240544835225845886638230611104068",
+      "abs_c_relation": "|c±| = G₅⁺(θ±)/(√3·|/D₅(θ±)|²); |c±|¹⁰ ∈ ℚ(ζ₃₀)⁺ exactly (= G¹⁰/(3⁵(P⁵)⁴))",
+      "I_assembled_30dps": "(0.0286196539674253170383931660724 + 0.134644885778003646352182914737j)",
+      "I_direct_quadrature": "(0.028619652126931502+0.13464488621675325j)",
+      "vacuum_row_targets_40dps": [
+        "0.5257311121191336060256690848478766072855",
+        "0.8506508083520399321815404970630110722404"
+      ],
+      "exact_vacuum_row_comparisons": {
+        "c+_vs_sin_pi_5": false,
+        "c+_vs_sin_2pi_5": false,
+        "c-_vs_sin_pi_5": false,
+        "c-_vs_sin_2pi_5": false
+      }
+    }
+  },
+  "caveats": [
+    "Scope-(a): 'the cyclic-dilogarithm product on the explicit 4₁ data, alone, does not reproduce the icosahedral vacuum-row entries.' The shared object between the exchange ceiling, the Gauss sum and the S-matrix normalization remains the bare algebraic number √5 — no object-level map, anti-numerology gate in full force. |c±| involve principal-branch 5th roots ( /D₅ is multivalued; the assembled sum is branch-invariant per E4 and is pinned end-to-end by the direct integral E6). m ∈ (0, 1/√5) remains OPEN; nothing wired."
+  ]
+}
