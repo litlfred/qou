@@ -1,5 +1,6 @@
 import Mathlib.Data.Nat.Factorial.Basic
 import Mathlib.Algebra.BigOperators.Ring.List
+import Mathlib.Tactic.Ring
 
 /-!
 # QOU.BraidsAndKnots.YoungDiagramKernel — elementary Lean infrastructure for the Δ_λ covariance kernel
@@ -59,6 +60,49 @@ def sytDim (l : List ℕ) : ℕ := Nat.factorial l.sum / hookProd l
 def kernelValue (k : ℕ) : ℤ :=
   ((partsOf k).map (fun l =>
     (sytDim l : ℤ) ^ 3 * (contentSq l - ((k * (k - 1) / 2 : ℕ) : ℤ)))).sum
+
+/-- The 3-cycle class-sum eigenvalue on the irrep `λ`: `ω₃(λ) = Σ_□ c(□)² − C(k,2)`. -/
+def omega3 (k : ℕ) (l : List ℕ) : ℤ := contentSq l - ((k * (k - 1) / 2 : ℕ) : ℤ)
+
+/-- The 4th free cumulant `R₄` of the transition measure of `λ`, in Biane's normalisation
+`Σ̂₃ = R₄ + R₂` with `R₂ = k`: `R₄(λ) = 3·ω₃(λ) − k`. This is an **exactly affine** relabelling of
+the content spread `ω₃` — verified `E_Planch[R₄] = −k` computationally
+(`wlambda_covariance_epic_phase2.py`, `k ≤ 8`). -/
+def r4Value (k : ℕ) (l : List ℕ) : ℤ := 3 * omega3 k l - (k : ℤ)
+
+/-- Cube-of-dimension total `Σ_{λ ⊢ k} (f^λ)³` (the `(f^λ)³`-biasing normaliser). -/
+def cubeSum (k : ℕ) : ℤ := ((partsOf k).map (fun l => (sytDim l : ℤ) ^ 3)).sum
+
+/-- The `R₄`-weighted total `Σ_{λ ⊢ k} (f^λ)³ · R₄(λ)`. -/
+def r4WeightedSum (k : ℕ) : ℤ :=
+  ((partsOf k).map (fun l => (sytDim l : ℤ) ^ 3 * r4Value k l)).sum
+
+/-- General list form of the affine linearity: for any list `L` of diagrams,
+`Σ_l (f^l)³ · (3·ω₃(l) − k) = 3·Σ_l (f^l)³·ω₃(l) − k·Σ_l (f^l)³`. Sorry-free (induction on `L`);
+it exhibits exactly how the `−k` shift enters at the **summed** level. -/
+theorem r4_sum_affine_list (k : ℕ) (L : List (List ℕ)) :
+    (L.map (fun l => (sytDim l : ℤ) ^ 3 * r4Value k l)).sum
+      = 3 * (L.map (fun l => (sytDim l : ℤ) ^ 3 * omega3 k l)).sum
+          - (k : ℤ) * (L.map (fun l => (sytDim l : ℤ) ^ 3)).sum := by
+  induction L with
+  | nil => simp
+  | cons a t ih =>
+      simp only [List.map_cons, List.sum_cons]
+      rw [ih]
+      simp only [r4Value]
+      ring
+
+/-- **Sum-level affine identity (sorry-free).** `Σ_{λ⊢k} (f^λ)³ R₄(λ) = 3·kernelValue(k) − k·cubeSum(k)`.
+The `R₄`-weighted total differs from the covariance kernel only by the affine cube-sum term `k·cubeSum`.
+Consequence: adding the constant `−k` to `ω₃` shifts the raw weighted sum but leaves the *covariance*
+`Cov_Planch(f^λ, ·)` unchanged, so the free-cumulant form `Cov_Planch(f^λ, R₄) ≤ 0` is the **same
+inequality** as the content form `Cov_Planch(f^λ, ω₃) ≤ 0` — `R₄` is not an independent handle on the
+open kernel. (Phase-2 finding, `qou-x631`.) -/
+theorem r4WeightedSum_eq (k : ℕ) :
+    r4WeightedSum k = 3 * kernelValue k - (k : ℤ) * cubeSum k := by
+  unfold r4WeightedSum kernelValue cubeSum
+  have h := r4_sum_affine_list k (partsOf k)
+  simpa [omega3] using h
 
 /-- **CONJECTURE (OPEN).** The covariance kernel `Cov_Planch(f^λ, Σ_□ c(□)²) ≤ 0`, in its
 elementary content form: for every `k`, `Σ_{λ⊢k} (f^λ)³ (Σ_□c(□)² − C(k,2)) ≤ 0`. This is the sole

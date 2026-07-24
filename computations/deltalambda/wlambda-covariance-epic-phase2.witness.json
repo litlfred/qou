@@ -1,0 +1,82 @@
+{
+  "engine": "python-exact",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-07-24T16:10:29.500550+00:00",
+  "commitSha": "76810e1fbf48f8646e0cca4bb4ff6cc74be22fe7",
+  "assertions": [
+    {
+      "name": "covariance_epic_phase2_two_routes_eliminated",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "R₄ affine (not a lever, E_Planch[R₄]=−k verified); Route 3 (sub-family) ruled out (two-row/hook truncations flip positive); Route 4 (MN-peeling) ruled out (B(ν)>0 first at self-conjugate staircase ν=(3,2,1), k=9). Focuses the epic on Śniady genus expansion. No fit; no c_k."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 17,
+  "computation": "wlambda-covariance-epic-phase2",
+  "scriptFile": "wlambda_covariance_epic_phase2.py",
+  "scriptHash": "7c3761a3d2e8",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Phase 2 of the covariance-kernel proof epic (qou-x631). FINDING A: the free-cumulant reframing is EXACTLY AFFINE — R₄(λ)=3·(Σc²−C(k,2))−k=3·ω₃(λ)−k, so Cov_Planch(f^λ,R₄)=3·Cov_Planch(f^λ,ω₃) (the −k shift washes out); R₄ is NOT an independent handle. Verified E_Planch[R₄]=−k for k≤8 (Biane Σ̂₃=R₄+R₂, R₂=k). ROUTE 3 (sub-family sign-definiteness): RULED OUT — two-row truncation flips + at k=6, hook truncation at k=4; the sign is a global cancellation (cov⁻≈1.5–2×cov⁺). ROUTE 4 (Murnaghan–Nakayama peeling T₃=Σ_ν f^ν·B(ν), B(ν)=Σ_{λ/ν=BS₃}(−1)^ht(f^λ)²): RULED OUT — B(ν)≤0 through k≤8 but first POSITIVE at k=9, offender the self-conjugate staircase ν=(3,2,1), B=+6174 (peel-sum matches direct T₃ exactly). NET: four local/inductive certificates excluded + R₄ affine; the sign is a genuinely global analytic anti-correlation, leaving Śniady's genus expansion on the (f^λ)³-biased measure as the sole route (obstruction: f^λ is the exponential DIMENSION, not a bounded character ratio). scope-(a); no fit; nothing wired; no c_k; L2 2/7.",
+  "data": {
+    "r4_affine_identity": "R4 = 3*(C2 - C(k,2)) - k = 3*omega3 - k",
+    "r4_e_planch_eq_minus_k_verified_kmax": 8,
+    "route3_two_row_flip_k": 6,
+    "route3_hook_flip_k": 4,
+    "route3_ruled_out": true,
+    "route4_peel_matches_direct": true,
+    "route4_first_positive_k": 9,
+    "route4_offender_nu": [
+      3,
+      2,
+      1
+    ],
+    "route4_offender_B": 6174,
+    "route4_ruled_out": true,
+    "cov_sign_split_head": [
+      [
+        3,
+        4,
+        -8
+      ],
+      [
+        4,
+        16,
+        -32
+      ],
+      [
+        5,
+        680,
+        -1000
+      ],
+      [
+        6,
+        12080,
+        -22480
+      ],
+      [
+        7,
+        220640,
+        -384160
+      ],
+      [
+        8,
+        6302464,
+        -9527168
+      ]
+    ]
+  }
+}
