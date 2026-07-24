@@ -43,6 +43,15 @@ open analytic hypothesis (surreal-finiteness ⟺ `L²` Leray–Hopf regularity);
 not a theorem. Per the 2026-06-08 surreal-narrowing ledger, the surreal layer is
 a *language* for stating the bridge, not a proof of it.
 
+**Finite-mode half proved (`surreal_enstrophy_finite_modes`).** At every finite
+truncation `N`, the surreal enstrophy `Ω_N(1−ε)` deviates from the classical
+`Ω_N(1) = Σ_{k<N} k² a_k` by an infinitesimal
+(`enstrophy_perturbation_infinitesimal`, sorry-free) — so the standard part of
+the finite-mode observable *is* the classical value, and the open content of
+`classical_regular_iff_finite` is localised entirely in the **`N → ∞` (UV)
+limit** (`N_eff ~ log_q Re → ∞` as `q → 1⁺`): whether the standard part commutes
+with the mode limit. That commutation question is the wall; it remains open.
+
 ## Base ring (§7c)
 Generic: `S` is an abstract surreal line, all other data are `Prop`s. `L²(ℝ³)`
 lives in the interpretation, not the statements. No `ℝ`.
