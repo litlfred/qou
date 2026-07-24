@@ -52,6 +52,14 @@ the finite-mode observable *is* the classical value, and the open content of
 limit** (`N_eff ~ log_q Re → ∞` as `q → 1⁺`): whether the standard part commutes
 with the mode limit. That commutation question is the wall; it remains open.
 
+**Wall halved (`classical_unbounded_implies_surreal_infinite`).** One direction
+of `classical_regular_iff_finite` is now proved under tower domination:
+classical enstrophy unbounded ⇒ the surreal observable is infinite
+(contrapositive: surreal-finite ⇒ classically bounded). The **remaining open
+half** is the converse — that a surreal-infinite observable cannot arise solely
+from infinitesimal-scale (sub-classical) contributions. Only that half is still
+carried by this hypothesis.
+
 ## Base ring (§7c)
 Generic: `S` is an abstract surreal line, all other data are `Prop`s. `L²(ℝ³)`
 lives in the interpretation, not the statements. No `ℝ`.

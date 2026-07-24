@@ -4,6 +4,7 @@ import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 import Mathlib.Tactic.Ring
 import Mathlib.Tactic.Positivity
 import Mathlib.Tactic.NormNum
+import Mathlib.Tactic.Linarith
 
 /-!
 # QOU.FluidDynamics.surreal_enstrophy_finite_modes — the surreal enstrophy at
@@ -268,5 +269,47 @@ theorem enstrophy_perturbation_infinitesimal {ε : K} (hε : Infinitesimal ε)
       rw [qInt_one]; exact isFinite_natCast k
     exact h1.add h2
   exact (hdiff.mul_finite hsum_fin).mul_finite (ha k)
+
+/-! ### G1 — half the UV wall: classical-unbounded ⇒ surreal-infinite -/
+
+/-- **Half of the UV wall, proved.** Suppose the total surreal enstrophy
+    `Ω_tot` dominates every finite truncation (`hdom` — the monotone-limit /
+    tower-domination property, automatic for non-negative mode amplitudes), and
+    the **classical** enstrophy is unbounded along the tower (`hunb` — classical
+    enstrophy blow-up, `conj:regularity-breakdown` item 1 read at `q = 1`).
+    Then `Ω_tot` is **not** a finite surreal: the surreal observable is
+    infinite.
+
+    This proves one direction of the open bridge biconditional
+    `classical_regular_iff_finite` (`qou_ns_surreal_bridge`), in contrapositive
+    form: **surreal-finite ⇒ classically bounded**. The *converse* — that a
+    surreal-infinite observable forces classical divergence, i.e. that the
+    infinite part cannot come solely from infinitesimal-scale (sub-classical)
+    contributions — remains the open analytic content, and is deliberately not
+    asserted. The wall is thereby **halved**, not closed.
+
+    Proof: from `|Ω_tot| < m`, pick `N` with `Ω_N(1) > m + 1`; by the
+    finite-mode theorem `Ω_N(1−ε)` is within an infinitesimal (hence within
+    `1`) of `Ω_N(1)`, so `Ω_tot ≥ Ω_N(1−ε) > m ≥ Ω_tot` — contradiction. -/
+-- Ref: [manuscript] fluid-dynamics/regularity-breakdown (enstrophy blow-up);
+-- Ref: [manuscript] appendix-surreals/surreal-blowup-calculus
+theorem classical_unbounded_implies_surreal_infinite
+    {ε : K} (hε : Infinitesimal ε) (a : ℕ → K) (ha : ∀ k, IsFinite (a k))
+    (Ω_tot : K)
+    (hdom : ∀ N, enstrophyN (1 - ε) a N ≤ Ω_tot)
+    (hunb : ∀ n : ℕ, ∃ N, (n : K) < enstrophyN 1 a N) :
+    ¬ IsFinite Ω_tot := by
+  rintro ⟨m, hm⟩
+  obtain ⟨N, hN⟩ := hunb (m + 1)
+  have hδ := enstrophy_perturbation_infinitesimal hε a ha N
+  have hδ1 : |enstrophyN (1 - ε) a N - enstrophyN 1 a N| < 1 := by
+    have := hδ 1; simpa using this
+  have hlow : -(1 : K) < enstrophyN (1 - ε) a N - enstrophyN 1 a N :=
+    neg_lt_of_abs_lt hδ1
+  have hcast : ((m + 1 : ℕ) : K) = (m : K) + 1 := by push_cast; ring
+  rw [hcast] at hN
+  have hdomN := hdom N
+  have habs : Ω_tot ≤ |Ω_tot| := le_abs_self Ω_tot
+  linarith
 
 end QOU.FluidDynamics
