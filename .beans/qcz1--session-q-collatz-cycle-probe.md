@@ -5,7 +5,7 @@ status: in-progress
 type: milestone
 priority: medium
 created_at: 2026-07-18T21:14:00Z
-updated_at: 2026-07-24T15:48:40Z
+updated_at: 2026-07-24T16:35:34Z
 ---
 
 Branch claude/q-collatz-status-1v0pxv, PR #3996 (open, mergeable_state=clean,
@@ -28,3 +28,13 @@ REMAINING: qcz3 (content clarification), qcz4 (divergence probe), qcz5 (template
 coord + optional census extend). Post-merge: collatz-no-cycles-proof.qa.json
 sidecar re-stales after the .md re-scope (main regen'd at 68736287) — refresh in
 prepare-merge.
+
+UPDATE (2026-07-24): Proved-in-Lean tranche (all sorry-free, lean-direct exit 0):
+- balanced_holonomy_excluded (no-cycles A=1 core, generic CommRing)
+- qi3_sub_q_qi2 (Skein-Bezout)
+- qcollatz_fundamental_odd_step/even_step ({q^-1,1+q^-1} is a genuine 2-cycle)
+- qcollatz_domain_not_forward_invariant (domain non-invariance as a THEOREM)
+Conjecture carrier is content-bearing, QOU-conditional, well-posed over the
+domain-stable cone. All beans qcz2-5 done. Remaining OPEN (the actual math):
+reaches_cycle (convergence over domain-stable cone) + full nontrivial-cycle
+exclusion (affine A!=1). No LaurentPolynomial needed (generic-ring route).
