@@ -1,0 +1,44 @@
+{
+  "engine": "python-exact",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-07-24T20:53:29.251446+00:00",
+  "commitSha": "0cf9463ff2e8024f48dcc649fd194c94fe5713d3",
+  "assertions": [
+    {
+      "name": "covariance_epic_phase5_route1_exchangeable_pair",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "Plancherel-reversible down-up chain built; ω₃=Σc²−C(n,2) is an eigenfunction with τ₃=3/n (Fulman-analogue of the transposition τ₁=2/n); exact identity E_P[Δf·ω₃]=−(3/n)cov/n! verified n≤9 ⇒ kernel⇔E_P[Δf·ω₃]≥0 (local reformulation). Construction only; sign still open. No fit; no c_k."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 28,
+  "computation": "wlambda-covariance-epic-phase5-route1-exchangeable-pair",
+  "scriptFile": "wlambda_covariance_epic_phase5_route1_exchangeable_pair.py",
+  "scriptHash": "d2a4d071dcf7",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Phase 5 of the covariance-kernel proof epic (qou-x631): the Fulman-analogue Stein exchangeable pair for the 3-cycle. Built the Plancherel-reversible down-up chain on partitions of n (down: remove corner, prob dim μ/dim λ; up: add box, prob dim λ*/(n dim μ)); reversibility verified. The content-power central characters ω_j=Σc^j−E_P[Σc^j] are eigenfunctions for j=1 (Σc, transposition, Fulman's object, τ₁=2/n) and j=2 (Σc²=ω₃, 3-cycle, OUR object, τ₃=3/n) — the direct k=2 analogue of Fulman's k=1; j≥3 mix (not needed). So E[ω₃(λ*)|λ]=(1−3/n)ω₃(λ), the exact hypothesis of Fulman's Stein bound. Reversibility + eigenfunction give the EXACT identity E_P[Δf·ω₃]=−τ₃·Cov_P(f,ω₃)=−(3/n)cov(n)/n! (Δf=f(λ*)−f(λ)), verified n≤9. Hence the kernel is reformulated LOCALLY: cov(n)≤0 ⇔ E_P[(f(λ*)−f(λ))ω₃(λ)]≥0 (correlation of the one-step dimension increment with the content-spread). Does NOT yet close the sign (needs the explicit increment evaluation or a joint Stein CLT with effective Berry–Esseen error — genuine further work, not in the literature for the 3-cycle×dimension covariance). scope-(a); no fit; nothing wired; no c_k; L2 2/7.",
+  "data": {
+    "chain": "Plancherel-reversible down-up on partitions of n",
+    "reversible_verified_nmax": 9,
+    "tau1_transposition": "2/n (Fulman analogue)",
+    "tau3_three_cycle": "3/n (our omega3)",
+    "omega3_is_eigenfunction": true,
+    "local_identity": "E_P[(f(lam*)-f(lam)) omega3] = -(3/n) cov(n)/n!",
+    "local_identity_verified": true,
+    "local_reformulation": "cov(n)<=0  <=>  E_P[Df*omega3] >= 0"
+  }
+}

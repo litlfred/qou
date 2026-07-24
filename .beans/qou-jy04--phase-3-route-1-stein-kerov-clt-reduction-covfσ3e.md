@@ -5,8 +5,8 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-07-24T16:21:37Z
-updated_at: 2026-07-24T17:33:52Z
+updated_at: 2026-07-24T20:54:43Z
 parent: qou-x631
 ---
 
-Route 1 (Stein/log-covariance). Viability CONFIRMED (Phase 3): Cov_Planch(ln f,ω₃)<0 all k≤19; transfer factor positive & bounded (~0.55-0.88) but NOT →1. Literature (2026-07-24): Fulman math/0305423 gives Stein CLT + error 40.1·n^{-1/4} for the TRANSPOSITION ratio only (marginal, wrong central element); Ivanov-Olshanski math/0304010 gives joint Σ_μ covariances but dim∉A; Dołęga-Féray 1402.4615 is α-Jack (different family from (f^λ)^β). No citation closes it. Full proof = extend Fulman's exchangeable pair to the 3-cycle + effective JOINT Berry-Esseen on (ln f,Σ_3) + bound transfer error below the negative main term for k>k₀. Genuine multi-session research, NOT a citation. See docs/audits/2026-07-24-covariance-kernel-literature-assessment.md
+Route 1 (Stein/Kerov-CLT). Phase 5 CONSTRUCTION DONE (2026-07-24): built the Fulman-analogue Plancherel-reversible down-up chain on partitions of n; verified reversible. ω_j=Σc^j−E_P[Σc^j] is a chain eigenfunction for j=1 (Σc, transposition, τ₁=2/n, Fulman) and j=2 (Σc²=ω₃, 3-cycle, τ₃=3/n — OUR object; direct k=2 analogue). Exact identity E_P[Δf·ω₃]=−(3/n)·cov(n)/n! (Δf=f(λ*)−f(λ)), verified n≤9 ⇒ LOCAL reformulation: cov(n)≤0 ⇔ E_P[(f(λ*)−f(λ))·ω₃(λ)]≥0 (one-step dimension increment ⊥ content-spread). Does NOT close the sign yet. Next: (1) explicit combinatorial eval of E_P[Δf·ω₃] via hook-ratio increment; or (2) joint Stein CLT of (f,ω₃) with effective Berry-Esseen error < the negative main term for n>n₀, then exact n≤40 closes. Audit: 2026-07-24-covariance-kernel-route1-exchangeable-pair.md
