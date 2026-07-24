@@ -186,6 +186,40 @@ theorem qcollatz_even_fixed_point {R : Type u} [CommRing R] (q P : R)
     (h : (q + 1) * P = P) : q * P = 0 := by
   linear_combination h
 
+/-! #### Period-2 cycle exclusion
+
+Extends the period-1 result to period 2: the only positive 2-cycle is the
+fundamental `{q⁻¹, 1+q⁻¹}`. A period-2 orbit `P ↦ P₁ ↦ P` has one of the
+parity words `EE`, `OO`, `EO`/`OE`; each is pinned below (`h_even`/`h_odd`
+encode the branch-defining equations `C P · [2]_q = P` resp.
+`C P · [2]_q = [3]_q·P + 1`). -/
+
+/-- **Period-2, word EE.** An even→even 2-cycle forces `q·(q+2)·P = 0`,
+    hence `P = 0` in a domain (`q ≠ 0`, `q ≠ -2`): no positive EE 2-cycle. -/
+theorem qcollatz_period2_eveneven {R : Type u} [CommRing R] (q P P1 : R)
+    (h1 : P1 * (q + 1) = P) (h2 : P * (q + 1) = P1) :
+    q * (q + 2) * P = 0 := by
+  linear_combination h1 + (q + 1) * h2
+
+/-- **Period-2, word OO.** An odd→odd 2-cycle forces
+    `(q²+2q+2)·(P − P₁) = 0`, hence `P = P₁` in a domain — it degenerates to
+    the odd fixed point `-q⁻²`, not a genuine 2-cycle. -/
+theorem qcollatz_period2_oddodd {R : Type u} [CommRing R] (q P P1 : R)
+    (h1 : P1 * (q + 1) = (q ^ 2 + q + 1) * P + 1)
+    (h2 : P * (q + 1) = (q ^ 2 + q + 1) * P1 + 1) :
+    (q ^ 2 + 2 * q + 2) * (P - P1) = 0 := by
+  linear_combination h2 - h1
+
+/-- **Period-2, word EO/OE.** An even→odd 2-cycle (`P₁·[2]_q = P`,
+    `P·[2]_q = [3]_q·P₁ + 1`) forces `q·P₁ = 1`, i.e. `P₁ = q⁻¹` — the
+    fundamental cycle `{q⁻¹, 1+q⁻¹}`, uniquely. Together with the EE and OO
+    cases, the only positive period-2 cycle is the fundamental one. -/
+theorem qcollatz_period2_evenodd {R : Type u} [CommRing R] (q P P1 : R)
+    (h_even : P1 * (q + 1) = P)
+    (h_odd : P * (q + 1) = (q ^ 2 + q + 1) * P1 + 1) :
+    q * P1 = 1 := by
+  linear_combination h_odd + (q + 1) * h_even
+
 /-- **Domain non-invariance (concrete counterexample, proved).**
 
     The Skein-Collatz map is partial: `P` is in its domain iff `P` is
