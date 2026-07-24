@@ -238,4 +238,29 @@ theorem reaches_cycle_of_descent {Skein : Type u} [CommRing Skein]
       obtain ⟨k, hk⟩ := IH (μ (QCollatz.C P)) hlt (QCollatz.C P) rfl (hclosed P hP hc)
       exact ⟨k + 1, by rw [Function.iterate_succ_apply]; exact hk⟩
 
+/-- A period-2 point's forward orbit is exactly `{P, f P}`: every iterate is
+    `P` or `f P`. -/
+theorem iterate_period_two_mem {α : Type*} (f : α → α) (P : α)
+    (h : f (f P) = P) : ∀ k : ℕ, f^[k] P = P ∨ f^[k] P = f P := by
+  intro k
+  induction k with
+  | zero => exact Or.inl rfl
+  | succ n ih =>
+    rcases ih with h1 | h1
+    · exact Or.inr (by rw [Function.iterate_succ_apply', h1])
+    · exact Or.inl (by rw [Function.iterate_succ_apply', h1, h])
+
+/-- **The fundamental attractor's orbit is a bounded finite invariant set.**
+    Every iterate stays within the 2-cycle `{attractor, C attractor}` — it
+    never escapes. So the attractor is domain-stable (its forward orbit is
+    a finite invariant set), corroborating that the domain-stable cone is
+    nonempty and contains the fundamental cycle `{q⁻¹, 1+q⁻¹}`. -/
+theorem qcollatz_attractor_orbit_bounded (Skein : Type u) [CommRing Skein]
+    [QCollatz Skein] : ∀ k : ℕ,
+    (QCollatz.C (Skein := Skein))^[k] QCollatz.attractor = QCollatz.attractor ∨
+    (QCollatz.C (Skein := Skein))^[k] QCollatz.attractor
+      = QCollatz.C QCollatz.attractor :=
+  iterate_period_two_mem (QCollatz.C (Skein := Skein)) QCollatz.attractor
+    QCollatz.attractor_period_two
+
 end QOU.AppendixSurreals
