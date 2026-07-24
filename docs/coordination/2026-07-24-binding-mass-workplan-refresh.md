@@ -107,3 +107,18 @@ the `qou-esx7` epic), `t7qv` (superseded).
   `2026-07-20-keystone-bridge-c1-binding.md`, `2026-07-20-close-1ppq-attempt.md`,
   `2026-07-19-alpha-em-r2-owner-ruling.md`, `2026-07-20-doorv-guardrail.md`
 - Sibling attack map: [`keystone-multivector-attack.md`](keystone-multivector-attack.md) (PR #4058)
+
+## Addendum — coordination pass (2026-07-24, post-/coordinate)
+
+- **Triage task resolved by sibling:** #4144 (`coordinate-delta-lambda-front`) executed the
+  fit rollback — #4135/#4136 CLOSED (owner directive), cluster-A shared pre-revert base
+  documented. Bean `qou-nng0` closed citing #4144.
+- **W5 on hold** until #4144's convergence path for #4132/#4133/#4134/#4137 settles
+  (one canonical Δ_λ PR + thin deltas); then coordinate there.
+- **W7 sibling-led:** #4140 thread 2 scaffolds the C1 ↔ DM-cubic/SW route
+  (`CategoricalLagrangianDMCubic.lean`; open wall `qou-jqof` = derive `q_cubic = C1`).
+  Distinct-angle Newton-polygon check remains possible but post intent on #4140 first.
+- **Parallel workplan:** #4146 is a second same-day refresh (α_EM B2 lead + sibling-epic
+  map); cross-linked, no inconsistencies — read both.
+- **In flight this session:** W1 (I_𝓑₃ → F_Bor bridge invariant), W3 (BN12 S′ spectrum),
+  W4 (GK D₅ product).
