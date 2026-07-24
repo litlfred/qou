@@ -24,6 +24,21 @@ which is by definition the QOU's internal q-NS singularity at `q = 1`
 (`ns-obstruction-tower`, `blowup-yekutieli`). The capstone
 `qou_internal_ns_singular` composes these QOU-structural steps.
 
+**Every QOU is internally singular — from the axiom, not from `χ = -6`.** The
+chain starts at the *definitional* observability field, so `qou_internal_ns_singular`
+holds for **every** `QOUFluidUniverse` (∀ `U`); the Descartes `χ = -6` instance
+below only *witnesses non-vacuity*. There is **no NS-regular QOU**: a `χ = 0`
+(regular) object has `NS(A) = 0`, which violates observability, so it is a quantum
+*universe* but **not** a quantum *observable* universe. Regularity and QOU-hood
+are mutually exclusive.
+
+**Clay recasting (in-QOU boundary).** Consequently the open bridge is *not* "which
+QOU?" but "**is the physical fluid a QOU at all?**": classical NS blows up ⟺ the
+fluid is the internal `q = 1` flow of a QOU (satisfies observability); classical
+NS is globally regular ⟺ the fluid is *not* a QOU (fails observability, `χ = 0`).
+That embedding question is the open wall (`bean qou-innq`,
+`qou_ns_surreal_bridge`), deliberately not asserted.
+
 **Non-vacuity.** `descartesQOU` is a *concrete* instance (`χ(A) = -6`, Bring's
 surface) for which the whole base chain discharges **sorry-free**: the
 arithmetic `-6 ≠ 0` is decidable and `internalBlowup` is definitionally
