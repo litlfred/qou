@@ -125,7 +125,7 @@ deuteron residual forward (all identities verified to 50 dps; nothing tuned):
 | bar-even projection $E^{+} = m_e[3]_q[4]_q/3$ | 2.13064 MeV (−4.222%) | structural assumption: mass-side bar-even discipline applies to this tier |
 | remaining bar-even gap on $E^{+}$ | +4.4084% | measured forward |
 | natural order-2 unit $h^2 = x[2]_v^2$ | 4.3707% | derived shape (§1) |
-| measured coefficient $\gamma_2^{E} = \mathrm{gap}/h^2$ | **1.0087** | **NEAR-MATCH — underived** |
+| measured coefficient $\varpi_2 = \mathrm{gap}/h^2$ | **1.0087** | **NEAR-MATCH — underived** |
 | $E^{+}(1+h^2)$ | 2.22376 MeV (**−0.036%**) | near-match tier, NOT wired |
 
 Forward across the tier (same recipe, no per-isotope freedom):
@@ -146,8 +146,8 @@ projection — a single structural assumption (binding = bar-even projection), t
 the corpus already uses for $b_4$
 ([`b4_connected_bar_parity_probe.py`](../../computations/probes/b4_connected_bar_parity_probe.py):
 retained binding = bar-even part, bar-odd part radiated) — and (ii) comparing the leftover to the
-*pre-derived* order-2 unit $h^2$ at unit coefficient. The measured $\gamma_2^{E} = 1.0087$ is reported as a
-**near-match** (cf. the $c_3 = -2$ flip-flop lesson: near-match ≠ derived); deriving $\gamma_2^{E}$ — from
+*pre-derived* order-2 unit $h^2$ at unit coefficient. The measured $\varpi_2 = 1.0087$ is reported as a
+**near-match** (cf. the $c_3 = -2$ flip-flop lesson: near-match ≠ derived); deriving $\varpi_2$ — from
 the octahedral $e_2$ term or the surface-curvature pairing — is the **named open object**. If it is
 not exactly 1, the −0.036% is partly accidental; nothing here is wired to production.
 
@@ -203,8 +203,8 @@ PR #4127 (`2026-07-19-octahedral-four-dilogarithm-missing-tetrahedra.md`, `FourD
 [`germ-commutator-q-curvature.md`](../../content/quantum-observable-universe/quantum-observable-universes/germ-commutator-q-curvature.md).
 
 > **Notation note (added 2026-07-24, owner query).** The gap coefficient here is
-> written $\gamma_2^{E}$ (originally drafted as "$c_2$") precisely to avoid collision
+> written $\varpi_2$ (drafted as "$c_2$", then briefly "$\gamma_2^E$" — $\gamma$ is the photon) precisely to avoid collision
 > with the **Q_β precision-ladder** $c_k$ family — a different object entirely: the
 > ladder's $c_2 = -1$ is PROVED Taylor-exact and is unaffected by anything in this
-> audit. $\gamma_2^{E}$ is the measured ratio (bar-even E_unit gap)/$h^2$ = 1.0087,
+> audit. $\varpi_2$ is the measured ratio (bar-even E_unit gap)/$h^2$ = 1.0087,
 > NEAR-MATCH tier, underived.
