@@ -29,13 +29,11 @@ namespace QOU.QPochhammer
 
 open scoped BigOperators
 
-/-- The recursive denominator polynomial is the finite `q`-Pochhammer product
-    `∏_{k<n} (1 - x qᵏ)`. -/
-theorem denomPolyLocal_eq_prod (q x : ℝ) (n : ℕ) :
-    denomPolyLocal q x n = ∏ k ∈ Finset.range n, (1 - x * q ^ k) := by
-  induction n with
-  | zero => simp [denomPolyLocal]
-  | succ m ih => rw [denomPolyLocal, ih, Finset.prod_range_succ]; ring
+-- `denomPolyLocal_eq_prod` (the finite `q`-Pochhammer product form) is imported
+-- from `QOU.Archimedean.DilogarithmArchimedeanLimit`, where the identical lemma
+-- also lives. A duplicate copy declared here as well broke the build with
+-- "already declared" once both landed on main (same namespace, this file imports
+-- that one); removed 2026-07-24.
 
 /-- **Brick 1 — the Riemann-sum reduction.**  For `0 < x < 1` and `0 < q ≤ 1`
     every factor `1 - x qᵏ` is positive, so the rescaled logarithm of the partial
