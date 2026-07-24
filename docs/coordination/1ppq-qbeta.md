@@ -2077,3 +2077,21 @@ landed). The campaign's function-value/state-integral lane is now
 cleanly closed with derived structure at every dead end: 4₁ odd-phase
 null → W1 reality null → 2c-2 obstruction → the x̃ = 1 resonance.
 No fit; no c_k wired.
+
+**2026-07-24 (W3) — CROSS-FACE BRIDGE CERTIFIED THROUGH 3 LOOPS: the
+Masbaum cyclotomic face and the loop-engine/state-integral face are
+ONE analytic object, and the bar-odd C_{5₂,n} data now has a
+state-integral-certified backbone.** `qbeta_g3_5two_kashaev_cross_face.py`
+(2/2 green): the Kashaev ladder ⟨K⟩_N = Σ C_n(q)·|(q;q)_n|² at
+q = e^{2πi/N} (the framework's C-basis IS the Kashaev-tail basis —
+the bridge factor (−1)ⁿq^{n(n+1)/2} is exactly the (q;q)ₙ² → |(q;q)ₙ|²
+transfer at roots of unity; the naive Habiro-basis reduction DECAYS and
+is recorded as the convention trap) matches the certified engine loop
+data on every rung: 4₁ control α/logN/γ (γ rel 1.4e-4); 5₂ α =
+Vol/2π to 1.3e-11, 2-loop γ = −2π·Im c₁(ξ_geo) to 3.8e-6 — uniquely
+selecting ξ_geo = 0.78492+1.30714i (the +Im member of the trace-field
+cubic) as a DERIVED byproduct — and 3-loop 1/N² = Re[(2πi)²(c₂−c₁²/2)]
+to 5.8e-4. Held-out-N gated; window solve exact. CONSEQUENCE: the
+odd-channel extraction proceeds on the Masbaum face (per the #4167
+resonance redirect) with the engine as its certified cross-check.
+Scope-(a); no c_k wired.
