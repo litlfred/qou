@@ -155,6 +155,26 @@ theorem qcollatz_fundamental_even_step {R : Type u} [CommRing R]
     qinv * (q + 1) = 1 + qinv := by
   linear_combination hq
 
+/-- **Odd-branch fixed points are pinned by `q²·P = -1`.** A fixed point of
+    the odd branch (`[3]_q·P + 1 = [2]_q·P`) forces `q²·P = -1`, hence
+    `P = -q⁻²` once `q` is invertible — the `q`-lift of the classical
+    negative fixed point `-1`. In particular the fixed point is unique and
+    *negative*: there is **no positive fixed point**, so the fundamental
+    `{q⁻¹, 1+q⁻¹}` is genuinely 2-periodic. This discharges the period-1
+    case of nontrivial-cycle exclusion. -/
+theorem qcollatz_odd_fixed_point {R : Type u} [CommRing R] (q P : R)
+    (h : (q ^ 2 + q + 1) * P + 1 = (q + 1) * P) : q ^ 2 * P = -1 := by
+  linear_combination h
+
+/-- The negative element `-q⁻²` is an odd-branch fixed point (given `q`
+    invertible): `[3]_q·(-q⁻²) + 1 = [2]_q·(-q⁻²)`. With
+    `qcollatz_odd_fixed_point` this identifies `-q⁻²` as *the* odd fixed
+    point. -/
+theorem qcollatz_neg_qinv_sq_is_odd_fixed {R : Type u} [CommRing R]
+    (q qinv : R) (hq : q * qinv = 1) :
+    (q ^ 2 + q + 1) * (-qinv ^ 2) + 1 = (q + 1) * (-qinv ^ 2) := by
+  linear_combination (-(q * qinv) - 1) * hq
+
 /-- **Domain non-invariance (concrete counterexample, proved).**
 
     The Skein-Collatz map is partial: `P` is in its domain iff `P` is
