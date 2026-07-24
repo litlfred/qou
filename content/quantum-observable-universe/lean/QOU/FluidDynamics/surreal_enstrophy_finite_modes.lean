@@ -478,4 +478,73 @@ theorem surreal_finite_of_uniform_tail {ε : K} (hε : Infinitesimal ε)
   surreal_finite_of_classical_bounded hε a ha Ω_tot hnn
     (uv_exhaustion_of_uniform_tail a ha0 Ω_tot hlub htail) hbnd
 
+/-! ### V — sub-classical closure: `[k]_{1−ε} ≤ k` kills the tail question
+
+On the sub-classical approach `q = 1 − ε` (inside the golden window,
+`golden_window_mem`) the q-integers are dominated **termwise** by their
+classical values, so the surreal enstrophy is dominated by the classical one at
+*every* truncation — and the uniform tail bound of
+`surreal_finite_of_uniform_tail` becomes a **theorem** rather than a
+hypothesis. The bridge biconditional **closes on this side** with no spectral
+hypothesis at all (only the definitional limit properties). The super-classical
+approach `q = 1 + ε`, where `[k]_{1+ε} ≥ k` and the tail question is genuine,
+remains open. -/
+
+/-- **Termwise classical domination:** for `0 ≤ ε ≤ 1`, `[k]_{1−ε} ≤ k` — each
+    sub-classical q-integer is at most its classical value (every power
+    `(1−ε)^j ≤ 1`). The exact opposite of the super-classical side. -/
+theorem qInt_le_self {ε : K} (h0 : 0 ≤ ε) (h1 : ε ≤ 1) (k : ℕ) :
+    qInt (1 - ε) k ≤ (k : K) := by
+  have hb : ∀ j ∈ Finset.range k, (1 - ε) ^ j ≤ 1 :=
+    fun j _ => pow_le_one₀ (by linarith) (by linarith)
+  calc qInt (1 - ε) k ≤ ∑ _j ∈ Finset.range k, (1 : K) :=
+        Finset.sum_le_sum hb
+    _ = (k : K) := by simp
+
+/-- **Enstrophy domination:** with non-negative amplitudes, the sub-classical
+    enstrophy is dominated by the classical enstrophy at every truncation. -/
+theorem enstrophyN_le_classical {ε : K} (h0 : 0 ≤ ε) (h1 : ε ≤ 1)
+    (a : ℕ → K) (ha0 : ∀ k, 0 ≤ a k) (M : ℕ) :
+    enstrophyN (1 - ε) a M ≤ enstrophyN 1 a M := by
+  refine Finset.sum_le_sum fun k _ => ?_
+  have hq0 : (0 : K) ≤ qInt (1 - ε) k :=
+    Finset.sum_nonneg fun j _ => pow_nonneg (by linarith) j
+  have hle : qInt (1 - ε) k ≤ qInt 1 k := by
+    rw [qInt_one]; exact qInt_le_self h0 h1 k
+  have hsq : qInt (1 - ε) k ^ 2 ≤ qInt 1 k ^ 2 := by nlinarith
+  exact mul_le_mul_of_nonneg_right hsq (ha0 k)
+
+/-- **Sub-classical closure of the converse — NO spectral hypothesis.** On the
+    `q = 1 − ε` side (`0 ≤ ε ≤ 1` — in particular any positive infinitesimal,
+    which sits in the golden window by `golden_window_mem`), bounded classical
+    enstrophy plus the definitional lub property already force the surreal
+    observable to be finite: by termwise domination every truncation satisfies
+    `Ω_M(1−ε) ≤ Ω_M(1) < B`, so `Ω_tot ≤ B`. **No tail hypothesis, no
+    amplitude-finiteness, not even infinitesimality of `ε` is needed.**
+
+    Together with `classical_unbounded_implies_surreal_infinite` (whose
+    domination hypothesis is the definitional lower-limit property), the bridge
+    biconditional `classical_regular_iff_finite` **closes on the sub-classical
+    approach**, given only the definitional limit pair (truncations below
+    `Ω_tot`, `Ω_tot` a lub) and non-negative amplitudes. The honest remaining
+    open content of the whole bridge is now confined to the **super-classical
+    approach** `q = 1 + ε` (`[k]_{1+ε} ≥ k`), where the tail question is
+    genuine. -/
+-- Ref: [manuscript] fluid-dynamics/regularity-breakdown, q-ns-wellposedness;
+-- Ref: [manuscript] observations/golden-ratio-degeneration
+theorem surreal_finite_of_classical_bounded_subclassical {ε : K}
+    (h0 : 0 ≤ ε) (h1 : ε ≤ 1)
+    (a : ℕ → K) (ha0 : ∀ k, 0 ≤ a k)
+    (Ω_tot : K) (hnn : 0 ≤ Ω_tot)
+    (hlub : ∀ b : K, (∀ M, enstrophyN (1 - ε) a M ≤ b) → Ω_tot ≤ b)
+    (hbnd : ∃ B : ℕ, ∀ N, enstrophyN 1 a N < (B : K)) :
+    IsFinite Ω_tot := by
+  obtain ⟨B, hB⟩ := hbnd
+  refine ⟨B + 1, ?_⟩
+  have hup : Ω_tot ≤ (B : K) := hlub _ fun M =>
+    le_of_lt (lt_of_le_of_lt (enstrophyN_le_classical h0 h1 a ha0 M) (hB M))
+  rw [abs_of_nonneg hnn]
+  push_cast
+  linarith
+
 end QOU.FluidDynamics

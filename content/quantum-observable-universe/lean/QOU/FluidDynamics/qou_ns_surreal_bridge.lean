@@ -60,12 +60,25 @@ classical enstrophy unbounded ⇒ the surreal observable is infinite
 **Converse half proved under UV exhaustion
 (`surreal_finite_of_classical_bounded`).** With the tower UV-exhausting the
 total (some finite truncation captures it up to a finite constant) and the
-classical enstrophy bounded, the surreal observable is finite. Together the two
-theorems prove the biconditional **modulo one named structural hypothesis: UV
-exhaustion** — that the QOU-internal enstrophy does not concentrate at infinite
-surreal mode index `k ~ ω` (sub-classical scales) while every finite truncation
-stays bounded. That single exhaustion question is now the entire open content
-of this hypothesis; it remains open and is not asserted.
+classical enstrophy bounded, the surreal observable is finite.
+
+**Sub-classical CLOSURE (`surreal_finite_of_classical_bounded_subclassical`).**
+On the approach `q = 1 − ε` — which sits inside the corpus golden window for
+every positive infinitesimal `ε` (`golden_window_mem`) — the termwise
+domination `[k]_{1−ε} ≤ k` (`qInt_le_self`) makes the exhaustion hypothesis a
+*theorem*: every truncation is dominated by its classical value, so bounded
+classical enstrophy forces a finite surreal observable with **no spectral
+hypothesis at all**. Together with
+`classical_unbounded_implies_surreal_infinite`, the biconditional **closes on
+the sub-classical approach**, given only the definitional limit pair
+(truncations below the total; the total a lub) and non-negative amplitudes.
+
+**Honest remaining open content:** the **super-classical approach**
+`q = 1 + ε`, where `[k]_{1+ε} ≥ k` reverses the domination and the UV tail
+question is genuine — i.e. whether the physically-preferred `q → 1⁺` limit
+(the direction of `thm:q-ns-wellposedness`) satisfies the analogous finiteness
+correspondence. Only that side is still carried by this hypothesis; it remains
+open and is not asserted.
 
 ## Base ring (§7c)
 Generic: `S` is an abstract surreal line, all other data are `Prop`s. `L²(ℝ³)`
