@@ -312,4 +312,45 @@ theorem classical_unbounded_implies_surreal_infinite
   have habs : Ω_tot ≤ |Ω_tot| := le_abs_self Ω_tot
   linarith
 
+/-! ### H1 — the converse half, under UV exhaustion -/
+
+/-- **The converse half of the UV wall, under UV exhaustion.** Suppose the total
+    surreal enstrophy `Ω_tot` is non-negative, is **UV-exhausted** by the tower
+    (`hexh`: some finite truncation captures it up to a finite constant `c` —
+    "no enstrophy at infinite mode index beyond finite excess"), and the
+    **classical** enstrophy is bounded along the tower (`hbnd` — classical
+    regularity read at `q = 1`). Then `Ω_tot` **is** a finite surreal.
+
+    Together with `classical_unbounded_implies_surreal_infinite` this proves the
+    bridge biconditional `classical_regular_iff_finite`
+    (`qou_ns_surreal_bridge`) **modulo one named structural hypothesis: UV
+    exhaustion.** The failure mode exhaustion excludes is exactly the
+    "conspiracy" scenario — enstrophy concentrating at infinite surreal mode
+    index `k ~ ω` (sub-classical scales) while every finite truncation stays
+    bounded. Whether the QOU-internal flow satisfies UV exhaustion is the open
+    analytic content; it is **not** proved here.
+
+    Proof: `Ω_tot ≤ Ω_N(1−ε) + c`, and by the finite-mode theorem
+    `Ω_N(1−ε) < Ω_N(1) + 1 < B + 1`, so `0 ≤ Ω_tot < B + 1 + c`. -/
+-- Ref: [manuscript] fluid-dynamics/regularity-breakdown, q-ns-wellposedness;
+-- Ref: [manuscript] appendix-surreals/surreal-blowup-calculus
+theorem surreal_finite_of_classical_bounded
+    {ε : K} (hε : Infinitesimal ε) (a : ℕ → K) (ha : ∀ k, IsFinite (a k))
+    (Ω_tot : K) (hnn : 0 ≤ Ω_tot)
+    (hexh : ∃ (N c : ℕ), Ω_tot ≤ enstrophyN (1 - ε) a N + (c : K))
+    (hbnd : ∃ B : ℕ, ∀ N, enstrophyN 1 a N < (B : K)) :
+    IsFinite Ω_tot := by
+  obtain ⟨N, c, hNc⟩ := hexh
+  obtain ⟨B, hB⟩ := hbnd
+  refine ⟨B + 1 + c, ?_⟩
+  have hδ := enstrophy_perturbation_infinitesimal hε a ha N
+  have hδ1 : |enstrophyN (1 - ε) a N - enstrophyN 1 a N| < 1 := by
+    have := hδ 1; simpa using this
+  have hup : enstrophyN (1 - ε) a N - enstrophyN 1 a N < 1 :=
+    lt_of_le_of_lt (le_abs_self _) hδ1
+  have hBN := hB N
+  rw [abs_of_nonneg hnn]
+  push_cast
+  linarith
+
 end QOU.FluidDynamics

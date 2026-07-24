@@ -55,10 +55,17 @@ with the mode limit. That commutation question is the wall; it remains open.
 **Wall halved (`classical_unbounded_implies_surreal_infinite`).** One direction
 of `classical_regular_iff_finite` is now proved under tower domination:
 classical enstrophy unbounded ⇒ the surreal observable is infinite
-(contrapositive: surreal-finite ⇒ classically bounded). The **remaining open
-half** is the converse — that a surreal-infinite observable cannot arise solely
-from infinitesimal-scale (sub-classical) contributions. Only that half is still
-carried by this hypothesis.
+(contrapositive: surreal-finite ⇒ classically bounded).
+
+**Converse half proved under UV exhaustion
+(`surreal_finite_of_classical_bounded`).** With the tower UV-exhausting the
+total (some finite truncation captures it up to a finite constant) and the
+classical enstrophy bounded, the surreal observable is finite. Together the two
+theorems prove the biconditional **modulo one named structural hypothesis: UV
+exhaustion** — that the QOU-internal enstrophy does not concentrate at infinite
+surreal mode index `k ~ ω` (sub-classical scales) while every finite truncation
+stays bounded. That single exhaustion question is now the entire open content
+of this hypothesis; it remains open and is not asserted.
 
 ## Base ring (§7c)
 Generic: `S` is an abstract surreal line, all other data are `Prop`s. `L²(ℝ³)`
