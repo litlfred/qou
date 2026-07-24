@@ -1,0 +1,133 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-24T20:42:10.753181+00:00",
+  "commitSha": "5eb42d5f4d25345685b35f7623454a9321720d75",
+  "assertions": [
+    {
+      "name": "engine_gates_pass",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "41 (42) + 5_2 (76) nine-integer snap + u->0 continuity with O(u^2) scaling"
+    },
+    {
+      "name": "transcription_superseded_finding",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "c1_printed/certified ratio saddle-dependent at u->0 — not absorbable by any frame constant"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 19,
+  "computation": "qbeta-g3-5two-deformed-loops",
+  "scriptFile": "qbeta_g3_5two_deformed_loops.py",
+  "scriptHash": "b922f478bee2",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
+  },
+  "description": "W2 part 2: deformed 5_2 loop coefficients c1..c3 derived by the #4149-certified formal-Gaussian engine — 4_1 (42) regression, all nine printed 5_2 u=0 (76) trace-field integers, and u->0 continuity as gates; the corpus (238) transcription shown saddle-dependent-inconsistent and superseded; unprinted c2/c3 emitted at generic u and the substrate for the phi_odd re-extraction.",
+  "contentBlock": "conj:im-q-physical-role",
+  "data": {
+    "gates": {
+      "A_41_regression_dev": "1.640316112e-59",
+      "B_76_snaps": {
+        "c1": "1.991365577e-59",
+        "c2": "7.646841174e-57",
+        "c3": "1.921049635e-51"
+      },
+      "C_continuity": {
+        "0.0001": "1.88190504e-9",
+        "0.001": "1.881905066e-7"
+      },
+      "C_ratio": "100.0000014"
+    },
+    "finding_D_238_transcription": {
+      "u0_ratios_vs_certified": [
+        "(0.803488309133 + 0.0j)",
+        "(4.70140471651 - 2.1500681747j)",
+        "(4.70140471651 + 2.1500681747j)"
+      ],
+      "spread": "4.4515779",
+      "conclusion": "saddle-dependent mismatch — transcription superseded by the engine; downstream phi_odd consumers flagged"
+    },
+    "emission": {
+      "u=0.17": [
+        {
+          "saddle_y": "0.4263033063778150737649041",
+          "c1": "(-0.192210601240473809926505848391 + 0.0j)",
+          "c2": "(0.0467810910898844246572939508876 + 0.0j)",
+          "c3": "(-0.0127292454014860793391722870897 + 0.0j)"
+        },
+        {
+          "saddle_y": "(0.8013331807694670611451357 + 1.305225203698613631618539j)",
+          "c1": "(-0.0111127212119504597746656532718 - 0.10571375947205641200695819576j)",
+          "c2": "(-0.0158152961830642485251296314544 - 0.00954144566255762415160166074028j)",
+          "c3": "(-0.00425848419572147380151781159348 + 0.00338129705996636333473618575672j)"
+        },
+        {
+          "saddle_y": "(0.8013331807694670611451357 - 1.305225203698613631618539j)",
+          "c1": "(-0.0111127212119504597746656532718 + 0.10571375947205641200695819576j)",
+          "c2": "(-0.0158152961830642485251296314544 + 0.00954144566255762415160166074028j)",
+          "c3": "(-0.00425848419572147380151781159348 - 0.00338129705996636333473618575672j)"
+        }
+      ],
+      "u=0.30": [
+        {
+          "saddle_y": "0.4181895260656177033247842",
+          "c1": "(-0.189321934370646233012334472348 + 0.0j)",
+          "c2": "(0.0468868746196790681170551453787 + 0.0j)",
+          "c3": "(-0.015223538967022450682883429967 + 0.0j)"
+        },
+        {
+          "saddle_y": "(0.8362437510960516333629169 + 1.300752344267786202749729j)",
+          "c1": "(-0.00924805275004213078320928034758 - 0.106109639124490836466268444618j)",
+          "c2": "(-0.0159187195201648690832602511924 - 0.00948926459334905362631751064226j)",
+          "c3": "(-0.00326185204648433061961105064729 + 0.00447997181264240163323856981162j)"
+        },
+        {
+          "saddle_y": "(0.8362437510960516333629169 - 1.300752344267786202749729j)",
+          "c1": "(-0.00924805275004213078320928034758 + 0.106109639124490836466268444618j)",
+          "c2": "(-0.0159187195201648690832602511924 + 0.00948926459334905362631751064226j)",
+          "c3": "(-0.00326185204648433061961105064729 - 0.00447997181264240163323856981162j)"
+        }
+      ],
+      "u_sub=2t": [
+        {
+          "saddle_y": "0.4243529606151404027179347",
+          "c1": "(-0.191607441532202721848843533326 + 0.0j)",
+          "c2": "(0.0469436959149331405468792549108 + 0.0j)",
+          "c3": "(-0.0135069135043347117560156148035 + 0.0j)"
+        },
+        {
+          "saddle_y": "(0.8096766239586907933420423 + 1.304205746081458763386771j)",
+          "c1": "(-0.0106431881692547680578966800313 - 0.105795149074501949236907147585j)",
+          "c2": "(-0.0157930503993046086466915610969 - 0.00955288610499116530005827888643j)",
+          "c3": "(-0.00401046395675229309260394881809 + 0.00356210187736161450705586845704j)"
+        },
+        {
+          "saddle_y": "(0.8096766239586907933420423 - 1.304205746081458763386771j)",
+          "c1": "(-0.0106431881692547680578966800313 + 0.105795149074501949236907147585j)",
+          "c2": "(-0.0157930503993046086466915610969 + 0.00955288610499116530005827888643j)",
+          "c3": "(-0.00401046395675229309260394881809 - 0.00356210187736161450705586845704j)"
+        }
+      ]
+    },
+    "verdict": "DEFORMED LOOP DATA DERIVED — the certified engine (4_1 (42) regression 1.64e-59; all NINE printed 5_2 u=0 (76) trace-field integers reproduced exactly; u->0 continuity with O(u^2) even-in-u scaling) now supplies the deformed 5_2 c_1..c_3 at any x — including the previously-UNPRINTED c_2, c_3 the phi_odd derivation needs (emitted at u = 0.17, 0.30 and the substrate u_sub = 2t, all saddles). HONEST FINDING (D): the corpus (238)-transcription c1_printed FAILS the u->0 continuity gate against the (76)-certified values with SADDLE-DEPENDENT mismatch (~0.80 on sigma1, ~4.7-+2.15i on sigma2/3) — the glyph-scrambled P/delta^3 decode is implicated, the engine supersedes it, and downstream consumers (#3987 pair amplitudes, the 2c-2 multi-loop solves, hence the phi_odd = -0.004145 preliminary) are flagged for re-extraction with engine input. NEXT: re-run the sigma2/3-pair phi_odd extraction with engine c_1..c_3 (3-loop transseries). No fit; no c_k wired; scope-(a)."
+  }
+}

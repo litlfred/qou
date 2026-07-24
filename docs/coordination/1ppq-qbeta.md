@@ -2010,3 +2010,42 @@ run the engine on the deformed 5₂ potential (231) at the σ-saddles →
 gate on the printed u=0 (76) + deformed 2-loop (238), emit the
 unprinted exact c₂/c₃, then re-extract φ_odd with the extended
 transseries. No fit; no c_k wired; scope-(a).
+
+**2026-07-24 (W1) — INDEPENDENT CONFIRMATION + MECHANISM for the
+part-2c-2 obstruction: the bar involution SWAPS the block pole
+families, and the substrate-ray block data is REAL to 1e-41.**
+`qbeta_g3_5two_intrinsic_barodd_crossing.py` (3/3 green; parallel
+route per the owner directive, citing audit
+2026-07-18-5two-part2c-wall-crossing-barpair): per-block Laurent
+coefficients at the substrate lattice node show (F1) q-side A
+regular/B,C double-pole with the bar side exactly reversed — the
+blockwise face of the (250) crossing and WHY the classical-prefactor
+strip hits 0/0 there; (F2) every significant coefficient on both bar
+sides is real, so the function-value intrinsic bar phase is exactly
+0/π on the ray — a genuine bar-odd phase must be lateral/Stokes or
+live elsewhere, independently supporting φ_odd = −0.004145 as a
+~1-sig-fig preliminary; (F3) the real swap-covariant cross-family
+ratios recorded scope-(a) with the B/C degeneracy check (1e-45).
+
+**2026-07-24 (W2 part 2) — THE DEFORMED 5₂ LOOP DATA IS DERIVED
+(c₁, c₂, c₃ at any x, including the previously-UNPRINTED c₂/c₃), and
+the corpus (238)-transcription is SUPERSEDED: it fails the u→0
+continuity gate with a saddle-dependent mismatch.**
+`qbeta_g3_5two_deformed_loops.py` (2/2 green): the #4149-certified
+formal-Gaussian engine, extended to the deformed x-fixed frame, passes
+(A) the 4₁ (42) regression (1.6e-59), (B) the full NINE-integer
+trace-field snap of the printed 5₂ u=0 (76) series (c₁·2116 →
+(−454,209,−242); c₂·389344 → (25400,−22668,12643); c₃·12357778560 →
+(−164659509,85642761,−35443870); snaps 1e-51..1e-59; ν = −1/8
+held-out-verified), and (C) u→0 continuity with the O(u²) even-in-u
+scaling. HONEST FINDING (D): `c1_printed` (the #3987 glyph transcription
+of (238)) does NOT reduce to the certified (76) values at u→0 — ratio
+0.80 on σ₁, 4.7∓2.15i on σ₂/σ₃ (saddle-DEPENDENT ⇒ no frame constant
+absorbs it); the scrambled P/δ³ decode is implicated and the engine
+supersedes the transcription. CONSEQUENCE: downstream consumers of
+c1_printed — the #3987 pair amplitudes and the 2c-2 multi-loop solves,
+hence the φ_odd = −0.004145 preliminary — are flagged for
+re-extraction with engine input. EMITTED (witness): engine c₁..c₃ at
+u = 0.17, 0.30 and the substrate u_sub = 2t, all three saddles. NEXT:
+re-run the σ₂/σ₃-pair φ_odd extraction with the engine 3-loop
+transseries. No fit; no c_k wired; scope-(a).
