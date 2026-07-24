@@ -94,4 +94,43 @@ theorem dense_dualPole_compl {b : ℂ} (hb : b ≠ 0) :
   rw [hgoal]
   exact dense_compl_of_countable hcount
 
+/-- **The primary pole lattice complement is dense** (the `ib`-period companion of
+`dense_dualPole_compl`, for the `hib` discreteness input). The zero set of the
+primary quasi-period prefactor `1 + exp(iπb²)·exp(2πbz)` is where
+`exp(iπb² + 2πbz) = -1`; by `Complex.exp_eq_exp_iff_exists_int` this pins `z` to a
+discrete `ℤ`-lattice, so the zero set is countable and its complement — the guard
+domain of `CyclicDilogPentagon.ratio_ib_periodic` — is dense in `ℂ`. -/
+theorem dense_primaryPole_compl {b : ℂ} (hb : b ≠ 0) :
+    Dense {z : ℂ | (1 : ℂ)
+      + Complex.exp (I * (Real.pi : ℂ) * b ^ 2) * Complex.exp (2 * (Real.pi : ℂ) * b * z) ≠ 0} := by
+  have hπ : (Real.pi : ℂ) ≠ 0 := by exact_mod_cast Real.pi_ne_zero
+  have h2pib : (2 : ℂ) * (Real.pi : ℂ) * b ≠ 0 :=
+    mul_ne_zero (mul_ne_zero two_ne_zero hπ) hb
+  have hsub :
+      {z : ℂ | (1 : ℂ)
+          + Complex.exp (I * (Real.pi : ℂ) * b ^ 2) * Complex.exp (2 * (Real.pi : ℂ) * b * z) = 0}
+        ⊆ Set.range (fun n : ℤ =>
+            ((Real.pi : ℂ) * I + (n : ℂ) * (2 * (Real.pi : ℂ) * I) - I * (Real.pi : ℂ) * b ^ 2)
+              / (2 * (Real.pi : ℂ) * b)) := by
+    intro z hz
+    simp only [Set.mem_setOf_eq] at hz
+    have hexp : Complex.exp (I * (Real.pi : ℂ) * b ^ 2) * Complex.exp (2 * (Real.pi : ℂ) * b * z)
+        = -1 := by linear_combination hz
+    rw [← Complex.exp_add, ← Complex.exp_pi_mul_I, Complex.exp_eq_exp_iff_exists_int] at hexp
+    obtain ⟨n, hn⟩ := hexp
+    refine ⟨n, ?_⟩
+    show ((Real.pi : ℂ) * I + (n : ℂ) * (2 * (Real.pi : ℂ) * I) - I * (Real.pi : ℂ) * b ^ 2)
+        / (2 * (Real.pi : ℂ) * b) = z
+    rw [div_eq_iff h2pib]
+    linear_combination -hn
+  have hcount := (Set.countable_range _).mono hsub
+  have hgoal :
+      {z : ℂ | (1 : ℂ)
+          + Complex.exp (I * (Real.pi : ℂ) * b ^ 2) * Complex.exp (2 * (Real.pi : ℂ) * b * z) ≠ 0}
+        = {z : ℂ | (1 : ℂ)
+          + Complex.exp (I * (Real.pi : ℂ) * b ^ 2) * Complex.exp (2 * (Real.pi : ℂ) * b * z) = 0}ᶜ := by
+    ext z; simp only [Set.mem_setOf_eq, Set.mem_compl_iff, ne_eq]
+  rw [hgoal]
+  exact dense_compl_of_countable hcount
+
 end QOU.Common
