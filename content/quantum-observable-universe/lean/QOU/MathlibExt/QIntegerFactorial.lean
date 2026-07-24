@@ -95,15 +95,45 @@ theorem qFactorial_ne_zero_iff {q : K} (hq : q ≠ 1) (n : ℕ) :
 
 end Field
 
+section Real
+
+/-- **Quantum integers are positive for `q > 0` (sorry-free).**  `[n]_q`
+    is a sum of positive powers, hence strictly positive for `n ≥ 1`. -/
+theorem qInt_pos {q : ℝ} (hq : 0 < q) {n : ℕ} (hn : 0 < n) : 0 < qInt q n := by
+  rw [qInt]
+  apply Finset.sum_pos
+  · intro i _; exact pow_pos hq i
+  · exact ⟨0, mem_range.mpr hn⟩
+
+/-- **The quantum factorial is positive for `q > 0` (sorry-free).**  A
+    product of positive quantum integers.  In particular it is nonzero,
+    strengthening the genericity fact in the archimedean substrate
+    regime. -/
+theorem qFactorial_pos {q : ℝ} (hq : 0 < q) (n : ℕ) : 0 < qFactorial q n := by
+  rw [qFactorial]
+  apply Finset.prod_pos
+  intro k _
+  exact qInt_pos hq (Nat.succ_pos k)
+
 /-- **The real substrate is generic at every rank (sorry-free).**  Any
     real `q > 1` — in particular the substrate `q₀ ≈ 1.10998` — has
-    `[n]_q! ≠ 0` for every `n`: no quantum integer vanishes, so the
-    parameter-side hypothesis of Wenzl's criterion is discharged by pure
-    order arithmetic.  (Bridges to `WenzlSchurElement.wenzlGeneric_of_one_lt`.) -/
+    `[n]_q! ≠ 0` for every `n` (indeed `> 0` by `qFactorial_pos`): no
+    quantum integer vanishes, so the parameter-side hypothesis of
+    Wenzl's criterion is discharged.  Bridges to
+    `WenzlSchurElement.wenzlGeneric_of_one_lt`. -/
 theorem qFactorial_ne_zero_of_one_lt {q : ℝ} (hq : 1 < q) (n : ℕ) :
-    qFactorial q n ≠ 0 := by
-  rw [qFactorial_ne_zero_iff hq.ne']
-  intro k hk2 _
-  exact ne_of_gt (one_lt_pow₀ hq (by omega))
+    qFactorial q n ≠ 0 :=
+  ne_of_gt (qFactorial_pos (lt_trans one_pos hq) n)
+
+/-- **Genericity from positivity (sorry-free).**  For real `q > 1`, the
+    parameter genericity `QGeneric q n` holds — the form Wenzl's
+    criterion consumes — recovered here from the quantum-factorial
+    route (`qFactorial_ne_zero_of_one_lt` + `qFactorial_ne_zero_iff`),
+    agreeing with the direct order-arithmetic proof in
+    `WenzlSchurElement`. -/
+theorem qGeneric_of_one_lt {q : ℝ} (hq : 1 < q) (n : ℕ) : QGeneric q n :=
+  (qFactorial_ne_zero_iff hq.ne' n).mp (qFactorial_ne_zero_of_one_lt hq n)
+
+end Real
 
 end QOU.MathlibExt
