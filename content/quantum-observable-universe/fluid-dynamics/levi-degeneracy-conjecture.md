@@ -1,3 +1,5 @@
+*Within a QOU $(\mathbf{C}, A, \tau)$.* "NS blows up" / "NS is regular" below refer to the QOU's internal $q = 1$ flow; identifying it with the classical $\mathbb{R}^3$ equation is the separate open bridge.
+
 Let $\{q_\kappa\}_{\kappa \geq 2}$ be roots of unity converging to $q = 1$. Let $\mathcal{C}_L(\kappa)$ be the maximum Levi form condition number over the evolution of an anti-parallel vortex pair, and let
 
 $$

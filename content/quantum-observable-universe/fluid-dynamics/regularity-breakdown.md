@@ -1,3 +1,5 @@
+*Within a QOU $(\mathbf{C}, A, \tau)$.* The statements below concern the QOU's internal $q$-Navier--Stokes flow; identifying that internal flow with the classical $\mathbb{R}^3$ equation is the separate open categorical-to-classical bridge and is not asserted here.
+
 The global regularity theorem holds for every $q > 1$. The classical Navier--Stokes regularity problem asks what happens at $q = 1$. The QOU framework dictates that $q = 1$ is a **critical point** where regularity undergoes a phase transition.
 
 **Conjecture (regularity breakdown).**
