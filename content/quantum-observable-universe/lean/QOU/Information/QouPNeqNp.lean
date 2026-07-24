@@ -37,41 +37,77 @@ an explicit `[Instance]` hypothesis (per §3b-cond).
 
 namespace QOU.Information
 
-/-- $\mathrm{P} \neq \mathrm{NP}$ at non-torsion $q \in \mathbb{G}_m$
+/-- **The QOU-scoped decision separation** — an opaque `Prop`.
 
-    Conjectural class — see
-    [`conj:qou-p-neq-np`](../../../quantum-observable-universe/information-theory/qou-p-neq-np.md). -/
-class QouPNeqNp where
+    Read as "$\mathrm{P} \neq \mathrm{NP}$ *in the QOU*": the separation
+    the framework predicts *given* its axioms, **not** an unconditional
+    claim about $\mathrm{P}$ vs $\mathrm{NP}$ in the abstract.  Mathlib
+    has no formal $\mathrm{P}$/$\mathrm{NP}$, and axiomatising one here
+    would launder literature into a Lean proof (AGENTS.md §Axiomatization
+    is NOT a Proof); the honest target is therefore opaque. -/
+opaque PNeqNPInQOU : Prop
+
+/-- **The derived obstruction residue** $\mathrm{res}_{\mathcal{R}}(\chi(A))$
+    at the substrate.  The corpus derives the scalar value $\chi(A) = -6$
+    (`ex:chi-minus-six-derivation`, `prf:qou-obstruction-reduction`) with
+    no computational-complexity input. -/
+def chiResidual : ℝ := -6
+
+/-- **Non-vanishing of the residue — derived, not conjectural
+    (sorry-free).**  $\chi(A) = -6 \neq 0$; this leg of the conjecture
+    is an axiom consequence, so the open content is entirely the
+    faithfulness (below). -/
+theorem chiResidual_ne_zero : chiResidual ≠ 0 := by
+  unfold chiResidual; norm_num
+
+/-- **Conjecture (P ≠ NP in the QOU), §3b-cond carrier.**
+
+    *Given a QOU* with substrate parameter
+    $q_0 \in \mathbb{G}_m^{\mathrm{nt}}(\mathbb{R})$
+    ([substrate $\mathbb{G}_m$-torsion](#rem:substrate-gm-torsion)),
+    $\mathrm{P} \neq \mathrm{NP}$ holds *in that QOU* ([`PNeqNPInQOU`]).
+    The statement is **conditional on the QOU**: an instance of this
+    class is the hypothesis "the QOU's obstruction faithfulness holds",
+    and only *from it* is the separation derived — never a bare
+    $\mathrm{P} \neq \mathrm{NP}$.
+
+    Non-degenerate (§3b-tax): the class carries the **faithfulness
+    implication** (a genuine sub-hypothesis), not the conclusion
+    directly.  `residual` is a parameter (a `Prop`-class cannot hold ℝ
+    data); the QOU instance fixes it to the derived `chiResidual`. -/
+class QouPNeqNp (residual : ℝ) : Prop where
   -- Witness: computations/none
-  /-- **Conjecture statement** (from manuscript):
+  /-- **Faithfulness (the open conjecture).**  *In the QOU*, a surviving
+      obstruction residue forces the QOU-scoped decision separation.
+      This single implication is the irreducible content of
+      `conj:qou-p-neq-np`; it needs a counting$\to$decision transfer no
+      known result supplies (see `PNeqNpEquivalence.faithfulness_of_transfer`). -/
+  faithful : residual ≠ 0 → PNeqNPInQOU
 
-      At the physical substrate parameter
-$q_0 \in \mathbb{G}_m^{\mathrm{nt}}(\mathbb{R})$
-([substrate $\mathbb{G}_m$-torsion](#rem:substrate-gm-torsion)),
-$\mathrm{P} \neq \mathrm{NP}$.*
+/-- **Given a QOU, P ≠ NP in that QOU (conditional; sorry-free from the
+    hypotheses).**  Composes the faithfulness of a QOU instance with a
+    non-vanishing residue; the conclusion `PNeqNPInQOU` is explicitly
+    QOU-scoped — never an unconditional $\mathrm{P} \neq \mathrm{NP}$. -/
+theorem qou_implies_p_neq_np {r : ℝ} [Q : QouPNeqNp r] (hr : r ≠ 0) :
+    PNeqNPInQOU :=
+  Q.faithful hr
 
-*Equivalently: the resolution-tree evaluation of the universal
-obstruction class $\chi(A)$ is non-vanishing:*
+/-- **The QOU-scoped separation at the derived residue.**  Specialises
+    `qou_implies_p_neq_np` to the derived value $\chi(A) = -6$: given a
+    QOU (an instance `QouPNeqNp chiResidual`), $\mathrm{P} \neq \mathrm{NP}$
+    holds in that QOU.  No non-vanishing hypothesis is needed — it is
+    discharged by `chiResidual_ne_zero`. -/
+theorem qou_implies_p_neq_np_at_chi [QouPNeqNp chiResidual] : PNeqNPInQOU :=
+  qou_implies_p_neq_np chiResidual_ne_zero
 
-$$
-  \mathrm{res}_{\mathcal{R}}\!\bigl(\chi(A)\bigr)  \neq  0
-  \qquad\text{at } q = q_0.
-$$
-
-      The residual is the evaluated obstruction
-      $\mathrm{res}_{\mathcal{R}}(\chi(A))$ at $q_0$; field schema is a
-      structural placeholder pending a formalised $\chi(A)$. -/
-  residual : ℝ
-  /-- The residual is non-vanishing (the conjecture is the assertion
-      that this holds at the substrate point). -/
-  residual_ne_zero : residual ≠ 0
-
--- The conjecture itself.  The `sorry` represents the **open
--- conjecture** per §3b — not a missing proof.  Do NOT replace it with
--- a fabricated instance such as `⟨1, one_ne_zero⟩` (bean cj2b6:
--- audit-dodge); an arbitrary nonzero real is not the obstruction
--- residual.
+-- The conjecture itself.  The instance fixes the residue to the derived
+-- `chiResidual` (χ(A) = -6); its single `sorry` is confined to
+-- `faithful`, which **is** the open conjecture per §3b — NOT a missing
+-- proof.  Do NOT discharge `faithful` with a fabricated term (bean
+-- cj2b6: audit-dodge) — there is no term of the opaque `PNeqNPInQOU`
+-- short of proving the counting→decision transfer.
 -- Ref: [manuscript] quantum-observable-universe/information-theory/qou-p-neq-np.ts
-noncomputable instance : QouPNeqNp := sorry
+noncomputable instance : QouPNeqNp chiResidual where
+  faithful := sorry
 
 end QOU.Information

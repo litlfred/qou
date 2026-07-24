@@ -1,7 +1,8 @@
-**Conjecture.** At the physical non-torsion substrate parameter $q_0 \in \mathbb{G}_m^{\mathrm{nt}}(\mathbb{R})$, we have $\mathrm{P} \neq \mathrm{NP}$. Equivalently, the resolution-tree evaluation of the universal obstruction class $\chi(A)$ is non-vanishing:
+**Conjecture ($\mathrm{P} \neq \mathrm{NP}$ in the QOU).** *Given a QOU* with physical non-torsion substrate parameter $q_0 \in \mathbb{G}_m^{\mathrm{nt}}(\mathbb{R})$, $\mathrm{P} \neq \mathrm{NP}$ holds *in that QOU*. This is a **conditional** statement: the QOU axioms are its hypothesis — it is **not** a claim about $\mathrm{P}$ versus $\mathrm{NP}$ in the abstract, and no result here would prove the unconditional Clay problem. Equivalently, the resolution-tree evaluation of the universal obstruction class $\chi(A)$ is non-vanishing:
 $$
   \mathrm{res}_{\mathcal{R}}\!\bigl(\chi(A)\bigr)  \neq  0 \qquad\text{at } q = q_0.
 $$
+The Lean carrier makes the conditioning explicit: `qou_implies_p_neq_np` derives the QOU-scoped separation `PNeqNPInQOU` *from* a `QouPNeqNp` instance (the QOU faithfulness hypothesis) — it never concludes a bare $\mathrm{P} \neq \mathrm{NP}$.
 
 **Established complexity landscape (chippable kernel).** The concrete computational object attached to a link $L = \hat{\beta}$ is its Jones invariant $J_L(q) = \mathrm{tr}_M(\rho(\beta))$, and its complexity is a *theorem*, stratified by the arithmetic of $q$:
 
