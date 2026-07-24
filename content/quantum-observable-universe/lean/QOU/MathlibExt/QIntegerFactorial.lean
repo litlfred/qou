@@ -55,6 +55,10 @@ theorem qInt_eq_zero_iff {q : K} (hq : q ≠ 1) (k : ℕ) :
     · exact absurd h hq
   · intro h; exact Or.inl h
 
+/-- **Quantum-integer recursion** `[n+1]_q = [n]_q + q^n` (sorry-free). -/
+theorem qInt_succ (q : K) (n : ℕ) : qInt q (n + 1) = qInt q n + q ^ n := by
+  rw [qInt, qInt, Finset.sum_range_succ]
+
 /-- The **quantum factorial** `[n]_q! = ∏_{k=1}^{n} [k]_q` — the Poincaré
     polynomial of the Iwahori–Hecke algebra `H_n(q)`. -/
 def qFactorial (q : K) (n : ℕ) : K := ∏ k ∈ range n, qInt q (k + 1)
@@ -64,6 +68,13 @@ def qFactorial (q : K) (n : ℕ) : K := ∏ k ∈ range n, qInt q (k + 1)
 
 @[simp] theorem qFactorial_one (q : K) : qFactorial q 1 = 1 := by
   simp [qFactorial]
+
+/-- **Quantum-factorial recursion** `[n+1]_q! = [n]_q! · [n+1]_q`
+    (sorry-free) — the induction step for Schur-element / Gram
+    computations over `H_n(q)`. -/
+theorem qFactorial_succ (q : K) (n : ℕ) :
+    qFactorial q (n + 1) = qFactorial q n * qInt q (n + 1) := by
+  rw [qFactorial, qFactorial, Finset.prod_range_succ]
 
 /-- **Parameter genericity** (field form of `WenzlSchurElement.WenzlGeneric`):
     `q` is not a `k`-th root of unity for any `2 ≤ k ≤ n`. -/
