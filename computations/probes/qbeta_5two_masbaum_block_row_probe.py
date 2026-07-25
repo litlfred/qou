@@ -12,9 +12,12 @@ rational linear algebra, with NO numerics in the decision:
      F(q) = Σ_n C_n(a)|_{a=u}·(q;q)_n², from the exact integer-Laurent
      C_n (merged profile module). Its u-PARITY is itself a finding
      (odd u-powers ⇒ half-integer λ structure).
-  2. The block basis: the 18 exact H±_{j,λ}(q) series (A2's symbolic
-     generator, re-gated here against the 18 printed GGM tables at the
-     probe's higher truncation), λ ∈ {−1,0,1}, j ∈ {0,1,2}, both signs.
+  2. The block basis: the 18 exact H±_{j,λ}(q) series — an exact
+     Fraction-coefficient truncated-series port of A2's symbolic
+     generator (identical formulas; O(ORD²) convolution instead of
+     sympy rational-function series, which is intractable at ORD 34),
+     re-gated here against the 18 printed GGM tables,
+     λ ∈ {−1,0,1}, j ∈ {0,1,2}, both signs.
   3. The DECISION: does F (or a pre-registered dressed variant
      (q;q)_∞^p·q^s·F, p ∈ −3..3, s ∈ 0..2 — 21 exact re-solves, all
      reported) lie in the ℚ-span of the basis? Overdetermined exact
@@ -42,6 +45,7 @@ from __future__ import annotations
 import importlib.util
 import sys
 import time
+from fractions import Fraction
 from pathlib import Path
 
 import mpmath as mp
@@ -112,6 +116,131 @@ def masbaum_series_u(ord_u):
     return {e: c for e, c in out.items() if c != 0}
 
 
+# ---- exact Fraction-coefficient truncated q-series (fast H-series port) ----
+# A series to O(q^N) is a list of N Fractions. All ops are exact.
+
+def s_new(n):
+    return [Fraction(0)] * n
+
+
+def s_const(v, n):
+    s = s_new(n)
+    s[0] = Fraction(v)
+    return s
+
+
+def s_add(a, b):
+    return [x + y for x, y in zip(a, b)]
+
+
+def s_scale(a, v):
+    v = Fraction(v)
+    return [x * v for x in a]
+
+
+def s_mul(a, b):
+    n = len(a)
+    out = [Fraction(0)] * n
+    for i, ai in enumerate(a):
+        if ai:
+            for j in range(n - i):
+                if b[j]:
+                    out[i + j] += ai * b[j]
+    return out
+
+
+def s_inv(a):
+    """Multiplicative inverse of a truncated series with a[0] ≠ 0."""
+    n = len(a)
+    out = [Fraction(0)] * n
+    out[0] = 1 / a[0]
+    for k in range(1, n):
+        acc = Fraction(0)
+        for i in range(1, k + 1):
+            if a[i]:
+                acc += a[i] * out[k - i]
+        out[k] = -acc / a[0]
+    return out
+
+
+def s_shift(a, m):
+    n = len(a)
+    if m >= n:
+        return s_new(n)
+    return [Fraction(0)] * m + a[: n - m]
+
+
+def qpoch_n_ser(n, ord_):
+    """(q;q)_n as a truncated series."""
+    s = s_const(1, ord_)
+    for k in range(1, n + 1):
+        f = s_new(ord_)
+        f[0] = Fraction(1)
+        if k < ord_:
+            f[k] = Fraction(-1)
+        s = s_mul(s, f)
+    return s
+
+
+def E_n_ser(n, ord_, weight=False):
+    """Σ_{s≥1, s(n+1)<ord} [s·]q^{s(n+1)}/(1−q^s), geometric-expanded —
+    the exact port of A2's E1n_ser (weight=False) / E2n_ser (True)."""
+    out = s_new(ord_)
+    for s in range(1, ord_ + 1):
+        if s * (n + 1) < ord_:
+            w = Fraction(s if weight else 1)
+            e = s * (n + 1)
+            while e < ord_:
+                out[e] += w
+                e += s
+    return out
+
+
+def H_series_fast(sign, j, lam, ord_):
+    """Exact port of A2's H_series (same formulas, Fraction series)."""
+    total = s_new(ord_)
+    e2_0 = E_n_ser(0, ord_, weight=True)
+    n = 0
+    while True:
+        expo = (n * (n + 1) + n * lam if sign > 0
+                else n * (n + 1) // 2 + n * lam)
+        if expo >= ord_ and n > 0:
+            break
+        inv1 = s_inv(qpoch_n_ser(n, ord_))
+        invp3 = s_mul(s_mul(inv1, inv1), inv1)
+        e1 = E_n_ser(n, ord_)
+        if sign > 0:
+            p1 = s_add(s_const(1 + 2 * n + lam, ord_), s_scale(e1, -3))
+            if j == 0:
+                pj = s_const(1, ord_)
+            elif j == 1:
+                pj = p1
+            else:
+                e2 = E_n_ser(n, ord_, weight=True)
+                pj = s_add(
+                    s_add(s_mul(p1, p1), s_const(Fraction(-1, 6), ord_)),
+                    s_add(s_scale(e2, -3), s_scale(e2_0, 4)))
+            term = s_shift(s_mul(pj, invp3), expo)
+        else:
+            p1 = s_add(s_const(Fraction(1, 2) + n + lam, ord_),
+                       s_scale(e1, -3))
+            if j == 0:
+                pj = s_const(1, ord_)
+            elif j == 1:
+                pj = p1
+            else:
+                e2 = E_n_ser(n, ord_, weight=True)
+                pj = s_add(
+                    s_add(s_mul(p1, p1), s_const(Fraction(-1, 12), ord_)),
+                    s_add(s_scale(e2, -3), s_scale(e2_0, 2)))
+            term = s_scale(s_shift(s_mul(pj, invp3), expo), (-1) ** n)
+        total = s_add(total, term)
+        n += 1
+        if n > 2 * ord_:
+            break
+    return total
+
+
 def main() -> int:
     print("=" * 78)
     print(" B1.3 — λ-row selection: the Masbaum tail in the GGM block basis")
@@ -143,59 +272,70 @@ def main() -> int:
         f"{'PASS' if g_num else 'FAIL'}")
 
     # ---- 2. the block basis at higher truncation + printed re-gate ----
-    sb.ORD = ORD_Q
-    log(f"generating the 18 H±_(j,λ) series to O(q^{ORD_Q}) ...")
+    log(f"generating the 18 H±_(j,λ) series to O(q^{ORD_Q}) "
+        f"(exact Fraction-series port) ...")
     basis = {}
     for sgn in (+1, -1):
         for j in range(3):
             for lam in (-1, 0, 1):
-                basis[(sgn, j, lam)] = sp.expand(sb.H_series(sgn, j, lam))
+                basis[(sgn, j, lam)] = H_series_fast(sgn, j, lam, ORD_Q)
     g_printed = True
     for (sgn, j, lam), coeffs in sb.PRINTED.items():
-        s_ = basis[(sgn, j, lam)]
+        ser_ = basis[(sgn, j, lam)]
         for k, c in enumerate(coeffs):
-            if sp.simplify(s_.coeff(qs, k) - c) != 0:
+            cr = sp.Rational(c)
+            if ser_[k] != Fraction(int(cr.p), int(cr.q)):
                 g_printed = False
     log(f"[gate] 18 printed GGM tables reproduced at the probe truncation: "
         f"{'PASS' if g_printed else 'FAIL'}")
 
     # ---- 3. the exact solves over the pre-registered dressed family ----
-    # (q;q)_∞^p series to O(q^ORD_Q)
-    def poch_inf_pow(p):
-        e_ = sp.Integer(1)
-        for j in range(1, ORD_Q + 1):
-            e_ *= (1 - qs ** j)
-        e_ = sp.expand(e_)
-        s_ = e_ ** abs(p) if p != 0 else sp.Integer(1)
-        if p < 0:
-            s_ = sp.series(1 / e_, qs, 0, ORD_Q).removeO() ** abs(p)
-        return sp.expand(sp.series(sp.expand(s_), qs, 0, ORD_Q).removeO())
+    # (q;q)_∞^p as a truncated series (exact to O(q^ORD_Q))
+    E_ser = s_const(1, ORD_Q)
+    for jj in range(1, ORD_Q):
+        f_ = s_new(ORD_Q)
+        f_[0] = Fraction(1)
+        f_[jj] = Fraction(-1)
+        E_ser = s_mul(E_ser, f_)
+    E_inv = s_inv(E_ser)
+
+    def dress_ser(p):
+        s_ = s_const(1, ORD_Q)
+        base = E_ser if p > 0 else E_inv
+        for _ in range(abs(p)):
+            s_ = s_mul(s_, base)
+        return s_
 
     keys = sorted(basis.keys())
-    Mrows = []
-    for order in range(ORD_Q):
-        Mrows.append([basis[k].coeff(qs, order) for k in keys])
-    M = sp.Matrix(Mrows)
+    M = sp.Matrix([[sp.Rational(basis[k][o].numerator,
+                                basis[k][o].denominator)
+                    for k in keys] for o in range(ORD_Q)])
     rank_basis = M.rank()
     log(f"basis matrix: {ORD_Q} orders × {len(keys)} series, rank "
         f"{rank_basis}")
 
-    F_poly = sum(sp.Rational(c) * qs ** e for e, c in Fq.items() if e < ORD_Q)
+    F_ser = s_new(ORD_Q)
+    for e, c in Fq.items():
+        if e < ORD_Q:
+            cr = sp.Rational(c)
+            F_ser[e] = Fraction(int(cr.p), int(cr.q))
     results = []
     solved = []
     for p in range(-3, 4):
-        dress_p = poch_inf_pow(p)
+        Fd = s_mul(F_ser, dress_ser(p))
         for s in range(0, 3):
-            target = sp.expand(sp.series(
-                sp.expand(F_poly * dress_p) * qs ** s, qs, 0, ORD_Q).removeO())
-            tvec = sp.Matrix([target.coeff(qs, o) for o in range(ORD_Q)])
+            tser = s_shift(Fd, s)
+            tvec = sp.Matrix([sp.Rational(x.numerator, x.denominator)
+                              for x in tser])
             aug = M.row_join(tvec)
             in_span = aug.rank() == rank_basis
             results.append({"p": p, "shift": s, "in_span": bool(in_span)})
             if in_span:
-                sol = M.solve_least_squares(tvec)  # exact when consistent
+                sol, params = M.gauss_jordan_solve(tvec)
+                if params:
+                    sol = sol.subs({pp: 0 for pp in params})
                 solved.append({"p": p, "shift": s,
-                               "coeffs": {str(k): str(sp.nsimplify(sol[i]))
+                               "coeffs": {str(k): str(sol[i])
                                           for i, k in enumerate(keys)
                                           if sol[i] != 0}})
                 log(f"    IN SPAN: (q;q)_∞^{p}·q^{s}·F — coefficient "
