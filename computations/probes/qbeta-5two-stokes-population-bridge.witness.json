@@ -1,0 +1,104 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-25T13:57:55.249907+00:00",
+  "commitSha": "3f812ac419daae6d431a432645ef74ce82425947",
+  "assertions": [
+    {
+      "name": "sigma3_series_real",
+      "computed": 0.0,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-40,
+      "source": "the real-saddle φ_σ3 series is real at ±x₀"
+    },
+    {
+      "name": "sigma_pair_population_forced_zero",
+      "computed": 47646852.125273734,
+      "expected": 47646852.125273734,
+      "passed": true,
+      "tolerance": 23823426.062636867,
+      "source": "σ-pair amplitude overshoots the Habiro scale by > 1e4 ⇒ n₁ = n₂ = 0 on the real-q ray (derived pruning)"
+    },
+    {
+      "name": "assembly_scan_completed",
+      "computed": 180.0,
+      "expected": 180.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "pre-registered parameter-free scan ran to completion; hits+near-misses recorded in full"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "qbeta-5two-stokes-population-bridge",
+  "scriptFile": "qbeta_5two_stokes_population_bridge_probe.py",
+  "scriptHash": "a7f0281996f6",
+  "scriptCommitSha": "3f812ac419daae6d431a432645ef74ce82425947",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "B1 (bean qou-ossd): the Stokes-population bridge attack. T1 (derived pruning): the σ-pair sectors carry e^{+13.2}-growing exponentials at x₀ = −ln q₀ vs the O(1) Habiro value — integer population n₁ = n₂ = 0 is FORCED on the real-q ray; the odd channel must route through the real saddle σ₃ (pure phase) — consistent with A4.3's Stokes-free ray, #4213's GZ weight rule, and A2's Ind^rot-bar-even finding. T2: the exact sector-amplitude table (Gaussian factors, phases, resummed φ_σ1/φ_σ3 with the per-saddle engine). T3: pre-registered parameter-free assembly family (σ₃ phase channels × GZ weight powers × small (half-)integers + A2 O-matrix entries), gate 1e-6 (pin-band), every near-miss reported — no selection. auditOnly; no fit; no c_k wired; a hit is a lead, not an identification.",
+  "contentBlock": "prop:phi-b-unitary-bar-odd",
+  "data": {
+    "substrate": {
+      "x0": "-0.104340731856637",
+      "pin": "muon (matches committed A2 S± + A4.3 constants)"
+    },
+    "sector_table": {
+      "V": {
+        "s1": "(2.82812208833078 + 1.3790860299j)",
+        "s2": "(-2.82812208833078 + 1.3790860299j)",
+        "s3": "-2.7580990292"
+      },
+      "V0pp": {
+        "s1": "(-0.632316499370039 + 2.23458529985923j)",
+        "s3": "4.26463299874008"
+      },
+      "abs_E": {
+        "s1": "549706.4598",
+        "s3": "1.0"
+      },
+      "phi_at_x0": {
+        "s1": "(1.0010924222593195801 + 0.010908961932781205919j)",
+        "s3_plus": "1.0206770114233338483",
+        "s3_minus": "0.98032883815093063119"
+      },
+      "amplitudes": {
+        "sigma_pair": "361134.7291",
+        "sigma3": "0.4942509375"
+      }
+    },
+    "t1_pruning": {
+      "overshoot": "47646852.0",
+      "conclusion": "n1 = n2 = 0 forced on the real-q ray"
+    },
+    "t3_scan": {
+      "n_candidates": 180,
+      "gate": "1e-6",
+      "hits": [],
+      "near_misses": [],
+      "ratio_table": {
+        "sin_mirror_odd|w0": "(0.0 - 0.0162322477891j)",
+        "sin_mirror_odd|w12": "(0.0 - 0.0502518117746j)",
+        "sin_mirror_odd|w32": "(0.0 - 0.481612605935j)",
+        "sin_plus_only|w0": "(0.0 - 0.0159114109626j)",
+        "sin_plus_only|w12": "(0.0 - 0.0492585647503j)",
+        "sin_plus_only|w32": "(0.0 - 0.472093341438j)",
+        "cos_mirror_even_diff|w0": "(0.0 - 2.90920008486j)",
+        "cos_mirror_even_diff|w12": "(0.0 - 9.00630504035j)",
+        "cos_mirror_even_diff|w32": "(0.0 - 86.3162916351j)"
+      }
+    },
+    "verdict": "NO parameter-free assembly matches at 1e-6 (all near-misses recorded). The derived content stands: the σ-pair population is FORCED ZERO on the real-q ray (T1) — O_φ and D_odd are NOT directly bridged by a small-integer σ₃ assembly in the pre-registered family; the bridge needs the trivial-sector/block-level pairing (GK bilinear structure), named as the wall. auditOnly."
+  }
+}
