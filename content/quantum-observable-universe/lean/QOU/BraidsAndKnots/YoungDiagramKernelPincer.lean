@@ -282,9 +282,14 @@ The FRT quotient turns the log-dimension into log-factorial-minus-log-hooks,
 Hence **[A2] ⇔ the hook–spread positive correlation** `Cov₂(ln ∏h, ω₃) ≥ 0` — two "spread"
 functionals of the diagram positively correlated under the Plancherel-squared weight. This is the
 first *exact* step of the A2 hook/Frullani reduction
-(`wlambda-covariance-epic-A2-hook-reduction.witness.json`, which further reduces — numerically
-verified, not yet Lean — to the pointwise one-parameter sign `Cov₂(Σ_□ e^{−s·h}, ω₃) ≤ 0` for all
-`s > 0` via the Frullani integral). -/
+(`wlambda-covariance-epic-A2-hook-reduction.witness.json`). **Status of the further Frullani
+step (corrected 2026-07-25):** the integral representation
+`Cov₂(ln f, ω₃) = ∫₀^∞ (1/s)·Cov₂(Σ_□ e^{−s·h}, ω₃) ds` itself survives, but the once-conjectured
+*pointwise* sign of its integrand is **FALSE for `n ≥ 29`** (first failure `max_s ≈ +0.056` at
+`s ≈ 0.52`, growing with `n`) — A2 holds by cancellation in `s`, not pointwise; see
+`docs/audits/2026-07-25-covariance-kernel-A2-pointwise-reduction-falsified.md`. The live lead is
+the moment-skeleton / even-hook-power route (`a168710a0d`: even hook-power moment positivity
+PROVED). -/
 
 /-- Finite list sums subtract termwise. -/
 theorem list_sum_map_sub {ι : Type*} (L : List ι) (f g : ι → ℝ) :
@@ -384,7 +389,9 @@ theorem covLnF_eq_neg_covLnHooks (k : ℕ) : covLnF k = -covLnHooks k := by
 
 /-- **Leg [A2] in hook form**: `Cov₂(ln f, ω₃) ≤ 0 ↔ 0 ≤ Cov₂(ln ∏h, ω₃)` — the anti-correlation
 of dimension with spread is exactly the *positive* correlation of total log-hook with spread. The
-open [A2] target, restated on the analytic hook statistic the Frullani route attacks. -/
+open [A2] target, restated on the hook statistic. (The pointwise-in-`s` Frullani attack on it is
+refuted for `n ≥ 29`; the surviving routes are integral-level cancellation and the
+moment-skeleton / even-hook-power lead.) -/
 theorem covLnF_nonpos_iff (k : ℕ) : covLnF k ≤ 0 ↔ 0 ≤ covLnHooks k := by
   rw [covLnF_eq_neg_covLnHooks]
   constructor <;> intro h <;> linarith
