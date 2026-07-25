@@ -58,13 +58,26 @@ $$
 genuine Mathlib gap (not present in Mathlib or the QOU corpus as of 2026-07-25).
 It splits into:
 
-- **V1 (W-P2a, cheap, formalize-first):** the constant as a Lean integral —
-  `∫₀^∞ log(1 − e^{−s}) ds = −ζ(2) = −π²/6`, via
-  `−log(1−e^{−s}) = Σ_{j≥1} e^{−js}/j` (nonneg) ⇒ `integral_tsum` ⇒
-  `Σ_j (1/j)(1/j) = ζ(2)` (`hasSum_zeta_two`). Mirrors the merged `LiTwo_one`.
-- **V2 (W-P2b, medium):** the Riemann-sum / dominated-convergence exchange
-  `(1−p)·Σ_{m≥1} log(1−pᵐ) → ∫₀^∞ log(1−e^{−s}) ds`, reducing the eta asymptotic
-  to V1.
+- **V1 (cheap, LANDED sorry-free — #4191):** the two Tannery/DCT inputs for the
+  Lambert `j`-series, `DilogPartBEulerTail.lean`:
+  - `euler_tail_coeff_limit` — termwise `(1−p)pʲ/(1−pʲ) → 1/j`;
+  - `euler_tail_coeff_le` + `euler_tail_coeff_nonneg` — uniform `0 ≤ · ≤ 1/j`
+    (⇒ `·×(1/j)` dominated by summable `1/j²`).
+- **V2 (medium):**
+  - **V2b (heart, LANDED sorry-free — #4191):** `euler_tail_jseries_tendsto` —
+    `Σⱼ (1/j)(1−p)pʲ/(1−pʲ) → Σⱼ 1/j² = π²/6` via Tannery
+    (`tendsto_tsum_of_dominated_convergence`, arbitrary filter) + `hasSum_zeta_two`.
+  - **V2a (remaining — the Lambert rearrangement):** for `p∈(0,1)`,
+    `Σ'_m −log(1−p^{m+1}) = Σ'_j (1/(j+1))·p^{j+1}/(1−p^{j+1})`, a **nonneg Fubini**
+    (`tsum_comm` / `summable_prod_of_nonneg`) on `a m j = p^{(m+1)(j+1)}/(j+1)`:
+    - row: `Σ'_j a m j = −log(1−p^{m+1})` — reuse the corpus primitive
+      `neg_log_one_sub_hasSum` (`DilogarithmArchimedeanLimit.lean:264`).
+    - col: `Σ'_m a m j = (1/(j+1))·p^{j+1}/(1−p^{j+1})` — geometric shift
+      `Σ'_m r^{m+1} = r/(1−r)`.
+    - summability of the uncurried family from rows-summable + row-sums-summable
+      (`Σ_m −log(1−p^{m+1})` summable, the one nontrivial bound).
+    Combined with V2b this gives the eta asymptotic
+    `(1−p)·Σ'_m −log(1−p^{m+1}) → π²/6`, i.e. `(1−p)·log ∏(1−pᵐ) → −π²/6`.
 
 ### W-P1 is the Part-A Riemann sum on the far side of the branch point
 
