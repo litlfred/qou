@@ -1084,4 +1084,47 @@ theorem global_finiteness_subthreshold {δ c ν μ : K}
   rw [abs_of_nonneg (hnn n)]
   linarith
 
+/-! ### GP5 — the Riccati lower bound: mechanism-level branch A
+
+The blow-up side of the GP calculus. If super-threshold colliding-pair data
+satisfies the quadratic *lower* bound `Ω_{n+1} ≥ Ω_n + δc'Ω_n²` (the
+production-dominated regime the categorical mechanism selects at the collision
+locus, cf. `rem:hyperbolic-overlap-saturation` /
+`rem:townsend-biot-savart-strain`), the enstrophy grows at least linearly at
+rate `δc'Ω₀²` — on any archimedean instance this forces divergence past every
+bound; on a surreal line it certifies growth of that grade. Whether the actual
+colliding-pair data satisfies the lower bound is the open verification (the
+in-QOU residue of the millennium problem); not asserted. -/
+
+/-- **Discrete Riccati lower growth.** `Ω_{n+1} ≥ Ω_n + δc'Ω_n²` with `δc' ≥ 0`
+    ⇒ the sequence is non-decreasing and `Ω_n ≥ Ω₀ + n·δc'Ω₀²`: linear growth
+    at the initial production rate, forever. -/
+-- Ref: [manuscript] fluid-dynamics/hyperbolic-overlap-saturation, townsend-biot-savart-strain
+theorem riccati_lower_growth {δ c' : K} (hδ : 0 ≤ δ) (hc : 0 ≤ c')
+    (Ω : ℕ → K) (hnn : ∀ n, 0 ≤ Ω n)
+    (hstep : ∀ n, Ω n + δ * c' * (Ω n) ^ 2 ≤ Ω (n + 1)) :
+    ∀ n : ℕ, Ω 0 + (n : K) * (δ * c' * (Ω 0) ^ 2) ≤ Ω n := by
+  have hδc : 0 ≤ δ * c' := mul_nonneg hδ hc
+  -- monotonicity
+  have hmono : ∀ n, Ω 0 ≤ Ω n := by
+    intro n
+    induction n with
+    | zero => exact le_refl _
+    | succ n ih =>
+        have h1 := hstep n
+        have h2 : 0 ≤ δ * c' * (Ω n) ^ 2 := by positivity
+        linarith
+  intro n
+  induction n with
+  | zero => simp
+  | succ n ih =>
+      have h1 := hstep n
+      have h0n := hmono n
+      have hsq : (Ω 0) ^ 2 ≤ (Ω n) ^ 2 := by nlinarith [hnn 0]
+      have hsq' : δ * c' * (Ω 0) ^ 2 ≤ δ * c' * (Ω n) ^ 2 :=
+        mul_le_mul_of_nonneg_left hsq hδc
+      have hpush : ((n + 1 : ℕ) : K) = (n : K) + 1 := by push_cast; ring
+      rw [hpush]
+      linarith
+
 end QOU.FluidDynamics
