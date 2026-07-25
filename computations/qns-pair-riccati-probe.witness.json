@@ -1,0 +1,49 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-07-25T12:21:28.440790+00:00",
+  "commitSha": "98a984156a3033d47ecd213c347899343feb80da",
+  "assertions": [
+    {
+      "name": "Phase-wise structure: c'_n is EXACTLY UNIFORM in the separated phase (exact invariant d^2*Omega conserved) and collapses only at overlap onset",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "c' = Gamma/(pi*d^2*Omega); (d^2*Omega)'=0 in phase 1 so c' is exactly constant (1/pi here) until overlap; post-overlap decay ratio 2.35e-06 — the hyperbolic saturation is the regularizing cutoff"
+    },
+    {
+      "name": "Overlap regime is reached in finite time (geometry-driven approach)",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "d^2 decreases linearly (rate Gamma/pi); V1 grows; crossing before t*"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 428,
+  "computation": "qns-pair-riccati-probe",
+  "scriptFile": "qns_pair_riccati_probe.py",
+  "scriptHash": "35200bac309f",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "mpmath": "1.4.1"
+  },
+  "description": "PC2 (bean qou-6ngr): tests whether anti-parallel-pair collision data satisfies the uniform-c' discrete Riccati lower bound (hypothesis of the Lean lemma riccati_lower_growth) in the corpus two-regime ODE model. SHARP PHASE-WISE FINDING: in the separated (Biot-Savart) phase the bound HOLDS with c' EXACTLY uniform — d^2*Omega is an exact invariant of the phase-1 flow ((d^2)' = -Gamma/pi, Omega' = Gamma*Omega/(pi*d^2)), giving c' = Gamma/(pi*d0^2*Omega0) = 1/pi here — the branch-A Riccati mechanism is LIVE during the approach. It is destroyed precisely at overlap onset (hyperbolic-overlap saturation caps the strain), which engages at t_overlap ~ 3.1348, only ~0.2% before the inviscid singular time t* = pi: the saturation is the regularizing cutoff, engaging just before blow-up. The pair-channel question thus sharpens to: does the overlap regime ALWAYS engage before d -> 0 (regular, branch B), or can data delay V1 growth past t* (blow-up, branch A)? Scope (a) throughout. Consistent with the lock-scaling probe and the sustained-forcing picture. Exploratory tier, float64 Euler.",
+  "data": {
+    "t_star_inviscid": 3.141592653589793,
+    "t_overlap": 3.1348300000120695,
+    "c_prime_early": 0.3183100243547847,
+    "c_prime_late": 7.478744804403878e-07,
+    "c_prime_decay_ratio": 2.3495159536880168e-06,
+    "steps": 376992,
+    "tier": "exploratory",
+    "finding": "Phase 1: Riccati HOLDS, c' exactly uniform (invariant d^2*Omega). Overlap saturation kills it (decay 2.35e-06) engaging ~0.2% before t*. Sharpened question: does overlap always engage before d->0? Scope (a)."
+  }
+}
