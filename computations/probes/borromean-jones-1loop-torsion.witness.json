@@ -1,0 +1,34 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-25T12:23:23.121330+00:00",
+  "commitSha": "",
+  "scriptFile": "computations/probes/borromean_jones_1loop_torsion.py",
+  "scriptHash": "08152c02ba94",
+  "scriptCommitSha": "",
+  "description": "Subleading (power-of-N + 1-loop constant c\u2080) extraction from the Borromean colored-Jones Kashaev asymptotics, Vol fixed = 8G. The next honest bridge data below the volume. Audit-only; no fit; nothing wired.",
+  "auditOnly": true,
+  "parameters": {
+    "NMAX": 44,
+    "tail_lo": 16,
+    "root": "q=exp(2\u03c0i/N)"
+  },
+  "data": {
+    "vol_borromean_8G": "7.3277247534177521204",
+    "fit_vol_fixed": {
+      "power_p": 1.506386294426628,
+      "c0": -1.4165789492717569,
+      "d": 1.9432435960789878
+    },
+    "fit_free_slope": {
+      "slope_a": 1.1659580304738142,
+      "vol_from_slope": 7.325930365861118,
+      "power_p": 1.5220690609418792,
+      "c0": -1.4681027693235424,
+      "d": 2.147005742565109
+    },
+    "exp_c0_raw_1loop_amplitude": 0.24254234888557374,
+    "verdict_leading_volume_ok": true,
+    "note": "c0 is a MEASURED constant; comparison to the adjoint Reidemeister torsion tau(B3) requires the octahedral Neumann-Zagier 1-loop computation (follow-up)."
+  }
+}
