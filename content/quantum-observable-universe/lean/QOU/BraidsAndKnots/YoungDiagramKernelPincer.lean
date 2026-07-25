@@ -1,6 +1,7 @@
 import QOU.BraidsAndKnots.YoungDiagramKernel
 import QOU.BraidsAndKnots.YoungDiagramTransposeBridge
 import QOU.BraidsAndKnots.YoungDiagramKernelDimPos
+import QOU.BraidKnot.IdentityIContentDecomposition
 import Mathlib.Analysis.SpecialFunctions.Log.Basic
 import Mathlib.Analysis.SpecialFunctions.ExpDeriv
 
@@ -395,5 +396,149 @@ moment-skeleton / even-hook-power lead.) -/
 theorem covLnF_nonpos_iff (k : ℕ) : covLnF k ≤ 0 ↔ 0 ≤ covLnHooks k := by
   rw [covLnF_eq_neg_covLnHooks]
   constructor <;> intro h <;> linarith
+
+/-! ## The second-moment anchor: `Cov₂(Σ_□h², ω₃) = Var₂(ω₃) ≥ 0`
+
+The surviving A2 lead (the moment skeleton) constrains the hook-spectrum covariances
+`ν_v = Cov₂(N_v, ω₃)` by exact moments; its second moment is `Σ_v v²·ν_v = Cov₂(Σ_□h², ω₃)`.
+The classical identity `Σ_□h² = Σ_□c² + n²` (proved outright in the corpus,
+`IdentityI.sumSqHooks_eq_sumSqContents_add_sq`) makes the hook-square statistic a *constant
+shift* of `ω₃` on `partsOf k` — so this covariance **is** the variance of `ω₃`, hence
+nonnegative. Lean-locks the anchor `Σ_v v²·ν_v = Var₂(ω₃) ≥ 0` of the ν-system. -/
+
+/-- Finite list sums add termwise. -/
+theorem list_sum_map_add {ι : Type*} (L : List ι) (f g : ι → ℝ) :
+    (L.map (fun i => f i + g i)).sum = (L.map f).sum + (L.map g).sum := by
+  induction L with
+  | nil => simp
+  | cons a t ih =>
+      simp only [List.map_cons, List.sum_cons, ih]
+      ring
+
+/-- `IdentityI.sumSqContents` is the kernel's `contentSq` (two formalizations of the same
+nested sum). -/
+theorem sumSqContents_eq_contentSq (l : List ℕ) :
+    QOU.BraidKnot.IdentityI.sumSqContents l = contentSq l := by
+  unfold QOU.BraidKnot.IdentityI.sumSqContents
+  rw [contentSq_eq_finset_sum, list_sum_map_range]
+  refine Finset.sum_congr rfl fun i _ => ?_
+  rw [list_sum_map_range]
+
+/-- **The hook-square statistic is a constant shift of `ω₃`** on enumerated partitions:
+`Σ_□h² = ω₃ + C(k,2) + k²` — the corpus identity `Σh² = Σc² + n²` plus `Σc² = ω₃ + C(k,2)`,
+with both shift terms constant across `partsOf k`. -/
+theorem sumSqHooks_eq_omega3_add (k : ℕ) (l : List ℕ) (hl : l ∈ partsOf k) :
+    QOU.BraidKnot.IdentityI.sumSqHooks l
+      = omega3 k l + ((k * (k - 1) / 2 : ℕ) : ℤ) + (k : ℤ) ^ 2 := by
+  obtain ⟨hsum, _, hsort⟩ := partsOf_facts k l hl
+  have h1 := QOU.BraidKnot.IdentityI.sumSqHooks_eq_sumSqContents_add_sq l hsort
+  have hsz : QOU.BraidKnot.IdentityI.sz l = k := hsum
+  rw [h1, sumSqContents_eq_contentSq, hsz]
+  unfold omega3
+  ring
+
+/-- Second moment `E₂[ω₃²]`. -/
+noncomputable def omegaSqMoment (k : ℕ) : ℝ :=
+  ((partsOf k).map (fun l => tilt 0 (sytDim l) * (omega3 k l : ℝ) ^ 2)).sum / tiltNorm k 0
+
+/-- **The variance `Var₂(ω₃)`** under the Plancherel-squared weight. -/
+noncomputable def omegaVar (k : ℕ) : ℝ := omegaSqMoment k - tiltedMean k 0 ^ 2
+
+/-- First hook-square moment `E₂[Σh²]`. -/
+noncomputable def hookSqMoment (k : ℕ) : ℝ :=
+  ((partsOf k).map (fun l =>
+    tilt 0 (sytDim l) * (QOU.BraidKnot.IdentityI.sumSqHooks l : ℝ))).sum / tiltNorm k 0
+
+/-- Mixed hook-square moment `E₂[Σh²·ω₃]`. -/
+noncomputable def hookSqOmegaMoment (k : ℕ) : ℝ :=
+  ((partsOf k).map (fun l =>
+    tilt 0 (sytDim l) * (QOU.BraidKnot.IdentityI.sumSqHooks l : ℝ)
+      * (omega3 k l : ℝ))).sum / tiltNorm k 0
+
+/-- **The second moment of the ν-system**: `Cov₂(Σ_□h², ω₃)`. -/
+noncomputable def covHookSq (k : ℕ) : ℝ :=
+  hookSqOmegaMoment k - hookSqMoment k * tiltedMean k 0
+
+/-- **`Cov₂(Σ_□h², ω₃) = Var₂(ω₃)`** — the constant shift drops from the covariance. -/
+theorem covHookSq_eq_omegaVar (k : ℕ) : covHookSq k = omegaVar k := by
+  set c : ℝ := ((((k * (k - 1) / 2 : ℕ) : ℤ) + (k : ℤ) ^ 2 : ℤ) : ℝ) with hc
+  have hshift : ∀ l ∈ partsOf k,
+      (QOU.BraidKnot.IdentityI.sumSqHooks l : ℝ) = (omega3 k l : ℝ) + c := by
+    intro l hl
+    rw [hc]
+    exact_mod_cast congrArg (fun z : ℤ => (z : ℝ))
+      (by rw [sumSqHooks_eq_omega3_add k l hl]; ring :
+        QOU.BraidKnot.IdentityI.sumSqHooks l
+          = omega3 k l + (((k * (k - 1) / 2 : ℕ) : ℤ) + (k : ℤ) ^ 2))
+  have hnum1 : ((partsOf k).map (fun l =>
+        tilt 0 (sytDim l) * (QOU.BraidKnot.IdentityI.sumSqHooks l : ℝ))).sum
+      = tiltOmega k 0 + c * tiltNorm k 0 := by
+    rw [List.map_congr_left (fun l hl => by rw [hshift l hl]; ring :
+      ∀ l ∈ partsOf k, tilt 0 (sytDim l) * (QOU.BraidKnot.IdentityI.sumSqHooks l : ℝ)
+        = tilt 0 (sytDim l) * (omega3 k l : ℝ) + c * tilt 0 (sytDim l))]
+    rw [list_sum_map_add, list_sum_map_mul_left]
+    rfl
+  have hnum2 : ((partsOf k).map (fun l =>
+        tilt 0 (sytDim l) * (QOU.BraidKnot.IdentityI.sumSqHooks l : ℝ)
+          * (omega3 k l : ℝ))).sum
+      = ((partsOf k).map (fun l =>
+          tilt 0 (sytDim l) * (omega3 k l : ℝ) ^ 2)).sum + c * tiltOmega k 0 := by
+    rw [List.map_congr_left (fun l hl => by rw [hshift l hl]; ring :
+      ∀ l ∈ partsOf k, tilt 0 (sytDim l) * (QOU.BraidKnot.IdentityI.sumSqHooks l : ℝ)
+          * (omega3 k l : ℝ)
+        = tilt 0 (sytDim l) * (omega3 k l : ℝ) ^ 2
+            + c * (tilt 0 (sytDim l) * (omega3 k l : ℝ)))]
+    rw [list_sum_map_add, list_sum_map_mul_left]
+    rfl
+  unfold covHookSq hookSqOmegaMoment hookSqMoment omegaVar omegaSqMoment tiltedMean
+  rw [hnum1, hnum2]
+  rcases eq_or_ne (tiltNorm k 0) 0 with hZ | hZ
+  · simp [hZ]
+  · field_simp
+    ring
+
+/-- The tilted weight is nonnegative (with no positivity hypothesis). -/
+theorem tilt_nonneg (θ : ℝ) (f : ℕ) : 0 ≤ tilt θ f :=
+  mul_nonneg (sq_nonneg _) (Real.exp_pos _).le
+
+/-- The variance in centered form: `Var₂(ω₃) = E₂[(ω₃ − E₂[ω₃])²]`. -/
+theorem omegaVar_eq_centered (k : ℕ) :
+    omegaVar k = ((partsOf k).map (fun l =>
+      tilt 0 (sytDim l) * ((omega3 k l : ℝ) - tiltedMean k 0) ^ 2)).sum / tiltNorm k 0 := by
+  have hexp : ∀ l ∈ partsOf k,
+      tilt 0 (sytDim l) * ((omega3 k l : ℝ) - tiltedMean k 0) ^ 2
+        = tilt 0 (sytDim l) * (omega3 k l : ℝ) ^ 2
+            + ((-(2 * tiltedMean k 0)) * (tilt 0 (sytDim l) * (omega3 k l : ℝ))
+              + tiltedMean k 0 ^ 2 * tilt 0 (sytDim l)) := by
+    intro l _
+    ring
+  rw [List.map_congr_left hexp, list_sum_map_add, list_sum_map_add,
+    list_sum_map_mul_left, list_sum_map_mul_left]
+  have hW : ((partsOf k).map (fun l => tilt 0 (sytDim l) * (omega3 k l : ℝ))).sum
+      = tiltOmega k 0 := rfl
+  have hZr : ((partsOf k).map (fun l => tilt 0 (sytDim l))).sum = tiltNorm k 0 := rfl
+  rw [hW, hZr]
+  unfold omegaVar omegaSqMoment tiltedMean
+  rcases eq_or_ne (tiltNorm k 0) 0 with hZ | hZ
+  · simp [hZ]
+  · field_simp
+    ring
+
+/-- **The second-moment anchor, Lean-locked**: `0 ≤ Cov₂(Σ_□h², ω₃)` — the ν-system's second
+moment `Σ_v v²·ν_v` is a variance, hence nonnegative, at every level `k`. (Contrast with the
+*zeroth* moment `Σ_v ν_v = 0` and the refuted pointwise sign: the moment skeleton's exact
+constraints survive and this one is now machine-checked.) -/
+theorem covHookSq_nonneg (k : ℕ) : 0 ≤ covHookSq k := by
+  rw [covHookSq_eq_omegaVar, omegaVar_eq_centered]
+  apply div_nonneg
+  · apply List.sum_nonneg
+    intro x hx
+    obtain ⟨l, _, rfl⟩ := List.mem_map.mp hx
+    exact mul_nonneg (tilt_nonneg 0 _) (sq_nonneg _)
+  · unfold tiltNorm
+    apply List.sum_nonneg
+    intro x hx
+    obtain ⟨l, _, rfl⟩ := List.mem_map.mp hx
+    exact tilt_nonneg 0 _
 
 end QOU.BraidsAndKnots.YoungDiagramKernelPincer
