@@ -1,0 +1,42 @@
+{
+  "engine": "python-exact+float",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-07-25T17:14:30.697029+00:00",
+  "commitSha": "74f7825bbad0d1a9e072310e504ab24a972a770d",
+  "assertions": [
+    {
+      "name": "covariance_epic_A2_moment_skeleton",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "M_k=Cov(Sum h^k, Sum h^2)>0 for k=1..12, n<=40 (robust surviving structure); GF dichotomy G(t)>0 for t>0 vs Cov(H_s,omega3) positive for n>=29 at t<0; even-k M_k shifted-symmetric => exact poly in n (IO 5.1), positive leading coeff => provable. Structure + proof-lead, not a proof of A2/kernel. No fit; no c_k."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 10,
+  "computation": "wlambda-covariance-epic-A2-moment-skeleton",
+  "scriptFile": "wlambda_covariance_epic_A2_moment_skeleton.py",
+  "scriptHash": "1a67fcadc56a",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "The structure that SURVIVES the A2 pointwise-reduction death (qou-x631, qou-ogrk). Moment tower M_k=Σ_v v^k ν_v=Cov_Planch(Σ_□ h^k, Σ_□ h²): M_0=0, M_2=|C₃|=n(n−1)(n−2)/3, and M_1..M_12>0 ROBUSTLY (verified n≤40) — unlike the pointwise property that failed at n=29. Generating-function dichotomy: G(t)=Σ ν_v e^{tv}=Σ_{k≥1} t^k M_k/k! is >0 for t>0 (every term positive) but for t=−s<0 equals Cov(H_s,ω₃) with alternating terms that go positive for n≥29 — the same GF on opposite half-lines, so pointwise-death and moment-survival are one phenomenon. A2's weight ln(v) is increasing (surviving family), A2=−Σ ln(v)ν_v≤0 holds robustly, but ln is concave (not a positive power combination) so M_k>0 does not close A2 (needs a global argument, per the correction). PROOF LEAD: for even k both Σh^{2j} and Σh² are shifted-symmetric, so M_{2j}=Cov(Σh^{2j},Σh²) is an EXACT polynomial in n with positive leading coefficient (Ivanov-Olshanski Prop 5.1, math/0304010) ⇒ positivity reduces to a finite polynomial check + tail-by-leading-term ⇒ PROVABLE; odd-k non-polynomial, empirical. Isolates the robust surviving structure + a provable even-k sub-target; does NOT prove A2 or the kernel. scope-(a); no fit; nothing wired; no c_k; L2 2/7.",
+  "data": {
+    "moment_skeleton_Mk_positive_kmax": 12,
+    "moment_skeleton_robust_nmax": 40,
+    "M0_zero_M2_is_C3": "M_0=0, M_2=n(n-1)(n-2)/3=|C3|",
+    "gf_dichotomy": "G(t)=Sum nu_v e^{tv}: t>0 strictly positive (M_k>0); t<0 = Cov(H_s,omega3), positive for n>=29",
+    "even_k_shifted_symmetric_polynomial_in_n": true,
+    "even_k_proof_lead": "M_{2j}=Cov(Sum h^{2j}, Sum h^2) exact poly in n via IO Prop 5.1, positive leading coeff -> finite positivity check"
+  }
+}
