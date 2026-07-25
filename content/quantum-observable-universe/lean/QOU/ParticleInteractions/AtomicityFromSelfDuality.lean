@@ -1,4 +1,5 @@
 import Mathlib.Data.Nat.Choose.Basic
+import Mathlib.LinearAlgebra.SymplecticGroup
 import Mathlib.Tactic
 
 /-!
@@ -98,5 +99,31 @@ theorem atomicity_subsingleton_of_self_dual {dimV rankG : ℕ} {rankSp : ℕ →
     (hEmbed : rankG ≤ rankSp dimV) (hRankSp : ∀ m, rankSp (2 * m) = m)
     (hDim : dimV = 2) : Subsingleton (Fin rankG) :=
   subsingleton_fin_of_le_one (rankG_le_one_of_self_dual hEmbed hRankSp hDim)
+
+/-! ## T1 — the matrix-level self-duality constraint `det² = 1` (Mathlib-ext infra) -/
+
+section SymplecticDet
+open Matrix
+
+/-- **T1 — symplectic ⟹ `(det A)² = 1` (matrix-group infra).** A symplectic matrix
+    satisfies `A · J · Aᵀ = J`; taking determinants (`det J` is a unit,
+    `isUnit_det_J`) gives `(det A)² = 1`. This is the matrix-group shadow of
+    "self-duality constrains the determinant": in *every* dimension a
+    symplectic-form-preserving map has `det = ±1`. The refinement `det A = +1`
+    (excluding `−1`), and thereby the `Sp₂ = SL₂` dim-2 accident, is the deeper
+    connectedness / Pfaffian fact — the base case of the classical residual T3,
+    tracked in beans `qou-atsd-t1`/`t3`. Holds over any `CommRing`. -/
+theorem symplectic_det_sq_eq_one {l : Type*} [DecidableEq l] [Fintype l]
+    {R : Type*} [CommRing R] {A : Matrix (l ⊕ l) (l ⊕ l) R}
+    (hA : A ∈ symplecticGroup l R) : det A ^ 2 = 1 := by
+  have hmem : A * J l R * Aᵀ = J l R := (SymplecticGroup.mem_iff).mp hA
+  have hdet : det A * det (J l R) * det A = det (J l R) := by
+    have h := congrArg det hmem
+    rwa [det_mul, det_mul, det_transpose] at h
+  have key : det (J l R) * det A ^ 2 = det (J l R) * 1 := by
+    rw [mul_one, sq]; linear_combination hdet
+  exact (isUnit_det_J l R).mul_left_cancel key
+
+end SymplecticDet
 
 end QOU.Atomicity
