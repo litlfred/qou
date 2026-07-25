@@ -363,4 +363,210 @@ theorem kernel_summand_conj (k : ℕ) (l : List ℕ) (hs : l.Sorted (· ≥ ·))
       = (sytDim l : ℤ) ^ 3 * omega3 k l := by
   rw [sytDim_conj l hs hpos, omega3_conj k l hs]
 
+/-! ## `partsOf`: soundness, completeness, nodup, and the conjugation permutation
+
+`partsFuel` enumerates partitions structurally; to lift the summand pairing to `kernelValue k`
+itself we need: every member is a sorted positive partition of `n` with parts `≤ maxP`
+(soundness), every such list is a member (completeness), the enumeration has no duplicates, and
+therefore `conj` — an involution on exactly this member set — permutes `partsOf k`. -/
+
+/-- **Soundness** of the enumeration: every member of `partsFuel f n maxP` is a weakly-decreasing
+list of positive parts `≤ maxP` summing to `n`. -/
+theorem partsFuel_mem (f : ℕ) : ∀ (n maxP : ℕ) (l : List ℕ), l ∈ partsFuel f n maxP →
+    l.sum = n ∧ (∀ x ∈ l, 0 < x) ∧ (∀ x ∈ l, x ≤ maxP) ∧ l.Sorted (· ≥ ·) := by
+  induction f with
+  | zero =>
+      intro n maxP l hl
+      cases n with
+      | zero =>
+          simp only [partsFuel, List.mem_singleton] at hl
+          subst hl
+          simp
+      | succ m => simp [partsFuel] at hl
+  | succ f ih =>
+      intro n maxP l hl
+      cases n with
+      | zero =>
+          simp only [partsFuel, List.mem_singleton] at hl
+          subst hl
+          simp
+      | succ m =>
+          simp only [partsFuel, List.mem_flatMap, List.mem_map] at hl
+          obtain ⟨i, hi, r, hr, rfl⟩ := hl
+          rw [List.mem_range'_1] at hi
+          obtain ⟨h1i, h2i⟩ := hi
+          obtain ⟨hsum, hpos, hle, hsort⟩ := ih (m + 1 - i) i r hr
+          have hiM : i ≤ maxP := by omega
+          refine ⟨by rw [List.sum_cons, hsum]; omega, ?_, ?_, ?_⟩
+          · intro x hx
+            rcases List.mem_cons.mp hx with rfl | hx
+            · omega
+            · exact hpos x hx
+          · intro x hx
+            rcases List.mem_cons.mp hx with rfl | hx
+            · exact hiM
+            · exact le_trans (hle x hx) hiM
+          · rw [List.sorted_cons]
+            exact ⟨fun b hb => hle b hb, hsort⟩
+
+/-- The three `partsOf` member facts used downstream. -/
+theorem partsOf_facts (k : ℕ) (l : List ℕ) (hl : l ∈ partsOf k) :
+    l.sum = k ∧ (∀ x ∈ l, 0 < x) ∧ l.Sorted (· ≥ ·) := by
+  obtain ⟨h1, h2, _, h4⟩ := partsFuel_mem k k k l hl
+  exact ⟨h1, h2, h4⟩
+
+/-- **Completeness** of the enumeration: every weakly-decreasing positive list summing to `n`
+with parts `≤ maxP` and at most `f` parts is a member of `partsFuel f n maxP`. -/
+theorem mem_partsFuel (l : List ℕ) : ∀ (f n maxP : ℕ), l.sum = n →
+    (∀ x ∈ l, 0 < x) → (∀ x ∈ l, x ≤ maxP) → l.Sorted (· ≥ ·) → l.length ≤ f →
+    l ∈ partsFuel f n maxP := by
+  induction l with
+  | nil =>
+      intro f n maxP hsum _ _ _ _
+      rw [List.sum_nil] at hsum
+      subst hsum
+      cases f <;> simp [partsFuel]
+  | cons a t iht =>
+      intro f n maxP hsum hpos hle hsort hfuel
+      have ha : 0 < a := hpos a List.mem_cons_self
+      obtain ⟨hat, hst⟩ := List.sorted_cons.mp hsort
+      rw [List.sum_cons] at hsum
+      rw [List.length_cons] at hfuel
+      cases f with
+      | zero => omega
+      | succ f' =>
+          cases n with
+          | zero => omega
+          | succ m =>
+              simp only [partsFuel, List.mem_flatMap, List.mem_map]
+              refine ⟨a, ?_, t, ?_, rfl⟩
+              · rw [List.mem_range'_1]
+                have := hle a List.mem_cons_self
+                omega
+              · exact iht f' (m + 1 - a) a (by omega)
+                  (fun x hx => hpos x (List.mem_cons_of_mem a hx))
+                  (fun x hx => hat x hx) hst (by omega)
+
+/-- Auxiliary: a `flatMap` of head-tagged families over a nodup index list is nodup. -/
+theorem nodup_flatMap_cons (xs : List ℕ) (F : ℕ → List (List ℕ)) (hxs : xs.Nodup)
+    (hF : ∀ i, (F i).Nodup) :
+    (xs.flatMap fun i => (F i).map (i :: ·)).Nodup := by
+  induction xs with
+  | nil => simp
+  | cons x t ihx =>
+      obtain ⟨hx, ht⟩ := List.nodup_cons.mp hxs
+      rw [List.flatMap_cons, List.nodup_append]
+      refine ⟨(hF x).map (fun a b h => by injection h), ihx ht, ?_⟩
+      intro y hy z hz
+      obtain ⟨r, _, rfl⟩ := List.mem_map.mp hy
+      obtain ⟨i, hi, hz2⟩ := List.mem_flatMap.mp hz
+      obtain ⟨r', _, heq⟩ := List.mem_map.mp hz2
+      intro hyz
+      rw [← heq] at hyz
+      injection hyz with h1 _
+      exact hx (h1 ▸ hi)
+
+/-- The enumeration has **no duplicates**. -/
+theorem partsFuel_nodup (f : ℕ) : ∀ (n maxP : ℕ), (partsFuel f n maxP).Nodup := by
+  induction f with
+  | zero => intro n maxP; cases n <;> simp [partsFuel]
+  | succ f ih =>
+      intro n maxP
+      cases n with
+      | zero => simp [partsFuel]
+      | succ m =>
+          simp only [partsFuel]
+          exact nodup_flatMap_cons _ _ (List.nodup_range') (fun i => ih _ _)
+
+/-- Positive lists have at least as many boxes as parts. -/
+theorem length_le_sum (l : List ℕ) (hpos : ∀ x ∈ l, 0 < x) : l.length ≤ l.sum := by
+  induction l with
+  | nil => simp
+  | cons a t ih =>
+      rw [List.length_cons, List.sum_cons]
+      have h1 := hpos a List.mem_cons_self
+      have h2 := ih fun x hx => hpos x (List.mem_cons_of_mem a hx)
+      omega
+
+/-- Parts of `conj l` are positive: the count of parts exceeding `j < headD` includes the head. -/
+theorem conj_pos (l : List ℕ) (x : ℕ) (hx : x ∈ conj l) : 0 < x := by
+  unfold conj at hx
+  obtain ⟨j, hj, rfl⟩ := List.mem_map.mp hx
+  rw [List.mem_range] at hj
+  refine Nat.pos_of_ne_zero fun h0 => ?_
+  cases l with
+  | nil => simp at hj
+  | cons a t =>
+      rw [List.headD_cons] at hj
+      have := List.countP_eq_zero.mp h0 a List.mem_cons_self
+      simp only [decide_eq_true_iff] at this
+      omega
+
+/-- **`conj` maps `partsOf k` into itself**: the conjugate of a partition of `k` is a partition
+of `k` (size preserved by `sum_conj`; sorted by `conj_sorted`; parts positive; parts `≤ k` since
+a column height is at most the number of parts `≤ k`; length `= headD ≤ k`). -/
+theorem conj_mem_partsOf (k : ℕ) (l : List ℕ) (hl : l ∈ partsOf k) :
+    conj l ∈ partsOf k := by
+  obtain ⟨hsum, hpos, hsort⟩ := partsOf_facts k l hl
+  apply mem_partsFuel (conj l) k k k
+  · rw [sum_conj l hsort, hsum]
+  · exact fun x hx => conj_pos l x hx
+  · intro x hx
+    unfold conj at hx
+    obtain ⟨j, _, rfl⟩ := List.mem_map.mp hx
+    exact le_trans List.countP_le_length (hsum ▸ length_le_sum l hpos)
+  · exact conj_sorted l
+  · rw [length_conj]
+    cases l with
+    | nil => simp
+    | cons a t =>
+        rw [List.headD_cons]
+        rw [List.sum_cons] at hsum
+        omega
+
+/-- **`conj` permutes `partsOf k`**: mapping the (nodup) enumeration through the involution
+reproduces it up to permutation. -/
+theorem map_conj_perm (k : ℕ) : ((partsOf k).map conj).Perm (partsOf k) := by
+  refine (List.perm_ext_iff_of_nodup ((partsFuel_nodup k k k).map_on ?_)
+    (partsFuel_nodup k k k)).mpr ?_
+  · intro x hx y hy hxy
+    obtain ⟨_, hpx, hsox⟩ := partsOf_facts k x hx
+    obtain ⟨_, hpy, hsoy⟩ := partsOf_facts k y hy
+    rw [← conj_conj x hsox hpx, hxy, conj_conj y hsoy hpy]
+  · intro a
+    constructor
+    · intro ha
+      obtain ⟨x, hx, rfl⟩ := List.mem_map.mp ha
+      exact conj_mem_partsOf k x hx
+    · intro ha
+      obtain ⟨_, hpos, hsort⟩ := partsOf_facts k a ha
+      exact List.mem_map.mpr ⟨conj a, conj_mem_partsOf k a ha, conj_conj a hsort hpos⟩
+
+/-- **Reindexing the kernel sum by conjugation** — for ANY integer summand `g`, summing
+`g ∘ conj` over `partsOf k` equals summing `g`. -/
+theorem sum_map_conj (k : ℕ) (g : List ℕ → ℤ) :
+    ((partsOf k).map (fun l => g (conj l))).sum = ((partsOf k).map g).sum := by
+  have h := (map_conj_perm k).map g
+  rw [List.map_map] at h
+  exact h.sum_eq
+
+/-- **The `λ ↔ λ'` pairing of `kernelValue`, all `k`**: replacing every diagram by its conjugate
+in the kernel sum leaves `kernelValue k` unchanged. Combined with `kernel_summand_conj`
+(pointwise summand invariance) this is the full machine-checked statement of the conjugation
+symmetry of the covariance kernel at every level — previously available only `decide`-bounded.
+Scope-honest: a symmetry, not a sign — `covariance_kernel_conjecture` stays open. -/
+theorem kernelValue_conj_reindex (k : ℕ) :
+    ((partsOf k).map (fun l => (sytDim (conj l) : ℤ) ^ 3
+        * (contentSq (conj l) - ((k * (k - 1) / 2 : ℕ) : ℤ)))).sum = kernelValue k := by
+  unfold kernelValue
+  exact sum_map_conj k
+    (fun l => (sytDim l : ℤ) ^ 3 * (contentSq l - ((k * (k - 1) / 2 : ℕ) : ℤ)))
+
+/-- Hypothesis-free summand pairing at enumeration members. -/
+theorem kernel_summand_conj_mem (k : ℕ) (l : List ℕ) (hl : l ∈ partsOf k) :
+    (sytDim (conj l) : ℤ) ^ 3 * omega3 k (conj l)
+      = (sytDim l : ℤ) ^ 3 * omega3 k l := by
+  obtain ⟨_, hpos, hsort⟩ := partsOf_facts k l hl
+  exact kernel_summand_conj k l hsort hpos
+
 end QOU.BraidsAndKnots.YoungDiagramTransposeBridge
