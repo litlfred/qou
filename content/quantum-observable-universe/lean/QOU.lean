@@ -354,6 +354,7 @@ import QOU.Archimedean.DeckRealityEquivariance
 import QOU.Archimedean.BorelProperTimeMoment
 import QOU.MathlibExt.FrechetShohat
 import QOU.Archimedean.BalancedKernelConfluence
+import QOU.Archimedean.BalancedMomentConfluence
 import QOU.Archimedean.LoopWeightRealSymmReduction
 import QOU.Archimedean.MarkovGramRealSymm
 import QOU.Archimedean.MatrixSchurCommutant
