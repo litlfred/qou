@@ -112,4 +112,60 @@ theorem h_monotoneOn_Ioc {x b : ℝ} (hx0 : 0 < x) (hb0 : 0 ≤ b) (hb : x * b <
   have hsec := hconv.secant_mono h0mem humem hvmem (ne_of_gt hu.1) (ne_of_gt hv.1) huv
   simpa [Real.log_one] using hsec
 
+/-! ### V3 brick 3b — going-up per-cell integral bounds
+
+The going-up generalisations of Part A's `h_continuousOn` / `h_intervalIntegrable`
+/ `h_integral_le_right` / `h_integral_ge_left`, on cells `[a,b] ⊆ (0, 1/x)`
+(hypothesis `x·b < 1` in place of `b ≤ 1`).  With `h` monotone increasing
+(`h_monotoneOn_Ioc`), the per-cell integral is squeezed between the left/right
+endpoint values. -/
+
+/-- Continuity of `h(u) = −log(1 − x u)/u` on `[a,b] ⊆ (0, 1/x)` (`x·b < 1`). -/
+theorem h_continuousOn_Icc {x a b : ℝ} (hx0 : 0 < x) (ha : 0 < a) (hb : x * b < 1) :
+    ContinuousOn (fun u => -Real.log (1 - x * u) / u) (Set.Icc a b) := by
+  have hnum : ContinuousOn (fun u : ℝ => -Real.log (1 - x * u)) (Set.Icc a b) := by
+    refine ContinuousOn.neg (ContinuousOn.log
+      ((by fun_prop : Continuous (fun u : ℝ => 1 - x * u)).continuousOn) (fun u hu => ?_))
+    have hxu : x * u ≤ x * b := mul_le_mul_of_nonneg_left hu.2 hx0.le
+    exact ne_of_gt (by linarith)
+  exact hnum.div continuousOn_id (fun u hu => ne_of_gt (lt_of_lt_of_le ha hu.1))
+
+/-- `h` is interval-integrable on any `[a,b] ⊆ (0, 1/x)` (`x·b < 1`). -/
+theorem h_intervalIntegrable_Icc {x a b : ℝ} (hx0 : 0 < x) (ha : 0 < a) (hb : x * b < 1)
+    (hab : a ≤ b) :
+    IntervalIntegrable (fun u => -Real.log (1 - x * u) / u) volume a b := by
+  apply ContinuousOn.intervalIntegrable
+  rw [Set.uIcc_of_le hab]
+  exact h_continuousOn_Icc hx0 ha hb
+
+/-- **Upper cell bound.**  `∫_a^b h ≤ h(b)·(b−a)` on `[a,b] ⊆ (0, 1/x)`
+    (`h` increasing ⇒ `h(b)` is the max). -/
+theorem h_integral_le_right_Icc {x a b : ℝ} (hx0 : 0 < x) (ha : 0 < a) (hb : x * b < 1)
+    (hab : a ≤ b) :
+    (∫ u in a..b, -Real.log (1 - x * u) / u) ≤ (-Real.log (1 - x * b) / b) * (b - a) := by
+  have hb0 : 0 < b := lt_of_lt_of_le ha hab
+  have hbmem : b ∈ Set.Ioc (0 : ℝ) b := ⟨hb0, le_refl b⟩
+  calc (∫ u in a..b, -Real.log (1 - x * u) / u)
+      ≤ ∫ _ in a..b, (-Real.log (1 - x * b) / b) := by
+        refine integral_mono_on hab (h_intervalIntegrable_Icc hx0 ha hb hab)
+          intervalIntegrable_const (fun u hu => ?_)
+        exact h_monotoneOn_Ioc hx0 hb0.le hb ⟨lt_of_lt_of_le ha hu.1, hu.2⟩ hbmem hu.2
+    _ = (-Real.log (1 - x * b) / b) * (b - a) := by
+        rw [intervalIntegral.integral_const, smul_eq_mul]; ring
+
+/-- **Lower cell bound.**  `h(a)·(b−a) ≤ ∫_a^b h` on `[a,b] ⊆ (0, 1/x)`
+    (`h` increasing ⇒ `h(a)` is the min). -/
+theorem h_integral_ge_left_Icc {x a b : ℝ} (hx0 : 0 < x) (ha : 0 < a) (hb : x * b < 1)
+    (hab : a ≤ b) :
+    (-Real.log (1 - x * a) / a) * (b - a) ≤ ∫ u in a..b, -Real.log (1 - x * u) / u := by
+  have hb0 : 0 < b := lt_of_lt_of_le ha hab
+  have hamem : a ∈ Set.Ioc (0 : ℝ) b := ⟨ha, hab⟩
+  calc (-Real.log (1 - x * a) / a) * (b - a)
+      = ∫ _ in a..b, (-Real.log (1 - x * a) / a) := by
+        rw [intervalIntegral.integral_const, smul_eq_mul]; ring
+    _ ≤ ∫ u in a..b, -Real.log (1 - x * u) / u := by
+        refine integral_mono_on hab intervalIntegrable_const
+          (h_intervalIntegrable_Icc hx0 ha hb hab) (fun u hu => ?_)
+        exact h_monotoneOn_Ioc hx0 hb0.le hb hamem ⟨lt_of_lt_of_le ha hu.1, hu.2⟩ hu.1
+
 end QOU.Archimedean
