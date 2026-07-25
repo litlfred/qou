@@ -376,4 +376,91 @@ theorem exists_noResonance_branchPoint_scaling {x : ℝ} (hx0 : 0 < x) (hx1 : x 
   exact ⟨q, m, hq1, hqlim, hbelow,
     wp1_tendsto_of_boundary hx0 hq1 hqlim hbelow habel hbdry⟩
 
+/-- **Sharp general form — vanishing at any controllable rate.**  The boundary term
+    `(q−1)·log(1−xqⁿ) → 0` whenever the branch-point gap is bounded below by a
+    positive `g_j` whose own width-scaled log vanishes, `(q−1)·log(g_j) → 0`.  This is
+    the exact envelope of the no-resonance analysis: the term dies precisely when the
+    gap does not shrink faster than a rate the width `q−1` can absorb.
+    `boundary_tendsto_zero_of_bounded` (`g ≡ 1−ρ`), `_of_noResonance` (`g = c(q−1)`),
+    and `_of_powerBound` (`g = c(q−1)^K`) are the constant / linear / polynomial
+    special cases. -/
+theorem boundary_tendsto_zero_of_rate {x : ℝ} (hx0 : 0 < x)
+    {q : ℕ → ℝ} {n : ℕ → ℕ} {g : ℕ → ℝ} (hq1 : ∀ j, 1 < q j)
+    (hbelow : ∀ j, x * (q j) ^ (n j) < 1)
+    (hg_pos : ∀ j, 0 < g j) (hg_le : ∀ j, g j ≤ 1 - x * (q j) ^ (n j))
+    (hrate : Tendsto (fun j => (q j - 1) * Real.log (g j)) atTop (𝓝 0)) :
+    Tendsto (fun j => (q j - 1) * Real.log (1 - x * (q j) ^ (n j))) atTop (𝓝 0) := by
+  refine tendsto_of_tendsto_of_tendsto_of_le_of_le hrate tendsto_const_nhds
+    (fun j => ?_) (fun j => ?_)
+  · have hqj0 : 0 ≤ q j - 1 := by linarith [hq1 j]
+    exact mul_le_mul_of_nonneg_left (Real.log_le_log (hg_pos j) (hg_le j)) hqj0
+  · have hqpos : 0 < q j := by linarith [hq1 j]
+    have hxqn0 : 0 < x * (q j) ^ (n j) := mul_pos hx0 (pow_pos hqpos _)
+    have hlognonpos : Real.log (1 - x * (q j) ^ (n j)) ≤ 0 :=
+      Real.log_nonpos (by linarith [hbelow j]) (by linarith)
+    exact mul_nonpos_iff.mpr (Or.inl ⟨by linarith [hq1 j], hlognonpos⟩)
+
+/-- **Polynomial no-resonance — the badly-approximable regime.**  If the branch-point
+    gap is bounded below by a fixed power of the cell width, `c·(q−1)^K ≤ 1−xqⁿ`, the
+    boundary term still vanishes.  This is what a **Diophantine (badly-approximable)
+    `x`** supplies: for `q_j = e^{1/j}` the maximal-cell gap is
+    `≈ {j·log(1/x)}·(q_j−1)`, and bounded continued-fraction partial quotients give the
+    three-distance lower bound `{j·log(1/x)} ≥ c/j ≈ c(q_j−1)`, i.e. a *quadratic*
+    bound `K = 2`.  The `K = 1` case is `boundary_tendsto_zero_of_noResonance`.  Proof
+    via `t·log t → 0`, feeding `boundary_tendsto_zero_of_rate`.  (The Diophantine fact
+    "badly-approximable ⇒ quadratic gap" is the genuine number-theoretic input and is
+    the remaining open piece; here it is the explicit hypothesis `hlb`.) -/
+theorem boundary_tendsto_zero_of_powerBound {x c : ℝ} (hx0 : 0 < x) (hc : 0 < c) (K : ℕ)
+    {q : ℕ → ℝ} {n : ℕ → ℕ} (hq1 : ∀ j, 1 < q j)
+    (hqlim : Tendsto q atTop (𝓝 1)) (hbelow : ∀ j, x * (q j) ^ (n j) < 1)
+    (hlb : ∀ j, c * (q j - 1) ^ K ≤ 1 - x * (q j) ^ (n j)) :
+    Tendsto (fun j => (q j - 1) * Real.log (1 - x * (q j) ^ (n j))) atTop (𝓝 0) := by
+  have hbase : Tendsto (fun u : ℝ => Real.log u * u) (𝓝[>] (0 : ℝ)) (𝓝 0) := by
+    have h0 := tendsto_log_mul_rpow_nhdsGT_zero (r := 1) one_pos
+    refine h0.congr' (Filter.Eventually.of_forall (fun u => ?_)); rw [Real.rpow_one]
+  have hq1sub : Tendsto (fun j => q j - 1) atTop (𝓝 0) := by simpa using hqlim.sub_const 1
+  have hsGT : Tendsto (fun j => q j - 1) atTop (𝓝[>] (0 : ℝ)) := by
+    refine tendsto_nhdsWithin_of_tendsto_nhds_of_eventually_within _ hq1sub ?_
+    exact Filter.Eventually.of_forall (fun j => by simp only [Set.mem_Ioi]; linarith [hq1 j])
+  have hslog : Tendsto (fun j => Real.log (q j - 1) * (q j - 1)) atTop (𝓝 0) := hbase.comp hsGT
+  refine boundary_tendsto_zero_of_rate hx0 hq1 hbelow (g := fun j => c * (q j - 1) ^ K)
+    (fun j => mul_pos hc (pow_pos (by linarith [hq1 j]) K)) hlb ?_
+  have hlim : Tendsto
+      (fun j => (q j - 1) * Real.log c + (K : ℝ) * (Real.log (q j - 1) * (q j - 1)))
+      atTop (𝓝 0) := by
+    have h1 := hq1sub.mul_const (Real.log c)
+    have h2 := hslog.const_mul (K : ℝ)
+    simpa using h1.add h2
+  refine hlim.congr (fun j => ?_)
+  have hqp : 0 < q j - 1 := by linarith [hq1 j]
+  rw [Real.log_mul hc.ne' (pow_ne_zero K hqp.ne'), Real.log_pow]
+  ring
+
+/-- **W-P1 branch-point limit for a Diophantine `x` (polynomial no-resonance).**  As
+    `wp1_tendsto_of_noResonance` but with the gap bounded below by any fixed power
+    `c·(q−1)^K ≤ 1−xqⁿ` — the regime a badly-approximable `x` provides (`K = 2`).  The
+    upper bound forces `xqⁿ → 1⁻` (Abel); the polynomial lower bound kills the boundary
+    error.  W-P1 `→ π²/6 − Li₂(x)`. -/
+theorem wp1_tendsto_of_powerBound {x c : ℝ} (hx0 : 0 < x) (hc : 0 < c) (K : ℕ)
+    {q : ℕ → ℝ} {n : ℕ → ℕ} (hq1 : ∀ j, 1 < q j)
+    (hqlim : Tendsto q atTop (𝓝 1)) (hbelow : ∀ j, x * (q j) ^ (n j) < 1)
+    (hub : ∀ j, 1 - x * (q j) ^ (n j) ≤ (q j - 1) / q j)
+    (hlb : ∀ j, c * (q j - 1) ^ K ≤ 1 - x * (q j) ^ (n j)) :
+    Tendsto (fun j => (1 - q j) * ∑ k ∈ Finset.range (n j), Real.log (1 - x * (q j) ^ k))
+      atTop (𝓝 (Real.pi ^ 2 / 6 - LiTwo x)) := by
+  have hqq : Tendsto (fun j => (q j - 1) / q j) atTop (𝓝 0) := by
+    have hn : Tendsto (fun j => q j - 1) atTop (𝓝 0) := by simpa using hqlim.sub_const 1
+    simpa using hn.div hqlim (by norm_num : (1 : ℝ) ≠ 0)
+  have h1sub : Tendsto (fun j => 1 - x * (q j) ^ (n j)) atTop (𝓝 0) :=
+    squeeze_zero (fun j => by linarith [hbelow j]) (fun j => hub j) hqq
+  have hxqn : Tendsto (fun j => x * (q j) ^ (n j)) atTop (𝓝 1) := by
+    have h := (tendsto_const_nhds (x := (1 : ℝ))).sub h1sub
+    simp only [sub_zero] at h
+    exact h.congr (fun j => by ring)
+  have habel : Tendsto (fun j => x * (q j) ^ (n j)) atTop (𝓝[<] (1 : ℝ)) := by
+    refine tendsto_nhdsWithin_of_tendsto_nhds_of_eventually_within _ hxqn ?_
+    exact Filter.Eventually.of_forall (fun j => by simp only [Set.mem_Iio]; exact hbelow j)
+  exact wp1_tendsto_of_boundary hx0 hq1 hqlim hbelow habel
+    (boundary_tendsto_zero_of_powerBound hx0 hc K hq1 hqlim hbelow hlb)
+
 end QOU.Archimedean
