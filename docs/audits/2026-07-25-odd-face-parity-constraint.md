@@ -68,6 +68,24 @@ narrows *how* the split can close (the classical shadow lives on the even block;
 the odd/mixing sector's contribution is a pure q-deformation vanishing at q=1),
 it does **not** close it. The open wall `qou-jqof` remains open.
 
+## Even-face companion — [`QOU/QBeta/EvenFaceMassShadow.lean`](../../content/quantum-observable-universe/lean/QOU/QBeta/EvenFaceMassShadow.lean)
+
+The positive complement to the odd brick (same PR, sorry-free, lean-direct exit 0):
+
+| theorem | statement |
+|---------|-----------|
+| `evenFace_carries_shadow` | for `qCubic = e + o` (`e` bar-even, `o` bar-odd general) every bar-compatible field evaluation gives `φ(qCubic)=φ(e)` — the even/C1 face carries the whole classical value |
+| `oddFace_shadow_null` | `φ(o)=0` — the decay face is classically inert |
+| `parity_decomposition_unique` | **the graded split is canonical:** over char-`≠2`, `qCubic = e+o = e'+o'` (bar-even + bar-odd) forces `e=e'` and `o=o'`. Proof: `e−e'` is both bar-even and bar-odd ⇒ `2·(e−e')=0`. |
+| `evenFace_shadow_faithful` | corollary — the even face's classical shadow is a split-independent invariant of `qCubic` |
+
+`parity_decomposition_unique` is the structural keystone: the even/odd
+(mass/decay) decomposition of the q-cubic has a **single well-defined home**, the
+algebraic counterpart of the super-Berezinian block-diagonalization. Together the
+two bricks say: the classical mass content lives on the uniquely-determined even
+(C1/cosh) face; the odd (GGM/decay/sinh) face and its first mixing cross-term c₃
+contribute exactly zero at q=1.
+
 ## Corpus-grep (per AGENTS.md STRICT)
 
 - `grep -rln "graded.*split\|q_cubic.*C1"` — the target lives in PR #4140's
