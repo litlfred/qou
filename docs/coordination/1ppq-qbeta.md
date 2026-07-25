@@ -2095,3 +2095,26 @@ to 5.8e-4. Held-out-N gated; window solve exact. CONSEQUENCE: the
 odd-channel extraction proceeds on the Masbaum face (per the #4167
 resonance redirect) with the engine as its certified cross-check.
 Scope-(a); no c_k wired.
+
+**2026-07-25 (Masbaum-face odd-channel data) — THE FIRST EXACT
+ODD-CHANNEL NUMBERS ON THE MASBAUM FACE, the substrate Habiro tail,
+and the EXACT bar-side divergence law that poses the resummation
+step.** `qbeta_g3_5two_masbaum_barodd_profile.py` (2/2 green; exact
+integer-Laurent arithmetic for all polynomials): (M1) the
+convergent-side Habiro tail at the substrate is
+F(q₀⁻¹-side) = 0.9861565521419607621… (truncation-certified 1e-40 at
+n = 37). (M2) the bar-side divergence is characterized EXACTLY:
+max_exp(C_{5₂,n}) = 3n² + 5n as an exact integer identity (n = 1..10)
+and min_exp has exact 2nd-difference 2 — so the bar image is q-Gevrey
+of quadratic type with growth constant (3/2)·t·n² in q-units: the
+DERIVED divergence datum the W9 q-Borel/Ecalle lane (sibling bean
+qou-dri7) must resum; a structural echo of the θ⁻²/x²-slot growth on
+the state-integral face is noted, not claimed. (M3) the exact per-n
+bar-odd profile ρ_n = O_n(q₀)/E_n(q₀) (canonical monomial-wise bar
+split, 5₂ chirality ⇒ O_n ≠ 0): ρ₁ = −0.30318, ρ₂ = −0.66918,
+ρ₃ = −0.90334, …, ρ_n → −1 (the C_n become asymptotically PURE
+bar-odd — the unpaired extreme monomials dominate). Scope-(a)
+comparison rows vs the S anchors recorded; NO identification. The
+odd-channel derivation now has exact finite-n data (this), the
+certified analytic backbone (W3 #4172), and a precisely-posed
+resummation step. No fit; no c_k wired.
