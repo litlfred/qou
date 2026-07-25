@@ -1,4 +1,5 @@
 import Mathlib.Order.Basic
+import Mathlib.Algebra.Order.Group.Nat
 
 /-!
 # Atomicity / rank-one from the jet-tower ordering — the order-theoretic separation
@@ -256,6 +257,23 @@ theorem rankOne_of_chain_of_bridge [B : TensorGenerationFree W S]
   · have hle := B.ι_mono h
     rw [B.ι_simple, B.ι_simple] at hle
     exact fundamentalWeight_incomparable (Ne.symm hst) hle
+
+/-- **The bridge premise is satisfiable — the rank-one model realises it.** For a
+    single fundamental object (`S = PUnit`) with simples indexed by `ℕ`
+    (`Sym^k V ↔ k`), the multiplicity map `ι n` is the single count `n`, the
+    fundamental object is `simple = 1`, and `ι (simple ⋆) = fundamentalWeight ⋆`.
+    This exhibits a genuine model of `TensorGenerationFree`, confirming the premise
+    is **consistent and content-bearing** (not vacuously unsatisfiable, so
+    `rankOne_of_chain_of_bridge` is not a vacuous conditional) — while no rank-2
+    model exists (`no_rankTwo_jetTowerChain`). Providing the *rank-one* instance is
+    the intended model, not a laundered rank-2 fabrication. -/
+instance rankOne_tensorGenerationFree : TensorGenerationFree ℕ PUnit where
+  ι := fun n _ => n
+  ι_mono := fun h _ => h
+  simple := fun _ => 1
+  ι_simple := fun s => by
+    funext t
+    simp [fundamentalWeight]
 
 end CategoricalBridge
 
