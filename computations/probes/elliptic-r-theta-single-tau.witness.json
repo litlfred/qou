@@ -1,0 +1,67 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-25T03:26:55.733762+00:00",
+  "commitSha": "772591b711c5fc76281259baee48814ddc6184af",
+  "assertions": [
+    {
+      "name": "theta_degeneration_identities_hold",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "q+q⁻¹=2cosh, q−q⁻¹=2sinh, e^u=cosh+sinh verified to <1e-40; the trigonometric degeneration of θ_even/θ_odd proved in EllipticRTheta.lean."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 17,
+  "computation": "elliptic-r-theta-single-tau",
+  "scriptFile": "elliptic_r_theta_single_tau_probe.py",
+  "scriptHash": "0295cc038910",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
+  },
+  "description": "Formalize-first diagnostic for the single-τ elliptic-R/θ hypothesis (QOU/QBeta/EllipticRTheta.lean). Verifies the θ-degeneration identities, computes the figure-eight bar-odd carrier θ(q₀)/Δθ, and scopes WHY the single-τ closure is under-constrained by 2 anchors and what makes it falsifiable (the derived θ-quotient form of the elliptic R uplift, or ≥3 anchors, or the deformed u≠0 construction). No fit; nothing wired; scope-(a).",
+  "data": {
+    "theta_degeneration_check": {
+      "barEven q+q^-1 = 2 cosh u": "0.0",
+      "barOdd  q-q^-1 = 2 sinh u": "0.0",
+      "split   e^u = cosh+sinh": "0.0",
+      "identities_hold": true
+    },
+    "fig8_carrier": {
+      "q0_muon": "1.10997859556",
+      "trM_4_1(q0)": "-0.91067733",
+      "theta(q0)_deg": "117.08673",
+      "amphichiral_deg": "120",
+      "delta_theta_deg": "-2.91327",
+      "dtheta_dq_deg_per_unit": "-50.878",
+      "note": "Δθ is the parameter-free bar-odd seed (reeb-theta-value.md); the cusp θ=π sits at the CM point q²=e^{iπ/3}, disc −3."
+    },
+    "single_tau_falsifiability": {
+      "c3_q1_shadow": "-2.0",
+      "c3_muon": "-2.0202",
+      "c3_proton": "-2.0693426",
+      "cross_anchor_swing_pct": "2.433",
+      "under_constrained": true,
+      "why": "A single τ(a) threading BOTH channels is trivially satisfiable through any 2 anchors (2 points lie on a 1-parameter curve), so a 2-anchor fit is NOT a validation and would violate the anti-fit rule. The muon/proton anchors differ by ~11.5 ppb in q₀ yet c₃ swings ~2.43% — the hypersensitivity is real, but it is one degree of freedom, not a curve.",
+      "falsifiable_test_requires": [
+        "the FIXED θ-quotient form of the elliptic (8-vertex) R-matrix uplift of the Hecke R (no free profile f,g) — then θ-value at τ(q₀) is a parameter-free prediction for c₃(q₀);",
+        "OR ≥3 independent anchors in q (e.g. q=1 shadow −2, plus two genuinely distinct q₀ points) so the 1-parameter-curve claim can be refuted;",
+        "the DEFORMED (u≠0) elliptic construction where the bar-odd part is nonzero (4₁ is amphichiral ⇒ bar-odd=0 at u=0; the swing lives in the deformation, i.e. moving off the CM point along the elliptic curve)."
+      ],
+      "verdict": "hypothesis STRUCTURALLY MOTIVATED (θ=q-heat-kernel, tier degeneration, elliptic-freedom of the Faddeev ratio) but NOT YET FALSIFIABLE with current data; the derived θ-quotient form is the next formalize-first target, NOT a numerical fit."
+    }
+  }
+}
