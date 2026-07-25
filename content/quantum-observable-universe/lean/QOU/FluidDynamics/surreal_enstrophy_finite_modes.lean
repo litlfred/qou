@@ -1,6 +1,7 @@
 import Mathlib.Algebra.Order.Field.Basic
 import Mathlib.Algebra.Order.Ring.Abs
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
+import Mathlib.Algebra.BigOperators.Ring.Finset
 import Mathlib.Tactic.Ring
 import Mathlib.Tactic.Positivity
 import Mathlib.Tactic.NormNum
@@ -673,5 +674,111 @@ theorem grade_trichotomy {ε Ω : K} (hε : Infinitesimal ε) :
   · by_cases hs : Infinitesimal (ε * Ω)
     · exact Or.inr (Or.inr ⟨hf, hs⟩)
     · exact Or.inr (Or.inl ⟨hf, hs⟩)
+
+/-! ### Z — Gevrey data is grade-0 regular (promoting the probe's Model B)
+
+The probe (`qns_enstrophy_grade_probe.py`) measured `α ≈ 0` for Gevrey
+amplitudes. Here that becomes a **theorem**: geometrically-decaying amplitudes
+with the combined damping `q² r ≤ 1/2` give a uniform bound `Ω_M(q) ≤ 6C` on
+every truncation, hence (with the lub property) a **finite** total — the
+grade-0 regular branch of `grade_trichotomy`. For `q = 1 + ε` with `ε`
+infinitesimal the damping condition holds for any fixed `r < 1/2`. The open
+content shrinks to non-Gevrey (sustained/forced) spectra, plus Gevrey
+*persistence* under the actual dynamics. -/
+
+/-- `[k]_q ≤ k·q^k` for `1 ≤ q` (each of the `k` powers is at most `q^k`). -/
+theorem qInt_le_mul_pow {q : K} (hq : 1 ≤ q) (k : ℕ) :
+    qInt q k ≤ (k : K) * q ^ k := by
+  have hb : ∀ j ∈ Finset.range k, q ^ j ≤ q ^ k := fun j hj =>
+    pow_le_pow_right₀ hq (le_of_lt (Finset.mem_range.mp hj))
+  calc qInt q k ≤ ∑ _j ∈ Finset.range k, q ^ k := Finset.sum_le_sum hb
+    _ = (k : K) * q ^ k := by simp [mul_comm]
+
+/-- **Closed form for the half-geometric quadratic sum:**
+    `Σ_{k<M} k²(1/2)^k = 6 − (2M² + 4M + 6)(1/2)^M`. -/
+theorem sum_sq_half_pow (M : ℕ) :
+    ∑ k ∈ Finset.range M, (k : K) ^ 2 * (1 / 2) ^ k
+      = 6 - (2 * (M : K) ^ 2 + 4 * (M : K) + 6) * (1 / 2) ^ M := by
+  induction M with
+  | zero => norm_num
+  | succ M ih =>
+      rw [Finset.sum_range_succ, ih, pow_succ]
+      push_cast
+      ring
+
+/-- **The half-geometric quadratic sum is bounded by `6`.** -/
+theorem sum_sq_half_pow_le (M : ℕ) :
+    ∑ k ∈ Finset.range M, (k : K) ^ 2 * (1 / 2) ^ k ≤ 6 := by
+  rw [sum_sq_half_pow]
+  have hpow : (0 : K) < (1 / 2 : K) ^ M := by positivity
+  have hcoef : (0 : K) ≤ 2 * (M : K) ^ 2 + 4 * (M : K) + 6 := by positivity
+  nlinarith
+
+/-- **Gevrey amplitudes are grade-0 regular (theorem form of probe Model B).**
+    If the amplitudes decay geometrically, `0 ≤ a_k ≤ C·r^k` with `C : ℕ`, and
+    the combined damping `q² r ≤ 1/2` holds (`1 ≤ q`, `0 ≤ r` — satisfied at
+    `q = 1 + ε`, `ε` infinitesimal, for any fixed `r < 1/2`), then every
+    truncation obeys the uniform bound `Ω_M(q) ≤ 6C`, and with the lub property
+    the total surreal enstrophy is **finite**: the QOU-internal flow with fixed
+    Gevrey data sits in the grade-0 **regular** branch of `grade_trichotomy`.
+    In-QOU, blow-up is thereby confined to non-Gevrey (sustained/forced)
+    spectra. Whether the internal dynamics *preserves* the Gevrey class as
+    `q → 1⁺` (Gevrey persistence, the analytic core of
+    `thm:q-ns-wellposedness`) is the remaining open content; not decided
+    here. -/
+-- Ref: [manuscript] fluid-dynamics/q-ns-wellposedness, p2-critical-exponent;
+-- Ref: [manuscript] appendix-surreals/surreal-blowup-calculus
+theorem gevrey_grade_zero {q r : K} (hq : 1 ≤ q) (hr : 0 ≤ r)
+    (hdamp : q ^ 2 * r ≤ 1 / 2)
+    (a : ℕ → K) (C : ℕ) (ha : ∀ k, 0 ≤ a k ∧ a k ≤ (C : K) * r ^ k)
+    (Ω_tot : K) (hnn : 0 ≤ Ω_tot)
+    (hlub : ∀ b : K, (∀ M, enstrophyN q a M ≤ b) → Ω_tot ≤ b) :
+    IsFinite Ω_tot := by
+  have hq0 : (0 : K) ≤ q := le_trans zero_le_one hq
+  -- per-truncation uniform bound Ω_M ≤ 6C
+  have hbound : ∀ M, enstrophyN q a M ≤ 6 * (C : K) := by
+    intro M
+    have hterm : ∀ k ∈ Finset.range M,
+        (qInt q k) ^ 2 * a k ≤ (C : K) * ((k : K) ^ 2 * (1 / 2) ^ k) := by
+      intro k _
+      have hqk0 : (0 : K) ≤ qInt q k :=
+        Finset.sum_nonneg fun j _ => pow_nonneg hq0 j
+      have hqk : qInt q k ≤ (k : K) * q ^ k := qInt_le_mul_pow hq k
+      have hk0 : (0 : K) ≤ (k : K) := Nat.cast_nonneg k
+      have hqpow0 : (0 : K) ≤ q ^ k := pow_nonneg hq0 k
+      -- (qInt)² ≤ k² q^{2k}
+      have hsq : (qInt q k) ^ 2 ≤ (k : K) ^ 2 * (q ^ k) ^ 2 := by nlinarith
+      have ha0 := (ha k).1
+      have haC := (ha k).2
+      -- (q²r)^k ≤ (1/2)^k
+      have hq2r0 : (0 : K) ≤ q ^ 2 * r := mul_nonneg (by positivity) hr
+      have hgeo : (q ^ 2 * r) ^ k ≤ (1 / 2 : K) ^ k :=
+        pow_le_pow_left₀ hq2r0 hdamp k
+      have hrk0 : (0 : K) ≤ r ^ k := pow_nonneg hr k
+      calc (qInt q k) ^ 2 * a k
+          ≤ ((k : K) ^ 2 * (q ^ k) ^ 2) * a k := by
+            exact mul_le_mul_of_nonneg_right hsq ha0
+        _ ≤ ((k : K) ^ 2 * (q ^ k) ^ 2) * ((C : K) * r ^ k) := by
+            apply mul_le_mul_of_nonneg_left haC
+            positivity
+        _ = (C : K) * ((k : K) ^ 2 * ((q ^ 2 * r) ^ k)) := by
+            rw [mul_pow, ← pow_right_comm q k 2]
+            ring
+        _ ≤ (C : K) * ((k : K) ^ 2 * (1 / 2) ^ k) := by
+            apply mul_le_mul_of_nonneg_left _ (Nat.cast_nonneg C)
+            exact mul_le_mul_of_nonneg_left hgeo (by positivity)
+    calc enstrophyN q a M
+        ≤ ∑ k ∈ Finset.range M, (C : K) * ((k : K) ^ 2 * (1 / 2) ^ k) :=
+          Finset.sum_le_sum hterm
+      _ = (C : K) * ∑ k ∈ Finset.range M, (k : K) ^ 2 * (1 / 2) ^ k := by
+          rw [Finset.mul_sum]
+      _ ≤ (C : K) * 6 :=
+          mul_le_mul_of_nonneg_left (sum_sq_half_pow_le M) (Nat.cast_nonneg C)
+      _ = 6 * (C : K) := by ring
+  refine ⟨6 * C + 1, ?_⟩
+  have hup : Ω_tot ≤ 6 * (C : K) := hlub _ hbound
+  rw [abs_of_nonneg hnn]
+  push_cast
+  linarith
 
 end QOU.FluidDynamics
