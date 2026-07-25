@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-25T03:18:47.780197+00:00",
-  "commitSha": "2a039945b931bb4861b02adbf929058bd3bd5d62",
+  "computedAt": "2026-07-25T12:39:34.325587+00:00",
+  "commitSha": "7d4d7d126c9cf40073d8d1d94457e6b64f4650e6",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -559,7 +559,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 9,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "ff40fb7a9d7d",
@@ -2060,7 +2060,11 @@
         "alpha-em-4pi-fixed-point-solve.witness.json",
         "alpha-em-4pi-q0-sensitivity.witness.json",
         "alpha-em-anchor-preference.witness.json",
+        "alpha-em-b2-bring-period-matrix.witness.json",
+        "alpha-em-b2-hodge-normalization.witness.json",
+        "alpha-em-b2-invariant-c.witness.json",
         "alpha-em-b2-scalar-c.witness.json",
+        "alpha-em-b2-tau-intertwiner.witness.json",
         "alpha-em-bring-jacobian-zeta-determinant.witness.json",
         "alpha-em-channel-split-loop-measure.witness.json",
         "alpha-em-form-ladder.witness.json",
@@ -3032,6 +3036,7 @@
         "qcollatz_divergence_probe.witness.json",
         "qm-channel-contribution-probe.witness.json",
         "qns-enstrophy-grade-probe.witness.json",
+        "qns-levi-lock-scaling-probe.witness.json",
         "qou-mass-canonical-wiring-example.witness.json",
         "quintic-zeta5-monodromy-phase.witness.json",
         "r5-full-canonical-knot-solver.witness.json",
