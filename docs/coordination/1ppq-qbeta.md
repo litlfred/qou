@@ -2143,3 +2143,25 @@ identification; a derived-grade claim still needs the scheme fixed by
 a structural normalization (Écalle median / M-dictionary lateral) —
 the sibling W9 lane's framing question, now with a concrete number and
 a 3e-10 instrument. No fit; no c_k wired.
+
+**2026-07-25 (D_odd median + cross-checks) — THE NORMALIZATION QUESTION
+RESOLVES: D_odd = −0.007579403739 ± 5e-16 is scheme-robust (δ-torus
+median), superasymptotically gated, and pin-characterized.**
+`qbeta_g3_5two_dodd_median_crosschecks.py` (3/3 green): (E) the
+δ-torus average — the q-analogue of the Écalle median over the
+θ-Laplace spiral offset — has orbit variation 4.9e-16: the scheme
+ambiguity is THIRTEEN orders below the physics scale, so the #4184
+caveat closes and D_odd(proton pin) = −0.007579403739 stands
+median-normalized. (C1) the raw divergent series' optimal truncation
+(n* = 3) agrees with s_med within its minimal term (0.0017 < 0.0033) —
+the classic internal resummation gate. (C3) recomputing the ENTIRE
+pipeline at the muon pin moves D_odd by only 2.2e-9 while the anchors
+differ by ΔS = +0.0491 — an honest structural constraint: the
+anchor-dependence of S is per-observable, NOT a substrate-modulus
+effect on this object; any future identification must source ΔS
+elsewhere (e.g. the observable-side u-dependence or the f-map slot).
+(C2) same-decade row vs the sibling b3ix order-3 estimate (T_odd =
++0.0192, muon; different object) recorded. D_odd is now a
+median-normalized, internally-gated, pin-characterized bar-odd
+number of the 5₂ Habiro face. Scope-(a); no identification; no fit;
+no c_k wired.
