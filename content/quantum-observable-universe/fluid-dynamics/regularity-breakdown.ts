@@ -20,6 +20,13 @@ export default conjecture({
   ],
   authorNotes: [
     {
+      kind: "note",
+      date: "2026-07-25",
+      body:
+        "**Sustained forcing is the surviving classical-blow-up channel.** The surreal-bridge campaign (ledger `docs/audits/2026-07-25-qns-surreal-bridge-campaign-ledger.md`) progressively localised where the singular data $v_0$ of this conjecture can live: fixed Gevrey data is grade-0 regular (theorem `gevrey_grade_zero`); the anti-parallel-pair collision channel regularises in-model for every positive core size (analytic race $u = 1 - (V_{1,0}/d_0^2)^{2/3} < 1$, Lean `overlap_race_strict`, witnesses `qns-overlap-race-probe` / `qns-pair-riccati-probe`); the dissipation closure excludes grade-1-deep cascades (`closure_excludes_deep_cascade`). The regime not excluded by any of these — and where the enstrophy-grade probe measures $\\alpha \\approx 4/3$ exceeding the grade-1 cap — is **sustained/forced turbulence**. Candidate $v_0$ searches should therefore target sustained-forcing-like spectra, not clean finite structures. All in-model/scope-(a); this conjecture remains open.",
+      see: "../../../../docs/audits/2026-07-25-qns-surreal-bridge-campaign-ledger.md",
+    },
+    {
       kind: "refined-framing",
       date: "2026-07-18",
       body:
