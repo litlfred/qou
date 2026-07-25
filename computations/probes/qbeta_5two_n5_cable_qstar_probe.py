@@ -15,8 +15,12 @@ can hide between samples.
 
 GATES:
   G1 — N=5 framing from the writhe-±1 UNKNOT (TL₈, cheap): expect the
-       ribbon twist fr = −q^{12} (θ_{V₅} = q_M^{λ(λ+2)/4}, λ=4 ⇒ q_M⁶ = q^{12})
-       — measured, not assumed (the A5.3 lesson).
+       ribbon twist fr = +q^{12} (θ_{V₅} magnitude q_M^{λ(λ+2)/4}, λ=4 ⇒
+       q_M⁶ = q^{12}) — measured, not assumed (the A5.3 lesson). The SIGN
+       alternates with cable width: cN=2 gives +q^4, cN=3 gives −q^{7.5},
+       cN=4 measures +q^{12} (first run measured |fr + q^12| rel = 2.0, a
+       pure sign flip; the framed test below uses fr⁴ = q^{48} either way,
+       so the T-section is sign-independent).
   G2 — 4₁ N=5 (4-cable of B₃, w=0, framing-free) vs the trusted Masbaum
        p=−1 tower at one real q (the full-correctness gate at TL₁₂ cost ×1).
   G3 — 4₁ N=5 amphichiral null at q* (B₅(4₁;q*) = 0 to machine precision).
@@ -129,11 +133,11 @@ def main() -> int:
     for qs in (mp.mpf("1.11"), mp.mpf("0.95")):
         jr = Jp([1], 2, 4, qs, engines)
         fr = 1 / jr
-        dev = abs(fr - (-(qs ** 12))) / qs ** 12
+        dev = abs(fr - qs ** 12) / qs ** 12
         fr_vals[str(qs)] = mp.nstr(fr, 12)
         g1_ok &= dev < mp.mpf("1e-18")
-        log(f"    q={qs}: fr = {mp.nstr(fr,10)}  |fr + q^12| rel = {mp.nstr(dev,3)}")
-    print(f"    ribbon fr = −q^12: {'PASS' if g1_ok else 'FAIL'}")
+        log(f"    q={qs}: fr = {mp.nstr(fr,10)}  |fr - q^12| rel = {mp.nstr(dev,3)}")
+    print(f"    ribbon fr = +q^12: {'PASS' if g1_ok else 'FAIL'}")
 
     # ---- G2: 4₁ N=5 vs trusted tower at one q ----
     log("[G2] 4₁ N=5 (4-cable, w=0) vs trusted p=−1 tower (one q) ...")
@@ -194,8 +198,9 @@ def main() -> int:
 
     wb.add_assertion("gate_unknot_ribbon_framing_N5",
                      computed=1.0 if g1_ok else 0.0, expected=1.0, tolerance=0.5,
-                     source="fr = −q^{12} exactly (θ_{V₅} ribbon) from the writhe-1 "
-                            "unknot at 2 q points")
+                     source="fr = +q^{12} exactly (θ_{V₅} ribbon magnitude; sign "
+                            "alternates with cable width: −q^{7.5} at cN=3, "
+                            "+q^{12} at cN=4) from the writhe-1 unknot at 2 q points")
     wb.add_assertion("gate_41_N5_matches_trusted_tower",
                      computed=float(err2), expected=0.0, tolerance=1e-15,
                      source="4₁ 4-cable J'_5 (framing-free) = trusted p=−1 tower")
@@ -208,7 +213,8 @@ def main() -> int:
                             "q*±2e-8 and q*, slope·window ≪ 1")
     ok = all(a.passed for a in wb.assertions)
 
-    wb.add_data("framing", {"fr_formula": "-q^12 (ribbon)", "measured": fr_vals})
+    wb.add_data("framing", {"fr_formula": "+q^12 (ribbon magnitude; sign alternates "
+                                          "with cable width)", "measured": fr_vals})
     wb.add_data("qstar_test_N5", {"B_qstar": mp.nstr(B_star, 12),
                                   "B_samples": [mp.nstr(v, 12) for v in Bv],
                                   "rel_slope": f"{slope_rel:.4e}",
