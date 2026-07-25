@@ -122,3 +122,17 @@ OPEN FRONTIER now isolated to ONE inequality: badly-approximable x ⇒
 {j·log(1/x)} ≥ c/j (three-distance / bounded continued-fraction partial quotients).
 Mathlib likely lacks this; formalizing it is a separate number-theory task. Everything
 in the dilog Part B W-P1 chain downstream of that inequality is now PROVED.
+
+## 2026-07-25 — Mathlib-gap Diophantine infra LANDED (4e935b4f)
+
+QOU/MathlibExt/QuadraticIrrationalBadlyApproximable.lean (sorry-free, mathlib-only):
+  sqrt_badlyApproximable : Irrational √D → ∃ c>0, ∀ j≥1, c/j ≤ ‖j√D‖
+Elementary proof (no continued fractions) via |Dj²-p²| ≥ 1. Registered in QOU.lean.
+
+This is THE missing infra for the K=2 branch of wp1_tendsto_of_powerBound. Remaining
+to make the dilog limit UNCONDITIONAL for x=e^{−√D} is the WIRING theorem (heavy
+exp/floor/fract grind, ~150-250 lines):
+  q_j=e^{1/j}, n_j=⌊j√D⌋ ⇒ x q_j^{n_j}=e^{−{j√D}/j};
+  1−xq^n ≥ ({j√D}/j)e^{−1} ≥ (c/j²)e^{−1} ≥ (c/e³)(q_j−1)²  [K=2, needs {j√D}≥‖j√D‖≥c/j];
+  hub 1−xq^n ≤ (q−1)/q  [since {j√D}≤1]; hbelow xq^n<1  [since {j√D}>0, j√D∉ℤ].
+  Then wp1_tendsto_of_powerBound(K=2) ⇒ W-P1 → π²/6−Li₂(x). NOT yet wired (offered).
