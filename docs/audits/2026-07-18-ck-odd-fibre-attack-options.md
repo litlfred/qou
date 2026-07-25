@@ -253,6 +253,23 @@ principle — the open problem itself).
   main-line Masbaum-face Habiro lane (integer-Laurent `C_{5₂,n}` +
   q-Gevrey law + the W9 resummed `D_odd`): same odd channel, fibre-
   arithmetic route vs convergent-side resummation route. auditOnly.
+- **A6.2 LANDED (two-route odd confrontation — bridge named open).**
+  [`qbeta_5two_odd_two_route_confrontation_probe.py`](../../computations/probes/qbeta_5two_odd_two_route_confrontation_probe.py)
+  + witness, 2/2. **A:** the σ-pair odd projection evaluated at the
+  substrate: `O_φ = Im φ_σ1(−ln q₀) = +0.01090896074` — derived,
+  calibration-free (truncation ≡ Borel–Padé directional Laplace at
+  4e-18). Scope-(a) rows: vs the Masbaum-face `D_odd = −0.00758` (ratio
+  −1.44), vs `S_muon` (1.13), vs `u³` (1.20) — **no identification**;
+  the function-level bridge is the Stokes sector population of the
+  state-integral transseries on the real-q ray, explicitly open (the
+  W9-parallel verdict's own scheme-fixing caveat). **B:** the honest
+  structural tie failed-as-designed and the failure is the finding: the
+  exact q-Borel integers `T̂_n` carry **no clean algebraic `n^{−θ}` tail
+  at n ≤ 43** (single-model θ window-drifts 11.3 → 9.4; three-model
+  ranking prefers algebraic-type only indicatively, rms ×1.5) — the
+  naive φ-side Gauss-prefactor `θ = 3/2` tie is untestable at this
+  depth (scope-(a); deeper `C_n` or an analytic singularity-type
+  argument is the follow-up). auditOnly; nothing wired.
 
 - **A2 LANDED (derived odd-Stokes datum).**
   [`qbeta_5two_stokes_barodd_index_probe.py`](../../computations/probes/qbeta_5two_stokes_barodd_index_probe.py)
