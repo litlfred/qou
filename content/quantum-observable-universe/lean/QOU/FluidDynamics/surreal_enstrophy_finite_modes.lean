@@ -881,4 +881,65 @@ theorem gronwall_finite_horizon {G : K} (hG0 : 0 ≤ G) (hGf : IsFinite G)
   have h2 : G ^ n * Ω 0 ≤ |G ^ n * Ω 0| := le_abs_self _
   linarith
 
+/-! ### GP2 — mode splitting: the q-damping threshold
+
+The q-mechanism that can beat the naive rate wall: dissipation acts per mode as
+`ν·[k]_q²`, and on the super-classical side `[k]_q ~ q^k` grows exponentially,
+so *every* stretching rate `Λ` is overtaken at a finite mode index. Above that
+threshold the per-step factor `1 + δΛ − δν[k]_q²` is `≤ 1`
+(`damping_threshold`): **high modes are non-growing**. Splitting the enstrophy
+into a low-mode block (factor `G`) and a damped high-mode block, the split
+Gronwall bound (`split_gronwall`, `split_persistence`) reduces Gevrey
+persistence to a single question: **is the low-mode block's effective
+stretching rate finite?** The naive interpolation bound gives `Λ ~ ν_q⁻¹ ~ ε⁻¹`
+(infinite); whether the finite-dimensional low-mode dynamics improves it to a
+finite `G` is the open GP3 content — not decided here. -/
+
+/-- **q-damping threshold.** Once a mode clears the threshold
+    `Λ ≤ ν·[k]_q²`, its per-step factor is at most `1`: the mode is
+    non-growing. On the super-classical side `[k]_q` grows exponentially, so
+    every `Λ` is cleared at a finite mode index. -/
+-- Ref: [manuscript] fluid-dynamics/q-ns-wellposedness (UV damping), p2-critical-exponent
+theorem damping_threshold {q ν Λ δ : K} (hδ : 0 ≤ δ) (k : ℕ)
+    (hthresh : Λ ≤ ν * (qInt q k) ^ 2) :
+    1 + δ * Λ - δ * (ν * (qInt q k) ^ 2) ≤ 1 := by
+  have := mul_le_mul_of_nonneg_left hthresh hδ
+  linarith
+
+/-- A step-non-increasing sequence is bounded by its initial value. -/
+theorem le_initial_of_step {H : ℕ → K} (hH : ∀ n, H (n + 1) ≤ H n) :
+    ∀ n, H n ≤ H 0 := by
+  intro n
+  induction n with
+  | zero => exact le_refl _
+  | succ n ih => exact le_trans (hH n) ih
+
+/-- **Split Gronwall.** Low-mode block growing at factor `G`, high-mode block
+    non-increasing (above the damping threshold): the total obeys
+    `L n + H n ≤ G^n·L 0 + H 0`. -/
+-- Ref: [manuscript] fluid-dynamics/p2-critical-exponent
+theorem split_gronwall {G : K} (hG : 0 ≤ G) (L H : ℕ → K)
+    (hL : ∀ n, L (n + 1) ≤ G * L n) (hH : ∀ n, H (n + 1) ≤ H n) (n : ℕ) :
+    L n + H n ≤ G ^ n * L 0 + H 0 := by
+  have h1 := discrete_gronwall L hG hL n
+  have h2 := le_initial_of_step hH n
+  linarith
+
+/-- **Split persistence.** With a *finite* low-mode factor `G`, finite initial
+    blocks, and the high modes damped, the total enstrophy is finite at every
+    step. Gevrey persistence thereby reduces to the finiteness of the low-mode
+    effective rate — the open GP3 content. -/
+-- Ref: [manuscript] fluid-dynamics/q-ns-wellposedness, p2-critical-exponent
+theorem split_persistence {G : K} (hG0 : 0 ≤ G) (hGf : IsFinite G)
+    (L H : ℕ → K) (hL : ∀ n, L (n + 1) ≤ G * L n) (hH : ∀ n, H (n + 1) ≤ H n)
+    (hLnn : ∀ n, 0 ≤ L n) (hHnn : ∀ n, 0 ≤ H n)
+    (hL0 : IsFinite (L 0)) (hH0 : IsFinite (H 0)) (n : ℕ) :
+    IsFinite (L n + H n) := by
+  obtain ⟨m, hm⟩ := ((hGf.pow n).mul hL0).add hH0
+  refine ⟨m, ?_⟩
+  rw [abs_of_nonneg (add_nonneg (hLnn n) (hHnn n))]
+  have h1 := split_gronwall hG0 L H hL hH n
+  have h2 : G ^ n * L 0 + H 0 ≤ |G ^ n * L 0 + H 0| := le_abs_self _
+  linarith
+
 end QOU.FluidDynamics
