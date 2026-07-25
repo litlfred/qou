@@ -5,22 +5,18 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-07-25T03:30:08Z
-updated_at: 2026-07-25T03:45:42Z
+updated_at: 2026-07-25T11:14:07Z
 parent: qou-v8t7
 ---
 
-## A3 — leg 2: remainder |R|<|g'(0)| — REFINED to complete monotonicity (2026-07-25)
-BREAKTHROUGH FRAMING. The Taylor coeffs a_m=g^{(m)}(0)/m! of g(θ)=E_{2+θ}[ω₃] follow sign(a_m)=(−1)^m
-EXACTLY for n=8..17 (verified to order 10, 60dps) ⇒ the COMPLETE-MONOTONICITY signature of −g'(θ).
-Plus Σ_{m≥2}|a_m|<|a_1| all n (absolute domination).
-
-UNIFIED TARGET (subsumes A2). Prove −g'(θ)=−d/dβ E_β[ω₃] is COMPLETELY MONOTONE on [2,∞) for n≥n₀.
-Bernstein ⇒ −g'(θ)=∫e^{−θs}dμ(s), μ≥0 ⇒ g'≤0 ∀θ≥0 ⇒ g(1)=∫_0^1 g'≤0 (KERNEL) AND E_β[ω₃]≤0 ∀β≥2
-(whole family), in one stroke. A2 (Cov(ln f,ω₃)≤0) is the θ=0 endpoint of this.
-
-PROOF ROUTE. Exhibit the positive Bernstein measure μ, OR derive alternating θ-derivatives from an
-MLR/association property of the tilted family Q_θ∝e^{θ ln f}·P applied to ω₃. Read Ivanov-Olshanski
-(0304010) for the covariance structure; the mixed cumulants κ_{m+1}(ln f;…;ω₃) are the −g' moments.
-
-CAVEAT. Verified via SIGNS to order 10, n=8..17 — not an all-orders proof; property is asymptotic in n
-(n≤7 deviate at high order, covered by exact k≤40). Audit: 2026-07-25-covariance-kernel-complete-monotonicity-target.md. Probe: wlambda_covariance_epic_phase8_complete_monotonicity.py.
+## A3 — leg 2: remainder |R|<|g'(0)|. Complete-monotonicity route TESTED and REFUTED (2026-07-25).
+SIGNATURE (real): Taylor coeffs a_m=g^{(m)}(0)/m! of g(θ)=E_{2+θ}[ω₃] follow sign(a_m)=(−1)^m for
+n=8..17 to order 10 (60dps); Σ_{m≥2}|a_m|<|a_1| all n. This is the NECESSARY part of −g' being
+completely monotone.
+REFUTED (decisive): −g' CM ⇔ moments m_k=(k+1)!|a_{k+1}| Stieltjes ⇔ Hankel H0,H1 PSD. They are NOT
+(negative min-eigs, robust at 3×3 high-precision and 4×4; PSD only ~5/12, no pattern). So −g' is NOT
+completely monotone; the Bernstein route (−g'=∫e^{−θs}dμ) is ELIMINATED (route #10). Sign-alternation
+is necessary but not sufficient; it just re-expresses the Phase-7 bound |R|<|g'(0)|.
+STATUS: remainder-domination target stands but WITHOUT the CM/Bernstein shortcut. Next: the genus
+grading (Śniady 0411647) as an effective (not exact) bound on the mixed cumulants — the harder route.
+Audit: 2026-07-25-covariance-kernel-complete-monotonicity-target.md.

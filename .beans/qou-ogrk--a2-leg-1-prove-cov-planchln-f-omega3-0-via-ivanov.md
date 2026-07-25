@@ -5,19 +5,16 @@ status: todo
 type: task
 priority: high
 created_at: 2026-07-25T03:30:08Z
-updated_at: 2026-07-25T03:31:40Z
+updated_at: 2026-07-25T11:14:07Z
 parent: qou-v8t7
 ---
 
-## A2 — leg 1: Cov_Planch(ln f, ω₃) ≤ 0 (the leading / m=1 term)
-IDEA. ω₃=Σc²−C(n,2) is the Σ_2 central character — a polynomial function of the diagram (in the
-Ivanov-Olshanski algebra A). ln f = ln n! − Σ_□ ln h is the Kerov "log-dimension" functional; it is
-NOT in A but has a known expansion in the Σ_μ basis. The Plancherel 2nd-order covariances Cov(Σ_i,Σ_j)
-are EXACT (Ivanov-Olshanski). So Cov(ln f, ω₃) = Σ_j c_j Cov(Σ_j, Σ_2) with c_j the ln-dim expansion
-coeffs — a computable combination whose sign we need ≤ 0.
-FIRST STEP. Read uploads/0304010v1.pdf §6-8 (CLT characters / Young diagrams / transition measures) +
-§10 (free cumulants, Biane). Extract the covariance formula Cov_Planch(Σ_2,Σ_j) and the ln-dim
-expansion. Assemble Cov(ln f,ω₃); check sign vs numerics (Cov<0 all n≤19).
-SUCCESS. Closed-form sign Cov(ln f,ω₃) < 0 (proves leg 1).
-KILL. Genuinely sign-indefinite — but numerics say <0 for all n, so this leg looks the more tractable.
-This is the more promising of the two sufficient legs.
+## A2 — leg 1: Cov_Planch(ln f, ω₃) ≤ 0. Literature intel in hand (paper-mining agent, 2026-07-25).
+EXACT ENGINE (IO Prop 5.1 + Śniady product rule): ⟨p#_ρ⟩_Planch = n↓^r·δ_{ρ=(1^r)}; any Cov(p#_j,p#_k)
+(j,k≥2) is a finite signed connection-coefficient sum, EXACT. VALIDATED: Cov_Planch(Σc,ω₃)=0 exactly
+(transposition ⊥ 3-cycle char). Notation: ω₃=p#₃=Σ₃=R₄+R₂ (3-cycle char), p#₂=2Σc (transposition).
+CAVEAT (agent): ln f ∉ A (algebra of polynomial functions) — NO finite Σ_μ-expansion of log-dim;
+do not chase one. But ln f=½ ln M_n+½ ln n!, M_n=dim²/n! ⇒ Cov(ln f,ω₃)=½E[ω₃ ln M_n] (ω₃-weighted
+log-likelihood; validated exact, but an algebraic reframing not new leverage).
+STATUS: numerics say Cov(ln f,ω₃)<0 all n. The exact p#-engine handles character×character covariances
+but NOT ln f (∉A) — so A2 needs either the M_n-entropy correlation sign or the genus route. Open.

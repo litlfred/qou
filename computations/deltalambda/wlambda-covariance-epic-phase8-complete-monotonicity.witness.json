@@ -1,24 +1,24 @@
 {
   "engine": "python-mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-25T03:44:35.436185+00:00",
-  "commitSha": "355d9bd426b6c951856168fc835310dde03c7d6e",
+  "computedAt": "2026-07-25T11:12:32.795474+00:00",
+  "commitSha": "17e9c1efdcc5ce5f39bd26e9d6e6ef6d2f8b7bd2",
   "assertions": [
     {
-      "name": "covariance_epic_phase8_complete_monotonicity_signature",
+      "name": "covariance_epic_phase8_CM_signature_holds_but_CM_refuted",
       "computed": "1",
       "expected": "1",
       "passed": true,
       "tolerance": 0,
-      "source": "Taylor coeffs of g(θ)=E_{2+θ}[ω₃] follow sign=(−1)^m for n≥8 to order 10 (60dps) ⇒ −g' completely-monotone signature; plus Σ_{m≥2}|a_m|<|a_1| all n. If −g' is CM (Bernstein) then g'≤0 on [0,∞) ⇒ kernel + whole β≥2 family. Signs to order 10, not all-orders proof. No fit; no c_k."
+      "source": "Sign(a_m)=(−1)^m holds n≥8 to order 10 (necessary CM signature) + Σ|a_{m≥2}|<|a_1|; BUT Hankel/moment PSD test fails robustly ⇒ −g' NOT completely monotone ⇒ Bernstein route eliminated (#10). Kernel open. No fit; no c_k."
     }
   ],
   "allPassed": true,
-  "durationMs": 15,
+  "durationMs": 52,
   "computation": "wlambda-covariance-epic-phase8-complete-monotonicity",
   "scriptFile": "wlambda_covariance_epic_phase8_complete_monotonicity.py",
-  "scriptHash": "c417360c66a7",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "c65a3de973f8",
+  "scriptCommitSha": "17e9c1efdcc5ce5f39bd26e9d6e6ef6d2f8b7bd2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -30,15 +30,14 @@
     "sympy": "1.14.0",
     "mpmath": "1.3.0"
   },
-  "description": "Attack A3 refinement (qou-x631): the mixed-cumulant Taylor coefficients a_m=g^{(m)}(0)/m! of the dimension-tilted mean g(θ)=E_{2+θ}[ω₃] follow sign(a_m)=(−1)^m EXACTLY for n=8..17, verified to order m=10 (60-dps). This is the COMPLETE-MONOTONICITY signature of −g'(θ): if −g' is completely monotone on [0,∞) (Bernstein: −g'(θ)=∫e^{−θs}dμ(s), μ≥0), then g'(θ)≤0 for all θ≥0, hence g(1)=∫_0^1 g'≤0 (the KERNEL) and E_β[ω₃]≤0 ∀β≥2 (the whole family), in one stroke — unifying attack A2 (θ=0 endpoint g'(0)≤0) and A3 (interval/all-θ). Also Σ_{m≥2}|a_m|<|a_1| for all n (absolute domination, stronger than Phase-7 |R|<|g'(0)|). For n≤7 low orders alternate but high orders (m≳5) deviate — a small-n boundary effect (covered by exact k≤40). HONEST: verified via SIGNS to order 10, not proved to all orders; the rigorous target is CM of −g' for n≥n₀ via the tilted-mean/MLR/moment structure of ⟨ω₃ e^{θ ln f}⟩/⟨e^{θ ln f}⟩. scope-(a); no fit; nothing wired; no c_k; L2 2/7.",
+  "description": "Attack A3, complete-monotonicity route (qou-x631): the sign-alternation SIGNATURE holds but genuine CM is REFUTED. The Taylor coeffs a_m=g^{(m)}(0)/m! of g(θ)=E_{2+θ}[ω₃] follow sign(a_m)=(−1)^m for n=8..17 to order 10 (60-dps) — the necessary part of complete monotonicity of −g' — and Σ_{m≥2}|a_m|<|a_1| for all n. BUT the DECISIVE criterion fails: −g' is CM iff the moment sequence m_k=(k+1)!|a_{k+1}| is Stieltjes ⇔ Hankel H0=[m_{i+j}], H1=[m_{i+j+1}] both PSD; they are NOT (min-eigenvalues negative for essentially all n, robust at 3×3 low-order high-precision and 4×4). So −g' is NOT completely monotone and the Bernstein-representation route (−g'=∫e^{−θs}dμ, μ≥0) is ELIMINATED — sign-alternation is necessary but not sufficient. NET: the signature merely re-expresses the Phase-7 transfer bound |R|<|g'(0)|; no clean shortcut. Route-elimination #10. Kernel remains open. Notation (agent-confirmed): ω₃=p#₃=Σ₃ (3-cycle char). scope-(a); no fit; nothing wired; no c_k; L2 2/7.",
   "data": {
-    "target_conjecture": "-g'(θ) = -d/dβ E_β[ω₃] completely monotone on β∈[2,∞) (n≥n0)",
-    "cm_signature_holds_from_n": 8,
-    "cm_verified_to_order": 10,
-    "cm_verified_up_to_n": 17,
+    "sign_alternation_signature_holds_from_n": 8,
+    "signature_verified_to_order": 9,
     "absolute_domination_all_n": true,
-    "small_n_boundary_note": "n<=7 deviate at high order; covered by exact k<=40",
-    "implication": "CM(-g') => g'<=0 on [0,inf) => kernel AND whole beta>=2 family",
-    "proof_tool": "Bernstein/Hausdorff moment representation of the tilted covariance"
+    "genuine_CM_hankel_test": "FAILS (Hankel not PSD, robust 3x3 and 4x4)",
+    "bernstein_route_eliminated": true,
+    "hankel_psd_fraction": "5/12",
+    "conclusion": "sign-alternation necessary not sufficient; -g' NOT completely monotone"
   }
 }
