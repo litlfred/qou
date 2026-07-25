@@ -99,3 +99,12 @@ REMAINING open (honest frontier):
    (a^(1/j))^j = a (rpow_natCast/rpow_mul, a>0). Offset the index so base>1 for all j
    (N0 > 1/(1-x)). Feeds wp1_tendsto_of_boundary via habel + the noResonance term
    => a concrete scaling with W-P1 -> pi^2/6 - Li2(x). ~50-80 lines rpow bookkeeping.
+
+## 2026-07-25 — explicit branch-point WITNESS landed (commit 2640b69f)
+
+exists_noResonance_branchPoint_scaling: sorry-free. Constructs q_j=((1-1/m)/x)^(1/m),
+n_j=m (m=j+N₀, N₀>1/(1-x)) with x q_j^n = 1-1/m → 1⁻ AND no-resonance (c=x/log(1/x)),
+=> W-P1 → π²/6 - Li₂(x) along an EXPLICIT branch-point sequence. The dilog Part B
+limit is now ATTAINED (not just conditional/bulk). Non-vacuity at the branch point:
+CLOSED. Remaining open = the general-x UNIFORM statement only (Diophantine
+equidistribution of {log_q(1/x)} over ALL scalings). 6 theorems total, all sorry-free.
