@@ -1,0 +1,61 @@
+import QOU.MathlibExt.QIntegerFactorial
+
+/-!
+# QOU.Hecke.H2GramArithmetic — the n=2 Gram determinant, arithmetic core
+
+The smallest Iwahori–Hecke algebra `H_2(q)` (one generator `σ`,
+`σ² = (q-1)σ + q`) is `2`-dimensional with basis `{1, σ}` — it is
+`AdjoinRoot(X² - (q-1)X - q)`, the monogenic algebra on the quadratic
+Hecke relation.  Its **regular trace form Gram determinant** equals the
+discriminant of that quadratic, and this file proves — sorry-free over a
+field — the arithmetic identity behind the Wenzl criterion at `n = 2`:
+
+  `disc = (q-1)² + 4q = (q+1)² = [2]_q²`,   and
+  `H_2(q)` semisimple ⟺ `disc ≠ 0` ⟺ `q ≠ -1` ⟺ `[2]_q! ≠ 0`.
+
+So `det(Gram) = [2]_q² ≠ 0 ⟺ [2]_q! ≠ 0` — the `n = 2` instance of the
+Schur/Poincaré identity `det(Gram) = [n]_q!` (up to a unit).  Wiring
+this to the actual `AdjoinRoot` trace form (`Algebra.discr` in the power
+basis) is the next brick (`qou-eedq`); the arithmetic that the wiring
+must reproduce is settled here.
+-/
+
+namespace QOU.Hecke
+
+open QOU.MathlibExt
+
+variable {K : Type*} [Field K]
+
+/-- `[2]_q = 1 + q` (sorry-free). -/
+theorem qInt_two (q : K) : qInt q 2 = 1 + q := by
+  simp [qInt, Finset.sum_range_succ]
+
+/-- `[2]_q! = 1 + q` (sorry-free). -/
+theorem qFactorial_two (q : K) : qFactorial q 2 = 1 + q := by
+  simp [qFactorial, Finset.prod_range_succ, qInt, Finset.sum_range_succ]
+
+/-- **The `H_2` discriminant = `[2]_q²` (sorry-free).**  The discriminant
+    of `X² - (q-1)X - q` is `(q-1)² + 4q = (q+1)²`, which is exactly the
+    square of the quantum integer `[2]_q = 1 + q`. -/
+theorem h2_disc_eq_qInt_two_sq (q : K) :
+    (q - 1) ^ 2 + 4 * q = qInt q 2 ^ 2 := by
+  rw [qInt_two]; ring
+
+/-- **`H_2` Gram-determinant criterion (sorry-free).**  The Gram
+    determinant `det = (q+1)² = [2]_q²` is nonzero iff `[2]_q! ≠ 0` iff
+    `q ≠ -1` — the `n = 2` instance of Wenzl's semisimplicity criterion. -/
+theorem h2_gram_det_ne_zero_iff (q : K) :
+    qInt q 2 ^ 2 ≠ 0 ↔ qFactorial q 2 ≠ 0 := by
+  rw [qInt_two, qFactorial_two, pow_ne_zero_iff (by norm_num : 2 ≠ 0)]
+
+/-- The criterion in bare-parameter form: `H_2(q)` is semisimple iff
+    `q ≠ -1` (sorry-free). -/
+theorem h2_gram_det_ne_zero_iff_q_ne_neg_one (q : K) :
+    qInt q 2 ^ 2 ≠ 0 ↔ q ≠ -1 := by
+  rw [qInt_two, pow_ne_zero_iff (by norm_num : 2 ≠ 0), ne_eq, ne_eq,
+    not_iff_not]
+  constructor
+  · exact fun h => eq_neg_of_add_eq_zero_right h
+  · exact fun h => by rw [h]; ring
+
+end QOU.Hecke
