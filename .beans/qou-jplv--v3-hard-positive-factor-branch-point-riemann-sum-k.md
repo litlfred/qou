@@ -74,3 +74,28 @@ registered in QOU.lean (de-orphans the whole Part B chain into CI):
 
 DID NOT close the general non-uniform limit: still Faddeev/Diophantine, still open.
 This is the honest reduction of W-P1 to exactly one named open scalar limit.
+
+## 2026-07-25 — no-resonance capstone landed (PR #4277, commit d5537da0)
+
+DilogPartBBranchPointLimit.lean now has 5 sorry-free theorems (lean-direct exit 0):
+- wp1_bulkTerm_tendsto_zero, wp1_tendsto_of_boundary (opaque-hbdry conditional),
+  boundary_tendsto_zero_of_bounded (bulk),
+- boundary_tendsto_zero_of_noResonance: (q-1)log(1-xq^n) -> 0 GIVEN the geometric
+  lower bound c(q-1) <= 1-xq^n (Faddeev/Diophantine no-resonance), via t log t -> 0.
+- wp1_tendsto_of_noResonance: W-P1 -> pi^2/6 - Li2(x) from the two branch-point
+  controls alone (automatic upper 1-xq^n <= (q-1)/q forcing xq^n->1- / Abel, +
+  no-resonance lower). The opaque Tendsto hypothesis is GONE — replaced by a
+  checkable INEQUALITY. The open Diophantine content is now a geometric bound.
+
+REMAINING open (honest frontier):
+1. General limit (no hypothesis): still open — Diophantine/equidistribution of
+   {log_q(1/x)}; resonances where the branch point falls ~e^{-c/delta} from a node.
+2. Explicit non-vacuity witness AT the branch point (turn-key recipe):
+   n_j = j, target x q_j^j = 1 - 1/j  => q_j = ((1-1/j)/x)^(1/j).
+   Then 1-xq^n = 1/j -> 0 (habel), and no-resonance holds with c = x/ln(1/x):
+     q_j - 1 <= (1/x)^(1/j) - 1 <= (ln(1/x)/x)(1/j)  [from e^t-1 <= t e^t,
+     t=ln(1/x)/j, via Real.add_one_le_exp], so c(q_j-1) <= 1/j = 1-xq^n.
+   Needs only standard rpow asymptotics: a^(1/j)->1 (rpow continuity at 0) and
+   (a^(1/j))^j = a (rpow_natCast/rpow_mul, a>0). Offset the index so base>1 for all j
+   (N0 > 1/(1-x)). Feeds wp1_tendsto_of_boundary via habel + the noResonance term
+   => a concrete scaling with W-P1 -> pi^2/6 - Li2(x). ~50-80 lines rpow bookkeeping.
