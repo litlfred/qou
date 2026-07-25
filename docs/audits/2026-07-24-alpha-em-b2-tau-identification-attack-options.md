@@ -101,3 +101,33 @@ premise are stated as the open sub-pieces, not papered over. `1/(8π)` stays pha
 - Schur-element / Wenzl infra: `QOU/MathlibExt/WenzlSchurElement.lean`
 - B2 interface + reductions: `QOU/Archimedean/{TauRhoHodgeLiftInterface,HodgeGramLift,LiftFromReality,TauFunctorReduction}.lean`
 - Ledger: [`../coordination/alpha-em.md`](../coordination/alpha-em.md)
+
+## Update 2026-07-25 — sub-piece (ii) formalized as a conditional reduction
+
+`TauS5EquivarianceReduction.lean` (sorry-free, lean-direct exit 0) closes the
+*logical* role of sub-piece (ii). Two results:
+
+- `invariantForm_pullback` — transport of an invariant form along an
+  intertwiner: if `P` intertwines the Hecke action `ρH` and the S₅ action `ρS`
+  (`ρH s · P = P · ρS s`) and `M` is `ρH`-invariant, then `Pᵀ M P` is
+  `ρS`-invariant. This is the precise linear-algebra content of "an
+  S₅-equivariant τ carries the Markov Gram to an S₅-invariant form."
+- `tauImage_proportional_hodge` — assembling (i)+(ii)+Schur: given the τ-map on
+  `std` as a `TauStdIntertwiner`, plus S₅-irreducibility (⇒ scalar commutant via
+  `MatrixSchurCommutant`, PR #4182) and a unit Hodge form, the τ-image of the
+  Markov Gram is `= c • G_Hodge`.
+
+**The wall is now assembled modulo two named, un-fabricated inputs:**
+
+| ingredient | status |
+|---|---|
+| Schur proportionality from commutant-scalar | PROVED (#4160) |
+| (i) commutant scalar from irreducibility | PROVED (#4182, `MatrixSchurCommutant`) |
+| symmetric / real type of the Markov Gram | PROVED (#4154, `MarkovGramRealSymm`) |
+| (ii) equivariance ⇒ invariant-form transport ⇒ proportionality | PROVED conditional (this file) |
+| sign of `c` (positive) | PROVED (Hodge+Markov both pos-def, #4182 item 2) |
+| **τ is the `(4,1)` intertwiner** (the categorical claim) | **OPEN** — existence of *some* intertwiner is standard (Tits deformation); that the archimedean τ *is* it is the open input. No instance registered. |
+| explicit `|c|` (magnitude) | **OPEN** — needs the Riera–Rodríguez symplectic period matrix `Z` (absent from corpus) |
+
+No `TauStdIntertwiner` / `TauRhoHodgeLift` instance for the actual τ is
+registered; `1/(8π)` stays a phase-4 identification; nothing is wired.
