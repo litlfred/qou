@@ -1,0 +1,192 @@
+{
+  "engine": "sympy+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-07-25T11:26:04.363685+00:00",
+  "commitSha": "e9fbe11073c65d0e8481b07291e36ac9683bae0b",
+  "assertions": [
+    {
+      "name": "genus1_curvature_form_coefficient",
+      "computed": "-1/(2*pi)",
+      "expected": "-1/(2*pi)",
+      "passed": true,
+      "source": "c₁ = (i/2π)∂∂̄ log det'Δ(E_τ)·dτ∧dτ̄ = −(1/2π)·ω_hyp: AGMV Eq. (4.18) normalization × the exact mixed derivative −1/(2y²) (sympy exact; dτ∧dτ̄ = −2i dx∧dy); sign NEGATIVE (recorded: the working loop insertion is also negative, [2]_q(1−h²α))"
+    },
+    {
+      "name": "omega_hyp_scale_invariant_under_5tau",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "pullback of dx∧dy/y² under (x,y)↦(5x,5y): Jacobian 25 cancels (5y)²/y² — multiplicity bookkeeping over the (5τ,5τ,5τ,τ) fibres is exact"
+    },
+    {
+      "name": "exact_matches_are_selection_dependent_only",
+      "computed": "QC_per_mode_doubled_pair,QD_BK_WP_scalar_content,T0_baseline_reciprocal_count",
+      "expected": "QC_per_mode_doubled_pair,QD_BK_WP_scalar_content,T0_baseline_reciprocal_count",
+      "passed": true,
+      "source": "rational-exact comparison of every candidate against 1/(8π): the ONLY exact matches are the tautology floor T0 and the two candidates each requiring one unforced discrete choice (Q-C: the doubled-pair per-mode count = R2-core premise; Q-D: scalar operator content whose weight sum 4·2 = 2g = b₁ is the count in disguise, under AGMV's WP convention). Every forced-ingredients-only candidate MISSES: Q-A by 16, Q-A5 by 64, Q-B by 2, Q-E by 13 and 11/2."
+    },
+    {
+      "name": "per_real_mode_reproduces_a0_exactly",
+      "computed": "1/(4*pi)",
+      "expected": "1/(4*pi)",
+      "passed": true,
+      "source": "Q-B: total curvature coefficient 4/(2π) ÷ b₁ = 1/(4π) = a₀ EXACTLY — the Quillen/Bismut–Freed route independently reproduces the derived heat-kernel unit (#3909); the residual vs 1/(8π) is exactly 2, i.e. the known open ½ (#3925) relocated, not closed"
+    },
+    {
+      "name": "no_single_agmv_spin_weight_equals_8",
+      "computed": "[]",
+      "expected": "[]",
+      "passed": true,
+      "source": "3(n+1)²−1 = 8 ⇒ (n+1)² = 3: no integer solution (sympy solve over ℤ) — no single AGMV spin weight is 8; only sums reach 8, and the structurally-suggested one (4 scalar factors) is 2g = b₁ in disguise"
+    },
+    {
+      "name": "curvature_numeric_at_bring_tau0",
+      "computed": "-14.348054954552774683",
+      "expected": "-14.348054954552774683",
+      "passed": true,
+      "tolerance": 1e-10,
+      "source": "mpmath finite-difference quarter-Laplacian of log[(Im τ)²|η|⁴] at the Bring τ₀ = −0.5 + 0.186676i"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 2444,
+  "computation": "alpha-em-r2-quillen-curvature-probe",
+  "scriptFile": "alpha_em_r2_quillen_curvature_probe.py",
+  "scriptHash": "7366339fe196",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "α_EM R2 Quillen-curvature attack (bean qou-jkcx; DERIVATION-ONLY; owner ruling 2026-07-19 stands: R2 NOT proved, 1/(8π) stays phase-4, NOTHING wires). Executes the §5 proposal of the 2026-07-25 Quillen classification: test whether 1/(8π) is a determinant-line CURVATURE coefficient over the Bring Jacobian family Jac(Bring) ≅ E_{5τ}³ × E_τ. Building block (exact): c₁(L_τ) = −(1/2π)·ω_hyp per elliptic factor (AGMV 4.18 × the verified −1/(2y²)); ω_hyp scale-invariant under τ↦5τ so the (3,1) multiplicities pull back cleanly. Candidate table (exact rational × 1/π, no tolerance): unit-multiplicity product 2/π (MISS ×16); isogeny-weights (5,5,5,1) 8/π (MISS ×64); per-real-mode (÷b₁=8) = 1/(4π) = a₀ EXACTLY (MISS ×2 — the Quillen route independently reproduces the derived heat-kernel unit; the residual 2 is the known open ½, #3925); per-mode on the complexified doubled pair (÷16) = 1/(8π) MATCH but the divisor is the R2-core premise itself; Belavin–Knizhnik WP coefficient with scalar content 8/(64π) = 1/(8π) MATCH but n=0 is unforced (photon spin-1 content gives 13/(8π) or 11/(16π), both MISS) and Σ = 4·2 = 2g = b₁ is the count in disguise under AGMV's WP convention. Prune: no integer n has 3(n+1)²−1 = 8. The forced even/Szegő characteristic (A6) is curvature-coefficient-blind (AGMV: S_L, U_WP reference no characteristic) — it cannot carry the 1/8. VERDICT: shape-compatible, selection-dependent — NOT derived; every exact match needs exactly one unforced choice restating R2's known open content. MISMATCH FINDING: R2-core's object is a Schwinger proper-time measure normalization, not a determinant-line quantity; the curvature attack can reproduce a₀ and relocate the ½, not derive it. Scope-(a); NO FIT; audit-only; nothing wired.",
+  "auditOnly": "docs/audits/2026-07-25-alpha-em-r2-quillen-curvature-attack.md",
+  "data": {
+    "target_object_statement": {
+      "R2_core": "the loop expansion weighs proper time by the standard Schwinger measure with unit normalization — one per-mode unit on the doubled pair (OPEN; owner ruling 2026-07-19)",
+      "working_coefficient": "½·a₀ = 1/(8π), a₀ = 1/(4π) heat-kernel (derived #3909)",
+      "mismatch_finding": "R2-core's object is a proper-time MEASURE normalization, not a determinant-line point value or curvature; the Bismut–Freed bridge (same heat-kernel index density) is what makes the curvature framing meaningful as a shape test only"
+    },
+    "candidates": [
+      {
+        "key": "T0_baseline_reciprocal_count",
+        "value_exact": "1/(8*pi)",
+        "value_times_pi": "1/8",
+        "ratio_to_1_over_8pi": "1",
+        "match": true,
+        "family": "none (no family)",
+        "operator": "none (no operator)",
+        "measure": "none — the identification 1/(8π) = 1/(π·b₁) itself",
+        "forced_ingredients": "b₁ = 8 proved (#2114/#3834/#3896)",
+        "unforced_ingredients": "the reciprocal-in-b₁ FORM is the phase-4 identification — definitionally the thing to be derived, so this row is the tautology floor, not a candidate"
+      },
+      {
+        "key": "QA_product_line_unit_mult",
+        "value_exact": "2/pi",
+        "value_times_pi": "2",
+        "ratio_to_1_over_8pi": "16",
+        "match": false,
+        "family": "Jac(Bring) ≅ E_{5τ}³ × E_τ, base τ ∈ ℍ through τ₀; multiplicities (3,1) from spec(M_RR) = {5,5,5,1}",
+        "operator": "∂̄ per elliptic fibre (scalar det'Δ(E_τ) = (Im τ)²|η|⁴)",
+        "measure": "coefficient against ω_hyp (scale-invariant, verified)",
+        "forced_ingredients": "4 factors (g = 4); per-factor −1/(2π) (this probe + AGMV 4.18)",
+        "unforced_ingredients": "none — and it MISSES by 16"
+      },
+      {
+        "key": "QA5_isogeny_degree_weights",
+        "value_exact": "8/pi",
+        "value_times_pi": "8",
+        "ratio_to_1_over_8pi": "64",
+        "match": false,
+        "family": "Jac(Bring) ≅ E_{5τ}³ × E_τ, base τ ∈ ℍ through τ₀; multiplicities (3,1) from spec(M_RR) = {5,5,5,1}",
+        "operator": "∂̄ per elliptic fibre (scalar det'Δ(E_τ) = (Im τ)²|η|⁴)",
+        "measure": "coefficient against ω_hyp, factors weighted (5,5,5,1)",
+        "forced_ingredients": "weights (5,5,5,1) = spec(M_RR)",
+        "unforced_ingredients": "weighting-by-isogeny-degree is itself a choice — and it MISSES by 64"
+      },
+      {
+        "key": "QB_per_real_mode",
+        "value_exact": "1/(4*pi)",
+        "value_times_pi": "1/4",
+        "ratio_to_1_over_8pi": "2",
+        "match": false,
+        "family": "Jac(Bring) ≅ E_{5τ}³ × E_τ, base τ ∈ ℍ through τ₀; multiplicities (3,1) from spec(M_RR) = {5,5,5,1}",
+        "operator": "∂̄ per elliptic fibre (scalar det'Δ(E_τ) = (Im τ)²|η|⁴)",
+        "measure": "coefficient against ω_hyp ÷ b₁ (per real H¹ mode)",
+        "forced_ingredients": "4 factors; per-factor −1/(2π); b₁ = 8 proved",
+        "unforced_ingredients": "the 'divide by the count' step is the reciprocal-form identification (phase-4) — BUT the output is a₀ = 1/(4π) EXACTLY (asserted), reproducing the derived heat-kernel unit from the Quillen side; residual vs target is exactly 2 — the known ½ (#3925)"
+      },
+      {
+        "key": "QC_per_mode_doubled_pair",
+        "value_exact": "1/(8*pi)",
+        "value_times_pi": "1/8",
+        "ratio_to_1_over_8pi": "1",
+        "match": true,
+        "family": "Jac(Bring) ≅ E_{5τ}³ × E_τ, base τ ∈ ℍ through τ₀; multiplicities (3,1) from spec(M_RR) = {5,5,5,1}",
+        "operator": "∂̄ per elliptic fibre (scalar det'Δ(E_τ) = (Im τ)²|η|⁴)",
+        "measure": "coefficient against ω_hyp ÷ 16, 16 = dim_ℝ(H¹(M,ℝ)⊗ℂ) = dim_ℝ(H^{1,0} ⊕ H^{0,1} as real space)",
+        "forced_ingredients": "4 factors; per-factor −1/(2π); b₁ = 8; H¹⊗ℂ = H^{1,0}⊕H^{0,1} (Hodge, proved doubling #3920)",
+        "unforced_ingredients": "counting per REAL dimension of the COMPLEXIFIED pair space is exactly the R2-core premise ('one per-mode unit on the doubled pair') — selected because it lands on 1/(8π); no independent framework fact forces this count over Q-B's"
+      },
+      {
+        "key": "QD_BK_WP_scalar_content",
+        "value_exact": "1/(8*pi)",
+        "value_times_pi": "1/8",
+        "ratio_to_1_over_8pi": "1",
+        "match": true,
+        "family": "Jac(Bring) ≅ E_{5τ}³ × E_τ, base τ ∈ ℍ through τ₀; multiplicities (3,1) from spec(M_RR) = {5,5,5,1}",
+        "operator": "AGMV family D: L⁰ → L², weight 3(0+1)²−1 = 2 per factor",
+        "measure": "AGMV (4.31) WP normalization: δδ̄W = −Σ[3(nᵢ+1)²−1]/(64π)·⟨δg,δg⟩_WP",
+        "forced_ingredients": "4 factors (g = 4); the weight formula (AGMV 4.25/4.32)",
+        "unforced_ingredients": "(i) n = 0 scalar content is unforced — the framework's photon lives on real 1-forms (spin 1 ⇒ n = 2 or 1, both MISS, Q-E); (ii) Σ = 4·2 = 2g = b₁, so the weight sum is the b₁ count in disguise; (iii) the /(64π) is AGMV's WP normalization convention — the exact landing inherits a convention choice"
+      },
+      {
+        "key": "QE1_photon_spin1_n2",
+        "value_exact": "13/(8*pi)",
+        "value_times_pi": "13/8",
+        "ratio_to_1_over_8pi": "13",
+        "match": false,
+        "family": "Jac(Bring) ≅ E_{5τ}³ × E_τ, base τ ∈ ℍ through τ₀; multiplicities (3,1) from spec(M_RR) = {5,5,5,1}",
+        "operator": "AGMV family n = 2 (pair of spin ±1), weight 26 per factor",
+        "measure": "AGMV (4.31) WP normalization",
+        "forced_ingredients": "weight formula",
+        "unforced_ingredients": "none — MISSES"
+      },
+      {
+        "key": "QE2_photon_n1",
+        "value_exact": "11/(16*pi)",
+        "value_times_pi": "11/16",
+        "ratio_to_1_over_8pi": "11/2",
+        "match": false,
+        "family": "Jac(Bring) ≅ E_{5τ}³ × E_τ, base τ ∈ ℍ through τ₀; multiplicities (3,1) from spec(M_RR) = {5,5,5,1}",
+        "operator": "AGMV family n = 1, weight 11 per factor",
+        "measure": "AGMV (4.31) WP normalization",
+        "forced_ingredients": "weight formula",
+        "unforced_ingredients": "none — MISSES"
+      }
+    ],
+    "numeric_bring_tie": {
+      "tau0": "(-0.5 + 0.186676j)",
+      "quarter_laplacian": "-14.348054954552774683",
+      "expected": "-14.348054954552774683",
+      "rel_dev": "0.0"
+    },
+    "agmv_reference": {
+      "citation": "L. Alvarez-Gaume, G. Moore, C. Vafa, 'Theta Functions, Modular Invariance, and Strings', Commun. Math. Phys. 106, 1-40 (1986)",
+      "upload": "uploads/1104115581.pdf",
+      "equations_used": {
+        "(4.18)": "curvature of the determinant line = (i/2π)∂∂̄ log‖σ‖² (Bismut–Freed)",
+        "(4.25)/(4.27)": "conformal-anomaly weight [3(n+1)²−1]/(24π) Liouville / [3(n+1)²−1]/(192π) momentum form",
+        "(4.31)": "δδ̄W = −[3(n+1)²−1]/(64π)·⟨δg,δg⟩_WP",
+        "below (4.32)": "total obstruction ∝ Σᵢ[3(nᵢ+1)²−1]; S_L and U_WP make no reference to the spin structure"
+      }
+    }
+  }
+}
