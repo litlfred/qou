@@ -219,4 +219,44 @@ theorem euler_tail_lambert_rearrange {p : ℝ} (hp0 : 0 < p) (hp1 : p < 1) :
     _ = ∑' j : ℕ, (1 / ((j : ℝ) + 1)) * (p ^ (j + 1) / (1 - p ^ (j + 1))) :=
         tsum_congr hcol
 
+/-- **V2 (capstone) — the Euler-function / Dedekind-eta asymptotic (`W-P2`).**  The
+    negative-factor Euler tail, rescaled by `(1−p)`, converges to `ζ(2) = π²/6`:
+
+    `(1−p)·Σ'_m −log(1−p^{m+1}) → π²/6`   as `p → 1⁻`,
+
+    equivalently `(1−p)·log ∏_{m≥1}(1−pᵐ) → −π²/6` (the classical Hardy–Ramanujan
+    eta asymptotic).  Assembles V2a (`euler_tail_lambert_rearrange`) with V2b
+    (`euler_tail_jseries_tendsto`): the `(1−p)`-scaled Lambert `j`-series is the
+    V2b summand reindexed by the vanishing `j=0` term.  With `p = 1/q`
+    (`q→1⁺ ⟺ p→1⁻`) this is exactly the regularized negative-factor piece of
+    Part B (`W-P2 → −π²/6`), one of the two halves of `Li₂(x) − π²/3`. -/
+theorem euler_tail_asymptotic :
+    Tendsto (fun p : ℝ => (1 - p) * ∑' m : ℕ, (-Real.log (1 - p ^ (m + 1))))
+      (𝓝[<] 1) (𝓝 (Real.pi ^ 2 / 6)) := by
+  have hpos : ∀ᶠ p in 𝓝[<] (1 : ℝ), (0 : ℝ) < p := by
+    have hmem : Set.Ioi (0 : ℝ) ∈ 𝓝 (1 : ℝ) := Ioi_mem_nhds (by norm_num)
+    exact (Filter.eventually_of_mem hmem (fun p hp => Set.mem_Ioi.mp hp)).filter_mono
+      nhdsWithin_le_nhds
+  refine euler_tail_jseries_tendsto.congr' ?_
+  filter_upwards [self_mem_nhdsWithin, hpos] with p hp1 hp0
+  have hp1' : p < 1 := hp1
+  have hGsum : Summable
+      (fun j : ℕ => (1 / (j : ℝ)) * ((1 - p) * p ^ j / (1 - p ^ j))) := by
+    refine Summable.of_nonneg_of_le (fun j => ?_) (fun j => ?_) hasSum_zeta_two.summable
+    · rcases Nat.eq_zero_or_pos j with h | h
+      · subst h; simp
+      · exact mul_nonneg (by positivity) (euler_tail_coeff_nonneg h hp0 hp1')
+    · rcases Nat.eq_zero_or_pos j with h | h
+      · subst h; simp
+      · rw [show (1 : ℝ) / (j : ℝ) ^ 2 = (1 / (j : ℝ)) * (1 / (j : ℝ)) by
+              rw [div_mul_div_comm, one_mul, ← pow_two]]
+        exact mul_le_mul_of_nonneg_left (euler_tail_coeff_le h hp0 hp1') (by positivity)
+  rw [hGsum.tsum_eq_zero_add]
+  simp only [Nat.cast_zero, one_div, zero_mul, pow_zero, sub_self, div_zero,
+    zero_add]
+  rw [euler_tail_lambert_rearrange hp0 hp1', ← tsum_mul_left]
+  refine tsum_congr (fun j => ?_)
+  push_cast
+  ring
+
 end QOU.QPochhammer
