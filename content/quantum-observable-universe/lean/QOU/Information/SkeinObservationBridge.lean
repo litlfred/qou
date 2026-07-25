@@ -128,6 +128,47 @@ theorem haltsObserved_of_polyObservable (poly : ℕ → ℕ) (P : S)
 def PolyCollapse (poly : ℕ → ℕ) (universal : S) : Prop :=
   sys.PolyObservable poly universal
 
+/-! #### The q-Navier–Stokes leg: regularity vs. finite-time blow-up
+
+The **third** filtration question. A vortex flow of the brane fluid is a braid
+word `β(t) ∈ H_n(q)` evolving in time; its closure is a knotted vortex tube, its
+conserved **helicity is the Markov-trace observation** (`obs`), and its crossing
+number is the length filtration `len` (see `fluid-dynamics/helicity-conservation`,
+`braid-fluid`, `TwoVortexChannelAlgebra`). q-NS smoothness asks whether `len`
+stays **bounded** along the orbit — no finite-time singularity — the q-analog of
+Beale–Kato–Majda (`QOU.FluidDynamics.q_bkm_criterion`). This is the same
+filtration that q-Collatz asks to *descend* and P-vs-NP asks to be *polynomial*. -/
+
+/-- **Regularity / no finite-time blow-up** (q-NS): the length filtration stays
+    bounded by `B` along the whole orbit — the vortex-knot complexity never
+    diverges. -/
+def Regular (B : ℕ) (P : S) : Prop := ∀ k : ℕ, sys.len (sys.step^[k] P) ≤ B
+
+/-- **Blow-up**: the filtration is unbounded along the orbit — the finite-time
+    singularity of a q-NS solution (negation of regularity for every bound). -/
+def BlowsUp (P : S) : Prop := ∀ B : ℕ, ∃ k : ℕ, B < sys.len (sys.step^[k] P)
+
+/-- A regular orbit does not blow up. -/
+theorem not_blowsUp_of_regular (B : ℕ) (P : S) (h : sys.Regular B P) :
+    ¬ sys.BlowsUp P := by
+  intro hb
+  obtain ⟨k, hk⟩ := hb B
+  exact absurd (h k) (not_le.mpr hk)
+
+/-- **Non-increasing filtration ⇒ regularity** (bound = initial complexity). The
+    abstract shadow of q-BKM: a monotone Lyapunov filtration (bounded / decaying
+    enstrophy — the vortex-knot complexity never grows) rules out finite-time
+    blow-up. The same monotonicity that drives q-Collatz descent gives q-NS
+    regularity; only P-vs-NP additionally demands the descent be *polynomially
+    fast*. -/
+theorem regular_of_len_nonincreasing (P : S)
+    (hmono : ∀ k : ℕ, sys.len (sys.step^[k + 1] P) ≤ sys.len (sys.step^[k] P)) :
+    sys.Regular (sys.len P) P := by
+  intro k
+  induction k with
+  | zero => simp
+  | succ n ih => exact le_trans (hmono n) ih
+
 end SkeinObservationSystem
 
 /-! ### Proof-by-contradiction skeleton for a residue-based separation -/
