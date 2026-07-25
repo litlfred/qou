@@ -1,5 +1,6 @@
 import QOU.BraidsAndKnots.YoungDiagramKernel
 import QOU.BraidsAndKnots.YoungDiagramTransposeBridge
+import QOU.BraidsAndKnots.YoungDiagramKernelDimPos
 import Mathlib.Analysis.SpecialFunctions.Log.Basic
 
 /-!
@@ -175,13 +176,14 @@ theorem tiltOmega_one_eq_kernelValue (k : ℕ)
   rw [one_mul, Real.exp_log hfl]
   ring
 
-/-- **The conditional kernel bound (capstone)**: the two pincer legs close the covariance-kernel
-conjecture at level `k` — `kernelValue k ≤ 0` is *derived* from `KernelPincerLegs k` through the
-positivity of the tilted partition function and the `θ = 1` bridge. Providing the (currently
-absent) instance for all `k` is exactly the open problem. -/
-theorem kernelValue_nonpos_of_legs (k : ℕ) [KernelPincerLegs k] (hk : 1 ≤ k)
-    (hf : ∀ l ∈ partsOf k, 0 < sytDim l) :
+/-- **The conditional kernel bound (capstone, hypothesis-free)**: the two pincer legs close the
+covariance-kernel conjecture at level `k` — `kernelValue k ≤ 0` is *derived* from
+`KernelPincerLegs k` through the positivity of the tilted partition function (dimension
+positivity now *proved*, `YoungDiagramKernelDimPos.sytDim_pos_of_mem_partsOf`) and the `θ = 1`
+bridge. Providing the (currently absent) instance for all `k` is exactly the open problem. -/
+theorem kernelValue_nonpos_of_legs (k : ℕ) [KernelPincerLegs k] (hk : 1 ≤ k) :
     kernelValue k ≤ 0 := by
+  have hf := YoungDiagramKernelDimPos.sytDim_pos_of_mem_partsOf k
   have hZ := tiltNorm_pos k 1 hk hf
   have hg := tiltedMean_one_nonpos k
   have hW : tiltOmega k 1 ≤ 0 := by
