@@ -270,6 +270,24 @@ principle — the open problem itself).
   naive φ-side Gauss-prefactor `θ = 3/2` tie is untestable at this
   depth (scope-(a); deeper `C_n` or an analytic singularity-type
   argument is the follow-up). auditOnly; nothing wired.
+- **A6.3 LANDED (deep tail law SETTLED — a simple pole, not soft).**
+  [`qbeta_5two_tail_law_deep_cn_probe.py`](../../computations/probes/qbeta_5two_tail_law_deep_cn_probe.py)
+  + witness, 4/4: the exact Masbaum `C_n` extended to **n = 96** (shared
+  Pascal triangle, integer-exact vs the merged profile module; dps 800
+  against a ~640-digit worst cancellation). The A6.2 puzzle resolves:
+  the θ track marches monotonically `12.35 → 0.25` and
+  `(−1)^n·T̂_n → c∞ = 1.230766e-12` (Aitken offset-stability 4.4e-10) —
+  the W9 q-Borel function has a **SIMPLE POLE at w = −1 with residue
+  ≈ 1.23e-12**; the "soft singularity" reading (W9-parallel B1, and
+  A6.2's shallow windows) was the transient, which decays geometrically
+  with **ratio 0.90086 ≈ 1/q₀** (match to 6e-5 — the next singularity
+  scale is the substrate modulus itself; measured observation, no
+  identification). The naive φ-side `3/2` algebraic tie is
+  refuted-as-stated for this transform (scope-(a)). **g3-lane flag:**
+  the pole introduces a ~1e-12-scale contour ambiguity into the
+  θ-Laplace scheme — above the stated `5e-16` D_odd band (no physics
+  impact at the −0.0076 scale, but the precision claim needs the
+  caveat). auditOnly; nothing wired.
 
 - **A2 LANDED (derived odd-Stokes datum).**
   [`qbeta_5two_stokes_barodd_index_probe.py`](../../computations/probes/qbeta_5two_stokes_barodd_index_probe.py)

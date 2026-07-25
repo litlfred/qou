@@ -2193,3 +2193,19 @@ exact q-Borel T̂_n carry **no clean algebraic n^{−θ} tail at n ≤ 43**
 naive φ-side Gauss-prefactor 3/2 tie is untestable at that depth;
 A6.3 (deep C_n to n = 96, dps 800) is running to settle pre-asymptotic
 vs flat-type. Scope-(a); no fit; no c_k wired.
+
+**2026-07-25 (A6.3, same branch/PR #4195) — THE W9 BOREL SINGULARITY IS
+A SIMPLE POLE (residue ≈ 1.23e-12), not soft; D_odd precision caveat.**
+`qbeta_5two_tail_law_deep_cn_probe.py` (4/4): exact C_n to n = 96
+(shared Pascal triangle, integer-exact regeneration gate; dps 800 vs a
+~640-digit cancellation). (−1)ⁿT̂_n plateaus at c∞ = 1.230766e-12
+(Aitken 4.4e-10-stable); the θ track marches 12.35 → 0.25. So the B1
+"soft singularity / coefficients decay to 0" reading was the TRANSIENT
+— which itself decays geometrically at ratio 0.90086 ≈ 1/q₀ (6e-5
+match; measured observation): ĝ(w) = c∞/(1+w) + (analytic to |w| ≈ q₀).
+**Flag for this lane:** the pole puts a ~1e-12-scale contour ambiguity
+into the θ-Laplace scheme, above the stated 5e-16 D_odd band — no
+physics impact at the 7.6e-3 scale, but the precision statement should
+carry the caveat (or the pole term subtracted explicitly, after which
+the 5e-16 claim likely survives on the regular part). Scope-(a); no
+fit; nothing wired.
