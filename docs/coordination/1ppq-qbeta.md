@@ -2224,3 +2224,14 @@ with the exact pole split: D_odd_reg = −0.00757940374349, = this
 ledger's median to 4.5e-12; honest full-pipeline band 1.1e-10 (the
 5e-16 figure is scheme-orbit-only; the A6.3 pole caveat resolves with
 the pole explicit). Every constant derived; no fit; nothing wired.
+
+**2026-07-25 (coordination, PR #4226 tranche) — bridge attack scope
+posted.** B3 landed (the (★) identity wired as the canonical Habiro-tail
+compute path, machine-exact gate); B2 heart landed (bar-inversion
+`[n,k]_q = q^{k(n−k)}[n,k]_{q⁻¹}` sorry-free in
+`QOU/QBeta/HabiroTailStar.lean`; general (★) typed + Ref'd). B1 (the
+O_φ ↔ D_odd Stokes-population bridge) starting: intent posted on #4213
+(GZ weight-selection — their `weightDiff = 0 ⇒ integer Stokes` on the
+σ-pair ray is load-bearing here; will cite, not re-derive) and #3805
+(G3 3d-index lane — same integers-not-fits program, different knot +
+route; measured research-overlap per the 2026-07-18 relaxation).
