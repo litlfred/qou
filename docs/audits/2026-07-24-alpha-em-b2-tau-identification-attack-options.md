@@ -191,3 +191,33 @@ Braden–Northover period basis (`M_S = 5·Id−𝟙`) — this needs the S₅ a
 period basis*, which the corpus does not record (only the Hodge Gram `M_S`
 itself). So `|c|` is gated on `U` (a finite, pure-representation-theory datum),
 not on the deformation. No instance registered; `1/(8π)` phase-4; nothing wired.
+
+## Update 2026-07-25 (3) — the S₅ period alignment U built; the τ-chain CLOSES end-to-end
+
+`alpha_em_b2_period_intertwiner_probe.py` constructs the second half of the
+canonical Tits iso — the pure-S₅ alignment `U` — and closes the identification.
+
+- **`ρ_period` derived, not fitted.** `M_S = 5·Id₄ − 𝟙` is the S₄-permutation form,
+  so the period realisation of `(4,1)` is the basis `hᵢ = eᵢ − (1/5)Σe`: S₄ permutes
+  `h₁..h₄`, `(4 5): h₄ ↦ −(h₁+h₂+h₃+h₄)`. Its invariant form is **exactly** `(1/5)M_S`
+  (residual `0`). No extra Braden–Northover data needed beyond `M_S`.
+- **`U` constructed.** The intertwiner `U·ρ_H^1(sᵢ) = ρ_period(sᵢ)·U` (exact q=1 Young
+  natural rep, `a = 1/ρ`) has **nullity 1** (Schur) and intertwines to residual
+  `6e-41`. It transports the q=1 seminormal Gram to `κ·M_S` exactly (residual `2e-39`).
+- **END-TO-END closure:** with `T(q₀)` the deformation *-isometry (Update (2)),
+  `(T·U⁻¹)ᵀ · G_Markov(q₀) · (T·U⁻¹) = c·M_S` **exactly** (residual `3e-39`). The
+  τ-image of the Hecke Markov Gram at `q₀` lands proportional to the Hodge Gram `M_S`
+  — the identification `τ(Markov Gram) ∝ Hodge Gram` is now **explicitly realised**
+  for the `(4,1)` block by the concrete map `W = T·U⁻¹`.
+
+**Honest scope.** This realises the identification at the representation-theory level:
+the Markov and Hodge Grams ARE proportional-congruent, via a map built from the
+canonical seminormal deformation (`T`) + the canonical S₅ period alignment (`U`). The
+reported scalar (`c_raw ≈ 0.7158` in working normalisations) is convention-dependent;
+the canonical `|c|` fixes both normalisations + the *-isometric gauge (`→1`,
+`canonical_frame_c_eq_one`, #4209). What remains genuinely OPEN is the **physical**
+claim that the archimedean functor `τ` *equals* this canonical `W` (i.e. that the
+α_EM loop weight IS this Markov Gram) — a categorical/physics input, not a
+representation-theory one. All representation-theory obstacles to the τ-identification
+are now removed and everything is explicitly constructed. No instance registered;
+`1/(8π)` stays phase-4; nothing wired.
