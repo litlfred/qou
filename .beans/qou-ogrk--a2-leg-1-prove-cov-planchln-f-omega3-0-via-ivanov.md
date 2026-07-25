@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-07-25T03:30:08Z
-updated_at: 2026-07-25T17:15:27Z
+updated_at: 2026-07-25T17:22:08Z
 parent: qou-v8t7
 ---
 
@@ -22,3 +22,7 @@ CORRECTION (2026-07-25). The A2 POINTWISE reduction Cov(H_s,omega3)<=0 for-all-s
 
 
 SURVIVING STRUCTURE (2026-07-25, after pointwise-route correction). Moment skeleton M_k=Sum v^k nu_v=Cov(Sum h^k, Sum h^2): M_0=0, M_2=|C3|, M_1..M_12>0 ROBUST (n<=40) -- unlike the pointwise property (failed n=29). GF dichotomy: G(t)=Sum nu_v e^{tv}=Sum_{k>=1} t^k M_k/k! is >0 for t>0 (all terms positive) but for t<0 equals Cov(H_s,omega3) (alternating, positive for n>=29) -- same GF, opposite half-lines. ln(v) increasing => A2<=0 robust, but ln concave (not positive power combo) => M_k>0 doesn't close A2 (needs global arg). PROOF LEAD: even-k M_{2j}=Cov(Sum h^{2j},Sum h^2) shifted-symmetric => exact poly in n (deg j+2, positive leading coeff) via Ivanov-Olshanski Prop 5.1 => provable by finite positivity check. Audit: 2026-07-25-covariance-kernel-A2-moment-skeleton.md
+
+
+
+PROVED SUB-RESULT (2026-07-25). Executed the even-k proof lead: even hook-power moments M_{2j}=Cov(Sum h^{2j}, Sum h^2)>0 for all n>=3, PROVED with manifest certificates. Exact polys (interp-verified): M_2=n(n-1)(n-2)/3=|C3|; M_4=n(n-1)(n-2)/3*5(n-8/3); M_6=n(n-1)(n-2)/3*7(3n-8)^2 (perfect square). Cofactors manifestly positive (constant/linear-past-root/perfect-square) => theorem. First proved positivity in the epic beyond k<=7 decide. Settles EVEN half of moment skeleton; odd-k empirical; does NOT prove A2 (ln concave). Lean-ready (M_6 = positivity one-liner). Audit: 2026-07-25-covariance-kernel-A2-even-moment-positivity-proved.md
