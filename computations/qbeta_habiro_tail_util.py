@@ -204,11 +204,14 @@ def main() -> int:
     poch = qpoch_list(qt, 100)
     v96 = t_hat_exact(96, qt, poch)
     c_inf = residue_c_inf(qt)
-    dev3 = abs(v96 - c_inf) / c_inf          # transient at n=96 is O(q̃⁹⁷)
-    g3 = dev3 < mp.mpf("1e-3")
+    # transient bound at n = 96: |u_n/c∞ − 1| ≲ q̃^{n+1}/(1−q̃)² (k=1 term
+    # + poch-tail, both O(q̃^{n+1}) with O(1/(1−q̃)) amplitudes)
+    bound3 = qt ** 97 / (1 - qt) ** 2
+    dev3 = abs(v96 - c_inf) / c_inf
+    g3 = dev3 < bound3
     print(f"[G3] t_hat_exact(96) = {mp.nstr(v96, 12)}  →  c∞ = "
-          f"{mp.nstr(c_inf, 12)} (rel {mp.nstr(dev3, 3)}, = O(q̃⁹⁷)): "
-          f"{'PASS' if g3 else 'FAIL'}")
+          f"{mp.nstr(c_inf, 12)} (rel {mp.nstr(dev3, 3)} < derived bound "
+          f"{mp.nstr(bound3, 3)}): {'PASS' if g3 else 'FAIL'}")
 
     wb = WitnessBuilder("qbeta-habiro-tail-util", engine="sympy-free exact + mpmath",
                         _script_path=__file__)
@@ -230,9 +233,9 @@ def main() -> int:
                      computed=1.0 if g2 else 0.0, expected=1.0, tolerance=0.5,
                      source="c52_laurent == the merged profile module's C52")
     wb.add_assertion("numeric_path_reaches_residue",
-                     computed=float(dev3), expected=0.0, tolerance=1e-3,
-                     source="t_hat_exact(96) → (q̃;q̃)_∞² within the O(q̃⁹⁷) "
-                            "transient at dps 60")
+                     computed=float(dev3 / bound3), expected=0.0, tolerance=1.0,
+                     source="t_hat_exact(96) → (q̃;q̃)_∞² within the DERIVED "
+                            "transient bound q̃⁹⁷/(1−q̃)² at dps 60")
     ok = all(a.passed for a in wb.assertions)
     wb.add_data("identity",
                 "C_n(a)(qbar;qbar)_n^2 a^-(5n^2+7n) = (-1)^n (qt;qt)_n^2 "
