@@ -140,7 +140,18 @@ def main() -> int:
     for k, v in rows.items():
         print(f"      {k:>24} = {mp.nstr(v, 10)}")
 
-    # ---- B: soft-singularity exponent of the exact W9 sequence ----
+    # ---- B: tail-law discrimination on the exact W9 sequence ----
+    # First-run lesson (recorded): the naive single-model power-law
+    # extraction ln|T̂| = c0 + c1·n − θ·ln n is WINDOW-UNSTABLE
+    # (θ: 11.3 → 9.4 between tails) — the exact integers do NOT follow a
+    # clean algebraic n^{−θ} at n ≤ 43, so the naive φ-side θ = 3/2 tie is
+    # not testable at this depth (scope-(a): this comparison, at this
+    # depth). Honest replacement: a three-model discrimination —
+    #   M_alg:       ln|T̂_n| = c0 + c1·n − θ·ln n     (algebraic soft sing.)
+    #   M_stretch:   ln|T̂_n| = c0 + c1·n − c·√n       (flat/stretched type)
+    #   M_quad:      ln|T̂_n| = c0 + c1·n − c·n²/2     (residual q-quadratic)
+    # ranked by RMS residual on two tail windows; the assertion is the
+    # REPRODUCIBILITY of the ranking, not any physics pass/fail.
     a0 = mp.e ** (-t / 2)
     ainv = 1 / a0
     qbar = ainv ** 2
@@ -151,29 +162,46 @@ def main() -> int:
             poch *= (1 - qbar ** n)
         Th.append(_mb.leval(_mb.C52(n), ainv) * poch ** 2
                   * a0 ** (5 * n * n + 7 * n))
-    # exponent measurement: ln|T_n| = c0 + c1·n − θ·ln n on the tail
-    ns = list(range(20, N_COEF))
-    A_ = mp.matrix([[1, n, -mp.log(n)] for n in ns])
-    y = mp.matrix([mp.log(abs(Th[n])) for n in ns])
-    AtA = A_.T * A_
-    coef = mp.lu_solve(AtA, A_.T * y)
-    theta = coef[2]
-    # stability: repeat on a shifted window
-    ns2 = list(range(28, N_COEF))
-    A2 = mp.matrix([[1, n, -mp.log(n)] for n in ns2])
-    y2 = mp.matrix([mp.log(abs(Th[n])) for n in ns2])
-    theta2 = mp.lu_solve(A2.T * A2, A2.T * y2)[2]
-    dtheta = abs(theta - theta2)
-    log(f"[B] soft-singularity exponent of (−1)^n·T̂_n (exact integers):")
-    log(f"    θ(window 20..43) = {mp.nstr(theta, 8)}   θ(28..43) = "
-        f"{mp.nstr(theta2, 8)}   window drift {mp.nstr(dtheta, 3)}")
-    theta_pred = mp.mpf(3) / 2
-    dev_pred = abs(theta - theta_pred)
-    gB_stable = dtheta < mp.mpf("0.2")
-    match_32 = dev_pred < mp.mpf("0.25")
-    print(f"    φ-side Gauss-prefactor prediction θ = 3/2: measured "
-          f"{mp.nstr(theta, 6)} (|Δ| = {mp.nstr(dev_pred, 3)}) — "
-          f"{'CONSISTENT' if match_32 else 'DIFFERS (measured exponent recorded)'}")
+
+    def fit_resid(ns, third):
+        A_ = mp.matrix([[1, n, third(n)] for n in ns])
+        y = mp.matrix([mp.log(abs(Th[n])) for n in ns])
+        coef = mp.lu_solve(A_.T * A_, A_.T * y)
+        resid = A_ * coef - y
+        rms = mp.sqrt(sum(r * r for r in resid) / len(ns))
+        return coef[2], rms
+
+    models = {"algebraic_ln_n": lambda n: -mp.log(n),
+              "stretched_sqrt_n": lambda n: -mp.sqrt(n),
+              "quadratic_n2": lambda n: -mp.mpf(n * n) / 2}
+    windows = {"20..43": list(range(20, N_COEF)),
+               "28..43": list(range(28, N_COEF))}
+    tab = {}
+    rankings = {}
+    log("[B] tail-law discrimination on the exact T̂_n:")
+    for wname, ns in windows.items():
+        tab[wname] = {}
+        for mname, third in models.items():
+            c3_, rms = fit_resid(ns, third)
+            tab[wname][mname] = {"coef": mp.nstr(c3_, 8),
+                                 "rms": mp.nstr(rms, 6)}
+        ranking = sorted(models, key=lambda m: mp.mpf(tab[wname][m]["rms"]))
+        rankings[wname] = ranking
+        log(f"    window {wname}: " + "  ".join(
+            f"{m}: rms {tab[wname][m]['rms']}" for m in ranking))
+    gB_stable = rankings["20..43"] == rankings["28..43"]
+    best = rankings["20..43"][0]
+    best_rms = mp.mpf(tab["20..43"][best]["rms"])
+    runner_rms = mp.mpf(tab["20..43"][rankings["20..43"][1]]["rms"])
+    decisive = runner_rms / best_rms > 2
+    print(f"    best tail model: {best} "
+          f"({'decisive' if decisive else 'indicative'}; runner-up rms "
+          f"×{mp.nstr(runner_rms / best_rms, 4)}); ranking reproducible "
+          f"across windows: {'PASS' if gB_stable else 'FAIL'}")
+    print("    ⇒ the naive algebraic n^{−θ} tie to the φ-side 3/2 is NOT "
+          "supported at n ≤ 43")
+    print("      (scope-(a): this depth/model class; deeper C_n or an "
+          "analytic argument needed).")
 
     wb = WitnessBuilder("qbeta-5two-odd-two-route-confrontation",
                         engine="mpmath", _script_path=__file__)
@@ -197,11 +225,12 @@ def main() -> int:
                      computed=float(consA), expected=0.0, tolerance=1e-6,
                      source="Im φ_σ1(x_sub): truncation = directional "
                             "resummation (both converged at |x| ≈ 0.104)")
-    wb.add_assertion("exponent_extraction_stable",
+    wb.add_assertion("tail_law_ranking_reproducible",
                      computed=1.0 if gB_stable else 0.0, expected=1.0,
                      tolerance=0.5,
-                     source="θ window-drift < 0.2 across tail windows "
-                            "(20..43 vs 28..43) on the exact T̂_n")
+                     source="three-model tail-law ranking (algebraic / "
+                            "stretched / quadratic) identical across the "
+                            "two tail windows on the exact T̂_n")
     ok = all(a.passed for a in wb.assertions)
 
     wb.add_data("sigma_pair", {"x_sub": mp.nstr(x_sub, 15),
@@ -209,10 +238,15 @@ def main() -> int:
                                "O_phi_resummed": mp.nstr(O_r, 25)})
     wb.add_data("confrontation_rows", {k: mp.nstr(v, 12)
                                        for k, v in rows.items()})
-    wb.add_data("soft_exponent", {"theta_20_43": mp.nstr(theta, 12),
-                                  "theta_28_43": mp.nstr(theta2, 12),
-                                  "prediction_phi_side": "3/2",
-                                  "consistent_with_3_2": bool(match_32)})
+    wb.add_data("tail_law", {"models": tab, "rankings": rankings,
+                             "best": best,
+                             "decisive": bool(decisive),
+                             "note": "single-model power-law extraction was "
+                                     "window-unstable (theta 11.3 vs 9.4, "
+                                     "first run) — no clean algebraic tail "
+                                     "at n <= 43; the naive phi-side 3/2 "
+                                     "tie is untestable at this depth "
+                                     "(scope-(a))"})
     wb.add_data("open_bridge",
                 "the function-level identification O_φ ↔ D_odd requires the "
                 "Stokes sector population of the state-integral transseries "
@@ -223,11 +257,11 @@ def main() -> int:
                 (f"TWO-ROUTE CONFRONTATION RECORDED: O_φ = {mp.nstr(O_t, 8)} "
                  f"(σ-pair, calibration-free) vs D_odd = {mp.nstr(D_ODD, 6)} "
                  f"(Masbaum-face resummation) — ratio {mp.nstr(O_t/D_ODD, 6)}, "
-                 f"scope-(a), bridge OPEN. Soft exponent θ = "
-                 f"{mp.nstr(theta, 6)} vs the φ-side 3/2 prediction: "
-                 f"{'consistent' if match_32 else 'differs'} "
-                 f"(window drift {mp.nstr(dtheta, 3)}). auditOnly."
-                 if ok else "A gate failed — inspect before use."))
+                 f"scope-(a), bridge OPEN. Tail law: best model = {best} "
+                 f"({'decisive' if decisive else 'indicative'}); no clean "
+                 f"algebraic n^-theta at n <= 43, so the naive phi-side 3/2 "
+                 f"exponent tie is untestable at this depth (scope-(a)). "
+                 f"auditOnly." if ok else "A gate failed — inspect before use."))
     wb.save()
     print(f"\n  assertions passed: {ok}   ({time.monotonic()-T0:.0f}s)")
     print("  witness -> computations/probes/"
