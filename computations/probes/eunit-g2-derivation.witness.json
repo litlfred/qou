@@ -1,0 +1,214 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-25T03:03:47.765001+00:00",
+  "commitSha": "43661aee73e2fc7700d851db6a23d20c1cac0423",
+  "assertions": [
+    {
+      "name": "sym_M1a_per_crossing_split_theta",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "sym_M1a_C_per_leading_is_1_8",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "sym_M1b_C_coherent_leading_is_9_8",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "sym_M1c_C_incoherent_leading_is_3_8",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "sym_M1d_C_naive_h_leading_3_2_and_9_2",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "sym_M1f_identity_2cosh2t_minus_1_eq_h2",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "sym_M1g_rep_trace_sigma3_pure_bar_odd",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "sym_M2a_bernoulli_weights_B1_m12_B2_16_B3_0_B4_m130",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "num_g2_band_1008_1010",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "num_mech1_no_candidate_within_h2_of_g2",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "num_mech1_coherent_within_loose_h_budget",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "num_mech2_single_generator_magnus_tower_vanishes",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "num_m1g_rep_trace_pure_bar_odd",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "num_parity_closest_any_is_h3_bar_odd",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "num_parity_h3_within_6pct_but_bar_odd",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "num_parity_no_bar_even_monomial_within_10pct",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "num_parity_h4_too_small_ratio_below_half",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "pin_robust_g2_shift_below_1e6",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 18,
+  "computation": "eunit-g2-derivation",
+  "scriptFile": "eunit_g2_derivation_probe.py",
+  "scriptHash": "ea1a31982db1",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "g2 derivation attempt (the E_unit bar-even gap coefficient g2 = gap/h^2 = 1.00865, NEAR-MATCH, underived — committed eunit-magnus-order2 witness). Three mechanisms tested exactly, NO FIT. Mechanism 1 (cosh/crossing-count): the counit per-crossing split eps(sigma) = q = cosh(theta) + sinh(theta), theta = ln q, gives bar-even coefficient 1/8 of h^2 per crossing (NOT 1/2 — the counit weight is h/2 per the mu0 = m_e/(3h/2) ladder); sigma_1^3 is single-generator hence coherent: leading coefficient 9/8, exact value cosh(3 theta) => C = 1.1301; incoherent product 3/8 (0.3760); naive weight-h variants 3/2 (1.5387) and 9/2 (4.6495). NO candidate is within h^2-order of g2 (closest 1.1301 overshoots by 0.1215 = 2.78 h^2) => scope-(a): mechanism 1 alone, as-is, does not derive g2. Mechanism 2 (BCH/Bernoulli, phys-rep09 Thm 1 eq 32): every Magnus order >= 2 term is a LIE element with Bernoulli weights (B1 = -1/2 on [A1,A2] giving Omega_2 = (1/2) iint [A1,A2], eq 43; 1/6 nested at order 3, eq 45; 1/12 at order 4; generating function x/(e^x - 1) verified) => assigns EXACTLY 0 scalar quadratic content; for the single-generator deuteron word sigma_1^3 the whole tower vanishes => mechanism 2 predicts C = 0, cannot produce g2 (class-(b), invariants: Lie-element structure + [X,X] = 0). Broda's surface-ordered quadratic term carries the plain Dyson 1/2! weight on the twisted-curvature square — evaluation blocked on the missing Seifert-surface discretization (named wall). Parity puzzle: residual r = g2 - 1 = 0.008652; enumerating Laurent units (v-1/v)^a [2]_v^b (a in [0,6], b in [-6,6]): closest of ANY parity is h^3 (bar-ODD, +5.6%, PARITY-BLOCKED); closest bar-even is h^4 [2]_v^2 (-11.4%); NO bar-even monomial within 10% of r => STRUCTURAL FINDING: the residual is not a next-order ladder unit — it lives in the E+ frame definition (parity-projection prescription) or the crossing-count arithmetic. Nothing closes; nothing wired.",
+  "auditOnly": "docs/audits/2026-07-25-eunit-g2-derivation-attempt.md",
+  "parameters": {
+    "q0_env_pin": "1.1099785827513808075916690956107688798744991218736",
+    "q0_muon_canonical": "1.10997859555733471"
+  },
+  "data": {
+    "symbolic": {
+      "M1a_per_crossing_split_theta": true,
+      "M1a_C_per_leading_is_1_8": true,
+      "M1b_C_coherent_leading_is_9_8": true,
+      "M1c_C_incoherent_leading_is_3_8": true,
+      "M1d_C_naive_h_leading_3_2_and_9_2": true,
+      "M1f_identity_2cosh2t_minus_1_eq_h2": true,
+      "M1g_rep_trace_sigma3_pure_bar_odd": true,
+      "M2a_bernoulli_weights_B1_m12_B2_16_B3_0_B4_m130": true
+    },
+    "numeric_env_pin": {
+      "q0_used": "1.1099785827513808076",
+      "g2_measured": "1.00865204365",
+      "r_residual_g2_minus_1": "0.00865204364686",
+      "h2": "0.0437062085325",
+      "h3": "0.00913723301503",
+      "h4": "0.00191023266429",
+      "mech1_candidates": {
+        "C_per_crossing_cosh_theta": "0.1246603981",
+        "C_incoherent_cosh_theta_cubed": "0.3760225064",
+        "C_coherent_cosh_3theta": "1.130108831",
+        "C_naive_h_incoherent_cosh_h_cubed": "1.538731863",
+        "C_naive_h_coherent_cosh_3h": "4.64945621"
+      },
+      "mech1_mismatch_vs_g2": {
+        "C_per_crossing_cosh_theta": "0.88399165",
+        "C_incoherent_cosh_theta_cubed": "0.63262954",
+        "C_coherent_cosh_3theta": "0.12145679",
+        "C_naive_h_incoherent_cosh_h_cubed": "0.53007982",
+        "C_naive_h_coherent_cosh_3h": "3.6408042"
+      },
+      "mech1_closest_mismatch_over_h2": "2.77894",
+      "mech1_closest_mismatch_over_h": "0.580965",
+      "parity_table_within_30pct_of_r": [
+        {
+          "a": 3,
+          "b": 3,
+          "parity": "ODD",
+          "value": "0.009137233015",
+          "dev_vs_r": "0.056078"
+        },
+        {
+          "a": 4,
+          "b": 6,
+          "parity": "even",
+          "value": "0.007661746208",
+          "dev_vs_r": "0.114458"
+        },
+        {
+          "a": 1,
+          "b": -4,
+          "parity": "ODD",
+          "value": "0.006488851411",
+          "dev_vs_r": "0.250021"
+        },
+        {
+          "a": 2,
+          "b": 0,
+          "parity": "even",
+          "value": "0.01089686671",
+          "dev_vs_r": "0.259456"
+        }
+      ],
+      "h3_over_r": "1.056078"
+    },
+    "pin_robustness": {
+      "g2_shift_between_pins": "4.4204e-7"
+    }
+  },
+  "caveats": [
+    "NO FIT: the five mechanism-1 candidates are pre-registered structural shapes (per-crossing / coherent / incoherent x counit-weight h/2 vs naive weight h); none was tuned. The verdicts are constraint statements, scope-(a) unless an invariant is cited. g2 remains NEAR-MATCH tier, underived; nothing here is wired to production.",
+    "Citations: Blanes-Casas-Oteo-Ros, Phys. Rep. 470 (2009) 151-238, Thm 1 eq (32) + eqs (43)/(45) [uploads/phys-rep09.pdf]; Broda, math-ph/0012035v3 [uploads/]. q-rotor lineage (index-verified, abstracts only): Raychev-Roussev-Smirnov, J. Phys. G 16 (1990) L137-L141; Bonatsos-Daskaloyannis, Prog. Part. Nucl. Phys. 43 (1999) 537, nucl-th/9909003 — NOTE their q is typically a PHASE (unit-circle) for rotational-spectra fits; QOU's q0 is real. Comparison is lineage, not equivalence."
+  ]
+}

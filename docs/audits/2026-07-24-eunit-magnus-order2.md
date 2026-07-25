@@ -208,3 +208,9 @@ PR #4127 (`2026-07-19-octahedral-four-dilogarithm-missing-tetrahedra.md`, `FourD
 > ladder's $c_2 = -1$ is PROVED Taylor-exact and is unaffected by anything in this
 > audit. $g_2$ is the measured ratio (bar-even E_unit gap)/$h^2$ = 1.0087,
 > NEAR-MATCH tier, underived.
+
+> **Follow-up (2026-07-25):** three $g_2$ derivation mechanisms tested exactly — cosh/crossing-count
+> (predicts $9/8$, not 1.0087), BCH/Bernoulli (predicts 0), next-order-unit parity sweep (no bar-even
+> unit within 10% of $g_2-1$) — see
+> [`2026-07-25-eunit-g2-derivation-attempt.md`](2026-07-25-eunit-g2-derivation-attempt.md). $g_2$
+> remains NEAR-MATCH, underived.
