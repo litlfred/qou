@@ -2347,3 +2347,35 @@ numerical dζ/dq₀=1/q₀=O(1) boost-negative. Does NOT close c₃ (phase = ope
 conj:algebraic-geometric-dilog-equivalence). No fit; nothing inverts Q_β/CODATA;
 nothing wired; c₃ stays a q₀-dependent near-match (SETTLED #1580). Audit
 `docs/audits/2026-07-25-meridian-holonomy-c3-anchor.md`.
+
+**2026-07-25 (branch claude/qbeta-argu-phase-branch-selection-2026-07-25,
+PR #4293; CLOSES the last seat left open by #4288) — THE arg(u) PHASE
+BRANCH-SELECTION IS FROZEN ON THE REAL SUBSTRATE RAY: the deep keystone is a
+WALL, not a handle.** #4288 bounded the deformation MAGNITUDE and localized the
+residual to the non-perturbative PHASE arg(u) (the open
+conj:algebraic-geometric-dilog-equivalence branch-selection). This branch attacks
+that last seat, formalize-first. Result (`QOU/QBeta/ArgUPhaseBranchSelection.lean`,
+lean-direct exit 0, sorry-free): write the leading NZ Im 𝔙 in polar coords
+S(r,φ)=(√3/2)r²·sin(2φ) (r=|u|, φ=arg u; corpus 2026-07-11 branch-structure §2).
+(1) The task's suspicion is CONFIRMED: the phase is a maximal-leverage INDEPENDENT
+DOF — `nzImVolume_phase_deriv`: ∂S/∂φ|₀=√3r²≠0, `nzImVolume_quarter_turn`: φ:0↦π/4
+swings the FULL (√3/2)r² CS amplitude — NOT bounded by #4288's boost-hyperbola
+magnitude ratio. So the phase is not excluded by being bounded. (2) BUT the real
+substrate FREEZES the phase — `substrate_meridian_arg_zero`: u=2·log q₀ is a
+nonneg real for q₀≥1 ⇒ arg(u)=0; `anchor_phase_difference_zero`: both anchors real
+⇒ Δ(arg u)=0. (3) The WALL — `phase_channel_anchor_swing_zero`: the phase-channel
+anchor-swing (∂S/∂φ)·Δφ=(√3r²)·0=0 EXACTLY, regardless of the (nonzero, unbounded)
+sensitivity; `nzImVolume_real_ray`: S=0 on the whole real ray (recovers #3654
+amphichirality Im 𝔙(real)=0). Probe `qbeta_argu_phase_branch_selection_probe.py`
+(4/4, both committed anchors): arg(u)=0 both, S(real ray)=0 both, phase-channel
+swing=0 exactly, ∂S/∂φ|₀=0.0757≠0. This is a STRONGER negative than the magnitude
+bound (0.221 ppm vs exactly 0). UNIFIES the exclusion chain: #4282 (ω-home smooth)
++ #4288 (magnitude bounded) + this (phase frozen) ⇒ EVERY categorical/geometric DOF
+at real q₀ supplies zero-or-negligible anchor-swing ⇒ c₃'s anchor-dependence is
+genuinely NON-CATEGORICAL — a fibre-level ε=Im(q) (#3636, sign S=sign ε) realized
+through the 1/u³ ladder representation (#3636/#3654), COMPLETING the 2026-07-12
+wall-resolution capstone by formalizing its phase leg. Does NOT close c₃
+(conj:algebraic-geometric-dilog-equivalence stays open — whatever branch it
+selects, its phase is frozen at the observable level). No fit; nothing inverts
+Q_β/CODATA; nothing wired; c₃ stays a q₀-dependent near-match (SETTLED #1580).
+Audit `docs/audits/2026-07-25-argu-phase-branch-selection.md`.
