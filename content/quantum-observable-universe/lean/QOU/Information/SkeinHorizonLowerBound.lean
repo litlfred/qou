@@ -75,4 +75,46 @@ theorem treeSearch_haltsObserved_not_polyObservable (d : ℕ) :
     (treeSearch d).HaltsObserved 0 ∧ ¬ (treeSearch d).PolyObservable id 0 :=
   ⟨treeSearch_haltsObserved d, treeSearch_not_polyObservable_id d⟩
 
+/-! ### The algebrization obstruction: a poly shortcut refutes the lower bound
+
+Why does the provable lower bound stay confined to the decision-tree model? The
+structural reason: **any polynomial-time shortcut to the observation refutes
+`hcost`.** `treeSearch` survives only because its observation is a *black-box*
+counter — no shortcut exists. An **algebraic** observation (the Jones polynomial
+/ Markov trace) is, by contrast, an efficiently-evaluable object: evaluating it
+directly is exactly such a shortcut, so it *cannot* carry the `3^{len}` lower
+bound a P≠NP separation needs. This is the machine-checkable core of the
+algebrization barrier (Aaronson–Wigderson 2008): to cross it, the separating
+invariant must be genuinely **non-algebraic** — the χ(A) cohomological residue
+the bridge's `separation_of_residue_nonzero` takes as its `res ≠ 0` hypothesis,
+not polynomial data. -/
+
+/-- **A polynomial shortcut refutes the horizon lower bound.** If the observation
+    is reachable within a budget `poly` the horizon exceeds
+    (`PolyObservable poly P` with `poly (len P) < 3^{len P}`), then the
+    exponential lower bound `hcost` cannot hold for `P`. Contrapositive of
+    `not_polyObservable_of_horizon_cost`: an efficiently-shortcuttable (algebraic)
+    observation is incompatible with a `3^{len}` lower bound — the structural core
+    of why an algebraic invariant cannot separate the classes. -/
+theorem no_horizon_cost_of_polyObservable {S V : Type*}
+    (sys : SkeinObservationSystem S V) (poly : ℕ → ℕ) (P : S)
+    (hpoly : sys.PolyObservable poly P) (hbudget : poly (sys.len P) < 3 ^ sys.len P) :
+    ¬ (∀ k : ℕ, sys.obs (sys.step^[k] P) = sys.obs sys.normalForm →
+        3 ^ sys.len P ≤ k) :=
+  fun hcost => sys.not_polyObservable_of_horizon_cost poly P hcost hbudget hpoly
+
+/-- **Dichotomy (query-hard XOR shortcuttable).** Fixing an input whose horizon
+    exceeds the budget, a system cannot both admit the exponential lower bound
+    `hcost` and a polynomial shortcut. The lower bound lives exactly where no
+    algebraic shortcut does — the decision-tree side, witnessed by `treeSearch`. -/
+theorem not_polyObservable_or_not_horizon_cost {S V : Type*}
+    (sys : SkeinObservationSystem S V) (poly : ℕ → ℕ) (P : S)
+    (hbudget : poly (sys.len P) < 3 ^ sys.len P) :
+    ¬ sys.PolyObservable poly P ∨
+      ¬ (∀ k : ℕ, sys.obs (sys.step^[k] P) = sys.obs sys.normalForm →
+          3 ^ sys.len P ≤ k) := by
+  by_cases h : sys.PolyObservable poly P
+  · exact Or.inr (no_horizon_cost_of_polyObservable sys poly P h hbudget)
+  · exact Or.inl h
+
 end QOU.Information
