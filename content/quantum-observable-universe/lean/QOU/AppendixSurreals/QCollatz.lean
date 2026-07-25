@@ -390,6 +390,18 @@ theorem qTwoValuation_mul_qplus_one (P : Polynomial ℤ) (hP : P ≠ 0) :
   rw [hXC, rootMultiplicity_mul (mul_ne_zero hP (X_sub_C_ne_zero (-1))),
     rootMultiplicity_X_sub_C_self]
 
+open Polynomial in
+/-- **Odd-branch well-definedness.** When `P` is `q`-odd (`[2]_q ∣ P + 1`), the
+    odd-branch numerator `[3]_q·P + 1` is divisible by `[2]_q`, so the odd
+    branch `([3]_q·P + 1)/[2]_q` stays in the Skein ring `ℤ[q]`. Proof: the
+    Skein divisibility identity gives `[3]_q·P + 1 = q·[2]_q·P + (P + 1)`, and
+    `[2]_q` divides both summands. -/
+theorem qTwoDvd_oddBranch (P : Polynomial ℤ) (h : (X + 1) ∣ (P + 1)) :
+    (X + 1) ∣ ((X ^ 2 + X + 1) * P + 1) := by
+  have key : (X ^ 2 + X + 1) * P + 1 = X * (X + 1) * P + (P + 1) := by ring
+  rw [key]
+  exact dvd_add ((dvd_mul_left (X + 1) X).mul_right P) h
+
 /-! ### The domain-stable cone `D∞` and hypothesis-free convergence (Tier B) -/
 
 /-- **Generic termination-from-descent.** Over any predicate `S` that is
