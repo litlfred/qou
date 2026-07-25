@@ -109,6 +109,8 @@ pub mod matrix_m_mpfr;
 pub mod atomic_reduce_cache;
 pub mod sturm_psd;
 #[cfg(feature = "mpfr")]
+pub mod tl_cable_mpfr;
+#[cfg(feature = "mpfr")]
 pub mod tr_m_atomic_mpfr;
 #[cfg(feature = "mpfr")]
 pub mod tr_m_word_lq;
