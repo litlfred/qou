@@ -2,6 +2,7 @@ import QOU.BraidsAndKnots.YoungDiagramKernel
 import QOU.BraidsAndKnots.YoungDiagramTransposeBridge
 import QOU.BraidsAndKnots.YoungDiagramKernelDimPos
 import Mathlib.Analysis.SpecialFunctions.Log.Basic
+import Mathlib.Analysis.SpecialFunctions.ExpDeriv
 
 /-!
 # QOU.BraidsAndKnots.YoungDiagramKernelPincer — the two-leg pincer scaffold for the kernel sign
@@ -195,5 +196,80 @@ theorem kernelValue_nonpos_of_legs (k : ℕ) [KernelPincerLegs k] (hk : 1 ≤ k)
     simpa using h3
   rw [tiltOmega_one_eq_kernelValue k hf] at hW
   exact_mod_cast hW
+
+/-! ## The derivative identification: `g′(0) = covLnF`
+
+The remaining analytic content of the scaffold: the [A2] quantity `covLnF` **is** the derivative
+of the tilted mean at `θ = 0`, so `leg_A2`/`leg_A3` genuinely are the first-order coefficient and
+Taylor remainder of the pincer interpolation — closing the gap flagged in this file's header
+("the identification `g′(0) = covLnF k` … is the next analytic tranche"). -/
+
+/-- Derivative of a finite list sum, term by term. -/
+theorem hasDerivAt_list_sum {ι : Type*} (L : List ι) (F : ι → ℝ → ℝ) (F' : ι → ℝ) (x : ℝ)
+    (h : ∀ i ∈ L, HasDerivAt (F i) (F' i) x) :
+    HasDerivAt (fun θ => (L.map (fun i => F i θ)).sum) ((L.map F').sum) x := by
+  induction L with
+  | nil => simpa using hasDerivAt_const x (0 : ℝ)
+  | cons a t ih =>
+      simp only [List.map_cons, List.sum_cons]
+      exact (h a List.mem_cons_self).add
+        (ih fun i hi => h i (List.mem_cons_of_mem a hi))
+
+/-- The tilted weight is differentiable in `θ` with logarithmic derivative `ln f`:
+`(d/dθ) f^{2+θ} = f^{2+θ}·ln f`. -/
+theorem hasDerivAt_tilt (f : ℕ) (θ₀ : ℝ) :
+    HasDerivAt (fun θ => tilt θ f) (tilt θ₀ f * Real.log f) θ₀ := by
+  unfold tilt
+  have h1 : HasDerivAt (fun θ : ℝ => θ * Real.log f) (Real.log f) θ₀ := by
+    simpa using (hasDerivAt_id θ₀).mul_const (Real.log f)
+  have h2 := h1.exp
+  have h3 := h2.const_mul ((f : ℝ) ^ 2)
+  convert h3 using 1
+  ring
+
+/-- The tilted partition function differentiates term by term:
+`Z′(0) = Σ f²·ln f` (the `lnDimMoment` numerator). -/
+theorem hasDerivAt_tiltNorm_zero (k : ℕ) :
+    HasDerivAt (fun θ => tiltNorm k θ)
+      (((partsOf k).map (fun l => tilt 0 (sytDim l) * Real.log (sytDim l))).sum) 0 := by
+  unfold tiltNorm
+  exact hasDerivAt_list_sum (partsOf k) _ _ 0 fun l _ => hasDerivAt_tilt (sytDim l) 0
+
+/-- The tilted `ω₃`-sum differentiates term by term:
+`W′(0) = Σ f²·ln f·ω₃` (the `lnDimOmegaMoment` numerator). -/
+theorem hasDerivAt_tiltOmega_zero (k : ℕ) :
+    HasDerivAt (fun θ => tiltOmega k θ)
+      (((partsOf k).map (fun l =>
+        tilt 0 (sytDim l) * Real.log (sytDim l) * (omega3 k l : ℝ))).sum) 0 := by
+  unfold tiltOmega
+  exact hasDerivAt_list_sum (partsOf k) _ _ 0 fun l _ =>
+    (hasDerivAt_tilt (sytDim l) 0).mul_const ((omega3 k l : ℝ))
+
+/-- **The derivative identification (the analytic leg of the scaffold, now closed)**:
+`g′(0) = covLnF k` — the tilted mean has derivative exactly the finite-sum covariance
+`Cov₂(ln f, ω₃)` at `θ = 0`. Quotient rule on the term-by-term derivatives, with the tilted
+partition function nonvanishing by the (proved) dimension positivity. Hence `leg_A2` is
+literally the sign of `g′(0)`, and `leg_A3` is literally the first-order Taylor-remainder
+bound: the class fields are the pincer's genuine analytic legs. -/
+theorem hasDerivAt_tiltedMean_zero (k : ℕ) (hk : 1 ≤ k) :
+    HasDerivAt (tiltedMean k) (covLnF k) 0 := by
+  have hf := YoungDiagramKernelDimPos.sytDim_pos_of_mem_partsOf k
+  have hZ0 : tiltNorm k 0 ≠ 0 := (tiltNorm_pos k 0 hk hf).ne'
+  have hquot := (hasDerivAt_tiltOmega_zero k).div (hasDerivAt_tiltNorm_zero k) hZ0
+  have hEq : covLnF k
+      = ((((partsOf k).map (fun l =>
+            tilt 0 (sytDim l) * Real.log (sytDim l) * (omega3 k l : ℝ))).sum) * tiltNorm k 0
+          - tiltOmega k 0 *
+            (((partsOf k).map (fun l => tilt 0 (sytDim l) * Real.log (sytDim l))).sum))
+        / tiltNorm k 0 ^ 2 := by
+    unfold covLnF lnDimOmegaMoment lnDimMoment tiltedMean
+    field_simp
+  rw [show tiltedMean k = fun θ => tiltOmega k θ / tiltNorm k θ from rfl, hEq]
+  exact hquot
+
+/-- The `deriv`-form restatement: `deriv (g k) 0 = Cov₂(ln f, ω₃)`. -/
+theorem deriv_tiltedMean_zero (k : ℕ) (hk : 1 ≤ k) :
+    deriv (tiltedMean k) 0 = covLnF k :=
+  (hasDerivAt_tiltedMean_zero k hk).deriv
 
 end QOU.BraidsAndKnots.YoungDiagramKernelPincer
