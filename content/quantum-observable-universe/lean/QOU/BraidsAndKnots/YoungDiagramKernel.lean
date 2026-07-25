@@ -179,6 +179,59 @@ theorem omega3_conj_invariant_of_le_six (k : ℕ) (hk : k ≤ 6) :
     ∀ l ∈ partsOf k, omega3 k (conj l) = omega3 k l := by
   interval_cases k <;> decide
 
+/-! ## Even hook-power moment positivity (proved)
+
+The even hook-power moments of the covariance measure,
+`M_{2j}(n) = Cov_Planch(Σ_□ h^{2j}, Σ_□ h²) = Σ_v v^{2j} ν_v`, are exact polynomials in `n` (both
+weights shifted-symmetric; Ivanov–Olshanski, `math/0304010`). Derived exactly (Lagrange
+interpolation over exact `Fraction` values, cross-verified) and factored to a manifestly-positive
+form in `computations/deltalambda/wlambda_covariance_epic_A2_even_moment_positivity_proved.py`:
+
+    M_2(n) = n(n-1)(n-2)/3                 (= |C₃|; cofactor 1)
+    M_4(n) = n(n-1)(n-2)/3 · 5(3n-8)       [exact poly  5n⁴ − 85/3·n³ + 50n² − 80/3·n]
+    M_6(n) = 7·n(n-1)(n-2)·(3n-8)²         [exact poly  63n⁵ − 525n⁴ + 1582n³ − 2016n² + 896n]
+
+The cofactors relative to `|C₃| = n(n-1)(n-2)/3` are `1`, `5(3n-8)`, `21(3n-8)²`. (The `5(3n-8)` /
+`21(3n-8)²` forms are the exact ones checked by the probe's `cert_ok`; an earlier prose label
+`5(n-8/3)` / `7(3n-8)²` was off by a factor of 3 — positivity is unaffected.) We formalize
+`M_4, M_6 > 0` for `n ≥ 3` directly from the factored forms. `M_4` carries a `/3`, so we state
+`3·M_4` as an integer polynomial; `M_6` is already integer-coefficient. -/
+
+/-- `3·M₄(n) = 5·n(n−1)(n−2)·(3n−8)` — the integer form of the fourth even hook-power moment
+`M₄(n) = n(n−1)(n−2)/3 · 5(3n−8)` (so `M₄(n) = threeM4 n / 3`). -/
+def threeM4 (n : ℤ) : ℤ := 5 * (n * (n - 1) * (n - 2)) * (3 * n - 8)
+
+/-- `M₆(n) = 7·n(n−1)(n−2)·(3n−8)²` — the sixth even hook-power moment (already integer-coefficient;
+exact polynomial `[0, 896, −2016, 1582, −525, 63]` in `n⁰..n⁵`). -/
+def M6 (n : ℤ) : ℤ := 7 * (n * (n - 1) * (n - 2)) * (3 * n - 8) ^ 2
+
+/-- **`M₄(n) > 0` for `n ≥ 3`** (stated as `3·M₄ > 0`, whence `M₄ = 3·M₄/3 > 0`): after the positive
+`n(n−1)(n−2)` the cofactor `5(3n−8)` is positive past its root `8/3 < 3`. Manifest linear-past-root
+certificate for the fourth even hook-power moment. -/
+theorem threeM4_pos (n : ℤ) (hn : 3 ≤ n) : 0 < threeM4 n := by
+  unfold threeM4
+  have h1 : (0 : ℤ) < n := by omega
+  have h2 : (0 : ℤ) < n - 1 := by omega
+  have h3 : (0 : ℤ) < n - 2 := by omega
+  have h4 : (0 : ℤ) < 3 * n - 8 := by omega
+  have h5 : (0 : ℤ) < (5 : ℤ) := by omega
+  exact mul_pos (mul_pos h5 (mul_pos (mul_pos h1 h2) h3)) h4
+
+/-- **`M₆(n) > 0` for `n ≥ 3`**: `(3n−8)²` is a perfect square, positive since `3n−8 ≥ 1 > 0`, and
+`n(n−1)(n−2) > 0`. Manifest perfect-square certificate for the sixth even hook-power moment. Together
+with `threeM4_pos` this is the first proved positivity in the covariance-kernel epic (`qou-x631`)
+beyond the `k ≤ 7` `decide` instances. It settles the EVEN half of the moment skeleton; the odd-`k`
+moments are non-polynomial and remain empirical, and this does **not** prove A2 (whose weight `ln` is
+concave — a global argument is still required). -/
+theorem M6_pos (n : ℤ) (hn : 3 ≤ n) : 0 < M6 n := by
+  unfold M6
+  have h1 : (0 : ℤ) < n := by omega
+  have h2 : (0 : ℤ) < n - 1 := by omega
+  have h3 : (0 : ℤ) < n - 2 := by omega
+  have h4 : (0 : ℤ) < 3 * n - 8 := by omega
+  have h7 : (0 : ℤ) < (7 : ℤ) := by omega
+  exact mul_pos (mul_pos h7 (mul_pos (mul_pos h1 h2) h3)) (pow_pos h4 2)
+
 /-- **CONJECTURE (OPEN).** The covariance kernel `Cov_Planch(f^λ, Σ_□ c(□)²) ≤ 0`, in its
 elementary content form: for every `k`, `Σ_{λ⊢k} (f^λ)³ (Σ_□c(□)² − C(k,2)) ≤ 0`. This is the sole
 open input of the Δ_λ super-exponential growth bound (`WstdSuperExpBound.lean`, via the reduction
