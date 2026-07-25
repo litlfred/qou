@@ -1,5 +1,6 @@
 import Mathlib.Algebra.GroupWithZero.Basic
 import Mathlib.Algebra.Ring.Basic
+import Mathlib.Algebra.Ring.Hom.Defs
 import Mathlib.Tactic.Ring
 
 /-!
@@ -87,5 +88,64 @@ theorem even_factor_eq_one_or_neg_one_of_inversion
   rcases mul_eq_zero.mp h2 with h3 | h3
   · exact Or.inl (sub_eq_zero.mp h3)
   · exact Or.inr (eq_neg_of_add_eq_zero_left h3)
+
+/-! ## The σ-unitarity (self-duality) route to the reciprocal-odd residual
+
+The `even_factor_*` results above kill the **even** elliptic freedom using inversion.
+The residual is the **reciprocal-odd** elliptic factor (`e(x)·e(−x)=1`, `e` not even).
+The physical `Φ_b` carries a second Frobenius-side datum the shift class omits:
+**σ-unitarity** `σ(Φ)·Φ = 1` (the `|Φ_b| = 1` pure phase,
+`QOU.QBeta.FaddeevModularDouble.IsSigmaUnitary`, `σ` = complex conjugation / the bar
+involution). This section shows σ-unitarity forces the surviving factor to be
+**σ-reflective** (`σ(e(x)) = e(−x)`), and that its **bar-even (σ-fixed)** part is then
+`±1` — an algebraic exclusion, complementary to the analytic growth route. -/
+
+section SigmaUnitary
+
+variable (σ : R →+* R)
+
+/-- **The connecting factor inherits σ-unitarity.** If both `Φ` and the modified
+solution `e · Φ` are σ-unitary (`σ(Φ)Φ = 1`, `σ(eΦ)(eΦ) = 1`), then `e` is σ-unitary
+(`σ(e x)·e x = 1`): the elliptic factor connecting two pure phases is itself a pure
+phase. -/
+theorem factor_sigmaUnitary_of_mul {Φ e : R → R}
+    (hΦ : ∀ x, σ (Φ x) * Φ x = 1)
+    (heΦ : ∀ x, σ (e x * Φ x) * (e x * Φ x) = 1) (x : R) :
+    σ (e x) * e x = 1 := by
+  have h := heΦ x
+  rw [map_mul] at h
+  have h2 : (σ (e x) * e x) * (σ (Φ x) * Φ x) = 1 := by rw [← h]; ring
+  rwa [hΦ x, mul_one] at h2
+
+/-- **σ-unitary + reciprocal-odd ⇒ σ-reflective.** A σ-unitary factor (`σ(e x)e x = 1`)
+that is reciprocal-odd (`e x · e(−x) = 1`, the inversion residual) satisfies
+`σ(e x) = e(−x)`: complex conjugation acts as argument reflection. -/
+theorem sigma_eq_reflection_of_reciprocal {e : R → R}
+    (hunit : ∀ x, σ (e x) * e x = 1)
+    (hrecip : ∀ x, e x * e (-x) = 1) (x : R) :
+    σ (e x) = e (-x) := by
+  have hex : e x ≠ 0 := fun h => by
+    have hr := hrecip x; rw [h, zero_mul] at hr; exact zero_ne_one hr
+  have h1 : σ (e x) * e x = e (-x) * e x := by
+    rw [hunit x, mul_comm (e (-x)) (e x), hrecip x]
+  exact mul_right_cancel₀ hex h1
+
+/-- **The bar-even reciprocal-odd σ-unitary factor squares to one.** If the σ-reflective
+factor is additionally σ-fixed (bar-even, `σ(e x) = e x`), then `e(−x) = e x` (even), so
+with reciprocity `e x ^ 2 = 1`. Thus inversion + σ-unitarity exclude the **bar-even** part
+of the reciprocal-odd residual algebraically; the remaining non-σ-fixed part is what the
+growth/boundedness route (`BoundedMeromorphicLiouville`) removes. -/
+theorem bar_even_reciprocal_sq_eq_one {e : R → R}
+    (hunit : ∀ x, σ (e x) * e x = 1)
+    (hrecip : ∀ x, e x * e (-x) = 1)
+    (hfix : ∀ x, σ (e x) = e x) (x : R) :
+    e x ^ 2 = 1 := by
+  have hrefl : σ (e x) = e (-x) := sigma_eq_reflection_of_reciprocal σ hunit hrecip x
+  have heven : e (-x) = e x := by rw [← hrefl, hfix x]
+  have hr := hrecip x
+  rw [heven, ← sq] at hr
+  exact hr
+
+end SigmaUnitary
 
 end QOU.QBeta.InversionKillsEvenElliptic
