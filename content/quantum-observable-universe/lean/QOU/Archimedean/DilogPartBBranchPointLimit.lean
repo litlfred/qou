@@ -156,4 +156,86 @@ theorem boundary_tendsto_zero_of_bounded {x ρ : ℝ} (hx0 : 0 < x)
   rw [Real.norm_eq_abs, abs_mul, abs_of_nonneg hqj0]
   gcongr
 
+/-- **No-resonance boundary vanishing.**  The genuine branch-point regime.  If the
+    scaling keeps the branch-point gap *comparable to the cell width* — a lower
+    bound `c·(q−1) ≤ 1 − x qⁿ` for some fixed `c > 0` (the Faddeev / Diophantine
+    no-resonance condition: the branch point does not fall super-exponentially
+    close to a lattice node `qᵏ`) — then the boundary term `(q−1)·log(1−xqⁿ) → 0`
+    unconditionally as `q → 1⁺`.  This is where the general limit *fails* without a
+    hypothesis (bean qou-jplv): only the upper bound `1 − xqⁿ ≤ (q−1)/q` is
+    automatic; this lemma supplies the missing lower bound and closes the term via
+    the `t·log t → 0` squeeze `(q−1)·log(c(q−1)) ≤ (q−1)·log(1−xqⁿ) ≤ 0`. -/
+theorem boundary_tendsto_zero_of_noResonance {x c : ℝ} (hx0 : 0 < x) (hc : 0 < c)
+    {q : ℕ → ℝ} {n : ℕ → ℕ} (hq1 : ∀ j, 1 < q j)
+    (hqlim : Tendsto q atTop (𝓝 1)) (hbelow : ∀ j, x * (q j) ^ (n j) < 1)
+    (hlb : ∀ j, c * (q j - 1) ≤ 1 - x * (q j) ^ (n j)) :
+    Tendsto (fun j => (q j - 1) * Real.log (1 - x * (q j) ^ (n j))) atTop (𝓝 0) := by
+  -- `s log s → 0` as `s → 0⁺`
+  have hbase : Tendsto (fun u : ℝ => Real.log u * u) (𝓝[>] (0 : ℝ)) (𝓝 0) := by
+    have h0 := tendsto_log_mul_rpow_nhdsGT_zero (r := 1) one_pos
+    refine h0.congr' (Filter.Eventually.of_forall (fun u => ?_))
+    rw [Real.rpow_one]
+  have hq1sub : Tendsto (fun j => q j - 1) atTop (𝓝 0) := by
+    simpa using hqlim.sub_const 1
+  -- `s_j = c·(q_j − 1) → 0⁺`
+  have hsGT : Tendsto (fun j => c * (q j - 1)) atTop (𝓝[>] (0 : ℝ)) := by
+    refine tendsto_nhdsWithin_of_tendsto_nhds_of_eventually_within _ ?_ ?_
+    · simpa using hq1sub.const_mul c
+    · exact Filter.Eventually.of_forall
+        (fun j => by simp only [Set.mem_Ioi]; exact mul_pos hc (by linarith [hq1 j]))
+  have hslog : Tendsto (fun j => Real.log (c * (q j - 1)) * (c * (q j - 1))) atTop (𝓝 0) :=
+    hbase.comp hsGT
+  -- the lower squeeze function `g_lo j = (q_j − 1)·log(c(q_j − 1)) → 0`
+  have hglo : Tendsto (fun j => (q j - 1) * Real.log (c * (q j - 1))) atTop (𝓝 0) := by
+    have h := hslog.const_mul (1 / c)
+    simp only [mul_zero] at h
+    refine h.congr (fun j => ?_)
+    rw [one_div, mul_comm (Real.log (c * (q j - 1))) (c * (q j - 1)), ← mul_assoc,
+      inv_mul_cancel_left₀ hc.ne']
+  refine tendsto_of_tendsto_of_tendsto_of_le_of_le hglo tendsto_const_nhds
+    (fun j => ?_) (fun j => ?_)
+  · -- g_lo j ≤ term j : monotone log on `c(q−1) ≤ 1 − xqⁿ`, scaled by `q−1 ≥ 0`
+    have hqj0 : 0 ≤ q j - 1 := by linarith [hq1 j]
+    have hs0 : 0 < c * (q j - 1) := mul_pos hc (by linarith [hq1 j])
+    exact mul_le_mul_of_nonneg_left (Real.log_le_log hs0 (hlb j)) hqj0
+  · -- term j ≤ 0 : `q − 1 ≥ 0` and `log(1 − xqⁿ) ≤ 0`
+    have hqpos : 0 < q j := by linarith [hq1 j]
+    have hxqn0 : 0 < x * (q j) ^ (n j) := mul_pos hx0 (pow_pos hqpos _)
+    have hlognonpos : Real.log (1 - x * (q j) ^ (n j)) ≤ 0 :=
+      Real.log_nonpos (by linarith [hbelow j]) (by linarith)
+    exact mul_nonpos_iff.mpr (Or.inl ⟨by linarith [hq1 j], hlognonpos⟩)
+
+/-- **W-P1 branch-point limit under no resonance.**  Combining the two branch-point
+    controls — the automatic upper bound `1 − xqⁿ ≤ (q−1)/q` (the branch-point cell
+    `n = ⌊log_q(1/x)⌋`) and the no-resonance lower bound `c·(q−1) ≤ 1 − xqⁿ` — the
+    positive-factor rescaled log-sum converges to `π²/6 − Li₂(x)`.  The upper bound
+    forces `x qⁿ → 1⁻` (branch point, so `Li₂(xqⁿ) → π²/6` by Abel); the lower bound
+    kills the boundary error (`boundary_tendsto_zero_of_noResonance`).  No opaque
+    hypothesis remains — only the geometric no-resonance bound, which *is* the open
+    Diophantine input, now stated as a checkable inequality rather than an assumed
+    limit. -/
+theorem wp1_tendsto_of_noResonance {x c : ℝ} (hx0 : 0 < x) (hc : 0 < c)
+    {q : ℕ → ℝ} {n : ℕ → ℕ} (hq1 : ∀ j, 1 < q j)
+    (hqlim : Tendsto q atTop (𝓝 1)) (hbelow : ∀ j, x * (q j) ^ (n j) < 1)
+    (hub : ∀ j, 1 - x * (q j) ^ (n j) ≤ (q j - 1) / q j)
+    (hlb : ∀ j, c * (q j - 1) ≤ 1 - x * (q j) ^ (n j)) :
+    Tendsto (fun j => (1 - q j) * ∑ k ∈ Finset.range (n j), Real.log (1 - x * (q j) ^ k))
+      atTop (𝓝 (Real.pi ^ 2 / 6 - LiTwo x)) := by
+  -- `(q−1)/q → 0`
+  have hqq : Tendsto (fun j => (q j - 1) / q j) atTop (𝓝 0) := by
+    have hn : Tendsto (fun j => q j - 1) atTop (𝓝 0) := by simpa using hqlim.sub_const 1
+    simpa using hn.div hqlim (by norm_num : (1 : ℝ) ≠ 0)
+  -- `1 − xqⁿ → 0` (squeezed by the branch-point upper bound), so `xqⁿ → 1`
+  have h1sub : Tendsto (fun j => 1 - x * (q j) ^ (n j)) atTop (𝓝 0) :=
+    squeeze_zero (fun j => by linarith [hbelow j]) (fun j => hub j) hqq
+  have hxqn : Tendsto (fun j => x * (q j) ^ (n j)) atTop (𝓝 1) := by
+    have h := (tendsto_const_nhds (x := (1 : ℝ))).sub h1sub
+    simp only [sub_zero] at h
+    exact h.congr (fun j => by ring)
+  have habel : Tendsto (fun j => x * (q j) ^ (n j)) atTop (𝓝[<] (1 : ℝ)) := by
+    refine tendsto_nhdsWithin_of_tendsto_nhds_of_eventually_within _ hxqn ?_
+    exact Filter.Eventually.of_forall (fun j => by simp only [Set.mem_Iio]; exact hbelow j)
+  exact wp1_tendsto_of_boundary hx0 hq1 hqlim hbelow habel
+    (boundary_tendsto_zero_of_noResonance hx0 hc hq1 hqlim hbelow hlb)
+
 end QOU.Archimedean
