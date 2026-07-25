@@ -288,6 +288,28 @@ principle — the open problem itself).
   θ-Laplace scheme — above the stated `5e-16` D_odd band (no physics
   impact at the −0.0076 scale, but the precision claim needs the
   caveat). auditOnly; nothing wired.
+- **A6.4 LANDED (the W9 Borel function DERIVED — closed forms replace
+  every A6.2/A6.3 measurement).**
+  [`qbeta_5two_gbar_pole_ladder_probe.py`](../../computations/probes/qbeta_5two_gbar_pole_ladder_probe.py)
+  + witness, 5/5. The balanced-binomial inversion
+  `[n,k]_{q̄} = q̄^{k(n−k)}[n,k]_{q̃}` collapses the W9 transform to the
+  exact, cancellation-free formula
+  **`(−1)ⁿT̂_n = (q̃;q̃)_n²·Σ_k q̃^{k(n+1)}[n,k]_{q̃}`** (gated vs the
+  direct route at 1.1e-497, n ≤ 64, dps 500). Everything follows in
+  closed form: the pole residue **`c∞ = (q̃;q̃)_∞² = 1.23076604e-12`**
+  (A6.3's Aitken plateau, now derived); the transient ratio **exactly
+  `q̃ = 1/q₀`** (A6.3's 0.90086, derived); and the **pole ladder
+  `w = −q₀ᵏ`** — Padé on the exact-pole-subtracted regular part finds
+  the k=1 rung at `−q₀` to rel 4.6e-11 and the k=2 rung at `−q₀²` to
+  9.2e-9. The θ-Laplace with the exact pole split gives
+  **`D_odd_reg = −0.00757940374349`, agreeing with the g3 median to
+  4.5e-12**, with the new pipeline's full band 1.1e-10 — the A6.3
+  precision caveat resolves (the pole term is explicit; the residual
+  band is Padé/kernel spread of the regular part, and ~1e-10 is the
+  honest full-pipeline floor vs the 5e-16 scheme-orbit-only figure).
+  The Habiro-face Borel plane is now structurally tied to the substrate
+  modulus: a geometric pole ladder in powers of q₀. auditOnly; every
+  constant derived; no fit; nothing wired.
 
 - **A2 LANDED (derived odd-Stokes datum).**
   [`qbeta_5two_stokes_barodd_index_probe.py`](../../computations/probes/qbeta_5two_stokes_barodd_index_probe.py)
