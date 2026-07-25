@@ -1,0 +1,201 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-25T14:51:53.038148+00:00",
+  "commitSha": "c8e2e9f113df64761eea53146a85c00e9d8e47a5",
+  "assertions": [
+    {
+      "name": "splus_reproduces_committed_a2",
+      "computed": 2.209637089157538e-25,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-20,
+      "source": "in-probe S⁺ assembly = the committed A2 witness matrix (consistency gate)"
+    },
+    {
+      "name": "confrontation_completed",
+      "computed": 440.0,
+      "expected": 440.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "pre-registered parameter-free confrontation ran to completion; hits + near-misses recorded"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "qbeta-5two-gk-bilinear-pairing",
+  "scriptFile": "qbeta_5two_gk_bilinear_pairing_probe.py",
+  "scriptHash": "243808ae8832",
+  "scriptCommitSha": "c8e2e9f113df64761eea53146a85c00e9d8e47a5",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "B1.2 (bean qou-9s8k): the GK bilinear block pairing confronted with the Habiro-face targets. Both sides of the substrate bar-pair evaluated through A2's 8/8-gated block machinery (the |q|>1 glue, GGM eq 25); the naked bilinear W₋₁(1/q)·B·W₋₁(q)ᵀ, the dressed S± pair, their odd/even splits — every entry compared parameter-free against F_conv, s(F̄), D_odd, D_even (gate 1e-6, pin band; all near-misses reported, no selection) plus small-(half-)integer ratio tests on the odd assemblies. auditOnly; no c_k wired; no fit; a hit is a lead, not an identification.",
+  "contentBlock": "prop:phi-b-unitary-bar-odd",
+  "data": {
+    "substrate": {
+      "x": "0.90091827356174104895",
+      "pin": "muon"
+    },
+    "assembly_tables": {
+      "N": [
+        [
+          "2.02609994532576",
+          "-0.0147162713399076",
+          "-0.0858374218792571"
+        ],
+        [
+          "1.3383904412911",
+          "-0.754642074799198",
+          "-2.40169446772264"
+        ],
+        [
+          "2.01064771115648",
+          "0.866310372798479",
+          "-2.61261215987103"
+        ]
+      ],
+      "Nt": [
+        [
+          "2.02609994532576",
+          "1.3383904412911",
+          "2.01064771115648"
+        ],
+        [
+          "-0.0147162713399076",
+          "-0.754642074799198",
+          "0.866310372798479"
+        ],
+        [
+          "-0.0858374218792571",
+          "-2.40169446772264",
+          "-2.61261215987103"
+        ]
+      ],
+      "S+": [
+        [
+          "-0.377321037399599",
+          "-1.57816827126092",
+          "-0.669195220645549"
+        ],
+        [
+          "0.0558341489996405",
+          "-2.45131916479719",
+          "-1.67451907622379"
+        ],
+        [
+          "0.00735813566995382",
+          "0.0502768466095824",
+          "1.01304997266288"
+        ]
+      ],
+      "S-": [
+        [
+          "-2.39911927414567",
+          "-0.0688841216625214",
+          "0.0208443039297671"
+        ],
+        [
+          "1.56511829859804",
+          "-0.377321037399599",
+          "0.00735813566995382"
+        ],
+        [
+          "1.00226180635841",
+          "-0.669195220645549",
+          "1.01304997266288"
+        ]
+      ],
+      "O": [
+        [
+          "1.01089911837303",
+          "-0.754642074799198",
+          "-0.345019762287658"
+        ],
+        [
+          "-0.754642074799198",
+          "-1.0369990636988",
+          "-0.840938605946871"
+        ],
+        [
+          "-0.497451835344226",
+          "0.359736033627566",
+          "0.0"
+        ]
+      ],
+      "E": [
+        [
+          "-1.38822015577263",
+          "-0.823526196461719",
+          "-0.324175458357891"
+        ],
+        [
+          "0.810476223798838",
+          "-1.41432010109839",
+          "-0.833580470276917"
+        ],
+        [
+          "0.50480997101418",
+          "-0.309459187017983",
+          "1.01304997266288"
+        ]
+      ],
+      "N_odd": [
+        [
+          "0.0",
+          "-0.676553356315502",
+          "-1.04824256651787"
+        ],
+        [
+          "0.676553356315502",
+          "0.0",
+          "-1.63400242026056"
+        ],
+        [
+          "1.04824256651787",
+          "1.63400242026056",
+          "0.0"
+        ]
+      ],
+      "N_even": [
+        [
+          "2.02609994532576",
+          "0.661837084975595",
+          "0.962405144638611"
+        ],
+        [
+          "0.661837084975595",
+          "-0.754642074799198",
+          "-0.767692047462078"
+        ],
+        [
+          "0.962405144638611",
+          "-0.767692047462078",
+          "-2.61261215987103"
+        ]
+      ]
+    },
+    "targets": {
+      "F_conv": "0.9861565521",
+      "s_Fbar": "0.9709977446",
+      "D_odd": "-0.007579403739",
+      "D_even": "0.9785771484"
+    },
+    "confrontation": {
+      "n_comparisons": 440,
+      "gate": "1e-6",
+      "hits": [],
+      "near_misses": []
+    },
+    "verdict": "NO parameter-free GK-bilinear entry matches any Habiro-face target at 1e-6 (near-misses recorded). Sharpens the wall: the Habiro-face values are not bare entries of the W₋₁-level bilinear at the substrate — the missing piece is the STATE-INTEGRAL dressing (Gaussian prefactor + the (q/q̃)^{1/8} unit and the λ-grading of the block basis), i.e. which λ-row the Masbaum tail occupies. Named for the next rung. auditOnly."
+  }
+}
