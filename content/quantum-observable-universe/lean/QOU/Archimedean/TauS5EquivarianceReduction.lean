@@ -31,10 +31,16 @@ What this file now provides (sorry-free, `lean`-direct):
 * `tauImage_proportional_hodge` — the general-`P` assembly, explicitly flagged as
   **not** a reduction of (ii) (its `GeneratorIntertwiner` premise is the
   obstructed one).
+* `HeckeSideS5Symmetry` + `markovGram_transports_to_hodge` — the **correct,
+  SATISFIABLE** reduction: an S₅ action `ρS'` on the Hecke space leaving the Markov
+  Gram invariant, conjugate to the geometric S₅. `ρS'` and `ρS` share the `(4,1)`
+  character (no trace obstruction), so this premise CAN hold — it is the honest
+  Tits-`*`-iso content. Given it, `Tᵀ · G_Markov · T = c • G_Hodge`.
 
-STRICT (§"Axiomatization is NOT a Proof"): no intertwiner instance for the actual
-τ is registered; sub-piece (ii) is honestly OPEN (it needs the Tits `*`-iso, not
-a generator intertwiner). `1/(8π)` stays a phase-4 identification; nothing wired.
+STRICT (§"Axiomatization is NOT a Proof"): no `HeckeSideS5Symmetry` instance for
+the actual τ is registered; sub-piece (ii) is honestly OPEN — the remaining input
+is the existence of the Tits-transported S₅ symmetry with `T = τ` (the archimedean
+functor). `1/(8π)` stays a phase-4 identification; nothing wired.
 
 -- Ref: [manuscript] prop:em-coupling-bring-zero-mode
 -- Ref: [serre1977] Linear Representations of Finite Groups (Schur; Tits deformation)
@@ -140,6 +146,53 @@ theorem tauImage_proportional_hodge [IsAlgClosed k] [Nonempty n]
       (∀ s, A * (ρS s) = (ρS s) * A) → ∃ c : k, A = c • (1 : Matrix n n k) :=
     fun A hA => commutant_scalar_of_irreducible hirr hA
   -- two `ρS`-invariant forms on an irreducible rep are proportional (#4160)
+  exact invariantForm_proportional_of_commutantScalar hρS schur hHodge hHodge_inv hpull
+
+/-- **The Hecke-side S₅ symmetry — the correct, SATISFIABLE form of sub-piece (ii).**
+Where `GeneratorIntertwiner` is obstructed (`intertwiner_trace_eq`), this posits
+the honest object: an S₅ action `ρS'` **on the Hecke module space** under which the
+Markov Gram is invariant, together with a conjugator `T` to the geometric S₅
+action `ρS` (`ρS' s * T = T * ρS s`).
+
+**This premise is satisfiable** (unlike the generator one): `ρS'` and `ρS` are both
+the `(4,1)` S₅-irrep, so they share a character — the `intertwiner_trace_eq`
+obstruction does NOT apply (`trace ρS' s = trace ρS s` holds), and a conjugating
+`T` exists by Schur. And the Markov Gram admits such a `ρS'` because the Tits
+`*`-iso realises the S₅ symmetry on `H₅(q₀)`'s `(4,1)` block (the Markov/`*`-form
+is S₅-invariant for the Tits-transported action, NOT for the Hecke generators).
+The OPEN categorical claim (no instance registered) is that the archimedean functor
+τ realises `T` for the ACTUAL Markov form. -/
+structure HeckeSideS5Symmetry (ρS : G → Matrix n n k) (G_Markov : Matrix n n k) where
+  /-- The S₅ action on the Hecke module space (the Tits-transported action). -/
+  ρS' : G → Matrix n n k
+  /-- Conjugator to the geometric S₅ action. -/
+  T : Matrix n n k
+  /-- `T` conjugates `ρS'` to `ρS` (same `(4,1)` character ⇒ trace-consistent). -/
+  intertwines : ∀ s, ρS' s * T = T * ρS s
+  /-- The Markov Gram is invariant under the Hecke-side S₅ action `ρS'`. -/
+  markov_inv : InvariantForm ρS' G_Markov
+
+/-- **Sub-piece (ii), correctly reduced.** Given the Hecke-side S₅ symmetry of the
+Markov Gram (conjugator `T` to the geometric S₅ action `ρS`), the irreducibility
+of `ρS` (⇒ scalar commutant, #4182), and a unit Hodge form, the transported Markov
+Gram `Tᵀ · G_Markov · T` is a scalar multiple of the Hodge form. This is the
+genuine reduction the generator-intertwiner failed to be: its premise is
+SATISFIABLE (`ρS'`, `ρS` share the `(4,1)` character, no trace obstruction).
+STRICT: no `HeckeSideS5Symmetry` instance for the actual τ is registered; the
+existence of the Tits-transported symmetry with `T = τ` is the honest open input. -/
+theorem markovGram_transports_to_hodge [IsAlgClosed k] [Nonempty n]
+    {ρS : G → Matrix n n k} (hirr : IsIrreducibleRep ρS)
+    (hρS : ∀ s, IsUnit (ρS s).det)
+    {G_Markov : Matrix n n k} (sym : HeckeSideS5Symmetry ρS G_Markov)
+    {G_Hodge : Matrix n n k} (hHodge : IsUnit G_Hodge.det)
+    (hHodge_inv : InvariantForm ρS G_Hodge) :
+    ∃ c : k, (sym.T)ᵀ * G_Markov * sym.T = c • G_Hodge := by
+  -- transport the Markov Gram along `T`: it becomes a `ρS`-invariant form
+  have hpull : InvariantForm ρS ((sym.T)ᵀ * G_Markov * sym.T) :=
+    invariantForm_pullback sym.intertwines sym.markov_inv
+  have schur : ∀ A : Matrix n n k,
+      (∀ s, A * (ρS s) = (ρS s) * A) → ∃ c : k, A = c • (1 : Matrix n n k) :=
+    fun A hA => commutant_scalar_of_irreducible hirr hA
   exact invariantForm_proportional_of_commutantScalar hρS schur hHodge hHodge_inv hpull
 
 end QOU.Archimedean.TauS5EquivarianceReduction
