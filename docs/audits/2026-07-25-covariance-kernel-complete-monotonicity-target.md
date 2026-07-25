@@ -1,58 +1,73 @@
-# Covariance-kernel epic (qou-x631) — attack A3 refinement: the complete-monotonicity target
+# Covariance-kernel epic (qou-x631) — attack A3: CM signature holds, but genuine CM is REFUTED
 
 **Date:** 2026-07-25 · **Branch:** `claude/covariance-kernel-attack-a3-cumulants-2026-07-25` ·
-**Tier:** structural discovery (60-dps) · **Discipline:** scope-(a); no fit; nothing wired; no `c_k`;
-L2 unchanged (2/7). **Epic:** `qou-x631`, attack `qou-4wl1` (A3).
+**Tier:** structural test + route-elimination (60-dps) + literature intel · **Discipline:** scope-(a);
+no fit; nothing wired; no `c_k`; L2 unchanged (2/7). **Epic:** `qou-x631`, attack `qou-4wl1` (A3).
 
-## The discovery
+> **Correction note.** An earlier version of this document proposed the complete monotonicity of
+> `−g'` as a *target that would close everything*. The decisive moment/Hankel test (below) **refutes**
+> genuine complete monotonicity. This document now records the honest result: the sign-alternation
+> *signature* holds, but it is not sufficient, and the Bernstein route is eliminated.
 
-Executing attack A3 (bound the transfer remainder via the mixed-cumulant series), the Taylor
-coefficients of the dimension-tilted mean revealed a clean, unifying structure.
+## Setup
 
-With `g(θ) := E_{β=2+θ}[ω₃] = Σ_λ f^{2+θ}ω₃ / Σ_λ f^{2+θ}` (the exponentially-tilted mean of
-`ω₃ = Σc² − C(n,2)`): `g(0)=0`, `g(1)=` kernel, `g'(0)=Cov_Planch(ln f,ω₃)`. Its Taylor coefficients
-`a_m := g^{(m)}(0)/m!` are the mixed Plancherel cumulants `κ_{m+1}(ln f;…;ω₃)/m!`. Verified 60-dps:
+`g(θ) := E_{β=2+θ}[ω₃] = Σ_λ f^{2+θ}ω₃ / Σ_λ f^{2+θ}`, with `ω₃ = Σc² − C(n,2)`. Notation
+(agent-confirmed against Ivanov–Olshanski / Śniady): **`ω₃ = p#₃ = Σ₃ = R₄ + R₂`, the 3-cycle central
+character** (not `Σ₂`; `p#₂ = 2Σc` is the transposition). `g(0)=0`, `g(1)=` kernel,
+`g'(0)=Cov_Planch(ln f, ω₃)`. Taylor coefficients `a_m := g^{(m)}(0)/m!` are the mixed Plancherel
+cumulants `κ_{m+1}(ln f;…;ω₃)/m!`.
 
-> **`sign(a_m) = (−1)^m` exactly for `n = 8..17`, to order `m = 10`.**
+## Finding 1 — the sign-alternation signature holds (necessary, not sufficient)
 
-This is the **complete-monotonicity signature** of `−g'(θ)` (its Taylor coefficients all `≥ 0`).
-Also `Σ_{m≥2}|a_m| < |a_1|` for all n (absolute domination — stronger than the Phase-7 `|R|<|g'(0)|`).
-For `n ≤ 7` the low orders still alternate but high orders (`m ≳ 5`) deviate — a small-n boundary
-effect, and those n are covered by exact enumeration (`k ≤ 40`) anyway.
+`sign(a_m) = (−1)^m` **exactly for n = 8..17, to order m = 10** (60-dps); for n ≤ 7 the low orders
+alternate but high orders deviate (small-n boundary). Also `Σ_{m≥2}|a_m| < |a_1|` for all n (absolute
+domination — the Phase-7 transfer bound `|R| < |g'(0)|` in stronger form). This is the *necessary*
+part of complete monotonicity of `−g'`.
 
-## Why it matters — one target closes everything
+## Finding 2 — genuine complete monotonicity is REFUTED (the decisive test)
 
-If `−g'(θ)` is **completely monotone** on `θ ∈ [0,∞)`, Bernstein's theorem gives a positive-measure
-representation
+Sign-alternation is **necessary but not sufficient** for CM. The actual criterion is the
+Hausdorff/Stieltjes moment problem: `−g'` is completely monotone iff the would-be moments
+`m_k := (k+1)!\,|a_{k+1}|` form a Stieltjes moment sequence, i.e. the Hankel matrices `H0=[m_{i+j}]`
+and `H1=[m_{i+j+1}]` are both PSD (then `−g'(θ)=∫_0^∞ e^{−θs}dμ(s)` with `μ ≥ 0`).
 
-> `−g'(θ) = ∫_0^∞ e^{−θ s}\,dμ(s)`,  `μ ≥ 0`,
+They are **not**: the Hankel min-eigenvalues are negative for essentially all n, **robustly** at both
+`3×3` (low-order, high-precision `a_1..a_6`) and `4×4` — PSD holds in only ~5/12 cases with no pattern
+(borderline, and interleaved with clear failures like n=15). So **there is no positive Bernstein
+measure `μ`**, `−g'` is **not** completely monotone, and the "one target closes everything via
+Bernstein" route is **ELIMINATED** (route-elimination #10 across the epic).
 
-so `g'(θ) ≤ 0` for **all** `θ ≥ 0`. Then immediately
+## Net
 
-- `g(1) = ∫_0^1 g'(θ)\,dθ ≤ 0` — the **kernel** `cov(k) ≤ 0`;
-- `E_β[ω₃] = g(β−2) ≤ 0` for **all** `β ≥ 2` — the **whole β-family** (§Phase 3).
+The sign-alternation + absolute domination is a real but **weaker** structural fact that merely
+re-expresses the Phase-7 transfer bound `|R| < |g'(0)|`; it does **not** provide the clean Bernstein
+shortcut, and the two legs A2 (`g'(0)≤0`) and A3 (interval / all-θ) are **not** unified by a CM
+property. The kernel remains open.
 
-This **unifies** the two previously-separate legs: attack **A2** is exactly the `θ=0` endpoint
-`g'(0) ≤ 0`, and attack **A3** is the all-`θ` statement — both are consequences of one property,
-`−g'` completely monotone. It also names a concrete proof tool (a Hausdorff/Bernstein moment
-representation), which none of the ~9 eliminated local certificates offered.
+## Literature intel (paper-mining agent, validated numerically)
 
-## The rigorous target (for a proof)
+Mining Ivanov–Olshanski (`0304010`), Śniady (`0411647`), Biane (`0006111`):
 
-Prove `−g'(θ) = −\frac{d}{dβ}E_β[ω₃]\big|_{β=2+θ}` is completely monotone for `n ≥ n₀`, via the
-tilted-mean / monotone-likelihood-ratio / moment structure of
-`g(θ) = ⟨ω₃\, e^{θ\ln f}⟩ / ⟨e^{θ\ln f}⟩` (⟨·⟩ = Plancherel). A natural route: exhibit a positive
-measure `μ` (a "spectral" decomposition of the dimension-tilted content-spread covariance), or show
-the tilted family `Q_θ ∝ e^{θ\ln f}·P` has `E_{Q_θ}[ω₃]` with alternating θ-derivatives from an
-association / MLR property of `(ln f, ω₃)`.
+- **Exact character-covariance engine.** IO Prop 5.1: `⟨p#_ρ⟩_Planch = n↓ʳ·δ_{ρ=(1ʳ)}`. With Śniady's
+  product rule, any `Cov(p#_j, p#_k)` (`j,k≥2`) is a **finite signed connection-coefficient sum** —
+  exact, no asymptotics. **Validated:** `Cov_Planch(Σc, ω₃) = 0` exactly (the transposition and
+  3-cycle characters are exactly orthogonal — consistent with IO Thm 6.1 asymptotic independence,
+  and here it is exact).
+- **`ln f ∉ A`** (the algebra of polynomial functions on Young diagrams): there is **no** finite
+  `Σ_μ`-expansion of the log-dimension — do not chase one. But `ln f = ½ ln M_n + ½ ln n!` with
+  `M_n = dim²/n!`, so `Cov(ln f, ω₃) = ½ E[ω₃ ln M_n]` (the `ω₃`-weighted log-likelihood correlation).
+  *(Validated exact; note this is an algebraic reframing, not new leverage — `ln M_n = 2 ln f − ln n!`
+  and the constant drops since `E[ω₃]=0`.)*
+- **Genus scaling** (Śniady): each handle costs `n⁻¹`; higher mixed cumulants are increasingly
+  subleading (Gaussian-fluctuation regime). This is *consistent with* the sign-alternation of the
+  low-order `a_m`, but — as Finding 2 shows — does **not** amount to genuine CM.
 
 ## Honesty
 
-The `(−1)^m` pattern is verified via the **signs of Taylor coefficients to order 10** for `n=8..17`
-— strong evidence, **not** a proof that `−g'` is exactly completely monotone (a finite exponential-sum
-ratio is analytic; exact CM is an all-orders statement, and the small-n deviations show the property
-is at best asymptotic in `n`). No proof of the kernel is claimed. This **sharpens and unifies** the
-open target and supplies a proof tool; it does not close it.
+The signature is verified via signs to order 10; the CM refutation via the Hankel/moment PSD test at
+60-dps. No proof of the kernel is claimed; this is an honest **negative** result (CM route eliminated)
+plus validated literature machinery for the exact character covariances. The kernel stays an open §3b
+conjecture; the Δ_λ growth chain stays Lean-proved modulo it.
 
 ## Compute
 
@@ -61,6 +76,6 @@ open target and supplies a proof tool; it does not close it.
 
 ## Cross-references
 
-- Attack plan: bean `qou-v8t7` (A2 = θ=0 endpoint, A3 = this)
-- Transfer-error bound (Phase 7): [`2026-07-24-covariance-kernel-effective-stein-step2-transfer-bound.md`](2026-07-24-covariance-kernel-effective-stein-step2-transfer-bound.md)
-- Interval reduction (Phase 4): [`2026-07-24-covariance-kernel-interval-fkg-reframing.md`](2026-07-24-covariance-kernel-interval-fkg-reframing.md)
+- Attack plan: bean `qou-v8t7` (A2 = `g'(0)≤0` endpoint, A3 = remainder/interval)
+- Transfer bound (Phase 7): [`2026-07-24-covariance-kernel-effective-stein-step2-transfer-bound.md`](2026-07-24-covariance-kernel-effective-stein-step2-transfer-bound.md)
+- Ivanov–Olshanski `0304010`, Śniady `0411647`, Biane `0006111` (in `uploads/`)
