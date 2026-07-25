@@ -256,7 +256,18 @@ this file does not yet carry:
 Separately, `markov_trace_origin` also needs **Step 4** — naming the specific
 Wenzl–Hoefsmit operator whose trace is `ℏ_rⁿ` (an *identification*, not a
 trace-infrastructure gap). That operator is currently unidentified; every
-compute attempt at it lives in `computations/_deprecated/`. -/
+compute attempt at it lives in `computations/_deprecated/`.
+
+**Scope of the gap — Wenzl POSITIVITY is NOT required (W1 audit, 2026-07-25).**
+The general-`n` `MarkovTrace` instance needs only the three class fields
+(cyclicity + `R`-linearity); every consumer
+(`TauFunctorReduction.observationFrame_*`) uses exactly those, and positivity
+is not even expressible over the generic `[CommRing R]` the class lives on
+(§7c: ordering is post-wall). Wenzl's positive-trace theorem [wenzl1988] is
+about the C*/subfactor regime (unitarity, semisimplicity ascent) — surplus
+here, exactly as PSD was surplus to the B2 lift (PR #4151,
+`LoopWeightRealSymmReduction`). See
+`docs/audits/2026-07-25-markovtrace-w1-class-fields-audit.md`. -/
 
 end H3
 
