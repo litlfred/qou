@@ -8,8 +8,11 @@ The rigorous kernel-convergence statement demanded by
 (i)   per-`n` moment convergence of the balanced q-Borel kernel to
       `(n−1)!` as `q → 1⁺` — proved EXACT (sympy, every order tested;
       `h¹ ≡ 0`, `h²` = the Attack-E target) in the merged probe, taken
-      HERE as an explicit hypothesis (`hmom`) since its Lean
-      formalization (per-`n` sinh-product bounds) is a separate tranche;
+      HERE as an explicit hypothesis (`hmom`); its qualitative Lean
+      formalization has since landed as
+      `BalancedMomentConfluence.tendsto_balancedNormalizerR`, and the
+      corollary `balanced_kernel_tendsto_schwinger_of_confluence` there
+      discharges `hmom` down to balanced-moment representability;
 (ii)  the Fréchet–Shohat method-of-moments theorem — a Mathlib gap,
       carried as the hypothesis class
       `QOU.MathlibExt.FrechetShohat.FrechetShohatStieltjes`;
@@ -49,8 +52,11 @@ NOT proved here (the honest residual, unchanged in kind):
 * the two classical theorems themselves (Mathlib gaps — the classes;
   no instance exists or may be fabricated, §Axiomatization is NOT a
   Proof);
-* the Lean formalization of the per-`n` balanced moment confluence
-  (audit §2; enters as hypothesis `hmom`);
+* ~~the Lean formalization of the per-`n` balanced moment confluence~~
+  (audit §2; entered as hypothesis `hmom`) — DISCHARGED qualitatively in
+  `QOU.Archimedean.BalancedMomentConfluence` (`tendsto_balancedNormalizerR`
+  + the `…_of_confluence` corollary): what remains on this leg is the
+  (REP) representability hypothesis, not moment convergence;
 * the conjecture's own (POS)/(REP) content — that the SUBSTRATE's
   resummation kernel satisfies the moment/positivity hypotheses (audit
   §4 gap 2; at `q ≠ 1` the fibre problem is indeterminate, §3.1, so
