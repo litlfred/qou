@@ -2254,3 +2254,18 @@ single-sector small-weight population. Scope-(a); the named successor
 is the GK bilinear block pairing (Z = Σ M_σσ' B_σ(q)B̃_σ'(q̃)) — the
 odd channel as an off-diagonal block product, not a sector weight.
 No fit; nothing wired.
+
+**2026-07-25 (B1.2, branch claude/gk-bilinear-block-pairing-2026-07-25)
+— GK BILINEAR CONFRONTATION: no bare-entry bridge (440 pre-registered
+comparisons, 0 hits/0 near-misses); the wall is the state-integral
+DRESSING + λ-row selection.** `qbeta_5two_gk_bilinear_pairing_probe.py`
+(2/2): both bar-pair sides evaluated through A2's 8/8-gated block
+machinery via the |q|>1 glue (GGM eq 25); the naked bilinear
+W₋₁(1/q)·B·W₋₁(q)ᵀ, the dressed S±, and their odd/even splits — every
+entry confronted parameter-free with F_conv, s(F̄), D_odd, D_even
+(consistency gate: in-probe S⁺ = committed A2 matrix at 2.2e-25).
+NOTHING matches at 1e-6. Combined with B1 (σ-pair population forced
+zero; no single-sector small-weight assembly), the odd-channel bridge
+now has a sharply-posed remaining form: the Gaussian/unit dressing
+(√-prefactor, (q/q̃)^{1/8}) and WHICH λ-row of the block basis the
+Masbaum tail occupies. Scope-(a); no fit; nothing wired.
