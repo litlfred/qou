@@ -1,11 +1,11 @@
 ---
 # qou-60vx
 title: 'PR #3671 CLOSED-unmerged: octonion G₂ Cayley-Dickson infra — superseded, confirm abandon'
-status: todo
+status: completed
 type: task
 priority: low
 created_at: 2026-07-18T23:14:01Z
-updated_at: 2026-07-18T23:14:01Z
+updated_at: 2026-07-25T02:11:37Z
 parent: qou-w1z0
 ---
 

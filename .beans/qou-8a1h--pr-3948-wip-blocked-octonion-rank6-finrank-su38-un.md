@@ -1,11 +1,11 @@
 ---
 # qou-8a1h
 title: 'PR #3948 WIP (blocked): octonion rank6 finrank su3=8 — unverified, stacked on #3860'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-07-18T23:14:01Z
-updated_at: 2026-07-19T04:19:56Z
+updated_at: 2026-07-25T02:10:12Z
 parent: qou-w1z0
 ---
 
