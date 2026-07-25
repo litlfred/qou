@@ -92,6 +92,14 @@ non-infinitesimal ⟺ saturated blow-up; infinitesimal with infinite `Ω` ⟺
 intermediate `0 < α < 1`. Only that criterion is still carried by this
 hypothesis; it remains open and is not asserted.
 
+**Exploratory in-model evidence** (`computations/qns_enstrophy_grade_probe.py`,
+witness `qns-enstrophy-grade-probe.witness.json`): on the cascade-cutoff
+spectral model, sustained Kolmogorov amplitudes measure `α ≈ 1.335 ≈ 4/3` —
+**exceeding** the grade-1 cap, so the dissipation closure *fails* for sustained
+spectra (the Finding-2 α tension resolves toward the cascade value in-model) —
+while Gevrey (smooth-data) amplitudes measure `α ≈ 0` (grade-0 regular). This
+is model evidence only; the true flow's regime remains the open content.
+
 ## Base ring (§7c)
 Generic: `S` is an abstract surreal line, all other data are `Prop`s. `L²(ℝ³)`
 lives in the interpretation, not the statements. No `ℝ`.
