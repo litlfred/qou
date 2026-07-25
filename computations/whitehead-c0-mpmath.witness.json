@@ -1,0 +1,24 @@
+{
+  "description": "Whitehead c\u2080/factor from mpmath EXACT-ROOT values only (no float64). Reconstruction of a lost session.",
+  "computation": "whitehead_c0_run",
+  "audit_only": true,
+  "precision": "mpmath dps=40 exact-root; no float64 in the c0 determination",
+  "whitehead_braid_word": "[1,-2,1,-2,1]",
+  "vol_4G": "3.663862376708876060218414",
+  "p_fixed": 1.5,
+  "figure_eight_reference_c0_Nge8": -0.2725767350008177,
+  "figure_eight_target_minus_quarter_ln3": -0.27465307216702745,
+  "whitehead_exact_values": {
+    "6": 362.3920528929998,
+    "8": 1635.4283652320307
+  },
+  "whitehead_c0_fits": {
+    "1-term-all": -0.6569767014915345
+  },
+  "whitehead_c0_mean": -0.6569767014915345,
+  "whitehead_c0_spread": NaN,
+  "factor": 1.531192122456203,
+  "nearest_factor": 2,
+  "progress_note": "through N=8",
+  "timestamp": "2026-07-25T20:24:22+00:00"
+}
