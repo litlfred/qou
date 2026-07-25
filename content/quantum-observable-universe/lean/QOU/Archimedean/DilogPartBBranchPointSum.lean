@@ -242,4 +242,20 @@ theorem riemann_error_bound_up {x q : ℝ} (hx0 : 0 < x) (hq1 : 1 < q) :
           + q ^ m * (q - 1) ^ 2 * (hm1 - h1) := by rw [pow_succ]; ring
     linarith [ih_hi, e2, hres, hexpand]
 
+/-- **V3 brick 3d — the Riemann sum IS the rescaled log-sum.**  Term-by-term,
+    `(−log(1−xqᵏ)/qᵏ)·(qᵏ⁺¹−qᵏ) = (1−q)·log(1−xqᵏ)`, since `(qᵏ⁺¹−qᵏ)/qᵏ = q−1`.
+    So the going-up Riemann sum equals `(1−q)·Σ_{k<n} log(1−xqᵏ)`, i.e. `−` the
+    positive-factor W-P1 quantity `−(1−q)·Σ log(1−xqᵏ)`.  This connects
+    `riemann_error_bound_up` to the log-product without needing the geometric
+    `riemann_sum_form`. -/
+theorem partialSum_up_eq {x q : ℝ} (hq0 : 0 < q) (n : ℕ) :
+    ∑ k ∈ Finset.range n, (-Real.log (1 - x * q ^ k) / q ^ k) * (q ^ (k + 1) - q ^ k)
+      = (1 - q) * ∑ k ∈ Finset.range n, Real.log (1 - x * q ^ k) := by
+  rw [Finset.mul_sum]
+  refine Finset.sum_congr rfl (fun k _ => ?_)
+  have hqk : (q : ℝ) ^ k ≠ 0 := ne_of_gt (pow_pos hq0 k)
+  rw [pow_succ]
+  field_simp
+  ring
+
 end QOU.Archimedean
