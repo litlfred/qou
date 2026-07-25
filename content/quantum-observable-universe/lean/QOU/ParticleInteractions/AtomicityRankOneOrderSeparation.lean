@@ -114,4 +114,82 @@ theorem no_rankTwo_jetTowerChain : ¬ Nonempty (JetTowerChain (ℕ × ℕ) genLe
   rintro ⟨h⟩
   exact rankTwo_generation_not_isTotal h.isChain
 
+/-! ## General rank — totality ⟺ rank ≤ 1 (the derivation direction for free models)
+
+The concrete `ℕ²` result above excludes *one* rank-2 model. The characterization
+below upgrades it to **every** free model of any rank: the free tensor-generation
+order is total *iff* there is at most one fundamental object. This is the
+derivation direction (chain axiom ⟹ rank-one) for free models, and its converse
+(rank-one ⟹ chain), together an `Iff`.
+-/
+
+section GeneralRank
+
+variable {S : Type*}
+
+/-- **General free tensor-generation order.** The componentwise (divisibility)
+    order on the free commutative weight monoid `S → ℕ` on a generating set `S` of
+    `|S|` fundamental objects: `piGenLe f g` says every fundamental multiplicity of
+    `f` is ≤ that of `g`, i.e. `f` is a tensor factor of `g`. Generalises `genLe`
+    (which is the case `S = Fin 2`). -/
+def piGenLe (f g : S → ℕ) : Prop := ∀ s, f s ≤ g s
+
+/-- The weight of the fundamental object indexed by `s`: one copy of generator
+    `s`, none of the others. -/
+def fundamentalWeight [DecidableEq S] (s : S) : S → ℕ := fun t => if t = s then 1 else 0
+
+/-- **Distinct fundamental weights are incomparable.** For `s ≠ t`, neither
+    `fundamentalWeight s ≤ fundamentalWeight t` nor conversely — the obstruction to
+    a chain whenever there are ≥ 2 fundamental objects. -/
+theorem fundamentalWeight_incomparable [DecidableEq S] {s t : S} (hst : s ≠ t) :
+    ¬ piGenLe (fundamentalWeight s) (fundamentalWeight t) := by
+  intro h
+  have hs : fundamentalWeight s s ≤ fundamentalWeight t s := h s
+  simp [fundamentalWeight, hst] at hs
+
+/-- **Totality of the free tensor-generation order forces rank ≤ 1.** If the
+    componentwise order on the free weight monoid `S → ℕ` is total (the jet-tower
+    chain axiom), then the generating set `S` is a subsingleton — at most one
+    fundamental object. This is the derivation direction for free models:
+    *chain axiom ⟹ rank-one*. -/
+theorem freeGen_total_forces_subsingleton [DecidableEq S]
+    (h : IsTotal (S → ℕ) piGenLe) : Subsingleton S := by
+  refine ⟨fun s t => ?_⟩
+  by_contra hst
+  rcases h.total (fundamentalWeight s) (fundamentalWeight t) with h1 | h1
+  · exact fundamentalWeight_incomparable hst h1
+  · exact fundamentalWeight_incomparable (Ne.symm hst) h1
+
+/-- **Rank ≤ 1 gives the chain axiom.** If there is at most one fundamental object
+    (`Subsingleton S`), the free tensor-generation order on `S → ℕ` is total — the
+    converse direction. -/
+theorem subsingleton_forces_freeGen_total (h : Subsingleton S) :
+    IsTotal (S → ℕ) piGenLe := by
+  refine ⟨fun f g => ?_⟩
+  rcases isEmpty_or_nonempty S with hemp | hne
+  · exact Or.inl fun s => (hemp.false s).elim
+  · obtain ⟨s0⟩ := hne
+    rcases Nat.le_total (f s0) (g s0) with hle | hle
+    · exact Or.inl fun s => by rw [Subsingleton.elim s s0]; exact hle
+    · exact Or.inr fun s => by rw [Subsingleton.elim s s0]; exact hle
+
+/-- **Atomicity characterization (free models).** The free tensor-generation order
+    on `S → ℕ` is total (the jet-tower chain axiom) **iff** there is at most one
+    fundamental object (`Subsingleton S`, rank ≤ 1). The sharp order-theoretic form
+    of atomicity for free models: *chain ⟺ rank-one*. -/
+theorem freeGen_total_iff_subsingleton [DecidableEq S] :
+    IsTotal (S → ℕ) piGenLe ↔ Subsingleton S :=
+  ⟨freeGen_total_forces_subsingleton, subsingleton_forces_freeGen_total⟩
+
+/-- **Corollary — every free rank ≥ 2 model is excluded.** `Fin 2` (two
+    fundamental objects) is not a subsingleton, so the free tensor-generation order
+    on `Fin 2 → ℕ` is not total. Generalises `rankTwo_generation_not_isTotal` from
+    `ℕ²` to the free model on any `Fin r`, `r ≥ 2` (and any non-subsingleton `S`). -/
+theorem freeRankTwo_not_isTotal : ¬ IsTotal (Fin 2 → ℕ) piGenLe := by
+  intro h
+  have hsub : Subsingleton (Fin 2) := freeGen_total_forces_subsingleton h
+  exact absurd (Subsingleton.elim (0 : Fin 2) 1) (by decide)
+
+end GeneralRank
+
 end QOU.Atomicity
