@@ -1,22 +1,12 @@
 ---
 # qou-9clc
 title: 'A5 (deep bet): Sniady genus expansion of E[chi(3-cyc)] on the (dim)^3-biased measure'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-07-25T03:30:09Z
-updated_at: 2026-07-25T03:31:41Z
+updated_at: 2026-07-25T11:32:38Z
 parent: qou-v8t7
 ---
 
-## A5 — deep bet: Śniady genus expansion on the (dim)³-biased measure (the 'proper' method)
-IDEA. Genus expansion of E[χ(3-cyc)] under the (f^λ)³-biased measure: the genus-0 (planar) term sets
-the sign, higher-genus are 1/N-suppressed corrections. The obstruction (f not a polynomial function)
-is handled by expanding the dim-cubed weight itself, not treating dim as an observable.
-FRAMEWORK FIT. Matches the resolved second-order scale; couples to A3 (the genus grading IS the
-mixed-cumulant control). This is the textbook-hard but 'correct' route.
-FIRST STEP. Read uploads/0411647v2.pdf (Śniady, genus expansion + free probability); identify the
-genus-0 contribution to the (dim)³-biased 3-cycle character average and its sign; check whether the
-leading genus determines cov(k)≤0 with the higher-genus tail bounded.
-SUCCESS. Genus-0 sign + bounded corrections ⇒ kernel.
-KILL. Genus-0 does not determine the sign (then the sign is a higher-genus cancellation — very hard).
+A5 — Śniady genus expansion: ELIMINATED (route #11, 2026-07-25 paper-mining agent). The extra dim factor ejects dim³·ω₃ from the algebra A (dim∉A, super-polynomial), so there is NO genus grading / genus-0 term whose sign to read. Sharp diagnostic: at dim² (Plancherel) Σ(dim)²ω₃=0 EXACTLY (IO Prop 5.1), so cov(n)=n!·Cov_Planch(dim,ω₃) is the pure first-order dim-tilt response. The FIRST lemma any viable route needs is an expansion of the non-polynomial dim (or ln dim) functional against Plancherel (Schur-measure/hook-content generating fn or Vershik-Kerov ln-dim functional) — NOT the Σ_k genus machinery. Neither Śniady 0411647 nor Dołęga-Śniady 1704.02352 (α-Jack, keeps dim²-type norm) provides it. Audit: 2026-07-25-covariance-kernel-A5-genus-eliminated-A4-lean.md

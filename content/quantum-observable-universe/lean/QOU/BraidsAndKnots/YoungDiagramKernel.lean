@@ -1,6 +1,7 @@
 import Mathlib.Data.Nat.Factorial.Basic
 import Mathlib.Algebra.BigOperators.Ring.List
 import Mathlib.Tactic.Ring
+import Mathlib.Tactic.IntervalCases
 
 /-!
 # QOU.BraidsAndKnots.YoungDiagramKernel — elementary Lean infrastructure for the Δ_λ covariance kernel
@@ -103,6 +104,53 @@ theorem r4WeightedSum_eq (k : ℕ) :
   unfold r4WeightedSum kernelValue cubeSum
   have h := r4_sum_affine_list k (partsOf k)
   simpa [omega3] using h
+
+/-- Second-moment (dim²-weighted) content-spread total `Σ_{λ⊢k} (f^λ)² · ω₃(λ)`. -/
+def secondMomentKernel (k : ℕ) : ℤ :=
+  ((partsOf k).map (fun l => (sytDim l : ℤ) ^ 2 * omega3 k l)).sum
+
+/-- **The dim²-weighted 3-cycle content-spread total VANISHES** (Lean-verified, `3 ≤ k ≤ 7`):
+`Σ_{λ⊢k} (f^λ)² ω₃(λ) = 0`. This is `k!·E_Planch[ω₃] = 0` (the Plancherel content mean is `C(k,2)`) —
+an **exact** identity, not conjectural. It isolates the open kernel as the *first-order response to the
+extra dimension factor*: `cov(k) = Σ (f^λ)³ ω₃ = k!·Cov_Planch(f^λ, ω₃)`, a genuine dimension-tilt
+covariance (Ivanov–Olshanski Prop 5.1; the `dim³` weight has one surplus `dim` beyond column
+orthogonality, so — unlike this `dim²` total — it lies outside the polynomial-function algebra `A`). -/
+theorem secondMomentKernel_eq_zero_of_le_seven (k : ℕ) (hk : 3 ≤ k) (hk' : k ≤ 7) :
+    secondMomentKernel k = 0 := by
+  interval_cases k <;> decide
+
+/-- Lean-kernel-verified base **values** of `kernelValue` (checked by `decide` over the full
+partition/hook machinery, grounding the otherwise Python-only verification). -/
+theorem kernelValue_base_values :
+    kernelValue 3 = -4 ∧ kernelValue 4 = -16 ∧ kernelValue 5 = -320 ∧
+      kernelValue 6 = -10400 ∧ kernelValue 7 = -163520 := by decide
+
+/-- The covariance-kernel conjecture is **Lean-verified for `3 ≤ k ≤ 7`** (kernel `decide`), a
+machine-checked base for the open general statement below. -/
+theorem kernelValue_nonpos_of_le_seven (k : ℕ) (hk : 3 ≤ k) (hk' : k ≤ 7) :
+    kernelValue k ≤ 0 := by
+  interval_cases k <;> decide
+
+/-- Content-square is **conjugation-invariant** — verified for all `λ ⊢ k`, `k ≤ 6` (`decide`):
+`contentSq (conj λ) = contentSq λ`. Reason: the transpose bijection on cells `(i,j) ↦ (j,i)` sends the
+content `j−i` to `i−j`, and `(i−j)² = (j−i)²`. Consequence: `ω₃` is conjugation-symmetric, hence
+**U-shaped** (large at both the row and column extremes, small in the balanced middle) — which is
+exactly why no monotone / FKG / comonotone certificate for the kernel can work. The general (`∀`
+sorted `l`) statement follows from the sorted-List transpose bijection
+`cellSum (conj l) f = cellSum l (fun i j => f j i)` (via `len (conj l) = l.headD 0`,
+`conj l |>.getD r 0 = #{i : l.getD i 0 > r}`, and the staircase equivalence
+`c < (conj l).getD r 0 ↔ r < l.getD c 0`); that infra is not yet built here. -/
+theorem contentSq_conj_invariant_of_le_six (k : ℕ) (hk : k ≤ 6) :
+    ∀ l ∈ partsOf k, contentSq (conj l) = contentSq l := by
+  interval_cases k <;> decide
+
+/-- `ω₃` is conjugation-invariant on `λ ⊢ k`, `k ≤ 6` (`decide`): `omega3 k (conj λ) = omega3 k λ`
+(immediate from `contentSq_conj_invariant_of_le_six`, since `ω₃` only shifts `contentSq` by a
+`λ`-independent constant). This symmetry pairs the kernel summands `(f^λ)³ω₃(λ)` into conjugate pairs
+(except at self-conjugate `λ`), the structural obstruction to any local sign certificate. -/
+theorem omega3_conj_invariant_of_le_six (k : ℕ) (hk : k ≤ 6) :
+    ∀ l ∈ partsOf k, omega3 k (conj l) = omega3 k l := by
+  interval_cases k <;> decide
 
 /-- **CONJECTURE (OPEN).** The covariance kernel `Cov_Planch(f^λ, Σ_□ c(□)²) ≤ 0`, in its
 elementary content form: for every `k`, `Σ_{λ⊢k} (f^λ)³ (Σ_□c(□)² − C(k,2)) ≤ 0`. This is the sole
