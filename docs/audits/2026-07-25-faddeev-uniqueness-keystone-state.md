@@ -35,6 +35,16 @@ growth route). These are two forms of the same statement, and both require the
 infrastructure Mathlib does not package. Input 1's infinite-product-analyticity closed
 `MeromorphicOn` but **not** divisor rigidity, which is the strictly harder fact.
 
+**`phiBProd`-side divisor computed (2026-07-25, `PhiBProdDivisor.lean`).** The
+`phiBProd` half of the divisor is now explicit: both products are **nonzero off their
+factor lattices** (`tprod_numFactor_ne_zero` / `tprod_denFactor_ne_zero`, via
+`tprod_one_add_ne_zero_of_summable`), so `phiBProd` has **no hidden zeros or poles** —
+`phiBProd_ne_zero_off_lattice`. This concretizes the remaining `hr_entire` input to a
+checkable statement about the *other* solution `Ψ` (its zeros/poles match `phiBProd`'s
+explicit lattices), rather than an abstract order match. It does not close the input — the
+`Ψ`-side divisor still needs the growth estimate — but it is the honest formalizable
+narrowing of the divisor-rigidity front.
+
 Everything *around* this input is already in place: ratio double-periodicity on a dense
 locus (`CyclicDilogPentagon.ratio_ib_periodic` / `ratio_ibinv_periodic`), continuity
 promotion to everywhere (`Common.periodic_of_continuous_of_eqOn_dense`), the period basis
