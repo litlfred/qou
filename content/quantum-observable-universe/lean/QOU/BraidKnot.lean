@@ -159,6 +159,10 @@ import QOU.BraidKnot.JonesViaMarkovTrace
 -- trefoil + the shell-structure Z,N ↦ k∈{1,2,3} classifier. Infra only — builds
 -- jonesQuotient, does NOT prove a(Z,N)=J_β̄(q).
 import QOU.BraidKnot.JonesNuclearQuotient
+-- Provenance of the Q_β c_3 near-match constant -2 = J_Hopf(q=1) via the
+-- classical Jones loop factor / V_L(1)=(-2)^(c-1); does NOT close a derivation
+-- gap (c_3 is proved measurement-limited), only rigorizes the constant's origin:
+import QOU.BraidKnot.JHopfQOneProvenance
 -- YT seminormal-sum Mathlib-gap infra (beans qou-cxkc / qou-mcbf / qou-ujfg):
 -- the weight layer (a_ρ = h·g_ρ, pairing g_ρ+g_{−ρ}=1) + the cell-geometry
 -- layer (content, axial distance) toward the seminormal character sum.
