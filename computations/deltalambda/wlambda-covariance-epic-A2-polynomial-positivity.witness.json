@@ -1,0 +1,46 @@
+{
+  "engine": "python-exact",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-07-25T16:27:12.240477+00:00",
+  "commitSha": "d406169c02ee4e5ccc5334d40ccc84bb27effb21",
+  "assertions": [
+    {
+      "name": "covariance_epic_A2_polynomial_positivity_reduction",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "A2 reduced to R(x)>=0 on (0,1) via P(x)=x(x-1)R(x); R>0 on [0,inf) (all real roots negative) verified n<=15; moment tower M_1..M_8>0, M_2=|C3|; three easy-proof certificates (single-crossing nu / cumulative S_v<=0 / R nonneg coeffs) all FALSE. Sharpening, not a proof. No fit; no c_k."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 10,
+  "computation": "wlambda-covariance-epic-A2-polynomial-positivity",
+  "scriptFile": "wlambda_covariance_epic_A2_polynomial_positivity.py",
+  "scriptHash": "a40d83a44421",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Attack A2 advance (qou-x631): reduce Cov_Planch(ln f^λ,ω₃)≤0 to an EXACT polynomial positivity, and close three natural easy-proof routes. With ν_v=Cov_Planch(N_v,ω₃) (N_v=#hooks of length v) and the hook-covariance generating polynomial P(x)=Σ_v ν_v x^v: P(0)=P(1)=0 (ΣN_v=n const), Cov(H_s,ω₃)=P(e^{−s}), so Cov(H_s,ω₃)≤0 ∀s>0 ⟺ P≤0 on (0,1); factoring P(x)=x(x−1)R(x) (deg R=n−2), and x(x−1)<0 on (0,1), gives A2 ⟸ R(x)≥0 on (0,1). VERIFIED (n≤15): R≥0 on (0,1) and in fact R has NO positive real root (R>0 on [0,∞), real roots all negative). Moment tower M_k=Σv^k ν_v=Cov(Σh^k,ω₃): M_0=0, M_2=|C₃|=n(n−1)(n−2)/3 (via Σh²=Σc²+n²), M_1..M_8>0. THREE easy-proof certificates are FALSE, so the negativity is a genuine polynomial-positivity fact, not total-positivity: (a) ν is NOT single-signed-crossing (oscillates, up to 7 changes by n=14) — Karlin variation-diminishing fails; (b) the cumulative S_v=Σ_{u≤v}ν_u are NOT all ≤0 (first fails n=6, S_2=+1) — Abel-summation cert fails; (c) R does NOT have all-nonneg coefficients (fails n=6,8,10,…) — positive-coeff cert fails. SHARPENS A2 to a concrete polynomial statement (R has no nonnegative real root) and tells the next attempt what will NOT work. Does NOT prove the kernel. scope-(a); no fit; nothing wired; no c_k; L2 2/7.",
+  "data": {
+    "reduction": "A2 (Cov(ln f,omega3)<=0) <== R(x)>=0 on (0,1), P(x)=Sum nu_v x^v=x(x-1)R(x)",
+    "P_vanishes_0_and_1": true,
+    "R_nonneg_on_unit_interval_nmax": 15,
+    "R_no_positive_real_root_nmax": 15,
+    "R_all_real_roots_negative": true,
+    "moment_tower": "M_0=0; M_2=|C3|=n(n-1)(n-2)/3; M_1..M_8>0",
+    "route_a_single_crossing_has_counterexample": true,
+    "route_b_cumulative_Sv_nonpos_has_counterexample": true,
+    "route_c_R_nonneg_coeffs_has_counterexample": true,
+    "open_subtarget": "prove R(x) has no nonnegative real root for general n"
+  }
+}
