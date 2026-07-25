@@ -1,0 +1,123 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-25T11:26:35.774227+00:00",
+  "commitSha": "346f4f7e681240e3a62223f9a1d7a574695581c7",
+  "assertions": [
+    {
+      "name": "C_isogeny_eigenvalue_gate",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "C symmetric {4,±1}; eigenvalues (1,5,5,5) = corpus isogeny tuple (convention-independent cross-gate)"
+    },
+    {
+      "name": "riemann_relations",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "Z = tau*C symmetric, Im Z positive-definite"
+    },
+    {
+      "name": "c_candidates_parametric_emitted",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "Markov regression vs sibling witness; |c| table parametric in Im tau; tau0 numeric honestly flagged open; nothing wired"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 42,
+  "computation": "alpha-em-b2-bring-period-matrix",
+  "scriptFile": "alpha_em_b2_bring_period_matrix_probe.py",
+  "scriptHash": "b528fcddfcb0",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
+  },
+  "description": "Bring period matrix Z = tau*C for B2 input (a): C extracted from the uploaded Riera-Rodriguez + Braden-Northover papers and isogeny-gated (eigenvalues (1,5,5,5) = corpus tuple, convention-independent); Riemann relations verified; the numeric tau0 flagged as an unresolved j-convention residual (NOT fitted); |c| candidate table emitted parametric in Im tau, conditional on sub-piece (ii).",
+  "contentBlock": "prop:em-coupling-bring-zero-mode",
+  "data": {
+    "sources_in_uploads": [
+      "pjm-v154-n1-p09-s.pdf (riera-rodriguez-1992)",
+      "1206.6004v2.pdf (braden-northover-2012)"
+    ],
+    "C_matrix": [
+      [
+        4,
+        1,
+        1,
+        -1
+      ],
+      [
+        1,
+        4,
+        -1,
+        1
+      ],
+      [
+        1,
+        -1,
+        4,
+        1
+      ],
+      [
+        -1,
+        1,
+        1,
+        4
+      ]
+    ],
+    "C_eigenvalues": [
+      "1.0",
+      "5.0",
+      "5.0",
+      "5.0"
+    ],
+    "C_isogeny_gate": {
+      "eigenvalues": "(1,5,5,5)",
+      "corpus_isogeny_tuple": "(5,5,5,1)",
+      "convention_independent": true,
+      "sign_class_size": 8
+    },
+    "tau0_convention_flag": {
+      "printed": "(-0.5 + 0.185576j)",
+      "j_targets": [
+        "-29^3*25/2^5",
+        "-25/2"
+      ],
+      "j_at_printed": "-4039.61804011",
+      "im_tau_from_j_solve": "0.158781266955198",
+      "j5_at_printed": "-9.763907546",
+      "status": "printed decimal + j-rationals + standard j do not reconcile as read; B-N §4 convention residual, recorded not fitted"
+    },
+    "c_candidates_parametric": {
+      "printed_0.185576": {
+        "im_tau": "0.185576",
+        "c_det": "0.207280862271117",
+        "c_tr": "0.173271333813703"
+      },
+      "j_solved_0.15878": {
+        "im_tau": "0.158781266955198",
+        "c_det": "0.242260022447601",
+        "c_tr": "0.202511301619005"
+      }
+    },
+    "markov_norm": "0.128620004175246883935741331662",
+    "verdict": "B2 INPUT (a) — STRUCTURE CERTIFIED, τ₀ NUMERIC FLAGGED (honest, discipline-compliant): the Bring polarization matrix C = {4,±1} is corpus-extracted with eigenvalues (1,5,5,5) EXACTLY the recorded isogeny tuple — a convention-independent cross-gate (True) — and Z = τ·C satisfies the Riemann relations (True); BOTH source papers are in uploads/ (correcting the prior 'absent from corpus' note). HONEST OPEN: under the standard j the printed τ₀ decimal 0.185576, the printed j-rationals (−29³·25/2⁵, −25/2), and the j-solved Im τ = 0.15878 do NOT reconcile as read — a Braden–Northover §4 j-CONVENTION residual, RECORDED not fitted. The |c| candidate table is emitted PARAMETRIC in Im τ (both values), each still conditional on sub-piece (ii) (the τ-intertwiner basis-match) — so input (a) is advanced from 'absent' to 'structure-fixed + one scalar (Im τ) gated on a convention read', not falsely closed. Nothing wired; 1/(8π) phase-4; scope-(a). Sources: riera-rodriguez-1992, braden-northover-2012."
+  }
+}
