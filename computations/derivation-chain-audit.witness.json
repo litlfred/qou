@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-25T18:53:08.378351+00:00",
-  "commitSha": "6fbe76d6585380e7cd00cbbe37f990b0fd07264d",
+  "computedAt": "2026-07-25T21:48:18.912071+00:00",
+  "commitSha": "a1993be2c90b2a559920d05b3ba5b49eb33d13cd",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -3206,6 +3206,10 @@
         "wenzl-lr-convention-adapter.witness.json",
         "wenzl-y-lambda-h12.witness.json",
         "wenzl-y-lambda-h9.witness.json",
+        "whitehead-c0-mpmath.witness.json",
+        "whitehead-c0-tower.witness.json",
+        "whitehead-kashaev-volume.witness.json",
+        "whitehead-volume-identification.witness.json",
         "witness-reproducibility-check.witness.json",
         "wlambda-ladder-higher-rungs.witness.json",
         "xi-ell-phi-q-probe.witness.json",
