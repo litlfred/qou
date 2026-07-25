@@ -102,32 +102,52 @@ premise are stated as the open sub-pieces, not papered over. `1/(8π)` stays pha
 - B2 interface + reductions: `QOU/Archimedean/{TauRhoHodgeLiftInterface,HodgeGramLift,LiftFromReality,TauFunctorReduction}.lean`
 - Ledger: [`../coordination/alpha-em.md`](../coordination/alpha-em.md)
 
-## Update 2026-07-25 — sub-piece (ii) formalized as a conditional reduction
+## Update 2026-07-25 — sub-piece (ii): the generator-intertwiner framing was WRONG (corrected)
 
-`TauS5EquivarianceReduction.lean` (sorry-free, lean-direct exit 0) closes the
-*logical* role of sub-piece (ii). Two results:
+**Correction of the earlier same-day claim.** An earlier version of
+`TauS5EquivarianceReduction.lean` (merged in #4182) framed sub-piece (ii) as a
+*generator*-level intertwiner `ρH s · P = P · ρS s` between the Hecke action and
+the S₅ action on `std`, and claimed `tauImage_proportional_hodge` *reduced* (ii).
+**That was wrong: the generator-intertwiner is UNSATISFIABLE at `q₀ ≠ 1`.**
 
-- `invariantForm_pullback` — transport of an invariant form along an
-  intertwiner: if `P` intertwines the Hecke action `ρH` and the S₅ action `ρS`
-  (`ρH s · P = P · ρS s`) and `M` is `ρH`-invariant, then `Pᵀ M P` is
-  `ρS`-invariant. This is the precise linear-algebra content of "an
-  S₅-equivariant τ carries the Markov Gram to an S₅-invariant form."
-- `tauImage_proportional_hodge` — assembling (i)+(ii)+Schur: given the τ-map on
-  `std` as a `TauStdIntertwiner`, plus S₅-irreducibility (⇒ scalar commutant via
-  `MatrixSchurCommutant`, PR #4182) and a unit Hodge form, the τ-image of the
-  Markov Gram is `= c • G_Hodge`.
+- Hecke generator `σ₁` on `std` has eigenvalues `q₀,q₀,q₀,−q₀⁻¹` → trace `3q₀ − q₀⁻¹ ≈ 2.43`.
+- An S₅ transposition on `std` has eigenvalues `1,−1,1,1` (fixed-points − 1) → trace `2`.
+- Differing spectra ⇒ no conjugating `P` (now a sorry-free lemma
+  `intertwiner_trace_eq`: an intertwiner forces `trace ρH s = trace ρS s`). `2.43 ≠ 2`.
 
-**The wall is now assembled modulo two named, un-fabricated inputs:**
+So the old conditional was true-but-**vacuous** (per "conditional-proved ≠
+premise-established") — NOT a reduction of (ii). The correct τ-correspondence is
+the **Tits `*`-algebra iso** `H₅(q₀) ≅ ℂ[S₅]` on the `(4,1)` block (a
+Skolem–Noether conjugator sending `σᵢ` to a *non-generator* element), which is
+**not** yet formalized. Sub-piece (ii) is honestly **OPEN**.
+
+What the (corrected) file genuinely provides, sorry-free: `invariantForm_pullback`
+(true general linear algebra), `intertwiner_trace_eq` (the obstruction), and
+`tauImage_proportional_hodge` (general-`P` assembly, explicitly flagged as **not**
+a reduction of (ii)).
+
+**Gate (a) for `|c|` — CLOSED.** The explicit period matrix *is* in the corpus
+uploads: Braden–Disney-Hogg *Bring's Curve: Old and New* ([arXiv:2208.13692](https://arxiv.org/abs/2208.13692),
+Thm 2.12, citing [Riera–Rodríguez 1992](https://doi.org/10.2140/pjm.1992.154.179),
+`uploads/2208.13692v1.pdf` + `uploads/the-period-matrix-of-bring-s-curve-1hik02mwva.pdf`)
+gives the Riemann matrix `τ_B = τ₀·M_S`, `M_S = 5·Id₄ − 𝟙` (eigenvalues `(5,5,5,1)`,
+positive-definite), `τ₀ = −0.5 + 0.186676i`. So the canonical Hodge Gram is
+explicit: `G_Hodge = Im(τ₀)·M_S`. `|c|` is therefore no longer gated on the period
+data — it is gated **only** on the Tits `*`-iso (sub-piece ii), since `|c|` compares
+the Markov-trace and principal-polarization normalizations, which live on the two
+structures the Tits iso relates.
+
+**Corrected wall state:**
 
 | ingredient | status |
 |---|---|
 | Schur proportionality from commutant-scalar | PROVED (#4160) |
 | (i) commutant scalar from irreducibility | PROVED (#4182, `MatrixSchurCommutant`) |
 | symmetric / real type of the Markov Gram | PROVED (#4154, `MarkovGramRealSymm`) |
-| (ii) equivariance ⇒ invariant-form transport ⇒ proportionality | PROVED conditional (this file) |
 | sign of `c` (positive) | PROVED (Hodge+Markov both pos-def, #4182 item 2) |
-| **τ is the `(4,1)` intertwiner** (the categorical claim) | **OPEN** — existence of *some* intertwiner is standard (Tits deformation); that the archimedean τ *is* it is the open input. No instance registered. |
-| explicit `|c|` (magnitude) | **OPEN** — needs the Riera–Rodríguez symplectic period matrix `Z` (absent from corpus) |
+| explicit Hodge Gram `Im(τ₀)·M_S` (period data) | AVAILABLE (BDH Thm 2.12 / RR92; gate (a) closed) |
+| **(ii) τ-correspondence = Tits `*`-iso on the `(4,1)` block** | **OPEN** — the generator-intertwiner is obstructed (`intertwiner_trace_eq`); the Skolem–Noether conjugator of the Tits iso is not yet formalized |
+| `|c|` magnitude | **OPEN** — gated on (ii) alone (the two normalizations are related by the Tits iso) |
 
-No `TauStdIntertwiner` / `TauRhoHodgeLift` instance for the actual τ is
-registered; `1/(8π)` stays a phase-4 identification; nothing is wired.
+No intertwiner / `TauRhoHodgeLift` instance for the actual τ is registered;
+`1/(8π)` stays a phase-4 identification; nothing is wired.

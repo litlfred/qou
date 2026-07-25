@@ -6,31 +6,35 @@ The α_EM B2 wall (`prop:em-coupling-bring-zero-mode`, epic `qou-6ufi`) is
 Schur; PR #4182 discharged its scalar-commutant hypothesis from irreducibility
 (`MatrixSchurCommutant.commutant_scalar_of_irreducible`). The two remaining open
 sub-pieces were (i) scalar-commutant [done, #4182] and **(ii) the τ-image is
-S₅-equivariant on `std`**. This file formalizes the *logical role* of (ii): it
-proves that S₅-equivariance of the τ-map (an intertwiner between the Hecke and
-S₅ actions on `std`) is EXACTLY what turns the Markov Gram into an S₅-invariant
-form, which then — with (i) + Schur — is `∝` the Hodge Gram.
+S₅-equivariant on `std`**.
 
-Two results (sorry-free, `lean`-direct):
+**CORRECTION (2026-07-25).** An earlier version of this file (merged in #4182)
+framed (ii) as a *generator*-level intertwiner `ρH s * P = P * ρS s` between the
+Hecke and S₅ actions and claimed `tauImage_proportional_hodge` "reduced" (ii).
+**That framing was wrong: the generator-intertwiner is UNSATISFIABLE at
+`q₀ ≠ 1`.** The Hecke generator `σ₁` on `std` has eigenvalues `q₀,q₀,q₀,−q₀⁻¹`
+(trace `≈ 2.43`); an S₅ transposition has eigenvalues `1,−1,…` (trace `2`);
+differing spectra ⇒ no conjugating `P` (`intertwiner_trace_eq`). So the old
+conditional was true-but-vacuous, not a reduction (per "conditional-proved ≠
+premise-established"). The correct τ-correspondence is the **Tits `*`-algebra
+iso** `H₅(q₀) ≅ ℂ[S₅]` on the `(4,1)` block — a Skolem–Noether conjugator sending
+`σᵢ` to a *non-generator* element — which this file does **not** yet formalize;
+that remains the open work of (ii).
+
+What this file now provides (sorry-free, `lean`-direct):
 
 * `invariantForm_pullback` — **transport of an invariant form along an
-  intertwiner.** If `P` intertwines two representations (`ρH s * P = P * ρS s`)
-  and `M` is `ρH`-invariant, then `Pᵀ * M * P` is `ρS`-invariant. (No
-  invertibility needed for this direction.)
-* `tauImage_proportional_hodge` — **the (ii)⇒proportionality assembly.** Given a
-  `TauStdIntertwiner` (the τ-map on `std`), the `ρS = S₅`-irreducibility (⇒
-  scalar commutant, via #4182), a unit Hodge form, and the two invariant forms,
-  the pulled-back Markov Gram `Pᵀ · G_M · P` is `= c • G_H` for some scalar `c`.
+  intertwiner** (true general linear algebra, reusable): `P` intertwines `ρH,ρS`
+  and `M` is `ρH`-invariant ⇒ `Pᵀ * M * P` is `ρS`-invariant.
+* `intertwiner_trace_eq` — **the obstruction**: a generator-intertwiner forces
+  `trace (ρH s) = trace (ρS s)`; ruled out for Hecke/S₅ (`2.43 ≠ 2`).
+* `tauImage_proportional_hodge` — the general-`P` assembly, explicitly flagged as
+  **not** a reduction of (ii) (its `GeneratorIntertwiner` premise is the
+  obstructed one).
 
-**The open categorical input, made precise and NOT fabricated (STRICT,
-§"Axiomatization is NOT a Proof").** The hypothesis is a `TauStdIntertwiner`:
-an invertible `P` with `ρH s * P = P * ρS s`. Existence of *some* such `P` is
-standard (Tits deformation: `H₅(q)` is semisimple and its `(4,1)` block is the
-abstract irreducible `(4,1)`, ≅ the S₅ `(4,1)`). The genuinely-open claim is that
-the QOU **archimedean functor τ** *is* such an intertwiner on `std` — a statement
-about the actual categorical/archimedean functor, not a matrix identity. **No
-`TauStdIntertwiner` instance for the actual τ is registered**; this file proves
-only the conditional. `1/(8π)` stays a phase-4 identification; nothing is wired.
+STRICT (§"Axiomatization is NOT a Proof"): no intertwiner instance for the actual
+τ is registered; sub-piece (ii) is honestly OPEN (it needs the Tits `*`-iso, not
+a generator intertwiner). `1/(8π)` stays a phase-4 identification; nothing wired.
 
 -- Ref: [manuscript] prop:em-coupling-bring-zero-mode
 -- Ref: [serre1977] Linear Representations of Finite Groups (Schur; Tits deformation)
@@ -67,33 +71,64 @@ theorem invariantForm_pullback {ρS ρH : G → Matrix n n k} {P : Matrix n n k}
     _ = Pᵀ * ((ρH s)ᵀ * M * (ρH s)) * P := by simp only [Matrix.mul_assoc]
     _ = Pᵀ * M * P := by rw [hM s]
 
-/-- **The τ-map on the `std` block (the open categorical input of sub-piece ii).**
-An invertible `P` intertwining the Hecke action `ρH` and the S₅ action `ρS`:
-`ρH s * P = P * ρS s`. Existence of some such `P` is standard (Tits deformation);
-the OPEN claim is that the QOU archimedean functor τ realizes it. No instance for
-the actual τ is registered here. -/
-structure TauStdIntertwiner (ρS ρH : G → Matrix n n k) where
-  /-- The intertwiner matrix (the τ-map restricted to `std`). -/
+/-- **A generator-level intertwiner** `P` between two actions `ρH`, `ρS`:
+`ρH s * P = P * ρS s`, `P` invertible.
+
+⚠ **This is NOT satisfiable for the (Hecke-generator, S₅-generator) actions on
+`std` at `q₀ ≠ 1`** — see `intertwiner_trace_eq` below. The Hecke generator
+`σᵢ` (eigenvalues `q₀,−q₀⁻¹`) is not conjugate to an S₅ transposition
+(eigenvalues `1,−1`), so no such `P` exists. The *actual* τ-correspondence is the
+**Tits `*`-algebra iso** `H₅(q₀) ≅ ℂ[S₅]` on the `(4,1)` block (a Skolem–Noether
+conjugator sending `σᵢ` to a *non-generator* element), which this generator
+structure does **not** model. Kept only to state the general pullback assembly
+and to carry the obstruction lemma. -/
+structure GeneratorIntertwiner (ρS ρH : G → Matrix n n k) where
+  /-- The intertwiner matrix. -/
   P : Matrix n n k
-  /-- `P` is invertible (the τ-map is an isomorphism on the block). -/
+  /-- `P` is invertible. -/
   isUnit : IsUnit P.det
   /-- Intertwining relation between the two generator actions. -/
   intertwines : ∀ s, ρH s * P = P * ρS s
 
-/-- **Sub-piece (ii) ⇒ proportionality.** Given the τ-intertwiner on `std`, the
-irreducibility of the S₅ action `ρS` (which discharges the scalar-commutant
-hypothesis via #4182), a unit Hodge form `G_H`, and the invariance of both the
-Hodge form (for `ρS`) and the Markov Gram `G_M` (for `ρH`), the τ-image of the
-Markov Gram `Pᵀ * G_M * P` is a scalar multiple of the Hodge form.
+/-- **Obstruction — a generator-intertwiner forces equal generator traces.** If
+`P` is a unit intertwining `ρH` and `ρS`, then `(ρH s).trace = (ρS s).trace` for
+every `s`, since `ρH s = P (ρS s) P⁻¹` is a conjugate.
 
-STRICT: `τ` here is the `TauStdIntertwiner` *hypothesis*; no instance for the
-actual archimedean functor is exhibited. This is the §3b-cond conditional result
-— rigorous modulo the single named categorical input. -/
+This **rules out** a generator-intertwiner between the Hecke and S₅ actions on
+`std`: the Hecke generator `σ₁` has `trace = 3q₀ − q₀⁻¹ ≈ 2.43` (eigenvalues
+`q₀,q₀,q₀,−q₀⁻¹`), while an S₅ transposition on `std` has `trace = 2`
+(fixed-points − 1). `2.43 ≠ 2`, so no `GeneratorIntertwiner` exists at `q₀ ≠ 1`.
+Hence sub-piece (ii) is **not** a generator-intertwiner; the correct object is the
+Tits `*`-iso conjugator (open). -/
+theorem intertwiner_trace_eq {ρS ρH : G → Matrix n n k}
+    (τ : GeneratorIntertwiner ρS ρH) (s : G) :
+    (ρH s).trace = (ρS s).trace := by
+  have hP : IsUnit τ.P.det := τ.isUnit
+  have hconj : ρH s = τ.P * ρS s * τ.P⁻¹ := by
+    have h := τ.intertwines s
+    have h2 : (ρH s * τ.P) * τ.P⁻¹ = (τ.P * ρS s) * τ.P⁻¹ := by rw [h]
+    rwa [Matrix.mul_assoc, Matrix.mul_nonsing_inv _ hP, Matrix.mul_one] at h2
+  rw [hconj, Matrix.trace_mul_comm, ← Matrix.mul_assoc,
+    Matrix.nonsing_inv_mul _ hP, Matrix.one_mul]
+
+/-- **General pullback assembly** (NOT a reduction of sub-piece ii — see the
+caveat). Given *any* `GeneratorIntertwiner` on `std`, S₅-irreducibility of `ρS`
+(discharging scalar-commutant via `MatrixSchurCommutant`), a unit Hodge form
+`G_H`, and invariance of the Hodge form (`ρS`) and the Markov Gram `G_M` (`ρH`),
+the pulled-back Markov Gram `Pᵀ * G_M * P` is a scalar multiple of `G_H`.
+
+⚠ **This does NOT reduce (ii)** for the actual Hecke/S₅ actions: by
+`intertwiner_trace_eq` the hypothesis `GeneratorIntertwiner ρH ρS` is
+**unsatisfiable** there (`trace σ₁ ≈ 2.43 ≠ 2`). The theorem is a true statement
+about an *abstract* form-preserving intertwiner; the real τ-correspondence is the
+Tits `*`-iso conjugator, which is **not** a `GeneratorIntertwiner` and is not
+supplied here. STRICT: no instance for the actual τ is exhibited; `1/(8π)` stays
+phase-4. -/
 theorem tauImage_proportional_hodge [IsAlgClosed k] [Nonempty n]
     {ρS ρH : G → Matrix n n k}
     (hirr : IsIrreducibleRep ρS)
     (hρS : ∀ s, IsUnit (ρS s).det)
-    (τ : TauStdIntertwiner ρS ρH)
+    (τ : GeneratorIntertwiner ρS ρH)
     {G_H G_M : Matrix n n k} (hHodge : IsUnit G_H.det)
     (hHodge_inv : InvariantForm ρS G_H) (hMarkov_inv : InvariantForm ρH G_M) :
     ∃ c : k, (τ.P)ᵀ * G_M * τ.P = c • G_H := by
