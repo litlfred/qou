@@ -158,6 +158,62 @@ def braid_rep(word, m: int, N: int, Rc, Rci):
     return rho
 
 
+def _apply_gate_local(rho, Rc, Rci, g, N):
+    """Left-multiply the N³×N³ operator `rho` by the 2-local gate for
+    generator g (±1 → strands 0,1; ±2 → strands 1,2), via strided block
+    matmul — O(N⁸) instead of the O(N⁹) full np.kron matmul.
+
+    3-strand basis index x = a·N² + b·N + c (a,b,c ∈ [0,N)).
+    """
+    block = Rc if g > 0 else Rci               # N²×N²
+    i = abs(g)                                  # 1 → (a,b), 2 → (b,c)
+    dim = N ** 3
+    new = mp.zeros(dim, dim)
+    if i == 1:
+        # gate on (a,b): group rows by fixed c
+        for c in range(N):
+            rows = [a * N * N + b * N + c for a in range(N) for b in range(N)]
+            sub = mp.matrix(N * N, dim)
+            for r, x in enumerate(rows):
+                for col in range(dim):
+                    sub[r, col] = rho[x, col]
+            out = block * sub                   # (N²×N²)·(N²×dim)
+            for r, x in enumerate(rows):
+                for col in range(dim):
+                    new[x, col] = out[r, col]
+    else:
+        # gate on (b,c): group rows by fixed a
+        for a in range(N):
+            rows = [a * N * N + b * N + c for b in range(N) for c in range(N)]
+            sub = mp.matrix(N * N, dim)
+            for r, x in enumerate(rows):
+                for col in range(dim):
+                    sub[r, col] = rho[x, col]
+            out = block * sub
+            for r, x in enumerate(rows):
+                for col in range(dim):
+                    new[x, col] = out[r, col]
+    return new
+
+
+def closure_invariant_fast(word, N, q, Rc, Rci, mu_power=1):
+    """Same as closure_invariant for a 3-strand braid, but O(N⁸) per gate."""
+    dim = N ** 3
+    rho = mp.eye(dim)
+    for g in word:
+        rho = _apply_gate_local(rho, Rc, Rci, g, N)
+    mu_diag = [q ** (mp.mpf(N - 1 - 2 * i) * mu_power) for i in range(N)]
+    total = mp.mpc(0)
+    for x in range(dim):
+        weight = mp.mpc(1)
+        y = x
+        for _ in range(3):
+            weight *= mu_diag[y % N]
+            y //= N
+        total += weight * rho[x, x]
+    return total
+
+
 def closure_invariant(word, m: int, N: int, q: mp.mpc, Rc, Rci,
                       mu_power: mp.mpf = 1):
     """Quantum-trace closure invariant tr( μ^{⊗m} ρ(word) ), μ = K^{mu_power}.
