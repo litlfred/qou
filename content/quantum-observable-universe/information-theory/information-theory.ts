@@ -127,6 +127,7 @@ section({
         "q-game-of-life-proof",
         "q-game-of-life-interpretation",
         "substrate-computation",
+        "reeb-turing-completeness-classical",
         "quantum-computational-universality",
         "skein-turing-machine",
         "reeb-turing-completeness",
