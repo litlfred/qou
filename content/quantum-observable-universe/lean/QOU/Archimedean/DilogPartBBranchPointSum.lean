@@ -258,4 +258,28 @@ theorem partialSum_up_eq {x q : ℝ} (hq0 : 0 < q) (n : ℕ) :
   field_simp
   ring
 
+/-- **V3 brick 3e — the going-up integral evaluates to a `Li₂` difference.**
+    For `0 < x`, `1 ≤ c`, `x·c < 1`: `∫_1^c −log(1−xu)/u du = Li₂(xc) − Li₂(x)`,
+    via the change of variables `t = x u` (`smul_integral_comp_mul_left`) plus
+    brick 1 (`integral_Icc_eq_LiTwo_sub`).  This turns the Riemann-sum target
+    `∫_1^{qⁿ} h` of `riemann_error_bound_up` into `Li₂(xqⁿ) − Li₂(x)`, whose
+    limit as `xqⁿ → 1⁻` is `π²/6 − Li₂(x)` (brick 2's Abel limit). -/
+theorem integral_one_to_c_eq_LiTwo_sub {x c : ℝ} (hx0 : 0 < x) (hc1 : 1 ≤ c)
+    (hxc : x * c < 1) : (∫ u in (1 : ℝ)..c, -Real.log (1 - x * u) / u)
+      = LiTwo (x * c) - LiTwo x := by
+  have hxle : x ≤ x * c := by nlinarith [mul_le_mul_of_nonneg_left hc1 hx0.le]
+  have key : x • ∫ u in (1 : ℝ)..c, -Real.log (1 - x * u) / (x * u)
+      = ∫ t in (x * 1 : ℝ)..(x * c), -Real.log (1 - t) / t := by
+    have h := smul_integral_comp_mul_left
+      (f := fun t => -Real.log (1 - t) / t) (a := (1 : ℝ)) (b := c) x
+    simpa using h
+  have hlhs : (∫ u in (1 : ℝ)..c, -Real.log (1 - x * u) / u)
+      = x • ∫ u in (1 : ℝ)..c, -Real.log (1 - x * u) / (x * u) := by
+    rw [← intervalIntegral.integral_smul]
+    refine intervalIntegral.integral_congr (fun u _ => ?_)
+    simp only [smul_eq_mul]
+    rw [← mul_div_assoc, mul_div_mul_left _ _ (ne_of_gt hx0)]
+  rw [hlhs, key, mul_one]
+  exact integral_Icc_eq_LiTwo_sub hx0 hxle hxc
+
 end QOU.Archimedean
