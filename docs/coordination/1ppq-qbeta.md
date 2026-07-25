@@ -2290,3 +2290,30 @@ Masbaum tail is a DIFFERENT vector in the Habiro module — the named
 successors are the module map (descendant/derivative tower, or the
 cyclotomic expansion) applied to the block basis. No fit; nothing
 wired; comparison to observed only.
+
+**2026-07-25 (C1, branch claude/qbeta-5two-gk-bilinear-bridge-2026-07-25,
+DISTINCT ANGLE parallel to B1.2/B1.3) — THE BAR-ODD HOME IS THE ι-ODD
+ANTISYMMETRIC OFF-DIAGONAL CONTRACTION, AND IT IS ANCHOR-SMOOTH: the
+grade B1.2/B1.3 missed, but ~7600× too smooth to be c₃.** From the
+A1-derived chirality split `Ẑ = R^{1/8}·H⁺₁H⁻₁ + i(−R^{1/8}/2)(β·H⁺₂H⁻₀
+− β⁻¹·H⁺₀H⁻₂)`, the bar-odd channel is `ω(β,p,q)=β·p−β⁻¹·q`, ι-ODD under
+the amphichiral involution `ι:(β,p,q)↦(β⁻¹,q,p)`. B1.2's symmetric
+bilinear and B1.3's single span-vectors are ι-EVEN/ι-fixed objects, and
+`ω≡0` on the ι-fixed locus — they searched ω's ZERO LOCUS, which is why
+both returned nothing (structural, independent of dressing/row).
+Formalized sorry-free (`QOU/QBeta/BarOddAntisymOffDiagonal.lean`,
+lean-direct exit 0): `omega_iota_odd`, `sEven_iota_invariant`,
+`omega_of_iotaFixed`/`omega_zero_on_iotaFixed` (= V(4₁)_odd=0),
+`omega_ne_zero_imp_chiral` (nonzero bar-odd ⇒ chiral ⇒ needs 5₂ not 4₁).
+DECISIVE anchor-swing bound (`qbeta_5two_barodd_antisym_offdiagonal_probe.py`,
+4/4, committed-data only): the bar-odd home `Im Ẑ` swings **4.56 ppm**
+across muon↔proton while c₃ swings **3.47% (34700 ppm)** — ratio 7613×.
+Scope-(a): the correct bar-odd algebraic object is anchor-smooth and
+cannot ALONE realize the c₃ swing. CONSTRAINS the B1.3 successors: any
+module map staying inside the (anchor-smooth) block/Habiro home inherits
+the ppm smoothness ⇒ cannot close a percent swing; the swing must carry
+the anchor-DEPENDENT meridian-holonomy deformation q₀↦u (CuspShapeBarParity's
+open link), not a smoother object choice. This does NOT refute the
+module-map program — it bounds it (must be holonomy-deforming). No fit;
+nothing wired; NEVER inverts Q_β/CODATA. Audit
+`docs/audits/2026-07-25-5two-gk-bridge-attack.md`.
