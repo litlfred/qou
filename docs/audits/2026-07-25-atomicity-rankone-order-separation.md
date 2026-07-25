@@ -66,6 +66,42 @@ If yes, rank-one follows for free models by `freeGen_total_forces_subsingleton`;
 `JetTowerChain` is the order-side hook to cite/verify against. This is the
 forward, formalize-first complement to the Tannakian route on #4266.
 
+## Reconnaissance — the corpus has no formalized jet-tower ordering axiom (2026-07-25, follow-up)
+
+Attacking the open premise from the corpus side (does a jet-tower ordering axiom
+already exist to connect to `freeGen_total_forces_subsingleton`?) returned a clear
+negative:
+
+- `FundamentalObject`
+  ([`fundamental-object.lean`](../../content/quantum-observable-universe/quantum-universes/fundamental-object.lean))
+  carries **no rank/dimension field** — `V`, `volume`, `coform`, and the two snake
+  identities only. The dimension-2 / rank-2 of `V` is narrative (Deligne–Milne),
+  **not formalised**.
+- `KeystoneBridgeC1Binding.lean` concerns the normalizer recurrence
+  `N(n) = (n−1)!`, not an ordering on simples.
+- `JetOrderIndependence.lean` is a **different** object — the jet-Jacobian rank of
+  the three coloured-Jones series (`4₁, 5₂, 𝓑₃`), not a tensor-generation order.
+
+So the "jet-tower ordering axioms" of `qou-ngwo` are **genuinely unformalised**;
+the route is a `premise → theorem` construction, not a re-proof of an existing
+axiom.
+
+**Deliverable — the minimal categorical→order bridge (Lean, sorry-free).** Added
+to the same file: a conjectural §3b class `TensorGenerationFree` (the honest,
+no-instance premise that the simple-object index is the free comm monoid on the
+fundamental objects, via a monotone multiplicity map `ι` with
+`ι (simple s) = fundamentalWeight s`), and the conditional theorem
+`rankOne_of_chain_of_bridge`:
+
+> `[TensorGenerationFree W S] → IsTotal W (· ≤ ·) → Subsingleton S`.
+
+This is the atomicity upgrade's `premise → theorem` step, honestly delimited:
+**rank-one is now derived from exactly two named premises** — the categorical
+dictionary (`TensorGenerationFree`) and the jet-tower chain axiom (totality) — the
+implication itself proved sorry-free, no bridge instance fabricated. The remaining
+open content is exactly those two premises; the order-theoretic half (chain ⟹
+rank-one, given free generation) is closed.
+
 ## Cross-references
 
 - Fundamental object / Tannaka dual: [`fundamental-object.md`](../../content/quantum-observable-universe/quantum-universes/fundamental-object.md), [`tannaka-dual.md`](../../content/quantum-observable-universe/quantum-universes/tannaka-dual.md)
