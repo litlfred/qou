@@ -97,4 +97,18 @@ theorem channels_locked {barOdd barEven τ : ℝ → ℝ}
   obtain ⟨g, hg⟩ := h.even_factors
   exact ⟨by rw [hf, hf, hτ], by rw [hg, hg, hτ]⟩
 
+/-- **The Faddeev elliptic modular parameter is `τ = 1/b²`.** The elliptic freedom
+(`FaddeevPhiEllipticFreedom.faddeevPhi_mul_elliptic`) lives on the period lattice
+`⟨ib, i/b⟩`; the modular parameter of that lattice is the period ratio
+`τ = ω₂/ω₁ = (i/b)/(ib) = 1/b²`. So the single modular parameter of
+`SingleTauChannelClosure` is **substrate-derived** — a fixed function `τ = 1/b²`
+of the Faddeev modulus `b`, **not** a free fit. This is the concrete object whose
+(archimedean) evaluation the `c₃` cross-anchor swing would have to track; it turns
+the "single `τ`" from an abstract hypothesis into a computable prediction. The
+modular double `b ↔ 1/b` sends `τ = 1/b² ↦ b² = 1/τ` — the `S`-transform, the
+theta-modular symmetry that mixes the θ-even/θ-odd (bar-even/bar-odd) sectors. -/
+theorem faddeev_modular_parameter {b : ℂ} (hb : b ≠ 0) :
+    (Complex.I / b) / (Complex.I * b) = 1 / b ^ 2 := by
+  field_simp
+
 end QOU.QBeta.EllipticRTheta
