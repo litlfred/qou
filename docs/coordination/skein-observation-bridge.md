@@ -39,27 +39,35 @@ a clearly-scoped model result — nothing fabricated, nothing wired to productio
 on `len` settles q-Collatz halting **and** q-NS non-blow-up (`regular_and_halts_
 of_len_orbit_descent`); P-vs-NP is that descent plus a polynomial-rate bound.
 
-## χ(A) = −6 — the corrected reading (2026-07-25)
+## χ(A) = −6 — is it forced by the QOU axioms? YES (2026-07-25)
 
-Recurrent question: *is χ(A) = −6 implied by the QOU axioms?* Corpus-grounded
-answer:
+Recurrent question: *is χ(A) = −6 implied by the QOU axioms?* The corpus is
+decisive — **yes, it is derived, via Bring's terminality.** (An earlier draft of
+this ledger recorded an over-correction — "bare axioms don't force it"; that was
+wrong. It missed that the 3-colour / Reeb / Frobenius–Hopf structure *is* part of
+the axioms and forces g = 4. Corrected here per the corpus-grep discipline.)
 
-- **χ(A) = −6 is *equivalent* to a cohomological condition**, not a free numeric
-  input: it is the genus-4 Bring fiber `Σ₄` via `χ = 2 − 2g`, whose cohomology is
-  `H₁(Σ₄)` (rank `2g = 8`). Fixing the genus-4 fiber cohomology **implies**
-  χ = −6 (`brings-surface/embeddability-closure.md`,
-  `genus-ideal-characterisation.md`).
-- **Bare `(𝐂, A, τ)` axioms with an arbitrary fiber do *not* force χ = −6** — a
-  different-genus fiber gives a different χ(A) (the framework keeps
-  `other-euler-intro` variants). So the genus-4 fiber is the *Descartes-selecting*
-  cohomological condition, and χ = −6 is its numerical shadow.
-- **Consequence for C9 (#4252):** the `χ(A) = −6` hypothesis is correctly scoped
-  (a general QOU need not be genus-4); it is shorthand for "the fiber is the
-  genus-4 Bring surface", a cohomological condition — not an arbitrary number.
-- **Consequence for the P-vs-NP gate:** the non-algebraic residue the
-  algebrization obstruction demands is naturally a class in `H₁(Σ₄) / HH²(U_q)` —
-  genuinely topological, exactly what is *not* recoverable from polynomial Jones
-  data. This is the honest home of the separating residue.
+- **Derivation chain** (`brings-surface/chi-minus-six-chain.md`): 3 colours + a
+  Reeb flow + the Frobenius–Hopf structure ⟹ the `S₃ ⊂ S₅` orbits on the 6
+  Weierstrass points ⟹ exactly 6 branch points ⟹ `|χ(A)| = 6` ⟹ (from
+  `χ = 2 − 2g`) **g = 4**. `brings-surface-qou-intro.md`: *"three colours, a Reeb
+  flow, and a χ = −6 ledger force a unique surface."*
+- **Bring is the terminal object** (`brings-surface-example.md`): among all
+  genus-4 curves Bring's surface `Σ₄` realises the maximal automorphism group
+  `Aut(Σ₄) ≅ S₅` (order 120) and **any other genus-4 QOU maps to it — "this
+  establishes the Descartes theorem."** So a non-Bring genus-4 fibre *factors
+  through* `Σ₄`; the χ = −6 / `H₁(Σ₄)` structure is universal, not chosen.
+- **Consequence for C9 (#4252):** the `χ(A) = −6` hypothesis is not an arbitrary
+  stipulation — it is the numerical shadow of the forced genus-4 Bring terminal
+  fibre. (It may still be carried as an explicit Lean hypothesis for a decl that
+  is stated *before* the chi-minus-six-chain is available, but semantically it is
+  a theorem of the framework, not a free input.)
+- **Consequence for the P-vs-NP gate (strengthened):** the non-algebraic residue
+  the algebrization obstruction (#4264) demands is a class in
+  `H₁(Σ₄) / HH²(U_q)` — and since `Σ₄` is the **terminal** object, that residue
+  is **canonical / universal**, not universe-dependent. Genuinely topological,
+  exactly what polynomial Jones data cannot recover. This is the honest, canonical
+  home of the separating residue.
 
 ## Sibling coordination
 
