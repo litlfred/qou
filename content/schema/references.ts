@@ -6880,6 +6880,54 @@ export const references: CSLData[] = [
     note: "Confluence for q-summation: Borel sums of divergent ODE solutions are uniformly approximated on sectors by meromorphic solutions of q-difference deformations; compares four q-Borel summation processes. The statement shape for proving the QOU classical depth-2 kernel is the confluent shadow of its q-lift rather than an analogy (q-lift literature check, 2026-07-20).",
   }),
 
+  // ── Fréchet–Shohat 1931 (moment convergence + determinate limit ⇒ weak convergence) ──
+  ref({
+    id: "frechet-shohat1931",
+    type: "article-journal",
+    title: "A proof of the generalized second-limit theorem in the theory of probability",
+    author: [
+      { family: "Fréchet", given: "Maurice" },
+      { family: "Shohat", given: "James" },
+    ],
+    "container-title": "Transactions of the American Mathematical Society",
+    volume: "33",
+    issue: "2",
+    page: "533-543",
+    issued: { "date-parts": [[1931]] },
+    DOI: "10.1090/S0002-9947-1931-1501604-6",
+    URL: "https://doi.org/10.1090/S0002-9947-1931-1501604-6",
+    note: "The moment-convergence theorem: if all moments converge and the limit moment sequence is determinate, the measures converge weakly. Cited by the kernel-convergence Mathlib-gap scaffold (QOU/MathlibExt/FrechetShohat.lean, 2026-07-25) as one of the two missing classical theorems carried as content-bearing hypothesis classes.",
+  }),
+
+  // ── Billingsley 1995 (Probability and Measure — Fréchet–Shohat / method of moments textbook source) ──
+  ref({
+    id: "billingsley1995",
+    type: "book",
+    title: "Probability and Measure",
+    author: [{ family: "Billingsley", given: "Patrick" }],
+    publisher: "Wiley",
+    edition: "3rd",
+    issued: { "date-parts": [[1995]] },
+    ISBN: "978-0471007104",
+    note: "Textbook source for the method of moments (Thm 30.2: moment convergence to a determinate limit implies weak convergence) and Carleman-adjacent determinacy criteria. Cited by the kernel-convergence Mathlib-gap scaffold (2026-07-25).",
+  }),
+
+  // ── Simon 1998 (the classical moment problem survey — Carleman determinacy) ──
+  ref({
+    id: "simon1998",
+    type: "article-journal",
+    title: "The classical moment problem as a self-adjoint finite difference operator",
+    author: [{ family: "Simon", given: "Barry" }],
+    "container-title": "Advances in Mathematics",
+    volume: "137",
+    issue: "1",
+    page: "82-203",
+    issued: { "date-parts": [[1998]] },
+    DOI: "10.1006/aima.1998.1728",
+    URL: "https://doi.org/10.1006/aima.1998.1728",
+    note: "Authoritative survey of the Hamburger/Stieltjes moment problems including Carleman's determinacy criterion — the determinacy input of the Borel/proper-time Attack-A reduction (docs/audits/2026-07-25-borel-propertime-attack-a-e.md) and of the CarlemanDeterminacyStieltjes gap class (2026-07-25).",
+  }),
+
   // ── Ramis–Sauloy–Zhang 2013 (local analytic classification of q-difference equations) ──
   ref({
     id: "ramis-sauloy-zhang2013",
