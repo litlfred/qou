@@ -108,3 +108,17 @@ n_j=m (m=j+N₀, N₀>1/(1-x)) with x q_j^n = 1-1/m → 1⁻ AND no-resonance (c
 limit is now ATTAINED (not just conditional/bulk). Non-vacuity at the branch point:
 CLOSED. Remaining open = the general-x UNIFORM statement only (Diophantine
 equidistribution of {log_q(1/x)} over ALL scalings). 6 theorems total, all sorry-free.
+
+## 2026-07-25 — polynomial no-resonance (Diophantine-x regime) landed (7dabfb05)
+
++3 theorems (9 total, all sorry-free):
+- boundary_tendsto_zero_of_rate — sharp general form (gap ≥ g_j, (q-1)log g_j → 0).
+- boundary_tendsto_zero_of_powerBound — c(q-1)^K ≤ 1-xq^n ⇒ term → 0 (t log t). K=2 is
+  the badly-approximable regime (q_j=e^{1/j}: gap ≈ {j log(1/x)}(q-1) ≥ (c/j)(q-1)
+  ≈ c(q-1)²).
+- wp1_tendsto_of_powerBound — W-P1 → π²/6 - Li₂(x) from the polynomial gap bound.
+
+OPEN FRONTIER now isolated to ONE inequality: badly-approximable x ⇒
+{j·log(1/x)} ≥ c/j (three-distance / bounded continued-fraction partial quotients).
+Mathlib likely lacks this; formalizing it is a separate number-theory task. Everything
+in the dilog Part B W-P1 chain downstream of that inequality is now PROVED.
