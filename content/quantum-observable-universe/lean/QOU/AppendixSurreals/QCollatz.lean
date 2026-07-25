@@ -462,4 +462,52 @@ theorem reaches_cycle_of_descent_domainStable {Skein : Type u} [CommRing Skein]
   reaches_of_descent_of_forward QCollatz.C QCollatz.attractor QCollatz.domainStable
     μ (fun P hP _ => QCollatz.domainStable_forward P hP) hdesc
 
+/-! ### The map's arithmetic descends from the QOU substrate parameter (Tier C #8, brick 1)
+
+A quantum observable universe furnishes a single substrate parameter `q`. The
+bundle below shows that the **entire** Skein-Collatz `q`-arithmetic — the
+`q`-integers `[2]_q`, `[3]_q`, the Skein divisibility identity, the contraction
+gap, and the Bézout coprimality — is *determined by `q` alone*, with every
+identity holding **by construction** (proved, not axiomatised). This makes
+explicit that the categorical data descends from the substrate parameter rather
+than being posited. Bricks 2–3 (see bean `qcz17`) link `q` to an actual
+`QuantumObservableUniverse` and its Reeb-bundle Skein module `𝒮(q) ≅ ℤ[q^{±1}]`. -/
+
+/-- The Skein-Collatz arithmetic induced by a substrate parameter `q`
+    (a QOU's `q₀`, as an element of the Skein ring `R`). -/
+structure SkeinCollatzArith (R : Type u) [CommRing R] where
+  /-- The substrate parameter furnished by the QOU. -/
+  q : R
+
+namespace SkeinCollatzArith
+
+variable {R : Type u} [CommRing R] (a : SkeinCollatzArith R)
+
+/-- Induced `[2]_q = q + 1`. -/
+def qi2 : R := a.q + 1
+
+/-- Induced `[3]_q = q² + q + 1`. -/
+def qi3 : R := a.q ^ 2 + a.q + 1
+
+/-- **Skein divisibility** `[3]_q = q·[2]_q + 1` — holds by construction. -/
+theorem skein_divisibility : a.qi3 = a.q * a.qi2 + 1 := by
+  simp only [qi2, qi3]; ring
+
+/-- **Contraction gap** `[2]_q² − [3]_q = q` — holds by construction. -/
+theorem contraction_gap : a.qi2 ^ 2 - a.qi3 = a.q := by
+  simp only [qi2, qi3]; ring
+
+/-- **Bézout coprimality** `[3]_q − q·[2]_q = 1` — holds by construction. -/
+theorem coprime : a.qi3 - a.q * a.qi2 = 1 := by
+  simp only [qi2, qi3]; ring
+
+/-- The odd-branch defining equation at `q⁻¹` (the fundamental cycle) follows
+    from the induced arithmetic whenever `q` is invertible — so the fundamental
+    2-cycle is likewise determined by the substrate parameter. -/
+theorem fundamental_odd_step (qinv : R) (hq : a.q * qinv = 1) :
+    (1 + qinv) * a.qi2 = a.qi3 * qinv + 1 := by
+  simp only [qi2, qi3]; linear_combination (-a.q) * hq
+
+end SkeinCollatzArith
+
 end QOU.AppendixSurreals

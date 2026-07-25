@@ -6,7 +6,7 @@ type: task
 priority: medium
 parent: qcz15
 created_at: 2026-07-25T03:30:00Z
-updated_at: 2026-07-25T03:30:00Z
+updated_at: 2026-07-25T03:25:41Z
 ---
 
 The conceptually central "on a QOU" gap. Full chain: QuantumObservableUniverse
@@ -25,3 +25,5 @@ Bricks:
   S(q)=Z[q^pm1]).
 Anti-laundering: BRICK 2/3 must DERIVE, not axiomatize. If the QOU import is
 infeasible in-sandbox, do BRICK 1 + honestly document the import wall.
+
+BRICK 1 DONE: structure SkeinCollatzArith (R) bundling the substrate q; qi2/qi3 defs; skein_divisibility, contraction_gap, coprime, fundamental_odd_step all PROVED by construction (simp+ring/linear_combination). Shows the whole q-arithmetic + fundamental cycle descends from the single substrate parameter q. mathlib-only, sorry-free (lean-direct exit 0). BRICK 2 (QuantumObservableUniverse import) + BRICK 3 (Reeb Skein module) remain — heavy, may hit sandbox import wall.
