@@ -1,5 +1,13 @@
 # Covariance-kernel epic (qou-x631) — A2 advance: the hook / Frullani reduction
 
+> **⛔ CORRECTED 2026-07-25 — the reduced target `Cov_Planch(H_s,ω₃) ≤ 0 ∀s>0` is FALSE for n ≥ 29.**
+> Reported "verified strictly < 0 on the interior, all `n ≤ 13`"; the exact computation shows it
+> FIRST FAILS at `n = 29` (`max_s Cov = +0.056` at `s ≈ 0.52`, growing with `n`). The pointwise sign
+> is a small-`n` artifact, so this reduction is not a usable route to A2. The **Frullani identity and
+> A2 itself survive** — `Cov(ln f,ω₃) = ∫(1/s)Cov(H_s,ω₃)ds ≤ 0` holds by cancellation even though the
+> integrand goes positive (exact, `n ≤ 40`); the kernel survives too. Full correction:
+> [`2026-07-25-covariance-kernel-A2-pointwise-reduction-falsified.md`](2026-07-25-covariance-kernel-A2-pointwise-reduction-falsified.md).
+
 **Date:** 2026-07-25 · **Branch:** `claude/covariance-kernel-A2-hook-strat-2026-07-25` · **Tier:**
 exact reduction (30-dps) · **Discipline:** scope-(a); no fit; nothing wired; no `c_k`; L2 unchanged
 (2/7). **Epic:** `qou-x631`, attack `qou-ogrk` (A2).

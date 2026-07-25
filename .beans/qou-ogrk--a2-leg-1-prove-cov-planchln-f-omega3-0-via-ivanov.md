@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-07-25T03:30:08Z
-updated_at: 2026-07-25T16:29:00Z
+updated_at: 2026-07-25T17:04:50Z
 parent: qou-v8t7
 ---
 
@@ -14,3 +14,7 @@ A2 — leg 1: Cov_Planch(ln f, ω₃) ≤ 0. ADVANCE (2026-07-25 hook/Frullani r
 
 
 A2 ADVANCE 2 (2026-07-25 polynomial-positivity). Exact reduction: with P(x)=Sum_v nu_v x^v (nu_v=Cov(N_v,omega3)), Cov(H_s,omega3)=P(e^{-s}), P(0)=P(1)=0 => P(x)=x(x-1)R(x), deg R=n-2; x(x-1)<0 on (0,1) => A2 <== R(x)>=0 on (0,1). VERIFIED n<=15: R>0 on [0,inf) (all real roots negative, no positive real root). Moment tower M_k=Cov(Sum h^k,omega3): M_0=0, M_2=|C3|, M_1..M_8>0. THREE easy-proof certs FALSE: (a) nu single-crossing FALSE for all n>=6 (oscillates, up to 7 changes) -- Karlin variation-diminishing dead; (b) cumulative S_v<=0 has counterexample (n=6 S_2=+1) -- Abel cert dead; (c) R nonneg-coeffs has counterexample (n=6) -- positive-coeff cert dead. OPEN sub-target: prove R has no nonnegative real root for all n (nontrivial dominance; Hurwitz/root-location, not sign-variation). Audit: 2026-07-25-covariance-kernel-A2-polynomial-positivity.md
+
+
+
+CORRECTION (2026-07-25). The A2 POINTWISE reduction Cov(H_s,omega3)<=0 for-all-s (<=> R>=0 on (0,1)) is FALSE for n>=29 -- verified EXACTLY (first failure n=29, max_s Cov=+0.056 at s~0.52; R gains a root in (0,1) at n=30; grows with n). It was verified only to n<=13/15 -- a small-n artifact. So the polynomial-positivity/pointwise route CANNOT prove A2. BUT: the KERNEL cov(k)=Sum(f)^3 omega3<=0 AND the A2 leg Cov(ln f,omega3)=-Sum ln(v) nu_v<=0 BOTH SURVIVE exactly (k,n<=40); A2 holds by CANCELLATION in the full Frullani integral even though its integrand goes positive. Retracts #4242 'R>0 on [0,inf)' general framing + the 'A2<=>R>=0' equivalence (only R>=0 => A2, false premise). A proof of A2 must be GLOBAL (full signed integral / dimension-functional expansion), not pointwise. Audit: 2026-07-25-covariance-kernel-A2-pointwise-reduction-falsified.md

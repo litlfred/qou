@@ -1,0 +1,43 @@
+{
+  "engine": "python-exact",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-07-25T17:01:16.150806+00:00",
+  "commitSha": "e1356b3c584cbbb9b0f21fe1b809062411d329c5",
+  "assertions": [
+    {
+      "name": "covariance_epic_A2_pointwise_reduction_falsified",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "pointwise Cov_Planch(H_s,omega3)<=0 for-all-s FALSE for n>=29 (exact, first fail n=29, max_s=+0.056); R>=0 on (0,1) FALSE (root at n=30). Kernel cov(k)<=0 and A2 Cov(ln f,omega3)<=0 both SURVIVE exactly k,n<=40. Route eliminated with exact counterexample; kernel and A2 intact. No fit; no c_k."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 10,
+  "computation": "wlambda-covariance-epic-A2-pointwise-reduction-falsified",
+  "scriptFile": "wlambda_covariance_epic_A2_pointwise_reduction_falsified.py",
+  "scriptHash": "bc4fde3e3c99",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "CORRECTION (qou-x631, qou-ogrk): the A2 pointwise reduction Cov_Planch(H_s,ω₃)≤0 ∀s>0 (⟺ R≥0 on (0,1), P(x)=Σν_v x^v=x(x−1)R(x)) is FALSE for n≥29 — verified exactly, first failure n=29 (max_s Cov=+0.056 at s≈0.52, growing with n; R gains a root in (0,1) at n=30). It was verified only to n≤13 (hook-reduction audit) / n≤15 (polynomial-positivity PR #4242); the pointwise sign is a SMALL-n ARTIFACT, so the polynomial-positivity target cannot prove A2. Retracts the 'R>0 on [0,∞)' general-reduction framing of #4242. WHAT SURVIVES (exact, k,n≤40): the KERNEL conjecture cov(k)=Σ(f^λ)³ω₃≤0 (strongly negative) AND the A2 leg Cov_Planch(ln f,ω₃)=−Σ ln(v)ν_v≤0 — both intact. A2 survives by CANCELLATION: the Frullani identity Cov(ln f,ω₃)=∫(1/s)Cov(H_s,ω₃)ds stays ≤0 though the integrand goes positive on part of the range (n≥29). So 'A2 ⟸ Cov(H_s,ω₃)≤0 ∀s' is a valid implication with a FALSE premise; proving A2 needs the full signed integral, not a pointwise sign. Honest retraction of a small-n over-generalization (scope-(a) route-death with exact counterexample); not a refutation of the kernel or A2. scope-(a); no fit; nothing wired; no c_k; L2 2/7.",
+  "data": {
+    "pointwise_reduction_first_fails_at_n": 29,
+    "pointwise_reduction_false_for_n_ge_29": true,
+    "R_gains_root_in_unit_interval_at_n": 30,
+    "kernel_survives_nmax40": true,
+    "a2_survives_nmax40": true,
+    "a2_mechanism": "Frullani integral <=0 by cancellation; integrand Cov(H_s,omega3) positive on part of range for n>=29",
+    "retracts": "PR #4242 'R>0 on [0,inf)' general-reduction framing; hook-reduction 'Cov(H_s)<0 strictly interior'"
+  }
+}

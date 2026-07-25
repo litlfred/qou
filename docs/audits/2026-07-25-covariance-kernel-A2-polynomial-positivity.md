@@ -1,5 +1,14 @@
 # Covariance-kernel epic (qou-x631) — A2 advance: the polynomial-positivity reduction
 
+> **⛔ CORRECTED 2026-07-25 — the central claim of this note is FALSE for n ≥ 29.** The pointwise
+> target `R(x) ≥ 0 on (0,1)` (⟺ `Cov_Planch(H_s,ω₃) ≤ 0 ∀s>0`) was verified here only to `n ≤ 15`;
+> pushing the exact computation further shows it FIRST FAILS at `n = 29` (`R` gains a root in `(0,1)`
+> at `n = 30`). The "A2 ⟺ R≥0" equivalence was wrong — only `R≥0 ⟹ A2`, now with a false premise —
+> so the polynomial-positivity target **cannot** prove A2. The **kernel and A2 themselves survive**
+> (exact, `k,n ≤ 40`); A2 holds by cancellation in the full Frullani integral. The three
+> route-eliminations below (ν single-crossing, cumulative `S_v≤0`, `R` nonneg-coeffs) remain correct.
+> Full correction: [`2026-07-25-covariance-kernel-A2-pointwise-reduction-falsified.md`](2026-07-25-covariance-kernel-A2-pointwise-reduction-falsified.md).
+
 **Date:** 2026-07-25 · **Branch:** `claude/covariance-kernel-A2-push-2026-07-25` · **Tier:**
 exact reduction + 3 route-eliminations · **Discipline:** scope-(a); no fit; nothing wired; no `c_k`;
 L2 unchanged (2/7). **Epic:** `qou-x631`, attack `qou-ogrk` (A2).
