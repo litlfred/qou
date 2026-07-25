@@ -23,7 +23,7 @@ Riemann sum — is scoped in bean `qou-jplv` and not yet discharged here.
 
 namespace QOU.Archimedean
 
-open QOU.QPochhammer intervalIntegral MeasureTheory
+open QOU.QPochhammer intervalIntegral MeasureTheory Filter Topology
 
 /-- **V3 brick 1 — the interior target integral.**  For `0 < x ≤ c < 1`,
     `∫_x^c −log(1−t)/t = Li₂(c) − Li₂(x)`.  Since `−log(1−t)/t` is the derivative
@@ -46,5 +46,29 @@ theorem integral_Icc_eq_LiTwo_sub {x c : ℝ} (hx0 : 0 < x) (hxc : x ≤ c)
       (fun t ht => ne_of_gt ?_))
     have := ht.2; linarith
   exact intervalIntegral.integral_eq_sub_of_hasDerivAt hderiv hint
+
+/-- **V3 brick 2 — the improper target integral (branch-point limit).**  For
+    `0 < x < 1`, as the upper endpoint `c → 1⁻` the interior integral converges to
+    the branch-point value:
+
+    `∫_x^c −log(1−t)/t  ⟶  π²/6 − Li₂(x)`.
+
+    Combines brick 1 (`= Li₂(c) − Li₂(x)` on `[x,1)`) with the corpus Abel limit
+    `tendsto_LiTwo_nhdsWithin_lt_one` (`Li₂(c) → π²/6`).  Since
+    `∫_x^1 −log(1−t)/t = Li₂(1) − Li₂(x) = π²/6 − Li₂(x)`, this is the target the
+    positive-factor Riemann sum (`W-P1`) converges to — the last, singular, cell
+    of the `q > 1` geometric partition contributing the cusp regulator `ζ(2)`. -/
+theorem tendsto_integral_x_to_c_nhdsWithin_one {x : ℝ} (hx0 : 0 < x) (hx1 : x < 1) :
+    Tendsto (fun c : ℝ => ∫ t in (x : ℝ)..c, -Real.log (1 - t) / t) (𝓝[<] 1)
+      (𝓝 (Real.pi ^ 2 / 6 - LiTwo x)) := by
+  have hcong : (fun c : ℝ => ∫ t in (x : ℝ)..c, -Real.log (1 - t) / t)
+      =ᶠ[𝓝[<] 1] (fun c => LiTwo c - LiTwo x) := by
+    have hmem : Set.Ico x 1 ∈ 𝓝[<] (1 : ℝ) := by
+      rw [← Set.Ici_inter_Iio]
+      exact inter_mem (mem_nhdsWithin_of_mem_nhds (Ici_mem_nhds hx1)) self_mem_nhdsWithin
+    filter_upwards [hmem] with c hc
+    exact integral_Icc_eq_LiTwo_sub hx0 hc.1 hc.2
+  refine Tendsto.congr' hcong.symm ?_
+  exact tendsto_LiTwo_nhdsWithin_lt_one.sub_const (LiTwo x)
 
 end QOU.Archimedean
