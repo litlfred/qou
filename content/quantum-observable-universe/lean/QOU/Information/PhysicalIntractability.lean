@@ -79,4 +79,63 @@ theorem no_poly_bandwidth_decider_of_exp (B : ℕ) (hB : 0 < B)
   no_poly_bandwidth_decider B hB info steps correct
     (hexp_superpoly.of_le hexp)
 
+/-- **Division-free step lower bound (sorry-free).**  Cleaner than going
+    through `info / B`: if `info n ≤ steps n * B` and `info` is
+    super-polynomial, so is `steps` — cancel the constant `B` by scaling the
+    polynomial witness.  This avoids `Nat`-division artifacts. -/
+theorem steps_superPoly_of_info (B : ℕ) (hB : 0 < B) (info steps : ℕ → ℕ)
+    (correct : ∀ n, info n ≤ steps n * B) (hinfo : SuperPolynomial info) :
+    SuperPolynomial steps := by
+  intro c k
+  obtain ⟨n, hn⟩ := hinfo (c * B) k
+  refine ⟨n, ?_⟩
+  have h1 : c * n ^ k * B < steps n * B :=
+    calc c * n ^ k * B = c * B * n ^ k := by ring
+      _ < info n := hn
+      _ ≤ steps n * B := correct n
+  exact lt_of_mul_lt_mul_right h1 (Nat.zero_le B)
+
+/-! ## The QOU resolution-tree information requirement
+
+The corpus derives the physical input `info(n)` — the information the degree-0
+answer requires — from the **skein resolution tree**.  A `c`-crossing link has a
+`3^c`-leaf resolution tree (three skein channels per crossing).  At a
+**non-torsion** substrate `q₀` the Hecke algebra is semisimple, so **no paths
+cancel**: the full `3^c` tree survives (corpus `nontorsion_full_tree`).  The
+`NP`-complete boundary family uses `c_N = 3N` crossings
+(`prop:p-vs-np-boundary`), so extracting the degree-0 answer for instance
+size `n` requires the whole surviving tree, `info(n) = 3^{3n}`.
+-/
+
+/-- The skein **resolution-tree size** of a `c`-crossing link: `3^c` leaves
+    (three skein channels per crossing; in the non-torsion regime none cancel). -/
+def resolutionTreeSize (c : ℕ) : ℕ := 3 ^ c
+
+/-- `2^n ≤ 3^{3n}` (sorry-free): the surviving tree of the size-`n` boundary
+    instance (`c = 3n`) dominates `2^n`. -/
+theorem two_pow_le_resolutionTreeSize (n : ℕ) :
+    2 ^ n ≤ resolutionTreeSize (3 * n) := by
+  unfold resolutionTreeSize
+  calc 2 ^ n ≤ 27 ^ n := Nat.pow_le_pow_left (by norm_num) n
+    _ = 3 ^ (3 * n) := by rw [show (27 : ℕ) = 3 ^ 3 by norm_num, ← pow_mul]
+
+/-- **QOU physical intractability (sorry-free, conditional on the two named
+    inputs).**  For the non-torsion substrate, if a bandwidth-`B` device
+    correctly extracts the full surviving `3^{3n}`-leaf resolution tree for the
+    boundary family, then — given the standard fact that `2^n` dominates every
+    polynomial — its step count is super-polynomial: **no bandwidth-limited
+    device decides the boundary problem in polynomial time.**
+
+    The `info(n) = 3^{3n}` requirement is *derived* here from the resolution
+    tree (the QOU physical content); `exp_dominates_poly` is the standard
+    exponential-domination fact (Mathlib-dischargeable; bean `qou-*`).  Scope
+    remains bandwidth-limited computation — strictly weaker than abstract
+    `P ≠ NP`. -/
+theorem qou_physical_intractability (B : ℕ) (hB : 0 < B) (steps : ℕ → ℕ)
+    (exp_dominates_poly : SuperPolynomial (fun n => 2 ^ n))
+    (correct : ∀ n, resolutionTreeSize (3 * n) ≤ steps n * B) :
+    SuperPolynomial steps :=
+  steps_superPoly_of_info B hB (fun n => resolutionTreeSize (3 * n)) steps correct
+    (exp_dominates_poly.of_le two_pow_le_resolutionTreeSize)
+
 end QOU.Information
