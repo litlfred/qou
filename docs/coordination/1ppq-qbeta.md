@@ -2269,3 +2269,24 @@ zero; no single-sector small-weight assembly), the odd-channel bridge
 now has a sharply-posed remaining form: the Gaussian/unit dressing
 (√-prefactor, (q/q̃)^{1/8}) and WHICH λ-row of the block basis the
 Masbaum tail occupies. Scope-(a); no fit; nothing wired.
+
+**2026-07-25 (B1.3, branch claude/masbaum-block-row-selection-2026-07-25)
+— λ-ROW SELECTION ANSWERED IN THE NEGATIVE: the Masbaum tail lies
+OUTSIDE the 18-dim GGM block span for every pre-registered dressing
+(21 exact rational solves, 0 in-span); the bridge needs a MODULE MAP,
+not a row choice.** `qbeta_5two_masbaum_block_row_probe.py` (3/3):
+the tail built as an exact u-series from the integer-Laurent C_n
+(u-parity EVEN — an integer-q series, no half-integer-λ escape);
+the 18 H±_(j,λ) series generated at O(q^34) by an exact
+Fraction-series port of A2's generator (re-gated against the 18
+printed GGM tables); basis matrix 34×18 at FULL rank 18; the
+pre-registered dressed family (q;q)_∞^p·q^s·F (p ∈ −3..3, s ∈ 0..2)
+decided by exact augmented-rank membership — a "solution" would mean
+every residual order vanishes identically, and NONE exists.
+Scope-(a): this basis/dressing family as-stated. Combined with B1
+(population forced zero) and B1.2 (no bare-entry bilinear bridge),
+the odd-channel bridge question is now maximally sharpened: the
+Masbaum tail is a DIFFERENT vector in the Habiro module — the named
+successors are the module map (descendant/derivative tower, or the
+cyclotomic expansion) applied to the block basis. No fit; nothing
+wired; comparison to observed only.

@@ -363,3 +363,21 @@ prediction and feed the Im 𝔙_q→N_odd capstone — but the Q_β *value*
 remains experimental-Q_β-limited (the L2 100× target stays out of reach by
 the measurement floor, per `MeasurementLimitedFloor.lean`). Comparison to
 observed only; no ontological claims.
+
+- **B1.3 LANDED (row-selection question closed in the negative,
+  scope-(a)).**
+  [`qbeta_5two_masbaum_block_row_probe.py`](../../computations/probes/qbeta_5two_masbaum_block_row_probe.py)
+  + witness, 3/3: exact formal-series linear algebra — the Masbaum
+  tail (exact u-series, parity EVEN ⇒ integer-q, no half-integer-λ
+  structure) is **outside** the ℚ-span of the 18 GGM `H±_{j,λ}` block
+  series at O(q^34) (full rank 18) for **every** pre-registered
+  dressing `(q;q)_∞^p·q^s`, p ∈ −3..3, s ∈ 0..2 — 21 exact
+  augmented-rank decisions, 0 in-span. No numerics in the decision.
+  With B1 (σ-pair population forced 0) and B1.2 (no bare-entry GK
+  bilinear bridge), the remaining bridge form is a **module map**:
+  the descendant/derivative tower or the cyclotomic (Habiro) expansion
+  relating the tail to the block basis — not a row choice, not a
+  scalar dressing. Engineering note: A2's sympy `H_series` is
+  intractable at ORD 34 (>146 CPU-min, killed); the probe carries an
+  exact `Fraction`-series port (identical formulas, printed-tables
+  re-gated) that runs in 5 s.
