@@ -122,9 +122,19 @@ Skolem–Noether conjugator sending `σᵢ` to a *non-generator* element), which
 **not** yet formalized. Sub-piece (ii) is honestly **OPEN**.
 
 What the (corrected) file genuinely provides, sorry-free: `invariantForm_pullback`
-(true general linear algebra), `intertwiner_trace_eq` (the obstruction), and
+(true general linear algebra), `intertwiner_trace_eq` (the obstruction),
 `tauImage_proportional_hodge` (general-`P` assembly, explicitly flagged as **not**
-a reduction of (ii)).
+a reduction of (ii)), and — the **correct, satisfiable** reduction —
+`HeckeSideS5Symmetry` + `markovGram_transports_to_hodge`: an S₅ action `ρS'` **on
+the Hecke space** leaving the Markov Gram invariant, conjugate to the geometric
+S₅; since `ρS'` and `ρS` share the `(4,1)` character there is **no** trace
+obstruction, so this premise CAN hold. A non-vacuity probe
+(`alpha_em_b2_hecke_s5_symmetry_probe.py`) exhibits `ρS'` for the actual `(4,1)`
+block and verifies all four structure fields (Markov-invariance ~1e-40,
+character match `trace ρS' = trace ρS` **exactly 0**) — confirming the reduction
+is genuine, not vacuous. The residual open input is now the **canonical**
+(q-deformation-pinned) Tits `*`-iso, `T = τ`, of which the probe's `T` is only an
+arbitrary congruence representative.
 
 **Gate (a) for `|c|` — CLOSED.** The explicit period matrix *is* in the corpus
 uploads: Braden–Disney-Hogg *Bring's Curve: Old and New* ([arXiv:2208.13692](https://arxiv.org/abs/2208.13692),
@@ -146,8 +156,9 @@ structures the Tits iso relates.
 | symmetric / real type of the Markov Gram | PROVED (#4154, `MarkovGramRealSymm`) |
 | sign of `c` (positive) | PROVED (Hodge+Markov both pos-def, #4182 item 2) |
 | explicit Hodge Gram `Im(τ₀)·M_S` (period data) | AVAILABLE (BDH Thm 2.12 / RR92; gate (a) closed) |
-| **(ii) τ-correspondence = Tits `*`-iso on the `(4,1)` block** | **OPEN** — the generator-intertwiner is obstructed (`intertwiner_trace_eq`); the Skolem–Noether conjugator of the Tits iso is not yet formalized |
-| `|c|` magnitude | **OPEN** — gated on (ii) alone (the two normalizations are related by the Tits iso) |
+| (ii) reduction structure (satisfiable) | PROVED + shown satisfiable (`HeckeSideS5Symmetry` / `markovGram_transports_to_hodge`; probe confirms non-vacuity) |
+| **(ii) the CANONICAL Tits `*`-iso `T = τ`** | **OPEN** — the generator-intertwiner is obstructed (`intertwiner_trace_eq`); a satisfying `T` exists (probe), but pinning the deformation-canonical one (`= τ`) is not yet formalized |
+| `|c|` magnitude | **OPEN** — gated on the canonical (ii) alone (an arbitrary congruence gives a convention-dependent scalar) |
 
 No intertwiner / `TauRhoHodgeLift` instance for the actual τ is registered;
 `1/(8π)` stays a phase-4 identification; nothing is wired.
