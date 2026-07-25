@@ -73,3 +73,47 @@ branch A.
 **Genuinely missing:** (a) pinning `c`, `ν·μ` from Clebsch–Gordan/SDP data
 (compute session); (b) verifying the colliding-pair data satisfies the Riccati
 lower bound — the true residue of the millennium problem in-QOU.
+
+## Status at campaign close (2026-07-25, post-#4202)
+
+**The corpus candidate and the lock tension.** The blow-up candidate is the
+anti-parallel pair overlapping into a hyperbolic stagnation-point flow
+(`rem:hyperbolic-overlap-saturation`), Levi lock `κ² = πν/Γ > 0`. Verdict on
+"does it give the needed example": **yes in-QOU at every fixed `q ≠ 1`** (the
+lock keeps the Levi form non-degenerate ⇒ by the Yekutieli–Levi unification the
+obstruction survives ⇒ this data realises `qou_internal_ns_singular`); **no for
+the classical limit** — the lock's own `ν`-scaling gives `C_L ~ ε⁻¹`, fitted
+`β = 0.996 ≈ 1` = branch B (probe witness
+`qns-levi-lock-scaling-probe.witness.json`), i.e. this channel *regularises* in
+the limit, matching physical vortex reconnection.
+
+**Convergent picture (two independent probes + two theorems):** smooth/Gevrey
+data ⇒ regular (theorem); pair-collision channel ⇒ regular in the limit (lock
+scaling); dissipation closure ⊥ deep cascade (theorem). The singular regime is
+squeezed into **sustained/forced turbulence** — the surviving classical-blow-up
+channel.
+
+**Resolution path:** re-scope `conj:levi-degeneracy` to a **per-channel**
+branch assignment (pair-collision channel branch-B-conditional-on-lock; the
+framework's blow-up claim rides on channels the lock does not cover), or find
+a flaw in the lock's uniformity (`Γ` growth during collision, overlap regime
+not uniformly reached).
+
+## Bean map for future agents
+
+| Bean | Task | Status |
+|---|---|---|
+| `qou-a3n3` | EPIC Gevrey persistence — remainder: large-data global at the low-mode block | open (GP1–GP5 done) |
+| `qou-nb6l` | Session: per-channel re-scope + pair-Riccati + sustained-forcing | open |
+| `qou-js2u` | PC1: authorNote on `conj:levi-degeneracy` — per-channel reading + lock β≈1 tension | todo |
+| `qou-6ngr` | PC2: two-regime ODE probe (Biot–Savart → hyperbolic overlap) verifying the Riccati lower bound for pair data at fixed `q` | todo |
+| `qou-hy2t` | PC3: sustained-forcing surviving-candidate authorNote on `conj:regularity-breakdown` | todo |
+| `qou-innq` | Original walls list (Bridge B context) | superseded in part by this campaign; keep for context |
+
+**Reasonable stopping point (short term):** here — all 15 PRs merged, every
+result sorry-free, the tension and the example-status recorded, and PC1–PC3
+scoped as one-session bricks. **Next steps in priority order:** PC1 (content
+honesty, small), PC2 (the decisive in-QOU mechanism check — a validated
+two-regime ODE probe), PC3 (small), then the compute session pinning
+`c`, `νμ`, `Γ` from Clebsch–Gordan/SDP data, and finally the A-vs-B
+adjudication (lock-uniformity analysis) — the genuine research frontier.
