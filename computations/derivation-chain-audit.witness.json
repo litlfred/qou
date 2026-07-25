@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-25T03:05:57.584359+00:00",
-  "commitSha": "51da5cc365d991e2fdd5cb714f24e946ca14fcf2",
+  "computedAt": "2026-07-25T03:18:47.780197+00:00",
+  "commitSha": "2a039945b931bb4861b02adbf929058bd3bd5d62",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -559,7 +559,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 11,
+  "durationMs": 4,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "ff40fb7a9d7d",
@@ -3031,6 +3031,7 @@
         "qcollatz_cycle_census.witness.json",
         "qcollatz_divergence_probe.witness.json",
         "qm-channel-contribution-probe.witness.json",
+        "qns-enstrophy-grade-probe.witness.json",
         "qou-mass-canonical-wiring-example.witness.json",
         "quintic-zeta5-monodromy-phase.witness.json",
         "r5-full-canonical-knot-solver.witness.json",
