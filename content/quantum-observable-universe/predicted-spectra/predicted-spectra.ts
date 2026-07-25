@@ -212,6 +212,8 @@ export default chapter({
         "alpha-em-shift-multiplicative-chain",
         "alpha-em-shift-multiplicative-chain-proof",
         "alpha-em-shift-multiplicative-chain-significance",
+        "schwinger-measure-computational-time",
+        "schwinger-measure-unit",
         "q-chromaticity",
         "schrodinger-color-falsifiability",
         "schrodinger-color-falsifiability-table4-data",
