@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-25T12:47:20.125095+00:00",
-  "commitSha": "d88605b97711e417e213f16931723d86758c03e5",
+  "computedAt": "2026-07-25T12:57:13.868379+00:00",
+  "commitSha": "2edc0091bbc49269000a6f357021899963f12bab",
   "assertions": [
     {
       "name": "sigma_pair_projection_consistent",
@@ -25,8 +25,8 @@
   "durationMs": 0,
   "computation": "qbeta-5two-odd-two-route-confrontation",
   "scriptFile": "qbeta_5two_odd_two_route_confrontation_probe.py",
-  "scriptHash": "1e8d70cb789a",
-  "scriptCommitSha": "d88605b97711e417e213f16931723d86758c03e5",
+  "scriptHash": "23b1f3d690fd",
+  "scriptCommitSha": "2edc0091bbc49269000a6f357021899963f12bab",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -49,8 +49,8 @@
     },
     "confrontation_rows": {
       "O_phi_sigma_pair": "0.0109089607387",
-      "D_odd_masbaum_face": "-0.00758",
-      "ratio_O_phi_over_D_odd": "-1.43917687846",
+      "D_odd_masbaum_face": "-0.007579403739",
+      "ratio_O_phi_over_D_odd": "-1.43929009647",
       "S_muon": "0.00968298",
       "S_proton": "-0.03945936",
       "u_cubed": "0.00908764762134",
@@ -103,7 +103,7 @@
       "decisive": false,
       "note": "single-model power-law extraction was window-unstable (theta 11.3 vs 9.4, first run) — no clean algebraic tail at n <= 43; the naive phi-side 3/2 tie is untestable at this depth (scope-(a))"
     },
-    "open_bridge": "the function-level identification O_φ ↔ D_odd requires the Stokes sector population of the state-integral transseries on the real-q ray (the factorization normalization) — open; named by the W9-parallel verdict as the scheme-fixing step. Neither route's number is wired anywhere.",
-    "verdict": "TWO-ROUTE CONFRONTATION RECORDED: O_φ = 0.010908961 (σ-pair, calibration-free) vs D_odd = -0.00758 (Masbaum-face resummation) — ratio -1.43918, scope-(a), bridge OPEN. Tail law: best model = algebraic_ln_n (indicative); no clean algebraic n^-theta at n <= 43, so the naive phi-side 3/2 exponent tie is untestable at this depth (scope-(a)). auditOnly."
+    "open_bridge": "the function-level identification O_φ ↔ D_odd requires the Stokes sector population of the state-integral transseries on the real-q ray (the factorization normalization) — open. NOTE: the g3 lane's own SCHEME ambiguity has since closed (δ-torus median, 5e-16) — what remains open is the bridge between the two OBJECTS (σ-pair coefficientwise projection vs Habiro-face function value), not their scheme. Neither route's number is wired anywhere.",
+    "verdict": "TWO-ROUTE CONFRONTATION RECORDED: O_φ = 0.010908961 (σ-pair, calibration-free) vs D_odd = -0.0075794 (Masbaum-face resummation) — ratio -1.43929, scope-(a), bridge OPEN. Tail law: best model = algebraic_ln_n (indicative); no clean algebraic n^-theta at n <= 43, so the naive phi-side 3/2 exponent tie is untestable at this depth (scope-(a)). auditOnly."
   }
 }
