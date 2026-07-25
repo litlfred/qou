@@ -21,12 +21,15 @@ s ∈ 0..2: 63 exact membership decisions at O(q^128) (margin gate:
 row-count minus basis rank ≥ 20, so a "solution" is genuinely
 overdetermined).
 
-DECISION DISCIPLINE (all exact): basis rank is certified by modular
-rank (a 61-bit prime) — full column rank mod p forces full rank over
-ℚ; each candidate is first tested mod p (rank_p(aug) > rank_ℚ(M)
-certifies OUTSIDE exactly, since rank_ℚ(aug) ≥ rank_p(aug)); only a
-mod-p in-span candidate escalates to the exact rational solve. No
-numerics anywhere in the decision.
+DECISION DISCIPLINE (all exact): the basis rank over ℚ is computed by
+fraction-free integer Bareiss elimination (deterministic; the sympy
+rational rref is intractable here — >60 CPU-min, killed) with the
+mod-p rank as a checked lower bound; each candidate is tested mod two
+61-bit primes (rank_p(aug) > rank_ℚ(M) certifies OUTSIDE exactly,
+since rank_ℚ(aug) ≥ rank_p(aug)); only a candidate in-span mod BOTH
+primes escalates to the exact rational solve, restricted to the
+certified pivot-column subsystem. No numerics anywhere in the
+decision.
 
 Gates: (1) the shared exact-series engine re-gated against the 18
 printed GGM H-tables; (2) series-prefix self-consistency (the O(q^40)
@@ -67,6 +70,7 @@ _spec.loader.exec_module(_mb)
 ORD_Q = 128                 # rows of the decision matrix
 MARGIN_MIN = 20             # required overdetermination beyond the rank
 PRIME = (1 << 61) - 1       # Mersenne prime for the modular fast path
+PRIME2 = (1 << 61) - 31     # second prime (independent screen)
 LAM_GRID = {+1: range(-2, 4), -1: range(-1, 4)}
 THETA_LEVELS = (0, 1, 2)
 T0 = time.monotonic()
@@ -128,11 +132,12 @@ def frac_mod(x, p):
     return num * pow(den, p - 2, p) % p
 
 
-def rank_mod(rows, p):
+def rank_mod(rows, p, return_pivots=False):
     """Gaussian elimination over GF(p); rows = list of int lists (mod p)."""
     rows = [r[:] for r in rows]
     ncols = len(rows[0]) if rows else 0
     rank = 0
+    pivots = []
     for col in range(ncols):
         piv = next((r for r in range(rank, len(rows)) if rows[r][col]), None)
         if piv is None:
@@ -145,10 +150,60 @@ def rank_mod(rows, p):
                 f = rows[r][col]
                 rows[r] = [(a - f * b) % p
                            for a, b in zip(rows[r], rows[rank])]
+        pivots.append(col)
         rank += 1
         if rank == len(rows):
             break
-    return rank
+    return (rank, pivots) if return_pivots else rank
+
+
+def rank_bareiss(cols, keys, ord_):
+    """Exact rank over ℚ: fraction-free Bareiss elimination with full
+    pivoting on the column-scaled integer matrix (column scaling by the
+    denominator lcm preserves rank; divisions exact by Sylvester's
+    identity). Deterministic — no primes, no probabilism."""
+    from math import lcm
+    mat = [[0] * len(keys) for _ in range(ord_)]
+    for ci, k in enumerate(keys):
+        den = 1
+        for x in cols[k]:
+            den = lcm(den, x.denominator)
+        for o in range(ord_):
+            x = cols[k][o]
+            mat[o][ci] = x.numerator * (den // x.denominator)
+    rows, ncols = ord_, len(keys)
+    colperm = list(range(ncols))
+    prev = 1
+    r = 0
+    for step in range(min(rows, ncols)):
+        piv = None
+        for i in range(r, rows):
+            for jj in range(step, ncols):
+                if mat[i][colperm[jj]]:
+                    piv = (i, jj)
+                    break
+            if piv:
+                break
+        if piv is None:
+            break
+        pi, pj = piv
+        mat[r], mat[pi] = mat[pi], mat[r]
+        colperm[step], colperm[pj] = colperm[pj], colperm[step]
+        pc = colperm[step]
+        for i in range(r + 1, rows):
+            mic = mat[i][pc]
+            for jj in range(step + 1, ncols):
+                c_ = colperm[jj]
+                mat[i][c_] = (mat[i][c_] * mat[r][pc]
+                              - mic * mat[r][c_]) // prev
+            mat[i][pc] = 0
+        prev = mat[r][pc]
+        r += 1
+        if r == rows:
+            break
+        if (step + 1) % 20 == 0:
+            log(f"    bareiss step {step + 1}, rank so far {r}")
+    return r
 
 
 def main() -> int:
@@ -199,7 +254,9 @@ def main() -> int:
     # ---- rank certification ----
     Mp = [[frac_mod(cols[k][o], PRIME) for k in keys]
           for o in range(ORD_Q)]
-    rank_p = rank_mod(Mp, PRIME)
+    Mp2 = [[frac_mod(cols[k][o], PRIME2) for k in keys]
+           for o in range(ORD_Q)]
+    rank_p, piv_cols = rank_mod(Mp, PRIME, return_pivots=True)
     full_col = rank_p == len(keys)
     # full column rank mod p ⇒ rank over ℚ = column count (exact).
     if full_col:
@@ -208,12 +265,11 @@ def main() -> int:
             f"rank over ℚ = {rank_Q} (certified)")
     else:
         log(f"basis rank mod p = {rank_p} < {len(keys)} — "
-            f"computing the exact rational rank ...")
-        M = sp.Matrix([[sp.Rational(cols[k][o].numerator,
-                                    cols[k][o].denominator)
-                        for k in keys] for o in range(ORD_Q)])
-        rank_Q = M.rank()
-        log(f"exact rank over ℚ = {rank_Q}")
+            f"exact integer Bareiss rank (fraction-free) ...")
+        rank_Q = rank_bareiss(cols, keys, ORD_Q)
+        assert rank_Q >= rank_p, "Bareiss below the mod-p lower bound"
+        log(f"exact rank over ℚ = {rank_Q} (Bareiss; mod-p lower "
+            f"bound {rank_p})")
     margin = ORD_Q - rank_Q
     g_margin = margin >= MARGIN_MIN
     log(f"[gate] overdetermination margin {margin} ≥ {MARGIN_MIN}: "
@@ -236,12 +292,18 @@ def main() -> int:
     results, solved = [], []
     n_exact_escal = 0
     M_cache = []
+    # When rank_Q == rank_p, the mod-p pivot columns S satisfy
+    # rank_p(M_S) = |S| = rank_Q, so M_S has full column rank over ℚ and
+    # spans the SAME space as M (equal dimension) — the exact solve can
+    # run on the smaller certified subsystem.
+    sel_keys = ([keys[c] for c in piv_cols] if rank_Q == rank_p
+                else keys)
 
     def exact_M():
         if not M_cache:
             M_cache.append(sp.Matrix(
                 [[sp.Rational(cols[k][o].numerator, cols[k][o].denominator)
-                  for k in keys] for o in range(ORD_Q)]))
+                  for k in sel_keys] for o in range(ORD_Q)]))
         return M_cache[0]
     for t in (0, 1, 2):
         for p in range(-3, 4):
@@ -251,8 +313,16 @@ def main() -> int:
                 tcol = [frac_mod(x, PRIME) for x in tser]
                 aug_p = [row + [tcol[i]] for i, row in enumerate(Mp)]
                 r_aug_p = rank_mod(aug_p, PRIME)
-                if r_aug_p > rank_Q:
-                    in_span = False       # certified: rank_ℚ(aug) ≥ r_aug_p
+                if r_aug_p <= rank_Q:
+                    # second-prime screen before the expensive exact path
+                    tcol2 = [frac_mod(x, PRIME2) for x in tser]
+                    aug_p2 = [row + [tcol2[i]]
+                              for i, row in enumerate(Mp2)]
+                    r_aug_p2 = rank_mod(aug_p2, PRIME2)
+                else:
+                    r_aug_p2 = r_aug_p
+                if r_aug_p > rank_Q or r_aug_p2 > rank_Q:
+                    in_span = False       # certified: rank_ℚ(aug) ≥ rank_p(aug)
                 else:
                     # potential hit — escalate to the exact rational solve
                     n_exact_escal += 1
@@ -268,7 +338,7 @@ def main() -> int:
                         solved.append(
                             {"theta": t, "p": p, "shift": s,
                              "coeffs": {str(k): str(sol[i])
-                                        for i, k in enumerate(keys)
+                                        for i, k in enumerate(sel_keys)
                                         if sol[i] != 0}})
                         log(f"    IN SPAN: θ^{t}·(q;q)_∞^{p}·q^{s}·F")
                 results.append({"theta": t, "p": p, "shift": s,
@@ -318,7 +388,9 @@ def main() -> int:
     wb.add_data("basis", {"columns": len(keys), "rank": int(rank_Q),
                           "rank_certification":
                               "modular (full column rank mod 2^61-1)"
-                              if full_col else "exact sympy rational",
+                              if full_col else
+                              "exact integer Bareiss (fraction-free), "
+                              "mod-p lower-bound checked",
                           "order": ORD_Q, "margin": int(margin)})
     wb.add_data("decisions", results)
     wb.add_data("solutions", solved)
