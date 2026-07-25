@@ -1,5 +1,6 @@
 import QOU.AppendixSurreals.QCollatz
 import QOU.ComputationalHorizon
+import QOU.FluidDynamics.q_bkm_criterion
 
 /-!
 # The Skein-observation bridge: q-Collatz halting ↔ the P-vs-NP horizon
@@ -240,5 +241,56 @@ def horizonFiltrationLevel (H : QOU.ComputationalHorizon) : ℕ := H.c
 theorem horizon_numLeaves_eq_three_pow_filtrationLevel
     (H : QOU.ComputationalHorizon) :
     H.numLeaves = 3 ^ horizonFiltrationLevel H := H.numLeaves_eq
+
+/-! ### A concrete crossing-reduction vortex flow, and the corpus q-BKM link
+
+The q-NS leg above is abstract; here it is grounded two ways. First, a **concrete
+crossing-reduction flow** — the vortex-knot complexity is `n : ℕ`, each step
+resolves one crossing (`n ↦ n − 1`), the observation is the complexity itself,
+and the normal form is the unknot `0`. It is unconditionally `Halts` **and**
+`Regular`, so the q-NS predicates are non-vacuous (as `qCollatzSystem` grounds
+the q-Collatz leg). Second, a **conditional transport** of the corpus q-BKM
+criterion (`QOU.FluidDynamics.q_bkm_criterion`) onto the bridge's no-blow-up /
+bounded-filtration predicates. -/
+
+/-- A concrete vortex flow: crossing-count `n : ℕ`, one crossing resolved per step
+    (`n ↦ n − 1`), observation = the complexity, normal form = the unknot `0`. -/
+def vortexReductionSystem : SkeinObservationSystem ℕ ℕ where
+  step := fun n => n - 1
+  obs := id
+  normalForm := 0
+  len := id
+
+/-- The crossing-reduction flow is **regular** — its complexity is non-increasing,
+    so it never blows up (bound = the initial crossing number). -/
+theorem vortexReductionSystem_regular (P : ℕ) :
+    vortexReductionSystem.Regular P P := by
+  have h := vortexReductionSystem.regular_of_len_nonincreasing P ?_
+  · simpa using h
+  · intro k
+    rw [Function.iterate_succ_apply']
+    exact Nat.sub_le _ 1
+
+/-- The crossing-reduction flow **halts** — every knot resolves to the unknot `0`
+    (the complexity strictly descends off `0`). -/
+theorem vortexReductionSystem_halts (P : ℕ) :
+    vortexReductionSystem.Halts P :=
+  vortexReductionSystem.halts_of_len_descent (fun _ => True)
+    (fun _ _ _ => trivial)
+    (fun _ _ hx => Nat.sub_lt (Nat.pos_of_ne_zero hx) one_pos) P trivial
+
+/-- **The corpus q-BKM criterion is the bridge's regularity dichotomy.** Given a
+    `QBKMContext` whose `extendsSmoothly` / `vorticityIntegralFinite` predicates
+    are modelled by the bridge's *no blow-up* / *bounded filtration* predicates,
+    the q-BKM iff (`QOU.FluidDynamics.q_bkm_criterion`) transports to
+    `noBlowUp ↔ boundedFiltration` — i.e. q-NS smoothness **is** the filtration-
+    boundedness question the bridge poses. The two modelling hypotheses are
+    explicit; nothing is assumed silently. -/
+theorem regular_iff_bkm {R : Type*} [CommRing R] [ctx : QOU.FluidDynamics.QBKMContext R]
+    (noBlowUp boundedFiltration : Prop)
+    (hsmooth : ctx.extendsSmoothly ↔ noBlowUp)
+    (hvort : ctx.vorticityIntegralFinite ↔ boundedFiltration) :
+    noBlowUp ↔ boundedFiltration :=
+  hsmooth.symm.trans (QOU.FluidDynamics.q_bkm_criterion.trans hvort)
 
 end QOU.Information
