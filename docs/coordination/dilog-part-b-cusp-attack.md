@@ -111,3 +111,60 @@ block stays `kind:conjecture` until V4 assembles the whole limit.
 
 Beans: milestone `qou-icx5`; V1 `qou-sbfy`, V2 `qou-tt1l`, V3 `qou-jplv`,
 V4 `qou-9m98`. Building block already landed: `qou-ips1` / #4173.
+
+---
+
+## 2026-07-25 — W-P1 status: fully assembled, reduced to one scalar limit
+
+**W-P2 is CLOSED** (the Dedekind-eta asymptotic, #4191). **W-P1's entire
+machinery is now landed sorry-free** in
+`content/quantum-observable-universe/lean/QOU/Archimedean/DilogPartBBranchPointSum.lean`:
+
+| Brick | Lemma | PR |
+|---|---|---|
+| interior target integral | `integral_Icc_eq_LiTwo_sub` | #4210 |
+| improper target limit | `tendsto_integral_x_to_c_nhdsWithin_one` (→ `π²/6 − Li₂(x)`) | #4210 |
+| going-up convexity/monotonicity | `convexOn_neg_log_one_sub_mul_Icc`, `h_monotoneOn_Ioc` | #4215 |
+| going-up per-cell squeeze | `h_integral_le_right_Icc`, `h_integral_ge_left_Icc` | #4219 |
+| **going-up telescoping bound** | `riemann_error_bound_up` (majorant `qⁿ(q−1)(h(qⁿ)−h(1))`) | #4241 |
+| log-sum = Riemann sum | `partialSum_up_eq` | #4247 |
+| change of variables | `integral_one_to_c_eq_LiTwo_sub` | #4257 |
+| error decomposition | `error_up_eq` | #4262 |
+| **assembly** | `wp1_riemann_bound` | #4262 |
+
+`wp1_riemann_bound` gives, for `1 < q`, `x·qⁿ < 1`:
+`0 ≤ (Li₂(xqⁿ) − Li₂(x)) − (1−q)Σ_{k<n} log(1−xqᵏ) ≤ (q−1)(−log(1−xqⁿ)) − (q−1)qⁿ(−log(1−x))`.
+
+As `q→1⁺` with `xqⁿ→1⁻`: `Li₂(xqⁿ)→π²/6` (brick 2 Abel), the
+`(q−1)qⁿ(−log(1−x))` term `→0` (bounded × `q−1`). **So W-P1 → `Li₂(x) − π²/6`
+iff the single scalar limit `(q−1)·log(1−xqⁿ) → 0`.**
+
+### The residual: `(q−1)·log(1−xqⁿ) → 0` is non-uniform (NOT closeable as a brick)
+
+This is the irreducible open input, and it does **not** admit a clean
+unconditional proof:
+
+- With `n = k*(q) = ⌊log_q(1/x)⌋` (the last positive factor), the endpoint sits
+  against the branch point: `x·q^{k*} ∈ [1/q, 1)`, so `δ := 1−xq^{k*} ∈ (0,(q−1)/q]`.
+  That is only an **upper** bound on `δ` (a *lower* bound on `−log δ`), never the
+  **lower** bound on `δ` needed to force `(q−1)(−log δ)→0`.
+- `δ` is governed by the **fractional part of `log_q(1/x)`**, which oscillates as
+  `q→1⁺`. The limit is genuinely **conditional** — it holds under the Faddeev
+  scaling (or a Diophantine no-resonance condition on `x`), not for every `q→1⁺`.
+  This is the same analytic-number-theoretic subtlety the conjecture itself flags
+  ("exact cancellation among algebraic poles before evaluating the principal
+  branch").
+- **Trivial sub-case (bulk):** if `x·qⁿ ≤ ρ < 1` (endpoint bounded away from the
+  branch point) then `δ ≥ 1−ρ` and `(q−1)(−log δ)→0` immediately — proving the
+  *bulk*, short of the branch point.
+
+**A future proof needs the sequence-indexed Faddeev-scaling machinery** (joint
+limits of the integer `nⱼ` and real `qⱼ`, with floor functions + equidistribution
+of `frac(log_{qⱼ}(1/x))`), or a Diophantine hypothesis on `x`. That is genuine
+research-level analytic number theory, not a Lean brick — do **not** fabricate a
+one-liner (anti-laundering). The clean analytic seed to start from: `t·log t → 0`
+as `t→0⁺`, applied once a lower bound `δ ≥ c(q−1)` is available from the scaling.
+
+Bean `qou-jplv` carries this. V4 (`reg_n → Li₂(x) − π²/3`) then glues W-P1 + W-P2
+(#4191) + the `clog_one_sub_pole_phase_split` per-factor split (#4173), and is
+gated on this same scalar limit.
