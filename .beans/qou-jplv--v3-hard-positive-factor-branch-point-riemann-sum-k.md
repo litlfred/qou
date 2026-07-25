@@ -36,3 +36,26 @@ the u=q^k partition runs u: 1 -> 1/x hitting the branch point x*u=1. Decompositi
 
 Unlike W-P2 (closed via Tannery, no improper integral), V3's improper branch-point
 integral + variable term count is irreducible analytic work — a focused session.
+
+## 2026-07-25 — W-P1 fully assembled; reduced to ONE non-uniform scalar limit
+
+All W-P1 machinery is landed sorry-free (DilogPartBBranchPointSum.lean): interior
++ improper target integral (#4210), going-up convexity/monotonicity (#4215),
+per-cell squeeze (#4219), the going-up telescoping bound riemann_error_bound_up
+(#4241), log-sum identity partialSum_up_eq (#4247), change of variables
+integral_one_to_c_eq_LiTwo_sub (#4257), and the assembly wp1_riemann_bound +
+error_up_eq (#4262).
+
+wp1_riemann_bound sandwiches (1-q)Sum_{k<n} log(1-xq^k) against Li2(xq^n)-Li2(x)
+with an explicit boundary-decomposition error. As q->1+ with xq^n->1-,
+Li2(xq^n)->pi^2/6, so W-P1 -> Li2(x)-pi^2/6 IFF the single scalar limit
+(q-1)*log(1-xq^n) -> 0.
+
+RESIDUAL (do not fabricate): that scalar limit is NON-UNIFORM. With n=k*=
+floor(log_q(1/x)), delta=1-xq^{k*} in (0,(q-1)/q] -- only an upper bound on delta,
+never the lower bound needed. delta is governed by frac(log_q(1/x)), which
+oscillates; the limit holds only under the Faddeev scaling / a Diophantine
+no-resonance condition on x -- genuine analytic number theory, not a brick.
+Trivial bulk sub-case: xq^n <= rho < 1 gives delta >= 1-rho and the limit for
+free. Full proof needs sequence-indexed joint (n_j, q_j) scaling + t*log t -> 0.
+Coordination: docs/coordination/dilog-part-b-cusp-attack.md.
