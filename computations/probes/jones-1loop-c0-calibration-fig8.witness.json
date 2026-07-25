@@ -1,0 +1,48 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-25T16:34:05.615951+00:00",
+  "commitSha": "b20d79e04c8b90f0e5dcf4fc49dd2f5d27378b2e",
+  "scriptFile": "computations/probes/jones_1loop_c0_calibration_fig8.py",
+  "scriptHash": "259c2deb354a",
+  "scriptCommitSha": "b20d79e04c8b90f0e5dcf4fc49dd2f5d27378b2e",
+  "description": "Calibrate the c\u2080 (1-loop) extraction pipeline on the figure-eight 4\u2081, whose Vol, power 3/2, c\u2080=\u2212\u00bclog3, and adjoint torsion |\u03c4|=1/\u221a3 are known in closed form. Validates the Borromean c\u2080 extraction. Audit-only; no fit; nothing wired.",
+  "auditOnly": true,
+  "parameters": {
+    "Ns": [
+      200,
+      300,
+      400,
+      600,
+      800,
+      1200,
+      1600,
+      2200,
+      3000,
+      4000,
+      5000,
+      6000
+    ],
+    "tail_lo": 200,
+    "KMAX_invN_terms": 4
+  },
+  "data": {
+    "vol_4_1_exact": "2.029883212819307",
+    "c0_exact_neg_quarter_log3": "-0.2746530721670274",
+    "fit_vol_fixed": {
+      "power_p": "1.499999999997743",
+      "c0": "-0.274653072145555"
+    },
+    "fit_free_slope": {
+      "vol_from_slope": "2.029883212819314",
+      "power_p": "1.499999999990538",
+      "c0": "-0.2746530720867674"
+    },
+    "c0_abs_err": 2.1472490452367765e-11,
+    "vol_rel_err": 3.281636158022608e-15,
+    "tau_adj_measured": "0.57735026921442",
+    "tau_adj_exact_1_over_sqrt3": "0.5773502691896258",
+    "tau_abs_err": 2.4794277742046233e-11,
+    "pipeline_validated": true
+  }
+}
