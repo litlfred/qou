@@ -1,8 +1,8 @@
 {
   "engine": "rust",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-19T04:31:29.511288+00:00",
-  "commitSha": "b36f24cf009ba11324e739fc4c1aa38c7e5e1ef4",
+  "computedAt": "2026-07-25T03:17:04.640804+00:00",
+  "commitSha": "c7bffb97842918a45096d7f4e83d95a0b8b71bdc",
   "assertions": [
     {
       "name": "gate_rust_port_N3_vs_python",
@@ -10,7 +10,7 @@
       "expected": 1.0,
       "passed": true,
       "tolerance": 0.5,
-      "source": "5₂ raw J'_3: Rust tl-cable = live Python TL engine at 2 real q, 1e-25"
+      "source": "5₂ raw J'_3: Rust tl-cable-mpfr = live Python TL engine at 2 real q, 1e-25"
     },
     {
       "name": "gate_rust_port_N4_N5_vs_witnesses",
@@ -19,6 +19,14 @@
       "passed": true,
       "tolerance": 0.5,
       "source": "B₄(q*), B₅(q*) = committed witness values at 1e-10 (string-limited)"
+    },
+    {
+      "name": "gate_cross_engine_B6_vs_dense_f64",
+      "computed": 2.35328794556218e-09,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-07,
+      "source": "B₆(q*) full-MPFR = main's independently-written dense-f64 tl_cable engine within its f64 noise floor (~1e-8; two-route convergence)"
     },
     {
       "name": "gate_unknot_ribbon_framing_N6_magnitude",
@@ -54,11 +62,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 3,
+  "durationMs": 0,
   "computation": "qbeta-5two-n6-cable-qstar",
   "scriptFile": "qbeta_5two_n6_cable_qstar_probe.py",
-  "scriptHash": "325fc4a2320f",
-  "scriptCommitSha": "b36f24cf009ba11324e739fc4c1aa38c7e5e1ef4",
+  "scriptHash": "f9a289efadc0",
+  "scriptCommitSha": "ad5316b23f3d702a5b988a56dbeaa81dca38c936",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -71,7 +79,7 @@
     "sympy": "1.14.0",
     "mpmath": "1.3.0"
   },
-  "description": "A5.5 (bean qou-69pr): the certified categorical q*-test extended to N=6 via the Jones–Wenzl 5-cable on TL₁₅ (9 694 845 diagrams), computed by the Rust tl-cable engine (hecke-engine::tl_cable, MPFR 192-bit) — the port is gated in-run against the live Python engine at N=3 (1e-25) and the committed N=4/N=5 witness values (1e-10). Gates: unknot framing magnitude = the ribbon twist q^{17.5} with the sign measured (not assumed); 4₁ 5-cable (w=0) = the trusted Masbaum p=−1 tower at N=6; 4₁ amphichiral null at q*. TEST: the 3-point + slope-bound certificate — B₆(5₂) sampled at q*±2e-8 and q*, all same sign, slope·window ≪ 1 so no zero can hide between samples — capstone constraint (2) fails on the certified N=6 categorical face (scope-(a), extending N=3,4,5). auditOnly; no c_k wired; no fit.",
+  "description": "A5.5 (bean qou-69pr): the certified categorical q*-test extended to N=6 via the Jones–Wenzl 5-cable on TL₁₅ (9 694 845 diagrams), computed by the Rust tl-cable-mpfr engine (hecke-engine::tl_cable_mpfr, MPFR 192-bit) — the port is gated in-run against the live Python engine at N=3 (1e-25) and the committed N=4/N=5 witness values (1e-10). Gates: unknot framing magnitude = the ribbon twist q^{17.5} with the sign measured (not assumed); 4₁ 5-cable (w=0) = the trusted Masbaum p=−1 tower at N=6; 4₁ amphichiral null at q*. TEST: the 3-point + slope-bound certificate — B₆(5₂) sampled at q*±2e-8 and q*, all same sign, slope·window ≪ 1 so no zero can hide between samples — capstone constraint (2) fails on the certified N=6 categorical face (scope-(a), extending N=3,4,5). auditOnly; no c_k wired; no fit.",
   "contentBlock": "prop:phi-b-unitary-bar-odd",
   "data": {
     "engine": {
