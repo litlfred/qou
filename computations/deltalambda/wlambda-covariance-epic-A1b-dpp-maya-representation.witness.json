@@ -1,0 +1,42 @@
+{
+  "engine": "python-exact",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-07-25T16:43:05.981539+00:00",
+  "commitSha": "b0f4273221f676a9d131a37dd04ae94b594a8575",
+  "assertions": [
+    {
+      "name": "covariance_epic_A1b_dpp_maya_bridge_and_obstruction",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "Maya quadratic rep exact (N_v=sum(1-m_a)m_{a+v}, omega3=sum v^2 N_v-n^2-C(n,2), n<=10); occupations determinantal (BOO); poissonized Cov_theta(N_v,Sum h^2) all positive (|lambda|-comovement dominates) ⇒ depoissonization is the real obstruction. Structural bridge + obstruction, not a proof. No fit; no c_k."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 12,
+  "computation": "wlambda-covariance-epic-A1b-dpp-maya-representation",
+  "scriptFile": "wlambda_covariance_epic_A1b_dpp_maya_representation.py",
+  "scriptHash": "7f017f71a5aa",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "DPP route deliverable 1 (qou-x631, qou-g0n2): the Maya-diagram quadratic representation that makes the Borodin–Okounkov–Olshanski determinantal tool applicable to the covariance kernel, plus the depoissonization obstruction that is its real difficulty. Encode λ by its Maya diagram m_a=1_{a∈{λ_i−i}}. EXACT (n≤10): N_v=Σ_a(1−m_a)m_{a+v} (hook=particle-hole distance, quadratic in m) and ω₃=Σ_v v²N_v−n²−C(n,2) (via Σh²=Σc²+n², quadratic in m). So Cov(N_v,ω₃) is a covariance of two quadratic statistics; under θ-poissonized Plancherel the occupations are a DETERMINANTAL point process (discrete-Bessel kernel, BOO math/9905032), giving a Wick/kernel reduction of Cov(N_v,N_w). OBSTRUCTION (honest finding): the kernel condition Σ_v ν_v=0 holds at FIXED n because Σ_v N_v=n is constant (|λ|-comovement projected out); at POISSONIZED level |λ| fluctuates and dominates, so Cov_θ(N_v,Σh²) comes out ALL POSITIVE (θ=4: +12.5,…,+0.08) — opposite sign. Hence the DPP kernel must be DEPOISSONIZED (conditioned on |λ|=n) before its sign reflects the fixed-n covariance; that conditioning, not the kernel algebra, is where the route's difficulty concentrates. Scopes the next attempt: the |λ|=n-conditioned discrete-Bessel kernel / steepest-descent depoissonization with |λ|-mean-field subtraction. Establishes the exact bridge + names the obstruction; does NOT prove the kernel. scope-(a); no fit; nothing wired; no c_k; L2 2/7.",
+  "data": {
+    "maya_claim1_hook_particle_hole": "N_v = sum_a (1-m_a) m_{a+v}  (exact n<=10)",
+    "maya_claim2_omega3_quadratic": "omega3 = sum_v v^2 N_v - n^2 - C(n,2)  (exact n<=10)",
+    "occupations_determinantal": "BOO discrete-Bessel kernel (math/9905032)",
+    "poissonized_cov_all_positive": true,
+    "obstruction": "depoissonization: fixed-n Sigma nu=0 (|lambda| const) vs poissonized |lambda|-comovement dominates",
+    "next_step": "compute |lambda|=n-conditioned discrete-Bessel kernel / depoissonize with |lambda|-mean-field subtraction"
+  }
+}
