@@ -168,4 +168,78 @@ theorem h_integral_ge_left_Icc {x a b : ℝ} (hx0 : 0 < x) (ha : 0 < a) (hb : x 
           (h_intervalIntegrable_Icc hx0 ha hb hab) (fun u hu => ?_)
         exact h_monotoneOn_Ioc hx0 hb0.le hb hamem ⟨lt_of_lt_of_le ha hu.1, hu.2⟩ hu.1
 
+/-! ### V3 brick 3c — the going-up telescoping Riemann-sum error bound
+
+The genuine core: the left-Riemann sum `Σ_{k<n} h(qᵏ)·(qᵏ⁺¹−qᵏ)` over the going-up
+geometric cells `[qᵏ, qᵏ⁺¹] ⊆ [1, 1/x)` under-estimates `∫_1^{qⁿ} h` by at most
+`qⁿ·(q−1)·(h(qⁿ) − h(1))`.  Unlike Part A (`q<1`, shrinking widths, bounded
+integrand), here `q>1` so the widths *grow* (`qᵏ(q−1)`); the telescoping still
+closes because the residual `qᵐ(q−1)²(h(qᵐ⁺¹) − h(1)) ≥ 0`.  The hypothesis
+`x·qⁿ < 1` keeps every cell strictly below the branch point (the last cell's
+blow-up as `qⁿ → 1/x` is handled separately in the assembly). -/
+
+/-- **V3 brick 3c — going-up Riemann-sum error bound.**  For `1 < q` and
+    `x·qⁿ < 1` (all cells below the branch point):
+    `0 ≤ ∫_1^{qⁿ} h − Σ_{k<n} h(qᵏ)·(qᵏ⁺¹−qᵏ) ≤ qⁿ·(q−1)·(h(qⁿ)−h(1))`,
+    with `h(u) = −log(1−xu)/u`.  Telescoping induction on the per-cell squeeze
+    (brick 3b), the going-up analogue of Part A's `riemann_error_bound`. -/
+theorem riemann_error_bound_up {x q : ℝ} (hx0 : 0 < x) (hq1 : 1 < q) :
+    ∀ n : ℕ, x * q ^ n < 1 →
+      0 ≤ (∫ u in (1 : ℝ)..q ^ n, -Real.log (1 - x * u) / u)
+            - ∑ k ∈ Finset.range n,
+                (-Real.log (1 - x * q ^ k) / q ^ k) * (q ^ (k + 1) - q ^ k)
+        ∧ (∫ u in (1 : ℝ)..q ^ n, -Real.log (1 - x * u) / u)
+            - ∑ k ∈ Finset.range n,
+                (-Real.log (1 - x * q ^ k) / q ^ k) * (q ^ (k + 1) - q ^ k)
+          ≤ q ^ n * (q - 1) * ((-Real.log (1 - x * q ^ n) / q ^ n)
+              - (-Real.log (1 - x * 1) / 1)) := by
+  have hq0 : (0 : ℝ) < q := by linarith
+  intro n
+  induction n with
+  | zero => intro _; refine ⟨?_, ?_⟩ <;> simp [intervalIntegral.integral_same]
+  | succ m ih =>
+    intro hqn
+    have hqm_pos : (0 : ℝ) < q ^ m := pow_pos hq0 _
+    have hqm1_pos : (0 : ℝ) < q ^ (m + 1) := pow_pos hq0 _
+    have hq_le : q ^ m ≤ q ^ (m + 1) := by
+      rw [pow_succ]; exact le_mul_of_one_le_right hqm_pos.le hq1.le
+    have hqm : x * q ^ m < 1 := lt_of_le_of_lt (by nlinarith) hqn
+    have h1qm : (1 : ℝ) ≤ q ^ m := one_le_pow₀ hq1.le
+    obtain ⟨ih_lo, ih_hi⟩ := ih hqm
+    -- per-cell squeeze on the new cell [qᵐ, qᵐ⁺¹]
+    have hJ_le := h_integral_le_right_Icc hx0 hqm_pos hqn hq_le
+    have hJ_ge := h_integral_ge_left_Icc hx0 hqm_pos hqn hq_le
+    -- integral split ∫_1^{qᵐ⁺¹} = ∫_1^{qᵐ} + ∫_{qᵐ}^{qᵐ⁺¹}
+    have hsplit :
+        (∫ u in (1 : ℝ)..q ^ (m + 1), -Real.log (1 - x * u) / u)
+          = (∫ u in (1 : ℝ)..q ^ m, -Real.log (1 - x * u) / u)
+            + ∫ u in q ^ m..q ^ (m + 1), -Real.log (1 - x * u) / u :=
+      (intervalIntegral.integral_add_adjacent_intervals
+        (h_intervalIntegrable_Icc hx0 one_pos hqm h1qm)
+        (h_intervalIntegrable_Icc hx0 hqm_pos hqn hq_le)).symm
+    -- monotone gap and width
+    have hmono := h_monotoneOn_Ioc hx0 hqm1_pos.le hqn
+      ⟨hqm_pos, hq_le⟩ ⟨hqm1_pos, le_rfl⟩ hq_le
+    -- abbreviations for the three endpoint values of `h`
+    set hm := -Real.log (1 - x * q ^ m) / q ^ m with hm_def
+    set hm1 := -Real.log (1 - x * q ^ (m + 1)) / q ^ (m + 1) with hm1_def
+    set h1 := -Real.log (1 - x * 1) / (1 : ℝ) with h1_def
+    -- `h(1) ≤ h(qᵐ)` and `h(qᵐ) ≤ h(qᵐ⁺¹)` (monotone, endpoints in `(0, qᵐ⁺¹]`)
+    have hgap1 : h1 ≤ hm1 := by
+      have := h_monotoneOn_Ioc hx0 hqm1_pos.le hqn ⟨one_pos, by nlinarith⟩
+        ⟨hqm1_pos, le_rfl⟩ (by nlinarith)
+      simpa [hm1_def, h1_def] using this
+    -- the ≥ 0 residual that makes the going-up telescope close
+    have hres : 0 ≤ q ^ m * (q - 1) ^ 2 * (hm1 - h1) :=
+      mul_nonneg (mul_nonneg hqm_pos.le (sq_nonneg _)) (by linarith)
+    rw [Finset.sum_range_succ, hsplit]
+    refine ⟨by nlinarith [ih_lo, hJ_ge], ?_⟩
+    -- upper: error(m+1) ≤ error(m) + cell-error ≤ qᵐ(q−1)(hm1−h1) ≤ qᵐ⁺¹(q−1)(hm1−h1)
+    have e2 : (∫ u in q ^ m..q ^ (m + 1), -Real.log (1 - x * u) / u) - hm * (q ^ (m + 1) - q ^ m)
+        ≤ (hm1 - hm) * (q ^ (m + 1) - q ^ m) := by nlinarith [hJ_le]
+    have hexpand : q ^ (m + 1) * (q - 1) * (hm1 - h1)
+        = q ^ m * (q - 1) * (hm - h1) + (hm1 - hm) * (q ^ (m + 1) - q ^ m)
+          + q ^ m * (q - 1) ^ 2 * (hm1 - h1) := by rw [pow_succ]; ring
+    linarith [ih_hi, e2, hres, hexpand]
+
 end QOU.Archimedean
