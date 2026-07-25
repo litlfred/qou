@@ -40,11 +40,10 @@ are generic over `{R : Type*} [CommRing R]`. This is a standalone library file (
 sibling), imported by no `QOU` module — like `YoungDiagramKernel` / `DeltaLambdaDReduction`, it is
 verified per-file by `lean`-direct. It contains **no `sorry`** (grep-confirmed).
 
-> **Verification note (2026-07-19).** This file was authored and hand-audited but **not**
-> machine-compiled in its originating session: the sandbox Lean toolchain was unavailable and both
-> documented re-install hosts (`github.com/leanprover/lean4/releases`, `release.lean-lang.org`) were
-> org-egress-blocked (403). CI / a follow-up session must run `scripts/lean-verify.sh` on this file to
-> confirm `exit 0` before the sorry-free claim is treated as machine-checked.
+> **Verification note (2026-07-19; RESOLVED 2026-07-25).** This file was authored and hand-audited
+> but not machine-compiled in its originating session (toolchain egress-blocked). A follow-up
+> session has since verified it `lean`-direct (restored `lake-cache` oleans + `LEAN_PATH`):
+> **exit 0, sorry-free — the claim is now machine-checked.**
 
 -- Ref: [manuscript] docs/audits/2026-07-19-deltalambda-kernel-sign-structural-narrowing.md
 -/
