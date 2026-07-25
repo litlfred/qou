@@ -30,22 +30,26 @@ import mpmath as mp
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from whitehead_colored_jones import (  # noqa: E402
-    r_check_braiding, closure_invariant, qint, colored_jones_4_1_exact,
+    r_check_braiding, closure_invariant_fast, qint, colored_jones_4_1_exact,
 )
 
-mp.mp.dps = 40
+mp.mp.dps = 60
 VOL_WHITEHEAD = mp.mpf("3.663862376708876060218414")   # 4G
 VOL_4_1 = mp.mpf("2.029883212819307250011597804990")
 WHITEHEAD = [1, -2, 1, -2, 1]
 EXTEND_N12 = "--n12" in sys.argv
 
 
-def whitehead_exact(N, delta=mp.mpf("1e-35")):
-    """mpmath exact-root |J_red(N)| for the Whitehead link."""
+def whitehead_exact(N, delta=mp.mpf("1e-45")):
+    """mpmath exact-root |J_red(N)| for the Whitehead link (fast O(N⁸) path).
+
+    δ=1e-45 with dps=60 preserves ~15 digits through the near-root tiny/tiny
+    division (raw,[N] ~ 1e-45; abs error ~1e-60 → ~15 digits in the ratio).
+    """
     th = mp.pi * (1 - delta) / N
     q = mp.exp(mp.mpc(0, 1) * th)
     Rc, Rci = r_check_braiding(N, q)
-    raw = closure_invariant(WHITEHEAD, 3, N, q, Rc, Rci, mu_power=1)
+    raw = closure_invariant_fast(WHITEHEAD, N, q, Rc, Rci, mu_power=1)
     return abs(raw / qint(N, q))
 
 

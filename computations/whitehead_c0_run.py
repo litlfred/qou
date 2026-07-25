@@ -22,11 +22,12 @@ from whitehead_c0_mpmath import (  # noqa: E402
     whitehead_exact, fig8_exact_logJ, fit_c0, VOL_WHITEHEAD, VOL_4_1,
 )
 
-mp.mp.dps = 40
+mp.mp.dps = 60
 OUT = Path(__file__).resolve().parent / "whitehead-c0-mpmath.witness.json"
 
-# seeded exact mpmath values (from completed runs in /tmp/c0_hi_tower.log)
-SEED = {6: mp.mpf("362.384108"), 8: mp.mpf("1618.50864")}
+# All N recomputed fresh via the fast O(N⁸) path at dps=60 (the earlier
+# dps=40/δ=1e-35 seeds were only ~4 digits — too coarse to keep).
+SEED = {}
 
 
 def write_witness(vals, note):
@@ -75,8 +76,7 @@ def write_witness(vals, note):
 
 def main() -> int:
     vals = dict(SEED)
-    write_witness(vals, "seed N=6,8")
-    for N in (10, 12):
+    for N in (6, 8, 10, 12):
         t = time.monotonic()
         print(f"  computing Whitehead mpmath exact N={N} …", flush=True)
         vals[N] = whitehead_exact(N)
