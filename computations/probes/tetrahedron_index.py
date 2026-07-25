@@ -1,5 +1,19 @@
 """tetrahedron_index.py — Dimofte–Gaiotto–Gukov tetrahedron index I_Δ(m,e)(q).
 
+⚠ SUPERSEDED (2026-07-25) — HISTORICAL #3805 SCAFFOLD, DO NOT USE AS CANONICAL.
+    The `check_symmetries` harness below tests the triality convention
+    `I_Δ(m,e) =? (±q^?)^e I_Δ(-e-m, m)`, which is WRONG on negative-e cases (the
+    #3805 gate that stalled). The prefactor depends on **m, not e**: the pinned
+    generator is `I_Δ(m,e) = (-q^½)^m · I_Δ(-e-m, m)` (order-3, prefactors→1),
+    with reflection `I_Δ(m,e) = I_Δ(-e,-m)` (no prefactor). The corrected,
+    canonical building block is
+        computations/probes/tetrahedron_index_triality_pin.py
+    (empirical S₃-triality pin) → qbeta_g3_tetrahedron_index_exact.py (exact
+    Z[[x]] engine) → qbeta_g3_fourone_index_assembly_corrected.py (4₁ index,
+    matches DGG eq 4.20) → qbeta_g3_ggm_stokes_41.py (Stokes constants {3,4}).
+    Retained only because the canonical probe credits this path; see the audit
+    docs/audits/2026-07-14-g3-stokes-via-3d-index.md.
+
 Canonical building block for the 3d-index face of the figure-eight (4₁)
 resurgent structure (G3 keystone attack,
 docs/audits/2026-07-14-g3-stokes-via-3d-index.md).
