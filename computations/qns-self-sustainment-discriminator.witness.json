@@ -1,0 +1,45 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-07-25T17:13:51.910328+00:00",
+  "commitSha": "5a7f0499f9f6ae07903d57362278c79f106be168",
+  "assertions": [
+    {
+      "name": "q-system tracks the classical same-nu control at the viscous-scaled horizon (R within [0.2, 5]) at every tested eps — SF1's small-eps sustainment was the viscous timescale, NOT q-specific self-forcing",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "T = 1.5*t_visc; DN model; eps = 1e-1..1e-3; scope (a)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 2663,
+  "computation": "qns-self-sustainment-discriminator",
+  "scriptFile": "qns_self_sustainment_discriminator.py",
+  "scriptHash": "9620e6e9902f",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "mpmath": "1.4.1"
+  },
+  "description": "SF2 (epic qou-a3n3): removes SF1's confound by scaling the horizon to the viscous time (T = 1.5/nu k1^2) and running a classical same-nu control (k_n = n) against the q-system (k_n = [n]_q). If the enstrophy survival ratio R = S_q/S_cl stays near 1, the small-eps sustainment seen in SF1 is the viscous timescale and NOT genuine q-core self-forcing; the unforced finite core then decays at every eps on its own clock, and the sustained-forcing blow-up channel requires EXTERNAL or infinite-dimensional sustainment — sharpening the hard core once more. R >> 1 would instead be evidence of q-specific self-sustainment. Scope (a); exploratory tier; float64 RK2.",
+  "data": {
+    "eps_1e-1_S_q": 2.829590526214401e-07,
+    "eps_1e-1_S_classical": 5.009043594858187e-07,
+    "eps_1e-1_R": 0.5648963664678408,
+    "eps_1e-2_S_q": 5.803473368617085e-09,
+    "eps_1e-2_S_classical": 6.1283080529651274e-09,
+    "eps_1e-2_R": 0.9469943936335129,
+    "eps_1e-3_S_q": 6.193074670080749e-11,
+    "eps_1e-3_S_classical": 6.226249751313484e-11,
+    "eps_1e-3_R": 0.9946717394004736,
+    "tier": "exploratory",
+    "f_visc": 1.5
+  }
+}
