@@ -71,3 +71,33 @@ leansearch are firewalled in this sandbox). No unverified Lean was committed. Th
 explicit product divisor; (iv) feed the divisor-route capstone. Steps (ii)–(iii) are the
 genuine remaining mathematics; the growth route (boundedness from the state-integral) is
 the alternative and is equally an analytic-`Φ_b` fact, not a mathlib-only lemma.
+
+## Session arc update (2026-07-25) — keystone sorry-free modulo one *localized* input
+
+The concrete-`Φ_b` divisor/boundedness inputs mapped above were then discharged in a
+sequence of verified (`lean`-direct exit 0, sorry-free) bricks:
+
+| brick | file | PR |
+|---|---|---|
+| input 1: `MeromorphicOn phiBProd` ⇐ product analyticity | `QBeta/PhiBProdMeromorphic.lean` | #4223 |
+| input 2: `meromorphicOrderAt phiBProd ≠ ⊤` ⇐ products locally nonzero | `QBeta/PhiBProdOrderNeTop.lean` | #4225 |
+| input 3a: inversion kills the **even** elliptic freedom (`℘`) | `QBeta/InversionKillsEvenElliptic.lean` | #4227 |
+| input 3b: σ-unitarity (self-duality) kills the **bar-even reciprocal-odd** residual | (same file) | #4227 |
+| assembly: concrete-`Φ_b` `uniqueUpToScalar` via the boundedness capstone | `QBeta/PhiBProdUniquenessAssembly.lean` | #4232 |
+| `hbdd` localization: doubly-periodic global boundedness ⇐ compact-domain bound | `QBeta/DoublyPeriodicBoundedLocalization.lean` | (this) |
+
+**Net state.** The Faddeev–Volkov uniqueness leg for the physical `Φ_b` is sorry-free
+modulo the single analytic endowment `hbdd` (strip boundedness of the ratio), and that
+input is now **localized**: `bounded_of_doublyPeriodic_of_bounded_on_ball` reduces the
+*global* `hbdd` to boundedness on **one compact fundamental parallelepiped**. The remaining
+obligation is therefore "the elliptic ratio is pole-free (bounded) on one fundamental
+domain" — equivalently the `Φ_b` divisor-rigidity fact — which needs the Écalle–Borel /
+state-integral growth estimate or the infinite-product-analyticity infrastructure Mathlib
+does not yet package. That is the honest floor; nothing downstream of it remains open.
+
+**Elliptic-freedom ledger (what excludes the `e·Φ` factor, by route).**
+- even `e` (`℘`): excluded **algebraically** by the inversion relation (input 3a).
+- bar-even reciprocal-odd `e`: excluded **algebraically** by σ-unitarity (input 3b).
+- non-σ-fixed reciprocal-odd `e`: excluded **analytically** — a nonconstant elliptic has
+  poles in the fundamental domain, so it fails the (localized) boundedness — via the
+  boundedness capstone + this localization.
