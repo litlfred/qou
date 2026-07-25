@@ -1,0 +1,48 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-07-25T16:56:58.615398+00:00",
+  "commitSha": "d9700467f1c3e2583e4e9dc0da6073773f79bdc2",
+  "assertions": [
+    {
+      "name": "Sustainment EMERGES as eps -> 0 on the fixed 30-turnover horizon: eps>=1e-3 decays, eps=1e-4 sustains (Om_end/Om_max ~ 0.71)",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "DN q-shell, Kolmogorov load; transition near eps ~ 1e-3..1e-4. CONFOUND flagged: at eps=1e-4 the low-mode viscous time ~2/(eps*k1^2) ~ 2e4 turnovers >> horizon, so horizon-sustainment is consistent with slow viscous decay; the transient growth Om_max/Om0 ~ 3.9 does show active inertial transfer. Discriminator (next bean): horizon scaled to the viscous time / classical same-nu comparison. Scope (a)."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 925,
+  "computation": "qns-self-sustainment-probe",
+  "scriptFile": "qns_self_sustainment_probe.py",
+  "scriptHash": "a9a8679f581e",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "mpmath": "1.4.1"
+  },
+  "description": "SF1 (epic qou-a3n3): tests whether the QOU's finite low-mode core can act as its own forcing. Unforced Desnyansky-Novikov shell model with q-integer wavenumbers k_n=[n]_q and nu_q=(q-1)/(2q), N=12, Kolmogorov initial load, 30 eddy turnovers, RK2. Verdict per eps ladder: does enstrophy sustain (Om_end/Om_max > 0.5 or blow-up) or decay? Decay everywhere = the finite core cannot self-sustain its cascade — in-model evidence AGAINST the sustained-forcing blow-up channel at finite q; the channel would then require genuinely infinite-dimensional sustainment (the q->1 limit escaping every finite truncation). Scope (a); exploratory tier.",
+  "data": {
+    "eps_1e-1_omega_end_over_max": 4.0446073913303874e-07,
+    "eps_1e-1_omega_max_over_0": 1.0,
+    "eps_1e-1_blowup": false,
+    "eps_1e-2_omega_end_over_max": 3.3060437101240075e-05,
+    "eps_1e-2_omega_max_over_0": 1.3171687954570375,
+    "eps_1e-2_blowup": false,
+    "eps_1e-3_omega_end_over_max": 0.021239961184638237,
+    "eps_1e-3_omega_max_over_0": 3.0464381272888374,
+    "eps_1e-3_blowup": false,
+    "eps_1e-4_omega_end_over_max": 0.7139351700095681,
+    "eps_1e-4_omega_max_over_0": 3.8578165208724013,
+    "eps_1e-4_blowup": false,
+    "tier": "exploratory",
+    "n_shells": 12
+  }
+}
