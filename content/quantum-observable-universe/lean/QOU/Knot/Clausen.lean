@@ -891,6 +891,90 @@ theorem integral_le_sum_log_sin_Icc {N k : ℕ} (hN : 1 ≤ N) (hk : 1 ≤ k)
   rw [hsplit, mul_add]
   linarith
 
+/-- **E4e reindex helper (sorry-free).** Shifting a sum from the Kashaev index
+    set `Icc (m+1) k` to right-endpoint form over `Ico m k`. -/
+theorem sum_Icc_succ_eq_sum_Ico (g : ℕ → ℝ) (m k : ℕ) :
+    ∑ j ∈ Finset.Icc (m + 1) k, g j = ∑ i ∈ Finset.Ico m k, g (i + 1) := by
+  rw [← Nat.Ico_succ_right,
+    show Finset.Ico (m + 1) (k + 1)
+      = Finset.map ⟨fun i => i + 1, fun a b h => by simpa using h⟩ (Finset.Ico m k)
+      from ?_,
+    Finset.sum_map]
+  · rfl
+  · ext x
+    simp only [Finset.mem_Ico, Finset.mem_map, Function.Embedding.coeFn_mk]
+    constructor
+    · intro hx
+      exact ⟨x - 1, by omega, by omega⟩
+    · rintro ⟨y, hy, rfl⟩
+      omega
+
+/-- **E4e decomposition helper (sorry-free).** The left-endpoint sum over
+    `Ico m k` in terms of the Kashaev index set: for `m ≤ k`,
+    `Σ_{Ico m k} g = g(m) + Σ_{Icc (m+1) k} g − g(k)`. -/
+theorem sum_Ico_eq_add_sum_Icc_sub (g : ℕ → ℝ) {m k : ℕ} (hmk : m ≤ k) :
+    ∑ i ∈ Finset.Ico m k, g i
+      = g m + (∑ j ∈ Finset.Icc (m + 1) k, g j) - g k := by
+  rcases eq_or_lt_of_le hmk with rfl | hlt
+  · simp
+  · have h1 : Finset.Ico m k = insert m (Finset.Ico (m + 1) k) := by
+      ext x
+      simp only [Finset.mem_Ico, Finset.mem_insert]
+      omega
+    have h2 : Finset.Icc (m + 1) k = insert k (Finset.Ico (m + 1) k) := by
+      rw [← Nat.Ico_succ_right, Nat.Ico_succ_right_eq_insert_Ico (by omega)]
+    rw [h1, Finset.sum_insert (by simp), h2, Finset.sum_insert (by simp)]
+    ring
+
+/-- **Saddle brick E4e-ii, upper (sorry-free).** Falling-half Kashaev-indexed
+    upper bound: on `[mπ/N, kπ/N] ⊆ [π/2, π)`,
+    `(π/N)·Σ_{j∈Icc (m+1) k} log(2sin(jπ/N)) ≤ ∫_{mπ/N}^{kπ/N}` — the falling
+    sums are right-endpoint sums of an antitone integrand. (bean qou-x5mg) -/
+theorem sum_log_sin_le_integral_falling_Icc {N m k : ℕ} (hN : 1 ≤ N) (hmk : m ≤ k)
+    (hlo : π / 2 ≤ (m : ℝ) * (π / N)) (hhi : (k : ℝ) * (π / N) < π) :
+    (π / N) * ∑ j ∈ Finset.Icc (m + 1) k,
+        Real.log (2 * Real.sin ((j : ℝ) * (π / N)))
+      ≤ ∫ u in ((m : ℝ) * (π / N))..((k : ℝ) * (π / N)),
+          Real.log (2 * Real.sin u) := by
+  have h := sum_log_sin_le_integral_falling hN hmk hlo hhi
+  have hre := sum_Icc_succ_eq_sum_Ico
+    (fun j => Real.log (2 * Real.sin ((j : ℝ) * (π / N)))) m k
+  have hcast : (∑ i ∈ Finset.Ico m k,
+        (fun j : ℕ => Real.log (2 * Real.sin ((j : ℝ) * (π / N)))) (i + 1))
+      = ∑ i ∈ Finset.Ico m k,
+          Real.log (2 * Real.sin (((i : ℝ) + 1) * (π / N))) := by
+    refine Finset.sum_congr rfl (fun i _ => ?_)
+    push_cast
+    ring_nf
+  rw [hre, hcast]
+  exact h
+
+/-- **Saddle brick E4e-ii, lower (sorry-free).** Falling-half Kashaev-indexed
+    lower bound with explicit boundary terms: on `[mπ/N, kπ/N] ⊆ [π/2, π)`,
+    `∫_{mπ/N}^{kπ/N} ≤ (π/N)·Σ_{j∈Icc (m+1) k} + (π/N)·f(mπ/N) − (π/N)·f(kπ/N)`
+    — the E5 assembly bounds the two boundary terms (near `π/2` the integrand is
+    at most `log 2`; near `π` it mirrors the E4d singular cell by
+    `sin(π−u) = sin u`). (bean qou-x5mg) -/
+theorem integral_le_sum_log_sin_falling_Icc {N m k : ℕ} (hN : 1 ≤ N) (hmk : m ≤ k)
+    (hlo : π / 2 ≤ (m : ℝ) * (π / N)) (hhi : (k : ℝ) * (π / N) < π) :
+    (∫ u in ((m : ℝ) * (π / N))..((k : ℝ) * (π / N)), Real.log (2 * Real.sin u))
+      ≤ (π / N) * (∑ j ∈ Finset.Icc (m + 1) k,
+            Real.log (2 * Real.sin ((j : ℝ) * (π / N))))
+        + (π / N) * Real.log (2 * Real.sin ((m : ℝ) * (π / N)))
+        - (π / N) * Real.log (2 * Real.sin ((k : ℝ) * (π / N))) := by
+  have h := integral_le_sum_log_sin_falling hN hmk hlo hhi
+  have hdec := sum_Ico_eq_add_sum_Icc_sub
+    (fun j : ℕ => Real.log (2 * Real.sin ((j : ℝ) * (π / N)))) hmk
+  rw [hdec] at h
+  calc (∫ u in ((m : ℝ) * (π / N))..((k : ℝ) * (π / N)), Real.log (2 * Real.sin u))
+      ≤ (π / N) * (Real.log (2 * Real.sin ((m : ℝ) * (π / N)))
+          + (∑ j ∈ Finset.Icc (m + 1) k, Real.log (2 * Real.sin ((j : ℝ) * (π / N))))
+          - Real.log (2 * Real.sin ((k : ℝ) * (π / N)))) := h
+    _ = (π / N) * (∑ j ∈ Finset.Icc (m + 1) k,
+            Real.log (2 * Real.sin ((j : ℝ) * (π / N))))
+        + (π / N) * Real.log (2 * Real.sin ((m : ℝ) * (π / N)))
+        - (π / N) * Real.log (2 * Real.sin ((k : ℝ) * (π / N))) := by ring
+
 /-- **The series Clausen's derivative** `Cl_2'(θ) = -log(2 sin(θ/2))` for
     `θ ∈ (0, 2π)` — the derivative the filler flagged as needing Fourier
     infrastructure, now machine-proved (`hasDerivAt_Cl_2_series`). Dual-purpose: `V'(θ)` of
