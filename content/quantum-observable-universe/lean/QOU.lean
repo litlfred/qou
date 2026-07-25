@@ -308,6 +308,8 @@ import QOU.Archimedean.LiftFromReality
 import QOU.Archimedean.TauFunctorTargetSpec
 import QOU.Archimedean.DeckRealityEquivariance
 import QOU.Archimedean.BorelProperTimeMoment
+import QOU.MathlibExt.FrechetShohat
+import QOU.Archimedean.BalancedKernelConfluence
 import QOU.Archimedean.LoopWeightRealSymmReduction
 import QOU.Archimedean.MarkovGramRealSymm
 import QOU.Archimedean.MatrixSchurCommutant
