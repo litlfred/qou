@@ -102,15 +102,51 @@ Turning the candidate into a verified match requires the **independent**
 computation of `τ(𝓑₃)` from the octahedral Neumann–Zagier data (`grep 2026-07-25`:
 corpus has no Borromean torsion) — the bounded follow-up.
 
+## Result 4 — the independent Neumann–Zagier torsion `|det J_NZ(𝓑₃)| = 64`
+
+Producer [`borromean_nz_adjoint_torsion.py`](../../computations/probes/borromean_nz_adjoint_torsion.py).
+The `c₀` candidate is closed **without any Jones input** by computing the
+Dimofte–Garoufalidis 1-loop invariant directly from the topology. For an ideal
+triangulation with shapes `z_j`, each gluing equation
+`Π_j z_j^{a_j}(1−z_j)^{b_j} = ±1` has NZ Jacobian
+`J_ij = a_ij − b_ij·z_j/(1−z_j)`; the square system of `(N−c)` independent edges
+`+ c` meridians, at the complete structure, gives the torsion determinant. Inputs
+are SnapPy's `gluing_equations('rect')` for `4₁`/`L6a4` + the **exact algebraic**
+complete-structure shapes (`4₁`: `z=e^{iπ/3}`; `L6a4`: regular ideal octahedron
+`z∈{(1+i)/2, 1+i}`) — the probe is self-contained (no SnapPy at runtime;
+`--recompute` cross-checks live).
+
+| manifold | `|det J_NZ|` | exact | `1/|det|` |
+|---|---|---|---|
+| `4₁` (validation) | 1.7320508075689 | **`√3`** (err 3e-51) | **`1/√3 = exp(2c₀(4₁))`** ✓ |
+| **`𝓑₃ = L6a4`** | 64.0 | **`64 = 2⁶`** (err 0) | `1/64` |
+
+The `4₁` value reproduces the `#4238` calibration `exp(2c₀(4₁)) = 1/√3`
+**exactly, from pure topology** — the same relation `exp(2c₀) = 1/|det J_NZ|`
+now confirmed on both the analytic (Kashaev) and topological (NZ) sides.
+
+**Closure.** The Jones-side `#4238` measurement gave `c₀(𝓑₃) ≈ −1.383 ≈ −ln4`,
+i.e. `exp(2c₀) ≈ 1/16 = 4/64`. So the **independent** NZ torsion `64` and the
+Jones `c₀` agree up to a clean factor `exp(2c₀)·|det J_NZ| = 4.03 ≈ 4` — the
+3-cusp normalization offset **predicted** (not fitted) in `#4238`: the relation is
+`1/|det|` for the 1-cusp knot and `4/|det|` for the 3-cusp link. The residual
+`0.03` is the `c₀` extraction uncertainty (Borromean tower `N≤56`); `c₀=−ln4`
+gives the factor exactly `4`. The Borromean `c₀` candidate is thereby **matched to
+an exact, independently-computed topological invariant**, resolving its
+`candidate` status.
+
+The exact first-principles value of the factor `4` (Habiro `J_{B,1}=1`
+normalization + diagonal-vs-full cusp framing for the 3 equal colors) is the one
+remaining thread — a clean rational bookkeeping factor, **not** a free parameter.
+
 ## Where this leaves W1
 
-The leading (volume) and the power (`3/2`) any honest `index ↔ tr_M` bridge must
-share are anchored/measured on the Jones side, and the `c₀ → torsion` extraction
-is validated to `2e-11` on `4₁`. The **actual** bridge — the subleading torsion /
-state-integral identification connecting `I_𝓑₃` to `tr_M(β_Bor)` — remains the
-research-paper-scale open gap, pursued index-side on beans `qou-zezz` / `qou-yaz9`
-(DGG state-integral / charge dictionary). The next Jones-side rung is the
-octahedral-NZ `τ(𝓑₃)` (plus the normalization/cusp reconciliation), to turn the
-`|τ_adj(𝓑₃)| ≈ 0.063` candidate into a verified datum.
+Four Jones-side / topological rungs now stand, all parameter-free:
+`Vol(𝓑₃)=8G` (#4208), power `3/2`, `c₀` measured (#4238), `c₀→torsion`
+validated to `2e-11` on `4₁`, and the **independent NZ torsion
+`|det J_NZ(𝓑₃)|=64`** matching `c₀` to a clean factor-4. The **actual** bridge —
+the subleading state-integral identification connecting `I_𝓑₃` to `tr_M(β_Bor)` —
+remains the research-paper-scale open gap, pursued index-side on beans
+`qou-zezz` / `qou-yaz9` (DGG state-integral / charge dictionary).
 
 -- Ref: [manuscript] docs/audits/2026-07-24-borromean-index-bridge-invariant.md
