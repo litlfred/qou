@@ -781,4 +781,55 @@ theorem gevrey_grade_zero {q r : K} (hq : 1 ≤ q) (hr : 0 ≤ r)
   push_cast
   linarith
 
+/-! ### AA — closure vs cascade: a structural incompatibility (promoting probe Model A)
+
+The probe measured `α ≈ 4/3 > 1` for sustained Kolmogorov spectra — exceeding
+the dissipation-closure grade-1 cap. Here that incompatibility becomes a
+**theorem**: say the tower **reaches grade-1 cascade depth** when
+`∀ m, ∃ N, m ≤ ε·Ω_N(1)` (the classical enstrophy along the cutoff ladder
+overtakes every multiple of `ε⁻¹` — what a Kolmogorov spectrum at the cascade
+cutoff `N_eff ~ ε⁻¹` does, since `ε·N_eff^{4/3} ~ ε^{-1/3}`). Then the total
+cannot be grade 1 — so the dissipation closure (which forces grade 1)
+**structurally excludes** grade-1-deep cascades. Scope (a): the two
+*ingredients* cannot hold together; which one the true flow realises stays
+open. -/
+
+/-- **Grade-1-deep cascades beat the grade-1 cap.** If `0 ≤ ε`, amplitudes are
+    non-negative, the total dominates the truncations, and the tower reaches
+    grade-1 cascade depth (`hcascade`), then `Ω_tot` is **not** finite of
+    ω-grade 1. -/
+-- Ref: [manuscript] fluid-dynamics/p2-critical-exponent (cascade depth)
+theorem deep_cascade_not_grade_one {ε : K} (hε0 : 0 ≤ ε)
+    (a : ℕ → K) (ha0 : ∀ k, 0 ≤ a k) (Ω_tot : K)
+    (hdom : ∀ N, enstrophyN (1 + ε) a N ≤ Ω_tot)
+    (hcascade : ∀ m : ℕ, ∃ N, (m : K) ≤ ε * enstrophyN 1 a N) :
+    ¬ FiniteOfGrade ε 1 Ω_tot := by
+  rintro ⟨m, hm⟩
+  rw [pow_one] at hm
+  obtain ⟨N, hN⟩ := hcascade m
+  have h1 : enstrophyN 1 a N ≤ enstrophyN (1 + ε) a N :=
+    enstrophyN_ge_classical hε0 a ha0 N
+  have h2 : ε * enstrophyN 1 a N ≤ ε * Ω_tot :=
+    mul_le_mul_of_nonneg_left (le_trans h1 (hdom N)) hε0
+  have habs : ε * Ω_tot ≤ |ε * Ω_tot| := le_abs_self _
+  linarith
+
+/-- **The dissipation closure excludes grade-1-deep cascades** (scope (a),
+    structural incompatibility — the theorem form of probe Model A). Under the
+    closure `ε·Ω_tot = 2(1+ε)·D` with finite `D` and finite `ε`, the tower
+    cannot reach grade-1 cascade depth: the closure and a sustained
+    Kolmogorov-type cascade are mutually exclusive ingredients. Which one the
+    QOU's actual flow realises is the open content (`p2-critical-exponent`);
+    neither is asserted. -/
+-- Ref: [manuscript] fluid-dynamics/p2-critical-exponent, regularity-breakdown
+theorem closure_excludes_deep_cascade {ε : K} (hε0 : 0 ≤ ε)
+    (hεf : IsFinite ε) {D : K} (hD : IsFinite D)
+    (a : ℕ → K) (ha0 : ∀ k, 0 ≤ a k) (Ω_tot : K)
+    (hdom : ∀ N, enstrophyN (1 + ε) a N ≤ Ω_tot)
+    (hclosure : ε * Ω_tot = 2 * (1 + ε) * D) :
+    ¬ ∀ m : ℕ, ∃ N, (m : K) ≤ ε * enstrophyN 1 a N :=
+  fun hcascade =>
+    deep_cascade_not_grade_one hε0 a ha0 Ω_tot hdom hcascade
+      (enstrophy_grade_one_of_dissipation_closure hD hεf hclosure)
+
 end QOU.FluidDynamics
