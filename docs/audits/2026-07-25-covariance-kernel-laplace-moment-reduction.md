@@ -55,6 +55,32 @@ The leading (cited) term is **negative and dominant**; the residual is **positiv
 
 `n=3` confirms the pattern: `Cov₃ = 3μ_L²·Cov(ω₃,ln f) + 3μ_L·E[ω₃δ²] + E[ω₃δ³] < 0` for all k=5..20, with `|resid/lead|` shrinking (0.45 at k=5 → 0.050 at k=20) and the normalized fluctuation ratio `E[ω₃δ²]/(2μ_L|Cov₁|) → 0` (0.084 → 0.026). So `resid = o(lead)` — the reduction is provable in the large-`k` limit, with the finitely many small `k` checked directly.
 
+## 3a. Mechanism — why the conjecture holds while SD/icx fail
+
+The regression `e(x) = E_Planch[ω₃ | ln f = x]` (binned by dimension;
+`covariance_omega3_regression.py`) makes the phenomenon transparent:
+
+- **~97% of the Plancherel mass sits on the top-dimension bin**, where `ω₃ < 0`
+  (only slightly: `≈ −2` to `−4`, k=16/20).
+- The **negligible-mass low-dimension shapes carry huge positive `ω₃`** (`+2280`,
+  `+1920`, … at k=20) — they exactly balance the negative bulk to `E[ω₃]=0`
+  (`M_0`), but they have **both** tiny mass **and** tiny `x = ln f`.
+
+So a **convex-increasing weight `(ln f)^n` amplifies the dominant negative
+top-dimension bin** (large mass × large `x^n`), while the positive low-dimension
+shapes contribute `(tiny mass) × (small x^n)` and cannot overturn it — hence
+`Cov(ω₃,(ln f)^n) < 0`. **Stochastic dominance fails** because a step-function
+threshold *can* isolate a delicate intermediate-dimension imbalance (the positive
+mid-`x` shapes with slightly more mass than the negatives just below), but the
+convex `x^n` never isolates an interior threshold — it monotonically upweights the
+top, where `e(x) < 0` dominates. This is exactly the gap between the (failing) SD
+cone and the (holding) absolutely-monotone cone.
+
+This also sharpens the proof target: it suffices that on the high-mass
+top-dimension set `ω₃` is (in mass-weighted average) negative *and* anti-correlated
+with `x` within that set, with the positive low-`x` remainder mass-suppressed — all
+Plancherel-concentration facts.
+
 ## 4. Proposed proof program
 
 Prove `Cov_Planch(ω₃, (ln f)^n) ≤ 0` per `n`:
