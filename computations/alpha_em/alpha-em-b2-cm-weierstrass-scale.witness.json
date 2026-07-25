@@ -1,0 +1,119 @@
+{
+  "computation": "alpha-em-b2-cm-weierstrass-scale",
+  "description": "Bean qou-m117: CM/Weierstrass tau-scale route. CM leg refuted honestly (both 50a j-invariants non-integral => no CM); Q-model leg executed: exact Q-rational Weierstrass models from j alone, AGM periods + independent j-inversion recover tau0 = -1/2+i/(4 t_A) (corpus match) and certify the X0(5) 5-isogeny + the (1,5,5,5) gate Im-ratio = 5 exactly, independent of the Braden-Northover normalization. Tau-scale gate narrowed to a DISCRETE set (isogeny-degree pullbacks); the route-C ratio 24.9997 vs 25 = deg(5-isogeny)^2 recorded as a candidate discrete origin \u2014 OPEN, owner-level, double-gated, no identification. Nothing wired; 1/(8pi) stays phase-4.",
+  "auditOnly": "docs/audits/2026-07-25-alpha-em-b2-cm-weierstrass-scale.md",
+  "tier": "numerical-certified (50 dps, self-certifying j round-trips); the deg^2=25 row is an OBSERVATION (scope-(a), open)",
+  "computedAt": "2026-07-25T13:09:13.171842+00:00",
+  "commitSha": "20f8311eed79f5875a34095551afb16e6b8b2b47",
+  "engine": "mpmath",
+  "engineVersion": "1.3.0",
+  "scriptFile": "alpha_em_b2_cm_weierstrass_scale_probe.py",
+  "scriptHash": "c4aabb9e722f",
+  "precisionMetadata": {
+    "compute_dps": 60,
+    "target_dps": 50,
+    "guard_digits": 10,
+    "certification_tolerance": "1e-45"
+  },
+  "assertions": [
+    {
+      "name": "W1_no_cm_j_nonintegral",
+      "passed": true,
+      "detail": "j(tau0) = -121945/32 (denominator 32), j(5tau0) = -25/2 (denominator 2): both NON-integral rationals. CM j-invariants are algebraic integers (classical CM theory), so NEITHER Bring elliptic factor has CM. The bean's literal CM route is CLOSED \u2014 scope-(a): kills the CM mechanism only; the Q-model leg below carries the convention-bypass",
+      "computed": [
+        32,
+        2
+      ],
+      "expected": "denominators != 1"
+    },
+    {
+      "name": "W2_weierstrass_q_models_exact",
+      "passed": true,
+      "detail": "E_j models (exact Fractions): A: c4=121945/177241, Delta sign neg; B: c4=25/3481, Delta sign neg; c4^3/Delta == j round-trips EXACTLY for both. Delta<0 = rhombic lattice, consistent with Re tau = -1/2",
+      "computed": "exact Fraction round-trip",
+      "expected": "c4^3/Delta == j"
+    },
+    {
+      "name": "W4a_j_inversion_50dps",
+      "passed": true,
+      "detail": "j-inversion on Re=-1/2: tau_A^fund = -1/2 + 1.33921543563536042951730502885i (resid 9.56e-58), tau_B^fund = -1/2 + 0.933382312314049616030814406816i (resid 2.12e-59)",
+      "computed": [
+        9.558551466794714e-58,
+        2.115825194472788e-59
+      ],
+      "expected": 0.0,
+      "tolerance": 1e-45
+    },
+    {
+      "name": "W3_agm_periods_match_j_inversion",
+      "passed": true,
+      "detail": "AGM lattice shape of the Q-models certifies against j-inversion: |tau_A^AGM - tau_A^inv| = 0.0, |tau_B^AGM - tau_B^inv| = 0.0 (j round-trip residuals 9.56e-58, 2.12e-59). Twist-independent; NO Braden-Northover period matrix consumed",
+      "computed": [
+        0.0,
+        0.0
+      ],
+      "expected": 0.0,
+      "tolerance": 1e-45
+    },
+    {
+      "name": "W4b_tau0_recovered_matches_corpus",
+      "passed": true,
+      "detail": "tau0 = gamma'^(-1)(tau_A^fund) = -1/2 + i/(4 t_A) = -0.5 + 0.186676462462809923206162881363i; reduce(tau0)==tau_A^fund (0.0); matches the corpus literature -0.5+0.186676i to the quoted 6 digits (|diff| = 4.62e-7); Re(tau0) = -1/2 exactly by the SL2(Z) word structure",
+      "computed": 4.6246280992320614e-07,
+      "expected": 0.0,
+      "tolerance": 2e-06
+    },
+    {
+      "name": "W5_x05_gate_1555_certified",
+      "passed": true,
+      "detail": "reduce(5*tau0_rec) == tau_B^fund to 7.78e-62 (the X0(5) 5-isogeny, j-labelling j(tau0)=-121945/32, j(5tau0)=-25/2 CONFIRMED); Im ratio Im(tau_B^fund)/Im(tau0_rec) = 4*t_A*t_B = 5.0 \u2014 the (1,5,5,5) gate's ratio-5 certified at 50 dps INDEPENDENTLY of the Braden-Northover normalization",
+      "computed": 0.0,
+      "expected": 0.0,
+      "tolerance": 1e-45
+    },
+    {
+      "name": "W7_deg25_scale_observation_recorded",
+      "passed": true,
+      "detail": "route-C canonical representative c_geo = 0.99470743140273345841; c_geo/(1/(8pi)) = 24.999724471728 \u2014 within 1.1e-5 (relative) of 25 = deg(5-isogeny)^2 = 5^2, the square of the X0(5) degree certified in W5. RECORDED as a candidate discrete origin for the tau-scale \u2014 OPEN, owner-level, NO identification, DOUBLE-GATED: (a) the ratio is normalization-carrying per route C's own refutation (entry-[0,0]=1 convention); (b) observation, not derivation. Residual 1.1e-5 reported as-is, not tuned",
+      "computed": 1.1021130879797009e-05,
+      "expected": 0.0,
+      "tolerance": 5e-05
+    }
+  ],
+  "allPassed": true,
+  "result": {
+    "j_tau0": "-121945/32",
+    "j_5tau0": "-25/2",
+    "cm_status": "NO CM on either factor (non-integral j); CM leg closed scope-(a)",
+    "q_model_A": {
+      "c4": "121945/177241",
+      "c6": "-121945/177241",
+      "Delta": "-475858656800/5567914722008521",
+      "j_roundtrip_exact": true
+    },
+    "q_model_B": {
+      "c4": "25/3481",
+      "c6": "-25/3481",
+      "Delta": "-1250/42180533641",
+      "j_roundtrip_exact": true
+    },
+    "tau_A_fund": "-1/2 + 1.3392154356353604295173050288541029639716692920292i",
+    "tau_B_fund": "-1/2 + 0.93338231231404961603081440681562014731847626109417i",
+    "tau0_recovered": "-1/2 + 0.18667646246280992320616288136312402946369525221883i (= -1/2 + i/(4 t_A), exact SL2(Z) word gamma' = [[1,1],[-2,-1]])",
+    "tau0_literature": "-0.5 + 0.186676i (Braden-Disney-Hogg via BringEllipticFactor.lean docstring)",
+    "x05_isogeny_residual": "7.7788e-62",
+    "gate_1555_im_ratio": "5.0",
+    "gate_1555_im_ratio_deviation_from_5": "0.0",
+    "routec_c_geo": "0.9947074314027334584089552",
+    "routec_ratio_to_inv8pi": "24.999724471728",
+    "deg25_relative_deviation": "1.1021e-5",
+    "deg25_status": "candidate discrete origin (25 = deg(5-isogeny)^2) \u2014 OPEN, owner-level, double-gated: normalization-carrying + observation-only; NO identification, NO tuning",
+    "verdict": "BEAN qou-m117 EXECUTED HONESTLY (scope-(a); no fit; nothing wired): (1) the literal CM leg is DEAD on arrival \u2014 both 50a j-invariants are non-integral rationals, and CM j-invariants are algebraic integers; recorded as a scope-(a) narrowing, not papered over. (2) The surviving Q-model leg WORKS: exact Q-rational Weierstrass models from j alone (Fraction round-trip exact), AGM periods from the models, and independent j-inversion agree to ~1e-50 and re-derive tau0 = -1/2 + i/(4 t_A) = -0.5+0.18667646...i (corpus 6-digit match) plus the X0(5) 5-isogeny and the (1,5,5,5) gate's Im-ratio = 5 EXACTLY \u2014 the Braden-Northover convention is now certified independently, with zero period-matrix input. (3) What this does NOT fix, precisely: the Neron/Q-model normalization is per-CURVE; the absolute Hodge scale on H^{1,0}(Bring) still passes through the isogeny Jac(Bring) -> E_{5tau0}^3 x E_{tau0} with unknown pullback degree \u2014 but that freedom is now DISCRETE (isogeny degrees, natural support powers of 5). (4) Against that discrete set, the route-C gate ratio 24.9997244717 sits within 1.1e-5 of 25 = deg(5-isogeny)^2 \u2014 recorded as a candidate discrete origin for the tau-scale, OPEN, owner-level, double-gated (normalization-carrying + observation-only). The tau-identification remains the sole open categorical input; 1/(8pi) stays phase-4."
+  },
+  "context": {
+    "bean": "qou-m117 (parent qou-k42c)",
+    "route_c_witness": "computations/alpha-em-b2-invariant-c.witness.json (consumed read-only)",
+    "ruling": "2026-07-19: the per-loop identification is not derived-proved \u2014 respected; nothing asserted",
+    "scope_guard": "no fit; no TauRhoHodgeLift instance; nothing wired; 1/(8pi) phase-4"
+  }
+}
