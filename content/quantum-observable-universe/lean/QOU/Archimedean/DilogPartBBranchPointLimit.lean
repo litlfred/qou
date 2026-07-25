@@ -1,4 +1,5 @@
 import QOU.Archimedean.DilogPartBBranchPointSum
+import QOU.MathlibExt.QuadraticIrrationalBadlyApproximable
 
 /-!
 # Part B of `conj:dilogarithm-archimedean-limit` — the W-P1 branch-point limit
@@ -462,5 +463,152 @@ theorem wp1_tendsto_of_powerBound {x c : ℝ} (hx0 : 0 < x) (hc : 0 < c) (K : �
     exact Filter.Eventually.of_forall (fun j => by simp only [Set.mem_Iio]; exact hbelow j)
   exact wp1_tendsto_of_boundary hx0 hq1 hqlim hbelow habel
     (boundary_tendsto_zero_of_powerBound hx0 hc K hq1 hqlim hbelow hlb)
+
+/-- `t·e⁻¹ ≤ 1 − e^{−t}` for `t ∈ [0,1]` (the branch-point gap lower bound). -/
+private theorem one_sub_exp_neg_ge {t : ℝ} (ht0 : 0 ≤ t) (ht1 : t ≤ 1) :
+    t * Real.exp (-1) ≤ 1 - Real.exp (-t) := by
+  have hpos : 0 < Real.exp (-t) := Real.exp_pos _
+  have h1 : (1 : ℝ) + t ≤ Real.exp t := by linarith [Real.add_one_le_exp t]
+  have h2 : (1 + t) * Real.exp (-t) ≤ 1 := by
+    have := mul_le_mul_of_nonneg_right h1 hpos.le
+    rwa [← Real.exp_add, add_neg_cancel, Real.exp_zero] at this
+  have hmono : Real.exp (-1) ≤ Real.exp (-t) := Real.exp_le_exp.mpr (by linarith)
+  calc t * Real.exp (-1) ≤ t * Real.exp (-t) := mul_le_mul_of_nonneg_left hmono ht0
+    _ ≤ 1 - Real.exp (-t) := by nlinarith [h2]
+
+/-- `e^s − 1 ≤ s·e` for `s ∈ [0,1]` (the cell-width upper bound). -/
+private theorem exp_sub_one_le {s : ℝ} (hs0 : 0 ≤ s) (hs1 : s ≤ 1) :
+    Real.exp s - 1 ≤ s * Real.exp 1 := by
+  have hpos : 0 < Real.exp s := Real.exp_pos _
+  have h1 : (1 : ℝ) - s ≤ Real.exp (-s) := by linarith [Real.add_one_le_exp (-s)]
+  have h2 : (1 - s) * Real.exp s ≤ 1 := by
+    have := mul_le_mul_of_nonneg_right h1 hpos.le
+    rwa [← Real.exp_add, neg_add_cancel, Real.exp_zero] at this
+  have hmono : Real.exp s ≤ Real.exp 1 := Real.exp_le_exp.mpr hs1
+  calc Real.exp s - 1 ≤ s * Real.exp s := by nlinarith [h2]
+    _ ≤ s * Real.exp 1 := mul_le_mul_of_nonneg_left hmono hs0
+
+/-- **Unconditional Dilog Part B W-P1 limit for `x = e^{−√D}`.**  For any irrational
+    `√D`, the maximal-cell branch-point scaling `q_j = e^{1/(j+1)}`,
+    `n_j = ⌊(j+1)√D⌋` realizes the W-P1 limit `→ π²/6 − Li₂(e^{−√D})`
+    **unconditionally**: the badly-approximable bound `{k√D} ≥ c₀/k`
+    (`QOU.MathlibExt.sqrt_fract_badlyApproximable`) supplies the `K = 2` quadratic
+    gap `c₀/e³·(q_j−1)² ≤ 1 − x q_j^{n_j}`, discharging the Diophantine hypothesis of
+    `wp1_tendsto_of_powerBound`.  This is the payoff of the Mathlib-gap infra: the
+    open uniform Diophantine input is *proved* for the quadratic-surd class. -/
+theorem wp1_tendsto_expNegSqrt {D : ℕ} (hD : Irrational (Real.sqrt (D : ℝ))) :
+    ∃ (q : ℕ → ℝ) (n : ℕ → ℕ),
+      Tendsto (fun j => (1 - q j) * ∑ k ∈ Finset.range (n j),
+          Real.log (1 - Real.exp (-Real.sqrt (D : ℝ)) * (q j) ^ k))
+        atTop (𝓝 (Real.pi ^ 2 / 6 - LiTwo (Real.exp (-Real.sqrt (D : ℝ))))) := by
+  obtain ⟨c₀, hc₀, hbad⟩ := QOU.MathlibExt.sqrt_fract_badlyApproximable hD
+  set A : ℝ := Real.sqrt (D : ℝ) with hA
+  have hD1 : (D : ℝ) ≠ 0 := fun h => hD (by rw [hA, h, Real.sqrt_zero]; exact ⟨0, by norm_num⟩)
+  have hApos : 0 < A := Real.sqrt_pos.mpr (lt_of_le_of_ne (Nat.cast_nonneg D) (Ne.symm hD1))
+  set x : ℝ := Real.exp (-A) with hx
+  have hx0 : 0 < x := Real.exp_pos _
+  set m : ℕ → ℕ := fun j => j + 1 with hm
+  have hmR : ∀ j, ((m j : ℝ)) = (j : ℝ) + 1 := fun j => by simp [hm]
+  have hm1 : ∀ j, (1 : ℝ) ≤ (m j : ℝ) := fun j => by
+    rw [hmR]; linarith [Nat.cast_nonneg (α := ℝ) j]
+  have hm_pos : ∀ j, (0 : ℝ) < (m j : ℝ) := fun j => lt_of_lt_of_le one_pos (hm1 j)
+  have hmge1 : ∀ j, 1 ≤ m j := fun j => by simp [hm]
+  set q : ℕ → ℝ := fun j => Real.exp (1 / (m j : ℝ)) with hq
+  set n : ℕ → ℕ := fun j => (⌊A * (m j : ℝ)⌋).toNat with hn
+  have hAm_pos : ∀ j, 0 < A * (m j : ℝ) := fun j => mul_pos hApos (hm_pos j)
+  have hn_cast : ∀ j, ((n j : ℝ)) = (⌊A * (m j : ℝ)⌋ : ℝ) := fun j => by
+    simp only [hn]
+    exact_mod_cast Int.toNat_of_nonneg (Int.floor_nonneg.mpr (hAm_pos j).le)
+  have hfr_eq : ∀ j, A * (m j : ℝ) - (n j : ℝ) = Int.fract (A * (m j : ℝ)) := fun j => by
+    rw [hn_cast j, Int.fract]
+  -- x·q^n = exp(−fract/m)
+  have hxqn : ∀ j, x * (q j) ^ (n j)
+      = Real.exp (-(Int.fract (A * (m j : ℝ)) / (m j : ℝ))) := by
+    intro j
+    have hpow : (q j) ^ (n j) = Real.exp ((n j : ℝ) / (m j : ℝ)) := by
+      simp only [hq]
+      rw [← Real.exp_nat_mul, mul_one_div]
+    rw [hx, hpow, ← Real.exp_add]
+    congr 1
+    have hmne : (↑(m j) : ℝ) ≠ 0 := (hm_pos j).ne'
+    rw [← hfr_eq j]; field_simp; ring
+  -- fract facts
+  have hAm_irr : ∀ j, Irrational (A * (m j : ℝ)) := fun j => by
+    rw [mul_comm]; exact hD.natCast_mul (by simp [hm])
+  have hfr_pos : ∀ j, 0 < Int.fract (A * (m j : ℝ)) := fun j =>
+    Int.fract_pos.mpr ((hAm_irr j).ne_int ⌊A * (m j : ℝ)⌋)
+  have hfr_lt1 : ∀ j, Int.fract (A * (m j : ℝ)) < 1 := fun j => Int.fract_lt_one _
+  have hfr_nn : ∀ j, 0 ≤ Int.fract (A * (m j : ℝ)) := fun j => (hfr_pos j).le
+  -- the wp1_tendsto_of_powerBound hypotheses (K = 2)
+  have hq1 : ∀ j, 1 < q j := fun j => by
+    rw [hq]; exact Real.one_lt_exp_iff.mpr (one_div_pos.mpr (hm_pos j))
+  have hqlim : Tendsto q atTop (𝓝 1) := by
+    have hmT : Tendsto (fun j => (m j : ℝ)) atTop atTop := by
+      have h : Tendsto (fun j : ℕ => (j : ℝ) + 1) atTop atTop :=
+        tendsto_atTop_add_const_right _ _ tendsto_natCast_atTop_atTop
+      exact h.congr (fun j => (hmR j).symm)
+    have h1m0 : Tendsto (fun j => 1 / (m j : ℝ)) atTop (𝓝 0) := by
+      simpa [one_div] using hmT.inv_tendsto_atTop
+    have := (Real.continuous_exp.tendsto 0).comp h1m0
+    simpa [hq, Function.comp, Real.exp_zero] using this
+  have hbelow : ∀ j, x * (q j) ^ (n j) < 1 := fun j => by
+    rw [hxqn j]; exact Real.exp_lt_one_iff.mpr
+      (neg_neg_of_pos (div_pos (hfr_pos j) (hm_pos j)))
+  have hub : ∀ j, 1 - x * (q j) ^ (n j) ≤ (q j - 1) / q j := by
+    intro j
+    have hqinv : (q j - 1) / q j = 1 - Real.exp (-(1 / (m j : ℝ))) := by
+      rw [hq, Real.exp_neg, sub_div, div_self (Real.exp_pos _).ne', one_div]
+    rw [hxqn j, hqinv]
+    have hle : Real.exp (-(1 / (m j : ℝ)))
+        ≤ Real.exp (-(Int.fract (A * (m j : ℝ)) / (m j : ℝ))) := by
+      apply Real.exp_le_exp.mpr
+      rw [neg_le_neg_iff, div_le_div_iff_of_pos_right (hm_pos j)]
+      exact (hfr_lt1 j).le
+    linarith [hle]
+  have hEpos : (0 : ℝ) < Real.exp 1 := Real.exp_pos _
+  have hlb : ∀ j, (c₀ / (Real.exp 1) ^ 3) * (q j - 1) ^ 2 ≤ 1 - x * (q j) ^ (n j) := by
+    intro j
+    set fr := Int.fract (A * (m j : ℝ)) with hfrdef
+    -- gap ≥ (fr/m)·e⁻¹
+    have htm0 : 0 ≤ fr / (m j : ℝ) := div_nonneg (hfr_nn j) (hm_pos j).le
+    have htm1 : fr / (m j : ℝ) ≤ 1 := by
+      rw [div_le_one (hm_pos j)]; linarith [hfr_lt1 j, hm1 j]
+    have hgap : (fr / (m j : ℝ)) * Real.exp (-1) ≤ 1 - x * (q j) ^ (n j) := by
+      rw [hxqn j]; exact one_sub_exp_neg_ge htm0 htm1
+    -- fr ≥ c₀/m, hence fr/m ≥ c₀/m²
+    have hfr_ge : c₀ / (m j : ℝ) ≤ fr := by
+      rw [hfrdef, mul_comm]; exact hbad (m j) (hmge1 j)
+    have hfr_ge' : c₀ ≤ fr * (m j : ℝ) := by
+      rw [div_le_iff₀ (hm_pos j)] at hfr_ge; linarith [hfr_ge]
+    have htge : c₀ / (m j : ℝ) ^ 2 ≤ fr / (m j : ℝ) := by
+      have h1 : fr / (m j : ℝ) = fr * (m j : ℝ) / (m j : ℝ) ^ 2 := by
+        rw [pow_two]; field_simp
+      rw [h1, div_le_div_iff_of_pos_right (by positivity)]
+      exact hfr_ge'
+    -- q − 1 ≤ e/m and (q−1)² ≤ e²/m²
+    have hqm1_ub : q j - 1 ≤ Real.exp 1 / (m j : ℝ) := by
+      rw [hq]
+      have hb := exp_sub_one_le (show (0 : ℝ) ≤ 1 / (m j : ℝ) from by positivity)
+        (show (1 : ℝ) / (m j : ℝ) ≤ 1 from by rw [div_le_one (hm_pos j)]; exact hm1 j)
+      calc Real.exp (1 / (m j : ℝ)) - 1 ≤ (1 / (m j : ℝ)) * Real.exp 1 := hb
+        _ = Real.exp 1 / (m j : ℝ) := by ring
+    have hqm1_pos : 0 < q j - 1 := by
+      rw [hq]; linarith [Real.one_lt_exp_iff.mpr (one_div_pos.mpr (hm_pos j))]
+    have hsq_ub : (q j - 1) ^ 2 ≤ (Real.exp 1) ^ 2 / (m j : ℝ) ^ 2 := by
+      have h1 : (q j - 1) ^ 2 ≤ (Real.exp 1 / (m j : ℝ)) ^ 2 :=
+        sq_le_sq' (by nlinarith [hqm1_pos, hEpos, hm_pos j]) hqm1_ub
+      rwa [div_pow] at h1
+    have hc_eq : (c₀ / (Real.exp 1) ^ 3) * ((Real.exp 1) ^ 2 / (m j : ℝ) ^ 2)
+        = (c₀ / (m j : ℝ) ^ 2) * Real.exp (-1) := by
+      rw [Real.exp_neg]
+      field_simp
+    calc (c₀ / (Real.exp 1) ^ 3) * (q j - 1) ^ 2
+        ≤ (c₀ / (Real.exp 1) ^ 3) * ((Real.exp 1) ^ 2 / (m j : ℝ) ^ 2) :=
+          mul_le_mul_of_nonneg_left hsq_ub (by positivity)
+      _ = (c₀ / (m j : ℝ) ^ 2) * Real.exp (-1) := hc_eq
+      _ ≤ (fr / (m j : ℝ)) * Real.exp (-1) :=
+          mul_le_mul_of_nonneg_right htge (Real.exp_pos _).le
+      _ ≤ 1 - x * (q j) ^ (n j) := hgap
+  exact ⟨q, n, wp1_tendsto_of_powerBound hx0 (by positivity) 2 hq1 hqlim hbelow hub hlb⟩
 
 end QOU.Archimedean

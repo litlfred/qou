@@ -112,4 +112,72 @@ theorem sqrt_badlyApproximable {D : ℕ} (hD : Irrational (Real.sqrt (D : ℝ)))
         rw [div_div]
     _ ≤ |(j : ℝ) * α - (p : ℝ)| := hstep
 
+/-- **Fractional-part form.**  For `α = √D` irrational, `c/j ≤ {jα}` for all `j ≥ 1`
+    (`{·} = Int.fract`).  This is the shape the Dilog Part B maximal-cell branch-point
+    gap needs (the gap is `≈ {j√D}·(q_j − 1)`).  Proved directly with `p = ⌊jα⌋`: since
+    `p ≤ jα`, `jα + p ≤ 2αj` (no `1/2` slack), and `D j² − p²` is a positive integer
+    (`{jα} = 0` would make `jα = p ∈ ℤ`, contradicting irrationality), so
+    `{jα} = jα − p = (D j² − p²)/(jα + p) ≥ 1/(2αj)`. -/
+theorem sqrt_fract_badlyApproximable {D : ℕ} (hD : Irrational (Real.sqrt (D : ℝ))) :
+    ∃ c : ℝ, 0 < c ∧ ∀ j : ℕ, 1 ≤ j → c / (j : ℝ) ≤ Int.fract ((j : ℝ) * Real.sqrt (D : ℝ)) := by
+  set α : ℝ := Real.sqrt (D : ℝ) with hα
+  have hα0 : 0 ≤ α := Real.sqrt_nonneg _
+  have hD1 : (D : ℝ) ≠ 0 := by
+    intro h; exact hD (by rw [hα, h, Real.sqrt_zero]; exact ⟨0, by norm_num⟩)
+  have hDpos : (0 : ℝ) < (D : ℝ) := lt_of_le_of_ne (Nat.cast_nonneg D) (Ne.symm hD1)
+  have hαpos : 0 < α := Real.sqrt_pos.mpr hDpos
+  have hαsq : α ^ 2 = (D : ℝ) := Real.sq_sqrt hDpos.le
+  refine ⟨1 / (2 * α), by positivity, ?_⟩
+  intro j hj
+  have hjR : (1 : ℝ) ≤ (j : ℝ) := by exact_mod_cast hj
+  have hjpos : (0 : ℝ) < (j : ℝ) := by linarith
+  have hjα0 : 0 ≤ (j : ℝ) * α := by positivity
+  set p : ℤ := ⌊(j : ℝ) * α⌋ with hp
+  have hp0 : 0 ≤ p := Int.floor_nonneg.mpr hjα0
+  have hpnn : (0 : ℝ) ≤ (p : ℝ) := by exact_mod_cast hp0
+  have hple : (p : ℝ) ≤ (j : ℝ) * α := by rw [hp]; exact Int.floor_le _
+  have hfr : Int.fract ((j : ℝ) * α) = (j : ℝ) * α - (p : ℝ) := by rw [hp, Int.fract]
+  rw [hfr]
+  -- D j² − p² is a positive integer
+  have hne : (D : ℤ) * (j : ℤ) ^ 2 - p ^ 2 ≠ 0 := by
+    intro heq
+    have hZR : (D : ℝ) * (j : ℝ) ^ 2 = (p : ℝ) ^ 2 := by
+      have h2 : (((D : ℤ) * (j : ℤ) ^ 2 - p ^ 2 : ℤ) : ℝ) = 0 := by exact_mod_cast heq
+      push_cast at h2; linarith
+    have hsq : ((j : ℝ) * α) ^ 2 = ((p : ℝ)) ^ 2 := by rw [mul_pow, hαsq]; linarith [hZR]
+    have hjαp : (j : ℝ) * α = (p : ℝ) := by
+      have h1 : |(j : ℝ) * α| = |(p : ℝ)| := by
+        rw [← Real.sqrt_sq_eq_abs, ← Real.sqrt_sq_eq_abs, hsq]
+      rwa [abs_of_nonneg hjα0, abs_of_nonneg hpnn] at h1
+    have hdiv : α = (p : ℝ) / (j : ℝ) := by rw [eq_div_iff hjpos.ne', mul_comm]; exact hjαp
+    exact hD ⟨(p : ℚ) / (j : ℚ), by push_cast; rw [hdiv]⟩
+  have hge1 : (1 : ℝ) ≤ (D : ℝ) * (j : ℝ) ^ 2 - (p : ℝ) ^ 2 := by
+    have hnn : (0 : ℝ) ≤ (D : ℝ) * (j : ℝ) ^ 2 - (p : ℝ) ^ 2 := by
+      have : ((j : ℝ) * α) ^ 2 = (D : ℝ) * (j : ℝ) ^ 2 := by rw [mul_pow, hαsq]; ring
+      nlinarith [this, hple, hpnn, hjα0]
+    have hcast : (D : ℝ) * (j : ℝ) ^ 2 - (p : ℝ) ^ 2
+        = (((D : ℤ) * (j : ℤ) ^ 2 - p ^ 2 : ℤ) : ℝ) := by push_cast; ring
+    have hz1 : (1 : ℤ) ≤ (D : ℤ) * (j : ℤ) ^ 2 - p ^ 2 := by
+      rcases lt_or_gt_of_ne hne with h | h
+      · exfalso; rw [hcast] at hnn; have : ((D : ℤ) * (j : ℤ) ^ 2 - p ^ 2 : ℤ) < 0 := h
+        have : (((D : ℤ) * (j : ℤ) ^ 2 - p ^ 2 : ℤ) : ℝ) < 0 := by exact_mod_cast this
+        linarith
+      · omega
+    calc (1 : ℝ) = ((1 : ℤ) : ℝ) := by norm_num
+      _ ≤ (((D : ℤ) * (j : ℤ) ^ 2 - p ^ 2 : ℤ) : ℝ) := by exact_mod_cast hz1
+      _ = (D : ℝ) * (j : ℝ) ^ 2 - (p : ℝ) ^ 2 := by rw [hcast]
+  -- factorization and the sum bound jα + p ≤ 2αj
+  have hfac : ((j : ℝ) * α - (p : ℝ)) * ((j : ℝ) * α + (p : ℝ))
+      = (D : ℝ) * (j : ℝ) ^ 2 - (p : ℝ) ^ 2 := by
+    have : ((j : ℝ) * α) ^ 2 = (D : ℝ) * (j : ℝ) ^ 2 := by rw [mul_pow, hαsq]; ring
+    nlinarith [this]
+  have hsum_le : (j : ℝ) * α + (p : ℝ) ≤ 2 * α * (j : ℝ) := by nlinarith [hple]
+  -- (jα − p) ≥ (D j² − p²)/(jα + p) ≥ 1/(2αj)
+  have hkey : 1 ≤ ((j : ℝ) * α - (p : ℝ)) * ((j : ℝ) * α + (p : ℝ)) := by rw [hfac]; exact hge1
+  have hjmp : 0 ≤ (j : ℝ) * α - (p : ℝ) := by linarith [hple]
+  rw [div_div, div_le_iff₀ (by positivity : (0 : ℝ) < 2 * α * (j : ℝ))]
+  calc (1 : ℝ) ≤ ((j : ℝ) * α - (p : ℝ)) * ((j : ℝ) * α + (p : ℝ)) := hkey
+    _ ≤ ((j : ℝ) * α - (p : ℝ)) * (2 * α * (j : ℝ)) :=
+        mul_le_mul_of_nonneg_left hsum_le hjmp
+
 end QOU.MathlibExt
