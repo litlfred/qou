@@ -832,4 +832,53 @@ theorem closure_excludes_deep_cascade {ε : K} (hε0 : 0 ≤ ε)
     deep_cascade_not_grade_one hε0 a ha0 Ω_tot hdom hcascade
       (enstrophy_grade_one_of_dissipation_closure hD hεf hclosure)
 
+/-! ### GP — Gevrey persistence, brick 1: discrete Gronwall + the rate wall
+
+The remaining analytic core: does the QOU-internal q-NS dynamics *keep* smooth
+data in the Gevrey class as `q → 1⁺` (`thm:q-ns-wellposedness`)? Entry brick:
+the enstrophy inequality `dΩ/dt ≤ Λ_q Ω` discretises to `Ω_{n+1} ≤ G·Ω_n`,
+`G = 1 + Λ_q δ`. We prove the discrete Gronwall bound and finite-horizon
+persistence for **finite** growth rate — and record the honest wall: the naive
+rate `Λ_q ~ (q−1)^{-1} = ε^{-1}` (`p2-critical-exponent`, "too crude") makes
+`G^n` an *exponentially infinite* surreal over any fixed physical horizon, so
+persistence is exactly the question of whether the q-damping improves the
+naive rate to a **finite** effective `G`. That improvement is the open
+analytic content; not proved here. -/
+
+/-- **Discrete Gronwall.** `Ω_{n+1} ≤ G·Ω_n` with `G ≥ 0`, non-negative
+    states ⇒ `Ω_n ≤ G^n·Ω_0`. -/
+theorem discrete_gronwall {G : K} (Ω : ℕ → K) (hG : 0 ≤ G)
+    (hstep : ∀ n, Ω (n + 1) ≤ G * Ω n) : ∀ n, Ω n ≤ G ^ n * Ω 0 := by
+  intro n
+  induction n with
+  | zero => simp
+  | succ n ih =>
+      calc Ω (n + 1) ≤ G * Ω n := hstep n
+        _ ≤ G * (G ^ n * Ω 0) := mul_le_mul_of_nonneg_left ih hG
+        _ = G ^ (n + 1) * Ω 0 := by rw [pow_succ]; ring
+
+/-- Finites are closed under powers. -/
+theorem IsFinite.pow {x : K} (h : IsFinite x) (n : ℕ) : IsFinite (x ^ n) := by
+  induction n with
+  | zero => simpa using isFinite_one
+  | succ n ih => rw [pow_succ]; exact ih.mul h
+
+/-- **Finite-horizon Gevrey-enstrophy persistence for finite rate.** If the
+    per-step growth factor `G` is a *finite* surreal and the initial enstrophy
+    is finite, the enstrophy stays finite at every fixed step `n`. The open
+    wall (`p2-critical-exponent`): the naive `G = 1 + Λ_q δ` with
+    `Λ_q ~ ε^{-1}` is NOT finite, so this theorem applies exactly when the
+    q-damping improves the naive rate — that improvement is the Gevrey-
+    persistence question, not decided here. -/
+-- Ref: [manuscript] fluid-dynamics/q-ns-wellposedness, p2-critical-exponent
+theorem gronwall_finite_horizon {G : K} (hG0 : 0 ≤ G) (hGf : IsFinite G)
+    (Ω : ℕ → K) (hstep : ∀ n, Ω (n + 1) ≤ G * Ω n) (hnn : ∀ n, 0 ≤ Ω n)
+    (h0 : IsFinite (Ω 0)) (n : ℕ) : IsFinite (Ω n) := by
+  obtain ⟨m, hm⟩ := (hGf.pow n).mul h0
+  refine ⟨m, ?_⟩
+  rw [abs_of_nonneg (hnn n)]
+  have h1 := discrete_gronwall Ω hG0 hstep n
+  have h2 : G ^ n * Ω 0 ≤ |G ^ n * Ω 0| := le_abs_self _
+  linarith
+
 end QOU.FluidDynamics
