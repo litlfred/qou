@@ -125,11 +125,38 @@ theorem kernelValue_base_values :
     kernelValue 3 = -4 ∧ kernelValue 4 = -16 ∧ kernelValue 5 = -320 ∧
       kernelValue 6 = -10400 ∧ kernelValue 7 = -163520 := by decide
 
+set_option maxRecDepth 400000 in
+set_option maxHeartbeats 4000000 in
+/-- Extended Lean-kernel-verified base **values** `k = 8..14` — the exact integers, cross-checking
+the Python pipeline (`wlambda_covariance_kernel_frontier.py`) against the kernel evaluator over
+the same partition/hook machinery. -/
+theorem kernelValue_base_values_to_fourteen :
+    kernelValue 8 = -3224704 ∧ kernelValue 9 = -106339296 ∧
+      kernelValue 10 = -4722309120 ∧ kernelValue 11 = -176931720240 ∧
+      kernelValue 12 = -6632383721920 ∧ kernelValue 13 = -289895599309888 ∧
+      kernelValue 14 = -16141386718690688 :=
+  ⟨by decide, by decide, by decide, by decide, by decide, by decide, by decide⟩
+
 /-- The covariance-kernel conjecture is **Lean-verified for `3 ≤ k ≤ 7`** (kernel `decide`), a
 machine-checked base for the open general statement below. -/
 theorem kernelValue_nonpos_of_le_seven (k : ℕ) (hk : 3 ≤ k) (hk' : k ≤ 7) :
     kernelValue k ≤ 0 := by
   interval_cases k <;> decide
+
+set_option maxRecDepth 1000000 in
+set_option maxHeartbeats 8000000 in
+/-- **Extended machine-checked base: the kernel conjecture holds for `3 ≤ k ≤ 20`** (kernel
+`decide` over the full partition/hook/dimension machinery; `maxRecDepth`/`maxHeartbeats` raised
+for the larger enumerations — elaboration limits, not a change in trust: the kernel still checks
+every step). Extends the `k ≤ 7` base to cover, in particular, the whole `k ≤ 14` range on which
+the two open pincer legs (`Cov₂(ln f, ω₃) ≤ 0` and the interpolation remainder bound) have been
+numerically verified — so any future effective-constant proof of those legs closes the conjecture
+down to a floor the kernel has already certified. -/
+theorem kernelValue_nonpos_of_le_twenty (k : ℕ) (hk : 3 ≤ k) (hk' : k ≤ 20) :
+    kernelValue k ≤ 0 := by
+  rcases le_or_gt k 7 with h7 | h7
+  · exact kernelValue_nonpos_of_le_seven k hk h7
+  · interval_cases k <;> decide
 
 /-- Content-square is **conjugation-invariant** — verified for all `λ ⊢ k`, `k ≤ 6` (`decide`):
 `contentSq (conj λ) = contentSq λ`. Reason: the transpose bijection on cells `(i,j) ↦ (j,i)` sends the
