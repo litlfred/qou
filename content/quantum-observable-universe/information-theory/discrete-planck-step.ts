@@ -23,4 +23,21 @@ export default remark({
     "rem:witt-lift-qou",
   ],
   cites: ["thooft2016"],
+  authorNotes: [
+    {
+      kind: "note",
+      date: "2026-07-25",
+      body:
+        "**Atomicity claim now has a Lean carrier (primary conjecture, open).** " +
+        "This remark's 'there is no sub-step resolution' / 'one full Reeb circuit = one unit of time' " +
+        "claim is formalized as the content-bearing §3b-tax primary conjecture class " +
+        "`QOU.AlgebraicSubstrate.SubstrateClock.PlanckStepAtomicity` " +
+        "(`lean/QOU/AlgebraicSubstrate/PlanckStepAtomicity.lean`, no instance — the ℕ-indexing of " +
+        "`InformationTheoreticTime.stepCount` is a modeling chart, not a derivation). " +
+        "Atomicity conditionally discharges substrate clock uniqueness (SCU) via " +
+        "`substrateClockUniqueness_of_planckStepAtomicity`. Per §3a a remark cannot carry the claim; " +
+        "promoting it to a dedicated conjecture block with this Lean as sibling is a recorded follow-up.",
+      see: "docs/audits/2026-07-25-planck-step-atomicity-formalization.md",
+    },
+  ],
 });
