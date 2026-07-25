@@ -71,21 +71,25 @@ not "the kernel is false"):**
 `n=6`); `K` (hook-count covariance matrix) M-matrix structure (mixed off-diagonal signs); linear-
 response (Gaussian) depoissonization (recovers only 5–8/8 signs).
 
-## 5. Current sharpest form — the A2 polynomial positivity
+## 5. The A2 leg — pointwise reduction ELIMINATED with an exact counterexample
 
-The leading term A2 = `Cov_Planch(ln f^λ, ω₃) ≤ 0` reduces **exactly** to a polynomial-positivity
-statement. With `ν_v = Cov_Planch(N_v, ω₃)` and `P(x) = Σ_v ν_v x^v`:
+The leading term A2 = `Cov_Planch(ln f^λ, ω₃) ≤ 0`. With `ν_v = Cov_Planch(N_v, ω₃)` and
+`P(x) = Σ_v ν_v x^v`: `Cov(H_s, ω₃) = P(e^{−s})`, `P(0)=P(1)=0`, so `P(x) = x(x−1)·R(x)` and (since
+`x(x−1)<0` on `(0,1)`) the *sufficient* condition **A2 ⟸ `R(x) ≥ 0` on `(0,1)`** (⟺ pointwise
+`Cov(H_s,ω₃) ≤ 0 ∀s`).
 
-- `Cov(H_s, ω₃) = P(e^{−s})`, `H_s = Σ_□ e^{−s h}`; `P(0)=P(1)=0`;
-- so `P(x) = x(x−1)·R(x)`, `deg R = k−2`, and since `x(x−1) < 0` on `(0,1)`:
+> **⛔ This pointwise target is FALSE for `n ≥ 29`** (exact; first failure `n=29`,
+> `max_s Cov(H_s,ω₃)=+0.056`; `R` gains a root in `(0,1)` at `n=30`; grows with `n`). It was verified
+> only to `n ≤ 13/15` — a small-`n` artifact. So the polynomial-positivity / pointwise route **cannot**
+> prove A2 (the implication is valid but the premise is false). Correction:
+> [`2026-07-25-covariance-kernel-A2-pointwise-reduction-falsified.md`](2026-07-25-covariance-kernel-A2-pointwise-reduction-falsified.md).
 
-> **A2  ⟸  `R(x) ≥ 0` on `(0,1)`.**
-
-Verified `R > 0` on **all** of `[0,∞)` (no positive real root; real roots all negative), `n ≤ 15`.
-The moment tower `M_j = Σ_v v^j ν_v = Cov(Σ h^j, ω₃)` has `M_0 = 0`, `M_2 = |C₃| = n(n−1)(n−2)/3`,
-`M_1..M_8 > 0`. Because `R` does **not** have nonnegative coefficients, the positivity is a nontrivial
-coefficient dominance — no elementary certificate (§4 sub-list) certifies it. Detail:
-[`2026-07-25-covariance-kernel-A2-polynomial-positivity.md`](2026-07-25-covariance-kernel-A2-polynomial-positivity.md).
+**A2 and the kernel themselves SURVIVE** (verified exactly, `k,n ≤ 40`): `A2 = −Σ_v ln(v) ν_v ≤ 0`
+holds by **cancellation** in the full Frullani integral `∫(1/s)Cov(H_s,ω₃)ds` even though the
+integrand goes positive. The three easy-proof sub-certificate eliminations of #4242 (ν
+single-crossing, cumulative `S_v≤0`, `R` nonneg-coefficients) remain correct — early symptoms that no
+pointwise certificate exists. **A proof of A2 must be global** (the full signed integral / a
+dimension-functional expansion), not pointwise.
 
 ## 6. The identified tool — determinantal (DPP), and its obstruction
 
@@ -104,12 +108,16 @@ is a *large-`n` asymptotic* sign, not a finite-`n` proof. Detail:
 
 ## 7. Honest open frontier
 
-- **Finite-`n` proof:** prove `R(x)` has no nonnegative real root for all `n` (a coefficient-dominance
-  / Hurwitz-type statement). No sign-variation or matrix-structure certificate reaches it.
+- **The proof must be global, not pointwise.** §5's correction shows no pointwise `R`-positivity /
+  `Cov(H_s,ω₃)≤0` certificate exists (`R` has a root in `(0,1)` for `n≥29`). A proof of A2 must use the
+  full signed Frullani integral (cancellation) or a dimension-functional expansion — not a term-by-term
+  sign.
 - **Asymptotic sign:** depoissonize the discrete-Bessel kernel (fixed-`n` DOP + steepest descent) for a
   large-`n` sign of `Cov(N_v, ω₃)`. Non-perturbative in the `|λ|`-conditioning.
-- **Not excluded, not proved:** the kernel is a true, well-characterized open §3b conjecture. Nothing
-  here is a `(b)`-scope structural exclusion; all negatives are scope-(a) "this route cannot deliver."
+- **Not excluded, not proved:** the kernel `cov(k) ≤ 0` and the A2 leg `Cov(ln f,ω₃) ≤ 0` both hold
+  exactly for all `k,n ≤ 40` and remain well-characterized open §3b conjectures. Nothing here is a
+  `(b)`-scope structural exclusion of the *kernel*; the one exact refutation is scoped to the *pointwise
+  route* (a method, not the claim) — all other negatives are scope-(a) "this route cannot deliver".
 
 ## 8. Lean state
 
