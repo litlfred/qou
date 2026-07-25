@@ -510,4 +510,38 @@ theorem fundamental_odd_step (qinv : R) (hq : a.q * qinv = 1) :
 
 end SkeinCollatzArith
 
+/-! ### The Markov-trace observable: `reaches_cycle` as observed halting (Tier C #12)
+
+In the QOU, *observation* is the Markov trace `tr_M` — an orbit's observed output
+is the Jones/Skein value of its current state, the degree-0 section an observer
+reads. Coupling any observation map `obs : Skein → V` to the Skein-Collatz
+dynamics turns the convergence conjecture into an **observational halting
+statement**: the observed output stabilises to the value of the fundamental
+cycle — the trivial invariant, the unknot's `tr_M = 1`. This is the Markov-trace
+face of the conjecture (`collatz-three-forms`: `tr_M(𝒞_q^k h) → 1`) — the sense
+in which the output of the braid-computation *is* an observation. -/
+
+/-- **Observed output stabilises to the attractor's** (conditional on the
+    conjecture `reaches_cycle`). For any observation map `obs`, every positive
+    orbit's observed output eventually equals `obs attractor` — the observed
+    halting output. -/
+theorem reaches_cycle_observed {Skein : Type u} [CommRing Skein] [QCollatz Skein]
+    {V : Type*} (obs : Skein → V) (P : Skein) (hP : QCollatz.pos P) :
+    ∃ k : ℕ, obs (QCollatz.C^[k] P) = obs QCollatz.attractor := by
+  obtain ⟨k, hk⟩ := QCollatz.reaches_cycle P hP
+  exact ⟨k, by rw [hk]⟩
+
+/-- **`reaches_cycle` ⇒ observed output `→` the trivial invariant.** If the
+    observation map assigns the fundamental cycle the unknot value `u`
+    (`obs attractor = u`, e.g. the trivial Jones polynomial `tr_M = 1`), then
+    every positive braid-computation in the domain halts to the observed output
+    `u`. This is the observational reading of the conjecture: *the halting output
+    is the trivial invariant.* -/
+theorem reaches_cycle_observed_unknot {Skein : Type u} [CommRing Skein]
+    [QCollatz Skein] {V : Type*} (obs : Skein → V) (u : V)
+    (hu : obs QCollatz.attractor = u) (P : Skein) (hP : QCollatz.pos P) :
+    ∃ k : ℕ, obs (QCollatz.C^[k] P) = u := by
+  obtain ⟨k, hk⟩ := reaches_cycle_observed obs P hP
+  exact ⟨k, hk.trans hu⟩
+
 end QOU.AppendixSurreals
