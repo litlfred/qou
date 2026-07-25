@@ -1120,6 +1120,62 @@ theorem abs_rising_deviation_le {N k : ℕ} (hN : 1 ≤ N) (hk : 1 ≤ k)
       (le_abs_self (Real.log (2 * Real.sin (π / N)))) (le_of_lt hh),
       mul_nonneg (le_of_lt hh) (abs_nonneg (Real.log (2 * Real.sin (π / N))))]
 
+/-- **Saddle brick E5c-3 — falling uniform deviation (sorry-free).** For any
+    falling window `[mπ/N, kπ/N] ⊆ [π/2, π−π/N]`, the scaled block log-sum
+    deviates from the Clausen-primitive difference by at most the
+    (m,k)-INDEPENDENT error `2·(π/N)(|f(π/N)| + log 2)` — E4e-ii sandwich +
+    F-bridge, boundary terms charged to E5c-2. (bean qou-emex) -/
+theorem abs_falling_deviation_le {N m k : ℕ} (hN : 1 ≤ N) (hmk : m ≤ k)
+    (hlo : π / 2 ≤ (m : ℝ) * (π / N)) (hkN : k ≤ N - 1) :
+    |(π / N) * (∑ j ∈ Finset.Icc (m + 1) k,
+          Real.log (2 * Real.sin ((j : ℝ) * (π / N))))
+        - ((-clausen (2 * ((k : ℝ) * (π / N))) / 2)
+            - (-clausen (2 * ((m : ℝ) * (π / N))) / 2))|
+      ≤ 2 * ((π / N) * (|Real.log (2 * Real.sin (π / N))| + Real.log 2)) := by
+  have hpi := Real.pi_pos
+  have hNpos : (0 : ℝ) < N := by exact_mod_cast hN
+  have hh : (0 : ℝ) < π / N := by positivity
+  have hm1 : 1 ≤ m := by
+    by_contra hm0
+    push_neg at hm0
+    have hmz : m = 0 := by omega
+    rw [hmz] at hlo
+    push_cast at hlo
+    nlinarith
+  have hN2 : 2 ≤ N := by omega
+  have h2N : (2 : ℝ) ≤ N := by exact_mod_cast hN2
+  have hhπ : π / N ≤ π / 2 := by gcongr <;> linarith
+  have hm1' : (1 : ℝ) ≤ (m : ℝ) := by exact_mod_cast hm1
+  have hmk' : (m : ℝ) ≤ (k : ℝ) := by exact_mod_cast hmk
+  have hkN' : (k : ℝ) ≤ (N : ℝ) - 1 := by
+    have h : ((k : ℕ) : ℝ) ≤ ((N - 1 : ℕ) : ℝ) := by exact_mod_cast hkN
+    rwa [Nat.cast_sub hN, Nat.cast_one] at h
+  have hNh : ((N : ℝ) - 1) * (π / N) = π - π / N := by
+    field_simp
+  have hhi : (k : ℝ) * (π / N) < π := by nlinarith
+  have hup := sum_log_sin_le_integral_falling_Icc hN hmk hlo hhi
+  have hlow := integral_le_sum_log_sin_falling_Icc hN hmk hlo hhi
+  rw [integral_log_sin_window] at hup hlow
+  have hfm : |Real.log (2 * Real.sin ((m : ℝ) * (π / N)))|
+      ≤ |Real.log (2 * Real.sin (π / N))| + Real.log 2 :=
+    abs_log_two_sin_le hh hhπ (by nlinarith) (by nlinarith)
+  have hfk : |Real.log (2 * Real.sin ((k : ℝ) * (π / N)))|
+      ≤ |Real.log (2 * Real.sin (π / N))| + Real.log 2 :=
+    abs_log_two_sin_le hh hhπ (by nlinarith) (by nlinarith)
+  rw [abs_le]
+  constructor
+  · nlinarith [hlow,
+      mul_le_mul_of_nonneg_left
+        (le_abs_self (Real.log (2 * Real.sin ((m : ℝ) * (π / N))))) (le_of_lt hh),
+      mul_le_mul_of_nonneg_left
+        (neg_abs_le (Real.log (2 * Real.sin ((k : ℝ) * (π / N))))) (le_of_lt hh),
+      mul_le_mul_of_nonneg_left hfm (le_of_lt hh),
+      mul_le_mul_of_nonneg_left hfk (le_of_lt hh)]
+  · nlinarith [hup,
+      mul_nonneg (le_of_lt hh)
+        (abs_nonneg (Real.log (2 * Real.sin (π / N)))),
+      mul_nonneg (le_of_lt hh) (Real.log_nonneg (by norm_num : (1:ℝ) ≤ 2))]
+
 /-- **The series Clausen's derivative** `Cl_2'(θ) = -log(2 sin(θ/2))` for
     `θ ∈ (0, 2π)` — the derivative the filler flagged as needing Fourier
     infrastructure, now machine-proved (`hasDerivAt_Cl_2_series`). Dual-purpose: `V'(θ)` of
