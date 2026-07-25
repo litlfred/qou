@@ -136,3 +136,15 @@ exp/floor/fract grind, ~150-250 lines):
   1−xq^n ≥ ({j√D}/j)e^{−1} ≥ (c/j²)e^{−1} ≥ (c/e³)(q_j−1)²  [K=2, needs {j√D}≥‖j√D‖≥c/j];
   hub 1−xq^n ≤ (q−1)/q  [since {j√D}≤1]; hbelow xq^n<1  [since {j√D}>0, j√D∉ℤ].
   Then wp1_tendsto_of_powerBound(K=2) ⇒ W-P1 → π²/6−Li₂(x). NOT yet wired (offered).
+
+## 2026-07-25 — WIRED: unconditional for x=e^{−√D} (cfe45dc6)
+
+wp1_tendsto_expNegSqrt (dilog module, sorry-free): for any irrational √D, the
+maximal-cell scaling q_j=e^{1/(j+1)}, n_j=⌊(j+1)√D⌋ gives W-P1 → π²/6−Li₂(e^{−√D})
+UNCONDITIONALLY. Chain: sqrt_fract_badlyApproximable ({k√D}≥c₀/k) ⇒ quadratic gap
+1−xq^n ≥ (c₀/e³)(q_j−1)² ⇒ wp1_tendsto_of_powerBound(K=2). Support: two exp bounds
+(one_sub_exp_neg_ge, exp_sub_one_le) + fract-form badapx lemma.
+
+STATUS: quadratic-surd sub-class of Subgoal is CLOSED unconditionally in Lean.
+The general-x UNIFORM Diophantine statement (all x, all scalings) remains open.
+10 dilog theorems + 2 MathlibExt, all sorry-free.
