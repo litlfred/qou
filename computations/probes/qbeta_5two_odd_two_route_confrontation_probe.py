@@ -5,9 +5,10 @@ projection vs the W9-parallel resummed bar-side datum D_odd.
 CONTEXT. Two independent lanes now hold 5₂ odd-channel data at the
 substrate:
   * the MAIN-LINE Masbaum-face lane (probe qbeta_g3_5two_qborel_theta_
-    laplace, merged): D_odd = (s(F̄) − F_conv)/2 ≈ −0.00758 ± 2e-10-band —
-    a FUNCTION-VALUE odd datum from θ-Laplace resummation of the exact
-    integer-Laurent Habiro tail;
+    laplace + dodd_median_crosschecks, merged): D_odd = −0.007579403739
+    ± 5e-16 (median-normalized, scheme-robust) — a FUNCTION-VALUE odd
+    datum from θ-Laplace resummation of the exact integer-Laurent
+    Habiro tail;
   * this branch's A6 lane: the exact bar-odd σ-pair K-tower
     P_k(ξ₁) − P_k(ξ̄₁) of the state-integral saddle series (all 24 orders
     exact in the trace field).
@@ -70,7 +71,7 @@ _spec.loader.exec_module(_mb)
 mp.mp.dps = 60
 
 # committed reference values (scope-(a) comparison rows)
-D_ODD = mp.mpf("-0.00758")          # qbeta-g3-5two-qborel-theta-laplace (band 2e-10... 4e-4 kernel)
+D_ODD = mp.mpf("-0.007579403739")   # median-normalized, scheme-robust (5e-16; dodd_median_crosschecks)
 S_MUON = mp.mpf("0.00968298")
 S_PROTON = mp.mpf("-0.03945936")
 IM_VB = mp.mpf("0.0585499951473")
@@ -250,9 +251,12 @@ def main() -> int:
     wb.add_data("open_bridge",
                 "the function-level identification O_φ ↔ D_odd requires the "
                 "Stokes sector population of the state-integral transseries "
-                "on the real-q ray (the factorization normalization) — open; "
-                "named by the W9-parallel verdict as the scheme-fixing step. "
-                "Neither route's number is wired anywhere.")
+                "on the real-q ray (the factorization normalization) — open. "
+                "NOTE: the g3 lane's own SCHEME ambiguity has since closed "
+                "(δ-torus median, 5e-16) — what remains open is the bridge "
+                "between the two OBJECTS (σ-pair coefficientwise projection "
+                "vs Habiro-face function value), not their scheme. Neither "
+                "route's number is wired anywhere.")
     wb.add_data("verdict",
                 (f"TWO-ROUTE CONFRONTATION RECORDED: O_φ = {mp.nstr(O_t, 8)} "
                  f"(σ-pair, calibration-free) vs D_odd = {mp.nstr(D_ODD, 6)} "
