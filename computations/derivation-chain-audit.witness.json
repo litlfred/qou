@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-25T14:33:15.063815+00:00",
-  "commitSha": "d28bec4d31eb383f59fc32e712d5eaae18a48fab",
+  "computedAt": "2026-07-25T18:53:08.378351+00:00",
+  "commitSha": "6fbe76d6585380e7cd00cbbe37f990b0fd07264d",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -153,9 +153,9 @@
     },
     {
       "name": "chain_valid[c-q-q0.derivation]",
-      "computed": true,
+      "computed": false,
       "expected": true,
-      "passed": true
+      "passed": false
     },
     {
       "name": "leaf_value[c-q-q0.derivation]",
@@ -558,8 +558,8 @@
       "tolerance": 9.9124115660574e-11
     }
   ],
-  "allPassed": true,
-  "durationMs": 3,
+  "allPassed": false,
+  "durationMs": 4,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "ff40fb7a9d7d",
@@ -1187,7 +1187,9 @@
         "computed_value": 9.092678397394828,
         "structural_ok": true,
         "leaf_matches": true,
-        "issues": [],
+        "issues": [
+          "c_q algebra re-eval at q_0=1.1099785827513808 gives 9.092679456150243 vs target 9.092678397394828 (rel_diff 1.16e-07, target_tolerance 1.00e-12)"
+        ],
         "trust_summary": {
           "axiom": 2,
           "derived": 2,
@@ -2057,16 +2059,22 @@
         "all-nuclides-sdp-admissibility.witness.json",
         "all-nuclides-wedderburn-spectral-v2.witness.json",
         "alpha-basis-knot-couplings.witness.json",
+        "alpha-em-1pi-spectral-zeta.witness.json",
         "alpha-em-4pi-fixed-point-solve.witness.json",
         "alpha-em-4pi-q0-sensitivity.witness.json",
         "alpha-em-anchor-preference.witness.json",
         "alpha-em-b2-bring-period-matrix.witness.json",
+        "alpha-em-b2-hecke-s5-symmetry.witness.json",
         "alpha-em-b2-hodge-normalization.witness.json",
         "alpha-em-b2-invariant-c.witness.json",
+        "alpha-em-b2-period-intertwiner.witness.json",
         "alpha-em-b2-scalar-c.witness.json",
         "alpha-em-b2-tau-intertwiner.witness.json",
+        "alpha-em-b2-tau-w-freedom.witness.json",
+        "alpha-em-b2-tits-deformation.witness.json",
         "alpha-em-bring-jacobian-zeta-determinant.witness.json",
         "alpha-em-channel-split-loop-measure.witness.json",
+        "alpha-em-dbar-route.witness.json",
         "alpha-em-form-ladder.witness.json",
         "alpha-em-loop-measure-consistency.witness.json",
         "alpha-em-no-pi-4-3-source.witness.json",
@@ -3038,6 +3046,11 @@
         "qm-channel-contribution-probe.witness.json",
         "qns-enstrophy-grade-probe.witness.json",
         "qns-levi-lock-scaling-probe.witness.json",
+        "qns-overlap-race-probe.witness.json",
+        "qns-pair-riccati-probe.witness.json",
+        "qns-self-sustainment-discriminator.witness.json",
+        "qns-self-sustainment-probe.witness.json",
+        "qns-sustainment-n-scaling.witness.json",
         "qou-mass-canonical-wiring-example.witness.json",
         "quintic-zeta5-monodromy-phase.witness.json",
         "r5-full-canonical-knot-solver.witness.json",
