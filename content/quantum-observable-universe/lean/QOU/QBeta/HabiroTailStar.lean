@@ -13,14 +13,23 @@ for n ≤ 64):
 with q̄ = a², q̃ = a⁻². Consequences (same PRs): the Borel residue
 c∞ = (q̃;q̃)_∞², the transient ratio q̃, the pole ladder at w = −q₀ᵏ.
 
-This file pins the algebra: the Gaussian binomial by the Pascal
-recurrence, its vanishing and dual-Pascal lemmas (sorry-free), the
-**bar-inversion lemma** `[n,k]_q = q^{k(n−k)}·[n,k]_{q⁻¹}` (sorry-free —
-the mathematical heart of (★): it is what collapses the quadratic
-exponents), the Masbaum coefficient, the (★) statement at every order,
-and proved instances at n = 0, 1. The general-n (★) proof (a finite
-Finset.sum manipulation on top of the inversion lemma) is stated with
-an honest `sorry` + witness citation, per §1 of the Lean rules.
+This file pins the algebra and **proves (★) at every order `n`,
+sorry-free** (bean qou-rk84): the Gaussian binomial by the Pascal
+recurrence with its vanishing and dual-Pascal lemmas, the
+**bar-inversion lemma** `[n,k]_q = q^{k(n−k)}·[n,k]_{q⁻¹}` (the
+mathematical heart of (★): it is what collapses the quadratic
+exponents), the **squared-Pochhammer inversion**
+`(q;q)_n² = q^{n(n+1)}·(q⁻¹;q⁻¹)_n²` (the prefactor's half of the same
+collapse — squaring clears the `(−1)ⁿ` and the half-exponent), the
+Masbaum coefficient, and the general-`n` theorem.
+
+Proof shape: bar-inversion turns each summand's `a`-exponent
+`3n²+5n+k²−2k−3nk−k(n−k)` into `3n²+5n−2k−2nk`; the overall
+`a^{−(5n²+7n)}` then leaves `−2(n+1)(n+k)`, i.e. exactly
+`(a²)^{−n(n+1)}·((a²)^{−1})^{k(n+1)}` — linear in `k`, with the
+`(a²)^{−n(n+1)}` absorbed by the Pochhammer inversion. So the compute
+that verified (★) machine-exactly for n ≤ 32 is now discharged as a
+theorem for all n.
 
 Base ring (§7c): everything is algebraic over a generic `Field R` with
 `a ≠ 0` — no archimedean construct, pre-wall.
@@ -189,6 +198,30 @@ lemma gaussBinom_inv (q : R) (hq : q ≠ 0) : ∀ n k : ℕ,
 /-- `(q;q)_n = ∏_{j=1..n} (1 − q^j)`. -/
 def qPoch (q : R) (n : ℕ) : R := ∏ j ∈ range n, (1 - q ^ (j + 1))
 
+/-- **Bar-inversion of the squared Pochhammer**:
+`(q;q)_n² = q^{n(n+1)}·(q⁻¹;q⁻¹)_n²` for `q ≠ 0`. (The unsquared form
+carries a `(−1)ⁿ` and the half-exponent `n(n+1)/2`; squaring clears
+both, and the square is what (★) needs.) -/
+lemma qPoch_sq_inv (q : R) (hq : q ≠ 0) : ∀ n : ℕ,
+    qPoch q n ^ 2 = q ^ (n * (n + 1)) * qPoch q⁻¹ n ^ 2 := by
+  intro n
+  induction n with
+  | zero => simp [qPoch]
+  | succ n ih =>
+    have hu : q ^ (n + 1) * q⁻¹ ^ (n + 1) = 1 := by
+      rw [← mul_pow, mul_inv_cancel₀ hq, one_pow]
+    have hp : qPoch q (n + 1) = qPoch q n * (1 - q ^ (n + 1)) := by
+      simp only [qPoch, Finset.prod_range_succ]
+    have hpi : qPoch q⁻¹ (n + 1) = qPoch q⁻¹ n * (1 - q⁻¹ ^ (n + 1)) := by
+      simp only [qPoch, Finset.prod_range_succ]
+    have hsq : (1 - q ^ (n + 1)) ^ 2
+        = (q ^ (n + 1)) ^ 2 * (1 - q⁻¹ ^ (n + 1)) ^ 2 := by
+      linear_combination
+        (2 * q ^ (n + 1) - q ^ (n + 1) * q⁻¹ ^ (n + 1) - 1) * hu
+    have he : (n + 1) * (n + 1 + 1) = n * (n + 1) + 2 * (n + 1) := by ring
+    rw [hp, hpi, mul_pow, mul_pow, ih, he, hsq]
+    ring
+
 /-- The exact Masbaum coefficient `C_{5₂,n}(a)` (integer Laurent in `a`;
 DOI 10.2140/agt.2003.3.537), transcribed from the merged compute:
 `C_n(a) = (−1)ⁿ Σ_k a^{3n²+5n+k²−2k−3nk} · a^{−k(n−k)}·[n,k]_{a²}` —
@@ -206,12 +239,63 @@ theorem star (a : R) (ha : a ≠ 0) (n : ℕ) :
       = (-1) ^ n * qPoch (a ^ 2)⁻¹ n ^ 2
           * ∑ k ∈ range (n + 1),
               ((a ^ 2)⁻¹) ^ (k * (n + 1)) * gaussBinom (a ^ 2)⁻¹ n k := by
+  have ha2 : (a ^ 2 : R) ≠ 0 := pow_ne_zero _ ha
+  -- `(a²)^m` and `((a²)⁻¹)^m` as `zpow`s of `a`
+  have hpos : ∀ m : ℕ, ((a ^ 2 : R)) ^ m = a ^ (2 * (m : ℤ)) := by
+    intro m
+    rw [show (2 * (m : ℤ)) = ((2 * m : ℕ) : ℤ) by push_cast; ring,
+        zpow_natCast, pow_mul]
+  have hinv : ∀ m : ℕ, ((a ^ 2 : R)⁻¹) ^ m = a ^ (-(2 * (m : ℤ))) := by
+    intro m
+    rw [inv_pow, hpos m, ← zpow_neg]
+  -- exponent-collecting shapes (the base is nonzero, so `zpow` adds)
+  have e1 : ∀ (x y z : ℤ) (g : R),
+      a ^ x * (a ^ y * g) * a ^ z = a ^ (x + y + z) * g := by
+    intro x y z g
+    rw [zpow_add₀ ha, zpow_add₀ ha]
+    ring
+  have e2 : ∀ (x y : ℤ) (g : R), a ^ x * (a ^ y * g) = a ^ (x + y) * g := by
+    intro x y g
+    rw [zpow_add₀ ha]
+    ring
+  -- the Pochhammer prefactor, inverted
+  have hP := qPoch_sq_inv (a ^ 2) ha2 n
+  -- the prefactor cancellation `(a²)^{n(n+1)} · a^{−2n(n+1)} = 1`
+  have hcancel : (a ^ 2 : R) ^ (n * (n + 1))
+      * a ^ (-(2 * ((n : ℤ) * ((n : ℤ) + 1)))) = 1 := by
+    rw [hpos (n * (n + 1)), ← zpow_add₀ ha]
+    have hz : (2 * ((n * (n + 1) : ℕ) : ℤ))
+        + (-(2 * ((n : ℤ) * ((n : ℤ) + 1)))) = 0 := by
+      push_cast
+      ring
+    rw [hz, zpow_zero]
+  -- the sum-level identity: bar-inversion collapses every term, and the
+  -- surviving `a`-exponent is `−2(n+1)(n+k)` — linear in `k` after the
+  -- quadratic parts cancel.
+  have hsum : masbaumC a n * a ^ (-(5 * (n : ℤ) ^ 2 + 7 * n))
+      = (-1) ^ n * (a ^ (-(2 * ((n : ℤ) * ((n : ℤ) + 1))))
+          * ∑ k ∈ range (n + 1),
+              ((a ^ 2)⁻¹) ^ (k * (n + 1)) * gaussBinom (a ^ 2)⁻¹ n k) := by
+    rw [masbaumC, mul_assoc]
+    congr 1
+    rw [Finset.sum_mul, Finset.mul_sum]
+    refine Finset.sum_congr rfl ?_
+    intro k hk
+    have hkn : k ≤ n := Nat.lt_succ_iff.mp (Finset.mem_range.mp hk)
+    have hcast : ((n - k : ℕ) : ℤ) = (n : ℤ) - (k : ℤ) := Nat.cast_sub hkn
+    rw [gaussBinom_inv (a ^ 2) ha2 n k, hpos (k * (n - k)),
+        hinv (k * (n + 1)), e1, e2]
+    congr 1
+    push_cast [hcast]
+    ring
   -- Ref: [manuscript] computations/qbeta-habiro-tail-util.witness.json
   -- (machine-exact n ≤ 32) + qbeta-5two-gbar-pole-ladder.witness.json
-  -- (1e-497, n ≤ 64). Proof route: gaussBinom_inv collapses the
-  -- quadratic exponents termwise; the remaining exponent identity is
-  -- linear (omega). Queued on bean qou-rk84.
-  sorry
+  -- (1e-497, n ≤ 64) — the compute this proof now discharges.
+  linear_combination (masbaumC a n * a ^ (-(5 * (n : ℤ) ^ 2 + 7 * n))) * hP
+    + ((a ^ 2 : R) ^ (n * (n + 1)) * qPoch (a ^ 2)⁻¹ n ^ 2) * hsum
+    + ((-1 : R) ^ n * qPoch (a ^ 2)⁻¹ n ^ 2
+        * ∑ k ∈ range (n + 1),
+            ((a ^ 2)⁻¹) ^ (k * (n + 1)) * gaussBinom (a ^ 2)⁻¹ n k) * hcancel
 
 /-- (★) at `n = 0`: both sides are `1`. -/
 example (a : R) :
