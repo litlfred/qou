@@ -143,6 +143,7 @@ import QOU.GradedFrobeniusHopf
 import QOU.ChannelSeparation
 import QOU.Archimedean
 import QOU.Archimedean.DilogReflection
+import QOU.Archimedean.DilogPartBBranchPointLimit
 import QOU.Interactions
 import QOU.Encounter
 import QOU.BraidKnot
