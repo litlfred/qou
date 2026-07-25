@@ -13,6 +13,7 @@
 
 import QOU.Basic
 import QOU.MathlibExt
+import QOU.MathlibExt.QuadraticIrrationalBadlyApproximable
 import QOU.MathlibExt.MarkovTrace
 import QOU.MathlibExt.QuantumDilogarithm
 import QOU.MathlibExt.QuantumDilogarithmInfinite
