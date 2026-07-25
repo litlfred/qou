@@ -282,4 +282,46 @@ theorem integral_one_to_c_eq_LiTwo_sub {x c : ℝ} (hx0 : 0 < x) (hc1 : 1 ≤ c)
   rw [hlhs, key, mul_one]
   exact integral_Icc_eq_LiTwo_sub hx0 hxle hxc
 
+/-- **V3 brick 3f — the error decomposition.**  The `riemann_error_bound_up`
+    majorant factors exactly as a boundary log-term minus a manifestly-vanishing
+    term:
+    `qⁿ(q−1)(h(qⁿ)−h(1)) = (q−1)·(−log(1−xqⁿ)) − (q−1)·qⁿ·(−log(1−x))`,
+    using `qⁿ·h(qⁿ) = −log(1−xqⁿ)`.  The second term `→ 0` (since `qⁿ ≤ 1/x` is
+    bounded and `q−1 → 0`), so the whole W-P1 error reduces to the single
+    boundary limit `(q−1)·log(1−xqⁿ) → 0`. -/
+theorem error_up_eq {x q : ℝ} (n : ℕ) (hqn : q ^ n ≠ 0) :
+    q ^ n * (q - 1) * ((-Real.log (1 - x * q ^ n) / q ^ n) - (-Real.log (1 - x * 1) / 1))
+      = (q - 1) * (-Real.log (1 - x * q ^ n))
+        - (q - 1) * q ^ n * (-Real.log (1 - x * 1)) := by
+  field_simp
+
+/-- **V3 assembly — the W-P1 Riemann bound.**  For `1 < q` and `x·qⁿ < 1`, the
+    positive-factor rescaled log-sum `(1−q)·Σ_{k<n} log(1−xqᵏ)` approximates the
+    dilog difference `Li₂(xqⁿ) − Li₂(x)` from below, with error bounded by the
+    explicit boundary decomposition:
+
+    `0 ≤ (Li₂(xqⁿ) − Li₂(x)) − (1−q)Σ log(1−xqᵏ)`
+    `  ≤ (q−1)·(−log(1−xqⁿ)) − (q−1)·qⁿ·(−log(1−x))`.
+
+    Assembles the telescoping bound (`riemann_error_bound_up`), the change of
+    variables (`integral_one_to_c_eq_LiTwo_sub`), the log-sum identity
+    (`partialSum_up_eq`) and the error decomposition (`error_up_eq`).  As
+    `q → 1⁺` with `xqⁿ → 1⁻`, `Li₂(xqⁿ) → π²/6` (brick 2's Abel limit), so W-P1
+    converges to `Li₂(x) − π²/6` **iff** the boundary term `(q−1)·log(1−xqⁿ) → 0`
+    — the single remaining scalar limit (controlled by the Faddeev scaling). -/
+theorem wp1_riemann_bound {x q : ℝ} (hx0 : 0 < x) (hq1 : 1 < q) (n : ℕ)
+    (hqn : x * q ^ n < 1) :
+    0 ≤ (LiTwo (x * q ^ n) - LiTwo x)
+          - (1 - q) * ∑ k ∈ Finset.range n, Real.log (1 - x * q ^ k)
+      ∧ (LiTwo (x * q ^ n) - LiTwo x)
+          - (1 - q) * ∑ k ∈ Finset.range n, Real.log (1 - x * q ^ k)
+        ≤ (q - 1) * (-Real.log (1 - x * q ^ n))
+          - (q - 1) * q ^ n * (-Real.log (1 - x * 1)) := by
+  have hq0 : 0 < q := by linarith
+  obtain ⟨hlo, hhi⟩ := riemann_error_bound_up hx0 hq1 n hqn
+  rw [integral_one_to_c_eq_LiTwo_sub hx0 (one_le_pow₀ hq1.le) hqn,
+    partialSum_up_eq hq0 n] at hlo hhi
+  rw [error_up_eq n (ne_of_gt (pow_pos hq0 n))] at hhi
+  exact ⟨hlo, hhi⟩
+
 end QOU.Archimedean
