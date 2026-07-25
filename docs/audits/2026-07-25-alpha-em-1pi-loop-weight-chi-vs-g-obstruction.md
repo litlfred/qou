@@ -70,3 +70,44 @@ specific missing ingredient is a genus-linear (not Euler-linear) spectral source
 
 No fit; no instance; `1/(8π)` phase-4; nothing wired. Witness:
 `alpha-em-1pi-spectral-zeta.witness.json`.
+
+## Update — the ∂̄/Dolbeault route: supplies the mode-count, not the `1/π`
+
+Follow-up (`alpha_em_dbar_route_probe.py`). The one genuinely genus-linear
+candidate is the Dolbeault (`∂̄`) operator. Testing it splits `1/(8π)` cleanly:
+
+**Factor A — `1/b₁` (FORCED, genus-linear).** Riemann–Roch on the canonical bundle
+`K` (`deg K = 2g−2`, Serre duality `h¹(K)=h⁰(O)=1`) gives `h⁰(K) = g`, so
+`dim H^{1,0}(Bring) = g = 4`, `b₁ = 2g = 8`. This is the genus-linear source the
+χ-vs-g obstruction demanded — and it comes from `∂̄` / Riemann–Roch, **not** the
+scalar heat kernel. Forced.
+
+**Factor B — `1/π` (residual, NOT spectral).** The `∂̄`-index is `χ(O) = 1−g = χ/2`
+— still **proportional to `χ`** (`Δ_∂̄ = ½Δ_dR`, `ζ_∂̄(0)` is χ-controlled). So the
+`∂̄`-determinant gives a rational/log quantity, **not** a bare `1/π`. No spectral
+determinant (scalar *or* `∂̄`) produces the `1/π`.
+
+**The reduction:**
+
+> `1/(8π) = (1/b₁)·(1/π)` — with `1/b₁` **forced** (Hodge / Riemann–Roch), and the
+> residual `1/π` the **archimedean dilogarithm regulator**
+> (`conj:dilogarithm-archimedean-limit`; Part A proved, **Part B open**) — the same
+> μ-independent `π` behind the *proved* `2/(3π)` Bloch term.
+
+So the entire open α_EM `1/(8π)` **magnitude reduces to the single named conjecture
+Part B**, not to any missing spectral geometry. This is a *reduction/connection*,
+not a closure.
+
+## Session synthesis (three converging honest results)
+
+| ingredient | status |
+|---|---|
+| loop-weight **form** (`τ(Markov) ∝ Hodge`) | **proved** (Schur; #4160/#4199/#4209) |
+| loop-weight **magnitude** scalar `c` under `τ=W` | **free** (357× convention spread; `2026-07-25-…-tau-w-derivability-adversarial.md`) |
+| genus-linear **mode-count** `1/b₁` | **forced** (Hodge / Riemann–Roch, this doc) |
+| the `1/π` **coefficient** | **open** ⟺ archimedean dilog regulator Part B |
+
+Net: the α_EM `1/(8π)` is **form-forced, mode-count-forced, and magnitude-open**,
+with the *entire* remaining freedom now localized to **one** already-named,
+partially-proved conjecture (`conj:dilogarithm-archimedean-limit` Part B). No fit;
+no instance; `1/(8π)` phase-4; nothing wired.
