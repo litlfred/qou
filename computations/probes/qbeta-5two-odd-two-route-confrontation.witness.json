@@ -1,0 +1,109 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-25T12:47:20.125095+00:00",
+  "commitSha": "d88605b97711e417e213f16931723d86758c03e5",
+  "assertions": [
+    {
+      "name": "sigma_pair_projection_consistent",
+      "computed": 4.084548134568633e-18,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-06,
+      "source": "Im φ_σ1(x_sub): truncation = directional resummation (both converged at |x| ≈ 0.104)"
+    },
+    {
+      "name": "tail_law_ranking_reproducible",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "three-model tail-law ranking (algebraic / stretched / quadratic) identical across the two tail windows on the exact T̂_n"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "qbeta-5two-odd-two-route-confrontation",
+  "scriptFile": "qbeta_5two_odd_two_route_confrontation_probe.py",
+  "scriptHash": "1e8d70cb789a",
+  "scriptCommitSha": "d88605b97711e417e213f16931723d86758c03e5",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "A6.2: the two independent 5₂ odd-channel routes confronted at the substrate with NO scheme constant. A: the saddle-side σ-pair odd projection O_φ = Im φ_σ1(−ln q₀) (24-order basis; truncation vs Borel–Padé directional Laplace consistency-gated) — a derived, calibration-free odd number recorded scope-(a) against the Masbaum-face resummed D_odd and the anchor rows, with the function-level bridge (Stokes sector population on the real-q ray) explicitly named OPEN. B: a normalization-free structural tie — the soft-singularity exponent θ of the exact W9 q-Borel integer sequence, measured by a 3-parameter linear model (structural measurement, not a physics fit), vs the φ-side Gauss-prefactor prediction θ = 3/2. auditOnly; no c_k wired; no fit; no identification.",
+  "contentBlock": "prop:phi-b-unitary-bar-odd",
+  "data": {
+    "sigma_pair": {
+      "x_sub": "-0.10434072031952",
+      "O_phi_trunc": "0.01090896073871923902907116",
+      "O_phi_resummed": "0.01090896073871923907362933"
+    },
+    "confrontation_rows": {
+      "O_phi_sigma_pair": "0.0109089607387",
+      "D_odd_masbaum_face": "-0.00758",
+      "ratio_O_phi_over_D_odd": "-1.43917687846",
+      "S_muon": "0.00968298",
+      "S_proton": "-0.03945936",
+      "u_cubed": "0.00908764762134",
+      "Im_Vb": "0.0585499951473"
+    },
+    "tail_law": {
+      "models": {
+        "20..43": {
+          "algebraic_ln_n": {
+            "coef": "11.31629",
+            "rms": "0.0172254"
+          },
+          "stretched_sqrt_n": {
+            "coef": "8.2755456",
+            "rms": "0.0260513"
+          },
+          "quadratic_n2": {
+            "coef": "-0.01206366",
+            "rms": "0.0518945"
+          }
+        },
+        "28..43": {
+          "algebraic_ln_n": {
+            "coef": "9.3875636",
+            "rms": "0.00427405"
+          },
+          "stretched_sqrt_n": {
+            "coef": "6.3538134",
+            "rms": "0.0056469"
+          },
+          "quadratic_n2": {
+            "coef": "-0.0075786307",
+            "rms": "0.00972504"
+          }
+        }
+      },
+      "rankings": {
+        "20..43": [
+          "algebraic_ln_n",
+          "stretched_sqrt_n",
+          "quadratic_n2"
+        ],
+        "28..43": [
+          "algebraic_ln_n",
+          "stretched_sqrt_n",
+          "quadratic_n2"
+        ]
+      },
+      "best": "algebraic_ln_n",
+      "decisive": false,
+      "note": "single-model power-law extraction was window-unstable (theta 11.3 vs 9.4, first run) — no clean algebraic tail at n <= 43; the naive phi-side 3/2 tie is untestable at this depth (scope-(a))"
+    },
+    "open_bridge": "the function-level identification O_φ ↔ D_odd requires the Stokes sector population of the state-integral transseries on the real-q ray (the factorization normalization) — open; named by the W9-parallel verdict as the scheme-fixing step. Neither route's number is wired anywhere.",
+    "verdict": "TWO-ROUTE CONFRONTATION RECORDED: O_φ = 0.010908961 (σ-pair, calibration-free) vs D_odd = -0.00758 (Masbaum-face resummation) — ratio -1.43918, scope-(a), bridge OPEN. Tail law: best model = algebraic_ln_n (indicative); no clean algebraic n^-theta at n <= 43, so the naive phi-side 3/2 exponent tie is untestable at this depth (scope-(a)). auditOnly."
+  }
+}
