@@ -1,0 +1,54 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-07-25T17:42:03.721571+00:00",
+  "commitSha": "fa43775a0f073ebb4a3ce7ad9f2fb3aed0d88762",
+  "assertions": [
+    {
+      "name": "Survival is uniform in N (no growth of S_q with truncation; the infinite-dimensional escape does NOT open at the shell-model level)",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "S_q across N=(8, 12, 16, 20, 24): spread 1.18e+01; scope (a): this model/load/eps, alone"
+    },
+    {
+      "name": "q/classical ratio stays near 1 across the N sweep",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "R(N) within [0.2, 5] for all N"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 1393,
+  "computation": "qns-sustainment-n-scaling",
+  "scriptFile": "qns_sustainment_n_scaling.py",
+  "scriptHash": "17985fda12ef",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "mpmath": "1.4.1"
+  },
+  "description": "SF3 (epic qou-a3n3): tests the infinite-dimensional escape route left open by SF2 — sweep truncation N in (8..24) at fixed eps=1e-2, unforced DN q-shell (k_n=[n]_q), viscous-scaled horizon, with classical same-nu controls. If survival S_q(N) grows with N, sustainment re-emerges toward N->inf (escape open); if uniform, the unforced decay is N-uniform and the escape closes at the shell-model level — leaving external forcing as the only in-model route to the sustained channel. Scope (a); exploratory tier; float64 RK2.",
+  "data": {
+    "N8_S_q": 1.3499886750893063e-08,
+    "N8_R": 0.9730061365544334,
+    "N12_S_q": 5.803473368617085e-09,
+    "N12_R": 0.9469943936335129,
+    "N16_S_q": 2.9827755419087444e-09,
+    "N16_R": 0.9288267150470745,
+    "N20_S_q": 1.7629780753409023e-09,
+    "N20_R": 0.911164404475438,
+    "N24_S_q": 1.1407166900543393e-09,
+    "N24_R": 0.8937332729986587,
+    "S_spread": 11.834565820414166,
+    "tier": "exploratory",
+    "eps": 0.01
+  }
+}
