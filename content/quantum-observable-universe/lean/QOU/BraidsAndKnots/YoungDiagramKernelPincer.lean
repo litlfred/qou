@@ -272,4 +272,128 @@ theorem deriv_tiltedMean_zero (k : ℕ) (hk : 1 ≤ k) :
     deriv (tiltedMean k) 0 = covLnF k :=
   (hasDerivAt_tiltedMean_zero k hk).deriv
 
+/-! ## The hook form of leg [A2]
+
+The FRT quotient turns the log-dimension into log-factorial-minus-log-hooks,
+`ln f = ln k! − ln ∏h`, and covariance kills the constant, so
+
+    `covLnF k = − Cov₂(ln ∏h, ω₃)`.
+
+Hence **[A2] ⇔ the hook–spread positive correlation** `Cov₂(ln ∏h, ω₃) ≥ 0` — two "spread"
+functionals of the diagram positively correlated under the Plancherel-squared weight. This is the
+first *exact* step of the A2 hook/Frullani reduction
+(`wlambda-covariance-epic-A2-hook-reduction.witness.json`). **Status of the further Frullani
+step (corrected 2026-07-25):** the integral representation
+`Cov₂(ln f, ω₃) = ∫₀^∞ (1/s)·Cov₂(Σ_□ e^{−s·h}, ω₃) ds` itself survives, but the once-conjectured
+*pointwise* sign of its integrand is **FALSE for `n ≥ 29`** (first failure `max_s ≈ +0.056` at
+`s ≈ 0.52`, growing with `n`) — A2 holds by cancellation in `s`, not pointwise; see
+`docs/audits/2026-07-25-covariance-kernel-A2-pointwise-reduction-falsified.md`. The live lead is
+the moment-skeleton / even-hook-power route (`a168710a0d`: even hook-power moment positivity
+PROVED). -/
+
+/-- Finite list sums subtract termwise. -/
+theorem list_sum_map_sub {ι : Type*} (L : List ι) (f g : ι → ℝ) :
+    (L.map (fun i => f i - g i)).sum = (L.map f).sum - (L.map g).sum := by
+  induction L with
+  | nil => simp
+  | cons a t ih =>
+      simp only [List.map_cons, List.sum_cons, ih]
+      ring
+
+/-- Constants scale out of finite list sums. -/
+theorem list_sum_map_mul_left {ι : Type*} (L : List ι) (c : ℝ) (f : ι → ℝ) :
+    (L.map (fun i => c * f i)).sum = c * (L.map f).sum := by
+  induction L with
+  | nil => simp
+  | cons a t ih =>
+      simp only [List.map_cons, List.sum_cons, ih]
+      ring
+
+/-- **The FRT log identity** on enumerated partitions: `ln f = ln k! − ln ∏h` — the real form of
+`numSYTenum · prodHooks = n!` through the (proved) hook-product bridge and dimension
+positivity. -/
+theorem log_sytDim_eq (l : List ℕ) (hs : l.Sorted (· ≥ ·)) (hpos : ∀ x ∈ l, 0 < x) :
+    Real.log (sytDim l) = Real.log (l.sum).factorial - Real.log (hookProd l) := by
+  have hph : 0 < hookProd l := by
+    rw [YoungDiagramKernelDimPos.hookProd_eq_prodHooks l hs]
+    exact QOU.Mathlib.SYTEnum.prodHooks_pos l hs hpos
+  have hmul : sytDim l * hookProd l = (l.sum).factorial := by
+    rw [YoungDiagramKernelDimPos.sytDim_eq_numSYTenum l hs hpos,
+      YoungDiagramKernelDimPos.hookProd_eq_prodHooks l hs]
+    exact QOU.Mathlib.SYTEnum.numSYTenum_mul_prodHooks l hs hpos
+  have hcast : (sytDim l : ℝ) = ((l.sum).factorial : ℝ) / (hookProd l : ℝ) := by
+    have hphR : (hookProd l : ℝ) ≠ 0 := by exact_mod_cast hph.ne'
+    field_simp
+    exact_mod_cast hmul
+  rw [hcast, Real.log_div (by
+      exact_mod_cast (Nat.factorial_pos (l.sum)).ne') (by exact_mod_cast hph.ne')]
+
+/-- First log-hook moment `E₂[ln ∏h]`. -/
+noncomputable def lnHookMoment (k : ℕ) : ℝ :=
+  ((partsOf k).map (fun l => tilt 0 (sytDim l) * Real.log (hookProd l))).sum / tiltNorm k 0
+
+/-- First mixed log-hook moment `E₂[ln ∏h · ω₃]`. -/
+noncomputable def lnHookOmegaMoment (k : ℕ) : ℝ :=
+  ((partsOf k).map (fun l =>
+    tilt 0 (sytDim l) * Real.log (hookProd l) * (omega3 k l : ℝ))).sum / tiltNorm k 0
+
+/-- **The hook–spread covariance** `Cov₂(ln ∏h, ω₃)` — the [A2] quantity in hook form. -/
+noncomputable def covLnHooks (k : ℕ) : ℝ :=
+  lnHookOmegaMoment k - lnHookMoment k * tiltedMean k 0
+
+/-- **The exact hook reduction of leg [A2]**: `Cov₂(ln f, ω₃) = −Cov₂(ln ∏h, ω₃)`. The
+log-factorial is constant on `partsOf k` (every enumerated partition sums to `k`), and covariance
+kills constants. -/
+theorem covLnF_eq_neg_covLnHooks (k : ℕ) : covLnF k = -covLnHooks k := by
+  have hlog : ∀ l ∈ partsOf k,
+      tilt 0 (sytDim l) * Real.log (sytDim l)
+        = tilt 0 (sytDim l) * Real.log (k.factorial)
+          - tilt 0 (sytDim l) * Real.log (hookProd l) := by
+    intro l hl
+    obtain ⟨hsum, hpos, hsort⟩ := partsOf_facts k l hl
+    rw [log_sytDim_eq l hsort hpos, hsum]
+    ring
+  have hlogω : ∀ l ∈ partsOf k,
+      tilt 0 (sytDim l) * Real.log (sytDim l) * (omega3 k l : ℝ)
+        = Real.log (k.factorial) * (tilt 0 (sytDim l) * (omega3 k l : ℝ))
+          - tilt 0 (sytDim l) * Real.log (hookProd l) * (omega3 k l : ℝ) := by
+    intro l hl
+    obtain ⟨hsum, hpos, hsort⟩ := partsOf_facts k l hl
+    rw [log_sytDim_eq l hsort hpos, hsum]
+    ring
+  have hnum1 : ((partsOf k).map (fun l => tilt 0 (sytDim l) * Real.log (sytDim l))).sum
+      = Real.log (k.factorial) * tiltNorm k 0
+        - ((partsOf k).map (fun l => tilt 0 (sytDim l) * Real.log (hookProd l))).sum := by
+    rw [List.map_congr_left hlog, list_sum_map_sub]
+    congr 1
+    unfold tiltNorm
+    rw [show (fun l => tilt 0 (sytDim l) * Real.log (k.factorial))
+          = (fun l => Real.log (k.factorial) * tilt 0 (sytDim l)) from
+        funext fun l => mul_comm _ _, list_sum_map_mul_left]
+  have hnum2 : ((partsOf k).map (fun l =>
+        tilt 0 (sytDim l) * Real.log (sytDim l) * (omega3 k l : ℝ))).sum
+      = Real.log (k.factorial) * tiltOmega k 0
+        - ((partsOf k).map (fun l =>
+            tilt 0 (sytDim l) * Real.log (hookProd l) * (omega3 k l : ℝ))).sum := by
+    rw [List.map_congr_left hlogω, list_sum_map_sub]
+    congr 1
+    unfold tiltOmega
+    rw [list_sum_map_mul_left]
+  unfold covLnF lnDimOmegaMoment lnDimMoment covLnHooks lnHookOmegaMoment lnHookMoment
+    tiltedMean
+  rw [hnum1, hnum2]
+  rcases eq_or_ne (tiltNorm k 0) 0 with hZ | hZ
+  · simp [hZ]
+  · field_simp
+    ring
+
+/-- **Leg [A2] in hook form**: `Cov₂(ln f, ω₃) ≤ 0 ↔ 0 ≤ Cov₂(ln ∏h, ω₃)` — the anti-correlation
+of dimension with spread is exactly the *positive* correlation of total log-hook with spread. The
+open [A2] target, restated on the hook statistic. (The pointwise-in-`s` Frullani attack on it is
+refuted for `n ≥ 29`; the surviving routes are integral-level cancellation and the
+moment-skeleton / even-hook-power lead.) -/
+theorem covLnF_nonpos_iff (k : ℕ) : covLnF k ≤ 0 ↔ 0 ≤ covLnHooks k := by
+  rw [covLnF_eq_neg_covLnHooks]
+  constructor <;> intro h <;> linarith
+
 end QOU.BraidsAndKnots.YoungDiagramKernelPincer
