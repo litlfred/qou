@@ -1,5 +1,7 @@
 import QOU.Archimedean.DilogarithmArchimedeanLimit
 import Mathlib.Algebra.Order.Ring.GeomSum
+import Mathlib.Analysis.Normed.Group.Tannery
+import Mathlib.NumberTheory.ZetaValues
 
 /-!
 # Part B of `conj:dilogarithm-archimedean-limit` — the Euler-tail coefficient limit (V1)
@@ -99,5 +101,58 @@ theorem euler_tail_coeff_le {j : ℕ} (hj : 1 ≤ j) {p : ℝ} (hp0 : 0 < p)
   calc p ^ j = 1 / (j : ℝ) * ((j : ℝ) * p ^ j) := by field_simp
     _ ≤ 1 / (j : ℝ) * ∑ i ∈ Finset.range j, p ^ i :=
         mul_le_mul_of_nonneg_left hbound (by positivity)
+
+/-- Positivity of the `j`-th Lambert coefficient for `0 < p < 1`, `j ≥ 1`. -/
+theorem euler_tail_coeff_nonneg {j : ℕ} (hj : 1 ≤ j) {p : ℝ} (hp0 : 0 < p)
+    (hp1 : p < 1) : 0 ≤ (1 - p) * p ^ j / (1 - p ^ j) := by
+  have hpj1 : p ^ j < 1 := pow_lt_one₀ hp0.le hp1 (by omega)
+  apply div_nonneg (mul_nonneg (by linarith) (by positivity))
+  linarith
+
+/-- **V2 (heart) — the Lambert `j`-series limit.**  The negative-factor Euler tail
+    in its Lambert form converges to `ζ(2) = π²/6` as `p → 1⁻`:
+
+    `Σ_{j} (1/j)·(1−p)·pʲ/(1−pʲ) → Σ_{j} 1/j² = π²/6`.
+
+    This is Tannery's theorem (`tendsto_tsum_of_dominated_convergence`) applied to
+    the two V1 inputs: termwise `(1/j)·(1−p)pʲ/(1−pʲ) → 1/j²`
+    (`euler_tail_coeff_limit`), uniformly dominated by the summable `1/j²`
+    (`euler_tail_coeff_le` + `euler_tail_coeff_nonneg`), with `Σ 1/j² = π²/6`
+    (`hasSum_zeta_two`).  The Lambert rearrangement
+    `−log ∏(1−pᵐ) = Σⱼ (1/j)·pʲ/(1−pʲ)` (which turns this into the eta asymptotic
+    `(1−p)·log ∏(1−pᵐ) → −π²/6`) is the remaining W-P2 step. -/
+theorem euler_tail_jseries_tendsto :
+    Tendsto (fun p : ℝ => ∑' j : ℕ, (1 / (j : ℝ)) * ((1 - p) * p ^ j / (1 - p ^ j)))
+      (𝓝[<] 1) (𝓝 (Real.pi ^ 2 / 6)) := by
+  have hpos : ∀ᶠ p in 𝓝[<] (1 : ℝ), (0 : ℝ) < p := by
+    have hmem : Set.Ioi (0 : ℝ) ∈ 𝓝 (1 : ℝ) := Ioi_mem_nhds (by norm_num)
+    exact (Filter.eventually_of_mem hmem (fun p hp => Set.mem_Ioi.mp hp)).filter_mono
+      nhdsWithin_le_nhds
+  rw [← hasSum_zeta_two.tsum_eq]
+  refine tendsto_tsum_of_dominated_convergence (bound := fun j : ℕ => 1 / (j : ℝ) ^ 2)
+    hasSum_zeta_two.summable ?_ ?_
+  · -- termwise limit
+    intro j
+    rcases Nat.eq_zero_or_pos j with hj0 | hj1
+    · subst hj0
+      simp only [Nat.cast_zero, one_div, inv_zero, zero_mul, ne_eq, OfNat.ofNat_ne_zero,
+        not_false_eq_true, zero_pow]
+      simp
+    · have hlim := (euler_tail_coeff_limit j hj1).const_mul (1 / (j : ℝ))
+      have heq : (1 / (j : ℝ)) * (1 / (j : ℝ)) = 1 / (j : ℝ) ^ 2 := by
+        rw [div_mul_div_comm, one_mul, ← pow_two]
+      rwa [heq] at hlim
+  · -- uniform domination
+    filter_upwards [self_mem_nhdsWithin, hpos] with p hp1 hp0
+    intro j
+    rcases Nat.eq_zero_or_pos j with hj0 | hj1
+    · subst hj0; simp
+    · have hp1' : p < 1 := hp1
+      have hcn := euler_tail_coeff_nonneg hj1 hp0 hp1'
+      have hcle := euler_tail_coeff_le hj1 hp0 hp1'
+      rw [Real.norm_eq_abs, abs_of_nonneg (mul_nonneg (by positivity) hcn)]
+      calc (1 / (j : ℝ)) * ((1 - p) * p ^ j / (1 - p ^ j))
+          ≤ (1 / (j : ℝ)) * (1 / (j : ℝ)) := mul_le_mul_of_nonneg_left hcle (by positivity)
+        _ = 1 / (j : ℝ) ^ 2 := by rw [div_mul_div_comm, one_mul, ← pow_two]
 
 end QOU.QPochhammer
