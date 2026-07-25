@@ -1031,6 +1031,95 @@ theorem abs_integral_log_sin_cell_le {h a b : ℝ} (hh : 0 < h) (hhalf : h ≤ �
       ≤ (|Real.log (2 * Real.sin h)| + Real.log 2) * (b - a) := this
     _ = (b - a) * (|Real.log (2 * Real.sin h)| + Real.log 2) := by ring
 
+/-- **E5c-2 — pointwise integrand bound (sorry-free).** On the mirror window
+    `[h, π−h]`, `|log(2 sin u)| ≤ |log(2 sin h)| + log 2` — ceiling + floor
+    combined. (bean qou-n8d0) -/
+theorem abs_log_two_sin_le {h u : ℝ} (hh : 0 < h) (hhalf : h ≤ π / 2)
+    (hu1 : h ≤ u) (hu2 : u ≤ π - h) :
+    |Real.log (2 * Real.sin u)| ≤ |Real.log (2 * Real.sin h)| + Real.log 2 := by
+  have hpi := Real.pi_pos
+  have hceil : Real.log (2 * Real.sin u) ≤ Real.log 2 :=
+    log_two_sin_le_log_two (by linarith) (by linarith)
+  have hfloor : Real.log (2 * Real.sin h) ≤ Real.log (2 * Real.sin u) :=
+    log_two_sin_ge_boundary hh hhalf hu1 hu2
+  rw [abs_le]
+  constructor
+  · have := neg_abs_le (Real.log (2 * Real.sin h))
+    nlinarith [Real.log_nonneg (by norm_num : (1:ℝ) ≤ 2)]
+  · nlinarith [abs_nonneg (Real.log (2 * Real.sin h))]
+
+/-- **E5 F-bridge (sorry-free).** The log-sine integral over any window as a
+    Clausen-primitive difference: `∫_a^b = F(b) − F(a)` with
+    `F(x) = −clausen(2x)/2`. -/
+theorem integral_log_sin_window (a b : ℝ) :
+    (∫ u in a..b, Real.log (2 * Real.sin u))
+      = (-clausen (2 * b) / 2) - (-clausen (2 * a) / 2) := by
+  have hadd := intervalIntegral.integral_add_adjacent_intervals
+    (intervalIntegrable_log_two_sin 0 a) (intervalIntegrable_log_two_sin a b)
+  have h1 := integral_log_two_sin a
+  have h2 := integral_log_two_sin b
+  linarith
+
+/-- **Saddle brick E5c-1 — rising uniform deviation (sorry-free).** For every
+    `k` in the rising range `(k+1)π/N ≤ π/2`, the scaled Kashaev log-sum
+    deviates from the Clausen primitive `F(kπ/N) = −clausen(2kπ/N)/2` by at most
+    the k-INDEPENDENT master error
+    `E₁(N) = |F(π/N)| + (π/N)|f(π/N)| + (π/N)(|f(π/N)| + log 2)`
+    — assembled from the E4e-i sandwich, the F-bridge, and the crude bound on
+    the single overshoot cell `[kπ/N, (k+1)π/N]`. Every E₁ summand → 0 by E4d.
+    (bean qou-bnge) -/
+theorem abs_rising_deviation_le {N k : ℕ} (hN : 1 ≤ N) (hk : 1 ≤ k)
+    (hhalf : ((k : ℝ) + 1) * (π / N) ≤ π / 2) :
+    |(π / N) * (∑ j ∈ Finset.Icc 1 k, Real.log (2 * Real.sin ((j : ℝ) * (π / N))))
+        - (-clausen (2 * ((k : ℝ) * (π / N))) / 2)|
+      ≤ |(-clausen (2 * (π / N)) / 2)|
+        + (π / N) * |Real.log (2 * Real.sin (π / N))|
+        + (π / N) * (|Real.log (2 * Real.sin (π / N))| + Real.log 2) := by
+  have hpi := Real.pi_pos
+  have hNpos : (0 : ℝ) < N := by exact_mod_cast hN
+  have hh : (0 : ℝ) < π / N := by positivity
+  have hk1 : (1 : ℝ) ≤ (k : ℝ) := by exact_mod_cast hk
+  have hkhalf : (k : ℝ) * (π / N) ≤ π / 2 := by nlinarith
+  have hhπ : π / N ≤ π / 2 := by nlinarith
+  -- upper: h·S(k) ≤ F((k+1)h) − F(h)  (E4e-i upper + F-bridge)
+  have hup := sum_log_sin_le_integral_Icc hN hk hhalf
+  rw [integral_log_sin_window] at hup
+  -- lower: F(kh) − F(h) + h·f(h) ≤ h·S(k)  (E4e-i lower + F-bridge)
+  have hlo := integral_le_sum_log_sin_Icc hN hk hkhalf
+  rw [integral_log_sin_window] at hlo
+  -- the overshoot cell [kh, (k+1)h] ⊆ [h, π−h]
+  have hcell : |(-clausen (2 * (((k : ℝ) + 1) * (π / N))) / 2)
+        - (-clausen (2 * ((k : ℝ) * (π / N))) / 2)|
+      ≤ (π / N) * (|Real.log (2 * Real.sin (π / N))| + Real.log 2) := by
+    have := abs_integral_log_sin_cell_le hh hhπ
+      (a := (k : ℝ) * (π / N)) (b := ((k : ℝ) + 1) * (π / N))
+      (by nlinarith) (by nlinarith) (by nlinarith)
+    rw [integral_log_sin_window] at this
+    calc |(-clausen (2 * (((k : ℝ) + 1) * (π / N))) / 2)
+          - (-clausen (2 * ((k : ℝ) * (π / N))) / 2)|
+        ≤ (((k : ℝ) + 1) * (π / N) - (k : ℝ) * (π / N))
+            * (|Real.log (2 * Real.sin (π / N))| + Real.log 2) := this
+      _ = (π / N) * (|Real.log (2 * Real.sin (π / N))| + Real.log 2) := by ring
+  -- assemble the two-sided bound
+  rw [abs_le]
+  rw [abs_le] at hcell
+  constructor
+  · -- lower side: from hlo
+    have h1 := abs_nonneg (Real.log (2 * Real.sin (π / N)))
+    have h2 := le_abs_self (-clausen (2 * (π / N)) / 2)
+    have h3 := neg_abs_le (-clausen (2 * (π / N)) / 2)
+    have h4 := neg_abs_le (Real.log (2 * Real.sin (π / N)))
+    have h5 := le_abs_self (Real.log (2 * Real.sin (π / N)))
+    have h6 := Real.log_nonneg (by norm_num : (1:ℝ) ≤ 2)
+    nlinarith [hlo, mul_le_mul_of_nonneg_left h5 (le_of_lt hh),
+      mul_le_mul_of_nonneg_left h4 (le_of_lt hh)]
+  · -- upper side: from hup + hcell
+    have h2 := le_abs_self (-clausen (2 * (π / N)) / 2)
+    have h3 := neg_abs_le (-clausen (2 * (π / N)) / 2)
+    nlinarith [hup, hcell.2, mul_le_mul_of_nonneg_left
+      (le_abs_self (Real.log (2 * Real.sin (π / N)))) (le_of_lt hh),
+      mul_nonneg (le_of_lt hh) (abs_nonneg (Real.log (2 * Real.sin (π / N))))]
+
 /-- **The series Clausen's derivative** `Cl_2'(θ) = -log(2 sin(θ/2))` for
     `θ ∈ (0, 2π)` — the derivative the filler flagged as needing Fourier
     infrastructure, now machine-proved (`hasDerivAt_Cl_2_series`). Dual-purpose: `V'(θ)` of
