@@ -12,8 +12,13 @@ for all `n ≥ 3` by factoring out `n(n−1)(n−2)/3 = |C₃|` and exhibiting a
 cofactor:
 
   • `M_2(n) = n(n−1)(n−2)/3`                       (= |C₃|; cofactor ≡ 1)
-  • `M_4(n) = n(n−1)(n−2)/3 · 5·(n − 8/3)`         (cofactor linear, unique root 8/3 < 3 ⇒ > 0 for n ≥ 3)
-  • `M_6(n) = n(n−1)(n−2)/3 · 7·(3n − 8)²`         (cofactor a PERFECT SQUARE ⇒ ≥ 0, > 0 for n ≠ 8/3)
+  • `M_4(n) = n(n−1)(n−2)/3 · 5·(3n − 8)`          (cofactor linear, unique root 8/3 < 3 ⇒ > 0 for n ≥ 3)
+  • `M_6(n) = n(n−1)(n−2)/3 · 21·(3n − 8)²`        (cofactor a PERFECT SQUARE ⇒ ≥ 0, > 0 for n ≠ 8/3)
+
+  (Cofactors are relative to |C₃| = n(n−1)(n−2)/3; equivalently M_6(n) = 7·n(n−1)(n−2)·(3n−8)².
+  These `5(3n−8)` / `21(3n−8)²` forms are the exact ones the `cert_ok` check below verifies —
+  `Q3 == [-40,15]` resp. `[1344,-1008,189]`; an earlier prose label `5(n−8/3)` / `7(3n−8)²` was
+  off by a factor of 3. Positivity is unaffected.)
 
 Each cofactor is positive for every integer `n ≥ 3` by inspection (constant / linear-past-its-root /
 perfect square), so `M_{2j}(n) > 0` for `n ≥ 3` is a **theorem**, not a numerical observation. This is
@@ -134,8 +139,8 @@ def main() -> int:
     # manifest-positivity certificates (checked below): cofactor 3*q
     certs = {
         2: "cofactor = 1 (constant > 0)",
-        4: "cofactor = 5(n - 8/3): linear, unique root 8/3 < 3 ⇒ > 0 for n ≥ 3",
-        6: "cofactor = 7(3n - 8)^2: PERFECT SQUARE ⇒ ≥ 0, > 0 for n ≠ 8/3",
+        4: "cofactor = 5(3n - 8): linear, unique root 8/3 < 3 ⇒ > 0 for n ≥ 3",
+        6: "cofactor = 21(3n - 8)^2: PERFECT SQUARE ⇒ ≥ 0, > 0 for n ≠ 8/3",
     }
     for k in [2, 4, 6]:
         deg = k // 2 + 2
@@ -145,14 +150,16 @@ def main() -> int:
         interp_ok = all(polyval(C, Fr(n)) == Mk_exact(n, k) for n in range(n0 + deg + 1, n0 + deg + 4))
         q, rem = polydiv(C, base)
         divides = all(r == 0 for r in rem)
-        Q3 = [3 * c for c in q]  # 3 * cofactor
+        # Q3 = 3·(C/base) is the cofactor RELATIVE TO |C₃| = n(n-1)(n-2)/3
+        # (since M_k = base·q = (n(n-1)(n-2)/3)·(3q) = |C₃|·Q3).
+        Q3 = [3 * c for c in q]
         # verify manifest certificate exactly
         if k == 2:
             cert_ok = (Q3 == [Fr(1)])
         elif k == 4:
-            cert_ok = (Q3 == [Fr(-40), Fr(15)])            # 15n - 40 = 5(3n-8)? no: 3*5(n-8/3)=15n-40 ✓
+            cert_ok = (Q3 == [Fr(-40), Fr(15)])              # 15n - 40 = 5(3n-8)
         elif k == 6:
-            # 3 * 7(3n-8)^2 = 21(9n^2-48n+64) = 189n^2 -1008n +1344
+            # 21(3n-8)^2 = 21(9n^2-48n+64) = 189n^2 - 1008n + 1344
             cert_ok = (Q3 == [Fr(1344), Fr(-1008), Fr(189)])
         ok = interp_ok and divides and cert_ok
         all_ok &= ok
@@ -174,17 +181,18 @@ def main() -> int:
             "The even-k proof lead EXECUTED (qou-x631, qou-ogrk): even hook-power moments "
             "M_{2j}=Cov_Planch(Σ_□ h^{2j}, Σ_□ h²)=Σ_v v^{2j} ν_v are PROVED > 0 for all n≥3. Exact "
             "polynomials derived by Lagrange interpolation over exact Fraction values (cross-verified on "
-            "extra n): M_2=n(n-1)(n-2)/3=|C₃|; M_4=n(n-1)(n-2)/3·5(n-8/3); M_6=n(n-1)(n-2)/3·7(3n-8)². "
+            "extra n): M_2=n(n-1)(n-2)/3=|C₃|; M_4=n(n-1)(n-2)/3·5(3n-8); M_6=n(n-1)(n-2)/3·21(3n-8)² "
+            "(=7·n(n-1)(n-2)·(3n-8)²). "
             "Positivity is MANIFEST: after factoring n(n-1)(n-2)/3 (>0 for n≥3), the cofactors are a "
-            "constant (M_2), a linear with unique root 8/3<3 (M_4), and a PERFECT SQUARE 7(3n-8)² (M_6) "
+            "constant (M_2), a linear with unique root 8/3<3 (M_4), and a PERFECT SQUARE 21(3n-8)² (M_6) "
             "— each >0 for every integer n≥3 by inspection. So M_{2j}>0 (n≥3) is a THEOREM, the first "
             "proved positivity in the epic beyond the k≤7 decide instances. Settles the EVEN half of the "
             "moment skeleton (odd-k non-polynomial, empirical). Does NOT prove A2 (ln weight is concave "
             "— a global argument is still required per the pointwise-route correction). scope-(a); no "
             "fit; nothing wired; no c_k; L2 2/7.")
         w.add_data("M2_poly", "n(n-1)(n-2)/3 = |C3|")
-        w.add_data("M4_poly", "n(n-1)(n-2)/3 * 5(n-8/3)")
-        w.add_data("M6_poly", "n(n-1)(n-2)/3 * 7(3n-8)^2  (perfect-square cofactor)")
+        w.add_data("M4_poly", "n(n-1)(n-2)/3 * 5(3n-8)")
+        w.add_data("M6_poly", "n(n-1)(n-2)/3 * 21(3n-8)^2 = 7*n(n-1)(n-2)*(3n-8)^2  (perfect-square cofactor)")
         w.add_data("even_moment_positivity_proved_n_ge_3", bool(all_ok))
         w.add_data("certificate_type", "constant / positive-linear-past-root / perfect-square")
         w.add_data("does_not_prove_A2", "ln weight concave; global argument still required")
@@ -192,7 +200,7 @@ def main() -> int:
             "covariance_epic_A2_even_moment_positivity_proved",
             computed=str(int(all_ok)), expected="1", tolerance=0,
             source=("M_2,M_4,M_6 exact polynomials (interp-verified) = n(n-1)(n-2)/3 times manifestly "
-                    "positive cofactor (1 / 5(n-8/3) / 7(3n-8)^2) => M_{2j}>0 for all n>=3, PROVED. "
+                    "positive cofactor (1 / 5(3n-8) / 21(3n-8)^2) => M_{2j}>0 for all n>=3, PROVED. "
                     "First proved positivity beyond k<=7 decide. Does not prove A2. No fit; no c_k."))
         out = w.save()
         print(f"\nWitness: {out}")

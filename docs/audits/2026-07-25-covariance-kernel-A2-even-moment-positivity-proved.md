@@ -19,8 +19,13 @@ expose a **manifestly positive** cofactor:
 | moment | exact factorization | cofactor certificate |
 |---|---|---|
 | `M_2(n)` | `n(n−1)(n−2)/3` | `= \|C₃\|`; cofactor `≡ 1` |
-| `M_4(n)` | `n(n−1)(n−2)/3 · 5(n − 8/3)` | linear, unique root `8/3 < 3` ⇒ `> 0` for `n ≥ 3` |
-| `M_6(n)` | `n(n−1)(n−2)/3 · 7(3n − 8)²` | **perfect square** ⇒ `≥ 0`, `> 0` for `n ≠ 8/3` |
+| `M_4(n)` | `n(n−1)(n−2)/3 · 5(3n − 8)` | linear, unique root `8/3 < 3` ⇒ `> 0` for `n ≥ 3` |
+| `M_6(n)` | `n(n−1)(n−2)/3 · 21(3n − 8)²` (`= 7·n(n−1)(n−2)·(3n−8)²`) | **perfect square** ⇒ `≥ 0`, `> 0` for `n ≠ 8/3` |
+
+> **Cofactor correction (this PR).** The cofactors relative to `|C₃| = n(n−1)(n−2)/3` are `5(3n−8)`
+> and `21(3n−8)²` — the exact forms the probe's `cert_ok` verifies (`Q3 == [-40,15]` / `[1344,-1008,189]`).
+> An earlier revision of this table wrote `5(n−8/3)` / `7(3n−8)²`, off by a factor of 3. The positivity
+> conclusion is unaffected (both are positive-linear-past-root / perfect square).
 
 Since `n(n−1)(n−2)/3 > 0` for `n ≥ 3` and each cofactor is positive for every integer `n ≥ 3` by
 inspection (constant / linear-past-its-root / perfect square), `M_{2j}(n) > 0` for `n ≥ 3` is a
@@ -36,11 +41,14 @@ identified by the [pointwise-route correction](2026-07-25-covariance-kernel-A2-p
 is still required. The kernel and A2 themselves remain open §3b conjectures (both verified exactly
 `k,n ≤ 40`).
 
-## Formalizability
+## Formalizability — DONE (Lean, sorry-free)
 
-The certificates are Lean-ready: `M_6`'s cofactor `7(3n−8)²` is one `positivity`/`nlinarith` line, `M_4`'s
-`5(n−8/3)` a `linarith` on `n ≥ 3`, and `M_2 = |C₃|` already carried in
-`YoungDiagramKernel.lean`. A follow-up may formalize `M_4, M_6 > 0` directly.
+`M_4, M_6 > 0` are now formalized in
+[`YoungDiagramKernel.lean`](../../content/quantum-observable-universe/lean/QOU/BraidsAndKnots/YoungDiagramKernel.lean)
+(`threeM4_pos`, `M6_pos`; lean-direct exit 0 against Mathlib): `M_6 = 7·n(n−1)(n−2)·(3n−8)²` is a
+perfect-square product, `3·M_4 = 5·n(n−1)(n−2)·(3n−8)` positive past its root `8/3 < 3` — each an
+elementary `mul_pos`/`pow_pos`/`omega` chain. Together with the existing `k ≤ 7` `decide` instances
+this is the first *proved* (non-`decide`) positivity in the epic in Lean.
 
 ## Compute
 
