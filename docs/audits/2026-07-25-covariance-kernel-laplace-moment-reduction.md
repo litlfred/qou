@@ -53,6 +53,8 @@ The leading `j=1` term is `n·μ_L^{n-1}·Cov(ω₃, ln f) < 0` (the cited `n=1`
 
 The leading (cited) term is **negative and dominant**; the residual is **positive but small and shrinking** (`μ_L = Θ(ln k!) → ∞` while the fluctuation moments `E[ω₃ δ^j]` are Kerov-CLT order). So the sign of every `M_n` is **inherited from `n=1`**.
 
+`n=3` confirms the pattern: `Cov₃ = 3μ_L²·Cov(ω₃,ln f) + 3μ_L·E[ω₃δ²] + E[ω₃δ³] < 0` for all k=5..20, with `|resid/lead|` shrinking (0.45 at k=5 → 0.050 at k=20) and the normalized fluctuation ratio `E[ω₃δ²]/(2μ_L|Cov₁|) → 0` (0.084 → 0.026). So `resid = o(lead)` — the reduction is provable in the large-`k` limit, with the finitely many small `k` checked directly.
+
 ## 4. Proposed proof program
 
 Prove `Cov_Planch(ω₃, (ln f)^n) ≤ 0` per `n`:
