@@ -123,6 +123,7 @@ import QOU.LiftingDescent.QuantumCharacteristicClassDisplay
 import QOU.ParticleInteractions.HadronDisplay
 import QOU.ParticleInteractions.AtomKnot
 import QOU.ParticleInteractions.AtomicityRankOneOrderSeparation
+import QOU.ParticleInteractions.AtomicityFromSelfDuality
 import QOU.ParticleInteractions.WignerSU4FromSpinIsospin
 import QOU.Elaboration
 import QOU.PathIntegrals

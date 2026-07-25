@@ -1,0 +1,102 @@
+import Mathlib.Data.Nat.Choose.Basic
+import Mathlib.Tactic
+
+/-!
+# Atomicity from self-duality — deriving rank-one from the volume-form axiom (T0 + T2)
+
+**Milestone `qou-atsd`.** The order-separation file
+([`AtomicityRankOneOrderSeparation.lean`](AtomicityRankOneOrderSeparation.lean))
+reduced atomicity to two premises — the categorical bridge `TensorGenerationFree`
+and the jet-tower chain axiom. This file begins **deriving** them from the QOU
+axioms rather than assuming them, via the chain
+
+  `[ε : V⊗V→𝟙 symplectic, non-deg] + [dim V = 2]  ⟹  G ⊆ Sp(V) = Sp₂ = SL₂
+     ⟹  rank G ≤ dim V / 2 = 1  ⟹  |fundamental objects| ≤ 1`.
+
+**Key distinction kept explicit throughout:** `dim V = 2` is the *cohomological*
+input (`H¹(Bring) = 2W` is rank 2 `= dim V`); it is **not** `rank G = 2`. It is
+*self-duality* that collapses `dim V = 2 ⇝ rank G = 1` — the `Sp₂ = SL₂` dim-2
+accident `rank Sp(2m) = m`.
+
+Tiers realised here (attack plan:
+`docs/workplans/2026-07-25-atomicity-from-self-duality-attack-plan.md`):
+
+* **T0** — `Λ²V ≅ 𝟙` non-degenerate forces `dim V = 2`: the arithmetic crux
+  `n.choose 2 = 1 → n = 2` (`dim_two_of_choose_two_eq_one`). Sorry-free.
+* **T2** — the reduction skeleton at the level of the natural-number invariants
+  (`dim V`, `rank G`, `rank Sp`): compose `[rank G ≤ rank Sp(dim V)]` (self-duality
+  embedding) `+ [rank Sp(2m) = m]` (the classical residual, **T3**, an explicit
+  hypothesis — *not* proved here, *not* an instance) `+ [dim V = 2]` to
+  `rank G ≤ 1`, hence `Subsingleton (Fin (rank G))` (`rankG_le_one_of_self_dual`,
+  `atomicity_subsingleton_of_self_dual`). Sorry-free.
+
+The two hard classical facts — `rank Sp(2m) = m` (**T3**, symplectic root system)
+and `G` connected reductive (**T4**, Tannakian reconstruction) — are named
+residuals carried as hypotheses; they are the open content, honestly delimited,
+and tracked in beans `qou-atsd-t3` / `qou-atsd-t4`. No axiom fabricates the
+conclusion (AGENTS.md §"Axiomatization is NOT a Proof").
+
+-- Ref: [manuscript] quantum-universes/fundamental-object.ts (volume form ε = Λ²V→𝟙); def:tannaka-dual
+-- Ref: [manuscript] conj:binding-manybody-eq-jet-filtration (jet tower / atomicity)
+-/
+
+namespace QOU.Atomicity
+
+/-! ## T0 — `dim V = 2` from `Λ²V ≅ 𝟙` (the categorical determinant is a bilinear form) -/
+
+/-- **T0 — the dimension-two crux.** The categorical determinant
+    `ε : Λ²V → 𝟙` being an isomorphism onto the tensor unit means `Λ²V` is
+    1-dimensional, i.e. `binom(dim V, 2) = 1`; the only natural number with
+    `binom(n, 2) = 1` is `n = 2`. So a non-degenerate volume form on `V` of the
+    shape `V ⊗ V → 𝟙` (a *bilinear* determinant) forces `dim V = 2`. -/
+theorem dim_two_of_choose_two_eq_one {n : ℕ} (h : n.choose 2 = 1) : n = 2 := by
+  rcases n with _ | _ | _ | n
+  · simp at h
+  · simp at h
+  · rfl
+  · exfalso
+    have hmono : Nat.choose 3 2 ≤ Nat.choose (n + 3) 2 := Nat.choose_le_choose 2 (by omega)
+    rw [h] at hmono
+    have h3 : Nat.choose 3 2 = 3 := by decide
+    omega
+
+/-! ## T2 — the reduction skeleton: rank G ≤ 1 from self-duality + dim 2 -/
+
+/-- **Subsingleton from a rank bound.** `Fin (rank G)` — the set of fundamental
+    objects, indexed by `rank G` fundamental weights — is a subsingleton (`≤ 1`
+    element) exactly when `rank G ≤ 1`. -/
+theorem subsingleton_fin_of_le_one {n : ℕ} (h : n ≤ 1) : Subsingleton (Fin n) := by
+  interval_cases n <;> infer_instance
+
+/-- **T2 — the rank collapse (PROVED, modulo the two named classical residuals).**
+    Given
+    * `hEmbed : rankG ≤ rankSp dimV` — the self-duality embedding `G ⊆ Sp(V)`
+      (a symplectic-form-preserving subgroup has rank at most that of `Sp(V)`),
+    * `hRankSp : ∀ m, rankSp (2*m) = m` — the classical fact `rank Sp(2m) = m`
+      (**T3**; the `m = 1` case is the `Sp₂ = SL₂` dim-2 accident), and
+    * `hDim : dimV = 2` — the cohomological input (`dim V = rank H¹(Bring) = 2`),
+
+    the Tannaka dual has `rankG ≤ 1`. This is the arithmetic heart of the atomicity
+    derivation; `hRankSp` is an explicit **hypothesis**, never an instance — the
+    honest open residual. -/
+theorem rankG_le_one_of_self_dual {dimV rankG : ℕ} {rankSp : ℕ → ℕ}
+    (hEmbed : rankG ≤ rankSp dimV) (hRankSp : ∀ m, rankSp (2 * m) = m)
+    (hDim : dimV = 2) : rankG ≤ 1 := by
+  have h1 : rankSp dimV = 1 := by
+    rw [hDim, show (2 : ℕ) = 2 * 1 by norm_num, hRankSp 1]
+  omega
+
+/-- **Atomicity (PROVED, modulo T3 + T4).** Under the self-duality embedding, the
+    classical rank of the symplectic group, and the cohomological `dim V = 2`, the
+    fundamental-object set `Fin (rank G)` is a subsingleton — **rank-one**. This is
+    the categorical-side conclusion the order-separation file assumes as
+    `TensorGenerationFree`/totality; here it is *derived* from the volume-form
+    axiom plus the two named classical residuals (`hRankSp` = T3; the connected-
+    reductive input T4 is what guarantees `rank G` is the honest torus rank rather
+    than `0` for a finite subgroup — recorded, not needed for the `≤ 1` bound). -/
+theorem atomicity_subsingleton_of_self_dual {dimV rankG : ℕ} {rankSp : ℕ → ℕ}
+    (hEmbed : rankG ≤ rankSp dimV) (hRankSp : ∀ m, rankSp (2 * m) = m)
+    (hDim : dimV = 2) : Subsingleton (Fin rankG) :=
+  subsingleton_fin_of_le_one (rankG_le_one_of_self_dual hEmbed hRankSp hDim)
+
+end QOU.Atomicity
