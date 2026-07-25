@@ -1,4 +1,6 @@
 import QOU.MathlibExt.QIntegerFactorial
+import Mathlib.LinearAlgebra.Matrix.Determinant.Basic
+import Mathlib.LinearAlgebra.Matrix.Notation
 
 /-!
 # QOU.Hecke.H2GramArithmetic — the n=2 Gram determinant, arithmetic core
@@ -57,5 +59,29 @@ theorem h2_gram_det_ne_zero_iff_q_ne_neg_one (q : K) :
   constructor
   · exact fun h => eq_neg_of_add_eq_zero_right h
   · exact fun h => by rw [h]; ring
+
+open Matrix in
+/-- **The `H_2(q)` regular-trace Gram matrix** in the basis `{1, σ}`.
+    Entries are the observable traces `tr(L_{eᵢ eⱼ})`: `tr(1) = 2`,
+    `tr(σ) = q-1` (companion-matrix trace of `σ² = (q-1)σ + q`),
+    `tr(σ²) = tr((q-1)σ + q·1) = (q-1)² + 2q = q²+1`.  Taking the trace is
+    the observation step — the Gram *is* a matrix of observable results. -/
+def h2GramMatrix (q : K) : Matrix (Fin 2) (Fin 2) K :=
+  !![2, q - 1; q - 1, q ^ 2 + 1]
+
+open Matrix in
+/-- **The `H_2` Gram determinant equals `[2]_q²` (sorry-free).**  A direct
+    `2×2` determinant: `det = 2(q²+1) - (q-1)² = (q+1)² = [2]_q²`.  This is
+    the actual regular-trace Gram determinant — the `n = 2` case of
+    `det(Gram) = [n]_q!` (up to a unit) — now at the matrix level. -/
+theorem h2GramMatrix_det (q : K) : (h2GramMatrix q).det = qInt q 2 ^ 2 := by
+  rw [h2GramMatrix, Matrix.det_fin_two_of, qInt_two]; ring
+
+/-- **`H_2` semisimple ⟺ nonzero Gram determinant ⟺ `[2]_q! ≠ 0`
+    (sorry-free).**  Ties the concrete matrix determinant to Wenzl's
+    criterion at `n = 2`. -/
+theorem h2GramMatrix_det_ne_zero_iff (q : K) :
+    (h2GramMatrix q).det ≠ 0 ↔ qFactorial q 2 ≠ 0 := by
+  rw [h2GramMatrix_det, h2_gram_det_ne_zero_iff]
 
 end QOU.Hecke
