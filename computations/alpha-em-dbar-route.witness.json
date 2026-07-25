@@ -1,0 +1,50 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-07-25T17:12:50.463028+00:00",
+  "commitSha": "0ecd3e6006c36bd8de451fb942467dda8f671351",
+  "assertions": [
+    {
+      "name": "dbar_gives_modecount_not_1pi",
+      "computed": "true",
+      "expected": "true",
+      "passed": true,
+      "source": "h⁰(K)=g forced (RR); ∂̄-index=χ/2 χ-linear (no bare 1/π); 1/(8π)=(1/b₁)·(1/π) with 1/π=regulator"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 34,
+  "computation": "alpha-em-dbar-route",
+  "scriptFile": "alpha_em_dbar_route_probe.py",
+  "scriptHash": "842c46e0ebf2",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "∂̄/Dolbeault route to the α_EM 1/π loop weight. Riemann–Roch on K gives the FORCED genus-linear mode count (h⁰(K)=g=dim H^{1,0}, b₁=2g=8) — answering the χ-vs-g obstruction. But the ∂̄-index χ(O)=1−g=χ/2 is χ-proportional, so no spectral determinant gives a bare 1/π. Reduction: 1/(8π)=(1/b₁)·(1/π), 1/b₁ forced (Hodge), 1/π = archimedean dilog regulator (conj:dilogarithm-archimedean-limit Part B, open). The whole open magnitude ⟺ that one conjecture. Reduction, not closure. No fit; no instance; 1/(8π) phase-4.",
+  "contentBlock": "prop:em-coupling-bring-zero-mode",
+  "auditOnly": "docs/audits/2026-07-25-alpha-em-1pi-loop-weight-chi-vs-g-obstruction.md",
+  "parameters": {
+    "g": 4,
+    "b1": 8
+  },
+  "data": {
+    "dim_H10_eq_g": 4,
+    "b1_eq_2g": 8,
+    "dbar_index_1_minus_g": -3,
+    "residual_1_pi_source": "archimedean dilog regulator (conj:dilogarithm-archimedean-limit, Part B open)",
+    "verdict": "The ∂̄/Dolbeault route supplies the GENUS-LINEAR MODE COUNT but NOT the 1/π. Factor A: Riemann–Roch on K gives h⁰(K)=g=dim H^{1,0}, b₁=2g=8 — the forced genus-linear source the χ-vs-g obstruction demanded (from ∂̄, not the scalar heat kernel). Factor B: the ∂̄-index χ(O)=1−g=χ/2 is χ-proportional (rational/log), so no spectral determinant (scalar OR ∂̄) produces a bare 1/π. Hence 1/(8π) = (1/b₁)·(1/π): the mode-count 1/b₁ is FORCED (Hodge), and the residual 1/π is the archimedean dilog regulator (conj:dilogarithm-archimedean-limit, Part A proved / Part B open) — the same μ-independent π behind the proved 2/(3π) Bloch term. So the entire open α_EM 1/(8π) MAGNITUDE reduces to that ONE named conjecture (Part B), not to missing spectral geometry. A reduction/connection, not a closure. No fit; no instance; 1/(8π) phase-4; nothing wired."
+  },
+  "caveats": [
+    "Reduction, NOT closure. Factor A (mode count 1/b₁) is forced by Hodge/Riemann–Roch. Factor B (1/π) is NOT any spectral determinant — it is the archimedean dilog regulator (Part B, open). The α_EM 1/(8π) magnitude reduces to that single named conjecture."
+  ]
+}
