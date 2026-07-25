@@ -2118,3 +2118,28 @@ comparison rows vs the S anchors recorded; NO identification. The
 odd-channel derivation now has exact finite-n data (this), the
 certified analytic backbone (W3 #4172), and a precisely-posed
 resummation step. No fit; no c_k wired.
+
+**2026-07-25 (W9-parallel) — THE BAR SIDE IS RESUMMED: the first
+resummed bar-odd datum D_odd = −0.0075794037 ± 1.5e-10 (real, same
+order class as the S anchors), via an exactly-gated q-Borel/θ-Laplace
+pipeline.** `qbeta_g3_5two_qborel_theta_laplace.py` (3/3 green;
+parallel to the sibling W9 lane qou-dri7 per the owner directive,
+distinct exact-input angle): (B1) the exact q-Borel transform
+T̂_n = C_n(q̄)(q̄;q̄)_n²·a₀^{5n²+7n} has (−1)ⁿT̂_n > 0 decaying with
+|ratio| → 1 (Aitken 1.00001) — Borel radius EXACTLY 1 with a SOFT
+singularity at w = −1, and a derived structural fact: the C-tail and
+Pochhammer-tail subleading monomials CANCEL (the naive extreme-monomial
+product overshoots). (B2) the θ-kernel inversion identity was DERIVED
+in-probe (not cited) and gated exactly on a finite quadratic-type test
+(9e-62). (B3) the resummed bar-side value s(F̄) = 0.9709977446 is
+kernel-choice-invariant to 12 digits and Padé-order-stable (relative
+band 3e-10 — the honest scheme-dependence report). (B4) with the
+convergent side F_conv = 0.9861565521 (#4175):
+D_odd = (s(F̄) − F_conv)/2 = −0.0075794037 ± 1.5e-10, D_even =
+0.9785771484; D_odd/u³ = −0.834. All REAL — consistent with the W1/2c-2
+reality null (and the S anchors are real). Scope-(a): recorded against
+S_muon (+0.00968), S_proton (−0.03946), u³, Im 𝔙̃_b WITHOUT
+identification; a derived-grade claim still needs the scheme fixed by
+a structural normalization (Écalle median / M-dictionary lateral) —
+the sibling W9 lane's framing question, now with a concrete number and
+a 3e-10 instrument. No fit; no c_k wired.

@@ -1,0 +1,93 @@
+{
+  "engine": "mpmath+exact-int",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-07-25T03:10:41.396029+00:00",
+  "commitSha": "aaa67f5d0d747bfb33f4a6aca6334335aa44df4f",
+  "assertions": [
+    {
+      "name": "borel_structure_derived",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "exact transform; radius 1 by Aitken; alternating-positive coefficients"
+    },
+    {
+      "name": "kernel_identity_exact",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "derived theta-kernel reproduces a finite quadratic-type sum to < 1e-40"
+    },
+    {
+      "name": "resummed_value_with_honest_band",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "kernel/Pade spread < 5% relative; scheme dependence reported as the band"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 16,
+  "computation": "qbeta-g3-5two-qborel-theta-laplace",
+  "scriptFile": "qbeta_g3_5two_qborel_theta_laplace.py",
+  "scriptHash": "294ff08d52e8",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
+  },
+  "description": "W9-parallel q-Borel/theta-Laplace resummation of the bar-side Masbaum series: exact quadratic transform (radius-1 Borel function, soft singularity at w=-1, derived tail cancellation), theta-kernel derived and exactly gated, resummed bar value with honest kernel band, first resummed bar-odd datum D_odd recorded scope-(a).",
+  "contentBlock": "conj:im-q-physical-role",
+  "data": {
+    "borel_structure": {
+      "alt_positive": true,
+      "radius_aitken": "1.00001377581",
+      "singularity": "w = -1 (soft; coefficients decay)",
+      "cancellation": "C-tail x poch-tail subleading cancellation (naive 5n^2+7n extreme product overshoots)"
+    },
+    "kernel_gate_dev": "8.5971252e-62",
+    "resummation": {
+      "s_Fbar_median": "0.97099774464939658731",
+      "band_rel": "3.0898798e-10",
+      "values": [
+        "0.970997744363158",
+        "0.970997744363158",
+        "0.970997744363157",
+        "0.970997744649397",
+        "0.970997744649397",
+        "0.970997744649396",
+        "0.970997744663184",
+        "0.970997744663184",
+        "0.970997744663184"
+      ]
+    },
+    "odd_datum": {
+      "D_odd": "-0.00757940374628209",
+      "err": "1.50013e-10",
+      "F_conv": "0.98615655214196076214"
+    },
+    "comparison_rows": {
+      "D_odd": "-0.00757940374628",
+      "D_even": "0.978577148396",
+      "S_muon": "0.00968298",
+      "S_proton": "-0.03945936",
+      "u_cubed": "0.00908764762134",
+      "Im_Vb": "0.0585499951473",
+      "D_odd_over_u3": "-0.834033631375"
+    },
+    "verdict": "BAR-SIDE RESUMMATION EXECUTED (W9-parallel, exact inputs): the exact q-Borel transform T_n = C_n(qbar)(qbar;qbar)_n^2 a0^(5n^2+7n) has (-1)^n T_n > 0 decaying with |ratio| -> 1 (Aitken 1.00001) — Borel radius exactly 1, SOFT singularity at w = -1, and a derived subleading CANCELLATION between the C-tail and Pochhammer-tail (B1); the theta-kernel inversion was DERIVED and gated exactly on a finite test (8.6e-62) (B2); the resummed bar-side value is s(Fbar) = 0.9709977446 with kernel/Pade band 3.09e-10 relative (B3). FIRST RESUMMED BAR-ODD DATUM (B4, scope-(a)): D_odd = -0.0075794037 +- 1.5e-10 — a REAL number (consistent with the reality null; the S anchors are real too), recorded against the anchors WITHOUT identification. Caveats stated honestly: the theta-Laplace scheme dependence IS the band; a derived-grade D_odd needs the scheme fixed by a physical/structural normalization (the M-dictionary lateral machinery or the sibling W9 lane's Ecalle framing). No fit; no c_k wired."
+  }
+}
