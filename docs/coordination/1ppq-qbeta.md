@@ -2235,3 +2235,22 @@ O_φ ↔ D_odd Stokes-population bridge) starting: intent posted on #4213
 σ-pair ray is load-bearing here; will cite, not re-derive) and #3805
 (G3 3d-index lane — same integers-not-fits program, different knot +
 route; measured research-overlap per the 2026-07-18 relaxation).
+
+**2026-07-25 (B1, PR #4226) — STOKES-POPULATION BRIDGE: the σ-pair
+population is FORCED ZERO on the real-q ray (derived); no small-weight
+σ₃ assembly bridges to D_odd (180-candidate pre-registered scan, 0
+hits, 0 near-misses); the wall is the GK bilinear block pairing.**
+`qbeta_5two_stokes_population_bridge_probe.py` (3/3): T1 — at
+x₀ = −ln q₀ the σ-pair sectors carry |e^{iV₁/x₀}| = 5.5e5
+(overshoot ×4.8e7 vs the O(1) Habiro value) ⇒ integer population
+n₁ = n₂ = 0 on this ray — consistent with A4.3's Stokes-free ray,
+#4213's GZ weight rule (cited, not re-derived), and A2's
+Ind^rot-bar-even. The only O(1) carrier is the real saddle σ₃
+(amplitude 0.494, pure phase). T3 — the pre-registered parameter-free
+family (σ₃ sin/cos/mirror channels × GZ weight powers x^{0,1/2,3/2} ×
+small half-integers + A2 O-matrix entries; gate 1e-6, every near-miss
+reportable) returned NOTHING: O_φ and D_odd are not bridged by any
+single-sector small-weight population. Scope-(a); the named successor
+is the GK bilinear block pairing (Z = Σ M_σσ' B_σ(q)B̃_σ'(q̃)) — the
+odd channel as an off-diagonal block product, not a sector weight.
+No fit; nothing wired.
