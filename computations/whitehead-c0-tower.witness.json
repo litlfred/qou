@@ -1,0 +1,79 @@
+{
+  "description": "Whitehead reduced colored-Jones Kashaev tower: asymptotic constant c\u2080 and the 'factor' (c\u2080=\u22120.87+\u00bdln factor). Reconstruction of a lost stalled session.",
+  "computation": "whitehead_c0_tower",
+  "audit_only": true,
+  "method": "delta->0 Neville extrapolation of norm(q)=raw/[N] to the exact root; validated vs exact figure-eight Kashaev (rel-err ~1e-4, N<=10)",
+  "whitehead_braid_word": "[1,-2,1,-2,1]",
+  "vol_whitehead_4G": 3.663862376708876,
+  "Ns": [
+    6,
+    8,
+    10,
+    12
+  ],
+  "figure_eight_reference": {
+    "Ns": [
+      6,
+      8,
+      10,
+      12
+    ],
+    "logs": [
+      4.488637490334863,
+      5.524020860396098,
+      6.479901209829234,
+      7.384513003687377
+    ],
+    "fits": {
+      "p free": {
+        "p": 1.61813754397503,
+        "c0": -0.7237758455610744,
+        "d": 2.8056154297856546,
+        "e": -3.3443346953661277,
+        "factor_rel_base": 1.3397034839976014
+      },
+      "p=3/2 fixed": {
+        "p": 1.5,
+        "c0": -0.2915557233635824,
+        "d": 0.7958217341731494,
+        "e": 0.776620726003759,
+        "factor_rel_base": 3.1800233936948317
+      }
+    }
+  },
+  "whitehead": {
+    "Ns": [
+      6,
+      8,
+      10,
+      12
+    ],
+    "logs": [
+      5.8927288736413805,
+      7.39966722346471,
+      8.862547467794498,
+      10.284920122436665
+    ],
+    "fits": {
+      "p free": {
+        "p": 1.5952980525344624,
+        "c0": -0.7923367177967886,
+        "d": 0.8074155973778331,
+        "e": 6.961503058884358,
+        "factor_rel_base": 1.168039338902916
+      },
+      "p=3/2 fixed": {
+        "p": 1.5,
+        "c0": -0.4436775657127313,
+        "d": -0.813825362467913,
+        "e": 10.285755561720062,
+        "factor_rel_base": 2.345843100880168
+      }
+    }
+  },
+  "whitehead_c0_p32": -0.4436775657127313,
+  "whitehead_factor": 2.345843100880168,
+  "nearest_factor_prediction": 2,
+  "caveat": "float64 delta-extrapolation; c0 precision limited by N range (same compute wall the prior session hit at N~10). Higher N needs mpmath or a symbolic reduced form.",
+  "timestamp": "2026-07-25T18:43:13+00:00"
+}
