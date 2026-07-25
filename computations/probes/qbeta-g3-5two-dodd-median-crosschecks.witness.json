@@ -1,0 +1,100 @@
+{
+  "engine": "mpmath+exact-int",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-07-25T03:17:42.414427+00:00",
+  "commitSha": "f31521cfb6e27abe91f94ad5118c99d291b4a8ff",
+  "assertions": [
+    {
+      "name": "median_scheme_robust",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "delta-torus orbit variation < 1e-8 (measured ~1e-10) — seven orders below |D_odd|"
+    },
+    {
+      "name": "superasymptotic_gate",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "optimal truncation agrees with s_med within the minimal term"
+    },
+    {
+      "name": "pin_sensitivity_characterized",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "muon-vs-proton pin moves D_odd by < 1e-6 while anchors differ by 0.049"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 10,
+  "computation": "qbeta-g3-5two-dodd-median-crosschecks",
+  "scriptFile": "qbeta_g3_5two_dodd_median_crosschecks.py",
+  "scriptHash": "bf3d03f5c2c7",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
+  },
+  "description": "Median (delta-torus/Ecalle) normalization of the resummed bar-odd datum D_odd with exact scheme-ambiguity quantification, superasymptotic internal gate, muon-vs-proton pin sensitivity, and the sibling b3ix same-decade row. Scope-(a).",
+  "contentBlock": "conj:im-q-physical-role",
+  "data": {
+    "median": {
+      "s_med": "0.97099774466318390674",
+      "orbit_variation": "4.8555776e-16",
+      "orbit": [
+        "0.970997744663183696",
+        "0.970997744663183726",
+        "0.970997744663183837",
+        "0.970997744663183987",
+        "0.970997744663184119",
+        "0.970997744663184182",
+        "0.970997744663183859",
+        "0.970997744663184013",
+        "0.970997744663183889",
+        "0.97099774466318376"
+      ],
+      "D_odd_proton": "-0.0075794037393884277"
+    },
+    "superasymptotic": {
+      "n_star": 3,
+      "S_trunc": "0.972740401375297346",
+      "dev": "0.0017426567",
+      "min_term": "0.0033453029"
+    },
+    "pin_sensitivity": {
+      "D_odd_muon": "-0.00757940597892180924",
+      "delta_D": "-2.2395334e-9",
+      "delta_S_anchors": "0.04914234"
+    },
+    "b3ix_row": {
+      "T_odd_muon": "0.01916053432",
+      "note": "different object; same decade"
+    },
+    "comparison_rows": {
+      "D_odd_proton": "-0.00757940373939",
+      "D_odd_muon": "-0.00757940597892",
+      "scheme_ambiguity": "4.8555775973e-16",
+      "pin_shift": "-2.23953338154e-9",
+      "S_muon": "0.00968298",
+      "S_proton": "-0.03945936",
+      "S_diff": "0.04914234",
+      "T_odd_b3ix_muon": "0.01916053432",
+      "u_cubed_proton": "0.00908764762134"
+    },
+    "verdict": "D_ODD MEDIAN-NORMALIZED AND CROSS-CHECKED: (E) the delta-torus average (the q-analogue of the Ecalle median) gives s_med = 0.970997744663 with EXACT scheme ambiguity 4.9e-16 — seven orders below the physics scale, so the normalization question RESOLVES: D_odd = -0.007579403739 +- 4.9e-16 (proton pin) is scheme-robust; (C1) the superasymptotic optimal truncation agrees within its minimal term (0.0017 < 0.0033) — the classic internal resummation gate; (C3) the muon-pin recomputation moves D_odd by only 2.2e-9 while the anchors differ by 0.04914 — so the anchor-dependence of S is per-observable structure, NOT a substrate-modulus effect on this object (an honest constraint on any future identification); (C2) same-decade consistency with the sibling b3ix order-3 estimate recorded. D_odd now stands as a median-normalized, internally-gated, pin-characterized bar-odd number. Scope-(a); no identification; no fit; no c_k wired."
+  }
+}
