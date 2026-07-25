@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-25T03:26:55.733762+00:00",
-  "commitSha": "772591b711c5fc76281259baee48814ddc6184af",
+  "computedAt": "2026-07-25T03:36:30.277096+00:00",
+  "commitSha": "d2e9d0dd3709f906c77a122f8de0e7a7efa90a41",
   "assertions": [
     {
       "name": "theta_degeneration_identities_hold",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 17,
+  "durationMs": 11,
   "computation": "elliptic-r-theta-single-tau",
   "scriptFile": "elliptic_r_theta_single_tau_probe.py",
-  "scriptHash": "0295cc038910",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "97ee1bda2520",
+  "scriptCommitSha": "929a4afa161ff7c15ad5a737b106f8f5beb2ffd4",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -48,6 +48,14 @@
       "delta_theta_deg": "-2.91327",
       "dtheta_dq_deg_per_unit": "-50.878",
       "note": "Δθ is the parameter-free bar-odd seed (reeb-theta-value.md); the cusp θ=π sits at the CM point q²=e^{iπ/3}, disc −3."
+    },
+    "faddeev_lattice_nome_check": {
+      "tau_eq_1_over_b2": "(0.0 + 30.109j)",
+      "nome_e^{2πiτ}": "6.919e-83",
+      "dual_nome_e^{iπτ}": "8.318e-42",
+      "c3_swing": "2.43e-2",
+      "verdict_scope_a": "REFUTED (scope-a): the c₃ swing is NOT the elliptic correction of the Faddeev uniqueness-ratio period lattice ⟨ib, i/b⟩. Its nome at the substrate is ~1e-42 to ~1e-83 — 40+ orders of magnitude below the 2.4e-2 swing. This is WHY sinh/cosh (the trigonometric degeneration) already works so well: at real q₀ the Faddeev lattice IS at τ→i∞.",
+      "redirect": "If the swing is elliptic at all, the relevant elliptic structure is the GEOMETRIC one — the figure-eight A-polynomial / holonomy curve at the CM point q²=e^{iπ/3} (disc −3, j=0), whose modular parameter is O(1), NOT the Faddeev period lattice. The elliptic-freedom result (PR #4155) is a different (uniqueness) elliptic structure and does not carry the swing."
     },
     "single_tau_falsifiability": {
       "c3_q1_shadow": "-2.0",

@@ -88,6 +88,37 @@ def run() -> dict:
                 "cusp θ=π sits at the CM point q²=e^{iπ/3}, disc −3.",
     }
 
+    # (2b) QUANTITATIVE CHECK — the Faddeev-period-lattice nome is too small (scope-a).
+    # τ = 1/b² is the modular parameter of the Faddeev freedom lattice ⟨ib, i/b⟩
+    # (faddeev_modular_parameter). Faddeev convention q = e^{iπb²} ⇒ b² = ln q₀/(iπ)
+    # at real q₀ > 1, so τ = 1/b² = iπ/ln q₀ is far up the imaginary axis and the
+    # lattice sits DEEP in the τ→i∞ (trigonometric) degeneration.
+    lnq = mp.log(Q0_MUON)
+    b2 = lnq / (1j * mp.pi)
+    tau = 1 / b2
+    nome = abs(mp.e ** (2j * mp.pi * tau))
+    dual_nome = abs(mp.e ** (1j * mp.pi * tau))
+    out["faddeev_lattice_nome_check"] = {
+        "tau_eq_1_over_b2": mp.nstr(tau, 6),
+        "nome_e^{2πiτ}": mp.nstr(nome, 4),
+        "dual_nome_e^{iπτ}": mp.nstr(dual_nome, 4),
+        "c3_swing": "2.43e-2",
+        "verdict_scope_a": (
+            "REFUTED (scope-a): the c₃ swing is NOT the elliptic correction of the "
+            "Faddeev uniqueness-ratio period lattice ⟨ib, i/b⟩. Its nome at the "
+            "substrate is ~1e-42 to ~1e-83 — 40+ orders of magnitude below the "
+            "2.4e-2 swing. This is WHY sinh/cosh (the trigonometric degeneration) "
+            "already works so well: at real q₀ the Faddeev lattice IS at τ→i∞."
+        ),
+        "redirect": (
+            "If the swing is elliptic at all, the relevant elliptic structure is the "
+            "GEOMETRIC one — the figure-eight A-polynomial / holonomy curve at the CM "
+            "point q²=e^{iπ/3} (disc −3, j=0), whose modular parameter is O(1), NOT "
+            "the Faddeev period lattice. The elliptic-freedom result (PR #4155) is a "
+            "different (uniqueness) elliptic structure and does not carry the swing."
+        ),
+    }
+
     # (3) single-τ falsifiability accounting — WHY 2 anchors under-determine it.
     swing = abs((C3_PROTON - C3_MUON) / C3_MUON) * 100
     out["single_tau_falsifiability"] = {
