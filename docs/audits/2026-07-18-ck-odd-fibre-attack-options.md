@@ -233,6 +233,26 @@ principle — the open problem itself).
   the ladder stands at **N = 3, 4, 5, 6**. N=7 (TL₁₈, 477.6M diagrams)
   needs ~32 GB of tables — a different state representation (plat/half-
   diagram basis or on-the-fly composition) is the open engineering step.
+- **A6 LANDED (GSWZ arithmeticity confirmed + the bar-odd K-tower delivered).**
+  [`qbeta_5two_gswz_saddle_arithmeticity_probe.py`](../../computations/probes/qbeta_5two_gswz_saddle_arithmeticity_probe.py)
+  + witness, 6/6: the A4.2 engine (refactored to a per-saddle API, gates
+  re-verified) run at **all three saddles** of `x³−2x²+3x−1` (disc −23 =
+  the three embeddings of the 5₂ trace field K); per order a determined
+  3×3 Vandermonde solve + CF rationalization at dps 320 + exact
+  re-evaluation at every embedding. **All 24 orders are integer-exact
+  elements of K** (printed P₁..P₃ matched exactly in the `{1,ξ,ξ²}`
+  basis; conjugate symmetry and real-saddle reality exact). Two measured
+  structural laws: `v₂₃(den_k) ≈ 3k/2` (2,3,5,…,35 at k = 1..24), and —
+  outside {2,3,5,23} — the Ohtsuki/Habiro-type tail **`v_p(den_k) =
+  ⌊k/(p−2)⌋` for every prime `p ≥ 7`** (enters at k = p−2, steps by p−2;
+  saturated at all 120 (k,p) checks, p ≤ 19 — the first-run strict
+  {2,3,5,23} gate was refuted by this law and re-gated on it). The exact
+  **bar-odd σ-pair tower** `P_k(ξ₁)−P_k(ξ̄₁) = 2i·Im ∈ √−23-line` is
+  recorded for all 24 orders — the odd-channel arithmetic home, unstudied
+  in the GSWZ literature. This is the arithmetic complement of the
+  main-line Masbaum-face Habiro lane (integer-Laurent `C_{5₂,n}` +
+  q-Gevrey law + the W9 resummed `D_odd`): same odd channel, fibre-
+  arithmetic route vs convergent-side resummation route. auditOnly.
 
 - **A2 LANDED (derived odd-Stokes datum).**
   [`qbeta_5two_stokes_barodd_index_probe.py`](../../computations/probes/qbeta_5two_stokes_barodd_index_probe.py)
