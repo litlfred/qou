@@ -2413,3 +2413,26 @@ comultiplication), beyond parameter-free probing at this rung.
 Engineering: sympy rational rref intractable at 128×99 (>60 CPU-min);
 Bareiss runs in <1 s — recorded in the probes for successors. No fit;
 nothing wired; comparison to observed only.
+
+**2026-07-25 (B2 + B1.5, branch claude/star-lean-general-n-2026-07-25)
+— (★) PROVED SORRY-FREE AT EVERY ORDER n; the level-mixing bridge
+form stated as a design note, no compute.** B2 (bean qou-rk84):
+`QOU/QBeta/HabiroTailStar.lean` `star` is no longer a stated `sorry` —
+two inversion lemmas discharge it. `gaussBinom_inv` (landed earlier)
+collapses each summand's quadratic a-exponent
+`3n²+5n+k²−2k−3nk−k(n−k)` to `3n²+5n−2k−2nk`; the overall
+`a^{−(5n²+7n)}` then leaves `−2(n+1)(n+k)`, i.e. exactly
+`(a²)^{−n(n+1)}·((a²)⁻¹)^{k(n+1)}` — linear in k — and the new
+`qPoch_sq_inv` (`(q;q)_n² = q^{n(n+1)}(q⁻¹;q⁻¹)_n²`) absorbs the
+`(a²)^{−n(n+1)}` prefactor. lean-direct exit 0, zero sorry warnings.
+The compute that verified (★) machine-exactly for n ≤ 32 (and to
+1e-497 for n ≤ 64) is now a theorem for all n; the derived corollaries
+(c∞ = (q̃;q̃)_∞², transient ratio 1/q₀, pole ladder at −q₀ᵏ) rest on a
+proved base rather than a checked one. B1.5: design note
+`docs/workplans/2026-07-25-b15-level-mixing-bridge-design.md` states
+the surviving bridge form — a level-mixing module map
+`T^Mas_n = Σ_m M_{n,m}(q)·T^H_m` with `M` a matrix of q-polynomials —
+and argues (formalize-first, DOF count ~L²N unknowns vs N equations)
+that a scan over `M` would fit by construction, so the next rung must
+derive `M` from the Habiro comultiplication and check it, not search
+it. No fit; nothing wired; c₃ tier unchanged (SETTLED #1580).
