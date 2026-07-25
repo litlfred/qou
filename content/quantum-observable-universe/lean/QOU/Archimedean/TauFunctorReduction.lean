@@ -91,6 +91,22 @@ theorem observationFrame_add {R H : Type*} [CommRing R] [Ring H] [Algebra R H]
   show ev (tr (x + y)) = ev (tr x) + ev (tr y)
   rw [‹MarkovTrace R H tr›.map_add x y, map_add]
 
+/-- **Homogeneity of the observable, DERIVED.** From `MarkovTrace.map_smul` and
+`ev` a ring hom, `τ_∞(r • x) = ev(r) · τ_∞(x)` — the remaining third of the
+`R`-linearity a fibre-functor trace must respect (with the scalar carried
+across the wall by `ev`). Together with `observationFrame_cyclic` /
+`observationFrame_add` this consumes ALL THREE `MarkovTrace` class fields —
+and nothing else: the W1 audit
+(`docs/audits/2026-07-25-markovtrace-w1-class-fields-audit.md`) confirms the
+consumers need exactly cyclicity + linearity; Wenzl POSITIVITY is surplus to
+the general-`n` instance gap (the #4151 PSD-surplus pattern), and is not even
+expressible over the generic `[CommRing R]` this class lives on. -/
+theorem observationFrame_smul {R H : Type*} [CommRing R] [Ring H] [Algebra R H]
+    (ev : R →+* ℝ) (tr : H → R) [MarkovTrace R H tr] (r : R) (x : H) :
+    observationFrame ev tr (r • x) = ev r * observationFrame ev tr x := by
+  show ev (tr (r • x)) = ev r * ev (tr x)
+  rw [‹MarkovTrace R H tr›.map_smul r x, map_mul]
+
 /-! ## `n=3` concrete slice of F3 — non-vacuous, no axiom
 
 The `H3.trM` Markov trace (proved M1/M2/M3 sorry-free over generic `R`) gives a
