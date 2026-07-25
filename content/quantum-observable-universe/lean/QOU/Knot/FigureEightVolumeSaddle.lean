@@ -120,6 +120,43 @@ theorem saddle_critical_point_two_pi {θ : ℝ} (h0 : 0 < θ) (h2 : θ < 2 * π)
         Real.sin_pi_div_six]
       norm_num
 
+/-- **Saddle brick E5a (sorry-free).** The log of the Kashaev term is twice the
+    log-sine Riemann sum: `log(kashaevProd N k) = 2·Σ_{j=1}^{k} log(2 sin(jπ/N))`
+    for `k < N` — the bridge from the Kashaev product to the E4 sums.
+    (bean qou-sho7) -/
+theorem log_kashaevProd {N k : ℕ} (hkN : k < N) :
+    Real.log (kashaevProd N k)
+      = 2 * ∑ j ∈ Finset.Icc 1 k,
+          Real.log (2 * Real.sin ((j : ℝ) * (π / N))) := by
+  have hpi := Real.pi_pos
+  have hNpos : (0 : ℝ) < N := by
+    have : 0 < N := by omega
+    exact_mod_cast this
+  have hNpi : (N : ℝ) * (π / N) = π := by field_simp
+  have hsin : ∀ j ∈ Finset.Icc 1 k, 0 < Real.sin ((j : ℝ) * (π / N)) := by
+    intro j hj
+    obtain ⟨hj1, hjk⟩ := Finset.mem_Icc.mp hj
+    have hj1' : (1 : ℝ) ≤ (j : ℝ) := by exact_mod_cast hj1
+    have hjN : (j : ℝ) < N := by exact_mod_cast lt_of_le_of_lt hjk hkN
+    apply Real.sin_pos_of_pos_of_lt_pi
+    · nlinarith [div_pos hpi hNpos]
+    · nlinarith [div_pos hpi hNpos]
+  have hfac : ∀ j ∈ Finset.Icc 1 k,
+      2 - 2 * Real.cos (2 * π * j / N)
+        = (2 * Real.sin ((j : ℝ) * (π / N))) ^ 2 := by
+    intro j _
+    have hx : 2 * π * (j : ℝ) / N = 2 * ((j : ℝ) * (π / N)) := by ring
+    rw [hx, two_sub_two_cos_two_mul]
+    ring
+  unfold kashaevProd
+  rw [Finset.prod_congr rfl hfac,
+    Real.log_prod _ _ (fun j hj => pow_ne_zero 2 (by have := hsin j hj; positivity)),
+    Finset.mul_sum]
+  refine Finset.sum_congr rfl (fun j hj => ?_)
+  rw [Real.log_pow]
+  push_cast
+  ring
+
 /-- The largest Kashaev term is at least `1` (witnessed by the `k = 0` empty
     product) — the positivity the log-squeeze needs. -/
 theorem one_le_sup_kashaevProd (N : ℕ) (hN : 1 ≤ N) :

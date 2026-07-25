@@ -840,6 +840,57 @@ theorem tendsto_first_term :
         ≤ ∫ u in ((π:ℝ) / N)..(2 * (π / N)), Real.log (2 * Real.sin u) := hmono
       _ = _ := hsplit
 
+/-- **Saddle brick E4e-i, upper (sorry-free).** The Kashaev-indexed rising-half
+    upper bound: `(π/N)·Σ_{j∈Icc 1 k} log(2sin(jπ/N)) ≤ ∫_{π/N}^{(k+1)π/N}` —
+    E4c-upper with the grid `Ico 1 (k+1)` rewritten to the Kashaev index set
+    `Icc 1 k`. (bean qou-x5mg) -/
+theorem sum_log_sin_le_integral_Icc {N k : ℕ} (hN : 1 ≤ N) (hk : 1 ≤ k)
+    (hhalf : ((k : ℝ) + 1) * (π / N) ≤ π / 2) :
+    (π / N) * ∑ j ∈ Finset.Icc 1 k, Real.log (2 * Real.sin ((j : ℝ) * (π / N)))
+      ≤ ∫ u in ((π : ℝ) / N)..(((k : ℝ) + 1) * (π / N)),
+          Real.log (2 * Real.sin u) := by
+  have h := sum_log_sin_le_integral hN hk hhalf
+  rwa [Nat.Ico_succ_right] at h
+
+/-- **Saddle brick E4e-i, lower (sorry-free).** The Kashaev-indexed rising-half
+    lower bound: `∫_{π/N}^{kπ/N} + (π/N)·log(2sin(π/N)) ≤ (π/N)·Σ_{j∈Icc 1 k}` —
+    E4c-lower plus the split-off first grid term (whose scaled value vanishes
+    by E4d-2). (bean qou-x5mg) -/
+theorem integral_le_sum_log_sin_Icc {N k : ℕ} (hN : 1 ≤ N) (hk : 1 ≤ k)
+    (hhalf : (k : ℝ) * (π / N) ≤ π / 2) :
+    (∫ u in ((π : ℝ) / N)..((k : ℝ) * (π / N)), Real.log (2 * Real.sin u))
+        + (π / N) * Real.log (2 * Real.sin (π / N))
+      ≤ (π / N) * ∑ j ∈ Finset.Icc 1 k,
+          Real.log (2 * Real.sin ((j : ℝ) * (π / N))) := by
+  have h := integral_le_sum_log_sin hN hk hhalf
+  have hsplit : (∑ j ∈ Finset.Icc 1 k, Real.log (2 * Real.sin ((j : ℝ) * (π / N))))
+      = Real.log (2 * Real.sin (π / N))
+        + ∑ i ∈ Finset.Ico 1 k, Real.log (2 * Real.sin (((i : ℝ) + 1) * (π / N))) := by
+    have h1 : Finset.Icc 1 k = insert 1 (Finset.Icc 2 k) := by
+      ext x
+      simp only [Finset.mem_Icc, Finset.mem_insert]
+      omega
+    rw [h1, Finset.sum_insert (by simp [Finset.mem_Icc])]
+    congr 1
+    · norm_num
+    · rw [← Nat.Ico_succ_right,
+        show Finset.Ico 2 (k + 1)
+          = Finset.map ⟨fun i => i + 1, fun a b h => by simpa using h⟩ (Finset.Ico 1 k) from ?_,
+        Finset.sum_map]
+      · refine Finset.sum_congr rfl (fun i _ => ?_)
+        simp only [Function.Embedding.coeFn_mk]
+        push_cast
+        ring_nf
+      · ext x
+        simp only [Finset.mem_Ico, Finset.mem_map, Function.Embedding.coeFn_mk]
+        constructor
+        · intro hx
+          exact ⟨x - 1, by omega, by omega⟩
+        · rintro ⟨y, hy, rfl⟩
+          omega
+  rw [hsplit, mul_add]
+  linarith
+
 /-- **The series Clausen's derivative** `Cl_2'(θ) = -log(2 sin(θ/2))` for
     `θ ∈ (0, 2π)` — the derivative the filler flagged as needing Fourier
     infrastructure, now machine-proved (`hasDerivAt_Cl_2_series`). Dual-purpose: `V'(θ)` of
