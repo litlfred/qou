@@ -64,7 +64,7 @@ lemma two_le_length_of_eta {w t₁ t₂ : W} (h12 : t₁ ≠ t₂)
     rw [Finset.mem_insert, Finset.mem_singleton] at ht
     rcases ht with rfl | rfl <;> exact List.mem_toFinset.mpr ‹_›
   have hcard : ({t₁, t₂} : Finset W).card = 2 := by
-    rw [Finset.card_insert_of_not_mem (by simpa using h12),
+    rw [Finset.card_insert_of_notMem (by simpa using h12),
       Finset.card_singleton]
   calc 2 = ({t₁, t₂} : Finset W).card := hcard.symm
     _ ≤ (cs.rightInvSeq ω).toFinset.card := Finset.card_le_card hsub
@@ -85,8 +85,8 @@ lemma three_le_length_of_eta {w t₁ t₂ t₃ : W} (h12 : t₁ ≠ t₂)
     rw [Finset.mem_insert, Finset.mem_insert, Finset.mem_singleton] at ht
     rcases ht with rfl | rfl | rfl <;> exact List.mem_toFinset.mpr ‹_›
   have hcard : ({t₁, t₂, t₃} : Finset W).card = 3 := by
-    rw [Finset.card_insert_of_not_mem (by simp [h12, h13]),
-      Finset.card_insert_of_not_mem (by simpa using h23),
+    rw [Finset.card_insert_of_notMem (by simp [h12, h13]),
+      Finset.card_insert_of_notMem (by simpa using h23),
       Finset.card_singleton]
   calc 3 = ({t₁, t₂, t₃} : Finset W).card := hcard.symm
     _ ≤ (cs.rightInvSeq ω).toFinset.card := Finset.card_le_card hsub
