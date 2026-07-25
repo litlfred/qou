@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-25T12:39:34.325587+00:00",
-  "commitSha": "7d4d7d126c9cf40073d8d1d94457e6b64f4650e6",
+  "computedAt": "2026-07-25T14:33:15.063815+00:00",
+  "commitSha": "d28bec4d31eb383f59fc32e712d5eaae18a48fab",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -559,7 +559,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 9,
+  "durationMs": 3,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "ff40fb7a9d7d",
@@ -3030,6 +3030,7 @@
         "qbeta-c8-c10-pell-lucas-closed-form-predictions.witness.json",
         "qbeta-closed-form-wiring-n4-to-n10.witness.json",
         "qbeta-habiro-cyclotomic.witness.json",
+        "qbeta-habiro-tail-util.witness.json",
         "qbeta-multi-block-eigenphase-full-eps-probe.witness.json",
         "qbeta-multi-block-eigenphase-probe.witness.json",
         "qcollatz_cycle_census.witness.json",
