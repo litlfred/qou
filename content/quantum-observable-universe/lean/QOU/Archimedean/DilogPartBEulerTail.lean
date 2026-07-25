@@ -155,4 +155,68 @@ theorem euler_tail_jseries_tendsto :
           ≤ (1 / (j : ℝ)) * (1 / (j : ℝ)) := mul_le_mul_of_nonneg_left hcle (by positivity)
         _ = 1 / (j : ℝ) ^ 2 := by rw [div_mul_div_comm, one_mul, ← pow_two]
 
+/-- **V2a — the Lambert rearrangement.**  For `0 < p < 1`, the negative-factor
+    Euler tail (in tsum-of-logs form) equals its Lambert `j`-series:
+
+    `Σ'_m −log(1−p^{m+1}) = Σ'_j (1/(j+1))·p^{j+1}/(1−p^{j+1})`.
+
+    A nonneg Fubini (`Summable.tsum_comm`) on `a m j = p^{(m+1)(j+1)}/(j+1)`:
+    the row sum is `−log(1−p^{m+1})` (`neg_log_one_sub_hasSum`), the column sum is
+    the geometric `(1/(j+1))·p^{j+1}/(1−p^{j+1})`.  Combined with
+    `euler_tail_jseries_tendsto` this yields the eta asymptotic
+    `(1−p)·Σ'_m −log(1−p^{m+1}) → π²/6`. -/
+theorem euler_tail_lambert_rearrange {p : ℝ} (hp0 : 0 < p) (hp1 : p < 1) :
+    ∑' m : ℕ, (-Real.log (1 - p ^ (m + 1)))
+      = ∑' j : ℕ, (1 / ((j : ℝ) + 1)) * (p ^ (j + 1) / (1 - p ^ (j + 1))) := by
+  let a : ℕ → ℕ → ℝ := fun m j => p ^ ((m + 1) * (j + 1)) / ((j : ℝ) + 1)
+  have ha : ∀ m j, a m j = p ^ ((m + 1) * (j + 1)) / ((j : ℝ) + 1) := fun _ _ => rfl
+  have hann : ∀ m j, 0 ≤ a m j := fun m j =>
+    div_nonneg (pow_nonneg hp0.le _) (by positivity)
+  -- geometric column value
+  have hgeom : ∀ j : ℕ, ∑' m : ℕ, (p ^ (j + 1)) ^ (m + 1)
+      = p ^ (j + 1) / (1 - p ^ (j + 1)) := by
+    intro j
+    have hr1 : p ^ (j + 1) < 1 := pow_lt_one₀ hp0.le hp1 (by omega)
+    have hs := (hasSum_geometric_of_lt_one (pow_nonneg hp0.le _) hr1).mul_left (p ^ (j + 1))
+    have hfun : (fun n => p ^ (j + 1) * (p ^ (j + 1)) ^ n)
+        = (fun n => (p ^ (j + 1)) ^ (n + 1)) := by funext n; rw [← pow_succ']
+    rw [hfun] at hs
+    rw [hs.tsum_eq, div_eq_mul_inv]
+  -- uncurried summability, by comparison with the product-geometric `pᵐ·pʲ`
+  have hunc : Summable (Function.uncurry a) := by
+    have hgm : Summable (fun x : ℕ × ℕ => p ^ x.1 * p ^ x.2) :=
+      Summable.mul_of_nonneg (hasSum_geometric_of_lt_one hp0.le hp1).summable
+        (hasSum_geometric_of_lt_one hp0.le hp1).summable
+        (fun n => pow_nonneg hp0.le n) (fun n => pow_nonneg hp0.le n)
+    refine Summable.of_nonneg_of_le (fun mj => hann mj.1 mj.2) ?_ hgm
+    rintro ⟨m, j⟩
+    have hle1 : a m j ≤ p ^ ((m + 1) * (j + 1)) := by
+      rw [ha]
+      exact div_le_self (pow_nonneg hp0.le _)
+        (by have := Nat.cast_nonneg (α := ℝ) j; linarith)
+    have hle2 : p ^ ((m + 1) * (j + 1)) ≤ p ^ (m + j) :=
+      pow_le_pow_of_le_one hp0.le hp1.le (by nlinarith)
+    calc Function.uncurry a (m, j) = a m j := rfl
+      _ ≤ p ^ ((m + 1) * (j + 1)) := hle1
+      _ ≤ p ^ (m + j) := hle2
+      _ = p ^ m * p ^ j := pow_add p m j
+  -- rows and columns
+  have hrow : ∀ m, ∑' j, a m j = -Real.log (1 - p ^ (m + 1)) := by
+    intro m
+    have hy : |p ^ (m + 1)| < 1 := by
+      rw [abs_of_nonneg (pow_nonneg hp0.le _)]; exact pow_lt_one₀ hp0.le hp1 (by omega)
+    rw [← (neg_log_one_sub_hasSum hy).tsum_eq]
+    exact tsum_congr (fun j => by rw [ha, ← pow_mul])
+  have hcol : ∀ j, ∑' m, a m j
+      = (1 / ((j : ℝ) + 1)) * (p ^ (j + 1) / (1 - p ^ (j + 1))) := by
+    intro j
+    have hstep : ∀ m, a m j = (1 / ((j : ℝ) + 1)) * (p ^ (j + 1)) ^ (m + 1) := by
+      intro m; rw [ha, mul_comm (m + 1) (j + 1), pow_mul]; ring
+    rw [tsum_congr hstep, tsum_mul_left, hgeom j]
+  calc ∑' m : ℕ, (-Real.log (1 - p ^ (m + 1)))
+      = ∑' m, ∑' j, a m j := tsum_congr (fun m => (hrow m).symm)
+    _ = ∑' j, ∑' m, a m j := (hunc.tsum_comm).symm
+    _ = ∑' j : ℕ, (1 / ((j : ℝ) + 1)) * (p ^ (j + 1) / (1 - p ^ (j + 1))) :=
+        tsum_congr hcol
+
 end QOU.QPochhammer
