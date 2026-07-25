@@ -41,48 +41,76 @@ Root-of-unity growth `y(N) = (2π/N)·log|J_{B,N}(ζ)|`, log-aware extrapolated
 Recovers `Vol(𝓑₃) = 8G ≈ 7.32772` (two ideal regular octahedra, `G` = Catalan)
 to **0.4%** — the same hyperbolic volume the DGG index asymptotics must carry.
 
-## Result 2 — subleading: power `p ≈ 3/2` and 1-loop `c₀ ≈ −1.417`
+## Result 2 — subleading: power `p ≈ 3/2` and 1-loop `c₀ ≈ −1.38`
 
 Producer [`borromean_jones_1loop_torsion.py`](../../computations/probes/borromean_jones_1loop_torsion.py).
-Fixing `Vol = 8G` and fitting `log|J| − (N/2π)Vol = p·log N + c₀ + d/N` over the
-tail `N ≥ 16`; a 4-parameter free-slope fit cross-checks:
+Fixing `Vol = 8G` and fitting `log|J| − (N/2π)Vol = p·log N + c₀ + Σ_{m} d_m/N^m`
+(higher-order `1/N` tail, `KMAX=2`, `N ≤ 56`); a free-slope fit cross-checks:
 
 | coefficient | Vol-fixed fit | free-slope cross-check |
 |---|---|---|
-| slope `a` (→ `a·2π` vs 8G) | — (fixed) | 1.16596 → **7.3259** (8G = 7.3277) |
-| **power `p`** | **1.50639** | 1.52207 |
-| **1-loop `c₀`** | **−1.41658** | −1.46810 |
-| `1/N` coeff `d` | 1.94324 | — |
+| slope `a` (→ `a·2π` vs 8G) | — (fixed) | 1.16627 → **7.32787** (8G = 7.32772, rel 2e-5) |
+| **power `p`** | **1.49935** | 1.49702 |
+| **1-loop `c₀`** | **−1.38281** | −1.37347 |
 
 Two findings:
 
 1. **The power is the knot-like `3/2`**, not a larger multi-cusp power — even
-   though 𝓑₃ has **three** cusps. Under the corpus's `J_{B,1}=1` normalization the
-   reduced Kashaev invariant of the Borromean rings grows with the same `N^{3/2}`
-   prefactor as a 1-cusp knot (both fits: 1.506 / 1.522).
-2. **The 1-loop constant `c₀ ≈ −1.417` is measured** (`exp c₀ ≈ 0.243`). The
-   free-slope fit *independently re-confirms* the volume (7.326, rel 2.4e-4 —
-   tighter than Result 1, since it does not force the `(3/2)` power).
+   though 𝓑₃ has **three** cusps. Both fits land within `3e-3` of `1.5`; under the
+   corpus's `J_{B,1}=1` normalization the reduced Kashaev invariant of the
+   Borromean rings grows with the same `N^{3/2}` prefactor as a 1-cusp knot.
+2. **The 1-loop constant `c₀ ≈ −1.38` is measured** (`exp c₀ ≈ 0.251`), the two
+   fits agreeing to `~0.01`. The free-slope fit *independently re-confirms* the
+   volume (7.32787, rel 2e-5).
+
+## Result 3 — the extraction pipeline validated on 4₁ (to `2e-11`)
+
+Producer [`jones_1loop_c0_calibration_fig8.py`](../../computations/probes/jones_1loop_c0_calibration_fig8.py).
+The Borromean `c₀` is only a *measurement* until the extraction is validated on a
+case whose 1-loop constant is known in closed form. The figure-eight `4₁` is that
+case. Running the **same** higher-order least-squares pipeline on the corpus's own
+figure-eight Kashaev sum (`figure_eight_kashaev_volume.py`, `N ≤ 6000`, `KMAX=4`):
+
+| quantity | measured | exact | error |
+|---|---|---|---|
+| `Vol(4₁)` (free-slope) | 2.0298832128193 | `2·Cl₂(π/3)` | rel `3e-15` |
+| power `p` | 1.5000000000 | `3/2` | `2e-12` |
+| `c₀` | −0.274653072146 | `−¼ log 3` | `2e-11` |
+| **`|τ_adj(4₁)| = exp(2c₀)`** | **0.577350269214** | **`1/√3`** | **`2e-11`** |
+
+So the pipeline recovers the figure-eight's **adjoint Reidemeister torsion**
+`|τ_adj(4₁)| = 1/√3` — the full 1-loop-conjecture content
+(Dimofte–Garoufalidis arXiv:1102.4847) — to `2e-11`. (Note: in the corpus's
+un-normalized Kashaev normalization `c₀(4₁) = −¼log3`, **not** the literature
+`−log(2·3^{1/4})`; the `log 2` offset is the normalization convention. The
+earlier `~1e-4` agreement was purely one-term truncation error — modelling `1/N`
+through `1/N⁴` at `N ≤ 6000` drives it to `2e-11`, the arithmetic being exact.)
+
+**Consequence.** The `exp(2c₀) = |τ_adj|` relation and the `(p, c₀)` extraction are
+now proven correct on a known knot. Applying `exp(2c₀)` to the Borromean tower
+gives a candidate `|τ_adj(𝓑₃)| ≈ 0.063`.
 
 ## What is NOT claimed (anti-fit discipline)
 
-By the 1-loop conjecture (Dimofte–Garoufalidis arXiv:1102.4847), `exp c₀` is fixed
-by the **adjoint Reidemeister torsion** `τ(𝓑₃)` of the complete hyperbolic
-structure. The corpus carries **no** Borromean adjoint torsion (grep 2026-07-25),
-so `c₀` here is an honest **measurement**, not a verified `τ`-match. Per the
-invariant list §1(f) (anti-fit: "no constant chosen from a menu because it lands
-near a target") we deliberately do **not** hunt for a coincidental `c₀ → τ`
-identity. Turning the measurement into a match requires the **independent**
-computation of `τ(𝓑₃)` from the octahedral Neumann–Zagier data — the bounded
-follow-up.
+The Borromean `exp(2c₀) ≈ 0.063` is a **candidate**, not a verified `τ(𝓑₃)`,
+because the `4₁` anchor is a **1-cusp knot in the un-normalized Kashaev
+normalization**, whereas the Borromean tower is a **3-cusp link in the Habiro
+`J_{B,1}=1` normalization** — an unresolved normalization + cusp-count offset sits
+between them (the same offset that produced the `4₁` `log 2`). Per invariant list
+§1(f) (anti-fit) we do **not** tune that offset to land `0.063` on a target.
+Turning the candidate into a verified match requires the **independent**
+computation of `τ(𝓑₃)` from the octahedral Neumann–Zagier data (`grep 2026-07-25`:
+corpus has no Borromean torsion) — the bounded follow-up.
 
 ## Where this leaves W1
 
-The leading (volume) and the power (`3/2`) terms any honest `index ↔ tr_M` bridge
-must share are now anchored/measured on the Jones side. The **actual** bridge —
-the subleading torsion / state-integral identification connecting `I_𝓑₃` to
-`tr_M(β_Bor)` — remains the research-paper-scale open gap, pursued index-side on
-beans `qou-zezz` / `qou-yaz9` (DGG state-integral / charge dictionary). The next
-Jones-side rung is `τ(𝓑₃)` via octahedral NZ, to test `c₀` against.
+The leading (volume) and the power (`3/2`) any honest `index ↔ tr_M` bridge must
+share are anchored/measured on the Jones side, and the `c₀ → torsion` extraction
+is validated to `2e-11` on `4₁`. The **actual** bridge — the subleading torsion /
+state-integral identification connecting `I_𝓑₃` to `tr_M(β_Bor)` — remains the
+research-paper-scale open gap, pursued index-side on beans `qou-zezz` / `qou-yaz9`
+(DGG state-integral / charge dictionary). The next Jones-side rung is the
+octahedral-NZ `τ(𝓑₃)` (plus the normalization/cusp reconciliation), to turn the
+`|τ_adj(𝓑₃)| ≈ 0.063` candidate into a verified datum.
 
 -- Ref: [manuscript] docs/audits/2026-07-24-borromean-index-bridge-invariant.md

@@ -15,7 +15,9 @@ hyperbolic link is
 where
   • (N/2π)·Vol   is the leading volume term (anchored in #4208),
   • p            is the power-of-N prefactor (p = 3/2 for a 1-cusp
-                 knot; larger for a multi-cusp link — 𝓑₃ has 3 cusps),
+                 knot; 𝓑₃ has 3 cusps but MEASURES p = 3/2 too — the
+                 J_{B,1}=1-normalized reduced Kashaev invariant grows
+                 knot-like),
   • c₀           is the "1-loop" constant.  By the 1-loop conjecture
                  (Dimofte–Garoufalidis arXiv:1102.4847) exp(c₀) is
                  fixed by the ADJOINT REIDEMEISTER TORSION τ(𝓑₃) of
@@ -23,7 +25,9 @@ where
                  1/√(±τ), times explicit 2π/i factors).
 
 We FIX Vol = 8G (known, from #4208) and least-squares fit the remaining
-coefficients (p, c₀, d) from the exactly-computable Habiro tower.  The
+coefficients (p, c₀, and KMAX subleading 1/N^m terms) from the exactly-
+computable Habiro tower — the same higher-order methodology validated to
+2e-11 on the figure-eight (jones_1loop_c0_calibration_fig8.py).  The
 extracted (p, c₀) are the second and third honest bridge data below the
 volume — the numbers any derived index↔tr_M bridge must also reproduce
 on its side.
@@ -101,7 +105,7 @@ def lstsq(rows_phi, ys):
 
 
 def main() -> int:
-    NMAX = 44
+    NMAX = 56
     print(f"Vol(𝓑₃) = 8G = {mp.nstr(VOL_BOR, 12)} (fixed from #4208)")
     Ns, logs = [], []
     for n in range(4, NMAX + 1):
@@ -118,34 +122,51 @@ def main() -> int:
         if int(Ns[i]) % 4 == 0 or i >= len(Ns) - 4:
             print(f"{int(Ns[i]):>3} {float(logs[i]):>16.6f} {float(resid[i]):>22.6f}")
 
-    # tail fit (drop small N to suppress higher 1/N² contamination)
-    tail_lo = 16
+    # Higher-order tail fit, matching the 4₁ calibration methodology
+    # (jones_1loop_c0_calibration_fig8.py): model KMAX subleading 1/N^m
+    # Ohtsuki terms so c₀ is not contaminated by the truncated tail.  The
+    # Borromean Habiro tower is O(n³), so N_max is far smaller than 4₁'s
+    # 6000 — c₀(𝓑₃) therefore carries a larger residual than the 1e-11
+    # calibration anchor (reported honestly below).
+    KMAX = 2
+    tail_lo = 20
     idx = [i for i in range(len(Ns)) if Ns[i] >= tail_lo]
 
-    # (A) 3-param fit r = p·logN + c₀ + d/N  (Vol fixed)
-    phi3 = [[mp.log(Ns[i]), mp.mpf(1), 1 / Ns[i]] for i in idx]
-    y = [resid[i] for i in idx]
-    p_fit, c0_fit, d_fit = lstsq(phi3, y)
+    def invpows(N):
+        return [1 / N ** m for m in range(1, KMAX + 1)]
 
-    # (B) 4-param cross-check: also free the volume slope,
-    #     log|J| = a·N + p·logN + c₀ + d/N  → check a·2π ≈ 8G.
-    phi4 = [[Ns[i], mp.log(Ns[i]), mp.mpf(1), 1 / Ns[i]] for i in idx]
-    y4 = [logs[i] for i in idx]
-    a4, p4, c04, d4 = lstsq(phi4, y4)
+    # (A) Vol-fixed:  r = p·logN + c₀ + Σ d_m/N^m
+    phiA = [[mp.log(Ns[i]), mp.mpf(1)] + invpows(Ns[i]) for i in idx]
+    solA = lstsq(phiA, [resid[i] for i in idx])
+    p_fit, c0_fit = solA[0], solA[1]
 
-    print(f"\n── Vol-fixed 3-param fit  r(N)=p·logN + c₀ + d/N  (tail N≥{tail_lo}) ──")
+    # (B) free-slope cross-check: log|J| = a·N + p·logN + c₀ + Σ d_m/N^m
+    phiB = [[Ns[i], mp.log(Ns[i]), mp.mpf(1)] + invpows(Ns[i]) for i in idx]
+    solB = lstsq(phiB, [logs[i] for i in idx])
+    a4, p4, c04 = solB[0], solB[1], solB[2]
+
+    print(f"\n── Vol-fixed fit  r=p·logN + c₀ + {KMAX}×1/N^m  (tail N≥{tail_lo}, N_max={int(Ns[-1])}) ──")
     print(f"  power  p   = {float(p_fit):.5f}   (knot 3/2 = 1.5; 𝓑₃ has 3 cusps)")
     print(f"  1-loop c₀  = {float(c0_fit):.5f}")
-    print(f"  1/N    d   = {float(d_fit):.5f}")
-    print(f"\n── free-slope 4-param cross-check ──")
+    print(f"\n── free-slope cross-check ──")
     print(f"  slope a    = {float(a4):.6f}  → a·2π = {float(a4*2*mp.pi):.5f}  (8G = {float(VOL_BOR):.5f})")
     print(f"  power  p   = {float(p4):.5f}")
     print(f"  1-loop c₀  = {float(c04):.5f}")
 
-    # 1-loop delta candidate: exp(c₀) up to the standard 2π factors.
-    # (Reported as raw exp(c₀); the τ comparison is the follow-up.)
+    # 1-loop torsion candidate.  The 4₁ calibration
+    # (jones_1loop_c0_calibration_fig8.py) VALIDATED the relation
+    # |τ_adj| = exp(2c₀) to 2e-11 on the figure-eight (recovered 1/√3).
+    # Applying the SAME relation here gives a candidate |τ_adj(𝓑₃)| —
+    # but the 4₁ anchor is a 1-cusp KNOT in the un-normalized Kashaev
+    # normalization, whereas this tower is a 3-cusp LINK in the Habiro
+    # J_{B,1}=1 normalization.  The candidate therefore carries an
+    # unquantified normalization/cusp-count offset until the octahedral
+    # Neumann–Zagier τ(𝓑₃) is computed independently (the follow-up).
     delta_expc0 = float(mp.e ** c0_fit)
-    print(f"\n  exp(c₀)    = {delta_expc0:.6f}   (raw 1-loop amplitude; τ(𝓑₃) comparison = follow-up)")
+    tau_candidate = float(mp.e ** (2 * c0_fit))
+    print(f"\n  exp(c₀)     = {delta_expc0:.6f}")
+    print(f"  exp(2c₀)    = {tau_candidate:.6f}   (|τ_adj| candidate — normalization/cusp "
+          f"offset vs the 4₁ anchor UNRESOLVED; τ(𝓑₃) NZ computation = follow-up)")
 
     verdict_vol = abs(float(a4 * 2 * mp.pi) - float(VOL_BOR)) / float(VOL_BOR) < 0.02
     print(f"\nVERDICT: leading volume re-confirmed ({'OK' if verdict_vol else 'OFF'}); "
@@ -173,17 +194,20 @@ def main() -> int:
                        "Vol fixed = 8G. The next honest bridge data below the "
                        "volume. Audit-only; no fit; nothing wired.",
         "auditOnly": True,
-        "parameters": {"NMAX": NMAX, "tail_lo": tail_lo, "root": "q=exp(2πi/N)"},
+        "parameters": {"NMAX": NMAX, "tail_lo": tail_lo, "KMAX_invN_terms": KMAX, "root": "q=exp(2πi/N)"},
         "data": {
             "vol_borromean_8G": mp.nstr(VOL_BOR, 20),
-            "fit_vol_fixed": {"power_p": float(p_fit), "c0": float(c0_fit), "d": float(d_fit)},
+            "fit_vol_fixed": {"power_p": float(p_fit), "c0": float(c0_fit)},
             "fit_free_slope": {"slope_a": float(a4), "vol_from_slope": float(a4 * 2 * mp.pi),
-                                "power_p": float(p4), "c0": float(c04), "d": float(d4)},
-            "exp_c0_raw_1loop_amplitude": delta_expc0,
+                                "power_p": float(p4), "c0": float(c04)},
+            "exp_c0": delta_expc0,
+            "exp_2c0_tau_candidate": tau_candidate,
             "verdict_leading_volume_ok": bool(verdict_vol),
-            "note": "c0 is a MEASURED constant; comparison to the adjoint "
-                    "Reidemeister torsion tau(B3) requires the octahedral "
-                    "Neumann-Zagier 1-loop computation (follow-up).",
+            "note": "c0 MEASURED. exp(2c0)=|tau_adj| relation validated to 2e-11 "
+                    "on 4_1 (jones_1loop_c0_calibration_fig8), but the 4_1 anchor is "
+                    "1-cusp/un-normalized vs this 3-cusp/Habiro tower, so exp(2c0) here "
+                    "is a candidate with an unresolved normalization+cusp offset; the "
+                    "octahedral Neumann-Zagier tau(B3) is the follow-up.",
         },
     }
     out = script_path.with_name("borromean-jones-1loop-torsion.witness.json")

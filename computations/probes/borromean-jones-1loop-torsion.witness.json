@@ -1,34 +1,34 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-25T12:23:23.121330+00:00",
-  "commitSha": "",
+  "computedAt": "2026-07-25T16:27:58.752406+00:00",
+  "commitSha": "262e7866fac744f6095fd90ce23b26a2d10520be",
   "scriptFile": "computations/probes/borromean_jones_1loop_torsion.py",
-  "scriptHash": "08152c02ba94",
-  "scriptCommitSha": "",
+  "scriptHash": "821fbf3c41a2",
+  "scriptCommitSha": "262e7866fac744f6095fd90ce23b26a2d10520be",
   "description": "Subleading (power-of-N + 1-loop constant c\u2080) extraction from the Borromean colored-Jones Kashaev asymptotics, Vol fixed = 8G. The next honest bridge data below the volume. Audit-only; no fit; nothing wired.",
   "auditOnly": true,
   "parameters": {
-    "NMAX": 44,
-    "tail_lo": 16,
+    "NMAX": 56,
+    "tail_lo": 20,
+    "KMAX_invN_terms": 2,
     "root": "q=exp(2\u03c0i/N)"
   },
   "data": {
     "vol_borromean_8G": "7.3277247534177521204",
     "fit_vol_fixed": {
-      "power_p": 1.506386294426628,
-      "c0": -1.4165789492717569,
-      "d": 1.9432435960789878
+      "power_p": 1.4993456356068329,
+      "c0": -1.3828105122579213
     },
     "fit_free_slope": {
-      "slope_a": 1.1659580304738142,
-      "vol_from_slope": 7.325930365861118,
-      "power_p": 1.5220690609418792,
-      "c0": -1.4681027693235424,
-      "d": 2.147005742565109
+      "slope_a": 1.1662661569459907,
+      "vol_from_slope": 7.32786638158385,
+      "power_p": 1.4970210904124701,
+      "c0": -1.373471981152373
     },
-    "exp_c0_raw_1loop_amplitude": 0.24254234888557374,
+    "exp_c0": 0.2508724811292304,
+    "exp_2c0_tau_candidate": 0.06293700178793604,
     "verdict_leading_volume_ok": true,
-    "note": "c0 is a MEASURED constant; comparison to the adjoint Reidemeister torsion tau(B3) requires the octahedral Neumann-Zagier 1-loop computation (follow-up)."
+    "note": "c0 MEASURED. exp(2c0)=|tau_adj| relation validated to 2e-11 on 4_1 (jones_1loop_c0_calibration_fig8), but the 4_1 anchor is 1-cusp/un-normalized vs this 3-cusp/Habiro tower, so exp(2c0) here is a candidate with an unresolved normalization+cusp offset; the octahedral Neumann-Zagier tau(B3) is the follow-up."
   }
 }
