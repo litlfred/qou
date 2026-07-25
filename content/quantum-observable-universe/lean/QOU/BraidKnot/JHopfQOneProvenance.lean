@@ -39,10 +39,24 @@ are captured:
    1987, standard link tables). Independently, `jonesHopfStd 1 = −2`
    (`jonesHopfStd_one`), cross-checking the `(−2)^{c−1}` route.
 
+## Numerical witness cross-reference
+
+The corpus probe `computations/qbeta/qbeta_c3_jhopf_q0_vs_q1_comparison.py`
+(witness `computations/qbeta/qbeta-c3-jhopf-q0-vs-q1-comparison.witness.json`)
+records the same `−2` from a **third** convention `J_Hopf(q) = −(q² + q⁻²)`,
+also `= −2` at `q = 1`, and confirms it is `q_0`-independent ("Rule A:
+`c_3 = J_Hopf(q=1) = −2`, passes the Taylor-coefficient stability test"; the
+`q_0`-evaluation `J_Hopf(q_0) ≈ −2.044` is the near-match swing). That three
+distinct Jones normalizations — the loop factor `δ^{c−1}`, the tabulated
+`V(t)`, and `−(q²+q⁻²)` — all agree at `q = 1` is the **convention-robustness**
+of the `−2` at the classical point: it is the loop/component-count invariant
+`V_L(1) = (−2)^{c−1}`, not an artifact of one normalization.
+
 Base ring (§7c): archimedean (`Real.sqrt`, Jones-variable evaluation), so `ℝ`.
 
 Ref: [jones1987] https://www.jstor.org/stable/1971403
 Ref: [manuscript] quantum-observable-universe/mass-theory/jet-filtered-knot-factor.md
+Ref: [manuscript] computations/qbeta/qbeta_c3_jhopf_q0_vs_q1_comparison.py (numerical witness)
 -/
 
 namespace QOU.BraidKnot.JHopfQOneProvenance
