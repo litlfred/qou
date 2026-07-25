@@ -37,12 +37,21 @@ is removed by the subtraction) — so `Im(reg_n) ≡ 0`. The **linear pole**
 `log(x qᵏ)` is likewise removed per-factor by definition. The remaining content
 is the convergence of the two **real** pieces:
 
-| Piece | Sum | Limit | Vector |
-|---|---|---|---|
-| **W-P1** positive factors `k ≤ k*` | `−(1−q)Σ_{k≤k*} log(1−x qᵏ)` | `Li₂(x) − π²/6` | V3 |
-| **W-P2** regularized negative factors `k > k*` | `−(1−q)Σ_{k>k*} log(1−(x qᵏ)⁻¹)` | `−π²/6` | V1+V2 |
+| Piece | Sum | Limit | Vector | Status |
+|---|---|---|---|---|
+| **W-P1** positive factors `k ≤ k*` | `−(1−q)Σ_{k≤k*} log(1−x qᵏ)` | `Li₂(x) − π²/6` | V3 | open |
+| **W-P2** regularized negative factors `k > k*` | `−(1−q)Σ_{k>k*} log(1−(x qᵏ)⁻¹)` | `−π²/6` | V1+V2 | **PROVED sorry-free (#4191)** |
 
 Sum `= Li₂(x) − π²/3`. ✓
+
+> **W-P2 CLOSED (2026-07-25, #4191).** The regularized negative-factor half is
+> fully proved sorry-free in `DilogPartBEulerTail.lean`: the eta asymptotic
+> `euler_tail_asymptotic` — `(1−p)·Σ'_m −log(1−p^{m+1}) → π²/6` as `p→1⁻`
+> (`p = 1/q`) — assembled from V1 (`euler_tail_coeff_limit` + `_le` + `_nonneg`),
+> V2b (`euler_tail_jseries_tendsto`, Tannery), and V2a
+> (`euler_tail_lambert_rearrange`, nonneg Fubini). This is the classical
+> Hardy–Ramanujan / Dedekind-eta limit `(1−p)log∏(1−pᵐ) → −π²/6`, previously
+> absent from Mathlib and the corpus.
 
 ### W-P2 is the Euler-function / Dedekind-eta asymptotic
 
