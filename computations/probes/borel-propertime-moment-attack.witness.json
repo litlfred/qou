@@ -1,0 +1,149 @@
+{
+  "engine": "sympy+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-07-25T12:04:44.751767+00:00",
+  "commitSha": "dbf31e461dd707482f744388ebd7240310575c99",
+  "assertions": [
+    {
+      "name": "moment_identity_gamma",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": 0,
+      "source": "∫₀^∞ sⁿ e^(−s) ds/s − (n−1)! = 0 exactly (sympy), n = 1..8: the keystone-forced normalizer N(n) = (n−1)! (KeystoneBridgeC1Binding, proved n·N(n) = n!) IS the n-th moment of the unit (c = 1) Schwinger kernel e^(−s)·ds/s"
+    },
+    {
+      "name": "n0_divergence_and_shift",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": 0,
+      "source": "∫₀^∞ e^(−s) ds/s = ∞ (the ds/s kernel is an infinite measure at s = 0); the determinacy statement lives on the index-shifted FINITE measure e^(−s)·ds with Stieltjes moments m_k = k! = N(k+1) (verified exactly k = 0..7)"
+    },
+    {
+      "name": "carleman_determinate",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": 0,
+      "source": "Carleman for the Stieltjes problem of {k!}: exact Stirling limit lim (k!)^(1/(2k))/√k = e^(−1/2) (sympy), so terms (k!)^(−1/(2k)) ~ √(e/k); exact minorant k! ≤ k^(2k) (verified k = 1..200) gives (k!)^(−1/(2k)) ≥ 1/k and Σ 1/k = ∞ ⇒ Σ (k!)^(−1/(2k)) = ∞: Carleman holds, the moment problem is DETERMINATE — e^(−s)·ds is the UNIQUE positive measure on (0,∞) with moments {k!}"
+    },
+    {
+      "name": "hankel_positive",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": 0,
+      "source": "det[(i+j)!] > 0 and det[(i+j+1)!] > 0 for sizes 1..6 (exact integers): {k!} satisfies the Stieltjes positive-definiteness consistent with the unique representing measure e^(−s)·ds"
+    },
+    {
+      "name": "unit_forced_c_eq_1",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": 0,
+      "source": "with kernel c·e^(−s)·ds/s the moments are c·(n−1)!; the PROVED KeystoneBridgeC1Binding identity n·N(n) = n! forces c = 1 exactly (unique sympy solution, n = 1..8); c = 1/2 fails for every n — conditional on the identification, the Schwinger unit is pinned (r2core §5 distinguisher, re-verified)"
+    },
+    {
+      "name": "binding_positivity_status",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": 0,
+      "source": "binding-side status: (i) I(n) > 0 exact to n = 41 (Lean-proved involutionNumber_pos); (ii) the normalized C1 carrier b_n = I(n)/n! is NOT log-convex (b_2² = 1 > b_1·b_3 = 2/3; violations at m = 2..6,…) — {b_n} is NOT itself a Stieltjes moment sequence, so the reduction's positive-measure hypothesis concerns the RESUMMATION KERNEL, not the carrier coefficients; (iii) the raw periods B_n = I(n)/n ARE log-convex for 2 ≤ n ≤ 39 — the necessary Stieltjes condition PASSES for the raw series (status datum, NOT a representability proof)"
+    },
+    {
+      "name": "bar_covariance_weight",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": 0,
+      "source": "[k]_{q⁻¹} = q^(1−k)·[k]_q exactly (k = 1..8) ⇒ N_{q⁻¹}(n) = q^(−(n−1)(n−2)/2)·N_q(n) exactly (n = 1..8; weight nontrivial for every n ≥ 3): the one-sided q-Borel normalizer is bar-COVARIANT while loop proper time (s real) is bar-INVARIANT — FALSIFIER FIRES for the identification with the unbalanced kernel at q ≠ 1 (scope-(a): the stated unbalanced form only; trivial at q = 1)"
+    },
+    {
+      "name": "balanced_bar_invariant",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": 0,
+      "source": "N_q^bal(n) = q^(−(n−1)(n−2)/4)·[n−1]_q! satisfies N^bal_{q⁻¹} = N^bal_q exactly (n = 1..8) — the balanced (BalancedQuantumTwist) convention restores bar-invariance; the identification survives iff the conjecture's kernel is read balanced (the exact bar-projection caveat)"
+    },
+    {
+      "name": "subleading_pattern_mismatch",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": 0,
+      "source": "exact per-moment corrections: unbalanced q-Borel 1 + (q−1)(n−1)(n−2)/4 + O² (QUADRATIC in n); balanced 1 + 0·(q−1) + O², with h²-coefficient Σ(k²−1)/24 at q = e^h; loop heat-kernel a₁-correction (n−1)!(1 + a₁n/A) (LINEAR in n). Unbalanced matches neither loop q-independence (0) nor curvature (linear) — E1's FAIL reproduced at moment level with exact discrepancy; balanced first-order 0 matches loop q-independence — PASS (unproved); the balanced q²-order Σ(k²−1)/24 is the next-order falsifier target"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 11176,
+  "computation": "borel-propertime-moment-attack",
+  "scriptFile": "borel_propertime_moment_attack_probe.py",
+  "scriptHash": "4c9e3bab5a0b",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Attacks A + E on the conjecture 'binding Borel variable = loop proper time' (beans qou-7gu9 + qou-zfl0, epic qou-q04o; audit-only, scope-(a), NO FIT, nothing wired). ATTACK A (moment-determinacy reduction): the keystone-forced normalizer N(n) = (n−1)! is exactly the n-th ds/s-moment of the unit Schwinger kernel e^(−s)·ds/s (A1); the kernel is an infinite measure at s = 0, so determinacy lives on the shifted finite measure e^(−s)·ds with moments {k!} (A2); Carleman's condition holds exactly for {k!} (Stirling limit e^(−1/2); minorant k! ≤ k^(2k) ⇒ terms ≥ 1/k; harmonic divergence) so the Stieltjes problem is DETERMINATE (A3), Hankel-consistent (A4); with kernel c·e^(−s)·ds/s the proved n·N(n) = n! forces c = 1 (A5). REDUCTION: the conjecture reduces to two named open hypotheses — positivity + (n−1)!-representability of the binding resummation kernel; determinacy then forces the kernel to BE e^(−s)·ds. Binding-side status (A6): coefficient positivity Lean-proved; the C1 carrier is NOT a moment sequence (log-convexity fails at m = 2); the raw periods I(n)/n pass log-convexity to n = 39 (necessary condition only); kernel positivity/representability OPEN. ATTACK E (falsifier): the one-sided q-Borel normalizer is bar-COVARIANT with exact weight q^(−(n−1)(n−2)/2) while loop proper time is bar-invariant — the unbalanced identification FAILS at q ≠ 1 (E1), reproduced at moment level by the exact first-order pattern mismatch quadratic-vs-{0, linear} (E3); the balanced normalizer q^(−(n−1)(n−2)/4)·[n−1]_q! is exactly bar-invariant with vanishing first-order correction — the identification SURVIVES with the balanced-kernel (bar-projection) caveat (E2), next falsifier at q²-order Σ(k²−1)/24. Pin numerics recorded at both q₀ pins (E4).",
+  "auditOnly": "docs/audits/2026-07-25-borel-propertime-attack-a-e.md",
+  "data": {
+    "binding_positivity": {
+      "carrier_logconvex_violations_m_lt_20": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "raw_period_logconvex_violations_2_39": [],
+      "note": "corpus grep found NO prior Stieltjes/positive-measure representability statement for the binding OGF — positivity+representability are genuinely open; the Frobenius-positivity SDP constraints (confinement-sdp) constrain Wedderburn-block pairings ⟨π_λ, Φ⟩ ≥ 0, a different object from the Borel kernel; no transfer established"
+    },
+    "pin_numerics": {
+      "muon": {
+        "n": 6,
+        "first_order_defect_estimate": "0.5498929777866735995",
+        "bar_weight_q0^{-(n-1)(n-2)/2}": "0.35225239870279079494",
+        "Nq_over_factorial_unbalanced": "1.72347903921915682308815006997",
+        "Nq_over_factorial_balanced": "1.02289954520247525558882487652"
+      },
+      "proton": {
+        "n": 6,
+        "first_order_defect_estimate": "0.54989291375690403796",
+        "bar_weight_q0^{-(n-1)(n-2)/2}": "0.35225243934256788235",
+        "Nq_over_factorial_unbalanced": "1.72347893118502434187172880944",
+        "Nq_over_factorial_balanced": "1.02289954008985551282907635796"
+      },
+      "balanced_ratio_pin_shift_rel": "4.9981641e-9",
+      "note": "O(1) unbalanced defect at q₀ (≈0.55 at n = 6): the E1/E3 discrepancy is NOT a small correction at the substrate value — the unbalanced identification fails grossly away from q = 1; recorded, not scored (the falsifier verdicts are the exact symbolic E1/E3)"
+    },
+    "q0_pins": {
+      "muon": "1.10997859555733471989976322048322502665620840878015368660798114614493",
+      "proton": "1.1099785827513808075916690956107688798744991218736",
+      "source": "computations/q-pinning-50-digit.witness.json (muon, canonical 3-CAL layer); qou_substrate.constants.Q_50_DIGIT_STR (proton, precision layer)"
+    }
+  }
+}
