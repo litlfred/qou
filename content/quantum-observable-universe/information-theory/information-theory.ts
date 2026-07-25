@@ -151,6 +151,12 @@ section({
         "p-vs-np-event-horizon-table2-data",
         "p-vs-np-event-horizon-table1-data",
         "qou-p-neq-np",
+        // Skein-observation bridge (2026-07-25): the trichotomy remark —
+        // q-Collatz halting, P vs NP, and q-NS regularity as one length-
+        // filtration question on the Skein substrate (interprets the
+        // computational horizon; formalized in QOU.Information.
+        // SkeinObservationSystem).
+        "skein-filtration-trichotomy",
       ],
     }),
     section({
