@@ -70,4 +70,34 @@ theorem euler_tail_coeff_limit (j : ℕ) (hj : 1 ≤ j) :
   have hjne : (j : ℝ) ≠ 0 := Nat.cast_ne_zero.mpr (by omega)
   simpa using hnum.div hden hjne
 
+/-- **V1 — Euler-tail coefficient uniform bound.**  For `0 < p < 1` and `j ≥ 1`,
+    `(1−p)·pʲ/(1−pʲ) ≤ 1/j`.  Together with `euler_tail_coeff_limit` (the termwise
+    limit `→ 1/j`) this is the second Tannery/dominated-convergence input for
+    `W-P2`: the coefficient times `1/j` is dominated by the summable `1/j²`.
+    Proof: `(1−p)pʲ/(1−pʲ) = pʲ/Σ_{i<j}pⁱ`, and each of the `j` summands
+    `pⁱ (i<j)` is `≥ pʲ`, so `Σ_{i<j}pⁱ ≥ j·pʲ`. -/
+theorem euler_tail_coeff_le {j : ℕ} (hj : 1 ≤ j) {p : ℝ} (hp0 : 0 < p)
+    (hp1 : p < 1) : (1 - p) * p ^ j / (1 - p ^ j) ≤ 1 / (j : ℝ) := by
+  have hspos : 0 < ∑ i ∈ Finset.range j, p ^ i :=
+    Finset.sum_pos (fun i _ => pow_pos hp0 i)
+      (Finset.nonempty_range_iff.mpr (by omega))
+  have hsum : (1 : ℝ) - p ^ j = (1 - p) * ∑ i ∈ Finset.range j, p ^ i := by
+    have h2 : (∑ i ∈ Finset.range j, p ^ i) * (p - 1) = p ^ j - 1 :=
+      geom_sum_mul p j
+    linear_combination h2
+  have heq : (1 - p) * p ^ j / (1 - p ^ j) = p ^ j / ∑ i ∈ Finset.range j, p ^ i := by
+    rw [hsum, mul_div_mul_left _ _ (sub_pos.mpr hp1).ne']
+  have hjpos : (0 : ℝ) < (j : ℝ) := by exact_mod_cast (by omega : (0 : ℕ) < j)
+  -- `Σ_{i<j} pⁱ ≥ j·pʲ` since each of the `j` summands is `≥ pʲ`.
+  have hbound : (j : ℝ) * p ^ j ≤ ∑ i ∈ Finset.range j, p ^ i := by
+    have hterm : ∀ i ∈ Finset.range j, p ^ j ≤ p ^ i := by
+      intro i hi
+      exact pow_le_pow_of_le_one hp0.le hp1.le (Finset.mem_range.mp hi).le
+    have hle := Finset.card_nsmul_le_sum (Finset.range j) (fun i => p ^ i) (p ^ j) hterm
+    rwa [Finset.card_range, nsmul_eq_mul] at hle
+  rw [heq, div_le_iff₀ hspos]
+  calc p ^ j = 1 / (j : ℝ) * ((j : ℝ) * p ^ j) := by field_simp
+    _ ≤ 1 / (j : ℝ) * ∑ i ∈ Finset.range j, p ^ i :=
+        mul_le_mul_of_nonneg_left hbound (by positivity)
+
 end QOU.QPochhammer
