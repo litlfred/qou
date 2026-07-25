@@ -12,6 +12,37 @@ The entire Faddeev–Volkov uniqueness leg (`PentagonRigidity.uniqueUpToScalar` 
 reduced to **one** honest, named analytic input about the concrete `Φ_b`. `qou-7xvy` is
 exactly that input.
 
+## Canonical map (consolidated 2026-07-25, after input-1 closure)
+
+Two facts about `phiBProd` are now **theorems on the substrate branch `Im b² > 0`**, no
+longer carried hypotheses:
+
+- **`MeromorphicOn (phiBProd b)`** — closed by input 1 (the infinite-product-analyticity
+  route: `PhiBProdFactorAnalytic` #4272 → `LocalUniformLimitEntire` #4278 →
+  `PhiBProdProductConvergence` #4296 → `PhiBProdMeromorphic` #4223).
+- **`meromorphicOrderAt (phiBProd b) ≠ ⊤`** — input 2 (`PhiBProdOrderNeTop` #4225).
+
+The elliptic-freedom obstruction is narrowed to a single residual, excluded in three
+layers (see ledger at the end): even `℘` and bar-even reciprocal-odd are killed
+**algebraically** (inversion #4227a, σ-unitarity #4227b); the non-σ-fixed reciprocal-odd
+residual is excluded **analytically** by boundedness.
+
+**The single remaining open input** (both routes bottom out here): the `Φ_b`
+**divisor-rigidity fact** — either `hr_entire` (the ratio `Ψ/phiBProd` extends across
+removable singularities to entire; divisor route) or `hbdd` (that ratio is bounded on ℂ;
+growth route). These are two forms of the same statement, and both require the
+**state-integral / Écalle–Borel growth estimate** for `Φ_b` (contour integration) —
+infrastructure Mathlib does not package. Input 1's infinite-product-analyticity closed
+`MeromorphicOn` but **not** divisor rigidity, which is the strictly harder fact.
+
+Everything *around* this input is already in place: ratio double-periodicity on a dense
+locus (`CyclicDilogPentagon.ratio_ib_periodic` / `ratio_ibinv_periodic`), continuity
+promotion to everywhere (`Common.periodic_of_continuous_of_eqOn_dense`), the period basis
+(`PeriodLatticeBasis.exists_period_basis`), the global←compact boundedness localization
+(`DoublyPeriodicBoundedLocalization` #4237), and the conditional capstones/assembly
+(`FaddeevUniquenessBoundedCapstone`, `PhiBProdUniquenessAssembly` #4232). The keystone is a
+single Lean theorem modulo the one growth-estimate endowment.
+
 ## The chain (all sorry-free; earlier "N sorry" grep hits were docstring mentions)
 
 | File | Role |
