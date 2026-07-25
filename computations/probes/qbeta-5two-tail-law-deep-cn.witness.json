@@ -1,0 +1,130 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-25T13:03:11.598862+00:00",
+  "commitSha": "c7d0d4452dc0cd03fff27529c0c4ba79943a86e8",
+  "assertions": [
+    {
+      "name": "cn_regeneration_exact",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "shared-triangle C_n == profile C52(n), integer dict equality at n = 5, 20, 43"
+    },
+    {
+      "name": "overlap_with_a62_values",
+      "computed": 0.0,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-30,
+      "source": "T̂_n (n ≤ 43) matches the A6.2 profile-module route"
+    },
+    {
+      "name": "deep_ranking_reproducible",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "three-model ranking identical on 48..96 and 64..96"
+    },
+    {
+      "name": "plateau_pole_extraction_stable",
+      "computed": 4.371195596752283e-10,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 0.02,
+      "source": "Aitken plateau c∞ of (−1)^n·T̂_n stable across offsets — simple pole at w = −1, residue c∞"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "qbeta-5two-tail-law-deep-cn",
+  "scriptFile": "qbeta_5two_tail_law_deep_cn_probe.py",
+  "scriptHash": "6cec7b618c7a",
+  "scriptCommitSha": "c7d0d4452dc0cd03fff27529c0c4ba79943a86e8",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "A6.3: the exact Masbaum C_n extended to n ≤ 96 (shared Pascal triangle, gated exactly against the merged profile module) and the W9 q-Borel sequence's tail law re-measured at depth and dps 800 (~640-digit worst cancellation, entropy-safe): sliding-window single-model θ track (does the A6.2 drift stabilize?) + the three-model discrimination on deep windows. Honest outcome either way: stabilized θ = algebraic tail with the value reported, continued drift = flat-type singularity recorded. auditOnly; no c_k wired; no fit.",
+  "contentBlock": "prop:phi-b-unitary-bar-odd",
+  "data": {
+    "theta_track": {
+      "20..36": "12.34607",
+      "32..48": "7.5620938",
+      "44..60": "3.7032271",
+      "56..72": "1.6117078",
+      "68..84": "0.6511955",
+      "80..96": "0.24988631"
+    },
+    "theta_stabilized": false,
+    "pole": {
+      "c_inf_residue": "1.23076603982093e-12",
+      "offset_stability": "4.3712e-10",
+      "transient_ratio": "0.90085838",
+      "reading": "simple pole at w = -1 with residue c_inf; the 'soft singularity' at n <= 43 was the transient",
+      "g3_lane_flag": "the theta-Laplace D_odd scheme band (5e-16) predates this pole: a pole ambiguity enters at the residue scale ~1e-12 — still ~9 orders below the physics scale, but the stated precision needs the caveat"
+    },
+    "deep_models": {
+      "tab": {
+        "48..96": {
+          "algebraic_ln_n": {
+            "coef": "1.2861472",
+            "rms": "0.00660794"
+          },
+          "stretched_sqrt_n": {
+            "coef": "0.61473482",
+            "rms": "0.00730126"
+          },
+          "quadratic_n2": {
+            "coef": "-0.00025274202",
+            "rms": "0.00929052"
+          }
+        },
+        "64..96": {
+          "algebraic_ln_n": {
+            "coef": "0.55149298",
+            "rms": "0.000746476"
+          },
+          "stretched_sqrt_n": {
+            "coef": "0.24767044",
+            "rms": "0.000808658"
+          },
+          "quadratic_n2": {
+            "coef": "-8.6499033e-5",
+            "rms": "0.000991898"
+          }
+        }
+      },
+      "rankings": {
+        "48..96": [
+          "algebraic_ln_n",
+          "stretched_sqrt_n",
+          "quadratic_n2"
+        ],
+        "64..96": [
+          "algebraic_ln_n",
+          "stretched_sqrt_n",
+          "quadratic_n2"
+        ]
+      },
+      "best": "algebraic_ln_n",
+      "decisive": false
+    },
+    "alt_positive_to_96": true,
+    "params": {
+      "n_max": 96,
+      "dps": 800
+    },
+    "verdict": "TAIL LAW AT DEPTH SETTLED: (−1)^n·T̂_n → c∞ ≈ 1.23077e-12 ≠ 0 (Aitken-stable 4.37e-10) — the Borel function has a SIMPLE POLE at w = −1 with residue ≈ c∞; the θ track {'20..36': '12.34607', '32..48': '7.5620938', '44..60': '3.7032271', '56..72': '1.6117078', '68..84': '0.6511955', '80..96': '0.24988631'} marching to 0 and the shallow-window 'soft singularity' reading (W9-parallel B1 + A6.2) were the transient. The naive φ-side 3/2 algebraic tie is REFUTED-as-stated for this sequence (scope-(a): this transform/normalization). g3-lane flag recorded: the pole introduces a ~1e-12-scale contour ambiguity above the stated 5e-16 D_odd scheme band (no physics impact; precision caveat). auditOnly."
+  }
+}
