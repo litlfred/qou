@@ -158,6 +158,7 @@ section({
         // computational horizon; formalized in QOU.Information.
         // SkeinObservationSystem).
         "skein-filtration-trichotomy",
+        "geometry-of-incompleteness",
       ],
     }),
     section({
