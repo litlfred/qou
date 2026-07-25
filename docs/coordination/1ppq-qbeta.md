@@ -2165,3 +2165,31 @@ elsewhere (e.g. the observable-side u-dependence or the f-map slot).
 median-normalized, internally-gated, pin-characterized bar-odd
 number of the 5₂ Habiro face. Scope-(a); no identification; no fit;
 no c_k wired.
+
+**2026-07-25 (A6 + A6.2, branch claude/a6-gswz-arithmeticity-2026-07-25,
+PR #4195) — THE SADDLE-SIDE ODD CHANNEL GETS ITS ARITHMETIC HOME + the
+first two-route confrontation with D_odd.**
+`qbeta_5two_gswz_saddle_arithmeticity_probe.py` (6/6): the A4.2 φ-series
+engine run at ALL THREE saddles of x³−2x²+3x−1 (disc −23 = the three
+embeddings of the 5₂ trace field K) reconstructs **all 24 orders as
+integer-exact elements of K** (determined Vandermonde solve + CF
+rationalization at dps 320 + re-evaluation at every embedding; printed
+P₁..P₃ matched integer-exact). Measured denominator laws: v₂₃ ≈ 3k/2
+and — outside {2,3,5,23} — the Ohtsuki/Habiro-type tail
+**v_p = ⌊k/(p−2)⌋ for every prime p ≥ 7** (enters at k = p−2, steps by
+p−2; saturated at all 120 (k,p) checks). The exact **bar-odd σ-pair
+tower** P_k(ξ₁)−P_k(ξ̄₁) ∈ √−23-line is recorded for all 24 orders.
+`qbeta_5two_odd_two_route_confrontation_probe.py` (2/2): the σ-pair
+projection EVALUATED at the substrate — **O_φ = Im φ_σ1(−ln q₀) =
++0.01090896074** (calibration-free; truncation ≡ directional Laplace at
+4e-18) — recorded scope-(a) against this ledger's median-normalized
+**D_odd = −0.007579403739** (ratio −1.4393), S_muon (1.13), u³ (1.20):
+NO identification — the open piece is the bridge between the two
+OBJECTS (σ-pair coefficientwise projection vs Habiro-face function
+value = the Stokes sector population on the real-q ray), NOT the
+scheme (closed by the δ-torus median above). Structural finding: the
+exact q-Borel T̂_n carry **no clean algebraic n^{−θ} tail at n ≤ 43**
+(θ window-drifts 11 → 9; three-model ranking only indicative) — the
+naive φ-side Gauss-prefactor 3/2 tie is untestable at that depth;
+A6.3 (deep C_n to n = 96, dps 800) is running to settle pre-asymptotic
+vs flat-type. Scope-(a); no fit; no c_k wired.
