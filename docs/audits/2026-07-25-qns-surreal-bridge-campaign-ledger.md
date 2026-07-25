@@ -37,11 +37,39 @@ structure: sustained Kolmogorov forcing exceeds the cap (`α ≈ 4/3` — the
 dissipation closure is falsified for sustained spectra); fixed Gevrey data is
 grade-0 regular. In-model, **blow-up localises entirely to sustained forcing**.
 
-## Next (this session)
+## Completion of the tractable tranche (2026-07-25, PRs #4186–#4193)
 
-Promote the probe's Model-B finding to a theorem: *fixed Gevrey data ⇒ grade-0
-regular on the super-classical side* (`gevrey_grade_zero`), shrinking the open
-content to non-Gevrey (sustained/forced) spectra only. Remaining open after
-that: whether the QOU's internal q-NS dynamics preserves the Gevrey class for
-smooth data as `q → 1⁺` (Gevrey persistence — the analytic core of
-`thm:q-ns-wellposedness`), and the sustained-forcing regime.
+| PR | Landed |
+|---|---|
+| #4186 | **Gevrey grade-0 theorem** (`gevrey_grade_zero`): geometric amplitudes with `q²r ≤ 1/2` ⇒ finite surreal enstrophy — probe Model B promoted |
+| #4190 | **Closure-vs-cascade incompatibility** (`closure_excludes_deep_cascade`): the dissipation closure excludes grade-1-deep cascades — probe Model A promoted |
+| #4193 | **Gevrey-persistence epic, bricks 1–4** (14 theorems): discrete Gronwall + rate wall (GP1); q-damping threshold + split persistence (GP2); ε-free local bootstrap, horizon `~1/(cΩ₀)` (GP3); **small-data global persistence** in the sub-threshold basin `cΩ₀ ≤ νμ` (GP4) |
+
+**Final state:** local persistence for all finite data; global persistence for
+small data; high modes damped; both probe findings theorem-grade. The sole
+open item is **large-data global persistence at the finite-dimensional
+low-mode block** — and the framework *predicts it fails* (every QOU is
+internally NS-singular), so the open work is exhibiting the blow-up mechanism,
+branch A.
+
+## Machinery inventory for the large-data item
+
+1. **Categorical (existence):** the obstruction chain (observability ⇒
+   `NS(A) ≠ 0` ⇒ internal blow-up) + Yekutieli–Levi unification identify the
+   super-threshold candidate: the anti-parallel vortex pair, linking number 1,
+   at the collision locus `Σ`.
+2. **Finite-dimensional spectral (computable):** `k_max ≈ 4` active modes at
+   `q₀` (`discrete-vortex-spectrum`) — the low-mode block is a ~5-ODE truncated
+   Leray system with **`SU_q(2)` Clebsch–Gordan coupling constants**, dominant
+   channel `½⊗½ → 0`. Validated-numerics-sized.
+3. **SDP/confinement duals:** S₅-invariant-channel positivity
+   (`lp_dual_solver`, golden window) prunes the active couplings — makes the
+   transfer coefficient `c` and hence the GP4 threshold `νμ/c` computable.
+4. **GP calculus, blow-up side (provable next):** the discrete Riccati
+   *lower*-bound lemma — `Ω_{n+1} ≥ Ω_n + δc'Ω_n²` forces divergence in
+   finitely many steps — would give the mechanism-level branch-A statement.
+5. **Surreal grade bookkeeping** to state outcomes in-QOU.
+
+**Genuinely missing:** (a) pinning `c`, `ν·μ` from Clebsch–Gordan/SDP data
+(compute session); (b) verifying the colliding-pair data satisfies the Riccati
+lower bound — the true residue of the millennium problem in-QOU.
