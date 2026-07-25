@@ -220,6 +220,38 @@ theorem qcollatz_period2_evenodd {R : Type u} [CommRing R] (q P P1 : R)
     q * P1 = 1 := by
   linear_combination h_odd + (q + 1) * h_even
 
+/-! #### All-even cycle exclusion at every period (uniform)
+
+Generalises the `EE` period-2 case to arbitrary period: an orbit that is
+even at every step and returns satisfies `P = [2]_q^k · P`, forcing `P = 0`
+in any integral domain where `[2]_q^k ≠ 1`. So there is **no** nontrivial
+all-even cycle, at any period `k`. -/
+
+/-- All-even `k`-cycle exclusion: `P = [2]_q^k · P` and `[2]_q^k ≠ 1` in a
+    domain force `P = 0`. -/
+theorem qcollatz_alleven_forces_zero {R : Type u} [CommRing R] [IsDomain R]
+    (q P : R) (k : ℕ) (hq : (q + 1) ^ k ≠ 1) (h : P = (q + 1) ^ k * P) :
+    P = 0 := by
+  have h0 : ((q + 1) ^ k - 1) * P = 0 := by linear_combination -h
+  rcases mul_eq_zero.mp h0 with h1 | h1
+  · exact absurd (sub_eq_zero.mp h1) hq
+  · exact h1
+
+open Polynomial in
+/-- `[2]_q^k = (q+1)^k ≠ 1` in the Skein ring `ℤ[q]` for `k ≥ 1` (its
+    `natDegree` is `k > 0`), discharging the hypothesis of
+    `qcollatz_alleven_forces_zero`. -/
+theorem qcollatz_qplus1_pow_ne_one (k : ℕ) (hk : 0 < k) :
+    ((X + 1 : Polynomial ℤ)) ^ k ≠ 1 := by
+  intro h
+  have hnd : (X + 1 : Polynomial ℤ).natDegree = 1 := by
+    rw [show (X + 1 : Polynomial ℤ) = X + C 1 by rw [C_1], natDegree_X_add_C]
+  have h1 : ((X + 1 : Polynomial ℤ) ^ k).natDegree = k := by
+    rw [natDegree_pow, hnd, mul_one]
+  rw [h] at h1
+  simp at h1
+  omega
+
 /-- **Domain non-invariance (concrete counterexample, proved).**
 
     The Skein-Collatz map is partial: `P` is in its domain iff `P` is
