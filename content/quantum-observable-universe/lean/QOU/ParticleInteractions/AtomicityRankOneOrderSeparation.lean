@@ -192,4 +192,71 @@ theorem freeRankTwo_not_isTotal : ¬ IsTotal (Fin 2 → ℕ) piGenLe := by
 
 end GeneralRank
 
+/-! ## Categorical → order bridge — the atomicity derivation, modulo one named premise
+
+Reconnaissance (2026-07-25): the corpus does **not** isolate a "jet-tower ordering
+axiom" as a Lean object. `FundamentalObject`
+([`fundamental-object.lean`](../../../quantum-universes/fundamental-object.lean))
+carries **no rank field** — its dimension-2 is narrative (Deligne–Milne), not
+formalised; the jet / `KeystoneBridgeC1Binding` Lean concerns the normalizer
+recurrence `N(n) = (n−1)!`, not an ordering on simples; `JetOrderIndependence` is
+a different object (the Jones-series jet-Jacobian rank). So the atomicity premise
+is genuinely **unformalised**, and the order-theoretic content above meets the
+categorical side through **one** named, honestly-conjectural bridge premise: that
+the tensor-generation order on the simple-object index is that of the free
+commutative monoid on the fundamental objects. Given that premise, the chain axiom
+**proves** rank ≤ 1.
+-/
+
+section CategoricalBridge
+
+variable {W : Type*} [Preorder W] {S : Type*} [DecidableEq S]
+
+/-- **Categorical → order bridge (conjectural premise, §3b).** The tensor-
+    generation preorder on the simple-object index `W` is that of the free
+    commutative monoid on the fundamental-object set `S`: a multiplicity map
+    `ι : W → (S → ℕ)` sending each simple to its multiplicities in the
+    fundamentals, monotone for the tensor-generation order, under which each
+    fundamental object `simple s` has multiplicity vector `fundamentalWeight s`.
+
+    This is a **premise** — no instance is provided; it is the honest remaining
+    categorical content of the atomicity route (`qou-ngwo`). The class carries the
+    dictionary's genuine inputs (`ι`, `ι_mono`, `simple`, `ι_simple`); the
+    downstream theorem *derives* rank-one from them, so this is a non-degenerate
+    §3b-cond hypothesis class, not a self-assuming projection. -/
+class TensorGenerationFree (W : Type*) [Preorder W] (S : Type*) [DecidableEq S] where
+  /-- multiplicities of a simple object in the fundamental objects. -/
+  ι : W → (S → ℕ)
+  /-- the tensor-generation order is preserved by `ι` (a simple dividing another
+      has componentwise-smaller fundamental multiplicities). -/
+  ι_mono : ∀ {a b : W}, a ≤ b → piGenLe (ι a) (ι b)
+  /-- each fundamental object is a simple object. -/
+  simple : S → W
+  /-- a fundamental object's multiplicity vector is its own indicator. -/
+  ι_simple : ∀ s : S, ι (simple s) = fundamentalWeight s
+
+/-- **Atomicity derivation, modulo the bridge premise (PROVED).** Given the
+    categorical→order bridge and the jet-tower **chain axiom** (the
+    tensor-generation order on simples is total), the category has **at most one
+    fundamental object** — `Subsingleton S`, rank ≤ 1.
+
+    This is the atomicity upgrade's `premise → theorem` step, honestly delimited:
+    rank-one follows from exactly **two** named premises — the categorical
+    dictionary `TensorGenerationFree` and totality of the tensor-generation order —
+    the latter being the jet-tower ordering axiom the route seeks to establish. No
+    instance of the bridge is fabricated; the implication itself is proved. -/
+theorem rankOne_of_chain_of_bridge [B : TensorGenerationFree W S]
+    (htot : IsTotal W (· ≤ ·)) : Subsingleton S := by
+  refine ⟨fun s t => ?_⟩
+  by_contra hst
+  rcases htot.total (B.simple s) (B.simple t) with h | h
+  · have hle := B.ι_mono h
+    rw [B.ι_simple, B.ι_simple] at hle
+    exact fundamentalWeight_incomparable hst hle
+  · have hle := B.ι_mono h
+    rw [B.ι_simple, B.ι_simple] at hle
+    exact fundamentalWeight_incomparable (Ne.symm hst) hle
+
+end CategoricalBridge
+
 end QOU.Atomicity
