@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
 """A5.5 (bean qou-69pr): certified N=6 categorical q*-test via the
-Jones–Wenzl 5-cable on TL₁₅ — Rust engine (`tl-cable`).
+Jones–Wenzl 5-cable on TL₁₅ — Rust engine (`tl-cable-mpfr`).
 
 WHY. A5.2/A5.3/A5.4 (merged #3927, #4032; #4034) certified the categorical
 q*-test at N = 3, 4, 5. TL₁₅ (Catalan(15) = 9 694 845 diagrams) is out of
 pure-Python reach (~46× the TL₁₂ state space that already cost 6-7 min per
 evaluation), so this rung runs on the Rust port of the same engine
-(`tools/hecke-engine/src/tl_cable.rs`, batch CLI `tl-cable`, MPFR 192-bit).
+(`tools/hecke-engine/src/tl_cable_mpfr.rs`, batch CLI `tl-cable-mpfr`, MPFR
+192-bit — the full-precision sibling of main's `tl_cable` dense-f64 engine).
 The port is gated here (G0) against the live Python engine at N=3 and the
 committed N=4/N=5 witness values before any N=6 number is trusted.
 
@@ -60,7 +61,7 @@ BRAID_5_2 = [1, 1, 1, 2, -1, 2]
 BRAID_4_1 = [1, -2, 1, -2]
 Q_STAR = mp.mpf("1.10997859303152")
 REPO = Path(__file__).resolve().parents[2]
-BIN = REPO / "tools" / "hecke-engine" / "target" / "release" / "tl-cable"
+BIN = REPO / "tools" / "hecke-engine" / "target" / "release" / "tl-cable-mpfr"
 T0 = time.monotonic()
 
 # committed reference values (string-limited to 12 digits)
@@ -75,14 +76,14 @@ def log(msg):
 def ensure_binary():
     if BIN.exists():
         return
-    log("building tl-cable (cargo build --release) ...")
+    log("building tl-cable-mpfr (cargo build --release) ...")
     subprocess.run(
-        ["cargo", "build", "--release", "--bin", "tl-cable"],
+        ["cargo", "build", "--release", "--bin", "tl-cable-mpfr"],
         cwd=REPO / "tools" / "hecke-engine", check=True)
 
 
 def run_batch(jobs, prec=192):
-    """One tl-cable subprocess per batch (engines cached inside)."""
+    """One tl-cable-mpfr subprocess per batch (engines cached inside)."""
     payload = json.dumps({"prec": prec, "jobs": jobs})
     proc = subprocess.Popen([str(BIN)], stdin=subprocess.PIPE,
                             stdout=subprocess.PIPE, stderr=subprocess.PIPE,
@@ -91,7 +92,7 @@ def run_batch(jobs, prec=192):
     for line in err.strip().splitlines():
         log(f"    {line}")
     if proc.returncode != 0:
-        raise RuntimeError(f"tl-cable failed rc={proc.returncode}: {err[-500:]}")
+        raise RuntimeError(f"tl-cable-mpfr failed rc={proc.returncode}: {err[-500:]}")
     return [mp.mpf(r["jp"].replace("e", "E"))
             for r in json.loads(out)["results"]]
 
@@ -128,7 +129,7 @@ def main() -> int:
     for qq in pts:
         jobs += [{**j52, "cn": 5, "q": q_str(q)} for q in (qq, 1 / qq)]
 
-    log(f"launching tl-cable batch: {len(jobs)} jobs (TL₁₅ dim 9 694 845) ...")
+    log(f"launching tl-cable-mpfr batch: {len(jobs)} jobs (TL₁₅ dim 9 694 845) ...")
     R = run_batch(jobs)
 
     # ---- G0a: N=3 vs live Python engine ----
@@ -151,6 +152,10 @@ def main() -> int:
     log(f"[G0b] B₄(q*) rel = {mp.nstr(rel4,3)}, B₅(q*) rel = {mp.nstr(rel5,3)}")
     print(f"    N=4/N=5 vs committed witnesses at 1e-10: "
           f"{'PASS' if g0b_ok else 'FAIL'}")
+
+    # ---- G0c: cross-engine gate vs the committed dense-f64 N=6 results ----
+    f64_path = Path(__file__).parent / "qbeta-5two-n6-cable-qstar-rust.results.json"
+    B6_f64 = mp.mpf(repr(json.load(open(f64_path))["B_qstar"]))
 
     # ---- G1: unknot framing at N=6 — magnitude gated, sign recorded ----
     log("[G1] unknot framing at N=6 ...")
@@ -211,7 +216,7 @@ def main() -> int:
     wb.set_description(
         "A5.5 (bean qou-69pr): the certified categorical q*-test extended to "
         "N=6 via the Jones–Wenzl 5-cable on TL₁₅ (9 694 845 diagrams), "
-        "computed by the Rust tl-cable engine (hecke-engine::tl_cable, MPFR "
+        "computed by the Rust tl-cable-mpfr engine (hecke-engine::tl_cable_mpfr, MPFR "
         "192-bit) — the port is gated in-run against the live Python engine "
         "at N=3 (1e-25) and the committed N=4/N=5 witness values (1e-10). "
         "Gates: unknot framing magnitude = the ribbon twist q^{17.5} with "
@@ -226,12 +231,19 @@ def main() -> int:
 
     wb.add_assertion("gate_rust_port_N3_vs_python",
                      computed=1.0 if g0a_ok else 0.0, expected=1.0, tolerance=0.5,
-                     source="5₂ raw J'_3: Rust tl-cable = live Python TL engine "
+                     source="5₂ raw J'_3: Rust tl-cable-mpfr = live Python TL engine "
                             "at 2 real q, 1e-25")
     wb.add_assertion("gate_rust_port_N4_N5_vs_witnesses",
                      computed=1.0 if g0b_ok else 0.0, expected=1.0, tolerance=0.5,
                      source="B₄(q*), B₅(q*) = committed witness values at 1e-10 "
                             "(string-limited)")
+    rel_f64 = abs(B_star - B6_f64) / abs(B6_f64)
+    log(f"[G0c] B₆(q*) MPFR vs committed dense-f64: rel = {mp.nstr(rel_f64,3)}")
+    wb.add_assertion("gate_cross_engine_B6_vs_dense_f64",
+                     computed=float(rel_f64), expected=0.0, tolerance=1e-7,
+                     source="B₆(q*) full-MPFR = main's independently-written "
+                            "dense-f64 tl_cable engine within its f64 noise "
+                            "floor (~1e-8; two-route convergence)")
     wb.add_assertion("gate_unknot_ribbon_framing_N6_magnitude",
                      computed=1.0 if g1_ok else 0.0, expected=1.0, tolerance=0.5,
                      source="|fr| = q^{17.5} exactly (θ_{V₆} ribbon magnitude) "
