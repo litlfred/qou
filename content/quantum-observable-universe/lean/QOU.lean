@@ -298,6 +298,7 @@ import QOU.Interactions.QIntegerMassFormula
 import QOU.Archimedean.EmCouplingBringZeroMode
 import QOU.Archimedean.BringEllipticFactor
 import QOU.Archimedean.SigmaJGeometricCarrier
+import QOU.Archimedean.CanonicalTitsIso
 import QOU.Archimedean.TauRhoHodgeShadow
 import QOU.Archimedean.TauS5EquivarianceReduction
 import QOU.Archimedean.PerLoopMeasureShadowAssembly
