@@ -2317,3 +2317,33 @@ open link), not a smoother object choice. This does NOT refute the
 module-map program — it bounds it (must be holonomy-deforming). No fit;
 nothing wired; NEVER inverts Q_β/CODATA. Audit
 `docs/audits/2026-07-25-5two-gk-bridge-attack.md`.
+
+**2026-07-25 (branch claude/qbeta-meridian-holonomy-c3-anchor-2026-07-25,
+PR #4288; ORTHOGONAL to #4283/C1 — attacks the q₀↦u deformation itself) —
+THE MERIDIAN-HOLONOMY q₀↦u DEFORMATION MAGNITUDE IS ANCHOR-SMOOTH: an EXACT
+boost-hyperbola amplification bound.** C1 relocated the missing
+anchor-dependence to the meridian-holonomy deformation (CuspShapeBarParity's
+open link); #4283 chases the in-block module maps (which inherit C1's
+anchor-smoothness). This branch attacks the deformation MAGNITUDE directly.
+Meridian holonomy = mult by q ⇒ bar-odd deformation shape barOdd q=q−q⁻¹
+(=u+O(u³), S∝u²). Formalize-first (`QOU/QBeta/MeridianHolonomyAnchorCarrier.lean`,
+lean-direct exit 0, sorry-free): the boost hyperbola barEven²−barOdd²=4 pins
+the log-q sensitivity square EXACTLY — `sensitivity_sq`:
+(barEven/barOdd)² = 1 + 4/barOdd² (generic field, §7c); `barOdd_sq_le_of_amplification`
+(ℝ): amplification ρ≥N ⟹ (barOdd)²≤4/(N²−1), i.e. a large magnitude amplification
+FORCES q near the compact locus barOdd=0 (q=±1). TRUE anchor comparison
+(`qbeta_meridian_holonomy_anchor_swing_probe.py`, 4/4, committed q₀ both anchors,
+coordinate FIXED — the honest test the 2026-07-11 audit skipped, it substituted
+barOdd(√q₀) vs barOdd(q₀) at one anchor): ρ_u=9.62=O(10); deformation-magnitude
+swing Δ(u²)/u² = **0.221 ppm** (cf C1's ω 4.56 ppm) ⇒ (c₃ 3.47%)/(swing)=**1.57e5**;
+required ρ_req=3.0e6 ⇒ compact-locus bound needs |barOdd|≤6.6e-7, actual 0.209 ⇒
+**5.5 orders too far.** Scope-(a) NEGATIVE. UNIFIES the bound with #4283: under the
+one exact criterion "amplification ⇒ proximity to barOdd=0", BOTH the in-block
+module maps AND the holonomy-deformation magnitude are excluded as sole seat —
+every smooth/magnitude object fails; the swing lives ONLY in the near-singular /
+non-perturbative PHASE arg(u) (consistent with #3818's ξ-frame phase law: no
+perturbative odd phase at the meridian). Exact generic-field sharpening of #3639's
+numerical dζ/dq₀=1/q₀=O(1) boost-negative. Does NOT close c₃ (phase = open
+conj:algebraic-geometric-dilog-equivalence). No fit; nothing inverts Q_β/CODATA;
+nothing wired; c₃ stays a q₀-dependent near-match (SETTLED #1580). Audit
+`docs/audits/2026-07-25-meridian-holonomy-c3-anchor.md`.
