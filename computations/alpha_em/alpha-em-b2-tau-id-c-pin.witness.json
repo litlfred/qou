@@ -1,0 +1,69 @@
+{
+  "computation": "alpha-em-b2-tau-id-c-pin",
+  "description": "B2 tau-identification Options A+C support probe (epic qou-6ufi pickup). (4,1) std block of H_5(q) pinned as rescaled reduced Burau (self-validated); Markov Gram exact at q0; invariant-form space 1-dim (concrete Schur data for the sorry-free Option-B core); reality+symmetry explicit; positivity bonus; Hodge (3,1) pattern recorded with the frame obstruction named \u2014 scale c requires the S_5-equivariant transport (Option B premise (i)), left OPEN. Nothing wired; 1/(8pi) stays phase-4.",
+  "auditOnly": "docs/audits/2026-07-25-alpha-em-b2-tau-id-consolidation.md",
+  "tier": "symbolic-exact (rational q0 proxy); identification remains open (owner ruling 2026-07-19)",
+  "computedAt": "2026-07-25T03:13:19.347890+00:00",
+  "commitSha": "c429ba3567920b5e60644466bb5fb084cc1193e7",
+  "engine": "sympy",
+  "engineVersion": "1.14.0",
+  "scriptFile": "alpha_em_b2_tau_id_c_pin_probe.py",
+  "scriptHash": "28754dca43dc",
+  "assertions": [
+    {
+      "name": "block_built_and_selfvalidated",
+      "passed": true,
+      "detail": "rho(sigma_i) = -q^{-1}*Burau_i(q^2), 4x4: braid relations + far-commutation + Hecke relation (sigma-q)(sigma+q^{-1})=0 all hold symbolically \u2014 the (4,1) std block of H_5(q) pinned concretely (Option A), verified not assumed"
+    },
+    {
+      "name": "schur_commutant_scalar",
+      "passed": true,
+      "detail": "commutant dimension = 1 at exact q0 = 110998/100000 and 1 at q = 1: the `schur` hypothesis of the sibling's invariantForm_proportional_of_commutantScalar holds CONCRETELY at the actual alpha_EM block (and classically for std of S_5)"
+    },
+    {
+      "name": "markov_gram_exact_unique",
+      "passed": true,
+      "detail": "the associative-form space (G*rho = rho^T*G, symmetric) is 1-dimensional at q0 \u2014 Schur uniqueness realized; generator G_M has EXACT RATIONAL entries (real+symmetric: the Markov-side discharge, now with the explicit matrix), det = 75573297140203366505707525279967420898681640625000000000000000000000000000000000000000000000000/827945908717382655629404563169230080476068248624611525043974107683533001296280812725990246390001 != 0"
+    },
+    {
+      "name": "positivity_bonus",
+      "passed": true,
+      "detail": "all leading principal minors of G_M positive at q0 \u2014 the PSD property holds as a BONUS (per #4151 it is NOT required for the B2 lift)"
+    },
+    {
+      "name": "classical_shadow_deck_cycle",
+      "passed": true,
+      "detail": "q=1: invariant-form space 1-dim (classical Schur on std); the 4-cycle (2345) = s2*s3*s4 has eigenvalues [-1, -I, 1, I] = {1, i, -1, -i} \u2014 the F-construction T2 deck dictionary, tying this block to the H^{1,0}(Bring) carrier"
+    },
+    {
+      "name": "hodge_side_recorded_frame_open",
+      "passed": true,
+      "detail": "Jac(Bring) ~ E_{5tau0}^3 x E_{tau0} (Braden-Northover, period tau0*diag(5,5,5,1)): Hodge Gram has the (3,1) pattern diag(5,5,5,1)*Im(tau0) in the ISOGENY frame \u2014 which is NOT S_5-equivariant, so an entrywise ratio against G_M (seminormal frame) would be frame-dependent numerology. The Schur scalar c is extractable ONLY through the S_5-equivariant transport = Option B's open premise (i). NAMED OPEN \u2014 no ratio tuned, none reported as c"
+    },
+    {
+      "name": "honest_status",
+      "passed": true,
+      "detail": "CLOSED by this probe: explicit (4,1) block (A), exact Markov Gram G_M at q0 with 1-dim Schur space (the concrete instantiation data for the sibling's sorry-free Option-B core), reality+symmetry concrete, positivity bonus. OPEN (unchanged): (i) S_5-equivariance of the tau-image, (ii) the scalar c, (iii) the tau-identification itself. Per the 2026-07-19 ruling: NOT proved, NOT asserted; 1/(8pi) stays phase-4"
+    }
+  ],
+  "allPassed": true,
+  "result": {
+    "markov_gram_q0_normalized": "[[1, -2500000000/5580139001, 0, 0], [-2500000000/5580139001, 2500000000/3080139001, -6250000000000000000/17187603767981278001, 0], [0, -6250000000000000000/17187603767981278001, 6250000000000000000/9487256265481278001, -15625000000000000000000000000/52940208699493689408703417001], [0, 0, -15625000000000000000000000000/52940208699493689408703417001, 15625000000000000000000000000/29222068035790494406203417001]]",
+    "invariant_form_space_dim": 1,
+    "commutant_dim_q0": 1,
+    "deck_4cycle_eigenvalues_q1": [
+      "-1",
+      "-I",
+      "1",
+      "I"
+    ],
+    "hodge_pattern": "diag(5,5,5,1)*Im(tau0) in the isogeny frame (frame not S_5-equivariant; c-transport OPEN)",
+    "verdict": "B2 tau-ID OPTIONS A+C ADVANCED (scope-(a); epic qou-6ufi picked up; no fit; nothing wired): the (4,1) std block of H_5(q) is pinned concretely (rescaled reduced Burau, self-validated), its Markov Gram computed EXACTLY at q0 with the invariant-form space verified 1-DIMENSIONAL \u2014 the concrete Schur data the sibling's sorry-free Option-B Lean core (invariantForm_proportional_of_commutantScalar) consumes. Reality+symmetry now explicit (Markov-side discharge realized); positivity confirmed as bonus. The Hodge side's (3,1)-pattern diag(5,5,5,1)*Im(tau0) is recorded with the frame obstruction NAMED: the scale c requires the S_5-equivariant transport \u2014 exactly Option B's open premise, not a numerical shortcut. The tau-identification remains the sole open categorical input. NO tier change."
+  },
+  "context": {
+    "epic": "qou-6ufi (stalled sibling picked up per owner directive)",
+    "sibling_lean": "LoopWeightRealSymmReduction, MarkovGramRealSymm, SchurInvariantFormProportional (merged, sorry-free)",
+    "ruling": "2026-07-19: the per-loop identification is not derived-proved \u2014 respected; nothing asserted",
+    "scope_guard": "no fit; no TauRhoHodgeLift instance; nothing wired"
+  }
+}
