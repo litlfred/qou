@@ -164,6 +164,38 @@ def main() -> int:
     drift_late = abs(thetas[-1] - thetas[-2])
     stabilized = drift_late < mp.mpf("0.3")
 
+    # ---- plateau / simple-pole test (the deep-run discovery) ----
+    # First deep run: θ marches monotonically toward 0 and |T̂_n| PLATEAUS
+    # (1.2388e-12 at n=80 → 1.2323e-12 at n=96) — coefficients tending to
+    # a nonzero constant c∞·(−1)^n, i.e. ĝ(w) has a SIMPLE POLE at w = −1
+    # with residue c∞ (the "soft singularity" reading at n ≤ 43 was the
+    # transient). Extract c∞ by Aitken acceleration of u_n = (−1)^n T̂_n
+    # and gate its stability across offsets.
+    u = [(-1) ** n * Th[n] for n in range(N_MAX + 1)]
+
+    def aitken_once(s):
+        return [(s[i + 2] * s[i] - s[i + 1] ** 2)
+                / (s[i + 2] - 2 * s[i + 1] + s[i])
+                for i in range(len(s) - 2)]
+    tail_u = u[N_MAX - 24:]
+    acc1 = aitken_once(tail_u)
+    acc2 = aitken_once(acc1)
+    c_inf_a = acc2[-1]
+    c_inf_b = acc2[-4]
+    pole_stab = abs(c_inf_a - c_inf_b) / abs(c_inf_a)
+    is_pole = c_inf_a > 0 and pole_stab < mp.mpf("0.02")
+    # transient decay ratio toward the plateau
+    d_seq = [abs(u[n] - c_inf_a) for n in range(N_MAX - 12, N_MAX + 1)]
+    trans_ratio = d_seq[-1] / d_seq[-2] if d_seq[-2] > 0 else mp.mpf(0)
+    log(f"[pole] Aitken plateau c∞ = {mp.nstr(c_inf_a, 8)} "
+        f"(offset stability {mp.nstr(pole_stab, 3)}); transient ratio "
+        f"{mp.nstr(trans_ratio, 5)}")
+    print(f"    ⇒ (−1)^n·T̂_n → c∞ ≈ {mp.nstr(c_inf_a, 6)} ≠ 0: SIMPLE POLE "
+          f"at w = −1, residue ≈ c∞")
+    print(f"      {'PASS' if is_pole else 'INDETERMINATE'} — the shallow "
+          f"'soft singularity' reading (W9-parallel B1 + A6.2) was the "
+          f"transient")
+
     models = {"algebraic_ln_n": lambda n: -mp.log(n),
               "stretched_sqrt_n": lambda n: -mp.sqrt(n),
               "quadratic_n2": lambda n: -mp.mpf(n * n) / 2}
@@ -224,22 +256,48 @@ def main() -> int:
                             "64..96")
     ok = all(a.passed for a in wb.assertions)
 
+    wb.add_assertion("plateau_pole_extraction_stable",
+                     computed=float(pole_stab), expected=0.0, tolerance=0.02,
+                     source="Aitken plateau c∞ of (−1)^n·T̂_n stable across "
+                            "offsets — simple pole at w = −1, residue c∞")
+    ok = all(a.passed for a in wb.assertions)
+
     wb.add_data("theta_track", theta_track)
     wb.add_data("theta_stabilized", bool(stabilized))
+    wb.add_data("pole", {"c_inf_residue": mp.nstr(c_inf_a, 15),
+                         "offset_stability": mp.nstr(pole_stab, 6),
+                         "transient_ratio": mp.nstr(trans_ratio, 8),
+                         "reading": "simple pole at w = -1 with residue "
+                                    "c_inf; the 'soft singularity' at "
+                                    "n <= 43 was the transient",
+                         "g3_lane_flag": "the theta-Laplace D_odd scheme "
+                                         "band (5e-16) predates this pole: "
+                                         "a pole ambiguity enters at the "
+                                         "residue scale ~1e-12 — still ~9 "
+                                         "orders below the physics scale, "
+                                         "but the stated precision needs "
+                                         "the caveat"})
     wb.add_data("deep_models", {"tab": tab, "rankings": rankings,
                                 "best": best, "decisive": bool(decisive)})
     wb.add_data("alt_positive_to_96", bool(alt_pos))
     wb.add_data("params", {"n_max": N_MAX, "dps": DPS})
     wb.add_data("verdict",
-                ((f"TAIL LAW AT DEPTH: θ track {theta_track} — "
-                  + (f"STABILIZED at θ ≈ {mp.nstr(thetas[-1], 5)} "
-                     f"(algebraic-type tail; the A6.2 shallow windows were "
-                     f"pre-asymptotic)" if stabilized else
-                     "still drifting at n ≤ 96 — consistent with a "
-                     "flat-type (non-algebraic) Borel singularity at "
-                     "w = −1; the naive φ-side 3/2 tie remains untestable")
-                  + f". Best deep model: {best} "
-                  f"({'decisive' if decisive else 'indicative'}). auditOnly.")
+                ((f"TAIL LAW AT DEPTH SETTLED: (−1)^n·T̂_n → c∞ ≈ "
+                  f"{mp.nstr(c_inf_a, 6)} ≠ 0 (Aitken-stable "
+                  f"{mp.nstr(pole_stab, 3)}) — the Borel function has a "
+                  f"SIMPLE POLE at w = −1 with residue ≈ c∞; the θ track "
+                  f"{theta_track} marching to 0 and the shallow-window "
+                  f"'soft singularity' reading (W9-parallel B1 + A6.2) "
+                  f"were the transient. The naive φ-side 3/2 algebraic tie "
+                  f"is REFUTED-as-stated for this sequence (scope-(a): "
+                  f"this transform/normalization). g3-lane flag recorded: "
+                  f"the pole introduces a ~1e-12-scale contour ambiguity "
+                  f"above the stated 5e-16 D_odd scheme band (no physics "
+                  f"impact; precision caveat). auditOnly."
+                  if is_pole else
+                  f"TAIL LAW AT DEPTH: plateau extraction INDETERMINATE "
+                  f"(stability {mp.nstr(pole_stab, 3)}); θ track "
+                  f"{theta_track}. auditOnly.")
                  if ok else "A gate failed — inspect before use."))
     wb.save()
     print(f"\n  assertions passed: {ok}   ({time.monotonic()-T0:.0f}s)")
