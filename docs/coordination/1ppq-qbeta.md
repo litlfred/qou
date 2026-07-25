@@ -2209,3 +2209,18 @@ physics impact at the 7.6e-3 scale, but the precision statement should
 carry the caveat (or the pole term subtracted explicitly, after which
 the 5e-16 claim likely survives on the regular part). Scope-(a); no
 fit; nothing wired.
+
+**2026-07-25 (A6.4, same branch/PR #4195) — THE W9 BOREL FUNCTION IS
+DERIVED: exact formula, residue (q̃;q̃)_∞², pole ladder at w = −q₀ᵏ,
+regularized D_odd confirms the median to 4.5e-12.**
+`qbeta_5two_gbar_pole_ladder_probe.py` (5/5): the balanced-binomial
+inversion gives the exact cancellation-free
+(−1)ⁿT̂_n = (q̃;q̃)_n²·Σ_k q̃^{k(n+1)}[n,k]_{q̃} (vs direct route:
+1.1e-497). Closed forms: c∞ = (q̃;q̃)_∞² = 1.23076604e-12 (the pole
+residue), transient ratio exactly q̃, and a GEOMETRIC POLE LADDER at
+w = −q₀ᵏ (k=1 found at rel 4.6e-11, k=2 at 9.2e-9) — the Habiro-face
+Borel plane is structurally tied to the substrate modulus. θ-Laplace
+with the exact pole split: D_odd_reg = −0.00757940374349, = this
+ledger's median to 4.5e-12; honest full-pipeline band 1.1e-10 (the
+5e-16 figure is scheme-orbit-only; the A6.3 pole caveat resolves with
+the pole explicit). Every constant derived; no fit; nothing wired.
