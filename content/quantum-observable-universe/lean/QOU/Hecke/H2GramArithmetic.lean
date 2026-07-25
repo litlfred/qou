@@ -16,10 +16,14 @@ field — the arithmetic identity behind the Wenzl criterion at `n = 2`:
   `H_2(q)` semisimple ⟺ `disc ≠ 0` ⟺ `q ≠ -1` ⟺ `[2]_q! ≠ 0`.
 
 So `det(Gram) = [2]_q² ≠ 0 ⟺ [2]_q! ≠ 0` — the `n = 2` instance of the
-Schur/Poincaré identity `det(Gram) = [n]_q!` (up to a unit).  Wiring
-this to the actual `AdjoinRoot` trace form (`Algebra.discr` in the power
-basis) is the next brick (`qou-eedq`); the arithmetic that the wiring
-must reproduce is settled here.
+Schur/Poincaré identity `det(Gram) = [n]_q!` (up to a unit).  The `Gram`
+entries here (`tr(1) = 2`, `tr(σ) = q-1`, `tr(σ²) = q²+1`) are *asserted*
+as the companion-matrix traces; the companion sibling
+`QOU.Hecke.H2CompanionRep` (brick `qou-eedq`) *derives* them from the
+**regular representation** `σ ↦ !![0, q; 1, q-1]`, proving that matrix
+satisfies the Hecke relation and that its trace-form Gram equals
+`h2GramMatrix` below — so `det = [2]_q²` rests on the representation, not
+on hand-read traces.
 -/
 
 namespace QOU.Hecke
