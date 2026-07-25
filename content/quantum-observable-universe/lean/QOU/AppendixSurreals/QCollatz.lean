@@ -390,4 +390,64 @@ theorem qTwoValuation_mul_qplus_one (P : Polynomial ℤ) (hP : P ≠ 0) :
   rw [hXC, rootMultiplicity_mul (mul_ne_zero hP (X_sub_C_ne_zero (-1))),
     rootMultiplicity_X_sub_C_self]
 
+/-! ### The domain-stable cone `D∞` and hypothesis-free convergence (Tier B) -/
+
+/-- **Generic termination-from-descent.** Over any predicate `S` that is
+    forward-invariant off `target` and carries a strictly-descending
+    `ℕ`-measure, every `S`-element reaches `target`. This is
+    `reaches_cycle_of_descent` with the cone abstracted, so it also applies to
+    the domain-stable cone (where forward-invariance is free). -/
+theorem reaches_of_descent_of_forward {α : Type*} (f : α → α) (target : α)
+    (S : α → Prop) (μ : α → ℕ)
+    (hfwd : ∀ x, S x → x ≠ target → S (f x))
+    (hdesc : ∀ x, S x → x ≠ target → μ (f x) < μ x) :
+    ∀ x, S x → ∃ k : ℕ, f^[k] x = target := by
+  suffices H : ∀ n x, μ x = n → S x → ∃ k, f^[k] x = target from
+    fun x hx => H (μ x) x rfl hx
+  intro n
+  induction n using Nat.strong_induction_on with
+  | _ n IH =>
+    intro x hμ hx
+    by_cases hc : x = target
+    · exact ⟨0, by simpa using hc⟩
+    · have hlt : μ (f x) < n := hμ ▸ hdesc x hx hc
+      obtain ⟨k, hk⟩ := IH (μ (f x)) hlt (f x) rfl (hfwd x hx hc)
+      exact ⟨k + 1, by rw [Function.iterate_succ_apply]; exact hk⟩
+
+/-- The domain of the (partial) Skein-Collatz map: `P` is `q`-even (`[2]_q ∣ P`)
+    or `q`-odd (`[2]_q ∣ P + 1`). -/
+def QCollatz.inDomain {Skein : Type u} [CommRing Skein] [QCollatz Skein]
+    (P : Skein) : Prop :=
+  QCollatz.qi2 ∣ P ∨ QCollatz.qi2 ∣ (P + 1)
+
+/-- The **domain-stable cone** `D∞`: elements whose entire forward orbit stays
+    in the domain. This is the well-posed cone for the conjecture — the naive
+    positive cone is ill-posed (`C_q` undefined on almost all of it; see
+    `pos_domain_stable` and `qcollatz_domain_not_forward_invariant`). -/
+def QCollatz.domainStable {Skein : Type u} [CommRing Skein] [QCollatz Skein]
+    (P : Skein) : Prop :=
+  ∀ k : ℕ, QCollatz.inDomain (QCollatz.C^[k] P)
+
+/-- **The domain-stable cone is forward-invariant**: `C` maps `D∞` into `D∞`
+    (unlike the ambient domain, which is not forward-invariant). -/
+theorem QCollatz.domainStable_forward {Skein : Type u} [CommRing Skein]
+    [QCollatz Skein] (P : Skein) (h : QCollatz.domainStable P) :
+    QCollatz.domainStable (QCollatz.C P) := by
+  intro k
+  rw [← Function.iterate_succ_apply]
+  exact h (k + 1)
+
+/-- **Convergence over the domain-stable cone reduces to a descent measure
+    alone.** Because `D∞` is forward-invariant, the `hclosed` hypothesis of
+    `reaches_cycle_of_descent` is discharged automatically — the open content
+    is exactly the existence of the descent measure `μ`. -/
+theorem reaches_cycle_of_descent_domainStable {Skein : Type u} [CommRing Skein]
+    [QCollatz Skein] (μ : Skein → ℕ)
+    (hdesc : ∀ P : Skein, QCollatz.domainStable P → P ≠ QCollatz.attractor →
+      μ (QCollatz.C P) < μ P) :
+    ∀ P : Skein, QCollatz.domainStable P →
+      ∃ k : ℕ, QCollatz.C^[k] P = QCollatz.attractor :=
+  reaches_of_descent_of_forward QCollatz.C QCollatz.attractor QCollatz.domainStable
+    μ (fun P hP _ => QCollatz.domainStable_forward P hP) hdesc
+
 end QOU.AppendixSurreals
