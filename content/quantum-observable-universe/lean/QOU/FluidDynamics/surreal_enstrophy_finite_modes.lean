@@ -942,4 +942,87 @@ theorem split_persistence {G : K} (hG0 : 0 ≤ G) (hGf : IsFinite G)
   have h2 : G ^ n * L 0 + H 0 ≤ |G ^ n * L 0 + H 0| := le_abs_self _
   linarith
 
+/-! ### GP3 — the low-mode bootstrap: local persistence, ε-free
+
+GP2 reduced persistence to the low-mode block. Its genuine nonlinearity is
+quadratic in the enstrophy (`dΩ/dt ≤ cΩ²`, the supercritical vortex-stretching
+form); the discrete bootstrap below proves **local persistence**: over any
+horizon with `N·δ·c·Ω₀ ≤ 1/4`, the block stays within `2Ω₀` — with **no
+hypothesis on `ε` at all**. This is the discrete, in-QOU form of classical
+local-in-time well-posedness (horizon `~ 1/(cΩ₀)`), now theorem-grade.
+Combined with the GP2 split, the QOU-internal flow with finite smooth data
+persists over the bootstrap horizon.
+
+**The honest final landing of the epic:** what remains open is **global**
+persistence — continuation beyond the bootstrap horizon — isolated at the
+finite-dimensional low-mode block. The framework thus reproduces the classical
+local theory sorry-free, and the global question *is* the open problem, as it
+must be; it is named and not asserted. -/
+
+/-- **Discrete quadratic bootstrap (local persistence).** If the low-mode block
+    obeys the quadratic step `Ω_{n+1} ≤ Ω_n + δcΩ_n²` and the horizon satisfies
+    `N·δ·c·Ω₀ ≤ 1/4`, then `Ω_n ≤ 2Ω₀` for every `n ≤ N`. No hypothesis on `ε`:
+    the local theory is uniform in the substrate deformation. -/
+-- Ref: [manuscript] fluid-dynamics/q-ns-wellposedness (local theory), p2-critical-exponent
+theorem local_bootstrap {δ c : K} (hδ : 0 ≤ δ) (hc : 0 ≤ c)
+    (Ω : ℕ → K) (hnn : ∀ n, 0 ≤ Ω n)
+    (hstep : ∀ n, Ω (n + 1) ≤ Ω n + δ * c * (Ω n) ^ 2)
+    (N : ℕ) (hhor : (N : K) * (δ * c * Ω 0) ≤ 1 / 4) :
+    ∀ n ≤ N, Ω n ≤ 2 * Ω 0 := by
+  have hΩ00 : 0 ≤ Ω 0 := hnn 0
+  have hδc : 0 ≤ δ * c := mul_nonneg hδ hc
+  have hdc0 : (0 : K) ≤ δ * c * Ω 0 := mul_nonneg hδc hΩ00
+  -- envelope-to-2Ω₀ conversion, used at every horizon step
+  have envelope_le : ∀ n : ℕ, n ≤ N →
+      Ω 0 + (n : K) * (4 * (δ * c) * (Ω 0) ^ 2) ≤ 2 * Ω 0 := by
+    intro n hn
+    have hcast : (n : K) ≤ (N : K) := by exact_mod_cast hn
+    have hmul1 : (n : K) * (δ * c * Ω 0) ≤ (N : K) * (δ * c * Ω 0) :=
+      mul_le_mul_of_nonneg_right hcast hdc0
+    have hmul1' : Ω 0 * ((n : K) * (δ * c * Ω 0))
+        ≤ Ω 0 * ((N : K) * (δ * c * Ω 0)) :=
+      mul_le_mul_of_nonneg_left hmul1 hΩ00
+    have hmul2 : Ω 0 * ((N : K) * (δ * c * Ω 0)) ≤ Ω 0 * (1 / 4) :=
+      mul_le_mul_of_nonneg_left hhor hΩ00
+    nlinarith [hmul1', hmul2]
+  -- strengthened linear-in-n envelope
+  have key : ∀ n, n ≤ N → Ω n ≤ Ω 0 + (n : K) * (4 * (δ * c) * (Ω 0) ^ 2) := by
+    intro n
+    induction n with
+    | zero => intro _; simp
+    | succ n ih =>
+        intro hn1
+        have hnN : n ≤ N := Nat.le_of_succ_le hn1
+        have hSn := ih hnN
+        have h2B : Ω n ≤ 2 * Ω 0 := le_trans hSn (envelope_le n hnN)
+        have hstepn := hstep n
+        have hsq : (Ω n) ^ 2 ≤ (2 * Ω 0) ^ 2 := by nlinarith [hnn n]
+        have hsq' : δ * c * (Ω n) ^ 2 ≤ δ * c * (2 * Ω 0) ^ 2 :=
+          mul_le_mul_of_nonneg_left hsq hδc
+        have hpush : ((n + 1 : ℕ) : K) = (n : K) + 1 := by push_cast; ring
+        rw [hpush]
+        nlinarith [hstepn, hSn, hsq']
+  intro n hn
+  exact le_trans (key n hn) (envelope_le n hn)
+
+/-- **Local persistence, finiteness form.** Under the bootstrap hypotheses with
+    finite initial enstrophy, the low-mode block is finite at every step of the
+    horizon — the in-QOU discrete local well-posedness statement, uniform in
+    `ε`. Global continuation beyond the horizon is the (named, open) remainder
+    of the epic. -/
+-- Ref: [manuscript] fluid-dynamics/q-ns-wellposedness
+theorem local_persistence {δ c : K} (hδ : 0 ≤ δ) (hc : 0 ≤ c)
+    (Ω : ℕ → K) (hnn : ∀ n, 0 ≤ Ω n)
+    (hstep : ∀ n, Ω (n + 1) ≤ Ω n + δ * c * (Ω n) ^ 2)
+    (N : ℕ) (hhor : (N : K) * (δ * c * Ω 0) ≤ 1 / 4)
+    (h0 : IsFinite (Ω 0)) : ∀ n ≤ N, IsFinite (Ω n) := by
+  intro n hn
+  obtain ⟨m, hm⟩ := h0
+  refine ⟨2 * m, ?_⟩
+  have hb := local_bootstrap hδ hc Ω hnn hstep N hhor n hn
+  have h1 : Ω 0 ≤ |Ω 0| := le_abs_self _
+  rw [abs_of_nonneg (hnn n)]
+  push_cast
+  linarith
+
 end QOU.FluidDynamics
