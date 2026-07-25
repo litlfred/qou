@@ -1,0 +1,215 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-07-25T03:15:34.395773+00:00",
+  "commitSha": "df6e09d846d81dbada79c0a01a31778cc131a432",
+  "assertions": [
+    {
+      "name": "j_invariant_exact",
+      "computed": "-25/2",
+      "expected": "-25/2",
+      "passed": true,
+      "source": "j = c4^3/Delta of y^2 = x^3-675x-79650, exact Fraction; matches BDH22 eq (12) j(5tau0) = -25/2."
+    },
+    {
+      "name": "minimal_model_conductor_50",
+      "computed": "model=(1, 0, 1, -1, -2), Delta=-1250, N=50",
+      "expected": "model=(1, 0, 1, -1, -2), Delta=-1250, N=50",
+      "passed": true,
+      "source": "Laska-Kraus-Connell offline; f_2 = 1 (mult I1), f_5 = 2 (additive IV, tame at p = 5)."
+    },
+    {
+      "name": "hasse_bound_all_primes",
+      "computed": 0.7659574468085106,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1.0,
+      "source": "a_p^2 <= 4p asserted per prime (exact integer check in-loop; this witness field records max a_p^2/4p < 1)."
+    },
+    {
+      "name": "x050_trace_identity_13_primes",
+      "computed": 0,
+      "expected": 0,
+      "passed": true,
+      "tolerance": 0,
+      "source": "t_p(C1) = a_p(E)(1 + chi5(p)) on BDH22 eq (10), all 13 good primes p <= 50 — Eichler-Shimura certification that {class(E), twin} = {50a, 50b}."
+    },
+    {
+      "name": "sqrt5_twin_relation",
+      "computed": 0,
+      "expected": 0,
+      "passed": true,
+      "tolerance": 0,
+      "source": "a_p(twin) = chi5(p) a_p(E) for all good p, plus a_2: -1 vs +1 with chi5(2) = -1 — BDH22's '50a/50b merge over Q(sqrt5)' realized as the quadratic twist by 5."
+    },
+    {
+      "name": "bdh22_charts_are_minus1_twists",
+      "computed": "charts-are-minus1-twists-not-conductor-50",
+      "expected": "charts-are-minus1-twists-not-conductor-50",
+      "passed": true,
+      "source": "Both printed E2 charts and the E1 chart satisfy a_p = chi_{-1}(p) x (their conductor-50 partner) at all good p (asserted in-loop), and kraus_model(25,-1475) = kraus_model(145,2105) = None (no integral model, so additive at 2, conductor != 50). Finding: BDH22's printed chart equations are twist-sloppy (identified via j over C only) — no printed equation pins the Cremona label offline."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 10,
+  "computation": "x050-50a-hecke-gate-probe",
+  "scriptFile": "x050_50a_hecke_gate_probe.py",
+  "scriptHash": "864cbaee2de3",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "X0(50)/50a integer Hecke gate (uploaded-papers idea A4; filter 5 of the tau-dictionary gauntlet, composing with the W8 t5=-10 validator and the W8b Fricke/sign filters). From the task curve y^2 = x^3 - 675x - 79650 (j = -25/2 = j(5tau0)) the global minimal model y^2 + xy + y = x^3 - x - 2 (Delta = -1250, conductor 50: non-split multiplicative at 2 so a_2 = -1 and w_2 = +1; additive Kodaira IV at 5 so a_5 = 0) is derived offline by Laska-Kraus-Connell, and a_p for all p <= 50, p not dividing 50, are computed by exact point-counting (Hasse bound asserted per prime). Cross-checks: BDH22's printed E1/E2 charts are (-1)-twists with conductor != 50 (chart twist-sloppiness finding); the (-1)-twist of the E1 chart is the twin conductor-50 class (y^2+xy+y = x^3+x^2-3x+1, Delta = -800, split at 2) with a_p = chi5(p) a_p(E) (the Q(sqrt5) merge of BDH22); and on BDH22's own genus-2 X0(50) model (eq 10) the Frobenius trace identity t_p = a_p (1 + chi5(p)) holds at all 13 good primes (Eichler-Shimura), certifying {class(E), twin} = {50a, 50b}. WHICH of the two signatures is Cremona 50a is NOT decidable from the paper + offline arithmetic (the paper prints no equation for B/A4); both signatures are recorded and the single settling lookup is named (LMFDB EllipticCurve/Q/50/a). Audit-only; no fit; scope-(a).",
+  "auditOnly": "docs/audits/2026-07-25-x050-50a-hecke-gate.md",
+  "parameters": {
+    "good_primes": [
+      3,
+      7,
+      11,
+      13,
+      17,
+      19,
+      23,
+      29,
+      31,
+      37,
+      41,
+      43,
+      47
+    ],
+    "bad_primes": [
+      2,
+      5
+    ],
+    "task_curve": "y^2 = x^3 - 675x - 79650"
+  },
+  "data": {
+    "task_curve": {
+      "short_model_a_invariants": [
+        0,
+        0,
+        0,
+        -675,
+        -79650
+      ],
+      "short_c4_c6_disc": [
+        32400,
+        68817600,
+        -2720977920000
+      ],
+      "j_exact": "-25/2  (= j(5tau0), BDH22 eq (12); RR92/BN12 corrected)",
+      "minimal_model": "y^2 + x y + y = x^3 - x - 2",
+      "minimal_a_invariants": [
+        1,
+        0,
+        1,
+        -1,
+        -2
+      ],
+      "minimal_c4_c6_disc": [
+        25,
+        1475,
+        -1250
+      ],
+      "conductor": 50,
+      "local_at_2": "multiplicative I1, non-split (-c6 = -1475 == 5 mod 8 not in (Q_2*)^2) => a_2 = -1, Atkin-Lehner w_2 = +1",
+      "local_at_5": "additive Kodaira IV (v(c4),v(c6),v(D)) = (2,2,4), tame => f_5 = 2, a_5 = 0"
+    },
+    "hecke_signature_I_class_of_E": {
+      "2": -1,
+      "5": 0,
+      "3": 1,
+      "7": 2,
+      "11": -3,
+      "13": -4,
+      "17": -3,
+      "19": 5,
+      "23": 6,
+      "29": 0,
+      "31": 2,
+      "37": 2,
+      "41": -3,
+      "43": -4,
+      "47": 12
+    },
+    "hecke_signature_II_twin_class": {
+      "2": 1,
+      "5": 0,
+      "3": -1,
+      "7": -2,
+      "11": -3,
+      "13": 4,
+      "17": 3,
+      "19": 5,
+      "23": -6,
+      "29": 0,
+      "31": 2,
+      "37": -2,
+      "41": -3,
+      "43": 4,
+      "47": -12
+    },
+    "twin_class": {
+      "minimal_model": "y^2 + x y + y = x^3 + x^2 - 3x + 1",
+      "minimal_a_invariants": [
+        1,
+        1,
+        1,
+        -3,
+        1
+      ],
+      "minimal_c4_c6_disc": [
+        145,
+        -2105,
+        -800
+      ],
+      "j_exact": "-121945/32  (= j(tau0) = -5*29^3/2^5)",
+      "conductor": 50,
+      "local_at_2": "multiplicative I5, split => a_2 = +1, w_2 = -1",
+      "relation": "a_p(twin) = chi5(p) * a_p(E) for all good p (BDH22: 50a/50b merge over Q(sqrt5))"
+    },
+    "x050_trace_identity": {
+      "genus2_model": "C1: B^2 = A^6 + 4A^5 + 10A^3 + 4A + 1 (BDH22 eq 10)",
+      "t_p": {
+        "3": 0,
+        "7": 0,
+        "11": -6,
+        "13": 0,
+        "17": 0,
+        "19": 10,
+        "23": 0,
+        "29": 0,
+        "31": 4,
+        "37": 0,
+        "41": -6,
+        "43": 0,
+        "47": 0
+      },
+      "identity": "t_p = a_p(E) * (1 + chi5(p)) for all 13 good primes"
+    },
+    "bdh22_exact_claims": {
+      "prop_4_5": "The Q-isogeny class of the Jacobian of the P4-model of Bring's curve is (50a)^4  [attributed to Ser08 Ex 8.3.2(b); proof note: 'the Q-isogeny class of B/A4 is 50a using the Cremona labels', computed in Sage]",
+      "sec_4_3_x050": "C1 = B/<(12)(34)>: B^2 = A^6+4A^5+10A^3+4A+1 'is a model for the modular curve X0(50)' (Igusa-Clebsch vs LMFDB + direct Shimura-method model)",
+      "sec_4_3_50b": "The Q-isogeny class of the elliptic curve B/<(12)(34),(13)(24)> calculated via the HC-model is 50b ... 50b and 50a merge over Q[sqrt5]; 450b and 50a merge over Q[rho]; 450b and 50b merge over Q[sqrt(-15)]",
+      "sec_2_2": "j(3tau0) = 5*211^3/2^15, j(15tau0) = -5^2*241^3/2^3; the j(3tau0) curve is 50H and the j(5tau0) curve is 50E in BK75 naming, 15-isogenous over Q; complete Q-isogeny class of order four with periods tau0, 3tau0, 5tau0, 15tau0 [BK75]",
+      "not_in_paper": "no equation for B/A4 is printed; no a_p table; the printed E1/E2 chart equations are (-1)-twists with conductor != 50 (identified in the paper via j over C only)"
+    },
+    "label_disambiguation": {
+      "status": "OPEN offline — recorded, not guessed",
+      "settling_lookup": "https://www.lmfdb.org/EllipticCurve/Q/50/a/ (Cremona 50a1): compare minimal equation / a_p against signature I",
+      "discriminating_primes": "any p with chi5(p) = -1 and a_p != 0, e.g. p = 2 (a_2 = -1 vs +1) or p = 3"
+    }
+  },
+  "caveats": [
+    "Point counts and reduction data are exact and unconditional. The identification {class(E), twin} = {50a, 50b} additionally uses Eichler-Shimura (Jac(X0(50)) ~ product of the two level-50 newform classes) + BDH22's identification of C1 with X0(50); the 13-prime trace identity is the falsifier for that composite claim and it passes. Which class carries the Cremona LABEL 50a is a table convention not derivable from arithmetic; it requires the named lookup. Gate usage: a candidate W-plane family must reproduce ONE of the two recorded signatures exactly (integers, no tolerance); failing both = refuted-as-stated, scope-(a)."
+  ]
+}
