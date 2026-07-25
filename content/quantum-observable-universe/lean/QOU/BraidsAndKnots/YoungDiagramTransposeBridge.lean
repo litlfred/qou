@@ -216,4 +216,151 @@ theorem omega3_conj (k : ℕ) (l : List ℕ) (hs : l.Sorted (· ≥ ·)) :
   unfold omega3
   rw [contentSq_conj l hs]
 
+/-! ## The conjugation involution on sorted positive lists -/
+
+theorem getD_zero_eq_headD (m : List ℕ) : m.getD 0 0 = m.headD 0 := by
+  cases m <;> rfl
+
+theorem length_conj (m : List ℕ) : (conj m).length = m.headD 0 := by
+  unfold conj
+  simp
+
+/-- `conj` of ANY list is weakly decreasing: the count of parts exceeding `j` is antitone. -/
+theorem conj_sorted (m : List ℕ) : (conj m).Sorted (· ≥ ·) := by
+  unfold conj
+  exact List.Pairwise.map _
+    (fun a b hab => List.countP_mono_left fun x _ hx => by
+      simp only [decide_eq_true_iff] at hx ⊢
+      exact lt_trans hab hx)
+    (List.pairwise_lt_range)
+
+/-- Counting `j < k` over `List.range n` gives `min n k`. -/
+theorem countP_range_lt (n k : ℕ) :
+    (List.range n).countP (fun j => decide (j < k)) = min n k := by
+  induction n with
+  | zero => simp
+  | succ m ih =>
+      rw [List.range_succ, List.countP_append, ih]
+      by_cases h : m < k <;> simp [h] <;> omega
+
+/-- Counting parts of `conj l` exceeding `c` caps the staircase: `min (headD) (l_c)`. -/
+theorem countP_conj (l : List ℕ) (hs : l.Sorted (· ≥ ·)) (c : ℕ) :
+    (conj l).countP (fun x => decide (c < x)) = min (l.headD 0) (l.getD c 0) := by
+  unfold conj
+  have hfun : ((fun x => decide (c < x)) ∘ fun j => l.countP fun x => decide (j < x))
+      = fun j => decide (j < l.getD c 0) := by
+    funext j
+    simp only [Function.comp_apply]
+    rw [decide_eq_decide]
+    exact lt_countP_iff l hs j c
+  rw [List.countP_map, hfun, countP_range_lt]
+
+/-- **`conj` is an involution on sorted positive lists**: `conj (conj l) = l`. The staircase
+equivalence makes this getD-extensional: `(conj (conj l))_c = min (headD) (l_c) = l_c`. Positivity
+is genuinely needed (a trailing `0` part is erased by `conj`). -/
+theorem conj_conj (l : List ℕ) (hs : l.Sorted (· ≥ ·)) (hpos : ∀ x ∈ l, 0 < x) :
+    conj (conj l) = l := by
+  have hlen : (conj (conj l)).length = l.length := by
+    rw [length_conj, ← getD_zero_eq_headD, conj_getD l hs 0]
+    exact List.countP_eq_length.mpr fun x hx => by simpa using hpos x hx
+  apply List.ext_getElem hlen
+  intro i h1 h2
+  rw [← List.getD_eq_getElem _ 0 h1, ← List.getD_eq_getElem _ 0 h2,
+    conj_getD (conj l) (conj_sorted l) i, countP_conj l hs i,
+    Nat.min_eq_right (mem_le_headD l hs _ (by
+      rw [List.getD_eq_getElem _ 0 h2]
+      exact List.getElem_mem h2))]
+
+/-- `Σ_{i < len} l_i = l.sum` in `getD` form. -/
+theorem sum_getD_range (l : List ℕ) : ∑ i ∈ Finset.range l.length, l.getD i 0 = l.sum := by
+  induction l with
+  | nil => simp
+  | cons a t ih =>
+      rw [List.length_cons, Finset.sum_range_succ', List.sum_cons]
+      simp only [List.getD_cons_succ, List.getD_cons_zero]
+      rw [ih]
+      omega
+
+/-- The cell count of a list diagram is its size: `|cells l| = Σ l_i`. -/
+theorem card_cells (l : List ℕ) : (cells l).card = l.sum := by
+  unfold cells
+  rw [Finset.card_biUnion (fun x _ y _ hxy => Finset.disjoint_left.mpr (by
+      rintro p hp hq
+      obtain ⟨j, _, rfl⟩ := Finset.mem_map.mp hp
+      obtain ⟨j', _, h'⟩ := Finset.mem_map.mp hq
+      exact hxy (by simpa using (congrArg Prod.fst h').symm)))]
+  simp only [Finset.card_map, Finset.card_range]
+  exact sum_getD_range l
+
+/-- **Conjugation preserves the size** `|λ'| = |λ|` — via the cell bijection, not arithmetic:
+`(conj l).sum = |cells (conj l)| = |transpose (cells l)| = |cells l| = l.sum`. -/
+theorem sum_conj (l : List ℕ) (hs : l.Sorted (· ≥ ·)) : (conj l).sum = l.sum := by
+  rw [← card_cells, ← card_cells, cells_conj l hs]
+  unfold transpose
+  exact Finset.card_map _
+
+/-! ## Hook-product transpose symmetry and `sytDim (conj l) = sytDim l` -/
+
+/-- List-range product = Finset-range product (ℕ; the `hookProd` inner/outer form). -/
+theorem list_prod_map_range (n : ℕ) (f : ℕ → ℕ) :
+    ((List.range n).map f).prod = ∏ j ∈ Finset.range n, f j := by
+  induction n with
+  | zero => simp
+  | succ m ih =>
+      rw [List.range_succ, List.map_append, List.prod_append, Finset.prod_range_succ, ih]
+      simp
+
+/-- `hookProd` as a product over the cell set (hook of `(i,j)` written in the definition's
+literal `ℕ`-subtraction order). -/
+theorem hookProd_eq_prod_cells (l : List ℕ) :
+    hookProd l = ∏ p ∈ cells l,
+      (l.getD p.1 0 + (conj l).getD p.2 0 - p.2 - p.1 - 1) := by
+  unfold hookProd cells
+  rw [Finset.prod_biUnion (fun x _ y _ hxy => Finset.disjoint_left.mpr (by
+      rintro p hp hq
+      obtain ⟨j, _, rfl⟩ := Finset.mem_map.mp hp
+      obtain ⟨j', _, h'⟩ := Finset.mem_map.mp hq
+      exact hxy (by simpa using (congrArg Prod.fst h').symm)))]
+  rw [list_prod_map_range]
+  refine Finset.prod_congr rfl fun i _ => ?_
+  rw [list_prod_map_range]
+  rw [Finset.prod_map]
+  simp only [Function.Embedding.coeFn_mk]
+
+/-- **Hook products are transpose-invariant** (list level): `hookProd (conj l) = hookProd l`.
+Transport the cell product along `cells_conj` and identify hooks pairwise via `conj_conj`
+(`hook_{λ'}(j,i) = hook_λ(i,j)`). -/
+theorem hookProd_conj (l : List ℕ) (hs : l.Sorted (· ≥ ·)) (hpos : ∀ x ∈ l, 0 < x) :
+    hookProd (conj l) = hookProd l := by
+  rw [hookProd_eq_prod_cells, hookProd_eq_prod_cells, cells_conj l hs]
+  unfold transpose
+  rw [Finset.prod_map]
+  refine Finset.prod_congr rfl fun p _ => ?_
+  simp only [Function.Embedding.coeFn_mk, Prod.fst_swap, Prod.snd_swap]
+  rw [conj_conj l hs hpos]
+  omega
+
+/-- **The hook-length dimension is conjugation-invariant** (list level):
+`sytDim (conj l) = sytDim l` — i.e. `f^{λ'} = f^λ`, since `|λ'| = |λ|` and the hook multiset is
+preserved. This is the remaining factor the kernel-summand pairing needed beyond `omega3_conj`. -/
+theorem sytDim_conj (l : List ℕ) (hs : l.Sorted (· ≥ ·)) (hpos : ∀ x ∈ l, 0 < x) :
+    sytDim (conj l) = sytDim l := by
+  unfold sytDim
+  rw [sum_conj l hs, hookProd_conj l hs hpos]
+
+/-! ## The kernel-summand pairing -/
+
+/-- **The covariance-kernel summand is invariant under genuine list-level conjugation, all `k`**:
+`(f^{λ'})³·ω₃(λ') = (f^λ)³·ω₃(λ)` for every sorted positive `l`. Both factors are separately
+invariant (`sytDim_conj`, `omega3_conj`), so the kernel `Σ_λ (f^λ)³ ω₃(λ)` pairs off along
+`λ ↔ λ'` with self-conjugate diagrams as fixed points — at every level, not just `k ≤ 6`/`k ≤ 7`.
+Scope-honest: a structural symmetry of the summand; it supplies **no** sign information
+(`YoungDiagramTranspose` proves the summand is transpose-even), so
+`covariance_kernel_conjecture` stays open. -/
+theorem kernel_summand_conj (k : ℕ) (l : List ℕ) (hs : l.Sorted (· ≥ ·))
+    (hpos : ∀ x ∈ l, 0 < x) :
+    (sytDim (conj l) : ℤ) ^ 3 * omega3 k (conj l)
+      = (sytDim l : ℤ) ^ 3 * omega3 k l := by
+  rw [sytDim_conj l hs hpos, omega3_conj k l hs]
+
 end QOU.BraidsAndKnots.YoungDiagramTransposeBridge
