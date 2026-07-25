@@ -2379,3 +2379,37 @@ wall-resolution capstone by formalizing its phase leg. Does NOT close c₃
 selects, its phase is frozen at the observable level). No fit; nothing inverts
 Q_β/CODATA; nothing wired; c₃ stays a q₀-dependent near-match (SETTLED #1580).
 Audit `docs/audits/2026-07-25-argu-phase-branch-selection.md`.
+
+> **Cross-branch composition (added on the B1.4 rebase).** The three
+> sibling rows above (C1/#4282, #4288, #4293) were posted while B1.4 was
+> in flight and they *predict* the negatives recorded below: the in-block
+> objects B1.2/B1.3 searched are ι-even (on ω's zero locus), and any
+> perturbative in-block map — the θ-descendant tower and the cyclotomic
+> level correspondence included — is anchor-smooth in magnitude (boost-
+> hyperbola bound) with the phase leg frozen at real q₀. The exact
+> decisions below are therefore the *independent formal confirmation* of
+> a structurally-predicted exclusion, reached by a different route
+> (exact rational membership rather than anchor-swing bounds): two
+> methods, same wall.
+
+**2026-07-25 (B1.4 + B1.4', branch claude/masbaum-module-map-2026-07-25)
+— BOTH MODULE-MAP ARMS NEGATIVE: the θ-descendant tower does not
+bridge (63 exact decisions, 0 in-span) and no cyclotomic level
+correspondence exists (165 exact cross-multiplication decisions, 0
+leads).** Arm 1 `qbeta_5two_masbaum_theta_tower_probe.py` (4/4):
+Euler tower θ^m (m ≤ 2) over the extended λ-grid (99 columns; exact
+rank over ℚ = 81 by fraction-free Bareiss — the tower carries 18
+linear dependencies back into the span, itself structural) vs θ^t F
+dressed by (q;q)_∞^p·q^s at O(q^128), margin 47: every candidate
+OUTSIDE, certified mod two 61-bit primes (rank_p(aug) > rank_ℚ(M) ⇒
+rank_ℚ(aug) > rank_ℚ(M); 0 exact escalations needed). Arm 2
+`qbeta_5two_masbaum_cyclo_level_probe.py` (3/3): no n-independent
+dressing relates Masbaum level n to GGM block level n+k anywhere on
+the grid × shifts −2..2; bonus finding — EVERY Masbaum level is
+individually u-even, not just the total. Scope-(a) both: these
+operator families as-stated. The surviving bridge forms are
+level-mixing / n-dependent module maps (the full Habiro-ring
+comultiplication), beyond parameter-free probing at this rung.
+Engineering: sympy rational rref intractable at 128×99 (>60 CPU-min);
+Bareiss runs in <1 s — recorded in the probes for successors. No fit;
+nothing wired; comparison to observed only.

@@ -381,3 +381,19 @@ observed only; no ontological claims.
   intractable at ORD 34 (>146 CPU-min, killed); the probe carries an
   exact `Fraction`-series port (identical formulas, printed-tables
   re-gated) that runs in 5 s.
+
+- **B1.4 + B1.4' LANDED (both module-map arms closed in the negative,
+  scope-(a)).**
+  [`qbeta_5two_masbaum_theta_tower_probe.py`](../../computations/probes/qbeta_5two_masbaum_theta_tower_probe.py)
+  (4/4) + [`qbeta_5two_masbaum_cyclo_level_probe.py`](../../computations/probes/qbeta_5two_masbaum_cyclo_level_probe.py)
+  (3/3): the Euler-descendant tower over the extended λ-grid (rank 81
+  of 99 — 18 tower dependencies re-land in the span) excludes θ^t F
+  for every scalar dressing (63 exact decisions, two-prime OUTSIDE
+  certificates, margin 47); the cyclotomic level scan excludes every
+  n-independent per-level dressing (165 exact cross-multiplications).
+  Every Masbaum level is individually u-even. With B1, B1.2, B1.3
+  this completes the negative sweep of all parameter-free bridge
+  forms at the W₋₁-block level: any odd-channel bridge must be a
+  level-mixing / n-dependent Habiro-module map. Engineering note for
+  successors: fraction-free Bareiss (in-probe) replaces sympy rref
+  for exact ranks at this size (<1 s vs >60 CPU-min).

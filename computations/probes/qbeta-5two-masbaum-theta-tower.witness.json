@@ -1,0 +1,451 @@
+{
+  "engine": "exact-fraction-series+sympy",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-07-25T20:20:56.288130+00:00",
+  "commitSha": "8bc80248b1ef4d415b834336120dbd1963fe11c9",
+  "assertions": [
+    {
+      "name": "printed_tables_regated",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "shared exact-series engine reproduces the 18 printed GGM H-tables"
+    },
+    {
+      "name": "prefix_self_consistency",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "O(q^40) generation is a prefix of the O(q^128) generation (3 spot series)"
+    },
+    {
+      "name": "overdetermination_margin",
+      "computed": 47.0,
+      "expected": 128.0,
+      "passed": true,
+      "tolerance": 108.0,
+      "source": "rows − rank ≥ 20 so membership is genuinely overdetermined"
+    },
+    {
+      "name": "decision_family_completed",
+      "computed": 63.0,
+      "expected": 63.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "all 63 pre-registered decisions completed"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "qbeta-5two-masbaum-theta-tower",
+  "scriptFile": "qbeta_5two_masbaum_theta_tower_probe.py",
+  "scriptHash": "5553a641e262",
+  "scriptCommitSha": "8bc80248b1ef4d415b834336120dbd1963fe11c9",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "B1.4 (module map, arm 1): the Euler-descendant tower θ^m (m ∈ 0..2) over the extended λ-grid (sign +1: λ ∈ −2..3; sign −1: λ ∈ −1..3; j ∈ 0..2 — 99 columns) confronted with θ^t F (t ∈ 0..2) dressed by (q;q)_∞^p·q^s (p ∈ −3..3, s ∈ 0..2): 63 exact membership decisions at O(q^128), overdetermination margin gated. Decisions are exact: modular rank certifies OUTSIDE (rank_p(aug) > rank_Q(M) forces rank_Q(aug) > rank_Q(M)); mod-p in-span candidates escalate to the exact rational solve. Engine re-gated against the 18 printed GGM tables. auditOnly; no c_k wired; no fit.",
+  "contentBlock": "prop:phi-b-unitary-bar-odd",
+  "data": {
+    "basis": {
+      "columns": 99,
+      "rank": 81,
+      "rank_certification": "exact integer Bareiss (fraction-free), mod-p lower-bound checked",
+      "order": 128,
+      "margin": 47
+    },
+    "decisions": [
+      {
+        "theta": 0,
+        "p": -3,
+        "shift": 0,
+        "in_span": false
+      },
+      {
+        "theta": 0,
+        "p": -3,
+        "shift": 1,
+        "in_span": false
+      },
+      {
+        "theta": 0,
+        "p": -3,
+        "shift": 2,
+        "in_span": false
+      },
+      {
+        "theta": 0,
+        "p": -2,
+        "shift": 0,
+        "in_span": false
+      },
+      {
+        "theta": 0,
+        "p": -2,
+        "shift": 1,
+        "in_span": false
+      },
+      {
+        "theta": 0,
+        "p": -2,
+        "shift": 2,
+        "in_span": false
+      },
+      {
+        "theta": 0,
+        "p": -1,
+        "shift": 0,
+        "in_span": false
+      },
+      {
+        "theta": 0,
+        "p": -1,
+        "shift": 1,
+        "in_span": false
+      },
+      {
+        "theta": 0,
+        "p": -1,
+        "shift": 2,
+        "in_span": false
+      },
+      {
+        "theta": 0,
+        "p": 0,
+        "shift": 0,
+        "in_span": false
+      },
+      {
+        "theta": 0,
+        "p": 0,
+        "shift": 1,
+        "in_span": false
+      },
+      {
+        "theta": 0,
+        "p": 0,
+        "shift": 2,
+        "in_span": false
+      },
+      {
+        "theta": 0,
+        "p": 1,
+        "shift": 0,
+        "in_span": false
+      },
+      {
+        "theta": 0,
+        "p": 1,
+        "shift": 1,
+        "in_span": false
+      },
+      {
+        "theta": 0,
+        "p": 1,
+        "shift": 2,
+        "in_span": false
+      },
+      {
+        "theta": 0,
+        "p": 2,
+        "shift": 0,
+        "in_span": false
+      },
+      {
+        "theta": 0,
+        "p": 2,
+        "shift": 1,
+        "in_span": false
+      },
+      {
+        "theta": 0,
+        "p": 2,
+        "shift": 2,
+        "in_span": false
+      },
+      {
+        "theta": 0,
+        "p": 3,
+        "shift": 0,
+        "in_span": false
+      },
+      {
+        "theta": 0,
+        "p": 3,
+        "shift": 1,
+        "in_span": false
+      },
+      {
+        "theta": 0,
+        "p": 3,
+        "shift": 2,
+        "in_span": false
+      },
+      {
+        "theta": 1,
+        "p": -3,
+        "shift": 0,
+        "in_span": false
+      },
+      {
+        "theta": 1,
+        "p": -3,
+        "shift": 1,
+        "in_span": false
+      },
+      {
+        "theta": 1,
+        "p": -3,
+        "shift": 2,
+        "in_span": false
+      },
+      {
+        "theta": 1,
+        "p": -2,
+        "shift": 0,
+        "in_span": false
+      },
+      {
+        "theta": 1,
+        "p": -2,
+        "shift": 1,
+        "in_span": false
+      },
+      {
+        "theta": 1,
+        "p": -2,
+        "shift": 2,
+        "in_span": false
+      },
+      {
+        "theta": 1,
+        "p": -1,
+        "shift": 0,
+        "in_span": false
+      },
+      {
+        "theta": 1,
+        "p": -1,
+        "shift": 1,
+        "in_span": false
+      },
+      {
+        "theta": 1,
+        "p": -1,
+        "shift": 2,
+        "in_span": false
+      },
+      {
+        "theta": 1,
+        "p": 0,
+        "shift": 0,
+        "in_span": false
+      },
+      {
+        "theta": 1,
+        "p": 0,
+        "shift": 1,
+        "in_span": false
+      },
+      {
+        "theta": 1,
+        "p": 0,
+        "shift": 2,
+        "in_span": false
+      },
+      {
+        "theta": 1,
+        "p": 1,
+        "shift": 0,
+        "in_span": false
+      },
+      {
+        "theta": 1,
+        "p": 1,
+        "shift": 1,
+        "in_span": false
+      },
+      {
+        "theta": 1,
+        "p": 1,
+        "shift": 2,
+        "in_span": false
+      },
+      {
+        "theta": 1,
+        "p": 2,
+        "shift": 0,
+        "in_span": false
+      },
+      {
+        "theta": 1,
+        "p": 2,
+        "shift": 1,
+        "in_span": false
+      },
+      {
+        "theta": 1,
+        "p": 2,
+        "shift": 2,
+        "in_span": false
+      },
+      {
+        "theta": 1,
+        "p": 3,
+        "shift": 0,
+        "in_span": false
+      },
+      {
+        "theta": 1,
+        "p": 3,
+        "shift": 1,
+        "in_span": false
+      },
+      {
+        "theta": 1,
+        "p": 3,
+        "shift": 2,
+        "in_span": false
+      },
+      {
+        "theta": 2,
+        "p": -3,
+        "shift": 0,
+        "in_span": false
+      },
+      {
+        "theta": 2,
+        "p": -3,
+        "shift": 1,
+        "in_span": false
+      },
+      {
+        "theta": 2,
+        "p": -3,
+        "shift": 2,
+        "in_span": false
+      },
+      {
+        "theta": 2,
+        "p": -2,
+        "shift": 0,
+        "in_span": false
+      },
+      {
+        "theta": 2,
+        "p": -2,
+        "shift": 1,
+        "in_span": false
+      },
+      {
+        "theta": 2,
+        "p": -2,
+        "shift": 2,
+        "in_span": false
+      },
+      {
+        "theta": 2,
+        "p": -1,
+        "shift": 0,
+        "in_span": false
+      },
+      {
+        "theta": 2,
+        "p": -1,
+        "shift": 1,
+        "in_span": false
+      },
+      {
+        "theta": 2,
+        "p": -1,
+        "shift": 2,
+        "in_span": false
+      },
+      {
+        "theta": 2,
+        "p": 0,
+        "shift": 0,
+        "in_span": false
+      },
+      {
+        "theta": 2,
+        "p": 0,
+        "shift": 1,
+        "in_span": false
+      },
+      {
+        "theta": 2,
+        "p": 0,
+        "shift": 2,
+        "in_span": false
+      },
+      {
+        "theta": 2,
+        "p": 1,
+        "shift": 0,
+        "in_span": false
+      },
+      {
+        "theta": 2,
+        "p": 1,
+        "shift": 1,
+        "in_span": false
+      },
+      {
+        "theta": 2,
+        "p": 1,
+        "shift": 2,
+        "in_span": false
+      },
+      {
+        "theta": 2,
+        "p": 2,
+        "shift": 0,
+        "in_span": false
+      },
+      {
+        "theta": 2,
+        "p": 2,
+        "shift": 1,
+        "in_span": false
+      },
+      {
+        "theta": 2,
+        "p": 2,
+        "shift": 2,
+        "in_span": false
+      },
+      {
+        "theta": 2,
+        "p": 3,
+        "shift": 0,
+        "in_span": false
+      },
+      {
+        "theta": 2,
+        "p": 3,
+        "shift": 1,
+        "in_span": false
+      },
+      {
+        "theta": 2,
+        "p": 3,
+        "shift": 2,
+        "in_span": false
+      }
+    ],
+    "solutions": [],
+    "verdict": "THE θ-TOWER DOES NOT BRIDGE: θ^t F lies outside the 99-dim descendant span for every pre-registered dressing (63 exact decisions). Scope-(a): this operator family as-stated — the Euler tower and the λ-grid extension are ruled out as the module map; the cyclotomic level structure (B1.4') is the remaining named route. auditOnly."
+  }
+}
