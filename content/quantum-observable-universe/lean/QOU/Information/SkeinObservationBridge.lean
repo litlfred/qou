@@ -58,6 +58,18 @@ namespace QOU.Information
 
 open QOU.AppendixSurreals
 
+/-- The resolution-tree horizon `3^n` exceeds its input `n` for every `n`, so a
+    linear observation budget never reaches the exponential cost. (The exponential
+    `3^n` in fact dominates every polynomial eventually; `n < 3^n` is the piece the
+    linear-budget corollary needs.) -/
+theorem lt_three_pow (n : ℕ) : n < 3 ^ n := by
+  induction n with
+  | zero => norm_num
+  | succ k ih =>
+    have hpos : 1 ≤ 3 ^ k := Nat.one_le_pow k 3 (by norm_num)
+    rw [pow_succ]
+    omega
+
 /-- An abstract **Skein-observation system**: a discrete dynamical system on a
     state space `S`, with an observation map `obs : S → V` (the Markov trace), a
     normal-form target (the attractor / unknot), and a ℕ-valued length /
@@ -199,6 +211,40 @@ theorem regular_and_halts_of_len_orbit_descent (P : S)
     rwa [Function.iterate_succ_apply'] at h
   · exact ⟨0, rfl⟩
 
+/-! #### P-vs-NP rate leg: the `3^c` horizon cost separates `PolyObservable`
+from `HaltsObserved`
+
+`HaltsObserved` asks only that the observation is *eventually* reached;
+`PolyObservable` asks that it is reached within a *polynomial* budget. The gap is
+the P-vs-NP question. When a system's observation is reachable **only** at the
+naive resolution-tree cost `3^{\text{len}}` — the exponential horizon
+(`horizon_numLeaves_eq_three_pow_filtrationLevel`) — it is observed-halting but
+beats every budget the horizon exceeds. -/
+
+/-- **Exponential horizon cost ⇒ not poly-observable.** If every observation-match
+    happens no earlier than the resolution-tree cost `3^{len P}` (`hcost`), then no
+    polynomial budget the horizon exceeds (`poly (len P) < 3^{len P}`) suffices —
+    the P-vs-NP separation, with the exponential lower bound `hcost` taken as the
+    (genuinely hard) hypothesis rather than proved. -/
+theorem not_polyObservable_of_horizon_cost (poly : ℕ → ℕ) (P : S)
+    (hcost : ∀ k : ℕ,
+        sys.obs (sys.step^[k] P) = sys.obs sys.normalForm → 3 ^ sys.len P ≤ k)
+    (hgap : poly (sys.len P) < 3 ^ sys.len P) :
+    ¬ sys.PolyObservable poly P := by
+  rintro ⟨k, hk, hobs⟩
+  have hc := hcost k hobs
+  omega
+
+/-- **Concrete separation.** A system with exponential horizon cost is not
+    poly-observable under the identity (linear) budget — `lt_three_pow` discharges
+    the gap unconditionally, so the exponential lower bound alone yields the
+    separation. -/
+theorem not_polyObservable_id_of_horizon_cost (P : S)
+    (hcost : ∀ k : ℕ,
+        sys.obs (sys.step^[k] P) = sys.obs sys.normalForm → 3 ^ sys.len P ≤ k) :
+    ¬ sys.PolyObservable id P :=
+  sys.not_polyObservable_of_horizon_cost id P hcost (lt_three_pow _)
+
 end SkeinObservationSystem
 
 /-! ### Proof-by-contradiction skeleton for a residue-based separation -/
@@ -307,6 +353,25 @@ theorem vortexReductionSystem_halts (P : ℕ) :
   vortexReductionSystem.halts_of_len_descent (fun _ => True)
     (fun _ _ _ => trivial)
     (fun _ _ hx => Nat.sub_lt (Nat.pos_of_ne_zero hx) one_pos) P trivial
+
+/-- **The shared descent exists on the concrete vortex flow.** Firing
+    `regular_and_halts_of_len_orbit_descent` on `vortexReductionSystem`: its
+    crossing-count reduction is a genuine controlled descent, so it yields q-NS
+    regularity **and** q-Collatz-style halting from the single hypothesis — a
+    concrete, unconditional witness that the shared-descent machinery is
+    non-vacuous. (The real q-Collatz descent measure `μ` on `ℤ[q^{±1}]` remains
+    the open wall — it is *not* constructed here, only exhibited on this toy
+    reduction.) -/
+theorem vortexReductionSystem_regular_and_halts (P : ℕ) :
+    vortexReductionSystem.Regular P P ∧ vortexReductionSystem.Halts P := by
+  have h := vortexReductionSystem.regular_and_halts_of_len_orbit_descent P ?_ ?_
+  · simpa using h
+  · intro k
+    rw [Function.iterate_succ_apply']
+    exact Nat.sub_le _ 1
+  · intro k hk
+    rw [Function.iterate_succ_apply']
+    exact Nat.sub_lt (Nat.pos_of_ne_zero hk) one_pos
 
 /-- **The corpus q-BKM criterion is the bridge's regularity dichotomy.** Given a
     `QBKMContext` whose `extendsSmoothly` / `vorticityIntegralFinite` predicates
