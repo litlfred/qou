@@ -71,4 +71,31 @@ theorem fourDilog_linear_part (a b c d : R) :
              + (a*b*c + a*b*d + a*c*d + b*c*d) + a*b*c*d) := by
   unfold fourDilog; ring
 
+/-! ## Bar-parity of the octahedral orders (the #4158 discriminating-test structure)
+
+The bar involution `q ↦ q⁻¹` acts on the single-tetrahedron amplitudes as `aᵢ ↦ −aᵢ` (they are
+bar-**odd**, being linear in `v − v⁻¹`, `v = √q`). Under this the elementary-symmetric orders split
+by parity: the linear part `e₁` is bar-**odd** and the quadratic part `e₂` is bar-**even**. This is
+the exact structure the #4158 Magnus route found for the deuteron `−9.21%`: a bar-odd linear
+impurity `t = (v−v⁻¹)/[2]_v` ⊕ a bar-even quadratic gap `h² = (v−v⁻¹)²[2]_v²`. The two routes
+converge on this parity split (`octahedral_barsplit_convergence_probe.py`); the bar-even `e₂`
+coefficient (`≈ 1.0·h²`) is the shared remaining open. -/
+
+/-- The **linear order** `e₁` of the octahedral expansion (the first-order tetrahedron sum). -/
+def e1 (a b c d : R) : R := a + b + c + d
+
+/-- The **quadratic order** `e₂` (the pairwise tetrahedron products — the Magnus / cross terms). -/
+def e2 (a b c d : R) : R := a*b + a*c + a*d + b*c + b*d + c*d
+
+/-- **`e₁` is bar-ODD.** Under `aᵢ ↦ −aᵢ` the linear part flips sign — matching the bar-odd
+impurity `−t` of the #4158 decomposition. -/
+theorem e1_bar_odd (a b c d : R) : e1 (-a) (-b) (-c) (-d) = - e1 a b c d := by
+  unfold e1; ring
+
+/-- **`e₂` is bar-EVEN.** Under `aᵢ ↦ −aᵢ` the quadratic (pairwise) part is invariant — matching
+the bar-even gap `h²` of the #4158 decomposition. So the octahedral 4-`Φ_q` holonomy splits the
+`−9.21%` as bar-odd linear ⊕ bar-even quadratic, the same parities as the Magnus route. -/
+theorem e2_bar_even (a b c d : R) : e2 (-a) (-b) (-c) (-d) = e2 a b c d := by
+  unfold e2; ring
+
 end QOU.MassTheory

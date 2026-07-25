@@ -1,0 +1,94 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-07-25T19:14:20.838451+00:00",
+  "commitSha": "f003ba35c4339eeef3cdf1266e96a1c4cd630955",
+  "assertions": [
+    {
+      "name": "vmvi_bar_odd",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "two_v_bar_even",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "t_bar_odd_linear",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "h2_bar_even_quadratic",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "routes_converge_on_parity",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "octahedral-barsplit-convergence",
+  "scriptFile": "octahedral_barsplit_convergence_probe.py",
+  "scriptHash": "de56190037f6",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "mpmath": "1.4.1"
+  },
+  "description": "Discriminating test (owner-requested, PR #4127): the octahedral 4-Φ_q crossing holonomy bar-splits as linear(bar-odd)⊕e₂(bar-even), CONVERGING with the #4158 Magnus route's −9.21% = bar-odd t=(v−v⁻¹)/[2]_v ⊕ bar-even h²=(v−v⁻¹)²[2]_v². Parities match; t+h²=9.58% vs 9.21% gap. The bar-even h² coefficient (~1.0) is the shared remaining open (missing 3 tetrahedra first-order suppressed). Cross-validates route B against route A. scope-(a), no fit, audit-only.",
+  "contentBlock": "rem:ohtsuki-tower-bar-parity",
+  "audit_only": true,
+  "tier": "structural convergence test (bar-parity + exact targets; no fit)",
+  "result": {
+    "targets_from_4158": {
+      "t_bar_odd_impurity": "0.052123086",
+      "t_pct": "5.212",
+      "h2_bar_even_gap": "0.043706218",
+      "h2_pct": "4.371",
+      "t_plus_h2_pct": "9.5829",
+      "deuteron_gap_pct": "9.21"
+    },
+    "bar_parity_structure": {
+      "vmvi_is_bar_odd": true,
+      "two_v_is_bar_even": true,
+      "t_is_bar_odd_linear": true,
+      "h2_is_bar_even_quadratic": true
+    },
+    "octahedral_fourdilog_map": {
+      "linear_part_a_b_c_d": "bar-ODD single-tetrahedron amplitudes ↔ −t (matches)",
+      "e2_part_pairwise": "bar-EVEN quadratic Σaᵢaⱼ ↔ h² (matches)",
+      "parities_match": true
+    },
+    "convergence_verdict": {
+      "routes_converge": true,
+      "shared_decomposition": "−9.21% = bar-odd t (linear/1st-order) ⊕ bar-even h² (quadratic/2nd-order); octahedral (B) and Magnus (A) agree.",
+      "h2_coefficient_residual_frac": "0.04049",
+      "shared_open": "the bar-even h² coefficient (~1.0) is underived in BOTH routes — the single remaining open; the missing 3 tetrahedra are first-order suppressed (equal-weight would overshoot ~30×, per #4158).",
+      "no_fit": true
+    }
+  },
+  "context": {
+    "axis": "Δ_λ binding — μ₀ −9% closure, octahedral route B ↔ Magnus route A convergence",
+    "sibling_magnus": "#4158 (audit 2026-07-24-eunit-magnus-order2.md)",
+    "builds_on": "PR #4127 FourDilogFirstOrder.lean + 2026-07-19-octahedral-…-tetrahedra.md",
+    "q0_convention": "muon-canonical (computations/ layer)",
+    "no_fit": true
+  },
+  "auditOnly": true
+}
