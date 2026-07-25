@@ -170,6 +170,35 @@ theorem regular_of_len_nonincreasing (P : S)
   | zero => simp
   | succ n ih => exact le_trans (hmono n) ih
 
+/-! #### Cross-pollination: the q-Collatz and q-NS walls are one missing lemma
+
+The q-Collatz descent (`halts_of_len_descent`) and the q-NS regularity
+(`regular_of_len_nonincreasing`) consume a hypothesis on the **same** filtration
+`len`. So a single controlled descent along the orbit — non-increasing, and
+strictly dropping whenever the state is not yet at the normal form — yields
+**both** conclusions at once. A result on the descent of one leg transfers
+directly to the other. -/
+
+/-- **One descent, two walls.** A globally non-increasing filtration that
+    additionally drops strictly off the normal form gives **both** q-NS
+    regularity (bounded by the initial complexity) **and** q-Collatz halting.
+    The two open walls share one missing ingredient — a controlled descent on
+    the Skein filtration; P-vs-NP is the same descent with the *polynomial-rate*
+    refinement added. -/
+theorem regular_and_halts_of_len_orbit_descent (P : S)
+    (hmono : ∀ k : ℕ, sys.len (sys.step^[k + 1] P) ≤ sys.len (sys.step^[k] P))
+    (hstrict : ∀ k : ℕ, sys.step^[k] P ≠ sys.normalForm →
+        sys.len (sys.step^[k + 1] P) < sys.len (sys.step^[k] P)) :
+    sys.Regular (sys.len P) P ∧ sys.Halts P := by
+  refine ⟨sys.regular_of_len_nonincreasing P hmono, ?_⟩
+  apply sys.halts_of_len_descent (fun y => ∃ k : ℕ, sys.step^[k] P = y)
+  · rintro x ⟨k, rfl⟩ _
+    exact ⟨k + 1, by rw [Function.iterate_succ_apply']⟩
+  · rintro x ⟨k, rfl⟩ hx
+    have h := hstrict k hx
+    rwa [Function.iterate_succ_apply'] at h
+  · exact ⟨0, rfl⟩
+
 end SkeinObservationSystem
 
 /-! ### Proof-by-contradiction skeleton for a residue-based separation -/
