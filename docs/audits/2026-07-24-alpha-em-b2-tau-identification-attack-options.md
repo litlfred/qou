@@ -162,3 +162,32 @@ structures the Tits iso relates.
 
 No intertwiner / `TauRhoHodgeLift` instance for the actual τ is registered;
 `1/(8π)` stays a phase-4 identification; nothing is wired.
+
+## Update 2026-07-25 (2) — the seminormal→Young Tits deformation T(q), built explicitly
+
+`alpha_em_b2_tits_deformation_probe.py` constructs the deformation and tests the
+`*`-isometry numerically (dps=40, no fit):
+
+- The Hoefsmit seminormal rep `ρ_H^q(σᵢ)` of `(4,1)` deforms continuously to
+  Young's rep as `q→1` (σ₁ eigenvalues `q,q,q,−q⁻¹ → 1,1,1,−1`; verified across
+  `q ∈ {1.0001, 1.01, 1.1, q₀}`).
+- **`T(q) = diag(√(g_i(1)/g_i(q)))`** (`g_i` = the diagonal seminormal Gram
+  entries) is an explicit, deformation-continuous (`→Id` at `q=1`, residual
+  `3e-9`), **`*`-compatible Tits conjugator**: exact `*`-isometry
+  `Tᵀ·G(q₀)·T = G(1)` (residual `4e-41`) and `T⁻¹·ρ_H^{q₀}·T` exactly
+  `G(1)`-self-adjoint (residual `9e-41`). So `φ = ρ_S⁻¹ ∘ conj(T) ∘ ρ_H` is a
+  genuine `*`-algebra iso `H₅(q₀) ≅ ℂ[S₅]` on the block.
+- **Reconciliation with the (ii) obstruction (#4199):** `T` is *not* a
+  generator-intertwiner — `T⁻¹·ρ_H^{q₀}·T` keeps the Hecke eigenvalues (gap
+  `≈ |q₀−1| = 0.099` vs Young's `±1`), so `φ(σᵢ)` is a *non-generator* element of
+  `ℂ[S₅]`. Both facts hold simultaneously and consistently: the Tits `*`-iso
+  *exists and is `*`-compatible* (via `T`), but is an **algebra** iso, never a
+  generator conjugation — exactly what `intertwiner_trace_eq` predicts.
+
+**Net.** The **deformation half** of the canonical `τ` (Hecke `→` `q=1`
+seminormal) is now explicitly constructed and `*`-isometric. The residual to
+`|c|` is the **pure-S₅ alignment `U`** from the `q=1` seminormal SYT basis to the
+Braden–Northover period basis (`M_S = 5·Id−𝟙`) — this needs the S₅ action *in the
+period basis*, which the corpus does not record (only the Hodge Gram `M_S`
+itself). So `|c|` is gated on `U` (a finite, pure-representation-theory datum),
+not on the deformation. No instance registered; `1/(8π)` phase-4; nothing wired.
