@@ -1,0 +1,34 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-25T17:17:09.326488+00:00",
+  "commitSha": "",
+  "scriptFile": "computations/probes/borromean_cusp_framing_factor.py",
+  "scriptHash": "06f781aefb35",
+  "scriptCommitSha": "",
+  "description": "The c\u2080\u2194NZ-torsion factor on the Borromean rings is 2^(c\u22121), not a framing artifact: all 2^c peripheral framings give |det|\u226564 (min=64, all-meridian), none 16. Audit-only; no fit; nothing wired.",
+  "auditOnly": true,
+  "parameters": {
+    "manifold": "L6a4",
+    "cusps": 3
+  },
+  "data": {
+    "framing_dets": {
+      "(0, 0, 0)": "64.0",
+      "(0, 0, 1)": "128.0",
+      "(0, 1, 0)": "128.0",
+      "(0, 1, 1)": "256.0",
+      "(1, 0, 0)": "128.0",
+      "(1, 0, 1)": "256.0",
+      "(1, 1, 0)": "256.0",
+      "(1, 1, 1)": "512.0"
+    },
+    "meridian_det": "64.0",
+    "min_det_over_framings": 64.0,
+    "factor_law": "2^(c-1)",
+    "factor_measured": "4.0279722",
+    "c0_borromean": "-1.38281 (\u2248 -ln4)",
+    "whitehead_prediction_factor": 2,
+    "note": "meridian framing 64 is the unique minimum; no framing yields 16, so the factor 4 is the reduced-Habiro-vs-Kashaev normalization 2^(c-1), not a framing choice. Whitehead (c=2 -> factor 2) is the decisive confirmation; the per-cusp-2 mechanism is the multi-cusp saddle Gaussian, recorded not proved."
+  }
+}
