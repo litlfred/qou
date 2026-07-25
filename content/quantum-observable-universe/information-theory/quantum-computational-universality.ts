@@ -20,6 +20,7 @@ export default conjecture({
     validation: "not_checked",
   },
   uses: [
+    "prop:reeb-turing-completeness-classical",
     "rem:toffoli-q-and",
     "rem:jet-planck-steps",
     "rem:complex-substrate-interpretation",

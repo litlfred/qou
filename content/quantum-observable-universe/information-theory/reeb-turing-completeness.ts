@@ -6,6 +6,7 @@ export default remark({
   title:
     "Universal computation in 3D contact geometry: Cardona–Miranda–Peralta-Salas–Presas",
   uses: [
+    "prop:reeb-turing-completeness-classical",
     "def:categorical-reeb-derivation",
     "def:computational-horizon",
     "def:observable-mtc",
