@@ -975,6 +975,62 @@ theorem integral_le_sum_log_sin_falling_Icc {N m k : ℕ} (hN : 1 ≤ N) (hmk : 
         + (π / N) * Real.log (2 * Real.sin ((m : ℝ) * (π / N)))
         - (π / N) * Real.log (2 * Real.sin ((k : ℝ) * (π / N))) := by ring
 
+/-- **E5b ceiling (sorry-free).** The log-sine integrand never exceeds `log 2`
+    on `(0, π)`. -/
+theorem log_two_sin_le_log_two {u : ℝ} (h0 : 0 < u) (hπ : u < π) :
+    Real.log (2 * Real.sin u) ≤ Real.log 2 := by
+  have hs : 0 < Real.sin u := Real.sin_pos_of_pos_of_lt_pi h0 hπ
+  exact Real.log_le_log (by linarith)
+    (by nlinarith [Real.sin_le_one u])
+
+/-- **E5b floor (sorry-free).** On the mirror-symmetric window `[h, π−h]`
+    (with `0 < h ≤ π/2`), the unimodal log-sine integrand is at least its
+    common boundary value `f(h)`: by monotonicity up to `π/2` and the
+    reflection `sin(π−u) = sin u` beyond. -/
+theorem log_two_sin_ge_boundary {h u : ℝ} (hh : 0 < h) (hhalf : h ≤ π / 2)
+    (hu1 : h ≤ u) (hu2 : u ≤ π - h) :
+    Real.log (2 * Real.sin h) ≤ Real.log (2 * Real.sin u) := by
+  have hpi := Real.pi_pos
+  rcases le_or_gt u (π / 2) with hcase | hcase
+  · exact monotoneOn_log_two_sin ⟨hh, hhalf⟩ ⟨lt_of_lt_of_le hh hu1, hcase⟩ hu1
+  · have hmirror : Real.log (2 * Real.sin u) = Real.log (2 * Real.sin (π - u)) := by
+      rw [Real.sin_pi_sub]
+    have hmirror' : Real.log (2 * Real.sin h) = Real.log (2 * Real.sin h) := rfl
+    rw [hmirror]
+    exact monotoneOn_log_two_sin ⟨hh, hhalf⟩
+      ⟨by linarith, by linarith⟩ (by linarith)
+
+/-- **E5b crude cell bound (sorry-free).** For any window `[a, b] ⊆ [h, π−h]`,
+    the log-sine integral is at most `(b−a)·(|f(h)| + log 2)` in absolute value —
+    the boundary-cell control the E5 stitch charges to the master error term.
+    (bean qou-sho7) -/
+theorem abs_integral_log_sin_cell_le {h a b : ℝ} (hh : 0 < h) (hhalf : h ≤ π / 2)
+    (hab : a ≤ b) (ha : h ≤ a) (hb : b ≤ π - h) :
+    |∫ u in a..b, Real.log (2 * Real.sin u)|
+      ≤ (b - a) * (|Real.log (2 * Real.sin h)| + Real.log 2) := by
+  have hpi := Real.pi_pos
+  have hbound : ∀ x ∈ Set.uIoc a b,
+      ‖Real.log (2 * Real.sin x)‖ ≤ |Real.log (2 * Real.sin h)| + Real.log 2 := by
+    intro x hx
+    rw [Set.uIoc_of_le hab] at hx
+    have hx1 : h ≤ x := le_trans ha (le_of_lt hx.1)
+    have hx2 : x ≤ π - h := le_trans hx.2 hb
+    have hceil : Real.log (2 * Real.sin x) ≤ Real.log 2 :=
+      log_two_sin_le_log_two (by linarith) (by linarith)
+    have hfloor : Real.log (2 * Real.sin h) ≤ Real.log (2 * Real.sin x) :=
+      log_two_sin_ge_boundary hh hhalf hx1 hx2
+    rw [Real.norm_eq_abs, abs_le]
+    constructor
+    · have : -|Real.log (2 * Real.sin h)| ≤ Real.log (2 * Real.sin h) :=
+        neg_abs_le _
+      nlinarith [Real.log_nonneg (by norm_num : (1:ℝ) ≤ 2)]
+    · nlinarith [abs_nonneg (Real.log (2 * Real.sin h))]
+  have := intervalIntegral.norm_integral_le_of_norm_le_const hbound
+  rw [Real.norm_eq_abs, abs_of_nonneg (by linarith : (0:ℝ) ≤ b - a)] at this
+  calc |∫ u in a..b, Real.log (2 * Real.sin u)|
+      ≤ (|Real.log (2 * Real.sin h)| + Real.log 2) * (b - a) := this
+    _ = (b - a) * (|Real.log (2 * Real.sin h)| + Real.log 2) := by ring
+
 /-- **The series Clausen's derivative** `Cl_2'(θ) = -log(2 sin(θ/2))` for
     `θ ∈ (0, 2π)` — the derivative the filler flagged as needing Fourier
     infrastructure, now machine-proved (`hasDerivAt_Cl_2_series`). Dual-purpose: `V'(θ)` of
