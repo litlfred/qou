@@ -1,0 +1,105 @@
+{
+  "engine": "snappy+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-07-25T20:40:21.874121+00:00",
+  "commitSha": "7c490683732e66f9b9faaefccaf3691cdcf3a8da",
+  "assertions": [
+    {
+      "name": "reciprocal_pairing_exact",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "meridian_map_verified",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "deuteron_is_torus_knot_vol_zero",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "deuteron-octahedral-gluing",
+  "scriptFile": "deuteron_octahedral_gluing_probe.py",
+  "scriptHash": "836ee979e109",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "mpmath": "1.4.1"
+  },
+  "description": "Deuteron octahedral gluing setup (owner task): the deuteron σ₁³ closure is the trefoil T(2,3) — a TORUS knot (SnapPy: Vol=0, flat tetrahedra, shapes {1/2,2}, π₁=⟨a,b|a²b³⟩). The edge gluing equation forces z₀·z₁=1 IDENTICALLY along the whole deformation, so the two flat tetrahedra are EXACT bar-reciprocals (reciprocity never broken) — REVISING the 'r=χ-coloring asymmetry' first pass. The frame is the single shape modulus z₀ via the meridian-holonomy map H(z₀)=z₀/(z₀−1) (flat H=−1⟹z₀=1/2); r is a BAR-EVEN function of the substrate deformation of z₀. The H(q₀) coloring map is the OPEN derivation — r is never fitted. Forward, scope-(a), audit-only, nothing wired.",
+  "contentBlock": "rem:ohtsuki-tower-bar-parity",
+  "audit_only": true,
+  "tier": "topological setup + structural narrowing (SnapPy facts + gluing algebra; no fit)",
+  "result": {
+    "A_snappy_facts": {
+      "manifold": "sigma_1^3 closure = trefoil T(2,3)",
+      "volume": 0.0,
+      "solution_type": "contains flat tetrahedra",
+      "num_tetrahedra": 2,
+      "shapes": [
+        "0.500000+0.000000j",
+        "2.000000+0.000000j"
+      ],
+      "generators": [
+        "a",
+        "b"
+      ],
+      "relators": [
+        "aabbb"
+      ],
+      "rect_gluing_equations": [
+        "([1, 0], [-1, 1], -1)",
+        "([-1, 0], [1, -1], -1)",
+        "([1, 1], [0, -1], -1)",
+        "([-5, -4], [1, 5], -1)"
+      ]
+    },
+    "B_reciprocal_pairing": {
+      "edge_eqn_forces_z0z1_eq_1_identically": true,
+      "meaning": "the two flat tetrahedra are EXACT bar-reciprocals (z↦1/z is bar); reciprocity is deformation-invariant — NEVER broken by the coloring.",
+      "revises_hypothesis": "r is NOT a reciprocal-asymmetry (that is identically 0). The frame is the single shape modulus z0 (partner z1=1/z0)."
+    },
+    "C_deformation": {
+      "meridian_holonomy_map": "H(z0)=z0/(z0-1); inverse z0=H/(H-1)",
+      "complete_flat": "H=-1 (parabolic) -> z0=1/2 (the flat trefoil shape)",
+      "map_verified": true,
+      "flat_bar_even_s_z0": "2.5",
+      "flat_bar_odd": "-1.5",
+      "r_order_parameter": "BAR-EVEN fractional deviation of s(z0)=z0+1/z0 from 5/2 under the substrate deformation of the meridian holonomy H."
+    },
+    "r_is_open": {
+      "value_r": "0.008652 (g2-1) — OPEN, to DERIVE from the coloring H(q0) map, NEVER to fit",
+      "the_missing_derivation": "the substrate coloring meridian-holonomy↔q map H(q0)",
+      "illustrative_forward_bar_even_dev_NOT_a_claim": {
+        "H = -q0": "-2.9208 %",
+        "H = -v (v=sqrt q0)": "-1.5117 %",
+        "H = -q0^2": "-5.4546 %"
+      },
+      "no_fit": true,
+      "anti_laundering": "no axiom/class carrying r counts as a derivation."
+    }
+  },
+  "context": {
+    "axis": "Δ_λ binding — μ₀ −9% closure, residual r in the octahedral χ-coloring frame",
+    "sibling_magnus": "#4158 (Route A, 2026-07-24-eunit-magnus-order2.md)",
+    "sibling_octahedral": "PR #4127 (Route B, FourDilogFirstOrder.lean)",
+    "sibling_borromean_front": "beans qou-h8yc (W9) / qou-099h (B3) — Borromean (hyperbolic) angle-structure/normal-surface; distinct manifold, shared gluing machinery",
+    "q0_convention": "muon-canonical (computations/ layer)",
+    "snappy": "3.3.2",
+    "no_fit": true
+  },
+  "auditOnly": true
+}

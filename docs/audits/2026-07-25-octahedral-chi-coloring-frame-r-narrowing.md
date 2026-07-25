@@ -59,23 +59,38 @@ the **coloring** (boundary-parabolic holonomy) shift off the flat locus — a *d
 from the algebraic ladder. That is exactly why `r` is not in the ladder: it is a **frame**
 (χ-coloring) quantity, not an algebra-ladder quantity.
 
-## 2. The frame: reciprocal pairing `z ↔ 1/z` *is* the bar involution
+## 2. The frame: a *single* shape modulus with an *exact* reciprocal partner
 
 `2509.02354`'s positive-crossing factorization is
-`R = (1/N)·Z_b·(Z_r ⊗ Z_l)·Z_t` with near-conjugate tetrahedron arguments (bottom/top and
-left/right), giving the natural **conjugate pairing** `(Z_b, Z_t) / (Z_l, Z_r)`. For the deuteron
-this pairing is now concrete and *forced by the topology*: the flat shapes come as the **reciprocal
-pair** `{½, 2}`, and the bar involution `q ↦ q⁻¹` (`v ↦ 1/v`) acts on ideal-tetrahedron shapes as
-**`z ↦ 1/z`** (the standard shape-parameter bar symmetry). So:
+`R = (1/N)·Z_b·(Z_r ⊗ Z_l)·Z_t` with near-conjugate tetrahedron arguments, giving the natural
+**conjugate pairing** `(Z_b, Z_t) / (Z_l, Z_r)`. For the deuteron this pairing is concrete: the flat
+shapes are the **reciprocal pair** `{½, 2}`, and the bar involution `q ↦ q⁻¹` (`v ↦ 1/v`) acts on
+ideal-tetrahedron shapes as **`z ↦ 1/z`** (the standard shape-parameter bar symmetry).
 
-> **The octahedral conjugate-pairing `(Z_b,Z_t)/(Z_l,Z_r)` = the E⁺ bar-parity frame, realized on
-> the deuteron as the reciprocal shape pair `{½, 2}`.** `μ₀` (single Φ_q, bar-odd) sits on one
-> member; the bar-even `e₂ = h²` completion is the *symmetric* combination of the reciprocal pair.
+**Computed correction (the gluing algebra sharpens — and revises — the first pass).** The companion
+probe [`deuteron_octahedral_gluing_probe.py`](../../computations/deltalambda/deuteron_octahedral_gluing_probe.py)
+extracts the trefoil's rect-form gluing equations from SnapPy and finds the single edge equation
+`z₀(1−z₁)/(1−z₀) = −1` is **equivalent to `z₀·z₁ = 1` identically** — satisfied by `z₁ = 1/z₀` for
+*every* `z₀` along the whole 1-parameter gluing variety. So:
 
-The residual `r = g₂ − 1` is then the **asymmetry of the χ-coloring across this reciprocal pair** —
-how far the substrate's boundary-parabolic coloring pushes the two paired tetrahedra off exact
-reciprocity. `r = 0` would be exact reciprocal (bar-)symmetry of the coloring; `r ≈ 0.87%` measures
-the substrate's small breaking of it.
+> **The two flat tetrahedra are EXACT bar-reciprocals, and reciprocity is *deformation-invariant* —
+> the χ-coloring never breaks it.** There is *no* reciprocal asymmetry to measure.
+
+This **revises** the naïve first-pass reading ("`r` = χ-coloring asymmetry across the reciprocal
+pair"): that asymmetry is *identically zero*. The correct frame is the **single shape modulus `z₀`**
+(its partner is pinned to `1/z₀`), deformed by the **meridian holonomy** through the map
+`H(z₀) = z₀/(z₀−1)`, inverse `z₀ = H/(H−1)`; the complete/flat parabolic value `H = −1` gives
+`z₀ = ½`. The bar-**odd** reciprocal combination `log(z₀z₁) ≡ 0` on the variety (nothing to break);
+the surviving order parameter is the bar-**even** symmetric combination `s(z₀) = z₀ + 1/z₀`, flat
+value `5/2`. So:
+
+> **`r = g₂ − 1` is a bar-EVEN function of the substrate's deformation of the single modulus `z₀`**
+> (the deviation of `s(z₀)` from `5/2`), driven by the coloring's meridian-holonomy `H(q₀)` — **not**
+> a reciprocal asymmetry. This matches the Route-A/Route-B bar-even (`e₂ = h²`) localization: the
+> whole open is one bar-even modulus deformation.
+
+(The flat combinations are suggestive — `s = 5/2`, `z₀−1/z₀ = −3/2`, with `s² − (3/2)² = 4` — but
+pattern-matching `5/2, 3/2` to observables is exactly the forbidden §2e scan; not done.)
 
 ## 3. What is (and is not) closed
 
@@ -84,9 +99,10 @@ the substrate's small breaking of it.
 | deuteron `σ₁³` closure = trefoil `T(2,3)`, torus knot, `Vol=0`, flat shapes `{½,2}` | **solid** (SnapPy) |
 | flat/real shapes ⇒ binding is the `Re Φ_q` (phase) channel; mass `Vol`-side vanishes here | **solid** (structural) |
 | bar involution acts as `z ↦ 1/z`; `{½,2}` is a bar-conjugate reciprocal pair | **solid** |
-| the E⁺ frame = octahedral `(Z_b,Z_t)/(Z_l,Z_r)` conjugate pairing = the reciprocal pair | **solid** (identification) |
-| `r ≈ 0.87%` is the χ-coloring asymmetry across the reciprocal pair (a *frame*, not a ladder, quantity) | **narrowed hypothesis** |
-| the *value* `r = 0.008652` | **OPEN — to derive from the coloring, never to fit** |
+| edge gluing eqn ⟺ `z₀·z₁ = 1` **identically** ⇒ the flat pair is an *exact* bar-reciprocal, deformation-invariant | **solid** (SnapPy gluing algebra) |
+| ∴ `r` is **not** a reciprocal asymmetry (that is `≡ 0`); the frame is the *single* modulus `z₀`, partner `1/z₀` | **solid** (corrects the first pass) |
+| `r ≈ 0.87%` is a bar-**even** function of the substrate deformation of `z₀` via the meridian holonomy `H(q₀)` (map `z₀ = H/(H−1)`) | **narrowed hypothesis** |
+| the *value* `r = 0.008652` — needs the coloring `H(q₀)` map derived | **OPEN — to derive, never to fit** |
 
 **Anti-fit (STRICT).** `r` is a ~0.4–0.9% single number; the §2e entropy bound forbids scanning
 `[2]_v`/`(v−v⁻¹)` powers (or octahedral counts, or coloring parameters) for a match. Deriving `r`
