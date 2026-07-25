@@ -168,3 +168,38 @@ as `t→0⁺`, applied once a lower bound `δ ≥ c(q−1)` is available from th
 Bean `qou-jplv` carries this. V4 (`reg_n → Li₂(x) − π²/3`) then glues W-P1 + W-P2
 (#4191) + the `clog_one_sub_pole_phase_split` per-factor split (#4173), and is
 gated on this same scalar limit.
+
+### Independent parallel confirmation + two sharpenings (2026-07-25, session `claude/keystone-vectors-2026-07-25`)
+
+A fresh-context independent attack (branch `claude/keystone-vectors-2026-07-25`,
+probe [`dilog_partb_wp1_residual_uniformity_probe.py`](../../computations/probes/dilog_partb_wp1_residual_uniformity_probe.py),
+mpmath 50 dps) reproduces this exact wall — **two independent routes converge, which
+strengthens the negative** — and sharpens it in two ways not previously recorded here:
+
+1. **Explicit constructive counter-sequence (scope-(b) for the *unconditional pointwise*
+   claim).** The residual is not merely "non-uniform / unproven": it *provably fails*
+   along a named `q_m→1⁺` sequence. Pin `log(1/x)/log(q_m) = m + θ_m` with `θ_m = e^{−m}`;
+   then `k*_m = m`, and `R(x; q_m, k*_m) = (q_m−1)·log(1−x q_m^{k*_m}) → −log(1/x) ≠ 0`
+   (mechanism: `δ ≈ θ_m(q−1)`, `log δ ≈ −m`, `R ≈ (L/m)(−m) = −L`, `L = log(1/x)`;
+   verified 50 dps). Taking `θ_m = e^{−cm}` steers the limit to a family of nonzero
+   values. So the **unconditional** pointwise limit is a *proved* false statement (a
+   witness sequence exists) — a scope-(b) obstruction, not a scope-(a) proof gap. The
+   *conditional* (Faddeev-scaled / Diophantine no-resonance) limit stays scope-(a) open,
+   exactly as recorded above.
+
+2. **The conjecture's stated `n(1−q)→∞` hypothesis is orthogonal to the obstruction.**
+   At the branch-point split index `n = k*(q)`, `k*·(q−1) → log(1/x) = const` (probe:
+   1.204 across q = 1.1 … 1.0001), so `n(1−q) → ∞` is **never satisfied at k***; that
+   hypothesis constrains the *global* cutoff `N` (the full W-P1+W-P2 window), not the
+   interior split index whose obstruction is `frac(log_q 1/x)`. Consequence: the
+   conjecture *as literally written* contains no hypothesis that pins the residual —
+   closure requires **either** an added Diophantine/restricted-approach hypothesis on
+   `q→1⁺`, **or** the **iterated-limit** reading (bulk `x qⁿ ≤ ρ < 1` first, giving
+   `(q−1)Σ log(1−xqᵏ) → Li₂(x)−Li₂(ρ)` cleanly, then `ρ→1⁻` via the sorry-free Abel
+   brick `tendsto_LiTwo_nhdsWithin_lt_one`), which needs **no** Diophantine input. The
+   θ-averaged residual `→ 0` (Cesàro; bad set measure-zero), consistent with the
+   equidistribution route flagged for V4.
+
+No fabrication; the wall stands. This note only sharpens the *scope* (unconditional =
+proved-false; conditional/iterated = the honest open target) and flags the
+statement-level gap for whoever states V4's hypotheses. Probe not wired to production.
