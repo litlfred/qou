@@ -59,3 +59,18 @@ no-resonance condition on x -- genuine analytic number theory, not a brick.
 Trivial bulk sub-case: xq^n <= rho < 1 gives delta >= 1-rho and the limit for
 free. Full proof needs sequence-indexed joint (n_j, q_j) scaling + t*log t -> 0.
 Coordination: docs/coordination/dilog-part-b-cusp-attack.md.
+
+## 2026-07-25 — honest bricks landed (PR #4277), general limit STILL OPEN
+
+New module DilogPartBBranchPointLimit.lean (sorry-free, lean-direct exit 0),
+registered in QOU.lean (de-orphans the whole Part B chain into CI):
+
+- wp1_tendsto_of_boundary — full W-P1 -> pi^2/6 - Li2(x) CONDITIONAL on the named
+  boundary hypothesis (q-1)*log(1-xq^n) -> 0 (§3b-cond; open input threaded as an
+  explicit hypothesis, NOT fabricated). Error squeezed via wp1_riemann_bound; the
+  always-vanishing bulk term (q-1)q^n log(1-x) -> 0 discharged unconditionally.
+- boundary_tendsto_zero_of_bounded — the trivial bulk sub-case (xq^n <= rho < 1)
+  discharges the hypothesis for free (non-vacuity witness).
+
+DID NOT close the general non-uniform limit: still Faddeev/Diophantine, still open.
+This is the honest reduction of W-P1 to exactly one named open scalar limit.
