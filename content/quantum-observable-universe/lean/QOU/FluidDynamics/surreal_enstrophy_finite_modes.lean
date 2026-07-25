@@ -1127,4 +1127,32 @@ theorem riccati_lower_growth {δ c' : K} (hδ : 0 ≤ δ) (hc : 0 ≤ c')
       rw [hpush]
       linarith
 
+/-! ### PC5 — the overlap race, Lean brick
+
+Phase 1 of the pair-collision model integrates exactly (`d² = d₀²(1−u)`,
+`V₁ = V₁₀(1−u)^{−1/2}`), so overlap engages where `(1−u)^{3/2} = V₁₀/d₀²`;
+cubing both sides removes the fractional power: `(1−u)³ = x²` with
+`x = V₁₀/d₀² > 0`. The brick proves the **race inequality**: any such crossing
+has `u < 1` — the hyperbolic-overlap saturation engages *strictly before* the
+inviscid singular time, for every positive core size (witness
+`qns-overlap-race-probe`, 7-decade ODE verification). In-model, the pair
+channel is regular (branch B); the measure-zero `x = 0` point-vortex limit is
+excluded by the hypothesis. Scope (a): model-level. -/
+
+/-- **The race inequality.** If the overlap-crossing equation `(1−u)³ = x²`
+    holds with `x ≠ 0` (positive core size), then `u < 1`: overlap engages
+    strictly before the singular time. -/
+-- Ref: [manuscript] fluid-dynamics/hyperbolic-overlap-saturation, townsend-biot-savart-strain
+theorem overlap_race_strict {u x : K} (hx : x ≠ 0)
+    (hcross : (1 - u) ^ 3 = x ^ 2) : u < 1 := by
+  have hx2 : 0 < x ^ 2 := by positivity
+  have hcube : 0 < (1 - u) ^ 3 := hcross ▸ hx2
+  by_contra h
+  push_neg at h
+  have h1u : 1 - u ≤ 0 := by linarith
+  have hsq : 0 ≤ (1 - u) ^ 2 := sq_nonneg _
+  have hid : (1 - u) ^ 3 = (1 - u) * (1 - u) ^ 2 := by ring
+  rw [hid] at hcube
+  nlinarith [hsq, h1u]
+
 end QOU.FluidDynamics
