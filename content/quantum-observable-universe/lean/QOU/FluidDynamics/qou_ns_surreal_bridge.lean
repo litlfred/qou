@@ -85,7 +85,11 @@ the blow-up at **ω-grade 1** (`enstrophy_grade_one_of_dissipation_closure`:
 direction (the side of `thm:q-ns-wellposedness`), the gap is now **grade 1 vs
 grade 0**: whether the flow saturates the closure's `ε⁻¹` cap (blow-up,
 `α = 1`) or stays at grade 0 (regular) — the critical-exponent question of
-`p2-critical-exponent`. Only that graded question is still carried by this
+`p2-critical-exponent`. By the grade trichotomy (`grade_trichotomy`,
+`saturated_implies_infinite`) this reduces to a **single surreal criterion**:
+*is `ε · Ω(1+ε)` infinitesimal?* — infinitesimal with finite `Ω` ⟺ regular;
+non-infinitesimal ⟺ saturated blow-up; infinitesimal with infinite `Ω` ⟺
+intermediate `0 < α < 1`. Only that criterion is still carried by this
 hypothesis; it remains open and is not asserted.
 
 ## Base ring (§7c)
