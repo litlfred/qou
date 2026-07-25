@@ -5,8 +5,8 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-07-24T16:21:37Z
-updated_at: 2026-07-24T20:54:43Z
+updated_at: 2026-07-25T02:55:24Z
 parent: qou-x631
 ---
 
-Route 1 (Stein/Kerov-CLT). Phase 5 CONSTRUCTION DONE (2026-07-24): built the Fulman-analogue Plancherel-reversible down-up chain on partitions of n; verified reversible. ω_j=Σc^j−E_P[Σc^j] is a chain eigenfunction for j=1 (Σc, transposition, τ₁=2/n, Fulman) and j=2 (Σc²=ω₃, 3-cycle, τ₃=3/n — OUR object; direct k=2 analogue). Exact identity E_P[Δf·ω₃]=−(3/n)·cov(n)/n! (Δf=f(λ*)−f(λ)), verified n≤9 ⇒ LOCAL reformulation: cov(n)≤0 ⇔ E_P[(f(λ*)−f(λ))·ω₃(λ)]≥0 (one-step dimension increment ⊥ content-spread). Does NOT close the sign yet. Next: (1) explicit combinatorial eval of E_P[Δf·ω₃] via hook-ratio increment; or (2) joint Stein CLT of (f,ω₃) with effective Berry-Esseen error < the negative main term for n>n₀, then exact n≤40 closes. Audit: 2026-07-24-covariance-kernel-route1-exchangeable-pair.md
+Route 1 (Stein/Kerov-CLT). Phases 5-7 done. Phase 5: exchangeable pair, ω₃ eigenfunction τ₃=3/n, local Dirichlet-form reformulation. Phase 5b: per-edge certificate FAILS. Phase 6 (#4170): marginal 3-cycle Berry-Esseen (rate ~n^-0.3, Var_P(ω₃)=n(n-1)(n-2)/3). Phase 7 (THIS): transfer-error BOUND. g(θ)=E_{2+θ}[ω₃]; kernel=g(1), main=g'(0)=Cov_Planch(ln f,ω₃)<0; Taylor remainder R=g(1)-g'(0). BOUND HOLDS 40dps n≤14: r=g(1)/g'(0)∈(0.54,0.87), |R|/|main|=|r-1|∈(0.13,0.46)<1 ⇒ non-Gaussian correction ≤46%, cannot flip sign. NQD route ELIMINATED (Hoeffding kernel >0 pointwise, bad count grows). Kernel≤0 ⇐ [Cov(lnf,ω₃)≤0] AND [|remainder|<|linear|], both verified numerically. OPEN CORE: rigorous Plancherel-cumulant control of g^(m)(0) via Kerov CLT. Audit: 2026-07-24-covariance-kernel-effective-stein-step2-transfer-bound.md
