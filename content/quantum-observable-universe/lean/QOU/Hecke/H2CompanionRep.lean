@@ -84,4 +84,19 @@ theorem h2GramFromRep_det_ne_zero_iff (q : K) :
     (h2GramFromRep q).det ≠ 0 ↔ qFactorial q 2 ≠ 0 := by
   rw [h2GramFromRep_det, h2_gram_det_ne_zero_iff]
 
+/-- **The regular-rep Gram determinant is `[2]_q · [2]_q!` (sorry-free).**
+    Exhibits the "up to a unit" in `det(Gram) = [n]_q!` *concretely* at
+    `n = 2`.  The regular trace form differs from the symmetrizing form by
+    the unit `[2]_q = 1 + q` (nonzero at generic `q`), so
+
+      `det = [2]_q² = (1 + q)·(1 + q) = [2]_q · [2]_q!`.
+
+    This is the `n = 2` witness of the shape consumed by
+    `QOU.MathlibExt.isSemisimpleRing_of_gram_det_eq_qFactorial`
+    (unit `c = 1 + q`), confirming the general `det(Gram) = c·[n]_q!`
+    interface fires at the base rank. -/
+theorem h2GramFromRep_det_eq_unit_mul_qFactorial (q : K) :
+    (h2GramFromRep q).det = (1 + q) * qFactorial q 2 := by
+  rw [h2GramFromRep_det, qFactorial_two, qInt_two]; ring
+
 end QOU.Hecke
