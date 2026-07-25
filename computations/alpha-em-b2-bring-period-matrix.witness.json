@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-25T11:26:35.774227+00:00",
-  "commitSha": "346f4f7e681240e3a62223f9a1d7a574695581c7",
+  "computedAt": "2026-07-25T11:37:16.846701+00:00",
+  "commitSha": "6447d51e2011ce8dab39fc848b10642b594e6027",
   "assertions": [
     {
       "name": "C_isogeny_eigenvalue_gate",
@@ -30,11 +30,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 42,
+  "durationMs": 27,
   "computation": "alpha-em-b2-bring-period-matrix",
   "scriptFile": "alpha_em_b2_bring_period_matrix_probe.py",
-  "scriptHash": "b528fcddfcb0",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "618801e9f029",
+  "scriptCommitSha": "6447d51e2011ce8dab39fc848b10642b594e6027",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -94,7 +94,7 @@
       "convention_independent": true,
       "sign_class_size": 8
     },
-    "tau0_convention_flag": {
+    "tau0_convention_resolution": {
       "printed": "(-0.5 + 0.185576j)",
       "j_targets": [
         "-29^3*25/2^5",
@@ -103,13 +103,28 @@
       "j_at_printed": "-4039.61804011",
       "im_tau_from_j_solve": "0.158781266955198",
       "j5_at_printed": "-9.763907546",
-      "status": "printed decimal + j-rationals + standard j do not reconcile as read; B-N §4 convention residual, recorded not fitted"
+      "standard_5isogenous_pair": false,
+      "isogeny_best_k": -2,
+      "isogeny_im_tau0": "0.18667646246281",
+      "isogeny_j5_closes": "-12.5",
+      "methods_tried": [
+        "direct-eval",
+        "j-inversion",
+        "5-isogeny-coset-forward",
+        "5-isogeny-coset-reverse"
+      ],
+      "status": "standard-j reconciliation RULED OUT (4 methods); j(5tau0)=-25/2 sub-relation closes at tau0=(tau_E-2)/5 (Im 0.18668 ~ printed 0.18558, 0.6%); paired j(tau0)=-29^3*25/2^5 does not close under standard j -> B-N sec4 non-standard normalization, glyph-unrecoverable, recorded not fitted"
     },
     "c_candidates_parametric": {
       "printed_0.185576": {
         "im_tau": "0.185576",
         "c_det": "0.207280862271117",
         "c_tr": "0.173271333813703"
+      },
+      "isogeny_tau_E_over_5": {
+        "im_tau": "0.18667646246281",
+        "c_det": "0.206058936350843",
+        "c_tr": "0.172249894922975"
       },
       "j_solved_0.15878": {
         "im_tau": "0.158781266955198",
@@ -118,6 +133,6 @@
       }
     },
     "markov_norm": "0.128620004175246883935741331662",
-    "verdict": "B2 INPUT (a) — STRUCTURE CERTIFIED, τ₀ NUMERIC FLAGGED (honest, discipline-compliant): the Bring polarization matrix C = {4,±1} is corpus-extracted with eigenvalues (1,5,5,5) EXACTLY the recorded isogeny tuple — a convention-independent cross-gate (True) — and Z = τ·C satisfies the Riemann relations (True); BOTH source papers are in uploads/ (correcting the prior 'absent from corpus' note). HONEST OPEN: under the standard j the printed τ₀ decimal 0.185576, the printed j-rationals (−29³·25/2⁵, −25/2), and the j-solved Im τ = 0.15878 do NOT reconcile as read — a Braden–Northover §4 j-CONVENTION residual, RECORDED not fitted. The |c| candidate table is emitted PARAMETRIC in Im τ (both values), each still conditional on sub-piece (ii) (the τ-intertwiner basis-match) — so input (a) is advanced from 'absent' to 'structure-fixed + one scalar (Im τ) gated on a convention read', not falsely closed. Nothing wired; 1/(8π) phase-4; scope-(a). Sources: riera-rodriguez-1992, braden-northover-2012."
+    "verdict": "B2 INPUT (a) — STRUCTURE CERTIFIED, τ₀ NUMERIC FLAGGED (honest, discipline-compliant): the Bring polarization matrix C = {4,±1} is corpus-extracted with eigenvalues (1,5,5,5) EXACTLY the recorded isogeny tuple — a convention-independent cross-gate (True) — and Z = τ·C satisfies the Riemann relations (True); BOTH source papers are in uploads/ (correcting the prior 'absent from corpus' note). CONVENTION RESOLUTION ATTEMPTED via FOUR independent methods (direct eval, j-inversion, 5-isogeny coset from both directions): the standard-j reconciliation is RULED OUT — the glyph-read pair (−29³·25/2⁵, −25/2) is NOT a standard 5-isogenous pair (isogenous=False); the printed τ₀ lies below |τ|=1 and its j is −4039.6, not −19053.9. The ONE exact sub-relation that closes is j(5τ₀) = −25/2 with τ₀ = (τ_E-2)/5, Im τ₀ = 0.18667646 ≈ printed 0.185576 to 0.6% — but the paired j(τ₀) = −29³·25/2⁵ does NOT close, localizing the residual to a Braden–Northover §4 non-standard modular normalization the reflowed PDF glyphs do not reliably yield (RECORDED, not fitted). The |c| candidate table is PARAMETRIC in Im τ (printed / isogeny / j-solved), each conditional on sub-piece (ii) (the τ-intertwiner basis-match) — input (a) advances from 'absent' to 'structure-fixed, isogeny sub-relation closed, Im τ pinned to a documented ±0.6% convention band', not falsely closed. Nothing wired; 1/(8π) phase-4; scope-(a). Sources: riera-rodriguez-1992, braden-northover-2012."
   }
 }
