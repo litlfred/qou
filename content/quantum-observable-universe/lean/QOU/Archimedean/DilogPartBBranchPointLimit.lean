@@ -238,4 +238,142 @@ theorem wp1_tendsto_of_noResonance {x c : ℝ} (hx0 : 0 < x) (hc : 0 < c)
   exact wp1_tendsto_of_boundary hx0 hq1 hqlim hbelow habel
     (boundary_tendsto_zero_of_noResonance hx0 hc hq1 hqlim hbelow hlb)
 
+/-- **Non-vacuity at the branch point — an explicit realizing scaling.**  There is a
+    concrete branch-point scaling `q_j = ((1 - 1/m_j)/x)^{1/m_j}`, `n_j = m_j`
+    (`m_j = j + N₀`, `N₀ > 1/(1-x)`), along which the W-P1 sum converges to
+    `π²/6 − Li₂(x)`.  By construction `x q_j^{n_j} = 1 - 1/m_j → 1⁻` (branch point),
+    and the no-resonance bound holds with `c = x/\log(1/x)` because
+    `q_j - 1 \le (1/x)^{1/m_j} - 1 \le (\log(1/x)/x)\,(1/m_j)` (from `e^t-1 \le t e^t`).
+    This witnesses that `wp1_tendsto_of_noResonance` fires at the branch point, not
+    only in the bulk — the dilog limit is *attained* along an explicit sequence, with
+    the open Diophantine content being only the *general-x uniform* statement. -/
+theorem exists_noResonance_branchPoint_scaling {x : ℝ} (hx0 : 0 < x) (hx1 : x < 1) :
+    ∃ (q : ℕ → ℝ) (n : ℕ → ℕ),
+      (∀ j, 1 < q j) ∧ Tendsto q atTop (𝓝 1) ∧ (∀ j, x * (q j) ^ (n j) < 1) ∧
+      Tendsto (fun j => (1 - q j) * ∑ k ∈ Finset.range (n j), Real.log (1 - x * (q j) ^ k))
+        atTop (𝓝 (Real.pi ^ 2 / 6 - LiTwo x)) := by
+  have h1x : (0 : ℝ) < 1 - x := by linarith
+  have hxinv1 : (1 : ℝ) < 1 / x := by rw [lt_div_iff₀ hx0, one_mul]; exact hx1
+  set L : ℝ := Real.log (1 / x) with hL_def
+  have hL0 : 0 < L := Real.log_pos hxinv1
+  obtain ⟨N₀, hN₀⟩ := exists_nat_gt (1 / (1 - x))
+  have hN0R : (1 : ℝ) ≤ (N₀ : ℝ) := by
+    have h0 : (0 : ℝ) < 1 / (1 - x) := by positivity
+    have : (0 : ℝ) < (N₀ : ℝ) := lt_trans h0 hN₀
+    exact_mod_cast Nat.one_le_iff_ne_zero.mpr (by exact_mod_cast this.ne')
+  set m : ℕ → ℕ := fun j => j + N₀ with hm_def
+  have hmR : ∀ j, (1 / (1 - x)) < (m j : ℝ) := by
+    intro j
+    have : (N₀ : ℝ) ≤ (m j : ℝ) := by
+      simp only [hm_def, Nat.cast_add]; linarith [Nat.cast_nonneg (α := ℝ) j]
+    linarith
+  have hm_ge1 : ∀ j, (1 : ℝ) ≤ (m j : ℝ) := by
+    intro j; simp only [hm_def, Nat.cast_add]; linarith [Nat.cast_nonneg (α := ℝ) j]
+  have hm_pos : ∀ j, (0 : ℝ) < (m j : ℝ) := fun j => lt_of_lt_of_le one_pos (hm_ge1 j)
+  have h1m_lt : ∀ j, 1 / (m j : ℝ) < 1 - x := by
+    intro j
+    rw [div_lt_iff₀ (hm_pos j)]
+    have := hmR j; rw [div_lt_iff₀ h1x] at this; nlinarith [this]
+  set base : ℕ → ℝ := fun j => (1 - 1 / (m j : ℝ)) / x with hbase_def
+  set e : ℕ → ℝ := fun j => 1 / (m j : ℝ) with he_def
+  set q : ℕ → ℝ := fun j => (base j) ^ (e j) with hq_def
+  have he_pos : ∀ j, 0 < e j := fun j => by simp only [he_def]; exact one_div_pos.mpr (hm_pos j)
+  have he_le1 : ∀ j, e j ≤ 1 := by
+    intro j; simp only [he_def]; rw [div_le_one (hm_pos j)]; exact hm_ge1 j
+  have hbase_pos : ∀ j, 0 < base j := by
+    intro j; simp only [hbase_def]; exact div_pos (by linarith [h1m_lt j]) hx0
+  have hbase_gt1 : ∀ j, 1 < base j := by
+    intro j; simp only [hbase_def]; rw [lt_div_iff₀ hx0, one_mul]; linarith [h1m_lt j]
+  have hbase_le : ∀ j, base j ≤ 1 / x := by
+    intro j; simp only [hbase_def]
+    have hnn : (0 : ℝ) ≤ 1 / (m j : ℝ) := by positivity
+    gcongr
+    linarith [hnn]
+  -- q_j > 1
+  have hq1 : ∀ j, 1 < q j := by
+    intro j; simp only [hq_def]
+    exact (Real.one_lt_rpow_iff_of_pos (hbase_pos j)).mpr (Or.inl ⟨hbase_gt1 j, he_pos j⟩)
+  -- x·q_j^{n_j} = 1 - 1/m_j
+  have hqn_eq : ∀ j, x * (q j) ^ (m j) = 1 - 1 / (m j : ℝ) := by
+    intro j
+    have hpow : (q j) ^ (m j) = base j := by
+      simp only [hq_def]
+      rw [← Real.rpow_natCast ((base j) ^ (e j)) (m j), ← Real.rpow_mul (hbase_pos j).le]
+      rw [show e j * (m j : ℝ) = 1 from by
+        simp only [he_def]; exact one_div_mul_cancel (hm_pos j).ne', Real.rpow_one]
+    rw [hpow]; simp only [hbase_def]; field_simp
+  have hbelow : ∀ j, x * (q j) ^ (m j) < 1 := by
+    intro j; rw [hqn_eq j]; have : 0 < 1 / (m j : ℝ) := one_div_pos.mpr (hm_pos j)
+    linarith
+  -- 1/m_j → 0, m_j → ∞
+  have hm_atTop : Tendsto (fun j => (m j : ℝ)) atTop atTop := by
+    have h : Tendsto (fun j : ℕ => (j : ℝ) + (N₀ : ℝ)) atTop atTop :=
+      tendsto_atTop_add_const_right _ _ tendsto_natCast_atTop_atTop
+    refine h.congr (fun j => ?_)
+    simp only [hm_def, Nat.cast_add]
+  have he_lim : Tendsto e atTop (𝓝 0) := by
+    simp only [he_def, one_div]; exact hm_atTop.inv_tendsto_atTop
+  -- q_j → 1
+  have hbase_lim : Tendsto base atTop (𝓝 (1 / x)) := by
+    have h1 : Tendsto (fun j => 1 - 1 / (m j : ℝ)) atTop (𝓝 1) := by
+      have : Tendsto (fun j => 1 / (m j : ℝ)) atTop (𝓝 0) := by
+        simp only [one_div]; exact hm_atTop.inv_tendsto_atTop
+      simpa using tendsto_const_nhds.sub this
+    simpa [hbase_def] using h1.div_const x
+  have hqlim : Tendsto q atTop (𝓝 1) := by
+    have hcont := Real.continuousAt_rpow (1 / x, 0) (Or.inl (by positivity : (1 / x : ℝ) ≠ 0))
+    have hp : Tendsto (fun j => (base j, e j)) atTop (𝓝 (1 / x, 0)) :=
+      hbase_lim.prodMk_nhds he_lim
+    have := hcont.tendsto.comp hp
+    simpa [hq_def, Function.comp, Real.rpow_zero] using this
+  -- no-resonance lower bound with c = x/L
+  have hlb : ∀ j, (x / L) * (q j - 1) ≤ 1 - x * (q j) ^ (m j) := by
+    intro j
+    -- q_j - 1 ≤ (L/x)·(1/m_j)
+    have hstep1 : q j ≤ (1 / x) ^ (e j) := by
+      simp only [hq_def]; exact Real.rpow_le_rpow (hbase_pos j).le (hbase_le j) (he_pos j).le
+    have hxinv_pos : (0 : ℝ) < 1 / x := by positivity
+    have hrpow_exp : (1 / x) ^ (e j) = Real.exp (L * e j) := by
+      rw [Real.rpow_def_of_pos hxinv_pos, hL_def]
+    have ht0 : 0 ≤ L * e j := mul_nonneg hL0.le (he_pos j).le
+    have hE := Real.exp_pos (L * e j)
+    have hexp_bound : Real.exp (L * e j) - 1 ≤ (L * e j) * Real.exp (L * e j) := by
+      have h := Real.add_one_le_exp (-(L * e j))
+      rw [Real.exp_neg] at h
+      have h2 := mul_le_mul_of_nonneg_right h hE.le
+      rw [inv_mul_cancel₀ hE.ne'] at h2
+      nlinarith [h2]
+    have hrpow_self : (1 / x) ^ (e j) ≤ 1 / x := by
+      calc (1 / x) ^ (e j) ≤ (1 / x) ^ (1 : ℝ) :=
+            Real.rpow_le_rpow_of_exponent_le hxinv1.le (he_le1 j)
+        _ = 1 / x := Real.rpow_one _
+    have hqm1 : q j - 1 ≤ (L * e j) * (1 / x) := by
+      have hchain : Real.exp (L * e j) - 1 ≤ (L * e j) * (1 / x) := by
+        calc Real.exp (L * e j) - 1 ≤ (L * e j) * Real.exp (L * e j) := hexp_bound
+          _ = (L * e j) * (1 / x) ^ (e j) := by rw [hrpow_exp]
+          _ ≤ (L * e j) * (1 / x) := mul_le_mul_of_nonneg_left hrpow_self ht0
+      have : q j ≤ Real.exp (L * e j) := by rw [← hrpow_exp]; exact hstep1
+      linarith
+    -- multiply by c = x/L ≥ 0 and simplify (L·e·(1/x))·(x/L) = e = 1/m
+    have hcpos : 0 < x / L := div_pos hx0 hL0
+    rw [hqn_eq j, show (1 : ℝ) - (1 - 1 / (m j : ℝ)) = 1 / (m j : ℝ) from by ring]
+    have hgoal : (x / L) * (q j - 1) ≤ (x / L) * ((L * e j) * (1 / x)) :=
+      mul_le_mul_of_nonneg_left hqm1 hcpos.le
+    have hsimp : (x / L) * ((L * e j) * (1 / x)) = 1 / (m j : ℝ) := by
+      simp only [he_def]; field_simp
+    linarith [hgoal, hsimp.le, hsimp.ge]
+  -- assemble: habel + no-resonance boundary vanishing ⇒ W-P1 limit
+  have hxqn : Tendsto (fun j => x * (q j) ^ (m j)) atTop (𝓝 1) := by
+    have h1 : Tendsto (fun j => 1 - 1 / (m j : ℝ)) atTop (𝓝 1) := by
+      have : Tendsto (fun j => 1 / (m j : ℝ)) atTop (𝓝 0) := by
+        simp only [one_div]; exact hm_atTop.inv_tendsto_atTop
+      simpa using tendsto_const_nhds.sub this
+    exact (h1.congr (fun j => (hqn_eq j).symm))
+  have habel : Tendsto (fun j => x * (q j) ^ (m j)) atTop (𝓝[<] (1 : ℝ)) := by
+    refine tendsto_nhdsWithin_of_tendsto_nhds_of_eventually_within _ hxqn ?_
+    exact Filter.Eventually.of_forall (fun j => by simp only [Set.mem_Iio]; exact hbelow j)
+  have hbdry := boundary_tendsto_zero_of_noResonance hx0 (div_pos hx0 hL0) hq1 hqlim hbelow hlb
+  exact ⟨q, m, hq1, hqlim, hbelow,
+    wp1_tendsto_of_boundary hx0 hq1 hqlim hbelow habel hbdry⟩
+
 end QOU.Archimedean
