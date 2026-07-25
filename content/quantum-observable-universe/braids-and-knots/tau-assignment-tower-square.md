@@ -1,0 +1,29 @@
+Let $\iota_{34}$ denote the inclusion of the $H_3$ normal-form module
+into the $H_4$ normal-form module by extension with zero, the
+$24$-element basis being ordered with the $H_3$ basis as its prefix. At
+the monodromy point $q = i$ write $N_n = \sigma - i$ for the Jordan
+nilpotent of the generator action on the rank-$n$ module. Then the
+tower data commute at every level:
+
+1. **action**: $\iota_{34}$ intertwines the generator actions on the
+   two modules;
+2. **nilpotent**: $\iota_{34} \circ N_3 = N_4 \circ \iota_{34}$;
+3. **trace**: the rank-4 Markov trace restricts along $\iota_{34}$ to
+   the rank-3 Markov trace;
+4. **assignment**: the rank-4 $\tau$-assignment onto the genus-4
+   $H^{1,0}$ model restricts along $\iota_{34}$ to the rank-3
+   assignment, and likewise for the conjugate $H^{0,1}$ partner;
+5. **surjectivity**: the image of either assignment is the full
+   three-dimensional isotypic slot of $H^{1,0}$, with witnesses at
+   rank 4 obtained by pushing rank-3 witnesses forward along
+   $\iota_{34}$.
+
+Moreover the inclusion itself is not special to these two rungs: for
+any Coxeter system and any generator subset $J$, extension by zero
+along the parabolic coset decomposition intertwines both the generator
+actions and the $q = i$ nilpotents, with no hypothesis beyond subgroup
+membership. Kernel exactness of the assignment — the identification of
+the semisimple quotient with the isotypic slot — holds at the base rung
+$n = 3$; at higher rungs the assignment factors through a larger
+semisimple quotient without being injective on it, and a single
+assignment functor for all rungs is an open problem.
