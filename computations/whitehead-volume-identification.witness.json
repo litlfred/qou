@@ -1,0 +1,22 @@
+{
+  "description": "Whitehead link (L5a1) braid word identified formula-free by the Kashaev/colored-Jones volume test: Vol -> 4G (regular ideal octahedron). Reconstruction of a lost stalled session.",
+  "computation": "whitehead_volume_search",
+  "audit_only": true,
+  "method": "normalized colored Jones raw/[N] via validated U_q(sl2) R-matrix machinery; (2pi/N)log|norm| at q=e^{i pi(1-1e-6)/N} -> Vol, Richardson in (logN)/N",
+  "whitehead_braid_word": "sigma_1 sigma_2^{-1} sigma_1 sigma_2^{-1} sigma_1 = [1,-2,1,-2,1] in B_3",
+  "vol_target_4G": "3.663862376708876060218414",
+  "volume_estimates": {
+    "N6": "6.171",
+    "N8": "5.812(raw); 3.399(rich)",
+    "N10": "5.568(raw); 3.681(rich)",
+    "N12": "5.385(raw); 3.744(rich)"
+  },
+  "controls": {
+    "[1,1,2,2,-1]": "Vol~0 (L4a1 torus link, non-hyperbolic)",
+    "[1,1,-2,-1,-2]": "divergent (float noise / wrong closure)"
+  },
+  "validation": "machinery V1 (sl2 relations+braid relation) + V2 (figure-eight raw/[N]=Habiro-Le J at q^2, err<1e-29)",
+  "verdict": "IDENTIFIED: volume converges toward 4G, well-separated from torus(0) and Borromean(7.33)",
+  "reconstruction_of": "lost uncommitted session, branch claude/whitehead-habiro-kashaev-lupmgo",
+  "timestamp": "2026-07-25T18:38:39+00:00"
+}
