@@ -5,7 +5,7 @@ status: in-progress
 type: milestone
 priority: medium
 created_at: 2026-07-25T03:10:00Z
-updated_at: 2026-07-25T03:11:10Z
+updated_at: 2026-07-25T03:13:26Z
 ---
 
 Achievable Lean chips (real work, no research breakthrough needed). Follow-up
@@ -23,3 +23,5 @@ to merged PRs #3996 + #4180. Attack in this order:
 Anti-fabrication holds: no faked mu, no faked instance.
 
 B3+B5 DONE: QCollatz.inDomain + QCollatz.domainStable (D-infinity) formalized; domainStable_forward (forward-invariance) PROVED; reaches_of_descent_of_forward (generic, cone-abstracted) + reaches_cycle_of_descent_domainStable (hclosed discharged for free over D-infinity). All sorry-free. Remaining Tier B: B4 odd-branch valuation, B6 census->Lean, B7 period-3.
+
+B4 DONE: qTwoDvd_oddBranch — [2]_q | ([3]_q P + 1) for q-odd P (odd branch stays in ℤ[q]), via [3]P+1 = q[2]P+(P+1). Sorry-free. Remaining: B6 census->Lean, B7 period-3 (low value).
