@@ -1,0 +1,1374 @@
+{
+  "engine": "python-exact",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-07-25T02:51:42.858965+00:00",
+  "commitSha": "fb972301a4e6fa17a7a47567d5f8fc087c17f7a0",
+  "assertions": [
+    {
+      "name": "m004_conventions_repinned",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "sigma=(1,2,0), eps=-1 re-pinned on m004 vs GHHR Ex 10.23/A.10, matching the W9 frozen values"
+    },
+    {
+      "name": "census_matches_w9_per_index",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "quad_vector + boundary_slopes + chi equal to the committed W9 witness for all 52 indices"
+    },
+    {
+      "name": "census_summaries_match_w9",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "count / chi distribution / quad distribution / cusps-touched pattern equal to W9 witness"
+    },
+    {
+      "name": "support_table_4_4_4_8_8_8_16",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "1-cusp: 4 per cusp, 2-cusp: 8 per pair, 3-cusp: 16"
+    },
+    {
+      "name": "isometry_group_order",
+      "computed": 48.0,
+      "expected": 48.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "SnapPy is_isometric_to(return_isometries=True)"
+    },
+    {
+      "name": "full_s3_realized_on_cusps",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "all 6 cusp permutations occur among the 48 isometries"
+    },
+    {
+      "name": "sign_kernel_order",
+      "computed": 8.0,
+      "expected": 8.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "isometries with trivial cusp permutation"
+    },
+    {
+      "name": "combinatorial_automorphisms_z2_only",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "16 combinatorial automorphisms realizing only {id, (0 2)} — matches W9"
+    },
+    {
+      "name": "peripheral_action_convention_exists",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "at least one cusp-map convention preserves the census slope multiset under all 48 isometries"
+    },
+    {
+      "name": "class_action_well_defined",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "induced map preserves (slope, chi) class set and multiplicities for all 48 isometries"
+    },
+    {
+      "name": "s3_action_on_kernel_orbits_well_defined",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "all isometries with the same cusp permutation induce the same map on K-orbits (K normal)"
+    },
+    {
+      "name": "orbit_stabilizer_identity",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "|S3-orbit| * |stabilizer| = 6 for every orbit; stabilizer orders constant along each orbit"
+    },
+    {
+      "name": "h_dof_count_cusp_independent",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "H-orbit count identical for all 3 choices of distinguished cusp (conjugate subgroups)"
+    },
+    {
+      "name": "pairwise_sum_extremality",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "no census quad-vector is the sum of two census quad-vectors (vertex/extreme-ray property, pairwise check)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 49,
+  "computation": "deltalambda-normal-surface-classes-probe",
+  "scriptFile": "deltalambda_normal_surface_classes_probe.py",
+  "scriptHash": "8d7b8c6e8f13",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Exact S3 orbit / stabilizer structure of the 52 vertex spun-normal surfaces of the Borromean rings complement B3 (SnapPy L6a4, 8 ideal tetrahedra, 3 cusps), for the idea-B3 pn-capability question: which surface classes decorate the three cusps asymmetrically and can carry a (Z,N)-distinguishing collective binding term. The census is re-derived via the same SnapPy machinery as the W9 angle-LP probe (m004 convention re-pin sigma=(1,2,0), eps=-1; GHHR 1604.02688 Prop A.3 pairing) and gated on EXACT per-index agreement with the committed W9 witness. The 48 isometries (full S3 on cusps; order-8 sign kernel K) act on the Z^6 peripheral grading via their cusp maps (convention pinned empirically by census-multiset preservation); the induced action on the 46 (slope, chi) classes gives K-orbits (unsigned peripheral classes), the S3 action on K-orbits (well-definedness machine-verified), S3 orbits, and exact stabilizers. Emits the cusp-support table, the refined orbit/stabilizer table, the asymmetric-class counts, the H-orbit DOF count for a labeling-stabilizer-equivariant weighting, and non-additivity data (tetrahedra-touched, pairwise-sum extremality). Structure-hunt tier; audit-only; scope-(a); NO FIT; no q0; no comparison to any binding observable; nothing wired to production.",
+  "contentBlock": "def:borromean-baryon",
+  "auditOnly": "docs/audits/2026-07-24-deltalambda-normal-surface-collective-candidate.md",
+  "data": {
+    "manifold": "L6a4 (Borromean rings complement)",
+    "census_count": 52,
+    "chi_distribution": {
+      "-1": 36,
+      "-2": 16
+    },
+    "cusps_touched_pattern": {
+      "0": 4,
+      "0+1": 8,
+      "0+1+2": 16,
+      "0+2": 8,
+      "1": 4,
+      "1+2": 8,
+      "2": 4
+    },
+    "support_chi_crosstab": {
+      "1-cusp,chi=-1": 12,
+      "2-cusp,chi=-1": 24,
+      "3-cusp,chi=-2": 16
+    },
+    "n_distinct_slope_chi_classes": 46,
+    "doubled_classes": [
+      {
+        "slope": [
+          0,
+          -1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "chi": -1,
+        "multiplicity": 2
+      },
+      {
+        "slope": [
+          0,
+          0,
+          0,
+          -1,
+          0,
+          0
+        ],
+        "chi": -1,
+        "multiplicity": 2
+      },
+      {
+        "slope": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          -1
+        ],
+        "chi": -1,
+        "multiplicity": 2
+      },
+      {
+        "slope": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        "chi": -1,
+        "multiplicity": 2
+      },
+      {
+        "slope": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        "chi": -1,
+        "multiplicity": 2
+      },
+      {
+        "slope": [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "chi": -1,
+        "multiplicity": 2
+      }
+    ],
+    "symmetry": {
+      "isometry_group_order": 48,
+      "cusp_permutations_realized": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          0,
+          2
+        ],
+        [
+          1,
+          2,
+          0
+        ],
+        [
+          2,
+          0,
+          1
+        ],
+        [
+          2,
+          1,
+          0
+        ]
+      ],
+      "sign_kernel_order": 8,
+      "combinatorial_automorphisms": 16,
+      "combinatorial_cusp_permutations": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          2,
+          1,
+          0
+        ]
+      ],
+      "note": "only a Z2 of the S3 is realized combinatorially on THIS triangulation; the S3 orbit structure below is computed on peripheral (slope, chi) classes via the isometry cusp maps, not on quad vectors"
+    },
+    "peripheral_action_conventions_passing": [
+      "matrix",
+      "transpose",
+      "inverse",
+      "inverse-transpose"
+    ],
+    "peripheral_action_convention_used": "matrix",
+    "n_kernel_orbits_unsigned_classes": 11,
+    "n_s3_orbits": 3,
+    "orbit_table": [
+      {
+        "orbit": 0,
+        "rep_slope": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          -1
+        ],
+        "chi": -1,
+        "support_size": 1,
+        "rep_support": [
+          2
+        ],
+        "korbit_size_classes": 2,
+        "s3_orbit_size": 3,
+        "n_surfaces": 12,
+        "stab_order": 2,
+        "stabilizer": [
+          [
+            0,
+            1,
+            2
+          ],
+          [
+            1,
+            0,
+            2
+          ]
+        ],
+        "kind": "1-cusp-distinguishing"
+      },
+      {
+        "orbit": 1,
+        "rep_slope": [
+          0,
+          0,
+          0,
+          -1,
+          -2,
+          0
+        ],
+        "chi": -1,
+        "support_size": 2,
+        "rep_support": [
+          1,
+          2
+        ],
+        "korbit_size_classes": 4,
+        "s3_orbit_size": 6,
+        "n_surfaces": 24,
+        "stab_order": 1,
+        "stabilizer": [
+          [
+            0,
+            1,
+            2
+          ]
+        ],
+        "kind": "fully-asymmetric"
+      },
+      {
+        "orbit": 2,
+        "rep_slope": [
+          -2,
+          -1,
+          -2,
+          -1,
+          -2,
+          -1
+        ],
+        "chi": -2,
+        "support_size": 3,
+        "rep_support": [
+          0,
+          1,
+          2
+        ],
+        "korbit_size_classes": 8,
+        "s3_orbit_size": 2,
+        "n_surfaces": 16,
+        "stab_order": 3,
+        "stabilizer": [
+          [
+            0,
+            1,
+            2
+          ],
+          [
+            1,
+            2,
+            0
+          ],
+          [
+            2,
+            0,
+            1
+          ]
+        ],
+        "kind": "fully-asymmetric"
+      }
+    ],
+    "orbits_by_stabilizer_order": {
+      "6": 0,
+      "2": 1,
+      "1": 1
+    },
+    "surfaces_in_s3_symmetric_orbits": 0,
+    "surfaces_in_asymmetric_orbits": 52,
+    "h_orbit_dof_counts_per_distinguished_cusp": {
+      "0": 6,
+      "1": 6,
+      "2": 6
+    },
+    "h_equivariant_weighting_dof": 6,
+    "tets_touched_distribution": {
+      "2": 8,
+      "3": 16,
+      "4": 12,
+      "6": 16
+    },
+    "min_tets_touched": 2,
+    "pairwise_sum_extremality_holds": true,
+    "surface_table": [
+      {
+        "index": 0,
+        "boundary_slopes": [
+          0,
+          1,
+          2,
+          0,
+          0,
+          0
+        ],
+        "chi": "-1",
+        "support": [
+          0,
+          1
+        ],
+        "n_tets_touched": 4,
+        "total_quads": 4
+      },
+      {
+        "index": 1,
+        "boundary_slopes": [
+          0,
+          1,
+          0,
+          0,
+          -2,
+          0
+        ],
+        "chi": "-1",
+        "support": [
+          0,
+          2
+        ],
+        "n_tets_touched": 3,
+        "total_quads": 3
+      },
+      {
+        "index": 2,
+        "boundary_slopes": [
+          0,
+          0,
+          0,
+          1,
+          -2,
+          0
+        ],
+        "chi": "-1",
+        "support": [
+          1,
+          2
+        ],
+        "n_tets_touched": 3,
+        "total_quads": 3
+      },
+      {
+        "index": 3,
+        "boundary_slopes": [
+          0,
+          0,
+          2,
+          0,
+          0,
+          -1
+        ],
+        "chi": "-1",
+        "support": [
+          1,
+          2
+        ],
+        "n_tets_touched": 4,
+        "total_quads": 4
+      },
+      {
+        "index": 4,
+        "boundary_slopes": [
+          0,
+          -1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "chi": "-1",
+        "support": [
+          0
+        ],
+        "n_tets_touched": 4,
+        "total_quads": 4
+      },
+      {
+        "index": 5,
+        "boundary_slopes": [
+          0,
+          0,
+          0,
+          -1,
+          -2,
+          0
+        ],
+        "chi": "-1",
+        "support": [
+          1,
+          2
+        ],
+        "n_tets_touched": 3,
+        "total_quads": 3
+      },
+      {
+        "index": 6,
+        "boundary_slopes": [
+          0,
+          -1,
+          0,
+          0,
+          -2,
+          0
+        ],
+        "chi": "-1",
+        "support": [
+          0,
+          2
+        ],
+        "n_tets_touched": 3,
+        "total_quads": 3
+      },
+      {
+        "index": 7,
+        "boundary_slopes": [
+          0,
+          0,
+          0,
+          1,
+          2,
+          0
+        ],
+        "chi": "-1",
+        "support": [
+          1,
+          2
+        ],
+        "n_tets_touched": 3,
+        "total_quads": 3
+      },
+      {
+        "index": 8,
+        "boundary_slopes": [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "chi": "-1",
+        "support": [
+          0
+        ],
+        "n_tets_touched": 2,
+        "total_quads": 2
+      },
+      {
+        "index": 9,
+        "boundary_slopes": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        "chi": "-1",
+        "support": [
+          1
+        ],
+        "n_tets_touched": 2,
+        "total_quads": 2
+      },
+      {
+        "index": 10,
+        "boundary_slopes": [
+          0,
+          -1,
+          0,
+          0,
+          2,
+          0
+        ],
+        "chi": "-1",
+        "support": [
+          0,
+          2
+        ],
+        "n_tets_touched": 3,
+        "total_quads": 3
+      },
+      {
+        "index": 11,
+        "boundary_slopes": [
+          0,
+          0,
+          0,
+          -1,
+          0,
+          0
+        ],
+        "chi": "-1",
+        "support": [
+          1
+        ],
+        "n_tets_touched": 2,
+        "total_quads": 2
+      },
+      {
+        "index": 12,
+        "boundary_slopes": [
+          0,
+          -1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "chi": "-1",
+        "support": [
+          0
+        ],
+        "n_tets_touched": 2,
+        "total_quads": 2
+      },
+      {
+        "index": 13,
+        "boundary_slopes": [
+          2,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        "chi": "-1",
+        "support": [
+          0,
+          1
+        ],
+        "n_tets_touched": 3,
+        "total_quads": 3
+      },
+      {
+        "index": 14,
+        "boundary_slopes": [
+          2,
+          0,
+          0,
+          0,
+          0,
+          -1
+        ],
+        "chi": "-1",
+        "support": [
+          0,
+          2
+        ],
+        "n_tets_touched": 3,
+        "total_quads": 3
+      },
+      {
+        "index": 15,
+        "boundary_slopes": [
+          2,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        "chi": "-1",
+        "support": [
+          0,
+          2
+        ],
+        "n_tets_touched": 3,
+        "total_quads": 3
+      },
+      {
+        "index": 16,
+        "boundary_slopes": [
+          2,
+          0,
+          0,
+          -1,
+          0,
+          0
+        ],
+        "chi": "-1",
+        "support": [
+          0,
+          1
+        ],
+        "n_tets_touched": 3,
+        "total_quads": 3
+      },
+      {
+        "index": 17,
+        "boundary_slopes": [
+          -2,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        "chi": "-1",
+        "support": [
+          0,
+          2
+        ],
+        "n_tets_touched": 3,
+        "total_quads": 3
+      },
+      {
+        "index": 18,
+        "boundary_slopes": [
+          -2,
+          0,
+          0,
+          -1,
+          0,
+          0
+        ],
+        "chi": "-1",
+        "support": [
+          0,
+          1
+        ],
+        "n_tets_touched": 3,
+        "total_quads": 3
+      },
+      {
+        "index": 19,
+        "boundary_slopes": [
+          -2,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        "chi": "-1",
+        "support": [
+          0,
+          1
+        ],
+        "n_tets_touched": 3,
+        "total_quads": 3
+      },
+      {
+        "index": 20,
+        "boundary_slopes": [
+          -2,
+          0,
+          0,
+          0,
+          0,
+          -1
+        ],
+        "chi": "-1",
+        "support": [
+          0,
+          2
+        ],
+        "n_tets_touched": 3,
+        "total_quads": 3
+      },
+      {
+        "index": 21,
+        "boundary_slopes": [
+          0,
+          0,
+          0,
+          -1,
+          0,
+          0
+        ],
+        "chi": "-1",
+        "support": [
+          1
+        ],
+        "n_tets_touched": 2,
+        "total_quads": 2
+      },
+      {
+        "index": 22,
+        "boundary_slopes": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        "chi": "-1",
+        "support": [
+          2
+        ],
+        "n_tets_touched": 2,
+        "total_quads": 2
+      },
+      {
+        "index": 23,
+        "boundary_slopes": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          -1
+        ],
+        "chi": "-1",
+        "support": [
+          2
+        ],
+        "n_tets_touched": 2,
+        "total_quads": 2
+      },
+      {
+        "index": 24,
+        "boundary_slopes": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        "chi": "-1",
+        "support": [
+          1
+        ],
+        "n_tets_touched": 2,
+        "total_quads": 2
+      },
+      {
+        "index": 25,
+        "boundary_slopes": [
+          0,
+          -1,
+          -2,
+          0,
+          0,
+          0
+        ],
+        "chi": "-1",
+        "support": [
+          0,
+          1
+        ],
+        "n_tets_touched": 4,
+        "total_quads": 4
+      },
+      {
+        "index": 26,
+        "boundary_slopes": [
+          0,
+          0,
+          -2,
+          0,
+          0,
+          -1
+        ],
+        "chi": "-1",
+        "support": [
+          1,
+          2
+        ],
+        "n_tets_touched": 4,
+        "total_quads": 4
+      },
+      {
+        "index": 27,
+        "boundary_slopes": [
+          0,
+          -1,
+          2,
+          0,
+          0,
+          0
+        ],
+        "chi": "-1",
+        "support": [
+          0,
+          1
+        ],
+        "n_tets_touched": 4,
+        "total_quads": 4
+      },
+      {
+        "index": 28,
+        "boundary_slopes": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          -1
+        ],
+        "chi": "-1",
+        "support": [
+          2
+        ],
+        "n_tets_touched": 4,
+        "total_quads": 4
+      },
+      {
+        "index": 29,
+        "boundary_slopes": [
+          0,
+          0,
+          2,
+          0,
+          0,
+          1
+        ],
+        "chi": "-1",
+        "support": [
+          1,
+          2
+        ],
+        "n_tets_touched": 4,
+        "total_quads": 4
+      },
+      {
+        "index": 30,
+        "boundary_slopes": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        "chi": "-1",
+        "support": [
+          2
+        ],
+        "n_tets_touched": 4,
+        "total_quads": 4
+      },
+      {
+        "index": 31,
+        "boundary_slopes": [
+          2,
+          1,
+          2,
+          1,
+          -2,
+          -1
+        ],
+        "chi": "-2",
+        "support": [
+          0,
+          1,
+          2
+        ],
+        "n_tets_touched": 6,
+        "total_quads": 7
+      },
+      {
+        "index": 32,
+        "boundary_slopes": [
+          2,
+          1,
+          2,
+          1,
+          2,
+          1
+        ],
+        "chi": "-2",
+        "support": [
+          0,
+          1,
+          2
+        ],
+        "n_tets_touched": 6,
+        "total_quads": 7
+      },
+      {
+        "index": 33,
+        "boundary_slopes": [
+          2,
+          -1,
+          2,
+          -1,
+          2,
+          -1
+        ],
+        "chi": "-2",
+        "support": [
+          0,
+          1,
+          2
+        ],
+        "n_tets_touched": 6,
+        "total_quads": 7
+      },
+      {
+        "index": 34,
+        "boundary_slopes": [
+          0,
+          1,
+          -2,
+          0,
+          0,
+          0
+        ],
+        "chi": "-1",
+        "support": [
+          0,
+          1
+        ],
+        "n_tets_touched": 4,
+        "total_quads": 4
+      },
+      {
+        "index": 35,
+        "boundary_slopes": [
+          0,
+          0,
+          -2,
+          0,
+          0,
+          1
+        ],
+        "chi": "-1",
+        "support": [
+          1,
+          2
+        ],
+        "n_tets_touched": 4,
+        "total_quads": 4
+      },
+      {
+        "index": 36,
+        "boundary_slopes": [
+          0,
+          0,
+          0,
+          -1,
+          2,
+          0
+        ],
+        "chi": "-1",
+        "support": [
+          1,
+          2
+        ],
+        "n_tets_touched": 3,
+        "total_quads": 3
+      },
+      {
+        "index": 37,
+        "boundary_slopes": [
+          -2,
+          -1,
+          -2,
+          -1,
+          2,
+          1
+        ],
+        "chi": "-2",
+        "support": [
+          0,
+          1,
+          2
+        ],
+        "n_tets_touched": 6,
+        "total_quads": 7
+      },
+      {
+        "index": 38,
+        "boundary_slopes": [
+          0,
+          1,
+          0,
+          0,
+          2,
+          0
+        ],
+        "chi": "-1",
+        "support": [
+          0,
+          2
+        ],
+        "n_tets_touched": 3,
+        "total_quads": 3
+      },
+      {
+        "index": 39,
+        "boundary_slopes": [
+          -2,
+          1,
+          -2,
+          1,
+          2,
+          -1
+        ],
+        "chi": "-2",
+        "support": [
+          0,
+          1,
+          2
+        ],
+        "n_tets_touched": 6,
+        "total_quads": 7
+      },
+      {
+        "index": 40,
+        "boundary_slopes": [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "chi": "-1",
+        "support": [
+          0
+        ],
+        "n_tets_touched": 4,
+        "total_quads": 4
+      },
+      {
+        "index": 41,
+        "boundary_slopes": [
+          -2,
+          1,
+          -2,
+          1,
+          -2,
+          1
+        ],
+        "chi": "-2",
+        "support": [
+          0,
+          1,
+          2
+        ],
+        "n_tets_touched": 6,
+        "total_quads": 7
+      },
+      {
+        "index": 42,
+        "boundary_slopes": [
+          2,
+          1,
+          -2,
+          -1,
+          2,
+          1
+        ],
+        "chi": "-2",
+        "support": [
+          0,
+          1,
+          2
+        ],
+        "n_tets_touched": 6,
+        "total_quads": 7
+      },
+      {
+        "index": 43,
+        "boundary_slopes": [
+          -2,
+          1,
+          2,
+          -1,
+          2,
+          -1
+        ],
+        "chi": "-2",
+        "support": [
+          0,
+          1,
+          2
+        ],
+        "n_tets_touched": 6,
+        "total_quads": 7
+      },
+      {
+        "index": 44,
+        "boundary_slopes": [
+          2,
+          -1,
+          -2,
+          1,
+          -2,
+          1
+        ],
+        "chi": "-2",
+        "support": [
+          0,
+          1,
+          2
+        ],
+        "n_tets_touched": 6,
+        "total_quads": 7
+      },
+      {
+        "index": 45,
+        "boundary_slopes": [
+          2,
+          1,
+          -2,
+          -1,
+          -2,
+          -1
+        ],
+        "chi": "-2",
+        "support": [
+          0,
+          1,
+          2
+        ],
+        "n_tets_touched": 6,
+        "total_quads": 7
+      },
+      {
+        "index": 46,
+        "boundary_slopes": [
+          -2,
+          -1,
+          -2,
+          -1,
+          -2,
+          -1
+        ],
+        "chi": "-2",
+        "support": [
+          0,
+          1,
+          2
+        ],
+        "n_tets_touched": 6,
+        "total_quads": 7
+      },
+      {
+        "index": 47,
+        "boundary_slopes": [
+          2,
+          -1,
+          2,
+          -1,
+          -2,
+          1
+        ],
+        "chi": "-2",
+        "support": [
+          0,
+          1,
+          2
+        ],
+        "n_tets_touched": 6,
+        "total_quads": 7
+      },
+      {
+        "index": 48,
+        "boundary_slopes": [
+          2,
+          -1,
+          -2,
+          1,
+          2,
+          -1
+        ],
+        "chi": "-2",
+        "support": [
+          0,
+          1,
+          2
+        ],
+        "n_tets_touched": 6,
+        "total_quads": 7
+      },
+      {
+        "index": 49,
+        "boundary_slopes": [
+          -2,
+          -1,
+          2,
+          1,
+          -2,
+          -1
+        ],
+        "chi": "-2",
+        "support": [
+          0,
+          1,
+          2
+        ],
+        "n_tets_touched": 6,
+        "total_quads": 7
+      },
+      {
+        "index": 50,
+        "boundary_slopes": [
+          -2,
+          1,
+          2,
+          -1,
+          -2,
+          1
+        ],
+        "chi": "-2",
+        "support": [
+          0,
+          1,
+          2
+        ],
+        "n_tets_touched": 6,
+        "total_quads": 7
+      },
+      {
+        "index": 51,
+        "boundary_slopes": [
+          -2,
+          -1,
+          2,
+          1,
+          2,
+          1
+        ],
+        "chi": "-2",
+        "support": [
+          0,
+          1,
+          2
+        ],
+        "n_tets_touched": 6,
+        "total_quads": 7
+      }
+    ],
+    "upstream_witness_hashes": [
+      {
+        "path": "borromean-angle-structure-lp-probe.witness.json",
+        "sha256": "dcfcea771e39bca6abee75421b0a8c7fff10ce73fba4feeac025db6dded600f4",
+        "size_bytes": 42249,
+        "commitSha": "0ffdfb17fdd6ea87ae3cd184c497349cbfa51557",
+        "scriptCommitSha": "unknown",
+        "computedAt": "2026-07-24T21:05:38.195669+00:00"
+      }
+    ]
+  }
+}
