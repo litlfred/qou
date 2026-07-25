@@ -220,6 +220,33 @@ theorem qcollatz_period2_evenodd {R : Type u} [CommRing R] (q P P1 : R)
     q * P1 = 1 := by
   linear_combination h_odd + (q + 1) * h_even
 
+/-! #### Period-3 cycle exclusion
+
+The two primitive length-3 parity words (`EEO`, `EOO`, up to rotation) each pin
+the cycle value to a *non-unit* multiple, with no solution in `ℤ[q^{±1}]` (whose
+only units are `±q^n`). So there is no nontrivial period-3 cycle — extending the
+period-1 and period-2 results. -/
+
+/-- **Period-3, word EEO.** An even→even→odd 3-cycle forces
+    `q·(q²+2q+2)·P₂ = 1`. Since `q(q²+2q+2)` is a non-unit in `ℤ[q^{±1}]`, no
+    such `P₂` exists — no EEO 3-cycle. -/
+theorem qcollatz_period3_EEO {R : Type u} [CommRing R] (q P0 P1 P2 : R)
+    (h1 : P1 * (q + 1) = P0) (h2 : P2 * (q + 1) = P1)
+    (h3 : P0 * (q + 1) = (q ^ 2 + q + 1) * P2 + 1) :
+    q * (q ^ 2 + 2 * q + 2) * P2 = 1 := by
+  linear_combination h3 + (q + 1) * h1 + (q + 1) ^ 2 * h2
+
+/-- **Period-3, word EOO.** An even→odd→odd 3-cycle forces
+    `q·(q³+q²−1)·P₁ = −(q²+2q+2)`. The coefficient `q(q³+q²−1)` is a non-unit in
+    `ℤ[q^{±1}]`, so no such `P₁` exists — no EOO 3-cycle. With EEO (and their
+    rotations) this excludes every nontrivial period-3 cycle. -/
+theorem qcollatz_period3_EOO {R : Type u} [CommRing R] (q P0 P1 P2 : R)
+    (h1 : P1 * (q + 1) = P0)
+    (h2 : P2 * (q + 1) = (q ^ 2 + q + 1) * P1 + 1)
+    (h3 : P0 * (q + 1) = (q ^ 2 + q + 1) * P2 + 1) :
+    q * (q ^ 3 + q ^ 2 - 1) * P1 = -(q ^ 2 + 2 * q + 2) := by
+  linear_combination -(q + 1) * h3 - (q ^ 2 + q + 1) * h2 - (q + 1) ^ 2 * h1
+
 /-! #### All-even cycle exclusion at every period (uniform)
 
 Generalises the `EE` period-2 case to arbitrary period: an orbit that is
