@@ -1,0 +1,180 @@
+{
+  "engine": "sympy+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-07-25T16:40:55.579736+00:00",
+  "commitSha": "adb7a42b44ab2f944354b0f3c3296fae51b2562f",
+  "assertions": [
+    {
+      "name": "theta_measure_mechanism",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": 0,
+      "source": "exact polynomial identity m·k − m(m+1)/2 = k(k−1)/2 − j(j+1)/2 at m = j+k: the discrete measure with atoms q^m and weights ∝ q^{−m(m+1)/2} (equivalently 1/θ(q^m;q) up to θ(1), via RSZ eq (1.2) functional equation θ(qz) = qz·θ(z)) has k-th moments ∝ q^{k(k−1)/2} for ALL k — the RSZ Def-2.3.3 level-1 q-Borel weight is realized by a POSITIVE Jackson-style discrete kernel (RSZ §1.2.1 discrete-contour menu)"
+    },
+    {
+      "name": "balanced_geometric_mean",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": 0,
+      "source": "N^bal(n)² = N_q(n)·N_{q⁻¹}(n) and N^bal(n) = q^{+(n−1)(n−2)/4}·[n−1]_{q⁻¹}! exactly (n = 1..8): the balanced normalizer is the geometric mean of the bar pair — the bar-symmetrized q-Borel weight, and the split used by the positive kernel construction (C4)"
+    },
+    {
+      "name": "h2_coefficient_exact_match",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": 0,
+      "source": "log(N^bal_{e^h}(n)/(n−1)!) = c₂(n)·h² + O(h⁴) with h¹ AND h³ coefficients exactly 0 (bar-invariance ⇒ even in h) and c₂(n) EXACTLY equal (as rationals, n = 1..8) to Attack E's next-order falsifier target Σ_{k=1}^{n−1}(k²−1)/24 = (n−1)(n−2)(2n+3)/144 (closed form proved symbolically): the balanced confluence structure is verified through second order — MATCH (support, not proof)"
+    },
+    {
+      "name": "confluence_rate_h2",
+      "computed": 0.0014084206519422438,
+      "expected": "0",
+      "passed": true,
+      "tolerance": 0.1,
+      "source": "max |slope − 2| over n = 3..8 (slopes 2.0000..2.0014): log-log fit of |N^bal_q(n)/(n−1)! − 1| vs h = ln q over q = 1+10^(−k), k = 1..6 (60 dps, exact product formula): slope in [1.9, 2.1] for every n = 3..8, and the extracted dev/h² at k = 6 matches the exact rational c₂(n) to < 1e-06 rel — the balanced moments converge to (n−1)! at rate O((ln q)²) with zero first order; n = 1, 2 deviations are exactly 0. The fitted exponent is a DIAGNOSTIC of the exactly-proved C2 series structure, not a fitted physics constant"
+    },
+    {
+      "name": "pos_kernel_test",
+      "computed": "9.5948e-47",
+      "expected": "0",
+      "passed": true,
+      "tolerance": 1e-30,
+      "source": "q = test (1.2…): the balanced moments factor exactly as N^bal(k+1) = [k]_{q⁻¹}!·q^{k(k−1)/4} (k = 0..8, rel < 1e−30) and BOTH factors are moments of manifestly positive measures — Jackson q-Gamma kernel at p = q⁻¹ (atoms p^m/(1−p), masses p^m·(p^{m+1};p)_∞ > 0) and the half-weight theta kernel at q̃ = √q (atoms q̃^j, masses ∝ 1/θ(q̃^j;q̃) > 0 by the RSZ eq-(1.2) triple product, every factor positive on the grid; log-normal continuous variant verified by quadrature, rel < 1e−28). Mellin convolution ⇒ an EXPLICIT positive kernel with exactly the balanced moments exists: (POS)∧(REP-balanced) is satisfiable at the fibre"
+    },
+    {
+      "name": "fibre_indeterminacy",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": 0,
+      "source": "0 = #violations of [Carleman-term ratio N^bal(k+1)^(−1/(2k)) step < q^(−1/16) = 0.98866958], observed max ratio 0.97737858 (k = 100..200). At q = 1.2: (i) the atomic realization K^at = Jackson ⊛ theta has strictly positive point masses (e.g. mass 8.5027918e-5 against the s = t₀ atom product) while K^ac = Jackson ⊛ log-normal is absolutely continuous — two DISTINCT positive measures with ALL balanced moments equal (exact factor identities): the balanced moment problem at q ≠ 1 is INDETERMINATE; (ii) consistently, the Carleman terms N^bal(k+1)^{−1/(2k)} decay geometrically (ratio < q^{−1/16} for k = 100..200) so Σ converges — Carleman's sufficient condition fails at the fibre. Determinacy ('moments ⇒ kernel', Attack A) is an ARCHIMEDEAN q → 1 feature only"
+    },
+    {
+      "name": "pos_kernel_muon",
+      "computed": "1.8989e-44",
+      "expected": "0",
+      "passed": true,
+      "tolerance": 1e-30,
+      "source": "q = muon (1.10997859556…): the balanced moments factor exactly as N^bal(k+1) = [k]_{q⁻¹}!·q^{k(k−1)/4} (k = 0..8, rel < 1e−30) and BOTH factors are moments of manifestly positive measures — Jackson q-Gamma kernel at p = q⁻¹ (atoms p^m/(1−p), masses p^m·(p^{m+1};p)_∞ > 0) and the half-weight theta kernel at q̃ = √q (atoms q̃^j, masses ∝ 1/θ(q̃^j;q̃) > 0 by the RSZ eq-(1.2) triple product, every factor positive on the grid; log-normal continuous variant verified by quadrature, rel < 1e−28). Mellin convolution ⇒ an EXPLICIT positive kernel with exactly the balanced moments exists: (POS)∧(REP-balanced) is satisfiable at the fibre"
+    },
+    {
+      "name": "pos_kernel_proton",
+      "computed": "1.8989e-44",
+      "expected": "0",
+      "passed": true,
+      "tolerance": 1e-30,
+      "source": "q = proton (1.10997858275…): the balanced moments factor exactly as N^bal(k+1) = [k]_{q⁻¹}!·q^{k(k−1)/4} (k = 0..8, rel < 1e−30) and BOTH factors are moments of manifestly positive measures — Jackson q-Gamma kernel at p = q⁻¹ (atoms p^m/(1−p), masses p^m·(p^{m+1};p)_∞ > 0) and the half-weight theta kernel at q̃ = √q (atoms q̃^j, masses ∝ 1/θ(q̃^j;q̃) > 0 by the RSZ eq-(1.2) triple product, every factor positive on the grid; log-normal continuous variant verified by quadrature, rel < 1e−28). Mellin convolution ⇒ an EXPLICIT positive kernel with exactly the balanced moments exists: (POS)∧(REP-balanced) is satisfiable at the fibre"
+    },
+    {
+      "name": "cdf_confluence_diagnostic",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": 0,
+      "source": "0 = #violations of [CDF deviation monotone ↓, < 1e−6 at q = 1.001, per-decade shrink in (50, 200)]; observed max dev at k = 3: 1.79e-08, shrink factors 91.6..98.9. CDF of the a.c. balanced kernel K^ac_q (Jackson ⊛ log-normal) at s ∈ {1/2, 1, 2} vs the classical 1 − e^{−s}: deviations shrink ×~100 per ladder decade — the kernel-level (CDF) confluence toward e^{−s}·ds is empirically O(h²) as well, matching the balanced moment rate (float64 LOSSY diagnostic only; the precise confluence statements are the exact/60-dps moment results C2-C4; the rigorous kernel-convergence theorem is the named remaining gap — Fréchet–Shohat + Carleman, outside RSZ per §1.1.3, literature route Di Vizio–Zhang 2009)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 9184,
+  "computation": "qborel-confluence-pos",
+  "scriptFile": "qborel_confluence_pos_probe.py",
+  "scriptHash": "c4e621717668",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Attack B on the conjecture 'binding Borel variable = loop proper time' — balanced-kernel q→1 confluence + the (POS) hypothesis (bean qou-xa89, epic qou-q04o; audit-only, scope-(a), NO FIT, nothing wired). C1: the RSZ level-1 q-Borel theta weight q^{−m(m+1)/2} (Def 2.3.3 + eq (1.2), Astérisque 355) is realized by a positive Jackson-style discrete kernel (exact reindex identity); the balanced normalizer is the bar-geometric mean √(N_q·N_{q⁻¹}), exact. C2 (decisive): the h² coefficient of log(N^bal_{e^h}(n)/(n−1)!) EXACTLY equals Attack E's target Σ_{k=1}^{n−1}(k²−1)/24 = (n−1)(n−2)(2n+3)/144 for n = 1..8, with h¹ and h³ coefficients exactly 0 — MATCH: balanced confluence verified through second order. C3: ladder q = 1+10^{−k}, k = 1..6 confirms the O((ln q)²) rate (log-log slope in [1.9, 2.1], diagnostic exponent) and the numeric c₂ extraction matches the exact rationals to 1e−6. C4: (POS) at the fibre — the balanced moments factor exactly as [k]_{q⁻¹}!·q^{k(k−1)/4}, and BOTH factors are moments of manifestly positive kernels (Jackson q-Gamma at p = q⁻¹; the RSZ theta kernel at q̃ = √q, positive via the eq-(1.2) triple product; log-normal continuous variant): an explicit positive kernel with exactly the balanced moments EXISTS (verified at q = 1.2 and both q₀ pins, rel 1e−30). HONEST CONVERSE (C4e): atomic and a.c. realizations share ALL moments ⇒ the balanced moment problem at q ≠ 1 is INDETERMINATE (Carleman terms decay geometrically) — determinacy is an archimedean-only feature; at the fibre, moments do NOT pin the kernel. C5: CDF confluence trend toward e^{−s}·ds (float64 diagnostic). Remaining named gap: the rigorous kernel-convergence theorem (Fréchet–Shohat moment-convergence + Carleman determinacy of {k!}; explicitly outside RSZ per §1.1.3 — literature route Di Vizio–Zhang, Ann. Inst. Fourier 59 (2009) 347–392) plus the open (POS)+(REP) identification of the SUBSTRATE's kernel with one of the positive realizations. Nothing here proves the conjecture.",
+  "auditOnly": "docs/audits/2026-07-25-qborel-confluence-pos-attack.md",
+  "data": {
+    "h2_exact_coefficients": {
+      "1": "0",
+      "2": "0",
+      "3": "1/8",
+      "4": "11/24",
+      "5": "13/12",
+      "6": "25/12",
+      "7": "85/24",
+      "8": "133/24"
+    },
+    "confluence_ladder": {
+      "3": {
+        "slope": 2.0000118133254294,
+        "c2_numeric_at_k6": "0.12500000000000260416",
+        "c2_exact": "1/8",
+        "rel_err": "2.0833e-14"
+      },
+      "4": {
+        "slope": 2.000089134396147,
+        "c2_numeric_at_k6": "0.45833333333340538187",
+        "c2_exact": "11/24",
+        "rel_err": "1.572e-13"
+      },
+      "5": {
+        "slope": 2.000243575027461,
+        "c2_numeric_at_k6": "1.0833333333337986106",
+        "c2_exact": "13/12",
+        "rel_err": "4.2949e-13"
+      },
+      "6": {
+        "slope": 2.0004988957572465,
+        "c2_numeric_at_k6": "2.0833333333351652759",
+        "c2_exact": "25/12",
+        "rel_err": "8.7933e-13"
+      },
+      "7": {
+        "slope": 2.000879073455237,
+        "c2_numeric_at_k6": "3.5416666666721505153",
+        "c2_exact": "85/24",
+        "rel_err": "1.5484e-12"
+      },
+      "8": {
+        "slope": 2.0014084206519422,
+        "c2_numeric_at_k6": "5.5416666666804005071",
+        "c2_exact": "133/24",
+        "rel_err": "2.4783e-12"
+      }
+    },
+    "cdf_ladder_float64_diagnostic": {
+      "0.5": [
+        "1.339328e-04",
+        "1.459601e-06",
+        "1.475525e-08"
+      ],
+      "1.0": [
+        "1.624399e-04",
+        "1.770582e-06",
+        "1.790980e-08"
+      ],
+      "2.0": [
+        "6.816727e-05",
+        "7.443975e-07",
+        "7.571713e-09"
+      ]
+    },
+    "q0_pins": {
+      "muon": "1.10997859555733471989976322048322502665620840878015368660798114614493",
+      "proton": "1.1099785827513808075916690956107688798744991218736",
+      "source": "computations/q-pinning-50-digit.witness.json (muon, canonical 3-CAL layer); qou_substrate.constants.Q_50_DIGIT_STR (proton, precision layer)"
+    },
+    "rsz_citations": {
+      "paper": "uploads/0903.0853v3.pdf — Ramis–Sauloy–Zhang, Astérisque 355",
+      "def_2_3_3": "level-1 formal q-Borel, weight q^{−n(n−1)/2} (p. 23)",
+      "sec_3_3_1": "level-d q-Borel families t_n = q^{n−d}t_{n−d}; theta-built (p. 39)",
+      "eq_1_2": "θ(z;q) = Σ q^{−n(n−1)/2}zⁿ = Π(1−q^{−n−1})(1+q^{−n}z)(1+q^{−n−1}/z), θ(qz) = qz·θ(z) (p. 9) — the manifest positivity factorization for real q > 1, z > 0",
+      "sec_1_2_1": "kernel non-canonicity; continuous or discrete Jackson-style contours (p. 7)",
+      "sec_1_1_3": "confluence q → 1 explicitly NOT treated in RSZ; deferred to Di Vizio–Zhang, Ann. Inst. Fourier 59 (2009) 347–392 (p. 2) — the named remaining gap"
+    }
+  }
+}
