@@ -85,34 +85,32 @@ def li_tower(max_n, kmax):
     return z, D
 
 
-def main() -> int:
-    t0 = time.monotonic()
-    print("=" * 78)
-    print(f" A4.2 — 5₂ φ_σ1 engine: τ-channel saddle expansion to order {OMAX}")
-    print("=" * 78)
-
-    # ---- G1: the saddle ----
-    # V₀'(y) = −3 ln(1+e^y) + 2y = 0 ⇔ (1−x)³ = x², x = −e^y (geometric root)
-    xi = mp.findroot(lambda x: x**3 - 2 * x**2 + 3 * x - 1,
-                     mp.mpc("0.78492", "1.30714"))
-    x_star = xi
-    y_star = mp.log(-x_star)      # any branch; only z*=x* enters the vertices
-    resid = (1 - x_star) ** 3 - x_star ** 2
-    g1 = abs(resid) < mp.mpf("1e-50")
-    print(f"\n[G1] saddle x* = {mp.nstr(x_star, 15)}  |(1−x)³−x²| = "
-          f"{mp.nstr(abs(resid), 3)}  {'PASS' if g1 else 'FAIL'}")
-
-    # ---- vertex data ----
-    # V₀ derivatives: V₀'' = −3·z/(1+... careful: d/dy = z d/dz with z = −e^y
-    # ⇒ dz/dy = z. Li₂(z): (z d/dz)Li₂ = Li₁ = −ln(1−z); so
-    # V₀(y) = 3Li₂(z) + y², V₀^{(k)} for k≥2 from the Li tower + y² term.
-    max_n = OMAX // 2 + 1
-    kmax = HMAX + 4
-    print(f"\n  building Li tower (n ≤ {max_n}, k ≤ {kmax}) symbolically ...",
-          flush=True)
+def build_vertex_tower(omax=OMAX):
+    """Symbolic vertex data shared by every saddle: the Li tower D[n][k]
+    (via `li_tower`) and the (z d/dz)^k Li₁ tower for V₀ derivatives.
+    Saddle-independent and precision-independent — build ONCE, evaluate at
+    each root with `phi_series_at`."""
+    hmax = 2 * omax
+    max_n = omax // 2 + 1
+    kmax = hmax + 4
     zsym, D = li_tower(max_n, kmax)
-    t1 = time.monotonic()
-    print(f"  ... built in {t1 - t0:.0f}s; evaluating at x* ...", flush=True)
+    li1 = -sp.log(1 - zsym)
+    li0 = zsym / (1 - zsym)
+    tower01 = {0: li1, 1: li0}
+    for k in range(2, kmax + 2):
+        tower01[k] = sp.simplify(zsym * sp.diff(tower01[k - 1], zsym))
+    return {"z": zsym, "D": D, "tower01": tower01,
+            "omax": omax, "hmax": hmax, "max_n": max_n, "kmax": kmax}
+
+
+def phi_series_at(x_star, tw):
+    """φ_σ coefficients P_k (k = 0..omax, P₀ = 1) for the saddle x_star of
+    (1−x)³ = x², at the CURRENT mp.mp.dps. This is the A4.2 engine core
+    verbatim (validated against the printed/arbitrated P₁..P₃ at ξ₁),
+    parameterized by the saddle so all three embeddings of the 5₂ trace
+    field can be driven (A6 arithmeticity)."""
+    zsym, D, tower01 = tw["z"], tw["D"], tw["tower01"]
+    omax, hmax, max_n, kmax = tw["omax"], tw["hmax"], tw["max_n"], tw["kmax"]
 
     def ev(expr):
         f = sp.lambdify(zsym, expr, "mpmath")
@@ -120,11 +118,6 @@ def main() -> int:
 
     # V₀ y-derivatives at y*: k-th derivative of 3Li₂(z(y)) is 3·(z d/dz)^k Li₂
     # = 3·(z d/dz)^{k−1} Li₁; (z d/dz)^j Li₁ = (z d/dz)^{j−1} Li₀ for j ≥ 1.
-    li1 = -sp.log(1 - zsym)
-    li0 = zsym / (1 - zsym)
-    tower01 = {0: li1, 1: li0}
-    for k in range(2, kmax + 2):
-        tower01[k] = sp.simplify(zsym * sp.diff(tower01[k - 1], zsym))
     V0d = {2: 3 * ev(tower01[1]) + 2}          # + y² term contributes 2 at k=2
     for k in range(3, kmax + 2):
         V0d[k] = 3 * ev(tower01[k - 1])
@@ -136,9 +129,8 @@ def main() -> int:
     # B_{2n}(1/2) the expansion converges to 9e-25 by n=6).
     bern = {n: (mp.mpf(2) ** (1 - 2 * n) - 1) * mp.bernoulli(2 * n)
             / mp.factorial(2 * n) for n in range(1, max_n + 1)}
-    print(f"  ... vertex data evaluated ({time.monotonic() - t1:.0f}s)", flush=True)
 
-    # ---- bivariate assembly: series in (h = √ħ, u), truncated at h^HMAX ----
+    # ---- bivariate assembly: series in (h = √ħ, u), truncated at h^hmax ----
     # exponent minus Gaussian part:
     #   Wv = Σ_{k≥3} h^{k−2} V₀^{(k)} u^k / k!                (from (1/ħ)V₀)
     #      + Σ_{n≥1} 3·B_{2n}/(2n)!·Σ_{k≥0} h^{2(2n−1)+k} L_n^{(k)} u^k / k!
@@ -146,21 +138,19 @@ def main() -> int:
     Wv = {}
 
     def add(p, m, c):
-        if p <= HMAX and abs(c) > 0:
+        if p <= hmax and abs(c) > 0:
             Wv[(p, m)] = Wv.get((p, m), mp.mpc(0)) + c
 
-    for k in range(3, HMAX + 2 + 1):
+    for k in range(3, hmax + 2 + 1):
         add(k - 2, k, V0d[k] / mp.factorial(k))
     for n in range(1, max_n + 1):
         base = 2 * (2 * n - 1)
-        if base > HMAX:
+        if base > hmax:
             break
-        for k in range(0, HMAX - base + 1):
+        for k in range(0, hmax - base + 1):
             add(base + k, k, 3 * bern[n] * Ld[n][k] / mp.factorial(k))
 
-    # exp(Wv) truncated at h^HMAX
-    print("  exponentiating the vertex series ...", flush=True)
-    t2 = time.monotonic()
+    # exp(Wv) truncated at h^hmax
     expW = {(0, 0): mp.mpc(1)}
     term = {(0, 0): mp.mpc(1)}
     order = 1
@@ -170,7 +160,7 @@ def main() -> int:
         for (p1, m1), c1 in term.items():
             for (p2, m2), c2 in Wv.items():
                 p, m = p1 + p2, m1 + m2
-                if p <= HMAX:
+                if p <= hmax:
                     new[(p, m)] = new.get((p, m), mp.mpc(0)) + c1 * c2 / order
         term = new
         if not term:
@@ -178,10 +168,8 @@ def main() -> int:
         for key, c in term.items():
             expW[key] = expW.get(key, mp.mpc(0)) + c
         order += 1
-        if order > HMAX:                # Wv has min h-power 1 ⇒ terminates
+        if order > hmax:                # Wv has min h-power 1 ⇒ terminates
             break
-    print(f"  ... done ({time.monotonic() - t2:.0f}s; {len(expW)} monomials)",
-          flush=True)
 
     # ---- Wick contraction: u^{2m} → (2m−1)!!·σ^{2m}, σ² = −1/V₀'' ----
     sig2 = -1 / V0d[2]
@@ -199,7 +187,7 @@ def main() -> int:
     # extraction) ⇒ P_k = phi_h[2k] DIRECTLY (run-1 lesson: multiplying by
     # (2πi)^k here double-counts the factor).
     P = {}
-    for k in range(0, OMAX + 1):
+    for k in range(0, omax + 1):
         P[k] = phi_h.get(2 * k, mp.mpc(0))
     norm = P[0]
     for k in P:
@@ -210,12 +198,40 @@ def main() -> int:
     # to the raw saddle expansion. Multiply by e^{−ħ/8}: in P-units
     # P_k → Σ_j P_{k−j}·(−1/8)^j/j!.
     Pal = {}
-    for k in range(0, OMAX + 1):
+    for k in range(0, omax + 1):
         acc = mp.mpc(0)
         for j in range(0, k + 1):
             acc += P[k - j] * (mp.mpf(-1) / 8) ** j / mp.factorial(j)
         Pal[k] = acc
-    P = Pal
+    return Pal
+
+
+def main() -> int:
+    t0 = time.monotonic()
+    print("=" * 78)
+    print(f" A4.2 — 5₂ φ_σ1 engine: τ-channel saddle expansion to order {OMAX}")
+    print("=" * 78)
+
+    # ---- G1: the saddle ----
+    # V₀'(y) = −3 ln(1+e^y) + 2y = 0 ⇔ (1−x)³ = x², x = −e^y (geometric root)
+    xi = mp.findroot(lambda x: x**3 - 2 * x**2 + 3 * x - 1,
+                     mp.mpc("0.78492", "1.30714"))
+    x_star = xi
+    resid = (1 - x_star) ** 3 - x_star ** 2
+    g1 = abs(resid) < mp.mpf("1e-50")
+    print(f"\n[G1] saddle x* = {mp.nstr(x_star, 15)}  |(1−x)³−x²| = "
+          f"{mp.nstr(abs(resid), 3)}  {'PASS' if g1 else 'FAIL'}")
+
+    max_n = OMAX // 2 + 1
+    kmax = HMAX + 4
+    print(f"\n  building Li tower (n ≤ {max_n}, k ≤ {kmax}) symbolically ...",
+          flush=True)
+    tw = build_vertex_tower(OMAX)
+    t1 = time.monotonic()
+    print(f"  ... built in {t1 - t0:.0f}s; evaluating at x* + assembling ...",
+          flush=True)
+    P = phi_series_at(x_star, tw)
+    print(f"  ... done ({time.monotonic() - t1:.0f}s)", flush=True)
     print(f"\n  φ_σ1 series generated to order {OMAX}; P₀ normalized to 1.")
 
     # ---- gates against printed + arbitrated + A4.1-extracted values ----
