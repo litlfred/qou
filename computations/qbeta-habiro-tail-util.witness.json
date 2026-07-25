@@ -1,0 +1,56 @@
+{
+  "engine": "sympy-free exact + mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-07-25T13:29:14.202661+00:00",
+  "commitSha": "4f807f48ab00815bbdf1813ec2f92ba7d5957be7",
+  "assertions": [
+    {
+      "name": "star_exact_to_32",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "(★) as integer-Laurent dict equality, n ≤ 32 — machine-exact, no numerics"
+    },
+    {
+      "name": "c52_matches_profile_module",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "c52_laurent == the merged profile module's C52"
+    },
+    {
+      "name": "numeric_path_reaches_residue",
+      "computed": 0.29742494849539175,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1.0,
+      "source": "t_hat_exact(96) → (q̃;q̃)_∞² within the DERIVED transient bound q̃⁹⁷/(1−q̃)² at dps 60"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "qbeta-habiro-tail-util",
+  "scriptFile": "qbeta_habiro_tail_util.py",
+  "scriptHash": "a3c38eb7daa7",
+  "scriptCommitSha": "4f807f48ab00815bbdf1813ec2f92ba7d5957be7",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Canonical compute path for the 5₂ Habiro-tail q-Borel coefficients: the (★) identity (derived PR #4195/#4226) verified MACHINE-EXACTLY as integer-Laurent dict equality for n ≤ 32 (no numerics), C_n cross-checked against the merged profile module, and the cancellation-free numeric path spot-gated at the substrate (dps 60 replaces the direct route's dps 800). WIRING SCOPE: compute infrastructure only — D_odd/O_φ/pole-ladder physics remain scope-(a)/auditOnly; no physical claim is wired.",
+  "contentBlock": "prop:phi-b-unitary-bar-odd",
+  "data": {
+    "identity": "C_n(a)(qbar;qbar)_n^2 a^-(5n^2+7n) = (-1)^n (qt;qt)_n^2 sum_k qt^{k(n+1)} [n,k]_qt",
+    "wiring_scope": "compute-infra only; no physics wired; consumers adopt on next touch (W9-family probes)"
+  }
+}
