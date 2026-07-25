@@ -709,22 +709,30 @@ theorem specht_form_nondegenerate {k : Type} [Field k] [CharZero k] (μ : YoungD
   -- bilinear form on S^μ is nonzero in characteristic 0 — a product of hook
   -- lengths; equivalently S^μ ⊄ (S^μ)ᗮ, i.e. the form is non-degenerate on S^μ).
   --
-  -- STATUS (assessed this pass): genuine wall for a *sorry-free, generic-char-0*
-  -- close.  Two independent obstructions:
-  --  (1) The tractable proof is positive-definiteness over ℝ: since tabloids are
-  --      orthonormal, `bilinM x x = Σ_d (x d)^2` (from `bilinM_apply`), so over an
-  --      ordered field `x ≠ 0 ⇒ ⟨x,x⟩ > 0 ⇒ x ∉ (S^μ)ᗮ`, whence `rad = ⊥` in ~4
+  -- STATUS (updated 2026-07-25 — OWNER RULING: keep generic char-0; obstruction (2)
+  -- below is now RESOLVED):
+  --  (1) [ℝ shortcut — declined by owner] positive-definiteness over ℝ: tabloids are
+  --      orthonormal, so `bilinM x x = Σ_d (x d)^2` (from `bilinM_apply`), whence over
+  --      an ordered field `x ≠ 0 ⇒ ⟨x,x⟩ > 0 ⇒ x ∉ (S^μ)ᗮ`, i.e. `rad = ⊥` in ~4
   --      lines with NO basis.  But this needs the base field ORDERED; over a general
-  --      char-0 field (e.g. ℂ) `Σ x_d^2` is isotropic and the argument fails.  Both
-  --      consumers (`specht_isSimple` here and brick-2 `Specht.specht_isSimple`) are
-  --      stated over generic `[Field k][CharZero k]`, so specialising this lemma to ℝ
-  --      is a STATEMENT CHANGE (weakening) — deferred to the owner, not done here.
-  --  (2) The honest generic-char-0 route (integer Gram matrix of a basis of S^μ ⇒
-  --      corank base-invariant across char-0 fields ⇒ = 0 by the ℝ case) needs a
-  --      *basis of S^μ*.  The only one in the corpus,
-  --      `SpechtStandardBasis.standardBasis`, is itself built on two live sorries
-  --      (`standardPolytabloid_triangular`, `standardPolytabloid_straightening`), so
-  --      routing through it would ADD `sorryAx` to the cone, not remove it.
+  --      char-0 field (e.g. ℂ) `Σ x_d^2` is isotropic and it fails.  Both consumers
+  --      (`specht_isSimple` here and brick-2 `Specht.specht_isSimple`) are generic
+  --      `[Field k][CharZero k]`, so specialising to ℝ would weaken them.  OWNER RULING
+  --      (2026-07-25): KEEP generic char-0 — do NOT weaken to ℝ.  So this route is
+  --      deliberately not taken.
+  --  (2) [generic char-0 route — now UNBLOCKED] integer Gram matrix of a basis of S^μ
+  --      ⇒ corank base-invariant across char-0 fields ⇒ = 0 by the ℝ (positive-definite)
+  --      case.  This needs a *basis of S^μ*: `SpechtStandardBasis.standardBasis`, which
+  --      is NOW SORRY-FREE on main — the Garnir straightening core
+  --      (`SpechtStandardBasisCore.straightening_step_colMax`) and the dominance lemma
+  --      (`SpechtDominanceCore.dominance_colStab_lemma`) have been closed, and
+  --      `SpechtStandardBasisCore`, `SpechtDominanceCore`, `SpechtStandardBasis` all
+  --      carry 0 `sorry` tactics.  Routing through `standardBasis` therefore no longer
+  --      adds `sorryAx`.  REMAINING WORK (the honest open item): the base-change corank
+  --      proof — take the ℤ Gram matrix of `standardBasis`, note its rank/corank is
+  --      base-invariant across char-0 fields, and conclude corank 0 from the ℝ
+  --      positive-definite case.  (Env note: verifying this needs the Specht dependency
+  --      cone built; do it in a stable-olean session.)
   --  Note: the already-sorry-free `specht_submodule_dichotomy` cannot close this —
   --  applied to `U = rad`, its OR branch `U ≤ (S^μ)ᗮ` holds trivially (no
   --  contradiction); the Maschke/irreducibility route is circular with
