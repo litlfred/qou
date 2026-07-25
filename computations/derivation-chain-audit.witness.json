@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-19T18:13:35.436236+00:00",
-  "commitSha": "7263314856d282ca9e68f9b6152940589f50404d",
+  "computedAt": "2026-07-25T03:05:57.584359+00:00",
+  "commitSha": "51da5cc365d991e2fdd5cb714f24e946ca14fcf2",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -559,11 +559,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 11,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "ff40fb7a9d7d",
-  "scriptCommitSha": "e97fc42930f5618a2fd23b431971bf73ee313151",
+  "scriptCommitSha": "909e4e3c58d7423994256f68f268a7075fa94b8d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -572,6 +572,7 @@
   },
   "environment": {
     "python": "3.11.15",
+    "numpy": "2.4.6",
     "sympy": "1.14.0",
     "mpmath": "1.3.0"
   },
@@ -2059,6 +2060,7 @@
         "alpha-em-4pi-fixed-point-solve.witness.json",
         "alpha-em-4pi-q0-sensitivity.witness.json",
         "alpha-em-anchor-preference.witness.json",
+        "alpha-em-b2-scalar-c.witness.json",
         "alpha-em-bring-jacobian-zeta-determinant.witness.json",
         "alpha-em-channel-split-loop-measure.witness.json",
         "alpha-em-form-ladder.witness.json",
@@ -2539,6 +2541,7 @@
         "dilog-archimedean-partB-cusp-derivation.witness.json",
         "dilog-archimedean-partB.witness.json",
         "dirac-yekutieli-combinations-50dps.witness.json",
+        "doorv_barparity_guardrail.witness.json",
         "e-0-lp-dual-h3.witness.json",
         "e-hartree-mechanism-b-probe.witness.json",
         "e-hartree-round19-dressed-scalar-block.witness.json",
@@ -3025,6 +3028,8 @@
         "qbeta-habiro-cyclotomic.witness.json",
         "qbeta-multi-block-eigenphase-full-eps-probe.witness.json",
         "qbeta-multi-block-eigenphase-probe.witness.json",
+        "qcollatz_cycle_census.witness.json",
+        "qcollatz_divergence_probe.witness.json",
         "qm-channel-contribution-probe.witness.json",
         "qou-mass-canonical-wiring-example.witness.json",
         "quintic-zeta5-monodromy-phase.witness.json",
