@@ -171,6 +171,7 @@ def residue_c_inf(qt, tol_exp=70):
 def main() -> int:
     import importlib.util
     import time
+    import _path_bridge as _bridge  # noqa: F401  (wires witness_base et al.)
     from witness_base import WitnessBuilder
     from qou_substrate.constants import q_at
 
