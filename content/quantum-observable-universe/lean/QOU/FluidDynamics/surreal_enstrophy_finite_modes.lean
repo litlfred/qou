@@ -627,4 +627,51 @@ theorem enstrophy_grade_one_of_dissipation_closure {ε D Ω : K}
   have h1ε : IsFinite (1 + ε : K) := isFinite_one.add hεf
   exact (h2.mul h1ε).mul hD
 
+/-! ### X — the grade trichotomy: the α question as a single surreal criterion
+
+Within the ω-grade-1 cap (`enstrophy_grade_one_of_dissipation_closure`), the
+remaining open content of the super-classical side is classified exhaustively
+by **one surreal-valued criterion: is `ε · Ω` infinitesimal?** The trichotomy
+below is the enstrophy-grade mirror of the Levi growth trichotomy
+(`levi_growth_trichotomy`). -/
+
+/-- **Saturation forces blow-up.** If `ε · Ω` is *not* infinitesimal (the flow
+    saturates the grade-1 cap, `α = 1`), then `Ω` is not a finite surreal —
+    the QOU-internal q-NS observable blows up. Contrapositive of
+    `Infinitesimal.mul_finite`. -/
+-- Ref: [manuscript] fluid-dynamics/p2-critical-exponent
+theorem saturated_implies_infinite {ε Ω : K} (hε : Infinitesimal ε)
+    (hsat : ¬ Infinitesimal (ε * Ω)) : ¬ IsFinite Ω :=
+  fun hfin => hsat (hε.mul_finite hfin)
+
+/-- **The grade trichotomy.** For infinitesimal `ε`, the enstrophy observable
+    falls into exactly one of three mutually-exclusive regimes (disjoint by
+    construction: the first is finite, the last two are not; the last two
+    differ on the criterion):
+
+    * **grade 0 (regular):** `Ω` finite — and then `ε·Ω` is automatically
+      infinitesimal;
+    * **saturated (`α = 1`):** `Ω` infinite with `ε·Ω` non-infinitesimal — the
+      flow saturates the dissipation-closure cap;
+    * **intermediate (`0 < α < 1`):** `Ω` infinite yet `ε·Ω` still
+      infinitesimal.
+
+    Hence the entire remaining α question of the super-classical side reduces
+    to the single surreal criterion **"is `ε · Ω(1+ε)` infinitesimal?"** —
+    infinitesimal + finite `Ω` ⟺ regular; non-infinitesimal ⟺ saturated
+    blow-up (`saturated_implies_infinite`). Which regime the QOU's flow
+    realises is the open critical-exponent content (`p2-critical-exponent`);
+    not decided here. -/
+-- Ref: [manuscript] fluid-dynamics/p2-critical-exponent, regularity-breakdown;
+-- Ref: [manuscript] appendix-surreals/surreal-blowup-calculus (§7ab ord_ω)
+theorem grade_trichotomy {ε Ω : K} (hε : Infinitesimal ε) :
+    (IsFinite Ω ∧ Infinitesimal (ε * Ω))
+    ∨ (¬ IsFinite Ω ∧ ¬ Infinitesimal (ε * Ω))
+    ∨ (¬ IsFinite Ω ∧ Infinitesimal (ε * Ω)) := by
+  by_cases hf : IsFinite Ω
+  · exact Or.inl ⟨hf, hε.mul_finite hf⟩
+  · by_cases hs : Infinitesimal (ε * Ω)
+    · exact Or.inr (Or.inr ⟨hf, hs⟩)
+    · exact Or.inr (Or.inl ⟨hf, hs⟩)
+
 end QOU.FluidDynamics
