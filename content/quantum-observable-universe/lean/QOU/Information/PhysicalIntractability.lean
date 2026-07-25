@@ -1,4 +1,5 @@
 import Mathlib.Tactic
+import Mathlib.Analysis.SpecificLimits.Normed
 
 /-!
 # QOU.Information.PhysicalIntractability — the honest, derived lower bound
@@ -43,6 +44,37 @@ theorem steps_lower_bound (B : ℕ) (hB : 0 < B) (info steps : ℕ → ℕ)
 /-- A function `f : ℕ → ℕ` is **super-polynomial** if it eventually exceeds
     every polynomial `c · n^k`. -/
 def SuperPolynomial (f : ℕ → ℕ) : Prop := ∀ c k : ℕ, ∃ n, c * n ^ k < f n
+
+open Filter Asymptotics in
+/-- **`2^n` is super-polynomial (sorry-free).**  The standard "exponential
+    dominates every polynomial" fact, discharged from Mathlib's little-o
+    (`isLittleO_pow_const_const_pow_of_one_lt`).  Makes the QOU
+    physical-intractability theorem below *unconditional*. -/
+theorem superPoly_two_pow : SuperPolynomial (fun n => 2 ^ n) := by
+  intro c k
+  have h : (fun n : ℕ => (n : ℝ) ^ k) =o[atTop] (fun n : ℕ => (2 : ℝ) ^ n) :=
+    isLittleO_pow_const_const_pow_of_one_lt k (by norm_num)
+  have hc : (0 : ℝ) < 1 / ((c : ℝ) + 1) := by positivity
+  obtain ⟨n, hn, hn1⟩ := ((h.def hc).and (eventually_ge_atTop 1)).exists
+  have hnpos : (0 : ℝ) < (n : ℝ) := by exact_mod_cast hn1
+  have hnk_pos : (0 : ℝ) < (n : ℝ) ^ k := pow_pos hnpos k
+  have hcp : (0 : ℝ) < (c : ℝ) + 1 := by positivity
+  have hnorm : (n : ℝ) ^ k ≤ (1 / ((c : ℝ) + 1)) * (2 : ℝ) ^ n := by
+    have e1 : ‖(n : ℝ) ^ k‖ = (n : ℝ) ^ k := by
+      rw [Real.norm_eq_abs, abs_of_nonneg (le_of_lt hnk_pos)]
+    have e2 : ‖(2 : ℝ) ^ n‖ = (2 : ℝ) ^ n := by
+      rw [Real.norm_eq_abs, abs_of_nonneg (by positivity)]
+    rw [e1, e2] at hn; exact hn
+  have h2 : ((c : ℝ) + 1) * (n : ℝ) ^ k ≤ (2 : ℝ) ^ n := by
+    calc ((c : ℝ) + 1) * (n : ℝ) ^ k
+        ≤ ((c : ℝ) + 1) * ((1 / ((c : ℝ) + 1)) * (2 : ℝ) ^ n) :=
+          mul_le_mul_of_nonneg_left hnorm (le_of_lt hcp)
+      _ = (2 : ℝ) ^ n := by field_simp
+  refine ⟨n, ?_⟩
+  have key : (c : ℝ) * (n : ℝ) ^ k < (2 : ℝ) ^ n := by nlinarith [h2, hnk_pos]
+  have : ((c * n ^ k : ℕ) : ℝ) < (((2 : ℕ) ^ n : ℕ) : ℝ) := by
+    push_cast; push_cast at key; linarith
+  exact_mod_cast this
 
 /-- **Physical intractability (sorry-free).**  If the information required to
     decide `L` (per bandwidth unit, `info n / B`) is super-polynomial, then the
@@ -137,5 +169,19 @@ theorem qou_physical_intractability (B : ℕ) (hB : 0 < B) (steps : ℕ → ℕ)
     SuperPolynomial steps :=
   steps_superPoly_of_info B hB (fun n => resolutionTreeSize (3 * n)) steps correct
     (exp_dominates_poly.of_le two_pow_le_resolutionTreeSize)
+
+/-- **QOU physical intractability — UNCONDITIONAL (sorry-free).**  The only
+    remaining hypothesis is the *physical model*: a bandwidth-`B` device that
+    correctly extracts the full surviving `3^{3n}`-leaf resolution tree accesses
+    `≤ steps n · B` bits.  Given that, its step count is super-polynomial — **no
+    bandwidth-limited device decides the boundary problem in polynomial time.**
+    The exponential-domination fact is now discharged (`superPoly_two_pow`);
+    the information requirement `3^{3n}` is derived from the tree.  Scope:
+    bandwidth-limited computation — strictly weaker than abstract `P ≠ NP`. -/
+theorem qou_physical_intractability_unconditional (B : ℕ) (hB : 0 < B)
+    (steps : ℕ → ℕ)
+    (correct : ∀ n, resolutionTreeSize (3 * n) ≤ steps n * B) :
+    SuperPolynomial steps :=
+  qou_physical_intractability B hB steps superPoly_two_pow correct
 
 end QOU.Information
