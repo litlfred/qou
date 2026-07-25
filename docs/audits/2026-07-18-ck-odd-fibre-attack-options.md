@@ -213,6 +213,26 @@ principle — the open problem itself).
   `B₅(5₂;q*) = 593.61`, **no zero**, anchor-smooth — capstone constraint (2)
   fails on the certified N=5 categorical face (scope-(a), extending N=3,4).
   The categorical q\*-test is now certified at **N = 3, 4, 5**.
+- **A5.5 LANDED (N=6 certified — TWO independent Rust engines converge).**
+  [`qbeta_5two_n6_cable_qstar_probe.py`](../../computations/probes/qbeta_5two_n6_cable_qstar_probe.py)
+  + witness: N=6 via the JW 5-cable on TL₁₅ (Catalan(15) = 9 694 845
+  diagrams), out of pure-Python reach. Two engines were written in
+  **independent parallel sessions** (the measured-research-overlap policy
+  working as designed): main's [`tl_cable`](../../tools/hecke-engine/src/tl_cable.rs)
+  (dense-f64 fast path, f64-grade gates ~1e-8) and this branch's
+  [`tl_cable_mpfr`](../../tools/hecke-engine/src/tl_cable_mpfr.rs)
+  (full-MPFR 192-bit, diagram-basis JW normalization, gates ~1e-41; ~77 s
+  per TL₁₅ evaluation). They agree at `B₆(5₂;q*)` to rel ~2.4e-9 — inside
+  the f64 engine's own noise floor — with the MPFR value
+  `B₆(5₂;q*) = −99594.2474` the accurate one. MPFR-side gates: N=3 vs
+  live Python 2.5e-41; B₄/B₅ vs committed witnesses 7e-13/3e-13; 4₁ tower
+  2.4e-41; 4₁ null exact; framing `fr₅ = −q^{17.5}` measured — the
+  sign-alternation by cable width (`+,−,+,−` at cN = 2..5) confirmed.
+  Certificate: signs `[−1,−1,−1]`, `s·2h = 7.2e-6 ≪ 1`. **Capstone
+  constraint (2) fails on the certified N=6 categorical face** (scope-(a));
+  the ladder stands at **N = 3, 4, 5, 6**. N=7 (TL₁₈, 477.6M diagrams)
+  needs ~32 GB of tables — a different state representation (plat/half-
+  diagram basis or on-the-fly composition) is the open engineering step.
 
 - **A2 LANDED (derived odd-Stokes datum).**
   [`qbeta_5two_stokes_barodd_index_probe.py`](../../computations/probes/qbeta_5two_stokes_barodd_index_probe.py)
