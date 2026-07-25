@@ -24,3 +24,5 @@ Substantial; some genuinely hard. Children:
   the map formally.
 Anti-laundering: axiomatization is NOT proof (AGENTS.md). Only a real derivation
 closes; conditional classes stay labelled conditional.
+
+C9 DONE (Kummer-removability leg): collatz_obstruction_link.lean — qcollatz_kummer_removable_iff_two_dvd_chi (level-2 residue κ_C of the universal χ(A) class vanishes ⟺ 2∣χ(A), specializing kappa_vanishes_iff_chi to the q-Collatz even-branch [2]_q divisor) + qcollatz_kummer_removable_of_chi_neg_six (Descartes χ=-6 instance, stated with χ=-6 as explicit hypothesis since it's Descartes-specific not general-QOU). sorry-free, 0 warnings. HONEST SCOPE: this is the Kummer-removability leg ONLY, NOT κ_C=0 ⟺ full conjecture — convergence still needs the descent measure μ (open wall). Remaining Tier C: C10 (Kummer removability general derivation), C11 (contact-boundary iff), C8 bricks 2-3 (QOU import).
