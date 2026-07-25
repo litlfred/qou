@@ -80,11 +80,25 @@ sequence of verified (`lean`-direct exit 0, sorry-free) bricks:
 | brick | file | PR |
 |---|---|---|
 | input 1: `MeromorphicOn phiBProd` ⇐ product analyticity | `QBeta/PhiBProdMeromorphic.lean` | #4223 |
+| input 1 infra: factor/partial-product entire | `QBeta/PhiBProdFactorAnalytic.lean` | #4272 |
+| input 1 infra: local-uniform limit of entire is entire | `QBeta/LocalUniformLimitEntire.lean` | #4278 |
+| **input 1 CLOSED**: partial products converge locally uniformly ⇒ `phiBProd` meromorphic **unconditionally on `Im b² > 0`** | `QBeta/PhiBProdProductConvergence.lean` | (this) |
 | input 2: `meromorphicOrderAt phiBProd ≠ ⊤` ⇐ products locally nonzero | `QBeta/PhiBProdOrderNeTop.lean` | #4225 |
 | input 3a: inversion kills the **even** elliptic freedom (`℘`) | `QBeta/InversionKillsEvenElliptic.lean` | #4227 |
 | input 3b: σ-unitarity (self-duality) kills the **bar-even reciprocal-odd** residual | (same file) | #4227 |
 | assembly: concrete-`Φ_b` `uniqueUpToScalar` via the boundedness capstone | `QBeta/PhiBProdUniquenessAssembly.lean` | #4232 |
 | `hbdd` localization: doubly-periodic global boundedness ⇐ compact-domain bound | `QBeta/DoublyPeriodicBoundedLocalization.lean` | (this) |
+
+**Input 1 fully closed (2026-07-25, this brick).** `PhiBProdProductConvergence.lean`
+supplies the local-uniform convergence of the `numFactor`/`denFactor` partial products
+(Mathlib's `Summable.hasProdUniformlyOn_one_add` per-compact + geometric bound
+`e^{M_K}(e^{Re c})^k`, glued by `hasProdLocallyUniformlyOn_of_forall_compact`). Feeding
+`LocalUniformLimitEntire`, both `tprod`s are entire, so
+`phiBProd_meromorphicOn`/`phiBProd_meromorphicOn_substrate` establish
+`MeromorphicOn (phiBProd b) univ` with **no remaining analytic hypothesis** on the branch
+`Im b² > 0`. Input 1 (`MeromorphicOn phiBProd`) is therefore no longer a carried hypothesis —
+it is a theorem on the physical branch. The only remaining open input to the full keystone is
+the **growth/boundedness** endowment `hbdd` below (equivalently the same-divisor premise).
 
 **Net state.** The Faddeev–Volkov uniqueness leg for the physical `Φ_b` is sorry-free
 modulo the single analytic endowment `hbdd` (strip boundedness of the ratio), and that
