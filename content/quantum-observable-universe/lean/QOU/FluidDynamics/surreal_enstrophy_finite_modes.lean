@@ -1025,4 +1025,63 @@ theorem local_persistence {δ c : K} (hδ : 0 ≤ δ) (hc : 0 ≤ c)
   push_cast
   linarith
 
+/-! ### GP4 — small-data GLOBAL persistence: the sub-threshold basin
+
+The last provable piece of the epic. Including the low-mode damping term
+(dissipation acts on *every* mode with rate at least `ν·μ`, `μ = [1]_q² = 1` at
+worst), the low-mode step is `Ω_{n+1} ≤ Ω_n + δ·(cΩ_n² − νμΩ_n)`. For
+**sub-threshold data** `c·Ω₀ ≤ ν·μ` the quadratic production never exceeds the
+linear dissipation, so the enstrophy is non-increasing **for all time** — no
+horizon condition, no hypothesis on `ε`. This is the discrete in-QOU form of
+classical small-data global regularity.
+
+**The epic's final honest state:** local persistence for all finite data
+(GP3), global persistence for sub-threshold data (GP4). The sole remaining
+open item is **large-data global persistence** — exactly the classical
+local-vs-global dichotomy, reproduced in-QOU at the finite-dimensional
+low-mode block; named, not asserted. -/
+
+/-- **Small-data global persistence.** With the damped low-mode step
+    `Ω_{n+1} ≤ Ω_n + δ(cΩ_n² − νμΩ_n)` and sub-threshold data
+    `c·Ω₀ ≤ ν·μ`, the enstrophy never increases: `Ω_n ≤ Ω₀` for **every** `n`.
+    No horizon, no `ε` hypothesis — the discrete in-QOU small-data global
+    regularity statement. -/
+-- Ref: [manuscript] fluid-dynamics/q-ns-wellposedness, regularity-breakdown
+theorem global_persistence_subthreshold {δ c ν μ : K}
+    (hδ : 0 ≤ δ) (hc : 0 ≤ c)
+    (Ω : ℕ → K) (hnn : ∀ n, 0 ≤ Ω n)
+    (hstep : ∀ n, Ω (n + 1) ≤ Ω n + δ * (c * (Ω n) ^ 2 - ν * μ * Ω n))
+    (hsub : c * Ω 0 ≤ ν * μ) :
+    ∀ n, Ω n ≤ Ω 0 := by
+  intro n
+  induction n with
+  | zero => exact le_refl _
+  | succ n ih =>
+      have hstepn := hstep n
+      have hΩn := hnn n
+      -- c·Ω_n ≤ c·Ω₀ ≤ ν·μ, so the production−dissipation term is ≤ 0
+      have hcΩ : c * Ω n ≤ ν * μ :=
+        le_trans (mul_le_mul_of_nonneg_left ih hc) hsub
+      have hneg : c * (Ω n) ^ 2 - ν * μ * Ω n ≤ 0 := by nlinarith
+      have hδneg : δ * (c * (Ω n) ^ 2 - ν * μ * Ω n) ≤ 0 :=
+        mul_nonpos_of_nonneg_of_nonpos hδ hneg
+      linarith
+
+/-- **Small-data global finiteness.** Sub-threshold finite data stays finite at
+    every step, globally. -/
+-- Ref: [manuscript] fluid-dynamics/q-ns-wellposedness
+theorem global_finiteness_subthreshold {δ c ν μ : K}
+    (hδ : 0 ≤ δ) (hc : 0 ≤ c)
+    (Ω : ℕ → K) (hnn : ∀ n, 0 ≤ Ω n)
+    (hstep : ∀ n, Ω (n + 1) ≤ Ω n + δ * (c * (Ω n) ^ 2 - ν * μ * Ω n))
+    (hsub : c * Ω 0 ≤ ν * μ) (h0 : IsFinite (Ω 0)) :
+    ∀ n, IsFinite (Ω n) := by
+  intro n
+  obtain ⟨m, hm⟩ := h0
+  refine ⟨m, ?_⟩
+  have h1 : Ω 0 ≤ |Ω 0| := le_abs_self _
+  have h2 := global_persistence_subthreshold hδ hc Ω hnn hstep hsub n
+  rw [abs_of_nonneg (hnn n)]
+  linarith
+
 end QOU.FluidDynamics
