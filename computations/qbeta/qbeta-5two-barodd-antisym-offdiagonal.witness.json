@@ -1,0 +1,77 @@
+{
+  "engine": "python-decimal",
+  "engineVersion": "python 3.11",
+  "computedAt": "2026-07-25T19:20:29.158286+00:00",
+  "commitSha": "290cc75be0b9ee5feb3cb913fcc28308d8391432",
+  "assertions": [
+    {
+      "name": "iota_odd_flip",
+      "computed": 0.0,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-30,
+      "source": "ω(β⁻¹,q,p) = −ω(β,p,q) on committed block products (probe↔Lean BarOddAntisymOffDiagonal.omega_iota_odd tie)"
+    },
+    {
+      "name": "antisym_offdiag_is_bar_odd_home",
+      "computed": 1.8e-15,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-12,
+      "source": "N_odd = ½(N − Nᵀ): the committed antisymmetric assembly IS the block home of the ι-odd off-diagonal contraction"
+    },
+    {
+      "name": "bar_odd_home_is_anchor_smooth",
+      "computed": 4.558106199229388e-06,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 0.0001,
+      "source": "|Im Ẑ_odd(proton) − Im Ẑ_odd(muon)| / |Im Ẑ_odd(muon)| from committed A1 two-anchor data — the bar-odd HOME swing"
+    },
+    {
+      "name": "c3_swing_exceeds_barodd_home_swing",
+      "computed": 7612.810777832803,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 1000000000.0,
+      "source": "(c₃ cross-anchor swing 3.47%) / (bar-odd home swing): quantitative scope-(a) — the anchor-smooth bar-odd object cannot alone realize the percent-level c₃ swing"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "qbeta-5two-barodd-antisym-offdiagonal",
+  "scriptFile": "qbeta_5two_barodd_antisym_offdiagonal_probe.py",
+  "scriptHash": "632f7fd97c26",
+  "scriptCommitSha": "290cc75be0b9ee5feb3cb913fcc28308d8391432",
+  "precisionMetadata": {
+    "compute_dps": 60,
+    "output_dps": 30,
+    "note": "consumes committed A1/A2 witness data; no state-integral re-run"
+  },
+  "contentBlock": "prop:phi-b-unitary-bar-odd",
+  "description": "C1 (bean qou-jtii): the 5₂ bar-odd channel identified as the ι-ODD ANTISYMMETRIC OFF-DIAGONAL contraction ω(β,p,q)=β·p−β⁻¹·q of the block basis (from the A1-derived chirality split), the grade B1.2 (symmetric bilinear) and B1.3 (single span-vector) structurally missed. ι-odd flip verified on committed block products (probe↔Lean tie); antisymmetric-structure gate vs committed N_odd; and the decisive ANCHOR-SWING bound from committed A1 two-anchor data: the bar-odd home swings ~4.6 ppm across muon↔proton while c₃ swings ~3.47% — scope-(a), the correct object is anchor-smooth and cannot alone realize the swing. auditOnly; no fit; no c_k wired; consumes committed witnesses only (no re-run, no wide scan).",
+  "data": {
+    "iota_odd_flip": {
+      "beta": "0.01660634324080984569633929",
+      "p": "2.01064771115648",
+      "q": "-0.0858374218792571",
+      "omega": "5.20234335905385994722670506433852410173667396884886082136130",
+      "omega_iota": "-5.20234335905385994722670506433852410173667396884886082136130",
+      "residual": "0E-59"
+    },
+    "antisym_gate": {
+      "max_dev_vs_committed_Nodd": "1.8E-15",
+      "offdiag_02": "-1.04824256651786855",
+      "offdiag_20": "1.04824256651786855"
+    },
+    "anchor_swing": {
+      "barodd_home_swing": "0.00000455810619922938826214016059894858144594329828853253061177077",
+      "barodd_home_swing_ppm": 4.558106199229388,
+      "bareven_home_swing_ppm": 7.626260789944768,
+      "c3_cross_anchor_swing": "0.0347",
+      "ratio_c3_over_barodd": 7612.810777832803,
+      "anchor_pair": "muon q₀ vs proton q₀ (same pair as the c₃ swing)"
+    },
+    "verdict": "THE BAR-ODD CHANNEL IS THE ι-ODD ANTISYMMETRIC OFF-DIAGONAL CONTRACTION ω(β,p,q)=β·p−β⁻¹·q OF THE BLOCK BASIS (A1-derived), the provably-correct home B1.2 (symmetric bilinear) and B1.3 (single span-vector) structurally missed — both are ι-EVEN grades that cannot carry the ι-ODD ω (Lean: BarOddAntisymOffDiagonal, sorry-free). BUT ω is ANCHOR-SMOOTH: it swings 4.56 ppm across the muon↔proton anchors while c₃ swings ~3.47% (34700 ppm) — a 7613× mismatch. Scope-(a): the correct bar-odd algebraic object cannot, ALONE, realize the c₃ swing; any module-map successor that stays inside this (anchor-smooth) block/Habiro home inherits the ppm smoothness. The swing must come from the anchor-DEPENDENT meridian-holonomy deformation q₀↦u (the open link), not a smoother object choice. No fit; no c_k wired; comparison to observed only."
+  }
+}
