@@ -1,0 +1,9 @@
+---
+# qou-7gzm
+title: 'DONE (analysis): ComplexityDictionaryOptions.lean — trace=count(#P) native; SOUNDNESS provable (P≠NP⟹trace∉FP via JVW+Toda), FAITHFULNESS=wall (TraceFaithfulness no instance). 4 dictionary options tagged by rigor. Sorry-free'
+status: todo
+type: task
+created_at: 2026-07-25T11:14:36Z
+updated_at: 2026-07-25T11:14:36Z
+---
+
