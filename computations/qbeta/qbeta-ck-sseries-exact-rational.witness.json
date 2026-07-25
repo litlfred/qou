@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-07-03T11:24:32.851063+00:00",
-  "commitSha": "45676495cbb013a717c12ee84569a564d61df977",
+  "computedAt": "2026-07-25T02:50:59.129074+00:00",
+  "commitSha": "1e7a7c77c7d2f83bc85101f4429cfd7106d5b87c",
   "assertions": [
     {
       "name": "validate_delta_net",
@@ -30,11 +30,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 98,
+  "durationMs": 105,
   "computation": "qbeta-ck-sseries-exact-rational",
   "scriptFile": "qbeta_ck_sseries_exact_rational.py",
-  "scriptHash": "ac65a21d6684",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "a1dc45cb2537",
+  "scriptCommitSha": "e97fc42930f5618a2fd23b431971bf73ee313151",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -43,8 +43,10 @@
   },
   "environment": {
     "python": "3.11.15",
+    "numpy": "2.4.6",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "9fnm: exact Q(sqrt3)[[s]] series of the net-route (bar-even) ladder R = Qb/[QA cos(alpha_eff)]; exact c_2..c_4^even (replacing the numerically unstable mp.taylor route), exact odd-order structure of log R, and the 1jrh Casoratian W2 sign test against the bar-odd rungs (c2^odd=-1 proved, c3^odd~-2 near-match).",
   "data": {
