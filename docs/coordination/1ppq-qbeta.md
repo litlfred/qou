@@ -2569,3 +2569,30 @@ needs coefficient degree `≳ N²`, not `2N`. The earlier bound
 (`natDegree_ge_of_bridge_combined`, PR #4336) stands as a true but
 strictly weaker corollary; it is superseded, not retracted. No fit;
 nothing wired; no bridge claimed.
+
+**2026-07-26 (LITERATURE FINDING — reframes B1.x) — THE MASBAUM TAIL
+LIVES IN THE TRIVIAL-CONNECTION ROW OF THE *EXTENDED* MATRIX, WHICH THE
+3×3 GEOMETRIC BLOCK MATRIX DOES NOT CONTAIN.** A2's machinery (the 18
+H±_{j,λ}, the W±_m, the 3×3 B/A±/C±) is the GGM *Peacock patterns*
+object (arXiv:2012.00062), whose rows are indexed by the **geometric**
+boundary-parabolic SL₂(ℂ) flat connections σ₁,σ₂,σ₃ of 5₂. GGM+**Wheeler**
+(arXiv:2111.04763, CMP 2024) describe the trivial-connection resurgent
+structure via an **extended** matrix whose rows are indexed by those flat
+connections *including the trivial one* σ₀, with entries in generalized
+Habiro rings and the inverted Habiro series obtained from the cyclotomic
+expansion of the colored Jones. So the Masbaum tail is **by construction**
+a row the geometric sub-block does not contain — and B1.2 (0/440), B1.3
+(0/21), B1.4 (0/63), B1.4′ (0/165) were searching that sub-block. The
+uniform negatives are the expected signature, not a surprise. Nothing
+landed is invalidated: every negative was correctly scoped (a), and the
+`(q;q)_n²(q;q)_m³ ∣ c` floor + quadratic degree bound remain true theorems
+(now read as measuring the geometric block's distance from the trivial
+row). **The B1.5 target is superseded**: the σ₀ row is not a combination
+of geometric rows to be derived, it is an adjoined fundamental solution of
+the same q-difference equation. Next rung: compare the `C52`-built tail
+directly against GGMW's σ₀ row — a comparison to a published object, not a
+search over a self-assembled basis. Method lesson recorded: check the
+literature for the object's structure before scanning a basis you
+assembled. Full reading list + links:
+`docs/audits/2026-07-26-extended-matrix-trivial-connection-row.md`.
+No fit; nothing wired.
