@@ -138,6 +138,20 @@ noncomputable def sl2Basis : Module.Basis (Fin 3) R (sl (Fin 2) R) :=
     · exact Submodule.smul_mem _ _ (Submodule.subset_span ⟨1, by simp⟩)
     · exact Submodule.smul_mem _ _ (Submodule.subset_span ⟨2, by simp⟩)
 
+/-! ### `ad h` as an endomorphism — the eigenvector equations (`toMatrix` columns) -/
+
+/-- `ad h (h) = 0`. -/
+theorem sl2_ad_h_h : ad R (sl (Fin 2) R) (sl2H R) (sl2H R) = 0 := by
+  rw [LieAlgebra.ad_apply]; exact sl2_bracket_h_h R
+
+/-- `ad h (e) = 2e` — eigenvalue `2`. -/
+theorem sl2_ad_h_e : ad R (sl (Fin 2) R) (sl2H R) (sl2E R) = (2 : R) • sl2E R := by
+  rw [LieAlgebra.ad_apply]; exact sl2_bracket_h_e R
+
+/-- `ad h (f) = −2f` — eigenvalue `−2`. -/
+theorem sl2_ad_h_f : ad R (sl (Fin 2) R) (sl2H R) (sl2F R) = (-2 : R) • sl2F R := by
+  rw [LieAlgebra.ad_apply]; exact sl2_bracket_h_f R
+
 end SL2
 
 end QOU.Atomicity
