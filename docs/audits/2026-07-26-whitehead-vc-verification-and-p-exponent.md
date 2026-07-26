@@ -176,14 +176,28 @@ AJ form) and `r=3, W=4` *homogeneous* (the order-3 annihilator) both CERTIFIED. 
 machinery provably finds a real knot's q-difference recurrence once the tower reaches
 sufficient N.
 
-**The one remaining Whitehead-specific step** is the **even-p (2-bridge *link*) analogue**
-of Takata's formula for `b(8,3)` (p=8 even ⇒ 2 components; Takata's Theorem 1 is stated for
-odd p / knots). It must be either (i) taken from a 2-bridge-*link* / double-twist-link
-colored-Jones reference, or (ii) derived from the Schubert state sum for the even-p closure
-and **cross-validated against the O(N³) R-matrix engine at small N** before its high-N
-output is trusted (§formalize-first / anti-guessing — a wrong even-p adaptation would
-silently yield a wrong recurrence). With that in hand, the *validated* hunt yields the
-Whitehead diagonal recurrence → `J_red` → `c_{σ_geom}(q=1)`.
+**The one remaining Whitehead-specific step — the even-p (2-bridge *link*) formula — is
+confirmed to require a source Takata's paper does not provide.** Takata's Theorem 1 is
+built on `p' = (p−1)/2` (Schubert normal form); *every* index (`r(j)`, `σ_j = (−1)^{[(2j−1)t/p]}`,
+`i_{r'(j)}`, the product `∏_{j=1}^{p'}`, the sum bounds) runs over `1..p'`. For the two
+2-bridge **links** this is non-integer and the formula does not instantiate:
+
+| 2-bridge | object | `p' = (p−1)/2` |
+|---|---|---|
+| b(5,2)/b(5,3) | 4₁ (knot) | 2 ✓ |
+| b(7,3) | 5₂ (knot) | 3 ✓ |
+| **b(8,3)** | **Whitehead (link)** | **3.5 — does not instantiate** |
+| b(2,1) | Hopf (link) | 0.5 — does not instantiate |
+
+So Takata's formula is intrinsically the *odd-p / knot* case. The Whitehead link needs the
+**even-p link analogue** — the same R-matrix Schubert state sum with `p` even ⇒ two
+components ⇒ `p'` and the `(q̄)_{n-1}` normalization changed for a 2-component closure. This
+is a genuine derivation (or a 2-bridge-*link* / double-twist-link reference — Nagasato,
+Lauridsen, or the link case of Hikami), **not** an ansatz-fit: the ansatz space (quadratic
+exponent + Pochhammer arguments + sign data over 3 twist regions of [2,1,2]) is too large to
+trust a small-N match as *the* formula rather than an overfit (§anti-guessing). Once it is
+in hand and **cross-validated against the O(N³) R-matrix engine at small N**, the
+*validated* hunt yields the Whitehead diagonal recurrence → `J_red` → `c_{σ_geom}(q=1)`.
 
 **Two conflation cautions (not asserted as identities).** (i) The flat-connection index
 `σ` is *not* the Wedderburn partition index `λ` of `tr_M = Σ_λ y_λ χ^λ` — geometric
