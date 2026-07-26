@@ -110,7 +110,8 @@ downstream result depending on it is a *rigorous conditional* (proved modulo thi
 never an unconditional claim.
 
 -- Ref: [manuscript] rank G = rank Lie(G); see file docstring for standard references. -/
-class RankGroupEqRankLie (R L G : Type*) [CommRing R] [LieRing L] [LieAlgebra R L]
+class RankGroupEqRankLie (R L G : Type*) [CommRing R] [Nontrivial R] [LieRing L]
+    [LieAlgebra R L] [Module.Finite R L] [Module.Free R L]
     [AlgebraicGroupRank G] : Prop where
   /-- The genuine content: the algebraic-group rank equals the Lie-algebra rank.
       This is the open premise. -/
@@ -122,7 +123,8 @@ class RankGroupEqRankLie (R L G : Type*) [CommRing R] [LieRing L] [LieAlgebra R 
 class `RankGroupEqRankLie R L G`) and the Lie-algebra rank is `≤ n`, then the group rank
 is `≤ n`. Fully proved modulo the class — a rigorous conditional. The Lie-rank bound
 `hLie` is the input the Lie-side development supplies. -/
-theorem groupRank_le_of_lieRank_le {R L G : Type*} [CommRing R] [LieRing L] [LieAlgebra R L]
+theorem groupRank_le_of_lieRank_le {R L G : Type*} [CommRing R] [Nontrivial R] [LieRing L]
+    [LieAlgebra R L] [Module.Finite R L] [Module.Free R L]
     [AlgebraicGroupRank G] [RankGroupEqRankLie R L G] {n : ℕ}
     (hLie : LieAlgebra.rank R L ≤ n) :
     groupRank G ≤ n := by
@@ -142,9 +144,35 @@ as an explicit hypothesis to keep this file decoupled from that in-flight branch
 is a conditional result, not a closure of atomicity on the group side. -/
 theorem atomicity_group_rank_le_one {K G : Type*} [Field K]
     [AlgebraicGroupRank G] (𝔤 : Type*) [LieRing 𝔤] [LieAlgebra K 𝔤]
+    [Module.Finite K 𝔤] [Module.Free K 𝔤]
     [RankGroupEqRankLie K 𝔤 G]
     (hLie : LieAlgebra.rank K 𝔤 ≤ 1) :
     groupRank G ≤ 1 :=
   groupRank_le_of_lieRank_le hLie
+
+/-- **Exact group rank (conditional).** If `rank G = rank Lie(G)` and the Lie-algebra
+rank is exactly `n`, then the group rank is exactly `n`. The equality-direction companion
+of `groupRank_le_of_lieRank_le`; a direct rewrite by the class field. Fully proved modulo
+the class. -/
+theorem groupRank_eq_of_lieRank_eq {R L G : Type*} [CommRing R] [Nontrivial R] [LieRing L]
+    [LieAlgebra R L] [Module.Finite R L] [Module.Free R L]
+    [AlgebraicGroupRank G] [RankGroupEqRankLie R L G] {n : ℕ}
+    (hLie : LieAlgebra.rank R L = n) :
+    groupRank G = n := by
+  rw [RankGroupEqRankLie.rank_group_eq_rank_lie (R := R) (L := L)]
+  exact hLie
+
+/-- **Atomicity exact group rank (conditional).** For `G` whose Lie algebra is a subalgebra
+`𝔤 ⊆ 𝔰𝔩₂`, *if* `rank G = rank Lie(G)` then `rank G = 1`. Fed the landed exact Lie-side
+value `LieAlgebra.rank K 𝔤 = 1` (discharged sorry-free by
+`QOU.Atomicity.sl2_rank_eq_one`, PR #4285, threaded here as a hypothesis). The
+group-rank premise `RankGroupEqRankLie K 𝔤 G` is **OPEN**; only this implication is proved. -/
+theorem atomicity_group_rank_eq_one {K G : Type*} [Field K]
+    [AlgebraicGroupRank G] (𝔤 : Type*) [LieRing 𝔤] [LieAlgebra K 𝔤]
+    [Module.Finite K 𝔤] [Module.Free K 𝔤]
+    [RankGroupEqRankLie K 𝔤 G]
+    (hLie : LieAlgebra.rank K 𝔤 = 1) :
+    groupRank G = 1 :=
+  groupRank_eq_of_lieRank_eq hLie
 
 end QOU.Atomicity
