@@ -67,6 +67,21 @@ def hookSum (l : List ℕ) : ℕ :=
 def nLambda (l : List ℕ) : ℕ :=
   ((List.range l.length).map (fun i => i * l.getD i 0)).sum
 
+/-- Sum of squared hook lengths `Σ_□ h(□)²`. -/
+def hookSqSum (l : List ℕ) : ℤ :=
+  let cj := conj l
+  ((List.range l.length).map (fun i =>
+    let li := l.getD i 0
+    ((List.range li).map (fun j => (((li + cj.getD j 0 - j - i - 1 : ℕ)) : ℤ) ^ 2)).sum)).sum
+
+/-- `(k!)²`-scaled Plancherel covariance `(k!)²·Cov_Planch(X, Y)` of two `λ`-statistics at level `k`,
+kept over `ℤ` (the `dim²/k!` Plancherel weights cleared to integers):
+`k!·Σ_λ (f^λ)² X(λ)Y(λ) − (Σ_λ (f^λ)² X(λ))(Σ_λ (f^λ)² Y(λ))`. -/
+def scaledCov (k : ℕ) (X Y : List ℕ → ℤ) : ℤ :=
+  (Nat.factorial k : ℤ) * ((partsOf k).map (fun l => (sytDim l : ℤ) ^ 2 * X l * Y l)).sum
+    - ((partsOf k).map (fun l => (sytDim l : ℤ) ^ 2 * X l)).sum
+      * ((partsOf k).map (fun l => (sytDim l : ℤ) ^ 2 * Y l)).sum
+
 /-- The elementary content form of the covariance kernel value at level `k`:
 `Σ_{λ ⊢ k} (f^λ)³ · (Σ_□ c(□)² − C(k,2))`. -/
 def kernelValue (k : ℕ) : ℤ :=
@@ -201,6 +216,20 @@ Plancherel measure together with the conjugation-symmetry of `contentSq`
 to `2·Cov_Planch(n_λ, Σc²)`. -/
 theorem hookSum_eq_nLambda_add_conj_add_card_of_le_seven (k : ℕ) (hk : k ≤ 7) :
     ∀ l ∈ partsOf k, hookSum l = nLambda l + nLambda (conj l) + l.sum := by
+  interval_cases k <;> decide
+
+/-- **First-odd-moment transpose identity** (Lean-verified, `k ≤ 5`, `decide`), the `(k!)²`-scaled form
+of `M₁ = Cov_Planch(Σ_□ h, Σ_□ h²) = 2·Cov_Planch(n_λ, Σ_□ c²)`:
+`scaledCov k (Σh) (Σh²) = 2·scaledCov k n_λ (Σc²)`. This is the odd-`k=1` companion of the *even*-moment
+result: unlike the even moments (exact polynomials, positivity proved — `threeM4_pos`, `M6_pos`), `M₁`
+is non-polynomial, but the hook-sum decomposition (`hookSum_eq_nLambda_add_conj_add_card_of_le_seven`)
+together with Plancherel transpose-invariance collapses it to twice a *content*-spread covariance
+`Cov_Planch(n_λ, Σc²)` — the same difficulty class as the open kernel `Cov_Planch(f^λ, Σc²) ≤ 0`. The
+identity is verified computationally to `n ≤ 14` (`wlambda_covariance_epic_A2_odd_moment_structure.py`);
+this `decide` machine-checks it over the full partition/dimension machinery for `k ≤ 5`. -/
+theorem m1_transpose_identity_scaled_of_le_five (k : ℕ) (hk : k ≤ 5) :
+    scaledCov k (fun l => (hookSum l : ℤ)) hookSqSum
+      = 2 * scaledCov k (fun l => (nLambda l : ℤ)) contentSq := by
   interval_cases k <;> decide
 
 /-! ## Even hook-power moment positivity (proved)
