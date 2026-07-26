@@ -1,0 +1,52 @@
+# Coordination — attack on the SDeformedVolumeChannel keystone (post-#3773)
+
+**Goal.** Reduce the open surface of `conj:binding-qbeta-complex-volume`'s
+S-channel, landed in #3773 as the abstract §3b class
+`QOU.QBeta.PhiBSArgumentIdentification.SDeformedVolumeChannel S` (fields:
+`u : ℝ → ℂ`, `V : ℂ → ℂ`, `S_eq : ∀ q₀>1, S q₀ = (V (u q₀)).im`). The
+docstring flags `V` (the figure-eight deformed complex volume
+`𝔙(u)=Vol(u)+i·CS(u)`) as *"a theorem for 4₁ (Ohtsuki; Murakami–Yokota),
+explicitly computable via Neumann–Zagier"* — yet it is carried as an
+**abstract field**. Making `V` **concrete** turns the conjecture's open
+surface from three unknowns (`u`, `V`, `S_eq`) into two (`u(q₀)`, `S_eq`).
+
+## Existing corpus infra to BUILD ON (do not reinvent — corpus-grep 2026-07-26)
+
+| File | What it gives |
+|---|---|
+| `QOU/Knot/CuspShapeBarParity.lean` | the **exact `𝔙 = Vol + i·CS` split**: 4₁ cusp shape `ω=e^{iπ/3}` (root of `Φ₆=z²−z+1`), bar-even `ω+ω⁻¹=1` (Vol side), bar-odd `ω−ω⁻¹=2ω−1`, `(bar-odd)²=−3` (CS/Im axis, trace field ℚ(√−3)) |
+| `QOU/Knot/NeumannZagierParity.lean` | **`CVol(u)` is EVEN in `u`** (`CVol(u)=Vol(0)−(τ/4)u²+…`, no odd/`u³` rung; class `NeumannZagierEvenPotential`, `no_odd_rung` proved) |
+| `QOU/Knot/FigureEightDeformedMeridianWinding.lean` | the deformed **log meridian holonomy** `meridian(a,k)=a−2πk·i` |
+| `QOU/Knot/{FigureEightVolume,Clausen,ClausenValueBounds}.lean`, `QOU/Archimedean/BlochWignerUnitCircle.lean` | `Vol(4₁)=2Cl₂(π/3)≈2.0299` value + Bloch–Wigner on the unit circle |
+
+## The two targets
+
+- **T1 (qou-6s8k, formalize-first).** Assemble the explicit
+  `V₄₁ : ℂ → ℂ`, `V₄₁(u) = Vol(u)+i·CS(u)`, from the pieces above (the
+  Neumann–Zagier deformed potential of the figure-eight; `V₄₁(0)` matches the
+  complete-structure value `2Cl₂(π/3)` on the Vol axis). Prove its
+  complete-structure value + the `NeumannZagierParity` even-ness. Deliverable:
+  a concrete `def V₄₁` that can instantiate `SDeformedVolumeChannel.V`,
+  reducing the class to `{u, S_eq}`. Sorry-free or honest named residual.
+
+- **T2 (qou-fook, probe).** With `V₄₁` explicit, test the channel identity
+  `S = Im 𝔙(u(q₀))` numerically: can it reproduce the **sign-flipping**
+  bar-odd leak `S(muon)≈+0.00968 > 0 > S(proton)≈−0.03946` under #3773's
+  surviving `u(q₀)` constraint (one component crosses 0 linearly at `q*`, the
+  other anchor-constant)? **Structural caveat (from `NeumannZagierParity`):**
+  the classical `𝔙(u)` is even in `u`; the sign-flip must come from the
+  *complex* meridian `u=a−2πk·i` (varying real part `a`), NOT from an odd
+  geometric coefficient (the `u³` route is scope-(b) excluded). Classify the
+  outcome honestly: `derived` / `structural-partial` / `numerical-coincidence`
+  / `no-match` (scope-(a) vs (b)).
+
+## Discipline
+
+Formalize-first; anti-fit (`V₄₁` is the *literature* Neumann–Zagier function,
+never a fitted form); anti-laundering (no instance of the keystone classes is
+fabricated — making `V` concrete is not the same as proving `S_eq` or `u(q₀)`;
+those stay open). If T2 shows `S=Im 𝔙` cannot sign-flip under the constraint,
+that is an honest **scope-(b) refutation of the channel identity as stated**
+(cite the invariant), a real result — record it, do not bury it.
+
+Beans: milestone `qou-o93x`; T1 `qou-6s8k`; T2 `qou-fook`.
