@@ -80,6 +80,7 @@ export default chapter({
             "h3-hecke-idempotents",
             "coxeter-strong-exchange",
             "coxeter-parabolic-transversal",
+            "coxeter-tits-residue-collapse",
             "tau-assignment-tower-square",
             "braid-link-types",
           ],
