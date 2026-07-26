@@ -50,3 +50,22 @@ that is an honest **scope-(b) refutation of the channel identity as stated**
 (cite the invariant), a real result — record it, do not bury it.
 
 Beans: milestone `qou-o93x`; T1 `qou-6s8k`; T2 `qou-fook`.
+
+## Outcome (2026-07-26)
+
+**T1 landed.** [`QOU/Knot/FigureEightComplexVolume.lean`](../../content/quantum-observable-universe/lean/QOU/Knot/FigureEightComplexVolume.lean)
+— concrete `V₄₁(u) = Vol(4₁) + i·(√3/4)·u²` (NZ leading form), lean-verify exit 0
+sorry-free. `V₄₁_zero_re` (= 2·Cl₂(π/3), exact), `V₄₁_even`, `imV₄₁`
+(`Im 𝔙₄₁ = (√3/4)(Re²u−Im²u)`), and the T2 invariants. Class open surface reduced
+`{u,V,S_eq}` → `{u,S_eq}`; no instance fabricated.
+
+**T2 verdict: structural-partial.** Probe
+[`sdeformed_channel_signflip_probe.py`](../../computations/probes/sdeformed_channel_signflip_probe.py)
+exit 0. The rigorous A-polynomial cusp modulus `τ = −i√3` (purely imaginary) ⇒
+`a₂` purely imaginary ⇒ `Im 𝔙₄₁ = κ(Re²u−Im²u)` vanishing on the **diagonals**
+`|Re u|=|Im u|`, **not** the axes — correcting the heuristic `√3·Re·Im` form the
+#3773 F3 survivor was built on. Against the corrected form **F3 is refuted**
+(scope-(b): `S = κ((k·d)²−c₀²)` is even in `d`, same sign at both anchors). The
+channel itself is **not** excluded but requires `u(q₀)` to **cross the diagonal**
+between anchors (`Re²u−Im²u`: +ve muon, −ve proton). `u(q₀)` stays open. Full
+record: [`docs/audits/2026-07-26-sdeformed-channel-signflip.md`](../audits/2026-07-26-sdeformed-channel-signflip.md).
