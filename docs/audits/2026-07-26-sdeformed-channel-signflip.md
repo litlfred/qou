@@ -177,6 +177,18 @@ even-in-`d` sign exclusions; the surviving object is the diagonal-crossing law
 already proved in `FigureEightComplexVolume.lean` — `signflip_forces_diagonal_cross`,
 `f3_re_linear_same_sign`). No Lean was edited in the probe-correction commits.
 
+**RESOLVED (2026-07-26, PR #4384).** `UDeformFamilyPruning.lean` was rewritten
+exactly as recommended: it now feeds the family components through the concrete
+`V₄₁` (`familyIm x y = (V₄₁ ⟨x,y⟩).im = (√3/4)(x²−y²)` via `imV₄₁`), and the wrong
+`nzLeading = √3·x·y` def + the contradicted `cubic_ratio_law` /
+`linear_family_eq` / `linear_family_sign_flip` / `hasDerivAt_linear_family` are
+gone. F1/F2/F3 are all refuted as even-in-`d` sign exclusions
+(`fixed_phase_family_excluded`, `phase_crossing_family_excluded`,
+`transverse_const_family_excluded`), and the survivor is
+`signflip_requires_diagonal_cross` (reusing `signflip_forces_diagonal_cross`).
+lean-verify exit 0, sorry-free; no removed decl is referenced elsewhere. The
+`binding-qbeta-complex-volume.md` prose was corrected in the same PR.
+
 ## Cross-references
 - Coordination: [`keystone-sdeformedvolume-channel-attack.md`](../coordination/keystone-sdeformedvolume-channel-attack.md)
 - Keystone Lean: [`PhiBSArgumentIdentification.lean`](../../content/quantum-observable-universe/lean/QOU/QBeta/PhiBSArgumentIdentification.lean)
