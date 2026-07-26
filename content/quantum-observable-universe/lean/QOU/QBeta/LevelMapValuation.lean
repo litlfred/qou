@@ -143,6 +143,27 @@ theorem sub_one_pow_dvd_coeff_combined (q : S) {Cn c num : S}
   exact ⟨w * (v⁻¹ : Sˣ), by
     rw [← mul_assoc, ← hw, ← hv, mul_assoc, Units.mul_inv, mul_one]⟩
 
+/-- **The full-product constraint — strictly stronger than the
+`(1 − q)`-adic one.** The `(1 − q)^{2n+3m}` bound above only reads off
+the vanishing at `q = 1`; but the *entire* Pochhammer product divides
+the coefficient. Since
+`(q;q)_k = ∏_d Φ_d^{⌊k/d⌋}` ranges over every cyclotomic factor, this
+captures the constraint at **every** root of unity at once, not just at
+`q = 1`.
+
+Its degree consequence is quadratic rather than linear
+(`natDegree_ge_quadratic`), which shrinks the reachable region from
+`O(D²)` pairs to `O(D)`. -/
+theorem qPoch_prod_dvd_coeff (q : S) {Cn c num : S} (hu : IsUnit num)
+    (n m : ℕ) (h : Cn * qPochC q n ^ 2 * qPochC q m ^ 3 = c * num) :
+    qPochC q n ^ 2 * qPochC q m ^ 3 ∣ c := by
+  have h2 : qPochC q n ^ 2 * qPochC q m ^ 3 ∣ c * num :=
+    ⟨Cn, by rw [← h]; ring⟩
+  obtain ⟨v, hv⟩ := hu
+  obtain ⟨w, hw⟩ := h2
+  exact ⟨w * (v⁻¹ : Sˣ), by
+    rw [← mul_assoc, ← hw, ← hv, mul_assoc, Units.mul_inv, mul_one]⟩
+
 end CommRingCase
 
 section FieldCompat
@@ -221,6 +242,70 @@ theorem natDegree_unbounded_of_all_levels
   refine ⟨D + 1, ?_⟩
   have := natDegree_ge_of_bridge_combined (hu (D + 1)) (D + 1) (mm (D + 1))
     (hc (D + 1)) (h (D + 1))
+  omega
+
+/-- `1 − X^{k+1}` has degree `k+1`. -/
+lemma natDegree_one_sub_X_pow_succ (k : ℕ) :
+    ((1 : ℤ[X]) - X ^ (k + 1)).natDegree = k + 1 := by
+  compute_degree!
+
+lemma one_sub_X_pow_succ_ne_zero (k : ℕ) : ((1 : ℤ[X]) - X ^ (k + 1)) ≠ 0 := by
+  intro h
+  have hd := natDegree_one_sub_X_pow_succ k
+  rw [h] at hd
+  simp at hd
+
+lemma qPochC_succ_eq (n : ℕ) :
+    qPochC (X : ℤ[X]) (n + 1) = qPochC X n * (1 - X ^ (n + 1)) := by
+  simp only [qPochC, Finset.prod_range_succ]
+
+lemma qPochC_ne_zero (n : ℕ) : qPochC (X : ℤ[X]) n ≠ 0 := by
+  induction n with
+  | zero => simp [qPochC]
+  | succ n ih =>
+    rw [qPochC_succ_eq]
+    exact mul_ne_zero ih (one_sub_X_pow_succ_ne_zero n)
+
+/-- `deg (q;q)_n = n(n+1)/2`, stated doubled to stay in `ℕ`. -/
+lemma natDegree_qPochC (n : ℕ) :
+    2 * (qPochC (X : ℤ[X]) n).natDegree = n * (n + 1) := by
+  induction n with
+  | zero => simp [qPochC]
+  | succ n ih =>
+    rw [qPochC_succ_eq,
+        Polynomial.natDegree_mul (qPochC_ne_zero n)
+          (one_sub_X_pow_succ_ne_zero n),
+        natDegree_one_sub_X_pow_succ]
+    have hexp : (n + 1) * (n + 1 + 1) = n * (n + 1) + 2 * (n + 1) := by ring
+    rw [hexp, ← ih]
+    ring
+
+/-- **The quadratic degree bound.** A nonzero coefficient joining
+Masbaum level `n` to block level `m` satisfies
+
+`2·deg c ≥ 2n(n+1) + 3m(m+1)`,
+
+i.e. `deg c ≥ n(n+1) + 3m(m+1)/2` — **quadratic in both indices**, not
+linear. This supersedes `natDegree_ge_of_bridge_combined` (whose
+`2n+3m` reads only the `q = 1` vanishing); the full Pochhammer product
+carries every cyclotomic factor.
+
+Consequence: the reachable region under a degree budget `D` shrinks
+from `O(D²)` pairs to `O(D)` — `n ≲ √D` and `m ≲ √(2D/3)`. -/
+theorem natDegree_ge_quadratic {Cn c num : ℤ[X]} (hu : IsUnit num)
+    (n m : ℕ) (hc : c ≠ 0)
+    (h : Cn * qPochC X n ^ 2 * qPochC X m ^ 3 = c * num) :
+    2 * (n * (n + 1)) + 3 * (m * (m + 1)) ≤ 2 * c.natDegree := by
+  have hdvd := qPoch_prod_dvd_coeff X hu n m h
+  have hne : (qPochC (X : ℤ[X]) n ^ 2 * qPochC (X : ℤ[X]) m ^ 3) ≠ 0 :=
+    mul_ne_zero (pow_ne_zero _ (qPochC_ne_zero n))
+      (pow_ne_zero _ (qPochC_ne_zero m))
+  have hle := Polynomial.natDegree_le_of_dvd hdvd hc
+  rw [Polynomial.natDegree_mul (pow_ne_zero _ (qPochC_ne_zero n))
+        (pow_ne_zero _ (qPochC_ne_zero m)),
+      Polynomial.natDegree_pow, Polynomial.natDegree_pow] at hle
+  have hn := natDegree_qPochC n
+  have hm := natDegree_qPochC m
   omega
 
 end DegreeBound
