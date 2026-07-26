@@ -424,3 +424,24 @@ cluster integrals (`pyhecke_native` present) but requiring the residual
 `AdditiveResidualSimplex.lean` sorry-free (deuteron refutation + μ₂=0 + exact
 0-param solve). Audit `2026-07-26-deltalambda-interface-operator-kappa.md`. No fit,
 nothing wired.
+
+**2026-07-26 — the μ₄ redirect (ρ_F cluster integrals) WALLS on the 3-body sign;
+4-body sign-consistent but not derived.** (PR #4354,
+`claude/deltalambda-mu4-rhoF-cluster-2026-07-26`.) Followed the #4320 redirect:
+compute the DERIVED (0-fit, q₀-only) ρ_F cluster integrals and test against
+μ₃=+0.4708, μ₄=−4.591. **Infra NOT gated** (`pyhecke_native` 0.9.0 functional; the
+connected 3-body cluster is cached 0-fit at `three-body-joint-trace-a3.witness.json`).
+Key decomposition: **μ_k = s_k − g_k** with `g_k` the DERIVED graded simplex coeffs
+(g₂=1, g₃=0.342, **g₄=+8.371**) and `s_k` the AME target — so **μ₄<0 is dominated by
+the derived g₄ subtraction, NOT an ρ_F cluster**. Derived ρ_F 3-body cluster
+**c₃<0** (⟨T,³He⟩=−1.59 MeV, H₉ joint trace); derived 4-body beyond-pairwise **c₄<0**.
+**Sign gate (normalization-free):** μ₃>0 ≠ c₃<0 → **WALL**; μ₄<0 sign-consistent with
+c₄<0. A single N>0 cannot map same-sign (c₃,c₄) to opposite-sign (μ₃,μ₄); no
+0–1-param derivation lands both. **Lean-proved scope-(b):** `productModel_3body_nonpos`
++ `markovParam_le_half` (z≤½<1 ∀q>0) ⇒ NO pairwise interface product gives a positive
+3-body cluster. So the multiplicative ρ_F cluster route **cannot** supply μ₃ — the
+standing open door is a **non-multiplicative / enhancing (f>1) cluster operator** (the
+3-body cluster *sign*, not its ~1.5 MeV scale, is the open question). Lean
+`Mu4RhoFCluster.lean` (hand-audited; lean-direct blocked by pruned lake-cache +
+disk ENOSPC). Audit `2026-07-26-deltalambda-mu4-rhoF-cluster.md`. No fit, nothing
+wired.
