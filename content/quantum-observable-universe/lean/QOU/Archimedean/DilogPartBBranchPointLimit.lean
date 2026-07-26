@@ -23,6 +23,18 @@ never the lower bound; `1 − xqⁿ` is governed by `frac(log_q(1/x))`, which
 oscillates, so the limit holds only under a Faddeev-scaling / Diophantine
 no-resonance hypothesis on `x` — analytic number theory, not a brick.
 
+**Joint vs. iterated (coordination).**  The limit studied here is the *joint*
+(diagonal) limit: a single sequence with `q → 1⁺` **and** `x qⁿ → 1⁻`
+simultaneously.  That joint limit is false in general (the resonances above), and
+this file proves it *holds* exactly on the badly-approximable class — culminating
+in `wp1_tendsto_expNeg_of_fractBound` / `…_quadratic` / `…Sqrt`, unconditional for
+`x = e^{−β}` with `β` any quadratic irrational.  The companion module
+`QOU.Archimedean.DilogPartBIteratedLimit` closes W-P1 in the *weaker iterated*
+sense — inner `q → 1⁺` at fixed `ρ`, then outer `ρ → 1⁻` — with **no** Diophantine
+input.  The two are complementary: iterated is unconditional but weaker; the joint
+limit here is stronger but needs (and, on the quadratic-irrational class, gets) the
+Diophantine bound.
+
 Accordingly this file provides the two *honest* pieces:
 
 * `wp1_tendsto_of_boundary` — the full assembly `(1−q)Σ log(1−xqᵏ) → π²/6 − Li₂(x)`
