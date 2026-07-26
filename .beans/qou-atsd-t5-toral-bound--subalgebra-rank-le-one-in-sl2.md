@@ -73,3 +73,19 @@ TIER-B ASSEMBLY (all Mathlib-supported): H nilpotent subalgebra of 𝔤⊆𝔰�
   non_trivial_center_of_isNilpotent ⇒ ∃ X∈Z(H), X≠0 ⇒ H ⊆ ker(ad_𝔰𝔩₂ X) ⇒ finrank H ≤ 1.
   rank 𝔤 = finrank(engel_𝔤 x*) [engel of regular = Cartan, nilpotent] ⇒ rank 𝔤 ≤ 1.
 STATUS: math complete + API pinned; NOT transcribed/verified (blind ~2.5min compile loop, lsp down).
+
+--- LANDED 2026-07-26 (#4285, AtomicityLieRank.lean, all sorry-free, lean-direct exit 0) ---
+- sl2_ker_ad_le_span (KEYSTONE): ker(ad X) ≤ K∙X for X ≠ 0 — the hard core; cross-product /
+  pivot-case-split coordinate proof, exactly as the worked proof above.
+- sl2_centralizer_finrank_le_one: finrank(ker(ad X)) ≤ 1 for X ≠ 0.
+- sl2_finrank_le_one_of_central: subalgebra A ⊆ 𝔰𝔩₂ with a nonzero element central in A has
+  finrank A ≤ 1 (the Tier-B bridge).
+- sl2_abelian_finrank_le_one: abelian subalgebra of 𝔰𝔩₂ (Nontrivial) has finrank ≤ 1.
+
+REMAINING (final wiring only — the hard math is done): rank 𝔤 ≤ 1 for 𝔤 ⊆ 𝔰𝔩₂.
+Chain: rank 𝔤 = finrank(engel_𝔤 x*) at 𝔤-regular x* [isRegular_iff_finrank_engel_eq_rank, Infinite K];
+engel_𝔤 x* is a nilpotent Cartan [IsCartanSubalgebra ⇒ LieRing.IsNilpotent];
+non_trivial_center_of_isNilpotent ⇒ ∃ nonzero central X ∈ engel_𝔤 x*;
+X central ⇒ ∀ y ∈ (engel viewed in 𝔰𝔩₂), ⁅X,y⁆=0 ⇒ sl2_finrank_le_one_of_central ⇒ finrank ≤ 1.
+Plumbing risk: engel_𝔤 as a LieSubalgebra of 𝔰𝔩₂ (sub-of-sub), center-element coercion, the
+∀ y ∈ A hypothesis across the inclusion. Consumer plumbing on the landed bridge, not new math.
