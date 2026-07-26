@@ -162,14 +162,28 @@ container reclaims before it clears **N ≈ 14–16**. Concretely, at Nmax=10 ev
 is `insufficient-N` and even the **known 4₁ recurrence is not recovered** — the calibration
 confirming the reach is the binding constraint, not the mathematics.
 
-**The unblock is therefore specific and non-negotiable: a 2-bridge `b(8,3)` `O(N²)`
-transfer-matrix colored-Jones engine** (the Whitehead is 2-bridge), validated against the
-existing `O(N³)` engine at small N, reaching `N ≈ 40`. Only then does the tower feed a
-recurrence fit whose window a real q-holonomic operator can occupy — after which the GGMW
-`J_red` top-row-at-`q=1` reads off `c_{σ_geom}`. (Building that engine from a *derived*
-plat/continued-fraction structure — not a remembered closed form — is the next unit of
-work; per §formalize-first / anti-guessing it must be cross-validated against the O(N³)
-engine before its high-N output is trusted.)
+**The unblock is a fast 2-bridge colored-Jones formula.** Takata's *A Formula for the
+Colored Jones Polynomial of 2-Bridge Knots* (KMJ 48 (2008) 255; `uploads/KMJ-48-2-255.pdf`)
+supplies it: Corollary 5 eq(14) is an **O(n²) nested q-hypergeometric sum**. At p₁=1 it is
+`S(5,3) = 4₁` — implemented in
+[`takata_fig8_recurrence_hunt.py`](../../computations/takata_fig8_recurrence_hunt.py) and
+**validated** (`J(2)=q²−q+1−q⁻¹+q⁻²` = the 4₁ Jones polynomial; bar-symmetric; root growth
+→ Vol(4₁)). At n≈60 it is instant, vs the O(N⁹) R-matrix's n≈14 ceiling.
+
+**Pipeline validated end-to-end (2026-07-26).** Fed that fast tower, the mod-p nullspace
+certificate **recovers the known 4₁ recurrence**: `r=2, W=4` *inhomogeneous* (the order-2
+AJ form) and `r=3, W=4` *homogeneous* (the order-3 annihilator) both CERTIFIED. So the hunt
+machinery provably finds a real knot's q-difference recurrence once the tower reaches
+sufficient N.
+
+**The one remaining Whitehead-specific step** is the **even-p (2-bridge *link*) analogue**
+of Takata's formula for `b(8,3)` (p=8 even ⇒ 2 components; Takata's Theorem 1 is stated for
+odd p / knots). It must be either (i) taken from a 2-bridge-*link* / double-twist-link
+colored-Jones reference, or (ii) derived from the Schubert state sum for the even-p closure
+and **cross-validated against the O(N³) R-matrix engine at small N** before its high-N
+output is trusted (§formalize-first / anti-guessing — a wrong even-p adaptation would
+silently yield a wrong recurrence). With that in hand, the *validated* hunt yields the
+Whitehead diagonal recurrence → `J_red` → `c_{σ_geom}(q=1)`.
 
 **Two conflation cautions (not asserted as identities).** (i) The flat-connection index
 `σ` is *not* the Wedderburn partition index `λ` of `tr_M = Σ_λ y_λ χ^λ` — geometric
