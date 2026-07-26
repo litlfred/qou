@@ -212,9 +212,14 @@ theorem signflip_forces_diagonal_cross {u₁ u₂ : ℂ}
     long as the linear excursion stays below the constant, `(k·d)² < c₀²`, the CS
     part is NEGATIVE. Hence at two anchors both with `(k·dᵢ)² < c₀²` the sign is
     the SAME (both negative): F3 keeps both on the same side of the diagonal and
-    provably cannot reproduce the sign flip. (The mirror sub-case, `Re = a₀`
+    cannot reproduce the sign flip. (The mirror sub-case, `Re = a₀`
     const and `Im = k·d`, is `imV₄₁_pos_iff` with the roles swapped — both
-    positive.) -/
+    positive.) This lemma is the small-excursion building block; the fully
+    robust F3 refutation (not assuming `(k·dᵢ)²<c₀²`, but respecting the pinned
+    product-slope) is the `c₀`-incompatibility argument (`c₀ < c_mu* ≈ 0.0748`
+    AND `c₀ > c_pr* ≈ 0.1509` simultaneously — impossible) in
+    `sdeformed_channel_signflip_probe.py` + the 2026-07-26 audit; the conclusion
+    (F3 cannot reproduce the measured μ>0>p flip) is the same. -/
 theorem f3_re_linear_same_sign {k d c₀ : ℝ} (h : (k * d) ^ 2 < c₀ ^ 2) :
     (V₄₁ ⟨k * d, c₀⟩).im < 0 := by
   rw [imV₄₁_neg_iff]
