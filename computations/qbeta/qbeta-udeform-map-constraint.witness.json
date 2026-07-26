@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-26T19:36:16.138679+00:00",
-  "commitSha": "9a700577a0e38c41d95baaa9e349e3769674c2a6",
+  "computedAt": "2026-07-26T21:11:05.932009+00:00",
+  "commitSha": "b354fbaa8a8bcf1a5c9ced783f60acaeefb52017",
   "assertions": [
     {
       "name": "anchors_reproduce",
@@ -20,36 +20,37 @@
       "name": "F1_fixed_phase_refuted_by_sign_flip",
       "computed": "True",
       "expected": "True",
-      "passed": true
+      "passed": true,
+      "source": "Re^2-Im^2 = a^2 cos2phi0 d^2 (even) => same sign"
     },
     {
-      "name": "F2_cubic_family_refuted_by_anchor_ratio",
+      "name": "F2_phasecrossing_refuted_corrected",
       "computed": "True",
       "expected": "True",
       "passed": true,
-      "source": "F2/measured ratio = 16.607x"
+      "source": "Re^2-Im^2 ~ d^2 (even); corrected ratio 16.607 (>0) vs measured -4.0751 (<0)"
     },
     {
-      "name": "F3_linear_family_anchor_consistent",
+      "name": "F3_transverse_const_refuted",
       "computed": "True",
       "expected": "True",
       "passed": true,
-      "source": "anchor mismatch 6.176e-5%; vs S'(q*)/sqrt3 4.959e-5%"
+      "source": "measured mu>0>proton needs c0<c_mu*=0.074769 AND c0>c_pr*=0.15094 (incompatible) => no c0 reproduces the measured flip"
     },
     {
-      "name": "F3_ratio_agreement",
-      "computed": 6.175664033939079e-07,
-      "expected": 0.0,
+      "name": "channel_requires_diagonal_crossing",
+      "computed": "True",
+      "expected": "True",
       "passed": true,
-      "tolerance": 0.001
+      "source": "Re^2-Im^2 = S/kappa: +ve muon, -ve proton => u crosses |Re u|=|Im u| between anchors (channel not scope-(b) excluded)"
     }
   ],
   "allPassed": true,
   "durationMs": 12,
   "computation": "qbeta-udeform-map-constraint",
   "scriptFile": "qbeta_udeform_map_constraint_probe.py",
-  "scriptHash": "f2cef12ff326",
-  "scriptCommitSha": "f3e5abc0157bf8024374be8005653eae302ef237",
+  "scriptHash": "e7b033e89833",
+  "scriptCommitSha": "f9c48ca7786e9206d744ab209f515aaeb6c4a1bc",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -63,32 +64,47 @@
     "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0"
   },
-  "description": "Constraint characterization of the open substrate→deformation map u(q₀) in S = Im 𝔙(u(q₀)) (conj:binding-qbeta-complex-volume S-channel, Lean SDeformedVolumeChannel): NZ leading-form inversion at both anchors + q*, and scope-(a) pruning of the minimal structural families. F1 (fixed-phase, S∝d²) refuted by the sign flip; F2 (phase-crossing, S∝d³) refuted by the anchor ratio; F3 (one component linear through zero at q*, the other anchor-constant) survives with product-slope k = S'(q*)/√3. Measurement + pruning only — no u-map wired, no c_k proposed, no instance fabricated.",
+  "description": "Constraint characterization of the open substrate→deformation map u(q₀) in S = Im 𝔙(u(q₀)) (conj:binding-qbeta-complex-volume S-channel, Lean SDeformedVolumeChannel). CORRECTED (2026-07-26): the deformed complex volume's leading Im is Im 𝔙 = (√3/4)(Re²u−Im²u) (a₂ = i√3/4 from the A-polynomial cusp modulus τ=−i√3; proved in Lean FigureEightComplexVolume), NOT the prior heuristic √3·Re·Im. Inversion target is (Re²u−Im²u) = 4S/√3 at each anchor. Under the corrected form ALL three minimal families are refuted: F1 (fixed-phase, ∝d² even), F2 (phase-crossing, Re²−Im²≈d² so S∝d² even — corrects the old S∝d³ artefact), F3 (transverse-const, Re²−c₀² even, dominated by −c₀² ⇒ same sign both anchors). The surviving constraint is a diagonal crossing: (Re²u−Im²u)=S/κ is +0.0224 at muon, −0.0911 at proton, so a viable u(q₀) must cross |Re u|=|Im u| between the anchors. Measurement + pruning only — no u-map wired, no c_k proposed, no instance fabricated.",
   "contentBlock": "conj:binding-qbeta-complex-volume",
   "data": {
     "inversion": {
+      "leading_form": "Im V = (sqrt3/4)*(Re^2 u - Im^2 u); a2 = i*sqrt3/4 (tau=-i*sqrt3)",
       "q_star": "1.109978593031523288402328",
       "S_muon": "0.00968297779805",
       "S_proton": "-0.0394593642959",
-      "required_ReIm_muon": "0.005590469838",
-      "required_ReIm_proton": "-0.0227818746",
-      "u_min_muon_phi_pi4": "0.1057399625",
-      "u_min_proton_phi_pi4": "0.2134566682",
+      "required_ReSq_minus_ImSq_muon": "0.02236187935",
+      "required_ReSq_minus_ImSq_proton": "-0.09112749839",
+      "u_min_muon_near_axis": "0.1495388891",
+      "u_min_proton_near_axis": "0.3018733151",
       "u_sub_qstar_for_scale": "0.008517235987"
     },
     "family_pruning": {
       "ratio_measured_Spr_over_Smu": "-4.075127003",
-      "ratio_F2_cubic_family": "-67.67412359",
-      "ratio_F3_linear_family": "-4.075124487",
-      "F2_off_by_factor": "16.6066"
+      "ratio_F2_corrected_dsq_family": "16.60663958",
+      "F1_verdict": "refuted (Re^2-Im^2 proportional to d^2, even => same sign)",
+      "F2_verdict": "refuted (Re^2-Im^2 = d^2-d^4 ~ d^2 leading => S ~ d^2 even; corrected ratio (d_pr/d_mu)^2 > 0 vs measured < 0; old S~d^3 was a wrong-form artefact)",
+      "F3_verdict": "refuted (Re^2-Im^2 = Re^2 - c0^2, even in d; reproducing measured mu>0>proton needs c0 < c_mu* AND c0 > c_pr* with c_pr* > c_mu* => incompatible => no c0 works; prior #3773 survival was a wrong-form artefact. Refines the audit's 'same sign' claim: a WRONG-direction flip mu<0<proton opens only in c_mu*<c0<c_pr*, never the measured one)",
+      "F3_c_mu_star": "0.07476944455",
+      "F3_c_pr_star": "0.1509366576"
     },
-    "F3_consistency": {
-      "k_product_slope_muon": "2216103.578",
-      "k_product_slope_proton": "2216104.946",
-      "k_product_slope_qstar_from_Sprime": "2216103.847",
-      "anchor_mismatch_pct": "6.17566e-5",
-      "max_dev_vs_qstar_pct": "4.95882e-5",
-      "verdict": "u(q0) leading-order constraint: one component crosses zero linearly at q* while the other is anchor-constant and nonzero (F3); fixed-phase (F1) and minimal phase-crossing (F2) families refuted scope-(a). Numerical face of the Lean exists_cs_vanishing (Im V(u(q*)) = 0)."
+    "surviving_constraint": {
+      "channel_status": "NOT scope-(b) excluded; requires u(q0) crossing the diagonal |Re u|=|Im u| between anchors",
+      "ReSq_minus_ImSq_muon": "0.02236187935",
+      "ReSq_minus_ImSq_proton": "-0.09112749839",
+      "diagonal_crossing_required": true,
+      "verdict": "u(q0) leading-order constraint (CORRECTED form): all minimal families F1/F2/F3 refuted; the surviving admissible constraint is that u(q0) crosses the diagonal |Re u|=|Im u| between the anchors (Re^2-Im^2 = +0.0224 muon, -0.0911 proton). Numerical face of the Lean exists_cs_vanishing (Im V(u(q*))=0). Map OPEN; nothing wired."
+    },
+    "correction_note": {
+      "date": "2026-07-26",
+      "wrong_form": "Im V ~ sqrt3*Re*Im = (sqrt3/2)|u|^2 sin2phi (implies real a2)",
+      "right_form": "Im V = (sqrt3/4)(Re^2 u - Im^2 u) = (sqrt3/4)|u|^2 cos2phi",
+      "reason": "A-polynomial cusp modulus tau = -i*sqrt3 (purely imaginary, Q(sqrt-3)) => a2 = i*sqrt3/4",
+      "authoritative": [
+        "content/quantum-observable-universe/lean/QOU/Knot/FigureEightComplexVolume.lean (imV41)",
+        "computations/probes/sdeformed_channel_signflip_probe.py",
+        "docs/audits/2026-07-26-sdeformed-channel-signflip.md"
+      ],
+      "lean_companion_contradicted": "QOU.QBeta.UDeformFamilyPruning cubic_ratio_law / linear_family_eq / linear_family_sign_flip / hasDerivAt_linear_family + the nzLeading=sqrt3*x*y definition are built on the wrong form; flagged for follow-up (Lean not edited here)"
     }
   }
 }
