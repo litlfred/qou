@@ -2547,3 +2547,25 @@ exit 0), no instance fabricated, no c_k wired:
   algebraically; this PR is the ℂ-analytic face), #3769's KC21/q* registry
   rows (IVT carrier = machine-checked q* zero-crossing), #3683's κ-tower A_ω
   (the resurgent instance of the monodromy datum). Intent posted on all three.
+**2026-07-26 (branch claude/quadratic-degree-bound-2026-07-26) — THE
+LEVEL-MAP DEGREE BOUND IS QUADRATIC, NOT LINEAR (self-correction).**
+`qPoch_prod_dvd_coeff` + `natDegree_ge_quadratic` in
+`QOU/QBeta/LevelMapValuation.lean` (lean-direct exit 0, sorry-free).
+The previously-published `(1−q)^{2n+3m}` bound reads only the vanishing
+at q = 1; the SAME hypothesis gives the whole Pochhammer product:
+`(q;q)_n²·(q;q)_m³ ∣ c`. Since `(q;q)_k = ∏_d Φ_d^{⌊k/d⌋}`, this is the
+constraint at **every** root of unity at once, not just q = 1. Degree
+consequence `2·deg c ≥ 2n(n+1) + 3m(m+1)` — quadratic in both indices.
+The reachable region under a degree budget collapses:
+
+| D | 12 | 20 | 30 | 50 | 100 |
+|---|---|---|---|---|---|
+| pairs (old linear bound) | 19 | 44 | 91 | 234 | 884 |
+| pairs (new quadratic) | 9 | 14 | 21 | 33 | 64 |
+| n_max old → new | 6→3 | 10→4 | 15→5 | 25→6 | 50→9 |
+
+So `n ≲ √D` rather than `D/2`: matching the tail to cyclotomic order N
+needs coefficient degree `≳ N²`, not `2N`. The earlier bound
+(`natDegree_ge_of_bridge_combined`, PR #4336) stands as a true but
+strictly weaker corollary; it is superseded, not retracted. No fit;
+nothing wired; no bridge claimed.
