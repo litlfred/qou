@@ -1,13 +1,23 @@
 ---
 # qou-atsd-t4-rank-eq-one
 title: 'T4 (reusable infra): LieAlgebra.rank K (sl 2 K) = 1 — upgrade the ≤1 upper bound to equality via finrank(engel h)=1'
-status: todo
+status: completed
 type: task
 priority: normal
 parent: qou-atsd
 created_at: 2026-07-26T12:30:00Z
-updated_at: 2026-07-26T12:30:00Z
+updated_at: 2026-07-26T12:55:00Z
 ---
+
+CLOSED (#4285, AtomicityLieRank.lean, sorry-free, lean-direct exit 0):
+- sl2_charpoly_ad_h: charpoly(ad h) = X³ − 4X.
+- sl2_ntd_ad_h: natTrailingDegree = 1 exactly (coeff 0 = 0, coeff 1 = −4 ≠ 0).
+- sl2_finrank_engel_h_eq_one: finrank(engel h) = 1 (Cartan dimension of 𝔰𝔩₂).
+- sl2_rank_eq_one [Infinite K]: LieAlgebra.rank K (sl 2 K) = 1. Lower bound via a regular
+  nonzero element (engel 0 = ⊤ ⇒ rank = finrank = 3 > 1 rules out x = 0) + Module.finrank_pos_iff.
+The ≥1 route used the engel/regular spine, NOT a from-scratch det argument.
+
+--- original plan below ---
 
 Reusable Mathlib-grade infra: the RANK of 𝔰𝔩₂ as a Lean fact (general field, 2≠0).
 
