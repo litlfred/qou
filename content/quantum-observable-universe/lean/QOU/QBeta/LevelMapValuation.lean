@@ -1,0 +1,153 @@
+/-
+# The level-map valuation constraint (bean qou-lm4u) — B1.5 step 2
+
+`LevelMixingBridge.lean` states the surviving bridge form; the B1.5
+design note warns that a *search* over its coefficients would fit by
+construction. This file supplies the first **derived** constraint on
+those coefficients, so the eventual check is over a narrowed family
+rather than a free one. Nothing is fitted and nothing is searched: the
+content is a divisibility theorem.
+
+## The observation
+
+The two sides sit on opposite sides of the `(q;q)` divide:
+
+* the Masbaum level term `T^Mas_n = C_n(a)·(q;q)_n²` carries the
+  Pochhammer in the **numerator** — it is an integer Laurent
+  polynomial (merged compute: exact integer-Laurent dicts);
+* the GGM block level term `T^H_m(0,λ) = (±)^m·q^{e(m,λ)}/(q;q)_m³`
+  carries it in the **denominator** — a pole of order `3m` at `q = 1`,
+  with a unit (monomial) numerator on the `j = 0` row.
+
+A bridge must therefore *cancel poles*, and that is a constraint the
+coefficients cannot dodge. At a single level it is sharp:
+
+  `mas · (q;q)_m³ = c · num` with `num` a unit  ⟹  `(1 − q)^{3m} ∣ c`.
+
+The coefficient at level `m` is forced to carry `3m` factors of
+`(1 − q)`. Contrapositive (`no_single_level_of_not_dvd`): exhibiting
+one coefficient that misses the divisibility rules the level out —
+a **pruning test**, cheap and exact, that needs no scan.
+
+Over `ℤ[X]` this becomes a degree bound (`natDegree_ge_of_bridge`):
+a nonzero level-`m` coefficient has degree at least `3m`, so a family
+of coefficients of bounded degree reaches only finitely many levels.
+That is the honest form of "the module map cannot be arbitrary".
+
+## Base ring — why NOT a field (§7c, and a vacuity trap)
+
+Divisibility is **vacuous over a field**: every nonzero element divides
+every element, so stating this over `Field R` would produce a
+true-but-contentless theorem — exactly the `def : True` failure mode
+the vacuity audit exists to catch. The natural home of the
+coefficients is `ℤ[q^{±1}]`, so everything here is over a generic
+`CommRing S`, and `qPochC` is `HabiroTailStar.qPoch`'s formula at that
+weaker typeclass (`qPochC_eq_qPoch`, definitional). No archimedean
+construct appears; pre-wall throughout.
+
+## Scope
+
+This constrains; it does not construct. No bridge is claimed to exist,
+no coefficients are proposed, nothing is wired. Comparison to observed
+only; no ontological claims.
+-/
+import QOU.QBeta.HabiroTailStar
+
+namespace QOU.QBeta.LevelMixing
+
+open Finset
+
+section CommRingCase
+
+variable {S : Type*} [CommRing S]
+
+/-- `(q;q)_m = ∏_{j=1..m} (1 − q^j)` over a generic commutative ring —
+the same formula as `HabiroTailStar.qPoch`, at the weaker typeclass the
+divisibility statements need (see the header: over a field they would
+be vacuous). -/
+def qPochC (q : S) (m : ℕ) : S := ∏ j ∈ range m, (1 - q ^ (j + 1))
+
+/-- `(1 − q)^m ∣ (q;q)_m`: each factor `1 − q^{j+1}` is divisible by
+`1 − q`. -/
+lemma sub_one_pow_dvd_qPochC (q : S) (m : ℕ) :
+    (1 - q) ^ m ∣ qPochC q m := by
+  have h : ∀ j ∈ range m, (1 - q) ∣ (1 - q ^ (j + 1)) := by
+    intro j _
+    have := sub_dvd_pow_sub_pow (1 : S) q (j + 1)
+    simpa using this
+  calc (1 - q) ^ m = ∏ _j ∈ range m, (1 - q) := by
+        rw [Finset.prod_const, card_range]
+    _ ∣ ∏ j ∈ range m, (1 - q ^ (j + 1)) :=
+        Finset.prod_dvd_prod_of_dvd _ _ h
+    _ = qPochC q m := rfl
+
+/-- `(1 − q)^{3m} ∣ (q;q)_m³`. -/
+lemma sub_one_pow_dvd_qPochC_cube (q : S) (m : ℕ) :
+    (1 - q) ^ (3 * m) ∣ qPochC q m ^ 3 := by
+  rw [mul_comm 3 m, pow_mul]
+  exact pow_dvd_pow_of_dvd (sub_one_pow_dvd_qPochC q m) 3
+
+/-- **The derived constraint.** If a single GGM block level `m` carries
+the whole bridge — `mas · (q;q)_m³ = c · num` with the block numerator
+`num` a unit (as it is on the `j = 0` row, a monomial) — then the
+coefficient is forced to carry `3m` factors of `(1 − q)`.
+
+This is what pole cancellation costs: the block's order-`3m` pole at
+`q = 1` must be paid for by the coefficient, since the Masbaum side is
+regular there. -/
+theorem sub_one_pow_dvd_coeff_single_level (q : S) {mas c num : S}
+    (hu : IsUnit num) (m : ℕ) (h : mas * qPochC q m ^ 3 = c * num) :
+    (1 - q) ^ (3 * m) ∣ c := by
+  have h2 : (1 - q) ^ (3 * m) ∣ c * num :=
+    h ▸ (sub_one_pow_dvd_qPochC_cube q m).mul_left mas
+  obtain ⟨v, hv⟩ := hu
+  obtain ⟨w, hw⟩ := h2
+  exact ⟨w * (v⁻¹ : Sˣ), by
+    rw [← mul_assoc, ← hw, ← hv, mul_assoc, Units.mul_inv, mul_one]⟩
+
+/-- **The pruning form (contrapositive).** A coefficient that misses the
+divisibility rules its level out — no scan required. -/
+theorem no_single_level_of_not_dvd (q : S) {mas c num : S}
+    (hu : IsUnit num) (m : ℕ) (hnd : ¬ (1 - q) ^ (3 * m) ∣ c) :
+    mas * qPochC q m ^ 3 ≠ c * num :=
+  fun h => hnd (sub_one_pow_dvd_coeff_single_level q hu m h)
+
+end CommRingCase
+
+section FieldCompat
+
+variable {R : Type*} [Field R]
+
+/-- `qPochC` is `HabiroTailStar.qPoch`'s formula — the two agree
+definitionally wherever both typecheck. -/
+lemma qPochC_eq_qPoch (q : R) (m : ℕ) :
+    qPochC q m = QOU.QBeta.HabiroTailStar.qPoch q m := rfl
+
+end FieldCompat
+
+section DegreeBound
+
+open Polynomial
+
+/-- `(1 − X)^k` has degree `k` in `ℤ[X]`. -/
+lemma natDegree_one_sub_X_pow (k : ℕ) :
+    ((1 - X : ℤ[X]) ^ k).natDegree = k := by
+  have h1 : (1 - X : ℤ[X]).natDegree = 1 := by
+    compute_degree!
+  rw [Polynomial.natDegree_pow, h1, mul_one]
+
+/-- **Degree bound.** A nonzero level-`m` bridge coefficient in `ℤ[X]`
+has degree at least `3m`. Consequence: coefficients drawn from any
+bounded-degree family reach only finitely many levels — the module map
+cannot be arbitrary, which is precisely the narrowing the B1.5 design
+note asked for before any check is run. -/
+theorem natDegree_ge_of_bridge {mas c num : ℤ[X]} (hu : IsUnit num)
+    (m : ℕ) (hc : c ≠ 0) (h : mas * qPochC X m ^ 3 = c * num) :
+    3 * m ≤ c.natDegree := by
+  have hdvd := sub_one_pow_dvd_coeff_single_level X hu m h
+  have := Polynomial.natDegree_le_of_dvd hdvd hc
+  rwa [natDegree_one_sub_X_pow] at this
+
+end DegreeBound
+
+end QOU.QBeta.LevelMixing
