@@ -1,0 +1,28 @@
+{
+  "description": "Whitehead factor firmed up with the numeric weight-block tower to high N. Item #1 of 1-3-2.",
+  "computation": "whitehead_factor_hi",
+  "audit_only": true,
+  "precision": "mpmath dps=50 exact-root, weight-block engine",
+  "vol_4G": "3.663862376708876060218414",
+  "figure_eight_calibration_c0": -0.26948094255139365,
+  "figure_eight_target": -0.27465307216702745,
+  "whitehead_values": {
+    "6": 362.3920528929998,
+    "8": 1635.4283652320307,
+    "10": 7062.35924065477,
+    "12": 29287.27767465885,
+    "14": 117161.33858,
+    "16": 459573.16421033826
+  },
+  "c0_fits": {
+    "1term_all": -0.5624195114177655,
+    "2term_all": -0.43554799915823156,
+    "2term_hi": -0.24513177136025563
+  },
+  "c0_mean": -0.41436642731208423,
+  "c0_spread": 0.1586438700287549,
+  "factor": 2.4874725265232045,
+  "nearest_factor": 2,
+  "note": "through N=16",
+  "timestamp": "2026-07-26T21:31:20+00:00"
+}
