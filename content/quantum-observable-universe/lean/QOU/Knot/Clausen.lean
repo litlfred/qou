@@ -1396,6 +1396,81 @@ theorem tendsto_master_error :
   refine hsum.congr (fun N => ?_)
   ring
 
+/-- **Borromean brick B1 — the Clausen duplication formula (sorry-free).**
+    `clausen(2θ) = 2·clausen(θ) − 2·clausen(π − θ)` on `(0, π)`: both sides
+    have derivative `−2·log(2 sin θ)` (the sine duplication
+    `2 sin θ = (2 sin(θ/2))·(2 sin((π−θ)/2))`), and agree at `θ = π/2`
+    (`clausen π = 0`). Closes the functional-equation gap the Clausen filler
+    listed as requiring Fourier infrastructure; needed by the Borromean
+    squeeze to evaluate the continuum functional at `x = 3/4` as
+    `8·Cl₂(π/2)`. (bean qou-jor3) -/
+theorem clausen_duplication {θ : ℝ} (h0 : 0 < θ) (hπ : θ < π) :
+    clausen (2 * θ) = 2 * clausen θ - 2 * clausen (π - θ) := by
+  have hpi := Real.pi_pos
+  have hf : ∀ t ∈ Set.Ioo (0:ℝ) π, HasDerivAt (fun t => clausen (2 * t))
+      (-Real.log (2 * Real.sin (2 * t / 2)) * 2) t := by
+    intro t ht
+    have h1 := hasDerivAt_clausen (θ := 2 * t)
+      (by linarith [ht.1]) (by linarith [ht.2])
+    have h2 : HasDerivAt (fun t : ℝ => 2 * t) 2 t := by
+      simpa using (hasDerivAt_id t).const_mul 2
+    exact h1.comp t h2
+  have hg : ∀ t ∈ Set.Ioo (0:ℝ) π, HasDerivAt
+      (fun t => 2 * clausen t - 2 * clausen (π - t))
+      (2 * -Real.log (2 * Real.sin (t / 2))
+        - 2 * (-Real.log (2 * Real.sin ((π - t) / 2)) * -1)) t := by
+    intro t ht
+    have h1 := (hasDerivAt_clausen (θ := t) ht.1
+      (by linarith [ht.2])).const_mul 2
+    have hsub : HasDerivAt (fun t : ℝ => π - t) (-1) t := by
+      simpa using (hasDerivAt_id t).const_sub π
+    have h2 := ((hasDerivAt_clausen (θ := π - t)
+      (by linarith [ht.2]) (by linarith [ht.1])).comp t hsub).const_mul 2
+    exact h1.sub h2
+  have key : Set.EqOn (fun t => clausen (2 * t))
+      (fun t => 2 * clausen t - 2 * clausen (π - t)) (Set.Ioo (0:ℝ) π) := by
+    have hmid : (π / 2 : ℝ) ∈ Set.Ioo (0:ℝ) π := ⟨by linarith, by linarith⟩
+    refine isOpen_Ioo.eqOn_of_deriv_eq isPreconnected_Ioo
+      (fun t ht => (hf t ht).differentiableAt.differentiableWithinAt)
+      (fun t ht => (hg t ht).differentiableAt.differentiableWithinAt)
+      (fun t ht => ?_) hmid ?_
+    · rw [(hf t ht).deriv, (hg t ht).deriv]
+      have hs1 : 0 < Real.sin (t / 2) :=
+        Real.sin_pos_of_pos_of_lt_pi (by linarith [ht.1]) (by linarith [ht.2])
+      have hs2 : 0 < Real.sin ((π - t) / 2) :=
+        Real.sin_pos_of_pos_of_lt_pi (by linarith [ht.2]) (by linarith [ht.1])
+      have hprod : (2 * Real.sin (t / 2)) * (2 * Real.sin ((π - t) / 2))
+          = 2 * Real.sin (2 * t / 2) := by
+        have hc : Real.sin ((π - t) / 2) = Real.cos (t / 2) := by
+          rw [show (π - t) / 2 = π / 2 - t / 2 by ring, Real.sin_pi_div_two_sub]
+        have hd := Real.sin_two_mul (t / 2)
+        rw [hc, show (2:ℝ) * t / 2 = 2 * (t / 2) by ring, hd]
+        ring
+      have hlm : Real.log (2 * Real.sin (2 * t / 2))
+          = Real.log (2 * Real.sin (t / 2))
+            + Real.log (2 * Real.sin ((π - t) / 2)) := by
+        rw [← hprod]
+        exact Real.log_mul (mul_pos two_pos hs1).ne' (mul_pos two_pos hs2).ne'
+      rw [hlm]
+      ring
+    · show clausen (2 * (π / 2)) = 2 * clausen (π / 2) - 2 * clausen (π - π / 2)
+      rw [show 2 * (π / 2 : ℝ) = π by ring, clausen_pi,
+        show π - π / 2 = π / 2 by ring]
+      ring
+  exact key ⟨h0, hπ⟩
+
+/-- **B1, series side (sorry-free).** `Cl₂(2θ) = 2·Cl₂(θ) − 2·Cl₂(π − θ)` on
+    `(0, π)`, via the series↔integral bridge. -/
+theorem Cl_2_duplication {θ : ℝ} (h0 : 0 < θ) (hπ : θ < π) :
+    QOU.Archimedean.Cl_2 (2 * θ)
+      = 2 * QOU.Archimedean.Cl_2 θ - 2 * QOU.Archimedean.Cl_2 (π - θ) := by
+  have hpi := Real.pi_pos
+  have h1 := clausen_duplication h0 hπ
+  rw [clausen_eq_series (θ := 2 * θ) ⟨by linarith, by linarith⟩,
+    clausen_eq_series (θ := θ) ⟨h0, by linarith⟩,
+    clausen_eq_series (θ := π - θ) ⟨by linarith, by linarith⟩] at h1
+  exact h1
+
 /-- **The series Clausen's derivative** `Cl_2'(θ) = -log(2 sin(θ/2))` for
     `θ ∈ (0, 2π)` — the derivative the filler flagged as needing Fourier
     infrastructure, now machine-proved (`hasDerivAt_Cl_2_series`). Dual-purpose: `V'(θ)` of

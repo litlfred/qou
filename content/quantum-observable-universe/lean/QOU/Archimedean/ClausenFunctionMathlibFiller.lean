@@ -42,8 +42,12 @@ Mathlib gaps remaining after this file:
 * `BlochGroup` — algebraic structure, quotient of free abelian group
   on `ℂ \ {0,1}` by 5-term pentagon relations; substantial.
 * Suslin map `K_3^ind(ℂ) → ℝ` — depends on full BlochGroup setup.
-* Functional equation `Cl_2(2θ) = 2 Cl_2(θ) - 2 Cl_2(π - θ)` —
-  requires Fourier-series identities not currently in Mathlib.
+
+CLOSED 2026-07-26 (no longer a gap): the functional equation
+`Cl_2(2θ) = 2 Cl_2(θ) - 2 Cl_2(π - θ)` is machine-proved sorry-free on
+`(0, π)` as `QOU.Knot.Cl_2_duplication` (`QOU/Knot/Clausen.lean`, Borromean
+brick B1) — no Fourier identities needed, just the sine duplication under
+the integral representation plus the series↔integral bridge.
 
 CLOSED 2026-07-19 (no longer gaps): the derivative
 `Cl_2'(θ) = -log(2 sin(θ/2))` and the series↔integral bridge
