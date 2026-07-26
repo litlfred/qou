@@ -30,6 +30,11 @@ six-element cell, with the corresponding restriction square commuting.
 Kernel exactness — the identification of the semisimple quotient with
 the isotypic slot — holds at the base rung $n = 3$; at higher rungs the
 assignment factors through a larger semisimple quotient without being
-injective on it. What remains open is canonicity: the construction
-depends on the marked pair, and a pair-independent assignment functor
-is not established.
+injective on it. Strict pair-independence fails: at the $A_3$ rung the
+assignments for the two braid pairs are provably different functions,
+the indicator state of the longest cell element of one pair being read
+into the isotypic slot by that pair's assignment and annihilated by the
+other's. What remains open is coherent canonicity — transition
+isomorphisms intertwining the assignments of different marked pairs
+along diagram automorphisms, or a pair-independent functor obtained by
+a different construction.
