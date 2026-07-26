@@ -203,3 +203,32 @@ strengthens the negative** — and sharpens it in two ways not previously record
 No fabrication; the wall stands. This note only sharpens the *scope* (unconditional =
 proved-false; conditional/iterated = the honest open target) and flags the
 statement-level gap for whoever states V4's hypotheses. Probe not wired to production.
+
+### Iterated-limit route CONFIRMED as the closeable W-P1 path (2026-07-26, branch `claude/dilog-partb-iterated-limit-2026-07-26`, PR #4343)
+
+The iterated-limit reading flagged above is now **numerically confirmed sound**
+(probe [`dilog_partb_iterated_limit_probe.py`](../../computations/probes/dilog_partb_iterated_limit_probe.py),
+mpmath 30 dps, exit 0). Both stages converge monotonically **and** the sorry-free
+`wp1_riemann_bound` (#4262) inequality is respected in every row:
+
+- **INNER** (bulk, `q→1⁺`, `ρ` fixed in `(x,1)`, `n(q)=max{n: x qⁿ≤ρ}`):
+  `−(1−q)·Σ_{k<n(q)} log(1−x qᵏ) → Li₂(x) − Li₂(ρ)`. The bulk cutoff `ρ<1` keeps
+  the endpoint bounded away from `u=1/x`, so `−log(1−x qⁿ) ≤ −log(1−ρ)` is bounded
+  and the `wp1_riemann_bound` majorant `→0`. **This is exactly where the Diophantine
+  subtlety is avoided** — no no-resonance hypothesis is needed because `ρ` is fixed.
+- **OUTER** (`ρ→1⁻`): `Li₂(x) − Li₂(ρ) → Li₂(x) − π²/6` via `tendsto_LiTwo_nhdsWithin_lt_one`
+  (sorry-free). Converges sub-linearly (the `−log(1−ρ)` derivative singularity of `Li₂`
+  at 1) — expected; the honest convergence witness is monotone decrease.
+
+Combined iterated limit `= Li₂(x) − π²/6` = the W-P1 target; with W-P2 (#4191),
+`reg_n → Li₂(x) − π²/3` under the iterated ordering.
+
+**Epistemic status (STRICT).** The iterated limit is a **weaker** statement than the
+joint limit. It does **not** contradict — and does not close — the joint claim, whose
+unconditional form is proved-**false** (the resonant counter-sequence above). It is the
+honest, Diophantine-free target for a Lean V4 assembly. The whoever-states-V4 owner
+must decide whether the iterated ordering suffices for the physical keystone (a
+statement-level modelling choice), OR whether the joint limit under an added Faddeev /
+Diophantine hypothesis is required. **Lean brick for the INNER bulk-closure is in
+progress on PR #4343** (reuses `wp1_riemann_bound` + `tendsto_LiTwo_nhdsWithin_lt_one`;
+lands sorry-free or reduces to a minimal named residual — no fabrication).
