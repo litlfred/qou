@@ -93,7 +93,6 @@ theorem lift_is_coefficient_ratio {κ₁ κ₂ : ℝ → ℝ} {h : ℝ}
   unfold brunnianDeficit
   have h4 : h ^ 4 ≠ 0 := pow_ne_zero 4 hh
   field_simp
-  ring
 
 /-- The physical magnitude at a level is `c₃^L = E₀ · D_L(h) = E₀ · h⁴ · κ_L`
 (the `κ` evaluated at the physical `h`, treated as the level's coefficient). -/
