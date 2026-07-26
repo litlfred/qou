@@ -126,4 +126,43 @@ theorem symplectic_det_sq_eq_one {l : Type*} [DecidableEq l] [Fintype l]
 
 end SymplecticDet
 
+/-! ## T1′ — `Sp₂ = SL₂` at the matrix level (the dim-2 accident, `det = +1`) -/
+
+section Sp2
+open Matrix
+
+/-- The standard 2×2 symplectic form `J₂ = [[0,-1],[1,0]]`. -/
+def J2 (R : Type*) [Ring R] : Matrix (Fin 2) (Fin 2) R := !![0, -1; 1, 0]
+
+/-- **The 2×2 symplectic identity.** For any 2×2 matrix, `A · J₂ · Aᵀ = det A • J₂`
+    — the dimension-2 fact behind `Sp₂ = SL₂`: contracting a bilinear form with a
+    2×2 map scales it by the determinant. Direct entrywise computation
+    (`det A = a·d − b·c`). -/
+theorem mul_J2_mul_transpose {R : Type*} [CommRing R] (A : Matrix (Fin 2) (Fin 2) R) :
+    A * J2 R * Aᵀ = (A.det) • J2 R := by
+  ext i j
+  fin_cases i <;> fin_cases j <;>
+    simp [J2, Matrix.mul_apply, Fin.sum_univ_two, Matrix.det_fin_two,
+      Matrix.transpose_apply] <;> ring
+
+/-- **`Sp₂ = SL₂` (matrix level, `det = +1`).** A 2×2 matrix preserves the
+    symplectic form `J₂` **iff** its determinant is `1`. This is the sharp dim-2
+    accident that upgrades `symplectic_det_sq_eq_one` (`det² = 1`, all dimensions)
+    to `det = +1` in dimension 2 — the base case (`m = 1`) of the classical
+    `rank Sp(2m) = m` residual (T3): `Sp₂ = SL₂`, a rank-1 group.
+
+    (Mathlib's `symplecticGroup (Fin 1) R` uses the `Fin 1 ⊕ Fin 1` index; the
+    correspondence to this `Fin 2` form is a reindex — bean `qou-atsd-t1`.) -/
+theorem sp2_mem_iff_det_one {R : Type*} [CommRing R] (A : Matrix (Fin 2) (Fin 2) R) :
+    A * J2 R * Aᵀ = J2 R ↔ A.det = 1 := by
+  rw [mul_J2_mul_transpose]
+  constructor
+  · intro h
+    have hentry := congrFun (congrFun h 0) 1
+    simp [J2] at hentry
+    exact hentry
+  · intro h; rw [h, one_smul]
+
+end Sp2
+
 end QOU.Atomicity
