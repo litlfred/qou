@@ -1,5 +1,6 @@
 import Mathlib.RingTheory.Real.Irrational
 import Mathlib.Algebra.Order.Round
+import Mathlib.Algebra.Order.Group.Abs
 
 /-!
 # Quadratic surds are badly approximable — a Mathlib-gap lemma
@@ -179,5 +180,86 @@ theorem sqrt_fract_badlyApproximable {D : ℕ} (hD : Irrational (Real.sqrt (D : 
   calc (1 : ℝ) ≤ ((j : ℝ) * α - (p : ℝ)) * ((j : ℝ) * α + (p : ℝ)) := hkey
     _ ≤ ((j : ℝ) * α - (p : ℝ)) * (2 * α * (j : ℝ)) :=
         mul_le_mul_of_nonneg_left hsum_le hjmp
+
+/-- **Every real quadratic irrational is badly approximable (fract form).**  If `β > 0`
+    is irrational and satisfies an integer quadratic `Aβ² + Bβ + C = 0` (`A ≠ 0`), then
+    `∃ κ > 0, ∀ j ≥ 1, κ/j ≤ {jβ}` — the degree-2 Liouville bound.  With `p = ⌊jβ⌋`, the
+    integer `N = A p² + B p j + C j²` is nonzero (else `p/j` is a rational root, forcing
+    `β` or its conjugate rational), so `|N| ≥ 1`; the identity
+    `N = −(jβ − p)·(A(p+jβ) + Bj)` (using the root relation) with the bound
+    `|A(p+jβ)+Bj| ≤ j·(2|A|β + |B|)` gives `{jβ} = jβ − p ≥ 1/(j·(2|A|β+|B|))`.
+    Generalizes `sqrt_fract_badlyApproximable` (`A=1, B=0, C=−D`) to all quadratic
+    surds, hence the unconditional Dilog Part B limit to `x = e^{−β}` for every
+    quadratic-irrational `β > 0`. -/
+theorem quadratic_irrational_fract_badlyApproximable {A B C : ℤ} {β : ℝ}
+    (hA : A ≠ 0) (hβ : Irrational β) (hβ0 : 0 < β)
+    (hroot : (A : ℝ) * β ^ 2 + (B : ℝ) * β + (C : ℝ) = 0) :
+    ∃ κ : ℝ, 0 < κ ∧ ∀ j : ℕ, 1 ≤ j → κ / (j : ℝ) ≤ Int.fract ((j : ℝ) * β) := by
+  have hAR : (A : ℝ) ≠ 0 := Int.cast_ne_zero.mpr hA
+  have hApos_abs : 0 < |(A : ℝ)| := abs_pos.mpr hAR
+  set M : ℝ := 2 * |(A : ℝ)| * β + |(B : ℝ)| with hM
+  have hMpos : 0 < M := by
+    rw [hM]; have := mul_pos (mul_pos (by norm_num : (0:ℝ) < 2) hApos_abs) hβ0
+    linarith [abs_nonneg (B : ℝ)]
+  refine ⟨1 / M, one_div_pos.mpr hMpos, ?_⟩
+  intro j hj
+  have hjR : (1 : ℝ) ≤ (j : ℝ) := by exact_mod_cast hj
+  have hjpos : (0 : ℝ) < (j : ℝ) := by linarith
+  have hj0 : j ≠ 0 := by omega
+  have hjβ_irr : Irrational ((j : ℝ) * β) := hβ.natCast_mul hj0
+  have hjβ_pos : 0 < (j : ℝ) * β := mul_pos hjpos hβ0
+  set p : ℤ := ⌊(j : ℝ) * β⌋ with hp
+  have hpnn : (0 : ℝ) ≤ (p : ℝ) := by
+    exact_mod_cast Int.floor_nonneg.mpr hjβ_pos.le
+  have hple : (p : ℝ) ≤ (j : ℝ) * β := by rw [hp]; exact Int.floor_le _
+  have hfr : Int.fract ((j : ℝ) * β) = (j : ℝ) * β - (p : ℝ) := by rw [hp, Int.fract]
+  rw [hfr]
+  have hfr_nn : 0 ≤ (j : ℝ) * β - (p : ℝ) := by linarith [hple]
+  set N : ℤ := A * p ^ 2 + B * p * (j : ℤ) + C * (j : ℤ) ^ 2 with hN
+  set F2 : ℝ := (A : ℝ) * ((p : ℝ) + (j : ℝ) * β) + (B : ℝ) * (j : ℝ) with hF2
+  -- factorization N = −(jβ − p)·F2 (uses the root relation)
+  have hfacR : (N : ℝ) = -(((j : ℝ) * β - (p : ℝ)) * F2) := by
+    rw [hF2]; push_cast [hN]; linear_combination (j : ℝ) ^ 2 * hroot
+  -- both factors nonzero ⇒ N ≠ 0
+  have hf1 : (j : ℝ) * β - (p : ℝ) ≠ 0 := sub_ne_zero.mpr (hjβ_irr.ne_int p)
+  have hf2 : F2 ≠ 0 := by
+    rw [hF2]; intro h
+    apply hjβ_irr
+    refine ⟨(-(A * p + B * (j : ℤ)) : ℤ) / (A : ℚ), ?_⟩
+    push_cast
+    rw [div_eq_iff hAR]
+    linear_combination -h
+  have hNne : N ≠ 0 := by
+    have : (N : ℝ) ≠ 0 := by rw [hfacR]; simp [hf1, hf2]
+    exact_mod_cast this
+  have tri : ∀ a b : ℝ, |a + b| ≤ |a| + |b| := fun a b =>
+    abs_le.mpr ⟨by linarith [neg_abs_le a, neg_abs_le b], by linarith [le_abs_self a, le_abs_self b]⟩
+  -- |N| ≥ 1, and |N| = (jβ − p)·|F2|
+  have hNabs : (1 : ℝ) ≤ |(N : ℝ)| := by
+    have h1 : (1 : ℤ) ≤ |N| := Int.one_le_abs hNne
+    calc (1 : ℝ) = ((1 : ℤ) : ℝ) := by norm_num
+      _ ≤ ((|N| : ℤ) : ℝ) := by exact_mod_cast h1
+      _ = |(N : ℝ)| := by rw [Int.cast_abs]
+  have hNeq : |(N : ℝ)| = ((j : ℝ) * β - (p : ℝ)) * |F2| := by
+    rw [hfacR, abs_neg, abs_mul, abs_of_nonneg hfr_nn]
+  -- |F2| ≤ j·M
+  have hF2_le : |F2| ≤ (j : ℝ) * M := by
+    have hpjβ : (0 : ℝ) ≤ (p : ℝ) + (j : ℝ) * β := by positivity
+    rw [hF2, hM]
+    calc |(A : ℝ) * ((p : ℝ) + (j : ℝ) * β) + (B : ℝ) * (j : ℝ)|
+        ≤ |(A : ℝ) * ((p : ℝ) + (j : ℝ) * β)| + |(B : ℝ) * (j : ℝ)| := tri _ _
+      _ = |(A : ℝ)| * ((p : ℝ) + (j : ℝ) * β) + |(B : ℝ)| * (j : ℝ) := by
+          rw [abs_mul, abs_mul, abs_of_nonneg hpjβ, abs_of_pos hjpos]
+      _ ≤ |(A : ℝ)| * (2 * ((j : ℝ) * β)) + |(B : ℝ)| * (j : ℝ) := by
+          gcongr; linarith [hple]
+      _ = (j : ℝ) * (2 * |(A : ℝ)| * β + |(B : ℝ)|) := by ring
+  -- assemble
+  have hfinal : 1 ≤ ((j : ℝ) * β - (p : ℝ)) * ((j : ℝ) * M) :=
+    calc (1 : ℝ) ≤ |(N : ℝ)| := hNabs
+      _ = ((j : ℝ) * β - (p : ℝ)) * |F2| := hNeq
+      _ ≤ ((j : ℝ) * β - (p : ℝ)) * ((j : ℝ) * M) :=
+          mul_le_mul_of_nonneg_left hF2_le hfr_nn
+  rw [div_div, div_le_iff₀ (by positivity : (0 : ℝ) < M * (j : ℝ))]
+  nlinarith [hfinal]
 
 end QOU.MathlibExt
