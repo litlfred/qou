@@ -2567,20 +2567,6 @@ export const references: CSLData[] = [
     ISBN: "9780198502500",
   }),
 
-  // ── Wenzl 1988: Hecke algebra semisimplicity criterion ────────
-  ref({
-    id: "wenzl1988",
-    type: "article-journal",
-    title: "Hecke algebras of type A_n and subfactors",
-    author: [{ family: "Wenzl", given: "H." }],
-    "container-title": "Inventiones Mathematicae",
-    volume: 92,
-    issue: 2,
-    page: "349-383",
-    issued: { "date-parts": [[1988]] },
-    DOI: "10.1007/BF01404457",
-  }),
-
   // ── Arora-Barak 2009: complexity textbook (NP ⊆ P^#P) ─────────
   ref({
     id: "arora2009",
@@ -3974,6 +3960,7 @@ export const references: CSLData[] = [
     author: [{ family: "Wenzl", given: "Hans" }],
     "container-title": "Inventiones Mathematicae",
     volume: "92",
+    issue: "2",
     page: "349-383",
     issued: { "date-parts": [[1988]] },
     DOI: "10.1007/BF01404457",
