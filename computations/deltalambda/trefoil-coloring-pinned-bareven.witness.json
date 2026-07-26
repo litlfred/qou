@@ -1,0 +1,95 @@
+{
+  "engine": "sympy+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-07-26T01:12:24.965178+00:00",
+  "commitSha": "88f94d51f65a4b6667ebf09d767d88ac29973976",
+  "assertions": [
+    {
+      "name": "exact_identity_c_plus_1",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "m_q0_gives_minus_h2",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "parabolic_c_is_minus_1",
+      "computed": "-1",
+      "expected": "-1",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "trefoil-coloring-pinned-bareven",
+  "scriptFile": "trefoil_coloring_pinned_bareven_probe.py",
+  "scriptHash": "04df95d96491",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "The deuteron trefoil <u,v|uvu=vuv> boundary-parabolic coloring is ONE-parameter (meridian eigenvalue m): the braid relation forces c(m)=-(m⁴-m²+1)/m² (Alexander cross-check ✓; parabolic m=1⟹c=-1). Substrate pins m↔q₀ ⇒ NO residual freedom (resolves the #4315 anti-fishing branch). EXACT identity c(m)+1=-(m-1/m)² is a perfect BAR-EVEN square; at m=q₀ it is -(q₀-q₀⁻¹)²=-h² EXACTLY (the #4158 bar-even gap), at m=√q₀ it is -(v-v⁻¹)². Identifies the bar-even SCALE as h² (exact, not a fit). Does NOT derive g₂ (=e₂ finite part); the pin's power is flagged open (not fished). scope-(a), audit-only, nothing wired.",
+  "contentBlock": "rem:ohtsuki-tower-bar-parity",
+  "audit_only": true,
+  "tier": "rep solve + Alexander cross-check + exact bar-even identity + substrate pins; no fit",
+  "result": {
+    "A_rep": {
+      "coloring_c_of_m": "-m**2 + 1 - 1/m**2",
+      "alexander_reducible_m2": [
+        "(sqrt(3) + I)**2/4",
+        "(sqrt(3) - I)**2/4"
+      ],
+      "alexander_crosscheck": "reducible c=0 ⟺ m⁴-m²+1=0 ⟺ Δ(t)=t²-t+1 roots m²=e^{±iπ/3} ✓",
+      "parabolic_m1_c": "-1",
+      "dof": "ONE parameter (meridian eigenvalue m); substrate pins m↔q₀ ⇒ NO residual freedom ⇒ e₂/g₂ is a FORWARD number, not a scan (resolves #4315 anti-fishing branch)."
+    },
+    "B_exact_bar_even_identity": {
+      "identity": "c(m)+1 = -(m-1/m)²",
+      "verified": true,
+      "parity": "(m-1/m) bar-ODD ⇒ (m-1/m)² bar-EVEN — the g₂ correction parity. Lean: trefoilColoring_add_one."
+    },
+    "C_substrate_pins": {
+      "m=q0": {
+        "c_plus_1": "-0.04370621823",
+        "equals_-h^2": true,
+        "note": "-(q0-q0⁻¹)² = -h² EXACTLY (the #4158 bar-even gap)"
+      },
+      "m=sqrt(q0)": {
+        "c_plus_1": "-0.01089686912",
+        "equals_-(v-1/v)^2": true,
+        "note": "-(v-v⁻¹)² = -h²/[2]_v²"
+      },
+      "m=1 (flat)": {
+        "c_plus_1": "0.0",
+        "note": "flat/parabolic rep, c=-1"
+      }
+    },
+    "scope": {
+      "what_is_derived": "the coloring's bar-even SCALE = h² (exact identity at m=q₀).",
+      "what_is_NOT": "the coefficient g₂ (=e₂ finite part, #4315) — NOT derived here.",
+      "pin_power_open": "m=q₀ vs √q₀ must be justified by the quantum-group meridian convention INDEPENDENTLY; choosing m=q₀ because it gives h² would be fishing — flagged OPEN, not claimed.",
+      "anti_laundering": "the Lean proves the algebraic identity, not g₂. Nothing wired."
+    }
+  },
+  "context": {
+    "axis": "Δ_λ binding — μ₀ −9% closure, the trefoil coloring feeding e₂/g₂",
+    "lean": "QOU/MassTheory/TrefoilColoringBarEven.lean (trefoilColoring_add_one)",
+    "builds_on": "#4315 (e₂ pinched-limit wall), #4309, #4301, #4127",
+    "sibling_magnus": "#4158 (h² = the bar-even gap)",
+    "q0_convention": "muon-canonical (computations/ layer)",
+    "no_fit": true
+  },
+  "auditOnly": true
+}
