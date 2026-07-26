@@ -129,6 +129,54 @@ F3 ("one-linear-one-const") — but `u(q₀)` itself remains **open**.
   entry in `qbeta_udeform_map_constraint_probe.py` to the diagonal-crossing
   constraint.
 
+## Follow-up: probe corrections landed + contradicted Lean companion (2026-07-26)
+
+The two prior probes that used the wrong `√3·Re·Im` heuristic form were
+rewritten to the corrected `(√3/4)(Re²u−Im²u)` form (both run exit 0):
+
+- [`qbeta_udeform_map_constraint_probe.py`](../../computations/qbeta/qbeta_udeform_map_constraint_probe.py)
+  — inversion target now `(Re²u−Im²u) = 4S/√3`; **F1, F2, F3 all REFUTED**
+  under the corrected form; the surviving admissible constraint is the
+  **diagonal crossing** (`(Re²−Im²) = +0.0224` muon, `−0.0911` proton). F2's old
+  `S∝d³` was a wrong-form artefact (corrected: `S∝d²`, even).
+- [`qbeta_c3_barodd_gluing_newton_solve.py`](../../computations/qbeta/qbeta_c3_barodd_gluing_newton_solve.py)
+  — `cs_lead` fixed from `(√3/2)|u|²sin2φ` to `(√3/4)(Re²u−Im²u) =
+  (√3/4)|u|²cos2φ`; the Vol Newton solve is unchanged (both assertions still
+  pass); the displayed leading Im now vanishes at `arg u = π/4` and is negative
+  beyond, matching `imV₄₁`.
+
+**F3 refinement (sharper than the "same sign" statement in §T2 above).** Re-
+evaluating the #3773 F3 survivor *faithfully* — respecting the OLD-form product
+slope `Re·c₀ = S/√3` (so `Re = S/(√3·c₀)`, `c₀` free) rather than fixing the
+Re-slope — shows the "same sign at both anchors" claim holds only for large
+`c₀` (`c₀ > c_pr*`). The fully honest statement: reproducing the **measured**
+`S(muon) > 0 > S(proton)` needs `c₀ < c_mu* = (S_mu/√3)^½ ≈ 0.0748` **and**
+`c₀ > c_pr* = (|S_pr|/√3)^½ ≈ 0.1509` simultaneously; since `c_pr* > c_mu*`
+these are **incompatible**, so **no `c₀ > 0` reproduces the measured flip**. (A
+*wrong-direction* flip `S(muon) < 0 < S(proton)` opens in the window
+`c_mu* < c₀ < c_pr*`, never the measured one.) F3 is still REFUTED — via
+incompatibility, not uniform same-sign. This does not change any T2/Lean verdict;
+it sharpens the argument.
+
+**Contradicted Lean companion — flagged for follow-up (NOT edited here).** The
+laws in
+[`QOU/QBeta/UDeformFamilyPruning.lean`](../../content/quantum-observable-universe/lean/QOU/QBeta/UDeformFamilyPruning.lean)
+are built on the wrong leading form `nzLeading x y = √3·x·y` (= `√3·Re·Im`) and
+are contradicted by the correction:
+
+| Lean decl | status under the correction |
+|---|---|
+| `nzLeading` (`= √3·x·y`) | **wrong form** — should encode `(√3/4)(x²−y²)` |
+| `cubic_ratio_law` (F2 obeys an `S∝d³` cross-anchor law) | **contradicted** — corrected F2 is `S∝d²`, no cubic law |
+| `linear_family_eq` / `linear_family_sign_flip` / `hasDerivAt_linear_family` (F3 sign-flips, survives) | **contradicted** — corrected F3 is even in `d` and cannot produce the measured flip |
+| `fixed_phase_product_nonneg` / `fixed_phase_family_excluded` (F1 refuted) | conclusion (F1 refuted) still correct, but **proved about the wrong form** |
+
+Recommended follow-up (separate PR, not this one): rewrite `nzLeading` to the
+harmonic quadratic form and re-derive the family laws (F1/F2/F3 all become
+even-in-`d` sign exclusions; the surviving object is the diagonal-crossing law
+already proved in `FigureEightComplexVolume.lean` — `signflip_forces_diagonal_cross`,
+`f3_re_linear_same_sign`). No Lean was edited in the probe-correction commits.
+
 ## Cross-references
 - Coordination: [`keystone-sdeformedvolume-channel-attack.md`](../coordination/keystone-sdeformedvolume-channel-attack.md)
 - Keystone Lean: [`PhiBSArgumentIdentification.lean`](../../content/quantum-observable-universe/lean/QOU/QBeta/PhiBSArgumentIdentification.lean)
