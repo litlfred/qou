@@ -384,6 +384,7 @@ export default chapter({
         "qbeta-z-recursion-to-ck-recursion-bridge",
         "qbeta-z-recursion-to-ck-recursion-bridge-proof",
         "qbeta-odd-carrier-hopf-cubic",
+        "faddeev-phib-uniqueness",
         "q-beta-c-2-eq-neg-one-structural",
         "q-beta-c-2-eq-neg-one-structural-proof",
         "q-beta-bar-even-kernel-invariant",
