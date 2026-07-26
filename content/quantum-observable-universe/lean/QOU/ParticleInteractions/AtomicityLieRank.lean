@@ -1,5 +1,7 @@
 import Mathlib.Algebra.Lie.Rank
 import Mathlib.Algebra.Lie.Classical
+import Mathlib.Algebra.Lie.CartanExists
+import Mathlib.Algebra.Lie.Abelian
 import Mathlib.Tactic
 
 /-!
@@ -427,6 +429,61 @@ theorem sl2_abelian_finrank_le_one {K : Type*} [Field K] (h2 : (2 : K) ≠ 0)
   have h0 := trivial_lie_zero A A a ⟨y, hy⟩
   have hc := congrArg Subtype.val h0
   rwa [LieSubalgebra.coe_bracket, ZeroMemClass.coe_zero] at hc
+
+set_option maxHeartbeats 1600000 in
+set_option synthInstance.maxHeartbeats 400000 in
+/-- **Tier-B assembly: every subalgebra `𝔤 ⊆ 𝔰𝔩₂` has `rank 𝔤 ≤ 1`.** Over an infinite field a
+Cartan subalgebra `H = engel_𝔤 x` exists (nilpotent), and `rank 𝔤 ≤ finrank H`
+(`rank_le_finrank_engel`). If `H` is nontrivial its center is nonzero
+(`non_trivial_center_of_isNilpotent`); a nonzero central `Z` commutes with all of `H`, so under the
+inclusion `ι : H ↪ 𝔰𝔩₂` the whole image lies in `ker(ad (ι Z))`, whose finrank is `≤ 1`
+(`sl2_centralizer_finrank_le_one`). Hence `finrank H ≤ 1`, so `rank 𝔤 ≤ 1`. This is the atomicity
+upper bound `rank G ≤ 1` at the Lie level (`rank G = rank Lie(G)`), for a self-dual rank-2 `V`.
+(The generous heartbeat limits absorb typeclass search over the nested `engel ⊆ 𝔤 ⊆ 𝔰𝔩₂` types.) -/
+theorem sl2_subalgebra_rank_le_one {K : Type*} [Field K] [Infinite K] (h2 : (2 : K) ≠ 0)
+    (𝔤 : LieSubalgebra K (sl (Fin 2) K)) :
+    LieAlgebra.rank K 𝔤 ≤ 1 := by
+  haveI : Module.Finite K (sl (Fin 2) K) := Module.Finite.of_basis (sl2Basis K)
+  haveI : Module.Finite K 𝔤 := inferInstance
+  haveI : Module.Free K 𝔤 := inferInstance
+  obtain ⟨x, hcartan⟩ := LieAlgebra.exists_isCartanSubalgebra_engel (K := K) (L := 𝔤)
+  haveI := hcartan
+  refine le_trans (LieAlgebra.rank_le_finrank_engel K x) ?_
+  set H := LieSubalgebra.engel K x with hHdef
+  rcases subsingleton_or_nontrivial H with hs | hn
+  · haveI := hs
+    rw [Module.finrank_zero_of_subsingleton]; exact zero_le_one
+  · haveI := hn
+    haveI : Nontrivial (LieAlgebra.center K H) := LieAlgebra.non_trivial_center_of_isNilpotent
+    obtain ⟨Z, hZ⟩ := exists_ne (0 : LieAlgebra.center K H)
+    have hZc : ∀ w : H, ⁅(Z : H), w⁆ = 0 := by
+      intro w
+      have hmem : ∀ v : H, ⁅v, (Z : H)⁆ = 0 :=
+        (LieModule.mem_maxTrivSubmodule K H H (Z : H)).mp Z.2
+      rw [← lie_skew, hmem w, neg_zero]
+    set ι : H →ₗ⁅K⁆ sl (Fin 2) K := (𝔤.incl).comp H.incl with hιdef
+    have hιinj : Function.Injective ι := by
+      have h1 : Function.Injective (⇑(𝔤.incl)) := by
+        rw [LieSubalgebra.coe_incl]; exact Subtype.val_injective
+      have h2 : Function.Injective (⇑(H.incl)) := by
+        rw [LieSubalgebra.coe_incl]; exact Subtype.val_injective
+      intro a b hab
+      rw [hιdef] at hab
+      simp only [LieHom.coe_comp, Function.comp_apply] at hab
+      exact h2 (h1 hab)
+    set X : sl (Fin 2) K := ι (Z : H) with hXdef
+    have hX : X ≠ 0 := by
+      rw [hXdef]; intro h
+      exact hZ (Subtype.ext (hιinj (h.trans (LieHom.map_zero ι).symm)))
+    have hrange : LinearMap.range ι.toLinearMap ≤ LinearMap.ker (ad K (sl (Fin 2) K) X) := by
+      rintro _ ⟨w, rfl⟩
+      rw [LinearMap.mem_ker, LieAlgebra.ad_apply, hXdef, LieHom.coe_toLinearMap,
+        ← LieHom.map_lie, hZc w, LieHom.map_zero]
+    calc Module.finrank K H
+        = Module.finrank K (LinearMap.range ι.toLinearMap) :=
+          (LinearMap.finrank_range_of_inj hιinj).symm
+      _ ≤ Module.finrank K (LinearMap.ker (ad K (sl (Fin 2) K) X)) := Submodule.finrank_mono hrange
+      _ ≤ 1 := sl2_centralizer_finrank_le_one h2 X hX
 
 end SL2
 
