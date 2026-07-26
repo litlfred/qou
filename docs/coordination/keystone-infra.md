@@ -173,3 +173,18 @@ Bean `qou-2cvs`/`qou-7xvy` (parent `qou-08a2`). Branch
 **Queued follow-ons:** `qou-7xvy` (b/c ← PhiBProd, gated), `qou-qb9e` (L2
 Subgoal-1 Borromean tower — the achievable precision win, non-overlapping),
 `qou-uqen` (my68 N1), `qou-42b6` (prepare-merge #4060).
+
+> **UPDATE (2026-07-26): `qou-7xvy` / epic `qou-mz4f` CLOSED — the "single open input"
+> is discharged; the keystone is a Lean theorem.** The `hr_entire`/divisor route is
+> superseded by the **growth route**, which needs **no contour integration**: the concrete
+> `Φ_b = phiBProd` is meromorphic on the branch (product analyticity, #4223/#4272/#4278/#4296),
+> its zeros are isolated (#4348), the strip growth follows from elementary product-norm bounds
+> (G1–G4, #4328/#4332), the ratio's boundedness lifts to a global bound by a removable-singularity
+> extension (G5 crux, #4337), the normal-form identity holds off the zeros (#4353), and the
+> periodicity loci are dense because their complements are countable (#4355). The assembled
+> theorem `PhiBProdUniquenessMeromorphic.phiBProd_uniqueUpToScalar_of_meromorphic` (#4358) proves
+> proportionality for any second solution that is comparable, meromorphic, and continuous where
+> finite. This is a **conditional** theorem — the honest hypotheses are the strip-growth
+> characterization and the meromorphic-continuity of the second solution (not a Mathlib gap, not an
+> axiom). Content-block statement: `prop:faddeev-phib-uniqueness` (mass-theory). Full arc:
+> [`docs/audits/2026-07-26-faddeev-keystone-7xvy-canonical-arc.md`](../audits/2026-07-26-faddeev-keystone-7xvy-canonical-arc.md).
