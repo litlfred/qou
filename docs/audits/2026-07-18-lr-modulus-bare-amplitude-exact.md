@@ -62,6 +62,16 @@ exact ℚ(√5) fold `D²(ζ^m) = 10±2√5` — both discharge with `nlinarith`
 arithmetic once `sin²(mπ/5)` is written via the minimal polynomial of `2cos(mπ/5)`. It is the
 next commit in `KeystoneLRModulusFold.lean` (promoting the amplitude comment to a theorem).
 
+> **DONE (2026-07-26).** The bare-amplitude identity is now a proved Lean theorem —
+> [`KeystoneLRAmplitudeReal.lean`](../../content/quantum-observable-universe/lean/QOU/BraidKnot/KeystoneLRAmplitudeReal.lean)
+> (archimedean companion, `Real.sin`/`ℝ`, kept separate from the generic-field core per §7c):
+> `sin_sq_pi_div_five` (`sin²(π/5) = (10−2√5)/16`, via `Real.cos_pi_div_five`), its Galois
+> conjugate `sin_sq_two_pi_div_five` (via `Real.sin_two_mul`), and the headline
+> `amplitude_first`/`amplitude_second` (`A_m(1)² = 4/(10±2√5) = 4/D²(ζ^m)`, reducing to the
+> companion's `vacuum_modulus_identity_first`/`_second`). Sorry-free, `lean`-direct exit 0
+> against the restored `lake-cache/qou-v4-24-0` oleans. Closes the bare-amplitude precondition
+> only; the α ≥ 2 colored amplitude and the q₀ `loc_matches` continuation stay open.
+
 ## What this does NOT do
 
 It closes the *bare-amplitude precondition*, not the keystone. The open piece remains the
