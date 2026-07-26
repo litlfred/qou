@@ -49,6 +49,35 @@ failed on the deuteron; the m_p de-fit shows fits get caught). **No bounded
 formalize-first brick remains** — the constraint scaffolding is complete; what's
 left is the GGM derivation itself.
 
+### The route is *proven* to be resurgent (alien calculus), and it is owned
+
+The odd-channel c₃ closure is not merely "hard" — it is **structurally forced to
+be transcendental/resurgent**:
+
+- **KC21**: the c₃ bar-odd part factors `S = h·D(ũ)` (`h = q−q⁻¹` bar-odd carrier,
+  `D(ũ)` a bar-even ℚ(√3) ladder); the `dc₃/dq ≈ 4.66×10⁶` "wall" is a `1/u³`
+  ladder-inversion artifact over a smooth zero; `q*` (the `S=0` point) is a third
+  decay-sector determination of q₀ (proved-lean `fig8Trace_im_odd`).
+- **KC22**: `D(ũ)` is **not low-order (q-)holonomic in any tested class** (exact
+  through k=21, prime-certified; separated ℚ, coupled ℚ(√3), q-holonomic base
+  3/⅓/k, and log-closure all refuted) ⇒ the element is in the **Écalle
+  acceleration class**. The entire (q-)holonomic search is **closed**. 2-adic
+  parity grading proved; 2 the unique graded prime.
+
+So **q-Borel / Écalle acceleration of the bar-odd D-ladder is the *only*
+remaining route to c₃** — precisely the alien-calculus lens. It is **OWNED and
+active, flagged "do not fork"** in
+[`2026-07-17-1ppq-program-ownership-map.md`](../coordination/2026-07-17-1ppq-program-ownership-map.md):
+#3817 (bean `qou-dri7`, parity split) + the k→31 extension session + even-κ
+#3683 + Stokes-integer #3805 + Φ_b carrier #3773, using Ramis–Sauloy–Zhang
+(Astérisque 355) q-Borel + Di Vizio–Zhang confluence machinery (latest attack
+`2026-07-25-qborel-confluence-pos-attack.md`, bean `qou-xa89`, epic `qou-q04o`).
+The front carries ~13 Lean files (`BorelWatson*`, `DLadderTwoAdicGrading`,
+`DLadderAccelerationComposition`, `ecalle-borel-resummation`, `BarOddLadderShape`)
+— no verification-pending flag to close as a quick win. The 2026-07-17
+reassessment's "unowned" line is **stale**: it was picked up and is now densely
+worked. **Contribute via a distinct coordinated angle, not a fork.**
+
 ## Front B — q₀ / W_λ substrate derivation (Subgoal-2)
 
 Absolute m_p/m_n/m_μ targets sit **below** the CAL-2 floor (~780 ppb); no
