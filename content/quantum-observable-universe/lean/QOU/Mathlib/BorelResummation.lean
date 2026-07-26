@@ -34,8 +34,12 @@
   Why QOU needs it: Ohtsuki's PROOF of the volume conjecture for the figure-
   eight (the Vol(4_1) saddle, QOU/Knot/FigureEightVolume.VolumeConjecture41)
   goes through Borel resummation of the asymptotic series of the Kashaev sum.
-  Closing `BorelSummable` for that series is what would discharge the
-  conditional `VolumeConjecture41` (bean bca6).
+  UPDATE (2026-07-26): `VolumeConjecture41` itself is now DISCHARGED
+  sorry-free by the elementary Riemann-sum squeeze
+  (`QOU/Knot/FigureEightVolumeSqueeze.lean`, milestone qou-cpfn) — no Borel
+  resummation was needed for the 4₁ root-of-unity sum. This file's engine
+  remains motivated by the GENERAL volume conjecture and the exact/alien
+  calculus program (bean el8w), where Borel-plane methods are load-bearing.
 
   Pure-ℝ analysis where the integral appears; the coefficient algebra is
   generic. § the hard theorems are explicitly conditional, never `sorry`-faked.
