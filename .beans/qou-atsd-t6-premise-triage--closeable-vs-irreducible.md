@@ -35,3 +35,16 @@ L1/L2 (docs/precision-goals.md). Own tranche; see per-observable-100x dashboard.
 
 DISCIPLINE: §"Axiomatization is NOT a Proof" + critical-distance license. The conjecture does NOT
 close; only the sp₂=sl₂ core + de-axiomatization + wiring are honest closures.
+
+--- AGENTS DISPATCHED 2026-07-26 (worktree-isolated, robust, own branches + draft PRs) ---
+- Agent A (self-dual → Sp(V)): file AtomicitySelfDualToSymplectic.lean; PROVE sp(Fin 1)=sl₂ core
+  + honest §3b-cond premise for the Tannakian "self-dual ⟹ preserves ω". Branch
+  claude/atomicity-selfdual-symplectic-2026-07-26.
+- Agent B (rank G = rank Lie G): file AtomicityGroupRank.lean; conditional class RankGroupEqRankLie
+  (OPEN premise, cited) + conditional atomicity_group_rank_le_one wiring the landed Lie bound.
+  Branch claude/atomicity-group-rank-2026-07-26.
+- Agent C (rank-1 ⟹ single object): file AtomicityRankOneToSingleObject.lean; conditional class
+  + PROVE the class⟹chain composition via landed freeGen_total_iff_subsingleton; secondary
+  jet-tower-chain route. Branch claude/atomicity-rankone-single-object-2026-07-26.
+All 3: anti-laundering strict (no fabricated instances), sorry only for cited premises.
+Jet-tower chain axiom = CONCLUSION of {A}+{landed rank≤1}+{C}, not a 4th independent premise.
