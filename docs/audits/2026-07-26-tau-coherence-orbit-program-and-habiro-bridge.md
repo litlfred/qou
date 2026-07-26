@@ -115,3 +115,44 @@ All results scope-(a) or proved exclusions with explicit invariants;
 no fits; nothing wired to production compute; L2 count unchanged (2/7).
 The Habiro-bridge section is research framing with citations, not a
 claim.
+
+## Addendum (same date) — the three beans worked
+
+**qou-yvel — DECIDED as a criterion**
+(`HeckeTauAssignmentGaugeGate.lean` §1).
+`monodromyN_equivariant_iff_descent_transport`: monodromy equivariance
+along a marking homomorphism holds for all states **iff** the
+homomorphism transports the descent condition pointwise. Sufficient
+condition in clean general form: any **length-preserving** marking
+homomorphism is equivariant (`monodromyN_equivariant_of_length_preserving`
+— subsumes the diagram-edge theorem; covers `w₀`-conjugation in finite
+systems). Analysis of a generic conjugation edge (scope-(a), prose
+only): in A₃ the 4-cycle `c = (1234)` carries pair `(0,1)` to `(1,2)`;
+the descent criterion at `l = 0` reads `c(x(1)) > c(x(2)) ↔ x(1) > x(2)`
+in the value-comparison form, and `c` is order-preserving except
+`4 ↦ 1` — so any permutation `x` with `x(1) = 4` (e.g. the
+transposition `(14)`, length 5) violates transport. Generic conj edges
+are therefore expected to FAIL equivariance; a machine-checked
+refutation needs `ℓ((14)) = 5`-grade length certificates and is left
+open — the criterion reduces it to finite combinatorics per edge.
+
+**qou-fc35 — the master gate LANDED**
+(`HeckeTauAssignmentGaugeGate.lean` §2).
+`pairCoherent_of_cell`: every functional factoring through the
+six-element cell restriction is pair-coherent, in one stroke;
+`pairCoherent_comp` closes the class under post-composition. This is
+the Δ_λ prune gate in executable form: a candidate routed through
+marked-pair cell data passes automatically; anything else must supply
+its own coherence proof or is dead on arrival.
+
+**qou-vegn — first vertical edge NAMED; family scoping recorded**
+(`HeckeTauAssignmentGaugeGate.lean` §3).
+`zeta4_inv_eq_star` (`i⁻¹ = conj i`) +
+`tauAssignment_zeta4_bar_equivariance`: the `rho_compat` law of every
+`TauAssignmentData` **is** ℤ/2 bar-equivariance at the ζ₄ fibre. The
+GSWZ and Wagner papers are now in-repo
+(`uploads/2412.04241v2.pdf`, `uploads/2510.04782v2.pdf`, commit
+4c05849); sandbox PDF extraction is currently broken (system
+`cryptography`/pypdf conflict), so the deep-read of the Frobenius
+gluing definitions (needed to state candidate vertical edges beyond
+bar) remains queued on the bean. Bean stays in-progress.
