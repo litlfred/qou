@@ -112,6 +112,37 @@ theorem no_single_level_of_not_dvd (q : S) {mas c num : S}
     mas * qPochC q m ^ 3 ≠ c * num :=
   fun h => hnd (sub_one_pow_dvd_coeff_single_level q hu m h)
 
+/-- The Masbaum level term `C_n·(q;q)_n²` is itself divisible by
+`(1 − q)^{2n}` — its Pochhammer sits in the numerator, so it
+*contributes* vanishing at `q = 1` rather than consuming it. -/
+lemma sub_one_pow_dvd_masLevel (q Cn : S) (n : ℕ) :
+    (1 - q) ^ (2 * n) ∣ Cn * qPochC q n ^ 2 := by
+  have h : (1 - q) ^ (2 * n) ∣ qPochC q n ^ 2 := by
+    rw [mul_comm 2 n, pow_mul]
+    exact pow_dvd_pow_of_dvd (sub_one_pow_dvd_qPochC q n) 2
+  exact h.mul_left Cn
+
+/-- **The sharpened constraint.** Both sides contribute: the block's
+order-`3m` pole must be paid for, *and* the Masbaum level term already
+vanishes to order `2n`. So the forced coefficient carries
+`(1 − q)^{2n + 3m}`, not merely `(1 − q)^{3m}`.
+
+This is strictly stronger than `sub_one_pow_dvd_coeff_single_level`
+(which is the `n = 0` case) and it is the bound that matters: the
+Masbaum index `n` is the one that runs when more orders are demanded. -/
+theorem sub_one_pow_dvd_coeff_combined (q : S) {Cn c num : S}
+    (hu : IsUnit num) (n m : ℕ)
+    (h : Cn * qPochC q n ^ 2 * qPochC q m ^ 3 = c * num) :
+    (1 - q) ^ (2 * n + 3 * m) ∣ c := by
+  have h2 : (1 - q) ^ (2 * n + 3 * m) ∣ c * num := by
+    rw [← h, pow_add]
+    exact mul_dvd_mul (sub_one_pow_dvd_masLevel q Cn n)
+      (sub_one_pow_dvd_qPochC_cube q m)
+  obtain ⟨v, hv⟩ := hu
+  obtain ⟨w, hw⟩ := h2
+  exact ⟨w * (v⁻¹ : Sˣ), by
+    rw [← mul_assoc, ← hw, ← hv, mul_assoc, Units.mul_inv, mul_one]⟩
+
 end CommRingCase
 
 section FieldCompat
@@ -145,6 +176,21 @@ theorem natDegree_ge_of_bridge {mas c num : ℤ[X]} (hu : IsUnit num)
     (m : ℕ) (hc : c ≠ 0) (h : mas * qPochC X m ^ 3 = c * num) :
     3 * m ≤ c.natDegree := by
   have hdvd := sub_one_pow_dvd_coeff_single_level X hu m h
+  have := Polynomial.natDegree_le_of_dvd hdvd hc
+  rwa [natDegree_one_sub_X_pow] at this
+
+/-- **The sharpened degree bound.** A nonzero coefficient joining
+Masbaum level `n` to block level `m` has degree at least `2n + 3m`.
+
+Both indices cost. Demanding more orders of the tail pushes `n` up,
+and each unit of `n` costs two more degrees of coefficient — so a
+level map whose coefficients are drawn from any fixed bounded-degree
+family covers only a finite triangle of `(n, m)` pairs. -/
+theorem natDegree_ge_of_bridge_combined {Cn c num : ℤ[X]} (hu : IsUnit num)
+    (n m : ℕ) (hc : c ≠ 0)
+    (h : Cn * qPochC X n ^ 2 * qPochC X m ^ 3 = c * num) :
+    2 * n + 3 * m ≤ c.natDegree := by
+  have hdvd := sub_one_pow_dvd_coeff_combined X hu n m h
   have := Polynomial.natDegree_le_of_dvd hdvd hc
   rwa [natDegree_one_sub_X_pow] at this
 
