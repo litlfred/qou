@@ -262,6 +262,34 @@ theorem sl2_finrank_engel_h_eq_one {K : Type*} [Field K] (h2 : (2 : K) ≠ 0) :
   haveI : Module.Free K (sl (Fin 2) K) := Module.Free.of_basis (sl2Basis K)
   rw [LieAlgebra.finrank_engel, sl2_ntd_ad_h h2]
 
+/-- **The rank of `𝔰𝔩₂` is exactly `1`.** Combines the upper bound `sl2_rank_le_one`
+with the lower bound `1 ≤ rank`: over an infinite field a regular element `x` exists,
+`rank = finrank (engel x)`, and that regular `x` is nonzero (were `x = 0`, `engel 0 = ⊤`
+would force `rank = finrank 𝔰𝔩₂ = 3 > 1`), so `x ∈ engel x` makes `engel x` nontrivial,
+giving `finrank ≥ 1`. -/
+theorem sl2_rank_eq_one {K : Type*} [Field K] [Infinite K] (h2 : (2 : K) ≠ 0) :
+    LieAlgebra.rank K (sl (Fin 2) K) = 1 := by
+  haveI : Module.Finite K (sl (Fin 2) K) := Module.Finite.of_basis (sl2Basis K)
+  haveI : Module.Free K (sl (Fin 2) K) := Module.Free.of_basis (sl2Basis K)
+  refine le_antisymm (sl2_rank_le_one h2) ?_
+  obtain ⟨x, hx⟩ := LieAlgebra.exists_isRegular K (sl (Fin 2) K)
+  have hrank : LieAlgebra.rank K (sl (Fin 2) K)
+      = Module.finrank K (LieSubalgebra.engel K x) :=
+    ((LieAlgebra.isRegular_iff_finrank_engel_eq_rank K x).mp hx).symm
+  have hx0 : x ≠ 0 := by
+    rintro rfl
+    rw [LieSubalgebra.engel_zero, (LieSubalgebra.topEquiv.toLinearEquiv).finrank_eq,
+      Module.finrank_eq_card_basis (sl2Basis K)] at hrank
+    have hle := sl2_rank_le_one h2
+    simp only [Fintype.card_fin] at hrank
+    omega
+  rw [hrank]
+  have hne : (⟨x, LieSubalgebra.self_mem_engel K x⟩ : LieSubalgebra.engel K x) ≠ 0 := by
+    intro h
+    exact hx0 (by simpa using congrArg Subtype.val h)
+  haveI : Nontrivial (LieSubalgebra.engel K x) := nontrivial_of_ne _ 0 hne
+  exact Module.finrank_pos_iff.mpr this
+
 end SL2
 
 end QOU.Atomicity
