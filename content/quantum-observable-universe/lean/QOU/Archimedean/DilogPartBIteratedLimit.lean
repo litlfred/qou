@@ -1,4 +1,5 @@
 import QOU.Archimedean.DilogPartBBranchPointSum
+import QOU.Archimedean.DilogReflection
 
 /-!
 # Part B of `conj:dilogarithm-archimedean-limit` — the INNER bulk-closure limit (W-P1)
@@ -243,5 +244,23 @@ theorem wp1_bulk_tendsto {x ρ : ℝ} (hx0 : 0 < x) (hxρ : x < ρ) (hρ1 : ρ <
   have hfin := hSraw.neg
   rw [show -(LiTwo ρ - LiTwo x) = LiTwo x - LiTwo ρ from by ring] at hfin
   exact hfin
+
+/-- **OUTER limit (`ρ → 1⁻`) of the iterated-limit route.**  The INNER bulk value
+    `Li₂(x) − Li₂(ρ)` (the limit of `wp1_bulk_tendsto` for each fixed interior `ρ`)
+    tends to the W-P1 target `Li₂(x) − π²/6` as `ρ → 1⁻`, by the sorry-free Abel /
+    left-continuity brick `tendsto_LiTwo_nhdsWithin_lt_one` (`Li₂ → π²/6`).  Composing
+    with `wp1_bulk_tendsto` realises the **iterated limit**
+
+    `lim_{ρ→1⁻} lim_{q→1⁺} −(1−q)·Σ_{k<n(q)} log(1−xqᵏ)  =  Li₂(x) − π²/6`,
+
+    the W-P1 target, with **no Diophantine input**.  (Combined with W-P2, the
+    Dedekind-eta asymptotic of `DilogPartBEulerTail`, this gives the Part-B total
+    `reg_n → Li₂(x) − π²/3` under the iterated ordering.  The iterated limit is a
+    *weaker* statement than the joint `q→1⁺ × n→∞` limit, whose unconditional pointwise
+    form is proved-false; see the coordination ledger.) -/
+theorem wp1_outer_tendsto (x : ℝ) :
+    Tendsto (fun ρ => LiTwo x - LiTwo ρ) (𝓝[<] (1 : ℝ))
+      (𝓝 (LiTwo x - Real.pi ^ 2 / 6)) :=
+  tendsto_const_nhds.sub tendsto_LiTwo_nhdsWithin_lt_one
 
 end QOU.Archimedean
