@@ -1,0 +1,80 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-26T20:46:03.788637+00:00",
+  "computation": "sdeformed-channel-signflip",
+  "scriptFile": "sdeformed_channel_signflip_probe.py",
+  "commitSha": "1ded7051956e417acb17713a522c7b954ab7013e",
+  "contentBlock": "conj:binding-qbeta-complex-volume",
+  "description": "T2 SDeformedVolumeChannel sign-flip probe. With \ud835\udd19\u2084\u2081 made concrete (Lean FigureEightComplexVolume), test S = Im \ud835\udd19\u2084\u2081(u(q\u2080)) vs the measured flip S(muon)>0>S(proton). Rigorous A-polynomial fact \u03c4=\u2212i\u221a3 \u21d2 a\u2082 purely imaginary \u21d2 Im\ud835\udd19\u2084\u2081 = \u03ba(Re\u00b2u\u2212Im\u00b2u) (\u03ba=\u221a3/4), vanishing on the diagonals |Re u|=|Im u|, NOT the axes \u2014 correcting the heuristic \u221a3\u00b7Re\u00b7Im form the #3773 F3 survivor was built on. Verdict structural-partial: F3 refuted against the corrected form (scope-(b), even-in-d), channel not excluded but requires a diagonal-crossing u(q\u2080). No fit; no u-map wired; no instance fabricated; no c_k.",
+  "precisionMetadata": {
+    "compute_dps": 50,
+    "u_convention": "u = 2\u00b7log M (meridian eigenvalue)",
+    "kappa": "sqrt(3)/4",
+    "tau": "-i*sqrt(3)"
+  },
+  "data": {
+    "VOL_4_1": "2.02988321281930725004240510855",
+    "kappa": "0.433012701892219323381861585376",
+    "S_muon": "0.00968298",
+    "S_proton": "-0.03945936",
+    "required_ReSq_minus_ImSq_muon": "0.0223618844382",
+    "required_ReSq_minus_ImSq_proton": "-0.0911274884722",
+    "verdict": "structural-partial",
+    "scope_b_subresult": "F3 family (one component linear-through-zero at q*, other anchor-constant) cannot sign-flip against Im\ud835\udd19=\u03ba(Re\u00b2u\u2212Im\u00b2u); invariant = a\u2082 purely imaginary (\u03c4=\u2212i\u221a3).",
+    "channel_status": "not excluded; requires u(q\u2080) crossing the diagonal |Re u|=|Im u| between anchors (Re\u00b2u\u2212Im\u00b2u: +ve muon, \u2212ve proton). Map OPEN.",
+    "correction": "heuristic Im\ud835\udd19\u2248\u221a3\u00b7Re\u00b7Im (qbeta_udeform_map_constraint_probe.py, qbeta_c3_barodd_gluing_newton_solve.py) is WRONG (implies real a\u2082); rigorous A-poly form is \u03ba(Re\u00b2u\u2212Im\u00b2u)."
+  },
+  "assertions": [
+    {
+      "name": "tau_purely_imaginary_modulus_sqrt3",
+      "computed": 5.77350269189847e-13,
+      "expected": 0.0,
+      "tolerance": 1e-06,
+      "passed": true,
+      "source": "closed-form longitude v(u)/u: Re\u21920, |\u03c4|=\u221a3 (\u00b1i\u221a3 \u211a(\u221a\u22123) cusp modulus; sign is a log-branch convention)"
+    },
+    {
+      "name": "measured_sign_flip_hard_fact",
+      "computed": 1.0,
+      "expected": 1.0,
+      "tolerance": 0.0,
+      "passed": true,
+      "source": "S(muon) > 0 > S(proton) (audited anchors)"
+    },
+    {
+      "name": "leading_form_matches_integrated_to_O_u4",
+      "computed": 7.235411225101673e-06,
+      "expected": 0.0,
+      "tolerance": 0.001,
+      "passed": true,
+      "source": "Im \ud835\udd19\u2084\u2081 = \u03ba(Re\u00b2u\u2212Im\u00b2u), \u03ba=\u221a3/4 (integrated closed form, r=0.1)"
+    },
+    {
+      "name": "imV_vanishes_on_diagonal_not_axis",
+      "computed": 7.216789159622881e-06,
+      "expected": 0.0,
+      "tolerance": 0.0001,
+      "passed": true,
+      "source": "Im \ud835\udd19\u2084\u2081(Re u = Im u) = 0 (harmonic quadratic form Re(u\u00b2))"
+    },
+    {
+      "name": "F3_family_cannot_signflip_against_corrected_form",
+      "computed": 1.0,
+      "expected": 1.0,
+      "tolerance": 0.0,
+      "passed": true,
+      "source": "Im\ud835\udd19=\u03ba(Re\u00b2\u2212Im\u00b2); F3 keeps |k\u00b7d|\u226a|c\u2080| near q* \u21d2 same side of diagonal \u21d2 same sign at both anchors (heuristic-form survival was an artefact)"
+    },
+    {
+      "name": "channel_viable_requires_diagonal_crossing",
+      "computed": 1.0,
+      "expected": 1.0,
+      "tolerance": 0.0,
+      "passed": true,
+      "source": "Re\u00b2u\u2212Im\u00b2u = S/\u03ba: +ve at muon, \u2212ve at proton \u21d2 u crosses |Re u|=|Im u| between anchors (channel not scope-(b) excluded)"
+    }
+  ],
+  "allPassed": true,
+  "durationSeconds": 0.243313
+}
