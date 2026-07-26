@@ -28,6 +28,7 @@
 import Mathlib.Analysis.SpecialFunctions.Log.Basic
 import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic
 import Mathlib.Tactic
+import QOU.Archimedean.ClausenFunctionMathlibFiller
 
 namespace QOU.Knot.FigureEightVolume
 
@@ -69,10 +70,30 @@ theorem kashaev_ge_one (N : ℕ) (hN : 1 ≤ N) : 1 ≤ kashaev N := by
 theorem kashaev_pos (N : ℕ) (hN : 1 ≤ N) : 0 < kashaev N :=
   lt_of_lt_of_le one_pos (kashaev_ge_one N hN)
 
-/-- The figure-eight hyperbolic volume constant `Vol(4_1) = 6·Λ(π/3) ≈ 2.0299`
-    (carried as an opaque archimedean constant; its closed form is not needed
-    for the conditional statement). -/
-noncomputable def VOL_4_1 : ℝ := 2.029883212819307250011597804990
+/-- The figure-eight hyperbolic volume constant, EXACT:
+    `Vol(4_1) = 2·Cl₂(π/3) = 6·Λ(π/3) ≈ 2.0299` — twice the Clausen value at
+    the Thurston ideal-tetrahedron angle (2 regular ideal tetrahedra of shape
+    `e^{iπ/3}`, each of volume `Cl₂(π/3)`).
+
+    STATEMENT-REPAIR NOTE (2026-07-26, bean qou-yf47). This was previously
+    the truncated rational decimal `2.029883212819307250011597804990`, which
+    differs from the transcendental `2·Cl₂(π/3)` by ≈ 1e-30 — making the
+    conjectured limit `limit_eq_vol` AS THEN STATED mathematically false and
+    undischargeable. The exact definition is the honest target of the
+    E5 saddle/deviation program (`QOU/Knot/Clausen.lean` E5c bricks); the
+    decimal is demoted to the approximation carrier `VOL_4_1_decimal`. -/
+noncomputable def VOL_4_1 : ℝ := 2 * QOU.Archimedean.Cl_2 (π / 3)
+
+/-- `VOL_4_1` agrees with the Clausen-filler volume carrier
+    `Vol_figure_8 = 2·Cl₂(π/3)` definitionally. -/
+theorem VOL_4_1_eq_vol_figure_8 : VOL_4_1 = QOU.Archimedean.Vol_figure_8 := rfl
+
+/-- The 30-digit decimal approximation of `Vol(4_1)`, numerically witnessed by
+    `computations/figure_eight_kashaev_volume.py`. This is an APPROXIMATION
+    carrier only — `VOL_4_1 = 2·Cl₂(π/3)` is transcendental and differs from
+    this rational by ≈ 1e-30; no formal identity between the two is claimed
+    (that would need certified interval arithmetic on the `Cl₂` series). -/
+noncomputable def VOL_4_1_decimal : ℝ := 2.029883212819307250011597804990
 
 /-- **Volume conjecture for the figure-eight** (Kashaev–Murakami–Murakami),
     a PROVED theorem for `4_1` (Andersen–Hansen; Ohtsuki) whose saddle-point /
