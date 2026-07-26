@@ -110,6 +110,19 @@ finite part — the open `CuspShapeBarParity` link for a *torus* knot (`Vol = 0`
 subtle), the same object the `c₃` front is blocked on. Deriving it is a genuine (technical, not
 fishing) obstruction; the two closures should be attacked together.
 
+**Where the residual `r` lives (sibling #4288, proved).** PR #4288 **proved** (Lean, sorry-free) that
+the meridian-holonomy *magnitude* channel `barOdd(q)²` is **anchor-smooth** (`sensitivity_sq`,
+`barOdd_sq_le_of_amplification`): a percent-level swing would force `q₀` within `~3×10⁻⁷` of the
+compact locus `q = ±1`, but the substrate is `≈0.11` away — so the magnitude cannot carry a
+percent-level anchor swing; c₃'s swing lives only in the non-perturbative **phase `arg(u)`**. Applied
+to `g₂`: its **magnitude** `barOdd(q₀)² = h²` is exactly this anchor-smooth channel, consistent with
+the **leading coefficient being `1`** (smooth, from the coloring `c+1 = −1·h²`); the **percent
+residual `r ≈ 0.87%`** must then live in the *same non-perturbative phase channel* `arg(u)` that
+carries `c₃`'s swing — the open `conj:algebraic-geometric-dilog-equivalence`. So the μ₀ bar-even `r`
+and the Q_β bar-odd `c₃` swing are **the same non-perturbative phase object, on the two bar-parity
+faces** — a strong argument to attack them jointly, and a caution that `r` (like `c₃`) is a
+phase/non-perturbative quantity, not a magnitude one.
+
 Refs: probe [`trefoil_coloring_pinned_bareven_probe.py`](../../computations/deltalambda/trefoil_coloring_pinned_bareven_probe.py);
 Lean [`TrefoilColoringBarEven.lean`](../../content/quantum-observable-universe/lean/QOU/MassTheory/TrefoilColoringBarEven.lean);
 #4315 (`2026-07-26-octahedral-e2-coloring-quadratic-pinched-wall.md`); #4309, #4301; #4158 (`h²` gap);
