@@ -1,5 +1,6 @@
 import Mathlib.Data.Nat.Choose.Basic
 import Mathlib.LinearAlgebra.SymplecticGroup
+import Mathlib.LinearAlgebra.Matrix.SpecialLinearGroup
 import Mathlib.Tactic
 
 /-!
@@ -164,5 +165,59 @@ theorem sp2_mem_iff_det_one {R : Type*} [CommRing R] (A : Matrix (Fin 2) (Fin 2)
   · intro h; rw [h, one_smul]
 
 end Sp2
+
+/-! ## T3 (elementary, `m = 1`) — the SL₂ maximal torus is rank one (`≅ Rˣ = 𝔾ₘ`) -/
+
+section SL2Torus
+open Matrix
+
+variable {R : Type*} [CommRing R]
+
+/-- The diagonal matrix `diag(t, t⁻¹)` for a unit `t` — a point of the SL₂
+    maximal torus. -/
+def diagMat (t : Rˣ) : Matrix (Fin 2) (Fin 2) R := !![(t : R), 0; 0, (↑t⁻¹ : R)]
+
+/-- `det diag(t, t⁻¹) = t · t⁻¹ = 1`, so the diagonal matrix lies in `SL₂`. -/
+theorem diagMat_det (t : Rˣ) : (diagMat t).det = 1 := by
+  simp [diagMat, Matrix.det_fin_two, Units.mul_inv]
+
+theorem diagMat_one : diagMat (1 : Rˣ) = (1 : Matrix (Fin 2) (Fin 2) R) := by
+  ext i j; fin_cases i <;> fin_cases j <;> simp [diagMat]
+
+theorem diagMat_mul (s t : Rˣ) : diagMat (s * t) = diagMat s * diagMat t := by
+  ext i j
+  fin_cases i <;> fin_cases j <;>
+    simp [diagMat, Matrix.mul_apply, Fin.sum_univ_two, mul_comm]
+
+/-- **The diagonal torus embedding** `Rˣ → SL₂(R)`, `t ↦ diag(t, t⁻¹)`, as a group
+    homomorphism (`diag` is multiplicative and unital). -/
+def diagEmbedHom : Rˣ →* SpecialLinearGroup (Fin 2) R where
+  toFun t := ⟨diagMat t, diagMat_det t⟩
+  map_one' := Subtype.ext diagMat_one
+  map_mul' s t := Subtype.ext (diagMat_mul s t)
+
+/-- **T3, `m = 1`, the LOWER bound (`rank SL₂ ≥ 1`).** The diagonal torus
+    embedding `diagEmbedHom : Rˣ →* SL₂(R)`, `t ↦ diag(t, t⁻¹)`, is **injective**
+    (read `s = t` off the `(0,0)` entry). So `SL₂(R)` contains a *faithful* copy of
+    the unit group `Rˣ = 𝔾ₘ` as its diagonal torus — the maximal-torus *candidate*
+    is realised, giving `rank SL₂ ≥ 1`.
+
+    **Honest scope (critical-distance correction).** This is the **lower** bound.
+    The atomicity chain needs `rank G ≤ rank Sp(V) ≤ 1`, i.e. the **upper** bound
+    `rank SL₂ ≤ 1` — that this `𝔾ₘ` is *maximal*, that `SL₂` contains **no**
+    two-parameter torus. That upper direction (the root-count / "no larger torus"
+    fact) is the genuinely hard part and remains **open** (bean `qou-atsd-t3`,
+    upper). This lemma builds the torus the maximality argument is *about*; it does
+    **not** by itself establish the atomicity bound. Combined with `Sp₂ = SL₂`
+    (`sp2_mem_iff_det_one`) it fixes the dimension-2 anchor's torus, one honest
+    brick short of `rank G ≤ 1`. -/
+theorem diagEmbedHom_injective : Function.Injective (diagEmbedHom (R := R)) := by
+  intro s t h
+  have hm : diagMat s = diagMat t := Subtype.ext_iff.mp h
+  have h00 := congrFun (congrFun hm 0) 0
+  simp [diagMat] at h00
+  exact Units.ext h00
+
+end SL2Torus
 
 end QOU.Atomicity
