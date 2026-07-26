@@ -5,16 +5,39 @@ Direct Newton solve of Thurston's gluing equations for the figure-eight 4₁,
 computing the complex volume 𝔙 = Vol + i·CS whose imaginary part is the c₃
 bar-odd S (owner: S = Im 𝔙, `conj:binding-qbeta-complex-volume`).
 
+CORRECTION (2026-07-26) — WRONG NZ LEADING IMAGINARY FORM FIXED.
+========================================================================
+This probe previously printed the HEURISTIC leading imaginary part
+    Im 𝔙 ≈ (√3/2)|u|²·sin(2·arg u)  =  √3·Re(u)·Im(u)          (WRONG)
+which corresponds to a REAL a₂ (𝔙″(0)/2). The CCGLS A-polynomial cusp modulus
+of 4₁ is τ = −i√3 (PURELY IMAGINARY, ℚ(√−3)), so a₂ = i·√3/4 is PURELY
+IMAGINARY and the CORRECT leading imaginary part is
+    Im 𝔙 = (√3/4)(Re²u − Im²u) = (√3/4)|u|²·cos(2·arg u)        (RIGHT)
+which VANISHES on the DIAGONALS |Re u| = |Im u| (arg u = ±π/4), NOT on the axes.
+Proved sorry-free in QOU/Knot/FigureEightComplexVolume.lean (`imV₄₁`, lean-verify
+exit 0); authoritative numerical analysis in the T2 probe
+computations/probes/sdeformed_channel_signflip_probe.py and
+docs/audits/2026-07-26-sdeformed-channel-signflip.md.
+
+Effect on this probe: the Newton solve of the gluing equations (§1–§2, the Vol
+recovery) is UNCHANGED — it never used the imaginary leading form. Only the
+displayed leading Im 𝔙 (§below) is corrected from sin(2φ) to (√3/4)cos(2φ):
+it now vanishes at arg u = π/4 (the diagonal) and turns negative for arg u > π/4,
+instead of peaking there. Both assertions (gluing factor = −1, Vol recovery)
+still pass; no target is forced.
+========================================================================
+
 VALIDATED (computed, no fit; scope-(a); C14):
   1. Gluing equation (Thurston): z(z−1)·w(w−1) = 1, meridian deformation
      w = m²·z. Complete structure m=1 ⇒ z=w=e^{iπ/3}, each factor = −1.
   2. Newton solve at m=1 recovers Vol(4₁) = D(z)+D(w) = 2.029883213 (Bloch–
      Wigner) to 10 digits — the bar-EVEN part `−Vol(4₁)`, and CS=0 (amphichiral).
   3. The deformation 𝔙(m) = Vol(m) + i·CS(m) is the full complex volume; its
-     leading imaginary part (NZ, cusp shape √−3) is
-        Im 𝔙 = CS ≈ (√3/2)|u|²·sin(2·arg u),   u = 2 log m,
-     the c₃ bar-odd S carrier. On the real substrate axis (arg u = 0) Im 𝔙 = 0;
-     the sign-flip needs a complex u (phase channel).
+     CORRECTED leading imaginary part (NZ, cusp modulus τ = −i√3 ⇒ a₂ = i√3/4) is
+        Im 𝔙 = CS = (√3/4)(Re²u − Im²u) = (√3/4)|u|²·cos(2·arg u),   u = 2 log m,
+     the c₃ bar-odd S carrier. It vanishes on the DIAGONALS |Re u|=|Im u|
+     (arg u = ±π/4), not on the axes; the sign-flip needs u to cross a diagonal
+     (see the T2 probe's diagonal-crossing constraint).
 
 THE OPEN LINK (single, named): the map q₀ → m (the meridian holonomy the
 substrate assigns to 4₁). Per `thurston-relaxation.md` this is the Newton
@@ -78,10 +101,14 @@ def main() -> int:
         "Direct Newton solve of Thurston's gluing equations for 4₁ "
         "(z(z−1)w(w−1)=1, w=m²z), computing the complex volume 𝔙=Vol+iCS whose "
         "imaginary part is the c₃ bar-odd S (conj:binding-qbeta-complex-volume). "
-        "Validated: m=1 recovers Vol(4₁)=2.029883213 (10 digits), CS=0. Leading "
-        "Im 𝔙 = (√3/2)|u|²sin(2 arg u). The open link is q₀→m (Φ_q-pole-seeded "
-        "Newton, conj:algebraic-geometric-dilog-equivalence), shown near-singular "
-        "by the anchor-sensitivity. Scope-(a); C14; m(q₀) NOT fitted; no c_k wired."
+        "Validated: m=1 recovers Vol(4₁)=2.029883213 (10 digits), CS=0. CORRECTED "
+        "(2026-07-26): leading Im 𝔙 = (√3/4)(Re²u−Im²u) = (√3/4)|u|²cos(2 arg u) "
+        "(a₂=i√3/4 from the A-polynomial cusp modulus τ=−i√3; Lean "
+        "FigureEightComplexVolume imV₄₁), NOT the prior heuristic (√3/2)sin(2 arg u); "
+        "it vanishes on the diagonals |Re u|=|Im u|, not the axes. The Vol Newton "
+        "solve is unchanged. The open link is q₀→m (Φ_q-pole-seeded Newton, "
+        "conj:algebraic-geometric-dilog-equivalence), shown near-singular by the "
+        "anchor-sensitivity. Scope-(a); C14; m(q₀) NOT fitted; no c_k wired."
     )
     wb.set_content_block("prop:phi-b-unitary-bar-odd")
 
@@ -96,19 +123,23 @@ def main() -> int:
     fac_ok = mp.fabs(fac + 1) < 1e-25
     vol_ok = err < 1e-10
 
-    # ---- 2. deformation 𝔙(m): Vol(m) + leading NZ CS ----
+    # ---- 2. deformation 𝔙(m): Vol(m) + CORRECTED leading NZ CS ----
     print("\n[2] deformation 𝔙(m) = Vol(m) + i·CS(m), u = 2 log m:")
     rows = []
     for phi in (mp.mpf("0.3"), mp.pi / 4, mp.mpf("1.0")):
         u = mp.mpf("0.2") * mp.e ** (mp.mpc(0, 1) * phi)
         m = mp.e ** (u / 2)
         vol, z, w = vol_of_m(m)
-        cs_lead = (mp.sqrt(3) / 2) * mp.fabs(u) ** 2 * mp.sin(2 * phi)  # leading Im 𝔙
+        # CORRECTED leading Im 𝔙 = (√3/4)(Re²u − Im²u) = (√3/4)|u|² cos(2 arg u)
+        # (a₂ = i√3/4, τ = −i√3). Vanishes on the diagonal arg u = π/4.
+        cs_lead = (mp.sqrt(3) / 4) * (mp.re(u) ** 2 - mp.im(u) ** 2)
         print(f"    arg u={mp.nstr(phi,4)}: Vol={mp.nstr(vol,8)}  CS_lead(Im 𝔙)={mp.nstr(cs_lead,6)}")
         rows.append({"arg_u": mp.nstr(phi, 6), "Vol": mp.nstr(vol, 12),
                      "CS_leading": mp.nstr(cs_lead, 12)})
-    print("    (Vol from the validated Newton solve; CS_lead is the NZ leading Im 𝔙,")
-    print("     cusp shape √−3 — full framing-corrected CS is a refinement.)")
+    print("    (Vol from the validated Newton solve; CS_lead is the CORRECTED NZ")
+    print("     leading Im 𝔙 = (√3/4)(Re²u−Im²u), cusp modulus τ=−i√3 ⇒ a₂=i√3/4;")
+    print("     it VANISHES at arg u=π/4 (diagonal) and is <0 for arg u>π/4.")
+    print("     Full framing-corrected CS is an even O(u⁴) refinement.)")
 
     # ---- 3. the open link ----
     print("\n[3] OPEN LINK (single, named): q₀ → m, the Φ_q-pole-seeded Newton")
