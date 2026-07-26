@@ -81,6 +81,7 @@ export default chapter({
             "coxeter-strong-exchange",
             "coxeter-parabolic-transversal",
             "coxeter-tits-residue-collapse",
+            "coxeter-geometric-representation",
             "tau-assignment-tower-square",
             "braid-link-types",
           ],
