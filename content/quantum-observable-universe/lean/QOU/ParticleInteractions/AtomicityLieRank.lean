@@ -290,6 +290,100 @@ theorem sl2_rank_eq_one {K : Type*} [Field K] [Infinite K] (h2 : (2 : K) ≠ 0) 
   haveI : Nontrivial (LieSubalgebra.engel K x) := nontrivial_of_ne _ 0 hne
   exact Module.finrank_pos_iff.mpr this
 
+/-- **Tier-B keystone: the centralizer of a nonzero `X ∈ 𝔰𝔩₂` is at most 1-dimensional.**
+`ker (ad X) ≤ K ∙ X` — a matrix commuting with a nonzero traceless `2×2` matrix is a scalar
+multiple of it. In coordinates `⁅X, y⁆ = 0` is the vanishing of the cross product
+`(X₀₀,X₀₁,X₁₀) × (y₀₀,y₀₁,y₁₀)`, forcing collinearity. Needs `2 ≠ 0`. -/
+theorem sl2_ker_ad_le_span {K : Type*} [Field K] (h2 : (2 : K) ≠ 0)
+    (X : sl (Fin 2) K) (hX : X ≠ 0) :
+    LinearMap.ker (ad K (sl (Fin 2) K) X) ≤ Submodule.span K {X} := by
+  have hXtr : X.val 1 1 = - X.val 0 0 := by
+    have h0 : Matrix.trace X.val = 0 := X.2
+    rw [Matrix.trace_fin_two] at h0; linear_combination h0
+  intro y hy
+  rw [LinearMap.mem_ker, LieAlgebra.ad_apply] at hy
+  have hytr : y.val 1 1 = - y.val 0 0 := by
+    have h0 : Matrix.trace y.val = 0 := y.2
+    rw [Matrix.trace_fin_two] at h0; linear_combination h0
+  have hcomm : X.val * y.val - y.val * X.val = 0 := by
+    have hb := congrArg Subtype.val hy
+    rwa [sl_bracket, ZeroMemClass.coe_zero] at hb
+  have e00 := congrFun (congrFun hcomm 0) 0
+  have e01 := congrFun (congrFun hcomm 0) 1
+  have e10 := congrFun (congrFun hcomm 1) 0
+  simp only [Matrix.sub_apply, Matrix.mul_apply, Fin.sum_univ_two, Matrix.zero_apply,
+    hXtr, hytr] at e00 e01 e10
+  have k00 : X.val 0 1 * y.val 1 0 - X.val 1 0 * y.val 0 1 = 0 := by linear_combination e00
+  have k01 : X.val 0 0 * y.val 0 1 - X.val 0 1 * y.val 0 0 = 0 := by
+    have h2e : (2 : K) * (X.val 0 0 * y.val 0 1 - X.val 0 1 * y.val 0 0) = 0 := by
+      linear_combination e01
+    exact (mul_eq_zero.mp h2e).resolve_left h2
+  have k10 : X.val 1 0 * y.val 0 0 - X.val 0 0 * y.val 1 0 = 0 := by
+    have h2e : (2 : K) * (X.val 1 0 * y.val 0 0 - X.val 0 0 * y.val 1 0) = 0 := by
+      linear_combination e10
+    exact (mul_eq_zero.mp h2e).resolve_left h2
+  rw [Submodule.mem_span_singleton]
+  by_cases ha : X.val 0 0 = 0
+  · by_cases hb : X.val 0 1 = 0
+    · -- `X₀₀ = X₀₁ = 0`, so `X₁₀ ≠ 0` (else `X = 0`); scale by `y₁₀ / X₁₀`.
+      have hc : X.val 1 0 ≠ 0 := by
+        intro hc0
+        apply hX
+        apply Subtype.ext
+        ext i j
+        fin_cases i <;> fin_cases j <;>
+          simp [ZeroMemClass.coe_zero, ha, hb, hc0, hXtr]
+      have hy00 : y.val 0 0 = 0 := by
+        have hh : X.val 1 0 * y.val 0 0 = 0 := by linear_combination k10 + y.val 1 0 * ha
+        exact (mul_eq_zero.mp hh).resolve_left hc
+      have hy01 : y.val 0 1 = 0 := by
+        have hh : X.val 1 0 * y.val 0 1 = 0 := by linear_combination -k00 + y.val 1 0 * hb
+        exact (mul_eq_zero.mp hh).resolve_left hc
+      refine ⟨y.val 1 0 / X.val 1 0, ?_⟩
+      apply Subtype.ext
+      ext i j
+      fin_cases i <;> fin_cases j
+      · simp only [SetLike.val_smul, Matrix.smul_apply, smul_eq_mul, Fin.mk_zero, Fin.mk_one, ha, mul_zero]
+        exact hy00.symm
+      · simp only [SetLike.val_smul, Matrix.smul_apply, smul_eq_mul, Fin.mk_zero, Fin.mk_one, hb, mul_zero]
+        exact hy01.symm
+      · simp only [SetLike.val_smul, Matrix.smul_apply, smul_eq_mul, Fin.mk_zero, Fin.mk_one]
+        field_simp
+      · simp only [SetLike.val_smul, Matrix.smul_apply, smul_eq_mul, Fin.mk_zero, Fin.mk_one, hXtr, hytr, ha,
+          hy00, mul_zero, neg_zero]
+    · -- `X₀₀ = 0`, `X₀₁ ≠ 0`; scale by `y₀₁ / X₀₁`.
+      have hy00 : y.val 0 0 = 0 := by
+        have hh : X.val 0 1 * y.val 0 0 = 0 := by linear_combination -k01 + y.val 0 1 * ha
+        exact (mul_eq_zero.mp hh).resolve_left hb
+      refine ⟨y.val 0 1 / X.val 0 1, ?_⟩
+      apply Subtype.ext
+      ext i j
+      fin_cases i <;> fin_cases j
+      · simp only [SetLike.val_smul, Matrix.smul_apply, smul_eq_mul, Fin.mk_zero, Fin.mk_one, ha, mul_zero]
+        exact hy00.symm
+      · simp only [SetLike.val_smul, Matrix.smul_apply, smul_eq_mul, Fin.mk_zero, Fin.mk_one]
+        field_simp
+      · simp only [SetLike.val_smul, Matrix.smul_apply, smul_eq_mul, Fin.mk_zero, Fin.mk_one]
+        field_simp
+        linear_combination -k00
+      · simp only [SetLike.val_smul, Matrix.smul_apply, smul_eq_mul, Fin.mk_zero, Fin.mk_one, hXtr, hytr, ha,
+          hy00, mul_zero, neg_zero]
+  · -- `X₀₀ ≠ 0`; scale by `y₀₀ / X₀₀`.
+    refine ⟨y.val 0 0 / X.val 0 0, ?_⟩
+    apply Subtype.ext
+    ext i j
+    fin_cases i <;> fin_cases j
+    · simp only [SetLike.val_smul, Matrix.smul_apply, smul_eq_mul, Fin.mk_zero, Fin.mk_one]
+      field_simp
+    · simp only [SetLike.val_smul, Matrix.smul_apply, smul_eq_mul, Fin.mk_zero, Fin.mk_one]
+      field_simp
+      linear_combination -k01
+    · simp only [SetLike.val_smul, Matrix.smul_apply, smul_eq_mul, Fin.mk_zero, Fin.mk_one]
+      field_simp
+      linear_combination k10
+    · simp only [SetLike.val_smul, Matrix.smul_apply, smul_eq_mul, Fin.mk_zero, Fin.mk_one, hXtr, hytr]
+      field_simp
+
 end SL2
 
 end QOU.Atomicity
