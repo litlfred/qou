@@ -958,6 +958,126 @@ theorem six_mul_sum_range_sq (m : ℕ) :
       push_cast
       ring
 
+/-- Hook shapes are weakly decreasing. -/
+theorem sorted_hookShape (a c : ℕ) (ha : 1 ≤ a) :
+    (a :: List.replicate c 1).Sorted (· ≥ ·) := by
+  rw [List.sorted_cons]
+  refine ⟨fun b hb => le_trans (le_of_eq (List.eq_of_mem_replicate hb)) ha, ?_⟩
+  induction c with
+  | zero => exact List.sorted_nil
+  | succ c ih =>
+      rw [List.replicate_succ, List.sorted_cons]
+      exact ⟨fun b hb => le_of_eq (List.eq_of_mem_replicate hb), ih⟩
+
+/-- The size of a hook shape is `a + c`. -/
+theorem sum_replicate_one : ∀ c : ℕ, (List.replicate c 1).sum = c := by
+  intro c
+  induction c with
+  | zero => rfl
+  | succ c ih =>
+      rw [List.replicate_succ, List.sum_cons, ih]
+      omega
+
+/-- Descending-factor product: `∏_{j<m} (m − j) = m!`. -/
+theorem prod_range_sub_eq_factorial : ∀ m : ℕ, (∏ j ∈ Finset.range m, (m - j)) = m.factorial := by
+  intro m
+  induction m with
+  | zero => rfl
+  | succ m ih =>
+      rw [Finset.prod_range_succ']
+      have hshift : (∏ j ∈ Finset.range m, (m + 1 - (j + 1))) = ∏ j ∈ Finset.range m, (m - j) :=
+        Finset.prod_congr rfl fun j _ => by omega
+      rw [hshift, ih, Nat.factorial_succ, Nat.sub_zero, Nat.mul_comm]
+
+/-- `hookProd` as a nested `Finset.range` product (row-structured form). -/
+theorem hookProd_eq_finset_prod (l : List ℕ) :
+    hookProd l = ∏ i ∈ Finset.range l.length, ∏ j ∈ Finset.range (l.getD i 0),
+      (l.getD i 0 + (conj l).getD j 0 - j - i - 1) := by
+  unfold hookProd
+  rw [list_prod_map_range]
+  exact Finset.prod_congr rfl fun i _ => list_prod_map_range _ _
+
+/-- **Hook product of a hook shape** `(a, 1^c)`: the corner hook is `a + c = n`, the arm hooks
+descend `a−1, …, 1`, the leg hooks descend `c, …, 1` — so `∏h = n·(a−1)!·c!`. Step 2 of the
+(TAIL) first-instance derivation. -/
+theorem hookProd_hookShape (a c : ℕ) (ha : 1 ≤ a) :
+    hookProd (a :: List.replicate c 1) = (a + c) * (a - 1).factorial * c.factorial := by
+  obtain ⟨b, rfl⟩ : ∃ b, a = b + 1 := ⟨a - 1, by omega⟩
+  simp only [Nat.add_sub_cancel]
+  have hsorted : ((b + 1) :: List.replicate c 1).Sorted (· ≥ ·) :=
+    sorted_hookShape (b + 1) c (Nat.succ_le_succ (Nat.zero_le b))
+  have hcj0 : (conj ((b + 1) :: List.replicate c 1)).getD 0 0 = c + 1 := by
+    rw [conj_getD _ hsorted]
+    have hall : ∀ x ∈ (b + 1) :: List.replicate c 1, (fun x => decide (0 < x)) x = true := by
+      intro x hx
+      rcases List.mem_cons.mp hx with rfl | hxr
+      · simp
+      · rw [List.eq_of_mem_replicate hxr]; decide
+    rw [List.countP_eq_length.mpr hall, List.length_cons, List.length_replicate]
+  have hcjj : ∀ j, 1 ≤ j → j < b + 1 →
+      (conj ((b + 1) :: List.replicate c 1)).getD j 0 = 1 := by
+    intro j hj1 hjb
+    rw [conj_getD _ hsorted, List.countP_cons]
+    have hz : (List.replicate c 1).countP (fun x => decide (j < x)) = 0 := by
+      rw [List.countP_eq_zero]
+      intro x hx
+      rw [List.eq_of_mem_replicate hx]
+      simp only [decide_eq_true_eq]
+      omega
+    rw [hz]
+    simp [hjb]
+  rw [hookProd_eq_finset_prod, List.length_cons, List.length_replicate,
+      Finset.prod_range_succ']
+  have hrows : ∀ i ∈ Finset.range c,
+      (∏ j ∈ Finset.range (((b + 1) :: List.replicate c 1).getD (i + 1) 0),
+        (((b + 1) :: List.replicate c 1).getD (i + 1) 0
+          + (conj ((b + 1) :: List.replicate c 1)).getD j 0 - j - (i + 1) - 1))
+      = c - i := by
+    intro i hi
+    have hgd : ((b + 1) :: List.replicate c 1).getD (i + 1) 0 = 1 := by
+      rw [List.getD_cons_succ]
+      exact getD_replicate_of_lt 1 0 c i (Finset.mem_range.mp hi)
+    rw [hgd, Finset.prod_range_one, hcj0]
+    omega
+  rw [Finset.prod_congr rfl hrows, prod_range_sub_eq_factorial]
+  have hrow0 :
+      (∏ j ∈ Finset.range (((b + 1) :: List.replicate c 1).getD 0 0),
+        (((b + 1) :: List.replicate c 1).getD 0 0
+          + (conj ((b + 1) :: List.replicate c 1)).getD j 0 - j - 0 - 1))
+      = (b + 1 + c) * b.factorial := by
+    rw [List.getD_cons_zero, Finset.prod_range_succ']
+    have hgj : ∀ j ∈ Finset.range b,
+        (b + 1 + (conj ((b + 1) :: List.replicate c 1)).getD (j + 1) 0 - (j + 1) - 0 - 1)
+        = b - j := by
+      intro j hj
+      rw [hcjj (j + 1) (Nat.le_add_left 1 j) (Nat.succ_lt_succ (Finset.mem_range.mp hj))]
+      omega
+    rw [Finset.prod_congr rfl hgj, prod_range_sub_eq_factorial, hcj0]
+    have hg0 : b + 1 + (c + 1) - 0 - 0 - 1 = b + 1 + c := by omega
+    rw [hg0, Nat.mul_comm]
+  rw [hrow0]
+  ring
+
+/-- **SYT dimension of a hook shape**: `f^{(a,1^c)} = C(n−1, a−1)` with `n = a + c` — the
+hook-length formula evaluated on the hook-shape data. Step 2 of the (TAIL) first-instance
+derivation, feeding the binomial-square sums. -/
+theorem sytDim_hookShape (a c : ℕ) (ha : 1 ≤ a) :
+    sytDim (a :: List.replicate c 1) = Nat.choose (a + c - 1) (a - 1) := by
+  obtain ⟨b, rfl⟩ : ∃ b, a = b + 1 := ⟨a - 1, by omega⟩
+  simp only [Nat.add_sub_cancel]
+  have h1 : b + 1 + c - 1 = b + c := by omega
+  rw [h1]
+  unfold sytDim
+  rw [List.sum_cons, sum_replicate_one,
+      hookProd_hookShape (b + 1) c (Nat.succ_le_succ (Nat.zero_le b))]
+  simp only [Nat.add_sub_cancel]
+  rw [Nat.choose_eq_factorial_div_factorial (by omega : b ≤ b + c)]
+  have h2 : b + c - b = c := by omega
+  rw [h2]
+  have h3 : b + 1 + c = (b + c) + 1 := by omega
+  rw [h3, Nat.factorial_succ, Nat.mul_assoc]
+  exact Nat.mul_div_mul_left _ _ (Nat.succ_pos _)
+
 /-- `IdentityI.sumSqHooks` as a cell-set sum of the kernel-form hook (the two per-cell
 ℕ-subtraction forms agree on genuine cells, as in `hookProd_eq_prodHooks`). -/
 theorem sumSqHooks_eq_sum_cells (l : List ℕ) (hs : l.Sorted (· ≥ ·)) :
