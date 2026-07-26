@@ -524,3 +524,29 @@ per-λ MAGNITUDE closure (that the concrete operator magnitudes sum to the exact
 theorems as a modeling hypothesis, `signed_split_exists` records only the trivial
 weak form. 0 free params, no `μₖ` inverted, nothing wired. Audit
 `2026-07-26-deltalambda-two-operator-split.md`.
+
+**2026-07-26 — the A=4 Route-3 sign wall's antecedent is REFUTED: the genuine
+4-component Brunnian deficit is NEGATIVE (τ_L₄ > 1), sign-COMPATIBLE with μ₄<0.** (PR
+#4378, `claude/deltalambda-a4-h12-brunnian-measure-2026-07-26`.) Measured the open
+companion input of the #4376 scope-(b) **conditional** wall
+`mu4_ne_brunnian4Cluster` (conditional on `τ_L₄ ≤ 1`). Built a **genuine** Brunnian
+4-braid — the iterated left-normed commutator of pure-braid band generators
+`w₄=[[A₀₁,A₁₂],A₂₃]` — and verified Brunnian-ness **exactly** via the strand-forgetting
+map `d_k` (deleting any strand → identity braid; all 4 proper sub-links machine-zero).
+Unlike the earlier block-chain probe (never verified Brunnian), this is a true
+Brunnian object. **Measured:** `τ_L₄ = 1.000146 > 1` (base n=4), `1.0139 > 1` (H₁₂
+width-3 cable, 77 λ, 126.5 s/trace); deficit **NEGATIVE** both levels, leading Milnor
+order **O(h⁶)=2·(4−1)** confirmed (n≈6.06). Robust across 3 Brunnian representatives
+and the `|χ|`-vs-signed convention; cabling preserves + amplifies the sign. **So the
+antecedent `τ_L₄ ≤ 1` is FALSE**: `c₄ = E₀·(1−τ_L₄) < 0` has the **same sign** as
+`μ₄=−4.591<0` — the sign OBSTRUCTION is removed and the A=4 recipe **reopens on sign**.
+A **Milnor-parity sign flip** vs A=3 (Borromean length-3 → +, O(h⁴); Brunnian length-4
+→ −, O(h⁶)). **scope-(a)** measured negative on the antecedent — NOT a structural
+exclusion, NOT a μ₄ derivation (magnitude test now live: base |c₄|≈6e-4, H₁₂ ≈6e-2
+MeV, both ≪ 4.591 — NOT fitted). **Lean `HeliumBrunnianDeficitMeasured.lean` sorry-free
+(lean-direct exit 0):** `measured_antecedent_fails`, `brunnian4Cluster_neg_of_tau_gt_one`,
+`mu4_sign_compatible_measured_brunnian`, `brunnian_deficit_sign_flip_a3_a4` — records
+the measured value WITHOUT assuming the antecedent or touching the merged conditional
+wall. Probe `a4_h12_brunnian_deficit_measure_probe.py` + witness. Audit
+`2026-07-26-deltalambda-a4-h12-brunnian-measure.md`. Nothing wired; μ₄'s value enters
+no proof. `free_parameters = 0`.
