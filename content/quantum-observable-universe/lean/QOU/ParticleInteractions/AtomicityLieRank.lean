@@ -176,6 +176,37 @@ theorem sl2_toMatrix_ad_h :
   fin_cases j <;> fin_cases i <;>
     simp [LinearMap.toMatrix_apply, hb0, hb1, hb2, LieAlgebra.ad_apply, rhe, rhf]
 
+/-- **T3-lie CLOSED — `rank 𝔰𝔩₂ ≤ 1`** (over a field with `2 ≠ 0`, e.g. the
+    characteristic-zero substrate). Chain: the frame
+    (`rank ≤ natTrailingDegree (charpoly (ad h))`), basis-independence of `charpoly`
+    (`charpoly_toMatrix`), the diagonal `toMatrix` (`sl2_toMatrix_ad_h`), and
+    `charpoly (diagonal ![0,2,−2]) = ∏(X − C dᵢ) = X³ − 4X` whose trailing
+    coefficient (degree 1) is `−4 ≠ 0`. This is the atomicity **upper bound** on the
+    Lie side — the piece the elementary group route could not reach. -/
+theorem sl2_rank_le_one {K : Type*} [Field K] (h2 : (2 : K) ≠ 0) :
+    LieAlgebra.rank K (sl (Fin 2) K) ≤ 1 := by
+  haveI : Module.Finite K (sl (Fin 2) K) := Module.Finite.of_basis (sl2Basis K)
+  haveI : Module.Free K (sl (Fin 2) K) := Module.Free.of_basis (sl2Basis K)
+  refine rank_le_one_of_ad_charpoly_trailing (sl2H K) ?_
+  rw [← LinearMap.charpoly_toMatrix (ad K (sl (Fin 2) K) (sl2H K)) (sl2Basis K),
+    sl2_toMatrix_ad_h, Matrix.charpoly_diagonal]
+  have hpoly : (∏ i : Fin 3, (Polynomial.X - Polynomial.C ((![0, 2, -2] : Fin 3 → K) i)))
+      = Polynomial.X ^ 3 - Polynomial.C 4 * Polynomial.X := by
+    simp only [Fin.prod_univ_three, Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.head_cons,
+      Matrix.cons_val_two, Matrix.tail_cons, map_zero, map_neg, map_ofNat, sub_zero,
+      sub_neg_eq_add]
+    ring
+  rw [hpoly]
+  refine Polynomial.natTrailingDegree_le_of_ne_zero ?_
+  have h4 : (4 : K) ≠ 0 := by
+    have h42 : (4 : K) = 2 * 2 := by norm_num
+    rw [h42]; exact mul_ne_zero h2 h2
+  have hc : (Polynomial.X ^ 3 - Polynomial.C (4 : K) * Polynomial.X).coeff 1 = -4 := by
+    rw [Polynomial.coeff_sub, Polynomial.coeff_X_pow, Polynomial.coeff_C_mul,
+      Polynomial.coeff_X_one, mul_one, if_neg (by decide : ¬ (1 = 3)), zero_sub]
+  rw [hc, neg_ne_zero]
+  exact h4
+
 end SL2
 
 end QOU.Atomicity
