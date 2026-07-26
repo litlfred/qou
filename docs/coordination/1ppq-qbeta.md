@@ -2490,3 +2490,35 @@ the unboundedness — which narrows the family any future derivation must
 land in. Recording this rather than producing a plausible-looking
 "derivation" that would be a guess. No fit; nothing wired; no bridge
 claimed.
+
+**2026-07-26 (branch claude/q0-varies-imq-c3-anchor-2026-07-26, PR #4326)
+— "q₀ VARIES / Im(q) as the c₃ anchor-carrier" TESTED AGAINST #4293's
+PROVED ∂S/∂φ → NOT A LEAD (per-anchor FIT + order-mismatch wall).** The
+owner reframe (capstone #4297): q₀ is a local varying field carrying
+Im(q)≠0; #4293 proved the phase channel `S=(√3/2)r²sin2φ`, φ=arg(u),
+u=2 log q₀, is maximal-leverage (∂S/∂φ|₀=√3r²) but FROZEN at real q₀
+(arg u=0). Allowing Im(q₀)=ε≠0 unfreezes it. Probe
+`computations/qbeta/qbeta_imq_anchor_carrier_probe.py` (mpmath, exact):
+the arg(u)↔Im(q₀) slope is `d arg u/dε|₀ = 1/(q_r log q_r) = 8.634`
+(numeric=analytic), so the linear response is `S≈k·ε` with
+`k = 4√3 log(q_r)/q_r = 0.6514` (exact=numeric). k is anchor-invariant to
+the 22 ppb q_r difference ((k_p−k_m)/k_p = 1.9e−7), so the model MEASURES
+Im(q₀) faithfully — **but** that is fatal: (1) a **single global** Im(q₀)
+gives swing 7.4e−9 vs observed |S_p−S_m|=0.0492 ⇒ **order-mismatch
+6.63e6** (the registry dc₃/dq≈4.6e6 obstruction through arg(u); = SRigidity
+`no_anchor_invariant_realizes_swing` for the Im(q) channel; amp ceiling
+0.0377 < |S_p|=0.0395); (2) reproducing the swing needs **per-anchor**
+Im(q): ε_p=−0.061 (−5.5% of q_r), ε_m=+0.015 (+1.3%), **opposite sign**
+(forced by `fig8Trace_im_odd`, sign S=sign ε) on a mere pinning choice,
+4.07× magnitude, a **free** O(1e−2) scale — a FIT. Lean
+`QOU/QBeta/ImQAnchorCarrier.lean` (imports #4293, Mathlib-leaf; ℝ;
+lean-direct exit 0, sorry-free): `global_imq_cannot_realize_swing`,
+`peranchor_imq_fits_anything`, `required_imq_opposite_sign`,
+`global_imq_zero_swing_when_slopes_equal`. **Verdict scope-(a):** the
+reframe does NOT survive as a constrained/predicted model — it is a
+per-anchor fit unless a *derived* Im(q₀) scale predicts both per-anchor
+values (incl. the sign-flip); the only independent scales (11.5–22 ppb
+μ–p residual) fall ~7 orders short. The fibre-level home stays open,
+value measurement-limited. No fit; NO residual inverted to define Im(q);
+nothing wired; conj:algebraic-geometric-dilog-equivalence OPEN. Audit:
+docs/audits/2026-07-26-q0-varies-imq-c3.md.
