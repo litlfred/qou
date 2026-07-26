@@ -1176,6 +1176,179 @@ theorem abs_falling_deviation_le {N m k : ℕ} (hN : 1 ≤ N) (hmk : m ≤ k)
         (abs_nonneg (Real.log (2 * Real.sin (π / N)))),
       mul_nonneg (le_of_lt hh) (Real.log_nonneg (by norm_num : (1:ℝ) ≤ 2))]
 
+/-- **Saddle brick E5c-4a — one-cell extension step (sorry-free).** If the
+    scaled Kashaev log-sum deviates from the Clausen primitive by at most `B`
+    at index `k`, it deviates by at most `B + 2c` at `k + 1`, where
+    `c = (π/N)(|f(π/N)| + log 2)`: the new summand is charged one `c` via
+    E5c-2 and the new cell `[kπ/N, (k+1)π/N]` one `c` via the crude cell
+    bound. Works anywhere in the mirror window (`k + 1 ≤ N − 1`) — this is
+    the step that stitches the rising (E5c-1) and falling (E5c-3) halves
+    across `π/2`. (bean qou-xqae) -/
+theorem abs_deviation_succ {N k : ℕ} (hk : 1 ≤ k) (hk1N : k + 1 ≤ N - 1) {B : ℝ}
+    (hB : |(π / N) * (∑ j ∈ Finset.Icc 1 k,
+          Real.log (2 * Real.sin ((j : ℝ) * (π / N))))
+        - (-clausen (2 * ((k : ℝ) * (π / N))) / 2)| ≤ B) :
+    |(π / N) * (∑ j ∈ Finset.Icc 1 (k + 1),
+          Real.log (2 * Real.sin ((j : ℝ) * (π / N))))
+        - (-clausen (2 * (((k : ℝ) + 1) * (π / N))) / 2)|
+      ≤ B + 2 * ((π / N) * (|Real.log (2 * Real.sin (π / N))| + Real.log 2)) := by
+  have hpi := Real.pi_pos
+  have hN3 : 3 ≤ N := by omega
+  have hNpos : (0 : ℝ) < N := by exact_mod_cast (by omega : 1 ≤ N)
+  have hh : (0 : ℝ) < π / N := by positivity
+  have hfield : (N : ℝ) * (π / N) = π := by field_simp
+  have hk' : (1 : ℝ) ≤ (k : ℝ) := by exact_mod_cast hk
+  have hk2N' : (k : ℝ) + 2 ≤ (N : ℝ) := by exact_mod_cast (by omega : k + 2 ≤ N)
+  have h3N : (3 : ℝ) ≤ (N : ℝ) := by exact_mod_cast hN3
+  have hhπ : π / N ≤ π / 2 := by gcongr <;> linarith
+  rw [Finset.sum_Icc_succ_top (by omega : 1 ≤ k + 1)]
+  push_cast
+  -- the new summand, bounded by E5c-2 on the mirror window
+  have hterm : |Real.log (2 * Real.sin (((k : ℝ) + 1) * (π / N)))|
+      ≤ |Real.log (2 * Real.sin (π / N))| + Real.log 2 := by
+    refine abs_log_two_sin_le hh hhπ
+      (by nlinarith [mul_nonneg (by linarith : (0:ℝ) ≤ (k : ℝ)) (le_of_lt hh)]) ?_
+    nlinarith [mul_le_mul_of_nonneg_right hk2N' (le_of_lt hh), hfield]
+  -- the new cell, bounded crudely
+  have hcell : |(-clausen (2 * (((k : ℝ) + 1) * (π / N))) / 2)
+        - (-clausen (2 * ((k : ℝ) * (π / N))) / 2)|
+      ≤ (π / N) * (|Real.log (2 * Real.sin (π / N))| + Real.log 2) := by
+    have hcb := abs_integral_log_sin_cell_le hh hhπ
+      (a := (k : ℝ) * (π / N)) (b := ((k : ℝ) + 1) * (π / N))
+      (by nlinarith)
+      (by nlinarith [mul_nonneg (by linarith : (0:ℝ) ≤ (k : ℝ) - 1) (le_of_lt hh)])
+      (by nlinarith [mul_le_mul_of_nonneg_right hk2N' (le_of_lt hh), hfield])
+    rw [integral_log_sin_window] at hcb
+    calc |(-clausen (2 * (((k : ℝ) + 1) * (π / N))) / 2)
+          - (-clausen (2 * ((k : ℝ) * (π / N))) / 2)|
+        ≤ (((k : ℝ) + 1) * (π / N) - (k : ℝ) * (π / N))
+            * (|Real.log (2 * Real.sin (π / N))| + Real.log 2) := hcb
+      _ = (π / N) * (|Real.log (2 * Real.sin (π / N))| + Real.log 2) := by ring
+  rw [abs_le] at hB hterm hcell ⊢
+  constructor
+  · nlinarith [hB.1, hcell.2,
+      mul_le_mul_of_nonneg_left hterm.1 (le_of_lt hh),
+      mul_le_mul_of_nonneg_left hterm.2 (le_of_lt hh)]
+  · nlinarith [hB.2, hcell.1,
+      mul_le_mul_of_nonneg_left hterm.1 (le_of_lt hh),
+      mul_le_mul_of_nonneg_left hterm.2 (le_of_lt hh)]
+
+/-- **Saddle brick E5c-4 — the `π/2`-stitch: all-`k` uniform deviation
+    (sorry-free).** For `N ≥ 4` and every `1 ≤ k ≤ N − 1`, the scaled Kashaev
+    log-sum deviates from the Clausen primitive `F(kπ/N) = −clausen(2kπ/N)/2`
+    by at most the k-INDEPENDENT master error
+    `E(N) = |F(π/N)| + (π/N)|f(π/N)| + 7c`, `c = (π/N)(|f(π/N)| + log 2)`:
+    the rising range `k + 1 ≤ ⌊N/2⌋` by E5c-1 (cost `E₁ = |F| + h|f| + c`),
+    the two mid indices `k = ⌊N/2⌋, ⌊N/2⌋+1` straddling `π/2` by one E5c-4a
+    step each (`+2c` per step), and the falling range `k ≥ ⌊N/2⌋+2` by gluing
+    the prefix at `⌊N/2⌋+1` to E5c-3 (`+2c`). Every summand of `E(N)` tends
+    to `0` as `N → ∞` — the E5c-5 brick. (bean qou-xqae) -/
+theorem abs_deviation_le {N k : ℕ} (hN : 4 ≤ N) (hk : 1 ≤ k) (hkN : k ≤ N - 1) :
+    |(π / N) * (∑ j ∈ Finset.Icc 1 k,
+          Real.log (2 * Real.sin ((j : ℝ) * (π / N))))
+        - (-clausen (2 * ((k : ℝ) * (π / N))) / 2)|
+      ≤ |(-clausen (2 * (π / N)) / 2)|
+        + (π / N) * |Real.log (2 * Real.sin (π / N))|
+        + 7 * ((π / N) * (|Real.log (2 * Real.sin (π / N))| + Real.log 2)) := by
+  have hpi := Real.pi_pos
+  have hNpos : (0 : ℝ) < N := by exact_mod_cast (by omega : 1 ≤ N)
+  have hh : (0 : ℝ) < π / N := by positivity
+  have hfield : (N : ℝ) * (π / N) = π := by field_simp
+  have hc0 : 0 ≤ (π / N) * (|Real.log (2 * Real.sin (π / N))| + Real.log 2) :=
+    mul_nonneg (le_of_lt hh)
+      (add_nonneg (abs_nonneg _) (Real.log_nonneg (by norm_num)))
+  -- the ℕ midpoint m₀ = ⌊N/2⌋: last index with m₀·π/N ≤ π/2
+  set m₀ := N / 2 with hm₀def
+  have hm₀2 : 2 ≤ m₀ := by omega
+  have h2m₀N : 2 * m₀ ≤ N := by omega
+  have hhalf_of : ∀ j : ℕ, 2 * j ≤ N → (j : ℝ) * (π / N) ≤ π / 2 := by
+    intro j hj
+    have hj' : ((2 * j : ℕ) : ℝ) ≤ (N : ℝ) := by exact_mod_cast hj
+    push_cast at hj'
+    nlinarith [mul_le_mul_of_nonneg_right hj' (le_of_lt hh), hfield]
+  -- deviation at m₀: one E5c-4a step from the rising bound at m₀ − 1
+  have hdev_m₀ : |(π / N) * (∑ j ∈ Finset.Icc 1 m₀,
+        Real.log (2 * Real.sin ((j : ℝ) * (π / N))))
+      - (-clausen (2 * ((m₀ : ℝ) * (π / N))) / 2)|
+      ≤ |(-clausen (2 * (π / N)) / 2)|
+        + (π / N) * |Real.log (2 * Real.sin (π / N))|
+        + 3 * ((π / N) * (|Real.log (2 * Real.sin (π / N))| + Real.log 2)) := by
+    have hcast : ((m₀ - 1 : ℕ) : ℝ) + 1 = (m₀ : ℝ) := by
+      rw [Nat.cast_sub (by omega : 1 ≤ m₀), Nat.cast_one]
+      ring
+    have hhalf : (((m₀ - 1 : ℕ) : ℝ) + 1) * (π / N) ≤ π / 2 := by
+      rw [hcast]
+      exact hhalf_of m₀ h2m₀N
+    have hrise := abs_rising_deviation_le (N := N) (k := m₀ - 1)
+      (by omega : 1 ≤ N) (by omega : 1 ≤ m₀ - 1) hhalf
+    have hstep := abs_deviation_succ (N := N) (k := m₀ - 1)
+      (by omega : 1 ≤ m₀ - 1) (by omega : (m₀ - 1) + 1 ≤ N - 1) hrise
+    have hidx : m₀ - 1 + 1 = m₀ := by omega
+    rw [hidx, hcast] at hstep
+    linarith [hstep]
+  -- deviation at m₀ + 1: a second E5c-4a step
+  have hdev_m₀1 : |(π / N) * (∑ j ∈ Finset.Icc 1 (m₀ + 1),
+        Real.log (2 * Real.sin ((j : ℝ) * (π / N))))
+      - (-clausen (2 * (((m₀ : ℝ) + 1) * (π / N))) / 2)|
+      ≤ |(-clausen (2 * (π / N)) / 2)|
+        + (π / N) * |Real.log (2 * Real.sin (π / N))|
+        + 5 * ((π / N) * (|Real.log (2 * Real.sin (π / N))| + Real.log 2)) := by
+    have hstep := abs_deviation_succ (N := N) (k := m₀)
+      (by omega : 1 ≤ m₀) (by omega : m₀ + 1 ≤ N - 1) hdev_m₀
+    linarith [hstep]
+  rcases le_or_lt (k + 1) m₀ with hA | hA
+  · -- rising range: E5c-1 directly
+    have hhalf : ((k : ℝ) + 1) * (π / N) ≤ π / 2 := by
+      have h := hhalf_of (k + 1) (by omega)
+      push_cast at h
+      linarith [h]
+    have hb := abs_rising_deviation_le (by omega : 1 ≤ N) hk hhalf
+    linarith [hb, hc0]
+  · have hm₀k : m₀ ≤ k := by omega
+    rcases eq_or_lt_of_le hm₀k with heq | hgt
+    · -- k = m₀
+      rw [← heq]
+      linarith [hdev_m₀, hc0]
+    · have hm₀1k : m₀ + 1 ≤ k := by omega
+      rcases eq_or_lt_of_le hm₀1k with heq1 | hgt2
+      · -- k = m₀ + 1
+        rw [← heq1]
+        push_cast
+        linarith [hdev_m₀1, hc0]
+      · -- k ≥ m₀ + 2: glue the prefix at m₀ + 1 to the falling tail (E5c-3)
+        have hlo : π / 2 ≤ ((m₀ + 1 : ℕ) : ℝ) * (π / N) := by
+          have hNle : (N : ℝ) ≤ 2 * ((m₀ + 1 : ℕ) : ℝ) := by
+            exact_mod_cast (by omega : N ≤ 2 * (m₀ + 1))
+          nlinarith [mul_le_mul_of_nonneg_right hNle (le_of_lt hh), hfield]
+        have hfall := abs_falling_deviation_le (N := N) (m := m₀ + 1) (k := k)
+          (by omega : 1 ≤ N) (by omega : m₀ + 1 ≤ k) hlo hkN
+        have hcast : ((m₀ + 1 : ℕ) : ℝ) = (m₀ : ℝ) + 1 := by push_cast; ring
+        rw [hcast] at hfall
+        have hsplit : (∑ j ∈ Finset.Icc 1 k,
+              Real.log (2 * Real.sin ((j : ℝ) * (π / N))))
+            = (∑ j ∈ Finset.Icc 1 (m₀ + 1),
+                Real.log (2 * Real.sin ((j : ℝ) * (π / N))))
+              + ∑ j ∈ Finset.Icc (m₀ + 1 + 1) k,
+                  Real.log (2 * Real.sin ((j : ℝ) * (π / N))) := by
+          rw [← Nat.Ico_succ_right 1 k, ← Nat.Ico_succ_right 1 (m₀ + 1),
+            ← Nat.Ico_succ_right (m₀ + 1 + 1) k]
+          exact (Finset.sum_Ico_consecutive _
+            (by omega : 1 ≤ m₀ + 1 + 1) (by omega : m₀ + 1 + 1 ≤ k + 1)).symm
+        rw [hsplit, mul_add]
+        set S₁ := ∑ j ∈ Finset.Icc 1 (m₀ + 1),
+          Real.log (2 * Real.sin ((j : ℝ) * (π / N))) with hS₁
+        set S₂ := ∑ j ∈ Finset.Icc (m₀ + 1 + 1) k,
+          Real.log (2 * Real.sin ((j : ℝ) * (π / N))) with hS₂
+        set F₁ := -clausen (2 * (((m₀ : ℝ) + 1) * (π / N))) / 2 with hF₁
+        set Fk := -clausen (2 * ((k : ℝ) * (π / N))) / 2 with hFk
+        calc |(π / N) * S₁ + (π / N) * S₂ - Fk|
+            = |((π / N) * S₁ - F₁) + ((π / N) * S₂ - (Fk - F₁))| := by
+              congr 1
+              ring
+          _ ≤ |(π / N) * S₁ - F₁| + |(π / N) * S₂ - (Fk - F₁)| := abs_add_le _ _
+          _ ≤ _ := add_le_add hdev_m₀1 hfall
+          _ ≤ _ := by linarith [hc0]
+
 /-- **The series Clausen's derivative** `Cl_2'(θ) = -log(2 sin(θ/2))` for
     `θ ∈ (0, 2π)` — the derivative the filler flagged as needing Fourier
     infrastructure, now machine-proved (`hasDerivAt_Cl_2_series`). Dual-purpose: `V'(θ)` of
