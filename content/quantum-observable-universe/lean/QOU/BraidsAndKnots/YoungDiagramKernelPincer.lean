@@ -4,6 +4,7 @@ import QOU.BraidsAndKnots.YoungDiagramKernelDimPos
 import QOU.BraidKnot.IdentityIContentDecomposition
 import Mathlib.Analysis.SpecialFunctions.Log.Basic
 import Mathlib.Analysis.SpecialFunctions.ExpDeriv
+import Mathlib.Analysis.Calculus.Deriv.Slope
 
 /-!
 # QOU.BraidsAndKnots.YoungDiagramKernelPincer — the two-leg pincer scaffold for the kernel sign
@@ -850,5 +851,104 @@ theorem covLnF_nonpos_iff_nu_log (k : ℕ) :
     covLnF k ≤ 0 ↔ 0 ≤ ∑ v ∈ Finset.range (2 * k + 1), Real.log v * nuV k v := by
   rw [sum_log_nuV]
   exact covLnF_nonpos_iff k
+
+/-! ## The fractional-moment family and the FMP ⇒ [A2] bridge
+
+The fractional-moment family `M_α = Σ_v v^α·ν_v` interpolates the proved even anchors
+(`α = 2, 4, 6`: even hook-power moment positivity) and has [A2] as its `α → 0⁺` boundary: since
+`M(0) = Σν_v = 0` (proved, `sum_nuV_eq_zero`) and `M′(0) = Σ ln(v)·ν_v` (proved below), positivity
+of `M` on any right neighborhood of `0` forces the log moment — i.e. leg [A2] — to be
+nonnegative. **FMP** (`M_α ≥ 0` for all `α > 0`) is the new instance-less target *above*
+`KernelPincerLegs.leg_A2`; exact-`Fraction` verified `n ≤ 30`, `α ∈ [0.02, 6]`, with the minimum
+always at the [A2] boundary
+(`wlambda-covariance-epic-A2-fractional-moment-family.witness.json`). -/
+
+/-- No hooks of length zero: the `v = 0` fiber of the spectrum is empty. -/
+theorem hookCount_zero (l : List ℕ) (hs : l.Sorted (· ≥ ·)) : hookCount l 0 = 0 := by
+  unfold hookCount
+  rw [Finset.card_eq_zero]
+  exact Finset.filter_eq_empty_iff.mpr fun p hp => (hookLen_pos l hs p hp).ne'
+
+/-- The ν-system vanishes at `v = 0`. -/
+theorem nuV_zero (k : ℕ) : nuV k 0 = 0 := by
+  unfold nuV nuMixedMoment nuMean
+  rw [List.map_congr_left (fun l hl => by
+      rw [hookCount_zero l (partsOf_facts k l hl).2.2]
+      push_cast
+      ring :
+    ∀ l ∈ partsOf k, tilt 0 (sytDim l) * (hookCount l 0 : ℝ) * (omega3 k l : ℝ) = 0)]
+  rw [List.map_congr_left (fun l hl => by
+      rw [hookCount_zero l (partsOf_facts k l hl).2.2]
+      push_cast
+      ring :
+    ∀ l ∈ partsOf k, tilt 0 (sytDim l) * (hookCount l 0 : ℝ) = 0)]
+  simp
+
+/-- **The fractional-moment family** `M_α = Σ_v v^α·ν_v`, in `exp(α·ln v)` form (the `v = 0` term
+is the constant `exp(α·ln 0) = exp(0) = 1` under Lean's `Real.log 0 = 0`, and is annihilated by
+`nuV_zero`, so the convention is harmless). -/
+noncomputable def fracMoment (k : ℕ) (α : ℝ) : ℝ :=
+  ∑ v ∈ Finset.range (2 * k + 1), Real.exp (α * Real.log v) * nuV k v
+
+/-- `M(0) = Σ_v ν_v = 0` — the zeroth-moment constraint. -/
+theorem fracMoment_zero (k : ℕ) : fracMoment k 0 = 0 := by
+  unfold fracMoment
+  simp only [zero_mul, Real.exp_zero, one_mul]
+  exact sum_nuV_eq_zero k
+
+/-- **`M′(0) = Σ ln(v)·ν_v`** — the fractional-moment family's derivative at the boundary is
+exactly the [A2] log moment (term-by-term `exp` differentiation). -/
+theorem hasDerivAt_fracMoment_zero (k : ℕ) :
+    HasDerivAt (fracMoment k)
+      (∑ v ∈ Finset.range (2 * k + 1), Real.log v * nuV k v) 0 := by
+  have h : ∀ v ∈ Finset.range (2 * k + 1),
+      HasDerivAt (fun α : ℝ => Real.exp (α * Real.log v) * nuV k v)
+        (Real.log v * nuV k v) 0 := by
+    intro v _
+    have h1 : HasDerivAt (fun α : ℝ => α * Real.log v) (Real.log v) 0 := by
+      simpa using (hasDerivAt_id (0 : ℝ)).mul_const (Real.log v)
+    have h2 := (h1.exp).mul_const (nuV k v)
+    convert h2 using 1
+    simp [Real.exp_zero]
+  have h2 := HasDerivAt.sum h
+  have hfun : (∑ i ∈ Finset.range (2 * k + 1), fun α : ℝ =>
+      Real.exp (α * Real.log i) * nuV k i) = fracMoment k := by
+    funext α
+    rw [Finset.sum_apply]
+    rfl
+  rwa [hfun] at h2
+
+/-- **The FMP ⇒ [A2] bridge**: if the fractional-moment family is nonnegative on any right
+neighborhood `(0, ε)` of the boundary, the log moment is nonnegative — `0 = M(0) ≤ M(α)` near `0`
+forces the one-sided derivative, which IS the [A2] quantity, to be `≥ 0`. -/
+theorem nu_log_nonneg_of_fracMoment_nonneg (k : ℕ) {ε : ℝ} (hε : 0 < ε)
+    (hFMP : ∀ α ∈ Set.Ioo (0 : ℝ) ε, 0 ≤ fracMoment k α) :
+    0 ≤ ∑ v ∈ Finset.range (2 * k + 1), Real.log v * nuV k v := by
+  have hD := (hasDerivAt_fracMoment_zero k).hasDerivWithinAt (s := Set.Ioi (0 : ℝ))
+  rw [hasDerivWithinAt_iff_tendsto_slope,
+    show Set.Ioi (0 : ℝ) \ {0} = Set.Ioi 0 from
+      Set.diff_singleton_eq_self (by simp)] at hD
+  refine ge_of_tendsto hD (Filter.eventually_of_mem (Ioo_mem_nhdsGT hε) ?_)
+  intro α hα
+  have hslope : slope (fracMoment k) 0 α = fracMoment k α / α := by
+    rw [slope_def_field, fracMoment_zero, sub_zero, sub_zero]
+  rw [hslope]
+  exact div_nonneg (hFMP α hα) (le_of_lt hα.1)
+
+/-- **Fractional-moment positivity (FMP)** — the new instance-less target *above* leg [A2]: the
+family `M_α` is nonnegative on some right neighborhood of the boundary. Exact-`Fraction` verified
+`n ≤ 30` on `α ∈ [0.02, 6]` (with the minimum always at the [A2] boundary `α → 0⁺` and survival
+past the `n ≥ 29` pointwise falsification — the failing bounded weights lie outside the power
+family). Providing this instance for all `k` closes leg [A2] via the bridge below. NO instance is
+provided — that is the open problem, one level sharper than [A2] itself. -/
+class FractionalMomentPositivity (k : ℕ) : Prop where
+  pos : ∃ ε > 0, ∀ α ∈ Set.Ioo (0 : ℝ) ε, 0 ≤ fracMoment k α
+
+/-- **FMP ⇒ leg [A2] (machine-checked)**: fractional-moment positivity near the boundary forces
+`Cov₂(ln f, ω₃) ≤ 0`. -/
+theorem covLnF_nonpos_of_FMP (k : ℕ) [h : FractionalMomentPositivity k] :
+    covLnF k ≤ 0 := by
+  obtain ⟨ε, hε, hpos⟩ := h.pos
+  exact (covLnF_nonpos_iff_nu_log k).mpr (nu_log_nonneg_of_fracMoment_nonneg k hε hpos)
 
 end QOU.BraidsAndKnots.YoungDiagramKernelPincer
