@@ -498,3 +498,29 @@ NOT a fit (μ₃ never inverted, no width/multiplicity tuned), NOT a hard wall. 
 Probe `borromean_h9_magnitude_lift_probe.py` + witness. Audit
 `2026-07-26-deltalambda-borromean-magnitude-lift.md`. Nothing wired; μ₃'s value
 enters no proof.
+
+**2026-07-26 — the Δ_λ residual is a TWO-operator (binding − saturation) object:
+capstone formalization of the three cluster-sign walls (0-fit, sign-only).** (PR
+#4379, `claude/deltalambda-two-operator-split-2026-07-26`.) Reads #4360 (Brunnian
+deficit ≥0), #4354 (multiplicative cluster ≤0) and #4376 (A=4 residual μ₄<0,
+`sign_swap_a3_a4`) together as a **decomposition**: the residual moment sequence
+`{μₖ}` (`μ₂=0`, `μ₃=+0.4708`, `μ₄=−4.591`) is realized as a signed sum
+`μₖ = Bₖ − Sₖ` of a non-negative **binding** operator `B` (Brunnian/Borromean
+trace deficit) and a non-negative **saturation** magnitude `S` (= minus the ≤0
+multiplicative cluster). The **sign of `μₖ` selects the dominant operator**:
+`μ₃>0 ⟺ B₃>S₃` (binding-dominated), `μ₄<0 ⟺ S₄>B₄` (saturation-dominated); and —
+the structural payoff — **two operators of opposite sign are necessary**: a
+binding-only model (`S=0`) is ≥0 everywhere so can never equal `μ₄<0`, a
+saturation-only model (`B=0`) is ≤0 everywhere so can never equal `μ₃>0`. **Lean
+`TwoOperatorResidualSplit.lean` sorry-free (lean-direct exit 0):** `residual_pos_iff`
+/ `residual_neg_iff` (sign ⟺ domination), `pure_binding_nonneg` /
+`pure_saturation_nonpos`, `binding_alone_ne_mu4` / `saturation_alone_ne_mu3`
+(two-operator necessity), `borromeanMinusSaturation` (concrete split, both signs
+reused from `borromean_cluster_nonneg` + `pairwise_3body_content_nonpos`),
+`residual_is_two_operator` (packaged capstone). **Genuinely REUSES the merged sign
+lemmas — does not reprove them.** **Scope: SIGN structure fully derived; the
+per-λ MAGNITUDE closure (that the concrete operator magnitudes sum to the exact
+`μₖ`) is the OPEN Δ_λ gate and is NOT claimed** — `μ = B − S` enters the domination
+theorems as a modeling hypothesis, `signed_split_exists` records only the trivial
+weak form. 0 free params, no `μₖ` inverted, nothing wired. Audit
+`2026-07-26-deltalambda-two-operator-split.md`.
