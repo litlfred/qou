@@ -1,0 +1,55 @@
+{
+  "schema": "witness/v1",
+  "name": "qbeta-imq-anchor-carrier",
+  "description": "Falsifiable test of the q0-varies/Im(q) reframe against #4293's proved dS/dphi: single global Im(q0) vs per-anchor Im(q) for the c3 bar-odd anchor-swing. No fit; nothing inverted to define Im(q); MEASURES the gap and returns an honest verdict.",
+  "computation": {
+    "script": "computations/qbeta/qbeta_imq_anchor_carrier_probe.py"
+  },
+  "witness": {
+    "scriptCommitSha": "",
+    "scriptHash": "f42fdbd4bab170a2"
+  },
+  "inputs": {
+    "S_proton": "-0.0395",
+    "S_muon": "0.0097",
+    "qr_proton": "1.10998",
+    "anchor_sep_ppb": "0.000000022",
+    "note": "S residuals + qr from capstone #4297 / AGENTS.md; NOT tuned; NOT inverted."
+  },
+  "results": {
+    "dargu_dImq_slope": "8.63427151389",
+    "dargu_dImq_slope_numeric_check": "8.63427151389",
+    "k_linear_response": "0.651275303758",
+    "k_linear_response_numeric_check": "0.651275303758",
+    "k_muon": "0.651275180768",
+    "k_anchor_relative_diff": "1.88845e-7",
+    "global_Im_eps_used": "0.0606502346581",
+    "swing_global_exact": "7.41655131921e-9",
+    "swing_observed": "-0.0492",
+    "order_mismatch_factor": "6.63381e+6",
+    "amplitude_ceiling_fixed_r": "0.0377145",
+    "eps_proton_required": "-0.0606502346581",
+    "eps_muon_required": "0.0148938579059",
+    "eps_proton_rel_to_qr": "-0.0546408",
+    "eps_muon_rel_to_qr": "0.0134181",
+    "required_opposite_sign": true,
+    "required_magnitude_ratio": "4.07216"
+  },
+  "verdict": "UNFALSIFIABLE-KNOB/FIT + ORDER-MISMATCH-WALL",
+  "verdict_detail": {
+    "single_global_Im_reproduces_swing_consistently": false,
+    "global_Im_order_mismatch": "6.63381e+6",
+    "per_anchor_Im_required": true,
+    "per_anchor_Im_is_free_scale": true,
+    "Im_scale_derived_or_bounded": false,
+    "scope": "(a) scope-limited negative: the Im(q) phase channel ALONE, with a single substrate Im(q0), does not reproduce the c3 swing (order-mismatch ~1e6-1e7); reproducing it requires per-anchor Im(q) = a FIT. No structural-(b) exclusion of Im(q) as an INGREDIENT is claimed."
+  },
+  "discipline": "no fit; no residual inverted to define Im(q); nothing wired; conj:algebraic-geometric-dilog-equivalence stays OPEN.",
+  "refs": [
+    "QOU.QBeta.ArgUPhaseBranchSelection (#4293, sorry-free): dS/dphi|0 = sqrt3 r^2, arg(u)=0 real",
+    "QOU.QBeta.SRigidity.no_anchor_invariant_realizes_swing (scope-(b)): anchor-invariant datum cannot swing",
+    "QOU.QBeta.fig8Trace_im_odd (#3600): sign S = sign Im(q)",
+    "docs/audits/2026-07-25-c3-categorical-exclusion-capstone.md"
+  ],
+  "generated": "2026-07-26T11:40:57.654868+00:00"
+}
