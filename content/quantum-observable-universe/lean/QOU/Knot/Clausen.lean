@@ -22,11 +22,15 @@
   has no elementary closed form (it is the ideal-tetrahedron volume by
   definition); that is a fact, not a gap — `Vol(4₁)` is transcendental.
 
-  HONEST SCOPE. This discharges the DERIVATIVE claim of the dilog-saddle block,
-  NOT the figure-eight volume-conjecture `sorry` (which additionally needs the
-  saddle-point existence + growth-rate = value — the Andersen–Hansen / Ohtsuki
-  asymptotic, of which this is one ingredient). Bean qou-reab (brick 3); the
-  Clausen VALUE is tracked in bean qou-44ma.
+  SCOPE (updated 2026-07-26). Originally this file discharged only the
+  DERIVATIVE claim of the dilog-saddle block. The E4/E5 brick program appended
+  below (Riemann-sum sandwiches, the all-k uniform deviation bound
+  `abs_deviation_le`, and the vanishing master error `tendsto_master_error`)
+  now feeds the E5d squeeze in `FigureEightVolumeSqueeze.lean`, which
+  DISCHARGES the figure-eight volume-conjecture `sorry` outright
+  (`tendsto_log_kashaev_vol`, milestone qou-cpfn). Bean qou-reab (brick 3);
+  the Clausen VALUE (no elementary closed form; transcendental) remains
+  tracked in bean qou-44ma.
 
   Archimedean (ℝ).
 
