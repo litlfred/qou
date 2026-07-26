@@ -54,7 +54,17 @@ theorem log_kashaev_nonneg (N : ℕ) (hN : 1 ≤ N) : 0 ≤ Real.log (kashaev N)
     uniqueness engine to this specific series' saddle-point evaluation is a
     separate open formalization item, not an automatic consequence. Downstream
     results conditional on `[VolumeConjecture41]` remain conditional on this
-    single cited declaration. -/
+    single cited declaration.
+
+    STATEMENT REPAIR (2026-07-26, bean qou-yf47). `VOL_4_1` is now the EXACT
+    `2·Cl₂(π/3)` (it was a truncated rational decimal differing by ≈ 1e-30,
+    which made this very limit statement false as stated and hence permanently
+    undischargeable). With the repaired target the statement is the true
+    Andersen–Hansen / Ohtsuki theorem, and the in-repo discharge path is the
+    E5 deviation program in `QOU/Knot/Clausen.lean` (E5c-1…E5c-5: the all-k
+    uniform Riemann-sum-vs-Clausen deviation bound `abs_deviation_le` with
+    master error `E(N) → 0` — `tendsto_master_error`), to be assembled by the
+    E5d squeeze (bean qou-f248). -/
 instance volumeConjecture41_of_literature : VolumeConjecture41 := by
   constructor
   -- Ref: [andersen-hansen2006] https://doi.org/10.1142/S0218216506004555
