@@ -696,6 +696,60 @@ theorem hookLen_pos (l : List ℕ) (hs : l.Sorted (· ≥ ·)) (p : ℕ × ℕ) 
   rw [conj_getD l hs]
   omega
 
+/-- **The hook is contained in the diagram**: a cell's hook length is at most the size
+`n = Σλᵢ`. The hook of `(i,j)` is the disjoint union of its arm `{(i,j′) : j ≤ j′ < λᵢ}` and
+its strict leg `{(i′,j) : i < i′ < λ′ⱼ}`, both inside the cell set; counting the union gives
+`h(i,j) = (λᵢ − j) + (λ′ⱼ − i − 1) ≤ |cells λ| = n`. This is the first brick of the (TAIL)
+carrier method: the extreme case `h = n` forces the hook to *exhaust* the diagram, confining
+the carriers of `ν_n` to the hook shapes `(a, 1^{n−a})` — the containment proved here is the
+inequality whose equality analysis is that carrier lemma. -/
+theorem hookLen_le_sum (l : List ℕ) (hs : l.Sorted (· ≥ ·)) (p : ℕ × ℕ)
+    (hp : p ∈ cells l) : hookLen l p ≤ l.sum := by
+  obtain ⟨i, j⟩ := p
+  rw [mem_cells] at hp
+  have hcol : i < (conj l).getD j 0 := by
+    rw [conj_getD l hs]
+    exact (lt_countP_iff l hs j i).mpr hp
+  have hinj1 : Function.Injective (fun j' : ℕ => (i, j')) := fun a b h => by
+    simpa using congrArg Prod.snd h
+  have hinj2 : Function.Injective (fun i' : ℕ => (i', j)) := fun a b h => by
+    simpa using congrArg Prod.fst h
+  have harm : (Finset.Ico j (l.getD i 0)).image (fun j' => (i, j')) ⊆ cells l := by
+    intro q hq
+    obtain ⟨j', hj', rfl⟩ := Finset.mem_image.mp hq
+    rw [mem_cells]
+    exact (Finset.mem_Ico.mp hj').2
+  have hleg : (Finset.Ioo i ((conj l).getD j 0)).image (fun i' => (i', j)) ⊆ cells l := by
+    intro q hq
+    obtain ⟨i', hi', rfl⟩ := Finset.mem_image.mp hq
+    rw [mem_cells]
+    refine (lt_countP_iff l hs j i').mp ?_
+    have h2 := (Finset.mem_Ioo.mp hi').2
+    rwa [conj_getD l hs] at h2
+  have hdisj : Disjoint ((Finset.Ico j (l.getD i 0)).image (fun j' => (i, j')))
+      ((Finset.Ioo i ((conj l).getD j 0)).image (fun i' => (i', j))) := by
+    rw [Finset.disjoint_left]
+    intro q hqa hql
+    obtain ⟨j', _, rfl⟩ := Finset.mem_image.mp hqa
+    obtain ⟨i', hi', h'⟩ := Finset.mem_image.mp hql
+    simp only [Prod.mk.injEq] at h'
+    have h1 := (Finset.mem_Ioo.mp hi').1
+    omega
+  have hcard := Finset.card_le_card (Finset.union_subset harm hleg)
+  rw [Finset.card_union_of_disjoint hdisj, card_cells,
+      Finset.card_image_of_injective _ hinj1, Finset.card_image_of_injective _ hinj2,
+      Nat.card_Ico, Nat.card_Ioo] at hcard
+  unfold hookLen
+  dsimp only
+  omega
+
+/-- The tight hook bound on enumerated partitions: `h(□) ≤ k` (sharpening the cheap `2k`
+range bound `hookLen_lt_of_mem`; the classical bound, now proved rather than assumed). -/
+theorem hookLen_le_of_mem (k : ℕ) (l : List ℕ) (hl : l ∈ partsOf k) (p : ℕ × ℕ)
+    (hp : p ∈ cells l) : hookLen l p ≤ k := by
+  obtain ⟨hsum, _, hsort⟩ := partsOf_facts k l hl
+  exact hsum ▸ hookLen_le_sum l hsort p hp
+
 /-- `IdentityI.sumSqHooks` as a cell-set sum of the kernel-form hook (the two per-cell
 ℕ-subtraction forms agree on genuine cells, as in `hookProd_eq_prodHooks`). -/
 theorem sumSqHooks_eq_sum_cells (l : List ℕ) (hs : l.Sorted (· ≥ ·)) :
