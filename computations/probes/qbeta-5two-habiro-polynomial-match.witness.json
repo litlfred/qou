@@ -1,8 +1,8 @@
 {
   "engine": "exact-integer-laurent",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-26T11:55:31.870253+00:00",
-  "commitSha": "d018c2e95541f3844038bd364fa05dee6301d9fd",
+  "computedAt": "2026-07-26T13:42:47.598481+00:00",
+  "commitSha": "9582d4038e639865d0e8c0ada3f223b26ef4cc82",
   "assertions": [
     {
       "name": "bar_inversion_reshapes_ggmw_sum",
@@ -21,6 +21,14 @@
       "source": "H₀ = 1 and H₁ = −q²−q⁴ as printed in GGMW §4.2"
     },
     {
+      "name": "c52_is_the_habiro_polynomial",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "the corpus's C52(n), read as a q-series at q = a², equals GGMW eq (161) H_n^{5₂}(q) term-by-term as integer Laurent polynomials"
+    },
+    {
       "name": "comparison_completed",
       "computed": 11.0,
       "expected": 11.0,
@@ -33,8 +41,8 @@
   "durationMs": 0,
   "computation": "qbeta-5two-habiro-polynomial-match",
   "scriptFile": "qbeta_5two_habiro_polynomial_match_probe.py",
-  "scriptHash": "3f7ab50e5518",
-  "scriptCommitSha": "d018c2e95541f3844038bd364fa05dee6301d9fd",
+  "scriptHash": "19064d46774f",
+  "scriptCommitSha": "b35b09eb564449a107558799c9c359d434320bc1",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -153,6 +161,6 @@
     ],
     "n_exact_ratios": 11,
     "n_monomial_ratios": 1,
-    "verdict": "PARTIAL/NEGATIVE: 11/11 exact Laurent ratios, 1 monomial. The corpus tail is NOT a pure monomial multiple of GGMW eq (161) at every level; the per-level ratios are recorded for inspection (a normalization or convention difference is the first thing to check). auditOnly."
+    "verdict": "IDENTIFIED — the corpus's Masbaum coefficient IS the published Habiro polynomial: C52(n), read as a q-series at q = a², equals GGMW arXiv:2111.04763v2 eq (161) H_n^{5₂}(q) EXACTLY (term-by-term integer Laurent equality, n ≤ 12) — no dressing, no monomial, nothing. Consistently, the (★) LHS / H_n ratio is q^{−(5n²+7n)/2}·(q;q)_n², precisely the (★) normalization, so it cancels identically. The proved (★) identity is therefore a bar-inversion statement about a named object of the literature. Consequence for the bridge programme: the route from this object into the extended matrix is GGMW's (ε,δ)-DEFORMATION of the Habiro polynomials (eqs 165–172), whose Taylor coefficients Q_m^{(a,b)} are the 6×6 matrix entries — NOT a linear map into the geometric block span. That is why B1.2–B1.4′ returned nothing: the construction is a deformation-and-expand, not a change of basis. auditOnly."
   }
 }
