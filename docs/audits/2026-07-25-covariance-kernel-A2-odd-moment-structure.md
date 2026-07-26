@@ -34,7 +34,9 @@ argument does not apply. This audit characterizes the odd-`k` structure exactly.
 - **(3) locates `M_1` in the same difficulty class as the kernel.** From `Σ_□ h = n_λ + n_λ' + |λ|` and
   the transpose-invariance of Plancherel measure, the first odd moment reduces to a row-content /
   content-spread covariance `Cov_Planch(n_λ, Σc²)` — structurally a sibling of the open kernel
-  `Cov_Planch(f^λ, Σc²) ≤ 0`, **not** an easier object. So `M_1 > 0` is not a low-hanging fruit.
+  `Cov_Planch(f^λ, Σc²) ≤ 0`, **not** an easier object. So `M_1 > 0` is not a low-hanging fruit. The
+  algebraic key — the hook-sum decomposition `Σ_□ h = n_λ + n_λ' + |λ|` — is **Lean-verified**
+  (`YoungDiagramKernel.hookSum_eq_nLambda_add_conj_add_card_of_le_seven`, `decide`, `λ ⊢ k ≤ 7`).
 - **(4) is not bootstrapped by (2) + even positivity.** One might hope: even moments `M_{2j}, M_{2j+2}`
   are proved `> 0`, and log-convexity gives `M_{2j+1}² > M_{2j} M_{2j+2} > 0` — but a square being
   positive says nothing about the **sign** of `M_{2j+1}`. So odd-moment positivity is **genuinely
