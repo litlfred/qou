@@ -35,17 +35,17 @@ Anti-fit: only the derived sign structure is used; the AME residual magnitude
 import Mathlib.Tactic
 
 /-
-VERIFICATION STATUS (2026-07-26): authored + hand-audited, but NOT machine-checked
-in this environment.  The restored `lake-cache/qou-v4-24-0` olean cache is pruned —
-it keeps the final `QOU` oleans but not the intermediate `Mathlib.Tactic` cone
-(`Mathlib/Tactic/Linarith.olean`, the `Mathlib.Tactic` umbrella are absent), so even
-the merged #4320 file cannot re-verify here, and a from-source `Mathlib.Tactic`
-rebuild is disk-blocked (ENOSPC).  The proofs use only elementary standard tactics
-(`induction` on `List`, `nlinarith`/`linarith`/`norm_num`, `mul_nonneg`,
-`mul_le_mul_of_nonneg_right`); `pairwise_3body_content_nonpos` mirrors the merged,
-sorry-free `QOU.BraidKnot.Cluster.productModel_3body_nonpos` line-for-line.  Re-run
-`lean QOU/MassTheory/Mu4RhoFCluster.lean` once the full Mathlib olean cone is
-restored to machine-confirm.
+VERIFICATION STATUS (2026-07-26): MACHINE-CHECKED, `lean`-direct exit 0, sorry-free.
+Originally authored + hand-audited only (the sibling's restored `lake-cache/qou-v4-24-0`
+was pruned + disk ENOSPC), this file was re-verified against the full restored Mathlib
+`Tactic` olean cone: `lean QOU/MassTheory/Mu4RhoFCluster.lean` returns exit 0 with no
+errors (two cosmetic `unusedVariables`-linter warnings on the
+`pairwise_3body_content_nonpos` positivity binders — false positives: `ha0`/`hb0` are
+used in the `key` positivity step; the binders are kept unchanged).
+The proofs use only elementary standard tactics (`induction` on `List`,
+`nlinarith`/`linarith`/`norm_num`, `mul_nonneg`, `mul_le_mul_of_nonneg_right`);
+`pairwise_3body_content_nonpos` mirrors the merged, sorry-free
+`QOU.BraidKnot.Cluster.productModel_3body_nonpos`.
 -/
 
 namespace QOU.MassTheory
