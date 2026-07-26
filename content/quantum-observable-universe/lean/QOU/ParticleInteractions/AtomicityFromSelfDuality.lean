@@ -246,4 +246,45 @@ theorem sl2_diagonal_eq_diagEmbed (g : SpecialLinearGroup (Fin 2) R)
 
 end SL2Torus
 
+/-! ## T3 (`m = 1`) — maximality ingredient: the diagonal torus is self-centralizing -/
+
+section SL2TorusMaximal
+open Matrix
+
+variable {R : Type*} [Field R]
+
+/-- **Maximality ingredient — a regular torus element centralizes only diagonals.**
+    If a `2×2` matrix `M` commutes with `diag(t, t⁻¹)` for a **regular** unit `t`
+    (`t² ≠ 1` — which needs the base ring to carry a unit of order `> 2`, true for
+    the archimedean substrate `ℝ`/`ℂ`, false over `𝔽₂`/`𝔽₃`), then `M` is
+    **diagonal** (`M 0 1 = M 1 0 = 0`). Proof: the `(0,1)`/`(1,0)` entries of
+    `M·diag = diag·M` force `M 0 1·(1 − t²) = 0` and likewise for `M 1 0`, and
+    `1 − t² ≠ 0` in a field.
+
+    Consequence: the centralizer of a regular element of the diagonal torus is
+    contained in the diagonals, so (with `sl2_diagonal_eq_diagEmbed`) the diagonal
+    `𝔾ₘ` is **self-centralizing** — the standard criterion for a *maximal* torus in
+    a connected reductive group. This is a genuine ingredient of the maximality
+    step (rank ≤ 1); concluding rank ≤ 1 from it still needs the connected-reductive
+    structure theory, so it does **not** by itself close the atomicity upper bound
+    (bean `qou-atsd-t3`). The `t² ≠ 1` hypothesis honestly records that maximality
+    requires the substrate's ring-richness. -/
+theorem commute_diagMat_imp_diagonal (M : Matrix (Fin 2) (Fin 2) R) (t : Rˣ)
+    (ht : (t : R) ^ 2 ≠ 1) (hcomm : M * diagMat t = diagMat t * M) :
+    M 0 1 = 0 ∧ M 1 0 = 0 := by
+  have hne : (1 : R) - (t : R) ^ 2 ≠ 0 := sub_ne_zero.mpr (Ne.symm ht)
+  have hit : ((t : R))⁻¹ * ↑t = 1 := inv_mul_cancel₀ t.ne_zero
+  have e01 := congrFun (congrFun hcomm 0) 1
+  have e10 := congrFun (congrFun hcomm 1) 0
+  simp [Matrix.mul_apply, Fin.sum_univ_two, diagMat] at e01 e10
+  refine ⟨?_, ?_⟩
+  · have key : M 0 1 * (1 - (t : R) ^ 2) = 0 := by
+      linear_combination (t : R) * e01 - M 0 1 * hit
+    exact (mul_eq_zero.mp key).resolve_right hne
+  · have key : M 1 0 * (1 - (t : R) ^ 2) = 0 := by
+      linear_combination (-(t : R)) * e10 - M 1 0 * hit
+    exact (mul_eq_zero.mp key).resolve_right hne
+
+end SL2TorusMaximal
+
 end QOU.Atomicity
