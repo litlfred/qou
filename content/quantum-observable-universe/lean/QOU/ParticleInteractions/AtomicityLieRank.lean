@@ -384,6 +384,36 @@ theorem sl2_ker_ad_le_span {K : Type*} [Field K] (h2 : (2 : K) ≠ 0)
     · simp only [SetLike.val_smul, Matrix.smul_apply, smul_eq_mul, Fin.mk_zero, Fin.mk_one, hXtr, hytr]
       field_simp
 
+/-- **Corollary: the centralizer of a nonzero `X ∈ 𝔰𝔩₂` has `finrank ≤ 1`.** Immediate from
+`sl2_ker_ad_le_span` (`ker (ad X) ≤ K ∙ X`) and `finrank (K ∙ X) = 1`. -/
+theorem sl2_centralizer_finrank_le_one {K : Type*} [Field K] (h2 : (2 : K) ≠ 0)
+    (X : sl (Fin 2) K) (hX : X ≠ 0) :
+    Module.finrank K (LinearMap.ker (ad K (sl (Fin 2) K) X)) ≤ 1 := by
+  haveI : Module.Finite K (sl (Fin 2) K) := Module.Finite.of_basis (sl2Basis K)
+  calc Module.finrank K (LinearMap.ker (ad K (sl (Fin 2) K) X))
+      ≤ Module.finrank K (Submodule.span K {X}) :=
+        Submodule.finrank_mono (sl2_ker_ad_le_span h2 X hX)
+    _ = 1 := finrank_span_singleton hX
+
+/-- **Central-element reduction (the Tier-B bridge).** A subalgebra `A ⊆ 𝔰𝔩₂` containing a
+nonzero element `X` that commutes with all of `A` has `finrank A ≤ 1` — because `A ⊆ ker (ad X)`,
+whose finrank is `≤ 1` (`sl2_centralizer_finrank_le_one`). Both the abelian case (any nonzero
+`X ∈ A`) and the nilpotent case (a nonzero central element, via
+`non_trivial_center_of_isNilpotent`) feed this. -/
+theorem sl2_finrank_le_one_of_central {K : Type*} [Field K] (h2 : (2 : K) ≠ 0)
+    (A : LieSubalgebra K (sl (Fin 2) K)) (X : sl (Fin 2) K) (hX : X ≠ 0)
+    (hcentral : ∀ y ∈ A, ⁅X, y⁆ = (0 : sl (Fin 2) K)) :
+    Module.finrank K A ≤ 1 := by
+  haveI : Module.Finite K (sl (Fin 2) K) := Module.Finite.of_basis (sl2Basis K)
+  have hsub : (A : Submodule K (sl (Fin 2) K)) ≤ LinearMap.ker (ad K (sl (Fin 2) K) X) := by
+    intro y hy
+    rw [LinearMap.mem_ker, LieAlgebra.ad_apply]
+    exact hcentral y hy
+  calc Module.finrank K A
+      = Module.finrank K (A : Submodule K (sl (Fin 2) K)) := rfl
+    _ ≤ Module.finrank K (LinearMap.ker (ad K (sl (Fin 2) K) X)) := Submodule.finrank_mono hsub
+    _ ≤ 1 := sl2_centralizer_finrank_le_one h2 X hX
+
 end SL2
 
 end QOU.Atomicity
