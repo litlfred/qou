@@ -87,3 +87,74 @@ are both directly reusable.
 
 Discipline unchanged: comparison to observed only; no ontological claims;
 nothing wired; c₃ tier unchanged (SETTLED, #1580).
+
+## UPDATE (same day): the corpus object is identified — `C52(n)` **is** the Habiro polynomial
+
+Reading GGMW §4.2 (uploaded, `uploads/2111.04763v2.pdf`) turned up the
+object in closed form. Equation (161):
+
+$$H_n^{5_2}(q) \;=\; (-1)^n q^{\frac{1}{2}n(n+3)} \sum_{k=0}^{n} q^{k(k+1)} \binom{n}{k}_q$$
+
+attributed there to Habiro [Hab02a] and **Masbaum [Mas03]** — the same
+Masbaum paper the corpus's `C52(n)` implements (uploaded as
+`uploads/Download.pdf`).
+
+**Machine-exact result** (`qbeta_5two_habiro_polynomial_match_probe.py`,
+4/4, integer-Laurent equality, no floats):
+
+> `C52(n)`, read as a q-series at `q = a²`, **equals** `H_n^{5₂}(q)`
+> term-by-term for `n ≤ 12` — no dressing, no monomial, nothing.
+
+Consistently, the ratio `(★)LHS / H_n` comes out as
+`q^{−(5n²+7n)/2}·(q;q)_n²`, which is *precisely* the (★) normalization,
+so it cancels identically. The sorry-free `(★)` theorem is therefore a
+bar-inversion statement about a **named object of the literature**, and
+`prop:habiro-tail-star-identity` can now cite it as such.
+
+### What this settles about the bridge
+
+GGMW build the extended matrix from the Habiro polynomials by a
+**2-parameter (ε,δ) deformation** (eq 165), assembled into `Q_m(ε,δ;q)`
+(eq 167), whose Taylor coefficients `Q_m^{(a,b)}` in `(ε,δ)` *are* the
+entries of the 6×6 matrix `J_m(q)` (eq 172).
+
+That is a **deformation-and-expand** construction, not a change of
+basis. It explains the B1.x negatives completely and finally: no linear
+map into the geometric block span could ever have produced the tail,
+because the tail is not a combination of those rows — it is the ε⁰δ⁰
+seed of a deformation whose *higher* Taylor coefficients generate the
+additional rows.
+
+### Further structure recorded for successors (GGMW §4.1–4.4)
+
+- For 5₂ the chain is **3×3 ⊂ 4×4 ⊂ 6×6**: geometric (σ₁,σ₂,σ₃) ⊂ plus
+  trivial (σ₀) ⊂ plus two more rows. A2's machinery is the innermost 3×3
+  (`J^red_m(q)`, eq 158, built from exactly the `H^{(0)}, H^{(1)}, H^{(2)}`
+  the corpus calls the block series).
+- The 6×6 is a fundamental solution of the **6th-order** q-difference
+  equation satisfied by the *descendant* colored Jones polynomial
+  (eq 164); the colored Jones itself satisfies only a 4th-order one.
+- The extra 2×2 block is a matrix of **Rogers–Ramanujan** functions
+  `H(q) = Σ q^{k²+k}/(q;q)_k`, `G(q) = Σ q^{k²}/(q;q)_k` (eq 180).
+  GGMW state plainly: *"We do not understand the labeling of the two
+  excess rows and columns"* in terms of SL₂(ℂ)-flat connections. That is
+  an open problem in the literature, not a corpus gap.
+- The four 5₂ asymptotic series are `Φ^{(σ_j)}`, j = 0,1,2,3 = trivial,
+  geometric, conjugate, real, with `V(σ₀) = 0` and
+  `Φ^{(σ₀)}(τ/2πi) = 1 + 2τ² + 6τ³ + (157/6)τ⁴ + …` (eq 191).
+- **Convention flag (to verify, not asserted as an error):** GGMW's
+  saddle values (eq 189) are `V₁ = 3.0241… + 2.8281…i`, `V₂ = V̄₁`,
+  `V₃ = −1.1134…`, with `|Im V₁| = Vol(S³∖5₂) = 2.8281…`. The corpus's
+  recorded values carry `2.8281…` in the **real** part and `V₃ =
+  −2.7580990292`. Before any further cross-use of GGMW numerics, the
+  corpus convention should be reconciled against eq (188)/(189)
+  explicitly — this may be a deliberate `V ↦ iV` normalization, or a
+  discrepancy worth catching.
+
+### Honest note on what is still not derived
+
+Identifying the corpus object with a published one is a *location*
+result, not a closure: it does not by itself produce the odd-channel
+bridge, and it wires nothing. What it buys is that the next rung is now
+a concrete, published construction to follow (eqs 165–172) rather than a
+search over a self-assembled basis.

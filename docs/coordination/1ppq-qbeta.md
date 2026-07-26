@@ -2596,3 +2596,29 @@ literature for the object's structure before scanning a basis you
 assembled. Full reading list + links:
 `docs/audits/2026-07-26-extended-matrix-trivial-connection-row.md`.
 No fit; nothing wired.
+
+**2026-07-26 (B1.6, bean qou-2rvk) — IDENTIFIED: the corpus's `C52(n)`
+IS the published Habiro polynomial of 5₂.** Probe
+`qbeta_5two_habiro_polynomial_match_probe.py` (4/4, exact
+integer-Laurent, no floats): `C52(n)` read as a q-series at q = a²
+**equals GGMW arXiv:2111.04763v2 eq (161)**
+`H_n^{5₂}(q) = (−1)ⁿ q^{n(n+3)/2} Σ_k q^{k(k+1)}[n,k]_q` term-by-term
+for n ≤ 12 — no dressing. (Both trace to Masbaum 2003; GGMW's printed
+H₀ = 1, H₁ = −q²−q⁴ reproduced as a gate.) The `(★)LHS / H_n` ratio is
+`q^{−(5n²+7n)/2}(q;q)_n²`, exactly the (★) normalization, so it cancels
+identically: the sorry-free (★) theorem is a bar-inversion statement
+about a NAMED object of the literature.
+**This closes the explanation of every B1.x negative.** GGMW construct
+the extended matrix from the Habiro polynomials by a 2-parameter (ε,δ)
+DEFORMATION (eq 165 → Q_m eq 167 → Taylor coefficients Q_m^{(a,b)} =
+the 6×6 entries, eq 172). Deformation-and-expand, not change of basis —
+so no linear map into the geometric span could ever have produced the
+tail. For 5₂ the chain is 3×3 (geometric; A2's machinery, eq 158) ⊂ 4×4
+(+trivial σ₀) ⊂ 6×6 (fundamental solution of the 6th-order q-difference
+equation of the DESCENDANT colored Jones, eq 164); the extra 2×2 block
+is Rogers–Ramanujan (eq 180) and GGMW state they do not understand its
+flat-connection labeling — an open problem in the literature, not a
+corpus gap. Convention flag recorded: GGMW eq (189) puts Vol(5₂) =
+2.8281 in Im(V₁) while the corpus carries it in Re(V₁); reconcile before
+cross-using GGMW numerics. No fit; nothing wired; identification is a
+location result, not a closure.
