@@ -1,0 +1,91 @@
+{
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-07-26T00:50:48.888448+00:00",
+  "commitSha": "d317a9c2959e0fd94a09cb10d87c842993483f69",
+  "assertions": [
+    {
+      "name": "octahedral_constraint_holds",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "e1_bar_odd",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "e2_bar_even",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "octahedral-e2-coloring-quadratic",
+  "scriptFile": "octahedral_e2_coloring_quadratic_probe.py",
+  "scriptHash": "74c013f2a957",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "The octahedral e₂ (where g₂ lives), from 2509.02354 eq (4.11-4.14, 4.19): a crossing's χ-coloring gives 4 tetrahedron shape-logs ζ⁰_{r,t,l,b}; the octahedral constraint ζ⁰_r+ζ⁰_l=ζ⁰_t+ζ⁰_b holds identically (z_r z_l=z_t z_b); e₁ is bar-odd (μ₀), e₂ bar-even (g₂) with the REAL paper shapes. e₂ is an explicit quadratic form in the 6 χ-coloring log-params; g₂ is its finite part at the deuteron trefoil coloring in the PINCHED limit (torus knot, ζ⁰∈ℤ, paper §5.2). Retracts an earlier a_r=−a_l guess. Getting the number needs the trefoil coloring solution + pinched limit (all DOF pinned, no fit) — the identified wall. scope-(a), audit-only, nothing wired.",
+  "contentBlock": "rem:ohtsuki-tower-bar-parity",
+  "audit_only": true,
+  "tier": "exact paper construction + symbolic identities (octahedral constraint, e₂ bar-parity, quadratic form) + pinched-limit obstruction; no fit",
+  "result": {
+    "A_octahedral_constraint": {
+      "z0_r+z0_l - (z0_t+z0_b)": "0",
+      "holds_identically": true,
+      "meaning": "z_r·z_l = z_t·z_b (octahedron edge-gluing), from paper eq 4.11-4.14."
+    },
+    "B_bar_parity": {
+      "e1_bar_odd": true,
+      "e2_bar_even": true,
+      "meaning": "with the REAL paper shapes: e₁ bar-odd (μ₀ first order), e₂ bar-even (g₂). Confirms FourDilogFirstOrder.e2_bar_even for the actual construction."
+    },
+    "C_e2_quadratic_form": {
+      "e2_over_eps2": "b1**2 + 4*b1*b1p - 3*b1*b2 - 3*b1*b2p + 3*b1*m1 - 4*b1*m2 + b1p**2 - 3*b1p*b2 - 3*b1p*b2p + 3*b1p*m1 - 2*b1p*m2 + b2**2 + 4*b2*b2p - 2*b2*m1 + 3*b2*m2 + b2p**2 - 4*b2p*m1 + 3*b2p*m2 + m1**2 - 3*m1*m2 + m2**2",
+      "note": "g₂ = value of this quadratic form at the deuteron trefoil coloring (pinched limit)."
+    },
+    "D_pinched_limit": {
+      "strand_conjugacy": "μ₁=μ₂=μ (single knot component ⇒ conjugate meridians)",
+      "e2_after_conjugacy_over_eps2": "b1**2 + 4*b1*b1p - 3*b1*b2 - 3*b1*b2p - b1*mu + b1p**2 - 3*b1p*b2 - 3*b1p*b2p + b1p*mu + b2**2 + 4*b2*b2p + b2*mu + b2p**2 - b2p*mu - mu**2",
+      "residual_free_coloring_syms": [
+        "b1",
+        "b1p",
+        "b2",
+        "b2p",
+        "mu"
+      ],
+      "pinched": "deuteron trefoil crossings are pinched (ζ⁰∈ℤ, z_j→1, degenerate — torus knot, PR #4301). g₂ = finite part of e₂ in the pinched limit (paper §5.2)."
+    },
+    "correction": {
+      "retracted": "earlier a_r = −a_l guess — the r↔l transposition is in the Z_r/Z_l INDEX convolution, not the shapes; ζ⁰_r, ζ⁰_l independent."
+    },
+    "wall": {
+      "to_get_g2": "solve the trefoil boundary-parabolic coloring (6 log-params pinned by ⟨a,b|a²b³⟩ + μ₁=μ₂ + substrate μ↔q₀) AND take the pinched-limit finite part.",
+      "anti_fit": "e₂ is a 6-var quadratic form; ALL coloring DOF must be pinned rigorously or the residual freedom is the wall. No coloring fabricated to hit g₂.",
+      "scope": "scope-(a): grounds g₂ in the exact paper construction + identifies the pinched-limit obstruction; does not derive g₂; nothing wired."
+    }
+  },
+  "context": {
+    "axis": "Δ_λ binding — μ₀ −9% closure, g₂ = octahedral e₂ finite part (pinched limit)",
+    "paper": "uploads/2509.02354v2.pdf eq (4.11-4.14), (4.19); pinched §5.2",
+    "lean": "QOU/MassTheory/FourDilogFirstOrder.lean (e2_bar_even); RogersDilogInflection.lean",
+    "builds_on": "PR #4309 (single modulus purely bar-odd), #4301 (deuteron=trefoil), #4127",
+    "no_fit": true
+  },
+  "auditOnly": true
+}
