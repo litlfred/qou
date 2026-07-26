@@ -85,3 +85,15 @@ equations alone do not impose it). There is **no Mathlib gap** and **no unproved
 two feared analytic walls (input-1 product analyticity; the growth estimate) are gone, and the
 whole specialization chain (zero-isolation, normal-form identity, codiscrete→global boundedness
 extension, loci density) is proved and merged. Epic `qou-mz4f` is complete.
+
+### Broadening `MeromorphicNFOn` → `MeromorphicOn` + continuity (honest, not cosmetic)
+
+`PhiBProdUniquenessMeromorphic.phiBProd_uniqueUpToScalar_of_meromorphic` weakens the sole
+hypothesis to `MeromorphicOn Φ₁` **plus continuity on the nonzero locus**
+(`∀ z, phiBProd z ≠ 0 → ContinuousAt Φ₁ z`). This is a **genuine generalization**, not a
+cosmetic rename: bare `MeromorphicOn` is **insufficient** — a meromorphic function may be
+discontinuous at an isolated removable point, where the *pointwise* proportionality genuinely
+fails. `MeromorphicAt.analyticAt` (meromorphic + continuous ⇒ analytic) supplies the `Φ₁`
+analyticity `hr_ratio` needs without any normal-form machinery. `MeromorphicNFOn` implies both
+inputs, so this strictly enlarges the class; "meromorphic and continuous where finite" is
+exactly what "the physical `Φ_b` is a bona-fide meromorphic function" means.
