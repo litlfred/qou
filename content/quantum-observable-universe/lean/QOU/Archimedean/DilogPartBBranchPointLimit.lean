@@ -627,4 +627,20 @@ theorem wp1_tendsto_expNegSqrt {D : ℕ} (hD : Irrational (Real.sqrt (D : ℝ)))
     exact Real.sqrt_pos.mpr (lt_of_le_of_ne (Nat.cast_nonneg D) (Ne.symm hD1))
   exact wp1_tendsto_expNeg_of_fractBound hApos (QOU.MathlibExt.sqrt_fract_badlyApproximable hD)
 
+/-- **Unconditional Dilog Part B W-P1 limit for `x = e^{−β}`, `β` any quadratic
+    irrational.**  If `β > 0` is irrational and satisfies an integer quadratic
+    `Aβ² + Bβ + C = 0` (`A ≠ 0`), the maximal-cell scaling realizes
+    `→ π²/6 − Li₂(e^{−β})` unconditionally — the general degree-2 Liouville bound
+    (`QOU.MathlibExt.quadratic_irrational_fract_badlyApproximable`) supplies the
+    fract-bound.  Widens `wp1_tendsto_expNegSqrt` (pure surds `√D`) to *all* real
+    quadratic irrationals. -/
+theorem wp1_tendsto_expNeg_quadratic {A B C : ℤ} {β : ℝ} (hA : A ≠ 0)
+    (hβ : Irrational β) (hβ0 : 0 < β) (hroot : (A : ℝ) * β ^ 2 + (B : ℝ) * β + (C : ℝ) = 0) :
+    ∃ (q : ℕ → ℝ) (n : ℕ → ℕ),
+      Tendsto (fun j => (1 - q j) * ∑ k ∈ Finset.range (n j),
+          Real.log (1 - Real.exp (-β) * (q j) ^ k))
+        atTop (𝓝 (Real.pi ^ 2 / 6 - LiTwo (Real.exp (-β)))) :=
+  wp1_tendsto_expNeg_of_fractBound hβ0
+    (QOU.MathlibExt.quadratic_irrational_fract_badlyApproximable hA hβ hβ0 hroot)
+
 end QOU.Archimedean
