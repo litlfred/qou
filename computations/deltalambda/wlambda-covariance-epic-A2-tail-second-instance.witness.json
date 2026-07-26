@@ -1,0 +1,176 @@
+{
+ "description": "A2 (TAIL) second instance: nu_{n-1} carrier reduction (derived, exact) + sign onset n_1 = 8.",
+ "epic": "qou-x631",
+ "attack": "qou-ogrk (A2), TAIL sub-target",
+ "verdict": {
+  "all_structural_checks_pass": true,
+  "sign_onset": {
+   "zero_at": 4,
+   "negative_at": [
+    5,
+    6,
+    7
+   ],
+   "positive_from": 8,
+   "onset_pattern_confirmed": true
+  },
+  "interpretation": "Carrier reduction for nu_{n-1} DERIVED and exact-verified. Sign has an ONSET: negative n = 5..7, positive n >= 8 \u2014 refining (TAIL): per-depth-j positivity nu_{n-j} > 0 holds past an onset n_j (n_0 = 4, n_1 = 8); the (TAIL) constant is > 2 and per-n thresholds are required, as the sign-structure witness records."
+ },
+ "per_n": [
+  {
+   "n": 4,
+   "carriers_ok": true,
+   "reduction_match": true,
+   "nu_nm1": "0",
+   "sign": "0"
+  },
+  {
+   "n": 5,
+   "carriers_ok": true,
+   "reduction_match": true,
+   "nu_nm1": "-4/3",
+   "sign": "-"
+  },
+  {
+   "n": 6,
+   "carriers_ok": true,
+   "reduction_match": true,
+   "nu_nm1": "-5/3",
+   "sign": "-"
+  },
+  {
+   "n": 7,
+   "carriers_ok": true,
+   "reduction_match": true,
+   "nu_nm1": "-1/6",
+   "sign": "-"
+  },
+  {
+   "n": 8,
+   "carriers_ok": true,
+   "reduction_match": true,
+   "nu_nm1": "119/60",
+   "sign": "+"
+  },
+  {
+   "n": 9,
+   "carriers_ok": true,
+   "reduction_match": true,
+   "nu_nm1": "88/27",
+   "sign": "+"
+  },
+  {
+   "n": 10,
+   "carriers_ok": true,
+   "reduction_match": true,
+   "nu_nm1": "2717/840",
+   "sign": "+"
+  },
+  {
+   "n": 11,
+   "carriers_ok": true,
+   "reduction_match": true,
+   "nu_nm1": "2093/864",
+   "sign": "+"
+  },
+  {
+   "n": 12,
+   "carriers_ok": true,
+   "reduction_match": true,
+   "nu_nm1": "201773/136080",
+   "sign": "+"
+  },
+  {
+   "n": 13,
+   "carriers_ok": true,
+   "reduction_match": true,
+   "nu_nm1": "58463/75600",
+   "sign": "+"
+  },
+  {
+   "n": 14,
+   "carriers_ok": true,
+   "reduction_match": true,
+   "nu_nm1": "2112097/5987520",
+   "sign": "+"
+  },
+  {
+   "n": 15,
+   "carriers_ok": true,
+   "reduction_match": true,
+   "nu_nm1": "7429/51840",
+   "sign": "+"
+  },
+  {
+   "n": 16,
+   "carriers_ok": true,
+   "reduction_match": true,
+   "nu_nm1": "6544949/124540416",
+   "sign": "+"
+  },
+  {
+   "n": 17,
+   "carriers_ok": true,
+   "reduction_match": true,
+   "nu_nm1": "122797/6985440",
+   "sign": "+"
+  },
+  {
+   "n": 18,
+   "carriers_ok": true,
+   "reduction_match": true,
+   "nu_nm1": "14434547/2668723200",
+   "sign": "+"
+  },
+  {
+   "n": 19,
+   "carriers_ok": true,
+   "reduction_match": true,
+   "nu_nm1": "35833241/23247544320",
+   "sign": "+"
+  },
+  {
+   "n": 20,
+   "carriers_ok": true,
+   "reduction_match": true,
+   "nu_nm1": "165395323/404190259200",
+   "sign": "+"
+  },
+  {
+   "n": 21,
+   "carriers_ok": true,
+   "reduction_match": true,
+   "nu_nm1": "8705017/85593231360",
+   "sign": "+"
+  },
+  {
+   "n": 22,
+   "carriers_ok": true,
+   "reduction_match": true,
+   "nu_nm1": "2294381951/96543730483200",
+   "sign": "+"
+  },
+  {
+   "n": 23,
+   "carriers_ok": true,
+   "reduction_match": true,
+   "nu_nm1": "117318601/22385922048000",
+   "sign": "+"
+  },
+  {
+   "n": 24,
+   "carriers_ok": true,
+   "reduction_match": true,
+   "nu_nm1": "14334723113/13100241582489600",
+   "sign": "+"
+  },
+  {
+   "n": 25,
+   "carriers_ok": true,
+   "reduction_match": true,
+   "nu_nm1": "58642669/270300602880000",
+   "sign": "+"
+  }
+ ],
+ "runtime_s": 0.201416015625
+}
