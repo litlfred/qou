@@ -156,3 +156,77 @@ GSWZ and Wagner papers are now in-repo
 `cryptography`/pypdf conflict), so the deep-read of the Frobenius
 gluing definitions (needed to state candidate vertical edges beyond
 bar) remains queued on the bean. Bean stays in-progress.
+
+## Addendum 2 (same date) — GSWZ deep-read: the 4₁ knot IS their running example; concrete downstream uses
+
+PDF extraction unblocked (`pip install cffi` repaired the system
+`cryptography`/pypdf conflict; poppler unavailable, apt fetch blocked).
+Read: §1.2–1.5 (definitions), §4.5–4.6 (examples) of
+`uploads/2412.04241v2.pdf`.
+
+### What GSWZ actually provides (verified against the text)
+
+1. **Definition 1.1 (the gluing)**: an element of the Habiro ring of
+   `R = O_K[1/∆]` is a collection `f_m(x) ∈ R[ζ_m][[x]]`, one per root
+   of unity, with `f_m(x + ζ_pm − ζ_m) = (φ_p f_pm)(x)` in
+   `R_p^∧[ζ_pm][[x]]` — Frobenius-twisted p-adic re-expansion gluing.
+   These are the **vertical edges** in executable form: ζ_m ↔ ζ_pm per
+   prime p.
+2. **§1.5 (the K₃-graded modules)**: `H_{R,ξ}` for `ξ ∈ K₃(K)`;
+   leading terms at ζ_m carry the unit root `ε_m(ξ)^{1/m}` from the
+   étale Chern class, with **χ⁻¹-Galois-equivariance** — explicit
+   Galois action data on leading coefficients.
+3. **The motivating example is the figure-eight knot 4₁** — the QOU
+   muon-anchor knot. Its Kashaev asymptotic series `Φ(h)` (their
+   eqn (1)) lives in `H_{R,ξ}` for `K = Q(√−3)` with
+   `ξ ∈ K₃(Q(√−3))` whose **regulator is Vol(4₁) = 2 Im Li₂(e^{iπ/3})
+   = 2.0299…** — the exact constant of CAL-2's proxy
+   `m_μ/m_e = Vol(4₁)/ℏ_q²`. The completion `exp(iVol/h)Φ(h)` becomes
+   p-adic via the **p-adic dilogarithm**.
+4. **Symmetrization integrality (their eqns (1)–(2))**: `Φ(h)` alone
+   has wild denominators; the bar-symmetric `Φ(h)Φ(−h)` is **integral
+   away from 3** in `(q−1)`. Arithmetic integrality prefers the
+   bar-even sector.
+5. **§4.5 eqn (278)**: an exact global generator of the 4₁ module via
+   the infinite Pochhammer symbol at ζ₆ — cheap high-precision
+   representation (they computed 600 terms).
+6. **§4.6**: the scissors-congruent pair 5₂ / (−2,3,7)-pretzel gives
+   two elements of the SAME module (equal Bloch class mod 6-torsion).
+
+### Downstream-use map (how to use)
+
+- **U1 — the muon anchor as an arithmetic object.** CAL-2's
+  `Vol(4₁)` is the Borel regulator of the GSWZ class ξ; the anchor
+  acquires p-adic shadows `D_p(ξ)` and Galois data `ε_m(ξ)` for free.
+  Any future substrate-derivation attempt on q₀ (Subgoal-2) can now be
+  tested against arithmetic constraints, not just the one real number.
+- **U2 — cross-anchor rigidity for the Q_β Habiro element (#1713).**
+  The sought fibre-level element `F(q)` reproducing c_k at every
+  anchor should live in a GSWZ module. Membership imposes: coefficient
+  integrality away from ∆, Frobenius gluing across ζ_m, and the
+  ε_m-unit leading-term structure. These are refutation-grade tests a
+  c₃ candidate can FAIL without any anchor inversion — the missing
+  constraint class behind the historical c_k flip-flop
+  (under-determination).
+- **U3 — arithmetic justification of the bar-parity discipline.** GSWZ
+  integrality holds for the symmetrized (bar-even) combination. The
+  corpus's bar-even/bar-odd split (m_π cosh vs Q_β sinh;
+  `CuspShapeBarParity`) matches: falsifiable check — corpus 4₁-derived
+  series (e.g. the lever1 Habiro-tail closed form) should show the
+  3-integrality pattern in their bar-even symmetrization. A cheap
+  probe target.
+- **U4 — vertical edges for the τ-tower.** The ζ₄ fibre
+  (`rho_compat` = bar edge, proved) sits inside the gluing lattice
+  ζ_m ↔ ζ_pm. First concrete check: the corpus already holds ζ₄
+  (α_EM zero) and ζ₈ (Q_β witness) evaluations — the p = 2 edge
+  ζ₄ → ζ₈ is a Frobenius-gluing test on EXISTING corpus data.
+- **U5 — module-mates organize the knot table.** Scissors-congruent
+  knots share a module. Borromean/Whitehead (Vol(𝓑₃) = 2·Vol(Wh) = 8G)
+  and other corpus volume identities should be re-read as Bloch-class
+  relations ⇒ module relations — an organizing principle for the
+  knot-particle spectrum with proof leverage (their 5₂/pretzel
+  precedent).
+
+Beans: U2 and U3+U4 spun off as new probes; U1/U5 recorded as framing
+for existing epics. `qou-vegn` deep-read portion complete; family
+formalization continues there.
