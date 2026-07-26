@@ -49,6 +49,30 @@ at `½`; undershoots by ≥ 2×). The open question is thus specifically: *what 
 self-energy series from `α = 1` down to `α ≈ 0.929`* — a `~7.1%` reduction of the 3-strand spectator
 re-coupling, not a pair-multiplicity count. This narrows the search to a one-sided problem.
 
+## State of the α-derivation after this narrowing (forward-derivation wall)
+
+With the pair-count side excluded, the natural forward attempt is to make `α` *fall out* of an
+existing categorical object rather than be fitted. Checked, and it does **not**:
+
+- **The corpus interface object consumes δ; it does not derive α.** The p-n interface factor
+  `f_pn = z − h·(½ − δ/4)` (`closed_form_tau_M.py`) takes `δ = flavor_split_subleading(q)` as an
+  **input**. Reading a coefficient back out of it is circular — no derivation of `α`.
+- **The wired production δ uses the wrong shape (a live discrepancy).**
+  `flavor_split_subleading(q) = leading·(1 + ℏ_q³)` is labelled in-code *"⚠ POSITED — NOT DERIVED"*
+  and supplies only **76%** of the gap (`(C_true−1)/ℏ_q³ = 1.314`). The correct second-order shape is
+  `leading²` (Part 1 of the partial-derivation audit), not `ℏ_q³`. So the production p-n split carries
+  a known posited-and-insufficient subleading term — independent of whether `α` is ever pinned.
+- **What remains is a single-number self-energy target.** Combining the ½-ceiling with the geometric
+  self-energy reading, `split = leading/(1 − β·leading)` with `α = β`; the measured `β ≈ 0.929254 =
+  1 − 0.0707` must come from the **3-strand spectator re-coupling amplitude**. No forward categorical
+  construction for that amplitude exists in the corpus — building it is the open research the prior
+  audit named. **Anti-fit note:** `0.0707 ≈ h_q/3` (1.4% off) and `1 − 1/14 = 0.9286` (0.07% off) are
+  the documented numerical temptations; neither falls out of any construction, both are **rejected**
+  per anti-flip-flop discipline.
+
+The α-derivation is therefore a *sharper* open problem after this narrowing — pinned to one categorical
+amplitude — not a closure. This is the honest, expected outcome of the forward attempt.
+
 ## Honest scope
 
 A **narrowing**, not a closure. `α ≈ 0.929254` itself remains **underived** (the anti-fit discipline
