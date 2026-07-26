@@ -214,7 +214,15 @@ class BWVacuumRowIsHecke (q : ℝ) (P : Finset (List ℕ)) where
   bwS0 : List ℕ → ℝ
   /-- **THE single open conjecture (owner-gated):** the gauge-defined vacuum S-matrix row equals the
   Hecke modular datum `d_q(λ)/√(Σ d_q²)`. What the published localization must deliver; foreclosed on
-  the SU(2)`_k` sub-route, so full-Hecke. -/
+  the SU(2)`_k` sub-route, so full-Hecke.
+
+  **Realized at the fibre root** (PR #4365): the LR/WRT amplitude satisfies `|A_m(α)| = 2·[mark]/D`
+  exactly at the root of unity `ζ = e^{iπ/5}` (`KeystoneLRAmplitudeReal.amplitude_first` /
+  `colored_modulus_phi_node`), i.e. `bwS0 = d_ζ/D` for the *actual* gauge datum (the WRT amplitude),
+  not the fiat. So the residual open content is precisely the **archimedean continuation of `bwS0`
+  from `ζ` to real `q₀`** — and the value-map side of that continuation is polynomial evaluation
+  (`KeystoneWLambdaContinuation`), so the wall is the continuation of the *gauge row*, not the
+  Plancherel structure (proved here) nor the value map (proved). -/
   bwS0_eq_hecke : ∀ l ∈ P, bwS0 l = qDim q l / Real.sqrt (∑ m ∈ P, qDim q m ^ 2)
 
 namespace BWVacuumRowIsHecke
