@@ -37,7 +37,8 @@ def pfit(vals):
     import numpy as np
     Ns = sorted(vals)
     A = VOL_WHITEHEAD / (2 * math.pi)
-    y = np.array([math.log(vals[N]) - A * N for N in Ns])
+    # cast mpmath values to float — np.linalg.lstsq rejects object dtype
+    y = np.array([float(mp.log(vals[N])) - A * N for N in Ns], dtype=float)
     nt = 2 if len(Ns) >= 4 else 1
     cols = [[math.log(N) for N in Ns], [1.0] * len(Ns)] + \
            [[1.0 / N**j for N in Ns] for j in range(1, nt + 1)]

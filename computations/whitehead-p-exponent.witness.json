@@ -1,0 +1,37 @@
+{
+  "description": "Whitehead growth-exponent p extension to N=14 \u2014 tests whether the refined-VC exponent is the knot 3/2 or a distinct 2-cusp-link value. Gates the exact-prefactor / factor determination.",
+  "computation": "whitehead_p_extend",
+  "audit_only": true,
+  "precision": "mpmath dps=60 exact-root, fast O(N^8); N=14 recovered from run log (write() crashed on a numpy object-dtype bug, since fixed)",
+  "whitehead_braid_word": "[1,-2,1,-2,1]",
+  "vol_4G": 3.663862376708876,
+  "whitehead_exact_values": {
+    "6": 362.3920528929998,
+    "8": 1635.4283652320307,
+    "10": 7062.35924065477,
+    "12": 29287.27767465885,
+    "14": 117161.339
+  },
+  "p_free_fits": {
+    "(6, 8, 10, 12)_2term": {
+      "p": 1.5958169574708443,
+      "c0": -0.7942493506436611
+    },
+    "(8, 10, 12, 14)_2term": {
+      "p": 1.1507732378950957,
+      "c0": 0.8965717434719083
+    },
+    "(6, 8, 10, 12, 14)_3term": {
+      "p": 0.6568068387322408,
+      "c0": 2.984592921540122
+    },
+    "(10, 12, 14)_1term": {
+      "p": 1.555320421183181,
+      "c0": -0.7145693107509564
+    }
+  },
+  "figure_eight_calibration": "same p-free method on the KNOWN-3/2 figure-eight recovers p in [1.45,1.62] (N=8-14 -> 1.538), converging to 3/2; the Whitehead scatters 0.66-1.60 over the same windows",
+  "finding": "2-cusp Whitehead growth exponent does NOT convergently pin to 3/2 at N<=14: p-free fit is unstable (0.66-1.60) and inconsistent with the figure-eight clean ~1.5 recovery. The factor-2 result is CONTINGENT on the p=3/2 assumption; whether the 2-cusp link shares the knot 3/2 exponent (or carries a distinct power / extra log term) is OPEN and needs the correct 2-cusp refined-VC asymptotic form (or N>=18).",
+  "factor_status": "factor 2 holds under p=3/2 (c0=-0.53); p=3/2 itself unverified for the link",
+  "timestamp": "2026-07-26T11:27:11+00:00"
+}
