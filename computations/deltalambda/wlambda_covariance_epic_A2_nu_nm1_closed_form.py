@@ -25,10 +25,16 @@ only from `n = 8` does `v = n-1` join the positive tail. So the `+O(1)` offset i
 — it cannot be absorbed into `n/2`, and the tail-onset at this slice is pinned by the single real root
 `ρ ≈ 7.078` of the cubic.
 
-HONESTY. A derived + exactly-verified closed form (carrier family exhaustively confirmed `n ≤ 25`;
-formula exact `n ≤ 40`) — the second derived (TAIL) instance after `ν_n`. It does NOT prove (TAIL),
-FMP, A2, or the kernel; it constrains the tail-onset. scope-(a); no fit wired; nothing wired; no `c_k`;
-L2 unchanged (2/7).
+COORDINATION. PR #4341 (merged, efc642f6) landed the ν_{n-1} carrier reduction + the identical sign
+onset (0 at n=4, <0 for n=5,6,7, >0 for n>=8; n_1=8) shortly before this. This probe was derived
+independently (full p(n) enumeration + exact closed-form identification) and CONFIRMS #4341's onset.
+Its net-new content over #4341: (i) the explicit COLLAPSED closed-form polynomial (below; #4341 keeps
+an uncollapsed per-carrier sum); (ii) the onset mechanism identified as the single real root
+rho ~ 7.078 of the cubic factor; (iii) verification to n<=40 (#4341: n<=25).
+
+HONESTY. Explicit closed form + independent confirmation (carrier family confirmed `n <= 25`; formula
+exact `n <= 40`). It does NOT prove (TAIL), FMP, A2, or the kernel; it makes the tail-onset explicit.
+scope-(a); no fit wired; nothing wired; no `c_k`; L2 unchanged (2/7).
 
 # Ref: [manuscript] docs/audits/2026-07-26-covariance-kernel-A2-nu-nm1-closed-form.md
 # Ref: [ivanov-olshanski] https://arxiv.org/abs/math/0304010

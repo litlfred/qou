@@ -1,8 +1,8 @@
 {
   "engine": "python-exact",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-26T11:46:36.785405+00:00",
-  "commitSha": "28cbb92f6e1b0e1ff62744ac762edaa9961bd355",
+  "computedAt": "2026-07-26T11:57:06.488512+00:00",
+  "commitSha": "64c3f627e618a68b56b1e153e078a57337772dcb",
   "assertions": [
     {
       "name": "covariance_epic_A2_nu_nm1_closed_form",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 7,
+  "durationMs": 8,
   "computation": "wlambda-covariance-epic-A2-nu-nm1-closed-form",
   "scriptFile": "wlambda_covariance_epic_A2_nu_nm1_closed_form.py",
-  "scriptHash": "a842029832a3",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "90ef6831e2e8",
+  "scriptCommitSha": "64c3f627e618a68b56b1e153e078a57337772dcb",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
