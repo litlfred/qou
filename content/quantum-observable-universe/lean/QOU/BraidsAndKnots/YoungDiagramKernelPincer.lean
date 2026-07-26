@@ -696,6 +696,185 @@ theorem hookLen_pos (l : List ℕ) (hs : l.Sorted (· ≥ ·)) (p : ℕ × ℕ) 
   rw [conj_getD l hs]
   omega
 
+/-- **The hook is contained in the diagram**: a cell's hook length is at most the size
+`n = Σλᵢ`. The hook of `(i,j)` is the disjoint union of its arm `{(i,j′) : j ≤ j′ < λᵢ}` and
+its strict leg `{(i′,j) : i < i′ < λ′ⱼ}`, both inside the cell set; counting the union gives
+`h(i,j) = (λᵢ − j) + (λ′ⱼ − i − 1) ≤ |cells λ| = n`. This is the first brick of the (TAIL)
+carrier method: the extreme case `h = n` forces the hook to *exhaust* the diagram, confining
+the carriers of `ν_n` to the hook shapes `(a, 1^{n−a})` — the containment proved here is the
+inequality whose equality analysis is that carrier lemma. -/
+theorem hookLen_le_sum (l : List ℕ) (hs : l.Sorted (· ≥ ·)) (p : ℕ × ℕ)
+    (hp : p ∈ cells l) : hookLen l p ≤ l.sum := by
+  obtain ⟨i, j⟩ := p
+  rw [mem_cells] at hp
+  have hcol : i < (conj l).getD j 0 := by
+    rw [conj_getD l hs]
+    exact (lt_countP_iff l hs j i).mpr hp
+  have hinj1 : Function.Injective (fun j' : ℕ => (i, j')) := fun a b h => by
+    simpa using congrArg Prod.snd h
+  have hinj2 : Function.Injective (fun i' : ℕ => (i', j)) := fun a b h => by
+    simpa using congrArg Prod.fst h
+  have harm : (Finset.Ico j (l.getD i 0)).image (fun j' => (i, j')) ⊆ cells l := by
+    intro q hq
+    obtain ⟨j', hj', rfl⟩ := Finset.mem_image.mp hq
+    rw [mem_cells]
+    exact (Finset.mem_Ico.mp hj').2
+  have hleg : (Finset.Ioo i ((conj l).getD j 0)).image (fun i' => (i', j)) ⊆ cells l := by
+    intro q hq
+    obtain ⟨i', hi', rfl⟩ := Finset.mem_image.mp hq
+    rw [mem_cells]
+    refine (lt_countP_iff l hs j i').mp ?_
+    have h2 := (Finset.mem_Ioo.mp hi').2
+    rwa [conj_getD l hs] at h2
+  have hdisj : Disjoint ((Finset.Ico j (l.getD i 0)).image (fun j' => (i, j')))
+      ((Finset.Ioo i ((conj l).getD j 0)).image (fun i' => (i', j))) := by
+    rw [Finset.disjoint_left]
+    intro q hqa hql
+    obtain ⟨j', _, rfl⟩ := Finset.mem_image.mp hqa
+    obtain ⟨i', hi', h'⟩ := Finset.mem_image.mp hql
+    simp only [Prod.mk.injEq] at h'
+    have h1 := (Finset.mem_Ioo.mp hi').1
+    omega
+  have hcard := Finset.card_le_card (Finset.union_subset harm hleg)
+  rw [Finset.card_union_of_disjoint hdisj, card_cells,
+      Finset.card_image_of_injective _ hinj1, Finset.card_image_of_injective _ hinj2,
+      Nat.card_Ico, Nat.card_Ioo] at hcard
+  unfold hookLen
+  dsimp only
+  omega
+
+/-- The tight hook bound on enumerated partitions: `h(□) ≤ k` (sharpening the cheap `2k`
+range bound `hookLen_lt_of_mem`; the classical bound, now proved rather than assumed). -/
+theorem hookLen_le_of_mem (k : ℕ) (l : List ℕ) (hl : l ∈ partsOf k) (p : ℕ × ℕ)
+    (hp : p ∈ cells l) : hookLen l p ≤ k := by
+  obtain ⟨hsum, _, hsort⟩ := partsOf_facts k l hl
+  exact hsum ▸ hookLen_le_sum l hsort p hp
+
+/-- **The carrier lemma (equality analysis)**: a hook of maximal length `n = Σλᵢ` forces the
+carrier cell to be the corner `(0,0)` and the diagram to be a **hook shape** (every row past the
+first has at most one cell, i.e. `λ = (a, 1^c)`). Equality in `hookLen_le_sum`'s containment
+means the arm ∪ strict-leg union *is* the cell set; testing the corner against the union pins
+`p = (0,0)`, and testing any cell `(i′,1)` with `i′ ≥ 1` (off row 0 and column 0) kills any
+non-hook row. This confines the carriers of the top hook statistic `N_n` to the `n` hook shapes
+— the Lean form of step 1 of the derived `ν_n` closed form (the (TAIL) first instance). -/
+theorem hookShape_of_hookLen_eq_sum (l : List ℕ) (hs : l.Sorted (· ≥ ·)) (p : ℕ × ℕ)
+    (hp : p ∈ cells l) (heq : hookLen l p = l.sum) :
+    p = (0, 0) ∧ ∀ i', 1 ≤ i' → l.getD i' 0 ≤ 1 := by
+  obtain ⟨i, j⟩ := p
+  rw [mem_cells] at hp
+  dsimp only at hp
+  have hcol : i < (conj l).getD j 0 := by
+    rw [conj_getD l hs]
+    exact (lt_countP_iff l hs j i).mpr hp
+  have hinj1 : Function.Injective (fun j' : ℕ => (i, j')) := fun a b h => by
+    simpa using congrArg Prod.snd h
+  have hinj2 : Function.Injective (fun i' : ℕ => (i', j)) := fun a b h => by
+    simpa using congrArg Prod.fst h
+  set armF := (Finset.Ico j (l.getD i 0)).image (fun j' => (i, j')) with harmF
+  set legF := (Finset.Ioo i ((conj l).getD j 0)).image (fun i' => (i', j)) with hlegF
+  have harm : armF ⊆ cells l := by
+    intro q hq
+    obtain ⟨j', hj', rfl⟩ := Finset.mem_image.mp hq
+    rw [mem_cells]
+    exact (Finset.mem_Ico.mp hj').2
+  have hleg : legF ⊆ cells l := by
+    intro q hq
+    obtain ⟨i', hi', rfl⟩ := Finset.mem_image.mp hq
+    rw [mem_cells]
+    refine (lt_countP_iff l hs j i').mp ?_
+    have h2 := (Finset.mem_Ioo.mp hi').2
+    rwa [conj_getD l hs] at h2
+  have hdisj : Disjoint armF legF := by
+    rw [Finset.disjoint_left]
+    intro q hqa hql
+    obtain ⟨j', _, rfl⟩ := Finset.mem_image.mp hqa
+    obtain ⟨i', hi', h'⟩ := Finset.mem_image.mp hql
+    simp only [Prod.mk.injEq] at h'
+    have h1 := (Finset.mem_Ioo.mp hi').1
+    omega
+  have hcardU : (armF ∪ legF).card = hookLen l (i, j) := by
+    rw [Finset.card_union_of_disjoint hdisj, harmF, hlegF,
+        Finset.card_image_of_injective _ hinj1, Finset.card_image_of_injective _ hinj2,
+        Nat.card_Ico, Nat.card_Ioo]
+    unfold hookLen
+    dsimp only
+    omega
+  have hunion : armF ∪ legF = cells l := by
+    refine Finset.eq_of_subset_of_card_le (Finset.union_subset harm hleg) ?_
+    rw [hcardU, heq, card_cells]
+  have hmem : ∀ a b : ℕ, (a, b) ∈ cells l → (a = i ∧ j ≤ b) ∨ (b = j ∧ i < a) := by
+    intro a b hq
+    rw [← hunion] at hq
+    rcases Finset.mem_union.mp hq with hqa | hql
+    · obtain ⟨j', hj', hEq⟩ := Finset.mem_image.mp hqa
+      simp only [Prod.mk.injEq] at hEq
+      have hlo := (Finset.mem_Ico.mp hj').1
+      left; omega
+    · obtain ⟨i', hi', hEq⟩ := Finset.mem_image.mp hql
+      simp only [Prod.mk.injEq] at hEq
+      have hlo := (Finset.mem_Ioo.mp hi').1
+      right; omega
+  have hilen : i < l.length := by
+    by_contra hcon
+    rw [List.getD_eq_default _ _ (le_of_not_gt hcon)] at hp
+    exact Nat.not_lt_zero j hp
+  have hhead : l.getD i 0 ≤ l.getD 0 0 := by
+    rw [getD_zero_eq_headD]
+    refine mem_le_headD l hs _ ?_
+    rw [List.getD_eq_getElem _ _ hilen]
+    exact List.getElem_mem hilen
+  have h00 : ((0 : ℕ), (0 : ℕ)) ∈ cells l := by
+    rw [mem_cells]
+    dsimp only
+    omega
+  have hij0 : i = 0 ∧ j = 0 := by
+    rcases hmem 0 0 h00 with ⟨h1, h2⟩ | ⟨h1, h2⟩ <;> omega
+  obtain ⟨hi0, hj0⟩ := hij0
+  refine ⟨by simp only [Prod.mk.injEq]; exact ⟨hi0, hj0⟩, ?_⟩
+  intro i' hi'
+  by_contra hcon
+  push_neg at hcon
+  have hc : (i', 1) ∈ cells l := by
+    rw [mem_cells]
+    exact hcon
+  rcases hmem i' 1 hc with ⟨h1, _⟩ | ⟨h1, _⟩ <;> omega
+
+/-- **Converse of the carrier lemma**: on a hook shape (positive parts, at most one cell per row
+past the first) the corner's hook exhausts the diagram — `h(0,0) = a + λ′₀ − 1 = a + c = n`.
+Together with `hookShape_of_hookLen_eq_sum` this characterizes the carriers of the top hook
+statistic `N_n`: they are exactly the corner cells of the `n` hook shapes `(a, 1^{n−a})`. -/
+theorem hookLen_corner_of_hookShape (l : List ℕ) (hs : l.Sorted (· ≥ ·))
+    (hpos : ∀ x ∈ l, 0 < x) (hne : l ≠ [])
+    (hhook : ∀ i', 1 ≤ i' → l.getD i' 0 ≤ 1) :
+    hookLen l (0, 0) = l.sum := by
+  have hcount : l.countP (fun x => decide (0 < x)) = l.length :=
+    List.countP_eq_length.mpr fun x hx => by simpa using hpos x hx
+  have hones : ∀ (t : List ℕ), (∀ x ∈ t, x = 1) → t.sum = t.length := by
+    intro t
+    induction t with
+    | nil => intro _; rfl
+    | cons b s ih =>
+        intro h
+        rw [List.sum_cons, List.length_cons, h b List.mem_cons_self,
+            ih (fun x hx => h x (List.mem_cons_of_mem b hx))]
+        omega
+  obtain ⟨a, t, rfl⟩ : ∃ a t, l = a :: t := by
+    cases l with
+    | nil => exact absurd rfl hne
+    | cons a t => exact ⟨a, t, rfl⟩
+  have ht1 : ∀ x ∈ t, x = 1 := by
+    intro x hx
+    obtain ⟨k, hk, rfl⟩ := List.mem_iff_getElem.mp hx
+    have h1 : (a :: t).getD (k + 1) 0 ≤ 1 := hhook (k + 1) (Nat.le_add_left 1 k)
+    rw [List.getD_cons_succ, List.getD_eq_getElem _ _ hk] at h1
+    have h2 : 0 < t[k] := hpos _ (List.mem_cons_of_mem a hx)
+    omega
+  unfold hookLen
+  dsimp only
+  rw [conj_getD _ hs, hcount, List.getD_cons_zero, List.sum_cons, List.length_cons,
+      hones t ht1]
+  omega
+
 /-- `IdentityI.sumSqHooks` as a cell-set sum of the kernel-form hook (the two per-cell
 ℕ-subtraction forms agree on genuine cells, as in `hookProd_eq_prodHooks`). -/
 theorem sumSqHooks_eq_sum_cells (l : List ℕ) (hs : l.Sorted (· ≥ ·)) :
