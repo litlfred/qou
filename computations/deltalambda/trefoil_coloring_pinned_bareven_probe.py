@@ -99,11 +99,17 @@ def main() -> int:
         },
         "C_substrate_pins": pins,
         "scope": {
-            "what_is_derived": "the coloring's bar-even SCALE = h² (exact identity at m=q₀).",
+            "what_is_derived": "the coloring's bar-even SCALE = h² = barOdd(q₀)² (exact identity at m=q₀).",
             "what_is_NOT": "the coefficient g₂ (=e₂ finite part, #4315) — NOT derived here.",
-            "pin_power_open": "m=q₀ vs √q₀ must be justified by the quantum-group meridian convention "
-                              "INDEPENDENTLY; choosing m=q₀ because it gives h² would be fishing — "
-                              "flagged OPEN, not claimed.",
+            "pin_power_RESOLVED": "m=q₀ is corpus-authoritative: meridian holonomy = multiplication by "
+                                  "q (meridian-holonomy-boost.md; holonomy_hyperbola), trace q+q⁻¹ ⇒ "
+                                  "eigenvalue m=q₀ (not √q₀). Sibling PR #4288 uses the same barOdd(q)="
+                                  "q−q⁻¹ deformation for c₃. Pin fixed INDEPENDENTLY of the h² match.",
+            "piece2_reduction": "g₂ = the barEven (squared-CS) face of the deformed trefoil cusp shape "
+                                "(cusp-shape-bar-parity: 4₁ has barOdd(ω)²=−3; trefoil deformation has "
+                                "barOdd(q₀)²=h²). Converges with sibling c₃ (barOdd/CS face) on ONE "
+                                "Neumann-Zagier object. Coloring coefficient is exactly 1 (c+1=−1·h²); "
+                                "g₂≈1.0087=1+r suggests leading coeff 1 + residual r (lead, not claim).",
             "anti_laundering": "the Lean proves the algebraic identity, not g₂. Nothing wired.",
         },
     }
@@ -150,8 +156,9 @@ def main() -> int:
     print(f"C. substrate pins (c+1 = -(m-1/m)²):")
     print(f"     m=q₀      : {pins['m=q0']['c_plus_1']}  = -h² exactly ({pins['m=q0']['equals_-h^2']})")
     print(f"     m=√q₀     : {pins['m=sqrt(q0)']['c_plus_1']}  = -(v-v⁻¹)²")
-    print("VERDICT: bar-even SCALE = h² (exact). g₂ COEFFICIENT still open (=e₂ finite part, #4315); "
-          "pin power open (not fished). scope-(a), no fit.")
+    print("VERDICT: bar-even SCALE = h² = barOdd(q₀)² (exact); pin m=q₀ corpus-RESOLVED (meridian "
+          "holonomy = mult by q, #4288-consistent). g₂ COEFFICIENT open = barEven cusp-shape face / "
+          "e₂ finite part (#4315), converges with sibling c₃ bar-odd face. scope-(a), no fit.")
     print("witness ->", out)
     return 0
 
