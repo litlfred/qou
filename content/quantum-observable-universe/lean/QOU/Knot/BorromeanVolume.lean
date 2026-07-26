@@ -37,6 +37,7 @@
 -/
 
 import QOU.Knot.FigureEightVolumeSqueeze
+import QOU.Knot.CatalanValueBounds
 
 namespace QOU.Knot.FigureEightVolume
 
@@ -319,5 +320,167 @@ theorem abs_log_borromeanTerm_deviation {N l : ℕ} (hN : 4 ≤ N)
     rw [abs_le] at hd3
     rw [abs_le]
     constructor <;> nlinarith [hd1.1, hd1.2, hd2.1, hd2.2, hd3.1, hd3.2]
+
+/-- The Borromean continuum functional
+    `G(a) = −4·clausen(2a) + clausen(4a − 2π)` — the limit of the scaled
+    term-log `8F(a) − 2F(2a−π)` (the B3c target with the vanishing
+    `F((N−1)π/N)` and the one-cell `F`-shift dropped). -/
+noncomputable def borromeanFunctional (a : ℝ) : ℝ :=
+  -4 * clausen (2 * a) + clausen (4 * a - 2 * π)
+
+theorem continuous_borromeanFunctional : Continuous borromeanFunctional := by
+  have h1 : Continuous fun a : ℝ => clausen (2 * a) :=
+    continuous_clausen.comp (continuous_const.mul continuous_id)
+  have h2 : Continuous fun a : ℝ => clausen (4 * a - 2 * π) :=
+    continuous_clausen.comp ((continuous_const.mul continuous_id).sub
+      continuous_const)
+  exact (continuous_const.mul h1).add h2
+
+theorem hasDerivAt_borromeanFunctional {a : ℝ} (h1 : π / 2 < a) (h2 : a < π) :
+    HasDerivAt borromeanFunctional
+      (8 * Real.log (2 * Real.sin a)
+        - 4 * Real.log (2 * Real.sin (2 * a - π))) a := by
+  have hpi := Real.pi_pos
+  have hc1 : HasDerivAt (fun a : ℝ => clausen (2 * a))
+      (-Real.log (2 * Real.sin (2 * a / 2)) * 2) a := by
+    have hd := hasDerivAt_clausen (θ := 2 * a) (by linarith) (by linarith)
+    have hlin : HasDerivAt (fun a : ℝ => 2 * a) 2 a := by
+      simpa using (hasDerivAt_id a).const_mul 2
+    exact hd.comp a hlin
+  have hc2 : HasDerivAt (fun a : ℝ => clausen (4 * a - 2 * π))
+      (-Real.log (2 * Real.sin ((4 * a - 2 * π) / 2)) * 4) a := by
+    have hd := hasDerivAt_clausen (θ := 4 * a - 2 * π)
+      (by linarith) (by linarith)
+    have hlin : HasDerivAt (fun a : ℝ => 4 * a - 2 * π) 4 a := by
+      simpa using ((hasDerivAt_id a).const_mul 4).sub_const (2 * π)
+    exact hd.comp a hlin
+  have hsum := (hc1.const_mul (-4)).add hc2
+  convert hsum using 1
+  rw [show (2:ℝ) * a / 2 = a by ring,
+    show ((4:ℝ) * a - 2 * π) / 2 = 2 * a - π by ring]
+  ring
+
+theorem borromeanFunctional_pi_div_two : borromeanFunctional (π / 2) = 0 := by
+  unfold borromeanFunctional
+  rw [show (2:ℝ) * (π / 2) = π by ring,
+    show (4:ℝ) * (π / 2) - 2 * π = 0 by ring, clausen_pi, clausen_zero]
+  ring
+
+theorem borromeanFunctional_pi : borromeanFunctional π = 0 := by
+  unfold borromeanFunctional
+  rw [show (4:ℝ) * π - 2 * π = 2 * π by ring, clausen_two_pi]
+  ring
+
+/-- The saddle value: `G(3π/4) = 4·Cl₂(π/2)` — B1 antisymmetry route. -/
+theorem borromeanFunctional_three_quarters :
+    borromeanFunctional (3 * π / 4) = 4 * QOU.Archimedean.Cl_2 (π / 2) := by
+  have hpi := Real.pi_pos
+  unfold borromeanFunctional
+  rw [show (2:ℝ) * (3 * π / 4) = 3 * π / 2 by ring,
+    show (4:ℝ) * (3 * π / 4) - 2 * π = π by ring, clausen_pi]
+  have h32 : clausen (3 * π / 2) = QOU.Archimedean.Cl_2 (3 * π / 2) :=
+    clausen_eq_series ⟨by linarith, by linarith⟩
+  have hanti := Cl_2_two_pi_sub (π / 2)
+  rw [show 2 * π - π / 2 = 3 * π / 2 by ring] at hanti
+  rw [h32, hanti]
+  ring
+
+/-- **Borromean brick B4 — the continuum max (sorry-free).** On `[π/2, π]`
+    the Borromean functional never exceeds its saddle value `4·Cl₂(π/2)`,
+    attained at `a = 3π/4` (the `x = 3/4` Kashaev saddle): compactness gives
+    a maximiser; the boundary values vanish while the saddle value is
+    positive (certified Catalan bounds), so the maximiser is interior and
+    critical; the critical equation `(2 sin a)² = 2 sin(2a−π)` forces
+    `sin a + cos a = 0`, hence `cos 2a = 0` with `2a ∈ (π, 2π)`, hence
+    `a = 3π/4`. (bean qou-jor3) -/
+theorem borromeanFunctional_le {a : ℝ} (ha : a ∈ Set.Icc (π / 2) π) :
+    borromeanFunctional a ≤ 4 * QOU.Archimedean.Cl_2 (π / 2) := by
+  have hpi := Real.pi_pos
+  obtain ⟨a₀, ha₀mem, hmax⟩ :=
+    (isCompact_Icc (a := π / 2) (b := π)).exists_isMaxOn
+      (Set.nonempty_Icc.mpr (by linarith))
+      continuous_borromeanFunctional.continuousOn
+  have hval : 4 * QOU.Archimedean.Cl_2 (π / 2) ≤ borromeanFunctional a₀ := by
+    have h := hmax (show (3 * π / 4 : ℝ) ∈ Set.Icc (π / 2) π from
+      ⟨by linarith, by linarith⟩)
+    simp only [Set.mem_setOf_eq] at h
+    rwa [borromeanFunctional_three_quarters] at h
+  have hpos := Cl_2_pi_div_two_pos
+  have hne1 : a₀ ≠ π / 2 := by
+    intro h
+    rw [h, borromeanFunctional_pi_div_two] at hval
+    linarith
+  have hne2 : a₀ ≠ π := by
+    intro h
+    rw [h, borromeanFunctional_pi] at hval
+    linarith
+  have hint : a₀ ∈ Set.Ioo (π / 2) π :=
+    ⟨lt_of_le_of_ne ha₀mem.1 (Ne.symm hne1), lt_of_le_of_ne ha₀mem.2 hne2⟩
+  have hloc : IsLocalMax borromeanFunctional a₀ :=
+    hmax.isLocalMax (Icc_mem_nhds hint.1 hint.2)
+  have hd := hasDerivAt_borromeanFunctional hint.1 hint.2
+  have hzero : 8 * Real.log (2 * Real.sin a₀)
+      - 4 * Real.log (2 * Real.sin (2 * a₀ - π)) = 0 := by
+    rw [← hd.deriv]
+    exact hloc.deriv_eq_zero
+  have hsa : 0 < Real.sin a₀ :=
+    Real.sin_pos_of_pos_of_lt_pi (by linarith [hint.1]) hint.2
+  have hsb : 0 < Real.sin (2 * a₀ - π) :=
+    Real.sin_pos_of_pos_of_lt_pi (by linarith [hint.1]) (by linarith [hint.2])
+  have hexp : (2 * Real.sin a₀) ^ 2 = 2 * Real.sin (2 * a₀ - π) := by
+    have h2 : Real.log ((2 * Real.sin a₀) ^ 2)
+        = Real.log (2 * Real.sin (2 * a₀ - π)) := by
+      rw [Real.log_pow]
+      push_cast
+      linarith [hzero]
+    have hpos1 : (0:ℝ) < (2 * Real.sin a₀) ^ 2 := by positivity
+    have hpos2 : (0:ℝ) < 2 * Real.sin (2 * a₀ - π) := by linarith
+    calc (2 * Real.sin a₀) ^ 2
+        = Real.exp (Real.log ((2 * Real.sin a₀) ^ 2)) :=
+          (Real.exp_log hpos1).symm
+      _ = Real.exp (Real.log (2 * Real.sin (2 * a₀ - π))) := by rw [h2]
+      _ = 2 * Real.sin (2 * a₀ - π) := Real.exp_log hpos2
+  have hsin2 : Real.sin (2 * a₀ - π) = -Real.sin (2 * a₀) := by
+    rw [show 2 * a₀ - π = -(π - 2 * a₀) by ring, Real.sin_neg,
+      Real.sin_pi_sub]
+  have hkey : Real.sin a₀ + Real.cos a₀ = 0 := by
+    have hs2 := Real.sin_two_mul a₀
+    rw [hsin2, hs2] at hexp
+    have hz : Real.sin a₀ * (Real.sin a₀ + Real.cos a₀) = 0 := by
+      nlinarith [hexp]
+    rcases mul_eq_zero.mp hz with h | h
+    · exact absurd h hsa.ne'
+    · exact h
+  have hcos2 : Real.cos (2 * a₀) = 0 := by
+    rw [Real.cos_two_mul']
+    have hc : Real.cos a₀ = -Real.sin a₀ := by linarith [hkey]
+    rw [hc]
+    ring
+  have ha3 : a₀ = 3 * π / 4 := by
+    rcases Real.cos_eq_zero_iff.mp hcos2 with ⟨k, hk⟩
+    have hklo : (2:ℝ) < ((2 * k + 1 : ℤ) : ℝ) := by
+      have h1 : π < 2 * a₀ := by linarith [hint.1]
+      rw [hk] at h1
+      push_cast at h1 ⊢
+      nlinarith
+    have hkhi : ((2 * k + 1 : ℤ) : ℝ) < 4 := by
+      have h1 : 2 * a₀ < 2 * π := by linarith [hint.2]
+      rw [hk] at h1
+      push_cast at h1 ⊢
+      nlinarith
+    have hk3 : (2 * k + 1 : ℤ) = 3 := by
+      have hlo : (2:ℤ) < 2 * k + 1 := by exact_mod_cast hklo
+      have hhi : (2 * k + 1 : ℤ) < 4 := by exact_mod_cast hkhi
+      omega
+    have hcast : (2 * (k:ℝ) + 1) = 3 := by exact_mod_cast hk3
+    have h2a : 2 * a₀ = 3 * (π / 2) := by
+      rw [hk, hcast]
+      ring
+    linarith
+  have hfin := hmax ha
+  simp only [Set.mem_setOf_eq] at hfin
+  calc borromeanFunctional a ≤ borromeanFunctional a₀ := hfin
+    _ = borromeanFunctional (3 * π / 4) := by rw [ha3]
+    _ = 4 * QOU.Archimedean.Cl_2 (π / 2) := borromeanFunctional_three_quarters
 
 end QOU.Knot.FigureEightVolume
