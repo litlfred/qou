@@ -30,11 +30,14 @@ sorry-free:
   exactly `((2/√5)·sin(mπ/5))² · D²(ζ^m) = 4` — the factor-2-corrected modulus
   identity at the vacuum node, whence at every node by multiplying with `[mark]²`.
 
-What is **not** in this file (and not claimed): the analytic input that the colored
-Lawrence–Rozansky flat-connection amplitudes are `A_m(α) = ±(2/√5)·sin(αmπ/5)` — that
-is the probe's machine-validated leg (α = 1 anchors Hikami's Theorem 10 to ~1e-38;
-amplitudes extracted parameter-free to ~1%), not a Lean theorem.  The `q₀`
-archimedean continuation (the `loc_matches` gate) remains open.
+What is **not** in this file: the colored Lawrence–Rozansky flat-connection
+amplitudes `A_m(α) = ±(2/√5)·sin(αmπ/5)`.  Its **bare (α = 1) case is now a Lean
+theorem** — the real-trigonometric identity `A_m(1)² = 4/D²(ζ^m)` is proved in the
+archimedean companion
+[`KeystoneLRAmplitudeReal.lean`](KeystoneLRAmplitudeReal.lean) (§7c: `Real.sin`
+lives in a separate file from this generic-field core), promoting the
+former ~1% machine-evidence to exact.  The full colored `α ≥ 2` amplitude and the
+`q₀` archimedean continuation (the `loc_matches` gate) remain open.
 
 ## Base ring (§7c)
 
