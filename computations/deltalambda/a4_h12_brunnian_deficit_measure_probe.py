@@ -320,7 +320,9 @@ def main() -> int:
         else:
             dd = mp.mpf(0)
         sub4[f"drop_{k}"] = mp.nstr(dd, 8)
-        if abs(dd) > mp.mpf("1e-20"):
+        # trivial ⟺ machine-zero: the native χ trace is f64, noise ~1e-15; the
+        # genuine Brunnian signal is O(h⁶)~1e-4, so 1e-10 cleanly separates them.
+        if abs(dd) > mp.mpf("1e-10"):
             all_sub_trivial = False
     tau4 = gl4 / gu4
     c4_base = E0 * (gu4 - gl4)                         # E₀·g_unlink·deficit = E₀·(1−τ)·g_unlink
@@ -364,7 +366,7 @@ def main() -> int:
         else:
             dd = mp.mpf(0)
         subblk[f"drop_block_{k}"] = mp.nstr(dd, 8)
-        if abs(dd) > mp.mpf("1e-18"):
+        if abs(dd) > mp.mpf("1e-9"):
             all_block_trivial = False
         _log(f"    drop block {k}: sub-deficit={mp.nstr(dd,6)}")
     print(f"    delete-block sub-deficits (must be ≈0): {subblk}")

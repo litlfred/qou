@@ -1,0 +1,141 @@
+{
+  "schema": "witness/v1",
+  "producer": "computations/deltalambda/a4_h12_brunnian_deficit_measure_probe.py",
+  "computation": "a4-h12-brunnian-deficit-measure",
+  "description": "Task 3: measure the SIGN of the A=4 4-component *Brunnian* level deficit 1\u2212\u03c4_L\u2084 at the substrate q\u2080 to establish/refute the antecedent \u03c4_L\u2084 \u2264 1 of the scope-(b) CONDITIONAL Lean sign wall QOU.MassTheory.HeliumFourBodyCluster.mu4_ne_brunnian4Cluster (#4376). Distinct from helium_four_body_cluster_probe.py (which measured cabled BLOCK-CHAIN words never verified Brunnian): this probe constructs a GENUINELY Brunnian 4-braid \u2014 the iterated left-normed commutator of pure-braid band generators w\u2084=[[A\u2080\u2081,A\u2081\u2082],A\u2082\u2083] \u2014 and VERIFIES Brunnian-ness EXACTLY via the pure-braid strand-forgetting map d_k (deleting ANY strand collapses the nested commutator to the identity braid \u21d2 every proper sub-link is the unlink, trace deficit exactly 0). It measures the full-braid deficit sign + leading Milnor order (expect O(h\u2076)=2\u00b7(4\u22121)) at base n=4 (rigorous) and confirms at width-3 cabled H\u2081\u2082 (n=12, 77 partitions). deficit:=1\u2212g_link/g_unlink so \u03c4:=g_link/g_unlink and deficit\u22650 \u27fa \u03c4\u22641 \u27fa antecedent holds. SAME 0-fit perblock trace g=\u03a3 y_\u03bb|\u03c7_\u03bb|\u00b7E\u2080 and E\u2080=m_e/(q\u2080(q\u2080\u22121)) as #4364. STRICT anti-fit: 0 free params; \u03bc\u2084 forward AME\u2212model, never inverted; word fixed by the topological Brunnian constraint, not tuned; nothing wired.",
+  "timestamp": "2026-07-26T21:19:25.649503+00:00",
+  "parameters": {
+    "free_parameters": 0,
+    "q0": "1.1099785827513808",
+    "h": "0.209060298795639301677370394164",
+    "E0_MeV": "4.18598136329447621452746090153",
+    "brunnian_word": "w\u2084 = [[A\u2080\u2081,A\u2081\u2082],A\u2082\u2083] (iterated left-normed commutator of pure-braid band generators; 0-based strands)",
+    "band_factors": [
+      [
+        0,
+        1,
+        1
+      ],
+      [
+        1,
+        2,
+        1
+      ],
+      [
+        0,
+        1,
+        -1
+      ],
+      [
+        1,
+        2,
+        -1
+      ],
+      [
+        2,
+        3,
+        1
+      ],
+      [
+        1,
+        2,
+        1
+      ],
+      [
+        0,
+        1,
+        1
+      ],
+      [
+        1,
+        2,
+        -1
+      ],
+      [
+        0,
+        1,
+        -1
+      ],
+      [
+        2,
+        3,
+        -1
+      ]
+    ],
+    "base_level": "n=4, y_\u03bb over partitions of 4",
+    "cabled_level": "H\u2081\u2082 (n=12), width-3 nucleon cables, y_\u03bb over 77 partitions of 12",
+    "note": "\u03bc\u2084=\u22124.591 forward AME\u2212model target only; SAME E\u2080 + y_\u03bb norm as #4364."
+  },
+  "results": {
+    "a4_residual_target": {
+      "mu2": "0.0",
+      "mu3": "0.47076896",
+      "mu4": "-4.591048",
+      "mu4_sign": "negative"
+    },
+    "a3_borromean_band_validation": {
+      "deficit_1_minus_tau": "0.0016333774",
+      "sign": "+",
+      "leading_h_order": "4.053",
+      "delete_strand_subdeficits": {
+        "drop_0": "-9.30367e-16",
+        "drop_1": "0.0",
+        "drop_2": "-9.30367e-16"
+      },
+      "note": "band-commutator [A\u2080\u2081,A\u2081\u2082] reproduces the Borromean: + deficit, O(h\u2074), all delete-strand sub-links trivial \u2014 validates the band machinery."
+    },
+    "a4_brunnian_base_n4": {
+      "sigma_word_length": 20,
+      "g_unlink": "1.0",
+      "g_link": "1.00014589760006672670503896137",
+      "tau_L4": "1.00014589760006672670503896137",
+      "deficit_1_minus_tau_L4": "-0.000145897600066726705038961365394",
+      "deficit_sign": "-",
+      "tau_le_1": false,
+      "leading_milnor_order": "6.061",
+      "c4_MeV": "-0.000610724634828708916683781571139",
+      "c4_sign": "-",
+      "delete_strand_subdeficits": {
+        "drop_0": "-2.2147971e-15",
+        "drop_1": "-3.4041523e-16",
+        "drop_2": "-2.0383907e-15",
+        "drop_3": "-2.489054e-15"
+      },
+      "brunnian_verified_exact": true
+    },
+    "a4_brunnian_cabled_h12": {
+      "cabled_sigma_word_length": 180,
+      "single_trace_seconds": 126.52,
+      "g_unlink": "1.0",
+      "g_link": "1.01391408467413670058229018125",
+      "tau_L4": "1.01391408467413670058229018125",
+      "deficit_1_minus_tau_L4": "-0.0139140846741367005822901812546",
+      "deficit_sign": "-",
+      "tau_le_1": false,
+      "c4_MeV": "-0.0582440991332375237352322815417",
+      "c4_sign": "-",
+      "delete_block_subdeficits": {
+        "drop_block_0": "-1.2852586e-14",
+        "drop_block_1": "-2.6539034e-15",
+        "drop_block_2": "-8.8474876e-15",
+        "drop_block_3": "-1.5621678e-14"
+      },
+      "cabled_brunnian_verified": true
+    },
+    "verdict": {
+      "classification": "ANTECEDENT REFUTED \u2014 \u03c4_L\u2084 > 1 measured (deficit < 0) for the genuine 4-component Brunnian braid at BOTH levels. The Brunnian deficit is NEGATIVE, so c\u2084 = E\u2080\u00b7(1\u2212\u03c4_L\u2084) < 0 \u2014 sign-COMPATIBLE with \u03bc\u2084 < 0. The scope-(b) antecedent of the Route-3 wall genuinely FAILS; the A=4 recipe reopens on sign (the magnitude test becomes live). Reported honestly; nothing tuned.",
+      "tau_le_1_base": false,
+      "tau_le_1_h12": false,
+      "signs_agree_across_levels": true,
+      "antecedent_status": "REFUTED",
+      "route3_wall_unconditional": false,
+      "mu4_sign": "negative",
+      "is_fit": false,
+      "wired": false,
+      "free_param_count": 0,
+      "anti_fit": "\u03bc\u2084 forward AME\u2212model, never inverted; the Brunnian word is fixed by the topological delete-strand=identity constraint (verified exactly), not tuned to any target; nothing wired."
+    }
+  },
+  "scriptHash": "ed139657660d5aec",
+  "scriptCommitSha": "218a76b040ed2873bae661c2922a6d1ff7fbeeab"
+}
