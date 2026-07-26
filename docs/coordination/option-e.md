@@ -445,3 +445,29 @@ standing open door is a **non-multiplicative / enhancing (f>1) cluster operator*
 `Mu4RhoFCluster.lean` (hand-audited; lean-direct blocked by pruned lake-cache +
 disk ENOSPC). Audit `2026-07-26-deltalambda-mu4-rhoF-cluster.md`. No fit, nothing
 wired.
+
+**2026-07-26 — the Borromean irreducible operator supplies the forbidden μ₃ `+`
+sign: a derived positive-sign LEAD (scope-(a)), NOT a closure.** (PR #4360,
+`claude/deltalambda-borromean-3body-cluster-2026-07-26`.) Followed #4354's open
+door — a **non-multiplicative, enhancing** 3-body operator. The distinct QOU
+candidate: the **Borromean/Brunnian** irreducible operator — three components,
+every 2-sub-link *trivial*, yet genuinely 3-body linked, so the pairwise
+(multiplicative) part vanishes *by construction* and the whole content is the
+irreducible 3-body cluster (it is *the* `Vol(𝓑₃)·ρ` object, GAP-A-4 closed form,
+**0 free params**). The connected 3-body cluster against the unlink `τ_free=τ(0)=1`
+is `c₃^Borr = E₀·(1−τ_Borr)` with the **closed form** `1−τ_Borr = h⁴(3+h²)/(h²+4)
+≥ 0` ∀ real h (strict for q≠1). **Sign gate (normalization-free):** `c₃^Borr>0`
+**matches** `μ₃=+0.4708>0` — the sign the pairwise multiplicative route provably
+CANNOT give (#4354). This positivity is **unconstrained by `markovParam z≤½`** (that
+bounds *multiplicative* products; the Borromean object is irreducible). **Lean
+`BorromeanThreeBodyCluster.lean` machine-checked sorry-free** (lean-direct exit 0,
+restored cache): `one_sub_tauBorromean`, `tauBorromean_le_one`/`_lt_one`,
+`borromean_cluster_nonneg`/`_pos`, `mu3_sign_compatible_with_borromean_cluster` —
+the **forward complement** of `Mu4RhoFCluster.pairwise_3body_content_nonpos` (≤0);
+the `μ₃>0` sign **selects** the Brunnian operator. **NOT a closure:** bare-`H₃`
+magnitude ~0.006 MeV is ~78× below +0.4708 (~264× below the ρ_F ~1.5 MeV scale);
+any level-lift tuned to the target = a **FIT** (not made, not wired). Δ_λ remains
+open (per-λ, 2 anchors, sign≠magnitude); magnitude is the next derive-or-refute
+(a *derived* H₉/g-channel lift or s5-so3 `W_λ`, never a fit). Probe
+`borromean_3body_cluster_sign_probe.py` + witness. Audit
+`2026-07-26-deltalambda-borromean-3body-cluster.md`. `μ₃`'s value enters no proof.
