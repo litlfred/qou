@@ -18,6 +18,25 @@ export default remark({
   ],
   authorNotes: [
     {
+      kind: "status",
+      date: "2026-07-26",
+      body:
+        "The 4₁ volume-conjecture limit is now DISCHARGED in Lean, sorry-free: " +
+        "`(2π/N)·log⟨4₁⟩_N → 2·Cl₂(π/3) = Vol(4₁)` is machine-proved as " +
+        "`QOU.Knot.FigureEightVolume.tendsto_log_kashaev_vol` " +
+        "(`FigureEightVolumeSqueeze.lean`), and the `VolumeConjecture41` " +
+        "instance carries the proof — no cited sorry remains. The route is the " +
+        "saddle program's elementary Riemann-sum squeeze (bricks E1–E5d, " +
+        "milestone qou-cpfn): the Kashaev log-sum is squeezed onto the Clausen " +
+        "primitive uniformly in k with master error E(N) → 0, the saddle grid " +
+        "term at k = ⌊5N/6⌋ supplies the lower envelope, and the Cl₂ global " +
+        "minimum at 5π/3 the upper. This required the honest target repair " +
+        "VOL_4_1 := 2·Cl₂(π/3) exact (the earlier truncated decimal made the " +
+        "statement false as stated). The two notes below are HISTORICAL: their " +
+        "'does NOT discharge' caveats described the pre-E5d state and are now " +
+        "superseded.",
+    },
+    {
       kind: "note",
       date: "2026-07-19",
       body:

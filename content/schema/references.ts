@@ -4476,8 +4476,10 @@ export const references: CSLData[] = [
       "associated with the figure-eight knot; together with " +
       "Ohtsuki's saddle-point/Borel-resummation analysis it " +
       "supplies the literature backing for the figure-eight case " +
-      "of the Kashaev volume conjecture used by the conditional " +
-      "class \\texttt{VolumeConjecture41}.",
+      "of the Kashaev volume conjecture carried by the class " +
+      "\\texttt{VolumeConjecture41} (whose instance is, since " +
+      "2026-07-26, machine-proved sorry-free in-repo by an " +
+      "elementary Riemann-sum squeeze).",
   }),
 
   // ── Costin–Ehrlich–Friedman 2015 (integration on the surreals) ──
