@@ -10,14 +10,17 @@
       grow; this is the Lean-checkable floor of the "exponential growth → Vol"
       verification done numerically in figure_eight_kashaev_volume.py).
 
-  WHAT IS NOT LEAN-PROVABLE HERE (carried as a conditional class):
-    * the asymptotic limit  lim_N (2π/N)·log⟨4_1⟩_N = Vol(4_1) ≈ 2.0299
-      is the Kashaev–Murakami–Murakami VOLUME CONJECTURE, PROVED for the
-      figure-eight (Andersen–Hansen; Ohtsuki) by Borel-resummation / saddle
-      analysis that is NOT in Mathlib. It is the Re-face of the keystone
-      (Re V(4_1)=Vol → m_μ/m_e). The Im-face CS(4_1)=0 is, by contrast,
-      ELEMENTARY (amphichirality / self-duality) — see the bar-symmetry of the
-      colored Jones in figure_eight_aj_operator.py.
+  CARRIED AS A CONDITIONAL CLASS (and, since 2026-07-26, DISCHARGED):
+    * the asymptotic limit  lim_N (2π/N)·log⟨4_1⟩_N = Vol(4_1) = 2·Cl₂(π/3)
+      is the Kashaev–Murakami–Murakami VOLUME CONJECTURE, proved for the
+      figure-eight in the literature (Andersen–Hansen; Ohtsuki) and NOW ALSO
+      machine-proved in-repo, sorry-free, by the saddle program's Riemann-sum
+      squeeze (`FigureEightVolumeSqueeze.lean`, milestone qou-cpfn) — the
+      class instance in `FigureEightVolumeLiterature.lean` carries the proof.
+      It is the Re-face of the keystone (Re V(4_1)=Vol → m_μ/m_e). The
+      Im-face CS(4_1)=0 is, by contrast, ELEMENTARY (amphichirality /
+      self-duality) — see the bar-symmetry of the colored Jones in
+      figure_eight_aj_operator.py.
 
   Archimedean (ℝ): uses Real.cos / Real.log (§7c — genuinely archimedean).
 
