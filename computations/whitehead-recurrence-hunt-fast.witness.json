@@ -1,0 +1,22 @@
+{
+  "description": "Whitehead diagonal q-difference recurrence hunt via the fast weight-block exact tower + the (4\u2081-validated) mod-p nullspace certificate. Toward J_red -> c_sigma.",
+  "computation": "whitehead_recurrence_hunt_fast",
+  "audit_only": true,
+  "whitehead_braid_word": "[1,-2,1,-2,1]",
+  "Nmax": 30,
+  "tower": "weight-block engine (validated vs full colored_jones_modp N=2..6)",
+  "grid_results": {
+    "r1_W2_I": "no-recurrence",
+    "r2_W2_I": "no-recurrence",
+    "r2_W3_H": "no-recurrence",
+    "r1_W4_I": "insufficient-N",
+    "r2_W2_H": "no-recurrence",
+    "r1_W3_I": "no-recurrence",
+    "r3_W1_I": "no-recurrence",
+    "r2_W3_I": "insufficient-N"
+  },
+  "certified_windows": [],
+  "min_window": null,
+  "wall_seconds": 714.8881947994232,
+  "timestamp": "2026-07-26T20:56:09+00:00"
+}
