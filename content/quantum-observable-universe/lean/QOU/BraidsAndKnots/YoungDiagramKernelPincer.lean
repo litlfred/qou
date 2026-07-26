@@ -839,6 +839,42 @@ theorem hookShape_of_hookLen_eq_sum (l : List ℕ) (hs : l.Sorted (· ≥ ·)) (
     exact hcon
   rcases hmem i' 1 hc with ⟨h1, _⟩ | ⟨h1, _⟩ <;> omega
 
+/-- **Converse of the carrier lemma**: on a hook shape (positive parts, at most one cell per row
+past the first) the corner's hook exhausts the diagram — `h(0,0) = a + λ′₀ − 1 = a + c = n`.
+Together with `hookShape_of_hookLen_eq_sum` this characterizes the carriers of the top hook
+statistic `N_n`: they are exactly the corner cells of the `n` hook shapes `(a, 1^{n−a})`. -/
+theorem hookLen_corner_of_hookShape (l : List ℕ) (hs : l.Sorted (· ≥ ·))
+    (hpos : ∀ x ∈ l, 0 < x) (hne : l ≠ [])
+    (hhook : ∀ i', 1 ≤ i' → l.getD i' 0 ≤ 1) :
+    hookLen l (0, 0) = l.sum := by
+  have hcount : l.countP (fun x => decide (0 < x)) = l.length :=
+    List.countP_eq_length.mpr fun x hx => by simpa using hpos x hx
+  have hones : ∀ (t : List ℕ), (∀ x ∈ t, x = 1) → t.sum = t.length := by
+    intro t
+    induction t with
+    | nil => intro _; rfl
+    | cons b s ih =>
+        intro h
+        rw [List.sum_cons, List.length_cons, h b List.mem_cons_self,
+            ih (fun x hx => h x (List.mem_cons_of_mem b hx))]
+        omega
+  obtain ⟨a, t, rfl⟩ : ∃ a t, l = a :: t := by
+    cases l with
+    | nil => exact absurd rfl hne
+    | cons a t => exact ⟨a, t, rfl⟩
+  have ht1 : ∀ x ∈ t, x = 1 := by
+    intro x hx
+    obtain ⟨k, hk, rfl⟩ := List.mem_iff_getElem.mp hx
+    have h1 : (a :: t).getD (k + 1) 0 ≤ 1 := hhook (k + 1) (Nat.le_add_left 1 k)
+    rw [List.getD_cons_succ, List.getD_eq_getElem _ _ hk] at h1
+    have h2 : 0 < t[k] := hpos _ (List.mem_cons_of_mem a hx)
+    omega
+  unfold hookLen
+  dsimp only
+  rw [conj_getD _ hs, hcount, List.getD_cons_zero, List.sum_cons, List.length_cons,
+      hones t ht1]
+  omega
+
 /-- `IdentityI.sumSqHooks` as a cell-set sum of the kernel-form hook (the two per-cell
 ℕ-subtraction forms agree on genuine cells, as in `hookProd_eq_prodHooks`). -/
 theorem sumSqHooks_eq_sum_cells (l : List ℕ) (hs : l.Sorted (· ≥ ·)) :
