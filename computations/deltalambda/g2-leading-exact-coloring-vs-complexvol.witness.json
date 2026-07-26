@@ -1,0 +1,81 @@
+{
+  "engine": "sympy+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-07-26T11:23:38.535924+00:00",
+  "commitSha": "356fe282a452614390de2329a78a6635f52f1a13",
+  "assertions": [
+    {
+      "name": "coloring_exact_minus_h2",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "coloring_coeff_is_one",
+      "computed": "1.0",
+      "expected": "1.0",
+      "passed": true
+    },
+    {
+      "name": "complexvol_u2_imaginary",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "g2-leading-exact-coloring-vs-complexvol",
+  "scriptFile": "g2_leading_exact_coloring_vs_complexvol_probe.py",
+  "scriptHash": "1b2e86ba6e42",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "g₂'s bar-even carrier is the REAL coloring (c+1=-h² exact, coefficient EXACTLY 1 — g₂_leading=1), NOT the complex-volume Re face: for the trefoil (A-poly l=-m⁶) the complex-volume u² term is purely imaginary (-3i/4·u², CS/bar-odd), so Re 𝔙 vanishes at the real substrate ray φ=0. Calibrates the #4319 quadrature schematic (nzReVolume=g₂ refined to the real coloring; the 'g₂ lives where c₃ dies' conclusion STANDS via the real coloring). Sharpens: g₂_leading=1 exact; r=0.00865 is entirely the shapes→e₂ nonlinearity (#4315 pinched-limit octahedral e₂). scope-(a), audit-only, nothing wired.",
+  "contentBlock": "rem:ohtsuki-tower-bar-parity",
+  "audit_only": true,
+  "tier": "exact symbolic calibration (coloring-exact + complex-vol-imaginary) + g₂_leading=1; no fit",
+  "result": {
+    "A_coloring_exact": {
+      "identity": "c(m)+1 = -(m-1/m)^2 (exact)",
+      "verified": true,
+      "coeff_in_units_h2_at_q0": "1.0",
+      "meaning": "g₂ coloring-level bar-even coefficient is EXACTLY 1 (no higher-order in the coloring); r is NOT in the coloring."
+    },
+    "B_complex_volume_u2_imaginary": {
+      "trefoil_A_poly_branch": "l = -m^6 (non-abelian)",
+      "V_of_u": "-3*I*u**2/4 + pi*u/2  (u = 2 log m)",
+      "u2_coeff": "-3*I/4",
+      "u2_is_purely_imaginary": true,
+      "Re_volume_u2_at_real_ray": "0.0",
+      "meaning": "the complex-volume u² term is CS/bar-ODD; its Re (Volume) part VANISHES at φ=0 for the trefoil. So Re 𝔙 is NOT g₂'s carrier."
+    },
+    "calibration_of_4319": {
+      "refinement": "g₂'s bar-even carrier is the REAL coloring c+1=-h² (nonzero at substrate, coeff exactly 1), NOT the complex-volume Re face nzReVolume (which vanishes at φ=0 for the trefoil).",
+      "what_stands": "#4319's conclusion 'g₂ lives where c₃ dies' STANDS — the real coloring is bar-even and nonzero at φ=0 while the bar-odd CS (c₃) is frozen. The nzReVolume Lean is correct abstract quadrature; its g₂-identification is refined to the real coloring. Calibration, not reversal."
+    },
+    "where_r_lives": {
+      "g2_leading": "1 (real coloring, EXACT)",
+      "r": "0.00865 = the shapes→e₂ NONLINEARITY (octahedral pairwise e₂ of the shapes vs the linear coloring term; the #4315 pinched-limit octahedral e₂).",
+      "no_fit": true
+    }
+  },
+  "context": {
+    "axis": "Δ_λ binding — μ₀ −9% closure, g₂ bar-even carrier + leading value",
+    "calibrates": "#4319 (NZBarEvenVolumeFace nzReVolume=g₂ schematic)",
+    "lean": "QOU/MassTheory/TrefoilColoringBarEven.lean (c+1=-(m-1/m)^2, exact)",
+    "r_home": "#4315 pinched-limit octahedral e₂ (shapes→e₂ nonlinearity)",
+    "q0_convention": "muon-canonical (computations/ layer)",
+    "no_fit": true
+  },
+  "auditOnly": true
+}
