@@ -1,0 +1,13 @@
+{
+  "description": "R-matrix engine cross-check vs Masbaum's exact twist-knot colored Jones (uploads/Download.pdf). Validates the engine on a CHIRAL knot (trefoil) after the fig-8 (amphichiral) leg.",
+  "computation": "whitehead_masbaum_crosscheck",
+  "audit_only": true,
+  "convention": "Masbaum a = my balanced q; framing factor q^{-writhe*(N^2-1)/2}",
+  "figure_eight_K-1_f=1_match_s": 1,
+  "trefoil_K1_f=(-1)^n a^{n(n+3)}_match_s": 1,
+  "trefoil_writhe": -3,
+  "max_abs_err": "<1e-37 both legs",
+  "whitehead_framing_is_pure_phase": true,
+  "verdict": "CONFIRMED",
+  "timestamp": "2026-07-26T12:28:47+00:00"
+}
