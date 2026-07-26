@@ -94,6 +94,21 @@ theorem sl2_bracket_h_h : ⁅sl2H R, sl2H R⁆ = (0 : sl (Fin 2) R) := by
   rw [sl_bracket]
   simp [sl2H, val_singleSubSingle]
 
+/-- **Trace-zero coordinates.** Every `x ∈ 𝔰𝔩₂` decomposes on the triple as
+    `x = x₀₀·h + x₀₁·e + x₁₀·f` — the `(1,1)` entry is `−x₀₀` by tracelessness. This
+    is the constructive spanning statement for the basis `(h,e,f)`. -/
+theorem sl2_decomp (x : sl (Fin 2) R) :
+    x = (x.val 0 0) • sl2H R + (x.val 0 1) • sl2E R + (x.val 1 0) • sl2F R := by
+  have htr : x.val 0 0 + x.val 1 1 = 0 := by
+    have h0 : Matrix.trace x.val = 0 := x.2
+    rwa [Matrix.trace_fin_two] at h0
+  apply Subtype.ext
+  simp only [sl2H, sl2E, sl2F]
+  ext a b
+  fin_cases a <;> fin_cases b <;>
+    simp [Matrix.single, Matrix.of_apply]
+  linear_combination htr
+
 end SL2
 
 end QOU.Atomicity
