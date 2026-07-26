@@ -218,6 +218,32 @@ theorem diagEmbedHom_injective : Function.Injective (diagEmbedHom (R := R)) := b
   simp [diagMat] at h00
   exact Units.ext h00
 
+/-- **T3, `m = 1`, the diagonal torus is EXACTLY `𝔾ₘ` (the torus-level upper
+    bound).** A *diagonal* matrix in `SL₂(R)` (off-diagonal entries zero) is
+    `diag(t, t⁻¹)` for a unit `t`: from `det = a·d = 1`, `a` is a unit with inverse
+    `d`. So the diagonal torus is *precisely* the range of `diagEmbedHom` — a single
+    `𝔾ₘ`, **rank exactly 1** (both bounds, for this torus): it cannot be larger.
+
+    This closes the torus-level upper bound. The remaining atomicity gap is
+    strictly the *maximality* step — that no larger torus lives elsewhere in `SL₂`
+    (all maximal tori conjugate) — which is the root-count fact (bean
+    `qou-atsd-t3`, upper). -/
+theorem sl2_diagonal_eq_diagEmbed (g : SpecialLinearGroup (Fin 2) R)
+    (h01 : (g : Matrix (Fin 2) (Fin 2) R) 0 1 = 0)
+    (h10 : (g : Matrix (Fin 2) (Fin 2) R) 1 0 = 0) :
+    ∃ t : Rˣ, g = diagEmbedHom t := by
+  have hdet : (g : Matrix (Fin 2) (Fin 2) R) 0 0 * (g : Matrix (Fin 2) (Fin 2) R) 1 1 = 1 := by
+    have hg := SpecialLinearGroup.det_coe g
+    rw [Matrix.det_fin_two, h01, h10] at hg
+    simpa using hg
+  refine ⟨Units.mkOfMulEqOne _ _ hdet, ?_⟩
+  apply Subtype.ext
+  ext i j
+  have hinv : (↑(Units.mkOfMulEqOne ((g : Matrix (Fin 2) (Fin 2) R) 0 0)
+      ((g : Matrix (Fin 2) (Fin 2) R) 1 1) hdet)⁻¹ : R) = (g : Matrix (Fin 2) (Fin 2) R) 1 1 := rfl
+  fin_cases i <;> fin_cases j <;>
+    simp [diagEmbedHom, diagMat, h01, h10, hinv]
+
 end SL2Torus
 
 end QOU.Atomicity
