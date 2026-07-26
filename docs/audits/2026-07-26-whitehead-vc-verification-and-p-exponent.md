@@ -45,26 +45,35 @@ The factor-2 assignment assumes **p = 3/2**, the growth exponent
 `log|J| = (Vol/2π)N + p·log N + c₀ + …`. That is the value for a hyperbolic **knot**
 (1 cusp). The Whitehead is a **2-cusp link**, where p need not be 3/2.
 
-**Discriminating control (exact data, both links/knots):**
+**Discriminating control (exact data through N=14, both links/knots).** The exact-root
+tower now reaches N=14 for both objects (Whitehead N=14 anchor `|J_red| = 117161.339`,
+95 min at dps=60). The p-free fit is run in matched windows so the figure-eight (whose
+true exponent is 3/2) calibrates the method's bias:
 
-| object | fit | p (recovered) |
+| fit window | figure-eight 4₁ (true p=3/2) | Whitehead L5a1 |
 |---|---|---|
-| figure-eight 4₁ (knot, true p=3/2) | (p,c₀,d), N=6..16 | 1.52–1.53 → **3/2** ✓ |
-| figure-eight 4₁ | 2-param triples N=6..16 | 1.37–1.44 (short-N biased low) |
-| Whitehead L5a1 | (p,c₀,d), N=6,8,10,12 | 1.79 (4-pt, overfit-sensitive) |
-| Whitehead L5a1 | 2-param triples N=6..12 | 1.24–1.36 |
+| (p,c₀,d), N=6,8,10,12 | 1.617 | 1.596 |
+| (p,c₀,d), **N=8,10,12,14** | **1.538** (→ 3/2) | **1.151** |
+| (p,c₀,d,e), N=6..14 | 1.450 | 0.657 |
+| (p,c₀), N=10,12,14 | 1.545 | 1.555 |
 
-At identical N the Whitehead reads a **different exponent** than the figure-eight in
-every window — so p is **not pinned**, and the *exact* prefactor (hence an exact `c₀`,
-hence turning "factor ≈ 2" into an exact statement) is **contingent on p**.
+**The figure-eight cleanly converges to ≈1.5; the Whitehead does not.** Over the same
+windows its p-free exponent scatters **0.66–1.60** and, crucially, *destabilises* when
+N=14 is added (the N=8–14 window drops to 1.15, the 5-point fit to 0.66) rather than
+tightening onto 3/2 as the figure-eight does. So p is **not pinned to 3/2** for the
+2-cusp link, and the *exact* prefactor (hence an exact `c₀`, hence turning "factor ≈ 2"
+into an exact statement) is **contingent on p**.
 
 **Scope (per §"refuted"/"open" discipline):** this is a *scope-limited* open item, not a
 refutation. The factor-2 reading is correct **under p = 3/2**; what is open is whether
 the 2-cusp link exponent is 3/2 or a distinct value. Two routes to close it:
 
-1. **More N.** Extend the exact-root tower to N=14/16 (as the fig-8 needed 6 points to
-   stabilise p). `whitehead_p_extend.py` is running N=14 (~48 min, reclaim-bound).
-2. **Theory.** Derive the 2-cusp-link refined-VC exponent (Ohtsuki–Takata-type
+1. **More N.** N=14 is now done (above) and did **not** stabilise p — it made the fit
+   *worse*-behaved, the signature that the simple `p·log N + c₀ + d/N` ansatz is the
+   wrong asymptotic form for the 2-cusp link (a distinct power, or an extra `log N` /
+   per-cusp Gaussian factor). N=16 (~4 h) alone is unlikely to settle it without the
+   correct functional form; this route is now secondary to the theory route.
+2. **Theory (primary).** Derive the 2-cusp-link refined-VC exponent (Ohtsuki–Takata-type
    saddle/Gaussian-per-cusp analysis) and the adjoint Reidemeister torsion of L5a1
    (trace field `ℚ(i)`), giving the exact prefactor directly — the analogue of the
    figure-eight's `1/3^{1/4}` (torsion `√3`).
