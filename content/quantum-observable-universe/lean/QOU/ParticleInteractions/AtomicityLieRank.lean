@@ -414,6 +414,20 @@ theorem sl2_finrank_le_one_of_central {K : Type*} [Field K] (h2 : (2 : K) ≠ 0)
     _ ≤ Module.finrank K (LinearMap.ker (ad K (sl (Fin 2) K) X)) := Submodule.finrank_mono hsub
     _ ≤ 1 := sl2_centralizer_finrank_le_one h2 X hX
 
+/-- **Abelian subalgebras of 𝔰𝔩₂ are `≤ 1`-dimensional.** Any nonzero element of an abelian
+subalgebra commutes with the whole subalgebra, so `sl2_finrank_le_one_of_central` applies. (The
+maximal abelian — Cartan/toral — subalgebras of 𝔰𝔩₂ are exactly the `1`-dimensional ones.) -/
+theorem sl2_abelian_finrank_le_one {K : Type*} [Field K] (h2 : (2 : K) ≠ 0)
+    (A : LieSubalgebra K (sl (Fin 2) K)) [IsLieAbelian A] [Nontrivial A] :
+    Module.finrank K A ≤ 1 := by
+  obtain ⟨a, ha0⟩ := exists_ne (0 : A)
+  have ha0' : a.val ≠ 0 := by simp only [ne_eq, ZeroMemClass.coe_eq_zero]; exact ha0
+  refine sl2_finrank_le_one_of_central h2 A a.val ha0' ?_
+  intro y hy
+  have h0 := trivial_lie_zero A A a ⟨y, hy⟩
+  have hc := congrArg Subtype.val h0
+  rwa [LieSubalgebra.coe_bracket, ZeroMemClass.coe_zero] at hc
+
 end SL2
 
 end QOU.Atomicity
