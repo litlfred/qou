@@ -1,6 +1,7 @@
 import QOU.FlavorDressing.FlavorDressingFunctor
 import QOU.FlavorDressing.DressedMassFromSubstrateSplit
 import QOU.FlavorDressing.FlavorMassSplittingBound
+import QOU.FlavorDressing.PairProductCoefficientBound
 
 /-!
 # QOU.FlavorDressing — Flavor-dressed quark mass functor

@@ -1,0 +1,41 @@
+{
+  "engine": "python-exact",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-07-26T19:34:40.561770+00:00",
+  "commitSha": "a683c57047f260efefca4895011586dab9bba703",
+  "assertions": [
+    {
+      "name": "flavor_split_pair_product_half_ceiling",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "alpha≈0.929254>1/2=sup_{m}(m-1)/(2m); positive-weight pair product excluded as alpha source (Lean pairSum_lt_half_sq). Narrows, does not close; no fit."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 7,
+  "computation": "flavor-split-pair-product-half-ceiling",
+  "scriptFile": "flavor_split_pair_product_half_ceiling_probe.py",
+  "scriptHash": "08fcd1e75eb4",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "mpmath": "1.4.1"
+  },
+  "description": "Flavor-split second-order coefficient alpha ≈ 0.929254 EXCLUDES the positive-weight multiplicative pair-product mechanism: for any positive weights s_k with Σs_k=leading, α=(Σ_{k<l}s_k s_l)/(Σs_k)² is MAXIMIZED at equal split, value (m-1)/(2m) < 1/2, and unequal weighting lowers it — so α>1/2 cannot arise from such a product (Lean-proved invariant QOU.FlavorDressing.pairSum_lt_half_sq: 2·Σ_{k<l}s_k s_l < (Σs)²). Sharpens the partial-derivation audit Part 2a (equal-split-only; 'swapped pair dominates' moves α the wrong way). α remains UNDERIVED; the derivation must live on the self-energy/geometric side (α=1), not pair-count. scope-(b) exclusion; no fit; nothing wired; L2 unchanged (2/7).",
+  "data": {
+    "alpha_target_proton": 0.9292544902802039,
+    "alpha_target_muon": 0.9292545480839759,
+    "alpha_gt_half": true,
+    "pair_product_sup_ratio": 0.5,
+    "positive_pair_product_excluded": true,
+    "lean_invariant": "QOU.FlavorDressing.pairSum_lt_half_sq (sorry-free)"
+  }
+}
