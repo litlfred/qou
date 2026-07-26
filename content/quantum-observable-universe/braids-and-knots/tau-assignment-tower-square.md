@@ -49,4 +49,8 @@ isotypic functor, and both proved edge classes are isomorphisms, so
 the transformation restricts to the core groupoid of marked pairs.
 This is the correct sense in which the pair-dependent family is
 canonical: not a single pair-independent map — that is refuted — but
-a coherently indexed one.
+a coherently indexed one. The two coherence directions compose — a
+groupoid edge between pairs inside a common parabolic pastes with the
+restriction square — and the Markov trace of the cell restriction is
+intertwined by every edge, so trace values are well-defined on
+marked-pair orbits and may be quoted without naming the pair.
