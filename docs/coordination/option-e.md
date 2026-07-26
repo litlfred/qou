@@ -471,3 +471,30 @@ open (per-λ, 2 anchors, sign≠magnitude); magnitude is the next derive-or-refu
 (a *derived* H₉/g-channel lift or s5-so3 `W_λ`, never a fit). Probe
 `borromean_3body_cluster_sign_probe.py` + witness. Audit
 `2026-07-26-deltalambda-borromean-3body-cluster.md`. `μ₃`'s value enters no proof.
+
+**2026-07-26 — the Borromean MAGNITUDE lifts ~49× at the H₉ joint-trace level to
+0.63× μ₃: a scope-(a) NEAR-MISS LEAD (0-fit), NOT a closure and NOT a fit.** (PR
+#4364, `claude/deltalambda-borromean-magnitude-lift-2026-07-26`.) Closed the one
+honest gap #4360 left — the Borromean 3-body **magnitude**. #4360 derived the
+**sign** but at bare `H₃` (c₃≈+0.006 MeV, ~78× short). This session lifts the
+Borromean cluster to the **same H₉ perblock level ρ_F used** (`g=Σ_{λ⊢9}
+y_λ|χ_λ(word)|·E₀`, same E₀ + normalization as `three_body_joint_trace_a3`), with
+the **faithful cabled linking** `(Δ_A·Δ_B⁻¹)³` (each nucleon a width-3 cable, 54
+crossings). **Level FIXED (H₉, 3 cables) ⇒ 0 free params.** Result: **derived H₉
+⟨T,³He⟩ c₃ = +0.297 MeV = 0.63× μ₃** (~1.6× short), same **+ sign**, a **~49× lift**
+over bare-`H₃` — right order of magnitude, 0 fit. **Key honesty check: MEASURED
+leading `h`-exponent = 4.098 ⇒ `O(h⁴)` CONFIRMED** — cabling PRESERVES the Brunnian
+order-suppression; the ~49× lift is a **derived coefficient enhancement** (3
+width-3 cables ⇒ ~49× more `h⁴` strand-pairs), NOT an order change or fit (channels:
+`(Δ_A)³=−0.125`, `(Δ_B⁻¹)³=+0.973` non-Brunnian, but `(Δ_A·Δ_B⁻¹)³=+0.049` is the
+small `O(h⁴)` value — pairwise cancellation confirmed). **Lean
+`BorromeanMagnitudeLift.lean` sorry-free (lean-direct exit 0):**
+`lift_is_coefficient_ratio` (level lift = κ₁/κ₂, the h⁴ cancels ⇒ never an order
+change), `not_closed_at_H9` (0.297≠0.4708), `borromean_H9_near_miss`. **VERDICT:
+scope-(a) NEAR-MISS LEAD** — sign derived (#4360) + magnitude order recovered 0-fit
+(0.63× μ₃); the exact coefficient identity `E₀·κ·h⁴=μ₃` is **OPEN**. NOT a closure,
+NOT a fit (μ₃ never inverted, no width/multiplicity tuned), NOT a hard wall. Residual
+1.6× is a **coefficient** question (cable width / tower / s5-so3 `W_λ`), never a fit.
+Probe `borromean_h9_magnitude_lift_probe.py` + witness. Audit
+`2026-07-26-deltalambda-borromean-magnitude-lift.md`. Nothing wired; μ₃'s value
+enters no proof.
