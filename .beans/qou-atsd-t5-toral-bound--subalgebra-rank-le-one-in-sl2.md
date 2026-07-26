@@ -1,7 +1,7 @@
 ---
 # qou-atsd-t5-toral-bound
 title: 'T5 (HARD reusable infra, tiered): 𝔤 ⊆ 𝔰𝔩₂ ⟹ rank 𝔤 ≤ 1 — the toral/Cartan dimension bound (the real Mathlib gap for atomicity)'
-status: todo
+status: completed
 type: task
 priority: normal
 parent: qou-atsd
@@ -82,7 +82,13 @@ STATUS: math complete + API pinned; NOT transcribed/verified (blind ~2.5min comp
   finrank A ≤ 1 (the Tier-B bridge).
 - sl2_abelian_finrank_le_one: abelian subalgebra of 𝔰𝔩₂ (Nontrivial) has finrank ≤ 1.
 
-REMAINING (final wiring only — the hard math is done): rank 𝔤 ≤ 1 for 𝔤 ⊆ 𝔰𝔩₂.
+CLOSED 2026-07-26 (#4285): sl2_subalgebra_rank_le_one — rank 𝔤 ≤ 1 for every 𝔤 ⊆ 𝔰𝔩₂,
+sorry-free. Final wiring landed via exists_isCartanSubalgebra_engel + rank_le_finrank_engel +
+non_trivial_center_of_isNilpotent + the inclusion ι:H↪𝔰𝔩₂ range ⊆ ker(ad (ιZ)) + the keystone.
+Needed generous heartbeat limits (maxHeartbeats 1.6M / synthInstance 400k) for the nested-type
+typeclass search. The ENTIRE Tier-B atomicity upper bound is now proved from the keystone up.
+
+--- (historical) REMAINING (final wiring only — the hard math is done): rank 𝔤 ≤ 1 for 𝔤 ⊆ 𝔰𝔩₂.
 Chain: rank 𝔤 = finrank(engel_𝔤 x*) at 𝔤-regular x* [isRegular_iff_finrank_engel_eq_rank, Infinite K];
 engel_𝔤 x* is a nilpotent Cartan [IsCartanSubalgebra ⇒ LieRing.IsNilpotent];
 non_trivial_center_of_isNilpotent ⇒ ∃ nonzero central X ∈ engel_𝔤 x*;
