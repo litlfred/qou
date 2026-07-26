@@ -345,13 +345,13 @@ theorem sl2_ker_ad_le_span {K : Type*} [Field K] (h2 : (2 : K) ≠ 0)
       apply Subtype.ext
       ext i j
       fin_cases i <;> fin_cases j
-      · simp only [SetLike.val_smul, Matrix.smul_apply, smul_eq_mul, Fin.mk_zero, Fin.mk_one, ha, mul_zero]
+      · simp only [SetLike.val_smul, Matrix.smul_apply, smul_eq_mul, Fin.mk_zero, ha, mul_zero]
         exact hy00.symm
       · simp only [SetLike.val_smul, Matrix.smul_apply, smul_eq_mul, Fin.mk_zero, Fin.mk_one, hb, mul_zero]
         exact hy01.symm
       · simp only [SetLike.val_smul, Matrix.smul_apply, smul_eq_mul, Fin.mk_zero, Fin.mk_one]
         field_simp
-      · simp only [SetLike.val_smul, Matrix.smul_apply, smul_eq_mul, Fin.mk_zero, Fin.mk_one, hXtr, hytr, ha,
+      · simp only [SetLike.val_smul, Matrix.smul_apply, smul_eq_mul, Fin.mk_one, hXtr, hytr, ha,
           hy00, mul_zero, neg_zero]
     · -- `X₀₀ = 0`, `X₀₁ ≠ 0`; scale by `y₀₁ / X₀₁`.
       have hy00 : y.val 0 0 = 0 := by
@@ -361,21 +361,21 @@ theorem sl2_ker_ad_le_span {K : Type*} [Field K] (h2 : (2 : K) ≠ 0)
       apply Subtype.ext
       ext i j
       fin_cases i <;> fin_cases j
-      · simp only [SetLike.val_smul, Matrix.smul_apply, smul_eq_mul, Fin.mk_zero, Fin.mk_one, ha, mul_zero]
+      · simp only [SetLike.val_smul, Matrix.smul_apply, smul_eq_mul, Fin.mk_zero, ha, mul_zero]
         exact hy00.symm
       · simp only [SetLike.val_smul, Matrix.smul_apply, smul_eq_mul, Fin.mk_zero, Fin.mk_one]
         field_simp
       · simp only [SetLike.val_smul, Matrix.smul_apply, smul_eq_mul, Fin.mk_zero, Fin.mk_one]
         field_simp
         linear_combination -k00
-      · simp only [SetLike.val_smul, Matrix.smul_apply, smul_eq_mul, Fin.mk_zero, Fin.mk_one, hXtr, hytr, ha,
+      · simp only [SetLike.val_smul, Matrix.smul_apply, smul_eq_mul, Fin.mk_one, hXtr, hytr, ha,
           hy00, mul_zero, neg_zero]
   · -- `X₀₀ ≠ 0`; scale by `y₀₀ / X₀₀`.
     refine ⟨y.val 0 0 / X.val 0 0, ?_⟩
     apply Subtype.ext
     ext i j
     fin_cases i <;> fin_cases j
-    · simp only [SetLike.val_smul, Matrix.smul_apply, smul_eq_mul, Fin.mk_zero, Fin.mk_one]
+    · simp only [SetLike.val_smul, Matrix.smul_apply, smul_eq_mul, Fin.mk_zero]
       field_simp
     · simp only [SetLike.val_smul, Matrix.smul_apply, smul_eq_mul, Fin.mk_zero, Fin.mk_one]
       field_simp
@@ -383,7 +383,7 @@ theorem sl2_ker_ad_le_span {K : Type*} [Field K] (h2 : (2 : K) ≠ 0)
     · simp only [SetLike.val_smul, Matrix.smul_apply, smul_eq_mul, Fin.mk_zero, Fin.mk_one]
       field_simp
       linear_combination k10
-    · simp only [SetLike.val_smul, Matrix.smul_apply, smul_eq_mul, Fin.mk_zero, Fin.mk_one, hXtr, hytr]
+    · simp only [SetLike.val_smul, Matrix.smul_apply, smul_eq_mul, Fin.mk_one, hXtr, hytr]
       field_simp
 
 /-- **Corollary: the centralizer of a nonzero `X ∈ 𝔰𝔩₂` has `finrank ≤ 1`.** Immediate from
