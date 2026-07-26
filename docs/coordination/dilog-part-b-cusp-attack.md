@@ -232,3 +232,55 @@ statement-level modelling choice), OR whether the joint limit under an added Fad
 Diophantine hypothesis is required. **Lean brick for the INNER bulk-closure is in
 progress on PR #4343** (reuses `wp1_riemann_bound` + `tendsto_LiTwo_nhdsWithin_lt_one`;
 lands sorry-free or reduces to a minimal named residual — no fabrication).
+
+### The limit ordering is NOT free — na-Stokes path-ordering selects the iterated limit (2026-07-26, owner insight; branch `claude/dilog-nastokes-curvature-2026-07-26`, beans qou-a0e9)
+
+The "iterated vs joint" ambiguity (MQ1) that the iterated-limit closure (#4343) left as an
+open *modelling* choice is **resolved on physical grounds by the framework's own derivation
+chain** (`𝐂 → Yekutieli non-abelian Stokes → 𝐇_n(q)`). Owner insight (2026-07-26):
+
+> "Limits need to follow na-Stokes, which I guess is path-ordered exponential."
+
+**Mechanism.** The observable is a **holonomy** — a path-ordered exponential `𝒫exp(∫A)`,
+realized via Yekutieli's non-abelian *multiplicative* surface integral (the framework's
+`Yekutieli non-abelian Stokes` step; existing infra `def:yekutieli-triple`,
+`prop:yekutieli-lifting`, the `brings-surface/` geometric-realization chapter). A
+multiplicative integral is **defined** as an *ordered refinement* limit: refine the
+lattice, take the **ordered** product of local exponentials, take the limit in that order.
+It is intrinsically **iterated**, never a joint/symmetric limit — the ordering is
+constitutive, not a gauge choice.
+
+- The non-commutativity that *forces* the ordering lives at the **fibre / categorical**
+  level (braid/Hecke `σ_i` don't commute; same fibre-vs-observable split as the
+  `Im(q)` banner). The scalar partial product `Φ_n = ∏_{k<n}(1−xqᵏ)⁻¹` is the
+  **archimedean shadow** (`τ`) of that path-ordered fibre holonomy.
+- Refining the mesh (`q→1⁺`) over a sub-path first, then growing the path to the cusp
+  (`ρ→1⁻`), **is exactly the INNER→OUTER order** of the #4343 closure
+  (`wp1_bulk_tendsto` then `wp1_outer_tendsto`). The **joint** limit would scramble the
+  path-ordering of a `𝒫exp` — not a legal operation on a holonomy. **MQ1's symmetry
+  assumption was the error; a path-ordered exponential says the two limits are not
+  interchangeable, and picks the iterated one.**
+
+**Curvature route to MQ2/MQ3 (`−π²/3` = anomaly, not artifact).** In non-abelian Stokes,
+the gap between the naive abelian `exp(∫F)` and the true **surface-ordered** integral is a
+**curvature/area (commutator) term**. If `Φ_n` is the Yekutieli multiplicative integral,
+the `−π²/3` shift is a candidate for *exactly* that non-abelian correction — a genuine
+geometric quantity (consistent with the audit's `Φ_b` modular/framing anomaly), not a
+regulator artifact. **Concrete lead:** `lem:yekutieli-leading-coefficient` (Ch 6,
+`QOU.Archimedean.yekutieli_leading_coefficient`) already characterizes the Yekutieli
+obstruction as the **leading Chebyshev coefficient** — so the curvature term may already
+have a corpus handle; the MQ2/MQ3 target is to show that coefficient evaluates to `−π²/3`.
+
+**What remains (honest — not asserted).** The na-Stokes argument *selects* the iterated
+ordering at the level of principle. To *prove* it:
+1. **(bean qou-zbcj)** identify `Φ_n(x;q)` explicitly as the Yekutieli multiplicative
+   integral of the specific `𝐂`-connection, and check its refinement order is the
+   `(ρ then q)` one used in #4343.
+2. **(bean qou-tw5z)** compute the surface-ordering curvature/commutator term and verify
+   it equals `−π²/3` (starting from `lem:yekutieli-leading-coefficient`).
+3. **(bean qou-yczy)** numerical cross-check of the curvature decomposition.
+
+Until (1)–(2) land, the iterated closure (#4343) stands as the honest *mathematical*
+result and the na-Stokes selection stands as the *stated, principled* — but not yet
+Lean-proved — resolution of MQ1. Anti-laundering: this is recorded as the direction and
+scaffolded as a **conjecture**, not wired to production as proved.
