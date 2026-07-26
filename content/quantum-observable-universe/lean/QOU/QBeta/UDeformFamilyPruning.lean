@@ -1,119 +1,200 @@
-import Mathlib.Analysis.SpecialFunctions.Sqrt
-import Mathlib.Analysis.Calculus.MeanValue
+import QOU.Knot.FigureEightComplexVolume
 
 /-!
-# u(q₀) family pruning — the NZ leading-form kill-test laws
+# u(q₀) family pruning — the corrected harmonic-form kill-test laws
 
 Formalization of the structural laws behind
-`computations/qbeta/qbeta_udeform_map_constraint_probe.py` (the u(q₀)
+`computations/qbeta/qbeta_udeform_map_constraint_probe.py` and
+`computations/probes/sdeformed_channel_signflip_probe.py` (the `u(q₀)`
 constraint probe of the `conj:binding-qbeta-complex-volume` S-channel,
-`SDeformedVolumeChannel`).  The 4₁ Neumann–Zagier **leading form** of the
-deformed complex volume is `Im 𝔙(u) ≈ (√3/2)|u|²·sin 2φ = √3·Re(u)·Im(u)`;
-here it is a *definition* (`nzLeading x y = √3·x·y` on the two real
-components), and the family laws are proved **unconditionally** about it:
+`SDeformedVolumeChannel`).
 
-* `fixed_phase_family_excluded` — a fixed-phase family
-  (`Re, Im` both `∝ (q − q*)`) yields `S ∝ (q − q*)²`, which **cannot**
-  produce the measured sign flip `S(muon) > 0 > S(proton)`.  This is a
-  sign/parity structural exclusion (scope-(b) with the invariant proved,
-  per AGENTS.md §refuted): the family's product across any two points is a
-  square.
-* `cubic_ratio_law` — the minimal phase-crossing family
-  (`Re ∝ d, Im ∝ d²`) obeys `S(q₁)·(q₂−q*)³ = S(q₂)·(q₁−q*)³`.  The
-  measured violation (anchor ratio −4.075 vs the law's −67.7, off 16.6×)
-  lives in the probe witness; the Lean supplies the exact law the
-  measurement kills.
-* `linear_family_eq` / `linear_family_sign_flip` /
-  `hasDerivAt_linear_family` — the surviving family (one component linear
-  through zero at `q*`, the other constant) IS `S = √3·a·c·(q − q*)`:
-  it sign-flips across `q*` whenever `√3·a·c ≠ 0`, with derivative
-  exactly `√3·a·c` — the probe's product-slope `k = S′(q*)/√3` identity.
+**The leading form (corrected).** The figure-eight (4₁) A-polynomial cusp
+modulus is `τ = −i√3` (purely imaginary, ℚ(√−3)), so the leading
+Neumann–Zagier complex-volume coefficient is `a₂ = i·√3/4` (purely
+imaginary) and the leading imaginary part of the deformed complex volume is
+the HARMONIC quadratic form
 
-**Honesty boundary.**  What is NOT formalized: any `SDeformedVolumeChannel`
-*instance*.  The identification of a concrete `u(q₀)` (and of the measured
-`k ≈ 2.216×10⁶`) would wire an anchor-inverted map as canonical — a fit,
-forbidden by the anti-laundering rule.  These theorems are the kill-test
-*laws*; the measured numbers stay in
+    Im 𝔙(u) = (√3/4)·(Re²u − Im²u)      (NOT the earlier `√3·Re u·Im u`).
+
+The concrete `𝔙` is `QOU.Knot.FigureEightComplexVolume.V₄₁`; this file feeds
+the family's real/imaginary components into it via
+`familyIm x y := (V₄₁ ⟨x, y⟩).im = (√3/4)(x² − y²)` (`familyIm_eq`) and reuses
+`imV₄₁` / `imV₄₁_pos_iff` / `imV₄₁_neg_iff` / `signflip_forces_diagonal_cross`
+/ `f3_re_linear_same_sign`. It does **not** re-define a standalone
+`√3·x·y` leading form (that was the wrong-`a₂` artefact, refuted by `τ = −i√3`).
+
+**All three `u(q₀)` kill-test families are REFUTED** — each is even in
+`d = q − q*`, hence same-signed on both sides of `q*`, so none can produce the
+measured bar-odd flip `S(muon) ≈ +0.00968 > 0 > S(proton) ≈ −0.03946`:
+
+* **F1 — fixed-phase** (`Re = cx·d`, `Im = cy·d`):
+  `familyIm = (√3/4)(cx² − cy²)d²`, EVEN in `d`. Its product across any two
+  substrate points is a perfect square (`fixed_phase_product_nonneg`), so the
+  sign is the SAME on both sides of `q*` and the family CANNOT sign-flip
+  (`fixed_phase_family_excluded`). A scope-(b) structural sign exclusion
+  (invariant proved), per AGENTS.md §refuted.
+* **F2 — phase-crossing** (`Re = a·d`, `Im = b·d²`):
+  `familyIm = (√3/4)(a²d² − b²d⁴)`, EVEN in `d` with leading `∝ d²` (the old
+  `cubic_ratio_law`/`∝d³` was a wrong-form artefact). Within the small
+  excursion `b²d² ≤ a²` the value is `≥ 0` (`phase_crossing_nonneg`), its
+  cross-anchor product is `≥ 0` (`phase_crossing_product_nonneg`), so the
+  family CANNOT sign-flip near `q*` (`phase_crossing_family_excluded`).
+* **F3 — transverse-constant** (`Re = a·d`, `Im = c₀`):
+  `familyIm = (√3/4)((a·d)² − c₀²)`, EVEN in `d`. Within `(a·d)² < c₀²` the
+  value is `< 0` (`transverse_const_neg`, reusing `f3_re_linear_same_sign`),
+  its cross-anchor product is `> 0` (`transverse_const_product_nonneg`), so
+  both anchors are NEGATIVE and the family CANNOT sign-flip
+  (`transverse_const_family_excluded`). This REPLACES the earlier
+  `linear_family_sign_flip`/`linear_family_eq`/`hasDerivAt_linear_family`,
+  which claimed F3 sign-flips/survives — the CORE ERROR of the `√3·x·y` form.
+
+**Surviving necessary condition.** `S = Im 𝔙` sign-flips only where
+`Re²u − Im²u` changes sign, i.e. `u(q₀)` must CROSS the diagonal
+`|Re u| = |Im u|` between the anchors (`signflip_requires_diagonal_cross`,
+via `signflip_forces_diagonal_cross`). No family with both anchors on the same
+side of that diagonal survives.
+
+**Honesty boundary.** What is NOT formalized: any `SDeformedVolumeChannel`
+*instance*. The identification of a concrete `u(q₀)` (and of the measured
+product-slope `k`) would wire an anchor-inverted map as canonical — a fit,
+forbidden by the anti-laundering rule. `u(q₀)` stays OPEN. These theorems are
+the kill-test *laws* over the corrected harmonic form; the measured numbers
+stay in
 `computations/qbeta/qbeta-udeform-map-constraint.witness.json`.
 
--- Ref: [manuscript] conj:binding-qbeta-complex-volume; computations/qbeta/qbeta_udeform_map_constraint_probe.py
+-- Ref: [manuscript] conj:binding-qbeta-complex-volume;
+     computations/qbeta/qbeta_udeform_map_constraint_probe.py;
+     docs/audits/2026-07-26-sdeformed-channel-signflip.md
 -- Ref: [neumann-zagier1985] Neumann & Zagier, "Volumes of hyperbolic three-manifolds," Topology 24 (1985). https://doi.org/10.1016/0040-9383(85)90004-7
 -/
 
 namespace QOU.QBeta.UDeformFamilyPruning
 
-/-- The 4₁ Neumann–Zagier **leading form** of the deformed complex volume on
-    the two real components of the deformation: `Im 𝔙(u) ≈ √3·Re(u)·Im(u)`
-    (equivalently `(√3/2)|u|²·sin 2φ`).  A definition — the theorems below
-    are unconditional laws of this leading form; its identification with the
-    actual `Im 𝔙` is the cited NZ expansion, not a Lean claim. -/
-noncomputable def nzLeading (x y : ℝ) : ℝ := Real.sqrt 3 * x * y
+open QOU.Knot.FigureEightComplexVolume
+
+/-- The family's imaginary part: the deformed complex volume's Chern–Simons
+    part evaluated on the two real components `(x, y)` of the deformation,
+    `familyIm x y = (𝔙₄₁⟨x, y⟩).im`. Its identification with the concrete
+    figure-eight complex volume is `QOU.Knot.FigureEightComplexVolume.V₄₁`,
+    not a fresh Lean claim. -/
+noncomputable def familyIm (x y : ℝ) : ℝ := (V₄₁ ⟨x, y⟩).im
+
+/-- The corrected leading form: `familyIm x y = (√3/4)(x² − y²)` — a HARMONIC
+    quadratic form (vanishing on the diagonals `|x| = |y|`), NOT the earlier
+    `√3·x·y`. Direct from `imV₄₁`. -/
+theorem familyIm_eq (x y : ℝ) :
+    familyIm x y = cuspModulus * (x ^ 2 - y ^ 2) := by
+  unfold familyIm
+  rw [imV₄₁]
+
+/-! ## F1 — fixed-phase family: even in `d`, cannot sign-flip -/
 
 /-- The fixed-phase family's product across any two substrate points is a
-    perfect square — the sign of `S` is the SAME on both sides of `q*`. -/
+    perfect square — the sign of `familyIm` is the SAME on both sides of `q*`.
+    `familyIm(cx·d, cy·d) = (√3/4)(cx² − cy²)d²`, even in `d`. -/
 theorem fixed_phase_product_nonneg (cx cy qs q₁ q₂ : ℝ) :
-    0 ≤ nzLeading (cx * (q₁ - qs)) (cy * (q₁ - qs))
-      * nzLeading (cx * (q₂ - qs)) (cy * (q₂ - qs)) := by
-  have hsq := sq_nonneg (Real.sqrt 3 * cx * cy * (q₁ - qs) * (q₂ - qs))
-  unfold nzLeading
-  nlinarith [hsq]
+    0 ≤ familyIm (cx * (q₁ - qs)) (cy * (q₁ - qs))
+      * familyIm (cx * (q₂ - qs)) (cy * (q₂ - qs)) := by
+  rw [familyIm_eq, familyIm_eq]
+  nlinarith [sq_nonneg (cuspModulus * (cx ^ 2 - cy ^ 2) * (q₁ - qs) * (q₂ - qs)),
+    cuspModulus_pos]
 
-/-- **F1 exclusion (structural, sign invariant).**  A fixed-phase
-    leading-order family cannot reproduce a sign flip: if `S` agrees with
-    the family and takes a positive and a negative value, contradiction.
-    The measured `S(muon) > 0 > S(proton)` therefore excludes the family —
-    the probe's F1 verdict as a theorem. -/
+/-- **F1 exclusion (structural, sign invariant).** A fixed-phase leading-order
+    family cannot reproduce a sign flip: if `S` agrees with the family and
+    takes a positive and a negative value, contradiction. The measured
+    `S(muon) > 0 > S(proton)` therefore excludes the family. -/
 theorem fixed_phase_family_excluded (cx cy qs q₁ q₂ : ℝ) (S : ℝ → ℝ)
-    (hfam : ∀ q, S q = nzLeading (cx * (q - qs)) (cy * (q - qs)))
+    (hfam : ∀ q, S q = familyIm (cx * (q - qs)) (cy * (q - qs)))
     (h₁ : 0 < S q₁) (h₂ : S q₂ < 0) : False := by
   rw [hfam q₁] at h₁
   rw [hfam q₂] at h₂
-  nlinarith [fixed_phase_product_nonneg cx cy qs q₁ q₂]
+  have hprod := fixed_phase_product_nonneg cx cy qs q₁ q₂
+  have hneg := mul_neg_of_pos_of_neg h₁ h₂
+  linarith
 
-/-- **F2 ratio law.**  The minimal phase-crossing family (`Re ∝ d`,
-    `Im ∝ d²`) satisfies the exact cross-anchor cubic ratio law.  The probe
-    measures its violation (−4.075 vs −67.7): the law is what the
-    measurement kills. -/
-theorem cubic_ratio_law (a b qs q₁ q₂ : ℝ) :
-    nzLeading (a * (q₁ - qs)) (b * (q₁ - qs) ^ 2) * (q₂ - qs) ^ 3
-      = nzLeading (a * (q₂ - qs)) (b * (q₂ - qs) ^ 2) * (q₁ - qs) ^ 3 := by
-  unfold nzLeading
-  ring
+/-! ## F2 — phase-crossing family: even in `d`, leading `∝ d²`, cannot sign-flip -/
 
-/-- The surviving (F3) family — one component linear through zero at `q*`,
-    the other constant — evaluates to the linear `S = √3·a·c·(q − q*)`. -/
-theorem linear_family_eq (a c qs q : ℝ) :
-    nzLeading (a * (q - qs)) c = Real.sqrt 3 * a * c * (q - qs) := by
-  unfold nzLeading
-  ring
+/-- Within the small excursion `b²d² ≤ a²`, the phase-crossing family value is
+    non-negative: `familyIm(a·d, b·d²) = (√3/4)·d²·(a² − b²d²) ≥ 0`. The old
+    `cubic_ratio_law` (`∝ d³`) was a wrong-form artefact; the corrected leading
+    behaviour is `∝ d²`, even in `d`. -/
+theorem phase_crossing_nonneg {a b d : ℝ} (h : b ^ 2 * d ^ 2 ≤ a ^ 2) :
+    0 ≤ familyIm (a * d) (b * d ^ 2) := by
+  rw [familyIm_eq]
+  have h1 : (0 : ℝ) ≤ a ^ 2 - b ^ 2 * d ^ 2 := by linarith
+  have h2 : (0 : ℝ) ≤ d ^ 2 * (a ^ 2 - b ^ 2 * d ^ 2) := mul_nonneg (sq_nonneg d) h1
+  nlinarith [cuspModulus_pos, h2]
 
-/-- **F3 produces the sign flip**: for a nondegenerate linear family the
-    `S` values on opposite sides of `q*` have opposite signs — exactly the
-    measured hard fact the other two families cannot supply. -/
-theorem linear_family_sign_flip (a c qs q₁ q₂ : ℝ)
-    (hk : Real.sqrt 3 * a * c ≠ 0) (h₁ : q₁ < qs) (h₂ : qs < q₂) :
-    nzLeading (a * (q₁ - qs)) c * nzLeading (a * (q₂ - qs)) c < 0 := by
-  rw [linear_family_eq, linear_family_eq]
-  have hkk : 0 < (Real.sqrt 3 * a * c) * (Real.sqrt 3 * a * c) :=
-    mul_self_pos.mpr hk
-  have hd : (q₁ - qs) * (q₂ - qs) < 0 :=
-    mul_neg_of_neg_of_pos (by linarith) (by linarith)
-  nlinarith [hkk, hd]
+/-- The phase-crossing family's cross-anchor product is non-negative when both
+    anchors stay inside the small-excursion regime — same sign, no flip. -/
+theorem phase_crossing_product_nonneg {a b qs q₁ q₂ : ℝ}
+    (hq₁ : b ^ 2 * (q₁ - qs) ^ 2 ≤ a ^ 2) (hq₂ : b ^ 2 * (q₂ - qs) ^ 2 ≤ a ^ 2) :
+    0 ≤ familyIm (a * (q₁ - qs)) (b * (q₁ - qs) ^ 2)
+      * familyIm (a * (q₂ - qs)) (b * (q₂ - qs) ^ 2) :=
+  mul_nonneg (phase_crossing_nonneg hq₁) (phase_crossing_nonneg hq₂)
 
-/-- **F3 slope identity.**  The linear family's derivative at every point —
-    in particular at `q*` — is exactly `√3·a·c`: the probe's product-slope
-    identity `k = S′(q*)/√3` (measured `k ≈ 2.216×10⁶`, matching the
-    committed hypersensitivity witness; the number stays in the witness). -/
-theorem hasDerivAt_linear_family (a c qs q : ℝ) :
-    HasDerivAt (fun q' => nzLeading (a * (q' - qs)) c)
-      (Real.sqrt 3 * a * c) q := by
-  have hfun : (fun q' => nzLeading (a * (q' - qs)) c)
-      = fun q' => Real.sqrt 3 * a * c * q' - Real.sqrt 3 * a * c * qs := by
-    funext q'
-    rw [linear_family_eq]
-    ring
-  rw [hfun]
-  simpa using ((hasDerivAt_id q).const_mul (Real.sqrt 3 * a * c)).sub_const
-    (Real.sqrt 3 * a * c * qs)
+/-- **F2 exclusion.** The minimal phase-crossing family cannot reproduce the
+    sign flip near `q*`: with both anchors in the small-excursion regime the
+    cross-anchor product is `≥ 0`, contradicting one positive and one negative
+    anchor value. -/
+theorem phase_crossing_family_excluded {a b qs q₁ q₂ : ℝ} (S : ℝ → ℝ)
+    (hfam : ∀ q, S q = familyIm (a * (q - qs)) (b * (q - qs) ^ 2))
+    (hq₁ : b ^ 2 * (q₁ - qs) ^ 2 ≤ a ^ 2) (hq₂ : b ^ 2 * (q₂ - qs) ^ 2 ≤ a ^ 2)
+    (h₁ : 0 < S q₁) (h₂ : S q₂ < 0) : False := by
+  rw [hfam q₁] at h₁
+  rw [hfam q₂] at h₂
+  have hprod := phase_crossing_product_nonneg hq₁ hq₂
+  have hneg := mul_neg_of_pos_of_neg h₁ h₂
+  linarith
+
+/-! ## F3 — transverse-constant family: even in `d`, cannot sign-flip
+
+This REPLACES the earlier `linear_family_sign_flip`/`linear_family_eq`/
+`hasDerivAt_linear_family`, which claimed F3 sign-flips/survives — the CORE
+ERROR of the `√3·x·y` form. Under the corrected harmonic form F3 is refuted. -/
+
+/-- Within `(a·d)² < c₀²` the transverse-constant family value is NEGATIVE:
+    `familyIm(a·d, c₀) = (√3/4)((a·d)² − c₀²) < 0`. Reuses
+    `FigureEightComplexVolume.f3_re_linear_same_sign`. -/
+theorem transverse_const_neg {a c₀ d : ℝ} (h : (a * d) ^ 2 < c₀ ^ 2) :
+    familyIm (a * d) c₀ < 0 := by
+  unfold familyIm
+  exact f3_re_linear_same_sign (k := a) (d := d) (c₀ := c₀) h
+
+/-- The transverse-constant family's cross-anchor product is POSITIVE when both
+    anchors stay inside the small-excursion regime (both values negative) —
+    same sign, no flip. -/
+theorem transverse_const_product_nonneg {a c₀ qs q₁ q₂ : ℝ}
+    (hq₁ : (a * (q₁ - qs)) ^ 2 < c₀ ^ 2) (hq₂ : (a * (q₂ - qs)) ^ 2 < c₀ ^ 2) :
+    0 < familyIm (a * (q₁ - qs)) c₀ * familyIm (a * (q₂ - qs)) c₀ :=
+  mul_pos_of_neg_of_neg (transverse_const_neg hq₁) (transverse_const_neg hq₂)
+
+/-- **F3 exclusion (the #3773 survivor, refuted against the corrected form).**
+    With both anchors in the small-excursion regime `(a·dᵢ)² < c₀²` both family
+    values are negative (same sign), contradicting one positive and one negative
+    anchor value: F3 CANNOT reproduce the measured `S(muon) > 0 > S(proton)`. -/
+theorem transverse_const_family_excluded {a c₀ qs q₁ q₂ : ℝ} (S : ℝ → ℝ)
+    (hfam : ∀ q, S q = familyIm (a * (q - qs)) c₀)
+    (hq₁ : (a * (q₁ - qs)) ^ 2 < c₀ ^ 2) (hq₂ : (a * (q₂ - qs)) ^ 2 < c₀ ^ 2)
+    (h₁ : 0 < S q₁) (h₂ : S q₂ < 0) : False := by
+  rw [hfam q₁] at h₁
+  rw [hfam q₂] at h₂
+  have hprod := transverse_const_product_nonneg hq₁ hq₂
+  have hneg := mul_neg_of_pos_of_neg h₁ h₂
+  linarith
+
+/-! ## Surviving necessary condition — the sign flip forces a diagonal crossing -/
+
+/-- **The sign flip forces a diagonal crossing (surviving necessary
+    condition).** If `familyIm` is positive at one substrate point and negative
+    at another, the two `u`-values lie in OPPOSITE regions relative to the
+    diagonal `|Re u| = |Im u|`: `|Im u₁| < |Re u₁|` but `|Re u₂| < |Im u₂|`. So
+    any `u(q₀)` realizing the measured flip must CROSS that diagonal between the
+    anchors. Via `FigureEightComplexVolume.signflip_forces_diagonal_cross`. -/
+theorem signflip_requires_diagonal_cross {x₁ y₁ x₂ y₂ : ℝ}
+    (h₁ : 0 < familyIm x₁ y₁) (h₂ : familyIm x₂ y₂ < 0) :
+    y₁ ^ 2 < x₁ ^ 2 ∧ x₂ ^ 2 < y₂ ^ 2 :=
+  signflip_forces_diagonal_cross (u₁ := ⟨x₁, y₁⟩) (u₂ := ⟨x₂, y₂⟩) h₁ h₂
 
 end QOU.QBeta.UDeformFamilyPruning
