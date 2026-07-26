@@ -2463,3 +2463,30 @@ unit) and `1/(q;q)_m³` is genuinely rational. The j ≥ 1 rows carry
 algebraic pole statement is available there — the bound does NOT extend
 to them, contrary to the initial expectation. No fit; nothing wired; no
 bridge claimed.
+
+**2026-07-26 (branch claude/no-bounded-degree-bridge-2026-07-26) — NO
+BOUNDED-DEGREE LEVEL MAP BRIDGES THE TAIL.** Lean
+`QOU/QBeta/LevelMapValuation.lean` (`level_le_of_natDegree_le`,
+`natDegree_unbounded_of_all_levels`; lean-direct exit 0, sorry-free).
+From the tight `(1−q)^{2n+3m}` floor: a degree budget `D` caps the
+reachable Masbaum level at `n ≤ D/2` **whatever `m` is**, so a level map
+that intertwines at *every* order has coefficient degrees growing
+without bound — there is no "small" universal bridge. Reachable
+triangle `{(n,m) : 2n+3m ≤ D}` (computed):
+
+| D | 4 | 8 | 12 | 20 | 30 | 50 |
+|---|---|---|---|---|---|---|
+| max Masbaum level | 2 | 4 | 6 | 10 | 15 | 25 |
+| reachable (n,m) pairs | 4 | 10 | 19 | 44 | 91 | 234 |
+
+**Honest scope on the named successor.** The B1.5 design note calls for
+*deriving* the level map from the Habiro comultiplication. That
+derivation is **not closed and is not attempted here**: relating the
+cyclotomic expansion (Habiro/Masbaum side) to the state-integral block
+decomposition (GGM side) is the substance of the Garoufalidis–Gu–Mariño
+programme, not a one-session algebraic identity. What *is* closed is the
+constraint side — the tight valuation floor, the degree bound, and now
+the unboundedness — which narrows the family any future derivation must
+land in. Recording this rather than producing a plausible-looking
+"derivation" that would be a guess. No fit; nothing wired; no bridge
+claimed.
