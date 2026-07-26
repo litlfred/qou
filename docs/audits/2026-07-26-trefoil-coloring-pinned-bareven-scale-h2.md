@@ -60,23 +60,55 @@ Three disciplined caveats — this is a **lead**, not a closure:
 1. **Scale, not coefficient.** The identity gives the bar-even *scale* `h²`. The *coefficient*
    `g₂ ≈ 1.0087` is the `e₂` finite part in the pinched limit (#4315), **still to compute**. `c(m)`
    is the representation's coloring parameter feeding the shapes `z_j`; it is not `e₂` itself.
-2. **The pin's power is open.** `m = q₀` gives `−h²`; `m = √q₀` gives `−(v−v⁻¹)²`. Which power is the
-   substrate's meridian is set by the quantum-group coloring convention and must be justified
-   **independently** — choosing `m = q₀` *because* it lands on `h²` would be the forbidden §2e fit.
-   Flagged **open**, not claimed.
+2. **The pin's power is now RESOLVED — corpus-justified, not fished (update).** The convention is
+   authoritative in the corpus: [`meridian-holonomy-boost.md`](../../content/quantum-observable-universe/braids-and-knots/meridian-holonomy-boost.md)
+   — *"the meridian holonomy of the cusp torus is multiplication by the substrate parameter `q`"* —
+   with the boost identity `barEven(q)² − barOdd(q)² = 4`, `barEven(q) = q+q⁻¹` (the meridian trace),
+   `barOdd(q) = q−q⁻¹`, formalized sorry-free (`holonomy_hyperbola`, `barEven_mul`, `barOdd_mul`). A
+   meridian holonomy with trace `q+q⁻¹` has eigenvalue **`m = q₀`** — *not* `√q₀`. So `c(q₀)+1 =
+   −(q₀−q₀⁻¹)² = −barOdd(q₀)² = −h²` is the corpus convention, fixed **independently** of the h²
+   match. Sibling PR #4288 (meridian-holonomy `c₃` anchor) uses the *same* `barOdd(q)=q−q⁻¹`
+   deformation (for the bar-**odd** `c₃`); my `−barOdd(q)²` is exactly its NZ-quadratic observable
+   `S ∝ u²` (`u = 2 log q₀ ≈ q−q⁻¹`), read on the bar-**even** side. The pin is not a free choice.
 3. **Anti-laundering.** The Lean proves the *algebraic identity* `c+1 = −(m−1/m)²`, not `g₂`. Nothing
    is wired to production.
 
-## 4. Net progress and next
+## 4. Piece (2): `g₂` reduces to the bar-EVEN face of the trefoil's cusp-shape — converging with the `c₃` front
 
-**Net:** the #4315 wall's *anti-fishing* branch is resolved (the coloring is one-parameter, fully
-pinned — no freedom to tune), and the bar-even scale is *exactly* `h²` at the quantum-meridian pin.
-What remains for `g₂` is purely the **mechanical, non-fishing** computation: map the pinned rep
-`ρ(m=q₀)` to the four octahedral shapes `z_{r,t,l,b}` (cross-ratios of the developing map,
-2509.02354 eq 4.11–4.14) and evaluate the bar-even `e₂` finite part in the pinched limit — plus the
-independent justification of the pin's power. No coloring can be tuned; `g₂` either emerges as a
-forward number or the pinched-limit regularization is exposed as the true (technical, not fishing)
-obstruction.
+The bar-even scale `−h² = −barOdd(q₀)²` is not an isolated fact — it is the trefoil-deformation
+instance of the corpus **cusp-shape bar-parity** object
+([`cusp-shape-bar-parity.md`](../../content/quantum-observable-universe/braids-and-knots/cusp-shape-bar-parity.md),
+Lean `cusp_barParity_split`, sorry-free). That block splits a cusp shape `x` along the bar-involution
+into a **barEven (Volume) face** and a **barOdd (CS) face**; for the figure-eight `4₁` (`ω = e^{iπ/3}`)
+it gives `barEven(ω) = 1` (the Volume normalization `2cos(π/3)`) and `barOdd(ω)² = −3` (the `√−3`
+Chern–Simons modulus). My trefoil result `c(q₀)+1 = −barOdd(q₀)² = −h²` is the **`q₀`-deformed analog
+of the `4₁` `barOdd² = −3`** — the squared-CS-modulus (bar-even) face.
+
+This yields the reduction and a convergence:
+
+- **`g₂` (bar-even) is the barEven / squared-CS face of the deformed trefoil's cusp shape.** Sibling
+  PR #4288's `c₃` (bar-**odd**) is the barOdd / CS face of the **same** Neumann–Zagier cusp-shape
+  object (`CVol(u) = Vol − (τ/4)u² + …`, `u = 2 log q₀ ≈ q−q⁻¹`). So the μ₀ **bar-even** closure
+  (`g₂`) and the Q_β **bar-odd** anchor (`c₃`) reduce to the **two bar-parity faces of one object** —
+  the deformed-trefoil cusp shape / meridian-holonomy. Independent fronts, one open link.
+- **The natural coefficient is `1`.** The coloring deviation is `c+1 = −1·h²` (coefficient *exactly*
+  1); `g₂ ≈ 1.0087 = 1 + r`, `r ≈ 0.0087`. This *suggests* the leading bar-even coefficient is `1`
+  with `r` the higher-order (NZ `u⁴` / `e₂` cross-term) residual — but note the caveat: `c(q₀)` is the
+  representation's coloring parameter, and deriving that the binding **`e₂` inherits coefficient
+  exactly 1** still requires the shapes → `e₂` map. Stated as a lead, not a claim.
+
+## 5. Net and next
+
+**Net (this PR):** (i) the coloring is one-parameter, fully substrate-pinned — the #4315 anti-fishing
+branch is closed; (ii) the pin `m = q₀` is corpus-authoritative (meridian holonomy = multiplication
+by `q`), not fished; (iii) the bar-even scale is *exactly* `−h² = −barOdd(q₀)²`; (iv) `g₂` reduces to
+the **barEven face of the trefoil's cusp shape**, converging with the sibling `c₃` bar-odd front on
+one Neumann–Zagier object.
+
+**Next:** the coefficient `g₂` (and `r`) is the trefoil's deformed cusp-shape barEven face / the `e₂`
+finite part — the open `CuspShapeBarParity` link for a *torus* knot (`Vol = 0` makes the Volume face
+subtle), the same object the `c₃` front is blocked on. Deriving it is a genuine (technical, not
+fishing) obstruction; the two closures should be attacked together.
 
 Refs: probe [`trefoil_coloring_pinned_bareven_probe.py`](../../computations/deltalambda/trefoil_coloring_pinned_bareven_probe.py);
 Lean [`TrefoilColoringBarEven.lean`](../../content/quantum-observable-universe/lean/QOU/MassTheory/TrefoilColoringBarEven.lean);
