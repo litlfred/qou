@@ -875,6 +875,43 @@ theorem hookLen_corner_of_hookShape (l : List ℕ) (hs : l.Sorted (· ≥ ·))
       hones t ht1]
   omega
 
+/-- **Carrier confinement, count form (hook shape)**: on a hook shape the top hook statistic is
+exactly `N_n = 1` — the corner is the *unique* cell of hook length `n` (existence by
+`hookLen_corner_of_hookShape`, uniqueness by the carrier lemma
+`hookShape_of_hookLen_eq_sum`). -/
+theorem hookCount_sum_of_hookShape (l : List ℕ) (hs : l.Sorted (· ≥ ·))
+    (hpos : ∀ x ∈ l, 0 < x) (hne : l ≠ [])
+    (hhook : ∀ i', 1 ≤ i' → l.getD i' 0 ≤ 1) :
+    hookCount l l.sum = 1 := by
+  have h00cell : ((0 : ℕ), (0 : ℕ)) ∈ cells l := by
+    rw [mem_cells]
+    dsimp only
+    cases l with
+    | nil => exact absurd rfl hne
+    | cons a t => simpa using hpos a List.mem_cons_self
+  unfold hookCount
+  rw [Finset.card_eq_one]
+  refine ⟨((0 : ℕ), (0 : ℕ)), ?_⟩
+  rw [Finset.eq_singleton_iff_unique_mem]
+  constructor
+  · rw [Finset.mem_filter]
+    exact ⟨h00cell, hookLen_corner_of_hookShape l hs hpos hne hhook⟩
+  · intro p hp
+    rw [Finset.mem_filter] at hp
+    exact (hookShape_of_hookLen_eq_sum l hs p hp.1 hp.2).1
+
+/-- **Carrier confinement, count form (non-hook shape)**: off the hook shapes the top hook
+statistic vanishes, `N_n = 0` — a cell of hook length `n` would force the hook shape by the
+carrier lemma. -/
+theorem hookCount_sum_of_not_hookShape (l : List ℕ) (hs : l.Sorted (· ≥ ·))
+    (hnot : ¬ ∀ i', 1 ≤ i' → l.getD i' 0 ≤ 1) :
+    hookCount l l.sum = 0 := by
+  unfold hookCount
+  rw [Finset.card_eq_zero, Finset.eq_empty_iff_forall_notMem]
+  intro p hp
+  rw [Finset.mem_filter] at hp
+  exact hnot (hookShape_of_hookLen_eq_sum l hs p hp.1 hp.2).2
+
 /-- `IdentityI.sumSqHooks` as a cell-set sum of the kernel-form hook (the two per-cell
 ℕ-subtraction forms agree on genuine cells, as in `hookProd_eq_prodHooks`). -/
 theorem sumSqHooks_eq_sum_cells (l : List ℕ) (hs : l.Sorted (· ≥ ·)) :
