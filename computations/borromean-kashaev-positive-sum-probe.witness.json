@@ -1,0 +1,38 @@
+{
+  "description": "Borromean Kashaev positive-sum feasibility probe: (2pi/N) log <B_3>_N -> 8G from above, saddle at l/N -> 3/4; every surviving Habiro term positive at the Kashaev point (exact sign analysis in the docstring). Asymptotic-rate check at float64 \u2014 not a precision claim.",
+  "computation": "borromean-kashaev-positive-sum-probe",
+  "target_8G": 7.327724753,
+  "rows": [
+    {
+      "N": 101,
+      "rate_max": 7.571863481416094,
+      "rate_sum": 7.673158549448512,
+      "argmax_x": 0.7425742574257426
+    },
+    {
+      "N": 501,
+      "rate_max": 7.397002534554772,
+      "rate_sum": 7.427326237245391,
+      "argmax_x": 0.7485029940119761
+    },
+    {
+      "N": 1001,
+      "rate_max": 7.366741186878214,
+      "rate_sum": 7.384081811075894,
+      "argmax_x": 0.7492507492507493
+    },
+    {
+      "N": 3001,
+      "rate_max": 7.3430373026341265,
+      "rate_sum": 7.3499688254199675,
+      "argmax_x": 0.7497500833055648
+    }
+  ],
+  "assertions": {
+    "P1_all_terms_positive_logs_finite": true,
+    "P2_rate_to_8G_from_above_final_gap": 0.02224407241996751,
+    "P3_argmax_near_three_quarters": 0.7497500833055648
+  },
+  "scriptHash": "cbe616e17daa",
+  "generatedAt": "2026-07-26T19:30:47.290250+00:00"
+}
