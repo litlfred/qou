@@ -156,6 +156,17 @@ theorem abs_Catalan_sub_decimal_lt :
   rw [abs_lt]
   constructor <;> linarith [h.1, h.2]
 
+/-- `Cl₂(π/2) > 0` — the Catalan constant is positive, straight from the
+    certified interval (`RAT − 1/24 > 0`). The boundary-exclusion input the
+    Borromean B4 extremum analysis needs. -/
+theorem Cl_2_pi_div_two_pos : 0 < QOU.Archimedean.Cl_2 (π / 2) := by
+  have h := abs_Catalan_sub_le
+  rw [abs_le] at h
+  have hC : QOU.Archimedean.Catalan_constant
+      = QOU.Archimedean.Cl_2 (π / 2) := rfl
+  rw [hC] at h
+  linarith [h.1]
+
 /-- `|Vol(𝓑₃) − 7.3277247534| < 2/5` — the Borromean-volume carrier
     `Vol_Borromean = 8·Cl₂(π/2)` meets the `8G` binding-scale decimal.
     (bean qou-8gv9) -/

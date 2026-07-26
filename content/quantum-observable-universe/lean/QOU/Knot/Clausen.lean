@@ -751,6 +751,20 @@ theorem continuous_clausen : Continuous clausen := by
   unfold clausen
   simp
 
+/-- The series↔integral bridge extends to the CLOSED interval `[0, 2π]` by
+    continuity of both sides (`Set.EqOn.closure`). -/
+theorem clausen_eqOn_Icc :
+    Set.EqOn clausen QOU.Archimedean.Cl_2 (Set.Icc (0:ℝ) (2 * π)) := by
+  have hpi := Real.pi_pos
+  have h := clausen_eqOn_Cl_2.closure continuous_clausen continuous_Cl_2
+  rwa [closure_Ioo (by linarith : (0:ℝ) ≠ 2 * π)] at h
+
+/-- `clausen(2π) = 0` — the right endpoint, by the closed-interval bridge and
+    `Cl₂(2π) = 0`. Equivalently `∫₀^π log(2 sin u) du = 0`. -/
+@[simp] theorem clausen_two_pi : clausen (2 * π) = 0 := by
+  have hpi := Real.pi_pos
+  rw [clausen_eqOn_Icc ⟨by linarith, le_refl _⟩, QOU.Archimedean.Cl_2_two_pi]
+
 /-- **Saddle brick E4d-1 (sorry-free).** The cell integral `∫₀^{C·π/N}` of the
     log-sine vanishes as `N → ∞` — the singular first cell contributes nothing
     in the limit. Via E4a + continuity of `clausen` at `0`. (bean qou-x5mg) -/
