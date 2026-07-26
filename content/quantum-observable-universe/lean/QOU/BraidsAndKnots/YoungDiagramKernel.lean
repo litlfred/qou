@@ -56,6 +56,17 @@ def hookProd (l : List ℕ) : ℕ :=
 /-- Hook-length dimension `f^λ = |λ|! / ∏_□ h(□)` (number of standard Young tableaux). -/
 def sytDim (l : List ℕ) : ℕ := Nat.factorial l.sum / hookProd l
 
+/-- Sum of hook lengths over all cells: `Σ_□ h(□)`, `h(i,j) = λ_i + λ'_j − i − j − 1`. -/
+def hookSum (l : List ℕ) : ℕ :=
+  let cj := conj l
+  ((List.range l.length).map (fun i =>
+    let li := l.getD i 0
+    ((List.range li).map (fun j => li + cj.getD j 0 - j - i - 1)).sum)).sum
+
+/-- Row-content statistic `n_λ = Σ_i i·λ_i` (0-indexed rows). -/
+def nLambda (l : List ℕ) : ℕ :=
+  ((List.range l.length).map (fun i => i * l.getD i 0)).sum
+
 /-- The elementary content form of the covariance kernel value at level `k`:
 `Σ_{λ ⊢ k} (f^λ)³ · (Σ_□ c(□)² − C(k,2))`. -/
 def kernelValue (k : ℕ) : ℤ :=
@@ -177,6 +188,19 @@ theorem contentSq_conj_invariant_of_le_six (k : ℕ) (hk : k ≤ 6) :
 (except at self-conjugate `λ`), the structural obstruction to any local sign certificate. -/
 theorem omega3_conj_invariant_of_le_six (k : ℕ) (hk : k ≤ 6) :
     ∀ l ∈ partsOf k, omega3 k (conj l) = omega3 k l := by
+  interval_cases k <;> decide
+
+/-- **Hook-sum decomposition** (Lean-verified, `λ ⊢ k`, `k ≤ 7`, `decide`):
+`Σ_□ h(□) = n_λ + n_{λ'} + |λ|`, splitting the total hook length into the row-content `n_λ`, the
+column-content `n_{λ'} = n_λ` of the transpose, and the cell count `|λ|`. This is the algebraic key to
+the first-odd-moment **transpose identity** `M₁ = 2·Cov_Planch(n_λ, Σ_□ c(□)²)` (companion probe/audit
+`wlambda_covariance_epic_A2_odd_moment_structure`): substituting `Σ_□ h = n_λ + n_{λ'} + |λ|` into
+`Cov_Planch(Σ_□ h, Σ_□ c²)`, the `|λ|` term is constant (zero covariance) and transpose-invariance of
+Plancherel measure together with the conjugation-symmetry of `contentSq`
+(`contentSq_conj_invariant_of_le_six`) equate the `n_λ` and `n_{λ'}` covariances — collapsing the sum
+to `2·Cov_Planch(n_λ, Σc²)`. -/
+theorem hookSum_eq_nLambda_add_conj_add_card_of_le_seven (k : ℕ) (hk : k ≤ 7) :
+    ∀ l ∈ partsOf k, hookSum l = nLambda l + nLambda (conj l) + l.sum := by
   interval_cases k <;> decide
 
 /-! ## Even hook-power moment positivity (proved)
