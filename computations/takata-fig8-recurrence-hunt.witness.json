@@ -1,0 +1,21 @@
+{
+  "description": "Recurrence-hunt pipeline validation on 4\u2081 via Takata's fast O(n\u00b2) 2-bridge colored Jones (uploads/KMJ-48-2-255.pdf). Fixes the N-reach wall for the knot case.",
+  "computation": "takata_fig8_recurrence_hunt",
+  "audit_only": true,
+  "takata_formula": "Corollary 5 eq(14), S(5,3)=4_1, p1=1; validated J(2)=q^2-q+1-q^-1+q^-2 (4_1 Jones)",
+  "Nmax": 60,
+  "grid_results": {
+    "r2_W2_H": "no-recurrence",
+    "r2_W4_H": "no-recurrence",
+    "r3_W4_H": "CERTIFIED",
+    "r3_W6_H": "insufficient-N",
+    "r2_W2_I": "no-recurrence",
+    "r2_W4_I": "CERTIFIED",
+    "r2_W6_I": "insufficient-N",
+    "r3_W4_I": "CERTIFIED"
+  },
+  "pipeline_validated": true,
+  "min_window": "r3_W4_H",
+  "note": "Fast 2-bridge KNOT tower removes the O(N^9) N-reach wall. Whitehead is the even-p (link) analogue \u2014 the remaining Takata Theorem-1 adaptation.",
+  "timestamp": "2026-07-26T19:22:35+00:00"
+}
