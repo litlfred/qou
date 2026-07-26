@@ -149,13 +149,19 @@ conjectures. This makes precise that $\Phi_b$ touches binding **only**
 through this channel: remove the `SDeformedVolumeChannel` hypothesis and
 no binding statement about $\Phi_b$ survives. On the open map $u(q_0)$
 itself, the Neumann–Zagier leading-form family laws are proved sorry-free
-(`QOU.QBeta.UDeformFamilyPruning`): a fixed-phase family cannot sign-flip
-(structural sign exclusion), the minimal phase-crossing family obeys an
-exact cubic cross-anchor ratio law (measured violated $16.6\times$), and
-the surviving family — one component of $u$ linear through zero at
-$q^{*}$, the other anchor-constant — reproduces the sign flip with slope
-exactly $\sqrt{3}\,a\,c$; the measured values live in the probe witness,
-never in the Lean.
+(`QOU.QBeta.UDeformFamilyPruning`) over the corrected harmonic form
+$\mathrm{Im}\,\mathfrak{V}(u) = (\sqrt{3}/4)(\mathrm{Re}^2 u - \mathrm{Im}^2 u)$
+(cusp modulus $\tau = -i\sqrt{3}$, so the leading coefficient
+$a_2 = i\sqrt{3}/4$ is purely imaginary): all three candidate families —
+fixed-phase ($\mathrm{Re},\mathrm{Im} \propto d$), phase-crossing
+($\mathrm{Re} \propto d$, $\mathrm{Im} \propto d^{2}$), and
+transverse-constant ($\mathrm{Re} \propto d$, $\mathrm{Im}$ anchor-constant),
+with $d = q - q^{*}$ — are **refuted**: each is even in $d$, hence the same
+sign on both sides of $q^{*}$, so none can produce the measured flip
+$S(\text{muon}) > 0 > S(\text{proton})$. The surviving necessary condition is
+that $u(q_0)$ must cross the diagonal $|\mathrm{Re}\,u| = |\mathrm{Im}\,u|$
+between the anchors; $u(q_0)$ itself stays open. The measured values live in
+the probe witness, never in the Lean.
 
 ## Computational corroboration (this PR)
 
