@@ -109,6 +109,35 @@ theorem sl2_decomp (x : sl (Fin 2) R) :
     simp [Matrix.single, Matrix.of_apply]
   linear_combination htr
 
+/-- **Linear independence** of the 𝔰𝔩₂ triple `(h,e,f)` — read `g₀=g₁=g₂=0` off the
+    `(0,0)/(0,1)/(1,0)` entries of a vanishing combination. With `sl2_decomp`
+    (spanning) this makes `(h,e,f)` a basis of `𝔰𝔩₂`. -/
+theorem sl2_linindep : LinearIndependent R ![sl2H R, sl2E R, sl2F R] := by
+  rw [Fintype.linearIndependent_iff]
+  intro g hg i
+  rw [Fin.sum_univ_three] at hg
+  simp only [Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.head_cons,
+    Matrix.cons_val_two, Matrix.tail_cons] at hg
+  have hv : ∀ a b, (g 0 • sl2H R + g 1 • sl2E R + g 2 • sl2F R).val a b = 0 := by
+    intro a b; rw [hg]; simp
+  have e00 := hv 0 0
+  have e01 := hv 0 1
+  have e10 := hv 1 0
+  simp [sl2H, sl2E, sl2F, Matrix.single, Matrix.of_apply] at e00 e01 e10
+  fin_cases i <;> assumption
+
+/-- **The 𝔰𝔩₂ basis `(h,e,f)`** — from linear independence (`sl2_linindep`) and
+    spanning (`sl2_decomp`). Gives `finrank R 𝔰𝔩₂ = 3`, `Module.Free`, and unblocks
+    `charpoly (ad h)`. -/
+noncomputable def sl2Basis : Module.Basis (Fin 3) R (sl (Fin 2) R) :=
+  Module.Basis.mk (sl2_linindep R) <| by
+    intro x _
+    rw [sl2_decomp R x]
+    refine Submodule.add_mem _ (Submodule.add_mem _ ?_ ?_) ?_
+    · exact Submodule.smul_mem _ _ (Submodule.subset_span ⟨0, by simp⟩)
+    · exact Submodule.smul_mem _ _ (Submodule.subset_span ⟨1, by simp⟩)
+    · exact Submodule.smul_mem _ _ (Submodule.subset_span ⟨2, by simp⟩)
+
 end SL2
 
 end QOU.Atomicity
