@@ -397,3 +397,20 @@ observed only; no ontological claims.
   level-mixing / n-dependent Habiro-module map. Engineering note for
   successors: fraction-free Bareiss (in-probe) replaces sympy rref
   for exact ranks at this size (<1 s vs >60 CPU-min).
+
+- **Level-map valuation floor SHARPENED and shown TIGHT (B1.5 step 2).**
+  [`LevelMapValuation.lean`](../../content/quantum-observable-universe/lean/QOU/QBeta/LevelMapValuation.lean)
+  + [`qbeta_5two_masbaum_valuation_probe.py`](../../computations/probes/qbeta_5two_masbaum_valuation_probe.py)
+  (3/3): a single-level bridge coefficient is forced to carry
+  `(1−q)^{2n+3m}` — the block's order-3m pole plus the Masbaum term's
+  own order-2n vanishing — hence `deg ≥ 2n+3m` over `ℤ[X]`. Measured
+  exactly (synthetic division over the integers): `ν(C_n) = 0` for all
+  `n ≤ 12`, so `ν(T^Mas_n) = 2n` and the floor is **tight**. Practical
+  reading: reaching Masbaum level `n` costs `2n` degrees of coefficient
+  whatever `m` is, so a bounded-degree family reaches only a finite
+  triangle — the honest form of "the module map cannot be arbitrary".
+  **Scope limit (correcting an initial expectation):** the argument is
+  `j = 0`-specific. Only there is the block numerator a monomial (unit)
+  with `1/(q;q)_m³` genuinely rational; the `j ≥ 1` rows carry
+  `E1n`/`E2n` Lambert series, which are not rational functions, so the
+  algebraic pole argument does **not** extend to them.
