@@ -92,3 +92,22 @@ The analytic wall is down; the remaining wall is a **characterisation** wall —
 strengthen `FaddeevPhi` (or use `PhiBProd`) so the elliptic factor is excluded.
 Nothing fitted, nothing axiomatised; `conj:algebraic-geometric-dilog-equivalence`
 stays open, now with the obstruction precisely located.
+
+---
+
+## Toolbox note from the 4₁ saddle program (2026-07-26, sibling session, bean qou-ja69)
+
+For the remaining **strip-growth / `PhiBProd` divisor** leg: the volume-conjecture
+discharge landed reusable product-growth mechanics on main —
+`Analysis`-free sum-vs-integral comparisons for `log`-products of unimodal factors
+(`QOU/Knot/Clausen.lean`: monotone/antitone Riemann bounds, the all-k uniform
+deviation `abs_deviation_le` with vanishing master error `tendsto_master_error`,
+and the `log Σ ≤ log N + log max` step `log_kashaev_le_log_add`), plus the
+Clausen/Lobachevsky primitive fully machine-proved (`hasDerivAt_clausen`,
+series↔integral bridge). If the `PhiBProd` strip-growth estimate can be phrased as
+a product over a 1D sub-lattice with a unimodal log-factor profile, these bricks
+give the growth rate without contour integration — the same move that made the 4₁
+and (feasibility-confirmed) Borromean Kashaev sums elementary
+(`docs/audits/2026-07-26-borromean-kashaev-positive-sum-feasibility.md`).
+Measured overlap note only; no claim that the 2D lattice case reduces — flag to
+qou-jpwy if it does.
