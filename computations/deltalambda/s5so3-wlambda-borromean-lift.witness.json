@@ -1,0 +1,55 @@
+{
+  "schema": "witness/v1",
+  "producer": "computations/deltalambda/s5so3_wlambda_borromean_lift_probe.py",
+  "computation": "s5so3-wlambda-borromean-lift-route1",
+  "description": "Route-1 DERIVE-OR-WALL for the A=3 \u0394_\u03bb residual 1.6\u00d7 left by #4364. The H\u2089 joint trace \u03c1_F weights blocks \u03bb\u22a29 with production y_\u03bb (Wenzl principal spec), giving the #4364 cabled-Borromean cluster c\u2083(y_\u03bb) = 0.296958 MeV = 0.6308\u00d7 \u03bc\u2083. This probe forward-evaluates the s5-so3 keystone weight W_\u03bb = d_q(\u03bb)\u00b2/[n]_q! (Ocneanu / q-Plancherel, hook-length form [n]_q!/\u220f[hook]_q\u00b2, balanced q-integers, \u03a3_\u03bb W_\u03bb = 1.110923135) as the block weight on the SAME cabled Borromean word (\u0394_A\u00b7\u0394_B\u207b\u00b9)\u00b3, SAME E\u2080, SAME |\u03c7_\u03bb|. Only the weight system changes. Result: c\u2083(W_\u03bb) = 15.6267 MeV = 33.19\u00d7 \u03bc\u2083; derived re-weight ratio r = c\u2083(W_\u03bb)/c\u2083(y_\u03bb) = 52.623 vs the needed r* = \u03bc\u2083/v_y \u2248 1.5852. VERDICT: WALL(scope-a) \u2014 W_\u03bb re-weight \u2260 target order; magnitude source open (0-fit). 0 free params; W_\u03bb + y_\u03bb both fixed by q\u2080 + hook-lengths; \u03bc\u2083 target only, never inverted; nothing wired.",
+  "timestamp": "2026-07-26T20:45:01.503823+00:00",
+  "parameters": {
+    "free_parameters": 0,
+    "q0": "1.1099785827513808",
+    "h": "0.209060298795639301677370394164",
+    "E0_MeV": "4.18598136329447621452746090153",
+    "level": "H\u2089 perblock \u03a3_{\u03bb\u22a29} weight_\u03bb\u00b7|\u03c7_\u03bb|, three width-3 nucleon cables",
+    "inter_word": "(\u0394_A\u00b7\u0394_B\u207b\u00b9)\u00b3 cabled Borromean (identical to #4364)",
+    "weights_compared": {
+      "y_lambda": "Wenzl principal specialization s_\u03bb(1,q,q\u00b2,\u2026) \u2014 production \u03c1_F weight",
+      "W_lambda": "Ocneanu / q-Plancherel d_q(\u03bb)\u00b2/[n]_q! = [n]_q!/\u220f[hook]_q\u00b2 \u2014 s5-so3 keystone"
+    },
+    "note": "\u03bc\u2083=+0.4708 target only; SAME E\u2080+word+characters as #4364; ONLY weight changes; 0 fit."
+  },
+  "results": {
+    "q_plancherel_norm_sum": "1.11092313495739792039151061936",
+    "y_lambda_cluster": {
+      "c3_T_MeV": "0.272626354395479289462617191539",
+      "c3_3He_MeV": "0.321288671126581236045762147037",
+      "c3_mean_MeV": "0.296957512761030262754189669288",
+      "c3_over_mu3": "0.6307508767226641095033765278"
+    },
+    "W_lambda_cluster": {
+      "c3_T_MeV": "14.7853666806287794515388499513",
+      "c3_3He_MeV": "16.4680145825184466082421611181",
+      "c3_mean_MeV": "15.6266906315736130298905055347",
+      "sign": "+",
+      "c3_over_mu3": "33.1917812905131967499798333362",
+      "shortfall_factor_vs_mu3": "0.0301279401442012345530976766424"
+    },
+    "reweight_ratio": {
+      "r_derived_cW_over_cY": "52.6226478875071713331155569515",
+      "r_needed_mu3_over_cY": "1.58541198578419359832531708834",
+      "r_needed_mu3_over_vY_ref": "1.58518518518518518518518518519",
+      "closes": false,
+      "improves_over_y_lambda": false,
+      "right_order": false
+    },
+    "verdict": {
+      "classification": "WALL(scope-a) \u2014 W_\u03bb re-weight \u2260 target order; magnitude source open (0-fit)",
+      "is_fit": false,
+      "wired": false,
+      "free_param_count": 0,
+      "mu3_inverted": false,
+      "delta_lambda_status": "A=3 residual: W_\u03bb re-weight forward-evaluated 0-fit; closure per the classification above.",
+      "anti_fit": "W_\u03bb + y_\u03bb both derived from q\u2080 + hook-lengths; only the weight system changed (level/word/E\u2080/characters identical to #4364); \u03bc\u2083 never inverted; no weight tuned to hit +0.4708; nothing wired."
+    }
+  },
+  "scriptCommitSha": "uncommitted"
+}
