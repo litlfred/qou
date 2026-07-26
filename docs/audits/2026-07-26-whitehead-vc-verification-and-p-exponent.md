@@ -145,6 +145,32 @@ solution matrix → read the top row → evaluate at `q=1`.*
   confirms the engine that feeds it is exact on the twist-knot family (Dehn fillings of
   the Whitehead).
 
+### The hunt, attempted — and the concrete N-reach wall
+
+[`whitehead_diagonal_recurrence_hunt.py`](../../computations/whitehead_diagonal_recurrence_hunt.py)
+implements the qZeilberger-style search directly: an **exact mod-p colored-Jones engine**
+(numpy over F_p, base `s=t`, `q=t²`) — validated to match the Habiro figure-eight formula
+mod p (N=2–5) — feeds the corpus's nullspace-certificate method (a candidate `Σᵢ aᵢ(m)
+J[N+i]=0`, `aᵢ` Laurent in `m=qⁿ` over `[−W..W]`, must survive CHECK rows across
+`(p,t)` samples). The **figure-eight is the built-in calibration** (its recurrence is
+known), so a Whitehead negative is only ever an *N-reach* statement.
+
+The run pins the wall quantitatively. A genuine q-holonomic recurrence needs `r ≥ 2` and
+`m`-window `W ≥ 2` → `(r+1)(2W+1) ≥ 15` unknowns → the fit needs **Nmax ≳ 25–30**. But the
+tower comes from the **O(N³)** R-matrix braid-rep (no Whitehead closed form), which the
+container reclaims before it clears **N ≈ 14–16**. Concretely, at Nmax=10 every real window
+is `insufficient-N` and even the **known 4₁ recurrence is not recovered** — the calibration
+confirming the reach is the binding constraint, not the mathematics.
+
+**The unblock is therefore specific and non-negotiable: a 2-bridge `b(8,3)` `O(N²)`
+transfer-matrix colored-Jones engine** (the Whitehead is 2-bridge), validated against the
+existing `O(N³)` engine at small N, reaching `N ≈ 40`. Only then does the tower feed a
+recurrence fit whose window a real q-holonomic operator can occupy — after which the GGMW
+`J_red` top-row-at-`q=1` reads off `c_{σ_geom}`. (Building that engine from a *derived*
+plat/continued-fraction structure — not a remembered closed form — is the next unit of
+work; per §formalize-first / anti-guessing it must be cross-validated against the O(N³)
+engine before its high-N output is trusted.)
+
 **Two conflation cautions (not asserted as identities).** (i) The flat-connection index
 `σ` is *not* the Wedderburn partition index `λ` of `tr_M = Σ_λ y_λ χ^λ` — geometric
 character-variety points vs Hecke irreps, related in the literature but distinct index
