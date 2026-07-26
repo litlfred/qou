@@ -290,6 +290,7 @@ import QOU.Machinery.DerivedCharacterCatalogue
 import QOU.Machinery.HeckeH2WedderburnReal
 import QOU.Machinery.HeckeH3Semisimple
 import QOU.Machinery.HeckeH3GramNondegeneracy
+import QOU.Machinery.HeckeH4AlgebraLaws
 import QOU.Machinery.HeckeH4BlockRep
 import QOU.Machinery.HeckeTowerBasicConstruction
 import QOU.Machinery.QuantumTorus
