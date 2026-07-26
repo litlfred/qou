@@ -292,6 +292,10 @@ import QOU.Machinery.HeckeH3Semisimple
 import QOU.Machinery.HeckeH3GramNondegeneracy
 import QOU.Machinery.HeckeH4AlgebraLaws
 import QOU.Machinery.HeckeH4BlockRep
+import QOU.Machinery.HeckeH4Characters
+import QOU.Machinery.HeckeH4BlockMap22
+import QOU.Machinery.HeckeH4BlockMap31
+import QOU.Machinery.HeckeH4BlockMap211
 import QOU.Machinery.HeckeTowerBasicConstruction
 import QOU.Machinery.QuantumTorus
 import QOU.Machinery.QuantumTorusAJ
