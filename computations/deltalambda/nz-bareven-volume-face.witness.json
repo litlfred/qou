@@ -1,0 +1,78 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-26T01:37:49.913773+00:00",
+  "commitSha": "79d880c00e603a332b9ba97dbaa38720a0b81e8d",
+  "assertions": [
+    {
+      "name": "pythagorean_quadrature",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "bar_odd_frozen_bar_even_maximal",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "bar_even_phase_stationary",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "nz-bareven-volume-face",
+  "scriptFile": "nz_bareven_volume_face_probe.py",
+  "scriptHash": "04fd21cac030",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "The arg(u) wall is a QUADRATURE effect: the c₃ front proved the NZ bar-odd/CS face nzImVolume=(√3/2)r²sin(2φ) is FROZEN on the real substrate ray φ=0. The μ₀ g₂ is the bar-even/Volume face = the cos partner nzReVolume=(√3/2)r²cos(2φ), MAXIMAL (cos 0=1) and STATIONARY (even in φ, zero phase-slope) at the SAME φ=0 — doubly anchor-smooth. Pythagorean nzRe²+nzIm²=(3/4)r⁴; at φ=0 all the energy is in the bar-even face (CS=0, Vol=peak). So the wall that kills c₃ LEAVES g₂ maximal — g₂ lives where c₃ dies. Corrects the prior 'r frozen like c₃'. Does NOT derive g₂'s value (=trefoil bar-even NZ coeff, #4319). scope-(a), audit-only, nothing wired.",
+  "contentBlock": "rem:ohtsuki-tower-bar-parity",
+  "audit_only": true,
+  "tier": "quadrature structure of the arg(u) wall (exact trig; no fit)",
+  "result": {
+    "A_quadrature": {
+      "pythagorean_nzRe2_plus_nzIm2": "0.0014200985",
+      "equals_3_4_r4": true,
+      "real_ray_nzIm_frozen": true,
+      "real_ray_nzRe_peak": "0.037684195",
+      "nzRe_is_maximal": true,
+      "meaning": "on the real substrate ray φ=0 ALL the NZ quadratic is in the bar-EVEN (Volume) face; the bar-ODD (CS, c₃) face is null."
+    },
+    "B_phase_slopes_at_phi0": {
+      "d_nzIm_dphi": "0.07536839 (= √3 r², MAX slope — c₃'s steepest, but value 0)",
+      "d_nzRe_dphi": "0.0 (= 0, STATIONARY — g₂ doubly anchor-smooth)",
+      "nzIm_max_slope": true,
+      "nzRe_stationary": true,
+      "parity": "nzIm ODD in φ (sin) ⇒ φ=0 steepest; nzRe EVEN (cos) ⇒ φ=0 extremum (nzReVolume_phase_even)."
+    },
+    "C_verdict": {
+      "wall_is_quadrature": "the arg(u) wall freezes the bar-odd CS face (sin, φ=0) but leaves the bar-even Volume face (cos, φ=0) MAXIMAL and stationary.",
+      "g2_lives_where_c3_dies": true,
+      "corrects": "the prior 'r frozen like c₃' pessimism — r is NOT in the frozen channel; the bar-even face is alive at the substrate.",
+      "still_open": "g₂'s VALUE/r = the TREFOIL bar-even NZ coefficient (leading 1 from the coloring, #4319); the √3/2 here is the figure-eight modulus (illustrative)."
+    }
+  },
+  "context": {
+    "axis": "Δ_λ binding — μ₀ −9% closure, g₂ = bar-even Volume face vs the c₃ arg(u) wall",
+    "lean": "QOU/MassTheory/NZBarEvenVolumeFace.lean (nzReVolume_real_ray[_ne_zero/_pos], nzReVolume_phase_even)",
+    "corpus_bar_odd": "QOU/QBeta/ArgUPhaseBranchSelection.lean (nzImVolume, frozen at φ=0)",
+    "builds_on": "#4319 (trefoil coloring, g₂=cusp-shape barEven face), #4293 (c₃ arg(u) wall), #4288 (magnitude smooth)",
+    "no_fit": true
+  },
+  "auditOnly": true
+}
