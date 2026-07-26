@@ -281,6 +281,13 @@ import QOU.Machinery.HeckeH2WedderburnReal
 import QOU.Machinery.HeckeH3Semisimple
 import QOU.Machinery.HeckeH3GramNondegeneracy
 import QOU.Machinery.HeckeH4BlockRep
+-- W4 slice 1 (2026-07-25): the n=4 Markov-trace block — trace laws + Gram
+-- closure (generated, 576 entries) + algebra laws + the H4A Ring/Algebra
+-- wrapper carrying the n=4 `MarkovTrace` class instance.
+import QOU.Machinery.MarkovTraceH4
+import QOU.Machinery.MarkovTraceH4Gram
+import QOU.Machinery.HeckeH4AlgebraLaws
+import QOU.Machinery.HeckeH4AlgebraInstance
 import QOU.Machinery.HeckeTowerBasicConstruction
 import QOU.Machinery.QuantumTorus
 import QOU.Machinery.QuantumTorusAJ

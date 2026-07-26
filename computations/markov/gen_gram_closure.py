@@ -39,14 +39,20 @@ out=['import QOU.Machinery.MarkovTraceH4','',
 for i in range(24):
     for j in range(24):
         out.append(entry(i,j)); out.append('')
-# gram_symm: dispatch
-allnames=', '.join(f'gramval_{i}_{j}' for i in range(24) for j in range(24))
+# gram_symm: dispatch — one explicit bullet per (i,j) goal. (A single
+# `simp only [<all 576 names>]` over the 576 fin_cases goals was measured
+# heartbeat/wall-prohibitive (>96 min CPU, unfinished); per-goal `exact`
+# with the two matching entry lemmas is deterministic and cheap. The two
+# RHS polynomials are sympy-canonical and identical, so `.trans .symm`
+# closes each goal definitionally.)
 out.append('/-- **Gram symmetry** — discharged by the 576 computed entries. -/')
 out.append('theorem gram_symm_proved (z h : R) :')
 out.append('    ∀ i j, trM z h (mulNF h (e i) (e j)) = trM z h (mulNF h (e j) (e i)) := by')
 out.append('  intro i j')
-out.append(f'  fin_cases i <;> fin_cases j <;>')
-out.append(f'    simp only [{allnames}]')
+out.append('  fin_cases i <;> fin_cases j')
+for i in range(24):
+    for j in range(24):
+        out.append(f'  · exact (gramval_{i}_{j} z h).trans (gramval_{j}_{i} z h).symm')
 out.append('')
 out.append('/-- **(M2) Trace cyclicity for H₄ — fully sorry-free.** -/')
 out.append('theorem trM_cyclic_proved (z h : R) (u v : Fin 24 → R) :')

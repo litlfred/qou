@@ -1,11 +1,11 @@
 ---
 # qou-o2dk
 title: 'W4: register the general-n instance; unblock TauFunctorReduction observationFrame_* consumers'
-status: todo
+status: in-progress
 type: task
+priority: normal
 created_at: 2026-07-25T13:00:16Z
-updated_at: 2026-07-25T13:00:16Z
-parent: qou-utb3
+updated_at: 2026-07-25T14:10:56Z
 parent: qou-utb3
 ---
 
@@ -21,3 +21,16 @@ generic-n conditional registration from W2-W3. Acceptance criteria contain no
 positivity (`docs/audits/2026-07-25-markovtrace-w1-class-fields-audit.md`).
 All three class fields now have consumers (`observationFrame_smul` added), so
 a registered instance immediately feeds all three F3-linearity theorems.
+
+
+
+## W4 slice 1 (2026-07-25, branch claude/markovtrace-h4-instance-2026-07-25)
+
+n=4 CLOSED: MarkovTraceH4Gram generated (gen_gram_closure.py, 576 Gram
+entries, gram_symm_proved + trM_cyclic_proved sorry-free), gram_symm sorry
+placeholder removed from MarkovTraceH4.lean, HeckeH4AlgebraLaws (unit +
+generator-commutation + associativity over generic [CommRing R]),
+HeckeH4AlgebraInstance (H4A Ring/Algebra wrapper + markovTrace_H4A —
+the n=4 MarkovTrace instance; class now inhabited at n=2,3,4).
+No positivity anywhere (W1 audit: surplus). n>=5 remains via the Ocneanu
+conditional-expectation tower (W2/W3, qou-2017 / qou-r765).
