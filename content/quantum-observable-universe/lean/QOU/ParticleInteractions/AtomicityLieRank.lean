@@ -48,4 +48,52 @@ theorem rank_le_one_of_ad_charpoly_trailing
     rank R L ≤ 1 :=
   (rank_le_natTrailingDegree_charpoly_ad R x).trans hx
 
+/-! ## The 𝔰𝔩₂ triple and its `ad h` eigenstructure (T3-lie core, in progress)
+
+The standard basis of `𝔰𝔩₂ = sl (Fin 2) R`: `e = E₀₁`, `f = E₁₀`, `h = diag(1,−1)`.
+The bracket is the matrix commutator (`sl_bracket`). The Cartan element `h` acts by
+`[h,e]=2e`, `[h,f]=−2f`, `[h,h]=0` — so on the basis `(h,e,f)`, `ad h` is
+`diag(0,2,−2)`, charpoly `X³−4X`, trailing degree `1`. This section lands the
+bracket relations; the basis + charpoly assembly is bean `qou-atsd-t3-lie`. -/
+
+section SL2
+open Matrix LieAlgebra.SpecialLinear
+
+variable (R : Type*) [CommRing R]
+
+/-- `e = E₀₁ ∈ 𝔰𝔩₂`. -/
+noncomputable def sl2E : sl (Fin 2) R := single 0 1 (by decide) 1
+/-- `f = E₁₀ ∈ 𝔰𝔩₂`. -/
+noncomputable def sl2F : sl (Fin 2) R := single 1 0 (by decide) 1
+/-- `h = diag(1,−1) ∈ 𝔰𝔩₂`. -/
+noncomputable def sl2H : sl (Fin 2) R := singleSubSingle 0 1 1
+
+/-- **`[h,e] = 2e`** — the raising eigenvalue. -/
+theorem sl2_bracket_h_e : ⁅sl2H R, sl2E R⁆ = (2 : R) • sl2E R := by
+  apply Subtype.ext
+  rw [sl_bracket]
+  simp only [sl2H, sl2E, val_singleSubSingle, val_single, SetLike.val_smul]
+  ext a b
+  fin_cases a <;> fin_cases b <;>
+    simp [Matrix.single, Matrix.of_apply, Matrix.mul_apply]
+  all_goals ring
+
+/-- **`[h,f] = −2f`** — the lowering eigenvalue. -/
+theorem sl2_bracket_h_f : ⁅sl2H R, sl2F R⁆ = (-2 : R) • sl2F R := by
+  apply Subtype.ext
+  rw [sl_bracket]
+  simp only [sl2H, sl2F, val_singleSubSingle, val_single, SetLike.val_smul]
+  ext a b
+  fin_cases a <;> fin_cases b <;>
+    simp [Matrix.single, Matrix.of_apply, Matrix.mul_apply]
+  all_goals ring
+
+/-- **`[h,h] = 0`** — the Cartan element is `ad`-fixed. -/
+theorem sl2_bracket_h_h : ⁅sl2H R, sl2H R⁆ = (0 : sl (Fin 2) R) := by
+  apply Subtype.ext
+  rw [sl_bracket]
+  simp [sl2H, val_singleSubSingle]
+
+end SL2
+
 end QOU.Atomicity
