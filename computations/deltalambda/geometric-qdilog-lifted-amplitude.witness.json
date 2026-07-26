@@ -1,0 +1,95 @@
+{
+  "engine": "mpmath+sympy",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-07-26T19:39:47.344891+00:00",
+  "commitSha": "afb2cbb9437315ebac1407767c845fb2c8a1ebf3",
+  "assertions": [
+    {
+      "name": "ReL_closed_form_quarter_ln",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "Re_zeta0_is_half",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "pinch_e2_zero",
+      "computed": "0",
+      "expected": "0",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "geometric-qdilog-lifted-amplitude",
+  "scriptFile": "geometric_qdilog_lifted_amplitude_probe.py",
+  "scriptHash": "ea9c9c3ef707",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "The ONE principled evaluation of the FULL McPhail-Snyder–Reshetikhin lifted dilogarithm L(ζ⁰,ζ¹) (2509.02354 eq A.15, the flattened-tetrahedron complex Chern-Simons invariant) on the pinned trefoil eigenspace shape z=−h² — fixing the prior frontier probe's Li₂-only omission. RESULT: Re L = ¼ ln(1+h²) exactly (verified 30 dps + symbolic; Re ζ⁰=½ reconciles the corpus's z=½ and −h² frames); normalised g₂ = ln(1+h²)/h² ≈ 0.9788 ⇒ r ≈ −2.12%, WRONG SIGN and ~2.4× vs the measured +0.87% — the correct amplitude is FURTHER from target than the bare Li₂ (−1.07%). REFUTES the eigenspace-shape lifted-dilog route (scope-(a), not (b)). STRUCTURAL (Lean-proved): at the standard pinch all four MSR shape-logs = 0, so the octahedral e₂ = 0 — the four-shape octahedron degenerates at the pinched trefoil; the −h² is the eigenspace cross-ratio, not an MSR shape. Sharpened wall: the genuine regular part (D(ζ) torsion) is a root-of-unity object; closing r needs the fibre→archimedean τ transfer. scope-(a), audit-only, nothing wired; no scan (§2e).",
+  "contentBlock": "rem:ohtsuki-tower-bar-parity",
+  "audit_only": true,
+  "tier": "one principled full-amplitude evaluation (exact closed form) + Lean-proved structural degeneracy + sharpened wall; no fit, no scan",
+  "result": {
+    "R1_full_lifted_dilog_closed_form": {
+      "amplitude": "MSR eq (A.15) L(ζ⁰,ζ¹) = Li₂(z)/(2πi) + πi ζ⁰ζ¹ + ζ⁰ log(1−z), flattening (A.8)",
+      "shape": "z = −h² (eigenspace cross-ratio, #4345)",
+      "Re_zeta0_eq_half": true,
+      "note_frames": "Re ζ⁰ = ½ EXACTLY — reconciles the corpus's two trefoil frames (z=½ and −h²)",
+      "Re_L_numeric": "0.0106945124249841",
+      "Re_L_closed_form": "¼ ln(1+h²) = 0.0106945124249841",
+      "closed_form_verified_30dps": true,
+      "closed_form_verified_symbolic": true,
+      "Im_L_branch_dependent": "0.017537447 (carries ln h — flattening-branch ambiguity)"
+    },
+    "R2_refutation_scope_a": {
+      "g2_candidate": "0.978763467294  (= ln(1+h²)/h², normalised to g₂_leading=1)",
+      "r_candidate": "-0.021236533",
+      "r_target": "0.00865",
+      "verdict": "WRONG SIGN and ~2.4× magnitude (got −2.12%, target +0.87%). The full lifted dilog (correct amplitude) is FURTHER from target than the bare Li₂ (−1.07%). The eigenspace-shape lifted-dilog route, ALONE, does not reproduce r.",
+      "scope": "(a) scope-limited negative — constrains magnitudes/combinations, NOT ingredients. No proved invariant excludes the lifted dilog from a closure; this is not (b).",
+      "no_scan": "one principled evaluation; dilog forms/shapes NOT scanned to hit +0.87% (§2e)."
+    },
+    "R3_pinch_degeneracy": {
+      "standard_pinch_zeta0": {
+        "r": "0",
+        "t": "0",
+        "l": "0",
+        "b": "0"
+      },
+      "all_four_vanish": true,
+      "octahedral_e2_at_pinch": "0",
+      "lean": "QOU/MassTheory/PinchedOctahedronDegenerate.lean (e2_pinch, sorry-free)",
+      "meaning": "deuteron σ₁³ = trefoil (torus knot) ⇒ crossings PINCHED (§5.2 Def 5.3); at the standard pinch (eq 5.7) all four MSR shape-logs = 0, so the octahedral e₂ = 0. The 'four-shape octahedron' has NO four-distinct-shape content at the pinched trefoil; g₂ is NOT the naive octahedral e₂ of the ζ⁰_j. The −h² is the eigenspace cross-ratio, a different invariant."
+    },
+    "sharpened_wall": {
+      "torsion_factor": "the genuine MSR regular part (Garoufalidis-Kashaev A.17) carries D(ζ)=∏_{k=1}^{N-1}(1−ω^{ζ+k})^{k/N}, a q=root-of-unity (N→∞) object",
+      "regime_gap": "D(ζ) lives in the FIBRE (root of unity); g₂ is at the real substrate q₀ (ARCHIMEDEAN). Closing r needs the fibre→archimedean (τ) transfer of the pinched regular part — NOT a further real-q₀ evaluation.",
+      "scope": "scope-(a): sharpens the frontier (#4347) from 'compute the 4-shape octahedron' to 'the 4-shape object degenerates at the pinch; the real object is the pinched regular part in the root-of-unity regime, needing the τ transfer'."
+    }
+  },
+  "context": {
+    "axis": "Δ_λ binding — μ₀ −9% closure, the exact residual r = g₂ − 1",
+    "paper": "uploads/2509.02354v2.pdf eq (A.15) lifted dilog, (A.17) regular part, §5.2 pinch",
+    "lean": "QOU/MassTheory/PinchedOctahedronDegenerate.lean (e2_pinch)",
+    "builds_on": "#4345 (shape −h² from rep), #4339 (g₂_leading=1), #4347 (frontier: bare Li₂)",
+    "q0_convention": "muon-canonical (computations/ layer)",
+    "no_fit": true,
+    "no_scan": true
+  },
+  "auditOnly": true
+}
