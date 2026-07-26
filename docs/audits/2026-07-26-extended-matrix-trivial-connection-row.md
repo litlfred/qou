@@ -158,3 +158,69 @@ result, not a closure: it does not by itself produce the odd-channel
 bridge, and it wires nothing. What it buys is that the next rung is now
 a concrete, published construction to follow (eqs 165–172) rather than a
 search over a self-assembled basis.
+
+## Convention reconciliation (V_j) — resolved, with one component unsettled
+
+Computed GGMW eq (188) exactly at 40 dps from the eq (184) roots
+(mpmath, `polyroots` on `−ξ³+2ξ²−3ξ+1`), reproducing eq (189):
+
+| | GGMW eq (188)/(189) | corpus |
+|---|---|---|
+| ξ₁ | `0.784920145499027 + 1.30714127868205i` | — |
+| ξ₃ | `0.430159709001947` | — |
+| V₁ | `3.024128376509302 + 2.828122088330783i` | `2.828122088330783 + 1.3790860299i` |
+| V₂ | `conj(V₁)` | `−Re(V₁) + i·Im(V₁)` |
+| V₃ | `−1.113454552473924` | `−2.7580990292` |
+
+**What matches exactly (16 digits).**
+
+1. `Re(V₁)_corpus = |Im(V₁)|_GGMW = Vol(S³∖5₂) = 2.828122088330783`. The
+   corpus carries the hyperbolic volume in the **real** part where GGMW
+   carries it in the **imaginary** part — an `i`-rotation of the
+   convention, exactly as suspected.
+2. **`|V₁ − V₂| = 5.656244176661566` in *both* conventions.** In the
+   corpus `V₂ = −Re(V₁)+i·Im(V₁)` so `|V₁−V₂| = 2·Re(V₁) = 2·Vol`; in
+   GGMW `V₂ = conj(V₁)` so `|V₁−V₂| = 2·|Im V₁| = 2·Vol`. Same number,
+   both `2·Vol`, and it is **convention-independent**.
+
+**What does not match.** `Im(V₁)_corpus = 1.3790860299` is not
+`Re(V₁)_GGMW = 3.024128376509302` under the rotation (nor any of
+`Re/2`, `π²/3 − Re`, `±V₃`); and `V₃_corpus = −2.7580990292` is not
+`V₃_GGMW = −1.113454552473924`. Note also that *within* the corpus
+`V₃ ≈ −2·Im(V₁)` only to ~5 digits (`−2.7581720598` vs `−2.7580990292`),
+so those two corpus numbers are independent inputs, not one derived from
+the other.
+
+**Why this is not (yet) an error.** The corpus's own source comment is
+`# GGM eq 21 σ₃ (real connection)` — i.e. it cites **GGM
+[arXiv:2012.00062](https://arxiv.org/abs/2012.00062) eq (21)**, a
+*different paper* from the GGMW eq (188) computed above. GGMW's own
+footnote 6 / eq (186) records that their `Φ^{(σ_j)}` differ from GGM's
+by an explicit prefactor `e^{−πi(τ+τ⁻¹)/12 − 2πiτ}`, and states the
+Stokes constants are unchanged — so a differing `V_j` normalization
+between the two papers is *expected*. Settling it requires GGM
+2012.00062 eq (21), which is not in `uploads/`.
+
+**Blast radius, checked.** Numeric `V_j` are consumed by four probes
+(`phi_series_engine`, `median_borel_resummation`,
+`a3_prefactor_natural_factors`, `stokes_population_bridge`).
+
+- The first three consume only `V₁ − V₂` (as `|V₁−V₂|`, `i(V₁−V₂)`, or
+  `(V₁−V₂)/2πi`). That combination is `2·Vol` in both conventions and
+  matches GGMW exactly — **those results are safe regardless of how the
+  normalization question resolves.**
+- **B1** (`stokes_population_bridge`) is the exception: it evaluates
+  `e^{iV₃/x₀}`, `sin(V₃/x₀)`, `cos(V₃/x₀)`, so the *absolute* value of
+  `V₃` enters a phase. If the corpus `V₃` is in a different
+  normalization from the one B1's reasoning assumes, B1's sector
+  amplitudes would shift. B1's headline conclusion (σ-pair population
+  forced to zero) rests on the *magnitude* overshoot
+  `|e^{iV₁/x₀}| = 5.5e5` — driven by `Im(V₁)`, also in the unsettled
+  group.
+
+**Action (not taken here, flagged for the owner):** obtain GGM
+2012.00062 and check eq (21) against the corpus's `V₁`, `V₃`. Until
+then, treat B1's *numeric* sector amplitudes as normalization-pending;
+B1's structural conclusion and every `|V₁−V₂|`-based result are
+unaffected. No landed artifact is retracted on the strength of this
+note — the discrepancy is real but its resolution is unknown.
