@@ -110,18 +110,22 @@ finite part — the open `CuspShapeBarParity` link for a *torus* knot (`Vol = 0`
 subtle), the same object the `c₃` front is blocked on. Deriving it is a genuine (technical, not
 fishing) obstruction; the two closures should be attacked together.
 
-**Where the residual `r` lives (sibling #4288, proved).** PR #4288 **proved** (Lean, sorry-free) that
-the meridian-holonomy *magnitude* channel `barOdd(q)²` is **anchor-smooth** (`sensitivity_sq`,
-`barOdd_sq_le_of_amplification`): a percent-level swing would force `q₀` within `~3×10⁻⁷` of the
-compact locus `q = ±1`, but the substrate is `≈0.11` away — so the magnitude cannot carry a
-percent-level anchor swing; c₃'s swing lives only in the non-perturbative **phase `arg(u)`**. Applied
-to `g₂`: its **magnitude** `barOdd(q₀)² = h²` is exactly this anchor-smooth channel, consistent with
-the **leading coefficient being `1`** (smooth, from the coloring `c+1 = −1·h²`); the **percent
-residual `r ≈ 0.87%`** must then live in the *same non-perturbative phase channel* `arg(u)` that
-carries `c₃`'s swing — the open `conj:algebraic-geometric-dilog-equivalence`. So the μ₀ bar-even `r`
-and the Q_β bar-odd `c₃` swing are **the same non-perturbative phase object, on the two bar-parity
-faces** — a strong argument to attack them jointly, and a caution that `r` (like `c₃`) is a
-phase/non-perturbative quantity, not a magnitude one.
+**Where `r` lives — the arg(u) wall is a QUADRATURE effect (corrected; PR #4319 follow-up commit).**
+The `c₃` front proved (PR #4293) the NZ **bar-odd / CS** face `nzImVolume = (√3/2)r²·sin(2φ)` is
+**frozen on the real substrate ray** `φ=0` (`sin 0 = 0`) — that is the c₃ wall. But `g₂` is the
+**bar-even / Volume** face, the **cos-quadrature partner** `nzReVolume = (√3/2)r²·cos(2φ)`, which at
+the *same* `φ=0` is `(√3/2)r²` — **maximal, not frozen** — and *even* in `φ`, so `φ=0` is a
+*stationary extremum* (zero phase-slope: doubly anchor-smooth). Formalized sorry-free
+([`NZBarEvenVolumeFace.lean`](../../content/quantum-observable-universe/lean/QOU/MassTheory/NZBarEvenVolumeFace.lean):
+`nzReVolume_real_ray`, `_ne_zero`, `_pos`, `nzReVolume_phase_even`). So **the wall that freezes `c₃`
+leaves `g₂` maximal and stable — `g₂` lives exactly where `c₃` dies.** (This *corrects* an earlier
+draft of this paragraph that put `r` in the same frozen phase as `c₃`; the two are in *quadrature*,
+not the same channel.) Consequence: `g₂` is a well-defined, anchor-smooth, phase-stationary
+coefficient — the **trefoil's bar-even NZ (Volume-face) cusp modulus** — with leading value `1` (the
+coloring `c+1 = −1·h²`); `r = g₂ − 1` is simply how far that geometric modulus sits from `1`, a
+definite computable number, *not* a frozen-phase quantity. The μ₀ bar-even and Q_β bar-odd closures
+are the two quadrature faces of one NZ object; the real substrate ray is exactly where CS (`c₃`) is
+null and Volume (`g₂`) peaks.
 
 Refs: probe [`trefoil_coloring_pinned_bareven_probe.py`](../../computations/deltalambda/trefoil_coloring_pinned_bareven_probe.py);
 Lean [`TrefoilColoringBarEven.lean`](../../content/quantum-observable-universe/lean/QOU/MassTheory/TrefoilColoringBarEven.lean);
