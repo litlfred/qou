@@ -224,3 +224,80 @@ then, treat B1's *numeric* sector amplitudes as normalization-pending;
 B1's structural conclusion and every `|V₁−V₂|`-based result are
 unaffected. No landed artifact is retracted on the strength of this
 note — the discrepancy is real but its resolution is unknown.
+
+## Convention reconciliation — CLOSED with GGM 2012.00062 in hand
+
+`uploads/2012.00062v3.pdf` (GGM, *Peacock patterns*) supplies the missing
+definition. §6.1 eq (234), at `u = 0` (`x = 1`):
+
+    V = Li₂(y) + Li₂(xy) + Li₂(x⁻¹y) + (log(−y))²  ──x=1──▶  3Li₂(y) + (log(−y))²
+
+on the curve eq (233) `y² = (1−y)(1−xy)(1−x⁻¹y)`, which at `x = 1` is
+`y² = (1−y)³` — **the same cubic as GGMW eq (184)**. §6.1 also states
+explicitly: *"Note for σ₃, we only keep the real part of V."*
+
+### Result 1 — the two published conventions differ by an exact constant
+
+Computed at 30 dps on the three roots:
+
+| | GGM eq (234) | GGMW eq (188) |
+|---|---|---|
+| σ₁ | `−3.555607890883604 + 2.828122088330783i` | `3.024128376509302 + 2.828122088330783i` |
+| σ₃ (Re only) | `−7.69319081986683` | `−1.113454552473924` |
+
+> **`V_GGMW = V_GGM + 2π²/3`**, exactly, on both σ₁ and σ₃ (16 digits).
+
+That is the whole discrepancy between the two papers, and it is
+consistent with GGMW's own footnote 6 recording an
+`e^{−πi(τ+τ⁻¹)/12}`-type prefactor between their `Φ^{(σ)}` and GGM's.
+Both papers put `Vol(5₂) = 2.828122088330783` in **`Im V₁`**.
+
+### Result 2 — the corpus's `V₁`, `V₃` match *neither* convention
+
+| corpus | value | GGM | GGMW | verdict |
+|---|---|---|---|---|
+| `Re V₁` | `2.828122088330783` | `Im V₁` = same | `Im V₁` = same | **correct** (= Vol; corpus i-rotates the convention) |
+| `Im V₁` | `1.3790860299` | `Re V₁ = −3.5556…` | `Re V₁ = +3.0241…` | **neither** |
+| `V₃` | `−2.7580990292` | `−7.6932…` | `−1.1135…` | **neither** |
+
+No rotation, `±π²/6`, or `±2π²/3` shift relates the corpus's `Im V₁` or
+`V₃` to either paper (nearest candidate `Re V_GGMW − π²/6 = 1.3791943`
+misses `Im V₁` by `1.1e−4`, far outside the 11 printed digits). The
+source-comment `# GGM eq 21` is also a mis-citation: eq (21) of
+2012.00062v3 is the Stokes/3D-index identity
+`S⁺_{σ₁σ₁}(x;q) = Ind^rot_K(0,x;q)`, not a saddle value — most likely an
+equation-numbering shift from an earlier arXiv version.
+
+### Result 3 — blast radius, quantified
+
+- **Safe.** `|V₁ − V₂|`: the corpus sets `V₂ = −Re V₁ + i·Im V₁`, so
+  `|V₁−V₂| = 2·Re V₁ = 2·Vol = 5.656244176661566`; both papers give
+  `2·|Im V₁| = 2·Vol` — **the identical number**. So
+  `phi_series_engine`, `median_borel_resummation` and
+  `a3_prefactor_natural_factors`, which consume only this combination,
+  are **unaffected**.
+- **Affected, but in the safe direction — B1.** With `x₀ = −ln q₀ =
+  −0.1043407319`, the sector magnitude is `|e^{iV₁/x₀}| = e^{−Im V₁/x₀}`:
+
+  | `Im V₁` used | `|e^{iV₁/x₀}|` |
+  |---|---|
+  | corpus `1.3790860299` | `5.5e5` ← the number B1 reports |
+  | published `Vol = 2.828122…` | **`5.9e11`** |
+
+  The published value makes the overshoot **six orders of magnitude
+  larger**, so B1's conclusion — σ-pair population forced to `n₁ = n₂ =
+  0` on the real-q ray — is **strengthened, not weakened**. B1's `V₃`
+  phases (`e^{iV₃/x₀}`, `sin/cos(V₃/x₀)`) are computed from a value
+  matching neither convention and should be regarded as **not
+  reproducible from the literature** until re-derived.
+
+### Disposition
+
+`Re V₁ = Vol` is right and the `|V₁−V₂|`-based results stand. The
+corpus's `Im V₁` and `V₃` are **not** the published values under any
+convention and their provenance is unknown; the citation pointing at
+them is wrong. Recommended: re-derive both from eq (234) (choosing GGM
+or GGMW normalization explicitly and recording which), then re-run B1 —
+whose headline conclusion is expected to survive with a larger margin.
+Nothing is retracted here; this note records a reproducibility defect
+with its blast radius measured, not an invalidated result.

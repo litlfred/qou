@@ -2622,3 +2622,26 @@ corpus gap. Convention flag recorded: GGMW eq (189) puts Vol(5₂) =
 2.8281 in Im(V₁) while the corpus carries it in Re(V₁); reconcile before
 cross-using GGMW numerics. No fit; nothing wired; identification is a
 location result, not a closure.
+
+**2026-07-26 (convention reconciliation, CLOSED) — V_GGMW = V_GGM +
+2π²/3 exactly; the corpus's Im(V₁) and V₃ match NEITHER published
+convention.** With GGM 2012.00062v3 in `uploads/`, eq (234) at x = 1
+gives `V = 3Li₂(y) + (log(−y))²` on `y² = (1−y)³` (the same cubic as
+GGMW eq 184), and §6.1 states "for σ₃ we only keep the real part of V".
+Computed at 30 dps: `V_GGM(σ₁) = −3.5556078909 + 2.8281220883i`,
+`V_GGM(σ₃) = −7.6931908199`; adding `2π²/3` reproduces GGMW eq (189)
+`V₁ = 3.0241283765 + 2.8281220883i`, `V₃ = −1.1134545525` to 16 digits.
+Both papers carry Vol in **Im V₁**. The corpus's `Re(V₁) = 2.8281220883
+= Vol` is CORRECT (an i-rotation); its `Im(V₁) = 1.3790860299` and
+`V₃ = −2.7580990292` match neither paper under any rotation or π²-shift,
+and the source comment `# GGM eq 21` mis-cites (eq 21 of v3 is the
+Stokes/3D-index identity). Blast radius: `|V₁−V₂| = 2·Vol =
+5.656244176661566` is identical in all three conventions, so
+`phi_series_engine`, `median_borel_resummation` and
+`a3_prefactor_natural_factors` are unaffected. B1 is affected but in the
+SAFE direction — using the published `Im V₁ = Vol` the sector overshoot
+becomes `5.9e11` instead of the reported `5.5e5`, six orders larger, so
+B1's population-forced-to-zero conclusion is STRENGTHENED. B1's V₃
+phases are not reproducible from the literature and want re-derivation.
+Nothing retracted; a reproducibility defect recorded with its blast
+radius measured.
