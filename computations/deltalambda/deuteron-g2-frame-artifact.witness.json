@@ -1,0 +1,95 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-26T20:55:56.837877+00:00",
+  "commitSha": "2f675c595336f3fdadab7d19b2f51e7fff6992c6",
+  "assertions": [
+    {
+      "name": "BD_predicted_within_0p04pct",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "r_spread_exceeds_10x_signal",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "r_frame_dominated",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "deuteron-g2-frame-artifact",
+  "scriptFile": "deuteron_g2_frame_artifact_probe.py",
+  "scriptHash": "d3c1d9624fc3",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Answers the owner's 'is g₂ fitted to AME / larger context?' question. g₂ is NOT a tuned parameter, but r = g₂−1 is a FRAME ARTIFACT: across equally-valid O(t²) conventions for removing the same bar-odd tier, r swings over [−3.4%, +7.4%] — a spread ≈12× the signal |r|≈0.87%, so r is ~90% convention, not physics. Structurally, Ω_{k≥2}=0 exactly for the deuteron σ₁³ (single generator), so the bar-even h² correction is a character/frame projection, NOT a dynamical Magnus term — g₂=1 is near-definitional and r is the frame residual. The REAL robust result is the tier convergence: B(deuteron) predicted to 0.036% (360 ppm) from q₀ via three derived tiers (rotational, bar-odd t, bar-even h² unit). Larger context: the well-defined open problem is B(deuteron) below ~0.04% (the Δ_λ closure), NOT the frame-dependent r. scope-(a), audit-only, nothing wired; no fit, no AME inversion.",
+  "contentBlock": "rem:ohtsuki-tower-bar-parity",
+  "audit_only": true,
+  "tier": "frame-sensitivity measurement + tier convergence + Ω_{k≥2}=0 structural locate; answers the owner question; no fit",
+  "result": {
+    "F1_tier_convergence": {
+      "tiers_err_pct": {
+        "tier0_E_rot": "-9.2145",
+        "tier1_Eplus_bar_odd": "-4.2223",
+        "tier2_bar_even_unit_g2_is_1": "-0.036219"
+      },
+      "B_D_predicted_to": "-0.03622% (360 ppm), parameter-free",
+      "meaning": "the REAL robust result: B(deuteron) predicted to 0.036% from q₀ via three derived tiers (rotational, bar-odd t, bar-even h² unit). g₂≈1 is a genuine prediction, NOT a fit."
+    },
+    "F2_frame_artifact": {
+      "r_by_frame_pct": {
+        "E+ = E_rot/(1-t) [corpus]": "0.8652",
+        "E+ = E_rot*(1+t)": "7.373",
+        "E+ = E_rot*exp(t)": "4.23",
+        "B = E+/(1-g2 h2) [inverse]": "-3.394"
+      },
+      "r_range_pct": [
+        "-3.39",
+        "7.37"
+      ],
+      "r_spread_pct": "10.8",
+      "spread_over_signal": "12.4×",
+      "meaning": "r = g₂−1 swings over [−3.4%, +7.4%] across equally-valid O(t²) conventions for removing the SAME bar-odd tier — a spread ≈12× the signal |r|≈0.87%. r is ~90% frame-convention, NOT physics; not a well-defined derivation target."
+    },
+    "F3_bar_even_is_projection_not_dynamics": {
+      "omega_k_ge_2": "0 exactly (deuteron word σ₁³ is a single generator; every [a,a]=0)",
+      "meaning": "the bar-even h² correction is NOT a Magnus/holonomy dynamical term (all vanish) — it is the character/frame projection of the order-h² unit. So g₂=1 is near-definitional (natural order-h² frame unit, coeff 1); r is the frame residual, not a categorical amplitude."
+    },
+    "verdict_owner_question": {
+      "is_g2_fitted_to_AME": "NO tuned parameter — but the instinct is CORRECT: r is a frame artifact (12× convention spread) on top of a genuine 0.036% parameter-free B(D) prediction.",
+      "bankable": [
+        "B(deuteron) predicted to ~0.04% from q₀ (3 derived tiers)",
+        "g₂ ≈ 1 (bar-even correction = one h² unit)"
+      ],
+      "not_a_target": "r = +0.87% — frame-noise-dominated tail, not robust, not separable.",
+      "larger_context": "the real open problem is B(deuteron) below ~0.04% (frame-independent = the Δ_λ closure), NOT r (a frame-dependent repackaging of the residual).",
+      "no_fit": true
+    }
+  },
+  "context": {
+    "axis": "Δ_λ binding — μ₀ −9% closure, the epistemic status of g₂ / r",
+    "owner_question": "keep pushing on g₂ beyond leading; seems fitted to AME; larger context?",
+    "builds_on": "#4369 (r is the binding residual magnified 1/h²), #4158 (g₂ definition, Ω_{k≥2}=0), #4339 (g₂_leading=1)",
+    "q0_convention": "muon-canonical (computations/ layer)",
+    "no_fit": true
+  },
+  "auditOnly": true
+}
