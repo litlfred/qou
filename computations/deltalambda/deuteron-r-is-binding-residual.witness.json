@@ -1,0 +1,87 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-26T20:39:23.759010+00:00",
+  "commitSha": "7292483aeb7f40c5753a50898cd38843f8684f15",
+  "assertions": [
+    {
+      "name": "g2_reproduces_corpus",
+      "computed": "1.00865",
+      "expected": "1.00865",
+      "passed": true
+    },
+    {
+      "name": "amplification_factor",
+      "computed": "23.89",
+      "expected": "23.89",
+      "passed": true
+    },
+    {
+      "name": "B_precision_ppm_for_r10pct",
+      "computed": "36.2",
+      "expected": "36.2",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "deuteron-r-is-binding-residual",
+  "scriptFile": "deuteron_r_is_binding_residual_probe.py",
+  "scriptHash": "512ea0cd9f53",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Decisive reframing of the g₂ chase: the bar-even coefficient g₂ = (E_AME/E⁺ − 1)/h² (#4158 Magnus definition; E⁺=E_rot/(1−t), all pure theory except the MEASURED E_AME) is an AFFINE image of the deuteron binding, with amplification E_AME/(E⁺·h²) ≈ 23.9 (Lean-proved, BindingResidualAmplification). Reproduces the corpus g₂ = 1.00865 exactly. So r = g₂−1 ≈ +0.87% is the binding residual magnified ~24× by 1/h²: deriving r ≡ predicting B(deuteron) to ~36 ppm (~2540× tighter than the current −9.21% accuracy; finer than the tabulated E_rot's 1e-4 MeV precision, which already moves r by 2.3%). r is NOT a separable special-function puzzle — it IS the Δ_λ deuteron-binding closure viewed through a 1/h² magnifier, which quantifies the §2e entropy warning and explains why every amplitude gives the derived leading g₂≈1 but never the residual. Recommendation: pause the g₂/r chase. scope-(a), audit-only, nothing wired; no fit, no AME inversion.",
+  "contentBlock": "rem:ohtsuki-tower-bar-parity",
+  "audit_only": true,
+  "tier": "exact affine/amplification structure (Lean-proved) + precision-requirement derivation; reproduces corpus g₂; no fit",
+  "result": {
+    "A_exact_g2_reproduced": {
+      "E_rot_MeV": "2.0195829 (theory, j=3)",
+      "E_AME_MeV": "2.2245662 (measured)",
+      "t_bar_odd": "0.052123086",
+      "h2": "0.043706218",
+      "Eplus": "2.130638345",
+      "g2": "1.0086522  (corpus value 1.00865 — bookkeeping confirmed)",
+      "r_pct": "0.86522"
+    },
+    "B_amplification_and_precision": {
+      "amplification_dg2_per_relE": "23.8887 (Lean-proved g2_amplification coeff)",
+      "B_precision_to_pin_r_10pct_ppm": "36.22",
+      "B_precision_to_see_r_ppm": "362.2",
+      "current_first_order_accuracy_ppm": "92100 (−9.21%)",
+      "ratio_needed_vs_current": "2542.9× tighter",
+      "meaning": "g₂ is AFFINE in the measured binding (E⁺,h pure theory); the 1/h² magnifies B's relative error ~24×. Deriving r ≡ predicting B(deuteron) to ~36 ppm."
+    },
+    "C_tabulated_input_floor": {
+      "g2_shift_from_Erot_1e-4_rounding": "-0.0002023",
+      "as_fraction_of_r": "-2.34%",
+      "meaning": "a 1e-4 MeV display rounding of E_rot moves g₂ by 2.3% of r — r lives below the noise floor of the tabulated theory input."
+    },
+    "verdict": {
+      "classification": "scope-(a), decisive reframing: r is NOT a separable special-function target. Deriving r ≡ predicting the deuteron binding to ~36 ppm, i.e. r IS the Δ_λ deuteron-binding closure (Track A blocker) magnified by 1/h².",
+      "why_amplitudes_give_1": "every categorical amplitude reproduces the DERIVED leading g₂≈1; the residual r is the still-open binding, unreachable at 36 ppm.",
+      "entropy_2e_quantified": "a ~36 ppm target carries ~zero fit-information — the four-session g₂ chase was chasing a magnified image of the unclosed binding.",
+      "recommendation": "pause the g₂/r chase; bank g₂_leading=1 (derived); r reduces to the general Δ_λ closure at a precision far beyond current reach.",
+      "no_fit": true,
+      "no_ame_inversion": "E_AME is the measured target r is DEFINED against (corpus g₂ definition), not a fitted parameter."
+    }
+  },
+  "context": {
+    "axis": "Δ_λ binding — μ₀ −9% closure, the exact residual r = g₂ − 1",
+    "lean": "QOU/MassTheory/BindingResidualAmplification.lean (g2_affine, g2_amplification)",
+    "builds_on": "#4158 (Magnus g₂ definition), #4339 (g₂_leading=1), #4347 (frontier), #4369 (lifted-dilog refutation + pinch degeneracy)",
+    "q0_convention": "muon-canonical (computations/ layer)",
+    "no_fit": true
+  },
+  "auditOnly": true
+}
