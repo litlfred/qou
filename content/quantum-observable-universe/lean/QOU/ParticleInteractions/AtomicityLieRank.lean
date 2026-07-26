@@ -152,6 +152,30 @@ theorem sl2_ad_h_e : ad R (sl (Fin 2) R) (sl2H R) (sl2E R) = (2 : R) • sl2E R 
 theorem sl2_ad_h_f : ad R (sl (Fin 2) R) (sl2H R) (sl2F R) = (-2 : R) • sl2F R := by
   rw [LieAlgebra.ad_apply]; exact sl2_bracket_h_f R
 
+/-- **`ad h` is `diag(0,2,−2)` in the `(h,e,f)` basis.** Each basis vector is an
+    eigenvector (`sl2_ad_h_*`), so the matrix is diagonal with the eigenvalues. -/
+theorem sl2_toMatrix_ad_h :
+    LinearMap.toMatrix (sl2Basis R) (sl2Basis R) (ad R (sl (Fin 2) R) (sl2H R))
+      = Matrix.diagonal ![(0 : R), 2, -2] := by
+  have hb : ∀ j, sl2Basis R j = ![sl2H R, sl2E R, sl2F R] j := fun j =>
+    Module.Basis.mk_apply _ _ j
+  have hb0 : sl2Basis R 0 = sl2H R := by rw [hb 0]; rfl
+  have hb1 : sl2Basis R 1 = sl2E R := by rw [hb 1]; rfl
+  have hb2 : sl2Basis R 2 = sl2F R := by rw [hb 2]; rfl
+  have hh : (sl2Basis R).repr (sl2H R) = Finsupp.single 0 1 := by
+    rw [← hb0]; exact Module.Basis.repr_self _ _
+  have he : (sl2Basis R).repr (sl2E R) = Finsupp.single 1 1 := by
+    rw [← hb1]; exact Module.Basis.repr_self _ _
+  have hf : (sl2Basis R).repr (sl2F R) = Finsupp.single 2 1 := by
+    rw [← hb2]; exact Module.Basis.repr_self _ _
+  have rhe : (sl2Basis R).repr ⁅sl2H R, sl2E R⁆ = Finsupp.single 1 2 := by
+    rw [sl2_bracket_h_e R, map_smul, he, Finsupp.smul_single, smul_eq_mul, mul_one]
+  have rhf : (sl2Basis R).repr ⁅sl2H R, sl2F R⁆ = Finsupp.single 2 (-2) := by
+    rw [sl2_bracket_h_f R, map_smul, hf, Finsupp.smul_single, smul_eq_mul, mul_one]
+  ext i j
+  fin_cases j <;> fin_cases i <;>
+    simp [LinearMap.toMatrix_apply, hb0, hb1, hb2, LieAlgebra.ad_apply, rhe, rhf]
+
 end SL2
 
 end QOU.Atomicity
