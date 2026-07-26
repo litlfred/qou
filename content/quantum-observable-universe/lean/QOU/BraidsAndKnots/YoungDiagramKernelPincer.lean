@@ -541,4 +541,141 @@ theorem covHookSq_nonneg (k : ℕ) : 0 ≤ covHookSq k := by
     obtain ⟨l, _, rfl⟩ := List.mem_map.mp hx
     exact tilt_nonneg 0 _
 
+/-! ## The hook spectrum and the ν-system
+
+The surviving A2 lead works with the **hook spectrum** `N_v(λ) = #{□ ∈ λ : h(□) = v}` and the
+signed measure `ν_v = Cov₂(N_v, ω₃)`; A2 is its log-moment sign (`Σ_v ln(v)·ν_v ≥ 0`, cf.
+`covLnF_nonpos_iff`), its second moment is the proved `Cov₂(Σh², ω₃) = Var₂(ω₃) ≥ 0`, and its
+zeroth moment vanishes. This section defines the spectrum and ν in Lean, proves the **spectral
+decomposition** `Σ_v φ(v)·N_v = Σ_□ φ(h(□))` for every `φ` (fiberwise over the cell set), and
+locks the **zeroth-moment constraint** `Σ_v ν_v = 0`. Bookkeeping note: sums run over
+`v < 2k + 1` via the cheap hook bound `h ≤ λ_i + λ'_j ≤ 2k`; the classical tight bound is
+`h ≤ k`, but any range containing all hooks gives the same constraints (empty fibers contribute
+`ν_v = 0`). -/
+
+/-- The hook length of a cell, in the kernel's per-cell form `λ_i + λ'_j − j − i − 1`. -/
+def hookLen (l : List ℕ) (p : ℕ × ℕ) : ℕ :=
+  l.getD p.1 0 + (conj l).getD p.2 0 - p.2 - p.1 - 1
+
+/-- **The hook spectrum** `N_v(λ)`: the number of cells with hook length `v`. -/
+noncomputable def hookCount (l : List ℕ) (v : ℕ) : ℕ :=
+  ((cells l).filter (fun p => hookLen l p = v)).card
+
+/-- Any single part is at most the size. -/
+theorem getD_le_sum (l : List ℕ) (i : ℕ) : l.getD i 0 ≤ l.sum := by
+  induction l generalizing i with
+  | nil => simp
+  | cons a t ih =>
+      cases i with
+      | zero =>
+          rw [List.getD_cons_zero, List.sum_cons]
+          exact Nat.le_add_right a t.sum
+      | succ i' =>
+          rw [List.getD_cons_succ, List.sum_cons]
+          exact le_trans (ih i') (Nat.le_add_left _ _)
+
+/-- The cheap hook bound on enumerated partitions: `h(□) ≤ λ_i + λ'_j ≤ 2k`. -/
+theorem hookLen_lt_of_mem (k : ℕ) (l : List ℕ) (hl : l ∈ partsOf k) (p : ℕ × ℕ)
+    (_ : p ∈ cells l) : hookLen l p < 2 * k + 1 := by
+  obtain ⟨hsum, hpos, hsort⟩ := partsOf_facts k l hl
+  have h1 : l.getD p.1 0 ≤ k := hsum ▸ getD_le_sum l p.1
+  have h2 : (conj l).getD p.2 0 ≤ k := by
+    rw [conj_getD l hsort]
+    exact le_trans List.countP_le_length (hsum ▸ length_le_sum l hpos)
+  unfold hookLen
+  omega
+
+/-- **The spectral decomposition of hook statistics**: for every `φ`,
+`Σ_v φ(v)·N_v(λ) = Σ_□ φ(h(□))` — fiberwise summation of the cell set over hook values. This is
+the exact mechanism by which the ν-system's moments realize the scaffold's hook covariances
+(`φ = ln` ↦ `covLnHooks`, `φ = (·)²` ↦ `covHookSq`, `φ = 1` ↦ the zeroth moment below). -/
+theorem hookSpectrum_sum (k : ℕ) (l : List ℕ) (hl : l ∈ partsOf k) (φ : ℕ → ℝ) :
+    ∑ v ∈ Finset.range (2 * k + 1), φ v * (hookCount l v : ℝ)
+      = ∑ p ∈ cells l, φ (hookLen l p) := by
+  have h1 : ∀ v ∈ Finset.range (2 * k + 1),
+      φ v * (hookCount l v : ℝ)
+        = ∑ p ∈ (cells l).filter (fun p => hookLen l p = v), φ (hookLen l p) := by
+    intro v _
+    rw [Finset.sum_congr rfl (fun p hp => by rw [(Finset.mem_filter.mp hp).2]),
+      Finset.sum_const, nsmul_eq_mul]
+    unfold hookCount
+    ring
+  rw [Finset.sum_congr rfl h1]
+  exact Finset.sum_fiberwise_of_maps_to
+    (fun p hp => Finset.mem_range.mpr (hookLen_lt_of_mem k l hl p hp)) _
+
+/-- Mixed spectrum moment `E₂[N_v·ω₃]`. -/
+noncomputable def nuMixedMoment (k v : ℕ) : ℝ :=
+  ((partsOf k).map (fun l =>
+    tilt 0 (sytDim l) * (hookCount l v : ℝ) * (omega3 k l : ℝ))).sum / tiltNorm k 0
+
+/-- Spectrum mean `E₂[N_v]`. -/
+noncomputable def nuMean (k v : ℕ) : ℝ :=
+  ((partsOf k).map (fun l => tilt 0 (sytDim l) * (hookCount l v : ℝ))).sum / tiltNorm k 0
+
+/-- **The ν-system**: `ν_v = Cov₂(N_v, ω₃)` — the hook-spectrum/content-spread covariances whose
+log-moment sign is leg [A2]. -/
+noncomputable def nuV (k v : ℕ) : ℝ := nuMixedMoment k v - nuMean k v * tiltedMean k 0
+
+/-- A `Finset`-indexed family of list sums swaps with the list sum. -/
+theorem finset_sum_list_map_sum {ι : Type*} (s : Finset ℕ) (L : List ι) (f : ℕ → ι → ℝ) :
+    ∑ v ∈ s, (L.map (f v)).sum = (L.map (fun l => ∑ v ∈ s, f v l)).sum := by
+  induction L with
+  | nil => simp
+  | cons a t ih =>
+      simp only [List.map_cons, List.sum_cons, Finset.sum_add_distrib, ih]
+
+/-- The spectrum totals to the size: `Σ_v N_v(λ) = k` (φ = 1 in the spectral decomposition,
+plus `|cells| = k`). -/
+theorem sum_hookCount (k : ℕ) (l : List ℕ) (hl : l ∈ partsOf k) :
+    ∑ v ∈ Finset.range (2 * k + 1), (hookCount l v : ℝ) = (k : ℝ) := by
+  have h := hookSpectrum_sum k l hl (fun _ => 1)
+  simp only [one_mul] at h
+  rw [h, Finset.sum_const, nsmul_eq_mul, mul_one, card_cells l,
+    (partsOf_facts k l hl).1]
+
+/-- **The zeroth-moment constraint, Lean-locked**: `Σ_v ν_v = 0` — the spectrum totals to the
+constant `k`, and covariance against a constant vanishes. Together with the second moment
+(`Σ_v v²·ν_v = Var₂(ω₃) ≥ 0`, via `covHookSq_nonneg`) and the [A2] target
+(`Σ_v ln(v)·ν_v ≥ 0 ⇔` leg [A2], via `covLnF_nonpos_iff`), this pins the surviving moment
+skeleton's exact shape: a mean-zero signed measure with positive second moment whose log-moment
+sign is the open leg. -/
+theorem sum_nuV_eq_zero (k : ℕ) : ∑ v ∈ Finset.range (2 * k + 1), nuV k v = 0 := by
+  unfold nuV nuMixedMoment nuMean
+  rw [Finset.sum_sub_distrib]
+  rw [← Finset.sum_div, ← Finset.sum_mul, ← Finset.sum_div]
+  rw [finset_sum_list_map_sum, finset_sum_list_map_sum]
+  have hω : ((partsOf k).map (fun l => ∑ v ∈ Finset.range (2 * k + 1),
+      tilt 0 (sytDim l) * (hookCount l v : ℝ) * (omega3 k l : ℝ))).sum
+      = (k : ℝ) * tiltOmega k 0 := by
+    rw [List.map_congr_left (fun l hl => by
+      rw [show (fun v => tilt 0 (sytDim l) * (hookCount l v : ℝ) * (omega3 k l : ℝ))
+            = (fun v => (tilt 0 (sytDim l) * (omega3 k l : ℝ)) * (hookCount l v : ℝ)) from
+          funext fun v => by ring, ← Finset.mul_sum, sum_hookCount k l hl] :
+      ∀ l ∈ partsOf k, (∑ v ∈ Finset.range (2 * k + 1),
+          tilt 0 (sytDim l) * (hookCount l v : ℝ) * (omega3 k l : ℝ))
+        = tilt 0 (sytDim l) * (omega3 k l : ℝ) * (k : ℝ))]
+    rw [show (fun l => tilt 0 (sytDim l) * (omega3 k l : ℝ) * (k : ℝ))
+          = (fun l => (k : ℝ) * (tilt 0 (sytDim l) * (omega3 k l : ℝ))) from
+        funext fun l => by ring, list_sum_map_mul_left]
+    rfl
+  have hZ : ((partsOf k).map (fun l => ∑ v ∈ Finset.range (2 * k + 1),
+      tilt 0 (sytDim l) * (hookCount l v : ℝ))).sum
+      = (k : ℝ) * tiltNorm k 0 := by
+    rw [List.map_congr_left (fun l hl => by
+      rw [← Finset.mul_sum, sum_hookCount k l hl] :
+      ∀ l ∈ partsOf k, (∑ v ∈ Finset.range (2 * k + 1),
+          tilt 0 (sytDim l) * (hookCount l v : ℝ))
+        = tilt 0 (sytDim l) * (k : ℝ))]
+    rw [show (fun l => tilt 0 (sytDim l) * (k : ℝ))
+          = (fun l => (k : ℝ) * tilt 0 (sytDim l)) from funext fun l => by ring,
+      list_sum_map_mul_left]
+    rfl
+  rw [hω, hZ]
+  unfold tiltedMean
+  rcases eq_or_ne (tiltNorm k 0) 0 with hZ0 | hZ0
+  · simp [hZ0]
+  · field_simp
+    ring
+
 end QOU.BraidsAndKnots.YoungDiagramKernelPincer
