@@ -224,6 +224,18 @@ def main() -> int:
         assert (5 * n * n + 7 * n) % 2 == 0
         return lshift(body, -((5 * n * n + 7 * n) // 2))
 
+    # ---- gate 4 (THE decisive one): C52(n) == GGMW eq (161), on the nose ----
+    g_direct = True
+    for n in range(N_MAX + 3):
+        C = {e: int(c) for e, c in _mb.C52(n).items() if c}
+        if [e for e in C if e % 2]:
+            g_direct = False
+            break
+        if {e // 2: c for e, c in C.items()} != Hgg(n):
+            g_direct = False
+    log(f"[gate] C52(n) (as a q-series, q = a²) == GGMW eq (161) H_n^(5₂)(q) "
+        f"for n ≤ {N_MAX + 2}: {'PASS' if g_direct else 'FAIL'}")
+
     # ---- the decisive comparison ----
     log("comparing the corpus tail against the published Habiro polynomial ...")
     rows, all_match = [], True
@@ -291,6 +303,12 @@ def main() -> int:
                      computed=1.0 if g_low else 0.0, expected=1.0,
                      tolerance=0.5,
                      source="H₀ = 1 and H₁ = −q²−q⁴ as printed in GGMW §4.2")
+    wb.add_assertion("c52_is_the_habiro_polynomial",
+                     computed=1.0 if g_direct else 0.0, expected=1.0,
+                     tolerance=0.5,
+                     source="the corpus's C52(n), read as a q-series at "
+                            "q = a², equals GGMW eq (161) H_n^{5₂}(q) "
+                            "term-by-term as integer Laurent polynomials")
     wb.add_assertion("comparison_completed",
                      computed=float(len(rows)), expected=float(N_MAX + 1),
                      tolerance=0.5,
@@ -301,22 +319,27 @@ def main() -> int:
     wb.add_data("n_exact_ratios", n_exact)
     wb.add_data("n_monomial_ratios", n_mono)
     wb.add_data("verdict",
-                ((f"IDENTIFIED: the corpus's (★)-normalized Masbaum tail "
-                  f"is the published Habiro polynomial H_n^{{5₂}} of GGMW "
-                  f"eq (161) up to an explicit monomial at every level "
-                  f"({n_mono}/{len(rows)}). The corpus object is therefore "
-                  f"a named object of the literature, and the route into "
-                  f"the extended matrix is GGMW's (ε,δ)-deformation of the "
-                  f"Habiro polynomials (eqs 165–172), NOT a linear map "
-                  f"into the geometric block span — which is why every "
-                  f"B1.2–B1.4′ search returned nothing."
-                  if n_mono == len(rows) else
-                  f"PARTIAL/NEGATIVE: {n_exact}/{len(rows)} exact Laurent "
-                  f"ratios, {n_mono} monomial. The corpus tail is NOT a "
-                  f"pure monomial multiple of GGMW eq (161) at every "
-                  f"level; the per-level ratios are recorded for "
-                  f"inspection (a normalization or convention difference "
-                  f"is the first thing to check).")
+                ((("IDENTIFIED — the corpus's Masbaum coefficient IS the "
+                   "published Habiro polynomial: C52(n), read as a q-series "
+                   "at q = a², equals GGMW arXiv:2111.04763v2 eq (161) "
+                   "H_n^{5₂}(q) EXACTLY (term-by-term integer Laurent "
+                   "equality, n ≤ 12) — no dressing, no monomial, nothing. "
+                   "Consistently, the (★) LHS / H_n ratio is "
+                   "q^{−(5n²+7n)/2}·(q;q)_n², precisely the (★) "
+                   "normalization, so it cancels identically. The proved "
+                   "(★) identity is therefore a bar-inversion statement "
+                   "about a named object of the literature. Consequence "
+                   "for the bridge programme: the route from this object "
+                   "into the extended matrix is GGMW's (ε,δ)-DEFORMATION "
+                   "of the Habiro polynomials (eqs 165–172), whose Taylor "
+                   "coefficients Q_m^{(a,b)} are the 6×6 matrix entries — "
+                   "NOT a linear map into the geometric block span. That "
+                   "is why B1.2–B1.4′ returned nothing: the construction "
+                   "is a deformation-and-expand, not a change of basis."
+                   if g_direct else
+                   f"NOT IDENTIFIED: C52(n) differs from GGMW eq (161); "
+                   f"{n_exact}/{len(rows)} exact Laurent ratios, {n_mono} "
+                   f"monomial. Check normalization/convention first."))
                  + " auditOnly.") if ok else "A gate failed — inspect.")
     wb.save()
     print(f"\n  assertions passed: {ok}   ({time.monotonic()-T0:.0f}s)")
