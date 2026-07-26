@@ -189,15 +189,33 @@ built on `p' = (p−1)/2` (Schubert normal form); *every* index (`r(j)`, `σ_j =
 | **b(8,3)** | **Whitehead (link)** | **3.5 — does not instantiate** |
 | b(2,1) | Hopf (link) | 0.5 — does not instantiate |
 
-So Takata's formula is intrinsically the *odd-p / knot* case. The Whitehead link needs the
-**even-p link analogue** — the same R-matrix Schubert state sum with `p` even ⇒ two
-components ⇒ `p'` and the `(q̄)_{n-1}` normalization changed for a 2-component closure. This
-is a genuine derivation (or a 2-bridge-*link* / double-twist-link reference — Nagasato,
-Lauridsen, or the link case of Hikami), **not** an ansatz-fit: the ansatz space (quadratic
-exponent + Pochhammer arguments + sign data over 3 twist regions of [2,1,2]) is too large to
-trust a small-N match as *the* formula rather than an overfit (§anti-guessing). Once it is
-in hand and **cross-validated against the O(N³) R-matrix engine at small N**, the
-*validated* hunt yields the Whitehead diagonal recurrence → `J_red` → `c_{σ_geom}(q=1)`.
+So Takata's formula is intrinsically the *odd-p / knot* case — and the double-twist-*knot*
+formulas (Lovejoy–Osburn `uploads/cJdoubletwistfinal.pdf` Thm 1.1; Lauridsen, for all m,p)
+are likewise knot-only. **The right tool for the Whitehead *link* is a different one.**
+
+### Resolution: the descendant framework handles links (the even-p problem was tool-specific)
+
+Garoufalidis–Kashaev, *The descendant colored Jones polynomials*
+(`uploads/descendants_colored_jones.pdf`), builds the colored Jones from the Kashaev-1994
+root-of-unity state sum and states it explicitly for *"even links, with each component
+colored by its own integer parameter."* So the Whitehead link's `J_red` **is** computable —
+the odd-p `p'=(p−1)/2` obstruction was a limitation of *Takata's* Schubert formula, not of
+the problem. This is the framework whose top-row-at-`q=1` **is** GGMW's `c_σ` (GGMW's
+`J_red`/Stokes-matrix picture is the resurgent lift of exactly this descendant object).
+
+**So the remaining unit of work is now precisely scoped and de-risked:**
+
+1. Implement the Garoufalidis–Kashaev / Kashaev-1994 descendant state sum for the 2-component
+   Whitehead link, each component colored `n` (the diagonal) — a scalar q-sum, not the
+   O(N⁹) R-matrix.
+2. **Cross-validate against the O(N³) R-matrix engine at small N** (the engine is exact and
+   Masbaum-validated — the anti-guessing gate).
+3. Feed the **already-validated** hunt (it recovers the 4₁ recurrence) → the Whitehead
+   diagonal recurrence → `J_red` → `c_{σ_geom}(q=1)`, the exact "factor".
+
+Every prerequisite except step 1's implementation is now in hand (fast-tower method proven,
+hunt proven, oracle engine validated, target formula GGMW-specified). Step 1 is the honest
+next unit — implementation, not a research unknown.
 
 **Two conflation cautions (not asserted as identities).** (i) The flat-connection index
 `σ` is *not* the Wedderburn partition index `λ` of `tr_M = Σ_λ y_λ χ^λ` — geometric
