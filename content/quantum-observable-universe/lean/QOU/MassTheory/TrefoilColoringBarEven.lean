@@ -54,10 +54,7 @@ theorem trefoilColoring_add_one (m : F) (hm : m ≠ 0) :
 theorem trefoilColoring_eq_zero_iff (m : F) (hm : m ≠ 0) :
     trefoilColoring m = 0 ↔ m ^ 4 - m ^ 2 + 1 = 0 := by
   unfold trefoilColoring
-  rw [div_eq_zero_iff]
-  simp only [neg_eq_zero, pow_eq_zero_iff, hm, or_false]
-  constructor
-  · intro h; exact h
-  · intro h; exact Or.inl h
+  rw [div_eq_zero_iff, neg_eq_zero, pow_eq_zero_iff (two_ne_zero)]
+  simp only [hm, or_false]
 
 end QOU.MassTheory
