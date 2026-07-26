@@ -1349,6 +1349,49 @@ theorem abs_deviation_le {N k : ℕ} (hN : 4 ≤ N) (hk : 1 ≤ k) (hkN : k ≤ 
           _ ≤ _ := add_le_add hdev_m₀1 hfall
           _ ≤ _ := by linarith [hc0]
 
+/-- **Saddle brick E5c-5 — the master error vanishes (sorry-free).** The
+    k-independent E5c-4 master error
+    `E(N) = |F(π/N)| + (π/N)|f(π/N)| + 7·(π/N)(|f(π/N)| + log 2)` tends to
+    `0` as `N → ∞`: the Clausen-primitive term by continuity of `clausen` at
+    `0` (the E4d-1 route), the first-grid term by E4d-2, and the `log 2` cell
+    term by `π/N → 0`. Together with E5c-4 this squeezes the scaled Kashaev
+    log-sum onto the Clausen primitive uniformly in `k`. (bean qou-2cmk) -/
+theorem tendsto_master_error :
+    Filter.Tendsto (fun N : ℕ =>
+      |(-clausen (2 * (π / N)) / 2)|
+        + (π / N) * |Real.log (2 * Real.sin (π / N))|
+        + 7 * ((π / N) * (|Real.log (2 * Real.sin (π / N))| + Real.log 2)))
+      Filter.atTop (nhds 0) := by
+  -- the Clausen-primitive term |F(π/N)| → 0
+  have hdiv : Filter.Tendsto (fun N : ℕ => 2 * π / N) Filter.atTop (nhds 0) :=
+    tendsto_const_div_atTop_nhds_zero_nat (2 * π)
+  have hcl : Filter.Tendsto (fun N : ℕ => clausen (2 * (π / N)))
+      Filter.atTop (nhds 0) := by
+    have hcomp := (continuous_clausen.tendsto 0).comp
+      (by simpa [mul_div_assoc] using hdiv)
+    simpa [clausen_zero, Function.comp_def, mul_div_assoc] using hcomp
+  have h1 : Filter.Tendsto (fun N : ℕ => |(-clausen (2 * (π / N)) / 2)|)
+      Filter.atTop (nhds 0) := by
+    have := ((hcl.neg).div_const 2).abs
+    simpa using this
+  -- the first-grid term (π/N)·|f(π/N)| → 0 (E4d-2 + abs)
+  have h2 : Filter.Tendsto
+      (fun N : ℕ => (π / N) * |Real.log (2 * Real.sin (π / N))|)
+      Filter.atTop (nhds 0) := by
+    have habs := tendsto_first_term.abs
+    rw [abs_zero] at habs
+    refine habs.congr (fun N => ?_)
+    rw [abs_mul, abs_of_nonneg (by positivity : (0:ℝ) ≤ π / N)]
+  -- the log 2 cell term (π/N)·log 2 → 0
+  have h3 : Filter.Tendsto (fun N : ℕ => (π / N) * Real.log 2)
+      Filter.atTop (nhds 0) := by
+    have := (tendsto_const_div_atTop_nhds_zero_nat π).mul_const (Real.log 2)
+    simpa using this
+  have hsum := (h1.add h2).add ((h2.add h3).const_mul 7)
+  norm_num at hsum
+  refine hsum.congr (fun N => ?_)
+  ring
+
 /-- **The series Clausen's derivative** `Cl_2'(θ) = -log(2 sin(θ/2))` for
     `θ ∈ (0, 2π)` — the derivative the filler flagged as needing Fourier
     infrastructure, now machine-proved (`hasDerivAt_Cl_2_series`). Dual-purpose: `V'(θ)` of
