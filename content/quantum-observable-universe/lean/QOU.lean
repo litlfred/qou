@@ -228,6 +228,8 @@ import QOU.FluidDynamics.q_bkm_criterion
 import QOU.FluidDynamics.TwoVortexChannelAlgebra
 import QOU.QBeta.BarOddLadderShape
 import QOU.QBeta.HabiroTailStar
+import QOU.QBeta.HabiroTailCorollaries
+import QOU.QBeta.LevelMixingBridge
 import QOU.QBeta.LeverLogDerivative
 import QOU.QBeta.MeridianLinearBarOdd
 import QOU.QBeta.ImQDecayLinearResponse
