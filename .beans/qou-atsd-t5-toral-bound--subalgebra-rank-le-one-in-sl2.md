@@ -31,3 +31,23 @@ HARD CORE (the genuine new infra — TIER this):
 DISCIPLINE: mark residual as cited conditional (-- Ref: [manuscript]/[Bourbaki-Lie]) — do NOT
 launder a fabricated instance. rank-one stays a premise until the toral bound is genuinely proved.
 This is epic 08a2 (hard Mathlib-gap infra, tiered) material — multi-session.
+
+--- SHARPENED 2026-07-26 (T4 landed: sl2_finrank_engel_h_eq_one, rank 𝔰𝔩₂ = 1) ---
+The reduction is now pinned to a SINGLE residual fact. Clean spine (all Mathlib, confirmed):
+  rank 𝔤 = finrank(engel_𝔤 x*)   [isRegular_iff_finrank_engel_eq_rank, x* a 𝔤-regular elt, Infinite K]
+  rank 𝔤 ≤ finrank(engel_𝔤 y)    [rank_le_finrank_engel, ANY y ∈ 𝔤]
+  engel_𝔤 y = maxGenEigenspace(ad_𝔤 y, 0), and ad_𝔤 y = (ad_𝔰𝔩₂ y)|_𝔤 (bracket agrees) ⇒
+    engel_𝔤 y ↪ engel_𝔰𝔩₂ y  (generalized-0-eigvec in 𝔤 is one in 𝔰𝔩₂).
+Two viable routes to rank 𝔤 ≤ 1:
+  (R1) ∃ y ∈ 𝔤 with finrank(engel_𝔤 y) ≤ 1. Verified by hand for the three subalgebra classes
+       (span{e}: y=e, ad=0, engel=span{e}; Borel span{h,e}: y=h, engel=span{h}; 𝔰𝔩₂: y=h) — but the
+       witness y is 𝔤-dependent, so a UNIFORM proof still needs 𝔰𝔩₂ structure.
+  (R2) engel_𝔤 x* (x* 𝔤-regular) is a nilpotent (Cartan) subalgebra of 𝔤 ⊆ 𝔰𝔩₂; residual =
+       "a nilpotent subalgebra of 𝔰𝔩₂ has finrank ≤ 1" (2-dim subalgebras = Borel, non-nilpotent;
+       3-dim = 𝔰𝔩₂, semisimple). Needs: (a) LieRing.IsNilpotent(engel of regular) [Cartan], (b) the
+       sub-of-sub embedding as a LieSubalgebra of 𝔰𝔩₂, (c) classify: nilpotent ⊆ 𝔰𝔩₂ ⇒ abelian
+       ⇒ dim ≤ 1 (max abelian in 𝔰𝔩₂ is a Cartan, dim 1). (c) is the genuine new 𝔰𝔩₂-structure lemma.
+GENERAL reusable one-liner already available to package the reduction:
+  rank L ≤ n  ⇐  ∃ y, finrank(engel y) ≤ n   (just `rank_le_finrank_engel K y |>.trans`).
+Next-session start point: prove (c) — "abelian (or nilpotent) subalgebra of sl 2 K has finrank ≤ 1"
+— as the keystone; everything else is plumbing on the confirmed spine.
