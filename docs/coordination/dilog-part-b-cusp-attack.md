@@ -284,3 +284,35 @@ Until (1)–(2) land, the iterated closure (#4343) stands as the honest *mathema
 result and the na-Stokes selection stands as the *stated, principled* — but not yet
 Lean-proved — resolution of MQ1. Anti-laundering: this is recorded as the direction and
 scaffolded as a **conjecture**, not wired to production as proved.
+
+#### Correction (2026-07-26, same tranche): the curvature = −π²/3 route is REFUTED — −π²/3 is abelian dilog data, not a non-abelian anomaly
+
+The "concrete lead" above (`lem:yekutieli-leading-coefficient` → the curvature term is
+`−π²/3`) **does not hold up**. Investigated in
+[`docs/audits/2026-07-26-nastokes-curvature-yekutieli-coefficient.md`](../audits/2026-07-26-nastokes-curvature-yekutieli-coefficient.md).
+Findings:
+
+- **`lem:yekutieli-leading-coefficient` = a discrete `H²` obstruction integer (`= 1`),**
+  not a series/limit/transcendental (the leading coefficient of the monic genus-filtration
+  Chebyshev basis; `monicCheb_monic` ⇒ `leadingChebyshev_eq_one`, sorry-free). No multiple
+  of `1` is `−π²/3`. **`no-match`.**
+- **`−π²/3 = −2·Li₂(1)` is an *abelian* dilog cusp value** — fully accounted for by two
+  boundary `π²/6` terms already proved sorry-free (W-P1 Abel limit
+  `tendsto_LiTwo_nhdsWithin_lt_one`; W-P2 `euler_tail_asymptotic`). It is **not** a
+  commutator/curvature term: the corpus's own `holonomy_perm`
+  (`YekutieliIntegration.lean`, sorry-free) proves the path-ordering defect **vanishes in a
+  `CommMonoid`**, and `Φ_n = ∏(1−xqᵏ)⁻¹` is a product of commuting scalars (the τ-shadow).
+  A genuine commutator would live at the non-commutative **fibre** level
+  (`germ-commutator-q-curvature`), not in the scalar observable. Calling scalar `−π²/3` a
+  non-abelian curvature is a category error. **`no-match`** (at best `numerical-coincidence`).
+
+**What survives.** Only the **ordering selection** (MQ1: na-Stokes ⇒ iterated, not joint)
+is defensible — `structural-partial`, corpus-supported (`holonomy` = ordered `List.prod`;
+joint limit legal only in the abelian degeneration), but not yet Lean-proved that the
+specific `Φ_n` is the Yekutieli MI of the specific `𝐂`-connection (bean qou-zbcj, still
+open). That sound half — and *only* that half — is encoded in the new conditional class
+`QOU.Archimedean.NaStokesPartBOrdering` (`DilogNaStokesOrdering.lean`, sorry-free,
+lean-verify exit 0): its theorem derives the Part-B total `Li₂(x) − π²/3` from the two
+proved bricks by uniqueness of limits, explicitly **not** claiming `−π²/3` is a curvature
+term. Bean qou-tw5z (curvature route) → outcome `no-match`; qou-yczy (probe) → not needed
+(the compute was symbolic/corpus).
