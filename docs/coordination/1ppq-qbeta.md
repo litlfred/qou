@@ -2436,3 +2436,30 @@ and argues (formalize-first, DOF count ~L²N unknowns vs N equations)
 that a scan over `M` would fit by construction, so the next rung must
 derive `M` from the Habiro comultiplication and check it, not search
 it. No fit; nothing wired; c₃ tier unchanged (SETTLED #1580).
+
+**2026-07-26 (B1.5 step 2 sharpened, branch
+claude/valuation-bound-sharpen-2026-07-26) — THE LEVEL-MAP COEFFICIENT
+FLOOR IS (1−q)^{2n+3m}, AND IT IS EXACTLY TIGHT.** Lean
+`QOU/QBeta/LevelMapValuation.lean` (`sub_one_pow_dvd_masLevel`,
+`sub_one_pow_dvd_coeff_combined`, `natDegree_ge_of_bridge_combined`;
+lean-direct exit 0, sorry-free): both indices cost. The GGM block term
+carries `(q;q)_m³` in the DENOMINATOR — an order-3m pole at q=1 that
+the coefficient must pay for — while the Masbaum level term
+`T^Mas_n = C_n·(q;q)_n²` carries its Pochhammer in the NUMERATOR and so
+*contributes* vanishing of order 2n. A single-level bridge coefficient
+is therefore forced to carry `(1−q)^{2n+3m}`, and over ℤ[X] its degree
+is ≥ 2n+3m. The earlier `3m` bound (PR #4327) is the n=0 case; the
+sharpening matters because n is the index that runs when more orders of
+the tail are demanded — reaching Masbaum level n costs 2n degrees of
+coefficient *regardless of m*, so any bounded-degree coefficient family
+covers only a finite triangle of (n,m). Probe
+`qbeta_5two_masbaum_valuation_probe.py` (3/3, exact synthetic division
+over ℤ — no floats, no tolerance): ν(C_n) = 0 for every n ≤ 12, hence
+ν(T^Mas_n) = 2n exactly ⇒ **the proved floor is TIGHT** and cannot be
+improved by this argument. Scope note: the valuation argument is
+specific to the j=0 block row, where the numerator is a monomial (a
+unit) and `1/(q;q)_m³` is genuinely rational. The j ≥ 1 rows carry
+`E1n`/`E2n` Lambert series, which are not rational functions, so no
+algebraic pole statement is available there — the bound does NOT extend
+to them, contrary to the initial expectation. No fit; nothing wired; no
+bridge claimed.
