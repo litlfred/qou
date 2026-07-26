@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-07-13T20:59:19.034838+00:00",
-  "commitSha": "2ec388a11a55c4ee3c017c586a7ad245f7156896",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-26T19:36:16.138679+00:00",
+  "commitSha": "9a700577a0e38c41d95baaa9e349e3769674c2a6",
   "assertions": [
     {
       "name": "anchors_reproduce",
@@ -45,11 +45,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 12,
   "computation": "qbeta-udeform-map-constraint",
   "scriptFile": "qbeta_udeform_map_constraint_probe.py",
   "scriptHash": "f2cef12ff326",
-  "scriptCommitSha": "2ec388a11a55c4ee3c017c586a7ad245f7156896",
+  "scriptCommitSha": "f3e5abc0157bf8024374be8005653eae302ef237",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -58,7 +58,10 @@
   },
   "environment": {
     "python": "3.11.15",
-    "mpmath": "1.4.1"
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "Constraint characterization of the open substrate→deformation map u(q₀) in S = Im 𝔙(u(q₀)) (conj:binding-qbeta-complex-volume S-channel, Lean SDeformedVolumeChannel): NZ leading-form inversion at both anchors + q*, and scope-(a) pruning of the minimal structural families. F1 (fixed-phase, S∝d²) refuted by the sign flip; F2 (phase-crossing, S∝d³) refuted by the anchor ratio; F3 (one component linear through zero at q*, the other anchor-constant) survives with product-slope k = S'(q*)/√3. Measurement + pruning only — no u-map wired, no c_k proposed, no instance fabricated.",
   "contentBlock": "conj:binding-qbeta-complex-volume",
