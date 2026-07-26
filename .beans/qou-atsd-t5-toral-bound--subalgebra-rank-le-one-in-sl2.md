@@ -51,3 +51,25 @@ GENERAL reusable one-liner already available to package the reduction:
   rank L ≤ n  ⇐  ∃ y, finrank(engel y) ≤ n   (just `rank_le_finrank_engel K y |>.trans`).
 Next-session start point: prove (c) — "abelian (or nilpotent) subalgebra of sl 2 K has finrank ≤ 1"
 — as the keystone; everything else is plumbing on the confirmed spine.
+
+--- WORKED KEYSTONE PROOF (2026-07-26, transcription-ready) ---
+KEYSTONE: sl2_ker_ad_le_span {K} [Field K] (h2 : 2≠0) (X : sl (Fin 2) K) (hX : X ≠ 0) :
+  LinearMap.ker (ad K (sl 2 K) X) ≤ Submodule.span K {X}.
+API pinned: sl_bracket : ⁅A,B⁆.val = A.val*B.val - B.val*A.val (rfl); sl membership = trace 0
+  (X.2 : X.val ∈ ker (traceLinearMap); Matrix.trace_fin_two ⇒ X.val 1 1 = - X.val 0 0);
+  ZeroMemClass.coe_zero; Submodule.mem_span_singleton (∃ λ, λ•X = y); Submodule.coe_smul;
+  Matrix.mul_apply + Fin.sum_univ_two + Matrix.sub_apply.
+Proof: y ∈ ker ⇒ ⁅X,y⁆=0 ⇒ hcomm : X.val*y.val - y.val*X.val = 0. Let a=X00,b=X01,c=X10 (X11=-a);
+  s=y00,t=y01,u=y10 (y11=-s). The 4 commutator entries give (using 2≠0):
+    (0,0): b*u - c*t = 0 ;  (0,1): 2(a*t - b*s)=0 ;  (1,0): 2(c*s - a*u)=0 ;  (1,1) = -(0,0).
+  [This is exactly (a,b,c) × (s,t,u) = 0 in K³.]  Case split on X ≠ 0 (¬(a=b=c=0)):
+    a≠0: λ:=s/a; t=bs/a=λb (from at=bs), u=cs/a=λc (from cs=au), s=λa. 
+    a=0,b≠0: λ:=t/b; s=0 (bs=at=0), u=ct/b=λc (from bu=ct), t=λb.
+    a=0,b=0,c≠0: λ:=u/c; s=0 (cs=au=0), t=0 (ct=bu=0), u=λc.
+  Then y=λ•X via Subtype.ext; funext i j; fin_cases; Submodule.coe_smul; field_simp; ring.
+FINRANK COROLLARY: sl2_centralizer_finrank_le_one : X≠0 ⇒ finrank(ker(ad X)) ≤ 1 :=
+  (Submodule.finrank_mono (sl2_ker_ad_le_span ..)).trans (by rw finrank_span_singleton hX; ...).
+TIER-B ASSEMBLY (all Mathlib-supported): H nilpotent subalgebra of 𝔤⊆𝔰𝔩₂, H≠0 ⇒
+  non_trivial_center_of_isNilpotent ⇒ ∃ X∈Z(H), X≠0 ⇒ H ⊆ ker(ad_𝔰𝔩₂ X) ⇒ finrank H ≤ 1.
+  rank 𝔤 = finrank(engel_𝔤 x*) [engel of regular = Cartan, nilpotent] ⇒ rank 𝔤 ≤ 1.
+STATUS: math complete + API pinned; NOT transcribed/verified (blind ~2.5min compile loop, lsp down).
