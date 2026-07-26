@@ -35,6 +35,16 @@ shared `catalan_G` / Lobachevsky infrastructure:
 - **`vol_L5a1 = vol_B3 / 2`** — exact half-Borromean identity (one octahedron vs two);
 - `vol_L5a1 = 8·Λ(π/4)`, positivity, `3.66 < vol_L5a1 < 3.67`, `vol_L5a1 < vol_B3`.
 
+**Verified sorry-free (2026-07-26).** After restoring the `lake-cache/qou-v4-24-0`
+oleans (6991 mathlib oleans; the mathlib cache CDN is 403-firewalled but the orphan
+branch is reachable), `lean`-direct on the module returns exit 0 (a genuine compile —
+no olean existed for the new file), and `#print axioms` on every theorem shows only the
+three standard Mathlib axioms `[propext, Classical.choice, Quot.sound]` — **no `sorryAx`**.
+The octahedral-form theorem `vol_L5a1_eq_eight_lobachevsky` additionally depends on the
+named shared-infra axiom `QOU.Archimedean.lobachevsky_pi_div_four_eq_half_catalan`
+(the special value Λ(π/4)=G/2), pre-existing on the Borromean sibling — the main result
+`vol_L5a1_eq_4_catalan` does not.
+
 The **Volume Conjecture itself is NOT Lean-proved** and is not laundered into a theorem
 (§Axiomatization-is-NOT-a-Proof): the asymptotic stays a conjecture-class; the numerics
 above are evidence for its instance, not a proof.
