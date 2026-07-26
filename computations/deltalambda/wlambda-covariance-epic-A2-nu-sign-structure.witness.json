@@ -1,0 +1,298 @@
+{
+ "description": "nu-sign structure: Descartes-Laguerre narrowing + single-real-zero + long-hook tail positivity for the A2/FMP mechanism.",
+ "epic": "qou-x631",
+ "attack": "qou-ogrk (A2), FMP mechanism narrowing",
+ "verdict": {
+  "descartes_route": "INSUFFICIENT as-is: sign changes 5..9, not <= 2",
+  "single_real_zero_observed": true,
+  "nu1_always_negative": false,
+  "tail_positivity": {
+   "max_T_over_n": 1.0,
+   "statement": "nu_v > 0 for all v >= T(n), with T(n)/n bounded (~<= 0.72 observed)"
+  },
+  "interpretation": "FMP <=> alpha = 0 is the ONLY real zero of M (M(-inf) = nu_1 < 0, M negative on the negative axis, positive above). Descartes counting alone cannot give this (too many coefficient sign changes); the observed mechanism is bulk-cancellation + long-hook tail positivity. New provable-shaped sub-target (TAIL): nu_v >= 0 for v > n/2 + O(1)."
+ },
+ "per_n": [
+  {
+   "n": 3,
+   "sign_changes": 1,
+   "pattern": "-+0",
+   "v_max": 3,
+   "neg_axis_zeros": [],
+   "tail_pos_from": 3,
+   "tail_over_n": 1.0,
+   "nu1_negative": true
+  },
+  {
+   "n": 4,
+   "sign_changes": 1,
+   "pattern": "0-0+",
+   "v_max": 4,
+   "neg_axis_zeros": [],
+   "tail_pos_from": 4,
+   "tail_over_n": 1.0,
+   "nu1_negative": false
+  },
+  {
+   "n": 5,
+   "sign_changes": 1,
+   "pattern": "-00-+",
+   "v_max": 5,
+   "neg_axis_zeros": [],
+   "tail_pos_from": 5,
+   "tail_over_n": 1.0,
+   "nu1_negative": true
+  },
+  {
+   "n": 6,
+   "sign_changes": 5,
+   "pattern": "-+-+-+",
+   "v_max": 6,
+   "neg_axis_zeros": [],
+   "tail_pos_from": 6,
+   "tail_over_n": 1.0,
+   "nu1_negative": true
+  },
+  {
+   "n": 7,
+   "sign_changes": 3,
+   "pattern": "-++---+",
+   "v_max": 7,
+   "neg_axis_zeros": [],
+   "tail_pos_from": 7,
+   "tail_over_n": 1.0,
+   "nu1_negative": true
+  },
+  {
+   "n": 8,
+   "sign_changes": 5,
+   "pattern": "--+-+-++",
+   "v_max": 8,
+   "neg_axis_zeros": [],
+   "tail_pos_from": 7,
+   "tail_over_n": 0.875,
+   "nu1_negative": true
+  },
+  {
+   "n": 9,
+   "sign_changes": 3,
+   "pattern": "-+-----++",
+   "v_max": 9,
+   "neg_axis_zeros": [],
+   "tail_pos_from": 8,
+   "tail_over_n": 0.8888888888888888,
+   "nu1_negative": true
+  },
+  {
+   "n": 10,
+   "sign_changes": 7,
+   "pattern": "-+-+-+-+++",
+   "v_max": 10,
+   "neg_axis_zeros": [],
+   "tail_pos_from": 8,
+   "tail_over_n": 0.8,
+   "nu1_negative": true
+  },
+  {
+   "n": 11,
+   "sign_changes": 3,
+   "pattern": "-+------+++",
+   "v_max": 11,
+   "neg_axis_zeros": [],
+   "tail_pos_from": 9,
+   "tail_over_n": 0.8181818181818182,
+   "nu1_negative": true
+  },
+  {
+   "n": 12,
+   "sign_changes": 7,
+   "pattern": "-++-+-+-++++",
+   "v_max": 12,
+   "neg_axis_zeros": [],
+   "tail_pos_from": 9,
+   "tail_over_n": 0.75,
+   "nu1_negative": true
+  },
+  {
+   "n": 13,
+   "sign_changes": 5,
+   "pattern": "-++-+----++++",
+   "v_max": 13,
+   "neg_axis_zeros": [],
+   "tail_pos_from": 10,
+   "tail_over_n": 0.7692307692307693,
+   "nu1_negative": true
+  },
+  {
+   "n": 14,
+   "sign_changes": 7,
+   "pattern": "-++--+-+-+++++",
+   "v_max": 14,
+   "neg_axis_zeros": [],
+   "tail_pos_from": 10,
+   "tail_over_n": 0.7142857142857143,
+   "nu1_negative": true
+  },
+  {
+   "n": 15,
+   "sign_changes": 9,
+   "pattern": "-+-+-+-+--+++++",
+   "v_max": 15,
+   "neg_axis_zeros": [],
+   "tail_pos_from": 11,
+   "tail_over_n": 0.7333333333333333,
+   "nu1_negative": true
+  },
+  {
+   "n": 16,
+   "sign_changes": 7,
+   "pattern": "-+-+----+-++++++",
+   "v_max": 16,
+   "neg_axis_zeros": [],
+   "tail_pos_from": 11,
+   "tail_over_n": 0.6875,
+   "nu1_negative": true
+  },
+  {
+   "n": 17,
+   "sign_changes": 5,
+   "pattern": "-+------+--++++++",
+   "v_max": 17,
+   "neg_axis_zeros": [],
+   "tail_pos_from": 12,
+   "tail_over_n": 0.7058823529411765,
+   "nu1_negative": true
+  },
+  {
+   "n": 18,
+   "sign_changes": 7,
+   "pattern": "-++-+---+--+++++++",
+   "v_max": 18,
+   "neg_axis_zeros": [],
+   "tail_pos_from": 12,
+   "tail_over_n": 0.6666666666666666,
+   "nu1_negative": true
+  },
+  {
+   "n": 19,
+   "sign_changes": 7,
+   "pattern": "-++-+----+-++++++++",
+   "v_max": 19,
+   "neg_axis_zeros": [],
+   "tail_pos_from": 12,
+   "tail_over_n": 0.631578947368421,
+   "nu1_negative": true
+  },
+  {
+   "n": 20,
+   "sign_changes": 5,
+   "pattern": "-++------+--++++++++",
+   "v_max": 20,
+   "neg_axis_zeros": [],
+   "tail_pos_from": 13,
+   "tail_over_n": 0.65,
+   "nu1_negative": true
+  },
+  {
+   "n": 21,
+   "sign_changes": 7,
+   "pattern": "-+++-+---++-+++++++++",
+   "v_max": 21,
+   "neg_axis_zeros": [],
+   "tail_pos_from": 13,
+   "tail_over_n": 0.6190476190476191,
+   "nu1_negative": true
+  },
+  {
+   "n": 22,
+   "sign_changes": 9,
+   "pattern": "-+-+-+----+-++++++++++",
+   "v_max": 22,
+   "neg_axis_zeros": [],
+   "tail_pos_from": 13,
+   "tail_over_n": 0.5909090909090909,
+   "nu1_negative": true
+  },
+  {
+   "n": 23,
+   "sign_changes": 7,
+   "pattern": "-+-+------+--++++++++++",
+   "v_max": 23,
+   "neg_axis_zeros": [],
+   "tail_pos_from": 14,
+   "tail_over_n": 0.6086956521739131,
+   "nu1_negative": true
+  },
+  {
+   "n": 24,
+   "sign_changes": 7,
+   "pattern": "-+----+---++-+++++++++++",
+   "v_max": 24,
+   "neg_axis_zeros": [],
+   "tail_pos_from": 14,
+   "tail_over_n": 0.5833333333333334,
+   "nu1_negative": true
+  },
+  {
+   "n": 25,
+   "sign_changes": 9,
+   "pattern": "-++-+-+----+-++++++++++++",
+   "v_max": 25,
+   "neg_axis_zeros": [],
+   "tail_pos_from": 14,
+   "tail_over_n": 0.56,
+   "nu1_negative": true
+  },
+  {
+   "n": 26,
+   "sign_changes": 7,
+   "pattern": "-++-+------+--++++++++++++",
+   "v_max": 26,
+   "neg_axis_zeros": [],
+   "tail_pos_from": 15,
+   "tail_over_n": 0.5769230769230769,
+   "nu1_negative": true
+  },
+  {
+   "n": 27,
+   "sign_changes": 7,
+   "pattern": "-++-+------++-+++++++++++++",
+   "v_max": 27,
+   "neg_axis_zeros": [],
+   "tail_pos_from": 15,
+   "tail_over_n": 0.5555555555555556,
+   "nu1_negative": true
+  },
+  {
+   "n": 28,
+   "sign_changes": 5,
+   "pattern": "-++---------+-++++++++++++++",
+   "v_max": 28,
+   "neg_axis_zeros": [],
+   "tail_pos_from": 15,
+   "tail_over_n": 0.5357142857142857,
+   "nu1_negative": true
+  },
+  {
+   "n": 29,
+   "sign_changes": 7,
+   "pattern": "-+++-+------++-++++++++++++++",
+   "v_max": 29,
+   "neg_axis_zeros": [],
+   "tail_pos_from": 16,
+   "tail_over_n": 0.5517241379310345,
+   "nu1_negative": true
+  },
+  {
+   "n": 30,
+   "sign_changes": 9,
+   "pattern": "-+-+-+------++-+++++++++++++++",
+   "v_max": 30,
+   "neg_axis_zeros": [],
+   "tail_pos_from": 16,
+   "tail_over_n": 0.5333333333333333,
+   "nu1_negative": true
+  }
+ ],
+ "runtime_s": 2.6081833839416504
+}
