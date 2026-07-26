@@ -1,0 +1,175 @@
+{
+ "description": "A2 (TAIL) first instance: exact closed form for nu_n (hook-length-n covariance), derived and verified.",
+ "epic": "qou-x631",
+ "attack": "qou-ogrk (A2), TAIL sub-target",
+ "verdict": {
+  "all_checks_pass": true,
+  "closed_form": "nu_n = n (n-2)(n-3) C(2n-4, n-2) / (3 n!)",
+  "sign": "== 0 at n = 3; > 0 for n >= 4 (manifest from the formula)",
+  "status": "First (TAIL) instance in closed form: derivation via the carrier lemma + binomial-square sums, verified exactly n <= 25. Lean formalization queued (carrier lemma is list-level combinatorics on the existing cells/hookLen machinery; the binomial identity is a finite sum)."
+ },
+ "per_n": [
+  {
+   "n": 3,
+   "carriers_ok": true,
+   "closed_form_match": true,
+   "nu_n": "0",
+   "nonneg": true
+  },
+  {
+   "n": 4,
+   "carriers_ok": true,
+   "closed_form_match": true,
+   "nu_n": "2/3",
+   "nonneg": true
+  },
+  {
+   "n": 5,
+   "carriers_ok": true,
+   "closed_form_match": true,
+   "nu_n": "5/3",
+   "nonneg": true
+  },
+  {
+   "n": 6,
+   "carriers_ok": true,
+   "closed_form_match": true,
+   "nu_n": "7/3",
+   "nonneg": true
+  },
+  {
+   "n": 7,
+   "carriers_ok": true,
+   "closed_form_match": true,
+   "nu_n": "7/3",
+   "nonneg": true
+  },
+  {
+   "n": 8,
+   "carriers_ok": true,
+   "closed_form_match": true,
+   "nu_n": "11/6",
+   "nonneg": true
+  },
+  {
+   "n": 9,
+   "carriers_ok": true,
+   "closed_form_match": true,
+   "nu_n": "143/120",
+   "nonneg": true
+  },
+  {
+   "n": 10,
+   "carriers_ok": true,
+   "closed_form_match": true,
+   "nu_n": "143/216",
+   "nonneg": true
+  },
+  {
+   "n": 11,
+   "carriers_ok": true,
+   "closed_form_match": true,
+   "nu_n": "2431/7560",
+   "nonneg": true
+  },
+  {
+   "n": 12,
+   "carriers_ok": true,
+   "closed_form_match": true,
+   "nu_n": "4199/30240",
+   "nonneg": true
+  },
+  {
+   "n": 13,
+   "carriers_ok": true,
+   "closed_form_match": true,
+   "nu_n": "4199/77760",
+   "nonneg": true
+  },
+  {
+   "n": 14,
+   "carriers_ok": true,
+   "closed_form_match": true,
+   "nu_n": "7429/388800",
+   "nonneg": true
+  },
+  {
+   "n": 15,
+   "carriers_ok": true,
+   "closed_form_match": true,
+   "nu_n": "7429/1197504",
+   "nonneg": true
+  },
+  {
+   "n": 16,
+   "carriers_ok": true,
+   "closed_form_match": true,
+   "nu_n": "7429/3991680",
+   "nonneg": true
+  },
+  {
+   "n": 17,
+   "carriers_ok": true,
+   "closed_form_match": true,
+   "nu_n": "215441/415134720",
+   "nonneg": true
+  },
+  {
+   "n": 18,
+   "carriers_ok": true,
+   "closed_form_match": true,
+   "nu_n": "392863/2905943040",
+   "nonneg": true
+  },
+  {
+   "n": 19,
+   "carriers_ok": true,
+   "closed_form_match": true,
+   "nu_n": "392863/11887948800",
+   "nonneg": true
+  },
+  {
+   "n": 20,
+   "carriers_ok": true,
+   "closed_form_match": true,
+   "nu_n": "20677/2717245440",
+   "nonneg": true
+  },
+  {
+   "n": 21,
+   "carriers_ok": true,
+   "closed_form_match": true,
+   "nu_n": "765049/461931724800",
+   "nonneg": true
+  },
+  {
+   "n": 22,
+   "carriers_ok": true,
+   "closed_form_match": true,
+   "nu_n": "765049/2238592204800",
+   "nonneg": true
+  },
+  {
+   "n": 23,
+   "carriers_ok": true,
+   "closed_form_match": true,
+   "nu_n": "31367009/467865770803200",
+   "nonneg": true
+  },
+  {
+   "n": 24,
+   "carriers_ok": true,
+   "closed_form_match": true,
+   "nu_n": "58642669/4678657708032000",
+   "nonneg": true
+  },
+  {
+   "n": 25,
+   "carriers_ok": true,
+   "closed_form_match": true,
+   "nu_n": "58642669/26200483164979200",
+   "nonneg": true
+  }
+ ],
+ "runtime_s": 0.1825253963470459
+}
