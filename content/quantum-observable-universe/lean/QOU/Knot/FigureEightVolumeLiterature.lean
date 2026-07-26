@@ -1,22 +1,22 @@
 /-
-  Figure-eight volume conjecture — the literature instance (G1 of the
-  2026-07-12 Borel/alien-calculus utilization audit).
+  Figure-eight volume conjecture — the instance, now MACHINE-PROVED
+  (2026-07-26, bean qou-f248; formerly G1 of the 2026-07-12 Borel/alien-
+  calculus utilization audit).
 
   `QOU.Knot.FigureEightVolume` carries the 4₁ volume conjecture as the
-  conditional class `VolumeConjecture41` and its own header records that the
-  statement is PROVED in the literature (Andersen–Hansen; Ohtsuki) by a
-  saddle-point / Borel-resummation analysis not available in Mathlib. This
-  file supplies that literature result as a CITED instance, so downstream
-  `[VolumeConjecture41]`-conditional results fire — honestly: the `sorry`
-  below is the queued Borel-resummation formalization (bean el8w /
-  `QOU.Mathlib.Borel`), NOT an open mathematical question. Per the
-  anti-laundering rule this is a citation, not a Lean proof; the derived
-  status is `has_sorry` with a published reference, the repo's standard
-  encoding of an established-in-the-literature theorem.
+  conditional class `VolumeConjecture41`. This file HISTORICALLY supplied the
+  Andersen–Hansen / Ohtsuki literature result as a CITED `sorry` instance;
+  as of 2026-07-26 the `sorry` is DISCHARGED: the saddle program (bricks
+  E1–E5d, milestone qou-cpfn) proves the limit outright as
+  `tendsto_log_kashaev_vol` in `FigureEightVolumeSqueeze.lean` — an
+  elementary Riemann-sum squeeze against the Clausen primitive, with the
+  exact transcendental target `VOL_4_1 = 2·Cl₂(π/3)` (qou-yf47 repair).
+  The instance below is now a genuine sorry-free Lean proof; downstream
+  `[VolumeConjecture41]`-conditional results are unconditional in-repo.
 
-  Sorry-free content in this file: the well-definedness glue
-  (`log_kashaev_nonneg`) making the sequence in the limit statement
-  non-negative from the `kashaev_ge_one` floor.
+  Also here: the well-definedness glue (`log_kashaev_nonneg`) making the
+  sequence in the limit statement non-negative from the `kashaev_ge_one`
+  floor.
 
   Archimedean (ℝ): inherits Real.log / Real.cos from FigureEightVolume (§7c).
 
@@ -24,7 +24,7 @@
   -- Ref: [murakami-murakami2001] https://doi.org/10.1007/BF02392716
 -/
 
-import QOU.Knot.FigureEightVolume
+import QOU.Knot.FigureEightVolumeSqueeze
 
 namespace QOU.Knot.FigureEightVolume
 
@@ -36,43 +36,26 @@ open Real
 theorem log_kashaev_nonneg (N : ℕ) (hN : 1 ≤ N) : 0 ≤ Real.log (kashaev N) :=
   Real.log_nonneg (kashaev_ge_one N hN)
 
-/-- **The literature instance of the figure-eight volume conjecture**
-    (Kashaev–Murakami–Murakami statement; proved for `4₁` — Andersen–Hansen,
-    Ohtsuki — via saddle-point / Borel-resummation analysis).
+/-- **The figure-eight volume conjecture, machine-proved** (Kashaev–Murakami–
+    Murakami statement for `4₁`; proved in the literature by Andersen–Hansen /
+    Ohtsuki, and proved HERE, sorry-free, by the saddle program's Riemann-sum
+    squeeze `tendsto_log_kashaev_vol` — `FigureEightVolumeSqueeze.lean`).
 
-    STATUS (2026-07-13). The Borel-resummation UNIQUENESS half of that analysis
-    is now formalized sorry-free in `QOU.Mathlib.Borel` (bean el8w): the
-    Watson / Nevanlinna–Sokal theorem `watson_uniqueness_rhp_open` (open right
-    half-plane) and `watson_uniqueness_sector` (sector-at-0), built on the
-    Gevrey-1 ⇒ Borel-disc convergence and the regularity `borelSum_eq_tsum`.
-    That engine does NOT by itself close the `sorry` below: `limit_eq_vol` is a
-    concrete saddle-point ASYMPTOTIC of the explicit Kashaev sum — its EXISTENCE
-    and VALUE (growth rate `= Vol(4₁)`) are the load-bearing Andersen–Hansen /
-    Ohtsuki content, of which uniqueness is only one ingredient. So the `sorry`
-    remains the cited established-in-the-literature theorem (per the
-    anti-laundering rule a citation, not a Lean proof); wiring the general
-    uniqueness engine to this specific series' saddle-point evaluation is a
-    separate open formalization item, not an automatic consequence. Downstream
-    results conditional on `[VolumeConjecture41]` remain conditional on this
-    single cited declaration.
+    HISTORY. Until 2026-07-26 this instance was a cited `sorry` (the
+    established-in-the-literature encoding), with two obstructions: (a) the
+    saddle asymptotic was unformalized, and (b) `VOL_4_1` was a truncated
+    rational decimal ≈ 1e-30 away from `2·Cl₂(π/3)`, making the statement
+    literally false. (b) was repaired by bean qou-yf47 (exact
+    `VOL_4_1 = 2·Cl₂(π/3)`); (a) was closed by bricks E1–E5d (milestone
+    qou-cpfn): E5a log-bridge, E4/E5c Riemann-sum-vs-Clausen deviation with
+    k-uniform master error `E(N) → 0`, the E2/E3 Cl₂ extremum at `5π/3`, and
+    the E5d two-envelope squeeze. No Borel resummation was needed — the
+    root-of-unity Kashaev sum for `4₁` admits this elementary route. -/
+instance volumeConjecture41_of_literature : VolumeConjecture41 :=
+  ⟨tendsto_log_kashaev_vol⟩
 
-    STATEMENT REPAIR (2026-07-26, bean qou-yf47). `VOL_4_1` is now the EXACT
-    `2·Cl₂(π/3)` (it was a truncated rational decimal differing by ≈ 1e-30,
-    which made this very limit statement false as stated and hence permanently
-    undischargeable). With the repaired target the statement is the true
-    Andersen–Hansen / Ohtsuki theorem, and the in-repo discharge path is the
-    E5 deviation program in `QOU/Knot/Clausen.lean` (E5c-1…E5c-5: the all-k
-    uniform Riemann-sum-vs-Clausen deviation bound `abs_deviation_le` with
-    master error `E(N) → 0` — `tendsto_master_error`), to be assembled by the
-    E5d squeeze (bean qou-f248). -/
-instance volumeConjecture41_of_literature : VolumeConjecture41 := by
-  constructor
-  -- Ref: [andersen-hansen2006] https://doi.org/10.1142/S0218216506004555
-  sorry
-
-/-- The keystone Re-face, now unconditional modulo the cited literature
-    instance: the Kashaev root-of-unity saddle reproduces the figure-eight
-    hyperbolic volume. -/
+/-- The keystone Re-face, now fully unconditional and sorry-free: the Kashaev
+    root-of-unity saddle reproduces the figure-eight hyperbolic volume. -/
 theorem kashaev_saddle_volume :
     Filter.Tendsto (fun N : ℕ => (2 * π / (N : ℝ)) * Real.log (kashaev N))
       Filter.atTop (nhds VOL_4_1) :=
