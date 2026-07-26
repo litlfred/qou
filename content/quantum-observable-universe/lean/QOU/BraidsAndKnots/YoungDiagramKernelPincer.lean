@@ -678,4 +678,177 @@ theorem sum_nuV_eq_zero (k : ℕ) : ∑ v ∈ Finset.range (2 * k + 1), nuV k v 
   · field_simp
     ring
 
+/-! ## The spectral links: `Σ v²·ν_v = Cov₂(Σh², ω₃)` and `Σ ln(v)·ν_v = Cov₂(ln ∏h, ω₃)`
+
+The two remaining exact links of the skeleton: instantiating the spectral decomposition at
+`φ = (·)²` and `φ = ln` identifies the ν-system's second and log moments with the scaffold's
+already-analyzed hook covariances. With them, every constraint and the target itself are
+statements **about ν alone**: `Σν_v = 0`, `Σv²ν_v = Var₂(ω₃) ≥ 0`, and [A2] ⇔ `Σln(v)·ν_v ≥ 0`. -/
+
+/-- Hooks are positive on genuine cells (cell bound + its staircase mirror). -/
+theorem hookLen_pos (l : List ℕ) (hs : l.Sorted (· ≥ ·)) (p : ℕ × ℕ) (hp : p ∈ cells l) :
+    0 < hookLen l p := by
+  rw [mem_cells] at hp
+  have hstair : p.1 < l.countP (fun x => decide (p.2 < x)) :=
+    (lt_countP_iff l hs p.2 p.1).mpr hp
+  unfold hookLen
+  rw [conj_getD l hs]
+  omega
+
+/-- `IdentityI.sumSqHooks` as a cell-set sum of the kernel-form hook (the two per-cell
+ℕ-subtraction forms agree on genuine cells, as in `hookProd_eq_prodHooks`). -/
+theorem sumSqHooks_eq_sum_cells (l : List ℕ) (hs : l.Sorted (· ≥ ·)) :
+    QOU.BraidKnot.IdentityI.sumSqHooks l = ∑ p ∈ cells l, (hookLen l p : ℤ) ^ 2 := by
+  have hcells : (∑ p ∈ cells l, (hookLen l p : ℤ) ^ 2)
+      = ∑ i ∈ Finset.range l.length, ∑ j ∈ Finset.range (l.getD i 0),
+          (hookLen l (i, j) : ℤ) ^ 2 := by
+    unfold cells
+    rw [Finset.sum_biUnion (fun x _ y _ hxy => Finset.disjoint_left.mpr (by
+        rintro p hp hq
+        obtain ⟨j, _, rfl⟩ := Finset.mem_map.mp hp
+        obtain ⟨j', _, h'⟩ := Finset.mem_map.mp hq
+        exact hxy (by simpa using (congrArg Prod.fst h').symm)))]
+    refine Finset.sum_congr rfl fun i _ => ?_
+    rw [Finset.sum_map]
+    simp only [Function.Embedding.coeFn_mk]
+  rw [hcells]
+  unfold QOU.BraidKnot.IdentityI.sumSqHooks
+  rw [list_sum_map_range]
+  refine Finset.sum_congr rfl fun i _ => ?_
+  rw [list_sum_map_range]
+  refine Finset.sum_congr rfl fun j hj => ?_
+  rw [Finset.mem_range] at hj
+  have hstair : i < l.countP (fun x => decide (j < x)) := (lt_countP_iff l hs j i).mpr hj
+  have hcell : (l.getD i 0 - j) + (QOU.BraidKnot.IdentityI.colLen l j - i) - 1
+      = hookLen l (i, j) := by
+    show (l.getD i 0 - j) + (QOU.BraidKnot.IdentityI.colLen l j - i) - 1
+        = l.getD i 0 + (conj l).getD j 0 - j - i - 1
+    rw [YoungDiagramKernelDimPos.colLen_eq_countP l j, conj_getD l hs j]
+    omega
+  rw [hcell]
+
+/-- `ln ∏h` as a cell-set sum of hook logs (`hookProd_eq_prod_cells` + `Real.log_prod`). -/
+theorem log_hookProd_eq_sum_cells (l : List ℕ) (hs : l.Sorted (· ≥ ·)) :
+    Real.log (hookProd l) = ∑ p ∈ cells l, Real.log (hookLen l p) := by
+  rw [hookProd_eq_prod_cells l]
+  show Real.log ((∏ p ∈ cells l, hookLen l p : ℕ) : ℝ) = _
+  rw [Nat.cast_prod]
+  exact Real.log_prod _ _ fun p hp => by
+    exact_mod_cast (hookLen_pos l hs p hp).ne'
+
+/-- Spectral instance `φ = (·)²`: `Σ_v v²·N_v = Σ_□h²` per diagram. -/
+theorem spectral_sq (k : ℕ) (l : List ℕ) (hl : l ∈ partsOf k) :
+    ∑ v ∈ Finset.range (2 * k + 1), ((v : ℝ)) ^ 2 * (hookCount l v : ℝ)
+      = (QOU.BraidKnot.IdentityI.sumSqHooks l : ℝ) := by
+  have hsort := (partsOf_facts k l hl).2.2
+  rw [hookSpectrum_sum k l hl (fun v => ((v : ℝ)) ^ 2),
+    sumSqHooks_eq_sum_cells l hsort]
+  push_cast
+  rfl
+
+/-- Spectral instance `φ = ln`: `Σ_v ln(v)·N_v = ln ∏h` per diagram. -/
+theorem spectral_log (k : ℕ) (l : List ℕ) (hl : l ∈ partsOf k) :
+    ∑ v ∈ Finset.range (2 * k + 1), Real.log v * (hookCount l v : ℝ)
+      = Real.log (hookProd l) := by
+  have hsort := (partsOf_facts k l hl).2.2
+  rw [hookSpectrum_sum k l hl (fun v => Real.log v),
+    log_hookProd_eq_sum_cells l hsort]
+
+/-- Generic diagram-statistic covariance `Cov₂(S, ω₃)` (the shape shared by `covHookSq`,
+`covLnHooks`, and the ν-moment sums). -/
+noncomputable def covStat (k : ℕ) (S : List ℕ → ℝ) : ℝ :=
+  ((partsOf k).map (fun l => tilt 0 (sytDim l) * S l * (omega3 k l : ℝ))).sum / tiltNorm k 0
+    - ((partsOf k).map (fun l => tilt 0 (sytDim l) * S l)).sum / tiltNorm k 0
+      * tiltedMean k 0
+
+/-- `covStat` respects member-wise equality of statistics. -/
+theorem covStat_congr (k : ℕ) {S1 S2 : List ℕ → ℝ}
+    (h : ∀ l ∈ partsOf k, S1 l = S2 l) : covStat k S1 = covStat k S2 := by
+  unfold covStat
+  rw [List.map_congr_left (fun l hl => by rw [h l hl] :
+        ∀ l ∈ partsOf k, tilt 0 (sytDim l) * S1 l * (omega3 k l : ℝ)
+          = tilt 0 (sytDim l) * S2 l * (omega3 k l : ℝ)),
+      List.map_congr_left (fun l hl => by rw [h l hl] :
+        ∀ l ∈ partsOf k, tilt 0 (sytDim l) * S1 l = tilt 0 (sytDim l) * S2 l)]
+
+/-- **Weighted ν-sums are statistic covariances**: for every weight `φ`,
+`Σ_v φ(v)·ν_v = Cov₂(Σ_v φ(v)·N_v, ω₃)` — covariance is linear in the statistic, and the
+`v`-sum assembles the diagram statistic `Σ_v φ(v)·N_v(λ)`. -/
+theorem sum_weighted_nuV (k : ℕ) (φ : ℕ → ℝ) :
+    ∑ v ∈ Finset.range (2 * k + 1), φ v * nuV k v
+      = covStat k (fun l => ∑ v ∈ Finset.range (2 * k + 1), φ v * (hookCount l v : ℝ)) := by
+  unfold nuV nuMixedMoment nuMean covStat
+  rw [Finset.sum_congr rfl (fun v _ => by ring :
+      ∀ v ∈ Finset.range (2 * k + 1),
+        φ v * (((partsOf k).map (fun l =>
+            tilt 0 (sytDim l) * (hookCount l v : ℝ) * (omega3 k l : ℝ))).sum / tiltNorm k 0
+          - ((partsOf k).map (fun l =>
+              tilt 0 (sytDim l) * (hookCount l v : ℝ))).sum / tiltNorm k 0
+            * tiltedMean k 0)
+        = (φ v * ((partsOf k).map (fun l =>
+            tilt 0 (sytDim l) * (hookCount l v : ℝ) * (omega3 k l : ℝ))).sum) / tiltNorm k 0
+          - (φ v * ((partsOf k).map (fun l =>
+              tilt 0 (sytDim l) * (hookCount l v : ℝ))).sum) / tiltNorm k 0
+            * tiltedMean k 0),
+    Finset.sum_sub_distrib, ← Finset.sum_div, ← Finset.sum_mul, ← Finset.sum_div]
+  rw [show (fun v => φ v * ((partsOf k).map (fun l =>
+        tilt 0 (sytDim l) * (hookCount l v : ℝ) * (omega3 k l : ℝ))).sum)
+      = (fun v => ((partsOf k).map (fun l =>
+          φ v * (tilt 0 (sytDim l) * (hookCount l v : ℝ) * (omega3 k l : ℝ)))).sum) from
+    funext fun v => (list_sum_map_mul_left _ _ _).symm]
+  rw [show (fun v => φ v * ((partsOf k).map (fun l =>
+        tilt 0 (sytDim l) * (hookCount l v : ℝ))).sum)
+      = (fun v => ((partsOf k).map (fun l =>
+          φ v * (tilt 0 (sytDim l) * (hookCount l v : ℝ)))).sum) from
+    funext fun v => (list_sum_map_mul_left _ _ _).symm]
+  rw [finset_sum_list_map_sum, finset_sum_list_map_sum]
+  rw [List.map_congr_left (fun l _ => by
+      rw [show (fun v => φ v * (tilt 0 (sytDim l) * (hookCount l v : ℝ) * (omega3 k l : ℝ)))
+            = (fun v => (tilt 0 (sytDim l) * (omega3 k l : ℝ))
+                * (φ v * (hookCount l v : ℝ))) from funext fun v => by ring,
+        ← Finset.mul_sum]
+      ring :
+    ∀ l ∈ partsOf k, (∑ v ∈ Finset.range (2 * k + 1),
+        φ v * (tilt 0 (sytDim l) * (hookCount l v : ℝ) * (omega3 k l : ℝ)))
+      = tilt 0 (sytDim l) * (∑ v ∈ Finset.range (2 * k + 1),
+          φ v * (hookCount l v : ℝ)) * (omega3 k l : ℝ))]
+  rw [List.map_congr_left (fun l _ => by
+      rw [show (fun v => φ v * (tilt 0 (sytDim l) * (hookCount l v : ℝ)))
+            = (fun v => tilt 0 (sytDim l) * (φ v * (hookCount l v : ℝ))) from
+          funext fun v => by ring,
+        ← Finset.mul_sum] :
+    ∀ l ∈ partsOf k, (∑ v ∈ Finset.range (2 * k + 1),
+        φ v * (tilt 0 (sytDim l) * (hookCount l v : ℝ)))
+      = tilt 0 (sytDim l) * (∑ v ∈ Finset.range (2 * k + 1), φ v * (hookCount l v : ℝ)))]
+
+/-- **The ν-system's second moment is the proved variance**:
+`Σ_v v²·ν_v = Cov₂(Σh², ω₃) (= Var₂(ω₃))`. -/
+theorem sum_sq_nuV (k : ℕ) :
+    ∑ v ∈ Finset.range (2 * k + 1), ((v : ℝ)) ^ 2 * nuV k v = covHookSq k := by
+  rw [sum_weighted_nuV k (fun v => ((v : ℝ)) ^ 2),
+    covStat_congr k (fun l hl => spectral_sq k l hl)]
+  rfl
+
+/-- `Σ_v v²·ν_v ≥ 0` — the positive-second-moment constraint in pure ν-form. -/
+theorem sum_sq_nuV_nonneg (k : ℕ) :
+    0 ≤ ∑ v ∈ Finset.range (2 * k + 1), ((v : ℝ)) ^ 2 * nuV k v := by
+  rw [sum_sq_nuV]
+  exact covHookSq_nonneg k
+
+/-- **The ν-system's log moment is the [A2] hook covariance**:
+`Σ_v ln(v)·ν_v = Cov₂(ln ∏h, ω₃)`. -/
+theorem sum_log_nuV (k : ℕ) :
+    ∑ v ∈ Finset.range (2 * k + 1), Real.log v * nuV k v = covLnHooks k := by
+  rw [sum_weighted_nuV k (fun v => Real.log v),
+    covStat_congr k (fun l hl => spectral_log k l hl)]
+  rfl
+
+/-- **Leg [A2] in pure ν-form (capstone)**: `Cov₂(ln f, ω₃) ≤ 0 ↔ Σ_v ln(v)·ν_v ≥ 0`. The open
+kernel leg is exactly: *the mean-zero (`sum_nuV_eq_zero`), positive-second-moment
+(`sum_sq_nuV_nonneg`) signed measure `ν` has nonnegative log moment.* -/
+theorem covLnF_nonpos_iff_nu_log (k : ℕ) :
+    covLnF k ≤ 0 ↔ 0 ≤ ∑ v ∈ Finset.range (2 * k + 1), Real.log v * nuV k v := by
+  rw [sum_log_nuV]
+  exact covLnF_nonpos_iff k
+
 end QOU.BraidsAndKnots.YoungDiagramKernelPincer
