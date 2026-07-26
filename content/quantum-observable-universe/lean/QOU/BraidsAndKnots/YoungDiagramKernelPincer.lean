@@ -912,6 +912,52 @@ theorem hookCount_sum_of_not_hookShape (l : List ℕ) (hs : l.Sorted (· ≥ ·)
   rw [Finset.mem_filter] at hp
   exact hnot (hookShape_of_hookLen_eq_sum l hs p hp.1 hp.2).2
 
+/-- `getD` on a replicate list, in range. -/
+theorem getD_replicate_of_lt (x d : ℕ) : ∀ n i, i < n → (List.replicate n x).getD i d = x := by
+  intro n
+  induction n with
+  | zero => intro i h; exact absurd h (Nat.not_lt_zero i)
+  | succ n ih =>
+      intro i h
+      cases i with
+      | zero => rw [List.replicate_succ, List.getD_cons_zero]
+      | succ i' =>
+          rw [List.replicate_succ, List.getD_cons_succ]
+          exact ih i' (Nat.lt_of_succ_lt_succ h)
+
+/-- **Content square of a hook shape** `(a, 1^c)`: row 0 contributes the squares of the arm
+contents `0, …, a−1`; the column cells `(i,0)`, `1 ≤ i ≤ c`, contribute `(−i)² = i²`. This is
+step 2 of the (TAIL) first-instance derivation (`ω₃ = Q(a−1) + Q(c) − C(n,2)` after subtracting
+the center term). -/
+theorem contentSq_hookShape (a c : ℕ) :
+    contentSq (a :: List.replicate c 1)
+      = (∑ j ∈ Finset.range a, ((j : ℤ)) ^ 2) + ∑ i ∈ Finset.range c, ((i : ℤ) + 1) ^ 2 := by
+  rw [contentSq_eq_finset_sum]
+  have hlen : (a :: List.replicate c 1).length = c + 1 := by
+    rw [List.length_cons, List.length_replicate]
+  rw [hlen, Finset.sum_range_succ']
+  rw [add_comm (∑ j ∈ Finset.range a, ((j : ℤ)) ^ 2)]
+  congr 1
+  refine Finset.sum_congr rfl fun i hi => ?_
+  have hgd : (a :: List.replicate c 1).getD (i + 1) 0 = 1 := by
+    rw [List.getD_cons_succ]
+    exact getD_replicate_of_lt 1 0 c i (Finset.mem_range.mp hi)
+  rw [hgd, Finset.sum_range_one]
+  push_cast
+  ring
+
+/-- Division-free sum of squares: `6·Σ_{j<m} j² = (m−1)·m·(2m−1)` in `ℤ` — the polynomial
+evaluation of the hook-shape content data (`Q(m) = Σ_{t≤m} t²` in the audit's notation is
+`Σ_{j<m+1} j²` here). -/
+theorem six_mul_sum_range_sq (m : ℕ) :
+    6 * ∑ j ∈ Finset.range m, ((j : ℤ)) ^ 2 = ((m : ℤ) - 1) * m * (2 * m - 1) := by
+  induction m with
+  | zero => simp
+  | succ m ih =>
+      rw [Finset.sum_range_succ, mul_add, ih]
+      push_cast
+      ring
+
 /-- `IdentityI.sumSqHooks` as a cell-set sum of the kernel-form hook (the two per-cell
 ℕ-subtraction forms agree on genuine cells, as in `hookProd_eq_prodHooks`). -/
 theorem sumSqHooks_eq_sum_cells (l : List ℕ) (hs : l.Sorted (· ≥ ·)) :
