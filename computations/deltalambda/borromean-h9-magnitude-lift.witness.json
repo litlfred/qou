@@ -1,0 +1,87 @@
+{
+  "schema": "witness/v1",
+  "producer": "computations/deltalambda/borromean_h9_magnitude_lift_probe.py",
+  "computation": "borromean-h9-magnitude-lift",
+  "description": "DERIVE-OR-WALL for the A=3 Borromean 3-body MAGNITUDE. #4360 proved the Borromean cluster c\u2083=E\u2080\u00b7(1\u2212\u03c4_Borr)>0 supplies the \u03bc\u2083=+0.4708>0 SIGN but at bare H\u2083 its magnitude \u2248+0.006 MeV (~78\u00d7 short). This probe LIFTS the Borromean cluster to the SAME H\u2089 joint-trace level \u03c1_F used (three_body_joint_trace_a3): the perblock trace g=\u03a3_{\u03bb\u22a29} y_\u03bb|\u03c7_\u03bb(word)| scaled by the SAME E\u2080, with the faithful cabled Borromean inter-block linking (\u0394_A\u00b7\u0394_B\u207b\u00b9)\u00b3 (each nucleon a width-3 cable). Level FIXED (H\u2089, 3 cables), 0 free params \u2014 no \u03bc\u2083 inversion, no tuned enhancement. Result: the DERIVED, 0-fit H\u2089 cabled-Borromean \u27e8T,\u00b3He\u27e9 cluster = +0.297 MeV, keeping the + sign (#4360) and lifting the magnitude ~49\u00d7 above bare-H\u2083's +0.006 MeV to 0.63\u00d7 of \u03bc\u2083 (~1.6\u00d7 short) \u2014 RIGHT ORDER OF MAGNITUDE, 0 fit, SAME E\u2080 + y_\u03bb normalization as \u03c1_F. NOT a closure: it does not land +0.4708 exactly, but the MEASURED h-order of the cabled trace is 4.098 \u21d2 O(h\u2074) CONFIRMED (cabling PRESERVES the Brunnian order-suppression), so the ~49\u00d7 lift is a DERIVED COEFFICIENT enhancement (3 width-3 cables \u21d2 ~49\u00d7 more h\u2074 strand-pairs), not an order change or fit; the residual 1.6\u00d7 is a coefficient (cable width / tower height) question. Closing it by a tuned cabling/multiplicity would be a FIT and is declined. VERDICT: scope-(a) NEAR-MISS LEAD \u2014 sign derived (#4360), magnitude order recovered 0-fit (O(h\u2074), 0.63\u00d7 \u03bc\u2083), exact closure still open. Nothing wired.",
+  "timestamp": "2026-07-26T19:30:21.773114+00:00",
+  "parameters": {
+    "free_parameters": 0,
+    "q0": "1.1099785827513808",
+    "h": "0.209060298795639301677370394164",
+    "E0_MeV": "4.18598136329447621452746090153",
+    "level": "H\u2089 perblock \u03a3_{\u03bb\u22a29} y_\u03bb|\u03c7_\u03bb|, three width-3 nucleon cables",
+    "inter_word": "(\u0394_A\u00b7\u0394_B\u207b\u00b9)\u00b3 cabled Borromean; \u0394_{0,3}=(\u03c32\u03c31\u03c30)(\u03c33\u03c32\u03c31)(\u03c34\u03c33\u03c32)",
+    "note": "\u03bc\u2083=+0.4708 target only; SAME E\u2080 + y_\u03bb normalization as \u03c1_F; 0 fit."
+  },
+  "results": {
+    "bare_9strand": {
+      "g_unlink": "1.0",
+      "g_borromean": "0.950574244944872365490629325497",
+      "deficit_dimensionless": "0.0494257550551276345093706745026",
+      "c3_borromean_H9_bare_MeV": "0.206895289527522024891296792744",
+      "sign": "+"
+    },
+    "atom_dressed": {
+      "T": {
+        "g0_intra": "0.908784648027589017723205456467",
+        "gB": "0.843656227536744964546201209564",
+        "deficit_dimensionless": "0.0716654056956152223965904948559",
+        "c3_borromean_H9_MeV": "0.272626354395479289462617191539",
+        "sign": "+"
+      },
+      "3He": {
+        "g0_intra": "1.0482088743384509838785518882",
+        "gB": "0.971455386149550234730109854507",
+        "deficit_dimensionless": "0.073223467257269369971218433047",
+        "c3_borromean_H9_MeV": "0.321288671126581236045762147037",
+        "sign": "+"
+      }
+    },
+    "atom_dressed_mean": {
+      "c3_T_MeV": "0.272626354395479289462617191539",
+      "c3_3He_MeV": "0.321288671126581236045762147037",
+      "c3_mean_MeV": "0.296957512761030262754189669288",
+      "sign": "+"
+    },
+    "magnitude_vs_target": {
+      "mu3": "0.4708",
+      "rhoF_scale_MeV": "1.587",
+      "c3_mean_over_mu3": "0.6307508767226641095033765278",
+      "shortfall_factor_vs_mu3": "1.58541198578419359832531708834",
+      "shortfall_factor_vs_rhoF": "5.34419885607373670463525535088",
+      "h9_lift_factor_vs_bareH3": "49.4929187935050437923649448813"
+    },
+    "h_order_diagnostic": {
+      "grid_q": [
+        "1.02",
+        "1.04",
+        "1.08"
+      ],
+      "deficits": [
+        "0.0000513943191724080423652667657928",
+        "0.000822441140896215823898569931694",
+        "0.0134477322345213992766275974074"
+      ],
+      "fitted_leading_exponent": "4.09821273508120310196579280777",
+      "bare_h3_order": "4",
+      "bare_h3_deficit_h4form": "0.00143783616321273366975063878246",
+      "channel_deficit_A3": "-0.124823198198617283511014921211",
+      "channel_deficit_B3": "0.973305602690721855189340496998",
+      "measured_order_is_h4": true,
+      "note": "bare-H\u2083 (\u03c3\u2081\u03c3\u2082\u207b\u00b9)\u00b3 is O(h\u2074); the cabled 54-crossing word's MEASURED leading exponent is 4.098 \u21d2 O(h\u2074) CONFIRMED \u2014 cabling PRESERVES the Brunnian order-suppression (2-sub-links trivial kill O(h),O(h\u00b2),O(h\u00b3)). The ~49\u00d7 H\u2089 lift is therefore a DERIVED COEFFICIENT enhancement (3 width-3 cables \u21d2 ~49\u00d7 more h\u2074 strand-pairs), not an order change and not a fit. The residual 1.6\u00d7 to \u03bc\u2083 is a coefficient (cable width / tower height) question. Channels: (\u0394_A)\u00b3=\u22120.125, (\u0394_B\u207b\u00b9)\u00b3=+0.973 are large/non-Brunnian; the Borromean combination (\u0394_A\u00b7\u0394_B\u207b\u00b9)\u00b3=+0.049 is the small O(h\u2074) value, confirming pairwise cancellation."
+    },
+    "verdict": {
+      "classification": "NEAR-MISS LEAD (0-fit, right order; magnitude not cleanly derived)",
+      "sign_derived": true,
+      "magnitude_cleanly_derived": false,
+      "right_order_of_magnitude": true,
+      "is_fit": false,
+      "wired": false,
+      "free_param_count": 0,
+      "scope": "scope-(a) sign-derived (#4360) + scope-(a) magnitude NEAR-MISS: the 0-fit, level-fixed H\u2089 cabled-Borromean cluster is 0.297 MeV = 0.63\u00d7 \u03bc\u2083 (~1.6\u00d7 short), a ~49\u00d7 lift over bare-H\u2083 that RECOVERS THE ORDER OF MAGNITUDE with the SAME E\u2080 + y_\u03bb normalization as \u03c1_F, but does NOT land +0.4708 exactly. Not a clean derivation (cabling-convention ambiguity in the residual factor), not a fit (nothing tuned to \u03bc\u2083), not a hard wall (right order, right sign). A LEAD.",
+      "delta_lambda_status": "OPEN \u2014 A=3 magnitude order recovered 0-fit, not exactly derived; the exact closure stays open.",
+      "anti_fit": "level fixed at H\u2089, 3 cables; 0 free params; \u03bc\u2083 never inverted; no enhancement/multiplicity tuned to hit +0.4708; nothing wired."
+    }
+  },
+  "scriptCommitSha": "uncommitted"
+}
