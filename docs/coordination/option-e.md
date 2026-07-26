@@ -405,3 +405,22 @@ correct home remains the GS/jet-order fake-degree valuation (#3537-line). Probe
 now excluded as an alternative construction); single-trace magnitude = `dim(λ)`;
 the whole remaining wall is the **≥4-body per-pair bond magnitude scalar** — its
 locality/sign/ceiling derived, its value the standing gate. No §6 escalation.
+
+**2026-07-26 — the #4316 frustration weight κ is WALLED at the deuteron; the
+residual is derived to be pure ≥3-body (μ₂=0).** (PR #4320,
+`claude/deltalambda-interface-operator-kappa-2026-07-26`.) The #4316 additive
+term `M(A)=s·(edges − κ·triangles)`, s>0, is **refuted at A=2**: the graded ladder
+`ρ_grad(A)=[A]_q!/[2]_q!` gives `ρ_grad(2)=1` and the deuteron self-reference gives
+`ρ_strong(2)=1`, so `M(2)=0` (DERIVED, AME-independent) — but the model predicts
+`M(2)=s>0`. So κ=t/s is ill-posed (edge coefficient forced to 0); the fitted
+κ=2.385 was an A=3,4-only artefact. The exact 0-parameter simplex (Mayer)
+decomposition over the derived C(A,k) basis (points A=2,3,4): **μ₂(edge)=0,
+μ₃(triangle)=+0.4708, μ₄(tetra)=−4.591** — a pure ≥3-body residual, tetrahedron-
+dominant-negative, matching the derived ρ_F full-binding **b₄/b₂=4.16** ([1⁴]
+supermultiplet). This **re-confirms this ledger's "≥4-body per-pair bond magnitude
+scalar" as the standing gate**: the derivation target is μ₄, reachable via the ρ_F
+cluster integrals (`pyhecke_native` present) but requiring the residual
+(graded-subtracted) cluster-integral compute — infra-scoped, not a κ fit. Lean
+`AdditiveResidualSimplex.lean` sorry-free (deuteron refutation + μ₂=0 + exact
+0-param solve). Audit `2026-07-26-deltalambda-interface-operator-kappa.md`. No fit,
+nothing wired.
