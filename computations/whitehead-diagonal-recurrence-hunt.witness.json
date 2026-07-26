@@ -1,0 +1,35 @@
+{
+  "description": "Whitehead diagonal q-difference recurrence hunt (toward GGMW J_red \u2192 c_\u03c3). mod-p nullspace certificate fed by the Masbaum-validated R-matrix engine.",
+  "computation": "whitehead_diagonal_recurrence_hunt",
+  "audit_only": true,
+  "Nmax": 10,
+  "grid": [
+    "r1_W0",
+    "r1_W1",
+    "r2_W0",
+    "r2_W1",
+    "r2_W2",
+    "r3_W1"
+  ],
+  "results": {
+    "figure-eight 4\u2081 [VALIDATION, known recurrence]": {
+      "r1_W0": "no-recurrence",
+      "r1_W1": "insufficient-N",
+      "r2_W0": "no-recurrence",
+      "r2_W1": "insufficient-N",
+      "r2_W2": "insufficient-N",
+      "r3_W1": "insufficient-N"
+    },
+    "Whitehead L5a1": {
+      "r1_W0": "no-recurrence",
+      "r1_W1": "insufficient-N",
+      "r2_W0": "no-recurrence",
+      "r2_W1": "insufficient-N",
+      "r2_W2": "insufficient-N",
+      "r3_W1": "insufficient-N"
+    }
+  },
+  "figure_eight_harness_validated": false,
+  "note": "Nmax is capped by the O(N\u00b3) R-matrix braid-rep (no Whitehead closed form). If the KNOWN fig-8 recurrence is not recovered, the Whitehead 'no-recurrence' entries are N-reach statements; closing needs the 2-bridge b(8,3) O(N\u00b2) transfer-matrix acceleration or a Habiro closed form.",
+  "timestamp": "2026-07-26T12:55:53+00:00"
+}
