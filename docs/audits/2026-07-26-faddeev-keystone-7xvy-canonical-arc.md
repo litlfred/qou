@@ -66,18 +66,22 @@ the two dense periodicity loci, are **proportional**. The capstone's analytic `h
 zeros make it a punctured-neighborhood bound, and `norm_le_of_bounded_on_punctured` (G5 crux)
 promotes it to the global bound.
 
-## The honest remaining floor (assembly, no Mathlib gap)
+## The keystone is CLOSED for `phiBProd` (modulo one honest regularity hypothesis)
 
-To specialize `faddeevPhi_proportional_of_stripGrowth` to the concrete substrate `phiBProd`
-and discharge its last carried hypotheses:
+`PhiBProdLociDensity.phiBProd_uniqueUpToScalar_of_normalForm` — **any substrate `FaddeevPhi` +
+`FaddeevPhiStripGrowth` solution `Φ₁` in meromorphic normal form is proportional to
+`phiBProd`.** Every carried input is now discharged:
 
-1. **`hΦ₂_iso`** — `phiBProd`'s zeros isolated: `meromorphicOrderAt_ne_top_iff_eventually_ne_zero`
-   applied with `phiBProd_meromorphicOn_substrate` (#4296) + order ≠ ⊤ of the products
-   (#4225 machinery). Pure API chaining.
-2. **`hr_ratio`** — `toMeromorphicNFOn (Φ₁/phiBProd) = Φ₁/phiBProd` off `phiBProd`'s zeros:
-   the meromorphic normal-form identity on the analytic locus.
-3. **`MeromorphicOn Φ₁`** — the honest physical hypothesis that the *other* solution is
-   meromorphic (part of being a bona-fide `Φ_b`; the shift equations alone do not impose it).
+| Input | Discharge |
+|---|---|
+| `hbdd` (strip growth) | derived (G1–G5, `FaddeevStripGrowthUniqueness`) |
+| `hΦ₂_iso` (zeros isolated) | `PhiBProdZeroIsolation.phiBProd_eventually_ne_zero` |
+| `hr_ratio` (normal-form identity) | `PhiBProdHrRatio.hr_ratio_phiBProd` |
+| loci density (`Dense S₀`, `Dense S₁`) | `PhiBProdLociDensity` — explicit loci; bad set = prefactor lattice ∪ `phiBProd` zeros (+shift), each countable ⇒ `dense_compl_of_countable` |
 
-None is a Mathlib gap. The analytically-hard content (input-1 product analyticity; the
-codiscrete→global boundedness extension) is proved and merged.
+The **sole** remaining hypothesis is `MeromorphicNFOn Φ₁` — the honest statement that the
+*physical* second solution `Φ_b` is a genuine meromorphic function in normal form (the shift
+equations alone do not impose it). There is **no Mathlib gap** and **no unproved axiom**: the
+two feared analytic walls (input-1 product analyticity; the growth estimate) are gone, and the
+whole specialization chain (zero-isolation, normal-form identity, codiscrete→global boundedness
+extension, loci density) is proved and merged. Epic `qou-mz4f` is complete.

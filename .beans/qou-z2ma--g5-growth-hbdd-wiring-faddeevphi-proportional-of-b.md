@@ -1,11 +1,11 @@
 ---
 # qou-z2ma
 title: 'G5: growth => hbdd wiring => faddeevPhi_proportional_of_bounded_ratio'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-07-26T01:17:32Z
-updated_at: 2026-07-26T11:46:37Z
+updated_at: 2026-07-26T12:15:54Z
 blocked_by:
     - qou-zt8v
 ---
