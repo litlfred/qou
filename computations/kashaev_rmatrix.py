@@ -55,6 +55,52 @@ class KashaevR:
         return self.om ** (a - k - j) * self.W(j - i - a, i - l - d, l - k - c, k - j - b)
 
 
+def braiding_matrix(N):
+    """The N²×N² braiding Ř = P·R with R the YBE R-matrix (2.12):
+       ⟨i,j|R|k,l⟩ = R(i,j,k,l|1,0,0,0)·ω^{k+l}.  Satisfies YBE (2.13)
+       (verified in _validate_ybe).  Returns (Rcheck, ω) as numpy arrays."""
+    import numpy as np
+    r = KashaevR(N)
+    R = np.zeros((N * N, N * N), dtype=complex)
+    for i in range(N):
+        for j in range(N):
+            for k in range(N):
+                for l in range(N):
+                    R[i * N + j, k * N + l] = r.R(i, j, k, l, 1, 0, 0, 0) * r.om ** (k + l)
+    P = np.zeros((N * N, N * N), dtype=complex)
+    for a in range(N):
+        for b in range(N):
+            P[b * N + a, a * N + b] = 1
+    return P @ R, r.om
+
+
+def _validate_ybe(N, tol=1e-9):
+    import numpy as np
+    r = KashaevR(N)
+    R = np.zeros((N * N, N * N), dtype=complex)
+    for i in range(N):
+        for j in range(N):
+            for k in range(N):
+                for l in range(N):
+                    R[i * N + j, k * N + l] = r.R(i, j, k, l, 1, 0, 0, 0) * r.om ** (k + l)
+    I = np.eye(N)
+    P = np.zeros((N * N, N * N), dtype=complex)
+    for a in range(N):
+        for b in range(N):
+            P[b * N + a, a * N + b] = 1
+    R12, R23 = np.kron(R, I), np.kron(I, R)
+    R13 = np.kron(I, P) @ np.kron(R, I) @ np.kron(I, P)
+    return np.allclose(R12 @ R13 @ R23, R23 @ R13 @ R12, atol=tol)
+
+
+# STRUCTURAL FINDING (2026-07-26): the Markov condition tr₂((I⊗μ)Ř) ∝ I has
+# NO diagonal-μ solution (smallest singular value ≈ 2.45, not 0 — verified at
+# N=5). So Kashaev's link invariant is NOT an enhanced Markov trace of this
+# braiding; it must be built via the Sect-3 face-index state sum (the maps
+# j:E→ℤ_N, a:V×F→ℤ_N with the sum-1 constraints 3.3–3.4), not the braid
+# closure. That state sum is the next (intricate) implementation unit.
+
+
 def _validate(N=5, trials=300, tol=1e-9):
     import random
     r = KashaevR(N)
