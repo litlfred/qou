@@ -92,3 +92,32 @@ non-vacuous by construction. Route A (state integral) stays a documented referen
 
 The "contour-integration epic" as originally feared **does not exist on the critical path**;
 the real remaining work is five product-estimate bricks, all within current Mathlib.
+
+## Progress log
+
+- **G1 + G3** (PR #4328) — `PhiBProdStripBound.lean`: numerator/denominator upper bounds +
+  conditional `phiBProd` strip bound.
+- **G2 + G4** (PR #4332) — `PhiBProdStripLowerBound.lean` (denominator lower bound ⇒
+  *unconditional* strip bound) + `FaddeevPhiStripGrowth.lean` (the growth class,
+  `phiBProd` instance, `ratio_bounded_of_stripGrowth`).
+- **G5 crux** (this PR) — `MeromorphicPuncturedBounded.lean`: the removable-singularity
+  extension, the hard analytic heart of G5.
+
+### G5 assessment (the remaining wiring — no Mathlib gap)
+
+The boundedness capstone needs `hbdd : ∀ z, ‖toMeromorphicNFOn (Φ₁/Φ₂) univ z‖ ≤ C`
+(bound at **every** point). G4 supplies the raw-ratio bound only on the **dense**
+`{Φ₂ ≠ 0}` locus. The bridge is now proved:
+
+| G5 piece | status |
+|---|---|
+| removable-singularity extension (punctured bound ⇒ global `hbdd`) | ✅ **proved** — `norm_le_of_bounded_on_punctured` (+ the local order lemma) |
+| `Φ₂`'s zeros isolated: `∀ᶠ w in 𝓝[≠] z, Φ₂ w ≠ 0` | assembly — for `phiBProd` from `meromorphicOrderAt ≠ ⊤` (PR #4225) |
+| `hr_ratio`: `toMeromorphicNFOn (Φ₁/Φ₂) = Φ₁/Φ₂` off poles | assembly — meromorphic normal-form API |
+| `MeromorphicOn Φ₁` (arbitrary second solution) | honest physical hypothesis to add |
+
+None of the remaining pieces is a Mathlib gap: they are API assembly plus one legitimate
+meromorphicity hypothesis on the second solution. The analytically-hard step (that a
+codiscrete bound extends across removable singularities) is done. Closing G5 is then a
+matter of threading `Φ₂ = phiBProd`'s explicit zero-isolation and the normal-form identity
+into `norm_le_of_bounded_on_punctured` → `faddeevPhi_proportional_of_bounded_ratio`.
