@@ -158,5 +158,55 @@ theorem qIntBal_eq_twist {R : Type*} [Field R] (q : R) (n : ℕ)
         rw [sq, ← mul_assoc, inv_mul_cancel₀ hq, one_mul]
       rw [hqq2]
 
+/-! ## Factorial-level twist and the balanced q-hook dimension -/
+
+/-- The balanced q-factorial `[n]_bal! = ∏_{i<n} [i+1]_bal`. -/
+noncomputable def qFactPoly_bal {R : Type*} [Field R] (q : R) (n : ℕ) : R :=
+  ∏ i ∈ Finset.range n, qIntBal q (i + 1)
+
+/-- **Factorial-level twist**: `[n]_bal! = q^{−Σ_{i<n} i} · qFactPoly(q^2) n`
+(written `(q⁻¹)^(Σ_{i<n} i) · …`). The per-factor monomial twists accumulate to
+the triangular exponent `Σ_{i<n} i = n(n−1)/2`. Given `q ≠ 0`, `q^2 ≠ 1`. -/
+theorem qFactPoly_bal_eq_twist {R : Type*} [Field R] (q : R) (n : ℕ)
+    (hq : q ≠ 0) (hq2 : q ^ 2 ≠ 1) :
+    qFactPoly_bal q n
+      = q⁻¹ ^ (∑ i ∈ Finset.range n, i) * qFactPoly (q ^ 2) n := by
+  unfold qFactPoly_bal qFactPoly
+  rw [← Finset.prod_pow_eq_pow_sum, ← Finset.prod_mul_distrib]
+  refine Finset.prod_congr rfl (fun i _ => ?_)
+  rw [qIntBal_eq_twist q (i + 1) hq hq2, Nat.add_sub_cancel]
+
+/-- The q-hook dimension in the balanced normalization:
+`dim_bal(λ) = [n]_bal! / ∏_{h ∈ hooks} [h]_bal`. -/
+noncomputable def dimQ_bal {R : Type*} [Field R] (q : R) (n : ℕ) (hooks : Multiset ℕ) : R :=
+  qFactPoly_bal q n / (hooks.map (qIntBal q)).prod
+
+/-- The hook-product twist split: `∏_{h} [h]_bal = (∏_{h} q^{−(h−1)}) · ∏_{h} [h]_{q^2}`.
+Given `q ≠ 0`, `q^2 ≠ 1`. -/
+theorem hookprod_bal_split {R : Type*} [Field R] (q : R) (hooks : Multiset ℕ)
+    (hq : q ≠ 0) (hq2 : q ^ 2 ≠ 1) :
+    (hooks.map (qIntBal q)).prod
+      = (hooks.map (fun h => q⁻¹ ^ (h - 1))).prod * (hooks.map (qIntPoly (q ^ 2))).prod := by
+  rw [show hooks.map (qIntBal q)
+        = hooks.map (fun h => q⁻¹ ^ (h - 1) * qIntPoly (q ^ 2) h) from
+      Multiset.map_congr rfl (fun h _ => qIntBal_eq_twist q h hq hq2)]
+  rw [Multiset.prod_map_mul]
+
+/-- **Balanced ↔ Gaussian hook-dimension cancellation (exact condition).** When
+the accumulated hook-denominator twist matches the numerator (factorial) twist —
+`∏_{h ∈ hooks} q^{−(h−1)} = q^{−Σ_{i<n} i}` — the overall balanced twist cancels
+and `dim_bal(λ) = dim_{q^2}(λ)`. The hypothesis holds exactly when
+`Σ_{h ∈ hooks} (h−1) = Σ_{i<n} i` (for a genuine partition `λ ⊢ n`,
+`hooks.card = n`, this is `Σ h = n(n+1)/2` — true for hook / row / column shapes,
+false in general, e.g. `λ = (2,1)`; see the module docstring). Given
+`q ≠ 0`, `q^2 ≠ 1`. -/
+theorem dimQ_bal_eq_dimQ_of_twist_cancel {R : Type*} [Field R] (q : R) (n : ℕ)
+    (hooks : Multiset ℕ) (hq : q ≠ 0) (hq2 : q ^ 2 ≠ 1)
+    (htw : (hooks.map (fun h => q⁻¹ ^ (h - 1))).prod = q⁻¹ ^ (∑ i ∈ Finset.range n, i)) :
+    dimQ_bal q n hooks = dimQ (q ^ 2) n hooks := by
+  unfold dimQ_bal dimQ
+  rw [qFactPoly_bal_eq_twist q n hq hq2, hookprod_bal_split q hooks hq hq2, htw,
+    mul_div_mul_left _ _ (pow_ne_zero _ (inv_ne_zero hq))]
+
 end QHookDimensionBalanced
 end QOU.Mass
