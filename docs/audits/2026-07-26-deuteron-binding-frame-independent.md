@@ -74,6 +74,29 @@ frame-flattered residual, and the `r`-chase was chasing that flattering. The wel
 to predict the frame-invariant `C` below `~0.5%` from *derived* higher-order structure — the Δ_λ
 closure stated on `C`, not on `g₂`.
 
+## 5. Can `C` have a closed form for all orders? — the base already does; `C` is a single number
+
+A structural clarification on "all orders":
+
+- **The rotational base `E₀ = μ₀ℏ_q[3]_q[4]_q` is already an exact all-orders closed form.** The
+  q-integers `[n]_q` resum the entire `h`-expansion of the q-deformed Casimir exactly — there is no
+  order-by-order tail on the base.
+- **There is no Magnus tower to resum.** For the deuteron word `σ₁³` (a *single* braid generator)
+  every commutator `[a,a] = 0`, so `Ω_{k≥2} = 0` exactly (#4158). The "higher orders" of `C` are
+  therefore **not** a dynamical series — `C = B/E₀ = 1.10150` is a **single number**, the
+  frame-projection / many-body binding residual on top of the exact q-Casimir.
+- **No elementary closed form is exact.** Structurally-motivated forms cluster at `0.04–0.8%`
+  (`C ≈ q`: `+0.77%`; `C ≈ (1+h²)/(1−t)`: `−0.036%`, frame-flattered); ratios of neighbouring
+  q-Casimirs `[j+1]_q/[j]_q` miss by `6–23%`. Scanning special functions for a sub-`0.05%` hit is the
+  §2e-forbidden fit and is refused.
+
+So "closed form for all orders" splits cleanly: **yes** for the base (exact q-Casimir), and the
+correction `C` is a single number whose *exact* closed form would **be** the Δ_λ many-body binding
+closure — not an elementary resummation. The categorical target is therefore to derive `C` from
+`tr_M = Σ_λ y_λ χ^λ` (the Frobenius-paired Markov trace over the two Wedderburn blocks `(2)`, `(1,1)`
+of the `p`–`n` channel), where the bar-odd eigenvalue structure (`tr σ₁³ = q³−q⁻³`, purely bar-odd)
+is dressed by the bar-even Markov weights `y_λ` — the frame-independent home of the `~0.5%` residual.
+
 Refs: probe
 [`deuteron_binding_frame_independent_probe.py`](../../computations/deltalambda/deuteron_binding_frame_independent_probe.py);
 Lean [`FrameAmbiguitySecondOrder.lean`](../../content/quantum-observable-universe/lean/QOU/MassTheory/FrameAmbiguitySecondOrder.lean);
