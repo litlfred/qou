@@ -18,12 +18,18 @@ tower data commute at every level:
    rank 4 obtained by pushing rank-3 witnesses forward along
    $\iota_{34}$.
 
-Moreover the inclusion itself is not special to these two rungs: for
-any Coxeter system and any generator subset $J$, extension by zero
-along the parabolic coset decomposition intertwines both the generator
+Moreover the square itself is not special to these two rungs. For any
+Coxeter system and any generator subset $J$, extension by zero along
+the parabolic coset decomposition intertwines both the generator
 actions and the $q = i$ nilpotents, with no hypothesis beyond subgroup
-membership. Kernel exactness of the assignment — the identification of
-the semisimple quotient with the isotypic slot — holds at the base rung
-$n = 3$; at higher rungs the assignment factors through a larger
-semisimple quotient without being injective on it, and a single
-assignment functor for all rungs is an open problem.
+membership; and for any marked pair $s_i, s_j$ with $m_{ij} = 3$ and
+$s_i \neq s_j$, an assignment with all four laws exists on the full
+group at every rank and on every parabolic containing the pair,
+factoring through the base-rung assignment by restriction to the
+six-element cell, with the corresponding restriction square commuting.
+Kernel exactness — the identification of the semisimple quotient with
+the isotypic slot — holds at the base rung $n = 3$; at higher rungs the
+assignment factors through a larger semisimple quotient without being
+injective on it. What remains open is canonicity: the construction
+depends on the marked pair, and a pair-independent assignment functor
+is not established.
