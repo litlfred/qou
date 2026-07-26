@@ -120,6 +120,31 @@ q = 1**. Consequences for this row:
   R-matrix engine, since the twist knots `K_p` are `(-1/p)` Dehn fillings of one
   Whitehead component.
 
+### The concrete recipe (GGMW J-matrix) and its corpus on-ramp
+
+GGMW make `c_σ` computable, not just conceptual: the nontrivial-`σ` coefficients are the
+**top row of a fundamental solution matrix `J_red(q)`** — an `r×r` matrix of q-series
+with integer coefficients (`|q|≠1`) that solves the knot's **order-r linear q-difference
+equation**, rows labeled by the nontrivial flat connections — **evaluated at `q=1`**
+(the fig-8 vector is [GZb §4.2 / Eqn 92]; the 5₂ vector is also given). So the target
+`c_{σ_geom}(q=1)` is: *build the Whitehead's q-difference operator → its fundamental
+solution matrix → read the top row → evaluate at `q=1`.*
+
+- **On-ramp (corpus infra).** The recurrence step is exactly what the existing
+  `computations/borromean_qzeil_*` (qZeilberger) machinery does for the Borromean rings.
+  The same hunt, fed the exact Whitehead colored-Jones tower (`whitehead_c0_mpmath.py`
+  values N=6..14 + the R-matrix engine, now Masbaum-validated), targets the Whitehead
+  (diagonal, single-color) recurrence → `J_red` → `c_{σ_geom}(q=1)`.
+- **Honest frontier.** GGMW is developed for **knots** (1-cusp, 1-variable q-difference).
+  The Whitehead is 2-cusp: its natural q-difference system is 2-variable (one per color),
+  and the single-color VC restricts it to the diagonal. No Whitehead recurrence is
+  published (the AJ conjecture for links is formulated-only — cf. the Borromean status),
+  so the diagonal operator must be **computed first**. That is the genuine open work; the
+  recipe above says exactly what to compute, and the Masbaum cross-check
+  ([`whitehead_masbaum_crosscheck.py`](../../computations/whitehead_masbaum_crosscheck.py))
+  confirms the engine that feeds it is exact on the twist-knot family (Dehn fillings of
+  the Whitehead).
+
 **Two conflation cautions (not asserted as identities).** (i) The flat-connection index
 `σ` is *not* the Wedderburn partition index `λ` of `tr_M = Σ_λ y_λ χ^λ` — geometric
 character-variety points vs Hecke irreps, related in the literature but distinct index
