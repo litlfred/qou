@@ -414,3 +414,15 @@ observed only; no ontological claims.
   with `1/(q;q)_m³` genuinely rational; the `j ≥ 1` rows carry
   `E1n`/`E2n` Lambert series, which are not rational functions, so the
   algebraic pole argument does **not** extend to them.
+
+- **No bounded-degree bridge (structural consequence of the tight
+  floor).** `level_le_of_natDegree_le` +
+  `natDegree_unbounded_of_all_levels` in
+  [`LevelMapValuation.lean`](../../content/quantum-observable-universe/lean/QOU/QBeta/LevelMapValuation.lean):
+  a coefficient-degree budget `D` caps the reachable Masbaum level at
+  `n ≤ D/2` regardless of `m`, so any level map valid at every order has
+  unbounded coefficient degree. Reachable triangle `2n+3m ≤ D` has
+  `~D²/12` pairs and `n_max = ⌊D/2⌋`. **The Habiro-comultiplication
+  derivation itself remains open** — it is the GGM programme's substance,
+  not a session-scale identity, and is deliberately not attempted; only
+  the constraint side is closed.

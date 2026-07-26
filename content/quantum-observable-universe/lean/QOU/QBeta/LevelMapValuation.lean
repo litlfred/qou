@@ -194,6 +194,35 @@ theorem natDegree_ge_of_bridge_combined {Cn c num : ℤ[X]} (hu : IsUnit num)
   have := Polynomial.natDegree_le_of_dvd hdvd hc
   rwa [natDegree_one_sub_X_pow] at this
 
+/-- **A degree budget caps the reachable Masbaum level.** If the
+coefficient joining level `n` has degree at most `D`, then `2n ≤ D`:
+only levels `n ≤ D/2` are reachable, whatever `m` is. -/
+theorem level_le_of_natDegree_le {Cn c num : ℤ[X]} (hu : IsUnit num)
+    (n m D : ℕ) (hc : c ≠ 0)
+    (h : Cn * qPochC X n ^ 2 * qPochC X m ^ 3 = c * num)
+    (hD : c.natDegree ≤ D) : 2 * n ≤ D := by
+  have := natDegree_ge_of_bridge_combined hu n m hc h
+  omega
+
+/-- **No bounded-degree level map bridges the tail.** If a level map
+intertwines at *every* Masbaum level with nonzero coefficients, then its
+coefficient degrees are unbounded: for any budget `D` some level needs
+a coefficient of degree exceeding `D`.
+
+So there is no "small" universal bridge. Any level-mixing map valid at
+all orders has coefficients whose complexity grows without bound —
+which is a structural fact about the surviving family, obtained without
+searching it. -/
+theorem natDegree_unbounded_of_all_levels
+    {C c num : ℕ → ℤ[X]} {mm : ℕ → ℕ}
+    (hu : ∀ n, IsUnit (num n)) (hc : ∀ n, c n ≠ 0)
+    (h : ∀ n, C n * qPochC X n ^ 2 * qPochC X (mm n) ^ 3 = c n * num n)
+    (D : ℕ) : ∃ n, D < (c n).natDegree := by
+  refine ⟨D + 1, ?_⟩
+  have := natDegree_ge_of_bridge_combined (hu (D + 1)) (D + 1) (mm (D + 1))
+    (hc (D + 1)) (h (D + 1))
+  omega
+
 end DegreeBound
 
 end QOU.QBeta.LevelMixing
