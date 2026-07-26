@@ -11,6 +11,7 @@ export default chapter({
         "im-complex-volume-intro",
         "qvalue-derivation-chain",
         "qbeta-ck-truncation-canonical",
+        "habiro-tail-star-identity",
         "qvalue-benchmark-table",
         "qvalue-benchmark-table-table-data",
       ],
