@@ -88,6 +88,46 @@ the 2-cusp link exponent is 3/2 or a distinct value. Two routes to close it:
    (trace field `ℚ(i)`), giving the exact prefactor directly — the analogue of the
    figure-eight's `1/3^{1/4}` (torsion `√3`).
 
+## The resolution: the flat-connection sum (Garoufalidis–Gu–Mariño–Wheeler)
+
+The unstable single-power fit is not noise — it is the wrong *model*. The correct
+asymptotic structure is a **sum over boundary-parabolic SL₂(ℂ) flat connections**
+(GGMW, *Resurgence of Chern–Simons theory at the trivial flat connection*,
+[`uploads/2111.04763v2.pdf`](../../uploads/2111.04763v2.pdf), Conjecture 1):
+
+$$\langle K\rangle_N \;=\; \sum_\sigma c^K_\sigma \, N^{\delta_\sigma}\,\mathrm{smed}\!\left(\Phi^{(K,\sigma)}\right)\!\left(\tfrac1N\right),\qquad \delta_\sigma=\tfrac32\ (\sigma\neq\sigma_0),\ \ \delta_{\sigma_0}=1,$$
+
+where the coefficients `c^K_σ` are **elements of the Habiro ring (⊗ℚ) evaluated at
+q = 1**. Consequences for this row:
+
+- **δ = 3/2 is the *geometric-connection* power, not a global exponent.** Fitting one
+  power `p` to `log|J_red|` conflates the geometric sector (`N^{3/2}`), the trivial
+  sector (`N^{1}`), and any further sub-connections; at finite N the mixture reads an
+  effective `p ∈ (0.66, 1.60)`. The figure-eight fits cleanly only because it is
+  amphichiral (`CS = 0`, no conjugate-connection phase) and its sub-connections are
+  suppressed at these N. The "factor 2" is therefore **the geometric coefficient
+  `c_{σ_geom}(q=1)` (times its `smed(Φ)(0)`)**, not a wrong power.
+- **This is the same ring the QOU corpus already uses.** The `c_σ` are Habiro-ring
+  elements at `q=1` — the identical object class as the Q_β `c_k` truncation ladder and
+  the α_EM fibre-level Habiro element `[2]_q(1−h²α)` (AGENTS.md). The Kashaev
+  flat-connection sum realises, in the knot/link setting, QOU's **fibre-vs-archimedean**
+  split: the fibre carries the whole σ-sum; the archimedean evaluation at `q₀` selects /
+  weights sectors.
+- **Derivation target (supersedes the "more N" route).** Compute `c_{σ_geom}(q=1)` and
+  the trivial-sector contribution for L5a1 directly, rather than fitting a power. The
+  twist-knot cyclotomic formula (Masbaum, [`uploads/Download.pdf`](../../uploads/Download.pdf):
+  `J'_{K_p}(N)=Σ_n \tilde f_{K_p,n}(q^{1-N})_n(q^{1+N})_n`) is a ready cross-check on the
+  R-matrix engine, since the twist knots `K_p` are `(-1/p)` Dehn fillings of one
+  Whitehead component.
+
+**Two conflation cautions (not asserted as identities).** (i) The flat-connection index
+`σ` is *not* the Wedderburn partition index `λ` of `tr_M = Σ_λ y_λ χ^λ` — geometric
+character-variety points vs Hecke irreps, related in the literature but distinct index
+sets. (ii) GGMW "Stokes constants" (Borel-plane resurgence) and the chain's "Yekutieli
+non-abelian Stokes" (connection holonomy) share a name, possibly not the same
+mathematics; a bridge is conceivable (CS resurgence runs through flat connections) but
+is unproven here.
+
 ## Status of the Whitehead B1 row
 
 Leading-order VC (Vol→4G) verified in-corpus; refined prefactor factor-2 established
