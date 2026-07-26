@@ -34,7 +34,13 @@ injective on it. Strict pair-independence fails: at the $A_3$ rung the
 assignments for the two braid pairs are provably different functions,
 the indicator state of the longest cell element of one pair being read
 into the isotypic slot by that pair's assignment and annihilated by the
-other's. What remains open is coherent canonicity — transition
-isomorphisms intertwining the assignments of different marked pairs
-along diagram automorphisms, or a pair-independent functor obtained by
-a different construction.
+other's. Coherence between distinct pairs holds along two proved edge
+classes: any symmetry of the Coxeter matrix, and any conjugation
+carrying one marked pair onto another, each inducing a group
+endomorphism along which the target pair's assignment is the pullback
+of the source pair's. The pair swap $(s_i, s_j) \mapsto (s_j, s_i)$ is
+the proved exception: it transports the six-element cell by an index
+involution, but no map on the isotypic target — linear or otherwise —
+completes its square. What remains open is assembling the coherent
+edges into a single functor on a marked-pair groupoid, or a
+pair-independent assignment by a different construction.
