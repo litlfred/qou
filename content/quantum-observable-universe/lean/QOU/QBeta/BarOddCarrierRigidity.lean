@@ -3,22 +3,30 @@ Copyright (c) 2026 litlfred. All rights reserved.
 
 # Bar-odd carrier rigidity — the c₃ Im(q) swing is not a free per-anchor knob
 
-Formalize-first structural brick for the **Im(q)-as-c₃-carrier reframe** (PR #4326,
-capstone #4297): q₀ read as a *local, varying* substrate value whose fibre-level
-`Im(q) ≠ 0` carries the c₃ cross-anchor swing (KC21: the swing is structurally
-bar-ODD, `S(−ε) = −S(ε)` for `q = q₀ + iε`). The reframe's central honesty
-guardrail (its whole risk) is:
+Generic-ring, bar-parity-native companion to the **Im(q)-as-c₃-carrier** analysis
+(capstone #4297). Context (KC21): the c₃ cross-anchor swing is structurally
+bar-ODD, `S(−ε) = −S(ε)` for `q = q₀ + iε`, so the fibre-level `Im(q)` is the
+bar-odd carrier. The reframe's honesty guardrail — *the varying `Im(q)` must be
+constrained across observables, never a free per-anchor knob* — has two halves,
+and this file is the **structural** one.
 
-> the varying `Im(q)` must be **constrained across observables**, never a free
-> per-anchor knob (a per-anchor-fitted `Im(q)` is the unfalsifiable "seventh
-> ansatz").
+> **Route status (2026-07-26): the Im(q) reframe is CLOSED — not a lead.** The
+> quantitative half was run and merged: [`ImQAnchorCarrier.lean`](ImQAnchorCarrier.lean)
+> / [`2026-07-26-q0-varies-imq-c3.md`](../../../../../docs/audits/2026-07-26-q0-varies-imq-c3.md)
+> (PR #4326) prove **at ℝ** with the actual phase model
+> (`S = (√3/2)r²sin 2φ`, `k = ∂ε→φ = 0.6514`) that a single global `Im(q₀)`
+> is `6.6×10⁶`× too small to realize the swing, and that a per-anchor `Im(q)`
+> fits anything (opposite sign, free scale) ⇒ **FIT**. `conj:algebraic-
+> geometric-dilog-equivalence` stays open; the resurgent D-ladder (KC22) is the
+> live route.
 
-This file supplies the **structural rigidity** that guardrail asks for, composing
-the merged graded-split canonicity (`QOU.QBeta.EvenFaceMassShadow`, PR #4275) with
-the `QOU.QBeta.ZBarParity` bar-parity machinery. It is **complementary** to #4326's
-quantitative `∂S/∂φ·arg(u)` order-check — that measures *whether one Im(q) fits the
-size*; this proves *the carrier cannot be tuned per anchor once the mass shadow is
-fixed*.
+This file is **not a competing lead** — it is the *generic* structural reason
+behind that concrete verdict: composing the merged graded-split canonicity
+(`QOU.QBeta.EvenFaceMassShadow`, PR #4275) with `QOU.QBeta.ZBarParity`, it shows
+over **any** `CommRing` (no phase model, no numbers) that the bar-odd carrier is
+rigidly pinned by the fibre element — the parity content of "not a free
+per-anchor knob." Reusable bar-parity infrastructure; `ImQAnchorCarrier` is its
+concrete ℝ instance.
 
 All sorry-free, generic `{R : Type*} [CommRing R]` with an abstract bar involution
 `σ : R →+* R` (the fibre `q ↦ q⁻¹`), char-`≠ 2` supplied on a `Field` target only
@@ -43,10 +51,11 @@ The results:
    form; combined with `carrier_unique` it is the *canonical* representative, and
    the free per-anchor alternative is excluded once the shadows are fixed.
 
-**Honest scope.** A necessary structural condition on the reframe, not the reframe's
-closure: it forbids the fit failure mode, it does not by itself derive the swing
-magnitude (that is #4326's `∂S/∂φ` check). No `c_k` value; no Im(q) fitted; nothing
-wired; no registry tier changed.
+**Honest scope.** Reusable generic-ring parity infrastructure; the concrete Im(q)
+route it abstracts is already CLOSED (merged, above). It captures the *structural*
+reason (bar-odd carrier rigidity) — it does not derive the swing magnitude (that
+was the merged `∂S/∂φ` order-check that closed the route). No `c_k` value; no Im(q)
+fitted; nothing wired; no registry tier changed.
 
 -- Ref: [manuscript] docs/audits/2026-07-26-1ppq-l2-two-front-survey.md
 -/
