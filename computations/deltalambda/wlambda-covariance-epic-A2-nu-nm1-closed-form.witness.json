@@ -1,0 +1,43 @@
+{
+  "engine": "python-exact",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-07-26T11:46:36.785405+00:00",
+  "commitSha": "28cbb92f6e1b0e1ff62744ac762edaa9961bd355",
+  "assertions": [
+    {
+      "name": "covariance_epic_A2_nu_nm1_closed_form",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "ν_{n-1}=(n-1)(n-4)(n³-11n²+32n-30)C(2n-6,n-3)/(3n!): exact n≤40, carrier family (row+col+(a,2,1^c)) confirmed n≤25. Sign flips at n=8 (cubic root ρ≈7.078), sharpening (TAIL). No fit wired; no c_k."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 7,
+  "computation": "wlambda-covariance-epic-A2-nu-nm1-closed-form",
+  "scriptFile": "wlambda_covariance_epic_A2_nu_nm1_closed_form.py",
+  "scriptHash": "a842029832a3",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "mpmath": "1.4.1"
+  },
+  "description": "Second (TAIL) instance in closed form (qou-x631, qou-ogrk, A2/FMP): ν_{n-1}=Cov_Planch(N_{n-1},ω₃)=(n-1)(n-4)(n³-11n²+32n-30)·C(2n-6,n-3)/(3·n!). Carriers of hook length n-1 are the n-1 one-cell-off-the-cross diagrams (single row (n), single column (1^n), two-corner (a,2,1^c)), each N_{n-1}=1 (verified n≤25). Closed form exact n≤40. Sign = sign of the cubic n³-11n²+32n-30 (single real root ρ≈7.078): ν_{n-1}<0 for n=5,6,7, =0 at n=4, >0 for n≥8. SHARPENS (TAIL) ν_v≥0 for v>n/2+O(1): the v=n-1 tail is EMPTY (T(n)=n) for n≤7, so the +O(1) offset is nontrivial. Second derived TAIL instance after ν_n. Does NOT prove (TAIL)/FMP/A2/kernel. scope-(a); no fit wired; nothing wired; no c_k; L2 2/7.",
+  "data": {
+    "nu_nm1_closed_form": "(n-1)(n-4)(n^3-11n^2+32n-30)*C(2n-6,n-3)/(3*n!)",
+    "exact_match_n_le_40": true,
+    "carrier_family_verified_n_le_25": true,
+    "sign_negative_for": "n=5,6,7",
+    "sign_zero_at": "n=4",
+    "sign_positive_for": "n>=8",
+    "cubic_single_real_root": "rho ~ 7.078 (n^3-11n^2+32n-30)",
+    "tail_onset_sharpening": "T(n)=n (empty tail) for n<=7 at slice v=n-1; +O(1) nontrivial"
+  }
+}
