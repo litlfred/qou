@@ -207,6 +207,61 @@ theorem sl2_rank_le_one {K : Type*} [Field K] (h2 : (2 : K) ≠ 0) :
   rw [hc, neg_ne_zero]
   exact h4
 
+/-- The characteristic polynomial of `ad h` on `𝔰𝔩₂` is `X³ − 4X`
+(eigenvalues `0, 2, −2` on the basis `(h, e, f)`). Factored out of `sl2_rank_le_one`
+so the trailing-degree and Cartan-dimension results share it. -/
+theorem sl2_charpoly_ad_h {K : Type*} [Field K] :
+    (ad K (sl (Fin 2) K) (sl2H K)).charpoly
+      = Polynomial.X ^ 3 - Polynomial.C 4 * Polynomial.X := by
+  haveI : Module.Finite K (sl (Fin 2) K) := Module.Finite.of_basis (sl2Basis K)
+  haveI : Module.Free K (sl (Fin 2) K) := Module.Free.of_basis (sl2Basis K)
+  rw [← LinearMap.charpoly_toMatrix (ad K (sl (Fin 2) K) (sl2H K)) (sl2Basis K),
+    sl2_toMatrix_ad_h, Matrix.charpoly_diagonal]
+  simp only [Fin.prod_univ_three, Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.head_cons,
+    Matrix.cons_val_two, Matrix.tail_cons, map_zero, map_neg, map_ofNat, sub_zero, sub_neg_eq_add]
+  ring
+
+/-- The trailing degree of `charpoly (ad h)` is exactly `1`: the constant coefficient
+of `X³ − 4X` vanishes (0 is a root — `h` centralizes itself) while the degree-1
+coefficient `−4 ≠ 0`. Needs `2 ≠ 0` so that `4 ≠ 0`. -/
+theorem sl2_ntd_ad_h {K : Type*} [Field K] (h2 : (2 : K) ≠ 0) :
+    (ad K (sl (Fin 2) K) (sl2H K)).charpoly.natTrailingDegree = 1 := by
+  have h4 : (4 : K) ≠ 0 := by
+    have h42 : (4 : K) = 2 * 2 := by norm_num
+    rw [h42]; exact mul_ne_zero h2 h2
+  rw [sl2_charpoly_ad_h]
+  set p : Polynomial K := Polynomial.X ^ 3 - Polynomial.C (4 : K) * Polynomial.X with hp
+  have hc1 : p.coeff 1 = -4 := by
+    rw [hp, Polynomial.coeff_sub, Polynomial.coeff_X_pow, Polynomial.coeff_C_mul,
+      Polynomial.coeff_X_one, mul_one, if_neg (by decide : ¬ (1 = 3)), zero_sub]
+  have hc0 : p.coeff 0 = 0 := by
+    rw [hp, Polynomial.coeff_sub, Polynomial.coeff_X_pow, Polynomial.coeff_C_mul,
+      Polynomial.coeff_X_zero, if_neg (by decide : ¬ (0 = 3)), mul_zero, sub_zero]
+  have hne : p ≠ 0 := by
+    intro h
+    have : (-4 : K) = 0 := by rw [← hc1, h, Polynomial.coeff_zero]
+    exact h4 (neg_eq_zero.mp this)
+  have hle : p.natTrailingDegree ≤ 1 :=
+    Polynomial.natTrailingDegree_le_of_ne_zero (by rw [hc1]; exact neg_ne_zero.mpr h4)
+  have hge : 1 ≤ p.natTrailingDegree := by
+    rcases Nat.eq_zero_or_pos p.natTrailingDegree with h0 | hpos
+    · exfalso
+      have hcn := Polynomial.coeff_natTrailingDegree_ne_zero.mpr hne
+      rw [h0] at hcn
+      exact hcn hc0
+    · exact hpos
+  exact le_antisymm hle hge
+
+/-- **Cartan dimension of `𝔰𝔩₂` is `1`.** The Engel subalgebra (generalized `0`-eigenspace
+of `ad h`) at the regular diagonal `h` has `finrank = 1`, since
+`finrank (engel h) = natTrailingDegree (charpoly (ad h)) = 1`
+(`LieAlgebra.finrank_engel`). This is the reusable toral-dimension datum for `𝔰𝔩₂`. -/
+theorem sl2_finrank_engel_h_eq_one {K : Type*} [Field K] (h2 : (2 : K) ≠ 0) :
+    Module.finrank K (LieSubalgebra.engel K (sl2H K)) = 1 := by
+  haveI : Module.Finite K (sl (Fin 2) K) := Module.Finite.of_basis (sl2Basis K)
+  haveI : Module.Free K (sl (Fin 2) K) := Module.Free.of_basis (sl2Basis K)
+  rw [LieAlgebra.finrank_engel, sl2_ntd_ad_h h2]
+
 end SL2
 
 end QOU.Atomicity
