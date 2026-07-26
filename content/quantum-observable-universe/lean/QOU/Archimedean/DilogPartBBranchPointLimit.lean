@@ -488,23 +488,23 @@ private theorem exp_sub_one_le {s : ℝ} (hs0 : 0 ≤ s) (hs1 : s ≤ 1) :
   calc Real.exp s - 1 ≤ s * Real.exp s := by nlinarith [h2]
     _ ≤ s * Real.exp 1 := mul_le_mul_of_nonneg_left hmono hs0
 
-/-- **Unconditional Dilog Part B W-P1 limit for `x = e^{−√D}`.**  For any irrational
-    `√D`, the maximal-cell branch-point scaling `q_j = e^{1/(j+1)}`,
-    `n_j = ⌊(j+1)√D⌋` realizes the W-P1 limit `→ π²/6 − Li₂(e^{−√D})`
-    **unconditionally**: the badly-approximable bound `{k√D} ≥ c₀/k`
-    (`QOU.MathlibExt.sqrt_fract_badlyApproximable`) supplies the `K = 2` quadratic
-    gap `c₀/e³·(q_j−1)² ≤ 1 − x q_j^{n_j}`, discharging the Diophantine hypothesis of
-    `wp1_tendsto_of_powerBound`.  This is the payoff of the Mathlib-gap infra: the
-    open uniform Diophantine input is *proved* for the quadratic-surd class. -/
-theorem wp1_tendsto_expNegSqrt {D : ℕ} (hD : Irrational (Real.sqrt (D : ℝ))) :
+/-- **Unconditional Dilog Part B W-P1 limit for `x = e^{−α}`, `α` badly approximable.**
+    For any `α > 0` admitting a fractional-part badly-approximable bound
+    `{jα} ≥ c/j` (`j ≥ 1`), the maximal-cell branch-point scaling `q_j = e^{1/(j+1)}`,
+    `n_j = ⌊(j+1)α⌋` realizes the W-P1 limit `→ π²/6 − Li₂(e^{−α})` **unconditionally**:
+    the bound supplies the `K = 2` quadratic gap `c/e³·(q_j−1)² ≤ 1 − x q_j^{n_j}`,
+    discharging the Diophantine hypothesis of `wp1_tendsto_of_powerBound`.  This is the
+    analysis half, decoupled from the number theory: any badly-approximable `α` (the
+    fract-bound is the sole input) yields the limit — quadratic surds are one instance
+    (`wp1_tendsto_expNegSqrt`).  The bound alone gives `{jα} > 0` (branch below 1), so
+    no separate irrationality hypothesis is needed. -/
+theorem wp1_tendsto_expNeg_of_fractBound {A : ℝ} (hApos : 0 < A)
+    (hbadly : ∃ c : ℝ, 0 < c ∧ ∀ j : ℕ, 1 ≤ j → c / (j : ℝ) ≤ Int.fract ((j : ℝ) * A)) :
     ∃ (q : ℕ → ℝ) (n : ℕ → ℕ),
       Tendsto (fun j => (1 - q j) * ∑ k ∈ Finset.range (n j),
-          Real.log (1 - Real.exp (-Real.sqrt (D : ℝ)) * (q j) ^ k))
-        atTop (𝓝 (Real.pi ^ 2 / 6 - LiTwo (Real.exp (-Real.sqrt (D : ℝ))))) := by
-  obtain ⟨c₀, hc₀, hbad⟩ := QOU.MathlibExt.sqrt_fract_badlyApproximable hD
-  set A : ℝ := Real.sqrt (D : ℝ) with hA
-  have hD1 : (D : ℝ) ≠ 0 := fun h => hD (by rw [hA, h, Real.sqrt_zero]; exact ⟨0, by norm_num⟩)
-  have hApos : 0 < A := Real.sqrt_pos.mpr (lt_of_le_of_ne (Nat.cast_nonneg D) (Ne.symm hD1))
+          Real.log (1 - Real.exp (-A) * (q j) ^ k))
+        atTop (𝓝 (Real.pi ^ 2 / 6 - LiTwo (Real.exp (-A)))) := by
+  obtain ⟨c₀, hc₀, hbad⟩ := hbadly
   set x : ℝ := Real.exp (-A) with hx
   have hx0 : 0 < x := Real.exp_pos _
   set m : ℕ → ℕ := fun j => j + 1 with hm
@@ -532,11 +532,11 @@ theorem wp1_tendsto_expNegSqrt {D : ℕ} (hD : Irrational (Real.sqrt (D : ℝ)))
     congr 1
     have hmne : (↑(m j) : ℝ) ≠ 0 := (hm_pos j).ne'
     rw [← hfr_eq j]; field_simp; ring
-  -- fract facts
-  have hAm_irr : ∀ j, Irrational (A * (m j : ℝ)) := fun j => by
-    rw [mul_comm]; exact hD.natCast_mul (by simp [hm])
-  have hfr_pos : ∀ j, 0 < Int.fract (A * (m j : ℝ)) := fun j =>
-    Int.fract_pos.mpr ((hAm_irr j).ne_int ⌊A * (m j : ℝ)⌋)
+  -- fract facts (positivity now comes from the badly-approximable bound, not irrationality)
+  have hfr_pos : ∀ j, 0 < Int.fract (A * (m j : ℝ)) := fun j => by
+    have h := hbad (m j) (hmge1 j)
+    rw [mul_comm] at h
+    linarith [div_pos hc₀ (hm_pos j), h]
   have hfr_lt1 : ∀ j, Int.fract (A * (m j : ℝ)) < 1 := fun j => Int.fract_lt_one _
   have hfr_nn : ∀ j, 0 ≤ Int.fract (A * (m j : ℝ)) := fun j => (hfr_pos j).le
   -- the wp1_tendsto_of_powerBound hypotheses (K = 2)
@@ -610,5 +610,21 @@ theorem wp1_tendsto_expNegSqrt {D : ℕ} (hD : Irrational (Real.sqrt (D : ℝ)))
           mul_le_mul_of_nonneg_right htge (Real.exp_pos _).le
       _ ≤ 1 - x * (q j) ^ (n j) := hgap
   exact ⟨q, n, wp1_tendsto_of_powerBound hx0 (by positivity) 2 hq1 hqlim hbelow hub hlb⟩
+
+/-- **Unconditional Dilog Part B W-P1 limit for `x = e^{−√D}`** — the quadratic-surd
+    instance of `wp1_tendsto_expNeg_of_fractBound`.  For any irrational `√D`,
+    `sqrt_fract_badlyApproximable` supplies the fract-bound, so the limit
+    `→ π²/6 − Li₂(e^{−√D})` holds unconditionally.  This is the payoff of the
+    Diophantine Mathlib-gap infra: the open uniform Diophantine input is *proved* for
+    the quadratic-surd class. -/
+theorem wp1_tendsto_expNegSqrt {D : ℕ} (hD : Irrational (Real.sqrt (D : ℝ))) :
+    ∃ (q : ℕ → ℝ) (n : ℕ → ℕ),
+      Tendsto (fun j => (1 - q j) * ∑ k ∈ Finset.range (n j),
+          Real.log (1 - Real.exp (-Real.sqrt (D : ℝ)) * (q j) ^ k))
+        atTop (𝓝 (Real.pi ^ 2 / 6 - LiTwo (Real.exp (-Real.sqrt (D : ℝ))))) := by
+  have hApos : 0 < Real.sqrt (D : ℝ) := by
+    have hD1 : (D : ℝ) ≠ 0 := fun h => hD (by rw [h, Real.sqrt_zero]; exact ⟨0, by norm_num⟩)
+    exact Real.sqrt_pos.mpr (lt_of_le_of_ne (Nat.cast_nonneg D) (Ne.symm hD1))
+  exact wp1_tendsto_expNeg_of_fractBound hApos (QOU.MathlibExt.sqrt_fract_badlyApproximable hD)
 
 end QOU.Archimedean
