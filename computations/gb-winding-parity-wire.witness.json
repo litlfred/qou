@@ -1,0 +1,63 @@
+{
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-07-27T19:27:21.488837+00:00",
+  "commitSha": "32d6c234afc48338314c994b5adfc7be48233a63",
+  "assertions": [
+    {
+      "name": "coxeter_grading_period3_parity_blind",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "q_grading_leading_sign_equals_winding_parity",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "readout_is_framed_zero_writhe_family_stable",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "tracker_ground_truth_sigma1_cubed",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 19,
+  "computation": "gb-winding-parity-wire",
+  "scriptFile": "gb_winding_parity_wire_probe.py",
+  "scriptHash": "33efbebe4bf9",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "GAP-2 (bean qou-rbfr, epic qou-xu6t): whether the winding parity behind the merged #4401 sign mechanism can be READ OFF the Gröbner–Shirshov reduction certificate of a braid word rather than asserted from its w^n presentation (w = σ₁σ₂⁻¹, 4₁ = w², Borromean = w³). Two gradings answer differently. COXETER grading: the image of w^n in S₃ is (s₁s₂)ⁿ with s₁s₂ a 3-cycle, so the permutation support / grade profile is periodic with period 3 — it sees n mod 3 and is blind to the parity. q-GRADING: the certificate's total coefficient sum is a Laurent polynomial of degree exactly 2n−1 with leading coefficient exactly (−1)ⁿ — the winding parity, verified n = 1..8. MARKOV: that readout is FRAMED, not yet a knot invariant — unchanged under positive stabilisation, multiplied by (1−h) under negative stabilisation (h = q−q⁻¹); harmless on the canonical family because w^n has exponent sum 0, but a general braid needs writhe-normalisation first. PARTIAL WIRE, reported as such: converts the parity from presentation-asserted to certificate-derived and identifies which grading carries it, but does not deliver the full winding class (m,ℓ), and is verified on the zero-writhe canonical family only. No Δ_λ, no c_k, no magnitude, nothing wired.",
+  "contentBlock": "prop:winding-lattice-norm-form",
+  "data": {
+    "wire_readout": {
+      "coxeter_layer": "image of w^n in S₃ = (s₁s₂)ⁿ, period 3 ⇒ sees n mod 3, parity-blind",
+      "q_layer": "Σ_w c_w(q) has degree 2n−1, leading coefficient (−1)ⁿ (n = 1..8)",
+      "degrees": "[1, 3, 5, 7, 9, 11, 13, 15]",
+      "leading_coeffs": "['-1', '1', '-1', '1', '-1', '1', '-1', '1']",
+      "markov_positive_stabilisation": "coefficient sum unchanged",
+      "markov_negative_stabilisation": "coefficient sum × (1 − h), h = q − q⁻¹",
+      "canonical_family_writhe": "exponent sum of w^n = 0 for all n (no correction needed)",
+      "verdict": "PARTIAL WIRE — parity is certificate-derivable via the q-grading (not the Coxeter grading), as a framed quantity stable on the zero-writhe canonical family; full (m,ℓ) still open, general-braid case needs writhe normalisation"
+    }
+  }
+}
