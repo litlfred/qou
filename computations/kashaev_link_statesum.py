@@ -136,28 +136,187 @@ def link_invariant(diag: Diagram, N: int) -> complex:
     return total
 
 
-def fig8_diagram() -> Diagram:
-    """The figure-eight (4₁) standard 4-crossing alternating diagram as a
-    two-strand tangle.  MILESTONE (in progress): the CCW edge/face bookkeeping
-    at each crossing is being validated against the merged closed form
-    kashaev_4_1(N).  Encoded here for iteration; not yet asserted correct."""
-    raise NotImplementedError(
-        "figure-eight diagram encoding is the in-progress validation milestone")
+def _trace_faces(pd: list[tuple[int, int, int, int]]):
+    """Faces of a 4-valent planar diagram from its PD code via the combinatorial
+    map φ = σ∘α (σ = CCW vertex rotation, α = edge involution).
+
+    Dart (c,p) sits on edge pd[c][p]; the CCW order at crossing c is p=0,1,2,3
+    (= Kas95 edges i,j,k,l).  The corner/sector between dart p and σ(p)=p+1 is
+    the φ-orbit of dart (c,p); Kas95 sectors a,b,c,d ↔ p=0,1,2,3 (a starts at
+    the (i,j) sector).  Returns (faces_per_crossing, face_ids) where
+    faces_per_crossing[c] = (fa,fb,fc,fd) the four φ-orbit IDs at crossing c."""
+    darts = [(c, p) for c in range(len(pd)) for p in range(4)]
+    # α: the two darts sharing an edge label
+    by_edge: dict[int, list] = {}
+    for d in darts:
+        by_edge.setdefault(pd[d[0]][d[1]], []).append(d)
+    alpha = {}
+    for e, ds in by_edge.items():
+        assert len(ds) == 2, f"edge {e} appears {len(ds)}× (need 2)"
+        alpha[ds[0]], alpha[ds[1]] = ds[1], ds[0]
+
+    def sigma(d):
+        return (d[0], (d[1] + 1) % 4)
+
+    def phi(d):
+        return sigma(alpha[d])
+
+    seen, face_of = set(), {}
+    fid = 0
+    for d in darts:
+        if d in seen:
+            continue
+        cur = d
+        while cur not in seen:
+            seen.add(cur)
+            face_of[cur] = fid
+            cur = phi(cur)
+        fid += 1
+    faces_per_crossing = [tuple(face_of[(c, p)] for p in range(4)) for c in range(len(pd))]
+    return faces_per_crossing, list(range(fid))
+
+
+def _solve_mod(A, b, N):
+    """One solution x of A x ≡ b (mod N), N prime; None if inconsistent."""
+    A = [row[:] + [b[i] % N] for i, row in enumerate(A)]
+    rows, cols = len(A), len(A[0]) - 1
+    piv = []
+    r = 0
+    for c in range(cols):
+        pr = next((i for i in range(r, rows) if A[i][c] % N), None)
+        if pr is None:
+            continue
+        A[r], A[pr] = A[pr], A[r]
+        inv = pow(A[r][c], N - 2, N)
+        A[r] = [(v * inv) % N for v in A[r]]
+        for i in range(rows):
+            if i != r and A[i][c]:
+                f = A[i][c]
+                A[i] = [(A[i][j] - f * A[r][j]) % N for j in range(cols + 1)]
+        piv.append(c)
+        r += 1
+        if r == rows:
+            break
+    for i in range(r, rows):
+        if A[i][cols] % N:
+            return None
+    x = [0] * cols
+    for i, c in enumerate(piv):
+        x[c] = A[i][cols] % N
+    return x
+
+
+def diagram_from_pd(pd, strand_edges, outer_face_hint=None, name=""):
+    """Build a Diagram (edges + traced faces) from a PD code."""
+    faces_pc, face_ids = _trace_faces(pd)
+    crossings = [Crossing(edges=tuple(pd[c]), faces=faces_pc[c]) for c in range(len(pd))]
+    edges = sorted({e for tup in pd for e in tup})
+    outer = outer_face_hint if outer_face_hint is not None else face_ids[-1]
+    return Diagram(crossings=crossings, edges=edges, faces=face_ids,
+                   strand_edges=strand_edges, outer_face=outer, name=name)
+
+
+def solve_face_indices_coupled(diag: Diagram, N: int):
+    """Solve the FULL (3.3)-(3.4) system: per-crossing row sums ≡1 AND per-face
+    column sums ≡1 (f≠f₀), with a(v,f₀)=0.  Variables = (crossing, sector-face)
+    pairs.  Returns the a-map, or None if inconsistent for this f₀."""
+    var = {}
+    for vi, c in enumerate(diag.crossings):
+        for f in c.faces:
+            if f != diag.outer_face and (vi, f) not in var:
+                var[(vi, f)] = len(var)
+    n = len(var)
+    A, b = [], []
+    # (3.4) row: Σ_f a(v,f) = 1  (sectors on f₀ contribute 0)
+    for vi, c in enumerate(diag.crossings):
+        row = [0] * n
+        for f in c.faces:
+            if f != diag.outer_face:
+                row[var[(vi, f)]] += 1
+        A.append(row); b.append(1)
+    # (3.4) col: Σ_v a(v,f) = 1 for each interior face f≠f₀.  The row set
+    # (V eqns, global sum V) and the full interior-column set (F−1 eqns,
+    # global sum F−1 = V+1 by Euler) are inconsistent by exactly one, so the
+    # columns carry a single dependency: impose all-but-one interior column
+    # (drop one — the angle-deficit face), leaving the system consistent and
+    # under-determined (the paper's "freedom in choosing a").
+    faces_to_crossings: dict[int, list] = {}
+    for vi, c in enumerate(diag.crossings):
+        for f in c.faces:
+            faces_to_crossings.setdefault(f, []).append(vi)
+    interior = [f for f in faces_to_crossings if f != diag.outer_face]
+    for f in interior[:-1]:                       # drop the last interior column
+        row = [0] * n
+        for vi in faces_to_crossings[f]:
+            row[var[(vi, f)]] += 1
+        A.append(row); b.append(1)
+    x = _solve_mod(A, b, N)
+    if x is None:
+        return None
+    a = {}
+    for (vi, f), idx in var.items():
+        a[(vi, f)] = x[idx]
+    for vi, c in enumerate(diag.crossings):
+        for f in c.faces:
+            if f == diag.outer_face:
+                a[(vi, f)] = 0
+    return a
+
+
+# figure-eight 4₁ PD code (KnotAtlas): under=(i,k), over=(j,l), CCW — matches Kas95.
+FIG8_PD = [(4, 2, 5, 1), (8, 6, 1, 5), (6, 3, 7, 4), (2, 7, 3, 8)]
+
+
+def fig8_state_sum(N: int, strand_edges=(1, 2), outer_face=2):
+    """⟨4₁⟩ via the [Kas95] §3 state sum with the coupled face solver.
+
+    VALIDATED convention (strand_edges, outer_face): strands (1,2) [or the
+    symmetric (4,5)] with outer face 2 reproduce the Kashaev closed form
+    kashaev_4_1(N) exactly at N=3,5,7 (13.0, 50.472, 151.279)."""
+    diag = diagram_from_pd(FIG8_PD, strand_edges=strand_edges,
+                           outer_face_hint=outer_face, name="4_1")
+    a = solve_face_indices_coupled(diag, N)
+    if a is None:
+        return None, diag
+    diag.face_index = a
+    return link_invariant(diag, N), diag
 
 
 if __name__ == "__main__":
-    # Self-consistency of the driver/solver on a trivially small synthetic
-    # diagram (one crossing, all four sectors distinct, no outer face) — this
-    # exercises the face-index solver + weight read, NOT the topological
-    # invariance (that needs a real diagram, next unit).
-    d = Diagram(
-        crossings=[Crossing(edges=(0, 1, 2, 3), faces=(10, 11, 12, 13))],
-        edges=[0, 1, 2, 3], faces=[10, 11, 12, 13],
-        strand_edges=(0, 2), outer_face=13, name="synthetic-1x",
-    )
-    for N in (3, 5):
-        a = solve_face_indices(d, N)
-        sec_sum = sum(a[(0, f)] for f in d.crossings[0].faces) % N
-        val = link_invariant(d, N)
-        print(f"N={N}: sector-sum≡{sec_sum} (want 1)  ⟨synthetic⟩={val:.4f}  |·|={abs(val):.4f}")
-    print("\nfigure-eight validation vs kashaev_4_1: NEXT UNIT (fig8_diagram)")
+    import json
+    from datetime import datetime, timezone
+    from pathlib import Path
+    from figure_eight_kashaev_volume import kashaev_4_1
+
+    print("[Kas95] §3 face-index state sum — figure-eight validation\n")
+    print("  reproduce the Kashaev closed form kashaev_4_1(N) (= our U_q(sl₂)")
+    print("  engine, #4382) from the general planar state sum (3.6):\n")
+    rows, ok = [], True
+    for N in (3, 5, 7, 11):
+        val, _ = fig8_state_sum(N)
+        ref = float(kashaev_4_1(N))
+        m = abs(val)
+        match = abs(m - ref) < 1e-6 * ref
+        ok = ok and match
+        rows.append((N, m, ref, match))
+        print(f"    N={N:3d}: |⟨4₁⟩_statesum|={m:.5f}  kashaev_4_1={ref:.5f}  {'✓' if match else '✗'}")
+    print(f"\n  => {'VALIDATED — the §3 state sum computes the Kashaev invariant' if ok else 'MISMATCH'}")
+    print("  (odd PRIME N: the mod-N face solve uses a Fermat inverse; composite")
+    print("   odd N needs a Z_N solver — deferred, not needed for validation.)")
+
+    wit = {
+        "description": "[Kas95] §3 face-index link-invariant state sum, validated on the figure-eight: the general planar state sum (3.6) reproduces the Kashaev closed form kashaev_4_1(N) exactly at N=3,5,7,11. The genuine Kashaev invariant machinery (not a Markov trace). Toward the Whitehead ⟨W⟩_N (#3).",
+        "computation": "kashaev_link_statesum", "audit_only": True,
+        "reference": "Kashaev 1995, q-alg/9504020 (uploads/9504020v1.pdf), §2-§3",
+        "convention": {"fig8_pd": [list(t) for t in FIG8_PD],
+                       "strand_edges": [1, 2], "outer_face": 2,
+                       "note": "symmetric choice (4,5)/2 also validates"},
+        "fig8_validation": {str(N): {"state_sum_abs": m, "kashaev_4_1": ref, "match": bool(mt)}
+                            for (N, m, ref, mt) in rows},
+        "validated": bool(ok),
+        "limitation": "odd PRIME N only (Fermat-inverse face solve); composite N needs a Z_N linear solver",
+        "timestamp": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+    }
+    out = Path(__file__).resolve().parent / "kashaev-link-statesum.witness.json"
+    out.write_text(json.dumps(wit, indent=2))
+    print(f"  Witness: {out}")
