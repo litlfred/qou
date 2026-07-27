@@ -51,12 +51,25 @@ STATUS
     orientation/sign refinement of (3.3)-(3.4) — note the global count is off
     by 2 on S², hinting the naive all-faces-col-sum-1 reading misses a sign) is
     the blocker for the Whitehead computation.
+      Hypotheses tested (2026-07-27), both insufficient:
+      · drop-one interior column — face-order-dependent; "drop last" happens to
+        validate FIG8_PD but is not canonical.
+      · outer col-sum = −1 (turning-angle deficit) with a(v,f₀) kept free —
+        RULED OUT: reproduces kashaev_4_1 only accidentally at N=3, fails
+        N=5,7.  The a(v,f₀)=0 gauge of (3.3) is genuinely required; the correct
+        rule keeps it and singles out ONE interior deficit face by a not-yet-
+        identified geometric criterion (likely tied to the two strand edges
+        e₁,e₂ and their incident faces).
   ○ Whitehead cannot be cross-checked via the U_q(sl₂) Markov-trace engine:
     closure_invariant VANISHES at the root of unity (vanishing quantum
     dimension), and the non-zero Kashaev normalization is only coded for 4₁
     (kashaev_4_1).  So Whitehead's validation path is the VOLUME growth
     (2π/N)log|⟨W⟩_N| → Vol(W)=4G≈3.6639, available once the deficit rule is
     fixed.
+  ○ COMPUTE CEILING: the state sum is Σ over j:E→Z_N (N^{|E|−2} terms).  For
+    Whitehead |E|=10 ⇒ N^8: N=7≈5.8M, N=11≈2×10^8, N=13≈8×10^8 — pure Python is
+    infeasible past N≈7, yet the volume validator needs N≈11–13.  A fast
+    (numpy / mod-p+CRT) evaluator is a prerequisite even after the deficit rule.
 
 Audit-only; no wiring; a genuine multi-session build.
 """
