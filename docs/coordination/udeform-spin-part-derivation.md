@@ -164,7 +164,7 @@ honest negatives: sign is lattice-arithmetic, magnitudes are not (at scale ln q�
 On the lattice the bar-norm IS the sign datum (N = G(m,ℓ), integer — angle/parity
 side). The derivable magnitude candidate is the OTHER channel of the same 𝔙:
 under the exponential bridge form (bean qou-dtd3), |δf| ~ e^{−Re 𝔙/ℏ_q}, and on
-the lattice Re 𝔙₄₁(u_{m,ℓ}) = Vol₄₁ − (√3/8)(ln q₀)²·(2m+ℓ)ℓ — the CROSS form
+the lattice Re 𝔙₄₁(u_{m,ℓ}) = Vol₄₁ − (3/8)(ln q₀)²·(2m+ℓ)ℓ — the CROSS form
 (2m+ℓ)ℓ, bar-even/cosh channel — while sign comes from the norm form (bar-odd
 parity channel). Magnitude = even channel, sign = odd parity: the two-channel
 split, one integer form each. Next probe (derive-then-check, canonical windings

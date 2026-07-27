@@ -1,5 +1,6 @@
 import Mathlib.Tactic.Ring
 import Mathlib.Tactic.LinearCombination
+import Mathlib.Data.ZMod.Basic
 
 /-!
 # The winding lattice of a braid-word geodesic: two quadratic orders, one parity
@@ -134,5 +135,24 @@ theorem parity_flip_iff_golden (n : ℕ) :
 theorem goldenPow_norm_alternates :
     normPhi (goldenPow 2) = 1 ∧ normPhi (goldenPow 3) = -1 := by
   constructor <;> decide
+
+/-- **Structural exclusion (mod-3 obstruction).** The value `−1` is not
+represented by the disc-12 norm form at all — by any lattice point, not merely
+by unit powers: reducing `a² − 3b² = −1` mod `3` demands `a² ≡ 2 (mod 3)`, and
+`2` is not a square mod `3`. This is the negative-Pell insolvability for
+`D = 3`, the cited invariant behind `pell3_norm`'s "no parity flip": the norm
+(Kummer/Galois norm of `ℚ(√3)/ℚ`) simply never takes the value `−1` on the
+cusp-torus order, while on the golden order it does (`goldenPow_norm_alternates`,
+`normPhi (goldenPow 3) = −1`). -/
+theorem norm3_ne_neg_one (a b : ℤ) : norm3 (a, b) ≠ -1 := by
+  simp only [norm3]
+  intro h
+  have hc := congrArg (fun z : ℤ => (z : ZMod 3)) h
+  push_cast at hc
+  revert hc
+  generalize (a : ZMod 3) = x
+  generalize (b : ZMod 3) = y
+  revert x y
+  decide
 
 end QOU.QBeta.WindingLatticeNormForm
