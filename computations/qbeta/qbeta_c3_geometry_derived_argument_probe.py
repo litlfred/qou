@@ -1,37 +1,67 @@
 #!/usr/bin/env python3
 """qbeta_c3_geometry_derived_argument_probe.py
 
-One disciplined shot at the c₃ bar-odd S from the GEOMETRY side, complementing
-the merged 60-argument Φ_b *analysis* scan (qbeta_c3_phib_argument_scan.py).
+CORRECTION (2026-07-26)
+=======================
+This is the THIRD probe that carried the WRONG figure-eight NZ leading Im form
+  WRONG:  Im 𝔙 ≈ (√3/2)|u|²·sin(2 arg u) = √3·Re(u)·Im(u)   (implies a REAL a₂)
+(the other two — qbeta_udeform_map_constraint_probe.py and
+qbeta_c3_barodd_gluing_newton_solve.py — were fixed in PR #4372). The figure-
+eight cusp modulus is τ = −i√3 (CCGLS A-polynomial, ℚ(√−3)), so the leading
+complex-volume coefficient a₂ = 𝔙″(0)/2 is PURELY IMAGINARY, a₂ = i·√3/4, hence
+  RIGHT:  Im 𝔙₄₁(u) = (√3/4)(Re²u − Im²u)
+proved sorry-free as `imV₄₁` in
+  content/quantum-observable-universe/lean/QOU/Knot/FigureEightComplexVolume.lean
+Audit: docs/audits/2026-07-26-sdeformed-channel-signflip.md.
+Authoritative corrected geometry-side readout (this probe AGREES with it):
+  computations/qbeta/qbeta_geometric_boost_udeform_probe.py.
 
-HONEST SCOPE OF THE READOUT (addressing review):
+CONSEQUENCE of the correction (the whole "silent" story inverts):
+  * Under the WRONG form, a REAL u = ln q₀ (arg u = 0) gave Im 𝔙 = 0 — hence the
+    prior claim "real m are silent; only complex m carry signal". That reasoning
+    is FALSE. Under the CORRECT form a REAL boost u = ln q₀ gives
+      Im 𝔙₄₁(ln q₀) = (√3/4)(ln q₀)² > 0  — NONZERO,
+    muon-sign-correct and the right ballpark (~0.49×S(muon), matching the
+    sibling probe).
+  * It is instead the OLD named complex readout set (substrate qty × the b-map
+    phase e^{iπ/4}) that is now near-SILENT: arg u = π/4 is exactly the DIAGONAL
+    |Re u| = |Im u| where Im 𝔙₄₁ VANISHES (cos 2·(π/4) = 0). The e^{iπ/4} phase
+    that MAXIMISED the wrong sin(2 arg u) sits on the null diagonal of the
+    correct cos(2 arg u). So the phase-π/4 candidates carry no signal, and the
+    real boost does.
+
+HONEST SCOPE OF THE READOUT (unchanged where correct):
   * The figure-eight REAL volume Vol(m) is computed EXACTLY by the validated
     gluing-equation Newton solver (qbeta_c3_barodd_gluing_newton_solve.vol_of_m):
     solve z(z−1)w(w−1)=1 (w=m²z), then Vol = D(z)+D(w) (Bloch–Wigner). This is
-    the genuine solver output and is reported as `Vol_exact`.
+    the genuine solver output and is reported as `Vol_exact` — UNCHANGED by the
+    correction (only the Im/CS leading form was wrong).
   * The bar-odd S candidate is Im 𝔙 (the Chern–Simons companion). The EXACT CS
     from the two tetrahedron shapes needs Neumann's extended-Bloch flattening,
-    which is NOT implemented here; we use the LEADING NZ form
-    Im 𝔙 ≈ (√3/2)|u|²·sin(2 arg u) (cusp shape √−3, derived, parameter-free).
-    This is reported as `ImV_leading` and is explicitly leading-order — NOT the
-    full solver output. (Implementing the exact flattening is the noted extension.)
+    which is NOT implemented here; we use the CORRECTED LEADING NZ form
+    Im 𝔙₄₁ = (√3/4)(Re²u − Im²u) (a₂ = i√3/4, cusp modulus, derived,
+    parameter-free), reported as `ImV_leading` and explicitly leading-order.
 
 TARGETS (scope-(a); C14; no c_k wired; no fit):
   S(muon)=+0.00968298, S(proton)=−0.03945936, and the un-levered residual
   r = S·u³ with u = ln q₀ (as computed here): r(muon)≈+1.10e-5, r(proton)≈−4.48e-5.
-  (These ~1e-5 values are for u=ln q₀; the sibling scan's ~1e-9 figures used a
-  different u convention — not reused here to avoid the mismatch.)
 
-READOUT SET: a small NAMED set of principled complex substrate meridian
-holonomies m (substrate quantity × the pinned b-map phase e^{iπ/4}, from
-phi_b_substrate_regime.py: b²=i·t/(2π), t=ln q₀). Real m give Im 𝔙 = 0
-(arg u = 0), so only complex m carry signal — the honest reason the
-real-substrate readout is silent.
+READOUT SETS:
+  (A) the REAL geometric boost u = ln q₀ (meridian-holonomy-boost.md: the cusp-
+      torus meridian holonomy IS multiplication by q₀, a hyperbolic boost of
+      rapidity ln q₀ at real q₀>1). Under the CORRECT form this is NONZERO and
+      carries the muon-sign+ballpark signal.
+  (B) the OLD named set of principled complex meridian holonomies m (substrate
+      quantity × the pinned b-map phase e^{iπ/4}). Kept for continuity — the
+      correction shows they land on/near the null DIAGONAL and are silent.
 
 GATE (zero-parameter): CANDIDATE iff, at BOTH anchors, |ImV_leading/S − 1| < 1e-3
-AND sign(ImV_leading) = sign(S). Otherwise the honest geometry-side data point
-(expected negative: the same q₀→m map is the open volume-conjecture link, so the
-anchor-dependent sign-flip cannot appear in a smooth readout).
+AND sign(ImV_leading) = sign(S). Expected honest negative (scope-(a)): the real
+boost hits the muon sign+ballpark but is NEARLY CONSTANT across the ~1e-8-apart
+anchor q₀'s (real boost cannot sign-flip), and the complex phase-π/4 set is on
+the null diagonal; the anchor-dependent sign-flip needs the boost→spin
+transition (a complex/spin part crossing the diagonal), which is the open
+u(q₀) — NOT fitted here.
 """
 from __future__ import annotations
 
@@ -55,11 +85,16 @@ Q = {"muon": mp.mpf("1.10997859555733471"),
      "proton": mp.mpf("1.1099785827513808075916690956107688798744991218736")}
 S_TARGET = {"muon": mp.mpf("0.00968298"), "proton": mp.mpf("-0.03945936")}
 PHASE = mp.e ** (mp.mpc(0, 1) * mp.pi / 4)   # the pinned b-map phase
+KAPPA = mp.sqrt(3) / 4   # |a₂|, the (purely imaginary) NZ leading coeff magnitude
 
 
 def cs_leading(u):
-    """Leading NZ Im 𝔙 = (√3/2)|u|² sin(2 arg u) — leading-order, NOT exact CS."""
-    return (mp.sqrt(3) / 2) * mp.fabs(u) ** 2 * mp.sin(2 * mp.arg(u))
+    """CORRECTED leading NZ Im 𝔙₄₁ = (√3/4)(Re²u − Im²u) — a₂ = i√3/4 purely
+    imaginary (cusp modulus τ=−i√3). Leading-order, NOT exact CS.
+    Ref: QOU.Knot.FigureEightComplexVolume.imV₄₁ (#4372). Supersedes the WRONG
+    (√3/2)|u|²·sin(2 arg u) = √3·Re·Im form (which corresponds to a REAL a₂)."""
+    u = mp.mpc(u)
+    return KAPPA * (mp.re(u) ** 2 - mp.im(u) ** 2)
 
 
 def m_candidates(q0):
@@ -77,7 +112,9 @@ def m_candidates(q0):
 
 def main() -> int:
     print("=" * 78)
-    print(" c₃ bar-odd S — GEOMETRY-side one-shot (exact Vol via solver; Im 𝔙 leading)")
+    print(" c₃ bar-odd S — GEOMETRY-side one-shot (exact Vol via solver; Im 𝔙 CORRECTED)")
+    print(" CORRECTED form Im 𝔙₄₁ = (√3/4)(Re²u − Im²u)  (imV₄₁, #4372) — supersedes")
+    print(" the wrong √3·Re·Im. Real boost u=ln q₀ now NONZERO; phase-π/4 set silent.")
     print("=" * 78)
 
     r_target = {a: S_TARGET[a] * (mp.log(Q[a])) ** 3 for a in Q}
@@ -85,8 +122,32 @@ def main() -> int:
     for a in ("muon", "proton"):
         print(f"   {a:7s}: S={mp.nstr(S_TARGET[a],6):>12}   r=S·u³={mp.nstr(r_target[a],6)}")
 
+    # ---- (A) REAL geometric boost u = ln q₀ (the corrected, non-silent readout) ----
+    print("\n (A) REAL geometric boost u = ln q₀ (meridian-holonomy-boost.md);"
+          " corrected Im 𝔙₄₁ = (√3/4)(ln q₀)²:")
+    real_readout = {}
+    for a in ("muon", "proton"):
+        u_real = mp.mpc(mp.log(Q[a]), 0)
+        imV = cs_leading(u_real)
+        ratio = imV / S_TARGET[a]
+        real_readout[a] = {"u_ln_q0": u_real, "imV": imV, "ratio_imV_over_S": ratio}
+        print(f"   {a:7s}: u=ln q₀={mp.nstr(mp.re(u_real),8)}  Im 𝔙₄₁=+{mp.nstr(imV,7)}"
+              f"  S={mp.nstr(S_TARGET[a],7)}  Im 𝔙/S={mp.nstr(ratio,5)}"
+              f"  sign-match={bool(mp.sign(imV) == mp.sign(S_TARGET[a]))}")
+    d_imV = real_readout["proton"]["imV"] - real_readout["muon"]["imV"]
+    s_gap = S_TARGET["muon"] - S_TARGET["proton"]
+    print(f"   Δ Im 𝔙₄₁(real, muon→proton) = {mp.nstr(d_imV,4)}  ≪  |S gap| ="
+          f" {mp.nstr(mp.fabs(s_gap),4)}  ⇒ nearly CONSTANT across anchors.")
+    # corrected findings on the REAL boost
+    g_muon_sign = (real_readout["muon"]["imV"] > 0 and S_TARGET["muon"] > 0)
+    g_muon_ballpark = mp.mpf("0.2") < real_readout["muon"]["ratio_imV_over_S"] < mp.mpf("5")
+    g_proton_wrong_sign = not (real_readout["proton"]["imV"] * S_TARGET["proton"] > 0)
+    g_nearly_const = mp.fabs(d_imV) < mp.fabs(s_gap) / 100
+
+    # ---- (B) OLD named complex set: now on/near the null diagonal (silent) ----
     rows, any_candidate = [], False
-    print("\n readouts (Vol_exact = gluing solver; ImV_leading = (√3/2)|u|²sin2φ):")
+    print("\n (B) named complex m (substrate qty × e^{iπ/4}): arg u=π/4 is the null")
+    print("     DIAGONAL of the corrected form (cos 2·π/4 = 0) ⇒ Im 𝔙₄₁ ≈ 0:")
     for name in m_candidates(Q["muon"]):
         imV, volx = {}, {}
         for a in ("muon", "proton"):
@@ -97,7 +158,7 @@ def main() -> int:
                 volx[a] = mp.re(vol)
             except Exception:
                 volx[a] = mp.mpf("nan")
-            imV[a] = cs_leading(uc)              # leading-order Im 𝔙 (labeled)
+            imV[a] = cs_leading(uc)              # CORRECTED leading-order Im 𝔙 (labeled)
 
         def match(a):
             t = S_TARGET[a]
@@ -119,33 +180,76 @@ def main() -> int:
                      "relerr_S_max": eS, "candidate": cand})
 
     print("\n VERDICT:", "CANDIDATE (near-match tier — verify)" if any_candidate
-          else "clean geometry-side NEGATIVE — no principled complex m reproduces S.")
-    print(" ImV_leading is anchor-smooth (anchors differ ~1e-8) ⇒ cannot produce the")
-    print(" S(muon)>0>S(proton) sign-flip; the near-singular q₀→m map (open volume")
-    print(" conjecture) is required. u=t·e^{iπ/4} matches S magnitude (~3%) but not sign.")
+          else "clean geometry-side NEGATIVE — no readout reproduces S at BOTH anchors.")
+    print(" Corrected reading: the REAL boost u=ln q₀ hits the muon SIGN + ballpark")
+    print(f" (Im 𝔙₄₁/S(muon) = {mp.nstr(real_readout['muon']['ratio_imV_over_S'],4)}), but is")
+    print(" REFUTED as the full map (scope-(a)): nearly constant across the ~1e-8-apart")
+    print(" anchors, so it cannot give S(proton)<0. The phase-π/4 complex set sits on the")
+    print(" null diagonal (Im 𝔙₄₁≈0). The S(muon)>0>S(proton) sign-flip needs the")
+    print(" boost→spin transition — a complex/spin part crossing the diagonal |Re u|=|Im u|")
+    print(" — which is the OPEN u(q₀), NOT fitted here (agrees with the sibling probe).")
 
     wb = WitnessBuilder("qbeta-c3-geometry-derived-argument", engine="mpmath")
     wb.set_description(
-        "Geometry-side one-shot for c₃ bar-odd S. Vol_exact from the validated "
-        "gluing Newton solver (vol_of_m); Im 𝔙 candidate = LEADING NZ form "
-        "(√3/2)|u|²sin(2 arg u) (exact CS via Neumann flattening not implemented — "
-        "noted extension). Scored vs S at both anchors over a small named set of "
-        "principled complex meridian holonomies (substrate qty × b-map phase "
-        "e^{iπ/4}). Gate requires magnitude AND sign at both anchors. Clean "
-        "negative: magnitude reproducible, sign-flip needs the open q₀→m map. "
-        "Scope-(a); C14; no c_k wired; no fit; dps=70 matches witness metadata."
+        "Geometry-side one-shot for c₃ bar-odd S, CORRECTED to the figure-eight NZ "
+        "leading form Im 𝔙₄₁ = (√3/4)(Re²u − Im²u) (a₂ = i√3/4, cusp modulus τ=−i√3; "
+        "QOU.Knot.FigureEightComplexVolume.imV₄₁, #4372) — supersedes the WRONG "
+        "√3·Re·Im form this probe previously carried (third such probe; the other two "
+        "fixed in #4372). Vol_exact from the validated gluing Newton solver (vol_of_m), "
+        "UNCHANGED. Corrected consequence: the REAL boost u=ln q₀ gives Im 𝔙₄₁=(√3/4)"
+        "(ln q₀)²>0 (NONZERO; ~0.49×S(muon), muon-sign-correct) — the prior 'real m are "
+        "silent' reasoning was a wrong-form artefact. The named complex phase-e^{iπ/4} "
+        "set now lands on the null DIAGONAL (Im 𝔙₄₁≈0). Clean scope-(a) negative on the "
+        "zero-parameter both-anchor gate: real boost is muon-sign+ballpark but nearly "
+        "constant across anchors (cannot sign-flip); the flip needs the boost→spin "
+        "complex part crossing the diagonal — the OPEN u(q₀). Agrees with the sibling "
+        "qbeta_geometric_boost_udeform_probe.py. Scope-(a); C14; no c_k wired; no "
+        "SDeformedVolumeChannel instance; u(q₀) open; no fit; dps=70 matches witness meta."
     )
     wb.set_content_block("prop:phi-b-unitary-bar-odd")
     wb.add_data("targets", {"S": {a: mp.nstr(S_TARGET[a], 8) for a in Q},
                             "r_S_u3_u_is_ln_q0": {a: mp.nstr(r_target[a], 8) for a in Q}})
-    wb.add_data("readouts", rows)
+    wb.add_data("real_boost_readout", {
+        a: {"u_ln_q0": mp.nstr(mp.re(real_readout[a]["u_ln_q0"]), 12),
+            "imV41": mp.nstr(real_readout[a]["imV"], 12),
+            "S": mp.nstr(S_TARGET[a], 12),
+            "imV41_over_S": mp.nstr(real_readout[a]["ratio_imV_over_S"], 8)}
+        for a in ("muon", "proton")})
+    wb.add_data("delta_imV41_across_anchors_real_boost", mp.nstr(d_imV, 8))
+    wb.add_data("complex_phase_pi4_readouts", rows)
     wb.add_data("verdict", "candidate" if any_candidate else "clean_negative")
-    # Assert the actual outcome: this one-shot records a clean negative.
+    # ---- assertions: the CORRECTED outcome (no assertion encodes the old wrong claim) ----
+    # Corrected: real boost is NONZERO (kills the old "real gives zero / silent" claim).
+    wb.add_assertion("real_boost_imV_nonzero_positive",
+                     computed=1.0 if real_readout["muon"]["imV"] > 0 else 0.0,
+                     expected=1.0, tolerance=0.5,
+                     source="Im 𝔙₄₁(ln q₀) = (√3/4)(ln q₀)² > 0 under the corrected form "
+                            "(imV₄₁) — supersedes the wrong-form 'real m silent' claim")
+    wb.add_assertion("real_boost_muon_sign_correct",
+                     computed=1.0 if g_muon_sign else 0.0, expected=1.0, tolerance=0.5,
+                     source="sign(Im 𝔙₄₁(ln q_muon)) = sign(S(muon)) > 0")
+    wb.add_assertion("real_boost_muon_ballpark",
+                     computed=1.0 if g_muon_ballpark else 0.0, expected=1.0, tolerance=0.5,
+                     source="Im 𝔙₄₁/S(muon) = "
+                            + mp.nstr(real_readout["muon"]["ratio_imV_over_S"], 5))
+    wb.add_assertion("real_boost_wrong_sign_at_proton",
+                     computed=1.0 if g_proton_wrong_sign else 0.0, expected=1.0, tolerance=0.5,
+                     source="real boost gives Im 𝔙₄₁>0 at proton but S(proton)<0")
+    wb.add_assertion("real_boost_nearly_constant_refuted_as_full_map",
+                     computed=1.0 if g_nearly_const else 0.0, expected=1.0, tolerance=0.5,
+                     source="Δ Im 𝔙₄₁(real) = " + mp.nstr(d_imV, 4)
+                            + " ≪ |S gap| = " + mp.nstr(mp.fabs(s_gap), 4))
+    # The zero-parameter both-anchor gate still yields no candidate (clean negative).
     wb.add_assertion("no_candidate_found",
                      computed=0.0 if any_candidate else 1.0, expected=1.0, tolerance=0.5,
-                     source="geometry-side gate (magnitude+sign at both anchors) yields no candidate")
+                     source="zero-parameter gate (magnitude+sign at both anchors) yields no "
+                            "candidate; sign-flip needs the open diagonal-crossing u(q₀)")
     wb.save()
-    return 0
+    ok = all([g_muon_sign, g_muon_ballpark, g_proton_wrong_sign, g_nearly_const,
+              real_readout["muon"]["imV"] > 0, not any_candidate])
+    print("\nwitness → qbeta-c3-geometry-derived-argument.witness.json")
+    print("ALL ASSERTIONS PASS" if ok else "ASSERTION FAILURE")
+    return 0 if ok else 1
 
 
 if __name__ == "__main__":
