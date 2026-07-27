@@ -550,3 +550,25 @@ the measured value WITHOUT assuming the antecedent or touching the merged condit
 wall. Probe `a4_h12_brunnian_deficit_measure_probe.py` + witness. Audit
 `2026-07-26-deltalambda-a4-h12-brunnian-measure.md`. Nothing wired; μ₄'s value enters
 no proof. `free_parameters = 0`.
+
+**2026-07-27 — the A=3 (+) and A=4 (−) results consolidated into an A-indexed
+Milnor-parity sign law, with the proved-vs-measured split made VISIBLE in the Lean
+types.** (PR #4389, `claude/deltalambda-milnor-parity-sign-law-2026-07-27`.) Formalizes
+the observed pattern `sign(1−τ_A) = (−1)^(A−1)` (A=3→+, A=4→−) and leading Milnor
+order `2(A−1)` across the two known orders, WITHOUT overclaiming a general proof.
+**Lean `MilnorParitySignLaw.lean` sorry-free (lean-direct exit 0, v4.24.0):**
+`borromean_deficit_order` (A=3 order law `h^(2(3−1))·r(h)`, `r(0)=3/4≠0`, PROVED from
+#4360 closed form) + `tauBorromean_lt_one` (A=3 sign `+`, PROVED); `tauL4Measured`,
+`tauL4MeasuredOrder := 6.06` recorded as **measured `def`s** cited to the #4378
+witness (NOT theorems); `paritySign_of_odd`/`paritySign_of_even` (the `(−1)^(A−1)`
+convention); **`sign_law_of_crossing`** (the star CONDITIONAL theorem — IF the parity
+crossing pattern `τ_A<1` odd / `τ_A>1` even holds THEN sign `= (−1)^(A−1)`, crossing
+as explicit §3b-cond hypothesis); `sign_law_A3` (hypothesis discharged by PROVED
+`τ_Borr<1`), `sign_law_A4_measured` (discharged by MEASURED `τ_L₄>1`, cited);
+`MilnorParitySignConjecture` (content-bearing primary conjecture class, **NO
+instance** = honest open state for the general law) + `sign_law_general` (§3b-cond
+conditional result modulo it). **Honesty:** the general sign law is NOT asserted
+proved — the A=4 sign is a measurement, so it enters only via the discharged
+hypothesis of the conditional theorem; the all-A law is an instance-less conjecture.
+No `μₖ` in any statement or proof; SIGN only, no Δ_λ magnitude closure; nothing wired.
+Audit `2026-07-27-deltalambda-milnor-parity-sign-law.md`. `free_parameters = 0`.
