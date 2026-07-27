@@ -14,5 +14,7 @@ export default remark({
     "c3-bar-odd",
     "q-beta",
     "candidate-iii",
+    "deuteron-binding",
+    "wedderburn-conjugation",
   ],
 });
