@@ -69,3 +69,37 @@ exit 0. The rigorous A-polynomial cusp modulus `τ = −i√3` (purely imaginary
 channel itself is **not** excluded but requires `u(q₀)` to **cross the diagonal**
 between anchors (`Re²u−Im²u`: +ve muon, −ve proton). `u(q₀)` stays open. Full
 record: [`docs/audits/2026-07-26-sdeformed-channel-signflip.md`](../audits/2026-07-26-sdeformed-channel-signflip.md).
+
+## Geometric boost readout of u(q₀) (2026-07-26, branch `claude/udeform-geometric-boost-2026-07-26`, bean qou-zuk4)
+
+Derive-then-check on the open `u(q₀)` (probe
+[`qbeta_geometric_boost_udeform_probe.py`](../../computations/qbeta/qbeta_geometric_boost_udeform_probe.py),
+50 dps, exit 0). **Derive** (not fitted): `braids-and-knots/meridian-holonomy-boost.md`
+(proved sorry-free) — the cusp-torus meridian holonomy IS multiplication by q₀, a
+hyperbolic **boost of rapidity `ln q₀`** at real q₀>1, a compact **spin** only at
+`|q|=1`. So the geometric log meridian holonomy is `u = ln q₀` (real) + a spin part.
+**Check** under the corrected `Im 𝔙₄₁ = (√3/4)(Re²u−Im²u)` (#4372):
+
+- **[G1] muon sign + ballpark ✓.** Real boost `u=ln q₀` ⇒ `Im 𝔙₄₁ = (√3/4)(ln q₀)²
+  = +0.004714`, same sign as `S(muon)=+0.009683` and within ~0.49× — a genuine
+  (unfitted) geometry-side hit on the muon anchor. **This overturns the "real m ⇒
+  Im 𝔙 = 0, silent" reading of the third wrong-form probe**
+  (`qbeta_c3_geometry_derived_argument_probe.py`, which used `Im ∝ √3·Re·Im`; a real
+  `u` is silent only under that WRONG form).
+- **[G2] refuted as the FULL map (scope-(a)).** The two canonical anchor q₀'s differ
+  by `Δ(ln q₀) ≈ 1.2e-8`, so `Im 𝔙₄₁` is nearly CONSTANT across anchors
+  (`Δ Im 𝔙₄₁ ≈ 1e-9`) — it **cannot** produce `S(proton)=−0.0395` (opposite sign)
+  or the `S(muon)/S(proton)` gap. A purely-real boost is not the map.
+- **[G3] geometric meaning of the diagonal-crossing (the open piece).** To reach
+  `S(proton)<0` needs `Im²u > Re²u` at the proton side — i.e. `u(q₀)` must cross the
+  diagonal `|Re u|=|Im u|`. Geometrically that is the meridian holonomy's
+  **boost→spin transition** (`meridian-holonomy-boost.md`: real q₀ boost vs `|q|=1`
+  spin). So the #4372 diagonal-crossing constraint = the boost→spin transition; the
+  open `u(q₀)` is the hypersensitive **spin/imaginary part** switching on toward the
+  proton anchor (slope `k≈2.2e6`, the #3773 hypersensitivity witness). Its geometric
+  derivation is the remaining open frontier — **not fitted here**.
+
+Net: the *real-boost* part of `u(q₀)` is geometrically fixed (`= ln q₀`,
+muon-consistent); the *spin* part (which supplies the sign flip via diagonal-crossing)
+is open. Third wrong-form probe flagged for the same `(√3/4)(Re²−Im²)` correction as
+#4372's two.
