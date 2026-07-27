@@ -40,7 +40,7 @@ link is derived only on the cusp torus and is transported to Bring's surface by
 analogy in the companion probe, where it is labelled conjectural.
 -/
 
-namespace QOU.QBeta
+namespace QOU.QBeta.WindingLatticeNormForm
 
 section CuspTorusForm
 
@@ -135,4 +135,4 @@ theorem goldenPow_norm_alternates :
     normPhi (goldenPow 2) = 1 ∧ normPhi (goldenPow 3) = -1 := by
   constructor <;> decide
 
-end QOU.QBeta
+end QOU.QBeta.WindingLatticeNormForm
