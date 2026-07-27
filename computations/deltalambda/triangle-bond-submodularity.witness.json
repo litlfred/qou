@@ -1,0 +1,65 @@
+{
+  "engine": "pyhecke_native",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-07-27T19:54:06.606003+00:00",
+  "commitSha": "7e159709f9eb64705deacad0d602a38e05ea9ddb",
+  "assertions": [
+    {
+      "name": "baseline_reproduces_4404_c3",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "all_measured_pairs_supermodular",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 21,
+  "computation": "triangle-bond-submodularity",
+  "scriptFile": "triangle_bond_submodularity_probe.py",
+  "scriptHash": "eaf6d31df84a",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
+  },
+  "description": "GAP-3 (bean qou-dpu1, epic qou-xu6t): adds the non-adjacent (1–3) bond that #4404's audit flagged as the untested derived lever on the μ₃ sign door. The long-range 0↔2 interface is the Birman–Ko–Lee band generator a_{7,3} = (σ₆σ₅σ₄)σ₃(σ₄⁻¹σ₅⁻¹σ₆⁻¹) (0-based: (g₅g₄g₃)g₂(g₃⁻¹g₄⁻¹g₅⁻¹)), with its flavour template DERIVED from the isotope's own word — the adjacent templates (1,0)=p–p, (1,−h/2·…)=p–n, (1,−h)=n–n pin the order to T=(p,n,n), ³He=(p,p,n), so the 0↔2 bond is p–n for both. All eight subset traces g(S) and every pairwise Δ²g plus the triple Ursell term are measured at H₉ with zero fit. RESULT: every pair involving the new band bond is SUPERMODULAR (Δ²g > 0), the same wrong side as the adjacent pair and the multiplicative model — so the long-range bond does NOT open the μ₃ sign door. Scope-(a) negative on a third derived operator; the door remains open in principle (the FKG epic found f^λ is not universally log-supermodular, so there is no forced invariant), but three independent tried operators now agree. Baseline reproduces #4404's committed c₃ (−1.769 T, −1.405 ³He). Ordering caveat: the band word is appended after the selected adjacent interfaces. No Δ_λ, no μ₃ fitted, nothing wired.",
+  "contentBlock": "conj:binding-manybody-eq-jet-filtration",
+  "data": {
+    "triangle_bond": {
+      "band_generator": "BKL a_{7,3} = (g₅g₄g₃) g₂ (g₃⁻¹g₄⁻¹g₅⁻¹), σ=(1,0), σ⁻¹=(1,−h)",
+      "flavour_derivation": "adjacent templates pin T=(p,n,n), ³He=(p,p,n) ⇒ 0↔2 is p–n",
+      "results": {
+        "T": {
+          "a·b (adjacent, #4404)": 0.42254733975683445,
+          "a·c (0↔1 × 0↔2 band)": 0.38976397826584674,
+          "b·c (1↔2 × 0↔2 band)": 0.4196726581870658,
+          "triple_ursell": -0.3279882658445112,
+          "c3_adjacent_MeV": -1.768775289331768
+        },
+        "3He": {
+          "a·b (adjacent, #4404)": 0.3357455132617763,
+          "a·c (0↔1 × 0↔2 band)": 0.3623482585977731,
+          "b·c (1↔2 × 0↔2 band)": 0.41427511325273964,
+          "triple_ursell": -0.24588852851849796,
+          "c3_adjacent_MeV": -1.4054244613235343
+        }
+      },
+      "all_pairs_supermodular": "True",
+      "verdict": "the non-adjacent band bond is SUPERmodular too — does not open the μ₃ sign door; scope-(a) negative on the third derived operator, door still open in principle (no universal sign theorem per the FKG epic)"
+    }
+  }
+}
