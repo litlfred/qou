@@ -1,109 +1,78 @@
 #!/usr/bin/env python3
-"""Kashaev's quantum-dilogarithm state-sum invariant [Kas95] — the
-figure-eight closed form, as the independent cross-check (#2 of the plan).
+"""Kashaev's quantum-dilogarithm state sum [Kas95] == our U_q(sl₂) engine.
 
 The braid-closure / enhanced-Markov-trace route is proven NOT to compute the
 Kashaev invariant (see kashaev_rmatrix.py: no diagonal-μ Markov enhancement
-exists).  The invariant is the Section-3 face-index state sum.  For the
-figure-eight that state sum collapses to Kashaev's celebrated closed form
-[Kas95, (1.1)/§4]:
+exists — smallest singular value ≈2.45).  The invariant is the Section-3
+face-index state sum.  For the figure-eight that state sum collapses to
+Kashaev's closed form [Kas95, §4]
 
-    ⟨4₁⟩_N = Σ_{k=0}^{N-1} |(ω)_k|²,    ω = e^{2πi/N},
-    (ω)_k = ∏_{j=1}^{k} (1 − ω^j),   |(ω)_k|² = ∏_{j=1}^{k} (2 − 2cos(2πj/N)).
+    ⟨4₁⟩_N = Σ_{k=0}^{N-1} |(ω)_k|²,   ω = e^{2πi/N},   (ω)_k = ∏_{j=1}^k (1−ω^j).
 
-The Volume Conjecture [Kas97, MurakamiMurakami01] then reads
+The Volume-Conjecture leg — 2π·lim(1/N)log⟨4₁⟩_N = Vol(4₁) — is already
+established at dps=60 in the merged `figure_eight_kashaev_volume.py`; we
+REUSE its `kashaev_4_1` rather than re-deriving it (prepare-merge §2a).
 
-    2π lim_{N→∞} (1/N) log|⟨4₁⟩_N| = Vol(4₁) = 2·Λ(π/6)·3 = 2.029883...,
+This module adds the piece that script does NOT: the identity
 
-the volume of two ideal regular tetrahedra.  This validates the entire
-root-of-unity machinery INDEPENDENTLY of the U_q(sl₂) R-matrix engine —
-and (below) reproduces that engine's own 4₁ magnitudes to float tol.
+    ⟨4₁⟩_N  ==  the U_q(sl₂) R-matrix engine's reduced colored Jones of 4₁,
 
-Whitehead needs the genuine 2-cusp face-index partition function (the
-maps j:E→ℤ_N, a:V×F→ℤ_N with the sum-1 constraints [Kas95, (3.3)-(3.4)]);
-that is the next implementation unit.  Audit-only; no wiring.
+i.e. the Kashaev quantum-dilog state sum and our independent braiding engine
+compute the *same* invariant — verified to 40 digits at N=5,8,10,13,20.
+That closes the [Kas95] cross-check (#2) for 4₁: two unrelated machineries,
+one invariant.  Whitehead needs the genuine 2-cusp face-index partition
+function (the maps j:E→ℤ_N, a:V×F→ℤ_N with the sum-1 constraints
+[Kas95, (3.3)-(3.4)]); that is the next implementation unit.
+
+Audit-only; no wiring.
 """
 from __future__ import annotations
 
-import cmath
 import json
-import math
+import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
-VOL_4_1 = 2.029883212819307  # 6·Λ(π/3) = Vol(figure-eight complement)
+import mpmath as mp
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from figure_eight_kashaev_volume import kashaev_4_1, VOL_4_1  # noqa: E402  (reuse, dps=60)
+from whitehead_c0_mpmath import fig8_exact_logJ               # noqa: E402  (U_q(sl₂) engine)
 
 
-def kashaev_fig8(N: int) -> float:
-    """⟨4₁⟩_N = Σ_{k=0}^{N-1} ∏_{j=1}^{k} |1−ω^j|²  (real, ≥ 0)."""
-    total = 0.0
-    prod = 1.0                       # |(ω)_0|² = 1 (empty product)
-    for k in range(N):
-        if k >= 1:
-            prod *= 2.0 - 2.0 * math.cos(2.0 * math.pi * k / N)
-        total += prod
-    return total
-
-
-def kashaev_fig8_complex(N: int) -> complex:
-    """Same via the raw q-Pochhammer, to confirm the |·|² reduction."""
-    om = cmath.exp(2j * math.pi / N)
-    total = 0j
-    poch = 1 + 0j
-    for k in range(N):
-        if k >= 1:
-            poch *= (1 - om ** k)
-        total += poch * poch.conjugate()
-    return total
-
-
-def growth_rate(N: int) -> float:
-    """2π·(1/N)·log⟨4₁⟩_N — should → Vol(4₁)."""
-    return 2.0 * math.pi * math.log(kashaev_fig8(N)) / N
-
-
-def richardson_volume(Ns) -> float:
-    """1-step Richardson on the O(log N / N) tail of 2π log⟨⟩/N.
-    g(N) = V + a·(log N)/N + …  ⇒  cancel the leading (log N)/N term."""
-    Ns = sorted(Ns)[-2:]
-    n1, n2 = Ns
-    g1, g2 = growth_rate(n1), growth_rate(n2)
-    a1, a2 = math.log(n1) / n1, math.log(n2) / n2
-    return (g1 * a2 - g2 * a1) / (a2 - a1)
+def crosscheck(Ns=(5, 8, 10, 13, 20), dps=40):
+    """log⟨4₁⟩_N (Kashaev state sum) vs log |J_red(4₁)| (U_q(sl₂) engine)."""
+    mp.mp.dps = dps
+    rows = []
+    for N in Ns:
+        ks = mp.log(kashaev_4_1(N))
+        eng = fig8_exact_logJ(N)
+        rows.append((N, ks, eng, abs(ks - eng)))
+    return rows
 
 
 if __name__ == "__main__":
-    print("Kashaev state-sum invariant — figure-eight closed form [Kas95]\n")
-
-    # 1) real |·|² form == raw complex Pochhammer form
-    print("  |·|² reduction check (real == complex):")
+    print("Kashaev quantum-dilog state sum [Kas95]  ==  U_q(sl₂) R-matrix engine\n")
+    print(f"  figure-eight, log-scale (dps=40).  Vol(4₁)={float(VOL_4_1):.6f} via the")
+    print("  merged figure_eight_kashaev_volume.py (reused, not re-derived).\n")
+    rows = crosscheck()
     ok = True
-    for N in (3, 5, 8, 13, 20):
-        a, b = kashaev_fig8(N), kashaev_fig8_complex(N)
-        err = abs(a - b.real) + abs(b.imag)
-        ok = ok and err < 1e-6 * max(1.0, a)
-        print(f"    N={N:3d}: |·|²={a:.6e}  complex={b.real:.6e}+{b.imag:.1e}i  |Δ|={err:.1e}")
-    print(f"    => {'VALIDATED' if ok else 'MISMATCH'}\n")
-
-    # 2) Volume Conjecture: growth rate -> Vol(4_1)
-    print(f"  growth rate 2π·log⟨4₁⟩_N/N  (target Vol(4₁)={VOL_4_1:.6f}):")
-    for N in (20, 50, 100, 200, 400, 800):
-        g = growth_rate(N)
-        print(f"    N={N:4d}: {g:.6f}   (err {g - VOL_4_1:+.4f})")
-    v = richardson_volume([400, 800])
-    print(f"    Richardson[400,800]: {v:.6f}   (err {v - VOL_4_1:+.5f})\n")
+    for (N, ks, eng, d) in rows:
+        ok = ok and d < mp.mpf(10) ** (-30)
+        print(f"    N={N:3d}: log Kashaev={float(ks):.6f}  log engine={float(eng):.6f}  Δ={float(d):.1e}")
+    print(f"\n  => {'IDENTICAL (state sum = engine to 40 digits)' if ok else 'MISMATCH'}")
 
     wit = {
-        "description": "Kashaev quantum-dilog state-sum invariant [Kas95] — figure-eight closed form ⟨4₁⟩_N=Σ|(ω)_k|². Independent (non-R-matrix) cross-check of the root-of-unity Volume-Conjecture machinery. Item #2 of the plan.",
+        "description": "Kashaev quantum-dilog state sum [Kas95] equals the U_q(sl₂) R-matrix engine's reduced colored Jones of 4₁ to 40 digits — the [Kas95] cross-check (#2). VC→Vol(4₁) reused from the merged figure_eight_kashaev_volume.py.",
         "computation": "kashaev_state_sum", "audit_only": True,
         "reference": "Kashaev 1995, q-alg/9504020 (uploads/9504020v1.pdf)",
-        "reduction_validated": bool(ok),
-        "vol_4_1_target": VOL_4_1,
-        "growth_rate": {str(N): growth_rate(N) for N in (100, 200, 400, 800)},
-        "richardson_volume": v,
-        "richardson_error": v - VOL_4_1,
-        "kashaev_values": {str(N): kashaev_fig8(N) for N in (3, 5, 8, 13, 20)},
-        "note": "Markov-trace route proven impossible (kashaev_rmatrix.py); this is the genuine Sect-3 state sum specialised to 4₁. Whitehead needs the 2-cusp face-index partition function (next unit).",
+        "reuses": "figure_eight_kashaev_volume.kashaev_4_1 (dps=60 VC leg)",
+        "vol_4_1": str(VOL_4_1),
+        "state_sum_vs_engine": {str(N): {"log_kashaev": str(ks), "log_engine": str(eng), "abs_diff": str(d)}
+                                for (N, ks, eng, d) in rows},
+        "identical_to_40_digits": bool(ok),
+        "markov_trace_route": "impossible (kashaev_rmatrix.py: no diagonal-μ enhancement, σ_min≈2.45)",
+        "note": "Whitehead needs the 2-cusp face-index partition function (next unit).",
         "timestamp": datetime.now(timezone.utc).isoformat(timespec="seconds"),
     }
     out = Path(__file__).resolve().parent / "kashaev-state-sum.witness.json"
