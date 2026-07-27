@@ -572,3 +572,25 @@ proved — the A=4 sign is a measurement, so it enters only via the discharged
 hypothesis of the conditional theorem; the all-A law is an instance-less conjecture.
 No `μₖ` in any statement or proof; SIGN only, no Δ_λ magnitude closure; nothing wired.
 Audit `2026-07-27-deltalambda-milnor-parity-sign-law.md`. `free_parameters = 0`.
+
+**2026-07-27 — Route 1 (geometric W_λ) re-run with the CORRECT normalizer `d_q²/D²`:
+still WALL(scope-a); the sibling's `d_q²/[n]_q!` was un-normalized.** (PR #4392,
+`claude/deltalambda-s5so3-geometric-wlambda-2026-07-27`.) The sibling Route-1
+(`S5So3WLambdaLift.lean` #4376) re-weighted the H₉ cabled-Borromean cluster with
+`W^{raw}_λ = d_q²/[n]_q!` → `r_raw = 52.62` (33× overshoot). But at q₀>1 that proxy
+sums to `Σ = D²/[n]_q! = 1.1109 ≠ 1` — **not** a probability measure. The corpus's own
+`WLambdaMTCLocalizationObligation.lean` fixes the genuine Beasley–Witten / WRT(S³/2I)
+localization weight as `W^{geom}_λ = d_q²/D²`, `D² = Σd_q²`, `Σ=1` (C1). Forward-
+evaluated on the **identical** #4364 word/E₀/|χ_λ| (0 fit): `c₃(geom) = +14.07 MeV =
+29.9× μ₃`, **`r_geom = r_raw/S = 47.37`** vs needed `r*≈1.585`. The correct normalizer
+shifts the number 11 % but **not** the verdict: **WALL(scope-a)**, ~30× overshoot.
+**No other geometric W_λ to try** — self-duality `S⁴=1` (2026-07-17) + framing collapse
+(2026-07-12, `KeystoneModularTwist`) ⇒ `d_q²/D²` **is** the geometric measure; the route
+converges on this wall. **Declined fit-trap:** both-Σ=1 comparison gives `r_geom·Σy_λ =
+1.504` (5.1 % short, and a normalization convention `ρ_F` does not use); exact closure
+needs a μ₃-inverted rescale = FIT. Lean `S5So3GeometricWLambda.lean` sorry-free
+(lean-direct exit 0): `geom_ratio_eq_raw_ratio_div_sum`, `geom_measure_normalized`,
+`geom_route_walls`, `geom_cluster_overshoots`, `route_closes_with_rescale_iff`. Probe +
+witness `s5so3-geometric-wlambda-borromean-lift.witness.json`. Audit
+`2026-07-27-deltalambda-s5so3-geometric-wlambda.md`. Nothing wired; μ₃ never inverted;
+`free_parameters = 0`.
