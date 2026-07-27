@@ -1,0 +1,17 @@
+{
+ "schema": "probe-witness/v1",
+ "probe": "zeta4_zeta8_habiro_gluing_probe",
+ "beans": [
+  "qou-c0aw"
+ ],
+ "source": "GSWZ arXiv:2412.04241v2 Def 1.1; corpus alpha-em-habiro-bar-involution (H(zeta4)=0); zeta8 witness audit 2026-06-01",
+ "checks": {
+  "norm_of_shift_is_2": true,
+  "zeta4_fibre_integral": true,
+  "zeta8_fibre_integral": true,
+  "gluing_zeta4_to_zeta8_exact": true,
+  "two_bracket_zeta4_zero": true
+ },
+ "order": 6,
+ "scope": "scope-(a): classical-Habiro (K=Q, trivial Frobenius) harness; number-field twist test stays on qou-1hlh"
+}

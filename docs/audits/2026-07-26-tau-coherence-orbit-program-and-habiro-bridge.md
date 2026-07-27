@@ -230,3 +230,39 @@ Read: §1.2–1.5 (definitions), §4.5–4.6 (examples) of
 Beans: U2 and U3+U4 spun off as new probes; U1/U5 recorded as framing
 for existing epics. `qou-vegn` deep-read portion complete; family
 formalization continues there.
+
+## Addendum 3 (2026-07-27) — beans 1hlh / c0aw / vegn worked: probes green, gate executable, ζ₄ facts formalized
+
+**qou-c0aw (U3+U4) — COMPLETED, both probes 100% green.**
+
+- `computations/probes/gswz_symmetrization_integrality_probe.py`
+  (7/7): from the printed GSWZ 4₁ data (their eqns (1)–(2)), the
+  bar-even symmetrization's odd coefficients cancel EXACTLY, the h²
+  coefficient collapses to the sqrt-free, 3-integral `−1/27`
+  (the nontrivial `(2·697/1152·27⁻¹) − (11/72)²·(−3)⁻¹`-type
+  cancellation verified in exact arithmetic), and the x = q−1
+  conversion reproduces GSWZ eqn (2) at x², x³. The corpus bar-parity
+  discipline now has a machine-verified arithmetic instance.
+- `computations/probes/zeta4_zeta8_habiro_gluing_probe.py` (5/5): the
+  p = 2 edge ζ₄ → ζ₈ is 2-adically genuine (Norm(ζ₈−ζ₄) = 2), both
+  fibre expansions of the categorical `[2]_q` are integral, the
+  re-expansion gluing holds exactly to order 5, and the fibre constant
+  at ζ₄ is the corpus modular zero. Honest scope: classical Habiro
+  ring (K = Q, trivial Frobenius) — the harness, smallness, and zero;
+  the number-field twist test needs multi-fibre Φ-series data.
+
+**qou-1hlh (U2) — gate v1 LANDED, bean stays in-progress.** The
+symmetrization probe doubles as the first executable module-membership
+gate: check 7 shows a generic rational perturbation of one coefficient
+(the shape of a fitted c_k) breaks 3-integrality of the symmetrization
+— refutation without any anchor comparison. Remaining on the bean: the
+Frobenius-gluing membership test over Q(√−3) (needs the Φ-series at
+several roots of unity; GSWZ eqn (276)/(278) give exact generators to
+compute them).
+
+**qou-vegn — ζ₄ facts formalized, family half still open.**
+`HabiroZeta4Bracket.lean` (sorry-free): `two_bracket_zeta4_eq_zero`
+(`[2]_{ζ₄} = 0` — the α_EM modular zero at the monodromy point, pinned
+at the categorical-factor level) and `two_bracket_bar_fixed`
+(`[2]_{q⁻¹} = [2]_q`, unconditional). The root-of-unity family for the
+τ-tower remains the bean's open half.
