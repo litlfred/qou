@@ -1,0 +1,64 @@
+{
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-07-27T19:33:36.798865+00:00",
+  "commitSha": "05467ae32d893a8e422eddb53d4383059b5c2eab",
+  "assertions": [
+    {
+      "name": "hook_multiset_conjugation_invariant",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "principal_specialization_is_covariant_not_symmetric",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "convention_pinned_to_single_survivor",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "survivor_still_misses_magnitudes_scope_a",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 17,
+  "computation": "qdim-convention-pinned-by-conjugation",
+  "scriptFile": "qdim_convention_pinned_by_conjugation_probe.py",
+  "scriptHash": "7e60a72eebc9",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "GAP-1 (bean qou-5o0l, epic qou-xu6t): resolves the apparent tension between delta_lambda_qdim_route_probe (q-dim convention is a Rule-14 hidden DOF spanning 0.4×–5.6× of target) and #4399 (conjugation-symmetric Δ_λ ⇒ g₂ = 0, excluded). They compose: hook multisets are conjugation-invariant, so BOTH the balanced and unbalanced q-dimensions ([n]_q!/∏[h]_q, λ-independent numerator) are conjugation-symmetric and are excluded by #4399; the fake-degree / principal specialization carries q^{n(λ)} with n(λ) ≠ n(λ') for every λ ⊢ 6 except the self-conjugate (3,2,1), so it is covariant and survives. Hence exactly one of the three conventions survives the structural filter — the convention is PINNED by a proved invariant rather than chosen to fit, closing the hidden degree of freedom that made the magnitude route a fit trap. HONEST NEGATIVE: the surviving convention still fails as a universal magnitude — its own ℓ¹/target is 0.85 (D), 1.35 (T), 2.18 (³He), 5.62 (⁴He), a 6.6× spread across the chain. So GAP-1's outcome is genuine parameter-free structural SELECTION plus a scope-(a) negative on the magnitude; no closure, no convention adopted to fit, nothing wired.",
+  "contentBlock": "conj:binding-manybody-eq-jet-filtration",
+  "data": {
+    "convention_filter": {
+      "hook_multiset_conjugation_invariant": "True",
+      "balanced_qdim": "conjugation-SYMMETRIC ⇒ excluded by #4399",
+      "unbalanced_qdim": "conjugation-SYMMETRIC ⇒ excluded by #4399",
+      "fake_degree_principal_specialization": "conjugation-COVARIANT (q^{n(λ)}, n(λ)≠n(λ') except (3,2,1)) ⇒ survives",
+      "self_conjugate_partitions_of_6": "[(3, 2, 1)]",
+      "surviving_conventions": "['fake-degree / principal specialization']",
+      "fake_degree_l1_over_target": "{'D': 0.85, 'T': 1.35, '3He': 2.18, '4He': 5.62}",
+      "l1_spread_across_chain": "6.61x",
+      "verdict": "convention PINNED by the #4399 structural filter (2 of 3 die on a proved invariant, not on taste) — hidden DOF closed; but the survivor still misses the magnitudes across the isotope chain (scope-(a)), so magnitude OPEN"
+    }
+  }
+}
