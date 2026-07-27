@@ -932,4 +932,20 @@ theorem tendsto_log_borromeanKashaev_vol :
   rw [h]
   exact tendsto_two_pi_log_borromeanKashaev
 
+/-- **The Borromean per-link volume-conjecture carrier**, mirroring
+    `VolumeConjecture41`: the single content field is the limit identity for
+    the positive-sum carrier. Kept as a class for downstream API symmetry
+    with the 4₁ instance; the instance below is a genuine sorry-free proof
+    (brick B5), not a citation. -/
+class VolumeConjectureBorromean : Prop where
+  /-- `(2π/N)·log ⟨𝓑₃⟩_N → Vol(𝓑₃) = 8·Cl₂(π/2) = 8G` as `N → ∞`. -/
+  limit_eq_vol :
+    Filter.Tendsto
+      (fun N : ℕ => (2 * π / (N : ℝ)) * Real.log (borromeanKashaev N))
+      Filter.atTop (nhds QOU.Archimedean.Vol_Borromean)
+
+/-- The proved instance — machine-checked (B1–B5), no sorry. -/
+instance volumeConjectureBorromean_proved : VolumeConjectureBorromean :=
+  ⟨tendsto_log_borromeanKashaev_vol⟩
+
 end QOU.Knot.FigureEightVolume
