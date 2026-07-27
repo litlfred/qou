@@ -280,6 +280,13 @@ ephemeral.
 
 ### Rules
 
+0. **Commit early, commit often, push to GitHub (standing guidance,
+   2026-07-27).** Every meaningful unit of work — a probe result, a
+   Lean lemma, a coordination doc, a bean update — gets its own
+   commit and push. Do NOT accumulate uncommitted work. The GitHub
+   history is the durable record; the chat is ephemeral. If the
+   session crashes, the commits survive. This applies to all agents.
+
 1. **Start every work tranche on a fresh branch.** Naming convention:
    `claude/<theme>-<utc-ymd>` (per the existing user-accessibility
    section). The theme is the WORK, not the request — e.g.
