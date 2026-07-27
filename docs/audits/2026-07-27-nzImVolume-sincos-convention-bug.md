@@ -4,6 +4,16 @@
 ## Bean: qou-u14x
 ## Branch: claude/delta-lambda-magnitude-derivation-2026-07-27
 
+## Status: FIX APPLIED (2026-07-27, this branch)
+
+Both files corrected and verified standalone (`lean`-direct exit 0):
+`nzImVolume` → `(√3/2)r²cos(2φ)` (wall theorems replaced by the corrected
+statements — real ray maximal, phase stationary, swing = magnitude-only);
+`nzReVolume` → `−(√3/2)r²sin(2φ)` (Volume-deviation vanishes on the real ray;
+the g₂ "maximal at real ray" narrative does not survive and is re-opened under
+bean qou-u14x). Downstream importers use only interface-stable declarations;
+full-chain rebuild deferred to CI.
+
 ## Summary
 
 The `nzImVolume` function in `ArgUPhaseBranchSelection.lean` is **defined with
