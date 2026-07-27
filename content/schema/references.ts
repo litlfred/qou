@@ -2020,6 +2020,21 @@ export const references: CSLData[] = [
     note: "Publ. RIMS Kyoto Univ. 40 (2004), no. 4, 1127-1146; arXiv:math/0209324. The canonical definition of the Habiro ring Ẑ[q] = cyclotomic completion of ℤ[q] (the q-Pochhammer / cyclotomic-completion object QOU's mass-side Habiro-ring constructions use). Added 2026-06-07 to untangle the overloaded [habiro2002] key: most QOU citers intended this ring-definition paper, not 'Bottom tangles' (habiro2002) or 'colored Jones of simple links' (habiro2000). Verified via EMS Press / arXiv.",
   }),
 
+  ref({
+    id: "habiro2008",
+    type: "article-journal",
+    title: "A unified Witten-Reshetikhin-Turaev invariant for integral homology spheres",
+    author: [{ family: "Habiro", given: "Kazuo" }],
+    "container-title": "Inventiones Mathematicae",
+    issued: { "date-parts": [[2008]] },
+    volume: "171",
+    issue: "1",
+    page: "1-81",
+    DOI: "10.1007/s00222-007-0071-0",
+    URL: "https://arxiv.org/abs/math/0605314",
+    note: "Invent. Math. 171 (2008), no. 1, 1-81; arXiv:math/0605314. Constructs the unified WRT invariant of an integral homology sphere as an element of the Habiro ring Ẑ[q] whose evaluation at each root of unity ζ recovers the level-N WRT invariant — the sense in which the WRT/gauge datum is a bounded-degree, root-family-rigid object (the 'Habiro rigidity' cited by QOU/BraidKnot/KeystoneGaugeRowRigidity + KeystoneHabiroRootFamily for the bwS0_eq_hecke continuation). Metadata from bibliographic knowledge (Inventiones 171/2008, arXiv math/0605314); PDF not read in-sandbox — DOI to be reconfirmed on next validate-refs pass.",
+  }),
+
   // ── Nuclear shell model (Mayer–Jensen) ──────────────────────────
 
   ref({
