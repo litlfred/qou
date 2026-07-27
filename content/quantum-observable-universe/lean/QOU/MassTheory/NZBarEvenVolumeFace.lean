@@ -1,30 +1,31 @@
 /-
-# The bar-EVEN (Volume) face of the NZ meridian deformation is MAXIMAL on the real substrate ray —
-# g₂ lives exactly where the c₃ wall freezes
+# The bar-EVEN (Volume) face of the NZ meridian deformation — corrected quadrature
+(cos → −sin): the Volume-deviation VANISHES on the real substrate ray
 
-**The arg(u) wall is a quadrature effect.** The Q_β `c₃` front (PR #4293,
-`QOU/QBeta/ArgUPhaseBranchSelection.lean`) proved the Neumann–Zagier **bar-odd / Chern–Simons** face
+**CONVENTION CORRECTION (2026-07-27, bean `qou-u14x`).** This file's original
+version assigned `cos(2φ)` to the Volume face and its companion
+(`QOU/QBeta/ArgUPhaseBranchSelection.lean`) assigned `sin(2φ)` to the CS face.
+The A-polynomial ground truth
+([`docs/audits/2026-07-27-nzImVolume-sincos-convention-bug.md`]) shows the two
+quadratures were SWAPPED: from `𝔙(u) = Vol + i·κ·u²`,
 
-  `nzImVolume r φ = (√3/2)·r²·sin(2φ)`   (`r = |u|`, `φ = arg u`)
+  `Im 𝔙 = (√3/2)·r²·cos(2φ)`   (CS face — even, maximal-and-stationary at φ=0),
+  `Re 𝔙 − Vol = −(√3/2)·r²·sin(2φ)`   (Volume-DEVIATION face — odd, zero at φ=0).
 
-is **frozen on the real substrate ray**: `nzImVolume r 0 = 0` (`sin 0 = 0`), because the substrate
-meridian coordinate `u = 2·log q₀` is a nonnegative real (`φ = 0`). That is the `c₃` wall — the CS
-face carries the swing entirely in the phase, and the phase is off at `φ = 0`.
+So on the real substrate ray it is the **CS face** that is maximal and doubly
+anchor-smooth, and the **Volume-deviation** that vanishes with maximal phase
+slope — the opposite of this file's original narrative. The physical reading
+this file used to carry ("g₂ lives where c₃ freezes": g₂ maximal / CS frozen at
+φ=0) does NOT survive the correction as stated; what replaces it is: at φ = 0
+the total Volume face is the undeformed `Vol` exactly (deviation = 0), and the
+CS face is the maximal `(√3/2)r²`. The g₂ narrative must be re-derived against
+the corrected quadratures — tracked in bean `qou-u14x`; no g₂ claim is asserted
+here.
 
-The μ₀ binding coefficient `g₂` is the **bar-EVEN / Volume** face — the **cos-quadrature partner**
+§7c: archimedean (`Real.sin`, ordering) ⇒ base ring `ℝ`.
 
-  `nzReVolume r φ = (√3/2)·r²·cos(2φ)`.
-
-At the *same* real ray `φ = 0`, `cos 0 = 1`, so `nzReVolume r 0 = (√3/2)·r²` — **maximal, not
-frozen** — and since `nzReVolume` is **even** in `φ` (vs `nzImVolume` odd), `φ = 0` is a *stationary
-extremum*: the bar-even face has **zero phase-slope** there (doubly anchor-smooth), whereas the
-bar-odd face has maximal slope. So the wall that kills `c₃` on the real ray leaves `g₂` maximal and
-stable. The two μ₀/Q_β closures are the two quadrature faces of one Neumann–Zagier object; the real
-substrate ray is exactly the point where CS (`c₃`) vanishes and Volume (`g₂`) is at its peak.
-
-§7c: archimedean (`Real.cos`, ordering) ⇒ base ring `ℝ`. `nzReVolume` mirrors the corpus
-`QOU.QBeta.ArgUPhaseBranchSelection.nzImVolume` with `cos` in place of `sin` (stated standalone to
-keep this file Mathlib-only; the definitional correspondence is exact by inspection).
+-- Ref: [neumann-zagier1985] https://doi.org/10.1016/0040-9383(85)90004-7
+-- Ref: [manuscript] docs/audits/2026-07-27-nzImVolume-sincos-convention-bug.md
 -/
 import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic
 import Mathlib.Tactic.Positivity
@@ -33,35 +34,21 @@ namespace QOU.MassTheory
 
 open Real
 
-/-- The **bar-even (Volume) face** of the NZ meridian deformation: the cos-quadrature partner of the
-corpus bar-odd `nzImVolume r φ = (√3/2)·r²·sin(2φ)`. -/
-noncomputable def nzReVolume (r φ : ℝ) : ℝ := (Real.sqrt 3 / 2) * r ^ 2 * Real.cos (2 * φ)
+/-- The **bar-even Volume-DEVIATION face** of the NZ meridian deformation
+(corrected quadrature): `Re 𝔙 − Vol = −(√3/2)·r²·sin(2φ)`. Odd in `φ`;
+vanishes identically on the real ray. -/
+noncomputable def nzReVolume (r φ : ℝ) : ℝ := -((Real.sqrt 3 / 2) * r ^ 2 * Real.sin (2 * φ))
 
-/-- **On the real substrate ray `φ = 0` the bar-even face is MAXIMAL:** `nzReVolume r 0 = (√3/2)·r²`
-(`cos 0 = 1`) — in contrast to the bar-odd `nzImVolume r 0 = 0` (frozen). -/
-theorem nzReVolume_real_ray (r : ℝ) : nzReVolume r 0 = Real.sqrt 3 / 2 * r ^ 2 := by
+/-- **Real ray ⇒ Volume-deviation off (corrected).** `sin 0 = 0`: on the real
+substrate ray the Volume face is the undeformed `Vol` exactly. The old
+`nzReVolume r 0 = (√3/2)r²` (and its `≠ 0` / `> 0` corollaries) belonged to the
+CS face. -/
+theorem nzReVolume_real_ray (r : ℝ) : nzReVolume r 0 = 0 := by
   simp [nzReVolume]
 
-/-- **The bar-even face is nonzero (not frozen) on the real ray** for any nonzero magnitude — the
-structural opposite of the bar-odd CS face, which vanishes there. So `g₂`'s seat survives the
-substrate real-ray restriction that walls `c₃`. -/
-theorem nzReVolume_real_ray_ne_zero (r : ℝ) (hr : r ≠ 0) : nzReVolume r 0 ≠ 0 := by
-  rw [nzReVolume_real_ray]
-  have hpos : 0 < Real.sqrt 3 / 2 * r ^ 2 := by positivity
-  exact hpos.ne'
-
-/-- **The bar-even face is EVEN in the phase `φ`** (`cos` is even), so the real ray `φ = 0` is a
-*stationary extremum* — zero phase-slope, doubly anchor-smooth. Contrast: the bar-odd `nzImVolume`
-is *odd* in `φ` (`sin`), so `φ = 0` is its steepest point (value 0, maximal slope). This is the
-quadrature structure of the arg(u) wall. -/
-theorem nzReVolume_phase_even (r φ : ℝ) : nzReVolume r (-φ) = nzReVolume r φ := by
-  unfold nzReVolume
-  rw [show 2 * (-φ) = -(2 * φ) by ring, Real.cos_neg]
-
-/-- **Peak value at the substrate.** The bar-even face attains `(√3/2)·r²` on the real ray, and (by
-evenness) this is a local extremum — the `g₂` seat is at the peak of the Volume face precisely where
-the CS face (`c₃`) is null. -/
-theorem nzReVolume_real_ray_pos (r : ℝ) (hr : r ≠ 0) : 0 < nzReVolume r 0 := by
-  rw [nzReVolume_real_ray]; positivity
+/-- The Volume-deviation face is **odd** in the phase (the CS face is the even
+one) — the quadrature signature that identifies which face is which. -/
+theorem nzReVolume_phase_odd (r φ : ℝ) : nzReVolume r (-φ) = -nzReVolume r φ := by
+  simp [nzReVolume, mul_comm]
 
 end QOU.MassTheory
