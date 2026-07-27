@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-26T22:04:20.562412+00:00",
-  "commitSha": "4a6a0557e863e93fd90551fd41523252b09320d0",
+  "computedAt": "2026-07-27T00:33:48.182225+00:00",
+  "commitSha": "dd238bffc0a087f5c1b40064dfe6ad67b87d7d75",
   "assertions": [
     {
       "name": "weight_conj_invariance",
@@ -17,7 +17,19 @@
       "passed": true
     },
     {
-      "name": "self_conjugate_3_2_1_bar_even",
+      "name": "weight_bar_sign",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "signed_parity_map",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "self_conjugate_3_2_1_bar_ODD",
       "computed": "True",
       "expected": "True",
       "passed": true
@@ -27,8 +39,8 @@
   "durationMs": 0,
   "computation": "deuteron-conjugation-parity-categorical",
   "scriptFile": "deuteron_conjugation_parity_categorical_probe.py",
-  "scriptHash": "e6f3ad705868",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "c2bf68d07f74",
+  "scriptCommitSha": "4b26e3f136c55edf66315e6ea16dd7067342b5e5",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -40,120 +52,63 @@
     "sympy": "1.14.0",
     "mpmath": "1.3.0"
   },
-  "description": "The deuteron bar-even/bar-odd split is the H₆ partition-conjugation parity, derived and verified against the canonical derived caches. Two exact identities (30 dps): I1 weight conjugation-invariance w_λ=w_{λ'} (hook multiset preserved under transpose); I2 character conjugation = bar χ^{λ'}(β_D;q)=χ^λ(β_D;q⁻¹) (ratio 1.0 for all 11 partitions). Consequence: the per-block term obeys T_λ(q⁻¹)=(−1)^{n-1}T_{λ'}(q), so bar interchanges conjugate pairs and fixes the self-conjugate — 5 pairs + (3,2,1) for n=6. Key fact: (3,2,1) has a bar-even character (χ(q0)=χ(1/q0)=7.6256), so it feeds g₂ and never the bar-odd t (Lean barOdd_selfConj_zero). DERIVED: the parity structure; NOT derived: the Δ_λ magnitudes (Track-A gate) or the tr_M→binding normalization. scope-(a), audit-only, nothing wired; no fit.",
+  "description": "The deuteron bar-even/bar-odd split is the SIGNED H₆ partition-conjugation parity, verified against the derived caches (25 dps). CORRECTS an earlier draft that dropped the weight bar-sign. Three facts: I1 w_λ=w_{λ'}; I2 χ^{λ'}(q)=χ^λ(q⁻¹); I3 w_λ(q⁻¹)=(−1)^{n-1}w_λ(q) (=−1 for n=6). Parity map T_λ(q⁻¹)=(−1)^{n-1}T_{λ'}(q)=−T_{λ'}(q) (all 11). CORRECTED key fact: the self-conjugate (3,2,1) is BAR-ODD (T(q⁻¹)=−T(q), ratio −1) ⇒ feeds the bar-odd impurity t, NEVER g₂ (opposite of the earlier draft). So the bar-even g₂ is carried by conjugate-pair ASYMMETRIES Δ_λ−Δ_{λ'}, and the bar-odd t by the symmetric parts + the self-conjugate. DERIVED: the signed parity structure (Lean ConjugationParitySplit sorry-free). NOT derived: the Δ_λ magnitudes (Track-A gate) + tr_M→binding normalization. scope-(a), audit-only, nothing wired; no fit.",
   "contentBlock": "rem:ohtsuki-tower-bar-parity",
   "audit_only": true,
-  "tier": "two exact categorical identities (30 dps, derived caches) + parity map + self-conjugate→bar-even; Lean-proved backbone; no fit",
+  "tier": "three exact identities + signed parity map + CORRECTED self-conjugate→t; Lean-proved backbone; no fit",
   "result": {
     "I1_weight_conjugation_invariance": {
-      "w_lambda_eq_w_lambda_prime": true,
-      "reason": "w_λ = (q−q⁻¹)^{n-1}/∏[hook]_q; conjugation transposes the diagram → permutes the hook multiset → ∏[hook]_q invariant."
+      "w_lambda_eq_w_lambda_prime": true
     },
     "I2_character_conjugation_is_bar": {
-      "chi_lambda_prime_q0_over_chi_lambda_qinv": "1.0 (all = 1)",
-      "holds_all_11": true,
-      "identity": "χ^{λ'}(β_D; q) = χ^λ(β_D; q⁻¹) — partition conjugation IS the bar involution."
+      "chi_lambda_prime_q_eq_chi_lambda_qinv": true
     },
-    "parity_map": {
-      "T_lambda_bar_image": "T_λ(q⁻¹) = (−1)^{n-1} T_{λ'}(q)  (from I1+I2 and (q−q⁻¹)^{n-1} parity)",
-      "meaning": "bar maps the λ-block to ±the λ'-block: conjugate pairs interchange, self-conjugate sits on the diagonal — the concrete realisation of ConjugationParitySplit.lean's involution c."
+    "I3_weight_bar_sign": {
+      "w_lambda_qinv_eq_minus1_pow_n_minus_1": true,
+      "sign_for_n6": "(−1)^5 = −1"
     },
-    "structure_n6": {
-      "conjugate_pairs": [
-        [
-          [
-            6
-          ],
-          [
-            1,
-            1,
-            1,
-            1,
-            1,
-            1
-          ]
-        ],
-        [
-          [
-            5,
-            1
-          ],
-          [
-            2,
-            1,
-            1,
-            1,
-            1
-          ]
-        ],
-        [
-          [
-            4,
-            2
-          ],
-          [
-            2,
-            2,
-            1,
-            1
-          ]
-        ],
-        [
-          [
-            4,
-            1,
-            1
-          ],
-          [
-            3,
-            1,
-            1,
-            1
-          ]
-        ],
-        [
-          [
-            3,
-            3
-          ],
-          [
-            2,
-            2,
-            2
-          ]
-        ]
-      ],
-      "n_pairs": 5,
-      "self_conjugate": [
-        [
-          3,
-          2,
-          1
-        ]
-      ]
+    "signed_parity_map": {
+      "T_lambda_qinv_eq_signed_T_lambda_prime": true,
+      "identity": "T_λ(q⁻¹) = (−1)^{n-1} T_{λ'}(q); for n=6, = −T_{λ'}(q). Verified all 11.",
+      "grounds_lean": "ConjugationParitySplit.lean barImage sgn=(−1)^{n-1}"
     },
-    "key_fact_self_conjugate_bar_even": {
+    "CORRECTED_self_conjugate_is_bar_odd": {
       "partition": [
         3,
         2,
         1
       ],
-      "chi_q0": "7.625583514",
-      "chi_qinv": "7.625583514",
-      "bar_even_character": true,
-      "meaning": "the self-conjugate (3,2,1) has a BAR-EVEN character (χ(q0)=χ(1/q0)); its Wedderburn contribution is purely bar-even — it feeds g₂, never the bar-odd t (Lean barOdd_selfConj_zero)."
+      "T_q0": "6.2967759e-5",
+      "T_qinv": "-6.2967759e-5",
+      "ratio": "-1.0",
+      "bar_odd": true,
+      "correction_note": "EARLIER DRAFT WAS BACKWARDS. With the weight's (−1)^{n-1} sign, the self-conjugate (3,2,1) is BAR-ODD (ratio −1) ⇒ it feeds the bar-odd impurity t, NEVER the bar-even g₂ (Lean selfConj_barEven_zero_deuteron)."
+    },
+    "channel_assignment": {
+      "bar_even_g2": "conjugate-pair ASYMMETRIES Δ_λ − Δ_{λ'} (vanish on the self-conjugate)",
+      "bar_odd_t": "conjugate-pair SYMMETRIC parts + the whole self-conjugate (3,2,1)",
+      "n6_structure": {
+        "conjugate_pairs": 5,
+        "self_conjugate": [
+          [
+            3,
+            2,
+            1
+          ]
+        ]
+      }
     },
     "scope": {
-      "derived": "the PARITY structure of the deuteron correction = H₆ partition-conjugation parity (I1 + I2 + self-conjugate→bar-even; Lean backbone).",
-      "not_derived": "the Δ_λ per-partition magnitudes (Track-A gate) and the tr_M→binding normalization (β_D word / sign convention); the parity structure alone does not reproduce tr_M=0.3883 or C.",
+      "derived": "the SIGNED parity structure of the deuteron correction = H₆ partition-conjugation parity with the weight's (−1)^{n-1} sign (Lean backbone).",
+      "not_derived": "the Δ_λ magnitudes (Track-A gate) + tr_M→binding normalization.",
       "no_fit": true
     }
   },
   "context": {
     "axis": "Δ_λ binding — μ₀ −9% closure, categorical parity of the deuteron correction",
-    "lean": "QOU/MassTheory/ConjugationParitySplit.lean",
-    "caches": "chi-deuteron-free-h6-at-{q0,qinv}-50dps.witness.json; schur-weyl-weight-*.json",
-    "builds_on": "#4369 (frame-independent C = Δ_λ closure), build_markov_trace_assembly_deuteron_chain.py (tr_M=Σ w_λ χ^λ)",
+    "lean": "QOU/MassTheory/ConjugationParitySplit.lean (selfConj_barEven_zero_deuteron)",
+    "caches": "chi-deuteron-free-h6-at-{q0,qinv}-50dps.witness.json",
+    "correction": "supersedes the earlier sign-dropped draft (self-conjugate channel reversed)",
     "q0_convention": "muon-canonical (computations/ layer)",
     "no_fit": true
   },
