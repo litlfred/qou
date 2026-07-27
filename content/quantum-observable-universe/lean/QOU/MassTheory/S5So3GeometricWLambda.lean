@@ -49,10 +49,13 @@ proved `W_{λ′}=W_λ` symmetry or collapses in `|·|²` to exactly this Planch
 
 ## The fit-trap this file inoculates against
 
-`Σ y_λ = 0.0318 ≠ 1` (the production weights are **not** a probability measure). One could
-rescale `y_λ` by an arbitrary constant `c` (e.g. `c = 1/0.0318 ≈ 31.5` to normalize it to
-`Σ = 1`), which lands the ratio near `1.585`. But that rescale is an **underived free
-parameter fixed by inversion from μ₃** — a FIT, declined ("no seventh fit-based ansatz").
+`Σ y_λ = 0.0318 ≠ 1` (the production weights are **not** a probability measure). If one
+puts *both* weight systems on a common `Σ = 1` normalization — i.e. rescales `y_λ` up by
+`1/0.0318 ≈ 31.5` — the ratio becomes `r_geom · Σy_λ = 47.37 · 0.0318 = 1.506`, a
+tantalizing but still-missing `5 %` short of `r* ≈ 1.585`. That "both-normalized" comparison
+is a **normalization-convention choice** the production trace `ρ_F` does not make (it uses
+the raw `y_λ`); selecting it — or any exact-closing rescale `c` — makes `c` an **underived
+parameter fixed by inversion from μ₃**, a FIT, declined ("no seventh fit-based ansatz").
 `route_closes_with_rescale_iff` makes the trap explicit: closure under a rescale forces `c`
 to a specific `μ₃`-determined value, i.e. `c` is inverted from the target.
 
@@ -104,7 +107,6 @@ theorem geom_ratio_eq_raw_ratio_div_sum {κ_raw κ_y S : ℝ}
     geomCoeff κ_raw S / κ_y = (κ_raw / κ_y) / S := by
   unfold geomCoeff
   field_simp
-  ring
 
 /-- **C1 — the genuine geometric measure sums to `1`.**  With `D² = Σ_λ d_q²` and the raw
 sum `S = D²/[n]_q!`, the genuine measure `W^{geom}_λ = (d_q²/[n]_q!)/S` has total mass
@@ -156,9 +158,10 @@ theorem geom_cluster_overshoots
 weights `y_λ ↦ c·y_λ`, changing the cluster to `c·v_y` and requiring the geometric ratio
 `r_geom` to satisfy `r_geom·(c·v_y) = μ₃`.  Closure under such a rescale forces `c` to the
 specific value `c = μ₃/(r_geom · v_y)` — i.e. `c` is **inverted from the target `μ₃`**, a
-free parameter, hence a FIT.  This lemma states exactly that dependence (closure ⟺ `c`
-takes the `μ₃`-determined value), documenting why the "normalize `y_λ` to `Σ=1`" move
-(`c ≈ 31.5`) is declined, not a derivation. -/
+free parameter, hence a FIT.  (Even the *derivation-flavoured* choice "put both weights on
+`Σ=1`", `c = 1/Σy_λ ≈ 31.5`, only reaches `r_geom·Σy_λ = 1.506`, a `5 %` miss — and is
+itself an undetermined normalization convention, not a derivation.)  This lemma states
+exactly that dependence (closure ⟺ `c` takes the `μ₃`-determined value). -/
 theorem route_closes_with_rescale_iff
     {r_geom v_y μ₃ c : ℝ} (hr : r_geom ≠ 0) (hv : v_y ≠ 0) :
     r_geom * (c * v_y) = μ₃ ↔ c = μ₃ / (r_geom * v_y) := by
