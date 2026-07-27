@@ -2646,3 +2646,102 @@ Agents frequently conflate "Lean code that compiles with 0 errors" with "a mathe
    Do not use conditional classes as an excuse to wire un-derived constants into downstream dashboards or production scripts. If the closed-form math isn't proven from the 13 categorical drivers, the compute remains blocked.
 3. **Formalize-First means PROVING the invariant.**
    Writing the structural scaffolding is good, but it does not unlock downstream physics code. Only a true closed-form derivation does.
+
+## Strict Lean Discipline (owner directive 2026-07-27)
+
+**This section consolidates and ELEVATES all Lean hygiene rules into a
+single strict-enforcement block. It applies to ALL agent work —
+exploratory discussions, derivation sessions, PR code, and idle-time
+formalization alike. Violation of any item below is a review failure.**
+
+### Zero-sorry default
+
+1. **New theorems/lemmas MUST be sorry-free.** If you cannot discharge
+   the goal, you have two honest options:
+   - **State-and-queue:** declare the proposition with `sorry` + a
+     `-- Ref:` citation (§1 above) and mark it `has_sorry` in the
+     content block. This is an honest "stated, not yet proved" marker.
+   - **Stop and report the gap.** Say "this is open" in chat. Do NOT
+     silently leave a `sorry` hoping the user won't notice.
+2. **Existing `sorry`s are NOT an invitation.** Do not add *new*
+   `sorry`s to already-sorry-free files. If you touch a sorry-free
+   file, it must remain sorry-free when you're done.
+3. **`sorry` is never a "TODO" marker.** If the proof is too hard
+   right now, state the gap explicitly in chat and in a `-- GAP:`
+   comment, don't use `sorry` as a placeholder you "intend to fill
+   later."
+
+### No trivial trues, no tautologies, no laundering
+
+4. **`theorem X : True := trivial` is ALWAYS a review failure** — in
+   any declaration kind (`theorem`, `lemma`, `def`, `abbrev`,
+   `instance`, `example`). The only exception is a documented
+   shadow-stub or conjecture-block placeholder (§1a above).
+5. **Tautological conclusions are banned:** `X = X := rfl`,
+   `∀ x, x = x`, `True ∧ True`, or any proposition that is provable
+   without using any hypothesis about the mathematical objects in
+   question. If the *statement* doesn't say something falsifiable
+   about the domain, it is not a theorem.
+6. **`native_decide` laundering is banned.** Do not use `native_decide`
+   or `decide` to mask a goal behind the kernel evaluator unless the
+   goal is a genuinely decidable finite computation (e.g., checking a
+   concrete numeric inequality). Using it to bypass an unproved
+   structural claim is laundering.
+7. **No axiom/class may substitute for a proof.** Creating
+   `axiom myResult : P` or `class MyHyp where field : P` and then
+   consuming it downstream is NOT proving `P`. It is assuming `P`.
+   State it as a conjecture if it is genuinely open; do not disguise
+   assumptions as infrastructure.
+
+### Derive-then-check standard
+
+8. **Every Lean proposition must state something falsifiable BEFORE
+   the proof is attempted.** Write the `theorem` statement first.
+   Read it. Ask: "could this be wrong?" If the answer is "no, it's
+   true by definition / by unfolding / by `rfl`," then it is not a
+   theorem — it is notation, and should be a `def` or `abbrev`, not
+   dressed up as a proof.
+9. **Derive, then check — never fit.** When formalizing a physical
+   claim (e.g., a binding energy, a Stokes constant, a magnitude),
+   the Lean statement must derive the value from upstream axioms /
+   proved lemmas, not assert the value and prove `rfl`. The
+   anti-fit discipline applies inside Lean exactly as it does in
+   Python probes.
+10. **Report honest negatives.** If the Lean proof attempt reveals
+    that the proposition is *false* (e.g., a `norm_num` discharges
+    the negation), that is a valuable result. Report it as a
+    scope-(a) or scope-(b) refutation. Do NOT silently weaken the
+    statement until it becomes trivially true.
+
+### Applies to discussions and exploration
+
+11. **These rules apply even in chat-only / exploratory sessions.**
+    When discussing a derivation route (e.g., Δ_λ magnitude, Stokes
+    constants, cusp-torus winding), any Lean code shown in chat or
+    proposed for a branch must meet the same standard. "It's just
+    exploratory" is not a licence for `sorry`-littered scaffolding
+    or trivial-true placeholders.
+12. **All agents inherit these rules.** Subagents, sibling-branch
+    agents, and idle-time formalization agents are bound by the same
+    discipline. A subagent that lands a `sorry` without citation or a
+    trivial-true theorem is a review failure attributed to the
+    parent session.
+
+### When you can't close it — bean the gap (the honest exit)
+
+13. **If you cannot close a derivation, CREATE A BEAN.** This is
+    your exit — not a `sorry`, not a weakened statement, not a
+    trivial-true placeholder. Run
+    `beans create "GAP: <precise description of what's open>" --type task`
+    with enough detail that the next agent (or the owner) can pick it
+    up cold: what was attempted, why it failed, what the surviving
+    candidates are, and what the next honest step would be. Then
+    **stop** and report the gap in chat. An honest bean is always
+    acceptable; a dishonest "closure" never is.
+14. **Do NOT try to please.** The owner is a physicist. Fake progress
+    is worse than no progress — it wastes time, pollutes the corpus,
+    and erodes trust. If the math doesn't work, say so. If a
+    derivation dead-ends, report the negative. If you don't know,
+    say "I don't know." The user would rather see "this is open
+    (bean `qou-XXXX`)" than a sorry-laden scaffold dressed up as a
+    result. **Honesty is the only acceptable output.**
