@@ -69,3 +69,69 @@ non-meridian deformation could in principle carry a larger imaginary part). Per 
 anti-fit discipline, a resonance `u(q₀)` will **not** be constructed to match the
 anchors here — that would be a fit. Identifying (or proving impossible) a *derivable*
 non-smooth spin part is the remaining open frontier (SP2, `qou-4kr1`), left open.
+
+## [W] Winding lattice (2026-07-27): SP1's diagonal wall FALLS
+
+Author steering: *"associate to a braid word a geodesic (flow) on the torus for the
+particle/vortex path; odd and even channels; sinh/cosh should align at this geometry"*
+— and *"this is mapped on Bring's surface"*. Probe
+[`qbeta_cusp_lattice_geodesic_probe.py`](../../computations/qbeta/qbeta_cusp_lattice_geodesic_probe.py)
+(50 dps, exit 0, 5 assertions). Two **proved** corpus inputs, no fit: meridian
+log-holonomy `= ln q₀` (`meridian-holonomy-boost`) and cusp shape `ω = e^{iπ/3}`
+(`cusp-shape-bar-parity`). The `(m,ℓ)` winding geodesic has `u = ln q₀·(m+ℓω)` and
+
+$$
+  \mathrm{Im}\,\mathfrak{V}_{4_1} = \tfrac{\sqrt3}{16}(\ln q_0)^2\,\bigl[(2m+\ell)^2 - 3\ell^2\bigr]
+$$
+
+exactly (residual `3e-53`) — the **norm form of `ℤ[√3]`** (disc 12), matching the
+cusp's own `√−3` (`barOdd(ω)² = −3`). Consequences:
+
+- **The sign is ARITHMETIC, not q₀-sensitive.** `sign Im 𝔙₄₁ = sign G(m,ℓ)`, a discrete
+  invariant of the winding carrying **no q₀-dependence at all**. Different knots ⇒
+  different winding slopes ⇒ sign flip, with no hypersensitive `u(q₀)` required. This is
+  the first *derivable, non-smooth* candidate for the SP2 crux, and it dissolves the
+  premise that the flip must come from a 1e-8 q₀ gap.
+- **SP1's wall falls.** Longitude `(0,1)`: `Im u/Re u = √3 > 1` ⇒ `G = −2 < 0`, the
+  spin-dominated regime SP1 called unreachable. SP1's *"no geometric holonomy from
+  q₀≈1.11 supplies `Im u > Re u`"* was an artifact of its **off-lattice** fibre ansatz
+  `u = ln q₀(1 + i/2)`; the 60° cusp angle supplies `√3` free of q₀. Meridian `(1,0)`
+  gives `G = +4`, reproducing the #4391 boost value to 40 digits (cross-check).
+- **sinh/cosh alignment is exact.** `G = 1` is the **Pell equation** `x²−3y²=1`, whose
+  solutions are the units `(2+√3)ⁿ` of `ℤ[√3]`: `x_n = cosh(nρ)`, `√3·y_n = sinh(nρ)`
+  with fundamental rapidity `ρ = arccosh 2 = ln(2+√3)`. Under `(barEven, barOdd) =
+  (2x, 2√3 y)` this is **exactly** the proved holonomy hyperbola `barEven² − barOdd² = 4`.
+  *The proved boost identity IS the Pell equation of the cusp winding lattice*, and its
+  integer solutions are a discrete boost subgroup of rapidity `n·arccosh 2`.
+- **No null geodesic** (`√3` irrational ⇒ `G ≠ 0` on all 14640 classes tested): every
+  class is strictly boost- or spin-dominated. Spin sector = winding-slope window
+  `m/ℓ ∈ (−1.366, 0.366)`, i.e. integer slopes `{0, −1}` (longitude-dominated).
+
+**Honest negative (scope-(a)).** At the derived scale `c = ln q₀` the magnitudes are
+**not** reproduced: `S_muon/B ≈ 8.22` and `S_proton/B ≈ −33.48` are not `G` values
+(spectrum ≤50: `4, 6, 16, 22, 24, 36, 46`), and the canonical meridian/longitude pair
+predicts ratio `−1/2` against the observed `−4.075`. **Fit trap:** 1833 `G`-value pairs
+match that ratio within 1% by chance, so ratio-matching here is *not evidence*. No
+`(m,ℓ)` adopted; sign mechanism only.
+
+## Literature drop (owner uploads `eb5ecc5c`, `cc8cc47a`, 2026-07-26) — triage
+
+Nine PDFs landed on `main`, several decisive for the [W] result:
+
+| File | Paper | Bearing |
+|---|---|---|
+| `CuspShapes.pdf` | Dang–Purcell, *Cusp shape and tunnel number* | **Sharpens the fit trap to a theorem.** Cusp shapes of tunnel-number-one manifolds are **dense in the Teichmüller space of the torus**. For general `τ` the form is `G_τ = (m+ℓτ₁)² − ℓ²τ₂²`; density ⇒ choosing a knot to get a desired cusp shape is an *unbounded* fit resource. The [W] `W5` negative is now literature-backed, not just a heuristic count. |
+| `0410233v4.pdf` | Purcell, *Cusp shapes under cone deformation* | **The right tool for the standing objection** "does `ω` move with q₀?" Bounds cusp-shape change under cone deformation preserving the cusp, in terms of the change near the singular locus alone. Quantifies whether `ω = e^{iπ/3}` is rigid to the substrate deformation — i.e. whether [W]'s no-q₀-dependence survives. Top follow-up. |
+| `4GEO-DEDI-REV.pdf` | Baseilhac–Benedetti, *Quantum Teichmüller invariants of fibred cusped 3-manifolds* | **The literature home of the author's picture.** A braid-closure complement *is* a fibred cusped 3-manifold (punctured-disc mapping torus); the braid is the monodromy and the "flow" is the suspension flow. Reduced quantum hyperbolic invariants of pseudo-Anosov maps as intertwiners of quantum-Teichmüller local reps. |
+| `agt-v7-n2-p13-s.pdf`, `0611504v1.pdf` | Baseilhac–Benedetti, *Quantum hyperbolic geometry* (AGT 7 (2007) 845–917; arXiv v1) | QHFT machinery behind `𝔙 = Vol + i·CS` at roots of unity — the published + preprint pair. |
+| `topological.invariance.3Dindex.pdf` | Garoufalidis–Hodgson–Rubinstein–Segerman, *1-efficient triangulations and the index of a cusped hyperbolic 3-manifold* | 3D index (Dimofte–Gaiotto–Gukov) promoted to a **topological invariant**: a canonical `q`-series attached to a cusped hyperbolic 3-manifold. Strong candidate for the *fibre-level* q-series the `c_k`/Habiro thread wants (AGENTS.md Im(q) fibre-vs-observable framing). |
+| `0806.4741v1.pdf` | Bieliavsky–Detournay, *Deformation quantizations of the hyperbolic plane* | Deformation-quantization side of the `q`-hyperbolic structure. |
+| `1311.6841v1.pdf` | Dupuis–Girelli, *Observables in LQG with a cosmological constant* | `q`-deformed observables; external comparison point. |
+| `2507.13873v1.pdf` | Belaey–Mertens–Papalini, *Probing the singularity at the holographic screen via q-holography* | Recent (2025-07) `q`-deformed spacetime emergence; external comparison point. |
+
+**Net effect on [W].** The sign mechanism stands as *derived for the proved `4₁` cusp
+shape*. Dang–Purcell **strengthens the honest negative** — the cross-knot extension is
+a dense fit resource, so magnitudes must not be pursued by cusp-shape selection.
+Purcell's cone-deformation bounds are the next real check (is `ω` rigid under the
+substrate deformation?), and Baseilhac–Benedetti supply the fibred/monodromy framework
+the author's geodesic-flow picture actually lives in.
