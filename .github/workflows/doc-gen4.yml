@@ -32,7 +32,7 @@ jobs:
             lean-cache-${{ runner.os }}-
 
       - name: Restore mathlib oleans via script
-        # Restores mathlib from the lake-cache branch to save 30+ min of build time
+        # Restores mathlib from GitHub Release cache (or orphan-branch fallback) to save 30+ min of build time
         run: |
           export PATH="$HOME/.elan/bin:$PATH"
           ./scripts/lean-cache-restore.sh || true

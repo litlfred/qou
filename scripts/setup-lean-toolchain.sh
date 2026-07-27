@@ -241,16 +241,16 @@ fi
 
 echo "setup-lean-toolchain: ready ($LINK_NAME, override set on $REPO_ROOT)" >&2
 
-# 6. Auto-fetch pre-built oleans from the Tier-2 orphan-branch cache
-#    if .lake/build/lib/ isn't already populated. This is what makes
-#    `lake build` complete in seconds rather than the 1-3 hour
-#    from-source rebuild that would otherwise be needed when the
-#    Mathlib oleans cache host 403s in restricted containers.
-#    Best-effort: if the orphan branch is missing or extraction fails,
-#    fall through to whatever lake build can do on its own.
-FETCH_SCRIPT="$REPO_ROOT/scripts/lake-cache-fetch.sh"
+# 6. Auto-fetch pre-built oleans from the GitHub Release cache (or
+#    legacy orphan-branch fallback) if .lake/build/lib/ isn't already
+#    populated. This is what makes `lake build` complete in seconds
+#    rather than the 1-3 hour from-source rebuild that would otherwise
+#    be needed when the Mathlib oleans cache host 403s in restricted
+#    containers. Best-effort: if neither the release nor the branch
+#    is available, fall through to whatever lake build can do on its own.
+FETCH_SCRIPT="$REPO_ROOT/scripts/lean-cache-restore.sh"
 if [ -x "$FETCH_SCRIPT" ] && [ ! -d "$REPO_ROOT/.lake/packages/mathlib/.lake/build/lib" ]; then
-  echo "setup-lean-toolchain: .lake/ not warm — fetching Tier-2 orphan-branch cache" >&2
+  echo "setup-lean-toolchain: .lake/ not warm — fetching olean cache (release → orphan-branch fallback)" >&2
   "$FETCH_SCRIPT" >&2 || echo "setup-lean-toolchain: cache fetch failed (best-effort) — lake build will go from source" >&2
 fi
 
