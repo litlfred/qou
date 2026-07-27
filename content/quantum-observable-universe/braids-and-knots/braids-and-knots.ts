@@ -231,6 +231,12 @@ export default chapter({
         "cusp-shape-bar-parity",
         "meridian-holonomy-boost",
         "meridian-exceptional-divisor-note",
+        // Braid-word geodesic on the cusp torus: Im 𝔙₄₁ collapses onto the
+        // disc-12 norm form of ℤ[√3] (Pell = the boost hyperbola), so the sign
+        // is arithmetic in the winding class, not a function of q₀; the golden
+        // order's N(φⁿ)=(−1)ⁿ is the parity mechanism the cusp torus lacks.
+        "winding-lattice-norm-form",
+        "winding-parity-sign-transport",
         "meson-em-sinh-closed-form",
         "meson-em-sinh-closed-form-proof",
         "meson-qcg-fusion-identity",
