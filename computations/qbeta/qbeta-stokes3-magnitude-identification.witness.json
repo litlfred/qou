@@ -1,0 +1,60 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-27T15:01:02.531917+00:00",
+  "commitSha": "e75bf68844455aaa305b9bee331f006f013879aa",
+  "assertions": [
+    {
+      "name": "both_real_im_u",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 19,
+  "computation": "qbeta-stokes3-magnitude-identification",
+  "scriptFile": "qbeta_stokes3_magnitude_identification_probe.py",
+  "scriptHash": "0c2a4504c261",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
+  },
+  "description": "T4 of the Δ_λ magnitude derivation (bean qou-fgte). Tests whether the GGM Stokes constant A_ω = 3 (integer, literature-proved for 4₁) combined with the proved formula Im 𝔙₄₁(u) = (√3/4)(Re²u−Im²u) reproduces the empirical S at both anchors. Derive-then-check: inverts for Im u, checks consistency.",
+  "contentBlock": "conj:binding-qbeta-complex-volume",
+  "data": {
+    "stokes3_identification": {
+      "A_omega": 3,
+      "formula": "S = A_ω · (√3/4) · (Re²u − Im²u), Re u = ln q₀",
+      "proton_result": {
+        "im_u_needed": 0.2031325151581721,
+        "ratio_im_re": 1.9468191760237554,
+        "s_check": -0.03945936429586059,
+        "sign_ok": true,
+        "rhs_positive": true
+      },
+      "muon_result": {
+        "im_u_needed": 0.058592051845243284,
+        "ratio_im_re": 0.5615453409637143,
+        "s_check": 0.009682977798052078,
+        "sign_ok": true,
+        "rhs_positive": true
+      },
+      "both_anchors_real_imu": true,
+      "both_anchors_sign_ok": true,
+      "both_anchors_consistent": false,
+      "verdict": "PARTIAL: A_ω = 3 can reproduce each anchor S individually (sign + magnitude) but requires DIFFERENT Im u at each — the SP2 crux (Im u is q₀-sensitive)"
+    }
+  }
+}
