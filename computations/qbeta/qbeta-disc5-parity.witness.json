@@ -1,0 +1,65 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-07-27T12:43:44.800635+00:00",
+  "commitSha": "9c4733b34eaf7455c6c3a6c4a14aa5acf0443490",
+  "assertions": [
+    {
+      "name": "parity_flip_in_disc5_absent_in_disc12",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "cosh_sinh_channel_swap_by_parity",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "sign_rule_matches_both_anchors",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "magnitudes_unexplained_left_open",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 5,
+  "computation": "qbeta-disc5-parity",
+  "scriptFile": "qbeta_disc5_parity_probe.py",
+  "scriptHash": "28c17f9d1306",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "mpmath": "1.4.1"
+  },
+  "description": "disc-5 parity test (#4401, continuation of the [W] winding-lattice probe): does the braid word's winding PARITY carry the S-channel sign flip, via Bring's golden order ℤ[φ]? Derived structural contrast: the cusp-torus order ℤ[√3] has fundamental unit 2+√3 of norm +1, so x_n²−3y_n² = +1 for ALL n — no parity flip is available there; Bring's ℤ[φ] has fundamental unit φ of norm −1, so L_n²−5F_n² = 4(−1)ⁿ — the parity flip exists on Bring and is structurally impossible on the cusp torus. The bar-split of x = φⁿ shows the author's odd/even channel structure exactly: which of (L_n, F_n√5) is the cosh and which the sinh SWAPS with the parity of n, both obeying the proved barEven²−barOdd²=4. Sign check, parameter-free: canonical braid words are powers of w = σ₁σ₂⁻¹ (4₁ = w², n=2 even; Borromean L6a4 = w³, n=3 odd), and the rule sign S = (−1)ⁿ predicts muon + / proton − — matching both observed anchors, 2/2, with no tuning. HONEST SCOPE: the parity→S-sign LINK is derived only on the disc-12 cusp torus ([W]); on Bring it is transported by ANALOGY (the Bring-side complex-volume computation is not done) — a conjectural mechanism supported by 2 bits, not a derivation. HONEST NEGATIVE: |N(φⁿ)| = 1 ∀n predicts equal magnitudes vs the observed ratio 4.075; the best natural φ-candidate misses by ≫0.1%. Magnitudes left open and not pursued — cusp shapes are dense in Teichmüller space (Dang–Purcell), making magnitude-chasing by knot/cusp selection a fit trap. No fit, no c_k, no instance.",
+  "contentBlock": "conj:binding-qbeta-complex-volume",
+  "data": {
+    "disc5_parity_readout": {
+      "golden_order": "ℤ[φ], φ=(1+√5)/2, fundamental unit norm −1 ⇒ L_n²−5F_n² = 4(−1)ⁿ",
+      "cusp_order": "ℤ[√3], fundamental unit 2+√3 norm +1 ⇒ x_n²−3y_n² = +1 ∀n (no parity flip)",
+      "rho5_ln_phi": "0.48121182506",
+      "rho3_arccosh2": "1.31695789692",
+      "channel_swap": "bar-split of φⁿ: n even → (barEven,barOdd)=(L_n,F_n√5); n odd → (F_n√5,L_n) — cosh/sinh identity swaps with parity",
+      "braid_powers": "4₁ = w² (n=2, even); Borromean L6a4 = w³ (n=3, odd); w = σ₁σ₂⁻¹",
+      "sign_prediction": "muon +, proton − (from (−1)ⁿ)",
+      "sign_observed": "muon +, proton −  ⇒ 2/2 MATCH, parameter-free",
+      "observed_magnitude_ratio": "4.075127003",
+      "best_phi_candidate": "φ³ misses by 3.949%",
+      "verdict": "parity carries the SIGN (2/2, no tuning) and disc-5 is structurally the only one of the two orders that can; parity→S-sign link transported to Bring by ANALOGY (conjectural, 2 bits, not a derivation); magnitudes OPEN and not pursued (dense-cusp-shape fit trap)"
+    }
+  }
+}
