@@ -125,6 +125,9 @@ import QOU.ParticleInteractions.AtomKnot
 import QOU.ParticleInteractions.AtomicityRankOneOrderSeparation
 import QOU.ParticleInteractions.AtomicityFromSelfDuality
 import QOU.ParticleInteractions.AtomicityLieRank
+import QOU.ParticleInteractions.AtomicityGroupRank
+import QOU.ParticleInteractions.AtomicityRankOneToSingleObject
+import QOU.ParticleInteractions.AtomicitySelfDualToSymplectic
 import QOU.ParticleInteractions.WignerSU4FromSpinIsospin
 import QOU.Elaboration
 import QOU.PathIntegrals
