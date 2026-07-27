@@ -105,7 +105,7 @@ jobs:
           key: lean-cache-${{ runner.os }}-${{ hashFiles('lean-toolchain') }}
           restore-keys: |
             lean-cache-${{ runner.os }}-
-      - name: Restore olean cache from lake-cache branch (best-effort)
+      - name: Restore olean cache (GitHub Release → orphan-branch fallback)
         if: steps.changed.outputs.files != ''
         run: |
           export PATH="$HOME/.elan/bin:$PATH"
