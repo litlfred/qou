@@ -40,3 +40,32 @@ smooth boost+spin candidate cannot reproduce the hypersensitive flip, that is
 an honest scope-(a) result — the map needs a non-smooth/resonance ingredient,
 recorded not buried). Expected likely outcome: **SP1 sharpens the smooth part;
 SP2 is the residual open crux** (a smooth u cannot be hypersensitive).
+
+## SP1 outcome (2026-07-27): smooth geometric fibre-spin REFUTED (scope-(a))
+
+Probe [`qbeta_spin_part_udeform_probe.py`](../../computations/qbeta/qbeta_spin_part_udeform_probe.py)
+(50 dps, exit 0, 4 assertions). Tested `u = ln q₀ + i·(ln q₀/2)` (boost + fibre
+holonomy spin) under `Im 𝔙₄₁ = (√3/4)(Re²u−Im²u)`:
+
+- The fibre spin angle `ln q₀/2` is **smaller** than the boost `ln q₀`
+  (`Im u/Re u = 1/2`), so `Re²u > Im²u` ⇒ `Im 𝔙₄₁ = +0.003536 > 0` at **both**
+  anchors (muon sign-correct, proton **wrong sign**). Smooth boost+fibre-spin
+  **cannot** reach `S(proton) < 0` — REFUTED as the full map (scope-(a)).
+- Reaching the diagonal (`Im²u > Re²u`, needed for `S<0`) requires `Im u > Re u
+  = ln q₀ ≈ 0.104`. Even the **full** fibre angle `ln q₀` only reaches the
+  diagonal (`Im 𝔙 = 0`), never past it. No smooth geometric holonomy from
+  `q₀≈1.11` supplies `Im u > Re u`.
+
+**Sharpened SP2 (the open crux).** The sign-flip source therefore **cannot** be
+a smooth geometric meridian holonomy. It requires a spin part that is (i)
+*larger than the boost* (`Im u > Re u`) AND (ii) *hypersensitive* to q₀ at the
+~1e-8 anchor gap (slope `k≈2.2e6`). A smooth function of q₀ is neither. So `u(q₀)`,
+if it exists, is a **non-smooth / resonance / near-degeneracy** object — the same
+hypersensitivity class as the c₃ flip-flop saga.
+
+**Honest status.** This is a scope-(a) refutation of the *smooth geometric* `u(q₀)`
+candidate, not a closure and not a scope-(b) exclusion of the channel (a different,
+non-meridian deformation could in principle carry a larger imaginary part). Per the
+anti-fit discipline, a resonance `u(q₀)` will **not** be constructed to match the
+anchors here — that would be a fit. Identifying (or proving impossible) a *derivable*
+non-smooth spin part is the remaining open frontier (SP2, `qou-4kr1`), left open.
