@@ -82,4 +82,51 @@ theorem sp_fin_one_eq_sl (R : Type*) [CommRing R] :
         add_zero, neg_neg] <;>
       (try rw [h]) <;> ring
 
+/-- **OPEN (Tannakian premise) — self-duality forces a symplectic structure.**
+
+`SelfDualToSymplectic l R g` axiomatises the categorical input that the
+automorphism Lie algebra `g` of a *self-dual* fundamental object embeds into the
+symplectic Lie algebra `Symplectic.sp l R` of its nondegenerate antisymmetric
+duality pairing. The single field `embeds` is the *real* mathematical statement
+(`g ≤ 𝔰𝔭`), not `True`.
+
+This is genuinely open in the corpus: it is a Tannaka-duality claim about the
+fibre functor on a rigid symmetric monoidal category with a symmetric duality,
+not a theorem proved in this file. Per AGENTS.md §"Axiomatization is NOT a Proof"
+and §3b, the open state is represented by the **absence of an instance** — the
+class is uninhabited. No `sorry` and no fabricated instance appear: providing an
+instance would *be* the proof, which is not available.
+
+Ref (manuscript, not yet formalised): `def:tannaka-dual`,
+`def:fundamental-object`. -/
+class SelfDualToSymplectic (l R : Type*) [DecidableEq l] [CommRing R] [Fintype l]
+    (g : LieSubalgebra R (Matrix (l ⊕ l) (l ⊕ l) R)) : Prop where
+  /-- The automorphism Lie algebra `g` of the self-dual fundamental object is a
+      Lie subalgebra of the symplectic Lie algebra of its duality pairing. -/
+  embeds : g ≤ Symplectic.sp l R
+
+/-- **CONDITIONAL downstream — `𝔰𝔩₂` embedding from self-duality.**
+
+Given the (open) Tannakian premise `SelfDualToSymplectic (Fin 1) R g` and the
+proved coincidence `sp_fin_one_eq_sl`, the automorphism Lie algebra `g` lands
+inside `𝔰𝔩(Fin 1 ⊕ Fin 1) R`. Feeding that into the landed rank bound
+`QOU.Atomicity.sl2_subalgebra_rank_le_one` (PR #4285) — threaded here as the
+explicit hypothesis `sl2_rank_le_one`, so this file stays decoupled from that
+unmerged branch — yields the downstream conclusion `P`.
+
+The only unproved input is the class instance itself; everything else is fully
+verified by Lean. This is the §3b-cond conditional-on-class pattern: the class
+carries a genuine hypothesis (`g ≤ 𝔰𝔭`) and the theorem *derives* its conclusion
+rather than assuming it. -/
+theorem sl2_embedding_of_selfDual
+    (R : Type*) [CommRing R]
+    (g : LieSubalgebra R (Matrix (Fin 1 ⊕ Fin 1) (Fin 1 ⊕ Fin 1) R))
+    [SelfDualToSymplectic (Fin 1) R g]
+    {P : Prop}
+    (sl2_rank_le_one : g ≤ SpecialLinear.sl (Fin 1 ⊕ Fin 1) R → P) :
+    P := by
+  apply sl2_rank_le_one
+  have hsp : g ≤ Symplectic.sp (Fin 1) R := SelfDualToSymplectic.embeds
+  rwa [sp_fin_one_eq_sl] at hsp
+
 end QOU.Atomicity
