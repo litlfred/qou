@@ -19,12 +19,16 @@
       ϑ_K > ln q₀ (negative, spin-dominated) or ϑ_K < ln q₀ (positive,
       boost-dominated). This is `imV₄₁_pos_iff` / `imV₄₁_neg_iff` composed
       with the Stokes-constant positivity (A_ω > 0).
-    * `wall_forces_stokes` — the phase wall (`phase_channel_anchor_swing_zero`)
-      combined with the sign-flip (`signflip_forces_diagonal_cross`) proves
-      that the real substrate CANNOT source the sign flip alone — any sign
-      flip MUST come from a source outside the real ray. This is the Lean
-      proof that ϑ_K ≠ 0 requires a non-trivial input (the Stokes/monodromy
-      datum, bean qou-qnnq).
+    * `sign_flip_forces_both_regimes` — a sign flip between two deformations
+      forces one boost-dominated and one spin-dominated (the diagonal is
+      crossed). NOTE (header corrected 2026-07-27): an earlier draft promised
+      a `wall_forces_stokes` theorem built on `phase_channel_anchor_swing_zero`;
+      that theorem does not exist in this file, and the audit
+      docs/audits/2026-07-27-nzImVolume-sincos-convention-bug.md shows the
+      `nzImVolume` wall theorems it would have leaned on are wrong (sin vs cos).
+      What survives: `real_substrate_phase_frozen` (arg(2·ln q₀) = 0, true and
+      independent of the bug) says the meridian ray itself is real; it does NOT
+      by itself prove ϑ_K's source is external — Im 𝔙₄₁ > 0 on the real ray.
 
   WHAT IS HONESTLY OPEN (beans, not sorries):
     * A_ω = 3 — the GGM Stokes constant for 4₁. Needs Faddeev rigidity
