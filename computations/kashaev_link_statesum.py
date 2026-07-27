@@ -35,10 +35,30 @@ below, whose weights carry FACE (angle) indices absent from a braid trace.
   (⟨L⟩ is defined up to N-th roots of unity, Thm 1).  N odd throughout.
 ────────────────────────────────────────────────────────────────────────────
 
-STATUS: driver + face-index solver implemented and self-consistent; the
-figure-eight diagram encoding + validation against the merged closed form
-`figure_eight_kashaev_volume.kashaev_4_1` is the in-progress milestone
-(see fig8_diagram()).  Audit-only; no wiring; a genuine multi-session build.
+STATUS
+  ✓ Driver, PD→faces tracer (Euler-verified), coupled (3.3)-(3.4) face solver,
+    and braid→PD all implemented.
+  ✓ VALIDATED on the figure-eight: the general planar state sum (3.6)
+    reproduces kashaev_4_1(N) EXACTLY at N=3,5,7,11 (both the KnotAtlas PD and
+    the braid [1,-2,1,-2] PD, with the correct deficit face — see below).
+  ○ OPEN — the deficit-face selection rule.  Σ(row constraints)=V but
+    Σ(all interior column constraints)=F−1=V+1 (Euler), so exactly ONE interior
+    face must carry column-sum 0, not 1 (the "angle-deficit" face), and it is
+    dropped from the solve.  WHICH face is geometrically determined, NOT free:
+    different drops give different |⟨L⟩| (e.g. 85.7 vs the correct 50.5 on the
+    braid 4₁ diagram at N=5).  For FIG8_PD "drop the last interior face"
+    happens to be correct; in general it is not.  Pinning this rule (likely an
+    orientation/sign refinement of (3.3)-(3.4) — note the global count is off
+    by 2 on S², hinting the naive all-faces-col-sum-1 reading misses a sign) is
+    the blocker for the Whitehead computation.
+  ○ Whitehead cannot be cross-checked via the U_q(sl₂) Markov-trace engine:
+    closure_invariant VANISHES at the root of unity (vanishing quantum
+    dimension), and the non-zero Kashaev normalization is only coded for 4₁
+    (kashaev_4_1).  So Whitehead's validation path is the VOLUME growth
+    (2π/N)log|⟨W⟩_N| → Vol(W)=4G≈3.6639, available once the deficit rule is
+    fixed.
+
+Audit-only; no wiring; a genuine multi-session build.
 """
 from __future__ import annotations
 
@@ -176,8 +196,15 @@ def _trace_faces(pd: list[tuple[int, int, int, int]]):
     return faces_per_crossing, list(range(fid))
 
 
-def _solve_mod(A, b, N):
-    """One solution x of A x ≡ b (mod N), N prime; None if inconsistent."""
+def _solve_mod(A, b, N, tolerant=False):
+    """One solution x of A x ≡ b (mod N), N prime.
+
+    tolerant=False: return None if any equation is inconsistent.
+    tolerant=True : IGNORE inconsistent leftover rows (0 = nonzero) and return
+      the solution of the maximal consistent subsystem.  Used for the
+      (3.3)-(3.4) face system, which is rank-deficient by exactly one (the
+      global row/col angle-deficit): the lone dependent-inconsistent equation
+      is auto-dropped rather than guessing which column to omit."""
     A = [row[:] + [b[i] % N] for i, row in enumerate(A)]
     rows, cols = len(A), len(A[0]) - 1
     piv = []
@@ -198,7 +225,7 @@ def _solve_mod(A, b, N):
         if r == rows:
             break
     for i in range(r, rows):
-        if A[i][cols] % N:
+        if A[i][cols] % N and not tolerant:
             return None
     x = [0] * cols
     for i, c in enumerate(piv):
@@ -216,10 +243,11 @@ def diagram_from_pd(pd, strand_edges, outer_face_hint=None, name=""):
                    strand_edges=strand_edges, outer_face=outer, name=name)
 
 
-def solve_face_indices_coupled(diag: Diagram, N: int):
-    """Solve the FULL (3.3)-(3.4) system: per-crossing row sums ≡1 AND per-face
-    column sums ≡1 (f≠f₀), with a(v,f₀)=0.  Variables = (crossing, sector-face)
-    pairs.  Returns the a-map, or None if inconsistent for this f₀."""
+def solve_face_indices_coupled(diag: Diagram, N: int, deficit_face=None):
+    """Solve the (3.3)-(3.4) system: per-crossing row sums ≡1 AND per-face
+    column sums ≡1 (f≠f₀ and f≠deficit_face), with a(v,f₀)=0.  Variables =
+    (crossing, sector-face) pairs.  Returns the a-map, or None if inconsistent.
+    See the inline note on the (open) deficit-face selection rule."""
     var = {}
     for vi, c in enumerate(diag.crossings):
         for f in c.faces:
@@ -244,8 +272,18 @@ def solve_face_indices_coupled(diag: Diagram, N: int):
     for vi, c in enumerate(diag.crossings):
         for f in c.faces:
             faces_to_crossings.setdefault(f, []).append(vi)
+    # Global count: Σ(rows)=V but Σ(all interior cols)=F−1=V+1 (Euler), so the
+    # interior col-sums CANNOT all be 1 — exactly ONE interior face carries
+    # col-sum 0 (the "angle-deficit" face) and is dropped.  WHICH face is the
+    # deficit is geometrically determined, NOT free: different drops give
+    # different |⟨L⟩| (85.7 vs 50.5 on the braid 4₁ diagram).  The principled
+    # rule is still OPEN (see module docstring); `deficit_face` lets the caller
+    # supply it, else we drop the last interior face (validated for FIG8_PD).
     interior = [f for f in faces_to_crossings if f != diag.outer_face]
-    for f in interior[:-1]:                       # drop the last interior column
+    df = deficit_face if deficit_face is not None else interior[-1]
+    for f in interior:
+        if f == df:
+            continue
         row = [0] * n
         for vi in faces_to_crossings[f]:
             row[var[(vi, f)]] += 1
@@ -265,6 +303,73 @@ def solve_face_indices_coupled(diag: Diagram, N: int):
 
 # figure-eight 4₁ PD code (KnotAtlas): under=(i,k), over=(j,l), CCW — matches Kas95.
 FIG8_PD = [(4, 2, 5, 1), (8, 6, 1, 5), (6, 3, 7, 4), (2, 7, 3, 8)]
+
+
+def braid_to_pd(word, nstr):
+    """PD code of the TRACE closure of a braid on `nstr` strands.
+
+    word = list of ±g (1-indexed generator g = crossing between strand
+    positions g-1 and g).  Emits Kas95/KnotAtlas PD tuples (i,j,k,l): CCW,
+    under=(i,k), over=(j,l).  Crossing box has corners BL,BR,TL,TR with the
+    two strands swapping (BL→TR, BR→TL); CCW from BL is [BL,BR,TR,TL].
+      positive g (left-over-right, over={BL,TR}): (i,j,k,l)=(BR,TR,TL,BL)
+      negative g (right-over-left, over={BR,TL}): (i,j,k,l)=(BL,BR,TR,TL)
+    Trace closure: top edge of strand k is identified with its bottom edge."""
+    pos = list(range(nstr))           # current edge id on each strand position
+    bottom = list(range(nstr))        # initial (bottom) edge ids for closure
+    nxt = nstr
+    crossings = []
+    for g in word:
+        p = abs(g) - 1
+        ll, lr = pos[p], pos[p + 1]
+        ul, ur = nxt, nxt + 1
+        nxt += 2
+        if g > 0:
+            crossings.append((lr, ur, ul, ll))
+        else:
+            crossings.append((ll, lr, ur, ul))
+        pos[p], pos[p + 1] = ul, ur
+    # trace closure: identify top edge pos[k] with bottom edge bottom[k]
+    parent = list(range(nxt))
+
+    def find(x):
+        while parent[x] != x:
+            parent[x] = parent[parent[x]]; x = parent[x]
+        return x
+
+    def union(a, b):
+        parent[find(a)] = find(b)
+    for k in range(nstr):
+        union(pos[k], bottom[k])
+    # compress labels to a contiguous 1..E
+    reps = sorted({find(e) for tup in crossings for e in tup})
+    relab = {r: i + 1 for i, r in enumerate(reps)}
+    return [tuple(relab[find(e)] for e in tup) for tup in crossings]
+
+
+# Whitehead link (L5a1) PD via the validated braid word [1,-2,1,-2,1] on 3
+# strands (braid_to_pd is correct — reproduces the braid 4₁ invariant).  The
+# state sum ⟨W⟩ is blocked on the deficit-face rule (see module docstring);
+# once fixed, validate via the volume growth → 4G, not the (root-vanishing)
+# Markov engine.
+WHITEHEAD_PD = None  # = braid_to_pd([1,-2,1,-2,1], 3); computed lazily below
+
+
+def whitehead_state_sum(N: int, strand_edges, outer_face, deficit_face):
+    """⟨Whitehead⟩ via the §3 state sum.  REQUIRES an explicit deficit_face —
+    there is deliberately NO default, because the correct choice is an OPEN
+    geometric question (see module docstring) and a wrong guess yields a wrong
+    invariant.  Validate any candidate convention via the volume growth → 4G."""
+    global WHITEHEAD_PD
+    if WHITEHEAD_PD is None:
+        WHITEHEAD_PD = braid_to_pd([1, -2, 1, -2, 1], 3)
+    diag = diagram_from_pd(WHITEHEAD_PD, strand_edges=strand_edges,
+                           outer_face_hint=outer_face, name="whitehead")
+    a = solve_face_indices_coupled(diag, N, deficit_face=deficit_face)
+    if a is None:
+        return None, diag
+    diag.face_index = a
+    return link_invariant(diag, N), diag
 
 
 def fig8_state_sum(N: int, strand_edges=(1, 2), outer_face=2):
