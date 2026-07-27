@@ -135,3 +135,38 @@ a dense fit resource, so magnitudes must not be pursued by cusp-shape selection.
 Purcell's cone-deformation bounds are the next real check (is `ω` rigid under the
 substrate deformation?), and Baseilhac–Benedetti supply the fibred/monodromy framework
 the author's geodesic-flow picture actually lives in.
+
+## Coordination — takeover of PR #4405 + critical review (2026-07-27)
+
+PR #4405 (`claude/delta-lambda-magnitude-derivation-2026-07-27`, Δ_λ magnitude via
+ϑ_K + Stokes) stalled at quota; taken up per owner request. Pushed `540d5fd5` there:
+37 scratch-litter files removed, `DeltaLambdaBindingAssembly.lean` header corrected
+(promised a nonexistent `wall_forces_stokes`; its "real substrate cannot source ϑ_K"
+narrative leaned on wall theorems that PR's own audit shows are wrong), bean
+`qou-3kos` re-scoped from "A_ω = 3 REQUIRED" to scope-(a) conditional (anchor-
+inversion viability under the questioned linear form; A ≳ 2.05 bound, A = 3 not
+derived). Full review in the PR comment.
+
+**Convention cross-validation.** #4405's A-polynomial audit confirms the
+`FigureEightComplexVolume` κ = +√3/4 half-potential convention — the same κ this
+branch's winding-lattice identity and parity probes are built on. The sin-vs-cos
+bug is confined to `ArgUPhaseBranchSelection.nzImVolume` (fix pending, bean
+`qou-u14x`). Consequence for the sign story: the "phase wall" is dead — Im 𝔙₄₁ > 0
+on the real ray — so the surviving statement is this branch's: the diagonal
+crossing is a discrete winding/parity datum, not a q₀-hypersensitivity.
+
+**Lattice ⟷ ϑ_K dictionary.** ϑ_K = Im 𝔲_K is quantized on the cusp lattice:
+ϑ_{m,ℓ} = (√3/2)·ℓ·ln q₀ ≈ 0.0902·ℓ. The #4405 back-solved values (0.203 proton,
+0.059 muon under A = 3) are NOT on this lattice — consistent with the [W]/[D4]
+honest negatives: sign is lattice-arithmetic, magnitudes are not (at scale ln q₀).
+
+**Magnitude path (owner question: "can use q-bar norm to get magnitude?").**
+On the lattice the bar-norm IS the sign datum (N = G(m,ℓ), integer — angle/parity
+side). The derivable magnitude candidate is the OTHER channel of the same 𝔙:
+under the exponential bridge form (bean qou-dtd3), |δf| ~ e^{−Re 𝔙/ℏ_q}, and on
+the lattice Re 𝔙₄₁(u_{m,ℓ}) = Vol₄₁ − (√3/8)(ln q₀)²·(2m+ℓ)ℓ — the CROSS form
+(2m+ℓ)ℓ, bar-even/cosh channel — while sign comes from the norm form (bar-odd
+parity channel). Magnitude = even channel, sign = odd parity: the two-channel
+split, one integer form each. Next probe (derive-then-check, canonical windings
+only, no tuning): does e^{−ΔRe 𝔙/ℏ_q} at the canonical w²/w³ windings reproduce
+|S_p/S_m| ≈ 4.075? A miss is recorded as a miss.
