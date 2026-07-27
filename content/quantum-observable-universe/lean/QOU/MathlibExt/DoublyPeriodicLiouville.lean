@@ -126,4 +126,39 @@ theorem ratio_const_of_doublyPeriodic {Φ Ψ : ℂ → ℂ} {b : Basis (Fin 2) �
   obtain ⟨c, hc⟩ := const_of_doublyPeriodic hdiff hper
   exact ⟨c, fun z => (div_eq_iff (hΦ0 z)).mp (hc z)⟩
 
+/-- **Rigidity bridge, divisor form — the shape the Faddeev application actually
+has.** `ratio_const_of_doublyPeriodic` above requires `Φ` to be *nowhere zero*.
+Faddeev's quantum dilogarithm `Φ_b` does **not** satisfy that: it is meromorphic
+with a genuine zero/pole lattice (poles at `c_b + i(mb + nb⁻¹)`, zeros at the
+reflected lattice), so the bridge as stated does not apply to it directly — a
+hypothesis/application mismatch worth naming rather than working around.
+
+What the open input `hratio` (bean `qou-cons`) actually delivers is weaker and
+better matched: two `FaddeevPhi` solutions **share** their divisor, so the
+*ratio* is entire even though neither factor is zero-free. This variant takes
+exactly that as its hypothesis, and is therefore the form a discharged `hratio`
+plugs into. Together with `hibinv` (bean `qou-rp5f`, supplying `hper` off the
+dual pole lattice) it yields constancy of the ratio.
+
+Strictly weaker than `ratio_const_of_doublyPeriodic`: it assumes nothing about
+the zeros of `Φ`, and correspondingly concludes about the ratio rather than
+about `Ψ` pointwise (see `eq_const_mul_of_entire_ratio` for the pointwise form
+away from the divisor). -/
+theorem ratio_const_of_entire_ratio {Φ Ψ : ℂ → ℂ} {b : Basis (Fin 2) ℝ ℂ}
+    (hr : Differentiable ℂ (fun z => Ψ z / Φ z))
+    (hper : ∀ i, ∀ z, Ψ (z + b i) / Φ (z + b i) = Ψ z / Φ z) :
+    ∃ c, ∀ z, Ψ z / Φ z = c :=
+  const_of_doublyPeriodic hr hper
+
+/-- Pointwise form of `ratio_const_of_entire_ratio`, valid **off the divisor**:
+wherever `Φ` is nonzero, `Ψ = c · Φ` with the same constant. This is how the
+rigidity conclusion is consumed in practice — the identity is asserted on the
+complement of the pole/zero lattice, not on all of `ℂ`. -/
+theorem eq_const_mul_of_entire_ratio {Φ Ψ : ℂ → ℂ} {b : Basis (Fin 2) ℝ ℂ}
+    (hr : Differentiable ℂ (fun z => Ψ z / Φ z))
+    (hper : ∀ i, ∀ z, Ψ (z + b i) / Φ (z + b i) = Ψ z / Φ z) :
+    ∃ c, ∀ z, Φ z ≠ 0 → Ψ z = c * Φ z := by
+  obtain ⟨c, hc⟩ := ratio_const_of_entire_ratio hr hper
+  exact ⟨c, fun z hz => (div_eq_iff hz).mp (hc z)⟩
+
 end QOU.MathlibExt.DoublyPeriodicLiouville
