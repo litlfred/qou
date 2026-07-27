@@ -1,0 +1,26 @@
+{
+ "schema": "probe-witness/v1",
+ "probe": "gswz_frobenius_teichmuller_probe",
+ "beans": [
+  "qou-1hlh"
+ ],
+ "source": "GSWZ arXiv:2412.04241v2 \u00a74.4 eqns (263)-(267), (272); uploads/2412.04241v2.pdf",
+ "field": "Q(alpha)/(alpha^3 - alpha^2 + 1) (5_2 trace field), p = 5, precision 5^6",
+ "checks": {
+  "hensel_lift_root_of_P_mod_5^6": true,
+  "hensel_lift_is_alpha^5_mod_5": true,
+  "teichmuller_stabilizes": true,
+  "zeta24_pow_24_eq_one": true,
+  "zeta24_exact_order_24": true,
+  "digit_alpha2_is_4x25_mod_125": true,
+  "digit_alpha_is_1_mod_5": true,
+  "digit_const_is_15_mod_25": true,
+  "frobenius_teichmuller_equivariance": true
+ },
+ "zeta24_coords_const_alpha_alpha2": [
+  3515,
+  7501,
+  4350
+ ],
+ "scope": "scope-(a): Frobenius/Teichmuller layer verified vs printed Example 4.3; p-adic dilog layer queued on qou-1hlh"
+}
