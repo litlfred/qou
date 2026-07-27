@@ -41,25 +41,18 @@ STATUS
   ✓ VALIDATED on the figure-eight: the general planar state sum (3.6)
     reproduces kashaev_4_1(N) EXACTLY at N=3,5,7,11 (both the KnotAtlas PD and
     the braid [1,-2,1,-2] PD, with the correct deficit face — see below).
-  ○ OPEN — the deficit-face selection rule.  Σ(row constraints)=V but
+  ✓ DEFICIT-FACE RULE — PINNED (2026-07-27).  Σ(row constraints)=V but
     Σ(all interior column constraints)=F−1=V+1 (Euler), so exactly ONE interior
-    face must carry column-sum 0, not 1 (the "angle-deficit" face), and it is
-    dropped from the solve.  WHICH face is geometrically determined, NOT free:
-    different drops give different |⟨L⟩| (e.g. 85.7 vs the correct 50.5 on the
-    braid 4₁ diagram at N=5).  For FIG8_PD "drop the last interior face"
-    happens to be correct; in general it is not.  Pinning this rule (likely an
-    orientation/sign refinement of (3.3)-(3.4) — note the global count is off
-    by 2 on S², hinting the naive all-faces-col-sum-1 reading misses a sign) is
-    the blocker for the Whitehead computation.
-      Hypotheses tested (2026-07-27), both insufficient:
-      · drop-one interior column — face-order-dependent; "drop last" happens to
-        validate FIG8_PD but is not canonical.
-      · outer col-sum = −1 (turning-angle deficit) with a(v,f₀) kept free —
-        RULED OUT: reproduces kashaev_4_1 only accidentally at N=3, fails
-        N=5,7.  The a(v,f₀)=0 gauge of (3.3) is genuinely required; the correct
-        rule keeps it and singles out ONE interior deficit face by a not-yet-
-        identified geometric criterion (likely tied to the two strand edges
-        e₁,e₂ and their incident faces).
+    face carries column-sum 0, not 1 (the "angle-deficit" face), and is dropped
+    from the solve.  WHICH face is geometrically determined, NOT free (different
+    drops give different |⟨L⟩|: 85.7 vs the correct 50.5 on the braid 4₁ at
+    N=5).  The rule: the deficit face is the UNIQUE face incident to NEITHER
+    strand edge e₁ nor e₂ (`deficit_face_of`).  Validated on the figure-eight,
+    both the KnotAtlas PD and the braid [1,-2,1,-2] PD — in each the
+    neither-strand face is unique and (outer, deficit) reproduces kashaev_4_1 at
+    N=3,5,7.  (Rejected en route: "drop the last interior column" — face-order
+    dependent, validates FIG8_PD only by luck; and outer col-sum=−1 with a(v,f₀)
+    kept free — fails N=5,7, the (3.3) a(v,f₀)=0 gauge is genuinely required.)
   ○ Whitehead cannot be cross-checked via the U_q(sl₂) Markov-trace engine:
     closure_invariant VANISHES at the root of unity (vanishing quantum
     dimension), and the non-zero Kashaev normalization is only coded for 4₁
@@ -256,6 +249,29 @@ def diagram_from_pd(pd, strand_edges, outer_face_hint=None, name=""):
                    strand_edges=strand_edges, outer_face=outer, name=name)
 
 
+def _face_edges(diag: Diagram):
+    """face id → set of incident edge ids (an edge is incident to a face if the
+    face touches one of that edge's ends, i.e. the edge bounds a sector on it)."""
+    fe: dict[int, set] = {f: set() for f in diag.faces}
+    for c in diag.crossings:
+        E = list(c.edges)
+        for p in range(4):
+            fe[c.faces[p]].add(E[p])
+            fe[c.faces[p]].add(E[(p + 1) % 4])
+    return fe
+
+
+def deficit_face_of(diag: Diagram):
+    """The deficit face (col-sum 0) — the UNIQUE face incident to NEITHER strand
+    edge e₁ nor e₂ (validated on the figure-eight, both KnotAtlas and braid
+    diagrams).  Returns the face id, or None if it is not unique (then the
+    caller must supply deficit_face / scan)."""
+    fe = _face_edges(diag)
+    e1, e2 = diag.strand_edges
+    cand = [f for f in diag.faces if e1 not in fe[f] and e2 not in fe[f]]
+    return cand[0] if len(cand) == 1 else None
+
+
 def solve_face_indices_coupled(diag: Diagram, N: int, deficit_face=None):
     """Solve the (3.3)-(3.4) system: per-crossing row sums ≡1 AND per-face
     column sums ≡1 (f≠f₀ and f≠deficit_face), with a(v,f₀)=0.  Variables =
@@ -293,6 +309,8 @@ def solve_face_indices_coupled(diag: Diagram, N: int, deficit_face=None):
     # rule is still OPEN (see module docstring); `deficit_face` lets the caller
     # supply it, else we drop the last interior face (validated for FIG8_PD).
     interior = [f for f in faces_to_crossings if f != diag.outer_face]
+    if deficit_face is None:
+        deficit_face = deficit_face_of(diag)   # face touching neither strand edge
     df = deficit_face if deficit_face is not None else interior[-1]
     for f in interior:
         if f == df:
