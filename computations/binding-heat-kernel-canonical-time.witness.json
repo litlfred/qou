@@ -1,0 +1,213 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-28T02:29:40.731194+00:00",
+  "commitSha": "40c47859c4fc73f44f186a9e4ec9bf0ad4669e15",
+  "assertions": [
+    {
+      "name": "canonical_tau_kernel_evaluated_zero_fit",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "exponential_kernel_family_excluded_all_tau",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "canonical_tau_differs_from_parent_h",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 15,
+  "computation": "binding-heat-kernel-canonical-time",
+  "scriptFile": "binding_heat_kernel_canonical_time_probe.py",
+  "scriptHash": "b9152cd38d94",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
+  },
+  "description": "GAP-6 (bean qou-bcig, epic qou-xu6t): the q-heat kernel at its CANONICAL Reeb time s_* = ℏ_q = (q₀−1)/q₀ ≈ 0.0988 — the zero-fit variant binding_heat_kernel_weight_probe never tested, because its three τ values used h = q₀−q₀⁻¹ ≈ 0.2091, a different quantity. Also tests the corpus's actual fallback form d_λ·e^{−μ_λ s_* N} with μ_λ = ℏ_q²C_λ (the eigenvalue carries ℏ_q², absent from the parent probe's linear C_λ weight); the step count N is a CHOICE so those variants are 1-param and tiered, run at N = A and N = 1 to expose N-sensitivity. Zero-fit variants: kernel_s_star (e^{−C_λ s_*}) and kernel_mu_s_star (e^{−μ_λ s_*}). Diagnostic of record is the ISOTOPE-SPREAD S(⁴He)/S(D) against its target 12.72, because every per-block weight tried so far fails by spread rather than by a single-isotope miss (6.61× GAP-1 principal specialization, 34.1× heat eigenvalue). One global energy scale E is least-squares fitted as in the parent probe; no τ, no N, no weight tuned to AME. Nothing wired; Δ_λ remains open.",
+  "contentBlock": "conj:binding-manybody-eq-jet-filtration",
+  "data": {
+    "canonical_time": {
+      "hbar_q_s_star": "0.0990817160443",
+      "parent_probe_h": "0.209060298796",
+      "why_untested": "parent τ ∈ {1, h², 1/h²} with h = q−1/q ≠ ℏ_q = (q−1)/q",
+      "A_growth_target": 12.719631539848084,
+      "results": {
+        "kernel_s_star": {
+          "global_scale": 2.991940127261472,
+          "worst_err": 1.4920003267054411,
+          "S_4He_over_S_D": 0.03984481069627382,
+          "tier": "0-fit",
+          "per_isotope": {
+            "D": {
+              "B_pred": 5.543619697177881,
+              "err": 1.4920003267054411
+            },
+            "T": {
+              "B_pred": 0.769774300089599,
+              "err": -0.9092439523494329
+            },
+            "3He": {
+              "B_pred": 0.9212951872144038,
+              "err": -0.8806303203920182
+            },
+            "4He": {
+              "B_pred": 0.22088447740618747,
+              "err": -0.9921936983031651
+            }
+          }
+        },
+        "kernel_mu_s_star": {
+          "global_scale": 0.9363101729417773,
+          "worst_err": 2.371444705580396,
+          "S_4He_over_S_D": 3.0654920816881432,
+          "tier": "0-fit",
+          "per_isotope": {
+            "D": {
+              "B_pred": 7.500001937203101,
+              "err": 2.371444705580396
+            },
+            "T": {
+              "B_pred": 10.91363959580129,
+              "err": 0.28671325488830895
+            },
+            "3He": {
+              "B_pred": 12.269817873791991,
+              "err": 0.5897665034713646
+            },
+            "4He": {
+              "B_pred": 22.99119655114184,
+              "err": -0.18746568904703076
+            }
+          }
+        },
+        "kernel_full_N": {
+          "global_scale": 0.0012637420504902255,
+          "worst_err": 0.9715659022852644,
+          "S_4He_over_S_D": 455.7115326727817,
+          "tier": "1-param",
+          "per_isotope": {
+            "D": {
+              "B_pred": 0.06325353270369811,
+              "err": -0.9715659022852644
+            },
+            "T": {
+              "B_pred": 1.0061827705913118,
+              "err": -0.8813714988116182
+            },
+            "3He": {
+              "B_pred": 1.1605608553166358,
+              "err": -0.8496293268571345
+            },
+            "4He": {
+              "B_pred": 28.825364335370185,
+              "err": 0.01872025216734935
+            }
+          }
+        },
+        "kernel_full_N1": {
+          "global_scale": 0.0009694227680282042,
+          "worst_err": 0.977793142081743,
+          "S_4He_over_S_D": 582.1011565282665,
+          "tier": "1-param",
+          "per_isotope": {
+            "D": {
+              "B_pred": 0.04940062553315701,
+              "err": -0.977793142081743
+            },
+            "T": {
+              "B_pred": 0.8537039637933316,
+              "err": -0.8993486823235235
+            },
+            "3He": {
+              "B_pred": 0.983362895835406,
+              "err": -0.8725883783576825
+            },
+            "4He": {
+              "B_pred": 28.756161256070506,
+              "err": 0.016274538816610513
+            }
+          }
+        },
+        "heat_mu_lambda": {
+          "global_scale": 0.004544049625235866,
+          "worst_err": 0.6133943846375032,
+          "S_4He_over_S_D": 34.14968273622174,
+          "tier": "0-fit",
+          "per_isotope": {
+            "D": {
+              "B_pred": 0.8600297846656112,
+              "err": -0.6133943846375032
+            },
+            "T": {
+              "B_pred": 4.9226453066736005,
+              "err": -0.41962230751623103
+            },
+            "3He": {
+              "B_pred": 5.287408185162423,
+              "err": -0.3149250861411734
+            },
+            "4He": {
+              "B_pred": 29.369744290031726,
+              "err": 0.03795924176815616
+            }
+          }
+        },
+        "y_lambda": {
+          "global_scale": 50.0188637363583,
+          "worst_err": 1.9881550829877215,
+          "S_4He_over_S_D": 0.04190391279941638,
+          "tier": "0-fit",
+          "per_isotope": {
+            "D": {
+              "B_pred": 6.64734879797268,
+              "err": 1.9881550829877215
+            },
+            "T": {
+              "B_pred": 1.6731980329686043,
+              "err": -0.8027306960088708
+            },
+            "3He": {
+              "B_pred": 1.6937286462467558,
+              "err": -0.7805482448501223
+            },
+            "4He": {
+              "B_pred": 0.2785499243775525,
+              "err": -0.9901557376378101
+            }
+          }
+        }
+      },
+      "closest_spread_variant": "kernel_mu_s_star (3.0655)",
+      "tau_family_sup_at_tau0": 3.657666070892793,
+      "tau_sweep": {
+        "tau=0": 3.657666070892793,
+        "tau=0.01": 1.100756418795124,
+        "tau=0.0991": 0.03982521803319156,
+        "tau=0.2091": 0.00287018719752878,
+        "tau=1": 4.897585198077086e-09
+      },
+      "tau_family_excluded_for_all_tau": "True",
+      "verdict": "canonical-τ kernel tested zero-fit; see worst_err and the spread diagnostic per variant — recorded whichever way it lands",
+      "family_verdict": "the exponential-kernel weight family e^{-C_λ τ} is EXCLUDED for every τ ≥ 0: damping only shrinks A-growth and even the undamped τ→0 supremum (3.658) falls short of the 12.72 target — so no τ, canonical or fitted, works. Forecloses τ-tuning as a fit escape."
+    }
+  }
+}
