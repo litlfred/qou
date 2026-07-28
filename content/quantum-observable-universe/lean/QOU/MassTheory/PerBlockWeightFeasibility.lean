@@ -1,6 +1,5 @@
 import Mathlib.Algebra.Order.BigOperators.Ring.Finset
 import Mathlib.Algebra.Order.Field.Basic
-import Mathlib.Data.Real.Basic
 import Mathlib.Tactic.FieldSimp
 
 /-!
@@ -31,28 +30,33 @@ Recorded because the session repeatedly read the uniform isotope-spread failures
 (6.61×, 34.1×, 0.04–3.07, 455×) as evidence against per-block weights as such.
 That inference does not hold, and this file is the reason.
 
-Base ring: stated over `ℝ`, but the proofs use only ordered-field structure —
-no `Real.exp`, no completeness, no archimedean construct beyond the ordering.
-A generic `[Field R] [LinearOrder R]` restatement would be routine (§7c).
+Base ring: **generic** `[Field R] [LinearOrder R] [IsStrictOrderedRing R]` (§7c).
+No `Real.exp`, no completeness, no archimedean construct beyond the ordering —
+so the statement holds over any ordered field, not merely `ℝ`. (Note that
+Mathlib has retired the bundled `LinearOrderedField`; this is its current
+spelling.)
 -/
 
 namespace QOU.MassTheory.PerBlockWeightFeasibility
 
 open Finset
 
+variable {R : Type*} [Field R] [LinearOrder R] [IsStrictOrderedRing R]
 variable {ι κ : Type*} [Fintype ι] [Fintype κ] [DecidableEq ι] [DecidableEq κ]
 
 /-- A weight concentrated on a single index (a point mass of size `c`). -/
-noncomputable def pointMass (i₀ : ι) (c : ℝ) : ι → ℝ := fun i => if i = i₀ then c else 0
+noncomputable def pointMass (i₀ : ι) (c : R) : ι → R := fun i => if i = i₀ then c else 0
 
+omit [IsStrictOrderedRing R] [Fintype ι] in
 /-- A point mass is non-negative when its size is. -/
-theorem pointMass_nonneg {i₀ : ι} {c : ℝ} (hc : 0 ≤ c) : ∀ i, 0 ≤ pointMass i₀ c i := by
+theorem pointMass_nonneg {i₀ : ι} {c : R} (hc : 0 ≤ c) : ∀ i, 0 ≤ pointMass i₀ c i := by
   intro i
   unfold pointMass
   split <;> simp [hc]
 
+omit [LinearOrder R] [IsStrictOrderedRing R] in
 /-- A point-mass–weighted sum collapses to the single term. -/
-theorem sum_pointMass (i₀ : ι) (c : ℝ) (A : ι → ℝ) :
+theorem sum_pointMass (i₀ : ι) (c : R) (A : ι → R) :
     ∑ i, pointMass i₀ c i * A i = c * A i₀ := by
   unfold pointMass
   simp [Finset.sum_ite_eq' Finset.univ i₀ (fun i => c * A i)]
@@ -65,9 +69,9 @@ This is what disjointness of the index sets buys: `u` and `v` are unconstrained
 relative to one another, so the ratio carries no information about the weight.
 Hence the per-block-weight class is **not excludable** by any finite list of
 failed candidates. -/
-theorem growth_ratio_attains_any (A : ι → ℝ) (B : κ → ℝ) (i₀ : ι) (j₀ : κ)
-    (hA : 0 < A i₀) (hB : 0 < B j₀) {t : ℝ} (ht : 0 < t) :
-    ∃ u : ι → ℝ, ∃ v : κ → ℝ,
+theorem growth_ratio_attains_any (A : ι → R) (B : κ → R) (i₀ : ι) (j₀ : κ)
+    (hA : 0 < A i₀) (hB : 0 < B j₀) {t : R} (ht : 0 < t) :
+    ∃ u : ι → R, ∃ v : κ → R,
       (∀ i, 0 ≤ u i) ∧ (∀ j, 0 ≤ v j) ∧
       (∑ i, u i * A i) / (∑ j, v j * B j) = t := by
   refine ⟨pointMass i₀ (t * B j₀ / A i₀), pointMass j₀ 1,
@@ -80,11 +84,11 @@ theorem growth_ratio_attains_any (A : ι → ℝ) (B : κ → ℝ) (i₀ : ι) (
 attainable — so no inequality between attained growths can distinguish the
 class. Corollary of `growth_ratio_attains_any`, recorded as the form the Δ_λ
 argument actually uses. -/
-theorem no_growth_constraint (A : ι → ℝ) (B : κ → ℝ) (i₀ : ι) (j₀ : κ)
-    (hA : 0 < A i₀) (hB : 0 < B j₀) {t₁ t₂ : ℝ} (h₁ : 0 < t₁) (h₂ : 0 < t₂) :
-    (∃ u : ι → ℝ, ∃ v : κ → ℝ, (∀ i, 0 ≤ u i) ∧ (∀ j, 0 ≤ v j) ∧
+theorem no_growth_constraint (A : ι → R) (B : κ → R) (i₀ : ι) (j₀ : κ)
+    (hA : 0 < A i₀) (hB : 0 < B j₀) {t₁ t₂ : R} (h₁ : 0 < t₁) (h₂ : 0 < t₂) :
+    (∃ u : ι → R, ∃ v : κ → R, (∀ i, 0 ≤ u i) ∧ (∀ j, 0 ≤ v j) ∧
         (∑ i, u i * A i) / (∑ j, v j * B j) = t₁) ∧
-    (∃ u : ι → ℝ, ∃ v : κ → ℝ, (∀ i, 0 ≤ u i) ∧ (∀ j, 0 ≤ v j) ∧
+    (∃ u : ι → R, ∃ v : κ → R, (∀ i, 0 ≤ u i) ∧ (∀ j, 0 ≤ v j) ∧
         (∑ i, u i * A i) / (∑ j, v j * B j) = t₂) :=
   ⟨growth_ratio_attains_any A B i₀ j₀ hA hB h₁,
    growth_ratio_attains_any A B i₀ j₀ hA hB h₂⟩
