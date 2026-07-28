@@ -1,0 +1,259 @@
+{
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-07-28T18:49:50.880443+00:00",
+  "commitSha": "067a375fb1c358601b5bb61a59d08f90d2245f8c",
+  "assertions": [
+    {
+      "name": "reducer_forced_cases_all_unity",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "reducer_respects_braid_relation",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "conjugation_preserves_exponent_sum",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "cases_were_actually_tested",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 27,
+  "computation": "gb-conjugation-invariance",
+  "scriptFile": "gb_conjugation_invariance_probe.py",
+  "scriptHash": "2085a2015610",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
+  },
+  "description": "GAP-2 closure test (bean qou-wt60): tests the remaining Markov move — CONJUGATION β ↦ γβγ⁻¹ — for the Gröbner–Shirshov coefficient sum S(β)=Σ_w c_w(q), the move left untested when gb_writhe_normalised_readout_probe closed stabilisation (M2). Markov's theorem needs both, so this decides whether the writhe-normalised readout Ŝ=S·(1−h)^{(e−n)/2} is a genuine knot invariant. Conjugation preserves BOTH the exponent sum (e is a homomorphism B_n→ℤ; the γ,γ⁻¹ contributions cancel) and the strand count, so the correction factor is literally unchanged and Ŝ is conjugation-invariant iff the raw S is — the normalisation is orthogonal to this move and can neither rescue nor damage the answer. The question is genuinely open a priori: S is the all-ones functional T_w↦1, which is NOT the Markov trace and not an algebra map (it would force h=0 on the Hecke relation), and there is no a priori reason for it to lie in the span of the irreducible characters that spans the trace space of H_n(q). The negative is guarded: conjugation by the CENTRE Δ²=(σ₁σ₂)³ returns exactly 1, the braid relation S(σ₁σ₂σ₁)=S(σ₂σ₁σ₂) holds, and every forced case (γ=β, γ trivial, σ₁-then-σ₁⁻¹ round trip) returns 1 — so the reducer is sound and the non-invariance is real, not a normal-form bug. Tested 4 base braids (w²=4₁, w³=Borromean, σ₁³ trefoil, σ₁σ₂) × 5 conjugators (σ₁, σ₂, σ₁⁻¹, σ₁σ₂, σ₂σ₁⁻¹), all exact in sympy. VERDICT: NOT conjugation-invariant (8/20 pairs differ) — the readout is a braid-conjugacy-dependent quantity, so it is NOT a knot invariant and cannot become one by any writhe normalisation. No Δ_λ, no c_k, nothing fitted, nothing wired.",
+  "contentBlock": "prop:winding-lattice-norm-form",
+  "data": {
+    "conjugation_invariance": {
+      "markov_move_tested": "(M1) conjugation β ↦ γβγ⁻¹",
+      "companion_move": "(M2) stabilisation — closed in gb-writhe-normalised-readout",
+      "why_normalisation_is_orthogonal": "conjugation preserves e and n ⇒ (1−h)^{(e−n)/2} unchanged ⇒ Ŝ invariant iff S is",
+      "cases": [
+        {
+          "base": "w² = 4₁",
+          "conjugator": "σ₁",
+          "e_base": 0,
+          "e_conj": 0,
+          "exponent_preserved": true,
+          "S_invariant": false,
+          "ratio": "(q**8 + q**7 - 3*q**6 - 4*q**5 + 5*q**4 + 4*q**3 - 3*q**2 - q + 1)/(q**7 - 4*q**5 + q**4 + 4*q**3 - q)"
+        },
+        {
+          "base": "w² = 4₁",
+          "conjugator": "σ₂",
+          "e_base": 0,
+          "e_conj": 0,
+          "exponent_preserved": true,
+          "S_invariant": false,
+          "ratio": "(-q**8 + q**7 + 3*q**6 - 4*q**5 - 3*q**4 + 4*q**3 + 3*q**2 - q - 1)/(q**7 - 4*q**5 + q**4 + 4*q**3 - q)"
+        },
+        {
+          "base": "w² = 4₁",
+          "conjugator": "σ₁⁻¹",
+          "e_base": 0,
+          "e_conj": 0,
+          "exponent_preserved": true,
+          "S_invariant": true,
+          "ratio": "1"
+        },
+        {
+          "base": "w² = 4₁",
+          "conjugator": "σ₁σ₂",
+          "e_base": 0,
+          "e_conj": 0,
+          "exponent_preserved": true,
+          "S_invariant": true,
+          "ratio": "1"
+        },
+        {
+          "base": "w² = 4₁",
+          "conjugator": "σ₂σ₁⁻¹",
+          "e_base": 0,
+          "e_conj": 0,
+          "exponent_preserved": true,
+          "S_invariant": true,
+          "ratio": "1"
+        },
+        {
+          "base": "w³ = Borromean",
+          "conjugator": "σ₁",
+          "e_base": 0,
+          "e_conj": 0,
+          "exponent_preserved": true,
+          "S_invariant": false,
+          "ratio": "(q**12 + q**11 - 4*q**10 - 5*q**9 + 7*q**8 + 10*q**7 - 9*q**6 - 10*q**5 + 7*q**4 + 5*q**3 - 4*q**2 - q + 1)/(q**11 - 5*q**9 + 10*q**7 - q**6 - 10*q**5 + 5*q**3 - q)"
+        },
+        {
+          "base": "w³ = Borromean",
+          "conjugator": "σ₂",
+          "e_base": 0,
+          "e_conj": 0,
+          "exponent_preserved": true,
+          "S_invariant": false,
+          "ratio": "(-q**12 + q**11 + 4*q**10 - 5*q**9 - 7*q**8 + 10*q**7 + 7*q**6 - 10*q**5 - 7*q**4 + 5*q**3 + 4*q**2 - q - 1)/(q**11 - 5*q**9 + 10*q**7 - q**6 - 10*q**5 + 5*q**3 - q)"
+        },
+        {
+          "base": "w³ = Borromean",
+          "conjugator": "σ₁⁻¹",
+          "e_base": 0,
+          "e_conj": 0,
+          "exponent_preserved": true,
+          "S_invariant": true,
+          "ratio": "1"
+        },
+        {
+          "base": "w³ = Borromean",
+          "conjugator": "σ₁σ₂",
+          "e_base": 0,
+          "e_conj": 0,
+          "exponent_preserved": true,
+          "S_invariant": true,
+          "ratio": "1"
+        },
+        {
+          "base": "w³ = Borromean",
+          "conjugator": "σ₂σ₁⁻¹",
+          "e_base": 0,
+          "e_conj": 0,
+          "exponent_preserved": true,
+          "S_invariant": true,
+          "ratio": "1"
+        },
+        {
+          "base": "σ₁³ (trefoil)",
+          "conjugator": "σ₁",
+          "e_base": 3,
+          "e_conj": 3,
+          "exponent_preserved": true,
+          "S_invariant": true,
+          "ratio": "1"
+        },
+        {
+          "base": "σ₁³ (trefoil)",
+          "conjugator": "σ₂",
+          "e_base": 3,
+          "e_conj": 3,
+          "exponent_preserved": true,
+          "S_invariant": false,
+          "ratio": "(-q**6 + q**5 + 3*q**4 - q**3 - 3*q**2 + q + 1)/(q*(q**4 + q**3 - q**2 - q + 1))"
+        },
+        {
+          "base": "σ₁³ (trefoil)",
+          "conjugator": "σ₁⁻¹",
+          "e_base": 3,
+          "e_conj": 3,
+          "exponent_preserved": true,
+          "S_invariant": true,
+          "ratio": "1"
+        },
+        {
+          "base": "σ₁³ (trefoil)",
+          "conjugator": "σ₁σ₂",
+          "e_base": 3,
+          "e_conj": 3,
+          "exponent_preserved": true,
+          "S_invariant": true,
+          "ratio": "1"
+        },
+        {
+          "base": "σ₁³ (trefoil)",
+          "conjugator": "σ₂σ₁⁻¹",
+          "e_base": 3,
+          "e_conj": 3,
+          "exponent_preserved": true,
+          "S_invariant": false,
+          "ratio": "(-q**6 + q**5 + 3*q**4 - q**3 - 3*q**2 + q + 1)/(q*(q**4 + q**3 - q**2 - q + 1))"
+        },
+        {
+          "base": "σ₁σ₂",
+          "conjugator": "σ₁",
+          "e_base": 2,
+          "e_conj": 2,
+          "exponent_preserved": true,
+          "S_invariant": false,
+          "ratio": "-q**2 + 3 - 1/q**2"
+        },
+        {
+          "base": "σ₁σ₂",
+          "conjugator": "σ₂",
+          "e_base": 2,
+          "e_conj": 2,
+          "exponent_preserved": true,
+          "S_invariant": true,
+          "ratio": "1"
+        },
+        {
+          "base": "σ₁σ₂",
+          "conjugator": "σ₁⁻¹",
+          "e_base": 2,
+          "e_conj": 2,
+          "exponent_preserved": true,
+          "S_invariant": true,
+          "ratio": "1"
+        },
+        {
+          "base": "σ₁σ₂",
+          "conjugator": "σ₁σ₂",
+          "e_base": 2,
+          "e_conj": 2,
+          "exponent_preserved": true,
+          "S_invariant": true,
+          "ratio": "1"
+        },
+        {
+          "base": "σ₁σ₂",
+          "conjugator": "σ₂σ₁⁻¹",
+          "e_base": 2,
+          "e_conj": 2,
+          "exponent_preserved": true,
+          "S_invariant": false,
+          "ratio": "-q**2 + 3 - 1/q**2"
+        }
+      ],
+      "n_pairs": 20,
+      "n_failing": 8,
+      "all_invariant": "False",
+      "verdict": "NOT conjugation-invariant (8/20 pairs differ) — the readout is a braid-conjugacy-dependent quantity, so it is NOT a knot invariant and cannot become one by any writhe normalisation"
+    },
+    "reducer_self_check": {
+      "forced_cases": {
+        "gamma=beta (word literally reduces to beta)": "1",
+        "gamma=Δ² (CENTRAL — must be 1)": "1",
+        "gamma=σ₁σ₁⁻¹ (trivial)": "1",
+        "σ₁ then σ₁⁻¹ round trip": "1"
+      },
+      "braid_relation_residual": "0",
+      "note": "a broken normal form would also report non-invariance, so every forced case is checked before the negative is believed; conjugation by the CENTRE Δ² returns exactly 1 while non-central conjugators do not — the signature of a functional that is not a class function, not of a reducer bug"
+    },
+    "result_is_reported_either_way": {
+      "S_conjugation_invariant": "False"
+    }
+  }
+}
