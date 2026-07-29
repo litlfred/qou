@@ -193,69 +193,64 @@ practice the auto-detection requires manual git redirect setup when
 elan / cache hosts are network-restricted.
 
 > **⚡ FIRST RESORT — restore prebuilt oleans (≈2 min). Do NOT build from
-> source until you have tried this.** A full build is already preserved on
-> the orphan branch `lake-cache/qou-v4-24-0` (lean `v4.24.0`); restoring it
+> source until you have tried this.** A full build is already preserved as
+> a GitHub Release asset on tag `lean-cache/v4.24.0`; restoring it
 > skips the 30–60 min from-source Mathlib build entirely. **This is the
 > single most common wasted hour for agents in this repo** (the from-source
 > sections below are a *fallback*, not the default). RESTORE before anything
 > else:
 >
 > ```bash
-> # Derive the cache branch from the pinned toolchain — do NOT hard-code the slug
-> # (works from any subdir; CRLF-safe):
+> # PREFERRED — use the restore script (handles Release → orphan-branch fallback):
+> scripts/lean-cache-restore.sh
+> ```
+>
+> The script:
+> 1. Downloads `lake-oleans.tar.zst` from GitHub Release `lean-cache/v<version>`
+>    via `gh release download` (requires `gh` CLI + `zstd`)
+> 2. Falls back to legacy orphan-branch chunked tgz if the release is missing
+> 3. Extracts to `$REPO_ROOT`, fixes mathlib remote URL
+>
+> **Manual restore (if the script is unavailable):**
+>
+> ```bash
+> ROOT=$(git rev-parse --show-toplevel)
+> VERSION=$(cut -d: -f2 "$ROOT/lean-toolchain" | tr -d '\r')  # v4.24.0
+> gh release download "lean-cache/$VERSION" \
+>   --repo litlfred/qou --pattern 'lake-oleans.tar.zst' \
+>   --output /tmp/lake-oleans.tar.zst --clobber
+> zstd -d /tmp/lake-oleans.tar.zst --stdout | tar xf - -C "$ROOT"
+> echo "restored .lake oleans — NO rebuild needed"
+> ```
+>
+> **Legacy orphan-branch fallback** (if `gh`/`zstd` unavailable):
+>
+> ```bash
 > ROOT=$(git rev-parse --show-toplevel); TGZ=$(mktemp)
-> SLUG=$(cut -d: -f2 "$ROOT/lean-toolchain" | tr -d '\r' | tr . -)   # v4.24.0 -> v4-24-0
+> SLUG=$(cut -d: -f2 "$ROOT/lean-toolchain" | tr -d '\r' | tr . -)
 > BR="lake-cache/qou-$SLUG"
 > git fetch --depth=1 origin "$BR" \
 >   && git ls-tree --name-only FETCH_HEAD | grep '^lake-oleans\.tgz\.part' | sort \
 >      | while read -r p; do git show "FETCH_HEAD:$p"; done > "$TGZ" \
->   && tar xzf "$TGZ" -C "$ROOT" \
->   && echo "restored .lake oleans from $BR — NO rebuild needed"
+>   && tar xzf "$TGZ" -C "$ROOT"
 > ```
 >
-> The `SLUG` line derives the branch from the pinned toolchain so it never goes
-> stale (`leanprover/lean4:v4.24.0` → `lake-cache/qou-v4-24-0`); the tarball
-> goes to a `mktemp` file and extracts with `-C "$ROOT"` (repo root), not the
-> current directory. Full restore/seed details (incl. how to **SEED** after a
-> fresh build) are in the **🗄️ PRESERVE THE BUILD** section further down this file.
->
-> **⚠ `FETCH_HEAD` is global — do NOT run another `git fetch` concurrently
-> during the restore.** The recipe resolves the parts via the mutable
-> `FETCH_HEAD` ref. If a second fetch (a background `git fetch origin main`, a
-> parallel agent) repoints `FETCH_HEAD` mid-loop, the `git show FETCH_HEAD:…part0N`
-> calls silently resolve against the wrong commit, the assembled tarball is
-> truncated, and `tar` fails (`gzip: not in gzip format` / `Child returned status
-> 1`) — looking exactly like a corrupt cache (cost a session 2026-06-22). The
-> recipe itself is correct (`git show` and `git cat-file blob` are byte-identical
-> here — the slug/loop are fine). Run the restore **serially**, or make it
-> race-proof by fetching into a private ref: `git fetch --depth=1 origin
-> "$BR:refs/restore-tmp"` then read `refs/restore-tmp:$p` in the loop instead of
-> `FETCH_HEAD:$p`.
->
-> Only if the fetch fails (branch unseeded) or the oleans are a
-> toolchain/`lakefile.toml` **miss** do you fall back to the source-clone +
-> from-source build below — and **SEED the cache branch afterwards** so the
+> Only if both paths fail do you fall back to the source-clone +
+> from-source build below — and **SEED the cache afterwards** so the
 > next agent restores in 2 min instead of rebuilding.
 >
-> **RepThy/Wedderburn addon (2026-06-28).** The base `lake-cache/qou-v4-24-0`
-> does **not** carry `Mathlib.RepresentationTheory.*` or
-> `RingTheory.SimpleModule.{WedderburnArtin,Isotypic,IsAlgClosed}` (they are
-> outside the QOU dependency closure). The 11 oleans those modules need — for
-> [`QOU/BraidKnot/MaschkeSnSemisimple.lean`](../../../content/quantum-observable-universe/lean/QOU/BraidKnot/MaschkeSnSemisimple.lean)
-> + [`WedderburnSn.lean`](../../../content/quantum-observable-universe/lean/QOU/BraidKnot/WedderburnSn.lean)
-> (and any rep-theory / OV-tower follow-up) — are preserved on the **addon**
-> orphan branch `lake-cache/qou-v4-24-0-repthy-wedderburn` (2.9 MB). Restore it
-> **after** the base restore above:
+> **SEED after a fresh build:**
 >
 > ```bash
-> ROOT=$(git rev-parse --show-toplevel); T=$(mktemp)
-> git fetch --depth=1 origin lake-cache/qou-v4-24-0-repthy-wedderburn
-> git show FETCH_HEAD:addon-oleans.tgz > "$T"; tar xzf "$T" -C "$ROOT"
+> scripts/lean-olean-cache-seed.sh --push
+> # Creates/updates GitHub Release lean-cache/v<version> with zstd tarball
 > ```
 >
-> This saves the ~5-min from-source rebuild of those 11 modules. (If a future
-> base reseed folds them into `lake-cache/qou-v4-24-0` itself — bean `bnyo` —
-> this addon becomes redundant and can be ignored.)
+> **RepThy/Wedderburn addon (2026-06-28).** The full cache on the GitHub
+> Release `lean-cache/v4.24.0` now includes all 4184 modules (QOU + UGB +
+> Fred2005 + Mathlib + deps), so the separate `repthy-wedderburn` addon
+> orphan branch is **no longer needed**. It remains on origin for
+> backward compatibility but is superseded.
 
 ### When even the toolchain *binary* is blocked — vendor it via a git branch (2026-07-11)
 
@@ -792,56 +787,44 @@ fi
 > entirely (e.g. `Cli`) is fine — lake clones just that one.
 
 **SEED after a successful build** (so the NEXT agent restores in ~2 min
-instead of rebuilding in ~30+) — worktree-based, tarball created in-repo:
+instead of rebuilding in ~30+) — uses GitHub Release assets:
 ```bash
-WT=/tmp/lake-cache-wt
-# 1. Pack the built oleans (compressed). Create the tarball where the
-#    worktree can `git add` it — git cannot add a path outside its tree.
-#    ⚠ The QOU package build lives in the NESTED Lake dir
-#    `content/*/lean/.lake/build` — root `.lake/build` does NOT exist in
-#    this checkout, so the old glob `.lake/build .lake/packages/*/...`
-#    silently shipped a tarball with ZERO QOU oleans (only Mathlib). The
-#    restore-check (Step 4 below) is what catches this; ALWAYS run it.
-#    (2026-06-26: this is exactly why prior production reseeds held only
-#    the ~202-olean Mass cone — the QOU oleans were never packed.)
-# (No `2>/dev/null` — a missing path must fail LOUDLY; suppressing tar's
-#  "No such file or directory" is what made the old glob bug silent.)
-tar czf /tmp/lake-oleans.tgz content/*/lean/.lake/build .lake/packages/*/.lake/build
-# 2. Orphan branch in a SEPARATE worktree (main tree untouched, no trap).
-git worktree add --orphan -b lake-cache/qou-v4-24-0 "$WT" 2>/dev/null \
-  || { git worktree add --detach "$WT"; git -C "$WT" checkout --orphan lake-cache/qou-v4-24-0; \
-       git -C "$WT" rm -rfq --cached . 2>/dev/null; git -C "$WT" clean -fdxq; }
-# 3. Split into <100 MB chunks INSIDE the worktree (GitHub rejects >100 MB files).
-( cd "$WT" && split -b 90m -d /tmp/lake-oleans.tgz lake-oleans.tgz.part )
-git -C "$WT" add 'lake-oleans.tgz.part*'
-git -C "$WT" commit -qm "seed lean cache: qou+mathlib oleans @ lean v4.24.0 (chunked <100MB)"
-git -C "$WT" push -u origin lake-cache/qou-v4-24-0
-git worktree remove --force "$WT"                      # main branch never left
+# PREFERRED — use the seed script:
+scripts/lean-olean-cache-seed.sh --push
+# Creates/updates GitHub Release lean-cache/v<version> with a single
+# lake-oleans.tar.zst asset (zstd -19, ~1.4 GB for 8.78 GB of oleans).
 ```
-> **HTTP 413 on the seed push (2026-06-10).** The web-sandbox git
-> proxy caps a single push payload — an ~800 MB one-commit pack is
-> rejected with `RPC failed; HTTP 413`. Workaround (verified): commit
-> **each ~90 MB chunk as its own commit** inside the worktree and
-> `git push` after each one (`--force` on the first push to replace
-> the old cache history). Restorers are unaffected — the restore
-> recipe reads the tip tree, which contains all chunks.
 
-> **Step 4 — VERIFY the seed in a clean temp dir (MANDATORY — catches the
-> QOU-oleans-missing bug).** A silent bad seed corrupts the cache for every
-> downstream session, so prove the pushed branch restores before trusting it:
+Manual seed (if the script is unavailable):
+```bash
+ROOT=$(git rev-parse --show-toplevel); cd "$ROOT"
+VERSION=$(cut -d: -f2 lean-toolchain | tr -d '\r')
+TAG="lean-cache/$VERSION"
+# 1. Pack with zstd (40% smaller than gzip, 3× faster decompress)
+tar cf - content/*/lean/.lake/build .lake/packages/*/.lake/build \
+  | zstd -19 -T0 -o /tmp/lake-oleans.tar.zst
+# 2. Create release + upload (single file, no chunking needed)
+gh release create "$TAG" --repo litlfred/qou \
+  --title "Lean olean cache @ $VERSION" --latest=false \
+  /tmp/lake-oleans.tar.zst
+# Or update existing: gh release upload "$TAG" /tmp/lake-oleans.tar.zst --clobber
+```
+
+> **VERIFY the seed (MANDATORY):**
 > ```bash
 > T=/tmp/restore-check; rm -rf "$T"; mkdir -p "$T"
-> git fetch --depth=1 origin lake-cache/qou-v4-24-0
-> git ls-tree --name-only FETCH_HEAD | grep '^lake-oleans\.tgz\.part' | sort \
->   | while read -r p; do git cat-file -p "FETCH_HEAD:$p"; done > /tmp/rc.tgz
-> tar xzf /tmp/rc.tgz -C "$T"
+> gh release download "lean-cache/v4.24.0" --repo litlfred/qou \
+>   --pattern 'lake-oleans.tar.zst' --output /tmp/rc.tar.zst --clobber
+> zstd -d /tmp/rc.tar.zst --stdout | tar xf - -C "$T"
 > # MUST be non-zero — if 0, the tar glob missed the nested QOU build dir:
 > find "$T" -path '*/lib/lean/QOU/*.olean' | wc -l
 > ```
-> Seeding to a `-test` branch suffix first (then a ref-only force-push
-> cutover to production — the blobs are already on the remote, so the
-> cutover uploads nothing and dodges the 413) is the safe path for the
-> load-bearing production branch.
+
+> **Legacy orphan-branch SEED (deprecated).** The old approach used
+> chunked tgz blobs on `lake-cache/qou-v4-24-0`. It remains functional
+> via the fallback path in `lean-cache-restore.sh` but should not be
+> used for new seeds — it bloats the git object store and triggers
+> HTTP 413 in sandbox git proxies.
 
 Keep ≤ 8 such branches (owner cap); the
 [`lake-cache-refresh.yml`](../../../.github/workflows/lake-cache-refresh.yml)
