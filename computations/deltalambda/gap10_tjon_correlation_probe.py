@@ -41,6 +41,27 @@ units of B(D), on two scale-free scores:
   [T1] the normalised ladder  M(A)/M(2)  vs  ρ_strong(A)
   [T2] the fractional Tjon deviation  μ₄/M(4)  vs nature's
 
+SIGN CONVENTION — AND A RETRACTION. The corpus's canonical binding proxy is the
+trace DEFICIT against the unlink, `c = E₀·(g_unlink − g_link) = E₀·(1−τ)·g_unlink`
+(`helium_four_body_cluster_probe`: "A trace deficit against the unlink is a
+BINDING object"; `a4_h12_brunnian_deficit_measure_probe`, `borromean_*`). So the
+binding-like quantity is
+
+    B_op(A) = g_A(∅) − g_A(all bonds)   = −M_op(A)
+
+and a NEGATIVE `M_op` is a POSITIVE binding, exactly as intended.
+
+An earlier revision of this probe printed a "GLOBAL SIGN CAVEAT" claiming the
+operator "carries the opposite overall sign to binding" and that its agreement
+with nature's Tjon sign was therefore "fake". **Both claims were wrong and are
+retracted.** The convention was already canonical in the corpus and I had not
+checked it. Worse, the argument was vacuous in both directions: the fractional
+Tjon deviation is *invariant* under a global sign flip (Lean:
+`QOU.MassTheory.TjonSimplexForm.fracTjon_neg`, sorry-free), so it can neither
+confirm nor refute the convention. What survives untouched is the LADDER
+GROWTH — also sign-blind (`ladder_ratio_neg`), which is why it is the finding
+that stands.
+
 No Δ_λ, no μ fitted, no convention tuned, nothing wired. Reports either way.
 """
 from __future__ import annotations
@@ -178,15 +199,18 @@ def main() -> int:
             "mu4_op": float(mu4_op),
             "frac_tjon_deviation": float(frac) if frac is not None else None}
 
-    # GLOBAL SIGN CAVEAT — must be read before [T2]'s "sign matches nature"
-    all_neg = all(results[k]["M_op"]["4"] < 0 for k in results if k != "nature")
-    print(f"\n [!] GLOBAL SIGN CAVEAT")
-    print(f"     Nature's M(A) are all POSITIVE (ρ_strong = 1, 3.81, 13.03); the")
-    print(f"     operator's M_op(A) are all NEGATIVE under both bond conventions:")
-    print(f"     {bool(all_neg)}. The fractional deviation μ₄/M(4) is a ratio of two")
-    print(f"     quantities that BOTH flip sign, so its agreeing with nature is NOT a")
-    print(f"     physics sign match — it is two sign flips cancelling. The operator's")
-    print(f"     interaction has the opposite overall sign to binding.")
+    # SIGN CONVENTION (corrected) — the corpus binding proxy is the DEFICIT
+    pos = {k: all(v <= 0 for v in results[k]["M_op"].values())
+           for k in results if k != "nature"}
+    print(f"\n [!] SIGN CONVENTION — binding is the trace DEFICIT")
+    print(f"     Corpus canonical: c = E₀·(g_unlink − g_link), so the binding proxy is")
+    print(f"     B_op(A) = −M_op(A) > 0. M_op ≤ 0 at every A under both conventions:")
+    for k, v in pos.items():
+        print(f"       {k:42s} {bool(v)}")
+    print(f"     ⇒ the operator's binding proxy is POSITIVE, as nature's is. An earlier")
+    print(f"       revision called this a sign MISMATCH; that was wrong and is retracted.")
+    print(f"       (And the [T2] score is invariant under a global flip anyway — Lean")
+    print(f"        fracTjon_neg — so it could never have settled the question.)")
 
     print(f"\n [S] summary — fractional Tjon deviation μ₄/M(4)")
     print(f"     nature                                   {float(nat_frac):+.4f}")
@@ -211,11 +235,12 @@ def main() -> int:
                f"{float(nat_frac):+.4f}; sign reproduced by at least one bond convention: "
                f"{bool(any_sign)}"
                + (f"; best |ratio| {best:.2f}×" if best is not None else "")
-               + "; BUT the apparent sign agreement is an artifact — nature's M(A) are all "
-                 "POSITIVE while the operator's M_op(A) are all NEGATIVE, so mu4 and M(4) both "
-                 "flip and the ratio does not; and the normalised ladder is nearly FLAT in A "
+               + "; the binding proxy is the trace DEFICIT B_op = -M_op > 0 (corpus canonical), "
+                 "so the operator's sign is CORRECT, not mismatched — an earlier revision claimed "
+                 "otherwise and is retracted; the [T2] score is sign-blind anyway (Lean "
+                 "fracTjon_neg). THE SURVIVING NEGATIVE is the ladder: nearly FLAT in A "
                  "(1.41-1.54 at A=3, 1.65-1.69 at A=4) against nature's 3.81 -> 13.03, off 2.5x "
-                 "at A=3 and 7.7x at A=4. Scope-(a) NEGATIVE")
+                 "at A=3 and 7.7x at A=4. Scope-(a) NEGATIVE on growth, not on sign")
     print(f"\n ⇒ {verdict}")
     print("   Scale-free by construction — M(2) normalisation and the Tjon deviation")
     print("   both cancel the overall trace scale, y_λ normalisation and global sign.")

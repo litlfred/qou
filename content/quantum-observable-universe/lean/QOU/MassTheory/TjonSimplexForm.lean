@@ -146,4 +146,36 @@ theorem mu4_target_exceeds_35_percent_of_B4He :
 
 end NumericCertification
 
+
+section SignBlindness
+
+variable {K : Type*} [Field K]
+
+/-- The fractional Tjon deviation of a ladder `(M₂, M₃, M₄)`. -/
+def fracTjon (M₂ M₃ M₄ : K) : K := (M₄ - (4 * M₃ - 6 * M₂)) / M₄
+
+/-- **The fractional Tjon deviation is BLIND to a global sign flip.** Negating the
+whole ladder negates the numerator and the denominator alike, so the score is
+unchanged.
+
+This is not a curiosity — it is a trap, and it caught this session. The score was
+used to argue that the operator "matches nature's sign", and separately that the
+match was "fake because the operator's ladder is globally negative". **Both
+arguments are vacuous**: a quantity invariant under the flip can neither confirm
+nor refute the sign convention. Only the *ladder growth* discriminates, and that
+is likewise sign-blind, which is why it survived when the sign claims did not. -/
+theorem fracTjon_neg (M₂ M₃ M₄ : K) :
+    fracTjon (-M₂) (-M₃) (-M₄) = fracTjon M₂ M₃ M₄ := by
+  unfold fracTjon
+  have h : (-M₄) - (4 * (-M₃) - 6 * (-M₂)) = -(M₄ - (4 * M₃ - 6 * M₂)) := by ring
+  rw [h, neg_div_neg_eq]
+
+/-- The normalised ladder is sign-blind for the same reason, which is why the
+flatness finding survives the convention correction while the sign claims do
+not. -/
+theorem ladder_ratio_neg (M₂ M_A : K) :
+    (-M_A) / (-M₂) = M_A / M₂ := neg_div_neg_eq M_A M₂
+
+end SignBlindness
+
 end QOU.MassTheory.TjonSimplexForm
