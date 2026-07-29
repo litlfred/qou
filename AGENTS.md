@@ -381,22 +381,20 @@ ephemeral.
      branch ceremony.
 
    Exceptions (require explicit user instruction at merge time):
-   - **Squash** when the branch's commits are noisy / WIP
-     (e.g. a draft PR with many `wip` / `oops` commits that
-     don't map to logical units). Prefer fixing the branch
-     locally with `git rebase -i` instead, and rebase-merging
-     the cleaned-up history.
+   - **Squash** — **NEVER squash onto main unless the user gives
+     explicit per-PR permission** (owner directive, 2026-07-29).
+     "The branch looks noisy" is NOT sufficient justification —
+     clean the branch locally with `git rebase -i` and
+     rebase-merge the cleaned-up history instead. The only
+     acceptable trigger for squash is an explicit user message
+     like "squash this one" or "squash OK" on the specific PR.
    - **Create a merge commit** when the PR is a sub-merge of
      several already-merged sibling branches and the merge
      commit serves as a navigable boundary marker.
 
    The standing-authorization rule for ALWAYS-PR (above) applies
    here too: agents do not need to ask "which merge method?" each
-   time — default to rebase-merge unless the branch history is
-   noisy (see the **Squash** exception above; check `git log
-   <merge-base>..HEAD --oneline` for `wip` / `oops` / `fix typo`
-   patterns before committing to a method) or the user has
-   explicitly said otherwise for the PR in question.
+   time — default to rebase-merge. Do NOT auto-squash.
 
    **Supersedes older guidance.** This rule overrides any
    conflicting merge-method recommendation that appears in
