@@ -142,4 +142,118 @@ theorem antisymmetric_pos (q : ℝ) (hq : 1 < q) :
   have : q⁻¹ < 1 := (inv_lt_one₀ (by linarith)).mpr hq
   linarith
 
+/-! ## Whole-composite channels: pair cancellation and the scope of the ratio
+
+The lemmas above are *per-crossing*. A knot composite `𝔥` carries `p`
+positive crossings (weight `+q` each) and `m` negative crossings (weight
+`-q⁻¹` each); its total crossing energy is `p·q - m·q⁻¹`.
+
+Summing the per-crossing decomposition over the composite gives the two
+channels with **different** multiplicities — `(p - m)` on the symmetric
+side but `(p + m)` on the antisymmetric side — because the mirror
+operation `σ` flips the sign of the `cosh` part of a crossing weight but
+*not* the sign of its `sinh` part:
+
+  `+q  = +cosh λ + sinh λ`,   `-q⁻¹ = -cosh λ + sinh λ`.
+
+That multiplicity mismatch is exactly what makes pair creation work
+(`pair_cancellation`), and it is also what bounds the scope of the
+"ratio is independent of `𝔥`" claim (`ratio_general` below). -/
+
+/-- Total crossing energy of a composite with `p` positive and `m`
+negative crossings: `p·q - m·q⁻¹`. -/
+noncomputable def crossingEnergy (p m : ℕ) (q : ℝ) : ℝ :=
+  (p : ℝ) * q - (m : ℝ) * q⁻¹
+
+/-- Symmetric (strong-binding) channel of the composite. The multiplicity
+is `p - m`: the `cosh` part carries the crossing sign. -/
+noncomputable def symChannel (p m : ℕ) (q : ℝ) : ℝ :=
+  ((p : ℝ) - (m : ℝ)) * symmetricWeight q
+
+/-- Antisymmetric (Coulomb) channel of the composite. The multiplicity is
+`p + m`: the `sinh` part is sign-blind, contributing `+sinh λ` for a
+negative crossing just as for a positive one. -/
+noncomputable def asymChannel (p m : ℕ) (q : ℝ) : ℝ :=
+  ((p : ℝ) + (m : ℝ)) * antisymmetricWeight q
+
+/-- The composite splits into its two channels. -/
+-- Ref: [manuscript] Ch. 7, §crossing-energy-decomposition
+theorem crossingEnergy_split (p m : ℕ) (q : ℝ) :
+    crossingEnergy p m q = symChannel p m q + asymChannel p m q := by
+  unfold crossingEnergy symChannel asymChannel symmetricWeight antisymmetricWeight
+  ring
+
+/-- The mirror `σ` (which reverses every crossing, i.e. swaps `p` and `m`)
+negates the symmetric channel. -/
+-- Ref: [manuscript] Ch. 7, §crossing-energy-decomposition
+theorem symChannel_mirror (p m : ℕ) (q : ℝ) :
+    symChannel m p q = -symChannel p m q := by
+  unfold symChannel; ring
+
+/-- The mirror `σ` fixes the antisymmetric channel — this is the sign-blindness
+of the `sinh` part, and the reason a particle–antiparticle pair retains a
+net Coulomb energy. -/
+-- Ref: [manuscript] Ch. 7, §crossing-energy-decomposition
+theorem asymChannel_mirror (p m : ℕ) (q : ℝ) :
+    asymChannel m p q = asymChannel p m q := by
+  unfold asymChannel; ring
+
+/-- **Pair cancellation.** For a composite and its mirror, the symmetric
+(strong) channels cancel and the antisymmetric (Coulomb) channels add:
+
+  `𝔈(𝔥) + 𝔈(𝔥^σ) = 2·E_asym(𝔥)`.
+
+This is the formal content of the QOU analogue of Einstein's hope for
+`g_[μν]`: the sign-blind antisymmetric sector is what survives when the
+symmetric sector is cancelled by pairing. -/
+-- Ref: [manuscript] Ch. 7, §crossing-energy-decomposition
+theorem pair_cancellation (p m : ℕ) (q : ℝ) :
+    crossingEnergy p m q + crossingEnergy m p q = 2 * asymChannel p m q := by
+  unfold crossingEnergy asymChannel antisymmetricWeight
+  ring
+
+/-- **Ratio identity, correctly scoped.** For a *positive braid closure*
+(`m = 0`, every crossing positive) with at least one crossing, the
+antisymmetric-to-symmetric ratio is `tanh(ln q)`, independent of the
+crossing number `p`. -/
+-- Ref: [manuscript] Ch. 7, §crossing-energy-decomposition
+theorem ratio_positive_braid (p : ℕ) (hp : p ≠ 0) (q : ℝ) (hq : 1 < q) :
+    asymChannel p 0 q / symChannel p 0 q = Real.tanh (Real.log q) := by
+  have hq0 : 0 < q := by linarith
+  have hp' : (p : ℝ) ≠ 0 := Nat.cast_ne_zero.mpr hp
+  rw [← em_strong_ratio_tanh q hq]
+  unfold asymChannel symChannel emStrongRatio
+  push_cast
+  rw [add_zero, sub_zero, mul_div_mul_left _ _ hp']
+
+/-- **Scope limit of the ratio identity.** For a composite with mixed
+crossing signs the ratio picks up the multiplicity factor `(p+m)/(p-m)`:
+
+  `E_asym / E_sym = ((p+m)/(p-m)) · tanh(ln q)`.
+
+So the ratio is `tanh(ln q)` exactly on the positive-braid locus `m = 0`
+(and, symmetrically, `-tanh(ln q)` on `p = 0`); it is **not** independent
+of the composite in general. -/
+-- Ref: [manuscript] Ch. 7, §crossing-energy-decomposition
+theorem ratio_general (p m : ℕ) (q : ℝ) (hq : 1 < q)
+    (hpm : (p : ℝ) - (m : ℝ) ≠ 0) :
+    asymChannel p m q / symChannel p m q
+      = (((p : ℝ) + (m : ℝ)) / ((p : ℝ) - (m : ℝ))) * Real.tanh (Real.log q) := by
+  have hq0 : 0 < q := by linarith
+  have hsym : symmetricWeight q ≠ 0 := ne_of_gt (symmetric_pos q hq0)
+  rw [← em_strong_ratio_tanh q hq]
+  unfold asymChannel symChannel emStrongRatio
+  field_simp
+  ring
+
+/-- The multiplicity factor is genuinely non-trivial: a composite with two
+positive and one negative crossing has ratio `3·tanh(ln q)`, not
+`tanh(ln q)`. Concrete witness that `ratio_general` is not vacuous. -/
+-- Ref: [manuscript] Ch. 7, §crossing-energy-decomposition
+theorem ratio_two_one_ne_tanh (q : ℝ) (hq : 1 < q) :
+    asymChannel 2 1 q / symChannel 2 1 q = 3 * Real.tanh (Real.log q) := by
+  have h : ((2 : ℕ) : ℝ) - ((1 : ℕ) : ℝ) ≠ 0 := by norm_num
+  rw [ratio_general 2 1 q hq h]
+  norm_num
+
 end QOU.Braiding
