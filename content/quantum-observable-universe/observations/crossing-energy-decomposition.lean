@@ -244,7 +244,6 @@ theorem ratio_general (p m : ℕ) (q : ℝ) (hq : 1 < q)
   rw [← em_strong_ratio_tanh q hq]
   unfold asymChannel symChannel emStrongRatio
   field_simp
-  ring
 
 /-- The multiplicity factor is genuinely non-trivial: a composite with two
 positive and one negative crossing has ratio `3·tanh(ln q)`, not
