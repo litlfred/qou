@@ -1,116 +1,85 @@
 #!/usr/bin/env bash
-# Seed / reseed the lake-cache/qou-<toolchain-slug> orphan branch with a
-# CLEAN, single-rev olean set.
+# Seed / reseed the lean-cache GitHub Release with a tar.zst olean archive.
 #
-# Cleanliness contract (see docs/audits/2026-07-13-mathlib-cache-f897ebc-revskew.md):
-# only mathlib oleans that were REBUILT this session from the pinned source
-# (listed in $BUILT_FILE) are included — never a mix of pre-/post-pin oleans.
-# Non-mathlib package oleans (batteries/aesop/Qq/…) are rev-independent and
-# included as-is; the qou/ugb/fred2005 PAPER oleans are EXCLUDED by default
-# (they go stale the moment mathlib is rebuilt, since a verification session
-# never writes them) — set SEED_PAPER=1 only right after a `lake build QOU` at
-# the pinned rev.
+# Creates (or updates) a GitHub Release tagged `lean-cache/v<version>`
+# containing a single asset `lake-oleans.tar.zst` — the full build
+# output (QOU + UGB + Fred2005 + Mathlib + dependency packages).
 #
-# Usage: scripts/lean-olean-cache-seed.sh [--push]
-#   (dry by default: builds the tarball + parts, prints size; --push commits
-#    the orphan branch and force-pushes it)
+# Compared to the legacy orphan-branch approach:
+#   - No 100 MB chunk splitting (release assets support up to 2 GB)
+#   - No git object bloat (release assets don't count against repo size)
+#   - zstd compression (~40% smaller than gzip, 3× faster decompress)
+#   - Single `gh release download` to restore (no FETCH_HEAD assembly)
+#
+# Usage:  scripts/lean-olean-cache-seed.sh [--push]
+#   (dry by default: builds the tarball, prints size; --push uploads it)
 set -euo pipefail
 ROOT="$(git -C "$(dirname "$0")/.." rev-parse --show-toplevel)"
 cd "$ROOT"
-BUILT_FILE="${BUILT_FILE:-/tmp/parbuild_built.txt}"
-SLUG="$(cut -d: -f2 lean-toolchain | tr -d '\r' | tr . -)"      # v4.24.0 -> v4-24-0
-BR="lake-cache/qou-$SLUG"
-WORK="$(mktemp -d)"
-LIST="$WORK/files.txt"
-TGZ="$WORK/lake-oleans.tgz"
+
+VERSION="$(cut -d: -f2 lean-toolchain | tr -d '\r')"    # v4.24.0
+SLUG="$(echo "$VERSION" | tr . -)"                        # v4-24-0
+TAG="lean-cache/$VERSION"
+ASSET="/tmp/lake-oleans.tar.zst"
 PUSH=0; [ "${1:-}" = "--push" ] && PUSH=1
 
-echo "seed branch: $BR"
-: > "$LIST"
+echo "seed: toolchain=$VERSION  tag=$TAG"
 
-# 1. freshly-rebuilt mathlib oleans (+ sibling .ilean if present)
-MLLIB=".lake/packages/mathlib/.lake/build/lib/lean"
-n_ml=0
-if [ -f "$BUILT_FILE" ]; then
-  while IFS= read -r mod; do
-    [ -z "$mod" ] && continue
-    rel="${mod//.//}"
-    for ext in olean ilean; do
-      f="$MLLIB/$rel.$ext"
-      [ -f "$f" ] && { echo "$f" >> "$LIST"; [ "$ext" = olean ] && n_ml=$((n_ml+1)); }
-    done
-  done < "$BUILT_FILE"
-fi
-echo "  fresh mathlib oleans: $n_ml"
+# ── Collect build artifacts ────────────────────────────────────────────
+echo "seed: packing oleans with zstd ..."
+tar cf - \
+  content/quantum-observable-universe/lean/.lake/build \
+  content/unital-groebner-bases/lean/.lake/build \
+  content/fred2005-formal-groups/lean/.lake/build \
+  .lake/packages/*/.lake/build \
+  2>/dev/null | zstd -19 -T0 -o "$ASSET"
 
-# 2. non-mathlib package oleans (rev-independent).
-#    NOTE: qou/ugb/fred2005 PAPER oleans are intentionally EXCLUDED — they are
-#    only rebuilt when the paper lib itself is compiled with `-o`, which a
-#    lean-direct *verification* session does not do.  Any paper oleans present
-#    are therefore the pre-f897ebc restored set (stale); seeding them would make
-#    a restoring agent hit an olean hash-mismatch the moment one qou module
-#    imports another.  The seed is mathlib + rev-independent deps only; the small
-#    paper libs rebuild fast against the restored mathlib.  (Set SEED_PAPER=1 to
-#    include them, e.g. right after a full `lake build QOU` at the pinned rev.)
-for pkg in batteries aesop Qq plausible importGraph LeanSearchClient proofwidgets; do
-  d=".lake/packages/$pkg/.lake/build/lib/lean"
-  [ -d "$d" ] && find "$d" -name '*.olean' -o -name '*.ilean' 2>/dev/null | sed 's#^\./##' >> "$LIST" || true
-done
-if [ "${SEED_PAPER:-0}" = "1" ]; then
-  for paperlib in content/*/lean/.lake/build/lib/lean; do
-    [ -d "$paperlib" ] && find "$paperlib" -name '*.olean' -o -name '*.ilean' 2>/dev/null >> "$LIST" || true
-  done
-fi
-total=$(wc -l < "$LIST")
-echo "  total files to seed: $total"
+sz=$(du -h "$ASSET" | cut -f1)
+echo "  tarball: $sz ($ASSET)"
 
-# 3. tar + split into 90 MB git-blob parts
-tar czf "$TGZ" -T "$LIST"
-sz=$(du -h "$TGZ" | cut -f1)
-echo "  tarball: $sz"
-rm -f lake-oleans.tgz.part*
-split -b 90M -d "$TGZ" lake-oleans.tgz.part
-ls -la lake-oleans.tgz.part* | awk '{print "  "$NF" "$5}'
+# Count what we're shipping
+n_qou=$(find content/quantum-observable-universe/lean/.lake/build -name '*.olean' 2>/dev/null | wc -l | tr -d ' ')
+n_ugb=$(find content/unital-groebner-bases/lean/.lake/build -name '*.olean' 2>/dev/null | wc -l | tr -d ' ')
+n_fred=$(find content/fred2005-formal-groups/lean/.lake/build -name '*.olean' 2>/dev/null | wc -l | tr -d ' ')
+n_ml=$(find .lake/packages/mathlib -name '*.olean' 2>/dev/null | wc -l | tr -d ' ')
+n_deps=$(find .lake/packages -not -path '*/mathlib/*' -name '*.olean' 2>/dev/null | wc -l | tr -d ' ')
+echo "  QOU=$n_qou  UGB=$n_ugb  Fred2005=$n_fred  Mathlib=$n_ml  deps=$n_deps"
 
 if [ "$PUSH" -ne 1 ]; then
-  echo "DRY RUN — rerun with --push to commit+push orphan branch $BR"
-  echo "parts staged in $ROOT (remove with: rm lake-oleans.tgz.part*)"
+  echo "DRY RUN — rerun with --push to upload to GitHub Release $TAG"
   exit 0
 fi
 
-# 4. commit + push from an ISOLATED worktree — never touch the working branch.
-#    INCREMENTAL: one commit per 90 MB part, pushed one at a time, so no single
-#    push exceeds the git server's request-size limit (a full-set single push of
-#    ~1.5 GB returns HTTP 413).  The first commit force-pushes (replacing the old
-#    seed history); each subsequent part fast-forwards.  FETCH_HEAD's tree still
-#    carries ALL parts, so the restore recipe (`git ls-tree FETCH_HEAD | grep
-#    part`) is unchanged.
-# unique per-run orphan branch + worktree so a prior aborted run can't collide
-git worktree prune 2>/dev/null || true
-TMPBR="seed-tmp-$SLUG-$$"
-WT="$(mktemp -d)/seed-wt"
-git worktree add --detach -q "$WT"
-mv lake-oleans.tgz.part* "$WT"/
-push_ok=1
-(
-  cd "$WT"
-  git checkout -q --orphan "$TMPBR"
-  git reset -q --hard 2>/dev/null || true
-  git rm -rf -q --cached . 2>/dev/null || true
-  find . -maxdepth 1 -type f ! -name 'lake-oleans.tgz.part*' ! -name '.git' -delete 2>/dev/null || true
-  first=1
-  for p in $(ls lake-oleans.tgz.part* | sort); do
-    git add -f "$p"
-    git commit -q -m "seed lean cache @ $SLUG: $p (fresh f897ebc, incl ZetaValues cone)"
-    ok=0
-    if [ "$first" = 1 ]; then
-      for i in 1 2 3 4; do git push -f origin "HEAD:$BR" && { first=0; ok=1; break; } || sleep $((2**i)); done
-    else
-      for i in 1 2 3 4; do git push origin "HEAD:$BR" && { ok=1; break; } || sleep $((2**i)); done
-    fi
-    [ "$ok" = 1 ] && echo "  pushed $p" || { echo "  FAILED $p"; exit 7; }
-  done
-) || push_ok=0
-git worktree remove --force "$WT" 2>/dev/null || true
-git branch -D "$TMPBR" 2>/dev/null || true
-[ "$push_ok" = 1 ] && echo "pushed $BR (incremental)" || { echo "SEED PUSH FAILED"; exit 7; }
+# ── Upload to GitHub Release ──────────────────────────────────────────
+if ! command -v gh >/dev/null 2>&1; then
+  echo "seed: ERROR — gh CLI not found; cannot upload release asset." >&2
+  exit 1
+fi
+
+# Create the release if it doesn't exist
+if ! gh release view "$TAG" --repo litlfred/qou >/dev/null 2>&1; then
+  echo "seed: creating release $TAG ..."
+  gh release create "$TAG" \
+    --repo litlfred/qou \
+    --title "Lean olean cache @ $VERSION" \
+    --notes "Prebuilt Lean oleans for toolchain $VERSION.
+
+Restore with:
+\`\`\`bash
+scripts/lean-cache-restore.sh
+\`\`\`
+
+Contents: QOU=$n_qou  UGB=$n_ugb  Fred2005=$n_fred  Mathlib=$n_ml  deps=$n_deps oleans.
+Compressed with zstd -19.
+Seeded: $(date -u +%Y-%m-%dT%H:%M:%SZ)" \
+    --latest=false
+fi
+
+echo "seed: uploading $sz asset to $TAG ..."
+gh release upload "$TAG" \
+  "$ASSET" \
+  --repo litlfred/qou \
+  --clobber
+
+echo "seed: ✅ uploaded lake-oleans.tar.zst to release $TAG"
+echo "seed: restore with:  scripts/lean-cache-restore.sh"
