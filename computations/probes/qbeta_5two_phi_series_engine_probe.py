@@ -256,8 +256,8 @@ def main() -> int:
     # ---- Borel diagnostics ----
     # Borel transform b_k = a_k/k!; nearest singularity |ι| ≈ lim |b_k/b_{k+1}|
     print("\n[B] Borel diagnostics (nearest singularity vs GGM eq-81 ι₁₂):")
-    V1 = mp.mpc("2.8281220883307832", "1.3790860299")
-    V2 = mp.mpc("-2.8281220883307832", "1.3790860299")
+    from fivetwo_saddle_values import saddle_values  # canonical, not hardcoded
+    V1, V2, _V3 = saddle_values("ggm")
     # in the x = 2πiτ variable (the P-unit series φ = Σ P_k x^k), the
     # transseries factor e^{V/(2πτ)} = e^{iV/x} puts the Borel singularity at
     # ζ = i(V₁−V₂): distance |V₁−V₂| — NOT /2π (run-3 lesson: the /2π form is
