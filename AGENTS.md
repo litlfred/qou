@@ -415,6 +415,29 @@ ephemeral.
    load-bearing infrastructure. This applies to every `claude/*`
    work branch after its PR is merged or closed.
 
+10. **NEVER merge to main without running the full
+    `/prepare-merge` pipeline** (owner directive, 2026-07-29).
+    Every merge to `main` — no matter how small ("just one file",
+    "just a policy change", "just a docstring fix") — MUST go
+    through the `/prepare-merge-auto` skill
+    (`.claude/skills/local/prepare-merge-auto.md`). This means:
+
+    - **Phase 0:** sibling coordination (notify overlapping PRs)
+    - **Phase 1:** rebase onto main, build, push
+    - **Phase 1b:** wait for Copilot + Gemini reviews (up to 15 min)
+    - **Phase 2:** resolve review comments
+    - **Phase 3:** escalate to user if blocked
+    - **Phase 4:** merge only after all reviews resolved + CI green
+
+    **No shortcuts.** Do NOT `gh pr merge` immediately after
+    creating a PR. Do NOT skip reviews because "the change is
+    trivial". Do NOT merge without checking CI. The pipeline
+    exists to catch mistakes that the author's own session missed
+    — skipping it defeats its purpose.
+
+    The only exception is if the user explicitly says "merge now,
+    skip reviews" on the specific PR.
+
 ### Exception: batch audit-job runs
 
 When an integration-watcher (`compute-integration-watcher`,
