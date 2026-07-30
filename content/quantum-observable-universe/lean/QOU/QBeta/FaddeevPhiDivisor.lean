@@ -79,8 +79,12 @@ theorem faddeevPhi_proportional_of_divisor_spec
     (hmem₁ : ∀ z ∈ S₁,
       (1 : ℂ) + Complex.exp (2 * (Real.pi : ℂ) * (z + I / (2 * b)) / b) ≠ 0
         ∧ Φ₂ z ≠ 0 ∧ Φ₂ (z + I / b) ≠ 0) :
-    ∃ c, ∀ z, Φ₂ z ≠ 0 → Φ₁ z = c * Φ₂ z :=
-  FaddeevUniquenessCapstone.faddeevPhi_proportional_of_same_divisor
-    hb2 h₁.hMero h₂.hMero h₂.hFiniteOrder same_divisor hr_ratio hS₀ hS₁ hmem₀ hmem₁
+    ∃ c, ∀ z, Φ₂ z ≠ 0 → Φ₁ z = c * Φ₂ z := by
+  letI : FaddeevPhi b Φ₁ := h₁.toFaddeevPhi
+  letI : FaddeevPhi b Φ₂ := h₂.toFaddeevPhi
+  exact FaddeevUniquenessCapstone.faddeevPhi_proportional_of_same_divisor
+    (S₀ := S₀) (S₁ := S₁) hb2 h₁.hMero h₂.hMero h₂.hFiniteOrder
+    (fun z => by rw [h₁.divisor_eq z, h₂.divisor_eq z])
+    hr_ratio hS₀ hS₁ hmem₀ hmem₁
 
 end QOU.QBeta.FaddeevPhiDivisor
