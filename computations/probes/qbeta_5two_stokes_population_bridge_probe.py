@@ -67,9 +67,12 @@ from qbeta_5two_phi_series_engine_probe import (  # noqa: E402
 mp.mp.dps = 60
 
 Q0_MUON = mp.mpf("1.10997859555733471")
-V1 = mp.mpc("2.8281220883307832", "1.3790860299")
-V2 = mp.mpc("-2.8281220883307832", "1.3790860299")
-V3 = mp.mpf("-2.7580990292")               # GGM eq 21 σ₃ (real connection)
+# Canonical GGM saddle values — computed from the 5₂ cubic, not hardcoded.
+# GGM convention (Im V₁ = Vol) mandated by the Stokes population argument
+# (GGM eqs 82–83). Prior Im V₁ = 1.379 was the H-series extraction convention
+# (V_eff = V_GGM + π²/2) — legitimate for fitting, wrong for Stokes formulas.
+from fivetwo_saddle_values import saddle_values  # noqa: E402
+V1, V2, V3 = saddle_values("ggm")
 D_ODD = mp.mpf("-0.007579403739")          # g3 median (proton); muon −2.2e-9
 O_PHI = mp.mpf("0.0109089607387")          # A6.2 σ-pair projection
 GATE = mp.mpf("1e-6")                      # pin-band-limited match gate

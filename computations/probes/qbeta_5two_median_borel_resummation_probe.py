@@ -59,10 +59,12 @@ import qbeta_5two_stokes_barodd_index_probe as sb  # noqa: E402  (H_num)
 mp.mp.dps = 50
 
 Q0_MUON = mp.mpf("1.10997859555733471")
-V_DOM = mp.mpc("2.82812206693", "-1.37919426157")   # A4.1 dominant saddle
-V1 = mp.mpc("2.8281220883307832", "1.3790860299")
-V2 = mp.mpc("-2.8281220883307832", "1.3790860299")
-V3 = mp.mpf("-2.7580990292")                        # GGM eq 21 σ3 (real)
+# Canonical GGM saddle values — computed, not hardcoded (bean qou-ty28).
+from fivetwo_saddle_values import saddle_values  # noqa: E402
+V1, V2, V3 = saddle_values("ggm")
+# V_DOM: tau2-extraction convention (V_eff = V_GGM + pi^2/2, i-rotated).
+# Retained as labelled diagnostic; NOT used as source of V1/V2/V3.
+V_DOM = mp.mpc("2.82812206693", "-1.37919426157")   # extraction convention
 
 
 def load_basis():

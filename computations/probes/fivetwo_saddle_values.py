@@ -10,10 +10,12 @@ source comment `# GGM eq 21`. Reconciliation against the two source papers
   GGM eq (233) at `x = 1`, i.e. `(1−ξ)³ = ξ²` = GGMW eq (184), so the
   saddle *root* was never in question;
 * the **literals are not**: `Im V₁ = 1.3790860299` and
-  `V₃ = −2.7580990292` match neither GGM eq (234) nor GGMW eq (188), nor
-  any rotation / `π²`-shift of either, nor any natural quantity of the
-  correct saddle within 2.5 % (nearest: `Vol/2` and `Vol`, both ≈2.54 %
-  off). Their provenance is unknown;
+  `V₃ = −2.7580990292` match neither GGM eq (234) nor GGMW eq (188);
+  investigation (2026-07-29) shows `Im V₁` equals `Re(V_GGMW) − π²/6`
+  within `5e-8` — the H-series effective action `V_eff = V_GGM + π²/2`
+  (absorbing the Φ_b Bernoulli contribution) in the corpus i-rotation
+  convention. A legitimate mathematical quantity, but not the V the
+  published Stokes formulas use;
 * the citation is also wrong: eq (21) of 2012.00062v3 is the
   Stokes/3D-index identity `S⁺_{σ₁σ₁} = Ind^rot_K(0,x;q)`, not a saddle
   value.
@@ -22,8 +24,8 @@ The fix is mechanical: compute the values from the (correct) root by the
 published formula, and make the normalization an explicit argument rather
 than an implicit convention.
 
-The two published normalizations
---------------------------------
+The three normalizations (π²/6 lattice)
+--------------------------------------
 GGM eq (234) at `x = 1`:  `V = 3·Li₂(y) + (log(−y))²` on `y² = (1−y)³`,
 with §6.1's rule *"for σ₃ we only keep the real part of V"*.
 
@@ -33,6 +35,16 @@ GGMW eq (188) is the same object shifted:
 
 consistent with GGMW footnote 6's `e^{−πi(τ+τ⁻¹)/12}` prefactor between
 their `Φ^{(σ)}` and GGM's.
+
+**Extraction** (the corpus's legacy 1.379): `V_eff = V_GGM + π²/2`, the
+effective action of the H-series radial asymptotics. The π²/2 is the
+Bernoulli-number contribution from the Φ_b normalization, absorbed into the
+action by the fit. All three sit on a π²/6 lattice:
+
+    V_GGM ──(+3·π²/6)──> V_extraction ──(+1·π²/6)──> V_GGMW
+
+This module provides GGM and GGMW only — the extraction convention is not a
+published normalization and should not be used for Stokes-formula arguments.
 
 Reference values reproduced by this module (30 dps):
 
