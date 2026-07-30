@@ -1,0 +1,11 @@
+---
+# qou-7rmk
+title: '3C: q-oper Hecke eigensheaf rank 2 (statement)'
+status: todo
+type: task
+priority: normal
+created_at: 2026-07-30T01:05:38Z
+updated_at: 2026-07-30T01:05:43Z
+parent: qou-3zju
+---
+
