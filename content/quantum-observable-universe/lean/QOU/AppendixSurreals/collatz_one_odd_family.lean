@@ -257,4 +257,118 @@ theorem qcollatz_no_two_odd_cycle {R : Type*} [CommRing R] (φ : R →+* ℤ)
   have hle := Int.le_of_dvd (by positivity) hdvd
   omega
 
+/-! ### Three-odd words `E^a O E^b O E^c O`
+
+Three odd steps separated by even runs `a, b, c`. Chaining the three odd steps
+through the even runs (via the same collapse mechanism) forces
+
+    ((q+1)^{a+b+c+3} − (q²+q+1)³)·x
+        = (q²+q+1)² + (q²+q+1)·(q+1)^{b+1} + (q+1)^{b+c+2}.
+
+At `q = 1` (`s = q+1 ↦ 2`, `t = q²+q+1 ↦ 3`) the denominator height is
+`2^k − 27` (`k = a+b+c+3`) and the numerator height is
+`9 + 3·2^{b+1} + 2^{b+c+2}`.
+
+**Honest wall (why three-odd is not a uniform one-shot like one/two-odd).**
+For the one- and two-odd families the numerator height stayed *uniformly below*
+the denominator height for every arrangement once the period cleared a small
+threshold, so a single `k ≥ k₀` excluded the whole family. That fails here: the
+worst arrangement `a = c = 0` gives numerator `9 + 3·2^{k-2} + 2^{k-1}
+= 9 + 5·2^{k-2}`, which *exceeds* the denominator `2^k − 27 = 4·2^{k-2} − 27`.
+Those worst cases are exactly the **clustered** words — `O E^{k-3} O O` and its
+kin are rotations of the adjacent tail `E^{k-3}O³`, already excluded by
+`qcollatz_no_adj_tail_cycle` (a cycle is a *cyclic* word: `D_w` is
+rotation-invariant, so one representative per rotation class suffices). What the
+`q = 1` height obstruction adds here is the **spread** arrangements: a leading
+even run `a ≥ 3` makes the denominator dominate `16×` the top numerator term, so
+the divisibility fails and the word is excluded. The two lemmas below give the
+general forced equation and the honest exclusion (conditional height, then the
+clean `a ≥ 3` corollary). -/
+
+/-- **Three separated odd steps force their denominator equation.**
+    `E^a O E^b O E^c O` (even runs `a, b, c`, three odd steps) forces
+    `((q+1)^{a+b+c+3} − (q²+q+1)³)·x
+        = (q²+q+1)² + (q²+q+1)·(q+1)^{b+1} + (q+1)^{b+c+2}`. The variables
+    `m2, m4` are the two intermediate cycle values entering the second and third
+    odd steps; `heven*`/`hodd*` are the even-collapse and odd-step relations. -/
+theorem qcollatz_three_odd_forces {R : Type*} [CommRing R]
+    (q x m1 m2 m3 m4 P0 : R) (a b c : ℕ)
+    (heven1 : P0 = (q + 1) ^ a * x)
+    (hodd1 : m1 * (q + 1) = (q ^ 2 + q + 1) * x + 1)
+    (heven2 : m1 = (q + 1) ^ b * m2)
+    (hodd2 : m3 * (q + 1) = (q ^ 2 + q + 1) * m2 + 1)
+    (heven3 : m3 = (q + 1) ^ c * m4)
+    (hodd3 : P0 * (q + 1) = (q ^ 2 + q + 1) * m4 + 1) :
+    ((q + 1) ^ (a + b + c + 3) - (q ^ 2 + q + 1) ^ 3) * x
+      = (q ^ 2 + q + 1) ^ 2 + (q ^ 2 + q + 1) * (q + 1) ^ (b + 1)
+        + (q + 1) ^ (b + c + 2) := by
+  have ha1 : (q + 1) ^ (a + 1) = (q + 1) * (q + 1) ^ a := by rw [pow_succ']
+  have hb1 : (q + 1) ^ (b + 1) = (q + 1) * (q + 1) ^ b := by rw [pow_succ']
+  have hc1 : (q + 1) ^ (c + 1) = (q + 1) * (q + 1) ^ c := by rw [pow_succ']
+  have hP2 : (q + 1) ^ (a + b + c + 3) = (q + 1) ^ (a + 1) * (q + 1) ^ (b + c + 2) := by
+    rw [← pow_add]; congr 1; omega
+  have hP1 : (q + 1) ^ (b + c + 2) = (q + 1) ^ (b + 1) * (q + 1) ^ (c + 1) := by
+    rw [← pow_add]; congr 1; omega
+  -- e1 : s^{a+1}·x = t·m4 + 1  (leading even run + last odd step)
+  have e1 : (q + 1) ^ (a + 1) * x = (q ^ 2 + q + 1) * m4 + 1 := by
+    have h3 := hodd3; rw [heven1] at h3; rw [ha1]; linear_combination h3
+  -- e2 : s^{b+1}·m2 = t·x + 1  (first odd step + its even run)
+  have e2 : (q + 1) ^ (b + 1) * m2 = (q ^ 2 + q + 1) * x + 1 := by
+    have h1 := hodd1; rw [heven2] at h1; rw [hb1]; linear_combination h1
+  -- e3 : s^{c+1}·m4 = t·m2 + 1  (second odd step + its even run)
+  have e3 : (q + 1) ^ (c + 1) * m4 = (q ^ 2 + q + 1) * m2 + 1 := by
+    have h2 := hodd2; rw [heven3] at h2; rw [hc1]; linear_combination h2
+  linear_combination (q + 1) ^ (b + c + 2) * e1 + (q ^ 2 + q + 1) ^ 2 * e2
+    + (q ^ 2 + q + 1) * (q + 1) ^ (b + 1) * e3
+    + x * hP2 + (q ^ 2 + q + 1) * m4 * hP1
+
+/-- **No three-odd-step cycle when the height obstruction fires.** Given the
+    explicit `q = 1` height gap `9 + 3·2^{b+1} + 2^{b+c+2} < 2^{a+b+c+3} − 27`
+    (numerator height strictly below denominator height), the forced equation has
+    no solution: `2^{a+b+c+3} − 27` cannot divide the smaller positive numerator.
+    This is the honest general application — it fires for the *spread*
+    arrangements; the clustered ones are rotations of tails (see
+    `qcollatz_no_adj_tail_cycle`). -/
+theorem qcollatz_no_three_odd_cycle {R : Type*} [CommRing R] (φ : R →+* ℤ)
+    (q x : R) (hq : φ q = 1) (a b c : ℕ)
+    (hcond : (9 : ℤ) + 3 * 2 ^ (b + 1) + 2 ^ (b + c + 2) < 2 ^ (a + b + c + 3) - 27)
+    (h : ((q + 1) ^ (a + b + c + 3) - (q ^ 2 + q + 1) ^ 3) * x
+      = (q ^ 2 + q + 1) ^ 2 + (q ^ 2 + q + 1) * (q + 1) ^ (b + 1)
+        + (q + 1) ^ (b + c + 2)) : False := by
+  refine no_cycle_of_q_one_height φ _ x _ h ?_
+  intro hdvd
+  simp only [map_sub, map_pow, map_add, map_mul, map_one, hq] at hdvd
+  norm_num at hdvd
+  -- hdvd : (2^(a+b+c+3) - 27) ∣ (9 + 3·2^(b+1) + 2^(b+c+2))
+  have hpos : (0 : ℤ) < 9 + 3 * 2 ^ (b + 1) + 2 ^ (b + c + 2) := by positivity
+  have hle := Int.le_of_dvd hpos hdvd
+  omega
+
+/-- **No three-odd-step cycle with leading even run `a ≥ 3`.** A clean
+    unconditional exclusion: when the leading run is `a ≥ 3` the denominator
+    height `2^{a+b+c+3} − 27` dominates the numerator height (`2^{a+1} ≥ 16` times
+    the top term), so the height gap of `qcollatz_no_three_odd_cycle` holds for
+    every `b, c`. By rotation-invariance of cycles this excludes every three-odd
+    word possessing an even run of length `≥ 3` — the generic spread regime. -/
+theorem qcollatz_no_three_odd_cycle_of_lead {R : Type*} [CommRing R] (φ : R →+* ℤ)
+    (q x : R) (hq : φ q = 1) (a b c : ℕ) (ha : 3 ≤ a)
+    (h : ((q + 1) ^ (a + b + c + 3) - (q ^ 2 + q + 1) ^ 3) * x
+      = (q ^ 2 + q + 1) ^ 2 + (q ^ 2 + q + 1) * (q + 1) ^ (b + 1)
+        + (q + 1) ^ (b + c + 2)) : False := by
+  refine qcollatz_no_three_odd_cycle φ q x hq a b c ?_ h
+  have hexp : a + 1 + (b + c + 2) = a + b + c + 3 := by omega
+  have hsplit : (2 : ℤ) ^ (a + b + c + 3) = 2 ^ (a + 1) * 2 ^ (b + c + 2) := by
+    rw [← pow_add, hexp]
+  have h16 : (16 : ℤ) ≤ 2 ^ (a + 1) := by
+    calc (16 : ℤ) = 2 ^ 4 := by norm_num
+      _ ≤ 2 ^ (a + 1) := pow_le_pow_right₀ (by norm_num) (by omega)
+  have hC2 : (4 : ℤ) ≤ 2 ^ (b + c + 2) := by
+    calc (4 : ℤ) = 2 ^ 2 := by norm_num
+      _ ≤ 2 ^ (b + c + 2) := pow_le_pow_right₀ (by norm_num) (by omega)
+  have hB1 : (2 : ℤ) ^ (b + 1) ≤ 2 ^ (b + c + 2) :=
+    pow_le_pow_right₀ (by norm_num) (by omega)
+  have hAC : (16 : ℤ) * 2 ^ (b + c + 2) ≤ 2 ^ (a + b + c + 3) := by
+    rw [hsplit]; exact mul_le_mul_of_nonneg_right h16 (by positivity)
+  omega
+
 end QOU.AppendixSurreals
