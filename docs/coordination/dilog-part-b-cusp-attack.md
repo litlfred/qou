@@ -285,7 +285,7 @@ result and the na-Stokes selection stands as the *stated, principled* — but no
 Lean-proved — resolution of MQ1. Anti-laundering: this is recorded as the direction and
 scaffolded as a **conjecture**, not wired to production as proved.
 
-### Joint-route conditional closure LANDED — second, independent Part-B total (2026-07-31, branch `claude/dilog-partB-joint-assembly-2026-07-31`)
+### Joint-route conditional closure LANDED — second, independent Part-B total (2026-07-31, branch `claude/dilog-partB-joint-assembly-2026-07-31`, PR #4423)
 
 The **joint** `(q,n)` W-P1 limit — the physically/mathematically genuine limit, *not* the
 weaker iterated one — is now closed **conditionally on an explicit Diophantine no-resonance
@@ -296,8 +296,8 @@ bound** and assembled into the Part-B total, sorry-free:
 | analytic seed `t·log t → 0` | `tendsto_mul_log_nhdsWithin_zero` | `DilogPartBBoundarySeed` | #4270 |
 | conditional boundary limit | `boundary_term_vanishes` | `DilogPartBBoundarySeed` | #4270 |
 | **joint W-P1** (`→ Li₂ x − π²/6` under no-resonance) | `tendsto_wp1_sum_of_no_resonance` | `DilogPartBWP1Capstone` | #4270 |
-| W-P2 tail on the joint filter (`p=1/q`) | `tendsto_wp2_tail_of_q` | `DilogPartBJointAssembly` | *(this branch)* |
-| **joint Part-B total** (`→ Li₂ x − π²/3`) | `tendsto_partB_total_joint_of_no_resonance` | `DilogPartBJointAssembly` | *(this branch)* |
+| W-P2 tail on the joint filter (`p=1/q`) | `tendsto_wp2_tail_of_q` | `DilogPartBJointAssembly` | #4423 |
+| **joint Part-B total** (`→ Li₂ x − π²/3`) | `tendsto_partB_total_joint_of_no_resonance` | `DilogPartBJointAssembly` | #4423 |
 
 `tendsto_partB_total_joint_of_no_resonance` gives: along any filter `l` with `q→1`,
 `x·qⁿ→1⁻`, and `c(q−1) ≤ 1−x·qⁿ` (`c>0`), the combination
@@ -313,6 +313,38 @@ no-resonance bound). Neither discharges its premise; the *unconditional* joint p
 remains proved-**false** along the resonant counter-sequence (2026-07-25 note above). The joint
 route carries its hypothesis *explicitly* in the signature (no conjectural class), which is why
 it needs no ordering conjecture. Honest scope per §"Conditional-proved ≠ premise-established".
+
+### Faddeev-scaling POSITIVE — unconditional cusp-reaching W-P1 limit LANDED (2026-07-31, branch `claude/dilog-partB-faddeev-scaling-2026-07-31`)
+
+The honest **positive** counterpart to the proved-false unconditional branch-index limit: an
+explicit restricted (Faddeev) scaling that *reaches the branch point* yet satisfies the
+no-resonance bound **by construction**, so the joint W-P1 limit holds **unconditionally along
+it** — sorry-free, `wp1_faddeev_tendsto` (`DilogPartBFaddeevScaling.lean`).
+
+**The scaling.** Take the *moving* interior target `ρ(q) := 2 − q → 1⁻` and the bulk floor
+index `n(q) := nOfQ x q (2−q) = ⌊log((2−q)/x)/log q⌋` (largest `n` with `x·qⁿ ≤ 2−q`). Then:
+
+- **no-resonance is automatic:** `x·qⁿ ≤ 2−q ⇒ 1 − x·qⁿ ≥ q − 1`, i.e. the bound with `c = 1`;
+- **the cusp is reached:** `x·qⁿ ∈ ((2−q)/q, 2−q]` and `2−q → 1⁻`, so `x·qⁿ → 1⁻` (squeeze).
+
+Feeding both to `tendsto_wp1_sum_of_no_resonance` (#4270) gives, with **no Diophantine
+hypothesis**,
+
+`(q−1)·Σ_{k<n(q)} log(1−x·qᵏ) ⟶ Li₂(x) − π²/6`   as `q → 1⁺`.
+
+**Why this is stronger than the iterated route and consistent with the false unconditional
+one.** Unlike `wp1_bulk_tendsto` (fixed `ρ`, needing a *second* `ρ→1⁻` iterated limit), this is
+a **single joint** `q→1⁺` limit that already reaches the cusp. It does **not** contradict the
+proved-false unconditional branch-index limit: that failure is *pointwise over all `q→1⁺` at the
+resonant index* `⌊log_q(1/x)⌋`; here `n(q)` is a *specific* restricted approach chosen to avoid
+resonance (back off by exactly one cell width). Existence of one convergent cusp-reaching
+scaling is the concrete positive content the equidistribution / Faddeev programme targets.
+
+**What remains (bean `qou-jplv`).** The *measure-theoretic* "**a.e.** approach converges"
+statement — equidistribution of `frac(log_q 1/x)` / three-distance theorem — is the deeper
+open residual; `wp1_faddeev_tendsto` exhibits a single good approach, not full-measure. Combined
+with the W-P2 tail (`DilogPartBEulerTail` + the assembly of PR #4423), this scaling gives the
+Part-B total `→ Li₂(x) − π²/3` unconditionally along the Faddeev approach.
 
 #### Correction (2026-07-26, same tranche): the curvature = −π²/3 route is REFUTED — −π²/3 is abelian dilog data, not a non-abelian anomaly
 
