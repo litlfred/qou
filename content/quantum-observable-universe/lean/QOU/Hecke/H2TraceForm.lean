@@ -145,4 +145,15 @@ theorem h2_isSemisimpleRing_of_generic {q : K} (hq : q ≠ 1)
   refine isSemisimpleRing_of_gram_det_eq_qFactorial (h2Basis q) hq hc hgen ?_
   rw [h2_regTraceGram_det, qFactorial_two, qInt_two]; ring
 
+/-- **The substrate discharges `H_2` semisimplicity (sorry-free).**  For any
+    real `q > 1` — in particular the physical substrate `q₀ ≈ 1.10998` —
+    the Iwahori–Hecke algebra `H_2(q)` is semisimple: `q > 1` is
+    Wenzl-generic at every rank (`qGeneric_of_one_lt`), and the axiom-free
+    n=2 discharge applies.  This is the shape in which the substrate
+    parameter discharges the semisimplicity leg of the `P ≠ NP`-in-QOU
+    counting argument at `n = 2`, with no cited class and no `sorry`. -/
+theorem h2_isSemisimpleRing_of_one_lt {q : ℝ} (hq : 1 < q) :
+    IsSemisimpleRing (AdjoinRoot (h2Poly q)) :=
+  h2_isSemisimpleRing_of_generic hq.ne' (qGeneric_of_one_lt hq 2)
+
 end QOU.Hecke
