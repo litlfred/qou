@@ -373,6 +373,30 @@ from the counter-sequence analysis, `δ ≥ (q−1)^{1+ε}` fails only on a *res
 not a single file; scoped here so the next attacker starts from the BC route, not the (absent)
 Weyl one.
 
+### Scope-(b) refutation LANDED — the unconditional branch-index limit is machine-checked FALSE (2026-07-31, branch `claude/dilog-partB-wp1-refutation-crux-2026-07-31`)
+
+The 2026-07-25 numerical counter-sequence (`R(x;q_m,k*_m) → −log(1/x) ≠ 0`) is now a
+**sorry-free Lean theorem** — upgrading the "proved-false" claim from a 50-dps probe to a
+machine-checked obstruction (`DilogPartBWP1Refutation.lean`, `lean`-direct exit 0). This
+proves the Diophantine no-resonance hypothesis of `tendsto_wp1_sum_of_no_resonance` (#4270) is
+**necessary**, not merely convenient.
+
+The witness: `q_m := exp(L/(m+e^{−m}))` (`L = log(1/x)`), `n_m := m`. Then `1 < q_m`,
+`q_m → 1⁺`, `x·q_m^m = exp(−β_m) → 1⁻` (`β_m := L·e^{−m}/(m+e^{−m}) → 0`), and
+
+`not_tendsto_boundary_zero`: `¬ Tendsto (fun m => (q_m−1)·log(1−x·q_m^m)) atTop (𝓝 0)`,
+
+because `tendsto_boundary_refute`: `(q_m−1)·log(1−x·q_m^m) → log x ≠ 0`. The proof factors the
+term as `[m·(q_m−1)]·[log(1−x q_m^m)/m]`: (A) `m·(q_m−1) → L` via the algebraic identity
+`m·t_m = L − β_m` + the `add_one_le_exp` squeeze `t ≤ eᵗ−1 ≤ t·eᵗ`; (B) `log δ_m/m → −1` via the
+endpoint identity `x q_m^m = e^{−β_m}`, the log squeeze `log β_m − β_m ≤ log δ_m ≤ log β_m`
+(from `β e^{−β} ≤ 1−e^{−β} ≤ β`), and `log β_m/m = log L/m − 1 − log(m+e^{−m})/m → −1` (using
+`Real.isLittleO_log_id_atTop`). Product `→ L·(−1) = −L = log x`, uniqueness of limits ⇒ `↛ 0`.
+
+**This bounds what the a.e. route can hope for:** the pointwise-over-all-`q→1⁺` limit is
+*provably* false, so only the *measure-theoretic* (a.e.-`x`, Borel–Cantelli) or *restricted-
+scaling* (Faddeev, #4427) positives are attainable — exactly the two directions now recorded.
+
 #### Correction (2026-07-26, same tranche): the curvature = −π²/3 route is REFUTED — −π²/3 is abelian dilog data, not a non-abelian anomaly
 
 The "concrete lead" above (`lem:yekutieli-leading-coefficient` → the curvature term is
