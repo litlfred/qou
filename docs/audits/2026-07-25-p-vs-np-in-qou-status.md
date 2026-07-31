@@ -60,6 +60,24 @@ sidesteps the harder of the two.
   generators are units).
 - `QOU/Hecke/H2GramArithmetic.lean` — the **n=2 Gram identity**, concrete:
   `det !![2, q−1; q−1, q²+1] = (q+1)² = [2]_q²`, `≠0 ⟺ [2]_q!≠0`.
+- `QOU/Hecke/H2CompanionRep.lean` — the n=2 Gram **derived from the regular
+  representation** (companion matrix `!![0,q;1,q−1]` satisfies the Hecke
+  relation `C²=(q−1)C+q`), not asserted.
+- `QOU/MathlibExt/HeckeGramFactorial.lean` — the **end-to-end hook**
+  `isSemisimpleRing_of_gram_det_eq_qFactorial`: `det(Gram)=c·[n]_q!` (unit
+  `c`) + generic ⟹ semisimple. Supply a basis + the determinant value and
+  semisimplicity follows with no further Hecke input.
+- `QOU/Hecke/H2AlgebraDimension.lean` — `H_2(q)=AdjoinRoot(X²−(q−1)X−q)` is a
+  genuine **2-dim K-algebra** with the `{1,σ}` power basis (`lrz1` at n=2).
+- `QOU/Hecke/H2TraceForm.lean` — **the first fully axiom-free
+  `WenzlCriterion` discharge**: computes the actual `Algebra.trace` Gram of
+  `H_2(q)` (`tr1=2, trσ=q−1, trσ²=q²+1`), `det=[2]_q²`, and proves
+  `h2_isSemisimpleRing_of_generic` / `_of_one_lt` (substrate `q>1`) — no
+  cited class, no `sorry`. The n=2 case of the whole
+  `det(Gram)=[n]_q! ⟹ semisimple` chain, realised concretely.
+- `QOU/Hecke/H3GramArithmetic.lean` — the n=3 arithmetic anchor:
+  `[3]_q!=(1+q)(1+q+q²)`, `≠0 ⟺ q≠−1 ∧ q²+q+1≠0` (the target the 6-dim
+  H₃ Gram must reproduce).
 
 ### The wall, located and analysed
 - `QOU/Information/JetHorizonTransfer.lean` + `JetHorizonScaffold.lean` —
@@ -80,8 +98,13 @@ sidesteps the harder of the two.
   resolution tree (non-torsion ⟹ no cancellation, full `3^c` survives),
   and concludes **no bandwidth-limited device decides the boundary problem
   in poly time**. A pigeonhole information lower bound on the Bekenstein
-  bandwidth bound — *derived*, not fiat. Conditional only on the standard
-  exponential-domination fact (`SuperPolynomial(2^n)`, Mathlib-dischargeable).
+  bandwidth bound — *derived*, not fiat. Now **unconditional**
+  (`qou_physical_intractability_unconditional`; `superPoly_two_pow`
+  discharged from Mathlib little-o). Its **query-model sibling** is
+  `SkeinHorizonLowerBound`/`SkeinInfoLowerBound` (on main); both carry the
+  shared **algebrization caveat** (`no_horizon_cost_of_polyObservable`: a
+  poly algebraic shortcut refutes the full-tree-read hypothesis, so neither
+  crosses to abstract P≠NP — Aaronson–Wigderson).
 
 ## 3. The wall — one implication, three costumes
 
@@ -111,35 +134,41 @@ instance-free because it *is* the counting→decision transfer, which is:
 | Target | Needs the transfer? | Status |
 |---|---|---|
 | non-vanishing `χ(A)=−6≠0` | no | **proved** (axiom consequence) |
-| `H_n(q)` semisimple ⟺ `[n]_q!≠0` | no | reduced to `det(Gram)=[n]_q!`; n=2 done |
+| `H_n(q)` semisimple ⟺ `[n]_q!≠0` | no | **n=2 fully discharged as a theorem** (`h2_isSemisimpleRing_of_generic`, no cited class, no sorry); general `n` needs the `T_w` basis (Mathlib wall) |
 | soundness `P≠NP ⟹ Jones∉FP` | no | **proved** (JVW+Toda) |
 | **abstract P≠NP** | **yes** (the wall) | open; provably not-by-fiat |
 | physical intractability | **no** | **derived** (mod exp-domination) |
 
 ## 5. Next steps (prioritized)
 
-1. **[small] Discharge `SuperPolynomial(2^n)`** (bean `qou-t2pm`) from
-   Mathlib analysis (`isLittleO_pow_const_const_pow_of_one_lt`) — makes
-   `qou_physical_intractability` self-contained.
-2. **[medium] Wire H₂ to the real trace** (bean `qou-eedq`): connect
-   `h2GramMatrix` entries to `AdjoinRoot`/`Algebra.discr` trace values, so
-   the n=2 Gram identity is about the *actual* algebra, not hand-computed
-   entries.
-3. **[medium] Formalize the NP→Jones encoding** (step 1 of the non-fiat
-   transfer): a link family `β_{L,n}` reducing an NP-complete `L` to
-   reading `J_{β_{L,n}}(q₀)`. Real; lands `L ∈ P^#P`.
-4. **[large] The `T_w` basis / `dim = n!`** (bean `qou-lrz1`/`twwf`,
-   Bott–Samelson) — the deep classical piece to make `det(Gram)=[n]_q!`
-   general and fully discharge `WenzlCriterion`.
-5. **[research] Derive the `info(n)` super-poly requirement** rigorously
-   from the horizon / `3^c`-tree argument — converts
-   `qou_physical_intractability` from conditional to the QOU's
-   *unconditional* physical-intractability theorem. This is the genuine
-   physical content and the most valuable honest target.
-6. **[content] Reframe the headline** in the `.md` blocks: state the
-   **physical-intractability** theorem as the derived result and keep
-   abstract `P≠NP` explicitly conjectural (the wall). Do NOT let the
-   content imply the Clay problem is proved.
+**Done since the 2026-07-25 snapshot** (all sorry-free, lean-direct):
+`SuperPolynomial(2^n)` discharged (`superPoly_two_pow`) so
+`qou_physical_intractability_unconditional` is self-contained (was #1);
+the n=2 Gram wired to the **real** `AdjoinRoot` algebra and the whole
+n=2 `WenzlCriterion` discharged as an **axiom-free theorem**
+(`H2TraceForm`, was #2, now exceeds it); the `info(n)=3^{3n}` requirement
+derived from the resolution tree and reconciled with the query-model
+lower bound + algebrization caveat (`SkeinInfoLowerBound` on main +
+`PhysicalIntractability` cross-ref, was #5); the headline reframed to
+foreground the derived result (was #6).
+
+**Remaining (in priority order):**
+
+1. **[large — Mathlib wall] The general `T_w` basis / `dim = n!`** (beans
+   `qou-lrz1`/`qou-twwf`, Bott–Samelson) and the symmetrizing-trace Gram
+   `det(Gram)=[n]_q!` (bean `qou-0y6h`, Geck–Pfeiffer `det=∏ Schur`). This
+   is the honest **Mathlib gap**: `Equiv.Perm` has no length/inversions,
+   there is no Mahonian/Gaussian-binomial generating function, and the
+   symmetrizing-trace / Hecke-radical theory is absent. The n=2 case is the
+   proved anchor; the interface a future contribution plugs into is
+   `HeckeGramFactorial.isSemisimpleRing_of_gram_det_eq_qFactorial`. Assess
+   closeable-vs-wall per bean `qou-5hul` before a large build.
+2. **[medium] NP→Jones encoding** — **already on main** as
+   `QOU/Information/SkeinNPEncoding.lean` (`NPSkeinReduction`,
+   `decisionBudget`, `accepts_of_observed`). Not open; do not re-derive.
+3. **[permanent wall] The counting→decision transfer** (`TraceFaithfulness`
+   / `qou-iv9f`) — abstract P≠NP itself; refuted-as-generic, blocked-as-
+   uniform, unstatable-in-Lean. **Never fabricate an instance.**
 
 ## 6. What NOT to do (guardrails for future agents)
 
