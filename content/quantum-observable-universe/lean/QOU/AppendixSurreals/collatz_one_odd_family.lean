@@ -125,4 +125,81 @@ theorem qcollatz_no_two_odd_adj_cycle {R : Type*} [CommRing R] (φ : R →+* ℤ
   have hle := Int.le_of_dvd (by norm_num) hdvd
   omega
 
+/-! ### The general adjacent-tail family `E^{k-m}O^m`
+
+Both families above are the `m = 1, 2` cases of the tail of `m` consecutive odd
+steps. In general it forces `((q+1)^k − (q²+q+1)^m)·P = Sₘ`, where
+`Sₘ = Σ_{j<m} (q²+q+1)^j (q+1)^{m-1-j}` has `q=1` height `3^m − 2^m`. The
+denominator height is `2^k − 3^m`; since `|3^m − 2^m| < 3^m < 2^k − 3^m` once
+`2^k > 2·3^m` (enough even steps to be contractive), the divisibility fails —
+**the whole family `E^{k-m}O^m` is excluded when `2^k > 2·3^m`.** -/
+
+/-- `Sₘ = Σ_{j<m} [3]^j (q+1)^{m-1-j}`, via `Sₘ₊₁ = [3]·Sₘ + (q+1)^m`, `S₀ = 0`. -/
+def oddTailSum {R : Type*} [CommRing R] (q : R) : ℕ → R
+  | 0 => 0
+  | m + 1 => (q ^ 2 + q + 1) * oddTailSum q m + (q + 1) ^ m
+
+/-- **Odd chain closed form.** An `m`-step odd chain `Qⱼ₊₁(q+1) = [3]Qⱼ + 1`
+    satisfies `(q+1)^m · Q_m = [3]^m · Q₀ + Sₘ`. -/
+theorem odd_chain_collapse {R : Type*} [CommRing R] (q : R) (Q : ℕ → R) :
+    ∀ m : ℕ, (∀ j, j < m → Q (j + 1) * (q + 1) = (q ^ 2 + q + 1) * Q j + 1) →
+      (q + 1) ^ m * Q m = (q ^ 2 + q + 1) ^ m * Q 0 + oddTailSum q m := by
+  intro m
+  induction m with
+  | zero => intro _; simp [oddTailSum]
+  | succ n ih =>
+    intro hodd
+    have hn : Q (n + 1) * (q + 1) = (q ^ 2 + q + 1) * Q n + 1 :=
+      hodd n (Nat.lt_succ_self n)
+    have hprev := ih (fun j hj => hodd j (Nat.lt_succ_of_lt hj))
+    simp only [oddTailSum, pow_succ]
+    linear_combination (q + 1) ^ n * hn + (q ^ 2 + q + 1) * hprev
+
+/-- **`q=1` height of `Sₘ` is `3^m − 2^m`.** -/
+theorem oddTailSum_map {R : Type*} [CommRing R] (φ : R →+* ℤ) (q : R) (hq : φ q = 1) :
+    ∀ m : ℕ, φ (oddTailSum q m) = 3 ^ m - 2 ^ m := by
+  intro m
+  induction m with
+  | zero => simp [oddTailSum]
+  | succ n ih =>
+    simp only [oddTailSum, map_add, map_mul, map_pow, map_one, hq]
+    rw [ih]; ring
+
+/-- **General adjacent-tail forcing.** For an `m`-step odd chain `Q` closing via an
+    even tail of length `k−m` (`Q_m = (q+1)^{k-m}·Q₀`), the cycle forces
+    `((q+1)^k − (q²+q+1)^m)·Q₀ = Sₘ`. -/
+theorem qcollatz_adj_tail_forces {R : Type*} [CommRing R] (q : R) (Q : ℕ → R)
+    (k m : ℕ) (hmk : m ≤ k)
+    (hodd : ∀ j, j < m → Q (j + 1) * (q + 1) = (q ^ 2 + q + 1) * Q j + 1)
+    (hclose : Q m = (q + 1) ^ (k - m) * Q 0) :
+    ((q + 1) ^ k - (q ^ 2 + q + 1) ^ m) * Q 0 = oddTailSum q m := by
+  have hcol := odd_chain_collapse q Q m hodd
+  rw [hclose] at hcol
+  have hpow : (q + 1) ^ m * (q + 1) ^ (k - m) = (q + 1) ^ k := by
+    rw [← pow_add]; congr 1; omega
+  rw [← mul_assoc, hpow] at hcol
+  linear_combination hcol
+
+/-- **No adjacent-tail cycle when `2^k > 2·3^m`.** The `q=1` height of the
+    denominator is `2^k − 3^m`, against numerator height `3^m − 2^m`; the
+    contractive bound `2·3^m < 2^k` forces `2^k − 3^m > 3^m − 2^m > 0`, so the
+    divisibility fails. Excludes the entire `E^{k-m}O^m` family in that range —
+    the general infinite result subsuming the one- and two-odd-step cases. -/
+theorem qcollatz_no_adj_tail_cycle {R : Type*} [CommRing R] (φ : R →+* ℤ)
+    (q Q0 : R) (hq : φ q = 1) (k m : ℕ) (hm : 1 ≤ m) (hbig : 2 * 3 ^ m < 2 ^ k)
+    (h : ((q + 1) ^ k - (q ^ 2 + q + 1) ^ m) * Q0 = oddTailSum q m) : False := by
+  refine no_cycle_of_q_one_height φ _ Q0 _ h ?_
+  intro hdvd
+  rw [oddTailSum_map φ q hq] at hdvd
+  simp only [map_sub, map_pow, map_add, map_one, hq] at hdvd
+  norm_num at hdvd
+  -- hdvd : (2^k - 3^m) ∣ (3^m - 2^m)
+  have hbigZ : (2 : ℤ) * 3 ^ m < 2 ^ k := by exact_mod_cast hbig
+  have h23 : (2 : ℤ) ^ m < 3 ^ m := by
+    apply pow_lt_pow_left₀ (by norm_num) (by norm_num) (by omega)
+  have hpos : (0 : ℤ) < 3 ^ m - 2 ^ m := by omega
+  have h2m : (0 : ℤ) < 2 ^ m := by positivity
+  have hle := Int.le_of_dvd hpos hdvd
+  omega
+
 end QOU.AppendixSurreals
