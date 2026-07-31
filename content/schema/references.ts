@@ -7192,6 +7192,94 @@ export const references: CSLData[] = [
     note: "arXiv:2208.13692. Computes the genus-4 Bring period matrix, identifies a new elliptic quotient = the modular curve X₀(50), and gives the S₅-invariant theta-characteristic (divisor of the Szegő kernel). Source of the published j(τ₀) = −5·29³/2⁵ used in docs/coordination/alpha-em.md and QOU/Archimedean/BringEllipticFactor.lean. Registered 2026-07-18 to close the dangling -- Ref: [braden-disney-hogg-2022] in that Lean file (the key was previously unregistered); journal DOI omitted pending verification — arXiv URL is authoritative.",
   }),
 
+  // ── Bilson-Thompson 2005 — helon model (braids → SM fermions) ──
+  ref({
+    id: "bilson-thompson2005",
+    type: "article",
+    title: "A topological model of composite preons",
+    author: [{ family: "Bilson-Thompson", given: "Sundance O." }],
+    "container-title": "arXiv preprint",
+    issued: { "date-parts": [[2005]] },
+    URL: "https://arxiv.org/abs/hep-ph/0503213",
+    note: "arXiv:hep-ph/0503213. The helon model: first-generation SM fermions and EW bosons as framed 3-braids; electric charge read off ribbon TWIST (±2π ↔ ±e/3), colour off the strand permutation (odd-man-out), generations off braiding pattern, bosons = identity-permutation triplets. Uploaded uploads/0503213v2.pdf; analysed in docs/audits/2026-07-31-sm-lit-analysis-bean-workplan.md (twist-vs-writhe as candidate second crossing invariant for the hypercharge gap, bean qou-q377).",
+  }),
+
+  // ── Bigelow 2001 — braid groups are linear (LKB faithful) ─────
+  ref({
+    id: "bigelow2001",
+    type: "article-journal",
+    title: "Braid groups are linear",
+    author: [{ family: "Bigelow", given: "Stephen J." }],
+    "container-title": "Journal of the American Mathematical Society",
+    issued: { "date-parts": [[2001]] },
+    volume: "14",
+    page: "471-486",
+    DOI: "10.1090/S0894-0347-00-00361-1",
+    URL: "https://arxiv.org/abs/math/0005038",
+    note: "Theorem 1.1: the Lawrence–Krammer representation of B_n is faithful for all n (braid groups are linear). Lawrence's construction realises this as a summand of the Jones representation at generic parameters. Cited by conj:gauge-hecke-realization for literature context: Burau (a Hecke summand) is unfaithful for n ≥ 5, LKB is faithful — the conjecture's open residue is faithfulness at the substrate specialisation and the groupoid-vs-braid mismatch. Uploaded uploads/0005038v1.pdf.",
+  }),
+
+  // ── Baez–Huerta 2010 — algebra of GUTs ────────────────────────
+  ref({
+    id: "baez-huerta2010",
+    type: "article-journal",
+    title: "The algebra of grand unified theories",
+    author: [
+      { family: "Baez", given: "John C." },
+      { family: "Huerta", given: "John" },
+    ],
+    "container-title": "Bulletin of the American Mathematical Society",
+    issued: { "date-parts": [[2010]] },
+    volume: "47",
+    page: "483-552",
+    DOI: "10.1090/S0273-0979-10-01294-2",
+    URL: "https://arxiv.org/abs/0904.1556",
+    note: "Representation-theoretic structure of the SM gauge group and its SU(5), Spin(10), Pati–Salam extensions; the hypercharge assignments and the ℤ₆ compatibility relations. Target specification for what a derived hypercharge must satisfy (bean qou-q377). Uploaded uploads/0904.1556v2.pdf.",
+  }),
+
+  // ── Tong 2017 — line operators / global SM gauge group ────────
+  ref({
+    id: "tong2017",
+    type: "article-journal",
+    title: "Line operators in the Standard Model",
+    author: [{ family: "Tong", given: "David" }],
+    "container-title": "Journal of High Energy Physics",
+    issued: { "date-parts": [[2017]] },
+    volume: "2017",
+    issue: "7",
+    page: "104",
+    DOI: "10.1007/JHEP07(2017)104",
+    URL: "https://arxiv.org/abs/1705.01853",
+    note: "The SM gauge group is (SU(3) × SU(2) × U(1))/Γ with Γ ⊆ ℤ₆ undetermined by current experiment; line-operator spectra and theta-angle periodicities distinguish the choices. Cited by conj:sm-gauge-truncation (containment-not-isomorphism caveat) and relevant to the theta_QCD bean qou-y087. Uploaded uploads/1705.01853v2.pdf.",
+  }),
+
+  // ── Dubois-Violette 2016 — exceptional quantum geometry ───────
+  ref({
+    id: "dubois-violette2016",
+    type: "article-journal",
+    title: "Exceptional quantum geometry and particle physics",
+    author: [{ family: "Dubois-Violette", given: "Michel" }],
+    "container-title": "Nuclear Physics B",
+    issued: { "date-parts": [[2016]] },
+    volume: "912",
+    page: "426-449",
+    DOI: "10.1016/j.nuclphysb.2016.04.018",
+    URL: "https://arxiv.org/abs/1604.01247",
+    note: "SU(3) colour from unimodularity + the 27-dimensional Euclidean Albert (exceptional Jordan) algebra; triality ↔ 3 generations; octonions as ℂ ⊕ ℂ³ ↔ quark-lepton symmetry. Literature route matching the corpus octonion fragments (QOU/MathlibExt/OctonionSU3Stabilizer.lean); beans qou-ni4b (SU(3)) and qou-x4qm (three generations). Uploaded uploads/1604.01247v2.pdf.",
+  }),
+
+  // ── Furey 2016 — SM from ℂ⊗𝕆 ──────────────────────────────────
+  ref({
+    id: "furey2016",
+    type: "thesis",
+    title: "Standard model physics from an algebra?",
+    author: [{ family: "Furey", given: "Cohl" }],
+    "container-title": "PhD thesis, University of Waterloo",
+    issued: { "date-parts": [[2016]] },
+    URL: "https://arxiv.org/abs/1611.09182",
+    note: "arXiv:1611.09182. Division-algebra (ℝ⊗ℂ⊗ℍ⊗𝕆) construction of one-generation SM structure; SU(3) × U(1) as the unbroken stabilizer inside ℂ⊗𝕆 with correct electric charges from a number operator. Literature route for beans qou-ni4b (SU(3) colour) and the hypercharge target of qou-q377. Uploaded uploads/1611.09182v1.pdf.",
+  }),
+
 ];
 
 // ── Lookup helpers ──────────────────────────────────────────────
