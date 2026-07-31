@@ -79,4 +79,50 @@ theorem qcollatz_no_one_odd_cycle {R : Type*} [CommRing R] (φ : R →+* ℤ)
       _ ≤ 2 ^ k := pow_le_pow_right₀ (by norm_num) hk
   omega
 
+/-! ### The generic `q = 1` height obstruction, and the two-odd-step family
+
+The `q = 1` evaluation is the reusable engine: a cycle forcing `D·P = n` maps to
+`φ(D) ∣ φ(n)` in `ℤ`, so a `q = 1` height with `φ(D) ∤ φ(n)` excludes it. -/
+
+/-- **Generic `q = 1` height obstruction.** If a cycle forces `D·P = n` and some
+    `q = 1` evaluation `φ : R →+* ℤ` has `φ(D) ∤ φ(n)`, there is no such cycle. -/
+theorem no_cycle_of_q_one_height {R : Type*} [CommRing R] (φ : R →+* ℤ)
+    (D P n : R) (h : D * P = n) (hnd : ¬ (φ D ∣ φ n)) : False :=
+  hnd ⟨φ P, by rw [← map_mul, h]⟩
+
+/-- **Two adjacent odd steps force their denominator equation.** The word
+    `E^{k-2}OO` forces `((q+1)^k − (q²+q+1)²)·P_{k-2} = q²+2q+2`. -/
+theorem qcollatz_two_odd_adj_forces {R : Type*} [CommRing R] (q : R) (P : ℕ → R)
+    (k : ℕ) (hk : 2 ≤ k)
+    (hchain : ∀ i, i < k - 2 → P (i + 1) * (q + 1) = P i)
+    (hodd1 : P (k - 1) * (q + 1) = (q ^ 2 + q + 1) * P (k - 2) + 1)
+    (hodd2 : P 0 * (q + 1) = (q ^ 2 + q + 1) * P (k - 1) + 1) :
+    ((q + 1) ^ k - (q ^ 2 + q + 1) ^ 2) * P (k - 2) = q ^ 2 + 2 * q + 2 := by
+  have hcollapse : P 0 = (q + 1) ^ (k - 2) * P (k - 2) :=
+    even_chain_collapse q P (k - 2) hchain
+  have hk2 : 2 + (k - 2) = k := by omega
+  have hpow : (q + 1) ^ k = (q + 1) ^ 2 * (q + 1) ^ (k - 2) := by
+    rw [← pow_add, hk2]
+  linear_combination -(q + 1) ^ 2 * hcollapse + (q ^ 2 + q + 1) * hodd1
+    + (q + 1) * hodd2 + P (k - 2) * hpow
+
+/-- **No two-adjacent-odd-step cycle of period `k ≥ 4`.** The `q = 1` height of the
+    denominator `(q+1)^k − (q²+q+1)²` is `2^k − 9`, against numerator height `5`;
+    but `2^k − 9 ∤ 5` for `k ≥ 4` (`|2^k − 9| ≥ 7 > 5`). A second infinite family,
+    by the same height engine. (`k = 3` is `EOO`, handled by the period-3
+    word-elimination, where `2³ − 9 = −1` is a unit.) -/
+theorem qcollatz_no_two_odd_adj_cycle {R : Type*} [CommRing R] (φ : R →+* ℤ)
+    (q P : R) (hq : φ q = 1) (k : ℕ) (hk : 4 ≤ k)
+    (h : ((q + 1) ^ k - (q ^ 2 + q + 1) ^ 2) * P = q ^ 2 + 2 * q + 2) : False := by
+  refine no_cycle_of_q_one_height φ _ P _ h ?_
+  intro hdvd
+  simp only [map_sub, map_pow, map_add, map_mul, map_ofNat, map_one, hq] at hdvd
+  norm_num at hdvd
+  -- hdvd : (2 ^ k - 9) ∣ 5
+  have h16 : (16 : ℤ) ≤ 2 ^ k := by
+    calc (16 : ℤ) = 2 ^ 4 := by norm_num
+      _ ≤ 2 ^ k := pow_le_pow_right₀ (by norm_num) hk
+  have hle := Int.le_of_dvd (by norm_num) hdvd
+  omega
+
 end QOU.AppendixSurreals
