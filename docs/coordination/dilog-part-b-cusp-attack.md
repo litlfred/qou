@@ -285,6 +285,35 @@ result and the na-Stokes selection stands as the *stated, principled* — but no
 Lean-proved — resolution of MQ1. Anti-laundering: this is recorded as the direction and
 scaffolded as a **conjecture**, not wired to production as proved.
 
+### Joint-route conditional closure LANDED — second, independent Part-B total (2026-07-31, branch `claude/dilog-partB-joint-assembly-2026-07-31`)
+
+The **joint** `(q,n)` W-P1 limit — the physically/mathematically genuine limit, *not* the
+weaker iterated one — is now closed **conditionally on an explicit Diophantine no-resonance
+bound** and assembled into the Part-B total, sorry-free:
+
+| Brick | Lemma | File | PR |
+|---|---|---|---|
+| analytic seed `t·log t → 0` | `tendsto_mul_log_nhdsWithin_zero` | `DilogPartBBoundarySeed` | #4270 |
+| conditional boundary limit | `boundary_term_vanishes` | `DilogPartBBoundarySeed` | #4270 |
+| **joint W-P1** (`→ Li₂ x − π²/6` under no-resonance) | `tendsto_wp1_sum_of_no_resonance` | `DilogPartBWP1Capstone` | #4270 |
+| W-P2 tail on the joint filter (`p=1/q`) | `tendsto_wp2_tail_of_q` | `DilogPartBJointAssembly` | *(this branch)* |
+| **joint Part-B total** (`→ Li₂ x − π²/3`) | `tendsto_partB_total_joint_of_no_resonance` | `DilogPartBJointAssembly` | *(this branch)* |
+
+`tendsto_partB_total_joint_of_no_resonance` gives: along any filter `l` with `q→1`,
+`x·qⁿ→1⁻`, and `c(q−1) ≤ 1−x·qⁿ` (`c>0`), the combination
+`(q−1)Σ_{k<n} log(1−xqᵏ) − (1−q⁻¹)Σ'_m(−log(1−q⁻ᵐ⁻¹)) → Li₂(x) − π²/3`. It assembles the
+joint W-P1 capstone (#4270) with the W-P2 Euler tail (`euler_tail_asymptotic` composed along
+`1/q → 1⁻`), subtracted exactly as `naStokes_physical_partB_value` combines its two ordered
+pieces.
+
+**Two independent conditional closures of the epic now coexist** — the *iterated* one
+(`naStokes_physical_partB_value`, gated on the na-Stokes ordering conjecture) and the *joint*
+one (`tendsto_partB_total_joint_of_no_resonance`, gated on the explicit Diophantine
+no-resonance bound). Neither discharges its premise; the *unconditional* joint pointwise limit
+remains proved-**false** along the resonant counter-sequence (2026-07-25 note above). The joint
+route carries its hypothesis *explicitly* in the signature (no conjectural class), which is why
+it needs no ordering conjecture. Honest scope per §"Conditional-proved ≠ premise-established".
+
 #### Correction (2026-07-26, same tranche): the curvature = −π²/3 route is REFUTED — −π²/3 is abelian dilog data, not a non-abelian anomaly
 
 The "concrete lead" above (`lem:yekutieli-leading-coefficient` → the curvature term is
