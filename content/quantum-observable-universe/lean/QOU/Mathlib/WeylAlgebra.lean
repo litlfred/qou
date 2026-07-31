@@ -18,23 +18,27 @@ instance : Algebra K (WeylAlgebra K) := RingQuot.instAlgebra (weylRel K)
 
 namespace WeylAlgebra
 
-def X : WeylAlgebra K := RingQuot.mkRingHom (weylRel K) (FreeAlgebra.ι K WeylGen.X)
-def D : WeylAlgebra K := RingQuot.mkRingHom (weylRel K) (FreeAlgebra.ι K WeylGen.D)
+/-- The position generator `x`, via `mkAlgHom` for `liftAlgHom` compatibility. -/
+def X : WeylAlgebra K := (RingQuot.mkAlgHom K (weylRel K)) (FreeAlgebra.ι K WeylGen.X)
+/-- The momentum generator `∂`, via `mkAlgHom` for `liftAlgHom` compatibility. -/
+def D : WeylAlgebra K := (RingQuot.mkAlgHom K (weylRel K)) (FreeAlgebra.ι K WeylGen.D)
 
+/-- The commutation relation `[∂, x] = 1`. -/
 lemma D_X_sub_X_D : D K * X K - X K * D K = 1 := by
-  have H : RingQuot.mkRingHom (weylRel K) (FreeAlgebra.ι K WeylGen.D * FreeAlgebra.ι K WeylGen.X - FreeAlgebra.ι K WeylGen.X * FreeAlgebra.ι K WeylGen.D - 1) = RingQuot.mkRingHom (weylRel K) 0 := by
-    apply RingQuot.mkRingHom_rel
-    exact ⟨rfl, rfl⟩
+  have H : (RingQuot.mkAlgHom K (weylRel K)) (FreeAlgebra.ι K WeylGen.D * FreeAlgebra.ι K WeylGen.X - FreeAlgebra.ι K WeylGen.X * FreeAlgebra.ι K WeylGen.D - 1) =
+           (RingQuot.mkAlgHom K (weylRel K)) 0 :=
+    RingQuot.mkAlgHom_rel K ⟨rfl, rfl⟩
   rw [map_zero] at H
-  have H1 : RingQuot.mkRingHom (weylRel K) (FreeAlgebra.ι K WeylGen.D * FreeAlgebra.ι K WeylGen.X - FreeAlgebra.ι K WeylGen.X * FreeAlgebra.ι K WeylGen.D) - 1 = 0 := by
-    calc RingQuot.mkRingHom (weylRel K) (FreeAlgebra.ι K WeylGen.D * FreeAlgebra.ι K WeylGen.X - FreeAlgebra.ι K WeylGen.X * FreeAlgebra.ι K WeylGen.D) - 1
-      _ = RingQuot.mkRingHom (weylRel K) (FreeAlgebra.ι K WeylGen.D * FreeAlgebra.ι K WeylGen.X - FreeAlgebra.ι K WeylGen.X * FreeAlgebra.ι K WeylGen.D) - RingQuot.mkRingHom (weylRel K) 1 := by rw [map_one]
-      _ = RingQuot.mkRingHom (weylRel K) (FreeAlgebra.ι K WeylGen.D * FreeAlgebra.ι K WeylGen.X - FreeAlgebra.ι K WeylGen.X * FreeAlgebra.ι K WeylGen.D - 1) := by rw [← map_sub]
+  have H1 : (RingQuot.mkAlgHom K (weylRel K)) (FreeAlgebra.ι K WeylGen.D * FreeAlgebra.ι K WeylGen.X - FreeAlgebra.ι K WeylGen.X * FreeAlgebra.ι K WeylGen.D) - 1 = 0 := by
+    calc (RingQuot.mkAlgHom K (weylRel K)) (FreeAlgebra.ι K WeylGen.D * FreeAlgebra.ι K WeylGen.X - FreeAlgebra.ι K WeylGen.X * FreeAlgebra.ι K WeylGen.D) - 1
+      _ = (RingQuot.mkAlgHom K (weylRel K)) (FreeAlgebra.ι K WeylGen.D * FreeAlgebra.ι K WeylGen.X - FreeAlgebra.ι K WeylGen.X * FreeAlgebra.ι K WeylGen.D) - (RingQuot.mkAlgHom K (weylRel K)) 1 := by rw [map_one]
+      _ = (RingQuot.mkAlgHom K (weylRel K)) (FreeAlgebra.ι K WeylGen.D * FreeAlgebra.ι K WeylGen.X - FreeAlgebra.ι K WeylGen.X * FreeAlgebra.ι K WeylGen.D - 1) := by rw [← map_sub]
       _ = 0 := H
-  have H2 : RingQuot.mkRingHom (weylRel K) (FreeAlgebra.ι K WeylGen.D) * RingQuot.mkRingHom (weylRel K) (FreeAlgebra.ι K WeylGen.X) - RingQuot.mkRingHom (weylRel K) (FreeAlgebra.ι K WeylGen.X) * RingQuot.mkRingHom (weylRel K) (FreeAlgebra.ι K WeylGen.D) - 1 = 0 := by
-    calc RingQuot.mkRingHom (weylRel K) (FreeAlgebra.ι K WeylGen.D) * RingQuot.mkRingHom (weylRel K) (FreeAlgebra.ι K WeylGen.X) - RingQuot.mkRingHom (weylRel K) (FreeAlgebra.ι K WeylGen.X) * RingQuot.mkRingHom (weylRel K) (FreeAlgebra.ι K WeylGen.D) - 1
-      _ = RingQuot.mkRingHom (weylRel K) (FreeAlgebra.ι K WeylGen.D * FreeAlgebra.ι K WeylGen.X) - RingQuot.mkRingHom (weylRel K) (FreeAlgebra.ι K WeylGen.X * FreeAlgebra.ι K WeylGen.D) - 1 := by rw [map_mul, map_mul]
-      _ = RingQuot.mkRingHom (weylRel K) (FreeAlgebra.ι K WeylGen.D * FreeAlgebra.ι K WeylGen.X - FreeAlgebra.ι K WeylGen.X * FreeAlgebra.ι K WeylGen.D) - 1 := by rw [← map_sub]
+  have H2 : D K * X K - X K * D K - 1 = 0 := by
+    unfold D X
+    calc (RingQuot.mkAlgHom K (weylRel K)) (FreeAlgebra.ι K WeylGen.D) * (RingQuot.mkAlgHom K (weylRel K)) (FreeAlgebra.ι K WeylGen.X) - (RingQuot.mkAlgHom K (weylRel K)) (FreeAlgebra.ι K WeylGen.X) * (RingQuot.mkAlgHom K (weylRel K)) (FreeAlgebra.ι K WeylGen.D) - 1
+      _ = (RingQuot.mkAlgHom K (weylRel K)) (FreeAlgebra.ι K WeylGen.D * FreeAlgebra.ι K WeylGen.X) - (RingQuot.mkAlgHom K (weylRel K)) (FreeAlgebra.ι K WeylGen.X * FreeAlgebra.ι K WeylGen.D) - 1 := by rw [map_mul, map_mul]
+      _ = (RingQuot.mkAlgHom K (weylRel K)) (FreeAlgebra.ι K WeylGen.D * FreeAlgebra.ι K WeylGen.X - FreeAlgebra.ι K WeylGen.X * FreeAlgebra.ι K WeylGen.D) - 1 := by rw [← map_sub]
       _ = 0 := H1
   exact sub_eq_zero.mp H2
 
@@ -88,7 +92,46 @@ def FourierLaplace : WeylAlgebra K →ₐ[K] WeylAlgebra K :=
       rw [h4]
     ⟩
 
-lemma FourierLaplace_involutive (a : WeylAlgebra K) : FourierLaplace K (FourierLaplace K a) = a := by
-  sorry
+/-- FL on the X generator: `FL(x) = −∂`. -/
+lemma FourierLaplace_X : FourierLaplace K (X K) = -(D K) := by
+  unfold X D FourierLaplace FourierLaplaceFree
+  erw [RingQuot.liftAlgHom_mkAlgHom_apply]
+  change (RingQuot.mkAlgHom K (weylRel K)) ((FreeAlgebra.lift K (FourierLaplaceFreeGen K)) (FreeAlgebra.ι K WeylGen.X)) = _
+  rw [FreeAlgebra.lift_ι_apply]
+  change (RingQuot.mkAlgHom K (weylRel K)) (FourierLaplaceFreeGen K WeylGen.X) = _
+  simp [FourierLaplaceFreeGen, map_neg]
+
+/-- FL on the D generator: `FL(∂) = x`. -/
+lemma FourierLaplace_D : FourierLaplace K (D K) = X K := by
+  unfold X D FourierLaplace FourierLaplaceFree
+  erw [RingQuot.liftAlgHom_mkAlgHom_apply]
+  change (RingQuot.mkAlgHom K (weylRel K)) ((FreeAlgebra.lift K (FourierLaplaceFreeGen K)) (FreeAlgebra.ι K WeylGen.D)) = _
+  rw [FreeAlgebra.lift_ι_apply]
+  simp [FourierLaplaceFreeGen]
+
+/-- FL² on X: `FL(FL(x)) = FL(−∂) = −FL(∂) = −x`. FL is order 4, NOT 2! -/
+lemma FourierLaplace_sq_X : FourierLaplace K (FourierLaplace K (X K)) = -(X K) := by
+  rw [FourierLaplace_X, map_neg, FourierLaplace_D]
+
+/-- FL² on D: `FL(FL(∂)) = FL(x) = −∂`. -/
+lemma FourierLaplace_sq_D : FourierLaplace K (FourierLaplace K (D K)) = -(D K) := by
+  rw [FourierLaplace_D, FourierLaplace_X]
+
+/-- FL⁴ on X = X. Chain: FL(X)=−D, FL(−D)=−X, FL(−X)=D, FL(D)=X. -/
+lemma FourierLaplace_four_X :
+    FourierLaplace K (FourierLaplace K (FourierLaplace K (FourierLaplace K (X K)))) = X K := by
+  rw [FourierLaplace_X, map_neg, FourierLaplace_D]
+  -- now: FL(FL(−(X K))) = X K
+  rw [map_neg, FourierLaplace_X]
+  -- now: FL(−(−(D K))) = X K
+  simp [FourierLaplace_D]
+
+/-- FL⁴ on D = D. Chain: FL(D)=X, FL(X)=−D, FL(−D)=−X, FL(−X)=D. -/
+lemma FourierLaplace_four_D :
+    FourierLaplace K (FourierLaplace K (FourierLaplace K (FourierLaplace K (D K)))) = D K := by
+  rw [FourierLaplace_D, FourierLaplace_X, map_neg, FourierLaplace_D]
+  -- now: FL(−(X K)) = D K
+  rw [map_neg, FourierLaplace_X]
+  simp
 
 end WeylAlgebra
