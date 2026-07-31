@@ -1,4 +1,4 @@
-The following ledger consolidates the epistemic status of every ingredient this appendix uses. Items marked *open* name the missing object precisely; none of them is discharged elsewhere in the corpus.
+The following ledger consolidates the epistemic status of every structural ingredient this appendix uses; the per-parameter status of the 26 Standard-Model parameters is tabulated in the parameter sections above and is not repeated here. Items marked *open* name the missing object precisely; none of them is discharged elsewhere in the corpus.
 
 | Ingredient | Status | Where |
 |---|---|---|
@@ -14,5 +14,6 @@ The following ledger consolidates the epistemic status of every ingredient this 
 | Electroweak identifications $W, Z, H = T(2,4), T(2,6), T(2,8)$ | conjectural; ratio-level numerics within a factor of two | [electroweak triplet](#conj:electroweak-higgs-torus-link-triplet) |
 | Mass hierarchies from morphism amplitudes | open: must reduce to the canonical volume–density / Hecke-energy mass chain | canonical mass facade |
 | 2-group refinement (morphisms between morphisms) | unformalised; groupoid is the 1-truncation | [self-dual 2-group remark](#rem:self-dual-2group) |
+| Three-generation structure (why three copies of each fermion?) | open: prior to all mixing parameters; nowhere addressed | [neutrino-sector section](#prose:sm-params-neutrino) |
 
 Three of these deserve emphasis, because they are the ones a derivation of the Standard Model cannot do without. The hypercharge assignment requires a second crossing invariant independent of the writhe; without it the $\mathrm{U}(1)$ factor is realised only as $I_3$, not as $Y$, and electroweak mixing is out of reach. The $\mathrm{SU}(3)$ factor has no categorical construction at all; the three-strand (colour) structure of the baryon braids is suggestive but has not produced a group action. And the truncation mechanism — why the observable-scale symmetry should be a finite-dimensional Lie group rather than the full groupoid symmetry — has no derivation; every use of the phrase "freeze-out" in this appendix is a heuristic label for that gap, not an explanation.

@@ -45,6 +45,46 @@ export default chapter({
       blocks: ["sm-gauge-truncation"],
     }),
     section({
+      title: "The 26 parameters of the Standard Model",
+      label: "sec:sm-parameters",
+      blocks: ["sm-params-intro"],
+    }),
+    section({
+      title: "Charged-lepton masses (3)",
+      label: "sec:sm-params-leptons",
+      blocks: ["sm-params-lepton-masses"],
+    }),
+    section({
+      title: "Quark masses (6)",
+      label: "sec:sm-params-quarks",
+      blocks: ["sm-params-quark-masses"],
+    }),
+    section({
+      title: "Quark mixing (4)",
+      label: "sec:sm-params-ckm",
+      blocks: ["sm-params-ckm"],
+    }),
+    section({
+      title: "Gauge couplings (3)",
+      label: "sec:sm-params-gauge-couplings",
+      blocks: ["sm-params-gauge-couplings"],
+    }),
+    section({
+      title: "Higgs sector (2)",
+      label: "sec:sm-params-higgs",
+      blocks: ["sm-params-higgs"],
+    }),
+    section({
+      title: "The strong-CP angle (1)",
+      label: "sec:sm-params-theta",
+      blocks: ["sm-params-theta-qcd"],
+    }),
+    section({
+      title: "Neutrino sector (7)",
+      label: "sec:sm-params-neutrinos",
+      blocks: ["sm-params-neutrino"],
+    }),
+    section({
       title: "Open problems",
       label: "sec:sm-open-problems",
       blocks: ["sm-open-problems"],
