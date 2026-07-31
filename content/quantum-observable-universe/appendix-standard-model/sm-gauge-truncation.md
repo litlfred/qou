@@ -1,0 +1,15 @@
+We conjecture that the archimedean truncation of the categorical gauge symmetry — the image of the gauge action groupoid's symmetries at observable scales under the fibre functor $\tau$ — contains the Standard Model gauge group: there is a group $G_{\mathrm{arch}}$ receiving the truncation together with an injective group homomorphism
+
+$$
+  \mathrm{SU}(3) \times \mathrm{SU}(2) \times \mathrm{U}(1)
+  \;\hookrightarrow\;
+  G_{\mathrm{arch}}.
+$$
+
+The statement is deliberately *containment*, not isomorphism: the truncation may carry symmetry beyond the Standard Model factors, and the physical gauge group is in some conventions the quotient $(\mathrm{SU}(3) \times \mathrm{SU}(2) \times \mathrm{U}(1))/\mathbb{Z}_6$; an isomorphism claim would overstate what the framework supports.
+
+The per-factor evidence is uneven, and the conjecture must be read against a structural constraint the framework has already proved. By [the $\mathrm{SU}(2)$-emergence theorem](#thm:su2-emergence), the gauge group of tensor automorphisms of a *single* quantum observable universe fibre is exactly $\mathrm{SU}(2)$ (or its split real form). Consequently the embedding above cannot land in the gauge group of one fibre: any realisation of the $\mathrm{SU}(3)$ and $\mathrm{U}(1)$ factors must come from symmetry visible only at the groupoid level — multi-strand structure, framing data, and the interaction of distinct fibres — and a proposed realisation that places all three factors inside $\mathrm{Aut}^{\otimes}(\tau)$ of one fibre contradicts a proved theorem of the framework.
+
+Current per-factor status. The $\mathrm{SU}(2)$ factor is the proved fibre gauge group. For the $\mathrm{U}(1)$ factor, the framing phase supplies a derived charge — the Coulomb charge $Q = w/2$ of [the Coulomb-charge definition](#def:coulomb-charge) — and the writhe ladder matches the third isospin component $I_3$ across the nucleon doublet without a fitted scale; the hypercharge $Y$, however, is not obtained: the writhe map is falsified as a $Y$ assignment (the proton and neutron share $Y = +1$ while their writhes differ), and the precisely identified missing object is a second crossing invariant independent of the writhe. For the $\mathrm{SU}(3)$ factor no categorical derivation exists; the corpus contains octonion and colour-complex-structure fragments consistent with a colour sector but no construction of an $\mathrm{SU}(3)$ action from the three-strand structure. The electroweak isotypic decomposition proposed in [the $G$-action-on-substrate conjecture](#conj:g-action-on-substrate) and the torus-link identifications of [the electroweak triplet conjecture](#conj:electroweak-higgs-torus-link-triplet) are themselves conjectural inputs, not support.
+
+Finally, the truncation *mechanism* — the suppression of high-action morphisms at observable scales that would reduce the full categorical symmetry to an effective finite-dimensional group — is a heuristic with no derivation. The conjecture as formalised therefore asserts only the containment; it does not assert that the containment is induced by any particular freeze-out mechanism.
