@@ -46,7 +46,7 @@ The σ₁σ₁ entry is the one with a literature-proven x-refinement; the T4 in
 probe therefore tests the winding-dependence MECHANISM on the proven channel,
 not the σ₁σ₂ constant itself. Scope-(a); no c_k wired; no fit.
 
-Run (long-compute discipline — deep layer takes ~10–20 min):
+Run (long-compute discipline — deep layer takes ~1–2 h at x-order 1600):
   python3 -u computations/probes/qbeta_awpk_perwinding_stokes_41_probe.py \
       2>&1 | tee /tmp/qbeta_awpk_perwinding.log
 Fast certification-only run: pass --cert-only.
@@ -78,8 +78,13 @@ ROTATED = {0: 1, 1: -8, 2: -9, 3: 18, 4: 46, 5: 90, 6: 62}
 Q_CERT = 6            # q̃-order of the exact certification (printed data depth)
 ORD_CERT = 96         # internal x-order for certification assemblies (x = q̃^½)
 E_CERT = 14           # winding window for the e-sum certification
-ORD_DEEP = 800        # internal x-order for substrate evaluation (q̃-order 400)
+ORD_DEEP = 1600       # internal x-order for substrate evaluation (q̃-order 800).
+                      # Index coefficients grow ~e^{c√k}, so at q̃ ≈ 0.9009 the
+                      # tail only turns over near q̃-order ~600 — q̃-order 400 is
+                      # PRE-ASYMPTOTIC and its partial sums are meaningless.
 E_SUB = 8             # winding window for substrate A_eff (decay recorded)
+DEEP_CUTS = (1000, 1200, 1400, 1500)   # partial-sum cut points (x-order) for the
+                                       # multi-cut convergence certificate
 
 # T4 back-solved sheet angles (qbeta_t4_stokes3_crux_probe.py; NOT re-fitted)
 THETA_MUON = 0.0589
@@ -204,19 +209,32 @@ def main() -> int:
     print(f"\n[S1] substrate q̃ = 1/q₀ = {mp.nstr(q_sub, 12)}; deep x-order {ORD_DEEP}:")
     Ie_deep_val = {}
     Ie_conv_digits = {}
+    Ie_partials = {}
     x_sub = mp.sqrt(q_sub)
     t0 = time.time()
     for e in range(0, E_SUB + 1):
         ser = assemble_I41(0, e, ORD_DEEP)
         full = xser_eval(ser, x_sub)
-        cut = int(ORD_DEEP * 9 / 10)
-        trunc = xser_eval({k: c for k, c in ser.items() if k <= cut}, x_sub)
-        d = abs(full - trunc)
-        digits = int(-mp.log10(d)) if 0 < d < 1 else 40
+        partials = {c: xser_eval({k: v for k, v in ser.items() if k <= c}, x_sub)
+                    for c in DEEP_CUTS}
+        # honest certificate: digits of agreement between the LAST cut and the
+        # full sum, with a hard 0 when the difference is >= 1 (a diverging or
+        # pre-asymptotic partial sum must NOT report as converged — the naive
+        # `else 40` sentinel of the earlier guard pattern is a bug).
+        d = abs(full - partials[DEEP_CUTS[-1]])
+        if d == 0:
+            digits = 40
+        elif d < 1:
+            digits = int(-mp.log10(d))
+        else:
+            digits = 0
         Ie_deep_val[e] = full
         Ie_conv_digits[e] = digits
+        Ie_partials[e] = {str(c): mp.nstr(p, 15) for c, p in partials.items()}
         print(f"    e={e}: I(0,e)(q̃_sub) = {mp.nstr(full, 15):>22}  "
-              f"[{digits:>2} stable digits]  [{time.time()-t0:6.1f}s]")
+              f"[{digits:>2} agree-digits vs cut {DEEP_CUTS[-1]}]  "
+              f"[{time.time()-t0:6.1f}s]")
+        print(f"          partial sums {Ie_partials[e]}")
     conv_ok = min(Ie_conv_digits.values()) >= 6
     tower_val = Ie_deep_val[0] + 2 * mp.fsum(Ie_deep_val[e] for e in range(1, E_SUB + 1))
     print(f"    Σ_e I(0,e)(q̃_sub) [|e|≤{E_SUB}] = {mp.nstr(tower_val, 15)} "
@@ -286,8 +304,12 @@ def main() -> int:
         "q_tilde_sub": mp.nstr(q_sub, 20), "deep_x_order": ORD_DEEP,
         "per_winding_values": {str(e): mp.nstr(Ie_deep_val[e], 20)
                                for e in Ie_deep_val},
-        "per_winding_stable_digits": {str(e): Ie_conv_digits[e]
-                                      for e in Ie_conv_digits},
+        "per_winding_agree_digits": {str(e): Ie_conv_digits[e]
+                                     for e in Ie_conv_digits},
+        "per_winding_partial_sums": Ie_partials,
+        "guard_note": "agree-digits = |full − partial(last cut)|; a difference "
+                      ">= 1 reports 0 digits (the naive else-40 sentinel of the "
+                      "earlier guard pattern silently passes diverging sums)",
         "tower_esum": mp.nstr(tower_val, 20)})
     wb.add_data("sheet_evaluations", s2)
     wb.add_data("test_ii_unit_sheets_bar_even",
@@ -304,8 +326,10 @@ def main() -> int:
                   "A_omega=3; used here as fixed sheet coordinates)"})
     wb.add_assertion("substrate_per_winding_converged",
                      computed=1.0 if conv_ok else 0.0, expected=1.0, tolerance=0.5,
-                     source=f"every I(0,e)(q_sub), e<=E_SUB, stable to >=6 digits "
-                            f"under 10% truncation drop at x-order {ORD_DEEP}")
+                     source=f"every I(0,e)(q_sub), e<=E_SUB, agrees to >=6 digits "
+                            f"between x-order {DEEP_CUTS[-1]} partial sum and the "
+                            f"full x-order {ORD_DEEP} sum (multi-cut certificate; "
+                            f"diff>=1 counts as 0 digits, no else-40 sentinel)")
     wb.add_assertion("unit_sheets_exactly_bar_even",
                      computed=1.0 if unit_bar_even else 0.0, expected=1.0,
                      tolerance=0.5,
