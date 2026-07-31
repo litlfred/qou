@@ -202,4 +202,59 @@ theorem qcollatz_no_adj_tail_cycle {R : Type*} [CommRing R] (φ : R →+* ℤ)
   have hle := Int.le_of_dvd hpos hdvd
   omega
 
+/-! ### Non-adjacent two-odd words `E^a O E^b O`
+
+Beyond the adjacent tail: two odd steps separated by even runs of any lengths
+`a, b`. This forces `((q+1)^{a+b+2} − (q²+q+1)²)·x = (q²+q+1) + (q+1)^{b+1}`, whose
+`q=1` height is `3 + 2^{b+1}` against denominator height `2^{a+b+2} − 9`. Once the
+period `k = a+b+2 ≥ 5`, the denominator height exceeds the (positive) numerator
+height for **every** arrangement `b`, so the divisibility fails — **all two-odd
+words of period `k ≥ 5` are excluded**, adjacent or not. -/
+
+/-- **Two separated odd steps force their denominator equation.** `E^a O E^b O`
+    forces `((q+1)^{a+b+2} − (q²+q+1)²)·x = (q²+q+1) + (q+1)^{b+1}`. -/
+theorem qcollatz_two_odd_forces {R : Type*} [CommRing R] (q x m1 m2 P0 : R)
+    (a b : ℕ)
+    (heven1 : P0 = (q + 1) ^ a * x)
+    (hodd1 : m1 * (q + 1) = (q ^ 2 + q + 1) * x + 1)
+    (heven2 : m1 = (q + 1) ^ b * m2)
+    (hodd2 : P0 * (q + 1) = (q ^ 2 + q + 1) * m2 + 1) :
+    ((q + 1) ^ (a + b + 2) - (q ^ 2 + q + 1) ^ 2) * x
+      = (q ^ 2 + q + 1) + (q + 1) ^ (b + 1) := by
+  have ha1 : (q + 1) ^ (a + 1) = (q + 1) * (q + 1) ^ a := by rw [pow_succ']
+  have hb1 : (q + 1) ^ (b + 1) = (q + 1) * (q + 1) ^ b := by rw [pow_succ']
+  have hpow : (q + 1) ^ (a + b + 2) = (q + 1) ^ (a + 1) * (q + 1) ^ (b + 1) := by
+    rw [← pow_add]; congr 1; omega
+  have e1 : (q + 1) ^ (a + 1) * x = (q ^ 2 + q + 1) * m2 + 1 := by
+    have h2 := hodd2
+    rw [heven1] at h2
+    rw [ha1]; linear_combination h2
+  have e2 : (q + 1) ^ (b + 1) * m2 = (q ^ 2 + q + 1) * x + 1 := by
+    have h1 := hodd1
+    rw [heven2] at h1
+    rw [hb1]; linear_combination h1
+  linear_combination (q + 1) ^ (b + 1) * e1 + (q ^ 2 + q + 1) * e2 + x * hpow
+
+/-- **No two-odd-step cycle of period `k ≥ 5`.** The `q=1` height of the
+    denominator `2^{a+b+2} − 9` exceeds the numerator height `3 + 2^{b+1}` for
+    every arrangement `b` once `a+b+2 ≥ 5`, so the divisibility fails. This
+    excludes **all** two-odd-step words (adjacent or separated) of period `≥ 5`. -/
+theorem qcollatz_no_two_odd_cycle {R : Type*} [CommRing R] (φ : R →+* ℤ)
+    (q x : R) (hq : φ q = 1) (a b : ℕ) (hk : 5 ≤ a + b + 2)
+    (h : ((q + 1) ^ (a + b + 2) - (q ^ 2 + q + 1) ^ 2) * x
+      = (q ^ 2 + q + 1) + (q + 1) ^ (b + 1)) : False := by
+  refine no_cycle_of_q_one_height φ _ x _ h ?_
+  intro hdvd
+  simp only [map_sub, map_pow, map_add, map_one, hq] at hdvd
+  norm_num at hdvd
+  -- hdvd : (2^(a+b+2) - 9) ∣ (3 + 2^(b+1))
+  have hk2 : (2 : ℤ) ^ (a + b + 2) = 2 * 2 ^ (a + b + 1) := by rw [pow_succ]; ring
+  have hbc : (2 : ℤ) ^ (b + 1) ≤ 2 ^ (a + b + 1) :=
+    pow_le_pow_right₀ (by norm_num) (by omega)
+  have h16 : (16 : ℤ) ≤ 2 ^ (a + b + 1) := by
+    calc (16 : ℤ) = 2 ^ 4 := by norm_num
+      _ ≤ 2 ^ (a + b + 1) := pow_le_pow_right₀ (by norm_num) (by omega)
+  have hle := Int.le_of_dvd (by positivity) hdvd
+  omega
+
 end QOU.AppendixSurreals
