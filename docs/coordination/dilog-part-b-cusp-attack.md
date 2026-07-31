@@ -346,6 +346,33 @@ open residual; `wp1_faddeev_tendsto` exhibits a single good approach, not full-m
 with the W-P2 tail (`DilogPartBEulerTail` + the assembly of PR #4423), this scaling gives the
 Part-B total `→ Li₂(x) − π²/3` unconditionally along the Faddeev approach.
 
+### The a.e. residual — precise route + Mathlib tooling gap (2026-07-31 scoping)
+
+The remaining open positive is: **for a.e. `x ∈ (0,1)`, the branch-index boundary term
+`R(x,q) = (q−1)·log(1 − x·q^{k*(q)})` → 0 as `q→1⁺`** (`k*(q) = ⌊log_q(1/x)⌋`), hence the
+*unconditional-index* W-P1 converges for a.e. `x`. Mathlib inventory (checked 2026-07-31):
+
+- **AVAILABLE:** `MeasureTheory/OuterMeasure/BorelCantelli.lean` (Borel–Cantelli),
+  `MeasureTheory/Function/ConvergenceInMeasure.lean`.
+- **ABSENT:** real-number **equidistribution / Weyl criterion** for `frac(α n)` (the only
+  `Weyl` in Mathlib is `LinearAlgebra/RootSystem/WeylGroup` — unrelated). So the classical
+  *equidistribution* route is **not** wireable from Mathlib as-is; it would require building
+  Weyl/three-distance from scratch (a genuine Mathlib contribution).
+
+**Route that avoids equidistribution — Borel–Cantelli on resonance windows (tractable, multi-brick).**
+`R(x,q) ↛ 0` requires `δ = 1−x q^{k*}` to be **exponentially** small (`log δ ~ −c/(q−1)`) —
+from the counter-sequence analysis, `δ ≥ (q−1)^{1+ε}` fails only on a *resonance window*
+`W_m(ε)` where `frac(log_q(1/x))` is within `~(q−1)^ε` of `0`. Along a discretizing sequence
+`q_m→1⁺`, `measure(W_m) ≲ (q_m−1)^ε` is **summable** for a suitable schedule, so
+`Borel–Cantelli` gives `x ∉ W_m` eventually a.e. — hence `δ_m ≥ (q_m−1)^{1+ε}`, the seed
+`t·log t→0` (`DilogPartBBoundarySeed`) closes `R→0`, and `boundary_term_vanishes` +
+`tendsto_wp1_sum_of_no_resonance` give a.e. convergence. **Bricks (bean `qou-jplv`):**
+(1) define `W_m(ε)` measurably and bound `measure(W_m) ≲ (q_m−1)^ε`; (2) choose the schedule so
+`Σ_m measure(W_m) < ∞`; (3) `Borel–Cantelli` ⇒ a.e. `x` in finitely many `W_m`; (4) glue to
+`δ_m ≥ (q_m−1)^{1+ε}` and discharge via the seed. This is a research-grade multi-brick build,
+not a single file; scoped here so the next attacker starts from the BC route, not the (absent)
+Weyl one.
+
 #### Correction (2026-07-26, same tranche): the curvature = −π²/3 route is REFUTED — −π²/3 is abelian dilog data, not a non-abelian anomaly
 
 The "concrete lead" above (`lem:yekutieli-leading-coefficient` → the curvature term is
