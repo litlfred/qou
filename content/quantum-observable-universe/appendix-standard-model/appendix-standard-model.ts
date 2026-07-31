@@ -42,7 +42,7 @@ export default chapter({
     section({
       title: "Archimedean truncation to the Standard Model group",
       label: "sec:sm-truncation",
-      blocks: ["sm-gauge-truncation"],
+      blocks: ["sm-gauge-truncation", "sm-hypercharge-invariant"],
     }),
     section({
       title: "The 26 parameters of the Standard Model",
