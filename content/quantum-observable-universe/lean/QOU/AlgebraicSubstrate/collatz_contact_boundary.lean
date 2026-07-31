@@ -1,4 +1,4 @@
-import Mathlib.Data.Real.Basic
+import QOU.AlgebraicSubstrate.qou_obstruction_reduction
 
 /-!
 # QOU.AlgebraicSubstrate.collatz_contact_boundary
@@ -7,29 +7,54 @@ import Mathlib.Data.Real.Basic
 [`quantum-observable-universe/appendix-surreals/collatz-contact-boundary.ts`](quantum-observable-universe/appendix-surreals/collatz-contact-boundary.ts).
 
 This module states the manuscript claim over a context class so the `lean.ref` URI resolves to a real, compiling declaration in the `qou` Lake package (§3b-conditional). See the declaration docstring below for what the term discharges versus what is carried as a context-class axiom.
+
+**C10 (2026-07-31).** The Kummer-removability content is no longer a standalone
+context-class axiom. `CollatzContactBoundaryContext` now **extends** the universal
+`QouObstructionReductionContext`, `kummer_obstruction_removable` is *defined* as
+the vanishing of the level-2 Kummer obstruction, and
+`obstruction_removable_of_even_chi` is **derived** (theorem, not field) from
+`kappa_vanishes_iff_chi`. So "`2 ∣ χ(A)` ⟹ the `[2]_q`-divisor is removable" now
+reduces to the universal χ(A) obstruction-reduction, not an independent assumption.
 -/
 
 namespace QOU.AlgebraicSubstrate
 
 
-/-- QOU-furnished context for the `collatz_contact_boundary` claim: the
-    fields below are the Skein/Reeb data provided by a quantum observable
-    universe `(𝐂, A, τ)` — `q` is its substrate parameter. The
-    `obstruction_removable_of_even_chi` field carries the manuscript
-    Kummer-removability content conditionally. -/
-class CollatzContactBoundaryContext where
+/-- QOU-furnished context for the `collatz_contact_boundary` claim. **Extends** the
+    universal Kummer obstruction-reduction context (`QouObstructionReductionContext`,
+    supplying `χ(A)`, `κ₀`, the level-`n` vanishing predicate and its definitional
+    reduction), together with the Skein/Reeb data of a quantum observable universe
+    `(𝐂, A, τ)` — `q` its substrate parameter, `[2]_q = q + 1` — and the Descartes
+    specialisation `χ(A) = -6`. Kummer removability is no longer a field: it is
+    *defined* below as level-2 obstruction vanishing and *derived* from parity. -/
+class CollatzContactBoundaryContext extends QouObstructionReductionContext where
   /-- Substrate parameter `q : ℝ` of the QOU. -/
   q : ℝ
   /-- The q-integer `[2]_q = q + 1`. -/
   q_int_2 : ℝ
   q_int_2_eq : q_int_2 = q + 1
-  /-- Euler characteristic `χ(A) = -6` (Descartes / Bring's surface). -/
-  chi_A : ℤ
+  /-- Descartes specialisation: `χ(A) = -6` (Bring's surface). -/
   chi_A_eq : chi_A = -6
-  /-- Kummer-level-2 obstruction is removable. -/
-  kummer_obstruction_removable : Prop
-  /-- Kummer obstruction vanishes if parity matches. -/
-  obstruction_removable_of_even_chi : (2 : ℤ) ∣ chi_A → (q_int_2 = 0 → kummer_obstruction_removable)
+
+/-- **Kummer-level-2 obstruction removable** := the level-2 Kummer obstruction
+    *vanishes*. This is the manuscript's own identity — *"the obstruction vanishes;
+    this means the `[2]_q`-divisor is removable"* — i.e. in Kummer theory the
+    obstruction class **is** the removability criterion. -/
+def CollatzContactBoundaryContext.kummer_obstruction_removable
+    [CollatzContactBoundaryContext] : Prop :=
+  QouObstructionReductionContext.kappa_vanishes 2
+
+/-- **`2 ∣ χ(A)` ⟹ the `[2]_q`-divisor is Kummer-removable — DERIVED** (formerly a
+    raw context-class axiom `obstruction_removable_of_even_chi`). Removability is
+    the vanishing of the level-2 obstruction (`kummer_obstruction_removable`), and
+    `kappa_vanishes_iff_chi` reduces that vanishing to `2 ∣ χ(A)`. So the parity
+    condition now discharges removability through the universal obstruction, with
+    no independent assumption. -/
+theorem CollatzContactBoundaryContext.obstruction_removable_of_even_chi
+    [ctx : CollatzContactBoundaryContext] (h : (2 : ℤ) ∣ ctx.chi_A) :
+    CollatzContactBoundaryContext.kummer_obstruction_removable := by
+  unfold CollatzContactBoundaryContext.kummer_obstruction_removable
+  exact (kappa_vanishes_iff_chi 2).mpr (by simpa using h)
 
 /-- **Manuscript statement** (full body):
 
@@ -90,15 +115,13 @@ $$
 
 […truncated; see manuscript for remainder…]
 
-    The Lean encoding below states the manuscript claim over a context class and discharges it from the class's fields (§3b-conditional). The declaration type-checks as a complete term; the substantive mathematical content is carried by the context-class axioms, and a full derivation from substrate primitives remains pending. -/
+    The Lean encoding below states the manuscript claim over a context class and discharges it from the class's fields (§3b-conditional). As of C10 the Kummer-removability half is no longer a raw axiom — it is derived from the universal obstruction-reduction (`obstruction_removable_of_even_chi` above); a full derivation of the remaining substrate primitives (the `κ₀ = χ(A)` trace-gap input inherited from `QouObstructionReductionContext`) remains pending. -/
 -- Ref: [manuscript] quantum-observable-universe/appendix-surreals/collatz-contact-boundary.ts
 theorem collatz_contact_boundary [ctx : CollatzContactBoundaryContext] :
-    (ctx.q_int_2 = 0 → ctx.kummer_obstruction_removable) ∧
-    ((2 : ℤ) ∣ ctx.chi_A) :=
-  by
-    have h1 : (2 : ℤ) ∣ ctx.chi_A := by
-      rw [ctx.chi_A_eq]
-      exact ⟨-3, rfl⟩
-    exact ⟨ctx.obstruction_removable_of_even_chi h1, h1⟩
+    (ctx.q_int_2 = 0 → CollatzContactBoundaryContext.kummer_obstruction_removable) ∧
+    ((2 : ℤ) ∣ ctx.chi_A) := by
+  have h1 : (2 : ℤ) ∣ ctx.chi_A := by
+    rw [ctx.chi_A_eq]; exact ⟨-3, rfl⟩
+  exact ⟨fun _ => CollatzContactBoundaryContext.obstruction_removable_of_even_chi h1, h1⟩
 
 end QOU.AlgebraicSubstrate
