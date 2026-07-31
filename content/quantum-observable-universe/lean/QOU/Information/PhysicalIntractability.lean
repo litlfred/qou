@@ -27,6 +27,28 @@ proved sorry-free below — **not** a fiat identification.  Its honest scope:
 
 That is the ceiling of the non-fiat route, and it is the theorem the QOU is
 actually positioned to prove.
+
+## Relation to the query-model lower bound (integration)
+
+This file is the **bandwidth / physical-device** derivation of the `3^c`
+lower bound.  Its **query-model sibling** lives in
+`QOU.Information.SkeinHorizonLowerBound` (`treeSearch`, `treeSearch_hcost`:
+the observer must visit every one of the `3^d` leaves) and
+`QOU.Information.SkeinInfoLowerBound` (`info_depth_lower_bound`,
+`numLeaves_eq_three_pow_info`: the entropy floor `info = 3^c`, exact).  The
+two are the same phenomenon proved in two models — a Bekenstein-bandwidth
+pigeonhole here, a ternary decision-tree entropy floor there.
+
+**Algebrization caveat (shared, do not over-claim).** The `correct`
+hypothesis below — the device must access the full `3^{3n}`-tree worth of
+bits — is exactly the *no-shortcut / black-box* assumption.
+`SkeinHorizonLowerBound.no_horizon_cost_of_polyObservable` makes the flip
+side precise: an efficiently-evaluable **algebraic** observation (a poly
+shortcut) *refutes* `correct`, so neither this bandwidth bound nor the
+query-model bound crosses to abstract `P ≠ NP` — that crossing needs a
+genuinely non-algebraic separating invariant (the `χ(A)` residue), which is
+the algebrization barrier (Aaronson–Wigderson).  Both derivations are
+honestly weaker than the Clay problem, and for the same structural reason.
 -/
 
 namespace QOU.Information
