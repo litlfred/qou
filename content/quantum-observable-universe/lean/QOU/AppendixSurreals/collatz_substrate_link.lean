@@ -60,4 +60,36 @@ theorem SubstrateParameter.fundamental_odd_step_at {M : Type*}
   (sp.toSkeinCollatzArith p).fundamental_odd_step (sp.field p)⁻¹
     (mul_inv_cancel₀ (sp.field_pos p).ne')
 
+/-! ### C8 brick 3 — the arithmetic on the Reeb-bundle Skein module `𝒮(q) ≅ ℤ[q^±1]`
+
+The Reeb-bundle Skein module (`prop:skein-generation`) is
+`𝒮(q) ≅ ℤ[q^{±1}] = LaurentPolynomial ℤ` — the ground ring `R_q` of the formal
+chain (`GroundRingAnnotations`) — with `q` the module indeterminate `T`.
+Instantiating `SkeinCollatzArith` there realises the map's whole `q`-arithmetic on
+the **actual Skein module**, and `q = T` is a unit (inverse `T(-1)`,
+`qcollatz_laurent_qunit`), so the fundamental cycle lives in `𝒮(q)`.
+
+Together with brick 2 this exhibits the *two levels of `q`*: the **fibre** `q = T`
+in `𝒮(q) = ℤ[q^{±1}]` (this brick) and its **archimedean evaluation**
+`q = q(p) ∈ ℝ` at a substrate point (brick 2) — the substrate→fibre picture of
+`AGENTS.md §"Im(q) at fibre vs observable level"`. -/
+
+open LaurentPolynomial in
+/-- **C8 brick 3 — the Skein-Collatz arithmetic on `𝒮(q) = ℤ[q^{±1}]`**, with `q`
+    the module indeterminate `T`. -/
+noncomputable def skeinModuleArith : SkeinCollatzArith (LaurentPolynomial ℤ) where
+  q := T 1
+
+open LaurentPolynomial in
+/-- On the Skein module the q-integer is `[2]_q = T + 1` (`q + 1` with `q = T`). -/
+theorem skeinModuleArith_qi2 : skeinModuleArith.qi2 = T 1 + 1 := rfl
+
+open LaurentPolynomial in
+/-- On the Skein module `𝒮(q) = ℤ[q^{±1}]`, `q = T` is a unit (inverse `T(-1)`),
+    so the fundamental odd-step identity holds — the `{q⁻¹, 1+q⁻¹}` cycle is
+    realised in the actual Skein module. -/
+theorem skeinModuleArith_fundamental_odd_step :
+    (1 + T (-1)) * skeinModuleArith.qi2 = skeinModuleArith.qi3 * T (-1) + 1 :=
+  skeinModuleArith.fundamental_odd_step (T (-1)) qcollatz_laurent_qunit
+
 end QOU
