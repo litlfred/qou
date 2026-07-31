@@ -2645,3 +2645,19 @@ B1's population-forced-to-zero conclusion is STRENGTHENED. B1's V₃
 phases are not reproducible from the literature and want re-derivation.
 Nothing retracted; a reproducibility defect recorded with its blast
 radius measured.
+
+**2026-07-31 — prepare-merge coordination of the saddle/Borel/T5 stack
+(coordinator: PR #4416).** Landing order agreed with the owner:
+#4408 (5₂ saddle values, rebased + adopted the sibling 0-sorry
+StokesJump/WeylAlgebra — the FL²=id lemma was FALSE, replaced by proved
+FL⁴=id) → #4415 (T5 assembly, byte-identical copy also carried by
+#4414; whichever lands second dedupes or closes-as-superseded) →
+#4414 (q-Borel chain; rebased, FaddeevPhi cherry-pick duplicate
+auto-dropped, all 13 changed .lean files lean-direct exit 0, 0
+sorries). Branch `fivetwo-saddle-values-canonical-2026-07-30` is a
+superset whose only unique content is the T3 multi-knot binding probe;
+residual PR opens after the stack lands. New qou-qnnq route beans:
+qou-offl (cone-manifold off-lattice), qou-awpk (per-winding GGM
+Stokes), qou-mcus (multi-cusp Borromean), qou-rdmr (Rademacher
+word→winding). Probe re-verification: `saddle_values()` reproduces both
+papers' printed values to 16 digits at prepare-merge time.
