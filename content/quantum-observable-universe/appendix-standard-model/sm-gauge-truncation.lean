@@ -49,4 +49,29 @@ class StandardModelTruncation (G : Type*) [Group G] : Prop where
            unitary ℂ) →* G,
       Function.Injective φ
 
+/-- `-1` is a unitary scalar: the nontrivial element of `U(1)`
+witnessing that the Standard-Model product group is nontrivial. -/
+def negOneU1 : unitary ℂ :=
+  ⟨-1, by rw [unitary.mem_iff]; constructor <;> simp⟩
+
+theorem negOneU1_ne_one : negOneU1 ≠ 1 := by
+  intro h
+  have h' := congrArg Subtype.val h
+  norm_num [negOneU1] at h'
+
+/-- The conjecture class has falsifiable content: it fails for any
+subsingleton `G`, because the `U(1)` factor already contains the
+nontrivial element `-1` and an injective homomorphism cannot
+identify it with the identity. -/
+theorem not_standardModelTruncation_of_subsingleton
+    (G : Type*) [Group G] [Subsingleton G] :
+    ¬StandardModelTruncation G := by
+  rintro ⟨φ, hφ⟩
+  have hx : ((1, 1, negOneU1) :
+      Matrix.specialUnitaryGroup (Fin 3) ℂ ×
+      Matrix.specialUnitaryGroup (Fin 2) ℂ × unitary ℂ) ≠ 1 := by
+    intro h
+    exact negOneU1_ne_one (congrArg (fun p => p.2.2) h)
+  exact hx (hφ (Subsingleton.elim _ _))
+
 end QOU.StandardModel

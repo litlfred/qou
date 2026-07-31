@@ -54,4 +54,26 @@ class GaugeHeckeRealization (S : Type u) [Groupoid.{v} S]
   /-- Every state's gauge automorphism monoid embeds in `H`. -/
   aut_embeds : ∀ X : S, ∃ Φ : End X →* H, Function.Injective Φ
 
+/-- The conjecture class has falsifiable content: it fails whenever
+`H` is too small. If any state carries two distinct gauge
+automorphisms, no realization into a subsingleton monoid exists. -/
+theorem not_gaugeHeckeRealization_of_subsingleton
+    (S : Type u) [Groupoid.{v} S] (H : Type*) [Monoid H] [Subsingleton H]
+    (X : S) (f g : End X) (hfg : f ≠ g) :
+    ¬GaugeHeckeRealization S H := by
+  rintro ⟨aut⟩
+  obtain ⟨Φ, hΦ⟩ := aut X
+  exact hfg (hΦ (Subsingleton.elim _ _))
+
+/-- Monotonicity: a realization survives enlarging the target along
+any injective monoid homomorphism (e.g. `H_n(q) ↪ H_{n+1}(q)` under
+a tower inclusion). -/
+theorem GaugeHeckeRealization.of_injective_comp
+    (S : Type u) [Groupoid.{v} S] {H H' : Type*} [Monoid H] [Monoid H']
+    (ψ : H →* H') (hψ : Function.Injective ψ)
+    [inst : GaugeHeckeRealization S H] : GaugeHeckeRealization S H' := by
+  refine ⟨fun X => ?_⟩
+  obtain ⟨Φ, hΦ⟩ := inst.aut_embeds X
+  exact ⟨ψ.comp Φ, hψ.comp hΦ⟩
+
 end QOU.StandardModel
