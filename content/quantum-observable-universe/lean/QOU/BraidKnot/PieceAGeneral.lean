@@ -246,4 +246,41 @@ theorem legZ_eq_card (μ : YoungDiagram) {p : ℕ × ℕ} (hp : p ∈ μ.cells) 
   simp only [legZ]
   omega
 
+/-! ## Stage 7 — `Σ(arm·leg)` counts the UR/LL pair set
+
+Each cell `p` contributes `arm(p)·leg(p)` = pairs (one arm cell `R`, one leg cell
+`B`); the map `(p,R,B) ↦ (R,B)` bijects onto `{(R,B) : R.1<B.1 ∧ B.2<R.2}`, with
+`p = (R.1, B.2)` recovered (always a cell). -/
+
+/-- The UR/LL ordered pair set: `R` upper-right of `B`. -/
+def urllPairs (μ : YoungDiagram) : Finset ((ℕ × ℕ) × (ℕ × ℕ)) :=
+  (μ.cells ×ˢ μ.cells).filter (fun RB => RB.1.1 < RB.2.1 ∧ RB.2.2 < RB.1.2)
+
+theorem sum_armLeg_eq_urll (μ : YoungDiagram) :
+    (∑ p ∈ μ.cells, armZ μ p * legZ μ p) = ((urllPairs μ).card : ℤ) := by
+  have step : ∀ p ∈ μ.cells, armZ μ p * legZ μ p
+      = (((μ.cells.filter (fun R => R.1 = p.1 ∧ p.2 < R.2)) ×ˢ
+          (μ.cells.filter (fun B => B.2 = p.2 ∧ p.1 < B.1))).card : ℤ) := by
+    intro p hp
+    rw [armZ_eq_card μ hp, legZ_eq_card μ hp, ← Nat.cast_mul, Finset.card_product]
+  rw [Finset.sum_congr rfl step, ← Nat.cast_sum]
+  congr 1
+  rw [← Finset.card_biUnion]
+  · congr 1
+    ext RB
+    simp only [Finset.mem_biUnion, Finset.mem_product, Finset.mem_filter, urllPairs]
+    constructor
+    · rintro ⟨p, hp, ⟨hRc, hR1, hR2⟩, ⟨hBc, hB2, hB1⟩⟩
+      exact ⟨⟨hRc, hBc⟩, by omega, by omega⟩
+    · rintro ⟨⟨hRc, hBc⟩, h1, h2⟩
+      have hlt := (mem_cells_iff_snd_lt μ RB.1).mp hRc
+      refine ⟨(RB.1.1, RB.2.2), ?_, ⟨hRc, rfl, h2⟩, ⟨hBc, rfl, h1⟩⟩
+      rw [mem_cells_iff_snd_lt]
+      show RB.2.2 < μ.rowLen RB.1.1
+      omega
+  · intro p hp q hq hpq
+    simp only [Finset.disjoint_left, Finset.mem_product, Finset.mem_filter]
+    rintro RB ⟨⟨_, hR1, _⟩, ⟨_, hB2, _⟩⟩ ⟨⟨_, hR1', _⟩, ⟨_, hB2', _⟩⟩
+    exact hpq (Prod.ext (hR1.symm.trans hR1') (hB2.symm.trans hB2'))
+
 end QOU.BraidKnot.PieceA
