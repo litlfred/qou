@@ -214,6 +214,58 @@ theorem tendsto_slack_zero :
   refine h2.congr (fun N => ?_)
   ring
 
+/-- **Squeeze-reduction capstone** (Mathlib-only).  For any choice of level
+    `n(N)` and saddle index `k*(N)`, the scaled log of the inner sum and of the
+    saddle term differ by an amount that VANISHES: bracketed below by `0`
+    (the sum dominates one term) and above by `(2π/N)·log N` (the sum is at most
+    `(N−n)` copies of the max), which `tendsto_slack_zero` sends to `0`.  Hence
+    `(2π/N)·log(whiteheadInnerSum)` and `(2π/N)·log(S_{n,k*})` share every limit
+    — the VC limit is reduced to the saddle-TERM value (the Clausen step). -/
+theorem innerSum_saddle_scaledLog_diff_tendsto_zero
+    (nseq kseq : ℕ → ℕ)
+    (hvalid : ∀ N, 2 ≤ N →
+        (whiteheadS N (nseq N) (kseq N) ≤ whiteheadInnerSum N (nseq N) ∧
+         whiteheadInnerSum N (nseq N) ≤ (N - nseq N) • whiteheadS N (nseq N) (kseq N)))
+    (hnlt : ∀ N, 2 ≤ N → nseq N < N)
+    (hpos : ∀ N, 2 ≤ N → 0 < whiteheadS N (nseq N) (kseq N)) :
+    Filter.Tendsto
+      (fun N : ℕ => (2 * π / N) * Real.log (whiteheadInnerSum N (nseq N))
+        - (2 * π / N) * Real.log (whiteheadS N (nseq N) (kseq N)))
+      Filter.atTop (nhds 0) := by
+  refine tendsto_of_tendsto_of_tendsto_of_le_of_le'
+    (tendsto_const_nhds (x := (0:ℝ))) tendsto_slack_zero ?_ ?_
+  · -- eventually 0 ≤ D N
+    filter_upwards [Filter.eventually_ge_atTop 2] with N hN
+    obtain ⟨hlow, _⟩ := hvalid N hN
+    have hspos := hpos N hN
+    have hNpos : (0 : ℝ) < N := by exact_mod_cast (by omega : 0 < N)
+    have hscale : (0 : ℝ) ≤ 2 * π / N := by positivity
+    have hlog := Real.log_le_log hspos hlow
+    have := mul_le_mul_of_nonneg_left hlog hscale
+    linarith
+  · -- eventually D N ≤ (2π/N)·log N
+    filter_upwards [Filter.eventually_ge_atTop 2] with N hN
+    obtain ⟨hlow, hup⟩ := hvalid N hN
+    have hspos := hpos N hN
+    have hnlt' := hnlt N hN
+    have hcardpos : (0 : ℝ) < ((N - nseq N : ℕ) : ℝ) := by
+      exact_mod_cast (by omega : 0 < N - nseq N)
+    have hNpos : (0 : ℝ) < N := by exact_mod_cast (by omega : 0 < N)
+    have hscale : (0 : ℝ) ≤ 2 * π / N := by positivity
+    have hinner_pos : 0 < whiteheadInnerSum N (nseq N) := lt_of_lt_of_le hspos hlow
+    have hup' : whiteheadInnerSum N (nseq N)
+        ≤ ((N - nseq N : ℕ) : ℝ) * whiteheadS N (nseq N) (kseq N) := by
+      rw [nsmul_eq_mul] at hup; exact hup
+    have hlog1 := Real.log_le_log hinner_pos hup'
+    rw [Real.log_mul (ne_of_gt hcardpos) (ne_of_gt hspos)] at hlog1
+    have hstep := mul_le_mul_of_nonneg_left hlog1 hscale
+    rw [mul_add] at hstep
+    have hlogmono : Real.log ((N - nseq N : ℕ) : ℝ) ≤ Real.log N := by
+      refine Real.log_le_log hcardpos ?_
+      exact_mod_cast Nat.sub_le N (nseq N)
+    have hslack := mul_le_mul_of_nonneg_left hlogmono hscale
+    linarith
+
 /-- **The Whitehead Volume Conjecture** (van der Veen's theorem):
     `(2π/N)·log|J_N(W)(e^{2πi/N})| → Vol(Whitehead) = 4G`.
 
