@@ -490,13 +490,21 @@ Bun.serve({
         || new Response("Not found", { status: 404 });
     }
     if (path.startsWith("/assistant/")) {
-      return serveStatic(join(ASSISTANT_ROOT, path.slice("/assistant/".length)))
+      const assistantRes = serveStatic(join(ASSISTANT_ROOT, path.slice("/assistant/".length)));
+      if (assistantRes) return assistantRes;
+      return serveStatic(join(ASSISTANT_ROOT, "index.html"))
         || new Response("Not found", { status: 404 });
     }
 
     // All other static files
     const staticRes = serveStatic(join(VIEWER_ROOT, path.slice(1)));
     if (staticRes) return staticRes;
+
+    // Viewer SPA fallback for direct deep links (first-load navigation)
+    if (!extname(path)) {
+      return serveStatic(join(VIEWER_ROOT, "index.html"))
+        || new Response("Not found", { status: 404 });
+    }
 
     return new Response("Not found", { status: 404 });
   },
