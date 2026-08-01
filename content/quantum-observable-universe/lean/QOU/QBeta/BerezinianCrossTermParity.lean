@@ -15,7 +15,7 @@ involution `σ`:
 1. **The obstruction is not special to the sign `−1`.** `crossTerm_bar_even_of_
    adjoint_scaled`: if `C = k·σB` for **any bar-even** scalar `k` (`σk = k`) and
    `Dinv` bar-even, then `t = B·Dinv·C` is bar-EVEN. #4421's `C = −σB` is the
-   `k = −1` instance (`corollary selfadjoint_is_adjoint_scaled`). So the whole
+   `k = −1` instance (`theorem selfadjoint_is_adjoint_scaled`). So the whole
    *adjoint-scaled* family — not just the self-adjoint sign — is barred from
    carrying a bar-odd `c₃`.
 
