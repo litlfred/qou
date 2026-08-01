@@ -1,3 +1,8 @@
+import QOU.BraidsAndKnots.S5SO3FiberAction
+import QOU.BraidsAndKnots.BringFiberActionInstance
+import Mathlib.Algebra.Order.Ring.Rat
+import Mathlib.Tactic.NormNum
+
 /-!
 # QOU.BraidsAndKnots.InterNucleonChannelColorTube — the D6-upstream color-tube channel class
 
@@ -40,10 +45,6 @@ in `computations/closed_form_tau_M.py` under
 
 -- Ref: [manuscript] conj:inter-nucleon-channel-color-tube
 -/
-import QOU.BraidsAndKnots.S5SO3FiberAction
-import QOU.BraidsAndKnots.BringFiberActionInstance
-import Mathlib.Data.Rat.Order
-import Mathlib.Tactic.NormNum
 
 namespace QOU.BraidsAndKnots
 
