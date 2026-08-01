@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-01T20:15:00.860436+00:00",
-  "commitSha": "17fec3fdbc2f74015bed91614e0f043fb58cb5b0",
+  "computedAt": "2026-08-01T21:27:16.705438+00:00",
+  "commitSha": "cb2c02231196a2d0b29f9f8e057a9d9dd33595e3",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -3202,6 +3202,7 @@
         "v-hat-to-delta-lambda-bridge.witness.json",
         "v-hat-z-transfer-phase5d-4.witness.json",
         "vdw-pskew-sinh-probe.witness.json",
+        "verify-c-color-swap.witness.json",
         "verify-isospin-bar-anomaly.witness.json",
         "vhat-per-crossing-chain.witness.json",
         "vhat-std-vs-full-tower-compare.witness.json",
