@@ -38,7 +38,7 @@ def PolyBounded (f : ℕ → ℕ) : Prop := ∃ c k, ∀ n, f n ≤ c * n ^ k
 theorem not_polyBounded_of_superPoly {f : ℕ → ℕ} (h : SuperPolynomial f) :
     ¬ PolyBounded f := by
   rintro ⟨c, k, hb⟩
-  obtain ⟨n, hn⟩ := h c k
+  obtain ⟨n, _, hn⟩ := h c k
   exact absurd (hb n) (not_le.mpr hn)
 
 /-- **Dually (sorry-free): a polynomial budget is never super-polynomial.** -/

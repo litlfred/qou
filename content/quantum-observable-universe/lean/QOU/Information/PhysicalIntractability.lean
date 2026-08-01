@@ -63,9 +63,16 @@ theorem steps_lower_bound (B : ℕ) (hB : 0 < B) (info steps : ℕ → ℕ)
   calc info n / B ≤ steps n * B / B := Nat.div_le_div_right (correct n)
     _ = steps n := Nat.mul_div_cancel _ hB
 
-/-- A function `f : ℕ → ℕ` is **super-polynomial** if it eventually exceeds
-    every polynomial `c · n^k`. -/
-def SuperPolynomial (f : ℕ → ℕ) : Prop := ∀ c k : ℕ, ∃ n, c * n ^ k < f n
+/-- A function `f : ℕ → ℕ` is **super-polynomial** if it exceeds every
+    polynomial `c · n^k` at some argument `n ≥ 1`.
+
+    The `1 ≤ n` guard is essential: without it the `n = 0` term `c · 0^k = 0`
+    (for `k ≥ 1`) is `< f 0` for *any* `f` with `f 0 ≥ 1`, so a mere polynomial
+    like `n ↦ (n+1)^2` would spuriously satisfy the predicate (confirmed in Lean,
+    bean `qou-qgyw`). Guarding the witness away from `0` makes the predicate mean
+    genuine polynomial domination and makes `PolyGrowth ⟹ ¬SuperPolynomial`
+    (`PolyGrowthAlgebra.not_superPolynomial_of_polyGrowth`) provable. -/
+def SuperPolynomial (f : ℕ → ℕ) : Prop := ∀ c k : ℕ, ∃ n, 1 ≤ n ∧ c * n ^ k < f n
 
 open Filter Asymptotics in
 /-- **`2^n` is super-polynomial (sorry-free).**  The standard "exponential
@@ -92,7 +99,7 @@ theorem superPoly_two_pow : SuperPolynomial (fun n => 2 ^ n) := by
         ≤ ((c : ℝ) + 1) * ((1 / ((c : ℝ) + 1)) * (2 : ℝ) ^ n) :=
           mul_le_mul_of_nonneg_left hnorm (le_of_lt hcp)
       _ = (2 : ℝ) ^ n := by field_simp
-  refine ⟨n, ?_⟩
+  refine ⟨n, hn1, ?_⟩
   have key : (c : ℝ) * (n : ℝ) ^ k < (2 : ℝ) ^ n := by nlinarith [h2, hnk_pos]
   have : ((c * n ^ k : ℕ) : ℝ) < (((2 : ℕ) ^ n : ℕ) : ℝ) := by
     push_cast; push_cast at key; linarith
@@ -111,14 +118,14 @@ theorem no_poly_bandwidth_decider (B : ℕ) (hB : 0 < B) (info steps : ℕ → �
     (hinfo : SuperPolynomial (fun n => info n / B)) :
     SuperPolynomial steps := by
   intro c k
-  obtain ⟨n, hn⟩ := hinfo c k
-  exact ⟨n, lt_of_lt_of_le hn (steps_lower_bound B hB info steps correct n)⟩
+  obtain ⟨n, hn1, hn⟩ := hinfo c k
+  exact ⟨n, hn1, lt_of_lt_of_le hn (steps_lower_bound B hB info steps correct n)⟩
 
 /-- **Super-polynomiality lifts through a lower bound (sorry-free).**  If
     `g ≤ f` pointwise and `g` is super-polynomial, so is `f`. -/
 theorem SuperPolynomial.of_le {f g : ℕ → ℕ} (hg : SuperPolynomial g)
     (hle : ∀ n, g n ≤ f n) : SuperPolynomial f := fun c k =>
-  (hg c k).imp fun n hn => lt_of_lt_of_le hn (hle n)
+  (hg c k).imp fun n hn => ⟨hn.1, lt_of_lt_of_le hn.2 (hle n)⟩
 
 /-- **Exponential information ⇒ physical intractability (sorry-free).**  The
     concrete QOU case: if deciding size-`n` instances requires (per bandwidth
@@ -141,8 +148,8 @@ theorem steps_superPoly_of_info (B : ℕ) (hB : 0 < B) (info steps : ℕ → ℕ
     (correct : ∀ n, info n ≤ steps n * B) (hinfo : SuperPolynomial info) :
     SuperPolynomial steps := by
   intro c k
-  obtain ⟨n, hn⟩ := hinfo (c * B) k
-  refine ⟨n, ?_⟩
+  obtain ⟨n, hn1, hn⟩ := hinfo (c * B) k
+  refine ⟨n, hn1, ?_⟩
   have h1 : c * n ^ k * B < steps n * B :=
     calc c * n ^ k * B = c * B * n ^ k := by ring
       _ < info n := hn
