@@ -4,30 +4,43 @@
 **Axis:** Δ_λ / A=3 magnitude gate · **Tier:** scope-(a) frame-robustness measurement (exact mpmath +
 Lean-proved amplification/sign facts; **no fit**; nothing wired).
 
-## 0. ⚠ UNITS CORRECTION (read first) — the "1.6× near-miss" is a units artifact; the honest gap is 3.53×
+## 0. ⚠ UNITS + SCALE (read first) — the "1.6× near-miss" is dimensionally ill-posed and scale-ambiguous
 
 The headline "1.6× A=3 near-miss" (`c₃ = 0.63·μ₃`, #4364 / three-walls) — and the gap-factor / physical-%
 numbers in §2–3c below, which followed it — **compare a MeV energy to a dimensionless ratio.**
 `c₃ = 0.297` is a genuine **energy** (`E₀·(1−τ_Borr)`, `E₀ = m_e/(q₀(q₀−1)) ≈ 4.19 MeV`);
-`μ₃ = 0.4708` is **dimensionless** (`ρ_strong(3) − ρ_grad(3)`, a pure ratio — `ρ_strong(2)=1` confirms).
-`borromean_h9_magnitude_lift_probe.py:188` admits the pun: *"target μ₃ = 0.4708 (dimensionless, read
-as MeV)."* Converting the cluster into the dimensionless decomposition (`c₃/B(²H)`, `B(²H)=2.2246 MeV`):
+`μ₃ = 0.4708` is **dimensionless** (`ρ_strong(3) − ρ_grad(3)`). `borromean_h9_magnitude_lift_probe.py:188`
+admits the pun: *"target μ₃ = 0.4708 (dimensionless, read as MeV)."*
 
-| quantity | corpus (punned) | **dimensionally honest** | factor |
+**But repairing the pun does not give a single "honest gap"** — the categorical binding **scale is
+unpinned.** The master formula `B = m_e·|Σ y_λ χ^λ sgn f^λ|` predicts the **deuteron itself** at only
+`B_cat(²H) = 0.380 MeV` vs AME `2.2246` — a −82.9% undershoot, `C_knot = B_AME/B_cat = 5.85`, an
+**explicitly FITTED (not derived) deficit ratio = the open Δ_λ gate**
+(`binding_energy_categorical_deuteron.py`). So there are two defensible normalizations of `c₃`, differing
+by exactly `C_knot`:
+
+| normalization | `c₃` in ratio units | gap vs `μ₃` | sign |
 |---|---|---|---|
-| A=3 3-body gap `μ₃/c₃` | 1.585× | **3.53×** | ×B(²H) |
-| cluster share of target | 63% | **28%** | ÷B(²H) |
-| A=3 binding miss (energy) | 4.6% | **8.85% (0.750 MeV)** | — |
-| higher-order closure coeff `a₁` | 13.4 | **57.8** (even more anomalous) | — |
-| A=4 `\|c₄\|/c₃` | 13.1 | **26.6** | — |
+| **A** ÷ AME deuteron `c₃/B_AME` | 0.1335 | **3.53×** | undershoot |
+| **B** ÷ categorical deuteron `c₃/B_cat` (E₀/m_e cancels — scale-consistent) | 0.781 | **1.66×** | **overshoot** |
 
-**The correction factor is exactly `B(²H)`.** The A=3 magnitude is **~2× further from closure** than the
-headline. This does **not** refute the graded-dim route — it **corrects the magnitude of the open gap**
-(honestly larger) and reinforces the Δ_λ-gating. The **relative** findings of §2–3c (baseline spread
-1.73×, amplification, order-separation ranking) are **unaffected** — they are ratios within one
-convention; only the absolute gap-factor and physical-% inherit the pun and are corrected here. The
-corpus files (#4364, three-walls, borromean probe:188) still carry the pun — flagged for coordination.
-Probe [`a3_units_consistency_probe.py`](../../computations/deltalambda/a3_units_consistency_probe.py);
+The gap swings from a **1.66× overshoot to a 3.53× undershoot** across the whole `C_knot = 5.85`. **The
+"1.6× near-miss" is therefore not a robust proximity — it is an artifact of the unpinned scale.** The one
+unambiguous object is `C_knot` itself: the 5.85× deuteron deficit, explicitly fitted = the open Δ_λ gate.
+Neither normalization is rigorous (c₃ is a Borromean `E₀·deficit`; `B_cat` is the master per-λ sum —
+different computations), which is itself the point: until the scale is pinned (C_knot **derived**), the
+A=3 gap has no robust value.
+
+> **Self-correction.** An earlier revision of this section (and of `a3_units_consistency_probe.py` /
+> `A3UnitsConsistency.lean`) asserted "the honest gap is 3.53×" by picking normalization A alone. That
+> **over-claimed** — it silently chose one of the two scales. Corrected here to the scale-ambiguity.
+
+The **relative** findings of §2–3c (baseline spread 1.73×, amplification, order-separation *ranking*)
+are **unaffected** — they are ratios within one convention. The absolute gap-factor and physical-%
+figures in §2–3c inherit the pun **and** the scale-ambiguity; read them as *normalization-A* numbers, not
+as robust gaps. The corpus files (#4364, three-walls, borromean probe:188) carry the pun — flagged for
+coordination. Probe
+[`a3_units_consistency_probe.py`](../../computations/deltalambda/a3_units_consistency_probe.py);
 Lean [`A3UnitsConsistency.lean`](../../content/quantum-observable-universe/lean/QOU/MassTheory/A3UnitsConsistency.lean).
 
 ## 0a. The question no sibling was asking
