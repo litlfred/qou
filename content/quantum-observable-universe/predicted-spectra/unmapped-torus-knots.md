@@ -25,8 +25,8 @@ The longitudinal winding number of $T_{2,9}$ factors as $9 = 3 \times 3$. This f
 | Generator | $n$ | $n/3$ | Role |
 |-----------|-----|-------|------|
 | $T_{2,3}$ | $3$ | $1$ | Matter (electron, up quark) |
-| $T_{2,5}$ | $5$ | — | Matter (muon, bottom) |
-| $T_{2,7}$ | $7$ | — | Matter (tau, charm) |
+| $T_{2,5}$ | $5$ | — | Matter (muon, charm) |
+| $T_{2,7}$ | $7$ | — | Matter (tau, bottom) |
 | $T_{2,9}$ | $9$ | $\mathbf{3}$ | **Three-fold cover of $T_{2,3}$** |
 
 On the torus, $T_{2,9}$ traces the trefoil pattern three times around the longitude. It is the unique three-fold cover of $T_{2,3}$ within $\mathcal{G}$. The knot group relation $x^2 = y^9 = (y^3)^3$ reflects this factorization: the longitudinal generator $y$ completes three $T_{2,3}$ periods before closing.
@@ -49,11 +49,11 @@ The 9 crossings of $T_{2,9}$ provide exactly three crossing triples, one per col
 
 **The structure of $T_{3,5}$.**
 
-The torus knot $T_{3,5}$ has 3-strand meridional winding. This places it in the force carrier family alongside $T_{3,4}$. Its longitudinal winding $n = 5$ matches $T_{2,5}$ (muon, bottom). This creates a cross-link between the two winding families:
+The torus knot $T_{3,5}$ has 3-strand meridional winding. This places it in the force carrier family alongside $T_{3,4}$. Its longitudinal winding $n = 5$ matches $T_{2,5}$ (muon, charm). This creates a cross-link between the two winding families:
 
 | $m \backslash n$ | $3$ | $4$ | $5$ | $7$ | $9$ |
 |------------------|-----|-----|-----|-----|-----|
-| $2$ | $e^-, u$ | — | $\mu, b$ | $\tau, c$ | **force** |
+| $2$ | $e^-, u$ | — | $\mu, c$ | $\tau, b^{\sigma}$ | **force** |
 | $3$ | — | **force** | **force** | — | — |
 
 The knot $T_{3,5}$ sits at the intersection of the $m = 3$ (quark) row and the $n = 5$ (second-generation) column. Its knot group relation $x^3 = y^5$ intertwines the three-strand color structure with five-fold longitudinal winding.
