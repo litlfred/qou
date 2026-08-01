@@ -2753,3 +2753,47 @@ Docstring prose and `"key": "value"` witness-payload lines are masked
 count; do not cite a dated baseline. `--strict` wiring into
 `witness-pipeline.yml` follows the `lp_dual_witness_validator.py`
 warn-only-then-strict precedent.
+
+**2026-08-01 (stale-witness sweep of the V migration — one live regression,
+one V₃ evidence result; PR #4454).** Re-running the three probes migrated to
+`saddle_values("ggm")` by `87722fa817` found their witnesses all predated the
+migration, so none of its effects had ever been recorded.
+
+| probe | witness was | effect of migration |
+|---|---|---|
+| `phi_series_engine` | 2026-07-25 | **numerically inert** — consumes only `\|V₁−V₂\| = 2·Vol`, identical in all three conventions (confirms the 2026-07-26 blast-radius prediction) |
+| `stokes_population_bridge` | 2026-07-25 | substantive, **safe direction** — σ-pair overshoot 4.76e7 → 5.12e13, B1's forced-zero conclusion strengthened (confirms the predicted 5.5e5 → 5.9e11) |
+| `median_borel_resummation` | 2026-07-18 | **LIVE REGRESSION** (below) |
+
+**The regression.** `zeta12 = 1j * (V1 - V2)` had been calibrated against the
+corpus's legacy *i-rotated* V (Vol in `Re V₁`), where `i·(V₁−V₂)_legacy =
+5.656j`. The migration switched V to GGM but kept the `1j *`, double-rotating
+by 90°. Running the probe as committed on main fails its resurgence gate
+(rel dev 0.0222 → 1.369). Invisible because the witness was never regenerated
+— the stale sidecar was asserting a PASS the code no longer produced.
+
+The Borel–Padé pole is **convention-free data** (`0.0753 + 5.7566j`), so the
+correct form is decidable rather than a matter of taste: `V₁−V₂` gives rel dev
+`0.0222`; `1j·(V₁−V₂)` gives `1.436`. Dropping the `1j *` restores the gate
+byte-identically to its pre-migration value. Corrected form: **`ζ = V_i − V_j`,
+no explicit `i`, in the published GGM convention.**
+
+**NEW EVIDENCE on the unexplained `V₃`.** The σ₁/σ₃ pole match improves sharply
+under the published value:
+
+    ζ₁₃ rel dev:  0.2545   (legacy V₃ = −2.7580990292)
+                  0.0195   (GGM    V₃ = −7.69319081986683)    — 13× better
+
+The convention-free pole map therefore **independently prefers the published
+GGM `V₃`** over the corpus's legacy literal. That literal is now not merely
+unexplained (2026-07-26 row) but **positively disfavored by data the
+conventions do not touch**. Scope-(a): evidence about which `V₃` the series
+knows, NOT a derivation of where `−2.758` came from — that provenance, and
+`Im V₁ = 1.3790860299`'s, remain OPEN.
+
+**Method note.** All three defects this session — the π²/2 mis-attribution, the
+stale witnesses, and this double-rotation — were found by *re-running committed
+compute and diffing the witness*, not by reading code. A witness that predates
+the commit it claims to describe is not evidence; it is a stale assertion of a
+PASS. Refreshing witnesses in the same commit as the change they describe is
+what would have caught all three at authoring time.
