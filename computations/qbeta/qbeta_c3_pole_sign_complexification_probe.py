@@ -65,8 +65,9 @@ import _path_bridge as _bridge  # noqa: E402, F401
 
 from witness_base import WitnessBuilder  # noqa: E402
 from qou_substrate.constants import q_at, q_muon_at  # noqa: E402
+from qou_substrate.precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 50
+set_compute_dps()  # mp.mp.dps = COMPUTE_DPS (70) — matches witness metadata
 KAPPA = mp.sqrt(3) / 4          # |a₂|, cusp modulus τ = −i√3 (A-polynomial)
 S_MUON = mp.mpf("0.00968298")   # measured targets (anchor-blind witness)
 S_PROTON = mp.mpf("-0.03945936")

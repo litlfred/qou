@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-01T10:44:10.457866+00:00",
-  "commitSha": "1682a7ead9c105b3b90dcb935037fae34e76b05d",
+  "computedAt": "2026-08-01T10:51:30.006262+00:00",
+  "commitSha": "214083dd13f85093ad4db12b635879041a45d4b8",
   "assertions": [
     {
       "name": "pole_is_negative_of_magnitude",
@@ -41,8 +41,8 @@
   "durationMs": 8,
   "computation": "qbeta-c3-pole-sign-complexification",
   "scriptFile": "qbeta_c3_pole_sign_complexification_probe.py",
-  "scriptHash": "5a9c1747b59b",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "59e2ccc05ad1",
+  "scriptCommitSha": "2c983e46cda5f19b167d9d0d913ede6cfa688c48",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
