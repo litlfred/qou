@@ -178,3 +178,25 @@ which is **forbidden** (terminology ruling 2026-07-06,
   non-compact regulator is meant. Resolving that (a distinct glyph, or always
   writing $\Phi_b$) is a follow-up notation decision; until then, disambiguate
   in surrounding prose.
+
+## Photon $\gamma$ vs the unknot $0_1$ (STRICT — recurring-mistake rule, 2026-08-01)
+
+The photon and the unknot are **different objects** and must never be
+identified:
+
+| Object | Symbol | Particle | Never write |
+|--------|--------|----------|-------------|
+| Empty knot / identity element (trivial Hecke representation; empty braid word, zero crossings, bar-invariant) | $\varnothing$, $\mathbf{1}$, $T_e$ | **photon** $\gamma$ | "the photon is the unknot" |
+| Unknot (closed single strand, crossing number 0) | $0_1$ | **neutrino** $\nu$ | "the unknot is the photon" |
+
+The photon is the trivial knot **representation** — the identity element of
+$H_n(R, q)$, with no closed strand at all. The unknot $0_1$ is a **closed
+strand** and represents the neutrino. The closure of the photon's identity
+word on $n$ strands is $n$ disjoint unknots; describing that *closure* as
+disjoint unknots is correct, but assigning the single unknot $0_1$ to the
+photon as its knot identity is a canon violation. Authoritative statements:
+[`two-photon-pair-production.md`](../particle-interactions/two-photon-pair-production.md)
+("the photon $\gamma$ is the empty knot $\varnothing$ … distinct from the
+unknot $0_1$ representing the neutrino") and the atlas registry
+([`recursive-atom-knot-atlas-registry.md`](../appendix-knot-periodic-table/recursive-atom-knot-atlas-registry.md):
+"the bare photon (identity $\mathbf{1}$, not the unknot)").
