@@ -19,7 +19,7 @@ recurrence a clean Pascal identity.
 **Scope.** The level-1 q-Borel kernel + its recurrence only. The ramified level-2 family for
 C1's slope ½, the `d`-th roots `B₁,B₂`, and the actual Stokes matrices
 (`F(P₁,P₂) ≅ Matr(ℂ)²`) are NOT here — the genuine RSZ-wild residual, beaned (`qou-xufp`).
-§7c: generic `CommMonoid`. Sorry-free. No fit; nothing wired.
+§7c: generic `Monoid` (commutativity unused). Sorry-free. No fit; nothing wired.
 
 -- Ref: [ramis-sauloy-zhang-2013] https://arxiv.org/abs/0903.0853 (§3.3, q-Borel transform)
 -/
@@ -28,7 +28,7 @@ import Mathlib.Algebra.Group.Basic
 
 namespace QOU.MathlibExt.QBorelKernel
 
-variable {R : Type*} [CommMonoid R]
+variable {R : Type*} [Monoid R]
 
 /-- **The level-1 q-Borel (Jacobi-theta) kernel** `tₙ = q^{C(n,2)} = q^{n(n−1)/2}`. This is
 the canonical kernel of the q-Borel transform `B_{q,1}` resolving an integral-slope
