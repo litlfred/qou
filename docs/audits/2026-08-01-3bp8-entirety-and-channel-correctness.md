@@ -94,14 +94,30 @@ at both anchors (κ = √3/4, ln q₀ = 0.104341 is the boost/spin divide):
 | **3.7067 (substrate value-ratio)** | **0.0697** | **0.1883** | **yes** | **yes** |
 | 1.5852 (substrate raw entry) | — (ϑ² < 0) | 0.2615 | **no** | — |
 
-So the T4 structure (both ϑ real; muon boost-dominated below ln q₀, proton
-spin-dominated above it) is **robust** to replacing the q→0 integer 3 with its
-substrate-deformed value **iff** the Stokes constant is read in the
-**normalized (ratio) form** — and **breaks** on the raw-entry reading. This is
-a derived consistency constraint, not a fit: it selects a reading of an
-existing literature object. It also agrees with GGM's own presentation, which
-prints exactly `S⁺₁₂/S⁺₁₁ − 3` (eq 62) — i.e. the literature normalizes by
-S₁₁ too.
+So the T4 structure survives the normalized reading and **breaks** on the
+raw-entry reading.
+
+**Sharpened by formalization (`ThetaRealityBound.lean`, sorry-free) — and the
+first reading of this table was too generous.** Proving the two checks reveals
+exactly what they constrain:
+
+- **The diagonal crossing is worth nothing as evidence.** `S > 0 ⇒ ϑ² < ln²q₀`
+  and `S < 0 ⇒ ϑ² > ln²q₀` hold for **every** `A, κ > 0` (`diagonal_crossed`).
+  The crossing is *equivalent to the measured sign flip of S* and is
+  independent of `A`. The T4 crux probe reported "diagonal crossed ✓" as a
+  check; it is an identity. It supports no value of `A` whatsoever.
+- **Reality is a one-sided lower bound.** `ϑ² ≥ 0 ⟺ A ≥ S/(κ·ln²q₀)`
+  (`thetaSq_nonneg_iff`), binding only at the `S > 0` (muon) anchor — the
+  `S < 0` anchor is automatically real for any positive `A`
+  (`thetaSq_pos_of_neg`). Numerically `A_c = S_μ/(κ·ln²q₀) ≈ 2.054`, and the
+  bound is monotone upward (`thetaSq_nonneg_mono`).
+
+So the honest content of the table is `A ≥ 2.054`: it **excludes the raw entry
+1.5852** and **admits both 3 and 3.7067 equally**. It does *not* select the
+normalized reading over the integer — the audit's first phrasing ("selects a
+reading") overclaimed. The independent reason to prefer the normalized form is
+conventional, not numerical: GGM themselves print `S⁺₁₂/S⁺₁₁ − 3` (eq 62), so
+`S₁₁`-normalization is the literature's own presentation of "the 3".
 
 **Consequence for the T4 ϑ values.** They are convention-dependent at the
 10–20% level (muon 0.0586 → 0.0697, +19%; proton 0.2031 → 0.1883, −7%). Any
@@ -119,10 +135,67 @@ uncertainty. Recorded, not resolved.
 - **Measured (scope-(a), on the correct channel):** the σ₁σ₂ Stokes entry has
   deformed at the substrate to 1.5852 raw / 3.7067 normalized; the normalized
   reading preserves the T4 ϑ-reality structure and the raw one destroys it.
-- **Open:** the x-refinement of σ₁σ₂ for 4₁ (not in the literature); the
-  self-consistent-ϑ fixed point (bean `qou-bbsy`); whether the 1.2356×
-  deformation is derivable rather than measured. `A_ω` stays as it is in
+- **Resolved (§4):** `A_ω = 3` is an exact, q-independent structure
+  constant (`S₁₂ + S₂₁ = 3·S₁₁`, certified through q⁴⁰⁰, Lean-formalized);
+  the corpus value is vindicated and the "deformation" question was
+  ill-posed. Bean `qou-bbsy` re-scoped, not run as specified.
+- **Open:** the x-refinement of σ₁σ₂ for 4₁ (not in the literature);
+  deriving the integer 3 from the categorical drivers. `A_ω` stays as it is in
   production — a measurement is not a derivation.
+
+
+## 4. W3 — `A_ω = 3` is an exact structure constant, and the corpus value is vindicated
+
+Bean `qou-bbsy` asked for a self-consistent ϑ fixed point using the
+winding-refined `A_eff(ϑ)`. **That was re-scoped rather than run**: `A_eff`
+is σ₁σ₁ and `A_ω` is σ₁σ₂ (§2), so the fixed point as specified would have
+hard-wired the very cross-channel error this audit diagnosed.
+
+What the certified Stokes matrix actually satisfies — **exact integer
+q-series identities**, coefficient-by-coefficient through q⁴⁰⁰
+([`qbeta_3bp8_w3_stokes_symmetry_constant.py`](../../computations/probes/qbeta_3bp8_w3_stokes_symmetry_constant.py)):
+
+$$
+S^+_{12}(q) + S^+_{21}(q) = 3\,S^+_{11}(q), \qquad \det S^+(q) = 1 .
+$$
+
+The first is GGM's symmetry (eq 65). **It says the integer 3 is the
+structure constant of an identity holding at every order in q — not the
+value of any entry.** So there are three readings of "the 3", coinciding at
+`q → 0` (where `S⁺(0) = [[1,3],[0,1]]`) and separating at the substrate:
+
+| reading | at q̃_sub | q-dependent? |
+|---|---|---|
+| R1 raw entry `S⁺₁₂` | 1.5852 | yes |
+| R2 value-ratio `S⁺₁₂/S⁺₁₁` | 3.7067 | yes |
+| **R3 symmetry constant `(S⁺₁₂+S⁺₂₁)/S⁺₁₁`** | **exactly 3** | **no** |
+
+Two independent discriminators select R3:
+
+1. **The ϑ-reality bound excludes R1** (`A ≥ A_c ≈ 2.054`, §3).
+2. **Truncation-invariance.** At a *pre-asymptotic* q-order 400, R1 and R2
+   are meaningless (the honest guard reports 0 agree-digits; R1 reads
+   −50836) while **R3 is already exactly 3**. A structure constant is
+   truncation-invariant; an entry value is not.
+
+Formalized sorry-free in
+[`StokesSymmetryConstant.lean`](../../content/quantum-observable-universe/lean/QOU/QBeta/StokesSymmetryConstant.lean),
+over an arbitrary field and index type: `symmetryConstant_const`
+(the symmetry *forces* q-independence — it is not a numerical accident),
+`readings_coincide_at_base` (why the `q → 0` data cannot distinguish them),
+and the two separation criteria.
+
+**Consequence.** The corpus's `A_ω = 3` is **vindicated**: read as the
+Stokes symmetry constant it is exact, integral, and needs no substrate
+correction — and the question this route opened with, "does `A_ω` deform at
+the substrate?", was **ill-posed**. It also explains the T4 crux probe's
+0.6% two-anchor consistency at `A = 3`: that is what an exact constant
+looks like.
+
+**Still open (unchanged):** deriving the integer 3 from the 13 categorical
+drivers, and the σ₁σ₂ x-refinement for 4₁. The identification of `A_ω` with
+the symmetry constant is a *reading selection* (reality exclusion +
+q-independence), **not** a derivation of 3.
 
 ## Cross-references
 
