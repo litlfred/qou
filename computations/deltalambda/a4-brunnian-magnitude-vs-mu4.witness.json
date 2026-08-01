@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-01T21:37:06.350440+00:00",
-  "commitSha": "2e6d2aa8bab1c073d40a5b630d9598e8fe708624",
+  "computedAt": "2026-08-01T21:44:24.300507+00:00",
+  "commitSha": "751201fca76ac70012fd7fdebbf4d36e0f751e48",
   "assertions": [
     {
       "name": "sign_correct_at_both_A",
@@ -22,10 +22,10 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 12,
+  "durationMs": 11,
   "computation": "a4-brunnian-magnitude-vs-mu4",
   "scriptFile": "a4_brunnian_magnitude_vs_mu4.py",
-  "scriptHash": "dad8a85f6e7e",
+  "scriptHash": "97f6addc3d1d",
   "scriptCommitSha": "2e6d2aa8bab1c073d40a5b630d9598e8fe708624",
   "precisionMetadata": {
     "compute_dps": 70,
