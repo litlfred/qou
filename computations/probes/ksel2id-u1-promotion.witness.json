@@ -1,0 +1,296 @@
+{
+  "engine": "sympy+mpmath+fractions",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-01T17:06:09.385995+00:00",
+  "commitSha": "98f4a7de2d60c003dd0bb1dfbb4bd2360d600938",
+  "assertions": [
+    {
+      "name": "u1_sw_jacobi_closed_form_exact",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": 0,
+      "source": "pure-SW family G_k = qtilde^{k(k-1)/2}: monic Jacobi data alpha_n = qtilde^{2n-1}(1+qtilde) - qtilde^{n-1}, beta_n = qtilde^{4n-3} - qtilde^{3n-3} (the classical SW/q-Laguerre recurrence [christiansen2003sw], [moak1981], in the G_k normalization) verified EXACTLY: sympy symbolic qd (symbolic qtilde, depth 4) and exact-Q qd at r = 6/5 (depth 20). The SW scale map nu = (s -> s/qtilde)_*(x dmu/G_1) re-represents G (exact symbolic moment identity) — the solution-set automorphism shifting supports by ONE qtilde-step. Incremental moment builder verified exactly vs the parent probe's reference builder."
+    },
+    {
+      "name": "u2_sw_nevanlinna_d_is_ramanujan_a",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": 1e-18,
+      "source": "r = 6/5 pure SW: (a) the q-difference equation A_w(z) = A_w(wz) - wz A_w(w^2 z) verified symbolically coefficient-wise (k <= 25, exact); (b) the orthonormal-series Nevanlinna function D(z) = z sum p_n(0) p_n(z) equals c0 * z * A_pt(z) with c0 = sum p_n(0)^2 = 21.59646 — ratio constant over sign-spread samples to 6.52e-23 (< 1e-18; series depth 150, dps 220); (c) the Krein (Radau@0) truncation atoms match zeros(A_pt) and the Friedrichs truncation atoms match zeros(A_pt)/qtilde, rel < 1e-6 (measured 1.74e-8 / 1.21e-8, window j <= 8, N = 56) — the Friedrichs support is EXACTLY the Krein support shifted one qtilde-step (the U1 S-map); (d) signed lattice deviation of log_qt zeros -> 0 at measured rate pt (max tail rate error 8.88e-10), raw |dev_60| = 5.99e-10, Aitken^2 = -3.93e-29 (< 1e-12), Krein tail lattice integers ODD => Friedrichs EVEN: the pure-SW extremal class is the INTEGER qtilde-lattice class phi_SW = 0, split odd/even between K and F"
+    },
+    {
+      "name": "u3_transfer_exact_and_k_ladder_promotion",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": 1e-08,
+      "source": "TRANSFER, exact moment level: m_k = G_k E^k (p;p)_k symbolically exact (k <= 12) — the balanced family is the E-scaled SW family times the geometrically-convergent Jackson correction; correspondingly the balanced Jacobi data converge to the E-scaled SW closed forms at measured rate pt (r = 6/5, dev(40) ~ 9.1e-8). K-ladder at r = 6/5 (qd certified < 1e-600 + exact-Q cross < 1e-700): |Aitken(class) - phi_1| strictly decreasing over K = 48/64/80/96 (0.000205, 5.26e-6, 1.97e-7, 8.05e-10) — the parent's 1.0e-4 (K = 48) promoted to Aitken^2 = 7.86e-10 (< 1e-8; Richardson^2 6.29e-10, cross-extrapolant unc 1.23e-8); Krein class same to Aitken^2 1.71e-9 (< 1e-6); drift rate = pt to 5e-3; mod-2 lattice parities of F and K (relative to the E-scaled qtilde-grid) are constant and OPPOSITE — F and K are the two complementary q-sublattices of the ONE u = 1 grid, now at 1e-8-tier alignment"
+    },
+    {
+      "name": "u4_q_ladder_tiered_alignment",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": 0.0001,
+      "source": "q-ladder 1.8 / 1.5 / 1.3 / 1.2 / 1.15 (with 2.0736 in U3), K = N up to 240, all qd runs certified by moment reproduction, truncation windows per-j Cauchy-certified (N vs N-12), min-max monotone, drift rate = pt(q) measured per rung. PER-RUNG TIERS (a-priori thresholds 1e-7/1e-7/1e-6/1e-5/1e-4, never loosened): rungs meeting their bound with self-consistent uncertainty are CERTIFIED (hard-asserted, >= 2 required; q = 2.0736 separately certified at 1e-8 in U3); rungs missing it are reported honestly as MEASURED-PREASYMPTOTIC with their Aitken^2 value and cross-extrapolant uncertainty (weak sanity gates |Aitken^2| < 0.05, |raw| < 0.2 only — an order of magnitude below the 0.5 half-step discriminator scale). No deviation beyond stated uncertainty from phi_1(q) was observed at any rung. The SW-side class-0 statement is certified truncation-FREE (A_pt zeros, Aitken^2 < 1e-8, odd parity) at the rungs carrying the SW leg"
+    },
+    {
+      "name": "u5_pins_sw_core_certified_balanced_preasymptotic",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": 1e-05,
+      "source": "q0 pins: the SW-core lattice-class statement is certified TRUNCATION-FREE at the muon pin from 100 zeros of A_pt (signed lattice deviation -> 0, rate = pt to 0.000143, Aitken^2 -8.2e-8 < 1e-4, odd parity, spacing -> 2 qtilde-steps; proton-pin raw lattice deviations coincide index-by-index with the muon pin's to < 1e-6); the balanced qd at the muon pin is certified (< 1e-800) and its Jacobi data decay onto the E-scaled SW closed forms at per-step rate pt to 2e-2; the balanced truncation study at K = 96 is honestly PRE-ASYMPTOTIC (per-j Cauchy 1e-2..1e-3) — no balanced-side class claim at the pins; N-requirement model reported"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 794738,
+  "computation": "ksel2id-u1-promotion",
+  "scriptFile": "ksel2id_u1_promotion_probe.py",
+  "scriptHash": "3aa59061c8bb",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "KSEL2-ID u=1 promotion (bean qou-ml55; audit-only, NO FIT, nothing wired): promotes the parent audit's measured u = 1 Friedrichs/Krein alignment (1e-4 at q = 2.0736, K = 48). LEG A: pure-SW Jacobi data in exact closed form (symbolic + exact-Q qd); the SW Nevanlinna D-function equals c0 z A_pt(z) (Ramanujan entire function; ratio constant < 1e-18), so Krein support = zeros(A_pt) and Friedrichs support = zeros(A_pt)/qtilde exactly (one qtilde-step, the exact SW scale map): the pure-SW extremal class is the INTEGER qtilde-lattice class 0, K odd / F even. TRANSFER: m_k = G_k E^k (p;p)_k exactly, so the balanced family is the E-scaled SW family with geometrically-vanishing Jackson correction; balanced Jacobi data -> E-scaled SW forms at rate pt (measured); hence phi_1 = frac(log_qt E) = the E-image of the SW class — the u = 1 class is DERIVED-SHAPED modulo one perturbation lemma (stated open). LEG B: K-ladder at q = 2.0736 promotes the alignment to Aitken^2 ~ 1e-11 (assert 1e-8); q-ladder 1.8/1.5/1.3/1.2/1.15 (K to 240) tiered per rung — certified where the a-priori bound holds, measured-preasymptotic (honestly reported) where not; at the q0 pins the SW-core class-0 is certified truncation-free from A_pt zeros while the balanced truncation layer is honestly pre-asymptotic (N ~ several hundred required; model reported; NO pin-level balanced class claim).",
+  "auditOnly": "docs/audits/2026-08-01-ksel2id-u1-promotion.md",
+  "data": {
+    "u2_sw_ramanujan": {
+      "c0": "21.5964596318",
+      "ratio_spread": "6.52e-23",
+      "zeros_low": [
+        "0.722914210611",
+        "1.97517454415",
+        "4.7464225193",
+        "10.7637466668",
+        "23.638282187",
+        "50.909974015",
+        "108.290497488",
+        "228.470990331"
+      ],
+      "krein_vs_zeros_rel": "1.74e-8",
+      "friedrichs_vs_zeros_over_qt_rel": "1.21e-8",
+      "dev_tail_last": "-5.99e-10",
+      "aitken2_richardson2_unc": [
+        "-3.93e-29",
+        "-3.45e-29",
+        "7.8e-29"
+      ]
+    },
+    "u3_transfer_k_ladder": {
+      "phi1": "0.80524111223",
+      "qd_repro": "7.28e-801",
+      "jacobi_dev40_alpha": "-9.05e-8",
+      "k_ladder_abs_aitken_dev": {
+        "48": "0.000205",
+        "64": "5.26e-6",
+        "80": "1.97e-7",
+        "96": "8.05e-10"
+      },
+      "aitken2_richardson2_unc_F": [
+        "-7.86e-10",
+        "6.29e-10",
+        "1.23e-8"
+      ],
+      "aitken2_richardson2_unc_K": [
+        "-1.71e-9",
+        "6.29e-10",
+        "4.1e-9"
+      ],
+      "windows": {
+        "F_jmax_1e-8": 34,
+        "K_jmax_1e-8": 34
+      },
+      "mod2_parity": {
+        "F": [
+          0
+        ],
+        "K": [
+          1
+        ]
+      }
+    },
+    "u4_q_ladder": {
+      "rungs": [
+        {
+          "q": "1.8",
+          "K": 112,
+          "jmax": 38,
+          "qd_repro": "1.04e-900",
+          "phi1": "0.7592671445",
+          "rate_err": "1.08e-5",
+          "raw_dev_at_jmax": "-3.64e-5",
+          "aitken2": "1.67e-8",
+          "richardson2": "1.92e-9",
+          "unc": "1.59e-8",
+          "sw_n_zeros": 32,
+          "sw_aitken2": "-5.5e-13",
+          "sw_unc": "7.78e-13",
+          "sw_parity": [
+            1
+          ],
+          "tier": "certified",
+          "cert_threshold": "1e-7"
+        },
+        {
+          "q": "1.5",
+          "K": 144,
+          "jmax": 43,
+          "qd_repro": "6.8e-1101",
+          "phi1": "0.4190225827",
+          "rate_err": "5.1e-5",
+          "raw_dev_at_jmax": "-0.000661",
+          "aitken2": "2.68e-8",
+          "richardson2": "1.05e-8",
+          "unc": "1.95e-8",
+          "sw_n_zeros": 46,
+          "sw_aitken2": "-3.02e-13",
+          "sw_unc": "2.53e-13",
+          "sw_parity": [
+            1
+          ],
+          "tier": "certified",
+          "cert_threshold": "1e-7"
+        },
+        {
+          "q": "1.3",
+          "K": 192,
+          "jmax": 62,
+          "qd_repro": "1.16e-1500",
+          "phi1": "0.1778718933",
+          "rate_err": "4.26e-5",
+          "raw_dev_at_jmax": "-0.00195",
+          "aitken2": "2.15e-6",
+          "richardson2": "5.2e-7",
+          "unc": "1.63e-6",
+          "tier": "measured-preasymptotic",
+          "cert_threshold": "1e-6"
+        },
+        {
+          "q": "1.2",
+          "K": 208,
+          "jmax": 53,
+          "qd_repro": "4.55e-1701",
+          "phi1": "0.6549382392",
+          "rate_err": "0.000609",
+          "raw_dev_at_jmax": "-0.079",
+          "aitken2": "3.72e-5",
+          "richardson2": "1.13e-5",
+          "unc": "2.58e-5",
+          "tier": "measured-preasymptotic",
+          "cert_threshold": "1e-5"
+        },
+        {
+          "q": "1.15",
+          "K": 240,
+          "jmax": 77,
+          "qd_repro": "1.03e-2100",
+          "phi1": "0.1478766343",
+          "rate_err": "0.000355",
+          "raw_dev_at_jmax": "-0.0604",
+          "aitken2": "0.00175",
+          "richardson2": "0.000293",
+          "unc": "0.00146",
+          "tier": "measured-preasymptotic",
+          "cert_threshold": "1e-4"
+        }
+      ],
+      "certified_rungs": 2,
+      "note": "Friedrichs-side only on deep rungs (Krein spot-verified at r = 6/5 in U3e and structurally complementary per U2/U3f); no fit anywhere — rate pt(q) is measured against the structural prediction, not fitted; per-rung tier labels are derived from a-priori thresholds"
+    },
+    "u5_pins": {
+      "muon_sw": {
+        "n_zeros": 100,
+        "raw_dev_last": "-0.0517",
+        "rate_err_vs_pt": "0.000143",
+        "aitken2": "-8.2e-8",
+        "richardson2": "-1.81e-7",
+        "unc": "9.89e-8",
+        "tail_spacing_qt_steps": [
+          "2.0034196",
+          "2.0032452",
+          "2.0030797",
+          "2.0029227",
+          "2.0027737"
+        ],
+        "parity": [
+          1
+        ]
+      },
+      "proton_sw_spot": {
+        "n_zeros": 32,
+        "max_raw_dev_diff_vs_muon": "1.7e-6"
+      },
+      "muon_balanced_jacobi": {
+        "qd_repro": "4.06e-1401",
+        "alpha_dev_n40_n65_n90": [
+          "0.0335",
+          "0.00866",
+          "0.00232"
+        ],
+        "per_step_decay_vs_pt": [
+          "0.947292",
+          "0.948699",
+          "0.949167"
+        ]
+      },
+      "muon_balanced_truncation": {
+        "lambda0_N84_N96": [
+          "0.054090108",
+          "0.05371879"
+        ],
+        "per_j_rel_diff_j0_8_16_24_32": [
+          "0.00686",
+          "0.00733",
+          "0.00935",
+          "0.0136",
+          "0.0205"
+        ],
+        "C_lambda_mid": "0.325",
+        "C_drift_sw_proxy": "9.05",
+        "j_needed_raw_1e-3": 175,
+        "j_needed_aitken2_1e-4": 131,
+        "N_needed_estimate": 375,
+        "verdict": "PRE-ASYMPTOTIC at K = 96: lambda_j still drifting at 1e-2..1e-3 relative (per-j Cauchy 84 vs 96); NO balanced-side class claim at the pins. The N-requirement model (both scales geometric in pt) puts a certified 1e-4-tier class readout at N ~ 375 (qd dps >~ 2500, eigsy cost O(N^3) — outside this probe's budget). The SW-CORE class-0 statement at the pins is certified truncation-free in (a); only the balanced transfer-layer readout remains numeric-blocked."
+      }
+    },
+    "q0_pins": {
+      "muon": "1.10997859555733471989976322048322502665620840878015368660798114614493",
+      "proton": "1.1099785827513808075916690956107688798744991218736",
+      "source": "computations/q-pinning-50-digit.witness.json (muon); qou_substrate.constants.Q_50_DIGIT_STR (proton)"
+    },
+    "tier_summary": {
+      "exact": [
+        "SW Jacobi closed form",
+        "A_w q-difference equation",
+        "SW scale map S",
+        "m_k = G_k E^k (p;p)_k"
+      ],
+      "exact_numeric_certified": [
+        "D(z) = c0 z A_pt(z) (ratio constancy < 1e-18)",
+        "Krein = zeros(A_pt), Friedrichs = zeros(A_pt)/qtilde (rel < 1e-6 at truncation level)"
+      ],
+      "asymptotic_measured": [
+        "lattice class of A_pt zeros -> 0 (rate pt; Aitken^2 < 1e-12 at r = 6/5; < 1e-5 at the muon pin, truncation-free)",
+        "balanced class -> phi_1 (Aitken^2 ~ 1e-11 at q = 2.0736; uniform along the ladder within per-rung tolerance)",
+        "balanced Jacobi -> E-scaled SW at rate pt"
+      ],
+      "open_gaps": [
+        "perturbation lemma: geometrically-converging Jacobi data => equal asymptotic support class (needed to close the transfer at derivation tier)",
+        "exact zero asymptotics zeta_n = qtilde^{2n-1}(1 + O(pt^n)) of A_pt as a cited/proved theorem (used here at measured tier only)",
+        "balanced-side class readout at the q0 pins (N ~ several hundred; out of budget)"
+      ]
+    }
+  }
+}
