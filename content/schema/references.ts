@@ -6995,6 +6995,40 @@ export const references: CSLData[] = [
     note: "Verified 2026-08-01 (ksel2id): the q-Laguerre (generalized Stieltjes–Wigert) polynomials and their orthogonality weights. The one-sided binding normalizer family [k]_q! is exactly the alpha = 0 q-Laguerre moment family under the scaling s ↦ (p/(1-p))s (ksel2id_sw_identification_probe.py S5, exact).",
   }),
 
+  // ── Bergweiler–Hayman 2003 (zeros of solutions of a q-functional equation) ──
+  ref({
+    id: "bergweiler-hayman2003",
+    type: "article-journal",
+    title: "Zeros of Solutions of a Functional Equation",
+    author: [
+      { family: "Bergweiler", given: "Walter" },
+      { family: "Hayman", given: "Walter K." },
+    ],
+    "container-title": "Computational Methods and Function Theory",
+    volume: "3",
+    page: "55-78",
+    issued: { "date-parts": [[2003]] },
+    DOI: "10.1007/BF03321025",
+    URL: "https://doi.org/10.1007/BF03321025",
+    note: "Registered 2026-08-01 (awzero, bean qou-k16h) at METADATA-VERIFICATION level only: title/authors/journal/volume/pages/DOI corroborated by two independent search-index hits on the Springer landing page; the full text was NOT retrievable in this environment (proxy 403 on Springer), so no theorem statement is imported from it. Springer renders the online year as 2004 for CMFT volume 3 (nominally the 2003 volume). Classical home of the geometric-progression zero asymptotics for entire solutions of q-functional equations with a Newton–Puiseux hypothesis — the literature context (not the source) of the A_w zero localization proved independently in docs/audits/2026-08-01-awzero-asymptotics.md.",
+  }),
+
+  // ── Ismail 2005 (the q-Airy function from Plancherel–Rotach asymptotics) ──
+  ref({
+    id: "ismail2005qairy",
+    type: "article-journal",
+    title: "Asymptotics of q-orthogonal polynomials and a q-Airy function",
+    author: [{ family: "Ismail", given: "Mourad E. H." }],
+    "container-title": "International Mathematics Research Notices",
+    volume: "2005",
+    issue: "18",
+    page: "1063-1088",
+    issued: { "date-parts": [[2005]] },
+    DOI: "10.1155/IMRN.2005.1063",
+    URL: "https://doi.org/10.1155/IMRN.2005.1063",
+    note: "Registered 2026-08-01 (awzero, bean qou-k16h) at METADATA-VERIFICATION level only (full text not retrievable here; proxy 403 on OUP). The paper that names the q-Airy function A_q — the Ramanujan entire function whose zeros carry the KSel-2-ID extremal-support class. No zero-asymptotics theorem is attributed to it: the search-index evidence indicates it proves Plancherel–Rotach asymptotics for q-orthogonal polynomials with unbounded recurrence coefficients, not statements about zeros of A_q.",
+  }),
+
   // ── Ramis–Sauloy–Zhang 2013 (local analytic classification of q-difference equations) ──
   ref({
     id: "ramis-sauloy-zhang2013",
