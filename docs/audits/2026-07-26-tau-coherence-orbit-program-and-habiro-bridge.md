@@ -424,3 +424,42 @@ module-membership capstone consuming the full-precision Li₂ layer
 (m=1 fibre needs no ε_m; Pochhammer expansion machinery required) —
 and ε_m units at m > 1 (no printed GSWZ targets; needs the CGZ [10]
 data).
+
+## Addendum 10 (2026-08-01) — Ψ-section capstone: the mod-5 membership shadow PROVED-BY-COMPUTE; printed-(287) reproduction honestly OPEN
+
+`gswz_psi_section_division_probe.py` (3/3 gating) implements the
+m = 1 fibre of the GSWZ module generator Ψ_ξ (Definition 3.9) and runs
+the (287) division experiment on the 5₂ series:
+
+- **Construction**: ε₁ is trivial; the half-shifted Bernoulli/polylog
+  expansion gives `log Ψ_[ζ],1 = −(1/24)Li₀(ζ)h + (7/5760)Li₋₂(ζ)h³ +
+  O(h⁵)` with only EXACT rational polylog values (`B₁(1/2) = B₃(1/2)
+  = 0` kill the Li₁ and h² terms; the Def-3.9 prefactor cancels the
+  Coleman-Li₂ pole).
+- **The 5-pole cancellation (PASSES, and is construction-specific)**:
+  both `φ₃` of the printed (282) series (denominator `414720 =
+  2¹⁰·3⁴·5`) and the Ψ h³ coefficient (`7/5760`) carry genuine
+  5-poles; 5-integrality of the quotient's x³ coefficient — the mod-5
+  shadow of module membership — holds for the principled construction
+  and **fails** for Frobenius-twisted fibres, permuted assignments,
+  and the wrong sign (1 surviving class of 14 in a 28-point grid; the
+  other formal survivors are exact mathematical equivalents: Li₋₂ is
+  odd under ζ → ζ⁻¹, and the two Bernoulli offsets coincide mod 5 via
+  7 ≡ −8). This nontrivially links the 5₂ perturbative series' h³
+  coefficient to the printed Bloch-decomposition coefficients c₁, c₂,
+  c₃ through the Ψ-module structure.
+- **OPEN (honest negative, recorded in the witness)**: digit-by-digit
+  reproduction of the printed (287) x¹..x³ coefficients fails under
+  every grid variant and under any scalar `(1+x)^λ` prefactor (the
+  mismatch has α-components). Candidates: the pdf's displayed `f₅`
+  subscript is genuine (m = 5 fibre unprinted → inputs unavailable);
+  an unprinted α-dependent normalization factor in (281) (footnote 5
+  warns of factor differences vs [26]); or digit-group transcription
+  mangling. Computed quotient digits are recorded for future
+  adjudication.
+
+**Bean qou-9p9y state after this tranche**: dilog layer COMPLETE
+(full-precision Coleman Li₂, Addendum 8); m = 1 Ψ-section built and
+mod-5-validated; remaining: the (287) input-series identification
+(above), ε_m at m > 1 (needs CGZ [10] printed data or an independent
+ε construction), and m > 1 fibres generally.

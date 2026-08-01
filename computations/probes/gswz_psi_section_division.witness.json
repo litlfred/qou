@@ -1,0 +1,89 @@
+{
+ "schema": "probe-witness/v1",
+ "probe": "gswz_psi_section_division_probe",
+ "beans": [
+  "qou-9p9y"
+ ],
+ "source": "GSWZ arXiv:2412.04241v2 Def 3.9, Thm 10, \u00a74.6 eqns (282)/(287); uploads/2412.04241v2.pdf",
+ "field": "Q(alpha)/(alpha^3 - alpha^2 + 1) (5_2 trace field), p = 5, m = 1 fibre",
+ "checks": {
+  "pole_bookkeeping_nonvacuous": true,
+  "x3_pole_cancellation_5_integral": true,
+  "cancellation_specific_to_construction": true
+ },
+ "open_reproduction_of_printed_287": {
+  "status": "open-mismatch",
+  "x1_matches": false,
+  "x2_matches": false,
+  "x3_matches": false,
+  "note": "fails under all 28 grid variants and under any scalar (1+x)^lambda prefactor (mismatch has alpha-components); see docstring for the candidate explanations"
+ },
+ "computed_quotient_digits_lsf": {
+  "x1": {
+   "const": [
+    2,
+    3,
+    2,
+    1
+   ],
+   "alpha": [
+    2,
+    4,
+    4,
+    4
+   ],
+   "alpha2": [
+    1,
+    4,
+    1,
+    4
+   ]
+  },
+  "x2": {
+   "const": [
+    2,
+    4,
+    4,
+    0
+   ],
+   "alpha": [
+    0,
+    4,
+    1,
+    2
+   ],
+   "alpha2": [
+    1,
+    1,
+    2,
+    1
+   ]
+  },
+  "x3": {
+   "const": [
+    3,
+    3,
+    1,
+    3
+   ],
+   "alpha": [
+    3,
+    2,
+    3,
+    1
+   ],
+   "alpha2": [
+    4,
+    0,
+    0,
+    1
+   ]
+  }
+ },
+ "comparison_caps": {
+  "x1_x2": "mod 5^2 (c2 printed to two digits)",
+  "x3": "mod 5 (c2 cap + the 1/5 pole scale)",
+  "const_x1": "mod 5 (single printed digit)"
+ },
+ "scope": "scope-(a): the mod-5 membership shadow (pole cancellation) is PROVED-BY-COMPUTE and construction-specific; the printed (287) digit reproduction is OPEN (input-series identification unresolved); eps_m (m>1) has no printed GSWZ targets (needs CGZ [10] data)"
+}
