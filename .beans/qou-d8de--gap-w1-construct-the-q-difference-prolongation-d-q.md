@@ -1,0 +1,92 @@
+---
+# qou-d8de
+title: 'GAP W1: construct the q-difference prolongation D_q from the color spectral curve Σ'
+status: todo
+type: task
+created_at: 2026-08-01T01:43:06Z
+updated_at: 2026-08-01T01:43:06Z
+---
+
+
+## The wall (W1 / G1 of the C1↔SW leg)
+
+Parent: `qou-3cgi` (C1↔SW geometric leg). Keystone conjecture
+`conj:qdifference-kernel-prolongation-symbol`: the proved binding q-difference
+carrier **C1** (`[m+2]_q b_{m+2} = b_{m+1} + b_m`, Lean `qlift_normalized_kernel_exists`)
+IS the principal symbol of the jet-prolongation operator `J^n E → J^{n+1} E` of the
+Seiberg–Witten connection on the color spectral curve
+
+  `Σ:  P(X,z) = X³ + (z+1)X² + (z²+z+1)X + (z³+z²+z+1) = 0`,   `λ_SW = X dz`.
+
+**W1 = build the prolongation operator itself.** A genuine derivation needs an
+operator `D_q : J^n E → J^{n+1} E` lifting the SW connection to the jet tower over
+Σ. This bean is *only* W1 (construct `D_q`); the downstream symbol extraction (W2)
+and the anti-fit symbol=C1 check (W3/G3) are separate.
+
+## Why the obvious candidate is DEAD (proved, load-bearing)
+
+The classical lift `D = d/dz` is **proved wrong** — do not retry it:
+- `prop:sw-classical-jet-exactness` (Lean `classical_jet_period_zero`,
+  `classical_jet_period_ne_lw`, `fresidue_fderiv`, generic `CommRing`, sorry-free):
+  classical jets `λ_SW^(n) = d(X^{(n-1)})` are **exact** ⇒ all periods/residues `= 0`
+  ⇒ can never equal the binding period `I(m)/m > 0`.
+- Ramification-parity (Lean `QOU/Brings/RamificationParityMonodromy.lean`, sorry-free):
+  at a simple branch `z = z_c + t²` the covering monodromy `t ↦ −t` acts by `(−1)^k`
+  on `a_k t^k`; classical `d/dz = (1/2t) d/dt` shifts the `t`-exponent by exactly −2,
+  hence **preserves t-parity** — so the classical jet cannot generate the Door-v
+  `(−1)^n` twist that `C1⊗C1` vs GGM differ by.
+- `ColorCubicPowerSums.color_power_sums`: the power sums `pₙ = −(zⁿ+1)` are **q-free**,
+  so any operator reproducing the q-deformed C1 must be **non-classical (q-difference)**,
+  not built from the classical differential of Σ.
+
+So the "which prolongation" question is closed down to **q-difference**; W1 is to
+actually construct that q-difference `D_q` from Σ.
+
+## What is missing (the real gap)
+
+Neither Mathlib nor the corpus has a **q-jet bundle / q-D-module prolongation of a
+connection on an algebraic curve**. There is no object `J^n_q E`, no q-difference
+connection lift, no q-symbol calculus at a ramified pole. This is genuine
+mathematical-infrastructure construction, not a probe.
+
+## Existing infra to build on
+
+- `QOU/Mass/ColorSpectralCubicGeometry.lean` — `color_cubic_discriminant`
+  (disc = −branchSextic), `branchSextic_palindromic` (`z ↦ 1/z`), the branch locus.
+- `QOU/Mass/sw-classical-jet-exactness.lean` — the proved `fresidue`/jet model
+  (`fresidue_fderiv`, `classical_jet_period_zero`) — the model to *extend* with a
+  q-difference (rather than classical `d/dz`) prolongation.
+- `QOU/Brings/RamificationParityMonodromy.lean` — the `t ↦ −t` parity involution at
+  the branch point (the local coordinate where `D_q`'s symbol would be read).
+- `computations/probes/zgeometric_ramification_parity_probe.py` — numerical branch
+  point `z_c` (|P_X(X0,z_c)| ≈ 6e−21), local `t`-expansion machinery.
+
+## Honest candidate routes (none attempted — this is the open work)
+
+1. **q-shift on the base.** Define `D_q` from the base q-shift `z ↦ q² z` (or the
+   multiplicative structure the fibre root-of-unity singularity induces on Σ), and a
+   q-connection lift on the jet tower; test whether the induced symbol is depth-2.
+2. **Root-of-unity fibre monodromy.** The fibre singularity is a root of unity; a
+   q-difference connection may arise naturally from its local monodromy. Construct the
+   q-D-module from that datum.
+3. **Literature.** q-difference D-modules / q-jets: Sauloy; Di Vizio; van der Put–
+   Singer *Galois Theory of Difference Equations*; Ramis–Sauloy–Zhang local
+   classification of q-difference modules (needed for W2 anyway). Import the
+   right definitional framework before hand-rolling.
+
+## Anti-laundering (STRICT — carries to W3/G3)
+
+C1 is *already* fixed by the binding recurrence. A symbol match is meaningful ONLY
+if `D_q` and its symbol are computed from Σ **independently** — never fitted to
+reproduce `[m+2]_q(·)=(·)+(·)`. Constructing `D_q` "so that" its symbol is C1 is a
+fit, not a derivation, and must not be wired to production (owner directive; §Axioms
+are NOT a Proof; Subgoal-2 open-for-all grants permission to *derive*, not to fit).
+
+## Verdict / scope
+
+Multi-month geometric-analysis construction (per
+`docs/audits/2026-07-20-zgeometric-prolongation-symbol-scoping.md` §3–4:
+"cannot be closed by a probe or a short Lean lemma"). Not a session brick. Honest
+next step: pick route 3 (import the q-difference D-module framework from the
+literature) before attempting routes 1–2, so `D_q` is built on a real definitional
+foundation rather than an ad-hoc operator.
