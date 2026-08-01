@@ -1,0 +1,192 @@
+{
+  "computation": "fourone-stokes-series-selfcheck",
+  "scriptFile": "fourone_stokes_series_selfcheck.py",
+  "scriptHash": "f18ad6d198a1",
+  "commitSha": "2a7b6b96617d7aaeca6d486c0b57463c961738dc",
+  "scriptCommitSha": "",
+  "computedAt": "2026-08-01T18:43:55.721583+00:00",
+  "engine": "python-fractions (exact Q[[q]] arithmetic)",
+  "reference": "Fantini-Wheeler, arXiv:2410.20973v1, Section 4.1, eq (72)-(74)",
+  "knot": "4_1 (figure-eight)",
+  "saddle_data_AB": [
+    1,
+    2
+  ],
+  "max_saddle": 2,
+  "truncation_order_N": 16,
+  "closed_form": {
+    "E1": "E_1(q) = -1/4 + sum_{k>=1} q^k/(1-q^k) = -1/4 + sum_{n>=1} d(n) q^n",
+    "d(n)": "sigma_0(n), the number-of-divisors function"
+  },
+  "derived": {
+    "E1_constant": "-1/4",
+    "E1_coeffs_q1_to_qN": {
+      "0": "-1/4",
+      "1": 1,
+      "2": 2,
+      "3": 2,
+      "4": 3,
+      "5": 2,
+      "6": 4,
+      "7": 2,
+      "8": 4,
+      "9": 3,
+      "10": 4,
+      "11": 2,
+      "12": 6,
+      "13": 2,
+      "14": 4,
+      "15": 4,
+      "16": 5
+    },
+    "g0_coeffs_q0_to_q11": [
+      1,
+      -1,
+      -2,
+      -2,
+      -2,
+      0,
+      1,
+      5,
+      7,
+      11,
+      13,
+      16
+    ],
+    "two_G0_coeffs_q0_to_q9": [
+      1,
+      -7,
+      -14,
+      -8,
+      -2,
+      30,
+      43,
+      95,
+      109,
+      137
+    ]
+  },
+  "assertions": [
+    {
+      "name": "E1_constant_term_is_minus_one_quarter",
+      "computed": "-1/4",
+      "expected": "-1/4",
+      "passed": true
+    },
+    {
+      "name": "E1_integer_coeffs_match_printed_eq73",
+      "computed": [
+        1,
+        2,
+        2,
+        3,
+        2,
+        4,
+        2,
+        4,
+        3
+      ],
+      "expected": [
+        1,
+        2,
+        2,
+        3,
+        2,
+        4,
+        2,
+        4,
+        3
+      ],
+      "passed": true
+    },
+    {
+      "name": "E1_integer_coeffs_equal_divisor_function_sigma0",
+      "computed": [
+        1,
+        2,
+        2,
+        3,
+        2,
+        4,
+        2,
+        4,
+        3
+      ],
+      "expected": [
+        1,
+        2,
+        2,
+        3,
+        2,
+        4,
+        2,
+        4,
+        3
+      ],
+      "passed": true
+    },
+    {
+      "name": "g0_series_matches_printed_eq74a",
+      "computed": [
+        1,
+        -1,
+        -2,
+        -2,
+        -2,
+        0,
+        1,
+        5,
+        7,
+        11,
+        13,
+        16
+      ],
+      "expected": [
+        1,
+        -1,
+        -2,
+        -2,
+        -2,
+        0,
+        1,
+        5,
+        7,
+        11,
+        13,
+        16
+      ],
+      "passed": true
+    },
+    {
+      "name": "two_G0_series_matches_printed_eq74b",
+      "computed": [
+        1,
+        -7,
+        -14,
+        -8,
+        -2,
+        30,
+        43,
+        95,
+        109,
+        137
+      ],
+      "expected": [
+        1,
+        -7,
+        -14,
+        -8,
+        -2,
+        30,
+        43,
+        95,
+        109,
+        137
+      ],
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "verdict": "MATCH -- E_1 (eq 73) derived from the divisor-function Lambert series reproduces the published integer sequence exactly; the full eq (72)->(74) machinery (g_0, G_0) also matches FW eq (74).",
+  "discipline": "self-check vs published integer sequence (Fantini-Wheeler eq 73); no fit; nothing wired"
+}
