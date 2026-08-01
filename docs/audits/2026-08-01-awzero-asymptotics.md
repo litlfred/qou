@@ -306,6 +306,18 @@ $$
   \qquad r = w^{2M+3}\lvert z\rvert < 1 .
 $$
 
+**Endpoint certification against the tail (added after Copilot review on
+PR #4507).** The bisection sees only the truncation $\sum_{m \le M} a_m z^m$,
+so a sign change *there* certifies a sign change of the **true** series only
+if the truncation's magnitude exceeds the tail bound at each bracket
+endpoint. The probe now asserts exactly that — $\lvert\sum_{m \le M} a_m z^m
+\rvert >$ (the displayed tail bound) at both endpoints, for every
+$n \ge n_0$ — and records both bound values per row. Previously the bound was
+computed but only *reported*, never applied to the endpoints, so the word
+"certified" claimed more than the code did. The assertion passes at every
+rung including the pin: 69 certified rows, zero failures, at dps 583 for
+$n \approx 135$.
+
 The probe **asserts** $\lvert\theta_n\rvert \le 2\kappa(w)w^n$ at every certified
 index. Where $n_0 \le 12$ every index $1..n_0+8$ is enumerated, which also
 verifies the *ordering* independently of the counting argument; above that, the
