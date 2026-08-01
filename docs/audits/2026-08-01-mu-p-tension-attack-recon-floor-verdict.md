@@ -40,10 +40,11 @@ scaffolds the honest hypothesis: the bare anchor `m_μ = m_e·Vol(4₁)/ℏ_q²`
 Bring's quintic surface), and its mass should carry a Wedderburn-trace correction
 `F(E_{(3,2)}, q₀)`.
 
-The file states the required correction factor `0.999999788` (the 210 ppb) as a
-**`target_correction_constraint`** — a conditional `structure`, **not** a
-derivation. Per AGENTS.md §"Axiomatization is NOT a Proof": a conditional class /
-target constraint does **not** discharge the math. GAP-A-4 is **open**.
+Concretely, the `GapA4MuonMass` **structure** carries `wedderburn_correction` as a
+free field, and `target_correction_constraint` is a `def … : Prop` **predicate**
+pinning it to `0.999999788` (the 210 ppb) — neither the field nor the predicate
+*derives* the value. Per AGENTS.md §"Axiomatization is NOT a Proof": a structure
+field plus a target predicate does **not** discharge the math. GAP-A-4 is **open**.
 
 ## 3. The most natural realization is REFUTED (#2584, merged)
 
