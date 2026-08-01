@@ -174,6 +174,7 @@ import QOU.InformationTheory
 -- Sorry-free P-vs-NP information-theoretic bricks (the counting/decision
 -- carrier `QouPNeqNp` stays orphaned — it holds the one intentional `sorry`).
 import QOU.Information.SurrealBudgetGrade
+import QOU.Information.GCTMultiplicityObstruction
 import QOU.LightningPath
 import QOU.RepresentationTheory
 import QOU.GradedFrobeniusHopf
