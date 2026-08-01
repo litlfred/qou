@@ -66,6 +66,11 @@ from witness_base import WitnessBuilder  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 
 _T0 = time.time()
+# Separate MONOTONIC baseline for the witness. WitnessBuilder computes its
+# duration against time.monotonic(), so handing it the wall-clock `_T0`
+# (an epoch value) yields a large NEGATIVE durationMs. `_T0` stays wall-clock
+# because it only feeds the human-readable progress log.
+_T0_MONO = time.monotonic()
 
 
 def _log(msg):
@@ -381,7 +386,7 @@ def main():
     # start_time = process start, so durationMs measures the whole symbolic
     # derivation rather than just the save step.
     w = WitnessBuilder("a4-brunnian-deficit-closed-form", engine="python",
-                       start_time=_T0)
+                       start_time=_T0_MONO)
     w.set_description(
         "EXACT symbolic closed form of the A=4 4-component Brunnian level deficit "
         "1 - tau_L4 under the perblock convention g = sum y_lambda*|chi_lambda| at base "
