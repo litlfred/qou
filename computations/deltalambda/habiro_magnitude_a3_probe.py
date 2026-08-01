@@ -74,3 +74,82 @@ for k in range(1,4):
     for xn, xv in Xcands.items():
         val = kq*(1 - h0**2 * xv)
         print(f"  [{k}]_q*(1 - h^2*{xn:16s}) = {mp.nstr(val,8):>10}   vs r*={mp.nstr(rstar,6)}  diff={mp.nstr(val-rstar,4)}")
+
+# ---- witness emission ----
+import json, os, hashlib, datetime, subprocess
+poch40 = poch(q0, 40)
+best_scan = min(
+    [(float(abs(qs[a]/qs[b]-rstar)), f"[{a}]_q/[{b}]_q", float(qs[a]/qs[b]))
+     for a in range(1,8) for b in range(1,8)],
+    key=lambda t: t[0])
+here = os.path.dirname(os.path.abspath(__file__))
+script_path = os.path.abspath(__file__)
+with open(script_path, 'rb') as f:
+    script_hash = hashlib.sha256(f.read()).hexdigest()[:12]
+try:
+    script_commit = subprocess.check_output(
+        ["git", "log", "-1", "--format=%H", "--", script_path],
+        cwd=here).decode().strip() or "unknown"
+except Exception:
+    script_commit = "unknown"
+witness = {
+    "engine": "mpmath",
+    "engineVersion": "python",
+    "computedAt": datetime.datetime.now(datetime.timezone.utc).isoformat(),
+    "computation": "habiro-magnitude-a3",
+    "scriptFile": "habiro_magnitude_a3_probe.py",
+    "scriptHash": script_hash,
+    "scriptCommitSha": script_commit,
+    "audit_only": True,
+    "tier": "two-part honest negative: REFUTE(scope-b) infinite-Habiro divergence at q0>1 + WALL(scope-a) finite-Laurent bracket; 0 fit; nothing wired",
+    "description": (
+        "GAP-A-3 ROUTE 4: does a Habiro-ring cyclotomic-completion fibre element supply the A=3 "
+        "magnitude r* = mu3/c3 = 0.4708/0.297 = 1.5852? NO derived element found. (1) REFUTE(scope-b): "
+        "the substrate anchor q0=1.10998>1 is OUTSIDE the Habiro ring's evaluation locus (roots of "
+        "unity / |q|<1). The cyclotomic basis magnitude |(q;q)_n|=prod(q^k-1) is UNBOUNDED for q>1 "
+        "(|(q;q)_40|~1.8e31); an integer-coefficient completion series Sum a_n (q;q)_n has non-vanishing "
+        "terms and diverges there, so a genuine infinite Habiro element has no canonical archimedean value "
+        "at the substrate. Cited Lean invariant: pochAbs_unbounded, habiro_terms_not_tendsto_zero "
+        "(HabiroMagnitudeA3.lean, sorry-free, lean-direct exit 0). (2) WALL(scope-a): the only "
+        "Habiro-shape elements evaluable at q0>1 are FINITE (Laurent) — the alpha_EM shape [k]_q(1-h^2 X). "
+        "r* in (3/2,2) lies STRICTLY between [1]_q=1 and [2]_q~2.011; the (1-h^2 X) correction is negligible "
+        "(h^2 X ~ 6e-5); no derived (0-fit) integer k or categorical X lands on r*. Best quantum-integer "
+        "fit-scan match [6]_q/[4]_q=1.554 (-1.9%) is a scan match, not a forced value. 0 fit; mu3/c3/AME/"
+        "CODATA/q0 never inverted; nothing wired. Parallels alpha_EM [2]_q(1-h^2 alpha) PR#1511 and the "
+        "Q_beta Habiro element — those are FINITE Laurent objects, consistent with this finding."
+    ),
+    "assertions": [
+        {"name": "q0_gt_one", "computed": str(q0 > 1), "expected": "True", "passed": bool(q0 > 1)},
+        {"name": "pochAbs_grows_unbounded_q0",
+         "computed": mp.nstr(abs(poch40), 6), "expected": ">1e30 at n=40", "passed": bool(abs(poch40) > mp.mpf('1e30'))},
+        {"name": "rstar_in_open_3half_2",
+         "computed": mp.nstr(rstar, 8), "expected": "(1.5, 2.0)", "passed": bool((mp.mpf('1.5') < rstar) and (rstar < mp.mpf('2')))},
+        {"name": "no_quantum_integer_matches_rstar_0fit",
+         "computed": f"best={best_scan[1]}={best_scan[2]:.4f} (diff {best_scan[0]:.4f})",
+         "expected": "no [k]_q/[m]_q equals r* (best is a fit-scan near-miss)", "passed": bool(best_scan[0] > 1e-3)},
+        {"name": "alpha_em_shape_correction_negligible",
+         "computed": mp.nstr(h0**2 * defval, 4), "expected": "~6e-5 (finite element ~ [k]_q)", "passed": bool(h0**2*defval < mp.mpf('1e-3'))},
+    ],
+    "result": {
+        "q0": str(q0),
+        "h0": str(h0),
+        "mu3_MeV": str(mu3),
+        "c3_MeV": str(c3),
+        "rstar": str(rstar),
+        "pochAbs_n40_magnitude": mp.nstr(abs(poch40), 8),
+        "qInt1_q0": mp.nstr(qint(1,q0), 8),
+        "qInt2_q0": mp.nstr(qint(2,q0), 8),
+        "best_quantum_integer_scan": {"name": best_scan[1], "value": best_scan[2], "diff_to_rstar": best_scan[0]},
+        "alpha_em_shape_correction_h2X": mp.nstr(h0**2 * defval, 6),
+        "borr_deficit_q0": mp.nstr(defval, 10),
+        "hecke_over_leading_weight_pct": mp.nstr((defval/lead-1)*100, 4),
+        "required_pct": mp.nstr((rstar-1)*100, 4),
+    },
+    "lean": "QOU/MassTheory/HabiroMagnitudeA3.lean",
+    "verdict": "no DERIVED Habiro element supplies r*; REFUTE(scope-b) infinite-completion divergence at q0>1 + WALL(scope-a) finite-Laurent bracket; nothing wired, no fit",
+}
+witness["allPassed"] = all(a["passed"] for a in witness["assertions"])
+out = os.path.join(here, "habiro-magnitude-a3.witness.json")
+with open(out, "w") as f:
+    json.dump(witness, f, indent=2)
+print(f"\nwrote {out}  allPassed={witness['allPassed']}")

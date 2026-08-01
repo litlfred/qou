@@ -901,3 +901,32 @@ single-trace family it CAN reach `O(1)`), but not a closure. `A3CrossTermMagnitu
 `2026-08-01-a3-magnitude-super-berezinian-cross-sector.md`; witness
 `a3-magnitude-berezinian-crossterm.witness.json`. Nothing wired; `μ₃`/`c₃` never inverted;
 `free_parameters = 0`.
+
+**2026-08-01 — A=3 magnitude ROUTE 4: a Habiro-ring FIBRE element does NOT supply `r* ≈ 1.585`
+— two-part honest negative REFUTE(scope-b) + WALL(scope-a).** (Branch
+`claude/a3-magnitude-habiro-fibre-element-2026-08-01`, bean `qou-2ybf`.) **Distinct angle:** the
+last candidate named by the Vassiliev audit ("structure OUTSIDE the finite-type filtration") — a
+fibre-level cyclotomic-completion element `F(q) = Σ_n a_n(q)(q;q)_n`, parallel to the proved α_EM
+`[2]_q(1−h²α)` (#1511) and the Q_β Habiro element. **Decisive obstruction — the substrate anchor
+is `q₀ > 1`:** the Habiro ring `ℤ[q]^ = lim ℤ[q]/((q;q)_n)` evaluates canonically at roots of
+unity / inside `|q|<1`, but `q₀ ≈ 1.10998 > 1` is OUTSIDE both. For real `q>1` the cyclotomic
+basis magnitude `|(q;q)_n| = ∏(q^k−1)` is **UNBOUNDED** (`|(q;q)_40|≈1.8·10³¹`; Lean
+`pochAbs_unbounded` via geometric doubling once `q^{n+1}−1≥2`), so an integer-coefficient
+completion series has non-vanishing terms and **diverges** there (`habiro_terms_not_tendsto_zero`)
+— a genuine infinite Habiro element has NO canonical archimedean value at the substrate ⇒
+**REFUTE(scope-b)**, cited invariant `pochAbs_unbounded`. **Finite sub-case:** the only Habiro-
+shape elements evaluable at `q₀>1` are FINITE (Laurent), i.e. the α_EM shape `[k]_q(1−h²X)` — a
+genuine Laurent object (the α_EM/Q_β elements ARE finite Laurent, not infinite tails). Those are
+bracketed: `r*∈(3/2,2)` lies STRICTLY between `[1]_q=1` and `[2]_q=q₀+q₀⁻¹≈2.011`
+(`rStar_strictly_between_q1_q2`); the `(1−h²X)` correction is negligible (`h²X≈6·10⁻⁵`); no
+derived (0-fit) integer `k` or categorical `X` lands on `r*` (best fit-scan `[6]_q/[4]_q=1.554`,
+−1.9%, is a scan match not a forced value) ⇒ **WALL(scope-a)**. **Net:** no DERIVED Habiro
+element reproduces `r*` — the genuinely-new infinite completion diverges at `q₀>1`, the
+well-defined finite part is the already-bracketed quantum integer. Consistent with the fibre-vs-
+observable framing (the c_k / magnitude coefficients live in the fibre; a REAL `f(q₀)` was already
+refuted, #1821). The `1.585×` needs structure genuinely outside the single-deficit filtration AND
+representable as a finite / resummed object at `q₀>1` — an operator-valued cross-channel combiner,
+not a bare cyclotomic-completion tail. Lean `HabiroMagnitudeA3.lean` sorry-free (lean-direct exit
+0, no trivial-true/native_decide/axiom); probe/witness `habiro-magnitude-a3.witness.json`; audit
+`2026-08-01-deltalambda-a3-magnitude-habiro-fibre-element.md`. Nothing wired; `μ₃/c₃`/AME/CODATA/
+`q₀` never inverted; `free_parameters = 0`.
