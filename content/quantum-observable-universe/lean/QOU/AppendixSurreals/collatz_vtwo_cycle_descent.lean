@@ -29,14 +29,16 @@ element's orbit is not analysed here. Base ring `ℤ[q^{±1}]` (§7c: fibre leve
 
 namespace QOU.AppendixSurreals
 
-open LaurentPolynomial QOU.MathlibExt.LaurentTwoValuation
+open QOU.MathlibExt.LaurentTwoValuation
 
+open LaurentPolynomial in
 /-- **Even-branch step of the fundamental cycle (sorry-free).**  `q⁻¹·[2]_q =
     1+q⁻¹`: the even branch `P ↦ P/[2]_q` sends `1+q⁻¹ ↦ q⁻¹`. -/
 theorem cycle_even_step :
     (T (-1) : LaurentPolynomial ℤ) * (T 1 + 1) = 1 + T (-1) := by
   rw [mul_comm]; exact one_add_qinv_eq.symm
 
+open LaurentPolynomial in
 /-- **`v_[2]` strictly descends at the fundamental cycle (sorry-free).**  The even
     branch sends the non-attractor point `1+q⁻¹` to the attractor `q⁻¹`, and
     `v_[2]` drops from `1` to `0`.  So `v_[2]` satisfies the strict-descent
