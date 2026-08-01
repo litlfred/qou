@@ -43,6 +43,29 @@ coordination. Probe
 [`a3_units_consistency_probe.py`](../../computations/deltalambda/a3_units_consistency_probe.py);
 Lean [`A3UnitsConsistency.lean`](../../content/quantum-observable-universe/lean/QOU/MassTheory/A3UnitsConsistency.lean).
 
+## 0b. Attacking C_knot directly — the "single universal factor" shortcut is refuted
+
+Since C_knot is the real open gate, the natural first move is: *is it one geometric factor `5.85` to
+derive?* Formalize-first first step (find the invariant / prune the class) — the answer is **no**, from
+two committed corpus witnesses:
+
+| deuteron, same isotope | weighting convention | C_knot |
+|---|---|---|
+| `binding-energy-categorical-deuteron` | interface-inclusive per-λ sum | **5.85** |
+| `delta-lambda-multi-atom-crosscheck` | signed dim_q sum | **240** |
+
+**The same deuteron gives a 41× convention-spread.** A single derivable constant cannot fit even the
+deuteron, so *"improve binding by deriving one factor 5.85"* is not available — **C_knot ≡ the full
+per-partition Δ_λ, and it is not well-posed until the weighting convention is pinned.** (Across isotopes
+the signed-dim_q convention gives 240 / 40717 / 31475 for D / T / ³He, but the triton naive sum
+**near-cancels** — 0.0002 MeV — so that 170× is a convention pathology, not clean A-dependence; the
+robust claim is the 41× convention spread.) This is scope-(a): a refutation of the **one-number
+shortcut**, not a structural exclusion of a Δ_λ derivation (open — bean `qou-3q7t`). It is a
+*measurement* (arithmetic on two witnesses), so it carries no new Lean theorem. It connects the gate to
+this PR's convention-fragility thread: μ₃, the units pun, the scale ambiguity, and now C_knot itself are
+all convention-dependent. Probe
+[`c_knot_not_universal_probe.py`](../../computations/deltalambda/c_knot_not_universal_probe.py).
+
 ## 0a. The question no sibling was asking
 
 Every Δ_λ A=3 sibling attacks the **1.6× magnitude gap** — the derived 3-body cluster
