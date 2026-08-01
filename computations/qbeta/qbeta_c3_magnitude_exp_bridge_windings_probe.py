@@ -29,13 +29,13 @@ DERIVE (fixed, not fitted):
 CHECK (assertions, honest miss-is-a-miss):
   [D1] canonical meridian/longitude pair (ΔN = 1) predicts |S_p/S_m| ≈ 1.04 under
        BOTH ℏ conventions — undershoots the target 4.075 by ~3.9×.
-  [D2] hitting 4.075 requires ΔN ≈ 34–36. The genuinely DISTINGUISHED canonical pair
-       is meridian/longitude (ΔN = 1); ΔN ≈ 34 is not that pair, and is not even a
-       cross-form pair-difference within the |m|,|ℓ| ≤ 3 box (spectrum reaches |N| = 27
-       only at extreme windings like (3,3)). So the target is reachable only by
-       deliberately selecting large/extreme windings — the Dang–Purcell dense-fit
-       resource the corpus already flagged (magnitudes must not be pursued by
-       cusp-shape selection).
+  [D2] hitting 4.075 requires ΔN ≈ 34–36 — ≥30× the FORCED distinguished-pair value
+       (meridian/longitude, ΔN = 1, no winding freedom). Reaching such a ΔN needs
+       deliberately-selected non-distinguished (extreme, up to (3,3), |N|=27) windings —
+       the Dang–Purcell dense-fit resource the corpus already flagged (magnitudes must not
+       be pursued by cusp-shape selection). (Whether ΔN itself is a pair-difference in the
+       ≤3 box is convention-dependent — False for ℏ_sub, True for ℏ_log — so it is recorded
+       as data, not used as the negative; even a reachable ΔN uses non-distinguished windings.)
   [D3] ⇒ MISS (scope-(a)): the even-channel exponential bridge at canonical windings
        does NOT reproduce the c₃ magnitude ratio. The magnitude stays open; this
        narrows the search by ruling out the canonical-winding exponential bridge.
@@ -57,12 +57,12 @@ from witness_base import WitnessBuilder  # noqa: E402
 from qbeta_utils import c3_target_at  # noqa: E402
 from qou_substrate.constants import q_at, q_muon_at  # noqa: E402
 from substrate import codata_constants as C  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 50
+set_compute_dps()  # canonical compute dps; matches WitnessBuilder precisionMetadata
 ME = mp.mpf(str(C.M_E_MEV))
 QCOD = mp.mpf(str(C.Q_BETA_MEV))
-with mp.workdps(50):
-    VOL41 = +(2 * mp.clsin(2, mp.pi / 3))
+VOL41 = +(2 * mp.clsin(2, mp.pi / 3))
 
 
 def S(q):
@@ -109,17 +109,23 @@ def main() -> int:
     N_spectrum = sorted({cross_N(m, l) for (m, l) in canonical_windings})
     max_abs_N = max(abs(n) for n in N_spectrum)
     pair_diffs = {a - b for a in N_spectrum for b in N_spectrum}
-    # is the (rounded) needed ΔN even a canonical winding-pair difference?
-    dN_int = int(mp.nint(dN_needed["hbar_sub"]))
-    dN_reachable_as_pair = dN_int in pair_diffs
+    # is the (rounded) needed ΔN even a canonical winding-pair difference? — per ℏ convention
+    dN_int = {nm: int(mp.nint(dN_needed[nm])) for nm in dN_needed}
+    dN_reachable_as_pair = {nm: dN_int[nm] in pair_diffs for nm in dN_needed}
     for nm in dN_needed:
-        print(f"  {nm}: ΔN needed for target = {mp.nstr(dN_needed[nm],6)}")
-    print(f"  canonical cross-form spectrum (|m|,|ℓ|≤3): {N_spectrum}")
+        print(f"  {nm}: ΔN needed for target = {mp.nstr(dN_needed[nm],6)}  "
+              f"(≈{dN_int[nm]}; reachable as canonical pair-difference? {dN_reachable_as_pair[nm]})")
+    print(f"  canonical cross-form spectrum (|m|,|ℓ|≤3): {N_spectrum}  (max |N| = {max_abs_N})")
     print(f"  distinguished canonical pair = meridian(1,0)/longitude(0,1), ΔN={dN_canonical}")
-    print(f"  needed ΔN≈{dN_int} reachable as a canonical pair-difference? {dN_reachable_as_pair}")
-    # D2: the DISTINGUISHED canonical pair misses (ΔN=1 ⇒ ~1.04), and the needed ΔN is
-    # neither that pair nor (for ℏ_sub) even a pair-difference in the ≤3 box.
-    d2_needs_uncanonical = (dN_canonical == 1 and d1_undershoot and not dN_reachable_as_pair)
+    # D2 (convention-robust): the DISTINGUISHED canonical pair is FORCED (ΔN=1, no winding
+    # freedom) and misses by ~3.9× under both ℏ; the needed ΔN≈34–36 is ≥30× that forced
+    # value, so matching requires deliberately selecting non-distinguished (extreme) windings
+    # — the Dang–Purcell dense-fit resource. (The pair-difference reachability of ΔN itself is
+    # convention-dependent — False for ℏ_sub, True for ℏ_log via extreme windings — recorded as
+    # data, NOT used as the assertion, since even a reachable ΔN uses non-distinguished windings.)
+    min_needed = min(dN_needed["hbar_sub"], dN_needed["hbar_log"])
+    d2_needs_uncanonical = bool(dN_canonical == 1 and d1_undershoot
+                                and min_needed > 30 * dN_canonical)
 
     # [D3] verdict: MISS
     print("\n ⇒ MISS (scope-(a)): even-channel exponential bridge at CANONICAL windings")
@@ -133,8 +139,10 @@ def main() -> int:
         "|δf|~e^{−Re𝔙/ℏ_q} with Re𝔙₄₁(u_{m,ℓ})=Vol(4₁)−(3/8)(ln q₀)²(2m+ℓ)ℓ as the "
         "c₃ magnitude route, at CANONICAL cusp windings (meridian (1,0) N=0, longitude "
         "(0,1) N=1, ΔN=1), no tuning. Both ℏ conventions predict |S_p/S_m|≈1.04, "
-        "undershooting the target 4.075 by ~3.9×; the target needs ΔN≈34–36, outside the "
-        "canonical low-winding cross-form spectrum (|N|≤15, |m|,|ℓ|≤3). MISS (scope-(a)): "
+        "undershooting the target 4.075 by ~3.9×; the target needs ΔN≈34–36, ≥30× the FORCED "
+        "distinguished-pair value (ΔN=1), so matching requires deliberately-selected extreme "
+        "(non-distinguished) windings (dense-fit resource; the pair-difference reachability of ΔN "
+        "is convention-dependent — recorded as data, not the negative). MISS (scope-(a)): "
         "the canonical-winding even-channel exponential bridge does NOT reproduce the c₃ "
         "magnitude; magnitude stays open, sign remains lattice-arithmetic [W]. No fit; "
         "nothing wired; no instance fabricated.")
@@ -147,7 +155,8 @@ def main() -> int:
         "delta_N_needed_hbar_sub": mp.nstr(dN_needed["hbar_sub"], 8),
         "delta_N_needed_hbar_log": mp.nstr(dN_needed["hbar_log"], 8),
         "canonical_cross_form_max_abs_N": max_abs_N,
-        "needed_delta_N_is_canonical_pair_difference": bool(dN_reachable_as_pair),
+        "needed_delta_N_is_canonical_pair_difference_hbar_sub": bool(dN_reachable_as_pair["hbar_sub"]),
+        "needed_delta_N_is_canonical_pair_difference_hbar_log": bool(dN_reachable_as_pair["hbar_log"]),
         "verdict": ("MISS scope-(a): canonical-winding even-channel exponential bridge "
                     "undershoots |S_p/S_m| ~3.9x; needs uncanonical ΔN≈34; magnitude open, "
                     "sign lattice-arithmetic")})
