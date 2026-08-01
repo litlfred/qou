@@ -1,0 +1,41 @@
+{
+  "schema": "witness/v1",
+  "engine": "python+sympy",
+  "scriptFile": "c3_w2_inf_formal_solution.py",
+  "commitSha": "262c0bf73b98c3496d621541b2cde0d60fada6a3",
+  "description": "W2 inf: explicit formal solution of C1 at infinity, c_{m+1}=c_m(1+(q-1)q^m+(q-1)q^{2m}); deg_q(c_n)=n^2 (q-Gevrey-1/2 divergence, the Stokes signature). Symbolic.",
+  "computation": {
+    "script": "computations/qbeta/c3_w2_inf_formal_solution.py",
+    "scriptCommitSha": "262c0bf73b98c3496d621541b2cde0d60fada6a3",
+    "scriptHash": "7f69593f6306"
+  },
+  "results": {
+    "operator": "L1 = (q^2 x - 1) s^2 - (q-1) s - (q-1)  [C1, RSZ route-A], solved at x=inf",
+    "ansatz": "f(x) = sum_{n>=0} c_n x^{-n}",
+    "recurrence": "c_{m+1} = c_m * (1 + (q-1) q^m + (q-1) q^{2m}),  c_0 = 1",
+    "first_ratios": [
+      "2*q - 1",
+      "q**3 - q + 1",
+      "q**5 - q**4 + q**3 - q**2 + 1",
+      "q**7 - q**6 + q**4 - q**3 + 1",
+      "q**9 - q**8 + q**5 - q**4 + 1"
+    ],
+    "deg_q_c_n": [
+      0,
+      1,
+      4,
+      9,
+      16,
+      25,
+      36,
+      49,
+      64,
+      81
+    ],
+    "deg_q_c_n_equals_n_squared": true,
+    "ratio_degree_is_2m_plus_1": true,
+    "growth": "coefficients grow like q^{n^2} => q-Gevrey (divergent) => Stokes summation needed"
+  },
+  "verdict": "CONFIRMED: C1 formal solution at inf has deg_q(c_n)=n^2 exactly (q-Gevrey divergence). The Stokes multipliers U in C^2 (Borel-summed sector difference) remain the RSZ-wild residual.",
+  "scope": "Formal solution + growth only; Stokes summation is the residual. No fit."
+}
