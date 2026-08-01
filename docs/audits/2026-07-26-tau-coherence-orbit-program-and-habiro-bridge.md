@@ -266,3 +266,29 @@ compute them).
 at the categorical-factor level) and `two_bracket_bar_fixed`
 (`[2]_{q⁻¹} = [2]_q`, unconditional). The root-of-unity family for the
 τ-tower remains the bean's open half.
+
+## Addendum 5 (2026-08-01) — T1 mod-p dilog layer green; Copilot hardening
+
+**qou-dugz (T1) — mod-p dilog layer LANDED, 4/4.**
+`gswz_padic_dilog_modp_probe.py`: Kontsevich's finite polylogarithm
+`li_{2,5}` + GSWZ Prop 3.2 (`p⁻²D_p(ζ^p) ≡ li_{2,p}(ζ)/(ζ−1)^p mod p`)
+in exact `Z/5⁶` arithmetic. Since `25 ≡ 1 mod 24`, every `ζ₂₄^k` is a
+5th power, so ALL three printed `D₅` values of GSWZ eqn (273) are
+reachable — and all three match (at `ζ₂₄`, `ζ₂₄²`, `ζ₂₄⁶`), plus the
+`li_{2,5}(1) ≡ 0` sanity. Transcription note: the middle row of (273)
+is `D₅(ζ₂₄²)` — pypdf mangles the superscript; the exponent-5 reading
+was Frobenius-INCONSISTENT (the Prop-3.2 predictions at ζ and ζ⁵ are
+Frobenius conjugates), which is how the error was caught and the
+exponent-2 reading confirmed. The full Coleman `Li₂` (higher precision,
+non-root arguments for the printed (271)) stays queued.
+
+**Copilot review (first in 7 PRs) — correct, accepted, fixed.** The
+Teichmüller stabilization check was vacuously true on loop exhaustion
+and `any()` accepted orders 8/12. Fixed (break-only flag; `all()` over
+maximal proper divisors); witnesses regenerated, still 9/9 — the
+math stood, the checks are now falsifiable. Lesson recorded: witness
+checks must be constructed to be able to fail.
+
+Gate stack status: symmetrization integrality ✓, Frobenius lift ✓,
+Teichmüller ✓, mod-p dilog ✓; remaining for the full membership
+harness (bean qou-9p9y): Coleman Li₂ precision layer + ε_m units.
