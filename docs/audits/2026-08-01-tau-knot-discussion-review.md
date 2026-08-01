@@ -44,7 +44,7 @@ corpus's own embeddable-spectrum machinery
 
 1. **Identity knot:** settled corpus canon — τ = 7₁ = T(2,7), a torus
    knot (Vol = 0), carrying charge/generation bookkeeping.
-2. **Mass:** open. `obs:m-tau-knot-prediction` records the direct
+2. **Mass:** open. `rem:m-tau-knot-prediction` records the direct
    volume identity `m_τ/m_e = Vol(K_τ)/ℏ_q^k` as refuted over a
    25-hyperbolic-knot search at 1%.
 3. **This session's sharpening** (`m-tau-volume-target.witness.json`):

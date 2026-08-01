@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """m_tau volume-target quantification — census-reach re-scope (EXPLORATORY).
 
-Sharpens the scope of ``obs:m-tau-knot-prediction`` ("Refuted: a direct
+Sharpens the scope of ``rem:m-tau-knot-prediction`` ("Refuted: a direct
 search evaluated 25 hyperbolic knots; none within 1% of 3477.23"). That
 refutation is scope-(a): *this construction, over the searched census*.
 This probe quantifies exactly WHAT the identity
@@ -10,7 +10,7 @@ searched region and the unsearched region are on the record:
 
   * k = 2 (the CAL-2 muon exponent) demands Vol ~ 34.1 — far beyond any
     25-knot low-crossing census (the largest hyperbolic volumes below 9
-    crossings are < 17; volume ~34 requires roughly >= 15-17 crossings
+    crossings are < 13; volume ~34 requires roughly >= 15-17 crossings
     or a multi-component link/composite). The k = 2 identity was
     therefore never actually tested — the census could not reach it.
   * k = 3 demands Vol ~ 3.39 — squarely inside the low-crossing census
@@ -33,7 +33,7 @@ from witness_base import WitnessBuilder  # noqa: E402
 
 from mpmath import mp, mpf  # noqa: E402
 
-# CODATA m_tau/m_e as cited by obs:m-tau-knot-prediction (3477.23).
+# CODATA m_tau/m_e as cited by rem:m-tau-knot-prediction (3477.23).
 M_TAU_OVER_M_E = mpf("3477.23")
 
 # Census-reach reference points (Rolfsen/SnapPea standard values, quoted
@@ -84,21 +84,32 @@ def main() -> None:
     })
     wb.add_data("verdicts", verdicts)
     wb.add_data("census_landmarks_vol", CENSUS_LANDMARKS)
+    wb.set_audit_only("docs/audits/2026-08-01-tau-knot-discussion-review.md")
     wb.add_assertion(
-        name="k2_target_beyond_9crossing_census",
+        name="k2_target_value",
         computed=float(targets[2]), expected=34.14, tolerance=0.05,
         unit="hyperbolic volume",
-        source=("(m_tau/m_e)*hbar_q^2 at canonical q0; the maximum "
-                "hyperbolic volume among knots of <= 9 crossings is "
-                "< 13, so a 25-knot low-crossing census cannot contain "
-                "the k=2 target."))
+        source="(m_tau/m_e)*hbar_q^2 at canonical q0.")
     wb.add_assertion(
-        name="k3_target_in_census_range",
+        name="k2_exceeds_9crossing_census_max",
+        computed=int(targets[2] > mpf(str(CENSUS_LANDMARKS["9_x max (approx)"]))),
+        expected=1, tolerance=0, unit="bool",
+        source=("Reach check: the k=2 target exceeds the ~12.5 maximum "
+                "hyperbolic volume among knots of <= 9 crossings, so a "
+                "25-knot low-crossing census cannot contain it."))
+    wb.add_assertion(
+        name="k3_target_value",
         computed=float(targets[3]), expected=3.383, tolerance=0.005,
         unit="hyperbolic volume",
-        source=("(m_tau/m_e)*hbar_q^3; lies between Vol(6_1) and "
-                "Vol(6_2), so the census search genuinely covered and "
-                "refuted the k=3 identity at 1%."))
+        source="(m_tau/m_e)*hbar_q^3 at canonical q0.")
+    wb.add_assertion(
+        name="k3_within_census_window",
+        computed=int(mpf(str(CENSUS_LANDMARKS["6_1"])) < targets[3]
+                     < mpf(str(CENSUS_LANDMARKS["6_2"]))),
+        expected=1, tolerance=0, unit="bool",
+        source=("Reach check: the k=3 target lies strictly between "
+                "Vol(6_1) and Vol(6_2), inside the searched census — "
+                "that refutation is real."))
     out = wb.save()
 
     for k in (1, 2, 3):

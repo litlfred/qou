@@ -9,8 +9,9 @@ computed by the orthogonality formula
     m_rho(l) = (1/60) * sum_c |c| * chi_l(theta_c) * chi_rho(c)
 
 with chi_l(theta) = sin((2l+1)theta/2)/sin(theta/2) and the standard
-A5 character table (golden-ratio entries), evaluated at 50 dps and
-verified to be integers to < 1e-30.
+A5 character table (golden-ratio entries), evaluated at the repo
+compute precision (``set_compute_dps()``, the qou-substrate default)
+and verified to be integers to < 1e-30.
 
 Claims under test (from the 2026-08-01 knot-identification discussion,
 reviewed in docs/audits/2026-08-01-tau-knot-discussion-review.md):
@@ -104,6 +105,7 @@ def main() -> None:
     wb.add_data("branching_table", table)
     wb.add_data("claims", claims)
     wb.add_data("max_integer_residual", mp.nstr(max_residual, 5))
+    wb.set_audit_only("docs/audits/2026-08-01-tau-knot-discussion-review.md")
     wb.add_assertion(
         name="all_discussion_claims_verified",
         computed=int(all(claims.values())), expected=1, tolerance=0,
