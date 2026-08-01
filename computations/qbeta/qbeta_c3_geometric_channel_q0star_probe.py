@@ -11,7 +11,7 @@ anchors.
 
 Findings (honest):
   - `geom(q)` is essentially FLAT across the muon/proton anchor gap: it changes by
-    ~1e-10 while the ladder S(q) sweeps ~0.049 (the 1/u³ amplification, #4509). This is
+    ~1e-9 while the ladder S(q) sweeps ~0.049 (the 1/u³ amplification, #4509). This is
     a clean CONFIRMATION of the direction-4 picture: the geometric object is smooth; the
     apparent S hypersensitivity is the extraction artifact.
   - The leading identity is NOT satisfied at EITHER canonical pin: geom ≈ 0.004714 is
@@ -99,7 +99,7 @@ def main() -> int:
     wb.set_description(
         "Direction 2 (reproduce the smooth target geometrically). Honest null + direction-4 "
         "confirmation. The leading geometric channel identity geom(q)=(√3/4)(ln q₀)² is FLAT "
-        "across the muon/proton gap (Δgeom~1e-10) while the ladder S sweeps ~0.049 (1/u³-"
+        "across the muon/proton gap (Δgeom~1e-9) while the ladder S sweeps ~0.049 (1/u³-"
         "amplified) — confirming the #4509 picture (smooth geometry, extraction-artifact S "
         "hypersensitivity). The identity is NOT satisfied at either canonical pin: geom≈0.00471 "
         "is ~2.05× below S(muon)=0.00968 (the boost-enhancement/spin gap) and wrong-sign vs "
