@@ -20,11 +20,15 @@ identity, and is closed under `+`, `×`, and monotone domination — the algebra
 of bound management.  `PolyBounded ⊆ PolyGrowth` (a `PolyBounded` witness is a
 `PolyGrowth` witness), so nothing about the squeeze is lost.
 
-All sorry-free.  The one non-trivial bridge in the *other* direction —
-`PolyGrowth ⟹ ¬ SuperPolynomial` (that polynomial growth genuinely undercuts
-the super-polynomial grade) — needs the standard `(n+1)ᵏ ≤ 2ᵏ(nᵏ+1)` domination
-with its `ℕ` `n=0` bookkeeping; it is left as a follow-up bean, not `sorry`'d
-here (§Strict Lean Discipline item 13). Base ring not applicable (ℕ-valued).
+All sorry-free.  The bridge in the *other* direction —
+`not_superPolynomial_of_polyGrowth : PolyGrowth ⟹ ¬ SuperPolynomial` (polynomial
+growth genuinely undercuts the super-polynomial grade) — is proved below via the
+`(n+1)ᵏ ≤ (2n)ᵏ = 2ᵏnᵏ` domination for `n ≥ 1`.  This is exactly the squeeze the
+grade wants: nothing polynomial-growth is super-polynomial.  It works only
+because `SuperPolynomial`'s witness is guarded `n ≥ 1` — the earlier unguarded
+definition was satisfied by the plain polynomial `(n+1)²` via the `n = 0` escape
+(`c·0ᵏ = 0 < f 0`), confirmed in Lean; repairing that (bean `qou-qgyw`) is what
+made this direction true.  Base ring not applicable (ℕ-valued).
 -/
 
 namespace QOU.Information
@@ -79,5 +83,34 @@ theorem PolyGrowth.mul {f g : ℕ → ℕ} (hf : PolyGrowth f) (hg : PolyGrowth 
   calc f n * g n
       ≤ (c1 * (n + 1) ^ k1) * (c2 * (n + 1) ^ k2) := Nat.mul_le_mul (h1 n) (h2 n)
     _ = (c1 * c2) * (n + 1) ^ (k1 + k2) := by rw [pow_add]; ring
+
+/-! ## The reverse squeeze: polynomial growth is never super-polynomial -/
+
+/-- **`PolyGrowth ⟹ ¬ SuperPolynomial` (sorry-free).**  Polynomial growth
+    strictly undercuts the super-polynomial grade — the reverse of the
+    `PolyBounded`-side squeeze, on the constant-safe class.  Given `f ≤ c·(n+1)ᵏ`
+    and a super-polynomial witness `n ≥ 1` for the scaled budget `(c·2ᵏ, k)`, the
+    domination `(n+1)ᵏ ≤ (2n)ᵏ = 2ᵏnᵏ` (valid exactly because `n ≥ 1`) forces
+    `f n ≤ c·2ᵏ·nᵏ`, contradicting `c·2ᵏ·nᵏ < f n`.  The `n ≥ 1` guard on
+    `SuperPolynomial` is what closes the `n = 0` escape that made this false
+    before (bean `qou-qgyw`). -/
+theorem not_superPolynomial_of_polyGrowth {f : ℕ → ℕ} (h : PolyGrowth f) :
+    ¬ SuperPolynomial f := by
+  obtain ⟨c, k, hb⟩ := h
+  intro hs
+  obtain ⟨n, hn1, hn2⟩ := hs (c * 2 ^ k) k
+  have hdom : (n + 1) ^ k ≤ 2 ^ k * n ^ k := by
+    calc (n + 1) ^ k ≤ (2 * n) ^ k := Nat.pow_le_pow_left (by omega) k
+      _ = 2 ^ k * n ^ k := by rw [mul_pow]
+  have hchain : f n ≤ c * 2 ^ k * n ^ k := by
+    calc f n ≤ c * (n + 1) ^ k := hb n
+      _ ≤ c * (2 ^ k * n ^ k) := by gcongr
+      _ = c * 2 ^ k * n ^ k := by ring
+  exact absurd hn2 (not_lt.mpr hchain)
+
+/-- **Dually (sorry-free): a super-polynomial function has no polynomial
+    growth.** -/
+theorem not_polyGrowth_of_superPolynomial {f : ℕ → ℕ} (h : SuperPolynomial f) :
+    ¬ PolyGrowth f := fun hg => not_superPolynomial_of_polyGrowth hg h
 
 end QOU.Information
