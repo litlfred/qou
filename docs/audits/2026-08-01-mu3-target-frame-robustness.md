@@ -101,6 +101,41 @@ special-function puzzle separable from the binding; hitting it to a clean multip
 equivalent to predicting the binding ratio to sub-percent, which the framework's first-order machinery
 does not reach.
 
+## 3b. How to improve A=3 precision — order-separation of the "compute higher orders" route
+
+Localizing the 4.56% miss on `B(³H)/B(²H)`: the dominant term `ρ_grad_G(3) = [3]_q` is **exact**
+(87.6% of the ratio); the derived leading (h⁴) cluster `c₃ = 0.297` is 7.8%; **all the error lives in
+the subleading many-body cluster.** Can it be closed by higher cluster orders (h⁶, h⁸, …)?
+
+Write the 3-body cluster as `c₃·(1 + a₁h² + a₂h⁴ + …)`, `h = q−q⁻¹` (`h² ≈ 0.0437` at `q₀`):
+
+| test | value | reading |
+|---|---|---|
+| required h⁶ coefficient `a₁ = Δ/(c₃·h²)` | **≈ 13.4** | 13× the O(1) natural size — a fit red-flag |
+| full bounded (`|aₖ| ≤ 2`) tail `c₃·2·h²/(1−h²)` | ≈ 0.027 (**0.7%** of ratio) | ≪ the 4.56% miss |
+
+**So the routine higher-cluster-order route is order-separated out** (`bounded_tail_lt_miss`,
+`required_coeff_gt_thirteen`): a bounded expansion supplies at most ~0.7%. Closing the miss needs
+**either** a **new leading-order (h⁴) 3-body channel** of size `~0.585·c₃`, **or** an anomalous ~13×
+coefficient — which would itself be a fit red-flag (cf. the Q_β `c₃` `1/u³` hypersensitivity,
+[2026-07-12](2026-07-12-c3-hypersensitivity-is-ladder-1-over-u3.md)).
+
+**Precision strategy (honest answer to "how do we improve precision?"):**
+
+1. **A=3 ratio precision is Δ_λ-gated, not q₀-limited.** The overall scale cancels in `B(³H)/B(²H)`, so
+   this is a categorical (Δ_λ) question — a missing *per-partition leading-order magnitude* — not a
+   substrate-pin / CAL-2-floor question. It sits under **Subgoal-2** (research-grade, open-for-all since
+   2026-07-11), gated only by the Δ_λ closure.
+2. **Not "compute more orders."** The higher-order route is pruned (§3b); a finer cluster expansion buys
+   ≤ 0.7%.
+3. **Report on the frame-independent ratio.** The honest metric is **~4.6% on `B(³H)/B(²H)`**, not the
+   "1.6× gap" on the residual μ₃ (which amplifies ~8× and is baseline-class-relative, §2–3a). Reporting
+   the multiplicative-residual gap overstates the problem and misdirects effort toward chasing a
+   convention-relative small number to high multiplicative precision.
+4. **The probed 0-fit leading-channel candidates don't supply it** (weight `y_λ`/`W_λ`, cable width,
+   brane level — the three walls, [2026-07-26](2026-07-26-deltalambda-a3-magnitude-source-three-walls.md)).
+   The open task is a *derived* leading-order channel of size `~0.585·c₃` — squarely the Δ_λ gate.
+
 ## 4. Lean (sorry-free, lean-direct exit 0)
 
 [`Mu3BaselineFragility.lean`](../../content/quantum-observable-universe/lean/QOU/MassTheory/Mu3BaselineFragility.lean),
@@ -114,7 +149,18 @@ registered in the QOU umbrella:
 | `corpus_amplification_gt_seven` | `ρ_grad(3)/μ₃ = 3.342031/0.4708 > 7` |
 | `mu3_positive_all_baselines`, `mu4_negative_all_baselines` | sign robustness across G/Q/C |
 | `spread_exceeds_gap` | `0.8128 > 1.585·0.4708` — the μ₃ spread exceeds the gap |
-| `a3_target_fragile_but_sign_robust` | capstone |
+| `framing_amplification` | `(Δ/μ)/(Δ/ρ) = ρ/μ` — the residual framing amplifies the physical miss by ρ/μ |
+| `a3_target_fragile_but_sign_robust` | capstone (fragility) |
+
+[`A3PrecisionOrderSeparation.lean`](../../content/quantum-observable-universe/lean/QOU/MassTheory/A3PrecisionOrderSeparation.lean) (§3b, precision route-pruning):
+
+| lemma | content |
+|---|---|
+| `bounded_order_term_le` | `|a| ≤ B → |a·c·h²| ≤ B·c·h²` — bounded coefficient ⇒ bounded per-order contribution |
+| `bounded_tail_lt_miss` | `c₃·2·h²/(1−h²) < Δ` — full bounded tail closes ≤0.7%, ≪ the miss |
+| `required_coeff_gt_thirteen` | `Δ/(c₃·h²) > 13` — a higher-order closure needs an anomalous coefficient |
+| `graded_baseline_dominates` | `ρ_grad_G(3)/ρ_strong(3) > 0.87` |
+| `a3_precision_needs_leading_channel` | capstone (precision Δ_λ-gated, not higher-order) |
 
 ## 5. Anti-fit / honesty ledger
 
