@@ -18,11 +18,21 @@ point**. At a simple branch `z = z_c + t²` (local coord `t`) the jets acquire p
 (`X⁽¹⁾ = (dX/dt)/(2t)`, order rising by 2 per jet), so the symbol is the leading
 Laurent coefficient / connection-matrix datum on the `t`-punctured disk.
 
-**Missing framework:** the Ramis–Sauloy–Zhang **local classification of q-difference
-modules** (Newton polygon of a q-difference module, slopes, the Stokes/`q`-Gevrey
-structure at an irregular/ramified singularity). Not in Mathlib; not in the corpus.
-This is what turns `D_q` into a symbol datum comparable to C1's `{½,½}` isoclinic
-slopes (`ThetaSlopeArithmetic`, on main).
+**RSZ IS in the corpus (correction, per Copilot review #4449).** The Ramis–Sauloy–Zhang
+local classification (Newton polygon, slopes, `q`-Gevrey/Stokes structure) has been
+applied **by hand** in [`docs/audits/2026-07-20-qlift-routeA-rsz-invariants.md`](../docs/audits/2026-07-20-qlift-routeA-rsz-invariants.md):
+C1 written as `L1 = (q²x−1)σ² − (q−1)σ − (q−1)` in `x=q^m`; its Newton polygon at
+`x=∞` gives slope **½, mult 2** (pure isoclinic), vs GGM's `{−1,+1}`. That slope
+comparison is even formalized on main (`ThetaSlopeArithmetic.lean`). RSZ Astérisque 355
+is read directly (`uploads/0903.0853v3.pdf`).
+
+**What is genuinely missing** is therefore NOT "RSZ in the corpus" but:
+(i) reusable **Lean/Python RSZ infra** (the Newton polygon is by-hand, not a checker);
+and — the real gap — (ii) the slopes computed so far are those of the **C1 recurrence
+operator itself**, NOT of a prolongation `D_q` built from Σ. Reading C1's own Newton
+polygon and calling it "the SW symbol" is **circular** — exactly what the W3 anti-fit
+gate (`qou-ailp`) forbids. W2 needs the symbol of an *independent* Σ-derived `D_q`
+(from W1 `qou-d8de`), then compares THAT to C1's `{½,½}`.
 
 **Next step:** import the q-difference local-classification framework (Sauloy,
 *Systèmes aux q-différences singuliers réguliers*; Ramis–Sauloy–Zhang, *Local
