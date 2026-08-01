@@ -594,3 +594,25 @@ needs a μ₃-inverted rescale = FIT. Lean `S5So3GeometricWLambda.lean` sorry-fr
 witness `s5so3-geometric-wlambda-borromean-lift.witness.json`. Audit
 `2026-07-27-deltalambda-s5so3-geometric-wlambda.md`. Nothing wired; μ₃ never inverted;
 `free_parameters = 0`.
+
+**2026-08-01 — Milnor ORDER law: all-A lower bound `order(D_A) ≥ 2(A−1)` PROVED from
+the h-adic filtration.** (PR #4471, `claude/deltalambda-milnor-order-law-proof-2026-08-01`.)
+Predecessor #4389 (`MilnorParitySignLaw`) proved the leading Milnor order `2(A−1)` of the
+A-component Brunnian trace deficit `D_A = 1−τ_A` **only at A=3** and recorded A=4 as a
+measured `def` — two data points, no theorem. This turns them into a genuine **all-A
+theorem**: the length-A iterated commutator of pure-braid band generators `A_{ij}` (each
+`A_{ij}−1` divisible by `h`, the derivable ker(B_n↠S_n) fact underlying #4378's
+strand-forgetting Brunnian check) accumulates one `h²` per commutator level. Formalized as
+an h-adic filtration `HasOrder h k x := ∃c, x = am(h^k)·c` with proved `mul`/`commutator`
+(orders add) + R-linear `trace` transfer; the left-normed tower `V(n+1)=[c(n+1),V n]` gets
+`HasOrder(2(n+1))` **by induction** → **`brunnian_deficit_order_lower_bound`**: `τ(w_A)`
+divisible by `h^{2(A−1)}` for **every** A ≥ 2. Tier: **bound + honest partial**. Exact `=`
+re-derived at A=3 (`borromean_tight_slice`, cofactor(0)=3/4≠0 ⇒ tight); A=4 measured
+(cited #4378); exact-all-A (leading coeff ≠ 0 = length-A Milnor μ̄ nonvanishing) left as a
+content-bearing **conjecture class with NO instance** (`MilnorExactOrderConjecture`) —
+NOT asserted proved. Lean `QOU/MassTheory/MilnorOrderLawGeneral.lean` sorry-free
+(lean-direct exit 0, v4.24.0); generic `[CommRing R]/[Algebra R A]` per §7c, `ℝ` only for
+the A=3 anchor. Complements #4389 (sign law); distinct angle from #4463/#4404 (μ₃
+magnitude = the leading-coefficient *value* the conjecture leaves open). Audit
+`2026-08-01-deltalambda-milnor-order-law-proof.md`. Nothing wired; no exact-law overclaim;
+`free_parameters = 0`.
