@@ -1,8 +1,11 @@
 # qou-l15q: the 4₁→5₂ test for "why 3" is ill-posed as designed — rank 2 vs rank 3
 
-**Date:** 2026-08-01 · **Bean:** `qou-l15q` (arc successor to `qou-bbsy`) · **Tier:** scope correction, pre-compute.
-**No probe was run. Nothing fitted, nothing wired.** This note exists because reading
-the corpus before computing (AGENTS.md §anti-guessing) invalidated the test design.
+**Date:** 2026-08-01 · **Bean:** `qou-l15q` (arc successor to `qou-bbsy`) · **Tier:** scope correction.
+**Nothing fitted, nothing wired.** The note opens as a *pre-compute* correction —
+reading the corpus (AGENTS.md §anti-guessing) invalidated the test design before any
+probe was run — and **Addendum 2 then reports a probe that was run**
+(`qbeta_l15q_rank3_generalization_probe.py`) once the well-posed part of the question
+was isolated. Sections 1–3 and Addendum 1 are pre-compute; Addendum 2 is measured.
 
 ## The design that failed
 
