@@ -135,4 +135,36 @@ theorem sum_legZ_generic (μ : YoungDiagram) (F : ℤ → ℤ) :
   apply Finset.sum_congr rfl
   intro c _; simp only [Prod.snd_swap]
 
+/-! ## Stage 4 — the separable reduction
+
+`Σh² − Σcontent² = card + 2Σ(arm·leg) + 2Σ(i·j) + 2Σj + 2Σi`, the arm²/left² and
+leg²/above² squares cancelling by the reflections. -/
+
+theorem pieceA_reduction (μ : YoungDiagram) :
+    (∑ c ∈ μ.cells, (hookZ μ c) ^ 2) - (∑ c ∈ μ.cells, (contentZ c) ^ 2)
+    = (μ.cells.card : ℤ)
+      + 2 * (∑ c ∈ μ.cells, armZ μ c * legZ μ c)
+      + 2 * (∑ c ∈ μ.cells, ((c.1 : ℤ) * (c.2 : ℤ)))
+      + 2 * (∑ c ∈ μ.cells, (c.2 : ℤ))
+      + 2 * (∑ c ∈ μ.cells, (c.1 : ℤ)) := by
+  have hsq_arm : ∑ c ∈ μ.cells, (armZ μ c) ^ 2 = ∑ c ∈ μ.cells, ((c.2 : ℤ)) ^ 2 :=
+    sum_armZ_generic μ (fun x => x ^ 2)
+  have hsq_leg : ∑ c ∈ μ.cells, (legZ μ c) ^ 2 = ∑ c ∈ μ.cells, ((c.1 : ℤ)) ^ 2 :=
+    sum_legZ_generic μ (fun x => x ^ 2)
+  have h_arm : ∑ c ∈ μ.cells, armZ μ c = ∑ c ∈ μ.cells, (c.2 : ℤ) :=
+    sum_armZ_generic μ (fun x => x)
+  have h_leg : ∑ c ∈ μ.cells, legZ μ c = ∑ c ∈ μ.cells, (c.1 : ℤ) :=
+    sum_legZ_generic μ (fun x => x)
+  have expand : ∀ c ∈ μ.cells,
+      (hookZ μ c) ^ 2 - (contentZ c) ^ 2
+      = ((armZ μ c) ^ 2 - ((c.2 : ℤ)) ^ 2) + ((legZ μ c) ^ 2 - ((c.1 : ℤ)) ^ 2)
+        + 1 + 2 * (armZ μ c * legZ μ c) + 2 * ((c.1 : ℤ) * (c.2 : ℤ))
+        + 2 * armZ μ c + 2 * legZ μ c := by
+    intro c _; simp only [hookZ, contentZ]; ring
+  rw [← Finset.sum_sub_distrib, Finset.sum_congr rfl expand]
+  simp only [Finset.sum_add_distrib, Finset.sum_sub_distrib, ← Finset.mul_sum,
+    Finset.sum_const, nsmul_eq_mul, mul_one]
+  rw [hsq_arm, hsq_leg, h_arm, h_leg]
+  ring
+
 end QOU.BraidKnot.PieceA
