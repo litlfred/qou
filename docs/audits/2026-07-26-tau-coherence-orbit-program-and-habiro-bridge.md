@@ -311,3 +311,26 @@ the monodromy point ζ₄ (the α_EM-element zero class), and
 `D(4)(ζ₈) = −√2 = −[2]_{ζ₈}` (the bracket-family fibre value with a
 sign). Both recorded in the witness for the ζ-indexed picture; whether
 either is structural or coincidental is OPEN and not claimed.
+
+## Addendum 7 (2026-08-01) — T3 harness v1: the Bloch-group decomposition verified mod 5³
+
+**qou-9p9y — harness v1 LANDED (6/6); bean stays in-progress for the
+Coleman layer.** `gswz_membership_harness_v1_probe.py` assembles every
+layer built this program (Frobenius lift, Teichmüller, mod-p finite-
+polylog dilog, archimedean integrality/bar gate) into one harness with
+a candidate interface (pass/fail demo included), and adds the genuinely
+new module-side check: **GSWZ eqn (274) — the decomposition of the 5₂
+knot's Bloch/K₃ class over root-of-unity symbols — verified mod 5³**
+by combining the printed coefficients (mod 5) with the Prop-3.2 dilog
+values (mod 5³), matching the printed `D₅(ξ)` of eqn (271) exactly:
+`1·[2,4,4] + 3·[1,3,2] + 1·[2,3,3] ≡ [2,1,3] (mod 5)` in
+(const, α, α²) coordinates. This is Theorem 9 exercised on printed
+data — the ε_m-class module-side layer of the membership test, live.
+
+**Single named missing ingredient**: the Besser–de Jeu overconvergent
+`Li₂` expansion (GSWZ reference [8]) is not among the uploaded sources;
+until it lands, the dilog layer is mod-5³-exact and the full-precision
+membership test (and ε_m units beyond mod-p) stays queued on qou-9p9y.
+Uploading Besser–de Jeu (arXiv/journal: "The syntomic regulator for
+K-theory of fields" / Besser's Coleman-integration papers) would
+unblock the final layer.
