@@ -1,0 +1,122 @@
+{
+  "engine": "sympy+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-01T11:12:42.657999+00:00",
+  "commitSha": "187cebfed4e56ad8e6f4ab827b4e6bf157802653",
+  "assertions": [
+    {
+      "name": "s1_base_p_rewrite_exact",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": 0,
+      "source": "sympy exact (k <= 12, p = pt^2 so ptilde = sqrt(p) is polynomial): [k]_q! = p^(-k(k-1)/2)(p;p)_k/(1-p)^k and m_k = q^(-k(k-1)/4)[k]_q! = ptilde^(-k(k-1)/2)(p;p)_k/(1-p)^k — the balanced family = [Gaussian factor at base qtilde] x [q-Pochhammer factor at base q]"
+    },
+    {
+      "name": "s2_sw_lognormal_affine_closure_exact",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": 0,
+      "source": "sympy exact: LN(mu,s2) moments exp(k mu + k^2 s2/2) (log-QUADRATIC in k); affine-in-log pushforward s -> c s^a keeps log-quadraticity (LN -> LN(ln c + a mu, a^2 s2)); classical SW weight (g/sqrt(pi))exp(-g^2 ln^2 x) has normalized moments t_sw^(-k(k+2)/2), t_sw = e^(-1/(2g^2)) — the Stieltjes 1894 log-normal example"
+    },
+    {
+      "name": "s3_sw_proper_no_match_exact_obstruction",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": 0,
+      "source": "exact: Delta^2 ln m_k = ln qtilde + ln((1-p^(k+2))/(1-p^(k+1))) — the second factor is > 1 and strictly decreasing to 1 (exact at p = 9/10; symbolic identity for the second ratio verified k <= 7) => ln m_k is NOT quadratic in k; log-quadraticity is invariant under every affine-in-log map (S2) => NO map s -> c s^a carries the balanced family to ANY SW-proper (log-normal) moment family. Scope-(b) exclusion with cited invariant. Deviation from quadratic at the pins is O(1) at accessible orders (residual -0.29 nats at k = 3, -25.6 nats at k = 12), asymptotic Delta^2 decay rate p^k."
+    },
+    {
+      "name": "s4_sw_exact_factor_decomposition",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": 1e-30,
+      "source": "symbolic: m_k = G_k J_k with G_k = LN(-L/2, L) moments = the classical SW weight at t_sw = e^(-L) = 1/qtilde pushed by s -> s qtilde^(-3/2) (exact); numeric: the Jackson atomic measure (p;p)_oo sum p^m/(p;p)_m delta_{p^m/(1-p)} has moments (p;p)_k/(1-p)^k via Euler's q-exponential (rel < 1e-30 at q = 1.2 + both pins, k <= 8) — support in (0, 1/(1-p)] compact => determinate. Balanced = SW(base qtilde) (*) Jackson: the indeterminacy core IS Stieltjes' 1894 example."
+    },
+    {
+      "name": "s5_q_laguerre_one_sided_exact_identification",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": 1e-20,
+      "source": "exact: the alpha=0 q-Laguerre weight 1/(-x;p)_oo satisfies w(px) = (1+x)w(x) => nu_{k+1} = p^(-(k+1))(1-p^(k+1)) nu_k (quadrature cross-check rel < 1e-20 at p = 5/6 + both pins, k <= 6) => rho_k = p^(-k(k+1)/2)(p;p)_k; symbolic k <= 12: [k]_q! = rho_k (p/(1-p))^k — the ONE-SIDED normalizer family IS the q-Laguerre (Moak) family under the exact scaling s -> (p/(1-p)) s; balanced = one-sided deconvolved by exactly one SW Gaussian LN(-L/2, L)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 235131,
+  "computation": "ksel2id-sw-identification",
+  "scriptFile": "ksel2id_sw_identification_probe.py",
+  "scriptHash": "3783ebb940f5",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "KSel-2-ID (bean qou-0ms0; audit-only, scope-(a), NO FIT, nothing wired): literature identification of the balanced binding-kernel moment family m_k = q^(-k(k-1)/4)[k]_q! against the classical Stieltjes-Wigert / q-Laguerre indeterminate families. S1: exact base-p rewrite (Gaussian factor at base qtilde x Pochhammer factor at base q). S2-S3: SW-proper (log-normal) moment sequences are log-quadratic, a property invariant under every affine-in-log map s -> c s^a; the balanced family is exactly NOT log-quadratic (Delta^2 ln m_k = ln qtilde + ln((1-p^(k+2))/(1-p^(k+1))), strictly increasing) => NO-MATCH to SW-proper, scope-(b) with cited invariant. S4: the SW structure IS present as an exact tensor factor: balanced = SW(t = 1/qtilde, scaled) (*) Jackson (determinate, compact support) — the indeterminacy core is Stieltjes' 1894 log-normal example at base sqrt(q), = the ksel3 Gaussian. S5: the ONE-SIDED normalizer [k]_q! is EXACTLY the alpha=0 q-Laguerre (Moak/generalized-SW) moment family under s -> (p/(1-p)) s (weight functional equation derivation + quadrature cross-check); the balanced member sits exactly one SW-Gaussian convolution away — the bar-symmetric half-dressed point. Nothing here proves or refutes any conjecture.",
+  "auditOnly": "docs/audits/2026-08-01-ksel2id-friedrichs-sw-identification.md",
+  "data": {
+    "s1_base_p": {
+      "one_sided": "[k]_q! = p^(-k(k-1)/2) (p;p)_k / (1-p)^k",
+      "balanced": "m_k = ptilde^(-k(k-1)/2)(p;p)_k/(1-p)^k = e^(L k(k-1)/2) (p;p)_k/(1-p)^k, L = ln qtilde",
+      "reading": "Gaussian (log-quadratic) part at base qtilde = sqrt(q); Pochhammer part at base q — MIXED bases: the balanced convention is the half-step (bar-symmetric) point"
+    },
+    "s3_obstruction": {
+      "delta2_identity": "m_{k+2} m_k / m_{k+1}^2 = qtilde * (1-p^(k+2))/(1-p^(k+1)) — exact symbolic",
+      "verdict_sw_proper": "NO-MATCH (exact): the q-Pochhammer factor cannot be produced by any affine-in-log rescaling of a log-normal",
+      "residual_vs_quadratic_nats": {
+        "muon": {
+          "3": "-0.286777",
+          "6": "-3.7999",
+          "9": "-12.0759",
+          "12": "-25.5633"
+        },
+        "proton": {
+          "3": "-0.286777",
+          "6": "-3.7999",
+          "9": "-12.0759",
+          "12": "-25.5633"
+        }
+      },
+      "near_rate": "deviation of Delta^2 from constant ~ p^(k+1)(1-p) -> 0: the family is SW-proper only asymptotically"
+    },
+    "s4_sw_factor": {
+      "decomposition": "m_k = G_k * J_k exactly; G_k = SW/log-normal (sigma^2 = L = ln qtilde, mu = -L/2 — the ksel3 'one Gaussian'); J_k = Jackson, determinate (compact support)",
+      "sw_parameters": "t_sw = 1/qtilde; scaling c = qtilde^(-3/2), a = 1",
+      "jackson_worst_rel": "1.663e-40",
+      "reading": "the u-translate/extension indeterminacy of the balanced kernel family is carried ENTIRELY by the classical SW factor (christiansen2003sw, berg1995 frame); the Jackson dressing is determinate"
+    },
+    "s5_q_laguerre": {
+      "moment_recurrence": "nu_{k+1}/nu_k = p^(-(k+1))(1-p^(k+1)) — derived from w(px) = (1+x)w(x), exact",
+      "closed_form": "rho_k = p^(-k(k+1)/2) (p;p)_k (normalized alpha=0 q-Laguerre moments, [moak1981])",
+      "exact_map_one_sided": "[k]_q! = rho_k (p/(1-p))^k — pushforward under s -> (p/(1-p)) s",
+      "balanced_bridge": "m_k = p^(k(k-1)/4) [k]_q!: exactly one SW-Gaussian factor (LN(-L/2, L)) between balanced and one-sided/q-Laguerre; NOT affine-in-log (S3 obstruction)",
+      "quadrature_worst_rel": {
+        "p_5_6": "1.058e-21",
+        "p_inv_q0_muon": "1.849e-21",
+        "p_inv_q0_proton": "1.849e-21"
+      },
+      "verdicts": {
+        "sw_proper": "NO-MATCH (exact obstruction, S3)",
+        "sw_factor": "EXACT (S4): balanced = SW(1/qtilde) (*) Jackson",
+        "q_laguerre_one_sided": "EXACT: s -> (p/(1-p)) s",
+        "q_laguerre_balanced": "one-Gaussian bridge exact; no affine-in-log identification"
+      }
+    },
+    "q0_pins": {
+      "muon": "1.10997859555733471989976322048322502665620840878015368660798114614493",
+      "proton": "1.1099785827513808075916690956107688798744991218736",
+      "source": "computations/q-pinning-50-digit.witness.json (muon); qou_substrate.constants.Q_50_DIGIT_STR (proton)"
+    }
+  }
+}

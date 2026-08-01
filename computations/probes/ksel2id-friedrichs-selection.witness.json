@@ -1,0 +1,259 @@
+{
+  "engine": "sympy+mpmath+fractions",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-01T11:04:35.844066+00:00",
+  "commitSha": "187cebfed4e56ad8e6f4ab827b4e6bf157802653",
+  "assertions": [
+    {
+      "name": "f1_exact_qd_favard_depth25",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": 0,
+      "source": "exact rational qd algorithm at r = 21/20 (q ~ 1.2155), K = 26: all Jacobi beta_k > 0 for k <= 25 (extends the KSel-2 K3 exact Favard depth 9), beta_1 = qtilde + 1/qtilde - 1 exact, and (M^n)_00 = m_n exact for n <= 12 — the qd route reproduces the canonical operator exactly"
+    },
+    {
+      "name": "f2_deformation_qd_certified",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": 1e-300,
+      "source": "mpf qd at r = 6/5 (q = 2.0736), dps 400, K = 48: beta_k > 0 all k, moment reproduction rel < 1e-300 (measured 8.53e-401), and agreement with the exact-Q qd (K = 12) to rel < 1e-350"
+    },
+    {
+      "name": "f3_friedrichs_limit_positive",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": 0.0001,
+      "source": "r = 6/5: truncation eigenvalues lambda_j(N) strictly decrease in N for every j (polynomials are a form core of the Friedrichs extension => min-max; the truncation limit IS J_F, [simon1998] / [pedersen1995]); lambda_min(48) = 0.336681762134, Cauchy rel 2.07e-7 (N = 42 vs 48): lambda_F in (0.33, 0.34) STRICTLY POSITIVE — the Friedrichs measure has no support near 0"
+    },
+    {
+      "name": "f4_krein_radau_pinned_at_zero",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": 1e-25,
+      "source": "r = 6/5, N = 48 Gauss-Radau truncation with node pinned at 0 (boundary shift t_N = P_N(0)/P_{N-1}(0)) — the canonical solution with 0 in supp = the KREIN extension measure ([pedersen1995]): pinned eigenvalue < 1e-80, all other atoms > 0 and Cauchy (rel < 1e-4), mass at 0 = 1/sum_{k<48} p_k(0)^2 to < 1e-25, sum p_k(0)^2 convergent (indeterminacy corroboration), and the positive Krein atoms INTERLACE the Friedrichs atoms"
+    },
+    {
+      "name": "f5_extremal_grids_q_lattice_u1_class",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": 0.01,
+      "source": "r = 6/5: Friedrichs atom spacing in qtilde-steps decreases monotonically to 2 (last window value 2.001223) — the extremal supports are asymptotically q-LATTICES, incommensurate with the u-continuum's qtilde-grids; the qtilde-class of the Friedrichs atoms Aitken-extrapolates to 0.805336 vs the u = 1 class phi_1 = 0.805241 (circ dist 9.45e-5; half-shifted class rejected, dist 0.5), and the Krein class extrapolates to 0.805085 (dist 0.000156) — F and K asymptotically occupy complementary q-sublattices of the ONE u = 1 qtilde-grid; the LOW Friedrichs atoms are off that grid (lambda_0 class dist 0.209 > 0.1)"
+    },
+    {
+      "name": "f6_extension_circle_sweep",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": 0,
+      "source": "r = 6/5, N = 44: boundary shifts s*t_N, s in {0, 1/4, 1/2, 3/4, 1} interpolate the truncated extension family — lambda_min strictly decreasing from the Friedrichs value to 0 at the Krein pin (s = 1); at s = 3/2 the smallest eigenvalue is NEGATIVE: boundary conditions beyond Krein leave the Stieltjes (nonnegative) sector of the extension circle"
+    },
+    {
+      "name": "f7_pins_machinery",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": 1e-20,
+      "source": "both q0 pins (muon + proton), K = 24: qd beta_k > 0, moment reproduction < 1e-150, lambda_min(N) strictly decreasing and positive (N = 16/20/24), Radau pin at 0 < 1e-40, Radau mass-at-0 identity < 1e-20. The pins sit deep in the pre-asymptotic window (qtilde - 1 ~ 0.054): asymptotic grid classes are read at the strong-deformation leg (F5), stated as such — no class claim is made at the pins"
+    },
+    {
+      "name": "f8_bar_reflection_no_pushforward_action",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": 0,
+      "source": "(i) sympy exact: sigma: s -> qtilde^{-1}/s fixes the SW factor LN(-L/2, L) and acts on qtilde-grid classes as phi -> -phi with fixed classes exactly {0, 1/2} = the u = 1 / u = qtilde^{1/2} pair (ksel1 R4). (ii) OBSTRUCTION, scope-(b) with cited invariant: every extension measure has smallest positive support point s_min > 0 (discrete spectrum, [simon1998]; lambda_F ~ 0.337 at r = 6/5) or an atom AT 0 (Krein — sigma-image not a finite measure); sigma_* support is then bounded by 1/(qtilde s_min), so its moments grow at most geometrically, while m_{k+1}/m_k is strictly increasing and unbounded (exact) — sigma_* of an extension measure is NEVER a representing measure: the bar reflection does NOT act on the extension circle by pushforward and does NOT exchange Friedrichs and Krein. (iii) numeric: sigma-moment/m_k = 1.43669 (k=1), 0.000124 (k=8) at r = 6/5; 2.88006 (k=1) at r = 21/20"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 75112,
+  "computation": "ksel2id-friedrichs-selection",
+  "scriptFile": "ksel2id_friedrichs_selection_probe.py",
+  "scriptHash": "852baaf58b64",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "KSel-2-ID (bean qou-0ms0; audit-only, NO FIT, nothing wired): Friedrichs/Krein identification for the balanced binding Jacobi operator J(q), by exact-Q + certified-mpf qd Jacobi data, truncation eigenvalues (min-max => Friedrichs limit), and Gauss-Radau-at-0 (=> Krein, the canonical solution with 0 in support, [pedersen1995]). Findings: lambda_F > 0 (strict); Krein has an atom at 0 with mass 1/sum p_k(0)^2; the extremal supports are asymptotically q-lattices (spacing qtilde-steps -> 2), F and K occupying complementary q-sublattices whose common qtilde-class Aitken-extrapolates to the u = 1 class (u-half-step discriminator answered toward u = 1); NONE of the three named kernel candidates (u = 1 grid, qtilde^(1/2) grid, a.c. log-normal) is an extension measure — the u-continuum members are interior Nevanlinna solutions (supports accumulate at 0; extension spectra are discrete with compact resolvent, [simon1998]). Bar reflection: sigma fixes the SW factor and the u-classes {1, qtilde^(1/2)} but does NOT act on the extension circle by pushforward (bounded-support vs superexponential-moment obstruction, scope-(b)); it does NOT exchange Friedrichs and Krein. Extension-circle sweep: boundary conditions interpolate F -> K monotonically; beyond Krein the truncation leaves the nonnegative sector. Pin legs verify positivity + machinery; grid classes are read at the strong-deformation point, stated as such. Nothing here proves or refutes any conjecture.",
+  "auditOnly": "docs/audits/2026-08-01-ksel2id-friedrichs-sw-identification.md",
+  "data": {
+    "f3_friedrichs": {
+      "lambda_low_N48": [
+        "0.336681762133836",
+        "1.86407362019483",
+        "5.36043250140589",
+        "13.0594356207249",
+        "29.763459401106",
+        "65.5140792109298",
+        "141.275392056026",
+        "300.734518129688"
+      ],
+      "cauchy_rel_per_j_42_48": [
+        "2.07e-7",
+        "2.28e-7",
+        "2.97e-7",
+        "4.16e-7",
+        "5.94e-7",
+        "8.53e-7",
+        "1.23e-6",
+        "1.77e-6",
+        "2.54e-6",
+        "3.66e-6",
+        "5.27e-6",
+        "7.59e-6",
+        "1.09e-5",
+        "1.57e-5",
+        "2.27e-5",
+        "3.26e-5",
+        "4.7e-5",
+        "6.77e-5",
+        "9.74e-5",
+        "0.00014"
+      ],
+      "monotone": "lambda_j(48) < lambda_j(42) < lambda_j(36) for all j < 36 — verified"
+    },
+    "f4_krein": {
+      "krein_atoms_low": [
+        "0.867703624321",
+        "3.19730924839",
+        "8.36712396046",
+        "19.6878338133",
+        "44.100270342",
+        "96.1090148007",
+        "205.971963559"
+      ],
+      "mass_at_zero": "0.2364121902",
+      "sum_pk0_sq_partials": [
+        "4.214549841",
+        "4.229499907",
+        "4.229890008",
+        "4.229900325"
+      ],
+      "inf_supp": "0 (atom) — vs Friedrichs inf supp ~ 0.3367: the Friedrichs solution has the LARGEST smallest support point (Pedersen), Krein the smallest"
+    },
+    "f5_grid": {
+      "phi_u1": "0.80524111",
+      "phi_u_sqrt_qtilde": "0.30524111",
+      "steps_qtilde_window": [
+        "2.2591145",
+        "2.1637146",
+        "2.1073922",
+        "2.0719348",
+        "2.0487915",
+        "2.0333554",
+        "2.0229195",
+        "2.0158022",
+        "2.0109202",
+        "2.0075586",
+        "2.0052379",
+        "2.0036333",
+        "2.0025229",
+        "2.0017544",
+        "2.001223"
+      ],
+      "classesF_window": [
+        "0.0466459",
+        "0.30576",
+        "0.469475",
+        "0.576867",
+        "0.648802",
+        "0.697593",
+        "0.730949",
+        "0.753868",
+        "0.769671",
+        "0.780591",
+        "0.788149",
+        "0.793387",
+        "0.797021",
+        "0.799543",
+        "0.801298",
+        "0.802521"
+      ],
+      "aitken_F": "0.80533559",
+      "aitken_K": "0.80508529",
+      "classesK_window": [
+        "0.825724",
+        "0.172377",
+        "0.384032",
+        "0.520415",
+        "0.610834",
+        "0.671778",
+        "0.713273",
+        "0.741711",
+        "0.761283",
+        "0.774792",
+        "0.784135"
+      ],
+      "verdict": "NONE of the named candidates (u=1 grid, qtilde^(1/2) grid, a.c. log-normal) is Friedrichs or Krein: extension spectra are discrete with no finite accumulation point (compact resolvent, indeterminate case, [simon1998]) and lambda_F > 0, while the u-grids accumulate at 0 and the a.c. kernel is continuous. The u-continuum members are interior (non-extremal) Nevanlinna solutions. NEW STRUCTURE: F/K = complementary q-sublattices asymptotically aligned with the u = 1 class — the extension circle's canonical pair selects the u = 1 class (asymptotic-class sense, measured), answering the KSel-1 half-step discriminator toward u = 1, not qtilde^(1/2)."
+    },
+    "f6_sweep": {
+      "lambda_min_path": [
+        "0.3366817912",
+        "0.3366817857",
+        "0.3366817745",
+        "0.3366817412",
+        "2.304109098e-114"
+      ],
+      "lambda_min_beyond_krein_s1_5": "-1.54882e+13"
+    },
+    "f7_pins": {
+      "muon": {
+        "lambda_min_N16_20_24": [
+          "0.1027179104",
+          "0.08815866039",
+          "0.07884523194"
+        ],
+        "krein_first_pos_atoms": [
+          "0.2027959",
+          "0.68187466",
+          "1.4408523"
+        ],
+        "mass_at_zero_N24": "0.055206109",
+        "repro_worst": "3.66e-501"
+      },
+      "proton": {
+        "lambda_min_N16_20_24": [
+          "0.1027179076",
+          "0.08815865723",
+          "0.07884522846"
+        ],
+        "krein_first_pos_atoms": [
+          "0.20279589",
+          "0.68187463",
+          "1.4408522"
+        ],
+        "mass_at_zero_N24": "0.055206107",
+        "repro_worst": "2.44e-501"
+      }
+    },
+    "f8_bar_reflection": {
+      "sw_factor_fixed": "LN(-L/2, L) is sigma-invariant (exact)",
+      "fixed_classes": "{0, 1/2} mod qtilde^Z = u = 1 and u = qtilde^(1/2) — on the u-CIRCLE (non-canonical solutions), not on the extension circle",
+      "sigma_moment_ratios_r6_5": [
+        "1.4366871",
+        "1.2854557",
+        "0.00012406041"
+      ],
+      "sigma_moment_ratio_r21_20_k1": "2.8800628",
+      "verdict": "the closing question's premise ('if the bar reflection exchanges Friedrichs and Krein...') FAILS in the pushforward reading — scope-(b) via the bounded-support / superexponential-moment invariant; a NON-pushforward action on the Nevanlinna parameter remains open (scope-(a), not constructed here)"
+    },
+    "q0_pins": {
+      "muon": "1.10997859555733471989976322048322502665620840878015368660798114614493",
+      "proton": "1.1099785827513808075916690956107688798744991218736",
+      "source": "computations/q-pinning-50-digit.witness.json (muon); qou_substrate.constants.Q_50_DIGIT_STR (proton)"
+    }
+  }
+}
