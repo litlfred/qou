@@ -17,6 +17,7 @@ export default remark({
   uses: [
     "prop:crossing-energy-decomposition",
     "def:crossing-energy",
+    "ex:braid-group-su2",
     "rem:crossing-energy-interpretation",
     "prop:em-coupling-projection",
     "rem:madelung-acoustic-metric",

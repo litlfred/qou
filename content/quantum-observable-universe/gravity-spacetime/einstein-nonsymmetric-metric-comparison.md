@@ -11,15 +11,22 @@ with the symmetric part $g_{(\mu\nu)}$ carrying gravitation and the antisymmetri
 **Position of the QOU construction.**
 The QOU substrate carries a symmetric–antisymmetric decomposition with the same force assignment Einstein sought, but the decomposition is not carried by a metric. It is the eigenvalue decomposition of the braiding.
 
-By the [Hecke relation](#def:crossing-energy), the braiding $c_{V,V}$ splits $V \otimes V$ into $\mathrm{Sym}^2_q(V) \oplus \Lambda^2_q(V)$ and acts on the two summands by the scalars $q$ and $-q^{-1}$. Writing $\lambda = \ln q$, the [crossing energy decomposition](#prop:crossing-energy-decomposition) resolves these weights into channels that are respectively even and odd under the mirror operation $\sigma$:
+By the [Hecke relation](#ex:braid-group-su2), the braiding $c_{V,V}$ splits $V \otimes V$ into $\mathrm{Sym}^2_q(V) \oplus \Lambda^2_q(V)$ and acts on the two summands by the scalars $q$ and $-q^{-1}$. Writing $\lambda = \ln q$, the two [crossing energy](#def:crossing-energy) weights resolve as
 
 $$
   q = \cosh\lambda + \sinh\lambda,
-  \qquad
-  q^{-1} = \cosh\lambda - \sinh\lambda.
+  \qquad -q^{-1} = -\cosh\lambda + \sinh\lambda.
 $$
 
-The $\cosh$ channel is $\sigma$-invariant and binds independently of charge; the $\sinh$ channel reverses under $\sigma$ and distinguishes charge ([channel identification](#rem:crossing-energy-interpretation)). The [electromagnetic coupling](#prop:em-coupling-projection) is a multiple of the antisymmetric eigenvalue $q^{-1}$.
+Reversing a crossing negates its $\cosh$ part and leaves its $\sinh$ part unchanged. For a composite carrying $p$ positive and $m$ negative crossings the [decomposition](#prop:crossing-energy-decomposition) therefore reads
+
+$$
+  \mathfrak{E}_{\mathrm{cross}}
+  =
+  (p - m)\cosh\lambda + (p + m)\sinh\lambda,
+$$
+
+so the mirror operation $\sigma$, which exchanges $p$ and $m$, negates the symmetric total and fixes the antisymmetric total. The $\cosh$ channel binds independently of charge; the sign-blind $\sinh$ channel distinguishes charge ([channel identification](#rem:crossing-energy-interpretation)), and is what survives when a composite is paired with its mirror. The [electromagnetic coupling](#prop:em-coupling-projection) is a multiple of the antisymmetric eigenvalue $q^{-1}$.
 
 **Comparison.**
 

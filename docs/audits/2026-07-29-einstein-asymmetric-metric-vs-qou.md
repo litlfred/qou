@@ -281,14 +281,80 @@ $e^-e^+$ pair) is a positive braid closure, where the identity holds
 exactly. Recommended fix: add the hypothesis "for a positive braid
 closure" to claim 4 rather than deleting it.
 
+### 5.1 The stated formulas in claims 1–2 do not reconstruct the energy
+
+Chasing the above further (prompted by a Copilot review comment on
+PR #4407 flagging an apparent narrative/Lean conflict) turned up a
+second, sharper defect. Claims 1 and 2 of the proposition state
+
+$$
+  E_{\mathrm{sym}}(\mathfrak{H})
+    = \sum_i |\epsilon_i|\cosh(\ln q)\,\mathrm{sgn}(\epsilon_i),
+  \qquad
+  E_{\mathrm{asym}}(\mathfrak{H})
+    = \sum_i |\epsilon_i|\sinh(\ln q)\,\mathrm{sgn}(\epsilon_i).
+$$
+
+With $\epsilon_i \in \{q, -q^{-1}\}$ these evaluate to
+$(pq - mq^{-1})\cosh\lambda$ and $(pq - mq^{-1})\sinh\lambda$, so
+
+$$
+  E_{\mathrm{sym}} + E_{\mathrm{asym}}
+  = (pq - mq^{-1})(\cosh\lambda + \sinh\lambda)
+  = q\,\mathfrak{E}_{\mathrm{cross}}(\mathfrak{H}),
+$$
+
+which overshoots $\mathfrak{E}_{\mathrm{cross}}$ by a factor of exactly
+$q$. Numerically at $q_0 = 1.10998$, $p = 3$, $m = 0$: the stated
+formulas give $3.696167$ against the true
+$\mathfrak{E}_{\mathrm{cross}} = 3.329940$, a ratio of $1.109980 = q_0$.
+**The decomposition as written in claims 1–2 is not a decomposition.**
+
+Two further consequences of the mis-stated formulas:
+
+- Both channels inherit the *same* $\mathrm{sgn}(\epsilon_i)$ factor,
+  hence both are proportional to $(pq - mq^{-1})$. That is what makes
+  claim 4's ratio come out $\tanh(\ln q)$ unconditionally — the
+  "independence of $\mathfrak{H}$" is an artifact of the error, not a
+  result.
+- It also makes claims 1–2 inconsistent with claim 3 and with the
+  interpretation block. Under the stated formulas both channels flip
+  under $\sigma$, so nothing would cancel in pair creation; but claim 3
+  and [`crossing-energy-interpretation.md`](../../content/quantum-observable-universe/observations/crossing-energy-interpretation.md)
+  both assert that the symmetric contributions cancel.
+
+The correct decomposition — the one this PR formalizes — reconstructs
+the energy exactly and agrees with the corpus's own worked pair-creation
+number. At $p = 3$, $m = 0$:
+$\mathfrak{E}(\mathfrak{H}) + \mathfrak{E}(\mathfrak{H}^\sigma) = 0.627189
+= 6\sinh\lambda$, against the block's stated $\approx 0.630$.
+
+### 5.2 Mirror behaviour: which object is being described
+
+The proposition's claims 1–2 and the interpretation table's "Mirror
+behaviour" column say the symmetric channel is $\sigma$-invariant and
+the antisymmetric channel reverses. The Lean added here says the
+opposite (`symChannel_mirror`, `asymChannel_mirror`). Both are true, of
+*different objects*, and the corpus does not distinguish them:
+
+| Object | Under $\sigma$ | Reason |
+|---|---|---|
+| the weight **functions** $\cosh\lambda$, $\sinh\lambda$ | $\cosh$ even, $\sinh$ odd | parity in $\lambda \mapsto -\lambda$ |
+| the composite **channel totals** $(p-m)\cosh\lambda$, $(p+m)\sinh\lambda$ | symmetric total negates, antisymmetric total fixed | the multiplicity flips too |
+
+The multiplicities are what invert the behaviour, and that inversion is
+precisely the mechanism of §5.1's pair cancellation. Any restatement of
+claims 1–2 should name which object it is describing. The narrative in
+the new comparison block was rephrased on this basis during review.
+
 ### 5.1 The same multiplicity mismatch is what makes pair creation work
 
 The mismatch is not a defect — it is the mechanism. `pair_cancellation`
 (Lean, sorry-free):
 
 $$
-  \mathfrak{E}_{\mathrm{cross}}(\mathfrak{H})
-  + \mathfrak{E}_{\mathrm{cross}}(\mathfrak{H}^{\sigma})
+  \mathfrak{E}_{\mathrm{cross}}(\mathfrak{H}) +
+  \mathfrak{E}_{\mathrm{cross}}(\mathfrak{H}^{\sigma})
   = 2 E_{\mathrm{asym}}(\mathfrak{H})
 $$
 
@@ -340,9 +406,19 @@ it into the braiding and lets the metric emerge symmetric.
 
 ## 8. Follow-ups
 
-1. **Amend `prop:crossing-energy-decomposition` claim 4** with the
-   positive-braid hypothesis (§5). Small, mechanical; not done in this
-   PR to keep the proposition edit separable from the comparison work.
+1. **Repair `prop:crossing-energy-decomposition` claims 1–2 and 4.**
+   Claims 1–2 carry formulas that overshoot
+   $\mathfrak{E}_{\mathrm{cross}}$ by a factor of $q$ (§5.1); claim 4's
+   unconditional ratio is an artifact of that error and needs the
+   positive-braid hypothesis (§5). The corrected statements are the ones
+   formalized here — `crossingEnergy_split`, `ratio_positive_braid`,
+   `ratio_general`. The block's own claim 3 and every worked number in
+   the corpus already agree with the corrected form, so no downstream
+   value moves. Deliberately **not** done in this PR: editing a
+   proposition's mathematical content deserves its own reviewable diff,
+   and this PR's subject is the Einstein comparison.
+   Restatements should also disambiguate the mirror-behaviour object
+   per §5.2.
 2. **Pin or soften the "EM/strong ratio at the Skein scale" claim**
    (§4.1).
 3. **Optional:** the `pair_cancellation` result is currently only in the
