@@ -205,3 +205,41 @@ A miss is recorded as a miss (the anti-fit / dense-resource discipline from the 
 negative stands — no cusp-shape/period selection to match). Grounding: `brings-is-qou`,
 `torus-knot-generators`, `bring-trefoil-cinquefoil-channel`, `x5-bring-weight-*`,
 `sw-period-residue-sum`.
+
+### Outcome (2026-08-01, bean qou-mssy): clean honest NEGATIVE
+
+Probe [`qbeta_bring_embedding_magnitude_probe.py`](../../computations/qbeta/qbeta_bring_embedding_magnitude_probe.py)
+(60 dps, exit 0, 4 assertions); audit
+[`docs/audits/2026-08-01-bring-embedding-magnitude.md`](../audits/2026-08-01-bring-embedding-magnitude.md).
+The Bring-embedding route does **not** resolve the magnitude — and the probe shows
+why, in four facts (all evaluated at q₀ per the sharpened method):
+
+- **[A1] `4.075` is an anchor-offset ratio, not a period.** `S(q)=c₃-target+Vol(4₁)`
+  is one function; muon/proton are two evaluations at pins `1.28e-8` apart. `S` is
+  hypersensitive (`dS/dq≈3.8e6`) and straddles a zero `q*=1.10997859303`: muon sits
+  `+2.5e-9` above it, proton `−1.0e-8` below, and
+  `|S_p/S_m|=4.075127 = |(q_p−q*)/(q_m−q*)|=4.075124` (verified to 6 digits). This is
+  q-anchor arithmetic (where the pins fall vs the S-root), **not** a knot period.
+- **[A2] X5/Z5 weight is a U(1) phase** (`x5-bring-weight-geometric-content.md`:
+  "categorical, not a morphism of curves … U(1) phase tube"): `|ζ₅⁻³|/|ζ₅⁻²|=1`,
+  unit modulus — structurally not a magnitude.
+- **[A3] Only forced numeric period misses.** SW periods `a_D^{(n)}` are abstract ℂ
+  fields (no numeric realisation; jet degree ≠ winding power). The one forced numeric
+  period — hyperbolic volume `8G/2Λ(π/3)=3.610` — misses by **11.4 %**; every
+  q₀-boost candidate (sinh/cosh at `ln q₀` or `ln φ`, `φⁿ`, Lucas/Fib) misses ≫0.1 %
+  (closest `φ³` at 3.95 %, a non-forced coincidence, not adopted).
+- **[A4] Structural wall.** A q₀-evaluated period is smooth ⇒ its w³/w² value is
+  identical at both anchors to `~2e-9` (factor ≈ 1); it cannot be a factor-4
+  hypersensitive ratio. The magnitude lives in the S near-zero crossing, not in any
+  period — the **SP1 smoothness wall restated on Bring**.
+
+**Missing to force a period:** a canonical genus-4 homology cycle per embedding
+(the corpus gives only existence via the genus bound `g(K)≤4`,
+`embeddability-closure.lean`) **and** a numeric realisation of `a_D^{(n)}` with jet
+degree tied to the braid winding. Absent these, any period ratio needs a free
+cycle/winding choice — the [D4] dense-fit resource, forbidden.
+
+**Net.** Sign result (disc-5 parity, 2/2) stands. Magnitude stays **OPEN** and is
+confirmed to belong to the hypersensitive near-degeneracy class (SP2, `qou-4kr1`),
+which no smooth q₀-evaluated geometric quantity — Bring-intrinsic or otherwise —
+can supply. No period adopted, no `SDeformedVolumeChannel` instance, no `c_k` wired.
