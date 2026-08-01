@@ -48,15 +48,19 @@ theorem branch_endpoint_eq (hx0 : 0 < x) (hq1 : 1 < q) :
       = Real.exp (((Nat.floor (brS x q) : ℝ) - brS x q) * Real.log q) := by
   have hlogq : 0 < Real.log q := Real.log_pos hq1
   have hlq : Real.log q ≠ 0 := ne_of_gt hlogq
+  have hqpos : (0 : ℝ) < q := by linarith
   have hcancel : brS x q * Real.log q = Real.log (1 / x) := by
     unfold brS; field_simp
   have hlogx : Real.log x = - (brS x q * Real.log q) := by
     rw [hcancel, one_div, Real.log_inv, neg_neg]
-  rw [← Real.exp_nat_mul]
-  nth_rewrite 1 [show x = Real.exp (Real.log x) from (Real.exp_log hx0).symm]
-  rw [← Real.exp_add, hlogx]
-  congr 1
-  ring
+  calc x * q ^ (Nat.floor (brS x q))
+      = Real.exp (Real.log x) * Real.exp (Real.log q) ^ (Nat.floor (brS x q)) := by
+        rw [Real.exp_log hx0, Real.exp_log hqpos]
+    _ = Real.exp (Real.log x) * Real.exp ((Nat.floor (brS x q) : ℝ) * Real.log q) := by
+        rw [← Real.exp_nat_mul]
+    _ = Real.exp (Real.log x + (Nat.floor (brS x q) : ℝ) * Real.log q) := by rw [← Real.exp_add]
+    _ = Real.exp (((Nat.floor (brS x q) : ℝ) - brS x q) * Real.log q) := by
+        rw [hlogx]; congr 1; ring
 
 /-- **No-resonance ⇒ gap lower bound.**  If the resonance `frac s = s − ⌊s⌋ ≥ θ` (`θ > 0`)
     and `q ∈ (1,2]`, then `1 − x·q^{⌊s⌋} ≥ (θ/4)(q−1)`.  Feeds `boundary_term_vanishes`
@@ -65,7 +69,7 @@ theorem branch_endpoint_eq (hx0 : 0 < x) (hq1 : 1 < q) :
     Proof: `1 − x·q^{⌊s⌋} = 1 − e^{−a}` with `a = (s−⌊s⌋)·log q ≥ 0`; `1 − e^{−a} ≥ a·e^{−a}`
     (`add_one_le_exp`); `a ≥ θ·log q ≥ θ(q−1)/2` (`log q ≥ (q−1)/q ≥ (q−1)/2` on `q≤2`); and
     `e^{−a} = q^{−frac} ≥ q^{−1} ≥ 1/2`.  Product `≥ (θ(q−1)/2)(1/2) = (θ/4)(q−1)`. -/
-theorem branch_gap_lower_of_fract (hx0 : 0 < x) (hx1 : x < 1)
+theorem branch_gap_lower_of_fract (hx0 : 0 < x)
     (hq1 : 1 < q) (hq2 : q ≤ 2) {θ : ℝ} (hθ0 : 0 < θ)
     (hfract : θ ≤ brS x q - (Nat.floor (brS x q) : ℝ)) :
     θ / 4 * (q - 1) ≤ 1 - x * q ^ (Nat.floor (brS x q)) := by
@@ -86,12 +90,12 @@ theorem branch_gap_lower_of_fract (hx0 : 0 < x) (hx1 : x < 1)
     nlinarith [hmul]
   -- a ≥ θ log q ≥ θ (q-1)/2
   have hqpos : (0 : ℝ) < q := by linarith
-  have hlogq_lb : (q - 1) / q ≤ Real.log q := by
-    have h := Real.log_le_sub_one_of_pos (show (0:ℝ) < 1 / q by positivity)
-    rw [one_div, Real.log_inv] at h
-    rw [sub_div, div_self (ne_of_gt hqpos), one_div]
-    linarith [h]
   have hlogq_half : (q - 1) / 2 ≤ Real.log q := by
+    have hlb : (q - 1) / q ≤ Real.log q := by
+      have h := Real.log_le_sub_one_of_pos (show (0:ℝ) < 1 / q by positivity)
+      rw [one_div, Real.log_inv] at h
+      rw [sub_div, div_self (ne_of_gt hqpos), one_div]
+      linarith [h]
     have hqle : (q - 1) / 2 ≤ (q - 1) / q := by
       apply div_le_div_of_nonneg_left (by linarith) (by linarith) hq2
     linarith
