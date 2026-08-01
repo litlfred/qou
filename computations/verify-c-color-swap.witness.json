@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-01T10:46:13.147717+00:00",
-  "commitSha": "14dd44c34efdb122464cb75fa880b7954840e0c0",
+  "computedAt": "2026-08-01T10:56:33.204787+00:00",
+  "commitSha": "90dc2811005d8152956192fd9b91665cfaa689b3",
   "assertions": [
     {
       "name": "c_swap_leaves_generator_invariant",
@@ -10,7 +10,7 @@
       "expected": 0.0,
       "passed": true,
       "tolerance": 1e-45,
-      "source": "For every nucleon pair (F1,F2) in {p,n,pbar,nbar}^2 and both 2-dim Hecke representations at q0, the color-tube weighted generator with uniform W and the stated eps rule satisfies sigma^(CF1,CF2) = sigma^(F1,F2) to < 1e-45 elementwise (65-dps compute). Matches the Lean derivation: eps is C-invariant (chiralitySign_conj_invariant, sorry-free) and the uniform W is constant; the conjectural class field weight_conj_invariant asserts the same for the open Bring-derived W."
+      "source": "For every nucleon pair (F1,F2) in {p,n,pbar,nbar}^2 and both 2-dim Hecke representations at q0, the color-tube weighted generator with uniform W and the stated eps rule satisfies sigma^(CF1,CF2) = sigma^(F1,F2) to < 1e-45 elementwise (repo-default precision; see precisionMetadata). Matches the Lean derivation: eps is C-invariant (chiralitySign_conj_invariant, sorry-free) and the uniform W is constant; the conjectural class field weight_conj_invariant asserts the same for the open Bring-derived W."
     },
     {
       "name": "eps_and_w_tables_c_invariant",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 6,
+  "durationMs": 4,
   "computation": "verify-c-color-swap",
   "scriptFile": "verify_c_color_swap.py",
-  "scriptHash": "f86457849a7a",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "476565033d08",
+  "scriptCommitSha": "90dc2811005d8152956192fd9b91665cfaa689b3",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -37,9 +37,9 @@
     "python": "3.11.15",
     "mpmath": "1.4.1"
   },
-  "description": "Open-R&D prototype of conj:c-from-color-flavor-swap (D6): verifies at the substrate q0 (50 dps) that the flavor-conjugation involution C (u<->ubar, d<->dbar per color sheet) leaves the color-tube weighted inter-nucleon Hecke generator sigma^(F1,F2) = sum W_{c1c2} sigma^{eps(c1,c2,F1,F2)} invariant, for all 16 nucleon pairs from {p,n,pbar,nbar} in two 2-dim Hecke representations (diagonal eigenvalue model and a non-diagonal conjugate). Runs the UNIFORM projection W=1/9 (the only W realisation today; the Bring-derived closed form is open — open question 1 of conj:inter-nucleon-channel-color-tube) with the block's stated eps rule, so this is the numeric cross-check of the Lean derivation (CFromColorFlavorSwap.lean: chiralitySign_conj_invariant + signedWeightSum_conj_invariant), not an independent test of the conjectural W. Exact eps/W table invariance also checked (144 cells each). No fit, parameter-free.",
+  "description": "Open-R&D prototype of conj:c-from-color-flavor-swap (D6): verifies at the 50-digit substrate q0 that the flavor-conjugation involution C (u<->ubar, d<->dbar per color sheet) leaves the color-tube weighted inter-nucleon Hecke generator sigma^(F1,F2) = sum W_{c1c2} sigma^{eps(c1,c2,F1,F2)} invariant, for all 16 nucleon pairs from {p,n,pbar,nbar} in two 2-dim Hecke representations (diagonal eigenvalue model and a non-diagonal conjugate). Runs the UNIFORM projection W=1/9 (the only W realisation today; the Bring-derived closed form is open — open question 1 of conj:inter-nucleon-channel-color-tube) with the block's stated eps rule, so this is the numeric cross-check of the Lean derivation (CFromColorFlavorSwap.lean: chiralitySign_conj_invariant + signedWeightSum_conj_invariant), not an independent test of the conjectural W. Exact eps/W table invariance also checked (144 cells each). No fit, parameter-free.",
   "data": {
-    "q0": "1.1099785827513808075916690956107688798744991218736",
+    "q0": "1.1099785827513808378341764182550832629203796386719",
     "pairs_checked": 16,
     "eps_mismatches": 0,
     "w_mismatches": 0,
