@@ -45,6 +45,7 @@ export default chapter({
       blocks: [
         "sm-gauge-truncation",
         "sm-hypercharge-invariant",
+        "strand-twist-datum",
         "sm-colour-stabilizer-action",
       ],
     }),
