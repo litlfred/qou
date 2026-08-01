@@ -1,0 +1,41 @@
+{
+  "schema": "witness/v1",
+  "engine": "python+sympy",
+  "scriptFile": "c3_w2_c1_module_exponents.py",
+  "commitSha": "c4c98e608ee2d8dcd8859bca1b7b768ca416cc11",
+  "description": "W2: C1 q-difference module local exponents. At 0 (Fuchsian): roots of t^2+(q-1)t+(q-1), exp-disc (q-1)(q-5). At inf: nilpotent companion => irregular slope-1/2, needs Stokes. 0-side of the Birkhoff recipe. Symbolic.",
+  "computation": {
+    "script": "computations/qbeta/c3_w2_c1_module_exponents.py",
+    "scriptCommitSha": "unknown",
+    "scriptHash": "d9781fefb796"
+  },
+  "results": {
+    "operator": "L1 = (q^2 x - 1) s^2 - (q-1) s - (q-1)   [C1, RSZ route-A]",
+    "A0": [
+      [
+        0,
+        1
+      ],
+      [
+        "1-q",
+        "1-q"
+      ]
+    ],
+    "exponent_poly_at_0": "q*t + q + t**2 - t - 1",
+    "exponents_at_0": [
+      "-q/2 - sqrt((q - 5)*(q - 1))/2 + 1/2",
+      "-q/2 + sqrt((q - 5)*(q - 1))/2 + 1/2"
+    ],
+    "exponent_trace_at_0": "1 - q",
+    "exponent_det_at_0": "q - 1",
+    "exponent_discriminant_at_0": "(q - 5)*(q - 1)  (= (q-1)(q-5))",
+    "A_inf_lower_left_limit": "0",
+    "A_inf": "[[0,1],[0,0]] nilpotent, det 0",
+    "fuchsian_at_0": true,
+    "fuchsian_at_inf": false,
+    "inf_singularity": "irregular, slope 1/2 (needs q-Gevrey/Stokes; RSZ Asterisque 355)"
+  },
+  "cross_check_exponents_ok": true,
+  "verdict": "CONFIRMED (0-side): C1 exponents at 0 = roots of t^2+(q-1)t+(q-1). Full Birkhoff matrix blocked at inf (irregular slope-1/2, needs Stokes).",
+  "scope": "0-side Fuchsian exponent data only; inf-side Stokes is the residual. No fit."
+}
