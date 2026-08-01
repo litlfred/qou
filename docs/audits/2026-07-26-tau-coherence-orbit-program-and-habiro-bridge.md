@@ -532,3 +532,27 @@ full-product-ring attempt honestly failed — the Q₅ component has
 
 Next increments on `qou-9p9y`: the μ_{24m} Kummer level for the j=1
 symbol; bean `qou-xx9f` for the (287) input identification.
+
+## Addendum 13 (2026-08-02) — Kummer level: the 5₂ root-of-unity symbol ε-classes are ALL TRIVIAL (canonical, root-independent)
+
+`gswz_epsm_kummer_level_probe.py` (6/6) lifts the gcd obstruction by
+working in the unramified extensions `F = Q₅(μ_{24m})` (degree
+`d = ord₅(24m)`, up to d = 48 at m = 24; seeded-deterministic
+irreducible-polynomial construction, exact `(Z/5⁸)[x]/(h)` arithmetic):
+
+- identity (21), root-difference law, base-place consistency, and
+  **non-vacuity controls** (χ_m(ζ_M) = (5^d−1)/m ≠ 0; χ₂(1−ζ₄₈³) = 24)
+  all verified;
+- **RESULT: every 5₂ root-of-unity symbol class, every cls(1−X), and
+  the c-weighted ξ-combination are ZERO at every m | 24** — the
+  R-side ε_m-candidate of the (275)-decomposed class is an m-th
+  power. cls(1−X) = 0 makes the per-symbol classes root-independent
+  (canonical), and moots the c-truncation caveat.
+- xx9f narrowing recorded in the bean (transcription ruled out; q^λ
+  passes x² mod 25 but fails x³; [26] = uploads/2111.06645v3.pdf
+  located).
+
+**Remaining honest route to a nontrivial ε_m(ξ)**: the GLOBAL
+integer-coefficient Bloch symbols `[z₁]+[z₂]+[z₃]` of GSWZ (270)
+(non-root-of-unity arguments; genuinely ramified Kummer data) — the
+final 9p9y layer.
