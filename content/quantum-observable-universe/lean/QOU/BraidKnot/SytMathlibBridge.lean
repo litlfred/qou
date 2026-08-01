@@ -92,4 +92,82 @@ instance instNonemptyBraidKnotStandardYoungTableau :
     Nonempty (QOU.BraidKnot.StandardYoungTableau μ) :=
   ⟨rowSuperstandardBraidKnot μ⟩
 
+/-! ### Reverse bridge `BraidKnot → Mathlib` and the card equiv (sp09 part 2)
+
+The custom SYT carries only *consecutive* strictness; the Mathlib SSYT wants
+*arbitrary-gap* weak rows / strict columns.  `row_mono`/`col_mono` bridge that. -/
+
+/-- Arbitrary-gap row strictness from the consecutive `row_strict`. -/
+theorem row_mono (S : QOU.BraidKnot.StandardYoungTableau μ) (i : ℕ) :
+    ∀ {j1 j2 : ℕ}, j1 < j2 → (i, j2) ∈ μ → S.entry i j1 < S.entry i j2 := by
+  intro j1 j2
+  induction j2 with
+  | zero => intro h _; omega
+  | succ k ih =>
+    intro h hcell
+    rcases eq_or_lt_of_le (Nat.lt_succ_iff.mp h) with heq | hlt
+    · subst heq; exact S.row_strict i j1 hcell
+    · have hk : (i, k) ∈ μ := μ.up_left_mem (le_refl i) (Nat.le_succ k) hcell
+      exact lt_trans (ih hlt hk) (S.row_strict i k hcell)
+
+/-- Arbitrary-gap column strictness from the consecutive `col_strict`. -/
+theorem col_mono (S : QOU.BraidKnot.StandardYoungTableau μ) (j : ℕ) :
+    ∀ {i1 i2 : ℕ}, i1 < i2 → (i2, j) ∈ μ → S.entry i1 j < S.entry i2 j := by
+  intro i1 i2
+  induction i2 with
+  | zero => intro h _; omega
+  | succ k ih =>
+    intro h hcell
+    rcases eq_or_lt_of_le (Nat.lt_succ_iff.mp h) with heq | hlt
+    · subst heq; exact S.col_strict i1 j hcell
+    · have hk : (k, j) ∈ μ := μ.up_left_mem (Nat.le_succ k) (le_refl j) hcell
+      exact lt_trans (ih hlt hk) (S.col_strict k j hcell)
+
+open scoped Classical in
+/-- **The one-up conversion** `QOU.BraidKnot.StandardYoungTableau μ →
+QOU.Mathlib.StandardYoungTableau μ`: shift each on-cell entry up by one (range
+`1..|μ|`), pin off-cell entries to `0`.  Inverse of `toBraidKnot`. -/
+noncomputable def _root_.QOU.BraidKnot.StandardYoungTableau.toMathlib
+    (S : QOU.BraidKnot.StandardYoungTableau μ) : QOU.Mathlib.StandardYoungTableau μ where
+  toSsyt :=
+    { entry := fun i j => if (i, j) ∈ μ then S.entry i j + 1 else 0
+      row_weak' := by
+        intro i j1 j2 hlt hcell
+        have hc1 : (i, j1) ∈ μ := μ.up_left_mem (le_refl i) (le_of_lt hlt) hcell
+        rw [if_pos hc1, if_pos hcell]
+        have := row_mono S i hlt hcell
+        omega
+      col_strict' := by
+        intro i1 i2 j hlt hcell
+        have hc1 : (i1, j) ∈ μ := μ.up_left_mem (le_of_lt hlt) (le_refl j) hcell
+        rw [if_pos hc1, if_pos hcell]
+        have := col_mono S j hlt hcell
+        omega
+      zeros' := by intro i j hij; rw [if_neg hij] }
+  bijOn := by
+    classical
+    have hmapsTo : Set.MapsTo (fun c : ℕ × ℕ => if (c.1, c.2) ∈ μ then S.entry c.1 c.2 + 1 else 0)
+        (μ.cells : Set (ℕ × ℕ)) (Set.Icc 1 μ.cells.card) := by
+      intro c hc
+      rw [Finset.mem_coe, YoungDiagram.mem_cells] at hc
+      simp only [if_pos hc, Set.mem_Icc]
+      have hlt := S.lt_card c.1 c.2 hc
+      have hcard : μ.card = μ.cells.card := rfl
+      omega
+    have hinjOn : Set.InjOn (fun c : ℕ × ℕ => if (c.1, c.2) ∈ μ then S.entry c.1 c.2 + 1 else 0)
+        (μ.cells : Set (ℕ × ℕ)) := by
+      intro a ha b hb hEq
+      rw [Finset.mem_coe, YoungDiagram.mem_cells] at ha hb
+      simp only [if_pos ha, if_pos hb] at hEq
+      have hea : S.entry a.1 a.2 = S.entry b.1 b.2 := by omega
+      have := S.inj_on a.1 a.2 b.1 b.2 ha hb hea
+      exact Prod.ext this.1 this.2
+    refine ⟨hmapsTo, hinjOn, ?_⟩
+    -- surjOn from injOn + mapsTo + equal finite card (Finset lemma; coe `Icc`)
+    rw [show (Set.Icc 1 μ.cells.card) = (↑(Finset.Icc 1 μ.cells.card) : Set ℕ) from
+      (Finset.coe_Icc 1 μ.cells.card).symm]
+    refine Finset.surjOn_of_injOn_of_card_le _ ?_ hinjOn ?_
+    · rw [Finset.coe_Icc]; exact hmapsTo
+    · rw [Nat.card_Icc]; omega
+
 end QOU.BraidKnot
