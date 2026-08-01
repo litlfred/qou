@@ -66,6 +66,30 @@ because μ₃ is a small residual, that choice moves the target by ~1.7×.
 sharp as the (G) baseline is uniquely privileged — which is a *categorical-motivation* argument (the
 coinvariant Poincaré series), not a numerical one.
 
+## 3a. The frame-independent statement — a 4.6% miss on the physical ratio, amplified 8× by the residual framing
+
+The only baseline-independent object is the **physical ratio** `ρ_strong(3) = B(³H)/B(²H) = 3.8128`
+(data). The corpus model's total A=3 prediction is `ρ_grad_G(3) + c₃` (graded baseline + the derived
+3-body cluster; `C(3,3)=1`, so the cluster enters `M(3)` directly):
+
+    model = ρ_grad_G(3) + c₃ = 3.3420 + 0.297 = 3.6390   vs   ρ_strong(3) = 3.8128
+    absolute miss Δ = 0.1738 (ratio units).
+
+That **one** miss Δ has two framings:
+
+| framing | denominator | value |
+|---|---|---|
+| **physical** (frame-independent) | full ratio `ρ_strong(3) = 3.8128` | **4.56% miss** on `B(³H)/B(²H)` |
+| **residual** (the "1.6× gap") | small residual `μ₃ = 0.4708` | 36.9% short ⇒ model reaches `0.63·μ₃` |
+
+The residual framing **amplifies the same Δ by `ρ_strong(3)/μ₃ ≈ 8.1×`**. So the alarming "1.6× A=3
+magnitude gap" is, physically, a **4.6% shortfall on `B(³H)/B(²H)`** — the multiplicative-gap number is
+a presentation artifact of dividing by the small residual instead of the physical observable. This is
+the honest, baseline-independent accuracy statement of the A=3 magnitude: **the categorical model gets
+the tritium/deuteron binding ratio right to ~4.6%.** (Note the 4.6% is the *corpus-G* model's accuracy —
+a different baseline is a different model with a different total; it is the residual *decomposition*, not
+the physical accuracy, that §2–3 shows is convention-relative.)
+
 ## 4. Lean (sorry-free, lean-direct exit 0)
 
 [`Mu3BaselineFragility.lean`](../../content/quantum-observable-universe/lean/QOU/MassTheory/Mu3BaselineFragility.lean),
