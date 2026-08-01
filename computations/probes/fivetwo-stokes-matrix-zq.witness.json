@@ -1,0 +1,156 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-01T19:39:01.033861+00:00",
+  "commitSha": "518f59f07f3b390dfe785f627f1f12003f697146",
+  "assertions": [
+    {
+      "name": "V1_inversion_S+T_S-_eq_I",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "V1_inversion_q0_integer_check",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "V2_detW_eq_2",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "V2_eq28_W_sandwich",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "xchk_S_integral",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "xchk_det_S_eq_1",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "V3_sigma11_matches_GGM_printed_index",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "all_checks_pass",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 14,
+  "computation": "fivetwo-stokes-matrix-zq",
+  "scriptFile": "fivetwo_stokes_matrix_zq.py",
+  "scriptHash": "24b6f2921b54",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Exact Z[q^±] Stokes prefactor of 5₂ (GGM 2007.10190 eqs 22-29): verifies the inversion relation S⁺(q)ᵀS⁻(q)=I (Conjecture 1b, eq 4) as an exact q-series (NEW — not checked elsewhere in the corpus), the det-W=2 (eq 26) and W-sandwich (eq 28) fundamental-solution certificates, S± integrality and det=1, the 5₂ Stokes constants {3,4,9}, and identifies the pair (L±,R±,frame phase) as the FW↔GGM Jacobian prefactor connecting the AK state integral I_{0,0}=Z_{5₂} (PR #4475) to the median-Borel resummation of Φ_{5₂}. Multiplicative companion to the realness lemma ratio_star_fixed_of_shared_law (PR #4485).",
+  "contentBlock": "conj:im-q-physical-role",
+  "parameters": {
+    "source": "GGM arXiv:2007.10190v2 §3, eqs (22)-(29)",
+    "q0_anchor": "muon",
+    "q0": "1.1099785955573347198997632204832250266562084087802",
+    "series_order_asserted": 18,
+    "assembly_convention": "unflipped"
+  },
+  "data": {
+    "S_plus_q0": [
+      [
+        1,
+        4,
+        0
+      ],
+      [
+        0,
+        1,
+        0
+      ],
+      [
+        -3,
+        -9,
+        1
+      ]
+    ],
+    "S_minus_q0": [
+      [
+        1,
+        0,
+        3
+      ],
+      [
+        -4,
+        1,
+        -3
+      ],
+      [
+        0,
+        0,
+        1
+      ]
+    ],
+    "V1_prod_00_series_to_q3": [
+      "1",
+      "0",
+      "0",
+      "0"
+    ],
+    "V1_prod_01_series_to_q3": [
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    "V2_detW_const": -2,
+    "V3_stokes_constants": [
+      3,
+      4,
+      9
+    ],
+    "V3_sigma11_index_rot_leading": [
+      1,
+      -12,
+      3,
+      74,
+      90,
+      33,
+      -288,
+      -684
+    ],
+    "V4_ReV_sigma1_vol": "2.82812208833455",
+    "V4_ImV_sigma1_cs": "1.37919181633454",
+    "V4_one_instanton_weight_substrate": "(-7.09604438412e-7 + 1.67304351703e-6j)",
+    "V4_leading_sigma11_stokes_constant": -12,
+    "V4_leading_disc_contribution": "(8.51525326094e-6 - 2.00765222043e-5j)",
+    "discipline": "literature transcription of GGM 2007.10190; no fit; nothing wired; c₃ read-off downstream and NOT claimed",
+    "prefactor_identification": "I_{0,0}=Z_{5₂} and S±(q) are two contractions of the same fundamental solution W₋₁ (eq 29 vs eq-110 factorization); L±,R± + frame phase e^{πi/4} are the FW↔GGM Jacobian prefactor."
+  },
+  "caveats": [
+    "Literature transcription + identification, NOT a QOU c₃ derivation. Residual toward FULL numeric equality with the median-Borel resummation of Φ_{5₂}: the median resummation of the perturbative ϕ_{σⱼ}(τ) (eq 20) is NOT performed here — that is the open gap (gap bean). No fit; nothing wired to production; c₃ NOT claimed derived."
+  ]
+}
