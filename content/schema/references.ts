@@ -1121,6 +1121,60 @@ export const references: CSLData[] = [
     DOI: "10.1007/BF01231296",
   }),
 
+  // ── Bar-Natan 1995 — Vassiliev invariants, chord diagrams, 1T/4T, weight systems ──
+  ref({
+    id: "barnatan1995",
+    type: "article-journal",
+    title: "On the Vassiliev knot invariants",
+    author: [{ family: "Bar-Natan", given: "Dror" }],
+    "container-title": "Topology",
+    issued: { "date-parts": [[1995]] },
+    volume: "34",
+    issue: "2",
+    page: "423-472",
+    DOI: "10.1016/0040-9383(95)93237-2",
+    URL: "https://doi.org/10.1016/0040-9383(95)93237-2",
+    note: "Foundational finite-type (Vassiliev) invariant paper: chord diagrams, the one-term (framing) and four-term (4T) relations, the algebra of weight systems, and Kontsevich's universality (the symbol of a finite-type invariant is a weight system, and every weight system is realized). Literature input for the QOU/KnotTheory/Vassiliev finite-type scaffold (ChordDiagram/FourTermRelation/WeightSystem/FiniteTypeInvariant) and the SymbolIsWeightSystem conjecture class in MilnorVassilievBridge.lean. Added 2026-08-01 (Vassiliev-infra scaffold for the #4471 exact-order Milnor bridge).",
+  }),
+
+  // ── Habegger–Masbaum 2000 — Kontsevich integral computes Milnor invariants ──
+  ref({
+    id: "habegger-masbaum2000",
+    type: "article-journal",
+    title: "The Kontsevich integral and Milnor's invariants",
+    author: [
+      { family: "Habegger", given: "Nathan" },
+      { family: "Masbaum", given: "Gregor" },
+    ],
+    "container-title": "Topology",
+    issued: { "date-parts": [[2000]] },
+    volume: "39",
+    issue: "6",
+    page: "1253-1289",
+    DOI: "10.1016/S0040-9383(99)00041-5",
+    URL: "https://doi.org/10.1016/S0040-9383(99)00041-5",
+    note: "Identifies Milnor's μ̄ link invariants with the lowest-degree (tree) part of the Kontsevich integral; the bridge between Milnor invariants and finite-type theory. For an A-component Brunnian link the first non-vanishing Vassiliev invariant is at degree 2(A−1) and equals ±μ̄(12…A). Literature input for the BrunnianVassilievBridge conjecture class (MilnorVassilievBridge.lean) — the exact-order refinement #4471's general MilnorExactOrder needs. Added 2026-08-01.",
+  }),
+
+  // ── Meilhan–Yasuhara 2012 — Milnor invariants and the HOMFLYPT polynomial ──
+  ref({
+    id: "meilhan-yasuhara2012",
+    type: "article-journal",
+    title: "Milnor invariants and the HOMFLYPT polynomial",
+    author: [
+      { family: "Meilhan", given: "Jean-Baptiste" },
+      { family: "Yasuhara", given: "Akira" },
+    ],
+    "container-title": "Geometry & Topology",
+    issued: { "date-parts": [[2012]] },
+    volume: "16",
+    issue: "2",
+    page: "889-917",
+    DOI: "10.2140/gt.2012.16.889",
+    URL: "https://doi.org/10.2140/gt.2012.16.889",
+    note: "Extracts the lowest-degree Milnor μ̄-invariants (including the length-A Brunnian μ̄(12…A)) from the finite-type / HOMFLYPT expansion, confirming the exact leading Vassiliev degree 2(A−1). Corroborating literature input for the BrunnianVassilievBridge conjecture class (MilnorVassilievBridge.lean). Added 2026-08-01.",
+  }),
+
   // ── Joyce 1982 ─────────────────────────────────────────────────
   ref({
     id: "joyce1982",
