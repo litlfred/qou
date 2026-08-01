@@ -2661,3 +2661,28 @@ qou-offl (cone-manifold off-lattice), qou-awpk (per-winding GGM
 Stokes), qou-mcus (multi-cusp Borromean), qou-rdmr (Rademacher
 word→winding). Probe re-verification: `saddle_values()` reproduces both
 papers' printed values to 16 digits at prepare-merge time.
+
+**2026-08-01 (qou-awpk, route 2 of qnnq — per-winding Stokes of 4₁; PR
+#4433).** The per-(winding e, descendant ℓ) integer Stokes family of 4₁
+is EXTRACTED EXACTLY via the proven dictionary S⁺_{σ₁σ₁}(w;q̃) =
+Σ_e I(0,e)(q̃)wᵉ on the validated DGG flux-sum engine; Σ_e reproduces the
+printed rotated index exactly (closes the corrected-assembly probe's
+"e-sum reproduction deferred" item). New exact-int canonical-chamber
+engine (`_awpk_fast_index.py`, no floats — owner directive): S₃-triality
+rotation into the m ≤ 0 chamber removes the Laurent-cancellation AND the
+"higher internal order" truncation subtlety; ~400× faster than the dict
+engine. TWO defect corrections: (1) the `else-40` sentinel convergence
+guard (merged g3 probe affected) — its substrate datum S⁺₁₁(q̃) = 0.2584
+was sentinel-passed and is WRONG; honest ladder value **0.42764420134
+(13 digits)**. (2) E-window truncation at the winding hump. STRUCTURAL
+RESULT: |I(0,e)(q̃_sub)| does not decay in e ⇒ the winding sum has radius
+of convergence 1 in w; the corpus sheet |w| = q₀ = 1.1100 exceeds even
+the index annulus q̃^{−1/2} = 1.0535, so the observed-sheet effective
+Stokes is defined ONLY by analytic continuation/lateral data — and on the
+convergent domain (|w| = 1) amphichirality forces the sum exactly
+bar-even (1e-51). Independently re-derives, from the winding side, the
+"bar-odd S must be lateral/Stokes" conclusion (B1/#3923 lineage), now
+with a region-of-validity mechanism. Scope-(a) negative for naive-sum
+route 2 (no sign flip; no −4.08); surviving form is the CONTINUED
+x-refined Stokes (bean qou-3bp8). Audit:
+`docs/audits/2026-07-31-awpk-perwinding-stokes-41.md`. Nothing wired.

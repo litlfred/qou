@@ -1,11 +1,11 @@
 ---
 # qou-awpk
 title: 'Route 2 (parent: qnnq): A_ω varies per winding class — GGM peacock pattern. Borel singularities of the CS/Kashaev series sit on a lattice of translates indexed by pairs of flat connections + (m,ℓ) ∈ ℤ²; the Stokes constant at EACH lattice point is a separate integer (DGG/BPS count), NOT a single A_ω=3. Probe: extract per-singularity Stokes constants for 4₁ from existing Borel data (median resummation residues at ι + m·V + ℓ·(2πi)²-type points); test whether the effective A at the observed ϑ sheet differs from 3. Lean: index the SDeformedVolumeChannel A_ω field by winding class.'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-07-31T19:30:00Z
-updated_at: 2026-07-31T21:20:30Z
+updated_at: 2026-08-01T00:37:54Z
 ---
 
 Literature anchors:

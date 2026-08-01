@@ -77,13 +77,78 @@ unverified pending re-evaluation (this probe's deep e-sum supplies the
 honest number; see Finding 3). This probe now uses a multi-cut
 certificate (partial sums at 4 cut points, diff ≥ 1 → 0 digits).
 
-## Finding 3 — substrate values and the effective A at the observed sheets
+## Finding 3 — substrate values, the honest tower, and the convergence annulus
 
-<!-- FILL: deep-run results -->
+Per-winding substrate values (exact-int canonical-chamber engine,
+internal-order ladder 1600/2400/3200, ≥ 26 agree-digits each), q̃ = 1/q₀:
+
+| e | I(0,e)(q̃) | e | I(0,e)(q̃) |
+|---|---|---|---|
+| 0 | +0.581410712237 | 8 | +0.041106402381 |
+| 1 | −0.300207905140 | 15 | +0.056408932091 |
+| 2 | +0.142274900685 | 16 | −0.085107294974 |
+| 3 | +0.243725283769 | 25 | +0.113447381680 |
+| 4 | −0.140964056760 | 28 | −0.083163701621 |
+
+(full table in the witness).
+
+**3a — the honest deep tower.** S⁺₁₁(q̃_sub) evaluated at q̃-order 1600 via
+the certified sandwich exemplar, honest ladder guard (800/1200/1600, 13
+agree-digits):
+
+$$
+S^+_{\sigma_1\sigma_1}(1;\tilde q_{\mathrm{sub}}) = 0.4276442013174\ldots
+$$
+
+— **superseding the g3 witness value 0.2584** (Finding 2). The per-winding
+e-sum oscillates toward it (Σ_{|e|≤8} = 0.864, Σ_{|e|≤28} = 0.3995, residual
+−0.028): the two summation orders agree at x = 1.
+
+**3b — the winding sum has empirical radius of convergence 1.** The values
+|I(0,e)(q̃_sub)| do **not** decay in e (0.041 at e=8, 0.085 at e=16, 0.113 at
+e=25): |I(0,e)|^{1/e} → 1. Therefore Σ_e I(0,e)·wᵉ converges only on the unit
+circle |w| = 1 (conditionally), and **every radial sheet is outside the
+convergence annulus** — including the corpus sheet w = e^𝔲 with |w| = q₀ =
+1.1100, which even exceeds the natural index-annulus boundary q̃^{−1/2} =
+1.0535. Empirical confirmation: the radial partial sums are unstable in the
+e-window (muon-sheet Im flips +0.073 → −0.569 from E=8 to E=28; the q₀²
+convention reaches |A_eff|/A ≈ 27). Radial-sheet rows in the witness are
+**divergent-partial-sum exhibits**, not evaluations; the E=28 q₀²-row
+"Im-ratio 4.013" near |S_p/S_μ| = 4.075 is such an artifact (wrong sign, no
+flip, window-unstable) and is **not wired**.
+
+**3c — on the convergent domain the winding-refined Stokes is exactly
+bar-even.** Amphichirality (I(0,e) = I(0,−e), certified) forces
+Im A_eff ≡ 0 for |w| = 1 — verified to 1e-51. The effective coefficient
+**does** vary with ϑ on the unit sheet (A_eff(ϑ_μ)/A_eff(0) ≈ 1.24,
+A_eff(ϑ_p)/A_eff(0) ≈ 2.41 at E=28, e-window-slow), so the constant-A_ω
+picture is not supported once winding is resolved — but no choice of ϑ
+produces a bar-odd part by naive summation.
 
 ## Verdict
 
-<!-- FILL: after deep run -->
+- **Extraction: done, exact.** The per-(e,ℓ) integer Stokes family of 4₁
+  is in the corpus (Finding 1), the deferred e-sum item is closed, and the
+  honest tower value at the substrate is 0.42764420 (Finding 3a).
+- **Bean question ("does the effective A at the observed ϑ sheet differ
+  from 3?"): scope-(a) answer.** On the σ₁σ₁ channel the winding-resolved
+  effective coefficient is strongly ϑ-dependent (×1.2–2.4 across the T4
+  sheets on the convergent domain) — the constant-A_ω simplification is
+  not what the peacock structure gives. BUT:
+- **The observed sheet is outside the naive-summation domain.** |w| = q₀
+  exceeds the empirical convergence annulus (radius 1; even the index
+  annulus bound q̃^{−1/2} = 1.054). The winding-refined S⁺_{σ₁σ₁} at the
+  corpus sheet is only defined by **analytic continuation / lateral
+  (Stokes) data**, not by the sum — and on the domain where the sum does
+  converge it is exactly bar-even. This independently re-derives, from the
+  winding side, the corpus's standing conclusion that a genuine bar-odd S
+  must be lateral/Stokes (B1/#3923 lineage), and gives it a precise
+  region-of-validity mechanism.
+- **Scope-(a) negative for route 2's naive form:** per-winding refinement
+  with naive summation does not reproduce the S sign flip or the −4.08
+  ratio at the T4 sheets. The surviving form of route 2 is the *continued*
+  x-refined Stokes matrix (GGM state-integral / lateral resummation at
+  |x| > 1) — follow-up bean. Nothing refuted at scope-(b); nothing wired.
 
 ## Cross-references
 
