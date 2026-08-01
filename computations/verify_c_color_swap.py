@@ -23,7 +23,7 @@ in an actual 2-dim Hecke representation, not an independent test of the
 conjectural Bring-derived W (which does not exist yet). Exact eps/W table
 invariance is also checked over all 16 nucleon pairs x 9 color pairs.
 
-The Hecke generator is represented two ways at q0 (50 dps):
+The Hecke generator is represented two ways at q0 (repo-default precision):
   * the eigenvalue model diag(q, -1/q) (the two Hecke channels), and
   * a non-diagonal 2-dim seminormal-style matrix conjugate of it,
 so the matrix identity is not an artifact of diagonality.
@@ -45,8 +45,9 @@ from q_parameter import Q_50_DIGIT_STR  # noqa: E402  (canonical substrate q0, 5
 from witness_base import WitnessBuilder  # noqa: E402
 
 import mpmath as mp  # noqa: E402
-
-mp.mp.dps = 65  # L1 discipline: 65 dps compute, 50 dps serialization
+# Precision is centralized: importing witness_base/qou_substrate applies the
+# repo-default compute/serialization dps (recorded in the witness
+# precisionMetadata) — do not override mp.mp.dps here.
 
 COLOR_SHEETS = ("r", "g", "b")
 COLOR_PAIRS = [(c1, c2) for c1 in COLOR_SHEETS for c2 in COLOR_SHEETS]
@@ -187,8 +188,8 @@ def main(argv=None):
 
     w = WitnessBuilder("verify-c-color-swap", engine="python")
     w.set_description(
-        "Open-R&D prototype of conj:c-from-color-flavor-swap (D6): verifies at the substrate q0 "
-        "(50 dps) that the flavor-conjugation involution C (u<->ubar, d<->dbar per color sheet) "
+        "Open-R&D prototype of conj:c-from-color-flavor-swap (D6): verifies at the 50-digit "
+        "substrate q0 that the flavor-conjugation involution C (u<->ubar, d<->dbar per color sheet) "
         "leaves the color-tube weighted inter-nucleon Hecke generator sigma^(F1,F2) = "
         "sum W_{c1c2} sigma^{eps(c1,c2,F1,F2)} invariant, for all 16 nucleon pairs from "
         "{p,n,pbar,nbar} in two 2-dim Hecke representations (diagonal eigenvalue model and a "
@@ -213,7 +214,7 @@ def main(argv=None):
         source="For every nucleon pair (F1,F2) in {p,n,pbar,nbar}^2 and both 2-dim Hecke "
                "representations at q0, the color-tube weighted generator with uniform W and the "
                "stated eps rule satisfies sigma^(CF1,CF2) = sigma^(F1,F2) to < 1e-45 elementwise "
-               "(65-dps compute). Matches the Lean derivation: eps is C-invariant "
+               "(repo-default precision; see precisionMetadata). Matches the Lean derivation: eps is C-invariant "
                "(chiralitySign_conj_invariant, sorry-free) and the uniform W is constant; the "
                "conjectural class field weight_conj_invariant asserts the same for the open "
                "Bring-derived W.",
