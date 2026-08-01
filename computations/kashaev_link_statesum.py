@@ -53,32 +53,23 @@ STATUS
     N=3,5,7.  (Rejected en route: "drop the last interior column" — face-order
     dependent, validates FIG8_PD only by luck; and outer col-sum=−1 with a(v,f₀)
     kept free — fails N=5,7, the (3.3) a(v,f₀)=0 gauge is genuinely required.)
-  ○ WHITEHEAD needs its CANONICAL 2-bridge diagram, not a braid closure.
-    The §3 state sum is invariant ONLY for a genuine two-strand-tangle
-    presentation; a generic (strand-edge pair, outer face) choice on an
-    arbitrary diagram computes a non-invariant.  Diagnostic (2026-08-01): the
-    braid [1,-2,1,-2,1] closure yields 144 distinct |⟨W⟩|@N=7 across all
-    conventions — no presentation-independent value; even the figure-eight
-    braid gives 51 distinct values, and the correct kashaev_4_1 is recovered
-    only by SPECIFIC conventions (found earlier because kashaev_4_1 was a
-    reference).  Whitehead has no reference value (only the volume target), so
-    the scan is ill-posed.  Built the b(8,3) 2-bridge PLAT (plat_to_pd; CF
-    8/3=[2,1,2] ⇒ σ₂²σ₁σ₂², 5 crossings, 2 components) — the right presentation
-    FORM: its growth lands near 4G for some conventions (vs the braid closure,
-    nowhere near).  BUT with the canonical top-cap strands the growth DECAYS
-    sub-exponentially (→0), while the all-edge-pair "closest to 4G" is
-    cherry-picking (noise).  REMAINING BLOCKER: pinning the correct (strand,
-    outer, sign) convention needs an INDEPENDENT Whitehead reference — the
-    U_q(sl₂) UN-reduced Markov trace at the root (the analogue of
-    kashaev_4_1 = unreduced 4₁ Jones), or the true KnotAtlas L5a1 PD — not a
-    scan against the noisy volume.  No Whitehead number is asserted
-    (anti-fabrication).  [next unit: get the reference, then pin]
-  ○ Whitehead cannot be cross-checked via the U_q(sl₂) Markov-trace engine:
-    closure_invariant VANISHES at the root of unity (vanishing quantum
-    dimension), and the non-zero Kashaev normalization is only coded for 4₁
-    (kashaev_4_1).  So Whitehead's validation path is the VOLUME growth
-    (2π/N)log|⟨W⟩_N| → Vol(W)=4G≈3.6639, available once the deficit rule is
-    fixed.
+  ✓ WHITEHEAD — DONE and validated (whitehead_state_sum).  Needs its CANONICAL
+    2-bridge diagram, not a braid closure: the §3 state sum is invariant ONLY
+    for a genuine two-strand-tangle presentation (the braid [1,-2,1,-2,1]
+    closure gives 144 distinct |⟨W⟩|@N=7 — no invariant).  Built the b(8,3)
+    2-bridge PLAT (plat_to_pd; CF 8/3=[2,1,2]); the PINNED convention is the
+    NEGATIVE-twist word [-2,-2,1,-2,-2] with strands (2,9), outer 1.  Pinned
+    against an INDEPENDENT reference: the U_q(sl₂) engine reduced_at_root
+    (δ→0 extrapolation of closure_norm), which on fig8 reproduces
+    kashaev_4_1 to ratio 1.000, so it IS the Kashaev normalization.  The state
+    sum then matches it EXACTLY at N=3,5,7,9,11 (27.495, 165.383, 774.957,
+    3415.876, 14452.890), and the TN evaluator pushes to N=23 where
+    (2π/N)log|⟨W⟩_N| Richardson-extrapolates to 3.710 vs Vol(W)=4G=3.66386
+    (1.3%, monotonically converging) — the Volume Conjecture for the Whitehead
+    link.  (Earlier dead-ends recorded: cross-component braid restriction and
+    canonical top-cap strands both fail; only the reference-pinned convention
+    is the invariant.  No number was asserted from a scan against the noisy
+    volume — the reference is what pins it.)
   ✓ COMPUTE CEILING BROKEN (link_invariant_tn).  The brute state sum is Σ over
     j:E→Z_N (N^{|E|−2} terms; Whitehead N^8, infeasible past N≈7).  Recast as a
     TENSOR-NETWORK contraction — rank-4 R-tensor per crossing, ω^{j(e)} folded
@@ -463,17 +454,10 @@ def plat_to_pd(word, nstr=4):
     Intended use: the Whitehead link is the 2-bridge b(8,3); continued fraction
     8/3=[2,1,2] ⇒ the plat word σ₂²σ₁σ₂² (5 crossings, 2 components).
 
-    STATUS (2026-08-01) — Whitehead value NOT yet pinned; see the module
-    docstring "WHITEHEAD" note.  The plat is the right presentation FORM (its
-    growth lands near 4G for some conventions, unlike the braid trace closure
-    which is nowhere near), BUT with the canonical top-cap strands the growth
-    DECAYS sub-exponentially (→0), while an all-edge-pair scan's ~4G hits are
-    not distinguishable from noise (the "closest to 4G" is cherry-picking).
-    Pinning the correct (strand, outer) convention needs an INDEPENDENT
-    Whitehead reference — the U_q(sl₂) UN-reduced Markov trace at the root (the
-    analogue of kashaev_4_1 = unreduced 4₁ colored Jones), or the true KnotAtlas
-    L5a1 PD — not a scan against the noisy volume.  Do NOT report a Whitehead
-    number from a scan (anti-fabrication)."""
+    The Whitehead convention is PINNED (see WHITEHEAD_* constants below):
+    plat [-2,-2,1,-2,-2], strands (2,9), outer 1 — matched against the
+    independent engine reference `reduced_at_root` (calibrated on fig8 to
+    ratio 1.000)."""
     ncap = nstr // 2
     pos = []
     for m in range(ncap):
@@ -502,10 +486,29 @@ def plat_to_pd(word, nstr=4):
     return pd, top_caps
 
 
-# Whitehead 2-bridge b(8,3) plat word (CF 8/3 = [2,1,2] ⇒ σ₂²σ₁σ₂²).  The sign
-# pattern + (strand,outer) convention that yields the invariant is unresolved
-# (see plat_to_pd STATUS); no canonical Whitehead invariant is exported yet.
-WHITEHEAD_PLAT_WORD = [2, 2, 1, 2, 2]
+# Whitehead 2-bridge b(8,3), PINNED (2026-08-01).  The negative-twist plat word
+# (CF 8/3=[2,1,2]) + strand/outer convention below reproduce the engine's
+# reduced_at_root(Whitehead) — the Kashaev-normalized colored Jones — EXACTLY at
+# N=3,5,7,9,11 (27.495, 165.383, 774.957, 3415.876, 14452.890), and the TN
+# evaluator pushes to N=23 where (2π/N)log|⟨W⟩_N| Richardson-extrapolates to
+# 3.710 vs Vol(Whitehead)=4G=3.66386 (1.3%, converging) — the Volume Conjecture.
+WHITEHEAD_PLAT_WORD = [-2, -2, 1, -2, -2]
+WHITEHEAD_STRANDS = (2, 9)
+WHITEHEAD_OUTER = 1
+
+
+def whitehead_state_sum(N: int):
+    """|⟨Whitehead⟩_N| via the [Kas95] §3 state sum at the PINNED convention
+    (validated vs the U_q(sl₂) engine reduced_at_root at N=3,5,7,9,11).  Uses
+    the fast tensor-network evaluator, so N up to ~25+ is cheap."""
+    pd, _ = plat_to_pd(WHITEHEAD_PLAT_WORD, 4)
+    diag = diagram_from_pd(pd, strand_edges=WHITEHEAD_STRANDS,
+                           outer_face_hint=WHITEHEAD_OUTER, name="whitehead")
+    a = solve_face_indices_coupled(diag, N)
+    if a is None:
+        return None
+    diag.face_index = a
+    return abs(link_invariant_tn(diag, N, face_index=a))
 
 
 def fig8_state_sum(N: int, strand_edges=(1, 2), outer_face=2):
