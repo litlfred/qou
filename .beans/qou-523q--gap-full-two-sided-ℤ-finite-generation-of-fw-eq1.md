@@ -1,10 +1,11 @@
 ---
 # qou-523q
 title: 'GAP: full two-sided ℤ finite-generation of FW eq.(14) row-0 lattice (rank max{A,B})'
-status: todo
+status: in-progress
 type: task
+priority: normal
 created_at: 2026-08-01T20:00:16Z
-updated_at: 2026-08-01T20:00:16Z
+updated_at: 2026-08-01T23:14:45Z
 parent: qou-h7yk
 ---
 
