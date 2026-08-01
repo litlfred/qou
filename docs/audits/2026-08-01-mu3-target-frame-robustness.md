@@ -4,7 +4,33 @@
 **Axis:** Δ_λ / A=3 magnitude gate · **Tier:** scope-(a) frame-robustness measurement (exact mpmath +
 Lean-proved amplification/sign facts; **no fit**; nothing wired).
 
-## 0. The question no sibling was asking
+## 0. ⚠ UNITS CORRECTION (read first) — the "1.6× near-miss" is a units artifact; the honest gap is 3.53×
+
+The headline "1.6× A=3 near-miss" (`c₃ = 0.63·μ₃`, #4364 / three-walls) — and the gap-factor / physical-%
+numbers in §2–3c below, which followed it — **compare a MeV energy to a dimensionless ratio.**
+`c₃ = 0.297` is a genuine **energy** (`E₀·(1−τ_Borr)`, `E₀ = m_e/(q₀(q₀−1)) ≈ 4.19 MeV`);
+`μ₃ = 0.4708` is **dimensionless** (`ρ_strong(3) − ρ_grad(3)`, a pure ratio — `ρ_strong(2)=1` confirms).
+`borromean_h9_magnitude_lift_probe.py:188` admits the pun: *"target μ₃ = 0.4708 (dimensionless, read
+as MeV)."* Converting the cluster into the dimensionless decomposition (`c₃/B(²H)`, `B(²H)=2.2246 MeV`):
+
+| quantity | corpus (punned) | **dimensionally honest** | factor |
+|---|---|---|---|
+| A=3 3-body gap `μ₃/c₃` | 1.585× | **3.53×** | ×B(²H) |
+| cluster share of target | 63% | **28%** | ÷B(²H) |
+| A=3 binding miss (energy) | 4.6% | **8.85% (0.750 MeV)** | — |
+| higher-order closure coeff `a₁` | 13.4 | **57.8** (even more anomalous) | — |
+| A=4 `\|c₄\|/c₃` | 13.1 | **26.6** | — |
+
+**The correction factor is exactly `B(²H)`.** The A=3 magnitude is **~2× further from closure** than the
+headline. This does **not** refute the graded-dim route — it **corrects the magnitude of the open gap**
+(honestly larger) and reinforces the Δ_λ-gating. The **relative** findings of §2–3c (baseline spread
+1.73×, amplification, order-separation ranking) are **unaffected** — they are ratios within one
+convention; only the absolute gap-factor and physical-% inherit the pun and are corrected here. The
+corpus files (#4364, three-walls, borromean probe:188) still carry the pun — flagged for coordination.
+Probe [`a3_units_consistency_probe.py`](../../computations/deltalambda/a3_units_consistency_probe.py);
+Lean [`A3UnitsConsistency.lean`](../../content/quantum-observable-universe/lean/QOU/MassTheory/A3UnitsConsistency.lean).
+
+## 0a. The question no sibling was asking
 
 Every Δ_λ A=3 sibling attacks the **1.6× magnitude gap** — the derived 3-body cluster
 `c₃ = 0.297 MeV = 0.63·μ₃` (`BorromeanMagnitudeLift`, #4364) reaches only `0.63×` the target
