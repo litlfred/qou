@@ -24,6 +24,7 @@ Ref: conj:depth-stratified-frobenius-reciprocity.md
 -/
 
 import Mathlib.Data.Real.Basic
+import Mathlib.Algebra.Field.Basic
 import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.Ring
 import Mathlib.Tactic.NormNum
@@ -33,19 +34,25 @@ namespace QOU.BraidKnot
 /-- The depth-k distinguished knot ideal as a central projector.
 
     Fields:
-    - `central_projector_value`: real-valued amplitude of the
-      central projector e_K at a partition (proxy for the full
-      Hecke-algebra projector in the abstract setting).
+    - `central_projector_value`: amplitude of the central projector
+      e_K at a partition (proxy for the full Hecke-algebra projector
+      in the abstract setting), valued in the generic base ring `R`.
     - `knot_label`: the name of the distinguished knot ("4_1"
-      at k = 3; pending for k = 1, k = 2). -/
-structure DistinguishedKnotIdeal (k : ℕ) where
-  central_projector_value : ℝ
+      at k = 3; pending for k = 1, k = 2).
+
+    §7c: the FR-pullback weight algebra below is pure field arithmetic
+    (a `dim_q²·χ / ([n]_q!·Z)` ratio), so it is stated over a generic
+    `{R : Type*} [Field R]`; only the empirical decimal *variance
+    records* further down stay `ℝ` (they carry ordered numeric
+    literals). -/
+structure DistinguishedKnotIdeal (k : ℕ) (R : Type*) where
+  central_projector_value : R
   knot_label : String
 
 /-- The distinguished chirality-channel ideal at k = 3:
     4_1 (figure-eight knot), named in
     prop:plancherel-term-7-formulation. -/
-noncomputable def chirality_ideal_4_1 : DistinguishedKnotIdeal 3 :=
+noncomputable def chirality_ideal_4_1 {R : Type*} [Field R] : DistinguishedKnotIdeal 3 R :=
   { central_projector_value := 1, -- placeholder for the
                                   -- abstract projector value
     knot_label := "4_1" }
@@ -54,8 +61,8 @@ noncomputable def chirality_ideal_4_1 : DistinguishedKnotIdeal 3 :=
     dim_q²(λ) / [n]_q!.  Defined unconditionally as a closed-form
     placeholder; downstream code parametrises by the actual
     partition data. -/
-noncomputable def uniformWedderburnWeight
-    (dim_q_sq : ℝ) (n_q_fact : ℝ) : ℝ :=
+noncomputable def uniformWedderburnWeight {R : Type*} [Field R]
+    (dim_q_sq : R) (n_q_fact : R) : R :=
   dim_q_sq / n_q_fact
 
 /-- The FR-pulled-back Wedderburn weight at depth k:
@@ -67,9 +74,9 @@ noncomputable def uniformWedderburnWeight
     Verifiable identity: when χ^λ(e_K) = 1 (trivial projector,
     i.e. K is "transparent"), the FR weight reduces to the
     uniform weight times the depth-sum reciprocal. -/
-noncomputable def frPulledBackWeight
-    (dim_q_sq : ℝ) (n_q_fact : ℝ)
-    (chi_lambda_eK : ℝ) (z_normalization : ℝ) : ℝ :=
+noncomputable def frPulledBackWeight {R : Type*} [Field R]
+    (dim_q_sq : R) (n_q_fact : R)
+    (chi_lambda_eK : R) (z_normalization : R) : R :=
   dim_q_sq * chi_lambda_eK / (n_q_fact * z_normalization)
 
 /-- Special case: when the projector character χ^λ(e_K) = 1
@@ -77,8 +84,8 @@ noncomputable def frPulledBackWeight
     projector limit), and Z_normalization = 1 (single-block
     stratum), the FR weight equals the uniform weight.
     **Verified** unconditionally. -/
-theorem fr_weight_transparent_reduces_to_uniform
-    (dim_q_sq n_q_fact : ℝ) (hf : n_q_fact ≠ 0) :
+theorem fr_weight_transparent_reduces_to_uniform {R : Type*} [Field R]
+    (dim_q_sq n_q_fact : R) (hf : n_q_fact ≠ 0) :
     frPulledBackWeight dim_q_sq n_q_fact 1 1 =
       uniformWedderburnWeight dim_q_sq n_q_fact := by
   unfold frPulledBackWeight uniformWedderburnWeight
@@ -89,8 +96,8 @@ theorem fr_weight_transparent_reduces_to_uniform
     that stratum gives 1 (after the dim_q² · χ^μ(e_K) / n_q_fact
     normalisation). Stated as a structural property of the
     Z_normalization choice. -/
-theorem fr_weight_normalised
-    (dim_q_sq n_q_fact chi_lambda_eK z_normalization : ℝ)
+theorem fr_weight_normalised {R : Type*} [Field R]
+    (dim_q_sq n_q_fact chi_lambda_eK z_normalization : R)
     (hf : n_q_fact ≠ 0) (hz : z_normalization ≠ 0) :
     z_normalization *
       frPulledBackWeight dim_q_sq n_q_fact chi_lambda_eK z_normalization =
@@ -111,14 +118,14 @@ theorem fr_weight_normalised
 
     Per AGENTS.md §3b-cond, downstream theorems consume the
     class via [Instance]. -/
-class DepthStratifiedFrobeniusReciprocity where
-  knot_ideal_at_k : (k : ℕ) → k ≤ 3 → DistinguishedKnotIdeal k
-  fr_pullback_at_low_k : ℝ → ℕ → Prop
+class DepthStratifiedFrobeniusReciprocity (R : Type*) [Field R] where
+  knot_ideal_at_k : (k : ℕ) → k ≤ 3 → DistinguishedKnotIdeal k R
+  fr_pullback_at_low_k : R → ℕ → Prop
   fr_pullback_classical : ∀ k : ℕ, fr_pullback_at_low_k 1 k
 
 /-- Default instance providing the chirality ideal at k = 3
     and discharging the q = 1 case for all k. -/
-noncomputable instance : DepthStratifiedFrobeniusReciprocity where
+noncomputable instance {R : Type*} [Field R] : DepthStratifiedFrobeniusReciprocity R where
   knot_ideal_at_k k _h := match k with
     | 3 => chirality_ideal_4_1
     | _ => { central_projector_value := 0,
@@ -144,22 +151,22 @@ theorem fr_simpler_forms_variance_records :
 /-! ## Properties of the chirality ideal at k = 3 -/
 
 /-- The chirality ideal at k = 3 is labelled "4_1". -/
-theorem chirality_ideal_4_1_label :
-    chirality_ideal_4_1.knot_label = "4_1" := by
+theorem chirality_ideal_4_1_label {R : Type*} [Field R] :
+    (chirality_ideal_4_1 (R := R)).knot_label = "4_1" := by
   rfl
 
 /-- The chirality ideal at k = 3 has central projector value 1
     (placeholder; the full Hecke-algebra projector requires the
     q-Hecke representation infrastructure). -/
-theorem chirality_ideal_4_1_value :
-    chirality_ideal_4_1.central_projector_value = 1 := by
+theorem chirality_ideal_4_1_value {R : Type*} [Field R] :
+    (chirality_ideal_4_1 (R := R)).central_projector_value = 1 := by
   rfl
 
 /-! ## FR-weight algebraic properties -/
 
 /-- The FR-pulled-back weight scales linearly in χ^λ(e_K). -/
-theorem fr_weight_chi_scale
-    (dim_q_sq n_q_fact chi_lambda_eK z_normalization c : ℝ)
+theorem fr_weight_chi_scale {R : Type*} [Field R]
+    (dim_q_sq n_q_fact chi_lambda_eK z_normalization c : R)
     (hf : n_q_fact ≠ 0) (hz : z_normalization ≠ 0) :
     frPulledBackWeight dim_q_sq n_q_fact (c * chi_lambda_eK) z_normalization =
       c * frPulledBackWeight dim_q_sq n_q_fact chi_lambda_eK z_normalization := by
@@ -171,8 +178,8 @@ theorem fr_weight_chi_scale
     (homogeneity of the ratio).
 
     Provable directly via field arithmetic. -/
-theorem fr_weight_homogeneous
-    (dim_q_sq n_q_fact chi_lambda_eK z_normalization c : ℝ)
+theorem fr_weight_homogeneous {R : Type*} [Field R]
+    (dim_q_sq n_q_fact chi_lambda_eK z_normalization c : R)
     (hf : n_q_fact ≠ 0) (hz : z_normalization ≠ 0) (hc : c ≠ 0) :
     frPulledBackWeight (c * dim_q_sq) n_q_fact chi_lambda_eK (c * z_normalization) =
       frPulledBackWeight dim_q_sq n_q_fact chi_lambda_eK z_normalization := by
