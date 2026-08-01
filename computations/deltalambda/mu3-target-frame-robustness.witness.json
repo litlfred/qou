@@ -1,0 +1,143 @@
+{
+  "schema": "witness/v1",
+  "producer": "qou/computations/deltalambda/mu3_target_frame_robustness_probe.py",
+  "computation": "mu3-target-frame-robustness",
+  "description": "Frame-robustness of the \u03bc\u2083 (A=3 magnitude) target. \u03bc\u2083 = \u03c1_strong(3) \u2212 \u03c1_grad(3) is a small residual (\u22480.47) that is a difference of two O(3.5) numbers, so \u2014 like g\u2082=1+r \u2014 it inherits an \u22487\u00d7 amplified sensitivity to the subtracted baseline. Measured across three legitimate deuteron-normalized A-scaling baselines (graded coinvariant dimension = CORPUS #4300, balanced quantum dimension, classical q\u21921) the SIGNS (\u03bc\u2083>0, \u03bc\u2084<0) are robust but \u03bc\u2083's MAGNITUDE swings by a factor comparable to / exceeding the 1.6\u00d7 gap the closure attempts target. Hence the '1.6\u00d7 A=3 magnitude gap' is baseline-CLASS-relative, not absolute. scope-(a) CAVEAT (not a refutation of the principled graded-dimension route): closure attempts must state their baseline. Anti-fit STRICT; nothing wired; exact (mpmath).",
+  "audit_only": true,
+  "tier": "scope-(a) frame-robustness measurement (baseline-class spread of the \u03bc\u2083 target); no fit; nothing wired",
+  "scriptHash": "cd31a2d377f5deb8",
+  "result": {
+    "substrate": {
+      "q0": "1.10997859555733471",
+      "source": "muon-canonical jet-filtration witness"
+    },
+    "c3_cluster_prediction_MeV": "0.297",
+    "corrected_rho_strong": {
+      "rho_strong_convention": "isospin/Coulomb-corrected (#3986/#3990)",
+      "per_baseline": {
+        "G_graded_coinvariant": {
+          "desc": "\u220f[k]_q, [k]=1+q+\u2026+q^{k-1}  (CORPUS, #4300 graded dim)",
+          "rho_grad3": "3.342031078",
+          "rho_grad4": "15.73957263",
+          "mu2": "0.0",
+          "mu3": "0.4707689218",
+          "mu4": "-4.591048313",
+          "mu2_is_zero": true,
+          "mu3_sign_pos": true,
+          "mu4_sign_neg": true,
+          "gap_ratio_c3_over_mu3": "0.63088277",
+          "gap_factor_mu3_over_c3": "1.5850805",
+          "amplification_rhograd3_over_mu3": "7.0990903"
+        },
+        "Q_balanced_quantum": {
+          "desc": "\u220f[k]_q^bal, [k]=q^{k-1}+\u2026+q^{-(k-1)}  (quantum dim)",
+          "rho_grad3": "3.043706218",
+          "rho_grad4": "12.50866598",
+          "mu2": "0.0",
+          "mu3": "0.7690937818",
+          "mu4": "-2.553441111",
+          "mu2_is_zero": true,
+          "mu3_sign_pos": true,
+          "mu4_sign_neg": true,
+          "gap_ratio_c3_over_mu3": "0.38616877",
+          "gap_factor_mu3_over_c3": "2.5895414",
+          "amplification_rhograd3_over_mu3": "3.9575229"
+        },
+        "C_classical": {
+          "desc": "\u220fk  (q\u21921 classical dim)",
+          "rho_grad3": "3.0",
+          "rho_grad4": "12.0",
+          "mu2": "0.0",
+          "mu3": "0.8128",
+          "mu4": "-2.2196",
+          "mu2_is_zero": true,
+          "mu3_sign_pos": true,
+          "mu4_sign_neg": true,
+          "gap_ratio_c3_over_mu3": "0.36540354",
+          "gap_factor_mu3_over_c3": "2.7367003",
+          "amplification_rhograd3_over_mu3": "3.6909449"
+        }
+      },
+      "mu3_min": "0.47076892",
+      "mu3_max": "0.8128",
+      "mu3_spread_factor": "1.72654",
+      "mu4_min": "-4.5910483",
+      "mu4_max": "-2.2196",
+      "mu4_spread_factor": "2.06841",
+      "gap_factor_min": "1.58508",
+      "gap_factor_max": "2.7367",
+      "signs_robust_mu3pos_mu4neg": true
+    },
+    "raw_rho_strong": {
+      "rho_strong_convention": "raw AME B(A)/B(\u00b2H)",
+      "per_baseline": {
+        "G_graded_coinvariant": {
+          "desc": "\u220f[k]_q, [k]=1+q+\u2026+q^{k-1}  (CORPUS, #4300 graded dim)",
+          "rho_grad3": "3.342031078",
+          "rho_grad4": "15.73957263",
+          "mu2": "0.0",
+          "mu3": "0.4718178427",
+          "mu4": "-4.903822414",
+          "mu2_is_zero": true,
+          "mu3_sign_pos": true,
+          "mu4_sign_neg": true,
+          "gap_ratio_c3_over_mu3": "0.62948022",
+          "gap_factor_mu3_over_c3": "1.5886123",
+          "amplification_rhograd3_over_mu3": "7.083308"
+        },
+        "Q_balanced_quantum": {
+          "desc": "\u220f[k]_q^bal, [k]=q^{k-1}+\u2026+q^{-(k-1)}  (quantum dim)",
+          "rho_grad3": "3.043706218",
+          "rho_grad4": "12.50866598",
+          "mu2": "0.0",
+          "mu3": "0.7701427026",
+          "mu4": "-2.866215212",
+          "mu2_is_zero": true,
+          "mu3_sign_pos": true,
+          "mu4_sign_neg": true,
+          "gap_ratio_c3_over_mu3": "0.38564282",
+          "gap_factor_mu3_over_c3": "2.5930731",
+          "amplification_rhograd3_over_mu3": "3.9521328"
+        },
+        "C_classical": {
+          "desc": "\u220fk  (q\u21921 classical dim)",
+          "rho_grad3": "3.0",
+          "rho_grad4": "12.0",
+          "mu2": "0.0",
+          "mu3": "0.8138489209",
+          "mu4": "-2.532374101",
+          "mu2_is_zero": true,
+          "mu3_sign_pos": true,
+          "mu4_sign_neg": true,
+          "gap_ratio_c3_over_mu3": "0.3649326",
+          "gap_factor_mu3_over_c3": "2.7402321",
+          "amplification_rhograd3_over_mu3": "3.6861878"
+        }
+      },
+      "mu3_min": "0.47181784",
+      "mu3_max": "0.81384892",
+      "mu3_spread_factor": "1.72492",
+      "mu4_min": "-4.9038224",
+      "mu4_max": "-2.5323741",
+      "mu4_spread_factor": "1.93645",
+      "gap_factor_min": "1.58861",
+      "gap_factor_max": "2.74023",
+      "signs_robust_mu3pos_mu4neg": true
+    },
+    "verdict": {
+      "mu3_baseline_class_spread_factor": "1.72654",
+      "the_1p6x_gap_factor_corpus_G": "1.58508",
+      "baseline_spread_exceeds_the_gap": true,
+      "rho_strong_correction_knob_pct_of_mu3": "0.2228",
+      "signs_robust": true,
+      "classification": "scope-(a) CAVEAT (not a refutation): \u03bc\u2083 (hence the '1.6\u00d7 A=3 magnitude gap') is baseline-CLASS-relative. The SIGNS (\u03bc\u2083>0, \u03bc\u2084<0) are robust across the graded / quantum / classical A-scalings, but the MAGNITUDE \u03bc\u2083 swings by the reported spread factor \u2014 comparable to or exceeding the 1.6\u00d7 gap itself. Because \u03bc\u2083 = \u03c1_strong(3) \u2212 \u03c1_grad(3) is a small difference of two O(3.5) numbers, it inherits an \u22487\u00d7 amplified sensitivity to the subtracted baseline (the same fragility as g\u2082=1+r). The corpus baseline (G) is the more-motivated one (it IS the graded coinvariant dimension, #4300), so this does NOT refute the (G) route \u2014 it flags that closure attempts must state they close the gap to the graded-dimension-referenced \u03bc\u2083; a reviewer picking the quantum-dimension (Q) reference sees a different gap.",
+      "anti_fit": "\u03c1_strong / c\u2083 / AME / CODATA consumed only as fixed targets; no q, no baseline inverted. \u03bc\u2082=0 (deuteron self-ref) preserved by every baseline. Nothing wired."
+    }
+  },
+  "context": {
+    "axis": "\u0394_\u03bb / A=3 magnitude gate \u2014 is the target frame-robust?",
+    "builds_on": "#4320 (simplex \u03bc\u2083), #4364 (c\u2083=0.63\u03bc\u2083 lift), #4300 (graded dim), damping-wall (sign robustness), the g\u2082/r frame-artifact thread (#4319)",
+    "no_fit": true
+  },
+  "scriptCommitSha": "uncommitted"
+}
