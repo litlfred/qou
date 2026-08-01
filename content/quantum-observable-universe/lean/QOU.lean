@@ -333,6 +333,7 @@ import QOU.QBeta.CAL3AnchorStructure
 import QOU.QBeta.SRigidityPrune
 import QOU.QBeta.SLeakZeroCrossing
 import QOU.QBeta.SLeakMagnitudeOffsetRatio
+import QOU.QBeta.SLeakMagnitudeTaylorRatio
 import QOU.QBeta.HopfCubicOddCarrier
 import QOU.QBeta.Zeta4DescentCarrier
 -- Écalle-acceleration composition collapse: composing a single fixed-order
