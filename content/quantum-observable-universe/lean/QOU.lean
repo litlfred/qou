@@ -347,6 +347,7 @@ import QOU.QBeta.PhiBSArgumentIdentification
 import QOU.QBeta.WindingGFTransform
 import QOU.QBeta.ThetaRealityBound
 import QOU.QBeta.StokesSymmetryConstant
+import QOU.QBeta.Stokes3LargeOrderAmplitude
 import QOU.QBeta.UDeformFamilyPruning
 import QOU.QBeta.NewtonRealityInvariance
 import QOU.QBeta.QBesselContiguityRecurrence
