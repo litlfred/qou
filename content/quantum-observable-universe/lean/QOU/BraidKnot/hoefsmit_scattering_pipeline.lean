@@ -18,8 +18,11 @@ namespace QOU.BraidKnot
 /-- Abstract context for the `hoefsmit_scattering_pipeline` claim —
     manuscript-themed typed fields below; sub-claims encode the four
     functorial stages of the pipeline
-    `β → ρ_λ(β) → J_K(q) → Geom(K) → 𝔪`. -/
-class HoefsmitScatteringPipelineContext where
+    `β → ρ_λ(β) → J_K(q) → Geom(K) → 𝔪`.  The stage identities are pure
+    field arithmetic (a Markov-trace ratio and two products), so the base ring
+    is a generic `[Field R]` (§7c — division at stage 2 needs a field); the
+    archimedean specialisation `R := ℝ` is a downstream instantiation. -/
+class HoefsmitScatteringPipelineContext (R : Type*) [Field R] where
   /-- Proton number `Z`. -/
   Z : ℕ
   /-- Neutron number `N`. -/
@@ -36,30 +39,30 @@ class HoefsmitScatteringPipelineContext where
   /-- Number of partitions of strand count `k`. -/
   n_partitions : ℕ
   /-- Wedderburn-block weights `w_λ` indexed by partition. -/
-  w_lambda : ℕ → ℝ
+  w_lambda : ℕ → R
   /-- Characters `χ_λ(β)` indexed by partition. -/
-  chi_lambda : ℕ → ℝ
+  chi_lambda : ℕ → R
   /-- Block dimensions `dim(λ)` indexed by partition. -/
-  dim_lambda : ℕ → ℝ
+  dim_lambda : ℕ → R
   /-- The Jones polynomial value `J_K(q)`. -/
-  J_K : ℝ
+  J_K : R
   /-- Manuscript sub-claim (stage 2 — Markov trace formula):
       `J_K(q) = Σ_λ w_λ · χ_λ(β) / dim(λ)`. -/
   claim_stage_2_markov_trace :
     J_K = (Finset.range n_partitions).sum
       (fun lam => w_lambda lam * chi_lambda lam / dim_lambda lam)
   /-- The Yekutieli geometric invariant `Geom(K)`. -/
-  Geom_K : ℝ
+  Geom_K : R
   /-- Yekutieli rigid-dualising functor coefficient `c_ω`. -/
-  ω_coeff : ℝ
+  ω_coeff : R
   /-- Manuscript sub-claim (stage 3 — ω): the Yekutieli rigid-dualising
       pairing maps `J_K(q)` to the piecewise geometric invariant
       `Geom_K = c_ω · J_K`. -/
   claim_stage_3_yekutieli_omega : Geom_K = ω_coeff * J_K
   /-- Electron mass `m_e`. -/
-  m_e : ℝ
+  m_e : R
   /-- The categorical mass `𝔪`. -/
-  m_total : ℝ
+  m_total : R
   /-- Manuscript sub-claim (stage 4 — ×m_e): `𝔪 = Geom(K) · m_e`. -/
   claim_stage_4_electron_mass_scale : m_total = Geom_K * m_e
 
@@ -131,7 +134,8 @@ $\chi_\lambda(\beta)$ is determined by Young's lattice path c
     sub-claim fields; concretisation requires per-block manuscript
     translation. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/hoefsmit-scattering-pipeline.ts
-def hoefsmit_scattering_pipeline [ctx : HoefsmitScatteringPipelineContext] :
+def hoefsmit_scattering_pipeline {R : Type*} [Field R]
+    [ctx : HoefsmitScatteringPipelineContext R] :
     ctx.hoefsmit_nnz_per_row ≤ 2 ∧
     ctx.J_K = (Finset.range ctx.n_partitions).sum
       (fun lam => ctx.w_lambda lam * ctx.chi_lambda lam / ctx.dim_lambda lam) ∧
