@@ -65,6 +65,10 @@ import QOU.MathlibExt.QBorelKernel
 -- extends QCollatz.qTwoValuation (Polynomial-only) to the Skein module where the
 -- q-Collatz fundamental cycle lives; cycle values v(q⁻¹)=0, v(1+q⁻¹)=1.
 import QOU.MathlibExt.LaurentTwoValuation
+-- q-Collatz corroboration (qou-4atn): v_[2] strictly descends at the fundamental
+-- cycle (non-attractor 1+q⁻¹ → attractor q⁻¹, v drops 1→0) — a live D∞ descent
+-- candidate on every D∞ element checked, given the out-of-cone counterexample.
+import QOU.AppendixSurreals.collatz_vtwo_cycle_descent
 import QOU.HeckeAlgebra
 import QOU.Glossary
 import QOU.Knot.CuspShapeBarParity
