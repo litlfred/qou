@@ -333,4 +333,92 @@ theorem sum_prod_eq_ullr (μ : YoungDiagram) :
     rintro aq ⟨_, rfl⟩ ⟨_, h⟩
     exact hpq h
 
+/-! ## Stage 9 — same-row / same-column counts
+
+`Σj = |{(L,q) : L.1=q.1 ∧ L.2<q.2}|` (same row, `L` left of `q`) and dually for
+columns. The left-cell count of `q` is exactly `q.2` (contiguous row). -/
+
+/-- `q.2` counts the cells strictly left of `q` in its row. -/
+theorem snd_eq_card (μ : YoungDiagram) {q : ℕ × ℕ} (hq : q ∈ μ.cells) :
+    (q.2 : ℤ) = ((μ.cells.filter (fun L => L.1 = q.1 ∧ L.2 < q.2)).card : ℤ) := by
+  have hset : μ.cells.filter (fun L => L.1 = q.1 ∧ L.2 < q.2)
+      = (Finset.range q.2).image (fun j => (q.1, j)) := by
+    ext L
+    simp only [Finset.mem_filter, Finset.mem_image, Finset.mem_range]
+    constructor
+    · rintro ⟨_, hL1, hL2⟩; exact ⟨L.2, hL2, by rw [← hL1]⟩
+    · rintro ⟨j, hj, rfl⟩
+      have hqlt : q.2 < μ.rowLen q.1 := (mem_cells_iff_snd_lt μ q).mp hq
+      exact ⟨by rw [mem_cells_iff_snd_lt]; simp only; omega, rfl, hj⟩
+  rw [hset, Finset.card_image_of_injective _ (fun a b h => by simpa using h),
+    Finset.card_range]
+
+/-- `q.1` counts the cells strictly above `q` in its column. -/
+theorem fst_eq_card (μ : YoungDiagram) {q : ℕ × ℕ} (hq : q ∈ μ.cells) :
+    (q.1 : ℤ) = ((μ.cells.filter (fun A => A.2 = q.2 ∧ A.1 < q.1)).card : ℤ) := by
+  have hset : μ.cells.filter (fun A => A.2 = q.2 ∧ A.1 < q.1)
+      = (Finset.range q.1).image (fun i => (i, q.2)) := by
+    ext A
+    simp only [Finset.mem_filter, Finset.mem_image, Finset.mem_range]
+    constructor
+    · rintro ⟨_, hA2, hA1⟩; exact ⟨A.1, hA1, by rw [← hA2]⟩
+    · rintro ⟨i, hi, rfl⟩
+      have hqlt : q.1 < μ.colLen q.2 := by
+        have := μ.mem_iff_lt_colLen (i := q.1) (j := q.2)
+        rw [YoungDiagram.mem_cells] at hq; simpa using this.mp (by simpa using hq)
+      refine ⟨?_, rfl, hi⟩
+      rw [YoungDiagram.mem_cells]
+      have := μ.mem_iff_lt_colLen (i := i) (j := q.2)
+      simpa using this.mpr (by omega)
+  rw [hset, Finset.card_image_of_injective _ (fun a b h => by simpa using h),
+    Finset.card_range]
+
+/-- Same-row ordered pairs with the first cell strictly left. -/
+def srLowerPairs (μ : YoungDiagram) : Finset ((ℕ × ℕ) × (ℕ × ℕ)) :=
+  (μ.cells ×ˢ μ.cells).filter (fun Lq => Lq.1.1 = Lq.2.1 ∧ Lq.1.2 < Lq.2.2)
+
+/-- Same-column ordered pairs with the first cell strictly above. -/
+def scLowerPairs (μ : YoungDiagram) : Finset ((ℕ × ℕ) × (ℕ × ℕ)) :=
+  (μ.cells ×ˢ μ.cells).filter (fun Aq => Aq.1.2 = Aq.2.2 ∧ Aq.1.1 < Aq.2.1)
+
+theorem sum_snd_eq_srLower (μ : YoungDiagram) :
+    (∑ q ∈ μ.cells, (q.2 : ℤ)) = ((srLowerPairs μ).card : ℤ) := by
+  have step : ∀ q ∈ μ.cells, (q.2 : ℤ)
+      = (((μ.cells.filter (fun L => L.1 = q.1 ∧ L.2 < q.2)) ×ˢ ({q} : Finset (ℕ × ℕ))).card : ℤ) := by
+    intro q hq
+    rw [snd_eq_card μ hq, Finset.card_product, Finset.card_singleton, mul_one]
+  rw [Finset.sum_congr rfl step, ← Nat.cast_sum]
+  congr 1
+  rw [← Finset.card_biUnion]
+  · congr 1
+    ext Lq
+    simp only [Finset.mem_biUnion, Finset.mem_product, Finset.mem_filter,
+      Finset.mem_singleton, srLowerPairs]
+    constructor
+    · rintro ⟨q, hq, ⟨hLc, h1, h2⟩, rfl⟩; exact ⟨⟨hLc, hq⟩, h1, h2⟩
+    · rintro ⟨⟨hLc, hqc⟩, h1, h2⟩; exact ⟨Lq.2, hqc, ⟨hLc, h1, h2⟩, rfl⟩
+  · intro p hp q hq hpq
+    simp only [Finset.disjoint_left, Finset.mem_product, Finset.mem_singleton]
+    rintro Lq ⟨_, rfl⟩ ⟨_, h⟩; exact hpq h
+
+theorem sum_fst_eq_scLower (μ : YoungDiagram) :
+    (∑ q ∈ μ.cells, (q.1 : ℤ)) = ((scLowerPairs μ).card : ℤ) := by
+  have step : ∀ q ∈ μ.cells, (q.1 : ℤ)
+      = (((μ.cells.filter (fun A => A.2 = q.2 ∧ A.1 < q.1)) ×ˢ ({q} : Finset (ℕ × ℕ))).card : ℤ) := by
+    intro q hq
+    rw [fst_eq_card μ hq, Finset.card_product, Finset.card_singleton, mul_one]
+  rw [Finset.sum_congr rfl step, ← Nat.cast_sum]
+  congr 1
+  rw [← Finset.card_biUnion]
+  · congr 1
+    ext Aq
+    simp only [Finset.mem_biUnion, Finset.mem_product, Finset.mem_filter,
+      Finset.mem_singleton, scLowerPairs]
+    constructor
+    · rintro ⟨q, hq, ⟨hAc, h1, h2⟩, rfl⟩; exact ⟨⟨hAc, hq⟩, h1, h2⟩
+    · rintro ⟨⟨hAc, hqc⟩, h1, h2⟩; exact ⟨Aq.2, hqc, ⟨hAc, h1, h2⟩, rfl⟩
+  · intro p hp q hq hpq
+    simp only [Finset.disjoint_left, Finset.mem_product, Finset.mem_singleton]
+    rintro Aq ⟨_, rfl⟩ ⟨_, h⟩; exact hpq h
+
 end QOU.BraidKnot.PieceA
