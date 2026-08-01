@@ -1,8 +1,8 @@
 {
   "engine": "python-exact+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-01T21:54:48.834383+00:00",
-  "commitSha": "38c4545b9819d7046ab4a4a5bd627f59f6356479",
+  "computedAt": "2026-08-01T22:00:10.311723+00:00",
+  "commitSha": "c2612eb5873db51b482c72d3d0f019cf33ba19bc",
   "assertions": [
     {
       "name": "map_and_formula_gate",
@@ -30,11 +30,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 14,
+  "durationMs": 15,
   "computation": "qbeta-rdmr-rademacher-winding",
   "scriptFile": "qbeta_rdmr_rademacher_winding_probe.py",
-  "scriptHash": "519c23c2f5dd",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "0bac0214eed6",
+  "scriptCommitSha": "c2612eb5873db51b482c72d3d0f019cf33ba19bc",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
