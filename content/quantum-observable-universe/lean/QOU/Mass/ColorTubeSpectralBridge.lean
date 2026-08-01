@@ -212,4 +212,87 @@ theorem tube_psum3_of_bring (z c₀ c₁ c₂ c₃ c₄ : R)
   rw [psum3_shift, e1, e2] at h3
   linear_combination h3
 
+/-! ## The three `color-tube-constraints` equations, in spectral form
+
+The three constraint equations of the `color-tube-constraints` block are written
+in the shifted tube chart and are visibly `z`-dependent. Transported to the
+spectral resolvents `wₖ` they become **`z`-free**: every `z` cancels identically.
+
+Conventions are the block's own (`aggregate-color-quantities`), with the tube
+chart `(σ, c_r, c_g, c_b) = (w₁−z, w₂−z, w₃−z, w₄−z)`:
+
+* `p₁(c) = σ + c_r + c_g + c_b`  (first power sum)
+* `h₂(c) = σ·c_b + c_r·c_g`  — the **Hermitian quadric**: it pairs *conjugate*
+  resolvents `wₖ ↔ w₅₋ₖ`. It is **not** the full `e₂`; this is exactly the
+  convention that had to be pinned before the restatement could be written.
+* `h₃(c) = σ²c_g + c_b²c_r + c_r²σ + c_g²c_b`  (Hermitian cubic, skip-one)
+* `S = Σₖ wₖ = p₁(c) + 4z`, `D = Σₖ ζ⁻ᵏwₖ = χ_ζ(c) − z`  (block identities)
+
+The spectral invariants the constraints turn into:
+
+* `H₂(w) = w₁w₄ + w₂w₃`  (spectral Hermitian quadric — conjugate pairing)
+* `H₃(w) = w₁²w₃ + w₂²w₁ + w₄²w₂ + w₃²w₄`  (spectral Hermitian cubic) -/
+
+/-- Spectral Hermitian quadric `H₂(w) = w₁w₄ + w₂w₃` (pairs `wₖ` with `w₅₋ₖ`). -/
+def H2 (w₁ w₂ w₃ w₄ : R) : R := w₁ * w₄ + w₂ * w₃
+
+/-- Spectral Hermitian cubic `H₃(w) = w₁²w₃ + w₂²w₁ + w₄²w₂ + w₃²w₄`. -/
+def H3 (w₁ w₂ w₃ w₄ : R) : R :=
+  w₁ ^ 2 * w₃ + w₂ ^ 2 * w₁ + w₄ ^ 2 * w₂ + w₃ ^ 2 * w₄
+
+/-- Tube-chart first power sum `p₁(c)`. -/
+def p1c (z w₁ w₂ w₃ w₄ : R) : R := (w₁ - z) + (w₂ - z) + (w₃ - z) + (w₄ - z)
+
+/-- Tube-chart Hermitian quadric `h₂(c) = σ·c_b + c_r·c_g`. -/
+def h2c (z w₁ w₂ w₃ w₄ : R) : R := (w₁ - z) * (w₄ - z) + (w₂ - z) * (w₃ - z)
+
+/-- Tube-chart Hermitian cubic `h₃(c) = σ²c_g + c_b²c_r + c_r²σ + c_g²c_b`. -/
+def h3c (z w₁ w₂ w₃ w₄ : R) : R :=
+  (w₁ - z) ^ 2 * (w₃ - z) + (w₄ - z) ^ 2 * (w₂ - z)
+    + (w₂ - z) ^ 2 * (w₁ - z) + (w₃ - z) ^ 2 * (w₄ - z)
+
+/-- **`p₁(c) = S − 4z`** — the block's own shift identity, derived. -/
+theorem p1c_eq (z w₁ w₂ w₃ w₄ : R) :
+    p1c z w₁ w₂ w₃ w₄ = (w₁ + w₂ + w₃ + w₄) - 4 * z := by
+  unfold p1c; ring
+
+/-- **Shifted quadric is `H₂(w)`, exactly.** The block's
+`h₂(c) + z·p₁(c) + 2z² ` equals the spectral Hermitian quadric `H₂(w)` — all
+`z`-dependence cancels identically, so the constraint reads `H₂(w) = 0`. -/
+theorem shifted_quadric_eq_H2 (z w₁ w₂ w₃ w₄ : R) :
+    h2c z w₁ w₂ w₃ w₄ + z * p1c z w₁ w₂ w₃ w₄ + 2 * z ^ 2 = H2 w₁ w₂ w₃ w₄ := by
+  unfold h2c p1c H2; ring
+
+/-- **Shifted cubic is `H₃(w)`, exactly.** The block's
+`h₃(c) + z(p₁(c)² − 2h₂(c)) + 3z²p₁(c) + 4z³` equals the spectral Hermitian
+cubic `H₃(w)`; again every `z` cancels, so the constraint reads `H₃(w) = 0`. -/
+theorem shifted_cubic_eq_H3 (z w₁ w₂ w₃ w₄ : R) :
+    h3c z w₁ w₂ w₃ w₄
+        + z * ((p1c z w₁ w₂ w₃ w₄) ^ 2 - 2 * h2c z w₁ w₂ w₃ w₄)
+        + 3 * z ^ 2 * p1c z w₁ w₂ w₃ w₄ + 4 * z ^ 3
+      = H3 w₁ w₂ w₃ w₄ := by
+  unfold h3c p1c h2c H3; ring
+
+/-- **Spacetime recovery is `S − zD`, exactly.** Using the block's identities
+`χ_ζ(c) = D + z` and `p₁(c) = S − 4z`, the equation
+`z² − (χ_ζ(c) − 4)z + p₁(c)` reduces to `S − z·D` — i.e. the constraint is
+precisely `z = S/D`, the block's own `eq:z-from-SD`. Stated on the spectral
+aggregates `S`, `D` (no `ζ` needed: it enters only through `D`). -/
+theorem spacetime_recovery_eq (z S D : R) :
+    z ^ 2 - ((D + z) - 4) * z + (S - 4 * z) = S - z * D := by ring
+
+/-- **All three constraints are `z`-free in spectral coordinates.** Packaging the
+above: each tube-chart equation equals a spectral invariant with no residual `z`.
+So in the `wₖ` the Bring constraint system reads `S − zD = 0`, `H₂(w) = 0`,
+`H₃(w) = 0` — the `z`-dependence visible in the tube chart is entirely a shift
+artifact. -/
+theorem constraints_spectral_form (z S D w₁ w₂ w₃ w₄ : R) :
+    (z ^ 2 - ((D + z) - 4) * z + (S - 4 * z) = S - z * D) ∧
+    (h2c z w₁ w₂ w₃ w₄ + z * p1c z w₁ w₂ w₃ w₄ + 2 * z ^ 2 = H2 w₁ w₂ w₃ w₄) ∧
+    (h3c z w₁ w₂ w₃ w₄
+        + z * ((p1c z w₁ w₂ w₃ w₄) ^ 2 - 2 * h2c z w₁ w₂ w₃ w₄)
+        + 3 * z ^ 2 * p1c z w₁ w₂ w₃ w₄ + 4 * z ^ 3 = H3 w₁ w₂ w₃ w₄) :=
+  ⟨spacetime_recovery_eq z S D, shifted_quadric_eq_H2 z w₁ w₂ w₃ w₄,
+   shifted_cubic_eq_H3 z w₁ w₂ w₃ w₄⟩
+
 end QOU.Mass.ColorTubeSpectralBridge
