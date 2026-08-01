@@ -170,16 +170,45 @@ def main() -> None:
         else "The S_K form FAILS: extracted theta values are imaginary "
              "or cross into the spin-dominated regime, which would "
              "flip the binding sign."))
-    wb.add_data("falsifiable_prediction", (
-        "Under the S_K reading, theta_A -> ln q0 is a WALL: there the "
-        "per-pair unit S_K vanishes and the mirror-pair Coulomb "
-        f"description breaks down. The series reaches {wall_frac:.1%} "
-        "of that wall by A = 41, so extending the mirror ladder "
-        "further should show kappa continuing to fall toward zero, "
-        "with the approach governed by theta_A. This is a sharp, "
-        "cheap test that distinguishes the S_K reading from both "
-        "surviving geometric hypotheses -- coth-saturation predicts "
-        "kappa -> 1, not -> 0."))
+    wb.add_data("falsifiable_prediction_TESTED_AND_DEFUSED", {
+        "prediction_as_made": (
+            "Under the S_K reading, theta_A -> ln q0 is a WALL where the "
+            "per-pair unit vanishes. At A = 41 the series had reached "
+            "72.4% of it, so I predicted that extending the mirror "
+            "ladder 'should show kappa continuing to fall toward zero', "
+            "and called this 'a sharp, cheap test that distinguishes "
+            "the S_K reading from coth-saturation, which predicts "
+            "kappa -> 1, not -> 0'."),
+        "what_happened": (
+            "The ladder WAS extended, in the same session, from A = 41 "
+            "to A = 63 (11 further mirror pairs already in the corpus). "
+            "kappa does NOT continue toward zero -- it FLATTENS, from "
+            "1.531 at A = 41 to 1.413 at A = 63: a 7.7% decline across "
+            "a 54% increase in A, against the factor 2.1 seen over "
+            "A = 3..41. theta flattens with it, 0.724 -> 0.749 of "
+            "ln q0."),
+        "verdict": (
+            "The S_K form itself is NOT falsified: theta stays real, "
+            "stays boost-dominated, stays monotone within tolerance, "
+            "and the A^(1/6) description IMPROVED (2.80% -> 2.33%). "
+            "What is falsified is my claim that this was a sharp "
+            "discriminator. Under theta ~ A^(1/6), reaching the wall "
+            "needs A ~ (1/0.75)^6 * 63 ~ 350 -- far beyond the last "
+            "bound mirror pair. The wall is UNREACHABLE in this series, "
+            "so the test cannot discriminate, and the two readings are "
+            "degenerate over the whole accessible range. I proposed it "
+            "as cheap and decisive; it is cheap and indecisive, and "
+            "that is recorded rather than restated as a success."),
+        "what_the_extension_DID_settle": (
+            "Not this, but something else: H_coth's scatter IMPROVED "
+            "with the extension (4.25% -> 3.50% on bound pairs) while "
+            "its rivals did not (H_FH_Z 4.52% -> 4.39%, H_FH_A 5.50%). "
+            "The three are no longer statistically tied. Combined with "
+            "the round-5 withdrawal of the H_FH warrant, "
+            "coth-saturation is now the only reading with both the best "
+            "fit and a structural story -- though 'best of three' is "
+            "not the same as derived."),
+    })
     wb.add_data("honest_scope", (
         "This is a CONSISTENCY test, not a derivation. theta_K remains "
         "the open G3 datum (bean qou-qnnq); nothing here computes it "

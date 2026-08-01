@@ -77,7 +77,7 @@ def stats(vals):
 def main() -> None:
     set_compute_dps()
     rows, skipped = [], []
-    for Z in range(2, 22):                     # A = 3 .. 41
+    for Z in range(2, 33):                     # A = 3 .. 63
         A = 2 * Z - 1
         b_hi, b_lo = binding(Z, A), binding(Z - 1, A)
         if b_hi is None or b_lo is None:
@@ -253,7 +253,7 @@ def main() -> None:
                 "the ~7% scatter the hypotheses are judged on."))
     wb.add_assertion(
         name="series_extended_beyond_A13",
-        computed=int(max(r["A"] for r in rows)), expected=41, tolerance=0,
+        computed=int(max(r["A"] for r in rows)), expected=63, tolerance=0,
         unit="max A",
         source="The series now reaches the A ~ 41 discrimination regime.")
     out = wb.save()
