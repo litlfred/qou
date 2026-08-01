@@ -62,10 +62,17 @@ STATUS
     braid gives 51 distinct values, and the correct kashaev_4_1 is recovered
     only by SPECIFIC conventions (found earlier because kashaev_4_1 was a
     reference).  Whitehead has no reference value (only the volume target), so
-    the scan is ill-posed.  FIX: build the Whitehead as the b(8,3) 2-bridge
-    (4-plat) diagram — continued fraction 8/3 = [2,1,2] — where the two strand
-    edges e₁,e₂ ARE the two bridges (canonical, no scan).  Then link_invariant_tn
-    gives ⟨W⟩_N cheaply and (2π/N)log|⟨W⟩_N| → 4G validates it.  [next unit]
+    the scan is ill-posed.  Built the b(8,3) 2-bridge PLAT (plat_to_pd; CF
+    8/3=[2,1,2] ⇒ σ₂²σ₁σ₂², 5 crossings, 2 components) — the right presentation
+    FORM: its growth lands near 4G for some conventions (vs the braid closure,
+    nowhere near).  BUT with the canonical top-cap strands the growth DECAYS
+    sub-exponentially (→0), while the all-edge-pair "closest to 4G" is
+    cherry-picking (noise).  REMAINING BLOCKER: pinning the correct (strand,
+    outer, sign) convention needs an INDEPENDENT Whitehead reference — the
+    U_q(sl₂) UN-reduced Markov trace at the root (the analogue of
+    kashaev_4_1 = unreduced 4₁ Jones), or the true KnotAtlas L5a1 PD — not a
+    scan against the noisy volume.  No Whitehead number is asserted
+    (anti-fabrication).  [next unit: get the reference, then pin]
   ○ Whitehead cannot be cross-checked via the U_q(sl₂) Markov-trace engine:
     closure_invariant VANISHES at the root of unity (vanishing quantum
     dimension), and the non-zero Kashaev normalization is only coded for 4₁
@@ -447,29 +454,58 @@ def braid_to_pd(word, nstr):
     return [tuple(relab[find(e)] for e in tup) for tup in crossings]
 
 
-# Whitehead link (L5a1) PD via the validated braid word [1,-2,1,-2,1] on 3
-# strands (braid_to_pd is correct — reproduces the braid 4₁ invariant).  The
-# state sum ⟨W⟩ is blocked on the deficit-face rule (see module docstring);
-# once fixed, validate via the volume growth → 4G, not the (root-vanishing)
-# Markov engine.
-WHITEHEAD_PD = None  # = braid_to_pd([1,-2,1,-2,1], 3); computed lazily below
+def plat_to_pd(word, nstr=4):
+    """PD code of the PLAT closure of a braid on `nstr` strands — the natural
+    two-strand-tangle form for a 2-bridge link.  Bottom caps join strands
+    (2m,2m+1); top caps likewise.  Returns (pd, top_cap_edges) where
+    top_cap_edges are the CANONICAL two strand edges (the bridges).
+
+    Intended use: the Whitehead link is the 2-bridge b(8,3); continued fraction
+    8/3=[2,1,2] ⇒ the plat word σ₂²σ₁σ₂² (5 crossings, 2 components).
+
+    STATUS (2026-08-01) — Whitehead value NOT yet pinned; see the module
+    docstring "WHITEHEAD" note.  The plat is the right presentation FORM (its
+    growth lands near 4G for some conventions, unlike the braid trace closure
+    which is nowhere near), BUT with the canonical top-cap strands the growth
+    DECAYS sub-exponentially (→0), while an all-edge-pair scan's ~4G hits are
+    not distinguishable from noise (the "closest to 4G" is cherry-picking).
+    Pinning the correct (strand, outer) convention needs an INDEPENDENT
+    Whitehead reference — the U_q(sl₂) UN-reduced Markov trace at the root (the
+    analogue of kashaev_4_1 = unreduced 4₁ colored Jones), or the true KnotAtlas
+    L5a1 PD — not a scan against the noisy volume.  Do NOT report a Whitehead
+    number from a scan (anti-fabrication)."""
+    ncap = nstr // 2
+    pos = []
+    for m in range(ncap):
+        pos += [m, m]                 # bottom caps: strands (2m,2m+1) share arc m
+    nxt = ncap
+    crossings = []
+    for g in word:
+        p = abs(g) - 1
+        ll, lr = pos[p], pos[p + 1]
+        ul, ur = nxt, nxt + 1
+        nxt += 2
+        crossings.append((lr, ur, ul, ll) if g > 0 else (ll, lr, ur, ul))
+        pos[p], pos[p + 1] = ul, ur
+    parent = list(range(nxt))
+
+    def find(x):
+        while parent[x] != x:
+            parent[x] = parent[parent[x]]; x = parent[x]
+        return x
+    for m in range(ncap):
+        parent[find(pos[2 * m])] = find(pos[2 * m + 1])   # top caps
+    reps = sorted({find(e) for t in crossings for e in t})
+    relab = {r: i + 1 for i, r in enumerate(reps)}
+    pd = [tuple(relab[find(e)] for e in t) for t in crossings]
+    top_caps = (relab[find(pos[0])], relab[find(pos[2])])
+    return pd, top_caps
 
 
-def whitehead_state_sum(N: int, strand_edges, outer_face, deficit_face):
-    """⟨Whitehead⟩ via the §3 state sum.  REQUIRES an explicit deficit_face —
-    there is deliberately NO default, because the correct choice is an OPEN
-    geometric question (see module docstring) and a wrong guess yields a wrong
-    invariant.  Validate any candidate convention via the volume growth → 4G."""
-    global WHITEHEAD_PD
-    if WHITEHEAD_PD is None:
-        WHITEHEAD_PD = braid_to_pd([1, -2, 1, -2, 1], 3)
-    diag = diagram_from_pd(WHITEHEAD_PD, strand_edges=strand_edges,
-                           outer_face_hint=outer_face, name="whitehead")
-    a = solve_face_indices_coupled(diag, N, deficit_face=deficit_face)
-    if a is None:
-        return None, diag
-    diag.face_index = a
-    return link_invariant(diag, N), diag
+# Whitehead 2-bridge b(8,3) plat word (CF 8/3 = [2,1,2] ⇒ σ₂²σ₁σ₂²).  The sign
+# pattern + (strand,outer) convention that yields the invariant is unresolved
+# (see plat_to_pd STATUS); no canonical Whitehead invariant is exported yet.
+WHITEHEAD_PLAT_WORD = [2, 2, 1, 2, 2]
 
 
 def fig8_state_sum(N: int, strand_edges=(1, 2), outer_face=2):
