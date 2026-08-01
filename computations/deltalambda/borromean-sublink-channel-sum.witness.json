@@ -1,0 +1,94 @@
+{
+  "schema": "witness/v1",
+  "name": "borromean-sublink-channel-sum",
+  "description": "A=3 magnitude ROUTE 3: multi-sub-link channel sum. Brunnian sub-link triviality collapses every 2-sub-link deficit to 0; both channel closures = the single 3-body Borromean deficit c\u2083 (factor 1); r*\u22481.585 NOT supplied.",
+  "created": "2026-08-01T23:51:43.748790+00:00",
+  "parameters": {
+    "borromean_band_word": [
+      [
+        0,
+        1,
+        1
+      ],
+      [
+        1,
+        2,
+        1
+      ],
+      [
+        0,
+        1,
+        -1
+      ],
+      [
+        1,
+        2,
+        -1
+      ]
+    ],
+    "free_parameters": 0,
+    "mu3_MeV": 0.4708,
+    "c3_lifted_MeV": 0.297,
+    "r_star": 1.5851851851851853
+  },
+  "results": {
+    "pairwise_sublinks_all_freely_trivial_unlink": true,
+    "pairwise_sublink_details": {
+      "0": {
+        "forgotten_strand": 0,
+        "sublink_band_word": [
+          [
+            0,
+            1,
+            1
+          ],
+          [
+            0,
+            1,
+            -1
+          ]
+        ],
+        "freely_reduced_to_empty": true,
+        "deficit_exact": "0"
+      },
+      "1": {
+        "forgotten_strand": 1,
+        "sublink_band_word": [],
+        "freely_reduced_to_empty": true,
+        "deficit_exact": "0"
+      },
+      "2": {
+        "forgotten_strand": 2,
+        "sublink_band_word": [
+          [
+            0,
+            1,
+            1
+          ],
+          [
+            0,
+            1,
+            -1
+          ]
+        ],
+        "freely_reduced_to_empty": true,
+        "deficit_exact": "0"
+      }
+    },
+    "all_pairwise_deficits_zero_exact": true,
+    "borromean_triple_deficit_bandword_eq_gapA4_closed_form": false,
+    "borromean_triple_deficit_bare_h3_q0_bandword": 0.0016333774142840332,
+    "borromean_triple_deficit_bare_h3_q0_closedform": 0.001437836163212734,
+    "representative_note": "band-word [A\u2080\u2081,A\u2081\u2082] vs GAP-A-4 closed-form representative differ by framing/writhe (non-writhe-normalized trace); immaterial to the refutation (pairwise=0 for any Brunnian representative; closures collapse regardless).",
+    "additive_closure_eq_single_triple_deficit": true,
+    "multiplicative_closure_eq_single_triple_deficit": true,
+    "magnitude_factor_supplied": 1,
+    "r_star_needed": 1.5851851851851853,
+    "closes": false,
+    "verdict": "WALL(scope-b)-brunnian-sublink-triviality"
+  },
+  "lean": "QOU.MassTheory.BorromeanSubLinkChannelSum (brunnian_channelClosureMul_eq_triple, brunnian_channel_no_magnitude, borromean_channel_ne_r_star) \u2014 sorry-free, lean-direct exit 0",
+  "invariant_cited": "Brunnian sub-link triviality: every proper 2-sub-link of the Borromean rings is the unlink \u21d2 its trace deficit against the unlink baseline is exactly 0.",
+  "anti_fit": "\u03bc\u2083/c\u2083 reported as target context only; no free parameter tuned; nothing wired.",
+  "wall_seconds": 4.93
+}
