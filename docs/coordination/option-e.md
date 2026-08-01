@@ -686,3 +686,29 @@ negative, #4486, probe `a3_magnitude_parity_orthogonal_probe.py`, audit
 rescaling** (R1) and the `c₃` gap lives at the **bare single-trace level**, not the `Δ_λ`-dressing
 level where parity acts (R2). So parity cannot supply the `~1.6×`; that coefficient remains the open
 Track-A gate. **Do not re-try parity for the magnitude.**
+
+**2026-08-01 — Milnor EXACT-order coefficient: Route B proved trace-cyclicity
+sub-wall; Route C extends to A=5/A=6 (4 data points); μ̄_A ratio is −2, NOT the
+1.585× magnitude bridge.** (PR #4480,
+`claude/deltalambda-milnor-exact-coefficient-2026-08-01`; continues #4471.)
+Attacked #4471's open exact order law `order(D_A) = 2(A−1)` (= leading
+coefficient μ̄_A ≠ 0). **Route B (PROVED NEGATIVE):** #4471's order engine is the
+*Lie* iterated-commutator tower `iterCommTower`; a genuine *cyclic* Markov trace
+annihilates every ring commutator, so `cyclic_trace_kills_iterCommTower` — the
+trace of the whole top level is 0, and #4471's `HasOrder.trace` witness is `s=0`
+(`leading_coefficient_witness_is_uninformative`). The leading coefficient is
+therefore provably NOT extractable from the Lie tower via the trace; it lives in
+the *group*-commutator / finite-type (Milnor/Vassiliev) structure — Route A,
+Mathlib-inaccessible, CITED not axiomatised. **Route C (compute):** measured the
+Brunnian deficit orders + leading coefficients (both conventions coincide): orders
+`4,6,8,10` → exactly `2(A−1)` (A=5/A=6 NEW, turns #4471's 2 data points into 4);
+μ̄_A = `(3/4)(−2)^{A−3}` = {3/4,−3/2,3,−6}, ratio **exactly −2**, sign `(−1)^{A−1}`
+(matches #4389). **Bridge check:** the μ̄_A ratio is −2, and no combination lands
+near the `r*≈1.585` magnitude factor this ledger's geometric-W_λ rows need — so the
+exact-order leading coefficient is a clean object that does **NOT** encode the A=3
+magnitude anomaly; the missing `1.585×` structure lives elsewhere. Lean
+`MilnorExactCoefficient.lean` sorry-free (lean-direct exit 0), no
+`MilnorExactOrderConjecture` instance fabricated; measured A=5/A=6 recorded as
+`def`s. Probe/witness `milnor-exact-coefficient.witness.json`; audit
+`2026-08-01-deltalambda-milnor-exact-coefficient.md`. Nothing wired; μ̄ extracted
+never fit; `free_parameters = 0`.
