@@ -37,10 +37,10 @@ theorem barOdd_M_eq_neg_barOdd_crossTerm (A t : R) (hA : σ A = A) :
     (A - t) - σ (A - t) = -(t - σ t) := by
   rw [map_sub, hA]; ring
 
-/-- **Even diagonal drops out of the bar-odd face (product form).** Equivalent statement
-via the bar-odd projector's numerator: for any bar-even `A`, adding `A` to a cross-term `t`
-leaves the bar-odd part unchanged up to sign convention — `(A + t) − σ(A + t) = t − σt`. The
-bar-even mass is invisible to the decay (bar-odd) channel. -/
+/-- **Even diagonal drops out of the bar-odd face (sum form).** For any bar-even `A`, adding
+`A` to a cross-term `t` leaves the bar-odd part exactly unchanged: `(A + t) − σ(A + t) =
+t − σt` (an exact equality, no sign convention). The bar-even mass is invisible to the decay
+(bar-odd) channel. -/
 theorem barEven_diagonal_invisible_to_barOdd (A t : R) (hA : σ A = A) :
     (A + t) - σ (A + t) = t - σ t := by
   rw [map_add, hA]; ring
