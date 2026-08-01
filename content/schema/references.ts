@@ -6932,6 +6932,69 @@ export const references: CSLData[] = [
     note: "Authoritative survey of the Hamburger/Stieltjes moment problems including Carleman's determinacy criterion — the determinacy input of the Borel/proper-time Attack-A reduction (docs/audits/2026-07-25-borel-propertime-attack-a-e.md) and of the CarlemanDeterminacyStieltjes gap class (2026-07-25).",
   }),
 
+  // ── Christiansen 2003 (the Stieltjes–Wigert moment problem — complete solution description) ──
+  ref({
+    id: "christiansen2003sw",
+    type: "article-journal",
+    title: "The moment problem associated with the Stieltjes–Wigert polynomials",
+    author: [{ family: "Christiansen", given: "Jacob Stordal" }],
+    "container-title": "Journal of Mathematical Analysis and Applications",
+    volume: "277",
+    issue: "1",
+    page: "218-245",
+    issued: { "date-parts": [[2003]] },
+    DOI: "10.1016/S0022-247X(02)00534-6",
+    URL: "https://doi.org/10.1016/S0022-247X(02)00534-6",
+    note: "Verified 2026-08-01 (ksel2id): complete description of the solutions to the indeterminate Stieltjes–Wigert moment problem (Nevanlinna matrix, N-extremal and canonical solutions). Literature home of the SW factor exact in the balanced binding-kernel decomposition balanced = SW(1/qtilde) ⊛ Jackson (docs/audits/2026-08-01-ksel2id-friedrichs-sw-identification.md).",
+  }),
+
+  // ── Berg 1995 (indeterminate moment problems and entire-function theory) ──
+  ref({
+    id: "berg1995",
+    type: "article-journal",
+    title: "Indeterminate moment problems and the theory of entire functions",
+    author: [{ family: "Berg", given: "Christian" }],
+    "container-title": "Journal of Computational and Applied Mathematics",
+    volume: "65",
+    issue: "1-3",
+    page: "27-55",
+    issued: { "date-parts": [[1995]] },
+    DOI: "10.1016/0377-0427(95)00099-2",
+    URL: "https://doi.org/10.1016/0377-0427(95)00099-2",
+    note: "Verified 2026-08-01 (ksel2id): survey of indeterminate moment problems via the Nevanlinna parametrization and the order/type theory of the entire functions A, B, C, D — canonical-solution supports are zero sets of entire functions (discrete, no finite accumulation point), the structural invariant behind the u-grid ≠ extension-measure exclusion in docs/audits/2026-08-01-ksel2id-friedrichs-sw-identification.md.",
+  }),
+
+  // ── Pedersen 1995 (Stieltjes moment problems and the Friedrichs extension) ──
+  ref({
+    id: "pedersen1995",
+    type: "article-journal",
+    title: "Stieltjes Moment Problems and the Friedrichs Extension of a Positive Definite Operator",
+    author: [{ family: "Pedersen", given: "Henrik Laurberg" }],
+    "container-title": "Journal of Approximation Theory",
+    volume: "83",
+    issue: "3",
+    page: "289-307",
+    issued: { "date-parts": [[1995]] },
+    URL: "https://www.sciencedirect.com/science/article/pii/S0021904585711227",
+    note: "Verified 2026-08-01 (ksel2id) via ScienceDirect listing (title/journal/volume/issue/pages/year confirmed; DOI not resolvable from the sandbox — proxy blocks Crossref/doi.org — so omitted rather than guessed). For an indeterminate Stieltjes problem the Friedrichs extension of the moment operator is identified inside the Nevanlinna parametrization; its spectral measure attains the largest smallest support point, and the Krein-side canonical solution contains 0. The identification input of the KSel-2-ID Friedrichs/Krein probe (ksel2id_friedrichs_selection_probe.py).",
+  }),
+
+  // ── Moak 1981 (the q-Laguerre polynomials) ──
+  ref({
+    id: "moak1981",
+    type: "article-journal",
+    title: "The q-analogue of the Laguerre polynomials",
+    author: [{ family: "Moak", given: "Daniel S." }],
+    "container-title": "Journal of Mathematical Analysis and Applications",
+    volume: "81",
+    issue: "1",
+    page: "20-47",
+    issued: { "date-parts": [[1981]] },
+    DOI: "10.1016/0022-247X(81)90048-2",
+    URL: "https://doi.org/10.1016/0022-247X(81)90048-2",
+    note: "Verified 2026-08-01 (ksel2id): the q-Laguerre (generalized Stieltjes–Wigert) polynomials and their orthogonality weights. The one-sided binding normalizer family [k]_q! is exactly the alpha = 0 q-Laguerre moment family under the scaling s ↦ (p/(1-p))s (ksel2id_sw_identification_probe.py S5, exact).",
+  }),
+
   // ── Ramis–Sauloy–Zhang 2013 (local analytic classification of q-difference equations) ──
   ref({
     id: "ramis-sauloy-zhang2013",
