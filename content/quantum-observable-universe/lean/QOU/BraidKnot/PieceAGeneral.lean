@@ -167,4 +167,35 @@ theorem pieceA_reduction (μ : YoungDiagram) :
   rw [hsq_arm, hsq_leg, h_arm, h_leg]
   ring
 
+/-! ## Stage 5 — Piece A from the pair-counting identity
+
+The remaining combinatorial core is the **pair-counting identity**
+`2Σ(arm·leg) + 2Σ(i·j) + 2A + 2L = card² − card` (bean `qou-o5xj`): the four terms
+count, respectively, ordered UR/LL pairs, ordered UL/LR pairs, same-row and
+same-column ordered pairs — together every ordered pair of distinct cells. Given
+it, Piece A is immediate from the reduction. -/
+
+/-- The pair-counting identity: the arm·leg, i·j, left and above sums account for
+every ordered distinct-cell pair. Proof plan (bean `qou-o5xj`): express `armZ`/`legZ`
+as `Finset.card` of arm/leg filters, expand the product to a triple sum
+`Σ_c Σ_R Σ_B`, collapse the `c`-sum (`c = (R.1, B.2)` is forced) to
+`#{(R,B) : R.1<B.1 ∧ B.2<R.2}`, likewise `Σ(i·j) = #{(A,L) UL/LR}`, then
+`card²−card = Σ_{p,q}[p≠q]` split into the four disjoint position classes. -/
+def PairCount (μ : YoungDiagram) : Prop :=
+  2 * (∑ c ∈ μ.cells, armZ μ c * legZ μ c)
+    + 2 * (∑ c ∈ μ.cells, ((c.1 : ℤ) * (c.2 : ℤ)))
+    + 2 * (∑ c ∈ μ.cells, (c.2 : ℤ))
+    + 2 * (∑ c ∈ μ.cells, (c.1 : ℤ))
+  = (μ.cells.card : ℤ) ^ 2 - (μ.cells.card : ℤ)
+
+/-- **Piece A, given the pair-counting identity.** `Σ hook² = Σ content² + n²`.
+Fully sorry-free modulo the single `PairCount` hypothesis (bean `qou-o5xj`);
+everything else — the reflections and the separable reduction — is machine-checked. -/
+theorem pieceA_of_pairCount (μ : YoungDiagram) (hpc : PairCount μ) :
+    ∑ c ∈ μ.cells, (hookZ μ c) ^ 2
+    = (∑ c ∈ μ.cells, (contentZ c) ^ 2) + (μ.cells.card : ℤ) ^ 2 := by
+  have hred := pieceA_reduction μ
+  rw [PairCount] at hpc
+  linarith [hred, hpc]
+
 end QOU.BraidKnot.PieceA
