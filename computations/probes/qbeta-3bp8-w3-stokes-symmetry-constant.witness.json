@@ -1,0 +1,130 @@
+{
+  "engine": "python-int+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-01T18:10:37.279357+00:00",
+  "commitSha": "950cb6480ff154bc59b1700f42411d7519d35c68",
+  "assertions": [
+    {
+      "name": "stokes_symmetry_exact",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "S12 + S21 == 3*S11 coefficient-by-coefficient through q^400 (exact integers)"
+    },
+    {
+      "name": "determinant_one_exact",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "det S+ == 1 through q^400 (exact integers)"
+    },
+    {
+      "name": "printed_head_gate",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "rebuilt sandwich reproduces printed GGM (61)"
+    },
+    {
+      "name": "symmetry_constant_is_three",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "(S12+S21)/S11 evaluates to 3 at the substrate to <=1e-10 (exact identity; ladder-limited)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 14,
+  "computation": "qbeta-3bp8-w3-stokes-symmetry-constant",
+  "scriptFile": "qbeta_3bp8_w3_stokes_symmetry_constant.py",
+  "scriptHash": "0f717944f260",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
+  },
+  "description": "W3 (bean qou-bbsy, re-scoped after the channel audit): certifies that the GGM Stokes matrix of 4_1 satisfies S12 + S21 = 3*S11 exactly as an integer q-series identity (and det = 1), so the T4/T5 A_omega = 3 is a STRUCTURE CONSTANT — exact, q-independent, not an entry value that deforms at the substrate. Separates the three readings that coincide at q->0 (raw entry 1.5852, value-ratio 3.7067, symmetry constant 3) and records that the theta-reality bound A >= 2.054 excludes the raw entry. The original bean asked for a self-consistent theta fixed point using the winding A_eff; that was re-scoped because A_eff is sigma1sigma1 while A_omega is sigma1sigma2 — running it as specified would have hard-wired the cross-channel error. Identification is a reading selection, not a derivation of 3. Nothing wired.",
+  "contentBlock": "conj:im-q-physical-role",
+  "data": {
+    "identity_S12_plus_S21_eq_3_S11": {
+      "holds_through_q_order": 400,
+      "exact": true,
+      "lhs_head": [
+        3,
+        -24,
+        -27,
+        54,
+        138,
+        270,
+        186,
+        30
+      ],
+      "rhs_head": [
+        3,
+        -24,
+        -27,
+        54,
+        138,
+        270,
+        186,
+        30
+      ],
+      "source": "GGM 2012.00062 symmetry eq (65)"
+    },
+    "identity_det_eq_1": {
+      "holds_through_q_order": 400,
+      "exact": true,
+      "head": [
+        1,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "three_readings": {
+      "R1_raw_entry_S12": "1.58516366291548514",
+      "R2_value_ratio_S12_over_S11": "3.70673484647287985",
+      "R3_symmetry_constant": "3.0",
+      "R3_deviation_from_3": "7.907e-64",
+      "q_to_0_all_equal_3": true,
+      "note": "the three coincide at q->0 and separate at the substrate",
+      "truncation_invariance": {
+        "shallow_order_400": {
+          "R1": "-50836.5587611",
+          "R2": "-0.470463418587",
+          "R3": "3.0"
+        },
+        "converged_order_1600": {
+          "R1": "1.58516366292",
+          "R2": "3.70673484647",
+          "R3": "3.0"
+        },
+        "reading": "R1/R2 are pre-asymptotic garbage at order 400 (guard reports 0 digits) while R3 is exactly 3 at BOTH orders - a structure constant is truncation-invariant"
+      }
+    },
+    "theta_reality_exclusion": {
+      "A_critical": "2.054001411",
+      "R1_status": "EXCLUDED",
+      "R2_status": "passes",
+      "R3_status": "passes",
+      "lean": "QOU.QBeta.ThetaRealityBound.thetaSq_nonneg_iff"
+    },
+    "still_open": "deriving the integer 3 from the 13 categorical drivers; the sigma1sigma2 x-refinement for 4_1 (not in the literature)",
+    "verdict": "A_ω = 3 IS AN EXACT STRUCTURE CONSTANT, q-INDEPENDENT. The certified Stokes matrix satisfies S⁺₁₂ + S⁺₂₁ = 3·S⁺₁₁ exactly, coefficient-by-coefficient through q^400 (and det S⁺ = 1). So the integer 3 is the coefficient of an identity holding at every order — not the value of an entry, and nothing about it deforms at the substrate. Of the three readings that coincide at q→0, the raw entry (1.5852) is EXCLUDED by the ϑ-reality bound A ≥ 2.054 (ThetaRealityBound), the value-ratio (3.7067) is q-dependent, and the symmetry constant is exactly 3 at all q. The corpus T4/T5 value is therefore VINDICATED, and 'does A_ω deform at the substrate?' was ill-posed. Scope-(a): the identities are exact and certified; the IDENTIFICATION of A_ω with the symmetry constant is a reading selection (reality exclusion + q-independence), NOT a derivation of 3 from the categorical drivers — that stays open. Nothing wired."
+  }
+}
