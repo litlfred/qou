@@ -1,0 +1,380 @@
+{
+ "schema": "probe-witness/v1",
+ "probe": "gswz_epsm_kummer_level_probe",
+ "beans": [
+  "qou-9p9y"
+ ],
+ "source": "CGZ arXiv:1712.04887v3 (uploads/1712.04887v3.pdf); GSWZ arXiv:2412.04241v2 eqn (275) (uploads/2412.04241v2.pdf); base place: gswz_epsm_5adic_cyclic_qdilog_probe.py (this branch)",
+ "fields": {
+  "m2_symbol_classes": {
+   "sym1": {
+    "per_root": {
+     "0": 0,
+     "1": 0
+    },
+    "cls_1_minus_X": 0
+   },
+   "sym2": {
+    "per_root": {
+     "0": 0,
+     "1": 0
+    },
+    "cls_1_minus_X": 0
+   },
+   "sym6": {
+    "per_root": {
+     "0": 0,
+     "1": 0
+    },
+    "cls_1_minus_X": 0
+   }
+  },
+  "m2": {
+   "M": 48,
+   "d": 4
+  },
+  "m3_symbol_classes": {
+   "sym1": {
+    "per_root": {
+     "0": 0,
+     "1": 0,
+     "2": 0
+    },
+    "cls_1_minus_X": 0
+   },
+   "sym2": {
+    "per_root": {
+     "0": 0,
+     "1": 0,
+     "2": 0
+    },
+    "cls_1_minus_X": 0
+   },
+   "sym6": {
+    "per_root": {
+     "0": 0,
+     "1": 0,
+     "2": 0
+    },
+    "cls_1_minus_X": 0
+   }
+  },
+  "m3": {
+   "M": 72,
+   "d": 6
+  },
+  "m4_symbol_classes": {
+   "sym1": {
+    "per_root": {
+     "0": 0,
+     "1": 0,
+     "2": 0,
+     "3": 0
+    },
+    "cls_1_minus_X": 0
+   },
+   "sym2": {
+    "per_root": {
+     "0": 0,
+     "1": 0,
+     "2": 0,
+     "3": 0
+    },
+    "cls_1_minus_X": 0
+   },
+   "sym6": {
+    "per_root": {
+     "0": 0,
+     "1": 0,
+     "2": 0,
+     "3": 0
+    },
+    "cls_1_minus_X": 0
+   }
+  },
+  "m4": {
+   "M": 96,
+   "d": 8
+  },
+  "m6_symbol_classes": {
+   "sym1": {
+    "per_root": {
+     "0": 0,
+     "1": 0,
+     "2": 0,
+     "3": 0,
+     "4": 0,
+     "5": 0
+    },
+    "cls_1_minus_X": 0
+   },
+   "sym2": {
+    "per_root": {
+     "0": 0,
+     "1": 0,
+     "2": 0,
+     "3": 0,
+     "4": 0,
+     "5": 0
+    },
+    "cls_1_minus_X": 0
+   },
+   "sym6": {
+    "per_root": {
+     "0": 0,
+     "1": 0,
+     "2": 0,
+     "3": 0,
+     "4": 0,
+     "5": 0
+    },
+    "cls_1_minus_X": 0
+   }
+  },
+  "m6": {
+   "M": 144,
+   "d": 12
+  },
+  "m8_symbol_classes": {
+   "sym1": {
+    "per_root": {
+     "0": 0,
+     "1": 0,
+     "2": 0,
+     "3": 0,
+     "4": 0,
+     "5": 0,
+     "6": 0,
+     "7": 0
+    },
+    "cls_1_minus_X": 0
+   },
+   "sym2": {
+    "per_root": {
+     "0": 0,
+     "1": 0,
+     "2": 0,
+     "3": 0,
+     "4": 0,
+     "5": 0,
+     "6": 0,
+     "7": 0
+    },
+    "cls_1_minus_X": 0
+   },
+   "sym6": {
+    "per_root": {
+     "0": 0,
+     "1": 0,
+     "2": 0,
+     "3": 0,
+     "4": 0,
+     "5": 0,
+     "6": 0,
+     "7": 0
+    },
+    "cls_1_minus_X": 0
+   }
+  },
+  "m8": {
+   "M": 192,
+   "d": 16
+  },
+  "m12_symbol_classes": {
+   "sym1": {
+    "per_root": {
+     "0": 0,
+     "1": 0,
+     "2": 0,
+     "3": 0,
+     "4": 0,
+     "5": 0,
+     "6": 0,
+     "7": 0,
+     "8": 0,
+     "9": 0,
+     "10": 0,
+     "11": 0
+    },
+    "cls_1_minus_X": 0
+   },
+   "sym2": {
+    "per_root": {
+     "0": 0,
+     "1": 0,
+     "2": 0,
+     "3": 0,
+     "4": 0,
+     "5": 0,
+     "6": 0,
+     "7": 0,
+     "8": 0,
+     "9": 0,
+     "10": 0,
+     "11": 0
+    },
+    "cls_1_minus_X": 0
+   },
+   "sym6": {
+    "per_root": {
+     "0": 0,
+     "1": 0,
+     "2": 0,
+     "3": 0,
+     "4": 0,
+     "5": 0,
+     "6": 0,
+     "7": 0,
+     "8": 0,
+     "9": 0,
+     "10": 0,
+     "11": 0
+    },
+    "cls_1_minus_X": 0
+   }
+  },
+  "m12": {
+   "M": 288,
+   "d": 24
+  },
+  "m24_symbol_classes": {
+   "sym1": {
+    "per_root": {
+     "0": 288,
+     "1": 288,
+     "2": 288,
+     "3": 288,
+     "4": 288,
+     "5": 288,
+     "6": 288,
+     "7": 288,
+     "8": 288,
+     "9": 288,
+     "10": 288,
+     "11": 288,
+     "12": 288,
+     "13": 288,
+     "14": 288,
+     "15": 288,
+     "16": 288,
+     "17": 288,
+     "18": 288,
+     "19": 288,
+     "20": 288,
+     "21": 288,
+     "22": 288,
+     "23": 288
+    },
+    "cls_1_minus_X": 0
+   },
+   "sym2": {
+    "per_root": {
+     "0": 0,
+     "1": 0,
+     "2": 0,
+     "3": 0,
+     "4": 0,
+     "5": 0,
+     "6": 0,
+     "7": 0,
+     "8": 0,
+     "9": 0,
+     "10": 0,
+     "11": 0,
+     "12": 0,
+     "13": 0,
+     "14": 0,
+     "15": 0,
+     "16": 0,
+     "17": 0,
+     "18": 0,
+     "19": 0,
+     "20": 0,
+     "21": 0,
+     "22": 0,
+     "23": 0
+    },
+    "cls_1_minus_X": 0
+   },
+   "sym6": {
+    "per_root": {
+     "0": 0,
+     "1": 0,
+     "2": 0,
+     "3": 0,
+     "4": 0,
+     "5": 0,
+     "6": 0,
+     "7": 0,
+     "8": 0,
+     "9": 0,
+     "10": 0,
+     "11": 0,
+     "12": 0,
+     "13": 0,
+     "14": 0,
+     "15": 0,
+     "16": 0,
+     "17": 0,
+     "18": 0,
+     "19": 0,
+     "20": 0,
+     "21": 0,
+     "22": 0,
+     "23": 0
+    },
+    "cls_1_minus_X": 0
+   }
+  },
+  "m24": {
+   "M": 576,
+   "d": 48
+  }
+ },
+ "checks": {
+  "field_construction_all_m": true,
+  "identity_21_kummer_level": true,
+  "root_difference_law_kummer_level": true,
+  "base_place_consistency": true,
+  "chi_nonvacuity_controls": true,
+  "all_symbol_classes_trivial": true
+ },
+ "xi_classes": {
+  "m2": {
+   "xi_chi_dlog_zetaM_t0_convention": 0,
+   "M": 48,
+   "d": 4
+  },
+  "m3": {
+   "xi_chi_dlog_zetaM_t0_convention": 0,
+   "M": 72,
+   "d": 6
+  },
+  "m4": {
+   "xi_chi_dlog_zetaM_t0_convention": 0,
+   "M": 96,
+   "d": 8
+  },
+  "m6": {
+   "xi_chi_dlog_zetaM_t0_convention": 0,
+   "M": 144,
+   "d": 12
+  },
+  "m8": {
+   "xi_chi_dlog_zetaM_t0_convention": 0,
+   "M": 192,
+   "d": 16
+  },
+  "m12": {
+   "xi_chi_dlog_zetaM_t0_convention": 0,
+   "M": 288,
+   "d": 24
+  },
+  "m24": {
+   "xi_chi_dlog_zetaM_t0_convention": 0,
+   "M": 576,
+   "d": 48
+  }
+ },
+ "scope": "scope-(a): the c-weighted xi-class of the 5_2 Bloch element computed at the mu_{24m} Kummer level for every m | 24 (t=0 root convention; dependence quantified by the verified root-difference law); no printed target exists \u2014 candidate eps_m(xi) data for the harness"
+}
