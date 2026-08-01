@@ -1,0 +1,82 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-01T21:58:20.387190+00:00",
+  "commitSha": "f24a00a7d0a6b62d0a69cba381f78c8d0c975079",
+  "assertions": [
+    {
+      "name": "derived_W_is_admissible",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.0,
+      "source": "Both channels' derived weight systems are nonnegative and sum to 1 over the 9 color pairs — the two conditions the Lean class InterNucleonChannelColorTube imposes on any admissible W. So the derived tensor is a genuine instance-candidate, not merely a set of numbers. Would fail if the quantum-dimension mix produced a negative or unnormalised weight."
+    },
+    {
+      "name": "csb_from_weight_tensor_is_zero",
+      "computed": 0.0,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 0.0,
+      "source": "pp and nn both sit in the I=1 triplet and therefore receive identical weights, so the derived weight tensor contributes exactly zero charge-symmetry breaking. Falsifiable consequence: the real ~1% CSB must then come from outside the weight tensor (the corpus names the unwired Coulomb term). Contrast the production sigma/sigma^-1 assignment's ~78%."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 221,
+  "computation": "color-tube-derived-W-explicit",
+  "scriptFile": "color_tube_derived_W_explicit.py",
+  "scriptHash": "e93285ff9024",
+  "scriptCommitSha": "f24a00a7d0a6b62d0a69cba381f78c8d0c975079",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Bean qou-ml1i: writes out the DERIVED color-tube weight tensor W at q0 (zero free parameters, from PRs #4506 + #4510: isotypic basis T1(x)T1 = A+T1+H, isospin selection I=1 -> T1 / I=0 -> A+H, and the quantum-dimension mix W_A:W_H = [1]_q:[5]_q) and reports the consequences computable without the native trace engine. Checks the derived W is an ADMISSIBLE candidate (nonneg + 9-pair normalisation — the two conditions the Lean class InterNucleonChannelColorTube requires). PREDICTION: pp and nn share weights, so the weight tensor contributes EXACTLY ZERO charge-symmetry breaking — removing the production assignment's ~78% over-break (~78x the ~1% experimental bound) and predicting the real CSB comes from elsewhere (the unwired Coulomb term). NOT TESTED: the deuteron BINDING check needs the per-block Markov trace with the refined generator (pyhecke_native, unavailable in this sandbox); it is left explicitly open with these tensors as its inputs. No target consulted, nothing tuned, nothing wired.",
+  "data": {
+    "q0": "1.1099785827513808075916690956107688798744991218736",
+    "I0_mix": {
+      "A": "0.160760299107148",
+      "H": "0.839239700892852"
+    },
+    "derived_W_per_channel": {
+      "I=1 (pp, nn, pn_sym)": {
+        "w_same": "0.000000000000000",
+        "w_diff": "0.166666666666667",
+        "sum": "1.000000000000000",
+        "nonneg": true,
+        "normalised": true
+      },
+      "I=0 (deuteron)": {
+        "w_same": "0.165485393154763",
+        "w_diff": "0.083923970089285",
+        "sum": "1.000000000000000",
+        "nonneg": true,
+        "normalised": true
+      }
+    },
+    "deviation_from_uniform": {
+      "I=1 (pp, nn, pn_sym)": {
+        "same_minus_uniform": "-0.111111111",
+        "diff_minus_uniform": "+0.055555556"
+      },
+      "I=0 (deuteron)": {
+        "same_minus_uniform": "+0.054374282",
+        "diff_minus_uniform": "-0.027187141"
+      }
+    },
+    "csb_from_weight_tensor": 0.0,
+    "comparison_anchors": {
+      "production_csb": 0.78,
+      "experimental_csb_bound": 0.01,
+      "substrate_pn_split": 0.0014
+    }
+  }
+}
