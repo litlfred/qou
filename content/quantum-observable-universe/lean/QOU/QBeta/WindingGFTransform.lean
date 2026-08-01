@@ -1,6 +1,8 @@
 import Mathlib.Data.Complex.Exponential
 import Mathlib.Topology.Algebra.InfiniteSum.Basic
 import Mathlib.Topology.Algebra.InfiniteSum.Field
+import Mathlib.Topology.Algebra.InfiniteSum.NatInt
+import Mathlib.Algebra.Order.GroupWithZero.Unbundled.Basic
 import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.Ring
 import Mathlib.Tactic.Positivity
@@ -205,5 +207,127 @@ theorem SDeformedVolumeChannelWinding.A_omega_eq_tsum (S : ℝ → ℝ)
     [ch : SDeformedVolumeChannelWinding S] :
     ch.A_ω = ∑' e : ℤ, ch.A_family e :=
   (ch.A_total.tsum_eq).symm
+
+
+/-! ## Entirety of square-dominated winding families
+
+The qou-3bp8 decay finding: the leading q̃-power of `I(0,e)` grows
+quadratically (`lead(e) = T(⌈e/2⌉) ≈ e²/8`), which forces the substrate
+values to decay SUPER-exponentially in `e` once past the pre-asymptotic
+hump (measured onset ≈ e ≈ 30–40: `I(0,28) ~ 0.09`, `I(0,40) ~ 2·10⁻⁵`).
+The #4433 "radius of convergence exactly 1" diagnostic sampled only
+`e ≤ 28` — the pre-asymptotic plateau. Consequence, PROVED here: a
+two-sided family dominated by `A·ρ^{e²}` is absolutely summable against
+`w^e` for EVERY `w ≠ 0` — the winding generating function is entire on
+`ℂ*`, no analytic continuation is needed, and the `gf_three_term`
+hypotheses are dischargeable at every point (capstone below). The decay
+bound itself enters as a hypothesis (computational/literature input);
+the entirety consequence and the discharge are machine-checked. -/
+
+/-- A square-dominated ℕ-sequence `A·ρ^{n²}·R^n` is summable for any
+`R` (the `ρ^{n²}` factor beats every geometric growth): elementary
+tail-comparison with `(1/2)^n` beyond `N` with `ρ^N·R < 1/2`. -/
+private theorem summable_sq_dominated_nat {A ρ R : ℝ} (hA : 0 ≤ A)
+    (hρ0 : 0 < ρ) (hρ1 : ρ < 1) (hR : 1 ≤ R) :
+    Summable (fun n : ℕ => A * ρ ^ (n ^ 2) * R ^ n) := by
+  obtain ⟨N, hN⟩ : ∃ N : ℕ, ρ ^ N * R < 1 / 2 := by
+    obtain ⟨N, hN⟩ := exists_pow_lt_of_lt_one
+      (show (0 : ℝ) < 1 / (2 * R) by positivity) hρ1
+    refine ⟨N, ?_⟩
+    have hR0 : (0 : ℝ) < R := lt_of_lt_of_le one_pos hR
+    calc ρ ^ N * R < 1 / (2 * R) * R := by
+          exact mul_lt_mul_of_pos_right hN hR0
+    _ = 1 / 2 := by field_simp
+  rw [← summable_nat_add_iff N]
+  refine Summable.of_nonneg_of_le (fun n => by positivity) (fun n => ?_)
+    (((summable_geometric_of_lt_one (by norm_num) (by norm_num :
+        (1 : ℝ) / 2 < 1)).mul_left A))
+  have h1 : ρ ^ ((n + N) ^ 2) ≤ (ρ ^ N) ^ (n + N) := by
+    rw [← pow_mul]
+    exact pow_le_pow_of_le_one hρ0.le hρ1.le (by nlinarith)
+  have h2 : A * ρ ^ ((n + N) ^ 2) * R ^ (n + N)
+      ≤ A * ((ρ ^ N) ^ (n + N) * R ^ (n + N)) := by
+    have := mul_le_mul_of_nonneg_right h1
+      (pow_nonneg (le_trans zero_le_one hR) (n + N))
+    nlinarith [pow_nonneg hρ0.le ((n + N) ^ 2),
+      pow_nonneg (le_trans zero_le_one hR) (n + N)]
+  refine le_trans h2 ?_
+  rw [← mul_pow]
+  have h3 : (ρ ^ N * R) ^ (n + N) ≤ (1 / 2) ^ (n + N) :=
+    pow_le_pow_left₀ (by positivity) hN.le _
+  have h4 : ((1 : ℝ) / 2) ^ (n + N) ≤ (1 / 2) ^ n :=
+    pow_le_pow_of_le_one (by norm_num) (by norm_num) (Nat.le_add_right n N)
+  have hA' : 0 ≤ A := hA
+  nlinarith [pow_nonneg (show (0:ℝ) ≤ ρ ^ N * R by positivity) (n + N)]
+
+/-- **Entirety of square-dominated winding families.** If
+`|c e| ≤ A·ρ^{(natAbs e)²}` with `0 < ρ < 1`, then `Σ_e c e · wᵉ`
+converges absolutely for EVERY `w ≠ 0`: the winding generating function
+is entire on `ℂ*`. This is the machine-checked consequence of the
+quadratic-lead decay; no analytic continuation is ever needed. -/
+theorem summable_winding_of_sq_dominated {c : ℤ → ℝ} {A ρ : ℝ}
+    (hA : 0 ≤ A) (hρ0 : 0 < ρ) (hρ1 : ρ < 1)
+    (hc : ∀ e : ℤ, |c e| ≤ A * ρ ^ e.natAbs ^ 2)
+    {w : ℂ} (hw : w ≠ 0) :
+    Summable (fun e : ℤ => (c e : ℂ) * w ^ e) := by
+  have hw0 : (0 : ℝ) < ‖w‖ := norm_pos_iff.mpr hw
+  set R : ℝ := max ‖w‖ ‖w‖⁻¹ with hRdef
+  have hR1 : 1 ≤ R := by
+    rcases le_total 1 ‖w‖ with h | h
+    · exact le_max_of_le_left h
+    · exact le_max_of_le_right (one_le_inv_iff₀.mpr ⟨hw0, h⟩)
+  refine Summable.of_norm ?_
+  have hbound : ∀ e : ℤ, ‖(c e : ℂ) * w ^ e‖ ≤ A * ρ ^ e.natAbs ^ 2 * R ^ e.natAbs := by
+    intro e
+    rw [norm_mul, norm_zpow, Complex.norm_real]
+    have hwR : ‖w‖ ^ e ≤ R ^ e.natAbs := by
+      rcases Int.natAbs_eq e with he | he
+      · rw [he, zpow_natCast]
+        exact pow_le_pow_left₀ hw0.le (le_max_left _ _) _
+      · rw [he, zpow_neg, zpow_natCast, ← inv_pow]
+        simp only [Int.natAbs_neg, Int.natAbs_natCast]
+        exact pow_le_pow_left₀ (inv_nonneg.mpr hw0.le) (le_max_right _ _) _
+    have h1 : |c e| * ‖w‖ ^ e ≤ (A * ρ ^ e.natAbs ^ 2) * R ^ e.natAbs := by
+      refine mul_le_mul (hc e) hwR (zpow_nonneg hw0.le e) ?_
+      have := abs_nonneg (c e)
+      nlinarith [hc e]
+    simpa [mul_assoc] using h1
+  refine Summable.of_nonneg_of_le (fun e => norm_nonneg _) hbound ?_
+  have hnat := summable_sq_dominated_nat hA hρ0 hρ1 hR1
+  refine Summable.of_nat_of_neg ?_ ?_
+  · exact hnat.congr fun n => by simp
+  · exact hnat.congr fun n => by simp
+
+open QOU.QBeta.PhiBSArgumentIdentification in
+/-- **Capstone: the three-term functional equation holds at EVERY `w ≠ 0`**
+for square-dominated winding rows — the `gf_three_term` `HasSum`
+hypotheses are discharged by entirety, so the relation among the `tsum`s
+holds on all of `ℂ*` with no continuation. -/
+theorem gf_three_term_of_sq_dominated {s : ℝ} (hs : 0 < s)
+    {I : ℤ → ℤ → ℝ} [A : FourOneIndexAnnihilated s I]
+    (hdom : ∀ m' : ℤ, ∃ C ρ, 0 ≤ C ∧ 0 < ρ ∧ ρ < 1 ∧
+      ∀ e : ℤ, |I m' e| ≤ C * ρ ^ e.natAbs ^ 2)
+    {m : ℤ} {w : ℂ} (hw : w ≠ 0) :
+    (-(s : ℂ) ^ (m + 1) * w + (s : ℂ) ^ (-m - 1) * w⁻¹)
+        * (∑' e : ℤ, (I (m - 1) e : ℂ) * (w / (s : ℂ)) ^ e)
+      + (-(s : ℂ) ^ (3 * m) * w ^ (3 : ℤ) + (s : ℂ) ^ (2 * m) * w ^ (2 : ℤ)
+          + (s : ℂ) ^ (m - 2) * ((s : ℂ) ^ (4 : ℤ) + (s : ℂ) ^ (2 : ℤ) + 1) * w
+          - (s : ℂ) ^ (-m - 2) * ((s : ℂ) ^ (4 : ℤ) + (s : ℂ) ^ (2 : ℤ) + 1) * w⁻¹
+          - (s : ℂ) ^ (-(2 * m)) * w ^ (-2 : ℤ)
+          + (s : ℂ) ^ (-(3 * m)) * w ^ (-3 : ℤ))
+        * (∑' e : ℤ, (I m e : ℂ) * w ^ e)
+      + (-(s : ℂ) ^ (m - 1) * w + (s : ℂ) ^ (-m + 1) * w⁻¹)
+        * (∑' e : ℤ, (I (m + 1) e : ℂ) * ((s : ℂ) * w) ^ e) = 0 := by
+  have hs0 : (s : ℂ) ≠ 0 := by exact_mod_cast (ne_of_gt hs)
+  obtain ⟨C1, ρ1, hC1, hρ10, hρ11, hb1⟩ := hdom (m - 1)
+  obtain ⟨C2, ρ2, hC2, hρ20, hρ21, hb2⟩ := hdom m
+  obtain ⟨C3, ρ3, hC3, hρ30, hρ31, hb3⟩ := hdom (m + 1)
+  have hdn := (summable_winding_of_sq_dominated hC1 hρ10 hρ11 hb1
+    (w := w / (s : ℂ)) (div_ne_zero hw hs0)).hasSum
+  have hm := (summable_winding_of_sq_dominated hC2 hρ20 hρ21 hb2
+    (w := w) hw).hasSum
+  have hup := (summable_winding_of_sq_dominated hC3 hρ30 hρ31 hb3
+    (w := (s : ℂ) * w) (mul_ne_zero hs0 hw)).hasSum
+  exact gf_three_term hs hw hm hdn hup
 
 end QOU.QBeta.WindingGFTransform
