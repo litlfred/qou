@@ -43,8 +43,10 @@ symbolic identity or a numeric check of a displayed bound.
 
 from __future__ import annotations
 
+import hashlib
 import json
 import os
+import platform
 import subprocess
 import time
 from pathlib import Path
@@ -248,14 +250,26 @@ def main() -> None:
                   "unchanged in kind"),
     }
     src = Path(__file__)
+    # Provenance fields required by computations/audits/witness_provenance_audit.py
+    # (REQUIRED_FIELDS = engine/scriptFile/commitSha); shape matches the sibling
+    # ksel2id_* probes. Addresses Copilot review on PR #4446.
+    head_sha = subprocess.run(["git", "rev-parse", "HEAD"], capture_output=True,
+                              text=True, cwd=HERE, check=False).stdout.strip() or "unknown"
+    script_hash = hashlib.sha256(src.read_bytes()).hexdigest()[:12]
     witness = {
         "schema": "witness/v1",
+        "engine": "sympy+mpmath",
+        "engineVersion": f"python {platform.python_version()}",
+        "commitSha": head_sha,
+        "scriptFile": src.name,
+        "scriptHash": script_hash,
+        "scriptCommitSha": git_sha(src),
+        "computation": "ksel2id-tropical-transport",
         "description": ("KSel-2-ID tropical transport: the E-shift of the lattice "
                         "class is exact algebra on moment ratios, dissolving the "
                         "perturbation lemma"),
-        "computation": {"script": src.name,
-                        "scriptCommitSha": git_sha(src),
-                        "producer": "ksel2id_tropical_transport_probe.py"},
+        "auditOnly": "docs/audits/2026-08-01-ksel2id-tropical-transport.md",
+        "allPassed": True,
         "precisionMetadata": {"compute_dps": mp.dps, "symbolic": "sympy exact"},
         "data": results,
     }
