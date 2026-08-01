@@ -189,7 +189,12 @@ def main():
     _log(f"w₄ σ-length={len(w4_sigma)}  w₃ σ-length={len(w3_sigma)}")
 
     # ── exact symbolic y_λ at n=4 and n=3 (file-cached: the n=4 solve is ~18 min) ──
-    ycache = _Path("/tmp/claude-0/-home-user-qou/73136c5f-5571-5e39-a603-7515d4c4b28f/scratchpad/y_lambda_symbolic_cache.json")
+    # Scratchpad root is env-configurable so the cache is portable across
+    # environments (a hard-coded sandbox path would miss on every other machine
+    # and could fail to create its parents).
+    import os as _os
+    _scratch = _Path(_os.environ.get("QOU_SCRATCHPAD", "/tmp/qou-scratchpad"))
+    ycache = _scratch / "y_lambda_symbolic_cache.json"
     import json as _json2
 
     def _unify_q(e):
@@ -373,7 +378,10 @@ def main():
           f"  → {'MATCH' if match_measured else 'MISMATCH'}")
     print("=" * 88)
 
-    w = WitnessBuilder("a4-brunnian-deficit-closed-form", engine="python")
+    # start_time = process start, so durationMs measures the whole symbolic
+    # derivation rather than just the save step.
+    w = WitnessBuilder("a4-brunnian-deficit-closed-form", engine="python",
+                       start_time=_T0)
     w.set_description(
         "EXACT symbolic closed form of the A=4 4-component Brunnian level deficit "
         "1 - tau_L4 under the perblock convention g = sum y_lambda*|chi_lambda| at base "
