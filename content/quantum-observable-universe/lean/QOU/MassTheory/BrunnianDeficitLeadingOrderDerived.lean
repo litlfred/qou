@@ -70,56 +70,86 @@ the pipeline is sound.
 
 namespace QOU.MassTheory.BrunnianDeficitLeadingOrderDerived
 
-/-! ## The derived leading data -/
+/-! ## Two INDEPENDENT sides: witnessed data vs the law's formula
 
-/-- The Milnor order law `2(A−1)` for the leading `(q−1)`-order of the
-`A`-component Brunnian cluster deficit. -/
-def leadingOrder (A : ℕ) : ℕ := 2 * (A - 1)
+The declarations below are split deliberately, so that the theorems relating them
+are **falsifiable** rather than definitional.
 
-/-- The parity sign convention `(−1)^(A−1)`: odd `A ↦ +1`, even `A ↦ −1`. -/
-def paritySign (A : ℕ) : ℤ := (-1) ^ (A - 1)
+* `witnessedOrder` / `witnessedLeadingCoeff` are **DATA** — transcribed from the
+  witness `a4-brunnian-deficit-closed-form.witness.json`. They assert nothing;
+  they are a Lean-side record of what the symbolic computation produced.
+* `leadingOrder` / `paritySign` are **THE LAW** — the closed formulas
+  `2(A−1)` and `(−1)^(A−1)` posited by `MilnorParitySignLaw`, defined without
+  reference to the data.
 
-/-- **Derived** leading `(q−1)`-coefficient of `1 − τ_A` at the two known orders,
-from the exact symbolic derivation (witness
-`a4-brunnian-deficit-closed-form.witness.json`). `0` marks "not computed" — the
-law has exactly two data points. -/
-def leadingCoeff : ℕ → ℤ
+Because the two sides are defined independently, a theorem asserting that they
+agree **can fail**: had the derivation returned order `5`, or a *positive* A=4
+coefficient, `law_reproduces_witnessed_order` / `law_matches_witnessed_sign`
+would not compile. That is the content — and it is the actual scientific claim
+(the law predicts what the computation found).
+
+Anti-pattern deliberately avoided (AGENTS.md §8): a statement like
+`leadingCoeff 4 < 0 := by decide` is **not** a theorem — `leadingCoeff 4` is
+*defined* to be `−96`, so it is true by unfolding and says nothing about the
+physics. Such statements are notation, not proofs, and are not written here. -/
+
+/-- **DATA (witness transcription).** Leading `(q−1)`-order of `1 − τ_A` as
+produced by the exact symbolic derivation, per
+`a4-brunnian-deficit-closed-form.witness.json`. `0` marks "not computed" — the
+law has exactly two data points. Asserts nothing on its own. -/
+def witnessedOrder : ℕ → ℕ
+  | 3 => 4
+  | 4 => 6
+  | _ => 0
+
+/-- **DATA (witness transcription).** Leading `(q−1)`-coefficient of `1 − τ_A`
+from the same witness (A=3 `+12`, A=4 `−96`). Asserts nothing on its own. -/
+def witnessedLeadingCoeff : ℕ → ℤ
   | 3 => 12
   | 4 => -96
   | _ => 0
 
-/-! ## The order law, exact at both known A -/
+/-- **THE LAW.** The Milnor order law `2(A−1)`, defined independently of the
+data. -/
+def leadingOrder (A : ℕ) : ℕ := 2 * (A - 1)
 
-/-- A=3: the derived leading order is `4 = 2(3−1)`. -/
-theorem leadingOrder_three : leadingOrder 3 = 4 := rfl
+/-- **THE LAW.** The parity sign `(−1)^(A−1)`: odd `A ↦ +1`, even `A ↦ −1`,
+defined independently of the data. -/
+def paritySign (A : ℕ) : ℤ := (-1) ^ (A - 1)
 
-/-- A=4: the derived leading order is `6 = 2(4−1)` — **exact**, replacing the
-slope-estimated `≈ 6.06` of the measured leg. -/
-theorem leadingOrder_four : leadingOrder 4 = 6 := rfl
+/-! ## The falsifiable agreement theorems -/
 
-/-- The order is even at every `A`, so `(q−1)^{leadingOrder A}` is nonnegative —
-the reason the *sign* of the deficit near `q = 1` is carried entirely by the
-leading coefficient. -/
+/-- **The law reproduces the witnessed orders.** At both computed `A`, the
+independently-defined formula `2(A−1)` equals the order the symbolic derivation
+actually returned. This is falsifiable: a witnessed order of `5` at `A = 4`
+would break it. (At A=4 the witnessed value is the *exact* valuation `6`,
+replacing the earlier log-log slope estimate `≈ 6.06`.) -/
+theorem law_reproduces_witnessed_order :
+    witnessedOrder 3 = leadingOrder 3 ∧ witnessedOrder 4 = leadingOrder 4 := by
+  constructor <;> rfl
+
+/-- **The law reproduces the witnessed signs.** At both computed `A`, the sign of
+the witnessed leading coefficient equals the independently-defined parity sign
+`(−1)^(A−1)`. Falsifiable: a *positive* witnessed A=4 coefficient would break it.
+At A=3 this recovers the corpus's proved Borromean positivity; at A=4 it is the
+new content — previously the sign entered only as a measured `τ_L₄ > 1`. -/
+theorem law_matches_witnessed_sign :
+    Int.sign (witnessedLeadingCoeff 3) = paritySign 3 ∧
+    Int.sign (witnessedLeadingCoeff 4) = paritySign 4 := by
+  constructor <;> rfl
+
+/-- **The witnessed orders are even.** Needed because it is what makes the
+deficit's sign near `q = 1` be carried entirely by the leading coefficient
+(`(q−1)^even ≥ 0`). Stated on the *witnessed* orders, so it is a fact about the
+computation's output, not about the formula. -/
+theorem witnessedOrder_even_at_known_A :
+    Even (witnessedOrder 3) ∧ Even (witnessedOrder 4) := by
+  constructor <;> decide
+
+/-- The law's order is even at **every** `A` — a genuine `∀`-statement about the
+formula (not a data check), so it also covers the un-computed `A`. -/
 theorem leadingOrder_even (A : ℕ) : Even (leadingOrder A) :=
   ⟨A - 1, by unfold leadingOrder; ring⟩
-
-/-! ## The parity sign law, now from derived coefficients -/
-
-/-- A=3: the derived leading coefficient is positive. -/
-theorem leadingCoeff_three_pos : 0 < leadingCoeff 3 := by decide
-
-/-- A=4: the derived leading coefficient is negative — the **derived** replacement
-for the measured `τ_L₄ > 1` antecedent. -/
-theorem leadingCoeff_four_neg : leadingCoeff 4 < 0 := by decide
-
-/-- **The parity sign law at the two known A, from derived data.** The sign of the
-derived leading coefficient equals `(−1)^(A−1)` for `A = 3` and `A = 4`. At A=3
-this reproduces the corpus's proved Borromean positivity; at A=4 it is the new
-derived content (previously a measured input). -/
-theorem parity_sign_law_derived :
-    (0 < leadingCoeff 3 ∧ paritySign 3 = 1) ∧
-    (leadingCoeff 4 < 0 ∧ paritySign 4 = -1) := by
-  refine ⟨⟨by decide, by decide⟩, ⟨by decide, by decide⟩⟩
 
 /-- **Sign is carried by the leading coefficient.** Over a linear ordered ring,
 if the leading coefficient is negative and the leading power is nonnegative (which
@@ -139,7 +169,7 @@ theorem pow_six_nonneg {R : Type*}
     _ = x ^ 6 := by ring
 
 /-- **A=4 leading term is nonpositive.** Instantiating the above at the derived
-A=4 data (`c = −96 < 0`, order `6` even): the leading term of `1 − τ₄` in `(q−1)`
+A=4 witnessed data (`c = −96 < 0`, witnessed order `6`, even): the leading term of `1 − τ₄` in `(q−1)`
 is nonpositive for every `q`. With the nonvanishing leading coefficient this is
 the derived statement behind `τ_L₄ > 1` near `q = 1` — replacing the measured
 antecedent of `MilnorParitySignLaw.sign_law_A4_measured`. -/
