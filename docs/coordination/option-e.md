@@ -639,3 +639,45 @@ neither a derived LEVEL, nor a geometric `W_λ`, nor a coordination-EDGE factor 
 `edge_reweight_requires_brunnian` (measured order `1.776 ≠ 4`). Audit
 `2026-08-01-deltalambda-gap-a4-brane-tower-level.md`. Nothing wired; μ₃ never inverted;
 `free_parameters = 0`.
+## 2026-08-01 — the partition-conjugation parity thread (GAP-1 exclusion + weight-class narrowing + the three-parity clarification)
+
+Three merged PRs (#4387, #4399, #4481) working the Δ_λ **weight-class** structure via the
+partition-conjugation parity of the deuteron H₆ Wedderburn sum. No fit; nothing wired;
+`free_parameters = 0`.
+
+- **Signed conjugation parity (#4387, merged).** The deuteron binding `B = m_e Σ_{λ⊢6} T_λ Δ_λ`
+  (`T_λ = w_λ χ^λ`) transforms under the physical bar as `T_λ(q⁻¹) = (−1)^{n-1} T_{λ'}(q)`
+  (`sgn = (−1)^{n-1}`, `= −1` for `n=6`); three exact identities (`w_λ=w_{λ'}`, `χ^{λ'}(q)=χ^λ(q⁻¹)`,
+  `w_λ(q⁻¹)=(−1)^{n-1}w_λ(q)`). Consequence: the self-conjugate `(3,2,1)` is **bar-ODD** ⇒ feeds `t`,
+  never `g₂`; `g₂ ← conjugate-pair asymmetries Δ_λ − Δ_{λ'}`, `t ← symmetric parts + (3,2,1)`. Lean
+  `ConjugationParitySplit.lean` (sorry-free). Audit `2026-07-26-deuteron-conjugation-parity-categorical.md`.
+
+- **GAP-1 exclusion (#4399, merged).** Any **conjugation-symmetric** dressing `Δ_λ = Δ_{λ'}` gives
+  `g₂ = 0` (for even A, `sgn = −1`) — scope-(b), proved invariant. So the Markov weight `w_λ`,
+  classical `dim(λ)²`, and hook-form q-dimension are **excluded**; the conjugation-**covariant Wenzl
+  principal specialization survives** — independently selecting the corpus's production weight `y_λ`.
+  This is the *complement* to the geometric-W_λ wall above: the symmetric q-Plancherel-type weights
+  are excluded on parity grounds for even-A, consistent with the `d_q²/D²` overshoot. Lean
+  `ConjugationSymmetricDeltaExcluded.lean` (sorry-free). Audit
+  `2026-08-01-deltalambda-parity-exclusion-and-frontier-ties.md`.
+
+- **Milnor-sign convergence is NOT a derivation (#4481, merged).** The `(−1)^{A−1}` match between the
+  weight bar-sign `(−1)^{n-1}` (`n=3A`) and the Milnor-parity cluster-deficit sign (#4389) is a
+  **convergence via distinct mechanisms, not a derivation**: the proved Borromean deficit
+  `h⁴(3+h²)/(h²+4)` has leading order `h⁴ = h^{2(A−1)}` with the weight prefactor `h⁸ = h^{n−1}`
+  **absent** (τ_A is a normalized ratio ⇒ the Ocneanu weight cancels), and the weight order
+  `3A−1 > 2(A−1)` is subleading. Lean `MilnorWeightParityConvergence.lean` (sorry-free). Audit
+  `2026-08-01-milnor-sign-weight-parity-convergence.md`.
+
+**Three-parity clarification (for siblings).** The corpus now holds **three distinct parity sign-
+readings**, and none derives another: (i) Milnor deficit sign `(−1)^{A−1}` (#4389, cluster deficit;
+A=3 proved, A=4 measured); (ii) winding-parity `N(φⁿ)=(−1)ⁿ` (#4401, the **decay/`Im𝔙` S-channel**
+sign, explicitly self-scoped "conjectural mechanism, not a derivation"); (iii) the Ocneanu-weight
+bar-parity `(−1)^{n-1}` (#4387/#4399, the **binding weight class**). (i) and (iii) share the value
+`(−1)^{A−1}` but arise from distinct-order objects (#4481); (ii) is a different observable. **Do not
+join them into a single "meeting-point" derivation** — that would manufacture a spurious link across
+observables.
+
+**Net for the magnitude gate:** the parity thread **narrows the weight class** (symmetric excluded ⇒
+principal specialization) but does **not** touch the standing magnitude gate — the A=3 `~1.6×`
+coefficient (`c₃ = 0.63×μ₃`, `μ₃ = +0.4708`). That coefficient remains the open Track-A gate.
