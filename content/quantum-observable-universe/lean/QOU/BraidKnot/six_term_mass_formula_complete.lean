@@ -23,17 +23,20 @@ context plus a sum identity.
 
 namespace QOU.BraidKnot
 
-/-- Abstract context for the six-term mass formula. -/
-class SixTermMassFormulaContext where
-  /-- The six addends (in `ℝ`). -/
-  term1 : ℝ
-  term2 : ℝ
-  term3 : ℝ
-  term4 : ℝ
-  term5 : ℝ
-  term6 : ℝ
+/-- Abstract context for the six-term mass formula.  The decomposition is a
+    pure additive identity, so the base ring is the weakest structure that
+    admits `+` — a generic `[AddCommMonoid R]` (§7c); the archimedean
+    specialisation `R := ℝ` is a downstream instantiation, not baked in here. -/
+class SixTermMassFormulaContext (R : Type*) [AddCommMonoid R] where
+  /-- The six addends (in the generic base ring `R`). -/
+  term1 : R
+  term2 : R
+  term3 : R
+  term4 : R
+  term5 : R
+  term6 : R
   /-- The categorical mass `𝔪(ϱ)`. -/
-  cat_mass : ℝ
+  cat_mass : R
   /-- Manuscript six-term decomposition: `𝔪(ϱ) = Σ_{i=1}^{6} term_i`. -/
   claim_six_term_sum :
     cat_mass = term1 + term2 + term3 + term4 + term5 + term6
@@ -42,7 +45,8 @@ class SixTermMassFormulaContext where
 
     `𝔪(ϱ) = term1 + term2 + term3 + term4 + term5 + term6`. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/six-term-mass-formula-complete.md
-def six_term_mass_formula_complete [ctx : SixTermMassFormulaContext] :
+def six_term_mass_formula_complete {R : Type*} [AddCommMonoid R]
+    [ctx : SixTermMassFormulaContext R] :
     ctx.cat_mass = ctx.term1 + ctx.term2 + ctx.term3
                  + ctx.term4 + ctx.term5 + ctx.term6 :=
   ctx.claim_six_term_sum
