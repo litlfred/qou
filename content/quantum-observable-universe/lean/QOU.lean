@@ -50,6 +50,10 @@ import QOU.MathlibExt.OctonionSU3Stabilizer
 import QOU.MathlibExt.OctonionSU3BracketClosure
 import QOU.MathlibExt.OctonionColourActionBaseModule
 import QOU.StandardModel.ColourStabilizerAction
+-- q-difference operator calculus (missing Mathlib infra for the q-difference D-module
+-- program): q-Leibniz product rule (clean), monomial q-chain rule (q→q^m), and the
+-- composition obstruction (no naive q-chain rule for non-monomial inner functions).
+import QOU.MathlibExt.QDifferenceOperator
 import QOU.HeckeAlgebra
 import QOU.Glossary
 import QOU.Knot.CuspShapeBarParity
@@ -100,6 +104,10 @@ import QOU.Mass.QDiffProlongationBaseOperator
 -- C_z(X) = [1]_z X³ + [2]_z X² + [3]_z X + [4]_z (coefficients = quantum integers),
 -- the reason the base q-shift acts naturally on Σ. Computed from Σ, independent of C1.
 import QOU.Mass.ColorCurveQIntegerForm
+-- W1 q-partials of the color cubic + the branch-selection defect: on Σ,
+-- Δ_q^z C(X,z) = C(qz,X) — the precise obstruction (X leaves Σ under z↦qz; the
+-- correction to a root of C_{qz} is the branch datum D_q must choose).
+import QOU.Mass.ColorCurveQPartials
 import QOU.Mass.HeckeStokesEigenvalues
 import QOU.Mass.NaStokesKeystone
 import QOU.Mass.BindingHyperbolicRecurrence
