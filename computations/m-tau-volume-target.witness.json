@@ -1,34 +1,52 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-01T10:14:53.928562+00:00",
-  "commitSha": "14dd44c34efdb122464cb75fa880b7954840e0c0",
+  "computedAt": "2026-08-01T10:28:32.099011+00:00",
+  "commitSha": "ab31230586f27d46551c12a88f049e858fa09fdd",
   "assertions": [
     {
-      "name": "k2_target_beyond_9crossing_census",
+      "name": "k2_target_value",
       "computed": 34.13661525439891,
       "expected": 34.14,
       "passed": true,
       "tolerance": 0.05,
       "unit": "hyperbolic volume",
-      "source": "(m_tau/m_e)*hbar_q^2 at canonical q0; the maximum hyperbolic volume among knots of <= 9 crossings is < 13, so a 25-knot low-crossing census cannot contain the k=2 target."
+      "source": "(m_tau/m_e)*hbar_q^2 at canonical q0."
     },
     {
-      "name": "k3_target_in_census_range",
+      "name": "k2_exceeds_9crossing_census_max",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "unit": "bool",
+      "source": "Reach check: the k=2 target exceeds the ~12.5 maximum hyperbolic volume among knots of <= 9 crossings, so a 25-knot low-crossing census cannot contain it."
+    },
+    {
+      "name": "k3_target_value",
       "computed": 3.382314419348457,
       "expected": 3.383,
       "passed": true,
       "tolerance": 0.005,
       "unit": "hyperbolic volume",
-      "source": "(m_tau/m_e)*hbar_q^3; lies between Vol(6_1) and Vol(6_2), so the census search genuinely covered and refuted the k=3 identity at 1%."
+      "source": "(m_tau/m_e)*hbar_q^3 at canonical q0."
+    },
+    {
+      "name": "k3_within_census_window",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "unit": "bool",
+      "source": "Reach check: the k=3 target lies strictly between Vol(6_1) and Vol(6_2), inside the searched census — that refutation is real."
     }
   ],
   "allPassed": true,
   "durationMs": 4,
   "computation": "m-tau-volume-target",
   "scriptFile": "m_tau_volume_target_probe.py",
-  "scriptHash": "e241d622c18f",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "9778d6eb247b",
+  "scriptCommitSha": "ab31230586f27d46551c12a88f049e858fa09fdd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -40,6 +58,7 @@
     "mpmath": "1.4.1"
   },
   "description": "EXPLORATORY census-reach quantification for obs:m-tau-knot-prediction (bean qou-ejxn): exact targets Vol = (m_tau/m_e) * hbar_q^k at canonical q0 for k = 1,2,3, with reach verdicts. Re-scopes the block's 'Refuted' to scope-(a): real for k=3 over the census, untested for k=2 (target beyond census reach), unreachable for k=1. No candidate proposed, no fit.",
+  "auditOnly": "docs/audits/2026-08-01-tau-knot-discussion-review.md",
   "data": {
     "inputs": {
       "m_tau_over_m_e": "3477.23000000000001818989403545856475830078125",

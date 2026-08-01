@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-01T10:14:54.084958+00:00",
-  "commitSha": "14dd44c34efdb122464cb75fa880b7954840e0c0",
+  "computedAt": "2026-08-01T10:28:32.262766+00:00",
+  "commitSha": "ab31230586f27d46551c12a88f049e858fa09fdd",
   "assertions": [
     {
       "name": "all_discussion_claims_verified",
@@ -24,11 +24,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 3,
+  "durationMs": 4,
   "computation": "a5-so3-branching",
   "scriptFile": "a5_so3_branching_probe.py",
-  "scriptHash": "b5071ed571c9",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "61fd35da42a2",
+  "scriptCommitSha": "ab31230586f27d46551c12a88f049e858fa09fdd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -40,6 +40,7 @@
     "mpmath": "1.4.1"
   },
   "description": "EXPLORATORY exact A5-branching of SO(3) irreps l=0..6 (bean qou-a2g2): s/p/d restrict irreducibly (1/3/5); the f orbital (7) fractures as 3'+4, g (9) as 4+5, h (11) as 3+3'+5. Standard character theory, witness-pinned; the orbital fine-structure reading is interpretive and NOT wired.",
+  "auditOnly": "docs/audits/2026-08-01-tau-knot-discussion-review.md",
   "data": {
     "branching_table": {
       "l=0 (dim 1)": {
