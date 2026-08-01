@@ -81,6 +81,66 @@ literature). Concretely, one of:
 Route 3 is the recommended next step: it keeps the original falsifiable structure
 and only changes the test knot to one where the question is meaningful.
 
+
+## Addendum (same day): route 3 is **also** blocked — there is no second rank-2 knot
+
+Route 3 above ("re-run on a different rank-2 knot") was the recommended redesign.
+Checking it against the corpus before acting kills it too.
+
+Rank 2 means a **quadratic imaginary invariant trace field**. For knot complements
+in S³ that is essentially the figure-eight alone: **Reid (1991) established 4₁ as
+the unique arithmetic hyperbolic knot** — already cited in-corpus at
+[`hyperbolic-volume-transcendence.md`](../../content/quantum-observable-universe/predicted-spectra/hyperbolic-volume-transcendence.md)
+and [`three-knot-jet-order-independence.md`](../../content/quantum-observable-universe/predicted-spectra/three-knot-jet-order-independence.md).
+Strictly, Reid gives *arithmetic ⇒ 4₁*, and quadratic-imaginary-trace-field ⇒
+arithmetic needs integral traces (non-integral traces would force a closed
+essential surface, Bass), so a non-arithmetic knot with quadratic trace field is
+not excluded by Reid alone. But **no second example is known in the corpus or the
+standard census**, so route 3 has no candidate to run on. Recorded as
+*no-known-candidate*, not as a theorem.
+
+### What is actually available at rank 2: links, not knots
+
+| manifold | invariant trace field | \|disc\| | in-corpus compute |
+|---|---|---|---|
+| 4₁ | ℚ(√−3) | 3 | GGM sandwich (#4447) |
+| Whitehead link | ℚ(i) | **4** | [`2026-07-26-whitehead-vc-verification-and-p-exponent.md`](../audits/2026-07-26-whitehead-vc-verification-and-p-exponent.md); #4400 |
+| Borromean rings | ℚ(i) | **4** | `borromean_3d_index.py`, `borromean_kashaev_positive_sum_probe.py` |
+
+Both are arithmetic with trace field ℚ(i), and both already have corpus machinery.
+Candidate A predicts a Stokes constant of **4** for each.
+
+**But the test degrades from two-sided to one-sided**, and this must be stated
+plainly rather than glossed:
+
+1. **Candidate B becomes inapplicable.** Links have *multivariable* Alexander
+   polynomials; "the middle coefficient" is not defined without an extra choice.
+   So a link test can support or refute A, but **cannot adjudicate A against B** —
+   which was the entire point of the original design.
+2. **Rank must be verified, not assumed.** Quadratic trace field does not by itself
+   guarantee a 2×2 Stokes matrix; the rank is the number of boundary-parabolic
+   representations. For 4₁ these are the geometric rep and its conjugate. That the
+   same holds for Whitehead/Borromean is **plausible but unverified here**.
+3. **Confound to control.** The 5₂ q→0 matrix already contains a 4 among
+   {4, −3, −9}, and \|disc ℚ(i)\| = 4. A "4" appearing for Whitehead or Borromean
+   would need to be shown *not* to be the generic small-integer coincidence before
+   it counts as support for A.
+
+### Honest status of the arc
+
+The "why 3" question now has **no cheap well-posed test**. The original two-candidate
+design required a second rank-2 *knot*, and none is available. What remains:
+
+- **One-sided link test** (Whitehead/Borromean, prediction 4) — cheapest, but only
+  probes A, with confound (3) to control.
+- **Close the channel gap** (routes 1–2 above): derive which matrix element the T5
+  `A_ω` is, which would define the rank-3 generalization and re-open 5₂ properly.
+  This is the principled route and the one the arc actually needs.
+
+Recommendation: do **not** run the link test as a candidate-adjudicator — it cannot
+do that job. Run it only if a *derived* rule for "which Stokes datum is `A_ω`"
+exists first, in which case 5₂ becomes available too and is the better test.
+
 ## Cross-references
 
 - Bean `qou-l15q` (re-scoped by this note); predecessor `qou-bbsy` (#4447).
