@@ -487,6 +487,17 @@ def block_a4_zeros() -> dict:
             half = eps if n >= n0 else min(mpf("0.45"), (1 - w ** 2) / 2)
             a, b = c * (1 - half), c * (1 + half)
             fa, fb = aw_eval(cs, a), aw_eval(cs, b)
+            # CERTIFY the endpoint signs against the tail bound (Copilot review,
+            # PR #4507): the bisection sees only the truncation Σ_{m≤M} a_m z^m,
+            # so a sign change there certifies a sign change of the TRUE series
+            # only if |truncation| exceeds the tail bound at each endpoint.
+            ta, tb = aw_tail(w, a, M), aw_tail(w, b, M)
+            endpoints_certified = bool(abs(fa) > ta and abs(fb) > tb)
+            if n >= n0:
+                assert endpoints_certified, (
+                    f"TAIL CERTIFICATION FAILED at w={wv}, n={n}: "
+                    f"|f(a)|={fmt(abs(fa))} vs tail {fmt(ta)}, "
+                    f"|f(b)|={fmt(abs(fb))} vs tail {fmt(tb)}")
             if fa * fb > 0:
                 assert n < n0, (f"THEOREM VIOLATED: no sign change in the "
                                 f"certified interval at w={wv}, n={n}")
@@ -508,6 +519,8 @@ def block_a4_zeros() -> dict:
             theta = z * w ** (2 * n - 1) - 1
             pred = -k * w ** n
             rows.append({"n": n, "zeta": nstr(z, 22), "theta": nstr(theta, 22),
+                         "endpoints_certified_vs_tail": endpoints_certified,
+                         "tail_bound_at_a": fmt(ta), "tail_bound_at_b": fmt(tb),
                          "kappa_prediction": fmt(pred, 12),
                          "theta_over_prediction": fmt(theta / pred, 12),
                          "theorem_bound_2kw^n": fmt(2 * k * w ** n, 8),
