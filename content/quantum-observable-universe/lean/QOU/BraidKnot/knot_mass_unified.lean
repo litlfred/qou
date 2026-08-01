@@ -16,20 +16,23 @@ namespace QOU.BraidKnot
 
 /-- Abstract context for the `knot_mass_unified` claim — manuscript-themed
     typed fields below; the boxed six-term spectral expansion of
-    `𝔪(ϱ)` is encoded as a single equality on `mass`. -/
-class KnotMassUnifiedContext where
-  /-- Substrate parameter `q : ℝ`. -/
-  q : ℝ
+    `𝔪(ϱ)` is encoded as a single equality on `mass`.  The identity is a pure
+    additive/subtractive relation, so the base ring is the weakest structure
+    that admits `+`/`−` — a generic `[AddCommGroup R]` (§7c); the archimedean
+    specialisation `R := ℝ` is a downstream instantiation, not baked in here. -/
+class KnotMassUnifiedContext (R : Type*) [AddCommGroup R] where
+  /-- Substrate parameter `q : R`. -/
+  q : R
   /-- The strand count of the braid representative. -/
   n : ℕ
-  /-- The categorical mass `𝔪(ϱ) : ℝ`. -/
-  mass : ℝ
-  /-- The descended piece `|tr_M(T_w)| : ℝ`. -/
-  descended : ℝ
+  /-- The categorical mass `𝔪(ϱ) : R`. -/
+  mass : R
+  /-- The descended piece `|tr_M(T_w)| : R`. -/
+  descended : R
   /-- The brane-tower piece (two sums of `Li_2^q`). -/
-  brane_tower : ℝ
+  brane_tower : R
   /-- The Frobenius co-Casimir piece `m_e · tr_M(C_{dim_q}^{H_n})`. -/
-  frobenius_co_casimir : ℝ
+  frobenius_co_casimir : R
   /-- Manuscript boxed identity — the unified knot-mass formula:
       `𝔪(ϱ) = descended − brane_tower + frobenius_co_casimir`. -/
   claim_boxed_six_term_expansion :
@@ -86,7 +89,7 @@ $[n]_q = (q^n - q^{-n})/(q - q^{-1})$.  Per
     sub-claim fields; concretisation requires per-block manuscript
     translation. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/knot-mass-formula-unified.ts
-def knot_mass_unified [ctx : KnotMassUnifiedContext] :
+def knot_mass_unified {R : Type*} [AddCommGroup R] [ctx : KnotMassUnifiedContext R] :
     ctx.mass = ctx.descended - ctx.brane_tower + ctx.frobenius_co_casimir :=
   ctx.claim_boxed_six_term_expansion
 
