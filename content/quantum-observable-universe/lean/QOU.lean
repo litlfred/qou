@@ -61,6 +61,10 @@ import QOU.MathlibExt.QCharacter
 -- q-Borel theta kernel t_n = q^{C(n,2)} (W2 ∞-Stokes building block): the RSZ q-Borel
 -- transform kernel resolving an integral-slope singularity; recurrence t_{n+1}=q^n·t_n.
 import QOU.MathlibExt.QBorelKernel
+-- [2]_q-adic valuation on the Laurent ring ℤ[q^{±1}] (Mathlib-gap fill, qou-4atn):
+-- extends QCollatz.qTwoValuation (Polynomial-only) to the Skein module where the
+-- q-Collatz fundamental cycle lives; cycle values v(q⁻¹)=0, v(1+q⁻¹)=1.
+import QOU.MathlibExt.LaurentTwoValuation
 import QOU.HeckeAlgebra
 import QOU.Glossary
 import QOU.Knot.CuspShapeBarParity
