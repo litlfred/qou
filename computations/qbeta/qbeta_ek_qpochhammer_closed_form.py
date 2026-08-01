@@ -110,16 +110,24 @@ def main() -> None:
               f"lowest=q^{lowest} (exp q^{k*k})  residual≥{rr} (>q^{COMPARE_ORDER}?) {tag}")
 
     script_path = Path(__file__).resolve()
-    try:
-        commit = subprocess.check_output(
-            ["git", "log", "-1", "--format=%H", "--", str(script_path)],
-            cwd=script_path.parent, text=True).strip()
-    except Exception:
-        commit = ""
+
+    def _git(args: list[str]) -> str:
+        try:
+            return subprocess.check_output(
+                ["git", *args], cwd=script_path.parent, text=True).strip() or "unknown"
+        except Exception:
+            return "unknown"
+
+    commit = _git(["log", "-1", "--format=%H", "--", str(script_path)])
+    repo_head = _git(["rev-parse", "HEAD"])
     script_hash = hashlib.sha256(script_path.read_bytes()).hexdigest()[:12]
 
     witness = {
         "schema": "witness/v1",
+        # I14 provenance triple (computations/audits/witness_provenance_audit.py)
+        "engine": "python+sympy",
+        "scriptFile": "qbeta_ek_qpochhammer_closed_form.py",
+        "commitSha": repo_head,
         "description": (
             "Exact closed form e_k(q,q^3,q^5,...) = q^{k^2}/(q^2;q^2)_k for the "
             "tetraplectic single-lattice product coefficients (c3 Faddeev reduction, "

@@ -1,10 +1,13 @@
 {
   "schema": "witness/v1",
+  "engine": "python+sympy",
+  "scriptFile": "qbeta_ek_qpochhammer_closed_form.py",
+  "commitSha": "4d855d2458ebb7ed7f76eafb6d4b322eea98cc9f",
   "description": "Exact closed form e_k(q,q^3,q^5,...) = q^{k^2}/(q^2;q^2)_k for the tetraplectic single-lattice product coefficients (c3 Faddeev reduction, bean qou-5843). Symbolic (sympy), no floating point.",
   "computation": {
     "script": "computations/qbeta/qbeta_ek_qpochhammer_closed_form.py",
-    "scriptCommitSha": "",
-    "scriptHash": "cf9a7703031a",
+    "scriptCommitSha": "4d855d2458ebb7ed7f76eafb6d4b322eea98cc9f",
+    "scriptHash": "45bae0f1acbe",
     "method": "finite-product coefficient vs q-series of q^{k^2}/(q^2;q^2)_k"
   },
   "parameters": {
