@@ -46,6 +46,10 @@ import QOU.MathlibExt.OctonionDerivationsBound
 import QOU.MathlibExt.OctonionDerivationsUpperBound
 import QOU.MathlibExt.OctonionDerivationProperties
 import QOU.MathlibExt.OctonionSU3RankSix
+import QOU.MathlibExt.OctonionSU3Stabilizer
+import QOU.MathlibExt.OctonionSU3BracketClosure
+import QOU.MathlibExt.OctonionColourActionBaseModule
+import QOU.StandardModel.ColourStabilizerAction
 import QOU.HeckeAlgebra
 import QOU.Glossary
 import QOU.Knot.CuspShapeBarParity
