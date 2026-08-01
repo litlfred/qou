@@ -1,0 +1,124 @@
+{
+  "computation": "a3-magnitude-berezinian-crossterm",
+  "scriptFile": "a3_magnitude_berezinian_crossterm_probe.py",
+  "computedAt": "2026-08-01T23:53:28.558223+00:00",
+  "engine": "python-float (demonstration; no high-precision needed \u2014 structural, 0 free params)",
+  "free_parameters": 0,
+  "inputs": {
+    "q0": 1.1099785955573347,
+    "h": 0.10997859555733469,
+    "hbar_q": 0.09908172643825894,
+    "mu3_MeV": 0.4708,
+    "c3_single_trace_MeV": 0.297,
+    "mu3_source": "additive-residual-simplex #4320",
+    "c3_source": "borromean-H9-magnitude-lift #4364"
+  },
+  "results": {
+    "r_star": 1.5851851851851853,
+    "log2_3": 1.584962500721156,
+    "r_star_is_log2_3_coincidence": true,
+    "rho_needed_for_fit": -0.5851851851851853,
+    "correction_no_mixing": 1.0,
+    "natural_readings_scatter": [
+      {
+        "reading": "\u210f_q",
+        "rho": 0.09908172643825894,
+        "correction": 0.900918273561741,
+        "abs_err_vs_rstar": 0.6842669116234442,
+        "lands_rstar": false
+      },
+      {
+        "reading": "-\u210f_q",
+        "rho": -0.09908172643825894,
+        "correction": 1.0990817264382589,
+        "abs_err_vs_rstar": 0.4861034587469264,
+        "lands_rstar": false
+      },
+      {
+        "reading": "h",
+        "rho": 0.10997859555733469,
+        "correction": 0.8900214044426653,
+        "abs_err_vs_rstar": 0.6951637807425199,
+        "lands_rstar": false
+      },
+      {
+        "reading": "-h",
+        "rho": -0.10997859555733469,
+        "correction": 1.1099785955573347,
+        "abs_err_vs_rstar": 0.47520658962785056,
+        "lands_rstar": false
+      },
+      {
+        "reading": "h^2",
+        "rho": 0.012095291480763798,
+        "correction": 0.9879047085192362,
+        "abs_err_vs_rstar": 0.5972804766659491,
+        "lands_rstar": false
+      },
+      {
+        "reading": "-h^2",
+        "rho": -0.012095291480763798,
+        "correction": 1.0120952914807637,
+        "abs_err_vs_rstar": 0.5730898937044215,
+        "lands_rstar": false
+      },
+      {
+        "reading": "(1+q)/2 - 1",
+        "rho": 0.054989297778667456,
+        "correction": 0.9450107022213325,
+        "abs_err_vs_rstar": 0.6401744829638527,
+        "lands_rstar": false
+      },
+      {
+        "reading": "odd/even ratio",
+        "rho": 0.6308411214953271,
+        "correction": 0.3691588785046729,
+        "abs_err_vs_rstar": 1.2160263066805124,
+        "lands_rstar": false
+      },
+      {
+        "reading": "-odd/even ratio",
+        "rho": -0.6308411214953271,
+        "correction": 1.6308411214953271,
+        "abs_err_vs_rstar": 0.045655936310141865,
+        "lands_rstar": false
+      },
+      {
+        "reading": "+1",
+        "rho": 1.0,
+        "correction": 0.0,
+        "abs_err_vs_rstar": 1.5851851851851853,
+        "lands_rstar": false
+      },
+      {
+        "reading": "-1",
+        "rho": -1.0,
+        "correction": 2.0,
+        "abs_err_vs_rstar": 0.41481481481481475,
+        "lands_rstar": false
+      },
+      {
+        "reading": "+2",
+        "rho": 2.0,
+        "correction": -1.0,
+        "abs_err_vs_rstar": 2.5851851851851855,
+        "lands_rstar": false
+      },
+      {
+        "reading": "-2",
+        "rho": -2.0,
+        "correction": 3.0,
+        "abs_err_vs_rstar": 1.4148148148148147,
+        "lands_rstar": false
+      }
+    ],
+    "n_natural_readings_landing_rstar": 0,
+    "fit_witness_B_star": -0.5851851851851853,
+    "fit_witness_correction": 1.5851851851851853
+  },
+  "verdict": "scope-(a): the Berezinian cross-term does NOT derive r*. Its magnitude (A\u2212t)/A is a free parameter of the off-block B (Lean crossTerm_magnitude_surjective); no natural parameter-free substrate reading lands r* \u2014 matching it pins B to the target (a fit). The route is NOT excluded (unlike the bracketed single-trace family it CAN reach O(1)), but it relocates the wall to deriving B,C from the DM q-cubic (qou-jqof, open). r* \u2248 log2 3 is a flagged coincidence.",
+  "scope": "(a) scope-limited: magnitude underdetermined (free off-block), not a structural exclusion",
+  "lean": "QOU.QBeta.SuperBerezinianA3Magnitude.crossTerm_magnitude_surjective (sorry-free)",
+  "wired": false,
+  "notes": "\u03bc3/c3 never inverted to derive a substrate constant; DEMONSTRATES the free-parameter structure, does not fit-to-close. Closure needs the DM-cubic-derived off-block (qou-jqof)."
+}
