@@ -204,6 +204,7 @@ import QOU.Information.MagnitudeTraceCommutator
 import QOU.Information.SkeinGradeConnective
 import QOU.Information.SkeinShadowConjInvariance
 import QOU.Information.PNeqNpWallUnification
+import QOU.Information.GCTSchurMultiplicity
 import QOU.LightningPath
 import QOU.RepresentationTheory
 import QOU.GradedFrobeniusHopf
