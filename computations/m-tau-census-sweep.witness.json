@@ -1,0 +1,85 @@
+{
+  "engine": "snappy",
+  "engineVersion": "snappy 3.3.2",
+  "computedAt": "2026-08-01T20:14:49.035084+00:00",
+  "commitSha": "1b5746644d78ff16ce3a5fef7472a82db02f10bc",
+  "assertions": [
+    {
+      "name": "censuses_searched",
+      "computed": 4,
+      "expected": 4,
+      "passed": true,
+      "tolerance": 0,
+      "unit": "count",
+      "source": "All four SnapPy censuses queried on the volume index."
+    },
+    {
+      "name": "global_ceiling_below_band_floor",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "unit": "bool",
+      "source": "Reach verdict: no census's maximum hyperbolic volume attains the 1% band around the k=2 target, so the sweep cannot refute the identity."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 38,
+  "computation": "m-tau-census-sweep",
+  "scriptFile": "m_tau_census_sweep.py",
+  "scriptHash": "0aafbaf4b335",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "mpmath": "1.4.1"
+  },
+  "description": "EXPLORATORY full-census sweep for the m_tau k=2 volume target (beans qou-zvtr/qou-ejxn): searches every SnapPy census available here for hyperbolic volume within 1% of (m_tau/m_e)*hbar_q^2 at canonical q0. Reports the hit list in full AND each census's volume ceiling, so the reach of the search is on the record. No candidate proposed; no fit.",
+  "contentBlock": "rem:m-tau-knot-prediction",
+  "data": {
+    "target": {
+      "m_tau_over_m_e": "3477.23000000000001818989403545856475830078125",
+      "q0": "1.1099785827513808076",
+      "vol_target_k2": "34.136615254398915085",
+      "band_rel": 0.01,
+      "band": [
+        33.79524910185492,
+        34.4779814069429
+      ]
+    },
+    "censuses": {
+      "HTLinkExteriors": {
+        "manifolds": 433804,
+        "volume_ceiling": 33.312510231320736,
+        "ceiling_manifold": "K15a82477",
+        "reaches_band": false
+      },
+      "OrientableCuspedCensus": {
+        "manifolds": 212641,
+        "volume_ceiling": 10.149416064096538,
+        "ceiling_manifold": "o10_150694",
+        "reaches_band": false
+      },
+      "LinkExteriors": {
+        "manifolds": 1216,
+        "volume_ceiling": 20.2285700118719,
+        "ceiling_manifold": "11_314",
+        "reaches_band": false
+      },
+      "CensusKnots": {
+        "manifolds": 3116,
+        "volume_ceiling": 9.910711328543195,
+        "ceiling_manifold": "K10_1849",
+        "reaches_band": false
+      }
+    },
+    "hits": [],
+    "total_manifolds_searched": 650777,
+    "verdict": "NO census available here reaches the k=2 target band: the global volume ceiling across all censuses lies below the band floor. The k=2 identity therefore remains UNTESTED (not refuted) even after searching every tabulated manifold accessible in this environment — the target lives beyond the reach of current knot/link tabulation, so the census route cannot settle it. The structural route (m_tau through the muon-anchored Hecke-energy chain, bean qou-se9w) is the remaining honest path."
+  }
+}
