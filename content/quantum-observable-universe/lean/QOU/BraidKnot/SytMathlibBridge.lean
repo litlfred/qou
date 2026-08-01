@@ -170,4 +170,45 @@ noncomputable def _root_.QOU.BraidKnot.StandardYoungTableau.toMathlib
     · rw [Finset.coe_Icc]; exact hmapsTo
     · rw [Nat.card_Icc]; omega
 
+/-- Left inverse `toBraidKnot ∘ toMathlib = id`. -/
+theorem toBraidKnot_toMathlib (S : QOU.BraidKnot.StandardYoungTableau μ) :
+    (S.toMathlib).toBraidKnot = S := by
+  ext i j
+  show (if (i, j) ∈ μ then S.entry i j + 1 else 0) - 1 = S.entry i j
+  by_cases h : (i, j) ∈ μ
+  · rw [if_pos h]; omega
+  · rw [if_neg h, S.zero_off i j h]
+
+/-- Mathlib SYT equality reduces to SSYT equality (`bijOn` is a `Prop`). -/
+theorem mathlibSYT_ext {T1 T2 : QOU.Mathlib.StandardYoungTableau μ}
+    (h : T1.toSsyt = T2.toSsyt) : T1 = T2 := by
+  cases T1; cases T2; cases h; rfl
+
+/-- Right inverse `toMathlib ∘ toBraidKnot = id`. -/
+theorem toMathlib_toBraidKnot (T : QOU.Mathlib.StandardYoungTableau μ) :
+    (T.toBraidKnot).toMathlib = T := by
+  apply mathlibSYT_ext
+  apply SemistandardYoungTableau.ext
+  intro i j
+  show (if (i, j) ∈ μ then (T.entry i j - 1) + 1 else 0) = T.toSsyt.entry i j
+  by_cases h : (i, j) ∈ μ
+  · rw [if_pos h]
+    have hmap : T.entry i j ∈ Set.Icc 1 μ.cells.card :=
+      T.mapsTo_cells (QOU.Mathlib.StandardYoungTableau.mem_coe_cells h)
+    rw [Set.mem_Icc] at hmap
+    have h1 : 1 ≤ T.toSsyt.entry i j := hmap.1
+    show (T.toSsyt.entry i j - 1) + 1 = T.toSsyt.entry i j
+    omega
+  · rw [if_neg h]; exact (T.toSsyt.zeros h).symm
+
+/-- **sp09 part 2 — the SYT-count equiv.** `numSYT μ = numStandardYoungTableaux μ`:
+the bespoke 0-based SYT count equals the Mathlib-SSYT-based count, via the `±1`
+shift bijection `toMathlib`/`toBraidKnot`. -/
+theorem numSYT_eq_numStandardYoungTableaux (μ : YoungDiagram) :
+    QOU.BraidKnot.numSYT μ = QOU.Mathlib.numStandardYoungTableaux μ :=
+  Nat.card_congr
+    ⟨QOU.BraidKnot.StandardYoungTableau.toMathlib,
+      QOU.Mathlib.StandardYoungTableau.toBraidKnot,
+      toBraidKnot_toMathlib, toMathlib_toBraidKnot⟩
+
 end QOU.BraidKnot
