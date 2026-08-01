@@ -52,7 +52,7 @@ NOT proved here (the honest residual, unchanged in kind):
 * the two classical theorems themselves (Mathlib gaps — the classes;
   no instance exists or may be fabricated, §Axiomatization is NOT a
   Proof);
-* ~~the Lean formalization of the per-`n` balanced moment confluence~~
+* the Lean formalization of the per-`n` balanced moment confluence
   (audit §2; entered as hypothesis `hmom`) — DISCHARGED qualitatively in
   `QOU.Archimedean.BalancedMomentConfluence` (`tendsto_balancedNormalizerR`
   + the `…_of_confluence` corollary): what remains on this leg is the

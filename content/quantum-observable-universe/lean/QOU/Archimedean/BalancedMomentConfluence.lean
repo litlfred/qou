@@ -144,7 +144,6 @@ bar-covariance `q ↦ q⁻¹` of the balanced q-Borel weight. -/
 theorem balancedNormalizer_inv (v : K) (hv : v ≠ 0) (n : ℕ) :
     balancedNormalizer v⁻¹ n = balancedNormalizer v n := by
   have hv2 : (v ^ 2 : K) ≠ 0 := pow_ne_zero _ hv
-  have hvC : (v ^ ((n - 1).choose 2) : K) ≠ 0 := pow_ne_zero _ hv
   have hb := pow_choose_mul_qfact_inv (v ^ 2) hv2 (n - 1)
   unfold balancedNormalizer
   simp only [inv_pow, inv_inv]
@@ -159,7 +158,6 @@ theorem sq_balancedNormalizer (v : K) (hv : v ≠ 0) (n : ℕ) :
     balancedNormalizer v n ^ 2
       = qfact (v ^ 2) (n - 1) * qfact ((v ^ 2)⁻¹) (n - 1) := by
   have hv2 : (v ^ 2 : K) ≠ 0 := pow_ne_zero _ hv
-  have hvC : (v ^ ((n - 1).choose 2) : K) ≠ 0 := pow_ne_zero _ hv
   have hb := pow_choose_mul_qfact_inv (v ^ 2) hv2 (n - 1)
   unfold balancedNormalizer
   rw [← hb, ← pow_mul, two_mul, pow_add]
@@ -175,7 +173,6 @@ theorem balancedNormalizer_succ (v : K) (hv : v ≠ 0) (k : ℕ) :
     balancedNormalizer v (k + 1)
       = qfact ((v ^ 2)⁻¹) k * v ^ (k.choose 2) := by
   have hv2 : (v ^ 2 : K) ≠ 0 := pow_ne_zero _ hv
-  have hvC : (v ^ (k.choose 2) : K) ≠ 0 := pow_ne_zero _ hv
   have hb := pow_choose_mul_qfact_inv (v ^ 2) hv2 k
   unfold balancedNormalizer
   rw [Nat.add_sub_cancel, ← hb, ← pow_mul, two_mul, pow_add]
