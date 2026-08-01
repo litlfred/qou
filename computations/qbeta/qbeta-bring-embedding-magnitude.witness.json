@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-01T18:50:18.137275+00:00",
-  "commitSha": "f0d55605ad3825e72eea667582cc8536b5ef6fc6",
+  "computedAt": "2026-08-01T19:32:54.480039+00:00",
+  "commitSha": "3e188b3cb026b7306ab59a0f91082a1cb7692b9c",
   "assertions": [
     {
       "name": "magnitude_is_anchor_offset_ratio_not_period",
@@ -30,11 +30,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 19,
+  "durationMs": 12,
   "computation": "qbeta-bring-embedding-magnitude",
   "scriptFile": "qbeta_bring_embedding_magnitude_probe.py",
   "scriptHash": "ceb61b4ca6d1",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "6592a2914088df35727a46edca2fd7691ac24b9e",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

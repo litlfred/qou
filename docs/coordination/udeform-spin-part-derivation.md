@@ -188,8 +188,8 @@ there is a fit trap (1833 chance pairs). The magnitude is being sought on the cu
 torus, where it does not live.
 
 **The fix (this redirect).** disc-5 is **not external** to Bring's surface — it is its
-**intrinsic automorphism structure** (`x5-z5-automorphism.lean`, `x5-bring-weight-
-identification`, the genus-4 `sw-period-residue-sum.lean`). So embed the cusp-torus
+**intrinsic automorphism structure** (`x5-z5-automorphism.lean`,
+`x5-bring-weight-identification`, the genus-4 `sw-period-residue-sum.lean`). So embed the cusp-torus
 winding geodesic **into Bring's genus-4 curve** and let the asymmetry — *both* sign and
 the `4.075` magnitude — fall out of that ONE embedding:
 
