@@ -1,3 +1,20 @@
+**Spectral form (canonical).**
+In the spectral coordinates — the Lagrange resolvents $w_k$, $k \in \{0,\dots,4\}$, of [color tube coordinates](#def:color-tube-coordinates) — the Bring's surface constraints are simply the vanishing of the first three power sums,
+
+```tex
+\begin{equation}\label{eq:spectral-power-sums}
+  p_1(w) =  p_2(w) =  p_3(w) =  0 .
+\end{equation}
+```
+
+This is the canonical statement: it carries no $z$-dependence at all. The color tube coordinates are the *shifted* chart $c_k = w_k - z$, and every $z$-dependent term in the equations below is an artifact of that shift. Transporting [$p_m(w) = 0$](#eq:spectral-power-sums) through $w_k = c_k + z$ forces the tube-chart power sums to the closed values
+
+$$
+  p_1(c) = -5z, \qquad p_2(c) = 5z^2, \qquad p_3(c) = -5z^3,
+$$
+
+that is $p_m(c) = (-1)^m \, 5 \, z^m$. The three shift laws and this transport are machine-checked (`QOU.Mass.ColorTubeSpectralBridge`: `psum1_shift`, `psum2_shift`, `psum3_shift`, `tube_psum1_of_bring`, `tube_psum2_of_bring`, `tube_psum3_of_bring`), as is the corresponding shift for the three-variable [color tube cubic](#eq:color-tube-cubic) and its Vieta rows.
+
 The Bring's surface constraints take the following form in color tube coordinates.
 
 **Spacetime recovery.**
