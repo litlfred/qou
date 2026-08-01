@@ -54,6 +54,10 @@ import QOU.StandardModel.ColourStabilizerAction
 -- program): q-Leibniz product rule (clean), monomial q-chain rule (q→q^m), and the
 -- composition obstruction (no naive q-chain rule for non-monomial inner functions).
 import QOU.MathlibExt.QDifferenceOperator
+-- q-character algebra e_{q,c} (Birkhoff-matrix building block, W2): q-characters multiply,
+-- and the ratio of two with the same multiplier is q-invariant (elliptic) — the reason the
+-- connection matrix is theta-valued.
+import QOU.MathlibExt.QCharacter
 import QOU.HeckeAlgebra
 import QOU.Glossary
 import QOU.Knot.CuspShapeBarParity
