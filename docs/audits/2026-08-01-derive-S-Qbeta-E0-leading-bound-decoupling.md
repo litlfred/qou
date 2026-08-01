@@ -117,16 +117,29 @@ inverted to match `S`** (I compute a bound and compare):
 2. **Muon MAGNITUDE ← NOT the spin part** (scope-(a), *newly sharpened*, proved
    bound). `S_μ = 2.054 × κ(ln q₀)²` **exceeds the leading cap**. Because the
    spin part only *decreases* `Im 𝔙₄₁` below `κ·Re²u`, **no** real `Im u` can
-   reach `S_μ` at leading order. The muon deficit must therefore be closed by
-   **either** (i) the even `O(u⁴)` Neumann–Zagier tail (dropped in the leading
-   form, carried as a cited residual `v₃ = ∓i√3/3` in `FigureEightComplexVolume`),
-   **or** (ii) a real `Re u` larger than the pure boost `ln q₀`. It **cannot** be
-   the spin part.
+   reach `S_μ` at leading order. The muon deficit must therefore be closed by a
+   real `Re u` larger than the pure boost `ln q₀`. It **cannot** be the spin part.
+
+> **Convergence with sibling PR #4515 / #4508 (independent, sharper).** While
+> this pass was in flight, sibling
+> [`claude/c3-exact-volume-boost-enhancement-2026-08-01`](https://github.com/litlfred/qou/pull/4515)
+> reached the same `A ≈ 2.05` gap from the **exact** figure-eight CS integral and
+> sharpened it: (i) it independently states "the spin part only *decreases*
+> `Im 𝔙₄₁`" — exactly the content of this pass's Lean bound
+> `imV₄₁_le_cuspModulus_reSq`, which now supplies the **sorry-free formalization**
+> of that numerical assertion; and (ii) via #4508 (radius of convergence
+> `0.96 ≫ u = 0.104`) it shows the even `O(u⁴)` NZ tail is **negligible**, so the
+> deficit is **unambiguously** a `Re u` boost-rapidity enhancement — the "O(u⁴)
+> tail" alternative this pass initially offered is **excluded** by #4508. The
+> muon magnitude reduces to a single derived `O(1)` factor
+> `c = √A ≈ 1.4305 ln q₀` (why is the effective boost rapidity `√2.05·ln q₀`, not
+> the meridian rapidity `ln q₀`?) — to be *derived*, not fit.
 
 This refines the frontier: the "derive the spin part" program (`qou-fook`) is
-necessary for the *sign* but **insufficient for the muon magnitude** — a second,
-orthogonal sub-obstruction (the `O(u⁴)` tail / enlarged `Re u`) that the prior
-single-piece framing masked.
+necessary for the proton *sign* but **structurally cannot** supply the muon
+*magnitude* (proved: spin only decreases `Im 𝔙₄₁`). The muon magnitude is the
+orthogonal sub-obstruction — the boost-rapidity factor `c = √A ≈ 1.43` (#4515),
+which the prior single-piece "derive `u(q₀)`" framing masked.
 
 ### 2a. Scope discipline
 
@@ -152,8 +165,8 @@ single-piece framing masked.
 - **Reduced?** Yes, and sharpened. The reduction is now: the leading-order
   SDeformedVolume channel is **magnitude-insufficient** for the muon; closing
   `S` needs BOTH (1) the spin part (proton sign, open — `qou-fook`) AND (2) the
-  even `O(u⁴)` NZ tail / enlarged `Re u` (muon magnitude, open — NEW, beaned
-  below).
+  boost-rapidity factor `c = √A ≈ 1.43 ln q₀` (muon magnitude, open — sibling
+  #4515's survivor `qou-iyj5`; the O(u⁴)-tail alternative is excluded by #4508).
 - **Wired?** No. Q_β stays c₂-only in production (honest ≈1279 ppb prediction);
   the guardrail (`docs/canonical-mass-formula-guardrail.md`) stands.
 
@@ -163,17 +176,24 @@ single-piece framing masked.
 
 - **`qou-fook`** (existing) — the spin/imaginary part of `u(q₀)` (boost→spin
   transition) that supplies the proton sign flip. Unchanged; still open.
-- **NEW (file this pass):** *muon magnitude of the SDeformedVolume channel* — the
-  even `O(u⁴)` Neumann–Zagier tail of `𝔙₄₁` (or an enlarged real `Re u`) needed
-  to lift `Im 𝔙₄₁` from the leading cap `κ(ln q₀)² = 0.00471` to
-  `S_μ = 0.00968` (2.054×). Proved unreachable by the leading form + real spin
-  (`imV₄₁_leading_unreachable_of_lt`). Anti-fit: compute the literature `O(u⁴)`
-  NZ coefficients, do not tune. Falsifiable; currently open.
+- **`qou-iyj5`** (sibling #4515) — the muon-magnitude survivor: derive the
+  boost-rapidity factor `c = √A ≈ 1.4305`, i.e. why the effective rapidity is
+  `√2.05·ln q₀` not `ln q₀`. This pass's `imV₄₁_le_cuspModulus_reSq` is the
+  sorry-free Lean backing for "spin only decreases `Im 𝔙₄₁`, so the deficit is a
+  `Re u` enhancement." The `O(u⁴)`-tail alternative is excluded by #4508.
+- **`qou-0pym`** (filed this pass, re-scoped) — records the decoupling +
+  `imV₄₁_leading_unreachable_of_lt` bound; points at `qou-iyj5` for the derived
+  `c`-factor. Anti-fit; falsifiable; open.
 
 ## Cross-references
 
 - [`2026-08-01-fibre-to-observable-bridge-verdict.md`](2026-08-01-fibre-to-observable-bridge-verdict.md)
   (PR #4520) — the trigger; c₃-odd home Lean-forced, value CAL-2-anchored.
+- Sibling [PR #4515](https://github.com/litlfred/qou/pull/4515) (survivor
+  `qou-iyj5`) — exact figure-8 CS integral; the muon `A ≈ 2.05` gap is the
+  boost-rapidity factor `c = √A ≈ 1.43`; O(u⁴) tail excluded by #4508. This
+  pass's Lean bound is the sorry-free backing for its "spin only decreases
+  `Im 𝔙₄₁`" step.
 - [`2026-07-07-c3-even-solved-s-complex-volume-rigidity.md`](2026-07-07-c3-even-solved-s-complex-volume-rigidity.md)
   — c₃-even substrate-exact; the S rigidity prune.
 - [`docs/coordination/keystone-sdeformedvolume-channel-attack.md`](../coordination/keystone-sdeformedvolume-channel-attack.md)
