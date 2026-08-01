@@ -2715,3 +2715,41 @@ lineage continued: the W1 A2 failures were hump-regime artifacts (the
 negative-e hump reaches 1e17 at |w|=0.3 needing dps≥80; benign ~0.26 at
 |w|≈0.8 — A2 re-specced there). No fit; nothing wired; beans qou-ovph
 (domain re-scope) + qou-vvm1 (session).
+
+**2026-08-01 (provenance-claim correction + citation-anchored-literal
+checker).** Two items, one class.
+
+(1) **The `π²/2` extraction-convention identification was attached to the
+WRONG legacy literal.** After #4408 landed, `fivetwo_saddle_values.py`'s
+docstring asserted that the corpus's `Im V₁ = 1.3790860299` equals
+`Re(V_GGMW) − π²/6` "within 5e-8". Recomputation: `Re(V_GGMW) − π²/6 =
+Re(V_GGM) + π²/2 = 1.379194309661075…` (the two forms agree exactly, so
+the π²/6-lattice claim itself is SOUND). The 5e-8 match holds for
+`V_DOM = …−1.37919426157i` in `median_borel_resummation` (|Δ| = 4.81e-8),
+**not** for `Im V₁ = 1.3790860299`, which sits **1.08e-4 away — 2250× the
+stated bound**. Not a root-precision artifact: a 6-digit root already
+reproduces `1.379194309661` exactly, and the residual is not a simple
+multiple of Vol, π, or π². Two distinct legacy literals differing in the
+4th decimal were conflated. **`Im V₁ = 1.3790860299` and `V₃ =
+−2.7580990292` therefore remain UNEXPLAINED** — the 2026-07-26 row above
+stands unretracted. No numerical result changes: the consuming probes
+already call `saddle_values("ggm")`, so only the explanatory prose was
+wrong. Fixed in the module docstring + the stokes-bridge comment, and the
+claim is now machine-checked by a 6-gate `_self_check()` in the module
+(`python3 computations/probes/fivetwo_saddle_values.py`, exit 0) — the
+mis-attribution survived review precisely because it was prose.
+
+(2) **`computations/citation_anchored_literal_validator.py`** (new,
+warn-only, auditOnly). Flags a numeric literal carrying ≥ 8 significant
+digits when a citation-shaped comment sits within 2 lines above and the
+file shows no evidence the value is checked (no witness load, assertion,
+gate, or recomputation). Motivated by two same-class defects in one week
+— the V-literals above and the `nzImVolume` sin/cos convention bug — both
+being *numbers asserting provenance they do not verify*. A hardcoded
+reference used as an assertion **target** is good practice and is not
+flagged; what is flagged is a cited number consumed as an **input**.
+Docstring prose and `"key": "value"` witness-payload lines are masked
+(both observed as false positives on the first run). Run it for the live
+count; do not cite a dated baseline. `--strict` wiring into
+`witness-pipeline.yml` follows the `lp_dual_witness_validator.py`
+warn-only-then-strict precedent.

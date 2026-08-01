@@ -10,12 +10,23 @@ source comment `# GGM eq 21`. Reconciliation against the two source papers
   GGM eq (233) at `x = 1`, i.e. `(1−ξ)³ = ξ²` = GGMW eq (184), so the
   saddle *root* was never in question;
 * the **literals are not**: `Im V₁ = 1.3790860299` and
-  `V₃ = −2.7580990292` match neither GGM eq (234) nor GGMW eq (188);
-  investigation (2026-07-29) shows `Im V₁` equals `Re(V_GGMW) − π²/6`
-  within `5e-8` — the H-series effective action `V_eff = V_GGM + π²/2`
+  `V₃ = −2.7580990292` match neither GGM eq (234) nor GGMW eq (188).
+  Investigation (2026-07-29) identified the extraction convention
+  `V_eff = V_GGM + π²/2 = Re(V_GGMW) − π²/6 = 1.379194309661…`
   (absorbing the Φ_b Bernoulli contribution) in the corpus i-rotation
-  convention. A legitimate mathematical quantity, but not the V the
-  published Stokes formulas use;
+  convention — a legitimate mathematical quantity, but not the V the
+  published Stokes formulas use.
+
+  **Which literal that identifies (corrected 2026-08-01).** The `5e-8`
+  agreement holds for `V_DOM`'s `1.37919426157`
+  (`qbeta_5two_median_borel_resummation_probe.py`, |Δ| = 4.8e-8). It does
+  **not** hold for `Im V₁ = 1.3790860299`, which sits `1.08e-4` away —
+  2250× the stated bound, and not a root-precision artifact (a 6-digit
+  root already reproduces `1.379194309661` exactly). An earlier revision
+  of this docstring attached the `5e-8` claim to `Im V₁`; that was a
+  mis-attribution between two distinct legacy literals differing in the
+  4th decimal. **`Im V₁ = 1.3790860299` remains unexplained**, as does
+  `V₃ = −2.7580990292`;
 * the citation is also wrong: eq (21) of 2012.00062v3 is the
   Stokes/3D-index identity `S⁺_{σ₁σ₁} = Ind^rot_K(0,x;q)`, not a saddle
   value.
@@ -36,10 +47,11 @@ GGMW eq (188) is the same object shifted:
 consistent with GGMW footnote 6's `e^{−πi(τ+τ⁻¹)/12}` prefactor between
 their `Φ^{(σ)}` and GGM's.
 
-**Extraction** (the corpus's legacy 1.379): `V_eff = V_GGM + π²/2`, the
-effective action of the H-series radial asymptotics. The π²/2 is the
-Bernoulli-number contribution from the Φ_b normalization, absorbed into the
-action by the fit. All three sit on a π²/6 lattice:
+**Extraction** (the legacy `V_DOM = 1.37919426157`, *not* the legacy
+`Im V₁`): `V_eff = V_GGM + π²/2`, the effective action of the H-series
+radial asymptotics. The π²/2 is the Bernoulli-number contribution from the
+Φ_b normalization, absorbed into the action by the fit. All three sit on a
+π²/6 lattice:
 
     V_GGM ──(+3·π²/6)──> V_extraction ──(+1·π²/6)──> V_GGMW
 
@@ -130,3 +142,61 @@ def volume():
     """`Vol(S³∖5₂) = |Im V₁|`, normalization-independent."""
     y1, _, _ = saddle_roots()
     return abs(mp.im(V_GGM(y1, -1)))
+
+
+def V_extraction():
+    """The H-series extraction convention `V_eff = V_GGM + π²/2`.
+
+    Exposed for *provenance checking only* — it is not a published
+    normalization and `saddle_values` deliberately refuses to return it.
+    """
+    y1, _, _ = saddle_roots()
+    return V_GGM(y1, -1) + mp.pi ** 2 / 2
+
+
+def _self_check():
+    """Machine-check every numeric claim this module's docstring makes.
+
+    The docstring previously asserted a `5e-8` provenance match for a
+    literal that is `1.08e-4` away; the claim was prose, so nothing caught
+    it. These gates exist so the next such slip fails loudly.
+    """
+    mp.mp.dps = 40
+    y1, y2, y3 = saddle_roots()
+    ok = True
+
+    def gate(name, cond, detail=""):
+        nonlocal ok
+        ok &= bool(cond)
+        print(f"  [{'PASS' if cond else 'FAIL'}] {name}{detail}")
+
+    # the π²/6 lattice: GGM --(+3·π²/6)--> extraction --(+1·π²/6)--> GGMW
+    ext = mp.re(V_extraction())
+    gate("extraction == V_GGM + π²/2 == Re(V_GGMW) − π²/6",
+         abs(ext - (mp.re(V_GGMW(y1, -1)) - mp.pi ** 2 / 6)) < mp.mpf("1e-30"))
+    gate("GGMW − GGM == 2π²/3 (σ₁)",
+         abs((V_GGMW(y1, -1) - V_GGM(y1, -1)) - 2 * mp.pi ** 2 / 3)
+         < mp.mpf("1e-30"))
+
+    # attribution of the extraction convention to the correct legacy literal
+    d_dom = abs(ext - mp.mpf("1.37919426157"))     # V_DOM, median-Borel probe
+    d_v1 = abs(ext - mp.mpf("1.3790860299"))       # legacy Im V₁
+    gate("extraction identifies V_DOM 1.37919426157",
+         d_dom < mp.mpf("5e-8"), f"  (|Δ| = {mp.nstr(d_dom, 4)})")
+    gate("extraction does NOT identify legacy Im V₁ 1.3790860299",
+         d_v1 > mp.mpf("1e-5"),
+         f"  (|Δ| = {mp.nstr(d_v1, 4)} — provenance still unexplained)")
+
+    # Vol is normalization-independent and sits in Im, not Re
+    gate("Im V₁ == Vol(5₂) in both normalizations",
+         abs(mp.im(V_GGM(y1, -1)) - mp.im(V_GGMW(y1, -1))) < mp.mpf("1e-30")
+         and abs(mp.im(V_GGM(y1, -1)) - volume()) < mp.mpf("1e-30"))
+    gate("V₂ == conj(V₁)",
+         abs(V_GGM(y2, +1) - mp.conj(V_GGM(y1, -1))) < mp.mpf("1e-25"))
+    return ok
+
+
+if __name__ == "__main__":
+    import sys
+    print("fivetwo_saddle_values self-check (docstring claims):")
+    sys.exit(0 if _self_check() else 1)
