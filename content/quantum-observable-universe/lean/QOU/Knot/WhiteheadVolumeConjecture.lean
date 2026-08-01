@@ -90,6 +90,44 @@ theorem whiteheadS_pos {N n k : ℕ} (hN : 2 ≤ N) (hkn : k + n ≤ N - 1) :
   obtain ⟨hj1, hjn⟩ := Finset.mem_Icc.mp hj
   exact whiteheadS_factor_pos hN hj1 hjn hkn
 
+/-- **Log-expansion brick** (the `log(2 sin)` Riemann-sum form, analogue of
+    the figure-eight `E5a`).  On the summation range `k + n ≤ N − 1`,
+    `log S_{n,k} = Σ_{j=1}^n [ log 2 + 2·log sin((k+j)π/N) − log sin(jπ/N) ]`.
+    This is what reduces the squeeze to the landed Clausen / `log(2 sin)`
+    Riemann-sum-vs-primitive machinery. -/
+theorem whiteheadS_log {N n k : ℕ} (hN : 2 ≤ N) (hkn : k + n ≤ N - 1) :
+    Real.log (whiteheadS N n k)
+      = ∑ j ∈ Finset.Icc 1 n,
+          (Real.log 2 + 2 * Real.log (Real.sin (((k : ℝ) + j) * π / N))
+            - Real.log (Real.sin ((j : ℝ) * π / N))) := by
+  unfold whiteheadS
+  rw [Real.log_prod _ _ (fun j hj => by
+    obtain ⟨hj1, hjn⟩ := Finset.mem_Icc.mp hj
+    exact ne_of_gt (whiteheadS_factor_pos hN hj1 hjn hkn))]
+  apply Finset.sum_congr rfl
+  intro j hj
+  obtain ⟨hj1, hjn⟩ := Finset.mem_Icc.mp hj
+  have hNpos : (0 : ℝ) < N := by exact_mod_cast (by omega : 0 < N)
+  have hpi := Real.pi_pos
+  have hjN : (j : ℝ) < N := by
+    have : j < N := by omega
+    exact_mod_cast this
+  have hden : 0 < Real.sin ((j : ℝ) * π / N) := by
+    apply Real.sin_pos_of_pos_of_lt_pi
+    · positivity
+    · rw [div_lt_iff₀ hNpos]; nlinarith [Real.pi_pos]
+  have hkjN : (k : ℝ) + j < N := by
+    have : k + j < N := by omega
+    exact_mod_cast this
+  have hnum : 0 < Real.sin (((k : ℝ) + j) * π / N) := by
+    apply Real.sin_pos_of_pos_of_lt_pi
+    · positivity
+    · rw [div_lt_iff₀ hNpos]; nlinarith [Real.pi_pos]
+  rw [Real.log_div (by positivity) (ne_of_gt hden),
+      Real.log_mul (by norm_num) (by positivity), Real.log_pow]
+  push_cast
+  ring
+
 /-- The Whitehead Kashaev magnitude as the inner positive sum
     `Σ_{k=0}^{N-1-n} S_{n,k}` summed with the `(2n+1)` weight — the real,
     positive object the squeeze bounds (the `χ_{N,n}` phase is unimodular and
