@@ -7,3 +7,30 @@ created_at: 2026-08-01T20:20:55Z
 updated_at: 2026-08-01T20:20:55Z
 ---
 
+
+## 2026-08-01 TEST RE-SCOPED before running (corpus read first)
+
+The 4_1 -> 5_2 test as designed is ILL-POSED. The corpus already carries
+the 5_2 Stokes machinery (qbeta_5two_stokes_barodd_index_probe.py, GGM
+section 6): the 5_2 Stokes matrix is **3x3**, q->0 limit
+[[1,4,0],[0,1,0],[-3,-9,1]] (eq 100a), with THREE off-diagonal integers
+(4, -3, -9) -- versus 4_1s 2x2 [[1,3],[0,1]] with ONE (3). Rank tracks the
+trace-field degree (4_1 quadratic, 5_2 cubic). So:
+
+  * there is no single 5_2 Stokes constant to compare against 23 or 3;
+  * the symmetry eq (65) that gave the 4_1 identity is a rank-2 statement
+    with no 3x3 analogue -- GGMs 5_2 structural relation is the inversion
+    S+^T S- = 1, which constrains a matrix PAIR, not an integer.
+
+23 does not appear among {4,-3,-9}, but that is NOT a refutation of
+candidate A (the predicted quantity is undefined here). 3 does appear as
+|-3|, but that is NOT support for candidate B -- picking one of three
+integers post hoc is numerology. Both candidates remain UNTESTED.
+
+NEXT (recommended, route 3 of the scope note): re-run the same falsifiable
+test on a different RANK-2 knot -- quadratic trace field, so the Stokes
+constant is well-defined exactly as for 4_1 -- chosen so that
+|disc| != |Alexander middle coeff| and the candidates still separate.
+Cheapest well-posed route; does not require closing the rank>2 channel gap.
+
+Scope note: docs/scope/2026-08-01-aomega-three-test-illposed.md
