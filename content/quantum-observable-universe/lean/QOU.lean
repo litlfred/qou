@@ -232,6 +232,7 @@ import QOU.Information.MagnitudeAxisBoundary
 import QOU.Information.CountingModuliGrade
 import QOU.Information.PolyGrowthAlgebra
 import QOU.Information.MagnitudeTraceCommutator
+import QOU.Information.CocenterTraceFactor
 import QOU.Information.SkeinGradeConnective
 import QOU.Information.SkeinShadowConjInvariance
 import QOU.Information.PNeqNpWallUnification
