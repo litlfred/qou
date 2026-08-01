@@ -33,9 +33,13 @@ def main() -> None:
     squarefree = sp.Poly(sp.gcd(sext, sext.diff(z)), z).degree() == 0
     n_branch = sext.degree()                            # 6 branch points if squarefree
     irreducible = bool(Cp.is_irreducible)
-    # a squarefree poly of positive degree is never a perfect square:
-    disc_is_square = (not squarefree) and False         # squarefree ⇒ not square
-    monodromy = "S3" if (irreducible and not disc_is_square) else ("A3" if irreducible else "reducible")
+    # disc is a perfect square in C(z) iff every irreducible factor has even multiplicity
+    # (over C the leading constant is always a square). A squarefree disc of positive
+    # degree therefore can never be a square — but test it properly, do not assume.
+    _, factors = sp.factor_list(-disc)                  # (const, [(factor, mult), ...])
+    disc_is_square = bool(factors) and all(m % 2 == 0 for _, m in factors)
+    monodromy = ("reducible" if not irreducible
+                 else ("A3" if disc_is_square else "S3"))
 
     results = {
         "cubic": "X^3 + (z+1)X^2 + (z^2+z+1)X + (z^3+z^2+z+1)",
@@ -58,6 +62,12 @@ def main() -> None:
         except Exception:
             return "unknown"
 
+    # per-path last-touch commit; fall back to repo HEAD for a newly-added (uncommitted)
+    # script so provenance never lands as a bare "unknown".
+    _script_sha = _git(["log", "-1", "--format=%H", "--", str(script_path)])
+    if _script_sha == "unknown":
+        _script_sha = _git(["rev-parse", "HEAD"])
+
     witness = {
         "schema": "witness/v1",
         "engine": "python+sympy",
@@ -70,7 +80,7 @@ def main() -> None:
         ),
         "computation": {
             "script": "computations/qbeta/c3_w1_cover_monodromy.py",
-            "scriptCommitSha": _git(["log", "-1", "--format=%H", "--", str(script_path)]),
+            "scriptCommitSha": _script_sha,
             "scriptHash": hashlib.sha256(script_path.read_bytes()).hexdigest()[:12],
         },
         "results": results,

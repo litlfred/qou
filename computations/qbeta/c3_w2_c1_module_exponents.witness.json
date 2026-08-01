@@ -2,12 +2,12 @@
   "schema": "witness/v1",
   "engine": "python+sympy",
   "scriptFile": "c3_w2_c1_module_exponents.py",
-  "commitSha": "c4c98e608ee2d8dcd8859bca1b7b768ca416cc11",
+  "commitSha": "3acd913c90bb3a87841ac5f771f3b15d48877f96",
   "description": "W2: C1 q-difference module local exponents. At 0 (Fuchsian): roots of t^2+(q-1)t+(q-1), exp-disc (q-1)(q-5). At inf: nilpotent companion => irregular slope-1/2, needs Stokes. 0-side of the Birkhoff recipe. Symbolic.",
   "computation": {
     "script": "computations/qbeta/c3_w2_c1_module_exponents.py",
-    "scriptCommitSha": "unknown",
-    "scriptHash": "d9781fefb796"
+    "scriptCommitSha": "3acd913c90bb3a87841ac5f771f3b15d48877f96",
+    "scriptHash": "e3fd17320047"
   },
   "results": {
     "operator": "L1 = (q^2 x - 1) s^2 - (q-1) s - (q-1)   [C1, RSZ route-A]",

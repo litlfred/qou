@@ -112,6 +112,12 @@ import QOU.Mass.ColorCurveQPartials
 -- the defect = product of gaps to the shifted sheets, framing branch selection as
 -- breaking the S₃ sheet symmetry. The single-valued choice is the monodromy wall.
 import QOU.Mass.ColorCurveSheets
+-- W1: no single-valued algebraic branch — an irreducible cubic over the function field has
+-- no root there (the permanent consequence of the witness's S₃ cover monodromy).
+import QOU.Mass.ColorCubicNoBranch
+-- W2: C1 module local exponents at 0 — char poly t²+(q−1)t+(q−1) (= t²−tr·t+det of the
+-- companion [[0,1],[1−q,1−q]]), exponent-discriminant (q−1)(q−5). Birkhoff 0-side.
+import QOU.Mass.C1ModuleExponents
 import QOU.Mass.HeckeStokesEigenvalues
 import QOU.Mass.NaStokesKeystone
 import QOU.Mass.BindingHyperbolicRecurrence
