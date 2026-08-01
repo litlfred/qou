@@ -432,6 +432,7 @@ import QOU.Archimedean.BalancedKernelConfluence
 import QOU.Archimedean.BalancedMomentConfluence
 import QOU.Archimedean.BalancedKernelTightness
 import QOU.Archimedean.BalancedCarrierJacobi
+import QOU.Archimedean.SWJacksonMomentFactorization
 import QOU.AlgebraicSubstrate.SubstrateClockUniqueness
 import QOU.AlgebraicSubstrate.PlanckStepAtomicity
 import QOU.AlgebraicSubstrate.AtomicityJetIndependence
