@@ -30,6 +30,14 @@ D-ladder_ sharpen `q*` (answer: no — `q*` is experiment-limited). Route B
 asks the **closed-form** question directly, by separating the symbolic
 shape from the experimental anchor.
 
+**Builds on** the merged Bring-embedding magnitude audit
+([`2026-08-01-bring-embedding-magnitude.md`](2026-08-01-bring-embedding-magnitude.md),
+PR #4473), which records the same landmark `q* = 1.109978593031523288…`
+and the key fact that `S(q) = c₃-target(q) + Vol(4₁)` is _the same function_
+at both anchors (the magnitude `|S_p/S_m|` is an anchor-offset ratio, not a
+Bring period). This PR closes the complementary question — whether the
+_landmark itself_ is a closed-form constant — with the same `S`.
+
 ## Result — honest NEGATIVE with a positive sub-result
 
 ### P1 (positive, partial) — the S-channel-zero condition IS a closed-form equation
