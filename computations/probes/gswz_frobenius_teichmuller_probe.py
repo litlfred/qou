@@ -133,16 +133,18 @@ checks["hensel_lift_is_alpha^5_mod_5"] = all((phi[k] - a5[k]) % 5 == 0 for k in 
 # --- (2) Teichmuller zeta_24 = lim alpha^{5^{2s}}
 z = alpha[:]
 prev = None
+stabilized = False
 for s in range(1, 12):
     z = pw(z, 25)
     if z == prev:
+        stabilized = True
         break
     prev = z[:]
 zeta24 = z
-checks["teichmuller_stabilizes"] = bool(z == prev)
+checks["teichmuller_stabilizes"] = stabilized
 ord24 = pw(zeta24, 24)
 checks["zeta24_pow_24_eq_one"] = bool(ord24 == [1, 0, 0])
-proper = any(pw(zeta24, 24 // q) != [1, 0, 0] for q in (2, 3))
+proper = all(pw(zeta24, 24 // q) != [1, 0, 0] for q in (2, 3))
 checks["zeta24_exact_order_24"] = proper
 
 # --- (3) printed digits of eqn (272)
