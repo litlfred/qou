@@ -355,6 +355,10 @@ import QOU.QBeta.FaddeevStripGrowthConstructor
 -- realizable + bar-ODD, and the two families disjoin off 2-torsion. Pulls the
 -- BerezinianSelfAdjointCrossTerm cone into CI (was orphaned).
 import QOU.QBeta.BerezinianCrossTermParity
+-- c₃ Berezinian bar-odd isolation: the mass endomorphism 𝓜 = A − t has bar-odd part
+-- −(t − σt), so the bar-even diagonal mass A contributes nothing — c₃ is carried entirely
+-- by the cross-term t = B·D⁻¹·C (isolates the q_cubic=C1 wall to the cross-term).
+import QOU.QBeta.BerezinianBarOddIsolation
 -- c₃ Faddeev tetraplectic→combinatorics reduction backbone: the q²-shift functional
 -- equation of the single-lattice product ∏(1+q^{2n+1}x) (telescoping), the recurrence
 -- that pins the e_k = q^{k²}/(q²;q²)_k coefficients (Python witness cross-checks k≤6).
