@@ -38,3 +38,31 @@ from-scratch HLF: the FRT formula is ALREADY sorry-free at
 
   Then numSYT_mul_hookProduct := numStandardYoungTableaux_mul_hookLengthProduct
   transported by (1)+(2). Part (2) is the real work; part (1) reuses PieceA.
+
+## Grind findings 2026-08-01 (part 1 correct, but ARCHITECTURE blocks in-place)
+
+Attempted to discharge numSYT_mul_hookProduct in StandardYoungTableau.lean by
+importing QOU.Mathlib.HookLengthFormula → **IMPORT CYCLE**: HookLengthFormula's
+cone transitively imports the custom QOU.BraidKnot.StandardYoungTableau (via
+SpechtClassification/Syt* chain), so StandardYoungTableau.lean is UPSTREAM of
+HookLengthFormula and cannot import it (Lean: "X already declared"). Reverted.
+
+Consequences for the plan:
+- The bridge theorem must live DOWNSTREAM of both StandardYoungTableau AND
+  HookLengthFormula (a new file, or SytMathlibBridge.lean extended). The sorried
+  `QOU.BraidKnot.numSYT_mul_hookProduct` in StandardYoungTableau.lean can stay as
+  the honest cited sorry; prove the real bridged identity downstream.
+- Part 1 (hookProduct = hookLengthProduct) is CORRECT — the two filter-card
+  helpers (armFilter_card/legFilter_card, = my PieceA.armZ_eq_card in ℕ) + a
+  prod_congr close it. Just place it downstream (needs HookLengthFormula's
+  YoungDiagram.hookLength/hookLengthProduct). ~40 lines, ready-to-write.
+- Part 2 (numSYT = numStandardYoungTableaux) is PARTIALLY DONE: SytMathlibBridge.lean
+  already has `QOU.Mathlib.StandardYoungTableau.toBraidKnot` (Mathlib→custom
+  direction) with 1 sorry. Finish the reverse (custom→Mathlib, entry +1 shift +
+  SSYT row_weak/col_strict/zeros + BijOn onto Icc 1 n), then Equiv + Nat.card_congr.
+  Build ON SytMathlibBridge, don't restart.
+
+Next-session recipe: extend SytMathlibBridge.lean (imports custom SYT already):
+add `import QOU.Mathlib.HookLengthFormula` there (check it's not in HLF's cone —
+likely fine, it's a leaf bridge), prove part 1 + finish part 2's equiv, then the
+downstream `numSYT_mul_hookProduct_bridged`.
