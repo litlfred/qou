@@ -167,6 +167,13 @@ def main():
     q0_mp = mp.mpf(Q_50_DIGIT_STR)
     # exact rational pin close to q₀ for exact-arithmetic sign decisions
     q0_rat = sp.Rational(110997858275, 100000000000)
+    # Rational pin in s = √q. Since the deficit is rational in s (the y_λ carry
+    # half-integer q-powers), a RATIONAL s₀ makes the q₀ evaluation exactly
+    # rational — the substrate pin is then q = s₀², itself an exact rational
+    # agreeing with q₀ to ~20 digits. This is what makes the sign claim exact.
+    s0_rat = sp.Rational(
+        int(mp.floor(mp.sqrt(mp.mpf(Q_50_DIGIT_STR)) * 10**20)), 10**20)
+    q_from_s0 = s0_rat ** 2
     grid = [sp.Rational(101, 100), sp.Rational(21, 20), sp.Rational(11, 10), q0_rat,
             sp.Rational(6, 5)]
 
@@ -225,40 +232,55 @@ def main():
         dims = {lam: sp.Integer(sp.trace(sp.eye(hoefsmit_matrices_symbolic(
             list(lam), qs)[1]))) for lam in partitions_of(n)}
 
-        # perblock g with |χ| resolved by the verified signs (all + expected)
-        g_link = sp.cancel(sum(Y[lam] * (chis[lam] if all(
-            v > 0 for v in sign_tables[lam].values()) else sp.Abs(chis[lam]))
-            for lam in partitions_of(n)))
-        g_unlink = sp.cancel(sum(Y[lam] * dims[lam] for lam in partitions_of(n)))
-        tau = sp.cancel(g_link / g_unlink)
-        D = sp.cancel(1 - tau)
-        Dfact = sp.factor(D)
+        # perblock g with |χ| resolved by the verified signs (all + expected).
+        #
+        # The Jones-Markov y_λ carry half-integer powers of q, so g is rational in
+        # s = √q, not in q. Substituting q = s² makes every expression a genuine
+        # rational function of s — which is what makes `cancel` cheap and the
+        # series exact (`factor` on the q-form is the step that hung the first run,
+        # and the factored form is cosmetic anyway).
+        s = sp.Symbol("s", positive=True, real=True)
 
-        # exact leading order at q=1 in (q−1); h = q−q⁻¹ vanishes to order 1
-        _log(f"  series of D at q=1…")
+        def to_s(e):
+            return sp.cancel(sp.powsimp(e.subs(qs, s ** 2), force=True))
+
+        _log("  assembling g_link / g_unlink in s = √q…")
+        g_link = sp.cancel(sum(to_s(Y[lam]) * to_s(
+            chis[lam] if all(v > 0 for v in sign_tables[lam].values())
+            else sp.Abs(chis[lam])) for lam in partitions_of(n)))
+        g_unlink = sp.cancel(sum(to_s(Y[lam]) * dims[lam] for lam in partitions_of(n)))
+        tau_s = sp.cancel(g_link / g_unlink)
+        D_s = sp.cancel(1 - tau_s)
+        # keep a q-form for reporting/eval (exact, just re-expressed)
+        tau = tau_s.subs(s, sp.sqrt(qs))
+        D = D_s.subs(s, sp.sqrt(qs))
+        Dfact = D_s          # cancelled rational function of s (no expensive factor)
+
+        # Exact leading order. q = s² ⇒ q−1 = (s−1)(s+1) with dq/ds|_{s=1} = 2 ≠ 0,
+        # so the vanishing order at s=1 in (s−1) EQUALS the order at q=1 in (q−1)
+        # (a local diffeomorphism). Series in s is therefore the exact Milnor-order
+        # test, and is polynomial-cheap in the s-form.
+        _log("  series of D at s=1 (≡ q=1, orders agree since dq/ds|₁ = 2 ≠ 0)…")
         eps = sp.Symbol("eps")
-        Deps = sp.cancel(D.subs(qs, 1 + eps))
-        ser = sp.series(Deps, eps, 0, 10).removeO()
+        Deps = sp.cancel(D_s.subs(s, 1 + eps))
+        ser = sp.series(Deps, eps, 0, 9).removeO()
         poly = sp.Poly(sp.expand(ser), eps)
-        lead_order = min(m[0] for m in poly.monoms() if poly.coeff_monomial(
-            (m[0],)) != 0)
+        nz = [m[0] for m in poly.monoms() if poly.coeff_monomial((m[0],)) != 0]
+        assert nz, "deficit series is identically zero — unexpected"
+        lead_order = min(nz)
         lead_coeff = poly.coeff_monomial((lead_order,))
 
-        # sign at the rational q₀ pin: exact rational arithmetic when the deficit
-        # is radical-free; else a 60-digit evaluation with an explicit margin
-        # guard (decisive: the signal is ~1e-4 ≫ 1e-50).
-        D_at_q0 = sp.cancel(sp.radsimp(D.subs(qs, q0_rat)))
-        if D_at_q0.is_Rational:
-            d0_sign = int(sp.sign(D_at_q0))
-            sign_method = "exact-rational"
-        else:
-            v = sp.N(D_at_q0, 60)
-            assert abs(v) > sp.Float(10) ** (-50), "sign margin guard failed"
-            d0_sign = 1 if v > 0 else -1
-            sign_method = "60-digit-evalf-with-margin"
-        tau_num = float(sp.N(tau.subs(qs, sp.Float(Q_50_DIGIT_STR, 50)), 30))
+        # EXACT sign at the substrate pin. Because the deficit is rational in
+        # s = √q, pinning a RATIONAL s₀ makes the evaluation exactly rational
+        # (q = s₀² is then itself an exact rational within ~1e-20 of q₀ — see
+        # s0_rat above). No floating point enters the sign decision.
+        D_at_s0 = sp.cancel(D_s.subs(s, s0_rat))
+        assert D_at_s0.is_Rational, "s-form evaluation at a rational s₀ must be rational"
+        d0_sign = int(sp.sign(D_at_s0))
+        sign_method = "exact-rational-at-s0-squared-pin"
+        tau_num = float(sp.N(tau_s.subs(s, sp.sqrt(sp.Float(Q_50_DIGIT_STR, 50))), 30))
 
-        _log(f"  D = {Dfact}")
+        _log(f"  D(s), q = s²  =  {str(Dfact)[:400]}")
         _log(f"  leading (q−1)-order = {lead_order}   leading coeff = {lead_coeff}")
         _log(f"  D(q₀_rat) sign = {d0_sign} ({sign_method})   τ(q₀) ≈ {tau_num:.9f}")
 
@@ -268,12 +290,14 @@ def main():
                           for lam in chis},
             "chi_signs_on_grid": {str(lam): sign_tables[lam] for lam in sign_tables},
             "all_chi_positive_on_grid": bool(all_pos),
-            "deficit_exact_factored": str(Dfact),
-            "tau_exact": str(sp.factor(tau)),
+            "deficit_exact_in_s_where_q_eq_s_squared": str(Dfact),
+            "tau_exact_in_s_where_q_eq_s_squared": str(tau_s),
             "leading_q_minus_1_order": int(lead_order),
             "leading_coeff": str(lead_coeff),
             "deficit_sign_at_q0_exact": d0_sign,
             "deficit_sign_method": sign_method,
+            "s0_rational_pin": str(s0_rat),
+            "q_from_s0_squared": str(q_from_s0),
             "tau_at_q0_numeric": tau_num,
         }
 
@@ -288,8 +312,8 @@ def main():
 
     print("\n" + "=" * 88)
     print("A=4 Brunnian deficit — EXACT closed form (perblock convention, base n=4)")
-    print(f"  τ_L₄(q) = {r4['tau_exact'][:200]}")
-    print(f"  1 − τ_L₄ factored = {r4['deficit_exact_factored'][:200]}")
+    print(f"  τ_L₄(s), q = s² = {r4['tau_exact_in_s_where_q_eq_s_squared'][:200]}")
+    print(f"  1 − τ_L₄(s) = {r4['deficit_exact_in_s_where_q_eq_s_squared'][:200]}")
     print(f"  leading (q−1)-order: A3={r3['leading_q_minus_1_order']} (expect 4), "
           f"A4={r4['leading_q_minus_1_order']} (expect 6)  → {'OK' if order_law_ok else 'MISMATCH'}")
     print(f"  exact deficit signs at q₀: A3={r3['deficit_sign_at_q0_exact']} (+ expected), "
