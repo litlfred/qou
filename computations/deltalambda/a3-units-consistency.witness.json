@@ -2,47 +2,36 @@
   "schema": "witness/v1",
   "producer": "computations/deltalambda/a3_units_consistency_probe.py",
   "computation": "a3-units-consistency",
-  "description": "The '1.6\u00d7 A=3 magnitude near-miss' is a UNITS ARTIFACT. The derived 3-body cluster c\u2083=0.297 is a genuine ENERGY (MeV; E\u2080=m_e/(q\u2080(q\u2080\u22121))\u00b7deficit) but is compared directly to the DIMENSIONLESS simplex coefficient \u03bc\u2083=0.4708 (\u03c1_strong\u2212\u03c1_grad, a pure ratio) \u2014 the borromean probe line 188 admits it: '\u03bc\u2083 (dimensionless, read as MeV)'. Converting the cluster into the dimensionless decomposition (c\u2083/B(\u00b2H)=0.1335) gives the honest A=3 3-body gap 3.53\u00d7 (not 1.6\u00d7): the cluster supplies 28% (not 63%) of the target, and the energy-consistent binding miss is 8.85%/0.750 MeV (not 4.6%). The correction factor is exactly B(\u00b2H)=2.224566. The order-separation strengthens (required h\u2076 coeff 57.8 vs 13.4). A=4 |c\u2084|/c\u2083 becomes 26.6 (vs 13.1). scope-(a) calibration \u2014 corrects the corpus (#4364, three-walls, borromean probe:188) and this PR's \u00a72\u20133c corpus-convention numbers; the A=3 magnitude is ~2\u00d7 further from closure than the headline, reinforcing \u0394_\u03bb-gating. No fit; nothing wired; exact (mpmath).",
+  "description": "The '1.6\u00d7 A=3 magnitude near-miss' is dimensionally ill-posed AND scale-ambiguous. The 3-body cluster c\u2083=0.297 is a genuine ENERGY (E\u2080\u00b7deficit) compared directly to the DIMENSIONLESS \u03bc\u2083=0.4708 (borromean probe:188 admits '\u03bc\u2083 dimensionless, read as MeV'). Repairing the pun does NOT give one 'honest gap': the categorical binding scale is unpinned \u2014 the master formula undershoots the DEUTERON by 5.85\u00d7 (C_knot=B_AME/B_cat, an explicitly FITTED deficit ratio = the open \u0394_\u03bb gate). Normalizing c\u2083 by the AME deuteron gives a 3.53\u00d7 UNDERSHOOT; by the categorical deuteron (scale-consistent, E\u2080/m_e cancels) a 1.66\u00d7 OVERSHOOT \u2014 the two differ by exactly C_knot=5.85. So the near-miss is an artifact of the unpinned scale, not a robust proximity. (Self-correction: an earlier version reported 3.53\u00d7 as 'the honest gap' \u2014 that picked one normalization and over-claimed.) The unambiguous object is C_knot itself; deriving it (the \u0394_\u03bb magnitude) is 'how to improve binding' and is currently a FIT (six ans\u00e4tze + three walls failed). scope-(a) calibration; no fit; nothing wired; exact (mpmath). Corpus files carry the pun \u2014 flagged for coordination.",
   "audit_only": true,
-  "tier": "scope-(a) units-consistency calibration (single-factor B(\u00b2H) correction); no fit",
-  "scriptHash": "31caa51966725f09",
+  "tier": "scope-(a) units-consistency + scale-ambiguity calibration (self-correction); no fit",
+  "scriptHash": "ea7d722a11b52586",
   "result": {
     "the_pun": {
       "site": "borromean_h9_magnitude_lift_probe.py:188 \u2014 'target \u03bc\u2083 = 0.4708 (dimensionless, read as MeV)'",
       "mu3_dimensionless": "0.4708",
       "c3_MeV": "0.297",
-      "E0_note": "E\u2080 = m_e/(q\u2080(q\u2080\u22121)) \u2248 4.19 MeV \u21d2 c\u2083 = E\u2080\u00b7deficit is a genuine energy",
-      "missing_conversion_factor_B2H_MeV": "2.224566"
+      "punned_gap_mu3_over_c3": "1.58519 ('1.6\u00d7 near-miss')",
+      "why_ill_posed": "c\u2083 is a genuine energy (E\u2080\u00b7deficit, E\u2080=m_e/(q\u2080(q\u2080\u22121))\u22484.19 MeV); \u03bc\u2083 is dimensionless (\u03c1_strong\u2212\u03c1_grad). Comparing them sets B(\u00b2H)=1 MeV."
     },
-    "corrected_gap": {
-      "c3_in_ratio_units": "0.13350919",
-      "punned_gap_mu3_over_c3_MeV": "1.58519 ('1.6\u00d7 near-miss')",
-      "honest_gap_mu3_over_c3_ratio": "3.52635 (3.53\u00d7)",
-      "correction_factor": "2.224566",
-      "correction_factor_is_B2H": true,
-      "cluster_frac_of_target_pct": "28.358 (NOT 63%)"
+    "the_open_gate_C_knot": {
+      "B_cat_deuteron_MeV": "0.38013212",
+      "B_AME_deuteron_MeV": "2.224566",
+      "C_knot": "5.85209",
+      "status": "the master formula B=m_e\u00b7|\u03a3 y_\u03bb \u03c7^\u03bb sgn f^\u03bb| undershoots the DEUTERON by 5.85\u00d7; C_knot=B_AME/B_cat is an EXPLICITLY FITTED deficit ratio (not derived) = the open \u0394_\u03bb gate (binding_energy_categorical_deuteron.py)."
     },
-    "corrected_binding_miss": {
-      "graded_energy_MeV": "7.4345688",
-      "model_energy_MeV": "7.7315688",
-      "actual_effective_BH3_MeV": "8.4818252",
-      "miss_energy_MeV": "0.750256",
-      "miss_pct_binding": "8.8455 (NOT 4.6%)"
-    },
-    "strengthened_order_separation": {
-      "honest_missing_ratio": "0.337291",
-      "honest_missing_MeV": "0.750326",
-      "required_h6_coefficient_a1": "57.803 (vs punned 13.4 \u2014 MORE anomalous)",
-      "higher_order_route_ruled_out_harder": true
-    },
-    "a4_honest": {
-      "required_c4_MeV": "-7.90571",
-      "c4_over_c3_energy": "26.6186 (vs punned 13.1)"
+    "scale_ambiguity": {
+      "normA_c3_over_B_AME": "0.13350919",
+      "gap_A_undershoot": "3.52635\u00d7 UNDERshoot",
+      "normB_c3_over_B_cat": "0.7813073",
+      "gap_B_overshoot": "1.65953\u00d7 OVERshoot",
+      "normalizations_differ_by_C_knot": true,
+      "reading": "the two defensible normalizations differ by exactly C_knot=5.85, so the 'gap' swings from a 1.66\u00d7 OVERSHOOT (\u00f7categorical deuteron, scale-consistent) to a 3.53\u00d7 UNDERSHOOT (\u00f7AME deuteron). The '1.6\u00d7 near-miss' is NOT robust \u2014 it is an artifact of the UNPINNED categorical binding scale. Neither normalization is rigorous: c\u2083 (Borromean E\u2080\u00b7deficit) and B_cat (master per-\u03bb sum) are different computations."
     },
     "verdict": {
-      "classification": "scope-(a) CALIBRATION: the '1.6\u00d7 A=3 near-miss' is a UNITS ARTIFACT (c\u2083 MeV compared to \u03bc\u2083 dimensionless, \u00d7B(\u00b2H) omitted). The honest gap is 3.53\u00d7; the derived cluster supplies 28% (not 63%) of the 3-body target; the binding miss is 8.85% (not 4.6%). This is ~2\u00d7 further from closure than the headline \u2014 reinforcing the \u0394_\u03bb-gated conclusion, NOT refuting the graded-dim route.",
-      "corrects": "the corpus (#4364, three-walls audit, borromean probe:188) AND the corpus-convention numbers in \u00a72\u20133c of this PR's earlier probes. The corpus files still carry the pun \u2014 flagged for coordination, not rewritten here.",
-      "anti_fit": "single-factor B(\u00b2H) correction; no fit; nothing wired."
+      "classification": "scope-(a) CALIBRATION + SELF-CORRECTION: the '1.6\u00d7 A=3 near-miss' is dimensionally ill-posed (c\u2083 MeV vs \u03bc\u2083 dimensionless, line 188). Repairing it does NOT give a single 'honest gap' \u2014 it gives a SCALE-AMBIGUOUS range spanning C_knot=5.85 (1.66\u00d7 overshoot .. 3.53\u00d7 undershoot), because the categorical binding scale is unpinned. (An earlier version of this probe reported 3.53\u00d7 as 'the honest gap'; that picked one normalization and was an over-claim, corrected here.) The one unambiguous object is C_knot itself \u2014 the 5.85\u00d7 deuteron deficit, explicitly FITTED = the open \u0394_\u03bb gate.",
+      "how_to_improve_binding": "derive C_knot (the \u0394_\u03bb magnitude) from the categorical structure. It is currently a FIT B_AME/(m_e\u00b7|sum|); six ans\u00e4tze + three walls have failed. The A=3 'near-miss' gave a false sense of proximity.",
+      "anti_fit": "c\u2083, \u03bc\u2083, B_AME, B_cat consumed as fixed inputs; nothing wired. Corpus files (#4364, three-walls, borromean probe:188) carry the pun \u2014 flagged for coord."
     }
   },
   "context": {
@@ -50,5 +39,5 @@
     "builds_on": "borromean_h9_magnitude_lift_probe.py:188 (the pun), #4364, three-walls, this PR's mu3/a3/a4 probes",
     "no_fit": true
   },
-  "scriptCommitSha": "uncommitted"
+  "scriptCommitSha": "5d44501a0714a19d9685d5007a2ae4df82bfbaa4"
 }
