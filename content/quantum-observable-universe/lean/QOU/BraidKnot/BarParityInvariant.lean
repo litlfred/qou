@@ -100,6 +100,40 @@ theorem barOdd_hbar : BarOdd (fun q : K => q - q⁻¹) := fun q hq => by
   show q⁻¹ - q⁻¹⁻¹ = -(q - q⁻¹)
   rw [inv_inv]; ring
 
+/-! ## Power parity — the Δ_λ chirality sign IS the bar-involution grading
+
+The Δ_λ closure target (bean `s5bb`, Option-E) is **mixed-sign**: the chirality
+sign is `deltaSign λ = (-1)^(principal grading λ)`
+(`QOU.BraidKnot.PrincipalGradingJetOrder.deltaSign`,
+`QOU.BraidsAndKnots.PartitionOf5.deltaSign`). Since each principal-grading-`1`
+generator is the bar-odd `ℏ = q − q⁻¹`, a degree-`d` monomial has bar-parity
+`(-1)^d` — so the Δ_λ chirality sign and the μ-correction bar-even requirement
+(#2584) are the **same `ℤ/2` bar-involution grading** on the shared s5-so3 `W_λ`
+object. The two open routes are gated by one invariant.
+-/
+
+/-- A **bar-odd** function raised to the `n`-th power picks up `(-1)^n`. -/
+theorem barOdd_pow {f : K → K} (hf : BarOdd f) (n : ℕ) (q : K) (hq : q ≠ 0) :
+    (f q⁻¹) ^ n = (-1) ^ n * (f q) ^ n := by
+  rw [hf q hq, neg_pow]
+
+/-- **Even power of a bar-odd generator is bar-even** (`deltaSign = +1` at even
+principal grading). -/
+theorem barEven_barOdd_pow_even {f : K → K} (hf : BarOdd f) {n : ℕ} (hn : Even n) :
+    BarEven (fun q => (f q) ^ n) := fun q hq => by
+  show (f q⁻¹) ^ n = (f q) ^ n
+  rw [barOdd_pow hf n q hq, hn.neg_one_pow, one_mul]
+
+/-- **Odd power of a bar-odd generator is bar-odd** (`deltaSign = −1` at odd
+principal grading). Together with the previous lemma this is exactly
+`deltaSign = (-1)^(principal grading)`: the Δ_λ chirality sign is the
+bar-involution parity of the principal-grading degree — the SAME `ℤ/2` grading
+that forces the μ-correction bar-even. -/
+theorem barOdd_barOdd_pow_odd {f : K → K} (hf : BarOdd f) {n : ℕ} (hn : Odd n) :
+    BarOdd (fun q => (f q) ^ n) := fun q hq => by
+  show (f q⁻¹) ^ n = -((f q) ^ n)
+  rw [barOdd_pow hf n q hq, hn.neg_one_pow, neg_one_mul]
+
 /-! ## The μ-anchor object is bar-even (reusing the proved figure-8 symmetry) -/
 
 /-- **The figure-8 (`4₁`) colored-Jones tower is bar-even**, for every color
