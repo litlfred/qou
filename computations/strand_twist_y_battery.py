@@ -29,11 +29,10 @@ quantum, fixed once structurally — not tuned.
 from __future__ import annotations
 
 import itertools
-import json
-import pathlib
 from fractions import Fraction as Fr
 
-HERE = pathlib.Path(__file__).resolve().parent
+import _path_bridge  # noqa: F401  (canonical sys.path bridge)
+from witness_base import WitnessBuilder  # noqa: E402
 
 # ---------------------------------------------------------------- SM data
 # First-generation chiral fermions: (flavour, chirality) with SM
@@ -121,62 +120,71 @@ def main() -> None:
         for fl in FLAVOURS
     }
 
-    witness = {
-        "description": (
-            "Strand-twist hypercharge battery (def:strand-twist-datum "
-            "step b/c): helon-style candidate-space enumeration for "
-            "Y = 2(T/3 - I3) against the SM first-generation spectrum, "
-            "Z6 compatibility, and nucleon-doublet GMN."
-        ),
-        "computation": "strand-twist-y-battery",
-        "exploratory": True,
-        "wired_to_production": False,
-        "search_space": {
-            "multisets_per_flavour": len(MULTISETS),
-            "assignments_enumerated": n_total,
-            "twist_range": [-1, 0, 1],
-            "strands_per_fermion": 3,
-            "normalisation": "Q_twist = totalTwist/3 (colour-tube charge quantum; fixed, not tuned)",
-        },
-        "z6_condition": "tau/3 + w/2 + Y/2 integral (Baez-Huerta)",
-        "z6_sm_table_ok": z6_table,
-        "survivors_count": len(survivors),
-        "survivors_per_flavour_multisets": {
+    wb = WitnessBuilder("strand-twist-y-battery", engine="python-fractions")
+    wb.set_description(
+        "EXPLORATORY strand-twist hypercharge battery (def:strand-twist-"
+        "datum steps b/c, beans qou-4tul/qou-q377): helon-style candidate-"
+        "space enumeration for Y = 2(T/3 - I3) against the SM first-"
+        "generation spectrum, Baez-Huerta Z6 compatibility, and nucleon-"
+        "doublet GMN. Candidate-space feasibility only — NOT wired, NOT a "
+        "derivation; conj:sm-hypercharge-invariant stays open.")
+    wb.add_data("search_space", {
+        "multisets_per_flavour": len(MULTISETS),
+        "assignments_enumerated": n_total,
+        "twist_range": [-1, 0, 1],
+        "strands_per_fermion": 3,
+        "normalisation": ("Q_twist = totalTwist/3 (colour-tube charge "
+                          "quantum; fixed structurally, not tuned)"),
+    })
+    wb.add_data("z6", {
+        "condition": "tau/3 + w/2 + Y/2 integral (Baez-Huerta)",
+        "sm_table_ok": z6_table,
+    })
+    wb.add_data("survivors", {
+        "count": len(survivors),
+        "per_flavour_multisets": {
             k: [list(m) for m in v] for k, v in per_flavour.items()
         },
-        "bar_negation_note": (
-            "Antiparticle consistency Y(fbar) = -Y(f) holds identically "
-            "for Y = 2(T/3 - I3) under (T, I3) -> (-T, -I3); it is a "
-            "structural property of the candidate form, not a battery "
-            "outcome, and is therefore not scored as a check."
-        ),
-        "survivors_full": [
+        "full": [
             {
                 "assignment": {k: list(v) for k, v in s["assignment"].items()},
                 "nucleon": s["nucleon"],
             }
             for s in survivors
         ],
-        "honest_gap": (
-            "Candidate-space feasibility only. The framework carries no "
-            "per-chiral-fermion framed braid words; deriving the twist "
-            "multisets from framework states (rather than enumerating "
-            "them) is the open content of conj:sm-hypercharge-invariant. "
-            "Q_twist == crossing-derived Q was checked only on the "
-            "nucleon doublet composites, where the appendix records "
-            "derived Q and I3."
-        ),
-    }
-
-    out = HERE / "strand-twist-y-battery.witness.json"
-    out.write_text(json.dumps(witness, indent=2) + "\n")
+    })
+    wb.add_data("bar_negation_note", (
+        "Antiparticle consistency Y(fbar) = -Y(f) holds identically for "
+        "Y = 2(T/3 - I3) under (T, I3) -> (-T, -I3); a structural property "
+        "of the candidate form, not scored as a battery outcome."))
+    wb.add_data("honest_gap", (
+        "Candidate-space feasibility only. The framework carries no "
+        "per-chiral-fermion framed braid words; deriving the twist "
+        "multisets from framework states (rather than enumerating them) "
+        "is the open content of conj:sm-hypercharge-invariant. "
+        "Q_twist == crossing-derived Q was checked only on the nucleon "
+        "doublet composites, where the appendix records derived Q and I3."))
+    wb.add_assertion(
+        name="survivors_count",
+        computed=len(survivors), expected=4, tolerance=0, unit="count",
+        source=("Exact enumeration of all 10^4 helon-style assignments; "
+                "4 survive the spectrum + nucleon-GMN battery."))
+    wb.add_assertion(
+        name="u_multiset_unique",
+        computed=len(per_flavour["u"]), expected=1, tolerance=0, unit="count",
+        source="The u-quark twist multiset {0,1,1} is uniquely determined.")
+    wb.add_assertion(
+        name="e_multiset_unique",
+        computed=len(per_flavour["e"]), expected=1, tolerance=0, unit="count",
+        source="The electron twist multiset {-1,-1,-1} is uniquely determined.")
+    out = wb.save()
 
     print(f"assignments enumerated: {n_total}")
     print(f"survivors (spectrum + nucleon GMN): {len(survivors)}")
     for fl in FLAVOURS:
         print(f"  {fl}: surviving multisets {per_flavour[fl]}")
     print(f"Z6 SM sanity: all pass = {all(z6_table.values())}")
-    print(f"witness -> {out.name}")
+    print(f"witness -> {out}")
 
 
 if __name__ == "__main__":
