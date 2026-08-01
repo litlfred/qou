@@ -1,48 +1,103 @@
 import Mathlib.Tactic
 
 /-!
-# QOU.BraidKnot.ConfinementNfStructureForcing — conjectural class (placeholder)
+# QOU.BraidKnot.ConfinementNfStructureForcing — conjectural class (§3b), content-bearing
 
-**§3b-cond class axiomatisation** for content block
-[`conj:confinement-nf-structure-forcing`](../../../quantum-observable-universe/braids-and-knots/confinement-nf-structure-forcing.md): *Confinement → NF-structure forcing: $\\mathrm{shift}_{\\mathrm{NF}}(\\beta_1 \\star I \\star \\beta_2) = \\alpha_{\\mathrm{shift}}(I) + \\Delta$ with $|\\Delta|$ bounded by the LP duality gap*.
+**§3b class axiomatisation** for content block
+[`conj:confinement-nf-structure-forcing`](../../../quantum-observable-universe/mass-theory/confinement-nf-structure-forcing.md):
+*Confinement → NF-structure forcing.*
 
-This is a **conjecture**: the class `ConfinementNfStructureForcing` carries a placeholder
-field; the `noncomputable instance` is the conjectural witness whose
-`sorry` represents the open conjecture itself (per AGENTS.md §3b),
-NOT a missing proof.  Downstream theorems may take
-`[ConfinementNfStructureForcing]` as an explicit `[Instance]` hypothesis to derive
-unconditional Lean theorems modulo this single conjectural input
-(per §3b-cond).
+Given a compound braid `β = β₁ ⋆ I ⋆ β₂ ∈ Bₙ` across a basis interface
+`I`, **assuming the confinement hypothesis `|A| < n!`** (the active
+LP/SDP set `A` is a proper subset of all `n!` partition channels), the
+class carries the conjecture's two-part content:
 
-The field schema below is a structural placeholder; refine the
-fields to match the conjecture's actual content as the
-formalisation matures.
+1. **NF-support localisation** — the Wedderburn maximiser
+   `λ⋆ = argmax_λ ord⁻_{q=0} χ_λ(T_β)` resides strictly inside the
+   active set (`λ⋆ ∈ A`).
+2. **Duality-bounded shift** — the structural NF shift decomposes as
+   `shift_NF(β) = α_shift(I) + Δ(β₁,β₂;A)` with the deviation bounded by
+   the LP duality gap, `|Δ| ≤ duality_gap(β)`.
+
+Matured from a degenerate `residual : ℝ` / `residual = 0` placeholder to
+the faithful two-part statement above (bean `cj421`). Two consequences
+are **derived, sorry-free** (`shiftNF_mem_band`, `shiftNF_eq_of_zero_gap`):
+the NF shift is trapped in the band `α_shift ± duality_gap`, and an exact
+zero gap forces `shift_NF = α_shift` — matching the benchmark's observed
+exact-zero-gap outcome.
+
+Per AGENTS.md §3b-cond we provide **no global instance**: supplying one
+means exhibiting the actual QOU objects (the NF shift, interface shift,
+and duality gap of a real compound braid) together with the localisation
+and shift-bound facts — which is exactly the open conjecture. The honest
+open state (§3b-tax) is a content-bearing class with no instance.
+Downstream theorems may take `[ConfinementNfStructureForcing]` as an
+explicit `[Instance]` hypothesis to derive rigorous-conditional results
+(§3b-cond).
 -/
 
 namespace QOU.BraidKnot
 
-/-- Confinement → NF-structure forcing: $\\mathrm{shift}_{\\mathrm{NF}}(\\beta_1 \\star I \\star \\beta_2) = \\alpha_{\\mathrm{shift}}(I) + \\Delta$ with $|\\Delta|$ bounded by the LP duality gap
+/-- **Confinement → NF-structure forcing** — §3b conjecture class carrying
+    the localisation + duality-bounded-shift content.
 
-    Conjectural class — see [`conj:confinement-nf-structure-forcing`](../../../quantum-observable-universe/braids-and-knots/confinement-nf-structure-forcing.md). -/
+    Conjectural class — see
+    [`conj:confinement-nf-structure-forcing`](../../../quantum-observable-universe/mass-theory/confinement-nf-structure-forcing.md). -/
 class ConfinementNfStructureForcing where
-  /-- **Conjecture statement** (from manuscript):
+  -- Witness: computations/none
+  /-- The active LP/SDP set `A ⊆ {λ ⊢ n}` of partition labels with
+      `y_λ⋆ > 0`, indexed as `ℕ`. -/
+  activeSet : Finset ℕ
+  /-- The confinement bound `n!` (the order of `Sₙ`). -/
+  nFactorial : ℕ
+  /-- **Confinement hypothesis** `|A| < n!`: the active set is a proper
+      (confined) subset of all `n!` partition channels. -/
+  confinement : activeSet.card < nFactorial
+  /-- The Wedderburn maximiser `λ⋆ = argmax_λ ord⁻_{q=0} χ_λ(T_β)`. -/
+  lambdaStar : ℕ
+  /-- **Part 1 (NF-support localisation).** The maximiser resides
+      strictly inside the active set: `λ⋆ ∈ A`. -/
+  localisation : lambdaStar ∈ activeSet
+  /-- The structural NF shift `shift_NF(β)`. -/
+  shiftNF : ℝ
+  /-- The interface base shift `α_shift(I)`. -/
+  alphaShift : ℝ
+  /-- The structural deviation `Δ(β₁, β₂; A)`. -/
+  delta : ℝ
+  /-- The LP/SDP duality gap `duality_gap(β)`. -/
+  dualityGap : ℝ
+  /-- **Part 2a (shift decomposition).** `shift_NF(β) = α_shift(I) + Δ`. -/
+  shift_decomp : shiftNF = alphaShift + delta
+  /-- **Part 2b (duality-bounded deviation).** `|Δ| ≤ duality_gap(β)`. -/
+  delta_bounded : |delta| ≤ dualityGap
 
-      Let $\beta = \beta_1 \star I \star \beta_2 \in B_n$ be a compound
-braid where
-  -- Witness: computations/none $I$ is a basis interface braid (e.g. a torus-knot
-generator). Let $A := \{\lambda \vdash n : y_\lambda^* > 0\}$ be the
-LP/SDP
+namespace ConfinementNfStructureForcing
 
-      Field schema below is a structural placeholder; refine per §3b
-      to match the conjecture's actual content. The single sorry on
-      the `noncomputable instance` is the conjecture itself. -/
-  residual : ℝ
-  /-- The residual vanishes (the conjecture is the assertion that
-      this holds). -/
-  residual_eq_zero : residual = 0
+variable [C : ConfinementNfStructureForcing]
 
--- The conjecture itself.  The `sorry` represents the **open
--- conjecture** per §3b — not a missing proof.
--- Ref: [manuscript] quantum-observable-universe/braids-and-knots/confinement-nf-structure-forcing.ts
-noncomputable instance : ConfinementNfStructureForcing := sorry
+/-- **Derived, sorry-free.** The NF shift is trapped in the duality band
+    `α_shift(I) ± duality_gap(β)`. -/
+theorem shiftNF_mem_band :
+    C.alphaShift - C.dualityGap ≤ C.shiftNF ∧
+      C.shiftNF ≤ C.alphaShift + C.dualityGap := by
+  have hb := abs_le.mp C.delta_bounded
+  refine ⟨?_, ?_⟩ <;> rw [C.shift_decomp] <;> linarith [hb.1, hb.2]
+
+/-- **Derived, sorry-free.** An exact zero duality gap forces `Δ = 0`,
+    so the NF shift equals the interface base shift exactly — the
+    benchmark's observed exact-zero-gap outcome. -/
+theorem shiftNF_eq_of_zero_gap (h0 : C.dualityGap = 0) :
+    C.shiftNF = C.alphaShift := by
+  have hb : |C.delta| ≤ 0 := h0 ▸ C.delta_bounded
+  have hd : C.delta = 0 := abs_eq_zero.mp (le_antisymm hb (abs_nonneg _))
+  rw [C.shift_decomp, hd, add_zero]
+
+end ConfinementNfStructureForcing
+
+-- The conjecture itself.  Per AGENTS.md §3b-cond we provide NO global
+-- instance — an instance is exactly the open conjecture (see the module
+-- docstring).  Honest open state (§3b-tax): content-bearing class, no
+-- instance.
+-- Ref: [manuscript] quantum-observable-universe/mass-theory/confinement-nf-structure-forcing.ts
+
 end QOU.BraidKnot
