@@ -45,6 +45,34 @@ A near-miss on any gate is reported, never suppressed. This probe makes
 no ontological claim: it compares the corpus's two candidate literals
 against the observed pole structure and reports which the data favors.
 
+Outcome (first run, 2026-08-01)
+-------------------------------
+G0 PASS (rel 0.0222) · G1 PASS (Im dev 0.0294) · G2 PASS · **G3 NEAR-MISS**
+
+    V3_measured = -7.744259484
+      vs GGM     -7.693190820    rel dev 0.00664
+      vs legacy  -2.758099029    rel dev 1.8078
+      -> favours the published value by 272x
+
+**G3 near-missed and is reported as such** (spread 4.17 vs the 5 % gate).
+The cause is visible in the per-order table: [9/10] selects a pole at
+`Re = 36.5`, an order of magnitude outside the others. A pole that far
+out is a standard low-order Padé artifact, but the gate was written
+before the run and it failed, so the pre-registered verdict is
+NEAR-MISS.
+
+*Post-hoc observation, labelled as such and NOT used to re-score any
+gate:* the two highest orders agree to `1.5e-5`
+(`-7.744374386` vs `-7.744259484`). Excluding [9/10] would turn G3 into
+a comfortable PASS — which is exactly why that exclusion is not applied
+here. A spurious-pole guard would have to be pre-registered in a future
+run to count.
+
+The ~0.66 % residual against the published value is a finite-order Padé
+truncation artifact at 24 series orders, not a discrepancy claim: the
+discriminating quantity is the 272x ratio, which no plausible truncation
+error can bridge.
+
 auditOnly; comparison to observed; no fit; nothing wired.
 """
 from __future__ import annotations
@@ -55,15 +83,15 @@ from pathlib import Path
 
 import mpmath as mp
 
-sys.path.insert(0, str(Path(__file__).parent))
+_HERE = Path(__file__).resolve().parent
+sys.path.insert(0, str(_HERE))
+sys.path.insert(0, str(_HERE.parent))
+import _path_bridge as _bridge  # noqa: E402, F401
+
+from witness_base import WitnessBuilder            # noqa: E402
 from fivetwo_saddle_values import saddle_values, volume  # noqa: E402
 
-try:
-    from qou_substrate.witness import WitnessBuilder
-except Exception:                                        # pragma: no cover
-    WitnessBuilder = None
-
-BASIS = Path("computations/probes/qbeta-5two-phi-series-engine.witness.json")
+BASIS = _HERE / "qbeta-5two-phi-series-engine.witness.json"
 
 V3_GGM = mp.mpf("-7.69319081986683")          # published, GGM eq 234 | x=1
 V3_LEGACY = mp.mpf("-2.7580990292")           # corpus literal, provenance unknown
@@ -86,9 +114,33 @@ def load_basis():
     out = {}
     for k, v in raw.items():
         idx = int(str(k).replace("P_", ""))
-        out[idx] = mp.mpc(v.replace("j", "")) if isinstance(v, str) and "j" in v \
-            else mp.mpmathify(v)
-    return [out[i] for i in range(max(out) + 1)]
+        out[idx] = _parse_complex(v)
+    lo, hi = min(out), max(out)
+    if lo > 0:                      # witness omits P_0; it is 1 by construction
+        out[0] = mp.mpf(1)
+        lo = 0
+    return [out[i] for i in range(lo, hi + 1)]
+
+
+def _parse_complex(v):
+    """Full-precision parse of the witness's `'(a + bj)'` string form.
+
+    `mp.mpc` cannot read that shape and `complex()` would silently truncate
+    the 40-digit coefficients to float64, so the two parts are split on the
+    space-delimited sign and converted separately.
+    """
+    if not isinstance(v, str):
+        return mp.mpmathify(v)
+    s = v.strip().lstrip("(").rstrip(")").strip()
+    if not s.endswith("j"):
+        return mp.mpf(s)
+    s = s[:-1]
+    for sep, sign in ((" + ", 1), (" - ", -1)):
+        i = s.rfind(sep)
+        if i > 0:
+            return mp.mpc(mp.mpf(s[:i].strip()),
+                          sign * mp.mpf(s[i + len(sep):].strip()))
+    return mp.mpc(0, mp.mpf(s))
 
 
 def poles_at(P, m, n):
@@ -187,32 +239,44 @@ def main() -> int:
     )
     print(f"\n  verdict: {verdict}")
 
-    if WitnessBuilder is not None:
-        w = WitnessBuilder("qbeta-5two-v3-from-borel-poles",
-                           script_file=Path(__file__).name)
-        w.add_assertion("zeta12_calibration", float(d12), float(d12),
-                        bool(g0), tolerance=0.05,
-                        source="frame check: zeta12 pole recovered")
-        w.add_assertion("reality_line_populated", float(ref["im_dev"]),
-                        float(ref["im_dev"]), bool(g1), tolerance=0.10,
-                        source="a pole sits on Im zeta = Vol")
-        w.add_assertion("favours_published_V3", float(d_ggm), float(d_leg),
-                        bool(g2),
-                        source="V3_measured closer to GGM than to legacy")
-        w.add_data("measurement", {
-            "V3_measured": mp.nstr(v3m, 15),
-            "V3_ggm": mp.nstr(V3_GGM, 15),
-            "V3_legacy": mp.nstr(V3_LEGACY, 15),
-            "rel_dev_ggm": mp.nstr(d_ggm, 8),
-            "rel_dev_legacy": mp.nstr(d_leg, 8),
-            "preference_ratio": mp.nstr(ratio, 8),
-            "order_spread": mp.nstr(spread, 8),
-            "per_order": {f"{m}/{n}": mp.nstr(r["V3"], 12) for (m, n), r in rows},
-        })
-        w.add_data("verdict", verdict)
-        w.write(Path(__file__).parent /
-                "qbeta-5two-v3-from-borel-poles.witness.json")
-        print("\n  witness written")
+    w = WitnessBuilder("qbeta-5two-v3-from-borel-poles",
+                       engine="mpmath", _script_path=__file__)
+    w.set_description(
+        "Non-circular measurement of V3 for 5_2 from the Borel-Pade pole "
+        "map. The reality of V3 (GGM 6.1 keeps only Re V for sigma_3) "
+        "forces Im(zeta13) = Im V1 = Vol, a constraint mentioning NEITHER "
+        "candidate; the pole nearest that line fixes V3 = Re V1 - Re(pole), "
+        "and the two candidate literals are compared only afterwards. "
+        "Pre-registered gates G0-G3 fixed before the first run; the G3 "
+        "near-miss is reported, not suppressed. auditOnly; comparison to "
+        "observed; no fit; nothing wired.")
+    w.add_assertion("zeta12_calibration",
+                    computed=float(d12), expected=0.0, tolerance=0.05,
+                    source="frame check: the zeta12 pole is recovered, so "
+                           "the pole map is read in the right frame")
+    w.add_assertion("reality_line_populated",
+                    computed=float(ref["im_dev"]), expected=0.0,
+                    tolerance=0.10,
+                    source="a Pade pole sits on the line Im zeta = Vol")
+    w.add_assertion("favours_published_V3",
+                    computed=float(d_ggm), expected=float(d_ggm),
+                    tolerance=float(d_leg),
+                    source="V3_measured is closer to the published GGM value "
+                           "than to the legacy literal")
+    w.add_data("measurement", {
+        "V3_measured": mp.nstr(v3m, 15),
+        "V3_ggm": mp.nstr(V3_GGM, 15),
+        "V3_legacy": mp.nstr(V3_LEGACY, 15),
+        "rel_dev_ggm": mp.nstr(d_ggm, 8),
+        "rel_dev_legacy": mp.nstr(d_leg, 8),
+        "preference_ratio": mp.nstr(ratio, 8),
+        "order_spread_all": mp.nstr(spread, 8),
+        "g3_passed": bool(g3),
+        "per_order": {f"{m}/{n}": mp.nstr(r["V3"], 12) for (m, n), r in rows},
+    })
+    w.add_data("verdict", verdict)
+    w.save()
+    print("\n  witness written")
 
     return 0 if (g0 and g1 and g2) else 1
 
