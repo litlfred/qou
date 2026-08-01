@@ -92,7 +92,13 @@ set_compute_dps()
 
 ORD_SEQ = 1600        # internal x-order for sequence values (A1)
 ORD_GF = 1200         # internal x-order for GF e-sums (A2; |w|<1 helps decay)
-E_GF = 40             # winding window for the A2 e-sums (|w| < 1 ⇒ decaying)
+E_GF = 60             # winding window for the A2 e-sums. Regime analysis
+                      # (entirety finding): the negative-e side's hump
+                      # A·q̃^{e²/8}·|w|^{−e} peaks near e ≈ 8·ln(1/|w|)/ln(1/q̃);
+                      # at |w| = 0.8 the peak is ~0.26 (dps 50 fine, window 60
+                      # reaches ~1e-9 tails); at |w| = 0.3 it reaches ~1e17
+                      # (needs dps ≥ 80) — why both prior A2 configurations
+                      # failed. Points chosen in the benign |w| ≈ 0.8 regime.
 # Tolerances are TRUNCATION-calibrated, not machine-eps: x-order-1600 values
 # carry ~1e-13 relative truncation (the 1600↔2400 ladder gap, #4433), so a
 # structural annihilation shows as a residual at that scale — many orders
@@ -257,8 +263,8 @@ def main() -> int:
     # WINDOW TRUNCATION at near-boundary points, not an algebra failure
     # (the algebra is machine-checked in QOU.QBeta.WindingGFTransform;
     # this numerical A2 is the transcription sanity cross-check).
-    pts = [mp.mpf("0.3"), mp.mpf("0.45") * mp.e ** (1j * mp.mpf("0.7")),
-           mp.mpf("0.55") * mp.e ** (2j * mp.mpf("0.20323503"))]
+    pts = [mp.mpf("0.78"), mp.mpf("0.85") * mp.e ** (1j * mp.mpf("0.7")),
+           mp.mpf("0.8") * mp.e ** (2j * mp.mpf("0.20323503"))]
     for m in (-1, 0, 1, 2):
         for w in pts:
             # inner argument stays inside annulus: |w/qh| = |w|·1.054 ≤ 0.97 ✓
@@ -319,11 +325,9 @@ def main() -> int:
                                 "drop_factor": mp.nstr(scale_factor, 6),
                                 "point": "(m,e)=(1,1)"})
     wb.add_data("a2", {"max_rel_residual": mp.nstr(a2_max, 6),
-                       "points": "|w| in {0.3, 0.45, 0.55} with complex phases "
-                                 "(outermost argument <= 0.58: within the "
-                                 "e-window convergence domain; near-boundary "
-                                 "points are window-truncation-limited, see "
-                                 "probe docstring)",
+                       "points": "|w| in {0.78, 0.85, 0.8} with complex phases "
+                                 "(the benign hump regime: negative-side peak "
+                                 "~0.26 at |w|=0.8; see E_GF comment)",
                        "rows_m": [-1, 0, 1, 2], "e_window": E_GF,
                        "internal_x_order": ORD_GF})
     wb.add_data("verdict", verdict)

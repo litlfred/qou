@@ -2686,3 +2686,32 @@ with a region-of-validity mechanism. Scope-(a) negative for naive-sum
 route 2 (no sign flip; no −4.08); surviving form is the CONTINUED
 x-refined Stokes (bean qou-3bp8). Audit:
 `docs/audits/2026-07-31-awpk-perwinding-stokes-41.md`. Nothing wired.
+
+**2026-08-01 (qou-3bp8 route 2b, PR #4447) — the winding GF is ENTIRE on
+ℂ*: the #4433 radius-1 reading was pre-asymptotic; entirety + the
+annihilator functional equation are Lean-proved.** Chain of findings:
+(1) the DGG C.7 annihilator holds at the substrate point on the
+canonical-chamber engine (residual 6.6e-15, dropping x8.5e12 when the
+internal order rises 1600→2400 — pure truncation). (2) Its winding-GF
+transform (M̂ ↦ q^{m/2}w multiplication; ℓ̂ ↦ row-shift with w-dilation
+by q^{1/2}) is a three-term functional equation, machine-checked
+sorry-free (`QOU.QBeta.WindingGFTransform.gf_three_term`; annihilator as
+content-bearing conditional class, 10-term expansion cross-checked to
+1e-71). (3) The decay-onset measurement kills the #4433 "radius exactly
+1" claim: I(0,e)(q̃) = 2e-5 / -2e-16 / -3.5e-32 / 2e-53 at e =
+40/60/80/100, tracking the quadratic lead e²/8 — the e≤28 window sat on
+the pre-asymptotic plateau. Lean: `summable_winding_of_sq_dominated`
+(square-dominated two-sided families are absolutely summable at EVERY
+w ≠ 0) + `gf_three_term_of_sq_dominated` (the functional equation holds
+among the tsums on all of ℂ*, HasSum discharged by entirety). Dated
+correction appended to the #4433 audit; its 3c bar-even-on-|w|=1 result
+stands (now Lean-proved: `pairedWindowSum_unit_sheet_im_zero`), but the
+"bar-odd must be lateral because the sheet is outside the annulus"
+re-derivation is withdrawn as stated — a bar-odd part can arise off
+|w| = 1 by direct convergent summation. W2 runs exactly that: A_eff at
+the T4 sheets by direct two-sided summation (converged by e≈60 at
+|w| = q₀²), parameter-free comparison vs S_p/S_μ = −4.0751. Guard-bug
+lineage continued: the W1 A2 failures were hump-regime artifacts (the
+negative-e hump reaches 1e17 at |w|=0.3 needing dps≥80; benign ~0.26 at
+|w|≈0.8 — A2 re-specced there). No fit; nothing wired; beans qou-ovph
+(domain re-scope) + qou-vvm1 (session).
