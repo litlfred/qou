@@ -91,6 +91,11 @@ import QOU.Mass.DoorVParityNoIdentity
 import QOU.Mass.ColorCubicPowerSums
 import QOU.Mass.TauQuantumIntegerForm
 import QOU.Mass.ColorSpectralCubicGeometry
+-- W1 route-1 candidate base operator for the q-difference prolongation D_q: the
+-- q-shift/Jackson q-derivative introduces the quantum integer [n]_q (vs classical n,
+-- q-free per ColorCubicPowerSums) and degenerates to d/dz at q→1. Candidate operator
+-- only — no jet-tower lift, no C1 identification (beaned qou-d8de/xufp/ailp).
+import QOU.Mass.QDiffProlongationBaseOperator
 import QOU.Mass.HeckeStokesEigenvalues
 import QOU.Mass.NaStokesKeystone
 import QOU.Mass.BindingHyperbolicRecurrence
