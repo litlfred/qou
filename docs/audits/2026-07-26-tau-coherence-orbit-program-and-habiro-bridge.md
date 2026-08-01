@@ -322,9 +322,15 @@ a candidate interface (pass/fail demo included), and adds the genuinely
 new module-side check: **GSWZ eqn (274) — the decomposition of the 5₂
 knot's Bloch/K₃ class over root-of-unity symbols — verified mod 5³**
 by combining the printed coefficients (mod 5) with the Prop-3.2 dilog
-values (mod 5³), matching the printed `D₅(ξ)` of eqn (271) exactly:
+values (mod 5³), matching the printed `D₅(ξ)` of eqn (271) exactly.
+Normalization, stated explicitly: every `D₅` value is divisible by 25,
+so the mod-5³ statement is checked in the form `D₅(·)/25 (mod 5)` —
+the displayed congruence
 `1·[2,4,4] + 3·[1,3,2] + 1·[2,3,3] ≡ [2,1,3] (mod 5)` in
-(const, α, α²) coordinates. This is Theorem 9 exercised on printed
+(const, α, α²) coordinates is that normalized form, i.e. a genuine
+mod-5³ identity on the unnormalized `D₅` values (the coefficients
+enter only mod 5 precisely because of the 25-divisibility).
+This is Theorem 9 exercised on printed
 data — the ε_m-class module-side layer of the membership test, live.
 
 **Single named missing ingredient**: the Besser–de Jeu overconvergent
