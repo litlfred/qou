@@ -873,3 +873,31 @@ Sharpens the frontier: the A=3 magnitude source cannot be any *sub-link-additive
 of the single 3-body trace itself (the three-walls "strictly larger h⁴-coefficient no
 substrate rule supplies"). Complements sibling ROUTE 1 (operator-branching) / ROUTE 2
 (super-Berezinian).
+
+**2026-08-01 — A=3 magnitude ROUTE 2 (super-Berezinian even/odd cross-sector mixing): the
+`r*≈1.585` is a FREE parameter of the cross-term — scope-(a) underdetermination, NOT a
+closure and NOT an exclusion.** (Branch
+`claude/a3-magnitude-super-berezinian-cross-sector-2026-08-01`, bean `qou-6r6d`; feeds
+`qCubicGradedSplit` / `qou-jqof` / PR #4140.) With every SINGLE-trace ingredient bracketed at
+`c₃=0.63·μ₃` (LEVEL/geometric-`W_λ`/EDGE/`μ̄_A`/Vassiliev), tested the only genuinely
+cross-**sector** candidate — the Berezinian off-diagonal `t=B·D⁻¹·C` coupling the bar-even
+(cosh/mass/C1) and bar-odd (sinh/decay/GGM) faces. **Distinct angle from the on-main parity
+bricks** (`OddDecayWeightParity` #4140-adjacent, `BerezinianSelfAdjointCrossTerm` 2026-07-31):
+those settle the cross-term SIGN (bar-odd ⇒ needs non-self-adjoint independent off-blocks);
+this attacks the MAGNITUDE. **Decisive invariant (Lean `SuperBerezinianA3Magnitude.lean`,
+sorry-free, lean-direct exit 0, generic `[Field R]`):** the even-face correction `(A−t)/A` is
+**surjective** in the off-block `B` (`crossTerm_magnitude_surjective`, witness `B=A(1−r)DC⁻¹`),
+while block-diagonal/single-trace data gives correction `≡1` (`evenFaceCorrection_no_mixing` —
+*why* single-trace is bracketed: `t=0` can't move the coefficient). So `r*` is reachable **only**
+by pinning `B` to the target = a **FIT**; the off-block magnitude is a **hidden DOF (Rule 14)**.
+Empirical companion `a3_magnitude_berezinian_crossterm_probe.py` (0 fit): `r*=1.5852≈log₂3`
+(flagged coincidence); **0/13** natural parameter-free substrate readings of `ρ=t/A`
+(`ℏ_q,h,h²,(1+q)/2,±sector-ratio,±1,±2`) land `r*` (scatter `0.0..3.0`); fit witness
+`B*=−0.585` hits `r*` exactly. **VERDICT scope-(a):** the cross-term does NOT derive `r*` — it
+**relocates** the wall from "which single trace" to "**derive the off-blocks `B,C`**" (the DM
+q-cubic period datum = `qou-jqof`, open). **First A=3-magnitude route NOT excluded** (unlike the
+single-trace family it CAN reach `O(1)`), but not a closure. `A3CrossTermMagnitudeClosed`
+(§3b-tax dependent, NO instance) is the honest open carrier. Audit
+`2026-08-01-a3-magnitude-super-berezinian-cross-sector.md`; witness
+`a3-magnitude-berezinian-crossterm.witness.json`. Nothing wired; `μ₃`/`c₃` never inverted;
+`free_parameters = 0`.
