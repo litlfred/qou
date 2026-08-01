@@ -392,3 +392,35 @@ Besser–de Jeu algorithm end-to-end:
 the harness's number-field membership test can now run at any 5-adic
 precision the printed/derived data supports. Scope-(a); nothing wired.
 PR: #4490.
+
+## Addendum 9 (2026-08-01) — 5₂ symmetrization + gluing digit verified; the 23-power denominator reading
+
+`gswz_52_symmetrization_probe.py` (4/4) verifies GSWZ §4.6 printed
+data for the 5₂ knot exactly, in `Q[α]/(α³−α²+1)`:
+
+- **(283) x² coefficient**: `2φ₂ − φ₁²` from the printed (282) series
+  equals the printed `(465α² − 465α + 54)/23³` exactly. The pdf's
+  mangled "1/233" denominator is **adjudicated as 23³ = 12167** by the
+  exact numerator match — structurally right, since
+  `N(δ) = N(3α−2) = 23` is the 5₂ trace field's discriminant prime,
+  so the symmetrized coefficients are integral away from Δ ∋ 23:
+  GSWZ's integrality-away-from-Δ in miniature (and 5-integral, checked).
+- **(283) x³ coefficient**: transcribed as the negative of x², and the
+  math forces exactly that (only h² contributes below x⁴;
+  `log(1+x)² = x² − x³ + (11/12)x⁴ − …`).
+- **(286) Habiro gluing digit**: `(α²+4α)⁵ ≡ α²+3α+2 (mod 5)` — the
+  p-power gluing between the ζ₅ fibre (284) and the m=5 constant term
+  (285), checked in the exact ring.
+- **Derived observation** (witness, not a claim): the printed x⁴
+  digit-group determines the unprinted `φ₄` of (282); recorded for the
+  (287) capstone.
+
+Discipline note: the h-odd cancellation in `Φ̃(h)Φ̃(−h)` is an
+identity for any coefficients, so it is deliberately NOT posed as a
+check (constructed-to-fail rule from the Copilot #4397 lesson).
+
+**Remaining on qou-9p9y**: the (287) Ψ-section division test — the
+module-membership capstone consuming the full-precision Li₂ layer
+(m=1 fibre needs no ε_m; Pochhammer expansion machinery required) —
+and ε_m units at m > 1 (no printed GSWZ targets; needs the CGZ [10]
+data).

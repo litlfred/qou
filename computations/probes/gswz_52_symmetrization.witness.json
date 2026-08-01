@@ -1,0 +1,22 @@
+{
+ "schema": "probe-witness/v1",
+ "probe": "gswz_52_symmetrization_probe",
+ "beans": [
+  "qou-9p9y"
+ ],
+ "source": "GSWZ arXiv:2412.04241v2 \u00a74.6 eqns (282)/(283)/(286); uploads/2412.04241v2.pdf",
+ "field": "Q(alpha)/(alpha^3 - alpha^2 + 1) (5_2 trace field)",
+ "checks": {
+  "printed_283_x2_coefficient": true,
+  "printed_283_x3_matches_forced_value": true,
+  "g2_denominator_23_power": true,
+  "gluing_digit_286_mod5": true
+ },
+ "g2_exact": "465*alpha**2/12167 - 465*alpha/12167 + 54/12167",
+ "derived_observations": {
+  "g4_from_printed_x4": "-1006571*alpha**2/592143556 + 1006571*alpha/592143556 - 278865/296071778",
+  "phi4_from_g4": "590406447427*alpha**2/40928962590720 - 10250318592241*alpha/245573775544320 + 96138714020473/1178754122612736",
+  "note": "derived from printed (283) x^4 digit-group; not independently verified (phi4 unprinted in (282))"
+ },
+ "scope": "scope-(a): 5_2 symmetrization + gluing digit vs printed data; (287) Psi-division capstone and eps_m (m>1) queued"
+}
