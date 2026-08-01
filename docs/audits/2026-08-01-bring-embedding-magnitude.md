@@ -128,3 +128,27 @@ unchanged: the magnitude belongs to the **hypersensitive near-degeneracy** class
 (SP2, `qou-4kr1`) — the anchors' offsets from the S-root — and a *smooth*
 q₀-evaluated geometric quantity, Bring-intrinsic or otherwise, structurally
 cannot supply it.
+
+## Formalized invariant (the (b) behind the negative)
+
+Per the anti-laundering "prove the invariant that would justify a (b)" rule, the
+two structural facts behind this negative are now Lean-proved, sorry-free
+(lean-verify exit 0), in
+[`QOU/QBeta/SLeakMagnitudeOffsetRatio.lean`](../../content/quantum-observable-universe/lean/QOU/QBeta/SLeakMagnitudeOffsetRatio.lean):
+
+- **`linear_ratio_slope_independent`** — for the leading-order linearization
+  `S(q) = L·(q − q*)` at the simple zero, the ratio `S(qp)/S(qm) = (qp−q*)/(qm−q*)`
+  is **independent of the slope `L`**. The "period-like" datum `L` *cancels*, so
+  the magnitude carries anchor-placement information only — no period value can be
+  read back from it. This is *why* the sign is a stable (q-insensitive) parity
+  while the magnitude is q-hypersensitive: they are different data.
+- **`smooth_period_excluded_as_magnitude`** — a Lipschitz `P` on the anchor
+  interval with variation budget `K·|qp−qm|/|P(qm)| < 1` (any `O(1)` period over
+  the `Δq ≈ 1.3e-8` gap) has `|P(qp)/P(qm)| < 2`, so it **cannot** equal the
+  observed `|S_p/S_m| ≈ 4.075` (`|r| ≥ 2`). The SP1 smoothness wall, restated as a
+  scope-(b) exclusion of *any* smooth q₀-evaluated period as the magnitude source.
+
+Companion to [`QOU/QBeta/SLeakZeroCrossing.lean`](../../content/quantum-observable-universe/lean/QOU/QBeta/SLeakZeroCrossing.lean),
+which proves the sign side (IVT zero-crossing + sign-definite-carrier exclusion).
+Together: the sign is an IVT/parity invariant, the magnitude is provably not a
+smooth period — both generic, neither takes the anchor values as fitted constants.
