@@ -125,15 +125,22 @@ Machine-checked sorry-free in Lean for **`n ≤ 8`** (`pieceA_hook_content_ident
 extended this PR from `n ≤ 6` to cover the physically-critical `n=7` defect
 sign-flip), each diagram computed from its structure (not tabulated).
 
-## Residual — Lean formalization (bean)
+## Lean formalization — COMPLETE (2026-08-01, bean `qou-o5xj` closed)
 
-The elementary proof above is not yet a general-`n` Lean theorem: it needs the
-pair-counting identity `(∗∗)` formalized over a `Finset`-of-cells model of the
-Young diagram (the double-counting bijection between corner cells and UR/LL pairs,
-with the full-rectangle compensation). This is **HLF-free, dimension-free
-`Finset` combinatorics** — no missing Mathlib representation-theory infra — but a
-substantial (~200-line) double-counting proof. Beaned with this note as the proof
-sketch. Piece B (Plancherel/JM) is tracked separately (unchanged).
+The elementary proof above is now a **general-`n`, sorry-free Lean theorem** over
+Mathlib's `YoungDiagram`:
+[`QOU.BraidKnot.PieceA.pieceA`](../../content/quantum-observable-universe/lean/QOU/BraidKnot/PieceAGeneral.lean)
+— `Σ_c hook² = Σ_c content² + n²` for **every** Young diagram, HLF-free and
+dimension-free (`lean`-direct exit 0). The formalization follows the proof above
+in stages: the row/column reflections (`sum_armZ_generic` / `sum_legZ_generic`),
+the separable reduction (`pieceA_reduction`), the two pair-counting bijections
+`Σ(arm·leg) = |UR/LL|` (`sum_armLeg_eq_urll`) and `Σ(i·j) = |UL/LR|`
+(`sum_prod_eq_ullr` — clean, since down-closure fills the up-left rectangle so no
+compensation is needed at the Lean level), the same-row/col counts
+(`sum_snd_eq_srLower` / `sum_fst_eq_scLower`), and the off-diagonal 8-sign-class
+assembly (`pairCount_holds`). Piece B (Plancherel/JM content-square mean
+`= C(n,2)`) remains the rep-theory half (needs `ℂ[S_n]` / Jucys–Murphy or RSK
+infra Mathlib lacks — bean `qou-su6h`).
 
 ## Cross-refs
 
