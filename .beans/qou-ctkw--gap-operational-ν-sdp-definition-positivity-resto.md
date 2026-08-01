@@ -5,14 +5,16 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-01T11:23:49Z
-updated_at: 2026-08-01T21:31:10Z
+updated_at: 2026-08-01T21:34:26Z
 ---
 
-SCOPING (2026-08-01): qou-ctkw (derive W from SO(3)-fiber for ν_SDP) reduces —
-like 830y — to the s5-so3 keystone W_λ geometric realization. The keystone's
-core is the owner-gated archimedean continuation bwS0_eq_hecke (do NOT re-chase
-framing-cancellation, per the ledger). The one tractable open piece is
-Identity-I general-n (RSK Σ(f^λ)²=n! + JM content-square mean; decide-proved
-n=3..12, general-n open, Mathlib-gap = P1-P5 Specht/RSK program, overlaps sp00).
-The ν_SDP "derived color-flavor constraint" it needs = the derived W, which
-IS the keystone. See docs/coordination/s5-so3-keystone.md + 830y scoping.
+ITEM-1 FINDING (2026-08-01, LSP+grep verified): the Identity-I general-n route
+Σ_λ(f^λ)²=n! is BLOCKED on absent Mathlib foundations. The pinned Mathlib has
+ONLY YoungDiagram + SemistandardTableau — StandardYoungTableau has 0 occurrences,
+no RSK/Robinson-Schensted, no Specht modules, and no abstract Σ dim(irrep)²=card G
+in RepresentationTheory. So general-n is a MAJOR Mathlib PORT (RSK formalization
+is a known hard/unmerged target), NOT the "tractable" session piece. The physics
+is unaffected (defect cubic n=3,5,7 already unconditional via decide). Do NOT
+fake-launch a scaffold. If pursued, it is a dedicated Specht/RSK Mathlib-infra
+epic (coordinate with sp00 / 08a2), scoped in
+docs/scope/2026-06-24-identity-i-plancherel-snrep-infra-program.md (P1-P5).
