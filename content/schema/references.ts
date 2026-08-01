@@ -7586,6 +7586,122 @@ export const references: CSLData[] = [
     note: "arXiv:1808.08110. Continuation of dubois-violette2016: the exceptional Jordan algebra J₃(𝕆) route to the SM gauge group with SU(3)×SU(2)×U(1)/ℤ₆ as the J₃(𝕆)-compatible subgroup of F₄ — directly relevant to the Z₆ compatibility battery of conj:sm-hypercharge-invariant and the colour route of qou-ni4b. Uploaded uploads/1808.08110v1.pdf (SM-uploads batch); queued for full read under bean qou-y139.",
   }),
 
+  // ── DeTurck–Gluck — Gauss linking integral on S³ and H³ ────────
+  ref({
+    id: "deturck-gluck2008",
+    type: "article-journal",
+    title:
+      "The Gauss linking integral on the 3-sphere and in hyperbolic 3-space",
+    author: [
+      { family: "DeTurck", given: "Dennis" },
+      { family: "Gluck", given: "Herman" },
+    ],
+    "container-title": "Journal of Mathematical Physics",
+    volume: "49",
+    issued: { "date-parts": [[2008]] },
+    URL: "https://arxiv.org/abs/math/0406276",
+    note: "arXiv:math/0406276 (published under the title 'Electrodynamics and the Gauss linking integral on the 3-sphere and in hyperbolic 3-space', J. Math. Phys. 49, 023504). Supplies the H³ Gauss linking integral (Thm 1(3), kernel csch α), the H³ Biot–Savart operator (Thm 2(3)), and — the object the EM-linking attack needs — the H³ Laplacian Green's function φ₀(α) = −coth(α)/4π, the exact hyperbolic analogue of 1/r. Read in full 2026-08-01; findings and the two structural obstructions in docs/audits/2026-08-01-em-linking-reads-round1.md. Note there is NO interaction-energy formula, no compact-quotient theory, and no H³ Green's operator on vector fields (Thm 3 is S³-only). Uploaded uploads/0406276v1.pdf.",
+  }),
+
+  // ── DeTurck–Gluck–Komendarczyk–Melvin–Shonkwiler–Vela-Vick ────
+  ref({
+    id: "dgkmsv2009",
+    type: "article",
+    title:
+      "Triple linking numbers, ambiguous Hopf invariants and integral formulas for three-component links",
+    author: [
+      { family: "DeTurck", given: "Dennis" },
+      { family: "Gluck", given: "Herman" },
+      { family: "Komendarczyk", given: "Rafal" },
+      { family: "Melvin", given: "Paul" },
+      { family: "Shonkwiler", given: "Clayton" },
+      { family: "Vela-Vick", given: "David Shea" },
+    ],
+    "container-title": "arXiv preprint",
+    issued: { "date-parts": [[2009]] },
+    URL: "https://arxiv.org/abs/0901.1612",
+    note: "arXiv:0901.1612 (announcement; proofs sketched). Milnor's μ̄₁₂₃ as the helicity of a characteristic field on the configuration 3-torus. Two facts load-bearing for the EM-linking attack: when the pairwise linkings vanish (the Brunnian/baryon case) the Hopf invariant is an ABSOLUTE integer, so μ = ν/2 is unambiguous; but μ is TOTALLY ANTISYMMETRIC under permuting components, which blocks reading a symmetric per-pair energy off it (obstruction O1). No Euclidean R³ analogue exists (conceded, non-compact isometry group); no energy bound is proved. Read in full 2026-08-01. Uploaded uploads/0901.1612v1.pdf.",
+  }),
+
+  // ── Same collaboration — the Pontryagin/Milnor integral paper ──
+  ref({
+    id: "dgkmsv2013",
+    type: "article",
+    title:
+      "Pontryagin invariants and integral formulas for Milnor's triple linking number",
+    author: [
+      { family: "DeTurck", given: "Dennis" },
+      { family: "Gluck", given: "Herman" },
+      { family: "Komendarczyk", given: "Rafal" },
+      { family: "Melvin", given: "Paul" },
+      { family: "Shonkwiler", given: "Clayton" },
+      { family: "Vela-Vick", given: "David Shea" },
+    ],
+    "container-title": "arXiv preprint",
+    issued: { "date-parts": [[2011]] },
+    URL: "https://arxiv.org/abs/1101.3374",
+    note: "arXiv:1101.3374 (full version of dgkmsv2009). Theorem B gives μ̄₁₂₃ as a two-point Biot–Savart-shaped double integral over T³×T³ — the helicity of the characteristic field. Caveat established on reading: the additive per-pair form of F does NOT survive into the integrand (the ‖F‖³ normalization couples the pairs), so the paper supplies no per-pair splitting. Read in full 2026-08-01.",
+  }),
+
+  // ── Komendarczyk — third-order helicity ───────────────────────
+  ref({
+    id: "komendarczyk2008",
+    type: "article",
+    title:
+      "On the third order helicity of magnetic fields on invariant domains in S³",
+    author: [{ family: "Komendarczyk", given: "Rafal" }],
+    "container-title": "arXiv preprint",
+    issued: { "date-parts": [[2008]] },
+    URL: "https://arxiv.org/abs/0808.1533",
+    note: "arXiv:0808.1533. Read in full 2026-08-01. DOES prove a third-order-helicity energy bound (Thm 6.1: |H₁₂₃| ≤ C_𝒯·E₂^{3/2}) for Borromean flux tubes — but the constant is geometric, not topological, and the author states it 'is meaningless when the handlebodies get close', i.e. it degrades exactly in the regime of interest. Also settles two negatives for bean qou-o6ml: Rem. 2.6 PROVES the total antisymmetry of μ̄₁₂₃ (obstruction O1), and the third-order invariant scales as Flux³ where a Coulomb-like pair energy needs Flux². The only pair-indexed object (Cor. 2.5) is forced to zero by the unlinked hypothesis. Uploaded uploads/0808.1533v1.pdf.",
+  }),
+
+  // ── Cantarella–DeTurck–Gluck — the Biot–Savart operator ───────
+  ref({
+    id: "cantarella-deturck-gluck2001",
+    type: "article-journal",
+    title:
+      "The Biot–Savart operator for application to knot theory, fluid dynamics, and plasma physics",
+    author: [
+      { family: "Cantarella", given: "Jason" },
+      { family: "DeTurck", given: "Dennis" },
+      { family: "Gluck", given: "Herman" },
+    ],
+    "container-title": "Journal of Mathematical Physics",
+    volume: "42",
+    page: "876-905",
+    issued: { "date-parts": [[2001]] },
+    note: "Read in full 2026-08-01. Supplies the operator-theoretic skeleton for any per-pair construction: Theorem D proves the Biot–Savart operator is bounded, compact and SELF-ADJOINT (⟨V₁,BS(V₂)⟩ = ⟨BS(V₁),V₂⟩) by pure kernel antisymmetry, so the mechanism should port to H³; helicity is its quadratic form H(V) = ⟨V,BS(V)⟩; and ‖BS‖ ≤ OS(V)/4π via the 'optical size' domain functional. CRITICAL distinction recorded in the audit: the pairing it forms, ∫J₁·B₂, is mutual helicity (topological, zero for unlinked separated tubes) — NOT the electromagnetic interaction energy ∫A₁·J₂, which the paper never writes. R³ only. Uploaded uploads/candetgl.pdf.",
+  }),
+
+  // ── Khesin — geometry of higher helicities (survey) ───────────
+  ref({
+    id: "khesin2003",
+    type: "article-journal",
+    title: "Geometry of higher helicities",
+    author: [{ family: "Khesin", given: "Boris A." }],
+    "container-title": "Moscow Mathematical Journal",
+    volume: "3",
+    page: "989-1011",
+    issued: { "date-parts": [[2003]] },
+    note: "Read in full 2026-08-01; the most productive source of the EM-linking sweep. Rmk 4.8 EXPLAINS obstruction O1 structurally (linking forms are symmetric/antisymmetric by the parity of the product of codimensions — 1-forms in 3D force antisymmetry). Rmk 3.4 diagnoses that signed invariants cancel between oppositely-linked pairs, and Rmk 3.5 names the fix: the Freedman–He asymptotic CROSSING NUMBER — symmetric (a norm), nonzero when lk = 0, Flux²-scaling. Thm 3.6 carries the Flux²·Vol^{−1/3} energy template that converges with the corpus's own κ(A) ~ A^{−1/3} scaling. Also flags Laurence–Stredulinsky as the only Borromean-specific energy result. Uploaded uploads/helicity03mmj.pdf.",
+  }),
+
+  // ── Hornig–Mayer — third-order topological invariant ──────────
+  ref({
+    id: "hornig-mayer2002",
+    type: "article",
+    title: "Towards a third-order topological invariant for magnetic fields",
+    author: [
+      { family: "Hornig", given: "Gunnar" },
+      { family: "Mayer", given: "Christoph" },
+    ],
+    "container-title": "arXiv preprint",
+    issued: { "date-parts": [[2002]] },
+    URL: "https://arxiv.org/abs/physics/0203048",
+    note: "arXiv:physics/0203048. Read in full 2026-08-01. Constructs H⁽³⁾ = ∫A¹·A²×A³ via the SU(2) Chern–Simons split (not Massey products). Independently confirms obstruction O1 from the physics side, naming it outright: 'the antisymmetry of H⁽³⁾ seems to be one of the key problems'. Its Conclusions also state the scaling trap — 'only expressions quadratic and cubic in magnetic flux can be obtained' — with the quadratic slot occupied by cross-helicity, which vanishes for Brunnian configurations. No energy content; requires a simply-connected domain with boundary, so it does not address O2. Uploaded uploads/0203048v1.pdf.",
+  }),
+
 ];
 
 // ── Lookup helpers ──────────────────────────────────────────────
