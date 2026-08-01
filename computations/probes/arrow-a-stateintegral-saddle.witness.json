@@ -1,0 +1,24 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-08-01T20:17:13.808794+00:00",
+  "commitSha": "",
+  "scriptFile": "computations/probes/arrow_a_stateintegral_saddle.py",
+  "scriptHash": "ab87608ef0e1",
+  "scriptCommitSha": "",
+  "description": "W1 arrow (A): the index\u2194tr_M volume-route resummation is the state-integral saddle (Bloch-Wigner dilog at the shapes), not the index q-series (two series routes ruled out). Audit-only; no fit.",
+  "auditOnly": true,
+  "parameters": {
+    "fig8_index_stable_to_q": 40
+  },
+  "data": {
+    "route1_naive_q1": "FAILS: I^tot sign-indefinite near q=1 (tail-dominated)",
+    "route2_circle_method": "FAILS: coeffs peak+decay, no exp(V/(1-q)) singularity; fit V=nan",
+    "saddle_vol_4_1": 2.0298832128193074,
+    "saddle_vol_borromean": 7.327724753417752,
+    "vol_4_1_exact": 2.0298832128,
+    "vol_borromean_8G": 7.3277247534,
+    "verdict_saddle_gives_vol": true,
+    "note": "state-integral saddle = Borel sum critical value = Bloch-Wigner D(shape); amphichiral 4_1 CS=0 -> real saddle. Shared (Vol, torsion=64 #4253) anchor both sides; full I_B3->tr_M map remains the DGG-correspondence open problem."
+  }
+}
