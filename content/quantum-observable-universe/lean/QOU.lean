@@ -125,6 +125,9 @@ import QOU.Mass.ColorCubicNoBranch
 -- W2: C1 module local exponents at 0 — char poly t²+(q−1)t+(q−1) (= t²−tr·t+det of the
 -- companion [[0,1],[1−q,1−q]]), exponent-discriminant (q−1)(q−5). Birkhoff 0-side.
 import QOU.Mass.C1ModuleExponents
+-- W2 ∞: q-Gevrey growth of the C1 formal solution at ∞ — deg_q(c_n) = ∑_{m<n}(2m+1) = n²
+-- (coefficients grow like q^{n²}), the divergence that forces Stokes summation.
+import QOU.Mass.C1FormalSolutionGrowth
 import QOU.Mass.HeckeStokesEigenvalues
 import QOU.Mass.NaStokesKeystone
 import QOU.Mass.BindingHyperbolicRecurrence
