@@ -24,7 +24,7 @@ $$
 
 the Ramanujan entire function (q-Airy function), entire of order $0$ with
 $A_w(0) = 1$. In the KSel-2-ID chain $w = \tilde q^{-1}$, so the target
-$\zeta_n = w^{1-2n}(1 + O(w^n))$ reads $\zeta_n = \tilde q^{\,2n-1}(1 + O(\tilde p^{\,n}))$.
+$\zeta_n = w^{1-2n}(1 + O(w^n))$ reads $\zeta_n = \tilde q^{\,2n-1}(1 + O(\tilde q^{\,-n}))$.
 
 ## 0. Verdict summary
 
@@ -469,7 +469,7 @@ citation a worse dependency than a proof.
 
 - Residual this closes: [`2026-08-01-ksel2id-tropical-transport.md`](2026-08-01-ksel2id-tropical-transport.md) §3;
   [`2026-08-01-ksel2id-u1-promotion.md`](2026-08-01-ksel2id-u1-promotion.md) §4 gap 2
-- Identification of the extremal supports with zeros($A_{\tilde p}$):
+- Identification of the extremal supports with zeros($A_{\tilde q^{-1}}$):
   [`2026-08-01-ksel2id-friedrichs-sw-identification.md`](2026-08-01-ksel2id-friedrichs-sw-identification.md)
 - SW core Jacobi data (Lean): [`SWCoreJacobi.lean`](../../content/quantum-observable-universe/lean/QOU/Archimedean/SWCoreJacobi.lean);
   factorization: [`SWJacksonMomentFactorization.lean`](../../content/quantum-observable-universe/lean/QOU/Archimedean/SWJacksonMomentFactorization.lean)
