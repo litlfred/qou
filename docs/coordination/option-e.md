@@ -799,3 +799,34 @@ exit 0, v4.24.0): the reusable invariant `normalized_reweight_abs_le_bound` (`Σ
 `s5so3-geometric-wlambda-a4-helium.witness.json`; audit
 `2026-08-01-deltalambda-a4-helium-interface-operator.md`. GAP bean filed. Nothing wired;
 B(⁴He)/μ₄ never inverted; `free_parameters = 0`.
+
+**2026-08-01 — ROUTE 1 (A=3 operator-valued branching combiner): the trace-based
+combiner = the scalar Markov trace EXACTLY — supplies ZERO magnitude —
+REFUTE(scope-(b)).** (Branch `claude/a3-magnitude-operator-branching-combiner-2026-08-01`,
+bean `qou-jv64`.) Tests the `qou-tnvz` surviving hypothesis that keeping the
+operator (matrix) structure through the `H₉→H₆→H₃` Wenzl branching, instead of
+collapsing to a scalar `Σ_λ y_λ χ_λ` trace at each level, retains cross-channel
+information the single trace loses — and thereby supplies the `r* = μ₃/c₃ ≈ 1.585`
+(μ₃=+0.4708, c₃=0.297). **Formalize-first verdict: the premise is FALSE at the
+observable level.** The observable is a cyclic additive trace `τ` of the assembled
+operator sliced by the branching's isotypic projectors `{P i}`; the governing
+invariant is the **partition-of-unity trace collapse** `τ X = Σ_i τ(P_i·X·P_i)`
+(off-diagonal blocks vanish under the closed trace; per-block weight identically
+`1`). So the block-resolved operator-combiner readout **equals the scalar Markov
+trace exactly** — keeping the operator structure multiplies by a factor of
+**exactly `1.0`** (0 % of the needed `+58.5 %`; gap `≡0`), reproducing `c₃=0.297`
+never `μ₃=0.4708`. **Numerical shadow (independent):** `canonical_tr_m_via_branching.py`
+already records branching ≡ transfer trace to `4.7e-15` for A≥3. **The "by how much":**
+`weightedReadout_sub_trace` proves the only way a block decomposition yields a value
+`≠ τ X` is a **non-uniform per-block weight `w_i ≠ 1`** — precisely a `Δ_λ`-type
+per-partition weight, a *different functional* than the trace, which the combiner
+does NOT retain. **Verdict REFUTE(scope-(b))** of ROUTE 1 as stated (cites the
+proved partition-of-unity trace-collapse invariant); explicitly **NOT** an
+exclusion of a non-uniform `w_i`/`Δ_λ` route — that stays open (the A=4 PROBE-2
+geometric-`W_λ` bracket is the live instance). Lean
+`QOU/BraidKnot/A3OperatorCombinerMagnitude.lean` sorry-free (lean-direct exit 0,
+v4.24.0): `trace_partition_collapse`, `operatorCombiner_eq_scalarTrace`,
+`weightedReadout_sub_trace`, `weightedReadout_eq_of_uniform`,
+`magnitude_change_forces_nonuniform_weight`. Audit
+`2026-08-01-a3-magnitude-operator-branching-combiner.md`. Nothing wired; `μ₃`
+never inverted; `free_parameters = 0`.
