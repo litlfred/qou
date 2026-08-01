@@ -28,8 +28,12 @@ export default conjecture({
         "(a Lie subalgebra of Der(O) = g2) is proved sorry-free, both in " +
         "`QOU.MathlibExt.OctonionSU3BracketClosure` (beans qou-iibg, " +
         "qou-51st). The dimension obstruction and the 3-strand minimality " +
-        "corollary are proved sorry-free. Open: an instance for the " +
-        "intended instantiation (the faithful action itself).",
+        "corollary are proved sorry-free. Calibration (2026-08-01, bean " +
+        "qou-1gix): the abstract class is SATISFIED by the octonion base " +
+        "module (DV-Todorov 1+3; tautological inclusion su3 e < End(O)) — " +
+        "instance in QOU.MathlibExt.OctonionColourActionBaseModule. Open " +
+        "content sharpened: the action on the framework's own three-strand " +
+        "Hecke state space, compatible with its braid structure.",
     },
   ],
 });
