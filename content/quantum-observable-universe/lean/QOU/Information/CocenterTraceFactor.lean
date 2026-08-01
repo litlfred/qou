@@ -66,6 +66,33 @@ noncomputable def traceCocenter (τ : A →ₗ[R] R)
     traceCocenter τ hτ (Submodule.Quotient.mk a) = τ a :=
   rfl
 
+/-! ### The wrong-axis corollary: a trace cannot separate the `[A,A]` axis
+
+An **Euler characteristic** (`χ(Σ₄) = −6` for the QOU's Bring fibre) is an
+*additive-on-triangles / `K₀`* invariant — the Hattori–Stallings/dimension
+**trace**. So it factors through `HH₀` and inherits the blindness below: it
+cannot distinguish elements differing by a commutator, i.e. it is **blind to the
+`[A,A]` (decision/quantifier) axis**. Therefore a nonzero `χ` — however
+axiom-fixed — is *never* the P-vs-NP decision residue: that residue must live in
+`[A,A]` = `ker(every trace)`, i.e. be a **non-trace** (`HH₁`) object. -/
+
+/-- **A trace is blind to `[A,A]`-differences (sorry-free).**  If `a − b ∈ [A,A]`
+    then `τ a = τ b`: no trace (hence no `K₀`/Euler-characteristic invariant)
+    distinguishes elements that differ by a sum of commutators. -/
+theorem trace_eq_of_sub_mem_commutator (τ : A →ₗ[R] R)
+    (hτ : ∀ a b : A, τ (a * b) = τ (b * a)) {a b : A}
+    (h : a - b ∈ commutatorSubmodule R A) : τ a = τ b := by
+  have hk : a - b ∈ LinearMap.ker τ := commutatorSubmodule_le_ker_of_trace τ hτ h
+  rw [LinearMap.mem_ker, map_sub, sub_eq_zero] at hk
+  exact hk
+
+/-- **Adding a commutator does not move a trace (sorry-free).**  `τ(x + (ab − ba))
+    = τ x` — the infinitesimal form of trace-blindness on the `[A,A]` axis. -/
+theorem trace_add_commutator (τ : A →ₗ[R] R)
+    (hτ : ∀ a b : A, τ (a * b) = τ (b * a)) (x a b : A) :
+    τ (x + (a * b - b * a)) = τ x := by
+  rw [map_add, map_sub, hτ a b, sub_self, add_zero]
+
 /-- **The Markov-trace model: `LinearMap.trace` factors through the cocenter of
     `End V` (sorry-free).**  The trace's commutation `trace(fg) = trace(gf)`
     (`trace_mul_comm`) is exactly the hypothesis, so `tr_M` descends to
