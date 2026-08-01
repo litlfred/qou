@@ -88,9 +88,8 @@ theorem epsBC_eq_sq (m : ℕ) : epsBC m = (qSeqBC m - 1) ^ 2 := by
 theorem epsBC_summable : Summable epsBC := by
   have hp : Summable (fun n : ℕ => (1 : ℝ) / (n : ℝ) ^ 2) :=
     Real.summable_one_div_nat_pow.mpr (by norm_num)
-  have hshift := hp.comp_injective (add_left_injective 1)
-  refine hshift.congr (fun m => ?_)
-  simp only [Function.comp]
+  have h := (summable_nat_add_iff 1).mpr hp
+  refine h.congr (fun m => ?_)
   unfold epsBC; push_cast; ring
 
 /-- **Boundary-term majorant vanishes.**  `(q_m − 1)·(−log((ε_m/4)(q_m−1))) → 0`.  Since
@@ -111,7 +110,7 @@ theorem tendsto_boundary_majorant :
   have hw : 0 < qSeqBC m - 1 := qSeqBC_sub_one_pos m
   have harg : epsBC m / 4 * (qSeqBC m - 1) = (qSeqBC m - 1) ^ 3 / 4 := by
     rw [epsBC_eq_sq]; ring
-  rw [harg, Real.log_div (by positivity) (by norm_num), Real.log_pow]
+  rw [harg, Real.log_div (pow_ne_zero 3 (ne_of_gt hw)) (by norm_num), Real.log_pow]
   push_cast
   ring
 
