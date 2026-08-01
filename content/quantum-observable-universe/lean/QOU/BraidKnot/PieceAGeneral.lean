@@ -283,4 +283,54 @@ theorem sum_armLeg_eq_urll (μ : YoungDiagram) :
     rintro RB ⟨⟨_, hR1, _⟩, ⟨_, hB2, _⟩⟩ ⟨⟨_, hR1', _⟩, ⟨_, hB2', _⟩⟩
     exact hpq (Prod.ext (hR1.symm.trans hR1') (hB2.symm.trans hB2'))
 
+/-! ## Stage 8 — `Σ(i·j)` counts the UL/LR pair set
+
+For a Young diagram the up-left rectangle of any cell `p` is entirely filled
+(down-closure), so `p.1·p.2` literally counts the cells strictly up-left of `p`.
+Grouping those pairs by the lower-right corner gives `Σ(i·j) = |UL/LR pairs|` — no
+rectangle-compensation needed. -/
+
+/-- `p.1·p.2` counts the cells strictly up-left of `p` (all present by down-closure). -/
+theorem prod_eq_card (μ : YoungDiagram) {p : ℕ × ℕ} (hp : p ∈ μ.cells) :
+    (p.1 : ℤ) * (p.2 : ℤ) = ((μ.cells.filter (fun a => a.1 < p.1 ∧ a.2 < p.2)).card : ℤ) := by
+  have hset : μ.cells.filter (fun a => a.1 < p.1 ∧ a.2 < p.2)
+      = Finset.range p.1 ×ˢ Finset.range p.2 := by
+    ext a
+    simp only [Finset.mem_filter, Finset.mem_product, Finset.mem_range]
+    constructor
+    · rintro ⟨_, h1, h2⟩; exact ⟨h1, h2⟩
+    · rintro ⟨h1, h2⟩
+      refine ⟨?_, h1, h2⟩
+      rw [YoungDiagram.mem_cells] at hp ⊢
+      have : (a.1, a.2) ∈ μ := μ.up_left_mem (le_of_lt h1) (le_of_lt h2) hp
+      simpa using this
+  rw [hset, Finset.card_product, Finset.card_range, Finset.card_range, Nat.cast_mul]
+
+/-- The UL/LR ordered pair set: `a` strictly up-left of `q`. -/
+def ullrPairs (μ : YoungDiagram) : Finset ((ℕ × ℕ) × (ℕ × ℕ)) :=
+  (μ.cells ×ˢ μ.cells).filter (fun aq => aq.1.1 < aq.2.1 ∧ aq.1.2 < aq.2.2)
+
+theorem sum_prod_eq_ullr (μ : YoungDiagram) :
+    (∑ p ∈ μ.cells, (p.1 : ℤ) * (p.2 : ℤ)) = ((ullrPairs μ).card : ℤ) := by
+  have step : ∀ p ∈ μ.cells, (p.1 : ℤ) * (p.2 : ℤ)
+      = (((μ.cells.filter (fun a => a.1 < p.1 ∧ a.2 < p.2)) ×ˢ ({p} : Finset (ℕ × ℕ))).card : ℤ) := by
+    intro p hp
+    rw [prod_eq_card μ hp, Finset.card_product, Finset.card_singleton, mul_one]
+  rw [Finset.sum_congr rfl step, ← Nat.cast_sum]
+  congr 1
+  rw [← Finset.card_biUnion]
+  · congr 1
+    ext aq
+    simp only [Finset.mem_biUnion, Finset.mem_product, Finset.mem_filter,
+      Finset.mem_singleton, ullrPairs]
+    constructor
+    · rintro ⟨p, hp, ⟨hac, h1, h2⟩, rfl⟩
+      exact ⟨⟨hac, hp⟩, h1, h2⟩
+    · rintro ⟨⟨hac, hqc⟩, h1, h2⟩
+      exact ⟨aq.2, hqc, ⟨hac, h1, h2⟩, rfl⟩
+  · intro p hp q hq hpq
+    simp only [Finset.disjoint_left, Finset.mem_product, Finset.mem_singleton]
+    rintro aq ⟨_, rfl⟩ ⟨_, h⟩
+    exact hpq h
+
 end QOU.BraidKnot.PieceA
