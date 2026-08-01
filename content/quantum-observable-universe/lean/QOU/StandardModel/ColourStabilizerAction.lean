@@ -3,38 +3,24 @@ import Mathlib.LinearAlgebra.FreeModule.Finite.Matrix
 import Mathlib.Tactic.Linarith
 
 /-!
-# Conjecture: colour stabilizer action on the state space
+# QOU.StandardModel.ColourStabilizerAction — the colour-action conjecture
 
-The corpus realises the colour Lie algebra as the stabilizer
-`su3 e := ker (evOct e) ⊂ Der(𝕆)` of a unit imaginary octonion
-(`QOU.MathlibExt.OctonionSU3Stabilizer`, with the proved rank–nullity
-gate `finrank su3 = 8 ⟺ rank(ev_e) = 6`). What is missing for the
-Standard-Model truncation is the *action*: no construction makes that
-stabilizer act on the framework's 3-strand state space. This file is
-the formalize-first artifact for that gap (bean `qou-ni4b`).
+Library home of the conjecture class for `conj:sm-colour-stabilizer-action`
+(appendix "Toward the Standard Model"). The class is stated over an abstract
+colour-algebra slot `g`; the intended instantiation is the corpus's octonion
+stabilizer `su3 e` (`QOU.MathlibExt.OctonionSU3Stabilizer`, `finrank = 8`
+gate). The concrete specialisation and the bracket closure of the stabilizer
+live in `QOU.MathlibExt.OctonionSU3BracketClosure`, which imports this file.
 
-The conjecture class is stated over an abstract colour-algebra slot
-`g` rather than importing `su3 e` directly: the intended
-instantiation is `g = su3 e`, and wiring the class to that concrete
-type is a recorded follow-up (the import pulls the octonion
-`decide`-heavy dependency cone; see the bean). The class is
-content-bearing — a faithful linear action — and **no instance is
-provided**; the open state is a class with no instance. This is a
-**primary conjecture** (AGENTS.md §3b-tax).
+Per §3b-tax this is a **primary conjecture**: a content-bearing class with
+**no instance** — providing an instance for the intended instantiation is the
+open derivation. The two theorems below are proved unconditionally:
+the dimension obstruction `finrank g ≤ (finrank V)²`, and its colour
+instantiation — an 8-dimensional colour algebra needs `finrank V ≥ 3`
+(three strands are the minimal faithful colour host).
 
-What IS proved here, sorry-free: the dimension obstruction. A
-faithful linear action of `g` on `V` forces
-`finrank g ≤ (finrank V)²`; hence an 8-dimensional colour algebra
-admits no faithful action on a state space of dimension ≤ 2, and
-dimension 3 — the framework's 3-strand space — is the minimal
-faithful host. This is a structural (b)-grade exclusion with the
-invariant cited: rank of the endomorphism algebra.
-
-## References
-
-- [manuscript] Appendix: Toward the Standard Model
-- [baez2002] The Octonions (Der(𝕆) ≅ 𝔤₂; §4.1)
-- [dubois-violette2016] SU(3) from colour unimodularity / Albert algebra
+Base ring ℚ throughout (the colour algebra and state space are exact
+rational objects on the substrate side of the wall; nothing archimedean).
 -/
 
 namespace QOU.StandardModel
@@ -46,10 +32,13 @@ open Module
 corpus gate) acts faithfully and linearly on the state space `V`
 (intended: the 3-strand state space): there is an injective linear
 map `g →ₗ End(V)`. Bracket compatibility is the obvious
-strengthening; it is deliberately not required here because bracket
-closure of the concrete stabilizer is itself unproved in the corpus.
-No instance is provided for the intended instantiation — providing
-one is the open derivation. -/
+strengthening; it is deliberately not required here — bracket
+*closure* of the concrete stabilizer is proved
+(`QOU.MathlibExt.OctonionSU3BracketClosure.bracketDer_mem_su3`), but
+requiring `Φ` to intertwine brackets would strengthen the conjecture
+beyond what the appendix's gap ledger records as the minimal missing
+ingredient. No instance is provided for the intended instantiation —
+providing one is the open derivation. -/
 class ColourStabilizerAction (g : Type*) [AddCommGroup g] [Module ℚ g]
     (V : Type*) [AddCommGroup V] [Module ℚ V] : Prop where
   /-- The colour algebra embeds linearly in the endomorphisms of `V`. -/
