@@ -12,6 +12,7 @@ import QOU.AlgebraicSubstrate.MotivicSubstrate
 -- `import QOU.AlgebraicSubstrate.MotivicSubstrateTrivial`.
 -- Cf. copilot-pull-request-reviewer review on PR #541.
 import QOU.AlgebraicSubstrate.ReebEpsilon
+import QOU.AlgebraicSubstrate.CartanContraction
 import QOU.AlgebraicSubstrate.QFromEpsilon
 import QOU.AlgebraicSubstrate.SurrealRateCalculus
 import QOU.AlgebraicSubstrate.SurrealSqueeze
