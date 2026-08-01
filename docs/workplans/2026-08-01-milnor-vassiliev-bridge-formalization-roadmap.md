@@ -54,3 +54,17 @@ can be invoked; both are genuine open verification items, not mechanical:
 - Route parallel to `qou-ovxx` route B (inductive leading-coefficient): B attacks the
   coefficient directly via the trace algebra; this bridge attacks it via topology.
   Two independent routes to the same nonvanishing — either landing closes it.
+
+## See also — corpus-wide citation-sorry enumeration (bean `qou-pddf`)
+
+The full enumeration of **all** citation-justified cited sorries in the QOU Lean
+corpus (which are Mathlib-tractable today, which are blocked and why) lives in
+[`docs/audits/2026-08-01-citation-justified-conjecture-lean-formalization.md`](../audits/2026-08-01-citation-justified-conjecture-lean-formalization.md).
+Headline: `QOU.Information.ReebTuringClassical` (`[cardona2021]`) was closed —
+its prior encoding was **provably false** (quantified non-decidability over all
+`ℕ → Bool` instead of computable deciders), now re-stated + proved sorry-free via
+Mathlib's `ComputablePred.halting_problem`. The remaining external cited sorries
+bottom out in two missing-Mathlib-infra clusters: `S_n` rep theory / RSK /
+Specht / hook-length (the whole `BraidKnot/*` cluster) and LP/SDP strong duality
+(`ParticleInteractions/*`, `Interactions/ConfinementSDP`) — both correct,
+well-scoped cited sorries, not low-hanging fruit.
