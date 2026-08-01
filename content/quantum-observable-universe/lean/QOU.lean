@@ -294,6 +294,11 @@ import QOU.QBeta.WenzlPochhammerBoundary
 -- A_ω uniqueness cone (FaddeevStripGrowthFKV → box-reduction; FaddeevPhiStripGrowth
 -- → PhiBProd) into CI so it is typechecked long-term (was orphaned).
 import QOU.QBeta.FaddeevStripGrowthConstructor
+-- c₃ Berezinian-wall parity constraints: adjoint-scaled cross-terms are bar-EVEN
+-- (all bar-even scalings, generalizing #4421), the non-self-adjoint g·γ carrier is
+-- realizable + bar-ODD, and the two families disjoin off 2-torsion. Pulls the
+-- BerezinianSelfAdjointCrossTerm cone into CI (was orphaned).
+import QOU.QBeta.BerezinianCrossTermParity
 -- Concrete H₃(q) Markov-trace functional (NF model: linearity, cyclicity,
 -- Hecke σ₀²=hσ₀+1, Markov reduction tr(x·σ₁)=z·tr(x)); cross-checked vs
 -- `gram.py` / `pyhecke.trace_formal`. Was an orphan under `Machinery/`.
