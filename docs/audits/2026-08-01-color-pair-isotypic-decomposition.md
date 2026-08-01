@@ -2,8 +2,11 @@
 
 **Date:** 2026-08-01
 **Bean:** `qou-ctkw` (and open question 1 of `conj:inter-nucleon-channel-color-tube`)
-**Verdict:** **scope-(a) NARROWING — not a closure.** 0 free parameters, no target
-consulted, nothing wired.
+**Verdict:** **scope-(a) NARROWING — not a closure.** **0 *tuned* parameters** —
+nothing is fitted and no target is consulted; the decomposition is forced by the
+character theory. (Distinct from the *result*, which is that `W` still lives in a
+2-parameter convex family — see §"The three findings". The probe introduces no
+parameters; it *reduces* the ones `W` already had, from 8 to 2.) Nothing wired.
 
 ## Why this was the lead
 

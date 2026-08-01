@@ -37,6 +37,10 @@ as a scope-(a) narrowing, and nothing is wired.
 STRICT anti-fit: no target is consulted; no quantity is tuned. Exact arithmetic
 throughout (sympy over Q(sqrt 5)); all identities are equalities, not fits.
 
+Note on "parameters": the probe itself introduces ZERO tuned parameters. That is
+distinct from its RESULT — that W still lives in a 2-parameter convex family.
+The probe does not add parameters; it REDUCES the ones W already had (8 -> 2).
+
 Run:  python3 -u color_tube_t1_tensor_decomposition.py
 """
 from __future__ import annotations
@@ -202,8 +206,10 @@ def main() -> int:
         "lossy IS the isotypy-blind average. NARROWS W from 8 free parameters per "
         "flavor pair to a 2-parameter convex combination of three canonical systems. "
         "Does NOT close open question 1 — the flavor dependence (F1,F2) is not supplied "
-        "by the color side. Scope-(a); 0 free parameters; no target consulted; nothing "
-        "wired."
+        "by the color side. Scope-(a); 0 TUNED parameters (nothing fitted, no target "
+        "consulted) — distinct from the RESULT, which is that W still lives in a "
+        "2-parameter convex family: the probe introduces no parameters, it REDUCES the "
+        "ones W already had, from 8 to 2. Nothing wired."
     )
     w.add_data("tensor_multiplicities", m_tensor)
     w.add_data("sym2_multiplicities", m_sym)

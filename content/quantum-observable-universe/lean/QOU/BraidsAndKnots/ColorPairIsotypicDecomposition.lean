@@ -1,6 +1,5 @@
 import QOU.BraidsAndKnots.S5SO3FiberAction
 import Mathlib.Tactic.NormNum
-import Mathlib.Tactic.Ring
 
 /-!
 # QOU.BraidsAndKnots.ColorPairIsotypicDecomposition — the color-pair space
