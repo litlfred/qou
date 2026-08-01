@@ -170,3 +170,38 @@ parity channel). Magnitude = even channel, sign = odd parity: the two-channel
 split, one integer form each. Next probe (derive-then-check, canonical windings
 only, no tuning): does e^{−ΔRe 𝔙/ℏ_q} at the canonical w²/w³ windings reproduce
 |S_p/S_m| ≈ 4.075? A miss is recorded as a miss.
+
+## Method redirect (owner, 2026-08-01): EMBED into Bring's surface for the asymmetry — don't graft disc-5 onto disc-12
+
+Owner steering: *"are you embedding into Bring's to get [the] asymmetry?"* — putting a
+finger on the real seam in the [W] result. **Honest answer: no, not yet.** The [W]
+work splits one geometry into two mismatched quadratic orders:
+
+- **geodesic geometry** on the **cusp torus** → `ℤ[√3]` (disc-12, `ω=e^{iπ/3}`); this
+  gives the winding `(m,ℓ)` and `Im 𝔙 = (√3/16)(ln q₀)²[(2m+ℓ)²−3ℓ²]`.
+- **sign parity** grafted from Bring's **disc-5 golden order** (`ℤ[φ]`, norm −1,
+  `N(φⁿ)=(−1)ⁿ`) via the braid power `wⁿ`.
+
+The tell that this split is wrong: the **sign** came out clean (2/2) but the
+**magnitude** MISSED — `|S_p/S_m|≈4.075` is not a disc-12 `G`-ratio, and ratio-matching
+there is a fit trap (1833 chance pairs). The magnitude is being sought on the cusp
+torus, where it does not live.
+
+**The fix (this redirect).** disc-5 is **not external** to Bring's surface — it is its
+**intrinsic automorphism structure** (`x5-z5-automorphism.lean`, `x5-bring-weight-
+identification`, the genus-4 `sw-period-residue-sum.lean`). So embed the cusp-torus
+winding geodesic **into Bring's genus-4 curve** and let the asymmetry — *both* sign and
+the `4.075` magnitude — fall out of that ONE embedding:
+
+- **sign** = the disc-5 (X5/Z5) parity, now intrinsic to the surface (already found);
+- **magnitude** = a **Bring period / X5-weight ratio** of the `w²`(4₁, muon) vs
+  `w³`(Borromean, proton) embeddings — a period/metric datum of the genus-4 curve, NOT
+  a cusp-lattice `G`-value. This is the channel the cusp lattice structurally cannot
+  reach.
+
+**Attack (bean qou-mssy, derive-then-check, no tuning).** Compute the X5 Bring weights /
+SW periods of the `w²` and `w³` embeddings and test whether their ratio gives `4.075`.
+A miss is recorded as a miss (the anti-fit / dense-resource discipline from the [D4]
+negative stands — no cusp-shape/period selection to match). Grounding: `brings-is-qou`,
+`torus-knot-generators`, `bring-trefoil-cinquefoil-channel`, `x5-bring-weight-*`,
+`sw-period-residue-sum`.
