@@ -1,0 +1,21 @@
+{
+  "description": "Whitehead link VC asymptotic |J_N| ~ c_\u03c3 N^p e^{(Vol/2\u03c0)N}: p-exponent and the GGMW geometric-flat-connection prefactor c_\u03c3, from van der Veen's exact colored Jones. Settles p=3/2 and the 'factor 2'.",
+  "computation": "whitehead_c_sigma",
+  "audit_only": true,
+  "reference": "van der Veen arXiv:math/0611181; GGMW/Ohtsuki asymptotic",
+  "vol_4G": 3.663862376708876,
+  "p_exponent": 1.4999992078609055,
+  "p_target": 1.5,
+  "c0": -0.5198544823429672,
+  "c_sigma_tower": {
+    "201": 0.5973318396438458,
+    "401": 0.5959666667620155,
+    "601": 0.5955120687976302,
+    "801": 0.5952848555545364,
+    "1001": 0.5951485549846204
+  },
+  "c_sigma_extrapolated": 0.5946026712021069,
+  "factor_metric": 2.0143388659144117,
+  "note": "c_\u03c3\u22480.595 is NUMERICAL; a closed-form (Reidemeister torsion / 1-loop) identification is NOT asserted (anti-fit). p=3/2 exact = geometric \u03b4.",
+  "timestamp": "2026-08-01T23:03:39+00:00"
+}
