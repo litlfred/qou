@@ -191,19 +191,41 @@ def main():
     # ── exact symbolic y_λ at n=4 and n=3 (file-cached: the n=4 solve is ~18 min) ──
     ycache = _Path("/tmp/claude-0/-home-user-qou/73136c5f-5571-5e39-a603-7515d4c4b28f/scratchpad/y_lambda_symbolic_cache.json")
     import json as _json2
+
+    def _unify_q(e):
+        """Force every free symbol named 'q' onto OUR `qs`.
+
+        Critical: round-tripping through str()/sympify() (the cache path, and
+        any producer using its own q) LOSES the positive/real assumptions, so
+        the parsed `Symbol('q')` is a DIFFERENT object from
+        `Symbol('q', positive=True, real=True)`. Without this unification the
+        later `subs(qs, s**2)` silently misses those terms and stray `q`
+        survives into the deficit — the failure mode that produced a
+        `q**51`-bearing expression at the sign step.
+        """
+        e = sp.sympify(e)
+        for sym in list(e.free_symbols):
+            if sym.name == "q" and sym is not qs:
+                e = e.subs(sym, qs)
+        return e
+
     if ycache.exists():
         _log("symbolic y_λ from cache…")
         raw = _json2.loads(ycache.read_text())
-        Y4 = {tuple(_json2.loads(k)): sp.cancel(sp.radsimp(sp.sympify(v)))
+        Y4 = {tuple(_json2.loads(k)): sp.cancel(sp.radsimp(_unify_q(v)))
               for k, v in raw["4"].items()}
-        Y3 = {tuple(_json2.loads(k)): sp.cancel(sp.radsimp(sp.sympify(v)))
+        Y3 = {tuple(_json2.loads(k)): sp.cancel(sp.radsimp(_unify_q(v)))
               for k, v in raw["3"].items()}
     else:
         _log("symbolic Jones-Markov weights y_λ (n=4, n=3)… (~18 min cold)")
-        Y4 = {tuple(k): sp.cancel(sp.radsimp(sp.sympify(v)))
+        Y4 = {tuple(k): sp.cancel(sp.radsimp(_unify_q(v)))
               for k, v in y_lambda_at(4, None).items()}
-        Y3 = {tuple(k): sp.cancel(sp.radsimp(sp.sympify(v)))
+        Y3 = {tuple(k): sp.cancel(sp.radsimp(_unify_q(v)))
               for k, v in y_lambda_at(3, None).items()}
+    for _lbl, _Y in (("y_λ(4)", Y4), ("y_λ(3)", Y3)):
+        _stray = {str(sym) for v in _Y.values() for sym in v.free_symbols
+                  if sym is not qs}
+        assert not _stray, f"{_lbl} carries non-`qs` symbols {_stray} — q unification failed"
         ycache.parent.mkdir(parents=True, exist_ok=True)
         ycache.write_text(_json2.dumps({
             "4": {_json2.dumps(list(k)): str(v) for k, v in Y4.items()},
@@ -251,6 +273,11 @@ def main():
         g_unlink = sp.cancel(sum(to_s(Y[lam]) * dims[lam] for lam in partitions_of(n)))
         tau_s = sp.cancel(g_link / g_unlink)
         D_s = sp.cancel(1 - tau_s)
+        # Fail loudly HERE (not 8 minutes later at the sign step) if anything
+        # other than `s` survived the substitution — the q-assumption-mismatch
+        # class of bug.
+        _leak = {str(sym) for sym in D_s.free_symbols if sym is not s}
+        assert not _leak, f"deficit still carries {_leak}; expected s only"
         # keep a q-form for reporting/eval (exact, just re-expressed)
         tau = tau_s.subs(s, sp.sqrt(qs))
         D = D_s.subs(s, sp.sqrt(qs))
