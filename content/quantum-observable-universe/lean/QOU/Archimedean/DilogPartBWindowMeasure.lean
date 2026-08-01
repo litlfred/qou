@@ -71,8 +71,11 @@ theorem window_subset_iUnion (hq1 : 1 < q) (ε : ℝ) :
 theorem volume_window_le (hq1 : 1 < q) (ε : ℝ) :
     volume {x : ℝ | x ∈ Set.Ioo (0:ℝ) 1 ∧ brS x q - (Nat.floor (brS x q) : ℝ) < ε}
       ≤ ∑' n : ℕ, ENNReal.ofReal (q ^ (-(n : ℝ)) - q ^ (-((n : ℝ) + ε))) := by
-  refine le_trans (measure_mono (window_subset_iUnion hq1 ε)) ?_
-  refine le_trans (measure_iUnion_le _) (le_of_eq (tsum_congr (fun n => ?_)))
+  apply le_trans (measure_mono (window_subset_iUnion hq1 ε))
+  apply le_trans (measure_iUnion_le _)
+  apply le_of_eq
+  apply tsum_congr
+  intro n
   rw [Real.volume_Ioc]
 
 /-- **Resonance-window measure bound (complete).**  For `1 < q` and `0 ≤ ε`,
