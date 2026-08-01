@@ -7,8 +7,9 @@ formalize-first, honest scope, no fit.
 ## Question
 
 Does the Milnor-parity deficit sign `sign(1 − τ_A) = (−1)^{A−1}` (#4389: A=3 `+` proved, A=4 `−`
-measured, general **open**) **provably descend** from my weight bar-sign `sgn = (−1)^{n-1} = (−1)^{A−1}`
-(the `(q−q⁻¹)^{n-1}` Ocneanu-weight parity, #4399)?
+measured, general **open**) **provably descend** from my weight bar-sign `sgn = (−1)^{n-1}`
+(the `(q−q⁻¹)^{n-1}` Ocneanu-weight parity, #4399), which **at `n = 3A`** (and only using that relation,
+not arbitrary `n`, `A`) reduces to `(−1)^{3A−1} = (−1)^{A−1}`?
 
 ## Finding (verified) — the derivation route is REFUTED (scope-(a))
 
