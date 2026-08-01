@@ -65,6 +65,10 @@ def main() -> None:
         except Exception:
             return "unknown"
 
+    _script_sha = _git(["log", "-1", "--format=%H", "--", str(script_path)])
+    if _script_sha == "unknown":
+        _script_sha = _git(["rev-parse", "HEAD"])
+
     witness = {
         "schema": "witness/v1",
         "engine": "python+sympy",
@@ -77,7 +81,7 @@ def main() -> None:
         ),
         "computation": {
             "script": "computations/qbeta/c3_w2_c1_module_exponents.py",
-            "scriptCommitSha": _git(["log", "-1", "--format=%H", "--", str(script_path)]),
+            "scriptCommitSha": _script_sha,
             "scriptHash": hashlib.sha256(script_path.read_bytes()).hexdigest()[:12],
         },
         "results": results,
