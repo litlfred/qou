@@ -76,27 +76,48 @@ artifact. That was an assertion, and testing it refutes it: Padé orders
 published value is `6.6e-3` — **440× larger**. The sequence has converged,
 just not to the published number.
 
-Diagnostic D1 identifies the actual cause. `ζ₁₂` is a *control channel*:
-its value is known independently, so its `|pole| / |true|` ratio measures
-the approximation's own bias. Both channels carry the **same** offset:
+Diagnostic D1 identifies the actual cause. A resurgent Borel transform has
+a **branch point**, not a pole; Padé can only render a cut as a *line* of
+poles, and the leading pole sits systematically outside the branch point.
+`ζ₁₂` is a **control channel** — its value is known independently — so its
+`|pole| / |true|` ratio measures that bias directly.
 
-    ζ₁₂ (control)      |pole|/|true| = 1.017823998
-    ζ₁₃ (V₃ channel)   |pole|/|true| = 1.017819194
-                                       agree to 4.7e-6
+Scanned over seven orders:
 
-A resurgent Borel transform has a **branch point**, not a pole; Padé can
-only render a cut as a line of poles, and the leading pole sits
-systematically outside the branch point. That bias is multiplicative and
-does not shrink with order — exactly the observed signature.
+| order | `k₁₂−1` | `(k₁₂−1)·n²` | `k₁₃−1` | `V₃` calibrated | rel dev |
+|---|---|---|---|---|---|
+| [6/7]   | 0.05529 | 2.71 | 0.05105 | −7.617589 | 0.00983 |
+| [7/8]   | 0.03611 | 2.31 | 0.03573 | −7.633785 | 0.00772 |
+| [8/9]   | 0.03580 | 2.90 | 0.03081 | −7.642386 | 0.00660 |
+| [9/10]  | 0.02565 | 2.57 | **6.30** | −39.12625 | 4.086 — spurious pole |
+| [10/11] | 0.01740 | 2.11 | 0.01798 | −7.672751 | 0.00266 |
+| [11/12] | 0.01782 | 2.57 | 0.01782 | −7.670908 | 0.00290 |
+| [12/12] | 0.01414 | 2.04 | 0.01328 | −7.670231 | 0.00298 |
 
-Calibrating the `V₃` channel by the control channel gives
-`V₃ = −7.670908`, rel dev `0.0029` (from `0.0066`), with the spurious
-imaginary part falling to `−0.032` (0.4 % of `|V₃|`; it must vanish for
-real `V₃`). **This calibration is post-hoc and scores no gate** — it is
-reported as a diagnostic, not folded into the measurement.
+Three things this establishes, and one it refutes:
 
-Either way the discriminating quantity is the 272× ratio, which no
-plausible approximation bias bridges.
+1. **The 1/n² law holds.** `(k₁₂−1)·n²` stays O(1) with no trend across the
+   scan — the classical approach law for Padé poles converging to a branch
+   cut. This is why the bias does not shrink like truncation error.
+2. **Both channels carry a bias of the same sign and comparable size**, at
+   every clean order.
+3. **Control-channel calibration works, but only partway.** It improves `V₃`
+   monotonically (0.0098 → 0.0027, 3.7×) and then **plateaus at ~0.0027** —
+   it does not converge to zero. A residual *channel-dependent* component of
+   the bias survives calibration and is **OPEN**.
+4. **REFUTED — an earlier revision of this file claimed the channels "agree
+   to 4.7e-6".** That figure is real but comes from a single order ([11/12])
+   and is ~1000× better than typical; the worst clean-order disagreement is
+   `4.8e-3` in `|Δk|/k` (equivalently ~14 % in the bias `k−1` itself, at
+   [8/9]). Quoting the lucky order as characteristic overstated the method.
+   The plateau in (3) is the honest measure of what calibration achieves.
+
+**The calibration is post-hoc and scores no gate** — it is a diagnostic, not
+folded into the measurement. The pre-registered `V₃` stands at `−7.744259`.
+
+Either way the discriminating quantity is the 272× ratio, which no plausible
+approximation bias bridges: even the uncalibrated raw value is within 0.7 %
+of the published `V₃` and 181 % from the legacy literal.
 
 auditOnly; comparison to observed; no fit; nothing wired.
 """
@@ -122,6 +143,11 @@ V3_GGM = mp.mpf("-7.69319081986683")          # published, GGM eq 234 | x=1
 V3_LEGACY = mp.mpf("-2.7580990292")           # corpus literal, provenance unknown
 
 PADE_ORDERS = [(9, 10), (10, 11), (11, 12)]
+
+# D1 scans wider than the gates: characterising the Pade bias needs several
+# orders, and one order proved actively misleading (see the self-correction
+# in the docstring).
+D1_ORDERS = [(6, 7), (7, 8), (8, 9), (9, 10), (10, 11), (11, 12), (12, 12)]
 
 
 def load_basis():
@@ -251,25 +277,52 @@ def main() -> int:
 
     # ---- D1 (POST-HOC diagnostic, NOT a pre-registered gate) --------------
     # Is the residual truncation, or a systematic? Truncation would shrink
-    # with Pade order; it does not (orders [10/11]->[11/12] move by 1.5e-5
+    # with Pade order; it does not (orders [10/11]->[11/12] move V3 by 1.5e-5
     # while the offset from the published value is 6.6e-3, 440x larger).
-    # The zeta12 channel is a control: its answer is known independently, so
-    # its pole/true radial ratio measures the Pade-vs-branch-point offset.
     # A resurgent Borel transform has a BRANCH POINT; Pade renders a cut as a
-    # line of poles whose leading pole sits systematically outside it.
+    # line of poles whose leading pole sits systematically OUTSIDE it, with
+    # the classical 1/n^2 approach law. zeta12 is a control channel: its value
+    # is known independently, so its |pole|/|true| ratio measures that bias
+    # directly. Scanned over SIX orders -- a single order is not enough to
+    # characterise it (see the 2026-08-01 self-correction in the docstring).
     z13 = V1 - V3_GGM
-    k12 = abs(best12) / abs(z12)
-    k13 = abs(ref["pole"]) / abs(z13)
-    V3_cal = V1 - ref["pole"] / k12
-    d_cal = abs(mp.re(V3_cal) - V3_GGM) / abs(V3_GGM)
-    print("\n[D1] POST-HOC diagnostic (not a gate): Pade branch-point offset")
-    print(f"     zeta12 (control) |pole|/|true| = {mp.nstr(k12, 10)}")
-    print(f"     zeta13 (V3 chan) |pole|/|true| = {mp.nstr(k13, 10)}")
-    print(f"     channels agree to {mp.nstr(abs(k12 - k13) / k12, 3)} "
-          f"-> a common multiplicative systematic, not truncation")
-    print(f"     V3 calibrated by the control channel = {mp.nstr(V3_cal, 12)}")
-    print(f"       rel dev vs published {mp.nstr(d_cal, 5)} "
-          f"(uncalibrated was {mp.nstr(d_ggm, 5)})")
+    print("\n[D1] POST-HOC diagnostic (not a gate): Pade branch-point bias")
+    print(f"     {'order':>8s} {'k12-1':>11s} {'(k12-1)n^2':>12s} "
+          f"{'k13-1':>11s} {'V3 calibrated':>16s} {'rel dev':>10s}")
+    scan, k12 = [], None
+    for a, b in D1_ORDERS:
+        ps = poles_at(P, a, b)
+        if not ps:
+            continue
+        p12 = min(ps, key=lambda p: abs(p - z12))
+        p13 = min(ps, key=lambda p: abs(mp.im(p) - vol))
+        kk12 = abs(p12) / abs(z12)
+        kk13 = abs(p13) / abs(z13)
+        cal = V1 - p13 / kk12
+        dd = abs(mp.re(cal) - V3_GGM) / abs(V3_GGM)
+        scan.append({"order": f"{a}/{b}", "n": b, "k12": kk12, "k13": kk13,
+                     "V3_cal": mp.re(cal), "rel": dd})
+        if (a, b) == PADE_ORDERS[-1]:
+            k12, V3_cal, d_cal = kk12, cal, dd
+        print(f"     [{a:2d}/{b:2d}] {mp.nstr(kk12 - 1, 5):>11s} "
+              f"{mp.nstr((kk12 - 1) * b ** 2, 5):>12s} "
+              f"{mp.nstr(kk13 - 1, 5):>11s} {mp.nstr(mp.re(cal), 12):>16s} "
+              f"{mp.nstr(dd, 4):>10s}")
+
+    clean = [s for s in scan if s["k13"] - 1 < 1]      # drop spurious-pole rows
+    spread_k = (max(abs(s["k12"] - s["k13"]) / s["k12"] for s in clean)
+                if clean else mp.inf)
+    print(f"\n     1/n^2 law: (k12-1)*n^2 stays O(1) with no trend -> the bias"
+          f" follows the classical branch-cut approach law")
+    print(f"     cross-channel agreement is order-dependent: worst "
+          f"{mp.nstr(spread_k, 3)} over the clean orders "
+          f"(the {mp.nstr(abs(scan[-2]['k12'] - scan[-2]['k13']) / scan[-2]['k12'], 3)}"
+          f" at [11/12] is NOT representative)")
+    print(f"     calibration improves V3 monotonically, then PLATEAUS at "
+          f"~{mp.nstr(min(s['rel'] for s in clean), 3)} -- a residual "
+          f"channel-dependent bias remains OPEN")
+    print(f"     V3 calibrated (top order) = {mp.nstr(V3_cal, 12)}   "
+          f"rel dev {mp.nstr(d_cal, 5)} (uncalibrated {mp.nstr(d_ggm, 5)})")
 
     verdict = (
         f"The reality-line pole selection (Im zeta = Vol, mentioning neither "
@@ -281,11 +334,13 @@ def main() -> int:
         f"remains OPEN. The ~{mp.nstr(d_ggm * 100, 3)}% residual vs GGM is "
         f"NOT truncation (order-to-order motion is 1.5e-5, 440x smaller): "
         f"D1 shows both the control channel zeta12 and the V3 channel carry "
-        f"the SAME multiplicative offset {mp.nstr(k12, 8)} to "
-        f"{mp.nstr(abs(k12 - k13) / k12, 3)} -- the Pade-vs-branch-point "
-        f"systematic (a cut rendered as a pole line, leading pole outside "
-        f"it). Calibrating by the control channel gives V3 = "
-        f"{mp.nstr(mp.re(V3_cal), 10)}, rel dev {mp.nstr(d_cal, 4)}. That "
+        f"a bias of the same sign and comparable size at every clean order, "
+        f"following the classical 1/n^2 branch-cut approach law -- the "
+        f"Pade-vs-branch-point systematic (a cut rendered as a pole line, "
+        f"leading pole outside it). Control-channel calibration improves V3 "
+        f"3.7x to {mp.nstr(mp.re(V3_cal), 10)} (rel dev {mp.nstr(d_cal, 4)}) "
+        f"then PLATEAUS at {mp.nstr(min(s['rel'] for s in clean), 3)}: a "
+        f"residual channel-dependent bias survives and is OPEN. The "
         f"calibration is POST-HOC and scores no gate."
     ) if g2 else (
         "Reality-line selection does NOT favour the published value - "
@@ -333,11 +388,24 @@ def main() -> int:
                 "nothing. Answers whether the residual is truncation "
                 "(it is not) or a common multiplicative systematic.",
         "k_zeta12_control": mp.nstr(k12, 12),
-        "k_zeta13_v3_channel": mp.nstr(k13, 12),
-        "channel_agreement": mp.nstr(abs(k12 - k13) / k12, 6),
         "V3_calibrated": mp.nstr(V3_cal, 15),
         "rel_dev_calibrated": mp.nstr(d_cal, 8),
         "rel_dev_uncalibrated": mp.nstr(d_ggm, 8),
+        "one_over_n2_law": "(k12-1)*n^2 stays O(1) with no trend across the "
+                           "scan -- classical Pade branch-cut approach law",
+        "worst_channel_disagreement_clean": mp.nstr(spread_k, 6),
+        "calibration_plateau": mp.nstr(min(s["rel"] for s in clean), 6),
+        "plateau_is_open": "control-channel calibration improves V3 3.7x then "
+                           "PLATEAUS; a residual channel-dependent bias "
+                           "survives and is OPEN",
+        "retracted_claim": "an earlier revision claimed the channels agree to "
+                           "4.7e-6; that is a single-order ([11/12]) artifact "
+                           "~1000x better than typical. Worst clean-order "
+                           "disagreement is 4.8e-3 in |dk|/k.",
+        "scan": [{"order": s["order"], "k12": mp.nstr(s["k12"], 10),
+                  "k13": mp.nstr(s["k13"], 10),
+                  "V3_cal": mp.nstr(s["V3_cal"], 12),
+                  "rel": mp.nstr(s["rel"], 6)} for s in scan],
     })
     w.add_data("verdict", verdict)
     w.save()
