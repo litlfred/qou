@@ -1,0 +1,107 @@
+{
+  "batch": "sm-uploads-2026-07-31",
+  "source_commit": "5d1385d1",
+  "processed": "2026-08-01",
+  "pipeline": "document-intake (references matched; reads tracked by beans qou-y139)",
+  "documents": [
+    {
+      "file": "0005038v1.pdf",
+      "arxiv": "math/0005038",
+      "title": "Braid groups are linear",
+      "authors": "Bigelow",
+      "reference": "bigelow2001",
+      "read": "done",
+      "relevance": "LKB faithfulness; underpins faithful braid representations used by the gauge-Hecke realization conjecture."
+    },
+    {
+      "file": "0403224v1.pdf",
+      "arxiv": "math/0403224",
+      "title": "Difference equation of the colored Jones polynomial for torus knot",
+      "authors": "Hikami",
+      "reference": "hikami2004torus",
+      "read": "skimmed",
+      "relevance": "Colored-Jones q-difference equations; corpus colored-Jones tower infrastructure, not SM-specific."
+    },
+    {
+      "file": "0503213v2.pdf",
+      "arxiv": "hep-ph/0503213",
+      "title": "A topological model of composite preons",
+      "authors": "Bilson-Thompson",
+      "reference": "bilson-thompson2005",
+      "read": "done",
+      "relevance": "Helon model; twist-datum candidate for hypercharge (def:strand-twist-datum, beans qou-q377/qou-4tul)."
+    },
+    {
+      "file": "0511710v2.pdf",
+      "arxiv": "math/0511710",
+      "title": "Higher gauge theory",
+      "authors": "Baez, Schreiber",
+      "reference": "baez-schreiber2007",
+      "read": "queued (qou-y139)",
+      "relevance": "2-connections/2-groups; categorical level-up for the gauge-action groupoid."
+    },
+    {
+      "file": "0603022v2.pdf",
+      "arxiv": "hep-th/0603022",
+      "title": "Quantum gravity and the standard model",
+      "authors": "Bilson-Thompson, Markopoulou, Smolin",
+      "reference": "bilsonthompson2007",
+      "read": "queued (qou-y139)",
+      "relevance": "Helon braids embedded in spin networks; precedent for braid-states-in-background-independent-QG."
+    },
+    {
+      "file": "0904.1556v2.pdf",
+      "arxiv": "0904.1556",
+      "title": "The algebra of grand unified theories",
+      "authors": "Baez, Huerta",
+      "reference": "baez-huerta2010",
+      "read": "done",
+      "relevance": "Z6 hypercharge compatibility used by the strand-twist Y battery; SM group as SU(3)xSU(2)xU(1)/Z6."
+    },
+    {
+      "file": "1003.4485v2.pdf",
+      "arxiv": "1003.4485",
+      "title": "An invitation to higher gauge theory",
+      "authors": "Baez, Huerta",
+      "reference": "baez-huerta2011",
+      "read": "queued (qou-y139)",
+      "relevance": "Expository 2-group/2-bundle companion to baez-schreiber2007."
+    },
+    {
+      "file": "1604.01247v2.pdf",
+      "arxiv": "1604.01247",
+      "title": "Exceptional quantum geometry and particle physics",
+      "authors": "Dubois-Violette",
+      "reference": "dubois-violette2016",
+      "read": "done",
+      "relevance": "J3(O) exceptional-Jordan route to SM gauge structure; colour su(3) stabilizer context (qou-ni4b)."
+    },
+    {
+      "file": "1611.09182v1.pdf",
+      "arxiv": "1611.09182",
+      "title": "Standard model physics from an algebra? (PhD thesis)",
+      "authors": "Furey",
+      "reference": "furey2016",
+      "read": "done",
+      "relevance": "R⊗C⊗H⊗O one-generation construction; SU(3)xU(1) unbroken stabilizer with charges from a number operator."
+    },
+    {
+      "file": "1705.01853v2.pdf",
+      "arxiv": "1705.01853",
+      "title": "Line operators in the standard model",
+      "authors": "Tong",
+      "reference": "tong2017",
+      "read": "done",
+      "relevance": "The four global forms SU(3)xSU(2)xU(1)/Z_k (k|6) of the SM group; sharpens what the truncation conjecture must select."
+    },
+    {
+      "file": "1808.08110v1.pdf",
+      "arxiv": "1808.08110",
+      "title": "Exceptional quantum geometry and particle physics II",
+      "authors": "Dubois-Violette, Todorov",
+      "reference": "dubois-violette-todorov2018",
+      "read": "queued (qou-y139)",
+      "relevance": "SU(3)xSU(2)xU(1)/Z6 as the J3(O)-compatible subgroup of F4; direct Z6-battery relevance."
+    }
+  ]
+}
