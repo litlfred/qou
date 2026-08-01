@@ -9,6 +9,17 @@ mirror pairs (A <= 13), because they are numerically close there:
   H_FH_A   Freedman-He template, Vol ~ A          -> kappa ~ A^(-1/3) -> 0
   H_FH_Z   Freedman-He template, Vol ~ Z          -> kappa ~ Z^(-1/3) -> 0
 
+*** WARRANT WITHDRAWN for the two H_FH hypotheses (see
+em_linking_fh_link_bound_correction.py). The Vol^(-1/3) they are named
+for is Khesin Thm 3.6, the SINGLE-knotted-torus bound. The Freedman-He
+LINK bound that actually applies to a Borromean configuration
+(Komendarczyk eq. 43) carries (pi/16)^(1/4) -- a pure constant -- and NO
+volume factor. So "Freedman-He template" is a misattribution: these are
+bare power laws with no literature backing. The scoring below is
+unchanged and still worth having as a description of the data; what
+changes is that a good H_FH score no longer counts as structural
+support. ***
+
 They diverge at large A and in opposite directions, so extending the
 mirror series settles them. No new theory is required -- only more AME
 data, which the corpus already carries in the qou-mass per-Z isotope
@@ -169,6 +180,26 @@ def main() -> None:
         "and all exponents are fixed in advance. Includes an "
         "end-to-end validation that the recomputed light-pair kappa "
         "values reproduce the published ones.")
+    wb.add_data("WARRANT_WITHDRAWN_H_FH", {
+        "affects": ["H_FH_A: kappa * A^(1/3) const",
+                    "H_FH_Z: kappa * Z^(1/3) const"],
+        "why": ("The Vol^(-1/3) these are named for is Khesin Thm 3.6, "
+                "the SINGLE-knotted-torus bound. The Freedman-He LINK "
+                "bound that applies to a multi-component Borromean "
+                "configuration (Komendarczyk arXiv:0808.1533v1 eq. 43) "
+                "carries (pi/16)^(1/4), a pure constant, and NO volume "
+                "factor. Calling these 'the Freedman-He template' was a "
+                "misattribution."),
+        "consequence": ("H_FH_A and H_FH_Z are BARE POWER LAWS with no "
+                        "literature backing -- the bar the anti-fit "
+                        "discipline sets, which they no longer clear. "
+                        "The scores below are unchanged and remain a "
+                        "valid DESCRIPTION of the data; what changes is "
+                        "that a good H_FH score no longer counts as "
+                        "structural support. This does not make H_coth "
+                        "correct -- it removes its rival's warrant."),
+        "see": "em-linking-fh-link-bound-correction.witness.json",
+    })
     wb.add_data("series", [
         {"A": r["A"], "Z": r["Z"], "n_pairs": r["n_pairs"],
          "ame_split_MeV": mp.nstr(r["split_MeV"], 8),
