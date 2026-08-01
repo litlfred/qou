@@ -463,3 +463,39 @@ the (287) division experiment on the 5₂ series:
 mod-5-validated; remaining: the (287) input-series identification
 (above), ε_m at m > 1 (needs CGZ [10] printed data or an independent
 ε construction), and m > 1 fibres generally.
+
+## Addendum 11 (2026-08-02) — CGZ lands: the ε_m machinery implemented and verified vs printed Theorem 7.4 (γ = 2)
+
+The owner uploaded CGZ (Calegari–Garoufalidis–Zagier,
+arXiv:1712.04887v3, `uploads/1712.04887v3.pdf`) — GSWZ's [10], the
+source of the ε_m units. `cgz_cyclic_qdilog_unit_probe.py` (4/4)
+implements the computable realization:
+
+- **Cyclic quantum dilogarithm** `D_ζ(x) = Π_{k=1}^{n−1}(1−ζ^k x)^k`
+  (CGZ (8)), `P_ζ(X) = D_ζ(x)/D_ζ(1)` (CGZ (20)), in CGZ's own
+  finite-field realization (§4.4: for `q ≡ −1 mod p` every element of
+  `F_q` is an n-th power, `H = F_{q²}`, and `R_ζ = P_ζ` literally).
+- **Lemma 2.4(a) engine identity (21)** `(1−X)^m D_ζ(ζ^m x)/D_ζ(x) =
+  Π_{k<m}(1−ζ^k x)^n` verified exactly (the pdf flattens the `(1−X)^m`
+  exponent; the exact check adjudicated it — first run with `(1−X)¹`
+  failed, the corrected transcription passes on a 12-point (m,x)
+  sweep per case).
+- **Printed target, Theorem 7.4**: `R_ζ(η_ζ) = ζ²` for the n-torsion
+  element `η_ζ` of CGZ (34), verified over SIX finite-field cases
+  (n = 5: q = 19, 29, 79; n = 7: q = 13, 41, 83) with the γ-exponent
+  **pinned to exactly 2** in each (specificity: j ≠ 2 classes all
+  fail; ζ-class primitivity checked so the test has full resolution).
+
+Also this addendum: Copilot review of #4490 addressed (witness `note`
+now carries file pointers; the canonical-5-adic digit convention of
+`matches_printed` documented — omitted digits below the highest
+printed power are genuinely 0 by positional convention, so
+zero-filling is exact, not an assumption; the `xx9f` GAP bean body
+filled with context + next steps), and the Ψ-expansion coefficients
+are now archimedean-validated inside the capstone probe (h³/h⁵ error
+scaling — the `archimedean_expansion_validation` check).
+
+**Path to ε_m 5-adic**: run the same `P_ζ` construction in
+`(Z/5^W)[α]`-coefficient rings at fibre order m on the GSWZ 5₂
+symbols `[ζ₂₄^k]` — the machinery is now validated end-to-end on CGZ's
+printed data. Queued on `qou-9p9y`.

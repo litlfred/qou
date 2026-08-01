@@ -54,6 +54,10 @@ WHAT THIS CHECKS (gating):
    mathematical equivalents (symbol inversion + sign, which is the
    identity since Li_{-2} is odd; and the mod-5 coincidence 7 = -8 of
    the two Bernoulli conventions). A 1-of-14-classes confirmation.
+4. Archimedean cross-validation (mpmath, C-side): the tail after the
+   a1 term scales as h^3 and after the a3 term as h^5 — pins the
+   -1/24 and 7/5760 coefficients including signs, independently of
+   any p-adic convention.
 
 OPEN (recorded in the witness, NOT gating — honest negative):
 the digit-by-digit reproduction of the printed (287) x^1..x^3
@@ -289,6 +293,42 @@ def cmp_digits(val, printed, cap):
     return ok
 
 
+# (4) archimedean cross-validation of the Psi expansion coefficients:
+# over C, sum_j log(1 - z e^{-(j+1/2)t}) minus [Li2(z)/h + a1*h + a3*h^3]
+# (h = -t) must scale as h^5 — validates -1/24 and 7/5760 incl. signs.
+import mpmath as mp
+
+mp.mp.dps = 40
+zc = mp.e ** (2j * mp.pi / 24)
+
+
+def _arch_err(t, order):
+    ssum = mp.mpc(0)
+    j = 0
+    while True:
+        term = mp.log(1 - zc * mp.e ** (-(j + mp.mpf(1) / 2) * t))
+        ssum += term
+        if abs(term) < mp.mpf(10) ** -35 and j > 10 / float(t):
+            break
+        j += 1
+    h = -t
+    li2 = mp.polylog(2, zc)
+    li0 = zc / (1 - zc)
+    lim2 = zc * (1 + zc) / (1 - zc) ** 3
+    rhs = li2 / h
+    if order >= 1:
+        rhs += mp.mpf(-1) / 24 * li0 * h
+    if order >= 3:
+        rhs += mp.mpf(7) / 5760 * lim2 * h ** 3
+    return abs(ssum - rhs)
+
+
+_e1a, _e1b = _arch_err(mp.mpf(1) / 20, 1), _arch_err(mp.mpf(1) / 40, 1)
+_e3a, _e3b = _arch_err(mp.mpf(1) / 20, 3), _arch_err(mp.mpf(1) / 40, 3)
+checks["archimedean_expansion_validation"] = bool(
+    6 < _e1a / _e1b < 10 and 25 < _e3a / _e3b < 40
+)
+
 # OPEN reproduction attempt (recorded, NOT gating): printed (287) digits
 open_reproduction = {
     "status": "open-mismatch",
@@ -297,8 +337,11 @@ open_reproduction = {
     "x3_matches": T3 is not None and cmp_digits(T3, printed_x3, 1),
     "note": (
         "fails under all 28 grid variants and under any scalar "
-        "(1+x)^lambda prefactor (mismatch has alpha-components); "
-        "see docstring for the candidate explanations"
+        "(1+x)^lambda prefactor (mismatch has alpha-components); see "
+        "computations/probes/gswz_psi_section_division_probe.py "
+        "docstring and docs/audits/2026-07-26-tau-coherence-orbit-"
+        "program-and-habiro-bridge.md Addendum 10 for the candidate "
+        "explanations"
     ),
 }
 

@@ -254,8 +254,14 @@ def digits(x, upto):
 
 
 def matches_printed(val, printed):
-    """printed = dict coord -> list of (power, digit) with max power per
-    coord; compare val's base-5 digits against every printed digit."""
+    """printed = dict coord -> list of (power, digit); compare val's
+    base-5 digits against the printed expansion THROUGH its highest
+    printed power. GSWZ print canonical 5-adic expansions (digits in
+    0..4, nonzero terms listed in increasing power), so a power omitted
+    BELOW the last printed one has digit 0 by the positional
+    convention — zero-filling those positions is exact, not an
+    assumption; only digits beyond the highest printed power (the
+    trailing dots) are unknown and are not compared."""
     ok = True
     for coord, digs in printed.items():
         idx = {"const": 0, "alpha": 1, "alpha2": 2}[coord]
