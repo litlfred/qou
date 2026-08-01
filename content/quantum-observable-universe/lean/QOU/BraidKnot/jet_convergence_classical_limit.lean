@@ -38,9 +38,19 @@ class jet_convergence_classical_limit where
       as the real Mathlib sequential limit. -/
   converges : Filter.Tendsto a Filter.atTop (nhds aInfty)
 
--- The conjecture itself.  The `sorry` represents the **open
--- conjecture** per §3b — not a missing proof.
+-- The conjecture itself: the specific per-level invariant `a_k(β)`
+-- converges to the q-dimension-weighted average `a_∞(β)`.  Per AGENTS.md
+-- §3b-cond we provide NO global instance.
+--
+-- History (bean cj8c): an earlier revision discharged this class with a
+-- FABRICATED trivial instance `⟨fun _ => 0, 0, tendsto_const_nhds⟩` — the
+-- constant-zero sequence, which trivially converges.  That is an
+-- audit-dodge (§1a / §3b-tax: do not fabricate a trivial instance to
+-- "close" an open conjecture): the class's freely-chosen data fields make
+-- it satisfiable by a convenient sequence, so a fabricated instance
+-- asserts nothing about the *actual* `a_k(β)`.  Removed here — the honest
+-- open state is a content-bearing class with no instance, matching the
+-- sibling `jet_filtered_knot_factor`.
 -- Ref: [manuscript] quantum-observable-universe/mass-theory/jet-convergence-classical-limit.ts
-noncomputable instance : jet_convergence_classical_limit := ⟨fun _ => 0, 0, tendsto_const_nhds⟩
 
 end QOU.BraidKnot
