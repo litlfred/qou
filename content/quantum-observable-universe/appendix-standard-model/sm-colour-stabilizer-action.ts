@@ -18,16 +18,18 @@ export default conjecture({
   authorNotes: [
     {
       kind: "status",
-      date: "2026-07-31",
+      date: "2026-08-01",
       body:
         "**Primary conjecture, no instance (bean qou-ni4b).** The class " +
-        "is stated over an abstract colour-algebra slot; the intended " +
-        "instantiation is the octonion stabilizer `su3 e` " +
-        "(QOU.MathlibExt.OctonionSU3Stabilizer, finrank = 8 gate). " +
-        "Type-level wiring to that concrete module is a recorded " +
-        "follow-up (the import pulls the decide-heavy octonion cone). " +
-        "The dimension obstruction and the 3-strand minimality " +
-        "corollary are proved sorry-free.",
+        "lives in the library at `QOU/StandardModel/ColourStabilizerAction.lean` " +
+        "(the sibling stub was removed per the no-shadowing rule). The " +
+        "concrete wiring to the octonion stabilizer `su3 e` is " +
+        "`ColourStabilizerActionOnSU3` and the bracket closure of `su3 e` " +
+        "(a Lie subalgebra of Der(O) = g2) is proved sorry-free, both in " +
+        "`QOU.MathlibExt.OctonionSU3BracketClosure` (beans qou-iibg, " +
+        "qou-51st). The dimension obstruction and the 3-strand minimality " +
+        "corollary are proved sorry-free. Open: an instance for the " +
+        "intended instantiation (the faithful action itself).",
     },
   ],
 });
