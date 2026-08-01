@@ -55,7 +55,8 @@ mp.mp.dps = 30
 
 
 def _load(name, *keys):
-    d = json.load(open(HERE / name))
+    with open(HERE / name, encoding="utf-8") as fh:
+        d = json.load(fh)
     for k in keys:
         d = d[k]
     return d
@@ -80,20 +81,40 @@ def main() -> int:
     cluster_trend = abs(c4_h12 / c3_h9)                 # framework: shrinks
     trend_backwards = cluster_trend < 1 < moment_trend
 
+    # DECOMPOSE the inconsistency: intrinsic h-order (framework's OWN prediction) vs
+    # the residual coefficient-scaling gap. Brunnian A-link ⇒ leading O(h^{2(A−1)})
+    # (first Milnor at length A), so ĉ_A := c_A/h^{2(A−1)} is the order-normalized
+    # cabling coefficient. The h-order part is a PROVED topological prediction; the
+    # coefficient part is what a derived (W_λ / tower) route must additionally supply.
+    h = mp.mpf(_load("a4-h12-brunnian-deficit-measure.witness.json", "parameters")["h"])
+    ch3 = c3_h9 / h ** 4                                # order-normalized A=3 coeff
+    ch4 = abs(c4_h12) / h ** 6                          # order-normalized A=4 coeff
+    coeff_growth = ch4 / ch3                            # framework coeff growth
+    coeff_gap = moment_trend / coeff_growth            # residual after removing h-order
+    h_order_factor = 1 / h ** 2                         # intrinsic per-order suppression
+    # structural: h<1 ⇒ clusters VANISH with A while moments grow ⇒ id excluded beyond one A
+    h_suppressed_structural = h < 1
+
     print(f"  μ₃={mp.nstr(mu3,6)}  c₃(H₉)={mp.nstr(c3_h9,6)}  f₃=c₃/μ₃={mp.nstr(f3,5)}  (order h^{mp.nstr(ord3,3)})", flush=True)
     print(f"  μ₄={mp.nstr(mu4,6)}  c₄(H₁₂)={mp.nstr(c4_h12,6)}  f₄=c₄/μ₄={mp.nstr(f4,5)}  (order h^{mp.nstr(ord4,3)})", flush=True)
     print(f"  two-moment fraction inconsistency f₃/f₄ = {mp.nstr(inconsistency,5)}×", flush=True)
     print(f"  A-trend: |μ₄/μ₃|={mp.nstr(moment_trend,4)} (data GROWS)  vs  |c₄/c₃|={mp.nstr(cluster_trend,4)} (framework SHRINKS)  → backwards: {trend_backwards}", flush=True)
+    print(f"  DECOMPOSITION: intrinsic h-order 1/h²={mp.nstr(h_order_factor,4)}× (framework's OWN O(h^2(A-1)) prediction)", flush=True)
+    print(f"    order-normalized coeff growth ĉ₄/ĉ₃={mp.nstr(coeff_growth,4)} vs moment {mp.nstr(moment_trend,4)} ⇒ residual COEFFICIENT gap {mp.nstr(coeff_gap,4)}×", flush=True)
+    print(f"  STRUCTURAL: clusters ~ h^(2(A-1)), h={mp.nstr(h,4)}<1 ⇒ VANISH with A while moments grow ⇒ id holds at most one A: {h_suppressed_structural}", flush=True)
 
     signs_ok = (c3_h9 > 0 and mu3 > 0) and (c4_h12 < 0 and mu4 < 0)
     fractions_inconsistent = inconsistency > mp.mpf("10")   # ~50× here
     orders_differ = abs(ord4 - ord3) > mp.mpf("1")          # h⁶ vs h⁴
+    coeff_gap_persists = coeff_gap > mp.mpf("1.5")          # ~2.17× after removing h-order
 
     assertions = [
         ("signs_derived_both_moments_milnor_parity", bool(signs_ok)),
         ("two_moment_fractions_inconsistent", bool(fractions_inconsistent)),
         ("A_trend_backwards_clusters_shrink_moments_grow", bool(trend_backwards)),
         ("brunnian_order_grows_h4_to_h6", bool(orders_differ)),
+        ("coefficient_scaling_gap_persists_after_order_norm", bool(coeff_gap_persists)),
+        ("clusters_h_suppressed_structural_incompatibility", bool(h_suppressed_structural)),
     ]
 
     verdict = (
@@ -105,10 +126,16 @@ def main() -> int:
         f"GROW (|μ₄/μ₃|={mp.nstr(moment_trend,4)}) while the Brunnian clusters SHRINK "
         f"(|c₄/c₃|={mp.nstr(cluster_trend,4)}), because the 4-link is O(h⁶) vs the 3-link's "
         f"O(h⁴) — intrinsic topological suppression (first Milnor at length A ⇒ O(h^{{2(A−1)}})), "
-        f"un-tunable without a fit. CONCLUSION: this DOWNGRADES the μ₃ 0.63× 'near-miss' toward "
-        f"a coincidence — a framework matching one moment to 0.6× but the next to 0.01× with the "
-        f"A-trend inverted is not capturing the magnitude physics. The SIGN leg stands; the "
-        f"MAGNITUDE identification does not. No fit; μ_A never inverted; nothing wired."
+        f"un-tunable without a fit. DECOMPOSITION: the {mp.nstr(inconsistency,4)}× splits into "
+        f"the intrinsic h-order 1/h²={mp.nstr(h_order_factor,4)}× (the framework's OWN proved "
+        f"O(h^{{2(A−1)}}) prediction) × a residual coefficient-scaling gap {mp.nstr(coeff_gap,4)}× "
+        f"(order-normalized coeff growth ĉ₄/ĉ₃={mp.nstr(coeff_growth,4)} vs the moment "
+        f"{mp.nstr(moment_trend,4)}). STRUCTURAL: since h={mp.nstr(h,4)}<1, the clusters "
+        f"c_A~h^{{2(A−1)}} VANISH as A grows while the moments grow — so the identification c_A=μ_A "
+        f"can hold at most at ONE A and is structurally excluded as a magnitude closure for the "
+        f"sequence. CONCLUSION: this DOWNGRADES the μ₃ 0.63× 'near-miss' toward a coincidence. The "
+        f"SIGN leg (Milnor parity) stands; the MAGNITUDE identification does not. No fit; μ_A never "
+        f"inverted; nothing wired."
     )
     print("\nVERDICT:", verdict, flush=True)
 
@@ -129,6 +156,10 @@ def main() -> int:
     wb.add_data("two_moment_inconsistency_factor", mp.nstr(inconsistency, 8))
     wb.add_data("moment_trend_mu4_over_mu3", mp.nstr(moment_trend, 8))
     wb.add_data("cluster_trend_c4_over_c3", mp.nstr(cluster_trend, 8))
+    wb.add_data("h", mp.nstr(h, 10))
+    wb.add_data("intrinsic_h_order_factor_1_over_h2", mp.nstr(h_order_factor, 8))
+    wb.add_data("order_normalized_coeff_growth", mp.nstr(coeff_growth, 8))
+    wb.add_data("residual_coefficient_scaling_gap", mp.nstr(coeff_gap, 8))
     wb.add_data("order_h_A3", mp.nstr(ord3, 5)); wb.add_data("order_h_A4", mp.nstr(ord4, 5))
     wb.add_data("verdict", verdict)
     wb.save()
