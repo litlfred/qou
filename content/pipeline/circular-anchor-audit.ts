@@ -345,12 +345,15 @@ function main() {
     const keyOf = (f: { file: string; criterion: string; symbol: string }) =>
       `${f.file}::${f.criterion}::${f.symbol}`;
     const prev = new Map(ledger.entries.map((e) => [keyOf(e), e]));
+    // Single sha source for BOTH paths. The check path previously fell back to
+    // "" when the map missed, which made every stored verdict read as stale.
+    const shaOf = (rel: string) =>
+      shas.get(rel) ?? (existsSync(rel) ? sha12(readFileSync(rel, "utf8")) : "");
 
     if (reviewLedger) {
       const next: LedgerEntry[] = [];
       for (const f of findings) {
-        const abs = join(process.cwd(), f.file);
-        const sha = shas.get(abs) ?? sha12(readFileSync(f.file, "utf8"));
+        const sha = shaOf(f.file);
         const p = prev.get(keyOf(f));
         const fresh = p && p.verdict !== "needs-agent" && p.file_sha === sha;
         next.push(
@@ -377,8 +380,7 @@ function main() {
     if (checkLedger) {
       const stale: string[] = [];
       for (const f of findings) {
-        const abs = join(process.cwd(), f.file);
-        const sha = shas.get(abs) ?? "";
+        const sha = shaOf(f.file);
         const p = prev.get(keyOf(f));
         if (!p || p.verdict === "needs-agent") stale.push(`${keyOf(f)} — no agent verdict`);
         else if (p.file_sha !== sha) stale.push(`${keyOf(f)} — verdict stale (file changed)`);
