@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-01T01:41:13.296870+00:00",
-  "commitSha": "ea2be50ddbd0294ea0303a4cb606c71d5628d8c5",
+  "computedAt": "2026-08-01T20:15:00.860436+00:00",
+  "commitSha": "17fec3fdbc2f74015bed91614e0f043fb58cb5b0",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -559,7 +559,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 3,
+  "durationMs": 5,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "ff40fb7a9d7d",
@@ -2046,6 +2046,7 @@
         "a-K-via-lp-dual-hecke-basis.witness.json",
         "a-K-via-lp-dual.witness.json",
         "a3-mirror-residual-reconciliation.witness.json",
+        "a5-so3-branching.witness.json",
         "ab-methodology-metrics.witness.json",
         "active-set-lr-scaling-profile.witness.json",
         "active-set-truncation-prototype.witness.json",
@@ -2809,6 +2810,7 @@
         "m-p-spectral-corrected-50dps.witness.json",
         "m-qclt-approx.witness.json",
         "m-tau-knot-prediction.witness.json",
+        "m-tau-volume-target.witness.json",
         "magic-a-truncation-overclaim-correction.witness.json",
         "markov-free-energy-qvalues.witness.json",
         "markov-trace-weights-wenzl.witness.json",
