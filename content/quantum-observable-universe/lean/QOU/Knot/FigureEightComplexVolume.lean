@@ -225,4 +225,48 @@ theorem f3_re_linear_same_sign {k d c₀ : ℝ} (h : (k * d) ^ 2 < c₀ ^ 2) :
   rw [imV₄₁_neg_iff]
   simpa using h
 
+/-! ## Leading-order magnitude bound — the muon channel is capped by the boost
+
+The T2 invariants above concern the *sign* of `Im 𝔙₄₁`. This block adds the
+*magnitude* bound. Because `Im 𝔙₄₁(u) = κ(Re²u − Im²u)` with `κ > 0` and
+`Im²u ≥ 0`, the leading form is bounded above by its value on the real axis,
+`κ·(Re u)²` — independently of the imaginary (spin) part. So the spin part can
+only *decrease* `Im 𝔙₄₁` below the pure-boost value: it can flip the sign
+(diagonal crossing) but can NEVER lift the magnitude above `κ·(Re u)²`.
+
+Consequence (companion probe `qbeta_sdeformed_leading_bound_probe.py`): at the
+geometrically-derived real boost `Re u = ln q₀` (`meridian-holonomy-boost.md`,
+bean `qou-zuk4`), the leading cap is `κ·(ln q₀)² ≈ 0.004714`, while the measured
+muon leak is `S_μ ≈ 0.009683 = 2.054 ×` the cap. Hence NO real spin part
+realizes `S_μ` at leading order — the muon magnitude must come from the even
+`O(u⁴)` Neumann–Zagier tail (dropped in this leading form) or an enlarged real
+`Re u`, NOT from the spin part. This is a scope-(a) magnitude insufficiency of
+the leading form (invariant cited: `Im²u ≥ 0`, `κ > 0`); it does NOT exclude the
+channel identity `S = Im 𝔙_q` (the full quantum complex volume carries the
+`O(u⁴)` tail). See
+`docs/audits/2026-08-01-derive-S-Qbeta-E0-leading-bound-decoupling.md`. -/
+
+/-- **Leading-form upper bound.** `Im 𝔙₄₁(u) ≤ κ·(Re u)²` for every `u`, since the
+    imaginary (spin) part only subtracts (`κ·Im²u ≥ 0`). The spin part can flip
+    the sign but never lift the magnitude above the pure-boost value `κ·Re²u`. -/
+theorem imV₄₁_le_cuspModulus_reSq (u : ℂ) :
+    (V₄₁ u).im ≤ cuspModulus * u.re ^ 2 := by
+  rw [imV₄₁]
+  have h : (0 : ℝ) ≤ cuspModulus * u.im ^ 2 :=
+    mul_nonneg cuspModulus_pos.le (sq_nonneg _)
+  nlinarith [h]
+
+/-- **Leading-order unreachability.** If a target `S` exceeds the `Re`-capped
+    leading bound `κ·r²`, then NO `u` with real part `r` realizes it at leading
+    order: `(V₄₁ u).im = S` is impossible. Instantiated at `r = ln q₀`,
+    `S = S_μ`: the muon leak (`= 2.054 × κ(ln q₀)²`) is unreachable for any real
+    spin — the magnitude sub-obstruction, orthogonal to the (spin-driven) sign
+    flip. -/
+theorem imV₄₁_leading_unreachable_of_lt {r S : ℝ} (hlt : cuspModulus * r ^ 2 < S)
+    (u : ℂ) (hu : u.re = r) : (V₄₁ u).im ≠ S := by
+  intro heq
+  have hbound := imV₄₁_le_cuspModulus_reSq u
+  rw [heq, hu] at hbound
+  exact absurd hbound (not_le.mpr hlt)
+
 end QOU.Knot.FigureEightComplexVolume
