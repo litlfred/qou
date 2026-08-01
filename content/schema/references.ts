@@ -7295,31 +7295,37 @@ export const references: CSLData[] = [
   // ── Baez–Schreiber 2007 — higher gauge theory (2-connections) ──
   ref({
     id: "baez-schreiber2007",
-    type: "article",
+    type: "chapter",
     title: "Higher gauge theory",
     author: [
       { family: "Baez", given: "John C." },
       { family: "Schreiber", given: "Urs" },
     ],
-    "container-title": "arXiv preprint",
-    issued: { "date-parts": [[2005]] },
+    "container-title":
+      "Categories in Algebra, Geometry and Mathematical Physics (Contemporary Mathematics 431)",
+    publisher: "American Mathematical Society",
+    page: "7-30",
+    issued: { "date-parts": [[2007]] },
     URL: "https://arxiv.org/abs/math/0511710",
-    note: "arXiv:math/0511710. 2-connections on 2-bundles: parallel transport of strings/surfaces via 2-groups; published in Contemp. Math. 431. Literature route for the categorical gauge-action groupoid of app:standard-model (gauge structure one categorical level up). Uploaded uploads/0511710v2.pdf (SM-uploads batch); queued for full read under bean qou-y139.",
+    note: "arXiv:math/0511710. 2-connections on 2-bundles: parallel transport of strings/surfaces via 2-groups. Literature route for the categorical gauge-action groupoid of app:standard-model (gauge structure one categorical level up). Uploaded uploads/0511710v2.pdf (SM-uploads batch); queued for full read under bean qou-y139.",
   }),
 
   // ── Baez–Huerta 2011 — invitation to higher gauge theory ──────
   ref({
     id: "baez-huerta2011",
-    type: "article",
+    type: "article-journal",
     title: "An invitation to higher gauge theory",
     author: [
       { family: "Baez", given: "John C." },
       { family: "Huerta", given: "John" },
     ],
-    "container-title": "arXiv preprint",
-    issued: { "date-parts": [[2010]] },
+    "container-title": "General Relativity and Gravitation",
+    volume: "43",
+    page: "2335-2392",
+    issued: { "date-parts": [[2011]] },
     URL: "https://arxiv.org/abs/1003.4485",
-    note: "arXiv:1003.4485. Expository companion to higher gauge theory: 2-groups, 2-bundles, string 2-group; published in Gen. Relativ. Gravit. 43 (2011). Uploaded uploads/1003.4485v2.pdf (SM-uploads batch); queued for full read under bean qou-y139.",
+    DOI: "10.1007/s10714-010-1070-9",
+    note: "arXiv:1003.4485. Expository companion to higher gauge theory: 2-groups, 2-bundles, string 2-group. Uploaded uploads/1003.4485v2.pdf (SM-uploads batch); queued for full read under bean qou-y139.",
   }),
 
   // ── Dubois-Violette–Todorov 2018 — exceptional quantum geometry II ──
