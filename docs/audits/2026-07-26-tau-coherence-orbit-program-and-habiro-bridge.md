@@ -340,3 +340,55 @@ membership test (and ε_m units beyond mod-p) stays queued on qou-9p9y.
 Uploading Besser–de Jeu (arXiv/journal: "The syntomic regulator for
 K-theory of fields" / Besser's Coleman-integration papers) would
 unblock the final layer.
+
+## Addendum 8 (2026-08-01) — the Besser–de Jeu papers land; full-precision Coleman Li₂ COMPLETE (8/8)
+
+**The single named missing ingredient arrived.** The owner uploaded
+Besser–de Jeu, *"Li(p)-service? An algorithm for computing p-adic
+polylogarithms"*, Math. Comp. 77 (2008) 1105–1134
+(`uploads/S0025-5718-07-02027-3.pdf`), plus Besser's *"Finite and
+p-adic polylogarithms"* (`uploads/0006051v1.pdf`) and Besser–de Jeu
+arXiv:0707.3682 (`uploads/0707.3682v2.pdf`). Habiro's paper was
+already present (`uploads/0605314v1.pdf`).
+
+**qou-9p9y dilog layer COMPLETE.**
+`gswz_coleman_li2_full_precision_probe.py` (8/8) implements the
+Besser–de Jeu algorithm end-to-end:
+
+- **Prop 4.3**: the `g₂`-series of `Li₂^{(p)}(z) = g₂(1/(1−z))`
+  computed to 120 terms in exact rationals; all coefficients verified
+  5-integral, and the Prop 6.1 valuation bound
+  `v₅(a₂,k) ≥ k/4 − log₅k − c(2,5)` gives tail valuation ≫ the 5⁸
+  working precision.
+- **Prop 4.2** (telescoped Frobenius, f = 2 since 25 ≡ 1 mod 24):
+  `Li₂(ζ) = (5⁴−1)⁻¹(5⁴·g₂(1/(1−ζ)) + 5²·g₂(1/(1−ζ⁵)))` at every
+  Teichmüller point of the 5₂ trace field, exact in
+  `(Z/5⁸)[x]/(x³−x²+1)`.
+- **`D₅ = Li₂` at Teichmüller points**: the Iwasawa log kills roots of
+  unity (`24·log ζ = 0`), so the full-precision `D₅` needs no separate
+  log term there.
+
+**Results against printed GSWZ data:**
+
+1. **(273) rows 1 and 3 reproduced at every printed digit** (to 5⁴):
+   `D₅(ζ₂₄)` and `D₅(ζ₂₄⁶)`.
+2. **Row-2 superscript ADJUDICATED**: the cleaner re-extraction shows
+   the pdf's row 2 reads `D₅(ζ₂₄⁵)`, while (274)/(275) decompose over
+   `[ζ₂₄²]`. At full precision the printed digits match `Li₂(ζ₂₄²)` on
+   all 9 compared digits and do **not** match `Li₂(ζ₂₄⁵)` — the
+   printed superscript is a typo in the source; the earlier mod-5³
+   inference (3 digits) is confirmed at 9.
+3. **Internal Frobenius equivariance** `Li₂(ζ⁵) = φ₅(Li₂(ζ))` holds at
+   the full 5⁸ working precision (Galois equivariance of Coleman Li₂
+   exercised through the merged Hensel lift).
+4. **Merged mod-p layer consistency**: `Li₂(ζ)/25 mod 5` equals the
+   Prop-3.2 finite-polylog values for all three targets.
+5. **(274) Bloch-group decomposition upgraded mod 5³ → mod 5⁴**:
+   `c₁·D₅(ζ₂₄) + c₂·D₅(ζ₂₄²) + c₃·D₅(ζ₂₄⁶) = D₅(ξ)` with the printed
+   coefficients, capped only by the two printed digits of `c₂`.
+
+**Remaining on qou-9p9y**: the ε_m units at full precision (the
+étale-Chern-class layer beyond mod p). The dilog bottleneck is gone;
+the harness's number-field membership test can now run at any 5-adic
+precision the printed/derived data supports. Scope-(a); nothing wired.
+PR: #4490.
