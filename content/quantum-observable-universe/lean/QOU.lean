@@ -58,6 +58,9 @@ import QOU.MathlibExt.QDifferenceOperator
 -- and the ratio of two with the same multiplier is q-invariant (elliptic) — the reason the
 -- connection matrix is theta-valued.
 import QOU.MathlibExt.QCharacter
+-- q-Borel theta kernel t_n = q^{C(n,2)} (W2 ∞-Stokes building block): the RSZ q-Borel
+-- transform kernel resolving an integral-slope singularity; recurrence t_{n+1}=q^n·t_n.
+import QOU.MathlibExt.QBorelKernel
 import QOU.HeckeAlgebra
 import QOU.Glossary
 import QOU.Knot.CuspShapeBarParity
