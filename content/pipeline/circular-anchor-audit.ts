@@ -103,6 +103,9 @@ interface LedgerEntry {
   evidence?: string;
 }
 
+const shaOfTop = (rel: string) =>
+  existsSync(rel) ? sha12(readFileSync(rel, "utf8")) : "";
+
 const sha12 = (s: string) => createHash("sha256").update(s).digest("hex").slice(0, 12);
 
 /** Check-shaped identifiers: a key whose NAME asserts a verified property. */
@@ -342,8 +345,13 @@ function main() {
     };
     if (existsSync(ledgerPath)) ledger = JSON.parse(readFileSync(ledgerPath, "utf8"));
 
-    const keyOf = (f: { file: string; criterion: string; symbol: string }) =>
-      `${f.file}::${f.criterion}::${f.symbol}`;
+    // Line IS part of the key: the same symbol can be flagged at several lines
+    // (e.g. two `S_sign_correct` entries), and a symbol-only key silently drops
+    // all but the last via Map(), producing false passes in --check-ledger.
+    // Line drift costs nothing extra — any edit that shifts lines also changes
+    // file_sha, which already invalidates the verdict.
+    const keyOf = (f: { file: string; criterion: string; symbol: string; line: number }) =>
+      `${f.file}::${f.criterion}::${f.symbol}::${f.line}`;
     const prev = new Map(ledger.entries.map((e) => [keyOf(e), e]));
     // Single sha source for BOTH paths. The check path previously fell back to
     // "" when the map missed, which made every stored verdict read as stale.
@@ -358,7 +366,7 @@ function main() {
         const fresh = p && p.verdict !== "needs-agent" && p.file_sha === sha;
         next.push(
           fresh
-            ? { ...p!, line: f.line }
+            ? { ...p! }
             : {
                 file: f.file,
                 criterion: f.criterion,
@@ -394,11 +402,48 @@ function main() {
     }
   }
 
-  if (writeSidecars && !quiet) {
-    console.log(
-      `\n  note: --write-sidecars upserts <block>.qa.json entries; most probes ` +
-        `have no block sidecar, so the ledger is the primary record`,
-    );
+  if (writeSidecars) {
+    // Real upsert (was previously a no-op that only printed a note — a flag
+    // implying writes that never happened). A probe usually has no block
+    // sidecar, so this touches only findings whose file has a sibling
+    // <basename>.qa.json; everything else is reported as skipped, loudly.
+    let wrote = 0;
+    const skipped: string[] = [];
+    const byFile = new Map<string, Finding[]>();
+    for (const f of findings) {
+      const arr = byFile.get(f.file) ?? [];
+      arr.push(f);
+      byFile.set(f.file, arr);
+    }
+    for (const [file, fds] of byFile) {
+      const sidecar = file.replace(/\.py$/, ".qa.json");
+      if (!existsSync(sidecar)) {
+        skipped.push(file);
+        continue;
+      }
+      const sc = JSON.parse(readFileSync(sidecar, "utf8"));
+      sc.criteria ??= {};
+      const scriptSha = sha12(readFileSync("content/pipeline/circular-anchor-audit.ts", "utf8"));
+      for (const f of fds) {
+        sc.criteria[f.criterion] ??= [];
+        sc.criteria[f.criterion].push({
+          field_hash: { py: shaOfTop(file) },
+          result: "fail",
+          reviewer: {
+            kind: "script",
+            id: "content/pipeline/circular-anchor-audit.ts",
+            version: "v1",
+            script_hash: scriptSha,
+          },
+          reviewed_at: new Date().toISOString(),
+          note: f.evidence,
+        });
+      }
+      writeFileSync(sidecar, JSON.stringify(sc, null, 1) + "\n");
+      wrote++;
+    }
+    console.log(`\n  sidecars: ${wrote} written; ${skipped.length} finding-file(s) ` +
+      `have no sibling .qa.json (the ledger is their record)`);
   }
 }
 
