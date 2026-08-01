@@ -61,4 +61,78 @@ theorem legZ_nonneg (μ : YoungDiagram) {c : ℕ × ℕ} (hc : c ∈ μ) : 0 ≤
   have : (c.1 : ℤ) + 1 ≤ (μ.colLen c.2 : ℤ) := by exact_mod_cast h
   linarith
 
+/-! ## Stage 2 — row reflection: `Σ F(arm) = Σ F(left)` -/
+
+/-- Row reflection `(i,j) ↦ (i, rowLen i − 1 − j)` — an involution on cells that
+sends the arm length to the left-count `j`. -/
+def rowRefl (μ : YoungDiagram) (c : ℕ × ℕ) : ℕ × ℕ := (c.1, μ.rowLen c.1 - 1 - c.2)
+
+theorem mem_cells_iff_snd_lt (μ : YoungDiagram) (c : ℕ × ℕ) :
+    c ∈ μ.cells ↔ c.2 < μ.rowLen c.1 := by
+  rw [YoungDiagram.mem_cells]; exact μ.mem_iff_lt_rowLen
+
+theorem rowRefl_mem (μ : YoungDiagram) {c : ℕ × ℕ} (hc : c ∈ μ.cells) :
+    rowRefl μ c ∈ μ.cells := by
+  have hlt : c.2 < μ.rowLen c.1 := (mem_cells_iff_snd_lt μ c).mp hc
+  rw [mem_cells_iff_snd_lt]
+  simp only [rowRefl]
+  omega
+
+theorem rowRefl_invol (μ : YoungDiagram) {c : ℕ × ℕ} (hc : c ∈ μ.cells) :
+    rowRefl μ (rowRefl μ c) = c := by
+  have hlt : c.2 < μ.rowLen c.1 := (mem_cells_iff_snd_lt μ c).mp hc
+  simp only [rowRefl]
+  ext
+  · rfl
+  · simp only; omega
+
+theorem armZ_eq_rowRefl_snd (μ : YoungDiagram) {c : ℕ × ℕ} (hc : c ∈ μ.cells) :
+    armZ μ c = ((rowRefl μ c).2 : ℤ) := by
+  have hlt : c.2 < μ.rowLen c.1 := (mem_cells_iff_snd_lt μ c).mp hc
+  simp only [armZ, rowRefl]
+  omega
+
+/-- **Row reflection.** For any `F`, summing `F(arm)` over the cells equals summing
+`F(left-count j)` — the arm/left multisets agree per row. -/
+theorem sum_armZ_generic (μ : YoungDiagram) (F : ℤ → ℤ) :
+    ∑ c ∈ μ.cells, F (armZ μ c) = ∑ c ∈ μ.cells, F ((c.2 : ℤ)) := by
+  refine Finset.sum_bij' (fun c _ => rowRefl μ c) (fun c _ => rowRefl μ c)
+    (fun c hc => rowRefl_mem μ hc) (fun c hc => rowRefl_mem μ hc)
+    (fun c hc => rowRefl_invol μ hc) (fun c hc => rowRefl_invol μ hc)
+    (fun c hc => by rw [armZ_eq_rowRefl_snd μ hc])
+
+/-! ## Stage 3 — leg reflection via transpose: `Σ F(leg) = Σ F(above)` -/
+
+/-- Legs of `μ` are arms of the transpose (swapped): `leg μ c = arm μᵀ c.swap`. -/
+theorem legZ_eq_transpose_armZ (μ : YoungDiagram) (c : ℕ × ℕ) :
+    legZ μ c = armZ μ.transpose c.swap := by
+  simp only [legZ, armZ, Prod.fst_swap, Prod.snd_swap, YoungDiagram.rowLen_transpose]
+
+/-- Reindex a cell sum by `swap` to the transpose diagram. -/
+theorem sum_swap_transpose (μ : YoungDiagram) (H : ℕ × ℕ → ℤ) :
+    ∑ c ∈ μ.cells, H c.swap = ∑ d ∈ μ.transpose.cells, H d := by
+  refine Finset.sum_bij' (fun c _ => c.swap) (fun d _ => d.swap)
+    ?_ ?_ ?_ ?_ ?_
+  · intro c hc
+    simp only [YoungDiagram.mem_cells, YoungDiagram.mem_transpose, Prod.swap_swap]
+    simpa only [YoungDiagram.mem_cells] using hc
+  · intro d hd
+    simpa only [YoungDiagram.mem_cells, YoungDiagram.mem_transpose] using hd
+  · intro c _; exact Prod.swap_swap c
+  · intro d _; exact Prod.swap_swap d
+  · intro c _; rfl
+
+/-- **Leg reflection.** For any `F`, summing `F(leg)` over the cells equals summing
+`F(above-count i)`. -/
+theorem sum_legZ_generic (μ : YoungDiagram) (F : ℤ → ℤ) :
+    ∑ c ∈ μ.cells, F (legZ μ c) = ∑ c ∈ μ.cells, F ((c.1 : ℤ)) := by
+  have e1 : ∑ c ∈ μ.cells, F (legZ μ c)
+      = ∑ c ∈ μ.cells, (fun d => F (armZ μ.transpose d)) c.swap := by
+    apply Finset.sum_congr rfl
+    intro c _; rw [legZ_eq_transpose_armZ]
+  rw [e1, sum_swap_transpose μ (fun d => F (armZ μ.transpose d)),
+      sum_armZ_generic μ.transpose F, ← sum_swap_transpose μ (fun d => F (d.2 : ℤ))]
+  apply Finset.sum_congr rfl
+  intro c _; simp only [Prod.snd_swap]
+
 end QOU.BraidKnot.PieceA
