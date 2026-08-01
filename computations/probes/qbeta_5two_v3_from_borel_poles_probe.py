@@ -68,10 +68,35 @@ a comfortable PASS — which is exactly why that exclusion is not applied
 here. A spurious-pole guard would have to be pre-registered in a future
 run to count.
 
-The ~0.66 % residual against the published value is a finite-order Padé
-truncation artifact at 24 series orders, not a discrepancy claim: the
-discriminating quantity is the 272x ratio, which no plausible truncation
-error can bridge.
+Why `V₃_measured` is 0.66 % off — it is NOT truncation
+------------------------------------------------------
+The first write-up of this probe called the residual a truncation
+artifact. That was an assertion, and testing it refutes it: Padé orders
+[10/11] → [11/12] move `V₃` by `1.5e-5`, while the offset from the
+published value is `6.6e-3` — **440× larger**. The sequence has converged,
+just not to the published number.
+
+Diagnostic D1 identifies the actual cause. `ζ₁₂` is a *control channel*:
+its value is known independently, so its `|pole| / |true|` ratio measures
+the approximation's own bias. Both channels carry the **same** offset:
+
+    ζ₁₂ (control)      |pole|/|true| = 1.017823998
+    ζ₁₃ (V₃ channel)   |pole|/|true| = 1.017819194
+                                       agree to 4.7e-6
+
+A resurgent Borel transform has a **branch point**, not a pole; Padé can
+only render a cut as a line of poles, and the leading pole sits
+systematically outside the branch point. That bias is multiplicative and
+does not shrink with order — exactly the observed signature.
+
+Calibrating the `V₃` channel by the control channel gives
+`V₃ = −7.670908`, rel dev `0.0029` (from `0.0066`), with the spurious
+imaginary part falling to `−0.032` (0.4 % of `|V₃|`; it must vanish for
+real `V₃`). **This calibration is post-hoc and scores no gate** — it is
+reported as a diagnostic, not folded into the measurement.
+
+Either way the discriminating quantity is the 272× ratio, which no
+plausible approximation bias bridges.
 
 auditOnly; comparison to observed; no fit; nothing wired.
 """
@@ -224,6 +249,28 @@ def main() -> int:
     print(f"       favours {'GGM' if g2 else 'LEGACY'} by {mp.nstr(ratio, 5)}x  "
           f"{'PASS' if g2 else 'FAIL'}")
 
+    # ---- D1 (POST-HOC diagnostic, NOT a pre-registered gate) --------------
+    # Is the residual truncation, or a systematic? Truncation would shrink
+    # with Pade order; it does not (orders [10/11]->[11/12] move by 1.5e-5
+    # while the offset from the published value is 6.6e-3, 440x larger).
+    # The zeta12 channel is a control: its answer is known independently, so
+    # its pole/true radial ratio measures the Pade-vs-branch-point offset.
+    # A resurgent Borel transform has a BRANCH POINT; Pade renders a cut as a
+    # line of poles whose leading pole sits systematically outside it.
+    z13 = V1 - V3_GGM
+    k12 = abs(best12) / abs(z12)
+    k13 = abs(ref["pole"]) / abs(z13)
+    V3_cal = V1 - ref["pole"] / k12
+    d_cal = abs(mp.re(V3_cal) - V3_GGM) / abs(V3_GGM)
+    print("\n[D1] POST-HOC diagnostic (not a gate): Pade branch-point offset")
+    print(f"     zeta12 (control) |pole|/|true| = {mp.nstr(k12, 10)}")
+    print(f"     zeta13 (V3 chan) |pole|/|true| = {mp.nstr(k13, 10)}")
+    print(f"     channels agree to {mp.nstr(abs(k12 - k13) / k12, 3)} "
+          f"-> a common multiplicative systematic, not truncation")
+    print(f"     V3 calibrated by the control channel = {mp.nstr(V3_cal, 12)}")
+    print(f"       rel dev vs published {mp.nstr(d_cal, 5)} "
+          f"(uncalibrated was {mp.nstr(d_ggm, 5)})")
+
     verdict = (
         f"The reality-line pole selection (Im zeta = Vol, mentioning neither "
         f"candidate) measures V3 = {mp.nstr(v3m, 10)}, favouring the published "
@@ -231,8 +278,15 @@ def main() -> int:
         f"{mp.nstr(V3_LEGACY, 10)} by {mp.nstr(ratio, 4)}x in relative "
         f"deviation. Scope-(a): evidence about which V3 the phi_sigma1 series "
         f"knows; NOT a derivation of the legacy literal's provenance, which "
-        f"remains OPEN. Finite-order Pade, so the ~{mp.nstr(d_ggm * 100, 3)}% "
-        f"residual vs GGM is a truncation artifact, not a discrepancy claim."
+        f"remains OPEN. The ~{mp.nstr(d_ggm * 100, 3)}% residual vs GGM is "
+        f"NOT truncation (order-to-order motion is 1.5e-5, 440x smaller): "
+        f"D1 shows both the control channel zeta12 and the V3 channel carry "
+        f"the SAME multiplicative offset {mp.nstr(k12, 8)} to "
+        f"{mp.nstr(abs(k12 - k13) / k12, 3)} -- the Pade-vs-branch-point "
+        f"systematic (a cut rendered as a pole line, leading pole outside "
+        f"it). Calibrating by the control channel gives V3 = "
+        f"{mp.nstr(mp.re(V3_cal), 10)}, rel dev {mp.nstr(d_cal, 4)}. That "
+        f"calibration is POST-HOC and scores no gate."
     ) if g2 else (
         "Reality-line selection does NOT favour the published value - "
         "inspect before use."
@@ -273,6 +327,17 @@ def main() -> int:
         "order_spread_all": mp.nstr(spread, 8),
         "g3_passed": bool(g3),
         "per_order": {f"{m}/{n}": mp.nstr(r["V3"], 12) for (m, n), r in rows},
+    })
+    w.add_data("pade_branch_point_offset_POSTHOC", {
+        "note": "POST-HOC diagnostic, not a pre-registered gate; scores "
+                "nothing. Answers whether the residual is truncation "
+                "(it is not) or a common multiplicative systematic.",
+        "k_zeta12_control": mp.nstr(k12, 12),
+        "k_zeta13_v3_channel": mp.nstr(k13, 12),
+        "channel_agreement": mp.nstr(abs(k12 - k13) / k12, 6),
+        "V3_calibrated": mp.nstr(V3_cal, 15),
+        "rel_dev_calibrated": mp.nstr(d_cal, 8),
+        "rel_dev_uncalibrated": mp.nstr(d_ggm, 8),
     })
     w.add_data("verdict", verdict)
     w.save()
