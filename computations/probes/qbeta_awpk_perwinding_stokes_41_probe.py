@@ -329,7 +329,23 @@ def main() -> int:
     print(f"\n    (ii) Im A_eff ≡ 0 on unit-modulus sheets (amphichiral): "
           f"{unit_bar_even} (max |Im| = {mp.nstr(unit_im_max, 3)})")
 
-    # test (iii): sign flip + ratio on the radial conventions
+    # radius diagnostic: |I(0,e)(q̃_sub)|^{1/e} — if this tends to 1 the
+    # winding sum has radius of convergence 1 in w, and every radial sheet
+    # (|w| = q₀ or q₀²) lies OUTSIDE the convergence annulus: its partial
+    # sums are then divergent exhibits, NOT the analytic continuation. Note
+    # also q₀ = 1.1100 already exceeds q̃^{-1/2} = 1.0535, the natural
+    # index-annulus boundary.
+    radius_diag = {str(e): mp.nstr(abs(Ie_deep_val[e]) ** (mp.mpf(1) / e), 8)
+                   for e in range(4, E_SUB + 1, 4) if Ie_deep_val[e] != 0}
+    print(f"    radius diagnostic |I(0,e)|^(1/e): {radius_diag}")
+
+    # test (iii): sign flip + ratio. The radial conventions lie outside the
+    # empirical convergence annulus (see radius diagnostic), so their rows are
+    # DIVERGENT-PARTIAL-SUM EXHIBITS, recorded for the region-of-validity
+    # finding — no physical conclusion is drawn from them. On the CONVERGENT
+    # domain (|w| = 1) the sum is exactly bar-even, so the winding-refined
+    # σ₁σ₁ Stokes cannot supply a bar-odd part by naive summation at any ϑ:
+    # a bar-odd S requires lateral/analytically-continued data.
     ratio_obs = S_PROTON / S_MUON
     iii = {}
     for cname in ("q0_e_itheta", "q0sq_e_2itheta"):
@@ -339,9 +355,13 @@ def main() -> int:
         ratio = im_pr / im_mu if im_mu != 0 else mp.inf
         iii[cname] = {"im_muon": mp.nstr(im_mu, 12), "im_proton": mp.nstr(im_pr, 12),
                       "sign_flip": bool(flip), "ratio_pred": mp.nstr(ratio, 8),
-                      "ratio_observed": mp.nstr(ratio_obs, 8)}
-        print(f"    (iii) {cname}: sign flip {flip}; Im-ratio p/μ = "
-              f"{mp.nstr(ratio, 8)} vs observed S_p/S_μ = {mp.nstr(ratio_obs, 8)}")
+                      "ratio_observed": mp.nstr(ratio_obs, 8),
+                      "validity": "OUTSIDE convergence annulus — divergent "
+                                  "partial sum, not the analytic continuation; "
+                                  "exhibit only"}
+        print(f"    (iii) {cname} [outside annulus — exhibit only]: sign flip "
+              f"{flip}; Im-ratio p/μ = {mp.nstr(ratio, 8)} vs observed "
+              f"S_p/S_μ = {mp.nstr(ratio_obs, 8)}")
 
     # test (i): deviation of |A_eff| from the u=0 tower value per sheet
     dev = {c: {a: mp.nstr(mp.mpf(s2[c][a]["abs"]) / tower_val, 10)
