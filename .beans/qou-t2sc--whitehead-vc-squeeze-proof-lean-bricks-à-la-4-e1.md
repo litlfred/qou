@@ -1,10 +1,11 @@
 ---
 # qou-t2sc
 title: Whitehead VC squeeze proof — Lean bricks (à la 4₁ E1-E5 / Borromean B1-B5), gated on the positive-sum form
-status: todo
+status: in-progress
 type: task
+priority: normal
 created_at: 2026-08-01T19:45:02Z
-updated_at: 2026-08-01T19:45:02Z
+updated_at: 2026-08-01T20:03:15Z
 ---
 
 
@@ -32,3 +33,16 @@ Target: a WhiteheadVolumeConjecture class (or sorry-free limit theorem)
 mirroring VolumeConjecture41. Multi-session; needs live Lean/LSP. Not started.
 
 Status: TODO (ready to start — gate qou-x76e is CLOSED).
+
+## Progress (2026-08-01) — first bricks landed sorry-free
+
+QOU/Knot/WhiteheadVolumeConjecture.lean (registered in QOU.lean; verified via
+lean-direct, exit 0):
+- catalanG, whiteheadS (van der Veen kernel) — defs
+- whiteheadS_factor_pos, whiteheadS_pos, whiteheadInnerSum_pos — SORRY-FREE
+  (the positive-sum bricks; analogue of FigureEightVolume.kashaevProd_pos)
+- whitehead_volume_conjecture — state-and-queued (sorry + Ref [vanderveen2008])
+
+Remaining (mirror 4₁ E1-E5d / Borromean B1-B5): reduce log whiteheadInnerSum to
+the landed Clausen/log(2 sin) Riemann-sum machinery + a whiteheadS max-term
+saddle-location lemma. Still in-progress.
