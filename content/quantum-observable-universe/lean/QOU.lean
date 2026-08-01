@@ -436,6 +436,7 @@ import QOU.Archimedean.BalancedKernelTightness
 import QOU.Archimedean.BalancedCarrierJacobi
 import QOU.Archimedean.SWJacksonMomentFactorization
 import QOU.Archimedean.SWCoreJacobi
+import QOU.Archimedean.TropicalClassTransport
 import QOU.AlgebraicSubstrate.SubstrateClockUniqueness
 import QOU.AlgebraicSubstrate.PlanckStepAtomicity
 import QOU.AlgebraicSubstrate.AtomicityJetIndependence
