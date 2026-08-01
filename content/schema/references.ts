@@ -7280,6 +7280,63 @@ export const references: CSLData[] = [
     note: "arXiv:1611.09182. Division-algebra (ℝ⊗ℂ⊗ℍ⊗𝕆) construction of one-generation SM structure; SU(3) × U(1) as the unbroken stabilizer inside ℂ⊗𝕆 with correct electric charges from a number operator. Literature route for beans qou-ni4b (SU(3) colour) and the hypercharge target of qou-q377. Uploaded uploads/1611.09182v1.pdf.",
   }),
 
+  // ── Hikami 2004 — colored Jones difference equation (torus knots) ──
+  ref({
+    id: "hikami2004torus",
+    type: "article",
+    title: "Difference equation of the colored Jones polynomial for torus knot",
+    author: [{ family: "Hikami", given: "Kazuhiro" }],
+    "container-title": "arXiv preprint",
+    issued: { "date-parts": [[2004]] },
+    URL: "https://arxiv.org/abs/math/0403224",
+    note: "arXiv:math/0403224. Proves the N-colored Jones polynomial of the torus knot T(s,t) satisfies a q-difference equation, with the relation to the AJ conjecture / quantum A-polynomial. Uploaded uploads/0403224v1.pdf (SM-uploads batch, main 5d1385d1); relevant to the corpus's colored-Jones tower infrastructure, not to the SM appendix directly.",
+  }),
+
+  // ── Baez–Schreiber 2007 — higher gauge theory (2-connections) ──
+  ref({
+    id: "baez-schreiber2007",
+    type: "article",
+    title: "Higher gauge theory",
+    author: [
+      { family: "Baez", given: "John C." },
+      { family: "Schreiber", given: "Urs" },
+    ],
+    "container-title": "arXiv preprint",
+    issued: { "date-parts": [[2005]] },
+    URL: "https://arxiv.org/abs/math/0511710",
+    note: "arXiv:math/0511710. 2-connections on 2-bundles: parallel transport of strings/surfaces via 2-groups; published in Contemp. Math. 431. Literature route for the categorical gauge-action groupoid of app:standard-model (gauge structure one categorical level up). Uploaded uploads/0511710v2.pdf (SM-uploads batch); queued for full read under bean qou-y139.",
+  }),
+
+  // ── Baez–Huerta 2011 — invitation to higher gauge theory ──────
+  ref({
+    id: "baez-huerta2011",
+    type: "article",
+    title: "An invitation to higher gauge theory",
+    author: [
+      { family: "Baez", given: "John C." },
+      { family: "Huerta", given: "John" },
+    ],
+    "container-title": "arXiv preprint",
+    issued: { "date-parts": [[2010]] },
+    URL: "https://arxiv.org/abs/1003.4485",
+    note: "arXiv:1003.4485. Expository companion to higher gauge theory: 2-groups, 2-bundles, string 2-group; published in Gen. Relativ. Gravit. 43 (2011). Uploaded uploads/1003.4485v2.pdf (SM-uploads batch); queued for full read under bean qou-y139.",
+  }),
+
+  // ── Dubois-Violette–Todorov 2018 — exceptional quantum geometry II ──
+  ref({
+    id: "dubois-violette-todorov2018",
+    type: "article",
+    title: "Exceptional quantum geometry and particle physics II",
+    author: [
+      { family: "Dubois-Violette", given: "Michel" },
+      { family: "Todorov", given: "Ivan" },
+    ],
+    "container-title": "arXiv preprint",
+    issued: { "date-parts": [[2018]] },
+    URL: "https://arxiv.org/abs/1808.08110",
+    note: "arXiv:1808.08110. Continuation of dubois-violette2016: the exceptional Jordan algebra J₃(𝕆) route to the SM gauge group with SU(3)×SU(2)×U(1)/ℤ₆ as the J₃(𝕆)-compatible subgroup of F₄ — directly relevant to the Z₆ compatibility battery of conj:sm-hypercharge-invariant and the colour route of qou-ni4b. Uploaded uploads/1808.08110v1.pdf (SM-uploads batch); queued for full read under bean qou-y139.",
+  }),
+
 ];
 
 // ── Lookup helpers ──────────────────────────────────────────────
