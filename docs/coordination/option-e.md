@@ -669,8 +669,8 @@ partition-conjugation parity of the deuteron H₆ Wedderburn sum. No fit; nothin
   `3A−1 > 2(A−1)` is subleading. Lean `MilnorWeightParityConvergence.lean` (sorry-free). Audit
   `2026-08-01-milnor-sign-weight-parity-convergence.md`.
 
-**Three-parity clarification (for siblings).** The corpus now holds **three distinct parity sign-
-readings**, and none derives another: (i) Milnor deficit sign `(−1)^{A−1}` (#4389, cluster deficit;
+**Three-parity clarification (for siblings).** The corpus now holds **three distinct parity
+sign-readings**, and none derives another: (i) Milnor deficit sign `(−1)^{A−1}` (#4389, cluster deficit;
 A=3 proved, A=4 measured); (ii) winding-parity `N(φⁿ)=(−1)ⁿ` (#4401, the **decay/`Im𝔙` S-channel**
 sign, explicitly self-scoped "conjectural mechanism, not a derivation"); (iii) the Ocneanu-weight
 bar-parity `(−1)^{n-1}` (#4387/#4399, the **binding weight class**). (i) and (iii) share the value
@@ -680,4 +680,9 @@ observables.
 
 **Net for the magnitude gate:** the parity thread **narrows the weight class** (symmetric excluded ⇒
 principal specialization) but does **not** touch the standing magnitude gate — the A=3 `~1.6×`
-coefficient (`c₃ = 0.63×μ₃`, `μ₃ = +0.4708`). That coefficient remains the open Track-A gate.
+coefficient (`c₃ = 0.63×μ₃`, `μ₃ = +0.4708`). This orthogonality is now made explicit (scope-(a)
+negative, #4486, probe `a3_magnitude_parity_orthogonal_probe.py`, audit
+`2026-08-01-a3-magnitude-parity-orthogonal.md`): at `n=9` (`sgn=+1`) parity is a **relabeling not a
+rescaling** (R1) and the `c₃` gap lives at the **bare single-trace level**, not the `Δ_λ`-dressing
+level where parity acts (R2). So parity cannot supply the `~1.6×`; that coefficient remains the open
+Track-A gate. **Do not re-try parity for the magnitude.**
