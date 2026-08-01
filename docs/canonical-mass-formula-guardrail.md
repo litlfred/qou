@@ -57,3 +57,39 @@ AGENTS.md banner now points here.
    a derived density; label it so.
 
 Resolution audit: [`docs/audits/2026-06-24-lambda-a-refutation-artifact-audit.md`](audits/2026-06-24-lambda-a-refutation-artifact-audit.md).
+
+## 🗣 Status-claim guard (conversational / audit / strategy) — added 2026-08-01
+
+The compute layer is guarded (facade + `DeprecationWarning`), but the error also recurs in
+**prose** — chat answers, audit docs, strategy notes citing a *remembered* "m_p gap". It
+recurred 2026-08-01 (an agent with this guardrail in context still said "m_p misses ~437× /
+2.89% Vol·ρ gap" in a strategy answer). Root cause: **conflating two different "m_p miss"
+numbers.** Do not.
+
+### ✅ Live status (cite THIS when asked about m_p / absolute-mass accuracy)
+
+**Canonical m_p is CODATA to `+1.35 ppb`** (muon-anchored Hecke energy via
+`canonical_mass.proton_mass_mev()`); m_n `+2.39 ppb`. **Absolute nucleon mass is solved to the
+ppb level.** Source of record: `computations/per-observable-100x-status.witness.json` — cite
+its `err_ppb`, never a remembered figure.
+
+### ⚠ The two numbers that must NEVER be conflated
+
+| number | what it is | cite as m_p status? |
+|---|---|---|
+| **`+1.35 ppb`** | real: canonical de-fitted round-trip. The "**437× miss**" is *this* vs the **3-ppt research-grade** 100× target (m_p's σ_exp is 0.31 ppb, so 100×-of-that is 0.003 ppb). Real but *tiny* — it "misses" only because m_p is measured sub-ppb. | **YES** — this is the live status |
+| **`+2.89% / +2.96% / 966 MeV`** (also `406 MeV / −57%`) | DEPRECATED `Vol(𝓑₃)·λ_A/ℏ_q²` wrong form — a purged fit. **Not a real discrepancy.** | **NEVER** |
+
+**Rule.** When asked "how accurate is m_p / is there an m_p gap", the answer is **1.35 ppb**
+(solved to ppb). Never present `2.89% / 2.96% / 966 / 406 / −57% / "Vol(𝓑₃)·ρ gap" / "λ_scale"`
+as the *live* status. The "437×" is a **research-target** artifact, not a gross discrepancy —
+say so if you cite it. Absolute nucleon mass is **not** where the L2 gap lives; the real L2
+content is the *relations* (μ–p tension m_μ +210 ppb; Q_β/Δ_pn) — see
+[`docs/coordination/2026-08-01-l2-strategy-q0-observed-delta-lambda-scope.md`](coordination/2026-08-01-l2-strategy-q0-observed-delta-lambda-scope.md).
+
+### Machine backstop
+
+[`computations/canonical_mass_status_guard.py`](../computations/canonical_mass_status_guard.py)
+(warn-only; `--strict` fails) scans `content/` + `docs/` for the deprecated absolute-mass
+magnitudes presented near m_p/proton-mass, with an allowlist for this guardrail + the
+deprecation audits. Run it before shipping an audit/strategy doc that discusses m_p accuracy.
