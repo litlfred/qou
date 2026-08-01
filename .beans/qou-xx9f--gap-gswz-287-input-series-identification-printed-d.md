@@ -35,6 +35,29 @@ mismatch has α-components). Computed digits recorded in
    of q-power and ζ₈ factor differences vs [26, Eq. 4]).
 3. Transcription mangling of the (287) digit groups (pypdf).
 
+## Session narrowing (2026-08-02)
+
+1. **Transcription ruled out**: pypdf plain + layout modes agree on all
+   (287) digit groups.
+2. **q^lambda single-exponent hypothesis**: solving the alpha-dependent
+   lambda from the x^1 mismatch CONFIRMS x^2 mod 25 (~6 digits,
+   nontrivial) but FAILS x^3 mod 5 -> the unprinted normalization is a
+   SERIES with a nonzero h^3 term (or the f_5 fibre reading is
+   genuine). No further solve attempted (would be a fit: x^4 unprinted,
+   nothing left to falsify against).
+3. **[26] identified + in uploads**: GZ "Knots, Perturbative Series and
+   Quantum Modularity" = uploads/2111.06645v3.pdf (SIGMA 20 (2024) 055).
+   Its 5_2 series conventions (the ones GSWZ footnote 5 says differ by
+   "factors of q and zeta_8") use different notation — the exact
+   normalization map GZ-(their Eq 4 region)-vs-GSWZ-(281) is the
+   remaining read.
+4. **(281) layout extraction**: f_1^{5_2}(x) = <e^w psi_{0,z,1}(w,x)^3>
+   / sqrt(delta_52) — NO (1+x)^{1/8}-style prefactor visible (unlike
+   the 4_1's (276)); delta_52 vs the printed Phi's sqrt(3a-2) is a
+   CONSTANT ratio (absorbed by C, cannot explain the mismatch).
+5. Owner is eyeballing the pdf for: (a) the f-subscript in (287)
+   (f_5 vs f_1); (b) any factor between (281)'s f_1 and (282)'s Phi_1.
+
 ## Next steps
 
 - Read [26] (= GSWZ's ref for the 5₂ series normalization) if
