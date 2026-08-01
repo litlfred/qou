@@ -603,7 +603,7 @@
 % Keeping only \newif here (shared, static) leaves this preamble fully dumpable
 % into a precompiled .fmt format; the flag must be set live per render, not
 % frozen at format-dump time.
-% 𝔙 removed to prevent pdflatex errors
+\newunicodechar{𝔙}{\mathfrak{V}}
 \newunicodechar{’}{'}
 \newunicodechar{É}{\'E}
 \newunicodechar{⥤}{\rightrightarrows}
@@ -708,6 +708,7 @@ This paper develops the mathematical framework of the Quantum Observable Univers
 \input{chapters/appendix-knot-operations-archimedean}
 \input{chapters/appendix-transfer-matrices}
 \input{chapters/appendix-mass-binding-algorithms}
+\input{chapters/appendix-standard-model}
 \input{chapters/appendix-qvalues}
 \input{chapters/appendix-surreals}
 \input{chapters/appendix-surreals-archimedean}

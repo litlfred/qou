@@ -188,23 +188,10 @@ defined by the vanishing of the first three power sums. Over any algebraically c
   \label{prop:brings-is-qou}
   \blockannot[compiled]{prop:brings-is-qou}{QOU.Brings.brings_is_qou}{quantum-observable-universe/brings-surface/brings-is-qou.md}
   \uses{def:brings-surface, thm:qu-to-qou}
-Bring's surface $\Sigma_4$ (\hyperref[def:brings-surface]{Bring's surface}) determines a quantum observable universe over $R$ (with $30 \in R^{\times}$):
-
-\begin{enumerate}
-  \item \emph{Quantum universe.}  Set $\mathbf{C} =\allowbreak{} \mathrm{Rep}(\mathrm{SU}_{q}(2))$ over $R$, $A = \mathcal{O}_q(\mathrm{SU}(2))$ with Frobenius form given by the Haar state, and $\tau$ the forgetful functor to $R$-$\mathrm{Mod}$. The differential calculus $\Omega^1(A)$ is the Woronowicz $3$-dimensional calculus.
-  \item \emph{Observability.} $\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) =\allowbreak{} 0$ by the quantum Schur lemma. $\mathrm{SU}_q(2)$ has no non-trivial invariants in the adjoint representation.
-  \item \emph{Quantum lifting.}  The brane tower satisfies the quantum lifting condition (\hyperref[prop:yekutieli-lifting]{quantum lifting}). The obstruction classes $\kappa_n \neq 0$ persist at every level by \hyperref[conj:motivic-perpetual-obstruction]{motivic perpetual obstruction} applied with $\chi(A) = -6$.
-  \item \emph{Euler characteristic.}  By \hyperref[thm:qu-to-qou]{QU-to-QOU lifting}, $\chi(A) =\allowbreak{} \mathrm{tr}(\mathrm{id}_A) =\allowbreak{} 2 -\allowbreak{} 2g =\allowbreak{} -6$.
-  \item \emph{Geometric \refterm{descent}} (for $n = 1$, $\dim M_S = 3$):
-\[
-  M_S \xrightarrow{ \mathrm{Reeb}} \Sigma_4
-  \xrightarrow{\pi} \mathbb{P}(V)
-  \xrightarrow{ \mathrm{branch}} \{6 \text{ points}\}.
-\]
-The degree-$4$ covering $\pi$ has $6$ branch points with total ramification $R_{\mathrm{tot}} = 14$ (Riemann–Hurwitz). The ramification profile is determined by the $S_5$-symmetry.
-\end{enumerate}
+Bring's surface $\Sigma_4$ (\hyperref[def:brings-surface]{Bring's surface}) determines a quantum observable universe over $R$ (with $30 \in R^{\times}$).
 \end{proposition}
 
+\phantomsection\label{rem:brings-is-qou-verification}% compact-mode: block excluded
 \begin{lemma}[{Categorical Euler characteristic of $\mathcal{O}_q(\mathrm{SU}(2))$ on Bring's surface}]
   \label{lem:brings-euler-characteristic}
   \blockannot[compiled]{lem:brings-euler-characteristic}{QOU.ArchimedeanUniverse.brings_euler_characteristic}{quantum-observable-universe/brings-surface/brings-euler-characteristic.md}
@@ -521,16 +508,16 @@ The $\mathrm{SO}(3)$ images $R_\alpha,R_\beta$ act on the triple $(\omega_1,\ome
 \begin{proposition}[{Smoothness of the Bring's surface and intrinsic resolution of projection singularities}]
   \label{prop:brings-smoothness-resolution}
   \blockannot[compiled]{prop:brings-smoothness-resolution}{QOU.BringsSurface.brings_smoothness_resolution}{quantum-observable-universe/brings-surface/brings-smoothness-resolution.md}
-  \uses{rem:color-bundles, def:briggs-klein-chart}
-Let $\mathcal{S}$ denote the Bring's surface (\hyperref[def:brings-surface]{Bring's surface}) and $\pi \colon \mathcal{S} \to\allowbreak{} \mathbb{P}^1(\mathbb{C})$ the color projection.
+  \uses{rem:color-bundles}
+Let $\mathcal{S}$ be the Bring's surface (\hyperref[def:brings-surface]{Bring's surface}) with color projection $\pi \colon \mathcal{S} \to\allowbreak{} \mathbb{P}^1(\mathbb{C})$.
 
 \begin{enumerate}
-  \item \textbf{Smoothness.} The three power-sum constraints are transverse in $\mathbb{P}^4$. Consequently, $\mathcal{S}$ is a smooth algebraic variety lacking singular points.
-  \item \textbf{Intrinsic resolution.} At each branch point $z = z_c$ where two color sheets $x_i, x_j$ collide, the local color coordinate $\delta = x_i - x_j$ satisfies $z - z_c \sim \delta^2$. The exceptional divisor of the blow-up at each ramification point is already embedded in the color coordinates. No external resolution is required.
-  \item \textbf{Regularity of the Briggs--Klein chart.} The radial parameter $r = \lvert w_1 \rvert^2$ constitutes a regular function on $\mathcal{S}$. The $C_5$ orbits $w_k \mapsto \zeta^k w_k$ foliate the surface without fixed points for $0 < r < \infty$.
+  \item \textbf{Smoothness.} The three power-sum constraints are transverse in $\mathbb{P}^4$, so $\mathcal{S}$ is smooth.
+  \item \textbf{Intrinsic resolution.} At each branch point $z = z_c$ where two color sheets $x_i, x_j$ collide, the local coordinate $\delta = x_i - x_j$ satisfies $z - z_c \sim \delta^2$; the blow-up's exceptional divisor is already embedded in the color coordinates, so no external resolution is required.
 \end{enumerate}
 \end{proposition}
 
+\phantomsection\label{rem:brings-smoothness-chart-regularity}% compact-mode: block excluded
 \begin{remark}[{Smoothness of Bring's surface and resolution of spacetime defects}]
   \label{rem:brings-smoothness}
   \blockannot[drafted]{rem:brings-smoothness}{}{quantum-observable-universe/brings-surface/brings-smoothness.md}
@@ -568,7 +555,7 @@ After moment (3), the encounter constitutes a knot-theoretic problem. The merged
 
 Once the two vortex cores merge inside a tubular neighbourhood $U \subset M$, the operative geometry is the complement $U \setminus K$. Thurston's hyperbolisation programme proves that, excluding a finite list of exceptions, $U \setminus K$ admits a complete finite-volume hyperbolic structure. A triangulation into ideal tetrahedra $\Delta_{z_k}$ and a system of \emph{gluing equations} in the shape parameters $z_k$ encode this structure.
 
-The algebraic SDP solver of \hyperref[chap:particle-interactions]{Chapter 12} is \textbf{not separate from the hyperbolic-geometry calculation}. It is its $\mathbb{Z}[q^{\pm 1/2}]$-shadow. We establish this via three correspondences:
+The algebraic SDP solver of \hyperref[chap:particle-interactions]{Chapter 12} is \textbf{not separate from the hyperbolic-geometry calculation}. It is its $\mathbb{Z}[q^{± 1/2}]$-shadow. We establish this via three correspondences:
 
 \begin{itemize}
   \item \textbf{Cusps from poles.} The roots of the $q$-Pochhammer denominator $\Phi_n(x; q) =\allowbreak{} \prod_{k=0}^{n-1}(1 -\allowbreak{} x q^k)^{-1}$ seed the Frobenius positivity constraints in the SDP. These roots are in bijection with the ideal vertices of the tetrahedral triangulation of the $\Phi_q$-piece $K_S$ (\hyperref[conj:algebraic-geometric-dilog-equivalence]{pole-to-cusp bijection}(1)).
@@ -594,11 +581,11 @@ Let $r=\lvert w_1\rvert^2$ denote the squared modulus of the first resolvent coo
 \section{Spectral resolvents and gauge structures}
 \label{sec:spectral-gauge}
 \sectionannot{sec:spectral-gauge}
-With the smooth Bring surface and its cyclotomic reduction established, we construct the gauge data. We define the quaternionic spectral resolvents, tying the resolvent basis $\{\omega_k\}$ to the quaternionic structure on the spectral bundle. We state the algebraic identities these resolvents satisfy and specify the $\mathrm{Sp}(1)$ action that organises their evolution.
+With the smooth Bring surface and its cyclotomic reduction established, we construct the gauge data. We introduce the quaternionic spectral resolvents, tying the resolvent basis $\{\omega_k\}$ to the quaternionic structure on the spectral bundle. We state the algebraic identities these resolvents satisfy and specify the $\mathrm{Sp}(1)$ action that organises their evolution.
 
 We construct the Seiberg–Witten data on this basis. We parametrise the Seiberg–Witten differential by lepton generation. We compute the lepton mass integrals. We then provide the abelianisation required to evaluate those integrals via the nonabelian multiplicative integral on exceptional divisors and the Cartan reduction.
 
-The closing blocks bridge to the subsequent section. We fix the color sectorisation in resolvent variables via coordinates $\mathfrak{r}, \mathfrak{g}, \mathfrak{b}$. We extract the categorical braid action and the knot eigenbasis from the spectral data. We define the Descartes elliptic curve $\mathcal{E}_q$ over the spectral plane, which the Descartes condition pins down via $\chi = -6$.
+The closing blocks bridge to the subsequent section. We fix the color sectorisation in resolvent variables via coordinates $\mathfrak{r}, \mathfrak{g}, \mathfrak{b}$. We extract the categorical braid action and the knot eigenbasis from the spectral data. We construct the Descartes elliptic curve $\mathcal{E}_q$ over the spectral plane, which the Descartes condition pins down via $\chi = -6$.
 
 \begin{definition}[{Quaternionic spectral resolvents}]
   \label{def:quaternionic-spectral-resolvents}
@@ -681,7 +668,7 @@ Let $\mathcal{S}_c \cong\allowbreak{} \mathbb{P}^1(\mathbb{C})$ be the exception
     + A^+ \otimes E_+
     + A^- \otimes E_-,
 \]
-with $H, E_\pm$ the standard generators of $\mathfrak{su}(2)$ and $A^0$ a $\mathrm{U}(1)$-valued $1$-form.
+with $H, E_±$ the standard generators of $\mathfrak{su}(2)$ and $A^0$ a $\mathrm{U}(1)$-valued $1$-form.
   \item The Cartan component provides the Seiberg--Witten differential:
 \[
   A^0 = X\, dz = \lambda_{\mathrm{SW}}.
@@ -712,7 +699,7 @@ $1$-form $A\vert _{\mathcal{S}_c}$.  By the weight-space decomposition
   A^- \otimes E_-,
 \]
 
-where $H, E_\pm$ are the standard generators of $\mathfrak{su}(2)$.
+where $H, E_±$ are the standard generators of $\mathfrak{su}(2)$.
 The Cartan component $A^0$ is a $\mathrm{U}(1)$-valued $1$-form on
 $\mathcal{S}_c$.  Since $\mathcal{S}_c \cong\allowbreak{} \mathbb{P}^1(\mathbb{C})$ the spectral curve
 (\hyperref[rem:color-bundles]{color bundles}) restricts to a single sheet, and the
@@ -928,7 +915,6 @@ Let $(\mathbf{C}, A, \tau)$ be a Descartes universe (\hyperref[def:archimedean-c
   \item The braiding of $\mathbf{C} =\allowbreak{} \mathrm{Rep}(\mathrm{SU}_q(2))$ induces a faithful representation $\rho_3\colon B_3 \to\allowbreak{} \mathrm{Aut}_{\mathbf{C}}(V^{\otimes 3})$ on the fundamental representation $V$ (\hyperref[prop:braid-action-tensor]{braid action on tensor products}).
   \item The image of $\rho_3$ in $\mathrm{SU}(2)$ (via the fibre functor $\tau$) is the binary dihedral group $\mathrm{Dic}_3$ of order $12$ (\hyperref[def:su2-generators]{SU(2) generators}).
   \item The composite $B_3 \xrightarrow{\rho_3} \mathrm{Dic}_3 \twoheadrightarrow S_3$ recovers the three copies of $S_3$ inside $S_5 = \mathrm{Aut}(\Sigma_4)$ (\hyperref[rem:chirality-trefoil]{chirality and trefoil}), mapping one to each colour sector.
-  \item This structure holds over any base ring $R$ with $30 \in R^{\times}$. It applies directly to the $\mathfrak{p}$-adic realisation (\hyperref[ex:p-adic-realisation]{$p$-adic realisation}), where knot complements and skein relations remain unavailable.
 \end{enumerate}
 \end{corollary}
 
@@ -943,7 +929,7 @@ $c_{V,V}$ is computed by the $R$-matrix of
 $\mathcal{U}_q(\mathfrak{su}(2))$
 (\hyperref[rem:r-matrix-braiding]{$R$-matrix braiding}), and faithfulness follows from the
 fact that the eigenvalues of $c_{V,V}$ are $q$ and $-q^{-1}$, which
-are distinct for $q \neq \pm 1$.
+are distinct for $q \neq ± 1$.
 
 For \emph{item (2)}, the fibre functor $\tau$ sends the braiding to the
 matrix $\check{R} = P \circ \mathcal{R}$ acting on
@@ -967,20 +953,15 @@ with $30 \in R^{\times}$
 input beyond the hexagon axioms.
 \end{proof}
 
+\phantomsection\label{rem:descartes-braid-structure-generality}% compact-mode: block excluded
 \begin{corollary}[{Knot eigenbasis completeness for a Descartes universe}]
   \label{cor:descartes-knot-eigenbasis}
   \blockannot[compiled]{cor:descartes-knot-eigenbasis}{QOU.Archimedean.descartes_knot_eigenbasis}{quantum-observable-universe/brings-surface/descartes-knot-eigenbasis.md}
   \uses{cor:descartes-braid-structure, thm:jones-markov-trace, prop:knot-eigenbasis-complete}
-Let $(\mathbf{C}, A, \tau)$ be a Descartes universe (\hyperref[def:archimedean-condition]{Descartes condition}) with $\mathbf{C} =\allowbreak{} \mathrm{Rep}(\mathrm{SU}_q(2))$ and $V$ the fundamental representation. The knot-type eigenbasis is complete:
-
-\begin{enumerate}
-  \item \textbf{(Iwahori--Hecke algebra instantiation.)} The Descartes condition forces $\chi(A) = -6$. This sets the genus $g = 4$ and gauge group $\mathrm{SU}_q(2)$ to rank $2$. The $R$-matrix of $\mathcal{U}_q(\mathfrak{su}(2))$ (\hyperref[rem:r-matrix-braiding]{$R$-matrix braiding}) supplies a braiding $c_{V,V}$ on $\mathbf{C}$ with eigenvalues $q$ and $-q^{-1}$. The quotient by the quadratic relation $(c_{V,V} - q)(c_{V,V} + q^{-1}) = 0$ yields the Iwahori--Hecke algebra $H_n(q)$ acting on $V^{\otimes n}$.
-  \item \textbf{(Schur--Weyl decomposition.)} The Descartes condition demands $q$ not be a root of unity (via $6 \in R^{\times}$ and non-degeneracy of the Frobenius form). Consequently, $H_n(q)$ is semisimple (Jimbo's theorem). The $q$-Schur--Weyl decomposition (\hyperref[prop:knot-eigenbasis-complete]{knot eigenbasis completeness}(1)) applies: every $V^{\otimes n}$ decomposes into irreducible summands labelled by two-part partitions $\lambda \vdash n$.
-  \item \textbf{(Braid representation.)} The faithful representation $\rho_3 \colon B_3 \to\allowbreak{} \mathrm{Aut}_{\mathbf{C}}(V^{\otimes 3})$ (\hyperref[cor:descartes-braid-structure]{braid-group structure}(1)) extends to $\rho_n \colon B_n \to\allowbreak{} \mathrm{Aut}_{\mathbf{C}}(V^{\otimes n})$ for all $n$ via \hyperref[prop:braid-action-tensor]{braid action on tensor products}. The Markov trace on the Iwahori--Hecke algebra tower detects every irreducible summand.
-  \item \textbf{(Completeness.)} By the combining theorem (\hyperref[prop:knot-eigenbasis-complete]{knot eigenbasis completeness}), the three inputs—Schur--Weyl decomposition, Alexander surjectivity, and Markov trace detection—yield a complete knot-type eigenbasis for the algebraic direct limit $V_{\mathrm{phys}} =\allowbreak{} \varinjlim V^{\otimes n}$. A finite categorical trace over knot-labelled summands replaces the Feynman path integral.
-\end{enumerate}
+Let $(\mathbf{C}, A, \tau)$ be a Descartes universe (\hyperref[def:archimedean-condition]{Descartes condition}) with $\mathbf{C} =\allowbreak{} \mathrm{Rep}(\mathrm{SU}_q(2))$ and $V$ the fundamental representation. The knot-type eigenbasis of the algebraic direct limit $V_{\mathrm{phys}} =\allowbreak{} \varinjlim V^{\otimes n}$ is complete.
 \end{corollary}
 
+\phantomsection\label{rem:descartes-knot-eigenbasis-derivation}% compact-mode: block excluded
 \begin{proposition}[{The Descartes elliptic curve $\mathcal{E}_q$}]
   \label{prop:descartes-elliptic-curve}
   \blockannot[compiled]{prop:descartes-elliptic-curve}{QOU.Archimedean.descartes_elliptic_curve}{quantum-observable-universe/brings-surface/descartes-elliptic-curve.md}
@@ -1086,7 +1067,7 @@ The preceding sub-section stated the Descartes condition $\chi = -6$ and proved 
   \label{rem:archimedean-chirality}
   \blockannot[drafted]{rem:archimedean-chirality}{}{quantum-observable-universe/brings-surface/archimedean-chirality.md}
   \uses{def:fermion-boson-decomposition}
-The Reeb vector field $\xi$ on the CR manifold $M$ carries a natural orientation. The sign of the contact form $\varTheta(\xi) = 1$ singles out a preferred direction along the vertical distribution. Left-handed and right-handed chiralities correspond to the two orientations of $\xi$ relative to the complex structure of $M$. For fermions (\hyperref[def:fermion-boson-decomposition]{fermion}), the vertical component $\alpha_V$ transforms with a definite sign under reversal of $\xi$. Chirality is therefore encoded in the $\pm$-eigenspaces of the Reeb involution $\xi \mapsto -\xi$. Bosons (\hyperref[def:fermion-boson-decomposition]{boson}), being purely horizontal, are chirality-blind. This is consistent with the observed parity invariance of the electromagnetic and strong interactions. Cf. \cite{nicolaescu2005, petit-2005}.
+The Reeb vector field $\xi$ on the CR manifold $M$ carries a natural orientation. The sign of the contact form $\varTheta(\xi) = 1$ singles out a preferred direction along the vertical distribution. Left-handed and right-handed chiralities correspond to the two orientations of $\xi$ relative to the complex structure of $M$. For fermions (\hyperref[def:fermion-boson-decomposition]{fermion}), the vertical component $\alpha_V$ transforms with a definite sign under reversal of $\xi$. Chirality is therefore encoded in the ±-eigenspaces of the Reeb involution $\xi \mapsto -\xi$. Bosons (\hyperref[def:fermion-boson-decomposition]{boson}), being purely horizontal, are chirality-blind. This is consistent with the observed parity invariance of the electromagnetic and strong interactions. Cf. \cite{nicolaescu2005, petit-2005}.
 \end{remark}
 
 \begin{remark}[{Light cone of an affine chart}]
@@ -1153,34 +1134,18 @@ $(3,5)$ & $4$ & $10_{124}$ & $10$ \\
 Let $(\mathbf{C}, A, \tau)$ be the Descartes universe with $\chi(A) = -6$ and fiber genus $g(\Sigma_4) = 4$. Let $K$ be any knot type appearing as a component of a link produced by a finite sequence of Hopf linkings $\ell_H$, color-tube threadings $\ell_c$, and Skein crossing changes $\sigma$ applied to generators in $\mathcal{G}$. Then:
 
 \begin{enumerate}
-  \item The Seifert genus of $K$ satisfies $g(K) \leq 4$.
+  \item The Seifert genus of $K$ satisfies
+\[
+  g(K) \leq 4.
+\]
   \item $K$ admits a localized knot structure $(c, K) \in \mathrm{Hom}(\mathbf{1}, A^{\mathrm{co}T}) \times \mathrm{Knot}$ at some point $c$.
   \item The localized knot $(c, K)$ descends under $\tau$ to an observable morphism in $\mathbf{C}$: every generated particle interacts with every other generated particle via the categorical braiding.
 \end{enumerate}
 
 No generated knot is "dark"—the generation scheme is closed under observability.
-
-\emph{Hopf linking $\ell_H$ and Color-tube threading $\ell_c$} preserve each component's knot type and Seifert genus. The structures live in the total space and do not increase the genus of any individual component.
-
-\emph{Skein crossing change $\sigma$} alters the Seifert genus by at most $\pm 1$:
-
-\[
-  |g(L_+) - g(L_-)| \leq 1, \qquad
-  g(L_0) \leq \max\{g(L_+), g(L_-)\}.
-\]
-
-While a crossing change might produce a knot of genus $5$, Bring's surface imposes a spectral filter: only knots with $g(K) \leq 4$ admit localized knot structures. The physical state space $V_{\mathrm{phys}} =\allowbreak{} \varinjlim V^{\otimes n}$ vanishes for $g = 5$ descendants because the fibre functor $\tau$ cannot evaluate them.
-
-This spectral filter acts directly at the level of the Skein resolution:
-
-\[
-  q  [L_+] - q^{-1} [L_-]
-  = (q^{1/2} - q^{-1/2}) [L_0].
-\]
-
-Terms with $g > 4$ lie in the kernel of the mass functional $\mathfrak{m}$. The physical mass receives contributions only from embeddable terms. Every knot in the standard dictionary has $g(K) \leq 4$. Skein descendants like $4_1$ typically exhibit lower genus than their parent generators.
 \end{theorem}
 
+\phantomsection\label{rem:embeddability-closure-spectral-filter}% compact-mode: block excluded
 % table: tbl:embeddability-closure-table-data
 \begin{table}[htbp]
   \centering
@@ -1353,83 +1318,9 @@ that both characterisations agree.  $\square$
   \blockannot[compiled]{prop:genus-filtration-ideal}{QOU.Archimedean.genus_filtration_ideal}{quantum-observable-universe/brings-surface/genus-filtration-ideal.md}
   \uses{prop:cohomological-embedding, prop:categorical-dq-squared}
 The genus of the moduli surface is not assumed; it is determined by the Iwahori--Hecke algebra. The QOU axioms force $g = 4$ through a completeness condition on the irreducible representations of $H_2(q) \oplus H_3(q)$. The genus-filtration ideal $\mathfrak{I}_4 = (u^5)$ serves as the algebraic obstruction that kills $T_{2,p}$ for all primes $p \geq 11$.
-
-\paragraph{Part 0: the genus is determined by the algebra}
-
-Let $(\mathbf{C}, A, \tau)$ be a QOU with $G = \mathrm{SU}_q(2)$. The braiding on $V_1^{\otimes n}$ yields the Iwahori--Hecke algebra $H_n(q)$. The relevant strand counts $n = 2$ and $n = 3$ provide $5$ irreducible representations:
-
-\begin{itemize}
-  \item $H_2(q)$ has $2$ irreps: $(2)$ trivial, $(1,1)$ sign.
-  \item $H_3(q)$ has $3$ irreps: $(3)$, $(1,1,1)$, $(2,1)$.
-\end{itemize}
-
-At genus $g$, the embeddable torus knots $T_{r,s}$ with $(r-1)(s-1) \leq 2g$ and $\gcd(r,s) = 1$ are those whose Jones polynomials evaluate on $\Sigma_g$. Completeness requires these evaluations to span all $5$ irrep characters: the evaluation matrix $M_{ij} = \chi_{\lambda_j}(\sigma_i)$ must have rank $5$.
-
-Strand counts $m \geq 4$ contribute no new valid knots under the constraints. Thus, $H_2(q) \oplus H_3(q)$ forms the complete Hecke algebra of the QOU.
-
-See \hyperref[tbl:genus-filtration-ideal-table1-data]{Table 1}.
-
-\begin{itemize}
-  \item At $g = 3$: only $4$ knots are available. The rank is $\leq 4 < 5$, so the set is incomplete. This violates observability.
-  \item At $g = 4$: $T_{2,9}$ and $T_{3,5}$ bring the total to $6$ knots spanning $5$ irreps. The rank is $5$, satisfying completeness.
-  \item At $g \geq 5$: further knots embed but add no new irreps. This redundancy predicts unobserved particles and violates minimality.
-\end{itemize}
-
-Therefore, $g = 4$ is the unique minimal genus where Hecke completeness holds.
-
-\paragraph{Part I: Chebyshev degree = Seifert genus}
-
-The Iwahori--Hecke algebra $H_2(q)$ is generated by $T$ with $T^2 = sT + 1$ where $s = q - q^{-1}$. The generator $T$ has eigenvalues $q$ and $-q^{-1}$. The $p$-th power reduces as:
-
-\[
-  T^p =  a_p \cdot T +  a_{p-1} \cdot \mathbf{1}
-\]
-
-The coefficients $a_n$ satisfy the Chebyshev recurrence $a_{n+1} = s \cdot a_n + a_{n-1}$ with $a_0 = 0$, $a_1 = 1$. Here, $a_p = U_{p-1}(s/2)$. For odd $p$, letting $u = s^2$:
-
-\[
-  a_p(u) = \sum_{j=0}^{(p-1)/2} c_j u^j
-\]
-
-with leading coefficient $c_{(p-1)/2} = 1$. The polynomial degree $\deg_u a_p$ precisely matches the Seifert genus $g(T_{2,p})$:
-
-\[
-  \deg_u a_p =  \frac{p-1}{2} =  g(T_{2,p}).
-\]
-
-Each monomial $u^k$ in $a_p$ represents an independent $1$-cycle of the Seifert surface. When $\deg_u a_p > g$, the polynomial encodes more topology than the surface can hold. This Chebyshev overflow indicates the knot does not fit.
-
-See \hyperref[tbl:genus-filtration-ideal-table2-data]{Table 2}.
-
-The saturation at $a_9$ (degree $4$) and the overflow at $a_{11}$ (degree $5$) reflect the Hecke completeness condition.
-
-\paragraph{Part II: the genus-filtration ideal}
-
-Define the genus-$g$ filtration ideal $\mathfrak{I}_g \subset \mathbb{Z}[u]$ by:
-
-\[
-  \mathfrak{I}_g
-  = \bigl\{ f(u) \in \mathbb{Z}[u] : \deg f > g \bigr\}
-  = (u^{g+1}).
-\]
-
-A torus knot $T_{2,p}$ admits a localized knot structure on $\Sigma_g$ if and only if $a_p \notin \mathfrak{I}_g$. For $g = 4$, $\mathfrak{I}_4 = (u^5)$. Every $T_{2,p}$ with $p \geq 11$ has $a_p \in (u^5)$ because $\deg_u a_p \geq 5$.
-
-\paragraph{Part III: obstruction = leading coefficient}
-
-The obstruction class $\kappa(T_{2,p}) \in H^2(\Sigma_g, \mathbb{Z})$ is the image of the leading monomial of $a_p$ under projection $\pi_g$:
-
-\[
-  \kappa(T_{2,p})
-  = \begin{cases}
-    0 & \text{if } (p-1)/2 \leq g, \\[6pt]
-    c_{(p-1)/2} \cdot [u^{(p-1)/2}] \neq 0 & \text{if } (p-1)/2 > g.
-  \end{cases}
-\]
-
-Since $c_{(p-1)/2} = 1$ for all odd $p$, the obstruction is nonzero for every prime $p \geq 2g + 3 = 11$.
 \end{proposition}
 
+\phantomsection\label{rem:genus-filtration-ideal-derivation}% compact-mode: block excluded
 % table: tbl:genus-filtration-ideal-table2-data
 \begin{table}[htbp]
   \centering
@@ -1807,7 +1698,7 @@ The $\ell$-th Fourier mode acts as a resonance frequency of the trefoil's transv
 The $\mathrm{SO}(3)$ rotation group acts on $\mathbb{R}^3$ and the normal-bundle sections. Mode-$\ell$ sections transform as the irreducible representation $V_\ell$ of $\mathrm{SO}(3)$. The magnetic quantum number $m = -\ell, \ldots, +\ell$ labels the weight spaces relative to the Reeb axis.
 
 \textbf{(4) Spin quantum number $s$.}
-The fiber adjoint involution acts on the normal bundle by exchanging the two orientations of the Hopf link between electron and proton. This involution $\sigma \mapsto -\sigma$ splits each orbital $(n, \ell, m)$ into two eigenspaces ($s = \pm 1/2$), doubling the orbital count to $2n^2$ states per shell.
+The fiber adjoint involution acts on the normal bundle by exchanging the two orientations of the Hopf link between electron and proton. This involution $\sigma \mapsto -\sigma$ splits each orbital $(n, \ell, m)$ into two eigenspaces ($s = ± 1/2$), doubling the orbital count to $2n^2$ states per shell.
 
 \begin{adjustbox}{max width=\linewidth}
 \begin{tabular}{c>{\raggedright\arraybackslash}p{0.411\linewidth}>{\raggedright\arraybackslash}p{0.258\linewidth}}
@@ -1817,7 +1708,7 @@ Quantum number & Fourier origin & Representation \\
 $n$ & Total framing twist $k = 2(n-1)$ & Energy shell \\
 $\ell$ & Fourier mode on $S^1$ & $\mathrm{SO}(3)$ irreducible $V_\ell$ \\
 $m$ & Weight in $V_\ell$ (Reeb projection) & Spherical harmonic $Y_\ell^m$ \\
-$s$ & Fiber adjoint involution eigenvalue & Spin $\pm 1/2$ \\
+$s$ & Fiber adjoint involution eigenvalue & Spin $± 1/2$ \\
 \bottomrule
 \end{tabular}
 \end{adjustbox}
@@ -1898,23 +1789,23 @@ The $\zeta_5$ pentad and the colour trefoil are both parity-even, generating $A_
   \uses{rem:fivefold-symmetry}
 The torus knots embeddable on the moduli surface $\Sigma_g$ form a complete set of representations, exhausting the available cohomology and spanning the space of knot observables.
 
-\textbf{(i) Embeddability = representation.} A torus knot $T_{r,s}$ with $\gcd(r, s) = 1$ admits a representation in $\mathbf{C}$ if and only if its Seifert rank embeds in the first cohomology of $\Sigma_g$:
+\textbf{(i)} \emph{Embeddability = representation.} A torus knot $T_{r,s}$ with $\gcd(r, s) = 1$ admits a representation in $\mathbf{C}$ if and only if its Seifert rank embeds in the first cohomology of $\Sigma_g$:
 
 \[
   \mathrm{rank} H_1(\mathrm{Seifert}(T_{r,s}))
   =  \frac{(r-1)(s-1)}{2}  \leq  g
 \]
 
-\textbf{(ii) Fiber degree.} The maximum fiber degree for $T_{r, p^k}$ on $\Sigma_g$ is:
+\textbf{(ii)} \emph{Fiber degree.} The maximum fiber degree for $T_{r, p^k}$ on $\Sigma_g$ is:
 
 \[
   k_{\max}(r, p, g)
   = \max\!\left\{k : \frac{(r-1)(p^k - 1)}{2} \leq g\right\}
 \]
 
-\textbf{(iii) Completeness.} The Jones polynomials of embeddable torus knots span the space of knot invariants on $\Sigma_g$.
+\textbf{(iii)} \emph{Completeness.} The Jones polynomials of embeddable torus knots span the space of knot invariants on $\Sigma_g$.
 
-\textbf{(iv) Genus 4 is forced.} The QOU axioms require $T_{2,3}$ and $T_{2,9}$ to embed, but $T_{2,11}$ must not. This uniquely forces $g = 4$ and $\chi = -6$.
+\textbf{(iv)} \emph{Genus 4 is forced.} The QOU axioms require $T_{2,3}$ and $T_{2,9}$ to embed, but $T_{2,11}$ must not. This uniquely forces $g = 4$ and $\chi = -6$.
 
 See \hyperref[tbl:cohomological-embedding-table1-data]{Table 1}.
 
