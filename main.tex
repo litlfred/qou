@@ -35,7 +35,7 @@
 \usepackage{algorithm}           % Float environment for pseudocode (algorithm)
 \usepackage{algpseudocode}       % Algorithmic constructs (\State, \For, \If, …)
 \usepackage[normalem]{ulem}      % latexdiff markup (\sout/\uwave); normalem keeps \emph italic
-\usepackage[expansion=false]{microtype}           % Typographic enhancements (character protrusion, font expansion)
+\usepackage{microtype}           % Typographic enhancements (character protrusion, font expansion)
 \usepackage{adjustbox}           % Scale over-wide tables down to \linewidth (loaded after microtype)
 \setlength{\emergencystretch}{3em} % Last-resort inter-word stretch for unbreakable long words/code/URLs
 \usepackage{hyperref}            % Loaded last (after cite, xcolor, etc.)
@@ -702,21 +702,6 @@ This paper develops the mathematical framework of the Quantum Observable Univers
 \input{chapters/information-theory}
 \input{chapters/measurement-observation}
 \input{chapters/q-geometric-langlands}
-
-% ── Appendices ────────────────────────────────────────────────────────────────
-% Chapters below use \chapter*{} (unnumbered) because their manifest carries a
-% tabLabel field.  The starred form suppresses the ToC entry and PDF bookmark.
-% Redefine \chapter to intercept the starred form and automatically add a ToC
-% entry (matching the manual pattern used for "Appendix B. References" below).
-\makeatletter
-\let\@saved@chapter\chapter
-\def\chapter{\@ifstar\@qou@chapterstar\@saved@chapter}
-\newcommand\@qou@chapterstar[1]{%
-  \@saved@chapter*{#1}%
-  \addcontentsline{toc}{chapter}{#1}%
-}
-\makeatother
-
 \input{chapters/glossary}
 \input{chapters/appendix-knot-periodic-table}
 \input{chapters/appendix-knot-operations}
@@ -728,11 +713,6 @@ This paper develops the mathematical framework of the Quantum Observable Univers
 \input{chapters/appendix-qvalues}
 \input{chapters/appendix-surreals}
 \input{chapters/appendix-surreals-archimedean}
-
-% Restore the original \chapter after the appendices that use \chapter*.
-\makeatletter
-\let\chapter\@saved@chapter
-\makeatother
 
 % ── Appendix B: References ─────────────────────────────────────────────────
 \clearpage
