@@ -303,6 +303,14 @@ import QOU.BraidsAndKnots.BorromeanTraceConventionSplit
 -- Canonical trC(β_Bor) derived from the Markov-forced values (rational
 -- seminormal (2,1) rep + Cayley–Hamilton + unique weights); sorry-free.
 import QOU.BraidsAndKnots.BorromeanCanonicalTraceDerivation
+-- D6-upstream color-tube channel class (conj:inter-nucleon-channel-color-tube):
+-- content-bearing §3b-cond weight-tensor class + ε rule + uniform-projection
+-- satisfiability witness + T₁ fiber wiring. Wired so CI type-checks it.
+import QOU.BraidsAndKnots.InterNucleonChannelColorTube
+-- D6 charge conjugation (conj:c-from-color-flavor-swap): C-involution +
+-- ε-invariance proved sorry-free; W-invariance as §3b-cond class field;
+-- derived generator-data C-invariance. Wired so CI type-checks it.
+import QOU.BraidsAndKnots.CFromColorFlavorSwap
 -- Post-τ q-Rogers pentagon: α/β substitution algebra, the log² correction
 -- term, and the q≠1 analytic-continuation conjecture-class.
 import QOU.BraidKnot.QRogersPentagonArchimedean
