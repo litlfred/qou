@@ -266,6 +266,31 @@ theorem innerSum_saddle_scaledLog_diff_tendsto_zero
     have hslack := mul_le_mul_of_nonneg_left hlogmono hscale
     linarith
 
+/-- **Conditional VC (sorry-free).**  IF the scaled log of the saddle TERM
+    converges to `4G`, THEN so does the scaled log of the inner sum — immediate
+    from the capstone (`inner = (inner − saddle) + saddle`, and the difference
+    → 0).  This isolates the single genuinely-open input (the saddle-value =
+    `4G` identification, van der Veen's Clausen/Lobachevsky evaluation) as an
+    explicit hypothesis rather than a `sorry`; discharging that hypothesis via
+    the landed `QOU.Infra.Clausen` machinery closes the Whitehead VC. -/
+theorem whitehead_vc_of_saddle_value
+    (nseq kseq : ℕ → ℕ)
+    (hvalid : ∀ N, 2 ≤ N →
+        (whiteheadS N (nseq N) (kseq N) ≤ whiteheadInnerSum N (nseq N) ∧
+         whiteheadInnerSum N (nseq N) ≤ (N - nseq N) • whiteheadS N (nseq N) (kseq N)))
+    (hnlt : ∀ N, 2 ≤ N → nseq N < N)
+    (hpos : ∀ N, 2 ≤ N → 0 < whiteheadS N (nseq N) (kseq N))
+    (hsaddle : Filter.Tendsto
+        (fun N : ℕ => (2 * π / N) * Real.log (whiteheadS N (nseq N) (kseq N)))
+        Filter.atTop (nhds (4 * catalanG))) :
+    Filter.Tendsto
+      (fun N : ℕ => (2 * π / N) * Real.log (whiteheadInnerSum N (nseq N)))
+      Filter.atTop (nhds (4 * catalanG)) := by
+  have hdiff := innerSum_saddle_scaledLog_diff_tendsto_zero nseq kseq hvalid hnlt hpos
+  have hsum := hdiff.add hsaddle
+  rw [zero_add] at hsum
+  exact hsum.congr (fun N => by ring)
+
 /-- **The Whitehead Volume Conjecture** (van der Veen's theorem):
     `(2π/N)·log|J_N(W)(e^{2πi/N})| → Vol(Whitehead) = 4G`.
 
