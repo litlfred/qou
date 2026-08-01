@@ -94,7 +94,7 @@ def main() -> int:
     print(f"\n Im 𝔙₄₁(real boost u=ln q₀) exact = {mp.nstr(imv_anchor,8)}")
     print(f"   leading (√3/4)(ln q₀)²        = {mp.nstr(lead,8)}   A(real boost) = {mp.nstr(A_real_boost,6)}")
     print(f"   S(muon) target (A=2.054)      = {mp.nstr(S_muon,8)}")
-    exact_does_not_close = imv_anchor < mp.mpf("0.6") * S_muon   # ~half; nowhere near
+    exact_does_not_close = imv_anchor < mp.mpf("0.9") * S_muon   # does not reach S(muon) (here ~0.49×)
 
     # boost enhancement c needed: ImV(c·ln q₀) = S(muon)
     c = mp.findroot(lambda cc: ImV(cc * lnq) - S_muon, mp.mpf("1.43"))
@@ -104,7 +104,8 @@ def main() -> int:
     print(f"   c is NOT √2 (differs {mp.nstr(100*(c-mp.sqrt(2))/mp.sqrt(2),3)}%); no clean origin.")
     print("\n ⇒ spin part Im u≠0 only DECREASES Im 𝔙₄₁=(√3/4)(Re²−Im²), so the gap is")
     print("   UNAMBIGUOUSLY a Re u boost-rapidity enhancement (√A·ln q₀), not a spin part,")
-    print("   not higher volume terms. Deriving c=√A is the irreducible open content (qou-iyj5).")
+    print("   not higher volume terms. Deriving c (≈1.43; leading proxy √A≈1.4332) is the "
+          "irreducible open content (qou-iyj5).")
 
     ok = bool(validated and exact_does_not_close)
 
@@ -115,9 +116,10 @@ def main() -> int:
         "fixed by the proved √3/4 leading, reproduced to 0.18% at u=ln q₀). Result: "
         "Im 𝔙₄₁(real boost u=ln q₀)=0.0047229, A(real boost)=1.002 — the exact potential's "
         "higher terms are negligible (radius 0.96≫u), so it does NOT reach S(muon)=0.009683 "
-        "(A=2.054). Reaching A=2.05 needs Re u=c·ln q₀, c≈1.4305=√A (NOT √2). Since a spin part "
+        "(A=2.054). Reaching A=2.05 needs Re u=c·ln q₀, c=1.4305 (exact solve; leading-quadratic "
+        "proxy √A=1.4332), NOT √2. Since a spin part "
         "Im u≠0 only decreases Im 𝔙₄₁=(√3/4)(Re²−Im²), the gap is UNAMBIGUOUSLY a boost-rapidity "
-        "enhancement, not a spin part or higher volume terms. Deriving c=√A is the open content. "
+        "enhancement, not a spin part or higher volume terms. Deriving c is the open content. "
         "No fit; nothing wired; no instance.")
     wb.set_content_block("conj:binding-qbeta-complex-volume")
     wb.add_data("boost_enhancement_readout", {
@@ -134,7 +136,8 @@ def main() -> int:
         "leading_validated": bool(validated),
         "verdict": ("exact Im 𝔙₄₁ does NOT close the A≈2.05 muon gap (A_real_boost=1.002); the "
                     "gap is a boost-rapidity enhancement Re u=√A·ln q₀ (c≈1.43, not √2), not a "
-                    "spin part or higher volume terms — deriving c=√A is the open content")})
+                    "spin part or higher volume terms — deriving c (exact≈1.4305, leading proxy "
+                    "√A≈1.4332) is the open content")})
     wb.add_assertion("leading_coefficient_validated", str(bool(validated)), "True")
     wb.add_assertion("exact_potential_does_not_close_A205_gap", str(bool(exact_does_not_close)), "True")
     wb.save()

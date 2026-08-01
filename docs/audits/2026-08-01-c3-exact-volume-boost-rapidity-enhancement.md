@@ -51,13 +51,14 @@ The whole c₃ magnitude problem now reduces to one crisp question:
 Everything else is closed or reframed: lattice-sum routes excluded (scope-b, #4503),
 argument map smooth (radius `2 log φ`, #4508), hypersensitivity a `1/u³` extraction
 artifact (#4509), spin part / higher volume terms ruled out (this doc). The open content
-is a single `O(1)` enhancement factor `c = √A ≈ 1.43` of the boost rapidity — **derive it
+is a single `O(1)` enhancement factor `c ≈ 1.4305` (exact solve; leading-quadratic proxy
+`√A ≈ 1.4332`) of the boost rapidity — **derive it
 geometrically (not fit it)**. This does not close the gap, but it is the tightest the
 target has ever been stated.
 
 -- Ref: [manuscript] docs/audits/2026-08-01-c3-uq0-radius-golden-ratio-on-anchor-singularity-refuted.md (#4508)
 -- Ref: [manuscript] docs/audits/2026-08-01-c3-hypersensitivity-is-u3-extraction-artifact.md (#4509)
--- Ref: [manuscript] .beans/qou-iyj5 (the survivor: boost-enhancement A≈2.05 = c=√A≈1.43)
+-- Ref: [manuscript] .beans/qou-iyj5 (the survivor: boost-enhancement A≈2.05, c≈1.4305)
 
 ## Addendum — A is consistent with EXACTLY 2 (c=√2), within the amplification uncertainty
 
