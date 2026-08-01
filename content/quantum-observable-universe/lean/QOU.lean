@@ -436,6 +436,8 @@ import QOU.Archimedean.BalancedKernelTightness
 import QOU.AlgebraicSubstrate.SubstrateClockUniqueness
 import QOU.AlgebraicSubstrate.PlanckStepAtomicity
 import QOU.AlgebraicSubstrate.AtomicityJetIndependence
+import QOU.AlgebraicSubstrate.BarReflectionGridSelection
+import QOU.Archimedean.BarReflectionGridSelectionReal
 import QOU.Archimedean.LoopWeightRealSymmReduction
 import QOU.Archimedean.MarkovGramRealSymm
 import QOU.Archimedean.MatrixSchurCommutant
