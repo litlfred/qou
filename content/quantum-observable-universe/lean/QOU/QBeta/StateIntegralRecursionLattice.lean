@@ -214,4 +214,44 @@ theorem row_zero_top_reduction [inst : Recursion R M A B q I] (hq : q ≠ 0) (m 
     rintro y ⟨k, hk, rfl⟩
     exact ⟨k, lt_of_le_of_lt (Nat.lt_succ_iff.mp hk) hgt, rfl⟩
 
+/-- **Bottom-of-window reduction (m-direction one step, mirror image).**  The
+    bottom index of the order-`max{A,B}` recurrence, `I_{m,0}`, lies in the span
+    of the window *above* it, `{I_{m+1,0}, …, I_{m+max{A,B},0}}`.
+
+    This is the mirror of `row_zero_top_reduction`: it shifts any row-0 index
+    *up* toward a size-`max{A,B}` fundamental domain.  Unlike the top reduction,
+    no case split on `A ≠ B` is needed — the `k = 0` term of
+    `row_zero_recurrence` always carries the unit coefficient
+    `C(B,0)·(−1)^0 = 1`, so `I_{m,0}` is isolated directly:
+
+      `I_{m,0} = (−1)^A q^{A+m}·I_{m+A,0} − ∑_{k=1}^{B} C(B,k)(−1)^k I_{m+k,0}`,
+
+    and every index on the right (`m+A` with `1 ≤ A ≤ max{A,B}`, and `m+k` with
+    `1 ≤ k ≤ B ≤ max{A,B}`) lies in the up-window.  (No `hq` hypothesis: the
+    isolated coefficient is `1`, so no inverse is taken.) -/
+theorem row_zero_bot_reduction [inst : Recursion R M A B q I] (m : ℤ) :
+    I m 0 ∈
+      Submodule.span R {y : M | ∃ j : ℕ, 1 ≤ j ∧ j ≤ max A B ∧ y = I (m + (j : ℤ)) 0} := by
+  have hrec := row_zero_recurrence (R := R) (M := M) (A := A) (B := B) (q := q) (I := I) m
+  rw [Finset.sum_range_succ'] at hrec
+  simp only [Nat.choose_zero_right, Nat.cast_one, pow_zero, mul_one, Nat.cast_zero,
+    add_zero, one_smul] at hrec
+  -- hrec : u • I (m+A) 0 = (∑ k ∈ range B, C(B,k+1)(-1)^(k+1) • I (m+(k+1)) 0) + I m 0
+  have hIm : I m 0
+      = ((-1 : R) ^ A * q ^ ((A : ℤ) + m)) • I (m + (A : ℤ)) 0
+        - ∑ k ∈ Finset.range B,
+            ((B.choose (k + 1) : R) * (-1) ^ (k + 1)) • I (m + ((k + 1 : ℕ) : ℤ)) 0 :=
+    eq_sub_of_add_eq' hrec.symm
+  rw [hIm]
+  apply Submodule.sub_mem
+  · apply Submodule.smul_mem
+    apply Submodule.subset_span
+    exact ⟨A, inst.hA, le_max_left A B, rfl⟩
+  · apply Submodule.sum_mem
+    intro k hk
+    apply Submodule.smul_mem
+    apply Submodule.subset_span
+    exact ⟨k + 1, Nat.succ_pos k,
+      le_trans (Nat.succ_le_of_lt (Finset.mem_range.mp hk)) (le_max_right A B), rfl⟩
+
 end QOU.QBeta.StateIntegral
