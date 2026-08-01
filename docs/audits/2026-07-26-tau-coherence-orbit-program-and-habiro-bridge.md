@@ -292,3 +292,22 @@ checks must be constructed to be able to fail.
 Gate stack status: symmetrization integrality ✓, Frobenius lift ✓,
 Teichmüller ✓, mod-p dilog ✓; remaining for the full membership
 harness (bean qou-9p9y): Coleman Li₂ precision layer + ε_m units.
+
+## Addendum 6 (2026-08-01) — T2: gate run on the corpus binding Habiro tails, 6/6
+
+First in-corpus gate run (`habiro_tail_membership_gate_probe.py`, bean
+qou-1ddd): the binding Habiro tails `D(n)`, n = 4..9, recomputed from
+the q-hook-length na-Stokes period with the corpus's BALANCED
+q-integer convention (anchored against the printed n ≤ 4 table rows —
+the anchor caught an initial unbalanced-convention transcription,
+exactly as designed). All gates pass: integer Laurent coefficients
+(classical-Habiro membership), bar-evenness, the universal `(q−1)²`
+double root, and fibre-level reality at ζ₄.
+
+**New fibre data (observations only, no interpretation claimed):**
+`D(n)(ζ₄)` = −2, 8, −16, 16, −36, **0** and `D(n)(ζ₈)` = −√2, −4, 4,
+8, −20, 24 for n = 4..9. Notable: `D(9)` has an exact modular zero at
+the monodromy point ζ₄ (the α_EM-element zero class), and
+`D(4)(ζ₈) = −√2 = −[2]_{ζ₈}` (the bracket-family fibre value with a
+sign). Both recorded in the witness for the ζ-indexed picture; whether
+either is structural or coincidental is OPEN and not claimed.
