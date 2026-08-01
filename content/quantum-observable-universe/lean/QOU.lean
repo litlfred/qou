@@ -96,6 +96,10 @@ import QOU.Mass.ColorSpectralCubicGeometry
 -- q-free per ColorCubicPowerSums) and degenerates to d/dz at q→1. Candidate operator
 -- only — no jet-tower lift, no C1 identification (beaned qou-d8de/xufp/ailp).
 import QOU.Mass.QDiffProlongationBaseOperator
+-- W1 structural handle: the color spectral cubic is a q-integer curve —
+-- C_z(X) = [1]_z X³ + [2]_z X² + [3]_z X + [4]_z (coefficients = quantum integers),
+-- the reason the base q-shift acts naturally on Σ. Computed from Σ, independent of C1.
+import QOU.Mass.ColorCurveQIntegerForm
 import QOU.Mass.HeckeStokesEigenvalues
 import QOU.Mass.NaStokesKeystone
 import QOU.Mass.BindingHyperbolicRecurrence
