@@ -479,4 +479,59 @@ theorem qcollatz_no_four_odd_cycle_of_lead {R : Type*} [CommRing R] (φ : R →+
     rw [hsplit]; exact mul_le_mul_of_nonneg_right h32 (by positivity)
   omega
 
+/-! ### Uniform `q`-Steiner forced equation (any number of odd steps)
+
+The rungs above (`m = 1, 2, 3, 4`) are instances of one statement. Encoding the
+even runs as a function `r : ℕ → ℕ` and the cycle values as `v : ℕ → R`, the same
+telescoping proves the forced equation for **every** `m` at once: a cyclic word
+with `m` odd steps and runs `r 0, …, r (m-1)` pins its value by
+`((q+1)^{S+m} − [3]^m)·v₀ = N_m`, where `S = runSum m = Σ_{i<m} r i` and `N_m` is
+the `q`-Steiner numerator with recursion `N_{m+1} = [3]·N_m + (q+1)^{S_m + m}`.
+This subsumes `qcollatz_{one,two,three,four}_odd_forces` (e.g. `m = 2` gives
+`[3] + (q+1)^{r₀+1}`, matching `qcollatz_two_odd_forces`). Only the arithmetic
+height bound on `N_m` stays arrangement-dependent — the algebra is uniform. -/
+
+/-- Partial sum of the first `m` even runs, `runSum r m = r 0 + ⋯ + r (m-1)`. -/
+def runSum (r : ℕ → ℕ) : ℕ → ℕ
+  | 0 => 0
+  | m + 1 => runSum r m + r m
+
+/-- The `q`-Steiner numerator for a cyclic word of `m` odd steps with runs `r`:
+    `N₀ = 0`, `N_{m+1} = [3]·N_m + (q+1)^{runSum m + m}`. -/
+def genSteinerNum {R : Type*} [CommRing R] (q : R) (r : ℕ → ℕ) : ℕ → R
+  | 0 => 0
+  | m + 1 => (q ^ 2 + q + 1) * genSteinerNum q r m + (q + 1) ^ (runSum r m + m)
+
+/-- **General odd-chain collapse (arbitrary even runs).** Given the per-step
+    relations `(q+1)^{r i + 1}·v(i+1) = [3]·v i + 1`, the chain of `m` odd steps
+    telescopes to `(q+1)^{runSum m + m}·v m = [3]^m·v 0 + N_m`. -/
+theorem genOddChain {R : Type*} [CommRing R] (q : R) (v : ℕ → R) (r : ℕ → ℕ)
+    (hrel : ∀ i, (q + 1) ^ (r i + 1) * v (i + 1) = (q ^ 2 + q + 1) * v i + 1) :
+    ∀ m, (q + 1) ^ (runSum r m + m) * v m
+      = (q ^ 2 + q + 1) ^ m * v 0 + genSteinerNum q r m := by
+  intro m
+  induction m with
+  | zero => simp [genSteinerNum, runSum]
+  | succ n ih =>
+    have hsplit : runSum r (n + 1) + (n + 1) = (runSum r n + n) + (r n + 1) := by
+      simp only [runSum]; omega
+    have key : (q + 1) ^ (runSum r (n + 1) + (n + 1)) * v (n + 1)
+        = (q ^ 2 + q + 1) * ((q + 1) ^ (runSum r n + n) * v n)
+          + (q + 1) ^ (runSum r n + n) := by
+      rw [hsplit, pow_add, mul_assoc, hrel n]; ring
+    rw [key, ih]
+    simp only [genSteinerNum, pow_succ]
+    ring
+
+/-- **Uniform `q`-Steiner forced equation.** A cyclic word (`v m = v 0`) of `m`
+    odd steps with even runs `r` pins its value:
+    `((q+1)^{runSum m + m} − [3]^m)·v 0 = N_m`. Specialises to every rung above. -/
+theorem genForced {R : Type*} [CommRing R] (q : R) (v : ℕ → R) (r : ℕ → ℕ)
+    (hrel : ∀ i, (q + 1) ^ (r i + 1) * v (i + 1) = (q ^ 2 + q + 1) * v i + 1)
+    (m : ℕ) (hcyc : v m = v 0) :
+    ((q + 1) ^ (runSum r m + m) - (q ^ 2 + q + 1) ^ m) * v 0 = genSteinerNum q r m := by
+  have hchain := genOddChain q v r hrel m
+  rw [hcyc] at hchain
+  linear_combination hchain
+
 end QOU.AppendixSurreals
