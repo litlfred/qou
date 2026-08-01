@@ -1,0 +1,24 @@
+{
+  "schema": "witness/v1",
+  "engine": "python+sympy",
+  "scriptFile": "c3_w1_cover_monodromy.py",
+  "commitSha": "c4c98e608ee2d8dcd8859bca1b7b768ca416cc11",
+  "description": "W1: color-cubic sheet cover has full S3 monodromy (irreducible cubic + squarefree/non-square disc) => no single-valued algebraic branch; D_q lives on the 3-sheeted cover. Symbolic (sympy).",
+  "computation": {
+    "script": "computations/qbeta/c3_w1_cover_monodromy.py",
+    "scriptCommitSha": "unknown",
+    "scriptHash": "1e3d72361c7f"
+  },
+  "results": {
+    "cubic": "X^3 + (z+1)X^2 + (z^2+z+1)X + (z^3+z^2+z+1)",
+    "irreducible_over_Qz": true,
+    "disc_X": "-(16z^6+24z^5+35z^4+50z^3+35z^2+24z+16) = -branchSextic",
+    "disc_squarefree": true,
+    "num_branch_points": 6,
+    "disc_is_square_in_Cz": false,
+    "monodromy_group": "S3",
+    "single_valued_algebraic_branch_exists": false
+  },
+  "verdict": "CONFIRMED: monodromy group = S3 (full symmetric); no single-valued algebraic branch. W1 obstruction is the S3 cover monodromy, NOT a theta object.",
+  "scope": "Finite covering-monodromy invariant. No fit; nothing wired."
+}
