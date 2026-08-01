@@ -1,0 +1,28 @@
+{
+  "description": "Whitehead link colored Jones via van der Veen's positive-sum formula (arXiv:math/0611181, Lemma 1), validated against the independent [Kas95] \u00a73 state sum, and its Volume-Conjecture growth \u2192 Vol(Whitehead)=4G. Positive-sum form (S_{n,k}>0) toward the squeeze proof (bean qou-x76e/qou-t2sc).",
+  "computation": "whitehead_van_der_veen",
+  "audit_only": true,
+  "reference": "van der Veen, Proof of the volume conjecture for Whitehead chains, arXiv:math/0611181 (uploads/0611181v2.pdf), Lemma 1",
+  "whitehead_abcd": [
+    0,
+    1,
+    1,
+    0
+  ],
+  "state_sum_agreement": true,
+  "vol_4G": 3.663862376708876,
+  "growth": {
+    "11": 5.471307361079307,
+    "21": 4.888302279262585,
+    "41": 4.441340466673062,
+    "81": 4.135740848842702,
+    "161": 3.9412578838540613,
+    "321": 3.8231961916648176,
+    "641": 3.753808136405811
+  },
+  "richardson_volume": 3.665213059952634,
+  "richardson_err_vs_4G": 0.0013506832437579774,
+  "positive_sum_kernel": "S_{n,k} = prod_{j=1}^n 2 sin^2((k+j)pi/N)/sin(j pi/N) > 0",
+  "note": "van der Veen PROVES the VC for the Whitehead link in this paper; the positive-sum form is the squeeze-proof ingredient (parallels 4_1 E1-E5 / Borromean B1-B5).",
+  "timestamp": "2026-08-01T19:55:32+00:00"
+}
