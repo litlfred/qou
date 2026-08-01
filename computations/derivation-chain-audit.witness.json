@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-01T21:27:16.705438+00:00",
-  "commitSha": "cb2c02231196a2d0b29f9f8e057a9d9dd33595e3",
+  "computedAt": "2026-08-01T21:37:56.192251+00:00",
+  "commitSha": "8459ccbb6b921e1618ebac4163a437207e5529cc",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -2462,6 +2462,7 @@
         "codata-2022-validation-masses.witness.json",
         "codata-masses.witness.json",
         "codata-reconciliation.witness.json",
+        "color-tube-t1-tensor-decomposition.witness.json",
         "complete-mass-sweep-2026-05-28.witness.json",
         "complex-fibre-cross-ratio.witness.json",
         "complex-volume-unification.witness.json",
