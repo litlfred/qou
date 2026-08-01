@@ -499,3 +499,36 @@ scaling — the `archimedean_expansion_validation` check).
 `(Z/5^W)[α]`-coefficient rings at fibre order m on the GSWZ 5₂
 symbols `[ζ₂₄^k]` — the machinery is now validated end-to-end on CGZ's
 printed data. Queued on `qou-9p9y`.
+
+## Addendum 12 (2026-08-02) — 5-adic cyclic quantum dilog at the Q₂₅ place; PR #4490 MERGED
+
+**PR #4490 merged** (rebase, `ce82d8d`): full-precision Coleman Li₂
+(8/8), 5₂ symmetrization (4/4), Ψ-capstone (4/4 gating + open (287)
+item, bean `xx9f`), CGZ finite-field ε-machinery (4/4, γ = 2). Copilot
+review addressed (2 comments + suppressed bean-body note; the
+zero-fill digit-convention suggestion answered with the canonical
+5-adic-expansion argument rather than weakened).
+
+**New (this branch): `gswz_epsm_5adic_cyclic_qdilog_probe.py` (4/4)** —
+the cyclic quantum dilogarithm run 5-adically at the **Q₂₅ place** of
+the 5₂ trace field (Hensel-split quadratic component ring; the first
+full-product-ring attempt honestly failed — the Q₅ component has
+μ = μ₄ only, so P_{ζ_m} does not live there for m ∤ 4):
+
+- identity (21) exact 5-adically (multiplication-only form; the sweep
+  first hit exact-zero factors at ω-power points, and non-unit
+  inversions — both structural, both fixed by construction not fudge);
+- Teichmüller class extraction total (unit classes mod m-th powers are
+  pure Teichmüller data since 1+5Z₂₅ is m-divisible);
+- **root-difference law verified**: class(P(ζ^r x)) − class(P(x)) =
+  −r·class(1−X) mod gcd(m,24) across all root pairs — per-symbol
+  ε-classes are root-dependent by exactly this law, which is the
+  honest reason only the full Bloch combination is canonical;
+- **structural finding**: within μ₂₄ an m-th root of ζ₂₄^j exists iff
+  gcd(m,24) | j — so the j=1 symbol (hence the c-weighted ξ-class)
+  needs the next unramified Kummer level μ_{24m}; computable base-place
+  pairs (j=2, m=2; j=6, m ∈ {2,3,6}) have their class data recorded in
+  the witness.
+
+Next increments on `qou-9p9y`: the μ_{24m} Kummer level for the j=1
+symbol; bean `qou-xx9f` for the (287) input identification.
