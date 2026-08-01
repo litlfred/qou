@@ -94,10 +94,12 @@ def main() -> int:
     print(f"   dg/dq  (smooth numerator) = {mp.nstr(dg,6)}   [O(1)]")
     print(f"   dc₃/dq (amplified)        = {mp.nstr(dc3,6)}")
     print(f"   dc₃/dq ÷ dg/dq = {mp.nstr(amp,8)}   vs   1/u³ = {mp.nstr(inv_u3,8)}")
+    SMOOTH_BOUND = mp.mpf("10")                     # O(1) scale; dg/dq≈2.37 ≪ this, dc₃/dq≈4e6 ≫
     amp_is_inv_u3 = abs(amp - inv_u3) / inv_u3 < mp.mpf("1e-4")
-    g_is_smooth = abs(dg) < mp.mpf("100")           # O(1), not 1e6
+    g_is_smooth = abs(dg) < SMOOTH_BOUND            # O(1), not 1e6
     print(f"   ⇒ hypersensitivity factor = 1/u³ (extraction divisor): {amp_is_inv_u3}")
-    print(f"   ⇒ numerator g is smooth (|dg/dq|<100): {g_is_smooth}")
+    print(f"   ⇒ numerator g is smooth (|dg/dq|={mp.nstr(abs(dg),4)} < {mp.nstr(SMOOTH_BOUND,3)}): "
+          f"{g_is_smooth}")
     print(f"\n |S_p/S_m| = {mp.nstr(S_ratio,7)} is a ratio of two 1/u³-amplified near-threshold")
     print("   residuals S=g/u³+Vol(4₁) — an extraction artifact, NOT a fundamental")
     print("   geometric ratio. Consistent with the smooth argument-map radius R≈0.962 (#4508).")
