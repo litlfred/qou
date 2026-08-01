@@ -58,3 +58,31 @@ target has ever been stated.
 -- Ref: [manuscript] docs/audits/2026-08-01-c3-uq0-radius-golden-ratio-on-anchor-singularity-refuted.md (#4508)
 -- Ref: [manuscript] docs/audits/2026-08-01-c3-hypersensitivity-is-u3-extraction-artifact.md (#4509)
 -- Ref: [manuscript] .beans/qou-iyj5 (the survivor: boost-enhancement A≈2.05 = c=√A≈1.43)
+
+## Addendum — A is consistent with EXACTLY 2 (c=√2), within the amplification uncertainty
+
+Testing the clean hypothesis `A = 2` (`c = √2`, a candidate two-tetrahedra /
+log-holonomy `u = 2·log M` doubling) against the data:
+
+| `c` | `Im𝔙₄₁` | `A` | miss vs `S(muon)` |
+|---|---|---|---|
+| `1` (meridian boost) | `0.004723` | `1.002` | `−51%` |
+| **`√2` (A=2)** | **`0.009463`** | **`2.007`** | **`−2.27%`** |
+| `1.4305` (fits A=2.054) | `0.009683` | `2.054` | `0.001%` |
+| `2` | `0.018996` | `4.03` | `+96%` |
+
+The `c=√2` (A=2) miss of `2.27%` corresponds to a q₀-shift of only
+**`Δq = 5.7×10⁻¹¹`** — **20× smaller than the q₀ pin precision (~`10⁻⁹`)**. Because
+`S(muon)` is a `1/u³`-amplified near-threshold quantity (#4509, `dS/dq ≈ 4×10⁶`), its
+value is uncertain at the ~2–3% level from the q₀-pin definition alone. **The data
+therefore cannot distinguish `A = 2` from `A = 2.054`.**
+
+**Reframed survivor (hopeful).** The boost-enhancement is **consistent with the clean
+factor `c = √2` (`A = 2` exactly)** — the apparent `2.054` is plausibly the amplified
+image of an underlying `A = 2`. If `A = 2` is a *derived* doubling (the figure-8's two
+ideal tetrahedra, or the `u = 2·log M` log-holonomy convention), the survivor closes:
+the effective boost is `√2·ln q₀` and the `0.054` excess is amplification noise, not
+open physics. **This is a consistency result, not a proof** — deriving the factor-2
+mechanism (two-tetrahedra / holonomy doubling) is the concrete remaining task, and must
+be a *derivation*, not a fit. Next probe (`qou-iyj5`): derive the `A = 2` doubling from
+the figure-8 tetrahedron count / the log-holonomy convention.
