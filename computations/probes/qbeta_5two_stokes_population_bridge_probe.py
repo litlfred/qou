@@ -69,8 +69,11 @@ mp.mp.dps = 60
 Q0_MUON = mp.mpf("1.10997859555733471")
 # Canonical GGM saddle values — computed from the 5₂ cubic, not hardcoded.
 # GGM convention (Im V₁ = Vol) mandated by the Stokes population argument
-# (GGM eqs 82–83). Prior Im V₁ = 1.379 was the H-series extraction convention
-# (V_eff = V_GGM + π²/2) — legitimate for fitting, wrong for Stokes formulas.
+# (GGM eqs 82–83). The prior literal Im V₁ = 1.3790860299 is NOT the H-series
+# extraction convention V_eff = V_GGM + π²/2 = 1.379194309661… — it sits
+# 1.08e-4 away (that identification belongs to V_DOM = 1.37919426157, |Δ| =
+# 4.8e-8, in the median-Borel probe). Im V₁'s provenance remains unexplained;
+# either way it is not the V the published Stokes formulas use.
 from fivetwo_saddle_values import saddle_values  # noqa: E402
 V1, V2, V3 = saddle_values("ggm")
 D_ODD = mp.mpf("-0.007579403739")          # g3 median (proton); muon −2.2e-9
