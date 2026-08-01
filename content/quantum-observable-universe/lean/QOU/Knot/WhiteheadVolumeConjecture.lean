@@ -153,6 +153,32 @@ class WhiteheadVolumeConjectureContext where
     Filter.Tendsto (fun N : ℕ => (2 * π / N) * Real.log (kashaev N))
       Filter.atTop (nhds (4 * catalanG))
 
+/-- **Lower-envelope brick** (lower half of the E1 log-Σ≈max squeeze).  The
+    inner sum dominates any single term `S_{n,k}`, so `log` of the sum is at
+    least `log S_{n,k}` for the saddle index — this is the lower bound that,
+    at the saddle `k* ≈ 5N/6`-analogue, pushes the growth up to the volume. -/
+theorem whiteheadS_le_innerSum {N n k : ℕ} (hN : 2 ≤ N) (hk : k < N - n) :
+    whiteheadS N n k ≤ whiteheadInnerSum N n := by
+  unfold whiteheadInnerSum
+  refine Finset.single_le_sum (f := fun k => whiteheadS N n k) ?_ (Finset.mem_range.mpr hk)
+  intro i hi
+  have : i < N - n := Finset.mem_range.mp hi
+  exact le_of_lt (whiteheadS_pos hN (by omega))
+
+/-- **Upper-envelope brick** (upper half of the E1 squeeze).  The inner sum is
+    at most the term count `(N − n)` times the largest term, so `log` of the
+    sum exceeds `log(max term)` by at most `log(N − n) ≤ log N` — the `± log N`
+    slack that vanishes under `(2π/N)·(·)`. -/
+theorem whiteheadInnerSum_le_card_nsmul {N n : ℕ}
+    {M : ℝ} (hM : ∀ k, k < N - n → whiteheadS N n k ≤ M) :
+    whiteheadInnerSum N n ≤ (N - n) • M := by
+  unfold whiteheadInnerSum
+  calc ∑ k ∈ Finset.range (N - n), whiteheadS N n k
+      ≤ ∑ _k ∈ Finset.range (N - n), M := by
+        apply Finset.sum_le_sum
+        intro k hk; exact hM k (Finset.mem_range.mp hk)
+    _ = (N - n) • M := by rw [Finset.sum_const, Finset.card_range]
+
 /-- **The Whitehead Volume Conjecture** (van der Veen's theorem):
     `(2π/N)·log|J_N(W)(e^{2πi/N})| → Vol(Whitehead) = 4G`.
 
