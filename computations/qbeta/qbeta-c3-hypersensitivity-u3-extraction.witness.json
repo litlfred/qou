@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-01T21:36:04.423670+00:00",
-  "commitSha": "21a03a7031a022fd0118610008252a2cd543a81b",
+  "computedAt": "2026-08-01T21:42:01.201206+00:00",
+  "commitSha": "cecd1165b597de93e7e4bfc560fba120fd9641cb",
   "assertions": [
     {
       "name": "amplification_factor_equals_inv_u3",
@@ -21,8 +21,8 @@
   "durationMs": 12,
   "computation": "qbeta-c3-hypersensitivity-u3-extraction",
   "scriptFile": "qbeta_c3_hypersensitivity_u3_extraction_probe.py",
-  "scriptHash": "501e6898c0e2",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "b5d4d1c21930",
+  "scriptCommitSha": "cecd1165b597de93e7e4bfc560fba120fd9641cb",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
