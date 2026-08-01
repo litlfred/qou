@@ -1,0 +1,43 @@
+{
+ "schema": "probe-witness/v1",
+ "probe": "habiro_tail_membership_gate_probe",
+ "beans": [
+  "qou-1ddd"
+ ],
+ "source": "docs/audits/2026-07-12-lever1-habiro-tail-closed-form.md; GSWZ gate stack (this PR)",
+ "checks": {
+  "anchor_D2_D3_zero": true,
+  "anchor_q2_D4_eq_qm1sq_Phi3": true,
+  "gate_integer_laurent_all_n": true,
+  "gate_bareven_all_n": true,
+  "gate_qm1_sq_double_root_all_n": true,
+  "zeta4_values_real": true
+ },
+ "zeta_fibre_values": {
+  "4": {
+   "zeta4": "-2",
+   "zeta8": "-sqrt(2)"
+  },
+  "5": {
+   "zeta4": "8",
+   "zeta8": "-4"
+  },
+  "6": {
+   "zeta4": "-16",
+   "zeta8": "4"
+  },
+  "7": {
+   "zeta4": "16",
+   "zeta8": "8"
+  },
+  "8": {
+   "zeta4": "-36",
+   "zeta8": "-20"
+  },
+  "9": {
+   "zeta4": "0",
+   "zeta8": "24"
+  }
+ },
+ "scope": "scope-(a): gate exercised on the corpus binding Habiro tails; classical-ring membership automatic for Z[q,1/q]; twisted test queued (qou-9p9y)"
+}
