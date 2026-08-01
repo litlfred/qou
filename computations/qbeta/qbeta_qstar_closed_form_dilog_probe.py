@@ -135,19 +135,15 @@ def main() -> int:
     print(f"\n[N2] R = Q_codata/m_e = {mp.nstr(R, 25)}  (ratio of two measured CODATA inputs)")
     # A handful of natural closed constants — reported to show NONE is forced.
     candidates = {
-        "Vol(4₁)/Vol(3₁?)~=2·Cl₂(π/3)/... n/a": None,
         "2·Cl₂(π/3) [=Vol41]": VOL41_clausen,
         "Cl₂(π/3)": mp.clsin(2, mp.pi / 3),
         "π/2": mp.pi / 2,
         "3/2": mp.mpf(3) / 2,
-        "ln(√e·e^{1/2})=1": None,
         "ζ(2)=π²/6": mp.pi ** 2 / 6,
         "golden φ": (1 + mp.sqrt(5)) / 2,
     }
     cand_report = {}
     for name, val in candidates.items():
-        if val is None:
-            continue
         rel = abs(R - val) / abs(R)
         cand_report[name] = mp.nstr(rel, 4)
         print(f"     |R − {name:20s}|/R = {mp.nstr(rel, 4)}")

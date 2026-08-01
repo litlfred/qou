@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-01T19:27:12.368764+00:00",
-  "commitSha": "98a64d7be6f9b84b2ed69f7ef5d825a43e91a353",
+  "computedAt": "2026-08-01T19:33:57.478667+00:00",
+  "commitSha": "f1cf962a343347beaa30056735b885aaca116330",
   "assertions": [
     {
       "name": "closed_form_recast_reproduces_qstar",
@@ -41,8 +41,8 @@
   "durationMs": 12,
   "computation": "qbeta-qstar-closed-form-dilog",
   "scriptFile": "qbeta_qstar_closed_form_dilog_probe.py",
-  "scriptHash": "f89a28e0c38c",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "b12be0fd6771",
+  "scriptCommitSha": "1005afa9a0552099094ef42717816f61cec58e00",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
