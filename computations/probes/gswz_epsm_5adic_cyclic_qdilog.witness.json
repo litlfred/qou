@@ -1,0 +1,56 @@
+{
+ "schema": "probe-witness/v1",
+ "probe": "gswz_epsm_5adic_cyclic_qdilog_probe",
+ "beans": [
+  "qou-9p9y"
+ ],
+ "source": "CGZ arXiv:1712.04887v3 eqns (8)/(20)/(21) (uploads/1712.04887v3.pdf); GSWZ arXiv:2412.04241v2 eqns (16)/(275) (uploads/2412.04241v2.pdf); finite-field validation: cgz_cyclic_qdilog_unit_probe.py (merged #4490)",
+ "place": "Q_25 component of K_5, ring (Z/5^8)[y]/(y^2+py+r) Hensel-split",
+ "checks": {
+  "component_split_and_omega_order24": true,
+  "identity_21_5adic_exact": true,
+  "teichmuller_extraction_total": true,
+  "root_difference_law": true
+ },
+ "eps_class_data": {
+  "m2_sym2": {
+   "classes_per_root_t": {
+    "1": 1,
+    "13": 0
+   },
+   "class_of_1_minus_X_mod_g": 1,
+   "g": 2
+  },
+  "m2_sym6": {
+   "classes_per_root_t": {
+    "3": 0,
+    "15": 0
+   },
+   "class_of_1_minus_X_mod_g": 0,
+   "g": 2
+  },
+  "m3_sym6": {
+   "classes_per_root_t": {
+    "2": 1,
+    "10": 1,
+    "18": 1
+   },
+   "class_of_1_minus_X_mod_g": 0,
+   "g": 3
+  },
+  "m6_sym6": {
+   "classes_per_root_t": {
+    "1": 4,
+    "5": 4,
+    "9": 4,
+    "13": 4,
+    "17": 4,
+    "21": 4
+   },
+   "class_of_1_minus_X_mod_g": 0,
+   "g": 6
+  }
+ },
+ "xi_class_minimal_root_convention": {},
+ "scope": "scope-(a): P_zeta classes of the 5_2 symbols at the Q_25 place, every m | 24, with the root-difference law verified as the falsifiable theory check; per-symbol classes are root-dependent exactly by -r*class(1-X) (honest caveat: only the full Bloch combination is canonical); no printed target exists for these values \u2014 candidate eps_m data for the harness (bean qou-xx9f gates external adjudication)"
+}
