@@ -53,6 +53,19 @@ STATUS
     N=3,5,7.  (Rejected en route: "drop the last interior column" — face-order
     dependent, validates FIG8_PD only by luck; and outer col-sum=−1 with a(v,f₀)
     kept free — fails N=5,7, the (3.3) a(v,f₀)=0 gauge is genuinely required.)
+  ○ WHITEHEAD needs its CANONICAL 2-bridge diagram, not a braid closure.
+    The §3 state sum is invariant ONLY for a genuine two-strand-tangle
+    presentation; a generic (strand-edge pair, outer face) choice on an
+    arbitrary diagram computes a non-invariant.  Diagnostic (2026-08-01): the
+    braid [1,-2,1,-2,1] closure yields 144 distinct |⟨W⟩|@N=7 across all
+    conventions — no presentation-independent value; even the figure-eight
+    braid gives 51 distinct values, and the correct kashaev_4_1 is recovered
+    only by SPECIFIC conventions (found earlier because kashaev_4_1 was a
+    reference).  Whitehead has no reference value (only the volume target), so
+    the scan is ill-posed.  FIX: build the Whitehead as the b(8,3) 2-bridge
+    (4-plat) diagram — continued fraction 8/3 = [2,1,2] — where the two strand
+    edges e₁,e₂ ARE the two bridges (canonical, no scan).  Then link_invariant_tn
+    gives ⟨W⟩_N cheaply and (2π/N)log|⟨W⟩_N| → 4G validates it.  [next unit]
   ○ Whitehead cannot be cross-checked via the U_q(sl₂) Markov-trace engine:
     closure_invariant VANISHES at the root of unity (vanishing quantum
     dimension), and the non-zero Kashaev normalization is only coded for 4₁
