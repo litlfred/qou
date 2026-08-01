@@ -1,0 +1,83 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-08-01T21:05:21.627809+00:00",
+  "commitSha": "1dceaaa456e0e533e7aa3da91b9a86db0c24c634",
+  "assertions": [
+    {
+      "name": "det_control_holds",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "det S+ = 1 at every test point (SL(3) control on the assembled matrix)"
+    },
+    {
+      "name": "symmetry_does_not_generalize",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "(S01+S10)/S00 spread 2.522 > 1e-8 across q in [0.10, 0.40] — not constant"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 22,
+  "computation": "qbeta-l15q-rank3-generalization",
+  "scriptFile": "qbeta_l15q_rank3_generalization_probe.py",
+  "scriptHash": "fd34bca60e42",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
+  },
+  "description": "Bean qou-l15q: tests whether the 4_1 Stokes structure constant (S12 + S21 = 3*S11, exact q-series identity certified in #4447) generalizes to rank 3 via 5_2. It does NOT: the direct transcription (S01+S10)/S00 varies with q, so GGM eq-65 is rank-2-specific and no rank-3 symmetry constant exists. det S+ = 1 does generalize (control). Consequence: the q-independence of A_omega = 3 is a rank-2 property, not a general law — a scope limitation on #4447. Under the one rank-general reading (classical q->0 (sigma1,sigma2) entry: 3 for 4_1, 4 for 5_2) both 'why 3' candidates are refuted (|disc| predicts 23, |Alexander middle coeff| predicts 3, entry is 4) — conditional on that reading, which is natural but not derived. Uses the corpus's own certified 5_2 assembly; adds no new Stokes construction. No fit; nothing wired.",
+  "contentBlock": "conj:im-q-physical-role",
+  "data": {
+    "ratio_by_q": {
+      "0.10": "1.558135377503428",
+      "0.18": "3.661603625635386",
+      "0.25": "4.079816012464928",
+      "0.32": "2.556500189721441",
+      "0.40": "3.396509554110181"
+    },
+    "det_by_q": {
+      "0.10": "1.0",
+      "0.18": "1.0",
+      "0.25": "1.0",
+      "0.32": "1.0",
+      "0.40": "1.0"
+    },
+    "ratio_spread": "2.5216806",
+    "symmetry_generalizes": false,
+    "classical_entries": {
+      "4_1_sigma1sigma2_at_q0": 3,
+      "5_2_sigma1sigma2_at_q0": 4,
+      "source": "GGM 2012.00062 eq 60 (4_1) and eq 100a (5_2)"
+    },
+    "candidate_verdicts": {
+      "A_disc_trace_field": {
+        "predicts_5_2": 23,
+        "refuted": true
+      },
+      "B_alexander_middle": {
+        "predicts_5_2": 3,
+        "refuted": true
+      },
+      "conditional_on": "the classical q->0 (sigma1,sigma2)-entry reading of A_omega, which is natural but NOT derived"
+    },
+    "scope_limitation_on_4447": "the exact q-independence of A_omega = 3 is rank-2-specific; #4447's result stands for 4_1 but is not a general law",
+    "method_note": "at q=0.25 the ratio is 4.079816, within 0.0798 of 4 — a single-point test would have falsely confirmed a constant 4",
+    "verdict": "THE 4₁ STRUCTURE CONSTANT DOES NOT GENERALIZE TO RANK 3. For 5₂ the direct transcription (S₀₁+S₁₀)/S₀₀ varies across q (spread 2.522 over q ∈ [0.10, 0.40]) — it is not a constant, so GGM's eq-65 symmetry is genuinely rank-2-specific and there is no rank-3 'symmetry constant'. det S⁺ = 1 DOES generalize (control passed). CONSEQUENCE FOR #4447: the q-independence that made A_ω = 3 an exact structure constant is a rank-2 property, NOT a general feature — that result stands for 4₁ but must not be read as a general law. Under the one rank-general reading (the classical q→0 (σ₁,σ₂) entry: 3 for 4₁, 4 for 5₂), BOTH 'why 3' candidates are REFUTED — |disc| predicts 23, |Alexander mid coeff| predicts 3, and the entry is 4. Scope: that reading is the natural one but is a reading, not a derivation; the refutation is conditional on it. Method note: at q=0.25 the ratio is 4.08, so a single-point test would have falsely read as a constant-4 hit. No fit; nothing wired."
+  }
+}

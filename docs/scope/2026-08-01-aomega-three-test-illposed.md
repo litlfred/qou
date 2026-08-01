@@ -141,6 +141,67 @@ Recommendation: do **not** run the link test as a candidate-adjudicator — it c
 do that job. Run it only if a *derived* rule for "which Stokes datum is `A_ω`"
 exists first, in which case 5₂ becomes available too and is the better test.
 
+
+## Addendum 2 (same day): the rank-3 question is now ANSWERED — and both candidates are refuted
+
+Rather than leave the arc blocked, the two testable pieces were run directly on the
+corpus's own certified 5₂ assembly (`qbeta_5two_stokes_barodd_index_probe.S_pm_num`,
+GGM §6 eqs 24–29 with the |q|>1 glue eq 25). Probe:
+[`qbeta_l15q_rank3_generalization_probe.py`](../../computations/probes/qbeta_l15q_rank3_generalization_probe.py).
+
+### The 4₁ structure constant does NOT generalize
+
+Direct rank-3 transcription of eq (65), `(S₀₁ + S₁₀)/S₀₀`, across five q:
+
+| q | 0.10 | 0.18 | 0.25 | 0.32 | 0.40 |
+|---|---|---|---|---|---|
+| ratio | 1.5581 | 3.6616 | **4.0798** | 2.5565 | 3.3965 |
+
+Spread **2.52** — emphatically not constant. `det S⁺ = 1` at every point (control:
+the assembly is sound). So GGM's eq (65) is genuinely **rank-2-specific**: there is
+no rank-3 "symmetry constant", and route 2 of the original note is closed negatively.
+
+**Scope limitation on #4447 — recorded against my own merged result.** The property
+that made `A_ω = 3` interesting there was its *exactness and q-independence*. That
+property is a **rank-2 accident, not a general law**. #4447's identity stands for 4₁
+(it is an exact certified q-series identity), but it must not be read as evidence of
+a deep general structure. The Lean (`symmetryConstant_const`) is unaffected — it
+proves *if* a family satisfies the symmetry *then* the constant is q-independent,
+which remains true and is simply not instantiated at rank 3.
+
+### Method note — why single-point testing would have lied
+
+At `q = 0.25` the ratio is **4.0798**, within 0.08 of the classical value 4. A
+single-point check there would have read as a clean hit for "constant 4". The
+multi-point spread shows it is a **crossing**, not a constant. Recorded because the
+same trap (small sample masquerading as structure) has now bitten this arc twice —
+first the pre-asymptotic e ≤ 28 window in #4433, now this.
+
+### Both "why 3" candidates are refuted
+
+The one reading of `A_ω` that is well-defined at every rank is the **classical
+(q→0) (σ₁,σ₂) Stokes entry**: 3 for 4₁ (eq 60) and **4** for 5₂ (eq 100a). Under it:
+
+| candidate | 5₂ prediction | actual | verdict |
+|---|---|---|---|
+| (A) \|disc(trace field)\| | 23 | 4 | **refuted** |
+| (B) \|Alexander middle coeff\| | 3 | 4 | **refuted** |
+
+**Conditional on that reading**, which is natural (it is what GGM's eqs 60/100a give
+and it reproduces the 4₁ value) but is a *reading, not a derivation*. Nothing here
+derives that `A_ω` must be that entry — so this is a scope-(a) refutation of two
+identifications, not a proof that no arithmetic identification exists.
+
+### Where the arc stands now
+
+- Rank-3 generalization: **defined** (the classical (σ₁,σ₂) entry) and **not** a
+  symmetry constant. 5₂ is re-opened: `A_ω(5₂) = 4`.
+- Both cheap arithmetic candidates: **dead**.
+- Still open: deriving *why* the classical entry takes the value it does, and
+  deriving that `A_ω` is that entry rather than another datum. The honest next
+  question is whether 3 and 4 are BPS/DT counts (GGM's own interpretation of Stokes
+  constants as integer invariants), which is a literature question, not a fit.
+
 ## Cross-references
 
 - Bean `qou-l15q` (re-scoped by this note); predecessor `qou-bbsy` (#4447).
