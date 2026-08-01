@@ -1,0 +1,193 @@
+{
+  "description": "Strand-twist hypercharge battery (def:strand-twist-datum step b/c): helon-style candidate-space enumeration for Y = 2(T/3 - I3) against the SM first-generation spectrum, Z6 compatibility, and nucleon-doublet GMN.",
+  "computation": "strand-twist-y-battery",
+  "exploratory": true,
+  "wired_to_production": false,
+  "search_space": {
+    "multisets_per_flavour": 10,
+    "assignments_enumerated": 10000,
+    "twist_range": [
+      -1,
+      0,
+      1
+    ],
+    "strands_per_fermion": 3,
+    "normalisation": "Q_twist = totalTwist/3 (colour-tube charge quantum; fixed, not tuned)"
+  },
+  "z6_condition": "tau/3 + w/2 + Y/2 integral (Baez-Huerta)",
+  "z6_sm_table_ok": {
+    "u_L": true,
+    "d_L": true,
+    "nu_L": true,
+    "e_L": true,
+    "u_R": true,
+    "d_R": true,
+    "nu_R": true,
+    "e_R": true
+  },
+  "survivors_count": 4,
+  "survivors_per_flavour_multisets": {
+    "u": [
+      [
+        0,
+        1,
+        1
+      ]
+    ],
+    "d": [
+      [
+        -1,
+        -1,
+        1
+      ],
+      [
+        -1,
+        0,
+        0
+      ]
+    ],
+    "nu": [
+      [
+        -1,
+        0,
+        1
+      ],
+      [
+        0,
+        0,
+        0
+      ]
+    ],
+    "e": [
+      [
+        -1,
+        -1,
+        -1
+      ]
+    ]
+  },
+  "bar_negation_note": "Antiparticle consistency Y(fbar) = -Y(f) holds identically for Y = 2(T/3 - I3) under (T, I3) -> (-T, -I3); it is a structural property of the candidate form, not a battery outcome, and is therefore not scored as a check.",
+  "survivors_full": [
+    {
+      "assignment": {
+        "u": [
+          0,
+          1,
+          1
+        ],
+        "d": [
+          -1,
+          -1,
+          1
+        ],
+        "nu": [
+          -1,
+          0,
+          1
+        ],
+        "e": [
+          -1,
+          -1,
+          -1
+        ]
+      },
+      "nucleon": {
+        "T_p": 3,
+        "T_n": 0,
+        "p_ok": true,
+        "n_ok": true
+      }
+    },
+    {
+      "assignment": {
+        "u": [
+          0,
+          1,
+          1
+        ],
+        "d": [
+          -1,
+          -1,
+          1
+        ],
+        "nu": [
+          0,
+          0,
+          0
+        ],
+        "e": [
+          -1,
+          -1,
+          -1
+        ]
+      },
+      "nucleon": {
+        "T_p": 3,
+        "T_n": 0,
+        "p_ok": true,
+        "n_ok": true
+      }
+    },
+    {
+      "assignment": {
+        "u": [
+          0,
+          1,
+          1
+        ],
+        "d": [
+          -1,
+          0,
+          0
+        ],
+        "nu": [
+          -1,
+          0,
+          1
+        ],
+        "e": [
+          -1,
+          -1,
+          -1
+        ]
+      },
+      "nucleon": {
+        "T_p": 3,
+        "T_n": 0,
+        "p_ok": true,
+        "n_ok": true
+      }
+    },
+    {
+      "assignment": {
+        "u": [
+          0,
+          1,
+          1
+        ],
+        "d": [
+          -1,
+          0,
+          0
+        ],
+        "nu": [
+          0,
+          0,
+          0
+        ],
+        "e": [
+          -1,
+          -1,
+          -1
+        ]
+      },
+      "nucleon": {
+        "T_p": 3,
+        "T_n": 0,
+        "p_ok": true,
+        "n_ok": true
+      }
+    }
+  ],
+  "honest_gap": "Candidate-space feasibility only. The framework carries no per-chiral-fermion framed braid words; deriving the twist multisets from framework states (rather than enumerating them) is the open content of conj:sm-hypercharge-invariant. Q_twist == crossing-derived Q was checked only on the nucleon doublet composites, where the appendix records derived Q and I3."
+}
