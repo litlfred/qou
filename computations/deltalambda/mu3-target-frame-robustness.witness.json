@@ -1,11 +1,11 @@
 {
   "schema": "witness/v1",
-  "producer": "qou/computations/deltalambda/mu3_target_frame_robustness_probe.py",
+  "producer": "computations/deltalambda/mu3_target_frame_robustness_probe.py",
   "computation": "mu3-target-frame-robustness",
   "description": "Frame-robustness of the \u03bc\u2083 (A=3 magnitude) target. \u03bc\u2083 = \u03c1_strong(3) \u2212 \u03c1_grad(3) is a small residual (\u22480.47) that is a difference of two O(3.5) numbers, so \u2014 like g\u2082=1+r \u2014 it inherits an \u22487\u00d7 amplified sensitivity to the subtracted baseline. Measured across three legitimate deuteron-normalized A-scaling baselines (graded coinvariant dimension = CORPUS #4300, balanced quantum dimension, classical q\u21921) the SIGNS (\u03bc\u2083>0, \u03bc\u2084<0) are robust but \u03bc\u2083's MAGNITUDE swings by a factor comparable to / exceeding the 1.6\u00d7 gap the closure attempts target. Hence the '1.6\u00d7 A=3 magnitude gap' is baseline-CLASS-relative, not absolute. scope-(a) CAVEAT (not a refutation of the principled graded-dimension route): closure attempts must state their baseline. Anti-fit STRICT; nothing wired; exact (mpmath).",
   "audit_only": true,
   "tier": "scope-(a) frame-robustness measurement (baseline-class spread of the \u03bc\u2083 target); no fit; nothing wired",
-  "scriptHash": "cd31a2d377f5deb8",
+  "scriptHash": "69916f543be15697",
   "result": {
     "substrate": {
       "q0": "1.10997859555733471",
@@ -66,7 +66,8 @@
       "mu4_spread_factor": "2.06841",
       "gap_factor_min": "1.58508",
       "gap_factor_max": "2.7367",
-      "signs_robust_mu3pos_mu4neg": true
+      "signs_robust_mu3pos_mu4neg": true,
+      "mu3_spread_exceeds_corpus_gap": true
     },
     "raw_rho_strong": {
       "rho_strong_convention": "raw AME B(A)/B(\u00b2H)",
@@ -122,7 +123,8 @@
       "mu4_spread_factor": "1.93645",
       "gap_factor_min": "1.58861",
       "gap_factor_max": "2.74023",
-      "signs_robust_mu3pos_mu4neg": true
+      "signs_robust_mu3pos_mu4neg": true,
+      "mu3_spread_exceeds_corpus_gap": true
     },
     "verdict": {
       "mu3_baseline_class_spread_factor": "1.72654",
@@ -139,5 +141,5 @@
     "builds_on": "#4320 (simplex \u03bc\u2083), #4364 (c\u2083=0.63\u03bc\u2083 lift), #4300 (graded dim), damping-wall (sign robustness), the g\u2082/r frame-artifact thread (#4319)",
     "no_fit": true
   },
-  "scriptCommitSha": "uncommitted"
+  "scriptCommitSha": "ddc0bb5f6def472d73f191f44eda32cf3bdb9ec5"
 }
