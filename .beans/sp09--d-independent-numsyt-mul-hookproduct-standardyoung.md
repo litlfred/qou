@@ -66,3 +66,28 @@ Next-session recipe: extend SytMathlibBridge.lean (imports custom SYT already):
 add `import QOU.Mathlib.HookLengthFormula` there (check it's not in HLF's cone —
 likely fine, it's a leaf bridge), prove part 1 + finish part 2's equiv, then the
 downstream `numSYT_mul_hookProduct_bridged`.
+
+## PART 2 DONE 2026-08-01 (the hard half) — SYT equiv sorry-free
+
+`QOU.BraidKnot.numSYT_eq_numStandardYoungTableaux` LANDED (SytMathlibBridge.lean,
+lean-direct exit 0, commit 45c351bbc1):
+  numSYT μ = numStandardYoungTableaux μ
+via row_mono/col_mono + toMathlib (BraidKnot→Mathlib SSYT+BijOn) +
+toBraidKnot_toMathlib/toMathlib_toBraidKnot round-trips + mathlibSYT_ext +
+Nat.card_congr. This closes the SYT-encoding bridge — the piece I'd flagged as
+the real work.
+
+REMAINING (mechanical, ~1 short session):
+1. Part 1: hookProduct μ = YoungDiagram.hookLengthProduct μ. Exact proof (from my
+   reverted StandardYoungTableau attempt, reuses PieceA idea):
+     armFilter_card / legFilter_card (filter = image of Finset.Ioo; my
+     PieceA.armZ_eq_card in ℕ) + Finset.prod_congr on cells. ~40 lines.
+2. Final assembly (DOWNSTREAM file, e.g. new QOU/BraidKnot/NumSYTHookBridge.lean
+   importing SytMathlibBridge + QOU.Mathlib.HookLengthFormula — leaf, no cycle):
+     numSYT_mul_hookProduct_bridged μ : numSYT μ * hookProduct μ = μ.card.factorial
+     := by rw [numSYT_eq_numStandardYoungTableaux, hookProduct_eq_hookLengthProduct,
+             show μ.card = μ.cells.card from rfl];
+        exact QOU.Mathlib.numStandardYoungTableaux_mul_hookLengthProduct μ
+   (the sorried QOU.BraidKnot.numSYT_mul_hookProduct in StandardYoungTableau.lean
+    stays as the honest cited sorry, OR is re-pointed once the downstream lands.)
+   Needs the full HookLengthFormula cone built to verify (~40 modules).
