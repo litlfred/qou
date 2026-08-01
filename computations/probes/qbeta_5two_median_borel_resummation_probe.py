@@ -93,8 +93,21 @@ def main() -> int:
     p_num, p_den = mp.pade(b, 11, 12)
     poles = mp.polyroots([p_den[i] for i in range(len(p_den) - 1, -1, -1)],
                          maxsteps=200, extraprec=80)
-    zeta12 = 1j * (V1 - V2)
-    zeta13 = 1j * (V1 - V3)
+    # ζ = V_i − V_j, with NO explicit i (corrected 2026-08-01). The Borel-Padé
+    # pole is convention-free data; it sits at 0.0753 + 5.7566j. Testing both
+    # forms against it in the published GGM convention:
+    #
+    #   V₁ − V₂     = 0 + 5.656244j   rel dev 0.0222   <- matches
+    #   1j·(V₁ − V₂) = −5.656244 + 0j  rel dev 1.436    <- 90° off
+    #
+    # The explicit `1j *` here was calibrated against the corpus's LEGACY
+    # i-rotated V (which put Vol in Re V₁): i·(V₁−V₂)_legacy = 5.656j, i.e.
+    # the legacy rotation exactly cancelled this factor. The 2026-07-30
+    # migration to saddle_values("ggm") switched V but kept the `1j *`,
+    # double-rotating by 90° and breaking the resurgence gate (rel 0.0222 →
+    # 1.369). The stale committed witness hid the regression.
+    zeta12 = V1 - V2
+    zeta13 = V1 - V3
     print("\n[1] Borel–Padé [11/12] pole map vs predicted Stokes points:")
     print(f"    predicted ζ₁₂ = {mp.nstr(zeta12, 8)}   ζ₁₃ = {mp.nstr(zeta13, 8)}")
     best12 = min(poles, key=lambda p: abs(p - zeta12))
