@@ -712,3 +712,34 @@ magnitude anomaly; the missing `1.585×` structure lives elsewhere. Lean
 `def`s. Probe/witness `milnor-exact-coefficient.witness.json`; audit
 `2026-08-01-deltalambda-milnor-exact-coefficient.md`. Nothing wired; μ̄ extracted
 never fit; `free_parameters = 0`.
+
+**2026-08-01 — Milnor exact-order coefficient: POSITIVE Magnus realization —
+`μ̄(12…A) = ±1 ≠ 0` PROVED via the faithful nilpotent (elementary-matrix)
+representation; the surviving coefficient is off-diagonal / trace-invisible (the
+positive counterpart of #4480 Route B).** (Branch
+`claude/milnor-exact-order-coefficient-proof-2026-08-01`; continues #4471/#4480,
+complements DD-1 `MilnorVassilievGrading`.) Attacked the honest sub-target
+"length-A Milnor leading coefficient ≠ 0". **PROVED (sorry-free, 0 free params,
+`MilnorMagnusCoefficient.lean`):** evaluating #4471's *Lie* iterated-commutator
+tower `iterCommTower` on the **Magnus generators** `c_i = E_{i,i+1}` (elementary
+matrices in `Mₙ(R)`, the faithful strictly-upper-triangular / free-2-step rep)
+telescopes to a single off-diagonal elementary matrix:
+`iterCommTower_magnusGen : iterCommTower magnusGen n = (−1)ⁿ • E_{0,n+1}`, hence
+the tower is NONZERO (`iterCommTower_magnusGen_ne_zero`) and its `(0,n+1)` Magnus
+coordinate — Milnor's `μ̄(12…(n+2))` — equals `(−1)ⁿ = ±1`
+(`milnorMagnusCoeff_eq`, `milnorMagnusCoeff_ne_zero`). This is Milnor's classical
+`μ̄(12…A)=±1≠0`, **derived** (matrix computation), not fitted, at the natural
+Vassiliev degree `A−1` (matching DD-1's `milnorVassilievDegree`). **Positive
+counterpart to Route B:** the surviving coefficient sits in the off-diagonal
+`(0,A)` entry — a NON-cyclic coordinate functional — whose cyclic *trace* is `0`
+(`trace_magnusGen_realization_eq_zero`, off-diagonal), in exact agreement with
+#4480's `cyclic_trace_kills_iterCommTower`. Sharpens the wall: the leading
+coefficient EXISTS and is nonzero *as an algebra element*; it is the cyclic trace
+that annihilates it, NOT the coefficient that vanishes. **Does NOT close
+`MilnorExactOrderConjecture`** (the QOU *Markov-trace* deficit `D_A`'s leading
+coefficient ≠ 0): identifying the off-diagonal Magnus coefficient `±1` with the
+Markov-trace deficit coefficient is the Bar-Natan / Habegger–Masbaum
+Milnor = leading-Vassiliev bridge (`BrunnianVassilievBridge`, instance-less),
+Mathlib-inaccessible — CITED, not axiomatised. No conjecture instance fabricated;
+the trace-normalised `μ̄_A = (3/4)(−2)^{A−3}` (#4480) stays MEASURED. lean-direct
+exit 0. `free_parameters = 0`. Open follow-up: bean `qou-v7ro` (bridge Magnus coeff → Markov-trace deficit coeff).
