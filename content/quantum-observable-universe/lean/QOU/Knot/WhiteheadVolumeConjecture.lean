@@ -179,6 +179,23 @@ theorem whiteheadInnerSum_le_card_nsmul {N n : ℕ}
         intro k hk; exact hM k (Finset.mem_range.mp hk)
     _ = (N - n) • M := by rw [Finset.sum_const, Finset.card_range]
 
+/-- **Saddle-packaging brick** (E1 at the saddle).  There is a maximizing index
+    `k*` in the summation range whose single term brackets the whole inner sum
+    within the term-count factor: `S_{n,k*} ≤ Σ_k S_{n,k} ≤ (N−n)·S_{n,k*}`.
+    Taking `(2π/N)·log`, the two sides differ by `(2π/N)·log(N−n) → 0`, so the
+    volume limit is governed by the single saddle term `S_{n,k*}` — the exact
+    reduction the Clausen max-value analysis then evaluates. -/
+theorem whiteheadInnerSum_saddle {N n : ℕ} (hN : 2 ≤ N) (hn : n < N) :
+    ∃ kmax, kmax < N - n ∧
+      whiteheadS N n kmax ≤ whiteheadInnerSum N n ∧
+      whiteheadInnerSum N n ≤ (N - n) • whiteheadS N n kmax := by
+  have hne : (Finset.range (N - n)).Nonempty := ⟨0, Finset.mem_range.mpr (by omega)⟩
+  obtain ⟨kmax, hkmem, hkmax⟩ := Finset.exists_max_image (Finset.range (N - n))
+    (fun k => whiteheadS N n k) hne
+  refine ⟨kmax, Finset.mem_range.mp hkmem, ?_, ?_⟩
+  · exact whiteheadS_le_innerSum hN (Finset.mem_range.mp hkmem)
+  · exact whiteheadInnerSum_le_card_nsmul (fun k hk => hkmax k (Finset.mem_range.mpr hk))
+
 /-- **The Whitehead Volume Conjecture** (van der Veen's theorem):
     `(2π/N)·log|J_N(W)(e^{2πi/N})| → Vol(Whitehead) = 4G`.
 
