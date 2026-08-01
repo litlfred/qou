@@ -1,72 +1,81 @@
-# Branch selection on Σ is the Birkhoff connection matrix — transcendental, theta-valued (2026-08-01)
+# Branch selection: finite S₃ cover monodromy (W1) vs. the theta Birkhoff matrix of the C1 module (W2) (2026-08-01)
 
 **Branch:** `claude/qdiff-prolongation-scaffold-2026-08-01` (PR #4449). **Feeds:** the W1
-wall of the C1↔SW leg (bean `qou-d8de`). **Analysis + literature mapping — converts the
-"which sheet continues X" wall into a cited transcendental invariant; no new Lean here.**
+wall of the C1↔SW leg (bean `qou-d8de`). **Analysis + literature mapping. Contains a
+self-correction (v2) of an earlier over-reach; see §Correction.**
 
-## The wall, localized
+## Sources (owner upload commit 715ccc8, with citation corrections)
 
-The five W1 Lean bricks on #4449 reduce the q-difference prolongation `D_q` on the color
-spectral curve `Σ = {C_z(X)=0}` to a single obstruction. From
-`ColorCurveQPartials.qPartialZ_on_curve`: on `Σ`, the q-shift defect is
-`Δ_q^z C(X,z) = C_{qz}(X)`, and from `ColorCurveSheets.defect_eq_shifted_sheet_product`
-it factors as `(X−Y₁)(X−Y₂)(X−Y₃)` over the three sheets `Yᵢ` of `C_{qz}`. So a genuine
-`D_q` must **select which sheet `Yᵢ` continues `X`** under `z ↦ qz`, single-valuedly and
-globally.
+The owner uploaded five PDFs to `uploads/` for this front. **Two of my earlier arXiv
+IDs were wrong** and are corrected here:
 
-## What the literature says this object is
+- `0104249v1.pdf` is **Zudilin, "Irrationality of values of the zeta-function"** — NOT
+  Sauloy (my `math/0104249` citation was wrong; unrelated to q-difference connection theory).
+- `9408045v1.pdf` is **Barcelos-Neto–Dargam, "Constrained analysis of topologically
+  massive gravity"** — NOT Etingof (my `hep-th/9408045` citation was wrong).
+- `AFST_2007_6_16_3_665_0.pdf` = **van der Put–Reversat, "Galois theory of q-difference
+  equations"**, Ann. Fac. Sci. Toulouse XVI-3 (2007) 665–718 — genuine, relevant.
+- `Equations_aux_q-differences.pdf` = **Di Vizio–Ramis–Sauloy–Zhang, survey** (French) —
+  genuine; carries the Birkhoff connection-matrix recipe (§3.3, p. 34).
+- `Birkhoff-GeneralizedRiemannProblem-1913.pdf` = **Birkhoff 1913** — genuine.
 
-The three sheets of `Σ` are the solution space of a **rank-3 first-order q-difference
-system** whose characteristic polynomial is `C_z(X) = [1]_z X³ + [2]_z X² + [3]_z X + [4]_z`
-(the q-integer form, `ColorCurveQIntegerForm`). "Which sheet continues `X`" is the
-**monodromy** of this q-difference module — and for q-difference equations the monodromy
-is not a homotopy representation but the **Birkhoff connection matrix** `P(x)` relating the
-canonical solution bases at `0` and `∞`:
+## The DRSZ recipe (survey p. 34), stated correctly
 
-- **van der Put–Singer** (LNM 1666, 1997): the difference-Galois group *is* this monodromy;
-  a single-valued algebraic branch would require a **trivial/reducible** Galois action.
-- **Sauloy** (Ann. ÉNS 36, 2003; [math/0104249](https://arxiv.org/abs/math/0104249)) and
-  **Birkhoff** (1913): the connection matrix `P(x)` is `q`-elliptic (`P(qx)=P(x)`), so its
-  entries live on the elliptic curve `ℂ*/qℤ`.
-- **Etingof** ([hep-th/9408045](https://arxiv.org/abs/hep-th/9408045)): the entries of
-  `P(x)` are explicit **Jacobi theta quotients** `θ(·)/θ(·)`.
-- **Ramis–Sauloy–Zhang**, Astérisque 355 (`uploads/0903.0853v3.pdf`): the local wild part
-  (slopes / q-Gevrey Stokes) at the ramified singularities — already used in the corpus
-  for the C1/GGM slope comparison (`2026-07-20-qlift-routeA-rsz-invariants.md`,
-  `ThetaSlopeArithmetic.lean`).
+For a **Fuchsian** q-difference system `σ_q Y = A(x) Y` with `A(0), A(∞) ∈ GLₙ(ℂ)`, the
+canonical local solutions are `X^{(0)} = M^{(0)} e_{q,A(0)}` (meromorphic on `ℂ`) and
+`X^{(∞)} = M^{(∞)} e_{q,A(∞)}` (on `S∖{0}`), where `M^{(•)}` is the regular part
+(`σ_q M = A M A(•)⁻¹`, `M(•)=I`) and `e_{q,A}` is the q-character of the exponents (built
+from `θ_q`, `e_{q,c}(qx)=c·e_{q,c}(x)`). The **Birkhoff connection matrix**
 
-## Consequence — the wall is transcendental *by theorem*, not by difficulty
+  `P(x) = (X^{(∞)}(x))⁻¹ X^{(0)}(x)`
 
-The connection matrix is **generically transcendental** (theta-valued): a single-valued
-*algebraic* branch selection exists only on the measure-zero locus where `P(x)` degenerates
-to a scalar/permutation. So:
+is meromorphic on `ℂ*`, `σ_q`-invariant (**elliptic**), with **Jacobi-theta-quotient
+entries** — the q-analogue of the monodromy matrix, but not complex-valued.
 
-- The branch datum `D_q` needs is **not a rational function** of `(X,z)` — it is a
-  theta-valued connection matrix. This is why the calculus/algebra approach (the five
-  bricks) *localizes* but cannot *close* W1.
-- **This matches the deformation-gap audit** (`2026-07-11-qbeta-c3-barodd-nz-deformation-gap.md`):
-  the `dc₃/dq ≈ 4.7×10⁶` near-singularity and the excluded smooth deformation are the
-  *same* transcendence — the `z(q₀)` argument map is the evaluation of a theta-valued
-  connection datum, not an algebraic one.
-- It also **connects to existing repo theta structure**: the FKV/Faddeev `Φ_b` modular
-  double (`FaddeevModularDouble`, `PhiBProd*`) is built from exactly these Jacobi theta
-  quotients. The branch-selection connection matrix and the Faddeev theta are the same
-  transcendental family — a genuine structural link between the A_ω leg and the c₃ wall.
+## Correction (v2) — two different objects; do not conflate them
 
-## Honest status update (per "conditional-proved ≠ premise-established")
+An earlier version of this doc claimed the **branch-selection datum** "which sheet `Yᵢ`
+continues `X`" is this theta-valued Birkhoff matrix. **That was an over-reach.** The
+Birkhoff matrix is the invariant of a genuine (transcendental) q-difference **module**.
+The SW **sheets are algebraic** (roots of the cubic `C_z(X)`), and they are **distinct at
+the fixed points of `z↦qz`**:
 
-W1's residual is **not** "open geometry of unknown type." It is a **specific, cited
-transcendental invariant**: the Birkhoff connection matrix of the rank-3 q-difference module
-on `Σ`, with theta-quotient entries. What remains is *formalization/derivation* of that
-matrix — a theta-function computation, not an algebraic one — and it is honestly beyond a
-Lean session (Mathlib has no q-difference module / Birkhoff-connection theory). This does
-**not** mark W1 closed; it upgrades the wall from "open" to "transcendental invariant,
-literature-identified," and pins the exact object.
+- at `z=0`: `C₀(X) = (X+1)(X²+1)`, roots `{−1, i, −i}` — distinct; `disc_X C_z|₀ = −16 ≠ 0`,
+  so `z=0` is **not** a branch point;
+- at `z=∞`: `C(z, zw)/z³ → (w+1)(w²+1)`, so `X ~ z·{−1, i, −i}` — distinct.
 
-**Next honest step (if resumed):** compute the connection matrix `P(x)` for the specific
-rank-3 module of `C_z(X)` symbolically (theta quotients, via Sauloy's Fuchsian recipe), and
-check whether its degeneration locus meets the substrate `q₀` — the q-difference analog of
-the RSZ route-A slope computation, one level up (connection matrix, not just Newton polygon).
+Hence the sheet continuation is **locally single-valued at both fixed points**, and the
+only obstruction to a global single-valued branch is the **finite covering monodromy**:
+the representation `ρ : π₁(ℂ* ∖ {6 branchSextic zeros}) → S₃`, restricted to how the
+`z↦qz` orbit winds around the 6 branch points. **This is finite (S₃), not theta-valued.**
+The (−1)ⁿ ramification parity proved on main (`Brings.RamificationParityMonodromy`) is the
+**sign character** of exactly this `ρ`.
+
+**So the two walls carry different transcendence:**
+
+| Wall | Object | Monodromy | Type |
+|---|---|---|---|
+| **W1 branch selection** | algebraic sheet cover of `C_z(X)` | `ρ : π₁ → S₃` around 6 branch pts | **finite** |
+| **W2 symbol** | the C1 q-difference **module** (RSZ route-A `L1`) | Birkhoff matrix `P(x)` | **theta-valued** |
+
+The deformation-gap transcendence (`dc₃/dq ≈ 4.7×10⁶`) and the FKV/Faddeev `Φ_b` theta
+family live at the **W2/module** level (C1's connection matrix), **not** at W1. W1 is a
+finite combinatorial-topological problem — more tractable than the earlier claim implied.
+
+## Honest next steps (re-scoped)
+
+- **W1 (finite):** compute `ρ : π₁(ℂ*∖{6 pts}) → S₃` for the color-cubic cover, and the
+  `z↦qz` orbit's winding, to decide when a global single-valued branch exists. Finite;
+  builds on `RamificationParityMonodromy`. This is the genuine W1 target — not theta.
+- **W2 (theta):** compute the Birkhoff matrix `P(x)` of the C1 module `L1` via the DRSZ
+  recipe. Caveat: RSZ route-A found `L1` is Fuchsian at `0` but **slope-½ irregular at ∞**,
+  so the pure-Fuchsian recipe gives the `0`-side canonical solution; the `∞`-side needs the
+  q-Gevrey/Stokes treatment (RSZ Astérisque 355). Partial (0-side) is tractable; the full
+  matrix needs Stokes.
+
+Neither is closed here. This doc corrects the object identification and re-scopes both
+walls; it does **not** mark W1 closed. No new Lean; no fit; nothing wired.
 
 -- Ref: [manuscript] docs/audits/2026-07-20-zgeometric-prolongation-symbol-scoping.md (W1)
--- Ref: [ramis-sauloy-zhang-2013] https://arxiv.org/abs/0903.0853 (local q-difference classification)
+-- Ref: [manuscript] uploads/Equations_aux_q-differences.pdf (DRSZ survey §3.3, Birkhoff matrix)
+-- Ref: [manuscript] uploads/AFST_2007_6_16_3_665_0.pdf (van der Put–Reversat, q-difference Galois)
