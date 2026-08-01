@@ -67,7 +67,7 @@ theorem superPoly_add_left {f g : ℕ → ℕ} (hf : SuperPolynomial f) :
     factors never lower the ω-grade. -/
 theorem superPoly_mul_of_one_le {f g : ℕ → ℕ} (hf : SuperPolynomial f)
     (hg : ∀ n, 1 ≤ g n) : SuperPolynomial (fun n => f n * g n) :=
-  hf.of_le (fun n => Nat.le_mul_of_pos_right (f n) (hg n))
+  hf.of_le (fun n => Nat.le_mul_of_pos_right (f n) (Nat.lt_of_lt_of_le Nat.zero_lt_one (hg n)))
 
 /-! ## The physical cost sits at a strictly higher grade than any budget -/
 
