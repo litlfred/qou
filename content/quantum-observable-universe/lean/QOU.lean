@@ -399,6 +399,12 @@ import QOU.QBeta.BerezinianCrossTermParity
 -- −(t − σt), so the bar-even diagonal mass A contributes nothing — c₃ is carried entirely
 -- by the cross-term t = B·D⁻¹·C (isolates the q_cubic=C1 wall to the cross-term).
 import QOU.QBeta.BerezinianBarOddIsolation
+-- A=3 magnitude r*≈1.585 is a FREE parameter of the Berezinian cross-term: the even-face
+-- correction (A−t)/A with t=B·D⁻¹·C is surjective in the off-block B (crossTerm_magnitude_surjective),
+-- while block-diagonal/single-trace data gives correction ≡ 1 (no lift). So the cross-term is the
+-- unique lift source but its size is unconstrained — r* is a fit absent the DM-cubic derivation of
+-- B,C (qou-jqof). Magnitude complement to the parity bricks (Isolation/CrossTermParity).
+import QOU.QBeta.SuperBerezinianA3Magnitude
 -- c₃ Faddeev tetraplectic→combinatorics reduction backbone: the q²-shift functional
 -- equation of the single-lattice product ∏(1+q^{2n+1}x) (telescoping), the recurrence
 -- that pins the e_k = q^{k²}/(q²;q²)_k coefficients (Python witness cross-checks k≤6).
