@@ -35,8 +35,8 @@ $\zeta_n = w^{1-2n}(1 + O(w^n))$ reads $\zeta_n = \tilde q^{\,2n-1}(1 + O(\tilde
 | Z3 | **Refinement.** $\theta_n = -\kappa(w)\,w^n + O(w^{3n})$. | **derived + measured** (leading term derived in §1.5, remainder order measured) |
 | Z4 | **Exact algebra.** The recentring identity, the Jacobi-triple-product theta limit, the defect expansion, and the telescoping q-shift cancellation. | **exact** (probe A1, 9 samples, to working precision; **Lean** for the four algebraic cores) |
 | Z5 | **The master bound** $\lvert D_n(u)\rvert \le B_n(u)\lvert G(u)\rvert$ with $B_n$ in closed form. | **proved**; verified to dominate at 72 samples, tightest slack $0.9998$ |
-| Z6 | **Certified $n_0(w)$.** From closed-form, grid-free majorants M1/M2. $n_0 = 2, 4, 10, 19, 54, 109$ at $w = 0.3, 0.5, 0.7, 0.8, 0.9, 0.94$; at the muon pin $w = \tilde q^{-1} \approx 0.949167$, $n_0 = $ **135**. | **proved + computed** |
-| Z7 | The naive single-term Rouché at the geometric-mean radius closes **only** for $w < w_0 \approx 0.4535$ and never improves with $n$. | **scope-(a)** statement about *that argument* (§4) |
+| Z6 | **Certified $n_0(w)$.** From closed-form, grid-free majorants M1/M2. $n_0 = 2, 4, 10, 19, 54, 109, 267$ at $w = 0.3, 0.5, 0.7, 0.8, 0.9, 0.94, 0.97$; at the muon pin $w = \tilde q^{-1} \approx 0.949167$, $n_0 = $ **135** (bound $1.13\times10^{-3}$). | **proved + computed** |
+| Z7 | The naive single-term Rouché at the geometric-mean radius closes **only** for $w < w_0 \approx 0.4559$ and never improves with $n$. | **scope-(a)** statement about *that argument* (§4) |
 
 **The residual named in `TropicalClassTransport` §3 and `u1-promotion` §4 gap 2
 is closed** — with the honest qualification of Z1: the theorem is a statement
@@ -196,9 +196,9 @@ factors cancel, leaving $(w;w^2)_\infty/(w^2;w^2)_\infty \sim \sqrt{2t/\pi}$ wit
 $t = \ln(1/w)$, so $\kappa \to 2/\pi$ as $w \to 1^-$, and $\kappa \to 1$ as
 $w \to 0^+$. Measured (probe A3):
 
-| $w$ | 0.3 | 0.5 | 0.7 | 0.8 | 0.9 | 0.94 | pin | $2/\pi$ |
-|---|---|---|---|---|---|---|---|---|
-| $\kappa(w)$ | 0.810362 | 0.742127 | 0.692319 | 0.671749 | 0.653309 | 0.646441 | **0.644904** | 0.636620 |
+| $w$ | 0.3 | 0.5 | 0.7 | 0.8 | 0.9 | 0.94 | pin | 0.97 | $2/\pi$ |
+|---|---|---|---|---|---|---|---|---|---|
+| $\kappa(w)$ | 0.810362 | 0.742127 | 0.692319 | 0.671749 | 0.653309 | 0.646441 | **0.644904** | 0.641461 | 0.636620 |
 
 **$n_0(w)$ is grid-free.** Two closed-form majorants replace any numerical
 supremum:
@@ -226,14 +226,24 @@ supremum:
   $\Lambda_{\text{odd}} = \sum_i w^{2i+1}/(1-w^{2i+1})$, $\Lambda_{\text{even}}$ likewise.
 
 $n_0(w)$ is then the least $n$ making both closed-form conditions hold. Probe A3
-checks that M1 and M2 do dominate the evaluated suprema (they do, with the
-reported slack); probe A5 tabulates the transition, showing the condition
-failing at indices just below $n_0$ and holding at $n_0$.
+checks that M1 and M2 do dominate the evaluated suprema (they do); probe A5
+tabulates the transition, showing the condition failing at indices just below
+$n_0$ and holding at $n_0$.
 
-| $w$ | 0.3 | 0.5 | 0.7 | 0.8 | 0.9 | 0.94 | pin |
-|---|---|---|---|---|---|---|---|
-| $n_0(w)$ | 2 | 4 | 10 | 19 | 54 | 109 | **135** |
-| bound $2\kappa w^{n_0}$ | 0.146 | 0.093 | 0.039 | 0.019 | 0.0044 | 0.0015 | **0.00113** |
+**Where the remaining looseness is.** M2 is nearly tight (slack $1.97$ at the
+pin), M1 is not: at the pin $\Omega \le 61.0$ from M1 against an evaluated
+supremum of $1.013$, a slack of $60$. That single factor is what makes the
+counting condition, not the localization condition, the binding one there
+($n_0^{\text{count}} = 135$ versus $n_0^{\text{loc}} = 113$); with the evaluated
+supremum the counting condition would already hold at $n = 64$. So a sharper
+majorant for $\Omega$ on the counting circle — keeping more than the first
+$\lvert\sin(\theta/2)\rvert \le 1$ factor exact — would roughly halve $n_0$ at the
+pin. That is a known, quantified improvement, not claimed here.
+
+| $w$ | 0.3 | 0.5 | 0.7 | 0.8 | 0.9 | 0.94 | pin | 0.97 |
+|---|---|---|---|---|---|---|---|---|
+| $n_0(w)$ | 2 | 4 | 10 | 19 | 54 | 109 | **135** | 267 |
+| bound $2\kappa w^{n_0}$ | 0.146 | 0.093 | 0.039 | 0.019 | 0.0044 | 0.0015 | **0.00113** | 0.000377 |
 
 **So the argument does cover the substrate pins.** It is not a "$w$ bounded away
 from $1$" result: it holds for every $w < 1$, and what degrades as $w \to 1$ is
@@ -243,9 +253,9 @@ Two readings of that table are worth recording.
 
 - **The threshold is where the bound becomes meaningful, not an artefact.**
   Across the whole ladder the relative bound at the threshold index sits in the
-  narrow band $1.1\times10^{-3}$ to $1.5\times10^{-1}$, and it improves by a
+  narrow band $3.8\times10^{-4}$ to $1.5\times10^{-1}$, and it improves by a
   factor $w$ per index thereafter. Equivalently $n_0(w)\ln(1/w)$ drifts only
-  from $2.4$ to $7.0$ across $w \in [0.3, 0.95]$. That is the growth M2
+  from $2.4$ to $8.1$ across $w \in [0.3, 0.97]$. That is the growth M2
   predicts: its binding constraint is
   $(\Lambda_{\text{odd}} + 2\Lambda_{\text{even}})\varepsilon_{n} = O(1)$ with
   $\Lambda \sim \ln(1/t)/(2t)$, $t = \ln(1/w)$, giving
@@ -297,10 +307,26 @@ $$
 $$
 
 The probe **asserts** $\lvert\theta_n\rvert \le 2\kappa(w)w^n$ at every certified
-index; the run's worst observed ratio $\lvert\theta_n\rvert/(2\kappa w^n)$ is
-recorded per case in the witness. Where $n_0 \le 12$ every index $1..n_0+8$ is
-enumerated, which also verifies the *ordering* independently of the counting
-argument.
+index. Where $n_0 \le 12$ every index $1..n_0+8$ is enumerated, which also
+verifies the *ordering* independently of the counting argument; above that, the
+certified window $n_0-2 \ldots n_0+8$ is probed.
+
+| $w$ | 0.5 | 0.7 | 0.85 | 0.9 | pin |
+|---|---|---|---|---|---|
+| $n_0$ | 4 | 10 | 30 | 54 | 135 |
+| dps | 163 | 170 | 221 | 295 | 583 |
+| worst $\lvert\theta_n\rvert/(2\kappa w^{n})$, $n \ge n_0$ | 0.500067 | 0.500014 | 0.500001 | 0.500000 | 0.500000 |
+| measured next-order rate | 0.499788 | 0.699495 | 0.849754 | 0.899894 | 0.949147 |
+| predicted rate ($=w$) | 0.5 | 0.7 | 0.85 | 0.9 | 0.949167 |
+
+Two things to read off. The worst ratio is $\tfrac12$ to five or six figures —
+exactly what Z3 predicts ($\theta_n \simeq -\kappa w^n$, so
+$\lvert\theta_n\rvert/(2\kappa w^n) \to \tfrac12$): the theorem's constant is
+sharp to a factor of two, and that factor is the deliberate safety margin in
+$\varepsilon_n = 2\kappa w^n$, not slack in the analysis. And the residual
+$(\theta_n + \kappa w^n)/w^{2n}$ decays at a measured per-index rate matching $w$
+to $4$–$5$ figures at every rung, confirming the $O(w^{3n})$ order of Z3's
+remainder.
 
 ## 4. Why the obvious route fails, and why this one does not
 
@@ -308,7 +334,7 @@ The textbook approach — single-term Rouché at the geometric-mean radius
 $\rho_n = \sqrt{r_{n-1}r_n}$ of consecutive tropical roots — works only for
 small $w$. Log-concavity of the terms with curvature at least $2\ln(1/w)$ gives
 $T_{n\pm k} \le T_n w^{k^2}$ at that radius, so the criterion is
-$2\sum_{k\ge1}w^{k^2} < 1$, i.e. $w < w_0 \approx 0.4535$ (probe A5, computed by
+$2\sum_{k\ge1}w^{k^2} < 1$, i.e. $w < w_0 \approx 0.4559$ (probe A5, computed by
 bisection). Worse, the dominance ratio tends to $w$ as $n \to \infty$: **it never
 improves with $n$**, so no amount of depth rescues it. At the muon pin
 $w \approx 0.9492$ the criterion's left-hand side is
@@ -402,7 +428,7 @@ citation a worse dependency than a proof.
   truncation ($J = 40$) failed the working-precision tolerance at $w = 0.85$, the
   fix was to make the truncation adaptive — **not** to loosen the tolerance.
 - **Refutation hygiene.** One negative is recorded: the naive single-term Rouché
-  closes only below $w_0 \approx 0.4535$ and does not improve with $n$. It is
+  closes only below $w_0 \approx 0.4559$ and does not improve with $n$. It is
   stated as **scope-(a)** — a limitation of that argument at those radii — with
   the supporting log-concavity computation displayed. No scope-(b) exclusion is
   asserted anywhere in this audit.

@@ -1,11 +1,11 @@
 ---
 # qou-k16h
 title: Close the A_w zero-asymptotics residual (extremal class = tropical class)
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-01T20:25:40Z
-updated_at: 2026-08-01T21:22:16Z
+updated_at: 2026-08-01T21:26:57Z
 ---
 
 
