@@ -947,3 +947,25 @@ flag** (borromean probe:188 compares `c₃` MeV to `μ₃` dimensionless, "read 
 `A3UnitsConsistency` (sorry-free). The **C_knot / Δ_λ magnitude** remains open (bean `qou-3q7t`); the
 **binding weight is pinned to the Markov `y_λ`** (W_λ excluded, conjugation symmetry — PR #4543,
 `BindingWeightMarkovPinning`). Nothing wired; `μ₃/c₃`/AME/CODATA/`q₀` never inverted.
+
+## Shared bar-parity invariant with the μ-p route (2026-08-01)
+
+The Δ_λ chirality sign `deltaSign λ = (-1)^(principal grading λ)`
+(`QOU.BraidKnot.PrincipalGradingJetOrder.deltaSign`,
+`QOU.BraidsAndKnots.PartitionOf5.deltaSign`) is the **bar-involution parity**
+`q ↔ q⁻¹` of the principal-grading degree: each grading-1 generator is the
+bar-odd `ℏ = q − q⁻¹`, so a degree-`d` monomial has bar-parity `(-1)^d`. This is
+proved sorry-free in
+[`QOU.BraidKnot.BarParityInvariant`](../../content/quantum-observable-universe/lean/QOU/BraidKnot/BarParityInvariant.lean)
+(`barEven_barOdd_pow_even` / `barOdd_barOdd_pow_odd`).
+
+**Consequence for coordination:** the same `ℤ/2` bar-involution grading that
+forces the μ-correction **bar-even** (#2584 refuted the bar-mixed projector shift)
+*is* the Δ_λ mixed-sign chirality structure. Both open routes (GAP-A-4 muon,
+GAP-A-3 / Δ_λ binding) go through the shared s5-so3 `W_λ` object and are gated by
+this one invariant plus the heat-kernel-defect coefficient
+(`WLambdaDefectClosedForm.n144C_closed_form`). A Δ_λ or μ-correction closure must
+respect the bar-parity of its principal grading — a candidate whose bar-parity
+mismatches its target sign is structurally excluded (`barEven_barOdd_forces_zero`),
+independent of magnitude. Formalize-first record for bean `qou-ph2a`:
+[`docs/audits/2026-08-01-mu-p-tension-attack-recon-floor-verdict.md`](../audits/2026-08-01-mu-p-tension-attack-recon-floor-verdict.md).
