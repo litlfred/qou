@@ -32,7 +32,8 @@ power-magnitude sequence `t_k = c_k · x^k` (with `c_k = |d_k| > 0`, `x = ũ₀ 
   (`∃ k < n, c_k < c_{k+1}·x`). Crossing a rung radius is precisely the fibre
   transition where the least term leaves the top and the Stokes datum turns on.
 
-Stated over a generic `[LinearOrderedField R]` (§7c: no `Real.sqrt`/`Real.log`,
+Stated over a generic ordered field `[Field R] [LinearOrder R] [IsStrictOrderedRing R]`
+(§7c: no `Real.sqrt`/`Real.log`,
 no archimedean construct — a pure ordered-field inequality); the substrate
 specialisation `R := ℝ`, `c_k := |d_k|`, `x := ũ₀` is what the probe evaluates.
 
@@ -42,7 +43,7 @@ specialisation `R := ℝ`, `c_k := |d_k|`, `x := ũ₀` is what the probe evalua
 
 namespace QOU.QBeta
 
-variable {R : Type*} [LinearOrderedField R]
+variable {R : Type*} [Field R] [LinearOrder R] [IsStrictOrderedRing R]
 
 /-- One rung step: if `x` is at or below the local ratio radius `c k / c (k+1)`
 (equivalently `c (k+1) · x ≤ c k`) and `x ≥ 0`, then the term magnitude does
