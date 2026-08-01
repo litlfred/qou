@@ -35,6 +35,7 @@ Run:  python3 -u verify_c_color_swap.py
 from __future__ import annotations
 
 import sys
+import time
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
@@ -183,10 +184,13 @@ def report(res):
 
 
 def main(argv=None):
+    # start_time captured before the compute, so the witness durationMs
+    # measures the probe runtime rather than just witness serialization.
+    t0 = time.monotonic()
     res = run()
     report(res)
 
-    w = WitnessBuilder("verify-c-color-swap", engine="python")
+    w = WitnessBuilder("verify-c-color-swap", engine="python", start_time=t0)
     w.set_description(
         "Open-R&D prototype of conj:c-from-color-flavor-swap (D6): verifies at the 50-digit "
         "substrate q0 that the flavor-conjugation involution C (u<->ubar, d<->dbar per color sheet) "
