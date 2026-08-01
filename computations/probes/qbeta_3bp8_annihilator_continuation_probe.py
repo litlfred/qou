@@ -250,8 +250,15 @@ def main() -> int:
           f"(e-window ±{E_GF}):")
     a2_max = mp.mpf(0)
     t0 = time.time()
-    pts = [mp.mpf("0.5"), mp.mpf("0.8") * mp.e ** (1j * mp.mpf("0.7")),
-           mp.mpf("0.92") * mp.e ** (2j * mp.mpf("0.20323503"))]
+    # |w| ≤ 0.55 so the OUTERMOST argument |w|/s ≤ 0.58 stays where the
+    # ±E_GF e-window converges: the winding values have radius exactly 1
+    # (#4433), so at |w/s| ≈ 0.97 (the first-attempt 0.92 point) the window
+    # tail is O(0.97^40) ≈ 0.3 — the first run's O(10) A2 residual was
+    # WINDOW TRUNCATION at near-boundary points, not an algebra failure
+    # (the algebra is machine-checked in QOU.QBeta.WindingGFTransform;
+    # this numerical A2 is the transcription sanity cross-check).
+    pts = [mp.mpf("0.3"), mp.mpf("0.45") * mp.e ** (1j * mp.mpf("0.7")),
+           mp.mpf("0.55") * mp.e ** (2j * mp.mpf("0.20323503"))]
     for m in (-1, 0, 1, 2):
         for w in pts:
             # inner argument stays inside annulus: |w/qh| = |w|·1.054 ≤ 0.97 ✓
@@ -312,7 +319,11 @@ def main() -> int:
                                 "drop_factor": mp.nstr(scale_factor, 6),
                                 "point": "(m,e)=(1,1)"})
     wb.add_data("a2", {"max_rel_residual": mp.nstr(a2_max, 6),
-                       "points": "|w| in {0.5, 0.8, 0.92} with complex phases",
+                       "points": "|w| in {0.3, 0.45, 0.55} with complex phases "
+                                 "(outermost argument <= 0.58: within the "
+                                 "e-window convergence domain; near-boundary "
+                                 "points are window-truncation-limited, see "
+                                 "probe docstring)",
                        "rows_m": [-1, 0, 1, 2], "e_window": E_GF,
                        "internal_x_order": ORD_GF})
     wb.add_data("verdict", verdict)
