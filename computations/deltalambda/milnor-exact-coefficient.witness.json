@@ -1,0 +1,161 @@
+{
+  "schema": "witness/v1",
+  "producer": "computations/deltalambda/milnor_exact_coefficient_probe.py",
+  "computation": "milnor-exact-coefficient",
+  "description": "Route C of #4480: A=3..6 iterated-commutator Brunnian trace-deficit leading ORDER + leading COEFFICIENT mubar_A, in two trace conventions from the same Hoefsmit chi_lambda and canonical Wenzl y_lambda: SIGNED tr_M=sum y_lambda chi_lambda (genuine cyclic Markov trace / conv C) and ABS g=sum y_lambda|chi_lambda| (non-cyclic perblock, #4364/#4378). Deficit D_A=1-trace(w_A)/trace(unlink), h=q-q^-1; w_A = left-normed band commutator, Brunnian-verified by strand-forgetting d_k->identity. Leading order via log-log slope; mubar_A via even-poly fit of D_A/h^{2(A-1)} -> constant, with rational reconstruction. Also the 1.585x bridge check (honest yes/no). STRICT anti-fit: 0 free params, words fixed by the topological Brunnian constraint, mubar_A extracted not fit, nothing wired.",
+  "timestamp": "2026-08-01T19:13:04.008665+00:00",
+  "parameters": {
+    "free_parameters": 0,
+    "dps": 50,
+    "convention_note": "SIGNED = cyclic Markov (conv C); ABS = non-cyclic perblock (#4364/#4378)."
+  },
+  "results": {
+    "per_A": {
+      "A3": {
+        "n": 3,
+        "sigma_word_len": 8,
+        "expected_order": 4,
+        "brunnian_verified": true,
+        "delete_strand_signed": {
+          "drop_0": "3.87551e-50",
+          "drop_1": "0",
+          "drop_2": "3.87551e-50"
+        },
+        "candidate_closed_form": "(3/4)*(-2)^(A-3)",
+        "candidate_value": "0.75",
+        "signed": {
+          "order": "4.0004806",
+          "mubar_richardson": "0.7499999922021418",
+          "mubar_raw_smallest_h": "0.7502499726611318",
+          "relerr_vs_candidate": "1.03971e-8",
+          "rational_guess": null
+        },
+        "abs": {
+          "order": "4.0004806",
+          "mubar_richardson": "0.7499999922021418",
+          "mubar_raw_smallest_h": "0.7502499726611318",
+          "rational_guess": null
+        }
+      },
+      "A4": {
+        "n": 4,
+        "sigma_word_len": 20,
+        "expected_order": 6,
+        "brunnian_verified": true,
+        "delete_strand_signed": {
+          "drop_0": "9.48831e-50",
+          "drop_1": "1.33638e-50",
+          "drop_2": "8.15193e-50",
+          "drop_3": "1.09583e-49"
+        },
+        "candidate_closed_form": "(3/4)*(-2)^(A-3)",
+        "candidate_value": "-1.5",
+        "signed": {
+          "order": "6.0004811",
+          "mubar_richardson": "-1.499999609170043",
+          "mubar_raw_smallest_h": "-1.500500132837881",
+          "relerr_vs_candidate": "2.60553e-7",
+          "rational_guess": null
+        },
+        "abs": {
+          "order": "6.0004811",
+          "mubar_richardson": "-1.499999609170043",
+          "mubar_raw_smallest_h": "-1.500500132837881",
+          "rational_guess": null
+        }
+      },
+      "A5": {
+        "n": 5,
+        "sigma_word_len": 44,
+        "expected_order": 8,
+        "brunnian_verified": true,
+        "delete_strand_signed": {
+          "drop_0": "2.08476e-49",
+          "drop_1": "5.34553e-50",
+          "drop_2": "1.71057e-49",
+          "drop_3": "2.16494e-49",
+          "drop_4": "2.59258e-49"
+        },
+        "candidate_closed_form": "(3/4)*(-2)^(A-3)",
+        "candidate_value": "3.0",
+        "signed": {
+          "order": "8.0004817",
+          "mubar_richardson": "2.99999846787095",
+          "mubar_raw_smallest_h": "3.001000640707043",
+          "relerr_vs_candidate": "5.1071e-7",
+          "rational_guess": null
+        },
+        "abs": {
+          "order": "8.0004817",
+          "mubar_richardson": "2.99999846787095",
+          "mubar_raw_smallest_h": "3.001000640707043",
+          "rational_guess": null
+        }
+      },
+      "A6": {
+        "n": 6,
+        "sigma_word_len": 92,
+        "expected_order": 10,
+        "brunnian_verified": true,
+        "delete_strand_signed": {
+          "drop_0": "4.16951e-49",
+          "drop_1": "1.2562e-49",
+          "drop_2": "3.6216e-49",
+          "drop_3": "4.46352e-49",
+          "drop_4": "5.15844e-49",
+          "drop_5": "5.42571e-49"
+        },
+        "candidate_closed_form": "(3/4)*(-2)^(A-3)",
+        "candidate_value": "-6.0",
+        "signed": {
+          "order": "10.000482",
+          "mubar_richardson": "-5.999995434802271",
+          "mubar_raw_smallest_h": "-6.00200203147672",
+          "relerr_vs_candidate": "7.60866e-7",
+          "rational_guess": null
+        },
+        "abs": {
+          "order": "10.000482",
+          "mubar_richardson": "-5.999995434802271",
+          "mubar_raw_smallest_h": "-6.00200203147672",
+          "rational_guess": null
+        }
+      }
+    },
+    "bridge_1585": {
+      "target": "1.585 (~ log2(3))",
+      "signed": {
+        "consecutive_ratios": {
+          "mubar4/mubar3": "-1.9999995",
+          "mubar5/mubar4": "-1.9999995",
+          "mubar6/mubar5": "-1.9999995"
+        },
+        "near_1585_hits": [],
+        "verdict": "no clean 1.585x encoding"
+      },
+      "abs": {
+        "consecutive_ratios": {
+          "mubar4/mubar3": "-1.9999995",
+          "mubar5/mubar4": "-1.9999995",
+          "mubar6/mubar5": "-1.9999995"
+        },
+        "near_1585_hits": [],
+        "verdict": "no clean 1.585x encoding"
+      }
+    },
+    "mubar_signed": {
+      "3": "0.7499999922021418",
+      "4": "-1.499999609170043",
+      "5": "2.99999846787095",
+      "6": "-5.999995434802271"
+    },
+    "mubar_abs": {
+      "3": "0.7499999922021418",
+      "4": "-1.499999609170043",
+      "5": "2.99999846787095",
+      "6": "-5.999995434802271"
+    }
+  },
+  "scriptHash": "2bf638e0fb5a3da3",
+  "scriptCommitSha": "uncommitted"
+}
