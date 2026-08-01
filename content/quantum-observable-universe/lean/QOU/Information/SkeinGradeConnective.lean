@@ -41,6 +41,30 @@ theorem superPoly_three_pow : SuperPolynomial (fun n => 3 ^ n) :=
 theorem horizon_cost_not_polyBounded : ¬ PolyBounded (fun n => 3 ^ n) :=
   not_polyBounded_of_superPoly superPoly_three_pow
 
+/-- **The general super-poly-cost separation (sorry-free).**  For any
+    `SkeinObservationSystem`, a size-indexed family `P n` at filtration level `n`
+    whose observation is reached only at a **super-polynomial** cost `cost n`
+    (`hcost`, `hcost_sp`) is not `PolyObservable` for all `n` under any polynomial
+    budget — `cost` eventually exceeds every polynomial.  The horizon
+    (`cost = 3^n`) and moduli (`cost = physicalCost = 3^{3n}`,
+    `PNeqNpWallUnification`) separations are its two instances. -/
+theorem not_polyObservable_family_of_superPoly {S : Type u} {V : Type v}
+    (sys : SkeinObservationSystem S V) (P : ℕ → S)
+    (hlen : ∀ n, sys.len (P n) = n)
+    (cost : ℕ → ℕ) (hcost_sp : SuperPolynomial cost)
+    (hcost : ∀ n k, sys.obs (sys.step^[k] (P n)) = sys.obs sys.normalForm →
+        cost n ≤ k)
+    (poly : ℕ → ℕ) (hpoly : PolyBounded poly) :
+    ∃ n, ¬ sys.PolyObservable poly (P n) := by
+  obtain ⟨c, K, hb⟩ := hpoly
+  obtain ⟨n, _, hn⟩ := hcost_sp c K
+  refine ⟨n, ?_⟩
+  rintro ⟨k, hk, hobs⟩
+  rw [hlen] at hk
+  have hck := hcost n k hobs
+  have hpn : poly n < cost n := lt_of_le_of_lt (hb n) hn
+  omega
+
 /-- **Every polynomial budget fails on a horizon-cost family (sorry-free).**
     Upgrades `SkeinObservationSystem.not_polyObservable_id_of_horizon_cost` from
     the identity budget to *any* `PolyBounded` budget.  For a size-indexed family
@@ -48,21 +72,16 @@ theorem horizon_cost_not_polyBounded : ¬ PolyBounded (fun n => 3 ^ n) :=
     horizon cost `3^n` (`hcost`), no polynomial budget `poly` is
     `PolyObservable` for all `n` — because `3^n` is super-polynomial
     (`superPoly_three_pow`), so it eventually exceeds `poly`.  This is the
-    surreal ω-grade squeeze applied to the Skein bridge's P-vs-NP leg. -/
+    surreal ω-grade squeeze applied to the Skein bridge's P-vs-NP leg.  It is the
+    `cost = 3^n` instance of `not_polyObservable_family_of_superPoly` below. -/
 theorem not_polyObservable_family_of_horizon_cost {S : Type u} {V : Type v}
     (sys : SkeinObservationSystem S V) (P : ℕ → S)
     (hlen : ∀ n, sys.len (P n) = n)
     (hcost : ∀ n k, sys.obs (sys.step^[k] (P n)) = sys.obs sys.normalForm →
         3 ^ n ≤ k)
     (poly : ℕ → ℕ) (hpoly : PolyBounded poly) :
-    ∃ n, ¬ sys.PolyObservable poly (P n) := by
-  obtain ⟨c, K, hb⟩ := hpoly
-  obtain ⟨n, _, hn⟩ := superPoly_three_pow c K
-  refine ⟨n, ?_⟩
-  rintro ⟨k, hk, hobs⟩
-  rw [hlen] at hk
-  have hcost_k := hcost n k hobs
-  have hpn : poly n < 3 ^ n := lt_of_le_of_lt (hb n) hn
-  omega
+    ∃ n, ¬ sys.PolyObservable poly (P n) :=
+  not_polyObservable_family_of_superPoly sys P hlen (fun n => 3 ^ n)
+    superPoly_three_pow hcost poly hpoly
 
 end QOU.Information
