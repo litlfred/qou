@@ -161,8 +161,9 @@ def main() -> int:
     print(f"\n[R3] prediction ϑ_pred = Φ·(√3/2)·ln q₀,  unit = {mp.nstr(unit, 10)}:")
     cmp = {}
     for name, r in results.items():
-        pred = mp.mpf(int(r["phi"])) * unit if r["phi"].denominator == 1 else \
-            mp.mpf(float(r["phi"])) * unit
+        # exact rational -> mpf via numerator/denominator; never via float()
+        phi_mp = mp.mpf(r["phi"].numerator) / mp.mpf(r["phi"].denominator)
+        pred = phi_mp * unit
         tgt = THETA_T4[name]
         cmp[name] = {"phi": str(r["phi"]), "theta_pred": mp.nstr(pred, 12),
                      "theta_T4": mp.nstr(tgt, 12),
