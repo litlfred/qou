@@ -86,7 +86,12 @@ E_CERT = 14           # winding window for the e-sum certification
 # convergence certificate is INTERNAL-ORDER stability across this ladder:
 DEEP_ORDERS = (1600, 2400, 3200)       # x-orders; agree-digits between the last
                                        # two is the certificate
-E_SUB = 8             # winding window for substrate A_eff (decay recorded)
+E_SUB = 28            # winding window for substrate A_eff. NOT 8: the winding
+                      # sum's terms only turn over near e ≈ 8–16 (lead(e) ≈
+                      # T(⌈e/2⌉) ≈ e²/8, so |I(0,e)(q̃)·w^e| peaks where
+                      # 2e·ln q₀ ≈ (e²/8)·ln q₀ — at e ≈ 16 for |w| = q₀²);
+                      # truncating at the hump would silently bias A_eff.
+                      # Per-sheet last-winding tail magnitudes are recorded.
 
 # T4 back-solved sheet angles (qbeta_t4_stokes3_crux_probe.py; NOT re-fitted)
 THETA_MUON = 0.0589
@@ -241,8 +246,45 @@ def main() -> int:
         print(f"          order ladder {Ie_partials[e]}")
     conv_ok = min(Ie_conv_digits.values()) >= 6
     tower_val = Ie_deep_val[0] + 2 * mp.fsum(Ie_deep_val[e] for e in range(1, E_SUB + 1))
-    print(f"    Σ_e I(0,e)(q̃_sub) [|e|≤{E_SUB}] = {mp.nstr(tower_val, 15)} "
-          f"(cross-check vs g3 tower witness 'S11_at_substrate')")
+    print(f"    Σ_e I(0,e)(q̃_sub) [|e|≤{E_SUB}] = {mp.nstr(tower_val, 15)}")
+
+    # -------- S1b: honest deep tower S⁺₁₁(q̃_sub) via the certified sandwich --
+    # The g3 witness value 0.2584… carries stable_digits=40 — the else-40
+    # SENTINEL (its 90%-truncation diff was >= 1), so it is unverified. Deep
+    # re-evaluation here with the honest ladder guard, using the sandwich
+    # exemplar DERIVED and certified in qbeta_g3_ggm_stokes_41 (sign=-1,
+    # transpose on the second W, A=[[0,1],[1,1]], B=[[0,1],[1,0]],
+    # C=[[0,1],[-1,-2]]), head re-verified against the printed (61) here.
+    from qbeta_g3_ggm_stokes_41 import (
+        W_matrix, mat_mul_series, const_mat, transpose, PRINTED_61,
+    )
+    TOWER_ORD = 1600
+    TOWER_CUTS = (800, 1200, 1600)
+    print(f"\n[S1b] deep tower S⁺₁₁(q̃_sub) via certified sandwich, "
+          f"q̃-order {TOWER_ORD}:")
+    Am, Bm, Cm, sgn_s = [[0, 1], [1, 1]], [[0, 1], [1, 0]], [[0, 1], [-1, -2]], -1
+    Wd = W_matrix(-1, TOWER_ORD)
+    core = mat_mul_series(
+        mat_mul_series(Wd, const_mat(Bm, TOWER_ORD), TOWER_ORD),
+        transpose(Wd), TOWER_ORD)
+    Sd = mat_mul_series(
+        mat_mul_series(const_mat(Am, TOWER_ORD), core, TOWER_ORD),
+        const_mat(Cm, TOWER_ORD), TOWER_ORD)
+    s11_deep = [sgn_s * x // 2 for x in Sd[0][0]]
+    head_ok = s11_deep[:7] == PRINTED_61
+    tower_ladder = {c: mp.fsum(co * q_sub ** k
+                               for k, co in enumerate(s11_deep[:c + 1]) if co)
+                    for c in TOWER_CUTS}
+    tower_full = tower_ladder[TOWER_CUTS[-1]]
+    dtw = abs(tower_full - tower_ladder[TOWER_CUTS[-2]])
+    tower_digits = 40 if dtw == 0 else (int(-mp.log10(dtw)) if dtw < 1 else 0)
+    print(f"    head == printed (61): {head_ok}")
+    print(f"    ladder {{ {', '.join(f'{c}: {mp.nstr(v, 15)}' for c, v in tower_ladder.items())} }}")
+    print(f"    S⁺₁₁(q̃_sub) = {mp.nstr(tower_full, 15)} [{tower_digits} agree-digits]")
+    print(f"    g3 witness claimed 0.2584362672614084 [stable_digits=40 = SENTINEL]")
+    print(f"    per-winding e-sum |e|≤{E_SUB}: {mp.nstr(tower_val, 15)} "
+          f"(e-tail = winding sum minus tower: {mp.nstr(tower_val - tower_full, 6)})")
+    tower_ok = head_ok and tower_digits >= 8
 
     # ---------------- S2: effective A at the observed sheets ----------------
     ln_q0 = t
@@ -318,6 +360,17 @@ def main() -> int:
                       "sentinel of the earlier guard pattern silently passes "
                       "diverging sums)",
         "tower_esum": mp.nstr(tower_val, 20)})
+    wb.add_data("deep_tower_S11", {
+        "value": mp.nstr(tower_full, 25),
+        "agree_digits": tower_digits,
+        "q_order": TOWER_ORD,
+        "ladder": {str(c): mp.nstr(v, 20) for c, v in tower_ladder.items()},
+        "head_matches_printed_61": bool(head_ok),
+        "g3_witness_value_unverified": "0.2584362672614084 with stable_digits=40 "
+                                       "— the else-40 SENTINEL (90%-truncation "
+                                       "diff >= 1); superseded by this honest "
+                                       "ladder evaluation",
+        "e_tail_at_E_SUB": mp.nstr(tower_val - tower_full, 8)})
     wb.add_data("sheet_evaluations", s2)
     wb.add_data("test_ii_unit_sheets_bar_even",
                 {"holds": bool(unit_bar_even),
@@ -342,7 +395,15 @@ def main() -> int:
                      tolerance=0.5,
                      source="max |Im A_eff| < 1e-30 on unit-modulus sheet "
                             "conventions (amphichiral structural check)")
-    ok = cert_ok and ewin_stable and amph_ok and conv_ok and unit_bar_even
+    wb.add_assertion("deep_tower_honest_ladder",
+                     computed=1.0 if tower_ok else 0.0, expected=1.0,
+                     tolerance=0.5,
+                     source=f"S+11 deep series head == printed (61) AND ladder "
+                            f"agreement >= 8 digits at q-orders "
+                            f"{TOWER_CUTS[-2]} vs {TOWER_CUTS[-1]} (supersedes "
+                            f"the g3 witness sentinel-guarded value)")
+    ok = (cert_ok and ewin_stable and amph_ok and conv_ok and unit_bar_even
+          and tower_ok)
     wb.add_data("verdict", (
         "PER-WINDING EXTRACTION CERTIFIED: Sum_e I(0,e) reproduces the printed "
         "rotated index exactly (deferred item closed); per-winding table "
