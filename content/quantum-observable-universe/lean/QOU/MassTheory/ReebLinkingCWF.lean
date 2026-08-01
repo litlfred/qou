@@ -1,4 +1,7 @@
 import Mathlib.Analysis.SpecialFunctions.Sqrt
+import Mathlib.Tactic.FieldSimp
+import Mathlib.Tactic.Ring
+import Mathlib.Tactic.Positivity
 
 /-!
 # QOU.MassTheory.ReebLinkingCWF — deriving the Reeb linking amplitude ℓ(z)
