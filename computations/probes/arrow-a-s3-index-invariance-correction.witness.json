@@ -1,0 +1,31 @@
+{
+  "engine": "python-int",
+  "engineVersion": "exact integer enumeration",
+  "computedAt": "2026-08-01T20:51:36.159469+00:00",
+  "commitSha": "e15797a9daf703eb71bffd3696286857ad819095",
+  "scriptFile": "computations/probes/arrow_a_s3_index_invariance_correction.py",
+  "scriptHash": "a11a0aa72dbb",
+  "scriptCommitSha": "e15797a9daf703eb71bffd3696286857ad819095",
+  "description": "CORRECTION to #4498: the 3D-index is S\u2083-invariant (trivial isotypic only); no graded standard component exists; S\u2083 is vacuous for arrow (A); tr_M's [2,1] standard structure is categorical, not index-sourced. Audit-only.",
+  "auditOnly": true,
+  "parameters": {
+    "corrects_pr": 4498
+  },
+  "data": {
+    "rep_space_decomposition": {
+      "trivial": 165,
+      "sign": 84,
+      "standard": 240
+    },
+    "index_function_isotypic": "trivial only (S3-invariant; constant on orbits)",
+    "orbit_keyed_entries": 165,
+    "orbit_sizes": {
+      "1": 9,
+      "3": 72,
+      "6": 84
+    },
+    "correction": "#4498 conflated rep-space (240 std) with the index vector (trivial only); no graded standard component exists to build from.",
+    "corrected_finding": "S3 vacuous for (A); tr_M [2,1]-standard structure is categorical/Hecke, not sourced by the trivial-only 3D-index.",
+    "verdict_ok": true
+  }
+}
