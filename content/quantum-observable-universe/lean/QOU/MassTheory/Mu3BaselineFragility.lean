@@ -26,6 +26,7 @@ probe's reported values; the generic amplification lemma is baseline-independent
 import Mathlib.Algebra.Order.Field.Basic
 import Mathlib.Tactic.NormNum
 import Mathlib.Tactic.Ring
+import Mathlib.Tactic.FieldSimp
 import Mathlib.Data.Real.Basic
 
 namespace QOU.MassTheory.Mu3BaselineFragility
@@ -36,18 +37,18 @@ variable {R : Type*} [Field R] [LinearOrder R] [IsStrictOrderedRing R]
 (the strong ratio `S = ρ_strong(A)` is fixed data): `resid S G = S − G`. -/
 def resid (S G : R) : R := S - G
 
+omit [LinearOrder R] [IsStrictOrderedRing R] in
 /-- **The simplex re-expression adds no robustness.** With the deuteron self-reference forcing
 `μ₂ = M(2) = 0`, the 3-body simplex coefficient `μ₃ = M3 − 3·μ₂` equals the raw A=3 residual `M3`
 *exactly* — so μ₃ inherits ALL of the residual's baseline sensitivity; expanding in the simplex basis
 does not stabilize the target. -/
-omit [LinearOrder R] [IsStrictOrderedRing R] in
 theorem mu3_eq_M3 (M3 mu2 : R) (h : mu2 = 0) : M3 - 3 * mu2 = M3 := by
   subst h; ring
 
+omit [LinearOrder R] [IsStrictOrderedRing R] in
 /-- **The residual moves by exactly the baseline shift** (unit absolute gain, opposite sign):
 shifting `ρ_grad ↦ ρ_grad + d` moves the residual by `−d`. There is no attenuation — every bit of
 baseline error passes straight into the target. -/
-omit [LinearOrder R] [IsStrictOrderedRing R] in
 theorem resid_shift (S G d : R) : resid S (G + d) - resid S G = -d := by
   unfold resid; ring
 
@@ -79,6 +80,24 @@ theorem mu4_negative_all_baselines :
 (`0.8128 > 1.585 · 0.4708`). Hence the target's own convention-spread is larger than the gap:
 the "1.6× A=3 magnitude gap" is baseline-CLASS-relative, not absolute. -/
 theorem spread_exceeds_gap : (0.8128 : ℝ) > 1.585 * 0.4708 := by norm_num
+
+omit [LinearOrder R] [IsStrictOrderedRing R] in
+/-- **Framing amplification identity.** The single absolute miss `Δ` of the model against the physical
+ratio, expressed as a fraction of the small residual `μ` (the "1.6× gap") versus the full physical ratio
+`ρ` (the frame-independent accuracy), differ by exactly the factor `ρ/μ`:
+`(Δ/μ) / (Δ/ρ) = ρ/μ`. The alarming multiplicative gap is the modest physical miss magnified by
+`ρ/μ ≈ 8`. -/
+theorem framing_amplification (Δ μ ρ : R) (hμ : μ ≠ 0) (hρ : ρ ≠ 0) (hΔ : Δ ≠ 0) :
+    (Δ / μ) / (Δ / ρ) = ρ / μ := by
+  field_simp
+
+/-- **Physical accuracy is modest.** At the corpus values the miss on the physical ratio
+`B(³H)/B(²H)` is `Δ/ρ = 0.1737689/3.8128 < 5%` — the frame-independent A=3 accuracy statement. -/
+theorem physical_miss_lt_five_pct : (0.17376892 : ℝ) / 3.8128 < 0.05 := by norm_num
+
+/-- **The residual framing is large** (`Δ/μ₃ > 36%`, model reaches `0.63·μ₃`) — the same miss, `≈8×`
+magnified by the small-residual denominator (`physical_miss_lt_five_pct` vs this). -/
+theorem residual_framing_gt_36_pct : (0.17376892 : ℝ) / 0.4708 > 0.36 := by norm_num
 
 /-- **Capstone.** The A=3 magnitude target is a small residual (`μ₃ = M3` exactly, `mu3_eq_M3`) whose
 relative sensitivity to the subtracted baseline exceeds unity (`residual_amplifies`) — numerically `>7`

@@ -178,6 +178,31 @@ def main() -> int:
     gap_factor_corpus = mp.mpf(corr["per_baseline"]["G_graded_coinvariant"]["gap_factor_mu3_over_c3"])
     spread_exceeds_gap = corr["mu3_spread_exceeds_corpus_gap"]   # exact-mpf boolean from run()
 
+    # --- the FRAME-INDEPENDENT statement: accuracy on the physical ratio B(³H)/B(²H) ---------
+    # The corpus model's total A=3 prediction is ρ_grad_G(3) + c₃ (graded baseline + derived
+    # 3-body cluster; C(3,3)=1 so the cluster enters M(3) directly). The absolute miss Δ against
+    # the physical ratio ρ_strong(3) is baseline-INDEPENDENT data on one side, and it is the SAME
+    # Δ whether framed as a fraction of the full ratio (physical) or of the small residual μ₃
+    # (the '1.6× gap'). The residual framing merely amplifies the same Δ by ρ_strong(3)/μ₃.
+    rg3_G = q_unbal(3, Q0)                                   # ρ_grad_G(3)
+    model_full_ratio = rg3_G + C3_CLUSTER                   # corpus model's B(³H)/B(²H) prediction
+    rho3 = RHO_STRONG_CORR[3]
+    delta_abs = rho3 - model_full_ratio                     # absolute miss (ratio units)
+    mu3_G = mu3_corr_G
+    frame_independent = {
+        "physical_observable": "B(³H)/B(²H) = ρ_strong(3)",
+        "rho_strong3": mp.nstr(rho3, 8),
+        "model_prediction_rho_grad_plus_c3": mp.nstr(model_full_ratio, 8),
+        "absolute_miss_delta": mp.nstr(delta_abs, 8),
+        "miss_pct_of_physical_ratio": mp.nstr(100 * delta_abs / rho3, 6),
+        "miss_pct_of_residual_mu3": mp.nstr(100 * delta_abs / mu3_G, 6),
+        "framing_amplification_rho3_over_mu3": mp.nstr(rho3 / mu3_G, 6),
+        "reading": "the '1.6× gap on μ₃' (model reaches 0.63·μ₃) is the SAME absolute miss Δ as a "
+                   "~4.6% shortfall on the physical ratio B(³H)/B(²H); the residual framing "
+                   "amplifies Δ by ρ_strong(3)/μ₃ ≈ 8×. The frame-INDEPENDENT accuracy statement is "
+                   "the % on the physical ratio, not the multiplicative gap on the small residual.",
+    }
+
     verdict = {
         "mu3_baseline_class_spread_factor": corr["mu3_spread_factor"],
         "the_1p6x_gap_factor_corpus_G": mp.nstr(gap_factor_corpus, 6),
@@ -205,6 +230,7 @@ def main() -> int:
         "c3_cluster_prediction_MeV": mp.nstr(C3_CLUSTER, 6),
         "corrected_rho_strong": corr,
         "raw_rho_strong": raw,
+        "frame_independent_full_ratio": frame_independent,
         "verdict": verdict,
     }
 
@@ -271,6 +297,14 @@ def main() -> int:
     print(f"the '1.6× gap' factor (corpus G) = {mp.nstr(gap_factor_corpus,5)}×")
     print(f"ρ_strong correction knob = {rho_strong_knob_pct}% of μ₃ (small)")
     print(f"signs robust (μ₃>0, μ₄<0 all baselines): {corr['signs_robust_mu3pos_mu4neg']}")
+    print()
+    print("FRAME-INDEPENDENT statement (physical ratio B(³H)/B(²H)):")
+    print(f"  model = ρ_grad_G(3)+c₃ = {frame_independent['model_prediction_rho_grad_plus_c3']}"
+          f"  vs  ρ_strong(3) = {frame_independent['rho_strong3']}")
+    print(f"  same miss Δ={frame_independent['absolute_miss_delta']}: "
+          f"{frame_independent['miss_pct_of_physical_ratio']}% of the physical ratio  "
+          f"=  {frame_independent['miss_pct_of_residual_mu3']}% of the residual μ₃  "
+          f"(framing amplification {frame_independent['framing_amplification_rho3_over_mu3']}×)")
     print()
     print(f"VERDICT: baseline-class spread ({corr['mu3_spread_factor']}×) "
           f"{'≳' if spread_exceeds_gap else '<'} the 1.6× gap "
