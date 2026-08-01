@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-01T21:18:09.213085+00:00",
-  "commitSha": "f631495ac0d2b002847efb595efbdd0b2651acc3",
+  "computedAt": "2026-08-01T21:28:38.637120+00:00",
+  "commitSha": "1216367f36d124d60483f196e752e7b6407f3d9e",
   "assertions": [
     {
       "name": "t1_tensor_t1_eq_A_plus_T1_plus_H",
@@ -30,11 +30,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 83,
+  "durationMs": 59,
   "computation": "color-tube-t1-tensor-decomposition",
   "scriptFile": "color_tube_t1_tensor_decomposition.py",
-  "scriptHash": "da0e98938b52",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "6effeabcf62c",
+  "scriptCommitSha": "1216367f36d124d60483f196e752e7b6407f3d9e",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -47,7 +47,7 @@
     "sympy": "1.14.0",
     "mpmath": "1.3.0"
   },
-  "description": "Decomposes the color-pair space T1 (x) T1 of the icosahedral fiber action (bean qou-ctkw; open question 1 of conj:inter-nucleon-channel-color-tube). The three color sheets ARE the T1 irrep (Lean color_sheets_carry_T1) and BringFiberAction is discharged, so ordered color-sheet pairs carry T1 (x) T1. Exact character arithmetic over Q(sqrt 5) on the 5 classes of A5 gives T1 (x) T1 = A + T1 + H (1+3+5=9), with Sym^2 = A + H (6) and Alt^2 = T1 (3) — a canonical Z/2 grading of the 9 color pairs, the shape the block's representation-theoretic eps constraint requires. Each isotypic projector induces a normalised weight system, and the uniform-flavor projection W=1/9 is exactly their identity-sum barycentre: the projection the conjecture calls lossy IS the isotypy-blind average. NARROWS W from 8 free parameters per flavor pair to a 2-parameter convex combination of three canonical systems. Does NOT close open question 1 — the flavor dependence (F1,F2) is not supplied by the color side. Scope-(a); 0 free parameters; no target consulted; nothing wired.",
+  "description": "Decomposes the color-pair space T1 (x) T1 of the icosahedral fiber action (bean qou-ctkw; open question 1 of conj:inter-nucleon-channel-color-tube). The three color sheets ARE the T1 irrep (Lean color_sheets_carry_T1) and BringFiberAction is discharged, so ordered color-sheet pairs carry T1 (x) T1. Exact character arithmetic over Q(sqrt 5) on the 5 classes of A5 gives T1 (x) T1 = A + T1 + H (1+3+5=9), with Sym^2 = A + H (6) and Alt^2 = T1 (3) — a canonical Z/2 grading of the 9 color pairs, the shape the block's representation-theoretic eps constraint requires. Each isotypic projector induces a normalised weight system, and the uniform-flavor projection W=1/9 is exactly their identity-sum barycentre: the projection the conjecture calls lossy IS the isotypy-blind average. NARROWS W from 8 free parameters per flavor pair to a 2-parameter convex combination of three canonical systems. Does NOT close open question 1 — the flavor dependence (F1,F2) is not supplied by the color side. Scope-(a); 0 TUNED parameters (nothing fitted, no target consulted) — distinct from the RESULT, which is that W still lives in a 2-parameter convex family: the probe introduces no parameters, it REDUCES the ones W already had, from 8 to 2. Nothing wired.",
   "data": {
     "tensor_multiplicities": {
       "A": 1,
