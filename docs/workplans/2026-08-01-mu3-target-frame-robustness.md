@@ -28,19 +28,23 @@ the target**. No one is asking: **is μ₃ = 0.4708 itself frame-robust, or is t
   1. the **baseline** `ρ_grad(A)` (here `[A]_q!/[2]_q!`) subtracted to form `M(A)`;
   2. the **basis** `C(A,k)` (edges/triangles/tetrahedra) the residual is expanded in.
 
-μ₃ is fully determined by `M(3), M(4)` and the basis (a fixed 3×3 linear solve once
-μ₂ = M(2) = 0 is imposed). So the only freedom is knobs 1–2. **Test whether μ₃
-swings under equally-motivated choices of each.**
+With the derived simplex-count basis (`C(A,k) = binom(A,k)`) and the deuteron constraint
+`μ₂ = M(2) = 0`, μ₃ reduces exactly to `μ₃ = M(3) = ρ_strong(3) − ρ_grad(3)` — it needs
+**neither M(4) nor a 3×3 solve**, and it is **independent of the simplex basis** (the basis only
+distributes M(4) into μ₃/μ₄; with μ₂=0 the A=3 coefficient is simply M(3)). So the *only* real
+freedom in μ₃ is knob 1 (the subtracted baseline `ρ_grad`) plus, weakly, knob 2 (the `ρ_strong`
+correction). **Test whether μ₃ swings under equally-motivated choices of the baseline.**
 
 ## Steps (microcommits)
 
 1. **[this]** work-plan.
-2. **Probe** `mu3_target_frame_robustness_probe.py` — compute μ₃ under the canonical
-   `ρ_grad = [A]!/[2]!` AND under 3–4 alternative-but-equally-valid baselines
-   (`[A]_q` linear, `q^{binom}` area-law, symmetric `[A]_q!/([2]!)` variants, no
-   subtraction) × alternative simplex conventions (include-μ₂-free vs
-   deuteron-forced). Report the **spread** of μ₃ and of the implied gap ratio
-   `c₃/μ₃`. Exact (mpmath), audit-only, q₀ from the muon-canonical layer.
+2. **Probe** `mu3_target_frame_robustness_probe.py` — compute μ₃ under **three legitimate
+   deuteron-normalized A-scaling baselines**: (G) graded coinvariant dimension `∏[k]_q` (the
+   corpus/#4300 choice), (Q) balanced quantum dimension `∏[k]_q^bal`, (C) classical `∏k` (q→1);
+   each crossed with the small `ρ_strong` correction knob (isospin-corrected vs raw AME). The
+   simplex **basis is held fixed** — varying it is moot, since `μ₃ = M(3)` is basis-independent
+   (see above), so the sensitivity lives entirely in the baseline. Report the **spread** of μ₃ and
+   of the implied gap ratio `c₃/μ₃`. Exact (mpmath), audit-only, q₀ from the muon-canonical layer.
 3. **Audit doc** — honest verdict:
    - **robust** (μ₃ spread ≪ the 1.6× gap) ⇒ mild confirmation the gate is
      well-defined; the 1.6× is a real target. Scope-(a) positive.

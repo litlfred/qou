@@ -128,10 +128,12 @@ def simplex(M):
 
 def run(rho_strong, label):
     rows = {}
+    exact = {}   # keep exact mp.mpf values for aggregation; strings are for serialization only
     for key, (qint, desc) in BASELINES.items():
         rg = {A: rho_grad(qint, A, Q0) for A in (2, 3, 4)}
         M = {A: rho_strong[A] - rg[A] for A in (2, 3, 4)}
         mu2, mu3, mu4 = simplex(M)
+        exact[key] = {"mu3": mu3, "mu4": mu4, "gap_factor": mu3 / C3_CLUSTER}
         rows[key] = {
             "desc": desc,
             "rho_grad3": mp.nstr(rg[3], 10), "rho_grad4": mp.nstr(rg[4], 10),
@@ -143,9 +145,10 @@ def run(rho_strong, label):
             # amplification: relative sensitivity of μ₃ to a shift in the baseline ρ_grad(3)
             "amplification_rhograd3_over_mu3": mp.nstr(rg[3] / mu3, 8),
         }
-    mu3s = [mp.mpf(rows[k]["mu3"]) for k in BASELINES]
-    mu4s = [mp.mpf(rows[k]["mu4"]) for k in BASELINES]
-    gaps = [mp.mpf(rows[k]["gap_factor_mu3_over_c3"]) for k in BASELINES]
+    # aggregate from the EXACT mpf values (never from the nstr-rounded strings)
+    mu3s = [exact[k]["mu3"] for k in BASELINES]
+    mu4s = [exact[k]["mu4"] for k in BASELINES]
+    gaps = [exact[k]["gap_factor"] for k in BASELINES]
     return {
         "rho_strong_convention": label,
         "per_baseline": rows,
@@ -156,6 +159,10 @@ def run(rho_strong, label):
         "gap_factor_min": mp.nstr(min(gaps), 6), "gap_factor_max": mp.nstr(max(gaps), 6),
         "signs_robust_mu3pos_mu4neg": bool(all(rows[k]["mu3_sign_pos"] and rows[k]["mu4_sign_neg"]
                                                for k in BASELINES)),
+        # boolean computed from EXACT mpf (not re-parsed strings): does the μ₃ baseline-class
+        # spread exceed the corpus-G gap factor it targets?
+        "mu3_spread_exceeds_corpus_gap": bool((max(mu3s) / min(mu3s))
+                                              > exact["G_graded_coinvariant"]["gap_factor"]),
     }
 
 
@@ -168,9 +175,8 @@ def main() -> int:
     mu3_raw_G = mp.mpf(raw["per_baseline"]["G_graded_coinvariant"]["mu3"])
     rho_strong_knob_pct = mp.nstr(100 * abs(mu3_raw_G - mu3_corr_G) / mu3_corr_G, 4)
 
-    baseline_spread = mp.mpf(corr["mu3_spread_factor"])   # BIG knob (baseline class)
     gap_factor_corpus = mp.mpf(corr["per_baseline"]["G_graded_coinvariant"]["gap_factor_mu3_over_c3"])
-    spread_exceeds_gap = bool(baseline_spread > gap_factor_corpus)
+    spread_exceeds_gap = corr["mu3_spread_exceeds_corpus_gap"]   # exact-mpf boolean from run()
 
     verdict = {
         "mu3_baseline_class_spread_factor": corr["mu3_spread_factor"],
@@ -231,7 +237,7 @@ def main() -> int:
     this = Path(__file__).resolve()
     witness = {
         "schema": "witness/v1",
-        "producer": str(this.relative_to(ROOT.parent)) if ROOT.parent in this.parents else str(this.relative_to(ROOT)),
+        "producer": str(this.relative_to(ROOT)),   # repo-root-relative (matches sibling Δ_λ witnesses)
         "computation": payload["computation"],
         "description": payload["description"],
         "audit_only": True,

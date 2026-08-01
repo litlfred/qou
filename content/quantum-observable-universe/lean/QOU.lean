@@ -99,6 +99,7 @@ import QOU.MassTheory.BindingResidualAmplification
 import QOU.MassTheory.FrameAmbiguitySecondOrder
 import QOU.MassTheory.MilnorWeightParityConvergence
 import QOU.MassTheory.MilnorMagnusCoefficient
+import QOU.MassTheory.Mu3BaselineFragility
 import QOU.Mass.MassVolDensity
 import QOU.Mass.MixedMultibondMuBarIntegrality
 import QOU.Mass.BindingRecurrenceSpectral
