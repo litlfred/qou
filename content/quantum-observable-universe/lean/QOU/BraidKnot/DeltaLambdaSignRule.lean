@@ -300,8 +300,8 @@ theorem burnside (n : ℕ) (partitions : List (Partition n))
   -- `snSpectralData ℚ n`). Discharging `burnside` from it needs two further
   -- bridges, both genuine formalisation work (not yet in Mathlib or the corpus):
   --   (1) `dimIrrep Λ = numSYT (youngDiagramOf Λ)` — the hook-length formula
-  --       `StandardYoungTableau.numSYT_mul_hookProduct` (a still-open sorry)
-  --       PLUS `Partition.hookProduct Λ = YoungDiagram.hookProduct
+  --       `QOU.BraidKnot.numSYT_mul_hookProduct` (a still-open sorry)
+  --       PLUS `Partition.hookProduct Λ = QOU.BraidKnot.hookProduct
   --       (youngDiagramOf Λ)` (the custom list-based hookProduct = the cell-based
   --       one), with `Nat`-division care (`hookProduct ∣ n!`);
   --   (2) the reindexing `List (Partition n)` (complete + `Nodup`) sum ↔
