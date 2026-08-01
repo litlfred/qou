@@ -355,6 +355,7 @@ import QOU.Archimedean.BorelProperTimeMoment
 import QOU.MathlibExt.FrechetShohat
 import QOU.Archimedean.BalancedKernelConfluence
 import QOU.Archimedean.BalancedMomentConfluence
+import QOU.Archimedean.BalancedKernelTightness
 import QOU.AlgebraicSubstrate.SubstrateClockUniqueness
 import QOU.AlgebraicSubstrate.PlanckStepAtomicity
 import QOU.AlgebraicSubstrate.AtomicityJetIndependence

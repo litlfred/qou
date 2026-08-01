@@ -1,0 +1,260 @@
+{
+  "engine": "sympy+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-01T00:52:07.062652+00:00",
+  "commitSha": "bbfb5b938ebf04e2d82d3cf730f6e328ea97e19c",
+  "assertions": [
+    {
+      "name": "second_moment_exact_identities",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": 0,
+      "source": "∫ s² dK_q = N^bal_q(3) = q^{−1/2}(1+q) = 2 + (√q−1)²/√q and d/dq N^bal(3) = (q−1)/(2q^{3/2}) — exact (sympy). For q > 1 the derivative is > 0, so on the family interval q ∈ (1, q₀] the second moment is monotone increasing with sup = N^bal_{q₀}(3) =: C₂ and inf → 2! = 2 as q → 1⁺: the uniform second-moment bound covering the WHOLE interval is exact and free (no numerics needed); the mass is N^bal(1) = 1 exactly (probability normalization, dK-framing = Attack A's A2 shift of the ds/s convention)"
+    },
+    {
+      "name": "kernel_second_moments",
+      "computed": "9.4182e-32",
+      "expected": "0",
+      "passed": true,
+      "tolerance": 1e-30,
+      "source": "∫ s² dK = N^bal_q(3) for BOTH explicit kernels (atomic Jackson ⊛ theta via the separable Mellin factors [2]_p!·q^{1/2}; a.c. Jackson ⊛ log-normal via the exact Gaussian moment e^{2μ̂+2σ²} = q^{1/2}) at every sampled q (test, proton, muon, 1+1e-1, 1+1e-2, 1+1e-3), rel < 1e−30 (60 dps), and every value ≤ the exact monotone bound C₂ = max N^bal(3) = 2.00831604419 — the uniformly-bounded-second-moment hypothesis of the Lean tightness theorem is verified on the constructed family"
+    },
+    {
+      "name": "markov_tail_bound",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": 0,
+      "source": "0 = #violations of [K_q((R,∞)) ≤ N^bal_q(3)/R²] over q ∈ {test, proton, 1+1e-2, 1+1e-3}, R ∈ (2, 4, 8, 16, 32), BOTH kernel variants (atomic tail by exact prefix-sum over the separable Jackson × theta grid; a.c. tail as the Jackson mixture of log-normal erfc complementary CDFs; 60 dps). The observed tails are far below the Markov bound (exponential-type actual decay — diagnostic only; Markov + the uniform second moment already suffice for tightness)"
+    },
+    {
+      "name": "uniform_tightness_certificate",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": 0,
+      "source": "0 = #violations of [sup_q K_q((R(ε),∞)) ≤ ε] with R(ε) = √(C₂/ε), C₂ = 2.00831604419 (the exact monotone second-moment bound), ε ∈ {1e−2, 1e−4, 1e−6}, sup over every sampled q and BOTH variants: the single compact [0, R(ε)] catches mass ≥ 1 − ε of every family member simultaneously — the IsTightMeasureSet certificate realized numerically"
+    },
+    {
+      "name": "second_moment_convergence",
+      "computed": "7.5368e-49",
+      "expected": "0",
+      "passed": true,
+      "tolerance": 1e-30,
+      "source": "N^bal_q(3) − 2 = (√q−1)²/√q exactly (rel < 1e−30 vs the closed form) and strictly decreasing to 0 along q = 1+10^{−k}, k = 1..6 — the k = 2 moment-convergence hypothesis (Tendsto → 2!) that the Lean theorem isTightMeasureSet_of_tendsto_integral_sq converts into tightness via Tendsto.bddAbove_range + Markov"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 52203,
+  "computation": "rep-tightness",
+  "scriptFile": "rep_tightness_probe.py",
+  "scriptHash": "8f3fda734fb7",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "REP attack 2 — tightness of the balanced q-Borel kernel family (bean qou-ry7x, epic qou-q04o; audit-only, scope-(a), NO FIT, nothing wired). The explicit positive kernels with exactly the balanced moments (atomic Jackson ⊛ theta; a.c. Jackson ⊛ log-normal, σ² = ln(q)/2, μ̂ = −ln(q)/4; Attack B §3) form a q-indexed family whose SECOND moment is the exact monotone quantity N^bal_q(3) = q^{−1/2}(1+q) = 2 + (√q−1)²/√q — uniformly bounded on q ∈ (1, q₀] by C₂ = N^bal_{q₀}(3). Markov's inequality then yields uniform tail control K_q((R,∞)) ≤ C₂/R²: the family is TIGHT, verified here at 60 dps (tails of both variants vs the Markov bound at every sampled q; one compact window per ε catching 1−ε of every member). Consequence (carried in Lean, QOU/Archimedean/BalancedKernelTightness.lean): tight + [Prokhorov selection, Mathlib-gap class] ⇒ subsequential weak limits exist; + [moment passage, Mathlib-gap class] + the Lean-PROVED factorial determinacy pin (Carleman divergence + [CarlemanDeterminacyStieltjes]) ⇒ EVERY subsequential limit is the Schwinger measure e^{−s}ds — archimedean (REP) for the constructed family without fibre uniqueness (which fails: the fibre problem is indeterminate at q ≠ 1, Attack B §3.1). NOT closed: the identification of the substrate's own kernel with a member of this family (REP-1).",
+  "auditOnly": "docs/audits/2026-08-01-rep-tightness-archimedean.md",
+  "data": {
+    "second_moments": {
+      "test": {
+        "q": "1.2",
+        "N_bal_3": "2.008316044185609082675556",
+        "m2_atomic": "2.008316044185609082675556",
+        "m2_ac": "2.008316044185609082675556"
+      },
+      "proton": {
+        "q": "1.10997858275",
+        "N_bal_3": "2.00272236386053329050782",
+        "m2_atomic": "2.00272236386053329050782",
+        "m2_ac": "2.00272236386053329050782"
+      },
+      "muon": {
+        "q": "1.10997859556",
+        "N_bal_3": "2.002722364462701994524582",
+        "m2_atomic": "2.002722364462701994524582",
+        "m2_ac": "2.002722364462701994524582"
+      },
+      "1+1e-1": {
+        "q": "1.1",
+        "N_bal_3": "2.002271437415743862438229",
+        "m2_atomic": "2.002271437415743862438229",
+        "m2_ac": "2.002271437415743862438229"
+      },
+      "1+1e-2": {
+        "q": "1.01",
+        "N_bal_3": "2.0000247523220781626872",
+        "m2_atomic": "2.0000247523220781626872",
+        "m2_ac": "2.0000247523220781626872"
+      },
+      "1+1e-3": {
+        "q": "1.001",
+        "N_bal_3": "2.000000249750234156454885",
+        "m2_atomic": "2.000000249750234156454885",
+        "m2_ac": "2.000000249750234156454885"
+      }
+    },
+    "markov_tails": {
+      "test": {
+        "2": {
+          "markov_bound": "0.502079011",
+          "tail_atomic": "0.1462547608",
+          "tail_ac": "0.1350871306"
+        },
+        "4": {
+          "markov_bound": "0.1255197528",
+          "tail_atomic": "0.01882615587",
+          "tail_ac": "0.01855184185"
+        },
+        "8": {
+          "markov_bound": "0.03137993819",
+          "tail_atomic": "0.0003064844133",
+          "tail_ac": "0.0003959067498"
+        },
+        "16": {
+          "markov_bound": "0.007844984548",
+          "tail_atomic": "4.805369299e-7",
+          "tail_ac": "3.742324075e-7"
+        },
+        "32": {
+          "markov_bound": "0.001961246137",
+          "tail_atomic": "3.403996869e-12",
+          "tail_ac": "4.957763774e-12"
+        }
+      },
+      "proton": {
+        "2": {
+          "markov_bound": "0.500680591",
+          "tail_atomic": "0.1419849741",
+          "tail_ac": "0.1352536179"
+        },
+        "4": {
+          "markov_bound": "0.1251701477",
+          "tail_atomic": "0.01746825158",
+          "tail_ac": "0.01839312525"
+        },
+        "8": {
+          "markov_bound": "0.03129253694",
+          "tail_atomic": "0.0003598412583",
+          "tail_ac": "0.0003553165789"
+        },
+        "16": {
+          "markov_bound": "0.007823134234",
+          "tail_atomic": "2.294708843e-7",
+          "tail_ac": "1.824491661e-7"
+        },
+        "32": {
+          "markov_bound": "0.001955783558",
+          "tail_atomic": "1.491256271e-13",
+          "tail_ac": "2.61846396e-13"
+        }
+      },
+      "1+1e-2": {
+        "2": {
+          "markov_bound": "0.5000061881",
+          "tail_atomic": "0.1355900543",
+          "tail_ac": "0.1353345388"
+        },
+        "4": {
+          "markov_bound": "0.125001547",
+          "tail_atomic": "0.01813863946",
+          "tail_ac": "0.0183163441"
+        },
+        "8": {
+          "markov_bound": "0.03125038676",
+          "tail_atomic": "0.0003333966219",
+          "tail_ac": "0.0003356434563"
+        },
+        "16": {
+          "markov_bound": "0.007812596689",
+          "tail_atomic": "1.144691852e-7",
+          "tail_ac": "1.131028011e-7"
+        },
+        "32": {
+          "markov_bound": "0.001953149172",
+          "tail_atomic": "1.423409094e-14",
+          "tail_ac": "1.32146598e-14"
+        }
+      },
+      "1+1e-3": {
+        "2": {
+          "markov_bound": "0.5000000624",
+          "tail_atomic": "0.135344773",
+          "tail_ac": "0.1353352757"
+        },
+        "4": {
+          "markov_bound": "0.1250000156",
+          "tail_atomic": "0.01831775356",
+          "tail_ac": "0.018315646"
+        },
+        "8": {
+          "markov_bound": "0.0312500039",
+          "tail_atomic": "0.0003355246364",
+          "tail_ac": "0.0003354644525"
+        },
+        "16": {
+          "markov_bound": "0.007812500976",
+          "tail_atomic": "1.125697819e-7",
+          "tail_ac": "1.125408959e-7"
+        },
+        "32": {
+          "markov_bound": "0.001953125244",
+          "tail_atomic": "1.267351916e-14",
+          "tail_ac": "1.266963746e-14"
+        }
+      }
+    },
+    "tightness_certificate": {
+      "0.01": {
+        "R_eps": "14.1715067801",
+        "sup_tail": "1.678928811e-6"
+      },
+      "0.0001": {
+        "R_eps": "141.715067801",
+        "sup_tail": "1.015816676e-29"
+      },
+      "1.0e-6": {
+        "R_eps": "1417.15067801",
+        "sup_tail": "7.373426656e-78"
+      }
+    },
+    "second_moment_gap_ladder": {
+      "1e-1": "0.00227143741574386",
+      "1e-2": "2.47523220781627e-5",
+      "1e-3": "2.49750234156455e-7",
+      "1e-4": "2.49975002343531e-9",
+      "1e-5": "2.49997500023437e-11",
+      "1e-6": "2.49999750000234e-13"
+    },
+    "q0_pins": {
+      "muon": "1.10997859555733471989976322048322502665620840878015368660798114614493",
+      "proton": "1.1099785827513808075916690956107688798744991218736",
+      "source": "computations/q-pinning-50-digit.witness.json (muon, canonical 3-CAL layer); qou_substrate.constants.Q_50_DIGIT_STR (proton, precision layer)"
+    },
+    "lean_carrier": {
+      "file": "content/quantum-observable-universe/lean/QOU/Archimedean/BalancedKernelTightness.lean",
+      "proved": [
+        "tail_measureReal_le (Markov)",
+        "measure_compl_closedBall_le",
+        "isTightMeasureSet_of_integral_sq_le",
+        "isTightMeasureSet_of_tendsto_integral_sq",
+        "subseq_limit_eq_schwinger (conditional composition)"
+      ],
+      "gap_classes": [
+        "ProkhorovSelectionReal (Mathlib gap)",
+        "MomentPassageStieltjes (Mathlib gap)",
+        "CarlemanDeterminacyStieltjes (merged, reused)"
+      ]
+    }
+  }
+}
