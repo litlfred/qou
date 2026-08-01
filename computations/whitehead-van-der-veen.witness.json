@@ -24,5 +24,11 @@
   "richardson_err_vs_4G": 0.0013506832437579774,
   "positive_sum_kernel": "S_{n,k} = prod_{j=1}^n 2 sin^2((k+j)pi/N)/sin(j pi/N) > 0",
   "note": "van der Veen PROVES the VC for the Whitehead link in this paper; the positive-sum form is the squeeze-proof ingredient (parallels 4_1 E1-E5 / Borromean B1-B5).",
-  "timestamp": "2026-08-01T19:55:32+00:00"
+  "timestamp": "2026-08-01T23:11:36+00:00",
+  "engine": "python",
+  "engineVersion": "3.11.15",
+  "scriptFile": "whitehead_van_der_veen.py",
+  "commitSha": "ce0bd1120573fc7e5f3f5a0ba647ecf243e6e5ca",
+  "computedAt": "2026-08-01T23:11:36+00:00",
+  "auditOnly": true
 }

@@ -78,6 +78,7 @@ import QOU.Knot.FigureEightVolume
 import QOU.Knot.FigureEightVolumeLiterature
 import QOU.Knot.NeumannZagierParity
 import QOU.Knot.PerNeutronLadder
+import QOU.Knot.WhiteheadVolumeConjecture
 import QOU.KnotTheory
 import QOU.KnotTheory.Brunnian
 import QOU.KnotRegistry

@@ -102,6 +102,8 @@ if __name__ == "__main__":
         "note": "c_σ≈0.595 is NUMERICAL; a closed-form (Reidemeister torsion / 1-loop) identification is NOT asserted (anti-fit). p=3/2 exact = geometric δ.",
         "timestamp": datetime.now(timezone.utc).isoformat(timespec="seconds"),
     }
+    from _kashaev_prov import add_provenance
+    add_provenance(wit, __file__, engine="python+numpy")
     out = Path(__file__).resolve().parent / "whitehead-c-sigma.witness.json"
     out.write_text(json.dumps(wit, indent=2))
     print(f"\n  Witness: {out}")

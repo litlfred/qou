@@ -23,9 +23,12 @@ VALIDATION (anti-guessing): this transcription is checked against the INDEPENDEN
 to state-sum precision at N=3,5,7,9,11 (that state sum was itself pinned against
 the U_q(sl₂) engine, so this is a third independent cross-check).
 
-Because the formula is O(N²) and phase-stable (no root-of-unity cancellation),
-it reaches N≫23 (the state-sum TN ceiling) trivially, giving a much sharper
-Volume-Conjecture estimate.  Audit-only; no wiring.
+This reference implementation of `colored_jones` is O(N³) (nested n,k loops with
+an O(n) product in `_S`) — fine for the N≤~30 cross-check against the state sum.
+The phase-stable, positive-summand structure has NO root-of-unity cancellation,
+so an O(N²) vectorized variant (`whitehead_c_sigma.log_JN`, incremental sliding-
+window product) reaches N≫23 (the state-sum TN ceiling) for the sharper VC
+estimate; here we only push to a few hundred.  Audit-only; no wiring.
 """
 from __future__ import annotations
 
@@ -120,6 +123,8 @@ if __name__ == "__main__":
         "note": "van der Veen PROVES the VC for the Whitehead link in this paper; the positive-sum form is the squeeze-proof ingredient (parallels 4_1 E1-E5 / Borromean B1-B5).",
         "timestamp": datetime.now(timezone.utc).isoformat(timespec="seconds"),
     }
+    from _kashaev_prov import add_provenance
+    add_provenance(wit, __file__, engine="python")
     out = Path(__file__).resolve().parent / "whitehead-van-der-veen.witness.json"
     out.write_text(json.dumps(wit, indent=2))
     print(f"\n  Witness: {out}")

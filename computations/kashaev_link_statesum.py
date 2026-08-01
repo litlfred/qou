@@ -163,10 +163,15 @@ def _weight(R: KashaevR, jvals, avals, N: int) -> complex:
 
 
 def link_invariant(diag: Diagram, N: int) -> complex:
-    """⟨L⟩ via (3.6): sum over j:E→Z_N with the two strand edges fixed to 0."""
+    """⟨L⟩ via (3.6): sum over j:E→Z_N with the two strand edges fixed to 0.
+
+    Uses the COUPLED (3.3)-(3.4) face solver by default (`solve_face_indices_coupled`)
+    — the row-only `solve_face_indices` does NOT enforce the per-face column
+    constraints and would give a non-invariant.  Pass a pre-solved
+    `diag.face_index` to override."""
     R = KashaevR(N)
     om = R.om
-    a = diag.face_index or solve_face_indices(diag, N)
+    a = diag.face_index or solve_face_indices_coupled(diag, N)
 
     free_edges = [e for e in diag.edges if e not in diag.strand_edges]
     total = 0j
@@ -575,6 +580,8 @@ if __name__ == "__main__":
         "limitation": "odd PRIME N only (Fermat-inverse face solve); composite N needs a Z_N linear solver",
         "timestamp": datetime.now(timezone.utc).isoformat(timespec="seconds"),
     }
+    from _kashaev_prov import add_provenance
+    add_provenance(wit, __file__, engine="python")
     out = Path(__file__).resolve().parent / "kashaev-link-statesum.witness.json"
     out.write_text(json.dumps(wit, indent=2))
     print(f"  Witness: {out}")
