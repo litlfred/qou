@@ -519,5 +519,8 @@ import QOU.MassTheory.MirrorPairBondScaling
 import QOU.QBeta.CubicSaddleDiscriminant
 import QOU.QBeta.SixOneShapeDiscriminant
 import QOU.MassTheory.BarParityClusterObstruction
+-- A=4 Brunnian deficit: derived leading data (exact order 6, coeff -96)
+-- replacing the MEASURED A=4 leg of MilnorParitySignLaw. Sorry-free.
+import QOU.MassTheory.BrunnianDeficitLeadingOrderDerived
 import QOU.BraidKnot.ColoredJonesRecurrence
 import QOU.BraidKnot.KnotOperatorRecurrence

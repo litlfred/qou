@@ -300,7 +300,14 @@ def main():
         nz = [m[0] for m in Npoly.monoms() if Npoly.coeff_monomial((m[0],)) != 0]
         assert nz, "deficit numerator is identically zero — unexpected"
         lead_order = min(nz)
-        lead_coeff = sp.cancel(Npoly.coeff_monomial((lead_order,)) / M_at_1)
+        # Leading coefficient in (s−1).
+        lead_coeff_s = sp.cancel(Npoly.coeff_monomial((lead_order,)) / M_at_1)
+        # Convert to the (q−1) leading coefficient. Near s = 1,
+        # q − 1 = (s−1)(s+1) = 2(s−1)·(1 + O(s−1)), so (q−1)ⁿ = 2ⁿ(s−1)ⁿ(1+…)
+        # and the leading coefficients differ by exactly 2^order.
+        # (Cross-checked: A=3 gives 192/2⁴ = 12, matching an independent
+        # pure-q run of the same pipeline.)
+        lead_coeff = sp.cancel(lead_coeff_s / 2 ** lead_order)
 
         # EXACT sign at the substrate pin. Because the deficit is rational in
         # s = √q, pinning a RATIONAL s₀ makes the evaluation exactly rational
@@ -323,7 +330,8 @@ def main():
         tau_num = float(sp.N(tau_s.subs(s, sp.sqrt(sp.Float(Q_50_DIGIT_STR, 50))), 30))
 
         _log(f"  D(s), q = s²  =  {str(Dfact)[:400]}")
-        _log(f"  leading (q−1)-order = {lead_order}   leading coeff = {lead_coeff}")
+        _log(f"  leading (q−1)-order = {lead_order}   "
+             f"leading coeff (q−1) = {lead_coeff}   [(s−1) coeff = {lead_coeff_s}]")
         _log(f"  D(q₀_rat) sign = {d0_sign} ({sign_method})   τ(q₀) ≈ {tau_num:.9f}")
 
         results[label] = {
@@ -335,7 +343,8 @@ def main():
             "deficit_exact_in_s_where_q_eq_s_squared": str(Dfact),
             "tau_exact_in_s_where_q_eq_s_squared": str(tau_s),
             "leading_q_minus_1_order": int(lead_order),
-            "leading_coeff": str(lead_coeff),
+            "leading_coeff_in_q_minus_1": str(lead_coeff),
+            "leading_coeff_in_s_minus_1": str(lead_coeff_s),
             "deficit_sign_at_q0_exact": d0_sign,
             "deficit_sign_method": sign_method,
             "s0_rational_pin": str(s0_rat),
