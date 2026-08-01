@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-01T21:58:50.724035+00:00",
-  "commitSha": "30d4f62a6186b0a79a6182cd030c79be4d8f7078",
+  "computedAt": "2026-08-01T22:02:48.177762+00:00",
+  "commitSha": "c2612eb5873db51b482c72d3d0f019cf33ba19bc",
   "assertions": [
     {
       "name": "C0_T4_pair_lies_on_curve",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 13,
+  "durationMs": 14,
   "computation": "qbeta-qnnq-afree-theta-constraint",
   "scriptFile": "qbeta_qnnq_afree_theta_constraint_probe.py",
   "scriptHash": "028eecd512be",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "61c95a82d5c42f49ea7fc540234c5287d47248d9",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
