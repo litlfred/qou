@@ -40,6 +40,36 @@ whether the **same 0-fit framing reproduces both moments at a consistent fractio
   is intrinsic to the topology (first Milnor invariant at length A ⇒ O(h^{2(A−1)})), so it
   **cannot be tuned away without a fit**.
 
+## Decomposition — legitimate topology vs the real coefficient gap
+
+The ~50× is not all "failure": most of it is the framework's **own proved prediction**.
+Normalizing out the intrinsic Brunnian order `h^{2(A−1)}` (`ĉ_A := c_A/h^{2(A−1)}`):
+
+- intrinsic h-order factor `1/h² = 22.9×` — the framework's *own* O(h^{2(A−1)}) prediction;
+- order-normalized coefficient growth `ĉ₄/ĉ₃ = 4.49` vs the moment growth `9.75` ⇒ a
+  **residual coefficient-scaling gap of ~2.17×**.
+
+So `49.7× = 22.9× (intrinsic, predicted) × 2.17× (coefficient, the real open piece)`. A
+derived route (s5-so3 `W_λ`; independent κ) would need to supply that ~2.17× *and* reverse
+the intrinsic-suppression sign of the A-trend — which fixed-cabling clusters cannot.
+
+## Lean formalization (sorry-free, `lean`-direct exit 0)
+
+[`QOU/MassTheory/BorromeanMomentScalingExclusion.lean`](../../content/quantum-observable-universe/lean/QOU/MassTheory/BorromeanMomentScalingExclusion.lean)
+proves the structural exclusion (not just the numerics):
+
+- `clusterOrd_strictAnti` — for `0 < r < 1`, `κ > 0`, the cluster order `κ·r^k` is
+  **strictly antitone** in the level index (clusters strictly decrease as A grows);
+- `eq_at_most_once` — a strictly antitone sequence and a strictly monotone one agree at
+  **at most one** index;
+- `brunnian_identification_at_most_one_A` — hence the identification `c_A = μ_A` (with a
+  strictly increasing residual-moment sequence `μ`) holds for **at most one** body-order;
+- `clusterOrd_tendsto_zero` — the clusters `→ 0` as `A → ∞`, so they cannot track a growing
+  moment sequence (the exclusion is not vacuous).
+
+The physical constants are not fitted: `κ`, `0 < h < 1`, and the *growth* of `μ` enter as
+hypotheses; the exclusion is derived from them.
+
 ## Conclusion
 
 **The sign leg stands; the magnitude identification does not survive the second moment.**
