@@ -30,12 +30,21 @@ A literal is reported when ALL of:
    nobody types from memory, so it came from *somewhere*;
 2. a citation-shaped comment sits on the line or within `LOOKBACK` lines
    above (`eq 21`, `GGM`, `arXiv:…`, `[author2021]`, `Table 3`, `§4.2`, …);
-3. the file shows no evidence the value is *checked* — no witness load, no
-   assertion/gate mentioning it, no recomputation of the same quantity.
+3. no verification evidence sits **local to the literal** — nothing on its
+   own line or the line below matching a witness load, assertion, gate, or
+   recomputation.
 
 Condition 3 is what keeps the signal high: a hardcoded reference value used
 as an assertion target is good practice and is NOT flagged. What is flagged
 is a citation-anchored number consumed as an *input*.
+
+**Gating is local, not file-level** (clarified 2026-08-01 after a Copilot
+review caught this docstring describing the wrong scope). A file-level rule
+would be far too coarse — a probe with one assertion anywhere would suppress
+every finding in it, and these files are full of assertions. The separate
+`file_has_verification` field is an **annotation only**: it marks findings in
+files with no gates at all as extra-suspicious in the report, and suppresses
+nothing.
 
 How to clear a finding
 ----------------------
@@ -145,7 +154,10 @@ def scan_file(path: Path):
             cite = CITATION_RE.search(ctx)
             if not cite:
                 continue
-            # is this literal itself gated on the same line / next line?
+            # Is this literal itself gated, on its own line or the next?
+            # Deliberately LOCAL, not file-level: `verified_file` below is an
+            # annotation only and must not suppress, or one assertion
+            # anywhere in a probe would mask every finding in it.
             near = "\n".join(lines[i: i + 2])
             if VERIFIED_RE.search(near):
                 continue
