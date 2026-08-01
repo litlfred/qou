@@ -75,4 +75,39 @@ theorem volume_window_le (hq1 : 1 < q) (ε : ℝ) :
   refine le_trans (measure_iUnion_le _) (le_of_eq (tsum_congr (fun n => ?_)))
   rw [Real.volume_Ioc]
 
+/-- **Resonance-window measure bound (complete).**  For `1 < q` and `0 ≤ ε`,
+    `volume(W(q,ε)) ≤ (1 − q^{−ε})·q/(q−1)` — the exact geometric bound.  Evaluates
+    `volume_window_le`'s tsum: each term is `q^{−n}(1−q^{−ε}) = (q⁻¹)ⁿ(1−q^{−ε})`, a geometric
+    series summing to `(1−q^{−ε})·(1−q⁻¹)⁻¹ = (1−q^{−ε})·q/(q−1)`.  With
+    `1 − q^{−ε} ≤ ε·log q`, this is `≤ ε·log q·q/(q−1)`, the summable resonance-window bound
+    Borel–Cantelli consumes. -/
+theorem volume_window_le_geom (hq1 : 1 < q) (hε0 : 0 ≤ ε) :
+    volume {x : ℝ | x ∈ Set.Ioo (0:ℝ) 1 ∧ brS x q - (Nat.floor (brS x q) : ℝ) < ε}
+      ≤ ENNReal.ofReal ((1 - q ^ (-ε)) * (q / (q - 1))) := by
+  have hqpos : (0 : ℝ) < q := by linarith
+  have hqinv_lt : q⁻¹ < 1 := by
+    have h1 : q⁻¹ * q = 1 := inv_mul_cancel₀ (ne_of_gt hqpos)
+    nlinarith [mul_lt_mul_of_pos_left hq1 (inv_pos.mpr hqpos), h1]
+  have hqinv_nn : (0 : ℝ) ≤ q⁻¹ := by positivity
+  have hc_nn : 0 ≤ 1 - q ^ (-ε) := by
+    have hle : q ^ (-ε) ≤ q ^ (0 : ℝ) :=
+      Real.rpow_le_rpow_of_exponent_le (le_of_lt hq1) (by linarith)
+    rw [Real.rpow_zero] at hle; linarith
+  have hterm : ∀ n : ℕ, q ^ (-(n : ℝ)) - q ^ (-((n : ℝ) + ε)) = (q⁻¹) ^ n * (1 - q ^ (-ε)) := by
+    intro n
+    rw [show -((n : ℝ) + ε) = -(n : ℝ) + -ε by ring, Real.rpow_add hqpos,
+        Real.rpow_neg hqpos.le, Real.rpow_natCast, ← inv_pow]
+    ring
+  have hsummable : Summable (fun n : ℕ => (q⁻¹) ^ n * (1 - q ^ (-ε))) :=
+    (summable_geometric_of_lt_one hqinv_nn hqinv_lt).mul_right _
+  have hinv : (1 - q⁻¹)⁻¹ = q / (q - 1) := by
+    rw [show (1 : ℝ) - q⁻¹ = (q - 1) / q by field_simp, inv_div]
+  have hgeom : ∑' n : ℕ, (q⁻¹) ^ n * (1 - q ^ (-ε)) = (1 - q ^ (-ε)) * (q / (q - 1)) := by
+    rw [tsum_mul_right, tsum_geometric_of_lt_one hqinv_nn hqinv_lt, hinv]
+    ring
+  refine le_trans (volume_window_le hq1 ε) (le_of_eq ?_)
+  rw [funext (fun n : ℕ => congrArg ENNReal.ofReal (hterm n)),
+      ← ENNReal.ofReal_tsum_of_nonneg (fun n => mul_nonneg (by positivity) hc_nn) hsummable,
+      hgeom]
+
 end QOU.Archimedean
