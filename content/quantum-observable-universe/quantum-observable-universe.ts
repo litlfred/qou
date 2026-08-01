@@ -129,6 +129,7 @@ export default paper({
     chapterRef({ dir: "appendix-transfer-matrices" }),
     chapterRef({ dir: "appendix-mass-binding-algorithms" }),    // Bridge: canonical chain steps → propositions → Python API
     chapterRef({ dir: "appendix-standard-model" }),             // Toward the Standard Model: gauge action groupoid → Hecke realization → SM truncation, with honest open-problems ledger
+    chapterRef({ dir: "appendix-nf-witnesses" }),              // Normal Form Witnesses: Pauli-complete normal-form data for He-4, Be-8, C-12 and medium nuclei A=13–60
     chapterRef({ dir: "appendix-qvalues" }),
     chapterRef({ dir: "appendix-surreals" }),                  // Surreal-number lift (categorical lobe) + Millennium-problem surreal bounds
     chapterRef({ dir: "appendix-surreals-archimedean" }),      // Surreal-number lift (archimedean lobe) — substrate-q_0-pinned content split out per q-usage audit
