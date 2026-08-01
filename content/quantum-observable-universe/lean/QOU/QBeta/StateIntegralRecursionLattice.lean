@@ -254,4 +254,69 @@ theorem row_zero_bot_reduction [inst : Recursion R M A B q I] (m : ℤ) :
     exact ⟨k + 1, Nat.succ_pos k,
       le_trans (Nat.succ_le_of_lt (Finset.mem_range.mp hk)) (le_max_right A B), rfl⟩
 
+/-- **Two-sided ℤ reduction of row 0 into a fixed size-`max{A,B}` window.**
+    Every row-0 integral `I_{m,0}`, for *any* `m ∈ ℤ`, lies in the `R`-span of
+    the single fundamental window `{I_{0,0}, I_{1,0}, …, I_{max{A,B}−1,0}}`.
+
+    This is the full finite-generation core FW's "`max{A,B}` independent
+    integrals" corollary rests on: the entire two-sided row `ℓ = 0` reduces into
+    one size-`max{A,B}` window.  The proof is two `ℕ`-indexed strong inductions:
+
+    * **upward** (`hUp`, `∀ n : ℕ, I_{n,0} ∈ W`): indices `< max{A,B}` are window
+      generators; an index `n ≥ max{A,B}` is pushed *down* by
+      `row_zero_top_reduction` (base `n − max{A,B}`) into `{I_{n−max,0}, …,
+      I_{n−1,0}}`, every element of which is a strictly-smaller natural index —
+      strong IH.
+    * **downward** (`hDown`, `∀ n : ℕ, I_{−n−1,0} ∈ W`): `row_zero_bot_reduction`
+      pushes `I_{−n−1,0}` *up* into `{I_{−n,0}, …, I_{−n−1+max,0}}`; each element
+      is either a nonnegative index (covered by `hUp`) or a strictly-smaller
+      negative index — strong IH. -/
+theorem row_zero_in_window [inst : Recursion R M A B q I] (hq : q ≠ 0) (m : ℤ) :
+    I m 0 ∈ Submodule.span R {y : M | ∃ j : ℕ, j < max A B ∧ y = I (j : ℤ) 0} := by
+  -- upward direction: every nonnegative row-0 index reduces into the window
+  have hUp : ∀ n : ℕ,
+      I (n : ℤ) 0 ∈ Submodule.span R {y : M | ∃ j : ℕ, j < max A B ∧ y = I (j : ℤ) 0} := by
+    intro n
+    induction n using Nat.strongRecOn with
+    | _ n ih =>
+      by_cases hn : n < max A B
+      · exact Submodule.subset_span ⟨n, hn, rfl⟩
+      · push_neg at hn
+        have htop := row_zero_top_reduction (R := R) (M := M) (A := A) (B := B) (q := q)
+          (I := I) hq ((n : ℤ) - ((max A B : ℕ) : ℤ))
+        have hidx : (n : ℤ) - ((max A B : ℕ) : ℤ) + ((max A B : ℕ) : ℤ) = (n : ℤ) := by ring
+        rw [hidx] at htop
+        refine (Submodule.span_le.mpr ?_) htop
+        rintro y ⟨j, hj, rfl⟩
+        have hpi : (n : ℤ) - ((max A B : ℕ) : ℤ) + (j : ℤ) = ((n - max A B + j : ℕ) : ℤ) := by
+          push_cast [Nat.cast_sub hn]; ring
+        rw [hpi]
+        exact ih (n - max A B + j) (by omega)
+  -- downward direction: every negative row-0 index reduces into the window
+  have hDown : ∀ n : ℕ,
+      I (-(n : ℤ) - 1) 0 ∈ Submodule.span R {y : M | ∃ j : ℕ, j < max A B ∧ y = I (j : ℤ) 0} := by
+    intro n
+    induction n using Nat.strongRecOn with
+    | _ n ih =>
+      have hbot := row_zero_bot_reduction (R := R) (M := M) (A := A) (B := B) (q := q)
+        (I := I) (-(n : ℤ) - 1)
+      refine (Submodule.span_le.mpr ?_) hbot
+      rintro y ⟨j, hj1, hjN, rfl⟩
+      rcases le_or_gt 0 ((-(n : ℤ) - 1) + (j : ℤ)) with hpos | hneg
+      · rw [show (-(n : ℤ) - 1) + (j : ℤ)
+            = (((-(n : ℤ) - 1) + (j : ℤ)).toNat : ℤ) from (Int.toNat_of_nonneg hpos).symm]
+        exact hUp _
+      · have hjn : j ≤ n := by omega
+        rw [show (-(n : ℤ) - 1) + (j : ℤ) = -((n - j : ℕ) : ℤ) - 1 by
+          push_cast [Nat.cast_sub hjn]; ring]
+        exact ih (n - j) (by omega)
+  -- combine: dispatch on the sign of m
+  rcases lt_or_ge m 0 with hm | hm
+  · have hnn : (0 : ℤ) ≤ -m - 1 := by omega
+    have heq : (((-m - 1).toNat : ℤ)) = -m - 1 := Int.toNat_of_nonneg hnn
+    have hm2 : m = -(((-m - 1).toNat : ℤ)) - 1 := by rw [heq]; ring
+    rw [hm2]; exact hDown ((-m - 1).toNat)
+  · have hm2 : m = ((m.toNat : ℤ)) := (Int.toNat_of_nonneg hm).symm
+    rw [hm2]; exact hUp m.toNat
+
 end QOU.QBeta.StateIntegral
