@@ -82,10 +82,31 @@ Two independent confirmations that the pipeline is sound:
   the law only as the measured `tauL4Measured > 1`.
 
 Recorded in Lean, sorry-free:
-[`QOU/MassTheory/BrunnianDeficitLeadingOrderDerived.lean`](../../content/quantum-observable-universe/lean/QOU/MassTheory/BrunnianDeficitLeadingOrderDerived.lean)
-— the derived leading data, the order law at both A, the parity-sign law from the
-derived coefficients, and the general "sign is carried by the leading coefficient
-at even order" lemma.
+[`QOU/MassTheory/BrunnianDeficitLeadingOrderDerived.lean`](../../content/quantum-observable-universe/lean/QOU/MassTheory/BrunnianDeficitLeadingOrderDerived.lean).
+
+**Structure of that file (a correction worth recording).** The first version
+stated things like `leadingCoeff 4 < 0 := by decide` over a hardcoded `−96`.
+That is **not a theorem** — `leadingCoeff 4` is *defined* to be `−96`, so the
+statement is true by unfolding and says nothing about the physics; it is exactly
+the "true by `rfl`/`decide` ⇒ notation, not a proof" anti-pattern of AGENTS.md
+§8 (Strict Lean Discipline), and dressing witness output as a proved theorem is
+the laundering the anti-fit rules forbid. Five of nine declarations had that
+shape.
+
+The file now splits the two sides so their agreement is **falsifiable**:
+
+* `witnessedOrder` / `witnessedLeadingCoeff` — **DATA**, transcribed from the
+  witness; they assert nothing.
+* `leadingOrder = 2(A−1)` / `paritySign = (−1)^(A−1)` — **THE LAW**, defined
+  without reference to the data.
+* `law_reproduces_witnessed_order`, `law_matches_witnessed_sign` — the agreement
+  theorems. These **can fail**: a witnessed order of `5`, or a *positive* A=4
+  coefficient, would not compile. That is the content, and it is the actual
+  scientific claim (the law predicts what the computation found).
+
+Genuinely general lemmas are kept as such: `leadingOrder_even` (∀ A), and the
+ordered-ring "sign is carried by the leading coefficient at even order" lemma
+with its A=4 instantiation.
 
 ## What is NOT claimed (scope)
 
