@@ -616,3 +616,26 @@ the A=3 anchor. Complements #4389 (sign law); distinct angle from #4463/#4404 (�
 magnitude = the leading-coefficient *value* the conjecture leaves open). Audit
 `2026-08-01-deltalambda-milnor-order-law-proof.md`. Nothing wired; no exact-law overclaim;
 `free_parameters = 0`.
+
+**2026-08-01 — GAP-A-4 coordination-EDGE route (the last un-excluded A=3 magnitude
+reading): WALL(scope-a) — the third bond breaks Brunnian O(h⁴).** (PR #4472,
+`claude/deltalambda-gap-a4-brane-tower-level-2026-08-01`.) #4364's H₉ word
+`(Δ_A·Δ_B⁻¹)³` uses only 2 of 3 cable-pairs = the path `P₃` (2 edges); the physical
+triton is `K₃` (3 edges, braid linear-order obstruction). Forward-derived, 0-fit edge
+ratio `|E(K₃)|/|E(P₃)| = 3/2 = 1.5` (converges with #4392's fit-trap `1.504`, ~5% short
+of `r*=1.585`). Probe `brane_tower_level_coordination_edge_probe.py` adds the third bond
+`Δ_C=(1 2)(0 1)(1 2)` and MEASURES: path stays `O(h⁴)` (order 4.098, reproduces #4364 bare
+deficit 0.049); triangle `(Δ_A·Δ_B⁻¹·Δ_C)³` **breaks Brunnian** (order 4.098→1.776=`O(h²)`,
+overshoots ~400×, sign flip — the `{0,2}` sub-link goes non-trivial); cyclic bar-balanced
+**cancels to 0** (~1e-14). So the `3/2` edge count has **no Brunnian-order-preserving braid
+realization** — `lift_is_coefficient_ratio`'s shared-`h⁴` premise is destroyed. **WALL(scope-a)**,
+NOT a (b) exclusion of the edge-count ingredient (the graph fact + conditional arithmetic
+stand; only the braid realization of the premise is refuted). With the three prior walls
+(2026-07-26) + geometric `W_λ` (#4392) this **brackets the A=3 magnitude source completely**:
+neither a derived LEVEL, nor a geometric `W_λ`, nor a coordination-EDGE factor supplies the
+`1.585×`. Lean `BraneTowerLevelAmplitude.lean` sorry-free (lean-direct exit 0):
+`edge_ratio_A3`, `braid_order_gap_A3`, §3b-cond `CoordinationEdgeAmplitude` +
+`fullCoordAmplitude_eq` (conditional; premise probe-refuted), `edge_scaling_near_miss`,
+`edge_reweight_requires_brunnian` (measured order `1.776 ≠ 4`). Audit
+`2026-08-01-deltalambda-gap-a4-brane-tower-level.md`. Nothing wired; μ₃ never inverted;
+`free_parameters = 0`.
