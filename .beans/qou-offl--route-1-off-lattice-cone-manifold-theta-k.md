@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-07-31T19:30:00Z
-updated_at: 2026-08-01T22:06:12Z
+updated_at: 2026-08-01T22:11:44Z
 ---
 
 Literature anchors:
@@ -62,3 +62,24 @@ literature import. Missing it refutes the route at scope (a).
 
 Curve: computations/probes/qbeta_qnnq_afree_theta_constraint_probe.py
 Note:  docs/scope/2026-08-01-theta-independent-routes.md §2-§3
+
+
+### 2026-08-01 addendum — a whole SHAPE of candidate is already ruled out
+
+Derived before any geometry (formalize-first). Two anchor equations, three
+unknowns: ONE extra scalar closes the system exactly (zero residual, nothing
+to check); TWO over-determine by one and leave a failable residual.
+
+So a route supplying a RATIO ϑ_p/ϑ_μ is **unfalsifiable by construction**.
+Verified concretely: ρ(A) is a monotone bijection from A ∈ (A_crit, ∞) onto
+ρ ∈ (1, ∞), running ~598 → 1.005. Every ratio > 1 is attained by exactly one
+A, so no ratio candidate can be refuted — it only NAMES an A.
+
+Worse, plausible geometric ratios cluster: Vol(𝔹₃)/Vol(4₁) → A = 2.909,
+2√3 → 2.990, cusp count 3/1 → 3.344. Three of six candidates inside
+A ∈ [2.5, 4], which is a mere ~2× band in ρ. A "match near 3" is close to
+guaranteed. **Do not reach for the 2√3 row because it forces A = 2.990.**
+
+NET REQUIREMENT: supply BOTH ϑ absolutely, normalization fixed in advance.
+
+Probe: computations/probes/qbeta_offl_ratio_candidates_unfalsifiable_probe.py

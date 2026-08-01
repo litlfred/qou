@@ -114,18 +114,55 @@ acceptance test** it did not have before:
 > no T4 inversion — and check the pair against (∗). Landing on it determines
 > `A_ω`; missing it refutes the route at scope (a).
 
-Two hazards to design against, both of which sank earlier attempts in this arc:
+### 3.1 A whole shape of candidate is already ruled out
+
+Before running any geometry — formalize-first, narrow the search — the counting
+settles which *shapes* of cone-manifold answer can be tested at all. Two
+equations, three unknowns: **one** extra scalar closes the system exactly, with
+zero residual and nothing left to check; **two** over-determine it by one and
+leave a residual that can fail.
+
+So a route that supplies a **ratio** `ϑ_p/ϑ_μ` from some geometric quantity is
+**unfalsifiable by construction**.
+[`qbeta_offl_ratio_candidates_unfalsifiable_probe.py`](../../computations/probes/qbeta_offl_ratio_candidates_unfalsifiable_probe.py)
+makes that concrete rather than merely asserting it: `ρ(A) = ϑ_p/ϑ_μ` is
+monotone decreasing, running from ≈ 598 as `A → A_crit⁺` down to 1.005 at
+`A = 1000` — a **bijection** from `A ∈ (A_crit, ∞)` onto `ρ ∈ (1, ∞)`. Every
+ratio above 1 is attained by exactly one `A`. No ratio candidate can therefore
+be refuted; it can only *name* an `A`. (Inversion round-trip verified exact,
+10⁻⁶⁹ relative.)
+
+The practical damage is worse than the formal point. Plausible parameter-free
+geometric ratios **cluster**:
+
+| candidate ratio | ρ | A it forces |
+|---|---|---|
+| Vol(𝔹₃)/Vol(4₁) | 3.6099 | 2.909 |
+| 2√3 (\|cusp modulus\| of 4₁) | 3.4641 | 2.990 |
+| cusp count 3/1 | 3.0 | 3.344 |
+| √(Vol ratio) | 1.8999 | 6.025 |
+| crossing number 6/4 | 1.5 | 10.35 |
+| \|disc\| 4/3 | 1.3333 | 15.40 |
+
+Three of six land in `A ∈ [2.5, 4]`. That is not a menu to pick from — it is
+the warning. The whole range `A ∈ [2.5, 4]` is a mere ~2× band in `ρ`,
+`[2.513, 4.887]`, so a ratio landing "near 3" is close to guaranteed and is
+weak evidence **even when the quantity was fixed in advance**. Anyone reaching
+for the 2√3 row because it forces `A = 2.990` should read this paragraph again.
+
+### 3.2 The two hazards that remain
 
 - **Re-parameterization.** If the geometric ϑ carries its own free
   normalization constant, the route has moved the degree of freedom rather than
-  removing it. The test above is immune *only* if the normalization is fixed
-  before the comparison. State it up front, as `qou-rdmr` did.
+  removing it. The test is immune *only* if the normalization is fixed before
+  the comparison. State it up front, as `qou-rdmr` did.
 - **Single-anchor fitting.** Any route can hit *one* ϑ by choosing its
   normalization. (∗) is a genuine test precisely because it constrains the
-  **pair**; a one-anchor match establishes nothing.
+  **pair**.
 
-`qou-offl` is not started here. What it gains from this note is the target and
-the two hazards; the derivation itself is open.
+**Net requirement for `qou-offl`:** supply **both** ϑ values **absolutely**,
+from a normalization fixed in advance. The derivation itself is open; what this
+note contributes is the target, the shape constraint, and the hazards.
 
 ## Cross-references
 
