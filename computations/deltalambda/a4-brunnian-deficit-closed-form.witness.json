@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-01T20:23:34.620098+00:00",
-  "commitSha": "c1b398709477d443a0fe354d3398e00e785a6096",
+  "computedAt": "2026-08-01T20:53:23.411553+00:00",
+  "commitSha": "a30d0ad1c6fd8b15d42c80de152896b2b303974d",
   "assertions": [
     {
       "name": "milnor_order_law_2_A_minus_1_exact",
@@ -30,11 +30,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 26,
+  "durationMs": -1785614515030,
   "computation": "a4-brunnian-deficit-closed-form",
   "scriptFile": "a4_brunnian_deficit_closed_form.py",
-  "scriptHash": "9ce9ca205989",
-  "scriptCommitSha": "c1b398709477d443a0fe354d3398e00e785a6096",
+  "scriptHash": "ceba57fc83ff",
+  "scriptCommitSha": "5000dcb4ea15d5807870e421422d4e7c5c448b6e",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
