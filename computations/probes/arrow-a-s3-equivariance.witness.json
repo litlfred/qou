@@ -1,0 +1,37 @@
+{
+  "engine": "python-int",
+  "engineVersion": "exact integer enumeration",
+  "computedAt": "2026-08-01T20:39:25.295722+00:00",
+  "commitSha": "36884421d8a2adfb3bad9cd473dd65a598054574",
+  "scriptFile": "computations/probes/arrow_a_s3_equivariance.py",
+  "scriptHash": "5ad5e2611a3f",
+  "scriptCommitSha": "36884421d8a2adfb3bad9cd473dd65a598054574",
+  "description": "W1 arrow (A) S\u2083-equivariance: graded 3D-index = 165\u00b7triv\u229584\u00b7sign\u2295240\u00b7std; I_tot_meridian is the S\u2083-trivial projection (under-constrained); the graded standard component maps to the Hecke [2,1] block. Audit-only; no fit.",
+  "auditOnly": true,
+  "parameters": {
+    "n_classes": 729,
+    "lattice": "{-1,0,1}^6"
+  },
+  "data": {
+    "fix_e": 729,
+    "fix_transposition": 81,
+    "fix_3cycle": 9,
+    "s3_isotypic": {
+      "trivial": 165,
+      "sign": 84,
+      "standard": 240
+    },
+    "orbits_check_vs_witness": {
+      "computed": 165,
+      "witness": 165,
+      "match": true
+    },
+    "hecke_blocks": {
+      "[3]": "trivial",
+      "[1,1,1]": "sign",
+      "[2,1]": "standard"
+    },
+    "finding": "I_tot_meridian = S3-trivial projection, discards 240 standard copies; triv->triv bridge is S3-unconstrained; build (A) from the graded standard-isotypic component -> Hecke [2,1] block.",
+    "verdict_ok": true
+  }
+}
