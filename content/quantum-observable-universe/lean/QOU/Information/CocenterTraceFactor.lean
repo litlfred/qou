@@ -93,6 +93,26 @@ theorem trace_add_commutator (τ : A →ₗ[R] R)
     τ (x + (a * b - b * a)) = τ x := by
   rw [map_add, map_sub, hτ a b, sub_self, add_zero]
 
+/-- **Any functional separating a commutator-difference is a NON-trace
+    (sorry-free).**  The contrapositive of `trace_eq_of_sub_mem_commutator`: if
+    `φ` distinguishes `a, b` with `a − b ∈ [A,A]`, then `φ` is *not* a trace —
+    there exist `x, y` with `φ(xy) ≠ φ(yx)`.
+
+    This is the precise, **proved** form of the P-vs-NP wall's necessary
+    condition: a **decision residue** must separate the `[A,A]` (decision) axis,
+    so it is necessarily a **non-trace** — a class in `HH₁`, not `HH₀`, and in
+    particular *not* any Euler-characteristic / `K₀` invariant (`χ = −6`). The
+    residue's remaining requirement — that such a non-trace `φ` be
+    **non-algebraic** (efficiently uncomputable) — is the algebrization barrier
+    (Aaronson–Wigderson), which lives outside this algebraic statement and keeps
+    `res ≠ 0` open. -/
+theorem not_trace_of_separates_commutator (φ : A →ₗ[R] R) {a b : A}
+    (hab : a - b ∈ commutatorSubmodule R A) (hsep : φ a ≠ φ b) :
+    ∃ x y : A, φ (x * y) ≠ φ (y * x) := by
+  by_contra h
+  push_neg at h
+  exact hsep (trace_eq_of_sub_mem_commutator φ h hab)
+
 /-- **The Markov-trace model: `LinearMap.trace` factors through the cocenter of
     `End V` (sorry-free).**  The trace's commutation `trace(fg) = trace(gf)`
     (`trace_mul_comm`) is exactly the hypothesis, so `tr_M` descends to
