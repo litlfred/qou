@@ -99,7 +99,7 @@ theorem n144C_neg {n : ℤ} (h7 : 7 ≤ n) : n144C n < 0 := by
     mul_pos (mul_pos (by linarith) (by linarith)) (by linarith)
   linarith
 
-/-! ## Identity I — computable verification (formalize-first, n = 1..6)
+/-! ## Identity I — computable verification (formalize-first, n = 1..8)
 
 `twoM` above carries **Identity I** (`2·M(n) = n(3n−1)`, with
 `M(n) = (1/n!) Σ_{λ⊢n} dim(λ)² Σ_{c∈λ} h_c²`, the Plancherel-expected
@@ -112,15 +112,17 @@ This section **computes** the squared-hook numerator from the partition
 *structure* (not hand-tabulated results): `hookLengths` derives each cell's hook
 via the arm+leg+1 rule; `dimOf` uses the hook-length formula
 `dim λ = (Σλ)! / ∏ h_c`; `numerComputed n = Σ_{λ⊢n} dim(λ)² · Σ_c h_c²`. The
-partition *lists* are supplied explicitly (`partitionsOf`, n = 1..6); everything
+partition *lists* are supplied explicitly (`partitionsOf`, n = 1..8); everything
 combinatorial is computed. `identityI_computed` checks the cleared-denominator
 form
 
     2 · numerComputed n  =  n(3n−1) · n!     (⟺ M(n) = n(3n−1)/2)
 
-for n = 1..6, anchoring the carried `twoM` def to the genuine quantity
-(previously Python-only; audit n = 2..14). General n: deferred (hook-length
-formula). Ref: [manuscript] docs/audits/2026-06-20-keystone-wlambda-C-n-closed-form.md
+for n = 1..8, anchoring the carried `twoM` def to the genuine quantity
+(previously Python-only; audit n = 2..14). General n: Piece A has an explicit
+elementary proof (`docs/audits/2026-08-01-keystone-identity-I-piece-A-general-proof.md`,
+bean `qou-o5xj` for the Lean formalization); Piece B (Plancherel/JM) tracked
+separately. Ref: [manuscript] docs/audits/2026-06-20-keystone-wlambda-C-n-closed-form.md
 -/
 
 /-- Multiset of hook lengths of a partition `l` (descending row lengths). Cell
@@ -159,23 +161,34 @@ def partitionsOf : ℕ → List (List ℕ)
   | 5 => [[5], [4, 1], [3, 2], [3, 1, 1], [2, 2, 1], [2, 1, 1, 1], [1, 1, 1, 1, 1]]
   | 6 => [[6], [5, 1], [4, 2], [4, 1, 1], [3, 3], [3, 2, 1], [3, 1, 1, 1], [2, 2, 2],
           [2, 2, 1, 1], [2, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1]]
+  | 7 => [[7], [6, 1], [5, 2], [5, 1, 1], [4, 3], [4, 2, 1], [4, 1, 1, 1], [3, 3, 1],
+          [3, 2, 2], [3, 2, 1, 1], [3, 1, 1, 1, 1], [2, 2, 2, 1], [2, 2, 1, 1, 1],
+          [2, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1]]
+  | 8 => [[8], [7, 1], [6, 2], [6, 1, 1], [5, 3], [5, 2, 1], [5, 1, 1, 1], [4, 4],
+          [4, 3, 1], [4, 2, 2], [4, 2, 1, 1], [4, 1, 1, 1, 1], [3, 3, 2], [3, 3, 1, 1],
+          [3, 2, 2, 1], [3, 2, 1, 1, 1], [3, 1, 1, 1, 1, 1], [2, 2, 2, 2],
+          [2, 2, 2, 1, 1], [2, 2, 1, 1, 1, 1], [2, 1, 1, 1, 1, 1, 1],
+          [1, 1, 1, 1, 1, 1, 1, 1]]
   | _ => []
 
 /-- `Σ_{λ⊢n} dim(λ)² · Σ_{c∈λ} h_c²` — computed from the partition structure. -/
 def numerComputed (n : ℕ) : ℕ :=
   ((partitionsOf n).map fun l => dimOf l ^ 2 * sumHookSq l).sum
 
-/-- **Identity I — verified for `n = 1..6`.** `M(n) = n(3n−1)/2`, in cleared form
-`2·numerComputed n = n(3n−1)·n!` (RHS `n(3n−1)`: 2, 5, 8, 11, 14, 17). Computed from
-hooks/`dim`, not hand-tabulated — dodge-proof. -/
+/-- **Identity I — verified for `n = 1..8`.** `M(n) = n(3n−1)/2`, in cleared form
+`2·numerComputed n = n(3n−1)·n!` (RHS `n(3n−1)`: 2, 5, 8, 11, 14, 17, 20, 23).
+Computed from hooks/`dim`, not hand-tabulated — dodge-proof. Extended to `n = 7, 8`
+(2026-08-01) to cover the physically-critical `n = 7` defect sign-flip region. -/
 theorem identityI_computed :
     2 * numerComputed 1 = 1 * 2 * Nat.factorial 1 ∧
     2 * numerComputed 2 = 2 * 5 * Nat.factorial 2 ∧
     2 * numerComputed 3 = 3 * 8 * Nat.factorial 3 ∧
     2 * numerComputed 4 = 4 * 11 * Nat.factorial 4 ∧
     2 * numerComputed 5 = 5 * 14 * Nat.factorial 5 ∧
-    2 * numerComputed 6 = 6 * 17 * Nat.factorial 6 := by
-  refine ⟨?_, ?_, ?_, ?_, ?_, ?_⟩ <;> decide
+    2 * numerComputed 6 = 6 * 17 * Nat.factorial 6 ∧
+    2 * numerComputed 7 = 7 * 20 * Nat.factorial 7 ∧
+    2 * numerComputed 8 = 8 * 23 * Nat.factorial 8 := by
+  refine ⟨?_, ?_, ?_, ?_, ?_, ?_, ?_, ?_⟩ <;> decide
 
 /-- **Consistency with the carried `twoM`.** `twoM n = n(3n−1) = 2·M(n)`; at the
 verified `n` this matches the computed numerator: `twoM n · n! = 2·numerComputed n`. -/
@@ -195,9 +208,15 @@ single-Young-diagram combinatorial fact (`sumHookSq` vs `sumContentSq`, no
 `dimOf`). So it is *not* blocked on the missing Mathlib infra: a general proof
 needs only a Young-diagram induction. Verified here for every partition of
 `n = 1..6` (and `n = 0`, vacuously). This isolates the HLF-free half of
-Identity I in Lean. General `n`: a Young-diagram induction (tracked separately
-from the HLF fill). -/
-theorem pieceA_hook_content_identity (n : ℕ) (hn : n ≤ 6) (l : List ℕ)
+Identity I in Lean. Verified here for every partition of `n = 1..8` (and `n = 0`,
+vacuously) — extended 2026-08-01 to cover the physically-critical `n = 7` defect
+sign-flip. General `n`: an explicit elementary (HLF-free, dimension-free)
+double-counting proof is given in
+`docs/audits/2026-08-01-keystone-identity-I-piece-A-general-proof.md` — Piece A
+reduces to the pair-counting identity `Σ_c arm·leg + Σ_c above·left = D` (# cell
+pairs in distinct rows and columns), with a full-rectangle compensation. Lean
+formalization of that `Finset` double-counting is the residual (bean `qou-o5xj`). -/
+theorem pieceA_hook_content_identity (n : ℕ) (hn : n ≤ 8) (l : List ℕ)
     (hl : l ∈ partitionsOf n) :
     (sumHookSq l : ℤ) = sumContentSq l + (l.sum : ℤ) ^ 2 := by
   interval_cases n <;> fin_cases hl <;> decide
