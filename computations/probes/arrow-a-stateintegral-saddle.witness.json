@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-01T20:17:13.808794+00:00",
-  "commitSha": "",
+  "computedAt": "2026-08-01T20:23:50.938097+00:00",
+  "commitSha": "6ad1be576476da3d4f371ae8ed45882a1b9eb447",
   "scriptFile": "computations/probes/arrow_a_stateintegral_saddle.py",
-  "scriptHash": "ab87608ef0e1",
-  "scriptCommitSha": "",
+  "scriptHash": "1b6722eb9bbd",
+  "scriptCommitSha": "6ad1be576476da3d4f371ae8ed45882a1b9eb447",
   "description": "W1 arrow (A): the index\u2194tr_M volume-route resummation is the state-integral saddle (Bloch-Wigner dilog at the shapes), not the index q-series (two series routes ruled out). Audit-only; no fit.",
   "auditOnly": true,
   "parameters": {
-    "fig8_index_stable_to_q": 40
+    "fig8_index_stable_to_q": 60
   },
   "data": {
     "route1_naive_q1": "FAILS: I^tot sign-indefinite near q=1 (tail-dominated)",

@@ -118,11 +118,13 @@ def main() -> int:
     print("W1 arrow (A): volume-route resummation = state-integral saddle\n")
 
     # ── route 1 + 2: the failing index-series routes (figure-eight) ──
+    # NQ=60 so the "stable to q^60" claim is reproducible from this script.
+    NQ = 60
     f8 = load_fig8_index()
-    a = total_index_coeffs(f8, NQ=40, emax=25, km=45)
-    a_hi = total_index_coeffs(f8, NQ=40, emax=40, km=70)
-    stable = 40
-    for j in range(41):
+    a = total_index_coeffs(f8, NQ=NQ, emax=25, km=45)
+    a_hi = total_index_coeffs(f8, NQ=NQ, emax=40, km=70)
+    stable = NQ
+    for j in range(NQ + 1):
         if a[j] != a_hi[j]:
             stable = j - 1
             break
@@ -131,7 +133,7 @@ def main() -> int:
     # route 1: naive q→1
     negs = []
     for q in (0.7, 0.9, 0.95):
-        S = sum(mp.mpf(a_hi[j]) * mp.mpf(q) ** j for j in range(41))
+        S = sum(mp.mpf(a_hi[j]) * mp.mpf(q) ** j for j in range(NQ + 1))
         negs.append((q, float(S)))
     print(f"  route 1 (naive q→1): I^tot(q) = {['%.0f@q=%.2f' % (v, qq) for qq, v in negs]}")
     print(f"    → sign-indefinite, tail-dominated: (1−q)log I^tot meaningless. FAILS.")
@@ -153,11 +155,19 @@ def main() -> int:
           f"series; the full non-perturbative map to tr_M stays open.")
 
     sp = Path(__file__).resolve(); src = sp.read_text()
+    # Provenance: resolve repo root, use a repo-relative pathspec, and fall back
+    # to HEAD if the file has no commit yet (avoids empty commitSha → PROV_MISSING).
+    rel = "computations/probes/arrow_a_stateintegral_saddle.py"
     try:
-        commit = subprocess.check_output(["git", "log", "-1", "--format=%H", "--", str(sp)],
-                                          cwd=sp.parent, text=True).strip()
+        root = subprocess.check_output(["git", "rev-parse", "--show-toplevel"],
+                                       cwd=sp.parent, text=True).strip()
+        commit = subprocess.check_output(["git", "log", "-1", "--format=%H", "--", rel],
+                                         cwd=root, text=True).strip()
+        if not commit:
+            commit = subprocess.check_output(["git", "rev-parse", "HEAD"],
+                                             cwd=root, text=True).strip()
     except Exception:
-        commit = ""
+        commit = "unknown"
     wit = {
         "engine": "mpmath", "engineVersion": f"mpmath {mp.__version__}",
         "computedAt": datetime.now(timezone.utc).isoformat(), "commitSha": commit,
