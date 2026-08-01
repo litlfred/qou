@@ -16,7 +16,7 @@
   "x1_matches": false,
   "x2_matches": false,
   "x3_matches": false,
-  "note": "fails under all 28 grid variants and under any scalar (1+x)^lambda prefactor (mismatch has alpha-components); see docstring for the candidate explanations"
+  "note": "fails under all 28 grid variants and under any scalar (1+x)^lambda prefactor (mismatch has alpha-components); see computations/probes/gswz_psi_section_division_probe.py docstring and docs/audits/2026-07-26-tau-coherence-orbit-program-and-habiro-bridge.md Addendum 10 for the candidate explanations"
  },
  "computed_quotient_digits_lsf": {
   "x1": {

@@ -1,0 +1,47 @@
+{
+ "schema": "probe-witness/v1",
+ "probe": "cgz_cyclic_qdilog_unit_probe",
+ "beans": [
+  "qou-9p9y"
+ ],
+ "source": "CGZ arXiv:1712.04887v3 eqns (8)/(20)/(21)/(33)/(34), \u00a74.4, Theorem 7.4; uploads/1712.04887v3.pdf",
+ "checks": {
+  "lemma24_identity_21_exact": true,
+  "zeta_class_primitive_all_cases": true,
+  "theorem74_R_eta_eq_zeta_squared": true,
+  "gamma_exponent_specific": true
+ },
+ "cases": {
+  "n5_q19": {
+   "identity21": true,
+   "zeta_primitive": true,
+   "gamma_exponent": 2
+  },
+  "n5_q29": {
+   "identity21": true,
+   "zeta_primitive": true,
+   "gamma_exponent": 2
+  },
+  "n5_q79": {
+   "identity21": true,
+   "zeta_primitive": true,
+   "gamma_exponent": 2
+  },
+  "n7_q13": {
+   "identity21": true,
+   "zeta_primitive": true,
+   "gamma_exponent": 2
+  },
+  "n7_q41": {
+   "identity21": true,
+   "zeta_primitive": true,
+   "gamma_exponent": 2
+  },
+  "n7_q83": {
+   "identity21": true,
+   "zeta_primitive": true,
+   "gamma_exponent": 2
+  }
+ },
+ "scope": "scope-(a): cyclic-quantum-dilog unit machinery (the eps_m realization, R = c^2) implemented and verified vs CGZ printed Theorem 7.4 over 6 finite-field cases; 5-adic eps_m on the GSWZ 5_2 symbols is the next increment"
+}
