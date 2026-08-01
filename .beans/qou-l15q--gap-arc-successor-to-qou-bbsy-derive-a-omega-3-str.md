@@ -34,3 +34,38 @@ constant is well-defined exactly as for 4_1 -- chosen so that
 Cheapest well-posed route; does not require closing the rank>2 channel gap.
 
 Scope note: docs/scope/2026-08-01-aomega-three-test-illposed.md
+
+## 2026-08-01 ADDENDUM: route 3 (another rank-2 knot) is ALSO blocked
+
+Rank 2 = quadratic imaginary invariant trace field. For knots in S^3 that is
+essentially 4_1 alone: Reid (1991), 4_1 is the unique arithmetic hyperbolic
+knot -- already cited in-corpus (hyperbolic-volume-transcendence.md,
+three-knot-jet-order-independence.md). Strictly Reid gives arithmetic => 4_1,
+and quadratic-imaginary => arithmetic needs integral traces, so it is NOT a
+theorem that no second rank-2 knot exists -- but NO KNOWN CANDIDATE exists in
+the corpus or the standard census. Route 3 has nothing to run on. Recorded as
+no-known-candidate, not as a proved exclusion.
+
+Available at rank 2 are LINKS, not knots: Whitehead and Borromean, both with
+invariant trace field Q(i), |disc| = 4, both already in corpus compute
+(2026-07-26-whitehead-vc-verification-and-p-exponent.md / #4400;
+borromean_3d_index.py). Candidate A predicts 4 for each.
+
+BUT that test degrades to ONE-SIDED and must not be sold as more:
+  1. Candidate B is INAPPLICABLE -- links have multivariable Alexander
+     polynomials, so "the middle coefficient" needs an extra choice. The test
+     therefore cannot adjudicate A vs B, which was the entire point.
+  2. Rank-2-ness of their Stokes matrices is PLAUSIBLE BUT UNVERIFIED (rank is
+     the number of boundary-parabolic reps, not directly the field degree).
+  3. A "4" is CONFOUNDED: 5_2's q->0 integers already contain a 4, and small
+     integers recur; support for A would need the coincidence controlled.
+
+RECOMMENDATION: do NOT run the link test as an adjudicator. The arc needs the
+principled route first -- derive WHICH matrix element the T5 A_omega is (the
+same channel gap #4447 recorded on the 4_1 side, where A_omega is sigma1sigma2
+but the proven x-refinement is sigma1sigma1). That would define the rank-3
+generalization and re-open 5_2, which is the better test anyway.
+
+STATUS: "why 3" has NO cheap well-posed test. The arc is blocked on a
+DERIVATION, not on compute. Scope note:
+docs/scope/2026-08-01-aomega-three-test-illposed.md (Addendum).
