@@ -1,11 +1,15 @@
 {
   "schema": "witness/v1",
+  "engine": "sympy+mpmath",
+  "engineVersion": "python 3.11.15",
+  "commitSha": "b935a35ae73f1dee030eef2b41703d673b01d1ea",
+  "scriptFile": "ksel2id_tropical_transport_probe.py",
+  "scriptHash": "5b70cf782558",
+  "scriptCommitSha": "193d1ee239b615d6fd824bd056274ac56a6990ee",
+  "computation": "ksel2id-tropical-transport",
   "description": "KSel-2-ID tropical transport: the E-shift of the lattice class is exact algebra on moment ratios, dissolving the perturbation lemma",
-  "computation": {
-    "script": "ksel2id_tropical_transport_probe.py",
-    "scriptCommitSha": "unknown",
-    "producer": "ksel2id_tropical_transport_probe.py"
-  },
+  "auditOnly": "docs/audits/2026-08-01-ksel2id-tropical-transport.md",
+  "allPassed": true,
   "precisionMetadata": {
     "compute_dps": 60,
     "symbolic": "sympy exact"
