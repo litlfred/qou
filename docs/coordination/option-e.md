@@ -743,3 +743,34 @@ Milnor = leading-Vassiliev bridge (`BrunnianVassilievBridge`, instance-less),
 Mathlib-inaccessible — CITED, not axiomatised. No conjecture instance fabricated;
 the trace-normalised `μ̄_A = (3/4)(−2)^{A−3}` (#4480) stays MEASURED. lean-direct
 exit 0. `free_parameters = 0`. Open follow-up: bean `qou-v7ro` (bridge Magnus coeff → Markov-trace deficit coeff).
+
+**2026-08-01 — A=3 beyond-Hecke MAGNITUDE via the Vassiliev WEIGHT: leading-weight ≤ Hecke
+bound REFUTES the `1.585×` (scope-b of the bare-weight claim).** (PR pending,
+`claude/deltalambda-beyond-hecke-vassiliev-magnitude-2026-08-01`.) **Distinct angle:** the A=3
+3-body **magnitude** (`r* = μ₃/c₃ ≈ 1.585`), tested against a Kontsevich/Vassiliev
+weight-system correction of the proved Borromean deficit — *not* the exact-order μ̄_A
+coefficient (#4480 owns that; ratio −2) and *not* the A=4 magnitude (#4472 owns that);
+Vassiliev-scaffold overlap (#4479) is permitted. **Object:** the proved deficit
+`1−τ_Borr = h⁴(3+h²)/(h²+4)`; its leading finite-type (Vassiliev degree `2(A−1)=4`) weight is
+the `h→0` symbol `(3/4)h⁴`. **Decisive bound (exact, all h):**
+`(3+h²)/(h²+4) − 3/4 = (h²/4)/(h²+4) ≥ 0`, so the leading weight is the *smallest* term of a
+positive convergent series ⇒ **weight/Hecke ≤ 1 < 3/2 < r*** (Lean
+`leadingWeight_le_borrDeficit`, `vassiliev_weight_cannot_supply_magnitude`). Numerically at the
+muon q₀: weight/Hecke = 0.9964, the **whole** finite-type correction is +0.36 %, not the +58.5 %
+needed. **Mechanism:** the finite-type filtration *re-expands the same Markov trace the Hecke
+level already sums*; the near-miss `c₃ = 0.297` IS the full finite-type sum, so no truncation
+exceeds it — the `1.585×` lives OUTSIDE the finite-type filtration of the single Borromean
+deficit. **Length-A Milnor reading (`A−1=2`):** μ̄(123) is an INTEGER Vassiliev invariant `±1`
+(#4479 `BrunnianVassilievBridge.muBar_realized`, `val:K→ℤ`), measured ratio `−2`; no integer =
+`r* ∈ (3/2,2)` (`no_integer_weight_eq_rStar`). **Numerology dismissed:** `r* ≈ log₂3` is an
+irrational coincidence (`two_pow_ne_three_pow`: `2^a` even ≠ `3^b` odd). **Verdict
+REFUTE(scope-b)** of the bare-weight-as-magnitude claim (cites two proved invariants: the ≤-bound
++ integrality); explicitly NOT a general exclusion of the Vassiliev ingredient from a larger
+multi-channel closure (untested). This closes the finite-type route too — the four prior walls
+(LEVEL / geometric `W_λ` / EDGE / exact-order μ̄_A) plus this bracket the A=3 magnitude source
+completely at the Hecke *and* finite-type levels; the `1.585×` needs structure outside the
+single-deficit filtration (e.g. an operator-valued cross-channel combiner). Lean
+`VassilievMagnitudeA3.lean` sorry-free (lean-direct exit 0); probe/witness
+`vassiliev-magnitude-a3.witness.json`; audit
+`2026-08-01-deltalambda-a3-beyond-hecke-vassiliev-magnitude.md`. Nothing wired;
+`free_parameters = 0`.
