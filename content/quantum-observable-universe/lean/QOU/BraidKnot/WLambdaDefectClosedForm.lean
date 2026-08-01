@@ -210,12 +210,12 @@ needs only a Young-diagram induction. Verified here for every partition of
 `n = 1..6` (and `n = 0`, vacuously). This isolates the HLF-free half of
 Identity I in Lean. Verified here for every partition of `n = 1..8` (and `n = 0`,
 vacuously) — extended 2026-08-01 to cover the physically-critical `n = 7` defect
-sign-flip. General `n`: an explicit elementary (HLF-free, dimension-free)
-double-counting proof is given in
-`docs/audits/2026-08-01-keystone-identity-I-piece-A-general-proof.md` — Piece A
-reduces to the pair-counting identity `Σ_c arm·leg + Σ_c above·left = D` (# cell
-pairs in distinct rows and columns), with a full-rectangle compensation. Lean
-formalization of that `Finset` double-counting is the residual (bean `qou-o5xj`). -/
+sign-flip. General `n`: **proved sorry-free** in
+[`QOU.BraidKnot.PieceA.pieceA`](PieceAGeneral.lean) over Mathlib's `YoungDiagram`
+(bean `qou-o5xj` closed) — an explicit elementary, HLF-free, dimension-free
+double-counting proof (Piece A reduces to `Σ_c arm·leg + Σ_c above·left = D`, the
+off-diagonal pair count). The `List ℕ` `decide` checks here (`n ≤ 8`) are a
+concrete cross-check of the same identity in this file's representation. -/
 theorem pieceA_hook_content_identity (n : ℕ) (hn : n ≤ 8) (l : List ℕ)
     (hl : l ∈ partitionsOf n) :
     (sumHookSq l : ℤ) = sumContentSq l + (l.sum : ℤ) ^ 2 := by
