@@ -301,6 +301,10 @@ import QOU.QBeta.FaddeevStripGrowthConstructor
 -- realizable + bar-ODD, and the two families disjoin off 2-torsion. Pulls the
 -- BerezinianSelfAdjointCrossTerm cone into CI (was orphaned).
 import QOU.QBeta.BerezinianCrossTermParity
+-- c₃ Faddeev tetraplectic→combinatorics reduction backbone: the q²-shift functional
+-- equation of the single-lattice product ∏(1+q^{2n+1}x) (telescoping), the recurrence
+-- that pins the e_k = q^{k²}/(q²;q²)_k coefficients (Python witness cross-checks k≤6).
+import QOU.QBeta.TetraplecticProductRecurrence
 -- Concrete H₃(q) Markov-trace functional (NF model: linearity, cyclicity,
 -- Hecke σ₀²=hσ₀+1, Markov reduction tr(x·σ₁)=z·tr(x)); cross-checked vs
 -- `gram.py` / `pyhecke.trace_formal`. Was an orphan under `Machinery/`.

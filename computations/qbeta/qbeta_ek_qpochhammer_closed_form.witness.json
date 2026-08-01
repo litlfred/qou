@@ -1,0 +1,85 @@
+{
+  "schema": "witness/v1",
+  "description": "Exact closed form e_k(q,q^3,q^5,...) = q^{k^2}/(q^2;q^2)_k for the tetraplectic single-lattice product coefficients (c3 Faddeev reduction, bean qou-5843). Symbolic (sympy), no floating point.",
+  "computation": {
+    "script": "computations/qbeta/qbeta_ek_qpochhammer_closed_form.py",
+    "scriptCommitSha": "",
+    "scriptHash": "cf9a7703031a",
+    "method": "finite-product coefficient vs q-series of q^{k^2}/(q^2;q^2)_k"
+  },
+  "parameters": {
+    "k_max": 6,
+    "compare_order": 60
+  },
+  "results": [
+    {
+      "k": 1,
+      "N_truncation": 33,
+      "closed_form": "q^1 / (q^2;q^2)_1",
+      "lowest_power": 1,
+      "lowest_power_expected": 1,
+      "lowest_power_ok": true,
+      "residual_min_q_degree": 67,
+      "controlled_to_order": 60,
+      "match": true
+    },
+    {
+      "k": 2,
+      "N_truncation": 34,
+      "closed_form": "q^4 / (q^2;q^2)_2",
+      "lowest_power": 4,
+      "lowest_power_expected": 4,
+      "lowest_power_ok": true,
+      "residual_min_q_degree": 70,
+      "controlled_to_order": 60,
+      "match": true
+    },
+    {
+      "k": 3,
+      "N_truncation": 35,
+      "closed_form": "q^9 / (q^2;q^2)_3",
+      "lowest_power": 9,
+      "lowest_power_expected": 9,
+      "lowest_power_ok": true,
+      "residual_min_q_degree": 75,
+      "controlled_to_order": 60,
+      "match": true
+    },
+    {
+      "k": 4,
+      "N_truncation": 36,
+      "closed_form": "q^16 / (q^2;q^2)_4",
+      "lowest_power": 16,
+      "lowest_power_expected": 16,
+      "lowest_power_ok": true,
+      "residual_min_q_degree": 82,
+      "controlled_to_order": 60,
+      "match": true
+    },
+    {
+      "k": 5,
+      "N_truncation": 37,
+      "closed_form": "q^25 / (q^2;q^2)_5",
+      "lowest_power": 25,
+      "lowest_power_expected": 25,
+      "lowest_power_ok": true,
+      "residual_min_q_degree": 91,
+      "controlled_to_order": 60,
+      "match": true
+    },
+    {
+      "k": 6,
+      "N_truncation": 38,
+      "closed_form": "q^36 / (q^2;q^2)_6",
+      "lowest_power": 36,
+      "lowest_power_expected": 36,
+      "lowest_power_ok": true,
+      "residual_min_q_degree": 102,
+      "controlled_to_order": 60,
+      "match": true
+    }
+  ],
+  "verdict": "CONFIRMED: e_k = q^{k^2}/(q^2;q^2)_k exact for k=1..6 (q-series agree to order q^60).",
+  "all_ok": true,
+  "scope": "Structural reduction coefficient only. Does NOT evaluate the c3 carrier S = c3 + Vol(4_1); the z(q0) argument map is transcendental (not combinatorial) and is beaned separately. No fit; nothing wired."
+}
