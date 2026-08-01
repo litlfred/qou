@@ -9,9 +9,10 @@ residual in RSZ; no closure. One Lean building block landed (`QBorelKernel`).**
 The W2 witnesses (merged #4461) established: the C1 module `L1 = (q²x−1)σ² − (q−1)σ − (q−1)`
 is **Fuchsian at 0** (exponents = roots of `t²+(q−1)t+(q−1)`) but **irregular at ∞**, Newton
 polygon slope **½** (single edge `(2,0)→(0,1)`, re-confirmed from the companion). The
-Fuchsian DRSZ recipe gives the 0-side canonical solution; the ∞-side needs the wild
-(q-Gevrey/Stokes) theory. This doc maps that ∞ residual to RSZ Astérisque 355
-(`uploads/0903.0853v3.pdf`).
+Fuchsian (integral-slope) connection-matrix recipe — read from the Di Vizio–Ramis–Sauloy–Zhang
+survey (`uploads/Equations_aux_q-differences.pdf`) — gives the 0-side canonical solution; the
+∞-side needs the wild (q-Gevrey/Stokes) theory. This doc maps that ∞ residual to the
+Ramis–Sauloy–Zhang Astérisque 355 (`uploads/0903.0853v3.pdf`); the two are distinct sources.
 
 ## What RSZ §3.3 gives (p. 39)
 
