@@ -1,0 +1,38 @@
+{
+  "schema": "witness/v1",
+  "producer": "computations/deltalambda/c_knot_not_universal_probe.py",
+  "computation": "c-knot-not-universal",
+  "description": "Formalize-first prune of the C_knot attack: the deuteron binding deficit C_knot is NOT a single universal derivable factor. The SAME deuteron gives C_knot=5.85 (interface-inclusive per-\u03bb sum) vs 240 (signed dim_q sum) \u2014 a 41\u00d7 convention spread. Across isotopes the signed dim_q convention gives 240/40717/31475 (D/T/\u00b3He), but the triton naive sum NEARLY CANCELS (0.0002 MeV) so that 170\u00d7 is a convention-specific pathology, not clean A-dependence (honest caveat). ROBUST claim: no single constant fits even the deuteron across conventions, so 'derive C_knot = 5.85' as a one-number shortcut to improve binding is REFUTED \u2014 C_knot \u2261 the full convention-pinned per-partition \u0394_\u03bb, ill-posed until the weighting is pinned. scope-(a) refutation of the SHORTCUT (not a structural exclusion of a \u0394_\u03bb derivation, open, bean qou-3q7t). Connects to the convention-fragility thread of PR #4491. No fit; nothing wired; values read from two committed witnesses; exact (mpmath).",
+  "audit_only": true,
+  "tier": "scope-(a) formalize-first prune (single-universal-C_knot shortcut refuted); no fit",
+  "scriptHash": "cf1f165ea99a1f51",
+  "result": {
+    "deuteron_C_knot_two_conventions": {
+      "interface_inclusive": "5.85209",
+      "signed_dim_q": "240.222",
+      "convention_spread_factor": "41.049 (ROBUST \u2014 same deuteron)"
+    },
+    "signed_dim_q_across_isotopes": {
+      "C_knot_D": "240.222",
+      "C_knot_T": "40717.0",
+      "C_knot_3He": "31475.3",
+      "a_spread_T_over_D": "169.5",
+      "triton_naive_MeV": "0.0002083",
+      "triton_near_cancellation": true,
+      "caveat": "the signed dim_q sum NEARLY CANCELS for T (B_naive=0.0002 MeV \u226a scale) \u2014 a bar-even/bar-odd cancellation pathology; the 170\u00d7 is convention-specific, NOT clean A-dependence of a well-behaved deficit."
+    },
+    "verdict": {
+      "single_universal_C_knot_refuted": true,
+      "classification": "scope-(a): the single-universal-C_knot SHORTCUT is refuted. A single derivable constant cannot fit even the deuteron across weighting conventions (5.85 vs 240, 41\u00d7). So 'improve binding by deriving one geometric factor 5.85' is not available \u2014 C_knot \u2261 the full convention-pinned per-partition \u0394_\u03bb, not well-posed until the weighting is pinned. NOT a structural exclusion of a \u0394_\u03bb derivation (open, bean qou-3q7t); a refutation of the one-number shortcut.",
+      "connects_to": "the convention-fragility thread of PR #4491 \u2014 \u03bc\u2083 (baseline-class-relative), the units pun (MeV vs dimensionless), the scale ambiguity (C_knot itself). C_knot is one more convention-dependent quantity.",
+      "anti_fit": "C_knot values read from two committed witnesses; nothing fitted or wired."
+    }
+  },
+  "context": {
+    "axis": "\u0394_\u03bb / C_knot derivation \u2014 is it one universal factor?",
+    "builds_on": "PR #4491 \u00a70 (C_knot gate), binding-energy-categorical-deuteron, delta-lambda-multi-atom-crosscheck",
+    "bean": "qou-3q7t",
+    "no_fit": true
+  },
+  "scriptCommitSha": "uncommitted"
+}
