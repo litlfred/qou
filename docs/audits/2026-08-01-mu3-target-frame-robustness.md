@@ -90,6 +90,17 @@ the tritium/deuteron binding ratio right to ~4.6%.** (Note the 4.6% is the *corp
 a different baseline is a different model with a different total; it is the residual *decomposition*, not
 the physical accuracy, that §2–3 shows is convention-relative.)
 
+**Information budget (why every categorical factor near-misses).** By `framing_amplification`, closing
+the "1.6× gap" to relative precision `ε` on `μ₃` requires predicting the physical ratio `B(³H)/B(²H)` to
+`ε · (μ₃/ρ_strong(3)) = ε · 12.35%`: a **10% closure needs `~1.2%` physical accuracy**, tighter than the
+model's current ~4.6% A=3 accuracy. So a candidate factor that reproduces the physical ratio to a few
+percent is *automatically* a large multiplicative miss on the small residual — which is exactly the
+pattern of the three walled routes (0.63×, 33×, sign-swap). This is the **direct analog of the g₂
+"36 ppm" information-starvation** (`BindingResidualAmplification`, #4319): the residual is not a
+special-function puzzle separable from the binding; hitting it to a clean multiplicative factor is
+equivalent to predicting the binding ratio to sub-percent, which the framework's first-order machinery
+does not reach.
+
 ## 4. Lean (sorry-free, lean-direct exit 0)
 
 [`Mu3BaselineFragility.lean`](../../content/quantum-observable-universe/lean/QOU/MassTheory/Mu3BaselineFragility.lean),
