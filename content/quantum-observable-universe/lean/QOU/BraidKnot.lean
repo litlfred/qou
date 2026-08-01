@@ -146,6 +146,7 @@ import QOU.BraidKnot.RegularRepBlockTrace
 import QOU.BraidKnot.DeltaLambdaRefutation
 import QOU.BraidKnot.DeltaLambdaExponentKeystone
 import QOU.BraidKnot.DeltaLambdaSignRule
+import QOU.BraidKnot.PartitionNatBridge
 -- g_ρ = GS/jet-order (fake-degree) grading: the Δ_λ sign carrier (#3542) +
 -- assembly identity Δ_λ = tr(g_ρ) = (−1)^{n(λ)}·dim(λ) + bar-parity selection
 -- rule. Pulls the file into the CI build set (was previously un-imported).
