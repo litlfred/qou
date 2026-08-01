@@ -152,3 +152,63 @@ Companion to [`QOU/QBeta/SLeakZeroCrossing.lean`](../../content/quantum-observab
 which proves the sign side (IVT zero-crossing + sign-definite-carrier exclusion).
 Together: the sign is an IVT/parity invariant, the magnitude is provably not a
 smooth period — both generic, neither takes the anchor values as fitted constants.
+
+## Route A follow-up — the magnitude's symbolic form closed to 1 ppQ (L1)
+
+The negative above says the magnitude is *not a period*; it does **not** say the
+magnitude is unexplained. It is fully accounted for as the anchor-offset ratio
+near `q*`, and that account can be sharpened from the ~6-digit leading identity to
+a **1-ppQ symbolic form** by carrying the Taylor cofactor of `S` at its simple
+zero. This is L1 compute precision (an internal cross-check), **not** an L2
+observable, and it closes the *symbolic form*, not a closed form for `q*` itself.
+
+**Probe.** [`computations/qbeta/qbeta_magnitude_taylor_qstar_probe.py`](../../computations/qbeta/qbeta_magnitude_taylor_qstar_probe.py)
+(mpmath, 60 dps, exit 0, 4 assertions). Witness
+`qbeta-magnitude-taylor-qstar.witness.json`. **Derive-then-check:** `q*` is derived
+by `findroot` bracketed between the two anchors (opposite S-sign); the Taylor
+coefficients `a = ½S''/S'`, `b = (1/6)S'''/S'` by `mpmath.diff`. Nothing is tuned.
+
+Writing `δ = q − q*` and `g(δ) = 1 + a·δ + b·δ² + …` (the normalized cofactor,
+`g(0) = 1`), the slope `S'(q*)` cancels and
+
+```
+|S_proton/S_muon| = |δ_p/δ_m| · g(δ_p)/g(δ_m).
+```
+
+| quantity | value |
+|---|---|
+| `q*` | `1.1099785930315232884023283427354933150988` |
+| `S(q*)` residual | `8.0e-56` (< 1e-40) |
+| DIRECT `|S_p/S_m|` | `4.07512700316204532552627382494` |
+
+Residual of the symbolic form vs the direct evaluation, by Taylor order of `g`:
+
+| order | form | residual vs direct |
+|---|---|---|
+| 0 | offset ratio `|δ_p/δ_m|` | `6.18e-7` (leading, ~6 digits — order of validity) |
+| 1 | `1 + aδ` | `1.40e-13` |
+| **2** | `1 + aδ + bδ²` | **`3.53e-20` ← first ≤ 1e-15 (1 ppQ)** |
+| 3 | `1 + aδ + bδ² + cδ³` | `6.95e-27` |
+
+Each Taylor order adds ~6–7 digits (`δ ~ 1e-8`); the **minimum order reaching
+1 ppQ is `N = 2`** (order 1 = `1.4e-13 > 1e-15`).
+
+**Formalized (sorry-free, lean-verify exit 0).**
+[`QOU/QBeta/SLeakMagnitudeTaylorRatio.lean`](../../content/quantum-observable-universe/lean/QOU/QBeta/SLeakMagnitudeTaylorRatio.lean)
+proves the exact algebraic identities the residual table rests on — all generic in
+`(S, g, L, q*, q_p, q_m)`, none taking an anchor value or `4.075` as a constant:
+
+- **`exact_ratio_factorization`** — `S(qp)/S(qm) = (qp−q*)/(qm−q*)·g(qp)/g(qm)`;
+  the slope `L` cancels *exactly*, sharpening `linear_ratio_slope_independent` from
+  the leading (`g ≡ 1`) case to the full cofactor.
+- **`offset_ratio_error_is_cofactor`** — closed form of the order-0 residual: the
+  leading offset-ratio miss is exactly `(qp−q*)/(qm−q*)·(g(qp)/g(qm) − 1)`.
+- **`cofactor_is_normalized_deviation`** / **`linear_model_relative_error`** — `g`
+  is the forced deviation `S(qp)/(L(qp−q*))`, and (using `g(q*) = 1`) the linear
+  model's relative error is exactly `g(qp) − g(q*)`.
+
+**Scope / what stays open.** Closed: the *symbolic form* of `|S_p/S_m|` to 1 ppQ.
+Open: a **closed form for `q*`** (Route B — `q*` is obtained numerically here) and
+the **`u(q₀)` map**. Anti-laundering: no `c_k` wired to production, no
+`SDeformedVolumeChannel` instance fabricated, no `u(q₀)` claimed. `|S_p/S_m|`
+remains an internal cross-check, not a measured prediction.
