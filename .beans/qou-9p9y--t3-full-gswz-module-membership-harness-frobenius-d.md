@@ -1,9 +1,10 @@
 ---
 # qou-9p9y
 title: 'T3: full GSWZ module-membership harness (Frobenius + dilog + eps_m); candidate data format'
-status: todo
+status: in-progress
 type: task
+priority: normal
 created_at: 2026-08-01T18:29:31Z
-updated_at: 2026-08-01T18:29:31Z
+updated_at: 2026-08-01T19:00:05Z
 ---
 
