@@ -36,18 +36,21 @@ Probe: [`qbeta_c3_magnitude_exp_bridge_windings_probe.py`](../../computations/qb
 | distinguished canonical pair | meridian `(1,0)` (N=0) / longitude `(0,1)` (N=1) ⇒ **ΔN = 1** |
 | `(3/8)(ln q₀)²/ℏ` (ℏ_q=1−q₀⁻¹) | `0.041205` ⇒ pred `|S_p/S_m| = 1.0421` |
 | `(3/8)(ln q₀)²/ℏ` (ℏ=log q₀) | `0.039128` ⇒ pred `|S_p/S_m| = 1.0399` |
-| ΔN needed for target (ℏ_q / log q₀) | `34.10` / `35.91` |
+| ΔN needed for target (ℏ_q / log q₀) | `34.10` / `35.91` — **≥30× the forced ΔN=1** |
 | cross-form spectrum `|m|,|ℓ|≤3` | `{−9,−8,−5,−4,−3,−1,0,1,3,4,5,7,8,9,12,15,16,21,27}` |
-| is ΔN≈34 a canonical pair-difference? | **no** |
+| is the needed ΔN a pair-difference in the ≤3 box? | **convention-dependent** — no (ℏ_q, 34) / yes (log q₀, 36, via extreme windings) |
 
 - The genuinely distinguished canonical pair (meridian/longitude — the pair with no
   choice freedom) predicts `|S_p/S_m| ≈ 1.04` under **both** ℏ conventions,
-  undershooting `4.075` by **~3.9×**.
-- The ΔN that *would* match (`≈34`) is not the canonical pair, and is not even a
-  cross-form pair-difference within the `|m|,|ℓ|≤3` box. Reaching it requires
-  deliberately selecting large/extreme windings — the **Dang–Purcell dense-fit
-  resource** the corpus already flagged (cusp shapes dense in Teichmüller space ⇒
-  choosing a knot/winding to hit a number is unbounded fitting, not evidence).
+  undershooting `4.075` by **~3.9×**. This is the convention-robust negative.
+- The ΔN that *would* match (`≈34–36`) is **≥30× the forced distinguished-pair value**
+  (ΔN=1). Whether that ΔN is itself a cross-form *pair-difference* is
+  convention-dependent (unreachable for `ℏ_q`, reachable for `log q₀` only via extreme
+  windings up to `(3,3)`), so it is recorded as data, **not** used as the negative —
+  because even a reachable ΔN uses *non-distinguished* windings. Reaching the target
+  therefore requires deliberately selecting extreme windings — the **Dang–Purcell
+  dense-fit resource** the corpus already flagged (cusp shapes dense in Teichmüller
+  space ⇒ choosing a knot/winding to hit a number is unbounded fitting, not evidence).
 
 ## Why this is a real (if negative) result
 
