@@ -120,3 +120,32 @@ def eval_I41_at(m: int, e: int, x_mp, order: int, e2_window: int):
         f2 = eng.tet_series(e - e2, -e2)
         total += eval_factor(*f1) * eval_factor(*f2)
     return total
+
+
+def assemble_I41_series(m: int, e: int, order: int, e2_window: int):
+    """Exact assembled I_{4₁}(m,e) series over ABSOLUTE x-exponents 0..order
+    (int list), via the canonical-chamber engine — the series-mode counterpart
+    of eval_I41_at.  All arithmetic is exact integer; the m ≤ 0 chamber means
+    every factor has shift ≥ 0, so no negative absolute exponents arise and
+    the truncated convolution is exact through x^order."""
+    eng = CanonicalTetEngine(order)
+    acc = [0] * (order + 1)
+    for e2 in range(-e2_window, e2_window + 1):
+        sh1, sg1, f1 = eng.tet_series(m - e2, m + e - e2)
+        sh2, sg2, f2 = eng.tet_series(e - e2, -e2)
+        sh = sh1 + sh2
+        if sh > order:
+            continue
+        sg = sg1 * sg2
+        top = order - sh
+        for d1 in range(0, top + 1):
+            c1 = f1[d1]
+            if c1:
+                base = sh + d1
+                lim = top - d1
+                cc = sg * c1
+                for d2 in range(0, lim + 1):
+                    c2 = f2[d2]
+                    if c2:
+                        acc[base + d2] += cc * c2
+    return acc
