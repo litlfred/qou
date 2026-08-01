@@ -152,6 +152,49 @@ produces a bar-odd part by naive summation.
   x-refined Stokes matrix (GGM state-integral / lateral resummation at
   |x| > 1) — follow-up bean. Nothing refuted at scope-(b); nothing wired.
 
+
+## Correction (2026-08-01, PR #4447) — Finding 3b was pre-asymptotic; the winding GF is ENTIRE on ℂ*
+
+Finding 3b's "radius of convergence 1" and the verdict's "observed sheet is
+outside the naive-summation domain" were **artifacts of the e ≤ 28 window**,
+which sits entirely on the pre-asymptotic plateau. The leading q̃-power of
+I(0,e) grows quadratically (lead(e) = T(⌈e/2⌉) ≈ e²/8), which forces the
+substrate values to decay **super-exponentially** once past the hump —
+measured on the exact engine (adaptive internal order, ladder-certified):
+
+| e | I(0,e)(q̃_sub) | bare q̃^lead |
+|---|---|---|
+| 40 | 1.975·10⁻⁵ | 3.05·10⁻¹⁰ |
+| 60 | −2.062·10⁻¹⁶ | 8.5·10⁻²² |
+| 80 | −3.511·10⁻³² | 7.0·10⁻³⁸ |
+| 100 | 1.927·10⁻⁵³ | 1.7·10⁻⁵⁸ |
+
+Consequences (Lean-proved in
+[`WindingGFTransform.lean`](../../content/quantum-observable-universe/lean/QOU/QBeta/WindingGFTransform.lean):
+`summable_winding_of_sq_dominated`, `gf_three_term_of_sq_dominated`):
+
+- **The winding generating function is entire on ℂ***: Σ_e I(0,e)wᵉ
+  converges absolutely at EVERY w ≠ 0. The corpus sheet needs **no
+  analytic continuation** — direct two-sided summation converges there
+  (terms fall below 10⁻¹⁰ by e ≈ 55–60 at |w| = q₀²).
+- **3c stands, sharpened**: on |w| = 1 the sum is exactly bar-even
+  (amphichirality; Lean `pairedWindowSum_unit_sheet_im_zero`); off |w| = 1
+  a bar-odd part CAN arise — the "bar-odd must be lateral/Stokes"
+  re-derivation in the verdict was conditioned on the empty-domain
+  reading and is **withdrawn as stated**; the honest evaluation at the
+  corpus sheet is W2 (`qbeta_3bp8_w2_direct_sheet_probe.py`).
+- The E = 28 radial rows remain window-unstable exhibits (that part of 3b
+  was correct — the window straddled the hump); the "Im-ratio 4.013"
+  anti-numerology flag stays.
+- The W1 A2 failures (probe `qbeta_3bp8_annihilator_continuation_probe.py`)
+  are explained by the same hump analysis: at |w| = 0.3 the negative-side
+  hump reaches ~10¹⁷ (needs dps ≥ 80); at |w| ≈ 0.8 it peaks at ~0.26 —
+  the re-specced A2 runs there.
+
+Corrected per AGENTS.md §Before declaring refuted: the numerical results
+stand; the scope of the 3b claim was wrong (scope-(a) re-scope, not a
+deletion). Bean: `qou-ovph`.
+
 ## Cross-references
 
 - Bean: `qou-awpk` (route 2 of `qou-qnnq`); siblings `qou-offl`,
