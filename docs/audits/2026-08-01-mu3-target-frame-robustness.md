@@ -136,6 +136,35 @@ coefficient — which would itself be a fit red-flag (cf. the Q_β `c₃` `1/u³
    brane level — the three walls, [2026-07-26](2026-07-26-deltalambda-a3-magnitude-source-three-walls.md)).
    The open task is a *derived* leading-order channel of size `~0.585·c₃` — squarely the Δ_λ gate.
 
+## 3c. A=4 (⁴He) — the mirror regime, sharper (order-separation extended)
+
+Applying the same lens to A=4 (`ρ_strong(4) = B(⁴He)/B(²H) = 13.0316`):
+
+| | A=3 (³H) | A=4 (⁴He) |
+|---|---|---|
+| graded baseline vs physical ratio | **under**shoots −4.6% | **over**shoots **+20.8%** |
+| add derived 3-body clusters | closes toward it | makes it **worse** (+29.9%) |
+| missing leading channel | +0.17 (3-body binding) | **−3.90 (4-body α saturation)**, −24.75% of baseline |
+| \|missing\|/c₃ | 0.58× | **13.1×** |
+| higher-3-body-order tail vs miss | 0.027 ≪ 0.17 | 0.109 ≪ 3.90 (**order-separated**) |
+| μ_k baseline-class fragility | 1.73× | **2.07×** |
+
+**Two facts beyond three-walls Route 3** (which established the μ₄<0 sign-swap):
+
+1. **Frame-independent magnitude localizes the accuracy loss.** The A=4 discrepancy (the missing 4-body
+   channel) is −24.75% of the baseline — **~5× the A=3 discrepancy**. The framework's binding accuracy
+   degrades in the **saturation regime (A≥4)**: the missing piece is the large, negative 4-body
+   α-cluster term.
+2. **A=3 and A=4 are opposite-sign regimes needing DISTINCT leading channels** — a small *positive*
+   3-body (binding) at A=3, a large *negative* 4-body (saturation) at A=4. The order-separation rules
+   out one-mechanism-plus-refinement: each isotope's leading channel is its own Δ_λ object. This is the
+   `μ₃(binding)/μ₄(saturation)` split, now quantified in physical-ratio terms.
+
+Lean [`A4PrecisionOrderSeparation.lean`](../../content/quantum-observable-universe/lean/QOU/MassTheory/A4PrecisionOrderSeparation.lean)
+(sorry-free): `a4_baseline_overshoots`, `a4_three_body_makes_worse`, `a4_required_channel_negative`,
+`a4_higher_order_ruled_out`, `a4_four_body_dominates`, `mu4_more_fragile_than_mu3`, capstone. Probe
+[`a4_precision_order_decomposition_probe.py`](../../computations/deltalambda/a4_precision_order_decomposition_probe.py).
+
 ## 4. Lean (sorry-free, lean-direct exit 0)
 
 [`Mu3BaselineFragility.lean`](../../content/quantum-observable-universe/lean/QOU/MassTheory/Mu3BaselineFragility.lean),
