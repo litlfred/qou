@@ -196,6 +196,24 @@ theorem whiteheadInnerSum_saddle {N n : ℕ} (hN : 2 ≤ N) (hn : n < N) :
   · exact whiteheadS_le_innerSum hN (Finset.mem_range.mp hkmem)
   · exact whiteheadInnerSum_le_card_nsmul (fun k hk => hkmax k (Finset.mem_range.mpr hk))
 
+/-- **Slack-vanishing brick.**  `(2π/N)·log N → 0` — the term-count slack in the
+    saddle bound `whiteheadInnerSum_saddle` vanishes under the `(2π/N)` scaling,
+    so both envelopes converge to the same saddle value.  (Mathlib
+    `Real.tendsto_log_div_atTop`.) -/
+theorem tendsto_slack_zero :
+    Filter.Tendsto (fun N : ℕ => (2 * π / (N : ℝ)) * Real.log N)
+      Filter.atTop (nhds 0) := by
+  have h0 : Filter.Tendsto (fun x : ℝ => Real.log x ^ 1 / (1 * x + 0))
+      Filter.atTop (nhds 0) := tendsto_pow_log_div_mul_add_atTop 1 0 1 one_ne_zero
+  have h : Filter.Tendsto (fun N : ℕ => Real.log (N : ℝ) / (N : ℝ))
+      Filter.atTop (nhds 0) := by
+    refine (h0.comp tendsto_natCast_atTop_atTop).congr (fun N => ?_)
+    simp
+  have h2 := h.const_mul (2 * π)
+  rw [mul_zero] at h2
+  refine h2.congr (fun N => ?_)
+  ring
+
 /-- **The Whitehead Volume Conjecture** (van der Veen's theorem):
     `(2π/N)·log|J_N(W)(e^{2πi/N})| → Vol(Whitehead) = 4G`.
 
