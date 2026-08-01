@@ -1,0 +1,64 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-01T15:19:02.624960+00:00",
+  "commitSha": "f756ec2159ac040b416e3c9634a92185665532df",
+  "assertions": [
+    {
+      "name": "signs_derived_both_moments_milnor_parity",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "two_moment_fractions_inconsistent",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "A_trend_backwards_clusters_shrink_moments_grow",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "brunnian_order_grows_h4_to_h6",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 6,
+  "computation": "borromean-two-moment-consistency",
+  "scriptFile": "borromean_two_moment_consistency_probe.py",
+  "scriptHash": "f751e46bb031",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "mpmath": "1.4.1"
+  },
+  "description": "Two-moment cross-check of the Borromean/Brunnian Δ_λ magnitude identification (0-fit, from committed witnesses). Signs derived at both A (Milnor parity), but the same framing gives c₃/μ₃=0.63× and c₄/μ₄=0.0127× — inconsistent ~50×, with the A-trend backwards (clusters shrink O(h⁴)→O(h⁶) where the data grows). Downgrades the μ₃ near-miss toward coincidence; the magnitude identification fails the second moment. No fit; nothing wired.",
+  "auditOnly": "docs/audits/2026-08-01-deltalambda-borromean-two-moment-consistency.md",
+  "data": {
+    "mu3": "0.47076896",
+    "c3_H9_MeV": "0.2969575128",
+    "mu4": "-4.591048",
+    "c4_H12_MeV": "-0.05824409913",
+    "fraction_c3_over_mu3": "0.6307924651",
+    "fraction_c4_over_mu4": "0.01268644962",
+    "two_moment_inconsistency_factor": "49.721749",
+    "moment_trend_mu4_over_mu3": "9.7522318",
+    "cluster_trend_c4_over_c3": "0.19613614",
+    "order_h_A3": "4.0982",
+    "order_h_A4": "6.061",
+    "verdict": "TWO-MOMENT CROSS-CHECK FAILS — the Borromean/Brunnian magnitude identification does NOT survive the second moment (scope-(a), 0-fit). SIGNS derived at both A (Milnor parity (−1)^{A−1}: μ₃>0, μ₄<0). But the SAME framing gives f₃=c₃/μ₃=0.6308 (0.63×, the near-miss) and f₄=c₄/μ₄=0.01269 (~79× short) — INCONSISTENT by 49.72×. The A-trend is BACKWARDS: the physical residual moments GROW (|μ₄/μ₃|=9.752) while the Brunnian clusters SHRINK (|c₄/c₃|=0.1961), because the 4-link is O(h⁶) vs the 3-link's O(h⁴) — intrinsic topological suppression (first Milnor at length A ⇒ O(h^{2(A−1)})), un-tunable without a fit. CONCLUSION: this DOWNGRADES the μ₃ 0.63× 'near-miss' toward a coincidence — a framework matching one moment to 0.6× but the next to 0.01× with the A-trend inverted is not capturing the magnitude physics. The SIGN leg stands; the MAGNITUDE identification does not. No fit; μ_A never inverted; nothing wired."
+  }
+}
