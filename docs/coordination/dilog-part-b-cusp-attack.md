@@ -397,6 +397,28 @@ endpoint identity `x q_m^m = e^{−β_m}`, the log squeeze `log β_m − β_m �
 *provably* false, so only the *measure-theoretic* (a.e.-`x`, Borel–Cantelli) or *restricted-
 scaling* (Faddeev, #4427) positives are attainable — exactly the two directions now recorded.
 
+### BC a.e. build — deterministic bricks LANDED (2026-08-01, branch `claude/dilog-partB-bc-brick-spec-2026-07-31`)
+
+The two `x`-pointwise (measure-free) bricks of the Borel–Cantelli programme are proved
+sorry-free in `DilogPartBBorelCantelli.lean`, reducing the a.e. claim to a **pure Lebesgue
+measure estimate**:
+
+- `branch_endpoint_eq`: `x·q^{⌊s⌋} = exp((⌊s⌋−s)·log q)` with `s := log(1/x)/log q` — the
+  branch-index endpoint identity, so the gap is governed by the resonance `frac s = s − ⌊s⌋`.
+- `branch_gap_lower_of_fract`: **no-resonance ⇒ gap** — if `frac s ≥ θ` (`θ>0`) and `q∈(1,2]`,
+  then `1 − x·q^{⌊s⌋} ≥ (θ/4)(q−1)`. This is *exactly* the `c·(q−1) ≤ 1−x·qⁿ` hypothesis that
+  `boundary_term_vanishes` (#4270) consumes (`c = θ/4`), so `frac s` bounded below ⇒ the
+  boundary term `→ 0`.
+
+**What remains — the one measure brick (bean `qou-zuuz`).** Only the estimate
+`measure{x ∈ (0,1) : frac(log(1/x)/log q_m) < ε_m} ≲ ε_m` (the resonance-window Lebesgue
+bound), then Mathlib's `measure_limsup_eq_zero` (first Borel–Cantelli, present) gives a.e.
+`frac` bounded below, and the two deterministic bricks above close a.e. convergence. That
+window estimate is the genuine metric-number-theory residual (Mathlib lacks Weyl
+equidistribution; the window bound is a direct change-of-variables `x = e^{−u}` + periodicity
+argument, not Weyl). The deterministic reduction is now machine-checked — the a.e. positive is
+one measurability+measure lemma away.
+
 #### Correction (2026-07-26, same tranche): the curvature = −π²/3 route is REFUTED — −π²/3 is abelian dilog data, not a non-abelian anomaly
 
 The "concrete lead" above (`lem:yekutieli-leading-coefficient` → the curvature term is
