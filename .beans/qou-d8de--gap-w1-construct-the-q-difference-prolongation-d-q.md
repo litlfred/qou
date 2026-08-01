@@ -90,3 +90,38 @@ Multi-month geometric-analysis construction (per
 next step: pick route 3 (import the q-difference D-module framework from the
 literature) before attempting routes 1–2, so `D_q` is built on a real definitional
 foundation rather than an ad-hoc operator.
+
+## Progress (2026-08-01, PR #4449) — two concrete ingredients landed
+
+Both sorry-free, non-circular (computed from Σ / the operator, independent of C1),
+no fit, no conjecture-class asserting the identification:
+
+1. **Candidate base operator** (`QOU/Mass/QDiffProlongationBaseOperator.lean`): the
+   q-shift / Jackson q-derivative names the quantum integer —
+   `(q·z)^n − z^n = [n]_q·(q−1)·z^n`, i.e. `D_q(z^n) = [n]_q·z^{n−1}` (vs classical
+   `n·z^{n−1}`, q-free per `ColorCubicPowerSums`); `[n]_1 = n` (classical limit).
+2. **Σ is a q-integer curve** (`QOU/Mass/ColorCurveQIntegerForm.lean`):
+   `C_z(X) = [1]_z X³ + [2]_z X² + [3]_z X + [4]_z` — the coefficients ARE quantum
+   integers; `[k+1]_z = [k]_z + z^k` (q-integer ladder). So the base q-shift acts
+   naturally on Σ through the coefficient functional equations.
+
+## Precise remaining obstruction (the genuine multi-month core)
+
+The **jet-tower lift** `D_q : Jⁿ E → Jⁿ⁺¹ E` over Σ compatible with the SW connection
+is still open, blocked on TWO things:
+
+- **(i) Missing infra.** No q-jet bundle / q-D-module prolongation of a connection on
+  an algebraic curve exists in Mathlib or the corpus (the ingredients above are the
+  *base* operator + the *curve* structure, not the bundle lift).
+- **(ii) q-chain-rule obstruction.** The classical jet uses implicit differentiation
+  `X' = −(∂_z C)/(∂_X C)` of `C_z(X(z))=0`. The Jackson q-derivative has **no clean
+  chain rule** for `D_q(C_z(X(z)))`, so the classical implicit-jet route does not
+  q-deform directly. A single-valued `D_q` on the jet bundle requires choosing a
+  branch of the z↦qz correspondence on Σ (the fibre root-of-unity datum) — this is
+  the geometric heart, not yet constructed.
+
+Honest next step (if resumed): either (a) the q-partial-derivatives `D_q^{(z)} C`,
+`D_q^{(X)} C` as an intermediate (well-defined, no chain rule) then attack the
+branch-selected assembly; or (b) import a q-difference D-module / q-jet framework from
+the literature (Sauloy; van der Put–Singer) before hand-rolling the bundle. Still a
+multi-month construction; not a session brick.
