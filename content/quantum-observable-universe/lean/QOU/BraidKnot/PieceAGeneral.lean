@@ -421,4 +421,74 @@ theorem sum_fst_eq_scLower (μ : YoungDiagram) :
     simp only [Finset.disjoint_left, Finset.mem_product, Finset.mem_singleton]
     rintro Aq ⟨_, rfl⟩ ⟨_, h⟩; exact hpq h
 
+/-! ## Stage 10 — the offDiag assembly: `PairCount`
+
+`card² − card = |offDiag| = 2|urll| + 2|ullr| + 2|srLower| + 2|scLower|`, via the
+pointwise identity that the 8 sign-classes (both orderings of UR/LL, UL/LR,
+same-row, same-col) partition the off-diagonal, plus swap-reindexing to fold each
+ordering pair into a factor of 2. -/
+
+/-- Reindex a pair sum by `Prod.swap` (the cell-pair set is swap-symmetric). -/
+theorem swap_reindex (μ : YoungDiagram) (f : (ℕ × ℕ) × (ℕ × ℕ) → ℤ) :
+    (∑ pq ∈ μ.cells ×ˢ μ.cells, f pq.swap) = ∑ pq ∈ μ.cells ×ˢ μ.cells, f pq := by
+  refine Finset.sum_bij' (fun pq _ => pq.swap) (fun pq _ => pq.swap) ?_ ?_ ?_ ?_ ?_
+  · intro pq hpq; simpa [Finset.mem_product, and_comm] using hpq
+  · intro pq hpq; simpa [Finset.mem_product, and_comm] using hpq
+  · intro pq _; exact Prod.swap_swap pq
+  · intro pq _; exact Prod.swap_swap pq
+  · intro pq _; rfl
+
+/-- **The pair-counting identity** (bean `qou-o5xj`). -/
+theorem pairCount_holds (μ : YoungDiagram) : PairCount μ := by
+  rw [PairCount, sum_armLeg_eq_urll, sum_prod_eq_ullr, sum_snd_eq_srLower,
+    sum_fst_eq_scLower]
+  -- turn each pair-set card into an indicator sum over cells ×ˢ cells
+  have cast_card : ∀ P : (ℕ × ℕ) × (ℕ × ℕ) → Prop, ∀ _ : DecidablePred P,
+      (((μ.cells ×ˢ μ.cells).filter P).card : ℤ)
+        = ∑ pq ∈ μ.cells ×ˢ μ.cells, (if P pq then (1 : ℤ) else 0) := by
+    intro P _
+    simp only [Finset.card_filter, Nat.cast_sum, Nat.cast_ite, Nat.cast_one, Nat.cast_zero]
+  rw [urllPairs, ullrPairs, srLowerPairs, scLowerPairs, cast_card, cast_card,
+    cast_card, cast_card]
+  -- RHS: card² − card = Σ indicator of the off-diagonal
+  have hle : μ.cells.card ≤ μ.cells.card * μ.cells.card := by
+    rcases Nat.eq_zero_or_pos μ.cells.card with h | h
+    · simp [h]
+    · exact Nat.le_mul_of_pos_left _ h
+  have hoff : (μ.cells.card : ℤ) ^ 2 - (μ.cells.card : ℤ)
+      = ∑ pq ∈ μ.cells ×ˢ μ.cells, (if pq.1 ≠ pq.2 then (1 : ℤ) else 0) := by
+    have hcast : (∑ pq ∈ μ.cells ×ˢ μ.cells, (if pq.1 ≠ pq.2 then (1 : ℤ) else 0))
+        = (((μ.cells ×ˢ μ.cells).filter (fun pq => pq.1 ≠ pq.2)).card : ℤ) := by
+      simp only [Finset.card_filter, Nat.cast_sum, Nat.cast_ite, Nat.cast_one, Nat.cast_zero]
+    rw [hcast]
+    have heq : (μ.cells ×ˢ μ.cells).filter (fun pq => pq.1 ≠ pq.2) = μ.cells.offDiag := by
+      ext pq
+      simp only [Finset.mem_filter, Finset.mem_product, Finset.mem_offDiag]
+      tauto
+    rw [heq, Finset.offDiag_card, Nat.cast_sub hle]
+    push_cast; ring
+  rw [hoff]
+  -- fold the swapped orderings and match pointwise
+  have fold : ∀ P : (ℕ × ℕ) × (ℕ × ℕ) → Prop, ∀ _ : DecidablePred P,
+      (2 : ℤ) * ∑ pq ∈ μ.cells ×ˢ μ.cells, (if P pq then (1 : ℤ) else 0)
+        = ∑ pq ∈ μ.cells ×ˢ μ.cells,
+            ((if P pq then (1 : ℤ) else 0) + (if P pq.swap then (1 : ℤ) else 0)) := by
+    intro P _
+    rw [Finset.sum_add_distrib, swap_reindex μ (fun pq => if P pq then (1 : ℤ) else 0), two_mul]
+  rw [fold, fold, fold, fold, ← Finset.sum_add_distrib, ← Finset.sum_add_distrib,
+    ← Finset.sum_add_distrib]
+  apply Finset.sum_congr rfl
+  intro pq _
+  obtain ⟨⟨a, c⟩, ⟨b, d⟩⟩ := pq
+  simp only [Prod.swap, Prod.mk.injEq, ne_eq, not_and]
+  by_cases hab : a = b <;> by_cases hcd : c = d <;>
+    simp_all <;> split_ifs <;> omega
+
+/-- **Piece A — general `n`, sorry-free** (bean `qou-o5xj` closed):
+`Σ hook² = Σ content² + n²` for every Young diagram. -/
+theorem pieceA (μ : YoungDiagram) :
+    ∑ c ∈ μ.cells, (hookZ μ c) ^ 2
+    = (∑ c ∈ μ.cells, (contentZ c) ^ 2) + (μ.cells.card : ℤ) ^ 2 :=
+  pieceA_of_pairCount μ (pairCount_holds μ)
+
 end QOU.BraidKnot.PieceA
