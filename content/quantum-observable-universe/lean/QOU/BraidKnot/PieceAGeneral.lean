@@ -198,4 +198,52 @@ theorem pieceA_of_pairCount (μ : YoungDiagram) (hpc : PairCount μ) :
   rw [PairCount] at hpc
   linarith [hred, hpc]
 
+/-! ## Stage 6 — arm/leg as `Finset.card` of the arm/leg cell filters -/
+
+/-- The arm length is the number of cells strictly right of `p` in its row. -/
+theorem armZ_eq_card (μ : YoungDiagram) {p : ℕ × ℕ} (hp : p ∈ μ.cells) :
+    armZ μ p = ((μ.cells.filter (fun R => R.1 = p.1 ∧ p.2 < R.2)).card : ℤ) := by
+  have hlt : p.2 < μ.rowLen p.1 := (mem_cells_iff_snd_lt μ p).mp hp
+  have hset : μ.cells.filter (fun R => R.1 = p.1 ∧ p.2 < R.2)
+      = (Finset.Ioo p.2 (μ.rowLen p.1)).image (fun j => (p.1, j)) := by
+    ext R
+    simp only [Finset.mem_filter, Finset.mem_image, Finset.mem_Ioo]
+    constructor
+    · rintro ⟨hRc, hR1, hR2⟩
+      exact ⟨R.2, ⟨hR2, by rw [← hR1]; exact (mem_cells_iff_snd_lt μ R).mp hRc⟩,
+        by rw [← hR1]⟩
+    · rintro ⟨j, ⟨hj1, hj2⟩, rfl⟩
+      exact ⟨by rw [mem_cells_iff_snd_lt]; exact hj2, rfl, hj1⟩
+  rw [hset, Finset.card_image_of_injective _ (fun a b h => by simpa using h),
+    Nat.card_Ioo]
+  simp only [armZ]
+  omega
+
+/-- The leg length is the number of cells strictly below `p` in its column. -/
+theorem legZ_eq_card (μ : YoungDiagram) {p : ℕ × ℕ} (hp : p ∈ μ.cells) :
+    legZ μ p = ((μ.cells.filter (fun B => B.2 = p.2 ∧ p.1 < B.1)).card : ℤ) := by
+  have hlt : p.1 < μ.colLen p.2 := by
+    have := μ.mem_iff_lt_colLen (i := p.1) (j := p.2)
+    rw [YoungDiagram.mem_cells] at hp; simpa using this.mp (by simpa using hp)
+  have hset : μ.cells.filter (fun B => B.2 = p.2 ∧ p.1 < B.1)
+      = (Finset.Ioo p.1 (μ.colLen p.2)).image (fun i => (i, p.2)) := by
+    ext B
+    simp only [Finset.mem_filter, Finset.mem_image, Finset.mem_Ioo]
+    constructor
+    · rintro ⟨hBc, hB2, hB1⟩
+      refine ⟨B.1, ⟨hB1, ?_⟩, ?_⟩
+      · rw [← hB2]
+        have := μ.mem_iff_lt_colLen (i := B.1) (j := B.2)
+        rw [YoungDiagram.mem_cells] at hBc; simpa using this.mp (by simpa using hBc)
+      · rw [← hB2]
+    · rintro ⟨i, ⟨hi1, hi2⟩, rfl⟩
+      refine ⟨?_, rfl, hi1⟩
+      rw [YoungDiagram.mem_cells]
+      have := μ.mem_iff_lt_colLen (i := i) (j := p.2)
+      simpa using this.mpr hi2
+  rw [hset, Finset.card_image_of_injective _ (fun a b h => by simpa using h),
+    Nat.card_Ioo]
+  simp only [legZ]
+  omega
+
 end QOU.BraidKnot.PieceA
