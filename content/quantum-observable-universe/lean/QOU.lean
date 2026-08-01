@@ -203,6 +203,7 @@ import QOU.Information.PolyGrowthAlgebra
 import QOU.Information.MagnitudeTraceCommutator
 import QOU.Information.SkeinGradeConnective
 import QOU.Information.SkeinShadowConjInvariance
+import QOU.Information.PNeqNpWallUnification
 import QOU.LightningPath
 import QOU.RepresentationTheory
 import QOU.GradedFrobeniusHopf
