@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-01T01:21:34.472443+00:00",
-  "commitSha": "b52c133434d8ba5d0af3b3d8adbc79741513844d",
+  "computedAt": "2026-08-01T01:41:13.296870+00:00",
+  "commitSha": "ea2be50ddbd0294ea0303a4cb606c71d5628d8c5",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -573,7 +573,10 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
-    "mpmath": "1.4.1"
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "Per-chain validation + computational-trust audit per the QOU methodology directive: every numerical claim must trace back to first-principles axioms via a DerivationChain.",
   "auditOnly": "docs/audits/2026-05-02-pr503-ci-failure-postmortem.md",
@@ -3121,6 +3124,7 @@
         "staircase-ew-disjoint-spectrum.witness.json",
         "staircase-ew-predictions.witness.json",
         "staircase-ew-residual-conjecture.witness.json",
+        "strand-twist-y-battery.witness.json",
         "structured-combiner-and-triangle.witness.json",
         "su2-spinor-multiplicity-resolution.witness.json",
         "subgoal-1-frobenius-co-casimir-validation.witness.json",
