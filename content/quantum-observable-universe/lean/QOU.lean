@@ -163,6 +163,7 @@ import QOU.Archimedean.DilogPartBFaddeevScaling
 import QOU.Archimedean.DilogPartBJointAssembly
 import QOU.Archimedean.DilogPartBBorelCantelli
 import QOU.Archimedean.DilogPartBWindowMeasure
+import QOU.Archimedean.DilogPartBAEAssembly
 import QOU.Archimedean.DilogNaStokesOrdering
 import QOU.Interactions
 import QOU.Encounter
