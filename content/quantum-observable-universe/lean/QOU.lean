@@ -171,6 +171,9 @@ import QOU.ArchimedeanUniverse
 import QOU.PAdicQuantumGroups
 import QOU.GaugeFieldFluidDynamics
 import QOU.InformationTheory
+-- Sorry-free P-vs-NP information-theoretic bricks (the counting/decision
+-- carrier `QouPNeqNp` stays orphaned — it holds the one intentional `sorry`).
+import QOU.Information.SurrealBudgetGrade
 import QOU.LightningPath
 import QOU.RepresentationTheory
 import QOU.GradedFrobeniusHopf
