@@ -1,5 +1,13 @@
 # W1 arrow (A): the S₃-equivariance invariant + the DGG value-map build plan
 
+> **⚠ CORRECTED (2026-08-01) — Part 1 below is WRONG.** The 3D-index function is
+> S₃-**invariant** (trivial isotypic only); the `84·sign + 240·std` are the
+> decomposition of the representation *space*, **not** the index vector. So
+> `I_tot_meridian` discards no standard content (there is none), S₃ is *vacuous*
+> for arrow (A), and there is no "graded standard component" to build from. See
+> [`2026-08-01-arrow-a-s3-index-invariance-correction.md`](2026-08-01-arrow-a-s3-index-invariance-correction.md).
+> Part 2 (the build plan, steps 2–5) stands; step 1 is corrected there.
+
 **Date:** 2026-08-01
 **Tier:** audit-only; scope-(a); no fit; nothing wired; L2 unchanged.
 **Epic:** W1 binding-mass bridge `I_𝓑₃ → tr_M(β_Bor)`. Builds on the invariant
