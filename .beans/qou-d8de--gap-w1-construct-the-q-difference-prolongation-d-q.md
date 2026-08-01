@@ -125,3 +125,24 @@ Honest next step (if resumed): either (a) the q-partial-derivatives `D_q^{(z)} C
 branch-selected assembly; or (b) import a q-difference D-module / q-jet framework from
 the literature (Sauloy; van der Put–Singer) before hand-rolling the bundle. Still a
 multi-month construction; not a session brick.
+
+## Update (2026-08-01, PR #4449) — 5 ingredients; wall localized to single monodromy
+
+Added beyond the two above:
+3. q-difference operator infra (`QOU/MathlibExt/QDifferenceOperator.lean`): q-Leibniz
+   (clean), monomial q-chain rule (q→q^m), and the PROVED no-naive-chain-rule
+   counterexample — why a non-monomial branch X(z) admits no implicit-jet q-recurrence.
+4. q-partials + branch-selection defect (`QOU/Mass/ColorCurveQPartials.lean`):
+   on Σ, `Δ_q^z C(X,z) = C_{qz}(X)` — the defect measuring X leaving Σ under z↦qz.
+5. sheet structure (`QOU/Mass/ColorCurveSheets.lean`): Vieta reconstruction (sheets ↔
+   q-integer symmetric functions) + `defect = (X−Y₁)(X−Y₂)(X−Y₃)` (gaps to the shifted
+   sheets); branch coherent ⟺ X is a shifted sheet.
+
+**The wall is now ONE thing:** which shifted sheet Yᵢ continues X **single-valuedly** —
+the monodromy of the 3-sheeted cover around the branchSextic zeros (fibre root-of-unity
+datum; (−1)ⁿ parity proved on main, `Brings.RamificationParityMonodromy`). Everything
+algebraic around it is now formalized; the global single-valued algebraic `D_q` is the
+transcendental core. **Honest terminus for the calculus/algebra approach** — closing it
+needs the q-difference D-module / monodromy-representation framework from the literature
+(the branch is a section of the cover, not a rational function). Not faked; not a session
+brick.
