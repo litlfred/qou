@@ -289,6 +289,11 @@ import QOU.QBeta.CrossingWeightAffine
 import QOU.QBeta.SelfDualLocusTargetSpec
 import QOU.QBeta.SubstratePeriodsIndependent
 import QOU.QBeta.WenzlPochhammerBoundary
+-- A_ω uniqueness-leg strip-growth constructor: derives `FaddeevPhiStripGrowth`
+-- from the FKV eq-22 compact bound + periodicity + same-divisor. Pulls the whole
+-- A_ω uniqueness cone (FaddeevStripGrowthFKV → box-reduction; FaddeevPhiStripGrowth
+-- → PhiBProd) into CI so it is typechecked long-term (was orphaned).
+import QOU.QBeta.FaddeevStripGrowthConstructor
 -- Concrete H₃(q) Markov-trace functional (NF model: linearity, cyclicity,
 -- Hecke σ₀²=hσ₀+1, Markov reduction tr(x·σ₁)=z·tr(x)); cross-checked vs
 -- `gram.py` / `pyhecke.trace_formal`. Was an orphan under `Machinery/`.
