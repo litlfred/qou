@@ -49,6 +49,7 @@ import QOU.MathlibExt.OctonionSU3RankSix
 import QOU.MathlibExt.OctonionSU3Stabilizer
 import QOU.MathlibExt.OctonionSU3BracketClosure
 import QOU.MathlibExt.OctonionColourActionBaseModule
+import QOU.MathlibExt.OctonionComplexStructure
 import QOU.StandardModel.ColourStabilizerAction
 -- q-difference operator calculus (missing Mathlib infra for the q-difference D-module
 -- program): q-Leibniz product rule (clean), monomial q-chain rule (q→q^m), and the
