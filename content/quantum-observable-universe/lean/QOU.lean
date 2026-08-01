@@ -527,6 +527,7 @@ import QOU.Mathlib.SYTHookFormulaBetaProd
 import QOU.Mathlib.SYTHookFormulaRows
 import QOU.MassTheory.MirrorPairBondScaling
 import QOU.QBeta.CubicSaddleDiscriminant
+import QOU.QBeta.G3RealnessConjugationBrick
 import QOU.QBeta.SixOneShapeDiscriminant
 import QOU.MassTheory.BarParityClusterObstruction
 -- A=4 Brunnian deficit: derived leading data (exact order 6, coeff -96)
