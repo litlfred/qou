@@ -138,6 +138,10 @@ import QOU.Mass.C1ModuleExponents
 -- W2 ∞: q-Gevrey growth of the C1 formal solution at ∞ — deg_q(c_n) = ∑_{m<n}(2m+1) = n²
 -- (coefficients grow like q^{n²}), the divergence that forces Stokes summation.
 import QOU.Mass.C1FormalSolutionGrowth
+-- Tube ↔ spectral coordinate bridge: certifies the color-tube-cubic block's
+-- prose substitution X = c + z and derives its three Vieta rows from the
+-- (q-free) spectral symmetric data. Sorry-free, generic CommRing.
+import QOU.Mass.ColorTubeSpectralBridge
 import QOU.Mass.HeckeStokesEigenvalues
 import QOU.Mass.NaStokesKeystone
 import QOU.Mass.BindingHyperbolicRecurrence
