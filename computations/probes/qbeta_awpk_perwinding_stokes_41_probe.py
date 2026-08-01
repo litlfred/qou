@@ -93,9 +93,11 @@ E_SUB = 28            # winding window for substrate A_eff. NOT 8: the winding
                       # truncating at the hump would silently bias A_eff.
                       # Per-sheet last-winding tail magnitudes are recorded.
 
-# T4 back-solved sheet angles (qbeta_t4_stokes3_crux_probe.py; NOT re-fitted)
-THETA_MUON = 0.0589
-THETA_PROTON = 0.2032
+# T4 back-solved sheet angles (qbeta_t4_stokes3_crux_probe.py, 8-digit
+# T4-inverted values per qbeta_t3_multiknot_binding_probe.py; NOT re-fitted).
+# mp.mpf strings — no float64 literals per the precision discipline.
+THETA_MUON = mp.mpf("0.05894648")
+THETA_PROTON = mp.mpf("0.20323503")
 S_MUON = mp.mpf("0.00968298")
 S_PROTON = mp.mpf("-0.03945936")
 
