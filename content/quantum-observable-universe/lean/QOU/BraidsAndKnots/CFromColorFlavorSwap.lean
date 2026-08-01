@@ -1,3 +1,5 @@
+import QOU.BraidsAndKnots.InterNucleonChannelColorTube
+
 /-!
 # QOU.BraidsAndKnots.CFromColorFlavorSwap — D6 charge conjugation as color-sheet flavor swap
 
@@ -37,7 +39,6 @@ Numeric cross-check at q₀: `computations/verify_c_color_swap.py`.
 
 -- Ref: [manuscript] conj:c-from-color-flavor-swap
 -/
-import QOU.BraidsAndKnots.InterNucleonChannelColorTube
 
 namespace QOU.BraidsAndKnots
 
