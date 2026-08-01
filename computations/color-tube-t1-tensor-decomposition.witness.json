@@ -1,0 +1,89 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-01T21:18:09.213085+00:00",
+  "commitSha": "f631495ac0d2b002847efb595efbdd0b2651acc3",
+  "assertions": [
+    {
+      "name": "t1_tensor_t1_eq_A_plus_T1_plus_H",
+      "computed": 111.0,
+      "expected": 111.0,
+      "passed": true,
+      "tolerance": 0.0,
+      "source": "Exact character inner products on the 5 conjugacy classes of A5 give multiplicity 1 for each of A, T1, H and 0 for T2, G — so T1 (x) T1 = A + T1 + H with dims 1+3+5 = 9. Character table orthonormality is asserted first, so the decomposition is not read off an unvalidated table."
+    },
+    {
+      "name": "sym_alt_split_is_6_plus_3",
+      "computed": 63.0,
+      "expected": 63.0,
+      "passed": true,
+      "tolerance": 0.0,
+      "source": "Sym^2 T1 = A + H (dim 6) and Alt^2 T1 = T1 (dim 3), computed from the class-squaring map (note the 5-cycle classes swap under squaring — the index-2 fusion behind the T1/T2 chirality). This is the canonical Z/2 grading of the 9 color pairs."
+    },
+    {
+      "name": "uniform_projection_is_isotypy_blind_barycentre",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.0,
+      "source": "The three isotypic projectors sum to the identity on the 9-dimensional color-pair space, whose diagonal is 1 on every pair; normalising by 9 returns exactly W = 1/9. So the uniform-flavor projection is the isotypy-blind average of the canonical weight systems — a structural reading of the projection the conjecture identifies as lossy."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 83,
+  "computation": "color-tube-t1-tensor-decomposition",
+  "scriptFile": "color_tube_t1_tensor_decomposition.py",
+  "scriptHash": "da0e98938b52",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Decomposes the color-pair space T1 (x) T1 of the icosahedral fiber action (bean qou-ctkw; open question 1 of conj:inter-nucleon-channel-color-tube). The three color sheets ARE the T1 irrep (Lean color_sheets_carry_T1) and BringFiberAction is discharged, so ordered color-sheet pairs carry T1 (x) T1. Exact character arithmetic over Q(sqrt 5) on the 5 classes of A5 gives T1 (x) T1 = A + T1 + H (1+3+5=9), with Sym^2 = A + H (6) and Alt^2 = T1 (3) — a canonical Z/2 grading of the 9 color pairs, the shape the block's representation-theoretic eps constraint requires. Each isotypic projector induces a normalised weight system, and the uniform-flavor projection W=1/9 is exactly their identity-sum barycentre: the projection the conjecture calls lossy IS the isotypy-blind average. NARROWS W from 8 free parameters per flavor pair to a 2-parameter convex combination of three canonical systems. Does NOT close open question 1 — the flavor dependence (F1,F2) is not supplied by the color side. Scope-(a); 0 free parameters; no target consulted; nothing wired.",
+  "data": {
+    "tensor_multiplicities": {
+      "A": 1,
+      "T1": 1,
+      "T2": 0,
+      "G": 0,
+      "H": 1
+    },
+    "sym2_multiplicities": {
+      "A": 1,
+      "T1": 0,
+      "T2": 0,
+      "G": 0,
+      "H": 1
+    },
+    "alt2_multiplicities": {
+      "A": 0,
+      "T1": 1,
+      "T2": 0,
+      "G": 0,
+      "H": 0
+    },
+    "isotypic_normalised_weights": {
+      "A": {
+        "same": "1/3",
+        "diff": "0"
+      },
+      "T1": {
+        "same": "0",
+        "diff": "1/6"
+      },
+      "H": {
+        "same": "2/15",
+        "diff": "1/10"
+      }
+    },
+    "uniform_projection_is_barycentre": true
+  }
+}
