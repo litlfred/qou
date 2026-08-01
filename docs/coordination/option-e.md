@@ -774,3 +774,28 @@ single-deficit filtration (e.g. an operator-valued cross-channel combiner). Lean
 `vassiliev-magnitude-a3.witness.json`; audit
 `2026-08-01-deltalambda-a3-beyond-hecke-vassiliev-magnitude.md`. Nothing wired;
 `free_parameters = 0`.
+
+**2026-08-01 — PROBE 2 (A=4 interface operator + s5-so3 geometric W_λ on ⁴He): the
+reweighting BRACKETS both AME targets but hits neither, and is NOT excluded — WALL(scope-(a)).**
+(PR TBD, `claude/deltalambda-a4-helium-interface-operator-2026-08-01`.) With the A=4 SIGN
+settled (#4378: `τ_L₄>1` ⇒ `c₄<0` compatible with `μ₄<0`), the MAGNITUDE became live. The
+s5-so3 fiber action (`conj:s5-so3-fiber-action`) supplies a **normalized** color-tube weight
+(`Σ W_λ=1`); its genuine geometric measure is the SAME Beasley–Witten `W_geom=d_q²/D²` #4392
+used at A=3. Forward-evaluated 0-fit on the canonical b0vf ⁴He `H₁₂` per-block table
+(`chi-helium-4-h12-at-q0-50dps`, 77 λ⊢12), `E₀=4.18598`: production `E₀·Σy_λ|χ_λ|=0.243 MeV`
+(**undershoots** B(⁴He)=28.30 by 117×), geometric `E₀·ΣW_geom|χ_λ|=60.33 MeV`
+(**overshoots** by 2.13×; `r_geom=248.5` vs A=3's 47.4 — `d_q²` concentrates even harder at
+n=12). The two 0-fit endpoints **bracket** both targets (`0.243 < 4.591 < 60.33` and
+`0.243 < 28.30 < 60.33`) but **neither lands**. Crucially the normalized-measure bound
+`E₀·max_λ|χ_λ|=266 MeV` (`max|χ|=63.6` at λ=(6,3,3)) is **above** both targets ⇒ the target
+is **reachable in principle** by some normalized `W` — **NOT a scope-(b) exclusion**; an exact
+hit needs a tuned intermediate weight = **FIT**, declined. (The pre-existing
+`a4_option_e_color_tube_closure.py`'s ad-hoc `10³` "color-tube scale" IS such a fit; NOT used.)
+So the s5-so3 interface operator does **not** supply the A=4 magnitude as-is — **WALL(scope-(a))**,
+mirroring the fully-bracketed A=3. Lean `GeometricWLambdaA4Helium.lean` sorry-free (lean-direct
+exit 0, v4.24.0): the reusable invariant `normalized_reweight_abs_le_bound` (`ΣW=1,W≥0,|x|≤B ⇒
+|ΣWx|≤B`), `bracket_B4He`/`bracket_absMu4`, `geom_ne_targets`, `targets_within_bound`, capstone
+`a4_magnitude_bracketed_not_closed_not_excluded`. Probe/witness
+`s5so3-geometric-wlambda-a4-helium.witness.json`; audit
+`2026-08-01-deltalambda-a4-helium-interface-operator.md`. GAP bean filed. Nothing wired;
+B(⁴He)/μ₄ never inverted; `free_parameters = 0`.
