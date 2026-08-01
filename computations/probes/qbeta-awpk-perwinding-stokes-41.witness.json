@@ -1,8 +1,8 @@
 {
   "engine": "python-int+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-31T21:24:20.473829+00:00",
-  "commitSha": "e8060ae30710a8b07e31caf7ea1cc10629ccae7d",
+  "computedAt": "2026-08-01T01:07:54.388970+00:00",
+  "commitSha": "4bd11250d8017b2682ccc4b4d566765540ff6c56",
   "assertions": [
     {
       "name": "esum_reproduces_rotated_index",
@@ -27,14 +27,38 @@
       "passed": true,
       "tolerance": 0.5,
       "source": "I(0,e) == I(0,-e) exactly at full order for e=1,2,3"
+    },
+    {
+      "name": "substrate_per_winding_converged",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "every I(0,e)(q_sub), e<=E_SUB, agrees to >=6 digits between internal x-orders 2400 and 3200 (exact-int engine; diff>=1 counts as 0 digits, no else-40 sentinel)"
+    },
+    {
+      "name": "unit_sheets_exactly_bar_even",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "max |Im A_eff| < 1e-30 on unit-modulus sheet conventions (amphichiral structural check)"
+    },
+    {
+      "name": "deep_tower_honest_ladder",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "S+11 deep series head == printed (61) AND ladder agreement >= 8 digits at q-orders 1200 vs 1600 (supersedes the g3 witness sentinel-guarded value)"
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 676803,
   "computation": "qbeta-awpk-perwinding-stokes-41",
   "scriptFile": "qbeta_awpk_perwinding_stokes_41_probe.py",
-  "scriptHash": "b92053905073",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "c974eb23b260",
+  "scriptCommitSha": "4bd11250d8017b2682ccc4b4d566765540ff6c56",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -43,6 +67,7 @@
   },
   "environment": {
     "python": "3.11.15",
+    "numpy": "2.4.6",
     "mpmath": "1.4.1"
   },
   "description": "Bean qou-awpk (route 2 of qou-qnnq): per-winding-class Stokes data of 4_1 extracted exactly via the proven GGM x-refined dictionary S+_sigma1sigma1(w;q) = Sum_e I_41(0,e)(q) w^e on the validated DGG eq-(4.18) flux-sum engine. Closes the 'e-sum numerical reproduction deferred' item of qbeta-g3-fourone-index-assembly-corrected (exact match to the printed rotated index through q^6, e-window stable), certifies amphichirality per winding, and evaluates the effective Stokes coefficient A_eff(u) = Sum_e I(0,e)(q_sub) w^e at the observed T4 sheets under four sheet conventions. Parameter-free comparison against S(proton)/S(muon) = -4.0751; per-convention results recorded as-is. Sigma1sigma1 channel only (the literature-proven x-refinement); no c_k wired; no fit; scope-(a).",
@@ -166,6 +191,84 @@
         "8": 0,
         "9": 0,
         "10": 1
+      },
+      "9": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0,
+        "10": 0
+      },
+      "10": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0,
+        "10": 0
+      },
+      "11": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0,
+        "10": 0
+      },
+      "12": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0,
+        "10": 0
+      },
+      "13": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0,
+        "10": 0
+      },
+      "14": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0,
+        "10": 0
       }
     },
     "esum_reproduction": {
@@ -190,6 +293,352 @@
       "internal_x_order": 96,
       "e_window": 14
     },
-    "substrate_layer": "skipped (--cert-only)"
+    "substrate": {
+      "q_tilde_sub": "0.90091828395574149216",
+      "deep_order_ladder": [
+        1600,
+        2400,
+        3200
+      ],
+      "engine": "exact-int canonical-chamber (_awpk_fast_index; no floats in series arithmetic per owner directive 2026-07-31)",
+      "per_winding_values": {
+        "0": "0.58141071223704156813",
+        "1": "-0.30020790513950881922",
+        "2": "0.14227490068539498003",
+        "3": "0.2437252837694109326",
+        "4": "-0.14096405675999329918",
+        "5": "0.1011564864672810334",
+        "6": "0.17598409342275248637",
+        "7": "-0.12198956855990006265",
+        "8": "0.041106402381182466248",
+        "9": "0.10966724426835794654",
+        "10": "-0.15458414211914444011",
+        "11": "-0.049075013494731044339",
+        "12": "0.042820495038745243758",
+        "13": "-0.18045572182115465709",
+        "14": "-0.10790792149291687823",
+        "15": "0.056408932091415589726",
+        "16": "-0.085107294974220857096",
+        "17": "-0.047807515771039362531",
+        "18": "0.17205715384456715217",
+        "19": "0.088250564111122432034",
+        "20": "-0.030011763334329468359",
+        "21": "0.084414751251300379186",
+        "22": "0.036456413322533566195",
+        "23": "-0.19085601162683649612",
+        "24": "-0.14165820313190195057",
+        "25": "0.11344738167955355415",
+        "26": "0.14952776074205621868",
+        "27": "-0.014462308401189812336",
+        "28": "-0.083163701620729404138"
+      },
+      "per_winding_agree_digits": {
+        "0": 26,
+        "1": 28,
+        "2": 27,
+        "3": 26,
+        "4": 27,
+        "5": 27,
+        "6": 27,
+        "7": 26,
+        "8": 27,
+        "9": 27,
+        "10": 26,
+        "11": 27,
+        "12": 28,
+        "13": 27,
+        "14": 27,
+        "15": 27,
+        "16": 27,
+        "17": 27,
+        "18": 27,
+        "19": 27,
+        "20": 28,
+        "21": 28,
+        "22": 27,
+        "23": 28,
+        "24": 27,
+        "25": 27,
+        "26": 28,
+        "27": 27,
+        "28": 28
+      },
+      "per_winding_partial_sums": {
+        "0": {
+          "1600": "0.581410712237032358",
+          "2400": "0.581410712237041568",
+          "3200": "0.581410712237041568"
+        },
+        "1": {
+          "1600": "-0.300207905139508706",
+          "2400": "-0.300207905139508819",
+          "3200": "-0.300207905139508819"
+        },
+        "2": {
+          "1600": "0.142274900685396148",
+          "2400": "0.14227490068539498",
+          "3200": "0.14227490068539498"
+        },
+        "3": {
+          "1600": "0.243725283769402414",
+          "2400": "0.243725283769410933",
+          "3200": "0.243725283769410933"
+        },
+        "4": {
+          "1600": "-0.140964056759990792",
+          "2400": "-0.140964056759993299",
+          "3200": "-0.140964056759993299"
+        },
+        "5": {
+          "1600": "0.101156486467284721",
+          "2400": "0.101156486467281033",
+          "3200": "0.101156486467281033"
+        },
+        "6": {
+          "1600": "0.175984093422747415",
+          "2400": "0.175984093422752486",
+          "3200": "0.175984093422752486"
+        },
+        "7": {
+          "1600": "-0.121989568559892936",
+          "2400": "-0.121989568559900063",
+          "3200": "-0.121989568559900063"
+        },
+        "8": {
+          "1600": "0.0411064023811868575",
+          "2400": "0.0411064023811824662",
+          "3200": "0.0411064023811824662"
+        },
+        "9": {
+          "1600": "0.109667244268356967",
+          "2400": "0.109667244268357947",
+          "3200": "0.109667244268357947"
+        },
+        "10": {
+          "1600": "-0.154584142119138094",
+          "2400": "-0.15458414211914444",
+          "3200": "-0.15458414211914444"
+        },
+        "11": {
+          "1600": "-0.0490750134947280286",
+          "2400": "-0.0490750134947310443",
+          "3200": "-0.0490750134947310443"
+        },
+        "12": {
+          "1600": "0.0428204950387453032",
+          "2400": "0.0428204950387452438",
+          "3200": "0.0428204950387452438"
+        },
+        "13": {
+          "1600": "-0.180455721821150779",
+          "2400": "-0.180455721821154657",
+          "3200": "-0.180455721821154657"
+        },
+        "14": {
+          "1600": "-0.107907921492914054",
+          "2400": "-0.107907921492916878",
+          "3200": "-0.107907921492916878"
+        },
+        "15": {
+          "1600": "0.0564089320914148052",
+          "2400": "0.0564089320914155897",
+          "3200": "0.0564089320914155897"
+        },
+        "16": {
+          "1600": "-0.0851072949742198824",
+          "2400": "-0.0851072949742208571",
+          "3200": "-0.0851072949742208571"
+        },
+        "17": {
+          "1600": "-0.0478075157710381934",
+          "2400": "-0.0478075157710393625",
+          "3200": "-0.0478075157710393625"
+        },
+        "18": {
+          "1600": "0.172057153844565686",
+          "2400": "0.172057153844567152",
+          "3200": "0.172057153844567152"
+        },
+        "19": {
+          "1600": "0.0882505641111209574",
+          "2400": "0.088250564111122432",
+          "3200": "0.088250564111122432"
+        },
+        "20": {
+          "1600": "-0.0300117633343295072",
+          "2400": "-0.0300117633343294684",
+          "3200": "-0.0300117633343294684"
+        },
+        "21": {
+          "1600": "0.0844147512512998456",
+          "2400": "0.0844147512513003792",
+          "3200": "0.0844147512513003792"
+        },
+        "22": {
+          "1600": "0.0364564133225323316",
+          "2400": "0.0364564133225335662",
+          "3200": "0.0364564133225335662"
+        },
+        "23": {
+          "1600": "-0.19085601162683631",
+          "2400": "-0.190856011626836496",
+          "3200": "-0.190856011626836496"
+        },
+        "24": {
+          "1600": "-0.141658203131900598",
+          "2400": "-0.141658203131901951",
+          "3200": "-0.141658203131901951"
+        },
+        "25": {
+          "1600": "0.113447381679554213",
+          "2400": "0.113447381679553554",
+          "3200": "0.113447381679553554"
+        },
+        "26": {
+          "1600": "0.149527760742055885",
+          "2400": "0.149527760742056219",
+          "3200": "0.149527760742056219"
+        },
+        "27": {
+          "1600": "-0.0144623084011903233",
+          "2400": "-0.0144623084011898123",
+          "3200": "-0.0144623084011898123"
+        },
+        "28": {
+          "1600": "-0.0831637016207295369",
+          "2400": "-0.0831637016207294041",
+          "3200": "-0.0831637016207294041"
+        }
+      },
+      "guard_note": "agree-digits = |order-ladder last two evaluations|; a difference >= 1 reports 0 digits (the naive else-40 sentinel of the earlier guard pattern silently passes diverging sums)",
+      "tower_esum": "0.39950418189319642638"
+    },
+    "deep_tower_S11": {
+      "value": "0.4276442013174580363342472",
+      "agree_digits": 13,
+      "q_order": 1600,
+      "ladder": {
+        "800": "0.42536318607240625833",
+        "1200": "0.42764420131739819123",
+        "1600": "0.42764420131745803633"
+      },
+      "head_matches_printed_61": true,
+      "g3_witness_value_unverified": "0.2584362672614084 with stable_digits=40 — the else-40 SENTINEL (90%-truncation diff >= 1); superseded by this honest ladder evaluation",
+      "e_tail_at_E_SUB": "-0.028140019"
+    },
+    "sheet_evaluations": {
+      "unit_e_itheta": {
+        "muon": {
+          "w": "(0.99826315925 + 0.058912349164j)",
+          "re": "0.495106644119",
+          "im": "1.55534979724e-51",
+          "abs": "0.495106644119",
+          "tail_last_winding": "0.166"
+        },
+        "proton": {
+          "w": "(0.979418749318 + 0.201838830468j)",
+          "re": "0.963106341978",
+          "im": "-1.41272677467e-51",
+          "abs": "0.963106341978",
+          "tail_last_winding": "0.166"
+        }
+      },
+      "unit_e_2itheta": {
+        "muon": {
+          "w": "(0.993058670232 + 0.117620055591j)",
+          "re": "0.683027414154",
+          "im": "1.25409374776e-51",
+          "abs": "0.683027414154",
+          "tail_last_winding": "0.166"
+        },
+        "proton": {
+          "w": "(0.91852217303 + 0.395369469802j)",
+          "re": "0.0674215493331",
+          "im": "-6.77680313433e-51",
+          "abs": "0.0674215493331",
+          "tail_last_winding": "0.166"
+        }
+      },
+      "q0_e_itheta": {
+        "muon": {
+          "w": "(1.10805072672 + 0.0653914458316j)",
+          "re": "0.380842953113",
+          "im": "-0.568648446835",
+          "abs": "0.684399306709",
+          "tail_last_winding": "1.55"
+        },
+        "proton": {
+          "w": "(1.08713383529 + 0.224036778987j)",
+          "re": "0.745152889365",
+          "im": "-0.499798003433",
+          "abs": "0.897246272081",
+          "tail_last_winding": "1.55"
+        }
+      },
+      "q0sq_e_2itheta": {
+        "muon": {
+          "w": "(1.22350037179 + 0.14491407815j)",
+          "re": "7.54770422386",
+          "im": "2.38717570837",
+          "abs": "7.91621417809",
+          "tail_last_winding": "28.7"
+        },
+        "proton": {
+          "w": "(1.13166749749 + 0.487115925572j)",
+          "re": "-4.75967048378",
+          "im": "9.48425222357",
+          "abs": "10.6115740281",
+          "tail_last_winding": "28.7"
+        }
+      }
+    },
+    "test_ii_unit_sheets_bar_even": {
+      "holds": true,
+      "meaning": "amphichirality forces Im A_eff = 0 for |w| = 1: the bar-odd part REQUIRES radial (ln q0) deformation — matches the corpus structure u = ln q0 + i*theta"
+    },
+    "test_iii_sign_flip_and_ratio": {
+      "q0_e_itheta": {
+        "im_muon": "-0.568648446835",
+        "im_proton": "-0.499798003433",
+        "sign_flip": false,
+        "ratio_pred": "0.87892266",
+        "ratio_observed": "-4.0751256",
+        "validity": "OUTSIDE convergence annulus — divergent partial sum, not the analytic continuation; exhibit only"
+      },
+      "q0sq_e_2itheta": {
+        "im_muon": "2.38717570837",
+        "im_proton": "9.48425222357",
+        "sign_flip": false,
+        "ratio_pred": "3.9730013",
+        "ratio_observed": "-4.0751256",
+        "validity": "OUTSIDE convergence annulus — divergent partial sum, not the analytic continuation; exhibit only"
+      }
+    },
+    "test_i_deviation_from_constant_A": {
+      "unit_e_itheta": {
+        "muon": "1.239302782",
+        "proton": "2.410754094"
+      },
+      "unit_e_2itheta": {
+        "muon": "1.709687771",
+        "proton": "0.1687630628"
+      },
+      "q0_e_itheta": {
+        "muon": "1.713121759",
+        "proton": "2.245899574"
+      },
+      "q0sq_e_2itheta": {
+        "muon": "19.81509716",
+        "proton": "26.5618597"
+      }
+    },
+    "t4_inputs_not_refit": {
+      "theta_muon": "0.05894648",
+      "theta_proton": "0.20323503",
+      "S_muon": "0.00968298",
+      "S_proton": "-0.03945936",
+      "source": "qbeta_t4_stokes3_crux_probe.py (back-solved under constant A_omega=3; used here as fixed sheet coordinates)"
+    },
+    "verdict": "PER-WINDING EXTRACTION CERTIFIED: Sum_e I(0,e) reproduces the printed rotated index exactly (deferred item closed); per-winding table recorded; unit-modulus sheets are exactly bar-even (radial deformation required for bar-odd, matching u = ln q0 + i*theta). Effective-A results at the T4 sheets recorded per-convention in test_iii_sign_flip_and_ratio / test_i — parameter-free comparisons, nothing wired; interpretation deferred to the audit doc."
   }
 }
