@@ -1,0 +1,189 @@
+{
+  "engine": "sympy+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-01T01:33:51.572820+00:00",
+  "commitSha": "55de410d59dae1dee8ee9a7cc76891173a70c319",
+  "assertions": [
+    {
+      "name": "k1_carrier_jacobi_closed_form_symbolic",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": 0,
+      "source": "symbolic q: Hankel Delta_2 = q·[2]_q; q=1 Hankels = prod i! (Gaussian N(1,1)); the closed-form monic Jacobi data alpha_k = q^k, beta_k = q^(k-1)·[k]_q reproduces the Lean-proved C1 numerators (M^n)_00 = S_q(n) EXACTLY in q for n <= 12; q=1 limit alpha=1, beta=k"
+    },
+    {
+      "name": "k2_kernel_beta1_sos_positivity_symbolic",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": 0,
+      "source": "symbolic r = q^(1/4): kernel Jacobi beta_1 = q^(1/2)+q^(-1/2)-1 = 1+(r-1/r)^2 (exact SOS, >= 1 for all q > 0, = 1 iff q = 1; the Wenzl positivity quantity); r=1 Hankels = prod (i!)^2 and Jacobi data = monic Laguerre alpha_k = 2k+1, beta_k = k^2"
+    },
+    {
+      "name": "k3_favard_positivity_exact_Q",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": 0,
+      "source": "exact rational arithmetic: Hankel Delta_k > 0 (k <= 9), kernel Stieltjes shifted Hankels > 0 (k <= 8), Jacobi beta_k > 0 (k <= 8), and GNS moment reproduction (M^n)_00 = m_n (n <= 12) at r = 21/20 (kernel) and q = 6/5 (carrier, closed form confirmed) — the canonical positive Jacobi operator EXISTS with the balanced binding data as moments; geometric beta growth certified (Carleman sufficient condition unavailable)"
+    },
+    {
+      "name": "k4_favard_positivity_at_q0_pins",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": 1e-25,
+      "source": "60 dps, q0 muon + proton pins + q = 1.2, both frames: Jacobi beta_k > 0 (k <= 11), moment reproduction rel < 1e-25 (measured < 1e-59)"
+    },
+    {
+      "name": "k5_q1_determinacy_exact",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": 0,
+      "source": "exact: m_k = k! gives monic Laguerre (alpha = 2k+1, beta = k^2) and I(n) gives Gaussian N(1,1) (alpha = 1, beta = k) => Carleman divergence => essential self-adjointness => at q = 1 the spectral measure is UNIQUE: the canonical kernel e^(-s)ds is DERIVED (zero convention)"
+    },
+    {
+      "name": "k7_fibre_indeterminacy_reverified",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": 1e-30,
+      "source": "theta-translate reindex identity exact (sympy) + numeric u-independence (q = 1.2, u in {1, 1.3}, k <= 8, rel < 1e-59) + support offset 0.878 of a q̃-step: a CONTINUUM of representing measures for the balanced moments at q != 1 (rep-jackson R4) => INDETERMINATE => minimal Jacobi operator has deficiency (1,1); extension circle = relocated kernel convention"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 10594,
+  "computation": "ksel2-favard-jacobi",
+  "scriptFile": "ksel2_favard_jacobi_probe.py",
+  "scriptHash": "e0e0de3c8660",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "KSel-2 (bean qou-mee2; audit-only, scope-(a), NO FIT, nothing wired): GNS/spectral-measure route to binding-kernel canonicity, via Favard/Jacobi. K1-K2: the two canonical moment functionals — the balanced kernel moments m_k = q^(-k(k-1)/4)[k]_q! and the Lean-proved C1 carrier numerators S_q(n) — each determine a UNIQUE Jacobi matrix; the carrier data has the verified-range closed form alpha_k = q^k, beta_k = q^(k-1)[k]_q (a q-deformed Gaussian N(1,1)); the kernel data has beta_1 = q^(1/2)+q^(-1/2)-1 = 1+(r-1/r)^2 — exact SOS positivity, the Wenzl quantity. K3-K4: Favard positivity (Hankel + beta > 0) EXACT at r=21/20 and q=6/5, 60-dps at both q0 pins; monic-Jacobi moment reproduction (M^n)_00 = m_n exact — the canonical positive operator EXISTS with the binding data as moments, in both frames, Stieltjes-supported in the kernel frame. K5: at q = 1 both frames are Carleman-determinate (Laguerre alpha=2k+1, beta=k^2; Gaussian alpha=1, beta=k, exact) — the canonical kernel e^(-s)ds is DERIVED, zero convention. K3/K6-K7: at q != 1 beta grows geometrically (Carleman unavailable) and the theta-translate reindex identity (exact) gives a continuum of representing measures — the moment problem is INDETERMINATE, the minimal Jacobi operator has deficiency (1,1), and the kernel choice REAPPEARS as the self-adjoint-extension circle. Verdict: PARTIAL — the operator is canonical and derived, the measure is not; the remaining identification is the extension choice (Friedrichs/Krein distinguished; audit doc section 5). Nothing here proves or refutes any conjecture.",
+  "auditOnly": "docs/audits/2026-08-01-ksel2-gns-favard-canonicity.md",
+  "data": {
+    "k1_carrier_symbolic": {
+      "moments": "S_q(n) — Lean-proved q-involution recurrence (keystone_bridge_binding_qlift), read as a Hamburger moment sequence",
+      "hankel_delta2": "q*(q + 1)",
+      "hankel_q1": "prod_{i<=k} i! (Gaussian N(1,1)) — exact, k <= 3",
+      "jacobi_closed_form": {
+        "alpha_k": "q^k",
+        "beta_k": "q^(k-1)·[k]_q",
+        "verified_by": "(M^n)_00 = S_q(n) EXACT SYMBOLIC in q, n <= 12 (uniqueness of Jacobi data for a positive-definite functional does the rest; positivity exact in K3)",
+        "status": "verified-range identity — NOT a general-k proof (induction queued as follow-up); NOT a fit (each instance is an exact symbolic identity)"
+      },
+      "q1_limit": "alpha_k = 1, beta_k = k — the monic Jacobi data of the Gaussian N(1,1): the classical C1 numerators I(n) are EXACTLY the N(1,1) moments (Stein recursion m_{n+2} = m_{n+1} + (n+1)·m_n)"
+    },
+    "k2_kernel_symbolic": {
+      "moments": "m_k = N^bal_q(k+1) = q^(-k(k-1)/4)·[k]_q! — the balanced-kernel probability moments, rational in r = q^(1/4)",
+      "hankel_r1": "prod_{i<=k} (i!)^2 (Laguerre / e^(-s)ds) — exact, k <= 3",
+      "beta1": "q^(1/2) + q^(-1/2) - 1 = 1 + (r - 1/r)^2 >= 1 for ALL q > 0, equality iff q = 1 — exact sum-of-squares positivity; q^(1/2)+q^(-1/2) is the Wenzl positivity quantity of prop:algebraic-gns-embedding",
+      "alpha1_factored": "(r**6 - r**3 + 1)*(r**6 + r**3 + 1)/(r**4*(r**4 - r**2 + 1))",
+      "beta2_factored": "(r**4 + 1)**2*(r**20 - 2*r**18 + 2*r**16 - r**14 + 2*r**12 - 3*r**10 + 2*r**8 - r**6 + 2*r**4 - 2*r**2 + 1)/(r**10*(r**4 - r**2 + 1)**2)",
+      "q1_limit": "alpha_k = 2k+1, beta_k = k^2 — monic Laguerre (e^(-s)ds), the determinate archimedean kernel"
+    },
+    "k3_exact_favard": {
+      "kernel_r_21_20": {
+        "point": "r = 21/20, q = r^4 = 194481/160000 ~ 1.21550625",
+        "hankel_pos": "Delta_k > 0 exact, k <= 9",
+        "favard_beta_pos": "beta_k > 0 exact, k <= 8",
+        "moment_reproduction": "(M^n)_00 = m_n exact, n <= 12 — the canonical Jacobi operator's moments ARE the binding data",
+        "beta_ratio_min": "1.67520277554",
+        "beta_ratio_last": "1.67520277554",
+        "carleman_partial_plus_tailbound": "2.63442217215 (finite — Carleman sufficient condition UNAVAILABLE at this q; not an indeterminacy proof)",
+        "stieltjes_shifted_hankels_pos": "Delta^(1)_k > 0 exact, k <= 8 — measure on (0,inf); Friedrichs/Krein distinguished extensions exist"
+      },
+      "carrier_q_6_5": {
+        "point": "q = 6/5",
+        "hankel_pos": "Delta_k > 0 exact, k <= 9",
+        "favard_beta_pos": "beta_k > 0 exact, k <= 8",
+        "moment_reproduction": "(M^n)_00 = m_n exact, n <= 12 — the canonical Jacobi operator's moments ARE the binding data",
+        "beta_ratio_min": "1.53290871162",
+        "beta_ratio_last": "1.53290871162",
+        "carleman_partial_plus_tailbound": "3.67362258712 (finite — Carleman sufficient condition UNAVAILABLE at this q; not an indeterminacy proof)",
+        "closed_form": "alpha_k = q^k, beta_k = q^(k-1)[k]_q exact at q = 6/5, k <= 8"
+      }
+    },
+    "k4_pins": {
+      "test": {
+        "kernel": {
+          "beta_pos": "beta_k > 0, k <= 11 (60 dps)",
+          "moment_repro_rel": "5.0562e-60",
+          "beta_ratio_last": "1.559345569",
+          "beta_ratio_over_q": "1.299454641",
+          "beta_ratio_over_q2": "1.082878867"
+        },
+        "carrier": {
+          "beta_pos": "beta_k > 0, k <= 11 (60 dps)",
+          "moment_repro_rel": "3.11151e-61",
+          "beta_ratio_last": "1.486227308",
+          "beta_ratio_over_q": "1.238522757",
+          "beta_ratio_over_q2": "1.032102297"
+        },
+        "q0": "1.2"
+      },
+      "muon": {
+        "kernel": {
+          "beta_pos": "beta_k > 0, k <= 11 (60 dps)",
+          "moment_repro_rel": "2.56699e-60",
+          "beta_ratio_last": "1.362358695",
+          "beta_ratio_over_q": "1.227373843",
+          "beta_ratio_over_q2": "1.105763524"
+        },
+        "carrier": {
+          "beta_pos": "beta_k > 0, k <= 11 (60 dps)",
+          "moment_repro_rel": "2.02248e-60",
+          "beta_ratio_last": "1.298437629",
+          "beta_ratio_over_q": "1.169786187",
+          "beta_ratio_over_q2": "1.053881752"
+        },
+        "q0": "1.10997859555733..."
+      },
+      "proton": {
+        "kernel": {
+          "beta_pos": "beta_k > 0, k <= 11 (60 dps)",
+          "moment_repro_rel": "5.60071e-60",
+          "beta_ratio_last": "1.362358669",
+          "beta_ratio_over_q": "1.227373834",
+          "beta_ratio_over_q2": "1.105763528"
+        },
+        "carrier": {
+          "beta_pos": "beta_k > 0, k <= 11 (60 dps)",
+          "moment_repro_rel": "7.77877e-61",
+          "beta_ratio_last": "1.298437604",
+          "beta_ratio_over_q": "1.169786178",
+          "beta_ratio_over_q2": "1.053881756"
+        },
+        "q0": "1.10997858275138..."
+      }
+    },
+    "k5_q1_determinacy": {
+      "kernel": "m_k = k! -> monic Laguerre alpha_k = 2k+1, beta_k = k^2 exact (k <= 7); off-diagonal b_k = k => sum 1/b_k harmonic-divergent => Carleman => essentially self-adjoint => UNIQUE spectral measure = e^(-s)ds. The canonical archimedean kernel EXISTS, IS UNIQUE, IS DERIVED — zero convention at q = 1.",
+      "carrier": "I(n) (involution numbers) -> Gaussian N(1,1) alpha_k = 1, beta_k = k exact; b_k = sqrt(k), sum 1/sqrt(k) divergent => Carleman => determinate: the classical C1 numerators are the N(1,1) moments",
+      "citation": "[simon1998] (Carleman; determinate <=> minimal Jacobi operator essentially self-adjoint); Akhiezer, The Classical Moment Problem"
+    },
+    "k7_indeterminacy": {
+      "reindex_identity": "jk - j(j+1)/2 at j=i+k equals k(k-1)/2 - i(i+1)/2 (sympy exact) => u-translate theta moments are u-INDEPENDENT = q^(k(k-1)/4)",
+      "numeric_check": "q=1.2, u in {1, 1.3}, k <= 8: rel < 1.711e-60 (tol 1e-30)",
+      "support_offset_frac": "0.87803888",
+      "conclusion": "distinct-support measures with identical moments; multiplicative convolution with the fixed Jackson factor multiplies moments (independent-product law), so the balanced sequence m_k has a CONTINUUM of representing measures at q != 1 (rep-jackson R4, re-verified) => INDETERMINATE => minimal Jacobi operator NOT essentially self-adjoint, deficiency (1,1); self-adjoint extensions form a circle ([simon1998]; Akhiezer Ch. 4). The GNS route RELOCATES the kernel convention into the extension choice; Friedrichs/Krein are the distinguished candidates (Stieltjes case, K3)."
+    },
+    "q0_pins": {
+      "muon": "1.10997859555733471989976322048322502665620840878015368660798114614493",
+      "proton": "1.1099785827513808075916690956107688798744991218736",
+      "source": "computations/q-pinning-50-digit.witness.json (muon, canonical 3-CAL layer); qou_substrate.constants.Q_50_DIGIT_STR (proton, precision layer)"
+    }
+  }
+}
