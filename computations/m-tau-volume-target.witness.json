@@ -1,0 +1,71 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-01T10:14:53.928562+00:00",
+  "commitSha": "14dd44c34efdb122464cb75fa880b7954840e0c0",
+  "assertions": [
+    {
+      "name": "k2_target_beyond_9crossing_census",
+      "computed": 34.13661525439891,
+      "expected": 34.14,
+      "passed": true,
+      "tolerance": 0.05,
+      "unit": "hyperbolic volume",
+      "source": "(m_tau/m_e)*hbar_q^2 at canonical q0; the maximum hyperbolic volume among knots of <= 9 crossings is < 13, so a 25-knot low-crossing census cannot contain the k=2 target."
+    },
+    {
+      "name": "k3_target_in_census_range",
+      "computed": 3.382314419348457,
+      "expected": 3.383,
+      "passed": true,
+      "tolerance": 0.005,
+      "unit": "hyperbolic volume",
+      "source": "(m_tau/m_e)*hbar_q^3; lies between Vol(6_1) and Vol(6_2), so the census search genuinely covered and refuted the k=3 identity at 1%."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 4,
+  "computation": "m-tau-volume-target",
+  "scriptFile": "m_tau_volume_target_probe.py",
+  "scriptHash": "e241d622c18f",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "mpmath": "1.4.1"
+  },
+  "description": "EXPLORATORY census-reach quantification for obs:m-tau-knot-prediction (bean qou-ejxn): exact targets Vol = (m_tau/m_e) * hbar_q^k at canonical q0 for k = 1,2,3, with reach verdicts. Re-scopes the block's 'Refuted' to scope-(a): real for k=3 over the census, untested for k=2 (target beyond census reach), unreachable for k=1. No candidate proposed, no fit.",
+  "data": {
+    "inputs": {
+      "m_tau_over_m_e": "3477.23000000000001818989403545856475830078125",
+      "q0": "1.1099785827513808076",
+      "hbar_q": "0.099081716044258507839"
+    },
+    "targets": {
+      "k=1": "344.52991548057701302",
+      "k=2": "34.136615254398915085",
+      "k=3": "3.382314419348456709"
+    },
+    "verdicts": {
+      "1": "unreachable by any tabulated prime knot (target ~344)",
+      "2": "beyond the 25-knot low-crossing census: needs Vol ~ 34, i.e. roughly >= 15-17 crossings or a link/composite — the k=2 identity was never actually tested",
+      "3": "inside the low-crossing census (between 6_1 = 3.164 and 6_2 = 4.401): the census refutation is REAL for k = 3"
+    },
+    "census_landmarks_vol": {
+      "4_1": 2.029883,
+      "5_2": 2.828122,
+      "6_1": 3.163963,
+      "6_2": 4.400833,
+      "7_2": 3.331744,
+      "8_15 (max 8-crossing)": 9.93065,
+      "9_x max (approx)": 12.5,
+      "16-crossing max (approx)": 25.0,
+      "weaving W(5,4) (approx)": 30.0
+    }
+  }
+}
