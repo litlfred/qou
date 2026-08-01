@@ -1,5 +1,6 @@
 import Mathlib.Algebra.Ring.Defs
 import Mathlib.Tactic.Ring
+import Mathlib.Tactic.LinearCombination
 
 /-!
 # QOU.Mass.ColorTubeSpectralBridge — the tube ↔ spectral coordinate change
@@ -131,5 +132,84 @@ theorem tube_vieta_product (z w₁ w₂ w₃ : R)
     (h3 : w₁ * w₂ * w₃ = -(z ^ 3 + z ^ 2 + z + 1)) :
     (w₁ - z) * (w₂ - z) * (w₃ - z) = -(4 * z ^ 3 + 3 * z ^ 2 + 2 * z + 1) := by
   rw [esym3_shift, h1, h2, h3]; ring
+
+/-! ## Bring power sums: spectral form ⇒ tube-chart form
+
+The same shift governs the **Bring's-surface constraints**. In the spectral
+(Lagrange-resolvent) coordinates `w₀,…,w₄` the constraints are simply the
+vanishing of the first three power sums,
+
+  `p₁(w) = p₂(w) = p₃(w) = 0`,
+
+which *is* the definition of Bring's surface — the clean spectral statement. The
+`color-tube-constraints` block instead works in the shifted tube chart
+`cₖ = wₖ − z` (`color-tube-coordinates`: `c_r = w₂−z`, `c_g = w₃−z`,
+`c_b = w₄−z`, `σ = w₁−z`), where the constraints pick up `z`-dependence.
+
+The theorems below transport the vanishing power sums through the shift and show
+the tube-chart values are **forced**: `pₘ(c) = (−1)ᵐ · 5 · zᵐ` for `m = 1, 2, 3`.
+This is the exact sense in which the spectral coordinates are the canonical ones
+— in `w` the constraints are `0 = 0 = 0`, and every `z`-dependent term in the
+tube chart is an artifact of the shift. -/
+
+/-- Power sum `p₁` over the five spectral coordinates. -/
+def psum1 (w₀ w₁ w₂ w₃ w₄ : R) : R := w₀ + w₁ + w₂ + w₃ + w₄
+
+/-- Power sum `p₂` over the five spectral coordinates. -/
+def psum2 (w₀ w₁ w₂ w₃ w₄ : R) : R :=
+  w₀ ^ 2 + w₁ ^ 2 + w₂ ^ 2 + w₃ ^ 2 + w₄ ^ 2
+
+/-- Power sum `p₃` over the five spectral coordinates. -/
+def psum3 (w₀ w₁ w₂ w₃ w₄ : R) : R :=
+  w₀ ^ 3 + w₁ ^ 3 + w₂ ^ 3 + w₃ ^ 3 + w₄ ^ 3
+
+/-- **Shift law for `p₁`.** `p₁(w) = p₁(c) + 5z` when `wₖ = cₖ + z`. -/
+theorem psum1_shift (z c₀ c₁ c₂ c₃ c₄ : R) :
+    psum1 (c₀ + z) (c₁ + z) (c₂ + z) (c₃ + z) (c₄ + z)
+      = psum1 c₀ c₁ c₂ c₃ c₄ + 5 * z := by
+  unfold psum1; ring
+
+/-- **Shift law for `p₂`.** `p₂(w) = p₂(c) + 2z·p₁(c) + 5z²`. -/
+theorem psum2_shift (z c₀ c₁ c₂ c₃ c₄ : R) :
+    psum2 (c₀ + z) (c₁ + z) (c₂ + z) (c₃ + z) (c₄ + z)
+      = psum2 c₀ c₁ c₂ c₃ c₄ + 2 * z * psum1 c₀ c₁ c₂ c₃ c₄ + 5 * z ^ 2 := by
+  unfold psum1 psum2; ring
+
+/-- **Shift law for `p₃`.** `p₃(w) = p₃(c) + 3z·p₂(c) + 3z²·p₁(c) + 5z³`. -/
+theorem psum3_shift (z c₀ c₁ c₂ c₃ c₄ : R) :
+    psum3 (c₀ + z) (c₁ + z) (c₂ + z) (c₃ + z) (c₄ + z)
+      = psum3 c₀ c₁ c₂ c₃ c₄ + 3 * z * psum2 c₀ c₁ c₂ c₃ c₄
+        + 3 * z ^ 2 * psum1 c₀ c₁ c₂ c₃ c₄ + 5 * z ^ 3 := by
+  unfold psum1 psum2 psum3; ring
+
+/-- **Tube-chart `p₁` is forced.** The spectral constraint `p₁(w) = 0` forces
+`p₁(c) = −5z` in the tube chart. -/
+theorem tube_psum1_of_bring (z c₀ c₁ c₂ c₃ c₄ : R)
+    (h1 : psum1 (c₀ + z) (c₁ + z) (c₂ + z) (c₃ + z) (c₄ + z) = 0) :
+    psum1 c₀ c₁ c₂ c₃ c₄ = -(5 * z) := by
+  rw [psum1_shift] at h1; linear_combination h1
+
+/-- **Tube-chart `p₂` is forced.** The spectral constraints `p₁(w) = p₂(w) = 0`
+force `p₂(c) = 5z²` — the `z`-dependence is entirely a shift artifact. -/
+theorem tube_psum2_of_bring (z c₀ c₁ c₂ c₃ c₄ : R)
+    (h1 : psum1 (c₀ + z) (c₁ + z) (c₂ + z) (c₃ + z) (c₄ + z) = 0)
+    (h2 : psum2 (c₀ + z) (c₁ + z) (c₂ + z) (c₃ + z) (c₄ + z) = 0) :
+    psum2 c₀ c₁ c₂ c₃ c₄ = 5 * z ^ 2 := by
+  have e1 := tube_psum1_of_bring z c₀ c₁ c₂ c₃ c₄ h1
+  rw [psum2_shift, e1] at h2
+  linear_combination h2
+
+/-- **Tube-chart `p₃` is forced.** The spectral constraints `p₁ = p₂ = p₃ = 0`
+force `p₃(c) = −5z³`. Together with the two lemmas above this is the complete
+`spectral ⇒ tube` transport of Bring's surface: `pₘ(c) = (−1)ᵐ·5·zᵐ`. -/
+theorem tube_psum3_of_bring (z c₀ c₁ c₂ c₃ c₄ : R)
+    (h1 : psum1 (c₀ + z) (c₁ + z) (c₂ + z) (c₃ + z) (c₄ + z) = 0)
+    (h2 : psum2 (c₀ + z) (c₁ + z) (c₂ + z) (c₃ + z) (c₄ + z) = 0)
+    (h3 : psum3 (c₀ + z) (c₁ + z) (c₂ + z) (c₃ + z) (c₄ + z) = 0) :
+    psum3 c₀ c₁ c₂ c₃ c₄ = -(5 * z ^ 3) := by
+  have e1 := tube_psum1_of_bring z c₀ c₁ c₂ c₃ c₄ h1
+  have e2 := tube_psum2_of_bring z c₀ c₁ c₂ c₃ c₄ h1 h2
+  rw [psum3_shift, e1, e2] at h3
+  linear_combination h3
 
 end QOU.Mass.ColorTubeSpectralBridge
