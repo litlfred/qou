@@ -78,6 +78,20 @@ STATUS
     the figure-eight and reaches N=31 in ≈9s (N=11 in 0.12s).  Whitehead ⟨W⟩_N
     at the N≈11–13 the volume validator needs is now cheap.
 
+  ○ POSITIVE-SUM form (toward the VC squeeze proof, à la 4₁ E1-E5 /
+    Borromean B1-B5) — OPEN.  The squeeze method needs ⟨W⟩_N as a manifestly
+    POSITIVE sum.  Finding (2026-08-01): cutting the state-sum tensor network
+    at any single edge does NOT give a positive real summand (every cut has
+    Im/|·| ≈ 0.9 and mixed signs), so the positive structure is NOT a diagram
+    edge-cut — it must come from the CYCLOTOMIC (Habiro) expansion of the
+    Whitehead colored Jones evaluated at the Kashaev point (exactly as the
+    Borromean positive sum came from the GL2011 Habiro formula in
+    habiro_borromean_colored_jones.py).  No Whitehead Habiro formula is in the
+    corpus yet; next unit = transcribe it from the literature (candidate:
+    Habiro / Garoufalidis-Le q-holonomic colored Jones, arXiv math/0309214,
+    bean qou-j1ld) and VALIDATE against whitehead_state_sum's exact ⟨W⟩_N
+    before trusting it (anti-guessing).
+
 Audit-only; no wiring; a genuine multi-session build.
 """
 from __future__ import annotations
