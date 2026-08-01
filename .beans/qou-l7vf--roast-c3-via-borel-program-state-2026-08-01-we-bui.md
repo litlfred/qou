@@ -78,3 +78,36 @@ is "no known bridge," say so and re-scope c₃-via-Borel as fibre-structural
 transcribing matrices that would be orthogonal to the target. The ri9w agent's
 output is only *meaningful* conditional on that bridge existing.
 No fit, nothing wired.
+
+## VERDICT (2026-08-01) — the roast's §4 worry was too strong; answer is (b) PARTIAL
+
+Resolved by `docs/audits/2026-08-01-fibre-to-observable-bridge-verdict.md` (PR
+#4520). The fibre-vs-observable *distinction* is correct and load-bearing, but
+the implied "mis-targeted" worry is **refuted by the corpus** — recording the
+correction here for honesty:
+
+1. **The bridge EXISTS and is Lean-proved.** Quantum modularity
+   (Zagier / Garoufalidis–Zagier) → the Ohtsuki-tower expansion at the
+   *imaginary* substrate `b = √(log q₀/2π)·e^{iπ/4}` (so `2πb² = i·log q₀`) IS
+   the fibre-object-evaluated-at-real-q₀ map — `OhtsukiTowerBarParity.lean`
+   `even_rung_real` / `odd_rung_imaginary`, sorry-free. Median resummation
+   (McSpirit–Rolen 2505.00799) is the "recover the value from divergent
+   asymptotics" theorem; Wheeler et al. 2304.07001 prove the
+   Habiro↔strange-identity↔Borel chain. So "is there ANY bridge?" — **yes.**
+2. **c₃-even is CLOSED and never needed Borel** (substrate-exact ℚ(√3) ũ-ladder,
+   archimedean face π²/5; feeds anchor-blind `Re 𝔙 = Vol`).
+3. **c₃-odd is the genuine gap**, two-part: the smooth Borel–Padé sum of the 4₁
+   tower is **anchor-blind** (no swing); the anchor-dependent 2.375 % swing is
+   **Lean-forced onto the quantum complex volume 𝔙_q(Φ_b)**
+   (`SRigidityPrune.no_anchor_invariant_realizes_swing`, sorry-free); and
+   beneath it `S = Q_β/E₀` is a **CAL-2 input** (deriving it = Subgoal-2).
+
+**Corrected verdict: (b) PARTIALLY on-target — scope-(a)-incomplete, NOT
+scope-(b)-mis-targeted.** Not (a) because the value is undelivered
+(anchor-blindness + the open integer-Stokes `A_ω = 3` keystone + S is a
+calibration input). Not (c) because "mis-targeted" would be a scope-(b)
+exclusion with no forbidding invariant — the *opposite* proved invariant forces
+the odd channel onto the resurgent object. The scaffold this branch built is
+therefore **on the right object**, not orthogonal — my roast over-claimed on
+that point. The real remaining physics is `qou-ujmw` (derive `A_ω = 3` as a
+DT / 3d-index count) + Subgoal-2 (derive `S = Q_β/E₀`). No fit, nothing wired.
