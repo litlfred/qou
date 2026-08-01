@@ -17,5 +17,11 @@
   "c_sigma_extrapolated": 0.5946026712021069,
   "factor_metric": 2.0143388659144117,
   "note": "c_\u03c3\u22480.595 is NUMERICAL; a closed-form (Reidemeister torsion / 1-loop) identification is NOT asserted (anti-fit). p=3/2 exact = geometric \u03b4.",
-  "timestamp": "2026-08-01T23:03:39+00:00"
+  "timestamp": "2026-08-01T23:11:36+00:00",
+  "engine": "python+numpy",
+  "engineVersion": "3.11.15",
+  "scriptFile": "whitehead_c_sigma.py",
+  "commitSha": "ce0bd1120573fc7e5f3f5a0ba647ecf243e6e5ca",
+  "computedAt": "2026-08-01T23:11:36+00:00",
+  "auditOnly": true
 }

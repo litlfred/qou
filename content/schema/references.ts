@@ -4148,6 +4148,20 @@ export const references: CSLData[] = [
     DOI: "10.1023/A:1007364912784",
   }),
 
+  // ── van der Veen 2008 (VC for Whitehead chains) ───────────────
+  ref({
+    id: "vanderveen2008",
+    type: "article-journal",
+    title: "Proof of the volume conjecture for Whitehead chains",
+    author: [{ family: "van der Veen", given: "Roland" }],
+    "container-title": "Algebraic & Geometric Topology",
+    volume: "8",
+    page: "603-624",
+    issued: { "date-parts": [[2008]] },
+    DOI: "10.2140/agt.2008.8.603",
+    URL: "https://arxiv.org/abs/math/0611181",
+  }),
+
   // ── Murakami-Murakami 2001 (Volume Conjecture proof) ──────────
   ref({
     id: "murakami-murakami2001",

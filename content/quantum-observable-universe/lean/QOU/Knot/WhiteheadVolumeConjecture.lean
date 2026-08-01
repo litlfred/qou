@@ -1,0 +1,126 @@
+/-
+  Whitehead link — Volume Conjecture, van der Veen positive-sum route (start of
+  the Lean squeeze proof, bean qou-t2sc).
+
+  The Whitehead link is W_{0,1,1,0} in van der Veen's Whitehead-chain notation.
+  Its N-colored Jones at the Kashaev point has the POSITIVE-sum form
+  (arXiv:math/0611181, Lemma 1):
+
+      J_N(W) = φ_N · Σ_{n=0}^{N-1} (2n+1) · χ_{N,n}^{-1} · ( Σ_{k=0}^{N-1-n} S_{n,k} ),
+      S_{n,k} = ∏_{j=1}^{n} 2 sin²((k+j)π/N) / sin(jπ/N)  >  0.
+
+  The volume-conjecture limit  (2π/N)·log|J_N| → Vol(W) = 4G  is PROVED in van
+  der Veen's paper; formalizing it here mirrors the landed 4₁
+  (`FigureEightVolumeSqueeze`, E1-E5d) and Borromean (B1-B5) squeeze proofs,
+  which use the SAME `log(2 sin)` Riemann-sum-vs-Clausen machinery:
+      log S_{n,k} = Σ_{j=1}^n [ log 2 + 2 log sin((k+j)π/N) − log sin(jπ/N) ].
+
+  This file establishes the foundational sorry-free brick — the positivity of
+  the van der Veen kernel `whiteheadS` (the analogue of `kashaevProd_pos`) — on
+  the summation range `k + n ≤ N − 1` where every `(k+j)π/N ∈ (0, π)`.  The full
+  limit theorem is state-and-queued (`sorry` + Ref); the reusable Clausen bricks
+  + a `whiteheadS` max-term saddle-location lemma are the remaining work.
+
+  Archimedean (ℝ).  Mathlib-only imports (verifiable standalone).
+
+  -- Ref: [vanderveen2008] arXiv:math/0611181 (Alg. Geom. Topol.)
+-/
+
+import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic
+import Mathlib.Algebra.Order.BigOperators.Ring.Finset
+import Mathlib.Topology.Algebra.InfiniteSum.Basic
+import Mathlib.Analysis.SpecialFunctions.Log.Basic
+
+namespace QOU.Knot.WhiteheadVC
+
+open Real Finset
+
+/-- Catalan's constant `G = Σ (-1)ⁿ/(2n+1)²`.  `Vol(Whitehead) = 4G`. -/
+noncomputable def catalanG : ℝ := ∑' n : ℕ, (-1 : ℝ) ^ n / (2 * n + 1) ^ 2
+
+/-- van der Veen's positive-sum kernel for the Whitehead colored Jones
+    (arXiv:math/0611181, Lemma 1):
+    `S_{n,k} = ∏_{j=1}^{n} 2 sin²((k+j)π/N) / sin(jπ/N)`. -/
+noncomputable def whiteheadS (N n k : ℕ) : ℝ :=
+  ∏ j ∈ Finset.Icc 1 n,
+    (2 * Real.sin (((k : ℝ) + j) * π / N) ^ 2 / Real.sin ((j : ℝ) * π / N))
+
+/-- Each factor of `whiteheadS` is strictly positive on the summation range:
+    for `1 ≤ j ≤ n` with `k + n ≤ N − 1`, both `jπ/N` and `(k+j)π/N` lie in
+    `(0, π)`, so `sin > 0`. -/
+theorem whiteheadS_factor_pos {N n k j : ℕ} (hN : 2 ≤ N) (hj1 : 1 ≤ j)
+    (hjn : j ≤ n) (hkn : k + n ≤ N - 1) :
+    0 < 2 * Real.sin (((k : ℝ) + j) * π / N) ^ 2 / Real.sin ((j : ℝ) * π / N) := by
+  have hNpos : (0 : ℝ) < N := by exact_mod_cast (by omega : 0 < N)
+  have hpi := Real.pi_pos
+  -- denominator: 0 < sin(jπ/N)
+  have hj1' : (1 : ℝ) ≤ (j : ℝ) := by exact_mod_cast hj1
+  have hjN : (j : ℝ) < N := by
+    have : j ≤ N - 1 := le_trans hjn (le_trans (Nat.le_add_left n k) hkn)
+    have : j < N := by omega
+    exact_mod_cast this
+  have hden : 0 < Real.sin ((j : ℝ) * π / N) := by
+    apply Real.sin_pos_of_pos_of_lt_pi
+    · positivity
+    · rw [div_lt_iff₀ hNpos]; nlinarith [Real.pi_pos]
+  -- numerator argument in (0, π)
+  have hkj1 : (1 : ℝ) ≤ (k : ℝ) + j := by
+    have : (0 : ℝ) ≤ (k : ℝ) := by positivity
+    linarith
+  have hkjN : (k : ℝ) + j < N := by
+    have h1 : k + j ≤ N - 1 := le_trans (by omega : k + j ≤ k + n) hkn
+    have h2 : k + j < N := by omega
+    exact_mod_cast h2
+  have hnum_sin : 0 < Real.sin (((k : ℝ) + j) * π / N) := by
+    apply Real.sin_pos_of_pos_of_lt_pi
+    · positivity
+    · rw [div_lt_iff₀ hNpos]; nlinarith [Real.pi_pos]
+  have hnum : 0 < 2 * Real.sin (((k : ℝ) + j) * π / N) ^ 2 := by positivity
+  exact div_pos hnum hden
+
+/-- **Positive-sum brick.** The van der Veen kernel `whiteheadS N n k` is
+    strictly positive on the summation range `k + n ≤ N − 1` — the positivity
+    that the volume-conjecture squeeze proof rests on (analogue of
+    `FigureEightVolume.kashaevProd_pos`). -/
+theorem whiteheadS_pos {N n k : ℕ} (hN : 2 ≤ N) (hkn : k + n ≤ N - 1) :
+    0 < whiteheadS N n k := by
+  unfold whiteheadS
+  apply Finset.prod_pos
+  intro j hj
+  obtain ⟨hj1, hjn⟩ := Finset.mem_Icc.mp hj
+  exact whiteheadS_factor_pos hN hj1 hjn hkn
+
+/-- The Whitehead Kashaev magnitude as the inner positive sum
+    `Σ_{k=0}^{N-1-n} S_{n,k}` summed with the `(2n+1)` weight — the real,
+    positive object the squeeze bounds (the `χ_{N,n}` phase is unimodular and
+    only shifts the argument, not the magnitude analysis).  Placeholder shape
+    for the limit statement below. -/
+noncomputable def whiteheadInnerSum (N n : ℕ) : ℝ :=
+  ∑ k ∈ Finset.range (N - n), whiteheadS N n k
+
+theorem whiteheadInnerSum_pos {N n : ℕ} (hN : 2 ≤ N) (hn : n < N) :
+    0 < whiteheadInnerSum N n := by
+  unfold whiteheadInnerSum
+  apply Finset.sum_pos
+  · intro k hk
+    have hk' : k < N - n := Finset.mem_range.mp hk
+    have hkn : k + n ≤ N - 1 := by omega
+    exact whiteheadS_pos hN hkn
+  · exact ⟨0, Finset.mem_range.mpr (by omega)⟩
+
+/-- **The Whitehead Volume Conjecture** (van der Veen's theorem):
+    `(2π/N)·log|J_N(W)(e^{2πi/N})| → Vol(Whitehead) = 4G`.
+
+    STATE-AND-QUEUED: proved in van der Veen arXiv:math/0611181; the in-repo
+    Lean squeeze proof is the open follow-up (bean qou-t2sc) — reduce to the
+    landed Clausen/`log(2 sin)` machinery via the positive kernel `whiteheadS`
+    (positivity established above) plus a max-term saddle-location lemma. -/
+theorem whitehead_volume_conjecture
+    (kashaev : ℕ → ℝ)
+    (hk : ∀ N, kashaev N = whiteheadInnerSum N ((N - 1) / 2)) :   -- placeholder link
+    Filter.Tendsto (fun N : ℕ => (2 * π / N) * Real.log (kashaev N))
+      Filter.atTop (nhds (4 * catalanG)) := by
+  -- Ref: [vanderveen2008] arXiv:math/0611181 — VC for the Whitehead link.
+  sorry
+
+end QOU.Knot.WhiteheadVC

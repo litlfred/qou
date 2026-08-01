@@ -1,7 +1,6 @@
 {
-  "description": "Whitehead link (L5a1=b(8,3)) Kashaev invariant via the [Kas95] \u00a73 face-index state sum, PINNED against the U_q(sl2) engine reduced_at_root (Kashaev norm, fig8-calibrated ratio 1.000) and validated to the Volume Conjecture growth -> Vol(W)=4G.",
+  "description": "Whitehead link (L5a1=b(8,3)) Kashaev invariant via the [Kas95] \u00a73 face-index state sum, PINNED against the U_q(sl2) engine reduced_at_root (Kashaev norm) and validated to VC growth -> Vol(W)=4G.",
   "computation": "kashaev_link_statesum.whitehead_state_sum",
-  "audit_only": true,
   "plat_word": [
     -2,
     -2,
@@ -71,5 +70,10 @@
   "vol_4G": 3.663862376708876,
   "richardson_growth": 3.709957159268537,
   "richardson_err_vs_4G": 0.04609478255966115,
-  "timestamp": "2026-08-01T19:30:14+00:00"
+  "engine": "python",
+  "engineVersion": "3.11.15",
+  "scriptFile": "kashaev_link_statesum.py",
+  "commitSha": "ce0bd1120573fc7e5f3f5a0ba647ecf243e6e5ca",
+  "computedAt": "2026-08-01T23:11:42+00:00",
+  "auditOnly": true
 }

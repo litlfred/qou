@@ -34,3 +34,14 @@ habiro_borromean_colored_jones.py). Only then do the squeeze bricks (qou-t2sc).
 Status: OPEN (in-progress). The invariant itself (qou-kkog) IS in hand and
 validated — this bean is specifically the positive-sum RE-EXPRESSION needed
 for the squeeze proof.
+
+## CLOSED (2026-08-01) — positive-sum form found + validated
+
+Superseding the "OPEN" note above: the positive-sum form WAS found — van der
+Veen's colored-Jones formula (arXiv:math/0611181, Lemma 1), Whitehead = W_{0,1,1,0},
+with the manifestly-positive kernel S_{n,k}=∏ 2 sin²((k+j)π/N)/sin(jπ/N) > 0.
+Transcribed + VALIDATED against the exact state sum at N=3..11 (third
+independent cross-check: state sum = U_q engine = van der Veen), in
+computations/whitehead_van_der_veen.py. Status frontmatter = completed is
+correct; this note reconciles the stale body. Squeeze-proof formalization
+continues under qou-t2sc.
