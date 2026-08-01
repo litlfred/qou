@@ -70,17 +70,23 @@ def main() -> int:
              "sign": (Fe - 3 * Ft + 2 * Fs) // 6,
              "standard": (2 * Fe - 2 * Fs) // 6}
 
-    # 2. The index FUNCTION is S₃-invariant (constant on orbits) — from the witness.
+    # 2. The index FUNCTION is S₃-invariant (constant on orbits) — the corpus
+    #    witness is REQUIRED (it IS the evidence): 165 orbit-keyed q-series over
+    #    729 classes ⇒ one value per S₃-orbit ⇒ S₃-invariant. Do NOT fall back to
+    #    hard-coded sizes — that would let the verdict pass without the evidence.
     wpath = Path(__file__).resolve().parent / "borromean-3d-index-graded.witness.json"
-    orbit_keyed = None
-    if wpath.exists():
-        gt = json.loads(wpath.read_text())["data"]["graded_table_nonzero"]
-        orbit_keyed = len(gt)
-        sizes = {}
-        for v in gt.values():
-            sizes[v["orbit_size"]] = sizes.get(v["orbit_size"], 0) + 1
-    else:
-        sizes = {1: 9, 3: 72, 6: 84}
+    if not wpath.exists():
+        print(f"ERROR: required witness not found: {wpath.name}. Cannot verify the "
+              f"S₃-invariance of the index without it — aborting (no verdict).")
+        return 2
+    gt = json.loads(wpath.read_text())["data"]["graded_table_nonzero"]
+    orbit_keyed = len(gt)
+    sizes = {}
+    for v in gt.values():
+        sizes[v["orbit_size"]] = sizes.get(v["orbit_size"], 0) + 1
+    # the witness stores ONE q-series per orbit and Σ orbit_size = 729 ⇒ the index
+    # is constant on orbits (S₃-invariant); check the class count closes exactly.
+    n_classes = sum(k * n for k, n in sizes.items())
 
     print("W1 arrow (A) — CORRECTION to #4498: the 3D-index is S₃-invariant\n")
     print(f"representation space C[729]: {space['trivial']}·triv ⊕ {space['sign']}·sign "
@@ -98,25 +104,28 @@ def main() -> int:
     print(f"     trivial-only ⇒ tr_M's [2,1] structure is CATEGORICAL, not index-sourced.")
     print(f"     Arrow (A) fixes only the S₃-invariant scalar; the operator structure is Hecke.")
 
-    ok = (Fe, Ft, Fs) == (729, 81, 9) and space == {"trivial": 165, "sign": 84, "standard": 240} \
-        and (orbit_keyed in (None, 165))
+    ok = ((Fe, Ft, Fs) == (729, 81, 9)
+          and space == {"trivial": 165, "sign": 84, "standard": 240}
+          and orbit_keyed == 165 and n_classes == 729)
     print(f"\nVERDICT: {'CONFIRMED' if ok else 'CHECK'} — index is S₃-invariant (trivial-only, "
           f"{space['trivial']} = #orbits); #4498's 'graded standard component' does not exist; "
           f"S₃ is vacuous for (A); tr_M's standard structure is categorical.")
 
     sp = Path(__file__).resolve(); src = sp.read_text()
     rel = "computations/probes/arrow_a_s3_index_invariance_correction.py"
+    # Provenance: commitSha = repo HEAD at emission (what the provenance audit
+    # wants); scriptCommitSha = this script's last-change commit (falls back to
+    # HEAD when the file is not yet committed).
     try:
         root = subprocess.check_output(["git", "rev-parse", "--show-toplevel"], cwd=sp.parent, text=True).strip()
-        commit = subprocess.check_output(["git", "log", "-1", "--format=%H", "--", rel], cwd=root, text=True).strip()
-        if not commit:
-            commit = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=root, text=True).strip()
+        head = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=root, text=True).strip()
+        script_commit = subprocess.check_output(["git", "log", "-1", "--format=%H", "--", rel], cwd=root, text=True).strip() or head
     except Exception:
-        commit = "unknown"
+        head = script_commit = "unknown"
     wit = {
         "engine": "python-int", "engineVersion": "exact integer enumeration",
-        "computedAt": datetime.now(timezone.utc).isoformat(), "commitSha": commit,
-        "scriptFile": rel, "scriptHash": hashlib.sha256(src.encode()).hexdigest()[:12], "scriptCommitSha": commit,
+        "computedAt": datetime.now(timezone.utc).isoformat(), "commitSha": head,
+        "scriptFile": rel, "scriptHash": hashlib.sha256(src.encode()).hexdigest()[:12], "scriptCommitSha": script_commit,
         "description": "CORRECTION to #4498: the 3D-index is S₃-invariant (trivial isotypic only); "
                        "no graded standard component exists; S₃ is vacuous for arrow (A); tr_M's "
                        "[2,1] standard structure is categorical, not index-sourced. Audit-only.",
