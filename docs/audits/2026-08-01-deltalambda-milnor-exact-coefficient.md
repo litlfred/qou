@@ -51,17 +51,63 @@ finite-type (Milnor / Vassiliev) structure — Route A, which Mathlib cannot
 express. So the exact law stays open (`MilnorExactOrderConjecture`, no instance);
 no instance is fabricated.
 
-### Route C — A=5/A=6 exact orders + μ̄_A sequence (compute)
+### Route C — A=5/A=6 exact orders + μ̄_A sequence ✅ (compute + measured Lean defs)
 
 _Witness:_ `computations/deltalambda/milnor_exact_coefficient_probe.py` →
-`milnor-exact-coefficient.witness.json` (filled below once run).
+`milnor-exact-coefficient.witness.json`. Lean measured section (§3 of
+`MilnorExactCoefficient.lean`).
 
-TBD — leading orders, leading coefficients μ̄_A for A ∈ {3,4,5,6}, and the 1.585×
-check.
+Brunnian iterated-commutator deficits `D_A = 1 − τ_A`, A ∈ {3,4,5,6}, computed in
+**two** conventions from the same Hoefsmit χ_λ + Wenzl y_λ — the genuine cyclic
+Markov trace `tr_M = Σ y_λ χ_λ` and the non-cyclic perblock `g = Σ y_λ|χ_λ|`
+(#4364/#4378). On this Brunnian family the two **coincide** to machine precision.
+Every word is Brunnian-verified (delete-strand → ≈1e-49).
+
+| A | measured order (small-h slope) → exact | measured leading coeff μ̄_A (Richardson h→0) | vs `(3/4)(−2)^{A−3}` |
+|---|-----------------------------------------|-----------------------------------------------|----------------------|
+| 3 | 4.0005 → **4** | +0.7500000 | 3/4 (relerr 1e-8; **proved**, #4471) |
+| 4 | 6.0005 → **6** | −1.4999996 | −3/2 (relerr 3e-7; measured) |
+| 5 | 8.0005 → **8** | +2.9999985 | +3 (relerr 5e-7; **measured, new**) |
+| 6 | 10.0005 → **10** | −5.9999954 | −6 (relerr 8e-7; **measured, new**) |
+
+**A=5 order = 8 and A=6 order = 10 confirmed with nonzero leading coefficient** —
+turning #4471's two exact-order data points (A=3 proved, A=4 measured) into **four**.
+
+**Extracted μ̄_A sequence:** `μ̄_A = (3/4)·(−2)^{A−3}` — consecutive ratio **exactly
+−2**, magnitude `3·2^{A−5}`, sign `(−1)^{A−1}` (matching #4389's Milnor-parity sign
+law). This is a *measured candidate* for the trace-normalised leading coefficient;
+the identification with the genuine Milnor invariant μ̄(12…A) = ±1 (Route A) is
+open. Lean records it as `mubarMeasured` with proved arithmetic facts
+(`_ratio` = −2, `_ne_zero`, `_sign_odd`) — **not** as a proof of the exact law and
+**not** an instance of `MilnorExactOrderConjecture`.
+
+### The 1.585× bridge — definitive NO
+
+The A=3 magnitude bracketing (#4364/#4376/#4392/#4472) flagged a missing `1.585×`
+(≈ log₂3) structure. The μ̄_A leading-coefficient sequence has consecutive ratio
+**exactly −2**; no ratio, magnitude, reciprocal, or log combination of the μ̄_A
+lands within 0.05 of 1.585 (checked both conventions). **μ̄_A does NOT encode the
+1.585× magnitude structure.** Reported with zero fitting. So the order-law leading
+coefficient is a *clean, self-contained* object (ratio −2) that is **not** the
+bridge to the A=3 magnitude anomaly — the missing magnitude structure lives
+elsewhere.
+
+## Verdict
+
+- **Route B:** honest **PROVED trace-cyclicity sub-wall** — the leading coefficient
+  is not extractable from #4471's Lie tower via a cyclic trace. The exact order law
+  stays open; the coefficient requires group-commutator / finite-type (Milnor)
+  theory (Route A, Mathlib-inaccessible, cited).
+- **Route C:** A=5/A=6 exact orders (8, 10) proved-by-measurement; μ̄_A sequence
+  = (3/4)(−2)^{A−3} extracted; **4 data points** now (was 2).
+- **Bridge:** μ̄_A does **not** encode 1.585× (ratio is −2). Clean negative.
+- **Route A:** cited (Bar-Natan; Habegger–Masbaum; Meilhan–Yasuhara), never
+  axiomatised.
 
 ## Anti-fit / honesty ledger
 
 - 0 free parameters. Nothing wired to production.
-- No instance of `MilnorExactOrderConjecture` is created (the exact law is open).
-- μ̄_A is **extracted**, never fit to 1.585×; the 1.585× check reports an honest
-  yes/no with no tuning.
+- No instance of `MilnorExactOrderConjecture` created (the exact law is open).
+- μ̄_A **extracted**, never fit to 1.585×; the 1.585× check is an honest NO.
+- A=5/A=6 orders + μ̄_A recorded as **measured** `def`s (not theorems asserting the
+  exact law), matching #4471's `tauL4MeasuredOrder` discipline.

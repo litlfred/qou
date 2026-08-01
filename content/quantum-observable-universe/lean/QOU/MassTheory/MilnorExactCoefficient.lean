@@ -185,4 +185,89 @@ theorem cyclic_trace_group_commutator_rearrange (τ : CyclicTrace R A)
 
 end Cyclic
 
+/-! ### 3. Route C — A=5/A=6 exact orders + the measured μ̄_A sequence (MEASURED, cited)
+
+Companion compute (`milnor_exact_coefficient_probe.py` →
+`milnor-exact-coefficient.witness.json`, #4480) measures, for the left-normed
+band-commutator Brunnian words `w_A` (Brunnian-verified by strand-forgetting), the
+deficit leading **order** and leading **coefficient** in two trace conventions
+(genuine cyclic Markov `Σ y_λ χ_λ` and the non-cyclic perblock `Σ y_λ|χ_λ|` — they
+coincide on this family).  Results:
+
+| A | measured order (→ exact 2(A−1)) | measured leading coeff μ̄_A |
+|---|---------------------------------|-----------------------------|
+| 3 | 4.0005 → 4  | +3/4  (**proved**, #4471 closed form) |
+| 4 | 6.0005 → 6  | −3/2  (measured; #4378 recorded order only) |
+| 5 | 8.0005 → 8  | +3    (measured — **new**) |
+| 6 | 10.0005 → 10| −6    (measured — **new**) |
+
+The measured coefficients fit `μ̄_A = (3/4)·(−2)^{A−3}` (relerr ≤ 8·10⁻⁷;
+consecutive ratio exactly `−2`; sign `(−1)^{A−1}`, matching #4389's parity law).
+These are **MEASURED** — recorded as `def`s with a `-- Ref:` citation, never as
+theorems asserting the exact order law (anti-laundering, matching #4471's
+`tauL4MeasuredOrder`).  The facts below are honest *arithmetic about the measured
+candidate `μ̄`-sequence* — they do **not** prove the candidate equals the true
+leading coefficient (that identification is the open Milnor content, Route A).
+
+-- Ref: [manuscript] computations/deltalambda/milnor-exact-coefficient.witness.json (#4480; A=5/A=6 measured orders + μ̄_A sequence)
+-/
+
+section RouteC
+
+/-- Measured A=5 leading Milnor order (#4480 witness): `≈ 8.0005`, consistent with
+`2(5−1) = 8`.  MEASURED, not proved — recorded; no theorem asserts `= 8`. -/
+noncomputable def leadingOrderMeasured5 : ℝ := 8.0004817
+
+/-- Measured A=6 leading Milnor order (#4480 witness): `≈ 10.0005`, consistent with
+`2(6−1) = 10`.  MEASURED, not proved — recorded; no theorem asserts `= 10`. -/
+noncomputable def leadingOrderMeasured6 : ℝ := 10.000482
+
+/-- **Measured leading-coefficient candidate** for the A-component Brunnian
+Markov-trace deficit (#4480): `μ̄_A = (3/4)·(−2)^{A−3}`, over ℚ.  EMPIRICALLY
+EXTRACTED (Richardson `h→0`, relerr ≤ 8·10⁻⁷ at A ∈ {3,4,5,6}); the A=3 value
+`3/4` is additionally **proved** from #4471's Borromean closed form.  This is a
+*candidate* closed form for the trace-normalised leading coefficient, **not** a
+proof that it equals the true coefficient (that is the open Milnor μ̄(12…A) content,
+Route A). -/
+def mubarMeasured (A : ℕ) : ℚ := (3 / 4) * (-2) ^ (A - 3)
+
+/-- Concrete measured values (numeric checks of the candidate sequence). -/
+example : mubarMeasured 3 = 3 / 4 := by norm_num [mubarMeasured]
+example : mubarMeasured 4 = -3 / 2 := by norm_num [mubarMeasured]
+example : mubarMeasured 5 = 3 := by norm_num [mubarMeasured]
+example : mubarMeasured 6 = -6 := by norm_num [mubarMeasured]
+
+/-- The measured candidate has the **`−2` consecutive ratio** observed in the data,
+for `A ≥ 3`: `μ̄_{A+1} = −2·μ̄_A`.  Honest arithmetic about `mubarMeasured` — a
+property of the extracted sequence, not a claim about the true coefficient. -/
+theorem mubarMeasured_ratio {A : ℕ} (hA : 3 ≤ A) :
+    mubarMeasured (A + 1) = -2 * mubarMeasured A := by
+  unfold mubarMeasured
+  have h1 : A + 1 - 3 = (A - 3) + 1 := by omega
+  rw [h1, pow_succ]
+  ring
+
+/-- The measured candidate is **nonzero for every A** — the *shape* of the exact
+order law (leading coefficient ≠ 0).  This is a fact about the extracted `μ̄`
+sequence; it becomes the exact law **only if** the candidate is proved to be the
+true leading coefficient (open, Route A).  So this does NOT discharge
+`MilnorExactOrderConjecture`. -/
+theorem mubarMeasured_ne_zero (A : ℕ) : mubarMeasured A ≠ 0 := by
+  unfold mubarMeasured
+  have : ((-2 : ℚ)) ^ (A - 3) ≠ 0 := pow_ne_zero _ (by norm_num)
+  positivity
+
+/-- The measured candidate's **sign alternates as `(−1)^{A−1}`** (for `A ≥ 3`),
+matching #4389's Milnor-parity sign law: `μ̄_A > 0 ↔ A` odd.  Honest arithmetic
+about the measured sequence. -/
+theorem mubarMeasured_sign_odd {A : ℕ} (hA : 3 ≤ A) (hodd : Odd A) :
+    0 < mubarMeasured A := by
+  unfold mubarMeasured
+  obtain ⟨j, hj⟩ : ∃ j, A - 3 = 2 * j := by
+    rcases hodd with ⟨m, hm⟩; exact ⟨(m - 1), by omega⟩
+  rw [hj, pow_mul]
+  positivity
+
+end RouteC
+
 end QOU.MassTheory.MilnorExactCoefficient
