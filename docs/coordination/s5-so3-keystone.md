@@ -625,3 +625,28 @@ catch-22; CI to confirm exit 0.
 > on the restored `lake-cache/qou-v4-24-0` Mathlib oleans (the catch-22 is
 > side-stepped by `lean`-direct against the cache branch, not `lake build`). Survey:
 > [`docs/audits/2026-07-26-1ppq-l2-two-front-survey.md`](../audits/2026-07-26-1ppq-l2-two-front-survey.md).
+
+## T(3,5) cross-link (2026-08-01, bean qou-pquk)
+
+The tau-knot discussion review
+([`docs/audits/2026-08-01-tau-knot-discussion-review.md`](../audits/2026-08-01-tau-knot-discussion-review.md))
+surfaced a structural cross-link into this keystone: the torus knot
+**T(3,5)** — the *maximal-genus* (g = 4) member of the embeddable
+torus-knot spectrum, the unique one saturating the Bring genus bound on
+a 3-strand base — has branched double cover the **Poincaré homology
+sphere Σ(2,3,5) = S³/2I**, with fundamental group the binary
+icosahedral group 2I. That is exactly the manifold whose WRT invariant
+this keystone computes. So the keystone's geometric object is reachable
+from *inside* the embeddable spectrum: the W_λ construction and the
+maximal embeddable 3-strand knot meet at Σ(2,3,5).
+
+Sibling fact (secondary): T(3,4)'s double cover is governed by the
+binary *octahedral* group — the S₄ ⊂ S₅ restriction — giving the
+subgroup-chain reading of the two 3-strand embeddable knots.
+
+**Lean feasibility (assessed):** branched covers and Brieskorn spheres
+are absent from Mathlib; a faithful formalization of the cover itself
+is out of reach. What IS formalizable now: the genus saturation
+statement (g(T(3,5)) = 4 = the Bring bound, pure arithmetic) and the
+group-theoretic layer (2I as the binary icosahedral group). Neither is
+started; this entry records the link and the assessment.
