@@ -47,8 +47,8 @@ derivative, so Cartan's formula is an explicit hypothesis, never asserted):
 
 So: no invariant named "tetraplectic–Reeb invariant" exists; the construction
 is the degree-4 case of a standard family whose named members are helicity and
-Chern–Simons. (arXiv sweep was proxy-blocked this session; placement is from
-model knowledge — flagged per render-honesty discipline.)
+Chern–Simons. (Caveat: this literature placement has not been verified by an
+exhaustive database sweep; treat it as well-grounded but non-exhaustive.)
 
 ## QOU identification — where the 3-form already lives in the corpus
 
@@ -73,8 +73,8 @@ same statement one categorical level up.
 ## Falsifiable consistency check (new, parameter-free)
 
 `CS(4₁) = 0` at the complete structure (amphichirality), and `S` sign-flips
-between the anchors (`S(muon) = +0.00968298`, `S(proton) = −0.03945936`), so
-IVT gives a zero `q*` between them
+between the anchors (`S(muon) = +0.00968298`, `S(proton) = −0.03945936`);
+*assuming* `S(q₀)` varies continuously, IVT gives a zero `q*` between them
 ([S-leak target](../audits/2026-07-11-qbeta-c3-barodd-sleak-phib-target.md)).
 The identification **predicts what that zero is**:
 
@@ -84,7 +84,8 @@ The identification **predicts what that zero is**:
 This is checkable the moment any candidate `q₀ → m` map exists: run the
 validated gluing-equation Newton solver
 ([`qbeta_c3_barodd_gluing_newton_solve.py`](../../computations/qbeta/qbeta_c3_barodd_gluing_newton_solve.py))
-at the candidate's `m(q*)` and require `𝔙 = Vol(4₁) + 0·i` exactly. A
+at the candidate's `m(q*)` and require `𝔙 = Vol(4₁) + 0·i` within solver
+tolerance (the solver reproduces `Vol(4₁)` to `4×10⁻¹⁸` at `m = 1`). A
 candidate map that sign-flips `S` but puts its zero away from `m = 1` is
 refuted at scope-(a).
 
