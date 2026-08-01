@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-01T15:19:02.624960+00:00",
-  "commitSha": "f756ec2159ac040b416e3c9634a92185665532df",
+  "computedAt": "2026-08-01T15:26:29.232610+00:00",
+  "commitSha": "5061e1f650a59de32a539f738e5e472f37dcb752",
   "assertions": [
     {
       "name": "signs_derived_both_moments_milnor_parity",
@@ -27,14 +27,26 @@
       "computed": "True",
       "expected": "True",
       "passed": true
+    },
+    {
+      "name": "coefficient_scaling_gap_persists_after_order_norm",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "clusters_h_suppressed_structural_incompatibility",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
     }
   ],
   "allPassed": true,
   "durationMs": 6,
   "computation": "borromean-two-moment-consistency",
   "scriptFile": "borromean_two_moment_consistency_probe.py",
-  "scriptHash": "f751e46bb031",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "26ff22fb3a96",
+  "scriptCommitSha": "5061e1f650a59de32a539f738e5e472f37dcb752",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -57,8 +69,12 @@
     "two_moment_inconsistency_factor": "49.721749",
     "moment_trend_mu4_over_mu3": "9.7522318",
     "cluster_trend_c4_over_c3": "0.19613614",
+    "h": "0.2090602988",
+    "intrinsic_h_order_factor_1_over_h2": "22.880045",
+    "order_normalized_coeff_growth": "4.4876035",
+    "residual_coefficient_scaling_gap": "2.1731491",
     "order_h_A3": "4.0982",
     "order_h_A4": "6.061",
-    "verdict": "TWO-MOMENT CROSS-CHECK FAILS — the Borromean/Brunnian magnitude identification does NOT survive the second moment (scope-(a), 0-fit). SIGNS derived at both A (Milnor parity (−1)^{A−1}: μ₃>0, μ₄<0). But the SAME framing gives f₃=c₃/μ₃=0.6308 (0.63×, the near-miss) and f₄=c₄/μ₄=0.01269 (~79× short) — INCONSISTENT by 49.72×. The A-trend is BACKWARDS: the physical residual moments GROW (|μ₄/μ₃|=9.752) while the Brunnian clusters SHRINK (|c₄/c₃|=0.1961), because the 4-link is O(h⁶) vs the 3-link's O(h⁴) — intrinsic topological suppression (first Milnor at length A ⇒ O(h^{2(A−1)})), un-tunable without a fit. CONCLUSION: this DOWNGRADES the μ₃ 0.63× 'near-miss' toward a coincidence — a framework matching one moment to 0.6× but the next to 0.01× with the A-trend inverted is not capturing the magnitude physics. The SIGN leg stands; the MAGNITUDE identification does not. No fit; μ_A never inverted; nothing wired."
+    "verdict": "TWO-MOMENT CROSS-CHECK FAILS — the Borromean/Brunnian magnitude identification does NOT survive the second moment (scope-(a), 0-fit). SIGNS derived at both A (Milnor parity (−1)^{A−1}: μ₃>0, μ₄<0). But the SAME framing gives f₃=c₃/μ₃=0.6308 (0.63×, the near-miss) and f₄=c₄/μ₄=0.01269 (~79× short) — INCONSISTENT by 49.72×. The A-trend is BACKWARDS: the physical residual moments GROW (|μ₄/μ₃|=9.752) while the Brunnian clusters SHRINK (|c₄/c₃|=0.1961), because the 4-link is O(h⁶) vs the 3-link's O(h⁴) — intrinsic topological suppression (first Milnor at length A ⇒ O(h^{2(A−1)})), un-tunable without a fit. DECOMPOSITION: the 49.72× splits into the intrinsic h-order 1/h²=22.88× (the framework's OWN proved O(h^{2(A−1)}) prediction) × a residual coefficient-scaling gap 2.173× (order-normalized coeff growth ĉ₄/ĉ₃=4.488 vs the moment 9.752). STRUCTURAL: since h=0.2091<1, the clusters c_A~h^{2(A−1)} VANISH as A grows while the moments grow — so the identification c_A=μ_A can hold at most at ONE A and is structurally excluded as a magnitude closure for the sequence. CONCLUSION: this DOWNGRADES the μ₃ 0.63× 'near-miss' toward a coincidence. The SIGN leg (Milnor parity) stands; the MAGNITUDE identification does not. No fit; μ_A never inverted; nothing wired."
   }
 }
