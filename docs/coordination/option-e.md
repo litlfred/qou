@@ -830,3 +830,46 @@ v4.24.0): `trace_partition_collapse`, `operatorCombiner_eq_scalarTrace`,
 `magnitude_change_forces_nonuniform_weight`. Audit
 `2026-08-01-a3-magnitude-operator-branching-combiner.md`. Nothing wired; `μ₃`
 never inverted; `free_parameters = 0`.
+
+## 2026-08-01 — A=3 magnitude ROUTE 3: multi-sub-link channel sum — WALL(scope-b), Brunnian triviality
+
+The A=3 magnitude program asks what supplies the residual factor `r* = μ₃/c₃ ≈ 1.585`
+(the near-miss `c₃ = 0.297 = 0.63× μ₃`, #4364 — complete finite-type sum of the ONE
+Borromean deficit), bracketed out of every SINGLE-Markov-trace re-weighting
+(three-walls audit `2026-07-26-deltalambda-a3-magnitude-source-three-walls.md`).
+
+**ROUTE 3 (the channel-sum reading):** the triton = 3 nucleons = three 2-body sub-links
+PLUS the 3-body Borromean. Test whether summing the **distinct** sub-link trace objects
+(`Σ = f₁₂+f₁₃+f₂₃+f₁₂₃`, or the multiplicative `1−∏(1−fᵢ)`) supplies `r*` — structurally
+different from every bracketed probe (a sum of distinct traces, not a re-weighting of one).
+
+**VERDICT: WALL(scope-b) — Brunnian sub-link triviality kills it.** The Borromean rings are
+the archetype Brunnian link: every proper 2-sub-link is the UNLINK. Verified exactly
+(`borromean_sublink_channel_sum_probe.py`): strand-forgetting on `w₃=[A₀₁,A₁₂]` collapses
+each pairwise sub-word to the **empty word** (a commutator with one argument deleted), so
+through the corpus χ_λ/y_λ pipeline every pairwise deficit `fᵢ = 0` **exactly**. Both
+closures then collapse to the single 3-body deficit — the multiplicative closure's cross
+terms all vanish (each `1−fᵢ=1`) — so the channel decomposition supplies magnitude factor
+**exactly 1**. `r* ≈ 1.585 ≠ 1` is NOT supplied. This is the AGENTS.md "compositional/trace
+object is already many-body" caveat *turned decisive*: the caveat protects cross terms only
+when the pairwise deficits are nonzero; here they are **provably zero**, so the cross terms
+vanish and the route adds nothing.
+
+- **(b) not (a):** invariant cited = Brunnian sub-link triviality (proper 2-sub-links of 𝓑₃
+  are unlinks ⇒ deficit identically 0). Scoped to the canonical Borromean triton model; a
+  non-Brunnian link with linked pairs would give nonzero channels but is a different,
+  non-canonical choice (and tuning one to hit 1.585 is a FIT — not made).
+- **Lean:** `QOU.MassTheory.BorromeanSubLinkChannelSum` (sorry-free, lean-direct exit 0):
+  `brunnian_channelClosureMul_eq_triple` (decisive collapse), `brunnian_channel_no_magnitude`
+  `[IsDomain]`, `borromean_channelClosure_eq_c3` / `borromean_channel_ne_r_star` (ℝ). Generic
+  `[CommRing R]` per §7c.
+- **Probe/witness:** `computations/deltalambda/borromean_sublink_channel_sum_probe.py` /
+  `borromean-sublink-channel-sum.witness.json` (`closes=false`, `free_parameters=0`).
+- **Audit:** `docs/audits/2026-08-01-a3-magnitude-sublink-channel-sum-brunnian-wall.md`.
+- **Bean:** `qou-dka4`. Nothing wired; μ₃/c₃ never inverted.
+
+Sharpens the frontier: the A=3 magnitude source cannot be any *sub-link-additive* or
+*-multiplicative* object over the Borromean model — it must be an *irreducible* enhancement
+of the single 3-body trace itself (the three-walls "strictly larger h⁴-coefficient no
+substrate rule supplies"). Complements sibling ROUTE 1 (operator-branching) / ROUTE 2
+(super-Berezinian).
