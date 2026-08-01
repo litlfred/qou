@@ -4786,6 +4786,80 @@ export const references: CSLData[] = [
       "surreal integration review (2026-07-13).",
   }),
 
+  // ── Fantini–Wheeler 2024 (proof of GGM Borel-summability for 4₁, 5₂) ──
+  ref({
+    id: "fantini-wheeler2024",
+    type: "article",
+    title: "Summability for State Integrals of hyperbolic knots",
+    author: [
+      { family: "Fantini", given: "Veronica" },
+      { family: "Wheeler", given: "Campbell" },
+    ],
+    issued: { "date-parts": [[2024]] },
+    "container-title": "arXiv preprint",
+    URL: "https://arxiv.org/abs/2410.20973",
+    note:
+      "arXiv:2410.20973. PROVES the Garoufalidis–Gu–Mariño conjecture " +
+      "that the perturbative (trivial-connection) series of the " +
+      "hyperbolic knots 4₁ and 5₂ are resurgent and Borel summable, and " +
+      "gives an algorithm computing the Borel–Laplace (median) " +
+      "resummation explicitly as the Andersen–Kashaev state integral, " +
+      "with explicit Stokes constants. Directly on-point for the QOU " +
+      "c₃-via-Borel route: 4₁ is the muon anchor and 5₂ is the saddle " +
+      "source (PR #4408 canonical saddle values, #4414 q-Borel Lean " +
+      "chain). The state-integral = Borel-Laplace identity is the " +
+      "closed-form target the median_borel_resummation probe " +
+      "approximates numerically; the Stokes constants are the A_ω " +
+      "integers of bean qou-4iy0 / qou-3s30. Registered 2026-08-01 " +
+      "(c₃-via-Borel literature sweep).",
+  }),
+
+  // ── Wheeler et al. 2025 (quantum modular forms recovered by median resummation) ──
+  ref({
+    id: "wheeler-qmf-resurgence2025",
+    type: "article",
+    title: "Quantum Modular Forms and Resurgence",
+    author: [{ family: "Wheeler", given: "Campbell" }],
+    issued: { "date-parts": [[2025]] },
+    "container-title": "arXiv preprint",
+    URL: "https://arxiv.org/abs/2505.00799",
+    note:
+      "arXiv:2505.00799 (May 2025). Median-resummation results showing " +
+      "holomorphic quantum modular forms are recovered from their (or " +
+      "closely related) divergent asymptotics — the recovery engine " +
+      "behind the QOU Watson/median-Borel uniqueness chain. Unifies the " +
+      "Fantini–Rella modular-resurgence examples. Figure-eight (4₁) is " +
+      "the worked testing ground. Registered 2026-08-01 " +
+      "(c₃-via-Borel literature sweep).",
+  }),
+
+  // ── GGMW 2026 (state integrals for quantized SL₂(ℂ) CS invariant) ──
+  ref({
+    id: "state-integrals-sl2c-cs2026",
+    type: "article",
+    title:
+      "State integrals for the quantized SL₂(ℂ) Chern–Simons invariant",
+    author: [
+      { family: "Garoufalidis", given: "Stavros" },
+      { family: "Gu", given: "Jie" },
+      { family: "Mariño", given: "Marcos" },
+      { family: "Wheeler", given: "Campbell" },
+    ],
+    issued: { "date-parts": [[2026]] },
+    "container-title": "arXiv preprint",
+    URL: "https://arxiv.org/abs/2601.05136",
+    note:
+      "arXiv:2601.05136 (Jan 2026). Newest sequel giving state-integral " +
+      "representations of the quantized SL₂(ℂ) Chern–Simons invariant — " +
+      "the closed-form object the QOU cusp-shape (𝔲_K = ln q₀ + i·ϑ_K) " +
+      "route (bean qou-qnnq) treats numerically. Confirms the Stokes " +
+      "data is indexed by the parabolic flat connections (the extended " +
+      "matrix rows), while the cusp shape ϑ_K is the transcendental " +
+      "geometric datum — consistent with the QOU finding that the " +
+      "T4-inverted ϑ values are off the integer lattice. Registered " +
+      "2026-08-01 (c₃-via-Borel literature sweep).",
+  }),
+
   // ── Tate 1967 (Tate's 1950 Princeton thesis: adelic Fourier analysis) ──
   ref({
     id: "tate1967",
