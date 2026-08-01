@@ -1,0 +1,75 @@
+{
+  "description": "Whitehead link (L5a1=b(8,3)) Kashaev invariant via the [Kas95] \u00a73 face-index state sum, PINNED against the U_q(sl2) engine reduced_at_root (Kashaev norm, fig8-calibrated ratio 1.000) and validated to the Volume Conjecture growth -> Vol(W)=4G.",
+  "computation": "kashaev_link_statesum.whitehead_state_sum",
+  "audit_only": true,
+  "plat_word": [
+    -2,
+    -2,
+    1,
+    -2,
+    -2
+  ],
+  "strands": [
+    2,
+    9
+  ],
+  "outer_face": 1,
+  "engine_reference_match": {
+    "3": {
+      "statesum": 27.49545416973504,
+      "engine_ref": 27.49545,
+      "rel_err": 1.5165182017490002e-07
+    },
+    "5": {
+      "statesum": 165.38271126909888,
+      "engine_ref": 165.38276,
+      "rel_err": 2.9465526584184746e-07
+    },
+    "7": {
+      "statesum": 774.9555379579228,
+      "engine_ref": 774.95684,
+      "rel_err": 1.6801478611552451e-06
+    },
+    "9": {
+      "statesum": 3415.8617219439398,
+      "engine_ref": 3415.8758,
+      "rel_err": 4.121360636134168e-06
+    },
+    "11": {
+      "statesum": 14452.77517305526,
+      "engine_ref": 14452.88978,
+      "rel_err": 7.929690635101855e-06
+    }
+  },
+  "engine_match_all": true,
+  "whitehead_values": {
+    "3": 27.49545416973504,
+    "5": 165.38271126909888,
+    "7": 774.9555379579228,
+    "9": 3415.8617219439398,
+    "11": 14452.77517305526,
+    "13": 58814.15622768193,
+    "15": 231744.588326125,
+    "17": 890636.8533070397,
+    "19": 3357090.4815116962,
+    "21": 12458913.7993602,
+    "23": 45651273.4623793
+  },
+  "volume_growth": {
+    "3": 6.940868698364935,
+    "5": 6.419231663307869,
+    "7": 5.9715443939516675,
+    "9": 5.680128724110859,
+    "11": 5.471307361079308,
+    "13": 5.307908248079884,
+    "15": 5.1745763768828645,
+    "17": 5.063394341751896,
+    "19": 4.969201027682041,
+    "21": 4.888302279262585,
+    "23": 4.81798530200399
+  },
+  "vol_4G": 3.663862376708876,
+  "richardson_growth": 3.709957159268537,
+  "richardson_err_vs_4G": 0.04609478255966115,
+  "timestamp": "2026-08-01T19:30:14+00:00"
+}
