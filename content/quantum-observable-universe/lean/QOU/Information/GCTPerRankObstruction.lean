@@ -35,7 +35,7 @@ theorem hasContentCell_singleton (n : ℕ) (hn : 2 ≤ n) : HasContentCell [n] 1
   refine ⟨0, ?_, 1, ?_, by decide⟩
   · simp [Partition.length]
   · show (1 : ℕ) < n
-    omega
+    exact lt_of_lt_of_le one_lt_two hn
 
 /-- `[n]` is a size-`n` partition. -/
 theorem size_singleton (n : ℕ) : Partition.size [n] = n := by
