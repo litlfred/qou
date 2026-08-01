@@ -70,24 +70,37 @@ invariant; its evaluation on the deformed 4₁ structure is `Im 𝔙`. The
 Yekutieli obstruction reading (bar-odd = `κ_n ≠ 0`, the Stokes/CS face) is the
 same statement one categorical level up.
 
-## Falsifiable consistency check (new, parameter-free)
+## Falsifiable consistency check — corrected to the diagonal-crossing gate
 
-`CS(4₁) = 0` at the complete structure (amphichirality), and `S` sign-flips
-between the anchors (`S(muon) = +0.00968298`, `S(proton) = −0.03945936`);
-*assuming* `S(q₀)` varies continuously, IVT gives a zero `q*` between them
-([S-leak target](../audits/2026-07-11-qbeta-c3-barodd-sleak-phib-target.md)).
-The identification **predicts what that zero is**:
+> **Correction (same branch, second pass).** An earlier revision of this doc
+> proposed "the zero `q*` of `S` sits at the complete structure, `m(q*) = 1`".
+> That over-claims: per the corrected NZ leading form (2026-07-26,
+> [`sdeformed-channel-signflip` audit](../audits/2026-07-26-sdeformed-channel-signflip.md);
+> Lean [`FigureEightComplexVolume.lean`](../../content/quantum-observable-universe/lean/QOU/Knot/FigureEightComplexVolume.lean)
+> `imV₄₁`, `imV₄₁_zero_on_diagonal`), `Im 𝔙₄₁(u) = (√3/4)(Re²u − Im²u)`
+> vanishes on the **diagonals** `|Re u| = |Im u|`, not only at `u = 0`. The
+> complete structure is the degenerate point of that locus, not forced by
+> `S(q*) = 0`. Re-scoped per the (a)/(b) discipline; the numerical content
+> stands, only the predicted zero-locus was wrong.
 
-> **the zero `q*` of `S` is the substrate value whose meridian map lands on
-> the complete hyperbolic structure, `m(q*) = 1` (`u = 0`).**
+The correct, corpus-established gate (already Lean-proved and probe-wired —
+no new probe needed, per the don't-duplicate-mechanical-work rule):
 
-This is checkable the moment any candidate `q₀ → m` map exists: run the
-validated gluing-equation Newton solver
-([`qbeta_c3_barodd_gluing_newton_solve.py`](../../computations/qbeta/qbeta_c3_barodd_gluing_newton_solve.py))
-at the candidate's `m(q*)` and require `𝔙 = Vol(4₁) + 0·i` within solver
-tolerance (the solver reproduces `Vol(4₁)` to `4×10⁻¹⁸` at `m = 1`). A
-candidate map that sign-flips `S` but puts its zero away from `m = 1` is
-refuted at scope-(a).
+- `S` sign-flips between the anchors, so (assuming continuity) a zero `q*`
+  exists; it is **root-found exactly** (not just IVT-estimated) by
+  [`qbeta_udeform_map_constraint_probe.py`](../../computations/qbeta/qbeta_udeform_map_constraint_probe.py),
+  whose `q*` is the numerical face of the derived Lean theorem
+  `exists_cs_vanishing` (`Im 𝔙(u(q*)) = 0`).
+- **Gate for any candidate `q₀ → m` map:** its `u(q₀)` must (i) reproduce the
+  inversion targets `(Re²u − Im²u) = 4S/√3` at both anchors (`+0.0224` muon,
+  `−0.0911` proton) and (ii) **cross the diagonal** `|Re u| = |Im u|` at the
+  root-found `q*` (Lean `signflip_forces_diagonal_cross`). Families F1–F3 are
+  already refuted against this gate.
+
+The Reeb/CS identification of this doc is consistent with — and geometrically
+motivates — that gate: the flow invariant is the CS class, its zero locus at
+leading order is the diagonal pair, and the sign-flip is a crossing of that
+locus, not a passage through the complete structure.
 
 ## Honest assessment — can this close c₃? **No.**
 
