@@ -66,7 +66,12 @@ def hooks(p):
 
 
 def main() -> int:
-    q0 = mp.mpf('1.1099785827513808075916690956107688798744991218736')
+    # Source q₀ from the SAME pinning the character caches were computed at (its `q_str`), so q₀ and
+    # χ^λ(q₀) can never drift apart — the identities below (I2: χ^{λ'}(q)=χ^λ(q⁻¹)) hold only when q₀
+    # matches the cache exactly. (NOT qou_substrate.q_at / Q_50_DIGIT_STR: those are a different pin —
+    # ~11.7 ppb muon↔proton — and would break consistency with these caches.)
+    _q0cache = json.load(open(_COMP / 'chi-deuteron-free-h6-at-q0-50dps.witness.json'))
+    q0 = mp.mpf(_q0cache['q_str'])
     qi = 1 / q0
 
     def qn(x, n):
@@ -78,8 +83,7 @@ def main() -> int:
             den *= qn(x, hh)
         return (x - 1 / x) ** (sum(p) - 1) / den
 
-    c0 = {tuple(r['partition']): mp.mpf(r['chi_lambda'])
-          for r in json.load(open(_COMP / 'chi-deuteron-free-h6-at-q0-50dps.witness.json'))['by_partition']}
+    c0 = {tuple(r['partition']): mp.mpf(r['chi_lambda']) for r in _q0cache['by_partition']}
     ci = {tuple(r['partition']): mp.mpf(r['chi_lambda'])
           for r in json.load(open(_COMP / 'chi-deuteron-free-h6-at-qinv-50dps.witness.json'))['by_partition']}
 

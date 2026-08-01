@@ -19,7 +19,9 @@ form **is** the Δ_λ closure. This note pushes it through the canonical categor
 Frobenius-paired Markov trace over the Wedderburn blocks of `H₆(q)`
 (`build_markov_trace_assembly_deuteron_chain.py`):
 
-$$\mathrm{tr}_M(\beta_D) = \sum_{\lambda \vdash 6} w_\lambda(q)\,\chi^\lambda_q(\beta_D), \qquad B = m_e\sum_\lambda w_\lambda \chi^\lambda \Delta_\lambda,$$
+$$
+\mathrm{tr}_M(\beta_D) = \sum_{\lambda \vdash 6} w_\lambda(q)\,\chi^\lambda_q(\beta_D), \qquad B = m_e\sum_\lambda w_\lambda \chi^\lambda \Delta_\lambda,
+$$
 
 and **derives the (signed) parity structure of the correction** — verified against the committed
 derived caches.
@@ -39,7 +41,9 @@ derived caches.
 
 Combining I1–I3, the per-block term `T_λ(q) = w_λ(q)χ^λ(q)` obeys
 
-$$T_\lambda(q^{-1}) = w_\lambda(q^{-1})\,\chi^\lambda(q^{-1}) = (-1)^{n-1} w_\lambda(q)\,\chi^{\lambda'}(q) = (-1)^{n-1}\,T_{\lambda'}(q).$$
+$$
+T_\lambda(q^{-1}) = w_\lambda(q^{-1})\,\chi^\lambda(q^{-1}) = (-1)^{n-1} w_\lambda(q)\,\chi^{\lambda'}(q) = (-1)^{n-1}\,T_{\lambda'}(q).
+$$
 
 For `n=6`: `T_λ(q⁻¹) = −T_{λ'}(q)` (verified for all 11). Bar maps the `λ`-block to `−` the
 `λ'`-block: conjugate pairs interchange **with a sign**, and the self-conjugate sits on the diagonal
