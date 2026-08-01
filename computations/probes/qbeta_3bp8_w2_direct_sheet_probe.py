@@ -70,7 +70,11 @@ def ord_for(e: int) -> int:
     """Internal x-order for I(0,e): past the lead (≈ T(⌈e/2⌉) q̃-orders) the
     series needs ~600 more q̃-orders to converge; ladder-certified below."""
     lead = ((abs(e) + 1) // 2) * (((abs(e) + 1) // 2) + 1) // 2
-    return 2 * (lead + 700) + 200
+    # floor 2400: small-e values need x-order ~2400 for >=13-digit agreement
+    # against order-400 (the 1600-vs-1200 ladder gives only ~7 digits; the
+    # first W2 run tripped its own >=8-digit assertion on e=0,3 this way
+    # while the values were already known good to 26+ digits from #4433).
+    return max(2400, 2 * (lead + 700) + 200)
 
 
 def main() -> int:
