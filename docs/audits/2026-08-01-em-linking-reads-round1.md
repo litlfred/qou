@@ -335,3 +335,91 @@ before it can yield a symmetric pair energy. The Komendarczyk
 third-order-helicity papers (CMP 291 (2009); JMP 51 (2010)) remain the
 only cited source that might carry an actual energy bound for
 Borromean flux tubes, and remain un-uploaded.
+
+---
+
+## Round 5 — reading the primary sources properly, and retracting round 4
+
+Round 4 above rested on a reading of the Freedman–He energy bound that
+does not survive contact with the primary sources. Two corrections
+follow, both cutting against work committed on this branch.
+
+### Correction 1 — `ac` is per-component, so the pair question was malformed
+
+The Freedman–He asymptotic crossing number that appears in the **link**
+energy bound is `ac(L_k, L)`: **one component against the whole link.**
+Komendarczyk (arXiv:0808.1533v1, eq. 43, p. 26) states it as
+
+`E_{3/2}(X) ≥ (π/16)^{1/4} ( Σ_{k=1}^{n} ac(L_k, L)|Flux(X_k)| ) · min_k |Flux(X_k)|`
+
+The sum runs over the `n` **components**, not the `n(n−1)/2` pairs, and
+no pair-indexed `ac(L_i, L_j)` appears anywhere in Khesin or
+Komendarczyk. Khesin never writes `ac(·,·)` at all; his Rmk 3.5
+"minimising over all homotopies of two given space curves" is a survey
+gloss on the **two-curve warm-up**, not a statement of the invariant
+used in (43).
+
+So the question `em_linking_borromean_acn_probe.py` was built to settle
+— *is the pair minimisation constrained by the third component, or is
+the pair an unlink with infimum 0?* — is **malformed**. There is no pair
+minimisation. That probe's `ACN_pair = 1.6426` and its "total link"
+reading `3 × that = 4.928` are both the wrong object with the wrong sum.
+
+The underlying (a)-vs-(b) question does resolve, and **against (a)**:
+Komendarczyk's lower bound is a smallest Seifert genus **in
+`ℝ³ ∖ (other components)`**, so Brunnian-ness genuinely holds the value
+up — but via a complement constraint on a *single-component* genus, not
+via a constrained pair homotopy. Correctly indexed
+(`em-linking-fh-link-bound-correction.witness.json`):
+
+`1 ≤ ac(L_k, L) ≤ 3.285` per component;  `3 ≤ Σ_k ac(L_k, L) ≤ 9.856`
+
+with the upper end realisation-dependent at 7.8%. The `genus ≥ 1` step
+(from `μ̄₁₂₃ = 1 ≠ 0` obstructing a genus-0 spanning disk in the
+complement) is **my inference** — neither source computes it.
+
+### Correction 2 — there is no volume factor, and round 4's "convergence" was a misattribution
+
+Equation (43) carries `(π/16)^{1/4}`, **a pure constant, and no volume
+factor.** The `Vol^{−1/3}` this document has been calling "the
+Freedman–He template" is from **Khesin Thm 3.6**, which is the bound for
+a *single knotted torus* — not the link bound, and not applicable to a
+multi-component Borromean configuration.
+
+**Round 4's central claim is therefore retracted.** It said an empirical
+`κ ∝ A^{−1/3}` scaling had *converged* with an independent structural
+reason from Freedman–He, and that this raised it "from *unexplained fit*
+to *candidate with an independent structural reason*, which is precisely
+the bar the anti-fit discipline sets." The two routes were never
+independent: the second one was a misattribution of a single-torus bound
+to a link.
+
+Consequence, in the direction that hurts: **`H_FH_A` and `H_FH_Z` revert
+to bare power laws with no literature backing** — exactly the bar they
+must clear and now do not. This does **not** make coth-saturation
+correct. It removes its rival's warrant, and it happens to point the
+same way the residual-drift test already did independently
+(`em-linking-residual-structure.witness.json`: `H_coth` residuals
+structureless at `r = −0.33`, `H_FH_Z` carrying `r = +0.71`).
+
+### What eq. (43) actually predicts
+
+With a fixed local Borromean configuration the topological factor is
+**A-independent** and there is no volume factor, so all A-dependence of
+`κ` must be carried by the flux (`E ~ ac · Flux²`). `κ` falls by 2.099
+across `A = 3…41`, which would require the per-component flux to fall by
+**1.449** over the same range. That is a specific, independently
+derivable quantity. It is **not** derived here and nothing is wired —
+it is reported so the size of the remaining obligation is visible. The
+FH link bound does not explain `κ(A)`; it *relocates* the explanation
+into the flux.
+
+### Residual gap
+
+Freedman–He, *Ann. of Math.* **134** (1991) 189–229 is **not** in the
+corpus or in `uploads/` (201 PDFs scanned by title metadata, no match),
+so FH's own definition of the minimisation domain for `ac(L_k, L)` is
+not directly verified. Both corrections rest on Komendarczyk's statement
+of it — unambiguous on both the per-component indexing and the
+complement constraint — cross-checked against Khesin Rmk 3.5 and Thm
+3.6. Acquiring FH 1991 §*Definition of ac* would close it.

@@ -1,6 +1,23 @@
 #!/usr/bin/env python3
 """Average crossing number of a Borromean component pair (EXPLORATORY).
 
+*** SUPERSEDED -- WRONG OBJECT. See em_linking_fh_link_bound_correction.py. ***
+
+A close read of the primary sources shows the Freedman-He asymptotic
+crossing number in the LINK bound is `ac(L_k, L)` -- one component
+against the WHOLE link, summed over n COMPONENTS (Komendarczyk
+arXiv:0808.1533v1 eq. 43). It is NOT a pairwise quantity; no
+pair-indexed ac(L_i, L_j) occurs in either source. So the per-pair
+quantity computed below, and its "total link" reading, are the wrong
+index and the wrong sum. The question this probe was built to settle --
+whether the PAIR minimisation is constrained by the third component --
+is malformed, because there is no pair minimisation.
+
+Retained, not deleted: the Gauss-integral machinery is reused by the
+correction probe (which needs exactly these pair integrals to assemble
+the correctly-indexed component-vs-link object), and the Brunnian
+signed-linking control still validates the quadrature.
+
 Bean qou-0hdx / qou-8aed. The literature sweep closed every topological
 route to the open two-like-charge EM-linking invariant and left exactly
 one candidate standing: the Freedman-He asymptotic CROSSING NUMBER --
@@ -138,6 +155,35 @@ def main() -> None:
         "Freedman-He asymptotic crossing number from ABOVE, with the "
         "Borromean minimal crossing number (2 per pair) bounding it "
         "from below. Nothing wired.")
+    wb.add_data("SUPERSEDED", {
+        "status": "WRONG OBJECT -- superseded by "
+                  "em-linking-fh-link-bound-correction.witness.json",
+        "why": ("The Freedman-He asymptotic crossing number in the LINK "
+                "energy bound is ac(L_k, L): ONE component against the "
+                "WHOLE link, summed over n COMPONENTS (Komendarczyk "
+                "arXiv:0808.1533v1 eq. 43, p. 26). It is not a pairwise "
+                "quantity -- no pair-indexed ac(L_i, L_j) appears in "
+                "either primary source. The per-pair ACN computed here, "
+                "and the 3x 'total link' reading below, are the wrong "
+                "index and the wrong sum."),
+        "malformed_question": ("This probe was built to settle whether "
+                               "the PAIR minimisation is constrained by "
+                               "the third component. There is no pair "
+                               "minimisation, so the question does not "
+                               "arise. The related (a)-vs-(b) question "
+                               "does resolve, against (a): Komendarczyk "
+                               "minimises a single-component Seifert "
+                               "genus over surfaces in R^3 minus the "
+                               "OTHER components, so Brunnian-ness does "
+                               "hold the value up -- by a complement "
+                               "constraint, not a constrained pair "
+                               "homotopy."),
+        "retained_because": ("the Gauss-integral machinery and the "
+                             "Brunnian signed-linking control are reused "
+                             "by the correction probe, which assembles "
+                             "the correctly-indexed object from exactly "
+                             "these pair integrals."),
+    })
     wb.add_data("method", {
         "integral": ("ACN = (1/4pi) int int |det[x'(s),y'(t),x-y]| "
                      "/ |x-y|^3 ds dt"),

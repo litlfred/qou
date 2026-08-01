@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-01T21:23:58.137388+00:00",
-  "commitSha": "ed155dd46581b6f1ca8ff78a0fca3c89eb8b51d6",
+  "computedAt": "2026-08-01T21:45:10.618299+00:00",
+  "commitSha": "30268f147e2a037ddfbfc57f0c3fa232981a1094",
   "assertions": [
     {
       "name": "reproduces_published_light_kappas",
@@ -27,8 +27,8 @@
   "durationMs": 4,
   "computation": "em-linking-mirror-series",
   "scriptFile": "em_linking_mirror_series_extension.py",
-  "scriptHash": "9da6dcd31101",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "3db87b550d6a",
+  "scriptCommitSha": "da3d31550b696e9bdfb714d1d68151ac9cdce49a",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -42,6 +42,15 @@
   "description": "The discriminating test for the open two-like-charge EM-linking invariant (bean qou-i6rg): extends the kappa(A) mirror series from A <= 13 to the full A = 2Z-1 ladder using the corpus's own AME reference binding energies, and scores the three tied hypotheses (coth-saturation, Freedman-He with Vol ~ A, Freedman-He with Vol ~ Z) over the extended range where they diverge. Nothing fitted: the per-pair Coulomb unit and all exponents are fixed in advance. Includes an end-to-end validation that the recomputed light-pair kappa values reproduce the published ones.",
   "auditOnly": "docs/audits/2026-08-01-em-linking-reads-round1.md",
   "data": {
+    "WARRANT_WITHDRAWN_H_FH": {
+      "affects": [
+        "H_FH_A: kappa * A^(1/3) const",
+        "H_FH_Z: kappa * Z^(1/3) const"
+      ],
+      "why": "The Vol^(-1/3) these are named for is Khesin Thm 3.6, the SINGLE-knotted-torus bound. The Freedman-He LINK bound that applies to a multi-component Borromean configuration (Komendarczyk arXiv:0808.1533v1 eq. 43) carries (pi/16)^(1/4), a pure constant, and NO volume factor. Calling these 'the Freedman-He template' was a misattribution.",
+      "consequence": "H_FH_A and H_FH_Z are BARE POWER LAWS with no literature backing -- the bar the anti-fit discipline sets, which they no longer clear. The scores below are unchanged and remain a valid DESCRIPTION of the data; what changes is that a good H_FH score no longer counts as structural support. This does not make H_coth correct -- it removes its rival's warrant.",
+      "see": "em-linking-fh-link-bound-correction.witness.json"
+    },
     "series": [
       {
         "A": 3,
