@@ -315,6 +315,10 @@ import QOU.BraidsAndKnots.BorromeanCanonicalTraceDerivation
 -- content-bearing §3b-cond weight-tensor class + ε rule + uniform-projection
 -- satisfiability witness + T₁ fiber wiring. Wired so CI type-checks it.
 import QOU.BraidsAndKnots.InterNucleonChannelColorTube
+-- Color-pair isotypic decomposition T₁⊗T₁ = A⊕T₁⊕H (bean ctkw): the Sym²/Alt²
+-- Z/2 grading is FORCED by dimension, and the uniform W=1/9 is the
+-- isotypy-blind barycentre. Narrows open Q1; no instance. Sorry-free.
+import QOU.BraidsAndKnots.ColorPairIsotypicDecomposition
 -- D6 charge conjugation (conj:c-from-color-flavor-swap): C-involution +
 -- ε-invariance proved sorry-free; W-invariance as §3b-cond class field;
 -- derived generator-data C-invariance. Wired so CI type-checks it.
