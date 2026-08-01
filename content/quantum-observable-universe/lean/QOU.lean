@@ -108,6 +108,10 @@ import QOU.Mass.ColorCurveQIntegerForm
 -- Δ_q^z C(X,z) = C(qz,X) — the precise obstruction (X leaves Σ under z↦qz; the
 -- correction to a root of C_{qz} is the branch datum D_q must choose).
 import QOU.Mass.ColorCurveQPartials
+-- W1 sheet structure: Vieta reconstruction (three sheets ↔ q-integer coefficients) and
+-- the defect = product of gaps to the shifted sheets, framing branch selection as
+-- breaking the S₃ sheet symmetry. The single-valued choice is the monodromy wall.
+import QOU.Mass.ColorCurveSheets
 import QOU.Mass.HeckeStokesEigenvalues
 import QOU.Mass.NaStokesKeystone
 import QOU.Mass.BindingHyperbolicRecurrence
