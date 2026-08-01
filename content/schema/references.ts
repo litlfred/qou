@@ -4814,50 +4814,54 @@ export const references: CSLData[] = [
       "(c₃-via-Borel literature sweep).",
   }),
 
-  // ── Wheeler et al. 2025 (quantum modular forms recovered by median resummation) ──
+  // ── McSpirit–Rolen 2025 (quantum modular forms recovered by median resummation) ──
   ref({
-    id: "wheeler-qmf-resurgence2025",
+    id: "mcspirit-rolen2025",
     type: "article",
     title: "Quantum Modular Forms and Resurgence",
-    author: [{ family: "Wheeler", given: "Campbell" }],
+    author: [
+      { family: "McSpirit", given: "Eleanor" },
+      { family: "Rolen", given: "Larry" },
+    ],
     issued: { "date-parts": [[2025]] },
     "container-title": "arXiv preprint",
     URL: "https://arxiv.org/abs/2505.00799",
     note:
       "arXiv:2505.00799 (May 2025). Median-resummation results showing " +
       "holomorphic quantum modular forms are recovered from their (or " +
-      "closely related) divergent asymptotics — the recovery engine " +
-      "behind the QOU Watson/median-Borel uniqueness chain. Unifies the " +
-      "Fantini–Rella modular-resurgence examples. Figure-eight (4₁) is " +
-      "the worked testing ground. Registered 2026-08-01 " +
-      "(c₃-via-Borel literature sweep).",
+      "closely related) divergent asymptotics, given the extra datum of " +
+      "an L-function with a functional equation whose coefficients are " +
+      "the Stokes constants (extending the Fantini–Rella program) — the " +
+      "recovery engine behind the QOU Watson/median-Borel uniqueness " +
+      "chain. Figure-eight (4₁) J-function is the worked example. " +
+      "Registered 2026-08-01 (c₃-via-Borel literature sweep).",
   }),
 
-  // ── GGMW 2026 (state integrals for quantized SL₂(ℂ) CS invariant) ──
+  // ── McPhail-Snyder 2026 (diagrammatic state integrals for quantized SL₂(ℂ) CS) ──
   ref({
-    id: "state-integrals-sl2c-cs2026",
+    id: "mcphail-snyder2026",
     type: "article",
     title:
       "State integrals for the quantized SL₂(ℂ) Chern–Simons invariant",
-    author: [
-      { family: "Garoufalidis", given: "Stavros" },
-      { family: "Gu", given: "Jie" },
-      { family: "Mariño", given: "Marcos" },
-      { family: "Wheeler", given: "Campbell" },
-    ],
+    author: [{ family: "McPhail-Snyder", given: "Calvin" }],
     issued: { "date-parts": [[2026]] },
     "container-title": "arXiv preprint",
     URL: "https://arxiv.org/abs/2601.05136",
     note:
-      "arXiv:2601.05136 (Jan 2026). Newest sequel giving state-integral " +
-      "representations of the quantized SL₂(ℂ) Chern–Simons invariant — " +
-      "the closed-form object the QOU cusp-shape (𝔲_K = ln q₀ + i·ϑ_K) " +
-      "route (bean qou-qnnq) treats numerically. Confirms the Stokes " +
-      "data is indexed by the parabolic flat connections (the extended " +
-      "matrix rows), while the cusp shape ϑ_K is the transcendental " +
-      "geometric datum — consistent with the QOU finding that the " +
-      "T4-inverted ϑ values are off the integer lattice. Registered " +
-      "2026-08-01 (c₃-via-Borel literature sweep).",
+      "arXiv:2601.05136 (v2, May 2026). Expresses the McPhail-Snyder– " +
+      "Reshetikhin geometric-twist invariant Zψ_N(K,ρ,µ) (a quantization " +
+      "of the SL₂(ℂ) CS invariant / geometric twist of the Kashaev " +
+      "invariant) as a sum of state integrals built **directly from a " +
+      "knot diagram**: a discrete state-sum over crossings with a per- " +
+      "edge integer vector k ∈ Z^E, holonomy R-matrices, and a " +
+      "log-meridian µ / log-longitude λ. Worked for the 5₂ Kashaev " +
+      "invariant. This is the DIAGRAMMATIC (braid/crossing) route to the " +
+      "integer state-integral data — the complement to the " +
+      "Neumann–Zagier–datum route of fantini-wheeler2024, and the most " +
+      "direct literature realisation of the QOU 'braid word → integer " +
+      "cusp data' map (bean qou-qnnq): the k ∈ Z^E per-edge integers are " +
+      "attached to the diagram, and (µ,λ) are the cusp holonomy. " +
+      "Registered 2026-08-01 (c₃-via-Borel literature sweep).",
   }),
 
   // ── Tate 1967 (Tate's 1950 Princeton thesis: adelic Fourier analysis) ──

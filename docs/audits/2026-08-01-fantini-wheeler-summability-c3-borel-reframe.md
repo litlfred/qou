@@ -97,14 +97,31 @@ retires the "sharpest obstruction" framing in the qnnq analysis.
 - §4.2's worked `(A,B)=(4,1)` example (4 saddles `p₁…p₄`) is a **separate**
   knot studied in ref. [24], **not** `5₂`. Do not cite it as the 5₂ matrix.
 
-## Sequels (also uploaded, also registered)
+## Sequels (also uploaded, also registered) — authors verified from the PDFs
 
-- `wheeler-qmf-resurgence2025` — [arXiv:2505.00799](https://arxiv.org/abs/2505.00799):
-  median resummation recovers holomorphic quantum modular forms (the recovery
-  engine under the QOU Watson/median-Borel uniqueness chain). `4₁` is the
-  worked example.
-- `state-integrals-sl2c-cs2026` — [arXiv:2601.05136](https://arxiv.org/abs/2601.05136):
-  state integrals for the quantized `SL₂(ℂ)` Chern–Simons invariant.
+- `mcspirit-rolen2025` — **Eleanor McSpirit & Larry Rolen** (Vanderbilt),
+  [arXiv:2505.00799](https://arxiv.org/abs/2505.00799): median resummation
+  recovers holomorphic quantum modular forms **given an L-function with a
+  functional equation whose coefficients are the Stokes constants**
+  (extending Fantini–Rella) — the recovery engine under the QOU
+  Watson/median-Borel uniqueness chain. The `4₁` J-function is the worked
+  example.
+- `mcphail-snyder2026` — **Calvin McPhail-Snyder** (Duke),
+  [arXiv:2601.05136](https://arxiv.org/abs/2601.05136): **the diagrammatic
+  route, and the most direct literature realisation of the qnnq braid → data
+  map.** McPhail-Snyder expresses the geometric-twist invariant
+  `Zψ_N(K,ρ,µ)` (a quantization of the SL₂(ℂ) CS invariant / geometric twist
+  of the Kashaev invariant) as a **sum of state integrals built directly from
+  a knot diagram**: a discrete state-sum over crossings, with a **per-edge
+  integer vector `k ∈ Z^E`** and a log-meridian `µ` / log-longitude `λ`
+  (worked for the 5₂ Kashaev invariant). Whereas FW index the state integrals
+  by Neumann–Zagier data, McPhail-Snyder attaches the integer data **to the
+  diagram itself** — so a braid word (a specific crossing diagram) determines
+  a specific integer state-sum, with `(µ,λ)` the cusp holonomy. This is the
+  concrete combinatorial answer to "how does a braid word pick the data,"
+  complementary to the NZ route. A dedicated follow-up should test whether the
+  QOU braid → `(m,ℓ)`/Stokes-entry selection is exactly the McPhail-Snyder
+  `k ∈ Z^E` crossing sum specialised at `q₀`.
 
 ## What this does and does NOT do (honesty scope)
 
