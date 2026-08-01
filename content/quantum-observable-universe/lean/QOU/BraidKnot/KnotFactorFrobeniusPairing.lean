@@ -1,4 +1,4 @@
-import Mathlib.Data.Real.Basic
+import Mathlib.Algebra.Ring.Defs
 import Mathlib.Data.Nat.Basic
 
 /-!
@@ -48,12 +48,18 @@ instance (n : ℕ) : Inhabited (ClosedBraid n) := ⟨⟨[]⟩⟩
 
     The factorisation is the conjecture proper; a concrete instance
     discharges `factorisation_holds` with `sorry` (the conjecture)
-    and is then usable downstream as a class hypothesis. -/
-class KnotFactorFrobeniusPairing where
+    and is then usable downstream as a class hypothesis.
+
+    The Markov trace / Frobenius pairing of `H_n(q)` are q-deformation
+    combinatorics valued in the coefficient ring — no ordering, radical,
+    or analytic construct — so the base ring is a generic
+    `{R : Type*} [CommRing R]` with the parameter `q : R` (§7c); the
+    archimedean substrate `R := ℝ` is a downstream instantiation. -/
+class KnotFactorFrobeniusPairing (R : Type*) [CommRing R] where
   /-- Markov trace at parameter `q`. -/
-  markov_trace_q : ℝ → ∀ {n : ℕ}, ClosedBraid n → ℝ
+  markov_trace_q : R → ∀ {n : ℕ}, ClosedBraid n → R
   /-- Frobenius pairing on H_n(q). -/
-  frobenius_pairing_q : ℝ → ∀ {n : ℕ}, ClosedBraid n → ClosedBraid n → ℝ
+  frobenius_pairing_q : R → ∀ {n : ℕ}, ClosedBraid n → ClosedBraid n → R
   /-- Canonical knot-factor element (a closed braid associated to
       each `n`).  Acts as the "structural unit" of the Frobenius
       pairing in the factorisation below. -/
@@ -63,7 +69,7 @@ class KnotFactorFrobeniusPairing where
       factor.  A concrete instance discharges this by `sorry` (the
       conjecture); downstream theorems condition on it. -/
   factorisation_holds :
-    ∀ (q : ℝ) {n : ℕ} (b : ClosedBraid n),
+    ∀ (q : R) {n : ℕ} (b : ClosedBraid n),
       markov_trace_q q b = frobenius_pairing_q q b knot_factor
 
 /-- **Downstream conditional theorem (AGENTS.md §3b-cond).**
@@ -71,8 +77,8 @@ class KnotFactorFrobeniusPairing where
     of any closed braid factors through the Frobenius pairing with
     the knot factor.  Fully verified by Lean once an instance is
     fixed. -/
-theorem markov_trace_factors [inst : KnotFactorFrobeniusPairing]
-    (q : ℝ) {n : ℕ} (b : ClosedBraid n) :
+theorem markov_trace_factors {R : Type*} [CommRing R] [inst : KnotFactorFrobeniusPairing R]
+    (q : R) {n : ℕ} (b : ClosedBraid n) :
     inst.markov_trace_q q b = inst.frobenius_pairing_q q b inst.knot_factor :=
   inst.factorisation_holds q b
 
