@@ -55,7 +55,8 @@ import sys
 
 D = 6
 MOD = 5**D
-P = [1, -1, 0, 1]  # x^3 - x^2 + 1, degree-descending
+# Ring: (Z/5^6)[x]/(x^3 - x^2 + 1); the reduction x^3 = x^2 - 1 is
+# hard-coded in mul() below.
 
 
 def mul(a, b):
@@ -175,9 +176,9 @@ witness = {
     "field": "Q(alpha)/(alpha^3 - alpha^2 + 1) (5_2 trace field), p = 5",
     "checks": checks,
     "computed_rhs_mod5": {
-        "at_zeta24^10": prop32_rhs_mod5(pw(zeta24, 10)),
-        "at_zeta24^5": prop32_rhs_mod5(pw(zeta24, 5)),
-        "at_zeta24^6": prop32_rhs_mod5(pw(zeta24, 6)),
+        "input_zeta24^10_target_D5_zeta24^2": prop32_rhs_mod5(pw(zeta24, 10)),
+        "input_zeta24^5_target_D5_zeta24": prop32_rhs_mod5(pw(zeta24, 5)),
+        "input_zeta24^6_target_D5_zeta24^6": prop32_rhs_mod5(pw(zeta24, 6)),
     },
     "scope": "scope-(a): mod-p dilog layer (finite polylog + Prop 3.2) vs printed (273); full Coleman Li2 queued",
 }
