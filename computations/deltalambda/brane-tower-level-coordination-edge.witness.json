@@ -1,0 +1,76 @@
+{
+  "schema": "witness/v1",
+  "producer": "computations/deltalambda/brane_tower_level_coordination_edge_probe.py",
+  "computation": "brane-tower-level-coordination-edge",
+  "description": "GAP-A-4 DERIVE-OR-WALL for the A=3 \u0394_\u03bb 3-body magnitude from the coordination-graph EDGE structure (jet-filtration depth), not the tower LEVEL. #4364's H\u2089 word (\u0394_A\u00b7\u0394_B\u207b\u00b9)\u00b3 uses only 2 of 3 cable-pairs = the path P\u2083 (2 edges); the physical triton is K\u2083 (3 edges). Forward edge ratio 3/2. This probe adds the third (wraparound) bond \u0394_C=(1 2)(0 1)(1 2) and measures whether a symmetric 3-edge word scales the amplitude by ~3/2 at O(h\u2074) (DERIVATION/NEAR-MISS) or breaks the Brunnian order-suppression and overshoots (WALL). 0 fit; \u03bc\u2083 only a target; nothing wired. Verdict: WALL(scope-a) \u2014 adding the third coordination bond BREAKS the Brunnian O(h\u2074) order-suppression (order drops toward 2), so the 3/2 edge count does NOT translate to a 3/2 amplitude; braid Brunnian-ness is fragile, the coordination-edge reading walls",
+  "timestamp": "2026-08-01T18:43:32.958496+00:00",
+  "parameters": {
+    "free_parameters": 0,
+    "q0": "1.1099785827513808",
+    "h": "0.209060298795639301677370394164",
+    "E0_MeV": "4.18598136329447621452746090153",
+    "edge_ratio_K3_over_P3": "3/2",
+    "needed_r_star": "1.58518518518518518518518518519",
+    "dC_convention": "(0 2)=(1 2)(0 1)(1 2) \u21d2 \u0394_C=\u0394_B\u00b7\u0394_A\u00b7\u0394_B",
+    "note": "\u03bc\u2083=+0.4708 target only; SAME E\u2080+y_\u03bb normalization as \u03c1_F; 0 fit."
+  },
+  "results": {
+    "candidates": {
+      "path_P3_2edge": {
+        "deficit": "0.0494257550551276345093706745026",
+        "c3_MeV": "0.206895289527522024891296792744",
+        "measured_h_order": "4.09821273508120310196579280777",
+        "c3_over_mu3": "0.439454735614957571986611709312",
+        "grid_deficits": [
+          "0.0000513943191724080423652667657928",
+          "0.000822441140896215823898569931694",
+          "0.0134477322345213992766275974074"
+        ]
+      },
+      "triangle_K3_3edge": {
+        "deficit": "-45.2314371748042689980421220868",
+        "c3_MeV": "-189.3379530487556255955160385",
+        "measured_h_order": "1.77603037219936954332204309965",
+        "c3_over_mu3": "-402.162177248843724714350124256",
+        "grid_deficits": [
+          "0.663501712612953178419561536355",
+          "0.0517992723234799081108748147885",
+          "-7.40641898850825797724777213639"
+        ]
+      },
+      "cyclic_S3_symmetric": {
+        "deficit": "-9.59709432969108436112222073288e-15",
+        "c3_MeV": "-4.01732580058659726915887680925e-14",
+        "measured_h_order": "0.295471766216897776290902114332",
+        "c3_over_mu3": "-8.53297748637764925479795414029e-14",
+        "grid_deficits": [
+          "3.7531015597289585373656719729e-15",
+          "-2.75404726981659945565136640941e-15",
+          "-5.60664946710442056961196415417e-15"
+        ]
+      }
+    },
+    "edge_count_hypothesis": {
+      "path_c3_MeV": "0.206895289527522024891296792744",
+      "path_reproduces_4364": false,
+      "three_halves_prediction_MeV": "0.310342934291283037336945189116",
+      "three_halves_pct_vs_mu3": "-34.0817896577563642020082436032",
+      "triangle_c3_MeV": "-189.3379530487556255955160385",
+      "triangle_order": "1.77603037219936954332204309965",
+      "triangle_brunnian_preserved": false,
+      "triangle_matches_3half_pred": false,
+      "cyclic_c3_MeV": "-4.01732580058659726915887680925e-14",
+      "cyclic_order": "0.295471766216897776290902114332",
+      "cyclic_brunnian_preserved": false,
+      "cyclic_matches_3half_pred": false
+    },
+    "verdict": {
+      "classification": "WALL(scope-a) \u2014 adding the third coordination bond BREAKS the Brunnian O(h\u2074) order-suppression (order drops toward 2), so the 3/2 edge count does NOT translate to a 3/2 amplitude; braid Brunnian-ness is fragile, the coordination-edge reading walls",
+      "is_fit": false,
+      "wired": false,
+      "free_param_count": 0,
+      "mu3_inverted": false
+    }
+  },
+  "scriptCommitSha": "uncommitted"
+}
