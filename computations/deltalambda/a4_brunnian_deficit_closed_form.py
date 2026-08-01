@@ -256,19 +256,24 @@ def main():
         D = D_s.subs(s, sp.sqrt(qs))
         Dfact = D_s          # cancelled rational function of s (no expensive factor)
 
-        # Exact leading order. q = s² ⇒ q−1 = (s−1)(s+1) with dq/ds|_{s=1} = 2 ≠ 0,
-        # so the vanishing order at s=1 in (s−1) EQUALS the order at q=1 in (q−1)
-        # (a local diffeomorphism). Series in s is therefore the exact Milnor-order
-        # test, and is polynomial-cheap in the s-form.
-        _log("  series of D at s=1 (≡ q=1, orders agree since dq/ds|₁ = 2 ≠ 0)…")
+        # Exact leading order, by NUMERATOR VALUATION (no `series` — that is the
+        # step that stalls on these degree-~130 rationals).
+        #
+        # q = s² ⇒ q−1 = (s−1)(s+1) with dq/ds|_{s=1} = 2 ≠ 0, so the vanishing
+        # order at s=1 in (s−1) EQUALS the order at q=1 in (q−1) (local diffeo).
+        # Writing the cancelled D_s = N(s)/M(s) with M(1) ≠ 0, that order is
+        # exactly the multiplicity of the root s = 1 in N — obtained by plain
+        # polynomial expansion of N(1+ε), which is cheap and exact.
+        _log("  leading order at s=1 by numerator valuation (≡ q=1 order)…")
         eps = sp.Symbol("eps")
-        Deps = sp.cancel(D_s.subs(s, 1 + eps))
-        ser = sp.series(Deps, eps, 0, 9).removeO()
-        poly = sp.Poly(sp.expand(ser), eps)
-        nz = [m[0] for m in poly.monoms() if poly.coeff_monomial((m[0],)) != 0]
-        assert nz, "deficit series is identically zero — unexpected"
+        N_s, M_s = sp.fraction(sp.cancel(D_s))
+        M_at_1 = sp.cancel(M_s.subs(s, 1))
+        assert M_at_1 != 0, "denominator vanishes at s=1 — valuation argument invalid"
+        Npoly = sp.Poly(sp.expand(N_s.subs(s, 1 + eps)), eps)
+        nz = [m[0] for m in Npoly.monoms() if Npoly.coeff_monomial((m[0],)) != 0]
+        assert nz, "deficit numerator is identically zero — unexpected"
         lead_order = min(nz)
-        lead_coeff = poly.coeff_monomial((lead_order,))
+        lead_coeff = sp.cancel(Npoly.coeff_monomial((lead_order,)) / M_at_1)
 
         # EXACT sign at the substrate pin. Because the deficit is rational in
         # s = √q, pinning a RATIONAL s₀ makes the evaluation exactly rational
