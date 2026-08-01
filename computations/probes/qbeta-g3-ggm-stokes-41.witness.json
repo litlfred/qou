@@ -1,8 +1,8 @@
 {
   "engine": "python-int+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-18T08:55:32.742350+00:00",
-  "commitSha": "3cfa813416574f5ad57ff7dba439ba30ff488321",
+  "computedAt": "2026-08-01T01:18:56.754873+00:00",
+  "commitSha": "69c40ca8bc1b7c1082a8c6dc4c33d1544054bd88",
   "assertions": [
     {
       "name": "theorem9_det_and_qdifference_exact",
@@ -30,11 +30,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 14,
+  "durationMs": 3,
   "computation": "qbeta-g3-ggm-stokes-41",
   "scriptFile": "qbeta_g3_ggm_stokes_41.py",
-  "scriptHash": "e59b619f999d",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "1e15485adc31",
+  "scriptCommitSha": "196beae94ba94497f6da18f0c657ff1274c9d0bd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -44,10 +44,7 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
-    "scipy": "1.17.1",
-    "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1"
   },
   "description": "A_omega step 2: exact implementation of the GGM 4_1 Stokes data (G/W q-series machinery certified by Theorem-9 identities; the (59a) sandwich derived OCR-free against the printed series). Records the integer Stokes constant 3 on the iota = Vol(4_1)/pi singularity (= the corpus's measured Borel A) with its descendant tower and substrate value, and the proven eq-(21) dictionary making the tower an exact anchor for the step-1 index assembly. No A_omega identification claimed (step 3 decides).",
   "contentBlock": "conj:im-q-physical-role",
@@ -116,10 +113,10 @@
     },
     "substrate": {
       "q_sub": "0.90091828395574149216",
-      "S11_at_substrate": "0.2584362672614084423579785",
-      "stable_digits": 40
+      "S11_at_substrate": "0.4276442013174580363342472",
+      "stable_digits": 13
     },
     "dictionary_eq21": "S+_sigma1sigma1(q) = Sum_e I_41(0,e)(q) — proven for 4_1; new exact anchor for the step-1 assembly search",
-    "verdict": "GGM 4₁ Stokes data implemented exactly and certified internally: det W_m = 2 exact (True); q-difference (49) exact (True); the (59a) sandwich DERIVED OCR-free by matching the q→0 limit (60) + all four printed towers (61)-(64) — 8 sign-pattern(s), 1 distinct S⁺ (True). The Borel singularity carrying the odd-ray physics sits at ι = Vol(4₁)/π — the SAME object as the corpus's measured A (#3692/#3819) — with integer Stokes constant 3 and descendant tower S⁺_(σ1σ1)(q) = 1 − 8q − 9q² + …; substrate value 0.258436267261 [40d]. Via the PROVEN (for 4₁) dictionary eq (21) this tower equals Σ_e I(0,e) — a new exact anchor for the step-1 assembly. NOT claimed: the identification of this Stokes constant with the corpus A_ω normalization (step 3's residual test decides). Scope-(a); no fit; no c_k wired."
+    "verdict": "GGM 4₁ Stokes data implemented exactly and certified internally: det W_m = 2 exact (True); q-difference (49) exact (True); the (59a) sandwich DERIVED OCR-free by matching the q→0 limit (60) + all four printed towers (61)-(64) — 8 sign-pattern(s), 1 distinct S⁺ (True). The Borel singularity carrying the odd-ray physics sits at ι = Vol(4₁)/π — the SAME object as the corpus's measured A (#3692/#3819) — with integer Stokes constant 3 and descendant tower S⁺_(σ1σ1)(q) = 1 − 8q − 9q² + …; substrate value 0.427644201317 [13d]. Via the PROVEN (for 4₁) dictionary eq (21) this tower equals Σ_e I(0,e) — a new exact anchor for the step-1 assembly. NOT claimed: the identification of this Stokes constant with the corpus A_ω normalization (step 3's residual test decides). Scope-(a); no fit; no c_k wired."
   }
 }

@@ -62,7 +62,11 @@ from qou_substrate.constants import q_at  # noqa: E402
 mp.mp.dps = 50
 
 ORD = 30            # q-order for certification
-ORD_SUB = 700       # q-order for substrate evaluation (tail e^{-t·700} ≈ 2e-32)
+ORD_SUB = 1600      # q-order for substrate evaluation. NOT 700: the tower
+                    # coefficients grow ~e^{c√k}, so the naive monomial tail
+                    # bound e^{-t·k} is wrong — the series only converges to
+                    # ~13 digits near q-order 1200-1600 (awpk audit
+                    # 2026-07-31; the honest ladder is 800/1200/1600).
 
 # Glyph-verified printed targets (GGM p.15, cmsy sign rows decoded):
 PRINTED_61 = [1, -8, -9, 18, 46, 90, 62]                  # S+_11  (= 1 + tower)
@@ -332,9 +336,19 @@ def main() -> int:
         s11_deep = [sgn * x // 2 for x in Sd[0][0]]
         val = mp.fsum(c * q_sub ** k for k, c in enumerate(s11_deep) if c)
         val_c = mp.fsum(c * q_sub ** k
-                        for k, c in enumerate(s11_deep[:ORD_SUB * 9 // 10]) if c)
+                        for k, c in enumerate(s11_deep[:ORD_SUB * 3 // 4]) if c)
         conv = abs(val - val_c)
-        conf = int(-mp.log10(conv)) if 0 < conv < 1 else 40
+        # honest guard: a truncation difference >= 1 means NON-convergence and
+        # must report 0 digits. The previous `else 40` sentinel mapped that
+        # case to "40 stable digits" and let a pre-asymptotic value pass —
+        # the committed 2026-07-18 witness value 0.2584 was sentinel-passed
+        # (see docs/audits/2026-07-31-awpk-perwinding-stokes-41.md Finding 2).
+        if conv == 0:
+            conf = 40
+        elif conv < 1:
+            conf = int(-mp.log10(conv))
+        else:
+            conf = 0
         print(f"    S⁺_(σ1σ1)(q_sub) = Σ_e I(0,e)(q_sub) = {mp.nstr(val, 20)} "
               f"[{conf} stable digits]")
         v4 = conf >= 8

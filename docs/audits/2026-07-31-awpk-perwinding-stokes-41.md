@@ -71,11 +71,13 @@ conf = int(-mp.log10(conv)) if 0 < conv < 1 else 40
 maps a truncation difference **≥ 1** — i.e. gross non-convergence — to
 the same "40 digits" as an exact match. The same pattern ships in the
 merged [`qbeta_g3_ggm_stokes_41.py`](../../computations/probes/qbeta_g3_ggm_stokes_41.py)
-V4 guard, and its witness records `"S11_at_substrate": 0.2584…` with
-`"stable_digits": 40` — **the sentinel value**, so that datum is
-unverified pending re-evaluation (this probe's deep e-sum supplies the
-honest number; see Finding 3). This probe now uses a multi-cut
-certificate (partial sums at 4 cut points, diff ≥ 1 → 0 digits).
+V4 guard, and its witness recorded `"S11_at_substrate": 0.2584…` with
+`"stable_digits": 40` — **the sentinel value**. **Fixed on this PR:** the
+g3 guard now reports 0 digits on a diff ≥ 1, its deep order was raised
+to the honest range (q̃-order 1600), and the regenerated witness
+self-corrects to `0.42764420131745803633 [13 stable digits]` — agreeing
+with this probe's independent ladder evaluation (Finding 3a) to 13+
+digits. This probe uses the same honest guard discipline throughout.
 
 ## Finding 3 — substrate values, the honest tower, and the convergence annulus
 
