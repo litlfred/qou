@@ -2,12 +2,12 @@
   "schema": "witness/v1",
   "engine": "python+sympy",
   "scriptFile": "c3_w1_cover_monodromy.py",
-  "commitSha": "3acd913c90bb3a87841ac5f771f3b15d48877f96",
+  "commitSha": "9f8f8917edbd73917ec57c66ecc1a5569b7da183",
   "description": "W1: color-cubic sheet cover has full S3 monodromy (irreducible cubic + squarefree/non-square disc) => no single-valued algebraic branch; D_q lives on the 3-sheeted cover. Symbolic (sympy).",
   "computation": {
     "script": "computations/qbeta/c3_w1_cover_monodromy.py",
-    "scriptCommitSha": "3acd913c90bb3a87841ac5f771f3b15d48877f96",
-    "scriptHash": "45354ca1d385"
+    "scriptCommitSha": "9f8f8917edbd73917ec57c66ecc1a5569b7da183",
+    "scriptHash": "3c0c1f31830c"
   },
   "results": {
     "cubic": "X^3 + (z+1)X^2 + (z^2+z+1)X + (z^3+z^2+z+1)",

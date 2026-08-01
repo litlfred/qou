@@ -50,8 +50,9 @@ theorem no_root_of_irreducible {p : K[X]} (hp : Irreducible p) (hdeg : 1 < p.nat
     have hXne : (X - C a) ≠ 0 := X_sub_C_ne_zero a
     have : p.natDegree = (X - C a).natDegree + c.natDegree := by
       rw [hc, natDegree_mul hXne (fun h => by simp [h] at hc; exact hpne hc)]
-    rw [natDegree_X_sub_C, hcdeg] at this
-    omega
+    rw [natDegree_X_sub_C, hcdeg, add_zero] at this
+    rw [this] at hdeg
+    exact absurd hdeg (lt_irrefl 1)
 
 /-- **No single-valued algebraic branch** of the color cubic (conditional on its computed
 irreducibility over the base field). If the cubic `C` is irreducible and has degree > 1,

@@ -32,7 +32,10 @@ def main() -> None:
     sext = sp.Poly(-disc, z)
     squarefree = sp.Poly(sp.gcd(sext, sext.diff(z)), z).degree() == 0
     n_branch = sext.degree()                            # 6 branch points if squarefree
-    irreducible = bool(Cp.is_irreducible)
+    _irr = Cp.is_irreducible
+    if _irr is None:
+        raise RuntimeError("sympy could not decide irreducibility of the color cubic")
+    irreducible = bool(_irr)
     # disc is a perfect square in C(z) iff every irreducible factor has even multiplicity
     # (over C the leading constant is always a square). A squarefree disc of positive
     # degree therefore can never be a square — but test it properly, do not assume.
