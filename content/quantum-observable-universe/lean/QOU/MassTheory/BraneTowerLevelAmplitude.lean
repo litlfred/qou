@@ -94,13 +94,15 @@ theorem edge_ratio_A3 :
 /-! ### Level magnitude shape (reused from #4364): `c₃ = E₀ · h⁴ · κ` -/
 
 /-- The physical 3-body magnitude at a coefficient `κ`: `E₀ · h⁴ · κ` (#4364's
-`levelMagnitude`; a level/edge re-weight changes `κ` only, `h⁴` is invariant). -/
-noncomputable def levelMagnitude (E0 h κ : ℝ) : ℝ := E0 * (h ^ 4 * κ)
+`levelMagnitude`; a level/edge re-weight changes `κ` only, `h⁴` is invariant).
+Generic over `[CommRing R]` (§7c): it is a pure ring identity; the numeric
+verdict theorems specialise it to `ℝ`. -/
+def levelMagnitude {R : Type*} [CommRing R] (E0 h κ : R) : R := E0 * (h ^ 4 * κ)
 
 /-- Re-weighting the path coefficient `κ_P` by the edge ratio `ρ = 3/2` scales the
 magnitude by exactly `ρ` — the `E₀·h⁴` cancels (the #4364 coefficient-ratio law,
 specialised to an edge re-weight). -/
-theorem edge_reweight_is_ratio {E0 h κP ρ : ℝ} :
+theorem edge_reweight_is_ratio {R : Type*} [CommRing R] {E0 h κP ρ : R} :
     levelMagnitude E0 h (ρ * κP) = ρ * levelMagnitude E0 h κP := by
   unfold levelMagnitude; ring
 
