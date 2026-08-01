@@ -1,0 +1,52 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-08-01T20:59:57.666724+00:00",
+  "commitSha": "7f78acabad4c7a6781b4ed561ffecd94e889241b",
+  "assertions": [
+    {
+      "name": "terms_bounded_below_by_positive_eps0",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "term_test_fails_sum_diverges_exact",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 13,
+  "computation": "qbeta-c3-magnitude-full-volume-thurston",
+  "scriptFile": "qbeta_c3_magnitude_full_volume_thurston_probe.py",
+  "scriptHash": "b4e9fa00f13e",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
+  },
+  "description": "Upgrades the #4501 multi-winding-sum divergence from scope-(a) (leading truncation) to scope-(b) (structural). Thurston's Dehn-surgery bound gives 0<Re𝔙₄₁(u_{m,ℓ})≤Vol(4₁) for every filling slope, with Re𝔙→Vol(4₁) as |(m,ℓ)|→∞. So every even-channel bridge term e^{−Re𝔙/ℏ_q} ≥ e^{−Vol(4₁)/ℏ_q}=ε₀>0 and → ε₀ (≠0): the term test fails and the multi-winding SUM diverges for the EXACT potential, not just the quadratic truncation. Structural exclusion (cited invariant: Thurston Dehn-surgery volume bound) of the multi-winding even-channel SUM as the c₃ magnitude source. Surviving route: a single geometric structure u(q₀), not a lattice sum. No fit; nothing wired; no instance.",
+  "contentBlock": "conj:binding-qbeta-complex-volume",
+  "data": {
+    "thurston_bound_readout": {
+      "Vol_41": "2.029883213",
+      "hbar_q": "0.09908172644",
+      "term_floor_eps0_e_negVol_over_hbar": "1.266563573e-9",
+      "terms_bounded_below_by_eps0": true,
+      "terms_approach_eps0_not_zero": true,
+      "sum_diverges_exact_potential": true,
+      "verdict": "scope-(b): multi-winding even-channel SUM diverges for the exact 𝔙₄₁ via Thurston bound (terms ≥ ε₀>0, →ε₀≠0); structurally excluded as magnitude source; surviving route is single-structure u(q₀)"
+    }
+  }
+}
