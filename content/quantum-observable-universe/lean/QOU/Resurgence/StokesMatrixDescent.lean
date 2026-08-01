@@ -2,37 +2,18 @@ import Mathlib.LinearAlgebra.Matrix.Trace
 import Mathlib.Algebra.BigOperators.Ring.Finset
 
 /-!
-# QOU.Resurgence.StokesMatrixDescent — categorical descent of the resurgent Stokes data
+# QOU.Resurgence.StokesMatrixDescent
 
-The resurgent Stokes / connection data of the `q`-difference equation is a
-**monodromy matrix** `S` that transforms by **conjugation** `S ↦ g S g⁻¹`
-under a gauge / basis change `g`.  This file proves — **sorry-free, over a
-generic base ring** (§7c: no `ℝ`; the archimedean summation choice is the only
-`ℝ`-part and stays outside this scaffold) — the two structural claims of the
-descent:
+Categorical descent of the resurgent Stokes data, proved sorry-free over a
+generic base ring (see the sibling `.md` for the full narrative):
 
-* **(A.ii) Trace-invariance.**  The bar-/gauge-invariant observable is the
-  conjugacy invariant `tr(g S g⁻¹) = tr S` — the matrix-level Markov trace
-  `tr_M(S)`.  This is `Matrix.trace_mul_comm` (trace cyclicity), **proved**,
-  not axiomatised.
+* `stokes_trace_conj_invariant` (A.ii): trace conjugacy-invariance
+  `tr (g S g_inv) = tr S`, the gauge-invariant Markov trace.
+* `stokes_block_diagonal` (A.i): Wedderburn equivariance implies
+  block-diagonal `S = sum e_i S e_i`.
+* `stokes_trace_block_sum`: the trace splits into per-partition block traces.
 
-* **(A.i) `Sₙ`/Wedderburn equivariance ⇒ block-diagonal.**  If `S` commutes
-  with a complete orthogonal family of idempotents `e_λ` (the central Young /
-  Hecke idempotents of `H_n(q)`, one per partition `λ`), then the off-block
-  parts `e_i S e_j` (`i ≠ j`) vanish and `S = ∑_λ e_λ S e_λ` is
-  block-diagonal.  This is **proved** structurally from the commutation +
-  orthogonality + completeness, over a general (possibly non-commutative)
-  ring `A` — which subsumes the matrix algebra `Mat_n(R)`.
-
-* Consequence: `tr_M(S) = ∑_λ tr(e_λ S e_λ)` — the invariant trace is the sum
-  of the **per-partition block traces**.
-
-The genuinely-open inputs (filtration coincidence, categoricity of the Stokes
-constants, archimedean summation-independence) live in
-`QOU.Resurgence.WardFiltrationCounting`, not here.
-
-## References
-- [manuscript] quantum-observable-universe/mass-theory/stokes-matrix-descent
+Ref: manuscript, mass-theory/stokes-matrix-descent.
 -/
 
 namespace QOU.Resurgence
@@ -67,7 +48,7 @@ partitions `ι`. -/
 
 section BlockDiagonal
 
-variable {ι A : Type*} [Fintype ι] [DecidableEq ι] [Ring A]
+variable {ι A : Type*} [Fintype ι] [Ring A]
 
 /-- A **complete orthogonal idempotent family** — the central Wedderburn /
 Young idempotents `e_λ` of `H_n(q)`, one per partition `λ : ι`. -/
