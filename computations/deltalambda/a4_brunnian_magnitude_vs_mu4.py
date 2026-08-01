@@ -47,7 +47,9 @@ from witness_base import WitnessBuilder  # noqa: E402
 import mpmath as mp  # noqa: E402
 
 _T0_MONO = time.monotonic()
-mp.mp.dps = 40
+# Precision is centralized: importing witness_base/qou_substrate applies the repo
+# default compute/serialization dps (recorded in the witness precisionMetadata).
+# Do NOT override it here — a manual dps would contradict that metadata.
 
 
 def load(name: str) -> dict:

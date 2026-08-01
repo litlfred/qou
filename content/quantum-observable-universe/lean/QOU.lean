@@ -324,6 +324,10 @@ import QOU.BraidsAndKnots.InterNucleonChannelColorTube
 -- Z/2 grading is FORCED by dimension, and the uniform W=1/9 is the
 -- isotypy-blind barycentre. Narrows open Q1; no instance. Sorry-free.
 import QOU.BraidsAndKnots.ColorPairIsotypicDecomposition
+-- Flavor side of W (bean 63n2): isospin selection on the color-pair
+-- decomposition. CONDITIONAL on InterfaceExchangeAntisymmetry (class, NO
+-- instance); consequence is charge symmetry between pp and nn. Sorry-free.
+import QOU.BraidsAndKnots.ColorFlavorIsospinSelection
 -- D6 charge conjugation (conj:c-from-color-flavor-swap): C-involution +
 -- ε-invariance proved sorry-free; W-invariance as §3b-cond class field;
 -- derived generator-data C-invariance. Wired so CI type-checks it.
