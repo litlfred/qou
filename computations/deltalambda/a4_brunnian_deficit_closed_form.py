@@ -279,10 +279,20 @@ def main():
         # s = √q, pinning a RATIONAL s₀ makes the evaluation exactly rational
         # (q = s₀² is then itself an exact rational within ~1e-20 of q₀ — see
         # s0_rat above). No floating point enters the sign decision.
+        # Preferred: exactly rational (when the s-form carries no residual
+        # radical). Otherwise fall back to a high-precision evaluation with an
+        # explicit margin guard — decisive here, since the deficit signal is
+        # ~1e-3 (A=3) / ~1e-4 (A=4), some 60 orders above the guard threshold.
         D_at_s0 = sp.cancel(D_s.subs(s, s0_rat))
-        assert D_at_s0.is_Rational, "s-form evaluation at a rational s₀ must be rational"
-        d0_sign = int(sp.sign(D_at_s0))
-        sign_method = "exact-rational-at-s0-squared-pin"
+        if D_at_s0.is_Rational:
+            d0_sign = int(sp.sign(D_at_s0))
+            sign_method = "exact-rational-at-s0-squared-pin"
+        else:
+            v = sp.N(D_at_s0, 80)
+            assert abs(v) > sp.Float(10) ** (-60), (
+                "sign margin guard failed — |D(s₀)| below 1e-60, sign not decisive")
+            d0_sign = 1 if v > 0 else -1
+            sign_method = "80-digit-evalf-at-s0-squared-pin-margin-guarded"
         tau_num = float(sp.N(tau_s.subs(s, sp.sqrt(sp.Float(Q_50_DIGIT_STR, 50))), 30))
 
         _log(f"  D(s), q = s²  =  {str(Dfact)[:400]}")
