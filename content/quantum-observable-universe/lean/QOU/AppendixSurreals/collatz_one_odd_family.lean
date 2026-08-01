@@ -371,4 +371,112 @@ theorem qcollatz_no_three_odd_cycle_of_lead {R : Type*} [CommRing R] (φ : R →
     rw [hsplit]; exact mul_le_mul_of_nonneg_right h16 (by positivity)
   omega
 
+/-! ### Four separated odd steps (`k_odd = 4`)
+
+One more rung of the `q`-Steiner ladder, by the same telescoping. The forced
+equation and the leading-run exclusion carry over verbatim with `m = 4`; the
+denominator height is `2^k − 3⁴ = 2^k − 81` and the leading-run threshold rises
+to `a ≥ 4` (since `3⁴ = 81 ≤ 2^{a+3}` needs `a + 3 ≥ 7`). This closes another
+infinite family of spread four-odd words. The **uniform-`m`** statement — a
+single theorem over every `k_odd` — is the remaining `q`-Steiner endgame; each
+rung here (`m = 1, 2, 3, 4`) is one instance of it. -/
+
+/-- **Four separated odd steps force their denominator equation.**
+    `E^a O E^b O E^c O E^d O` (four odd steps, even runs `a, b, c, d`) forces
+    `((q+1)^{a+b+c+d+4} − (q²+q+1)⁴)·x
+        = (q²+q+1)³ + (q²+q+1)²·(q+1)^{b+1} + (q²+q+1)·(q+1)^{b+c+2}
+          + (q+1)^{b+c+d+3}`. The `mᵢ` are the intermediate cycle values;
+    `heven*`/`hodd*` are the even-collapse and odd-step relations, chained
+    cyclically. Same telescoping as `qcollatz_three_odd_forces`, one level
+    deeper. -/
+theorem qcollatz_four_odd_forces {R : Type*} [CommRing R]
+    (q x m1 m2 m3 m4 m5 m6 P0 : R) (a b c d : ℕ)
+    (heven1 : P0 = (q + 1) ^ a * x)
+    (hodd1 : m1 * (q + 1) = (q ^ 2 + q + 1) * x + 1)
+    (heven2 : m1 = (q + 1) ^ b * m2)
+    (hodd2 : m3 * (q + 1) = (q ^ 2 + q + 1) * m2 + 1)
+    (heven3 : m3 = (q + 1) ^ c * m4)
+    (hodd3 : m5 * (q + 1) = (q ^ 2 + q + 1) * m4 + 1)
+    (heven4 : m5 = (q + 1) ^ d * m6)
+    (hodd4 : P0 * (q + 1) = (q ^ 2 + q + 1) * m6 + 1) :
+    ((q + 1) ^ (a + b + c + d + 4) - (q ^ 2 + q + 1) ^ 4) * x
+      = (q ^ 2 + q + 1) ^ 3 + (q ^ 2 + q + 1) ^ 2 * (q + 1) ^ (b + 1)
+        + (q ^ 2 + q + 1) * (q + 1) ^ (b + c + 2) + (q + 1) ^ (b + c + d + 3) := by
+  have ha1 : (q + 1) ^ (a + 1) = (q + 1) * (q + 1) ^ a := by rw [pow_succ']
+  have hb1 : (q + 1) ^ (b + 1) = (q + 1) * (q + 1) ^ b := by rw [pow_succ']
+  have hc1 : (q + 1) ^ (c + 1) = (q + 1) * (q + 1) ^ c := by rw [pow_succ']
+  have hd1 : (q + 1) ^ (d + 1) = (q + 1) * (q + 1) ^ d := by rw [pow_succ']
+  -- e1 : s^{a+1}·x = t·m6 + 1  (leading even run + last odd step)
+  have e1 : (q + 1) ^ (a + 1) * x = (q ^ 2 + q + 1) * m6 + 1 := by
+    have h4 := hodd4; rw [heven1] at h4; rw [ha1]; linear_combination h4
+  -- e2 : s^{b+1}·m2 = t·x + 1
+  have e2 : (q + 1) ^ (b + 1) * m2 = (q ^ 2 + q + 1) * x + 1 := by
+    have h1 := hodd1; rw [heven2] at h1; rw [hb1]; linear_combination h1
+  -- e3 : s^{c+1}·m4 = t·m2 + 1
+  have e3 : (q + 1) ^ (c + 1) * m4 = (q ^ 2 + q + 1) * m2 + 1 := by
+    have h2 := hodd2; rw [heven3] at h2; rw [hc1]; linear_combination h2
+  -- e4 : s^{d+1}·m6 = t·m4 + 1
+  have e4 : (q + 1) ^ (d + 1) * m6 = (q ^ 2 + q + 1) * m4 + 1 := by
+    have h3 := hodd3; rw [heven4] at h3; rw [hd1]; linear_combination h3
+  -- Power-split helpers so `ring` can reconcile summed vs product exponents.
+  have hPA : (q + 1) ^ (a + b + c + d + 4)
+      = (q + 1) ^ (a + 1) * (q + 1) ^ (b + c + d + 3) := by rw [← pow_add]; congr 1; omega
+  have hPB : (q + 1) ^ (b + c + 2)
+      = (q + 1) ^ (b + 1) * (q + 1) ^ (c + 1) := by rw [← pow_add]; congr 1; omega
+  have hPC : (q + 1) ^ (b + c + d + 3)
+      = (q + 1) ^ (b + c + 2) * (q + 1) ^ (d + 1) := by rw [← pow_add]; congr 1; omega
+  linear_combination (q + 1) ^ (b + c + d + 3) * e1 + (q ^ 2 + q + 1) ^ 3 * e2
+    + (q ^ 2 + q + 1) ^ 2 * (q + 1) ^ (b + 1) * e3
+    + (q ^ 2 + q + 1) * (q + 1) ^ (b + c + 2) * e4
+    + x * hPA + (q ^ 2 + q + 1) ^ 2 * m4 * hPB + (q ^ 2 + q + 1) * m6 * hPC
+
+/-- **No four-odd-step cycle when the height obstruction fires.** Given the
+    explicit `q = 1` height gap
+    `27 + 9·2^{b+1} + 3·2^{b+c+2} + 2^{b+c+d+3} < 2^{a+b+c+d+4} − 81`, the forced
+    equation has no solution: the denominator `2^{a+b+c+d+4} − 81` cannot divide
+    the strictly-smaller positive numerator. Fires for the spread arrangements. -/
+theorem qcollatz_no_four_odd_cycle {R : Type*} [CommRing R] (φ : R →+* ℤ)
+    (q x : R) (hq : φ q = 1) (a b c d : ℕ)
+    (hcond : (27 : ℤ) + 9 * 2 ^ (b + 1) + 3 * 2 ^ (b + c + 2) + 2 ^ (b + c + d + 3)
+      < 2 ^ (a + b + c + d + 4) - 81)
+    (h : ((q + 1) ^ (a + b + c + d + 4) - (q ^ 2 + q + 1) ^ 4) * x
+      = (q ^ 2 + q + 1) ^ 3 + (q ^ 2 + q + 1) ^ 2 * (q + 1) ^ (b + 1)
+        + (q ^ 2 + q + 1) * (q + 1) ^ (b + c + 2) + (q + 1) ^ (b + c + d + 3)) : False := by
+  refine no_cycle_of_q_one_height φ _ x _ h ?_
+  intro hdvd
+  simp only [map_sub, map_pow, map_add, map_mul, map_one, hq] at hdvd
+  norm_num at hdvd
+  have hpos : (0 : ℤ) < 27 + 9 * 2 ^ (b + 1) + 3 * 2 ^ (b + c + 2) + 2 ^ (b + c + d + 3) := by
+    positivity
+  have hle := Int.le_of_dvd hpos hdvd
+  omega
+
+/-- **No four-odd-step cycle with leading even run `a ≥ 4`.** Unconditional: when
+    the leading run is `a ≥ 4` the denominator height `2^{a+b+c+d+4} − 81`
+    dominates (`2^{a+1} ≥ 32` times the top numerator term), so the height gap of
+    `qcollatz_no_four_odd_cycle` holds for every `b, c, d`. By rotation-invariance
+    this excludes every four-odd word possessing an even run of length `≥ 4` — the
+    generic spread regime for `k_odd = 4`. -/
+theorem qcollatz_no_four_odd_cycle_of_lead {R : Type*} [CommRing R] (φ : R →+* ℤ)
+    (q x : R) (hq : φ q = 1) (a b c d : ℕ) (ha : 4 ≤ a)
+    (h : ((q + 1) ^ (a + b + c + d + 4) - (q ^ 2 + q + 1) ^ 4) * x
+      = (q ^ 2 + q + 1) ^ 3 + (q ^ 2 + q + 1) ^ 2 * (q + 1) ^ (b + 1)
+        + (q ^ 2 + q + 1) * (q + 1) ^ (b + c + 2) + (q + 1) ^ (b + c + d + 3)) : False := by
+  refine qcollatz_no_four_odd_cycle φ q x hq a b c d ?_ h
+  have hsplit : (2 : ℤ) ^ (a + b + c + d + 4) = 2 ^ (a + 1) * 2 ^ (b + c + d + 3) := by
+    rw [← pow_add]; congr 1; omega
+  have h32 : (32 : ℤ) ≤ 2 ^ (a + 1) := by
+    calc (32 : ℤ) = 2 ^ 5 := by norm_num
+      _ ≤ 2 ^ (a + 1) := pow_le_pow_right₀ (by norm_num) (by omega)
+  have hM8 : (8 : ℤ) ≤ 2 ^ (b + c + d + 3) := by
+    calc (8 : ℤ) = 2 ^ 3 := by norm_num
+      _ ≤ 2 ^ (b + c + d + 3) := pow_le_pow_right₀ (by norm_num) (by omega)
+  have hB1 : (2 : ℤ) ^ (b + 1) ≤ 2 ^ (b + c + d + 3) :=
+    pow_le_pow_right₀ (by norm_num) (by omega)
+  have hBC : (2 : ℤ) ^ (b + c + 2) ≤ 2 ^ (b + c + d + 3) :=
+    pow_le_pow_right₀ (by norm_num) (by omega)
+  have hAM : (32 : ℤ) * 2 ^ (b + c + d + 3) ≤ 2 ^ (a + b + c + d + 4) := by
+    rw [hsplit]; exact mul_le_mul_of_nonneg_right h32 (by positivity)
+  omega
+
 end QOU.AppendixSurreals
