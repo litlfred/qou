@@ -156,7 +156,8 @@ class WhiteheadVolumeConjectureContext where
 /-- **Lower-envelope brick** (lower half of the E1 log-Σ≈max squeeze).  The
     inner sum dominates any single term `S_{n,k}`, so `log` of the sum is at
     least `log S_{n,k}` for the saddle index — this is the lower bound that,
-    at the saddle `k* ≈ 5N/6`-analogue, pushes the growth up to the volume. -/
+    at the saddle `k* ≈ N/4` (Whitehead `x* = k*/N = 1/4`), pushes the growth
+    up to the volume. -/
 theorem whiteheadS_le_innerSum {N n k : ℕ} (hN : 2 ≤ N) (hk : k < N - n) :
     whiteheadS N n k ≤ whiteheadInnerSum N n := by
   unfold whiteheadInnerSum

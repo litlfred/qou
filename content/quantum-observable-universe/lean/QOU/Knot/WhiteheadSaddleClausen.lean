@@ -127,8 +127,9 @@ theorem sin_two_mul_add_one_mul_pi_div_two (k : ℕ) :
     rw [hstep, Real.sin_add_pi, ih]
     ring
 
-/-- The even-shifted van der Veen index has vanishing sine:
-    `sin((2k+2)·(π/2)) = sin((k+1)π) = 0`. -/
+/-- The odd-indexed `Cl_2`-series term (series index `j = 2k+1`) has vanishing
+    sine: `sin(((2k+1)+1)·(π/2)) = sin((k+1)π) = 0`. These are the terms dropped
+    by the even/odd split in `catalanG_eq_clausen_pi_div_two`. -/
 theorem sin_odd_index_vanish (k : ℕ) :
     Real.sin (((2 * (k : ℝ) + 1) + 1) * (π / 2)) = 0 := by
   have h : ((2 * (k : ℝ) + 1) + 1) * (π / 2) = ((k + 1 : ℕ) : ℝ) * π := by
