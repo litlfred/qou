@@ -143,6 +143,30 @@ section UniversalProperty
 
 variable {A : Type*} [Ring A] [Algebra K A]
 
+/-- The free-algebra map `FreeAlgebra.lift K g` respects the Hecke
+    relations, provided the images `g i` satisfy them.  This is the
+    `RingQuot.liftAlgHom` side condition, extracted so both `lift` and
+    `lift_σ` can name it. -/
+theorem lift_respects (g : Fin n → A)
+    (hquad : ∀ i, g i * g i = (q - qi) • g i + (q * qi) • 1)
+    (hbraid : ∀ (i : Fin n) (hi : (i : ℕ) + 1 < n),
+      g i * g ⟨(i : ℕ) + 1, hi⟩ * g i
+        = g ⟨(i : ℕ) + 1, hi⟩ * g i * g ⟨(i : ℕ) + 1, hi⟩)
+    (hcomm : ∀ (i j : Fin n), (j : ℕ) + 2 ≤ (i : ℕ) → g i * g j = g j * g i) :
+    ∀ ⦃x y : FreeAlgebra K (Fin n)⦄, HeckeRel K q qi n x y →
+      FreeAlgebra.lift K g x = FreeAlgebra.lift K g y := by
+  intro x y h
+  induction h with
+  | quadratic i =>
+      simp only [map_mul, map_add, map_smul, map_one, FreeAlgebra.lift_ι_apply]
+      exact hquad i
+  | braid i hi =>
+      simp only [map_mul, FreeAlgebra.lift_ι_apply]
+      exact hbraid i hi
+  | commute i j hij =>
+      simp only [map_mul, FreeAlgebra.lift_ι_apply]
+      exact hcomm i j hij
+
 /-- **Universal property (existence).**  Given a family `g : Fin n → A`
     of images satisfying the three Hecke relations, there is an algebra
     map `H_n(q) →ₐ[K] A` sending each generator `σ_i` to `g i`. -/
@@ -153,18 +177,8 @@ noncomputable def lift (g : Fin n → A)
         = g ⟨(i : ℕ) + 1, hi⟩ * g i * g ⟨(i : ℕ) + 1, hi⟩)
     (hcomm : ∀ (i j : Fin n), (j : ℕ) + 2 ≤ (i : ℕ) → g i * g j = g j * g i) :
     Hecke K q qi n →ₐ[K] A :=
-  RingQuot.liftAlgHom K ⟨FreeAlgebra.lift K g, by
-    intro x y h
-    induction h with
-    | quadratic i =>
-        simp only [map_mul, map_add, map_smul, map_one, FreeAlgebra.lift_ι_apply]
-        exact hquad i
-    | braid i hi =>
-        simp only [map_mul, FreeAlgebra.lift_ι_apply]
-        exact hbraid i hi
-    | commute i j hij =>
-        simp only [map_mul, FreeAlgebra.lift_ι_apply]
-        exact hcomm i j hij⟩
+  RingQuot.liftAlgHom K ⟨FreeAlgebra.lift K g,
+    lift_respects K q qi n g hquad hbraid hcomm⟩
 
 /-- **Universal property (computation rule).**  `lift` sends `σ_i` to
     `g i`. -/
@@ -176,8 +190,10 @@ theorem lift_σ (g : Fin n → A)
         = g ⟨(i : ℕ) + 1, hi⟩ * g i * g ⟨(i : ℕ) + 1, hi⟩)
     (hcomm : ∀ (i j : Fin n), (j : ℕ) + 2 ≤ (i : ℕ) → g i * g j = g j * g i)
     (i : Fin n) :
-    lift K q qi n g hquad hbraid hcomm (σ K q qi n i) = g i := by
-  simp only [lift, σ, mk, RingQuot.liftAlgHom_mkAlgHom_apply, FreeAlgebra.lift_ι_apply]
+    lift K q qi n g hquad hbraid hcomm (σ K q qi n i) = g i :=
+  (RingQuot.liftAlgHom_mkAlgHom_apply K (FreeAlgebra.lift K g)
+      (lift_respects K q qi n g hquad hbraid hcomm) (ι K i)).trans
+    (FreeAlgebra.lift_ι_apply g i)
 
 /-- **Universal property (uniqueness).**  Two algebra maps out of
     `H_n(q)` that agree on every generator `σ_i` are equal.  Combined with
