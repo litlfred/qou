@@ -5,6 +5,23 @@
 > ("per-isotope Borromean-tower extension + operator-valued branching
 > combiner") that unlocks the 100× targets above the CAL-2 floor.
 
+> **🟩 Value/magnitude split (2026-08-02, PR #4590).** The per-partition
+> **VALUE** `Δ_λ = (-1)^{n(λ)}·dim V_λ` is now **PROVED** sorry-free,
+> general-n (`dtEuler_eq_deltaLambda_unconditional`, PR #4580) and wired to
+> `delta-lambda-witness.json` (value_only). The "six ansätze failed" story
+> below is about the **many-body MAGNITUDE** `r* ≈ 1.585`, *not* the value —
+> the ansätze failed trying to force the magnitude into a per-block Δ_λ, which
+> is structurally impossible (intensive→extensive). The pairwise log-det
+> extensive candidate is proved-**capped** `ρ_A ≤ C(A,2)` (< strong ρ_4≈13),
+> landing the missing term firmly at **super-pairwise**
+> (`QOU.MassTheory.exchangeDet_pow_two_le_four`). **New route this session**
+> (distinct from the trace/determinant magnitude attacks): the **Bloch-Wigner
+> torus-operator composition** angle — free torus knots (incl. charm T(2,7))
+> are Vol=0, but composed `b_i·β(T_{m,n})·b_j` closures hyperbolize and carry
+> Bloch-Wigner volume = binding; probe whether inter-nucleon closures supply
+> the `∝A` magnitude (bean `qou-uclw`). Full framing:
+> [`2026-08-02-deltalambda-value-proved-downstream-and-additive-term.md`](../audits/2026-08-02-deltalambda-value-proved-downstream-and-additive-term.md).
+
 ## Why this ledger exists
 
 Six prior Δ_λ ansätze failed (Frobenius co-Casimir, Demazure-fibre,

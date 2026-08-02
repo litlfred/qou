@@ -922,11 +922,24 @@ Authoritative reference: [`docs/precision-goals.md`](docs/precision-goals.md).
 
 **Δ_λ gate (Track A blocker).** The per-isotope binding-energy
 formula `B(K) = m_e · Σ_λ y_λ χ^λ Δ_λ` requires per-partition Δ_λ
-values, and six closure ansätze (Frobenius co-Casimir, Demazure-
+values. **The per-partition VALUE is now PROVED** (2026-08-02,
+sorry-free, general-n): `Δ_λ = (-1)^{n(λ)}·dim V_λ` (the signed
+Springer dimension; sign = jet-order valuation parity, magnitude =
+Wedderburn dimension) —
+`QOU.BraidsAndKnots.dtEuler_eq_deltaLambda_unconditional` (PR #4580),
+wired to `computations/delta-lambda-witness.json` (value_only). **What
+remains open is NOT the value — it is the many-body binding
+MAGNITUDE**: the six closure ansätze (Frobenius co-Casimir, Demazure-
 fibre, LP-Plancherel, LP-Frobenius, crystal-graph, augmented Markov)
-have all failed on the deuteron. **Do not propose a seventh fit-
-based ansatz** — the three-calibration discipline review will catch
-it.
+all failed on the deuteron because they tried to force the magnitude
+`r* ≈ 1.585` into a per-block Δ_λ, which is structurally impossible
+(no per-block weight converts an intensive quantity into an extensive
+one; the missing term is a separate, super-pairwise additive extensive
+object — pairwise cap `ρ_A ≤ C(A,2)` proved in
+`QOU.MassTheory.exchangeDet_pow_two_le_four`). **Do not propose a
+seventh fit-based ansatz for the MAGNITUDE** — the three-calibration
+discipline review will catch it. Full framing:
+[`docs/audits/2026-08-02-deltalambda-value-proved-downstream-and-additive-term.md`](docs/audits/2026-08-02-deltalambda-value-proved-downstream-and-additive-term.md).
 
 > **🟧 GENERAL owner reversal — the Δ_λ gate is OPEN FOR ALL (2026-07-13).**
 > The owner has lifted the *direction/scope* narrowing on the Δ_λ closure:
