@@ -1,12 +1,12 @@
 {
   "engine": "snappy",
   "engineVersion": "snappy 3.3.2",
-  "computedAt": "2026-08-02T18:34:18.461327+00:00",
-  "commitSha": "de056291d3099f6fac216974192f13af54a2944a",
+  "computedAt": "2026-08-02T18:34:56.323621+00:00",
+  "commitSha": "2f98a0b65d8a5b9a419efe804d75309654acb906",
   "computation": "jpsi-boundstate-mass",
   "scriptFile": "jpsi_boundstate_mass_probe.py",
   "scriptHash": "420886f4e96b",
-  "scriptCommitSha": null,
+  "scriptCommitSha": "2f98a0b65d8a5b9a419efe804d75309654acb906",
   "description": "J/ψ = c̄c as a hyperbolic bound-state braid volume. Scale fixed on the proton Borromean mass-knot only. Tests whether a DERIVED c̄c+gluon braid predicts the OBSERVABLE J/ψ (3096.9) / η_c (2983.9); reports entropy and the J/ψ↔η_c single-braid discriminator. Anti-fit (PR #1805).",
   "consumes": [
     "conj:complex-mass-constituent-functional",
@@ -79,15 +79,15 @@
     "best_braid_etac": {
       "strands": 5,
       "base": [
-        -1,
-        2,
-        -3,
-        4
+        1,
+        -2,
+        3,
+        -4
       ],
       "power": 3,
-      "mass_MeV": 2964.442667250194,
-      "err_pct": -0.6520772395122499,
-      "chern_simons": -5.736944659061857e-16
+      "mass_MeV": 2964.4426672501945,
+      "err_pct": -0.6520772395122347,
+      "chern_simons": 8.324194211187791e-16
     },
     "same_braid_for_both": false
   },
