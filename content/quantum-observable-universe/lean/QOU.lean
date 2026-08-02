@@ -587,6 +587,10 @@ import QOU.MassTheory.BrunnianDeficitLeadingOrderDerived
 -- is surjective onto (0,∞) in its one free scalar m ⇒ WALL(scope-(a)); naive z scope-(b)
 -- excluded. Formalize-first, 0-fit, sorry-free.
 import QOU.MassTheory.A4InterfaceMagnitude
+-- q-Reeb eigenphase route is compact (qou-0g4z): the sole |χ/d|>1 block per binding
+-- knot is the trivial 1-dim rep (a q^w scaling, no rotation angle); every dim≥2
+-- rotation channel is compact. scope-(a): eigenphases cannot supply C_knot. Sorry-free.
+import QOU.MassTheory.QReebEigenphaseCompact
 import QOU.BraidKnot.ColoredJonesRecurrence
 import QOU.BraidKnot.KnotOperatorRecurrence
 -- Resurgent-bridge tranche (Δ_λ sign/magnitude → DT/3d-index unification):
