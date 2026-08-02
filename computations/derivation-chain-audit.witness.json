@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-02T08:26:59.314224+00:00",
-  "commitSha": "0a6084bcc26efa5f0329bf080d3f4138c6b55643",
+  "computedAt": "2026-08-02T08:44:10.067354+00:00",
+  "commitSha": "19dc8cede85aab9f157cce1412a488b02637f411",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -2100,6 +2100,7 @@
         "alphaem-dilog-bloch-probe.witness.json",
         "ame-2020-binding-energies.witness.json",
         "ame-registry-routing-triage.witness.json",
+        "aomega-qzero-dt-count.witness.json",
         "applied-uniqueness-mass-table.witness.json",
         "atom-braid-active-partitions.witness.json",
         "atom-chi-rust-3he.witness.json",
