@@ -47,3 +47,37 @@ arXiv:2402.01890.
   Kazhdan–Lusztig SDP, arXiv:2604.18894) is NOT beaned: that arXiv id is
   unverified and Gemini could not name its authors — treat as likely
   fabricated until confirmed.
+
+## ASSESSMENT (2026-08-02) — Gemini's coarse Option-B claim REFUTED; only the hard route survives
+Read the real paper (uploads/2402.01890v4.pdf, Ormeño Bastías–Martin–Ryom-Hansen).
+
+**What the paper actually proves (Thm 2 + abstract):**
+- SP_k = idempotent (trivial-rep) subalgebra of the partition algebra P_k.
+- **rk_{C[x]} SP_k = bp_k = #{bipartite partitions of k}** = OEIS **A002774**
+  = (1, 2, 9, 31, 109, 339, …).
+- For t=n∈ℕ: SP_k(n) decomposes the **k-th symmetric power** of the CS_n
+  defining module; the paper gives decomposition numbers + projectives/tiltings
+  (quasi-hereditary for all t≠0).
+
+**Refutation of Gemini's specific claim (ν_SDP = dim SP_k = #bipartite):**
+- dim SP_k ∈ {2, 9, 31, 109, …} — **never** the multiplicity {1,2}.
+- QOU atoms use H_{3A}: deuteron A=2 → k∼6, tritium A=3 → k∼9, where dim SP_k is
+  in the **hundreds** (65–300 by the Σp(j)p(k−j) count; A002774 is larger still).
+- So ν_SDP is NOT the dimension of the spherical partition algebra. Gemini's
+  Option-B *as stated* is FALSE (a coarse category error: whole-algebra dim vs a
+  single-block multiplicity).
+
+**What survives (the hard route, NOT refuted):**
+- ν_SDP is a single **decomposition number / block multiplicity**, and the
+  paper's real content — the Sym^k(CS_n-defining-module) permutation
+  decomposition + SP_k(t) decomposition numbers — IS where small integers 1,2
+  live. So the only viable Option-B is: identify ν_SDP(atom) with a SPECIFIC
+  SP_k(n) decomposition number, via the (still unproven) bimodule iso
+  QOU-saturating-Wedderburn-block ↔ SP_k(n) indecomposable. That map is
+  unestablished; the paper gives the target multiplicities but not the bridge.
+
+**Verdict:** Option A (1-loop torsion, bean qou-r307) REFUTED; Option B's easy
+dimensional form REFUTED; only Option-B-hard (specific-multiplicity via bimodule
+iso) and the direct SDP route (bean qou-vd7j) remain for deriving ν_SDP. No route
+currently DERIVES ν_SDP∈{1,2} — the conj:kashaev-density-equals-sdp-multiplicity
+stays honestly open (single Lean sorry). No fit wired.
