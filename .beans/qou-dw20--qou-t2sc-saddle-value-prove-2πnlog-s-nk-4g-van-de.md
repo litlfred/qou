@@ -16,3 +16,14 @@ updated_at: 2026-08-01T23:55:12Z
 - Lean discharge = Riemann-sum→integral convergence at nseq→N/2, kseq→N/4,
   value 4G, via QOU.Knot.Clausen (FigureEightVolumeSaddle analogue). Needs the
   QOU-library build to verify (no longer Mathlib-only).
+
+## Lean discharge UNBLOCKED + started (2026-08-01)
+QOU/Knot/WhiteheadSaddleClausen.lean (imports QOU.Knot.Clausen; verified via
+lean-direct against built QOU oleans):
+- integral_log_two_sin_pi(b): ∫_0^b log(2 sin(π u))du = -clausen(2πb)/(2π) — SORRY-FREE.
+- Full value-identity + convergence roadmap documented in-file (all Clausen
+  ingredients confirmed present).
+Remaining (tractable, next focused pass): (A) prove V=4·clausen(π/2) [log2
+cancels → integral_log_two_sin_pi at 1/2,1/4,3/4 + clausen(π)=0 +
+clausen(3π/2)=−clausen(π/2)]; (B) Riemann-sum convergence [integral_le_sum_log_sin
+/_falling, FigureEightVolumeSaddle E5c pattern]. (A)+(B) ⇒ hsaddle ⇒ unconditional VC.
