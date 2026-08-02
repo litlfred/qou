@@ -134,7 +134,27 @@ if __name__ == "__main__":
     print(f"    derived  = {mp.nstr(csig, 20)}")
     print(f"    2^(-3/4) = {mp.nstr(csig_target, 20)}   (match ~{dig_cs} digits)")
 
-    ok = dig41 >= 12 and digW >= 12 and dig_cs >= 12
+    # --- 3-cusp cross-check: Borromean rings L6a4 (corpus: W1 probe, PR #4238) ---
+    # |det J_NZ(L6a4)| = 64 is ALREADY in the corpus
+    # (computations/probes/borromean_nz_adjoint_torsion.py, 2026-07-25); this
+    # reproduces it independently and tests the per-cusp factor at c=3.
+    tauB, detB, zB = one_loop_torsion('L6a4')
+    ncB = snappy.Manifold('L6a4').num_cusps()
+    tauB_target = mp.mpf(64)                             # 2^6
+    digB = int(-mp.log10(abs(tauB - tauB_target) / tauB_target)) if tauB > 0 else 999
+    # unified relation  exp(2 c0) = 2^{c-1}/|det J|  =>  c0 = (1/2) log(2^{c-1}/|det|)
+    c0B_pred = mp.log(mp.power(2, ncB - 1) / tauB) / 2
+    c0B_measured = mp.mpf("-1.3828105122579213")         # W1 Jones-side, NMAX=56 (borromean-jones-1loop-torsion.witness.json)
+    csigB = mp.power(2, (ncB - 1) / mp.mpf(2)) * tauB ** (mp.mpf(-1) / 2)
+    print(f"\n  CROSS-CHECK  L6a4 (Borromean, c={ncB}) — corpus |det|=64 (W1/#4238):")
+    print(f"    |tau| = {mp.nstr(tauB, 18)}  (target 2^6=64; ~{digB} digits)")
+    print(f"    c_sigma = 2^((c-1)/2)|tau|^-1/2 = {mp.nstr(csigB, 12)} (= 1/4)")
+    print(f"    c0 predicted (unified law) = {mp.nstr(c0B_pred, 8)}")
+    print(f"    c0 measured  (W1 Jones)    = {mp.nstr(c0B_measured, 8)}"
+          f"   -> {mp.nstr(abs(c0B_pred-c0B_measured)/abs(c0B_measured)*100, 3)}% "
+          f"(fit err; W1 p=1.4993 vs 3/2)")
+
+    ok = dig41 >= 12 and digW >= 12 and dig_cs >= 12 and digB >= 12
     print("\n  VERDICT:", "DERIVATION COMPLETE — |tau(L5a1)| = 4sqrt(2) = 2^5/2 from NZ"
           " data (independent of c_sigma); c_sigma = 2^-3/4 follows via the 2-cusp"
           " sqrt(2) factor." if ok else
@@ -151,12 +171,20 @@ if __name__ == "__main__":
                             "tau_abs": mp.nstr(tauW, 25),
                             "target_2_pow_5_2": mp.nstr(target, 25),
                             "match_digits": digW},
-        "c_sigma_relation": "c_sigma = 2^{(c-1)/2} * |tau_meridian|^{-1/2}",
+        "c_sigma_relation": "c_sigma = 2^{(c-1)/2} * |tau_meridian|^{-1/2}   <=>   exp(2 c0) = 2^{c-1}/|det J_NZ|",
         "c_sigma_derived": mp.nstr(csig, 25),
         "c_sigma_target_2_pow_minus_3_4": mp.nstr(csig_target, 25),
         "c_sigma_match_digits": dig_cs,
+        "borromean_L6a4_crosscheck": {
+            "num_cusps": ncB, "tau_abs": mp.nstr(tauB, 25), "target_2_pow_6": "64",
+            "match_digits": digB,
+            "corpus_source": "computations/probes/borromean_nz_adjoint_torsion.py (W1, PR #4238, 2026-07-25) already has |det|=64; reproduced here independently",
+            "c_sigma_derived": mp.nstr(csigB, 20),
+            "c0_predicted_unified_law": mp.nstr(c0B_pred, 15),
+            "c0_measured_W1_jones": "-1.3828105122579213",
+            "note": "c=3 confirms the per-cusp factor: predicted c0=-1/2 ln16=-1.3863 vs W1 Jones-side -1.3828 (~0.25%, within the NMAX=56 fit error; W1 p=1.4993 vs 3/2)."},
         "corrects_prior_inference": "qou-k00d/PR#4571 recorded tau=2sqrt(2) (naive knot template); independent 1-loop gives tau=4sqrt(2)=2^{5/2}; resolved by the 2-cusp sqrt(2) normalization.",
-        "cusp_factor_caveat": "2^{(c-1)/2} pinned on the two cases c=1 (4_1) and c=2 (L5a1); general-c form matches the standard per-cusp Gaussian factor but is a smaller open sub-item.",
+        "cusp_factor_status": "2^{(c-1)/2} now supported on THREE cases: c=1 (4_1, exact), c=2 (L5a1, 20-digit c_sigma), c=3 (L6a4, ~0.25% vs W1 Borromean c0). Unifies the repo W1 knot relation exp(2c0)=1/|det| to exp(2c0)=2^{c-1}/|det|. General-c proof (per-cusp Gaussian factor) is a smaller open sub-item.",
         "derivation_complete": bool(ok),
         "reference": "Dimofte-Garoufalidis, Geom. Topol. 17 (2013) 1253; Porti adjoint torsion",
         "timestamp": datetime.now(timezone.utc).isoformat(timespec="seconds"),
