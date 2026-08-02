@@ -51,7 +51,7 @@ binding deficit is reproduced. -/
 theorem degenerate_vol_kills_handle {vK rK h cK : R}
     (hVol : vK = 0) (hCk : cK ≠ 0) : cK ≠ vK * rK / h := by
   rw [hVol]
-  simpa using fun hcontra => hCk (by simpa using hcontra)
+  simpa using hCk
 
 /-- **C_knot mirror ratio exceeds 1** (T more bound). Master-formula μ_ext values (PR #4556). -/
 theorem cknot_ratio_gt_one : (4.444147 : ℝ) / 3.291800 > 1 := by norm_num
