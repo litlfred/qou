@@ -308,6 +308,10 @@ import QOU.BraidsAndKnots.PachnerPentagonBorromean
 -- Δ_λ ℓ¹-ceiling: sign-only fixes structurally excluded (Option-E prune, PR #2925).
 -- Triangle bound on the per-block binding closure; sorry-free, generic base ring.
 import QOU.BraidsAndKnots.DeltaLambdaL1Ceiling
+-- Δ_λ = DT-count of Springer 𝓑_λ: the target UNDER-DETERMINES the moduli
+-- (dimension forced only mod 2) — sharpens the open substrate-derivation crux
+-- (bean qou-ylot); sorry-free, base ring ℤ.
+import QOU.BraidsAndKnots.DeltaLambdaDTModuliUnderdetermined
 -- Borromean brane-tower convergence: the TRUE Li₂^q radius bound (|tr_M(β_Bor)|<1
 -- ⇒ pair traces < q ∀q>1); sorry-free, over ℚ. Wired so CI type-checks it.
 import QOU.BraidsAndKnots.BorromeanTowerConvergence
