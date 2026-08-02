@@ -112,10 +112,11 @@ def PartitionOf5.singleCoeffs (p : PartitionOf5) : List ℕ :=
   List.replicate p.nStat 0 ++ [p.dim]
 
 /-- **The full fake-degree object `H_λ`.**  Graded dimensions `= coefficients of
-    the fake-degree polynomial `f_λ(q) = q^{n(λ)}·[5]_q! / ∏_{cell} [h]_q`` (the
+    the fake-degree polynomial `f_λ(q) = q^{n(λ)}·[5]_q! / ∏_{cell} [h]_q` (the
     graded dimension of the `λ`-isotypic component of the `S_5`-coinvariant
     algebra = graded `H^*(𝓑_λ)`).  Position `i` is the coefficient of `q^i`.
-    Computed from hook-length data (verified: `f_λ(1) = dim V_λ`, below). -/
+    Hard-coded table (n=5) whose shape matches that polynomial; separately
+    verified `f_λ(1) = dim V_λ` by `fakeTotalDim_eq_dim`, below. -/
 def PartitionOf5.fakeCoeffs : PartitionOf5 → List ℕ
   | .five         => [1]                              -- f = 1                    (q^0)
   | .fourOne      => [0, 1, 1, 1, 1]                  -- f = q[4]_q               (q^1..q^4)

@@ -43,7 +43,7 @@ that top-degree projection?**
   characters. **Every ingredient factors through `⊕_λ End(V_λ)`.**
 - **`Springer` / `fake degree` / `coinvariant` in the corpus.** No Springer-fibre
   *construction* from the drivers; `Behrend` / `nilpotent orbit` introduced only
-  by the unlanded #4553/#4559. The fake-degree ceiling is flagged as
+  by #4553 (now merged) / the then-unlanded #4559. The fake-degree ceiling is flagged as
   convention-dependent hidden DOF (`docs/coordination/option-e.md`, 2026-06-28) —
   corroborating that the ungraded algebraic data does not pin a distinguished
   graded realization.
