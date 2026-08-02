@@ -47,6 +47,8 @@ Discipline: audit-only; scope-(a); NO fit (shapes/gluing are topological
 inputs; the torsion is computed, not tuned); nothing wired; L2 unchanged.
 
 -- Ref: [manuscript] docs/audits/2026-07-25-borromean-jones-asymptotics-volume-and-1loop.md
+
+THEOREM BACKING (2026-08-02, bean qou-pvuw): the 1-loop conjecture used below is now a THEOREM for both calibration cases — 4_1 is 2-bridge (Garoufalidis-Yoon arXiv:2411.03801 Thm 1.1, [garoufalidis-yoon-2024], uploads/2411.03801v2.pdf) and the Borromean rings are a fundamental shadow link (Pandey-Wong arXiv:2308.06643, [pandey-wong-2023]). Wording below kept for history; readings of exp(2c0) = 1/|det J_NZ| are theorem-backed.
 """
 from __future__ import annotations
 
@@ -201,6 +203,7 @@ def main() -> int:
         "computedAt": datetime.now(timezone.utc).isoformat(), "commitSha": commit,
         "scriptFile": "computations/probes/borromean_nz_adjoint_torsion.py",
         "scriptHash": hashlib.sha256(src.encode()).hexdigest()[:12], "scriptCommitSha": commit,
+        "theorem_backing": "GY 2411.03801 Thm 1.1 (4_1, 2-bridge) + PW 2308.06643 (Borromean, fundamental shadow link) — 1-loop = adjoint torsion proved for both cases",
         "description": "Independent Neumann–Zagier adjoint-torsion determinant for the "
                        "Borromean rings (L6a4) and figure-eight (4₁), from SnapPy gluing "
                        "data + exact algebraic shapes. Validates exp(2c₀)=1/|det| on 4₁ "

@@ -1,11 +1,12 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-25T16:27:58.752406+00:00",
-  "commitSha": "262e7866fac744f6095fd90ce23b26a2d10520be",
+  "computedAt": "2026-08-02T14:23:36.638163+00:00",
+  "commitSha": "be78d44608ea5ecf335f0fd79d50385f1863ae1f",
   "scriptFile": "computations/probes/borromean_jones_1loop_torsion.py",
-  "scriptHash": "821fbf3c41a2",
-  "scriptCommitSha": "262e7866fac744f6095fd90ce23b26a2d10520be",
+  "scriptHash": "476d2e2ec551",
+  "scriptCommitSha": "be78d44608ea5ecf335f0fd79d50385f1863ae1f",
+  "theorem_backing": "GY 2411.03801 Thm 1.1 (4_1, 2-bridge) + PW 2308.06643 (Borromean, fundamental shadow link) \u2014 1-loop = adjoint torsion proved for both cases",
   "description": "Subleading (power-of-N + 1-loop constant c\u2080) extraction from the Borromean colored-Jones Kashaev asymptotics, Vol fixed = 8G. The next honest bridge data below the volume. Audit-only; no fit; nothing wired.",
   "auditOnly": true,
   "parameters": {
