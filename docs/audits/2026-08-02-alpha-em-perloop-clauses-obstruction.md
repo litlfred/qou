@@ -73,10 +73,35 @@ CODATA). With that, m_K/m_π degrades from ~47 ppb (experimental α_em) to **~36
 precision is α_em-anchored, not parameter-free) **survives**; the magnitude was
 overstated and is now corrected in that audit + bean qou-5ipv.
 
+## Correction (2026-08-02, on further exploration): the wall is the LIFT, not the mismatch
+
+Reading the actual corpus bricks (B5 assembly `alpha_em_b5_assembly_probe.py` +
+`PerLoopMeasureShadowAssembly.lean`) shows the "holo channel-swap vs anti-holo Hodge"
+obstruction (`alpha_em_tau_correspondence_probe.py`, and Agent C's headline) is a
+**superseded exploratory framing**. The corpus's *actual* B2 pairs the **reality
+structure ρ (q↦q̄, anti-holo) ↔ Hodge conjugation (anti-holo)** — type-consistent — and
+brick **B1 (#3955)** already established the full type-consistent dictionary:
+`bar ↔ −τ` (holo↔holo), `channel-swap/transpose ↔ ½−τ` (holo↔holo),
+`ρ ↔ −τ̄ = Hodge` (anti-holo↔anti-holo). The channel-swap was never supposed to *be*
+Hodge conjugation; ρ is. The exploration's mis-pairing suspicion was correct, and the
+corpus is already past it.
+
+**The real remaining wall** (bean qou-tq20 / milestone qou-b5qg) is narrower and
+concrete: the **existence of the functorial lift** — that the categorical τ-functor
+actually carries ρ to Hodge conjugation on the *full* H¹(Bring) (dim 8), with one loop's
+mode space landing on a conjugate pair H^{1,0}⊕H^{0,1}. The **shadow** of this (the
+degenerate locus at q=i, over Gaussian integers) is Lean-proved sorry-free
+(`shadow_assembly`, `rho_forced_equal_split`, `channel_share_is_half`); the lift from the
+discrete shadow to the continuous Hodge structure is **Mathlib-gated Hodge theory** +
+the categorical→archimedean q↔period dictionary. That dictionary is the framework's
+foundational open bridge — genuinely hard, not a fit, and not a single-session close.
+
 ## Net
 
 Option C is the session's one partial-positive: **Clause B's channel count = 2 is a
-genuine derivation** (the real dim-2 Hecke split, not the false "2"), and Clause A's
-a₀ = 1/4π is real spectral geometry. Both are gated on a **single, precisely-localized,
-genuinely-open** obstruction — the holomorphic-vs-anti-holomorphic τ-lift — which no fit
-can close. That is the honest state: not blocked-and-hopeless, not closed; one named wall.
+genuine derivation** (the real dim-2 Hecke split, not the false "2"), Clause A's a₀ = 1/4π
+is real spectral geometry, and the ½ is reality-forced (Lean-proved shadow). The one open
+wall is **not** an analytic-type mismatch (resolved by B1) but the **functorial-lift
+existence** — a concrete Hodge-theory + τ-dictionary target. Follow-up
+(`2026-08-02-hodge-lift-bring-h1-model.md`): build the explicit H¹(Bring) Hodge model to
+reduce the lift to its minimal open core.
