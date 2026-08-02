@@ -1,0 +1,59 @@
+{
+  "description": "q-Reeb eigenphase compactness: sole |chi/d|>1 block per binding knot is the trivial 1-dim rep; all dim>=2 rotation blocks compact. Eigenphase route cannot supply C_knot (scope-a). bean qou-0g4z.",
+  "free_parameters": 0,
+  "reads_B_AME": false,
+  "knots": {
+    "D": {
+      "boost": [
+        {
+          "partition": [
+            6
+          ],
+          "dim": 1,
+          "abs_chi_over_dim": 1.5598702809528044
+        }
+      ],
+      "rotation_max": 0.8498805821125343,
+      "rotation_max_partition": [
+        3,
+        3
+      ],
+      "n_blocks": 11
+    },
+    "T": {
+      "boost": [
+        {
+          "partition": [
+            9
+          ],
+          "dim": 1,
+          "abs_chi_over_dim": 1.5769142886813894
+        }
+      ],
+      "rotation_max": 0.46759341135917454,
+      "rotation_max_partition": [
+        8,
+        1
+      ],
+      "n_blocks": 30
+    },
+    "3He": {
+      "boost": [
+        {
+          "partition": [
+            9
+          ],
+          "dim": 1,
+          "abs_chi_over_dim": 2.393682279653677
+        }
+      ],
+      "rotation_max": 0.8210543894700758,
+      "rotation_max_partition": [
+        8,
+        1
+      ],
+      "n_blocks": 30
+    }
+  },
+  "verdict": "eigenphase-route-compact-cannot-supply-absolute-scale"
+}
