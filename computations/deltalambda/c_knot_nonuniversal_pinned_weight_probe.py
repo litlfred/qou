@@ -260,6 +260,31 @@ def main() -> int:
             "err_pct": mp.nstr((Bpred - B) / B * 100, 4),
         }
 
+    # Framing / writhe test (0-fit): does the omitted Jones/HOMFLY framing factor q₀^{c·w(K)} account
+    # for C_knot? Writhe w(K) = (#σ − #σ⁻¹) of the canonical word (averaged interface crossings are
+    # writhe-neutral). If framing closes it, c = ln(C_knot)/(w·ln q₀) is CONSTANT across isotopes.
+    framing = {}
+    try:
+        from canonical_braid_crossings import atom_canonical_crossings  # noqa: E402
+        zn = {"D": (1, 1), "T": (1, 2), "3He": (2, 1), "4He": (2, 2)}
+        lnq = mp.log(q0)
+        for name in per:
+            Z, N = zn[name]
+            cr = atom_canonical_crossings(Z, N, include_inter=True)
+            npos = sum(1 for _g, t in cr if t == "sigma")
+            nneg = sum(1 for _g, t in cr if t == "sigma_inv")
+            w = npos - nneg
+            C = mpf(per[name]["C_knot"])
+            c = (mp.log(C) / (w * lnq)) if w != 0 else mpf("nan")
+            framing[name] = {"writhe": w, "n_sigma": npos, "n_sigma_inv": nneg,
+                             "C_knot": per[name]["C_knot"], "framing_c": mp.nstr(c, 6)}
+        # D & T share writhe 4; ³He & ⁴He share writhe 8 — yet C_knot differs in BOTH pairs.
+        wD, wT = framing["D"]["writhe"], framing["T"]["writhe"]
+        framing_excluded = bool(wD == wT and mpf(per["D"]["C_knot"]) != mpf(per["T"]["C_knot"]))
+    except Exception as e:  # canonical_braid_crossings unavailable — record, do not fake
+        framing = {"error": f"writhe test skipped: {e}"}
+        framing_excluded = None
+
     single_factor_refuted = bool(spread > mpf("1.2"))
     level_only_excluded = bool(same_n and mirror_ratio > mpf("1.1"))
 
@@ -307,6 +332,17 @@ def main() -> int:
                 "note": "same H₉ ⇒ any g(n,q₀) closure would force C_knot(T)=C_knot(³He); they differ 35%.",
             },
             "dim_convention_scan": dim_rows,
+            "framing_writhe_test": {
+                "per_isotope": framing,
+                "framing_excluded": framing_excluded,
+                "note": "Writhe w(K)=#σ−#σ⁻¹ of the canonical word (averaged interface crossings "
+                        "writhe-neutral): w(D)=w(T)=4, w(³He)=w(⁴He)=8. The omitted Jones/HOMFLY "
+                        "framing factor q₀^{c·w} would need constant c to close C_knot, but c varies "
+                        "3× (4.23/3.57/1.43/2.67) and — decisively — D&T (same writhe 4) and ³He&⁴He "
+                        "(same writhe 8) have DIFFERENT C_knot, so no writhe-only factor closes it. "
+                        "The q₀^17≈5.85 numerology is a coincidence (w(D)=4 needs c=4.23, not a clean "
+                        "framing exponent, and the same c fails T). Framing RULED OUT (scope-b).",
+            },
             "deuteron_pinned_scale_prediction": {
                 "alpha_MeV": mp.nstr(alpha, 6),
                 "alpha_over_m_e": mp.nstr(alpha / m_e, 6),

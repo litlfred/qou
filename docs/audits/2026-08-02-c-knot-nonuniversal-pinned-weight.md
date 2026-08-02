@@ -125,10 +125,22 @@ constraint on the residual:
   chirality-cancellation floor — consistent with §2(c). Data check: `Σ f^λ = 76`, `Σ sgn·f^λ = 16 = 2⁴`,
   `Σ (f^λ)² = 720 = 6!`.
 
+- **Framing / writhe ruled out (parallel hypothesis, tested here).** The Markov trace is a *framed*-
+  link invariant; the ambient Jones/HOMFLY invariant differs by a writhe-dependent framing factor
+  `~ q₀^{c·w}`, which the master formula omits — a legitimate *word-specific* (not scale) deficit
+  candidate. Writhe `w(K) = #σ − #σ⁻¹` of the canonical word (averaged interface crossings are
+  writhe-neutral): **`w(D) = 11−7 = 4 = 16−12 = w(T)`** and **`w(³He) = 18−10 = 8 = 23−15 = w(⁴He)`**.
+  But `C_knot` differs in BOTH equal-writhe pairs (D 5.85 vs T 4.44; ³He 3.29 vs ⁴He 9.31), and the
+  required exponent `c = ln C_knot/(w·ln q₀) ∈ {4.23, 3.57, 1.43, 2.67}` varies 3×. So **no writhe-only
+  framing factor closes the deficit** (Lean `no_writhe_only_framing`, sorry-free). The `q₀^17 ≈ 5.85`
+  numerology is a coincidence — `w(D)=4` needs a non-framing `c≈4.23`, and that same `c` fails `T`
+  (flagged and ruled out per the parallel note's own anti-numerology caveat).
+
 **Net across all checks:** the binding **weight** (`y_λ`, Markov — #4543), the **dimension** (`f^λ`),
-any **single scale** (this doc §2c/§3), and any **simple known invariant** (parallel) are ALL ruled
-out. The 2.83× cross-isotope residual (and the 5.85× deuteron deficit) is irreducibly **per-knot Δ_λ
-magnitude**, sitting in the χ^λ-magnitude / word content, with a hard chirality-cancellation floor.
+any **single scale** (this doc §2c/§3), any **simple known invariant** (parallel), and any
+**writhe/framing factor** (parallel) are ALL ruled out. The 2.83× cross-isotope residual (and the
+5.85× deuteron deficit) is irreducibly **per-knot Δ_λ magnitude**, sitting in the χ^λ-magnitude / word
+content, with a hard chirality-cancellation floor.
 
 ## 5. Verdict + what stays open
 
