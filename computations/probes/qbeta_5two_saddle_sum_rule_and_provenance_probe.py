@@ -69,6 +69,37 @@ The residual ~1e-4 remains OPEN. It is now bounded, though: a 4-digit
 evaluation error in a correct formula, not a different formula, a
 different object, or a different knot.
 
+Proof status — PARTIAL, not closed
+----------------------------------
+(SUM) is verified to 80 dps but **not proved**. Progress toward a proof,
+recorded so the next attempt starts here rather than from scratch:
+
+*The branch data is explicit.* The cubic is `y² = (1−y)³`, so
+`2 log yⱼ − 3 log(1−yⱼ) = 2πi·εⱼ` with `ε = (+1, −1, 0)` — exact at all
+three roots (principal branch). The `π²` in (SUM) comes from precisely
+this discrepancy.
+
+*One exact relation follows.* Summing the reflection identity
+`Li₂(y) + Li₂(1−y) = π²/6 − log y·log(1−y)` over the three roots and
+substituting the branch data gives, with `Σεⱼ log yⱼ = 2i·arg(y₁)`:
+
+    Σ Li₂(yⱼ) + Σ Li₂(1−yⱼ)
+        = π²/2 − (2/3)·Σ(log yⱼ)² − (4π/3)·arg(y₁)
+
+verified to machine precision.
+
+*Why it does not close.* That is one equation in the two unknowns
+`A = Σ Li₂(yⱼ)` and `B = Σ Li₂(1−yⱼ)`; numerically `A = 0.9717306815`,
+`B = 0.3514640301`, with no evident closed form for either separately
+(`B/A = 0.36169`, `B−A = −0.62027`). A second independent relation is
+needed.
+
+*Identified route.* The Kubert/distribution relation
+`Li₂(zⁿ) = n·Σ_{k<n} Li₂(ζₙᵏ z)` applied to `Li₂(y²) = Li₂((1−y)³)`
+supplies one, at the cost of introducing cube-root-of-unity arguments
+`ω(1−y)`. That is the Bloch-group computation the reduction points at,
+and it is left OPEN.
+
 Consequence for use
 -------------------
 (REL)/(SUM) give `V₃` from `V₁` in closed form, so `V₃` never needs to be
@@ -295,6 +326,20 @@ def main() -> int:
         "open": "a Bloch-group or five-term-relation proof over the 5_2 trace "
                 "field. Numerical verification at 80 dps is strong evidence, "
                 "not a proof.",
+        "branch_data": "2 log y_j - 3 log(1-y_j) = 2 pi i eps_j with "
+                       "eps = (+1,-1,0), exact at all three roots; this is "
+                       "where the pi^2 in the sum rule comes from",
+        "derived_relation": "summing the reflection identity over the roots "
+                            "gives A + B = pi^2/2 - (2/3) sum (log y_j)^2 - "
+                            "(4 pi/3) arg(y1), verified exactly, where "
+                            "A = sum Li2(y_j), B = sum Li2(1-y_j)",
+        "why_not_closed": "one equation, two unknowns (A = 0.9717306815, "
+                          "B = 0.3514640301, no evident closed form for "
+                          "either separately)",
+        "identified_route": "Kubert/distribution relation Li2(z^n) = "
+                            "n sum_k Li2(zeta_n^k z) applied to "
+                            "Li2(y^2) = Li2((1-y)^3), which supplies a second "
+                            "relation at the cost of omega*(1-y) arguments",
     })
     w.add_data("verdict", verdict)
     w.save()
