@@ -105,6 +105,7 @@ import QOU.MassTheory.A3PrecisionOrderSeparation
 import QOU.MassTheory.A4PrecisionOrderSeparation
 import QOU.MassTheory.A3UnitsConsistency
 import QOU.MassTheory.BindingWeightMarkovPinning
+import QOU.MassTheory.CKnotNonUniversal
 import QOU.Mass.MassVolDensity
 import QOU.Mass.MixedMultibondMuBarIntegrality
 import QOU.Mass.BindingRecurrenceSpectral
