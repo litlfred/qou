@@ -281,8 +281,18 @@ declined on 2026-05-08:
 > By extension, q_0 (CAL-2) substrate-derivation is also declined.
 
 Subgoal-2 was **out of scope** unless and until the ledger decision is
-reverted by the repo owner. **That reversal has now happened — see the
-2026-07-11 general reversal below.**
+reverted by the repo owner. That reversal happened on 2026-07-11 (general
+reversal below) — **but the q₀-derivation item was then PERMANENTLY
+RE-GATED by the owner on 2026-08-02:**
+
+> **🛑 OWNER RULING 2026-08-02 — substrate-q₀ derivation is FOREVER GATED
+> (bean `qou-eic1`).** No agent may pursue deriving `q₀` from the substrate,
+> in any form, ever — a **permanent** gate, **not** a decline awaiting
+> reversal. It **supersedes the 2026-07-11 "open for all" reversal for the
+> q₀-derivation item ONLY.** `Δ_λ` magnitude, per-isotope binding, absolute
+> `m_p / m_n / m_⁴He` via any **non-q₀** route, and the s5-so3 keystone
+> remain open for all. A route that goes through "derive `q₀`" is
+> **forbidden — stop it.**
 
 > **Narrow owner reversal (2026-06-19, recorded 2026-06-22; PRs
 > [#2503](https://github.com/litlfred/qou/pull/2503) /
@@ -297,9 +307,12 @@ reverted by the repo owner. **That reversal has now happened — see the
 > **🟧 GENERAL owner reversal — Subgoal-2 open for all (2026-07-11).** The owner
 > reversed the 2026-05-08 decline **generally**: the geometric / substrate-
 > derivation routes to the Subgoal-2 targets (absolute m_p / m_n / m_⁴He;
-> substrate-derivation of q_0; the per-isotope binding `M_n(K)` edge-set /
+> ~~substrate-derivation of q_0~~ **[🛑 FOREVER GATED 2026-08-02 —
+> q₀-derivation is permanently excluded; see the ruling above]**; the
+> per-isotope binding `M_n(K)` edge-set /
 > coordination-graph closure; the s5-so3 keystone) are now **in scope for all
-> agents** — no longer owner-gated, no per-item sign-off required. The
+> agents** — no longer owner-gated, no per-item sign-off required (**except
+> q₀-derivation, which is permanently gated**). The
 > [step-9 binding-closure ledger](coordination/2026-06-05-step9-binding-closure.md)
 > and [`s5-so3-keystone.md`](coordination/s5-so3-keystone.md) carry the working
 > threads. Context: the qou-v0yw binding-weight closure (the M₃/M₄ weights of
