@@ -3,7 +3,7 @@
 Phase A v2 of Test 1 from PR #1127 — Apollonius parametrization.
 
 CAL-2 (|m_μ/m_e|) constrains q to an APOLLONIUS CIRCLE in ℂ:
-  Vol(4_1) · |q|² / |q-1|² = 206.7682830
+  Vol(4_1) · |q|² / |q-1|² = 206.7682830  # noqa: P31 — docstring; Apollonius-circle target statement
   =>  |q-1| / |q| = √(Vol_4_1 / cal2_target)
 
 The Apollonius locus {q : |q-1|/|q| = k} for 0 < k ≠ 1 is a circle
@@ -53,7 +53,7 @@ def main() -> int:
     radius = k / mp.fabs(one_minus_k_sq)
 
     print("=== Apollonius circle from CAL-2 ===")
-    print(f"  k² = Vol(4_1) / 206.7682830  = {float(k_sq):.10f}")
+    print(f"  k² = Vol(4_1) / 206.7682830  = {float(k_sq):.10f}")  # noqa: P31 — descriptive print of CAL-2 target in Apollonius diagnostic
     print(f"  k  = |q-1| / |q|             = {float(k):.10f}")
     print(f"  Circle center (real axis)    = {float(center):.10f}")
     print(f"  Circle radius                = {float(radius):.10f}")

@@ -43,7 +43,7 @@ METHOD (exact, per compute-author §1/§3):
      constants in q₀-units; and the T-vs-³He mirror decomposition of the
      −1.40 outlier.
 
-Scale note: the MeV multiplier is Q_β(n) = m_n − m_p − m_e ≈ 0.78233 MeV
+Scale note: the MeV multiplier is Q_β(n) = m_n − m_p − m_e ≈ 0.78233 MeV  # noqa: P31 — docstring; Q_beta scale note (experimental_constants.Q_NEUTRON_MEV)
 (experimental_constants.Q_NEUTRON_MEV), exactly as in binding_canonical.py
 (whose docstring records that this parameter was historically misnamed
 E_0; the 10A−5 residual of the 2026-06-09 audit is defined on this scale).

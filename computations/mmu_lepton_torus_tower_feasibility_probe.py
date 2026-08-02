@@ -62,7 +62,7 @@ from codata_constants import M_MU_MEV_VALIDATION  # noqa: E402 (codata sweep)
 # CODATA 2022 anchors (comparison targets only; never fit inputs)
 M_E_MEV = "0.51099895069"        # CAL-1 anchor, q_0-independent
 M_MU_MEV = str(M_MU_MEV_VALIDATION)  # comparison target only (codata_constants registry)
-M_MU_OVER_M_E = "206.7682830"    # CODATA ratio (comparison only)
+M_MU_OVER_M_E = "206.7682830"    # CODATA ratio (comparison only)  # noqa: P31 — comparison-only ratio string (= experimental_constants.MU_OVER_E)
 
 
 def vol_4_1(dps: int) -> "mp.mpf":

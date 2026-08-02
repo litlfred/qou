@@ -11,7 +11,7 @@ The Phase-5q closed form (computations/closed_form_tau_M.py) is exact:
     ⇒ ln tr_M = Z·ln tr_p + N·ln tr_n + Σ_i ln f_i        (exact)
 
 so the trace-canonical binding defect (binding_canonical.py conventions;
-the MeV multiplier is Q_β(n) ≈ 0.78233 MeV — historically misnamed E_0
+the MeV multiplier is Q_β(n) ≈ 0.78233 MeV — historically misnamed E_0  # noqa: P31 — docstring; Q_beta scale note
 there, see its docstring; both traces are real-positive at q₀ so the
 signed difference equals the |·| form)
 

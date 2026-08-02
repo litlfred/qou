@@ -55,7 +55,7 @@ def _energy_scales():
     try:
         from codata_constants import M_E_MEV as me
     except Exception:
-        me = 0.51099895
+        me = 0.51099895  # noqa: P31 — except-fallback; primary path imports codata_constants.M_E_MEV
     me, q0, Qb = float(me), float(q0), float(Qb)
     return me, Qb, me / (q0 * (q0 - 1.0))
 

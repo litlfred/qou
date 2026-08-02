@@ -56,9 +56,9 @@ At q_0 = 1.1099785955573347... (50 dps, m_p-pinned re-pin #1422):
                                           round-trip, not a prediction)
   m_μ_pred  = 105.65840 MeV   vs CODATA 105.65838  →  +0.21 ppm   (9.5σ
                                           PREDICTION — the μ-p tension)
-  m_n_pred  = 939.56542 MeV   vs CODATA 939.56542  →  +1.0 ppb   (n→p+e+ν̄
+  m_n_pred  = 939.56542 MeV   vs CODATA 939.56542  →  +1.0 ppb   (n→p+e+ν̄  # noqa: P31 — docstring; prediction-vs-CODATA table
                                           chain; Kashiwara b² Q_β, near-match)
-  Q_β_pred  = 0.78233 MeV     vs CODATA 0.78233    →  +1.25 ppm on Q_β
+  Q_β_pred  = 0.78233 MeV     vs CODATA 0.78233    →  +1.25 ppm on Q_β  # noqa: P31 — docstring; prediction-vs-CODATA table
                                           (only ~+1 ppb on m_n; gated on s5bb)
 
 Class-A acknowledged-anchor banner (per Workplan-0b): m_e, m_μ are
