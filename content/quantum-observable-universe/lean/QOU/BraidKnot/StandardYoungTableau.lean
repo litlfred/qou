@@ -58,16 +58,45 @@ structure StandardYoungTableau (μ : YoungDiagram) where
   /-- Entries strictly increase down each column. -/
   col_strict : ∀ i j, (i + 1, j) ∈ μ → entry i j < entry (i + 1) j
 
+namespace StandardYoungTableau
+
+variable {μ : YoungDiagram}
+
+/-- Encode a standard tableau by its entries on the cells of `μ`: each on-cell entry lies in
+`Fin μ.card` (by `lt_card`), and `zero_off` pins the off-cell entries to `0`, so a tableau is
+fully determined by this finite data. This injection into a finite function type witnesses
+finiteness of `StandardYoungTableau μ`. -/
+def encode (T : StandardYoungTableau μ) : {c : ℕ × ℕ // c ∈ μ.cells} → Fin μ.card :=
+  fun c => ⟨T.entry c.1.1 c.1.2, T.lt_card c.1.1 c.1.2 ((YoungDiagram.mem_cells c.1).mp c.2)⟩
+
+theorem encode_injective : Function.Injective (encode : StandardYoungTableau μ → _) := by
+  intro T1 T2 h
+  ext i j
+  by_cases hij : (i, j) ∈ μ
+  · have hc : ((i, j) : ℕ × ℕ) ∈ μ.cells := (YoungDiagram.mem_cells (i, j)).mpr hij
+    have := congrArg Fin.val (congrFun h ⟨(i, j), hc⟩)
+    simpa [encode] using this
+  · rw [T1.zero_off i j hij, T2.zero_off i j hij]
+
+/-- `StandardYoungTableau μ` is **finite**: an SYT is determined by its finitely many on-cell
+entries (`encode` is injective into `{c // c ∈ μ.cells} → Fin μ.card`). This makes `numSYT`
+below (a `Nat.card`) a genuine count, rather than the `0` fallback that `Nat.card` returns on
+an infinite type. -/
+instance instFinite : Finite (StandardYoungTableau μ) :=
+  Finite.of_injective _ encode_injective
+
+end StandardYoungTableau
+
 /-- `numSYT μ = #SYT(μ)`, the number of standard Young tableaux of shape `μ`.
 This is the dimension `f^μ = dim V_μ` of the irreducible `S_{|μ|}`-representation
 indexed by `μ` (program brick 1 / phase P2). Well-defined because
 `StandardYoungTableau μ` is finite (the `zero_off` normalisation pins entries off
 the diagram, so an SYT is determined by its finitely many on-cell values).
-Noncomputable: it counts an unbundled structure via `Nat.card`.
+Noncomputable: it counts an unbundled structure via `Nat.card`, which is a genuine count
+here because `StandardYoungTableau.instFinite` (above) proves the type finite.
 
-Open brick-1 targets (next session, build-capable env): a `Finite`/`Fintype`
-instance for `StandardYoungTableau`, the base case `numSYT ⊥ = 1`, and the FRT
-identity `numSYT_mul_hookProduct` below. -/
+Remaining brick-1 target: the FRT identity `numSYT_mul_hookProduct` below. (The `Finite`
+instance and the base case `numSYT ⊥ = 1` — `numSYT_bot` — are proved.) -/
 noncomputable def numSYT (μ : YoungDiagram) : ℕ := Nat.card (StandardYoungTableau μ)
 
 /-- Base case: the empty diagram has a single standard tableau (the empty filling),
@@ -98,9 +127,20 @@ def hookLength (μ : YoungDiagram) (i j : ℕ) : ℕ :=
     + (μ.cells.filter (fun c => c.2 = j ∧ i < c.1)).card
     + 1
 
+/-- Every hook length is positive: besides its arm and leg it counts the cell itself (`+ 1`). -/
+theorem hookLength_pos (μ : YoungDiagram) (i j : ℕ) : 0 < hookLength μ i j := by
+  unfold hookLength; omega
+
 /-- The **hook-length product** `∏_{c ∈ μ} h(c)` appearing in the FRT formula. -/
 def hookProduct (μ : YoungDiagram) : ℕ :=
   ∏ c ∈ μ.cells, hookLength μ c.1 c.2
+
+/-- The hook-length product is positive (a product of positive hook lengths). This makes the
+FRT formula's division form `f^μ = |μ|! / ∏ h_c` well-posed and is what the multiplicative
+statement `numSYT_mul_hookProduct` will be divided through by. -/
+theorem hookProduct_pos (μ : YoungDiagram) : 0 < hookProduct μ :=
+  Finset.prod_induction _ (0 < ·) (fun _ _ ha hb => Nat.mul_pos ha hb) Nat.one_pos
+    (fun c _ => hookLength_pos μ c.1 c.2)
 
 /-- **Frame–Robinson–Thrall hook-length formula** (the brick-1 target):
 `#SYT(μ) · ∏_{c ∈ μ} h(c) = |μ|!`, i.e. `f^μ = |μ|! / ∏ h(c)`. Stated here as the
