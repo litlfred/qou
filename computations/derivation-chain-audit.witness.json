@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-01T22:22:40.534065+00:00",
-  "commitSha": "15b5d4cd297c5ef6436664a22423b72e4856c3d5",
+  "computedAt": "2026-08-02T08:26:59.314224+00:00",
+  "commitSha": "0a6084bcc26efa5f0329bf080d3f4138c6b55643",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -559,11 +559,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 5,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "ff40fb7a9d7d",
-  "scriptCommitSha": "9add2860efc9ab57f17bb21141c6152ea66fe689",
+  "scriptCommitSha": "c912f7fd94c86868590559cd73a15b36cbe847ef",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -2043,6 +2043,7 @@
         "a-K-via-lp-dual-full.witness.json",
         "a-K-via-lp-dual-hecke-basis.witness.json",
         "a-K-via-lp-dual.witness.json",
+        "a3-magnitude-berezinian-crossterm.witness.json",
         "a3-mirror-residual-reconciliation.witness.json",
         "a5-so3-branching.witness.json",
         "ab-methodology-metrics.witness.json",
