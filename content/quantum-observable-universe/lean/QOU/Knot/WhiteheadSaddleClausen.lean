@@ -308,6 +308,84 @@ theorem gridPrim_tendsto (Kseq : ℕ → ℕ) (θ : ℝ)
   rw [zero_add] at hsum
   exact hsum.congr (fun N => by ring)
 
+/-- Grid-point limit helper: integer bounds `a·N − c ≤ b·Kseq ≤ a·N` (b>0) give
+    `2·Kseq·(π/N) → 2(a/b)π`.  (The figure-eight (b) squeeze, parameterized.) -/
+theorem gridpt_tendsto {a b c : ℕ} (hb : 0 < b) (Kseq : ℕ → ℕ)
+    (hlo : ∀ N, a * N ≤ b * Kseq N + c) (hhi : ∀ N, b * Kseq N ≤ a * N) :
+    Filter.Tendsto (fun N : ℕ => 2 * ((Kseq N : ℝ) * (π / N)))
+      Filter.atTop (nhds (2 * ((a : ℝ) / (b : ℝ)) * π)) := by
+  have hb' : (0 : ℝ) < b := by exact_mod_cast hb
+  -- prove the b-scaled version → 2aπ (no /b), then divide
+  have hscaled : Filter.Tendsto (fun N : ℕ => (b : ℝ) * (2 * ((Kseq N : ℝ) * (π / N))))
+      Filter.atTop (nhds (2 * (a : ℝ) * π)) := by
+    have hlow : Filter.Tendsto (fun N : ℕ => 2 * (a : ℝ) * π - 2 * (c : ℝ) * (π / N))
+        Filter.atTop (nhds (2 * (a : ℝ) * π)) := by
+      have h0 : Filter.Tendsto (fun N : ℕ => 2 * (c : ℝ) * (π / N)) Filter.atTop (nhds 0) := by
+        have h : Filter.Tendsto (fun N : ℕ => 2 * (c : ℝ) * π / N) Filter.atTop (nhds 0) :=
+          tendsto_const_div_atTop_nhds_zero_nat _
+        simpa [mul_div_assoc] using h
+      have h1 := (tendsto_const_nhds (x := 2 * (a : ℝ) * π)).sub h0
+      simpa using h1
+    refine tendsto_of_tendsto_of_tendsto_of_le_of_le' hlow tendsto_const_nhds ?_ ?_
+    · filter_upwards [Filter.eventually_gt_atTop 0] with N hN0
+      have hNpos : (0 : ℝ) < N := by exact_mod_cast hN0
+      have hh : (0 : ℝ) < π / N := by positivity
+      have hfield : (N : ℝ) * (π / N) = π := by field_simp
+      have e : (a : ℝ) * N * (π / N) = a * π := by rw [mul_assoc, hfield]
+      have hlo' : (a : ℝ) * N ≤ (b : ℝ) * Kseq N + c := by exact_mod_cast hlo N
+      nlinarith [mul_le_mul_of_nonneg_right hlo' (le_of_lt hh), e]
+    · filter_upwards [Filter.eventually_gt_atTop 0] with N hN0
+      have hNpos : (0 : ℝ) < N := by exact_mod_cast hN0
+      have hh : (0 : ℝ) < π / N := by positivity
+      have hfield : (N : ℝ) * (π / N) = π := by field_simp
+      have e : (a : ℝ) * N * (π / N) = a * π := by rw [mul_assoc, hfield]
+      have hhi' : (b : ℝ) * Kseq N ≤ (a : ℝ) * N := by exact_mod_cast hhi N
+      nlinarith [mul_le_mul_of_nonneg_right hhi' (le_of_lt hh), e]
+  have hfin := hscaled.div_const (b : ℝ)
+  have htgt : 2 * (a : ℝ) * π / (b : ℝ) = 2 * ((a : ℝ) / (b : ℝ)) * π := by ring
+  rw [htgt] at hfin
+  exact Filter.Tendsto.congr (fun N => by field_simp) hfin
+
+/-- **Explicit saddle-term convergence (BRICK 3).**  At the saddle
+    `(n*, k*) = (⌊N/2⌋, ⌊N/4⌋)`, `(2π/N)·log S_{n*,k*} → 4·catalanG = 4G`. -/
+theorem whiteheadS_explicit_saddle_tendsto :
+    Filter.Tendsto
+      (fun N : ℕ => (2 * π / N) * Real.log (QOU.Knot.WhiteheadVC.whiteheadS N (N / 2) (N / 4)))
+      Filter.atTop (nhds (4 * QOU.Knot.WhiteheadVC.catalanG)) := by
+  have hkn := gridPrim_tendsto (fun N => N / 4 + N / 2) (3 * π / 2)
+    (Filter.eventually_atTop.2 ⟨4, fun N hN => by simp only []; omega⟩)
+    (Filter.eventually_atTop.2 ⟨4, fun N hN => by simp only []; omega⟩)
+    (by
+      have h := gridpt_tendsto (a := 3) (b := 4) (c := 5) (by norm_num) (fun N => N / 4 + N / 2)
+        (fun N => by simp only []; omega) (fun N => by simp only []; omega)
+      have heq : 2 * (((3 : ℕ) : ℝ) / ((4 : ℕ) : ℝ)) * π = 3 * π / 2 := by push_cast; ring
+      rwa [heq] at h)
+  have hk := gridPrim_tendsto (fun N => N / 4) (π / 2)
+    (Filter.eventually_atTop.2 ⟨4, fun N hN => by simp only []; omega⟩)
+    (Filter.eventually_atTop.2 ⟨1, fun N hN => by simp only []; omega⟩)
+    (by
+      have h := gridpt_tendsto (a := 1) (b := 4) (c := 3) (by norm_num) (fun N => N / 4)
+        (fun N => by simp only []; omega) (fun N => by simp only []; omega)
+      have heq : 2 * (((1 : ℕ) : ℝ) / ((4 : ℕ) : ℝ)) * π = π / 2 := by push_cast; ring
+      rwa [heq] at h)
+  have hn := gridPrim_tendsto (fun N => N / 2) π
+    (Filter.eventually_atTop.2 ⟨2, fun N hN => by simp only []; omega⟩)
+    (Filter.eventually_atTop.2 ⟨1, fun N hN => by simp only []; omega⟩)
+    (by
+      have h := gridpt_tendsto (a := 1) (b := 2) (c := 1) (by norm_num) (fun N => N / 2)
+        (fun N => by simp only []; omega) (fun N => by simp only []; omega)
+      have heq : 2 * (((1 : ℕ) : ℝ) / ((2 : ℕ) : ℝ)) * π = π := by push_cast; ring
+      rwa [heq] at h)
+  have hrhs := ((hkn.const_mul 4).sub (hk.const_mul 4)).sub (hn.const_mul 2)
+  have hval : (4 : ℝ) * (-QOU.Knot.clausen (3 * π / 2) / 2)
+        - 4 * (-QOU.Knot.clausen (π / 2) / 2) - 2 * (-QOU.Knot.clausen π / 2)
+      = 4 * QOU.Knot.WhiteheadVC.catalanG := by
+    rw [clausen_three_pi_div_two, QOU.Knot.clausen_pi, catalanG_eq_clausen_pi_div_two]; ring
+  rw [hval] at hrhs
+  refine Filter.Tendsto.congr' ?_ hrhs
+  filter_upwards [Filter.eventually_ge_atTop 4] with N hN4
+  exact (two_pi_log_whiteheadS_eq (by omega) (by omega)).symm
+
 /-
   ROADMAP — remaining bricks to discharge `hsaddle` (all ingredients verified
   present in `QOU.Knot.Clausen`; algebra confirmed to 40 digits in
