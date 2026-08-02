@@ -25,3 +25,18 @@ Long term: connect the flavor action, if it exists, to the Bring/icosahedral sid
 - There is also already a baryon-label precursor table: `predicted-spectra/linking-relations-table-table3-data.md` lists `p,n,\Lambda,\Sigma^\pm,\Xi^0,\Xi^-,\Omega^-` as Borromean `(u,d,s)` triples. But this is NOT yet an Eightfold-Way derivation: it mixes octet and decuplet content (`\Omega^-` is decuplet) and omits the full weight-multiplet organization (e.g. `\Sigma^0`, meson octet, decuplet structure).
 
 - Gap list after corpus grep: no relevant `meson octet`, `baryon octet`, `decuplet`, or `weight diagram` layer is present in the content tree, and the existing baryon-label table does not yet include a `\Sigma^0` row. So the corpus currently has state labels and one q=1 SU(3) anchor, but not the Eightfold-Way multiplet geometry itself.
+
+## Owner re-ask (2026-08-02): "missing 8-fold way. categorical?"
+
+Yes — the tracked route IS categorical, and it is this bean. The
+Eightfold Way should fall out of the **q=1 corner of the existing
+Schur–Weyl / Wedderburn shell picture** (Elliott SU(3), bean `1ict`):
+mutual centralizers on $(\mathbb{C}^3)^{\otimes n}$ give the flavor
+SU(3) multiplets categorically, with the octet/decuplet split being the
+Wedderburn block decomposition of $(u,d,s)$ Borromean triples. The one
+missing categorical piece is the **weight-multiplet geometry** (octet vs
+decuplet organisation, the $\Sigma^0$ row, meson octet) — NOT the SU(3)
+representation theory, which is already anchored at q=1. Owner's
+"icosahedral embedding on Bring's surface" hint is the geometric handle:
+the $A_5\cong$ icosahedral / Bring-Jacobian $E^4$ structure is where the
+flavor weight lattice should sit. Session: `qou-ywj9`.
