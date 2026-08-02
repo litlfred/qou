@@ -185,6 +185,38 @@ theorem catalanG_eq_clausen_pi_div_two :
   rw [QOU.Knot.clausen_eq_series (θ := π / 2) ⟨by linarith, by linarith⟩,
       hCl, ← hcombine, hevensum, hoddsum, add_zero]
 
+/-! ### Convergence bricks (qou-1gkf) — discharge `hsaddle` = the saddle-term limit. -/
+
+/-- Grid Clausen-primitive `S'(N,K) = (π/N)·Σ_{j=1}^K log(2 sin(jπ/N))` — the
+    object `QOU.Knot.abs_deviation_le` bounds by `−clausen(2Kπ/N)/2`. -/
+noncomputable def gridPrim (N K : ℕ) : ℝ :=
+  (π / N) * ∑ j ∈ Finset.Icc 1 K, Real.log (2 * Real.sin ((j : ℝ) * (π / N)))
+
+/-- **Reindex/telescope brick.** The shifted grid sum equals a gridPrim
+    difference: `(π/N)·Σ_{j=1}^n log(2 sin((k+j)π/N)) = S'(k+n) − S'(k)`. -/
+theorem gridPrim_shift {N n k : ℕ} :
+    (π / N) * ∑ j ∈ Finset.Icc 1 n,
+        Real.log (2 * Real.sin (((k : ℝ) + (j : ℝ)) * (π / N)))
+      = gridPrim N (k + n) - gridPrim N k := by
+  set g : ℕ → ℝ := fun m => Real.log (2 * Real.sin ((m : ℝ) * (π / N))) with hg
+  -- reindex m = k + j
+  have hreindex : ∑ j ∈ Finset.Icc 1 n,
+        Real.log (2 * Real.sin (((k : ℝ) + (j : ℝ)) * (π / N)))
+      = ∑ m ∈ Finset.Icc (k + 1) (k + n), g m := by
+    rw [← Finset.map_add_left_Icc 1 n k, Finset.sum_map]
+    refine Finset.sum_congr rfl (fun j _ => ?_)
+    simp only [addLeftEmbedding_apply, hg]
+    push_cast; ring_nf
+  -- telescope Icc (k+1) (k+n) = Icc 1 (k+n) \ Icc 1 k
+  have htel : ∑ m ∈ Finset.Icc (k + 1) (k + n), g m
+      = (∑ m ∈ Finset.Icc 1 (k + n), g m) - (∑ m ∈ Finset.Icc 1 k, g m) := by
+    rw [eq_sub_iff_add_eq, add_comm,
+        ← Nat.Ico_succ_right 1 k, ← Nat.Ico_succ_right (k + 1) (k + n),
+        ← Nat.Ico_succ_right 1 (k + n)]
+    exact Finset.sum_Ico_consecutive g (by omega) (by omega)
+  rw [hreindex, htel, mul_sub]
+  simp only [gridPrim, hg]
+
 /-
   ROADMAP — remaining bricks to discharge `hsaddle` (all ingredients verified
   present in `QOU.Knot.Clausen`; algebra confirmed to 40 digits in
