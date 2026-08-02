@@ -32,8 +32,7 @@ open knots.
 | #4565 | generation bridge | general Fibonacci-poly harmonic law + honest quark-H₃ negative | — |
 | #4564 | SU(3) | Hecke-centralizer obstruction on regular H₃ (dim 6<8 exclusion), sorry-free | — |
 
-Active (running): `claude/jpsi-boundstate-mass-2026-08-02` — J/ψ = c̄c observable
-bound-state braid volume (the `qou-jsx5` lattice-extraction instance).
+| #4608 | J/ψ observable | **mechanism-applicable + sharpened negative:** the J/ψ scale IS in-range (Vol≈24 hyperbolic braids → ≈3097 MeV) — distinguishes J/ψ (applicable) from ν (scope-(b) excluded). But NO derived braid: the canonical meson flux-tube operation is undefined (bean `qou-qpj9`); J/ψ vs η_c want different-topology braids (per-state-fit signature); dense spectrum (entropy). | — |
 
 ## Scorecard (honest)
 
@@ -50,8 +49,13 @@ bound-state braid volume (the `qou-jsx5` lattice-extraction instance).
 
 ## Open fronts (beans / follow-ups)
 
-1. **J/ψ / charmed-hadron observable spectrum** (running) — derive observable
-   bound-state masses; extract m_c downstream. The right target.
+1. **Canonical meson flux-tube operation** (bean `qou-qpj9`, #4608) — the J/ψ
+   attack confirmed the observable is *in mechanism range* but is blocked on a
+   *derived* c̄c-binding braid. Next honest step: derive the meson flux-tube
+   operation from the proton's 3-tube Borromean vertex via a Y-junction →
+   single-tube reduction; if that fixes a unique braid a priori, check it once
+   against J/ψ + η_c jointly. This is the real gate for the whole charmed-hadron
+   observable spectrum.
 2. **Generation physical bridge** — the *counting* (3 = odd primes in the
    Bring-genus window N(χ=−6)=9, {3,5,7}; 9 harmonic) is clean given the
    identifications; the *physical bridge* (why prime-winding = a fermion
