@@ -30,7 +30,12 @@ These are **fit residuals of the experimental model**, not derived error bounds:
 
 **Keystone status (2026-07-20).** The $q$-lift of the proved classical depth-2 kernel exists exactly on the $[n]_q!$-normalized carrier ($c(q) = 1$, probe-verified; Lean brick in progress) and is distinct from the GGM eq-49 carrier up to scalar gauge — identification open.
 
-**Scope (open gate, not a closure).** The $\Delta_\lambda(K)$ closure — the Track A gate — remains **open** (AGENTS.md §"Δ_λ gate"; six ansätze have failed). This module is an **experimental / phenomenological** generating-function model: the depth-2 `CKRecursion` reproduces the multi-body binding hierarchy from a small set of seed constants ($r_{\mathrm{res}} \approx 2.596$, $a_0 = 1/2$, the isospin anomaly shift $\approx +1.4947\,m_e$) that are **calibrated, not derived** from the 13 categorical drivers. It is a structural fit, **not** a parameter-free derivation — the `status: "experimental"` and `open-gate` labels on this block's manifest are authoritative.
+**Scope (value proved; magnitude gate open, not a closure).** The per-partition
+$\Delta_\lambda$ **value** is proved ($\Delta_\lambda = (-1)^{n(\lambda)}\dim V_\lambda$,
+sorry-free general-$n$, `dtEuler_eq_deltaLambda_unconditional`); what remains **open** is
+the many-body binding **magnitude** — the Track A gate (AGENTS.md §"Δ_λ gate"; six ansätze
+failed on the deuteron *magnitude* $r^\ast \approx 1.585$, which no per-block $\Delta_\lambda$
+can supply). This module is an **experimental / phenomenological** generating-function model for that magnitude: the depth-2 `CKRecursion` reproduces the multi-body binding hierarchy from a small set of seed constants ($r_{\mathrm{res}} \approx 2.596$, $a_0 = 1/2$, the isospin anomaly shift $\approx +1.4947\,m_e$) that are **calibrated, not derived** from the 13 categorical drivers. It is a structural fit, **not** a parameter-free derivation — the `status: "experimental"` label on this block's manifest is authoritative.
 
 ### Python API entry point
 

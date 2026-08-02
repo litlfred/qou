@@ -1,3 +1,5 @@
+> **Currency (2026-08-02):** the per-partition Δ_λ **VALUE** is now PROVED sorry-free (general-n, `dtEuler_eq_deltaLambda_unconditional`); this doc concerns the still-open many-body **magnitude**. See `docs/audits/2026-08-02-deltalambda-value-proved-downstream-and-additive-term.md`. [VALUE proved 2026-08-02]
+
 # Owner ruling: the Δ_λ gate is opened for all agents
 
 **Date:** 2026-07-13 · **Branch:** `claude/delta-lambda-gate-open-for-all-2026-07-13` ·

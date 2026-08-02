@@ -240,14 +240,22 @@ giving σ_rel(B) of order 0.04–0.45 ppm. **100× targets here are in the
 0.35–4.5 ppb range — within reach post-Borromean-tower per-isotope extension.**
 
 > **⚠ Δ_λ gate.** The per-isotope binding-energy formula is
-> `B(K) = m_e · Σ_λ y_λ χ^λ Δ_λ(K)`. The Δ_λ values are *not yet
-> derived* — six closure ansätze (Frobenius co-Casimir, Demazure-fibre,
-> LP-Plancherel, LP-Frobenius, crystal-graph, augmented Markov) have all
-> failed on the deuteron. See
-> [`docs/audits/2026-05-18-delta-lambda-gating-context.md`](audits/2026-05-18-delta-lambda-gating-context.md)
-> for the full closure-attempt history. **L2 binding-energy targets are
-> presently unreachable** — not because of compute precision, but
-> because the structural Δ_λ derivation is open R&D (GAP-A-3 / GAP-A-4).
+> `B(K) = m_e · Σ_λ y_λ χ^λ Δ_λ(K)`. The per-partition **VALUE is now
+> PROVED** (2026-08-02, sorry-free, general-n): `Δ_λ = (-1)^{n(λ)}·dim V_λ`
+> (`QOU.BraidsAndKnots.dtEuler_eq_deltaLambda_unconditional`, wired to
+> `computations/delta-lambda-witness.json`). **What is still open is the
+> many-body MAGNITUDE** — six closure ansätze (Frobenius co-Casimir,
+> Demazure-fibre, LP-Plancherel, LP-Frobenius, crystal-graph, augmented
+> Markov) failed on the deuteron because they tried to force the magnitude
+> `r* ≈ 1.585` into a per-block Δ_λ, which is structurally impossible (the
+> missing term is a separate super-pairwise extensive object; pairwise cap
+> `ρ_A ≤ C(A,2)` proved, `QOU.MassTheory.exchangeDet_pow_two_le_four`). See
+> [`docs/audits/2026-08-02-deltalambda-value-proved-downstream-and-additive-term.md`](audits/2026-08-02-deltalambda-value-proved-downstream-and-additive-term.md)
+> and the closure-attempt history in
+> [`docs/audits/2026-05-18-delta-lambda-gating-context.md`](audits/2026-05-18-delta-lambda-gating-context.md).
+> **L2 binding-energy targets remain presently unreachable** — not because
+> of compute precision, and no longer because of the per-partition value,
+> but because the super-pairwise extensive **magnitude** term is open R&D.
 
 | Atom | B_AME (MeV) | σ_B / B | 100× target |
 |---|---:|---:|---:|
