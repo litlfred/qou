@@ -68,6 +68,45 @@ anywhere in the corpus** (heavy-flavour composites are open, per
 composite braid, (ii) compute its complex volume, (iii) project onto the charm
 block.* All three open; step (ii) additionally needs compute infra.
 
+## Steps (i)–(iii) executed with SnapPy — parameter-free negative (+ a coincidence, stated as such)
+
+SnapPy installed successfully (`pip install snappy_manifolds snappy`), unblocking
+composite-braid volume computation. `computations/charm_composite_volume_probe.py`,
+witness `charm-composite-volume.witness.json`.
+
+**Construction (parameter-free):** proton = Borromean baryon = closure of
+$(\sigma_1\sigma_2^{-1})^3$ (Vol $=2V_{\rm oct}=7.3277$, 3 components). Generation
+windings $n=3,5,7$ ⇒ the natural non-tuned family is $(\sigma_1\sigma_2^{-1})^n$.
+
+| $n$ | Vol | components | mass ratio comparison |
+|---|---|---|---|
+| 3 (proton) | 7.3277 | **3** (3-quark link) | — |
+| 5 (charm) | 17.0857 | **1** (KNOT) | Vol(5)/Vol(3) = 2.332 vs $\Lambda_c/p$ = 2.437 (**−4.3%**) |
+| 7 (bottom) | 26.0544 | **1** (KNOT) | Vol(7)/Vol(3) = 3.556 vs $\Lambda_b/p$ = 5.989 (**−40.6%**) |
+| 9 | 34.6759 | 3 | — |
+
+**The 4% charm near-coincidence is DISQUALIFIED, not a result:**
+1. **Wrong topology.** $(\sigma_1\sigma_2^{-1})^5$ is a **knot** (1 component), not a
+   3-quark (3-component) baryon — the permutation $(123)^5=(132)$ is a 3-cycle. A
+   charmed baryon must keep 3 components.
+2. **Next point fails.** Bottom ($n=7$, also a knot) misses by ~40%. A 4% hit on
+   one point with a 40% miss on the next is a coincidence, not a pattern.
+3. **Non-canonical law.** The comparison assumes mass $\propto$ Vol (constant
+   density), which is *not* the canonical absolute-mass law (muon-anchored Hecke
+   energy).
+
+**Topologically-correct 3-component candidates** (Borromean + one-strand winding,
+permutation kept trivial): ratios 1.34, 1.43, 1.51, 2.17 — none hits the charm
+ratio 2.437, and closing the gap by adding twists is a **tuned twist count = fit**.
+
+**Verdict (scope-(a)):** no parameter-free composite-braid volume reproduces the
+charmed-baryon mass ratio; the single near-coincidence is topologically
+disqualified and non-repeating. **$m_c$ stays OPEN.** What changed materially:
+**SnapPy is now available**, so principled follow-ups (variable-density law,
+the Frobenius charm-block *projection* rather than the raw baryon volume, complex
+volume $=$ Vol $+ i\,$CS with the CS part) are now computable — this negative
+rules out only the crudest "mass $\propto$ raw composite volume" reading.
+
 ## Beans (env has no beans CLI — recorded here)
 
 - **GAP (charm-mass step 1):** derive the two-gluon demand profile for gg→cc̄ in the skein-operator basis `{γ,σ₀,σ₁,L₊,L₋,e⁻}`, then run `solve_psd_operator_selection_sdp` to test whether it selects the `n=5` channel.

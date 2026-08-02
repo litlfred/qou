@@ -1,0 +1,57 @@
+{
+  "schema": "witness/v1-informal",
+  "description": "charm_composite_volume_probe: SnapPy complex-volume test of composite charmed-baryon braids vs heavy-baryon masses.",
+  "producer": "computations/charm_composite_volume_probe.py",
+  "consumes": [
+    "conj:complex-mass-constituent-functional"
+  ],
+  "inputs": {
+    "proton_MeV": 938.272,
+    "Lambda_c_MeV": 2286.46,
+    "Lambda_b_MeV": 5619.6
+  },
+  "results": {
+    "uniform_power_family": {
+      "3": {
+        "vol": 7.327724753417753,
+        "components": 3
+      },
+      "5": {
+        "vol": 17.085709482982857,
+        "components": 1
+      },
+      "7": {
+        "vol": 26.054401507265517,
+        "components": 1
+      },
+      "9": {
+        "vol": 34.675929468765624,
+        "components": 3
+      }
+    },
+    "three_component_candidates": {
+      "borromean.s1^2": {
+        "vol": 9.802001165794124,
+        "components": 3,
+        "ratio_over_proton": 1.3376595731468126
+      },
+      "borromean.s1^4": {
+        "vol": 10.44861816363475,
+        "components": 3,
+        "ratio_over_proton": 1.4259021067571307
+      },
+      "borromean.s1^2 s2^2": {
+        "vol": 11.082166624373684,
+        "components": 3,
+        "ratio_over_proton": 1.5123612031421905
+      },
+      "borromean.s1^2 s2^-2": {
+        "vol": 15.863744309648157,
+        "components": 3,
+        "ratio_over_proton": 2.164893584771874
+      }
+    }
+  },
+  "verdict": "NO parameter-free composite-braid volume reproduces the charmed-baryon mass ratio. Near-coincidence Vol((s1s2^-1)^5)/Vol(Borromean)=2.332 vs Lambda_c/proton=2.437 (~4%) is DISQUALIFIED: (s1s2^-1)^5 is a KNOT (1 component), not a 3-quark baryon, and bottom (n=7) misses by ~40%. 3-component-correct candidates miss the charm ratio and closing the gap needs tuned twist count (=fit). Comparison also assumes mass~Vol (constant density), not the canonical absolute-mass law. m_c OPEN.",
+  "scope": "(a) scope-limited negative under mass~Vol; SnapPy now available for principled follow-up (variable-density / projection)."
+}
