@@ -17,9 +17,9 @@ Before declaring open, ran the four-path checklist:
 
 What the corpus *does* provide, and this route reuses:
 
-- [`def:coulomb-charge`](../../content/quantum-observable-universe/climax-volume-mass/coulomb-charge.lean)
+- [`def:coulomb-charge`](../../content/quantum-observable-universe/climax-volume-mass/coulomb-charge.md)
   — the per-crossing framing coupling `c = 1/2`, `Q = ½(n₊−n₋)`.
-- [`def:bar-involution`](../../content/quantum-observable-universe/braids-and-knots/bar-involution.lean)
+- [`def:bar-involution`](../../content/quantum-observable-universe/braids-and-knots/bar-involution.md)
   — `σᵢ ↦ σᵢ⁻¹`, `q ↦ q⁻¹`; the CP / charge-conjugation operation on the
   Hecke fibre, with the full bar-grading algebra already proved sorry-free.
 - [`docs/audits/2026-07-12-keystone-wlambda-framing-is-phase.md`](2026-07-12-keystone-wlambda-framing-is-phase.md)
@@ -36,7 +36,7 @@ crossings — the same *kind* of object as a θ-term. The question:
 
 CP = bar-involution (`q ↦ q⁻¹`). On the fibre circle `q = e^{iφ}`, bar is
 complex conjugation, so **bar-invariance = reality**. Formalized in
-[`theta-qcd-framing-cp.lean`](../../content/quantum-observable-universe/appendix-standard-model/theta-qcd-framing-cp.lean)
+[`ThetaQcdFramingCp.lean`](../../content/quantum-observable-universe/lean/QOU/StandardModel/ThetaQcdFramingCp.lean)
 (`namespace QOU.StandardModel.ThetaQCDFraming`), self-contained over a generic
 `Field R` with a minimal `BarInvolution` class mirroring the corpus one.
 
