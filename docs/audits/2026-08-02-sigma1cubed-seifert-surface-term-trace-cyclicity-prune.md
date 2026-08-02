@@ -24,18 +24,22 @@ This note establishes, 0-fit:
    𝔤-valued curvature 2-form* and a surface-ordered product over its cells. The `MI₂`
    (`MultiplicativeSurfaceIntegral`) in `NonAbelianStokes.lean` is a literal `fun _ _ _ => 1` **stub**; the
    fibre `F_q` is bound to no connection `A`, no manifold, no Seifert surface. This note **supplies the
-   derived tessellation** (Seifert's algorithm on σ₁³) and asks whether a *derived* per-cell curvature can
-   produce 5.853.
+   derived tessellation** (Seifert's algorithm on σ₁³) and tests, empirically, whether a
+   *tessellation-invariant* (per-cell-DOF-free, so non-fit) surface term can produce 5.853 — §4.
 
-3. **Why the scalar surface sector is provably ZERO (the prune).** By the non-abelian Stokes theorem the
-   genuine 2D content is the **surface-ordering correction**: the defect between the path-ordered
-   `𝒫exp∮F` boundary holonomy and its abelian (unordered) product, which is a **product of commutators**.
-   The binding formula `B(K) = m_e·|Σ_λ y_λ χ^λ(β_K) Δ_λ|` pairs Δ_λ with the **block character**
-   `χ^λ = tr_λ(ρ(β_K))`. A character is a **cyclic trace**, and *a trace annihilates every commutator*:
-   `tr(AB−BA)=0`. Hence the surface-ordering correction contributes **identically zero to χ^λ** — the
-   scalar/character-paired surface term cannot supply the 5.853× deficit. This is one invariant unifying
-   three prior corpus facts: `holonomy_perm` (abelian τ-shadow ordering defect = 0, #4357), the
-   torus-knot **Vol=0** of σ₁³ (`deuteron-octahedral-gluing`), and `mi-sw-abelianisation`.
+3. **Tessellation-independence (owner's make-or-break test) + why the scalar surface sector is ZERO.**
+   *Empirically* (probe + witness, §4), the one tessellation-independent, per-cell-DOF-free scalar surface
+   quantity — the writhe-normalised Kauffman/Jones **state sum** — is **identical across two tessellations**
+   (σ₁³ 8-state vs an R2-refined 32-state diagram, agreeing to `5e-51`): a topological invariant with **no
+   tunable per-cell DOF ⇒ not a fit**. But its **archimedean-q₀ value does NOT reproduce 5.853** (it is the
+   ordinary trefoil Jones — torus-knot degenerate). *Structurally*, the genuine 2D content is the
+   **surface-ordering correction** (a **product of commutators**), and the binding formula
+   `B(K)=m_e·|Σ_λ y_λ χ^λ(β_K) Δ_λ|` pairs Δ_λ with the **block character** `χ^λ = tr_λ ρ(β_K)`. Since a
+   character is a **cyclic trace** and *a trace annihilates every commutator* (`tr(AB−BA)=0`), the correction
+   contributes **identically zero to χ^λ** (confirmed numerically to 40 dps, §4). This one invariant unifies
+   three prior corpus facts: `holonomy_perm` (abelian τ-shadow ordering defect = 0, #4357), the torus-knot
+   **Vol=0** of σ₁³ (`deuteron-octahedral-gluing`, `PinchedOctahedronDegenerate.lean`), and
+   `mi-sw-abelianisation`.
 
 **Consequence (converges on the qou-3q7t surviving direction, adds the structural reason).** The deuteron
 deficit cannot be a trace-level surface-curvature correction. The surface term's *operator* content
@@ -82,9 +86,14 @@ Seifert's algorithm on the standard σ₁³ (2-strand, 3 positive crossings) dia
   |Δ_trefoil(−1)|` (the trefoil determinant). The `−2` diagonal is the (A₂/E₂-type) framing, the
   off-diagonal `1` the inter-handle linking.
 
-All of the above are **derived from Seifert's algorithm** — zero free parameters. They are machine-verified
-in [`Sigma1CubedSeifertTessellation.lean`](../../content/quantum-observable-universe/lean/QOU/BraidKnot/Sigma1CubedSeifertTessellation.lean)
-(`decide`/`omega`, Mathlib-free integer core; no olean wall).
+The **structural / combinatorial** facts (cell count, Euler relation, genus, rank H₁, relator abelianisation,
+symmetrized-Seifert det = 3) are machine-verified in
+[`Sigma1CubedSeifertTessellation.lean`](../../content/quantum-observable-universe/lean/QOU/BraidKnot/Sigma1CubedSeifertTessellation.lean)
+(`decide`, Mathlib-free `Int` core, `lean`-direct exit 0, sorry-free; no olean wall):
+`seifertEuler_eq_neg_one`, `seifert_euler_relation` (χ = 2−2g−b closes ⇒ g=1), `rankH1_eq_two`,
+`relator_abelianises_to_zero`, `symmetrizedSeifertDet_eq_three`. **These are pure structural facts only** —
+per the owner ruling (2026-08-02) the numerical surface-term → binding (C_knot) connection is *empirical*
+(§4), never a Lean proof.
 
 ## 3. The prune: trace cyclicity annihilates the surface-ordering correction (scope-(b))
 
@@ -98,74 +107,110 @@ cyclic trace `tr` and **any** `A,B`: `tr(AB) = tr(BA)` ⇒ `tr(AB − BA) = 0` �
 
 > the surface-ordering correction contributes **identically zero** to every block character χ^λ.
 
-Equivalently: the ordered and abelian holonomies have the **same** character (`holonomy_perm`), so the
-*difference* — the pure 2D surface term as seen by χ^λ — is zero. Machine-verified as
-`traceLike_commutator_zero` over a generic `Ring R` with an abstract cyclic trace
-([`Sigma1CubedSeifertTessellation.lean`](../../content/quantum-observable-universe/lean/QOU/BraidKnot/Sigma1CubedSeifertTessellation.lean),
-sorry-free) — the Markov trace **is** cyclic (proved elsewhere in the corpus), so the abstract hypothesis is
-discharged by the real object.
+Equivalently: the ordered and abelian holonomies have the **same** character (`holonomy_perm`, corpus-proved
+in `QOU.MathlibExt.YekutieliIntegration`, `CommMonoid` permutation-invariance), so the *difference* — the
+pure 2D surface term as seen by χ^λ — is zero. Its **combinatorial abelianised shadow** is machine-verified
+here as `relator_abelianises_to_zero` (the genus-1 relator `[a,b]` has exponent-sum `(0,0)`;
+[`Sigma1CubedSeifertTessellation.lean`](../../content/quantum-observable-universe/lean/QOU/BraidKnot/Sigma1CubedSeifertTessellation.lean),
+Mathlib-free, sorry-free). The trace-level statement `tr[A,B]=0` is the standard cyclicity of a trace (the
+Markov trace is cyclic — corpus-proved), invoked here as textbook algebra, **not** re-formalised as a new
+theorem.
 
 **scope-(b) exclusion.** The class "Δ_λ = a surface-curvature *character* correction `tr_λ(surface term)`"
-is structurally excluded, cited invariant `traceLike_commutator_zero`. This is a *proved* exclusion, not a
-scope-limited numerical negative: no choice of connection `A`, tessellation refinement, or curvature `F`
-can make a trace of a commutator non-zero.
+is structurally excluded by trace cyclicity (`tr[A,B]=0`): no choice of connection `A`, tessellation
+refinement, or curvature `F` can make a trace of a commutator non-zero. This is a *proved algebraic*
+exclusion, not a scope-limited numerical negative — and it is confirmed numerically in §4 (the surface
+correction to the closure character is `0` to 40 dps).
 
-## 4. Derive-then-check (target locked BEFORE compute; anti-fit)
+## 4. Empirical tessellation-independence probe (owner protocol; target locked BEFORE compute; anti-fit)
 
-**Locked target (before any compute):** `B_AME(²H) = 2.224566 MeV`; bare categorical
-`B(D)=m_e·|Σ y_λ χ^λ sgn f^λ| = 0.380 MeV` (−82.9%); `C_knot(D) = 5.853`.
+Per the owner ruling this sector is tested **empirically** (Python probe + witness, never a Lean proof).
+**Locked targets (before any compute):** `B_AME(²H) = 2.224566 MeV`; bare categorical
+`B(D)=m_e·|Σ y_λ χ^λ sgn f^λ| = 0.380 MeV` (−82.9%); `C_knot(D) = 5.853`. `B_AME` diagnostic-only, never
+inverted.
 
-**Derived probe** ([`sigma1cubed_seifert_surface_term_probe.py`](../../computations/deltalambda/sigma1cubed_seifert_surface_term_probe.py)):
-the handle-commutator surface term `[ρ(a₁),ρ(b₁)]` in the Hecke rep, its per-block trace (must be 0 by §3),
-and the *eigenphase-weighted* per-block pairing as the derived Δ_λ candidate. **No parameter is tuned to
-5.853.**
+**The make-or-break test (owner): is the surface term tessellation-independent?** The one
+tessellation-independent, per-cell-DOF-**free** scalar the σ₁³ surface admits is the Kauffman-bracket / Jones
+**state sum** — a literal sum over the `2^c` smoothing states (= a tessellation of the diagram),
+writhe-normalised to a Reidemeister/Pachner invariant. Probe
+[`sigma1cubed_seifert_surface_term_probe.py`](../../computations/deltalambda/sigma1cubed_seifert_surface_term_probe.py)
+(witness `sigma1cubed-seifert-surface-term.witness.json`) evaluates it over two tessellations:
 
-Result (see witness):
-- **`tr_λ([A,B]) = 0` for every block** — numerically confirms §3 (the character channel is null); the
-  scalar surface term does **not** move `B(D)` off 0.380. **The 5.853 deficit is NOT in the scalar surface
-  sector.**
-- The **eigenphase-weighted** per-block charge `Σ_i θ_i^λ ⟨λ,i|[A,B]|λ,i⟩` is the only non-vanishing
-  extraction. Whether it *derives* 5.853 requires the explicit σ₁³ H₁-generator holonomies `a₁,b₁` inside
-  the H₆ interface braid **and** the seminormal eigenphase weights `θ_i^λ` (q-Reeb `Δθ_λ`) — neither is a
-  fit, but **the H₁-generator identification within the H₆ interface braid is not currently in the corpus**
-  (see §5). This probe therefore **does not close** the deuteron; it names the datum that would.
+| tessellation | word | states | `f` at q₀ |
+|---|---|---|---|
+| TESS-A (minimal) | σ₁³ | 2³ = 8 | `0.79806841228179419819` |
+| TESS-B (R2-refined = sub-plaquette regulator) | σ₁³·(σ₁σ₁⁻¹) | 2⁵ = 32 | `0.79806841228179419819` |
 
-## 5. The precise named gap (bean qou-3q7t, sharpened)
+- **Tessellation-independent: YES.** The two agree to `rel diff 5.0e-51` (exact) — refining the tessellation
+  (the R2 insertion is the discrete "nested sub-Planck plaquette" regulator) leaves the value **exactly**
+  unchanged. There are **no tunable per-cell DOF** ⇒ **not a fit** (the invariance IS the evidence).
+  Cross-checked against the exact right-handed trefoil Jones `V = −t⁴+t³+t` (`matches_exact: True`).
+- **Value vs target: does NOT hit 5.853.** `f/C_knot = 0.136` — the tessellation-invariant scalar surface
+  state-sum at the **archimedean** q₀ is the ordinary trefoil Jones value, nowhere near 5.853. This is the
+  expected torus-knot degeneracy (Vol=0, pinched octahedron; `PinchedOctahedronDegenerate.lean`).
+- **Scalar surface-ordering correction to χ^λ = 0.** Reordering the closure word (ordered vs abelianised)
+  leaves the closure character identical to 40 dps (`abs_difference = 0`) — numerically confirms §3
+  (trace cyclicity). The scalar surface term adds nothing to `B(K)=m_e|Σ_λ y_λ χ^λ Δ_λ|`.
 
-The surface sector is **not** missing "a discretization" in the naive sense — Seifert's tessellation is
-canonical (§2) and the ideal triangulation already exists. What is missing, and what a derivation needs, is:
+**Verdict.** The σ₁³ surface state-sum **is** tessellation-independent (a topological invariant, no fit), but
+at the archimedean q₀ it is **degenerate** and does **not** reproduce the deuteron 5.853 deficit; the
+character-channel correction is identically zero. The 5.853-relevant content is **not** in the
+tessellation-invariant scalar/archimedean surface sector.
 
-1. **The explicit H₁-generator holonomies `a₁, b₁` of the σ₁³ Seifert surface *as elements of the H₆
-   interface Hecke algebra*** — i.e. which sub-words of the deuteron braid β_D realize the two handles of
-   the genus-1 spanning surface. (In H₂ the two handles collapse — H₂ is abelian — so the trefoil-as-2-braid
-   is degenerate; the deuteron lives at H₆ = 3A, A=2, where the handles are non-commuting.)
-2. **The seminormal eigenphase weights `θ_i^λ` (q-Reeb `Δθ_λ`)** that convert the operator commutator
-   `[a₁,b₁]` (zero block-trace) into a non-cyclic per-block charge — the operator-valued branching combiner.
+## 5. The precise named gap (bean qou-3q7t, sharpened) — it is NOT a missing discretization
 
-Both are **derivable** (canonical), **neither is a fit**, and together they define
-**`Δ_λ = eigenphase-weighted per-block charge of the σ₁³ handle commutator`** — a candidate structurally
-**distinct from the six failed ansätze** (Frobenius co-Casimir, Demazure-fibre, LP-Plancherel, LP-Frobenius,
-crystal-graph, augmented Markov) and, being the per-block matrix element of a commutator, **naturally
-mixed-sign with zero total** — matching the known mixed-sign / sum-to-zero Δ_λ requirement (the PROBE-4
-chirality structure) that KL-positivity could not supply.
+The pincer's stated blocker — "the corpus lacks the surface discretization" — is **not** the real obstruction:
 
-**Honest bottom line.** The 2D *scalar/character* surface sector is provably empty (trace kills the
-commutator). The deuteron 5.853 residual is an **operator-valued** (pre-trace) quantity, extractable only by
-the eigenphase-weighted per-block pairing — which is exactly the surviving q-Reeb `Δθ_λ` direction. This
-note supplies the derived tessellation + the proved prune + the sharpened gap; it does **not** manufacture a
-closure. The missing datum (H₁-handle holonomies in the H₆ interface braid + eigenphase weights) is filed on
-`qou-3q7t`.
+1. **The surface discretization already exists** in two canonical forms: Seifert's genus-1 CW tessellation
+   (§2, now machine-verified) and the SnapPy octahedral ideal triangulation (`deuteron-octahedral-gluing`).
+2. **Any tessellation gives the same answer** (§4, exact to 5e-51) — the surface term is a *topological
+   invariant*, so refining or changing the tessellation is inert. There is nothing to "fix" by discretizing
+   better.
+3. **At the archimedean q₀ that invariant is degenerate** (σ₁³ is a torus knot: Vol=0, pinched octahedron,
+   all four MSR shape-logs `= 0`, `e₂ = 0` — `PinchedOctahedronDegenerate.lean`), and the scalar/character
+   channel is annihilated by trace cyclicity (§3). So no archimedean-q₀ scalar surface term can carry 5.853.
+
+**The real, already-documented wall is the fibre → archimedean τ-transfer.** The genuine non-vanishing
+surface content lives at the **fibre / root-of-unity WRT** level (the Kashaev/Turaev-Viro/BW-localization
+state-sum at `q = ω`, `N → ∞` — infra: beans `bwse` (WRT = BW localization), `qou-nalu` (Whitehead-Kashaev
+state-sum), `qou-d7lh` (tetraplectic state-sum);
+[`2026-05-24-crystal-yekutieli-correspondence-chain.md`](2026-05-24-crystal-yekutieli-correspondence-chain.md)).
+Its regular part carries the torsion `D(ζ)=∏(1−ω^{ζ+k})^{k/N}` (Garoufalidis–Kashaev A.17), a *fibre* object;
+obtaining a *number* at the substrate q₀ requires the **τ-functor transfer of the pinched regular part** —
+the SHARPENED WALL already recorded in
+[`geometric-qdilog-lifted-amplitude`](../../computations/deltalambda/geometric_qdilog_lifted_amplitude_probe.py).
+This note does **not** close that wall.
+
+**A structurally-distinct Δ_λ candidate this note names (not a fit, not yet computed):** because the scalar
+surface term vanishes but the *operator* `[a₁,b₁]` does not, the only non-cyclic extraction is the
+**eigenphase-weighted per-block charge** `Σ_i θ_i^λ ⟨λ,i|[a₁,b₁]|λ,i⟩` — the per-vertex seminormal eigenphase
+/ q-Reeb `Δθ_λ` (E₀-options Candidate #1, the sole survivor in qou-3q7t). Being a per-block matrix element of
+a commutator it is **naturally mixed-sign with zero total**, matching the known mixed-sign / sum-to-zero Δ_λ
+requirement (PROBE-4 chirality) that KL-positivity could not supply — and it is distinct from all six failed
+ansätze. Computing it requires the H₁-handle holonomies of the σ₁³ surface *inside the H₆ interface braid*
+(the trefoil-as-2-braid H₂ is abelian ⇒ handles collapse ⇒ degenerate; the deuteron lives at H₆ = 3A). That
+identification is **not in the corpus**; it is the honest next datum.
+
+**Honest bottom line.** Tessellation-independence holds (the surface term is a topological invariant, not a
+fit); the converged archimedean value does **not** hit 5.853 (torus-knot degeneracy + trace-cyclicity
+vanishing of the scalar channel). The deuteron 5.853 residual is a **fibre-level / operator-valued** quantity;
+the open blocker is the fibre→archimedean τ-transfer, **not** a missing surface discretization. No closure is
+manufactured. Filed on `qou-3q7t`.
 
 ## 6. Anti-fit ledger
 
 | statement | status |
 |---|---|
-| σ₁³ Seifert tessellation: 2 disks + 3 bands, χ=−1, g=1, rank H₁=2, relator=[a,b] | **derived (Seifert's algorithm) + Lean `decide`/`omega`** |
-| symmetrized Seifert form det = 3 = trefoil determinant | **derived + Lean `decide`** |
-| trace annihilates commutators ⇒ scalar surface term = 0 in χ^λ | **Lean sorry-free (`traceLike_commutator_zero`)** |
-| `tr_λ([A,B]) = 0` per block (numerical) | **measured, 0-fit** |
-| eigenphase-weighted per-block charge = derived Δ_λ candidate | **structure named; H₆ handle-holonomies NOT in corpus** |
-| deuteron 5.853 closure | **OPEN** (`qou-3q7t`) — not manufactured |
+| σ₁³ Seifert tessellation: 2 disks + 3 bands, χ=−1, g=1, rank H₁=2 | **derived (Seifert's algorithm) + Lean `decide` (structural only)** |
+| genus-1 relator `[a,b]` abelianises to `(0,0)` | **Lean `decide` sorry-free (`relator_abelianises_to_zero`)** |
+| symmetrized Seifert form det = 3 = trefoil determinant | **derived + Lean `decide` (`symmetrizedSeifertDet_eq_three`)** |
+| surface state-sum is **tessellation-independent** (TESS-A ≡ TESS-B to 5e-51) | **measured, 0-fit (EMPIRICAL)** |
+| tessellation-invariant value at q₀ does **not** reproduce 5.853 (torus-knot degenerate) | **measured, 0-fit (EMPIRICAL)** |
+| scalar surface-ordering correction to χ^λ = 0 (trace cyclicity) | **measured 0 @ 40 dps + textbook algebra** |
+| trace annihilates commutators ⇒ scalar surface term excluded (scope-(b)) | **standard cyclicity (NOT re-proved as Lean); abelian shadow in Lean** |
+| eigenphase-weighted per-block charge = structurally-distinct Δ_λ candidate | **structure named; H₆ handle-holonomies NOT in corpus** |
+| deuteron 5.853 closure | **OPEN** (`qou-3q7t`) — fibre→archimedean τ-transfer wall; not manufactured |
 
-`B_AME` used **only** as a locked diagnostic target, **never inverted**; `free_parameters = 0`; exact mpmath
-(50 dps); nothing wired to production.
+The numerical surface-term → binding result is **EMPIRICAL** (probe + witness), **never** a Lean proof /
+never wired (owner ruling 2026-08-02). `B_AME` used **only** as a locked diagnostic target, **never
+inverted**; `free_parameters = 0`; exact mpmath (50 dps); nothing wired to production.
