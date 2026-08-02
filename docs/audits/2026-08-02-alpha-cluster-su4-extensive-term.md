@@ -37,7 +37,7 @@ being unbound to 2α by ~0.09 MeV.)
 `2.83`, `⁴He` (full α) `7.07` — the per-nucleon binding rises as the first `[1⁴]`
 supermultiplet fills.
 
-## Why this is the categorical mechanism (derived, not assumed)
+## Why α-clustering is categorically MOTIVATED (the gate is proved; the binding law is not)
 
 The proved SU(4) gate `QOU.MassTheory.su4_supermultiplet_dim_vanishes_iff`:
 `dim [1^A] = C(4, A)` — **present** (nonzero) for `A ≤ 4`, **vanishes** for `A > 4`
@@ -52,10 +52,18 @@ The proved SU(4) gate `QOU.MassTheory.su4_supermultiplet_dim_vanishes_iff`:
 
 ## What is derived vs still open (STRICT honesty)
 
-- **DERIVED (structure):** that the extensive term is `∝ n_α` with a 4-body onset —
-  from the *proved* SU(4) gate. The α-cluster model of nuclear binding is a known
-  nuclear-structure fact; the framework's contribution is its **categorical
-  derivation** (α = filled `[1⁴]` via the gate), not the empirical model.
+- **PROVED (Lean):** only the SU(4) gate `dim[1^A] = C(4,A)`
+  (`su4_supermultiplet_dim_vanishes_iff`, pre-existing) and the pairwise cap
+  `ρ_A ≤ C(4,2)` (`exchangeDet_pow_two_le_four`, this PR).
+- **NOT proved — EMPIRICAL (0-fit scaling of AME data):** the identification "the
+  extensive term is `∝ n_α`" is an **empirical observation** (`B/n_α` CV 0.053), and
+  the **bridge** from the proved gate to "therefore `B = n_α·B_α`" is **reasoned, not
+  proved**. The gate proves the supermultiplet *dimension* vanishes for A>4 (motivating
+  α-clustering); it does **not** prove the *binding law*. Calling this a "derivation"
+  would be the "sorry-free ≠ derived" error — it is a strong empirical localization
+  plus a categorical motivation, not a theorem. What a proof would need: derive
+  `B(K) = n_α · (q-function)` from the 13 drivers, which is the open magnitude problem
+  (undone).
 - **OPEN (scale):** the per-α binding **magnitude ~29.8 MeV** is still **empirical**,
   not substrate-derived from q₀. There is also a mild systematic rise (28.3 → 31.9,
   the surface/Coulomb corrections) — 29.8 is the *leading* term, not exact. So this
@@ -88,12 +96,24 @@ ruling names (scale-free binding closure). Its derivable output is the **ratio**
 `B(n_α) = n_α·B(⁴He)` (+ surface); the absolute per-α MeV scale is gated and must not be
 back-derived by a constant fit.
 
+### Surface residual (`qou-3wvl`) — inconclusive with light nuclei (EMPIRICAL)
+
+The `+12.7%` drift in `B/n_α` (⁴He→¹⁶O) tested against the scale-free surface scaling
+`B/n_α` vs `n_α^{-1/3}`: **linear r² = 0.71 only** — a weak fit on 4 points. The drift is
+**shell-structure-dominated** (⁴He and ¹⁶O are doubly-magic, extra-bound; ⁸Be is unbound
+to 2α), not a clean `A^{-1/3}` surface term. So the surface residual is **not cleanly
+extractable** from the light α-conjugate nuclei — inconclusive, empirical. A clean
+scale-free surface law would need the magic-number shell structure modelled first (itself
+a candidate for the SU(4)/Wedderburn shell-filling machinery, but unproven here).
+
 ## Verdict
 
-The missing super-pairwise extensive term is **structurally identified** as the
-α-cluster (SU(4) `[1⁴]`) volume term — 0-fit, CV 5.3% per-α, with the proved SU(4)
-gate as the categorical origin and the sub-α onset as partial `[1⁴]` filling. This
-**reconciles** the intensive-trace / pairwise-cap proofs with the `∝A` volume term.
+The missing super-pairwise extensive term is **empirically identified** (0-fit AME
+scaling, CV 5.3% per-α) as the α-cluster (SU(4) `[1⁴]`) volume term, **categorically
+motivated** by the proved SU(4) gate (α = filled `[1⁴]`) with the sub-α onset as
+partial `[1⁴]` filling. This is an **empirical localization + a proved motivation, not
+a derivation** of the binding law. It **reconciles** the intensive-trace / pairwise-cap
+proofs with the `∝A` volume term.
 The remaining gate is now a **single scalar**: the per-α binding scale (~29.8 MeV),
 which stays open R&D (no fit permitted). Beans `qou-0c19` advanced; the scale gap is
 the successor to `qou-uclw`.
