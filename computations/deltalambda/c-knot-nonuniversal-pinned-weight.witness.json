@@ -5,7 +5,7 @@
   "description": "The clean cross-isotope C_knot universality test, run with the NOW-PINNED Markov weight y_\u03bb (PR #4543, \u03a3 y_\u03bb f^\u03bb = 1 verified). Master-formula conventions (binding_energy_categorical_deuteron): B(K) = m_e\u00b7|\u03a3_\u03bb y_\u03bb \u03c7^\u03bb(\u03b2_K) sgn f^\u03bb|, \u03c7^\u03bb from the interface-inclusive Rust Hoefsmit caches. Result: C_knot = 5.85/4.44/3.29/9.31 for D/T/\u00b3He/\u2074He \u2192 spread 2.83\u00d7, NON-UNIVERSAL. f^\u03bb (hook SYT) is the tightest dim convention (2.83\u00d7 vs dim_q 116\u00d7, none 122\u00d7); no global/A-power scale fixes it (log C/log A non-constant); a deuteron-pinned 0-fit scale mispredicts T/\u00b3He/\u2074He by +32%/+78%/\u221237% (\u226b isospin \u00b18%). Mirror pair T & \u00b3He at the SAME H\u2089 need C_knot differing 35% (robust 1.29\u20131.35 across dim conventions) \u21d2 C_knot is NOT a function of (n,q\u2080); it is per-knot \u0394_\u03bb. scope-(a): single-universal-C_knot derivation route REFUTED; scope-(b): level-only rescale g(n,q\u2080) excluded by the mirror inequality (Lean cknot_level_only_excluded). \u0394_\u03bb magnitude stays OPEN (bean qou-3q7t). Supersedes c_knot_not_universal_probe.py (whose 41\u00d7 was right-vs-wrong weight, now resolved). No fit; B_AME diagnostic-only (never inverted); nothing wired; exact mpmath.",
   "audit_only": true,
   "tier": "scope-(a) refutation of single-universal-C_knot + scope-(b) level-only exclusion; no fit",
-  "scriptHash": "c056458d2ac454ff",
+  "scriptHash": "c26ea5b5f3d2f7a4",
   "result": {
     "master_formula": "B(K) = m_e\u00b7|\u03a3_\u03bb y_\u03bb \u00b7 \u03c7^\u03bb(\u03b2_K) \u00b7 sgn(w_0^{S_{\u03bb'}}) \u00b7 f^\u03bb|,  \u03a3_\u03bb y_\u03bb f^\u03bb = 1",
     "weight": "Wenzl Schur-principal y_\u03bb (pinned, PR #4543) \u2014 recomputed, \u03a3 y_\u03bb f^\u03bb = 1 asserted",
@@ -86,6 +86,40 @@
         "spread": "122.39",
         "T_over_3He_sameH9": "1.3223"
       }
+    },
+    "framing_writhe_test": {
+      "per_isotope": {
+        "D": {
+          "writhe": 4,
+          "n_sigma": 11,
+          "n_sigma_inv": 7,
+          "C_knot": "5.8530241",
+          "framing_c": "4.23363"
+        },
+        "T": {
+          "writhe": 4,
+          "n_sigma": 16,
+          "n_sigma_inv": 12,
+          "C_knot": "4.444145",
+          "framing_c": "3.57384"
+        },
+        "3He": {
+          "writhe": 8,
+          "n_sigma": 18,
+          "n_sigma_inv": 10,
+          "C_knot": "3.2918292",
+          "framing_c": "1.42735"
+        },
+        "4He": {
+          "writhe": 8,
+          "n_sigma": 23,
+          "n_sigma_inv": 15,
+          "C_knot": "9.313338",
+          "framing_c": "2.67327"
+        }
+      },
+      "framing_excluded": true,
+      "note": "Writhe w(K)=#\u03c3\u2212#\u03c3\u207b\u00b9 of the canonical word (averaged interface crossings writhe-neutral): w(D)=w(T)=4, w(\u00b3He)=w(\u2074He)=8. The omitted Jones/HOMFLY framing factor q\u2080^{c\u00b7w} would need constant c to close C_knot, but c varies 3\u00d7 (4.23/3.57/1.43/2.67) and \u2014 decisively \u2014 D&T (same writhe 4) and \u00b3He&\u2074He (same writhe 8) have DIFFERENT C_knot, so no writhe-only factor closes it. The q\u2080^17\u22485.85 numerology is a coincidence (w(D)=4 needs c=4.23, not a clean framing exponent, and the same c fails T). Framing RULED OUT (scope-b)."
     },
     "deuteron_pinned_scale_prediction": {
       "alpha_MeV": "2.99089",

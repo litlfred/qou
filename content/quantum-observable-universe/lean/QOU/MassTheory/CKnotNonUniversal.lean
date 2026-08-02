@@ -70,6 +70,38 @@ theorem mirror_gap_exceeds_isospin_band : B_T * S_He > 1.1 * (B_He * S_T) := by
   unfold B_T S_He B_He S_T; norm_num
 
 /-!
+### Writhe / framing is ruled out too
+
+The Markov trace is a *framed*-link invariant; the ambient (unframed) Jones/HOMFLY invariant differs
+by a writhe-dependent framing factor `~ q₀^{c·w}`. If the master formula omits it, the deficit could
+carry that factor. But the canonical words give `writhe(D) = 11−7 = 4 = 16−12 = writhe(T)` (averaged
+interface crossings are writhe-neutral), and `writhe(³He) = writhe(⁴He) = 8` — yet `C_knot` differs in
+BOTH equal-writhe pairs (5.85 vs 4.44; 3.29 vs 9.31). So no writhe-only framing factor `f(w)` closes
+the deficit; the `q₀^17 ≈ 5.85` numerology is a coincidence (`w(D)=4` needs a non-framing exponent
+`c ≈ 4.23`, and the same `c` fails for `T`). (Framing hypothesis contributed by a parallel session,
+tested + excluded here.)
+-/
+
+/-- `C_knot(D)` — deuteron deficit (probe `c-knot-nonuniversal-pinned-weight.witness.json`). -/
+def CKnot_D : ℝ := 5.8530241
+
+/-- `C_knot(T)` — triton deficit; the triton word has the SAME writhe (4) as the deuteron. -/
+def CKnot_T : ℝ := 4.444145
+
+/-- **The deuteron and triton canonical words have equal writhe** `11 − 7 = 16 − 12 = 4` (`#σ − #σ⁻¹`;
+averaged interface crossings are writhe-neutral). -/
+theorem deuteron_triton_same_writhe : (11 - 7 : ℤ) = 16 - 12 := by norm_num
+
+/-- **Writhe-only framing is excluded.** Since `writhe(D) = writhe(T) = 4`, any framing correction
+that is a function of writhe alone (`C_knot = f(writhe)`, e.g. `q₀^{c·w}` — the omitted Jones/HOMFLY
+framing normalization) would force `C_knot(D) = C_knot(T)`. They differ, so no writhe-only factor
+closes the deficit: `¬ ∃ v, C_knot(D) = v ∧ C_knot(T) = v` (both evaluated at the shared writhe 4). -/
+theorem no_writhe_only_framing : ¬ ∃ v : ℝ, CKnot_D = v ∧ CKnot_T = v := by
+  rintro ⟨v, hD, hT⟩
+  have : CKnot_D = CKnot_T := hD.trans hT.symm
+  unfold CKnot_D CKnot_T at this; norm_num at this
+
+/-!
 ### A structural REASON for non-universality: the chirality regime `(−1)^{C(3A,2)}`
 
 Beyond the mirror inequality (which shows per-knot content *within* a level), there is a clean
