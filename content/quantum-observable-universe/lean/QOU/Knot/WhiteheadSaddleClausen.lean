@@ -414,6 +414,26 @@ theorem clausen_diff_le {θ : ℝ} (h0 : 0 ≤ θ) (h2 : θ ≤ π) :
   · calc g θ ≤ g (π / 2) := hanti ⟨le_refl (π / 2), by linarith [hpi]⟩ ⟨hge, h2⟩ hge
       _ = 2 * QOU.Knot.clausen (π / 2) := hgmax
 
+/-- The `abs_deviation_le` master error as a named sequence (= `tendsto_master_error`). -/
+noncomputable def devErr (N : ℕ) : ℝ :=
+  |(-QOU.Knot.clausen (2 * (π / N)) / 2)| + (π / N) * |Real.log (2 * Real.sin (π / N))|
+    + 7 * ((π / N) * (|Real.log (2 * Real.sin (π / N))| + Real.log 2))
+
+theorem tendsto_devErr : Filter.Tendsto devErr Filter.atTop (nhds 0) :=
+  QOU.Knot.tendsto_master_error
+
+theorem gridPrim_le {N K : ℕ} (hN : 4 ≤ N) (hK : 1 ≤ K) (hKN : K ≤ N - 1) :
+    gridPrim N K ≤ -QOU.Knot.clausen (2 * ((K : ℝ) * (π / N))) / 2 + devErr N := by
+  have h := QOU.Knot.abs_deviation_le hN hK hKN
+  rw [abs_le] at h
+  simp only [gridPrim, devErr]; linarith [h.2]
+
+theorem gridPrim_ge {N K : ℕ} (hN : 4 ≤ N) (hK : 1 ≤ K) (hKN : K ≤ N - 1) :
+    -QOU.Knot.clausen (2 * ((K : ℝ) * (π / N))) / 2 - devErr N ≤ gridPrim N K := by
+  have h := QOU.Knot.abs_deviation_le hN hK hKN
+  rw [abs_le] at h
+  simp only [gridPrim, devErr]; linarith [h.1]
+
 /-- **Explicit saddle-term convergence (BRICK 3).**  At the saddle
     `(n*, k*) = (⌊N/2⌋, ⌊N/4⌋)`, `(2π/N)·log S_{n*,k*} → 4·catalanG = 4G`. -/
 theorem whiteheadS_explicit_saddle_tendsto :
