@@ -1,0 +1,85 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11",
+  "computedAt": "2026-08-02T08:17:54.266431+00:00",
+  "commitSha": "299c6609565385dd331758f90e13fb07b5011bfd",
+  "assertions": [
+    {
+      "name": "level7_gives_six_distinct_points_exceeding_degree",
+      "computed": "6 distinct points, max block degree 4",
+      "expected": "6 distinct > 4",
+      "passed": true,
+      "tolerance": 0,
+      "source": "2cos(kπ/7), k=1..6 are 6 distinct fold values > deg 4 ⇒ agreement pins the value map (eq_of_root_family_agreement, N=7)."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "bwsc-level7-wrt-targets",
+  "scriptFile": "computations/probes/bwsc_level7_wrt_targets.py",
+  "scriptHash": "5f93ec1f7bf5",
+  "scriptCommitSha": "",
+  "precisionMetadata": {
+    "note": "float64 sampling of the value-map polynomials at 2cos(kπ/N)"
+  },
+  "environment": {
+    "python": "3.11"
+  },
+  "description": "The concrete bwsc targets for closing bwS0_eq_hecke via level 7: the value map d_q(λ)=[mark]_q evaluated at the six level-7 fibre roots 2cos(kπ/7). These are the numbers a colored WRT(Σ(2,3,7)) / Jones-at-ζ₇ computation must reproduce; 6 distinct points > degree 4 ⇒ agreement there pins the value map (eq_of_root_family_agreement, N=7). The #4365 Σ(2,3,5) slice (2 points) is bracketed as insufficient by two_roots_insufficient. Scope-(a); this probe does NOT perform the WRT computation; no fit; nothing wired.",
+  "data": {
+    "level": 7,
+    "max_block_degree": 4,
+    "level7_targets": {
+      "(5)   [1]": {
+        "t_1=2cos(1pi/7)": 1.0,
+        "t_2=2cos(2pi/7)": 1.0,
+        "t_3=2cos(3pi/7)": 1.0,
+        "t_4=2cos(4pi/7)": 1.0,
+        "t_5=2cos(5pi/7)": 1.0,
+        "t_6=2cos(6pi/7)": 1.0
+      },
+      "(4,1) [4]": {
+        "t_1=2cos(1pi/7)": 2.2469796037,
+        "t_2=2cos(2pi/7)": -0.5549581321,
+        "t_3=2cos(3pi/7)": -0.8019377358,
+        "t_4=2cos(4pi/7)": 0.8019377358,
+        "t_5=2cos(5pi/7)": 0.5549581321,
+        "t_6=2cos(6pi/7)": -2.2469796037
+      },
+      "(3,2) [5] (muon)": {
+        "t_1=2cos(1pi/7)": 1.8019377358,
+        "t_2=2cos(2pi/7)": -1.2469796037,
+        "t_3=2cos(3pi/7)": 0.4450418679,
+        "t_4=2cos(4pi/7)": 0.4450418679,
+        "t_5=2cos(5pi/7)": -1.2469796037,
+        "t_6=2cos(6pi/7)": 1.8019377358
+      },
+      "(3,1,1) [5]+1 (electron)": {
+        "t_1=2cos(1pi/7)": 2.8019377358,
+        "t_2=2cos(2pi/7)": -0.2469796037,
+        "t_3=2cos(3pi/7)": 1.4450418679,
+        "t_4=2cos(4pi/7)": 1.4450418679,
+        "t_5=2cos(5pi/7)": -0.2469796037,
+        "t_6=2cos(6pi/7)": 2.8019377358
+      }
+    },
+    "sigma235_slice_for_reference": {
+      "(5)   [1]": {
+        "t_1=2cos(1pi/5)": 1.0,
+        "t_2=2cos(2pi/5)": 1.0
+      },
+      "(4,1) [4]": {
+        "t_1=2cos(1pi/5)": 1.0,
+        "t_2=2cos(2pi/5)": -1.0
+      },
+      "(3,2) [5] (muon)": {
+        "t_1=2cos(1pi/5)": 0.0,
+        "t_2=2cos(2pi/5)": -0.0
+      },
+      "(3,1,1) [5]+1 (electron)": {
+        "t_1=2cos(1pi/5)": 1.0,
+        "t_2=2cos(2pi/5)": 1.0
+      }
+    }
+  }
+}
