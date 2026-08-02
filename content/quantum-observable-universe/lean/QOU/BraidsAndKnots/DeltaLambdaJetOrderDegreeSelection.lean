@@ -268,7 +268,9 @@ theorem gradedEuler_singleton (a : ℕ) : gradedEuler [a] = (a : ℤ) := by
   simp [gradedEuler, gradedEulerAux]
 
 theorem gradedEuler_pair (a b : ℕ) : gradedEuler [a, b] = (a : ℤ) - (b : ℤ) := by
-  simp [gradedEuler, gradedEulerAux]; ring
+  have h : gradedEuler [a, b] = (a : ℤ) + (-1 : ℤ) * (b : ℤ) := by
+    simp [gradedEuler, gradedEulerAux]
+  rw [h]; omega
 
 theorem valuation_and_totalDim_do_not_determine_gradedEuler (d : ℕ) :
     ∃ L₁ L₂ : List ℕ,
