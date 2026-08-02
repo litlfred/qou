@@ -72,6 +72,21 @@ observable spectrum, sin²θ_W, and hypercharge Y all block on **one** object: a
 weak-isospin T₃ grading orthogonal to the generation winding. That is now the
 single highest-leverage target — it unlocks three fronts at once.
 
+**★★ UPDATE — T₃ DERIVED (partial), #4618 (`qou-tdrd`).** The signed writhe factors
+canonically: `κ = sign(κ)·|κ| = T₃ × generation-winding`, so **T₃ = sign(κ)/2 ∈
+{±½}** is the *sign-half of the very integer whose magnitude the framework already
+reads as the generation* — orthogonal by construction, derived from the oriented
+crossing already in the corpus (not a second postulate). Sorry-free Lean (exit 0,
+axioms clean): **charm ≠ strange** (both n=5, opposite T₃) resolves the meson
+degeneracy, and **GMN `Q = T₃ + Y/2` is PROVED for all six quarks** (a theorem that
+would break under a wrong sign/½ — derive-then-check passed). Honest remainder
+(conjecture class, no instance): up=positive is *inherited* from the ⋈_K strong-
+isospin datum (consistent, not *forced*), and the SU(2)_L gauge/CKM lift is open —
+both reduce to the open SU(3)-flavour sector. So: a real orthogonal ℤ/2 passing GMN,
+NOT yet *the* gauged weak isospin. **Next test (`qou-buxs`):** does this writhe-sign
+T₃ reproduce the mixed-sign Δ_λ pattern `sgn(w₀^{S_λ'})`? Chiral-EFT lit for the
+binding-side template now in `uploads/` (owner: 1011.1343, 1906.12122, s00601-2022).
+
 2. **Generation physical bridge** — the *counting* (3 = odd primes in the
    Bring-genus window N(χ=−6)=9, {3,5,7}; 9 harmonic) is clean given the
    identifications; the *physical bridge* (why prime-winding = a fermion
