@@ -442,6 +442,12 @@ import QOU.QBeta.SuperBerezinianA3Magnitude
 -- structurally UNREACHABLE (observed_lift_unreachable) and requires the anti-self-adjoint
 -- (GGM/Stokes) off-block the branching leaves free (A3LiftFromDerivedOffBlock, no instance).
 import QOU.QBeta.A3OffBlockDerivation
+-- A=3 anti-self-adjoint lift (qou-jqof): the even-face factor is AFFINE in the single
+-- anti-self-adjoint amplitude E — factor = factor_sa − B·D⁻¹·E/A. A lift FORCES E ≠ 0
+-- (lift_forces_nonzero_amplitude/amplitude_nonzero); E is free+unique (amplitude_surjective/
+-- _injective) ⇒ scope-(a), one real DOF. Deriving E from the DM q-cubic prolongation symbol
+-- is the open keystone (DerivedAmplitudeGivesLift, no instance).
+import QOU.QBeta.A3AntiSelfAdjointLift
 -- c₃ Faddeev tetraplectic→combinatorics reduction backbone: the q²-shift functional
 -- equation of the single-lattice product ∏(1+q^{2n+1}x) (telescoping), the recurrence
 -- that pins the e_k = q^{k²}/(q²;q²)_k coefficients (Python witness cross-checks k≤6).

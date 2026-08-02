@@ -958,7 +958,8 @@ eigenbasis** (the super-sector grading — `q↔q⁻¹` = transpose swaps `(3)�
 `(2,1)`), **PINS** the off-blocks with no residual freedom: `B=C=(a−b)/2`, `D=(a+b)/2`. The equal
 Borromean characters `χ₍₃₎(β)=χ₍₁,₁,₁₎(β)=1` (proved, `(σ₁σ₂⁻¹)³`) make `B` a pure Markov-weight
 difference. **Result — scope-(b) structural exclusion (invariant `sq_nonneg`):** the derived
-even-face factor is `magnitudeFactor = 1 − ((a−b)/(a+b))² ≤ 1` for ALL real `a,b`
+even-face factor is `magnitudeFactor = 1 − ((a−b)/(a+b))² ≤ 1` for all real `a,b` with
+`a+b ≠ 0` (`D` invertible; the Schur complement's `D⁻¹` requires it)
 (`magnitudeFactor_le_one`) — the self-adjoint branching Schur complement is a **REDUCTION**, never
 a lift, so the observed `r* = μ₃/c₃ ≈ 1.585 > 1` (and the whole ROUTE-5 band `[1.50,1.71]`) is
 **structurally unreachable** (`observed_lift_unreachable`). **Sharpens ROUTE 2:** the branching is
@@ -972,6 +973,37 @@ assembly is graded self-adjoint (`branching_graded_selfadjoint`: `B=C` + `σB=�
 `r*`, but bounded `≤1`. Lean `QOU/QBeta/A3OffBlockDerivation.lean` sorry-free (lean-direct exit 0,
 0 real sorries, no native_decide/trivial-true/axiom), wired into `QOU.lean`. Nothing fitted,
 nothing wired; `μ₃/c₃`/AME/CODATA/`q₀` never inverted; `free_parameters = 0`.
+
+## 2026-08-02 · A=3 magnitude ROUTE 2-c (anti-self-adjoint amplitude) — the single open door is ONE free amplitude E; scope-(a), lift carried by exactly one real DOF
+
+(Branch `claude/a3-antiselfadjoint-lift-2026-08-02`, bean `qou-jqof`.) Attacks the single door
+ROUTE 2-b (`A3OffBlockDerivation`) named: the **anti-self-adjoint** off-block (`C≠−σB`) the
+self-adjoint branching leaves free. **Distinct angle:** rather than re-derive the branching
+off-blocks, decompose the *actual* off-block into its graded-self-adjoint value plus an
+anti-self-adjoint amplitude, `C = −(σB) + E` (`E := C + σB`), and study the E-dependence.
+**Decisive algebra (Lean `A3AntiSelfAdjointLift.lean`, sorry-free, lean-direct exit 0, generic
+`[Field R]`):** the even-face Berezinian factor is **AFFINE** in the amplitude
+`E` — `factor = factor_sa − B·D⁻¹·E/A` (`factor_affine_in_amplitude`), with `factor_sa ≤ 1` the
+ROUTE 2-b self-adjoint reduction. Three consequences localise the wall to ONE scalar: (i) a genuine
+lift `>1` **FORCES** `E ≠ 0` (`lift_forces_nonzero_amplitude` / `amplitude_nonzero`) — the lift is
+impossible without an anti-self-adjoint amplitude; (ii) that `E` is **free** — `E ↦ factor` is
+surjective onto `R`, witness `E* = (factor_sa−r)·A·D·B⁻¹` (`amplitude_surjective`), so the
+anti-self-adjoint route is **NOT scope-(b) excluded** (it CAN reach `r*≈1.585`, contrast the
+self-adjoint route); (iii) that `E` is **unique** (`amplitude_injective`) ⇒ `E ↦ factor` is a
+**bijection**. **VERDICT scope-(a):** the A=3 lift is carried by **exactly ONE real degree of
+freedom** — the anti-self-adjoint amplitude `E` — and it is free/unique, so pinning it to hit `r*`
+is a **FIT** (`E*` anchor-inverted); the route does NOT close `r*`, it **isolates the wall to one
+scalar** and proves that scalar is necessarily nonzero, free, and unique for any lift. Deriving `E`
+from the DM q-cubic / Yekutieli-Stokes prolongation symbol (`conj:qdifference-kernel-prolongation-symbol`)
+IS the open keystone, recorded as §3b dependent class `DerivedAmplitudeGivesLift` (content-bearing,
+**NO instance**). A **scope-(b)** upgrade would need a *proved* amplitude bound (`|E| ≤ …` from a
+writhe cap / Stokes-constant bound) — precisely what deriving the prolongation symbol would supply,
+and it is open. Also addressed Copilot review on ROUTE 2-b: `A3LiftFromDerivedOffBlock` now
+quantifies a bar map `σ : R →+* R` with `C_geom ≠ −(σ B_geom)` (was a free `σB : R`); the
+`magnitudeFactor_le_one` ledger phrasing above corrected to `a+b ≠ 0` (D invertible). Lean
+`QOU/QBeta/A3AntiSelfAdjointLift.lean` sorry-free (lean-direct exit 0, 0 real sorries, no
+native_decide/trivial-true/axiom), wired into `QOU.lean`. Nothing fitted, nothing wired;
+`μ₃/c₃`/AME/CODATA/`q₀` never inverted; `free_parameters = 0`.
 
 **2026-08-02 — PROBE 2 (A=4 interface operator): the ≥4-body magnitude wall is a ONE-SCALAR
 gate — the derived `−ln det(I+G)` form is SURJECTIVE onto (0,∞); naive uniform `z` scope-(b)

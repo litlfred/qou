@@ -129,8 +129,9 @@ def evenFaceCorrection {R : Type*} [Field R] (A t : R) : R := (A - t) / A
 
     The first term is the self-adjoint background (`≤ 1`, `A3OffBlockDerivation`); the
     second is the lift the amplitude `E` supplies, linear in `E` with slope `B·D⁻¹/A`.
-    Only `A ≠ 0` is needed (the identity holds for any `D`, including `D = 0`). -/
-theorem factor_affine_in_amplitude {R : Type*} [Field R] (A B D Csa E : R) (hA : A ≠ 0) :
+    The identity is a pure field manipulation — it holds for ALL `A, B, D` (the physical
+    regime has `A, D` invertible even/odd blocks; the split needs no side condition). -/
+theorem factor_affine_in_amplitude {R : Type*} [Field R] (A B D Csa E : R) :
     evenFaceCorrection A (crossTerm B (Csa + E) D)
       = evenFaceCorrection A (crossTerm B Csa D) - B * D⁻¹ * E / A := by
   unfold evenFaceCorrection crossTerm
@@ -145,26 +146,27 @@ theorem factor_affine_in_amplitude {R : Type*} [Field R] (A B D Csa E : R) (hA :
     the factor is the self-adjoint value `≤ 1` — no lift.  The lift lives ENTIRELY in
     the anti-self-adjoint amplitude the branching leaves free. -/
 theorem lift_forces_nonzero_amplitude {R : Type*} [Field R] [LinearOrder R]
-    [IsStrictOrderedRing R] (A B D Csa E : R) (hA : A ≠ 0)
+    [IsStrictOrderedRing R] (A B D Csa E : R)
     (hsa : evenFaceCorrection A (crossTerm B Csa D) ≤ 1)
     (hlift : 1 < evenFaceCorrection A (crossTerm B (Csa + E) D)) :
     B * D⁻¹ * E ≠ 0 := by
-  rw [factor_affine_in_amplitude A B D Csa E hA] at hlift
+  rw [factor_affine_in_amplitude A B D Csa E] at hlift
   intro h
   rw [h, zero_div, sub_zero] at hlift
   linarith
 
-/-- **A lift requires `E ≠ 0` — the off-block is anti-self-adjoint (sorry-free).**  With
-    nonzero background blocks `B, D`, the lift forces the anti-self-adjoint amplitude
-    `E` itself to be nonzero: `C = Csa + E ≠ Csa = −(σ B)`.  This is the precise wall
-    `A3OffBlockDerivation` named — a lift needs `C ≠ −σ B`. -/
+/-- **A lift requires `E ≠ 0` — the off-block is anti-self-adjoint (sorry-free).**  The
+    lift forces the anti-self-adjoint amplitude `E` itself to be nonzero: the derived
+    off-block `C = Csa + E ≠ Csa = −(σ B)`.  This is the precise wall `A3OffBlockDerivation`
+    named — a lift needs `C ≠ −σ B`.  (The implication `B·D⁻¹·E ≠ 0 ⇒ E ≠ 0` needs no
+    side condition: a zero factor kills the product.) -/
 theorem amplitude_nonzero {R : Type*} [Field R] [LinearOrder R]
-    [IsStrictOrderedRing R] (A B D Csa E : R) (hA : A ≠ 0) (hB : B ≠ 0) (hD : D ≠ 0)
+    [IsStrictOrderedRing R] (A B D Csa E : R)
     (hsa : evenFaceCorrection A (crossTerm B Csa D) ≤ 1)
     (hlift : 1 < evenFaceCorrection A (crossTerm B (Csa + E) D)) :
     E ≠ 0 := by
   intro hE
-  exact lift_forces_nonzero_amplitude A B D Csa E hA hsa hlift
+  exact lift_forces_nonzero_amplitude A B D Csa E hsa hlift
     (by rw [hE, mul_zero])
 
 /-! ### Part 3 — the amplitude is FREE (surjective): NOT scope-(b) excluded. -/
@@ -180,7 +182,7 @@ theorem amplitude_surjective {R : Type*} [Field R] (A B D Csa r : R)
     (hA : A ≠ 0) (hB : B ≠ 0) (hD : D ≠ 0) :
     ∃ E : R, evenFaceCorrection A (crossTerm B (Csa + E) D) = r := by
   refine ⟨(evenFaceCorrection A (crossTerm B Csa D) - r) * A * D * B⁻¹, ?_⟩
-  rw [factor_affine_in_amplitude A B D Csa _ hA]
+  rw [factor_affine_in_amplitude A B D Csa _]
   unfold evenFaceCorrection crossTerm
   field_simp
   ring
@@ -197,9 +199,9 @@ theorem amplitude_injective {R : Type*} [Field R] (A B D Csa E₁ E₂ : R)
     (hA : A ≠ 0) (hB : B ≠ 0) (hD : D ≠ 0)
     (h : evenFaceCorrection A (crossTerm B (Csa + E₁) D)
         = evenFaceCorrection A (crossTerm B (Csa + E₂) D)) : E₁ = E₂ := by
-  rw [factor_affine_in_amplitude A B D Csa E₁ hA,
-      factor_affine_in_amplitude A B D Csa E₂ hA] at h
-  have h2 : B * D⁻¹ * E₁ / A = B * D⁻¹ * E₂ / A := by linarith
+  rw [factor_affine_in_amplitude A B D Csa E₁,
+      factor_affine_in_amplitude A B D Csa E₂] at h
+  have h2 : B * D⁻¹ * E₁ / A = B * D⁻¹ * E₂ / A := sub_right_injective h
   rw [div_eq_div_iff hA hA] at h2
   have h3 : B * D⁻¹ * E₁ = B * D⁻¹ * E₂ := mul_right_cancel₀ hA h2
   exact mul_left_cancel₀ (mul_ne_zero hB (inv_ne_zero hD)) h3
