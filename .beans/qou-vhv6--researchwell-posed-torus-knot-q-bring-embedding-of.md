@@ -103,3 +103,17 @@ residual translational/rotational symmetry of the embedding. Concretely:
 2. Magnitude r_K(q): track the 6-branch-orbit displacement under the q-shift
    z↦q·z (the natural q-integer-curve action already formalized in
    ColorCurveQIntegerForm) — measured in the quotient. Derive-then-check; no fit.
+
+## PROGRESS (2026-08-02) — tier-0/1 Lean-backed, sorry-free
+- **Saddle structure (tier 0):** `QOU/Mass/ColorCubicDiscriminantPositive.lean` —
+  6 saddle points (deg-6 discriminant), palindromic, all strictly off the real
+  axis ⇒ offset angle nonzero by construction. Verified (lean-direct exit 0).
+- **Angle (tier 1):** `QOU/Mass/LagrangeResolventCyclicEigenvalue.lean` —
+  the k-th Lagrange resolvent is an eigenvector of the C₅ cyclic shift with
+  eigenvalue ζ₅^{-k} (`lagrangeResolvent_cyclic_eigenvalue`, generic-R, one-line
+  linear_combination over w⁵=1) + the S₃ colour-channel cube-root specialization
+  (`colourResolvent_cyclic_eigenvalue`, w³=1). Verified sorry-free. This is the
+  rigorous "offset angle = stabilizer root of unity."
+- **Remaining (tier 2, OPEN):** the magnitude r_K(q) under the q-shift z↦q·z on
+  the 6-branch orbit, in the residual-symmetry quotient — still a definition +
+  derive-then-check, no fit. Not yet attempted.
