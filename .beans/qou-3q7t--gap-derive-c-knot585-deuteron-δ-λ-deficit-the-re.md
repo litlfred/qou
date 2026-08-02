@@ -8,8 +8,6 @@ created_at: 2026-08-01T23:41:01Z
 updated_at: 2026-08-02T09:11:04Z
 ---
 
-
----
 ## 2026-08-02 (PR #4556) — single-factor / single-scale route REFUTED with the pinned weight
 
 With the binding weight now pinned to the derived Wenzl y_λ (#4543), the clean cross-isotope test:

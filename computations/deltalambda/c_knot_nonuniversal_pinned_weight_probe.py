@@ -39,7 +39,7 @@ Three independent kills of the single-factor hypothesis, all 0-fit:
 The MIRROR-PAIR invariant (the Lean-provable core): T and ³He sit at the SAME strand count H₉ but
 require C_knot(T)=4.44 ≠ 3.29=C_knot(³He) (ratio 1.35, robust across all three dim conventions
 1.29–1.35). Therefore C_knot cannot be a function of (n, q₀) alone — it carries genuine per-knot
-(isospin/mirror) content. Lean `CKnotNonUniversal.cknot_level_only_excluded` proves the cross-
+(isospin/mirror) content. Lean `CKnotNonUniversal.no_level_only_closure` proves the cross-
 multiplied inequality B_AME(T)·S(³He) ≠ B_AME(³He)·S(T) (sorry-free, norm_num on rationals).
 
 VERDICT
@@ -49,7 +49,7 @@ weight — C_knot ≡ the full per-isotope Δ_λ magnitude, not a constant and n
 rescale. This CONFIRMS + SHARPENS the E₀-options audit (docs/audits/2026-06-01-e0-lambda-substrate-
 derivation-options.md): the χ^λ→M_λ absolute per-block scale is not a single derivable object.
 scope-(b) (narrow): the level-only closure class g(n, q₀)·m_e·S(K) is structurally excluded by the
-T/³He mirror inequality (cited invariant: cknot_level_only_excluded). The Δ_λ magnitude itself
+T/³He mirror inequality (cited invariant: no_level_only_closure). The Δ_λ magnitude itself
 remains OPEN (bean qou-3q7t) — this narrows the attack, it does not close the gate.
 
 STRICT anti-fit: y_λ is the derived Wenzl weight (recomputed here, Σ y_λ f^λ = 1 asserted); χ^λ read
@@ -312,7 +312,7 @@ def main() -> int:
             "isospin ±8%). Mirror pair T & ³He at the SAME H₉ need C_knot differing 35% (robust 1.29–"
             "1.35 across dim conventions) ⇒ C_knot is NOT a function of (n,q₀); it is per-knot Δ_λ. "
             "scope-(a): single-universal-C_knot derivation route REFUTED; scope-(b): level-only rescale "
-            "g(n,q₀) excluded by the mirror inequality (Lean cknot_level_only_excluded). Δ_λ magnitude "
+            "g(n,q₀) excluded by the mirror inequality (Lean no_level_only_closure). Δ_λ magnitude "
             "stays OPEN (bean qou-3q7t). Supersedes c_knot_not_universal_probe.py (whose 41× was right-"
             "vs-wrong weight, now resolved). No fit; B_AME diagnostic-only (never inverted); nothing "
             "wired; exact mpmath."),
@@ -356,7 +356,7 @@ def main() -> int:
                     "scope-(a): C_knot is non-universal (2.83× with the pinned weight + best dim), so "
                     "'derive C_knot as one geometric/scale factor' is refuted. scope-(b): the level-only "
                     "rescale class g(n,q₀)·m_e·S(K) is structurally excluded by the T/³He mirror "
-                    "inequality (cited invariant cknot_level_only_excluded). NOT an exclusion of a per-"
+                    "inequality (cited invariant no_level_only_closure). NOT an exclusion of a per-"
                     "knot Δ_λ derivation — that remains OPEN (bean qou-3q7t)."),
                 "anti_fit": (
                     "y_λ derived (Wenzl, Σ y_λ f^λ = 1 asserted); χ^λ from committed caches; B_AME used "
