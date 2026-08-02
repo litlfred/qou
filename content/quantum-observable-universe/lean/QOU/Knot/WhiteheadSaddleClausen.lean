@@ -414,6 +414,88 @@ theorem clausen_diff_le {θ : ℝ} (h0 : 0 ≤ θ) (h2 : θ ≤ π) :
   · calc g θ ≤ g (π / 2) := hanti ⟨le_refl (π / 2), by linarith [hpi]⟩ ⟨hge, h2⟩ hge
       _ = 2 * QOU.Knot.clausen (π / 2) := hgmax
 
+/-- Derivative of the shifted-Clausen difference for a general shift `s` on the
+    interior of its domain. -/
+theorem hasDerivAt_clausen_diff_shift {θ s : ℝ} (h0 : 0 < θ) (h2 : θ + s < 2 * π)
+    (hs : 0 < s) :
+    HasDerivAt (fun t => QOU.Knot.clausen t - QOU.Knot.clausen (t + s))
+      (Real.log (2 * Real.sin ((θ + s) / 2)) - Real.log (2 * Real.sin (θ / 2))) θ := by
+  have hd1 := QOU.Knot.hasDerivAt_clausen h0 (by linarith)
+  have hshift : HasDerivAt (fun t : ℝ => t + s) 1 θ := (hasDerivAt_id θ).add_const s
+  have hd2 := (QOU.Knot.hasDerivAt_clausen (θ := θ + s) (by linarith) h2).comp θ hshift
+  have hcomb := hd1.sub (by simpa using hd2)
+  convert hcomb using 1; ring
+
+/-- **Generalized global bound.** `clausen θ − clausen(θ+s) ≤ 2·clausen(π−s/2)`
+    (peak at `θ = π−s/2`, value `2·clausen(π−s/2)` via `clausen(π+s/2) =
+    −clausen(π−s/2)`), for `0 < s ≤ π`, `0 ≤ θ ≤ 2π−s`. -/
+theorem clausen_diff_le_shift {θ s : ℝ} (hs0 : 0 < s) (hsπ : s ≤ π)
+    (h0 : 0 ≤ θ) (h2 : θ ≤ 2 * π - s) :
+    QOU.Knot.clausen θ - QOU.Knot.clausen (θ + s) ≤ 2 * QOU.Knot.clausen (π - s / 2) := by
+  have hpi := Real.pi_pos
+  set g : ℝ → ℝ := fun t => QOU.Knot.clausen t - QOU.Knot.clausen (t + s) with hgdef
+  have hgmax : g (π - s / 2) = 2 * QOU.Knot.clausen (π - s / 2) := by
+    have hcl : QOU.Knot.clausen (π - s / 2 + s) = -QOU.Knot.clausen (π - s / 2) := by
+      rw [show π - s / 2 + s = π + s / 2 by ring,
+          QOU.Knot.clausen_eq_series (θ := π + s / 2) ⟨by linarith, by linarith⟩,
+          QOU.Knot.clausen_eq_series (θ := π - s / 2) ⟨by linarith, by linarith⟩,
+          show (π + s / 2 : ℝ) = 2 * π - (π - s / 2) by ring, QOU.Knot.Cl_2_two_pi_sub]
+    simp only [hgdef]; rw [hcl]; ring
+  have hcont : Continuous g :=
+    QOU.Knot.continuous_clausen.sub
+      (QOU.Knot.continuous_clausen.comp (continuous_id.add continuous_const))
+  have hderivval : ∀ t ∈ Set.Ioo (0 : ℝ) (2 * π - s),
+      deriv g t = Real.log (2 * Real.sin ((t + s) / 2)) - Real.log (2 * Real.sin (t / 2)) :=
+    fun t ht => (hasDerivAt_clausen_diff_shift ht.1 (by linarith [ht.2]) hs0).deriv
+  have hmono : MonotoneOn g (Set.Icc 0 (π - s / 2)) := by
+    refine monotoneOn_of_deriv_nonneg (convex_Icc _ _) hcont.continuousOn ?_ ?_
+    · rw [interior_Icc]; intro t ht
+      exact (hasDerivAt_clausen_diff_shift ht.1 (by linarith [ht.2, hpi]) hs0).differentiableAt.differentiableWithinAt
+    · intro t ht
+      rw [interior_Icc] at ht
+      have hs1 : 0 < Real.sin (t / 2) :=
+        Real.sin_pos_of_pos_of_lt_pi (by linarith [ht.1, ht.2, hpi]) (by linarith [ht.1, ht.2, hpi])
+      have hcmp : Real.sin (t / 2) ≤ Real.sin ((t + s) / 2) := by
+        have hsm : Real.sin ((t + s) / 2) - Real.sin (t / 2)
+            = 2 * Real.sin (s / 4) * Real.cos (t / 2 + s / 4) := by
+          rw [Real.sin_sub_sin, show ((t + s) / 2 - t / 2) / 2 = s / 4 by ring,
+              show ((t + s) / 2 + t / 2) / 2 = t / 2 + s / 4 by ring]
+        have hsp : 0 < Real.sin (s / 4) :=
+          Real.sin_pos_of_pos_of_lt_pi (by linarith) (by linarith)
+        have hcp : 0 ≤ Real.cos (t / 2 + s / 4) :=
+          le_of_lt (Real.cos_pos_of_mem_Ioo ⟨by linarith [ht.1, ht.2, hpi], by linarith [ht.1, ht.2, hpi]⟩)
+        nlinarith [hsm, mul_nonneg (mul_nonneg (by norm_num : (0:ℝ) ≤ 2) (le_of_lt hsp)) hcp]
+      rw [hderivval t ⟨ht.1, by linarith [ht.2, hpi]⟩, sub_nonneg]
+      exact Real.log_le_log (by linarith [hs1]) (by linarith [hcmp])
+  have hanti : AntitoneOn g (Set.Icc (π - s / 2) (2 * π - s)) := by
+    refine antitoneOn_of_deriv_nonpos (convex_Icc _ _) hcont.continuousOn ?_ ?_
+    · rw [interior_Icc]; intro t ht
+      exact (hasDerivAt_clausen_diff_shift (by linarith [ht.1, hpi]) (by linarith [ht.2]) hs0).differentiableAt.differentiableWithinAt
+    · intro t ht
+      rw [interior_Icc] at ht
+      have hs2 : 0 < Real.sin ((t + s) / 2) :=
+        Real.sin_pos_of_pos_of_lt_pi (by linarith [ht.1, ht.2, hpi]) (by linarith [ht.1, ht.2, hpi])
+      have hcmp : Real.sin ((t + s) / 2) ≤ Real.sin (t / 2) := by
+        have hsm : Real.sin (t / 2) - Real.sin ((t + s) / 2)
+            = 2 * Real.sin (-(s / 4)) * Real.cos (t / 2 + s / 4) := by
+          rw [Real.sin_sub_sin, show (t / 2 - (t + s) / 2) / 2 = -(s / 4) by ring,
+              show (t / 2 + (t + s) / 2) / 2 = t / 2 + s / 4 by ring]
+        have hsp : Real.sin (-(s / 4)) ≤ 0 := by
+          rw [Real.sin_neg]
+          exact neg_nonpos_of_nonneg (le_of_lt (Real.sin_pos_of_pos_of_lt_pi (by linarith) (by linarith)))
+        have hcp : Real.cos (t / 2 + s / 4) ≤ 0 :=
+          Real.cos_nonpos_of_pi_div_two_le_of_le (by linarith [ht.1, hpi]) (by linarith [ht.2, hpi])
+        nlinarith [hsm, mul_nonneg
+          (neg_nonneg.2 (mul_nonpos_of_nonneg_of_nonpos (by norm_num : (0:ℝ) ≤ 2) hsp))
+          (neg_nonneg.2 hcp)]
+      rw [hderivval t ⟨by linarith [ht.1, hpi], by linarith [ht.2]⟩, sub_nonpos]
+      exact Real.log_le_log (by linarith [hs2]) (by linarith [hcmp])
+  rcases le_total θ (π - s / 2) with hle | hge
+  · calc g θ ≤ g (π - s / 2) := hmono ⟨h0, hle⟩ ⟨by linarith, le_refl _⟩ hle
+      _ = 2 * QOU.Knot.clausen (π - s / 2) := hgmax
+  · calc g θ ≤ g (π - s / 2) := hanti ⟨le_refl _, by linarith⟩ ⟨hge, h2⟩ hge
+      _ = 2 * QOU.Knot.clausen (π - s / 2) := hgmax
+
 /-- The `abs_deviation_le` master error as a named sequence (= `tendsto_master_error`). -/
 noncomputable def devErr (N : ℕ) : ℝ :=
   |(-QOU.Knot.clausen (2 * (π / N)) / 2)| + (π / N) * |Real.log (2 * Real.sin (π / N))|
