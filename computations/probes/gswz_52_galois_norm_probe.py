@@ -51,7 +51,6 @@ verifying them against independent data remains open on qou-xx9f.
 
 import json
 import sys
-from fractions import Fraction
 
 import sympy as sp
 
@@ -111,6 +110,8 @@ checks["triple_product_5_integral_to_h3"] = 5 not in support
 # Delta, Delta containing disc = -23). Observed: exactly {2, 23} — the
 # 3s cancel entirely (stronger than the 4_1 Z[1/3] statement).
 checks["triple_product_denominator_support_in_2_3_23"] = support <= {2, 3, 23}
+# pin the observed exact support so a silent reappearance of 3 fails
+checks["triple_product_support_exactly_2_23"] = support == {2, 23}
 
 print(json.dumps(checks, indent=1))
 print("N(h) coefficients:", [str(c) for c in coeffs])

@@ -3,7 +3,7 @@
  "probe": "gswz_52_galois_norm_probe",
  "engine": "python3-sympy-exact",
  "scriptFile": "gswz_52_galois_norm_probe.py",
- "commitSha": "9f2ac1068d9d2f6df35ce947ce3c8fa6f1fd2d06",
+ "commitSha": "a58c907488a95af5b4ed4ebe0744b4a70d9fead8",
  "beans": [
   "qou-xx9f",
   "qou-9p9y"
@@ -13,7 +13,8 @@
   "norm_delta_is_minus_23": true,
   "triple_product_coeffs_rational": true,
   "triple_product_5_integral_to_h3": true,
-  "triple_product_denominator_support_in_2_3_23": true
+  "triple_product_denominator_support_in_2_3_23": true,
+  "triple_product_support_exactly_2_23": true
  },
  "norm_series_coeffs": [
   "1",
