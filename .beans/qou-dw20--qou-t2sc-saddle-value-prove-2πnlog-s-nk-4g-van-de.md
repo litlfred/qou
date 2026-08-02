@@ -27,3 +27,10 @@ Remaining (tractable, next focused pass): (A) prove V=4·clausen(π/2) [log2
 cancels → integral_log_two_sin_pi at 1/2,1/4,3/4 + clausen(π)=0 +
 clausen(3π/2)=−clausen(π/2)]; (B) Riemann-sum convergence [integral_le_sum_log_sin
 /_falling, FigureEightVolumeSaddle E5c pattern]. (A)+(B) ⇒ hsaddle ⇒ unconditional VC.
+
+## VALUE half DONE sorry-free (2026-08-01)
+saddle_integral (WhiteheadSaddleClausen.lean): ∫_0^{1/2}(2 log(2sin(π(u+1/4)))
+− log(2sin(πu))) = 2·clausen(π/2)/π ⇒ continuum saddle value 2π·∫ = 4·clausen(π/2)
+= 4G. Sorry-free (lean-direct). Ingredients all sorry-free: integral_log_two_sin_pi,
+intervalIntegrable_log_two_sin_pi, clausen_three_pi_div_two, integral_A, integral_B_zero.
+REMAINING = the CONVERGENCE half only (new child bean) — the big Riemann-sum campaign.
