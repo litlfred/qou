@@ -516,6 +516,47 @@ theorem gridPrim_ge {N K : ℕ} (hN : 4 ≤ N) (hK : 1 ≤ K) (hKN : K ≤ N - 1
   rw [abs_le] at h
   simp only [gridPrim, devErr]; linarith [h.1]
 
+/-- `clausen ≥ 0` on `[0,π]` (the positive lobe): `clausen(0)=clausen(π)=0`,
+    increasing to the max at `π/3`, then decreasing. -/
+theorem clausen_nonneg {θ : ℝ} (h0 : 0 ≤ θ) (h2 : θ ≤ π) : 0 ≤ QOU.Knot.clausen θ := by
+  have hpi := Real.pi_pos
+  have hderiv_nonpos : ∀ t : ℝ, π / 3 ≤ t → t < 2 * π →
+      Real.sin (t / 2) ≥ 1 / 2 → deriv QOU.Knot.clausen t ≤ 0 := by
+    intro t ht1 ht2 hsin
+    rw [(QOU.Knot.hasDerivAt_clausen (by linarith) ht2).deriv]
+    exact neg_nonpos_of_nonneg (Real.log_nonneg (by linarith [hsin]))
+  have hmono : MonotoneOn QOU.Knot.clausen (Set.Icc 0 (π / 3)) := by
+    refine monotoneOn_of_deriv_nonneg (convex_Icc _ _) QOU.Knot.continuous_clausen.continuousOn ?_ ?_
+    · rw [interior_Icc]; intro t ht
+      exact (QOU.Knot.hasDerivAt_clausen ht.1 (by linarith [ht.2, hpi])).differentiableAt.differentiableWithinAt
+    · intro t ht
+      rw [interior_Icc] at ht
+      rw [(QOU.Knot.hasDerivAt_clausen ht.1 (by linarith [ht.2, hpi])).deriv]
+      have hsnn : (0 : ℝ) ≤ Real.sin (t / 2) :=
+        Real.sin_nonneg_of_nonneg_of_le_pi (by linarith [ht.1]) (by linarith [ht.2, hpi])
+      refine neg_nonneg.2 (Real.log_nonpos (by linarith [hsnn]) ?_)
+      have hsm : Real.sin (t / 2) ≤ 1 / 2 := by
+        rw [show (1 : ℝ) / 2 = Real.sin (π / 6) by rw [Real.sin_pi_div_six]]
+        exact Real.strictMonoOn_sin.monotoneOn ⟨by linarith [ht.1, ht.2, hpi], by linarith [ht.1, ht.2, hpi]⟩
+          ⟨by linarith [hpi], by linarith [hpi]⟩ (by linarith [ht.2])
+      linarith [hsm]
+  have hanti : AntitoneOn QOU.Knot.clausen (Set.Icc (π / 3) π) := by
+    refine antitoneOn_of_deriv_nonpos (convex_Icc _ _) QOU.Knot.continuous_clausen.continuousOn ?_ ?_
+    · rw [interior_Icc]; intro t ht
+      exact (QOU.Knot.hasDerivAt_clausen (by linarith [ht.1, hpi]) (by linarith [ht.2, hpi])).differentiableAt.differentiableWithinAt
+    · intro t ht
+      rw [interior_Icc] at ht
+      refine hderiv_nonpos t (le_of_lt ht.1) (by linarith [ht.2, hpi]) ?_
+      have hsm : Real.sin (π / 6) ≤ Real.sin (t / 2) := by
+        exact Real.strictMonoOn_sin.monotoneOn ⟨by linarith [hpi], by linarith [hpi]⟩
+          ⟨by linarith [ht.1, ht.2, hpi], by linarith [ht.1, ht.2, hpi]⟩ (by linarith [ht.1])
+      rw [Real.sin_pi_div_six] at hsm; linarith [hsm]
+  rcases le_total θ (π / 3) with hle | hge
+  · calc (0 : ℝ) = QOU.Knot.clausen 0 := QOU.Knot.clausen_zero.symm
+      _ ≤ QOU.Knot.clausen θ := hmono ⟨le_refl 0, by linarith [hpi]⟩ ⟨h0, hle⟩ h0
+  · calc (0 : ℝ) = QOU.Knot.clausen π := QOU.Knot.clausen_pi.symm
+      _ ≤ QOU.Knot.clausen θ := hanti ⟨hge, h2⟩ ⟨by linarith [hpi], le_refl π⟩ h2
+
 /-- **Uniform per-term upper bound (BRICK 5a).**  For every valid `k`,
     `(2π/N)·log S_{⌊N/2⌋,k} ≤ 4·clausen(π − ⌊N/2⌋π/N) + clausen(2⌊N/2⌋π/N) +
     10·devErr N` — a `k`-independent RHS (the parity-clean upper envelope via
@@ -556,6 +597,68 @@ theorem two_pi_log_whiteheadS_le {N k : ℕ} (hN : 4 ≤ N) (hk1 : 1 ≤ k)
   rw [show π - 2 * (((N / 2 : ℕ) : ℝ) * (π / N)) / 2 = π - ((N / 2 : ℕ) : ℝ) * (π / N) by ring] at hcds
   linarith [hg1, hg2, hg3, hcds]
 
+/-- `devErr N ≥ 0` — every summand of the master error is nonnegative. -/
+theorem devErr_nonneg (N : ℕ) : 0 ≤ devErr N := by
+  have hpiN : (0 : ℝ) ≤ π / N := div_nonneg Real.pi_pos.le (Nat.cast_nonneg N)
+  have hlog2 : (0 : ℝ) ≤ Real.log 2 := Real.log_nonneg (by norm_num)
+  have h2 : (0 : ℝ) ≤ (π / N) * |Real.log (2 * Real.sin (π / N))| :=
+    mul_nonneg hpiN (abs_nonneg _)
+  have h3 : (0 : ℝ) ≤ 7 * ((π / N) * (|Real.log (2 * Real.sin (π / N))| + Real.log 2)) := by
+    have hh : (0 : ℝ) ≤ (π / N) * (|Real.log (2 * Real.sin (π / N))| + Real.log 2) :=
+      mul_nonneg hpiN (by linarith [abs_nonneg (Real.log (2 * Real.sin (π / N)))])
+    linarith
+  simp only [devErr]
+  linarith [abs_nonneg (-QOU.Knot.clausen (2 * (π / N)) / 2)]
+
+/-- The `k`-independent upper envelope from BRICK 5a, packaged as a named
+    sequence.  Its limit is `4·catalanG = 4G` (grid points `⌊N/2⌋π/N → π/2`,
+    `2⌊N/2⌋π/N → π`; `devErr → 0`). -/
+noncomputable def whiteheadUmax (N : ℕ) : ℝ :=
+  4 * QOU.Knot.clausen (π - ((N / 2 : ℕ) : ℝ) * (π / N))
+    + QOU.Knot.clausen (2 * (((N / 2 : ℕ) : ℝ) * (π / N))) + 10 * devErr N
+
+/-- **Uniform per-term upper bound over the WHOLE range** `0 ≤ k ≤ N-1-⌊N/2⌋`
+    (BRICK 5a extended to the `k = 0` maximizer edge via `clausen_nonneg`):
+    every term satisfies `(2π/N)·log S_{⌊N/2⌋,k} ≤ whiteheadUmax N`. -/
+theorem two_pi_log_whiteheadS_le_all {N k : ℕ} (hN : 4 ≤ N)
+    (hkn : k + N / 2 ≤ N - 1) :
+    (2 * π / N) * Real.log (QOU.Knot.WhiteheadVC.whiteheadS N (N / 2) k)
+      ≤ whiteheadUmax N := by
+  rcases Nat.eq_zero_or_pos k with hk0 | hk1
+  · -- k = 0 : gridPrim N 0 = 0 collapses the identity to 2·gridPrim N (N/2)
+    subst hk0
+    have hNpos : (0 : ℝ) < N := by exact_mod_cast (by omega : 0 < N)
+    have hpi := Real.pi_pos
+    have hpiN : (0 : ℝ) < π / N := by positivity
+    rw [two_pi_log_whiteheadS_eq (by omega) hkn]
+    have hIcc : Finset.Icc (1 : ℕ) 0 = ∅ := Finset.Icc_eq_empty (by omega)
+    have hz : gridPrim N 0 = 0 := by rw [gridPrim, hIcc, Finset.sum_empty, mul_zero]
+    simp only [Nat.zero_add]
+    rw [hz]
+    have hg := gridPrim_le hN (by omega : 1 ≤ N / 2) (by omega : N / 2 ≤ N - 1)
+    have hn2pos : (0 : ℝ) < ((N / 2 : ℕ) : ℝ) := by exact_mod_cast (by omega : 0 < N / 2)
+    have haN_le : 2 * (((N / 2 : ℕ) : ℝ) * (π / N)) ≤ π := by
+      have hb : 2 * ((N / 2 : ℕ) : ℝ) ≤ (N : ℝ) := by
+        have h := (by omega : 2 * (N / 2) ≤ N)
+        calc 2 * ((N / 2 : ℕ) : ℝ) = ((2 * (N / 2) : ℕ) : ℝ) := by push_cast; ring
+          _ ≤ (N : ℝ) := by exact_mod_cast h
+      have hpiN' : (N : ℝ) * (π / N) = π := by field_simp
+      nlinarith [mul_le_mul_of_nonneg_right hb (le_of_lt hpiN), hpiN']
+    have haN_nn : (0 : ℝ) ≤ 2 * (((N / 2 : ℕ) : ℝ) * (π / N)) := by positivity
+    have hcl_aN : 0 ≤ QOU.Knot.clausen (2 * (((N / 2 : ℕ) : ℝ) * (π / N))) :=
+      clausen_nonneg haN_nn haN_le
+    have hP_nn : (0 : ℝ) ≤ π - ((N / 2 : ℕ) : ℝ) * (π / N) := by linarith [haN_le]
+    have hP_le : π - ((N / 2 : ℕ) : ℝ) * (π / N) ≤ π := by
+      linarith [mul_pos hn2pos hpiN]
+    have hcl_P : 0 ≤ QOU.Knot.clausen (π - ((N / 2 : ℕ) : ℝ) * (π / N)) :=
+      clausen_nonneg hP_nn hP_le
+    have hdev := devErr_nonneg N
+    simp only [whiteheadUmax]
+    linarith [hg, hcl_P, hcl_aN, hdev]
+  · -- k ≥ 1 : BRICK 5a directly
+    simp only [whiteheadUmax]
+    exact two_pi_log_whiteheadS_le hN hk1 hkn
+
 /-- **Explicit saddle-term convergence (BRICK 3).**  At the saddle
     `(n*, k*) = (⌊N/2⌋, ⌊N/4⌋)`, `(2π/N)·log S_{n*,k*} → 4·catalanG = 4G`. -/
 theorem whiteheadS_explicit_saddle_tendsto :
@@ -595,6 +698,98 @@ theorem whiteheadS_explicit_saddle_tendsto :
   refine Filter.Tendsto.congr' ?_ hrhs
   filter_upwards [Filter.eventually_ge_atTop 4] with N hN4
   exact (two_pi_log_whiteheadS_eq (by omega) (by omega)).symm
+
+/-- **The Whitehead Volume Conjecture for the `⌊N/2⌋`-level inner sum**
+    (UNCONDITIONAL, sorry-free): `(2π/N)·log(Σ_k S_{⌊N/2⌋,k}) → 4·catalanG = 4G`.
+
+    Squeeze: below by the explicit `k*=⌊N/4⌋` saddle term
+    (`whiteheadS_explicit_saddle_tendsto`, BRICK 3), above by the
+    `k`-independent envelope `(2π/N)·log N + whiteheadUmax N` (max-term
+    `≤ whiteheadUmax N` for every `k` incl. `k=0` via
+    `two_pi_log_whiteheadS_le_all`, slack `(2π/N)·log N → 0`), both `→ 4·G`.
+    This closes the analytic limit left open in
+    `QOU.Knot.WhiteheadVC.whitehead_volume_conjecture` (bean qou-1gkf). -/
+theorem whitehead_vc_innerSum_half :
+    Filter.Tendsto
+      (fun N : ℕ => (2 * π / N) *
+        Real.log (QOU.Knot.WhiteheadVC.whiteheadInnerSum N (N / 2)))
+      Filter.atTop (nhds (4 * QOU.Knot.WhiteheadVC.catalanG)) := by
+  -- grid `2·(⌊N/2⌋·π/N) → π`  (a=1, b=2, c=1)
+  have hgrid : Filter.Tendsto (fun N : ℕ => 2 * (((N / 2 : ℕ) : ℝ) * (π / N)))
+      Filter.atTop (nhds π) := by
+    have h := gridpt_tendsto (a := 1) (b := 2) (c := 1) (by norm_num) (fun N => N / 2)
+      (fun N => by simp only []; omega) (fun N => by simp only []; omega)
+    have heq : 2 * (((1 : ℕ) : ℝ) / ((2 : ℕ) : ℝ)) * π = π := by push_cast; ring
+    rwa [heq] at h
+  -- `clausen(2·⌊N/2⌋·π/N) → clausen π`
+  have hclA : Filter.Tendsto
+      (fun N : ℕ => QOU.Knot.clausen (2 * (((N / 2 : ℕ) : ℝ) * (π / N))))
+      Filter.atTop (nhds (QOU.Knot.clausen π)) :=
+    (QOU.Knot.continuous_clausen.tendsto π).comp hgrid
+  -- `clausen(π − ⌊N/2⌋·π/N) → clausen(π/2)`
+  have hargP : Filter.Tendsto (fun N : ℕ => π - ((N / 2 : ℕ) : ℝ) * (π / N))
+      Filter.atTop (nhds (π / 2)) := by
+    have hhalf : Filter.Tendsto (fun N : ℕ => ((N / 2 : ℕ) : ℝ) * (π / N))
+        Filter.atTop (nhds (π / 2)) := (hgrid.div_const 2).congr (fun N => by ring)
+    have hd := (tendsto_const_nhds (x := π)).sub hhalf
+    rwa [show π - π / 2 = π / 2 from by ring] at hd
+  have hclP : Filter.Tendsto
+      (fun N : ℕ => QOU.Knot.clausen (π - ((N / 2 : ℕ) : ℝ) * (π / N)))
+      Filter.atTop (nhds (QOU.Knot.clausen (π / 2))) :=
+    (QOU.Knot.continuous_clausen.tendsto (π / 2)).comp hargP
+  -- `whiteheadUmax N → 4·catalanG`
+  have hUmax : Filter.Tendsto whiteheadUmax Filter.atTop
+      (nhds (4 * QOU.Knot.WhiteheadVC.catalanG)) := by
+    have hlim := ((hclP.const_mul 4).add hclA).add (tendsto_devErr.const_mul 10)
+    rw [QOU.Knot.clausen_pi, ← catalanG_eq_clausen_pi_div_two,
+      show 4 * QOU.Knot.WhiteheadVC.catalanG + 0 + 10 * 0
+        = 4 * QOU.Knot.WhiteheadVC.catalanG from by ring] at hlim
+    exact hlim.congr (fun N => by simp only [whiteheadUmax])
+  -- upper envelope `(2π/N)·log N + whiteheadUmax N → 4·catalanG`
+  have hupper : Filter.Tendsto (fun N : ℕ => (2 * π / N) * Real.log N + whiteheadUmax N)
+      Filter.atTop (nhds (4 * QOU.Knot.WhiteheadVC.catalanG)) := by
+    have h := QOU.Knot.WhiteheadVC.tendsto_slack_zero.add hUmax
+    rwa [zero_add] at h
+  refine tendsto_of_tendsto_of_tendsto_of_le_of_le'
+    whiteheadS_explicit_saddle_tendsto hupper ?_ ?_
+  · -- lower: `(2π/N)·log S_{⌊N/2⌋,⌊N/4⌋} ≤ (2π/N)·log(innerSum)`
+    filter_upwards [Filter.eventually_ge_atTop 4] with N hN
+    have hN2 : 2 ≤ N := by omega
+    have hSpos : 0 < QOU.Knot.WhiteheadVC.whiteheadS N (N / 2) (N / 4) :=
+      QOU.Knot.WhiteheadVC.whiteheadS_pos hN2 (by omega)
+    have hle : QOU.Knot.WhiteheadVC.whiteheadS N (N / 2) (N / 4)
+        ≤ QOU.Knot.WhiteheadVC.whiteheadInnerSum N (N / 2) :=
+      QOU.Knot.WhiteheadVC.whiteheadS_le_innerSum hN2 (by omega)
+    have hscale : (0 : ℝ) ≤ 2 * π / N := by positivity
+    exact mul_le_mul_of_nonneg_left (Real.log_le_log hSpos hle) hscale
+  · -- upper: `(2π/N)·log(innerSum) ≤ (2π/N)·log N + whiteheadUmax N`
+    filter_upwards [Filter.eventually_ge_atTop 4] with N hN
+    have hN2 : 2 ≤ N := by omega
+    obtain ⟨kmax, hklt, _, hup⟩ :=
+      QOU.Knot.WhiteheadVC.whiteheadInnerSum_saddle hN2 (by omega : N / 2 < N)
+    have hkmaxrange : kmax + N / 2 ≤ N - 1 := by omega
+    have hSkpos : 0 < QOU.Knot.WhiteheadVC.whiteheadS N (N / 2) kmax :=
+      QOU.Knot.WhiteheadVC.whiteheadS_pos hN2 (by omega)
+    have hinner_pos : 0 < QOU.Knot.WhiteheadVC.whiteheadInnerSum N (N / 2) :=
+      QOU.Knot.WhiteheadVC.whiteheadInnerSum_pos hN2 (by omega)
+    have hcardpos : (0 : ℝ) < ((N - N / 2 : ℕ) : ℝ) :=
+      by exact_mod_cast (by omega : 0 < N - N / 2)
+    have hNpos : (0 : ℝ) < N := by exact_mod_cast (by omega : 0 < N)
+    have hscale : (0 : ℝ) ≤ 2 * π / N := by positivity
+    have hup' : QOU.Knot.WhiteheadVC.whiteheadInnerSum N (N / 2)
+        ≤ ((N - N / 2 : ℕ) : ℝ) * QOU.Knot.WhiteheadVC.whiteheadS N (N / 2) kmax := by
+      rw [nsmul_eq_mul] at hup; exact hup
+    have hlog1 := Real.log_le_log hinner_pos hup'
+    rw [Real.log_mul (ne_of_gt hcardpos) (ne_of_gt hSkpos)] at hlog1
+    have hstep := mul_le_mul_of_nonneg_left hlog1 hscale
+    rw [mul_add] at hstep
+    have hslack : (2 * π / N) * Real.log ((N - N / 2 : ℕ) : ℝ)
+        ≤ (2 * π / N) * Real.log N :=
+      mul_le_mul_of_nonneg_left
+        (Real.log_le_log hcardpos (by exact_mod_cast Nat.sub_le N (N / 2))) hscale
+    have hterm : (2 * π / N) * Real.log (QOU.Knot.WhiteheadVC.whiteheadS N (N / 2) kmax)
+        ≤ whiteheadUmax N := two_pi_log_whiteheadS_le_all hN hkmaxrange
+    linarith [hstep, hslack, hterm]
 
 /-
   ROADMAP — remaining bricks to discharge `hsaddle` (all ingredients verified
