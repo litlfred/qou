@@ -139,8 +139,8 @@ theorem masses_nonneg : ∀ l : List ℕ, 0 ≤ (masses l).1 ∧ 0 ≤ (masses l
   | [] => ⟨le_refl 0, le_refl 0⟩
   | c :: cs => by
       have ih := masses_nonneg cs
-      refine ⟨?_, ?_⟩ <;> simp only [masses] <;> [skip; skip] <;>
-        (first | (have : (0 : ℤ) ≤ (c : ℤ) := Int.ofNat_nonneg c; omega) | omega)
+      have hc : (0 : ℤ) ≤ (c : ℤ) := Int.natCast_nonneg c
+      refine ⟨?_, ?_⟩ <;> simp only [masses] <;> omega
 
 /-- `χ(l) = E(l) − O(l)`: the signed Euler characteristic is even mass minus odd
     mass. -/
