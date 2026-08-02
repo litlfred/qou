@@ -12,3 +12,5 @@ blocked_by:
 ---
 
 Assemble ⊕_λ ρ_λ : H_n(q) → ⊕_λ M_{d_λ}(K); injective (SW-5/6) + dim both sides = n! (SW-3) ⇒ AlgEquiv. This is the  field of HeckeWedderburnData.
+
+## Refine (recon): Mathlib Wedderburn-Artin is EXISTENCE only (exists_algEquiv_pi_matrix_of_isAlgClosed) — block set/dims existential. Route to the partition-INDEXED iso: assemble ⊕_λ ρ_λ (SW-4) + injective (SW-5) + dim match Σd_λ²=n! (SW-3) ⇒ AlgEquiv directly, rather than extracting from the existential form. Does NOT need Jacobson density (SW-9).
