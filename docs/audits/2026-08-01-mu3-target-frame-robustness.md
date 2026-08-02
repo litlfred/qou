@@ -1,10 +1,46 @@
-# The μ₃ (A=3 magnitude) target is baseline-class-relative — the "1.6× gap" is smaller than the target's own convention-spread
+# The μ₃ (A=3 magnitude) target — a frame/units audit (headline CONCEDED to ROUTE 5)
 
 **Date:** 2026-08-01 · **Branch:** `claude/mu3-target-frame-robustness-2026-08-01` · **PR:** #4491 ·
 **Axis:** Δ_λ / A=3 magnitude gate · **Tier:** scope-(a) frame-robustness measurement (exact mpmath +
 Lean-proved amplification/sign facts; **no fit**; nothing wired).
 
-## 0. ⚠ UNITS + SCALE (read first) — the "1.6× near-miss" is dimensionally ill-posed and scale-ambiguous
+## 00. ⚠⚠ CONCESSION (read first) — the "1.73× baseline-class spread" headline is RETRACTED (ROUTE 5, `a9c2ee94`)
+
+A sibling red-team (**A=3 magnitude ROUTE 5**, `docs/audits/2026-08-01-mu3-target-robustness-audit.md`,
+landed on main `a9c2ee94`) checked this PR's central claim and I **concede it — my headline over-claimed.**
+
+- **My §1–§2 claim** was: μ₃ swings **1.73× across baseline classes** (graded G / balanced-quantum Q /
+  classical C), *exceeding* the 1.585× gap, so the "1.6× gap" is baseline-class-relative.
+- **ROUTE 5 is correct that the baseline is PINNED.** The subtracted ladder `ρ_grad = [A]_q!/[2]_q!` is
+  *uniquely* the coinvariant graded dimension (the Poincaré series, #4300 jet filtration). The balanced
+  quantum dimension (Q) and the classical limit (C) are **different categorical objects, not legitimate
+  re-choices of the same baseline** — so the 0.7691 / 0.8128 values are **illegitimate**, and the "1.73×
+  spread" is **not a genuine ambiguity.** I flagged G as "more-motivated" but still ran the spread as the
+  headline — that was the over-claim.
+- **The honest residual freedom is ±8%** (ROUTE 5 Axis (a): the isospin-correction family ³H / ³He+E_C
+  gives `μ₃ ∈ [0.445, 0.509]`, `r* ∈ [1.50, 1.71]`), on a **condition-number-≈8** residual. So **μ₃ is
+  well-posed at ~10% — NOT a decomposition artifact.** The cross-channel hunt for `c₃` is *justified*;
+  siblings should score by **sign + `r* ∈ [1.50, 1.71]`**, not by matching 1.585 to 3 sig figs.
+
+**What in this PR survives** (independent of the retracted headline):
+
+1. **§3b/§3c order-separation** (A=3 and A=4): the higher-cluster-order route to precision is pruned
+   (bounded tail ≪ miss) — *stands*, and is orthogonal to ROUTE 5.
+2. **The cond-#≈8 amplification / "report on the physical ratio"** point (§3a) — *agrees* with ROUTE 5
+   (their condition number ≈8.1 = my ρ_grad/μ₃ ≈7). Keep, credit ROUTE 5.
+3. **§0 units observation** — that the borromean probe compares `c₃` (labelled MeV) to `μ₃`
+   (dimensionless) with an explicit "read as MeV" (line 188) — is a **real labelling inconsistency worth
+   flagging**, but I **downgrade** its framing: ROUTE 5 treats `r* = μ₃/c₃ ∈ [1.50,1.71]` as the
+   well-posed target, so the pun is a *presentation* issue, **not** evidence the near-miss is an
+   "artifact." My "scale-ambiguous 1.66×–3.53×" (§0) over-dramatized a labelling choice; the operative
+   target is `r* ≈ 1.585 ± 8%`.
+4. **The weight-pinning** (PR #4543): `y_λ` is the derived Markov weight — *stands*, and reinforces
+   ROUTE 5's "things are pinned" theme.
+
+The sections below are **left intact as the original (over-claimed) record**; read them through this
+concession. The corpus source of truth for the A=3 target's well-posedness is ROUTE 5.
+
+## 0. ⚠ UNITS + SCALE — the "1.6× near-miss" comparison is dimensionally loose (downgraded per §00)
 
 The headline "1.6× A=3 near-miss" (`c₃ = 0.63·μ₃`, #4364 / three-walls) — and the gap-factor / physical-%
 numbers in §2–3c below, which followed it — **compare a MeV energy to a dimensionless ratio.**
