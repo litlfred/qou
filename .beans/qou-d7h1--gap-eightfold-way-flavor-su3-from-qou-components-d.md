@@ -23,3 +23,5 @@ Long term: connect the flavor action, if it exists, to the Bring/icosahedral sid
 
 - There is already a q=1 SU(3) symmetry anchor in the corpus: completed bean `1ict` resolved that Elliott SU(3) sits at the q=1 corner of the existing Schur-Weyl / Wedderburn shell picture, via mutual centralizers on `(ℂ^3)^{⊗ n}`. So the flavor route is not starting from zero representation theory.
 - There is also already a baryon-label precursor table: `predicted-spectra/linking-relations-table-table3-data.md` lists `p,n,\Lambda,\Sigma^\pm,\Xi^0,\Xi^-,\Omega^-` as Borromean `(u,d,s)` triples. But this is NOT yet an Eightfold-Way derivation: it mixes octet and decuplet content (`\Omega^-` is decuplet) and omits the full weight-multiplet organization (e.g. `\Sigma^0`, meson octet, decuplet structure).
+
+- Gap list after corpus grep: no relevant `meson octet`, `baryon octet`, `decuplet`, or `weight diagram` layer is present in the content tree, and the existing baryon-label table does not yet include a `\Sigma^0` row. So the corpus currently has state labels and one q=1 SU(3) anchor, but not the Eightfold-Way multiplet geometry itself.
