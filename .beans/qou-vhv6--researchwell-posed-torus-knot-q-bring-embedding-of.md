@@ -65,3 +65,41 @@ sinh/cosh ODE is NOT the answer (confabulated, internally inconsistent — see
   target. No wiring to production.
 - Coordinate with beans `5cts` (toroidal), `qou-9nq9` (Δ_λ geom), `qou-ml1i`
   (derived colour-tube weight) — overlapping S₅/colour-curve turf.
+
+## Refinement (owner, 2026-08-02): baseline ≠ saddle; quotient the residual symmetry FIRST
+The reference point (q→ symmetric limit) does **NOT** in general sit exactly on a
+saddle/branch point — and the offset is only well-defined AFTER quotienting the
+residual translational/rotational symmetry of the embedding. Concretely:
+- **Symbolic result this session:** the trefoil colour cubic
+  C(X;z)=X³+[2]_z X²+[3]_z X+[4]_z has discriminant
+  Δ(z) = −(16z⁶+24z⁵+35z⁴+50z³+35z²+24z+16), which is **degree 6 → exactly 6
+  branch points** (matches the corpus "6 saddle points"), and the sextic is
+  **palindromic** (z⁶P(1/z)=P(z), the q↔q⁻¹ bar-symmetry) and **strictly
+  positive on ℝ** (min≈3.57) ⇒ **all 6 branch points are strictly off the real
+  spacetime axis.** So the "saddle points" are a complex 6-point orbit, not real
+  loci — the naive "centre at a saddle" picture is wrong.
+- **Therefore the offset must be defined in the quotient by the residual
+  symmetry:** for T_{2,n} there is a **Z_n rotational symmetry** (n crossings)
+  plus the C₅ resolvent rotation w_k↦ζ₅^{-k}w_k and colour S₃; the 6 branch
+  points form an orbit under these. The offset baseline is the
+  **symmetry-distinguished reference** (e.g. the centroid / C₅-fixed point of
+  the 6-point orbit), NOT an arbitrary single branch point. v_offset lives in
+  (embedding locus) / (residual symmetry group), in a chosen fundamental domain.
+- **Already-in-corpus Lean (do NOT duplicate):**
+  `QOU/Mass/ColorCurveQIntegerForm.lean` proves the q-integer form (sorry-free);
+  `QOU/Mass/ColorCubicNoBranch.lean` has the irreducibility→no-root route. The
+  genuine NEW lemma available is the **explicit palindromic-discriminant
+  positivity** (SOS witness: P = 16·f0²+(126/5)·f1²+(22661/1400)·f2²+D3,
+  f0=z³+¾z²+z/40+17/80, f1=z²+71z/84−43/504, f2=z+3721/4386, D3>0; nlinarith
+  hints 80z³+60z²+2z+17, 504z²+426z−43, 4386z+3721) giving the concrete
+  "no real saddle" corollary. Add as a companion to ColorCubicNoBranch iff it
+  isn't already the same statement.
+
+## Revised task order
+0. Define the residual-symmetry quotient (Z_n × C₅ × S₃ action on the 6-point
+   branch orbit) and the fundamental domain — the offset baseline. THIS IS STEP 0
+   (formalize-first; the corpus has no settled def yet).
+1. Angle θ_K from the equivariant stabilizer root of unity (tier 1, provable).
+2. Magnitude r_K(q): track the 6-branch-orbit displacement under the q-shift
+   z↦q·z (the natural q-integer-curve action already formalized in
+   ColorCurveQIntegerForm) — measured in the quotient. Derive-then-check; no fit.
