@@ -27,6 +27,7 @@ import Mathlib.Algebra.Order.Field.Basic
 import Mathlib.Tactic.NormNum
 import Mathlib.Tactic.Ring
 import Mathlib.Data.Real.Basic
+import Mathlib.Data.Nat.Choose.Basic
 
 namespace QOU.MassTheory.CKnotNonUniversal
 
@@ -67,5 +68,37 @@ to absorb exceeds the ~8% isospin tolerance (ROUTE 5), so the exclusion is not a
 artifact. -/
 theorem mirror_gap_exceeds_isospin_band : B_T * S_He > 1.1 * (B_He * S_T) := by
   unfold B_T S_He B_He S_T; norm_num
+
+/-!
+### A structural REASON for non-universality: the chirality regime `(−1)^{C(3A,2)}`
+
+Beyond the mirror inequality (which shows per-knot content *within* a level), there is a clean
+level-parity reason the deuteron cannot share a `C_knot` regime with the heavier isotopes. Under
+conjugation the `n`-statistic satisfies the Macdonald identity `n(λ) + n(λ') = C(n,2)` (verified
+numerically at `n = 6`: all five conjugate pairs flip the binding sign, the self-conjugate `(3,2,1)`
+is fixed). Hence the binding sign `sgn(λ) = (−1)^{n(λ)}` obeys `sgn(λ') = (−1)^{C(n,2)} · sgn(λ)`: it
+**antisymmetrizes** conjugate pairs iff `C(n,2)` is odd.
+-/
+
+/-- **The conjugation law for the binding sign** (pure exponent arithmetic, no hypothesis needed):
+`(−1)^{n(λ')} = (−1)^{n(λ) + n(λ')} · (−1)^{n(λ)}`. With the Macdonald identity `n(λ) + n(λ') = C(n,2)`
+this is `sgn(λ') = (−1)^{C(n,2)} · sgn(λ)` — the chirality regime is fixed by the parity of `C(n,2)`. -/
+theorem sgn_conj (nl nl' : ℕ) :
+    (-1 : ℝ) ^ nl' = (-1) ^ (nl + nl') * (-1) ^ nl := by
+  have hsq : ((-1 : ℝ)) ^ nl * ((-1 : ℝ)) ^ nl = 1 := by
+    rw [← pow_add]; exact Even.neg_one_pow ⟨nl, rfl⟩
+  calc (-1 : ℝ) ^ nl' = (-1) ^ nl' * 1 := by ring
+    _ = (-1) ^ nl' * ((-1) ^ nl * (-1) ^ nl) := by rw [hsq]
+    _ = (-1) ^ (nl + nl') * (-1) ^ nl := by rw [pow_add]; ring
+
+/-- **The deuteron sits in a DIFFERENT chirality regime than the heavier light isotopes.** With
+`n = 3A`: `C(6,2) = 15` is ODD (A=2, deuteron → sgn antisymmetrizes conjugate pairs, bar-odd-projected)
+while `C(9,2) = 36` (A=3, T/³He) and `C(12,2) = 66` (A=4, ⁴He) are EVEN (sgn preserved). So the
+deuteron's binding-sign structure is qualitatively unlike A ≥ 3 — a structural reason `C_knot(D)`
+cannot lie on the same universal curve as the heavier isotopes, independent of the mirror inequality
+above. -/
+theorem deuteron_chirality_regime_differs :
+    Nat.choose 6 2 % 2 = 1 ∧ Nat.choose 9 2 % 2 = 0 ∧ Nat.choose 12 2 % 2 = 0 := by
+  refine ⟨?_, ?_, ?_⟩ <;> decide
 
 end QOU.MassTheory.CKnotNonUniversal

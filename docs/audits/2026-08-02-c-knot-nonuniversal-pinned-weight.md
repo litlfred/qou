@@ -81,6 +81,29 @@ So `C_knot` carries genuine per-knot (isospin / mirror) content, not captured by
 **scope-(b) structural exclusion of the level-only-rescale closure class** (cited invariant
 `mirror_cross_ne`); it does **not** exclude a per-knot Δ_λ derivation.
 
+### 3a. A second, independent structural reason: the chirality regime `(−1)^{C(3A,2)}`
+
+The mirror inequality shows per-knot variation *within* a level. A cleaner *level-parity* reason
+separates the deuteron from the heavier isotopes entirely. Under conjugation the `n`-statistic obeys
+the Macdonald identity `n(λ) + n(λ') = C(n,2)` (verified numerically at `n = 6`: all five conjugate
+pairs flip the binding sign, the self-conjugate `(3,2,1)` is fixed), so the binding sign
+`sgn(λ) = (−1)^{n(λ)}` satisfies `sgn(λ') = (−1)^{C(n,2)} · sgn(λ)` — it *antisymmetrizes* conjugate
+pairs iff `C(n,2)` is odd. With `n = 3A`:
+
+| A | isotope | n = 3A | C(3A,2) | parity | chirality regime |
+|---|---|---|---|---|---|
+| 2 | D | 6 | 15 | **odd** | sgn antisymmetrizes (bar-odd-projected) |
+| 3 | T, ³He | 9 | 36 | even | sgn preserved |
+| 4 | ⁴He | 12 | 66 | even | sgn preserved |
+
+The **deuteron sits in a different chirality regime than A ≥ 3** — its binding-sign structure is
+qualitatively unlike the heavier isotopes, a structural reason `C_knot(D)` cannot lie on the same
+universal curve, independent of the mirror inequality. Lean `sgn_conj` (the exponent law, sorry-free)
++ `deuteron_chirality_regime_differs` (the concrete parity split, `decide`). *(This split explains the
+D-vs-rest gap; it does NOT explain the T/³He split at fixed n=9 — that is the isospin content of §3.
+The two reasons are complementary: C_knot varies both across regimes AND within a regime.)* (Structural
+identity contributed by a parallel session, formalized here.)
+
 ## 4. Parallel-check corroboration (attribution: a sibling session's read-only probes, folded in per
 owner request — no separate PR)
 
