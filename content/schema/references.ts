@@ -139,6 +139,56 @@ export const references: CSLData[] = [
     note: "Proceedings of the Casson Fest; arXiv:math/0306230. The AJ-conjecture formulation paper. DOI corrected 2026-07-06 from the spurious J. Diff. Geom. DOI 10.4310/JDG/1090425531 to the authoritative GTM DOI (verified via msp.org search snippets; ds4b literature check, PR #3434).",
   }),
 
+  // ── Garoufalidis–Yoon 2024 — 1-loop = adjoint Reidemeister torsion, PROVED for two-bridge knots ──
+  ref({
+    id: "garoufalidis-yoon-2024",
+    type: "article",
+    title: "1-loop equals torsion for two-bridge knots",
+    author: [
+      { family: "Garoufalidis", given: "Stavros" },
+      { family: "Yoon", given: "Seokbeom" },
+    ],
+    issued: { "date-parts": [[2024]] },
+    URL: "https://arxiv.org/abs/2411.03801",
+    note: "arXiv:2411.03801 (posted 2024-11-06, 24pp, math.GT). Proves the Dimofte–Garoufalidis 1-loop conjecture — the constant (1-loop) term of the DG power series equals the adjoint Reidemeister torsion — for hyperbolic two-bridge knots, by combining Ohtsuki–Takata with an explicit computation. 6_2 is two-bridge (fraction 11/3) so the theorem covers it; the QOU deuteron closure. Used as the literature backing for the ρ_F=ν_SDP falsifiable probe (bean qou-r307): the adjoint torsion IS the topological density selecting the geometric connection. Authors + title + arXiv id verified via arXiv listing + abstract (WebSearch, 2026-08-02); PDF body 403 in-sandbox, no DOI (preprint).",
+  }),
+
+  // ── Ohtsuki–Takata 2015 — Kashaev asymptotics ↔ twisted Reidemeister torsion of two-bridge knots ──
+  ref({
+    id: "ohtsuki-takata-2015",
+    type: "article-journal",
+    title: "On the Kashaev invariant and the twisted Reidemeister torsion of two-bridge knots",
+    author: [
+      { family: "Ohtsuki", given: "Tomotada" },
+      { family: "Takata", given: "Toshie" },
+    ],
+    "container-title": "Geometry & Topology",
+    issued: { "date-parts": [[2015]] },
+    volume: "19",
+    page: "853-952",
+    DOI: "10.2140/gt.2015.19.853",
+    URL: "https://doi.org/10.2140/gt.2015.19.853",
+    note: "Geom. Topol. 19 (2015), no. 2, 853-952 (RIMS-1785). The second coefficient of the Kashaev-invariant asymptotic expansion of a two-bridge knot is a constant multiple of the square root of the twisted Reidemeister torsion at the holonomy representation (first coefficient = complex volume). The half of the 1-loop=torsion input for 6_2 combined by Garoufalidis–Yoon. Vol/pages verified via WebSearch (2026-08-02); DOI follows the msp.org gt.YEAR.VOL.PAGE pattern, PDF not read in-sandbox.",
+  }),
+
+  // ── Dimofte–Garoufalidis 2013 — the 1-loop invariant from the gluing equations ──
+  ref({
+    id: "dimofte-garoufalidis-2013",
+    type: "article-journal",
+    title: "The quantum content of the gluing equations",
+    author: [
+      { family: "Dimofte", given: "Tudor" },
+      { family: "Garoufalidis", given: "Stavros" },
+    ],
+    "container-title": "Geometry & Topology",
+    issued: { "date-parts": [[2013]] },
+    volume: "17",
+    page: "1253-1315",
+    DOI: "10.2140/gt.2013.17.1253",
+    URL: "https://doi.org/10.2140/gt.2013.17.1253",
+    note: "Geom. Topol. 17 (2013), no. 3, 1253-1315; arXiv:1202.6268. Defines the DG formal power series from an ideal triangulation whose constant (1-loop) term is a topological invariant conjectured to equal the nonabelian Reidemeister–Ray–Singer (adjoint) torsion. Source of the 1-loop invariant that Garoufalidis–Yoon prove = adjoint torsion for two-bridge knots. Authors/vol/pages/DOI verified via Project Euclid + WebSearch (2026-08-02).",
+  }),
+
   // ── Milnor 1954 — link groups; μ̄-invariants defined mod gcd of pairwise linkings ──
   ref({
     id: "milnor1954",
