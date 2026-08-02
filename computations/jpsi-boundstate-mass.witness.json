@@ -1,0 +1,120 @@
+{
+  "engine": "snappy",
+  "engineVersion": "snappy 3.3.2",
+  "computedAt": "2026-08-02T18:34:18.461327+00:00",
+  "commitSha": "de056291d3099f6fac216974192f13af54a2944a",
+  "computation": "jpsi-boundstate-mass",
+  "scriptFile": "jpsi_boundstate_mass_probe.py",
+  "scriptHash": "420886f4e96b",
+  "scriptCommitSha": null,
+  "description": "J/ψ = c̄c as a hyperbolic bound-state braid volume. Scale fixed on the proton Borromean mass-knot only. Tests whether a DERIVED c̄c+gluon braid predicts the OBSERVABLE J/ψ (3096.9) / η_c (2983.9); reports entropy and the J/ψ↔η_c single-braid discriminator. Anti-fit (PR #1805).",
+  "consumes": [
+    "conj:complex-mass-constituent-functional",
+    "computations/sm_carrier_vs_mass_knot_map.py"
+  ],
+  "results": {
+    "scale_MeV_per_vol": 128.04411076744893,
+    "vol_borromean_proton": 7.327724753417753,
+    "vol_4_1_muon": 2.029883212819307,
+    "jpsi_MeV_observed": 3096.9,
+    "etac_MeV_observed": 2983.9,
+    "jpsi_needs_vol": 24.186196314991214,
+    "etac_needs_vol": 23.30368794094168,
+    "proton_family_borromean_pow_k": {
+      "3": {
+        "vol": 7.327724753417753,
+        "mass_MeV": 938.2720000000002
+      },
+      "4": {
+        "vol": 12.350906209158198,
+        "mass_MeV": 1581.460802723825
+      },
+      "5": {
+        "vol": 17.085709482982857,
+        "mass_MeV": 2187.7244775795093
+      },
+      "6": {
+        "vol": 21.63159867919266,
+        "mass_MeV": 2769.798817355547
+      },
+      "7": {
+        "vol": 26.054401507265517,
+        "mass_MeV": 3336.112672575894
+      },
+      "8": {
+        "vol": 30.394204400053724,
+        "mass_MeV": 3891.7988748889625
+      }
+    },
+    "jpsi_between_windings": {
+      "below_k": 6,
+      "above_k": 7,
+      "no_integer_hit": true
+    },
+    "entropy": {
+      "band_vol": [
+        22.40368794094168,
+        24.586196314991213
+      ],
+      "band_mass_MeV": [
+        2868.6603003092964,
+        3148.1176443069794
+      ],
+      "n_braids_enumerated": 196,
+      "n_hits_in_band": 8,
+      "fraction_in_band": 0.04081632653061224
+    },
+    "best_braid_jpsi": {
+      "strands": 4,
+      "base": [
+        1,
+        -2,
+        3
+      ],
+      "power": 4,
+      "mass_MeV": 3084.86228699346,
+      "err_pct": -0.38870202481642574,
+      "chern_simons": -0.08333333333333312
+    },
+    "best_braid_etac": {
+      "strands": 5,
+      "base": [
+        -1,
+        2,
+        -3,
+        4
+      ],
+      "power": 3,
+      "mass_MeV": 2964.442667250194,
+      "err_pct": -0.6520772395122499,
+      "chern_simons": -5.736944659061857e-16
+    },
+    "same_braid_for_both": false
+  },
+  "assertions": [
+    {
+      "name": "jpsi_not_in_proton_borromean_family",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "J/ψ (3097) falls strictly between winding k=6 (2770 MeV) and k=7 (3336 MeV): the proton's own Borromean family contains no integer-winding J/ψ."
+    },
+    {
+      "name": "jpsi_etac_best_fit_by_different_braids",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "The nearly-degenerate c̄c pair (3.7% split) is best-fit by different-topology braids — a per-state fitting signature, not a single derived c̄c bound-state object."
+    },
+    {
+      "name": "jpsi_scale_in_range_not_volume_excluded",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "Unlike the neutrino (scope-(b) volume-excluded), the J/ψ mass scale is reachable: hyperbolic braids with Vol≈24 give ≈3097 MeV. The mechanism is not excluded; the braid is undefined."
+    }
+  ],
+  "allPassed": true,
+  "verdict": "SHARPENED NEGATIVE. J/ψ is IN-RANGE for the hyperbolic bound-state mass mechanism (positive: distinguishes it from the neutrino's scope-(b) exclusion), but NO parameter-free c̄c braid is derived. Evidence it is a fit, not a derivation: (i) the proton's own (σ₁σ₂⁻¹)^k family misses J/ψ at every integer k (k=6→2770, k=7→3336); (ii) the volume spectrum near the target is dense (~2% of simple braids land in the 230-MeV band); (iii) J/ψ and η_c — the same c̄c system split by only 3.7% hyperfine — are best-fit by DIFFERENT braid topologies, the classic per-state-fit signature. The precise open wall: 'thread c̄c through the gluon T(2,9) color tube' is topologically under-defined (many inequivalent satellite/cable/threading operations → no unique volume). m_c/J/ψ stays OPEN; the volume-density mechanism CLASS is confirmed in-range but the braid remains underived.",
+  "scope": "(a) scope-limited negative: no derived braid found; mechanism in-range."
+}
