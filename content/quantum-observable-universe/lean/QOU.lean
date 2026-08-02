@@ -500,6 +500,10 @@ import QOU.Archimedean.TauRhoHodgeShadow
 import QOU.Archimedean.TauS5EquivarianceReduction
 import QOU.Archimedean.PerLoopMeasureShadowAssembly
 import QOU.Archimedean.TauRhoHodgeLiftInterface
+-- B2-lift interface SHARPENING (bean qou-demm): collapses the 2-field TauRhoHodgeLift
+-- to a single open field PeriodMapWeight (the MOC), deriving equal-split + doubled-total
+-- and recording the involution-match + nome-equivariance as automatic. No instance (open).
+import QOU.Archimedean.PeriodMapWeightReduction
 import QOU.Archimedean.VertexLocalTauModel
 import QOU.Archimedean.LiftFromReality
 import QOU.Archimedean.TauFunctorTargetSpec

@@ -23,3 +23,13 @@ CANONICAL/automatic (hodge_lift_bring_model.py, 10/10). So the interface can be 
 DISCIPLINE: no instance fabricated (leave PeriodMapWeight uninstantiated = honest open
 state). This is an INTERFACE SHARPENING, not a closure. Env note: Mathlib oleans may be
 churned; restore lake-cache/qou-<slug> + lean-direct with LEAN_PATH, or wait for bg build.
+
+## LANDED (2026-08-02): PeriodMapWeightReduction.lean — verified sorry-free (lean-direct exit 0)
+Single-field class PeriodMapWeight (selfAdjoint) replaces the 2-field TauRhoHodgeLift.
+Derived from the one field (reusing merged sorry-free shadow lemmas): equal_split
+(old `conjugated` field, now DERIVED via rho_forced_equal_split), doubled_total
+(channel_share_is_half), sharpened_assembly (discharges shadow_assembly's f/hnorm/hint).
+Recorded automatic (not fields): involution_match_automatic (=shadow_intertwines.1),
+nome_equivariance_automatic. NO instance fabricated (uninstantiated content-bearing Prop
+= the honest open MOC). Wired into QOU.lean umbrella (Copilot lesson: else CI won't build).
+Interface sharpening, NOT a closure; 1/(8pi) stays phase-4. Re-verified by orchestrator.
