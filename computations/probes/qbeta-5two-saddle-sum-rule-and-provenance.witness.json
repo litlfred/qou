@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-02T08:14:24.211155+00:00",
-  "commitSha": "cea645d3e075b3302f6b731e8f57f24a180c5cbb",
+  "computedAt": "2026-08-02T13:26:43.465003+00:00",
+  "commitSha": "52bf1aabb6587cac8b7a6e8e3caad0c5ede1ead7",
   "assertions": [
     {
       "name": "sum_rule_exact",
@@ -49,8 +49,8 @@
   "durationMs": 0,
   "computation": "qbeta-5two-saddle-sum-rule-and-provenance",
   "scriptFile": "qbeta_5two_saddle_sum_rule_and_provenance_probe.py",
-  "scriptHash": "3e8b29354696",
-  "scriptCommitSha": "cea645d3e075b3302f6b731e8f57f24a180c5cbb",
+  "scriptHash": "22f42937f6bb",
+  "scriptCommitSha": "52bf1aabb6587cac8b7a6e8e3caad0c5ede1ead7",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -103,7 +103,11 @@
     "proof_status": {
       "status": "NUMERICALLY VERIFIED to 80 dps, NOT PROVED",
       "reduction": "sum log y_j = 0 (Vieta, prod y = 1) and sum L_j = pi*i give sum L_j^2 = -pi^2 - 2*e2(L), so the sum rule is equivalent to 3*sum Li2(y_j) = 2*Re e2(L) - pi^2/2 -- a dilogarithm-vs-log-product relation, i.e. Bloch-group / five-term shaped.",
-      "open": "a Bloch-group or five-term-relation proof over the 5_2 trace field. Numerical verification at 80 dps is strong evidence, not a proof."
+      "open": "a Bloch-group or five-term-relation proof over the 5_2 trace field. Numerical verification at 80 dps is strong evidence, not a proof.",
+      "branch_data": "2 log y_j - 3 log(1-y_j) = 2 pi i eps_j with eps = (+1,-1,0), exact at all three roots; this is where the pi^2 in the sum rule comes from",
+      "derived_relation": "summing the reflection identity over the roots gives A + B = pi^2/2 - (2/3) sum (log y_j)^2 - (4 pi/3) arg(y1), verified exactly, where A = sum Li2(y_j), B = sum Li2(1-y_j)",
+      "why_not_closed": "one equation, two unknowns (A = 0.9717306815, B = 0.3514640301, no evident closed form for either separately)",
+      "identified_route": "Kubert/distribution relation Li2(z^n) = n sum_k Li2(zeta_n^k z) applied to Li2(y^2) = Li2((1-y)^3), which supplies a second relation at the cost of omega*(1-y) arguments"
     },
     "verdict": "SUM RULE: sum_j Re V_j = -3 pi^2/2 exactly (residual 2.14e-50 at 50 dps), equivalently V3 = -2 Re V1 - 3 pi^2/2. The corpus's pi^2/2 'extraction' shift is therefore the unique CENTERING that makes the three saddle values sum to zero, not an unexplained fudge. It is SPECIFIC to the 5_2 cubic, not branch bookkeeping: five control cubics of the same shape -- four sharing 5_2's prod(y)=1 constraint -- miss the target by 0.162 to 2.83, so the identity is an arithmetic property of the 5_2 saddle cubic (Bloch-group / dilogarithm-ladder shaped), NOT a formal artifact. It is verified to 80 digits but NOT PROVED. PROVENANCE: both long-unexplained literals ARE that convention to ~4 digits (rel 7.85e-5 and 0.000105), so the earlier 'matches neither convention' verdict was wrong -- the formula was right and the evaluation was sloppy. The pair violates the exact relation by 7.3e-5, so the two were computed independently. Li_2 truncation and root imprecision are both REFUTED as the error source (scope-(a), direct test); the residual ~1e-4 stays OPEN but is now bounded to a 4-digit evaluation error in a correct formula. V3 no longer needs to be carried as an independent literal: (REL) gives it from V1."
   }
