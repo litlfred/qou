@@ -1,0 +1,133 @@
+{
+  "schema": "witness/v1",
+  "producer": "computations/deltalambda/c_knot_nonuniversal_pinned_weight_probe.py",
+  "computation": "c-knot-nonuniversal-pinned-weight",
+  "description": "The clean cross-isotope C_knot universality test, run with the NOW-PINNED Markov weight y_\u03bb (PR #4543, \u03a3 y_\u03bb f^\u03bb = 1 verified). Master-formula conventions (binding_energy_categorical_deuteron): B(K) = m_e\u00b7|\u03a3_\u03bb y_\u03bb \u03c7^\u03bb(\u03b2_K) sgn f^\u03bb|, \u03c7^\u03bb from the interface-inclusive Rust Hoefsmit caches. Result: C_knot = 5.85/4.44/3.29/9.31 for D/T/\u00b3He/\u2074He \u2192 spread 2.83\u00d7, NON-UNIVERSAL. f^\u03bb (hook SYT) is the tightest dim convention (2.83\u00d7 vs dim_q 116\u00d7, none 122\u00d7); no global/A-power scale fixes it (log C/log A non-constant); a deuteron-pinned 0-fit scale mispredicts T/\u00b3He/\u2074He by +32%/+78%/\u221237% (\u226b isospin \u00b18%). Mirror pair T & \u00b3He at the SAME H\u2089 need C_knot differing 35% (robust 1.29\u20131.35 across dim conventions) \u21d2 C_knot is NOT a function of (n,q\u2080); it is per-knot \u0394_\u03bb. scope-(a): single-universal-C_knot derivation route REFUTED; scope-(b): level-only rescale g(n,q\u2080) excluded by the mirror inequality (Lean cknot_level_only_excluded). \u0394_\u03bb magnitude stays OPEN (bean qou-3q7t). Supersedes c_knot_not_universal_probe.py (whose 41\u00d7 was right-vs-wrong weight, now resolved). No fit; B_AME diagnostic-only (never inverted); nothing wired; exact mpmath.",
+  "audit_only": true,
+  "tier": "scope-(a) refutation of single-universal-C_knot + scope-(b) level-only exclusion; no fit",
+  "scriptHash": "c056458d2ac454ff",
+  "result": {
+    "master_formula": "B(K) = m_e\u00b7|\u03a3_\u03bb y_\u03bb \u00b7 \u03c7^\u03bb(\u03b2_K) \u00b7 sgn(w_0^{S_{\u03bb'}}) \u00b7 f^\u03bb|,  \u03a3_\u03bb y_\u03bb f^\u03bb = 1",
+    "weight": "Wenzl Schur-principal y_\u03bb (pinned, PR #4543) \u2014 recomputed, \u03a3 y_\u03bb f^\u03bb = 1 asserted",
+    "per_isotope": {
+      "D": {
+        "A": 2,
+        "n_strands": 6,
+        "absS": "0.74378088",
+        "markov_norm_sum_yf": "1.0",
+        "B_naive_MeV": "0.38007125",
+        "B_AME_MeV": "2.2245662",
+        "C_knot": "5.8530241"
+      },
+      "T": {
+        "A": 3,
+        "n_strands": 9,
+        "absS": "3.7349054",
+        "markov_norm_sum_yf": "1.0",
+        "B_naive_MeV": "1.9085328",
+        "B_AME_MeV": "8.4817962",
+        "C_knot": "4.444145"
+      },
+      "3He": {
+        "A": 3,
+        "n_strands": 9,
+        "absS": "4.5882788",
+        "markov_norm_sum_yf": "1.0",
+        "B_naive_MeV": "2.3446057",
+        "B_AME_MeV": "7.7180413",
+        "C_knot": "3.2918292"
+      },
+      "4He": {
+        "A": 4,
+        "n_strands": 12,
+        "absS": "5.9455836",
+        "markov_norm_sum_yf": "1.0",
+        "B_naive_MeV": "3.038187",
+        "B_AME_MeV": "28.295662",
+        "C_knot": "9.313338"
+      }
+    },
+    "spread_factor": "2.8292",
+    "mirror_pair_T_3He": {
+      "same_strand_count_H9": true,
+      "C_knot_T": "4.44414",
+      "C_knot_3He": "3.29183",
+      "ratio": "1.3501",
+      "note": "same H\u2089 \u21d2 any g(n,q\u2080) closure would force C_knot(T)=C_knot(\u00b3He); they differ 35%."
+    },
+    "dim_convention_scan": {
+      "f": {
+        "C_knot": {
+          "D": "5.85302",
+          "T": "4.44414",
+          "3He": "3.29183",
+          "4He": "9.31334"
+        },
+        "spread": "2.8292",
+        "T_over_3He_sameH9": "1.3501"
+      },
+      "dimq": {
+        "C_knot": {
+          "D": "16.4449",
+          "T": "121.615",
+          "3He": "94.3564",
+          "4He": "1906.89"
+        },
+        "spread": "115.96",
+        "T_over_3He_sameH9": "1.2889"
+      },
+      "none": {
+        "C_knot": {
+          "D": "42.6876",
+          "T": "328.543",
+          "3He": "248.468",
+          "4He": "5224.71"
+        },
+        "spread": "122.39",
+        "T_over_3He_sameH9": "1.3223"
+      }
+    },
+    "deuteron_pinned_scale_prediction": {
+      "alpha_MeV": "2.99089",
+      "alpha_over_m_e": "5.85302",
+      "predictions": {
+        "D": {
+          "B_pred_MeV": "2.2245662",
+          "B_AME_MeV": "2.2245662",
+          "err_pct": "0.0"
+        },
+        "T": {
+          "B_pred_MeV": "11.170688",
+          "B_AME_MeV": "8.4817962",
+          "err_pct": "31.7"
+        },
+        "3He": {
+          "B_pred_MeV": "13.723034",
+          "B_AME_MeV": "7.7180413",
+          "err_pct": "77.8"
+        },
+        "4He": {
+          "B_pred_MeV": "17.782582",
+          "B_AME_MeV": "28.295662",
+          "err_pct": "-37.15"
+        }
+      },
+      "note": "0-fit CAL on B(\u00b2H); errors +32/+78/\u221237% \u226b isospin \u00b18% \u21d2 single scale fails."
+    },
+    "verdict": {
+      "single_universal_C_knot_refuted": true,
+      "level_only_rescale_excluded": true,
+      "classification": "scope-(a): C_knot is non-universal (2.83\u00d7 with the pinned weight + best dim), so 'derive C_knot as one geometric/scale factor' is refuted. scope-(b): the level-only rescale class g(n,q\u2080)\u00b7m_e\u00b7S(K) is structurally excluded by the T/\u00b3He mirror inequality (cited invariant cknot_level_only_excluded). NOT an exclusion of a per-knot \u0394_\u03bb derivation \u2014 that remains OPEN (bean qou-3q7t).",
+      "anti_fit": "y_\u03bb derived (Wenzl, \u03a3 y_\u03bb f^\u03bb = 1 asserted); \u03c7^\u03bb from committed caches; B_AME used only as a diagnostic ratio, never inverted into a weight; free_parameters = 0."
+    },
+    "free_parameters": 0
+  },
+  "context": {
+    "axis": "\u0394_\u03bb / C_knot derivation \u2014 is the deficit one universal factor? (pinned weight)",
+    "bean": "qou-3q7t",
+    "supersedes": "c_knot_not_universal_probe.py (41\u00d7 was right-vs-wrong weight, resolved #4543)",
+    "builds_on": "PR #4491 (C_knot gate), PR #4543 (weight pinned), docs/audits/2026-06-01-e0-lambda-substrate-derivation-options.md",
+    "no_fit": true
+  },
+  "scriptCommitSha": "uncommitted"
+}
