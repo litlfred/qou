@@ -228,11 +228,11 @@ def score_census(census: list[dict]) -> dict:
                 n_eval += 1
                 pred = fval / denom
                 err = abs(pred - target) / target
-                if err < 1e-2:
+                if err < THRESH["loose_1pct"]:
                     hits["loose_1pct"] += 1
-                if err < 1e-3:
+                if err < THRESH["mid_0p1pct"]:
                     hits["mid_0p1pct"] += 1
-                if err < 1e-4:
+                if err < THRESH["tight_100ppm"]:
                     hits["tight_100ppm"] += 1
                 if best is None or err < best["rel_err"]:
                     best = {"knot": rec["knot"], "crossings": rec["crossings"],
@@ -329,15 +329,17 @@ def main() -> None:
     print(f"[m_tau_complex_volume] q_0    = {fmt(Q0, 30)}")
     print(f"[m_tau_complex_volume] hbar_q = {fmt(HBAR_Q, 30)}")
 
-    # muon sanity: Vol(4_1)/hbar_q^2 = m_mu/m_e, AND CS(4_1)=0 (amphichiral)
-    M41 = snappy.Manifold("4_1")
-    vol41 = float(M41.volume())
-    cs41 = float(M41.chern_simons())
-    muon_pred = mp.mpf(vol41) / HBAR_Q_SQ
+    # muon sanity: Vol(4_1)/hbar_q^2 = m_mu/m_e, AND CS(4_1)=0 (amphichiral).
+    # Use the canonical high-precision Vol(4_1) = 2*Im(Li_2(e^{i pi/3})) = 2*Lambda(pi/3)
+    # (Bloch-Wigner form), NOT SnapPy's platform-dependent float, and keep the gate
+    # at 1e-6 to match the real-volume probe.
+    vol41 = 2 * mp.im(mp.polylog(2, mp.exp(1j * mp.pi / 3)))
+    cs41 = float(snappy.Manifold("4_1").chern_simons())
+    muon_pred = vol41 / HBAR_Q_SQ
     muon_err = rel_err(muon_pred, TARGET_MU_OVER_E)
-    print(f"[sanity] Vol(4_1)={vol41:.12f}  CS(4_1)={cs41:.3e}  "
+    print(f"[sanity] Vol(4_1)={float(vol41):.12f}  CS(4_1)={cs41:.3e}  "
           f"muon rel_err={fmt(muon_err,4)}")
-    if muon_err > mp.mpf("1e-5"):
+    if muon_err > mp.mpf("1e-6"):
         print("[sanity] FAILED"); sys.exit(1)
     print("[sanity] PASS -- and CS(4_1)~0: the muon anchor is CS-BLIND.")
 
@@ -456,7 +458,21 @@ def main() -> None:
         WitnessBuilder.stamp_staleness_metadata(witness, script_path=__file__,
                                                 engine="snappy+mpmath")
     except Exception as e:  # pragma: no cover
-        print(f"[witness] staleness stamp skipped: {e}")
+        # Never emit a witness without provenance: if the canonical WitnessBuilder
+        # is unavailable, stamp commitSha/scriptHash/engine manually (fail-safe).
+        import hashlib
+        import subprocess
+        try:
+            sha = subprocess.check_output(
+                ["git", "log", "-1", "--format=%H", "--", __file__],
+                cwd=os.path.dirname(os.path.abspath(__file__)),
+            ).decode().strip() or "unknown"
+        except Exception:
+            sha = "unknown"
+        witness["engine"] = "snappy+mpmath"
+        witness["scriptHash"] = hashlib.sha256(Path(__file__).read_bytes()).hexdigest()[:12]
+        witness["scriptCommitSha"] = sha
+        print(f"[witness] canonical stamp unavailable ({e}); stamped provenance manually")
     witness["scriptFile"] = os.path.basename(__file__)
     wpath.write_text(json.dumps(witness, indent=2) + "\n")
     print(f"\n[witness] wrote {wpath}")
