@@ -591,6 +591,10 @@ import QOU.MassTheory.A4InterfaceMagnitude
 -- knot is the trivial 1-dim rep (a q^w scaling, no rotation angle); every dim≥2
 -- rotation channel is compact. scope-(a): eigenphases cannot supply C_knot. Sorry-free.
 import QOU.MassTheory.QReebEigenphaseCompact
+-- Deuteron (A=2) naive per-pair magnitude z=1/[2]_v: PHYSICAL at A=2 (K₂ det 1−z²>0)
+-- but does NOT close it; completes the A=4 scope-(b) exclusion (z dead across A).
+-- Mathlib-free core Lean, sorry-free, decide-checked.
+import QOU.MassTheory.DeuteronNaiveZMagnitude
 import QOU.BraidKnot.ColoredJonesRecurrence
 import QOU.BraidKnot.KnotOperatorRecurrence
 -- Resurgent-bridge tranche (Δ_λ sign/magnitude → DT/3d-index unification):
