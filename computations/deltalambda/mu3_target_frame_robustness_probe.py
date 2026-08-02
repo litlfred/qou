@@ -163,6 +163,8 @@ def run(rho_strong, label):
         # spread exceed the corpus-G gap factor it targets?
         "mu3_spread_exceeds_corpus_gap": bool((max(mu3s) / min(mu3s))
                                               > exact["G_graded_coinvariant"]["gap_factor"]),
+        # exact mp.mpf values (NOT nstr-rounded) for downstream knob computations in main()
+        "_exact": exact,
     }
 
 
@@ -171,12 +173,15 @@ def main() -> int:
     raw = run(RHO_STRONG_RAW, "raw AME B(A)/B(²H)")
 
     # ρ_strong-convention knob (small): μ₃ under corrected vs raw, corpus baseline (G).
-    mu3_corr_G = mp.mpf(corr["per_baseline"]["G_graded_coinvariant"]["mu3"])
-    mu3_raw_G = mp.mpf(raw["per_baseline"]["G_graded_coinvariant"]["mu3"])
+    # Read EXACT mp.mpf values (not nstr-rounded strings) so the "exact (mpmath)" claim holds.
+    mu3_corr_G = corr["_exact"]["G_graded_coinvariant"]["mu3"]
+    mu3_raw_G = raw["_exact"]["G_graded_coinvariant"]["mu3"]
     rho_strong_knob_pct = mp.nstr(100 * abs(mu3_raw_G - mu3_corr_G) / mu3_corr_G, 4)
 
-    gap_factor_corpus = mp.mpf(corr["per_baseline"]["G_graded_coinvariant"]["gap_factor_mu3_over_c3"])
+    gap_factor_corpus = corr["_exact"]["G_graded_coinvariant"]["gap_factor"]
     spread_exceeds_gap = corr["mu3_spread_exceeds_corpus_gap"]   # exact-mpf boolean from run()
+    corr.pop("_exact", None)   # drop the non-serializable exact-mpf helper before it enters the witness
+    raw.pop("_exact", None)
 
     # --- the FRAME-INDEPENDENT statement: accuracy on the physical ratio B(³H)/B(²H) ---------
     # The corpus model's total A=3 prediction is ρ_grad_G(3) + c₃ (graded baseline + derived

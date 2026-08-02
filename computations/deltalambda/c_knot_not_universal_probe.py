@@ -62,23 +62,27 @@ COMP = ROOT / "computations"
 
 
 def _load(name):
+    """Fail fast if a required witness input is absent — do not silently fall back to hard-coded
+    constants (that would mask a bad path/rename and make runs non-reproducible)."""
     p = COMP / name
-    return json.loads(p.read_text()) if p.exists() else None
+    if not p.exists():
+        raise FileNotFoundError(
+            f"required witness input missing: {p} — this probe reads C_knot from committed witnesses; "
+            f"regenerate them (binding_energy_categorical_deuteron.py / delta_lambda_multi_atom_crosscheck.py) "
+            f"before running.")
+    return json.loads(p.read_text())
 
 
 def main() -> int:
-    # convention 1: interface-inclusive (deuteron probe)
+    # convention 1: interface-inclusive (deuteron probe) — _load raises if missing (fail fast)
     dprobe = _load("binding-energy-categorical-deuteron.witness.json")
-    c_interface = mp.mpf(str(dprobe["data"]["C_knot_deuteron"])) if dprobe else mp.mpf("5.8521")
+    c_interface = mp.mpf(str(dprobe["data"]["C_knot_deuteron"]))
     # convention 2: signed dim_q (multi-atom crosscheck)
     xcheck = _load("delta-lambda-multi-atom-crosscheck.witness.json")
-    if xcheck:
-        cd = mp.mpf(str(xcheck["data"]["D"]["C_knot_needed"]))
-        ct = mp.mpf(str(xcheck["data"]["T"]["C_knot_needed"]))
-        che = mp.mpf(str(xcheck["data"]["3He"]["C_knot_needed"]))
-        bnaive_T = mp.mpf(str(xcheck["data"]["T"]["B_naive_MeV"]))
-    else:
-        cd, ct, che, bnaive_T = mp.mpf("240.22"), mp.mpf("40717"), mp.mpf("31475"), mp.mpf("0.000208")
+    cd = mp.mpf(str(xcheck["data"]["D"]["C_knot_needed"]))
+    ct = mp.mpf(str(xcheck["data"]["T"]["C_knot_needed"]))
+    che = mp.mpf(str(xcheck["data"]["3He"]["C_knot_needed"]))
+    bnaive_T = mp.mpf(str(xcheck["data"]["T"]["B_naive_MeV"]))
 
     convention_spread_D = cd / c_interface                # 41× — the ROBUST claim
     a_spread_signeddim = ct / cd                          # 170× — with near-cancellation caveat

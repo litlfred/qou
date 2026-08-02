@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""a3_units_consistency_probe.py — the "1.6× A=3 near-miss" is a UNITS ARTIFACT; the
-dimensionally-consistent gap is 3.53×. Corrects the corpus (#4364 / three-walls) AND the
-corpus-convention numbers in §2–3c of this PR's earlier probes.
+"""a3_units_consistency_probe.py — the "1.6× A=3 near-miss" is dimensionally ill-posed AND
+scale-ambiguous: repairing the pun leaves a gap spanning 1.66× overshoot .. 3.53× undershoot across
+the unpinned C_knot=5.85. NOT a single "honest gap" (an earlier version's 3.53× was an over-claim,
+corrected here). Corrects the corpus (#4364 / three-walls) AND the corpus-convention numbers in §2–3c
+of this PR's earlier probes.
 
 THE PUN (found in borromean_h9_magnitude_lift_probe.py:188)
 -----------------------------------------------------------
