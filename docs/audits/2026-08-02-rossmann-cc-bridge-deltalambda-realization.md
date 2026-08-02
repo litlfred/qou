@@ -28,6 +28,14 @@ is explicitly **subject to the standing guard**
 that the microlocal / perverse / Riemann–Hilbert layer is *analogy, not
 mechanism*, until a QOU result is proved **through** it.
 
+**Update (2026-08-02, Green-function corpus read).** The natural attempt to
+*force* the open identification — via Springer's Green functions — **fails**: the
+substrate weight `y_λ` is the **q-Plancherel measure** `dim_q²(λ)/[n]_q!`, not a
+Green function, and the substrate's only graded object is the **fake degree**,
+which is exactly #4581's *cancelling* `H_λ`. The single-degree concentration is
+therefore an **external theorem of Springer geometry the framework imports**, not
+a gap the 13 drivers can close. See §"The Green-function route also fails" below.
+
 ---
 
 ## The algebraic hook (real, in-corpus)
@@ -92,22 +100,64 @@ archimedean functor), not declared.
   the `DeltaLambdaDTRealization` the arc kept honestly open — no progress beyond
   a nicer name.
 
+## The Green-function route also fails (corpus read, 2026-08-02) — (IDENT) is not forceable from the substrate weights
+
+Springer 1976's title names *Green functions*, so the natural "force (IDENT)"
+attempt is: are the substrate's `y_λ(q)` weights the Green-function values that
+Springer's construction feeds into the graded Weyl-representation? **They are
+not.** Two corpus reads settle it:
+
+1. **`y_λ` is the q-Plancherel weight, not a Green function.** The corpus
+   ([`observations/q-plancherel-asymptotic-skeleton.md`](../../content/quantum-observable-universe/observations/q-plancherel-asymptotic-skeleton.md))
+   defines the Markov-trace weight as `ỹ_λ = dim_q²(λ) / [n]_q!` — the
+   **Kerov–Vershik/Biane q-Plancherel measure** on partitions. Green functions
+   `Q^λ_μ(q)` are the transition matrix between the Springer-graded characters
+   and the class functions on unipotent classes; they are indexed by a *pair*
+   `(λ, μ)` and are not a single per-partition weight. The substrate has the
+   *measure*, not the *transition kernel* — the Springer-geometry input is
+   simply not present in `tr_M = Σ_λ y_λ χ_λ`.
+
+2. **The framework's only graded object is the fake degree — exactly #4581's
+   cancelling `H_λ`.** The dimension polynomial `dim_q(λ)` that appears in `y_λ`
+   is the principal-specialisation fake degree; its `q → -1` (grade-parity)
+   evaluation spreads `V_λ` over both parities and cancels to `f_λ(-1) < dim`,
+   which is *precisely* the cancellation obstruction PR #4581 proved. So the one
+   graded object the substrate actually carries is on the **wrong side** of the
+   #4581 dichotomy — it is a genuine algebraic grading, hence cancelling, hence
+   *not* the single-parity characteristic cycle (IDENT) requires.
+
+**Consequence — the concentration is proved EXTERNAL, not merely open.** The
+single-degree concentration `V_λ = H^{2n(λ)}(𝓑_λ)` is a theorem of *Springer
+geometry* (top-cohomology vanishing on the Springer fibre), and it is **not
+reachable from the substrate weights** `y_λ`: the substrate supplies the
+q-Plancherel measure and the (cancelling) fake-degree grading, neither of which
+is the Green-function/characteristic-cycle datum. This is a **positive external
+input the framework consumes**, not a formalization gap the framework can close
+from its 13 drivers. (IDENT) is therefore not "open pending more work on the
+archimedean functor" — it is an *import of external Springer geometry*, which is
+the honest status the arc has held all along.
+
 ## Verdict
 
-**Conditional candidate mechanism, not a derived result.** The Rossmann
+**Conditional candidate mechanism, not a derived result — and the conditioning
+input is now shown to be EXTERNAL, not internally forceable.** The Rossmann
 characteristic-cycle bridge is the *first* candidate that escapes the #4581
 cancellation obstruction (it is not an algebraic grading — it is a microlocal
 cycle), and it composes cleanly with #4581's proved single-parity saturation.
-But it is gated on **(IDENT)**, an open identification the corpus does not have,
-and it sits under the standing microlocal-is-analogy guard. Reported as **scope
-(a) / conditional**, no `DeltaLambdaDTRealization` instance fabricated, nothing
-wired to production.
+But it is gated on **(IDENT)**, and the Green-function corpus read above shows
+(IDENT) is **not forceable from the substrate weights**: `y_λ` is the
+q-Plancherel measure, not a Green function, and the substrate's only graded
+object is the cancelling fake degree. Reported as **scope (a) / conditional**,
+no `DeltaLambdaDTRealization` instance fabricated, nothing wired to production.
 
-The honest next step is *not* a numerical probe and *not* a Lean closure — it is
-to determine whether **(IDENT)** can be *forced* from the archimedean-functor
-construction (does q₀ → the categorical action → `tr_M_at_q0` land in the
-Harish-Chandra invariant-eigendistribution setting?), or whether it is an
-interpretive overlay. Until then this is language, per the 2026-06-09 guard.
+The honest next step is therefore settled in the negative: **(IDENT) cannot be
+*forced* from the archimedean-functor construction** — the substrate weights do
+not carry the Springer Green-function/characteristic-cycle datum. The
+single-degree concentration is an **external theorem of Springer geometry the
+framework imports**, sitting under the standing microlocal-is-analogy guard. The
+`Δ_λ` **value** stays fully substrate-derived (the proved arc); the **geometric
+concentration** that names it a Behrend-signed DT count is external input, not a
+closure the drivers can reach. This is language, per the 2026-06-09 guard.
 
 ## Lean
 
