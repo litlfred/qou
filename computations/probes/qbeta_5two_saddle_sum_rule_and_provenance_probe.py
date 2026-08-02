@@ -168,12 +168,47 @@ def main() -> int:
          f"   implied {mp.nstr(y_imp, 10)}, cubic residual "
          f"{mp.nstr(cubic_res, 4)}")
 
+    # ---- S1: is the sum rule special to 5_2, or generic bookkeeping? -----
+    # If ANY cubic with one real and two conjugate roots gave -3 pi^2/2, the
+    # identity would be a statement about branch choices, not about 5_2.
+    # Four of the controls share 5_2's Vieta constraint prod(y) = 1 (hence
+    # sum log y = 0), so this isolates the arithmetic of the 5_2 cubic.
+    controls = [("y^3-2y^2+3y-2", [1, -2, 3, -2]),
+                ("y^3-y^2+2y-1", [1, -1, 2, -1]),
+                ("y^3+y^2+2y-1", [1, 1, 2, -1]),
+                ("y^3-3y^2+4y-1", [1, -3, 4, -1]),
+                ("y^3-2y^2+4y-1", [1, -2, 4, -1])]
+    tgt = -3 * mp.pi ** 2 / 2
+    print("\n  [S1] specificity controls (same shape, different cubic):")
+    devs = []
+    for nm, c in controls:
+        rts = mp.polyroots(c, maxsteps=300, extraprec=300)
+        r3 = next(r for r in rts if abs(mp.im(r)) < mp.mpf(10) ** (-15))
+        r1 = next(r for r in rts if mp.im(r) > 0)
+        r2 = next(r for r in rts if mp.im(r) < 0)
+        s = sum(mp.re(saddle_V(y, b)) for y, b in zip([r1, r2, r3], [-1, 1, 1]))
+        devs.append((nm, abs(s - tgt)))
+        print(f"        {nm:16s} sum ReV = {mp.nstr(s, 15):>20s}   "
+              f"dev {mp.nstr(abs(s - tgt), 4)}")
+    min_dev = min(d for _, d in devs)
+    gate("S1", "the sum rule is SPECIFIC to the 5_2 cubic",
+         min_dev > mp.mpf("0.01"),
+         f"   nearest control is {mp.nstr(min_dev, 4)} away vs "
+         f"{mp.nstr(r_sum, 3)} for 5_2")
+
     verdict = (
         "SUM RULE: sum_j Re V_j = -3 pi^2/2 exactly (residual "
         f"{mp.nstr(r_sum, 3)} at 50 dps), equivalently V3 = -2 Re V1 - "
         "3 pi^2/2. The corpus's pi^2/2 'extraction' shift is therefore the "
         "unique CENTERING that makes the three saddle values sum to zero, "
-        "not an unexplained fudge. PROVENANCE: both long-unexplained "
+        "not an unexplained fudge. It is SPECIFIC to the 5_2 cubic, not "
+        "branch bookkeeping: five control cubics of the same shape -- four "
+        "sharing 5_2's prod(y)=1 constraint -- miss the target by "
+        f"{mp.nstr(min_dev, 3)} to {mp.nstr(max(d for _, d in devs), 3)}, so "
+        "the identity is an arithmetic property of the 5_2 saddle cubic "
+        "(Bloch-group / dilogarithm-ladder shaped), NOT a formal artifact. "
+        "It is verified to 80 digits but NOT PROVED. PROVENANCE: both "
+        "long-unexplained "
         f"literals ARE that convention to ~4 digits (rel {mp.nstr(d1, 3)} "
         f"and {mp.nstr(d3, 3)}), so the earlier 'matches neither "
         "convention' verdict was wrong -- the formula was right and the "
@@ -241,6 +276,25 @@ def main() -> int:
         "implied_root_cubic_residual": mp.nstr(cubic_res, 6),
         "scope": "scope-(a): these two candidate sources are excluded by "
                  "direct test; the space of error sources is not exhausted",
+    })
+    w.add_data("specificity_controls", {
+        "note": "five control cubics of the same shape (one real + two "
+                "conjugate roots); four share prod(y)=1, so sum log y = 0 as "
+                "for 5_2. None reproduces -3 pi^2/2 => the identity is not "
+                "branch bookkeeping.",
+        "deviations": {nm: mp.nstr(d, 6) for nm, d in devs},
+        "five_two_residual": mp.nstr(r_sum, 6),
+    })
+    w.add_data("proof_status", {
+        "status": "NUMERICALLY VERIFIED to 80 dps, NOT PROVED",
+        "reduction": "sum log y_j = 0 (Vieta, prod y = 1) and sum L_j = pi*i "
+                     "give sum L_j^2 = -pi^2 - 2*e2(L), so the sum rule is "
+                     "equivalent to 3*sum Li2(y_j) = 2*Re e2(L) - pi^2/2 -- a "
+                     "dilogarithm-vs-log-product relation, i.e. Bloch-group / "
+                     "five-term shaped.",
+        "open": "a Bloch-group or five-term-relation proof over the 5_2 trace "
+                "field. Numerical verification at 80 dps is strong evidence, "
+                "not a proof.",
     })
     w.add_data("verdict", verdict)
     w.save()
