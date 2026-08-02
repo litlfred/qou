@@ -948,6 +948,31 @@ flag** (borromean probe:188 compares `c₃` MeV to `μ₃` dimensionless, "read 
 **binding weight is pinned to the Markov `y_λ`** (W_λ excluded, conjugation symmetry — PR #4543,
 `BindingWeightMarkovPinning`). Nothing wired; `μ₃/c₃`/AME/CODATA/`q₀` never inverted.
 
+## 2026-08-02 · A=3 magnitude ROUTE 2-b (off-block DERIVATION) — the branching Schur complement is a REDUCTION, r*>1 lift UNREACHABLE (scope-(b))
+
+(Branch `claude/a3-offblock-derivation-2026-08-02`.) Attacks the wall ROUTE 2 (#4544,
+`SuperBerezinianA3Magnitude`) relocated: **derive the off-blocks `B,C`** instead of leaving `B`
+free. **Derivation (categorical, 0 fit):** the bar-self-adjoint `H₃(q)` mass endomorphism
+`diag(a,c,b)` (`a=m₍₃₎`, `b=m₍₁,₁,₁₎`, `c=m₍₂,₁₎`), rotated into the **transpose-involution
+eigenbasis** (the super-sector grading — `q↔q⁻¹` = transpose swaps `(3)↔(1,1,1)`, fixes self-conj
+`(2,1)`), **PINS** the off-blocks with no residual freedom: `B=C=(a−b)/2`, `D=(a+b)/2`. The equal
+Borromean characters `χ₍₃₎(β)=χ₍₁,₁,₁₎(β)=1` (proved, `(σ₁σ₂⁻¹)³`) make `B` a pure Markov-weight
+difference. **Result — scope-(b) structural exclusion (invariant `sq_nonneg`):** the derived
+even-face factor is `magnitudeFactor = 1 − ((a−b)/(a+b))² ≤ 1` for ALL real `a,b`
+(`magnitudeFactor_le_one`) — the self-adjoint branching Schur complement is a **REDUCTION**, never
+a lift, so the observed `r* = μ₃/c₃ ≈ 1.585 > 1` (and the whole ROUTE-5 band `[1.50,1.71]`) is
+**structurally unreachable** (`observed_lift_unreachable`). **Sharpens ROUTE 2:** the branching is
+not merely *silent* on `B` (ROUTE 2's surjectivity = fit), it *positively* supplies the wrong-sign
+(`≤1`) self-adjoint off-block; the lift must come from an **anti-self-adjoint** (`C≠−σB`, two
+independent amplitudes) GGM/Stokes off-block the branching leaves FREE — the DM q-cubic wall
+`conj:qdifference-kernel-prolongation-symbol` / `qou-jqof`. Recorded as §3b dependent class
+`A3LiftFromDerivedOffBlock` (content-bearing, **NO instance**). Parity certificate: the branching
+assembly is graded self-adjoint (`branching_graded_selfadjoint`: `B=C` + `σB=−B` ⇒ `C=−σB`), so
+`BerezinianSelfAdjointCrossTerm` ⇒ bar-EVEN cross-term = the correct parity for the bar-even ratio
+`r*`, but bounded `≤1`. Lean `QOU/QBeta/A3OffBlockDerivation.lean` sorry-free (lean-direct exit 0,
+0 real sorries, no native_decide/trivial-true/axiom), wired into `QOU.lean`. Nothing fitted,
+nothing wired; `μ₃/c₃`/AME/CODATA/`q₀` never inverted; `free_parameters = 0`.
+
 ## Shared bar-parity invariant with the μ-p route (2026-08-01)
 
 The Δ_λ chirality sign `deltaSign λ = (-1)^(principal grading λ)`
