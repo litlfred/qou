@@ -1,10 +1,11 @@
 ---
 # qou-cog1
 title: 'B2-lift MOC (2): attack the functorial period map Phi via the genus-1 E(q) Gauss-Manin family (keystone reduction) — derive or scope the minimal open core'
-status: todo
+status: completed
 type: task
+priority: normal
 created_at: 2026-08-02T19:31:32Z
-updated_at: 2026-08-02T19:31:32Z
+updated_at: 2026-08-02T19:48:14Z
 ---
 
 ## Scope (the foundational bridge)
