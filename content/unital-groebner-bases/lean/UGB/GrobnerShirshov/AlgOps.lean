@@ -223,6 +223,83 @@ theorem AlgElement.ofTerms_support_nonempty
 
 /-! ## §8  Generic Deg-Lex Order Construction -/
 
+/-- **Shortlex well-foundedness** (Mathlib v4.24.0 gap). Pure `List.Lex` is *not*
+    well-founded on unbounded-length lists (e.g. `[1] ≻ [0,1] ≻ [0,0,1] ≻ …`); the
+    length-first refinement — "shorter word, or equal length and lexicographically
+    smaller" — restores well-foundedness for any well-founded base relation `r`.
+    This is the generic replacement for `NormalForms.lexEncoding`, whose fixed-base
+    encoding into `ℕ` only works for the finite generator set `SU2Gen`; an arbitrary
+    injective `rank : G → ℕ` has unbounded image, so no order-embedding of the
+    length-`n` lex order (order type `ω^n`) into `ℕ` (order type `ω`) exists — the
+    accessibility must be proved directly. -/
+theorem shortLex_wellFounded {α : Type*} {r : α → α → Prop} (hr : WellFounded r) :
+    WellFounded (fun a b : List α =>
+      a.length < b.length ∨ (a.length = b.length ∧ List.Lex r a b)) := by
+  constructor
+  intro a0
+  suffices key : ∀ n : ℕ, ∀ a : List α, a.length ≤ n →
+      Acc (fun a b : List α => a.length < b.length ∨
+        (a.length = b.length ∧ List.Lex r a b)) a by
+    exact key a0.length a0 le_rfl
+  intro n
+  induction n with
+  | zero =>
+    intro a ha
+    cases a with
+    | nil =>
+      refine Acc.intro [] (fun b hb => ?_)
+      rcases hb with hlt | ⟨_, hlex⟩
+      · exact absurd hlt (Nat.not_lt_zero _)
+      · cases hlex
+    | cons h t =>
+      simp only [List.length_cons] at ha
+      exact absurd ha (Nat.not_succ_le_zero _)
+  | succ n IHn =>
+    -- `acc_cons`: if the head `g` is `r`-accessible and the tail has length `≤ n`,
+    -- then `g :: gs` is shortlex-accessible.  Double accessibility induction:
+    -- outer on `Acc r g` (handles a strictly smaller head, `List.Lex.rel`), inner
+    -- on `Acc SL gs` (handles an equal head and shortlex-smaller tail, `.cons`).
+    have acc_cons : ∀ g : α, Acc r g → ∀ gs : List α, gs.length ≤ n →
+        Acc (fun a b : List α => a.length < b.length ∨
+          (a.length = b.length ∧ List.Lex r a b)) (g :: gs) := by
+      intro g hg
+      induction hg with
+      | intro g _ IHg =>
+        suffices H : ∀ gs : List α,
+            Acc (fun a b : List α => a.length < b.length ∨
+              (a.length = b.length ∧ List.Lex r a b)) gs → gs.length ≤ n →
+            Acc (fun a b : List α => a.length < b.length ∨
+              (a.length = b.length ∧ List.Lex r a b)) (g :: gs) by
+          intro gs hgs
+          exact H gs (IHn gs hgs) hgs
+        intro gs accgs
+        induction accgs with
+        | intro gs _ IHgs =>
+          intro hgs
+          refine Acc.intro _ (fun b hb => ?_)
+          cases b with
+          | nil => exact IHn [] (Nat.zero_le n)
+          | cons h hs =>
+            rcases hb with hlen | ⟨hlen_eq, hlex⟩
+            · apply IHn
+              simp only [List.length_cons] at hlen ⊢
+              omega
+            · simp only [List.length_cons] at hlen_eq
+              have hhs : hs.length = gs.length := by omega
+              cases hlex with
+              | rel hr' => exact IHg h hr' hs (by omega)
+              | cons hlx => exact IHgs hs (Or.inr ⟨hhs, hlx⟩) (by omega)
+    intro a ha
+    cases a with
+    | nil =>
+      refine Acc.intro [] (fun b hb => ?_)
+      rcases hb with hlt | ⟨_, hlex⟩
+      · exact absurd hlt (Nat.not_lt_zero _)
+      · cases hlex
+    | cons g gs =>
+      simp only [List.length_cons] at ha
+      exact acc_cons g (hr.apply g) gs (by omega)
+
 /-- Construct a deg-lex `AdmissibleOrder` for any generator type `G`
     equipped with an injective rank function `rank : G → ℕ`.
 
@@ -277,20 +354,14 @@ noncomputable def mkDegLexOrder {G : Type u} [DecidableEq G]
         · left; right; exact ⟨heq, hlx⟩
         · right; left; exact heq'
         · right; right; right; exact ⟨heq.symm, hrx⟩
-  wf := by
-    -- The deg-lex order is well-founded as `Prod.Lex Nat.lt L` where L
-    -- is the length-restricted lex order on `(map rank ·) : Monomial G
-    -- → List ℕ`. Mathlib provides `Nat.lt_wfRel.wf.prod_lex` for the
-    -- outer pair; the inner length-restricted lex needs `List.Shortlex`
-    -- (or `lexEncoding` à la NormalForms.lean's `degLexLt_wf`, which is
-    -- proved sorry-free there via degree-first `Prod.Lex`; note pure lex is
-    -- NOT well-founded — see that file's note where `lexLt_wf` was removed).
-    -- Closing this requires running against Mathlib to confirm the
-    -- post-rename API name (candidates: `List.Shortlex.wf`,
-    -- `WellFoundedRelation.shortlex`, or hand-rolling via strong
-    -- induction on length). Deferred.
+  wf :=
+    -- Shortlex well-foundedness (`shortLex_wellFounded`) with base relation
+    -- `rank · < rank ·` = `InvImage (·<·) rank`, well-founded because `Nat.lt`
+    -- is and `InvImage` preserves well-foundedness.  Pure lex is NOT
+    -- well-founded (see NormalForms.lean's note where `lexLt_wf` was removed);
+    -- the length-first refinement is what restores it — proved sorry-free above.
     -- Ref: [bergman1978] https://doi.org/10.1016/0001-8708(78)90010-5
-    sorry
+    shortLex_wellFounded (InvImage.wf rank Nat.lt_wfRel.wf)
   left_compat := by
     intro a b c h
     rcases h with hlen | ⟨heq, hlex⟩
