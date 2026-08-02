@@ -27,6 +27,27 @@ declaring refuted"), so future agents do not re-chase them.
    owner's offset question (a torus-knot offset relative to a complex saddle
    orbit has nonzero angle by construction).
 
+### The 6 saddle points, explicitly
+
+Roots of `Δ(z) = 0` (the colour-cubic discriminant sextic), cross-validating the
+two Lean theorems:
+
+| # | Re z | Im z | \|z\| | arg |
+|--:|--:|--:|--:|--:|
+| 1 | −0.9748 | −0.2230 | 1.0000 | −167.1° |
+| 2 | +0.1190 | −1.0536 | 1.0603 | −83.6° |
+| 3 | +0.1058 | −0.9371 | 0.9431 | −83.6° |
+| 4 | +0.1058 | +0.9371 | 0.9431 | +83.6° |
+| 5 | +0.1190 | +1.0536 | 1.0603 | +83.6° |
+| 6 | −0.9748 | +0.2230 | 1.0000 | +167.1° |
+
+3 complex-conjugate pairs (all strictly off the real axis ⇒ confirms
+`discSextic_pos`), with **reciprocal magnitude pairs** {0.9431, 1.0, 1.0603}
+(0.9431 × 1.0603 = 1 ⇒ confirms `discSextic_palindromic`, the q↔q⁻¹ bar-symmetry),
+at angles ±83.6° and ±167.1° (≈ 2×). The offset angle (tier-1,
+`lagrangeResolvent_cyclic_eigenvalue`) is the C₅/S₃ stabilizer root of unity
+carried on this complex orbit.
+
 ## Refuted (durable declarations, scoped)
 
 - **Option A — "ν_SDP = 1-loop torsion" — REFUTED, scope-(a).** Implemented the
