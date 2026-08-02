@@ -100,8 +100,11 @@ that dGB = jet = perturbative-order actually coincide — the open conjecture.
 ## (Sign source, PROBE-4) The imaginary Stokes phase supplies the sign
 
 `StokesPhaseSign` (OPEN carrier, generic `[CommRing R]`, no instance): the
-`±i` Stokes discontinuity's real shadow is a sign `sign μ ∈ {±1}` that
-**flips under the bar-involution** on chiral pairs. `chiral_sign_cancels` is
+`±i` Stokes discontinuity's real shadow is a sign `sign μ` that **squares to
+`1`** (`sq_one` — not literal `∈ {±1}`, which is strictly stronger over a
+generic `[CommRing R]`; PR #4540 identifies the concrete sign as the a-function
+parity `(-1)^{n(λ)}`, genuinely `±1`) and **flips under the bar-involution** on
+chiral pairs. `chiral_sign_cancels` is
 **proved sorry-free**: `sign μ + sign(conj μ) = 0`, i.e. the bar-invariant
 trace cannot see the sign — matching the `chiralPairs` deficit exactly. This
 scaffolds the sign source (does not assert the physics forces it).

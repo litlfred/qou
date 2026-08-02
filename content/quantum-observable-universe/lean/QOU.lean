@@ -542,3 +542,4 @@ import QOU.MassTheory.BarParityClusterObstruction
 import QOU.MassTheory.BrunnianDeficitLeadingOrderDerived
 import QOU.BraidKnot.ColoredJonesRecurrence
 import QOU.BraidKnot.KnotOperatorRecurrence
+import QOU.Resurgence

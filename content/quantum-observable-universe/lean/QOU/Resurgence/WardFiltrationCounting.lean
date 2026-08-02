@@ -141,7 +141,11 @@ whether the physics FORCES `sign` to be exactly the `±i` phase sign is the open
 categoricity question (bean'd, not asserted). -/
 class StokesPhaseSign (R : Type*) [CommRing R]
     (conj : YoungDiagram → YoungDiagram) where
-  /-- The chirality sign carried by the Stokes phase (real `±1` shadow of `±i`). -/
+  /-- The chirality sign carried by the Stokes phase — a real shadow of the `±i`
+  phase. The carrier encodes only that it *squares to `1`* (`sq_one`), not
+  literal `∈ {±1}` (which is strictly stronger over a generic `[CommRing R]`).
+  PR #4540 identifies the concrete sign as the a-function parity `(-1)^{n(λ)}`,
+  which is genuinely `±1`. -/
   sign : YoungDiagram → R
   /-- It is a genuine sign: `sign μ` squares to `1`. -/
   sq_one : ∀ μ, sign μ * sign μ = 1
