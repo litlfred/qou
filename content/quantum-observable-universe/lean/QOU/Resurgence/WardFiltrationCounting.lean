@@ -135,8 +135,11 @@ The mixed-sign chirality of `Δ_λ` (`n=3`: 1+/2−) is exactly what the
 KL-positivity PROBE-4 prune shows the (non-negative) KL weights cannot supply —
 they give only the MAGNITUDE.  The resurgent route supplies the sign via the
 **imaginary Stokes phase**: the `±i` discontinuity across the Stokes line, whose
-real shadow is a sign `sign μ ∈ {±1}` that **flips under the bar-involution**
-`λ ↦ λ'`.  This carrier states that structure as content (**not** `True`);
+real shadow is a sign `sign μ` — encoded by `sq_one` (it *squares to `1`*; not
+literal `∈ {±1}`, which is strictly stronger over a generic `[CommRing R]`) —
+that **flips under the bar-involution** `λ ↦ λ'`.  (PR #4540 proves the concrete
+sign is the a-function parity `(-1)^{n(λ)}`, genuinely `±1`.)
+This carrier states that structure as content (**not** `True`);
 whether the physics FORCES `sign` to be exactly the `±i` phase sign is the open
 categoricity question (bean'd, not asserted). -/
 class StokesPhaseSign (R : Type*) [CommRing R]
