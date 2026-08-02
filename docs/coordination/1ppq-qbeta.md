@@ -2825,7 +2825,7 @@ adoption landed (this PR); qou-qnnq → internal derivation of `3` still open
 **Flag:** the A_ω bricks cite `[garoufalidis-gu-marino2021]` for GGM
 2012.00062, which is `garoufalidis-gu-marino2023peacock`. Follow-up fix.
 
-**2026-08-02 (5₂ saddle SUM RULE + the two literals IDENTIFIED; PR #4519).**
+**2026-08-02 (5₂ saddle SUM RULE + the two literals IDENTIFIED; PR #4624).**
 The provenance hunt on `Im V₁ = 1.3790860299` and `V₃ = −2.7580990292` closed
 the convention question and turned up an exact identity.
 
