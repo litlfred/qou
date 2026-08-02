@@ -256,7 +256,7 @@ off-block" wall. -/
 
     The claim: geometrically-derived off-blocks `B_geom, C_geom` (INPUTS from the DM
     q-cubic, independent of the physical target) (i) **break** graded self-adjointness
-    (`C_geom ≠ −σB`, the anti-self-adjoint amplitude the self-adjoint branching leaves
+    (`C_geom ≠ −(σ B_geom)`, the anti-self-adjoint amplitude the self-adjoint branching leaves
     free) and (ii) drive the even-face correction to a physical **lift** `κ_phys > 1`
     (unreachable by the self-adjoint branching Schur complement, `magnitudeFactor_le_one`).
 
@@ -269,10 +269,12 @@ off-block" wall. -/
     discharging this by *choosing* them to hit `κ_phys` would be the forbidden fit and
     is explicitly not done. -/
 class A3LiftFromDerivedOffBlock {R : Type*} [Field R] [LinearOrder R]
-    [IsStrictOrderedRing R] (A B_geom C_geom D_geom σB κ_phys : R) : Prop where
+    [IsStrictOrderedRing R] (σ : R →+* R) (A B_geom C_geom D_geom κ_phys : R) : Prop where
   /-- The geometrically-derived off-blocks BREAK graded self-adjointness — they are the
-      anti-self-adjoint (GGM/Stokes) amplitude the branching leaves free. -/
-  anti_self_adjoint : C_geom ≠ -σB
+      anti-self-adjoint (GGM/Stokes) amplitude the branching leaves free.  The bar
+      involution `σ` is quantified as a genuine ring homomorphism applied to `B_geom`;
+      the self-adjoint reference value of `C_geom` is `−(σ B_geom)`. -/
+  anti_self_adjoint : C_geom ≠ -(σ B_geom)
   /-- The derived (not fitted) off-blocks drive the even-face correction to the physical
       **lift** `κ_phys`, which strictly EXCEEDS `1` — an enhancement provably outside the
       self-adjoint branching route (`magnitudeFactor_le_one`). -/
