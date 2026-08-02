@@ -2,10 +2,10 @@
   "schema": "witness/v1",
   "producer": "computations/deltalambda/c_knot_nonuniversal_pinned_weight_probe.py",
   "computation": "c-knot-nonuniversal-pinned-weight",
-  "description": "The clean cross-isotope C_knot universality test, run with the NOW-PINNED Markov weight y_\u03bb (PR #4543, \u03a3 y_\u03bb f^\u03bb = 1 verified). Master-formula conventions (binding_energy_categorical_deuteron): B(K) = m_e\u00b7|\u03a3_\u03bb y_\u03bb \u03c7^\u03bb(\u03b2_K) sgn f^\u03bb|, \u03c7^\u03bb from the interface-inclusive Rust Hoefsmit caches. Result: C_knot = 5.85/4.44/3.29/9.31 for D/T/\u00b3He/\u2074He \u2192 spread 2.83\u00d7, NON-UNIVERSAL. f^\u03bb (hook SYT) is the tightest dim convention (2.83\u00d7 vs dim_q 116\u00d7, none 122\u00d7); no global/A-power scale fixes it (log C/log A non-constant); a deuteron-pinned 0-fit scale mispredicts T/\u00b3He/\u2074He by +32%/+78%/\u221237% (\u226b isospin \u00b18%). Mirror pair T & \u00b3He at the SAME H\u2089 need C_knot differing 35% (robust 1.29\u20131.35 across dim conventions) \u21d2 C_knot is NOT a function of (n,q\u2080); it is per-knot \u0394_\u03bb. scope-(a): single-universal-C_knot derivation route REFUTED; scope-(b): level-only rescale g(n,q\u2080) excluded by the mirror inequality (Lean cknot_level_only_excluded). \u0394_\u03bb magnitude stays OPEN (bean qou-3q7t). Supersedes c_knot_not_universal_probe.py (whose 41\u00d7 was right-vs-wrong weight, now resolved). No fit; B_AME diagnostic-only (never inverted); nothing wired; exact mpmath.",
+  "description": "The clean cross-isotope C_knot universality test, run with the NOW-PINNED Markov weight y_\u03bb (PR #4543, \u03a3 y_\u03bb f^\u03bb = 1 verified). Master-formula conventions (binding_energy_categorical_deuteron): B(K) = m_e\u00b7|\u03a3_\u03bb y_\u03bb \u03c7^\u03bb(\u03b2_K) sgn f^\u03bb|, \u03c7^\u03bb from the interface-inclusive Rust Hoefsmit caches. Result: C_knot = 5.85/4.44/3.29/9.31 for D/T/\u00b3He/\u2074He \u2192 spread 2.83\u00d7, NON-UNIVERSAL. f^\u03bb (hook SYT) is the tightest dim convention (2.83\u00d7 vs dim_q 116\u00d7, none 122\u00d7); no global/A-power scale fixes it (log C/log A non-constant); a deuteron-pinned 0-fit scale mispredicts T/\u00b3He/\u2074He by +32%/+78%/\u221237% (\u226b isospin \u00b18%). Mirror pair T & \u00b3He at the SAME H\u2089 need C_knot differing 35% (robust 1.29\u20131.35 across dim conventions) \u21d2 C_knot is NOT a function of (n,q\u2080); it is per-knot \u0394_\u03bb. scope-(a): single-universal-C_knot derivation route REFUTED; scope-(b): level-only rescale g(n,q\u2080) excluded by the mirror inequality (Lean no_level_only_closure). \u0394_\u03bb magnitude stays OPEN (bean qou-3q7t). Supersedes c_knot_not_universal_probe.py (whose 41\u00d7 was right-vs-wrong weight, now resolved). No fit; B_AME diagnostic-only (never inverted); nothing wired; exact mpmath.",
   "audit_only": true,
   "tier": "scope-(a) refutation of single-universal-C_knot + scope-(b) level-only exclusion; no fit",
-  "scriptHash": "c26ea5b5f3d2f7a4",
+  "scriptHash": "fcc009c4ce2802cd",
   "result": {
     "master_formula": "B(K) = m_e\u00b7|\u03a3_\u03bb y_\u03bb \u00b7 \u03c7^\u03bb(\u03b2_K) \u00b7 sgn(w_0^{S_{\u03bb'}}) \u00b7 f^\u03bb|,  \u03a3_\u03bb y_\u03bb f^\u03bb = 1",
     "weight": "Wenzl Schur-principal y_\u03bb (pinned, PR #4543) \u2014 recomputed, \u03a3 y_\u03bb f^\u03bb = 1 asserted",
@@ -151,7 +151,7 @@
     "verdict": {
       "single_universal_C_knot_refuted": true,
       "level_only_rescale_excluded": true,
-      "classification": "scope-(a): C_knot is non-universal (2.83\u00d7 with the pinned weight + best dim), so 'derive C_knot as one geometric/scale factor' is refuted. scope-(b): the level-only rescale class g(n,q\u2080)\u00b7m_e\u00b7S(K) is structurally excluded by the T/\u00b3He mirror inequality (cited invariant cknot_level_only_excluded). NOT an exclusion of a per-knot \u0394_\u03bb derivation \u2014 that remains OPEN (bean qou-3q7t).",
+      "classification": "scope-(a): C_knot is non-universal (2.83\u00d7 with the pinned weight + best dim), so 'derive C_knot as one geometric/scale factor' is refuted. scope-(b): the level-only rescale class g(n,q\u2080)\u00b7m_e\u00b7S(K) is structurally excluded by the T/\u00b3He mirror inequality (cited invariant no_level_only_closure). NOT an exclusion of a per-knot \u0394_\u03bb derivation \u2014 that remains OPEN (bean qou-3q7t).",
       "anti_fit": "y_\u03bb derived (Wenzl, \u03a3 y_\u03bb f^\u03bb = 1 asserted); \u03c7^\u03bb from committed caches; B_AME used only as a diagnostic ratio, never inverted into a weight; free_parameters = 0."
     },
     "free_parameters": 0
@@ -163,5 +163,5 @@
     "builds_on": "PR #4491 (C_knot gate), PR #4543 (weight pinned), docs/audits/2026-06-01-e0-lambda-substrate-derivation-options.md",
     "no_fit": true
   },
-  "scriptCommitSha": "985834ad0e7a1af42013db81c8c2187768cd77cc"
+  "scriptCommitSha": "10a54c9ed29b7fdb0399069895fb6ede06ba20a5"
 }
