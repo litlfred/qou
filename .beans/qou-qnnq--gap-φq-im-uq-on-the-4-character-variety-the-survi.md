@@ -1,10 +1,11 @@
 ---
 # qou-qnnq
-title: 'GAP: ϑ_K(q₀) — angular/spin deformation on the character variety of knot K. The surviving open DOF in the Δ_λ magnitude chain (𝔲_K = ln q₀ + i·ϑ_K). Knot-dependent: different particles = different ϑ. Determined by A(e^𝔲,ℓ)=0 boundary condition = G3 monodromy datum. Closes if Faddeev rigidity (hibinv+hratio) forces A_ω=3 AND pins the sheet. Probed values: ϑ_{4₁}(proton)=0.203, ϑ_{4₁}(muon)=0.059, ϑ_{4₁}(q*)=ln q*=0.104.'
+title: "GAP: ϑ_K(q₀) — angular/spin deformation on the character variety of knot K. The surviving open DOF in the Δ_λ magnitude chain (\U0001D532_K = ln q₀ + i·ϑ_K). Knot-dependent: different particles = different ϑ. Determined by A(e^\U0001D532,ℓ)=0 boundary condition = G3 monodromy datum. Closes if Faddeev rigidity (hibinv+hratio) forces A_ω=3 AND pins the sheet. Probed values: ϑ_{4₁}(proton)=0.203, ϑ_{4₁}(muon)=0.059, ϑ_{4₁}(q*)=ln q*=0.104."
 status: todo
 type: task
+priority: normal
 created_at: 2026-07-27T15:06:31Z
-updated_at: 2026-08-01T00:00:00Z
+updated_at: 2026-08-02T09:04:04Z
 ---
 
 ## Re-scope (2026-08-01, qou-fs0m) — corrected framing after Fantini–Wheeler
@@ -73,3 +74,29 @@ These are genuinely different physical pictures with different open problems.
 The bean must commit to one (or explicitly keep both live) rather than assume a
 free same-knot per-particle ϑ, which the geometric invariant rules out. Still
 OPEN — no fit, nothing wired.
+
+
+## Target sharpening (PR #4554, 2026-08-02, A_omega=3 leg)
+
+The A_omega = 3 closing condition is the **q-EXACT symmetry constant** (GGM eq 65,
+S12+S21 = 3*S11), q-independent (StokesSymmetryConstant.symmetryConstant_const,
+sorry-free). A q-independent quantity equals its own q-to-0 value, so there is no
+resurgent tail in the integer target. Deriving A_omega=3 internally collapses to
+deriving the decidable q-to-0 3d-index/DT count S+(0)_12 = 3 from Hecke/Bring data
+(drivers 11/13, NOT driver-12 resurgence).
+
+New sorry-free brick StokesSymmetryConstantQZero.lean (lean-direct exit 0) connects
+StokesQZeroDTCount and StokesSymmetryConstant at q-to-0: the symmetry-constant reading
+of the certified S+(0)=[[1,3],[0,1]] is exactly 3.
+
+STILL OPEN (scope-(a)): the only route to that q-to-0 count is numerically identical to
+importing GGM state integral; missing ingredient = a categorical formula for the DT
+count from QOU Hecke/Bring data reproducing the pair {3,4} across knots — open in the
+DT-categorification literature, not just QOU. disc(Q(sqrt-3))=-3 stays refuted (a 4
+co-occurs); single-knot count-matching stays a trap (5_2 block is 3x3).
+
+Tentative, UNCLAIMED re-scoping worth a probe: the symmetry constant 3 is narrower than
+the spectrum {3,4}, so a scalar internal invariant for the constant alone may re-open,
+subject to a cross-knot test on 5_2, unchecked.
+
+Audit: docs/audits/2026-08-02-aomega-internal-derivation-symmetry-constant-target.md
