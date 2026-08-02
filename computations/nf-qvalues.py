@@ -354,6 +354,9 @@ witness = {
     },
 }
 
+from witness_base import WitnessBuilder  # noqa: E402 — P30 staleness triple
+WitnessBuilder.stamp_staleness_metadata(witness, script_path=__file__)  # scriptHash/scriptCommitSha
+witness["scriptFile"] = Path(__file__).name
 out_path = Path(__file__).resolve().parent / "nf-qvalues.witness.json"
 with open(out_path, "w") as f:
     json.dump(witness, f, indent=2)
