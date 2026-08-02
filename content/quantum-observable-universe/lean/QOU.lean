@@ -593,6 +593,10 @@ import QOU.MassTheory.BrunnianDeficitLeadingOrderDerived
 import QOU.MassTheory.A4InterfaceMagnitude
 import QOU.MassTheory.BindingSaturationCapA4
 import QOU.MassTheory.BraneGeometricResummation
+-- front-1: the radial handle C_knot = Vol(K)·ρ(K)/ℏ_q² with ρ = tr_M is refuted
+-- under every volume reading — Vol ≡ 0 for the literal mass-braid H₉ closures, and
+-- a 2.37× anti-correlated residual for the corpus-canonical binding links.
+import QOU.MassTheory.VolTHe3RadialHandle
 import QOU.BraidKnot.ColoredJonesRecurrence
 import QOU.BraidKnot.KnotOperatorRecurrence
 -- Resurgent-bridge tranche (Δ_λ sign/magnitude → DT/3d-index unification):
