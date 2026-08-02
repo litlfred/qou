@@ -239,6 +239,7 @@ all_field = True
 all_a2 = True
 all_bloch = True
 all_law = True
+all_collapse = True
 xi_classes = {}
 t0 = time.time()
 for m in MS:
@@ -372,7 +373,14 @@ for m in MS:
             r = R.mul(r, R.pw(R.one_minus(R.mul(R.pw(zeta_m, k), x)), k))
         return r
 
-    print(f"[{time.time()-t0:7.1f}s] m={m} — classes", flush=True)
+    # per-m collapse diagnostics (computed, not asserted): the control
+    # chi(zeta_N) must be nonzero (character resolves F) while
+    # chi(zeta_624) must vanish (mu_624 killed => F-collapse)
+    _ctrl = chi_dlog(zeta_N)
+    _kill = chi_dlog(z624)
+    collapse_ok = _ctrl is not None and _ctrl % N != 0 and _kill == 0
+    all_collapse = all_collapse and collapse_ok
+    print(f"[{time.time()-t0:7.1f}s] m={m} — classes (ctrl={_ctrl}, mu624-kill={_kill})", flush=True)
     # (2) cls(1 - z1) = 2 * chi-class(alpha)
     c1z1 = chi_dlog(R.mul(alpha_F, alpha_F))
     ca = chi_dlog(alpha_F)
@@ -415,12 +423,10 @@ checks["field_construction_all_m"] = all_field
 checks["one_minus_z1_alpha_squared_identity_holds"] = all_a2
 checks["bloch_shadow_holds"] = all_bloch
 checks["root_difference_law_global"] = all_law
-# structural-vacuity disclosure: chi resolves F (control nonzero) but
-# kills mu_624 entirely (624m | 5^d-1) — checks 2-3 above are vacuous
-# at these field sizes and the zero classes are F-collapse, not eps
-# data. Verified on the m in {2,3,24} diagnostic; recorded as a check
-# so the witness carries the disclosure.
-checks["classes_are_F_collapse_not_eps_data"] = True
+# structural-vacuity disclosure, COMPUTED per m (Copilot #4588 fix —
+# the first version hardcoded True): chi(zeta_N) != 0 (character
+# resolves F) while chi(zeta_624) == 0 (mu_624 killed), for every m.
+checks["classes_are_F_collapse_not_eps_data"] = all_collapse
 
 print(json.dumps(checks, indent=1))
 print(json.dumps(xi_classes, indent=1))
