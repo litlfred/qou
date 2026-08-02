@@ -5,9 +5,9 @@ import QOU.Archimedean.lepton_continuant_recurrence
 # QOU.ParticleInteractions.even_tower_continuant_harmonics — the boson tower is uniformly harmonic
 
 **Interpretive derivation** for the electroweak/boson even-winding tower
-([`conj:electroweak-higgs-torus-link-triplet`](../../../quantum-observable-universe/particle-interactions/electroweak-higgs-torus-link-triplet.md)),
-the boson-side mirror of the fermion-side
-[`lepton_continuant_generation_exclusion`](../Archimedean/lepton_continuant_generation_exclusion.lean).
+([`conj:electroweak-higgs-torus-link-triplet`](../../../particle-interactions/electroweak-higgs-torus-link-triplet.md)),
+the boson-side mirror of the fermion-side generation-exclusion result
+(the odd-prime windings `3,5,7`; landing separately in PR #4456).
 
 ## Setup
 
@@ -47,7 +47,7 @@ This sharpens the **fermion/boson class distinction** (`C1` selection) at
 the normal-form level with a *derived* reason:
 
 * fermion tower — the odd **prime** windings `3,5,7` are mutually
-  non-divisible (`lepton_continuant_generation_exclusion`): three
+  non-divisible (the fermion generation-exclusion result, PR #4456): three
   independent *generations*;
 * boson tower — **every** even winding factors through `b₂`
   (`b2_dvd_even` below): no even winding is a "prime generation", the
@@ -190,7 +190,7 @@ theorem b4_dvd_b8 : morganVoyceB 4 ∣ morganVoyceB 8 :=
     harmonics of the fundamental Hopf continuant `b₂`, and `H`'s
     coefficient additionally factors through `W`'s. Contrast the fermion
     tower, whose prime windings `3,5,7` are mutually non-divisible
-    (`three_generation_windings_are_the_nonharmonic_ones`): the boson
+    (the fermion generation-exclusion result, PR #4456): the boson
     tower is uniformly non-generational. -/
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/electroweak-higgs-torus-link-triplet.md
 theorem boson_tower_is_uniformly_harmonic :
