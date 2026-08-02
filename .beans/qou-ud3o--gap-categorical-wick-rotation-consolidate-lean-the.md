@@ -1,10 +1,11 @@
 ---
 # qou-ud3o
 title: 'GAP: categorical Wick rotation — consolidate + Lean the i↦-i braiding-flip / Laplace-Fourier collapse'
-status: todo
+status: in-progress
 type: task
+priority: normal
 created_at: 2026-08-02T18:14:05Z
-updated_at: 2026-08-02T18:14:05Z
+updated_at: 2026-08-02T18:50:04Z
 parent: qou-ywj9
 ---
 
@@ -87,3 +88,28 @@ circular — it is a genuine consequence of entirety + the grouplike property.
   So closing this unblocks two siblings.
 
 Verdict: **tractable, probable, high-leverage.** Prioritise over alpha_S.
+
+## ✅ PROVED (2026-08-02) — the load-bearing lemma is now sorry-free Lean
+
+`QOU.QExp.qExpTerm_summable` in
+[`QExpEntire.lean`](https://github.com/litlfred/qou/blob/claude/agent-task-662242-vag458/content/quantum-observable-universe/lean/QOU/QuantumObservableUniverses/QExpEntire.lean):
+
+> For `q > 1` (substrate regime, q₀≈1.11), the q-exponential series
+> `∑ xⁿ / [n]_q!` is **Summable for every `x : ℂ`** — i.e. exp_q is entire.
+
+Proof: balanced q-integer `[n+1]_q ≥ qⁿ` (drop the positive tail) ⇒
+`[n]_q! > 0` and grows; ratio test `‖aₙ₊₁‖/‖aₙ‖ = ‖x‖/[n+1]_q → 0`
+(`summable_of_ratio_norm_eventually_le`, r=1/2, since `qⁿ→∞`).
+Axiom-clean: `[propext, Classical.choice, Quot.sound]` only; lean-direct
+exit 0. Wired into `QOU.lean`.
+
+This is the honest, falsifiable core of the Wick rotation: it makes the
+single grouplike function defined on ALL of ℂ, so the continuation from
+the real (Laplace) axis to the imaginary (Fourier) axis is legitimate.
+The identity `F(ξ)=L(iξ)` itself remains definitional (do not dress it as
+a theorem — that was the trap the existing `CategoricalFourier.fromLaplace`
+fell into).
+
+**Remaining (medium):** consolidate the scattered prose into one
+`prop:q-exp-entire` content-block triple citing this lemma; optionally a
+`Continuous (qExp q)` corollary. The analytic gate is closed.
