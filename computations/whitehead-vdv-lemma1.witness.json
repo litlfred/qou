@@ -1,4 +1,7 @@
 {
+ "engine": "mpmath",
+ "scriptFile": "whitehead_vdv_lemma1.py",
+ "commitSha": "b036103ad98c1db116346bf1fec33d17b63144f3",
  "description": "van der Veen Whitehead-chain colored Jones (arXiv:math/0611181 Lemma 1 + generic-t tangle formula) \u2014 first corpus transcription with 4-anchor verification (internal t-form vs sin-form; external Borromean vs GL2011/Habiro; volume rate -> 4G for W-link b=1 and 2-belt chain b=2; structural positivity/log-identity/vanishing/modulus facts for the Lean W3-W5 bricks)",
  "computation": "whitehead_vdv_lemma1",
  "audit_only": true,
@@ -18,5 +21,5 @@
  "a4_modulus_identity": true,
  "a4_ok": true,
  "all_ok": true,
- "timestamp": "2026-08-02T08:14:43+00:00"
+ "timestamp": "2026-08-02T09:26:34+00:00"
 }

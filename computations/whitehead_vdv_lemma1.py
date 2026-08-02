@@ -334,7 +334,19 @@ def main() -> int:
     print(f"  target 4G = {mp.nstr(VOL_4G, 20)}\n")
     results = run_anchors()
 
+    import subprocess
+    try:
+        commit_sha = subprocess.run(
+            ["git", "log", "-1", "--format=%H"],
+            capture_output=True, text=True, cwd=Path(__file__).parent,
+            check=True,
+        ).stdout.strip()
+    except Exception:
+        commit_sha = "unknown"
     witness = {
+        "engine": "mpmath",
+        "scriptFile": "whitehead_vdv_lemma1.py",
+        "commitSha": commit_sha,
         "description": (
             "van der Veen Whitehead-chain colored Jones (arXiv:math/0611181 "
             "Lemma 1 + generic-t tangle formula) — first corpus transcription "
