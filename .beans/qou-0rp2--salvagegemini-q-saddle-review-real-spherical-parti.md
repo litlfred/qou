@@ -106,3 +106,29 @@ summand of S^k V_{3A} for a CANONICAL k (not tuned).** Only that iso — derived
 fitted — would make dim G_k(λ) = ν_SDP a theorem. Until then ν_SDP stays underived;
 no SP-based value wired to production. This is the LAST surviving derivational route
 for ρ_F=ν_SDP (Option A refuted, Option-B-coarse refuted, direct SDP 0/3558).
+
+## OPTION-B-HARD BRIDGE — REFUTED for the deuteron (2026-08-02, scope-(a))
+Attacked the bridge directly (probe `computations/probes/sp_bridge_symmetric_power_test.py`).
+Necessary condition at q=1 (H_{3A}(1)=CS_{3A}): the atom's Wedderburn-block
+support must equal the S_{3A}-support of some S^k(V_{3A}). Computed S^k(C^6)
+decompositions via Murnaghan-Nakayama and compared to the deuteron active support
+{(6),(5,1),(4,2),(4,1,1),(3,3),(2,2,2),(2,1,1,1,1)}:
+
+- **(2,1^4)** ∈ Sym^k(C^6) only for **k≥10**; **(3,2,1)** ∈ Sym^k for **all k≥4**.
+- So every symmetric power containing (2,1^4) ALSO contains (3,2,1).
+- The deuteron contains (2,1^4) but **excludes** (3,2,1) (its forbidden
+  self-conjugate block). No k satisfies both ⇒ **the deuteron module is not any
+  S^k V_6** under the canonical strand count n=3A. (A non-canonical n would be a fit.)
+
+Also structural: SP_k(n) and H_n(q) are Schur-Weyl centralizers of DIFFERENT dual
+pairs (CS_n on S^k V_n vs U_q(gl_m) on tensor space), so no canonical functor
+carries a Hecke block to an SP_k(n) module — consistent with the concrete refutation.
+
+**FINAL verdict — all known ρ_F=ν_SDP bridges now closed:**
+- Option A (1-loop torsion): REFUTED (qou-r307, |τ|≠integer).
+- Option B coarse (dim SP_k): REFUTED (dim=2,9,31,…).
+- Option B hard (SP_k(n) decomp via bridge): REFUTED for deuteron (support window
+  incompatibility).
+- Direct SDP: 0/3558 is an over-determination artifact (qou-vd7j), not a derivation.
+No route derives ν_SDP; conj:kashaev-density-equals-sdp-multiplicity stays honestly
+open with every known bridge concretely closed. No value wired to production.

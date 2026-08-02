@@ -105,3 +105,7 @@ Frobenius diagnostic), **6 beans**, this doc. The offset question is fully resol
 
 
 **Diagnostic update:** the 0/3558 is an *over-determination artifact* — the Frobenius LP imposes 7 equalities (1 net `1ᵀx=A` + 6 `Gx=nf`) on 6 unknowns; `Gx=nf` fixes x, whose implied net `1ᵀG⁻¹nf` (O(1)) ≠ A, so the net row is inconsistent for every nucleus. `nf∈range(G)` holds for light nuclei (resid ~1e-15); heavy A hits the f64 `build_atom_nf` overflow. Not a Gram/knot obstruction; fix targets the net normalization (`frobenius_admissibility_diagnostic.py`). Still does not derive ν_SDP.
+
+## Option-B-hard bridge — REFUTED for the deuteron
+
+Attacked the surviving bridge directly (`sp_bridge_symmetric_power_test.py`, Murnaghan–Nakayama). At q=1 the deuteron's active support must equal some `S^k(V_6)` support. But **(2,1⁴)∈Sym^k(C⁶) only for k≥10** while **(3,2,1)∈Sym^k for all k≥4** — so any symmetric power with (2,1⁴) also has (3,2,1); the deuteron has (2,1⁴) and **excludes** (3,2,1). No k works ⇒ the deuteron module is **not** a symmetric power (canonical n=3A). Combined with the different-Schur-Weyl-duality structural point, Option-B-hard is refuted. **All four ρ_F=ν_SDP routes are now closed** (A refuted, B-coarse refuted, B-hard refuted, direct-SDP an over-determination artifact); the conjecture stays honestly open with every known bridge concretely closed.
