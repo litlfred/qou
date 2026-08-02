@@ -358,6 +358,9 @@ witness = {
     'Q0': Q0,
     'timestamp': datetime.now(timezone.utc).isoformat(),
 }
+from witness_base import WitnessBuilder  # noqa: E402 — P30 staleness triple
+WitnessBuilder.stamp_staleness_metadata(witness, script_path=__file__)  # scriptHash/scriptCommitSha
+witness["scriptFile"] = Path(__file__).name
 witness_path = Path(__file__).parent / 'inverse-markov-qvalues.witness.json'
 with open(witness_path, 'w') as f:
     json.dump(witness, f, indent=2, default=str)

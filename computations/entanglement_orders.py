@@ -171,6 +171,9 @@ witness = {
     "calibration_MeV_per_cat": calib,
     "particles": particle_data,
 }
+from witness_base import WitnessBuilder  # noqa: E402 — P30 staleness triple
+WitnessBuilder.stamp_staleness_metadata(witness, script_path=__file__)  # scriptHash/scriptCommitSha
+witness["scriptFile"] = Path(__file__).name
 out = Path(__file__).parent / "entanglement-orders.witness.json"
 out.write_text(json.dumps(witness, indent=2, default=str))
 print(f"\n  Witness: {out}")

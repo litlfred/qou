@@ -285,6 +285,9 @@ if __name__ == "__main__":
         "results": results,
     }
 
+    from witness_base import WitnessBuilder  # noqa: E402 — P30 staleness triple
+    WitnessBuilder.stamp_staleness_metadata(witness, script_path=__file__)  # scriptHash/scriptCommitSha
+    witness["scriptFile"] = Path(__file__).name
     out_path = Path(__file__).with_suffix(".witness.json")
     out_path.write_text(json.dumps(witness, indent=2, default=float))
     print(f"\n  Witness written to {out_path.name}")
