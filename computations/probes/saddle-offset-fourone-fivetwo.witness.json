@@ -1,0 +1,200 @@
+{
+  "engine": "fractions-exact",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-02T13:40:36.766730+00:00",
+  "commitSha": "10b36ecba347284bb7dbf0d18e080c9cf2028f95",
+  "assertions": [
+    {
+      "name": "fivetwo_offset_q0_reproduces_34_difference",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "o(0) = c^+(0) - c^-(0) = 4 - 3 = 1, the ι-odd {3,4} datum (DEFINED before compute; not tuned)"
+    },
+    {
+      "name": "fourone_offset_vanishes_amphichiral",
+      "computed": 0.0,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "amphichiral 4₁: single DT constant 3, v=(3,3) on diagonal"
+    },
+    {
+      "name": "saddle_angle_split_chiral_vs_amphichiral",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "5₂ angle>0 (near-but-not-on), 4₁ angle=0 (on the saddle)"
+    },
+    {
+      "name": "fivetwo_offset_is_q_deformed",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "o(q) is NOT a q-constant — the saddle genuinely deforms with q (picture: near-but-not-on, moves off the classical position)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 12,
+  "computation": "saddle-offset-fourone-fivetwo",
+  "scriptFile": "saddle_offset_fourone_fivetwo_probe.py",
+  "scriptHash": "5dbc7a73fce2",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Saddle-offset geometric reading of the certified 4₁/5₂ Stokes data. Lifts the {3,4} DT split into a 2-D saddle vector v(q)=(c⁺,c⁻) with an angle and magnitude; the ι-odd (bar-odd) offset o(q)=c⁺−c⁻ has q→0 value 1 for chiral 5₂ (reproducing the merged distinguisher's chiralityOdd 4 3 = 1) and 0 for amphichiral 4₁. Tests the 'knot winds near-but-not-on the saddle, origin-centered only in the bar-symmetric limit' picture; confirms the DT-limit legs and leaves the q=1 leg open.",
+  "contentBlock": "conj:im-q-physical-role",
+  "data": {
+    "definitions": {
+      "saddle_vector": "v(q) = (c^+(q), c^-(q)); c^eps = certified off-diag Stokes series carrying the DT constant",
+      "iota_even": "e(q) = (c^+ + c^-)/2  (projection on classical diagonal)",
+      "iota_odd_offset": "o(q) = c^+ - c^-  (perpendicular displacement; bar-odd grade of omega = beta*p - beta^-1*q)",
+      "saddle_angle": "theta(q) = atan2(o, c^+ + c^-)  (deg off diagonal)",
+      "chirality_slot_identification": "reused unchanged from fivetwo_crossknot_34_distinguisher.py: c^+ = S^+[0][1] (96 const 4), c^- = S^-[0][2] (97 const 3)"
+    },
+    "fivetwo": {
+      "c_plus_series": [
+        "4",
+        "-33",
+        "-18",
+        "151",
+        "276",
+        "312",
+        "-274",
+        "-1260",
+        "-2757",
+        "-4061",
+        "-3528",
+        "-324",
+        "7668",
+        "20436",
+        "37569",
+        "53299",
+        "62394",
+        "51978",
+        "10900"
+      ],
+      "c_minus_series": [
+        "3",
+        "-24",
+        "10",
+        "126",
+        "150",
+        "88",
+        "-381",
+        "-1005",
+        "-1831",
+        "-2283",
+        "-1281",
+        "1564",
+        "7518",
+        "16071",
+        "26331",
+        "33864",
+        "34746",
+        "20049",
+        "-16944"
+      ],
+      "offset_series": [
+        "1",
+        "-9",
+        "-28",
+        "25",
+        "126",
+        "224",
+        "107",
+        "-255",
+        "-926",
+        "-1778",
+        "-2247",
+        "-1888",
+        "150",
+        "4365",
+        "11238",
+        "19435",
+        "27648",
+        "31929",
+        "27844"
+      ],
+      "saddle_vector_q0": [
+        "4",
+        "3"
+      ],
+      "offset_q0": "1",
+      "saddle_angle_q0_deg": 8.13010235415598,
+      "magnitude_q0": 5.0,
+      "perp_offset_q0": 0.7071067811865475,
+      "offset_is_q_constant": false,
+      "drift_samples": {
+        "q=0.02": {
+          "c_plus": 3.334053139178505,
+          "c_minus": 2.525032255881545,
+          "offset": 0.8090208832969603,
+          "angle_deg": 7.861673257325935,
+          "magnitude": 4.182307763437345,
+          "trunc_stable": true
+        },
+        "q=0.05": {
+          "c_plus": 2.32569211840408,
+          "c_minus": 1.8417081856209159,
+          "offset": 0.4839839327831641,
+          "angle_deg": 6.624409330427969,
+          "magnitude": 2.966602917579288,
+          "trunc_stable": true
+        },
+        "q=0.1": {
+          "c_plus": 0.7012880231073588,
+          "c_minus": 0.8413778039659318,
+          "offset": -0.14008978085857293,
+          "angle_deg": -5.18880884771787,
+          "magnitude": 1.095317990521639,
+          "trunc_stable": true
+        },
+        "q=0.2": {
+          "c_plus": -1.6136725237229161,
+          "c_minus": -0.16699376731396534,
+          "offset": -1.4466787564089507,
+          "angle_deg": -140.9083236550777,
+          "magnitude": 1.6222903353407478,
+          "trunc_stable": false
+        }
+      },
+      "provenance": "qbeta_g3_5two_stokes_sandwich.py (K1/K2/K3 ✓, unflipped)"
+    },
+    "fourone": {
+      "saddle_vector": [
+        "3",
+        "3"
+      ],
+      "offset": "0",
+      "saddle_angle_deg": 0.0,
+      "magnitude": 4.242640687119285,
+      "dt_spectrum": "{3} (amphichiral collapse of {3,4})",
+      "offdiag_drift_cited": {
+        "q_to_0": 3,
+        "substrate_R1": 1.5852,
+        "source": "StokesSymmetryConstant.lean (R1)"
+      },
+      "note": "structural: offset 0 by amphichirality (V(4₁)_odd = 0); the magnitude moves with q but the vector stays on the diagonal"
+    },
+    "scope": {
+      "confirmed": "DT-limit (q→0) legs A1–A4",
+      "open": "the 'origin-centered only at q=1' leg — q→0-anchored series diverge at q=1; o(q) not continued to the iota-fixed point",
+      "wired_to_production": false,
+      "discipline": "no fit; no c_k wired; no axiomatization; scope-(a)"
+    },
+    "verdict": "SADDLE-OFFSET PICTURE CONFIRMED AT THE DT LIMIT [scope-(a)], q=1 leg OPEN. Lifting the certified {3,4} Stokes data into a 2-D saddle vector v(q)=(c⁺,c⁻): chiral 5₂ has v(0)=(4,3) sitting OFF the classical (amphichiral) diagonal at angle 8.130° with ι-odd offset o(0) = c⁺−c⁻ = 1 — reproducing EXACTLY the ι-odd {3,4} difference (the merged distinguisher's chiralityOdd 4 3 = 1) as the SEMICLASSICAL (q→0) displacement of the saddle. Amphichiral 4₁ has v=(3,3) ON the diagonal, offset 0 — the winding is origin-centered exactly when the knot is bar-symmetric. The offset is q-DEPENDENT (o(q) = 1 −9q + …, not a constant): the saddle genuinely deforms with q — the 'winds near-but-not-on' picture, quantified. HONEST SCOPE: the 'origin-centered ONLY at q=1' leg is NOT established — the q→0-anchored certified series diverge at q=1, and o(q) is a cross-chirality DT datum (leading 1 ≠ 0), not shown to continue to 0 at the ι-fixed point q=1. That leg is a distinct, untested claim (beaned). No fit; no c_k wired; no axiomatization; nothing wired to production; scope-(a)."
+  }
+}
