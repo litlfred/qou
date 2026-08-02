@@ -65,7 +65,7 @@ except ImportError:
 
 
 # ── targets ────────────────────────────────────────────────────────────────
-TARGET_MU_OVER_E = mp.mpf(MASS_RATIO_MU_E_STR)  # CODATA: 206.7682830
+TARGET_MU_OVER_E = mp.mpf(MASS_RATIO_MU_E_STR)  # CODATA: 206.7682830  # noqa: P31 — trailing comment; value from MASS_RATIO_MU_E_STR
 TARGET_TAU_OVER_E = mp.mpf("3477.23")  # PDG 2024: m_tau / m_e
 
 # ── canonical substrate constants ──────────────────────────────────────────

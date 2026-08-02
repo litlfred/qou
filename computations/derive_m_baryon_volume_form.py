@@ -33,7 +33,7 @@ This script:
 
   (a) Computes Vol(K)/ℏ_q² at 50 dps for the cross-check K = 4_1
       (figure-8, the muon Higgs-coupling knot) — a PREDICTION of
-      m_μ/m_e ≈ 206.7682830 (CODATA) expected to agree at the ~2e-7
+      m_μ/m_e ≈ 206.7682830 (CODATA) expected to agree at the ~2e-7  # noqa: P31 — docstring; CODATA cross-check target
       level (9.5σ cross-check): q_0 is proton-anchored per the
       2026-05-28 re-pin (q-pinning-50-digit.witness.json).  # noqa: P31 — docstring narrative; cross-check value lives in q_parameter.MASS_RATIO_MU_E_STR
 

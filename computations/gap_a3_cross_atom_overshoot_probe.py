@@ -15,7 +15,7 @@ For each atom K=(Z,N), n=3A:
   bar-mix   = max_λ |w_λ − w_λᵀ| (w_λ = y_λ χ^λ)
 
 Vol_hyp: D=12.776 (Z=1), ³He=⁴He=12.554 (Z=2)  [PR #787 Phase-3 clusters].
-−B/m_e (AME / m_e=0.51099895 MeV): D=4.353, ³He=15.10, ⁴He=55.37.
+−B/m_e (AME / m_e=0.51099895 MeV): D=4.353, ³He=15.10, ⁴He=55.37.  # noqa: P31 — docstring; m_e in -B/m_e note
 
 DISCIPLINE: characterises the overshoot/bar-mix ACROSS atoms; proposes NO P_λ and
 fits nothing. ⁴He (H₁₂) χ may be infeasible in-session (Hoefsmit-gated) — handled

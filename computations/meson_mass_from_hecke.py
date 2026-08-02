@@ -79,14 +79,14 @@ else:
     M_K_PM_MEV_VALIDATION  = mpf("493.677")
     M_K_0_MEV_VALIDATION   = mpf("497.611")
     M_MU_MEV_VALIDATION    = mpf("105.6583755")
-    M_P_MEV_VALIDATION     = mpf("938.27208816")
+    M_P_MEV_VALIDATION     = mpf("938.27208816")  # noqa: P31 — no-mpmath except-fallback; HAS_MP path imports codata_constants
 
 # ══════════════════════════════════════════════════════════════════
 #  SUBSTRATE (from constants.py — replicated here for standalone)
 # ══════════════════════════════════════════════════════════════════
 
 VOL_4_1 = 2 * clsin(2, mppi / 3) if HAS_MP else mpf("2.029883212819307")
-MASS_RATIO_MU_E = mpf("206.7682830")
+MASS_RATIO_MU_E = mpf("206.7682830")  # noqa: P31 — standalone-replicated CAL-2 substrate ratio (= experimental_constants.MU_OVER_E)
 
 HBAR_Q_SQ = VOL_4_1 / MASS_RATIO_MU_E
 HBAR_Q = sqrt(HBAR_Q_SQ) if HAS_MP else mpf(str(math.sqrt(float(HBAR_Q_SQ))))
@@ -353,7 +353,7 @@ witness = {
             "transition_braid": "(σ_1 σ_2^{-1})^2 in B_3",
             "connects": "T_{2,3} (electron) → T_{2,5} (muon)",
             "predicted": str(ratio_mu_e_predicted),
-            "observed": "206.7682830",
+            "observed": str(MASS_RATIO_MU_E),
             "err_ppb": err_mu_e_ppb,
         },
         "instance_2_hadronic": {

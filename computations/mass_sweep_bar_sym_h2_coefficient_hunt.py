@@ -81,7 +81,7 @@ h2 = h ** 2
 h4 = h ** 4
 
 # Constants (canonical, from knot_volumes.py + experimental_constants.py)
-M_E_MEV = mp.mpf("0.51099895")
+M_E_MEV = mp.mpf("0.51099895")  # noqa: P31 — CAL-1 m_e; exploratory sweep, value preserved
 VOL_BORROMEAN = 8 * mp.catalan  # = 8G, Thurston 1979
 VOL_7_SQ_1 = mp.mpf("4.7494999818964") # Vol(7^2_1) from SnapPy
 C_ALPHA_DERIVED = M_E_MEV * VOL_7_SQ_1  # = m_e · Vol(7^2_1)

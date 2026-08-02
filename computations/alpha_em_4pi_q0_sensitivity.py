@@ -189,7 +189,7 @@ def main() -> int:
         print(f"    would close with tighter CAL-2.")
         print()
         print(f"    Tighter CAL-2 requires better m_μ/m_e measurement.")
-        print(f"    PDG 2024: m_μ/m_e = 206.7682830(46) — 22 ppb relative.")
+        print(f"    PDG 2024: m_μ/m_e = 206.7682830(46) — 22 ppb relative.")  # noqa: P31 — descriptive print (m_mu/m_e ratio)
         print(f"    Future precision tests:")
         print(f"      • g-2 BNL/Fermilab: gives independent α_EM")
         print(f"      • Penning trap m_p,m_e improvements")

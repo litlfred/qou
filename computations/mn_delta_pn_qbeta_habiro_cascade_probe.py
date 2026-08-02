@@ -67,7 +67,7 @@ from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 Q_BETA_CODATA = "0.78233341"
 Q_BETA_SIGMA = "6.1e-7"
 M_E = M_E_MEV                  # 0.51099895069 (codata_constants)
-M_P_CODATA = M_P_MEV_VALIDATION  # 938.27208816 (codata_constants)
+M_P_CODATA = M_P_MEV_VALIDATION  # 938.27208816 (codata_constants)  # noqa: P31 — comment; value from codata_constants.M_P_MEV_VALIDATION
 M_N_CODATA = M_N_MEV_VALIDATION  # 939.56542052 (codata_constants)
 M_N_SIGMA = "5.4e-7"
 DELTA_PN_SIGMA = "5.4e-7"  # dominated by m_n σ (m_p far better known)

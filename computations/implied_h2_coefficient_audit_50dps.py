@@ -57,7 +57,7 @@ Possible explanations:
    discrepancy resolves. No literature suggests such a correction.
 
 4. **m_p_CODATA itself has uncertainty.** Current CODATA m_p =
-   938.27208816 MeV ± 0.000058 MeV = ± 6.2e-8 relative. The
+   938.27208816 MeV ± 0.000058 MeV = ± 6.2e-8 relative. The  # noqa: P31 — docstring; audit script, CODATA m_p note
    3.2e-4 discrepancy at h² coef level is ~5000× the m_p
    uncertainty, so this isn't it.
 
@@ -101,7 +101,7 @@ from witness_base import WitnessBuilder  # noqa: E402
 
 
 M_E_MEV = "0.51099895069"
-M_P_MEV = "938.27208816"
+M_P_MEV = "938.27208816"  # noqa: P31 — audit script; m_p CODATA reference for h2-coefficient audit
 
 
 def main() -> int:

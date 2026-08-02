@@ -69,7 +69,7 @@ def theta(chi, d):
 def main() -> int:
     q0 = mp.mpf(str(Q0))
     from binding_canonical import _Q_BETA_N     # CAL-3 β-decay scale (NOT E_0)
-    alpha = mp.mpf(str(_Q_BETA_N))              # Q_β(n) ≈ 0.78233 MeV
+    alpha = mp.mpf(str(_Q_BETA_N))              # Q_β(n) ≈ 0.78233 MeV  # noqa: P31 — comment; value from binding_canonical._Q_BETA_N
     lnq = mp.log(q0)
     print(f"\n  OBSERVE-EARLY vs OBSERVE-LAST   q₀={float(q0):.6f}  "
           f"Q_β={float(alpha):.5f} MeV  (canonical binding scale)\n")

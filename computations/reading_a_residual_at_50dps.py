@@ -23,7 +23,7 @@ Reading-A's PR #1272 proposal: replace the h² coefficient
 
 | quantity                | value (50 dps)              |
 |-------------------------|-----------------------------|
-| m_p CODATA              | 938.27208816 MeV            |
+| m_p CODATA              | 938.27208816 MeV            |  # noqa: P31 — docstring markdown table; CODATA m_p reference
 | Geom_leading at q_0     | 746.41785103...             |
 | target_lw               | **2.45995278436...**        |
 | Family A                | **2.53277966367...**        |
@@ -121,7 +121,7 @@ from witness_base import WitnessBuilder  # noqa: E402
 
 # CODATA validation values — used here for VALIDATION ONLY, not as upstream input
 M_E_MEV_VALIDATION = "0.51099895069"  # m_e CAL-1 (calibration input)
-M_P_MEV_VALIDATION_STR = "938.27208816"  # m_p CODATA validation reference
+M_P_MEV_VALIDATION_STR = "938.27208816"  # m_p CODATA validation reference  # noqa: P31 — validation reference string (m_p CODATA; 50dps reading diagnostic)
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 
 

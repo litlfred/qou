@@ -4,7 +4,7 @@ Phase A of Test 1 from PR #1127 / Path D Hermiticity audit.
 
 Solve simultaneously for complex `q = u + iv ∈ ℂ`:
 
-  CAL-2: |m_μ/m_e (q)|   =  Vol(4_1) · |q|² / |q − 1|²   =  206.7682830
+  CAL-2: |m_μ/m_e (q)|   =  Vol(4_1) · |q|² / |q − 1|²   =  206.7682830  # noqa: P31 — docstring; CAL-2/CAL-3 target statement
   CAL-3: |Q_β(q)|        =  m_e · |(q² − 2q − 1)(q+1) / (2q³)|  =  0.78233341 MeV
 
 The Q_β closed form is the ANSATZ extension of
@@ -60,7 +60,7 @@ def main() -> int:
         Observable = |Q_β(q)|.
 
         For real q ≈ 1.110, (q² − 2q − 1) ≈ −1.988 < 0, so |·| yields the
-        sign-fixed real value 0.7836 MeV (+0.17% vs CODATA 0.78233).
+        sign-fixed real value 0.7836 MeV (+0.17% vs CODATA 0.78233).  # noqa: P31 — docstring; CODATA comparison note
         """
         num = (q*q - 2*q - 1) * (q + 1)
         den = 2 * q**3

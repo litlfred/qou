@@ -44,7 +44,7 @@ from pathlib import Path
 import mpmath as mp
 
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
-from codata_constants import M_E_MEV as _ME  # noqa: E402
+from codata_constants import M_E_MEV as _ME, M_P_MEV_VALIDATION  # noqa: E402
 from tr_m_atom_via_transfer import tr_m_atom_zn  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
@@ -54,7 +54,7 @@ CHAINS = [(1, [1, 2, 3, 4]), (2, [1, 2, 3, 4])]
 # μ–p tension residual for the back-extrapolation comparison (context only,
 # not a fit target): −242 ppb on m_p per the substrate-floor audit.
 MU_P_RESIDUAL_PPB = 242.0
-M_P_MEV_CODATA = 938.27208816
+M_P_MEV_CODATA = float(M_P_MEV_VALIDATION)  # from codata_constants registry (validation target)
 
 
 def ladder_values(Z: int, N: int, qi):

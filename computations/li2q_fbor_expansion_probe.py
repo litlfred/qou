@@ -62,7 +62,7 @@ sys.path.insert(0, str(Path(__file__).parent))
 from _precision import set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
-from experimental_constants import M_E_MEV  # noqa: E402
+from experimental_constants import M_E_MEV, M_P_MEV  # noqa: E402  (M_P registry: validation target)
 from m_p_substrate_identity_50dps import (  # noqa: E402
     F_Bor, trM_borromean, qfact_three,
 )
@@ -124,7 +124,7 @@ def main() -> int:
     m_p_exact_only = 2 * m_mu * F - 12 * m_e          # F_Bor alone, no habiro
     m_p_full = m_p_exact_only * habiro_ratio          # production form
 
-    m_p_codata = mpf("938.27208816")
+    m_p_codata = mpf(str(M_P_MEV))  # validation target from experimental_constants registry
     err_exact_ppb = (m_p_exact_only - m_p_codata) / m_p_codata * mpf("1e9")
     err_full_ppb = (m_p_full - m_p_codata) / m_p_codata * mpf("1e9")
 

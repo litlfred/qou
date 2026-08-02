@@ -25,7 +25,7 @@ Some combinations may yield a_2_norm ≈ -G structurally.
 ## Also evaluates at q_0 for m_p prediction
 
 For the best candidates, compute m_p prediction directly and
-compare to CODATA 938.27208816 MeV.
+compare to CODATA 938.27208816 MeV.  # noqa: P31 — docstring; CODATA m_p comparison note
 
 ## Cross-references
 
