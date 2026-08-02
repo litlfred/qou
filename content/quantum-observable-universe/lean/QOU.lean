@@ -106,6 +106,10 @@ import QOU.MassTheory.A4PrecisionOrderSeparation
 import QOU.MassTheory.A3UnitsConsistency
 import QOU.MassTheory.BindingWeightMarkovPinning
 import QOU.MassTheory.CKnotNonUniversal
+-- Radial Vol·ρ binding-handle mirror test (qou-0g4z front 1): the ρ=tr_M radial ansatz
+-- (C_knot=Vol·ρ/ℏ_q² with Vol(T)=Vol(³He)) is refuted in direction — C_knot(T)/C_knot(³He)>1
+-- but tr_M(T)/tr_M(³He)<1. scope-(a). Sorry-free.
+import QOU.MassTheory.RadialVolRhoMirrorTest
 import QOU.Mass.MassVolDensity
 import QOU.Mass.MixedMultibondMuBarIntegrality
 import QOU.Mass.BindingRecurrenceSpectral
