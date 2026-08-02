@@ -25,10 +25,13 @@ Dissected (`meson_em_sinh_closed_form.py` + roast probe):
   the ratio. The EM term is a ~203 ppm correction.
 - **α_em = 137.035944 is HARDCODED** ("CS-corrected, Witten κ, 399 ppb") — the
   *experimental* value. Substituting the framework's own **derived** α_em
-  (`q·[9]_q·[10]_q` → α_em⁻¹ ≈ 609) gives a **−157,000 ppb** miss (0.016%, four orders
-  worse). So the "meets 100×" claim is `[3][4] + (measured α_em/π)·EM` — **not a
-  parameter-free prediction of m_K/m_π**; it imports the measured fine-structure
-  constant.
+  (`q·[9]_q·[10]_q` → α_em⁻¹ = **136.82**, itself −1553 ppm from CODATA) degrades
+  m_K/m_π from ~47 ppb to **~363 ppb (~8×)**. So the "meets 100×" claim is
+  `[3][4] + (measured α_em/π)·EM` — it **imports the measured fine-structure constant**;
+  the derived one is ~8× worse. The dependence is real, though not catastrophic.
+  **[CORRECTION 2026-08-02:** an earlier version of this audit cited α_em⁻¹≈609 and a
+  −157,000 ppb miss — that used a wrong `ℏ_q²` numerator instead of the skein amplitude
+  `(q−q⁻¹)²`; the correct derived α_em⁻¹ is 136.82, flagged by the α_EM per-loop agent.**]**
 - **The EM factor's justification is undermined.** `(3q²−1)/(2q²)` is presented as
   "the leading two terms of `1+log(1+ℏ_q)`", with "3 = generations" (T(2,3/5/7))
   bolted onto the coefficient. But the **full** `1+log(1+ℏ_q)` fits *worse* (+103 ppb)

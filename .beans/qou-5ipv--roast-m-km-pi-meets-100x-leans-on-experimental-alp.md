@@ -10,8 +10,10 @@ updated_at: 2026-08-02T16:03:25Z
 See docs/audits/2026-08-02-ppq-attack-vectors-roast.md §Roast 1.
 m_K^2/m_pi^2 = [3]_q[4]_q + (alpha_em/pi)(3q^2-1)/(2q^2). Findings:
 - Core [3]_q[4]_q exact/Lean-proved (~99.98%). EM term ~203 ppm.
-- alpha_em=137.035944 HARDCODED (experimental). Derived alpha_em (q[9][10], ~1/609)
-  gives -157000 ppb miss => "meets 100x" imports the measured alpha_em, not parameter-free.
+- alpha_em=137.035944 HARDCODED (experimental). Derived alpha_em (q[9][10] = 136.82, -1553 ppm from CODATA) degrades m_K/m_pi
+  from ~47 to ~363 ppb (~8x) => "meets 100x" imports the measured alpha_em (dependence
+  real but ~8x, not catastrophic). [CORRECTION: earlier '609/157000 ppb' used wrong
+  hbar^2 numerator vs (q-q^-1)^2; corrected per alpha_EM per-loop agent 2026-08-02.]
 - (3q^2-1)/(2q^2) is a 2-term truncation of 1+log(1+hbar_q); the FULL log fits WORSE
   (+103 vs +47 ppb) => the "truncated-log/3-generations" justification is numerology.
 - Residual structure-dominated (137.035944 vs CODATA 137.035999 barely moves it).
