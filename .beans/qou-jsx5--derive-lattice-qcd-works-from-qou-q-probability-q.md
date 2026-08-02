@@ -67,3 +67,32 @@ expectation value**, with:
 **O-S reflection positivity → valid Euclidean QFT** step is the load-
 bearing theorem and is NOT yet proved. Do not claim lattice-QCD is
 "derived from QOU" until that step is Lean-proved or rigorously argued.
+
+## 🔥 Roast (2026-08-02) — RP is more tractable than stated; continuum limit is the real wall
+
+**Upgrade the RP step from "long" to "near/medium."** I under-rated it. The
+Osterwalder–Schrader reflection positivity a lattice QFT needs reduces, in
+QOU, to two things that are largely already in hand:
+
+1. **Positive faithful trace.** The Markov trace $\mathrm{tr}_M$ on $H_n(q)$
+   at real $q_0>0$ is exactly the Jones/Ocneanu positive faithful trace (the
+   II$_1$-factor trace). Positivity of the state = the algebraic core of RP.
+   This is KNOWN, not open.
+2. **Self-adjoint transfer matrix.** $H_n(q)$ is a $*$-algebra with
+   $\sigma_i^*=\sigma_i$ at real $q$; the transfer matrix $T_w$ (confinement
+   SDP, step 10) built from self-adjoint generators is self-adjoint w.r.t.
+   the $\mathrm{tr}_M$ inner product ⇒ $T_w=e^{-aH}$ with $H$ self-adjoint,
+   bounded below. That is the O-S transfer-matrix positivity.
+
+So "the QOU lattice measure is a valid Euclidean QFT" ≈ (Jones positivity) +
+(a self-adjointness check). **Tractable.**
+
+**The genuine wall is the CONTINUUM LIMIT, not RP.** Being a valid Euclidean
+QFT ≠ being *QCD*. QCD-ness needs the correct $\beta$-function /
+**asymptotic freedom** in the $a\to0$ limit. In QOU that is the $q\to1$
+KLR→KL decategorification (q-CLT) limit — and whether it reproduces the
+$-b_0\alpha_s^2$ running is OPEN and shared with the alpha_S/Λ_QCD bean
+(`qou-5iaz`). Do NOT claim "lattice-QCD derived" on RP alone.
+
+Revised split: RP/valid-QFT = near-term & probable; asymptotic-freedom
+continuum limit = open, coupled to SU(3) (`qou-ni4b`) + Λ_QCD.
