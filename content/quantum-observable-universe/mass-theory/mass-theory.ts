@@ -1201,6 +1201,7 @@ export default chapter({
         "crystal-basis-resolves-mass-tower-open-problems",
         "crystal-basis-resolves-mass-tower-open-problems-context",
         "mass-tower-deeper-fillers",
+        "complex-mass-constituent-functional",
       ],
     }),
 
