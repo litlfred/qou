@@ -312,6 +312,10 @@ import QOU.BraidsAndKnots.DeltaLambdaL1Ceiling
 -- (dimension forced only mod 2) — sharpens the open substrate-derivation crux
 -- (bean qou-ylot); sorry-free, base ring ℤ.
 import QOU.BraidsAndKnots.DeltaLambdaDTModuliUnderdetermined
+-- Δ_λ = DT/3d-index Euler characteristic, general n (bean qou-bvpp): the n=5
+-- anchor's dtEuler=deltaLambda lifted to ALL partitions via the single-degree
+-- graded-Euler collapse; sorry-free, base ring ℤ/ℕ (combinatorial).
+import QOU.BraidsAndKnots.DeltaLambdaDTIndexGeneralN
 -- Borromean brane-tower convergence: the TRUE Li₂^q radius bound (|tr_M(β_Bor)|<1
 -- ⇒ pair traces < q ∀q>1); sorry-free, over ℚ. Wired so CI type-checks it.
 import QOU.BraidsAndKnots.BorromeanTowerConvergence
