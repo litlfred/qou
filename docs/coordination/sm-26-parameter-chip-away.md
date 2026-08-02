@@ -51,11 +51,27 @@ open knots.
 
 1. **Canonical meson flux-tube operation** (bean `qou-qpj9`, #4608) — the J/ψ
    attack confirmed the observable is *in mechanism range* but is blocked on a
-   *derived* c̄c-binding braid. Next honest step: derive the meson flux-tube
-   operation from the proton's 3-tube Borromean vertex via a Y-junction →
-   single-tube reduction; if that fixes a unique braid a priori, check it once
-   against J/ψ + η_c jointly. This is the real gate for the whole charmed-hadron
-   observable spectrum.
+   *derived* c̄c-binding braid. **Resolved to an honest negative + the precise
+   missing datum (#4614, bean `qou-mesont3`):** the Y-junction 3→2 reduction
+   gives B₂ (abelian) → torus link → Vol=0 (scope-(b), SnapPy-verified) — strand
+   *removal* can't build hyperbolic structure (the framework already puts the
+   meson at H₃(q), Hopf-binding = 3rd strand). And the operator-selection input
+   is under-determined because **`windingContent` is non-injective** (Lean-proved):
+   charm (n=5) and strange (n=5) share the generation-2 block — the D-meson
+   `{5,3}` collides with the kaon `{3,5}` (same multiset). The missing object is a
+   **weak-isospin T₃ grading orthogonal to the winding n** (up-type charm vs
+   down-type strange). Bonus: a live corpus inconsistency — charm assigned both
+   T(2,5) and T(2,7) across tables (canonical-watcher).
+
+**★ CONVERGENCE (the headline).** The charm-mass gate (`qou-mesont3`: a
+weak-isospin T₃ distinguishing up/down-type at fixed generation) is **the same
+missing object** as the electroweak-mixing gate. #4597 gave the writhe-independent
+2nd invariant μ̄₁₂₃ = Y; the writhe→I₃ map (G2 #4561) is the T₃; and the
+up/down-type distinction the D-meson needs IS weak isospin. So the charmed-hadron
+observable spectrum, sin²θ_W, and hypercharge Y all block on **one** object: a
+weak-isospin T₃ grading orthogonal to the generation winding. That is now the
+single highest-leverage target — it unlocks three fronts at once.
+
 2. **Generation physical bridge** — the *counting* (3 = odd primes in the
    Bring-genus window N(χ=−6)=9, {3,5,7}; 9 harmonic) is clean given the
    identifications; the *physical bridge* (why prime-winding = a fermion
