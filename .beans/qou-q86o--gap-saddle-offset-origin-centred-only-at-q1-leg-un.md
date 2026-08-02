@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-02T13:46:14Z
-updated_at: 2026-08-02T14:34:11Z
+updated_at: 2026-08-02T15:03:30Z
 ---
 
 ## Context
@@ -72,10 +72,11 @@ Probe [`saddle_offset_zero_location_probe.py`](../computations/probes/saddle_off
   (Fantini-Wheeler Borel domain) — opposite sides of the Borel transform, no
   identity. Nothing fitted, nothing wired.
 
-**Still OPEN (re-scoped, NOT closed):** the **fibre-level** reading — the owner's
-"centred at q=1" as the bar-fixed point of the *formal* q, where a bar-covariant
-Habiro/fibre element vanishes by construction (AGENTS.md Im(q) banner). The q→0
-DT series neither tests nor refutes this; it is a *different object*. Next honest
-step: exhibit (or refute) a fibre-level Habiro element whose bar-odd part vanishes
-at q=1 AND whose q→0 archimedean evaluation reproduces the `{3,4}` datum — the
-route to the QBeta c₃ Borel/Habiro program, not the archimedean sandwich.
+## VERDICT (2026-08-02, PR #4587 — fibre leg ANSWERED)
+
+Surviving FIBRE-level leg (bar-odd Habiro element whose bar-fixed coefficient degree n=0 is forced zero — the fibre reading of "centred at q=1"; evaluation at q=±1 is a distinct statement) is NOT a derivation — HONEST NEGATIVE, a vacuous-or-fit dichotomy on 4 proved pillars:
+1. q=1 centring is NON-SELECTIVE (new sorry-free Lean BarOddQOneCentringNonselective.lean): involution's only fixed coeff-degree is n=0, so bar-odd vanishes there for the WHOLE class. q1_centring_nonselective: BarAntisym g iff (BarAntisym g and g0=0). Imposing "centred at q=1" selects no element => content-free (vacuous horn).
+2. {3,4} DT datum (chiralityOdd 4 3=1) incompatible with bar-odd fixed-degree coeff (#4583) => reproducing it needs FREE root-of-unity interpolation = a fit (fit horn).
+3. {3,4} is q-EXACT, no resurgent tail (#4554 symmetryConstant_const) => driver-11/13 q->0 DT count, NOT a Habiro object.
+4. Substrate wall (HabiroMagnitudeA3 pochAbs_unbounded, non-summable at q0>1) + bar-odd resummation anchor-blind (#4519).
+Scope-(a); nothing wired. Audit: docs/audits/2026-08-02-fibre-habiro-q1-centring-verdict.md. alpha_EM precedent does not transfer (bar-EVEN/finite/fixed). Only live neighbour = DT-count categorification (q->0). Left open for owner to close.
