@@ -104,20 +104,19 @@
   -- Ref: [macdonald1995] Macdonald, Symmetric Functions and Hall Polynomials
   -- Ref: [james1984representation] https://doi.org/10.1007/978-1-4684-9458-7
 -/
-import QOU.BraidsAndKnots.S5SO3FiberAction
+import QOU.BraidsAndKnots.DeltaLambdaTopDegreeConcentration
 
 namespace QOU.BraidsAndKnots
 
-/-! ## Graded (Behrend/DT) Euler characteristic of a coefficient vector
+/-! ## Graded objects reused from `DeltaLambdaTopDegreeConcentration` (#4570)
 
-    A graded finite-dimensional object is a list `l : List ℕ`, `l[i]` its
-    dimension in cohomological degree `i`.  Its signed Euler characteristic is
-    `Σ_i (-1)^i · l[i]`.  (Self-contained here; the same object appears in #4570.) -/
-def gradedEulerAux : ℕ → List ℕ → ℤ
-  | _, [] => 0
-  | d, c :: cs => (-1 : ℤ) ^ d * (c : ℤ) + gradedEulerAux (d + 1) cs
-
-def gradedEuler (l : List ℕ) : ℤ := gradedEulerAux 0 l
+    `gradedEuler` / `gradedEulerAux`, `PartitionOf5.singleCoeffs` / `fakeCoeffs`,
+    the ungraded-dimension lemmas (`singleTotalDim_eq_dim`, `fakeTotalDim_eq_dim`,
+    `same_ungraded_dim`), and the two signed-Euler-characteristic facts
+    (`single_gradedEuler_eq_deltaLambda`, `fake_gradedEuler_ne_deltaLambda`) all
+    live in `#4570` (same `QOU.BraidsAndKnots` namespace) and are imported, NOT
+    redeclared here (they would collide in the `QOU` umbrella).  This file adds
+    only the jet-order VALUATION and the degree-blindness crux. -/
 
 /-! ## Jet-order valuation of a graded object
 
@@ -129,40 +128,6 @@ def gradedEuler (l : List ℕ) : ℤ := gradedEulerAux 0 l
 def valuation : List ℕ → ℕ
   | [] => 0
   | c :: cs => if c = 0 then valuation cs + 1 else 0
-
-/-! ## Two graded objects at the `n = 5` anchor (as in #4570) -/
-
-/-- **Single-degree Springer object `G_λ`.**  `dim V_λ` concentrated in the one
-    degree `n(λ)` — coefficient list `n(λ)` zeros followed by `dim V_λ`. -/
-def PartitionOf5.singleCoeffs (p : PartitionOf5) : List ℕ :=
-  List.replicate p.nStat 0 ++ [p.dim]
-
-/-- **Honest jet-order / coinvariant graded object `H_λ`.**  Graded dims =
-    coefficients of the fake-degree polynomial `f_λ(q) = q^{n(λ)}·[5]_q!/∏[h]_q`
-    (graded `H^*(𝓑_λ)`); position `i` = coefficient of `q^i`.  Note each list's
-    FIRST nonzero entry sits at degree `n(λ)` with value `1` (the monic leading
-    term), verified below.  (Table verbatim from #4570; `f_λ(1) = dim V_λ`.) -/
-def PartitionOf5.fakeCoeffs : PartitionOf5 → List ℕ
-  | .five         => [1]                                -- f = 1              (q^0)
-  | .fourOne      => [0, 1, 1, 1, 1]                    -- f = q[4]_q         (q^1..q^4)
-  | .threeTwo     => [0, 0, 1, 1, 1, 1, 1]              -- f = q²[5]_q        (q^2..q^6)
-  | .threeOneOne  => [0, 0, 0, 1, 1, 2, 1, 1]           -- f = q³[3]_q(1+q²)  (q^3..q^7)
-  | .twoTwoOne    => [0, 0, 0, 0, 1, 1, 1, 1, 1]        -- f = q⁴[5]_q        (q^4..q^8)
-  | .twoOneOneOne => [0, 0, 0, 0, 0, 0, 1, 1, 1, 1]     -- f = q⁶[4]_q        (q^6..q^9)
-  | .onesFive     => [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]  -- f = q^{10}         (q^10)
-
-/-! ## Both objects carry the SAME ungraded Wedderburn dimension `dim V_λ` -/
-
-theorem PartitionOf5.singleTotalDim_eq_dim (p : PartitionOf5) :
-    (p.singleCoeffs).sum = p.dim := by cases p <;> decide
-
-/-- `f_λ(1) = dim V_λ` (number of SYT). -/
-theorem PartitionOf5.fakeTotalDim_eq_dim (p : PartitionOf5) :
-    (p.fakeCoeffs).sum = p.dim := by cases p <;> decide
-
-theorem PartitionOf5.same_ungraded_dim (p : PartitionOf5) :
-    (p.singleCoeffs).sum = (p.fakeCoeffs).sum := by
-  rw [p.singleTotalDim_eq_dim, p.fakeTotalDim_eq_dim]
 
 /-! ## Both objects carry the SAME jet-order valuation `n(λ)`
 
@@ -207,19 +172,10 @@ theorem PartitionOf5.coeff_at_valuation_differs (p : PartitionOf5) (h : p.dim �
   rw [p.singleCoeff_at_valuation_eq_dim, p.fakeCoeff_at_valuation_eq_one]
   exact h
 
-/-! ## Their signed Euler characteristics DIFFER -/
+/-! ## THE CRUX: the GS jet-order valuation cannot force single-degree selection
 
-/-- The concentrated object realizes `Δ_λ` (the #4553 collapse). -/
-theorem PartitionOf5.single_gradedEuler_eq_deltaLambda (p : PartitionOf5) :
-    gradedEuler p.singleCoeffs = p.deltaLambda := by cases p <;> decide
-
-/-- The honest jet-order/coinvariant object does NOT realize `Δ_λ` on any
-    non-trivial block (`f_λ(-1) ≠ Δ_λ` whenever `dim V_λ > 1`). -/
-theorem PartitionOf5.fake_gradedEuler_ne_deltaLambda (p : PartitionOf5)
-    (h : p.dim ≠ 1) : gradedEuler p.fakeCoeffs ≠ p.deltaLambda := by
-  revert h; cases p <;> decide
-
-/-! ## THE CRUX: the GS jet-order valuation cannot force single-degree selection -/
+    (`single_gradedEuler_eq_deltaLambda` and `fake_gradedEuler_ne_deltaLambda`,
+    used just below, are the two signed-Euler facts imported from #4570.) -/
 
 /-- **THE CRUX (limitative — bean `qou-71ma`).**  There exist two graded
     assignments `single = G_λ` and `fake = H_λ` such that:
