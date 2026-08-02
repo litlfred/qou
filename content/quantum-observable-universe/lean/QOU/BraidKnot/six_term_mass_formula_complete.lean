@@ -24,8 +24,9 @@ context plus a sum identity.
 namespace QOU.BraidKnot
 
 /-- Abstract context for the six-term mass formula.  The decomposition is a
-    pure additive identity, so the base ring is the weakest structure that
-    admits `+` — a generic `[AddCommMonoid R]` (§7c); the archimedean
+    pure additive identity, so the base ring need only be a commutative
+    additive monoid `[AddCommMonoid R]` (§7c) — the six-term sum uses `+` and
+    the additive identity `0`, with no ordering or multiplication; the archimedean
     specialisation `R := ℝ` is a downstream instantiation, not baked in here. -/
 class SixTermMassFormulaContext (R : Type*) [AddCommMonoid R] where
   /-- The six addends (in the generic base ring `R`). -/

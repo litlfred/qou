@@ -17,8 +17,9 @@ namespace QOU.BraidKnot
 /-- Abstract context for the `knot_mass_unified` claim — manuscript-themed
     typed fields below; the boxed six-term spectral expansion of
     `𝔪(ϱ)` is encoded as a single equality on `mass`.  The identity is a pure
-    additive/subtractive relation, so the base ring is the weakest structure
-    that admits `+`/`−` — a generic `[AddCommGroup R]` (§7c); the archimedean
+    additive/subtractive relation, so the base ring need only be a commutative
+    additive group `[AddCommGroup R]` (§7c) — the identity uses `+`/`−`, with no
+    ordering or multiplication; the archimedean
     specialisation `R := ℝ` is a downstream instantiation, not baked in here. -/
 class KnotMassUnifiedContext (R : Type*) [AddCommGroup R] where
   /-- Substrate parameter `q : R`. -/
