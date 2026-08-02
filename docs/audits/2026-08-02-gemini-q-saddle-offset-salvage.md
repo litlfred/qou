@@ -96,7 +96,12 @@ The `ρ_F·m_e·Vol` binding route (3 census atoms: +1.1% / −0.16% / −2.97%;
 knot) is dominated by the still-open knot-assignment gap; nothing here approaches
 ppq (an L1 compute leg, already met). Both external "close the ν_SDP gap"
 proposals are refuted; `conj:kashaev-density-equals-sdp-multiplicity` stays
-honestly open. Deliverables: 1 verified Lean lemma, 2 probes, 5 beans, this doc.
+honestly open. Deliverables: **4 sorry-free Lean files** (ColorCubicDiscriminantPositive,
+LagrangeResolventCyclicEigenvalue, SaddleQShiftOffset — the offset question closed
+across all three tiers: saddle structure, angle = C₅/S₃ stabilizer root of unity,
+magnitude r_K(q)=|z*|·ℏ_q radial), **3 probes** (ρ_F·Vol dashboard, 1-loop-vs-ν_SDP,
+Frobenius diagnostic), **6 beans**, this doc. The offset question is fully resolved;
+ν_SDP stays honestly underived (all three derivational routes gated/refuted).
 
 
 **Diagnostic update:** the 0/3558 is an *over-determination artifact* — the Frobenius LP imposes 7 equalities (1 net `1ᵀx=A` + 6 `Gx=nf`) on 6 unknowns; `Gx=nf` fixes x, whose implied net `1ᵀG⁻¹nf` (O(1)) ≠ A, so the net row is inconsistent for every nucleus. `nf∈range(G)` holds for light nuclei (resid ~1e-15); heavy A hits the f64 `build_atom_nf` overflow. Not a Gram/knot obstruction; fix targets the net normalization (`frobenius_admissibility_diagnostic.py`). Still does not derive ν_SDP.
