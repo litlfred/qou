@@ -562,3 +562,50 @@ irreducible-polynomial construction, exact `(Z/5⁸)[x]/(h)` arithmetic):
 integer-coefficient Bloch symbols `[z₁]+[z₂]+[z₃]` of GSWZ (270)
 (non-root-of-unity arguments; genuinely ramified Kummer data) — the
 final 9p9y layer.
+
+## Addendum 14 (2026-08-02) — new uploads gap-map: where 1-loop = torsion and the spherical partition algebra bear on 1ppq / SM derivation gaps
+
+Two uploads (`uploads/2411.03801v2.pdf` Garoufalidis–Yoon "1-loop
+equals torsion for two-bridge knots"; `uploads/2402.01890v4.pdf`
+Bastías–Martin–Ryom-Hansen "On the spherical partition algebra")
+assessed against the open derivation gaps. Corpus-grep run first; the
+existing 1-loop/torsion thread lives in
+`borromean_jones_1loop_torsion.py` / `borromean_nz_adjoint_torsion.py`
+and the α_EM / 1ppq ledgers.
+
+**A. GY Theorem 1.1 (PROVED: 1-loop = adjoint torsion for hyperbolic
+2-bridge knots) + their cited [PW] (Pandey–Wong: proved for
+fundamental shadow links):**
+
+1. **m_p chain, Steps 9–10 (SM leg).** The corpus validated
+   `exp(2c₀) = 1/|det J_NZ|` on 4₁ (= √3) and computed
+   `|det J_NZ(𝓑₃)| = 64` — under the then-CONJECTURAL DG13 bridge.
+   4₁ is 2-bridge (GY Thm 1.1) and the Borromean rings are the
+   classic fundamental shadow link ([PW]), so **both instances are
+   now theorem-backed**: the subleading 1-loop constant in the
+   Borromean Kashaev asymptotics equals an exact algebraic
+   determinant by theorem, not conjecture. The ρ(𝓑₃)-density
+   correction layer below Vol in `m(K) = m_e·Vol(K)·ρ(K)/ℏ_q²` gains
+   a derived ingredient. Follow-up beaned: re-scope the two witness
+   producers' conjecture-conditional wording to theorem-backed and
+   register the GY + PW refs.
+2. **Q_β c₃ / A_ω (1ppq leg).** The A_ω = 3 result on main is
+   conditional on `conj:stokes-dt-bps-bridge`; separately, the
+   τ^{1/2} (1-loop) normalization inside the 4₁/5₂ resurgent Stokes
+   prefactor is now exact for 2-bridge — one conditional layer
+   removed from the prefactor normalization side (NOT from the
+   DT/BPS identification itself; scope-(a) framing).
+3. **Bean `xx9f`.** δ₅₂ = 3α−2 in GSWZ (281)/(282) IS the 1-loop
+   invariant = τ_adj by GY/OT15 — the δ-prefactor of every 2-bridge
+   Φ-series is a derived quantity with an exact closed form. This
+   pins the provenance of the normalization but does not by itself
+   resolve the x³ mismatch (the unprinted series factor).
+
+**B. Spherical partition algebra (assessment — suggested tool, no gap
+closed today).** The Sₙ rep-theory infra epic on main has the
+Burnside `Σ(f^λ)² = n!` brick "dimension side proved, HLF-gated".
+The spherical partition algebra's idempotent truncation realizes the
+invariant-theory side of Sₙ Schur–Weyl — candidate machinery for the
+multiplicity bookkeeping in that brick and for partition-algebra
+dualities on the `tr_M` binding-combiner side. Noted for the epic
+owner; no wiring.
