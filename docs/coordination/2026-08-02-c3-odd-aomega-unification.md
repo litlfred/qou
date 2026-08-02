@@ -15,6 +15,18 @@ fibre→observable (τ / archimedean) functor applies to the bar-odd channel.**
 the **same** question — the measured `A ≈ 2.054` reads as a *reduced Stokes
 `A_ω`*, not a dropped Neumann–Zagier ½.
 
+**Search redirect (keystone finding, PR #4554, 2026-08-02):** the integer
+target is the **q-exact** GGM symmetry constant `S₁₂+S₂₁ = 3·S₁₁`
+(`StokesSymmetryConstant.symmetryConstant_const`, sorry-free). A q-independent
+quantity equals its own q→0 value ⇒ **the integer has NO resurgent tail.**
+Deriving `A_ω=3` internally therefore collapses to a **decidable q→0 3d-index /
+DT count** from Hecke/Bring data — **drivers 11/13 (Lobachevsky volume / crystal
+q→0), NOT driver-12 resurgence.** The c₃-via-Borel scaffold is for the c₃
+*value/normalization*, not the integer. The precise remaining gap is a
+**categorical formula for the q→0 DT count reproducing the pair {3,4} across
+knots** — an open problem in DT/3d-index *categorification*, not a QOU wiring
+gap.
+
 ## Established (proved / closed, on `main`)
 
 | Result | Where | Status |
@@ -95,6 +107,36 @@ observable bridge first should be cross-cited by the other (coordinated on
 - `qou-0pym` / `qou-iyj5` — muon-magnitude / boost-rapidity `c=√A` (converged).
 - `qou-l7vf` — the program roast + corrected (b)-partial verdict.
 - `qou-9dvz` — median-Borel resummation residual (fibre-side).
+
+## How to resolve — routes + literature verdict (2026-08-02)
+
+Resolving the `κ_shape`/A=2 vs `A_ω·κ_pot`/A=3 fork (= `qou-pzzl` = `qou-yh67`),
+most-decisive first:
+
+1. **Cross-knot `{3,4}` test on 5₂ — the clean lever, dodges the precision
+   ceiling.** The integer target is the *scalar* symmetry constant 3, but the DT
+   *spectrum* is the **pair `{3,4}`**; 5₂'s block is 3×3 (vs 4₁'s 2×2). Whether
+   `S` carries the scalar constant or the full spectrum is a **structural**
+   distinction, decidable by the 5₂ analogue — *not* blocked by `σ_A ≈ 40%`.
+   The keystone flagged this as the tentative re-opening (an unchecked
+   cross-knot test).
+2. **Categorical q→0 DT count from Hecke/Bring (drivers 11/13)** reproducing
+   `{3,4}`, and read off whether the S-channel Jacobian keeps `A_ω=3` (PhiBS) or
+   drops to `κ_shape=2κ_pot` (ArgU). The keystone's "precise missing ingredient."
+3. **A `u=0` anchor** pinning the order-`u²` coefficient (yh67 noted its
+   absence). Least likely to materialize.
+
+**Literature verdict (thin/absent for the exact bridge — itself informative):**
+- Khovanov–Lauda–Webster ([1005.4559](https://arxiv.org/abs/1005.4559),
+  [1309.3796](https://arxiv.org/abs/1309.3796)) categorify the **colored Jones /
+  quantum knot invariants**, NOT the 3d-index / DT count.
+- The DT / 3d-index side (Garoufalidis topological-invariance
+  [1303.5278](https://arxiv.org/abs/1303.5278) in `uploads/`; DGG state
+  integrals) gives `{3,4}` from **triangulation** data, not crystal/Hecke.
+- **No categorification of the q→0 DT count `{3,4}` from crystal/Hecke data
+  appears to exist** — confirming the keystone's "open problem in DT/3d-index
+  categorification" verdict. The resolution is not in a paper; route 1 (the
+  structural 5₂ cross-knot test) is the tractable next probe.
 
 ## Next concrete, non-overlapping tasks
 
