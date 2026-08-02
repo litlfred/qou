@@ -51,3 +51,27 @@ Fix the AME path in `all_nuclides_sdp_admissibility.py` (parents[2]→ resolve
 computations/data), and add a Frobenius-feasibility diagnostic that reports WHY
 each nucleus fails (which constraint / which neg-norm block) — turns "0/3558"
 into an actionable per-constraint breakdown.
+
+## DIAGNOSTIC (2026-08-02) — the 0/3558 is an OVER-DETERMINATION artifact, not an obstruction
+`computations/probes/frobenius_admissibility_diagnostic.py` decomposes the failure:
+
+- **Gram spectrum** (H_3 NF basis [γ,σ₀,σ₁,L₊,L₋,e⁻]): [−0.855, 0.102, 0.855,
+  0.855, 0.855, 3.477] — rank 6, **exactly 1 neg-norm block** (indefinite but
+  invertible).
+- **nf ∈ range(G)** for every light nucleus (residual ~1e-15) — the Frobenius
+  demand is reachable; the neg-norm block is NOT what blocks light nuclei.
+- **Root cause = over-determination.** The Frobenius LP imposes 7 equalities
+  (1 net `1ᵀx=A` + 6 Frobenius `Gx=nf`) on 6 unknowns. `Gx=nf` already fixes
+  x=G⁻¹nf uniquely, so its implied net is `1ᵀG⁻¹nf` — which is O(1) (p 0.596,
+  2H 0.437, 4He 0.802, 12C 2.34), NOT the mass number A. The net row `1ᵀx=A` is
+  therefore inconsistent with the Frobenius rows for EVERY nucleus ⇒ 0/3558.
+- **Heavy nuclei (A≳50)**: separate cause — f64 `build_atom_nf` overflows (56Fe
+  nf ~1e16), the known mpfr-needed infra limit.
+
+**Reframing (honest, scope-limited).** The 0/3558 is a **test-formulation
+artifact**: the admissibility LP is over-determined by an inconsistent net
+normalization (`1ᵀx=A` vs the NF-implied `1ᵀG⁻¹nf`). It is NOT evidence the
+Gram/knot machinery can't select operators. The fix targets the net constraint
+(drop the redundant row, or use the consistent net), NOT the Gram. **This does
+NOT derive ν_SDP** — it removes a spurious "obstruction" reading and re-points
+the open R5 work at the net normalization + the mpfr overflow for heavy A.
