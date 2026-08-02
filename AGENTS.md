@@ -874,14 +874,25 @@ Authoritative reference: [`docs/precision-goals.md`](docs/precision-goals.md).
 - **Subgoal-1 (achievable):** 100× targets ≥ ~780 ppb CAL-2 floor.
   Closure path: per-isotope Borromean-tower extension + operator-
   valued branching combiner.
-- **Subgoal-2 (research-grade, now OPEN for all — 2026-07-11):** 100×
-  targets < CAL-2 floor (absolute m_p / m_n / m_⁴He). Requires
+- **Subgoal-2 (research-grade, OPEN for all EXCEPT q₀-derivation —
+  see the 🛑 gate below):** 100× targets < CAL-2 floor (absolute
+  m_p / m_n / m_⁴He). These absolute-mass targets classically *require*
   substrate-derivation of q_0, which the coordination ledger declined
-  on 2026-05-08 — a decline the owner **generally reversed on
-  2026-07-11** (see the general-reversal bullet below). The
-  geometric / substrate-derivation routes are now in scope for all
-  agents; the anti-fit / anti-laundering discipline still gates *how*
-  (a fit is not a derivation), not *whether*.
+  on 2026-05-08, the owner **generally reversed on 2026-07-11**, and the
+  owner then **PERMANENTLY RE-GATED on 2026-08-02** (bean `qou-eic1`):
+
+  > **🛑 OWNER RULING 2026-08-02 — substrate-q₀ derivation is FOREVER
+  > GATED.** No agent may pursue deriving `q₀` from the substrate, in any
+  > form, ever. This is a **permanent** gate, **not** a decline awaiting
+  > reversal, and it **supersedes the 2026-07-11 "open for all" reversal
+  > for the q₀-derivation item ONLY.** Everything else in Subgoal-2 stays
+  > open for all: `Δ_λ` magnitude, the per-isotope binding `M_n(K)`
+  > closure, absolute `m_p / m_n / m_⁴He` via any route that does **not**
+  > go through deriving `q₀`, and the s5-so3 keystone. If a route you are
+  > considering routes through "derive `q₀`," **STOP — it is forbidden.**
+
+  For every non-q₀ route the anti-fit / anti-laundering discipline still
+  gates *how* (a fit is not a derivation), not *whether*.
   - **Narrow owner reversal (2026-06-19, recorded 2026-06-22; PRs #2503 /
     #2524).** The owner reversed this decline **only for the s5-so3 keystone
     geometric-realization construction** — the differential-geometry /
@@ -892,10 +903,12 @@ Authoritative reference: [`docs/precision-goals.md`](docs/precision-goals.md).
   - **🟧 GENERAL owner reversal — Subgoal-2 open for all (2026-07-11).** The
     owner reversed the 2026-05-08 decline **generally**: the geometric /
     substrate-derivation routes to the Subgoal-2 targets (absolute
-    m_p / m_n / m_⁴He; substrate-derivation of q_0; the per-isotope binding
+    m_p / m_n / m_⁴He; ~~substrate-derivation of q_0~~ **[🛑 FOREVER GATED
+    2026-08-02 — q₀-derivation is permanently excluded; see the ruling
+    above]**; the per-isotope binding
     `M_n(K)` edge-set / coordination-graph closure; the s5-so3 keystone) are
     now **in scope for all agents** — no longer owner-gated, no per-item
-    sign-off required. Context: the qou-v0yw binding-weight closure (the
+    sign-off required (**except q₀-derivation, which is permanently gated**). Context: the qou-v0yw binding-weight closure (the
     M₃/M₄ weights of `conj:binding-manybody-eq-jet-filtration`) was blocked
     *only* by this gate plus the anti-fit rule; the gate is now lifted.
     **The anti-fit / anti-laundering honesty discipline is ORTHOGONAL to this
