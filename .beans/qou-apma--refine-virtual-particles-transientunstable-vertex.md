@@ -107,3 +107,26 @@ Wick bean (`qou-ud3o`) — so the two beans share machinery.
 Revised attack-3: width from **energy-plane** resolvent pole of the
 non-self-adjoint Demazure-truncated $\Delta_q$ — NOT from Im(q). This is the
 W/Z / hadronic-resonance sector (cross-ref SM-26 m_W/m_Z beans).
+
+## ✅ PROVED (2026-08-02) — off-shell non-observability, sorry-free
+
+[`VirtualProjection.lean`](https://github.com/litlfred/qou/blob/claude/agent-task-662242-vag458/content/quantum-observable-universe/lean/QOU/QuantumObservableUniverses/VirtualProjection.lean)
+(`QOU.Virtual`), generic domain `K`, module `A`:
+
+- `pi0 e f = (∏ i, e i) • f` — base-level projection of a level-n excitation
+  dressed by forms with counits `e i` (the `π_0` of `virtual-particles-
+  exceptional-divisor`).
+- `pi0_offshell` — off-shell (`∃ i, e i = 0`) ⇒ `π_0 = 0` (no shadow).
+- `pi0_eq_zero_iff` — the **biconditional** (non-vacuous): over a domain with
+  no zero smul-divisors, `π_0 = 0 ↔ (∃ i, e i = 0) ∨ f = 0`. I.e. the
+  excitation is observable (`π_0 ≠ 0`) **iff** `f ≠ 0` and every form has a
+  nonzero constant part (on-shell). This is the exact off-shell/on-shell
+  dichotomy, not just "product with a zero factor is zero."
+
+Axiom-clean (`propext, Classical.choice, Quot.sound`); no sorry/trivial-True;
+wired into `QOU.lean`; lean-direct exit 0. Closes the "clean provable half"
+of this bean.
+
+**Still open (from the roast):** the *width* of an unstable excitation as
+`Im(s_pole)` of the resolvent `R_q(s)` from a non-self-adjoint Demazure-
+truncated `Δ_q` — that needs non-normal spectral theory and stays open here.
