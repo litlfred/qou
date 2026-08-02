@@ -58,6 +58,7 @@ import Mathlib.Algebra.BigOperators.Group.List.Basic
 import Mathlib.Tactic.NormNum
 import Mathlib.Tactic.Ring
 import QOU.BraidsAndKnots.S5SO3FiberAction
+import QOU.BraidsAndKnots.DeltaLambdaDTIndex
 
 namespace QOU.BraidsAndKnots
 
@@ -201,5 +202,29 @@ theorem PartitionOf5.parity_eq_w0_sign (p : PartitionOf5) :
     deltaSignParity (nStatList p.parts) = (-1 : ℤ) ^ (sumChoose2 p.conjParts) :=
   parity_eq_w0_sign_of_nStat_eq_sumChoose2 p.parts p.conjParts
     (by rw [← PartitionOf5.nStat_eq_nStatList]; exact p.nStat_eq_sumChoose2_conj)
+
+/-! ## Bridge to the merged `n = 5` anchor (`DeltaLambdaDTIndex.lean`)
+
+    The corpus `PartitionOf5.dtEuler` (proved `= p.deltaLambda` at `n = 5` by
+    `decide` in `DeltaLambdaDTIndex.lean`, PR #4553, now on main) is *definitionally*
+    the general `dtEulerG` evaluated at the block's `(n(λ), dim V_λ)` data — its
+    `gradedDim`/`dtEuler` are the `PartitionOf5`-specialisation of the free
+    `gradedDimG`/`dtEulerG` here.  So the merged `decide`d anchor is re-derived from
+    the *general* collapse, confirming this file genuinely generalises it. -/
+
+/-- The merged anchor's `PartitionOf5.dtEuler` is the general `dtEulerG` at
+    `(nStat, dim)` — definitional. -/
+theorem PartitionOf5.dtEuler_eq_dtEulerG (p : PartitionOf5) :
+    p.dtEuler = dtEulerG p.nStat p.dim := rfl
+
+/-- **The merged `n = 5` anchor `dtEuler = Δ_λ`, re-derived from the general
+    collapse** (not `decide`).  Same statement as
+    `DeltaLambdaDTIndex.PartitionOf5.dtEuler_eq_deltaLambda`, obtained here as a
+    corollary of the all-`n` `dtEulerG_collapse` + the chirality parity — evidence
+    that the general identity subsumes the anchor. -/
+theorem PartitionOf5.dtEuler_eq_deltaLambda_via_collapse (p : PartitionOf5) :
+    p.dtEuler = p.deltaLambda := by
+  rw [PartitionOf5.dtEuler_eq_dtEulerG, PartitionOf5.nStat_eq_nStatList]
+  exact p.dtEulerG_eq_deltaLambda
 
 end QOU.BraidsAndKnots
