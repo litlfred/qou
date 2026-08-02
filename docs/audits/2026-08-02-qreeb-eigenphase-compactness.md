@@ -86,6 +86,29 @@ Consequences:
 - `compact_eigenphase_bounded` — `arccos x ≤ π` (compact eigenphases are bounded).
 - `eigenphase_route_is_compact` — capstone.
 
+## Why the route was always doomed — information-equivalence (front 3, sharpened scope-(a))
+
+The negative is stronger than "the numbers don't work": the compact eigenphase carries **no
+information beyond the character it encodes**. `arccos` is a bijection `[-1,1] ↔ [0,π]`, so on every
+block where `θ_λ = arccos(χ_λ/d_λ)` is defined,
+
+```
+χ_λ = d_λ · cos θ_λ            (char_from_eigenphase),
+θ_λ = arccos(cos θ_λ)          (eigenphase_bijective_on_range),
+```
+
+i.e. `χ_λ ↦ θ_λ` is a **lossless reparametrization** of the compact-block characters. But those `χ_λ`
+are exactly the terms already summed in `S(K) = Σ_λ y_λ χ_λ f^λ`. So an eigenphase-based predictor is
+the *same data in angular coordinates* — it cannot introduce the missing scale. The one block the
+eigenphase cannot encode (the trivial `q^w` boost, `no_rotation_angle_of_boost`) is itself already a
+summand of `S(K)`. The scale must therefore come from **outside** the character data.
+
+**Honest scope caveat (NOT scope-(b)).** This does **not** prove that *no* substrate function yields
+`C_knot`: `C_knot` is dimensionless and bounded (3.3–9.3), so no dimensional or boundedness argument
+excludes a substrate function in general (per AGENTS.md §"Before declaring refuted"). What is excluded
+is the **eigenphase reparametrization**, by the bijection above. Labelling this a general impossibility
+would be an over-claim; it is a precise scope-(a) statement about one construction.
+
 ## Surviving directions for qou-0g4z (unchanged by this negative)
 
 The absolute scale must come from something the eigenphases structurally cannot carry — i.e. **not** a
