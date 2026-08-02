@@ -217,6 +217,71 @@ theorem gridPrim_shift {N n k : ℕ} :
   rw [hreindex, htel, mul_sub]
   simp only [gridPrim, hg]
 
+/-- Both van der Veen sines are positive on the summation range (the two facts
+    inside `whiteheadS_factor_pos`, in the `(π/N)`-argument form). -/
+theorem whiteheadS_sin_pos {N n k j : ℕ} (hN : 2 ≤ N) (hj1 : 1 ≤ j) (hjn : j ≤ n)
+    (hkn : k + n ≤ N - 1) :
+    0 < Real.sin (((k : ℝ) + (j : ℝ)) * (π / N))
+      ∧ 0 < Real.sin ((j : ℝ) * (π / N)) := by
+  have hNpos : (0 : ℝ) < N := by exact_mod_cast (by omega : 0 < N)
+  have hpi := Real.pi_pos
+  have hpiN : (0 : ℝ) < π / N := by positivity
+  have hj1' : (1 : ℝ) ≤ (j : ℝ) := by exact_mod_cast hj1
+  have hjN : (j : ℝ) < N := by
+    have hjn' : j < N := by omega
+    exact_mod_cast hjn'
+  have hkjN : (k : ℝ) + (j : ℝ) < N := by
+    have h : k + j < N := by omega
+    have hc : ((k : ℝ) + (j : ℝ)) = ((k + j : ℕ) : ℝ) := by push_cast; ring
+    rw [hc]; exact_mod_cast h
+  have hk0 : (0 : ℝ) ≤ (k : ℝ) := by positivity
+  refine ⟨Real.sin_pos_of_pos_of_lt_pi ?_ ?_, Real.sin_pos_of_pos_of_lt_pi ?_ ?_⟩
+  · exact mul_pos (by linarith) hpiN
+  · rw [show ((k : ℝ) + (j : ℝ)) * (π / N) = ((k : ℝ) + (j : ℝ)) * π / N by rw [mul_div_assoc],
+        div_lt_iff₀ hNpos]; nlinarith [hkjN, hpi]
+  · exact mul_pos (by linarith) hpiN
+  · rw [show (j : ℝ) * (π / N) = (j : ℝ) * π / N by rw [mul_div_assoc], div_lt_iff₀ hNpos]
+    nlinarith [hjN, hpi]
+
+/-- **Regroup brick (BRICK 1).** `(2π/N)·log S_{n,k} = 4·S'(k+n) − 4·S'(k) − 2·S'(n)`
+    (the log2-fold of `whiteheadS_log`, then `gridPrim_shift`). -/
+theorem two_pi_log_whiteheadS_eq {N n k : ℕ} (hN : 2 ≤ N) (hkn : k + n ≤ N - 1) :
+    (2 * π / N) * Real.log (QOU.Knot.WhiteheadVC.whiteheadS N n k)
+      = 4 * gridPrim N (k + n) - 4 * gridPrim N k - 2 * gridPrim N n := by
+  have hterm : ∀ a b : ℝ, 0 < Real.sin a → 0 < Real.sin b →
+      Real.log 2 + 2 * Real.log (Real.sin a) - Real.log (Real.sin b)
+        = 2 * Real.log (2 * Real.sin a) - Real.log (2 * Real.sin b) := by
+    intro a b ha hb
+    rw [Real.log_mul (by norm_num) (ne_of_gt ha),
+        Real.log_mul (by norm_num) (ne_of_gt hb)]; ring
+  rw [QOU.Knot.WhiteheadVC.whiteheadS_log hN hkn]
+  have hrw : ∑ j ∈ Finset.Icc 1 n,
+        (Real.log 2 + 2 * Real.log (Real.sin (((k : ℝ) + j) * π / N))
+          - Real.log (Real.sin ((j : ℝ) * π / N)))
+      = ∑ j ∈ Finset.Icc 1 n,
+          (2 * Real.log (2 * Real.sin (((k : ℝ) + (j : ℝ)) * (π / N)))
+            - Real.log (2 * Real.sin ((j : ℝ) * (π / N)))) := by
+    refine Finset.sum_congr rfl (fun j hj => ?_)
+    obtain ⟨hj1, hjn⟩ := Finset.mem_Icc.mp hj
+    obtain ⟨hsa, hsb⟩ := whiteheadS_sin_pos hN hj1 hjn hkn
+    rw [show ((k : ℝ) + (j : ℝ)) * π / N = ((k : ℝ) + (j : ℝ)) * (π / N) by rw [mul_div_assoc],
+        show (j : ℝ) * π / N = (j : ℝ) * (π / N) by rw [mul_div_assoc]]
+    exact hterm _ _ hsa hsb
+  rw [hrw, Finset.sum_sub_distrib, ← Finset.mul_sum]
+  have hA : (π / N) * ∑ j ∈ Finset.Icc 1 n,
+        Real.log (2 * Real.sin (((k : ℝ) + (j : ℝ)) * (π / N)))
+      = gridPrim N (k + n) - gridPrim N k := gridPrim_shift
+  have hB : (π / N) * ∑ j ∈ Finset.Icc 1 n,
+        Real.log (2 * Real.sin ((j : ℝ) * (π / N))) = gridPrim N n := rfl
+  have key : (2 * π / N) * (2 * (∑ j ∈ Finset.Icc 1 n,
+          Real.log (2 * Real.sin (((k : ℝ) + (j : ℝ)) * (π / N))))
+        - ∑ j ∈ Finset.Icc 1 n, Real.log (2 * Real.sin ((j : ℝ) * (π / N))))
+      = 4 * ((π / N) * ∑ j ∈ Finset.Icc 1 n,
+            Real.log (2 * Real.sin (((k : ℝ) + (j : ℝ)) * (π / N))))
+        - 2 * ((π / N) * ∑ j ∈ Finset.Icc 1 n,
+            Real.log (2 * Real.sin ((j : ℝ) * (π / N)))) := by ring
+  rw [key, hA, hB]; ring
+
 /-
   ROADMAP — remaining bricks to discharge `hsaddle` (all ingredients verified
   present in `QOU.Knot.Clausen`; algebra confirmed to 40 digits in
