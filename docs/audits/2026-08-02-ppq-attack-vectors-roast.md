@@ -111,5 +111,17 @@ attack surface reduces to:
 Nothing here reaches ppq accuracy; the value is in *sharpening the open problems and
 removing overclaims*, which is what the anti-fit discipline is for.
 
-Agent surveys (option 2, Frobenius re-pose) pending; will be appended. Option 4 (derive
-q₀) declined by owner.
+## Roast 4 — the Frobenius knot-solver LP has NO selective power (bean qou-vd7j)
+
+Option 2 result (`frobenius_repose_probe.py` + `2026-08-02-frobenius-repose-nonselective.md`).
+Re-posing the LP without the inconsistent net row **removes the 0/3558 over-determination
+artifact** but does NOT recover a selective ν_SDP — both variants (drop net; net→`1ᵀG⁻¹nf`)
+give active-channel count 1 for **every** nucleus (²H,³H,³He all → 1, not {1,2,2}). Mechanism:
+G (H₃ NF Gram) is 6×6 **full-rank/invertible**, so `Gx=nf` is a unique linear solve with no
+optimisation freedom; the shadow prices `y=G⁻ᵀt=(γ:1,else:0)` are **independent of the
+nucleus**, and `nf∈range(G)` is guaranteed. So the nucleus's identity lives entirely in `nf`
+and `x=G⁻¹nf` carries nothing extra. Scope-(a): this LP, as posed or re-posed, cannot select
+ν_SDP. A real selector must come from something the invertible H₃ solve doesn't see — the
+brane-tower/Δ_λ, a genuine PSD *inequality* relaxation, or a rank-deficient demand map. None wired.
+
+Option 4 (derive q₀) declined by owner.
