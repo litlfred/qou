@@ -70,3 +70,40 @@ formalise:
 Do NOT declare "virtual particles are open" — they are framed
 (exceptional divisor + brane tower + Heisenberg lifetime). Open item is
 the *flow / Demazure / width* consolidation + Lean, not the concept.
+
+## 🔥 Roast (2026-08-02) — one claim CORRECTED, two hold
+
+**CORRECTION — "width = Im of the fibre pole (Im q)" is WRONG / self-
+inconsistent.** AGENTS.md pins $\mathrm{Im}(q_0)=0$ at the observable/
+archimedean level (`lusztig_q_0_imaginary_part_zero`). But resonance widths
+$\Gamma$ ARE observable (measured decay rates). If width $=\mathrm{Im}(q)$
+and $\mathrm{Im}(q_0)=0$, the width would vanish — contradiction. So the
+"fibre-pole Im(q)" framing must be dropped.
+
+**The correct framing (better, and it unifies with the Wick bean):** a
+resonance is a **complex pole of the $q$-resolvent $R_q(s)=(s+\widehat
+\Delta_q)^{-1}$ in the *energy/$s$-plane*** — real $q_0$, complex $s$. The
+width is $\mathrm{Im}(s_{\text{pole}})$, not $\mathrm{Im}(q)$. This is
+non-negotiable-consistent with $\mathrm{Im}(q_0)=0$.
+
+**Why Demazure supplies exactly this:** a *complete* crystal ⇒ $\widehat
+\Delta_q$ self-adjoint w.r.t. the Markov-trace inner product ⇒ real spectrum
+⇒ stable (real $s$ pole, zero width). A *Demazure sub-crystal* (incomplete)
+⇒ the truncated $\widehat\Delta_q$ is **non-self-adjoint / non-normal** ⇒
+complex spectrum ⇒ complex $s$-pole ⇒ nonzero width. So:
+
+> transient ⇔ Demazure (incomplete crystal) ⇔ non-self-adjoint $\Delta_q$
+> ⇔ complex energy-plane pole of $R_q(s)$ ⇔ finite lifetime $\Gamma=\mathrm{Im}(s)$.
+
+This is a clean, falsifiable chain and it reuses the **same $R_q(s)$** as the
+Wick bean (`qou-ud3o`) — so the two beans share machinery.
+
+**Two claims that HOLD:**
+1. off-shell $=$ ($\varepsilon(\omega)=0 \Rightarrow \pi_0=0$): explicit
+   projection formula already in the corpus; tractable Lean. ✓
+2. flow $=$ non-closed Reeb orbit segment on the vertex divisor: consistent
+   with `prop:vertex-is-exceptional-divisor`. ✓
+
+Revised attack-3: width from **energy-plane** resolvent pole of the
+non-self-adjoint Demazure-truncated $\Delta_q$ — NOT from Im(q). This is the
+W/Z / hadronic-resonance sector (cross-ref SM-26 m_W/m_Z beans).

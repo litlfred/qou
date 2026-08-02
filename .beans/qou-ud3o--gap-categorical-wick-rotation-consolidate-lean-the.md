@@ -58,3 +58,32 @@ yet done is a single tight, Lean-proved statement.
 Do NOT re-declare "Wick rotation is open" — it is categorically defined
 in prose. The open item is the *Lean* statement + consolidation, not the
 concept.
+
+## 🔥 Roast (2026-08-02) — verdict: PROBABLE, strongest of the batch
+
+Adversarial check: is "collapse Laplace+Fourier into one grouplike pairing"
+a *derivation* or a re-label? The load-bearing mathematical content of any
+Wick rotation is that the analytic continuation $s\mapsto i\xi$ **exists and
+is unique**. In QOU that reduces to a single checkable fact:
+
+> **$\exp_q$ must be entire in its argument** (infinite radius of
+> convergence). Then $s\mapsto e^{-s\widehat\Delta_q}$ (Euclidean/heat) and
+> $\xi\mapsto e^{-i\xi\widehat\Delta_q}$ (Lorentzian/Schrödinger) are the
+> SAME grouplike element evaluated on the real vs imaginary axis, and the
+> continuation is automatic.
+
+For the $q>1$ exponential, $[n]_q!$ grows super-geometrically ⇒ $\exp_q$ is
+entire. At $q_0\approx1.11>1$ this holds. So the collapse is **not**
+circular — it is a genuine consequence of entirety + the grouplike property.
+
+- The "$i$ = braiding orientation" statement is a correct *interpretation*
+  but is NOT the load-bearing lemma; do not oversell it as the derivation.
+- **Concrete Lean target** (tractable, near-term): `exp_q_entire` (radius of
+  convergence $=\infty$ for $q_0>1$) ⇒ `q_wick_continuation` (the two
+  pairings agree under $s=i\xi$). This is the honest core of the bean.
+- Downstream payoff: this same $R_q(s)=(s+\widehat\Delta_q)^{-1}$ resolvent
+  is what the virtual-particle bean (`qou-apma`) needs for resonance widths,
+  and the Euclidean↔Lorentzian bridge the lattice bean (`qou-jsx5`) needs.
+  So closing this unblocks two siblings.
+
+Verdict: **tractable, probable, high-leverage.** Prioritise over alpha_S.

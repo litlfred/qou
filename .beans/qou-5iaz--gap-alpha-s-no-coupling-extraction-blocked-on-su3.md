@@ -58,3 +58,28 @@ derivation.
 - Sibling sector: `qou-jsx5` (lattice-QCD / q-CLT UV limit)
 - Session: `qou-ywj9`
 - Precedent: α_EM spectral-ratio derivation (see link above)
+
+## 🔥 Roast (2026-08-02) — "α_s = trace ratio" is a CATEGORY ERROR; reframe to Λ_QCD
+
+α_EM worked as a single number $q[9]_q[10]_q$ because EM is **abelian** — one
+$U(1)$ coupling, one Plancherel ratio, essentially non-running at this
+precision. **α_s is not one number.** It runs strongly: $\alpha_s(M_Z)\approx
+0.118$, $\alpha_s(1\,\text{GeV})\approx0.5$. A single categorical trace ratio
+at $q_0$ yields ONE value — so "α_s = trace ratio of T(2,9)" is a
+category error unless you name the scale.
+
+**Reframe the target to $\Lambda_{QCD}$** — the RG-invariant, scale-free mass
+scale. Being scale-invariant, $\Lambda_{QCD}$ *can* legitimately be a single
+categorical number (a mass, i.e. a Markov-trace/confinement-scale object),
+and then $\alpha_s(\mu)$ follows from $\Lambda_{QCD}$ + the RG flow:
+$$\alpha_s(\mu)\sim \frac{1}{b_0\ln(\mu/\Lambda_{QCD})}.$$
+The running itself is the $q\to1$ q-CLT flow (lattice bean `qou-jsx5`).
+
+So the honest attack ladder becomes:
+1. Derive $\Lambda_{QCD}$ as a confinement-scale object off $\mathfrak{D}_\pi$
+   (CAL-3) / the operator-selection SDP. [blocked on SU(3) `qou-ni4b`]
+2. Get $\alpha_s(\mu)$ from $\Lambda_{QCD}$ + the q-CLT RG flow. [needs `qou-jsx5`]
+
+Do NOT chase a bare $\alpha_s(q_0)=0.118$ trace ratio — tuning $[a]_q[b]_q$ to
+hit 0.118 is a **fit**, not a derivation (anti-laundering rule). Λ_QCD is the
+only single-number target that isn't a category error.
