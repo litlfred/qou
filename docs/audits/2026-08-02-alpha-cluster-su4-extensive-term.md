@@ -96,6 +96,19 @@ ruling names (scale-free binding closure). Its derivable output is the **ratio**
 `B(n_α) = n_α·B(⁴He)` (+ surface); the absolute per-α MeV scale is gated and must not be
 back-derived by a constant fit.
 
+### The per-α q-function `g(q)` — quick categorical search dead-ends (EMPIRICAL)
+
+The dimensionful scale is `B_α = m_e · g(q₀)` with `g` a *derivable* q-function (only q₀
+is gated, not `g` evaluated at it — the owner's correct reframe). Needed:
+`B_α/m_e ≈ 58.30`, or `B_α/(m_e·Vol_{⁴He}) ≈ 7.956`. Tested against the natural **derived**
+q-functions (not a fit): `[7]_q = 7.63`, `[8]_q = 8.95` **bracket** 7.96 but neither hits
+it; `1/ℏ_q² = 101.9`, `Vol(4₁)/ℏ_q² = 206.8` (= m_μ/m_e), `[4]_q² = 16.9`, `[3]_q! = 6.12`
+are all far off. **No natural derived q-function reproduces the per-α factor.** So the
+reframe is conceptually correct but the quick identification **dead-ends** — pinning `g` by
+searching q-function combinations to match one number would be numerology; a real
+identification needs the ⁴He binding density derived categorically from the drivers (the
+open magnitude problem). Honest dead-end, recorded.
+
 ### Surface residual (`qou-3wvl`) — inconclusive with light nuclei (EMPIRICAL)
 
 The `+12.7%` drift in `B/n_α` (⁴He→¹⁶O) tested against the scale-free surface scaling
