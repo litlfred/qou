@@ -108,7 +108,17 @@ def main() -> int:
                      "normalised": norm_ok}
 
     # ── consequence 1: CSB from the weight tensor is exactly zero ───────────
-    csb = abs(float(W_T1[0]) - float(W_T1[0])) + abs(float(W_T1[1]) - float(W_T1[1]))
+    # Resolve the pp and nn weight systems INDEPENDENTLY through the isospin
+    # selection rule (mirrors Lean `select : NucleonPair -> ColorSystem`), then
+    # compare. This detects a divergence if the rule ever assigned pp and nn to
+    # different summands — unlike subtracting one vector from itself, which is 0
+    # by construction and therefore checks nothing.
+    def select_weights(pair: str):
+        # pp, nn, pn_sym are I=1 -> Alt^2 = T1 ; pn_alt (deuteron) is I=0 -> A+H
+        return W_T1 if pair in ("pp", "nn", "pn_sym") else W_I0
+
+    W_pp, W_nn = select_weights("pp"), select_weights("nn")
+    csb = abs(float(W_pp[0]) - float(W_nn[0])) + abs(float(W_pp[1]) - float(W_nn[1]))
     print("\n" + "=" * 78)
     print("PREDICTION: charge-symmetry breaking FROM THE WEIGHT TENSOR")
     print("=" * 78)
