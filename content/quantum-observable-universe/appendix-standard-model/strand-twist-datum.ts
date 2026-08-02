@@ -23,5 +23,21 @@ export default definition({
         "conj:sm-hypercharge-invariant; the enumeration probe is " +
         "computations/strand_twist_y_battery.py (exploratory, not wired).",
     },
+    {
+      kind: "note",
+      date: "2026-08-02",
+      body:
+        "**Total-twist reduction (PR #4561, bean htw2).** The candidate " +
+        "Y = 2(totalTwist/3 - I3) is a function of the TOTAL twist alone " +
+        "(TwistDatum.Ycand_factors_totalTwist), and reproducing the SM " +
+        "spectrum is equivalent to totalTwist = 3(I3 + Y/2) = 3Q " +
+        "(TwistDatum.totalTwist_pinned_of_Ycand) - both sorry-free. So the " +
+        "total-twist vector (u,d,nu,e) = (2,-1,0,-3) = 3Q is unique; the " +
+        "battery's 4/10000 survivors are 1*2*2*1, the multiset multiplicity " +
+        "of the pinned totals, Y-invisible. The open object is unchanged and " +
+        "sharper: per-chiral-fermion framed braid words (compute totalTwist, " +
+        "don't invert the SM target). Audit: " +
+        "docs/audits/2026-08-02-hypercharge-strand-twist-total-reduction.md.",
+    },
   ],
 });
