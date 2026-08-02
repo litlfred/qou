@@ -973,6 +973,36 @@ assembly is graded self-adjoint (`branching_graded_selfadjoint`: `B=C` + `σB=�
 0 real sorries, no native_decide/trivial-true/axiom), wired into `QOU.lean`. Nothing fitted,
 nothing wired; `μ₃/c₃`/AME/CODATA/`q₀` never inverted; `free_parameters = 0`.
 
+**2026-08-02 — PROBE 2 (A=4 interface operator): the ≥4-body magnitude wall is a ONE-SCALAR
+gate — the derived `−ln det(I+G)` form is SURJECTIVE onto (0,∞); naive uniform `z` scope-(b)
+excluded — WALL(scope-(a)), sharpened from #4526.** (Branch
+`claude/a4-interface-magnitude-2026-08-02`.) Consolidates the two A=4 magnitude framings and
+proves they collapse to the SAME single under-determined categorical scalar. The merged #3924
+`[1⁴]` exchange spectrum `{±√5,±1}` gives (derived, not asserted — `detG_eq_spectral_product`)
+`det(I+G) = (1+m√5)(1−m√5)(1+m)(1−m) = (1−5m²)(1−m²)`, so `b₄(m) = −ln det(I+G)`, one free
+per-pair magnitude `m`, derived ceiling `m<1/√5` (writhe cap). **MAIN
+(`magnitude_form_surjective`):** for EVERY `t>0` there is `m∈(0,1/√5)` with `b₄(m)=t`, via the
+closed-form root `m*(t)=√((6−√(16+20·e^{−t}))/10)` (algebraic, no IVT; `det(I+G)(m*)=e^{−t}`
+exactly). So the derived form reaches the ENTIRE positive axis in its one scalar — every AME
+target (`b₄≈9.243`, `|μ₄|≈4.591`, `B(⁴He)≈28.30`) is reachable (`documented_targets_all_reachable`)
+⇒ **NOT scope-(b) excluded**; but the reaching `m` is a function of the target (anchor-inversion =
+**FIT**) ⇒ **NOT closed**. This SHARPENS #4526: the obstruction is not the reweight-bracket width
+but that the single scalar `m` is free (`b4_strictMono_on`: strictly increasing ⇒ exactly one
+scalar, unique `m*`). **Scope-(b) exclusion (`naive_z_unphysical`):** the framework's naive
+uniform per-pair magnitude `z≈0.499` has `5z²>1` ⇒ `det(I+G)(z)<0`, unphysical — cited invariant =
+the exchange spectrum `{±√5,±1}` (⇒ most-negative scaled eigenvalue `−m√5` ⇒ the det form). Direct
+analog of the #4526 geometric OVERSHOOT ⇒ **surviving mechanism = a categorical principle fixing
+`m∈(0,1/√5)` strictly BELOW the naive `z`** (equiv. a normalized `W` strictly below `d_q²/D²`).
+Distinct object from the A=3 binding weight #4543 pins to Markov `y_λ` (that's the per-partition
+character weight; this is the `[1⁴]` exchange determinant ≥4-body term). Lean
+`QOU/MassTheory/A4InterfaceMagnitude.lean` sorry-free (lean-direct exit 0, v4.24.0; no
+trivial-true / native_decide / axiom): `detG_eq_spectral_product`, `detG_neg_of_above_ceiling`,
+`naive_z_unphysical`, `b4_strictMono_on`, `magnitude_form_surjective`,
+`documented_targets_all_reachable`, capstone `a4_magnitude_one_scalar_gate`. Probe/witness
+`a4-interface-magnitude-one-scalar-gate.witness.json`; audit
+`2026-08-02-a4-interface-magnitude-one-scalar-gate.md`. GAP bean filed. Nothing wired;
+`μ₄`/`B(⁴He)`/`b₄` never inverted; `free_parameters = 0`.
+
 ## Shared bar-parity invariant with the μ-p route (2026-08-01)
 
 The Δ_λ chirality sign `deltaSign λ = (-1)^(principal grading λ)`

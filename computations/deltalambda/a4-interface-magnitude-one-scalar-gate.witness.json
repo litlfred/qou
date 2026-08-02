@@ -1,0 +1,41 @@
+{
+  "schema": "witness/v1",
+  "id": "a4-interface-magnitude-one-scalar-gate",
+  "description": "A=4 (4He) >=4-body magnitude via the interface operator: the derived -ln det(I+G) form (exchange spectrum {+-sqrt5,+-1}, #3924/merged) is SURJECTIVE onto (0,inf) in its single free per-pair bond scalar m in (0,1/sqrt5). Consolidates the s5-so3 normalized-reweight bracket (#4526 WALL) and the interface-operator det form into ONE under-determined scalar. Every positive AME target (b4~9.243, |mu4|~4.591, B(4He)~28.296) is reachable => NOT scope-(b) excluded; each reaching m is a function of the target (anchor-inversion = FIT) => NOT closed. Separately the naive uniform per-pair magnitude z=0.499320334 has 5z^2>1 => det(I+G)<0, structurally EXCLUDED (scope-(b), cited invariant = the exchange spectrum). Formalize-first; 0-fit; nothing wired; free_parameters=0.",
+  "verdict": "WALL(scope-(a)) magnitude open + scope-(b) exclusion of naive-uniform-z; surviving mechanism = a categorical principle fixing m in (0,1/sqrt5) strictly below the naive z (equiv. a normalized W strictly below d_q^2/D^2)",
+  "free_parameters": 0,
+  "targets_never_inverted_into_production": true,
+  "inputs": {
+    "exchange_spectrum": "{+sqrt5,-sqrt5,+1,-1}  (derived, b4-slater-antisymmetrizer-exchange-sign, #3924 merged)",
+    "det_form": "det(I+G) = (1+m*sqrt5)(1-m*sqrt5)(1+m)(1-m) = (1-5m^2)(1-m^2)",
+    "b4_form": "b4(m) = -ln det(I+G)  (attractive branch)",
+    "writhe_ceiling": "m < 1/sqrt5 ~ 0.4472136  (det>0)",
+    "naive_z_bond_factor": "0.499320334  (b4-1four-complete-graph-writhe-signs)",
+    "documented_targets_MeV": {"b4_1four_connected_cumulant": 9.243, "mu4_simplex_residual_abs": 4.591048, "B_4He_AME": 28.29566}
+  },
+  "results": {
+    "surjective_onto_positive_reals": true,
+    "closed_form_inverse": "m*(t) = sqrt( (6 - sqrt(16 + 20*exp(-t))) / 10 )  -- root of 5u^2-6u+(1-exp(-t))=0, u=m^2 in (0,1/5)",
+    "strictly_monotone_increasing_on_(0,1/sqrt5)": true,
+    "naive_z_det_sign": "det(I+G)(0.4993...) < 0  (unphysical; 5z^2 = 1.2466 > 1)",
+    "not_scope_b_excluded": "target reachable in principle (surjective); matching is a fit, not a derivation",
+    "not_closed": "no identified categorical driver fixes m; the reaching m depends on the target",
+    "sharpening_vs_4526": "obstruction is not the reweight-bracket width but that the single scalar m is free; both framings collapse to the same one-scalar gate"
+  },
+  "lean": {
+    "file": "content/quantum-observable-universe/lean/QOU/MassTheory/A4InterfaceMagnitude.lean",
+    "package_ref": "qou:QOU.MassTheory.A4InterfaceMagnitude",
+    "sorry_free": true,
+    "key_theorems": [
+      "detG_eq_spectral_product",
+      "detG_neg_of_above_ceiling",
+      "naive_z_unphysical",
+      "b4_strictMono_on",
+      "magnitude_form_surjective",
+      "documented_targets_all_reachable",
+      "a4_magnitude_one_scalar_gate"
+    ]
+  },
+  "references": ["wenzl1988", "manuscript"],
+  "audit": "docs/audits/2026-08-02-a4-interface-magnitude-one-scalar-gate.md"
+}
