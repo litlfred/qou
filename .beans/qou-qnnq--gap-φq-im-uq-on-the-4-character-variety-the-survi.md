@@ -1,11 +1,11 @@
 ---
 # qou-qnnq
 title: "GAP: ϑ_K(q₀) — angular/spin deformation on the character variety of knot K. The surviving open DOF in the Δ_λ magnitude chain (\U0001D532_K = ln q₀ + i·ϑ_K). Knot-dependent: different particles = different ϑ. Determined by A(e^\U0001D532,ℓ)=0 boundary condition = G3 monodromy datum. Closes if Faddeev rigidity (hibinv+hratio) forces A_ω=3 AND pins the sheet. Probed values: ϑ_{4₁}(proton)=0.203, ϑ_{4₁}(muon)=0.059, ϑ_{4₁}(q*)=ln q*=0.104."
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-07-27T15:06:31Z
-updated_at: 2026-08-02T09:04:04Z
+updated_at: 2026-08-02T16:08:18Z
 ---
 
 ## Re-scope (2026-08-01, qou-fs0m) — corrected framing after Fantini–Wheeler
@@ -100,3 +100,35 @@ the spectrum {3,4}, so a scalar internal invariant for the constant alone may re
 subject to a cross-knot test on 5_2, unchecked.
 
 Audit: docs/audits/2026-08-02-aomega-internal-derivation-symmetry-constant-target.md
+
+## Bridge-derivation test + unification (PR #4599, 2026-08-02)
+
+Owner directive: derive Stokes=DT (the bridge's first equality) from a QOU
+structure, getting the DT count 3 as a QOU-computable graded Euler characteristic
+("Euler = -6"). RESULT (honest negative, machine-checked sorry-free):
+
+- The QOU Wedderburn/Springer Euler-char machinery (dtEulerG, proved on main) is a
+  PARTITION-level object. For 4_1 = closure of 3-braid (s1 s2^-1)^2 -> H_3, blocks
+  lambda|-3: Sigma Delta_lambda = 1-2-1 = -2.
+- The GGM sandwich = -2*S+(0); off-diag -6 = (-2)*3. QOU supplies the NORMALIZATION
+  -2 (= Sigma_{lambda|-3} Delta_lambda), NOT the COUNT 3. -2 != 3, decidable.
+- So Stokes=DT does NOT derive from the QOU Euler-char machinery. The count 3 is the
+  Behrend/BPS invariant of the character-variety spectral curve A_{4_1}=0 (rotated
+  3d-index) - geometric, external. A non-degenerate Stokes=DT-conditional-on-QOU
+  theorem CANNOT be honestly written (grading gives -2 not 3); forcing one = -6->3
+  convention-fit (forbidden). None landed.
+- UNIFICATION: same missing input as the Delta_lambda Springer-fibre DT-realization
+  (Rossmann-CC, 2026-08-02, proved external) - a driver-built Behrend-weighted DT
+  MODULI, at two levels (partition Springer fibre vs knot character variety).
+- Maximal derivable fragment: Delta_lambda=DT (partition, proved) + Stokes-matrix
+  SHAPE (AJ recursion order = A-poly L-degree = block dim, proved for 4_1). Both
+  give the block SIZE, not the DT count (recursionOrder < dtOffDiag: 2<3, 3<4).
+- L2: A_omega=3 is L2-ORTHOGONAL (zero movement). canonical_mass.py + Q_beta
+  production formula carry no A_omega/Stokes; the 7 L2 observables derive from q0 +
+  c_k. Banked as (a) real structural theorem, L2-orthogonal.
+
+Lean: StokesDTCountExceedsRecursionOrder.lean (sorry-free, core-Lean).
+Audit: docs/audits/2026-08-02-stokes-dt-bridge-moduli-gap-unification.md.
+STILL OPEN: the named missing driver-14 (categorical Behrend-weighted DT moduli of
+the character variety / T[K] BPS Hilbert space) - external per DT-categorification
+literature; not a QOU wiring gap.
