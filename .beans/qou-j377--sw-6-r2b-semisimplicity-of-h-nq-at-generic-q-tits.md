@@ -12,3 +12,5 @@ blocked_by:
 ---
 
 H_n(q) is split semisimple for q generic (not a root of unity). Route: the ρ_λ separate points + dim count Σ d_λ²=n! ⇒ the map to ⊕M_{d_λ} is injective on a n!-dim algebra ⇒ iso. Or Tits deformation from K[S_n]. Uses SW-3. Ref: [wenzl1988], [kassel1995].
+
+## Refine (recon): no Tits deformation in Mathlib. K[S_n] semisimple is free (Maschke `instIsSemisimpleRingAddMonoidAlgebra`). Generic-q transfer must be hand-done (discriminant / Gram-determinant nonvanishing of the bilinear form). Substantial.
