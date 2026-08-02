@@ -1,0 +1,144 @@
+# `C_knot` is non-universal with the pinned weight — the single-factor / single-scale route is refuted
+
+**Date:** 2026-08-02 · **Branch:** `claude/c-knot-delta-lambda-derivation-2026-08-02` · **PR:** #4556
+· **Bean:** `qou-3q7t` · **Axis:** Δ_λ / `C_knot` magnitude · **Tier:** scope-(a) refutation of
+single-universal-`C_knot` + scope-(b) exclusion of any level-only rescale; **no fit**; nothing wired.
+
+## 0. BLUF
+
+Now that the binding weight is **pinned to the derived Wenzl `y_λ`** (Markov trace, PR #4543 — the
+earlier "41× convention spread" was right-weight-vs-wrong-weight, resolved), the honest universality
+question for the deuteron deficit `C_knot` can finally be asked cleanly. It is asked here across the
+four lightest isotopes, all 0-fit:
+
+| K | H_n | `\|S(K)\|` | `C_knot(K) = B_AME/(m_e·\|S\|)` |
+|---|---|---|---|
+| D | 6 | 0.7438 | **5.853** |
+| T | 9 | 3.7349 | **4.444** |
+| ³He | 9 | 4.5883 | **3.292** |
+| ⁴He | 12 | 5.9456 | **9.313** |
+
+**`C_knot` is NON-UNIVERSAL (spread 2.83×).** "Derive `C_knot ≈ 5.85` as one geometric/scale factor"
+is refuted. The Δ_λ magnitude derivation itself stays **OPEN** (`qou-3q7t`) — this narrows the attack,
+it does not close the gate.
+
+## 1. The master formula and the convention pin
+
+`B(K) = m_e · |Σ_λ y_λ · χ^λ(β_K) · sgn(w_0^{S_{λ'}}) · f^λ|`, with `y_λ` the Wenzl Schur-principal
+weight (`markov_weights_symbolic.solve_y_lambda`), normalized `Σ_λ y_λ f^λ = tr_M(1) = 1`. The probe
+recomputes `y_λ` from the Wenzl closed form and asserts `Σ y_λ f^λ = 1` (verified 1.0000 for all four
+isotopes), reproducing the committed deuteron sum `Σ = −0.7438` exactly. `χ^λ(β_K)` is read from the
+interface-inclusive (`include_inter=True`) Rust Hoefsmit caches `atom-chi-rust-{d,t,3he,4he}`. `sgn` is
+`(−1)^{n(λ)}` (Lean-proved). `f^λ` is the hook-length SYT dimension.
+
+## 2. Three independent 0-fit kills of the single-factor hypothesis
+
+**(a) Non-universal.** Spread 2.83× (min ³He 3.29, max ⁴He 9.31). Even `C_knot/A` (per nucleon:
+2.93/1.48/1.10/2.33) and `C_knot/(A−1)` (per bond: 5.85/2.22/1.65/3.10) are non-constant, so no
+extensive or per-bond rescale collapses them.
+
+**(b) Dimension convention doesn't fix it.** `f^λ` (hook SYT) is already the **tightest** dim choice:
+
+| dim in `Σ y_λ χ^λ sgn · [dim]` | cross-isotope spread | T/³He (same H₉) |
+|---|---|---|
+| `f^λ` (hook SYT, master) | **2.83×** | 1.35 |
+| `d_q(λ)` (normalized quantum dim) | 116× | 1.29 |
+| none (`Σ y_λ χ^λ sgn`) | 122× | 1.32 |
+
+**(c) No scale fixes it.** The spread is invariant under any *global* scale (m_e→E₀/μ₀ — a constant
+multiplies every `C_knot`), and `log C_knot / log A ∈ {2.55, 1.36, 1.09, 1.61}` is not a clean power.
+Concretely, a **deuteron-pinned 0-fit scale** (`α = B_AME(²H)/|S(D)| = 2.99 MeV = 5.85 m_e`, a
+legitimate CAL since `B(²H)` is CAL-adjacent) PREDICTS the other three:
+
+| K | B_pred (α·\|S\|) | B_AME | error |
+|---|---|---|---|
+| T | 11.17 | 8.48 | **+31.7%** |
+| ³He | 13.72 | 7.72 | **+77.8%** |
+| ⁴He | 17.78 | 28.30 | **−37.2%** |
+
+Errors of +32% / +78% / −37% are far outside the isospin **±8%** band (ROUTE 5,
+[`2026-08-01-mu3-target-robustness-audit.md`](2026-08-01-mu3-target-robustness-audit.md)). The
+deuteron-pinned-E₀ route — explicitly flagged as a candidate in the task and in the E₀-options audit —
+therefore **fails the cross-isotope prediction test.** (And it does *not* silently absorb the
+chirality cancellation into a scale — see §4 — so there is no hidden fit; it genuinely mispredicts.)
+
+## 3. The Lean-provable invariant: `C_knot` is not a function of `(n, q₀)`
+
+The triton `T` and helion `³He` sit at the **same** strand count `H₉`, so any *level-only* closure
+`B(K) = g(n_K, q₀) · m_e · S(K)` would force the **same** `g(9, q₀)` to reproduce both bindings from
+their `S` values. The measured pairs make that impossible:
+
+[`QOU/MassTheory/CKnotNonUniversal.lean`](../../content/quantum-observable-universe/lean/QOU/MassTheory/CKnotNonUniversal.lean)
+(sorry-free, lean-direct exit 0, v4.24.0; no trivial-true / native_decide / axiom):
+
+| lemma | content |
+|---|---|
+| `mirror_cross_ne` | `B_T · S_He ≠ B_He · S_T` (i.e. `C_knot(T) ≠ C_knot(³He)`) |
+| `no_level_only_closure` | `¬ ∃ g, B_T = g·S_T ∧ B_He = g·S_He` — no level-`H₉` rescale closes both |
+| `mirror_gap_exceeds_isospin_band` | `B_T·S_He > 1.1·(B_He·S_T)` — the gap (1.35×) exceeds the ±8% band |
+
+So `C_knot` carries genuine per-knot (isospin / mirror) content, not captured by `(n, q₀)`. This is a
+**scope-(b) structural exclusion of the level-only-rescale closure class** (cited invariant
+`mirror_cross_ne`); it does **not** exclude a per-knot Δ_λ derivation.
+
+## 4. Parallel-check corroboration (attribution: a sibling session's read-only probes, folded in per
+owner request — no separate PR)
+
+Two independent parallel checks on the **deuteron alone** (from the cached per-λ H₆ data) reach the
+same "not the culprit" conclusion for weight, dimension, and known-invariant, and add a useful
+constraint on the residual:
+
+- **Dimension-normalization ruled out (parallel).** `B_cat` under `f^λ` = 0.380 (5.85×), `d_q` = 0.487
+  (4.57×), signed-no-dim = 0.052 (42.7×), plain `tr_M` = 0.198 (11.2×). Every principled dim swap
+  undershoots 4.6–43×; `f^λ` is already near-best. *(The parallel `d_q` deficit 4.57× and this doc's
+  normalized-`d_q` spread 116× differ only by the `d_q` normalization convention — both agree dim is
+  not the culprit, and neither closes it; per the parallel note's own anti-fit caveat, `d_q`'s smaller
+  4.57× is not a licence to switch to it.)*
+- **Sgn-cancellation decomposition (parallel).** `|Σ y_λ f^λ χ^λ|` (no sgn) = 1.662 → 2.62× deficit;
+  `|Σ y_λ sgn f^λ χ^λ|` (master) = 0.744 → 5.85×. The `sgn` (chirality, Lean-proved-correct, not
+  droppable) **reduces** the magnitude 1.662→0.744, a 2.23× cancellation. So
+  `C_knot(D) 5.85× ≈ [sgn-cancellation 2.23×, chirality-structural, NOT scale-fixable] × [intrinsic
+  2.62×]`. A **global** scale multiplies the whole sum and thus **cannot** touch the 2.23×
+  chirality-cancellation floor — consistent with §2(c). Data check: `Σ f^λ = 76`, `Σ sgn·f^λ = 16 = 2⁴`,
+  `Σ (f^λ)² = 720 = 6!`.
+
+**Net across all checks:** the binding **weight** (`y_λ`, Markov — #4543), the **dimension** (`f^λ`),
+any **single scale** (this doc §2c/§3), and any **simple known invariant** (parallel) are ALL ruled
+out. The 2.83× cross-isotope residual (and the 5.85× deuteron deficit) is irreducibly **per-knot Δ_λ
+magnitude**, sitting in the χ^λ-magnitude / word content, with a hard chirality-cancellation floor.
+
+## 5. Verdict + what stays open
+
+- **scope-(a):** the single-universal-`C_knot` / single-scale derivation route is **REFUTED** with the
+  pinned weight. Confirms + sharpens
+  [`2026-06-01-e0-lambda-substrate-derivation-options.md`](2026-06-01-e0-lambda-substrate-derivation-options.md):
+  the χ^λ→M_λ absolute per-block scale is not a single derivable object.
+- **scope-(b) (narrow):** the level-only rescale class `g(n, q₀)·m_e·S(K)` is structurally excluded by
+  the T/³He mirror inequality (Lean `mirror_cross_ne`).
+- **OPEN (`qou-3q7t`):** a genuine per-knot Δ_λ magnitude derivation. Surviving direction (per §4): the
+  residual lives in the **per-knot χ^λ-magnitude / word content**, above a chirality-cancellation
+  floor, and is **not** reachable by any weight / dimension / global-or-level scale choice. Candidate
+  #1 from the E₀-options audit (per-vertex seminormal eigenphase / q-Reeb `Δθ_λ`, the only object
+  provably NOT a function of `(χ_λ, y_λ)`) remains the one non-circular opening — but it too has to
+  date closed only *differences*, not absolute magnitude.
+
+## 6. Anti-fit ledger
+
+| statement | status |
+|---|---|
+| `C_knot` non-universal (2.83× spread, pinned weight, best dim) | **measured, 0-fit** |
+| no 0-fit dim convention restores universality (`f^λ` tightest) | **measured, 0-fit** |
+| no global / A-power / level-only scale closes it | **measured + Lean** |
+| deuteron-pinned scale mispredicts T/³He/⁴He (+32/+78/−37%) | **measured, 0-fit** |
+| `C_knot(T) ≠ C_knot(³He)` (level-only rescale excluded) | **Lean sorry-free** |
+| per-knot Δ_λ magnitude derivation | **OPEN** (`qou-3q7t`) |
+
+`y_λ` derived (Wenzl, `Σ y_λ f^λ = 1` asserted); `χ^λ` from committed caches; `B_AME` used **only** as
+a diagnostic ratio, **never** inverted into a canonical weight; `free_parameters = 0`; nothing wired;
+exact mpmath (50 dps).
+
+**Refs:** probe
+[`c_knot_nonuniversal_pinned_weight_probe.py`](../../computations/deltalambda/c_knot_nonuniversal_pinned_weight_probe.py)
+(+ witness); supersedes
+[`c_knot_not_universal_probe.py`](../../computations/deltalambda/c_knot_not_universal_probe.py) (whose
+41× was right-vs-wrong weight); PR #4543 (weight pinned); PR #4491 (`C_knot` gate).
