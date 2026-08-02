@@ -21,7 +21,7 @@ hodge_lift_bring_model.py (10/10 PASS, re-verified).
   (b): loop is a rank-2 sub-object. 2-field wall collapses to 1 field (PeriodMapWeight).
 - NOT closable from the model: MOC = the foundational q<->period dictionary (keystone E(q)
   Gauss-Manin). Shadow fixes a point, no germ of Phi. CM never helps (pins target, not map).
-- Proposed Lean: scratch/hodge-lift/PROPOSED_PeriodMapReducesLift.lean (single-field
+- Proposed Lean: single-field PeriodMapWeight class (described in the audit;
   reduction; unbuilt proposal, Mathlib-gated; no instance fabricated). conditional-proved
   != premise-established. Nothing wired.
 Follow-up options: (1) land the PeriodMapWeight interface reduction as real Lean infra;

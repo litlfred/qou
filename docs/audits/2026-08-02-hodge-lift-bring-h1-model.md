@@ -58,8 +58,9 @@ This is **option (a) existence**, and **narrower than (b)**: the loop occupies a
 sub-object** `H¹(E_{τ(q)})`, so `Φ` need only land in *that factor's* period domain — not
 be an isomorphism of the full 8-dim Hodge structure. Given (MOC), both fields of the
 merged `TauRhoHodgeLift` class follow (equal-split + doubled-total, mirroring the merged
-proved lemmas). Proposed Lean sharpening (single-field class `PeriodMapWeight`):
-`scratch/hodge-lift/PROPOSED_PeriodMapReducesLift.lean` — no instance fabricated.
+proved lemmas). Proposed Lean sharpening: a single-field class `PeriodMapWeight` from
+which equal-split + doubled-total derive (mirroring the merged proved lemmas) — a
+reduction proposal, not yet built, no instance fabricated.
 
 ## 4. Honest verdict: not closable from the model
 
