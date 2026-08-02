@@ -346,6 +346,74 @@ theorem gridpt_tendsto {a b c : ℕ} (hb : 0 < b) (Kseq : ℕ → ℕ)
   rw [htgt] at hfin
   exact Filter.Tendsto.congr (fun N => by field_simp) hfin
 
+/-- Derivative of the van der Veen shifted-Clausen difference on `(0,π)`:
+    `d/dθ [clausen θ − clausen(θ+π)] = log(2 sin((θ+π)/2)) − log(2 sin(θ/2))`. -/
+theorem hasDerivAt_clausen_diff {θ : ℝ} (h0 : 0 < θ) (h2 : θ < π) :
+    HasDerivAt (fun t => QOU.Knot.clausen t - QOU.Knot.clausen (t + π))
+      (Real.log (2 * Real.sin ((θ + π) / 2)) - Real.log (2 * Real.sin (θ / 2))) θ := by
+  have hpi := Real.pi_pos
+  have hd1 := QOU.Knot.hasDerivAt_clausen h0 (by linarith)
+  have hshift : HasDerivAt (fun s : ℝ => s + π) 1 θ := (hasDerivAt_id θ).add_const π
+  have hd2 := (QOU.Knot.hasDerivAt_clausen (θ := θ + π) (by linarith) (by linarith)).comp θ hshift
+  have hcomb := hd1.sub (by simpa using hd2)
+  convert hcomb using 1; ring
+
+/-- **Upper-envelope global bound (BRICK 4a).**  `clausen θ − clausen(θ+π) ≤
+    2·clausen(π/2)` on `[0,π]` — the shifted-integrand max at the saddle
+    `θ = π/2` (E2/E3 analogue). -/
+theorem clausen_diff_le {θ : ℝ} (h0 : 0 ≤ θ) (h2 : θ ≤ π) :
+    QOU.Knot.clausen θ - QOU.Knot.clausen (θ + π) ≤ 2 * QOU.Knot.clausen (π / 2) := by
+  have hpi := Real.pi_pos
+  set g : ℝ → ℝ := fun t => QOU.Knot.clausen t - QOU.Knot.clausen (t + π) with hgdef
+  have hgmax : g (π / 2) = 2 * QOU.Knot.clausen (π / 2) := by
+    simp only [hgdef, show π / 2 + π = 3 * π / 2 by ring, clausen_three_pi_div_two]; ring
+  have hcont : Continuous g :=
+    QOU.Knot.continuous_clausen.sub
+      (QOU.Knot.continuous_clausen.comp (continuous_id.add continuous_const))
+  have hderivval : ∀ t ∈ Set.Ioo (0 : ℝ) π,
+      deriv g t = Real.log (2 * Real.sin ((t + π) / 2)) - Real.log (2 * Real.sin (t / 2)) :=
+    fun t ht => (hasDerivAt_clausen_diff ht.1 ht.2).deriv
+  -- monotone up to π/2, antitone after
+  have hmono : MonotoneOn g (Set.Icc 0 (π / 2)) := by
+    refine monotoneOn_of_deriv_nonneg (convex_Icc _ _) hcont.continuousOn ?_ ?_
+    · rw [interior_Icc]; intro t ht
+      exact (hasDerivAt_clausen_diff ht.1 (by linarith [ht.2])).differentiableAt.differentiableWithinAt
+    · intro t ht
+      rw [interior_Icc] at ht
+      have hsinpos : 0 < Real.sin (t / 2) :=
+        Real.sin_pos_of_pos_of_lt_pi (by linarith [ht.1, ht.2, hpi]) (by linarith [ht.1, ht.2, hpi])
+      have hsin : Real.sin (t / 2) ≤ Real.cos (t / 2) := by
+        rw [← Real.sin_pi_div_two_sub]
+        exact Real.strictMonoOn_sin.monotoneOn
+          ⟨by linarith [ht.1, ht.2, hpi], by linarith [ht.1, ht.2, hpi]⟩
+          ⟨by linarith [ht.1, ht.2, hpi], by linarith [ht.1, ht.2, hpi]⟩
+          (by linarith [ht.1, ht.2, hpi])
+      rw [hderivval t ⟨ht.1, by linarith [ht.2, hpi]⟩, sub_nonneg,
+          show (t + π) / 2 = t / 2 + π / 2 by ring, Real.sin_add_pi_div_two]
+      exact Real.log_le_log (by linarith [hsinpos]) (by linarith [hsin])
+  have hanti : AntitoneOn g (Set.Icc (π / 2) π) := by
+    refine antitoneOn_of_deriv_nonpos (convex_Icc _ _) hcont.continuousOn ?_ ?_
+    · rw [interior_Icc]; intro t ht
+      exact (hasDerivAt_clausen_diff (by linarith [ht.1, ht.2, hpi]) ht.2).differentiableAt.differentiableWithinAt
+    · intro t ht
+      rw [interior_Icc] at ht
+      have hcospos : 0 < Real.cos (t / 2) :=
+        Real.cos_pos_of_mem_Ioo ⟨by linarith [ht.1, ht.2, hpi], by linarith [ht.1, ht.2, hpi]⟩
+      have hcs : Real.cos (t / 2) ≤ Real.sin (t / 2) := by
+        rw [← Real.sin_pi_div_two_sub]
+        exact Real.strictMonoOn_sin.monotoneOn
+          ⟨by linarith [ht.1, ht.2, hpi], by linarith [ht.1, ht.2, hpi]⟩
+          ⟨by linarith [ht.1, ht.2, hpi], by linarith [ht.1, ht.2, hpi]⟩
+          (by linarith [ht.1, ht.2, hpi])
+      rw [hderivval t ⟨by linarith [ht.1, ht.2, hpi], ht.2⟩, sub_nonpos,
+          show (t + π) / 2 = t / 2 + π / 2 by ring, Real.sin_add_pi_div_two]
+      exact Real.log_le_log (by linarith [hcospos]) (by linarith [hcs])
+  rcases le_total θ (π / 2) with hle | hge
+  · calc g θ ≤ g (π / 2) := hmono ⟨h0, hle⟩ ⟨by linarith [hpi], le_refl (π / 2)⟩ hle
+      _ = 2 * QOU.Knot.clausen (π / 2) := hgmax
+  · calc g θ ≤ g (π / 2) := hanti ⟨le_refl (π / 2), by linarith [hpi]⟩ ⟨hge, h2⟩ hge
+      _ = 2 * QOU.Knot.clausen (π / 2) := hgmax
+
 /-- **Explicit saddle-term convergence (BRICK 3).**  At the saddle
     `(n*, k*) = (⌊N/2⌋, ⌊N/4⌋)`, `(2π/N)·log S_{n*,k*} → 4·catalanG = 4G`. -/
 theorem whiteheadS_explicit_saddle_tendsto :
