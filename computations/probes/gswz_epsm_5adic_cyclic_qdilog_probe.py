@@ -303,9 +303,17 @@ print(json.dumps({"xi_class_minimal_root_convention": xi_classes}, indent=1))
 npass = sum(checks.values())
 print(f"{npass}/{len(checks)} checks pass")
 
+import subprocess
+
+_sha = subprocess.run(
+    ["git", "rev-parse", "HEAD"], capture_output=True, text=True
+).stdout.strip()
 witness = {
     "schema": "probe-witness/v1",
     "probe": "gswz_epsm_5adic_cyclic_qdilog_probe",
+    "engine": "python3-int-exact",
+    "scriptFile": "gswz_epsm_5adic_cyclic_qdilog_probe.py",
+    "commitSha": _sha,
     "beans": ["qou-9p9y"],
     "source": (
         "CGZ arXiv:1712.04887v3 eqns (8)/(20)/(21) (uploads/1712.04887v3.pdf); "

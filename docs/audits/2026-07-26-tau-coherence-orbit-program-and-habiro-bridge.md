@@ -543,11 +543,17 @@ irreducible-polynomial construction, exact `(Z/5⁸)[x]/(h)` arithmetic):
 - identity (21), root-difference law, base-place consistency, and
   **non-vacuity controls** (χ_m(ζ_M) = (5^d−1)/m ≠ 0; χ₂(1−ζ₄₈³) = 24)
   all verified;
-- **RESULT: every 5₂ root-of-unity symbol class, every cls(1−X), and
-  the c-weighted ξ-combination are ZERO at every m | 24** — the
-  R-side ε_m-candidate of the (275)-decomposed class is an m-th
-  power. cls(1−X) = 0 makes the per-symbol classes root-independent
-  (canonical), and moots the c-truncation caveat.
+- **RESULT (corrected in review — Copilot caught an overclaim in the
+  first framing)**: cls(1−X) = 0 everywhere, so all per-symbol classes
+  are root-independent (canonical). They are **zero for every m | 12
+  and for [ζ₂₄²], [ζ₂₄⁶] at m = 24 — but the [ζ₂₄] symbol at m = 24
+  carries an exact order-2 obstruction, χ₂₄(P([ζ₂₄])) = −1** (all 24
+  root choices). The ξ-combination is canonically zero for
+  m ∈ {2,3,4,6,8,12}; at m = 24 it equals (−1)^{c₁}, and the parity
+  of the 5-adic c₁ is NOT determined by its printed digits — the
+  m = 24 ξ-class is honestly OPEN. Witnesses now carry the
+  provenance triple (engine/scriptFile/commitSha) since the Kummer
+  probe reads the base-place witness.
 - xx9f narrowing recorded in the bean (transcription ruled out; q^λ
   passes x² mod 25 but fails x³; [26] = uploads/2111.06645v3.pdf
   located).
