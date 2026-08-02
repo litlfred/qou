@@ -37,7 +37,40 @@ The two open steps to actually produce a charm mass from the complex-mass scaffo
 
 The Lean class stands (it does not assert `contRatio = b_n/b_{n-2}`; that identification is narrative). But the natural first guess for `contRatio` is now **empirically excluded** at the substrate, sharpening the open closure: a viable `contRatio` must be either steeper-than-continuant (current scheme) or carried by the Im/CS part. No charm mass is predicted; `m_c` remains OPEN.
 
+## Follow-up ("go" — the Im/CS handle): the carrier is scope-(b) excluded
+
+The step-2 negative pointed to the complex-volume **imaginary (Chern–Simons)**
+part as the possible source of the missing steepness. Applied to the **carrier**
+knot $T_{3,5}$, this is now structurally excluded:
+
+- **$T_{3,5}$ is a torus knot** (it is $10_{124}$, the $(3,5)$-torus knot).
+- **Torus knots are non-hyperbolic**, so $\mathrm{Vol}(T_{3,5}) = 0$ — the real
+  part of any complex-volume reading of the carrier is **identically zero**
+  (no mass from $\mathrm{Re}$).
+- **Torus-knot Chern–Simons invariants are rational**, bounded $O(1)$ (values in
+  $\tfrac{1}{4pq}\mathbb{Z} \bmod 1$ for $T_{p,q}$) — the imaginary part is a
+  bounded rational, not a GeV-scale quantity.
+
+**Scope-(b) exclusion (cite the invariant: torus knots are non-hyperbolic,
+$\mathrm{Vol}=0$, $\mathrm{CS}\in\mathbb{Q}$).** *Neither* the real *nor* the
+imaginary part of the **carrier** $T_{3,5}$'s complex volume can be the charm
+mass. This is stronger than step 2's scope-(a) result and is a permanent
+structural fact, not a numerical near-miss.
+
+**Consequence — the open problem is now sharp.** The charm mass, if it is a
+complex-volume functional at all, must be the complex volume of the **composite
+charmed-hadron braid** (e.g. a $\Lambda_c$ or $D$-meson braid closure), *not* the
+carrier. Composite braids/links *can* be hyperbolic (nonzero volume), so this is
+not excluded — but the specific composite charmed-hadron braid is **not defined
+anywhere in the corpus** (heavy-flavour composites are open, per
+`flavor-dressing-functor.md`), and computing its hyperbolic volume needs SnapPy
+(absent here, no numpy). So the path is: *(i) define a candidate charmed-hadron
+composite braid, (ii) compute its complex volume, (iii) project onto the charm
+block.* All three open; step (ii) additionally needs compute infra.
+
 ## Beans (env has no beans CLI — recorded here)
 
 - **GAP (charm-mass step 1):** derive the two-gluon demand profile for gg→cc̄ in the skein-operator basis `{γ,σ₀,σ₁,L₊,L₋,e⁻}`, then run `solve_psd_operator_selection_sdp` to test whether it selects the `n=5` channel.
 - **GAP (charm-mass step 2):** the continuant-ratio `contRatio` is scope-(a) refuted; test the complex-volume/CS (Im) contribution to the hierarchy once a composite charmed-hadron braid + its complex volume are available.
+- **GAP (charm-mass carrier, closed as scope-(b)):** the carrier `T(3,5)`'s complex volume cannot be the charm mass (torus knot ⟹ Vol=0, CS∈ℚ). Charm mass must be the **composite** charmed-hadron braid's complex volume.
+- **GAP (charm-mass composite):** define a candidate charmed-hadron composite braid (e.g. Λ_c = udc as a modification of the Borromean baryon braid 𝓑₃ with one strand carrying the n=5 winding), compute its hyperbolic + complex volume (needs SnapPy), project onto the charm block. Foundational missing object.
