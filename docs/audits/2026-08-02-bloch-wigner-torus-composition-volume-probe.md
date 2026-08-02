@@ -87,6 +87,27 @@ sharpened `qou-uclw` object is a **per-nucleon hyperbolic-volume quantum (~2G)**
 the bound composition, with the α-cluster onset at low A. (The deuteron's `vol_eff=8G`
 is then a low-A coincidence, not the per-nucleon law — consistent with Finding 1.)
 
+## Finding 5 (item-2 outcome) — the Hopf→Borromean `vol_eff` substitution is a coincidence, not a derivable law
+
+Attempt to *derive* the deuteron `vol_eff = 8G` substitution as a general law: pin the
+volume→MeV conversion `k = B(²H)/8G` by the deuteron (1 calibration), then extrapolate
+each fixed-unit law to A=3,4 (0 further parameters):
+
+| law | ³H pred vs AME | ⁴He pred vs AME |
+|---|---|---|
+| per-bond `(A−1)·8G` | 4.45 vs 8.48 (**−47%**) | 6.67 vs 28.30 (**−76%**) |
+| per-nucleon `A·2G` | 1.67 vs 8.48 (**−80%**) | 2.22 vs 28.30 (**−92%**) |
+| whole-link (8₁₁ / L6a4) | 2.52 vs 8.48 (**−70%**) | 2.22 vs 28.30 (**−92%**) |
+
+**No fixed-unit law pinned at the deuteron reproduces A=3,4** — all miss 47–92%. So the
+deuteron `8G` match is a **low-A coincidence**, not a systematic mechanism, and there is
+**nothing to derive** (deriving it would be fitting a coincidence — refused). This is the
+honest outcome of the item-2 request. It converges with Finding 4: the real object is the
+asymptotic `∝A` volume term whose low-A onset is super-pairwise (α-cluster) — the deuteron
+sits *below* saturation (`B/A = 1.11`), so a conversion pinned there cannot extrapolate.
+The genuine open target is the per-nucleon saturated volume quantum + the α-cluster onset,
+not the coincidental Hopf→Borromean substitution.
+
 ## Verdict
 
 - **Naive Bloch-Wigner single-link volume route: intensive — scope-(a) negative**,
