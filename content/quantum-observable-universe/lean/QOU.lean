@@ -298,6 +298,7 @@ import QOU.QuantumObservableUniverses.QAnalysis
 import QOU.QuantumObservableUniverses.QBetaEnergyDictionary
 import QOU.QuantumObservableUniverses.QExpEntire
 import QOU.QuantumObservableUniverses.QIntegralTransforms
+import QOU.QuantumObservableUniverses.QSchurWeyl
 import QOU.QuantumObservableUniverses.QDifferentialGeometry
 import QOU.LiftingDescent.QuantumCharacteristicClassDisplay
 import QOU.ParticleInteractions.HadronDisplay
