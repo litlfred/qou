@@ -643,3 +643,31 @@ core), the 3s cancel entirely (stronger than the 4₁ `Z[1/3]`
 statement), and the 23-powers are the per-order δ³ᵏ normalization
 (integrality away from Δ, disc = −23). `N(3α−2) = −23` (odd-degree
 sign) checked exactly.
+
+## Addendum 16 (2026-08-02) — global symbols: machinery to degree 96, and the Kummer-field-collapse finding; xx9f E-hypotheses refuted on digits
+
+**xx9f second narrowing (scope-(a) negatives)**: GZ §8.1 identifies
+the C_r as Taylor data of `log(1 − e(1/6 + w))` (shifted Li₋ᵣ values).
+Two zero-free-parameter hypotheses for the (287) mismatch λ were
+tested against its known digits and **both refuted**: the
+uniform-Bernoulli-shift form `Δ(s)·Σc_j Li₀(ζ_j)` (full s-grid, both
+signs) and the weaker parallel form (any 5-unit rational multiple).
+Conclusion: the E-factor's tail arguments are not the (275) roots of
+unity — most plausibly the Nahm z-data of the ψ³ bracket in (281).
+
+**y3xv increment (`gswz_epsm_global_symbols_probe.py`, 5/5)**: the
+global integer-coefficient symbols (ξ = 2[z₁]+[z₂], z₁ = 1−α²,
+1−z₁ = α² exactly) run through the cyclic-quantum-dilog machinery in
+unramified fields containing μ_{624m} up to **degree 96** (≈60 s
+total): field integrity, α Hensel-lift, and the root-difference law
+all green. **The honest structural finding (vacuity vigilance, the
+#4533 lesson applied proactively)**: a diagnostic showed
+`χ(ζ_N) = 624 ≠ 0` (the character resolves F) but `χ` kills ALL of
+μ₆₂₄ — since `624m | 5^d−1` by construction, every base-Teichmüller
+unit is an m-th power in F. The all-zero classes are **Kummer-field
+collapse, not ε-triviality**; the α²-identity and Bloch-shadow checks
+hold vacuously at these field sizes (disclosed in probe + witness).
+**The ε-invariant lives in the base field**: CGZ's descent
+`P(ξ) = a·b^m, a ∈ F_n^×` — extracting the base-field class of `a`
+via the Galois norm/transfer from F down to `Q₂₅(ζ_m)` is the
+precisely-defined next increment (bean `y3xv` stays in-progress).
