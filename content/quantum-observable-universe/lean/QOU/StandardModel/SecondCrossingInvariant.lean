@@ -66,7 +66,7 @@ group-theoretic reduction, not the identification.
 - [habegger-masbaum2000] Milnor = leading Vassiliev for Brunnian links.
 -/
 
-namespace QOU.StandardModel.SecondInvariant
+namespace QOU.StandardModel
 
 open CategoryTheory
 
@@ -172,4 +172,4 @@ theorem SecondCrossingInvariant.exists_writhe_degenerate_pair
   exact ⟨fun X => ((a * w X + b * B X : ℤ) : ℚ),
     secondInvariant_gives_separating_pair _ w hnf⟩
 
-end QOU.StandardModel.SecondInvariant
+end QOU.StandardModel

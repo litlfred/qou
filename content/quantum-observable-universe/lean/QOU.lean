@@ -108,6 +108,7 @@ import QOU.MathlibExt.OctonionColourActionBaseModule
 import QOU.MathlibExt.OctonionComplexStructure
 import QOU.StandardModel.ColourStabilizerAction
 import QOU.StandardModel.ThetaQcdFramingCp
+import QOU.StandardModel.SecondCrossingInvariant
 -- q-difference operator calculus (missing Mathlib infra for the q-difference D-module
 -- program): q-Leibniz product rule (clean), monomial q-chain rule (q→q^m), and the
 -- composition obstruction (no naive q-chain rule for non-monomial inner functions).
