@@ -1,0 +1,33 @@
+{
+  "description": "Whitehead link VC sub-leading constant c_\u03c3 pinned to high precision (mpmath, van der Veen exact colored Jones + Neville 1/N extrapolation) and compared to parameter-free closed forms. Tests the structural claim c_\u03c3 = 2^{-3/4}.",
+  "computation": "whitehead_c_sigma_hiprec",
+  "audit_only": true,
+  "reference": "van der Veen arXiv:math/0611181 Lemma 1; GGMW/Ohtsuki 1-loop asymptotic",
+  "dps": 60,
+  "vol_4G": "3.66386237670887606021841405973",
+  "p_exponent_used": "3/2",
+  "Ns": [
+    300,
+    400,
+    500,
+    700,
+    900,
+    1100,
+    1400
+  ],
+  "c_sigma_tower": {
+    "300": "0.5964275802477217474901518",
+    "400": "0.5959700856593860570958605",
+    "500": "0.5956960668524661041529855",
+    "700": "0.5953833401245915059951574",
+    "900": "0.5952098043155658097524854",
+    "1100": "0.5950994471575925370475251",
+    "1400": "0.5949930863040173996125605"
+  },
+  "c_sigma_extrapolated": "0.5946035575013604799244445",
+  "candidate_2_pow_minus_3_4": "0.59460355750136053335875",
+  "best_match": "2^{-3/4}",
+  "best_match_digits": 16,
+  "note": "Structural claim c_\u03c3=2^{-3/4} TESTED numerically here; DERIVATION from adjoint Reidemeister torsion is a separate step (see whitehead_torsion_1loop.py). NOT wired.",
+  "timestamp": "2026-08-02T09:41:38+00:00"
+}
