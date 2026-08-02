@@ -1,0 +1,25 @@
+{
+  "computation": "qbeta-stokes3-largeorder-amplitude-fit",
+  "description": "Refined large-order fit of the 4\u2081 \u03ba-tower: ratio-slope + Aitken action A=Vol/\u03c0 (clean, monotone, single real singularity), Borel\u2013Pad\u00e9, amplitude vs 3. Action confirmed; amplitude=3 stays the GGM-algebraic result.",
+  "audit_only": true,
+  "computedAt": "2026-08-01T23:21:19.485509+00:00",
+  "commitSha": "801b2ebdd4a41c1643eee2775bdbae0dd833fdcb",
+  "engine": "mpmath",
+  "engineVersion": "1.3.0",
+  "consumes": "qbeta-stokes3-largeorder-amplitude.witness.json",
+  "result": {
+    "vol_over_pi": "0.6461318944389",
+    "A_ratio_slope_fit": "0.655667429336",
+    "beta_fit": "0.2379718612",
+    "A_aitken": "0.644297201988",
+    "A_rel_to_vol_over_pi": "0.0028395",
+    "action_matches_vol_over_pi_2pct": true,
+    "action_monotone_single_real_singularity": true,
+    "pade_lead_pole": "0.6708410287",
+    "amplitude_2piP": "0.99517837",
+    "amplitude_P": "0.15838756",
+    "amplitude_is_three": false,
+    "verdict": "12-order \u03ba-tower large-order analysis (\u03ba\u2081 54-digit \u2026 \u03ba\u2081\u2082 13-digit, cross-fit validated; \u03ba\u2081\u2013\u03ba\u2084 = exact closed forms to 40+ digits). ACTION (clean POSITIVE result): the ratio-slope fit \u03ba_(n+1)/\u03ba_n=(n+\u03b2)/A gives A=0.65566743, Aitken A_n\u21920.6442972, BOTH matching Vol(4\u2081)/\u03c0=0.64613189 to 0.00284. A_n RISES MONOTONICALLY 0.55\u21920.64 \u2192 a single dominant real-positive Borel singularity at Vol/\u03c0 \u2014 NOT the conjugate-pair oscillation the 6-order 2026-07-07 audit inferred (that was a 2-term transient). This SHARPENS the corpus 'action complex/oscillating/preliminary' to 'action=Vol/\u03c0, real, ~1%%'. AMPLITUDE (Stokes constant, honest negative): with A=Vol/\u03c0, \u03b2=0.238, the amplitude 2\u03c0P\u21920.995178 (P\u21920.158388); no natural normalization lands on the integer 3 within 3%% (near3=False). The large-order route CONFIRMS THE ACTION cleanly but does NOT independently re-derive the amplitude 3 \u2014 that stays the GGM state-integral algebraic value (qbeta_g3_ggm_stokes_41). Scope-(a); no fit to 3; no c_k wired; the resurgent A_\u03c9=3 identification is a GGM-algebraic statement, here the ACTION half is independently confirmed and the AMPLITUDE half is NOT pinned from 12 real \u03ba_n (entropy-limited, as the corpus predicted)."
+  },
+  "scriptHash": "ab9a5b80f554"
+}

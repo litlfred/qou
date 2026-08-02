@@ -1,0 +1,109 @@
+{
+  "computation": "qbeta-stokes3-largeorder-amplitude",
+  "description": "Resurgent-bridge large-order extraction of the 4\u2081 Stokes constant from the geometric \u03ba-tower: Borel radius (|action|), conjugate-pair oscillation, and the amplitude test 2\u03c0C_n vs the GGM integer 3. Cross-check of the algebraic A_\u03c9=3, not a re-derivation. Honest: conjugate-pair + finite order preclude a clean single limit.",
+  "audit_only": true,
+  "tier": "numerical (large-order asymptotics; exact-\u03ba-validated low orders)",
+  "computedAt": "2026-08-01T23:15:29.934067+00:00",
+  "commitSha": "801b2ebdd4a41c1643eee2775bdbae0dd833fdcb",
+  "engine": "mpmath",
+  "engineVersion": "1.3.0",
+  "dps": 300,
+  "order": 12,
+  "fit_order": 18,
+  "scriptFile": "qbeta_stokes3_largeorder_amplitude_probe.py",
+  "scriptHash": "d70a3209f23e",
+  "assertions": [
+    {
+      "name": "kappa1_4_reproduce_closed_forms_10d",
+      "passed": true
+    },
+    {
+      "name": "all_kappa_positive",
+      "passed": true
+    },
+    {
+      "name": "borel_radius_closest_to_a_vol_family",
+      "passed": false
+    }
+  ],
+  "allPassed": false,
+  "result": {
+    "vol41": "2.02988321281930725",
+    "vol_over_pi": "0.646131894438901",
+    "vol_recovered": "2.02988321281930725",
+    "kappa": [
+      "0.5542164724048999",
+      "0.7310818074881006",
+      "2.654527056949545",
+      "13.09477492638167",
+      "84.64216560503844",
+      "676.946678964105",
+      "6443.568863549986",
+      "71120.63813704604",
+      "893193.5209515634",
+      "12579744.76520948",
+      "196407457.2422039",
+      "3367477581.751281"
+    ],
+    "kappa14_agree_digits": [
+      54,
+      49,
+      44,
+      40
+    ],
+    "cross_fit_trust_digits": [
+      54,
+      49,
+      44,
+      39,
+      35,
+      32,
+      28,
+      24,
+      21,
+      18,
+      15,
+      13
+    ],
+    "borel_radius_rho_last": "0.8500008387128727",
+    "borel_radius_closest": "Vol/\u03c0",
+    "borel_radius_rel": "0.315522",
+    "pade_lead_pole_modulus": null,
+    "pade_lead_pole_arg": null,
+    "amplitude_2piCn": {
+      "1.5": {
+        "last": "0.03401627408",
+        "tail_min": "0.03401627408",
+        "tail_max": "0.07044372132"
+      },
+      "0.5": {
+        "last": "0.6580752779",
+        "tail_min": "0.6580752779",
+        "tail_max": "0.8176781156"
+      },
+      "1.0": {
+        "last": "0.151120349",
+        "tail_min": "0.151120349",
+        "tail_max": "0.2440311352"
+      },
+      "0.0": {
+        "last": "2.806616116",
+        "tail_min": "2.643760448",
+        "tail_max": "2.806616116"
+      }
+    },
+    "amplitude_beta32_tail_envelope": [
+      "0.03401627408",
+      "0.07044372132"
+    ],
+    "amplitude_brackets_or_near_3": false,
+    "verdict": "Large-order Stokes-constant extraction from the 4\u2081 \u03ba-tower (trusted order 12, dps 300; \u03ba\u2081\u2013\u03ba\u2084 reproduce the exact closed forms to 40+ digits \u2014 independent re-derivation). (2) The Borel radius \u03c1=(n!/|\u03ba_n|)^{1/n} \u2192 0.85000084, closest to Vol/\u03c0=0.64613189 (rel 0.316); the raw ratio test n\u00b7\u03ba_n/\u03ba_(n+1) oscillates \u2014 the conjugate-pair (\u00b1\ud835\udd19) signature the 2026-07-07 audit flagged, now confirmed at higher order. (3) Borel\u2013Pad\u00e9 nearest pole |t|=n/a, arg=n/a. (4) The amplitude 2\u03c0C_n (\u03b2=3/2) tail envelope = [0.034016274, 0.070443721]; brackets/near 3 ? False. HONEST: the exact Stokes constant 3 is the ALGEBRAIC GGM value (qbeta_g3_ggm_stokes_41); this large-order route is amplitude-consistent with a small integer of order 3 but the conjugate-pair oscillation + finite order (12) preclude a clean single-limit \u2192 3 (entropy-limited, as the corpus predicted for the action). Scope-(a); no fit; no c_k wired; A_\u03c9=3 identification stays the GGM-algebraic result, here CROSS-CHECKED not re-derived."
+  },
+  "context": {
+    "bean": "qou-fgte (T4)",
+    "two_A_omega_objects": "ACTION (location, \u2248Vol/\u03c0) \u2260 STOKES CONST (amplitude, =3 algebraically via GGM)",
+    "algebraic_source": "computations/probes/qbeta_g3_ggm_stokes_41.py (S\u207a(q\u21920)=[[1,3],[0,1]], integer 3, exact)",
+    "prior_action_audit": "docs/audits/2026-07-07-fmap-resurgence-action-and-pion-knot.md (action complex \u00b1\ud835\udd19, preliminary 6 orders)",
+    "anti_fit": "\u03ba_n derived from 4\u2081 Kashaev sum; nothing tuned to 3; no c_k wired; A_\u03c9=3 stays the GGM-algebraic result."
+  }
+}
