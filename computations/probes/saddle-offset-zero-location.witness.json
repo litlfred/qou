@@ -1,0 +1,182 @@
+{
+  "engine": "fractions-exact",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-02T14:19:42.723912+00:00",
+  "commitSha": "fd3d5c02c23166db22d1aacdf5eab40177d72453",
+  "assertions": [
+    {
+      "name": "qstar_truncation_stable_at_quadratic_balance",
+      "computed": 0.001945744564011767,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 0.01,
+      "source": "q*(18) matches the 1−9q−28q²=0 root (−9+√193)/56 within 0.01; spread over N≥3 is O(1e-3)"
+    },
+    {
+      "name": "qstar_is_not_a_substrate_quantity",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "q* misses q₀−1, ℏ_q, ℏ_q², 1/q₀, radius all by ≫1% (locked before compute)"
+    },
+    {
+      "name": "offset_inaccessible_at_q0_no_c3_relation",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "partial sums o_N(q₀) diverge (q₀≫R, q₀>1); c_3 hook via q₀ evaluation impossible; no derived o↔c_3 relation; not wired"
+    },
+    {
+      "name": "offset_not_bar_covariant_q1_vanishing_only_trivial",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "o(0)=1≠0 ⇒ o is not f(q)−f(q⁻¹); its q=1 vanishing is not delivered by the bar-fixed-point argument (that gives the trivial vanishing of a genuine bar-odd object, a different object from the DT datum)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 11,
+  "computation": "saddle-offset-zero-location",
+  "scriptFile": "saddle_offset_zero_location_probe.py",
+  "scriptHash": "dc74a88856cc",
+  "scriptCommitSha": "fd3d5c02c23166db22d1aacdf5eab40177d72453",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Where the certified 5₂ ι-odd saddle offset o(q)=c⁺−c⁻ crosses zero, and whether that location is principled. q* is truncation-stable at ≈0.087 (quadratic balance (−9+√193)/56) but is NOT a substrate quantity; the series cannot be evaluated at q₀ (c_3 hook inaccessible); and o(q) is a cross-chirality difference, not a bar-covariant f(q)−f(q⁻¹), so its q=1 vanishing is only the trivial fixed-point one, distinct from the q→0 DT datum. Honest negative on the substrate/q=1 reading (scope-(a)); nothing wired.",
+  "contentBlock": "conj:im-q-physical-role",
+  "data": {
+    "Q1_zero_location": {
+      "offset_series": [
+        "1",
+        "-9",
+        "-28",
+        "25",
+        "126",
+        "224",
+        "107",
+        "-255",
+        "-926",
+        "-1778",
+        "-2247",
+        "-1888",
+        "150",
+        "4365",
+        "11238",
+        "19435",
+        "27648",
+        "31929",
+        "27844"
+      ],
+      "qstar_by_order": {
+        "2": 0.08736507124017506,
+        "3": 0.08861411644505279,
+        "4": 0.08921029148960374,
+        "5": 0.08930786545345862,
+        "6": 0.08931205154466662,
+        "7": 0.08931116036461073,
+        "8": 0.08931087136253832,
+        "9": 0.08931082180464958,
+        "10": 0.08931081621112202,
+        "11": 0.08931081579137418,
+        "12": 0.08931081579435257,
+        "13": 0.08931081580209327,
+        "14": 0.08931081580387312,
+        "15": 0.08931081580414804,
+        "16": 0.08931081580418296,
+        "17": 0.08931081580418657,
+        "18": 0.08931081580418684
+      },
+      "qstar_final": 0.08931081580418684,
+      "q_quad_prediction": 0.08736507124017508,
+      "q_quad_closed_form": "(-9 + sqrt(193)) / 56",
+      "spread_over_N_ge_3": 0.0006979350996138278,
+      "truncation_stable": true,
+      "radius_estimate_root_test": 0.5663311701115493
+    },
+    "Q1_substrate_candidates": {
+      "q0 − 1": {
+        "value": 0.10997859555733469,
+        "rel_err_vs_qstar": 0.18792547448356164,
+        "match_1pct": false
+      },
+      "ℏ_q = 1 − 1/q0": {
+        "value": 0.09908172643825897,
+        "rel_err_vs_qstar": 0.09861465867937508,
+        "match_1pct": false
+      },
+      "ℏ_q²": {
+        "value": 0.009817188513985985,
+        "rel_err_vs_qstar": 8.097392362075034,
+        "match_1pct": false
+      },
+      "1/q0": {
+        "value": 0.900918273561741,
+        "rel_err_vs_qstar": 0.9008669061055888,
+        "match_1pct": false
+      },
+      "q0": {
+        "value": 1.1099785955573347,
+        "rel_err_vs_qstar": 0.9195382540153013,
+        "match_1pct": false
+      },
+      "series radius R_est": {
+        "value": 0.5663311701115493,
+        "rel_err_vs_qstar": 0.8422993108668282,
+        "match_1pct": false
+      }
+    },
+    "Q1_verdict": {
+      "truncation_stable": true,
+      "any_substrate_match_1pct": false,
+      "reading": "q* is the DT expansion's own root (set by low-order Stokes coeffs {9,28}), NOT a substrate quantity"
+    },
+    "Q3_c3_hook": {
+      "q0": 1.1099785955573347,
+      "offset_at_q0_partial_sums": {
+        "2": -43.48727687268814,
+        "5": 559.3802740187167,
+        "10": -12829.879826890772,
+        "14": 47119.43988062197,
+        "18": 657169.5310264372
+      },
+      "diverges_at_q0": true,
+      "offset_q0_inaccessible": true,
+      "o0_datum": 1.0,
+      "c3_qbeta": -2.0,
+      "o0_over_c3": -0.5,
+      "wired": false,
+      "note": "offset series is q->0-anchored (R~0.57); q0>1 far outside domain — no direct evaluation, no derived c_3 relation, nothing wired"
+    },
+    "Q2_bar_covariance": {
+      "o0": 1.0,
+      "is_bar_covariant_f_of_q_minus_f_of_qinv": false,
+      "reasoning": "g(1/q)=−g(q) forces g(0)=0; o(0)=1≠0 ⇒ not bar-covariant",
+      "q1_vanishing_delivered_by_fixed_point_argument": false,
+      "reading": "certified offset is a cross-chirality difference at same q; q=1 origin-centring recoverable only as the trivial bar-fixed-point vanishing of a genuine bar-odd object (#4577 gate applied to q), a different object from the q→0 DT {3,4} datum"
+    },
+    "scope": {
+      "confirmed": "q* truncation-stable ≈0.087 (quadratic balance)",
+      "honest_negatives": [
+        "q* is NOT a substrate quantity (Q1)",
+        "offset cannot be evaluated at q₀; no c_3 relation (Q3)",
+        "certified offset is not bar-covariant; q=1 origin-centring is only the trivial fixed-point vanishing, not the DT datum (Q2)"
+      ],
+      "wired_to_production": false,
+      "discipline": "no fit; no c_k wired; no axiomatization; scope-(a); avoids all qou-fk19 red-flags"
+    },
+    "verdict": "OFFSET-ZERO LOCATION [scope-(a), honest negative on the substrate reading]. (Q1) The zero-crossing q* is truncation-STABLE at q* = 0.08931 (spread over N>=3 = 7.0e-04), pinned by the quadratic balance 1-9q-28q^2=0 => q_quad=(-9+sqrt(193))/56=0.08737. But it is NOT a substrate quantity: it misses q0-1, hbar_q, hbar_q^2, 1/q0 and the series radius all by >>1% (closest is hbar_q at ~9.9%) — q* is set by the DT expansion's own low-order Stokes coefficients {9,28} (which encode the {3,4} datum), carrying NO independent substrate meaning. (Q3) The offset series CANNOT be evaluated at q0 (q0~1.110 >> radius R~0.57, and q0>1): the partial sums diverge, so the c_3-odd hook via direct q0 evaluation is inaccessible; the q->0 datum o(0)=1 has no clean/derived relation to Q_beta c_3=-2, and nothing is wired. (Q2) The certified o(q)=c+ - c- has o(0)=1!=0, so it is a cross-chirality difference, NOT a bar-covariant f(q)-f(q^-1); its q=1 vanishing is therefore NOT delivered by the bar-fixed-point argument. 'Origin-centred only at q=1' is recoverable ONLY as the TRIVIAL vanishing of any genuinely bar-odd object at the fixed point q=q^-1=1 (already #4577's gate applied to q itself) — a DIFFERENT object from the DT {3,4} offset, which lives at q->0 with its own root at q*~0.089. VERDICT: q~0.08 is the DT-series' own convergence-region root with no substrate meaning; the specific 'DT saddle-offset vanishes AT q=1' claim is REFUTED as an independent reading (scope-(a): a narrowing of the picture, invoking no proved invariant to exclude an ingredient). No fit; no c_k wired; scope-(a)."
+  }
+}
