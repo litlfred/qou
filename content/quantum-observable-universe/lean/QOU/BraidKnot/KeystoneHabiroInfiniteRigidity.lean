@@ -92,4 +92,23 @@ theorem eq_of_habiro_root_agreement (bwPoly valPoly : ℝ[X])
   rintro x ⟨N, rfl⟩
   exact h N
 
+/-- **Two roots are insufficient (the Σ(2,3,5) slice alone does not pin the value
+map).** For any two distinct fibre points `a ≠ b` and any value-map polynomial `V`,
+there is a *different* polynomial `W ≠ V` agreeing with `V` at both points
+(`W = V + (X−a)(X−b)`).  So the two-flat-connection agreement of `KeystoneLRAmplitudeReal`
+(#4365) cannot alone force `bwS0 = V` — brackets the residual `bwsc` from below:
+2 roots fail, the infinite family (`eq_of_habiro_root_agreement`) succeeds, so the
+open work is exactly *extending the WRT agreement from the Σ(2,3,5) slice toward the
+full root family*. -/
+theorem two_roots_insufficient (a b : ℝ) (hab : a ≠ b) (V : ℝ[X]) :
+    ∃ W : ℝ[X], W ≠ V ∧ W.eval a = V.eval a ∧ W.eval b = V.eval b := by
+  refine ⟨V + (X - C a) * (X - C b), ?_, ?_, ?_⟩
+  · intro hWV
+    have hP : (X - C a) * (X - C b) = 0 := by linear_combination hWV
+    have hne : (X - C a) * (X - C b) ≠ (0 : ℝ[X]) :=
+      mul_ne_zero (X_sub_C_ne_zero a) (X_sub_C_ne_zero b)
+    exact hne hP
+  · simp [eval_add, eval_mul, eval_sub, eval_X, eval_C]
+  · simp [eval_add, eval_mul, eval_sub, eval_X, eval_C]
+
 end QOU.BraidKnot.KeystoneHabiroInfiniteRigidity
