@@ -575,6 +575,10 @@ import QOU.MassTheory.BarParityClusterObstruction
 -- A=4 Brunnian deficit: derived leading data (exact order 6, coeff -96)
 -- replacing the MEASURED A=4 leg of MilnorParitySignLaw. Sorry-free.
 import QOU.MassTheory.BrunnianDeficitLeadingOrderDerived
+-- A=4 interface-operator magnitude: the derived -ln det(I+G) form (spectrum {±√5,±1})
+-- is surjective onto (0,∞) in its one free scalar m ⇒ WALL(scope-(a)); naive z scope-(b)
+-- excluded. Formalize-first, 0-fit, sorry-free.
+import QOU.MassTheory.A4InterfaceMagnitude
 import QOU.BraidKnot.ColoredJonesRecurrence
 import QOU.BraidKnot.KnotOperatorRecurrence
 -- Resurgent-bridge tranche (Δ_λ sign/magnitude → DT/3d-index unification):
