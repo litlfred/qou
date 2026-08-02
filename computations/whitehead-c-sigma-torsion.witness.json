@@ -16,13 +16,24 @@
     "target_2_pow_5_2": "5.656854249492380195206755",
     "match_digits": 15
   },
-  "c_sigma_relation": "c_sigma = 2^{(c-1)/2} * |tau_meridian|^{-1/2}",
+  "c_sigma_relation": "c_sigma = 2^{(c-1)/2} * |tau_meridian|^{-1/2}   <=>   exp(2 c0) = 2^{c-1}/|det J_NZ|",
   "c_sigma_derived": "0.59460355750136040958202",
   "c_sigma_target_2_pow_minus_3_4": "0.59460355750136053335875",
   "c_sigma_match_digits": 15,
+  "borromean_L6a4_crosscheck": {
+    "num_cusps": 3,
+    "tau_abs": "63.99999999999996980193373",
+    "target_2_pow_6": "64",
+    "match_digits": 15,
+    "corpus_source": "computations/probes/borromean_nz_adjoint_torsion.py (W1, PR #4238, 2026-07-25) already has |det|=64; reproduced here independently",
+    "c_sigma_derived": "0.25000000000000005898",
+    "c0_predicted_unified_law": "-1.38629436111989",
+    "c0_measured_W1_jones": "-1.3828105122579213",
+    "note": "c=3 confirms the per-cusp factor: predicted c0=-1/2 ln16=-1.3863 vs W1 Jones-side -1.3828 (~0.25%, within the NMAX=56 fit error; W1 p=1.4993 vs 3/2)."
+  },
   "corrects_prior_inference": "qou-k00d/PR#4571 recorded tau=2sqrt(2) (naive knot template); independent 1-loop gives tau=4sqrt(2)=2^{5/2}; resolved by the 2-cusp sqrt(2) normalization.",
-  "cusp_factor_caveat": "2^{(c-1)/2} pinned on the two cases c=1 (4_1) and c=2 (L5a1); general-c form matches the standard per-cusp Gaussian factor but is a smaller open sub-item.",
+  "cusp_factor_status": "2^{(c-1)/2} now supported on THREE cases: c=1 (4_1, exact), c=2 (L5a1, 20-digit c_sigma), c=3 (L6a4, ~0.25% vs W1 Borromean c0). Unifies the repo W1 knot relation exp(2c0)=1/|det| to exp(2c0)=2^{c-1}/|det|. General-c proof (per-cusp Gaussian factor) is a smaller open sub-item.",
   "derivation_complete": true,
   "reference": "Dimofte-Garoufalidis, Geom. Topol. 17 (2013) 1253; Porti adjoint torsion",
-  "timestamp": "2026-08-02T13:44:32+00:00"
+  "timestamp": "2026-08-02T13:58:25+00:00"
 }
