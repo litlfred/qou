@@ -36,9 +36,22 @@ hyperbolic atoms (per
 | ${}^{3}\mathrm{He}$     | link $L_{6a4}$    | 2 | 2 |
 
 The ${}^{4}\mathrm{He}$ case uses the magic $A \cdot 8G$ closure rule rather than a
-census knot, so its $\nu_{\mathrm{SDP}}$ value is **extrapolated**
-($\rho_F = 2$ assumed); R&D follow-up is to extend the joint-tower
-SDP solver to confirm $\nu_{\mathrm{SDP}}(⁴\mathrm{He}) = 2$.
+census knot. The follow-up R&D that this block flagged has since been carried
+out (a binding-arbiter probe against AME2020), and it does **not** confirm an
+integer $\nu_{\mathrm{SDP}}(⁴\mathrm{He})$: the data-pinned prefactor is
+$\rho_F(⁴\mathrm{He}) = B_{\mathrm{AME}}/(m_e A\,8G) \approx 1.889$, which sits
+**strictly between** the isospin count ($2T{+}1 = 1$, $T{=}0$) and the monotone
+Wedderburn count ($A{-}1 = \mathrm{sc}(3A) = 3$). No clean categorical integer
+count reproduces $1.889$; rounding it to $2$ has no derived origin.
+Consequently the identity $\rho_F = \nu_{\mathrm{SDP}} \in \mathbb{Z}_{>0}$ is
+**scoped to the census-knot / linear-chain atoms** (${}^{2}\mathrm{H}$,
+${}^{3}\mathrm{H}$, ${}^{3}\mathrm{He}$), where $\rho_F = A{-}1$ is exact and the
+SDP framing is canonical. At the doubly-magic point the prefactor is an
+**empirical effective binding coefficient** ($\approx 1.89$, Coulomb-corrected
+$\approx 1.94$), not an integer categorical multiplicity. Full analysis:
+[`docs/audits/2026-08-02-rho-f-cap-no-derived-origin.md`](../../../docs/audits/2026-08-02-rho-f-cap-no-derived-origin.md)
+and
+[`docs/audits/2026-08-02-he4-nu-sdp-decisive-2-not-3.md`](../../../docs/audits/2026-08-02-he4-nu-sdp-decisive-2-not-3.md).
 
 ## Categorical home (driver x of the 13-driver menu)
 
@@ -128,9 +141,14 @@ removing the third unnamed $\rho$.
 
 ## Open R&D
 
-1. **Extend joint-tower SDP to ${}^{4}\mathrm{He}$** — confirm
-   $\nu_{\mathrm{SDP}}(⁴\mathrm{He}) = 2$ explicitly (currently
-   extrapolated from D/T/${}^{3}\mathrm{He}$ pattern).
+1. **${}^{4}\mathrm{He}$ resolved (negative).** The binding-arbiter probe
+   found $\rho_F(⁴\mathrm{He}) \approx 1.889$ — not an integer, and no
+   categorical count derives the cap at $2$ (see §Evidence). The open successors
+   are sharper: (a) is $\rho_F$ even integer-valued at doubly-magic nuclei? and
+   (b) derive the doubly-magic prefactor directly (including Coulomb), rather
+   than rounding $1.89 \to 2$. The census-knot atoms (${}^{2}\mathrm{H}$,
+   ${}^{3}\mathrm{H}$, ${}^{3}\mathrm{He}$) remain the exact domain of the
+   $\rho_F = \nu_{\mathrm{SDP}}$ identity.
 2. **Extend joint-tower SDP to ${}^{5}\mathrm{Li}$, ${}^{6}\mathrm{Li}$, ${}^{7}\mathrm{Li}$** — the A$\in${5,6,7} gap
    per
    [`docs/audits/-a5-a7-isotope-wiring-gap.md`](../../docs/audits/-a5-a7-isotope-wiring-gap.md)
