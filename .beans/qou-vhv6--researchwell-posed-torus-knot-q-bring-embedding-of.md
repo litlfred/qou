@@ -117,3 +117,15 @@ residual translational/rotational symmetry of the embedding. Concretely:
 - **Remaining (tier 2, OPEN):** the magnitude r_K(q) under the q-shift z↦q·z on
   the 6-branch orbit, in the residual-symmetry quotient — still a definition +
   derive-then-check, no fit. Not yet attempted.
+
+## TIER-2 CLOSED (2026-08-02) — r_K(q) = |z*|·ℏ_q, DERIVED + Lean-verified
+Under the corpus q-integer-curve shift z↦q·z (ColorCurveQIntegerForm), the
+discriminant transforms covariantly: disc_X C(X;qz) = Δ(qz) (sympy-verified).
+So each saddle z*_i moves to z*_i/q, and:
+  offset v(q,z*) = z*/q − z* = −ℏ_q·z*,  ℏ_q = 1−q⁻¹
+  magnitude r_K,i(q) = |z*_i|·ℏ_q  (RADIAL for real q; vanishes at q=1).
+Lean `QOU/Mass/SaddleQShiftOffset.lean` (verified sorry-free): saddle_offset_eq,
+saddle_offset_norm, hbarQ_one. At q₀≈1.10998 (ℏ_q≈0.0991), r∈{0.0934,0.0991,
+0.1051} for |z*|∈{0.943,1.0,1.060}. LINEAR in ℏ_q — recovers Gemini's "scales
+with ℏ_q" intuition, REFUTES its sinh/cosh ODE. All three tiers now Lean-backed;
+offset question CLOSED (angle=stabilizer root of unity, magnitude=|z*|·ℏ_q radial).
