@@ -48,19 +48,22 @@ WHAT THIS CHECKS (exact arithmetic in (Z/5^8)[x]/(h)):
    chi_2(1 - zeta_48^3) = 24) — the class group is genuinely resolved,
    so a zero symbol-class is a finding, not a blind spot.
 
-RESULT (the deliverable): every 5_2 root-of-unity symbol class, every
-class of 1-X, and hence the c-weighted xi-combination are ALL ZERO at
-every m | 24 — the R-side eps_m-candidate of the (275)-decomposed
-class is an m-th power. Because cls(1-X) = 0, the root-difference law
-makes the per-symbol classes ROOT-INDEPENDENT, i.e. canonical (and
-the caveat that the printed c_i are 5-adic truncations becomes moot:
-any weighting of zeros is zero). Scope-(a) framing: this is a
-computed triviality of the ROOT-OF-UNITY-symbol layer; the GLOBAL
-integer-coefficient Bloch symbols [z1]+[z2]+[z3] of GSWZ (270)
-(non-root-of-unity arguments, ramified Kummer data) are the remaining
-route to a possibly nontrivial eps_m(xi), queued on qou-9p9y. NO
-printed target exists for these values; falsifiable against any
-independent computation of the CGZ map on this class.
+RESULT (the deliverable, corrected per Copilot review of #4533 —
+the first framing overclaimed "all trivial"): cls(1-X) = 0 for every
+symbol at every m, so all per-symbol classes are ROOT-INDEPENDENT
+(canonical). The per-symbol classes are ZERO for every m | 12 and for
+the [zeta_24^2], [zeta_24^6] symbols at m = 24 — but the [zeta_24]
+symbol at m = 24 carries an EXACT ORDER-2 OBSTRUCTION:
+chi_24(P([zeta_24])) = zeta_M^{M/2} = -1 for every root choice. The
+c-weighted xi-combination is therefore canonically zero for
+m in {2,3,4,6,8,12}; at m = 24 it equals (-1)^{c1}, and the PARITY of
+the 5-adic coefficient c1 = 1+4*5+3*5^2+... is NOT determined by its
+printed 5-adic digits — the m = 24 xi-class is honestly OPEN, not
+zero. Scope-(a): the GLOBAL integer-coefficient Bloch symbols
+[z1]+[z2]+[z3] of GSWZ (270) (where the coefficients are literally 1)
+are the canonical route past this, queued on qou-9p9y. NO printed
+target exists for these values; falsifiable against any independent
+computation of the CGZ map on this class.
 """
 
 import json
@@ -364,18 +367,49 @@ checks["identity_21_kummer_level"] = all_21_ok
 checks["root_difference_law_kummer_level"] = all_law_ok
 checks["base_place_consistency"] = all_base_ok
 checks["chi_nonvacuity_controls"] = all_ctrl_ok
-checks["all_symbol_classes_trivial"] = all(
-    v["xi_chi_dlog_zetaM_t0_convention"] == 0 for v in xi_classes.values()
-) and len(xi_classes) == len(MS)
+# per-symbol class structure (named for exactly what is verified):
+_sym = {k: v for k, v in detail.items() if k.endswith("_symbol_classes")}
+checks["symbol_classes_zero_for_m_le_12"] = all(
+    all(c == 0 for c in d["per_root"].values()) and d["cls_1_minus_X"] == 0
+    for mk, v in _sym.items() if int(mk[1:].split("_")[0]) <= 12
+    for d in v.values()
+)
+checks["sym1_m24_class_is_minus_one"] = (
+    "m24_symbol_classes" in _sym
+    and all(c == 288 for c in _sym["m24_symbol_classes"]["sym1"]["per_root"].values())
+    and all(
+        c == 0
+        for j in ("sym2", "sym6")
+        for c in _sym["m24_symbol_classes"][j]["per_root"].values()
+    )
+)
+checks["xi_classes_zero_for_m_le_12"] = all(
+    v["xi_chi_dlog_zetaM_t0_convention"] == 0
+    for k, v in xi_classes.items() if int(k[1:]) <= 12
+)
+# m=24 xi-class: equals (-1)^{c1}; c1's parity is NOT determined by its
+# 5-adic digits -> honestly OPEN (recorded, not posed as a zero-check)
+xi_classes["m24_caveat"] = (
+    "xi at m=24 equals (-1)^{c1}; parity of the 5-adic c1 undetermined "
+    "by printed digits — OPEN"
+)
 
 print(json.dumps(checks, indent=1))
 print(json.dumps(xi_classes, indent=1))
 npass = sum(checks.values())
 print(f"{npass}/{len(checks)} checks pass")
 
+import subprocess
+
+_sha = subprocess.run(
+    ["git", "rev-parse", "HEAD"], capture_output=True, text=True
+).stdout.strip()
 witness = {
     "schema": "probe-witness/v1",
     "probe": "gswz_epsm_kummer_level_probe",
+    "engine": "python3-int-exact",
+    "scriptFile": "gswz_epsm_kummer_level_probe.py",
+    "commitSha": _sha,
     "beans": ["qou-9p9y"],
     "source": (
         "CGZ arXiv:1712.04887v3 (uploads/1712.04887v3.pdf); GSWZ "

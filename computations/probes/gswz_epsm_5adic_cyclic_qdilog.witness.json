@@ -1,6 +1,9 @@
 {
  "schema": "probe-witness/v1",
  "probe": "gswz_epsm_5adic_cyclic_qdilog_probe",
+ "engine": "python3-int-exact",
+ "scriptFile": "gswz_epsm_5adic_cyclic_qdilog_probe.py",
+ "commitSha": "1a259abb9a8a9d854ea588e0a26445f1a415ae5c",
  "beans": [
   "qou-9p9y"
  ],

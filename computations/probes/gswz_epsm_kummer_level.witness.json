@@ -1,6 +1,9 @@
 {
  "schema": "probe-witness/v1",
  "probe": "gswz_epsm_kummer_level_probe",
+ "engine": "python3-int-exact",
+ "scriptFile": "gswz_epsm_kummer_level_probe.py",
+ "commitSha": "1a259abb9a8a9d854ea588e0a26445f1a415ae5c",
  "beans": [
   "qou-9p9y"
  ],
@@ -337,7 +340,9 @@
   "root_difference_law_kummer_level": true,
   "base_place_consistency": true,
   "chi_nonvacuity_controls": true,
-  "all_symbol_classes_trivial": true
+  "symbol_classes_zero_for_m_le_12": true,
+  "sym1_m24_class_is_minus_one": true,
+  "xi_classes_zero_for_m_le_12": true
  },
  "xi_classes": {
   "m2": {
@@ -374,7 +379,8 @@
    "xi_chi_dlog_zetaM_t0_convention": 0,
    "M": 576,
    "d": 48
-  }
+  },
+  "m24_caveat": "xi at m=24 equals (-1)^{c1}; parity of the 5-adic c1 undetermined by printed digits \u2014 OPEN"
  },
  "scope": "scope-(a): the c-weighted xi-class of the 5_2 Bloch element computed at the mu_{24m} Kummer level for every m | 24 (t=0 root convention; dependence quantified by the verified root-difference law); no printed target exists \u2014 candidate eps_m(xi) data for the harness"
 }
