@@ -30,7 +30,9 @@ reading:
 
 The **surviving leg**, and the question this branch answers: is there a **DERIVED** (not
 fitted) *fibre-level* Habiro-ring / cyclotomic-completion element `F(q)` whose `q↔q⁻¹` bar-odd
-part vanishes at `q=1` (the bar-fixed point of the *formal* variable) **by construction**, and
+part has a forced-zero **bar-fixed coefficient degree** (`n=0` / constant term) **by
+construction** — the precise fibre reading of the owner's "centred at `q=1`" (evaluation at the
+involution's fixed points `q=±1` is a *distinct* statement, not what the Lean establishes) — and
 whose root-of-unity / substrate evaluations reproduce the certified `{3,4}` / DT data?
 
 ---
@@ -136,9 +138,10 @@ does not transfer.
 ## Verdict, scope-labelled
 
 - **CONFIRMED [scope-(a)]:** the fibre-level bar-odd Habiro picture is a *genuinely different object* from
-  the archimedean DT offset (#4583), and its `q=1` vanishing is real — but that vanishing is a **triviality
-  of oddness at the involution's fixed point**, automatic for the entire bar-odd class (pillar 1, new
-  sorry-free Lean).
+  the archimedean DT offset (#4583), and its **bar-fixed-degree** vanishing (the `n=0` constant term,
+  `g 0 = 0`) is real — but that vanishing is a **triviality of oddness at the involution's fixed
+  *degree***, automatic for the entire bar-odd class (pillar 1, new sorry-free Lean). Evaluation at the
+  fixed points `q = ±1` is a distinct statement the Lean does not establish.
 - **HONEST NEGATIVE — the route is NOT a derivation.** It is a vacuous-or-fit dichotomy:
   - *vacuous horn* — a bar-odd element realising only `q=1` centring is content-free (pillar 1);
   - *fit horn* — one reproducing `{3,4}`/DT requires unconstrained root-of-unity interpolation (pillar 2),

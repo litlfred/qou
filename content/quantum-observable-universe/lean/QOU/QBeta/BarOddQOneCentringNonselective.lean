@@ -20,9 +20,11 @@ After the sibling gates:
 
 the picture is **refuted as an archimedean / DT claim** but is said to *survive*
 at the **fibre level**: a Habiro-ring / cyclotomic-completion element `F(q)`
-whose `q ↔ q⁻¹` bar-odd part vanishes at `q = 1` (the bar-fixed point of the
-*formal* variable `q`) **by construction**, whose root-of-unity / substrate
-evaluations would reproduce the certified `{3,4}` / DT data.
+whose `q ↔ q⁻¹` bar-odd part has forced-zero **bar-fixed coefficient degree**
+(`n = 0` / constant term — the fibre reading of "centred at `q = 1`"; evaluation
+at the involution's fixed points `q = ±1` is a distinct statement) **by
+construction**, whose root-of-unity / substrate evaluations would reproduce the
+certified `{3,4}` / DT data.
 
 This file states, sorry-free, the **structural reason there is no DERIVED such
 element — only a vacuous-or-fit dichotomy.**  The `q ↔ q⁻¹` involution acts on a
@@ -99,8 +101,12 @@ theorem barInvolution_fixedDegree_iff (n : ℤ) : (-n = n) ↔ (n = 0) := by
 /-! ## The bar-fixed-degree vanishing (the mechanism the centring rides on) -/
 
 /-- **Bar-fixed-degree vanishing (generic).**  A `q↔q⁻¹`-odd Laurent object has
-zero coefficient at the unique bar-fixed degree `n = 0`.  This is the mechanism
-that makes any genuinely bar-odd object vanish at the fixed point `q = q⁻¹ = 1`. -/
+zero coefficient at the unique bar-fixed degree `n = 0` (its constant term).
+This is the coefficient-level mechanism the centring rides on: the bar involution
+acts on degrees by `n ↦ -n`, whose only fixed degree is `n = 0`, so bar-oddness
+forces the constant term to zero.  (Evaluation of the Laurent object at the
+involution's fixed points `q = ±1` is a *distinct* statement — not what is
+proved here — so the docstring claims only the `n = 0` coefficient fact.) -/
 theorem barAntisym_fixedDegree_zero {R : Type*} [CommRing R] [Invertible (2 : R)]
     {g : ℤ → R} (h : BarAntisym g) : g 0 = 0 := by
   have h0 : g 0 = - g 0 := by simpa using h 0
