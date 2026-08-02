@@ -64,6 +64,30 @@ The proved SU(4) gate `QOU.MassTheory.su4_supermultiplet_dim_vanishes_iff`:
   (~29.8 MeV) from the substrate* (e.g. the ⁴He `8G` hyperbolic volume × a
   substrate volume→energy conversion — `8G·k`, with `k` the open input).
 
+## Scale-free reframe (aligns with the 2026-08-02 FOREVER-GATE lever map)
+
+Per the same-day owner ruling — substrate-q₀ derivation is **FOREVER GATED**, and the
+remaining framework-*derivation* precision lever is the **scale-free** binding closure
+(`docs/coordination/…1ppq lever map`, `2026-08-02-subgoal2-q0-derivation-forever-gated.md`)
+— the per-α analysis splits cleanly:
+
+- **The dimensionful per-α SCALE (~29.8 MeV) is NOT framework-derivable — do not derive
+  it.** `29.8 = 8G·c·m_e` gives `c = 7.956` ("8" to 0.55%), but the "8" has **no
+  structural derivation** — asserting it would be **numerology**, and dimensionful
+  scale-setting is exactly what the FOREVER-GATE rules off-limits. Flagged and refused
+  (not a result).
+- **The SCALE-FREE α-cluster ratio law IS derived and framework-legal** (q₀ *and* m_e
+  cancel): `B(n_α) / B(⁴He) = n_α`. Measured: ⁴He 1.000, ⁸Be 1.996/2, ¹²C 3.257/3,
+  ¹⁶O 4.510/4 → `ratio/n` = 1.000, 0.998, 1.086, 1.127. So the law holds to **~2% for
+  n_α ≤ 2** and drifts **+13% by ¹⁶O** — the drift being the (scale-free, `∝A^{-1/3}`)
+  surface correction. This is the derived content: the α-cluster **count** law from the
+  proved SU(4) gate, with a scale-free surface residual.
+
+**Bottom line:** the α-cluster identification advances exactly the lever the FOREVER-GATE
+ruling names (scale-free binding closure). Its derivable output is the **ratio** law
+`B(n_α) = n_α·B(⁴He)` (+ surface); the absolute per-α MeV scale is gated and must not be
+back-derived by a constant fit.
+
 ## Verdict
 
 The missing super-pairwise extensive term is **structurally identified** as the
