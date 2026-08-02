@@ -1,0 +1,28 @@
+{
+  "schema": "witness/v1-informal",
+  "description": "charm_mass_tower_probe: continuant-ratio tower_law vs observed charm/light hierarchy (derive-then-check).",
+  "producer": "computations/charm_mass_tower_probe.py",
+  "consumes": [
+    "conj:complex-mass-constituent-functional"
+  ],
+  "inputs": {
+    "q0": 1.10998,
+    "X_substrate_bracket_2q": 2.0108971336420476
+  },
+  "results": {
+    "contRatio_5_at_substrate": 5.845440423195949,
+    "contRatio_7_at_substrate": 5.872633773918924,
+    "targets": {
+      "current_mc_over_mu": 577.2727272727273,
+      "current_mc_over_md": 270.2127659574468,
+      "constituent_mc_over_mlight": 4.464285714285714
+    },
+    "X_needed_for_target": {
+      "current_mc_over_mu": 23.98487987372419,
+      "current_mc_over_md": 16.377316032863824,
+      "constituent_mc_over_mlight": 1.6529436091233967
+    }
+  },
+  "verdict": "scope-(a) REFUTED as sole hierarchy mechanism: contRatio(5) ~ 5.85 at substrate X=[2]_q~2.01 gives a nearly geometric per-generation ladder that matches neither scheme (current mc/mu~577 needs X~24, off ~100x; constituent mc/mlight~4.46 is overshot by ~30%). The observed hierarchy is not a constant continuant ratio. Missing steepness must come from the complex-volume / Chern-Simons (Im) part or a non-continuant contRatio - both OPEN; no charm mass is predicted.",
+  "scope": "(a) scope-limited negative: continuant-ratio contRatio alone; does NOT exclude the complex-mass functional (Im/CS part untested here)."
+}
