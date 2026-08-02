@@ -56,6 +56,21 @@ computation gives `|τ| = 4√2 = 2^{5/2}` — a factor of 2 larger. The value
 `c_σ = 2^{−3/4}` is unchanged; only the torsion and the c_σ↔τ relation were
 corrected (the missing per-cusp `√2`).
 
+## The 2-cusp exponent is `p = 3/2` (closes a flagged item)
+
+The `b1-hyperbolic-rows-theorem-audit` Whitehead Step-3 flagged "whether the
+2-cusp link exponent differs" from the knot `p = 3/2` as an open sub-item. A
+sharpened least-squares fit of `log|J_N| = A·N + p·log N + c₀ + a₁/N + a₂/N²`
+(van der Veen positive sum, `A = 4G/2π`, `N ∈ {400,…,3000}`, mpmath dps=50)
+gives
+
+    p = 1.499999996795     ( |p − 3/2| ≈ 3.2 × 10⁻⁹ )
+
+so the 2-cusp exponent is `3/2` to ~9 digits — the **same** as for hyperbolic
+knots. (The 3-cusp Borromean W1 probe likewise gave `p = 1.4993` at `NMAX = 56`.)
+The factor-2 / per-cusp normalization lives entirely in the *constant* `c₀`, not
+in the power of `N`. This item is resolved.
+
 ## Open sub-item (honest)
 
 - The factor `2^{(c−1)/2}` is pinned on `c = 1, 2, 3`. Its **general-`c`
