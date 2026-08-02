@@ -83,9 +83,29 @@ would break under a wrong sign/½ — derive-then-check passed). Honest remainde
 (conjecture class, no instance): up=positive is *inherited* from the ⋈_K strong-
 isospin datum (consistent, not *forced*), and the SU(2)_L gauge/CKM lift is open —
 both reduce to the open SU(3)-flavour sector. So: a real orthogonal ℤ/2 passing GMN,
-NOT yet *the* gauged weak isospin. **Next test (`qou-buxs`):** does this writhe-sign
-T₃ reproduce the mixed-sign Δ_λ pattern `sgn(w₀^{S_λ'})`? Chiral-EFT lit for the
-binding-side template now in `uploads/` (owner: 1011.1343, 1906.12122, s00601-2022).
+NOT yet *the* gauged weak isospin. Chiral-EFT lit for the binding-side template in
+`uploads/` (owner: 1011.1343, 1906.12122, s00601-2022).
+
+**★★★ UPDATE — the two follow-on tests (both landed, both honest negatives that sharpen):**
+- **`qou-buxs` (T₃ vs Δ_λ sign), #4623 — DERIVED negative.** The literal T₃ = sign(net
+  writhe) is the WRONG sign *statistic*: matches 3/3 at n=3 but 8/11 at n=6 (fails the
+  height-4/5 columns). The chiral-EFT template (HKvK p.12: isospin sign = exchange
+  symmetry of the isospin wavefunction) *derives* the correct statistic = crossing-**count**
+  parity `(−1)^C(c,2)`, which **is** `sgn(w₀^{S_λ'})` restated (not new info from T₃). So T₃
+  locates *where* the sign lives (the antisymmetrizer crossings — what PROBE-4 demanded) but
+  is too coarse. Scope-(a): surviving route = a **count-parity** closure, not net-writhe.
+- **`qou-2udt` (T₃ into meson op-selection), #4625 — degeneracy RESOLVED, mass still open.**
+  Signed-writhe `(n,2T₃)` separates all 6 quarks (sorry-free); charm block distinctly
+  selectable from strange on `{π,K,η,D}`. But proved `mass_from_graded_content_cannot_separate`:
+  the mass is NOT a function of `(n,T₃)`.
+
+**⇒ The D-meson mass now gates on exactly TWO objects:**
+1. **Third flavour grade — SU(3)/SU(4)-flavour Cartan** (`qou-dnm1`): `(n,T₃)` still collides
+   D̄⁰{c̄,u} with K⁰{d̄,s} (same multiset); needs strangeness S / charm C. This is the
+   **flavour** SU(3) eightfold-way (global) — DISTINCT from the excluded **colour** SU(3)
+   (#4564, gauge). Owned partly by #4600 (`qou-d7h1`).
+2. **Flux-tube braid word** (`qou-qpj9`): the hyperbolic braid giving the mass; `(n,T₃,flavour)`
+   only pins the Vol=0 carrier.
 
 2. **Generation physical bridge** — the *counting* (3 = odd primes in the
    Bring-genus window N(χ=−6)=9, {3,5,7}; 9 harmonic) is clean given the
