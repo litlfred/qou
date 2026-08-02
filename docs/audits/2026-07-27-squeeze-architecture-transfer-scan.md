@@ -7,6 +7,19 @@ Following the two in-repo volume-conjecture discharges (4₁ #4323, Borromean
 architecture (Riemann sums of `log(2 sin)` against the Clausen primitive +
 saddle + two-envelope squeeze) applies.
 
+> **RESOLVED (2026-08-02, PR #4400).** The owner uploaded the sources
+> (`uploads/0611181v2.pdf` = van der Veen; `uploads/1172-3.pdf` = Habiro,
+> Kōkyūroku 1172) and the third instance is now machine-proved sorry-free
+> for the **2-belt chain `W_{a,2,1,0}`** (same volume 4G):
+> `tendsto_log_whiteheadKashaev_vol` in
+> `QOU/Knot/WhiteheadChainVolume.lean` (bricks W1–W5, milestone qou-k49o).
+> Route refinement over the §1 expectation below: at odd `N = 2M+1` the
+> `b ≥ 2` chain modulus is EXACTLY the phase-free positive sum
+> `N^b (Σ_k S_{M,k})^{c+d}` (vdV Lemma 1) — a 1D squeeze, simpler than the
+> Borromean. The `b = 1` Whitehead link proper carries outer Fresnel
+> phases (vdV Lemma 4, Gaussian/erfc) and stays open in-repo — see
+> `docs/audits/2026-08-02-whitehead-chain-positive-sum-route.md`.
+
 ## 1. Whitehead link (Vol = 4G) — FEASIBLE-CONDITIONAL, blocked on source access
 
 **Verdict: the third instance is very likely one session of work with the

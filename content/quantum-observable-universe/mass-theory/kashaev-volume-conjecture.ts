@@ -24,9 +24,9 @@ export default conjecture({
   authorNotes: [
     {
       kind: "status",
-      date: "2026-07-26",
+      date: "2026-08-02",
       body:
-        "TWO instances of this conjecture are now machine-proved " +
+        "THREE instances of this conjecture are now machine-proved " +
         "sorry-free in-repo. **Figure-eight**: " +
         "`(2π/N)·log⟨4₁⟩_N → 2·Cl₂(π/3) = Vol(4₁)` " +
         "(`QOU.Knot.FigureEightVolume.tendsto_log_kashaev_vol`, " +
@@ -35,10 +35,20 @@ export default conjecture({
         "Vol(𝓑₃)` (`tendsto_log_borromeanKashaev_vol`, " +
         "`BorromeanVolume.lean`, bricks B1–B5, bean qou-jor3; carrier " +
         "defined by the Habiro root-of-unity positive sum, GL2011 App. A " +
-        "— the diagrammatic identification is the cited input). Both are " +
-        "elementary Riemann-sum squeezes against the Clausen primitive — " +
-        "no Borel resummation. Per-link classes `VolumeConjecture41` / " +
-        "`VolumeConjectureBorromean` carry sorry-free instances. The " +
+        "— the diagrammatic identification is the cited input). " +
+        "**Whitehead 2-belt chain** `W_{a,2,1,0}`: " +
+        "`(2π/(2M+1))·log P_M → 4·Cl₂(π/2) = 4G = Vol(𝓑₃)/2` (one " +
+        "regular ideal octahedron; " +
+        "`tendsto_log_whiteheadKashaev_vol`, `WhiteheadChainVolume.lean`, " +
+        "bricks W1–W5, milestone qou-k49o; carrier is van der Veen's " +
+        "Lemma-1 phase-free positive sum at odd N, arXiv:math/0611181, " +
+        "anchor-verified transcription — the diagrammatic identification " +
+        "is the cited input; the b=1 Whitehead link proper still needs " +
+        "vdV's Lemma-4 Gaussian non-cancellation and remains open " +
+        "in-repo). All three are elementary Riemann-sum squeezes against " +
+        "the Clausen primitive — no Borel resummation. Per-link classes " +
+        "`VolumeConjecture41` / `VolumeConjectureBorromean` / " +
+        "`VolumeConjectureWhiteheadChain` carry sorry-free instances. The " +
         "GENERAL conjecture stated by this block remains open (8₁₁ is the " +
         "corpus's one remaining open instance); the per-family typeclass " +
         "rationale below is exactly the mechanism that lets proved " +
