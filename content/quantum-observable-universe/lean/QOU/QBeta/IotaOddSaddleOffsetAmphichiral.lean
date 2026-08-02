@@ -1,6 +1,7 @@
 import Mathlib.Tactic
 import Mathlib.LinearAlgebra.Prod
-import Mathlib.Algebra.Invertible.Basic
+import Mathlib.Algebra.Group.Invertible.Basic
+import Mathlib.Algebra.GroupWithZero.Invertible
 import QOU.QBeta.FiveTwoDTSpectrumSplit
 
 /-!
