@@ -930,3 +930,20 @@ not a bare cyclotomic-completion tail. Lean `HabiroMagnitudeA3.lean` sorry-free 
 0, no trivial-true/native_decide/axiom); probe/witness `habiro-magnitude-a3.witness.json`; audit
 `2026-08-01-deltalambda-a3-magnitude-habiro-fibre-element.md`. Nothing wired; `μ₃/c₃`/AME/CODATA/
 `q₀` never inverted; `free_parameters = 0`.
+
+## 2026-08-02 · A=3 magnitude ROUTE 6 (frame/units audit) — headline CONCEDED to ROUTE 5
+
+PR #4491 (`claude/mu3-target-frame-robustness-2026-08-01`) audited μ₃'s well-posedness from a
+frame/units angle. Its **headline over-claimed** and is **conceded to ROUTE 5** (`a9c2ee94`): the
+subtracted ladder `ρ_grad = [A]_q!/[2]_q!` is *pinned* to the coinvariant graded dimension (Poincaré
+series, #4300), so the "1.73× baseline-class spread" (balanced-quantum / classical alternatives) is
+**illegitimate** — μ₃ is well-posed at ~10% (isospin ±8%, `r* ∈ [1.50,1.71]`, cond-#≈8), not an
+artifact. Score derived `c₃` by **sign + `r* ∈ [1.50,1.71]`**, not 1.585 to 3 sig figs. **Survivors**
+(independent of the retracted headline): the A=3/A=4 **order-separation** prune (higher-cluster-order
+route cannot close the gap — bounded `|aₖ|≤2` tail ≤0.7% ≪ miss; needs a new leading-order Δ_λ
+channel); the cond-#≈8 "report on the physical ratio" discipline (= ROUTE 5); and a **units-labelling
+flag** (borromean probe:188 compares `c₃` MeV to `μ₃` dimensionless, "read as MeV"). Lean
+`Mu3BaselineFragility` / `A3PrecisionOrderSeparation` / `A4PrecisionOrderSeparation` /
+`A3UnitsConsistency` (sorry-free). The **C_knot / Δ_λ magnitude** remains open (bean `qou-3q7t`); the
+**binding weight is pinned to the Markov `y_λ`** (W_λ excluded, conjugation symmetry — PR #4543,
+`BindingWeightMarkovPinning`). Nothing wired; `μ₃/c₃`/AME/CODATA/`q₀` never inverted.
