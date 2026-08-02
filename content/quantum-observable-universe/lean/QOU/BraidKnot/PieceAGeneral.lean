@@ -176,7 +176,8 @@ same-column ordered pairs — together every ordered pair of distinct cells. Giv
 it, Piece A is immediate from the reduction. -/
 
 /-- The pair-counting identity: the arm·leg, i·j, left and above sums account for
-every ordered distinct-cell pair. Proof plan (bean `qou-o5xj`): express `armZ`/`legZ`
+every ordered distinct-cell pair. Proved sorry-free by `pairCount_holds` below
+(bean `qou-o5xj` closed); the proof: express `armZ`/`legZ`
 as `Finset.card` of arm/leg filters, expand the product to a triple sum
 `Σ_c Σ_R Σ_B`, collapse the `c`-sum (`c = (R.1, B.2)` is forced) to
 `#{(R,B) : R.1<B.1 ∧ B.2<R.2}`, likewise `Σ(i·j) = #{(A,L) UL/LR}`, then
@@ -189,8 +190,10 @@ def PairCount (μ : YoungDiagram) : Prop :=
   = (μ.cells.card : ℤ) ^ 2 - (μ.cells.card : ℤ)
 
 /-- **Piece A, given the pair-counting identity.** `Σ hook² = Σ content² + n²`.
-Fully sorry-free modulo the single `PairCount` hypothesis (bean `qou-o5xj`);
-everything else — the reflections and the separable reduction — is machine-checked. -/
+Modulo the single `PairCount` hypothesis — which is itself discharged
+unconditionally by `pairCount_holds` (bean `qou-o5xj` closed), giving the
+sorry-free unconditional `pieceA` below; everything else — the reflections and
+the separable reduction — is machine-checked. -/
 theorem pieceA_of_pairCount (μ : YoungDiagram) (hpc : PairCount μ) :
     ∑ c ∈ μ.cells, (hookZ μ c) ^ 2
     = (∑ c ∈ μ.cells, (contentZ c) ^ 2) + (μ.cells.card : ℤ) ^ 2 := by
