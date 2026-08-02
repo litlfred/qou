@@ -248,6 +248,7 @@ export default chapter({
         "terminal-morphism-brings",
         "universality-general",
         "archimedean-yekutieli",
+        "lattice-qcd-from-qou",
         "observation-brings",
       ],
     }),
