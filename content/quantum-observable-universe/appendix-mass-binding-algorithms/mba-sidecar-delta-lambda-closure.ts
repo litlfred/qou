@@ -2,22 +2,21 @@ import { algorithm } from "../../schema/builders";
 
 export default algorithm({
   label: "alg:delta-lambda-closure",
-  title: "$\\Delta_\\lambda$ closure ansätze (Track-A blocker — open gate)",
+  title: "$\\Delta_\\lambda$ per-partition value (PROVED $(-1)^{n(\\lambda)}\\dim V_\\lambda$); many-body magnitude open",
   uses: [
     "rem:term6-binding-density",
-    "conj:crystal-graph-realization",
   ],
   computation: {
     engine: "python+mpmath",
-    script: "computations/option_e_v9_all_symmetries.py",
-    status: "experimental",
+    script: "computations/delta_lambda_value_witness.py",
+    witness: "computations/delta-lambda-witness.json",
+    status: "verified",
   },
   tags: [
     "mba",
     "sidecar",
     "delta-lambda",
-    "open-gate",
-    "option-e",
-    "crystal-graph",
+    "value-proved",
+    "magnitude-open",
   ],
 });
