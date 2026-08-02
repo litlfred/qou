@@ -434,6 +434,13 @@ import QOU.QBeta.BerezinianBarOddIsolation
 -- unique lift source but its size is unconstrained — r* is a fit absent the DM-cubic derivation of
 -- B,C (qou-jqof). Magnitude complement to the parity bricks (Isolation/CrossTermParity).
 import QOU.QBeta.SuperBerezinianA3Magnitude
+-- A=3 off-block DERIVATION (sharpens Route 2): the transpose-eigenbasis rotation of the
+-- bar-self-adjoint H₃(q) mass endomorphism PINS the off-blocks B=C=(a−b)/2, giving the
+-- even-face factor 1−((a−b)/(a+b))² ≤ 1 (magnitudeFactor_le_one, invariant sq_nonneg).
+-- So the branching Schur complement is a REDUCTION; the observed lift r*≈1.585>1 is
+-- structurally UNREACHABLE (observed_lift_unreachable) and requires the anti-self-adjoint
+-- (GGM/Stokes) off-block the branching leaves free (A3LiftFromDerivedOffBlock, no instance).
+import QOU.QBeta.A3OffBlockDerivation
 -- c₃ Faddeev tetraplectic→combinatorics reduction backbone: the q²-shift functional
 -- equation of the single-lattice product ∏(1+q^{2n+1}x) (telescoping), the recurrence
 -- that pins the e_k = q^{k²}/(q²;q²)_k coefficients (Python witness cross-checks k≤6).
