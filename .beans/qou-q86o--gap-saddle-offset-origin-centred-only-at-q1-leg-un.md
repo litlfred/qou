@@ -1,10 +1,11 @@
 ---
 # qou-q86o
 title: 'GAP: saddle offset ''origin-centred only at q=1'' leg untested — certified DT Stokes series diverge at q=1'
-status: todo
+status: in-progress
 type: task
+priority: normal
 created_at: 2026-08-02T13:46:14Z
-updated_at: 2026-08-02T13:46:14Z
+updated_at: 2026-08-02T14:34:11Z
 ---
 
 ## Context
@@ -48,3 +49,33 @@ Refute-friendly: if no ι-covariant object valid at q=1 reproduces the `{3,4}` d
 the honest verdict is that the DT offset lives at q→0, not q=1 — a scope-(a)
 narrowing of the picture, not a structural exclusion.
 
+## Update 2026-08-02 (#4583 — archimedean leg ANSWERED; fibre leg remains open)
+
+Probe [`saddle_offset_zero_location_probe.py`](../computations/probes/saddle_offset_zero_location_probe.py)
++ Lean [`SaddleOffsetBarGrade.lean`](../content/quantum-observable-universe/lean/QOU/QBeta/SaddleOffsetBarGrade.lean)
+(sorry-free) + audit [`2026-08-02-saddle-offset-zero-location-qou-q86o.md`](../docs/audits/2026-08-02-saddle-offset-zero-location-qou-q86o.md).
+
+- **What is q≈0.08?** q\* = **0.08931**, truncation-STABLE (converges by N=6,
+  spread 7e-4), pinned by the quadratic balance `1−9q−28q²=0` ⇒ `(−9+√193)/56`.
+  It is **NOT a substrate quantity** (misses q₀−1, ℏ_q, ℏ_q², 1/q₀, radius all
+  by ≫1%; closest ℏ_q at ~10%). It is the DT series' **own** convergence-region
+  root, set by the low-order Stokes coeffs {9,28}. → honest negative.
+- **Does q=1 survive?** As an *independent DT placement*, **NO** [scope-(a)
+  refutation, Lean-backed]: the certified `o(q)=c⁺−c⁻` has `o(0)=1≠0`, so it is
+  a cross-chirality difference, NOT a bar-covariant `f(q)−f(q⁻¹)`; its q=1
+  vanishing is only the *trivial* bar-fixed-point vanishing (#4577's gate applied
+  to q), a different object. `barAntisym_const_zero` +
+  `certified_offset_not_barAntisym` prove this.
+- **c₃ hook?** **Absent.** Offset diverges at q₀ (inaccessible); structurally the
+  offset is built from the **resummed** Stokes constants (geometric growth,
+  radius ~0.6), whereas c₃ is a coefficient of the **divergent** Φ_5₂
+  (Fantini-Wheeler Borel domain) — opposite sides of the Borel transform, no
+  identity. Nothing fitted, nothing wired.
+
+**Still OPEN (re-scoped, NOT closed):** the **fibre-level** reading — the owner's
+"centred at q=1" as the bar-fixed point of the *formal* q, where a bar-covariant
+Habiro/fibre element vanishes by construction (AGENTS.md Im(q) banner). The q→0
+DT series neither tests nor refutes this; it is a *different object*. Next honest
+step: exhibit (or refute) a fibre-level Habiro element whose bar-odd part vanishes
+at q=1 AND whose q→0 archimedean evaluation reproduces the `{3,4}` datum — the
+route to the QBeta c₃ Borel/Habiro program, not the archimedean sandwich.
