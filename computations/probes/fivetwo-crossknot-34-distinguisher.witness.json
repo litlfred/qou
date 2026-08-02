@@ -1,0 +1,121 @@
+{
+  "engine": "fractions-exact",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-02T09:22:51.319834+00:00",
+  "commitSha": "5933d0447194ba2d15bfd6c2ff85e1c7d99a2180",
+  "assertions": [
+    {
+      "name": "scalar_universality_across_chirality",
+      "computed": 0.0,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "whether chiral 5₂'s S± share one q-exact (S12+S21)/S11 — expected FALSE (spectrum splits across chirality)"
+    },
+    {
+      "name": "dt_spectrum_is_3_4",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "5₂ leading Stokes factorization carries {3,4}"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 12,
+  "computation": "fivetwo-crossknot-34-distinguisher",
+  "scriptFile": "fivetwo_crossknot_34_distinguisher.py",
+  "scriptHash": "b5df0eda215f",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "5₂ cross-knot {3,4} structural distinguisher for the scalar-symmetry-constant vs DT-spectrum fork (scalar A_ω=3 / A=3 vs spectrum-reflecting). Reuses the certified 5₂ Stokes pair; tests whether the two chiral Stokes matrices S± share one q-exact (S12+S21)/S11 constant (ι-even) or split the DT spectrum {3,4} across chirality (ι-odd, the grade the bar-odd observable lives in). q₀-independent — dodges the σ_A≈40% 4₁ precision ceiling.",
+  "contentBlock": "conj:im-q-physical-role",
+  "data": {
+    "certified_leading_matrices": {
+      "S_plus_0": [
+        [
+          "1",
+          "4",
+          "0"
+        ],
+        [
+          "0",
+          "1",
+          "0"
+        ],
+        [
+          "-3",
+          "-9",
+          "1"
+        ]
+      ],
+      "S_minus_0": [
+        [
+          "1",
+          "0",
+          "3"
+        ],
+        [
+          "-4",
+          "1",
+          "-3"
+        ],
+        [
+          "0",
+          "0",
+          "1"
+        ]
+      ],
+      "provenance": "qbeta_g3_5two_stokes_sandwich.py K1/K2/K3 ✓, unflipped"
+    },
+    "symmetry_constant_scan": {
+      "S_plus": {
+        "trace": "q-dependent"
+      },
+      "S_minus": {
+        "trace": "q-dependent"
+      },
+      "direct_4one_clone_S12plusS21_over_S11": {
+        "S_plus": {
+          "q_exact_const": false,
+          "value": null
+        },
+        "S_minus": {
+          "q_exact_const": false,
+          "value": null
+        }
+      }
+    },
+    "dt_spectrum": {
+      "from_S_plus_96_constant": "4",
+      "from_S_minus_97_constant": "3",
+      "spectrum": [
+        "3",
+        "4"
+      ],
+      "eq98_analogue": "5₂ carries both {3,4}; 4₁'s single S⁺(0)=[[1,3],[0,1]] carries only 3 (amphichiral degeneracy)"
+    },
+    "distinguisher": {
+      "iota_even_scalar_universal": false,
+      "iota_odd_chirality_split": [
+        "4",
+        "3"
+      ],
+      "iota_odd_difference": "1",
+      "verdict_key": "refutes-scalar-universality",
+      "bar_odd_grade_ref": "BarOddAntisymOffDiagonal.omega_iota_odd (ι-odd; vanishes on amphichiral ι-fixed locus)"
+    },
+    "verdict": "5₂ REFUTES the single-scalar-symmetry-constant reading [scope-(a), structural]. Unlike amphichiral 4₁ — where S⁺≅S⁻ under ι and one scalar (S12+S21)/S11 = 3 serves both — chiral 5₂ splits the DT spectrum [Fraction(3, 1), Fraction(4, 1)] across the two Stokes matrices (S⁺ carries 4, S⁻ carries 3). The bar-odd observable ω = βp − β⁻¹q is ι-ODD (BarOddAntisymOffDiagonal.omega_iota_odd) and vanishes on the amphichiral (ι-fixed) locus, so it cannot be carried by the ι-EVEN symmetric-sum constant that gives the scalar 3. The 5₂ data are therefore consistent with a SPECTRUM-reflecting / chirality-split reading, NOT the universal scalar A_ω=3. This neither confirms A=2 (κ_shape) nor A=3 (A_ω·κ_pot) as a universal scalar: the correct object is per-chirality (the {3,4} split), which at 4₁ degenerates to the single 3 because the two chiralities coincide. Whether the OBSERVABLE inherits the sum (3+4)/… , the S⁺ member (4), or the S⁻ member (3) is the residual normalization fork (qou-yh67); 5₂ shows it is a CHOICE AMONG SPECTRUM MEMBERS, not a knot-independent constant.",
+    "discipline": "structural; exact Fraction q-series; no fit; no c_k wired; no axiomatization; scope-(a); q₀-independent (dodges σ_A≈40% ceiling); answer NOT picked to match 4₁"
+  }
+}
