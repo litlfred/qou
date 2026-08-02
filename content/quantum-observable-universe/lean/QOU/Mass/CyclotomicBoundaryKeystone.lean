@@ -4,6 +4,8 @@ import Mathlib.Analysis.Complex.Polynomial.Basic
 import Mathlib.Tactic.Ring
 import Mathlib.Tactic.NormNum
 import Mathlib.Tactic.FieldSimp
+import Mathlib.Tactic.ComputeDegree
+import Mathlib.Tactic.LinearCombination
 
 /-!
 # QOU.Mass.CyclotomicBoundaryKeystone — the Habiro-tail cyclotomic boundary at n = 5
@@ -34,6 +36,9 @@ The binding `q`-deformation of the na-Stokes period `S(n) = Σ_{λ⊢n} dim_q(λ
 * `C6ℂ_eq` — `C6ℂ` is `C6core` evaluated over `ℂ`.
 * `unit_circle_sum_real` — if `‖z‖ = 1` then `z + z⁻¹` is real.
 * `Ctil_disc` — the discriminant datum `Δ(C̃) = −44208 < 0`.
+* `Ctil_no_four_real_roots`, `Ctil_has_nonreal_root` — `C̃` has a non-real root,
+  proved from scratch via the explicit 16-term discriminant identity (see the
+  section below); no `sorry`, no axiom.
 * `C6core_offcircle_root` — `C₆` has a root off the unit circle (**derived**, via
   the reciprocal transform, from `Ctil_has_nonreal_root` alone).
 * `C6core_non_cyclotomic` — `C₆` is **not** a product of cyclotomic polynomials
@@ -43,18 +48,27 @@ The binding `q`-deformation of the na-Stokes period `S(n) = Σ_{λ⊢n} dim_q(λ
   `Complex.norm_eq_one_of_pow_eq_one`, both in Mathlib) — and does **not** need the
   hard Kronecker converse.
 
-## The single named residual gap (honest, not laundered)
+## The former residual gap — now closed (fully sorry-free)
 
-The whole n = 6 non-cyclotomicity chain rests, sorry-free, on **one** classical
-input: `Ctil_has_nonreal_root` (`C̃` has a non-real root).  It is immediate
-mathematically from `Δ(C̃) < 0` (`Ctil_disc`) — a real polynomial with all real
-roots has non-negative discriminant `∏_{i<j}(rᵢ−rⱼ)²` — but Mathlib exposes
-`Polynomial.disc` only as a resultant, with no product-of-root-differences bridge,
-and no elementary substitute works for this quartic (Newton's inequalities and
-Descartes' rule both pass).  It therefore carries a single `sorry` with a `-- Ref:`;
-nothing the framework depends on rests on it, and the conjecture block stays an open
-`conjecture`.  This closes the **Tier-2, n = 6** case modulo exactly one discriminant
-fact.  The full Tier-2 claim — `D(n)` non-cyclotomic for *all* `n ≥ 6` — is
+`Ctil_has_nonreal_root` (`C̃` has a non-real root) was previously the file's
+single `sorry`.  It is now **proved** with no `sorry` and no axiom.  Mathlib has
+no quartic-discriminant `= ∏_{i<j}(rᵢ−rⱼ)²` bridge, so the fact is derived from
+scratch:
+
+* `Ctil_no_four_real_roots` — for reals `a,b,c,d` with the Vieta data of `C̃`
+  (`Σ = −4`, `Σ₂ = 2`, `Σ₃ = 10`, `Π = −8`), the Vandermonde square
+  `∏_{i<j}(rᵢ−rⱼ)²` equals the explicit **16-term** discriminant polynomial in the
+  elementary symmetric functions (a pure `ring` identity), which at those Vieta
+  values is `Δ(C̃) = −44208 < 0`; a Vandermonde square of reals is `≥ 0`, so no
+  four reals are the roots of `C̃`.
+* `Ctil_has_nonreal_root` — `C̃` is monic of degree 4, hence over `ℂ` it splits
+  into four roots `a,b,c,d` (`IsAlgClosed.splits_codomain`,
+  `eq_prod_roots_of_monic_of_splits_id`, `Multiset.card_eq_four`).  Were all four
+  real, Vieta feeds `Ctil_no_four_real_roots` to a contradiction; so some root has
+  nonzero imaginary part.
+
+Consequently the entire **Tier-2, n = 6** non-cyclotomicity chain is sorry-free.
+The full Tier-2 claim — `D(n)` non-cyclotomic for *all* `n ≥ 6` — is
 *verified through n = 11* and remains **not proved** (out of scope here).
 -/
 
@@ -194,14 +208,84 @@ theorem unit_circle_sum_real (z : ℂ) (hz : ‖z‖ = 1) :
     complex roots of `C̃`). -/
 theorem Ctil_disc : (-44208 : ℤ) < 0 := by norm_num
 
-/-- **Classical input 1** — `C̃` has a non-real root.  Immediate from `Δ(C̃) < 0`
-    (`Ctil_disc`): a real polynomial with all real roots has discriminant
-    `∏_{i<j}(rᵢ−rⱼ)² ≥ 0`, so a negative discriminant forces a non-real root.
-    Mathlib lacks the general `discriminant = ∏(rᵢ−rⱼ)²` bridge for quartics. -/
--- Ref: [manuscript] Ch. mass-theory §cyclotomic-boundary (discriminant sign ↔ real/complex roots)
+set_option maxHeartbeats 4000000 in
+/-- Quartic discriminant identity `∏_{i<j}(rᵢ−rⱼ)² = Δ(C̃)` written in the
+    elementary symmetric functions of `a,b,c,d` (16 terms; a pure `ring`
+    identity), evaluated at the Vieta values of `C̃`: if four reals are the
+    roots of `C̃` (`Σ = −4`, `Σ₂ = 2`, `Σ₃ = 10`, `Π = −8`) then their
+    Vandermonde square equals `Δ(C̃) = −44208 < 0` (`Ctil_disc`) — impossible,
+    since a Vandermonde square of reals is `≥ 0`.  Hence `C̃` has no four real
+    roots. -/
+theorem Ctil_no_four_real_roots (a b c d : ℝ)
+    (h1 : a + b + c + d = -4)
+    (h2 : a*b + a*c + a*d + b*c + b*d + c*d = 2)
+    (h3 : a*b*c + a*b*d + a*c*d + b*c*d = 10)
+    (h4 : a*b*c*d = -8) : False := by
+  have hk : ((a-b)*(a-c)*(a-d)*(b-c)*(b-d)*(c-d))^2 =
+    -27*(a + b + c + d)^4*(a*b*c*d)^2 + 18*(a + b + c + d)^3*(a*b + a*c + a*d + b*c + b*d + c*d)*(a*b*c + a*b*d + a*c*d + b*c*d)*(a*b*c*d) - 4*(a + b + c + d)^3*(a*b*c + a*b*d + a*c*d + b*c*d)^3 - 4*(a + b + c + d)^2*(a*b + a*c + a*d + b*c + b*d + c*d)^3*(a*b*c*d) + (a + b + c + d)^2*(a*b + a*c + a*d + b*c + b*d + c*d)^2*(a*b*c + a*b*d + a*c*d + b*c*d)^2 + 144*(a + b + c + d)^2*(a*b + a*c + a*d + b*c + b*d + c*d)*(a*b*c*d)^2 - 6*(a + b + c + d)^2*(a*b*c + a*b*d + a*c*d + b*c*d)^2*(a*b*c*d) - 80*(a + b + c + d)*(a*b + a*c + a*d + b*c + b*d + c*d)^2*(a*b*c + a*b*d + a*c*d + b*c*d)*(a*b*c*d) + 18*(a + b + c + d)*(a*b + a*c + a*d + b*c + b*d + c*d)*(a*b*c + a*b*d + a*c*d + b*c*d)^3 - 192*(a + b + c + d)*(a*b*c + a*b*d + a*c*d + b*c*d)*(a*b*c*d)^2 + 16*(a*b + a*c + a*d + b*c + b*d + c*d)^4*(a*b*c*d) - 4*(a*b + a*c + a*d + b*c + b*d + c*d)^3*(a*b*c + a*b*d + a*c*d + b*c*d)^2 - 128*(a*b + a*c + a*d + b*c + b*d + c*d)^2*(a*b*c*d)^2 + 144*(a*b + a*c + a*d + b*c + b*d + c*d)*(a*b*c + a*b*d + a*c*d + b*c*d)^2*(a*b*c*d) - 27*(a*b*c + a*b*d + a*c*d + b*c*d)^4 + 256*(a*b*c*d)^3 := by
+    ring
+  have hval : ((a-b)*(a-c)*(a-d)*(b-c)*(b-d)*(c-d))^2 = -44208 := by rw [hk, h1, h2, h3, h4]; norm_num
+  have hpos : (0:ℝ) ≤ ((a-b)*(a-c)*(a-d)*(b-c)*(b-d)*(c-d))^2 := sq_nonneg _
+  rw [hval] at hpos
+  norm_num at hpos
+
+/-- **`C̃` has a non-real root** (sorry-free).  `C̃ = X⁴+4X³+2X²−10X−8` is monic
+    of degree 4, so over `ℂ` it splits into four roots `a,b,c,d`
+    (`IsAlgClosed.splits_codomain` + `eq_prod_roots_of_monic_of_splits_id`).  If
+    all four were real, Vieta gives `Σ = −4, Σ₂ = 2, Σ₃ = 10, Π = −8`, whence
+    `Ctil_no_four_real_roots` derives `False` from `Δ(C̃) = −44208 < 0`.  So some
+    root has nonzero imaginary part.  This is the classical fact
+    `Δ < 0 ⇒` non-real root, here proved from scratch (Mathlib has no quartic
+    discriminant bridge) via the explicit 16-term symmetric identity. -/
 theorem Ctil_has_nonreal_root :
     ∃ y : ℂ, Ctilℂ y = 0 ∧ y.im ≠ 0 := by
-  sorry
+  by_contra hcon
+  push_neg at hcon
+  set P : ℂ[X] := X ^ 4 + C 4 * X ^ 3 + C 2 * X ^ 2 - C 10 * X - C 8 with hPdef
+  have hPeval : ∀ y : ℂ, P.eval y = Ctilℂ y := by
+    intro y
+    rw [hPdef]
+    simp only [Ctilℂ, eval_add, eval_sub, eval_mul, eval_pow, eval_C, eval_X]
+  have hPmonic : P.Monic := by rw [hPdef]; monicity!
+  have hPdeg : P.natDegree = 4 := by rw [hPdef]; compute_degree!
+  have hsplit : Splits (RingHom.id ℂ) P := IsAlgClosed.splits_codomain P
+  have hcard : P.roots.card = 4 := by rw [splits_iff_card_roots.mp hsplit, hPdeg]
+  obtain ⟨a, b, c, d, hroots⟩ := Multiset.card_eq_four.mp hcard
+  have hfacP : P = (X - C a) * (X - C b) * (X - C c) * (X - C d) := by
+    have h := eq_prod_roots_of_monic_of_splits_id hPmonic hsplit
+    rw [hroots] at h
+    simp only [Multiset.insert_eq_cons, Multiset.map_cons, Multiset.map_singleton,
+      Multiset.prod_cons, Multiset.prod_singleton] at h
+    rw [h]; ring
+  have hf : ∀ y : ℂ, Ctilℂ y = (y - a) * (y - b) * (y - c) * (y - d) := by
+    intro y
+    rw [← hPeval, hfacP]
+    simp only [eval_mul, eval_sub, eval_X, eval_C]
+  have hia : a.im = 0 := hcon a (by rw [hf]; ring)
+  have hib : b.im = 0 := hcon b (by rw [hf]; ring)
+  have hic : c.im = 0 := hcon c (by rw [hf]; ring)
+  have hidd : d.im = 0 := hcon d (by rw [hf]; ring)
+  have hae : a = (a.re : ℂ) := by apply Complex.ext <;> simp [hia]
+  have hbe : b = (b.re : ℂ) := by apply Complex.ext <;> simp [hib]
+  have hce : c = (c.re : ℂ) := by apply Complex.ext <;> simp [hic]
+  have hde : d = (d.re : ℂ) := by apply Complex.ext <;> simp [hidd]
+  set α := a.re with hαdef
+  set β := b.re with hβdef
+  set γ := c.re with hγdef
+  set δ := d.re with hδdef
+  have hr : ∀ x : ℝ, x^4 + 4*x^3 + 2*x^2 - 10*x - 8 = (x-α)*(x-β)*(x-γ)*(x-δ) := by
+    intro x
+    have h := hf (x : ℂ)
+    rw [hae, hbe, hce, hde] at h
+    simp only [Ctilℂ] at h
+    refine Complex.ofReal_injective ?_
+    push_cast
+    linear_combination h
+  refine Ctil_no_four_real_roots α β γ δ ?_ ?_ ?_ ?_
+  · linear_combination (1/2) * hr 0 - (1/2) * hr 1 - (1/6) * hr (-1) + (1/6) * hr 2
+  · linear_combination hr 0 - (1/2) * hr 1 - (1/2) * hr (-1)
+  · linear_combination -(1/2) * hr 0 + hr 1 - (1/3) * hr (-1) - (1/6) * hr 2
+  · linear_combination -hr 0
 
 /-- **Reduction (sorry-free)** — there is a root of `C₆` off the unit circle,
     reduced to `Ctil_has_nonreal_root` alone.  A non-real root `y` of `C̃` lifts,
