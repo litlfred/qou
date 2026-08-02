@@ -61,7 +61,20 @@ sign side.
 **Anti-fit.**  `μ₃ > 0` enters only as a hypothesis; no AME quantity is fitted, no
 normalization is wired.  The `Δ²g` measurement is q₀-only, 0 fit.
 
-Probe: `computations/deltalambda/mu3_cluster_modularity_probe.py`.
+**Measurement provenance (corrected 2026-08-02).**  This file adds **no probe** — the
+`Δ²g` values quoted above are not measured here.  They are corroborated on `main` by
+`computations/deltalambda/ursell_slot_alignment_probe.py`, which reproduces the `c₃`
+baseline (−1.769 T, −1.405 ³He) exactly, and are consumed by
+`computations/deltalambda/triangle_bond_submodularity_probe.py` (GAP-3), which tests
+the non-adjacent (1–3) bond flagged here as the untested derived lever.
+
+**Slot correction (from the merged GAP-7 work).**  The `μₖ` moments are indexed by
+*particle* count while `Δᵐg` is indexed by *bond* count, so the triangle's correct
+assembly is `μ₃-slot = ∑Δ²g + Δ³g` (`QOU.MassTheory.UrsellSlotAlignment.triangle_moment_decomp`).
+That correction roughly **doubles the magnitude but preserves the sign**, so the
+obstruction proved below survives it and the μ₃ gap widens; the equivalence
+`c₃ > 0 ⟺ Δ²g < 0` proved here is unaffected, since it is an identity in the
+two-bond variables, not a claim about which slot the residual occupies.
 -/
 import Mathlib.Tactic
 
