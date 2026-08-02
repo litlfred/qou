@@ -12,7 +12,7 @@ giving a structural decomposition of mass and binding energy.
 The conjecture itself is encoded as a `class` (AGENTS.md §3b-cond);
 `sorry` in any concrete instance is understood as **conjecture**, not
 missing proof.  Downstream conditional results take
-`[KnotFactorFrobeniusPairing]` as a hypothesis and remain
+`[KnotFactorFrobeniusPairing R]` as a hypothesis and remain
 `theorem`/`proposition`.
 
 LaTeX label: `conj:knot-factor-frobenius-pairing`
@@ -73,7 +73,7 @@ class KnotFactorFrobeniusPairing (R : Type*) [CommRing R] where
       markov_trace_q q b = frobenius_pairing_q q b knot_factor
 
 /-- **Downstream conditional theorem (AGENTS.md §3b-cond).**
-    Conditional on `[KnotFactorFrobeniusPairing]`, the Markov trace
+    Conditional on `[KnotFactorFrobeniusPairing R]`, the Markov trace
     of any closed braid factors through the Frobenius pairing with
     the knot factor.  Fully verified by Lean once an instance is
     fixed. -/
@@ -87,7 +87,7 @@ theorem markov_trace_factors {R : Type*} [CommRing R] [inst : KnotFactorFrobeniu
 -- constant `0` so that `factorisation_holds` closed by `rfl` — its own
 -- docstring admitted it "encodes none of the conjectural content".  A
 -- global vacuous instance is worse than none here: it silently discharges
--- the `[KnotFactorFrobeniusPairing]` §3b-cond hypothesis for every
+-- the `[KnotFactorFrobeniusPairing R]` §3b-cond hypothesis for every
 -- downstream block with the zero model (AGENTS.md §3b-tax + Anti-Laundering
 -- Rule).  `markov_trace_factors` remains a valid conditional theorem —
 -- it takes the class as an explicit hypothesis and needs no global instance.
