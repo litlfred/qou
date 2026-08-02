@@ -1,0 +1,34 @@
+{
+ "schema": "probe-witness/v1",
+ "probe": "gswz_52_galois_norm_probe",
+ "engine": "python3-sympy-exact",
+ "scriptFile": "gswz_52_galois_norm_probe.py",
+ "commitSha": "9f2ac1068d9d2f6df35ce947ce3c8fa6f1fd2d06",
+ "beans": [
+  "qou-xx9f",
+  "qou-9p9y"
+ ],
+ "source": "GZ SIGMA 20 (2024) 055 \u00a79 end (uploads/2111.06645v3.pdf); GSWZ (282) (uploads/2412.04241v2.pdf)",
+ "checks": {
+  "norm_delta_is_minus_23": true,
+  "triple_product_coeffs_rational": true,
+  "triple_product_5_integral_to_h3": true,
+  "triple_product_denominator_support_in_2_3_23": true
+ },
+ "norm_series_coeffs": [
+  "1",
+  "-615/184",
+  "8709543/1557376",
+  "-1793137595/286557184"
+ ],
+ "denominator_support": [
+  2,
+  23
+ ],
+ "e_factor_shape_identification": {
+  "statement": "the (287) quotient mismatch has the GZ E-factor signature: h^1 present, h^2 absent (B_3 = 0; matches x^2 passing with the h^1 solve alone), h^3 residual (B_4 term)",
+  "implied_relations": "C_1 = -12*lambda_1; C_3 = 720*mu_3 (up to sign conventions)",
+  "status": "shape-identified; values OPEN (GZ print C_r for 4_1 only, their \u00a78.1)"
+ },
+ "scope": "scope-(a): Galois triple-product integrality of the printed 5_2 series verified exactly to h^3; E-factor shape identification recorded for xx9f; C_r value extraction open"
+}

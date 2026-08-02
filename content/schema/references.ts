@@ -153,6 +153,20 @@ export const references: CSLData[] = [
     note: "arXiv:2411.03801 (posted 2024-11-06, 24pp, math.GT). Proves the Dimofte–Garoufalidis 1-loop conjecture — the constant (1-loop) term of the DG power series equals the adjoint Reidemeister torsion — for hyperbolic two-bridge knots, by combining Ohtsuki–Takata with an explicit computation. 6_2 is two-bridge (fraction 11/3) so the theorem covers it; the QOU deuteron closure. Used as the literature backing for the ρ_F=ν_SDP falsifiable probe (bean qou-r307): the adjoint torsion IS the topological density selecting the geometric connection. Authors + title + arXiv id verified via arXiv listing + abstract (WebSearch, 2026-08-02); PDF body 403 in-sandbox, no DOI (preprint).",
   }),
 
+  // ── Pandey–Wong 2023 — 1-loop = torsion for fundamental shadow links (covers the Borromean rings) ──
+  ref({
+    id: "pandey-wong-2023",
+    type: "article",
+    title: "Geometry of fundamental shadow link complements and applications to the 1-loop conjecture",
+    author: [
+      { family: "Pandey", given: "Tushar" },
+      { family: "Wong", given: "Ka Ho" },
+    ],
+    issued: { "date-parts": [[2023]] },
+    URL: "https://arxiv.org/abs/2308.06643",
+    note: "arXiv:2308.06643 (math.GT). Proves the Dimofte–Garoufalidis 1-loop conjecture for fundamental shadow link complements — which include the Borromean rings (two regular ideal octahedra) — so exp(2c₀) = 1/|det J_NZ(𝓑₃)| is theorem-backed, not conjecture-conditional. Cited as [PW] in garoufalidis-yoon-2024 (uploads/2411.03801v2.pdf, bibliography). Registered 2026-08-02 for the borromean 1-loop/NZ-torsion witness re-scope (bean qou-pvuw).",
+  }),
+
   // ── Ohtsuki–Takata 2015 — Kashaev asymptotics ↔ twisted Reidemeister torsion of two-bridge knots ──
   ref({
     id: "ohtsuki-takata-2015",

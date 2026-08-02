@@ -609,3 +609,37 @@ invariant-theory side of Sₙ Schur–Weyl — candidate machinery for the
 multiplicity bookkeeping in that brick and for partition-algebra
 dualities on the `tr_M` binding-combiner side. Noted for the epic
 owner; no wiring.
+
+## Addendum 15 (2026-08-02) — pvuw done; [26] read cracks the xx9f SHAPE (E-factor); 5₂ Galois norm verified
+
+**Bean `pvuw` COMPLETE**: `pandey-wong-2023` registered in
+`references.ts` (validate exit 0); both Borromean 1-loop/torsion
+producers re-scoped with the theorem-backing note (GY Thm 1.1 for 4₁,
+2-bridge; PW for 𝓑₃, fundamental shadow link) and their witnesses
+regenerated with a `theorem_backing` field. `garoufalidis-yoon-2024`
+was already registered by a sibling (its note recorded the pdf as
+403-unreachable — it now lives at `uploads/2411.03801v2.pdf`).
+
+**xx9f SHAPE IDENTIFICATION (the [26] payoff)**: GZ §9 defines the
+single-series correction factor
+`E(h) = exp(−Σ_{r≥1} |B_{r+1}|/(r+1)!·C_r·h^r)` — explicitly "the
+h-deformed versions of the units constructed in [10]" (the CGZ
+ε-units this program computes) — which makes one Φ integral without
+its bar partner, with `E(h)E(−h) = 1`. Its signature: h¹ term
+(B₂/2!), **no h² term** (B₃ = 0), h³ term (B₄/4!). This is EXACTLY
+the (287) mismatch pattern found on this branch (λ-solve passes x²
+with the h¹ term alone; x³ residual remains). Candidate (b) is
+upgraded from "some unprinted series factor" to "a GZ E-type unit
+deformation"; implied `C₁ = −12λ₁`, `C₃`-relation recorded in the
+witness. GZ print C_r data for 4₁ only (their §8.1) — extracting and
+cross-verifying the 5₂ values stays open on `xx9f`.
+
+**New probe `gswz_52_galois_norm_probe.py` (4/4)**: the GZ Galois
+triple-product claim for 5₂ verified EXACTLY to h³ from printed (282)
+— `N(h) = det(I + M(φ₁)h + M(φ₂)h² + M(φ₃)h³)` has rational
+coefficients `1, −615/184, 8709543/1557376, −1793137595/286557184`
+with denominator support exactly **{2, 23}**: 5-integral (the harness
+core), the 3s cancel entirely (stronger than the 4₁ `Z[1/3]`
+statement), and the 23-powers are the per-order δ³ᵏ normalization
+(integrality away from Δ, disc = −23). `N(3α−2) = −23` (odd-degree
+sign) checked exactly.
