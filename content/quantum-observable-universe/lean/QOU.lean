@@ -552,3 +552,9 @@ import QOU.MassTheory.BarParityClusterObstruction
 import QOU.MassTheory.BrunnianDeficitLeadingOrderDerived
 import QOU.BraidKnot.ColoredJonesRecurrence
 import QOU.BraidKnot.KnotOperatorRecurrence
+-- Resurgent-bridge tranche (Δ_λ sign/magnitude → DT/3d-index unification):
+-- descent scaffold, both horns, fgte κ-tower, dri7 bar-odd ladder, DT capstone.
+import QOU.Resurgence
+import QOU.QBeta.Stokes3LargeOrderAmplitude
+import QOU.QBeta.BarOddLadderEdgeSuppression
+import QOU.BraidsAndKnots.DeltaLambdaDTIndex
