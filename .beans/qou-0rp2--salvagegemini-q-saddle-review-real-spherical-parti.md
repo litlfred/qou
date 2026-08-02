@@ -81,3 +81,28 @@ dimensional form REFUTED; only Option-B-hard (specific-multiplicity via bimodule
 iso) and the direct SDP route (bean qou-vd7j) remain for deriving ν_SDP. No route
 currently DERIVES ν_SDP∈{1,2} — the conj:kashaev-density-equals-sdp-multiplicity
 stays honestly open (single Lean sorry). No fit wired.
+
+## OPTION-B-HARD ASSESSMENT (2026-08-02) — GATED on the bridge; no fit permitted
+Read the paper's core structure (eq 1.2, Thms 6–7): as (CS_n, SP_k(n))-bimodules,
+  **S^k V_n  ≅  ⊕_{λ ∈ Par^sph_{k,n}}  S(λ) ⊗ G_k(λ)**
+where S(λ) is the S_n Specht module and G_k(λ) a simple SP_k(n)-module. So the
+multiplicity of Specht module S(λ) in the k-th symmetric power of the defining
+module V_n **is dim G_k(λ)** — the small integers live here.
+
+**Why this does NOT close ν_SDP (honest, no fit):**
+- To identify ν_SDP(atom) with a dim G_k(λ), one must FIRST prove the QOU atom's
+  saturating Hecke module (the H_{3A}(q) Wedderburn block the SDP selects) IS the
+  Specht summand of some symmetric power S^k V_{n}. That **bridge is unproven**;
+  the QOU rep is a Markov-trace-weighted Hecke module, not manifestly a symmetric
+  power of a defining module.
+- **The multiplicities are generic small integers** — computed mult of Specht in
+  Sym^k V_4: k=1→1, k=2→1, k=3→2, k=4→2, k=5→4. {1,2} appear routinely at small
+  k. So choosing (k,λ) to hit ν_SDP∈{1,2} WITHOUT the bridge is a FIT (numerology),
+  which the three-calibration discipline forbids.
+
+**Verdict:** Option-B-hard is a *genuinely-open, statable* problem, not a closure.
+The concrete open bridge: **prove the atom's saturating H_{3A}(q) block ≅ S(λ)⊗G_k(λ)
+summand of S^k V_{3A} for a CANONICAL k (not tuned).** Only that iso — derived, not
+fitted — would make dim G_k(λ) = ν_SDP a theorem. Until then ν_SDP stays underived;
+no SP-based value wired to production. This is the LAST surviving derivational route
+for ρ_F=ν_SDP (Option A refuted, Option-B-coarse refuted, direct SDP 0/3558).
