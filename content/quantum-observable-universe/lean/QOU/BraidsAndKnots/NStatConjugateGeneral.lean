@@ -34,8 +34,12 @@
   (`sumChoose2 (addRow a c) = sumChoose2 c + Σ c` when `c.length ≤ a`, via
   Pascal `C(c+1,2) = C(c,2) + c`).
 
-  Discipline.  Purely combinatorial: base ring `ℕ` (statistics/dimensions) and
-  `ℤ` (signs) only, no archimedean `ℝ` (§7c).  Nothing fitted, nothing wired to
+  Discipline.  The statements and proofs are purely combinatorial — base ring
+  `ℕ` (statistics/dimensions) and `ℤ` (signs), no `ℝ` in the mathematical content
+  (§7c).  (The transitive import cone does pull in `ℝ` via the reused
+  `PartitionOf5` from `S5SO3FiberAction`; extracting a combinatorics-only core of
+  `S5SO3FiberAction` is a beaned follow-up, not required for these facts.)
+  Nothing fitted, nothing wired to
   production — this is the per-partition `Δ_λ` chirality sign, not a
   binding-energy magnitude (the many-body scalar `r*` stays open, walled).
 
