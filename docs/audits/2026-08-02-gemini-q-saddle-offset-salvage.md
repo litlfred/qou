@@ -56,9 +56,17 @@ carried on this complex orbit.
   |τ(6₂)| = 2.217 vs ν_SDP = 1; |τ(8₁₁)| = 8.805 vs ν_SDP = 2. τ is a
   transcendental/algebraic **complex** invariant, not the integer ν_SDP; the
   flattening/± ambiguity cannot bridge the magnitude gap. (4₁ control lands in
-  its trace field ℚ(√−3), |τ|=√3/2 — implementation sound.) Scope-(a): the
+  its trace field ℚ(√−3), |τ|=√3/2.) Scope-(a): the
   identification is false *as stated*; Garoufalidis–Yoon's 1-loop=torsion
   remains a valid analytic bridge, just not to ν_SDP.
+  **Reconciliation (reuse pass):** a sibling independently landed the same
+  scope-(a) refutation via the *value-validated* Porti adjoint torsion 𝕋_μ
+  (`torsion_nu_sdp_probe.py`, PR #4576, audit
+  `2026-08-02-r307-torsion-vs-nu-sdp-probe.md`; 𝕋_μ(4₁)=−3.00003 ✓, 6₂
+  |𝕋_μ|=16.84, 8₁₁ 27.76). That probe is the authority for the torsion *value*;
+  `one_loop_vs_nu_sdp_probe.py` here is the independent DG-1-loop-from-NZ route
+  confirming the *verdict* only (its normalization differs — 4₁ |τ|=√3/2 vs 3).
+  Two independent computations, one verdict.
 
 - **Option B (coarse) — "ν_SDP = dim SP_k" — REFUTED, scope-(a).** The real
   paper (Thm 2) gives `rk SP_k = bp_k = #bipartite partitions of k = A002774 =
