@@ -20,6 +20,7 @@
 -/
 
 import QOU.Knot.Clausen
+import QOU.Knot.WhiteheadVolumeConjecture
 
 namespace QOU.Knot.WhiteheadSaddle
 
@@ -112,6 +113,76 @@ theorem saddle_integral :
   rw [intervalIntegral.integral_sub (hIntA.const_mul 2) (intervalIntegrable_log_two_sin_pi 0 (1/2)),
       intervalIntegral.integral_const_mul, integral_A, integral_B_zero]
   ring
+
+/-- `sin((2k+1)·(π/2)) = (-1)^k` (induction; each step adds `π`, `sin_add_pi`). -/
+theorem sin_two_mul_add_one_mul_pi_div_two (k : ℕ) :
+    Real.sin ((2 * (k : ℝ) + 1) * (π / 2)) = (-1 : ℝ) ^ k := by
+  induction k with
+  | zero =>
+    simp only [Nat.cast_zero, mul_zero, zero_add, one_mul, Real.sin_pi_div_two, pow_zero]
+  | succ m ih =>
+    have hstep : (2 * ((m : ℝ) + 1) + 1) * (π / 2)
+        = (2 * (m : ℝ) + 1) * (π / 2) + π := by ring
+    push_cast
+    rw [hstep, Real.sin_add_pi, ih]
+    ring
+
+/-- The even-shifted van der Veen index has vanishing sine:
+    `sin((2k+2)·(π/2)) = sin((k+1)π) = 0`. -/
+theorem sin_odd_index_vanish (k : ℕ) :
+    Real.sin (((2 * (k : ℝ) + 1) + 1) * (π / 2)) = 0 := by
+  have h : ((2 * (k : ℝ) + 1) + 1) * (π / 2) = ((k + 1 : ℕ) : ℝ) * π := by
+    push_cast; ring
+  rw [h, Real.sin_nat_mul_pi]
+
+/-- **catalan bridge (convergence prerequisite, qou-kvvu).**  Catalan's constant
+    `G = Σ (-1)ⁿ/(2n+1)²` equals `clausen(π/2)`: the even/odd split of the `Cl_2`
+    series drops the even-index (`sin(mπ)=0`) terms and reindexes the odd-index
+    terms `sin((2k+1)π/2) = (-1)ᵏ`.  Connects the conditional-VC constant
+    `4·catalanG` (`whitehead_vc_of_saddle_value`) to the Clausen value
+    `4·clausen(π/2)` produced by `saddle_integral`. -/
+theorem catalanG_eq_clausen_pi_div_two :
+    QOU.Knot.WhiteheadVC.catalanG = QOU.Knot.clausen (π / 2) := by
+  have hpi := Real.pi_pos
+  -- majorant: `Σ 1/(k+1)²` (the Clausen `continuous_Cl_2` pattern).
+  have hmaj : Summable (fun k : ℕ => 1 / ((k : ℝ) + 1) ^ 2) := by
+    have h : Summable (fun n : ℕ => 1 / (n : ℝ) ^ 2) :=
+      summable_one_div_nat_pow.mpr (by norm_num)
+    exact ((summable_nat_add_iff 1).2 h).congr (fun n => by push_cast; ring)
+  set g : ℕ → ℝ := fun j => Real.sin (((j : ℝ) + 1) * (π / 2)) / ((j : ℝ) + 1) ^ 2
+    with hgdef
+  -- termwise reindexing of the even/odd halves
+  have heven_eq : ∀ k : ℕ, g (2 * k) = (-1 : ℝ) ^ k / (2 * (k : ℝ) + 1) ^ 2 := by
+    intro k
+    simp only [hgdef]
+    rw [show (((2 * k : ℕ)) : ℝ) + 1 = 2 * (k : ℝ) + 1 by push_cast; ring,
+        sin_two_mul_add_one_mul_pi_div_two]
+  have hodd_eq : ∀ k : ℕ, g (2 * k + 1) = 0 := by
+    intro k
+    simp only [hgdef]
+    rw [show (((2 * k + 1 : ℕ)) : ℝ) + 1 = (2 * (k : ℝ) + 1) + 1 by push_cast; ring,
+        sin_odd_index_vanish, zero_div]
+  -- summability of the alternating even half (Catalan) by norm comparison
+  have hCat : Summable (fun k : ℕ => (-1 : ℝ) ^ k / (2 * (k : ℝ) + 1) ^ 2) := by
+    refine hmaj.of_norm_bounded (fun k => ?_)
+    have hk : (0 : ℝ) ≤ (k : ℝ) := Nat.cast_nonneg k
+    rw [Real.norm_eq_abs, abs_div, abs_pow, abs_neg, abs_one, one_pow,
+        abs_of_pos (by positivity : (0 : ℝ) < (2 * (k : ℝ) + 1) ^ 2)]
+    exact one_div_le_one_div_of_le (by positivity) (by nlinarith [hk])
+  have heven : Summable (fun k : ℕ => g (2 * k)) :=
+    hCat.congr (fun k => (heven_eq k).symm)
+  have hodd : Summable (fun k : ℕ => g (2 * k + 1)) :=
+    summable_zero.congr (fun k => (hodd_eq k).symm)
+  have hcombine := tsum_even_add_odd heven hodd
+  have hoddsum : (∑' k : ℕ, g (2 * k + 1)) = 0 := by
+    rw [tsum_congr hodd_eq, tsum_zero]
+  have hevensum : (∑' k : ℕ, g (2 * k)) = QOU.Knot.WhiteheadVC.catalanG := by
+    unfold QOU.Knot.WhiteheadVC.catalanG
+    exact tsum_congr heven_eq
+  have hCl : QOU.Archimedean.Cl_2 (π / 2) = ∑' k : ℕ, g k := by
+    simp only [hgdef, QOU.Archimedean.Cl_2]
+  rw [QOU.Knot.clausen_eq_series (θ := π / 2) ⟨by linarith, by linarith⟩,
+      hCl, ← hcombine, hevensum, hoddsum, add_zero]
 
 /-
   ROADMAP — remaining bricks to discharge `hsaddle` (all ingredients verified
