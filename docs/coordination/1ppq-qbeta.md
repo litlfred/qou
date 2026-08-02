@@ -2824,3 +2824,57 @@ adoption landed (this PR); qou-qnnq → internal derivation of `3` still open
 
 **Flag:** the A_ω bricks cite `[garoufalidis-gu-marino2021]` for GGM
 2012.00062, which is `garoufalidis-gu-marino2023peacock`. Follow-up fix.
+
+**2026-08-02 (5₂ saddle SUM RULE + the two literals IDENTIFIED; PR #4519).**
+The provenance hunt on `Im V₁ = 1.3790860299` and `V₃ = −2.7580990292` closed
+the convention question and turned up an exact identity.
+
+**The identity.** The three 5₂ saddle values satisfy
+
+    Σⱼ Re(Vⱼ) = −3π²/2                                            (SUM)
+
+to 80 dps (residual 3.4e-80). Since `V₂ = conj(V₁)` this is equivalent to
+`V₃ = −2·Re(V₁) − 3π²/2`, so **`V₃` is determined by `V₁`** and need never be
+carried as an independent literal again.
+
+**What the π²/2 shift IS.** In `V^ext = V + π²/2`, (SUM) reads `Σⱼ Vⱼ^ext = 0`.
+The "extraction convention" — treated for months as an unexplained fudge
+"absorbed by the fit" (2026-08-01 rows) — is exactly the unique shift that
+**centers** the saddle values. It was never arbitrary.
+
+**Specific to 5₂, not branch bookkeeping.** Five control cubics of the same
+shape (one real + two conjugate roots), four sharing 5₂'s `Πy = 1` constraint,
+miss the target by 0.16–2.83 while 5₂ hits it to 2e-50. (SUM) is an arithmetic
+property of the 5₂ saddle cubic.
+
+**Provenance verdict — supersedes two earlier findings.** Both prior verdicts
+tested only *one* literal and were wrong:
+
+| | extraction | legacy | rel |
+|---|---|---|---|
+| σ₁ | 1.37919430966108 | 1.3790860299 | 7.85e-5 |
+| σ₃ | −2.75838861932215 | −2.7580990292 | 1.05e-4 |
+
+Both literals **ARE** the extraction convention, evaluated to ~4 digits. The
+2026-07-26 "matches neither published convention" verdict and the 2026-08-01
+"Im V₁ doesn't match" narrowing are both **superseded**: the formula was right,
+the evaluation was sloppy. The pair additionally violates (SUM) by 7.3e-5, so
+the two were computed **independently** — neither derived from the other.
+
+**Refuted as the error source (scope-(a), direct test):** Li₂ series truncation
+(converges σ₃ to the true value, never the legacy; cannot produce σ₁ at all,
+`|y₁| = 1.52 > 1`) and root imprecision (a 3-decimal root already gives 1e-8;
+the root that *would* give legacy σ₃ has cubic residual 9.2e-3, so it is not a
+root of the cubic). The ~1e-4 source stays **OPEN**, now bounded to a 4-digit
+evaluation slip in a correct formula.
+
+**(SUM) is VERIFIED, NOT PROVED.** Partial proof recorded so the next attempt
+starts mid-stream: the branch data is exact
+(`2 log yⱼ − 3 log(1−yⱼ) = 2πi·εⱼ`, `ε = (+1,−1,0)` — the source of the π²),
+and summing the reflection identity over the roots gives
+`A + B = π²/2 − (2/3)Σ(log yⱼ)² − (4π/3)·arg(y₁)` exactly, with
+`A = ΣLi₂(yⱼ)`, `B = ΣLi₂(1−yⱼ)`. That is one equation in two unknowns and does
+not close; the identified route for the second is the Kubert/distribution
+relation applied to `Li₂(y²) = Li₂((1−y)³)`. Bloch-group work, left OPEN.
+
+auditOnly; nothing wired; no fit.
