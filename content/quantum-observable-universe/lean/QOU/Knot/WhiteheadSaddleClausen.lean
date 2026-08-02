@@ -36,6 +36,21 @@ theorem integral_log_two_sin_pi (b : ℝ) :
       mul_zero, QOU.Knot.integral_log_two_sin (π * b), smul_eq_mul]
   field_simp
 
+/-- **Per-term reduction (convergence brick, qou-1gkf).**  Each van der Veen
+    kernel factor `2 sin²a / sin b` has log equal to the reduced saddle-integrand
+    term `2 log(2 sin a) − log(2 sin b)` (the `log 2` bookkeeping that makes the
+    discrete Riemann sum match `saddle_integral`).  Needs `sin a, sin b > 0`
+    (holds on the summation range `(k+j)π/N, jπ/N ∈ (0, π)`). -/
+theorem log_factor_reduce {a b : ℝ} (ha : 0 < Real.sin a) (hb : 0 < Real.sin b) :
+    Real.log (2 * Real.sin a ^ 2 / Real.sin b)
+      = 2 * Real.log (2 * Real.sin a) - Real.log (2 * Real.sin b) := by
+  have h2 : (2 : ℝ) ≠ 0 := by norm_num
+  rw [Real.log_div (by positivity) (ne_of_gt hb),
+      Real.log_mul h2 (pow_ne_zero 2 (ne_of_gt ha)), Real.log_pow,
+      Real.log_mul h2 (ne_of_gt ha), Real.log_mul h2 (ne_of_gt hb)]
+  push_cast
+  ring
+
 /-- `log(2 sin(π·))` is interval-integrable (scale `QOU.Knot.intervalIntegrable_log_two_sin`). -/
 theorem intervalIntegrable_log_two_sin_pi (a b : ℝ) :
     IntervalIntegrable (fun u => Real.log (2 * Real.sin (π * u))) MeasureTheory.volume a b := by
