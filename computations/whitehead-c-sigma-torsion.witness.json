@@ -1,0 +1,28 @@
+{
+  "description": "Independent 1-loop (Dimofte-Garoufalidis) adjoint Reidemeister torsion of the Whitehead link L5a1 from SnapPy Neumann-Zagier data: |tau(L5a1)|=4sqrt(2)=2^{5/2} (det J=4(1+i)), DERIVED (not inverted from c_sigma), calibrated on 4_1 where the same det(J) reproduces the known |tau|=sqrt(3). c_sigma=2^{-3/4} follows via c_sigma=2^{(c-1)/2}|tau|^{-1/2} (per-cusp sqrt(2) factor). CORRECTS the earlier qou-k00d inference tau=2sqrt(2) -> tau=4sqrt(2).",
+  "computation": "whitehead_c_sigma_torsion",
+  "audit_only": true,
+  "dps": 40,
+  "method": "1-loop invariant det(J), J_{kj}=A_{kj}-B_{kj} z_j/(1-z_j), (N-c indep edges)+(meridians)",
+  "calib_4_1": {
+    "det_abs": "1.732050807568877772917909",
+    "sqrt3": "1.732050807568877293527446",
+    "match_digits": 15
+  },
+  "whitehead_L5a1": {
+    "num_cusps": 2,
+    "det": "(4.0 + 4.0000000000000033307j)",
+    "tau_abs": "5.656854249492382550345443",
+    "target_2_pow_5_2": "5.656854249492380195206755",
+    "match_digits": 15
+  },
+  "c_sigma_relation": "c_sigma = 2^{(c-1)/2} * |tau_meridian|^{-1/2}",
+  "c_sigma_derived": "0.59460355750136040958202",
+  "c_sigma_target_2_pow_minus_3_4": "0.59460355750136053335875",
+  "c_sigma_match_digits": 15,
+  "corrects_prior_inference": "qou-k00d/PR#4571 recorded tau=2sqrt(2) (naive knot template); independent 1-loop gives tau=4sqrt(2)=2^{5/2}; resolved by the 2-cusp sqrt(2) normalization.",
+  "cusp_factor_caveat": "2^{(c-1)/2} pinned on the two cases c=1 (4_1) and c=2 (L5a1); general-c form matches the standard per-cusp Gaussian factor but is a smaller open sub-item.",
+  "derivation_complete": true,
+  "reference": "Dimofte-Garoufalidis, Geom. Topol. 17 (2013) 1253; Porti adjoint torsion",
+  "timestamp": "2026-08-02T13:44:32+00:00"
+}
