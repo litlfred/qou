@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-08T10:31:12.085316+00:00",
-  "commitSha": "bd756f99eb9a5c800225e98673825a0b18d66111",
+  "computedAt": "2026-08-02T18:27:29.177712+00:00",
+  "commitSha": "b221c98897d1a4e9a6111fbc14ab83a97a179784",
   "assertions": [
     {
       "name": "python_hoefsmit_matches_rust_chi_q_via_gp",
@@ -41,11 +41,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 31336,
+  "durationMs": 11946,
   "computation": "derived-chi-catalogue-matrix-m-validation",
   "scriptFile": "derived_chi_catalogue_matrix_m.py",
-  "scriptHash": "039d77848cab",
-  "scriptCommitSha": "a983615f98b0b47c6b686f041858c249165cd3b4",
+  "scriptHash": "b69c9c107236",
+  "scriptCommitSha": "2ca3c9e40aaa510d04b59a637d1fd284bb471615",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -55,7 +55,6 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
-    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0"
@@ -1612,9 +1611,9 @@
         ]
       ],
       "k_split": 3,
-      "symbolic_secs": 0.2189325499998631,
-      "numerical_secs": 0.010303238000005877,
-      "speedup_factor": 21.2489073822946,
+      "symbolic_secs": 0.15239364199999272,
+      "numerical_secs": 0.008702040000002853,
+      "speedup_factor": 17.512404217854982,
       "consistency": true,
       "chi_symbolic": "0",
       "chi_numerical_qrational_str": "0"

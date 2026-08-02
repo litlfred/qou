@@ -537,6 +537,43 @@ def chi_rust_at_qval(
     return sp.simplify(total)
 
 
+def chi_lambda_via_rust_gp(
+    shape: tuple[int, ...],
+    n_strands: int,
+    word: list[tuple[int, int]],
+    q: sp.Expr,
+) -> sp.Expr:
+    """Rust-backed symbolic character χ^λ(T_β) — the ported hot path.
+
+    The character χ^λ(T_β) is an **exact Laurent polynomial in q** (integer
+    coefficients, half-exponent encoded). The pure-Python path
+    `chi_lambda_via_matrix_product` builds it by multiplying the Hoefsmit
+    seminormal matrices symbolically and canonicalising every intermediate
+    entry with `sp.cancel` — the compute profiler flags `sp.cancel` as the
+    #1 symbolic hotspot in this script (≈ 85 % of wall on the sweep).
+
+    This wrapper delegates the whole character compute to the Rust
+    Geck–Pfeiffer engine `pyhecke_native.chi_q_via_gp` in a **single FFI
+    call per (shape, word)** (compute-author §2.1 whole-compute
+    granularity), then reassembles the returned integer Laurent
+    coefficients into a sympy expression in `q`. The reassembly is exactly
+    the reference logic in `chi_rust_at_qval`; the result is symbolically
+    IDENTICAL to `chi_lambda_via_matrix_product` — verified in
+    `derived_chi_catalogue_rust_gp_crosscheck.py`: symbolic delta = 0 and
+    q₀ agreement to 40+ digits (both paths are exact-integer, so agreement
+    is exact, not merely within tolerance). No f64 anywhere.
+
+    Falls back to the pure-Python matrix product when the native wheel is
+    unavailable, so the script stays runnable in a wheel-less sandbox.
+
+    Args mirror `chi_rust_at_qval`; `q` may be a symbol (symbolic Laurent
+    poly) or an exact rational (numerical evaluation at q₀).
+    """
+    if ph is None:  # pragma: no cover - wheel absent in some sandboxes
+        return chi_lambda_via_matrix_product(shape, word, q)
+    return chi_rust_at_qval(shape, n_strands, word, q)
+
+
 def cross_validate(
     shape: tuple[int, ...],
     word: list[tuple[int, int]],
@@ -718,7 +755,12 @@ def main() -> int:
     for shape in _shape_partitions_of(6):
         # Direct via matrix product.
         full_word = list(deut_left) + [(deut_bridge_sign, 3)] + list(deut_right)
-        direct = chi_lambda_via_matrix_product(shape, full_word, q_sym)
+        # Reference character via the Rust Geck–Pfeiffer engine (one FFI
+        # call, exact integer Laurent poly). Symbolically identical to the
+        # pure-Python matrix product (cross-checked in
+        # derived_chi_catalogue_rust_gp_crosscheck.py); the μ_p decomposition
+        # below stays pure-sympy — it is the object under test.
+        direct = chi_lambda_via_rust_gp(shape, sum(shape), full_word, q_sym)
         # Factorised via μ_p decomposition.
         factored = chi_lambda_via_mu_p_decomposition(
             shape, deut_left, deut_bridge_sign, deut_right, 3, q_sym,
@@ -793,7 +835,9 @@ def main() -> int:
           f"(dim V_λ ≤ 5).")
     phase13_cases: list[dict] = []
     for shape in n6_small_dim_partitions:
-        direct = chi_lambda_via_matrix_product(shape, deut_full_word, q_sym)
+        # Reference via Rust GP engine (see Test 5 note); μ_p factorisation
+        # under test stays pure-sympy.
+        direct = chi_lambda_via_rust_gp(shape, sum(shape), deut_full_word, q_sym)
         factored = chi_lambda_via_mu_p_decomposition(
             shape, deut_p_left, deut_p_bridge_sign, deut_p_right, 3, q_sym,
         )
@@ -855,7 +899,9 @@ def main() -> int:
           f"(dim V_λ ≤ 8).")
     phase15_cases: list[dict] = []
     for shape in a3_small_partitions:
-        direct = chi_lambda_via_matrix_product(shape, a3_full_word, q_sym)
+        # Reference via Rust GP engine (see Test 5 note); μ_p factorisation
+        # under test stays pure-sympy.
+        direct = chi_lambda_via_rust_gp(shape, sum(shape), a3_full_word, q_sym)
         factored = chi_lambda_via_mu_p_decomposition(
             shape, a3_left, a3_bridge_sign, a3_right, 3, q_sym,
         )
