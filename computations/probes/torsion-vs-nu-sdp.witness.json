@@ -1,0 +1,246 @@
+{
+  "schema": "qou-probe/torsion-vs-nu-sdp/v1",
+  "bean": "qou-r307",
+  "generated": "2026-08-02T13:47:13.585369Z",
+  "conjecture": "conj:kashaev-density-equals-sdp-multiplicity",
+  "literature": {
+    "garoufalidis_yoon": "arXiv:2411.03801 (1-loop = adjoint torsion, two-bridge)",
+    "dimofte_garoufalidis": "Geom.Topol. 17 (2013) 1253 (1-loop invariant)",
+    "ohtsuki_takata": "Geom.Topol. 19 (2015) 853 (Kashaev asymptotics \u2194 torsion)"
+  },
+  "method": "adjoint (3-dim) twisted Reidemeister torsion via Fox calculus on SnapPy numeric SL(2,C) holonomy; Porti meridian torsion \ud835\udd4b_\u03bc = \u2212W'(1) (Yamaguchi simple-zero slope); double precision. No ad-hoc rescaling \u2014 the raw normalization already reproduces the known rational \ud835\udd4b_\u03bc(4_1) = \u22123 (validation).",
+  "prediction_before_run": "adjoint torsion lies in the trace field (\u211a(\u221a\u22123) for 4_1; cubic for 6_2/8_11) \u2192 a non-integer, generically complex number; literal torsion = \u03bd_SDP\u2208{1,2} expected to FAIL (scope-a category mismatch).",
+  "validation_4_1": {
+    "T": [
+      -3.00003231077882,
+      -1.3464955505020816e-05
+    ],
+    "known_value": -3.0,
+    "trace_field": "Q(sqrt(-3))"
+  },
+  "results": [
+    {
+      "knot": "4_1",
+      "volume": 2.029883212819307,
+      "num_tet": 2,
+      "relator": "abbbaBAAB",
+      "abelianization_exponents": [
+        1,
+        0
+      ],
+      "W_over_h_samples": [
+        {
+          "h": 0.001,
+          "val": [
+            3.002998946919082,
+            2.670251336800449e-07
+          ]
+        },
+        {
+          "h": 0.0005,
+          "val": [
+            3.0014986832536805,
+            5.033047389251833e-07
+          ]
+        },
+        {
+          "h": 0.0002,
+          "val": [
+            3.000598721252978,
+            -4.804567925921436e-06
+          ]
+        },
+        {
+          "h": 0.0001,
+          "val": [
+            3.000315516015899,
+            4.3301937895496895e-06
+          ]
+        }
+      ],
+      "T_raw": [
+        -3.00003231077882,
+        -1.3464955505020816e-05
+      ],
+      "T_abs": 3.000032310809037,
+      "T": [
+        -3.00003231077882,
+        -1.3464955505020816e-05
+      ],
+      "nonreal": false,
+      "nu_sdp": null,
+      "rho_F": null,
+      "matches_nu_sdp": null
+    },
+    {
+      "knot": "5_2",
+      "volume": 2.828122088330783,
+      "num_tet": 3,
+      "relator": "aBBBabbAAbb",
+      "abelianization_exponents": [
+        1,
+        0
+      ],
+      "W_over_h_samples": [
+        {
+          "h": 0.001,
+          "val": [
+            -4.12034233270009,
+            1.8421948921522018
+          ]
+        },
+        {
+          "h": 0.0005,
+          "val": [
+            -4.118283946953856,
+            1.8412752714678493
+          ]
+        },
+        {
+          "h": 0.0002,
+          "val": [
+            -4.117048981708428,
+            1.8407230799433114
+          ]
+        },
+        {
+          "h": 0.0001,
+          "val": [
+            -4.116637180378132,
+            1.8405382510776886
+          ]
+        }
+      ],
+      "T_raw": [
+        4.116225379047837,
+        -1.8403534222120657
+      ],
+      "T_abs": 4.508903646094599,
+      "T": [
+        4.116225379047837,
+        -1.8403534222120657
+      ],
+      "nonreal": true,
+      "nu_sdp": null,
+      "rho_F": null,
+      "matches_nu_sdp": null
+    },
+    {
+      "knot": "6_2",
+      "volume": 4.400832516123044,
+      "num_tet": 5,
+      "relator": "aaBBBaaBAbbbAAbbbAB",
+      "abelianization_exponents": [
+        1,
+        0
+      ],
+      "W_over_h_samples": [
+        {
+          "h": 0.001,
+          "val": [
+            -6.684998309197974,
+            -15.530990024502207
+          ]
+        },
+        {
+          "h": 0.0005,
+          "val": [
+            -6.671661744563063,
+            -15.499639511675042
+          ]
+        },
+        {
+          "h": 0.0002,
+          "val": [
+            -6.664547453644184,
+            -15.480106219069002
+          ]
+        },
+        {
+          "h": 0.0001,
+          "val": [
+            -6.65721940604227,
+            -15.474758310674472
+          ]
+        }
+      ],
+      "T_raw": [
+        6.649891358440355,
+        15.46941040227994
+      ],
+      "T_abs": 16.83816240785278,
+      "T": [
+        6.649891358440355,
+        15.46941040227994
+      ],
+      "nonreal": true,
+      "nu_sdp": 1,
+      "rho_F": 1,
+      "dist_to_nu_sdp": 16.468877634992186,
+      "abs_dist_to_nu_sdp": 15.838162407852781,
+      "matches_nu_sdp": false
+    },
+    {
+      "knot": "8_11",
+      "volume": 8.286316817806592,
+      "num_tet": 9,
+      "relator": "aaBBAbbbAAbbaBBBabbAAbbbABBaaBBBabbAAbbaBBB",
+      "abelianization_exponents": [
+        1,
+        0
+      ],
+      "W_over_h_samples": [
+        {
+          "h": 0.001,
+          "val": [
+            62.231002225613416,
+            20.133355653696782
+          ]
+        },
+        {
+          "h": 0.0005,
+          "val": [
+            62.48430404020979,
+            20.626656637224794
+          ]
+        },
+        {
+          "h": 0.0002,
+          "val": [
+            60.92324032347561,
+            22.005979973606266
+          ]
+        },
+        {
+          "h": 0.0001,
+          "val": [
+            44.323496022950806,
+            11.659684771806203
+          ]
+        }
+      ],
+      "T_raw": [
+        -27.723751722426,
+        -1.313389570006141
+      ],
+      "T_abs": 27.75484465330908,
+      "T": [
+        -27.723751722426,
+        -1.313389570006141
+      ],
+      "nonreal": true,
+      "nu_sdp": 2,
+      "rho_F": 2,
+      "dist_to_nu_sdp": 29.752754639176246,
+      "abs_dist_to_nu_sdp": 25.75484465330908,
+      "matches_nu_sdp": false
+    }
+  ],
+  "verdict": [
+    "VERDICT (scope-(a); a match would be evidence, not derivation):",
+    "  6_2: \ud835\udd4b_\u03bc \u2248 +6.6499+15.4694i  (|\ud835\udd4b_\u03bc|=16.8382); \u03bd_SDP=1; |\ud835\udd4b_\u03bc\u2212\u03bd_SDP|=16.4689; Im\u22600 \u21d2 \ud835\udd4b_\u03bc\u2209\u2124: YES; equals \u03bd_SDP: NO",
+    "  8_11: \ud835\udd4b_\u03bc \u2248 -27.7238-1.3134i  (|\ud835\udd4b_\u03bc|=27.7548); \u03bd_SDP=2; |\ud835\udd4b_\u03bc\u2212\u03bd_SDP|=29.7528; Im\u22600 \u21d2 \ud835\udd4b_\u03bc\u2209\u2124: YES; equals \u03bd_SDP: NO",
+    "  \u21d2 adjoint Reidemeister torsion (= NZ 1-loop) is NOT \u03bd_SDP for 6_2, 8_11: both are complex trace-field numbers of modulus \u226b {1,2}. The literal 'topological density = \u03bd_SDP integer' reading is refuted (scope-a). \u03bd_SDP\u2208{1,2} is a distinct, normalization-free object."
+  ],
+  "discipline": "Evidence, not derivation. Does NOT prove the conjecture, does NOT close the Lean class-instance sorry, NOT wired to production."
+}
