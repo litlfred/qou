@@ -23,4 +23,27 @@ export default conjecture({
   title: "Complex-mass constituent functional",
   uses: ["def:flavor-dressing-functor", "rem:chern-simons-as-knot-invariant"],
   lean: { ref: "qou:QOU.MassTheory.ComplexMassConstituent" },
+  computation: {
+    engine: "python",
+    script: "computations/charm_mass_tower_probe.py",
+    witness: "computations/charm-mass-tower.witness.json",
+    status: "verified",
+  },
+  authorNotes: [
+    {
+      kind: "caveat",
+      date: "2026-08-02",
+      body:
+        "Derive-then-check negative: the plain-continuant-ratio reading " +
+        "`contRatio = b_n/b_{n-2}` is scope-(a) refuted at the substrate as " +
+        "the sole hierarchy mechanism — it gives a nearly geometric " +
+        "~5.85x-per-generation ladder that matches neither the current-mass " +
+        "(mc/mu~577, undershoot ~100x) nor the constituent-mass (~4.46, " +
+        "overshoot ~30%) charm/light hierarchy. See " +
+        "`docs/audits/2026-08-02-charm-mass-tower-negative.md`. The Lean " +
+        "class does NOT assert that identification; a viable `contRatio` must " +
+        "be steeper than the continuant ratio or carried by the complex-volume " +
+        "/ Chern-Simons imaginary part. `m_c` remains open.",
+    },
+  ],
 });
