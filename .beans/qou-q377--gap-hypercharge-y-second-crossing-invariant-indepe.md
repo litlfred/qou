@@ -5,13 +5,16 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-07-31T19:56:30Z
-updated_at: 2026-08-02T17:31:40Z
+updated_at: 2026-08-02T17:33:29Z
 ---
 
 2026-08-02 status note.
 
-The near-term literature dependency qou-ahbp is now CLOSED as a negative read: arXiv:1806.09450 confirms the group-level `U(1)` slot and the `Z6` quotient, but no explicit hypercharge operator `Y` was located in the extracted text.
+The source audit is now resolved.
 
-Therefore the near-term dependency for this bean is qou-yet1: audit the source claim, locate the actual operator paper if it exists, or correct the corpus framing if the claim was overstated.
+- arXiv:1806.09450 is only the group-level `U(1)` / `Z6` geometry source.
+- The explicit algebraic weak-hypercharge generator is in C. Furey, arXiv:1806.00612, where eq. (43) gives the twelfth non-mixing generator
+  `(1/3) Σ_j A†_j A_j - (1/2) Σ_k B†_k B_k`, stated there to assign charges coinciding with hypercharge `Y`.
+- arXiv:1611.09182 provides the longer subspace derivation background, including `N' = -2Y` on the leptonic subspace.
 
-Medium-term deliverable remains unchanged: once a genuine second crossing invariant is instantiated, run the Gell-Mann–Nishijima / first-generation spectrum / `Z6` compatibility battery on QOU states.
+So the literature-locate subtask is complete. The remaining work for this bean is QOU-native: decide whether the strand-twist datum / second crossing invariant can realize the same role on QOU states, then run the Gell-Mann–Nishijima / first-generation spectrum / `Z6` compatibility battery.
