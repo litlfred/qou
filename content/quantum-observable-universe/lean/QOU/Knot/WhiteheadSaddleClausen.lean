@@ -282,6 +282,32 @@ theorem two_pi_log_whiteheadS_eq {N n k : ℕ} (hN : 2 ≤ N) (hkn : k + n ≤ N
             Real.log (2 * Real.sin ((j : ℝ) * (π / N)))) := by ring
   rw [key, hA, hB]; ring
 
+/-- **gridPrim limit brick (BRICK 2).**  At a moving index `Kseq N` with
+    `2·Kseq·(π/N) → θ` and `1 ≤ Kseq ≤ N−1` (eventually), `S'(Kseq) → −clausen(θ)/2`
+    — `abs_deviation_le` squeeze + `continuous_clausen` (figure-eight (b)+(c)). -/
+theorem gridPrim_tendsto (Kseq : ℕ → ℕ) (θ : ℝ)
+    (hK1 : ∀ᶠ N in Filter.atTop, 1 ≤ Kseq N)
+    (hKN : ∀ᶠ N in Filter.atTop, Kseq N ≤ N - 1)
+    (hgrid : Filter.Tendsto (fun N : ℕ => 2 * ((Kseq N : ℝ) * (π / N)))
+        Filter.atTop (nhds θ)) :
+    Filter.Tendsto (fun N : ℕ => gridPrim N (Kseq N))
+      Filter.atTop (nhds (-QOU.Knot.clausen θ / 2)) := by
+  have hcl : Filter.Tendsto
+      (fun N : ℕ => -QOU.Knot.clausen (2 * ((Kseq N : ℝ) * (π / N))) / 2)
+      Filter.atTop (nhds (-QOU.Knot.clausen θ / 2)) :=
+    (((QOU.Knot.continuous_clausen.tendsto θ).comp hgrid).neg).div_const 2
+  have hdev : Filter.Tendsto
+      (fun N : ℕ => gridPrim N (Kseq N)
+        - (-QOU.Knot.clausen (2 * ((Kseq N : ℝ) * (π / N))) / 2))
+      Filter.atTop (nhds 0) := by
+    refine squeeze_zero_norm' ?_ QOU.Knot.tendsto_master_error
+    filter_upwards [hK1, hKN, Filter.eventually_ge_atTop 4] with N hk1 hkN hN4
+    rw [Real.norm_eq_abs]
+    exact QOU.Knot.abs_deviation_le hN4 hk1 hkN
+  have hsum := hdev.add hcl
+  rw [zero_add] at hsum
+  exact hsum.congr (fun N => by ring)
+
 /-
   ROADMAP — remaining bricks to discharge `hsaddle` (all ingredients verified
   present in `QOU.Knot.Clausen`; algebra confirmed to 40 digits in
