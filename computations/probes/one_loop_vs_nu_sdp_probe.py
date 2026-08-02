@@ -25,8 +25,22 @@ for 8₁₁: τ≈2.47+8.45j (|τ|≈8.81) vs ν_SDP=2. The flattening/sign ambi
 (units, roots of unity) cannot turn these into 1 or 2 — the magnitudes alone
 refute equality. So the 1-loop torsion does NOT derive ν_SDP; Gemini's Option-A
 bridge is refuted AS STATED. (4₁ control lands in its trace field ℚ(√−3),
-|τ|=√3/2, confirming the implementation.) 1-loop=torsion remains a valid
-analytic bridge — just not to the integer ν_SDP.
+|τ|=√3/2.) 1-loop=torsion remains a valid analytic bridge — just not to the
+integer ν_SDP.
+
+RECONCILIATION with the landed value-validated probe (reuse pass, 2026-08-02):
+the AUTHORITATIVE probe for the torsion VALUE is the sibling
+`computations/probes/torsion_nu_sdp_probe.py` (PR #4576, bean qou-r307, audit
+`docs/audits/2026-08-02-r307-torsion-vs-nu-sdp-probe.md`), which computes the
+Porti adjoint Reidemeister torsion 𝕋_μ = −W'(1) via Fox calculus and is
+VALUE-validated (reproduces the known 𝕋_μ(4₁) = −3.00003; 6₂ |𝕋_μ|=16.84,
+8₁₁ |𝕋_μ|=27.76). This script is a DIFFERENT computation — the Dimofte–
+Garoufalidis 1-loop invariant from NZ gluing data (Def 2.1, the "symmetric"
+normalization of Remark 2.2) — and its normalization does NOT match Porti's
+(4₁: |τ|=√3/2 here vs 3 there; the two conventions differ by units). It is kept
+as an INDEPENDENT-ROUTE confirmation of the scope-(a) VERDICT ONLY (complex,
+non-real, modulus ≫ {1,2} ⇒ ∉ ℤ), which is normalization-robust. Do NOT read the
+τ values here as the adjoint torsion — use torsion_nu_sdp_probe.py for that.
 
 Requires: snappy (standalone; the SnapPy built-in torsion needs Sage, this
 NZ-direct route does not). numpy, sympy.
@@ -74,6 +88,10 @@ def main() -> int:
     print("\nVerdict: |τ| ≠ ν_SDP (2.22≠1, 8.81≠2). 1-loop torsion is a complex "
           "analytic invariant, not the integer dimension count ν_SDP. "
           "Gemini Option-A refuted as stated (scope-a).")
+    print("Note: this is the DG 1-loop (symmetric) normalization; for the "
+          "value-validated adjoint torsion 𝕋_μ use torsion_nu_sdp_probe.py "
+          "(PR #4576). 4₁ here lands in ℚ(√−3) (trace field) but |τ|=√3/2≠3 — "
+          "the two conventions differ by units. Verdict is normalization-robust.")
     return 0
 
 

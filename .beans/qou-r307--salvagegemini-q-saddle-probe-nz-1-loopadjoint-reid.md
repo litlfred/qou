@@ -87,3 +87,19 @@ snappy; the built-in `hyperbolic_adjoint_torsion` needs Sage, this route does no
 - Status: Option-A pruned. Garoufalidis–Yoon 1-loop=torsion remains a valid
   ANALYTIC bridge (torsion ↔ 1-loop), just not to the integer ν_SDP. Add ref
   garoufalidis-yoon2024 (2411.03801) to references.ts when a consumer lands.
+
+## RECONCILED with landed sibling (2026-08-02 rebase, reuse pass)
+A sibling independently landed the SAME scope-(a) refutation on main via the
+value-validated Porti adjoint torsion 𝕋_μ = −W'(1) (Fox calculus):
+- `computations/probes/torsion_nu_sdp_probe.py` + witness (PR #4576)
+- `docs/audits/2026-08-02-r307-torsion-vs-nu-sdp-probe.md`
+- refs Garoufalidis-Yoon 2411.03801 / Ohtsuki-Takata / Dimofte-Garoufalidis now
+  in references.ts (commit 951b0939) — my earlier "not yet in references.ts" note
+  is now stale; the ref IS present.
+Their values: 𝕋_μ(4₁)=−3.00003 ✓ (validated), 6₂ |𝕋_μ|=16.84, 8₁₁ 27.76.
+My `one_loop_vs_nu_sdp_probe.py` (DG 1-loop from NZ gluing data, "symmetric"
+normalization) reaches the same VERDICT (complex, ≫{1,2}, ∉ℤ) by a DIFFERENT
+computation; normalization differs (4₁ |τ|=√3/2 vs 3). Kept as the independent
+1-loop-side confirmation; the sibling probe is the authority for the torsion
+value. Two independent routes, one verdict — per AGENTS.md "two independent
+confirmations of an open result are valuable." No conflict, no duplication churn.
