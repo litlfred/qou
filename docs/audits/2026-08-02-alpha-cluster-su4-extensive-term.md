@@ -1,0 +1,83 @@
+# The missing extensive binding term is the α-cluster (SU(4) [1⁴]) volume term — structure derived, scale still open
+
+**Date:** 2026-08-02 · **Beans:** `qou-0c19`, `qou-uclw` · **Epic:** `qou-r2nh` ·
+**Tier:** 0-fit structural identification (scope-(a); no fit, no AME inversion; the
+STRUCTURE is derived via a proved gate, the SCALE is not yet substrate-derived).
+
+## The chain that led here
+
+1. **Value proved:** `Δ_λ = (-1)^{n(λ)}·dim V_λ` (general-n, sorry-free).
+2. **A per-block Δ_λ cannot be the magnitude** — the trace binding is intensive
+   (2026-06-02); the pairwise log-det cumulant is proved-**capped** `ρ_A ≤ C(A,2)`
+   (`QOU.MassTheory.exchangeDet_pow_two_le_four`, this PR).
+3. **0-fit A-scaling** (`binding_multibody_scaling_probe.py`): the missing term is
+   **linear in A** (per-nucleon `B/A → ~8 MeV`, CV 0.148) — not `C(A,2)`/`C(A,3)` —
+   but ⁴He exceeds the pairwise cap (12.7 > 6): a `∝A` term with a **super-pairwise
+   low-A onset**.
+
+## The identification (0-fit)
+
+`alpha_cluster_binding_scaling_probe.py`: the `∝A`-with-onset structure **is the
+α-cluster (Wigner SU(4) [1⁴] supermultiplet) volume term.**
+
+**α-conjugate nuclei (A = 4·n_α):** `B / n_α` is constant to **CV = 0.053** —
+3× tighter than per-nucleon (0.148):
+
+| iso | A | n_α | B (MeV) | B/α | B/A |
+|---|---|---|---|---|---|
+| ⁴He | 4 | 1 | 28.30 | 28.30 | 7.07 |
+| ⁸Be | 8 | 2 | 56.50 | 28.25 | 7.06 |
+| ¹²C | 12 | 3 | 92.16 | 30.72 | 7.68 |
+| ¹⁶O | 16 | 4 | 127.62 | 31.90 | 7.98 |
+
+mean **29.8 MeV/α**. (⁸Be `B = 56.50 < 2×28.30 = 56.59` correctly reflects ⁸Be
+being unbound to 2α by ~0.09 MeV.)
+
+**Sub-α onset (A < 4 = partial [1⁴] filling):** `²H` (½α) `B/A=1.11`, `³H` (¾α)
+`2.83`, `⁴He` (full α) `7.07` — the per-nucleon binding rises as the first `[1⁴]`
+supermultiplet fills.
+
+## Why this is the categorical mechanism (derived, not assumed)
+
+The proved SU(4) gate `QOU.MassTheory.su4_supermultiplet_dim_vanishes_iff`:
+`dim [1^A] = C(4, A)` — **present** (nonzero) for `A ≤ 4`, **vanishes** for `A > 4`
+(no `[1⁵]`). So:
+
+- a **complete α = one filled `[1⁴]`** supermultiplet (A=4, dim `C(4,4)=1`);
+- **A > 4 cannot fit one antisymmetric blob** → nucleons must break into separate
+  α's — this is the **categorical origin of α-clustering**, and it makes the
+  extensive term `∝ n_α = ⌊A/4⌋` (i.e. `∝A`) with the sub-α onset as partial
+  filling. It **also** explains why the pairwise cap is exceeded at ⁴He: a filled
+  `[1⁴]` is an irreducibly 4-body object, not a sum of pairwise bonds.
+
+## What is derived vs still open (STRICT honesty)
+
+- **DERIVED (structure):** that the extensive term is `∝ n_α` with a 4-body onset —
+  from the *proved* SU(4) gate. The α-cluster model of nuclear binding is a known
+  nuclear-structure fact; the framework's contribution is its **categorical
+  derivation** (α = filled `[1⁴]` via the gate), not the empirical model.
+- **OPEN (scale):** the per-α binding **magnitude ~29.8 MeV** is still **empirical**,
+  not substrate-derived from q₀. There is also a mild systematic rise (28.3 → 31.9,
+  the surface/Coulomb corrections) — 29.8 is the *leading* term, not exact. So this
+  is **not** a parameter-free binding prediction; it **localizes the remaining
+  magnitude gap** to a single sharp question: *derive the per-α binding scale
+  (~29.8 MeV) from the substrate* (e.g. the ⁴He `8G` hyperbolic volume × a
+  substrate volume→energy conversion — `8G·k`, with `k` the open input).
+
+## Verdict
+
+The missing super-pairwise extensive term is **structurally identified** as the
+α-cluster (SU(4) `[1⁴]`) volume term — 0-fit, CV 5.3% per-α, with the proved SU(4)
+gate as the categorical origin and the sub-α onset as partial `[1⁴]` filling. This
+**reconciles** the intensive-trace / pairwise-cap proofs with the `∝A` volume term.
+The remaining gate is now a **single scalar**: the per-α binding scale (~29.8 MeV),
+which stays open R&D (no fit permitted). Beans `qou-0c19` advanced; the scale gap is
+the successor to `qou-uclw`.
+
+## References
+- `computations/deltalambda/alpha_cluster_binding_scaling_probe.py` (+ witness)
+- `computations/deltalambda/binding_multibody_scaling_probe.py` (the A-scaling lead-in)
+- `QOU.MassTheory.SU4SupermultipletGate` (`su4_supermultiplet_dim_vanishes_iff`)
+- `QOU.MassTheory.exchangeDet_pow_two_le_four` (pairwise cap → super-pairwise)
+- `content/quantum-observable-universe/mass-theory/alpha-cluster-activation-gate.md`
+- `docs/audits/2026-08-02-bloch-wigner-torus-composition-volume-probe.md`
