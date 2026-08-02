@@ -101,7 +101,8 @@ The generation hierarchy cannot live in the $H_3$ Frobenius block ratio of a
    1-dim representation. Formalized sorry-free:
    `QOU.MassTheory.TrivialBlockWrithe.chi_trivial_eq_q_zpow_writhe` /
    `chi_sign_eq_negqinv_zpow_writhe`
-   (`content/quantum-observable-universe/mass-theory/trivial-block-writhe.lean`).
+   (`content/quantum-observable-universe/lean/QOU/MassTheory/TrivialBlockWrithe.lean`,
+   registered in `QOU.lean`; lean-direct EXIT=0, sorry-free).
 2. The Borromean baryon has **writhe 0** ($3(+1)+3(-1)$), so both 1-dim block
    characters are pinned to **1**, independent of $q$ — they carry no
    winding/generation information at all.
@@ -143,7 +144,7 @@ that is undefined in the corpus).
 - **GAP (charm-mass block-ratio, closed scope-(a)):** the $H_3$ Frobenius block
   ratio on the writhe-0 baryon is $O(1)$ (1.35), not the $O(100)$ charm/light
   hierarchy. Proved: the two 1-dim blocks are writhe monomials and vanish to 1 at
-  writhe 0 (`trivial-block-writhe.lean`). Do **not** re-run the block-ratio
+  writhe 0 (`QOU/MassTheory/TrivialBlockWrithe.lean`). Do **not** re-run the block-ratio
   reading at balanced writhe.
 - **GAP (charm-mass, surviving routes):** a viable complex-mass mechanism must
   supply the scale from *outside* the balanced-writhe block ratio —
