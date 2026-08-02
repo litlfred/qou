@@ -404,7 +404,34 @@ it into the braiding and lets the metric emerge symmetric.
 
 ---
 
-## 8. Follow-ups
+## 8. Follow-ups — all three landed on this branch (2026-08-01)
+
+The three items below were filed as deferred, then authorised by the
+owner and completed on the same branch. Recorded here as done:
+
+1. **Proposition repaired.** `prop:crossing-energy-decomposition`
+   claims 1–2 now state the correct channel formulas
+   $(p-m)\cosh\lambda$ and $(p+m)\sinh\lambda$, which reconstruct
+   $\mathfrak{E}_{\mathrm{cross}}$ exactly; claim 2 distinguishes the
+   parity of the weight *functions* from that of the channel *totals*
+   (§5.2); claim 4 carries the positive-braid hypothesis and states the
+   general multiplicity factor. A `caveat` authorNote records the
+   correction and confirms no downstream value moves. The block's
+   `lean.ref` now points at `crossingEnergy_split`.
+2. **Skein-scale claim softened.** `rem:crossing-energy-interpretation`
+   no longer calls $\tanh(\ln q_0) \approx 0.104$ an "EM/strong ratio at
+   the Skein scale". It is now stated as a ratio of channel weights at
+   the substrate anchor, with an explicit note that no renormalisation
+   scale attaches to it and that it is not $\alpha/\alpha_s$. The
+   channel-identification table's mirror column was corrected in the
+   same pass (it had the same weight-vs-total ambiguity, and was
+   backwards under crossing reversal).
+3. **`pair_cancellation` promoted.** New block
+   `prop:crossing-energy-pair-cancellation`, `lean.ref`
+   `qou:QOU.Braiding.pair_cancellation`, wired into the observations
+   chapter between the decomposition and its interpretation.
+
+### Original filing (retained for context)
 
 1. **Repair `prop:crossing-energy-decomposition` claims 1–2 and 4.**
    Claims 1–2 carry formulas that overshoot

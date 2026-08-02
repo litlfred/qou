@@ -231,9 +231,9 @@ crossing signs the ratio picks up the multiplicity factor `(p+m)/(p-m)`:
 
   `E_asym / E_sym = ((p+m)/(p-m)) · tanh(ln q)`.
 
-So the ratio is `tanh(ln q)` exactly on the positive-braid locus `m = 0`
-(and, symmetrically, `-tanh(ln q)` on `p = 0`); it is **not** independent
-of the composite in general. -/
+The ratio equals `tanh(ln q)` exactly on the positive-braid locus
+`m = 0` (and, symmetrically, `-tanh(ln q)` on `p = 0`); it is **not**
+independent of the composite in general. -/
 -- Ref: [manuscript] Ch. 7, §crossing-energy-decomposition
 theorem ratio_general (p m : ℕ) (q : ℝ) (hq : 1 < q)
     (hpm : (p : ℝ) - (m : ℝ) ≠ 0) :
