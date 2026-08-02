@@ -587,6 +587,7 @@ import QOU.MassTheory.BrunnianDeficitLeadingOrderDerived
 -- is surjective onto (0,∞) in its one free scalar m ⇒ WALL(scope-(a)); naive z scope-(b)
 -- excluded. Formalize-first, 0-fit, sorry-free.
 import QOU.MassTheory.A4InterfaceMagnitude
+import QOU.MassTheory.B4NonSaturatingBracket
 import QOU.BraidKnot.ColoredJonesRecurrence
 import QOU.BraidKnot.KnotOperatorRecurrence
 -- Resurgent-bridge tranche (Δ_λ sign/magnitude → DT/3d-index unification):
