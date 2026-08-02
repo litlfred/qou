@@ -1,0 +1,60 @@
+{
+  "engine": "python-int",
+  "engineVersion": "python-stdlib",
+  "computedAt": "2026-08-02T09:46:01.737580+00:00",
+  "computation": "aomega-bps-sector-nondegeneracy",
+  "scriptFile": "aomega_bps_sector_nondegeneracy.py",
+  "contentBlock": "conj:stokes-dt-bps-bridge",
+  "assertions": [
+    {
+      "name": "trefoil_calibration_det_eq_quiver_nodes",
+      "computed": 3,
+      "expected": 3,
+      "passed": true,
+      "source": "det(3_1)=3 = # KRSS trefoil quiver nodes = # HOMFLY generators (1707.02991)"
+    },
+    {
+      "name": "open_HOMFLY_count_4_1_is_det_five",
+      "computed": 5,
+      "expected": 5,
+      "passed": true,
+      "source": "Gukov\u2013Sto\u0161i\u0107 open-BPS / knots-quivers: 4_1 count = det(4_1) = 5"
+    },
+    {
+      "name": "open_sector_does_NOT_reproduce_GGM_spectrum",
+      "computed": 0,
+      "expected": 0,
+      "passed": true,
+      "source": "5 \u2209 {3,4}: the open-HOMFLY Gukov\u2013Sto\u0161i\u0107 bridge FAILS the gate"
+    },
+    {
+      "name": "closed_sector_reproduces_reduced_stokes_three",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "source": "GGM Conj 3(d)+GPPV: reduced-Stokes 3 \u2208 {3,4}; q\u21920 anchor 3 (StokesQZeroDTCount) PASSES"
+    }
+  ],
+  "allPassed": true,
+  "result": {
+    "open_sector": {
+      "bridge": "Gukov\u2013Sto\u0161i\u0107 1112.0030 (open BPS / colored HOMFLY homology)",
+      "count_4_1": 5,
+      "route": "knots\u2013quivers 1707.02991: #nodes = #HOMFLY generators = det",
+      "reproduces_GGM_3_4": false,
+      "verdict": "FAIL \u2014 5 \u2209 {3,4}; wrong BPS sector for A_\u03c9"
+    },
+    "closed_sector": {
+      "bridge": "GPPV 1701.06567 + GGM peacock Conj 3(d) 2012.00062",
+      "ggm_dt_spectrum": [
+        3,
+        4
+      ],
+      "reduced_stokes_constant": 3,
+      "qzero_anchor_lean": 3,
+      "reproduces_GGM_3_4": true,
+      "verdict": "PASS \u2014 reduced-Stokes 3 \u2208 {3,4}; licenses A_\u03c9(4_1)=3 (theorem for 4_1)"
+    }
+  },
+  "discipline": "Honest non-degeneracy gate. The owner-named Gukov\u2013Sto\u0161i\u0107 OPEN-HOMFLY bridge does NOT reproduce the GGM resurgent-Stokes spectrum {3,4}: the 4_1 open-BPS/quiver count is det(4_1)=5, a DISTINCT BPS sector. The conditional A_\u03c9=3 is therefore adopted on the CLOSED-sector bridge (GGM Conj 3(d) + GPPV), which reproduces {3,4}/reduced-3. No fit; no production wiring (L2/Q_\u03b2 untouched); conditional (theorem for 4_1), internal QOU-driver derivation still open (qou-qnnq)."
+}

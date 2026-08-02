@@ -673,6 +673,11 @@ export default chapter({
             "rem-c3-s-imq-decay-projection",
             "rem-qstar-decay-sector-q0",
             "rem-ohtsuki-tower-bar-parity",
+            // A_ω=3 closed-sector conditional adoption (bean qou-ujmw): the
+            // resurgent-Stokes = DT/BPS bridge (GGM Conj 3(d) + GPPV) and the
+            // conditional theorem deriving A_ω(4₁)=3 as a BPS/DT count.
+            "stokes-dt-bps-bridge",
+            "aomega-fourone-dt-count",
           ],
         }),
         section({
