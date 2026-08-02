@@ -810,6 +810,11 @@ import QOU.BraidsAndKnots.ThreeRowSignCrossing
 -- q=1, which is WHY the ≥3-row trace is O(10⁻⁵) near q=1. Sorry-free, generic
 -- Field K.
 import QOU.BraidsAndKnots.WenzlLevelStratum
+-- 1-dim Hecke block characters are writhe monomials (chi_triv=q^writhe,
+-- chi_sign=(-q⁻¹)^writhe); writhe-0 baryon ⟹ both collapse to 1. Prunes the
+-- charm-mass Frobenius block-projection route (block ratio O(1) at balanced
+-- writhe). docs/audits/2026-08-02-charm-mass-frobenius-block-projection-negative.md
+import QOU.MassTheory.TrivialBlockWrithe
 import QOU.BraidKnot.ColoredJonesRecurrence
 import QOU.BraidKnot.KnotOperatorRecurrence
 -- Resurgent-bridge tranche (Δ_λ sign/magnitude → DT/3d-index unification):
