@@ -61,7 +61,7 @@
   (`fake_both_parity`), hence STRICTLY undershoots and can never equal `Δ_λ`
   (`fake_cancels_ne_deltaLambda`).  The single-degree object `G_λ` is single-parity
   (`single_is_single_parity`), saturates, and equals `Δ_λ`
-  (`single_gradedEuler_eq_deltaLambda`).
+  (`single_altSum_eq_deltaLambda`).
 
   READING / VERDICT (honest negative, scope-(a) LIMITATIVE).  Every algebraic
   graded object the substrate produces is a genuine graded MULTIPLICITY space: it
@@ -112,7 +112,9 @@
   -- Ref: [macdonald1995] Macdonald, Symmetric Functions and Hall Polynomials
   -- Ref: [james1984representation] https://doi.org/10.1007/978-1-4684-9458-7
 -/
-import QOU.BraidsAndKnots.S5SO3FiberAction
+import QOU.BraidsAndKnots.DeltaLambdaTopDegreeConcentration
+-- (dedup) singleCoeffs / fakeCoeffs are reused from DeltaLambdaTopDegreeConcentration (#4570);
+-- this module adds the even/odd-mass reformulation + the general cancellation frontier.
 
 namespace QOU.BraidsAndKnots
 
@@ -236,20 +238,6 @@ theorem deltaLambda_realization_is_cancellation_free
                            merely its bottom valuation).  Data verbatim from
                            #4570 / #4574. -/
 
-/-- Single-degree Springer object `G_λ`: `n(λ)` leading zeros then `dim V_λ`. -/
-def PartitionOf5.singleCoeffs (p : PartitionOf5) : List ℕ :=
-  List.replicate p.nStat 0 ++ [p.dim]
-
-/-- Honest jet-order / coinvariant graded object `H_λ` (coefficients of `f_λ(q)`). -/
-def PartitionOf5.fakeCoeffs : PartitionOf5 → List ℕ
-  | .five         => [1]                                -- f = 1              (q^0)
-  | .fourOne      => [0, 1, 1, 1, 1]                    -- f = q[4]_q         (q^1..q^4)
-  | .threeTwo     => [0, 0, 1, 1, 1, 1, 1]              -- f = q²[5]_q        (q^2..q^6)
-  | .threeOneOne  => [0, 0, 0, 1, 1, 2, 1, 1]           -- f = q³[3]_q(1+q²)  (q^3..q^7)
-  | .twoTwoOne    => [0, 0, 0, 0, 1, 1, 1, 1, 1]        -- f = q⁴[5]_q        (q^4..q^8)
-  | .twoOneOneOne => [0, 0, 0, 0, 0, 0, 1, 1, 1, 1]     -- f = q⁶[4]_q        (q^6..q^9)
-  | .onesFive     => [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]  -- f = q^{10}         (q^10)
-
 /-- Both objects carry the ungraded Wedderburn dimension `dim V_λ` (`f_λ(1)=dim`). -/
 theorem PartitionOf5.single_sum_eq_dim (p : PartitionOf5) :
     (p.singleCoeffs).sum = p.dim := by cases p <;> decide
@@ -258,7 +246,7 @@ theorem PartitionOf5.fake_sum_eq_dim (p : PartitionOf5) :
     (p.fakeCoeffs).sum = p.dim := by cases p <;> decide
 
 /-- `G_λ` realizes `Δ_λ` (the #4553 single-degree collapse). -/
-theorem PartitionOf5.single_gradedEuler_eq_deltaLambda (p : PartitionOf5) :
+theorem PartitionOf5.single_altSum_eq_deltaLambda (p : PartitionOf5) :
     altSum p.singleCoeffs = p.deltaLambda := by cases p <;> decide
 
 /-! ### `G_λ` is single-parity; `H_λ` is two-parity — the mechanism, on the anchor -/
@@ -336,7 +324,7 @@ theorem graded_structure_cannot_force_concentration :
   ⟨PartitionOf5.singleCoeffs, PartitionOf5.fakeCoeffs,
     fun p => by rw [p.single_sum_eq_dim, p.fake_sum_eq_dim],
     fun p h => p.fake_cancels_ne_deltaLambda h,
-    fun p => p.single_gradedEuler_eq_deltaLambda,
+    fun p => p.single_altSum_eq_deltaLambda,
     fun p l => deltaLambda_realization_is_cancellation_free p l⟩
 
 end QOU.BraidsAndKnots
