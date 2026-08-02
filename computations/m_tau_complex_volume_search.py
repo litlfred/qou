@@ -297,7 +297,10 @@ def entropy_analysis(census_size: int, n_functionals: int, n_exponents: int,
             "tolerance": w,
             "match_specificity_bits": round(mb, 2),
             "identifiable": bool(mb > search_bits),  # need more info than search noise
-            "expected_chance_hits": round(N * 2.0 * w, 2),
+            # loose UNIFORM upper bound on chance hits (assumes prediction density
+            # ~ N/target over the window); the empirical scan count is the true
+            # figure and is far below this -- predictions are sparse near target.
+            "upper_bound_chance_hits_uniform": round(N * 2.0 * w, 2),
         }
     return {
         "census_size": census_size,
@@ -307,10 +310,16 @@ def entropy_analysis(census_size: int, n_functionals: int, n_exponents: int,
         "search_entropy_bits": round(search_bits, 2),
         "tiers": tiers,
         "observed_1pct_hits_per_Fk": hit_counts_1pct,
+        "observed_1pct_hits_total": sum(hit_counts_1pct),
         "interpretation": (
             "A tolerance w is 'identifiable' only if match_specificity_bits > "
             "search_entropy_bits, i.e. the match pins the target more tightly "
-            "than the search itself can resolve by chance. See tiers[].identifiable."
+            "than the search itself can resolve by chance. Here NO reachable "
+            "tolerance (down to the experimental 5e-5) is identifiable: the "
+            "census cannot pin m_tau even in principle. Independently, the "
+            "empirical scan finds 0 hits at 1% -- the predictions are sparse "
+            "near the target, floor stays at 1.33 percent as in the 25-knot "
+            "search. Both point the same way."
         ),
     }
 
@@ -376,7 +385,7 @@ def main() -> None:
         print(f"  tol {lbl:>8} ({t['tolerance']:.0e}): "
               f"{t['match_specificity_bits']} bits, "
               f"identifiable={t['identifiable']}, "
-              f"exp_chance_hits={t['expected_chance_hits']}")
+              f"ub_chance_hits={t['upper_bound_chance_hits_uniform']}")
 
     conclusion = ("sharpened_negative: the complex-volume axis does not yield a "
                   "DERIVED identification of m_tau. (1) The framework-derived "
