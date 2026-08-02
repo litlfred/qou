@@ -1,15 +1,15 @@
 {
   "engine": "sympy",
   "engineVersion": "1.14.0",
-  "computedAt": "2026-07-03T15:22:14.837874+00:00",
-  "commitSha": "b254c96ea06c1a8c2be840d4944fc2b935b69339",
+  "computedAt": "2026-08-02T18:40:41.267212+00:00",
+  "commitSha": "b221c98897d1a4e9a6111fbc14ab83a97a179784",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 1009495,
+  "durationMs": 18710,
   "computation": "aj-trefoil-operator-construct-verify",
   "scriptFile": "aj_trefoil_operator_construct_verify.py",
-  "scriptHash": "0b4564421b34",
-  "scriptCommitSha": "b254c96ea06c1a8c2be840d4944fc2b935b69339",
+  "scriptHash": "97970d42ad79",
+  "scriptCommitSha": "2ca3c9e40aaa510d04b59a637d1fd284bb471615",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -18,8 +18,10 @@
   },
   "environment": {
     "python": "3.11.15",
+    "numpy": "2.4.6",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "Trefoil quantum A-polynomial: Rosso-Jones tower (self-anchored conventions), minimal-window exact construction of the annihilator, exact symbolic verification, q->1 specialization vs the classical trefoil A-polynomial (AJ verification at the QOU electron knot).",
   "audit_only": true,

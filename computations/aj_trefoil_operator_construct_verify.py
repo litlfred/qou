@@ -176,8 +176,14 @@ def main() -> int:
 
     # even-v-power sanity for a few N (tower lies in Z[q^{+-1}])
     def tower_q_symbolic(N: int):
-        Jw = sp.simplify(sp.factor(jones_trefoil(N, w, sign_mode, framing)))
-        Jq = sp.expand(sp.simplify(Jw.subs(w, q ** sp.Rational(1, 4))))
+        # P16 (cf. 2834792d): the coloured Jones is a polynomial ratio in
+        # `w`, so `sp.cancel` reduces it to the same lowest-terms form that
+        # `sp.simplify(sp.factor(...))` produced — but without the radical-
+        # aware `simplify` heuristics that walled this tower at ~16.8 min
+        # (N=1..12 on w=q^¼ rationals). The result is `sp.expand`-ed anyway,
+        # so the inner `simplify` was purely cosmetic; drop it.
+        Jw = sp.cancel(jones_trefoil(N, w, sign_mode, framing))
+        Jq = sp.expand(Jw.subs(w, q ** sp.Rational(1, 4)))
         return sp.expand(Jq)
     Jsym = {N: tower_q_symbolic(N) for N in range(1, N_VERIFY_SYMBOLIC + 3)}
     stray_sqrt = any(("sqrt" in str(Jsym[N])) or ("/4" in str(Jsym[N]))
@@ -293,7 +299,10 @@ def main() -> int:
         mv = q**N
         lhs = sum(a[j].subs(m, mv) * Jsym[N + j] for j in range(order + 1))
         resid = sp.cancel(sp.together(lhs - b.subs(m, mv)))
-        ver_ok[N] = (sp.simplify(resid) == 0)
+        # P16: `resid` is already a fully-reduced rational (cancel∘together),
+        # so it is 0 iff `resid == 0` structurally — the outer `sp.simplify`
+        # was a redundant zero-retest. Boolean is bit-identical.
+        ver_ok[N] = (resid == 0)
         if not ver_ok[N]:
             print(f"  [verify] N={N}: RESIDUAL != 0")
     all_ver = all(ver_ok.values())
@@ -324,8 +333,11 @@ def main() -> int:
         for rname, ref in A_refs.items():
             ratio = sp.cancel(op_cl / ref)
             num_, den_ = sp.fraction(sp.together(ratio))
+            # P16: `op_cl*den_ - ref*num_` is a polynomial in L,M,q; after
+            # `sp.expand` it is zero iff its expanded form is 0, so the outer
+            # `sp.simplify` was a redundant polynomial zero-retest.
             unit_match = (not num_.has(L)) and (not den_.has(L)) and \
-                sp.simplify(sp.expand(op_cl * den_ - ref * num_)) == 0
+                sp.expand(op_cl * den_ - ref * num_) == 0
             entry[rname] = {"ratio": str(sp.cancel(ratio)),
                             "matches_up_to_L_free_M_factor": bool(unit_match)}
             if unit_match:
