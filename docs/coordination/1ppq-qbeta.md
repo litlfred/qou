@@ -2797,3 +2797,30 @@ compute and diffing the witness*, not by reading code. A witness that predates
 the commit it claims to describe is not evidence; it is a stale assertion of a
 PASS. Refreshing witnesses in the same commit as the change they describe is
 what would have caught all three at authoring time.
+
+## 2026-08-02 — A_ω=3 made conditional-on-published-conjecture (bean qou-ujmw)
+
+**PR:** `claude/aomega-conditional-gukov-stosic-bps-2026-08-02` (#4569).
+A_ω=3 (figure-eight) moved *structurally-open* → *conditional-on
+`conj:stokes-dt-bps-bridge`* [garoufalidis-gu-marino2023peacock Conj 3(d) +
+gukov-pei-putrov-vafa2017 (GPPV)], Vol-conjecture-style. **Theorem for 4₁**
+(GGM proved peacock Conj 3 for 4₁); conjectural in general. NOT wired to
+production (L2/Q_β untouched). Internal QOU-driver derivation of `3` still
+OPEN (qou-qnnq).
+
+**Honest non-degeneracy gate result (owner-mandated):** the owner-named
+**Gukov–Stošić** knot-homology↔BPS bridge (1112.0030) is the **OPEN** BPS
+sector (colored HOMFLY homology on the conormal Lagrangian). Via knots–quivers
+(1707.02991) the 4₁ open-BPS count is `det(4₁)=5` (trefoil calibration = 3 =
+det 3₁). **5 ∉ {3,4} → that bridge FAILS the gate and was NOT landed as a
+class.** The `{3,4}`/reduced-3 live in the **CLOSED** / state-integral
+resurgent sector (GGM Conj 3(d) + GPPV), which is what the adopted class
+uses. Witness `computations/probes/aomega-bps-sector-nondegeneracy.witness.json`;
+audit `docs/audits/2026-08-02-aomega-conditional-gukov-stosic-bps-bridge.md`.
+
+**Beans (CLI absent this session — recorded here):** qou-ujmw → conditional
+adoption landed (this PR); qou-qnnq → internal derivation of `3` still open
+(sibling #4554); qou-sfuo → see #4554/#4567 for the cross-knot {3,4} angle.
+
+**Flag:** the A_ω bricks cite `[garoufalidis-gu-marino2021]` for GGM
+2012.00062, which is `garoufalidis-gu-marino2023peacock`. Follow-up fix.
