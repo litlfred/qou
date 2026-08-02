@@ -119,9 +119,10 @@ form
     2 · numerComputed n  =  n(3n−1) · n!     (⟺ M(n) = n(3n−1)/2)
 
 for n = 1..8, anchoring the carried `twoM` def to the genuine quantity
-(previously Python-only; audit n = 2..14). General n: Piece A has an explicit
-elementary proof (`docs/audits/2026-08-01-keystone-identity-I-piece-A-general-proof.md`,
-bean `qou-o5xj` for the Lean formalization); Piece B (Plancherel/JM) tracked
+(previously Python-only; audit n = 2..14). General n: Piece A is proved
+sorry-free in Lean (`QOU.BraidKnot.PieceA.pieceA` in `PieceAGeneral.lean`;
+`docs/audits/2026-08-01-keystone-identity-I-piece-A-general-proof.md`,
+bean `qou-o5xj` closed); Piece B (Plancherel/JM) tracked
 separately. Ref: [manuscript] docs/audits/2026-06-20-keystone-wlambda-C-n-closed-form.md
 -/
 
