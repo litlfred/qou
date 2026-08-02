@@ -80,6 +80,44 @@ predictor assembled from the eigenphases is bounded and carries no absolute scal
 theorem compact_eigenphase_bounded (x : ℝ) : Real.arccos x ≤ Real.pi :=
   Real.arccos_le_pi x
 
+/-! ### Information-equivalence: the compact eigenphase is a *lossless reparametrization* of the
+character already summed in the master binding formula (front 3, honest scope-(a) sharpening).
+
+The eigenphase does not merely fail to supply the scale — on the compact blocks it carries **exactly**
+the character `χ_λ` and nothing more. `arccos` is a bijection `[-1,1] ↔ [0,π]` (`Real.cos_arccos` /
+`Real.arccos_cos`), so `θ_λ = arccos(χ_λ/d_λ)` recovers `χ_λ = d_λ cos θ_λ` on every block where it is
+defined. Hence a predictor built from the compact eigenphases is a reparametrization of the `χ_λ`
+already inside `S(K) = Σ_λ y_λ χ_λ f^λ`; it introduces **no new information**, so it cannot be the
+source of the missing scale `C_knot`. This is why the route is "difference-only": it is the same data
+in angular coordinates. The scale must come from *outside* the character data (a radial `Vol·ρ` input).
+
+NOTE — this is **scope-(a)** (the eigenphase route adds nothing new), NOT a scope-(b) claim that *no*
+substrate function yields `C_knot`: `C_knot` is dimensionless and bounded (3.3–9.3), so no
+dimensional/boundedness argument excludes a substrate function in general. Only the eigenphase
+*reparametrization* is excluded, by the bijection below. -/
+
+/-- **The compact eigenphase recovers the character ratio exactly** (lossless): on a block with
+`|χ/d| ≤ 1`, `cos(arccos(χ/d)) = χ/d`. -/
+theorem eigenphase_recovers_ratio (r : ℝ) (h1 : -1 ≤ r) (h2 : r ≤ 1) :
+    Real.cos (Real.arccos r) = r :=
+  Real.cos_arccos h1 h2
+
+/-- **The character is reconstructed from its eigenphase**: `χ = d · cos θ_λ` with
+`θ_λ = arccos(χ/d)`, on any compact block (`d ≠ 0`, `|χ/d| ≤ 1`). So the eigenphase encoding of a
+compact block is invertible — it carries the full character, no more, no less. -/
+theorem char_from_eigenphase (d χ : ℝ) (hd : d ≠ 0) (h1 : -1 ≤ χ / d) (h2 : χ / d ≤ 1) :
+    d * Real.cos (Real.arccos (χ / d)) = χ := by
+  rw [Real.cos_arccos h1 h2]
+  field_simp
+
+/-- **The eigenphase inverts the character on `[0,π]`**: `arccos(cos θ) = θ` for `θ ∈ [0,π]`, the
+other half of the bijection. Together with `char_from_eigenphase` this makes `χ_λ ↦ θ_λ` a lossless
+reparametrization on the compact blocks — the angular data is information-equivalent to the character
+data already inside `S(K)`. -/
+theorem eigenphase_bijective_on_range (θ : ℝ) (h1 : 0 ≤ θ) (h2 : θ ≤ Real.pi) :
+    Real.arccos (Real.cos θ) = θ :=
+  Real.arccos_cos h1 h2
+
 /-- **Capstone — the q-Reeb eigenphase route is compact, hence difference-only.** Bundling the facts:
 the sole boost block in each binding knot is the 1-dimensional trivial rep (a real scaling `q^w`,
 `trivial_char_is_scaling`), which carries no rotation angle (`no_rotation_angle_of_boost`); every
