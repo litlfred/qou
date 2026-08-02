@@ -58,6 +58,35 @@ the deuteron is *already* the **Borromean 3-body volume** (7.327). This is fully
 consistent with the proved pairwise cap `ρ_A ≤ C(A,2)`
 (`QOU.MassTheory.exchangeDet_pow_two_le_four`): the term must be irreducibly ≥3-body.
 
+## Finding 4 (0-fit scaling) — the extensive term is LINEAR in A (per-nucleon), not per-pair or per-triple
+
+`binding_multibody_scaling_probe.py` (11 nuclei, A=2–16, **no fit**) asks which
+combinatorial count AME `B(A)` tracks with a constant ratio (coefficient of
+variation across A≥4, smaller = more constant):
+
+| scaling | CV (A≥4) | reading |
+|---|---|---|
+| `B / A` (per-nucleon) | **0.148** | **most constant** — the liquid-drop volume term, `B/A → ~8 MeV` |
+| `B / C(A,2)` (per-pair) | 0.565 | decreasing — pairwise overshoots at high A |
+| `B / C(A,3)` (per-triple) | 1.281 | worst |
+
+So the missing extensive term is **linear in A** (the liquid-drop **volume** term),
+**not** `C(A,2)` and **not** `C(A,3)`. Yet the pairwise cap is genuinely exceeded at
+low A: `B(⁴He)/B(²H) = 12.7 > C(4,2)=6` (EXCEEDS), and per-nucleon binding rises
+6.4× from ²H (1.11) to ⁴He (7.07) before the plateau. **Reconciliation:** the term is
+asymptotically `∝A` (volume/saturation), but its **low-A onset is super-pairwise** —
+you cannot build a `∝A` term from pairwise-cap-limited pieces, so the α-cluster
+(≥3–4-body, the SU(4) `[1⁴]` supermultiplet) is what lifts the light nuclei onto the
+volume line. Cap-proof and volume-term are consistent, not in tension.
+
+**Refined Bloch-Wigner target.** For `B ∝ A`, the volume route needs `V_hyp ∝ A` —
+a **per-nucleon** volume quantum, NOT the per-arc `(A−1)` or per-triple `C(A,3)` sum I
+first guessed, and NOT the single intensive atom-link volume (Finding 1). The ⁴He
+`8G` Borromean volume is `2G` per nucleon (`8G/4`), matching `B/A ≈ 7 MeV`. So the
+sharpened `qou-uclw` object is a **per-nucleon hyperbolic-volume quantum (~2G)** from
+the bound composition, with the α-cluster onset at low A. (The deuteron's `vol_eff=8G`
+is then a low-A coincidence, not the per-nucleon law — consistent with Finding 1.)
+
 ## Verdict
 
 - **Naive Bloch-Wigner single-link volume route: intensive — scope-(a) negative**,
