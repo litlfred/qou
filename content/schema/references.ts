@@ -4642,6 +4642,130 @@ export const references: CSLData[] = [
       "structure (eq. 16(d)) — a derived integer count, not a fit.",
   }),
 
+  // ── Gukov–Stošić 2012 (homological algebra of knots and BPS states) ──
+  ref({
+    id: "gukov-stosic2012",
+    type: "article",
+    title: "Homological Algebra of Knots and BPS States",
+    author: [
+      { family: "Gukov", given: "Sergei" },
+      { family: "Stošić", given: "Marko" },
+    ],
+    issued: { "date-parts": [[2012]] },
+    "container-title": "Geometry & Topology Monographs",
+    volume: "18",
+    page: "309-367",
+    URL: "https://arxiv.org/abs/1112.0030",
+    note:
+      "arXiv:1112.0030v2 [hep-th], Geom. Topol. Monogr. 18 (2012) 309-367. " +
+      "Added 2026-08-02 from uploads/1112.0030v2.pdf (authors verified from " +
+      "the arXiv title page: Sergei Gukov, Marko Stošić). The knot-homology " +
+      "↔ BPS-states bridge: reduced/colored HOMFLY homology of a knot K is " +
+      "the space of **open** BPS states of the M5-brane on the conormal " +
+      "Lagrangian $L_K \\subset T^*S^3$ (§1–2; Appendix C computes the " +
+      "$H_3(4_1)$ colored homology of the figure-eight). For QOU: assessed " +
+      "as the candidate published conjecture licensing the G3 Stokes integer " +
+      "$A_\\omega = 3$. The non-degeneracy check (PR of 2026-08-02) finds " +
+      "the OPEN-HOMFLY count of $4_1$ is $\\det(4_1)=5$ (5 HOMFLY generators / " +
+      "5-node quiver, via the knots–quivers correspondence " +
+      "kucharski-reineke-stosic-sulkowski2017), NOT the GGM resurgent-Stokes " +
+      "spectrum $\\{3,4\\}$ — a DISTINCT BPS sector. So this bridge does NOT " +
+      "license $A_\\omega=3$; the licensing conjecture is the closed / " +
+      "state-integral resurgent-Stokes = DT/BPS identification " +
+      "(garoufalidis-gu-marino2023peacock Conjecture 3(d) + " +
+      "gukov-pei-putrov-vafa2017).",
+  }),
+
+  // ── Gorsky–Gukov–Stošić 2013 (quadruply-graded colored homology of knots) ──
+  ref({
+    id: "gorsky-gukov-stosic2013",
+    type: "article",
+    title: "Quadruply-Graded Colored Homology of Knots",
+    author: [
+      { family: "Gorsky", given: "Eugene" },
+      { family: "Gukov", given: "Sergei" },
+      { family: "Stošić", given: "Marko" },
+    ],
+    issued: { "date-parts": [[2013]] },
+    "container-title": "Fundamenta Mathematicae",
+    volume: "243",
+    page: "209-299",
+    URL: "https://arxiv.org/abs/1304.3481",
+    note:
+      "arXiv:1304.3481v1 [math.QA], Fund. Math. 243 (2018) 209-299. Added " +
+      "2026-08-02 from uploads/1304.3481v1.pdf (authors verified: Eugene " +
+      "Gorsky, Sergei Gukov, Marko Stošić). Refined (quadruple) grading on " +
+      "the colored HOMFLY homology of the Gukov–Stošić BPS-states picture, " +
+      "with the physical realization by counting supersymmetric configurations " +
+      "(BPS states, instantons, vortices). Companion to gukov-stosic2012 in " +
+      "the QOU $A_\\omega$ non-degeneracy assessment.",
+  }),
+
+  // ── Gukov–Pei–Putrov–Vafa 2017 (GPPV: BPS spectra and 3-manifold invariants) ──
+  ref({
+    id: "gukov-pei-putrov-vafa2017",
+    type: "article",
+    title: "BPS Spectra and 3-Manifold Invariants",
+    author: [
+      { family: "Gukov", given: "Sergei" },
+      { family: "Pei", given: "Du" },
+      { family: "Putrov", given: "Pavel" },
+      { family: "Vafa", given: "Cumrun" },
+    ],
+    issued: { "date-parts": [[2020]] },
+    "container-title": "Journal of Knot Theory and Its Ramifications",
+    volume: "29",
+    issue: "2",
+    page: "2040003",
+    URL: "https://arxiv.org/abs/1701.06567",
+    note:
+      "arXiv:1701.06567v2 [hep-th], J. Knot Theory Ramifications 29 (2020) " +
+      "2040003. Added 2026-08-02 from uploads/1701.06567v2.pdf (authors " +
+      "verified: Sergei Gukov, Du Pei, Pavel Putrov, Cumrun Vafa). The GPPV " +
+      "homological invariants $\\hat{H}_a(M_3)$ / $\\hat{Z}$: the Hilbert " +
+      "space of BPS states of the 6d fivebrane on $M_3 \\times D^2$ " +
+      "categorifies WRT / the 3d $\\mathcal{N}=2$ $T[M_3]$ indices " +
+      "($D^2\\times S^1$ half-index, $S^2\\times S^1$ superconformal / twisted " +
+      "index). For QOU this is the **closed** / state-integral BPS sector that " +
+      "supplies the BPS-Hilbert-space realization of the resurgent-Stokes = DT " +
+      "count behind $A_\\omega$ (the licensing bridge, with " +
+      "garoufalidis-gu-marino2023peacock Conjecture 3(d) and " +
+      "dimofte-gaiotto-gukov2013) — distinct from the OPEN-HOMFLY sector of " +
+      "gukov-stosic2012.",
+  }),
+
+  // ── Kucharski–Reineke–Stošić–Sułkowski 2017 (BPS states, knots and quivers) ──
+  ref({
+    id: "kucharski-reineke-stosic-sulkowski2017",
+    type: "article",
+    title: "BPS States, Knots, and Quivers",
+    author: [
+      { family: "Kucharski", given: "Piotr" },
+      { family: "Reineke", given: "Markus" },
+      { family: "Stošić", given: "Marko" },
+      { family: "Sułkowski", given: "Piotr" },
+    ],
+    issued: { "date-parts": [[2017]] },
+    "container-title": "Physical Review D",
+    volume: "96",
+    issue: "12",
+    page: "121902",
+    DOI: "10.1103/PhysRevD.96.121902",
+    URL: "https://arxiv.org/abs/1707.02991",
+    note:
+      "arXiv:1707.02991v1 [hep-th], Phys. Rev. D 96 (2017) 121902. Added " +
+      "2026-08-02 from uploads/1707.02991v1.pdf (authors verified: Piotr " +
+      "Kucharski, Markus Reineke, Marko Stošić, Piotr Sułkowski). The " +
+      "knots–quivers correspondence: to a knot K one associates a quiver whose " +
+      "vertices are the generators of the (open-BPS) HOMFLY-PT homology, and " +
+      "whose motivic Donaldson–Thomas / LMOV invariants express the colored " +
+      "HOMFLY invariants. Worked example: the trefoil $3_1$ → 3-node quiver " +
+      "(3 = det $3_1$ = # HOMFLY generators). For QOU: gives the concrete " +
+      "OPEN-BPS count of $4_1$ used in the $A_\\omega$ non-degeneracy check — " +
+      "$\\det(4_1)=5$ nodes, which is NOT the GGM resurgent-Stokes $\\{3,4\\}$ " +
+      "(the two BPS sectors are distinct).",
+  }),
+
   // ── Garoufalidis–Kashaev 2015 (evaluation of state integrals at rational points) ──
   ref({
     id: "garoufalidis-kashaev2015",
