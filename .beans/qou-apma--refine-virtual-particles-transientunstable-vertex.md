@@ -1,0 +1,72 @@
+---
+# qou-apma
+title: 'REFINE: virtual particles = transient/unstable vertex flows (Reeb flow + Demazure + width)'
+status: todo
+type: task
+created_at: 2026-08-02T18:14:05Z
+updated_at: 2026-08-02T18:14:05Z
+parent: qou-ywj9
+---
+
+## Framing (owner, 2026-08-02)
+
+"Virtual particles = transient / unstable vertex flows."
+
+## Corpus state (grep done — already framed, this REFINES it)
+
+QOU already localises virtual particles geometrically:
+
+- [`virtual-particles-exceptional-divisor`](https://github.com/litlfred/qou/blob/claude/agent-task-662242-vag458/content/quantum-observable-universe/observations/virtual-particles-exceptional-divisor.md):
+  a virtual particle operates in the Reeb bundle over the exceptional
+  divisor $\mathcal{S}_p\cong\mathbb{P}^1$ (the **vertex** — cf.
+  `prop:vertex-is-exceptional-divisor`), propagates through the recursive
+  brane tower $A_0\hookrightarrow A_1\hookrightarrow\cdots$, and is
+  reabsorbed before reaching base level $A_0$. Tower level $A_n$ =
+  $n$-virtual depth; $\pi_0:A_n\to A_0$ annihilates $\Omega^1$ (off-shell
+  = projects no shadow). Lifetime from the level-$n$ Heisenberg
+  commutator $\hbar_{q_n}=1-q_n^{-1}$.
+- [`vacuum-polarization-virtual-pairs`](https://github.com/litlfred/qou/blob/claude/agent-task-662242-vag458/content/quantum-observable-universe/observations/vacuum-polarization-virtual-pairs.md).
+- AGENTS.md §7b item 3: **unstable intermediaries (W/Z, resonances,
+  virtual particles) are Demazure sub-crystals** — incomplete
+  topological states; their non-symmetric Macdonald evaluation under the
+  Observation Frame ($\tau$/Markov trace) reproduces the broken symmetry
+  of a short-lived state "without ad-hoc decay machinery."
+
+## The refinement to make explicit: "transient vertex FLOW"
+
+Existing prose gives the *stage* (exceptional divisor = vertex) and the
+*lifetime* (Heisenberg bound). What "vertex flow" adds and what to
+formalise:
+
+1. **Flow = the Reeb flow on $S^3$ over $\mathcal{S}_p$.** A virtual
+   particle is not a state but a *trajectory* of the Reeb/$U(1)$ flow that
+   opens at the blow-up locus and closes (reabsorbs) before hitting $A_0$.
+   State this: virtual particle $=$ a non-closed Reeb orbit segment on the
+   vertex divisor; on-shell $=$ closed orbit.
+2. **Transience = Demazure (non-complete crystal).** Tie the "reabsorbed
+   before $A_0$" projection to the Demazure sub-crystal characterisation:
+   a transient vertex flow is a Demazure operator applied but not
+   completed to a full crystal.
+3. **Unstable = complex Markov-trace pole (nonzero imaginary part / width).**
+   The width $\Gamma$ (decay rate) should be the imaginary part of the
+   Markov-trace pole at the fibre level (AGENTS.md: Im(q) free at fibre) —
+   the resonance width. Cross-ref the c_k "fibre vs observable Im(q)"
+   convention.
+
+## Attack options / status
+
+1. **Consolidate + relabel** existing blocks under one
+   `def:virtual-particle-vertex-flow` (or a `remark` interpreting
+   `prop:vertex-is-exceptional-divisor`) making the flow/Demazure/width
+   triple explicit. **[near-term]**
+2. **Lean**: state "off-shell = $\varepsilon(\omega)=0$ ⇒ $\pi_0=0$" (the
+   non-observability projection) — likely already close to provable.
+   **[medium]**
+3. **Width from fibre pole**: connect resonance width to Im of the
+   Markov-trace pole (this is the W/Z / hadronic-resonance mass sector —
+   cross-ref the SM-26 m_W/m_Z beans). **[long]**
+
+## Anti-guessing note
+Do NOT declare "virtual particles are open" — they are framed
+(exceptional divisor + brane tower + Heisenberg lifetime). Open item is
+the *flow / Demazure / width* consolidation + Lean, not the concept.
