@@ -36,4 +36,35 @@ theorem integral_log_two_sin_pi (b : ℝ) :
       mul_zero, QOU.Knot.integral_log_two_sin (π * b), smul_eq_mul]
   field_simp
 
+/-
+  ROADMAP — remaining bricks to discharge `hsaddle` (all ingredients verified
+  present in `QOU.Knot.Clausen`; algebra confirmed to 40 digits in
+  `computations/whitehead_saddle.py`).
+
+  (A) VALUE identity  V = 4·clausen(π/2)  ( = 4G ):
+      · integrand `log2 + 2 log sin(π(u+¼)) − log sin(π u)` reduces (log-sin =
+        log(2 sin) − log2, valid since sin>0 on the ranges) to the log2-free
+        `2 log(2 sin(π(u+¼))) − log(2 sin(π u))` — the log2 terms cancel exactly.
+      · ∫_0^{1/2} log(2 sin(π u)) du = integral_log_two_sin_pi (1/2)
+          = −clausen(π)/(2π) = 0                        [clausen_pi]
+      · ∫_0^{1/2} log(2 sin(π(u+¼))) du
+          = ∫_{1/4}^{3/4} log(2 sin(π v)) dv            [integral_comp_add_right]
+          = integral_log_two_sin_pi (3/4) − integral_log_two_sin_pi (1/4)
+                                                        [integral_add_adjacent_intervals,
+                                                         + integrability of log(2 sin(π·))]
+          = (clausen(π/2) − clausen(3π/2)) / (2π)
+      · clausen(3π/2) = clausen(2π − π/2) = Cl_2(2π−π/2) = −Cl_2(π/2)
+          = −clausen(π/2)                     [clausen_eqOn_Cl_2 + Cl_2_two_pi_sub]
+      ⇒ V = 2π·(2·(2clausen(π/2))/(2π) − 0) = 4·clausen(π/2).
+
+  (B) CONVERGENCE  (2π/N)·log S_{n*,k*} → V, at nseq→N/2, kseq→N/4:
+      the log(2 sin) Riemann sum is squeezed between the window integrals via
+      integral_le_sum_log_sin / sum_log_sin_le_integral (rising) and the
+      _falling variants; master-error → 0 (as in FigureEightVolumeSaddle E5c).
+
+  (A)+(B) discharge the `hsaddle` hypothesis of
+  `QOU.Knot.WhiteheadVC.whitehead_vc_of_saddle_value`, closing the unconditional
+  Whitehead Volume Conjecture.  -- Ref: [vanderveen2008] arXiv:math/0611181
+-/
+
 end QOU.Knot.WhiteheadSaddle
