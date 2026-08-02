@@ -1,10 +1,11 @@
 ---
 # qou-pn5j
 title: 'GAP: derive Whitehead adjoint Reidemeister torsion |tau(L5a1)|=2sqrt2 from octahedron NZ data (upgrades c_sigma=2^{-3/4} from identification to derivation)'
-status: todo
+status: completed
 type: task
+priority: normal
 created_at: 2026-08-02T09:51:26Z
-updated_at: 2026-08-02T09:51:26Z
+updated_at: 2026-08-02T13:44:34Z
 ---
 
 ## Context
@@ -48,4 +49,3 @@ may be recorded as such (still audit-only unless wired via the categorical chain
   identification already in hand).
 - Do not wire c_σ = 2^{-3/4} to any production dashboard/script as canonical
   until it is a genuine derivation.
-
