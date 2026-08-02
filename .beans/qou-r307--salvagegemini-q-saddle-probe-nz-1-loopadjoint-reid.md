@@ -64,3 +64,26 @@ docs/audits/2026-07-19-qbeta-toroidal-tower-overclaim-audit.md).
 - bean `qou-j1ld` (Garoufalidis–Lê 2004 q-holonomic — DIFFERENT paper)
 - bean `qou-9nq9` (GAP-A4 ⁴He Δ_λ magnitude — downstream consumer of ν_SDP)
 - bean `a6vp` (verify volume conjecture at root of unity)
+
+## RESULT (2026-08-02) — Option A REFUTED as stated (scope-a)
+Implemented the DG 1-loop invariant (Def 2.1 of 2411.03801) directly from
+SnapPy NZ data — `computations/probes/one_loop_vs_nu_sdp_probe.py` (standalone
+snappy; the built-in `hyperbolic_adjoint_torsion` needs Sage, this route does not):
+
+| knot | ν_SDP | 1-loop τ | |τ| |
+|---|--:|---|--:|
+| 6₂ (²H) | 1 | −1.71544−1.40375j | 2.21659 |
+| 8₁₁ (³H) | 2 | 2.47079+8.45134j | 8.80511 |
+| 4₁ (ctrl) | — | −0.86603j | 0.86603=√3/2 |
+
+- τ is a transcendental/algebraic COMPLEX number, **not** the integer ν_SDP.
+  |τ|=2.22≠1, 8.81≠2 — the flattening/± ambiguity (units, roots of unity)
+  cannot bridge that. **Gemini Option-A (ν_SDP = 1-loop torsion) is refuted.**
+- 4₁ control lands in its trace field ℚ(√−3) (|τ|=√3/2) ⇒ implementation sound.
+- L6a4 (³He) not computed: 2-component link ⇒ needs the multi-cusp meridian/
+  flattening version (single-cusp code returns det=0). Follow-up if needed.
+- NOTE the coincidence |τ(6₂)|≈2.22 ≈ m_e·Vol(6₂)=2.249 ≈ B_AME(²H)=2.224 is
+  just because |τ|~O(Vol) for these knots — NOT a derivation (τ dimensionless).
+- Status: Option-A pruned. Garoufalidis–Yoon 1-loop=torsion remains a valid
+  ANALYTIC bridge (torsion ↔ 1-loop), just not to the integer ν_SDP. Add ref
+  garoufalidis-yoon2024 (2411.03801) to references.ts when a consumer lands.
