@@ -516,6 +516,46 @@ theorem gridPrim_ge {N K : ℕ} (hN : 4 ≤ N) (hK : 1 ≤ K) (hKN : K ≤ N - 1
   rw [abs_le] at h
   simp only [gridPrim, devErr]; linarith [h.1]
 
+/-- **Uniform per-term upper bound (BRICK 5a).**  For every valid `k`,
+    `(2π/N)·log S_{⌊N/2⌋,k} ≤ 4·clausen(π − ⌊N/2⌋π/N) + clausen(2⌊N/2⌋π/N) +
+    10·devErr N` — a `k`-independent RHS (the parity-clean upper envelope via
+    `clausen_diff_le_shift` at `s = 2⌊N/2⌋π/N`). -/
+theorem two_pi_log_whiteheadS_le {N k : ℕ} (hN : 4 ≤ N) (hk1 : 1 ≤ k)
+    (hkn : k + N / 2 ≤ N - 1) :
+    (2 * π / N) * Real.log (QOU.Knot.WhiteheadVC.whiteheadS N (N / 2) k)
+      ≤ 4 * QOU.Knot.clausen (π - ((N / 2 : ℕ) : ℝ) * (π / N))
+        + QOU.Knot.clausen (2 * (((N / 2 : ℕ) : ℝ) * (π / N))) + 10 * devErr N := by
+  have hNpos : (0 : ℝ) < N := by exact_mod_cast (by omega : 0 < N)
+  have hpi := Real.pi_pos
+  have hpiN : (0 : ℝ) < π / N := by positivity
+  rw [two_pi_log_whiteheadS_eq (by omega) hkn]
+  have hg1 := gridPrim_le hN (by omega : 1 ≤ k + N / 2) (by omega : k + N / 2 ≤ N - 1)
+  have hg2 := gridPrim_ge hN hk1 (by omega : k ≤ N - 1)
+  have hg3 := gridPrim_ge hN (by omega : 1 ≤ N / 2) (by omega : N / 2 ≤ N - 1)
+  have harg : (2 : ℝ) * ((((k + N / 2 : ℕ)) : ℝ) * (π / N))
+      = 2 * ((k : ℝ) * (π / N)) + 2 * (((N / 2 : ℕ) : ℝ) * (π / N)) := by push_cast; ring
+  rw [harg] at hg1
+  have hθn_le : 2 * (((N / 2 : ℕ) : ℝ) * (π / N)) ≤ π := by
+    have hb : 2 * ((N / 2 : ℕ) : ℝ) ≤ (N : ℝ) := by
+      have h := (by omega : 2 * (N / 2) ≤ N)
+      calc 2 * ((N / 2 : ℕ) : ℝ) = ((2 * (N / 2) : ℕ) : ℝ) := by push_cast; ring
+        _ ≤ (N : ℝ) := by exact_mod_cast h
+    have hpiN' : (N : ℝ) * (π / N) = π := by field_simp
+    nlinarith [mul_le_mul_of_nonneg_right hb (le_of_lt hpiN), hpiN']
+  have hθ_le : 2 * ((k : ℝ) * (π / N)) ≤ 2 * π - 2 * (((N / 2 : ℕ) : ℝ) * (π / N)) := by
+    have hkb : (k : ℝ) + ((N / 2 : ℕ) : ℝ) ≤ (N : ℝ) := by
+      have h := (by omega : k + N / 2 ≤ N)
+      calc (k : ℝ) + ((N / 2 : ℕ) : ℝ) = ((k + N / 2 : ℕ) : ℝ) := by push_cast; ring
+        _ ≤ (N : ℝ) := by exact_mod_cast h
+    have hpiN' : (N : ℝ) * (π / N) = π := by field_simp
+    nlinarith [mul_le_mul_of_nonneg_right hkb (le_of_lt hpiN), hpiN']
+  have hn2pos : (0 : ℝ) < ((N / 2 : ℕ) : ℝ) := by exact_mod_cast (by omega : 0 < N / 2)
+  have hcds := clausen_diff_le_shift (θ := 2 * ((k : ℝ) * (π / N)))
+    (s := 2 * (((N / 2 : ℕ) : ℝ) * (π / N)))
+    (mul_pos (by norm_num) (mul_pos hn2pos hpiN)) hθn_le (by positivity) hθ_le
+  rw [show π - 2 * (((N / 2 : ℕ) : ℝ) * (π / N)) / 2 = π - ((N / 2 : ℕ) : ℝ) * (π / N) by ring] at hcds
+  linarith [hg1, hg2, hg3, hcds]
+
 /-- **Explicit saddle-term convergence (BRICK 3).**  At the saddle
     `(n*, k*) = (⌊N/2⌋, ⌊N/4⌋)`, `(2π/N)·log S_{n*,k*} → 4·catalanG = 4G`. -/
 theorem whiteheadS_explicit_saddle_tendsto :
