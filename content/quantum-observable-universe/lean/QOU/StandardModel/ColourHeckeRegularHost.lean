@@ -118,4 +118,157 @@ theorem mem_heckeCentralizer_iff (q : ℚ) (T : Module.End ℚ V) :
     LinearMap.sub_apply, LinearMap.mulRight_apply, LinearMap.mulLeft_apply,
     sub_eq_zero]
 
+/-! ### The cyclic vector and the five word steps
+
+`e₀ = 1` is a cyclic vector for the regular action: the six basis words
+`1, σ₁, σ₂, σ₁σ₂, σ₂σ₁, σ₁σ₂σ₁` are `L`-words applied to `e₀`. We only need the
+five generator steps that reach `e₁,…,e₅`; each is a column read-off of `M₁/M₂`
+that is `d`-free (the `q`-dependent diagonal entries multiply zero). -/
+
+/-- Standard basis vector `eᵢ` of the state space (`= Pi.basisFun ℚ (Fin 6) i`). -/
+def sb (k : Fin 6) : V := Pi.single k 1
+
+theorem sb_eq_basisFun (k : Fin 6) : sb k = Pi.basisFun ℚ (Fin 6) k := by
+  simp [sb, Pi.basisFun_apply]
+
+/-- `σ₁ · 1 = σ₁`: `L₁ e₀ = e₁`. -/
+theorem L1_sb0 (q : ℚ) : L1 q (sb 0) = sb 1 := by
+  funext i; fin_cases i <;>
+    simp [L1, M1, sb, d, Matrix.toLin'_apply, Matrix.mulVec]
+
+/-- `σ₂ · 1 = σ₂`: `L₂ e₀ = e₂`. -/
+theorem L2_sb0 (q : ℚ) : L2 q (sb 0) = sb 2 := by
+  funext i; fin_cases i <;>
+    simp [L2, M2, sb, d, Matrix.toLin'_apply, Matrix.mulVec]
+
+/-- `σ₁ · σ₂ = σ₁σ₂`: `L₁ e₂ = e₃`. -/
+theorem L1_sb2 (q : ℚ) : L1 q (sb 2) = sb 3 := by
+  funext i; fin_cases i <;>
+    simp [L1, M1, sb, d, Matrix.toLin'_apply, Matrix.mulVec]
+
+/-- `σ₂ · σ₁ = σ₂σ₁`: `L₂ e₁ = e₄`. -/
+theorem L2_sb1 (q : ℚ) : L2 q (sb 1) = sb 4 := by
+  funext i; fin_cases i <;>
+    simp [L2, M2, sb, d, Matrix.toLin'_apply, Matrix.mulVec]
+
+/-- `σ₁ · σ₂σ₁ = σ₁σ₂σ₁`: `L₁ e₄ = e₅`. -/
+theorem L1_sb4 (q : ℚ) : L1 q (sb 4) = sb 5 := by
+  funext i; fin_cases i <;>
+    simp [L1, M1, sb, d, Matrix.toLin'_apply, Matrix.mulVec]
+
+/-! ### Evaluation at the cyclic vector is injective on the centralizer -/
+
+/-- Evaluation-at-`e₀` on the Hecke centralizer, `T ↦ T e₀`, as a linear map. -/
+noncomputable def evAtOne (q : ℚ) : heckeCentralizer q →ₗ[ℚ] V :=
+  (LinearMap.applyₗ (sb 0)).comp (heckeCentralizer q).subtype
+
+@[simp] theorem evAtOne_apply (q : ℚ) (T : heckeCentralizer q) :
+    evAtOne q T = (T : Module.End ℚ V) (sb 0) := rfl
+
+/-- **A centralizing endomorphism is determined by its value on the cyclic
+vector.** If `T` commutes with `L₁, L₂` and kills `e₀`, then `T = 0`: it kills
+each basis word `eₖ = (L-word) e₀`, and those span `V`. -/
+theorem centralizing_eval_zero_eq_zero (q : ℚ) (T : Module.End ℚ V)
+    (hc1 : T * L1 q = L1 q * T) (hc2 : T * L2 q = L2 q * T)
+    (hker : T (sb 0) = 0) : T = 0 := by
+  -- `T` kills each standard basis vector `eₖ`, reached from `e₀` by a word.
+  -- `e₁ = L₁ e₀`:
+  have e1 : T (sb 1) = 0 := by
+    have h := LinearMap.congr_fun hc1 (sb 0)
+    rw [Module.End.mul_apply, Module.End.mul_apply, L1_sb0, hker, map_zero] at h
+    exact h
+  -- `e₂ = L₂ e₀`:
+  have e2 : T (sb 2) = 0 := by
+    have h := LinearMap.congr_fun hc2 (sb 0)
+    rw [Module.End.mul_apply, Module.End.mul_apply, L2_sb0, hker, map_zero] at h
+    exact h
+  -- `e₃ = L₁ e₂`:
+  have e3 : T (sb 3) = 0 := by
+    have h := LinearMap.congr_fun hc1 (sb 2)
+    rw [Module.End.mul_apply, Module.End.mul_apply, L1_sb2, e2, map_zero] at h
+    exact h
+  -- `e₄ = L₂ e₁`:
+  have e4 : T (sb 4) = 0 := by
+    have h := LinearMap.congr_fun hc2 (sb 1)
+    rw [Module.End.mul_apply, Module.End.mul_apply, L2_sb1, e1, map_zero] at h
+    exact h
+  -- `e₅ = L₁ e₄`:
+  have e5 : T (sb 5) = 0 := by
+    have h := LinearMap.congr_fun hc1 (sb 4)
+    rw [Module.End.mul_apply, Module.End.mul_apply, L1_sb4, e4, map_zero] at h
+    exact h
+  have key : ∀ k : Fin 6, T (sb k) = 0 := by
+    intro k
+    fin_cases k
+    · exact hker
+    · exact e1
+    · exact e2
+    · exact e3
+    · exact e4
+    · exact e5
+  -- `T` vanishes on the standard basis, hence `T = 0`.
+  apply (Pi.basisFun ℚ (Fin 6)).ext
+  intro i
+  rw [← sb_eq_basisFun]
+  simpa using key i
+
+/-- **Evaluation at the cyclic vector is injective on the Hecke centralizer.**
+Two centralizing endomorphisms agreeing at `e₀` agree everywhere. -/
+theorem evAtOne_injective (q : ℚ) : Function.Injective (evAtOne q) := by
+  intro a b hab
+  -- The difference `a - b` is centralizing and kills `e₀`, hence is `0`.
+  obtain ⟨ha1, ha2⟩ := (mem_heckeCentralizer_iff q _).1 a.property
+  obtain ⟨hb1, hb2⟩ := (mem_heckeCentralizer_iff q _).1 b.property
+  have hdiff : ((a : Module.End ℚ V) - b) = 0 := by
+    refine centralizing_eval_zero_eq_zero q _ ?_ ?_ ?_
+    · rw [sub_mul, mul_sub, ha1, hb1]
+    · rw [sub_mul, mul_sub, ha2, hb2]
+    · have h : (a : Module.End ℚ V) (sb 0) = (b : Module.End ℚ V) (sb 0) := by
+        simpa only [evAtOne_apply] using hab
+      simp [LinearMap.sub_apply, h]
+  exact Subtype.ext (sub_eq_zero.1 hdiff)
+
+/-! ### The dimension obstruction -/
+
+/-- `finrank V = 6` (the regular carrier is 6-dimensional). -/
+theorem finrank_V : finrank ℚ V = 6 := by
+  simp [V]
+
+/-- **The Hecke centralizer on the regular carrier is at most 6-dimensional.**
+`finrank(End_{H₃}(H₃)) ≤ finrank H₃ = 6`. -/
+theorem finrank_heckeCentralizer_le_six (q : ℚ) :
+    finrank ℚ (heckeCentralizer q) ≤ 6 := by
+  have h := LinearMap.finrank_le_finrank_of_injective (evAtOne_injective q)
+  rwa [finrank_V] at h
+
+/-- **G3 colour-action obstruction (scope-(b) structural exclusion).** No
+faithful colour action of an 8-dimensional colour algebra `g` on the framework's
+own 6-dimensional regular three-strand Hecke state space can be **Hecke-
+compatible** (commute with both braid generators `L₁, L₂`): such a `Φ` would
+land in the Hecke centralizer, whose dimension is `≤ 6 < 8`.
+
+The invariant cited is the proved `finrank_heckeCentralizer_le_six`. Applies to
+`𝔰𝔲(3) = ker(ev_e)` via the corpus gate `finrank (su3 e) = 8`. It does **not**
+exclude the colour action on the Schur–Weyl tensor host `(ℂ³)^{⊗3}`. -/
+theorem no_heckeCompatible_colour_action_on_regularH3
+    (q : ℚ) (g : Type*) [AddCommGroup g] [Module ℚ g] [FiniteDimensional ℚ g]
+    (h8 : finrank ℚ g = 8)
+    (Φ : g →ₗ[ℚ] Module.End ℚ V) (hinj : Function.Injective Φ)
+    (hcomm : ∀ x, Φ x * L1 q = L1 q * Φ x ∧ Φ x * L2 q = L2 q * Φ x) :
+    False := by
+  have hmem : ∀ x, Φ x ∈ heckeCentralizer q := fun x =>
+    (mem_heckeCentralizer_iff q _).2 (hcomm x)
+  set Φ' : g →ₗ[ℚ] heckeCentralizer q :=
+    LinearMap.codRestrict (heckeCentralizer q) Φ hmem with hΦ'
+  have hinj' : Function.Injective Φ' := by
+    intro a b hab
+    apply hinj
+    have := congrArg (Subtype.val) hab
+    simpa [hΦ', LinearMap.codRestrict] using this
+  have hle : finrank ℚ g ≤ finrank ℚ (heckeCentralizer q) :=
+    LinearMap.finrank_le_finrank_of_injective hinj'
+  have h6 := finrank_heckeCentralizer_le_six q
+  rw [h8] at hle
+  omega
+
 end QOU.StandardModel.ColourHeckeRegularHost
