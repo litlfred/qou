@@ -35,7 +35,7 @@ TWO readings, both derive-then-check, both parameter-free where flagged:
 Convention (AGENTS §7a): Hecke (T-q)(T+1/q)=0, eigenvalues q, -1/q.
 q_0 is the muon-anchored canonical substrate value (computations/ layer).
 
-Requires: mpmath, sympy, snappy.  Corpus y_λ via y_lambda_wenzl_bridge (pure).
+Requires: mpmath, snappy.  Corpus y_λ via y_lambda_wenzl_bridge (pure).
 Emits computations/charm-frobenius-block-projection.witness.json.
 """
 from __future__ import annotations
@@ -150,9 +150,11 @@ def validate():
         n = s1.rows
         I = mp.eye(n)
         hecke1 = (s1 - Q * I) * (s1 + QI * I)
+        hecke2 = (s2 - Q * I) * (s2 + QI * I)  # check sigma_2 too, not only sigma_1
         braid = s1 * s2 * s1 - s2 * s1 * s2
-        out[f"hecke_resid_{lam}"] = float(max(abs(hecke1[i, j])
-                                              for i in range(n) for j in range(n)))
+        out[f"hecke_resid_{lam}"] = float(max(
+            max(abs(hecke1[i, j]) for i in range(n) for j in range(n)),
+            max(abs(hecke2[i, j]) for i in range(n) for j in range(n))))
         out[f"braid_resid_{lam}"] = float(max(abs(braid[i, j])
                                               for i in range(n) for j in range(n)))
     # (2) tr_M(identity) = Σ y_λ dim_λ = 1
@@ -261,8 +263,21 @@ def main():
     ) % (float(ratio_charm_light.real), obs_charm_light,
          obs_charm_light / float(ratio_charm_light.real))
 
+    import hashlib
+    import os
+    import subprocess
+    try:
+        _commit = subprocess.check_output(
+            ["git", "log", "-1", "--format=%H", "--", __file__],
+            cwd=os.path.dirname(os.path.abspath(__file__))).decode().strip() or "unknown"
+    except Exception:
+        _commit = "unknown"
+
     witness = {
         "schema": "witness/v1-informal",
+        "engine": "mpmath+snappy",
+        "scriptHash": hashlib.sha256(Path(__file__).read_bytes()).hexdigest()[:12],
+        "scriptCommitSha": _commit,
         "description": "charm_frobenius_block_projection_probe: Frobenius/Wedderburn "
                        "charm-block projection of a composite braid's complex volume "
                        "vs the charm mass hierarchy (derive-then-check).",
