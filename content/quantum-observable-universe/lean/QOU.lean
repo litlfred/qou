@@ -143,6 +143,15 @@ import QOU.Mass.ColorCurveSheets
 -- W1: no single-valued algebraic branch — an irreducible cubic over the function field has
 -- no root there (the permanent consequence of the witness's S₃ cover monodromy).
 import QOU.Mass.ColorCubicNoBranch
+-- Offset question (bean qou-vhv6): the colour-cubic discriminant is degree-6 (6 saddle
+-- points), palindromic (q↔q⁻¹), strictly positive on ℝ (no real saddle — SOS certificate).
+import QOU.Mass.ColorCubicDiscriminantPositive
+-- Offset angle: the k-th Lagrange resolvent is an eigenvector of the C₅/S₃ cyclic shift
+-- with eigenvalue ζ⁻ᵏ — the offset angle is the stabilizer root of unity.
+import QOU.Mass.LagrangeResolventCyclicEigenvalue
+-- Offset magnitude: under the q-integer-curve shift z↦qz the saddle z*↦z*/q, so the offset
+-- is −ℏ_q·z*, magnitude |z*|·ℏ_q (ℏ_q=1−q⁻¹, radial; vanishes at q=1).
+import QOU.Mass.SaddleQShiftOffset
 -- W2: C1 module local exponents at 0 — char poly t²+(q−1)t+(q−1) (= t²−tr·t+det of the
 -- companion [[0,1],[1−q,1−q]]), exponent-discriminant (q−1)(q−5). Birkhoff 0-side.
 import QOU.Mass.C1ModuleExponents
