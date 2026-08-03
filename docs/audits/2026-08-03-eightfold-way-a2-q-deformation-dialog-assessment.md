@@ -362,6 +362,18 @@ which is stated for hyperbolic complements.
 
 ### T3 — $\mathrm{SU}(3)$ colour: run the dimension battery *first*
 
+> **⚠ Superseded in part (2026-08-03, same day).** The battery was run. The
+> claim below — *no $\mathbf 8\oplus\mathbf 1$ in the Wedderburn
+> decomposition of $\mathbf H_3(q)$* — is literally true but **points at the
+> wrong object**: the Hecke blocks are the *multiplicity spaces*, and at
+> $N=3$ they are exactly the multiplicities $(1,2,1)$ of the baryon
+> decuplet / octet / singlet. Read
+> [`2026-08-03-flavour-su3-schur-weyl-obstruction.md`](2026-08-03-flavour-su3-schur-weyl-obstruction.md)
+> instead: the real obstruction is that QOU's fibre has $\dim V = 2$, so the
+> $(1^3)$ block *drops entirely*, and the corpus's two candidate 3-objects
+> are respectively Elliott's $\mathrm{SU}(3)$ (a homonym) and an icosahedral
+> triple excluded by the $\mathrm{Sym}^2$ test.
+
 Constrained by the proved $\mathrm{SU}(2)$-emergence theorem to live at
 groupoid level. Before constructing anything, state and check where the
 adjoint $\mathbf 8$ is supposed to sit. Note the immediate obstruction:

@@ -1,11 +1,11 @@
 ---
 # qou-m5sd
 title: 'T3: SU(3) colour -- run the dimension battery FIRST'
-status: todo
+status: in-progress
 type: task
-priority: normal
+priority: critical
 created_at: 2026-08-03T23:27:16Z
-updated_at: 2026-08-03T23:27:57Z
+updated_at: 2026-08-03T23:54:31Z
 parent: qou-8lxd
 ---
 

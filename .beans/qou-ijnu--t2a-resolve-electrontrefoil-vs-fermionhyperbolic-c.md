@@ -1,11 +1,11 @@
 ---
 # qou-ijnu
 title: 'T2a: resolve electron=trefoil vs fermion=hyperbolic-complement conflict'
-status: todo
+status: scrapped
 type: task
 priority: high
 created_at: 2026-08-03T23:27:16Z
-updated_at: 2026-08-03T23:27:57Z
+updated_at: 2026-08-03T23:54:31Z
 parent: qou-8lxd
 ---
 
