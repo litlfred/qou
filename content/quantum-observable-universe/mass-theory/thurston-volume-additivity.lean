@@ -37,7 +37,11 @@ axiom blochWigner : ℂ → ℝ
 
 /-- Bloch-Wigner vanishes on the real line.
     Taken as an axiom because `blochWigner` is opaque and this
-    is a real theorem of hyperbolic geometry (not a rfl). -/
+    is a real theorem of hyperbolic geometry (not a rfl).
+    
+    Proof note (2026-08-03): Attempted to prove this using `Complex.ofReal_im`,
+    but `blochWigner` is declared as an opaque `axiom` with no body,
+    so there is nothing to unfold or apply lemmas to. Retaining axiom. -/
 -- Ref: [zagier1986] https://doi.org/10.1007/BF01388528 (Bloch-Wigner dilogarithm vanishes on ℝ)
 axiom blochWigner_real (x : ℝ) : blochWigner (x : ℂ) = 0
 
