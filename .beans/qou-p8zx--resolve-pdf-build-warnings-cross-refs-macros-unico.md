@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-07-13T01:42:14Z
-updated_at: 2026-07-13T01:42:47Z
+updated_at: 2026-08-03T19:43:35Z
 ---
 
 Warnings to resolve:
@@ -45,3 +45,5 @@ Warnings to resolve:
    - "’" (U+2019)
    - "É" (U+00C9)
    - "⥤" (U+2964)
+
+\n**Note:** requires texlive environment for LaTeX build
