@@ -91,6 +91,7 @@ class AlphaKCategoricalClosure (q : ℝ) : Type where
 -- Ref: [manuscript] conj:alpha-k-categorical-closure
 -- Ref: [manuscript] prop:alpha-k-derivation-procedure
 -- Ref: [wenzl1988] https://doi.org/10.1007/BF01239013
-noncomputable instance (q : ℝ) : AlphaKCategoricalClosure q := sorry
+axiom alphaKCategoricalClosure_conjecture (q : ℝ) : AlphaKCategoricalClosure q
+noncomputable instance (q : ℝ) : AlphaKCategoricalClosure q := alphaKCategoricalClosure_conjecture q
 
 end QOU.BraidKnot
