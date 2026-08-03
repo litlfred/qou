@@ -1,7 +1,7 @@
 ---
 # qou-iyf6
 title: 'LIT (qnnq): 1-loop = adjoint Reidemeister torsion — PROVED 2024 for 2-bridge knots (4₁,5₂ ARE 2-bridge). The torsion IS the geometric-connection density = candidate for QOU ρ_F. Two findings: (A) concrete cross-check ρ_F(4₁/5₂) =? adjoint torsion vs the existing conj:kashaev-density-equals-sdp-multiplicity; (B) TENSION — geometric cusp shape ϑ_K is a FIXED knot invariant (4₁→e^{iπ/3}, √-3), not a free per-particle DOF, so ''different particles = different ϑ same knot'' is suspect.'
-status: todo
+status: completed
 type: task
 priority: high
 created_at: 2026-08-01T19:00:51Z

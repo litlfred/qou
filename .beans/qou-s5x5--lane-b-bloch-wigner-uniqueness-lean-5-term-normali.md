@@ -1,7 +1,7 @@
 ---
 # qou-s5x5
 title: 'Lane B: Bloch-Wigner uniqueness Lean (5-term + normalization => D) — alpha_EM leg for #3824'
-status: todo
+status: completed
 type: task
 created_at: 2026-07-17T23:06:43Z
 updated_at: 2026-07-17T23:06:43Z
