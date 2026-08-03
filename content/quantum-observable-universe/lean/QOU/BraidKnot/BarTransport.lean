@@ -40,7 +40,7 @@ def IsBarSymmetric (J : K → ℕ → K) (q : K) : Prop :=
   ∀ n, J q n = J q⁻¹ n
 
 /-- Bar symmetry gives function-level equality. -/
-theorem IsBarSymmetric.eq_fun {J : K → ℕ → K} {q : K}
+theorem eq_fun {J : K → ℕ → K} {q : K}
     (hsym : IsBarSymmetric J q) : J q = J q⁻¹ :=
   _root_.funext hsym
 
@@ -61,7 +61,7 @@ theorem annihilates_bar_of_symmetric
 /-- **q-Holonomicity transports for symmetric towers.** If `J(q⁻¹, ·)` is
     q-holonomic at `q⁻¹` and `J` is bar-symmetric at `q`, then `J(q, ·)` is
     also q-holonomic at `q⁻¹`. Generalizes `coloredJones41_qholonomic_bar`. -/
-theorem IsQHolonomic.of_bar_symmetric
+theorem of_bar_symmetric
     {J : K → ℕ → K} {q : K}
     (hsym : IsBarSymmetric J q)
     (hJ : IsQHolonomic q⁻¹ (J q⁻¹)) :
@@ -88,7 +88,7 @@ structure MFreeQDiffOp (K : Type*) [Field K] where
   rhs : K → K
 
 /-- Convert an m-free operator to the general `QDifferenceOperator`. -/
-def MFreeQDiffOp.toOp (op : MFreeQDiffOp K) : QDifferenceOperator K where
+def toOp (op : MFreeQDiffOp K) : QDifferenceOperator K where
   order := op.order
   coeff j q _m := op.coeff j q
   rhs q _m := op.rhs q
@@ -99,12 +99,12 @@ def MFreeAnnihilates (op : MFreeQDiffOp K) (q : K) (J : ℕ → K) : Prop :=
     ∑ j ∈ range (op.order + 1), op.coeff j q * J (N + j) = op.rhs q
 
 /-- m-free annihilation IS annihilation of the general operator. -/
-theorem MFreeQDiffOp.annihilates_iff (op : MFreeQDiffOp K) (q : K) (J : ℕ → K) :
+theorem annihilates_iff (op : MFreeQDiffOp K) (q : K) (J : ℕ → K) :
     MFreeAnnihilates op q J ↔ Annihilates op.toOp q J := by
   simp only [MFreeAnnihilates, Annihilates, MFreeQDiffOp.toOp]
 
 /-- The bar involution of an m-free operator: replace `q` by `q⁻¹`. -/
-def MFreeQDiffOp.bar (op : MFreeQDiffOp K) : MFreeQDiffOp K where
+def bar (op : MFreeQDiffOp K) : MFreeQDiffOp K where
   order := op.order
   coeff j q := op.coeff j q⁻¹
   rhs q := op.rhs q⁻¹
@@ -116,7 +116,7 @@ def MFreeQDiffOp.bar (op : MFreeQDiffOp K) : MFreeQDiffOp K where
     simply replacing `q` with `q⁻¹` in the coefficients — and since the
     Tower values `J(N+j)` don't change, this is the barred operator acting
     on the SAME tower. Sorry-free. -/
-theorem MFreeQDiffOp.bar_annihilates_of_annihilates
+theorem bar_annihilates_of_annihilates
     (op : MFreeQDiffOp K) (q : K) (J : ℕ → K)
     (h : MFreeAnnihilates op q J) :
     MFreeAnnihilates op.bar q⁻¹ J := by

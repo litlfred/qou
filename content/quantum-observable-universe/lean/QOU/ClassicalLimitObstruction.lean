@@ -52,7 +52,7 @@ structure ClassicalLimitObstruction (k : Type*) [CommRing k] where
     The generator maps to `χ(A)` under the trace map.
 
     Ref: [yekutieli2010] https://doi.org/10.1016/j.aim.2010.03.006 -/
-def ClassicalLimitObstruction.ofQOU
+def ofQOU
     {k : Type*} [Field k]
     (_QOU : QuantumObservableUniverse.{u, v} k)
     (eulerChar : ℤ) : ClassicalLimitObstruction k where

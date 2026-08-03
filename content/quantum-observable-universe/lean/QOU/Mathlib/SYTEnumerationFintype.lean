@@ -641,7 +641,7 @@ open QOU.Mathlib (StandardYoungTableau numStandardYoungTableaux)
 
 /-- Two standard tableaux are equal when their underlying semistandard tableaux agree (the `bijOn`
 field is a `Prop`, hence proof-irrelevant). -/
-theorem StandardYoungTableau.ext_toSsyt {μ : YoungDiagram} {T1 T2 : StandardYoungTableau μ}
+theorem ext_toSsyt {μ : YoungDiagram} {T1 T2 : StandardYoungTableau μ}
     (h : T1.toSsyt = T2.toSsyt) : T1 = T2 := by
   cases T1; cases T2; cases h; rfl
 

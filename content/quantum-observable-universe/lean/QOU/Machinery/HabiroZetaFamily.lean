@@ -59,7 +59,7 @@ structure ZetaFamily where
 conjugation is the bar involution `q ↦ q⁻¹`, so conjugation
 equivariance forces `F(z⁻¹) = conj (F z)` — the family-level form of
 the ζ₄ bar edge realized by `rho_compat` for the τ-assignment. -/
-theorem ZetaFamily.bar_edge (F : ZetaFamily) {z : ℂ}
+theorem bar_edge (F : ZetaFamily) {z : ℂ}
     (hz : Complex.normSq z = 1) :
     F.toFun z⁻¹ = (starRingEnd ℂ) (F.toFun z) := by
   rw [← F.conj_equivariant z, Complex.inv_def, hz]
@@ -69,7 +69,7 @@ theorem ZetaFamily.bar_edge (F : ZetaFamily) {z : ℂ}
 at a unit-circle point equals its value at the inverse point, the value
 is fixed by conjugation. Concrete form of the fibre-reality check used
 on the binding-tail data. -/
-theorem ZetaFamily.conj_fixed_of_bar_fixed (F : ZetaFamily) {z : ℂ}
+theorem conj_fixed_of_bar_fixed (F : ZetaFamily) {z : ℂ}
     (hz : Complex.normSq z = 1) (hfix : F.toFun z⁻¹ = F.toFun z) :
     (starRingEnd ℂ) (F.toFun z) = F.toFun z := by
   rw [← F.bar_edge hz, hfix]

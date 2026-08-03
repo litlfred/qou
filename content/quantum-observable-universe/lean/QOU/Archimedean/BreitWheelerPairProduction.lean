@@ -44,7 +44,7 @@ structure BreitWheelerPairProduction where
 /-- In the QOU regime `q > 1` the bare pair carries net weight `> 1`
     (the `q`-deformation raises it above the classical value), since
     `q − q⁻¹ > 0`. -/
-theorem BreitWheelerPairProduction.net_gt_one (P : BreitWheelerPairProduction) :
+theorem net_gt_one (P : BreitWheelerPairProduction) :
     1 < P.net := by
   have hq0 : (0 : ℝ) < P.q := lt_trans one_pos P.hq
   have h1 : P.q⁻¹ < 1 := by

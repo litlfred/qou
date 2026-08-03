@@ -47,7 +47,7 @@ structure MagicShellCouplingKappa (R : Type*) [Field R] where
 
 /-- The q-integer identity `[3]_q = [2]_q² − 1` (since
     `(q + q⁻¹)² = q² + 2 + q⁻²`). -/
-theorem MagicShellCouplingKappa.br3_eq_br2_sq_sub_one {R : Type*} [Field R]
+theorem br3_eq_br2_sq_sub_one {R : Type*} [Field R]
     (M : MagicShellCouplingKappa R) : M.br3 = M.br2 ^ 2 - 1 := by
   rw [M.br3_def, M.br2_def]
   have hq : M.q ≠ 0 := M.q_ne

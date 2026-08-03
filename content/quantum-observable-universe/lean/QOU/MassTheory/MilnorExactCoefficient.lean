@@ -96,7 +96,7 @@ def HasOrder (h : R) (k : ℕ) (x : A) : Prop :=
 
 /-- **Trace transfer** (restated from #4471): any R-linear functional maps an
 h-order-`k` element to a scalar divisible by `h^k`. -/
-theorem HasOrder.trace {h : R} {k : ℕ} {x : A} (hx : HasOrder h k x)
+theorem trace {h : R} {k : ℕ} {x : A} (hx : HasOrder h k x)
     (τ : A →ₗ[R] R) : ∃ s : R, τ x = h ^ k * s := by
   obtain ⟨c, rfl⟩ := hx
   exact ⟨τ c, by rw [← Algebra.smul_def, map_smul, smul_eq_mul]⟩
@@ -140,7 +140,7 @@ structure CyclicTrace (R A : Type*) [CommRing R] [Ring A] [Algebra R A] where
 
 /-- **A cyclic trace annihilates every ring commutator.**  This is the engine of
 the sub-wall: `τ([x,y]) = τ(x·y) − τ(y·x) = 0`. -/
-theorem CyclicTrace.commutator (τ : CyclicTrace R A) (x y : A) :
+theorem commutator (τ : CyclicTrace R A) (x y : A) :
     τ.toLin (x * y - y * x) = 0 := by
   rw [map_sub, τ.cyclic x y, sub_self]
 

@@ -55,7 +55,7 @@ structure BraidWord where
   valid : ∀ g ∈ generators, g.natAbs < nStrands
 
 /-- The number of crossings in a braid word. -/
-def BraidWord.crossings (β : BraidWord) : ℕ := β.generators.length
+def crossings (β : BraidWord) : ℕ := β.generators.length
 
 /-! ## Crossing energy defined via GS normal form -/
 
@@ -153,7 +153,7 @@ theorem photon_heckeCost_zero (hp : HeckeParams) :
 /-! ## Non-trivial braid has positive crossing energy -/
 
 /-- A non-trivial braid word has at least one generator. -/
-theorem BraidWord.nontrivial_has_generators (β : BraidWord)
+theorem nontrivial_has_generators (β : BraidWord)
     (h : β.generators ≠ []) : 0 < β.crossings := by
   unfold crossings
   exact List.length_pos_iff.mpr h

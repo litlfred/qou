@@ -186,7 +186,7 @@ theorem stepIterate_bijective (g : M)
 /-- Class-level packaging: an atomic computation monoid has a nonzero,
 indivisible generator whose iterates exhaust it — the class genuinely
 encodes "one indivisible Planck step", not a weaker shadow of it. -/
-theorem PlanckStepAtomicity.exists_indivisible_generator
+theorem exists_indivisible_generator
     (M : Type*) [AddCommMonoid M] [PlanckStepAtomicity M] :
     ∃ g : M, g ≠ 0 ∧ (∀ a : M, ∃ n : ℕ, a = n • g) ∧
       ∀ a b : M, a + b = g → a = 0 ∨ b = 0 := by

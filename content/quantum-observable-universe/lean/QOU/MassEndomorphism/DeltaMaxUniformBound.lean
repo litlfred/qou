@@ -67,11 +67,11 @@ structure OperatorNormBound (ρ : Type*) where
 
 /-- The closed-form `Δ_max(ρ) := 2 · L(β) · ‖ρ(β)‖_op² ·
     𝔪⁽⁰⁾(ρ_free)`. -/
-def OperatorNormBound.deltaMax {ρ : Type*}
+def deltaMax {ρ : Type*}
     (b : OperatorNormBound ρ) : ℝ :=
   2 * (b.braidLength : ℝ) * b.opNorm ^ 2 * b.freeMassLevel0
 
-theorem OperatorNormBound.deltaMax_nonneg {ρ : Type*}
+theorem deltaMax_nonneg {ρ : Type*}
     (b : OperatorNormBound ρ) :
     0 ≤ b.deltaMax := by
   unfold OperatorNormBound.deltaMax
@@ -101,7 +101,7 @@ theorem delta_max_uniform_bound
     vortex `ρ`.  This is the **closure of the archimedean /
     rank-1 SDP regime** of the convergence conjecture
     (`conj:jet-tower-uniform-delta-max`). -/
-def OperatorNormBound.toJetTowerUniformDeltaMax {ρ : Type*}
+def toJetTowerUniformDeltaMax {ρ : Type*}
     (b : OperatorNormBound ρ) :
     QOU.BraidKnot.JetTowerUniformDeltaMax ρ where
   delta := b.delta

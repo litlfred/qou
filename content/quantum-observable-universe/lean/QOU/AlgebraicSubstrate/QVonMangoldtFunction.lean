@@ -44,7 +44,7 @@ attribute [instance] QVonMangoldtFunction.decidableDefect
 -- Ref: [manuscript] quantum-observable-universe/q-geometric-langlands/q-von-mangoldt-function.ts
 
 /-- The q-von Mangoldt weight vanishes off the fundamental defects. -/
-theorem QVonMangoldtFunction.vanishes_off_defect
+theorem vanishes_off_defect
     (Λ : QVonMangoldtFunction) (m : Λ.Idx) (h : ¬ Λ.isFundamentalDefect m) :
     Λ.Lambda_q m = 0 := by
   rw [Λ.lambda_def m, if_neg h]

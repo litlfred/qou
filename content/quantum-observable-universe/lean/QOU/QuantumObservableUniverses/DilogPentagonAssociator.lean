@@ -104,7 +104,7 @@ theorem pentagon_iff_isDilog {H : Type*} [Add H] (A : DilogArgs H) (f : H → H)
 
 /-- **Forward corollary**: a q-dilogarithm datum's potential satisfies the Mac
     Lane pentagon — the dilogarithm *is* a pentagon solution. -/
-theorem QDilogData.satisfies_pentagon {H : Type*} [Add H] (L : QDilogData H) :
+theorem satisfies_pentagon {H : Type*} [Add H] (L : QDilogData H) :
     FiveTerm L.args L.eval :=
   L.five_term
 
@@ -113,7 +113,7 @@ theorem QDilogData.satisfies_pentagon {H : Type*} [Add H] (L : QDilogData H) :
     evaluation map are the same datum (the `five_term` proof is a `Prop`, so it
     is unique). Records that the pentagon pins the potential — the algebraic
     shadow of `prop:q-dilogarithm-exists` (uniqueness of the level-2 primitive). -/
-theorem QDilogData.ext_of_eval {H : Type*} [Add H] {L₁ L₂ : QDilogData H}
+theorem ext_of_eval {H : Type*} [Add H] {L₁ L₂ : QDilogData H}
     (hargs : L₁.args = L₂.args) (heval : L₁.eval = L₂.eval) : L₁ = L₂ := by
   cases L₁; cases L₂; cases hargs; cases heval; rfl
 

@@ -45,13 +45,13 @@ structure Partition where
   deriving Repr
 
 /-- The size (weight) of a partition: sum of parts. -/
-def Partition.size (lam : Partition) : ℕ := lam.parts.sum
+def size (lam : Partition) : ℕ := lam.parts.sum
 
 /-- The length (number of parts) of a partition. -/
-def Partition.length (lam : Partition) : ℕ := lam.parts.length
+def length (lam : Partition) : ℕ := lam.parts.length
 
 /-- The i-th part of a partition (0 if i ≥ length). -/
-def Partition.part (lam : Partition) (i : ℕ) : ℕ :=
+def part (lam : Partition) (i : ℕ) : ℕ :=
   lam.parts.getD i 0
 
 /-- `List.getD` agrees with `getElem` in range. (Local replacement for
@@ -92,14 +92,14 @@ end Cell
 
 /-- The set of cells in a partition's Young diagram:
     {(i, j) : i < lam.length ∧ j < lam.part i}. -/
-def Partition.cells (lam : Partition) : Finset Cell :=
+def cells (lam : Partition) : Finset Cell :=
   (Finset.range lam.length).biUnion fun i =>
     (Finset.range (lam.part i)).image fun j =>
       ⟨i, j⟩
 
 /-- Containment: μ ⊆ lam iff every part of μ is ≤ the corresponding
     part of lam. This is the partial order on the Young lattice. -/
-def Partition.contains (lam μ : Partition) : Prop :=
+def contains (lam μ : Partition) : Prop :=
   ∀ i, μ.part i ≤ lam.part i
 
 instance : LE Partition where
@@ -198,7 +198,7 @@ def skewCorners (lam μ : Partition) : Finset Cell :=
     permutation, so size-decrease lemmas continue to hold without
     a corner hypothesis. -/
 -- Ref: [sagan2001] Sagan, The Symmetric Group, §3.1 — corner removal preserves partition property
-def Partition.removeCorner (lam : Partition) (row : ℕ) : Partition :=
+def removeCorner (lam : Partition) (row : ℕ) : Partition :=
   ⟨(lam.parts.mapIdx fun i p => if i = row then p - 1 else p).insertionSort (· ≥ ·),
    List.sorted_insertionSort _ _⟩
 
@@ -337,7 +337,7 @@ private theorem cells_rows_disjoint_pair
   exact hb.1.symm
 
 /-- **Partition cells-count = size** — proved theorem. -/
-theorem Partition.cells_card_eq_size_proved (lam : Partition) :
+theorem cells_card_eq_size_proved (lam : Partition) :
     lam.cells.card = lam.size := by
   unfold Partition.cells Partition.size Partition.length Partition.part
   rw [Finset.card_biUnion]
@@ -363,7 +363,7 @@ corner removal). These discharge every field of the
 
 /-- The parts of a partition are antitone (weakly decreasing),
     extended by `0` beyond the last part. -/
-theorem Partition.part_antitone (μ : Partition) {j i : ℕ} (h : j ≤ i) :
+theorem part_antitone (μ : Partition) {j i : ℕ} (h : j ≤ i) :
     μ.part i ≤ μ.part j := by
   simp only [Partition.part]
   by_cases hi : i < μ.parts.length
@@ -620,7 +620,7 @@ instance partitionHelpers_default : PartitionHelpers where
 
 /-- Partition's Young-diagram cells count equals its size. Backed
     by `PartitionHelpers`. -/
-theorem Partition.cells_card_eq_size [h : PartitionHelpers]
+theorem cells_card_eq_size [h : PartitionHelpers]
     (lam : Partition) : lam.cells.card = lam.size :=
   h.cells_card_eq_size lam
 
@@ -719,7 +719,7 @@ theorem branching_nonneg (lam μ : Partition) : 0 ≤ branchingMult lam μ :=
     the identity; otherwise sorting moves the incremented part to
     its proper place. The size (sum + 1) is preserved by the sort. -/
 -- Ref: [sagan2001] §2.3
-def Partition.addCell (lam : Partition) (row : ℕ) : Partition :=
+def addCell (lam : Partition) (row : ℕ) : Partition :=
   if _h : row < lam.parts.length then
     ⟨(lam.parts.set row (lam.parts[row] + 1)).insertionSort (· ≥ ·),
      by exact List.sorted_insertionSort _ _⟩

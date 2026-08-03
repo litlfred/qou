@@ -95,7 +95,7 @@ structure BlowupCalculus (K : Type*) [Field K] [LinearOrder K] [IsStrictOrderedR
 /-- When the counterterm cancels the divergence exactly down to a
     natural-number constant `n` — i.e. `X(ω) − C(ω) = n` — the renormalised
     value is that constant. The blow-up calculus at work. -/
-theorem BlowupCalculus.renorm_of_natCast
+theorem renorm_of_natCast
     {K : Type*} [Field K] [LinearOrder K] [IsStrictOrderedRing K] [BlowupField K]
     (B : BlowupCalculus K) (n : ℕ)
     (h : B.X BlowupField.omega - B.C BlowupField.omega = (n : K)) :

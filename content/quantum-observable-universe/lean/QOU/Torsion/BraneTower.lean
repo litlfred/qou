@@ -21,7 +21,7 @@ structure RecursiveBraneTower where
   connection : (n : ℕ) → InstantonConnection (level n).toCRManifoldData
   jet_prolongation : (n : ℕ) → JetProlongationQOU
 
-def RecursiveBraneTower.baseLevel (tower : RecursiveBraneTower) :
+def baseLevel (tower : RecursiveBraneTower) :
     CQuantumObservableUniverse :=
   tower.level 0
 

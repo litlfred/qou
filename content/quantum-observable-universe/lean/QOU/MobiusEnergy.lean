@@ -226,7 +226,7 @@ noncomputable def NonSelfIntersection.exclusionRadius {M : Type*}
     (nsi : NonSelfIntersection M) : ℝ := hbar_q nsi.cme.q
 
 /-- The exclusion radius is exactly `ℏ_q`. -/
-theorem NonSelfIntersection.exclusionRadius_eq {M : Type*}
+theorem exclusionRadius_eq {M : Type*}
     (nsi : NonSelfIntersection M) :
     nsi.exclusionRadius = hbar_q nsi.cme.q := rfl
 

@@ -278,7 +278,7 @@ def IsHeckeBraidedAlgebraMap
     a Hecke-braided map is in particular a Hecke-quadratic map.
     All arguments implicit so dot notation `h.toIsHeckeAlgebraMap`
     works at call sites. -/
-theorem IsHeckeBraidedAlgebraMap.toIsHeckeAlgebraMap
+theorem toIsHeckeAlgebraMap
     {W : Type u} [Group W] {R : Type v} [CommRing R]
     {A : Type w} [Ring A] [Algebra R A] {q : R} {m : W → W → ℕ}
     {f : W → A} (h : IsHeckeBraidedAlgebraMap q m f) :

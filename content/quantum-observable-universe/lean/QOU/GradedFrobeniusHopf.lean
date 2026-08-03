@@ -86,7 +86,7 @@ structure GradedFrobeniusHopf (C : Type u) [CategoryTheory.Category.{v} C]
 
 /-- The degree-0 component has categorical dimension 1 (the trivial rep). -/
 -- Ref: [mathas1999]
-structure GradedFrobeniusHopf.SymDim1
+structure SymDim1
     {C : Type u} [CategoryTheory.Category.{v} C]
     [CategoryTheory.MonoidalCategory C]
     (gfh : GradedFrobeniusHopf C) where

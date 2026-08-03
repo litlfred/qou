@@ -39,7 +39,7 @@ structure QChebyshevFunction where
 
 /-- Below the smallest norm the count is empty: if every summed ideal has
     norm exceeding `X`, then `ψ_q(X) = 0`. -/
-theorem QChebyshevFunction.psi_eq_zero_of_lt
+theorem psi_eq_zero_of_lt
     (ψ : QChebyshevFunction) (X : ℝ)
     (h : ∀ m ∈ ψ.ideals, X < ψ.N m) : ψ.psi_q X = 0 := by
   rw [ψ.psi_def X]

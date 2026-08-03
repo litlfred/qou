@@ -162,12 +162,12 @@ theorem isCyclic_trace_comp {n : Type*} [Fintype n] [DecidableEq n]
   rw [Matrix.trace_mul_comm]
 
 /-- **Brick — cyclic functionals are closed under `+`.** -/
-theorem IsCyclic.add {σ τ : A → R} (hσ : IsCyclic σ) (hτ : IsCyclic τ) :
+theorem add {σ τ : A → R} (hσ : IsCyclic σ) (hτ : IsCyclic τ) :
     IsCyclic (fun x => σ x + τ x) := by
   intro x y; show σ (x * y) + τ (x * y) = σ (y * x) + τ (y * x); rw [hσ x y, hτ x y]
 
 /-- **Brick — cyclic functionals are closed under a scalar multiple.** -/
-theorem IsCyclic.smul {τ : A → R} (c : R) (hτ : IsCyclic τ) :
+theorem smul {τ : A → R} (c : R) (hτ : IsCyclic τ) :
     IsCyclic (fun x => c * τ x) := by
   intro x y; show c * τ (x * y) = c * τ (y * x); rw [hτ x y]
 
