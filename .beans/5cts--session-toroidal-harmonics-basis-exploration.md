@@ -1,7 +1,7 @@
 ---
 # 5cts
 title: 'Session: Toroidal harmonics basis exploration'
-status: todo
+status: scrapped
 type: milestone
 created_at: 2026-07-06T21:47:22Z
 updated_at: 2026-07-06T21:47:22Z
