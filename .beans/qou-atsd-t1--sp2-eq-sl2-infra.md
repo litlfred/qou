@@ -1,7 +1,7 @@
 ---
 # qou-atsd-t1
 title: 'T1: Sp2=SL2 matrix infra — det^2=1 (all dims) + det=+1 dim-2 accident (sp2_mem_iff_det_one) LANDED; reindex to Mathlib symplecticGroup (Fin 1) remains'
-status: in-progress
+status: completed
 type: task
 priority: normal
 parent: qou-atsd

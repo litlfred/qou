@@ -1,7 +1,7 @@
 ---
 # qou-2cvs
 title: 'Infra: FaddeevPhi holomorphicity endowment — ratio Ψ/Φ entire (hratio; closes uniqueUpToScalar via the landed reduction)'
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
