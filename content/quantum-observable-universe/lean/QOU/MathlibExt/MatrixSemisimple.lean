@@ -120,7 +120,9 @@ theorem isSemisimpleRing_of_nonempty [Nonempty n] :
   exact hPi.congr (columnsEquiv (n := n) (K := K))
 
 /-- The empty-index matrix ring is a subsingleton, hence trivially
-    semisimple (sorry-free). -/
+    semisimple (sorry-free). Note that this is intentionally trivial
+    (the empty matrix ring is vacuously semisimple) and is needed as
+    a base case. -/
 theorem isSemisimpleRing_of_isEmpty [IsEmpty n] :
     IsSemisimpleRing (Matrix n n K) := by
   have hsub : Subsingleton (Matrix n n K) :=
