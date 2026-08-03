@@ -12,8 +12,25 @@ with `Vⱼ = 3·Li₂(yⱼ) + (log yⱼ + bⱼ·πi)²` and `yⱼ` the roots of
 ## What this file does and does not prove
 
 Mathlib carries **no polylogarithm** (no `Polylog`, no `dilog` — checked
-2026-08-03), so (SUM) itself cannot be stated against a Mathlib `Li₂`, let
-alone proved. Rather than fake it, this file:
+2026-08-03). **QOU, however, has its own** (correction 2026-08-03; an earlier
+revision of this header mentioned only the Mathlib gap, which read as "no
+dilogarithm exists" and is misleading):
+
+* `QOU.Archimedean.LiTwo : ℝ → ℝ`, the series `∑' k, x^(k+1)/(k+1)²`;
+* `QOU.Archimedean.LiTwo_reflection'` — **sorry-free** — the Euler reflection
+  `LiTwo x + LiTwo (1−x) = π²/6 − log x · log(1−x)` for `0 < x < 1`, together
+  with the derivative infra Mathlib lacks.
+
+That is exactly the hypothesis `sum_reflection_of_branch` takes, so the
+abstract `Li` below is *instantiable today for real arguments in `(0,1)`* —
+which covers the real saddle root `y₃ = 0.4301597…`. It does **not** cover
+`y₁, y₂` (complex, and `|y₁| = 1.52 > 1`), so (SUM) still cannot be discharged.
+The missing piece is a complex `Li₂` with the complex reflection identity;
+tracked as bean `qou-ph1k`.
+
+Keeping `Li` abstract here is therefore deliberate: it makes the reduction
+independent of which dilogarithm implementation eventually supplies the
+hypothesis. This file:
 
 * proves the **algebraic skeleton** sorry-free and over a generic `CommRing`
   (`cubic_iff_sq_eq_cube`);

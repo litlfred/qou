@@ -58,9 +58,16 @@ cube-root-of-unity arguments `ω(1−y)`. Bloch-group computation; not attempted
 `QOU/QBeta/FiveTwoSaddleSumRule.lean` (lean-direct exit 0, sorry-free) proves
 the algebraic skeleton, the reflection reduction (with `Li` abstract, the
 reflection identity as an explicit hypothesis), and the two bookkeeping
-consequences. **Mathlib has no polylogarithm** (checked 2026-08-03: no
-`Polylog`, no `dilog`), so (SUM) itself cannot be stated against a Mathlib
-`Li₂`. It is recorded as the content-bearing conjecture carrier
+consequences.
+
+**CORRECTION 2026-08-03.** An earlier version of this bean said only "Mathlib
+has no polylogarithm". True (no `Polylog`, no `dilog`) but misleading: **QOU
+has its own** — `QOU.Archimedean.LiTwo : ℝ → ℝ` with `LiTwo_reflection'`
+**proved sorry-free** on `0 < x < 1`, plus the derivative infra Mathlib lacks.
+That is exactly the hypothesis shape `sum_reflection_of_branch` takes, so the
+abstract `Li` is instantiable today for the real root `y₃ = 0.4301597…`. It is
+NOT instantiable for `y₁, y₂` (complex, `|y₁| = 1.52 > 1`) — that is the real
+Lean blocker, tracked as bean `qou-ph1k` (complex `Li₂` + complex reflection). It is recorded as the content-bearing conjecture carrier
 `FiveTwoSaddleSumRule` with **no instance**, and the missing input as
 `FiveTwoDilogLadder`.
 
