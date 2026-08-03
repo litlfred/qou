@@ -80,6 +80,211 @@ theorem polytabloid_swap_colStab (t : Specht.Tableau μ) {j s : Fin (Specht.nOf 
     Equiv.Perm.sign_swap hjs]
   simp
 
+/-- **C-antisymmetry sum collapse (the coset-inner-sum).** For any finite set `H`
+    of permutations all lying in the column stabilizer of `t`, the signed
+    representation sum collapses to `|H| · e_t`: each term is
+    `sgn(σ) · (sgn(σ) · e_t) = sgn(σ)² · e_t = e_t` by brick 2
+    (`rep_colStab_polytabloid`) and `sgn(σ)² = 1`. This is the inner sum over a
+    full-column subgroup `S_C ⊆ colStab t` in the coset decomposition of the
+    single-column Garnir relation (brick 3b): it turns `∑_{π ∈ S_C} sgn(π)·π·e_t`
+    into `|C|! · e_t`. Collision-independent — pure column antisymmetry. -/
+theorem colStab_subset_sum_rep_polytabloid (t : Specht.Tableau μ)
+    (H : Finset (Equiv.Perm (Fin (Specht.nOf μ))))
+    (hH : ∀ σ ∈ H, σ ∈ Specht.colStab t) :
+    ∑ σ ∈ H, (Equiv.Perm.sign σ : ℤ) •
+        Specht.Mtab.rep (k := k) μ σ (Specht.polytabloid (k := k) t)
+      = H.card • Specht.polytabloid (k := k) t := by
+  classical
+  rw [← Finset.sum_const]
+  refine Finset.sum_congr rfl (fun σ hσ => ?_)
+  rw [rep_colStab_polytabloid t (hH σ hσ), smul_smul, ← Units.val_mul,
+    Int.units_mul_self, Units.val_one, one_smul]
+
+/-- **The outer star-sum evaluation.** The signed transposition sum over the
+    `|C|+1` coset representatives `{(x\,s) : x ∈ {s} ∪ C}` (with `(s\,s) = 1`)
+    evaluates to `e_t − ∑_{j∈C} e_{(j\,s)·t}`: the `x = s` term contributes `+e_t`
+    (identity), and each `x = j ∈ C` term contributes `−e_{(j\,s)·t}`
+    (`sgn(swap j s) = −1`, `rep_polytabloid`). This is the RHS of the single-column
+    Garnir cancellation `0 = |C|!·(e_t − ∑_{j∈C} e_{(j\,s)·t})`; collision-independent. -/
+theorem starSum_rep_polytabloid (t : Specht.Tableau μ)
+    (C : Finset (Fin (Specht.nOf μ))) (s : Fin (Specht.nOf μ)) (hs : s ∉ C) :
+    ∑ x ∈ insert s C, (Equiv.Perm.sign (Equiv.swap x s) : ℤ) •
+        Specht.Mtab.rep (k := k) μ (Equiv.swap x s) (Specht.polytabloid (k := k) t)
+      = Specht.polytabloid (k := k) t
+        - ∑ j ∈ C, Specht.polytabloid (k := k) ((Equiv.swap j s) • t) := by
+  classical
+  rw [Finset.sum_insert hs]
+  have hid : (Equiv.Perm.sign (Equiv.swap s s) : ℤ) •
+      Specht.Mtab.rep (k := k) μ (Equiv.swap s s) (Specht.polytabloid (k := k) t)
+      = Specht.polytabloid (k := k) t := by
+    rw [Equiv.swap_self]
+    show (Equiv.Perm.sign (1 : Equiv.Perm (Fin (Specht.nOf μ))) : ℤ) •
+        Specht.Mtab.rep (k := k) μ 1 (Specht.polytabloid (k := k) t) = _
+    simp
+  rw [hid]
+  have hC : ∑ j ∈ C, (Equiv.Perm.sign (Equiv.swap j s) : ℤ) •
+        Specht.Mtab.rep (k := k) μ (Equiv.swap j s) (Specht.polytabloid (k := k) t)
+      = - ∑ j ∈ C, Specht.polytabloid (k := k) ((Equiv.swap j s) • t) := by
+    rw [← Finset.sum_neg_distrib]
+    refine Finset.sum_congr rfl (fun j hj => ?_)
+    have hjs : j ≠ s := fun h => hs (h ▸ hj)
+    rw [Equiv.Perm.sign_swap hjs, QOU.BraidKnot.JucysMurphy.rep_polytabloid]
+    simp
+  rw [hC, ← sub_eq_add_neg]
+
+open scoped Classical in
+/-- The subgroup `S_D` of permutations fixing every label **outside** `D`
+    (realised as a `Finset`), used as `S_C` and `S_{C∪{s}}` in the single-column
+    Garnir coset decomposition. -/
+def permFixingOutside (D : Finset (Fin (Specht.nOf μ))) :
+    Finset (Equiv.Perm (Fin (Specht.nOf μ))) :=
+  Finset.univ.filter (fun σ => ∀ l, l ∉ D → σ l = l)
+
+open scoped Classical in
+theorem mem_permFixingOutside {D : Finset (Fin (Specht.nOf μ))}
+    {σ : Equiv.Perm (Fin (Specht.nOf μ))} :
+    σ ∈ permFixingOutside (μ := μ) D ↔ ∀ l, l ∉ D → σ l = l := by
+  rw [permFixingOutside, Finset.mem_filter]
+  exact ⟨fun h => h.2, fun h => ⟨Finset.mem_univ _, h⟩⟩
+
+/-- **The full-group single-column Garnir sum = `|S_C| · (e_t − ∑ e_{(j\,s)·t})`
+    (sorry-free, collision-independent).** For a label set `C` lying in one column of
+    `t` (hypothesis `hCcol`: every permutation supported on `C` preserves columns) and
+    a label `s ∉ C`, the signed representation sum over the **full** group `S_{C∪{s}}`
+    factors as `|S_C|` copies of the outer star-sum. Route: reindex `S_{C∪{s}}` by the
+    bijection `(x, π) ↦ (x\,s)·π` onto `(C∪{s}) × S_C`, collapse the inner `S_C`-sum
+    to `|S_C|·e_t` by column antisymmetry (`colStab_subset_sum_rep_polytabloid`), and
+    recognise the outer sum via `starSum_rep_polytabloid`. Combined with the
+    (collision-dependent) full-group **annihilation** `= 0` and `|S_C| = |C|! ≠ 0`,
+    this yields the single-column relation `∑_{j∈C} e_{(j\,s)·t} = e_t`. -/
+theorem colGarnir_fullgroup_sum (t : Specht.Tableau μ)
+    (C : Finset (Fin (Specht.nOf μ))) (s : Fin (Specht.nOf μ)) (hs : s ∉ C)
+    (hCcol : ∀ π ∈ permFixingOutside (μ := μ) C, π ∈ Specht.colStab t) :
+    ∑ σ ∈ permFixingOutside (μ := μ) (insert s C), (Equiv.Perm.sign σ : ℤ) •
+        Specht.Mtab.rep (k := k) μ σ (Specht.polytabloid (k := k) t)
+      = (permFixingOutside (μ := μ) C).card •
+          (Specht.polytabloid (k := k) t
+            - ∑ j ∈ C, Specht.polytabloid (k := k) ((Equiv.swap j s) • t)) := by
+  classical
+  set SC := permFixingOutside (μ := μ) C with hSC
+  set SCs := permFixingOutside (μ := μ) (insert s C) with hSCs
+  -- membership helper: any σ ∈ SCs maps s into `insert s C`
+  have hs_mem : ∀ σ ∈ SCs, σ s ∈ insert s C := by
+    intro σ hσ
+    by_contra hc
+    have h1 : σ (σ s) = σ s := (mem_permFixingOutside (μ := μ)).mp hσ (σ s) hc
+    have h2 : σ s = s := by have := congrArg σ.symm h1; simpa using this
+    rw [h2] at hc
+    exact hc (Finset.mem_insert_self s C)
+  -- the reindexing bijection `(x, π) ↦ (x s)·π`, inverse `σ ↦ (σ s, (σ s, s)·σ)`
+  have stepA : ∑ σ ∈ SCs, (Equiv.Perm.sign σ : ℤ) •
+        Specht.Mtab.rep (k := k) μ σ (Specht.polytabloid (k := k) t)
+      = ∑ p ∈ (insert s C) ×ˢ SC, (Equiv.Perm.sign (Equiv.swap p.1 s * p.2) : ℤ) •
+          Specht.Mtab.rep (k := k) μ (Equiv.swap p.1 s * p.2)
+            (Specht.polytabloid (k := k) t) := by
+    refine Finset.sum_nbij' (fun σ => (σ s, Equiv.swap (σ s) s * σ))
+      (fun p => Equiv.swap p.1 s * p.2) ?_ ?_ ?_ ?_ ?_
+    · -- hi : image lands in the product
+      intro σ hσ
+      rw [Finset.mem_product]
+      refine ⟨hs_mem σ hσ, ?_⟩
+      rw [hSC, mem_permFixingOutside (μ := μ)]
+      intro l hl
+      rcases eq_or_ne l s with rfl | hls
+      · rw [Equiv.Perm.mul_apply, Equiv.swap_apply_left]
+      · have hlins : l ∉ insert s C := by
+          rw [Finset.mem_insert]; push_neg; exact ⟨hls, hl⟩
+        rw [Equiv.Perm.mul_apply, (mem_permFixingOutside (μ := μ)).mp hσ l hlins,
+          Equiv.swap_apply_of_ne_of_ne
+            (fun h => hlins (by rw [h]; exact hs_mem σ hσ)) hls]
+    · -- hj : the product image lands back in SCs
+      intro p hp
+      rw [Finset.mem_product] at hp
+      rw [hSCs, mem_permFixingOutside (μ := μ)]
+      intro l hl
+      have hlC : l ∉ C := fun h => hl (Finset.mem_insert_of_mem h)
+      have hls : l ≠ s := fun h => hl (h ▸ Finset.mem_insert_self s C)
+      have hlp1 : l ≠ p.1 := fun h => hl (h ▸ hp.1)
+      rw [Equiv.Perm.mul_apply, (mem_permFixingOutside (μ := μ)).mp hp.2 l hlC,
+        Equiv.swap_apply_of_ne_of_ne hlp1 hls]
+    · -- left_inv
+      intro σ _
+      show Equiv.swap (σ s) s * (Equiv.swap (σ s) s * σ) = σ
+      rw [← mul_assoc, Equiv.swap_mul_self, one_mul]
+    · -- right_inv
+      intro p hp
+      rw [Finset.mem_product] at hp
+      have hp2s : p.2 s = s := (mem_permFixingOutside (μ := μ)).mp hp.2 s hs
+      have hfst : (Equiv.swap p.1 s * p.2) s = p.1 := by
+        rw [Equiv.Perm.mul_apply, hp2s, Equiv.swap_apply_right]
+      apply Prod.ext
+      · exact hfst
+      · show Equiv.swap ((Equiv.swap p.1 s * p.2) s) s * (Equiv.swap p.1 s * p.2) = p.2
+        rw [hfst, ← mul_assoc, Equiv.swap_mul_self, one_mul]
+    · -- h : summand agreement under the bijection
+      intro σ _
+      show (Equiv.Perm.sign σ : ℤ) •
+          Specht.Mtab.rep (k := k) μ σ (Specht.polytabloid (k := k) t)
+        = (Equiv.Perm.sign (Equiv.swap (σ s) s * (Equiv.swap (σ s) s * σ)) : ℤ) •
+          Specht.Mtab.rep (k := k) μ (Equiv.swap (σ s) s * (Equiv.swap (σ s) s * σ))
+            (Specht.polytabloid (k := k) t)
+      rw [show Equiv.swap (σ s) s * (Equiv.swap (σ s) s * σ) = σ from by
+        rw [← mul_assoc, Equiv.swap_mul_self, one_mul]]
+  rw [stepA, Finset.sum_product' (insert s C) SC
+      (fun a b => (Equiv.Perm.sign (Equiv.swap a s * b) : ℤ) •
+        Specht.Mtab.rep (k := k) μ (Equiv.swap a s * b) (Specht.polytabloid (k := k) t))]
+  -- inner sum over `S_C` collapses to `|S_C|·e_t` (column antisymmetry)
+  have inner : ∀ x, ∑ π ∈ SC, (Equiv.Perm.sign (Equiv.swap x s * π) : ℤ) •
+        Specht.Mtab.rep (k := k) μ (Equiv.swap x s * π) (Specht.polytabloid (k := k) t)
+      = SC.card • ((Equiv.Perm.sign (Equiv.swap x s) : ℤ) •
+          Specht.Mtab.rep (k := k) μ (Equiv.swap x s) (Specht.polytabloid (k := k) t)) := by
+    intro x
+    have hpull : ∑ π ∈ SC, (Equiv.Perm.sign (Equiv.swap x s * π) : ℤ) •
+          Specht.Mtab.rep (k := k) μ (Equiv.swap x s * π) (Specht.polytabloid (k := k) t)
+        = (Equiv.Perm.sign (Equiv.swap x s) : ℤ) •
+            Specht.Mtab.rep (k := k) μ (Equiv.swap x s)
+              (∑ π ∈ SC, (Equiv.Perm.sign π : ℤ) •
+                Specht.Mtab.rep (k := k) μ π (Specht.polytabloid (k := k) t)) := by
+      rw [map_sum, Finset.smul_sum]
+      refine Finset.sum_congr rfl (fun π _ => ?_)
+      simp only [map_mul, Module.End.mul_apply, map_zsmul, Units.val_mul, mul_smul]
+    rw [hpull, colStab_subset_sum_rep_polytabloid t SC hCcol, map_nsmul, smul_comm]
+  rw [Finset.sum_congr rfl (fun x _ => inner x), ← Finset.smul_sum,
+    starSum_rep_polytabloid t C s hs]
+
+section Cancellation
+variable {k : Type} [Field k] [CharZero k] {μ : YoungDiagram}
+
+/-- **Single-column Garnir relation from the full-group annihilation (sorry-free,
+    conditional).** Over a characteristic-zero field, once the full-group
+    annihilation `∑_{σ∈S_{C∪{s}}} sgn(σ)·σ·e_t = 0` is known, the coset factorisation
+    `colGarnir_fullgroup_sum` gives `|S_C|·(e_t − ∑_{j∈C} e_{(j\,s)·t}) = 0`, and
+    dividing by `|S_C| = |C|! ≠ 0` yields the single-column relation
+    `∑_{j∈C} e_{(j\,s)·t} = e_t`. This isolates the **only** remaining debt of brick 3b
+    as the annihilation itself (the collision-dependent piece). -/
+theorem colGarnir_single_column_of_annihilation (t : Specht.Tableau μ)
+    (C : Finset (Fin (Specht.nOf μ))) (s : Fin (Specht.nOf μ)) (hs : s ∉ C)
+    (hCcol : ∀ π ∈ permFixingOutside (μ := μ) C, π ∈ Specht.colStab t)
+    (hann : ∑ σ ∈ permFixingOutside (μ := μ) (insert s C), (Equiv.Perm.sign σ : ℤ) •
+        Specht.Mtab.rep (k := k) μ σ (Specht.polytabloid (k := k) t) = 0) :
+    ∑ j ∈ C, Specht.polytabloid (k := k) ((Equiv.swap j s) • t)
+      = Specht.polytabloid (k := k) t := by
+  have hkey := colGarnir_fullgroup_sum (k := k) t C s hs hCcol
+  rw [hann] at hkey
+  set n := (permFixingOutside (μ := μ) C).card with hn
+  have hne : (n : k) ≠ 0 := by
+    have hpos : 0 < n := by
+      rw [hn]
+      exact Finset.card_pos.mpr ⟨1, (mem_permFixingOutside (μ := μ)).mpr (fun l _ => rfl)⟩
+    exact Nat.cast_ne_zero.mpr hpos.ne'
+  have h0 : (n : k) • (Specht.polytabloid (k := k) t
+      - ∑ j ∈ C, Specht.polytabloid (k := k) ((Equiv.swap j s) • t)) = 0 := by
+    rw [Nat.cast_smul_eq_nsmul]; exact hkey.symm
+  have hv := (smul_eq_zero.mp h0).resolve_left hne
+  exact (sub_eq_zero.mp hv).symm
+
+end Cancellation
+
 /-! ## Brick 3a — the same-column contribution of the JM sum
 
 Splitting the reduction sum `Σ_{j<s} e_{(j s)·t}` (brick 1) by whether `swap j s`

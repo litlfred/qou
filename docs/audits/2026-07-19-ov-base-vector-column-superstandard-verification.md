@@ -83,5 +83,121 @@ label at that row — the antisymmetrizer kills the tabloid.
 `hfam` (mirroring `garnir_full_annihilation`'s proof but for this single-column
 transversal and the `s`-row `< colLen(c)` collision), and rearrange to the
 single-column relation; then sum over `c < c_s` and combine with the same-column
-count `= row(s)` (brick 3a) to close `base_exists`. Substantial but fully
-de-risked — every ingredient is a proved upstream lemma or a specified collision.
+count `= row(s)` (brick 3a) to close `base_exists`.
+
+## Correction (2026-07-19, second pass) — brick 3b is a multi-session build, not trivial assembly
+
+The "fully de-risked — every ingredient a proved upstream lemma" wording above
+was **over-optimistic** (the mirror of the "open" over-claim: do not over-claim
+"de-risked" either). On reading the Garnir machinery in
+[`SpechtStandardBasisCore`](../../content/quantum-observable-universe/lean/QOU/BraidKnot/SpechtStandardBasisCore.lean):
+
+1. **`garnirG t i j = S_{A∪B}` is the FULL symmetric group on `A∪B`**, and `garnirA/garnirB`
+   are **hard-coded to adjacent columns** `j, j+1` at a fixed row `i`
+   (`garnirA = col j, rows ≥ i`; `garnirB = col j+1, rows ≤ i`). The existing
+   `garnir_full_annihilation` / `garnir_row_collision` therefore do **not** transfer to
+   the single later-column cell `s` vs an entire earlier column `C` — that needs a
+   **new** collision lemma (the `s`-row `< colLen(c) = |C|` argument is clean and
+   direct — the `C`-labels fill rows `0…|C|−1`, `s` lands at a row `< colLen(c_s) ≤ |C|`
+   — but it is not the adjacent-column pigeonhole `garnir_row_collision` proves).
+
+2. **The single-column relation is the COSET-transversal sum, not the full-group sum.**
+   The transversal `{id} ∪ {(j s) : j ∈ C}` is **not** closed under right-multiplication
+   by the collision swap, so `mtab_sum_sign_smul_of_eq_zero` does not apply to it directly.
+   The honest route is: prove the **full-group** annihilation `∑_{σ ∈ S_{C∪{s}}} sgn σ · σ·e_t = 0`
+   (new collision, full group trivially swap-closed), then **decompose `S_{C∪{s}}` into the
+   `|C|+1` left cosets of `S_C`** with reps `{(x s) : x ∈ C∪{s}}`, use column antisymmetry
+   `∑_{π∈S_C} sgn π · π·e_t = |C|!·e_t` (now landed — `colStab_subset_sum_rep_polytabloid`
+   + `rep_colStab_polytabloid`) on each coset's inner sum, and cancel `|C|! ≠ 0` (char 0)
+   to reach `∑_{j∈C} e_{(j s)·t} = e_t`.
+
+**Landed this pass (all sorry-free, `lean`-direct exit 0, in
+[`OVBaseSeminormalVector.lean`](../../content/quantum-observable-universe/lean/QOU/BraidKnot/OVBaseSeminormalVector.lean)):**
+
+- `colStab_subset_sum_rep_polytabloid` — the coset-inner-sum collapse
+  `∑_{σ∈H} sgn σ · σ·e_t = |H|·e_t` for any `H ⊆ colStab t` (collision-independent).
+- `starSum_rep_polytabloid` — the outer star-sum
+  `∑_{x∈{s}∪C} sgn(x\,s)·(x\,s)·e_t = e_t − ∑_{j∈C} e_{(j\,s)·t}`.
+- `permFixingOutside D` (= `S_D` as a `Finset`) + `mem_permFixingOutside`.
+- **`colGarnir_fullgroup_sum`** — the coset-reindexing core (item (ii) below, done):
+  `∑_{σ∈S_{C∪{s}}} sgn σ · σ·e_t = |S_C|·(e_t − ∑_{j∈C} e_{(j\,s)·t})`, via
+  `Finset.sum_nbij'` (bijection `(x,π) ↦ (x\,s)·π`) + `Finset.sum_product'` + the two
+  bricks above. Collision-independent, over generic `[CommRing k]`.
+- **`colGarnir_single_column_of_annihilation`** `[Field k] [CharZero k]` — the
+  conditional closer: **given** the annihilation `= 0`, divide by `|S_C| = |C|! ≠ 0`
+  to get the single-column relation `∑_{j∈C} e_{(j\,s)·t} = e_t`.
+
+**Net effect:** items (ii) [coset decomposition + `|C|!` cancellation] are **done**.
+The single-column relation now reduces to the **single** remaining debt:
+
+**Still open (the collision-dependent remainder):** (i) the full-group **annihilation**
+`∑_{σ∈S_{C∪{s}}} sgn σ · σ·e_t = 0` — via `sum_sign_rep_polytabloid_eq_zero_of_family`
++ `mtab_sum_sign_smul_of_eq_zero`, needing a **new** row-collision for `(C,{s})`;
+(iii) the column-superstandard geometry (`colLen` weakly decreasing ⇒ `s`-row `< |C|`)
+that supplies the collision; (iv) summing the single-column relations over `c < c_s`
++ brick 3a to the eigen-equation; (v) the two side conjuncts (`polytabloid_mem_specht`,
+`≠ 0`) and discharging `seminormalVector_base_exists`. The collision (i)+(iii) is the
+substantive next chunk; (iv)+(v) are assembly.
+
+### The annihilation lemma (i) is written — env-blocked, ready to land
+
+Item (i) is **already written** and is correct-by-construction: an exact mirror of the
+**proven** `SpechtStandardBasisCore.garnir_full_annihilation`, specialised from the
+adjacent-column datum to the single later-column-cell-vs-column datum, reducing the
+annihilation to the purely-combinatorial collision hypothesis `hcol`. It could not be
+**machine-verified in the sandbox** for an environment reason only: the shipped
+`lake-cache` set lacked `SpechtStandardBasisCore.olean` (so the callee
+`sum_sign_rep_polytabloid_eq_zero_of_family` is not in the loadable olean set), and a
+fresh cone rebuild fails at `SpechtStandardBasis` with a `CharZero k` synthesis error
+(a stale-cache / hand-built-mathlib-olean inconsistency, **not** a source or math
+issue — the module is on `main`). It will compile once the
+`Core → … → JucysMurphy` cone is available consistently (CI, or a clean
+`lake build QOU`). The ready-to-paste code (goes in the `Cancellation` section; needs
+`import QOU.BraidKnot.SpechtStandardBasisCore`, after which the `_root_.` prefixes drop):
+
+```lean
+theorem colGarnir_fullgroup_annihilation_of_collision (t : Specht.Tableau μ)
+    (C : Finset (Fin (Specht.nOf μ))) (s : Fin (Specht.nOf μ))
+    (hcol : ∀ ρ : Specht.colStab t, ∃ a b, a ≠ b ∧ a ∈ insert s C ∧ b ∈ insert s C ∧
+        Specht.rowPattern ((ρ : Equiv.Perm (Fin (Specht.nOf μ))) • t) a
+          = Specht.rowPattern ((ρ : Equiv.Perm (Fin (Specht.nOf μ))) • t) b) :
+    ∑ σ ∈ permFixingOutside (μ := μ) (insert s C), (Equiv.Perm.sign σ : ℤ) •
+        Specht.Mtab.rep (k := k) μ σ (Specht.polytabloid (k := k) t) = 0 := by
+  classical
+  refine _root_.QOU.BraidKnot.SpechtStandardBasis.sum_sign_rep_polytabloid_eq_zero_of_family t
+    (permFixingOutside (μ := μ) (insert s C)) (fun ρ => ?_)
+  obtain ⟨a, b, hab, haU, hbU, hcollide⟩ := hcol ρ
+  refine _root_.QOU.BraidKnot.SpechtStandardBasis.mtab_sum_sign_smul_of_eq_zero
+    ((ρ : Equiv.Perm (Fin (Specht.nOf μ))) • t) (permFixingOutside (μ := μ) (insert s C))
+    (Equiv.swap a b) (Equiv.swap_mul_self a b) (Equiv.Perm.sign_swap hab) ?_ ?_
+  · rw [Specht.mem_rowStab]
+    funext l
+    rw [Specht.arrow_smul_apply, Equiv.symm_swap]
+    rcases eq_or_ne l a with rfl | hla
+    · rw [Equiv.swap_apply_left]; exact hcollide.symm
+    rcases eq_or_ne l b with rfl | hlb
+    · rw [Equiv.swap_apply_right]; exact hcollide
+    · rw [Equiv.swap_apply_of_ne_of_ne hla hlb]
+  · intro σ hσ
+    rw [mem_permFixingOutside (μ := μ)] at hσ ⊢
+    intro l hl
+    rw [Equiv.Perm.mul_apply,
+      Equiv.swap_apply_of_ne_of_ne (fun h => hl (by rw [h]; exact haU))
+        (fun h => hl (by rw [h]; exact hbU))]
+    exact hσ l hl
+
+-- AFTER colGarnir_single_column_of_annihilation:
+theorem colGarnir_single_column_of_collision (t : Specht.Tableau μ)
+    (C : Finset (Fin (Specht.nOf μ))) (s : Fin (Specht.nOf μ)) (hs : s ∉ C)
+    (hCcol : ∀ π ∈ permFixingOutside (μ := μ) C, π ∈ Specht.colStab t)
+    (hcol : ∀ ρ : Specht.colStab t, ∃ a b, a ≠ b ∧ a ∈ insert s C ∧ b ∈ insert s C ∧
+        Specht.rowPattern ((ρ : Equiv.Perm (Fin (Specht.nOf μ))) • t) a
+          = Specht.rowPattern ((ρ : Equiv.Perm (Fin (Specht.nOf μ))) • t) b) :
+    ∑ j ∈ C, Specht.polytabloid (k := k) ((Equiv.swap j s) • t)
+      = Specht.polytabloid (k := k) t :=
+  colGarnir_single_column_of_annihilation t C s hs hCcol
+    (colGarnir_fullgroup_annihilation_of_collision t C s hcol)
+```
+
+With this, brick 3b's **entire** remaining debt collapses to the single combinatorial
+`hcol` (item (iii), the column-superstandard geometry) plus the (iv)+(v) assembly.
