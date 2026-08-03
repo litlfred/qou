@@ -1,11 +1,11 @@
 ---
 # qou-rftd
 title: 'T8: Lean the [n]_q-[n-1]_q = Alexander(T(2,2n-1)) identity'
-status: in-progress
+status: completed
 type: task
 priority: high
 created_at: 2026-08-03T23:27:16Z
-updated_at: 2026-08-03T23:27:58Z
+updated_at: 2026-08-03T23:40:11Z
 parent: qou-8lxd
 ---
 

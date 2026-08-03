@@ -111,16 +111,13 @@ theorem framedQInt_sub_eq_alexanderTorus2 (q : R) (n : ℕ) :
   induction n with
   | zero => simp
   | succ n ih =>
+      have ho : Odd (2 * n + 1) := ⟨n, by ring⟩
+      have he : Even (2 * n + 1 + 1) := ⟨n + 1, by ring⟩
       have h2 : 2 * (n + 1) + 1 = (2 * n + 1) + 1 + 1 := by ring
-      rw [framedQInt_succ q (n + 1), framedQInt_succ q n, h2,
-        alexanderTorus2_succ, alexanderTorus2_succ, ← ih]
-      have hodd : (-q : R) ^ (2 * n + 1) = -(q ^ (2 * n + 1)) := by
-        rw [neg_pow]
-        simp [Odd.neg_one_pow ⟨n, by ring⟩]
-      have heven : (-q : R) ^ (2 * n + 1 + 1) = q ^ (2 * n + 1 + 1) := by
-        rw [neg_pow]
-        simp [Even.neg_one_pow ⟨n + 1, by ring⟩]
-      rw [hodd, heven]
+      have hp : 2 * (n + 1) = 2 * n + 1 + 1 := by ring
+      rw [h2, alexanderTorus2_succ, alexanderTorus2_succ, ← ih,
+        framedQInt_succ q (n + 1), framedQInt_succ q n, hp,
+        ho.neg_pow, he.neg_pow]
       ring
 
 /-- **Division-free closed form.** `(1 + q) · Δ_{T(2,m)}(q) = 1 − (−1)^m q^m`.
@@ -139,11 +136,8 @@ theorem one_add_mul_alexanderTorus2 (q : R) (m : ℕ) :
 /-- The odd specialisation: `(1 + q) · Δ_{T(2,2n+1)}(q) = 1 + q^{2n+1}`. -/
 theorem one_add_mul_alexanderTorus2_odd (q : R) (n : ℕ) :
     (1 + q) * alexanderTorus2 q (2 * n + 1) = 1 + q ^ (2 * n + 1) := by
-  rw [one_add_mul_alexanderTorus2]
-  have hodd : (-q : R) ^ (2 * n + 1) = -(q ^ (2 * n + 1)) := by
-    rw [neg_pow]
-    simp [Odd.neg_one_pow ⟨n, by ring⟩]
-  rw [hodd]
+  have ho : Odd (2 * n + 1) := ⟨n, by ring⟩
+  rw [one_add_mul_alexanderTorus2, ho.neg_pow]
   ring
 
 /-- Combining the two: the framed quantum-integer difference satisfies the
@@ -157,13 +151,19 @@ electron knot: `Δ_{3₁}(q) = 1 − q + q²`, and it is the framed difference
 `[2]_q − [1]_q` in framed form. -/
 theorem alexanderTorus2_trefoil (q : R) :
     framedQInt q 2 - q * framedQInt q 1 = 1 - q + q ^ 2 := by
-  simp [framedQInt, Finset.sum_range_succ]
+  have h2 : framedQInt q 2 = 1 + q ^ 2 := by
+    simp [framedQInt, Finset.sum_range_succ]
+  rw [h2, framedQInt_one]
   ring
 
 /-- The `T(2,5) = 5₁` instance: `Δ_{5₁}(q) = 1 − q + q² − q³ + q⁴`. -/
 theorem alexanderTorus2_five_one (q : R) :
     framedQInt q 3 - q * framedQInt q 2 = 1 - q + q ^ 2 - q ^ 3 + q ^ 4 := by
-  simp [framedQInt, Finset.sum_range_succ]
+  have h3 : framedQInt q 3 = 1 + q ^ 2 + q ^ 4 := by
+    simp [framedQInt, Finset.sum_range_succ]
+  have h2 : framedQInt q 2 = 1 + q ^ 2 := by
+    simp [framedQInt, Finset.sum_range_succ]
+  rw [h3, h2]
   ring
 
 /-- **The vanishing locus is the Alexander root set.** `[n+1]_q = [n]_q`
@@ -183,23 +183,21 @@ theorem framedQInt_sub_eq_zero_iff_alexander_root (q : R) (n : ℕ) :
 theorem alexanderTorus2_bar_symm (q : R) (n : ℕ) :
     ∑ j ∈ range (2 * n + 1), (-1 : R) ^ j * q ^ (2 * n - j)
       = alexanderTorus2 q (2 * n + 1) := by
-  unfold alexanderTorus2
-  rw [← Finset.sum_range_reflect]
-  refine Finset.sum_congr rfl ?_
-  intro j hj
-  simp only [Finset.mem_range] at hj
-  have hj' : j ≤ 2 * n := by omega
-  have hsub : 2 * n + 1 - 1 - j = 2 * n - j := by omega
-  rw [hsub, neg_pow]
-  have : (-1 : R) ^ (2 * n - j) * q ^ (2 * n - j) = (-1 : R) ^ j * q ^ (2 * n - j) := by
-    have hpar : ((2 * n - j) % 2) = (j % 2) := by omega
-    rcases Nat.even_or_odd j with he | ho
-    · have h1 : Even (2 * n - j) := by
-        rcases he with ⟨k, hk⟩; exact ⟨n - k, by omega⟩
-      rw [h1.neg_one_pow, he.neg_one_pow]
-    · have h1 : Odd (2 * n - j) := by
-        rcases ho with ⟨k, hk⟩; exact ⟨n - k - 1, by omega⟩
-      rw [h1.neg_one_pow, ho.neg_one_pow]
-  rw [this]
+  have key : ∀ j ∈ range (2 * n + 1),
+      (-1 : R) ^ j * q ^ (2 * n - j) = (-q : R) ^ (2 * n + 1 - 1 - j) := by
+    intro j hj
+    simp only [Finset.mem_range] at hj
+    have hsub : 2 * n + 1 - 1 - j = 2 * n - j := by omega
+    have hpar : (-1 : R) ^ (2 * n - j) = (-1 : R) ^ j := by
+      rcases Nat.even_or_odd j with he | ho
+      · have h1 : Even (2 * n - j) := by
+          obtain ⟨k, hk⟩ := he; exact ⟨n - k, by omega⟩
+        rw [h1.neg_one_pow, he.neg_one_pow]
+      · have h1 : Odd (2 * n - j) := by
+          obtain ⟨k, hk⟩ := ho; exact ⟨n - k - 1, by omega⟩
+        rw [h1.neg_one_pow, ho.neg_one_pow]
+    rw [hsub, neg_pow q (2 * n - j), hpar]
+  rw [Finset.sum_congr rfl key]
+  exact Finset.sum_range_reflect (fun j => (-q : R) ^ j) (2 * n + 1)
 
 end QOU.BraidsAndKnots.QIntegerAlexanderTorus
