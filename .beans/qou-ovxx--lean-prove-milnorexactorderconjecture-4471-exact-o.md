@@ -1,7 +1,7 @@
 ---
 # qou-ovxx
 title: 'Lean-prove MilnorExactOrderConjecture (#4471): exact order 2(A−1) ⇔ leading μ̄ coefficient ≠ 0'
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
