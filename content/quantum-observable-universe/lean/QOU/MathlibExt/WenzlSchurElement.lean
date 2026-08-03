@@ -46,7 +46,7 @@ def cellContent (i j : ℕ) : ℤ := (j : ℤ) - (i : ℤ)
 def contentSum (lam : Partition) : ℤ :=
   (List.range lam.length).foldl
     (fun acc i =>
-      acc + (List.range ((lam.get? i).getD 0)).foldl
+      acc + (List.range ((lam[i]?).getD 0)).foldl
         (fun a j => a + cellContent i j)
         0)
     0
@@ -73,7 +73,7 @@ noncomputable def schurElement (Q X : ℝ) (lam : Partition) : ℝ :=
   Q ^ (contentSum lam) *
     (List.range lam.length).foldl
       (fun acc i =>
-        acc * (List.range ((lam.get? i).getD 0)).foldl
+        acc * (List.range ((lam[i]?).getD 0)).foldl
           (fun a j =>
             a * (1 - X * Q ^ (cellContent i j)) /
                 (1 - Q ^ (Partition.hookLength lam i j)))
@@ -158,10 +158,10 @@ follow-on with real combinatorial content. -/
 
 /-- In-range cells have positive hook length (sorry-free). -/
 theorem hookLength_pos {lam : Partition} {i j : ℕ}
-    (hj : j < (lam.get? i).getD 0) :
+    (hj : j < (lam[i]?).getD 0) :
     0 < Partition.hookLength lam i j := by
   unfold Partition.hookLength
-  cases h : lam.get? i with
+  cases h : lam[i]? with
   | none => rw [h] at hj; simp at hj
   | some row =>
       rw [h] at hj
@@ -270,7 +270,7 @@ out the quotient category. -/
 
 /-- `lam` contains an in-range cell of content `N`. -/
 def HasContentCell (lam : Partition) (N : ℤ) : Prop :=
-  ∃ i, i < lam.length ∧ ∃ j, j < (lam.get? i).getD 0 ∧ cellContent i j = N
+  ∃ i, i < lam.length ∧ ∃ j, j < (lam[i]?).getD 0 ∧ cellContent i j = N
 
 private theorem foldl_mul_div_eq_zero (f g : ℕ → ℝ) :
     ∀ l : List ℕ, l.foldl (fun a j => a * f j / g j) 0 = 0

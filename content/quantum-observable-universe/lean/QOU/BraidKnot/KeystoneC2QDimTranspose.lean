@@ -109,7 +109,7 @@ theorem leg_count (l : List ℕ) (hl : l.Sorted (· ≥ ·)) (i j : ℕ)
 theorem hookLength_eq (l : List ℕ) (hl : l.Sorted (· ≥ ·)) (i j : ℕ)
     (hi : i < l.length) (hj : j < l.getD i 0) :
     Partition.hookLength l i j = (l.getD i 0 - j) + (colLen l j - i) - 1 := by
-  have hget : l.get? i = some (l.getD i 0) := by
+  have hget : l[i]? = some (l.getD i 0) := by
     rw [List.get?_eq_getElem?, List.getElem?_eq_getElem hi, List.getD_eq_getElem?_getD,
       List.getElem?_eq_getElem hi, Option.getD_some]
   have hleg := leg_count l hl i j hi hj
@@ -140,9 +140,9 @@ theorem conj_sorted (l : List ℕ) : (conj l).Sorted (· ≥ ·) := by
   simp only [conj, List.getElem_map, List.getElem_range]
   exact colLen_antitone l (le_of_lt hij)
 
-/-- `(l.get? i).getD 0 = l.getD i 0` — the inner `qDim` row-length bound, normalised (agrees both
+/-- `(l[i]?).getD 0 = l.getD i 0` — the inner `qDim` row-length bound, normalised (agrees both
 in range, where `get? = some`, and out of range, where both are the default `0`). -/
-theorem getQ_getD (l : List ℕ) (i : ℕ) : (l.get? i).getD 0 = l.getD i 0 := by
+theorem getQ_getD (l : List ℕ) (i : ℕ) : (l[i]?).getD 0 = l.getD i 0 := by
   rw [List.get?_eq_getElem?, ← List.getD_eq_getElem?_getD]
 
 /-- A multiplicative `foldl` over `range n` is the `Finset.prod` (product analog of the additive

@@ -193,7 +193,7 @@ noncomputable def buildChains : NuclearConfig → List TMatrix
       else
         -- Extend existing chains
         let extended := chains.mapIdx fun j Mj =>
-          extendChain Mj (config.get! j) nk
+          extendChain Mj (config[j]!) nk
         -- New chain for position k-1
         let newChain := crossingMatrix (config.get! (k - 1)) nk
         (extended ++ [newChain], k + 1)

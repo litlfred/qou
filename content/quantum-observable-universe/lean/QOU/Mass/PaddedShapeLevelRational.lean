@@ -51,7 +51,7 @@ open QOU.MathlibExt.QPartitionCombinatorics
 noncomputable def hookProd (q : ℝ) (lam : Partition) : ℝ :=
   (List.range lam.length).foldl
     (fun acc i =>
-      acc * (List.range ((lam.get? i).getD 0)).foldl
+      acc * (List.range ((lam[i]?).getD 0)).foldl
         (fun a j => a * qBracket q (Partition.hookLength lam i j))
         1)
     1
@@ -174,16 +174,16 @@ theorem foldl_mul_eq_prod (f : ℕ → ℝ) :
 theorem hookProd_eq_prod (q : ℝ) (lam : Partition) :
     hookProd q lam =
       ∏ i ∈ Finset.range lam.length,
-        ∏ j ∈ Finset.range ((lam.get? i).getD 0),
+        ∏ j ∈ Finset.range ((lam[i]?).getD 0),
           qBracket q (Partition.hookLength lam i j) := by
   unfold hookProd
   rw [foldl_mul_eq_prod (fun i =>
-      (List.range ((lam.get? i).getD 0)).foldl
+      (List.range ((lam[i]?).getD 0)).foldl
         (fun a j => a * qBracket q (Partition.hookLength lam i j)) 1) lam.length 1,
     one_mul]
   refine Finset.prod_congr rfl fun i _ => ?_
   rw [foldl_mul_eq_prod (fun j => qBracket q (Partition.hookLength lam i j))
-      ((lam.get? i).getD 0) 1, one_mul]
+      ((lam[i]?).getD 0) 1, one_mul]
 
 /-- `[N]_q!` as a range product of brackets. -/
 theorem qFactorial_eq_prod_range (q : ℝ) (N : ℕ) :
