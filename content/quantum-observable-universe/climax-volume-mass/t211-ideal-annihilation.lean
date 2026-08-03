@@ -181,8 +181,8 @@ theorem trivial_eigenvalue_flat (k : ℕ) : (1 : R_q) ^ k = 1 := one_pow k
 --      — Jones, "Hecke algebra representations of braid groups and link
 --      polynomials," Ann. Math. 126 (1987). Verified against the
 --      published version.
-axiom non_embeddable_eigenvalues_trivial (m n : ℕ) (hne : notEmbeddable m n 4) :
-    ∀ (k : ℕ), (1 : R_q) ^ k = 1
+theorem non_embeddable_eigenvalues_trivial (m n : ℕ) (hne : notEmbeddable m n 4) :
+    ∀ (k : ℕ), (1 : R_q) ^ k = 1 := fun k => one_pow k
 
 -- ═══════════════════════════════════════════════════════════════════
 -- Section 5: Genus stable across brane levels
