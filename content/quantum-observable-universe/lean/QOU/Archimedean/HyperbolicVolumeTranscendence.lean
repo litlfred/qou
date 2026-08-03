@@ -352,7 +352,7 @@ noncomputable def baselineDecomposition
     exact (hasSum_ite_eq 0 vol).summable
   sum_eq := by
     apply hasSum_ite_eq
-  baseline_dominant := by simp [hvol]
+  baseline_dominant := by simp
 
 /-- Tower decomposition for Vol(4₁). -/
 -- Ref: [turaev2010] Turaev, "Quantum Invariants of Knots and 3-Manifolds," de Gruyter 2010
