@@ -1,0 +1,57 @@
+---
+# qou-hfei
+title: 'GAP: source of the ~1e-4 error in the legacy 5₂ V literals'
+status: todo
+type: task
+created_at: 2026-08-03T14:28:58Z
+updated_at: 2026-08-03T14:28:58Z
+---
+
+
+## What is open
+
+Where the ~1e-4 error in the two legacy 5₂ literals came from.
+
+| | extraction convention | legacy literal | rel |
+|---|---|---|---|
+| σ₁ | 1.37919430966108 | 1.3790860299 | 7.85e-5 |
+| σ₃ | −2.75838861932215 | −2.7580990292 | 1.05e-4 |
+
+## Settled — do not re-litigate
+
+**The convention is IDENTIFIED.** Both literals ARE the extraction convention
+`V_eff = V_GGM + π²/2`, evaluated to ~4 digits. The formula was right; the
+evaluation was sloppy. This supersedes two earlier verdicts — the 2026-07-26
+"matches neither published convention" and the 2026-08-01 "Im V₁ doesn't
+match" — **both of which tested only ONE literal**. Testing σ₃ as well changed
+the answer. Do not reopen the "which convention" question.
+
+**The pair is internally inconsistent** by 7.3e-5 against the exact relation
+`V₃ = −2·Re V₁ − 3π²/2`, so the two were computed *independently*; neither was
+derived from the other.
+
+## Refuted as the source (scope-(a), direct test)
+
+- **Li₂ series truncation** — converges σ₃ to the *true* extraction value and
+  never to the legacy one (residual stalls at 2.9e-4 for N ≥ 9); and cannot
+  produce σ₁ at all, since `|y₁| = 1.52 > 1` and the series diverges there.
+- **Root imprecision** — the map is insensitive: a 3-decimal root already
+  reproduces the extraction value to 1e-8. Inverting for the root that *would*
+  give legacy σ₃ yields `0.4351928`, cubic residual `9.2e-3` — not a root of
+  the cubic at all.
+
+Scope-(a): these two are excluded by direct test; the space of error sources
+is **not** exhausted.
+
+## Status / priority
+
+Bounded to a 4-digit evaluation slip in a correct formula, not a different
+formula, object, or knot. **Low priority** — the values are no longer used
+(`fivetwo_saddle_values.py` computes them; `V₃` follows from `V₁`), so this is
+forensics, not a blocker. Close as `wontfix` if it stays cold.
+
+## Refs
+
+- probe: `computations/probes/qbeta_5two_saddle_sum_rule_and_provenance_probe.py`
+- ledger: `docs/coordination/1ppq-qbeta.md`, 2026-08-02 row
+- PRs #4454, #4624
