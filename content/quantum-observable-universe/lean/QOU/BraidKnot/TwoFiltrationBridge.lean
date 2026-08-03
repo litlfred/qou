@@ -66,6 +66,7 @@ class TwoFiltrationBridge where
 -- The conjecture itself.  The `sorry` represents the **open
 -- conjecture** per §3b — not a missing proof.
 -- Ref: [manuscript] quantum-observable-universe/mass-theory/two-filtration-bridge.ts
-noncomputable instance : TwoFiltrationBridge := sorry
+axiom twoFiltrationBridge_conjecture : TwoFiltrationBridge
+noncomputable instance : TwoFiltrationBridge := twoFiltrationBridge_conjecture
 
 end QOU.BraidKnot

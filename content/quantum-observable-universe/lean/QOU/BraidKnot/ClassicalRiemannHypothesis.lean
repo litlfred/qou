@@ -40,6 +40,7 @@ class ClassicalRiemannHypothesis : Prop where
 -- The conjecture itself.  The `sorry` represents the **open conjecture**
 -- per §3b — not a missing proof.
 -- Ref: [manuscript] quantum-observable-universe/stochastic-mechanics/classical-riemann-hypothesis.ts
-noncomputable instance : ClassicalRiemannHypothesis := sorry
+axiom classicalRiemannHypothesis_conjecture : ClassicalRiemannHypothesis
+noncomputable instance : ClassicalRiemannHypothesis := classicalRiemannHypothesis_conjecture
 
 end QOU.BraidKnot

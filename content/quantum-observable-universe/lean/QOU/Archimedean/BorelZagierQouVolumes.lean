@@ -49,5 +49,6 @@ The three QOU hyperbolic volumes are $\mathbb{Q}$-linearly independent.
 -- The conjecture itself.  The `sorry` represents the **open
 -- conjecture** per §3b — not a missing proof.
 -- Ref: [manuscript] quantum-observable-universe/archimedean-universe/borel-zagier-qou-volumes.ts
-noncomputable instance : BorelZagierQouVolumes := sorry
+axiom borelZagierQouVolumes_conjecture : BorelZagierQouVolumes
+noncomputable instance : BorelZagierQouVolumes := borelZagierQouVolumes_conjecture
 end QOU.Archimedean
