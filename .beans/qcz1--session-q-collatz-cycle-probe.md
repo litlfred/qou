@@ -1,7 +1,7 @@
 ---
 # qcz1
 title: 'Session: q-Collatz status — content-bearing class, no-cycles re-scope, cycle census'
-status: in-progress
+status: scrapped
 type: milestone
 priority: medium
 created_at: 2026-07-18T21:14:00Z

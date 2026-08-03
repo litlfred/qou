@@ -1,7 +1,7 @@
 ---
 # qou-89f9
 title: 'Session: alien-calculus ↔ Habiro connection deep-dives + overclaim cleanup'
-status: in-progress
+status: scrapped
 type: milestone
 tags:
     - alien-habiro

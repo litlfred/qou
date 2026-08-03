@@ -1,7 +1,7 @@
 ---
 # qou-u8fj
 title: Week-in-review 2026-07-24 + workplan refresh (492 commits)
-status: in-progress
+status: scrapped
 type: milestone
 created_at: 2026-07-24T15:55:00Z
 updated_at: 2026-07-24T15:55:00Z

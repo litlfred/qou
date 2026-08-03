@@ -1,7 +1,7 @@
 ---
 # qou-gtsl
 title: 'Session: four-front L2 gap-close (owner picked all: W1 D-ladder accel / W2 LR-modulus / W3 Bring-photon-det / #3805 Stokes)'
-status: in-progress
+status: scrapped
 type: milestone
 priority: normal
 created_at: 2026-07-17T20:47:19Z
