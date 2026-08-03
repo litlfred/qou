@@ -1,7 +1,7 @@
 ---
 id: qou-xx9f
 type: task
-status: todo
+status: scrapped
 priority: normal
 ---
 
