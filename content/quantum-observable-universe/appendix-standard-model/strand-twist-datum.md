@@ -1,4 +1,4 @@
-Let $\beta$ be an $n$-strand state of the gauge-action groupoid. A :defterm[strand twist datum]{#strand-twist-datum} on $\beta$ is a function
+Let $\beta$ be an $n$-strand state of the gauge-action groupoid. A :defterm[per-strand framing datum]{#strand-twist-datum} on $\beta$ is a function
 
 $$
   t \colon \{1, \dots, n\} \longrightarrow \mathbb{Z},

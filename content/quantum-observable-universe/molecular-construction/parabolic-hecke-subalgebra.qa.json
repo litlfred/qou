@@ -1692,7 +1692,26 @@
         "reviewed_at": "2026-07-12T00:35:30.742Z",
         "reviewed_sha": "f91ccbdf9d5ac0952de04b1a1208e20b9982ac03"
       }
+    ],
+    "clarity-defterm-bold": [
+      {
+        "field_hash": {
+          "md": "bc686c16a77d",
+          "ts": "b6a2ce39d718"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/definition-clarity-audit.ts",
+          "version": "v1",
+          "script_hash": "589d4ee4b60e",
+          "script_commit_sha": "329c14b2aff45a046ab25b3bf565e64778d4f70b"
+        },
+        "reviewed_at": "2026-08-03T19:38:33.656Z",
+        "reviewed_sha": "1939c717a5b1ecaccc37b6789b6b7536201a063e",
+        "evidence": "term marked via \"parabolic Hecke subalgebra\""
+      }
     ]
   },
-  "updated_at": "2026-07-13T00:59:15.685Z"
+  "updated_at": "2026-08-03T19:38:33.656Z"
 }

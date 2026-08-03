@@ -1696,7 +1696,26 @@
         "reviewed_at": "2026-07-12T00:35:28.306Z",
         "reviewed_sha": "324a17a324d9b4c222d528eb499512407cb8b4a4"
       }
+    ],
+    "clarity-defterm-bold": [
+      {
+        "field_hash": {
+          "md": "b1b2578aca7e",
+          "ts": "fd5a281d25fd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/definition-clarity-audit.ts",
+          "version": "v1",
+          "script_hash": "589d4ee4b60e",
+          "script_commit_sha": "329c14b2aff45a046ab25b3bf565e64778d4f70b"
+        },
+        "reviewed_at": "2026-08-03T19:38:33.652Z",
+        "reviewed_sha": "1939c717a5b1ecaccc37b6789b6b7536201a063e",
+        "evidence": "term marked via \"$q$-weighted Yang–Mills–Levi functional\""
+      }
     ]
   },
-  "updated_at": "2026-07-13T00:59:15.685Z"
+  "updated_at": "2026-08-03T19:38:33.652Z"
 }

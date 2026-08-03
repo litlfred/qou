@@ -37,7 +37,7 @@ import { definition } from "../../schema/builders";
 export default definition({
   label: "def:f-bor-borromean-observable",
   title:
-    "Borromean categorical observable $F_{\\mathrm{Bor}}(q) := |\\mathrm{tr}_M(\\beta_{\\mathrm{Bor}}, q)| \\cdot [3]_q! / q^3$",
+    "Borromean categorical observable",
   uses: [
     "prop:borromean-markov-trace-closed-form",
     "prop:y-lambda-closed-form-wenzl-bridge",

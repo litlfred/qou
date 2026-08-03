@@ -1374,7 +1374,26 @@
         "reviewed_at": "2026-07-12T00:35:02.628Z",
         "reviewed_sha": "b9e9b8dc3bf50fec6e2da3979d66ebef49fffe61"
       }
+    ],
+    "clarity-defterm-bold": [
+      {
+        "field_hash": {
+          "md": "b46c0514dc00",
+          "ts": "b62d28cb6916"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/definition-clarity-audit.ts",
+          "version": "v1",
+          "script_hash": "589d4ee4b60e",
+          "script_commit_sha": "329c14b2aff45a046ab25b3bf565e64778d4f70b"
+        },
+        "reviewed_at": "2026-08-03T19:38:33.681Z",
+        "reviewed_sha": "1939c717a5b1ecaccc37b6789b6b7536201a063e",
+        "evidence": "title is descriptive (5 principal tokens) — principal defined term ambiguous"
+      }
     ]
   },
-  "updated_at": "2026-07-13T00:59:15.685Z"
+  "updated_at": "2026-08-03T19:38:33.681Z"
 }
