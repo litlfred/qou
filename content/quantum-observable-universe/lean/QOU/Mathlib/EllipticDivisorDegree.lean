@@ -237,6 +237,7 @@ theorem elliptic_divisor_degree_zero {f : ℂ → ℂ} {ω₁ ω₂ : ℂ}
     ∑ z ∈ S, (MeromorphicOn.divisor f Set.univ) z = 0 := by
   -- Ref: [manuscript] Liouville's third theorem; argument principle absent from
   --   Mathlib v4.24.0. See docs/audits/2026-07-20-pi2-elliptic-divisor-scaffold.md.
+  -- SORRY: needs the argument principle (Σ ord = (1/2πi)∮ f'/f) from complex analysis
   sorry
 
 end QOU.Mathlib.EllipticDivisorDegree
