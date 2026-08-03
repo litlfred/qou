@@ -172,13 +172,17 @@ generator action on a basis vector is sparse (`mulσ_k(e_i)` is `e_{π(i)}` or
 vectors — never unfolding the whole tower at once — each step is depth-1 and the
 mostly-zero entries resolve fast, so the `whnf` wall is never hit. Demonstrated:
 a full basis row (all 24 words, incl. the deepest) compiles `lean`-direct exit 0.
-The full `24²` closure is auto-generated (`computations/markov/gen_gram_closure.py`
-→ `QOU.Machinery.MarkovTraceH4Gram`), which proves `gram_symm_proved` and hence
-`trM_cyclic_proved` **fully sorry-free**. This local `gram_symm` is the
-placeholder the reduction consumes until that module lands; it is then superseded.
-(The abstract Ocneanu-induction lemma on main's `MarkovStabilization` remains the
-elegant general-`n` route — bean `qou-0vsu`; this basis computation — bean
-`qou-svnb` — closes `n=4` concretely.) Not vacuous, not laundered. -/
+The full `24²` closure is emitted on demand by
+`computations/markov/gen_gram_closure.py`
+— a `MarkovTraceH4Gram` module proving every `G_{i,j}` sorry-free via this
+have-chain, hence `gram_symm` and cyclicity. It is **not committed**: the
+generated file is ~6.3k lines / ~35-min compile (576 depth-≤6 evaluations), too
+heavy a permanent build cost to eliminate one already-reduced residual. So this
+`gram_symm` stays a **cited `sorry`** — the honest state — with the generator as
+the reproducible witness that it *is* closeable (method validated to full-row
+scale). The lighter permanent closure is the abstract Ocneanu-induction lemma on
+main's `MarkovStabilization` (bean `qou-0vsu`), which discharges cyclicity for
+every `n` at once without the 24² brute force. Not vacuous, not laundered. -/
 -- Ref: [manuscript] §mass-theory (H₄ Markov trace); compute hecke_regular_nf_table.py self_validate
 theorem gram_symm (z h : R) :
     ∀ i j, trM z h (mulNF h (e i) (e j)) = trM z h (mulNF h (e j) (e i)) := by
@@ -188,7 +192,7 @@ theorem gram_symm (z h : R) :
 Derived (no new `sorry`) from the **sorry-free** bilinear reduction
 `trM_cyclic_of_gram_symm` and the single residual `gram_symm`.  The reduction —
 the Fin-24-free half — is genuinely proved; only the finite Gram-symmetry base
-`gram_symm` remains open (blocked at the depth-6 `whnf` wall; see its docstring). -/
+`gram_symm` remains a cited `sorry` (closeable on demand; see its docstring). -/
 theorem trM_cyclic (z h : R) (u v : Fin 24 → R) :
     trM z h (mulNF h u v) = trM z h (mulNF h v u) :=
   trM_cyclic_of_gram_symm z h (gram_symm z h) u v
