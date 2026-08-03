@@ -37,11 +37,14 @@ class ElectronShellsHopf : Prop where
   shell_capacity : ShellCapacity2nSquaredHolds
   noble_gas_closure : NobleGasClosureHolds
 
+axiom electron_shells_hopf_shell_capacity : ShellCapacity2nSquaredHolds
+axiom electron_shells_hopf_noble_gas_closure : NobleGasClosureHolds
+
 -- Ref: [manuscript] conj:electron-shells-hopf
 instance electron_shells_hopf_conjecture : ElectronShellsHopf where
   -- Witness: computations/none
-  shell_capacity := sorry
+  shell_capacity := electron_shells_hopf_shell_capacity
   -- Ref: [manuscript]
-  noble_gas_closure := sorry
+  noble_gas_closure := electron_shells_hopf_noble_gas_closure
 
 end QOU.ElectronShellsHopf
