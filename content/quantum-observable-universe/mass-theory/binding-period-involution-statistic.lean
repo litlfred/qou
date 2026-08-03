@@ -132,6 +132,27 @@ theorem binding_period_involution_statistic_four
   field_simp
   ring
 
+/-- The 26 involutions of `S₅` carry exponents `{6³,7²,8³,9²,10⁶,11²,12³,13²,14³}`
+(kernel-decided). -/
+theorem statExponents_five :
+    statExponents 5 =
+      {6, 6, 6, 7, 7, 8, 8, 8, 9, 9, 10, 10, 10, 10, 10, 10, 11, 11, 12, 12, 12, 13, 13, 14, 14, 14} := by
+  decide
+
+/-- **`n = 5` instance of `prop:binding-period-involution-statistic`**:
+`S^bal(5) = 6 + 2([1]-ish q±) + 3q^{±2} + 2q^{±3} + 3q^{±4}` (the seven partitions
+of 5), and `S^bal(5)·q^{10}` equals the statistic sum over the 26 involutions of `S₅`. -/
+theorem binding_period_involution_statistic_five
+    {K : Type*} [Field K] (q : K) (hq : q ≠ 0) :
+    (6 + 2 * q + 2 * q⁻¹ + 3 * q ^ 2 + 3 * (q ^ 2)⁻¹ + 2 * q ^ 3 + 2 * (q ^ 3)⁻¹
+        + 3 * q ^ 4 + 3 * (q ^ 4)⁻¹) * q ^ 10
+      = ((statExponents 5).map (q ^ · : ℤ → K)).sum := by
+  rw [statExponents_five]
+  simp only [Multiset.insert_eq_cons, Multiset.map_cons, Multiset.map_singleton,
+    Multiset.sum_cons, Multiset.sum_singleton, zpow_ofNat]
+  field_simp
+  ring
+
 /-- At `q = 1` the statistic sum counts involutions: sanity anchor tying the
 decided multisets to the telephone numbers `I(3) = 4`, `I(4) = 10`. -/
 theorem statExponents_card :
