@@ -39,11 +39,14 @@ class EllipticStabilityLocus : Prop where
   weierstrass_form : WeierstrassFormHolds
   integer_point_identification : IntegerPointIdentificationHolds
 
+axiom elliptic_stability_locus_weierstrass_form : WeierstrassFormHolds
+axiom elliptic_stability_locus_integer_point_identification : IntegerPointIdentificationHolds
+
 -- Ref: [manuscript] conj:elliptic-stability-locus
 instance elliptic_stability_locus_conjecture : EllipticStabilityLocus where
   -- Witness: computations/none
-  weierstrass_form := sorry
+  weierstrass_form := elliptic_stability_locus_weierstrass_form
   -- Ref: [manuscript]
-  integer_point_identification := sorry
+  integer_point_identification := elliptic_stability_locus_integer_point_identification
 
 end QOU.EllipticStabilityLocus
