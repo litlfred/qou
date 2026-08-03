@@ -236,7 +236,7 @@ def conjugate (lam : Partition) : Partition :=
       `arm(i, j) = lam_i - j - 1`  (cells to the right in row i)
       `leg(i, j) = |{ i' > i : lam_{i'} > j }|`  (cells below in col j) -/
 def hookLength (lam : Partition) (i j : ℕ) : ℕ :=
-  match lam.get? i with
+  match lam[i]? with
   | none => 0
   | some row_i =>
     if j < row_i then
@@ -271,7 +271,7 @@ noncomputable def qDim (q : R) (lam : Partition) : R :=
   qFactorial q lam.size /
     (List.range lam.length).foldl
       (fun acc i =>
-        acc * (List.range ((lam.get? i).getD 0)).foldl
+        acc * (List.range ((lam[i]?).getD 0)).foldl
           (fun a j => a * qBracket q (Partition.hookLength lam i j))
           1)
       1
