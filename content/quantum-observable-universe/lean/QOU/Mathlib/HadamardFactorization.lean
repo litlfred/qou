@@ -131,6 +131,7 @@ def IsGenus (a : ℕ → ℂ) (p : ℕ) : Prop :=
 theorem norm_one_sub_weierstrassFactor_le (p : ℕ) {z : ℂ} (hz : ‖z‖ ≤ 1) :
     ‖1 - weierstrassFactor p z‖ ≤ ‖z‖ ^ (p + 1) := by
   -- Ref: [manuscript] Ahlfors §5.3, Lemma; Conway XI.§2, Lemma 2.6.
+  -- SORRY: needs Weierstrass factor estimate |1 - E_p(z)| <= |z|^(p+1)
   sorry
 
 /-- **Canonical product convergence** (PI-3). If `∑ₙ ‖aₙ‖^{-(p+1)} < ∞` (i.e.
@@ -141,6 +142,7 @@ theorem multipliable_canonicalProduct {a : ℕ → ℂ} (p : ℕ)
     (ha : ∀ n, a n ≠ 0) (hsum : Summable (fun n => 1 / ‖a n‖ ^ (p + 1)))
     (z : ℂ) : Multipliable (fun n => weierstrassFactor p (z / a n)) := by
   -- Ref: [manuscript] Ahlfors §5.3, Theorem 5; Conway XI.§2, Theorem 2.4.
+  -- SORRY: needs infinite product convergence from Summable
   sorry
 
 /-- **Hadamard factorization theorem** (the stated-open core, PI-5). An entire
@@ -167,6 +169,7 @@ theorem hadamard_factorization {f : ℂ → ℂ} {ρ : ℝ}
             f z = Complex.exp (g.eval z) * ∏' n, weierstrassFactor p (z / a n)) := by
   -- Ref: [manuscript] Ahlfors §5.3.2, Hadamard's Theorem; Conway XI.§3,
   --      Theorem 3.4 (Hadamard's factorization theorem).
+  -- SORRY: needs full Hadamard factorization theorem (Jensen formula, counting zeros, Weierstrass canonical product)
   sorry
 
 end QOU.Mathlib.HadamardFactorization
