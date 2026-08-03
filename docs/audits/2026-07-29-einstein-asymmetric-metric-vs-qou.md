@@ -98,20 +98,25 @@ $$
   q^{-1} \;=\; \cosh\lambda - \sinh\lambda .
 $$
 
-Under the mirror operation $\sigma$ (reverse every crossing), the
-$\cosh$ part is invariant and the $\sinh$ part reverses sign. This is a
-genuine symmetric/antisymmetric decomposition of the crossing weight,
-and it is Lean-proved sorry-free
+As functions of $\lambda$ these are the even and odd parts: $\cosh$ is
+even, $\sinh$ is odd. This is a genuine symmetric/antisymmetric
+decomposition of the crossing weight, and it is Lean-proved sorry-free
 (`symmetricWeight_eq_cosh`, `antisymmetricWeight_eq_sinh`).
+
+Under the mirror operation $\sigma$ (reverse every crossing) the
+*composite channel totals* behave oppositely to this function parity —
+the symmetric total negates and the antisymmetric total is fixed —
+because the multiplicity flips as well. See §5.2; conflating the two
+levels is the trap this audit had to disentangle.
 
 ### 2.3 The physical assignment matches Einstein's intent
 
 From [`crossing-energy-interpretation.md`](../../content/quantum-observable-universe/observations/crossing-energy-interpretation.md):
 
-| Channel | Weight | Mirror | Force |
+| Channel | Weight per crossing | Under crossing reversal | Force |
 |---|---|---|---|
-| Symmetric | $\cosh\lambda$ | invariant | **strong binding** |
-| Antisymmetric | $\sinh\lambda$ | reverses | **Coulomb (electromagnetic)** |
+| Symmetric | $\pm\cosh\lambda$, signed by the crossing | negates | **strong binding** |
+| Antisymmetric | $+\sinh\lambda$, sign-blind | fixed | **Coulomb (electromagnetic)** |
 
 > "The symmetric part binds regardless of charge. The antisymmetric part
 > distinguishes charges."
