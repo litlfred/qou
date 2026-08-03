@@ -1,11 +1,11 @@
 ---
 # 12zf
 title: 'Session: Fix QA flags in shell-closure-stability.md'
-status: completed
+status: scrapped
 type: milestone
 priority: normal
 created_at: 2026-06-28T23:17:52Z
-updated_at: 2026-07-12T02:57:58Z
+updated_at: 2026-08-03T15:15:47Z
 ---
 
 
@@ -21,3 +21,5 @@ particle-interactions/ chapter). Fixing it is an editorial regime/placement call
 (move the block vs re-register the chapter regime), not a mechanical sweep, and
 re-adjudication with details needs the folio-assistant pipeline (403-blocked in this
 sandbox). Recommend: accept the warn or decide placement; closing is the owner's call.
+
+Scrapped: stale session milestone from dead session (bean-hygiene-drain 2026-08-03)

@@ -1,11 +1,11 @@
 ---
 # qcz1
 title: 'Session: q-Collatz status — content-bearing class, no-cycles re-scope, cycle census'
-status: in-progress
+status: scrapped
 type: milestone
 priority: medium
 created_at: 2026-07-18T21:14:00Z
-updated_at: 2026-07-24T16:35:34Z
+updated_at: 2026-08-03T15:15:47Z
 ---
 
 Branch claude/q-collatz-status-1v0pxv, PR #3996 (open, mergeable_state=clean,
@@ -38,3 +38,5 @@ Conjecture carrier is content-bearing, QOU-conditional, well-posed over the
 domain-stable cone. All beans qcz2-5 done. Remaining OPEN (the actual math):
 reaches_cycle (convergence over domain-stable cone) + full nontrivial-cycle
 exclusion (affine A!=1). No LaurentPolynomial needed (generic-ring route).
+
+Scrapped: stale session milestone from dead session (bean-hygiene-drain 2026-08-03)

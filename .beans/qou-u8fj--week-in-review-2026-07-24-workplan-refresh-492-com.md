@@ -1,10 +1,11 @@
 ---
 # qou-u8fj
 title: Week-in-review 2026-07-24 + workplan refresh (492 commits)
-status: in-progress
+status: scrapped
 type: milestone
+priority: normal
 created_at: 2026-07-24T15:55:00Z
-updated_at: 2026-07-24T15:55:00Z
+updated_at: 2026-08-03T15:15:47Z
 ---
 
 Review of ~492 commits / ~6 days on `main` + 40 open sibling PRs, with a refreshed
@@ -83,3 +84,5 @@ Mechanical (tractable, mostly owned):
 - R2 is NOT lean-proved (owner ruling).
 - Do not spawn beans that duplicate active-sibling epics (deltalambda qou-x631, qbeta-g3, dilog,
   B2 cluster) — coordinate, don't compete.
+
+Scrapped: stale session milestone from dead session (bean-hygiene-drain 2026-08-03)
