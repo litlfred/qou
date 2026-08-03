@@ -384,14 +384,25 @@ real.
 **Named obstruction, stated up front:** $q_0 \approx 1.10998$ is **real, not
 a root of unity**, and at real $q > 1$ there is *no* truncation
 ($\mathrm{Rep}\,U_q \simeq \mathrm{Rep}\,\mathfrak g$, semisimple, same
-characters). So the route requires the fibre/observable split already
-documented in [`AGENTS.md` §Im(q) at fibre vs observable level](../../AGENTS.md)
-— fibre-level $q$ complex, archimedean $\mathrm{Im}(q_0) = 0$. Honest
-target: either **(i)** prove the fibre-level $q$ sits at (or limits to) a
-root of unity with real archimedean evaluation — which would *derive* the
-freeze-out — or **(ii)** prove it cannot, converting "heuristic" into a
+characters).
+
+**This is better-scaffolded than "heuristic" suggests.** The corpus already
+states the required saddle-sorting as a conditional proposition:
+[`phi-q-aj-machinery-identification`](../../content/quantum-observable-universe/stochastic-mechanics/phi-q-aj-machinery-identification.md)
+identifies $\Phi_q$ (Faddeev) as the **root-of-unity saddle**
+($q = e^{2\pi i/N}$) and $\mathrm{Li}_2^q$ (Rogers) as the **real saddle**
+($q \in (0,1)$) of the *same* AJ object $\hat A_K(\hat L, \hat M; q)$,
+algebraic over $\mathbb Z[q^{\pm1}]$ on both sides — "the two contexts
+differ only by the choice of archimedean saddle." That is precisely the
+fibre/observable split of [`AGENTS.md` §Im(q) at fibre vs observable
+level](../../AGENTS.md), already written down. Honest target: either
+**(i)** show the truncation consequence follows at the root-of-unity saddle
+and survives transport to the real saddle — which would *derive* the
+freeze-out — or **(ii)** show it cannot, converting "heuristic" into a
 stated impossibility and forcing a different mechanism. **Wire nothing until
-(i) or (ii).**
+(i) or (ii)**, and note that the enabling proposition is itself conditional
+on two conjectures, so (i) would be conditional-proved, not proved
+(§Conditional-proved ≠ premise-established).
 
 ### T5 — mass/binding: a no-free-parameter certificate
 
@@ -405,6 +416,80 @@ categorical constant. This is mechanically checkable, and it is *the* thing
 that distinguishes "derivative" from "fitted". Half-built already: the
 `canonical_mass` facade plus the hidden-CODATA-literal rollup (bean `46ke`,
 53 scripts) are the two existing pieces.
+
+### T7 — the $q$-hyperbolic structure deforming under $\bowtie_K$
+
+Proposed in session: *"what we need is a $q$-hyperbolic structure that
+deforms following the Reeb flow according to the knot-particle operation
+under $\bowtie_K$"*, with the observation that this *should be implicit in
+non-abelian Stokes + the Frobenius pairing, but is worth calling out*. That
+reading is correct, and the call-out is worth making because **two of the
+three pieces already exist in the corpus and the third is a named published
+object that is not yet cited anywhere.**
+
+**What is already there.**
+
+- *The deformation space itself.* Mostow rigidity says the **complete**
+  hyperbolic structure cannot deform (§3a) — so the deformation necessarily
+  lives in the space of **incomplete** structures, Thurston's Dehn-surgery
+  space, coordinatised by **cusp/boundary-torus data** with the
+  Neumann–Zagier symplectic form on $H^1(\partial M)$. The corpus already
+  carries this:
+  [`cusp-shape-bar-parity`](../../content/quantum-observable-universe/braids-and-knots/cusp-shape-bar-parity.md)
+  works with the $4_1$ cusp shape $\omega = e^{i\pi/3}$ and the
+  Neumann–Zagier complex volume $\mathfrak V = \mathrm{Vol} + i\,\mathrm{CS}$.
+- *Its $q$-deformation.* The quantisation of that boundary-torus symplectic
+  structure gives $q$-commuting meridian/longitude operators and hence the
+  **quantum $A$-polynomial** — which the corpus already states as
+  [`phi-q-aj-machinery-identification`](../../content/quantum-observable-universe/stochastic-mechanics/phi-q-aj-machinery-identification.md),
+  $\hat A_K(\hat L, \hat M; q)\cdot J_N(K;q) = 0$. So "the $q$-deformed
+  hyperbolic deformation structure" is **not a new object to invent**: it is
+  $\hat A_K$.
+
+**Why it is "implicit in NA-Stokes + Frobenius" — and where that is not
+enough.** Non-abelian Stokes supplies holonomy-along-a-flow (the
+multiplicative integral of a connection), and the Frobenius pairing
+$\mathrm{tr}_M = \sum_\lambda y_\lambda \chi_\lambda$ supplies the knot
+invariant. Together those give the $q$-side. But they yield a **number per
+knot**, whereas the deformation space is the **annihilator** of the family
+$\{J_N\}$ — a different object, reached only through the $q$-holonomic
+(AJ) step. Calling this out explicitly is the substance of the proposal: the
+trace is not the variety, and the bridge between them is exactly the block
+the corpus already has. The hyperbolic structure enters the trace only
+*asymptotically* (volume-conjecture regime), which is why the saddle-sorting
+of T4 is load-bearing rather than cosmetic.
+
+**The genuinely missing piece: the Reeb side.** The corpus has figure-eight
+Reeb machinery
+([`figure-eight-reeb-rotation`](../../content/quantum-observable-universe/braids-and-knots/figure-eight-reeb-rotation.lean))
+but nothing ties Reeb dynamics to $\hat A_K$. The published object that does
+exactly this is **knot contact homology** — the Legendrian/Reeb-orbit theory
+of the unit conormal torus $\Lambda_K \subset ST^*\mathbb R^3$ (Ekholm–
+Etnyre–Ng–Sullivan) — whose **augmentation polynomial** recovers the
+$A$-polynomial (Ng) and whose $Q$-deformation is the Aganagic–Vafa
+augmentation polynomial. *That* is literally "a $q$-deformed hyperbolic
+deformation structure indexed by Reeb flow". Target: identify the corpus's
+$\hat A_K$ with the augmentation polynomial of $\Lambda_K$, which would make
+the Reeb flow the deformation parameter rather than a separate structure.
+Not yet cited anywhere in the corpus — checked.
+
+**Named obstruction on the $\bowtie_K$ half.** Functoriality is the hard
+part and it has a concrete failure mode to design around: **connected sums
+are never hyperbolic.** $S^3 \setminus (K_1 \# K_2)$ contains an essential
+annulus, hence is not atoroidal, hence admits no complete hyperbolic
+structure. So if $\bowtie_K$ contains connected sum, a "$q$-hyperbolic
+structure deforming under $\bowtie_K$" fails at its base case. Two honest
+routes: restrict $\bowtie_K$ to operations that preserve hyperbolicity
+(Dehn filling, satellite/cabling with hyperbolic pieces — for which
+$A$-polynomial behaviour is studied), or move the claim down to the
+**geometric-decomposition** level, where volume *is* additive over the JSJ
+hyperbolic pieces even when the total is not hyperbolic. The second is
+weaker but survives connected sum, and is the one compatible with the
+corpus's existing volume-additivity usage. State which before building.
+
+**Do not wire.** T7 is a research target with one conditional proposition,
+one un-cited literature bridge, and one unresolved obstruction. It is
+recorded here so the next agent does not re-derive the framing from scratch.
 
 ### T6 — three generations
 
