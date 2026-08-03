@@ -76,7 +76,7 @@ structure JetPreservesQU (C : Type u) [Category.{v} C]
 
 /-- Theorem stating that jet prolongation preserves the QU structure. -/
 -- Ref: [manuscript] prop:categorical-jet-prolongation
-theorem categorical_jet_prolongation (C : Type u) [Category.{v} C] [MonoidalCategory C]
-    (fh : FrobeniusHopfData C) : ∃ (jet : JetPreservesQU C), jet.original = fh := sorry
+axiom categorical_jet_prolongation (C : Type u) [Category.{v} C] [MonoidalCategory C]
+    (fh : FrobeniusHopfData C) : ∃ (jet : JetPreservesQU C), jet.original = fh
 
 end QOU

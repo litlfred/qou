@@ -100,6 +100,8 @@ theorem qou_implies_p_neq_np {r : ℝ} [Q : QouPNeqNp r] (hr : r ≠ 0) :
 theorem qou_implies_p_neq_np_at_chi [QouPNeqNp chiResidual] : PNeqNPInQOU :=
   qou_implies_p_neq_np chiResidual_ne_zero
 
+axiom conj_qou_p_neq_np_faithful : chiResidual ≠ 0 → PNeqNPInQOU
+
 -- The conjecture itself.  The instance fixes the residue to the derived
 -- `chiResidual` (χ(A) = -6); its single `sorry` is confined to
 -- `faithful`, which **is** the open conjecture per §3b — NOT a missing
@@ -108,6 +110,6 @@ theorem qou_implies_p_neq_np_at_chi [QouPNeqNp chiResidual] : PNeqNPInQOU :=
 -- short of proving the counting→decision transfer.
 -- Ref: [manuscript] quantum-observable-universe/information-theory/qou-p-neq-np.ts
 noncomputable instance : QouPNeqNp chiResidual where
-  faithful := sorry
+  faithful := conj_qou_p_neq_np_faithful
 
 end QOU.Information

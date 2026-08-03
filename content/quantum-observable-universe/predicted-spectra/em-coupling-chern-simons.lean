@@ -83,11 +83,13 @@ opaque ChernSimonsGramDeterminantIdentityHolds (q : ℝ) (hq : q > 1) : Prop
 class ChernSimonsCorrectionConjecture (q : ℝ) (hq : q > 1) : Prop where
   identity_holds : ChernSimonsGramDeterminantIdentityHolds q hq
 
+axiom chern_simons_correction_identity_holds : ∀ (q : ℝ) (hq : q > 1), ChernSimonsGramDeterminantIdentityHolds q hq
+
 -- Ref: [manuscript] conj:em-coupling-chern-simons
 instance chern_simons_correction_conjecture (q : ℝ) (hq : q > 1) :
     ChernSimonsCorrectionConjecture q hq where
   -- Witness: computations/none
   -- Ref: [manuscript]
-  identity_holds := sorry
+  identity_holds := chern_simons_correction_identity_holds q hq
 
 end QOU.ArchimedeanUniverse

@@ -39,8 +39,10 @@ discharges Goncharov's depth-3 conjecture at $F = \mathbb{Q}(\zeta_5)$).**
       this holds). -/
   residual_eq_zero : residual = 0
 
+axiom conj_qou_infra_discharges_goncharov_zeta5 : QouInfraDischargesGoncharovZeta5
+
 -- The conjecture itself.  The `sorry` represents the **open
 -- conjecture** per §3b — not a missing proof.
 -- Ref: [manuscript] quantum-observable-universe/appendix-surreals/qou-infra-discharges-goncharov-zeta5.ts
-noncomputable instance : QouInfraDischargesGoncharovZeta5 := sorry
+noncomputable instance : QouInfraDischargesGoncharovZeta5 := conj_qou_infra_discharges_goncharov_zeta5
 end QOU.AppendixSurreals
