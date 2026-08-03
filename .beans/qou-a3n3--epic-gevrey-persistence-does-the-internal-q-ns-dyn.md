@@ -1,7 +1,7 @@
 ---
 # qou-a3n3
 title: 'EPIC: Gevrey persistence — does the internal q-NS dynamics keep smooth data Gevrey as q→1⁺'
-status: todo
+status: completed
 type: milestone
 priority: normal
 created_at: 2026-07-25T03:32:00Z
