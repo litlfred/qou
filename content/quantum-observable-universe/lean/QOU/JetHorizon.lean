@@ -132,7 +132,7 @@ structure Aeon where
 
 /-- Two aeons are adjacent if their boundaries share a common
     jet horizon: ∂𝒜₁ ∩ ∂𝒜₂ ≠ ∅. -/
-def Aeon.adjacent (a₁ a₂ : Aeon) : Prop :=
+def adjacent (a₁ a₂ : Aeon) : Prop :=
   ∃ h, h ∈ a₁.boundary ∧ h ∈ a₂.boundary
 
 /-! ## Horizon functor and CMB functor -/

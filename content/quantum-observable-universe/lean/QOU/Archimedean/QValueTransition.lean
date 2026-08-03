@@ -43,7 +43,7 @@ structure QValueTransition where
 /-- Expanding the masses, the `Q`-value is the neutron–proton–electron mass
     gap plus the change in binding energy:
     `Q = m_n − m_p − m_e + (B(Z+1,N−1) − B(Z,N))`. -/
-theorem QValueTransition.q_mass_difference (T : QValueTransition) (Z N : ℤ) :
+theorem q_mass_difference (T : QValueTransition) (Z N : ℤ) :
     T.Q Z N = T.m_n - T.m_p - T.m_e + (T.B (Z + 1) (N - 1) - T.B Z N) := by
   rw [T.Q_def, T.M_def, T.M_def]
   push_cast

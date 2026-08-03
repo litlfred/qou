@@ -55,7 +55,7 @@ structure InvolutiveStructure (C : Type u) [CategoryTheory.Category.{v} C]
   dagger_id : ∀ (X : C), dagger (𝟙 X) = 𝟙 X
 
 /-- `f†† = f` is the defining involutivity property. -/
-theorem InvolutiveStructure.involutivity {C : Type u}
+theorem involutivity {C : Type u}
     [CategoryTheory.Category.{v} C] [CategoryTheory.MonoidalCategory C]
     (inv : InvolutiveStructure C) {X Y : C} (f : X ⟶ Y) :
     inv.dagger (inv.dagger f) = f :=
@@ -93,7 +93,7 @@ structure CatHodgeInvolution {C : Type u} [CategoryTheory.Category.{v} C]
 
 /-- A morphism `f : Y ⟶ X` is **self-dual** w.r.t. a categorical Hodge
     involution if `f ≫ ⋆ = f`, i.e. `f` lands in the `+1`-eigenspace. -/
-def CatHodgeInvolution.IsSelfDual {C : Type u} [CategoryTheory.Category.{v} C]
+def IsSelfDual {C : Type u} [CategoryTheory.Category.{v} C]
     {X : C} (h : CatHodgeInvolution X) {Y : C} (f : Y ⟶ X) : Prop :=
   f ≫ h.star = f
 
@@ -106,12 +106,12 @@ structure HodgeInvolution (V : Type*) where
   star_sq : ∀ v, star (star v) = v
 
 /-- An element `v : V` is **self-dual** if `⋆(v) = v`. -/
-def HodgeInvolution.IsSelfDual {V : Type*} (h : HodgeInvolution V)
+def IsSelfDual {V : Type*} (h : HodgeInvolution V)
     (v : V) : Prop :=
   h.star v = v
 
 /-- An element `v : V` is **anti-self-dual** if `⋆(v) = -v`. -/
-def HodgeInvolution.IsAntiSelfDual {V : Type*} [Neg V]
+def IsAntiSelfDual {V : Type*} [Neg V]
     (h : HodgeInvolution V) (v : V) : Prop :=
   h.star v = -v
 
@@ -128,9 +128,9 @@ structure SpinLabels where
   cat_dim : ℕ := twice_j + 1
 
 /-- The fundamental object has spin `1/2` and dimension `2`. -/
-theorem SpinLabels.fundamental_dim : { twice_j := 1 : SpinLabels }.cat_dim = 2 := by rfl
+theorem fundamental_dim : { twice_j := 1 : SpinLabels }.cat_dim = 2 := by rfl
 
 /-- The adjoint object has spin `1` and dimension `3`. -/
-theorem SpinLabels.adjoint_dim : { twice_j := 2 : SpinLabels }.cat_dim = 3 := by rfl
+theorem adjoint_dim : { twice_j := 2 : SpinLabels }.cat_dim = 3 := by rfl
 
 end QOU

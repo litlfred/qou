@@ -33,7 +33,7 @@ open QOU.AppendixSurreals
     identity (`skein_divisibility`, `contraction_gap`, `coprime`,
     `fundamental_odd_step`) therefore holds for the substrate value, by
     construction. -/
-def SubstrateParameter.toSkeinCollatzArith {M : Type*}
+def toSkeinCollatzArith {M : Type*}
     (sp : SubstrateParameter M) (p : M) : SkeinCollatzArith ℝ where
   q := sp.field p
 
@@ -43,7 +43,7 @@ def SubstrateParameter.toSkeinCollatzArith {M : Type*}
 
 /-- The Skein divisibility `[3]_q = q·[2]_q + 1` holds for the substrate value —
     a direct consequence of brick 1, now anchored at `q = q(p)`. -/
-theorem SubstrateParameter.skein_divisibility_at {M : Type*}
+theorem skein_divisibility_at {M : Type*}
     (sp : SubstrateParameter M) (p : M) :
     (sp.toSkeinCollatzArith p).qi3
       = sp.field p * (sp.toSkeinCollatzArith p).qi2 + 1 :=
@@ -53,7 +53,7 @@ theorem SubstrateParameter.skein_divisibility_at {M : Type*}
     field is strictly positive (`field_pos`), `q(p)` is invertible, so the
     fundamental odd-step identity holds at `qinv = q(p)⁻¹`: the `{q⁻¹, 1+q⁻¹}`
     cycle of the Skein-Collatz map is realised by the substrate value itself. -/
-theorem SubstrateParameter.fundamental_odd_step_at {M : Type*}
+theorem fundamental_odd_step_at {M : Type*}
     (sp : SubstrateParameter M) (p : M) :
     (1 + (sp.field p)⁻¹) * (sp.toSkeinCollatzArith p).qi2
       = (sp.toSkeinCollatzArith p).qi3 * (sp.field p)⁻¹ + 1 :=

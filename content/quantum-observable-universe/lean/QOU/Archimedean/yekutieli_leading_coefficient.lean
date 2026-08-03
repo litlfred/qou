@@ -94,7 +94,7 @@ variable {R : Type*} [Field R]
     proof (`prop:categorical-dq-squared`).  A `def` of the data (not a
     free field) so that `..._kappaRaw_ne_zero` is non-vacuous. -/
 -- Ref: [manuscript] quantum-observable-universe/brings-surface/yekutieli-leading-coefficient-proof.md
-def YekutieliObstructionData.kappaRaw (d : YekutieliObstructionData R) : R :=
+def kappaRaw (d : YekutieliObstructionData R) : R :=
   d.q⁻¹ * (1 - d.q⁻¹) * d.weight * d.wedge
 
 /-- **Raw obstruction non-vanishing (sorry-free).**

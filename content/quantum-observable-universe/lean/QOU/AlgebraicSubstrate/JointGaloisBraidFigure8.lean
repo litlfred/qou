@@ -118,7 +118,7 @@ structure DisjointTensorCell where
   kappa_commutes_bar_field : ∀ p, (barF (kappa p).1, barF (kappa p).2) = kappa (barF p.1, barF p.2)
 
 /-- Diagonal bar on the tensor cell. -/
-def DisjointTensorCell.barTensor (D : DisjointTensorCell) :
+def barTensor (D : DisjointTensorCell) :
     D.Factor × D.Factor → D.Factor × D.Factor :=
   fun p => (D.barF p.1, D.barF p.2)
 
@@ -131,7 +131,7 @@ def DisjointTensorCell.barTensor (D : DisjointTensorCell) :
     non-trivial claim that is NOT derivable from the diagonal structure
     alone, so it is left as an honest `sorry` (no fabricated Hoefsmit
     matrix compute). -/
-theorem DisjointTensorCell.kappa_commutes_bar (D : DisjointTensorCell)
+theorem kappa_commutes_bar (D : DisjointTensorCell)
     (p : D.Factor × D.Factor) :
     D.barTensor (D.kappa p) = D.kappa (D.barTensor p) := by
   exact D.kappa_commutes_bar_field p

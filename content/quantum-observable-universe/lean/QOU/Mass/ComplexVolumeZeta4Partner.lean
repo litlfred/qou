@@ -190,7 +190,7 @@ theorem vModel_isZeta4Faithful : IsZeta4Faithful vModel :=
     two ζ₄ rotations negate the assembly — recovering `vModel_zeta4_sq` from
     faithfulness *alone*, for any faithful `A`. This is the class's genuine
     provable content. -/
-theorem IsZeta4Faithful.zeta4_sq {A : ℂ → ℂ} (h : IsZeta4Faithful A) (z : ℂ) :
+theorem zeta4_sq {A : ℂ → ℂ} (h : IsZeta4Faithful A) (z : ℂ) :
     A (zeta4Rot (zeta4Rot z)) = -A z := by
   have h1 := h.1 z
   have h2 := h.2 z
@@ -216,7 +216,7 @@ class SingleFrakVAssembly (K : Type*) (frakV : K → ℂ → ℂ) : Prop where
     fibre object satisfies `ζ₄² = −1` — the two-rotation negation, obtained
     from the conjectural faithfulness field alone (via
     `IsZeta4Faithful.zeta4_sq`). Confirms the class asserts genuine content. -/
-theorem SingleFrakVAssembly.zeta4_sq {K : Type*} {frakV : K → ℂ → ℂ}
+theorem zeta4_sq {K : Type*} {frakV : K → ℂ → ℂ}
     [A : SingleFrakVAssembly K frakV] (k : K) (z : ℂ) :
     frakV k (zeta4Rot (zeta4Rot z)) = -frakV k z :=
   (A.faithful k).zeta4_sq z

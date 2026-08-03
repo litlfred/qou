@@ -84,7 +84,7 @@ theorem odd_ne_even_of_ne_zero [NoZeroDivisors R] (B : BarInvolution R)
 
 /-- A trivial bar-involution (identity) witnesses that the structure is inhabited;
     the load-bearing instance is `q ↦ q⁻¹` on the Laurent ring (built elsewhere). -/
-def BarInvolution.id (R : Type*) [CommRing R] : BarInvolution R where
+def id (R : Type*) [CommRing R] : BarInvolution R where
   bar := _root_.id
   bar_add _ _ := rfl
   bar_neg _ := rfl

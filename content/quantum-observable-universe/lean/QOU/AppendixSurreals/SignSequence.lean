@@ -80,14 +80,14 @@ structure GonshorState where
   deriving Repr
 
 /-- The **initial state**: value zero, no bounds. -/
-def GonshorState.init : GonshorState :=
+def init : GonshorState :=
   { value := 0, lo := 0, hi := 0, hasLo := false, hasHi := false }
 
 /-- **Gonshor's step**: advance the state by one sign.
 
     `+` moves rightward (toward `hi` or step of 1 if unbounded).
     `-` moves leftward (toward `lo` or step of -1 if unbounded). -/
-def GonshorState.step (st : GonshorState) (s : Sign) : GonshorState :=
+def step (st : GonshorState) (s : Sign) : GonshorState :=
   match s with
   | Sign.plus =>
     if st.hasHi then

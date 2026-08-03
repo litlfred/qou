@@ -35,7 +35,7 @@ structure ObservableSubcategory where
 
 /-- The complement `Bun ∖ Bun°` is exactly the `A₀ = 0` locus (jet horizons
     and big-bang states) — manuscript "Complement". -/
-theorem ObservableSubcategory.not_observable_iff
+theorem not_observable_iff
     (C : ObservableSubcategory) (S : C.Obj) :
     ¬ C.isObservable S ↔ C.A0section S = 0 := by
   rw [C.observable_iff, not_ne_iff]
@@ -45,7 +45,7 @@ theorem ObservableSubcategory.not_observable_iff
     observable subcategory, with membership *defined* as its non-vanishing.
     The carrier's `observable_iff` is then `Iff.rfl`, so `Bun°` is genuinely
     "the non-vanishing locus of `Γ(−, A₀)`", not an assumed criterion. -/
-def ObservableSubcategory.ofSection {C : Type} (A0 : C → ℝ) :
+def ofSection {C : Type} (A0 : C → ℝ) :
     ObservableSubcategory where
   Obj := C
   A0section := A0
@@ -54,7 +54,7 @@ def ObservableSubcategory.ofSection {C : Type} (A0 : C → ℝ) :
 
 /-- Sanity: in a section-induced subcategory, `S` is observable iff its
     section is non-zero — by construction. -/
-theorem ObservableSubcategory.ofSection_observable {C : Type} (A0 : C → ℝ) (S : C) :
+theorem ofSection_observable {C : Type} (A0 : C → ℝ) (S : C) :
     (ObservableSubcategory.ofSection A0).isObservable S ↔ A0 S ≠ 0 := Iff.rfl
 
 end QOU

@@ -44,12 +44,12 @@ inductive PartitionOf5 where
   deriving DecidableEq, Repr
 
 /-- Explicit list of all 7 partitions of 5. -/
-def PartitionOf5.allList : List PartitionOf5 :=
+def allList : List PartitionOf5 :=
   [.five, .fourOne, .threeTwo, .threeOneOne, .twoTwoOne, .twoOneOneOne, .onesFive]
 
 /-- Dimension of the S_5 irrep V_λ for each partition λ ⊢ 5
     (standard hook-length formula values; cf. James 1984 §2). -/
-def PartitionOf5.dim : PartitionOf5 → ℕ
+def dim : PartitionOf5 → ℕ
   | .five          => 1
   | .fourOne       => 4
   | .threeTwo      => 5
@@ -60,7 +60,7 @@ def PartitionOf5.dim : PartitionOf5 → ℕ
 
 /-- Conjugate partition (transpose Young diagram).  Pairs:
     (5) ↔ (1¹¹¹¹¹), (4,1) ↔ (2,1¹¹¹), (3,2) ↔ (2,2,1), (3,1,1) self-conjugate. -/
-def PartitionOf5.conjugate : PartitionOf5 → PartitionOf5
+def conjugate : PartitionOf5 → PartitionOf5
   | .five          => .onesFive
   | .fourOne       => .twoOneOneOne
   | .threeTwo      => .twoTwoOne
@@ -70,13 +70,13 @@ def PartitionOf5.conjugate : PartitionOf5 → PartitionOf5
   | .onesFive      => .five
 
 /-- Conjugation is an involution. -/
-theorem PartitionOf5.conjugate_involutive (p : PartitionOf5) :
+theorem conjugate_involutive (p : PartitionOf5) :
     p.conjugate.conjugate = p := by
   cases p <;> rfl
 
 /-- Conjugate partitions have equal dimensions (standard rep theory:
     sign-twist preserves dim, since χ_(λ')(g) = sgn(g) · χ_λ(g)). -/
-theorem PartitionOf5.conjugate_preserves_dim (p : PartitionOf5) :
+theorem conjugate_preserves_dim (p : PartitionOf5) :
     p.conjugate.dim = p.dim := by
   cases p <;> rfl
 
@@ -96,7 +96,7 @@ theorem total_dim_squared_eq_120 :
 
     Standard rep theory: A_5 has 5 irreps of dim 1, 3, 3, 4, 5
     (totaling dim²-sum 1+9+9+16+25 = 60 = |A_5|). -/
-def PartitionOf5.restrictsToA5Irrep : PartitionOf5 → Bool
+def restrictsToA5Irrep : PartitionOf5 → Bool
   | .five          => true   -- → trivial A_5 irrep (dim 1)
   | .fourOne       => true   -- → A_5 dim-4 irrep
   | .threeTwo      => true   -- → A_5 dim-5 irrep
@@ -129,21 +129,21 @@ inductive A5Irrep where
   deriving DecidableEq, Repr
 
 /-- All five A₅ irreps. -/
-def A5Irrep.allList : List A5Irrep := [.A, .T₁, .T₂, .G, .H]
+def allList : List A5Irrep := [.A, .T₁, .T₂, .G, .H]
 
 /-- Dimension of each A₅ irrep. -/
-def A5Irrep.dim : A5Irrep → ℕ
+def dim : A5Irrep → ℕ
   | .A => 1 | .T₁ => 3 | .T₂ => 3 | .G => 4 | .H => 5
 
 /-- A₅ has exactly five irreps — equal to its number of conjugacy classes
     (the character-table duality the fiber map realizes). -/
-theorem A5Irrep.card_eq_five : A5Irrep.allList.length = 5 := rfl
+theorem card_eq_five : A5Irrep.allList.length = 5 := rfl
 
 /-- The A₅ irrep each S₅ partition restricts to (its chirality
     representative).  Conjugate partitions share an irrep; the self-conjugate
     (3,1,1) is sent to its T₁ representative (the T₁ ⊕ T₂ chirality split is
     recorded in `s5_to_a5_electron_block_splits`). -/
-def PartitionOf5.toA5Irrep : PartitionOf5 → A5Irrep
+def toA5Irrep : PartitionOf5 → A5Irrep
   | .five         => .A   | .onesFive     => .A
   | .fourOne      => .G   | .twoOneOneOne => .G
   | .threeTwo     => .H   | .twoTwoOne    => .H
@@ -153,7 +153,7 @@ def PartitionOf5.toA5Irrep : PartitionOf5 → A5Irrep
     angle sign-flip `angle(λ') = -angle(λ)`): conjugate S₅-partitions restrict
     to the SAME A₅ irrep, hence share a fiber.  The sign-twist lives on the
     Wedderburn/S₅ side, not as a geometric orientation reversal. -/
-theorem PartitionOf5.conjugate_same_a5_irrep (p : PartitionOf5) :
+theorem conjugate_same_a5_irrep (p : PartitionOf5) :
     p.conjugate.toA5Irrep = p.toA5Irrep := by
   cases p <;> rfl
 
@@ -411,7 +411,7 @@ theorem s3rot_branching_dim_check :
     The Lean below proves only the structural decomposition. -/
 
 /-- Δ_λ chirality sign = sgn(w₀^{S_{λ'}}) ∈ {±1}, computed per partition. -/
-def PartitionOf5.deltaSign : PartitionOf5 → ℤ
+def deltaSign : PartitionOf5 → ℤ
   | .five          => 1
   | .fourOne       => -1
   | .threeTwo      => 1
@@ -421,14 +421,14 @@ def PartitionOf5.deltaSign : PartitionOf5 → ℤ
   | .onesFive      => 1
 
 /-- The per-block binding factor Δ_λ = chirality sign × Wedderburn magnitude. -/
-def PartitionOf5.deltaLambda (p : PartitionOf5) : ℤ := p.deltaSign * (p.dim : ℤ)
+def deltaLambda (p : PartitionOf5) : ℤ := p.deltaSign * (p.dim : ℤ)
 
 /-- Chirality is ±1 (deltaSign² = 1). -/
-theorem PartitionOf5.deltaSign_sq_one (p : PartitionOf5) : p.deltaSign ^ 2 = 1 := by
+theorem deltaSign_sq_one (p : PartitionOf5) : p.deltaSign ^ 2 = 1 := by
   cases p <;> decide
 
 /-- **Magnitude = Wedderburn dim**: |Δ_λ| = dim V_λ, i.e. (Δ_λ)² = (dim V_λ)². -/
-theorem PartitionOf5.binding_magnitude_eq_dim (p : PartitionOf5) :
+theorem binding_magnitude_eq_dim (p : PartitionOf5) :
     p.deltaLambda ^ 2 = (p.dim : ℤ) ^ 2 := by
   cases p <;> decide
 
@@ -436,18 +436,18 @@ theorem PartitionOf5.binding_magnitude_eq_dim (p : PartitionOf5) :
     chirality signs occur, so no nonnegative (Kazhdan–Lusztig) weight can
     supply the sign — the chirality must come from the parity twist, not a
     positive combination of dimensions. -/
-theorem PartitionOf5.deltaSign_mixed :
+theorem deltaSign_mixed :
     (∃ p : PartitionOf5, p.deltaSign = 1) ∧ (∃ p : PartitionOf5, p.deltaSign = -1) :=
   ⟨⟨.five, rfl⟩, ⟨.fourOne, rfl⟩⟩
 
 /-- The electron block (3,1,1) is chirality-odd (deltaSign = -1), magnitude 6
     (self-conjugate partition; the T₁/T₂ split that carries the chirality). -/
-theorem PartitionOf5.electron_block :
+theorem electron_block :
     PartitionOf5.threeOneOne.deltaSign = -1 ∧ PartitionOf5.threeOneOne.dim = 6 := by
   decide
 
 /-- The partition of each `n = 5` block, as its weakly-decreasing list of parts. -/
-def PartitionOf5.parts : PartitionOf5 → List ℕ
+def parts : PartitionOf5 → List ℕ
   | .five          => [5]
   | .fourOne       => [4, 1]
   | .threeTwo      => [3, 2]
@@ -463,7 +463,7 @@ def PartitionOf5.parts : PartitionOf5 → List ℕ
     a-function** value on the two-sided cell of `V_λ`.  Verified combinatorially
     (b-invariant via min major index over SYT) in
     `docs/audits/scripts/option_e_probe4_overturning_afunction_sign.py`. -/
-def PartitionOf5.nStat (p : PartitionOf5) : ℕ :=
+def nStat (p : PartitionOf5) : ℕ :=
   (p.parts.foldl (fun (acc : ℕ × ℕ) part => (acc.1 + 1, acc.2 + acc.1 * part)) (0, 0)).2
 
 /-- **The Δ_λ chirality sign is the partition-statistic parity** — the PROBE-4
@@ -478,12 +478,12 @@ def PartitionOf5.nStat (p : PartitionOf5) : ℕ :=
     longest-element sign of `deltaSign`'s definition, for all `λ ⊢ n ≤ 8` per the
     same probe; here proved at `n = 5`.)  See
     `docs/audits/2026-06-23-option-e-probe4-overturning-afunction-sign.md`. -/
-theorem PartitionOf5.deltaSign_eq_nStat_parity (p : PartitionOf5) :
+theorem deltaSign_eq_nStat_parity (p : PartitionOf5) :
     p.deltaSign = (-1 : ℤ) ^ p.nStat := by
   cases p <;> decide
 
 /-- The conjugate (transpose) partition's parts, `λ' ⊢ 5`. -/
-def PartitionOf5.conjParts : PartitionOf5 → List ℕ
+def conjParts : PartitionOf5 → List ℕ
   | .five          => [1, 1, 1, 1, 1]
   | .fourOne       => [2, 1, 1, 1]
   | .threeTwo      => [2, 2, 1]
@@ -501,7 +501,7 @@ def sumChoose2 (parts : List ℕ) : ℕ := (parts.map (fun p => p * (p - 1) / 2)
     binomials over the **conjugate** partition's parts (the standard identity,
     here verified at `n = 5`).  Since `Σ_i C(λ'_i,2) = ℓ(w₀^{S_{λ'}})`, this ties
     `nStat` to the conjugate Young subgroup's longest element. -/
-theorem PartitionOf5.nStat_eq_sumChoose2_conj (p : PartitionOf5) :
+theorem nStat_eq_sumChoose2_conj (p : PartitionOf5) :
     p.nStat = sumChoose2 p.conjParts := by
   cases p <;> decide
 
@@ -512,7 +512,7 @@ theorem PartitionOf5.nStat_eq_sumChoose2_conj (p : PartitionOf5) :
     `deltaSign_eq_nStat_parity` this closes the loop
     `deltaSign = sgn(w₀^{S_{λ'}}) = (-1)^{n(λ)}` (a-function / b-invariant parity),
     so the chirality sign is a forced cell invariant, not a table. -/
-theorem PartitionOf5.deltaSign_eq_w0_conj_sign (p : PartitionOf5) :
+theorem deltaSign_eq_w0_conj_sign (p : PartitionOf5) :
     p.deltaSign = (-1 : ℤ) ^ (sumChoose2 p.conjParts) := by
   cases p <;> decide
 
@@ -757,16 +757,16 @@ inductive A5ConjClass where
   deriving DecidableEq, Repr
 
 /-- All five A₅ conjugacy classes. -/
-def A5ConjClass.allList : List A5ConjClass :=
+def allList : List A5ConjClass :=
   [.id, .doubleTransp, .threeCycle, .fiveCycleA, .fiveCycleB]
 
 /-- Size of each A₅ conjugacy class. -/
-def A5ConjClass.size : A5ConjClass → ℕ
+def size : A5ConjClass → ℕ
   | .id => 1 | .doubleTransp => 15 | .threeCycle => 20
   | .fiveCycleA => 12 | .fiveCycleB => 12
 
 /-- Order of a representative element of each class. -/
-def A5ConjClass.elementOrder : A5ConjClass → ℕ
+def elementOrder : A5ConjClass → ℕ
   | .id => 1 | .doubleTransp => 2 | .threeCycle => 3
   | .fiveCycleA => 5 | .fiveCycleB => 5
 

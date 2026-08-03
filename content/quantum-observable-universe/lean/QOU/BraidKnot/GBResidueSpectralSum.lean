@@ -67,12 +67,12 @@ class GBResidueSpectralSum where
     mass = |descended| + ∑ ℓ : Fin levelBound, residue ℓ
 
 /-- Convenience accessor: residue at level `ℓ`. -/
-def GBResidueSpectralSum.residueAt (S : GBResidueSpectralSum)
+def residueAt (S : GBResidueSpectralSum)
     (ℓ : Fin S.levelBound) : ℝ :=
   S.residue ℓ
 
 /-- Convenience accessor: graded trace at level `ℓ`. -/
-def GBResidueSpectralSum.gradedMarkovTrace (S : GBResidueSpectralSum)
+def gradedMarkovTrace (S : GBResidueSpectralSum)
     (ℓ : Fin S.levelBound) : ℝ :=
   S.gradedTrace ℓ
 
@@ -80,7 +80,7 @@ def GBResidueSpectralSum.gradedMarkovTrace (S : GBResidueSpectralSum)
     mass reduces to the descended Markov trace.
 
     Ref: [manuscript] `prop:categorical-mass-markov`. -/
-theorem GBResidueSpectralSum.classical_limit_descended
+theorem classical_limit_descended
     (S : GBResidueSpectralSum)
     (hres : ∀ ℓ : Fin S.levelBound, S.residue ℓ = 0) :
     S.mass = |S.descended| := by
@@ -137,7 +137,7 @@ categorical R-matrix action evaluated at the crystal limit
     data.  The `mass` field is forced to the canonical decomposition
     `|descended| + Σ_ℓ residue ℓ`, and `spectral_decomposition`
     holds by `rfl`. -/
-def GBResidueSpectralSum.fromCrystalData
+def fromCrystalData
     (descended : ℝ) (levelBound : ℕ) (q : ℝ)
     (roots : Fin levelBound → RootOfUnity)
     (gradedTrace residue : Fin levelBound → ℝ) :

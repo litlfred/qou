@@ -36,19 +36,19 @@ inductive CanonicalBraid where
 deriving DecidableEq, Repr
 
 /-- The list of all six canonical braid constructors. -/
-def CanonicalBraid.all : List CanonicalBraid :=
+def all : List CanonicalBraid :=
   [.identity, .sigma1, .sigma2, .garside, .threeCyclePos, .threeCycleNeg]
 
-theorem CanonicalBraid.all_length :
+theorem all_length :
     CanonicalBraid.all.length = 6 := rfl
 
-theorem CanonicalBraid.all_nodup :
+theorem all_nodup :
     CanonicalBraid.all.Nodup := by decide
 
 /-- Permutations of the three colour sectors realised on the
     boundary ramified disc.  We encode them as functions
     `ColorSector → ColorSector`. -/
-def CanonicalBraid.boundaryPerm : CanonicalBraid → ColorSector → ColorSector
+def boundaryPerm : CanonicalBraid → ColorSector → ColorSector
   | .identity,        s          => s
   | .sigma1,          red        => green
   | .sigma1,          green      => red

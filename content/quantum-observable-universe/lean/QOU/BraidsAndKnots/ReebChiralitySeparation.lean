@@ -32,13 +32,13 @@ namespace QOU.BraidsAndKnots
 
 /-- First angular-momentum level at which each A₅ irrep appears in the SO(3)
     tower, read off `icosBranchingMult` (A@0, T₁@1, H@2, T₂@3, G@3). -/
-def A5Irrep.firstEll : A5Irrep → ℕ
+def firstEll : A5Irrep → ℕ
   | .A => 0 | .T₁ => 1 | .H => 2 | .T₂ => 3 | .G => 3
 
 /-- The `firstEll` value is grounded in `icosBranchingMult`: each irrep's
     multiplicity entry is nonzero at its `firstEll` (and the table is the
     derived I-character branching).  Entry order is [A, T₁, T₂, G, H]. -/
-theorem A5Irrep.firstEll_appears :
+theorem firstEll_appears :
     (icosBranchingMult (A5Irrep.A.firstEll)).get! 0 = 1 ∧
     (icosBranchingMult (A5Irrep.T₁.firstEll)).get! 1 = 1 ∧
     (icosBranchingMult (A5Irrep.H.firstEll)).get! 4 = 1 ∧
@@ -48,37 +48,37 @@ theorem A5Irrep.firstEll_appears :
 
 /-- Reeb-spin Casimir at first appearance: `ℓ(ℓ+1)` (classical limit of the
     content-Casimir `μ_λ`). -/
-def A5Irrep.reebCasimir (r : A5Irrep) : ℕ := r.firstEll * (r.firstEll + 1)
+def reebCasimir (r : A5Irrep) : ℕ := r.firstEll * (r.firstEll + 1)
 
 /-- Chirality of each A₅ irrep: the T₁/T₂ pair (the self-conjugate (3,1,1)
     split) carries `±1`; the others are chirality-neutral. -/
-def A5Irrep.chirality : A5Irrep → ℤ
+def chirality : A5Irrep → ℤ
   | .T₁ => 1 | .T₂ => -1 | _ => 0
 
 /-- **The Reeb level alone does NOT separate the five irreps.**  T₂ and G both
     first appear at ℓ = 3, so both have Casimir 12. -/
-theorem A5Irrep.reebCasimir_not_injective :
+theorem reebCasimir_not_injective :
     ¬ Function.Injective A5Irrep.reebCasimir := by
   intro h
   have : A5Irrep.T₂ = A5Irrep.G := h (by decide)
   exact absurd this (by decide)
 
 /-- The composite key: (Reeb-Casimir level, chirality). -/
-def A5Irrep.reebChiralityKey (r : A5Irrep) : ℕ × ℤ := (r.reebCasimir, r.chirality)
+def reebChiralityKey (r : A5Irrep) : ℕ × ℤ := (r.reebCasimir, r.chirality)
 
 /-- **Reeb level ⊕ chirality SEPARATES the five A₅ irreps** (the composite key
     is injective).  The chirality `±1` breaks the T₂/G Casimir-12 degeneracy
     that the level alone leaves; all other pairs are already separated by the
     level.  This realises the `five_distinct_classes` separation from on-main
     canonical data, with no geometric angle input. -/
-theorem A5Irrep.reebChiralityKey_injective :
+theorem reebChiralityKey_injective :
     Function.Injective A5Irrep.reebChiralityKey := by
   intro a b h
   cases a <;> cases b <;> simp_all [A5Irrep.reebChiralityKey, A5Irrep.reebCasimir,
     A5Irrep.firstEll, A5Irrep.chirality]
 
 /-- The five keys are pairwise distinct (the explicit witness list). -/
-theorem A5Irrep.reebChiralityKey_values :
+theorem reebChiralityKey_values :
     A5Irrep.A.reebChiralityKey = (0, 0) ∧
     A5Irrep.T₁.reebChiralityKey = (2, 1) ∧
     A5Irrep.H.reebChiralityKey = (6, 0) ∧

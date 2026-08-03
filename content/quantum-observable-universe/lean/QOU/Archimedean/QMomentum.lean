@@ -56,7 +56,7 @@ noncomputable def QMomentum.p_q (M : QMomentum) : ℝ :=
   (M.crossings.map (qBracket M.q)).sum
 
 /-- The classical writhe `w(β) = Σ_j ε_j`. -/
-def QMomentum.writhe (M : QMomentum) : ℤ := M.crossings.sum
+def writhe (M : QMomentum) : ℤ := M.crossings.sum
 
 -- Ref: [manuscript] quantum-observable-universe/climax-volume-mass/q-momentum.ts
 
@@ -81,7 +81,7 @@ theorem qMomentum_aux (q : ℝ) (hq : q - q⁻¹ ≠ 0) :
     `q − q⁻¹ ≠ 0` (`M.q_reg`) the `q`-momentum equals the writhe — because
     `[±1]_q = ±1` exactly, each crossing contributes its sign with no residual
     `q`-dependence. -/
-theorem QMomentum.p_q_eq_writhe (M : QMomentum) : M.p_q = (M.writhe : ℝ) :=
+theorem p_q_eq_writhe (M : QMomentum) : M.p_q = (M.writhe : ℝ) :=
   qMomentum_aux M.q M.q_reg M.crossings M.signs
 
 end QOU.Archimedean

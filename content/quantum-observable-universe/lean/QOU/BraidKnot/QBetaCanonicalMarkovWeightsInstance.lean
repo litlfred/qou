@@ -56,7 +56,7 @@ noncomputable instance CanonicalMarkovWeightsH3.explicitInstance :
 syntactic; it confirms that subsequent conditional theorems
 `[CanonicalMarkovWeightsH3]` have at least one concrete dispatch
 target. -/
-theorem CanonicalMarkovWeightsH3.is_inhabited :
+theorem is_inhabited :
     Nonempty CanonicalMarkovWeightsH3 :=
   ⟨CanonicalMarkovWeightsH3.explicitInstance⟩
 

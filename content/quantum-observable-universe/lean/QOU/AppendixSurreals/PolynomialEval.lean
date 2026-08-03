@@ -134,7 +134,7 @@ theorem polySurrealEval_ofReal (p : ℝ[X]) (r : ℝ) :
 /-! ### Finite-stability and infinitesimal-stability -/
 
 /-- A finite power of a finite surreal is finite. -/
-theorem SurrealField.IsFinite.pow {x : K} (hx : IsFinite x) (n : ℕ) :
+theorem IsFinite.pow {x : K} (hx : IsFinite x) (n : ℕ) :
     IsFinite (x ^ n) := by
   induction n with
   | zero =>

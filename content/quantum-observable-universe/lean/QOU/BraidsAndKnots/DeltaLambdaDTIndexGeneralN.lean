@@ -155,14 +155,14 @@ def nStatList (parts : List ℕ) : ℕ :=
   (parts.foldl (fun (acc : ℕ × ℕ) part => (acc.1 + 1, acc.2 + acc.1 * part)) (0, 0)).2
 
 /-- `PartitionOf5.nStat` is the general `nStatList` on the block's parts. -/
-theorem PartitionOf5.nStat_eq_nStatList (p : PartitionOf5) :
+theorem nStat_eq_nStatList (p : PartitionOf5) :
     p.nStat = nStatList p.parts := rfl
 
 /-- **Anchor subsumption**: the general DT Euler characteristic, evaluated at the
     corpus `n = 5` data `(nStatList p.parts, p.dim)`, equals the corpus binding
     factor `p.deltaLambda`.  Uses the *general* collapse plus the corpus chirality
     parity `deltaSign_eq_nStat_parity`; no per-partition `decide`. -/
-theorem PartitionOf5.dtEulerG_eq_deltaLambda (p : PartitionOf5) :
+theorem dtEulerG_eq_deltaLambda (p : PartitionOf5) :
     dtEulerG (nStatList p.parts) p.dim = p.deltaLambda := by
   rw [dtEulerG_collapse, ← PartitionOf5.nStat_eq_nStatList,
       PartitionOf5.deltaLambda, PartitionOf5.deltaSign_eq_nStat_parity]
@@ -198,7 +198,7 @@ theorem parity_eq_w0_sign_of_nStat_eq_sumChoose2
     the conjugate Young-subgroup longest-element sign for every `λ ⊢ 5`.  This is
     the general lemma above discharged at the anchor — a witness that the
     conditional reduction is non-vacuous. -/
-theorem PartitionOf5.parity_eq_w0_sign (p : PartitionOf5) :
+theorem parity_eq_w0_sign (p : PartitionOf5) :
     deltaSignParity (nStatList p.parts) = (-1 : ℤ) ^ (sumChoose2 p.conjParts) :=
   parity_eq_w0_sign_of_nStat_eq_sumChoose2 p.parts p.conjParts
     (by rw [← PartitionOf5.nStat_eq_nStatList]; exact p.nStat_eq_sumChoose2_conj)
@@ -214,7 +214,7 @@ theorem PartitionOf5.parity_eq_w0_sign (p : PartitionOf5) :
 
 /-- The merged anchor's `PartitionOf5.dtEuler` is the general `dtEulerG` at
     `(nStat, dim)` — definitional. -/
-theorem PartitionOf5.dtEuler_eq_dtEulerG (p : PartitionOf5) :
+theorem dtEuler_eq_dtEulerG (p : PartitionOf5) :
     p.dtEuler = dtEulerG p.nStat p.dim := rfl
 
 /-- **The merged `n = 5` anchor `dtEuler = Δ_λ`, re-derived from the general
@@ -222,7 +222,7 @@ theorem PartitionOf5.dtEuler_eq_dtEulerG (p : PartitionOf5) :
     `DeltaLambdaDTIndex.PartitionOf5.dtEuler_eq_deltaLambda`, obtained here as a
     corollary of the all-`n` `dtEulerG_collapse` + the chirality parity — evidence
     that the general identity subsumes the anchor. -/
-theorem PartitionOf5.dtEuler_eq_deltaLambda_via_collapse (p : PartitionOf5) :
+theorem dtEuler_eq_deltaLambda_via_collapse (p : PartitionOf5) :
     p.dtEuler = p.deltaLambda := by
   rw [PartitionOf5.dtEuler_eq_dtEulerG, PartitionOf5.nStat_eq_nStatList]
   exact p.dtEulerG_eq_deltaLambda

@@ -70,12 +70,12 @@ abbrev WedderburnDecomposition (n : ℕ) : Type :=
 
 /-- **Block-PSD predicate**: a Wedderburn-decomposition element
     is "PSD" iff each block is PSD as a matrix. -/
-def WedderburnDecomposition.PosSemidef {n : ℕ}
+def PosSemidef {n : ℕ}
     (x : WedderburnDecomposition n) : Prop :=
   ∀ (lam : Nat.Partition n), Matrix.PosSemidef (x lam)
 
 /-- **Block-PSD is preserved under non-negative scaling.** -/
-theorem WedderburnDecomposition.PosSemidef.smul_nonneg
+theorem PosSemidef.smul_nonneg
     {n : ℕ} {x : WedderburnDecomposition n} (h : x.PosSemidef)
     {c : ℝ} (hc : 0 ≤ c) :
     WedderburnDecomposition.PosSemidef (fun lam => c • x lam) := by
@@ -83,7 +83,7 @@ theorem WedderburnDecomposition.PosSemidef.smul_nonneg
   exact (h lam).smul hc
 
 /-- **Block-PSD is preserved under sum.** -/
-theorem WedderburnDecomposition.PosSemidef.add
+theorem PosSemidef.add
     {n : ℕ} {x y : WedderburnDecomposition n}
     (hx : x.PosSemidef) (hy : y.PosSemidef) :
     WedderburnDecomposition.PosSemidef (fun lam => x lam + y lam) := by
