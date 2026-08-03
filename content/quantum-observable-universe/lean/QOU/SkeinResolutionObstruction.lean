@@ -1,4 +1,4 @@
-import Mathlib.Tactic
+import QOU.AlgebraicSubstrate.qou_obstruction_reduction
 
 /-!
 # QOU.SkeinResolutionObstruction
@@ -8,39 +8,58 @@ import Mathlib.Tactic
 
 Formalises the manuscript **definition** of the Skein resolution obstruction
 `κ_c^comp(L,q)` — the image of the universal obstruction class
-`χ(A) ∈ HH² ≅ k` under the resolution-tree restriction map (the fourth
-evaluation of `χ(A)`; cf. `thm:qou-obstruction-reduction`). Kept generic over
-the coefficient ring, matching the block's `authorNote` that the "underlying
-combinatorial content stays generic to any commutative ring" (§7c: no
-archimedean construct is used, so no `ℝ` specialisation is needed).
+`χ(A) ∈ HH² ≅ k` under the resolution-tree restriction map (the *fourth*
+evaluation of `χ(A)`; cf. `thm:qou-obstruction-reduction`).
+
+**De-axiomatised (2026-07-06, bean `7kzn`).** The universal class is no longer
+a free field: it is cross-wired to the **same** `QouObstructionReductionContext`
+that `qou_obstruction_reduction` uses — `octx.obstruction_class` (`= χ(A)` via
+`obstruction_class_eq`). So this is literally the fourth evaluation of the one
+obstruction class, and the vanishing statements are derived through the shared
+context's `kappa_vanishes_iff`. Kept generic over the coefficient ring `R`
+(§7c: no archimedean construct is used).
 -/
 
 namespace QOU
 
-/-- Data for the Skein resolution obstruction on a link `L`.
+open QOU.AlgebraicSubstrate (QouObstructionReductionContext)
 
-    A `definition` carrier: the universal obstruction class `χ ∈ R` (the
-    Hochschild `HH² ≅ k` value), the additive resolution-tree restriction map
-    `res`, and the obstruction `κ = res χ`. -/
-structure SkeinResolutionObstruction (R : Type*) [CommRing R] where
-  /-- The universal obstruction class `χ(A) ∈ HH² ≅ k`. -/
-  χ : R
-  /-- The resolution-tree restriction map (additive). -/
-  res : R →+ R
-  /-- The Skein resolution obstruction `κ = res(χ)`. -/
+/-- Data for the Skein resolution obstruction on a link `L`, over the shared
+    QOU obstruction context.
+
+    A `definition` carrier: the additive resolution-tree restriction map `res`
+    (from `HH² ≅ k = ℤ` to the coefficient ring `R`) and the obstruction
+    `κ = res(χ(A))`, where `χ(A) = octx.obstruction_class` is the **canonical**
+    universal class carried by `QouObstructionReductionContext`. -/
+structure SkeinResolutionObstruction (R : Type*) [CommRing R]
+    [octx : QouObstructionReductionContext] where
+  /-- The resolution-tree restriction map (additive), `HH² ≅ ℤ → R`. -/
+  res : ℤ →+ R
+  /-- The Skein resolution obstruction `κ = res(χ(A))`. -/
   κ : R
-  /-- `κ` is the restriction of the universal class. -/
-  κ_def : κ = res χ
+  /-- `κ` is the restriction of the *canonical* universal obstruction class. -/
+  κ_def : κ = res octx.obstruction_class
 
 namespace SkeinResolutionObstruction
 
-variable {R : Type*} [CommRing R] (S : SkeinResolutionObstruction R)
+variable {R : Type*} [CommRing R] [octx : QouObstructionReductionContext]
+    (S : SkeinResolutionObstruction R)
 
-/-- A vanishing universal class forces the resolution obstruction to vanish:
-    if `χ(A) = 0` then `κ_c^comp(L,q) = 0` (the degree-0 answer is
-    extractable). -/
-theorem kappa_eq_zero_of_chi_zero (h : S.χ = 0) : S.κ = 0 := by
-  rw [S.κ_def, h, map_zero]
+/-- A vanishing Euler characteristic forces the resolution obstruction to
+    vanish: if `χ(A) = 0` then `κ_c^comp(L,q) = 0` (the degree-0 answer is
+    extractable). Now derived through the shared context's
+    `obstruction_class_eq`, not a free-field hypothesis. -/
+theorem kappa_eq_zero_of_chi_zero (h : octx.chi_A = 0) : S.κ = 0 := by
+  rw [S.κ_def, octx.obstruction_class_eq, h, map_zero]
+
+/-- Consistency with the Kummer obstruction of `qou_obstruction_reduction`:
+    when `χ(A) = 0` every Kummer level vanishes (`n ∣ 0`), so the Skein
+    obstruction agrees with the categorical obstruction reduction — they are
+    evaluations of the same class. -/
+theorem kummer_vanishes_of_chi_zero (h : octx.chi_A = 0) (n : ℕ) :
+    octx.kappa_vanishes n := by
+  rw [octx.kappa_vanishes_iff, octx.obstruction_class_eq, h]
+  exact dvd_zero _
 
 end SkeinResolutionObstruction
 

@@ -1,4 +1,5 @@
 import Mathlib.Tactic
+import Mathlib.LinearAlgebra.Matrix.Trace
 
 /-!
 # QOU.BraidKnot.FrobeniusSelfDualityForcesLPDualExtraction
@@ -55,6 +56,36 @@ theorem Obs_eq_pairing (a b : A) : F.Obs a b = F.pairing a b := rfl
 /-- The Observation Frame is additive in its argument (a linear functional). -/
 theorem Obs_add (a b c : A) : F.Obs a (b + c) = F.Obs a b + F.Obs a c := by
   unfold Obs; rw [mul_add, F.tau_add]
+
+/-- **De-axiomatisation (concrete model, bean `cy3v`).** The `n×n` matrix
+    algebra over a field, with the matrix trace, is a genuine instance of the
+    Frobenius carrier — the three axioms are *theorems*, not assumptions:
+    cyclicity is `Matrix.trace_mul_comm` (a non-trivial fact in a
+    non-commutative algebra), additivity is `Matrix.trace_add`, and
+    non-degeneracy is witnessed by pairing a nonzero entry `A i j ≠ 0` against
+    the elementary matrix `E_{j,i}`, which gives `tr(A · E_{j,i}) = A i j`.
+    So the abstract carrier — hence the Frobenius self-duality — is realisable,
+    not vacuous. -/
+noncomputable def matrixModel (n : ℕ) (R : Type*) [Field R] :
+    FrobeniusSelfDualityForcesLPDualExtraction (Matrix (Fin n) (Fin n) R) R where
+  τ := Matrix.trace
+  tau_cyclic a b := Matrix.trace_mul_comm a b
+  tau_add a b := Matrix.trace_add a b
+  nondegenerate A hA := by
+    obtain ⟨i, j, hij⟩ : ∃ i j, A i j ≠ 0 := by
+      by_contra h
+      push_neg at h
+      exact hA (by ext i j; simp [h i j])
+    refine ⟨Matrix.single j i 1, ?_⟩
+    have key : (A * Matrix.single j i 1).trace = A i j := by
+      rw [Matrix.trace_mul_comm]
+      simp only [Matrix.trace, Matrix.diag_apply, Matrix.mul_apply, Matrix.single,
+        Matrix.of_apply, ite_and, ite_mul, one_mul, zero_mul]
+      rw [Finset.sum_eq_single_of_mem j (Finset.mem_univ j)]
+      · simp [Finset.sum_ite_eq]
+      · intro x _ hx
+        simp [Ne.symm hx]
+    rw [key]; exact hij
 
 end FrobeniusSelfDualityForcesLPDualExtraction
 

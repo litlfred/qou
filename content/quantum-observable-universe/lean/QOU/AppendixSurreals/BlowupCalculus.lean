@@ -1,4 +1,5 @@
 import Mathlib.Tactic
+import Mathlib.Analysis.Real.Hyperreal
 
 /-!
 # QOU.AppendixSurreals.BlowupCalculus
@@ -11,26 +12,30 @@ Formalises the manuscript **blow-up calculus**: write a divergent expression
 so that `X(ω) − C(ω)` is finite, and take the standard part to obtain the
 renormalised real `X_ren := st(X(ω) − C(ω)) ∈ ℝ`.
 
-## Needed infrastructure
+## Infrastructure — now with a real model (bean `zkst`)
 
-Conway's `No` is the intended model, but the surreal cone is outside the
-Mathlib subset available here, so the infrastructure the calculus actually
-uses is axiomatised directly as a `BlowupField` typeclass: an ordered field
-with a designated positive infinite element `ω`, its infinitesimal
-`ε = ω⁻¹`, and a standard-part retraction `st` onto `ℝ`. A `BlowupCalculus`
-datum over such a field is then a rigorous *conditional* construction — every
-step is literal (the cutoff `ω` is a specific element, the counterterm a
-specific function, the standard part a specific real). `No`, the hyperreals,
-and the Levi-Civita field are models of `BlowupField`.
+The apparatus is the `BlowupField` typeclass: an ordered field with a
+designated positive infinite element `ω`, its infinitesimal `ε = ω⁻¹`, and a
+standard-part retraction `st` onto `ℝ`.
+
+**De-axiomatisation (2026-07-06).** This is no longer a free axiom: Mathlib's
+hyperreals `ℝ*` are a genuine `BlowupField` instance (`instBlowupFieldHyperreal`
+below), so the whole calculus is realisable, not merely conditional. Building
+this model also **corrected a latent over-idealisation**: the original
+`st_add` was stated *unconditionally*, but no real model satisfies that — the
+standard part is additive only on *finite* elements (`st(ω + 1) = 0 ≠ st ω +
+st 1 = 1`). `st_add` is now conditioned on an `IsFinite` predicate, matching
+`Hyperreal.st_add`; the renormalised value `st(X(ω) − C(ω))` is meaningful
+exactly because the counterterm makes `X(ω) − C(ω)` finite.
 -/
 
 namespace QOU.AppendixSurreals
 
 /-- **Blow-up infrastructure.** An ordered field `K` with a named positive
-    infinite element `omega` and a standard-part map `st : K → ℝ` that is
-    additive, fixes the natural-number constants, and kills the infinitesimal
-    `ε = omega⁻¹`. This is exactly the apparatus the surreal blow-up calculus
-    relies on. -/
+    infinite element `omega`, a finiteness predicate `IsFinite`, and a
+    standard-part map `st : K → ℝ` that is additive *on finite elements*,
+    fixes the natural-number constants, and kills the infinitesimal
+    `ε = omega⁻¹`. -/
 class BlowupField (K : Type*) [Field K] [LinearOrder K] [IsStrictOrderedRing K] where
   /-- The named infinite surreal `ω`. -/
   omega : K
@@ -38,12 +43,19 @@ class BlowupField (K : Type*) [Field K] [LinearOrder K] [IsStrictOrderedRing K] 
   omega_infinite : ∀ n : ℕ, (n : K) < omega
   /-- The standard-part retraction onto `ℝ`. -/
   st : K → ℝ
-  /-- `st` is additive on `K`. -/
-  st_add : ∀ x y : K, st (x + y) = st x + st y
+  /-- Finiteness predicate (an element with a well-defined standard part). -/
+  IsFinite : K → Prop
+  /-- `st` is additive **on finite elements** (it is *not* globally additive;
+      no real model of a non-archimedean field is). -/
+  st_add : ∀ x y : K, IsFinite x → IsFinite y → st (x + y) = st x + st y
   /-- `st` fixes the natural-number constants. -/
   st_natCast : ∀ n : ℕ, st (n : K) = (n : ℝ)
+  /-- Natural-number constants are finite. -/
+  natCast_isFinite : ∀ n : ℕ, IsFinite (n : K)
   /-- The infinitesimal `ε = ω⁻¹` has standard part `0`. -/
   st_omega_inv : st (omega⁻¹) = 0
+  /-- The infinitesimal `ε = ω⁻¹` is finite. -/
+  omega_inv_isFinite : IsFinite (omega⁻¹)
 
 namespace BlowupField
 
@@ -89,5 +101,36 @@ theorem BlowupCalculus.renorm_of_natCast
     (h : B.X BlowupField.omega - B.C BlowupField.omega = (n : K)) :
     B.renormalised = (n : ℝ) := by
   rw [B.renorm_def, h, BlowupField.st_natCast]
+
+/-- **De-axiomatisation (bean `zkst`): the hyperreals `ℝ*` are a genuine
+    `BlowupField`.** Every field is a Mathlib theorem — `ω = Hyperreal.omega`
+    is infinite (`infinitePos_omega`), `st = Hyperreal.st` is additive on the
+    finite (`¬ Infinite`) elements (`Hyperreal.st_add`), fixes real constants
+    (`st_id_real`), and kills `ε = ω⁻¹` (`infinitesimal_epsilon`). So the
+    blow-up calculus is realisable, not merely axiomatic. -/
+noncomputable instance instBlowupFieldHyperreal : BlowupField ℝ* where
+  omega := Hyperreal.omega
+  omega_infinite n := by
+    have h : ((n : ℝ) : ℝ*) < Hyperreal.omega := Hyperreal.infinitePos_omega (n : ℝ)
+    exact_mod_cast h
+  st := Hyperreal.st
+  IsFinite x := ¬ x.Infinite
+  st_add _ _ hx hy := Hyperreal.st_add hx hy
+  st_natCast n := by
+    have h : Hyperreal.st ((n : ℝ) : ℝ*) = (n : ℝ) := Hyperreal.st_id_real (n : ℝ)
+    exact_mod_cast h
+  natCast_isFinite n := by
+    have h : ¬ (((n : ℝ) : ℝ*)).Infinite := (Hyperreal.isSt_refl_real (n : ℝ)).not_infinite
+    exact_mod_cast h
+  st_omega_inv := by
+    have hωε : (Hyperreal.omega)⁻¹ = Hyperreal.epsilon := by
+      rw [← Hyperreal.inv_epsilon, inv_inv]
+    rw [hωε]
+    exact Hyperreal.IsSt.st_eq Hyperreal.infinitesimal_epsilon
+  omega_inv_isFinite := by
+    have hωε : (Hyperreal.omega)⁻¹ = Hyperreal.epsilon := by
+      rw [← Hyperreal.inv_epsilon, inv_inv]
+    rw [hωε]
+    exact Hyperreal.infinitesimal_epsilon.not_infinite
 
 end QOU.AppendixSurreals
