@@ -87,6 +87,7 @@ theorem explicit_central_idempotent_via_murphy
   -- four cross-checks (sum-to-identity, orthogonality,
   -- self-adjointness, bar-pairing) follow from Lagrange
   -- interpolation in commuting variables (J_1, ..., J_n).
+  -- CONJECTURE: The four cross-checks follow from Lagrange interpolation in commuting variables.
   sorry
 
 /-- Computability witness for small `n`: the (2,2) self-conjugate
@@ -100,6 +101,6 @@ example : centralIdempotent [2, 2] q * centralIdempotent [2, 2] q = centralIdemp
   -- idempotency is the finite Lagrange computation witnessed in
   -- conj:bring-figure-eight-depth-2-witness. `centralIdempotent` is `opaque`,
   -- so this is asserted from the cited construction, not computed.
-  sorry
+  explicit_central_idempotent_via_murphy [2, 2] rfl
 
 end QOU.BraidKnot.ExplicitCentralIdempotent
