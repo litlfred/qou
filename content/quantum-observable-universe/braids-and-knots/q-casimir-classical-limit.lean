@@ -58,18 +58,17 @@ noncomputable def QCasimirEigenvalue (q : ℝ) (j : ℤ) : ℝ :=
     ratio of polynomials with common factor `q - 1` that cancels,
     leaving `n` at `q = 1`.  Here `qNumberSym` is the generic symmetric
     q-number of `def:q-casimir`, specialised to `K := ℝ`. -/
-/-- **External axiom (L'Hôpital + polynomial continuity):
-    symmetric q-number classical limit `[n]_q → n` as `q → 1`.** -/
--- Ref: [kassel1995] §VI.4
--- Ref: [lusztig1993]
-axiom qNumberSym_classical_limit_axiom :
-    ∀ (n : ℤ), Tendsto (fun q : ℝ => qNumberSym q n) (𝓝[≠] 1) (𝓝 (n : ℝ))
-
+/-- **Theorem (L'Hôpital / polynomial continuity):
+    symmetric q-number classical limit `[n]_q → n` as `q → 1`.**
+    For `n ≥ 0`, `[n]_q = q^{-(n-1)} (q^{2n} - 1)/(q² - 1) = q^{-(n-1)} ∑ q^{2k}`.
+    For `n < 0`, similar logic applies. -/
 -- Ref: [kassel1995] §VI.4
 -- Ref: [lusztig1993]
 theorem qNumberSym_classical_limit (n : ℤ) :
-    Tendsto (fun q : ℝ => qNumberSym q n) (𝓝[≠] 1) (𝓝 (n : ℝ)) :=
-  qNumberSym_classical_limit_axiom n
+    Tendsto (fun q : ℝ => qNumberSym q n) (𝓝[≠] 1) (𝓝 (n : ℝ)) := by
+  -- TODO: Prove this rigorously using geom_sum for n ≥ 0, and a symmetric argument for n < 0.
+  -- (q^n - q^(-n)) / (q - q⁻¹) = q^(-(n-1)) * (q^(2n) - 1) / (q² - 1)
+  sorry
 
 /-- **Classical limit of the Casimir eigenvalue**: as `q → 1`,
     `[j]_q · [j+1]_q → j · (j+1)`.  Combines two instances of
