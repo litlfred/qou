@@ -1,11 +1,11 @@
 ---
 # qou-ys29
 title: 'T3h: Fano plane from genus-3 restriction of Bring surface — derive octonions from geometry'
-status: todo
+status: in-progress
 type: task
 priority: critical
 created_at: 2026-08-04T10:18:37Z
-updated_at: 2026-08-04T10:18:37Z
+updated_at: 2026-08-04T17:50:00Z
 parent: qou-8lxd
 ---
 
@@ -127,3 +127,31 @@ CONTRAST WITH McKay ROUTE:
 The genus-3 route is MORE DIRECT but LESS THEOREM-BACKED. The McKay route
 has each step proved. The genus-3 route needs test 1 (embedding exists)
 and the PSL(2,7) structure to be computable from Bring coordinates.
+
+COMPUTATIONAL PROGRESS (2026-08-04, session 2):
+
+1. PSL(2,7) irreps verified: {1, 3, 3̄, 6, 7, 8}
+   ∑d² = 1+9+9+36+49+64 = 168 = |G| ✓
+   (computations/psl27_irrep_verification.py + witness)
+
+2. S₄ Fano action verified: (computations/s4_fano_action.py)
+   - S₄ = Stab(pt) in PSL(2,7), |S₄| = 24 ✓
+   - S₄ acts TRANSITIVELY on 3 lines through fixed point
+   - S₄ acts TRANSITIVELY on 4 lines NOT through fixed point
+   - S₄ acts TRANSITIVELY on 6 remaining points
+   - 3 local lines PARTITION 6 remaining pts into 3 PAIRS
+
+   KEY RESULT: S₄ preserves the "local Fano" at the fixed point.
+   The 3 local lines encode the 3 octonion triples through that
+   imaginary unit. S₄ permutes these triples transitively.
+
+3. Content block updated: color-su3-from-g2.md now includes the
+   PSL(2,7) irrep dimensions and physical interpretation.
+
+REMAINING OPEN QUESTIONS:
+- Does pinching an S₄-invariant 1-cycle on Bring (g=4) actually
+  produce a genus-3 nodal curve? (Algebraic geometry, not computed)
+- Does the normalized genus-3 limit enhance S₄ → PSL(2,7)?
+  (Expected: the Klein quartic is Hurwitz-maximal at g=3)
+- Is the Seifert surface of T(2,7) a literal subsurface of Bring?
+  (Topological, needs separate investigation)
