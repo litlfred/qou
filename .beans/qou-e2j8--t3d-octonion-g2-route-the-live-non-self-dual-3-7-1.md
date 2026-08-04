@@ -1,11 +1,11 @@
 ---
 # qou-e2j8
 title: 'T3d: octonion G2 route -- the live non-self-dual 3 (7 = 1+3+3bar)'
-status: todo
+status: in-progress
 type: task
 priority: critical
 created_at: 2026-08-04T00:07:00Z
-updated_at: 2026-08-04T00:07:00Z
+updated_at: 2026-08-04T09:51:27Z
 parent: qou-8lxd
 ---
 

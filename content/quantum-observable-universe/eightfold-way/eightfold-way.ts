@@ -84,9 +84,9 @@ export default chapter({
       title: "Color algebra from octonionic stabilization",
       label: "sec:color-algebra",
       blocks: [
-        // Stub — blocks to be authored in Phase 4.
-        // Will also receive sm-colour-stabilizer-action from SM appendix,
-        // color-tube-coords-intro from brings-surface.
+        "color-su3-from-g2",
+        // TODO: sm-colour-stabilizer-action (from SM appendix),
+        // color-tube-coords-intro (from brings-surface)
       ],
     }),
 
