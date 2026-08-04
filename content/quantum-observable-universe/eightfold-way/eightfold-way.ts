@@ -76,7 +76,7 @@ export default chapter({
       label: "sec:baryon-multiplets",
       blocks: [
         "schur-weyl-eightfold",
-        // TODO: borromean-decuplet-derivation (Phase 3)
+        "borromean-decuplet-derivation",
       ],
     }),
 
