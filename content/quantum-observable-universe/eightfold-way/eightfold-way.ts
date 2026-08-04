@@ -124,7 +124,7 @@ export default chapter({
       title: "Open problems in flavor and gauge structure",
       label: "sec:eightfold-open-problems",
       blocks: [
-        // Stub — blocks to be authored in Phase 5.
+        "eightfold-open-problems",
       ],
     }),
   ],
