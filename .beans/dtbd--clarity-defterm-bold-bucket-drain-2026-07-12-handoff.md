@@ -1,7 +1,7 @@
 ---
 # dtbd
 title: 'clarity-defterm-bold bucket drain (2026-07-12) — handoff, 1 block left'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-07-12T21:34:49Z

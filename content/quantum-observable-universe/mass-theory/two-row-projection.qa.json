@@ -1,0 +1,27 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "def:two-row-projection",
+  "kind": "definition",
+  "criteria": {
+    "clarity-defterm-bold": [
+      {
+        "field_hash": {
+          "md": "7e8e9c291dec",
+          "ts": "b015f3fb7a88"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/definition-clarity-audit.ts",
+          "version": "v1",
+          "script_hash": "589d4ee4b60e",
+          "script_commit_sha": "329c14b2aff45a046ab25b3bf565e64778d4f70b"
+        },
+        "reviewed_at": "2026-08-03T19:38:33.698Z",
+        "reviewed_sha": "1939c717a5b1ecaccc37b6789b6b7536201a063e",
+        "evidence": "term marked via \"two-row projection\""
+      }
+    ]
+  },
+  "updated_at": "2026-08-03T19:38:33.698Z"
+}
