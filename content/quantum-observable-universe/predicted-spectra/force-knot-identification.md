@@ -55,7 +55,7 @@ The knot $T_{3,5}$ carries the weak interaction. It is the cross-family generato
 | Winding | $(3, 5)$ | Bridges $m = 3$ (quark) and $n = 5$ (second generation) |
 | Genus | $4$ (saturating) | Near-boundary of embeddability |
 | Crossings | $10$ | High complexity $\to$ weak coupling |
-| Hyperbolic volume | $0$ | Zero bare mass from volume; mass from crossings |
+| Hyperbolic volume | $0$ | Zero topological mass from volume; mass from crossings |
 | Knot group | $\langle x, y \mid x^3 = y^5 \rangle$ | Intertwines 3-color and 5-fold winding |
 
 The torus knot $T_{3,5}$ uniquely combines winding numbers from both families: $m = 3$ from the quark sector, and $n = 5$ from the $T_{2,5}$ column. This cross-link drives flavor-changing processes. The weak interaction transmutes quarks between generations and converts quarks to leptons because $T_{3,5}$ topologically connects both sectors.

@@ -1,10 +1,11 @@
 ---
 # qou-nsyh
 title: 'Session: electron arc drain on copilot/eight-fold'
-status: in-progress
+status: completed
 type: milestone
+priority: normal
 created_at: 2026-08-04T21:37:40Z
-updated_at: 2026-08-04T21:54:28Z
+updated_at: 2026-08-04T22:16:29Z
 ---
 
 
