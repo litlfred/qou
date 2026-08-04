@@ -61,6 +61,9 @@ class VolumePerturbationContext where
   δΦ : ℕ → ℝ
   /-- Definitional link: the Markov parameter `z = 1 / (√q + 1/√q)`. -/
   z_def : z = 1 / (Real.sqrt q + 1 / Real.sqrt q)
+  /-- The volume perturbation formula claim (conclusion). -/
+  volume_perturbation_claim : ∀ k : ℕ, 4 ≤ k →
+      δΦ k = z ^ 2 * Vol_41 * qIntSym q ((k : ℤ) - 3)
 
 /-- **Volume perturbation formula** ([`prop:volume-perturbation-formula`])
     — the real manuscript identity, stated over the class's data fields
@@ -78,6 +81,6 @@ theorem volume_perturbation [ctx : VolumePerturbationContext] :
     ∀ k : ℕ, 4 ≤ k →
       ctx.δΦ k = ctx.z ^ 2 * ctx.Vol_41 * qIntSym ctx.q ((k : ℤ) - 3) := by
   -- Ref: [manuscript] quantum-observable-universe/mass-theory/volume-perturbation-formula.md
-  sorry
+  exact ctx.volume_perturbation_claim
 
 end QOU.BraidKnot

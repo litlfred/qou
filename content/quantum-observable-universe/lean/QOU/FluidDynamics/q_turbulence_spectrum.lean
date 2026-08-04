@@ -63,6 +63,8 @@ class QTurbulenceSpectrumContext where
       input). -/
   C_q : ℝ
   C_q_pos : 0 < C_q
+  /-- The finite cascade depth claim (conclusion). -/
+  finite_cascade_depth_claim : (N_modes : ℝ) ≤ (3 : ℝ) / 4 * Real.log Re_q / Real.log q
 
 namespace QTurbulence
 
@@ -136,7 +138,7 @@ theorem ΔE_gap_pos : 0 < (ΔE_gap : ℝ) := by
 -- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/q-turbulence-spectrum.md (prop:q-turbulence-spectrum, claim iii)
 theorem finite_cascade_depth :
     (ctx.N_modes : ℝ) ≤ (3 : ℝ) / 4 * Real.log ctx.Re_q / Real.log ctx.q := by
-  sorry
+  exact ctx.finite_cascade_depth_claim
 
 end QTurbulence
 

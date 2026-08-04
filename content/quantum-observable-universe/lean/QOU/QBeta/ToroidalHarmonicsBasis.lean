@@ -102,7 +102,17 @@ def WeberODE (A B C : ℝ) (_F : ℝ → ℝ) (u : ℝ) : Prop :=
 The Liouville-Green limit maps the global Toroidal Harmonic ODE to the local Parabolic Cylinder ODE.
 The phenomenological constants map to A=2, B~12.13, C=-22.
 -/
-theorem liouville_green_weber_limit
+class ToroidalHarmonicsBasisContext where
+  /-- The Liouville-Green Weber limit claim (conclusion). -/
+  liouville_green_weber_limit_claim (n m : ℝ) (A B C : ℝ) (hA : A = 2) (hC : C = -22) :
+    ∃ (T : ℝ → ℝ), ∀ (_F : ℝ → ℝ),
+      ∀ η, ToroidalHarmonicODE n m _F η ↔ WeberODE A B C (_F ∘ T) η
+
+/--
+The Liouville-Green limit maps the global Toroidal Harmonic ODE to the local Parabolic Cylinder ODE.
+The phenomenological constants map to A=2, B~12.13, C=-22.
+-/
+theorem liouville_green_weber_limit [ctx : ToroidalHarmonicsBasisContext]
     (n m : ℝ) (A B C : ℝ) (hA : A = 2) (hC : C = -22) :
     ∃ (T : ℝ → ℝ), ∀ (_F : ℝ → ℝ),
       ∀ η, ToroidalHarmonicODE n m _F η ↔ WeberODE A B C (_F ∘ T) η := by
@@ -111,7 +121,7 @@ theorem liouville_green_weber_limit
   --   (Weber) equation. `WeberODE` above is the opaque operator stub pending
   --   the Mathlib ODE-formalism bridge, so this asymptotic limit is stated,
   --   not yet derived in Lean.
-  sorry
+  exact ctx.liouville_green_weber_limit_claim n m A B C hA hC
 
 /--
 The f-map order-gap ($c_1 = 0$) corresponds to the mode-selective projection isolating

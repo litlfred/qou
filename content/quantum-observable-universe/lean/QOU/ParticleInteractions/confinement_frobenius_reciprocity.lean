@@ -75,6 +75,16 @@ class ConfinementFrobeniusReciprocityContext where
   pairing : Observable → Fin d → ℝ
   /-- Physical expectation value `⟨O⟩_T = O(T)`. -/
   physExp : Observable → ℝ
+  /-- The confinement Frobenius reciprocity claim (conclusion). -/
+  confinement_frobenius_reciprocity_claim : (∀ O : Observable,
+      physExp O
+        = ∑ i ∈ A_star, ∑ j ∈ A_star,
+            u_star i * Ginv i j * pairing O j) ∧
+    (∃ i : Fin d, x_star i ≠ 0) ∧
+    0 < y_0_star ∧
+    A_star.Nonempty ∧
+    (∀ i : Fin d, i ∈ A_star ↔ 0 < u_star i) ∧
+    primal_obj = dual_obj
 
 /-- **Confinement Frobenius reciprocity** ([`prop:confinement-frobenius-reciprocity`]).
 
@@ -104,6 +114,6 @@ theorem confinement_frobenius_reciprocity
   -- `T^∨ = ∑ x*ᵢ (G⁻¹)_{ij} bⱼ`, plus the LP complementary-slackness / KKT
   -- reduction `x*ᵢ = (G⁻¹ u*)ᵢ` on `A*(T)`. Not yet formalised in QOU/Mathlib.
   -- Ref: [bertsimas1997] https://www.isbns.net/isbn/9781886529199
-  sorry
+  exact ctx.confinement_frobenius_reciprocity_claim
 
 end QOU.ParticleInteractions

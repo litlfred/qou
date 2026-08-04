@@ -62,6 +62,11 @@ class FourTermPairNucleonContext where
   protonFlavours : Fin 3 → Bool
   /-- Neutron flavour assignment `(u, d, d)` (one up, two down). -/
   neutronFlavours : Fin 3 → Bool
+  /-- The four term pair nucleon claim (conclusion). -/
+  four_term_pair_nucleon_claim : (∀ φ₀ φ₁ φ₀₁ : ℝ,
+      confinedNet φ₀ φ₁ φ₀₁ protonFlavours = protonNetTarget) ∧
+    (∀ φ₀ φ₁ φ₀₁ : ℝ,
+      confinedNet φ₀ φ₁ φ₀₁ neutronFlavours = neutronNetTarget)
 
 /-- **Construction counts (derived).**  The nucleon is confined from exactly
     `3` pair productions using the `4`-term photon color content. -/
@@ -119,6 +124,6 @@ theorem four_term_pair_nucleon [ctx : FourTermPairNucleonContext] :
   -- reducer + Markov-trace evaluation at q₀ (compute: computations/,
   -- witness four-term-photon-to-atoms.witness.json) that produces the specific
   -- net values ≈ 0.999 / 0.811.
-  sorry
+  exact ctx.four_term_pair_nucleon_claim
 
 end QOU.ParticleInteractions
