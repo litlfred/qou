@@ -54,8 +54,10 @@ required.  The Hecke block dimensions $(1, 2, 1)$ are the
 **The $N = 3$ question.**
 The single-fibre tower of
 Chapters~\ref{chap:braids-and-knots}--\ref{chap:brings-surface} has
-$\dim V = 2$ (the Descartes condition $\chi(\mathcal{A}) = -6$ forces
-the gauge group to be a quantum form of $\mathrm{SU}(2)$).  The
+$\dim V = 2$ (the standard single-fibre construction yields a quantum
+form of $\mathrm{SU}(2)$; the Descartes condition $\chi(\mathcal{A}) = -6$
+is compatible with but does not uniquely force $N = 2$ --- see the
+$\chi$-rank audit).  The
 decomposition at $N = 2$ is:
 $$
   V^{\otimes 3}
@@ -67,7 +69,7 @@ $$
 $$
 The antisymmetric partition $(1^3)$ is \emph{absent} (three rows exceed
 $N = 2$).  No choice of $q$ restores it: the row cap is
-$\ell(\lambda) \leq \dim V$, which the Descartes condition fixes at $2$.
+$\ell(\lambda) \leq \dim V$, which the single-fibre construction fixes at $2$.
 
 Therefore, realising the full eightfold way requires $N = 3$.  Within
 QOU, this $N = 3$ cannot arise from a single fibre.  The remaining

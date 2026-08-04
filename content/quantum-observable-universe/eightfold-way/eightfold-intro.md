@@ -9,8 +9,8 @@ The braid group $B_3$ and its $q$-deformation $H_3(q)$ carry the
 structure of the $A_2$ root system --- the Lie-algebraic skeleton of
 $\mathrm{SU}(3)$.  This is not an imported symmetry: it is a structural
 theorem of the categorical braid representation established in
-Chapter~\ref{chap:braids-and-knots}.  The Descartes condition
-$\chi(\mathcal{A}) = -6$ forces the gauge group to be a quantum form of
+Chapter~\ref{chap:braids-and-knots}.  The single-fibre construction
+yields a quantum form of
 $\mathrm{SU}(2)$, whose fundamental representation $V$ is
 $2$-dimensional.  On $V^{\otimes 3}$, the two generators $\sigma_1,
 \sigma_2$ of $B_3$ produce the first non-trivial braid group action, and

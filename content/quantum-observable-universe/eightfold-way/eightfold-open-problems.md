@@ -6,8 +6,9 @@ construction of this chapter, each stated with a falsifiable test.
 \item \textbf{The $N = 3$ problem.}
   Schur--Weyl duality (Proposition~\ref{prop:schur-weyl-eightfold})
   requires the fundamental representation to be $3$-dimensional.  The
-  single-fibre tower has $\dim V = 2$ (Descartes condition
-  $\chi(\mathcal{A}) = -6$).  \emph{Open:} construct a
+  single-fibre tower has $\dim V = 2$ (the standard single-fibre
+  construction; the Descartes condition $\chi(\mathcal{A}) = -6$ is
+  compatible with but does not uniquely force $N = 2$).  \emph{Open:} construct a
   three-dimensional object $W$ in the multi-fibre groupoid whose
   symmetric square $\mathrm{Sym}^2(W)$ is irreducible (no singlet).
   The octonion $G_2$ route provides a colour $\mathrm{SU}(3)$ candidate
@@ -54,8 +55,9 @@ construction of this chapter, each stated with a falsifiable test.
 
 \item \textbf{Ocneanu/Markov trace parameter.}
   The Markov trace $\tau$ on $H_n(q)$ involves a second parameter
-  $z$ (the trace parameter).  In QOU, $q = q_0$ is derived from the
-  Bring surface.  Whether $z$ is similarly derived or must be chosen
-  is open (T3f).
+  $z$ (the trace parameter).  In QOU, $q$ is the substrate parameter
+  (observed at our location as $q_0$, not derived from Bring topology).
+  Whether $z$ is similarly extracted from categorical data or must be
+  chosen is open (T3f).
 
 \end{enumerate}
