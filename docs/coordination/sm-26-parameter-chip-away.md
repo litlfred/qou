@@ -47,6 +47,13 @@ open knots.
   composite/projection; m_τ census; neutrino volume; θ_QCD ceiling at {0,π}).
 - **Zero fabricated numbers.**
 
+
+## Session log
+
+| Date | Agent / branch | Intent | Results |
+|---|---|---|---|
+| 2026-08-04 | Copilot / `copilot/eight-fold` | INTENT: external electron.pdf triage + drain nearby electron arc beans in SM/eight-fold scope |  |
+
 ## Open fronts (beans / follow-ups)
 
 1. **Canonical meson flux-tube operation** (bean `qou-qpj9`, #4608) — the J/ψ
