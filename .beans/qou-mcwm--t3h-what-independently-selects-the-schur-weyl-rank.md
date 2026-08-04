@@ -1,11 +1,11 @@
 ---
 # qou-mcwm
 title: 'T3h: what independently selects the Schur-Weyl rank N?'
-status: todo
+status: completed
 type: task
 priority: critical
 created_at: 2026-08-04T09:52:15Z
-updated_at: 2026-08-04T09:52:15Z
+updated_at: 2026-08-04T17:38:29Z
 parent: qou-8lxd
 ---
 
