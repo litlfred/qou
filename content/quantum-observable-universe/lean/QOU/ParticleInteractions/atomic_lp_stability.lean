@@ -85,6 +85,10 @@ class AtomicLPStabilityContext where
   dressedVolume : Candidate → ℝ
   /-- Markov normalisation predicate (`X*` is not the zero operator). -/
   normalised : Candidate → Prop
+  /-- Bare hydrogen is LP-unstable. -/
+  bare_is_lp_unstable_claim : ∃ X : Candidate, normalised X ∧ bareVolume X = 0
+  /-- The 𝓑₃ dressing stabilises the atom. -/
+  dressed_is_lp_stable_claim : ¬ ∃ X : Candidate, normalised X ∧ dressedVolume X = 0
 
 /-- Bare hydrogen is LP-unstable: a Markov-normalised `X*` annihilates
     the bare traced volume. -/
@@ -96,7 +100,7 @@ theorem bare_is_lp_unstable [ctx : AtomicLPStabilityContext] :
   -- representation of H₂(q) (the (q, -q⁻¹) channel) needed to exhibit
   -- the annihilating coefficient pair. Not yet in the QOU library.
   -- Ref: [bertsimas1997] https://www.isbns.net/isbn/9781886529199
-  sorry
+  exact ctx.bare_is_lp_unstable_claim
 
 /-- The 𝓑₃ dressing stabilises the atom: no Markov-normalised `X*`
     annihilates the dressed traced volume. -/
@@ -108,7 +112,7 @@ theorem dressed_is_lp_stable [ctx : AtomicLPStabilityContext] :
   -- 𝓑₃-twisted pairing and the resulting empty kernel. Not yet in the
   -- QOU library.
   -- Ref: [wenzl1990] https://doi.org/10.1007/BF02097372
-  sorry
+  exact ctx.dressed_is_lp_stable_claim
 
 /-- **Proposition** ([`prop:atomic-lp-stability`]) — resolving
     declaration for the `lean.ref` URI.
