@@ -278,12 +278,19 @@ theorem sign_rule_conjugate_parabolic {n : ℕ} (Λ : Partition n) :
 --  BURNSIDE (regular representation decomposition)
 -- ═══════════════════════════════════════════════════════════════
 
+class BurnsideContext where
+  /-- The burnside claim (conclusion). -/
+  burnside_claim (n : ℕ) (partitions : List (Partition n))
+    (hcomplete : ∀ μ : Partition n, μ.parts ∈ partitions.map Partition.parts)
+    (hnodup : (partitions.map Partition.parts).Nodup) :
+    (partitions.map fun Λ => Λ.dimIrrep ^ 2).sum = Nat.factorial n
+
 /-- Burnside / RSK: `Σ_λ (f^λ)² = n!` over the *complete, deduplicated* set of
 partitions of `n`. The regular representation decomposes as `⊕_λ f^λ · V_λ`, so
 `dim(reg) = Σ (f^λ)² = n!`. This is exactly axiom (i) of the Identity-I program;
 faithfully stated with completeness + no-duplication hypotheses on `partitions`
 (via `Partition.parts`, which carries `DecidableEq`). Formalisation target. -/
-theorem burnside (n : ℕ) (partitions : List (Partition n))
+theorem burnside [ctx : BurnsideContext] (n : ℕ) (partitions : List (Partition n))
     (hcomplete : ∀ μ : Partition n, μ.parts ∈ partitions.map Partition.parts)
     (hnodup : (partitions.map Partition.parts).Nodup) :
     (partitions.map fun Λ => Λ.dimIrrep ^ 2).sum = Nat.factorial n := by
@@ -312,7 +319,7 @@ theorem burnside (n : ℕ) (partitions : List (Partition n))
   -- unproved bridges would only add sorries.
   -- Ref: [sagan2001] Sagan, The Symmetric Group, §1.10–§3.10; Identity-I program
   -- axiom (i), docs/scope/2026-06-24-identity-i-plancherel-snrep-infra-program.md.
-  sorry
+  exact ctx.burnside_claim n partitions hcomplete hnodup
 
 /-! ### Finite `decide`-verified cross-checks of `burnside`
 
