@@ -68,6 +68,22 @@ theorem s_polynomial_decomposition
   -- manuscript ext argument (AlgElement is not a quotient type).
   -- Ref: [manuscript] unital-groebner-bases — s-polynomial-decomposition
   refine ⟨c₁ * a₁, ?_⟩
-  sorry
+  rcases f₁ with ⟨coeff₁, supp₁, spec₁⟩
+  rcases f₂ with ⟨coeff₂, supp₂, spec₂⟩
+  dsimp [AlgElement.add, AlgElement.smul, sPolynomial, AlgElement.sub, AlgElement.neg]
+  congr 1
+  funext m
+  have h3 : c₂ * a₂ = - (c₁ * a₁) := by
+    calc c₂ * a₂ = (c₁ * a₁ + c₂ * a₂) - c₁ * a₁ := by ring
+         _       = 0 - c₁ * a₁ := by rw [hcancel]
+         _       = - (c₁ * a₁) := by ring
+  have h2 : c₂ = - (c₁ * a₁) * a₂⁻¹ := by
+    calc c₂ = c₂ * (a₂ * a₂⁻¹) := by rw [mul_inv_cancel₀ ha₂, mul_one]
+         _  = (c₂ * a₂) * a₂⁻¹ := by ring
+         _  = - (c₁ * a₁) * a₂⁻¹ := by rw [h3]
+  rw [h2]
+  calc c₁ * coeff₁ m + - (c₁ * a₁) * a₂⁻¹ * coeff₂ m
+    _ = c₁ * (a₁ * a₁⁻¹) * coeff₁ m - c₁ * a₁ * a₂⁻¹ * coeff₂ m := by rw [mul_inv_cancel₀ ha₁, mul_one]; ring
+    _ = (c₁ * a₁) * (a₁⁻¹ * coeff₁ m + - (a₂⁻¹ * coeff₂ m)) := by ring
 
 end UGB.UnitalGroebner
