@@ -1,11 +1,11 @@
 ---
 # qou-8kmu
 title: 'T3c: audit every SU(3) claim in the corpus for what it acts on'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-03T23:54:32Z
-updated_at: 2026-08-03T23:54:32Z
+updated_at: 2026-08-04T10:09:39Z
 parent: qou-8lxd
 ---
 
