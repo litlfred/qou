@@ -106,7 +106,6 @@ import QOU.MassTheory.A4PrecisionOrderSeparation
 import QOU.MassTheory.A3UnitsConsistency
 import QOU.MassTheory.BindingWeightMarkovPinning
 import QOU.MassTheory.CKnotNonUniversal
-import QOU.MassTheory.B4MultiplicativeCumulant
 import QOU.Mass.MassVolDensity
 import QOU.Mass.MixedMultibondMuBarIntegrality
 import QOU.Mass.BindingRecurrenceSpectral
@@ -207,7 +206,6 @@ import QOU.ParticleInteractions.AtomicityGroupRank
 import QOU.ParticleInteractions.AtomicityRankOneToSingleObject
 import QOU.ParticleInteractions.AtomicitySelfDualToSymplectic
 import QOU.ParticleInteractions.WignerSU4FromSpinIsospin
-import QOU.ParticleInteractions.MesonOperatorSelectionT3
 import QOU.Elaboration
 import QOU.PathIntegrals
 import QOU.MobiusEnergy
@@ -589,7 +587,8 @@ import QOU.MassTheory.BrunnianDeficitLeadingOrderDerived
 -- is surjective onto (0,∞) in its one free scalar m ⇒ WALL(scope-(a)); naive z scope-(b)
 -- excluded. Formalize-first, 0-fit, sorry-free.
 import QOU.MassTheory.A4InterfaceMagnitude
-import QOU.MassTheory.B4NonSaturatingBracket
+import QOU.MassTheory.BindingSaturationCapA4
+import QOU.MassTheory.BraneGeometricResummation
 import QOU.BraidKnot.ColoredJonesRecurrence
 import QOU.BraidKnot.KnotOperatorRecurrence
 -- Resurgent-bridge tranche (Δ_λ sign/magnitude → DT/3d-index unification):

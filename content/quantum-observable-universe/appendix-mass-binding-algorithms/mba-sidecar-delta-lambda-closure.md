@@ -1,5 +1,5 @@
-**Algorithm ($\Delta_\lambda$ closure — open gate).**
-*Compute the per-partition binding density $\Delta_\lambda(K)$
+**Algorithm ($\Delta_\lambda$ per-partition value — PROVED; many-body magnitude — open).**
+*Compute the per-partition binding weight $\Delta_\lambda(K)$
 for an isotope knot $K$, consumed by Step 9b
 ([`alg:per-isotope-binding`](#alg:per-isotope-binding)).*
 
@@ -10,12 +10,39 @@ for an isotope knot $K$, consumed by Step 9b
 
 ### Output
 
-- *Per-partition density $\Delta_\lambda(K) \in \mathbb{R}$.*
+- *Per-partition weight $\Delta_\lambda = (-1)^{n(\lambda)}\dim V_\lambda \in \mathbb{Z}$
+  (the signed Springer dimension; $n(\lambda)$ is the jet-order valuation
+  parity, $\dim V_\lambda$ the Wedderburn dimension).*
 
-### Closure obstructions
+### Status (2026-08-02) — value proved; magnitude external
 
-**Open gate.** Six closure ansätze have been refuted on the
-deuteron:
+**The per-partition value is PROVED, sorry-free, general-$n$:**
+$\Delta_\lambda = (-1)^{n(\lambda)}\dim V_\lambda$
+(`QOU.BraidsAndKnots.dtEuler_eq_deltaLambda_unconditional`, PR #4580;
+value + chirality sign, no $n \le 5$ restriction). The sign leg is the
+jet-order valuation parity `deltaSign_eq_nStat_parity`; the magnitude leg is
+the Wedderburn dimension. Both are substrate-derived — not fitted.
+
+**What remains open is NOT the value — it is the many-body binding MAGNITUDE.**
+The earlier "six-ansatz gate" (below) failed to derive the deuteron/light-nucleus
+magnitude deficit $r^\ast \approx 1.585$, **not** the per-partition value. This is
+a category distinction the old framing conflated:
+
+- **Proved (value):** $\Delta_\lambda = (-1)^{n(\lambda)}\dim V_\lambda$.
+- **Open (magnitude):** the additive **extensive** term. A per-block weight
+  $\Delta_\lambda$ **cannot** supply it — the trace binding $B = E_0\,\Delta\mathrm{tr}_M$
+  is intensive, and no per-block weight can convert an intensive quantity into an
+  extensive one ([`docs/audits/2026-06-02-binding-intensive-vs-extensive-derivation.md`](../../../docs/audits/2026-06-02-binding-intensive-vs-extensive-derivation.md)).
+  The pairwise log-det cumulant is likewise **proved-capped** at $\rho_A \le C(A,2)$
+  while strong targets need $\rho_4 \approx 13 > 6$
+  ([`QOU.MassTheory.exchangeDet_pow_two_le_four`](../lean/QOU/MassTheory/BindingSaturationCapA4.lean);
+  [`docs/audits/2026-07-18-deltalambda-saturation-det-ceiling.md`](../../../docs/audits/2026-07-18-deltalambda-saturation-det-ceiling.md)),
+  so the missing term is **super-pairwise** (irreducibly $\ge 3$-body).
+
+### Historical: the six refuted magnitude ansätze
+
+These attempted to force the many-body magnitude into $\Delta_\lambda$; all were
+refuted on the deuteron (each supplied the wrong $r^\ast$, none touched the now-proved value):
 
 | Ansatz | Source | Refuted on |
 |--------|--------|------------|
@@ -26,35 +53,28 @@ deuteron:
 | crystal-graph naïve | KLR / Kashiwara level-0 | deuteron |
 | augmented Markov | Markov-extension ansatz | deuteron |
 
-The current direction is **Option E** (Kashiwara crystal, q-Reeb + isospin mirror — `option_e_v9.py`), with PROBE 4 cheap-pass refutation and the full-order $\theta_\lambda$ approach.
-
 ### Correctness conditions
 
 *[`rem:term6-binding-density`](#rem:term6-binding-density)
-fixes the binding sum's algebraic shape; the open piece is
-identifying the categorical realisation of $\Delta_\lambda$.*
-
-*[`conj:crystal-graph-realization`](#conj:crystal-graph-realization)
-is the conjectural input under which Option E aims to close the
-gate — its monotonicity property mirrors the cemetery-group
-emergence pattern (Section: cemetery group).*
-
-### Algorithm (current candidate — Option E v9)
-
-```
-1. Build the Kashiwara crystal for sl_{n_K} at the partition λ.
-2. Apply q-Reeb deformation and isospin mirror.
-3. Extract per-block volume + spectral data.
-4. Combine into the Δ_λ candidate.
-5. Cross-check against AME deuteron binding.
-```
+fixes the binding sum's algebraic shape. The per-partition weight is now the
+closed form $(-1)^{n(\lambda)}\dim V_\lambda$; the open piece is the separate,
+super-pairwise extensive magnitude term (see Status).*
 
 ### Witness contract
 
-*No verified witness yet — Option E v9 is candidate code, not
-production. Cross-PR coordination tracked in
+*Per-partition $\Delta_\lambda$ values (the proved closed form) are emitted to
+[`computations/delta-lambda-witness.json`](../../../computations/delta-lambda-witness.json),
+consumed by [`binding_K_direct.py`](../../../computations/binding_K_direct.py).
+The witness carries the VALUE only — the binding total additionally requires the
+$y_\lambda\,\chi^\lambda$ weighting and the separate extensive magnitude term
+(open). Cross-PR coordination:
 [`docs/coordination/2026-06-02-mba-appendix-maintenance-contract.md`](../../../docs/coordination/2026-06-02-mba-appendix-maintenance-contract.md).*
 
 ### Notes
 
-*Per AGENTS.md "$\Delta_\lambda$ gate (Track A blocker)" rule: **do not propose a seventh fit-based ansatz**. The three-calibration discipline review will reject it. Productive directions include GAP-A-3, GAP-A-4 (categorical brane-tower level selection / $\rho$ general rule) and Option E (Kashiwara crystal). Full context: [`docs/audits/2026-05-18-delta-lambda-gating-context.md`](../../../docs/audits/2026-05-18-delta-lambda-gating-context.md).*
+*Per AGENTS.md "$\Delta_\lambda$ gate" rule: the per-partition **value** is now
+proved, but **do not propose a seventh fit-based ansatz for the MAGNITUDE** — the
+three-calibration discipline review will reject it. The magnitude is a separate
+additive extensive term (super-pairwise; candidates in
+[`docs/coordination/option-e.md`](../../../docs/coordination/option-e.md)). Full
+context: [`docs/audits/2026-08-02-deltalambda-value-proved-downstream-and-additive-term.md`](../../../docs/audits/2026-08-02-deltalambda-value-proved-downstream-and-additive-term.md).*
