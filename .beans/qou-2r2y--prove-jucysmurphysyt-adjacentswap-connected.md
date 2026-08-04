@@ -1,0 +1,9 @@
+---
+# qou-2r2y
+title: Prove JucysMurphy.syt_adjacentSwap_connected
+status: todo
+type: task
+created_at: 2026-08-04T10:11:15Z
+updated_at: 2026-08-04T10:11:15Z
+---
+
