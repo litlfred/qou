@@ -48,8 +48,9 @@ export default chapter({
       label: "sec:flavor-representations",
       blocks: [
         "flavor-charge-assignments",
-        // TODO: sm-hypercharge-invariant, strand-twist-datum
-        // (from SM appendix, Phase 3 continuation)
+        // Cross-chapter references (blocks live in SM appendix):
+        // conj:sm-hypercharge-invariant — used via flavor-charge-assignments
+        // rem:strand-twist-datum — referenced as candidate Y data
       ],
     }),
 
@@ -87,8 +88,9 @@ export default chapter({
       label: "sec:color-algebra",
       blocks: [
         "color-su3-from-g2",
-        // TODO: sm-colour-stabilizer-action (from SM appendix),
-        // color-tube-coords-intro (from brings-surface)
+        // Cross-chapter references (blocks live in SM appendix):
+        // conj:sm-colour-stabilizer-action — faithfulness of SU(3) on state space
+        // TODO: color-tube-coords-intro (new block, from brings-surface)
       ],
     }),
 
