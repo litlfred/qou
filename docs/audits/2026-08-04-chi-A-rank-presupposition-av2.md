@@ -1,140 +1,170 @@
-# AV-2 verdict: $N=2$ is a reading of $\chi(A)$, not a derivation
+# AV-2 complement: where $N=2$ enters, and why the "middle ground" is a hazard
 
 **Date:** 2026-08-04
 **Branch:** `claude/eightfold-way-a2-lattice-ijoegv`
 **Bean:** `qou-w5fw` (T3f / AV-2), epic `qou-8lxd`
-**Question:** is the Ocneanu/Markov trace parameter — equivalently the rank
-$N$ of the Schur–Weyl partner — **derived** in QOU, or **chosen**?
+**Companion:** [`2026-08-04-ocneanu-trace-parameter-audit.md`](2026-08-04-ocneanu-trace-parameter-audit.md)
+(branch `claude/eightfold-tg-t3f-2026-08-04`)
 
-**Verdict: chosen.** The Euler-characteristic constraint $\chi(A) = -6$ does
-not determine $N$. It determines *one equation*; which equation depends on
-which quantum dimension $\chi(A)$ is identified with, and that identification
-presupposes the rank. Reading the same constraint at $N = 3$ is consistent,
-solvable, and lands on the golden ratio exactly.
+This was derived **independently and in parallel** with the companion audit,
+by a different route, before either was aware of the other. Per
+`AGENTS.md` §"Parallel exploration", the converging route re-scopes to
+*verify / extend* rather than re-derive. That is what this document does.
 
-This **weakens** the conclusion of
-[`2026-08-03-flavour-su3-schur-weyl-obstruction.md`](2026-08-03-flavour-su3-schur-weyl-obstruction.md)
-§3b: the $\dim V = 2$ cap is downstream of a modelling choice, not of a
-theorem.
+## 0. Independent confirmation of the core
 
-## 1. What the corpus actually says
+Both routes reached the same conclusion: **the Descartes condition does not
+force the Ocneanu/Markov trace parameter.** The fibre gauge group and the
+trace parameter are different objects, and $\chi(\mathcal A) = -6$
+constrains the first, not the second. Two independent confirmations of an
+open result are worth more than one; the core is not in dispute.
 
+The companion's evidence is **stronger than mine** on the freedom side, and
+is adopted here rather than restated:
+
+- `HnMarkovTrace.lean` declares `z` as a **class field** with only
+  `z_pos : 0 < z` — not a `def` computed from `q`. Machine-checkable
+  evidence that `z` is free.
+- `archimedean-image-table-table1-data.md` already writes HOMFLY-PT as the
+  **family** $\{P(K; q_0^{N-1}, h_q)\}_{N \ge 2}$ — the corpus itself treats
+  $N$ as a free index.
+- The mass pipeline uses $z = 1/(q^{1/2}+q^{-1/2})$, the Jones ($N=2$) point.
+
+This document contributes four things the companion does not have.
+
+## 1. The insertion point — the exact line where $N=2$ enters
+
+The companion establishes that $N$ is *free somewhere*. It does not locate
+where the framework *fixes* it. That line is in
 [`substrate-parameter-brings.md`](../../content/quantum-observable-universe/quantum-observable-universes/substrate-parameter-brings.md):
 
 > "The Euler characteristic constraint $\chi(A) = -6$ **fixes the quantum
-> dimension** $[2]_q = q + q^{-1} = -6$. Solving $q^2 + 6q + 1 = 0$ isolates
-> the categorical parameter $q = -3 + 2\sqrt 2 \approx -0.172$."
+> dimension** $[2]_q = q + q^{-1} = -6$."
 
-and [`jones-markov-trace.lean`](../../content/quantum-observable-universe/braids-and-knots/jones-markov-trace.lean)
-carries the Markov-trace **loop value** `z` as structure data.
+$\chi(A) = -6$ is a **topological integer** (Bring genus 4,
+$\chi = 2-2g$). $[N]_q$ is a **rank-dependent expression**. Setting
+$\chi(A) = [2]_q$ inserts $N=2$ by hand at exactly this point. Everything
+downstream — $q = -3+2\sqrt2$, the Jones specialisation, the $\dim V = 2$
+cap — descends from this one identification.
 
-The loop value of the Markov/Ocneanu trace *is* the quantum dimension of the
-fundamental object, and for the $\mathfrak{gl}_N$ specialisation it is
-$[N]_q$ (HOMFLY at $a = q^N$; Jones is the $N=2$ point). So the chain is
+Locating it matters: it is the single line a future derivation must either
+justify or replace.
+
+## 2. A passage that looks like a derivation and is not
+
+`substrate-parameter-brings.md` opens with two facts that appear to
+independently force $N=2$. **Neither does:**
+
+| stated | why it does not discriminate |
+|---|---|
+| $V \otimes V \cong V_1 \oplus V_0$ (two summands) | at $N=3$, $\mathbf3\otimes\mathbf3 = \mathbf6\oplus\bar{\mathbf3}$ is **also** two summands |
+| "$R$-matrix eigenvalues are $q$ and $-q^{-1}$" | two eigenvalues **is** the Hecke relation $(\sigma-q)(\sigma+q^{-1})=0$ — true for **every** $N$ |
+
+So the opening of that block reads as a derivation of rank 2 and supplies no
+rank information at all. This should be said explicitly in the paper, because
+a reader (and an agent) will take it as support.
+
+## 3. The arithmetic at $N=3$ — and the brakes on it
+
+Reading the *same* constraint at $N=3$ is consistent and solvable:
 
 $$
-  \text{genus }4\ (\text{Bring}) \;\Rightarrow\; \chi(A) = 2-2g = -6
-  \;\xrightarrow{\ \text{identify } \chi(A) = [N]_q\ }\;
-  q \;\Rightarrow\; \text{trace} \Rightarrow \text{invariant}.
+  [3]_q = q^2+1+q^{-2} = -6
+  \;\Longrightarrow\; q^2+q^{-2} = -7
+  \;\Longrightarrow\; (q+q^{-1})^2 = -5
+  \;\Longrightarrow\; q = \pm i\,\varphi^{\pm2}.
 $$
 
-**$\chi(A) = -6$ is a topological integer. $[N]_q$ is a rank-dependent
-expression. Writing $\chi(A) = [2]_q$ inserts $N = 2$ by hand.** Nothing
-upstream of that line selects $N$.
-
-## 2. The same constraint at $N = 3$
-
-$$
-  [3]_q = q^2 + 1 + q^{-2} = -6
-  \;\Longrightarrow\; q^2 + q^{-2} = -7
-  \;\Longrightarrow\; u^2 = -5, \quad u := q + q^{-1}.
-$$
-
-So $u = \pm i\sqrt 5$ and $q^2 - uq + 1 = 0$ gives
-
-$$
-  q \;=\; \pm i\,\frac{3 \pm \sqrt 5}{2}
-  \;=\; \pm i\,\varphi^{\pm 2},
-  \qquad \varphi = \tfrac{1+\sqrt5}{2}.
-$$
-
-Verified exactly: $|q| \in \{2.618034, 0.381966\} = \{\varphi^2,
-\varphi^{-2}\}$, with $[3]_q = -6 + 0i$ in every case.
-
-Side by side:
+Verified exactly: $|q| \in \{2.618034,\, 0.381966\} = \{\varphi^2,
+\varphi^{-2}\}$, $[3]_q = -6 + 0i$ at all four roots.
 
 | reading | $q$ | character |
 |---|---|---|
-| $\chi(A) = [2]_q$ (corpus) | $-3+2\sqrt2 = -(\sqrt2-1)^2 \approx -0.1716$ | **silver** ratio, real |
-| $\chi(A) = [3]_q$ | $\pm i\,\varphi^{\pm2}$, $\;\lvert q\rvert = \varphi^{\pm2}$ | **golden** ratio, purely imaginary |
+| $\chi(A) = [2]_q$ (corpus) | $-3+2\sqrt2 = -(\sqrt2-1)^2$ | **silver**, real |
+| $\chi(A) = [3]_q$ | $\pm i\varphi^{\pm2}$ | **golden**, imaginary |
 
-## 3. Why this is interesting — and where to stop
+QOU's substrate is icosahedral (Bring, $S_5/A_5$, golden ratio throughout);
+the $N=2$ reading returns a silver-ratio number appearing nowhere else in
+the corpus.
 
-**The interesting part.** QOU's substrate is *icosahedral*: Bring's curve,
-$\mathrm{Aut} = S_5$, $A_5$, and golden-ratio structure throughout (e.g.
-[`IcosahedralCharacterGoldenRatio.lean`](../../content/quantum-observable-universe/lean/QOU/BraidsAndKnots/IcosahedralCharacterGoldenRatio.lean)).
-The $N = 3$ reading returns $\varphi$ **exactly**; the $N = 2$ reading returns
-a silver-ratio number with no other appearance in the corpus. And there is a
-*candidate mechanism* rather than bare coincidence: $\chi = -6 \Leftrightarrow$
-genus 4 $\Leftrightarrow$ Bring $\Rightarrow A_5 \Rightarrow \varphi$, so both
-sides could trace to the same genus-4 structure.
+**Three brakes, applied to my own finding:**
 
-**Where to stop — three disciplines, applied to my own finding.**
-
-1. **$\varphi$ appearing is not evidence.** It arises because the discriminant
-   is $-5$, which arises because $\chi = -6$. Nothing independent *predicted*
-   $\varphi$ before the calculation. Until something does, this is a
-   **signature to test**, not a result. (At $\chi = -4$ the same computation
-   would give $u = i\sqrt3$; the output tracks the input.)
-2. **Do not reuse the divisibility condition as support.**
+1. **$\varphi$ is not evidence.** It follows from the discriminant being
+   $-5$, which follows from $\chi=-6$. Nothing independent predicted it — at
+   $\chi=-4$ the same computation returns $i\sqrt3$. The output tracks the
+   input. This is a *signature to test*, not a result.
+2. **Do not use the $n \mid 6$ divisibility of
    [`skein-resolution-obstruction.md`](../../content/quantum-observable-universe/braids-and-knots/skein-resolution-obstruction.md)
-   says the obstruction vanishes for $n \mid 6$, so $n \in \{1,2,3,6\}$ and
-   $N=3$ is *not excluded* there. But that $n$ is the **Kummer / root-of-unity
-   torsion modulus**, and it is **not proved equal to the Schur–Weyl rank**.
-   Treating "$3 \mid 6$" as licensing $N=3$ would be the third
-   group-name/index homonym error of this line of work — after Gemini's
-   `1803.04009` SU(3) and the corpus's Elliott SU(3). Recorded so nobody
-   makes it.
-3. **Purely-imaginary $q$ is fibre-level only.** Per `AGENTS.md`
-   §"Im(q) at fibre vs observable level", $\mathrm{Im}(q)$ is unconstrained on
-   the fibre but the archimedean evaluation needs $\mathrm{Im}(q_0)=0$. The
-   corpus already separates these — $q = -3+2\sqrt2$ is called the
-   *categorical* parameter, distinct from the physical $q_0 \approx 1.1099$.
-   So $q = i\varphi^2$ is *permitted* at fibre level, but **no bridge to the
-   observable level exists**, and none is claimed here.
+   as support.** That $n$ is the Kummer / root-of-unity torsion modulus and
+   is **not proved equal to the Schur–Weyl rank**. Treating "$3\mid6$" as
+   licensing $N=3$ would be the third index/group-name homonym error in this
+   line of work, after Gemini's `1803.04009` SU(3) and the corpus's Elliott
+   SU(3).
+3. **Purely-imaginary $q$ is fibre-level only.** No bridge to the observable
+   level ($\mathrm{Im}(q_0)=0$) exists and none is claimed.
 
-**Scope.** This is a **scope-(a)** finding: it shows the $N=2$ cap is
-*not established*, not that $N=3$ is correct. Nothing here is wired to any
-production compute.
+## 4. The companion's $\dim V_{(2,1)}$ lock — verified, and re-scoped
 
-## 4. What changes
+The companion's §3c contributes a constraint this route did not find: the
+mass pipeline acts by $2\times2$ operators on $V_{(2,1)}$, and
 
-- [`2026-08-03-flavour-su3-schur-weyl-obstruction.md`](2026-08-03-flavour-su3-schur-weyl-obstruction.md)
-  §3b said the single-fibre tower is "hard-capped at $N=2$" by a *derivation*.
-  Corrected: it is capped by an **identification**, which is revisable. §3a
-  (Elliott homonym) and §3c (icosahedral $T_1$ fails the $\mathrm{Sym}^2$
-  gate) are untouched — those remain scope-(b).
-- The forecast changes: flavour/colour $\mathrm{SU}(3)$ no longer needs an
-  *inter-universe* construction as a matter of necessity. It needs the rank
-  question settled, which is a much smaller and more tractable target.
+$$
+  \dim V_{(2,1)}^{\mathfrak{gl}_2} = 2,
+  \qquad \dim V_{(2,1)}^{\mathfrak{gl}_3} = 8,
+  \qquad \dim V_{(2,1)}^{\mathfrak{gl}_4} = 20 .
+$$
 
-## 5. Next
+**Verified here independently** (hook-content formula, exact integers). The
+claim stands: moving to $N=3$ does not re-weight the same eigenvalues, it
+changes the representation dimension and the operator structure.
 
-The decisive follow-up is **not** more algebra on $\chi(A)$ — it is to find
-what, if anything, independently selects the rank. Two concrete tests:
+**But the companion's reading of this as a "soft constraint on $N=2$"
+over-reads it.** HOMFLY-PT is *one* object and $N$ is an evaluation index —
+the corpus's own $\{P(K;q_0^{N-1},h_q)\}_{N\ge2}$ framing. So the two
+statements do not compete:
 
-1. **Does $V\otimes V \cong V_1 \oplus V_0$ force $N=2$?**
-   `substrate-parameter-brings.md` opens with that decomposition, and a
-   two-summand $V^{\otimes2}$ is the $\mathfrak{sl}_2$ signature ($N=3$ would
-   give $\mathbf 3\otimes\mathbf 3 = \mathbf 6\oplus\bar{\mathbf 3}$, also two
-   summands — so **this does not discriminate**, and the $R$-matrix having two
-   eigenvalues $q, -q^{-1}$ is the *Hecke* relation, true for every $N$).
-   Worth stating explicitly, because it looks like a derivation and is not.
-2. **Is the loop value independently measurable in the corpus?** If any
-   computed Markov-trace normalisation (Borromean $F_{\mathrm{Bor}}$, the
-   $[3]_q!$ factor, $\mathrm{tr}_M$ witnesses) pins $z$ numerically without
-   assuming $N$, that pins the rank. This is a witness-level check, not a
-   derivation, and it is the fastest way to close the question either way.
+> $N=2$ and $N=3$ are **two evaluations of one trace**, not two rival claims
+> about one evaluation. The mass pipeline reads at $N=2$; a
+> $\mathfrak{gl}_3$ multiplet structure would read at $N=3$. Nothing forces
+> a choice between them.
 
-Test 1 is a paper-level clarification; test 2 is a compute audit. Both are
-cheap relative to what they settle.
+That dissolves the apparent conflict — and immediately raises a worse
+problem, which is the real contribution of this section.
+
+## 5. The hazard: per-observable $N$ is an extra free parameter per observable
+
+If each observable is permitted to select its own $N$, the framework gains
+**one free integer per observable** and becomes correspondingly less
+falsifiable. That is strictly worse than the current situation, in which
+$N=2$ is at least uniform. Under the three-calibration discipline and
+`AGENTS.md` §"Axiomatization is NOT a Proof", "read it at whichever $N$
+works" is an **anti-fit violation**, not a resolution.
+
+So the middle ground the companion proposes (§3c, "$N$ is constrained
+differently in different contexts") is **admissible only with a rule**:
+
+> **Gate.** A per-context $N$ is acceptable only if something *independent of
+> the observable being predicted* fixes $N$ in that context. Absent such a
+> rule, $N$ must stay uniform, and $N=2$ stands by default — not because it
+> is derived, but because varying it is unfalsifiable.
+
+This is the honest state, and it is narrower than either "derived" or
+"chosen".
+
+## 6. Net verdict and next step
+
+- **Not derived.** The $\chi(A) = [2]_q$ identification (§1) inserts the
+  rank; the surrounding text (§2) does not supply it. Scope-(a).
+- **Not freely available either.** The $\dim V_{(2,1)}$ structure (§4) means
+  $N=3$ is a *different evaluation*, not a drop-in — and §5 forbids picking
+  $N$ per observable without an independent rule.
+- **Genuinely open**, agreeing with the companion, with the disagreement
+  confined to §4–§5: the lock is not a soft constraint on $N$, it is a
+  demand for a *selection rule*.
+
+**Next step** (bean `qou-mcwm`, T3h): the decisive test is not more algebra
+on $\chi(A)$ — it is whether the Markov loop value $z$ is pinned numerically
+anywhere in the corpus **without assuming $N$** ($F_{\mathrm{Bor}}$, the
+$[3]_q!$ factor, `tr_M` witnesses). If some witness fixes $z$ independently,
+that pins the rank and closes the question. That is a compute audit, not a
+derivation, and it is the cheapest remaining move.
