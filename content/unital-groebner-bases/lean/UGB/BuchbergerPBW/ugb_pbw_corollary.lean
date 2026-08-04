@@ -84,7 +84,7 @@ theorem ugb_pbw_corollary (qs : QSerreRelations k) :
     refine ⟨?_, ?_⟩
     · -- Existence of the normal form (termination half). Remaining step.
       -- Ref: [manuscript] unital-groebner-bases — existence of PBW normal form
-      sorry
+      exact normal_form_exists degLexOrder (qSerreRewritingSystem k qs) (qSerre_is_gs_basis k qs) f
     · -- Uniqueness against the q-Serre GS basis.
       intro nf₁ nf₂ h₁ h₂
       exact normal_form_unique degLexOrder (qSerreRewritingSystem k qs)
