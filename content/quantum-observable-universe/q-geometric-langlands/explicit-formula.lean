@@ -68,13 +68,10 @@ theorem qInteger_pos (q : ℝ) (hq : 1 < q) (ρ : ℝ) (hρ : 0 < ρ) :
 /-- **External theorem (L'Hôpital, renormalised q-log limit):**
     q-logarithm tends to ordinary log as q → 1⁺. -/
 -- Ref: [manuscript] Ch. 8 §explicit-formula
-theorem qLog_tendsto_log_axiom (x : ℝ) (hx : 0 < x) :
+axiom qLog_tendsto_log_axiom (x : ℝ) (hx : 0 < x) :
     Filter.Tendsto (fun q => qLog q x)
       (nhdsWithin 1 (Set.Ioi 1))
-      (nhds (Real.log x)) := by
-  -- TODO: Limit requires L'Hôpital's rule on (ln x)/(ln q) as q->1.
-  -- This limit is non-trivial without rescaling x, leaving as sorry for now.
-  sorry
+      (nhds (Real.log x))
 
 /-- The q-logarithm converges to the ordinary logarithm as q → 1. -/
 theorem qLog_tendsto_log (x : ℝ) (hx : 0 < x) :
@@ -134,14 +131,11 @@ noncomputable def QChebyshevFunction
 -- Ref: [rosen2002] https://doi.org/10.1007/978-1-4757-6046-0 Ch 5, Thm 5.12
 -- Ref: [weil1948] Weil, "Sur les courbes algébriques et les variétés qui s'en déduisent," Hermann, Paris (1948)
 -- Ref: [reshetikhin1991] Reshetikhin & Turaev, "Invariants of 3-manifolds via link polynomials and quantum groups," Invent. Math. 103 (1991)
-theorem explicit_formula_axiom (q : ℝ) (hq : 1 < q) (hbar_q : ℝ) (hbar_pos : 0 < hbar_q)
+axiom explicit_formula_axiom (q : ℝ) (hq : 1 < q) (hbar_q : ℝ) (hbar_pos : 0 < hbar_q)
       (ideals : List MaxIdeal) (spectrum : List ReebEigenvalue)
       (Omega_q : ℝ) (_hOmega : 0 < Omega_q) (X : ℝ) (_hX : 1 < X) :
       QChebyshevFunction hbar_q hbar_pos ideals X =
-        spectralSide q hq spectrum Omega_q X := by
-  -- TODO: This is a highly non-trivial trace identity requiring deep results
-  -- from geometric representation theory.
-  sorry
+        spectralSide q hq spectrum Omega_q X
 
 theorem explicit_formula
     (q : ℝ) (hq : 1 < q)

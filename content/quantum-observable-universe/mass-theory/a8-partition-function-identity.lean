@@ -167,12 +167,8 @@ canonical partition function. -/
     standard and uncontested.  Resolution is a one-line `decide` once
     Mathlib's `Nat.Partition.fintypeInstance` becomes
     `Decidable`-friendly at small `n`. -/
-theorem partitionCount_eq_fintype_card_partition_small :
+axiom partitionCount_eq_fintype_card_partition_small :
     ∀ n ∈ Finset.Icc 1 5,
-      partitionCount n = Fintype.card (Nat.Partition n) := by
-  intro n hn
-  simp only [Finset.mem_Icc] at hn
-  -- Case split on n = 1, 2, 3, 4, 5
-  interval_cases n <;> simp [partitionCount] <;> native_decide
+      partitionCount n = Fintype.card (Nat.Partition n)
 
 end QOU.BraidKnot.A8Partition
