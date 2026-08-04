@@ -96,7 +96,7 @@ object: **how efficiently rationals approach a real**.
 
 ## Specialisation to QOU
 
-The substrate parameter $q_0$ satisfies a recursive equation derived from the categorical structure (via fibre-functor rigidity, Tannaka-Krein, etc.). The conjecture predicts:
+The substrate parameter $q_0$ is the observed substrate value at our location; it is extracted by a canonical categorical procedure (via fibre-functor rigidity, Tannaka-Krein, etc.) but its numerical value is empirical. The conjecture predicts:
 
 - if $q_0$ is algebraic, its birthday *trajectory* $b_{q_0}(n)$
   is logarithmic (bounded continued-fraction partial quotients, per

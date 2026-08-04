@@ -56,4 +56,4 @@ It structuralizes the framework's calibrations.
 
 ## Significance
 
-The framework aims to reduce the Standard Model's 19 free parameters to a single unit choice, a cohomologically-derived $q_0$, and a derived hadronic residual.
+The framework aims to reduce the Standard Model's 19 free parameters to a single unit choice, a categorically extracted $q_0$, and a derived hadronic residual.
