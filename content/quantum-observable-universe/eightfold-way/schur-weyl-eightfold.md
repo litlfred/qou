@@ -1,0 +1,84 @@
+*The eightfold-way multiplets --- decuplet ($\mathbf{10}$), octet
+($\mathbf{8}$), and singlet ($\mathbf{1}$) --- are the quantum
+Schur--Weyl partners of the Hecke algebra $H_3(q)$ acting on
+$V^{\otimes 3}$.*
+
+Quantum Schur--Weyl duality (Jimbo \cite{jimbo1986}) states that
+$\mathcal{U}_q(\mathfrak{gl}_N)$ and $H_n(q)$ are mutual centralizers
+on $V^{\otimes n}$:
+$$
+  V^{\otimes n}
+  \cong \bigoplus_{\substack{\lambda \vdash n \\ \ell(\lambda) \leq N}}
+    V_\lambda^{\mathfrak{gl}_N} \otimes S^\lambda_{H_n(q)},
+$$
+where $\lambda$ ranges over partitions of $n$ with at most $N$ rows,
+$V_\lambda^{\mathfrak{gl}_N}$ is the irreducible
+$\mathcal{U}_q(\mathfrak{gl}_N)$-module labelled by $\lambda$, and
+$S^\lambda_{H_n(q)}$ is the irreducible Hecke module (Specht module)
+labelled by the same partition.
+
+At $n = 3$ (three-strand braiding) and $N = 3$ (three-dimensional
+fundamental representation), the decomposition reads:
+$$
+  V^{\otimes 3}
+  \cong
+  \underbrace{V_{(3)}}_{\dim = 10}
+    \otimes S^{(3)}
+  \;\oplus\;
+  \underbrace{V_{(2,1)}}_{\dim = 8}
+    \otimes S^{(2,1)}
+  \;\oplus\;
+  \underbrace{V_{(1,1,1)}}_{\dim = 1}
+    \otimes S^{(1,1,1)}.
+$$
+
+The dimensions and multiplicities are:
+
+\begin{center}
+\begin{tabular}{l c c c}
+\hline
+$\lambda \vdash 3$ & $\dim V_\lambda^{\mathfrak{gl}_3}$ &
+  $\dim S^\lambda_{H_3}$ & Name \\
+\hline
+$(3)$     & $10$ (decuplet) & $1$ & symmetric \\
+$(2,1)$   & $8$ (octet)     & $2$ & mixed \\
+$(1^3)$   & $1$ (singlet)   & $1$ & antisymmetric \\
+\hline
+\end{tabular}
+\end{center}
+
+The total is $10 \cdot 1 + 8 \cdot 2 + 1 \cdot 1 = 27 = 3^3$, as
+required.  The Hecke block dimensions $(1, 2, 1)$ are the
+\emph{multiplicities} of the flavour irreps, not the irreps themselves.
+
+**The $N = 3$ question.**
+The single-fibre tower of
+Chapters~\ref{chap:braids-and-knots}--\ref{chap:brings-surface} has
+$\dim V = 2$ (the Descartes condition $\chi(\mathcal{A}) = -6$ forces
+the gauge group to be a quantum form of $\mathrm{SU}(2)$).  The
+decomposition at $N = 2$ is:
+$$
+  V^{\otimes 3}
+  \cong V_{(3)} \otimes S^{(3)}
+  \;\oplus\;
+  V_{(2,1)} \otimes S^{(2,1)},
+  \qquad
+  4 \cdot 1 + 2 \cdot 2 = 8 = 2^3.
+$$
+The antisymmetric partition $(1^3)$ is \emph{absent} (three rows exceed
+$N = 2$).  No choice of $q$ restores it: the row cap is
+$\ell(\lambda) \leq \dim V$, which the Descartes condition fixes at $2$.
+
+Therefore, realising the full eightfold way requires $N = 3$.  Within
+QOU, this $N = 3$ cannot arise from a single fibre.  The remaining
+construction directions are:
+\begin{enumerate}
+\item \textbf{Multi-fibre groupoid:} inequivalent fibre objects
+  whose interaction space is three-dimensional (T3b).
+\item \textbf{Octonionic $G_2$ stabilizer:} the Günaydin--Gürsey
+  $\mathbf{7} = \mathbf{1} \oplus \mathbf{3} \oplus \bar{\mathbf{3}}$
+  provides a non-self-dual triple from $\mathrm{SU}(3) \subset G_2$
+  (Proposition~\ref{prop:color-su3-from-g2}).
+\end{enumerate}
+The second route has passed the $\mathrm{Sym}^2$ gate.  Whether it
+yields \emph{flavour} $\mathrm{SU}(3)$ (not just colour) remains open.

@@ -1,11 +1,11 @@
 ---
 # qou-d9wj
 title: 'T1: Lean Weyl-invariance of the q-deformation (A_2 root datum q-independent)'
-status: in-progress
+status: completed
 type: task
 priority: high
 created_at: 2026-08-03T23:27:16Z
-updated_at: 2026-08-03T23:40:11Z
+updated_at: 2026-08-04T09:51:27Z
 parent: qou-8lxd
 ---
 

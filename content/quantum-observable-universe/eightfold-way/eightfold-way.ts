@@ -47,9 +47,9 @@ export default chapter({
       title: "Flavor representations and charge assignments",
       label: "sec:flavor-representations",
       blocks: [
-        // Stub — blocks to be authored in Phase 3.
-        // Will also receive sm-hypercharge-invariant,
-        // strand-twist-datum from SM appendix.
+        "flavor-charge-assignments",
+        // TODO: sm-hypercharge-invariant, strand-twist-datum
+        // (from SM appendix, Phase 3 continuation)
       ],
     }),
 
@@ -60,7 +60,8 @@ export default chapter({
       title: "The meson octet via tensor decomposition",
       label: "sec:meson-octet",
       blocks: [
-        // Stub — blocks to be authored in Phase 3.
+        "meson-octet-decomposition",
+        // TODO: meson-mass-splitting (q-dependent dynamics)
       ],
     }),
 
@@ -73,7 +74,8 @@ export default chapter({
       title: "Baryon multiplets and the Borromean decuplet",
       label: "sec:baryon-multiplets",
       blocks: [
-        // Stub — blocks to be authored in Phase 3.
+        "schur-weyl-eightfold",
+        // TODO: borromean-decuplet-derivation (Phase 3)
       ],
     }),
 
@@ -84,9 +86,9 @@ export default chapter({
       title: "Color algebra from octonionic stabilization",
       label: "sec:color-algebra",
       blocks: [
-        // Stub — blocks to be authored in Phase 4.
-        // Will also receive sm-colour-stabilizer-action from SM appendix,
-        // color-tube-coords-intro from brings-surface.
+        "color-su3-from-g2",
+        // TODO: sm-colour-stabilizer-action (from SM appendix),
+        // color-tube-coords-intro (from brings-surface)
       ],
     }),
 
@@ -98,8 +100,8 @@ export default chapter({
       title: "$q$-Deformation and the hyperbolic weight lattice",
       label: "sec:q-deformed-eightfold",
       blocks: [
-        // Stub — blocks to be authored in Phase 4.
-        // Will also receive thurston-relaxation from brings-surface.
+        "q-deformation-weight-lattice",
+        // TODO: thurston-relaxation (from brings-surface)
       ],
     }),
 
@@ -110,9 +112,7 @@ export default chapter({
       title: "The knot–particle–force dictionary",
       label: "sec:knot-particle-force-dictionary",
       blocks: [
-        // Stub — blocks to be authored in Phase 5.
-        // Will also receive particle-nf-table, gluon-model-comparison
-        // from appendix-knot-ops-archimedean.
+        "dictionary-flavor-layer",
       ],
     }),
 
@@ -123,7 +123,7 @@ export default chapter({
       title: "Open problems in flavor and gauge structure",
       label: "sec:eightfold-open-problems",
       blocks: [
-        // Stub — blocks to be authored in Phase 5.
+        "eightfold-open-problems",
       ],
     }),
   ],

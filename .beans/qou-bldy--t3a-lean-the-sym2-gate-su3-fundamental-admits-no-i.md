@@ -1,11 +1,11 @@
 ---
 # qou-bldy
 title: 'T3a: Lean the Sym^2 gate -- SU(3) fundamental admits no invariant symmetric form'
-status: todo
+status: completed
 type: task
 priority: critical
 created_at: 2026-08-03T23:54:31Z
-updated_at: 2026-08-03T23:54:31Z
+updated_at: 2026-08-04T09:51:27Z
 parent: qou-8lxd
 ---
 
