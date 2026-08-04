@@ -35,10 +35,10 @@ class GenerationBranchingFunctor (H5 H3 : Type) where
     This factor must algebraically compensate for the 210 ppb mismatch 
     (the H1 substrate repin shift). -/
 structure GapA4MuonMass (q0 : ℝ) where
-  bare_mass : ℝ
+  topological_mass : ℝ
   wedderburn_correction : ℝ
   /-- The true mass is the product of the geometric scalar and the categorical trace correction -/
-  true_mass : ℝ := bare_mass * wedderburn_correction
+  true_mass : ℝ := topological_mass * wedderburn_correction
 
 /-- The target constraint: the Wedderburn correction must resolve the tension
     by shifting the prediction by exactly ~1.000000210.
