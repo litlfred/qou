@@ -112,9 +112,7 @@ export default chapter({
       title: "The knot–particle–force dictionary",
       label: "sec:knot-particle-force-dictionary",
       blocks: [
-        // Stub — blocks to be authored in Phase 5.
-        // Will also receive particle-nf-table, gluon-model-comparison
-        // from appendix-knot-ops-archimedean.
+        "dictionary-flavor-layer",
       ],
     }),
 
