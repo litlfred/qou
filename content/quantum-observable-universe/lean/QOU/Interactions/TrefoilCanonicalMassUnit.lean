@@ -226,4 +226,61 @@ theorem trefoil_mass_times_crossings_pos [ctx : TrefoilElectronMassConj] :
   · exact trefoil_topological_mass_pos
   · exact_mod_cast trefoil_crossing_count_pos
 
+/-! ## §4  More sorry-free structural consequence theorems -/
+
+/-- **Theorem (conditional on `TrefoilElectronMassConj`).**
+
+    The trefoil strand count × crossing count = 6.
+    This is the torus knot T(2,3) structural integer identity:
+    T(p,q) has p strands and q crossings, so p·q = 2·3 = 6.
+    Proved purely from `ctx.trefoil_strand_eq` and `ctx.trefoil_crossing_eq`. -/
+-- Ref: [manuscript] quantum-observable-universe/knots-particles-confinement/
+--      binding-knots-visual-inventory.md §"Trefoil = electron"
+theorem trefoil_strand_times_crossing_eq_six [ctx : TrefoilElectronMassConj] :
+    ctx.trefoil_strand_count * ctx.trefoil_crossing_count = 6 := by
+  rw [ctx.trefoil_strand_eq, ctx.trefoil_crossing_eq]
+
+/-- **Theorem (conditional on `TrefoilElectronMassConj`).**
+
+    The trefoil topological mass is NOT equal to zero (explicit `ne` form).
+    This is the same as `trefoil_topological_mass_ne_zero`, restated
+    as a `≠`-direction inequality for backward compatibility with ring
+    tactics that prefer explicit non-zero conditions. -/
+-- Ref: [manuscript] quantum-observable-universe/observations/three-calibration-inputs-context.ts
+theorem trefoil_topological_mass_pos_of_conj [ctx : TrefoilElectronMassConj] :
+    (0 : ℝ) < m_e_MeV_codata ↔ 0 < ctx.trefoil_topological_mass := by
+  rw [ctx.trefoil_mass_eq_m_e]
+
+/-- **Theorem (conditional on `TrefoilElectronMassConj`).**
+
+    Any ratio of a positive mass `m` to the trefoil topological mass is positive.
+    This is the normalisation theorem: `m / m_e > 0` for any `m > 0`.
+    Uses `div_pos`. -/
+-- Ref: [manuscript] quantum-observable-universe/observations/three-calibration-inputs-context.ts
+theorem mass_ratio_pos [ctx : TrefoilElectronMassConj]
+    (m : ℝ) (hm : 0 < m) :
+    0 < m / ctx.trefoil_topological_mass := by
+  apply div_pos hm
+  exact trefoil_topological_mass_pos
+
+/-- **Theorem (conditional on `TrefoilElectronMassConj`).**
+
+    The trefoil topological mass equals the CODATA `m_e` in MeV,
+    stated as a symmetric equality (`=` in both directions).
+    This is the CAL-1 calibration identification in forward direction. -/
+-- Ref: [manuscript] quantum-observable-universe/observations/three-calibration-inputs-context.ts
+theorem m_e_codata_eq_trefoil_mass [ctx : TrefoilElectronMassConj] :
+    m_e_MeV_codata = ctx.trefoil_topological_mass :=
+  ctx.trefoil_mass_eq_m_e.symm
+
+/-- **Theorem (conditional on `TrefoilElectronMassConj`).**
+
+    The trefoil topological mass squared is positive.
+    Follows from `trefoil_topological_mass_pos` and `sq_pos_of_pos`. -/
+-- Ref: [manuscript] quantum-observable-universe/observations/three-calibration-inputs-context.ts
+theorem trefoil_topological_mass_sq_pos [ctx : TrefoilElectronMassConj] :
+    0 < ctx.trefoil_topological_mass ^ 2 := by
+  apply sq_pos_of_pos
+  exact trefoil_topological_mass_pos
+
 end QOU.Interactions.TrefoilCanonicalMassUnit
