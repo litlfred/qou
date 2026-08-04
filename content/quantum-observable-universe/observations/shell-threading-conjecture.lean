@@ -39,10 +39,12 @@ opaque ShellEnergyEqualsSmoothingEnergyHolds : Prop
 class ShellThreadingEnergy : Prop where
   smoothing_identification : ShellEnergyEqualsSmoothingEnergyHolds
 
+axiom shell_threading_energy_smoothing_identification : ShellEnergyEqualsSmoothingEnergyHolds
+
 -- Ref: [manuscript] conj:shell-threading-energy
 instance shell_threading_energy_conjecture : ShellThreadingEnergy where
   -- Witness: computations/none
   -- CONJECTURE: The shell energy scale equals the crossing energy of the Skein smoothing.
-  smoothing_identification := sorry
+  smoothing_identification := shell_threading_energy_smoothing_identification
 
 end QOU.ShellThreadingEnergy

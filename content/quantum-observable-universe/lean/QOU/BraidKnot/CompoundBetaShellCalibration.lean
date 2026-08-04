@@ -54,7 +54,7 @@ end CompoundBetaShellCalibration
     `E0_eq` is `rfl` — the "no fourth calibration" property is structural, not
     posited. (The numerical value of `𝔔_β` itself is fixed by the β-decay
     Q-value compute; that is a producer-side fact, orthogonal to this identity.) -/
-def ofCalibration (m_e muRatio Qbeta : ℝ) :
+def CompoundBetaShellCalibration.ofCalibration (m_e muRatio Qbeta : ℝ) :
     CompoundBetaShellCalibration where
   H0 := m_e
   H1 := muRatio
@@ -63,7 +63,7 @@ def ofCalibration (m_e muRatio Qbeta : ℝ) :
   E0_eq := rfl
 
 /-- In a `ofCalibration` record the shell scale is definitionally the H² input. -/
-theorem ofCalibration_E0
+theorem CompoundBetaShellCalibration.ofCalibration_E0
     (m_e muRatio Qbeta : ℝ) :
     (CompoundBetaShellCalibration.ofCalibration m_e muRatio Qbeta).E0 = Qbeta := rfl
 
