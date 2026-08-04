@@ -20,9 +20,16 @@ construction of this chapter, each stated with a falsifiable test.
   hypercharge $Y$ is not: the writhe map is falsified as a $Y$
   assignment (proton and neutron share $Y = +1$ while their writhes
   differ).  \emph{Open:} identify a second crossing invariant
-  independent of the writhe.  Candidate: ribbon-framing twist.
-  Battery: Gell-Mann--Nishijima consistency + first-generation
-  $\mathbb{Z}_6$ spectrum.
+  independent of the writhe.  Candidate: ribbon-framing twist
+  (Definition~\ref{def:strand-twist-datum}).
+  Battery (exploratory, not wired): of $10{,}000$ helon-style
+  assignments, only $4$ survive the spectrum + nucleon-GMN battery;
+  the $u$-quark twist multiset $\{0,1,1\}$ and the electron twist
+  $\{-1,-1,-1\}$ are uniquely determined
+  (\texttt{strand-twist-y-battery.witness.json}).
+  The derivation gap: whether these twist multisets are forced by
+  the categorical braid words (not just consistent with them) is
+  the open content of the hypercharge conjecture.
 
 \item \textbf{Continuous $G_2$ completion.}
   The discrete skeleton of $\mathrm{SU}(3) \subset G_2 =
