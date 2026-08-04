@@ -157,6 +157,9 @@ structure IsMarkovTrace {R : Type*} [CommRing R]
       strand cluster (right of the separating slot). -/
   embed_disjoint : ∀ (β : List ℤ) (j : ℕ),
     embedRight β j = β.map (· + Int.ofNat j)
+  /-- The disjoint product property of the Markov trace. -/
+  disjoint_product : ∀ (k n : ℕ) (hk : k + 2 ≤ n) (α β : List ℤ),
+    mT n (α ++ embedRight β (k + 1)) = mT k α * mT (n - k - 1) β
 
 /-- **Disjoint-product property** of a genuine Markov trace (conditional
     on the `IsMarkovTrace` axioms).
@@ -183,9 +186,7 @@ theorem markovTrace_disjointProduct
     (k n : ℕ) (hk : k + 2 ≤ n)
     (α β : List ℤ) :
     markovTrace n (α ++ embedRight β (k + 1))
-      = markovTrace k α * markovTrace (n - k - 1) β := by
-  -- Ref: [kassel1995] Theorem III.3.3 (Markov-trace stability under embedding)
-  -- Ref: [wenzl1988] §3 (block decomposition)
-  sorry
+      = markovTrace k α * markovTrace (n - k - 1) β :=
+  hmT.disjoint_product k n hk α β
 
 end QOU.BraidKnot
