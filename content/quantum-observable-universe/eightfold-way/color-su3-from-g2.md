@@ -47,7 +47,7 @@ corpus.
 \item $\mathrm{PSL}(2,7)$ lives at genus $3$ (Klein quartic), while
   QOU's substrate is genus $4$ (Bring surface, $S_5$, icosahedral).
   Two routes connect them.  First, the $S_4$ bridge: $S_4$ (order $24$)
-  is a maximal subgroup of \\emph{both} $S_5$ (point-stabiliser, index
+  is a maximal subgroup of \emph{both} $S_5$ (point-stabiliser, index
   $5$) and $\mathrm{PSL}(2,7)$ (Fano point-stabiliser, index $7$);
   pinching an $S_4$-invariant $1$-cycle on the genus-$4$ Bring surface
   yields a nodal genus-$3$ curve inheriting $S_4$, which can enhance to
@@ -56,6 +56,14 @@ corpus.
   lattice level.  $\mathrm{PSL}(2,7)$ itself embeds as a finite subgroup
   of $\mathrm{SU}(3)$ (the Blichfeldt group of order $168$), giving a
   direct tie from the Fano-plane symmetry to color gauge structure.
+  The irreducible representations of $\mathrm{PSL}(2,7)$ have dimensions
+  $\{1, 3, \bar{3}, 6, 7, 8\}$ (check: $1+9+9+36+49+64 = 168$);
+  the $\mathbf{3}$ and $\bar{\mathbf{3}}$ are the same as the
+  fundamental and anti-fundamental of the Blichfeldt $\mathrm{SU}(3)$
+  embedding, confirming the color triplet/antitriplet structure.
+  The $\mathbf{7}$ acts on $\mathrm{Im}(\mathbb{O})$, and the
+  $\mathbf{8}$ is the adjoint representation of $\mathrm{SU}(3)$
+  (the gluon octet).
   The continuous $G_2$ completion --- specifically the coset
   $S^6 = G_2/\mathrm{SU}(3)$ --- is a Mathlib gap (no
   \texttt{Octonion}, no $G_2$ Lie group), not a structural obstruction.
