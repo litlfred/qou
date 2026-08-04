@@ -106,10 +106,6 @@ import QOU.MassTheory.A4PrecisionOrderSeparation
 import QOU.MassTheory.A3UnitsConsistency
 import QOU.MassTheory.BindingWeightMarkovPinning
 import QOU.MassTheory.CKnotNonUniversal
--- Radial Vol·ρ binding-handle mirror test (qou-0g4z front 1): the ρ=tr_M radial ansatz
--- (C_knot=Vol·ρ/ℏ_q² with Vol(T)=Vol(³He)) is refuted in direction — C_knot(T)/C_knot(³He)>1
--- but tr_M(T)/tr_M(³He)<1. scope-(a). Sorry-free.
-import QOU.MassTheory.RadialVolRhoMirrorTest
 import QOU.Mass.MassVolDensity
 import QOU.Mass.MixedMultibondMuBarIntegrality
 import QOU.Mass.BindingRecurrenceSpectral
@@ -591,14 +587,7 @@ import QOU.MassTheory.BrunnianDeficitLeadingOrderDerived
 -- is surjective onto (0,∞) in its one free scalar m ⇒ WALL(scope-(a)); naive z scope-(b)
 -- excluded. Formalize-first, 0-fit, sorry-free.
 import QOU.MassTheory.A4InterfaceMagnitude
--- q-Reeb eigenphase route is compact (qou-0g4z): the sole |χ/d|>1 block per binding
--- knot is the trivial 1-dim rep (a q^w scaling, no rotation angle); every dim≥2
--- rotation channel is compact. scope-(a): eigenphases cannot supply C_knot. Sorry-free.
-import QOU.MassTheory.QReebEigenphaseCompact
--- Deuteron (A=2) naive per-pair magnitude z=1/[2]_v: PHYSICAL at A=2 (K₂ det 1−z²>0)
--- but does NOT close it; completes the A=4 scope-(b) exclusion (z dead across A).
--- Mathlib-free core Lean, sorry-free, decide-checked.
-import QOU.MassTheory.DeuteronNaiveZMagnitude
+import QOU.MassTheory.B4NonSaturatingBracket
 import QOU.BraidKnot.ColoredJonesRecurrence
 import QOU.BraidKnot.KnotOperatorRecurrence
 -- Resurgent-bridge tranche (Δ_λ sign/magnitude → DT/3d-index unification):
