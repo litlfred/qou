@@ -1,0 +1,60 @@
+{
+  "engine": "python-exact",
+  "engineVersion": "python 3.13.12",
+  "computedAt": "2026-08-04T17:48:53.681026+00:00",
+  "commitSha": "uncommitted",
+  "assertions": [
+    {
+      "name": "GL3F2_order",
+      "computed": 168,
+      "expected": 168,
+      "passed": true,
+      "unit": "count",
+      "source": "Exact enumeration of GL(3,F\u2082) matrices"
+    },
+    {
+      "name": "conjugacy_classes",
+      "computed": 6,
+      "expected": 6,
+      "passed": true,
+      "unit": "count",
+      "source": "Conjugacy class enumeration"
+    },
+    {
+      "name": "sum_d_squared",
+      "computed": 168,
+      "expected": 168,
+      "passed": true,
+      "unit": "count",
+      "source": "1\u00b2+3\u00b2+3\u00b2+6\u00b2+7\u00b2+8\u00b2 = 168 = |G|"
+    },
+    {
+      "name": "irrep_dims",
+      "computed": [
+        1,
+        3,
+        3,
+        6,
+        7,
+        8
+      ],
+      "expected": [
+        1,
+        3,
+        3,
+        6,
+        7,
+        8
+      ],
+      "passed": true,
+      "unit": "list",
+      "source": "Standard representation theory"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 50,
+  "computation": "psl27-irrep-verification",
+  "scriptFile": "psl27_irrep_verification.py",
+  "scriptHash": "1160ef530224",
+  "scriptCommitSha": "uncommitted"
+}
