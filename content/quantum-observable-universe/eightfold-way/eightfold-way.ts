@@ -62,7 +62,7 @@ export default chapter({
       label: "sec:meson-octet",
       blocks: [
         "meson-octet-decomposition",
-        // TODO: meson-mass-splitting (q-dependent dynamics)
+        "meson-mass-splitting",
       ],
     }),
 
