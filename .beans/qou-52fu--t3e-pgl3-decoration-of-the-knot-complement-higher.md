@@ -1,11 +1,11 @@
 ---
 # qou-52fu
 title: 'T3e: PGL(3) decoration of the knot complement (higher Teichmuller)'
-status: todo
+status: completed
 type: task
 priority: high
 created_at: 2026-08-04T00:07:01Z
-updated_at: 2026-08-04T00:07:01Z
+updated_at: 2026-08-04T10:09:18Z
 parent: qou-8lxd
 ---
 

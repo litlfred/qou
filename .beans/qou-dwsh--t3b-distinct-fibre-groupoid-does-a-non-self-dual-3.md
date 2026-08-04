@@ -1,11 +1,11 @@
 ---
 # qou-dwsh
 title: 'T3b: distinct-fibre groupoid -- does a non-self-dual 3-object exist?'
-status: todo
+status: completed
 type: task
 priority: high
 created_at: 2026-08-03T23:54:32Z
-updated_at: 2026-08-03T23:54:32Z
+updated_at: 2026-08-04T10:09:18Z
 parent: qou-8lxd
 ---
 
