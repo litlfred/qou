@@ -47,9 +47,9 @@ export default chapter({
       title: "Flavor representations and charge assignments",
       label: "sec:flavor-representations",
       blocks: [
-        // Stub — blocks to be authored in Phase 3.
-        // Will also receive sm-hypercharge-invariant,
-        // strand-twist-datum from SM appendix.
+        "flavor-charge-assignments",
+        // TODO: sm-hypercharge-invariant, strand-twist-datum
+        // (from SM appendix, Phase 3 continuation)
       ],
     }),
 
@@ -73,7 +73,8 @@ export default chapter({
       title: "Baryon multiplets and the Borromean decuplet",
       label: "sec:baryon-multiplets",
       blocks: [
-        // Stub — blocks to be authored in Phase 3.
+        "schur-weyl-eightfold",
+        // TODO: borromean-decuplet-derivation (Phase 3)
       ],
     }),
 
