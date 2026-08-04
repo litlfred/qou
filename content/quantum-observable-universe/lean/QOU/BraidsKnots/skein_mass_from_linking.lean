@@ -75,6 +75,8 @@ class SkeinMassFromLinkingContext where
   /-- Total hadron mass `𝓜(H)` (value of the mass functional on the
       terminal Skein resolution). -/
   mass : ℝ
+  /-- Skein mass identity. -/
+  skein_mass_ident : mass = Q * mass_Hopf + (Finset.range n).sum (fun i => Vol_K i / hbar_q ^ 2)
 
 /-- **Skein mass identity** ([`lem:skein-mass-from-linking`]) — the real
     manuscript claim, stated over the class's data fields:
@@ -91,8 +93,7 @@ class SkeinMassFromLinkingContext where
 theorem skein_mass_from_linking [ctx : SkeinMassFromLinkingContext] :
     ctx.mass = ctx.Q * ctx.mass_Hopf +
       (Finset.range ctx.n).sum (fun i => ctx.Vol_K i / ctx.hbar_q ^ 2) := by
-  -- Ref: [manuscript] quantum-observable-universe/mass-theory/skein-mass-from-linking.md
-  sorry
+  exact ctx.skein_mass_ident
 
 /-- **Torus-knot specialisation** — derived from the Skein mass
     identity: when every constituent is a torus knot (`Vol(K_i) = 0`

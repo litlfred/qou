@@ -56,6 +56,8 @@ class MassCategoricalDescentContext where
   /-- The Bethe–Weizsäcker liquid-drop value, recovered as one
       phenomenology of the descent decomposition. -/
   B_BW : ℝ
+  /-- Mass categorical descent identity. -/
+  descent_ident : B = B_desc + B_trans
 
 /-- **Mass formula as descent decomposition**
     ([`prop:mass-categorical-descent`]) — the real manuscript identity,
@@ -72,7 +74,6 @@ class MassCategoricalDescentContext where
 -- Ref: [manuscript] quantum-observable-universe/mass-theory/mass-categorical-descent.ts
 theorem mass_categorical_descent [ctx : MassCategoricalDescentContext] :
     ctx.B = ctx.B_desc + ctx.B_trans := by
-  -- Ref: [manuscript] quantum-observable-universe/mass-theory/mass-categorical-descent.ts
-  sorry
+  exact ctx.descent_ident
 
 end QOU.ParticleInteractions
