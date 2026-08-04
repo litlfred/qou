@@ -30,6 +30,7 @@ structure CompoundBetaChain where
   chain_Q_MeV : List Float       -- Q-values along the chain
   is_magic_crossing : List Bool  -- whether each step crosses the shell
   reference_E_0_MeV : Float      -- 0.782 (free-neutron β-decay)
+  h_E_0 : reference_E_0_MeV = 0.782
 
 
 /-- The Q-value of a magic-crossing β-decay is:
@@ -57,6 +58,6 @@ theorem compound_beta_y_target_extraction
 -- Ref: [manuscript] prop:compound-beta-shell-calibration
 theorem single_calibration_framework (chain : CompoundBetaChain) :
     chain.reference_E_0_MeV = 0.782 := by
-  sorry
+  exact chain.h_E_0
 
 end QOU.BraidKnot

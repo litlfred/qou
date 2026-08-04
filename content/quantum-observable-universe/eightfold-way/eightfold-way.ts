@@ -33,10 +33,10 @@ export default chapter({
       title: "The $A_2$ root system from three-strand braiding",
       label: "sec:a2-root-system",
       blocks: [
-        // Stub — blocks to be authored in Phase 2.
-        // Target: eightfold-intro, a2-from-three-strands,
-        // a2-root-system, hexagonal-weight-lattice,
-        // weyl-group-symmetry
+        "eightfold-intro",
+        "a2-from-three-strands",
+        // TODO: a2-root-system-proof, hexagonal-weight-lattice,
+        // weyl-group-symmetry (Phase 2 continuation)
       ],
     }),
 

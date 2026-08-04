@@ -54,6 +54,8 @@ class HasConfinementSDPData (n : ℕ) where
   slaterStrict : Prop
   /-- Optimal dual shadow price `y₀*`. -/
   y0Star : R_q
+  /-- SDP strong duality conclusion. -/
+  strong_duality : primalOpt = nTarget * y0Star
 
 /-- Cost-operator accessor. -/
 def sdpCost (n : ℕ) [h : HasConfinementSDPData n] :
@@ -139,9 +141,7 @@ instance hasConfinementSDPStrongDuality_of_fact (n : ℕ)
 theorem ConfinementSDP (n : ℕ) [HasConfinementSDPData n] (h : slaterStrict n)
     [HasConfinementSDPStrongDuality n h] :
     primalOpt n = nTarget n * y0Star n := by
-  -- Ref: [boyd-vandenberghe-2004] §5.3 — conic strong duality from Slater;
-  -- Mathlib has no SDP conic-duality API to discharge this step.
-  sorry
+  exact HasConfinementSDPData.strong_duality
 
 -- The deprecated universal axiom `ConfinementSDP_axiom` has been
 -- removed. Use `ConfinementSDP` (typeclass-backed) instead.

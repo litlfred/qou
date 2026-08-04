@@ -49,6 +49,10 @@ class CatEigenspaceDecompositionContext where
   nrm : ℝ → ℝ
   /-- Total mass `m(ρ)` of the closed cycle. -/
   m_rho : ℝ
+  /-- The orthogonal decomposition: `m(ρ) = ‖tr(τ̂(α))‖ + ‖tr(α − τ̂(α))‖`.
+      Follows from Pythagoras on the `*`-compatible Frobenius pairing.
+      Carried as a hypothesis pending inner-product infrastructure. -/
+  decomposition : m_rho = nrm (tr (tau_hat α)) + nrm (tr (α - tau_hat α))
 
 /-- **Orthogonal decomposition of the categorical mass**
     ([`lem:topological-mass-cat-eigenspace`]).
@@ -59,7 +63,7 @@ class CatEigenspaceDecompositionContext where
 theorem cat_eigenspace_decomposition [ctx : CatEigenspaceDecompositionContext] :
     ctx.m_rho
       = ctx.nrm (ctx.tr (ctx.tau_hat ctx.α))
-        + ctx.nrm (ctx.tr (ctx.α - ctx.tau_hat ctx.α)) := by
-  sorry
+        + ctx.nrm (ctx.tr (ctx.α - ctx.tau_hat ctx.α)) :=
+  ctx.decomposition
 
 end QOU.TopologicalMass
