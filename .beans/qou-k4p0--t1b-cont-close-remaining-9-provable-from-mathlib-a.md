@@ -1,11 +1,11 @@
 ---
 # qou-k4p0
 title: 'T1B-cont: Close remaining 9 provable-from-Mathlib axioms'
-status: completed
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-03T19:25:47Z
-updated_at: 2026-08-03T19:37:12Z
+updated_at: 2026-08-03T19:29:43Z
 parent: qou-ve5n
 ---
 

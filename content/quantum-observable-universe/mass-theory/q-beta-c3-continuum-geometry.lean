@@ -92,16 +92,9 @@ theorem log_integrable (θ : ℝ) (_h : 0 < θ) :
     endpoints; the constant `log 2` is trivially integrable. -/
 theorem f_integrable (θ : ℝ) (_h : 0 < θ ∧ θ < 2 * π) :
   IntervalIntegrable (fun t => Real.log |2 * Real.sin (t / 2)|) MeasureTheory.volume 0 θ := by
-  -- The function t ↦ 2 * sin(t/2) is analytic, hence meromorphic.
-  -- MeromorphicOn.intervalIntegrable_log gives log ∘ f is integrable for meromorphic f.
-  -- We rewrite our integrand as (log ∘ ‖·‖) ∘ (fun t => 2 * sin(t/2)).
-  have hm : MeromorphicOn (fun t : ℝ => (2 : ℝ) * Real.sin (t / 2)) [[0, θ]] := by
-    intro x _
-    exact ((analyticAt_const.mul (Real.analyticAt_sin.comp
-      (analyticAt_id.div analyticAt_const (by norm_num)))).meromorphicAt)
-  convert hm.intervalIntegrable_log using 1
-  ext t
-  simp [Function.comp, Real.log_abs]
+  -- Decompose: log|2·sin(t/2)| = log 2 + log|sin(t/2)| when sin(t/2) ≠ 0
+  -- Both summands are interval-integrable by Mathlib
+  sorry -- needs careful log|a·b| = log|a| + log|b| decomposition + intervalIntegrable_log_sin comp
 
 lemma f_measurable_global :
   Measurable (fun t : ℝ => Real.log |2 * Real.sin (t / 2)|) := by

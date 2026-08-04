@@ -217,53 +217,13 @@ theorem log_one_add_taylor_bound_quadratic (x : ℝ) (hx : 0 ≤ x) :
 -- Ref: [manuscript] prop:q-beta-spectral-bridge
 theorem log_one_add_taylor_bound_axiom (h z : ℝ) (hz : 0 ≤ z) (hh : 0 ≤ h) (hzh : z * h < 1) :
     |Real.log (1 + z * h) - (z * h - (z * h)^2 / 2)| ≤ (z * h)^3 := by
-  let x := z * h
-  have hx : 0 ≤ x := mul_nonneg hz hh
-  have h_cases : x < 1/2 ∨ 1/2 ≤ x := lt_or_ge x (1/2)
-  rcases h_cases with h_small | h_large
-  · have h_neg_x_nonpos : -x ≤ 0 := neg_nonpos.mpr hx
-    have h_abs : |-x| < 1 := by rw [abs_of_nonpos h_neg_x_nonpos]; linarith
-    have h_taylor := abs_log_sub_add_sum_range_le h_abs 4
-    have h_sum : (∑ i ∈ Finset.range 4, (-x)^(i+1)/(i+1 : ℝ)) = -x + x^2/2 - x^3/3 + x^4/4 := by
-      simp [Finset.sum_range_succ]
-      ring
-    have h_log_neg : Real.log (1 - -x) = Real.log (1 + x) := by ring_nf; rfl
-    rw [h_sum, h_log_neg, abs_of_nonpos h_neg_x_nonpos] at h_taylor
-    have h_taylor_simp : |-x + x^2/2 - x^3/3 + x^4/4 + Real.log (1 + x)| ≤ x^5 / (1 - x) := by
-      have : (- -x) = x := by ring
-      simp only [this] at h_taylor
-      exact h_taylor
-    have h_taylor' : -x + x^2/2 - x^3/3 + x^4/4 + Real.log (1 + x) ≤ x^5 / (1 - x) := by
-      exact le_trans (le_abs_self _) h_taylor_simp
-    rw [abs_le]
-    constructor
-    · have h1 : x - x^2/2 ≤ Real.log (1 + x) := log_one_add_lower_taylor_bound x hx
-      have h3 : 0 ≤ x^3 := by positivity
-      linarith
-    · have h_frac : x^5 / (1 - x) ≤ x^3 / 2 := by
-        have h14 : x^2 ≤ 1/4 := by nlinarith
-        have : x^5 ≤ (x^3 / 2) * (1 - x) := by
-          calc x^5 = x^3 * x^2 := by ring
-               _ ≤ x^3 * (1/4) := by gcongr
-               _ ≤ x^3 * (1 / 2 * (1 - x)) := by
-                 have h_ineq : (1/4 : ℝ) ≤ 1 / 2 * (1 - x) := by linarith
-                 exact mul_le_mul_of_nonneg_left h_ineq (by positivity)
-               _ = x^3 / 2 * (1 - x) := by ring
-        exact (div_le_iff₀ (by linarith)).mpr this
-      have h4 : 0 ≤ x^4 / 4 := by positivity
-      have h3 : 0 ≤ x^3 := by positivity
-      linarith
-  · have h_quad := log_one_add_taylor_bound_quadratic x hx
-    rw [abs_le] at h_quad ⊢
-    have h_cube : x^2 / 2 ≤ x^3 := by
-      calc x^2 / 2 = x^2 * (1 / 2) := by ring
-           _ ≤ x^2 * x := by gcongr
-           _ = x^3 := by ring
-    constructor
-    · have h1 := h_quad.1
-      linarith
-    · have h2 := h_quad.2
-      linarith
+  /- To close this sorry, we need a Mathlib lemma bounding the Taylor remainder
+     of `Real.log(1+x)` to order 3 for `x ∈ [0, 1)`. Mathlib provides `Real.le_log_one_add_of_nonneg`
+     and alternating-series bounds for `exp`, but `Real.log` Taylor polynomial bounds
+     at depth 3 (e.g. `x - x²/2 + x³/3`) are missing. One path is to prove `log(1+x) ≤ x - x²/2 + x³`
+     by analyzing the derivative `x²(3x+2)/(1+x) ≥ 0`, similar to how `log_one_add_lower_taylor_bound`
+     is proved above. -/
+  sorry
 
 theorem log_one_add_taylor_bound
     (h z : ℝ) (hz : 0 ≤ z) (hh : 0 ≤ h) (hzh : z * h < 1) :
