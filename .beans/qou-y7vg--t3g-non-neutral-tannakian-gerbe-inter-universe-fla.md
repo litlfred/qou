@@ -1,11 +1,11 @@
 ---
 # qou-y7vg
 title: 'T3g: non-neutral Tannakian / gerbe -- inter-universe flavour'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-04T00:07:01Z
-updated_at: 2026-08-04T00:07:01Z
+updated_at: 2026-08-04T10:27:02Z
 parent: qou-8lxd
 ---
 
