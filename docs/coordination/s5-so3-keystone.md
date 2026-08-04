@@ -615,3 +615,13 @@ non-self-conjugate blocks (`c(λ)≠0`, `θ^f≠1` at `q₀>1`) — that fibre c
 Verification: risky proof steps machine-checked vs real Mathlib via faithful replicas
 (exit 0); full lean-direct blocked in-sandbox by the QOU-cone/lake-build-Mathlib-wipe
 catch-22; CI to confirm exit 0.
+
+> **Verification cleared (2026-07-26).** The full lean-direct check is no longer
+> pending: `KeystoneElectronBlockExact.lean` and its entire 10-module QOU cone
+> (`IdentityIContentDecomposition` → `KeystoneC2{Content,Dim,QDim}Transpose` →
+> `QPartitionCombinatorics` → `WLambdaMTCLocalizationObligation` →
+> `KeystoneVerlindeSMatrixBridge` → `KeystoneModularTwist` → `BWVacuumRowConcrete`
+> → keystone) recompiled **lean-direct exit 0, sorry-free** against current `main`
+> on the restored `lake-cache/qou-v4-24-0` Mathlib oleans (the catch-22 is
+> side-stepped by `lean`-direct against the cache branch, not `lake build`). Survey:
+> [`docs/audits/2026-07-26-1ppq-l2-two-front-survey.md`](../audits/2026-07-26-1ppq-l2-two-front-survey.md).

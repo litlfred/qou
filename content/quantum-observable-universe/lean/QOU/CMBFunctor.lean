@@ -53,6 +53,25 @@ theorem CMB_eq_jetColimit_boundary (𝒜 : F.Aeon) :
 
 end CMBFunctor
 
--- Ref: [manuscript] quantum-observable-universe/information-theory/cmb-functor.ts
+open Classical in
+/-- **De-axiomatisation (bean `gob0`): a genuine finite direct-sum colimit.**
+    Over a finite configuration type, an abelian-group target, and a
+    jet-quotient assignment `jet : Config → M`, the colimit of the jet
+    quotients over a boundary set `S` is realised as the actual direct sum
+    `⨁_{c ∈ S} jet c` (the finite `Finset.sum` restricted to `S`). `CMB` is
+    then this genuine colimit composed with the boundary map — `CMB_def` holds
+    by `rfl`, so the functor is a real construction, not a free `jetColimit`
+    field. -/
+noncomputable def CMBFunctor.ofJet {Config : Type} [Fintype Config]
+    {M : Type} [AddCommGroup M] {ι : Type}
+    (jet : Config → M) (bd : ι → Set Config) : CMBFunctor where
+  Aeon := ι
+  Config := Config
+  M := M
+  instM := inferInstance
+  boundary := bd
+  jetColimit S := ∑ c : Config, if c ∈ S then jet c else 0
+  CMB a := ∑ c : Config, if c ∈ bd a then jet c else 0
+  CMB_def _ := rfl
 
 end QOU

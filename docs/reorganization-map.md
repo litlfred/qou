@@ -281,3 +281,61 @@ If you encounter a broken reference like `ch5-brings-surface/foo`, look up:
 1. `ch5-brings-surface` → `descartes-universe` (directory rename table)
 2. Check if `foo` was moved to a different chapter (block moves table)
 3. Check if its section was split/merged (section splits table)
+
+---
+
+## Chapter split: particle-interactions → 3 chapters (2026-08-03)
+
+The former `particle-interactions/` chapter (335 blocks, 25 sections) was split
+into three chapters to separate definitional content from computational content:
+
+| New directory | Chapter title | Purpose | Block count |
+|---|---|---|---|
+| `knots-particles-confinement/` | Knots, Particles, and Confinement | Pure definitions: quarks, hadrons, dictionary, confinement, shells, atoms | ~130 |
+| `eightfold-way/` | The Eightfold Way and Flavor Structure | A₂/SU(3) classification (NEW content) | ~30 (stub) |
+| `nuclear-interactions/` | Nuclear Interactions and Binding | Computational engine: Gröbner, LP/SDP, beta decay, Q-values | ~200 |
+
+### Block moves (file-level, ~310 block files)
+
+All `.ts`, `.md`, `.lean`, `.qa.json` files were physically moved from
+`particle-interactions/` to the appropriate new directory. The old
+`particle-interactions.ts` manifest is retained as a historical reference.
+
+### Sections reassigned
+
+**To `knots-particles-confinement/`** (definitional):
+- §3 Nucleon derivation from pair production
+- §12 Hadron algebra and knot factorisation
+- §13 Skein generation and particle correspondence
+- §14 Borromean baryons and Reidemeister invariance
+- §15 Confinement level and the cemetery group
+- §17 Lepton–meson structural parallel
+- §18 Electroweak and Higgs torus-link triplet
+- §19 Confined particles and shells
+- §20 Atom and isotope knots
+- §21 Magic shells and κ coupling
+- §24 (definitional blocks only): categorical-proton, categorical-neutron, categorical-meson + properties
+
+**To `nuclear-interactions/`** (computational):
+- §1 Gröbner–Shirshov reduction engine
+- §2 Confinement operator selection
+- §4 Nuclear binding and magic numbers
+- §5 Derived atom examples
+- §6 Typed Garside element
+- §7 Transfer matrices and beta decay
+- §8–§10 Atomic braid mass
+- §11 Branching Q-value derivation
+- §16 Pair production and anyon collapse
+- §22 Beta stability closure
+- §23 Varying Euler characteristic and mirror bundle
+- §24 (non-definitional blocks): geom-universality, symmetry identifications, outro
+
+### Dependency architecture
+
+```
+Ch 9 (knots-particles-confinement)  [definitions]
+  ├──→ Ch 10 (eightfold-way)            [classification]
+  ├──→ Ch 11 (nuclear-interactions)      [computation]
+  └──→ Ch 13 (mass-theory)              [mass analysis]
+```
+

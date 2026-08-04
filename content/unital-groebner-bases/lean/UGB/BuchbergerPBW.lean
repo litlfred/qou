@@ -1,3 +1,0 @@
-import UGB.BuchbergerPBW.buchberger_theorem
-import UGB.BuchbergerPBW.s_poly_decomposition
-import UGB.BuchbergerPBW.ugb_pbw_corollary

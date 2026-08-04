@@ -1,0 +1,130 @@
+import { chapter, section } from "../../schema/builders";
+
+/**
+ * Chapter 10: The Eightfold Way and Flavor Structure.
+ *
+ * Derives SU(3) flavor symmetry from QOU's three-strand braiding,
+ * classifies the particles defined in Ch 9 (Knots, Particles, and
+ * Confinement) into Eightfold Way multiplets, and connects
+ * q-deformation to hyperbolic geometry and mass splitting.
+ *
+ * ANTI-FITTING DISCIPLINE: every claim in this chapter must trace
+ * to QOU's categorical axioms. External papers (Gang–Yonekura,
+ * Asselmeyer-Maluga, Klein-Kreisler et al.) provide evidence and
+ * cross-checks, never axioms. Where external results align with
+ * QOU derivations, state both the QOU derivation and the agreement.
+ * Where they diverge, state the divergence honestly.
+ *
+ * Dependencies: Ch 6 (Braids and Knots), Ch 7 (Bring's Surface),
+ * Ch 9 (Knots, Particles, and Confinement).
+ *
+ * New chapter created as part of the eightfold-way-chapter-2026-08-03
+ * restructure.
+ */
+export default chapter({
+  title: "The Eightfold Way and Flavor Structure",
+  label: "chap:eightfold-way",
+  sections: [
+    // ── §1. The A₂ root system from three-strand braiding ────────
+    // Derive the A₂ Lie algebra structure from H₃(q). The 6 roots
+    // at 120° angles arise from the 3-strand Artin generators and
+    // their Hecke relations.
+    section({
+      title: "The $A_2$ root system from three-strand braiding",
+      label: "sec:a2-root-system",
+      blocks: [
+        // Stub — blocks to be authored in Phase 2.
+        // Target: eightfold-intro, a2-from-three-strands,
+        // a2-root-system, hexagonal-weight-lattice,
+        // weyl-group-symmetry
+      ],
+    }),
+
+    // ── §2. Flavor representations and charge assignments ────────
+    // The fundamental triplet 3 from unknot variants, the conjugate
+    // 3̄, and the charge assignments (isospin, hypercharge).
+    section({
+      title: "Flavor representations and charge assignments",
+      label: "sec:flavor-representations",
+      blocks: [
+        // Stub — blocks to be authored in Phase 3.
+        // Will also receive sm-hypercharge-invariant,
+        // strand-twist-datum from SM appendix.
+      ],
+    }),
+
+    // ── §3. The meson octet via tensor decomposition ─────────────
+    // Derive 3 ⊗ 3̄ = 8 ⊕ 1 from the ⊗_K product. Construct
+    // the 8 meson states on the hexagonal weight lattice.
+    section({
+      title: "The meson octet via tensor decomposition",
+      label: "sec:meson-octet",
+      blocks: [
+        // Stub — blocks to be authored in Phase 3.
+      ],
+    }),
+
+    // ── §4. Baryon multiplets and the Borromean decuplet ─────────
+    // Derive 3⊗3⊗3 = 10⊕8⊕8⊕1 from the three-fold ⊗_K product.
+    // The symmetric channel yields the decuplet; the Borromean
+    // baryon (def:borromean-baryon from Ch 9) provides the
+    // structural realization.
+    section({
+      title: "Baryon multiplets and the Borromean decuplet",
+      label: "sec:baryon-multiplets",
+      blocks: [
+        // Stub — blocks to be authored in Phase 3.
+      ],
+    }),
+
+    // ── §5. Color algebra from octonionic stabilization ──────────
+    // Derive the color SU(3) gauge symmetry from the octonionic
+    // automorphism group G₂ → SU(3) stabilizer action.
+    section({
+      title: "Color algebra from octonionic stabilization",
+      label: "sec:color-algebra",
+      blocks: [
+        // Stub — blocks to be authored in Phase 4.
+        // Will also receive sm-colour-stabilizer-action from SM appendix,
+        // color-tube-coords-intro from brings-surface.
+      ],
+    }),
+
+    // ── §6. q-Deformation and the hyperbolic weight lattice ──────
+    // How the substrate parameter q deforms the hexagonal weight
+    // lattice: quantum Serre relations, effective angle deformation,
+    // compact/non-compact root split, Thurston relaxation.
+    section({
+      title: "$q$-Deformation and the hyperbolic weight lattice",
+      label: "sec:q-deformed-eightfold",
+      blocks: [
+        // Stub — blocks to be authored in Phase 4.
+        // Will also receive thurston-relaxation from brings-surface.
+      ],
+    }),
+
+    // ── §7. The knot–particle–force dictionary ───────────────────
+    // Consolidation and completeness audit of the full dictionary
+    // mapping knot configurations to particles and forces.
+    section({
+      title: "The knot–particle–force dictionary",
+      label: "sec:knot-particle-force-dictionary",
+      blocks: [
+        // Stub — blocks to be authored in Phase 5.
+        // Will also receive particle-nf-table, gluon-model-comparison
+        // from appendix-knot-ops-archimedean.
+      ],
+    }),
+
+    // ── §8. Open problems in flavor and gauge structure ──────────
+    // Consolidated ledger: three-generation structure, gauge
+    // truncation summary, pointers to SM appendix.
+    section({
+      title: "Open problems in flavor and gauge structure",
+      label: "sec:eightfold-open-problems",
+      blocks: [
+        // Stub — blocks to be authored in Phase 5.
+      ],
+    }),
+  ],
+});

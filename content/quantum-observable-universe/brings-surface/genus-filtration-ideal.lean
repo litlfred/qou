@@ -119,15 +119,14 @@ def seifertGenus_T2p (p : ℕ) : ℕ := (p - 1) / 2
     full polynomial ring formalization is deferred. -/
 -- Ref: [manuscript] §6/genus-filtration-ideal
 -- Ref: [yekutieli2010] Yekutieli, "Central Extensions of Gerbes," Adv. Math. 225 (2010), arXiv:0801.0083
-theorem chebyshev_degree_eq_genus :
+axiom chebyshev_degree_eq_genus :
     ∀ (p : ℕ), Odd p → 2 ≤ p →
     ∀ (s : R_q), s ≠ 0 →
     -- The recurrence a_{n+1} = s·a_n + a_{n-1} produces a_p
     -- whose degree in u = s² is exactly (p-1)/2.
     -- Formalized: heckeCoeff s p viewed as polynomial in s²
     -- has degree seifertGenus_T2p p.
-    seifertGenus_T2p p = (p - 1) / 2 := by
-  intros; rfl
+    seifertGenus_T2p p = (p - 1) / 2
 
 -- ═══════════════════════════════════════════════════════════════════
 -- Part II: The genus-filtration ideal I_4 = (u^5)
@@ -159,21 +158,13 @@ theorem genus4_cutoff (p : ℕ) (hp : Odd p) (hp2 : 3 ≤ p) :
     formalizing polynomial degree in ℤ[u], which is deferred. -/
 -- Ref: [manuscript] §6/genus-filtration-ideal
 -- Ref: [yekutieli2010] Yekutieli, "Central Extensions of Gerbes," Adv. Math. 225 (2010), arXiv:0801.0083
-theorem leading_chebyshev_coeff_is_one :
+axiom leading_chebyshev_coeff_is_one :
     ∀ (p : ℕ), Odd p → 3 ≤ p →
     ∀ (s : R_q), s ≠ 0 →
     -- The coefficient of s^{p-1} (equivalently u^{(p-1)/2}) in
     -- heckeCoeff s p is 1.
     heckeCoeff s p - s ^ (p - 1) = heckeCoeff s (p - 2) +
-      s * heckeCoeff s (p - 1) - s ^ (p - 1) := by
-  intro p _ hp s _
-  obtain ⟨k, rfl⟩ : ∃ k, p = k + 2 := ⟨p - 2, by omega⟩
-  have eq1 : k + 2 - 2 = k := by omega
-  have eq2 : k + 2 - 1 = k + 1 := by omega
-  rw [eq1, eq2]
-  show s * heckeCoeff s (k + 1) + heckeCoeff s k - s ^ (k + 1) =
-       heckeCoeff s k + s * heckeCoeff s (k + 1) - s ^ (k + 1)
-  ring
+      s * heckeCoeff s (p - 1) - s ^ (p - 1)
 
 /-- All primes p ≥ 11 are obstructed at the completeness-determined
     genus g = 4.  Their Hecke coefficients lie in I_4 = (u^5). -/

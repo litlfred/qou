@@ -1,1 +1,0 @@
-import UGB.Introduction.main_theorem_statement
