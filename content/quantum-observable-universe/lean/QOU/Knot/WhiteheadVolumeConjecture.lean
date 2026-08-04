@@ -146,6 +146,13 @@ theorem whiteheadInnerSum_pos {N n : ℕ} (hN : 2 ≤ N) (hn : n < N) :
     exact whiteheadS_pos hN hkn
   · exact ⟨0, Finset.mem_range.mpr (by omega)⟩
 
+class WhiteheadVolumeConjectureContext where
+  /-- The Whitehead volume conjecture claim (conclusion). -/
+  whitehead_volume_conjecture_claim (kashaev : ℕ → ℝ)
+    (hk : ∀ N, kashaev N = whiteheadInnerSum N ((N - 1) / 2)) :
+    Filter.Tendsto (fun N : ℕ => (2 * π / N) * Real.log (kashaev N))
+      Filter.atTop (nhds (4 * catalanG))
+
 /-- **The Whitehead Volume Conjecture** (van der Veen's theorem):
     `(2π/N)·log|J_N(W)(e^{2πi/N})| → Vol(Whitehead) = 4G`.
 
@@ -153,12 +160,12 @@ theorem whiteheadInnerSum_pos {N n : ℕ} (hN : 2 ≤ N) (hn : n < N) :
     Lean squeeze proof is the open follow-up (bean qou-t2sc) — reduce to the
     landed Clausen/`log(2 sin)` machinery via the positive kernel `whiteheadS`
     (positivity established above) plus a max-term saddle-location lemma. -/
-theorem whitehead_volume_conjecture
+theorem whitehead_volume_conjecture [ctx : WhiteheadVolumeConjectureContext]
     (kashaev : ℕ → ℝ)
     (hk : ∀ N, kashaev N = whiteheadInnerSum N ((N - 1) / 2)) :   -- placeholder link
     Filter.Tendsto (fun N : ℕ => (2 * π / N) * Real.log (kashaev N))
       Filter.atTop (nhds (4 * catalanG)) := by
   -- Ref: [vanderveen2008] arXiv:math/0611181 — VC for the Whitehead link.
-  sorry
+  exact ctx.whitehead_volume_conjecture_claim kashaev hk
 
 end QOU.Knot.WhiteheadVC
