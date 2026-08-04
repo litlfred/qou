@@ -60,7 +60,8 @@ export default chapter({
       title: "The meson octet via tensor decomposition",
       label: "sec:meson-octet",
       blocks: [
-        // Stub — blocks to be authored in Phase 3.
+        "meson-octet-decomposition",
+        // TODO: meson-mass-splitting (q-dependent dynamics)
       ],
     }),
 
@@ -99,8 +100,8 @@ export default chapter({
       title: "$q$-Deformation and the hyperbolic weight lattice",
       label: "sec:q-deformed-eightfold",
       blocks: [
-        // Stub — blocks to be authored in Phase 4.
-        // Will also receive thurston-relaxation from brings-surface.
+        "q-deformation-weight-lattice",
+        // TODO: thurston-relaxation (from brings-surface)
       ],
     }),
 
