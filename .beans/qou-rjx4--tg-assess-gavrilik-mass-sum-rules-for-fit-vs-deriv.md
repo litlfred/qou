@@ -1,11 +1,11 @@
 ---
 # qou-rjx4
 title: 'TG: assess Gavrilik mass sum rules for fit-vs-derivation'
-status: todo
+status: completed
 type: task
 priority: high
 created_at: 2026-08-03T23:27:17Z
-updated_at: 2026-08-03T23:27:58Z
+updated_at: 2026-08-04T10:05:47Z
 parent: qou-8lxd
 ---
 
