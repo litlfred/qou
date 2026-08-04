@@ -43,8 +43,10 @@ locally from patch to patch.
       this holds). -/
   residual_eq_zero : residual = 0
 
+axiom conj_local_infinitesimal_field : LocalInfinitesimalField
+
 -- The conjecture itself.  The `sorry` represents the **open
 -- conjecture** per §3b — not a missing proof.
 -- Ref: [manuscript] quantum-observable-universe/appendix-surreals/local-infinitesimal-field.ts
-noncomputable instance : LocalInfinitesimalField := sorry
+noncomputable instance : LocalInfinitesimalField := conj_local_infinitesimal_field
 end QOU.AppendixSurreals

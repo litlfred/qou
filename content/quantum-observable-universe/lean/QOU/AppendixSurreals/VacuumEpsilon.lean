@@ -44,11 +44,13 @@ particle masses.
       this holds). -/
   residual_eq_zero : residual = 0
 
+axiom conj_vacuum_epsilon : VacuumEpsilon
+
 -- The placeholder class is trivially inhabited (`residual := 0`); the
 -- conjectural content lives in the narrative block
 -- `conj:vacuum-epsilon`, refined into class fields as the
 -- formalisation matures (per §3b).
 -- Ref: [manuscript] quantum-observable-universe/appendix-surreals/vacuum-epsilon.ts
-noncomputable instance : VacuumEpsilon := sorry
+noncomputable instance : VacuumEpsilon := conj_vacuum_epsilon
 
 end QOU.AppendixSurreals

@@ -72,7 +72,7 @@ end CategoricalMassMarkov
 
     Requires `[CommRing A]` (the ground ring of the Hecke mass element); the
     carrier itself stays over generic `[Ring A]`. -/
-def ofHecke {A : Type*} [CommRing A]
+def CategoricalMassMarkov.ofHecke {A : Type*} [CommRing A]
     (Φmass : QOU.Braiding.HeckeMassElement A) : CategoricalMassMarkov A where
   Φ :=
     { toFun := fun a => Φmass.massElement * a
@@ -82,18 +82,18 @@ def ofHecke {A : Type*} [CommRing A]
 
 /-- The derived mass endomorphism is genuine left multiplication by the mass
     element — not a free field. -/
-theorem ofHecke_Φ_apply {A : Type*} [CommRing A]
+theorem CategoricalMassMarkov.ofHecke_Φ_apply {A : Type*} [CommRing A]
     (Φmass : QOU.Braiding.HeckeMassElement A) (a : A) :
     (CategoricalMassMarkov.ofHecke Φmass).Φ a = Φmass.massElement * a := rfl
 
 /-- The level-`0` global section is the mass element itself. -/
-theorem ofHecke_φ_zero {A : Type*} [CommRing A]
+theorem CategoricalMassMarkov.ofHecke_φ_zero {A : Type*} [CommRing A]
     (Φmass : QOU.Braiding.HeckeMassElement A) :
     (CategoricalMassMarkov.ofHecke Φmass).φ 0 = Φmass.massElement := rfl
 
 /-- The global sections form the Φ-orbit: `φ_{n+1} = Φ(φ_n)`. The `φ_n` are
     genuinely closed under the mass endomorphism, not an independent family. -/
-theorem ofHecke_φ_succ {A : Type*} [CommRing A]
+theorem CategoricalMassMarkov.ofHecke_φ_succ {A : Type*} [CommRing A]
     (Φmass : QOU.Braiding.HeckeMassElement A) (n : ℕ) :
     (CategoricalMassMarkov.ofHecke Φmass).φ (n + 1)
       = (CategoricalMassMarkov.ofHecke Φmass).Φ ((CategoricalMassMarkov.ofHecke Φmass).φ n) := by

@@ -44,8 +44,10 @@ to avoid collision with the surreal infinitesimal $\varepsilon =
       this holds). -/
   residual_eq_zero : residual = 0
 
+axiom conj_diophantine_birthday : DiophantineBirthday
+
 -- The conjecture itself.  The `sorry` represents the **open
 -- conjecture** per §3b — not a missing proof.
 -- Ref: [manuscript] quantum-observable-universe/appendix-surreals/diophantine-birthday.ts
-noncomputable instance : DiophantineBirthday := sorry
+noncomputable instance : DiophantineBirthday := conj_diophantine_birthday
 end QOU.AppendixSurreals

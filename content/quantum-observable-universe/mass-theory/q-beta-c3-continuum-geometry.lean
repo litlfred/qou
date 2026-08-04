@@ -79,18 +79,29 @@ lemma f_integrable_bound (t : ℝ) (h : 0 < t ∧ t < 2 * π) :
   have h_sin_le : Real.sin (t / 2) ≤ t / 2 := Real.sin_le (by linarith)
   linarith
 
-/-- Lemma 1.2: The natural logarithm is improperly integrable at 0. 
-    (Mathlib 4 lacks improper Lebesgue integration limits, so we explicitly axiomatize this known topological bound). -/
+/-- Lemma 1.2: The natural logarithm is improperly integrable at 0.
+    Proved using Mathlib's `intervalIntegrable_log'` which handles the
+    singularity at 0 via dominated convergence. -/
 theorem log_integrable (θ : ℝ) (_h : 0 < θ) :
   IntervalIntegrable (fun t => Real.log t) MeasureTheory.volume 0 θ :=
   intervalIntegrable_log'
 
 /-- Lemma 1: The singularity of the Lobachevsky integrand at t=0 is integrable.
-    This asserts the local integrability required by Lebesgue measure theory, 
-    derived from the logarithmic bound (Lemma 1.1 and 1.2). -/
-theorem f_integrable (θ : ℝ) (h : 0 < θ ∧ θ < 2 * π) :
+    The integrand `log|2 sin(t/2)|` decomposes as `log 2 + log|sin(t/2)|`.
+    Mathlib's `intervalIntegrable_log_sin` handles `log ∘ sin` for any
+    endpoints; the constant `log 2` is trivially integrable. -/
+theorem f_integrable (θ : ℝ) (_h : 0 < θ ∧ θ < 2 * π) :
   IntervalIntegrable (fun t => Real.log |2 * Real.sin (t / 2)|) MeasureTheory.volume 0 θ := by
-  sorry
+  -- The function t ↦ 2 * sin(t/2) is analytic, hence meromorphic.
+  -- MeromorphicOn.intervalIntegrable_log gives log ∘ f is integrable for meromorphic f.
+  -- We rewrite our integrand as (log ∘ ‖·‖) ∘ (fun t => 2 * sin(t/2)).
+  have hm : MeromorphicOn (fun t : ℝ => (2 : ℝ) * Real.sin (t / 2)) [[0, θ]] := by
+    intro x _
+    exact ((analyticAt_const.mul (Real.analyticAt_sin.comp
+      (analyticAt_id.div analyticAt_const (by norm_num)))).meromorphicAt)
+  convert hm.intervalIntegrable_log using 1
+  ext t
+  simp [Function.comp, Real.log_abs]
 
 lemma f_measurable_global :
   Measurable (fun t : ℝ => Real.log |2 * Real.sin (t / 2)|) := by

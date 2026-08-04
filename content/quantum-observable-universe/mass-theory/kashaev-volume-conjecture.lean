@@ -81,6 +81,7 @@ noncomputable def pieceVolume (q : ℝ) [VolumeConjecture q]
   -- limit, not the per-piece values.
   -- Ref: [manuscript] Ch 3 §sec:calibration-algebraic-mass /
   --                   kashaev-volume-conjecture
+  -- CONJECTURE: A combinatorial constructor for subLink and its hyperbolic volume is deferred to the SnapPy bridge layer.
   sorry
 
 theorem pieceVolume_nonneg (q : ℝ) [inst : VolumeConjecture q]
@@ -91,6 +92,7 @@ theorem pieceVolume_nonneg (q : ℝ) [inst : VolumeConjecture q]
   -- applied to the sub-braid `subLink β S`.
   -- Ref: [manuscript] Ch 3 §sec:calibration-algebraic-mass /
   --                   kashaev-volume-conjecture
+  -- CONJECTURE: Becomes a non-trivial fact derived from hypVolume_nonneg applied to the sub-braid subLink β S once pieceVolume is concrete.
   sorry
 
 end QOU.Kashaev

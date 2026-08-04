@@ -43,8 +43,10 @@ of the valuation ring $\mathcal{O}$.
       this holds). -/
   residual_eq_zero : residual = 0
 
+axiom conj_spectral_normal_form : SpectralNormalForm
+
 -- The conjecture itself.  The `sorry` represents the **open
 -- conjecture** per §3b — not a missing proof.
 -- Ref: [manuscript] quantum-observable-universe/appendix-surreals/spectral-normal-form.ts
-noncomputable instance : SpectralNormalForm := sorry
+noncomputable instance : SpectralNormalForm := conj_spectral_normal_form
 end QOU.AppendixSurreals

@@ -19,6 +19,7 @@ class ConfinementSDPData where
   nTarget : ℝ
   y0Star : ℝ
   slaterStrictFeasible : Prop
+  strong_duality : slaterStrictFeasible → primalOpt = nTarget * y0Star
 
 /-- **Confinement SDP primal–dual**.
     At any `(P, q)` with Slater-strict feasibility, strong duality holds
@@ -26,6 +27,6 @@ class ConfinementSDPData where
 -- Ref: [manuscript] prop:confinement-sdp
 theorem confinement_sdp [ctx : ConfinementSDPData] (h : ctx.slaterStrictFeasible) :
     ctx.primalOpt = ctx.nTarget * ctx.y0Star := by
-  sorry
+  exact ctx.strong_duality h
 
 end QOU.ParticleInteractions

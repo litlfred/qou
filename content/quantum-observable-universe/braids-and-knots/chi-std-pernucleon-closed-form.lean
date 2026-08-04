@@ -204,32 +204,25 @@ noncomputable def neutronBraid (H_A : ℝ) : NucBraidWord :=
     Ref: [manuscript] docs/chi-std-pernucleon-theorem.md §Proof,
          computations/chi-std-pernucleon.witness.json.
 -/
-/-- **External axiom (manuscript chi-std-pernucleon-theorem §Proof):
+/-- **Theorem (manuscript chi-std-pernucleon-theorem §Proof):
     closed-form χ_std for proton braid.**  Verified externally via
-    sympy (chi_std_pernucleon_derivation.py); Lean port requires
-    degree-22 Laurent polynomial ring-normalisation. -/
+    sympy (chi_std_pernucleon_derivation.py). -/
 -- Ref: [manuscript] docs/chi-std-pernucleon-theorem.md §Proof
-axiom chi_std_proton_closed_form_axiom :
-    ∀ (q : ℝ) (_hq : 1 < q),
-      chiStdEval q (protonBraid (q - q⁻¹)) =
-        chiStdClosedForm q protonIndices
-
 theorem chi_std_proton_closed_form (q : ℝ) (hq : 1 < q) :
     chiStdEval q (protonBraid (q - q⁻¹)) =
-      chiStdClosedForm q protonIndices :=
-  chi_std_proton_closed_form_axiom q hq
+      chiStdClosedForm q protonIndices := by
+  simp [chiStdEval, evalWord, protonBraid, heckeFactorMat, hoefsmit_σ₁, hoefsmit_σ₂, M2.add, M2.mul, M2.smul, M2.one, M2.trace, chiStdClosedForm, protonIndices, qNum]
+  field_simp
+  ring
 
-/-- **External axiom (manuscript): closed-form χ_std for neutron.** -/
+/-- **Theorem (manuscript): closed-form χ_std for neutron.** -/
 -- Ref: [manuscript] docs/chi-std-pernucleon-theorem.md §Proof
-axiom chi_std_neutron_closed_form_axiom :
-    ∀ (q : ℝ) (_hq : 1 < q),
-      chiStdEval q (neutronBraid (q - q⁻¹)) =
-        chiStdClosedForm q neutronIndices
-
 theorem chi_std_neutron_closed_form (q : ℝ) (hq : 1 < q) :
     chiStdEval q (neutronBraid (q - q⁻¹)) =
-      chiStdClosedForm q neutronIndices :=
-  chi_std_neutron_closed_form_axiom q hq
+      chiStdClosedForm q neutronIndices := by
+  simp [chiStdEval, evalWord, neutronBraid, heckeFactorMat, hoefsmit_σ₁, hoefsmit_σ₂, M2.add, M2.mul, M2.smul, M2.one, M2.trace, chiStdClosedForm, neutronIndices, qNum]
+  field_simp
+  ring
 
 /-- Both nucleon characters share the unified ladder shape
     `{m, m-2, m-4, m-8}`, with `m_proton = 11`, `m_neutron = 9`.

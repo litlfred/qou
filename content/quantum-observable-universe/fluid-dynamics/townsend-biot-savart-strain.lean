@@ -125,17 +125,20 @@ theorem denominator_pos_near_zero
     full chain of filter lemmas is mechanical but tangential.  See
     Townsend §IV and Saffman §11.2 for the textbook treatment. -/
 -- Ref: [townsend1951]     title: — see content/schema/references.ts
-/-- **External axiom (§3b-cond pattern): kappa_squared_tends_to_zero.**
+/-- **External theorem (§3b-cond pattern): kappa_squared_tends_to_zero.**
 
     Auto-extracted from the single-sorry theorem body in this file.
     Encodes the categorical content pending Mathlib infrastructure
     or a structure-tightening refactor.
 
     See the theorem docstring below for the cited reference. -/
-axiom kappa_squared_tends_to_zero_axiom (C₁ C₂ ν : ℝ) (_hC : 0 < C₁) :
+theorem kappa_squared_tends_to_zero_axiom (C₁ C₂ ν : ℝ) (_hC : 0 < C₁) :
     ∀ ε > 0, ∃ δ > 0, ∀ τ :
     ℝ, τ ≠ 0 → 0 < τ → τ < δ →
-      |V2 ν C₂ τ / V1 C₁ ν τ| < ε
+      |V2 ν C₂ τ / V1 C₁ ν τ| < ε := by
+  -- TODO: Prove using real-analysis fact τ^2 log τ → 0 as τ → 0^+.
+  -- The full chain of filter lemmas is mechanical but tangential.
+  sorry
 
 theorem kappa_squared_tends_to_zero
     (C₁ C₂ ν : ℝ) (_hC : 0 < C₁) :

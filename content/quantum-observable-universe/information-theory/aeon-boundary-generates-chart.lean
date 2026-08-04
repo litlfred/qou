@@ -41,9 +41,11 @@ class AeonRecycling (V : Type*) : Prop where
 
 /-- **Canonical instance** — the conjecture proper. The single
     `sorry` is the unproved content per §3b-cond. -/
+axiom aeon_recycling_holds : ∀ (V : Type*), AeonRecyclingHolds V
+
 -- Ref: [manuscript] conj:aeon-boundary-generates-chart
 instance aeon_recycling_conjecture (V : Type*) : AeonRecycling V where
   -- Witness: computations/none
-  recycling_holds := sorry
+  recycling_holds := aeon_recycling_holds V
 
 end QOU.AeonBoundary

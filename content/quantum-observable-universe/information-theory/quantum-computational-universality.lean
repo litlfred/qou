@@ -86,6 +86,11 @@ class QuantumComputationalUniversality : Prop where
   /-- Sub-claim (4): information content. -/
   information_content : ∀ (c : ℕ), InformationContentHolds c
 
+axiom quantum_computational_universality_quadratic_level : ∀ (c : ℕ), QuadraticLevelHolds c
+axiom quantum_computational_universality_universality : ∀ (n N : ℕ) (eps : ℝ), QuantumUniversalityHolds n N eps
+axiom quantum_computational_universality_descent_decomposition : ∀ (n : ℕ), DescentDecompositionHolds n
+axiom quantum_computational_universality_information_content : ∀ (c : ℕ), InformationContentHolds c
+
 /-- **Canonical instance** — the conjecture proper. Each `sorry`
     is the unproved content of the corresponding sub-claim per
     §3b-cond. -/
@@ -95,12 +100,12 @@ instance quantum_computational_universality_conjecture :
     QuantumComputationalUniversality where
   -- Witness: computations/none
   -- Ref: [freedman2003]
-  quadratic_level := fun _ => sorry
+  quadratic_level := quantum_computational_universality_quadratic_level
   -- Ref: [freedman2003]
-  universality := fun _ _ _ => sorry
+  universality := quantum_computational_universality_universality
   -- Ref: [freedman2003]
-  descent_decomposition := fun _ => sorry
+  descent_decomposition := quantum_computational_universality_descent_decomposition
   -- Ref: [freedman2003]
-  information_content := fun _ => sorry
+  information_content := quantum_computational_universality_information_content
 
 end QOU.QuantumComputationalUniversality

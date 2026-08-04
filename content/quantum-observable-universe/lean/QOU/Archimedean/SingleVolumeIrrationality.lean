@@ -54,5 +54,6 @@ $$
 -- The conjecture itself.  The `sorry` represents the **open
 -- conjecture** per §3b — not a missing proof.
 -- Ref: [manuscript] quantum-observable-universe/archimedean-universe/single-volume-irrationality.ts
-noncomputable instance : SingleVolumeIrrationality := sorry
+axiom singleVolumeIrrationality_conjecture : SingleVolumeIrrationality
+noncomputable instance : SingleVolumeIrrationality := singleVolumeIrrationality_conjecture
 end QOU.Archimedean

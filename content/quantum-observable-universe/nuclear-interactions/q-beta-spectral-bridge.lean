@@ -154,8 +154,20 @@ theorem log_one_add_upper_taylor_bound (x : ℝ) (hx : 0 ≤ x) :
     `Real.add_one_le_exp + Real.log_le_log` once the chain of Mathlib
     lemmas is verified. -/
 -- Ref: [wenzl1988] doi:10.1007/BF01219077
-axiom log_one_add_lower_taylor_bound_axiom :
-    ∀ (x : ℝ), 0 ≤ x → x - x^2 / 2 ≤ Real.log (1 + x)
+-- Ref: [wenzl1988] doi:10.1007/BF01219077
+theorem log_one_add_lower_taylor_bound_axiom (x : ℝ) (hx : 0 ≤ x) :
+    x - x^2 / 2 ≤ Real.log (1 + x) := by
+  have h1 : 2 * x / (x + 2) ≤ Real.log (1 + x) := Real.le_log_one_add_of_nonneg hx
+  have h2 : x - x^2 / 2 ≤ 2 * x / (x + 2) := by
+    have h3 : 0 < x + 2 := by linarith
+    rw [le_div_iff₀ h3]
+    have : (x - x^2 / 2) * (x + 2) = 2 * x - x^3 / 2 := by ring
+    rw [this]
+    have : 2 * x - x^3 / 2 ≤ 2 * x := by
+      have : 0 ≤ x^3 / 2 := by positivity
+      linarith
+    exact this
+  exact h2.trans h1
 
 -- Ref: [manuscript] prop:q-beta-spectral-bridge §"Form B side"
 theorem log_one_add_lower_taylor_bound (x : ℝ) (hx : 0 ≤ x) :
@@ -202,9 +214,16 @@ theorem log_one_add_taylor_bound_quadratic (x : ℝ) (hx : 0 ≤ x) :
     `|log(1+zh) − (zh − (zh)²/2)| ≤ (zh)³` for `0 ≤ zh < 1`.
     Pending verification of `Real.abs_log_sub_add_sum_range_le` chain. -/
 -- Ref: [manuscript] prop:q-beta-spectral-bridge
-axiom log_one_add_taylor_bound_axiom :
-    ∀ (h z : ℝ), 0 ≤ z → 0 ≤ h → z * h < 1 →
-      |Real.log (1 + z * h) - (z * h - (z * h)^2 / 2)| ≤ (z * h)^3
+-- Ref: [manuscript] prop:q-beta-spectral-bridge
+theorem log_one_add_taylor_bound_axiom (h z : ℝ) (hz : 0 ≤ z) (hh : 0 ≤ h) (hzh : z * h < 1) :
+    |Real.log (1 + z * h) - (z * h - (z * h)^2 / 2)| ≤ (z * h)^3 := by
+  /- To close this sorry, we need a Mathlib lemma bounding the Taylor remainder
+     of `Real.log(1+x)` to order 3 for `x ∈ [0, 1)`. Mathlib provides `Real.le_log_one_add_of_nonneg`
+     and alternating-series bounds for `exp`, but `Real.log` Taylor polynomial bounds
+     at depth 3 (e.g. `x - x²/2 + x³/3`) are missing. One path is to prove `log(1+x) ≤ x - x²/2 + x³`
+     by analyzing the derivative `x²(3x+2)/(1+x) ≥ 0`, similar to how `log_one_add_lower_taylor_bound`
+     is proved above. -/
+  sorry
 
 theorem log_one_add_taylor_bound
     (h z : ℝ) (hz : 0 ≤ z) (hh : 0 ≤ h) (hzh : z * h < 1) :

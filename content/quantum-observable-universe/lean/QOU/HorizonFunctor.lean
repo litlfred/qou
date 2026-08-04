@@ -61,7 +61,7 @@ end HorizonFunctor
     closure-minus-interior — the genuine "limits of diagrams in the aeon"
     operator — so `boundary_nonobservable` is a *theorem* (the boundary lies
     in `{A₀ = 0}` by construction), not an assumption. -/
-def ofSpace {X : Type} [TopologicalSpace X] {ι : Type}
+def HorizonFunctor.ofSpace {X : Type} [TopologicalSpace X] {ι : Type}
     (A0 : X → ℝ) (region : ι → Set X) : HorizonFunctor where
   Config := X
   Aeon := ι

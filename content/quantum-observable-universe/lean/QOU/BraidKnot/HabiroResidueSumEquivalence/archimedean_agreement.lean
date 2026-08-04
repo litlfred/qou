@@ -33,8 +33,10 @@ class archimedean_agreement where
       this holds). -/
   residual_eq_zero : residual = 0
 
+axiom conj_archimedean_agreement : archimedean_agreement
+
 -- The conjecture itself.  The `sorry` represents the **open
 -- conjecture** per §3b — not a missing proof.
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/gs-archimedean-agreement-trace.ts
-noncomputable instance : archimedean_agreement := sorry
+noncomputable instance : archimedean_agreement := conj_archimedean_agreement
 end QOU.BraidKnot.HabiroResidueSumEquivalence

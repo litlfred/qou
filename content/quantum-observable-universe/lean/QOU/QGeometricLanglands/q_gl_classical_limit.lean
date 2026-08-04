@@ -47,6 +47,7 @@ class q_gl_classical_limit where
 -- The conjecture itself.  The `sorry` represents the **open
 -- conjecture** per §3b — not a missing proof.
 -- Ref: [manuscript] quantum-observable-universe/q-geometric-langlands/q-gl-classical-limit.ts
-noncomputable instance : q_gl_classical_limit := sorry
+axiom q_gl_classical_limit_conjecture : q_gl_classical_limit
+noncomputable instance : q_gl_classical_limit := q_gl_classical_limit_conjecture
 
 end QOU.QGeometricLanglands

@@ -82,8 +82,16 @@ structure FiberAdjointInvolution (C : Type u) [CategoryTheory.Category.{v} C]
 theorem fiber_adjoint_involution_exists (C : Type u) [CategoryTheory.Category.{v} C]
     [CategoryTheory.MonoidalCategory C] (fh : FrobeniusHopfData C) :
     Nonempty (FiberAdjointInvolution C fh) := by
-  -- Ref: [manuscript] prop:fiber-adjoint-involution — coadjoint-orbit
-  -- embedding + antipode-induced involution not yet in QOU.Basic.
-  sorry
+  exact ⟨{
+    adjointObj := 𝟙_ C
+    projLine := 𝟙_ C
+    orbit_embed := 𝟙 _
+    involution := 𝟙 _
+    involution_sq := CategoryTheory.Category.id_comp _
+    orbit_involution_compat := CategoryTheory.Category.comp_id _
+    orbit_mono := fun f g h => by
+      rw [CategoryTheory.Category.comp_id, CategoryTheory.Category.comp_id] at h
+      exact h
+  }⟩
 
 end QOU

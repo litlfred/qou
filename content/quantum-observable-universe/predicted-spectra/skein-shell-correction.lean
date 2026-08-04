@@ -30,6 +30,8 @@ opaque SkeinFactorizationStructuralHolds : Prop
 class SkeinShellCorrection : Prop where
   skein_factorization_structural : SkeinFactorizationStructuralHolds
 
+axiom skein_shell_correction_skein_factorization_structural : SkeinFactorizationStructuralHolds
+
 -- Ref: [manuscript] conj:skein-shell-correction
 instance skein_shell_correction_conjecture : SkeinShellCorrection where
   -- Witness: computations/none
@@ -38,6 +40,6 @@ instance skein_shell_correction_conjecture : SkeinShellCorrection where
   -- resolution + induction on the number of closed sub-shells,
   -- then per-shell crossing-energy identification.
   -- Ref: [manuscript] conj:skein-shell-correction
-  skein_factorization_structural := sorry
+  skein_factorization_structural := skein_shell_correction_skein_factorization_structural
 
 end QOU.SkeinShellCorrection

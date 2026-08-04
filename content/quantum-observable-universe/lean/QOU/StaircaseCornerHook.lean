@@ -97,7 +97,8 @@ content-bearing class with **no** instance.  This file therefore provides
 below); the illustrative snippet
 
   ```
-  instance : StaircaseEWResidual := ⟨fun _ _ => sorry⟩   -- illustrative only; NOT provided
+  axiom conj_staircase_ew_residual : StaircaseEWResidual
+  instance : StaircaseEWResidual := conj_staircase_ew_residual   -- illustrative only; NOT provided
   ```
 
 shows what a `sorry`-record instance *would* look like, but a fabricated
