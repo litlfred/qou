@@ -1,11 +1,11 @@
 ---
 # qou-qvpl
 title: 'T2: second crossing invariant (hypercharge) via ribbon twist'
-status: todo
+status: in-progress
 type: task
 priority: critical
 created_at: 2026-08-03T23:27:16Z
-updated_at: 2026-08-03T23:27:57Z
+updated_at: 2026-08-04T10:17:13Z
 parent: qou-8lxd
 ---
 
