@@ -52,7 +52,7 @@ open knots.
 
 | Date | Agent / branch | Intent | Results |
 |---|---|---|---|
-| 2026-08-04 | Copilot / `copilot/eight-fold` | INTENT: external electron.pdf triage + drain nearby electron arc beans in SM/eight-fold scope |  |
+| 2026-08-04 | Copilot / `copilot/eight-fold` | INTENT: external electron.pdf triage + drain nearby electron arc beans in SM/eight-fold scope | RESULTS: network fetch to physicsdetective blocked; corrected electron-arc prose to keep knot identification but remove standalone trefoil-mass overclaim, and aligned the example with CAL-1 framing. |
 
 ## Open fronts (beans / follow-ups)
 
