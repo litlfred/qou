@@ -1,11 +1,11 @@
 ---
 # qou-w5fw
 title: 'T3f: is the Ocneanu/Markov trace parameter derived or chosen?'
-status: todo
+status: completed
 type: task
 priority: critical
 created_at: 2026-08-04T00:07:01Z
-updated_at: 2026-08-04T00:07:01Z
+updated_at: 2026-08-04T10:05:47Z
 parent: qou-8lxd
 ---
 
