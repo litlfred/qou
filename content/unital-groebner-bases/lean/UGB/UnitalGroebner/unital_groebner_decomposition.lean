@@ -76,7 +76,8 @@ theorem unital_groebner_decomposition [Field k] [DecidableEq G]
   · -- Õ(G)-component: existence of a normal form for each f. This is the
     -- termination half (normal_form_exists), the remaining manuscript step.
     -- Ref: [manuscript] unital-groebner-bases — Õ(G)-component existence (termination)
-    sorry
+    intro f
+    exact normal_form_exists ord sys hgs f
   · -- Flatness: discharged by the gs_implies_flat axiom of Flatness.lean
     -- (Hilbert function preserved under the GS deformation).
     exact gs_implies_flat ord sys hgs h_deformed h_graded
