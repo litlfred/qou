@@ -82,7 +82,7 @@ theorem main_theorem_statement
   · -- Existence: the termination half (normal_form_exists). This is the
     -- single remaining manuscript step (well-founded reduction).
     -- Ref: [manuscript] unital-groebner-bases — existence of normal form (termination)
-    sorry
+    exact normal_form_exists ord sys hgs f
   · -- Uniqueness: fully discharged by the proved composition-lemma
     -- corollary `normal_form_unique` (confluence of a GS basis).
     intro nf₁ nf₂ h₁ h₂
