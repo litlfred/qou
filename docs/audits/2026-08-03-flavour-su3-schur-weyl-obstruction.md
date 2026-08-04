@@ -134,7 +134,36 @@ is a numerical near-miss that a better fit could rescue.
 > **Flavour $\mathrm{SU}(3)$ requires a 3-dimensional object $W$ in the
 > groupoid whose symmetric square $\mathrm{Sym}^2 W$ is irreducible (no
 > invariant symmetric form), equivalently whose fundamental is not
-> self-dual. QOU currently contains no such object.**
+> self-dual.**
+
+> **⚠ CORRECTION (2026-08-04) — "QOU currently contains no such object" was
+> wrong.** That sentence was written without completing the corpus-grep
+> checklist (the octonion / $G_2$ path was not walked), and it is the exact
+> failure mode `AGENTS.md` §"Before declaring open" warns about. The corpus
+> **does** contain a non-self-dual triple:
+> [`2026-07-12-octonion-recovery-from-genus4-analysis.md`](2026-07-12-octonion-recovery-from-genus4-analysis.md)
+> §Investigation 2 records colour $\mathrm{SU}(3)\subset G_2 = \mathrm{Aut}(\mathbb O)$
+> with the Günaydin–Gürsey decomposition
+> $\mathbf 7 = \mathbf 1 \oplus \mathbf 3 \oplus \bar{\mathbf 3}$.
+> The $\mathbf 3$ and $\bar{\mathbf 3}$ there are **complex conjugates, hence
+> genuinely non-self-dual** — precisely what §4 demands. Its discrete
+> skeleton is machine-checked (`det3_cyclic_invariant`: the associator is
+> $\mathrm{GL}(3,\mathbb F_2)\cong \mathrm{PSL}(2,7)$-invariant, the
+> Fano/Klein-quartic symmetry). What is missing is the **continuous** $G_2$
+> completion — the coset $S^6 = G_2/\mathrm{SU}(3)$ — which is a **Mathlib
+> gap** (no `Octonion`, no `G₂` Lie group), *not* a structural obstruction.
+>
+> Two caveats keep this honest: (i) that $\mathrm{SU}(3)$ is **colour**, not
+> flavour — but colour $\mathrm{SU}(3)$ is exactly the item
+> `sm-open-problems.md` lists as *"open: no construction; octonion fragments
+> only"*, so it is the more valuable target anyway; (ii) $\mathrm{PSL}(2,7)$
+> lives at genus 3 (Klein quartic) while QOU's substrate is genus 4 (Bring,
+> $S_5$, icosahedral), and the audit reaches octonions only at the **lattice**
+> level via $A_5\to E_8$ McKay, not as a product on $H^1$.
+>
+> §3a–§3c stand unchanged: the two objects examined there really are
+> excluded. The corrected claim is narrower — *those* candidates fail, and a
+> third, better one exists and is partly built.
 
 That is a single, cheap, falsifiable test any future candidate must pass, and
 it prunes in advance every construction built on a self-dual or orthogonal
