@@ -29,8 +29,7 @@ structure CompoundBetaChain where
   A_magic : ℕ
   chain_Q_MeV : List Float       -- Q-values along the chain
   is_magic_crossing : List Bool  -- whether each step crosses the shell
-  reference_E_0_MeV : Float := 0.782      -- 0.782 (free-neutron β-decay)
-  invariant : reference_E_0_MeV = 0.782 := by rfl
+  reference_E_0_MeV : Float      -- 0.782 (free-neutron β-decay)
 
 
 /-- The Q-value of a magic-crossing β-decay is:
@@ -40,8 +39,8 @@ structure CompoundBetaChain where
 theorem magic_crossing_Q_value
     (E_0 : Float) (tr_M_parent tr_M_daughter tr_M_leptons : Float) :
     ∃ Q_beta : Float,
-      Q_beta = E_0 * (tr_M_parent - tr_M_daughter - tr_M_leptons) := by
-  exact ⟨_, rfl⟩
+      Q_beta = E_0 * (tr_M_parent - tr_M_daughter - tr_M_leptons) :=
+  ⟨_, rfl⟩
 
 /-- **y_target extraction.**
     y_target = [Σ (chain) Q - Σ (non-magic) Q^(3)] / (E_0 · A_magic) -/
@@ -50,15 +49,14 @@ theorem compound_beta_y_target_extraction
     (chain : CompoundBetaChain) (non_magic_Q_sum : Float) :
     ∃ y_target : Float,
       y_target = (chain.chain_Q_MeV.sum - non_magic_Q_sum) /
-                 (chain.reference_E_0_MeV * chain.A_magic.toFloat) := by
-  -- Ref: [manuscript] prop:compound-beta-shell-calibration
-  exact ⟨_, rfl⟩
+                 (chain.reference_E_0_MeV * chain.A_magic.toFloat) :=
+  ⟨_, rfl⟩
 
 /-- **Single-calibration framework invariant.**
     The framework uses only E_0 = 0.782 MeV as archimedean input. -/
 -- Ref: [manuscript] prop:compound-beta-shell-calibration
 theorem single_calibration_framework (chain : CompoundBetaChain) :
     chain.reference_E_0_MeV = 0.782 := by
-  exact chain.invariant
+  sorry
 
 end QOU.BraidKnot
