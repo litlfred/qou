@@ -1,70 +1,82 @@
-*The color gauge group $\mathrm{SU}(3)_c$ arises as the stabilizer
-subgroup of the octonion automorphism group $G_2 = \mathrm{Aut}(\mathbb{O})$.*
+*The discrete color symmetry $\mathrm{PSL}(2,7)$ arises from the octonionic
+automorphism group $G_2$ via the Fano plane, whose incidence structure
+encodes the octonion multiplication table.  The bridge group
+$S_4 \subset S_5 \cap \mathrm{PSL}(2,7)$ carries the local Fano data
+from the Bring surface to the Klein quartic.*
 
-The octonion algebra $\mathbb{O}$ is the unique $8$-dimensional real
-division algebra.  Its automorphism group $G_2$ is the $14$-dimensional
-exceptional simple Lie group.  Fixing an imaginary unit $e \in
-\mathrm{Im}(\mathbb{O})$ breaks $G_2$ to the stabilizer
-$\mathrm{Stab}_{G_2}(e) \cong \mathrm{SU}(3)$, and the imaginary
-octonions decompose under this $\mathrm{SU}(3)$ as
-$$
-  \mathrm{Im}(\mathbb{O}) \cong \mathbb{R}^7
-  = \mathbf{1} \oplus \mathbf{3} \oplus \bar{\mathbf{3}},
-$$
-where the $\mathbf{1}$ is the fixed direction $e$, and the $\mathbf{3},
-\bar{\mathbf{3}}$ are complex conjugate representations
-(Günaydin--Gürsey \cite{gunaydin1973}).
+**The $S_4$ bridge mechanism.**
+The Bring surface $\Sigma_4$ (genus 4) has automorphism group $S_5$.
+The Klein quartic $\Sigma_3$ (genus 3) has automorphism group
+$\mathrm{PSL}(2,7)$ of order $168 = 84(3-1)$, the Hurwitz bound.
+The group $S_4$ is the maximal common subgroup:
 
-**The Sym$^2$ gate.**  This $\mathrm{SU}(3)$ passes the discriminator
-test that eliminates the corpus's icosahedral colour triple $T_1$:
+\begin{enumerate}
+\item $S_4 \subset S_5$ as the stabilizer of one letter (index 5).
+\item $S_4 \cong \mathrm{Stab}(\mathrm{pt})$ in $\mathrm{PSL}(2,7)$
+  acting on the 7 Fano points (index 7).
+\end{enumerate}
+
+The point stabilizer $S_4$ preserves the \emph{local Fano structure}
+at the fixed point: the 3 lines through that point, encoding the 3
+octonion multiplication triples involving the corresponding imaginary
+unit.  Computationally verified
+(\texttt{s4\_fano\_action.py}):
 \begin{itemize}
-\item $T_1$: $\mathrm{Sym}^2(T_1) = A \oplus H = \mathbf{1} \oplus
-  \mathbf{5}$ --- a singlet is present, so $T_1$ admits an invariant
-  symmetric bilinear form and is \emph{self-dual} (orthogonal type).
-  It cannot carry $\mathrm{SU}(3)$.
-\item $G_2$ route: $\mathrm{Sym}^2(\mathbf{3}) = \mathbf{6}$, irreducible
-  --- no singlet, the fundamental is \emph{not self-dual} ($\mathbf{3}
-  \not\cong \bar{\mathbf{3}}$).  This is the defining property of
-  $\mathrm{SU}(N)$ for $N \geq 3$ (complex type).
+\item $S_4$ acts transitively on the 3 lines through the fixed point,
+\item $S_4$ acts transitively on the 4 lines not through the fixed point,
+\item $S_4$ acts transitively on the 6 remaining Fano points,
+\item the 3 local lines partition the 6 remaining points into 3 pairs.
 \end{itemize}
 
-**Discrete skeleton.**  The associator structure of $\mathbb{O}$ is
-invariant under $\mathrm{GL}(3, \mathbb{F}_2) \cong \mathrm{PSL}(2,7)$,
-the symmetry group of the Fano plane (7 points, 7 lines, 3 points per
-line).  This is the finite shadow of $G_2$: the Fano plane indexes the
-multiplication table of the imaginary units $e_1, \ldots, e_7$, and its
-automorphism group is the largest finite subgroup of $G_2$ acting
-faithfully on $\mathrm{Im}(\mathbb{O})$.  The cyclic determinant
-$\det_3$-invariance of the associator has been machine-checked in the
-corpus.
+**Conjectured genus degeneration.**
+The derivation chain from Bring to Fano is:
+$$
+  \underbrace{\Sigma_4}_{g=4,\; S_5}
+  \;\xrightarrow{\text{pinch}}\;
+  \underbrace{\Sigma_3^{\mathrm{nod}}}_{g_{\mathrm{arith}}=4,\; S_4}
+  \;\xrightarrow{\text{normalize}}\;
+  \underbrace{\Sigma_3}_{g=3,\; \mathrm{PSL}(2,7)}
+$$
+Pinching an $S_4$-invariant 1-cycle on $\Sigma_4$ produces a nodal curve
+of arithmetic genus 4 but geometric genus 3.  The $S_4$ symmetry
+survives the pinch (it fixes the vanishing cycle).  On the
+normalization $\Sigma_3$ of genus 3, the Hurwitz bound forces the
+automorphism group to be at most $\mathrm{PSL}(2,7)$, and since $S_4$
+embeds in $\mathrm{PSL}(2,7)$ as a point stabilizer, the enhancement
+$S_4 \hookrightarrow \mathrm{PSL}(2,7)$ is the unique maximal option.
 
-**Caveats.** Two honest qualifications:
-\begin{enumerate}
-\item This $\mathrm{SU}(3)$ is \emph{color}, not flavour.  But color
-  $\mathrm{SU}(3)_c$ is precisely the item that
-  \texttt{sm-open-problems.md} lists as open (``no construction;
-  octonion fragments only''), so closing it is the more valuable target.
-\item $\mathrm{PSL}(2,7)$ lives at genus $3$ (Klein quartic), while
-  QOU's substrate is genus $4$ (Bring surface, $S_5$, icosahedral).
-  Two routes connect them.  First, the $S_4$ bridge: $S_4$ (order $24$)
-  is a maximal subgroup of \emph{both} $S_5$ (point-stabiliser, index
-  $5$) and $\mathrm{PSL}(2,7)$ (Fano point-stabiliser, index $7$);
-  pinching an $S_4$-invariant $1$-cycle on the genus-$4$ Bring surface
-  yields a nodal genus-$3$ curve inheriting $S_4$, which can enhance to
-  the Hurwitz-maximal $\mathrm{PSL}(2,7)$ at genus $3$.  Second, the
-  McKay correspondence $A_5 \to E_8$ reaches octonionic structure at the
-  lattice level.  $\mathrm{PSL}(2,7)$ itself embeds as a finite subgroup
-  of $\mathrm{SU}(3)$ (the Blichfeldt group of order $168$), giving a
-  direct tie from the Fano-plane symmetry to color gauge structure.
-  The irreducible representations of $\mathrm{PSL}(2,7)$ have dimensions
-  $\{1, 3, \bar{3}, 6, 7, 8\}$ (check: $1+9+9+36+49+64 = 168$);
-  the $\mathbf{3}$ and $\bar{\mathbf{3}}$ are the same as the
-  fundamental and anti-fundamental of the Blichfeldt $\mathrm{SU}(3)$
-  embedding, confirming the color triplet/antitriplet structure.
-  The $\mathbf{7}$ acts on $\mathrm{Im}(\mathbb{O})$, and the
-  $\mathbf{8}$ is the adjoint representation of $\mathrm{SU}(3)$
-  (the gluon octet).
-  The continuous $G_2$ completion --- specifically the coset
-  $S^6 = G_2/\mathrm{SU}(3)$ --- is a Mathlib gap (no
-  \texttt{Octonion}, no $G_2$ Lie group), not a structural obstruction.
-\end{enumerate}
+\textbf{Status:} the $S_4$ bridge mechanism is computationally verified
+(\texttt{s4\_bridge\_verification.py}, \texttt{s4\_fano\_action.py}).
+The genus degeneration step is a conjecture: whether pinching an
+$S_4$-invariant cycle on Bring actually produces the Klein quartic
+(rather than some other genus-3 curve) requires an algebraic-geometry
+argument not yet provided.
+
+**$\mathrm{PSL}(2,7)$ representation theory.**
+Computationally verified (\texttt{psl27\_irrep\_verification.py}):
+the group $\mathrm{PSL}(2,7) \cong \mathrm{GL}(3, \mathbb{F}_2)$ has
+6 conjugacy classes and 6 irreducible representations of dimensions
+\begin{equation}\label{eq:psl27-irreps}
+  \{1, 3, \bar{3}, 6, 7, 8\},
+  \qquad
+  \sum d_i^2 = 1 + 9 + 9 + 36 + 49 + 64 = 168 = |\mathrm{PSL}(2,7)|.
+\end{equation}
+The physical interpretation:
+\begin{center}
+\begin{tabular}{c l l}
+\hline
+$\dim$ & Representation & Physical role \\
+\hline
+$1$       & trivial         & singlet \\
+$3$       & fundamental     & color triplet ($q$) \\
+$\bar{3}$ & conjugate       & color antitriplet ($\bar{q}$) \\
+$6$       & $\mathrm{Sym}^2(\mathbf{3})$ & no singlet $\Rightarrow$ complex type \\
+$7$       & natural on $\mathrm{Im}(\mathbb{O})$ & imaginary octonions \\
+$8$       & adjoint of $\mathrm{SU}(3)$ & gluon octet \\
+\hline
+\end{tabular}
+\end{center}
+The 3 and $\bar{3}$ are complex conjugate (not self-dual), matching
+the Günaydin--Gürsey decomposition
+$\mathrm{Im}(\mathbb{O}) \cong \mathbb{R} \oplus \mathbb{C}^3$
+under $\mathrm{SU}(3) \subset G_2$.
