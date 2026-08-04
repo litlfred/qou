@@ -1,0 +1,9 @@
+---
+# qou-g437
+title: Extract HeckeBaerStarGeneric.hecke_baer_star_generic
+status: todo
+type: task
+created_at: 2026-08-04T10:55:33Z
+updated_at: 2026-08-04T10:55:33Z
+---
+

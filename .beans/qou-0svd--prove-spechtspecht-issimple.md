@@ -1,0 +1,9 @@
+---
+# qou-0svd
+title: Prove Specht.specht_isSimple
+status: todo
+type: task
+created_at: 2026-08-04T13:40:56Z
+updated_at: 2026-08-04T13:40:56Z
+---
+

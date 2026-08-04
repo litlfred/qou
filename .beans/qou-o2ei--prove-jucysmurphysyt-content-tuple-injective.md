@@ -1,0 +1,9 @@
+---
+# qou-o2ei
+title: Prove JucysMurphy.syt_content_tuple_injective
+status: todo
+type: task
+created_at: 2026-08-04T11:14:12Z
+updated_at: 2026-08-04T11:14:12Z
+---
+
