@@ -10,7 +10,7 @@ hyperbolic volumes drive the Descartes universe mass spectrum:
 | Borromean rings $\mathcal{B}_3$ | $\mathrm{Vol}(\mathcal{B}_3) \approx 7.32772$ | Nucleon |
 
 All torus knots (trefoil, cinquefoil, septafoil) possess zero hyperbolic
-volume. They contribute no bare mass from this channel.
+volume. They contribute no topological mass from this channel.
 
 **Conjecture.**
 The set $\{\mathrm{Vol}(4_1),\; \mathrm{Vol}(5_2),\;

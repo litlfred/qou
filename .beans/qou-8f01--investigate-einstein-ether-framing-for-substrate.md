@@ -1,10 +1,12 @@
 ---
-title: 'Investigate Einstein ether framing for substrate naming / inclusion'
-status: todo
+# qou-8f01
+title: Investigate Einstein ether framing for substrate naming / inclusion
+status: completed
 type: task
-parent: qou-nsyh
+priority: normal
 created_at: 2026-08-04T21:54:28Z
-updated_at: 2026-08-04T21:54:28Z
+updated_at: 2026-08-04T22:15:03Z
+parent: qou-nsyh
 ---
 
 
