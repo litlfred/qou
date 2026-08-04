@@ -2798,6 +2798,104 @@ export const references: CSLData[] = [
     URL: "https://arxiv.org/abs/gr-qc/9504004",
   }),
 
+  // ── Einstein 1925: first non-symmetric unified field theory ───
+  ref({
+    id: "einstein1925",
+    type: "article-journal",
+    title:
+      "Einheitliche Feldtheorie von Gravitation und Elektrizität",
+    author: [
+      { family: "Einstein", given: "Albert" },
+    ],
+    "container-title":
+      "Sitzungsberichte der Preussischen Akademie der Wissenschaften",
+    page: "414-419",
+    issued: { "date-parts": [[1925]] },
+  }),
+
+  // ── Einstein & Straus 1946: non-symmetric field theory ────────
+  ref({
+    id: "einstein1946",
+    type: "article-journal",
+    title:
+      "A Generalization of the Relativistic Theory of Gravitation, II",
+    author: [
+      { family: "Einstein", given: "Albert" },
+      { family: "Straus", given: "Ernst G." },
+    ],
+    "container-title": "Annals of Mathematics",
+    volume: "47",
+    issue: "4",
+    page: "731-741",
+    issued: { "date-parts": [[1946]] },
+    DOI: "10.2307/1969231",
+  }),
+
+  // ── Einstein & Kaufman 1955: the mature non-symmetric theory ──
+  ref({
+    id: "einstein1955",
+    type: "article-journal",
+    title: "A New Form of the General Relativistic Field Equations",
+    author: [
+      { family: "Einstein", given: "Albert" },
+      { family: "Kaufman", given: "Bruria" },
+    ],
+    "container-title": "Annals of Mathematics",
+    volume: "62",
+    issue: "1",
+    page: "128-138",
+    issued: { "date-parts": [[1955]] },
+    DOI: "10.2307/2007103",
+  }),
+
+  // ── Schrödinger 1950: parallel non-symmetric programme ────────
+  ref({
+    id: "schrodinger1950",
+    type: "book",
+    title: "Space-Time Structure",
+    author: [
+      { family: "Schrödinger", given: "Erwin" },
+    ],
+    publisher: "Cambridge University Press",
+    issued: { "date-parts": [[1950]] },
+  }),
+
+  // ── Damour, Deser & McCarthy 1993: NGT ghost / instability ────
+  ref({
+    id: "damour1993",
+    type: "article-journal",
+    title: "Nonsymmetric gravity theories: Inconsistencies and a cure",
+    author: [
+      { family: "Damour", given: "Thibault" },
+      { family: "Deser", given: "Stanley" },
+      { family: "McCarthy", given: "James" },
+    ],
+    "container-title": "Physical Review D",
+    volume: "47",
+    issue: "4",
+    page: "1541-1556",
+    issued: { "date-parts": [[1993]] },
+    DOI: "10.1103/PhysRevD.47.1541",
+    URL: "https://arxiv.org/abs/gr-qc/9207003",
+  }),
+
+  // ── Moffat 1995: Nonsymmetric Gravitational Theory (NGT) ──────
+  ref({
+    id: "moffat1995",
+    type: "article-journal",
+    title: "Nonsymmetric gravitational theory",
+    author: [
+      { family: "Moffat", given: "John W." },
+    ],
+    "container-title": "Physics Letters B",
+    volume: "355",
+    issue: "3-4",
+    page: "447-452",
+    issued: { "date-parts": [[1995]] },
+    DOI: "10.1016/0370-2693(95)00670-G",
+    URL: "https://arxiv.org/abs/gr-qc/9411006",
+  }),
+
   // ── Bekenstein 1981: Entropy-to-energy bound ──────────────────
   ref({
     id: "bekenstein1981",
