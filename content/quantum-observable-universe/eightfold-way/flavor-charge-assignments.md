@@ -59,8 +59,8 @@ The battery has been run over all $10{,}000$ helon-style assignments (3
 strands per fermion, per-strand twist in $\{-1, 0, +1\}$). Only $4$
 survive the spectrum + nucleon-GMN battery (no fitted parameters, exact
 rational arithmetic). The $u$-quark twist $\{0, 1, 1\}$ and the electron
-twist $\{-1, -1, -1\}$ are \\emph{uniquely determined}; the $d$-quark and
+twist $\{-1, -1, -1\}$ are \emph{uniquely determined}; the $d$-quark and
 neutrino each admit two options. This is candidate-space feasibility: the
 twist multisets are enumerated, not derived from the framework's braid
 words, so the conjecture remains open. See
-\\texttt{strand-twist-y-battery.witness.json}.
+\texttt{strand-twist-y-battery.witness.json}.
