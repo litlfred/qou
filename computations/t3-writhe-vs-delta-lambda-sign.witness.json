@@ -1,0 +1,340 @@
+{
+  "witness_schema": "witness/v1",
+  "name": "t3-writhe-vs-delta-lambda-sign",
+  "bean": "qou-buxs",
+  "description": "Per-partition comparison of the derived weak-isospin T3 writhe-sign grading (PR #4618) against the mixed-sign Delta_lambda target sgn(w0^{S_lambda'})*dim for n=3 and n=6. Derive-then-check: aggregation maps derived from the Young/Wedderburn column-antisymmetrizer + chiral-EFT tau1.tau2 Pauli template, not fitted to the sign vector.",
+  "engine": "python-combinatorics (pure, no external deps)",
+  "target": "Delta_lambda = sgn(w0^{S_lambda'}) * dim(V_lambda)",
+  "n3": [
+    {
+      "lambda": [
+        3
+      ],
+      "conjugate_col_heights": [
+        1,
+        1,
+        1
+      ],
+      "dim": 1,
+      "n_of_lambda": 0,
+      "target_sign": 1,
+      "target_delta": 1,
+      "mapA_sign_character": 1,
+      "mapB_T3_net_writhe_sign": 1,
+      "A_matches_target": true,
+      "B_matches_target": true
+    },
+    {
+      "lambda": [
+        2,
+        1
+      ],
+      "conjugate_col_heights": [
+        2,
+        1
+      ],
+      "dim": 2,
+      "n_of_lambda": 1,
+      "target_sign": -1,
+      "target_delta": -2,
+      "mapA_sign_character": -1,
+      "mapB_T3_net_writhe_sign": -1,
+      "A_matches_target": true,
+      "B_matches_target": true
+    },
+    {
+      "lambda": [
+        1,
+        1,
+        1
+      ],
+      "conjugate_col_heights": [
+        3
+      ],
+      "dim": 1,
+      "n_of_lambda": 3,
+      "target_sign": -1,
+      "target_delta": -1,
+      "mapA_sign_character": -1,
+      "mapB_T3_net_writhe_sign": -1,
+      "A_matches_target": true,
+      "B_matches_target": true
+    }
+  ],
+  "n6": [
+    {
+      "lambda": [
+        6
+      ],
+      "conjugate_col_heights": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "dim": 1,
+      "n_of_lambda": 0,
+      "target_sign": 1,
+      "target_delta": 1,
+      "mapA_sign_character": 1,
+      "mapB_T3_net_writhe_sign": 1,
+      "A_matches_target": true,
+      "B_matches_target": true
+    },
+    {
+      "lambda": [
+        5,
+        1
+      ],
+      "conjugate_col_heights": [
+        2,
+        1,
+        1,
+        1,
+        1
+      ],
+      "dim": 5,
+      "n_of_lambda": 1,
+      "target_sign": -1,
+      "target_delta": -5,
+      "mapA_sign_character": -1,
+      "mapB_T3_net_writhe_sign": -1,
+      "A_matches_target": true,
+      "B_matches_target": true
+    },
+    {
+      "lambda": [
+        4,
+        2
+      ],
+      "conjugate_col_heights": [
+        2,
+        2,
+        1,
+        1
+      ],
+      "dim": 9,
+      "n_of_lambda": 2,
+      "target_sign": 1,
+      "target_delta": 9,
+      "mapA_sign_character": 1,
+      "mapB_T3_net_writhe_sign": 1,
+      "A_matches_target": true,
+      "B_matches_target": true
+    },
+    {
+      "lambda": [
+        4,
+        1,
+        1
+      ],
+      "conjugate_col_heights": [
+        3,
+        1,
+        1,
+        1
+      ],
+      "dim": 10,
+      "n_of_lambda": 3,
+      "target_sign": -1,
+      "target_delta": -10,
+      "mapA_sign_character": -1,
+      "mapB_T3_net_writhe_sign": -1,
+      "A_matches_target": true,
+      "B_matches_target": true
+    },
+    {
+      "lambda": [
+        3,
+        3
+      ],
+      "conjugate_col_heights": [
+        2,
+        2,
+        2
+      ],
+      "dim": 5,
+      "n_of_lambda": 3,
+      "target_sign": -1,
+      "target_delta": -5,
+      "mapA_sign_character": -1,
+      "mapB_T3_net_writhe_sign": -1,
+      "A_matches_target": true,
+      "B_matches_target": true
+    },
+    {
+      "lambda": [
+        3,
+        2,
+        1
+      ],
+      "conjugate_col_heights": [
+        3,
+        2,
+        1
+      ],
+      "dim": 16,
+      "n_of_lambda": 4,
+      "target_sign": 1,
+      "target_delta": 16,
+      "mapA_sign_character": 1,
+      "mapB_T3_net_writhe_sign": 1,
+      "A_matches_target": true,
+      "B_matches_target": true
+    },
+    {
+      "lambda": [
+        3,
+        1,
+        1,
+        1
+      ],
+      "conjugate_col_heights": [
+        4,
+        1,
+        1
+      ],
+      "dim": 10,
+      "n_of_lambda": 6,
+      "target_sign": 1,
+      "target_delta": 10,
+      "mapA_sign_character": 1,
+      "mapB_T3_net_writhe_sign": -1,
+      "A_matches_target": true,
+      "B_matches_target": false
+    },
+    {
+      "lambda": [
+        2,
+        2,
+        2
+      ],
+      "conjugate_col_heights": [
+        3,
+        3
+      ],
+      "dim": 5,
+      "n_of_lambda": 6,
+      "target_sign": 1,
+      "target_delta": 5,
+      "mapA_sign_character": 1,
+      "mapB_T3_net_writhe_sign": 1,
+      "A_matches_target": true,
+      "B_matches_target": true
+    },
+    {
+      "lambda": [
+        2,
+        2,
+        1,
+        1
+      ],
+      "conjugate_col_heights": [
+        4,
+        2
+      ],
+      "dim": 9,
+      "n_of_lambda": 7,
+      "target_sign": -1,
+      "target_delta": -9,
+      "mapA_sign_character": -1,
+      "mapB_T3_net_writhe_sign": 1,
+      "A_matches_target": true,
+      "B_matches_target": false
+    },
+    {
+      "lambda": [
+        2,
+        1,
+        1,
+        1,
+        1
+      ],
+      "conjugate_col_heights": [
+        5,
+        1
+      ],
+      "dim": 5,
+      "n_of_lambda": 10,
+      "target_sign": 1,
+      "target_delta": 5,
+      "mapA_sign_character": 1,
+      "mapB_T3_net_writhe_sign": -1,
+      "A_matches_target": true,
+      "B_matches_target": false
+    },
+    {
+      "lambda": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "conjugate_col_heights": [
+        6
+      ],
+      "dim": 1,
+      "n_of_lambda": 15,
+      "target_sign": -1,
+      "target_delta": -1,
+      "mapA_sign_character": -1,
+      "mapB_T3_net_writhe_sign": -1,
+      "A_matches_target": true,
+      "B_matches_target": true
+    }
+  ],
+  "summary": {
+    "n3": {
+      "num_partitions": 3,
+      "target_pos": 1,
+      "target_neg": 2,
+      "mapA_matches": 3,
+      "mapB_matches": 3
+    },
+    "n6": {
+      "num_partitions": 11,
+      "target_pos": 6,
+      "target_neg": 5,
+      "mapA_matches": 11,
+      "mapB_matches": 8
+    }
+  },
+  "verdict": "partial",
+  "verdict_detail": {
+    "mapA_sign_character": "matches target for ALL partitions (= target definition, crossing-count parity; not independent info)",
+    "mapB_T3_literal_net_writhe_sign": {
+      "n3": "3/3 (coincidental: all column heights <= 3)",
+      "n6": "8/11 (diverges at height-4/5 columns)",
+      "n6_mismatches": [
+        [
+          3,
+          1,
+          1,
+          1
+        ],
+        [
+          2,
+          2,
+          1,
+          1
+        ],
+        [
+          2,
+          1,
+          1,
+          1,
+          1
+        ]
+      ]
+    },
+    "conclusion": "The literal per-quark T3 = sign(net writhe) is a COARSER statistic than the crossing-count parity Delta_lambda needs. They agree only for column heights <= 3 (all of n=3, most of n=6) and diverge at height >= 4. T3 supplies the physical crossing reading of the antisymmetric channel (down-type = negative crossing), consistent with the chiral-EFT tau1.tau2 Pauli/exchange-symmetry template, but does NOT independently reproduce the Delta_lambda sign vector: that is the column-antisymmetrizer sign character, the target's own definition."
+  },
+  "chiral_eft_template": "Hammer-Koenig-van Kolck arXiv:1906.12122 p.12: Pauli principle => isospin sign = exchange symmetry of isospin wavefunction (triplet tau1.tau2=+1 symmetric / singlet tau1.tau2=-3 antisymmetric) = Young row(+)/column(-) sign.",
+  "anti_fit_statement": "No aggregation map was chosen to match the sign vector. MAP_A and MAP_B are the two standard readings of 'crossing sign aggregated over the column antisymmetrizer'; MAP_A is the target restated, MAP_B is the literal T3 statistic. MAP_B's partial match/failure is the honest derived result, not a tuned success.",
+  "scriptHash": "c88b8cfa9ba1",
+  "scriptCommitSha": "f9144394d428a87f998b6b19e05c17bdd8c5fae5"
+}
