@@ -71,7 +71,7 @@ theorem pbw_corollary
   refine ⟨?_, ?_⟩
   · -- Existence of the PBW normal form (termination half). Remaining step.
     -- Ref: [manuscript] unital-groebner-bases — existence of PBW normal form
-    sorry
+    exact normal_form_exists ord sys hgs f
   · -- Uniqueness of the PBW representative: proved via normal_form_unique.
     intro nf₁ nf₂ h₁ h₂
     exact normal_form_unique ord sys hgs f nf₁ nf₂ h₁ h₂
