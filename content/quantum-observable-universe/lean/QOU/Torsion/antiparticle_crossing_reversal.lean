@@ -35,9 +35,9 @@ class AntiparticleCrossingReversalContext extends QOU.Shared.MarkovTraceContext 
   /-- Coulomb charge of a hadron and its antihadron. -/
   Q_charge : ℝ
   Q_charge_anti : ℝ
-  /-- Bare mass of a hadron and its antihadron. -/
-  m_bare : ℝ
-  m_bare_anti : ℝ
+  /-- Topological (relational) mass of a hadron and its antihadron. -/
+  m_topological : ℝ
+  m_topological_anti : ℝ
   /-- Proposition: antiparticle crossing reversal holds. -/
   crossing_reversal_holds : Prop
   /-- Hypothesis that crossing reversal is active. -/
@@ -53,9 +53,9 @@ class AntiparticleCrossingReversalContext extends QOU.Shared.MarkovTraceContext 
   /-- Manuscript sub-claim (iii) — Coulomb charge reversal:
       `Q(𝔋^σ) = −Q(𝔋)`. -/
   impl_coulomb_charge_reversal : crossing_reversal_holds → Q_charge_anti = - Q_charge
-  /-- Manuscript sub-claim (iv) — Bare mass invariance: the mirror
-      preserves the knot type so `m_bare(𝔋^σ) = m_bare(𝔋)`. -/
-  impl_bare_mass_invariance : crossing_reversal_holds → m_bare_anti = m_bare
+  /-- Manuscript sub-claim (iv) — Topological mass invariance: the mirror
+      preserves the knot type so `m_topological(𝔋^σ) = m_topological(𝔋)`. -/
+  impl_topological_mass_invariance : crossing_reversal_holds → m_topological_anti = m_topological
 
 /-- **Content statement** (from manuscript):
 
@@ -69,10 +69,10 @@ theorem antiparticle_crossing_reversal [ctx : AntiparticleCrossingReversalContex
      ∀ b : ctx.Braid, ctx.mirror (ctx.mirror b) = b) ∧
     ctx.E_cross_anti = - ctx.E_cross_bar ∧
     ctx.Q_charge_anti = - ctx.Q_charge ∧
-    ctx.m_bare_anti = ctx.m_bare :=
+    ctx.m_topological_anti = ctx.m_topological :=
   ⟨ctx.impl_crossing_reversal_defines ctx.reversal_active,
    ctx.impl_crossing_energy_sign ctx.reversal_active,
    ctx.impl_coulomb_charge_reversal ctx.reversal_active,
-   ctx.impl_bare_mass_invariance ctx.reversal_active⟩
+   ctx.impl_topological_mass_invariance ctx.reversal_active⟩
 
 end QOU.Torsion
