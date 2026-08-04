@@ -46,9 +46,17 @@ corpus.
   octonion fragments only''), so closing it is the more valuable target.
 \item $\mathrm{PSL}(2,7)$ lives at genus $3$ (Klein quartic), while
   QOU's substrate is genus $4$ (Bring surface, $S_5$, icosahedral).
-  The connection is via the McKay correspondence $A_5 \to E_8$, which
-  reaches octonionic structure at the lattice level, not as a product
-  on $H^1$.  The continuous $G_2$ completion --- specifically the coset
+  Two routes connect them.  First, the $S_4$ bridge: $S_4$ (order $24$)
+  is a maximal subgroup of \\emph{both} $S_5$ (point-stabiliser, index
+  $5$) and $\mathrm{PSL}(2,7)$ (Fano point-stabiliser, index $7$);
+  pinching an $S_4$-invariant $1$-cycle on the genus-$4$ Bring surface
+  yields a nodal genus-$3$ curve inheriting $S_4$, which can enhance to
+  the Hurwitz-maximal $\mathrm{PSL}(2,7)$ at genus $3$.  Second, the
+  McKay correspondence $A_5 \to E_8$ reaches octonionic structure at the
+  lattice level.  $\mathrm{PSL}(2,7)$ itself embeds as a finite subgroup
+  of $\mathrm{SU}(3)$ (the Blichfeldt group of order $168$), giving a
+  direct tie from the Fano-plane symmetry to color gauge structure.
+  The continuous $G_2$ completion --- specifically the coset
   $S^6 = G_2/\mathrm{SU}(3)$ --- is a Mathlib gap (no
   \texttt{Octonion}, no $G_2$ Lie group), not a structural obstruction.
 \end{enumerate}
