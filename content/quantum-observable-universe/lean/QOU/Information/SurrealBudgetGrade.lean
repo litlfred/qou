@@ -48,7 +48,7 @@ theorem not_superPoly_of_polyBounded {f : ℕ → ℕ} (h : PolyBounded f) :
 /-- **Budget grade is monotone / downward-closed (sorry-free).**  Anything
     dominated by a poly-budgeted function is poly-budgeted — bounding a
     smaller quantity by the same budget. -/
-theorem PolyBounded.mono {f g : ℕ → ℕ} (hf : PolyBounded f)
+theorem mono {f g : ℕ → ℕ} (hf : PolyBounded f)
     (hle : ∀ n, g n ≤ f n) : PolyBounded g := by
   obtain ⟨c, k, hb⟩ := hf
   exact ⟨c, k, fun n => le_trans (hle n) (hb n)⟩

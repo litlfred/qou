@@ -78,7 +78,7 @@ inductive IcoClass where
   deriving DecidableEq, Repr
 
 /-- All five icosahedral conjugacy classes. -/
-def IcoClass.allList : List IcoClass := [.e, .c2, .c3, .c5a, .c5b]
+def allList : List IcoClass := [.e, .c2, .c3, .c5a, .c5b]
 
 instance : Fintype IcoClass where
   elems := {IcoClass.e, IcoClass.c2, IcoClass.c3, IcoClass.c5a, IcoClass.c5b}
@@ -89,7 +89,7 @@ instance : Fintype A5Irrep where
   complete := fun x => by cases x <;> decide
 
 /-- The icosahedral rotation angle (in degrees) of each conjugacy class. -/
-def IcoClass.angle : IcoClass → ℕ
+def angle : IcoClass → ℕ
   | .e => 0 | .c2 => 180 | .c3 => 120 | .c5a => 72 | .c5b => 144
 
 /-- **The A₅ character zero pattern** (`charVanishes λ C = true ⟺ χ_λ(C) = 0`): `T₁,T₂` vanish on

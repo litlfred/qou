@@ -53,7 +53,7 @@ theorem hookLength_21_10 : Partition.hookLength [2, 1] 1 0 = 1 := by decide
 def hookProduct (lam : Partition) : ℕ :=
   (List.range lam.length).foldl
     (fun acc i =>
-      acc * (List.range ((lam.get? i).getD 0)).foldl
+      acc * (List.range ((lam[i]?).getD 0)).foldl
         (fun a j => a * Partition.hookLength lam i j) 1) 1
 
 /-- Classical dimension of the irrep V_λ of S_n:

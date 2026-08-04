@@ -129,7 +129,7 @@ theorem simpleZero_vanishAtStar (T : SimpleZeroBarOddCarrier σ) : T.N T.qStar =
 
 /-- A simple-zero carrier refines the plain `BarOddCarrierTarget`: it forgets the
 factorization and keeps the (now-derived) vanishing. -/
-def SimpleZeroBarOddCarrier.toTarget (T : SimpleZeroBarOddCarrier σ) :
+def toTarget (T : SimpleZeroBarOddCarrier σ) :
     BarOddCarrierTarget σ where
   N := T.N
   barOdd := T.barOdd

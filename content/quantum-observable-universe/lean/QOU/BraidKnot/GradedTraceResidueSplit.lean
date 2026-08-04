@@ -31,20 +31,20 @@ namespace QOU.BraidKnot
 universe u
 
 /-- The symbol map `σ: J^ℓ → J^ℓ/J^{ℓ+1}`.  Concrete model: identity. -/
-def GradedTraceResidueSplit.symbolMap
+def symbolMap
     {_R : Type u} [CommRing _R] (_ℓ : ℕ) (_q : _R) : Unit → Unit := id
 
 /-- The Markov trace on the associated graded algebra.  Concrete
     model: returns 0. -/
-def GradedTraceResidueSplit.gradedTrace
+def gradedTrace
     {R : Type u} [CommRing R] (_q : R) (_x : Unit) : R := 0
 
 /-- The total residue contribution.  Concrete model: returns 0. -/
-def GradedTraceResidueSplit.gbResidue
+def gbResidue
     {R : Type u} [CommRing R] (_q : R) (_x : Unit) : R := 0
 
 /-- The full Markov trace.  Concrete model: returns 0. -/
-def GradedTraceResidueSplit.markovTrace
+def markovTrace
     {R : Type u} [CommRing R] (_q : R) (_x : Unit) : R := 0
 
 /-- **Graded-trace residue split.**  Polymorphic in the ground field `R`.
@@ -69,7 +69,7 @@ class GradedTraceResidueSplit (R : Type u) [CommRing R] where
     This recovers the pure-descended regime.
 
     Ref: [manuscript] `prop:categorical-mass-markov`. -/
-theorem GradedTraceResidueSplit.level_zero_pure_descended
+theorem level_zero_pure_descended
     {R : Type u} [CommRing R] (S : GradedTraceResidueSplit R)
     (h : S.oscillating = 0) :
     S.total = S.smooth := by
@@ -79,7 +79,7 @@ theorem GradedTraceResidueSplit.level_zero_pure_descended
     Strutinsky's `E = Ẽ + δE_shell`.
 
     Ref: [manuscript] §Nuclear Binding and Beta Stability. -/
-theorem GradedTraceResidueSplit.strutinsky_analogue
+theorem strutinsky_analogue
     {R : Type u} [CommRing R] (S : GradedTraceResidueSplit R) :
     S.total = S.smooth + S.oscillating :=
   S.split_identity

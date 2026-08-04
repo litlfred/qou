@@ -57,7 +57,7 @@ variable {b : ℝ}
 /-- **Off-axis bridge (derived).**  Quasi-periodicity pins the extension on
     the `+ib`-shifted line in terms of the CONSTRUCTED `phiB` values on the
     real axis: the identification is rigid along the `b`-lattice, not free. -/
-theorem PhiBFibreExtension.offAxis_bridge [hext : PhiBFibreExtension b] (x : ℝ) :
+theorem offAxis_bridge [hext : PhiBFibreExtension b] (x : ℝ) :
     phiB b x
       = (1 + Complex.exp (Complex.I * (Real.pi : ℂ) * ((b : ℂ)) ^ 2)
           * Complex.exp (2 * (Real.pi : ℂ) * (b : ℂ) * (x : ℂ)))
@@ -69,7 +69,7 @@ theorem PhiBFibreExtension.offAxis_bridge [hext : PhiBFibreExtension b] (x : ℝ
 /-- **No zeros on the real axis (derived).**  The constructed `phiB` is a
     unimodular phase, so any extension is nonvanishing on `ℝ` — the zero
     lattice of a genuine Faddeev extension is strictly off-axis. -/
-theorem PhiBFibreExtension.extension_ne_zero_on_axis [hext : PhiBFibreExtension b] (x : ℝ) :
+theorem extension_ne_zero_on_axis [hext : PhiBFibreExtension b] (x : ℝ) :
     hext.Φ (x : ℂ) ≠ 0 := by
   rw [hext.extends_phiB x]
   intro h0
@@ -78,7 +78,7 @@ theorem PhiBFibreExtension.extension_ne_zero_on_axis [hext : PhiBFibreExtension 
   simp at h1
 
 /-- **σ-unitarity transfers to the axis values of any extension (derived).** -/
-theorem PhiBFibreExtension.extension_mul_conj_on_axis [hext : PhiBFibreExtension b] (x : ℝ) :
+theorem extension_mul_conj_on_axis [hext : PhiBFibreExtension b] (x : ℝ) :
     hext.Φ (x : ℂ) * (starRingEnd ℂ) (hext.Φ (x : ℂ)) = 1 := by
   rw [hext.extends_phiB x]
   exact phiB_mul_conj b x

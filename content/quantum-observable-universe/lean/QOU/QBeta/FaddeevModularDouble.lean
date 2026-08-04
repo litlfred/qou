@@ -60,7 +60,7 @@ structure FaddeevModularDouble (R : Type*) [CommRing R] where
   inversion : ∀ x, Phi x * Phi (-x) = c
 
 /-- Derived: the Faddeev inversion constant is `Φ_b(0)^2`. -/
-theorem FaddeevModularDouble.c_eq_phi_zero_sq {R : Type*} [CommRing R]
+theorem c_eq_phi_zero_sq {R : Type*} [CommRing R]
     (F : FaddeevModularDouble R) : F.c = F.Phi 0 * F.Phi 0 := by
   have h := F.inversion 0
   simpa using h.symm
@@ -91,7 +91,7 @@ theorem isSigmaUnitary_one {R : Type*} [CommRing R] (σ : R →+* R) :
   simp [IsSigmaUnitary]
 
 /-- σ-unitaries are closed under multiplication. -/
-theorem IsSigmaUnitary.mul {R : Type*} [CommRing R] {σ : R →+* R} {u v : R}
+theorem mul {R : Type*} [CommRing R] {σ : R →+* R} {u v : R}
     (hu : IsSigmaUnitary σ u) (hv : IsSigmaUnitary σ v) :
     IsSigmaUnitary σ (u * v) := by
   unfold IsSigmaUnitary at hu hv ⊢
@@ -101,7 +101,7 @@ theorem IsSigmaUnitary.mul {R : Type*} [CommRing R] {σ : R →+* R} {u v : R}
 
 /-- **Bar-even unitaries are involutions.** If `u` is σ-unitary and σ-fixed
     (bar-even), then `u² = 1`. -/
-theorem IsSigmaUnitary.sq_eq_one_of_bar_even {R : Type*} [CommRing R]
+theorem sq_eq_one_of_bar_even {R : Type*} [CommRing R]
     {σ : R →+* R} {u : R} (hu : IsSigmaUnitary σ u) (heven : σ u = u) :
     u * u = 1 := by
   have h : σ u * u = 1 := hu
@@ -111,7 +111,7 @@ theorem IsSigmaUnitary.sq_eq_one_of_bar_even {R : Type*} [CommRing R]
     cannot be bar-even: it carries a nontrivial bar-odd part. The algebraic
     reason the fibre-saddle pure-phase `Φ_b` lives on the bar-odd (decay)
     face. -/
-theorem IsSigmaUnitary.not_bar_even_of_sq_ne_one {R : Type*} [CommRing R]
+theorem not_bar_even_of_sq_ne_one {R : Type*} [CommRing R]
     {σ : R →+* R} {u : R} (hu : IsSigmaUnitary σ u) (h : u * u ≠ 1) :
     σ u ≠ u :=
   fun heven => h (hu.sq_eq_one_of_bar_even heven)
@@ -132,12 +132,12 @@ smooth-real magnitude bound is silent. -/
 
 /-- The σ-conjugate `σ u` is the two-sided inverse of a σ-unitary `u`
     (commutative form of `u·ū = 1`). -/
-theorem IsSigmaUnitary.mul_bar_self {R : Type*} [CommRing R] {σ : R →+* R}
+theorem mul_bar_self {R : Type*} [CommRing R] {σ : R →+* R}
     {u : R} (hu : IsSigmaUnitary σ u) : u * σ u = 1 := by
   rw [mul_comm]; exact hu
 
 /-- The σ-inverse of a σ-unitary is σ-unitary. -/
-theorem IsSigmaUnitary.inv {R : Type*} [CommRing R] {σ : R →+* R} {u : R}
+theorem inv {R : Type*} [CommRing R] {σ : R →+* R} {u : R}
     (hu : IsSigmaUnitary σ u) (hσ : Function.Involutive σ) :
     IsSigmaUnitary σ (σ u) := by
   unfold IsSigmaUnitary
@@ -149,7 +149,7 @@ theorem IsSigmaUnitary.inv {R : Type*} [CommRing R] {σ : R →+* R} {u : R}
     `u₁·w = u₂`. Hence *all* cross-anchor variation between σ-unitaries is
     carried by a σ-unitary (pure-phase) factor — the magnitude channel is
     flat, and the `Δc_3` swing is a phase-channel (bar-odd) quantity. -/
-theorem IsSigmaUnitary.crossFactor {R : Type*} [CommRing R] {σ : R →+* R}
+theorem crossFactor {R : Type*} [CommRing R] {σ : R →+* R}
     {u₁ u₂ : R} (h₁ : IsSigmaUnitary σ u₁) (h₂ : IsSigmaUnitary σ u₂)
     (hσ : Function.Involutive σ) :
     IsSigmaUnitary σ (σ u₁ * u₂) ∧ u₁ * (σ u₁ * u₂) = u₂ := by

@@ -54,7 +54,7 @@ def mono (e c : Int) : LP := normalize ⟨e, [c]⟩
 
 def coeff (p : LP) (e : Int) : Int :=
   let i := e - p.lo
-  if i < 0 then 0 else (p.cs.get? i.toNat).getD 0
+  if i < 0 then 0 else (p.cs[i.toNat]?).getD 0
 
 def add (p q : LP) : LP :=
   let lo := min p.lo q.lo
@@ -67,7 +67,7 @@ def mul (p q : LP) : LP :=
   ((List.range p.cs.length).flatMap (fun i =>
     (List.range q.cs.length).map (fun j =>
       mono (p.lo + Int.ofNat i + q.lo + Int.ofNat j)
-        ((p.cs.get? i).getD 0 * (q.cs.get? j).getD 0)))).foldl add zero
+        ((p.cs[i]?).getD 0 * (q.cs[j]?).getD 0)))).foldl add zero
 
 end LP
 

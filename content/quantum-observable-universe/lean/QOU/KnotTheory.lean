@@ -62,7 +62,7 @@ structure BraidWord where
   deriving Repr
 
 /-- Number of crossings = length of the braid word. -/
-def BraidWord.crossingCount (β : BraidWord) : ℕ :=
+def crossingCount (β : BraidWord) : ℕ :=
   β.letters.length
 
 /-! ## Hyperbolic Volume -/
@@ -152,7 +152,7 @@ noncomputable def vol_trefoil : HyperbolicVolume where
     self-writhe (counted only within a single component of the
     closure) is zero in the standard braid projection — strands do
     not self-cross. -/
-def BraidWord.writhe (β : BraidWord) : ℤ :=
+def writhe (β : BraidWord) : ℤ :=
   β.letters.foldl (fun acc l =>
     match l.sign with
     | .positive => acc + 1

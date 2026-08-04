@@ -43,10 +43,10 @@ structure Cell where
 deriving DecidableEq, Repr
 
 /-- Cell content `c(r, col) = col - r ∈ ℤ`. -/
-def Cell.content (x : Cell) : ℤ := (x.col : ℤ) - (x.row : ℤ)
+def content (x : Cell) : ℤ := (x.col : ℤ) - (x.row : ℤ)
 
 /-- The transpose of a cell: swap row and column. -/
-def Cell.transpose (x : Cell) : Cell := ⟨x.col, x.row⟩
+def transpose (x : Cell) : Cell := ⟨x.col, x.row⟩
 
 /-- The transpose involution is involutive: `(x.transpose).transpose = x`. -/
 @[simp] theorem Cell.transpose_transpose (x : Cell) :
@@ -60,7 +60,7 @@ def Cell.transpose (x : Cell) : Cell := ⟨x.col, x.row⟩
       c(λ) + c(λ^T) = 0  cell-by-cell.
 
     The proof is direct integer arithmetic. -/
-theorem Cell.content_plus_transpose_content_eq_zero (x : Cell) :
+theorem content_plus_transpose_content_eq_zero (x : Cell) :
     x.content + x.transpose.content = 0 := by
   unfold Cell.content Cell.transpose
   simp
@@ -73,11 +73,11 @@ structure PartitionWithCells where
 deriving Repr
 
 /-- The **content sum** of a partition is `Σ_{x ∈ λ} c(x)`. -/
-def PartitionWithCells.content_sum (P : PartitionWithCells) : ℤ :=
+def content_sum (P : PartitionWithCells) : ℤ :=
   (P.cells.map Cell.content).sum
 
 /-- The **transpose** of a partition: transpose every cell. -/
-def PartitionWithCells.transpose (P : PartitionWithCells) :
+def transpose (P : PartitionWithCells) :
     PartitionWithCells :=
   ⟨P.cells.map Cell.transpose⟩
 
@@ -89,7 +89,7 @@ def PartitionWithCells.transpose (P : PartitionWithCells) :
     content, so the two list-sums sum to zero. -/
 -- Ref: [manuscript] AGENTS.md §7b "Type B folding ⇒ symmetric crystal,
 -- bar-involution invariant by construction"
-theorem PartitionWithCells.content_sum_plus_transpose_content_sum_eq_zero
+theorem content_sum_plus_transpose_content_sum_eq_zero
     (P : PartitionWithCells) :
     P.content_sum + P.transpose.content_sum = 0 := by
   unfold content_sum transpose
@@ -115,7 +115,7 @@ theorem PartitionWithCells.content_sum_plus_transpose_content_sum_eq_zero
     partition case (e.g. `(2, 2)`, `(3, 1)`, `(4, 1, 1, 1)` etc.):
     folding pairs each cell with its transpose, and the
     fixed-point partition sits at the symmetric centre. -/
-theorem PartitionWithCells.self_transpose_content_sum_zero
+theorem self_transpose_content_sum_zero
     (P : PartitionWithCells)
     (h : P = P.transpose) :
     P.content_sum = 0 := by

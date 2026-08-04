@@ -135,7 +135,7 @@ eigenvalue count for Hermitian matrices is a standard fact. -/
     "strictly positive eigenvalue" coincides with "non-zero
     eigenvalue" (since PSD eigenvalues are non-negative).
     Fully proven; no Mathlib gap. -/
-theorem Matrix.PosSemidef.eigenvalues_pos_filter_eq_ne_zero_filter
+theorem PosSemidef.eigenvalues_pos_filter_eq_ne_zero_filter
     {M : Matrix (Fin n) (Fin n) ℝ} (hM : M.PosSemidef) :
     (Finset.univ.filter (fun i : Fin n => 0 < hM.1.eigenvalues i)) =
     (Finset.univ.filter (fun i : Fin n => hM.1.eigenvalues i ≠ 0)) := by
@@ -165,7 +165,7 @@ theorem Matrix.PosSemidef.eigenvalues_pos_filter_eq_ne_zero_filter
     Ref: [boyd-vandenberghe-2004] *Convex Optimization* §A.5.5
     (rank of a Hermitian matrix equals the number of non-zero
     eigenvalues; immediate from the spectral theorem). -/
-theorem Matrix.PosSemidef.rank_via_eigenvalues
+theorem PosSemidef.rank_via_eigenvalues
     {n : ℕ} {M : Matrix (Fin n) (Fin n) ℝ} (hM : M.PosSemidef) :
     M.rank = (Finset.univ.filter (fun i => 0 < hM.1.eigenvalues i)).card := by
   rw [Matrix.PosSemidef.eigenvalues_pos_filter_eq_ne_zero_filter hM,
@@ -434,7 +434,7 @@ specialisation (`…toLin'`) the original proofs assumed is provided here. -/
     `M.rank = finrank ℝ (range M.toLin')`.  Since `toLin' = mulVecLin`
     (both send `v ↦ M *ᵥ v`) and `Matrix.rank` is by definition the finrank
     of `range mulVecLin`, the two ranges coincide. -/
-theorem Matrix.rank_eq_finrank_range_toLin' {m k : ℕ}
+theorem rank_eq_finrank_range_toLin' {m k : ℕ}
     (M : Matrix (Fin m) (Fin k) ℝ) :
     M.rank = Module.finrank ℝ (LinearMap.range M.toLin') := by
   have hbridge : M.toLin' = M.mulVecLin := by
@@ -756,7 +756,7 @@ categorical input is exactly the two named atomic axioms
 
     Both are atomic Goldman-Tucker statements; replacing them
     with Mathlib theorems makes the entire chain axiom-free. -/
-def SDPSlaterUniqueness.ofSlater_via_rank_equality
+def ofSlater_via_rank_equality
     {n : ℕ} {ι : Type*} [Fintype ι]
     {sdp : SDPPrimal n ℝ ι} (sc : RealStrictComplementarityPair sdp)
     (h_slater : sdp.IsStrictlyFeasible) :

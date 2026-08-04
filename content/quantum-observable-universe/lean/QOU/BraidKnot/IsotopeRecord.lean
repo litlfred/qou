@@ -97,17 +97,17 @@ structure IsotopeRecord where
 
 /-- Mass number `A = Z + N` — derived (computed), not a stored/overridable
     field, so `A = Z + N` holds definitionally for every record. -/
-def IsotopeRecord.A (r : IsotopeRecord) : Nat := r.Z + r.N
+def A (r : IsotopeRecord) : Nat := r.Z + r.N
 
 /-- Strand count `n_strands = 3·A` — derived (computed), not stored. -/
-def IsotopeRecord.n_strands (r : IsotopeRecord) : Nat := 3 * (r.Z + r.N)
+def n_strands (r : IsotopeRecord) : Nat := 3 * (r.Z + r.N)
 
 /-- A=Z+N derivation is by `rfl`. -/
-theorem IsotopeRecord.A_eq_Z_plus_N (r : IsotopeRecord) :
+theorem A_eq_Z_plus_N (r : IsotopeRecord) :
     r.A = r.Z + r.N := by rfl
 
 /-- n_strands = 3·A derivation is by `rfl`. -/
-theorem IsotopeRecord.n_strands_eq_three_A (r : IsotopeRecord) :
+theorem n_strands_eq_three_A (r : IsotopeRecord) :
     r.n_strands = 3 * (r.Z + r.N) := by rfl
 
 /-- The canonical knot-operator catalogue for atom (Z, N) constructed

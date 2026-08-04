@@ -136,7 +136,7 @@ automatically kills the conjugate nilpotent — from `kills_nilpotent`,
 `rho_compat`, and the exchange `monodromyN_star`. The fields are
 non-degenerate: they force the partner to factor through the conjugate
 semisimple quotient without saying so. -/
-theorem TauAssignmentData.bar_kills_nilpotent {D : DescentStructure W}
+theorem bar_kills_nilpotent {D : DescentStructure W}
     (A : TauAssignmentData D) (w : W → ℂ) :
     A.toFunBar (monodromyNbar D w) = 0 := by
   funext u

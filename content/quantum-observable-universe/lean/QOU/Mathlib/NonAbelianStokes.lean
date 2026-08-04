@@ -283,7 +283,7 @@ class LieAlgebraStructure (𝔤 : Type u) [AddCommGroup 𝔤] where
     via bilinearity to `[x,x] + [x,y] + [y,x] + [y,y] = 0`;
     apply `bracket_self` to drop `[x,x]` and `[y,y]`; conclude
     `[x,y] + [y,x] = 0`, i.e. `[x,y] = -[y,x]`. -/
-theorem LieAlgebraStructure.bracket_antisym {𝔤 : Type u}
+theorem bracket_antisym {𝔤 : Type u}
     [AddCommGroup 𝔤] [L : LieAlgebraStructure 𝔤] (x y : 𝔤) :
     L.bracket x y = -L.bracket y x := by
   have h1 : L.bracket (x + y) (x + y) = 0 := L.bracket_self (x + y)

@@ -56,7 +56,7 @@ class ResidueAtRoot (R : Type u) [CommRing R] where
 attribute [instance] ResidueAtRoot.targetRing
 
 /-- The residue value at a substrate element `x : R` and root index `n`. -/
-def ResidueAtRoot.residue
+def residue
     {R : Type u} [CommRing R] [r : ResidueAtRoot R]
     (n : ℕ) (x : R) : r.target n :=
   r.project n x

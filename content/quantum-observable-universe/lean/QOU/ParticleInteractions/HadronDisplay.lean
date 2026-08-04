@@ -38,7 +38,7 @@ structure Hadron where
   constituents_nonempty : constituents.length ≥ 2
 
 /-- The common base point `(θ, φ)` on `S²`. -/
-def Hadron.basePoint (h : Hadron) : Archimedean.R_q × Archimedean.R_q :=
+def basePoint (h : Hadron) : Archimedean.R_q × Archimedean.R_q :=
   (h.theta, h.phi)
 
 end QOU

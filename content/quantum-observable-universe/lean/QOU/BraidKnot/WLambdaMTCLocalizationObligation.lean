@@ -197,9 +197,9 @@ private theorem foldl_mul_pos {α : Type*} (g : α → ℝ) (L : List α)
 
 /-- A genuine cell's hook length is at least `1`. -/
 private theorem one_le_hookLength {lam : List ℕ} {i j : ℕ}
-    (hj : j < (lam.get? i).getD 0) : 1 ≤ Partition.hookLength lam i j := by
+    (hj : j < (lam[i]?).getD 0) : 1 ≤ Partition.hookLength lam i j := by
   unfold Partition.hookLength
-  cases hgi : lam.get? i with
+  cases hgi : lam[i]? with
   | none => rw [hgi, Option.getD_none] at hj; exact absurd hj (Nat.not_lt_zero j)
   | some row_i =>
     rw [hgi, Option.getD_some] at hj

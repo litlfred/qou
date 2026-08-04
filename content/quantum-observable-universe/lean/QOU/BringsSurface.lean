@@ -231,7 +231,7 @@ structure BringsQOU where
 
 /-- The Riemann–Hurwitz relation holds for the Bring's QOU data:
     `χ(S) = deg · χ(CP¹) − (total ramification)`. -/
-theorem BringsQOU.is_qou (_bq : BringsQOU) : eulerChar = (covering_degree : ℤ) * 2 - 14 :=
+theorem is_qou (_bq : BringsQOU) : eulerChar = (covering_degree : ℤ) * 2 - 14 :=
   riemann_hurwitz_check
 
 /-- **Observability data** for the quantum Schur lemma argument.
@@ -259,7 +259,7 @@ instance : Nonempty SchurObservability :=
     `j ≥ 1`, so `Hom(𝟙, Ad(A)) = 0`.  Equivalently, `dim(Ad) = 3 ≠ 1`.
 
     LaTeX: `\label{prop:brings-is-qou}` (item 2) -/
-theorem BringsQOU.observability (_bq : BringsQOU) :
+theorem observability (_bq : BringsQOU) :
     -- The adjoint representation V_2 (dim 3) has no trivial sub-object.
     -- Quantum Schur lemma: Hom(𝟙, V_j) = 0 for j ≥ 1.
     (3 : ℕ) ≠ 1 := by
@@ -288,7 +288,7 @@ structure YekutieliLiftingData where
 
     LaTeX: `\label{prop:brings-is-qou}` (item 3) -/
 -- Ref: [yekutieli2015] Amnon Yekutieli, *Nonabelian Multiplicative Integration on Surfaces*, 2015
-theorem BringsQOU.yekutieli_lifting (_bq : BringsQOU) (n : ℕ) :
+theorem yekutieli_lifting (_bq : BringsQOU) (n : ℕ) :
     -- The obstruction class H²(Σ₄, Z(SU_q(2))) = H²(Σ₄, ℤ/2) = 0 vanishes.
     -- Encoded: a good cover with 9 patches exists (num_patches > 0).
     ∃ (yd : YekutieliLiftingData), yd.level = n := by

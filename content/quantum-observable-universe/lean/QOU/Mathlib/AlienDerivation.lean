@@ -47,14 +47,14 @@ structure AlienDerivationSystem (R : Type*) (A : Type*) (Ω : Type*)
 
 /-- The alien derivative at ω satisfies the Leibniz rule — this is the
     defining property, inherited from `Derivation`. Restated for clarity. -/
-theorem AlienDerivationSystem.leibniz {R A Ω : Type*}
+theorem leibniz {R A Ω : Type*}
     [CommSemiring R] [CommSemiring A] [Algebra R A] [Module R A]
     (sys : AlienDerivationSystem R A Ω) (ω : Ω) (f g : A) :
     sys.alien ω (f * g) = f • sys.alien ω g + g • sys.alien ω f :=
   sys.alien ω |>.leibniz f g
 
 /-- Alien derivatives kill constants (inherited from Derivation.map_algebraMap). -/
-theorem AlienDerivationSystem.map_const {R A Ω : Type*}
+theorem map_const {R A Ω : Type*}
     [CommSemiring R] [CommSemiring A] [Algebra R A] [Module R A]
     (sys : AlienDerivationSystem R A Ω) (ω : Ω) (r : R) :
     sys.alien ω (algebraMap R A r) = 0 :=

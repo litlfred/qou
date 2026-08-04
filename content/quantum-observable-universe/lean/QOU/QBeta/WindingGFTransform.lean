@@ -203,7 +203,7 @@ class SDeformedVolumeChannelWinding (S : ℝ → ℝ)
 open QOU.QBeta.PhiBSArgumentIdentification in
 /-- The constant Stokes coefficient of a winding-refined channel is the
 `tsum` of its winding family (derived from the `HasSum` field). -/
-theorem SDeformedVolumeChannelWinding.A_omega_eq_tsum (S : ℝ → ℝ)
+theorem A_omega_eq_tsum (S : ℝ → ℝ)
     [ch : SDeformedVolumeChannelWinding S] :
     ch.A_ω = ∑' e : ℤ, ch.A_family e :=
   (ch.A_total.tsum_eq).symm

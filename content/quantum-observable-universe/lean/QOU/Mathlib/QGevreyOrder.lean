@@ -265,6 +265,7 @@ theorem cauchyMul_order {q s t : ℝ} {a b : ℕ → K}
   -- Ref: [ramis-sauloy-zhang2013] Newton-polygon / dominant-balance slopes of
   --      q-difference systems.  Upper bound: cauchyMul_norm_le_sum +
   --      exponent_le_envelope + ε-δ; lower bound: + non-cancellation.
+  -- SORRY: needs dominant balance / Laplace method for discrete convolutions with q-Gevrey bounds
   sorry
 
 /-! ### MI-3 — bound-form extraction and the θ = ½·C(m,2) payoff bridge

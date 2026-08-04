@@ -39,7 +39,7 @@ structure CategoricalQExtDeriv (C : Type u) [CategoryTheory.Category.{v} C]
   proj_V_idem : proj_V ≫ proj_V = proj_V
 
 /-- The horizontal projection `π_H = id − π_V`. -/
-def CategoricalQExtDeriv.proj_H {C : Type u}
+def proj_H {C : Type u}
     [CategoryTheory.Category.{v} C] [CategoryTheory.MonoidalCategory C]
     [CategoryTheory.Preadditive C]
     (cqd : CategoricalQExtDeriv C) : cqd.frobHopf.obj ⟶ cqd.frobHopf.obj :=
@@ -53,7 +53,7 @@ noncomputable def CategoricalQExtDeriv.dq {C : Type u}
   (cqd.q⁻¹) • cqd.d_classical + (1 - cqd.q⁻¹) • (cqd.proj_V ≫ cqd.d_classical)
 
 /-- When `q = 1`, `d_q` reduces to `d`. -/
-theorem CategoricalQExtDeriv.dq_classical {C : Type u}
+theorem dq_classical {C : Type u}
     [CategoryTheory.Category.{v} C] [CategoryTheory.MonoidalCategory C]
     [CategoryTheory.Preadditive C] [CategoryTheory.Linear ℝ C]
     (cqd : CategoricalQExtDeriv C) (hq : cqd.q = 1) :
@@ -256,7 +256,7 @@ structure CategoricalJet (C : Type u) [CategoryTheory.Category.{v} C]
   /-- **Exactness**: `kernelIncl ≫ jetEval = 0`. -/
   exact : kernelIncl ≫ jetEval = 0
 
-theorem CategoricalJet.kernelIncl_exact {C : Type u}
+theorem kernelIncl_exact {C : Type u}
     [CategoryTheory.Category.{v} C] [CategoryTheory.MonoidalCategory C]
     [CategoryTheory.Preadditive C]
     (cj : CategoricalJet C) :
@@ -303,7 +303,7 @@ structure CategoricalTransport (C : Type u) [CategoryTheory.Category.{v} C]
   transport_eq : proj_V_nabla = hamiltonian
 
 /-- The transport equation implies `Ĥ_q − π_V ∇ = 0`. -/
-theorem CategoricalTransport.kernel_condition {C : Type u}
+theorem kernel_condition {C : Type u}
     [CategoryTheory.Category.{v} C] [CategoryTheory.MonoidalCategory C]
     [CategoryTheory.Preadditive C]
     (ct : CategoricalTransport C) :

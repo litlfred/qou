@@ -106,7 +106,7 @@ structure FibreFunctor (C : Type*) [Category C] (Arch : ArchimedeanCategory) whe
 /-- The archimedean restriction `τ_arch = π_∞ ∘ τ` of a fibre functor,
     derived from `τ.functor` and `Arch.archProj`. A plain function
     `C → ℝ` — the object-level archimedean evaluation, not a functor. -/
-def FibreFunctor.archRestriction {C : Type*} [Category C] {Arch : ArchimedeanCategory}
+def archRestriction {C : Type*} [Category C] {Arch : ArchimedeanCategory}
     (τ : FibreFunctor C Arch) : C → ℝ :=
   fun c => Arch.archProj (τ.functor.obj c)
 
@@ -160,7 +160,7 @@ structure VolThroughTau (C : Type*) [Category C] (Arch : ArchimedeanCategory) wh
 
 /-- The factorization is by definition: extracting the `factors`
     field of a `VolThroughTau` immediately yields the equation. -/
-theorem VolThroughTau.factors_def {C : Type*} [Category C] {Arch : ArchimedeanCategory}
+theorem factors_def {C : Type*} [Category C] {Arch : ArchimedeanCategory}
     (v : VolThroughTau C Arch) :
     v.knotVol = v.τ.archRestriction v.algVol :=
   v.factors

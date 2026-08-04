@@ -51,7 +51,7 @@ structure ChargeLattice where
 attribute [instance] ChargeLattice.addCommGroup
 
 /-- Self-pairing vanishes for antisymmetric forms. -/
-theorem ChargeLattice.euler_self (L : ChargeLattice) (γ : L.Γ) :
+theorem euler_self (L : ChargeLattice) (γ : L.Γ) :
     L.euler γ γ = 0 := by
   have h := L.euler_antisymm γ γ
   omega

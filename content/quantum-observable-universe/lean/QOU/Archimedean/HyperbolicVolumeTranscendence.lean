@@ -304,13 +304,13 @@ structure VolumeTowerDecomposition where
 
 /-- The level contributions tend to zero.
     Proved: summable ⟹ terms → 0. -/
-theorem VolumeTowerDecomposition.tendsto_zero
+theorem tendsto_zero
     (vtd : VolumeTowerDecomposition) :
     Filter.Tendsto vtd.levelContribution Filter.atTop (nhds 0) :=
   vtd.sum_eq.summable.tendsto_atTop_zero
 
 /-- For any ε > 0, eventually |Φ_n(K)| < ε. -/
-theorem VolumeTowerDecomposition.eventually_small
+theorem eventually_small
     (vtd : VolumeTowerDecomposition) (ε : ℝ) (hε : 0 < ε) :
     ∃ N, ∀ n, n ≥ N → |vtd.levelContribution n| < ε := by
   have h := vtd.tendsto_zero
@@ -352,7 +352,7 @@ noncomputable def baselineDecomposition
     exact (hasSum_ite_eq 0 vol).summable
   sum_eq := by
     apply hasSum_ite_eq
-  baseline_dominant := by simp [hvol]
+  baseline_dominant := by simp
 
 /-- Tower decomposition for Vol(4₁). -/
 -- Ref: [turaev2010] Turaev, "Quantum Invariants of Knots and 3-Manifolds," de Gruyter 2010
@@ -401,7 +401,7 @@ structure CSEvaluationFaithful where
 
 /-- Given faithfulness and a non-collapsing tower, infinitely many
     level contributions are non-zero.  (Proved from the structure.) -/
-theorem CSEvaluationFaithful.infinitely_many_nonzero
+theorem infinitely_many_nonzero
     (csf : CSEvaluationFaithful)
     (h_tower : ∀ n, Nonempty (csf.ylc.obstructionClass n)) :
     ∀ n, csf.vtd.levelContribution n ≠ 0 :=
@@ -496,7 +496,7 @@ class BorelZagierQOU where
     and is the correct hypothesis here.
 
     Ref: [zagier1986] https://doi.org/10.1007/BFb0084581 -/
-theorem HyperbolicVolumeIndependence.implies_single_irrational
+theorem implies_single_irrational
     [hvi : HyperbolicVolumeIndependence] : SingleVolumeIrrational where
   vol_4_1_irrational := by
     -- Ref: [zagier1986] https://doi.org/10.1007/BFb0084581
@@ -606,7 +606,7 @@ theorem HyperbolicVolumeIndependence.implies_single_irrational
     2. defining `S` as `Finset.image` of `Fin 3` to give a clean
        cardinality-3 witness.
     Sorry retained pending refactor to a Fin-indexed witness. -/
-theorem HyperbolicVolumeIndependence.implies_borel_zagier
+theorem implies_borel_zagier
     [_hvi : HyperbolicVolumeIndependence] :
     BorelZagierQOU where
   linear_independent := by

@@ -26,7 +26,7 @@ structure ReebDecomposition (M : Type*) where
   decomp : ∀ (p : M), total p = horizontal p + vertical p
 
 /-- A form is **purely horizontal** iff its vertical component vanishes. -/
-def ReebDecomposition.isPurelyHorizontal {M : Type*}
+def isPurelyHorizontal {M : Type*}
     (rd : ReebDecomposition M) : Prop :=
   ∀ (p : M), rd.vertical p = 0
 
@@ -51,7 +51,7 @@ structure Boson (M : Type*) extends QHarmonicForm M where
   purely_horizontal : ∀ (p : M), vertical p = 0
 
 /-- A boson's total form equals its horizontal component. -/
-theorem Boson.total_eq_horizontal {M : Type*} (b : Boson M) (p : M) :
+theorem total_eq_horizontal {M : Type*} (b : Boson M) (p : M) :
     b.total p = b.horizontal p := by
   have h := b.decomp p
   rw [b.purely_horizontal p, add_zero] at h

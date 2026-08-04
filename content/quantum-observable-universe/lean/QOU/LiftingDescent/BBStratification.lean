@@ -82,7 +82,7 @@ structure BBStratification (n : ℕ) where
   refines_trans : ∀ i j k, refines i j → refines j k → refines i k
 
 /-- The set of complete-intersection strata in a BB-stratification. -/
-def BBStratification.completeIntersectionStrata
+def completeIntersectionStrata
     {n : ℕ} (S : BBStratification n) : Set S.Index :=
   { i | S.is_complete_intersection i }
 
@@ -112,11 +112,11 @@ noncomputable def SpectralSequence.einf (S : SpectralSequence)
   S.size (S.converges p q).choose p q
 
 /-- `E_∞^{p, q} = 0` iff the eventual stable size at `(p, q)` is zero. -/
-def SpectralSequence.vanishesAt (S : SpectralSequence) (p q : ℕ) : Prop :=
+def vanishesAt (S : SpectralSequence) (p q : ℕ) : Prop :=
   S.einf p q = 0
 
 /-- "Vanishes in positive q": `E_∞^{p, q} = 0` for all `q > 0`. -/
-def SpectralSequence.vanishesInPositiveQ (S : SpectralSequence) : Prop :=
+def vanishesInPositiveQ (S : SpectralSequence) : Prop :=
   ∀ p q, 0 < q → S.vanishesAt p q
 
 /-! ## §3  BB-spectral-sequence connection -/
