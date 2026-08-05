@@ -910,57 +910,25 @@ private lemma specht_gram_orthogonal {k : Type} [CommRing k] (μ : YoungDiagram)
       (SpechtStandardBasisCore.standardPolytabloid S)
       (SpechtStandardBasisCore.standardPolytabloid T) = 0 := by
   -- Ref: [sagan2001] Lemma 2.4.7
+  -- The proof requires the group-ring identity κ_T · κ_S = 0 in k[S_n].
+  -- This follows from τ ∈ colStab(t) ∩ rowStab(s) (τ = swap(a,b) from sagan_row_col_clash).
+  -- The correct cancellation: for EVERY Mtab vector x, the involution σ ↦ σ*τ on colStab(t)
+  -- reverses sign while preserving rep(σ) x ONLY IF rep(τ) x = x.
+  -- We have rep(τ)(polytabloid s) = polytabloid(τ•s) [polytabloid_rep_equivariant].
+  -- And polytabloid(τ•s) = polytabloid(s) iff τ ∈ rowStab(s) — but polytabloid(τ•s) uses
+  -- colStab(τ•s) = τ colStab(s) τ⁻¹, so in general polytabloid(τ•s) ≠ polytabloid(s).
+  -- The correct proof uses the DOUBLE sum over C_T × C_S with combined involution,
+  -- which requires showing that the tabloid collision holds uniformly across C_S.
+  -- This in turn requires the Sagan double-coset structure (§2.4 Lemma 2.4.7).
+  -- All elementary approaches (term-by-term, outer involution, τ-eigenspace, char-upgrade)
+  -- fail without the group ring formalization or double-coset machinery.
+  -- GAP: needs κ_T · κ_S = 0 in k[S_n], i.e., Sagan 2.4.7 double-coset argument.
   simp only [SpechtStandardBasisCore.standardPolytabloid]
   set s := sytToTableau S; set t := sytToTableau T
   obtain ⟨a, b, hab, hrow, hcol⟩ := sagan_row_col_clash S T hST
-  -- Step 1: e_T = κ_T(Mtab.of(t))
   have heT : polytabloid (k := k) t = kapL μ t (Mtab.of t) := (kapL_of_self t).symm
-  -- Step 2: ⟨e_S, e_T⟩ = ⟨e_S, κ_T(Mtab.of(t))⟩ = ⟨κ_T(e_S), Mtab.of(t)⟩
   rw [heT, ← kapL_selfadjoint]
-  -- Step 3: κ_T(e_S) = κ_T(polytabloid s) — expand polytabloid as κ_S(Mtab.of(s))
-  -- then use linearity and kap_of_clash_eq_zero on each Mtab summand
-  -- We need κ_T(polytabloid s) = 0.
-  -- polytabloid s = Σ_{π ∈ C_s} sgn(π) Mtab.of(π•s)
-  -- For each π, apply kap_of_clash_eq_zero t (π•s) with pair (a, b):
-  --   hcol: colPattern t a = colPattern t b  ✓ (unchanged from T)
-  --   hrow for π•s: rowPattern(π•s)(a) = rowPattern(π•s)(b)?
-  --     We have rowPattern s a = rowPattern s b.
-  --     rowPattern(π•s)(l) = rowPattern s (π⁻¹(l))  [by rowPattern_smul]
-  --     So rowPattern(π•s)(a) = rowPattern s (π⁻¹(a)) and
-  --        rowPattern(π•s)(b) = rowPattern s (π⁻¹(b)).
-  --     These need not be equal unless π⁻¹(a) and π⁻¹(b) have equal rowPattern in s.
-  -- This fails term-by-term! We need the OUTER involution on C_T instead.
-  -- 
-  -- Correct approach: use linearity of κ_T and expand e_S = polytabloid s directly.
-  -- polytabloid s is already in S^μ ⊆ M^μ.
-  -- κ_T(polytabloid s) = Σ_{σ ∈ C_T} sgn(σ) rep(σ)(polytabloid s)
-  --   = Σ_{σ ∈ C_T} sgn(σ) polytabloid(σ•s)     [polytabloid_rep_equivariant]
-  -- Now pair σ ↔ σ' = τσ (τ = swap(a,b) ∈ C_T):
-  --   sgn(τσ) = -sgn(σ);  polytabloid(τσ•s) =? polytabloid(σ•s)?
-  --   NOT EQUAL in general (τ ∉ R_S for σ•s in general).
-  -- 
-  -- So the term-by-term and the outer-involution approaches both fail.
-  -- The ONLY working proof: expand the whole double sum and use a
-  -- combined involution (σ, π) ↦ (τσ, τπτ⁻¹) on C_T × C_{s}.
-  -- 
-  -- For now, note that kap_of_clash_eq_zero on the FULL polytabloid s (not term-by-term)
-  -- would need: rowPattern(s)(a) = rowPattern(s)(b) (which hrow gives!), and
-  -- colPattern(t)(a) = colPattern(t)(b) (hcol). But kap_of_clash_eq_zero works on
-  -- Mtab.of, not on polytabloid!
-  --
-  -- The gap is the missing generalization of kap_of_clash_eq_zero to arbitrary Mtab vectors.
-  -- That generalization holds by linearity: extend kap_of_clash_eq_zero to a submodule statement
-  -- showing kapL t annihilates the subspace {x | τ•x = -x} ∋ polytabloid s.
-  -- 
-  -- This requires τ•(polytabloid s) = -polytabloid s, which follows since τ ∈ R_S:
-  -- τ•(polytabloid s) = polytabloid(τ•s) [polytabloid_rep_equivariant]
-  -- But polytabloid(τ•s) ≠ -polytabloid(s) unless τ ∈ C_S (which is NOT given!).
-  --
-  -- CONCLUSION: No elementary proof works here without either:
-  -- (a) the full double-sum involution argument, or
-  -- (b) an auxiliary lemma about τ-eigenspaces and kapL annihilation.
-  -- Stubbing with sorry pending the double-sum proof.
-  -- Ref: [sagan2001] Lemma 2.4.7
+  -- Goal: kapL t (polytabloid s) = 0 ... GAP
   sorry
 
 /-- **Core 2 — non-degeneracy of the form on `S^μ` (char 0).** Over a field of
