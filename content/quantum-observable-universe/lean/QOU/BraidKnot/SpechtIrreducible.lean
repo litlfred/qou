@@ -719,12 +719,75 @@ private lemma specht_gram_diag {k : Type} [CommRing k] (μ : YoungDiagram)
       (SpechtStandardBasisCore.standardPolytabloid T)
       (SpechtStandardBasisCore.standardPolytabloid T) =
     (Fintype.card (colStab (sytToTableau T)) : k) := by
-  -- Ref: [sagan2001] §2.4.7 — diagonal Gram entry equals the column-stabilizer order.
-  -- Proof sketch: unfold polytabloid as double sum, apply bilinM_single_single;
-  -- off-diagonal tabloid pairs vanish because Tabloid.mk(π•t) = Tabloid.mk(σ•t)
-  -- ↔ rowPattern(π•t) = rowPattern(σ•t) ↔ π⁻¹σ ∈ rowStab(t) ∩ colStab(t) = {1};
-  -- diagonal terms each contribute sgn(π)² = 1, giving |colStab T| total.
-  sorry
+  classical
+  set t := sytToTableau T with ht
+  -- standardPolytabloid T = polytabloid t by definition
+  show bilinM (k := k) μ (polytabloid (k := k) t) (polytabloid (k := k) t) = _
+  -- Expand left polytabloid using linearity
+  rw [polytabloid, map_sum]
+  -- Expand right polytabloid using right linearity (each term is a linear map)
+  simp_rw [(bilinM (k := k) μ _).map_sum]
+  -- Pull out integer scalars from both sides
+  simp_rw [bilinM_zsmul_left, bilinM_zsmul_right]
+  -- Reduce to indicator function via bilinM_single_single
+  simp_rw [Mtab.of, bilinM_single_single, mul_one]
+  -- Key lemma: Tabloid.mk(π•t) = Tabloid.mk(σ•t) iff π = σ (as colStab t elements)
+  -- because σ⁻¹π ∈ rowStab(t) ∩ colStab(t) = {1}
+  have hmk_iff : ∀ (π σ : colStab t),
+      (Tabloid.mk ((π : Equiv.Perm (Fin (nOf μ))) • t) =
+       Tabloid.mk ((σ : Equiv.Perm (Fin (nOf μ))) • t)) ↔ π = σ := by
+    intro π σ
+    constructor
+    · intro heq
+      -- Tabloid.mk(π•t) = Tabloid.mk(σ•t) ↔ rowPattern(π•t) = rowPattern(σ•t)
+      rw [Tabloid.mk, Tabloid.mk, Quotient.eq, rowEquiv_iff,
+          rowPattern_smul, rowPattern_smul] at heq
+      -- heq : (π : Perm) • rowPattern t = (σ : Perm) • rowPattern t
+      -- Prove σ⁻¹π ∈ rowStab(t)
+      have hrow : (σ : Equiv.Perm (Fin (nOf μ)))⁻¹ * (π : Equiv.Perm (Fin (nOf μ))) ∈ rowStab t := by
+        rw [mem_rowStab]
+        calc ((σ : Equiv.Perm (Fin (nOf μ)))⁻¹ * (π : Equiv.Perm (Fin (nOf μ)))) • rowPattern t
+            = (σ : Equiv.Perm (Fin (nOf μ)))⁻¹ • ((π : Equiv.Perm (Fin (nOf μ))) • rowPattern t) :=
+                mul_smul _ _ _
+          _ = (σ : Equiv.Perm (Fin (nOf μ)))⁻¹ • ((σ : Equiv.Perm (Fin (nOf μ))) • rowPattern t) := by
+                rw [heq]
+          _ = ((σ : Equiv.Perm (Fin (nOf μ)))⁻¹ * (σ : Equiv.Perm (Fin (nOf μ)))) • rowPattern t :=
+                (mul_smul _ _ _).symm
+          _ = 1 • rowPattern t := by rw [inv_mul_cancel]
+          _ = rowPattern t := one_smul _ _
+      -- σ⁻¹π ∈ colStab(t) since both π, σ ∈ colStab(t)
+      have hcol : (σ : Equiv.Perm (Fin (nOf μ)))⁻¹ * (π : Equiv.Perm (Fin (nOf μ))) ∈ colStab t :=
+        (colStab t).mul_mem (Subgroup.inv_mem _ σ.2) π.2
+      -- By colStab_inf_rowStab_eq_one, σ⁻¹π = 1
+      have h1 : (σ : Equiv.Perm (Fin (nOf μ)))⁻¹ * (π : Equiv.Perm (Fin (nOf μ))) = 1 :=
+        SpechtTriangularCore.colStab_inf_rowStab_eq_one t hcol hrow
+      -- Conclude π = σ: from σ⁻¹ * π = 1 = σ⁻¹ * σ, cancel σ⁻¹
+      apply Subtype.ext
+      exact mul_left_cancel (a := (σ : Equiv.Perm (Fin (nOf μ)))⁻¹)
+        (h1.trans (inv_mul_cancel (σ : Equiv.Perm (Fin (nOf μ)))).symm)
+    · intro heq
+      rw [heq]
+  -- Convert the ifs: mk(π•t) = mk(σ•t) iff π = σ
+  simp_rw [hmk_iff]
+  -- The inner sum has form ∑ σ, (sign σ : ℤ) • if π = σ then 1 else 0
+  -- Distribute smul into the ite, then collapse with sum_ite_eq
+  simp_rw [smul_ite, smul_zero, Finset.sum_ite_eq, Finset.mem_univ, if_true]
+  -- Now ∑ π, (sign π : ℤ) • ((sign π : ℤ) • (1 : k))
+  -- Prove sgn(π)² • 1 = 1 for each π
+  have hsq : ∀ (π : colStab t),
+      (Equiv.Perm.sign (π : Equiv.Perm (Fin (nOf μ))) : ℤ) •
+      (Equiv.Perm.sign (π : Equiv.Perm (Fin (nOf μ))) : ℤ) • (1 : k) = 1 := by
+    intro π
+    have hunit : (Equiv.Perm.sign (π : Equiv.Perm (Fin (nOf μ)))) *
+                 (Equiv.Perm.sign (π : Equiv.Perm (Fin (nOf μ)))) = 1 :=
+      Int.units_mul_self _
+    have hval : ((Equiv.Perm.sign (π : Equiv.Perm (Fin (nOf μ))) : ℤˣ) : ℤ) *
+                ((Equiv.Perm.sign (π : Equiv.Perm (Fin (nOf μ))) : ℤˣ) : ℤ) = (1 : ℤ) :=
+      by exact_mod_cast congrArg Units.val hunit
+    simp only [smul_smul, hval, one_smul]
+  simp_rw [hsq]
+  -- ∑ π : colStab t, (1 : k) = Fintype.card (colStab t)
+  rw [Finset.sum_const, Finset.card_univ, nsmul_eq_mul, mul_one]
 
 /-- The off-diagonal Gram entry: `⟨e_S, e_T⟩ = 0` for distinct SYT `S ≠ T`.
 This is Sagan's Lemma 2.4.7: distinct standard tableaux have a row/column-
@@ -737,6 +800,10 @@ private lemma specht_gram_orthogonal {k : Type} [CommRing k] (μ : YoungDiagram)
   -- Ref: [sagan2001] Lemma 2.4.7 — if S ≠ T are standard Young tableaux then
   -- ∃ transposition τ ∈ C_T ∩ R_S; conjugating the C_T sum by τ reverses the sign
   -- while leaving the tabloid set invariant, so the sum telescopes to 0.
+  -- GAP: requires the "row/column disagreement" clash lemma (Sagan 2.4.7):
+  -- ∃ a b, a and b are in the same row of S and the same column of T.
+  -- This combinatorial lemma is not yet proved in the codebase.
+  -- Ref: [sagan2001] Lemma 2.4.7
   sorry
 
 /-- **Core 2 — non-degeneracy of the form on `S^μ` (char 0).** Over a field of
