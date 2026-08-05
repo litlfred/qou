@@ -1,15 +1,26 @@
 ---
-id: qou-0xyc
-title: "GAP: specht_form_nondegenerate (SpechtIrreducible.lean:708) — ℤ Gram matrix corank proof needed"
+# qou-0xyc
+title: 'GAP: specht_form_nondegenerate (SpechtIrreducible.lean:823) — specht_gram_orthogonal (Sagan 2.4.7) needed'
+status: in-progress
 type: task
-status: open
-created: 2026-08-04
-branch: copilot/eight-fold
+priority: normal
+created_at: 2026-08-05T01:54:57Z
+updated_at: 2026-08-05T03:00:00Z
 ---
+
+## Current status (2026-08-05)
+
+- `specht_gram_diag` (diagonal Gram entry = |C_T|): **PROVED** (sorry-free candidate,
+  hand-audit; LSP not available in sandbox). Lines 716–790.
+- `specht_gram_orthogonal` (off-diagonal = 0): **one honest sorry** (Sagan 2.4.7 gap).
+  Tracked separately in bean `qou-tup9`.
+- `specht_form_nondegenerate` (full Gram argument): **fully written** (lines 823–892),
+  depends on both gram lemmas. Once `specht_gram_orthogonal` is proved, the whole
+  chain becomes sorry-free.
 
 ## What is open
 
-`QOU.BraidKnot.SpechtIrreducible.specht_form_nondegenerate` at line ~708:
+`QOU.BraidKnot.SpechtIrreducible.specht_form_nondegenerate` at line 823:
 > For `[Field k][CharZero k]` and `μ : YoungDiagram` with `μ.card ≠ 0`,
 > `SpechtSubmodule μ ⊓ spechtPerp μ = ⊥`.
 
