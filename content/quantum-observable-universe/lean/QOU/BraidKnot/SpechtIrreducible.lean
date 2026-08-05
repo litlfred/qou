@@ -854,11 +854,50 @@ private lemma sagan_row_col_clash {μ : YoungDiagram}
     ∃ (a b : Fin (nOf μ)), a ≠ b ∧
     rowPattern (sytToTableau S) a = rowPattern (sytToTableau S) b ∧
     colPattern (sytToTableau T) a = colPattern (sytToTableau T) b := by
-  -- Ref: [sagan2001] Lemma 2.4.7 — the combinatorial argument uses the fact
-  -- that SYT are injective on row/column patterns; for two distinct SYT of the
-  -- same shape, no bijection can simultaneously respect row-equivalence for S
-  -- and column-incompatibility for T.
-  sorry
+  classical
+  by_contra hno
+  push_neg at hno
+  let s := sytToTableau S
+  let t := sytToTableau T
+  have hstrict : ∀ {a b : Fin (nOf μ)},
+      rowPattern s a = rowPattern s b → colPattern t a = colPattern t b → a = b := by
+    intro a b hrow hcol
+    by_cases hlt : (a : ℕ) < (b : ℕ)
+    · have hs_lt : rowPattern s a < rowPattern s b :=
+        QOU.BraidKnot.SpechtDominanceCore.syt_rowPattern_strictMono_in_col (T := T) hcol hlt
+      exact (Nat.ne_of_lt hs_lt) hrow
+    · by_cases hgt : (b : ℕ) < (a : ℕ)
+      · have ht_lt : rowPattern s b < rowPattern s a :=
+          QOU.BraidKnot.SpechtDominanceCore.syt_rowPattern_strictMono_in_col (T := T) hcol.symm hgt
+        exact (Nat.ne_of_lt ht_lt) hrow.symm
+      · exact Fin.ext <| le_antisymm (Nat.le_of_not_gt hgt) (Nat.le_of_not_gt hlt)
+  have hcell_eq : ∀ a : Fin (nOf μ), s a = t a := by
+    intro a
+    have hrow : rowPattern s a = rowPattern s (t.symm (s a)) := by
+      simp [s, t, rowPattern]
+    have hcol : colPattern t a = colPattern t (t.symm (s a)) := by
+      simp [s, t, colPattern]
+    have hEq : a = t.symm (s a) := hstrict hrow hcol
+    exact (Equiv.symm_apply_eq.mp hEq).symm
+  have hst : s = t := by
+    apply Equiv.ext
+    intro a
+    exact hcell_eq a
+  have hSTeq : S = T := by
+    apply QOU.Mathlib.syt_ext
+    intro i j
+    by_cases hij : (i, j) ∈ μ
+    · let c : μ.cells := ⟨(i, j), (YoungDiagram.mem_cells _).2 hij⟩
+      have hs_cell : s (QOU.BraidKnot.SpechtStandardBasisCore.cellLabel S c) = c := by
+        simpa [s] using QOU.BraidKnot.SpechtTriangularCore.sytToTableau_cellLabel S c
+      have ht_cell : t (QOU.BraidKnot.SpechtStandardBasisCore.cellLabel S c) = c := by
+        simpa [t, hs_cell] using congrArg (fun f => f (QOU.BraidKnot.SpechtStandardBasisCore.cellLabel S c)) hst
+      have hlabel : QOU.BraidKnot.SpechtStandardBasisCore.cellLabel T c =
+          QOU.BraidKnot.SpechtStandardBasisCore.cellLabel S c := by
+        exact Fin.ext (by simpa [t] using congrArg Fin.val (Equiv.symm_apply_eq.mp ht_cell))
+      simpa [QOU.BraidKnot.SpechtStandardBasisCore.cellLabel, hij] using congrArg Fin.val hlabel
+    · rw [S.zero_off i j hij, T.zero_off i j hij]
+  exact hST hSTeq
 
 /-- The off-diagonal Gram entry: `⟨e_S, e_T⟩ = 0` for distinct SYT `S ≠ T`.
 Proof: `sagan_row_col_clash` gives `a, b` with same row in `S` and same column
