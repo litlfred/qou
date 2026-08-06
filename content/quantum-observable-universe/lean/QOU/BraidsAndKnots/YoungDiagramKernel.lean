@@ -184,6 +184,21 @@ theorem kernelValue_nonpos_of_le_twenty (k : ℕ) (hk : 3 ≤ k) (hk' : k ≤ 20
   · exact kernelValue_nonpos_of_le_seven k hk h7
   · interval_cases k <;> decide
 
+set_option maxRecDepth 1000000 in
+set_option maxHeartbeats 8000000 in
+/-- **Extended machine-checked base for the dim²-weighted vanishing: `k ≤ 20`.** Extends
+`secondMomentKernel_eq_zero_of_le_seven` over the same range as the kernel base
+`kernelValue_nonpos_of_le_twenty`. Unlike the kernel conjecture, this identity is **not**
+conjectural — it is `k!·E_Planch[ω₃] = 0`, exact for every `k` (the identity coefficient of
+`Σ_i X_i²` in the Jucys–Murphy calculus is `C(k,2)`); what the `decide` supplies is a certified
+floor pending the general character-orthogonality proof, which needs the JM-eigenvalue ⇒
+Plancherel-mean bridge (Sₙ representation-theory infrastructure, not yet in the corpus). -/
+theorem secondMomentKernel_eq_zero_of_le_twenty (k : ℕ) (hk : 3 ≤ k) (hk' : k ≤ 20) :
+    secondMomentKernel k = 0 := by
+  rcases le_or_gt k 7 with h7 | h7
+  · exact secondMomentKernel_eq_zero_of_le_seven k hk h7
+  · interval_cases k <;> decide
+
 /-- Content-square is **conjugation-invariant** — verified for all `λ ⊢ k`, `k ≤ 6` (`decide`):
 `contentSq (conj λ) = contentSq λ`. Reason: the transpose bijection on cells `(i,j) ↦ (j,i)` sends the
 content `j−i` to `i−j`, and `(i−j)² = (j−i)²`. Consequence: `ω₃` is conjugation-symmetric, hence
