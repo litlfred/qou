@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-05T11:19:00.055708+00:00",
-  "commitSha": "ce39b659e64f7bb00a5b6c01399cc7f595da16e0",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-06T23:08:43.046229+00:00",
+  "commitSha": "ca42f577d90ae3b52f0e54802957e03dfefd5571",
   "assertions": [
     {
       "name": "closed_form_ring_identity",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 11,
+  "durationMs": 9,
   "computation": "meson-em-sinh-closed-form",
   "scriptFile": "meson_em_sinh_closed_form.py",
-  "scriptHash": "1d5fc97cba8f",
-  "scriptCommitSha": "a13f0066fec64dfc824ffff5690bd3571bcdeb94",
+  "scriptHash": "faaaded335d9",
+  "scriptCommitSha": "fe2699ab0d6e84429011264d2e7ff8e671906856",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -36,9 +36,7 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
-    "scipy": "1.17.1",
-    "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1"
   },
   "description": "Closed-form identity (1 + ℏ_q − ℏ_q²/2) = (3q² − 1)/(2q²), verified at q₀ to machine precision. Full meson m_K²/m_π² closure form: [3]_q[4]_q + (α_em/π)·(3q² − 1)/(2q²). At q₀: +0.047 ppm. The numerator 3q²−1 reflects 3 generations + substrate; denominator 2q² is the standard EM-self-energy halving on the substrate-natural scale.",
   "auditOnly": "docs/audits/2026-05-28-meson-mass-ratio-derived-vs-fitted.md",
@@ -46,6 +44,41 @@
     "series_form_at_q0": "1.0941731228171209709",
     "closed_form_at_q0": "1.0941731228171209709",
     "ring_identity_residual": 0.0,
-    "full_meson_miss_ppm": 0.04688621224721879
+    "full_meson_miss_ppm": 0.04690166191914555,
+    "alpha_em_inv_derived_order2": "137.035933577996",
+    "alpha_em_source": "derived (q·[9]_q·[10]_q dressed by the CS tower); NOT the experimental value",
+    "cs_tower_order_sweep": [
+      {
+        "order": 0,
+        "alpha_em_inv": 136.82320885358257,
+        "meson_miss_ppb": 362.736985593755
+      },
+      {
+        "order": 1,
+        "alpha_em_inv": 137.03536721305434,
+        "meson_miss_ppb": 47.74124986897949
+      },
+      {
+        "order": 2,
+        "alpha_em_inv": 137.03593357799554,
+        "meson_miss_ppb": 46.901661919145546
+      },
+      {
+        "order": 3,
+        "alpha_em_inv": 137.03593508992864,
+        "meson_miss_ppb": 46.89942061594878
+      },
+      {
+        "order": 6,
+        "alpha_em_inv": 137.0359350939756,
+        "meson_miss_ppb": 46.89941461668818
+      },
+      {
+        "order": 12,
+        "alpha_em_inv": 137.0359350939756,
+        "meson_miss_ppb": 46.89941461668807
+      }
+    ],
+    "cs_tower_converges_but_not_to_measurement": true
   }
 }

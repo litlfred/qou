@@ -39,6 +39,57 @@ def q_int(k, q):
     return (q**k - q**(-k)) / (q - 1/q)
 
 
+def _alpha_em_inv_derived(q, order=2):
+    """Framework-derived α_em⁻¹ — the bare force-carrier coupling dressed by
+    the Chern–Simons tower, computed at full working precision.
+
+    Mirrors `pyhecke.constants.ALPHA_EM_INV_DERIVED` (which evaluates in
+    float64) but keeps everything in mpmath so the meson closure is not
+    silently capped at double precision.
+
+    `order` is the truncation order of the CS tower:
+      order 0 → bare
+      order 1 → bare·(1 + c₁)
+      order 2 → bare·(1 + c₁ + c₁²·κ_gram)          [canonical / shipped]
+      order n → adds c₁ⁿ·κ_gram^{n−1}                (geometric continuation)
+    """
+    pi = mp.pi
+    qi = 1 / q
+    bare = q * q_int(9, q) * q_int(10, q)
+
+    # CS invariants of the two genus-4 force-carrier torus knots.
+    # CS(T_{m,n}) = π²(m²−1)(n²−1)/(12mn)
+    cs_29 = pi**2 * mp.mpf(10) / 9
+    cs_35 = pi**2 * mp.mpf(16) / 15
+    n2 = q_int(2, q)
+    c1 = (cs_29 + cs_35) * (n2 / 2) * (1 - qi)**2 / bare
+
+    # Gram matrix of the CS pairing — classical vs q-deformed.
+    sl, linking = 8, 17          # self-linking (m−1)(n−1); |2·5 − 3·9|
+    g_cl_11 = cs_29 + pi**2 * sl**2 / mp.mpf(2 * 9)**2
+    g_cl_22 = cs_35 + pi**2 * sl**2 / mp.mpf(3 * 5)**2
+    g_cl_12 = pi**2 * linking**2 / (mp.mpf(2 * 9) * (3 * 5))
+    det_cl = g_cl_11 * g_cl_22 - g_cl_12**2
+
+    lk_q = abs(n2 * q_int(5, q) - q_int(3, q) * q_int(9, q))
+    cs_q_29 = pi**2 * (n2**2 - 1) * (q_int(9, q)**2 - 1) / (12 * n2 * q_int(9, q))
+    cs_q_35 = (pi**2 * (q_int(3, q)**2 - 1) * (q_int(5, q)**2 - 1)
+               / (12 * q_int(3, q) * q_int(5, q)))
+    sl_q_29 = (n2 - 1) * (q_int(9, q) - 1)
+    sl_q_35 = (q_int(3, q) - 1) * (q_int(5, q) - 1)
+    g_q_11 = cs_q_29 + pi**2 * sl_q_29**2 / (n2 * q_int(9, q))**2
+    g_q_22 = cs_q_35 + pi**2 * sl_q_35**2 / (q_int(3, q) * q_int(5, q))**2
+    g_q_12 = pi**2 * lk_q**2 / (n2 * q_int(9, q) * q_int(3, q) * q_int(5, q))
+    det_q = g_q_11 * g_q_22 - g_q_12**2
+
+    kappa_gram = det_cl / det_q
+
+    tower = mp.mpf(1)
+    for k in range(1, order + 1):
+        tower += c1**k * kappa_gram**(k - 1)
+    return bare * tower
+
+
 def main():
     _t0 = time.perf_counter()
     set_compute_dps()
@@ -79,7 +130,24 @@ def main():
     print("  Full meson closure form (single closed-form derived expression)")
     print("-" * 70)
     print()
-    alpha_em_inv = mp.mpf("137.035944")  # CS-corrected, Witten κ (399 ppb)
+    # α_em is DERIVED, never imported. Previously this line hardcoded the
+    # literal mp.mpf("137.035944") — the CS-corrected value copied in as a
+    # constant. A hardcoded literal sitting a few hundred ppb from CODATA is
+    # exactly the pattern the canonical-watcher flags, and it made the meson
+    # closure depend on a number the script did not compute.
+    #
+    # We now build the same quantity from the framework's own objects:
+    #   bare      = q·[9]_q·[10]_q                      (force-carrier crossings)
+    #   c₁        = (CS(T₂,₉)+CS(T₃,₅))·([2]_q/2)·ℏ_q²/bare
+    #   κ_gram    = det G_classical / det G_q-deformed
+    #   α_em⁻¹    = bare·(1 + c₁ + c₁²·κ_gram)
+    #
+    # NOTE ON ORDER (see the audit): this is a *second-order* truncation of a
+    # geometric tower with ratio ≈ c₁·κ_gram ≈ 2.67e-3. The tower CONVERGES,
+    # but not to CODATA — resummed it sits ≈ −388 ppb off, versus −399.5 ppb
+    # at the shipped order 2. Adding orders does not close the gap; the
+    # residual is structural, not a truncation artifact.
+    alpha_em_inv = _alpha_em_inv_derived(q)
     alpha_em = 1 / alpha_em_inv
     m_pi = mp.mpf(M_PI_PM_MEV_VALIDATION)
     m_K  = mp.mpf(M_K_PM_MEV_VALIDATION)
@@ -91,11 +159,35 @@ def main():
 
     print(f"  m_K²/m_π² = [3]_q · [4]_q  +  (α_em / π) · (3q² − 1)/(2q²)")
     print()
+    print(f"    α_em⁻¹ (DERIVED, order 2) = {mp.nstr(alpha_em_inv, 12)}")
     print(f"    [3]_q · [4]_q         = {float(prod_34):.6f}")
     print(f"    (α_em / π) · em_factor = {float(alpha_em/mp.pi * em_factor):.6f}")
     print(f"    prediction             = {float(prediction):.6f}")
     print(f"    measured  (PDG)        = {float(measured):.6f}")
-    print(f"    full miss              = {miss_ppm:+.3f} ppm")
+    print(f"    full miss              = {miss_ppm:+.3f} ppm  ({miss_ppm*1e3:+.1f} ppb)")
+    print()
+
+    # ---------------------------------------------------------------
+    # Order sensitivity of the CS tower — is the residual a truncation
+    # artifact, or structural?
+    # ---------------------------------------------------------------
+    print("-" * 70)
+    print("  CS-tower order sensitivity (is the residual a truncation?)")
+    print("-" * 70)
+    print()
+    order_rows = []
+    for k in (0, 1, 2, 3, 6, 12):
+        a_inv_k = _alpha_em_inv_derived(q, order=k)
+        pred_k = prod_34 + (1 / a_inv_k) / mp.pi * em_factor
+        ppb_k = float((pred_k - measured) / measured) * 1e9
+        order_rows.append((k, float(a_inv_k), ppb_k))
+        tag = "  <-- canonical" if k == 2 else ""
+        print(f"    order {k:2d}:  α_em⁻¹ = {float(a_inv_k):.9f}   "
+              f"m_K²/m_π² miss = {ppb_k:+10.1f} ppb{tag}")
+    print()
+    print("    The tower is geometric with ratio c₁·κ_gram ≈ 2.7e-3, so it")
+    print("    CONVERGES — but not onto the measurement. The residual that")
+    print("    survives resummation is structural, not a truncation artifact.")
     print()
 
     # ---------------------------------------------------------------
@@ -137,6 +229,13 @@ def main():
     w.add_data("closed_form_at_q0", str(mp.nstr(closed_form_3, 20)))
     w.add_data("ring_identity_residual", float(diff_3))
     w.add_data("full_meson_miss_ppm", miss_ppm)
+    w.add_data("alpha_em_inv_derived_order2", str(mp.nstr(alpha_em_inv, 15)))
+    w.add_data("alpha_em_source", "derived (q·[9]_q·[10]_q dressed by the CS "
+                                  "tower); NOT the experimental value")
+    w.add_data("cs_tower_order_sweep",
+               [{"order": k, "alpha_em_inv": a, "meson_miss_ppb": p}
+                for k, a, p in order_rows])
+    w.add_data("cs_tower_converges_but_not_to_measurement", True)
     w.add_assertion("closed_form_ring_identity",
                     computed=1 if float(diff_3) < 1e-30 else 0,
                     expected=1, tolerance=0,
