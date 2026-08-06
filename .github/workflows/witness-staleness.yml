@@ -49,6 +49,34 @@ jobs:
             echo '```';
           } >> "$GITHUB_STEP_SUMMARY"
 
+      - name: q0-value drift ratchet (strict on NEW staleness)
+        # A witness that embeds q_0 freezes whatever value its producer had.
+        # When the canonical pinning is re-solved, every frozen copy silently
+        # goes stale — and nothing downstream notices, because a q0-derived
+        # number has no independent check.
+        #
+        # RATCHET, not big-bang: the existing backlog (329 stale fields at
+        # introduction) is recorded in q0-drift-baseline.json and tolerated,
+        # so the gate can turn on TODAY; anything stale that is NOT in the
+        # baseline fails the build. Staleness can therefore shrink but never
+        # grow.
+        #
+        # The proton-pinned values (564 of them) are NOT drift — that is the
+        # documented physical-observations layer (AGENTS.md §q₀ anchor
+        # convention). Do not "fix" them.
+        #
+        # A failure means a NEW stale anchor landed. Fix it by RE-RUNNING THE
+        # PRODUCER, never by hand-editing the number, and never by
+        # --rebaseline (that is for draining only — the count must go DOWN).
+        run: |
+          python3 computations/q0_value_drift_audit.py --strict | tee /tmp/q0drift.txt
+          {
+            echo '## q0-value drift ratchet';
+            echo '```';
+            head -14 /tmp/q0drift.txt;
+            echo '```';
+          } >> "$GITHUB_STEP_SUMMARY"
+
       - name: No-free-parameter certificate (strict)
         # Every number entering a predicted observable must be traceable to a
         # tagged calibration input, a proved/derived constant, or pure
