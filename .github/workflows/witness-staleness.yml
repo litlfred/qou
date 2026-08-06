@@ -49,6 +49,35 @@ jobs:
             echo '```';
           } >> "$GITHUB_STEP_SUMMARY"
 
+      - name: float64-padding ratchet (strict on NEW fake precision)
+        # Owner directive: NO FLOAT64. A value that enters a producer as a
+        # Python float carries ~17 significant digits; serializing it at 50
+        # dps writes out the binary64 EXPANSION — 30+ digits of rounding
+        # garbage that reads as exact. Live example:
+        #   "B_AME_MeV": "8.4817962000000015621026250300928950309753417968750"
+        # The datum is 8.4817962 (8 sig figs); the rest is an artifact.
+        #
+        # Worse than staleness: a stale value is wrong, a padded one is wrong
+        # about how well it is KNOWN, which defeats precision checks silently.
+        #
+        # ROOT CAUSE is `mpf(<python float>)` instead of `mpf("<literal>")` —
+        # the value is already binary-rounded before mpmath sees it. Fix at
+        # the producer (carry the value as a string), then re-run it. NEVER
+        # hand-edit the number, and never --rebaseline to go green
+        # (rebaseline is for draining only; the count must go DOWN).
+        #
+        # Ratchet: the 452-occurrence backlog is baselined and tolerated so
+        # the gate can run today; anything new fails.
+        run: |
+          python3 computations/witness_float64_padding_audit.py --self-test
+          python3 computations/witness_float64_padding_audit.py --strict | tee /tmp/f64.txt
+          {
+            echo '## float64-padding ratchet';
+            echo '```';
+            head -14 /tmp/f64.txt;
+            echo '```';
+          } >> "$GITHUB_STEP_SUMMARY"
+
       - name: q0-value drift ratchet (strict on NEW staleness)
         # A witness that embeds q_0 freezes whatever value its producer had.
         # When the canonical pinning is re-solved, every frozen copy silently
