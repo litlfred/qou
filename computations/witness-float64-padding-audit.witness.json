@@ -1,0 +1,2726 @@
+{
+  "schema": "witness/v1",
+  "name": "witness-float64-padding-audit",
+  "description": "Values serialized at high precision that are really float64 expansions \u2014 fake precision. Honest zero-padding of exact short values is not flagged.",
+  "data": {
+    "occurrences": 452,
+    "distinct_values": 283,
+    "files": 61,
+    "live_files": 56,
+    "new_not_baselined": 0,
+    "rows": [
+      {
+        "file": "computations/_deprecated/beta-decay-n1-brane-tower-probe.witness.json",
+        "field": "parameters.m_e_MeV",
+        "value": "0.51099894999999995182093925905064679682254791259766",
+        "real_value": "0.51099895"
+      },
+      {
+        "file": "computations/_deprecated/beta-decay-residue-sum-h3-probe.witness.json",
+        "field": "data.m_e_MeV",
+        "value": "0.51099894999999995182093925905064679682254791259766",
+        "real_value": "0.51099895"
+      },
+      {
+        "file": "computations/_deprecated/beta-decay-residue-sum-h3-probe.witness.json",
+        "field": "data.Q_beta_codata_MeV",
+        "value": "0.78233341000000000686753764966852031648159027099609",
+        "real_value": "0.78233341"
+      },
+      {
+        "file": "computations/_deprecated/cross-check-trM-1ppb.witness.json",
+        "field": "tolerance_relative",
+        "value": "0.000000001000000000000000062281591457779856418897068692786",
+        "real_value": "1e-09"
+      },
+      {
+        "file": "computations/_deprecated/cross-check-trM-1ppb.witness.json",
+        "field": "deltas[0].markov_peel",
+        "value": "0.3882864715477129524678900907019851729273796081543",
+        "real_value": "0.38828647154771295"
+      },
+      {
+        "file": "computations/_deprecated/cross-check-trM-1ppb.witness.json",
+        "field": "deltas[1].markov_peel",
+        "value": "0.20654085856226245265787611060659401118755340576172",
+        "real_value": "0.20654085856226245"
+      },
+      {
+        "file": "computations/_deprecated/cross-check-trM-1ppb.witness.json",
+        "field": "deltas[2].markov_peel",
+        "value": "0.92323329716958346669031243436620570719242095947266",
+        "real_value": "0.9232332971695835"
+      },
+      {
+        "file": "computations/_deprecated/cross-check-trM-1ppb.witness.json",
+        "field": "deltas[3].markov_peel",
+        "value": "1.0653062285923891039374211686663329601287841796875",
+        "real_value": "1.065306228592389"
+      },
+      {
+        "file": "computations/_deprecated/cross-check-trM-1ppb.witness.json",
+        "field": "deltas[4].markov_peel",
+        "value": "0.10405211867552603688391599234819295816123485565186",
+        "real_value": "0.10405211867552604"
+      },
+      {
+        "file": "computations/_deprecated/m-n-difference-formula.witness.json",
+        "field": "data.delta_m_codata_MeV",
+        "value": "1.2933323600000221631489694118499755859375",
+        "real_value": "1.2933323600000222"
+      },
+      {
+        "file": "computations/_deprecated/m-n-difference-formula.witness.json",
+        "field": "data.m_n_predicted_MeV",
+        "value": "939.5654205199999751130235381424427032470703125",
+        "real_value": "939.56542052"
+      },
+      {
+        "file": "computations/_deprecated/term6-habiro-residue-mpfr-50dps.witness.json",
+        "field": "m_e_mev_50dps",
+        "value": "0.51099894999999995182093925905064679682254791259766",
+        "real_value": "0.51099895"
+      },
+      {
+        "file": "computations/alpha/alpha-em-shift-multiplicative-chain.witness.json",
+        "field": "data.inv_alpha_codata",
+        "value": "137.035999083999996628335793502628803253173828125",
+        "real_value": "137.035999084"
+      },
+      {
+        "file": "computations/audits/hardcoded-literal-audit.witness.json",
+        "field": "data.rows[26].hits[4].literal",
+        "value": "0.51099894999999995182093925905064679682254791259766",
+        "real_value": "0.51099895"
+      },
+      {
+        "file": "computations/b-over-a-v5-unified.witness.json",
+        "field": "rows[0].tr_M_at_q0_markov_peel",
+        "value": "0.38828647154771295246789009070198517292737960815430",
+        "real_value": "0.38828647154771295"
+      },
+      {
+        "file": "computations/b-over-a-v5-unified.witness.json",
+        "field": "rows[1].tr_M_at_q0_markov_peel",
+        "value": "0.10405211867552603688391599234819295816123485565186",
+        "real_value": "0.10405211867552604"
+      },
+      {
+        "file": "computations/b-over-a-v5-unified.witness.json",
+        "field": "rows[2].tr_M_at_q0_markov_peel",
+        "value": "0.20654085856226245265787611060659401118755340576172",
+        "real_value": "0.20654085856226245"
+      },
+      {
+        "file": "computations/b-over-a-v5-unified.witness.json",
+        "field": "rows[3].tr_M_at_q0_markov_peel",
+        "value": "0.055348345876697992162807082650033407844603061676025",
+        "real_value": "0.05534834587669799"
+      },
+      {
+        "file": "computations/b-over-a-v5-unified.witness.json",
+        "field": "rows[10].tr_M_at_q0_markov_peel",
+        "value": "0.0078896372028493221006950619766939780674874782562256",
+        "real_value": "0.007889637202849322"
+      },
+      {
+        "file": "computations/binding-a3plus-joint-ji-combiner.witness.json",
+        "field": "data.baseline_vs_joint.rho_v1_m_e.per_atom.D.B_AME_MeV",
+        "value": "2.224566200000000382175358026870526373386383056640625",
+        "real_value": "2.2245662000000004"
+      },
+      {
+        "file": "computations/binding-a3plus-joint-ji-combiner.witness.json",
+        "field": "data.baseline_vs_joint.rho_v1_m_e.per_atom.T.B_AME_MeV",
+        "value": "8.481796200000001562102625030092895030975341796875",
+        "real_value": "8.481796200000002"
+      },
+      {
+        "file": "computations/binding-a3plus-joint-ji-combiner.witness.json",
+        "field": "data.baseline_vs_joint.rho_v1_m_e.per_atom.3He.B_AME_MeV",
+        "value": "7.71804132000000020497054720181040465831756591796875",
+        "real_value": "7.71804132"
+      },
+      {
+        "file": "computations/binding-a3plus-joint-ji-combiner.witness.json",
+        "field": "data.baseline_vs_joint.rho_v1_m_e.per_atom.4He.B_AME_MeV",
+        "value": "28.295662400000001213129507959820330142974853515625",
+        "real_value": "28.2956624"
+      },
+      {
+        "file": "computations/binding-a3plus-joint-ji-combiner.witness.json",
+        "field": "data.baseline_vs_joint.rho_v2_mu_0.per_atom.D.B_AME_MeV",
+        "value": "2.224566200000000382175358026870526373386383056640625",
+        "real_value": "2.2245662000000004"
+      },
+      {
+        "file": "computations/binding-a3plus-joint-ji-combiner.witness.json",
+        "field": "data.baseline_vs_joint.rho_v2_mu_0.per_atom.T.B_AME_MeV",
+        "value": "8.481796200000001562102625030092895030975341796875",
+        "real_value": "8.481796200000002"
+      },
+      {
+        "file": "computations/binding-a3plus-joint-ji-combiner.witness.json",
+        "field": "data.baseline_vs_joint.rho_v2_mu_0.per_atom.3He.B_AME_MeV",
+        "value": "7.71804132000000020497054720181040465831756591796875",
+        "real_value": "7.71804132"
+      },
+      {
+        "file": "computations/binding-a3plus-joint-ji-combiner.witness.json",
+        "field": "data.baseline_vs_joint.rho_v2_mu_0.per_atom.4He.B_AME_MeV",
+        "value": "28.295662400000001213129507959820330142974853515625",
+        "real_value": "28.2956624"
+      },
+      {
+        "file": "computations/binding-a3plus-joint-ji-combiner.witness.json",
+        "field": "data.baseline_vs_joint.rho_v3_m_e_x_hbar_q.per_atom.D.B_AME_MeV",
+        "value": "2.224566200000000382175358026870526373386383056640625",
+        "real_value": "2.2245662000000004"
+      },
+      {
+        "file": "computations/binding-a3plus-joint-ji-combiner.witness.json",
+        "field": "data.baseline_vs_joint.rho_v3_m_e_x_hbar_q.per_atom.T.B_AME_MeV",
+        "value": "8.481796200000001562102625030092895030975341796875",
+        "real_value": "8.481796200000002"
+      },
+      {
+        "file": "computations/binding-a3plus-joint-ji-combiner.witness.json",
+        "field": "data.baseline_vs_joint.rho_v3_m_e_x_hbar_q.per_atom.3He.B_AME_MeV",
+        "value": "7.71804132000000020497054720181040465831756591796875",
+        "real_value": "7.71804132"
+      },
+      {
+        "file": "computations/binding-a3plus-joint-ji-combiner.witness.json",
+        "field": "data.baseline_vs_joint.rho_v3_m_e_x_hbar_q.per_atom.4He.B_AME_MeV",
+        "value": "28.295662400000001213129507959820330142974853515625",
+        "real_value": "28.2956624"
+      },
+      {
+        "file": "computations/binding-a3plus-joint-ji-combiner.witness.json",
+        "field": "data.baseline_vs_joint.rho_v4_mu_0_x_hbar_q.per_atom.D.B_AME_MeV",
+        "value": "2.224566200000000382175358026870526373386383056640625",
+        "real_value": "2.2245662000000004"
+      },
+      {
+        "file": "computations/binding-a3plus-joint-ji-combiner.witness.json",
+        "field": "data.baseline_vs_joint.rho_v4_mu_0_x_hbar_q.per_atom.T.B_AME_MeV",
+        "value": "8.481796200000001562102625030092895030975341796875",
+        "real_value": "8.481796200000002"
+      },
+      {
+        "file": "computations/binding-a3plus-joint-ji-combiner.witness.json",
+        "field": "data.baseline_vs_joint.rho_v4_mu_0_x_hbar_q.per_atom.3He.B_AME_MeV",
+        "value": "7.71804132000000020497054720181040465831756591796875",
+        "real_value": "7.71804132"
+      },
+      {
+        "file": "computations/binding-a3plus-joint-ji-combiner.witness.json",
+        "field": "data.baseline_vs_joint.rho_v4_mu_0_x_hbar_q.per_atom.4He.B_AME_MeV",
+        "value": "28.295662400000001213129507959820330142974853515625",
+        "real_value": "28.2956624"
+      },
+      {
+        "file": "computations/binding-block-multiplicative.witness.json",
+        "field": "data.per_atom.D.B_AME_MeV",
+        "value": "2.22456606999999983997895469656214118003845214843750000000000",
+        "real_value": "2.22456607"
+      },
+      {
+        "file": "computations/binding-block-multiplicative.witness.json",
+        "field": "data.per_atom.3He.B_AME_MeV",
+        "value": "7.71804280000000009209770723828114569187164306640625000000000",
+        "real_value": "7.7180428"
+      },
+      {
+        "file": "computations/binding-block-multiplicative.witness.json",
+        "field": "data.per_atom.4He.B_AME_MeV",
+        "value": "28.2956740000000017687398212729021906852722167968750000000000",
+        "real_value": "28.295674"
+      },
+      {
+        "file": "computations/binding-block-multiplicative.witness.json",
+        "field": "data.per_atom.7Li.B_AME_MeV",
+        "value": "39.2453000000000002955857780762016773223876953125000000000000",
+        "real_value": "39.2453"
+      },
+      {
+        "file": "computations/binding-block-multiplicative.witness.json",
+        "field": "data.per_atom.9Be.B_AME_MeV",
+        "value": "58.1649999999999991473487170878797769546508789062500000000000",
+        "real_value": "58.165"
+      },
+      {
+        "file": "computations/binding-block-multiplicative.witness.json",
+        "field": "data.per_atom.10B.B_AME_MeV",
+        "value": "64.7507999999999981355358613654971122741699218750000000000000",
+        "real_value": "64.7508"
+      },
+      {
+        "file": "computations/binding-block-multiplicative.witness.json",
+        "field": "data.per_atom.12C.B_AME_MeV",
+        "value": "92.1617499999999978399500832892954349517822265625000000000000",
+        "real_value": "92.16175"
+      },
+      {
+        "file": "computations/binding-block-multiplicative.witness.json",
+        "field": "data.per_atom.14N.B_AME_MeV",
+        "value": "104.659999999999996589394868351519107818603515625000000000000",
+        "real_value": "104.66"
+      },
+      {
+        "file": "computations/binding-block-multiplicative.witness.json",
+        "field": "data.per_atom.16O.B_AME_MeV",
+        "value": "127.619299999999995520738593768328428268432617187500000000000",
+        "real_value": "127.6193"
+      },
+      {
+        "file": "computations/binding-block-multiplicative.witness.json",
+        "field": "data.per_atom.20Ne.B_AME_MeV",
+        "value": "160.644800000000003592504072003066539764404296875000000000000",
+        "real_value": "160.6448"
+      },
+      {
+        "file": "computations/binding-block-multiplicative.witness.json",
+        "field": "data.per_atom.24Mg.B_AME_MeV",
+        "value": "198.257000000000005002220859751105308532714843750000000000000",
+        "real_value": "198.257"
+      },
+      {
+        "file": "computations/binding-block-multiplicative.witness.json",
+        "field": "data.per_atom.28Si.B_AME_MeV",
+        "value": "236.537100000000009458744898438453674316406250000000000000000",
+        "real_value": "236.5371"
+      },
+      {
+        "file": "computations/binding-block-multiplicative.witness.json",
+        "field": "data.per_atom.40Ca.B_AME_MeV",
+        "value": "342.052000000000020918378140777349472045898437500000000000000",
+        "real_value": "342.052"
+      },
+      {
+        "file": "computations/binding-block-multiplicative.witness.json",
+        "field": "data.per_atom.56Fe.B_AME_MeV",
+        "value": "492.254000000000019099388737231492996215820312500000000000000",
+        "real_value": "492.254"
+      },
+      {
+        "file": "computations/binding-depth-stratified-knot-weighted.witness.json",
+        "field": "data.per_beta.beta_0.0.per_atom.D.B_AME_MeV",
+        "value": "2.22456606999999983997895469656214118003845214843750000000000",
+        "real_value": "2.22456607"
+      },
+      {
+        "file": "computations/binding-depth-stratified-knot-weighted.witness.json",
+        "field": "data.per_beta.beta_0.0.per_atom.T.B_AME_MeV",
+        "value": "8.48179620000000156210262503009289503097534179687500000000000",
+        "real_value": "8.481796200000002"
+      },
+      {
+        "file": "computations/binding-depth-stratified-knot-weighted.witness.json",
+        "field": "data.per_beta.beta_0.0.per_atom.3He.B_AME_MeV",
+        "value": "7.71804280000000009209770723828114569187164306640625000000000",
+        "real_value": "7.7180428"
+      },
+      {
+        "file": "computations/binding-depth-stratified-knot-weighted.witness.json",
+        "field": "data.per_beta.beta_0.0.per_atom.4He.B_AME_MeV",
+        "value": "28.2956740000000017687398212729021906852722167968750000000000",
+        "real_value": "28.295674"
+      },
+      {
+        "file": "computations/binding-depth-stratified-knot-weighted.witness.json",
+        "field": "data.per_beta.beta_1.0.per_atom.D.B_AME_MeV",
+        "value": "2.22456606999999983997895469656214118003845214843750000000000",
+        "real_value": "2.22456607"
+      },
+      {
+        "file": "computations/binding-depth-stratified-knot-weighted.witness.json",
+        "field": "data.per_beta.beta_1.0.per_atom.T.B_AME_MeV",
+        "value": "8.48179620000000156210262503009289503097534179687500000000000",
+        "real_value": "8.481796200000002"
+      },
+      {
+        "file": "computations/binding-depth-stratified-knot-weighted.witness.json",
+        "field": "data.per_beta.beta_1.0.per_atom.3He.B_AME_MeV",
+        "value": "7.71804280000000009209770723828114569187164306640625000000000",
+        "real_value": "7.7180428"
+      },
+      {
+        "file": "computations/binding-depth-stratified-knot-weighted.witness.json",
+        "field": "data.per_beta.beta_1.0.per_atom.4He.B_AME_MeV",
+        "value": "28.2956740000000017687398212729021906852722167968750000000000",
+        "real_value": "28.295674"
+      },
+      {
+        "file": "computations/binding-depth-stratified-knot-weighted.witness.json",
+        "field": "data.per_beta.beta_2.0.per_atom.D.B_AME_MeV",
+        "value": "2.22456606999999983997895469656214118003845214843750000000000",
+        "real_value": "2.22456607"
+      },
+      {
+        "file": "computations/binding-depth-stratified-knot-weighted.witness.json",
+        "field": "data.per_beta.beta_2.0.per_atom.T.B_AME_MeV",
+        "value": "8.48179620000000156210262503009289503097534179687500000000000",
+        "real_value": "8.481796200000002"
+      },
+      {
+        "file": "computations/binding-depth-stratified-knot-weighted.witness.json",
+        "field": "data.per_beta.beta_2.0.per_atom.3He.B_AME_MeV",
+        "value": "7.71804280000000009209770723828114569187164306640625000000000",
+        "real_value": "7.7180428"
+      },
+      {
+        "file": "computations/binding-depth-stratified-knot-weighted.witness.json",
+        "field": "data.per_beta.beta_2.0.per_atom.4He.B_AME_MeV",
+        "value": "28.2956740000000017687398212729021906852722167968750000000000",
+        "real_value": "28.295674"
+      },
+      {
+        "file": "computations/binding-depth-stratified-lr.witness.json",
+        "field": "data.per_atom.D.B_AME_MeV",
+        "value": "2.22456606999999983997895469656214118003845214843750000000000",
+        "real_value": "2.22456607"
+      },
+      {
+        "file": "computations/binding-depth-stratified-lr.witness.json",
+        "field": "data.per_atom.T.B_AME_MeV",
+        "value": "8.48179620000000156210262503009289503097534179687500000000000",
+        "real_value": "8.481796200000002"
+      },
+      {
+        "file": "computations/binding-depth-stratified-lr.witness.json",
+        "field": "data.per_atom.3He.B_AME_MeV",
+        "value": "7.71804280000000009209770723828114569187164306640625000000000",
+        "real_value": "7.7180428"
+      },
+      {
+        "file": "computations/binding-depth-stratified-lr.witness.json",
+        "field": "data.per_atom.4He.B_AME_MeV",
+        "value": "28.2956740000000017687398212729021906852722167968750000000000",
+        "real_value": "28.295674"
+      },
+      {
+        "file": "computations/binding-depth-stratified-rust.witness.json",
+        "field": "data.per_atom.D.B_AME_MeV",
+        "value": "2.22456606999999983997895469656214118003845214843750000000000",
+        "real_value": "2.22456607"
+      },
+      {
+        "file": "computations/binding-depth-stratified-rust.witness.json",
+        "field": "data.per_atom.T.B_AME_MeV",
+        "value": "8.48179620000000156210262503009289503097534179687500000000000",
+        "real_value": "8.481796200000002"
+      },
+      {
+        "file": "computations/binding-depth-stratified-rust.witness.json",
+        "field": "data.per_atom.3He.B_AME_MeV",
+        "value": "7.71804280000000009209770723828114569187164306640625000000000",
+        "real_value": "7.7180428"
+      },
+      {
+        "file": "computations/binding-depth-stratified-rust.witness.json",
+        "field": "data.per_atom.4He.B_AME_MeV",
+        "value": "28.2956740000000017687398212729021906852722167968750000000000",
+        "real_value": "28.295674"
+      },
+      {
+        "file": "computations/binding-depth-stratified.witness.json",
+        "field": "data.per_atom.D.B_AME_MeV",
+        "value": "2.22456620000000038217535802687052637338638305664062500000000",
+        "real_value": "2.2245662000000004"
+      },
+      {
+        "file": "computations/binding-depth-stratified.witness.json",
+        "field": "data.per_atom.T.B_AME_MeV",
+        "value": "8.48179620000000156210262503009289503097534179687500000000000",
+        "real_value": "8.481796200000002"
+      },
+      {
+        "file": "computations/binding-depth-stratified.witness.json",
+        "field": "data.per_atom.3He.B_AME_MeV",
+        "value": "7.71804132000000020497054720181040465831756591796875000000000",
+        "real_value": "7.71804132"
+      },
+      {
+        "file": "computations/binding-factor-f-sequence.witness.json",
+        "field": "data.rows[0].delta_tr",
+        "value": "0.595239597908215012367350027489",
+        "real_value": "0.595239597908215"
+      },
+      {
+        "file": "computations/binding-factor-f-sequence.witness.json",
+        "field": "data.rows[2].delta_tr",
+        "value": "0.841215486133630840903663283825",
+        "real_value": "0.8412154861336308"
+      },
+      {
+        "file": "computations/bring-homology-pairing-integration.witness.json",
+        "field": "data.computed_triangle_area",
+        "value": "0.1570796326794901554002592547476524487138",
+        "real_value": "0.15707963267949016"
+      },
+      {
+        "file": "computations/bring-homology-pairing-integration.witness.json",
+        "field": "data.computed_total_area",
+        "value": "37.69911184307763818424064083956182003021",
+        "real_value": "37.69911184307764"
+      },
+      {
+        "file": "computations/bring-homology-pairing-integration.witness.json",
+        "field": "data.pairing_ratio",
+        "value": "0.2122065907891931002549057438955060206354",
+        "real_value": "0.2122065907891931"
+      },
+      {
+        "file": "computations/bring-homology-pairing-integration.witness.json",
+        "field": "data.target_ratio",
+        "value": "0.2122065907891937941442961346183437854052",
+        "real_value": "0.2122065907891938"
+      },
+      {
+        "file": "computations/chirality-avg-content-atomic.witness.json",
+        "field": "data.atoms[0].per_partition[0].chi_lambda_beta",
+        "value": "1.2320524541667656759358351337141357362270355224609375",
+        "real_value": "1.2320524541667657"
+      },
+      {
+        "file": "computations/chirality-avg-content-atomic.witness.json",
+        "field": "data.atoms[0].per_partition[1].chi_lambda_beta",
+        "value": "0.9898578670477051755227648754953406751155853271484375",
+        "real_value": "0.9898578670477052"
+      },
+      {
+        "file": "computations/chirality-avg-content-atomic.witness.json",
+        "field": "data.atoms[0].per_partition[2].chi_lambda_beta",
+        "value": "0.9005352173183727160221678786911070346832275390625",
+        "real_value": "0.9005352173183727"
+      },
+      {
+        "file": "computations/chirality-avg-content-atomic.witness.json",
+        "field": "data.atoms[0].per_partition[3].chi_lambda_beta",
+        "value": "-2.33151723684839584649353128043003380298614501953125",
+        "real_value": "-2.331517236848396"
+      },
+      {
+        "file": "computations/chirality-avg-content-atomic.witness.json",
+        "field": "data.atoms[0].per_partition[4].chi_lambda_beta",
+        "value": "1.142729804437433660524447986972518265247344970703125",
+        "real_value": "1.1427298044374337"
+      },
+      {
+        "file": "computations/chirality-avg-content-atomic.witness.json",
+        "field": "data.atoms[0].per_partition[5].chi_lambda_beta",
+        "value": "-0.224261740655474994809992494992911815643310546875",
+        "real_value": "-0.224261740655475"
+      },
+      {
+        "file": "computations/chirality-avg-content-atomic.witness.json",
+        "field": "data.atoms[0].per_partition[6].chi_lambda_beta",
+        "value": "-1.892744503807085809654608965502120554447174072265625",
+        "real_value": "-1.8927445038070858"
+      },
+      {
+        "file": "computations/chirality-avg-content-atomic.witness.json",
+        "field": "data.atoms[0].per_partition[7].chi_lambda_beta",
+        "value": "0.72233110463642768994674270288669504225254058837890625",
+        "real_value": "0.7223311046364277"
+      },
+      {
+        "file": "computations/chirality-avg-content-atomic.witness.json",
+        "field": "data.atoms[0].per_partition[8].chi_lambda_beta",
+        "value": "0.9189092505586773373948972221114672720432281494140625",
+        "real_value": "0.9189092505586773"
+      },
+      {
+        "file": "computations/chirality-avg-content-atomic.witness.json",
+        "field": "data.atoms[0].per_partition[9].chi_lambda_beta",
+        "value": "1.0082319002880091307616794438217766582965850830078125",
+        "real_value": "1.0082319002880091"
+      },
+      {
+        "file": "computations/chirality-avg-content-atomic.witness.json",
+        "field": "data.atoms[0].per_partition[10].chi_lambda_beta",
+        "value": "0.81165375436575992740273477465962059795856475830078125",
+        "real_value": "0.8116537543657599"
+      },
+      {
+        "file": "computations/chirality-avg-content-atomic.witness.json",
+        "field": "data.atoms[1].per_partition[0].chi_lambda_beta",
+        "value": "1.3675518369513881555832313097198493778705596923828125",
+        "real_value": "1.3675518369513882"
+      },
+      {
+        "file": "computations/chirality-avg-content-atomic.witness.json",
+        "field": "data.atoms[1].per_partition[1].chi_lambda_beta",
+        "value": "1.939868810581829361439076819806359708309173583984375",
+        "real_value": "1.9398688105818294"
+      },
+      {
+        "file": "computations/chirality-avg-content-atomic.witness.json",
+        "field": "data.atoms[1].per_partition[2].chi_lambda_beta",
+        "value": "2.51651908993518969026581544312648475170135498046875",
+        "real_value": "2.5165190899351897"
+      },
+      {
+        "file": "computations/chirality-avg-content-atomic.witness.json",
+        "field": "data.atoms[1].per_partition[3].chi_lambda_beta",
+        "value": "-3.548520332221734907562904481892473995685577392578125",
+        "real_value": "-3.548520332221735"
+      },
+      {
+        "file": "computations/chirality-avg-content-atomic.witness.json",
+        "field": "data.atoms[1].per_partition[4].chi_lambda_beta",
+        "value": "3.926568034156858733041417508502490818500518798828125",
+        "real_value": "3.9265680341568587"
+      },
+      {
+        "file": "computations/chirality-avg-content-atomic.witness.json",
+        "field": "data.atoms[1].per_partition[5].chi_lambda_beta",
+        "value": "-2.391199976814785355117010112735442817211151123046875",
+        "real_value": "-2.3911999768147854"
+      },
+      {
+        "file": "computations/chirality-avg-content-atomic.witness.json",
+        "field": "data.atoms[1].per_partition[6].chi_lambda_beta",
+        "value": "-6.11736522200207133437288575805723667144775390625",
+        "real_value": "-6.117365222002071"
+      },
+      {
+        "file": "computations/chirality-avg-content-atomic.witness.json",
+        "field": "data.atoms[1].per_partition[7].chi_lambda_beta",
+        "value": "1.2252948560785268394823788185021840035915374755859375",
+        "real_value": "1.2252948560785268"
+      },
+      {
+        "file": "computations/chirality-avg-content-atomic.witness.json",
+        "field": "data.atoms[1].per_partition[8].chi_lambda_beta",
+        "value": "-0.8701767718098516457558844194863922894001007080078125",
+        "real_value": "-0.8701767718098516"
+      },
+      {
+        "file": "computations/chirality-avg-content-atomic.witness.json",
+        "field": "data.atoms[1].per_partition[9].chi_lambda_beta",
+        "value": "3.93721897223300043577864926191978156566619873046875",
+        "real_value": "3.9372189722330004"
+      },
+      {
+        "file": "computations/chirality-avg-content-atomic.witness.json",
+        "field": "data.atoms[1].per_partition[10].chi_lambda_beta",
+        "value": "-1.4312391465999170225842362924595363438129425048828125",
+        "real_value": "-1.431239146599917"
+      },
+      {
+        "file": "computations/chirality-avg-content-atomic.witness.json",
+        "field": "data.atoms[1].per_partition[11].chi_lambda_beta",
+        "value": "2.03178431823984606552357945474795997142791748046875",
+        "real_value": "2.031784318239846"
+      },
+      {
+        "file": "computations/chirality-avg-content-atomic.witness.json",
+        "field": "data.atoms[1].per_partition[12].chi_lambda_beta",
+        "value": "-3.395048964168189353785010098363272845745086669921875",
+        "real_value": "-3.3950489641681894"
+      },
+      {
+        "file": "computations/chirality-avg-content-atomic.witness.json",
+        "field": "data.atoms[1].per_partition[13].chi_lambda_beta",
+        "value": "2.227267751466527112569337987224571406841278076171875",
+        "real_value": "2.227267751466527"
+      },
+      {
+        "file": "computations/chirality-avg-content-atomic.witness.json",
+        "field": "data.atoms[1].per_partition[14].chi_lambda_beta",
+        "value": "-5.8456671802808539695206491160206496715545654296875",
+        "real_value": "-5.845667180280854"
+      },
+      {
+        "file": "computations/chirality-avg-content-atomic.witness.json",
+        "field": "data.atoms[1].per_partition[15].chi_lambda_beta",
+        "value": "6.49106261510159132654962377273477613925933837890625",
+        "real_value": "6.491062615101591"
+      },
+      {
+        "file": "computations/chirality-avg-content-atomic.witness.json",
+        "field": "data.atoms[1].per_partition[16].chi_lambda_beta",
+        "value": "5.12059729505561289641946132178418338298797607421875",
+        "real_value": "5.120597295055613"
+      },
+      {
+        "file": "computations/chirality-avg-content-atomic.witness.json",
+        "field": "data.atoms[1].per_partition[17].chi_lambda_beta",
+        "value": "6.203663674216894463597782305441796779632568359375",
+        "real_value": "6.2036636742168945"
+      },
+      {
+        "file": "computations/chirality-avg-content-atomic.witness.json",
+        "field": "data.atoms[1].per_partition[18].chi_lambda_beta",
+        "value": "0.7134618943607733410061655376921407878398895263671875",
+        "real_value": "0.7134618943607733"
+      },
+      {
+        "file": "computations/chirality-avg-content-atomic.witness.json",
+        "field": "data.atoms[1].per_partition[19].chi_lambda_beta",
+        "value": "-1.7146556415589142563504765348625369369983673095703125",
+        "real_value": "-1.7146556415589143"
+      },
+      {
+        "file": "computations/chirality-avg-content-atomic.witness.json",
+        "field": "data.atoms[1].per_partition[20].chi_lambda_beta",
+        "value": "-3.67511133085504848594382565352134406566619873046875",
+        "real_value": "-3.6751113308550485"
+      },
+      {
+        "file": "computations/chirality-avg-content-atomic.witness.json",
+        "field": "data.atoms[1].per_partition[21].chi_lambda_beta",
+        "value": "1.0737028321500046157410679370514117181301116943359375",
+        "real_value": "1.0737028321500046"
+      },
+      {
+        "file": "computations/chirality-avg-content-atomic.witness.json",
+        "field": "data.atoms[1].per_partition[22].chi_lambda_beta",
+        "value": "-0.079850222959150674029160654754377901554107666015625",
+        "real_value": "-0.07985022295915067"
+      },
+      {
+        "file": "computations/chirality-avg-content-atomic.witness.json",
+        "field": "data.atoms[1].per_partition[23].chi_lambda_beta",
+        "value": "0.49791211653673805859199319456820376217365264892578125",
+        "real_value": "0.49791211653673806"
+      },
+      {
+        "file": "computations/chirality-avg-content-atomic.witness.json",
+        "field": "data.atoms[1].per_partition[24].chi_lambda_beta",
+        "value": "0.92023146409645895094087109100655652582645416259765625",
+        "real_value": "0.920231464096459"
+      },
+      {
+        "file": "computations/chirality-avg-content-atomic.witness.json",
+        "field": "data.atoms[1].per_partition[25].chi_lambda_beta",
+        "value": "-2.437429492225485549994346001767553389072418212890625",
+        "real_value": "-2.4374294922254855"
+      },
+      {
+        "file": "computations/chirality-avg-content-atomic.witness.json",
+        "field": "data.atoms[1].per_partition[26].chi_lambda_beta",
+        "value": "-3.94157785273054006580650820978917181491851806640625",
+        "real_value": "-3.94157785273054"
+      },
+      {
+        "file": "computations/chirality-avg-content-atomic.witness.json",
+        "field": "data.atoms[1].per_partition[27].chi_lambda_beta",
+        "value": "-3.244990802869644586081676607136614620685577392578125",
+        "real_value": "-3.2449908028696446"
+      },
+      {
+        "file": "computations/chirality-avg-content-atomic.witness.json",
+        "field": "data.atoms[1].per_partition[28].chi_lambda_beta",
+        "value": "-1.9863536832801294007566639265860430896282196044921875",
+        "real_value": "-1.9863536832801294"
+      },
+      {
+        "file": "computations/chirality-avg-content-atomic.witness.json",
+        "field": "data.atoms[1].per_partition[29].chi_lambda_beta",
+        "value": "-0.7312337075494361737781900956179015338420867919921875",
+        "real_value": "-0.7312337075494362"
+      },
+      {
+        "file": "computations/chirality-avg-content-atomic.witness.json",
+        "field": "data.atoms[2].per_partition[0].chi_lambda_beta",
+        "value": "1.367551836951388377627836234751157462596893310546875",
+        "real_value": "1.3675518369513884"
+      },
+      {
+        "file": "computations/chirality-avg-content-atomic.witness.json",
+        "field": "data.atoms[2].per_partition[1].chi_lambda_beta",
+        "value": "2.72384612354230970510116094374097883701324462890625",
+        "real_value": "2.7238461235423097"
+      },
+      {
+        "file": "computations/chirality-avg-content-atomic.witness.json",
+        "field": "data.atoms[2].per_partition[2].chi_lambda_beta",
+        "value": "3.93036090922927172641720972023904323577880859375",
+        "real_value": "3.9303609092292717"
+      },
+      {
+        "file": "computations/chirality-avg-content-atomic.witness.json",
+        "field": "data.atoms[2].per_partition[3].chi_lambda_beta",
+        "value": "-2.134678512927653315500720054842531681060791015625",
+        "real_value": "-2.1346785129276533"
+      },
+      {
+        "file": "computations/chirality-avg-content-atomic.witness.json",
+        "field": "data.atoms[2].per_partition[4].chi_lambda_beta",
+        "value": "5.1294594254350673878661837079562246799468994140625",
+        "real_value": "5.129459425435067"
+      },
+      {
+        "file": "computations/chirality-avg-content-atomic.witness.json",
+        "field": "data.atoms[2].per_partition[5].chi_lambda_beta",
+        "value": "-1.258053453062273785434399542282335460186004638671875",
+        "real_value": "-1.2580534530622738"
+      },
+      {
+        "file": "computations/chirality-avg-content-atomic.witness.json",
+        "field": "data.atoms[2].per_partition[6].chi_lambda_beta",
+        "value": "-6.9710874024882496513555452111177146434783935546875",
+        "real_value": "-6.97108740248825"
+      },
+      {
+        "file": "computations/chirality-avg-content-atomic.witness.json",
+        "field": "data.atoms[2].per_partition[7].chi_lambda_beta",
+        "value": "2.525461432594619193281459956779144704341888427734375",
+        "real_value": "2.525461432594619"
+      },
+      {
+        "file": "computations/chirality-avg-content-atomic.witness.json",
+        "field": "data.atoms[2].per_partition[8].chi_lambda_beta",
+        "value": "0.006592697854352902453456408693455159664154052734375",
+        "real_value": "0.0065926978543529025"
+      },
+      {
+        "file": "computations/chirality-avg-content-atomic.witness.json",
+        "field": "data.atoms[2].per_partition[9].chi_lambda_beta",
+        "value": "3.51382186538111174201048925169743597507476806640625",
+        "real_value": "3.5138218653811117"
+      },
+      {
+        "file": "computations/chirality-avg-content-atomic.witness.json",
+        "field": "data.atoms[2].per_partition[10].chi_lambda_beta",
+        "value": "-4.54261058236993253700575223774649202823638916015625",
+        "real_value": "-4.5426105823699325"
+      },
+      {
+        "file": "computations/chirality-avg-content-atomic.witness.json",
+        "field": "data.atoms[2].per_partition[11].chi_lambda_beta",
+        "value": "-0.65619001067828153228589371792622841894626617431640625",
+        "real_value": "-0.6561900106782815"
+      },
+      {
+        "file": "computations/chirality-avg-content-atomic.witness.json",
+        "field": "data.atoms[2].per_partition[12].chi_lambda_beta",
+        "value": "-2.237584198962414117062280638492666184902191162109375",
+        "real_value": "-2.237584198962414"
+      },
+      {
+        "file": "computations/chirality-avg-content-atomic.witness.json",
+        "field": "data.atoms[2].per_partition[13].chi_lambda_beta",
+        "value": "2.21807639585330296227994040236808359622955322265625",
+        "real_value": "2.218076395853303"
+      },
+      {
+        "file": "computations/chirality-avg-content-atomic.witness.json",
+        "field": "data.atoms[2].per_partition[14].chi_lambda_beta",
+        "value": "-6.934159939897877933390191174112260341644287109375",
+        "real_value": "-6.934159939897878"
+      },
+      {
+        "file": "computations/chirality-avg-content-atomic.witness.json",
+        "field": "data.atoms[2].per_partition[15].chi_lambda_beta",
+        "value": "5.13506254122417704621739176218397915363311767578125",
+        "real_value": "5.135062541224177"
+      },
+      {
+        "file": "computations/chirality-avg-content-atomic.witness.json",
+        "field": "data.atoms[2].per_partition[16].chi_lambda_beta",
+        "value": "2.311808364929103021268019801937043666839599609375",
+        "real_value": "2.311808364929103"
+      },
+      {
+        "file": "computations/chirality-avg-content-atomic.witness.json",
+        "field": "data.atoms[2].per_partition[17].chi_lambda_beta",
+        "value": "5.6408322689131846772170320036821067333221435546875",
+        "real_value": "5.640832268913185"
+      },
+      {
+        "file": "computations/chirality-avg-content-atomic.witness.json",
+        "field": "data.atoms[2].per_partition[18].chi_lambda_beta",
+        "value": "0.570760083050455779840604009223170578479766845703125",
+        "real_value": "0.5707600830504558"
+      },
+      {
+        "file": "computations/chirality-avg-content-atomic.witness.json",
+        "field": "data.atoms[2].per_partition[19].chi_lambda_beta",
+        "value": "-1.4329562219896694319487551183556206524372100830078125",
+        "real_value": "-1.4329562219896694"
+      },
+      {
+        "file": "computations/chirality-avg-content-atomic.witness.json",
+        "field": "data.atoms[2].per_partition[20].chi_lambda_beta",
+        "value": "-3.79592593206342687750520781264640390872955322265625",
+        "real_value": "-3.795925932063427"
+      },
+      {
+        "file": "computations/chirality-avg-content-atomic.witness.json",
+        "field": "data.atoms[2].per_partition[21].chi_lambda_beta",
+        "value": "1.9753520135564299753383465940714813768863677978515625",
+        "real_value": "1.97535201355643"
+      },
+      {
+        "file": "computations/chirality-avg-content-atomic.witness.json",
+        "field": "data.atoms[2].per_partition[22].chi_lambda_beta",
+        "value": "0.843686168549213189038482596515677869319915771484375",
+        "real_value": "0.8436861685492132"
+      },
+      {
+        "file": "computations/chirality-avg-content-atomic.witness.json",
+        "field": "data.atoms[2].per_partition[23].chi_lambda_beta",
+        "value": "1.6778255621334086100659988005645573139190673828125",
+        "real_value": "1.6778255621334086"
+      },
+      {
+        "file": "computations/chirality-avg-content-atomic.witness.json",
+        "field": "data.atoms[2].per_partition[24].chi_lambda_beta",
+        "value": "2.078257699591191443033721952815540134906768798828125",
+        "real_value": "2.0782576995911914"
+      },
+      {
+        "file": "computations/chirality-avg-content-atomic.witness.json",
+        "field": "data.atoms[2].per_partition[25].chi_lambda_beta",
+        "value": "-1.3930784995087408528746664160280488431453704833984375",
+        "real_value": "-1.3930784995087409"
+      },
+      {
+        "file": "computations/chirality-avg-content-atomic.witness.json",
+        "field": "data.atoms[2].per_partition[26].chi_lambda_beta",
+        "value": "-2.715303000530251420485683411243371665477752685546875",
+        "real_value": "-2.7153030005302514"
+      },
+      {
+        "file": "computations/chirality-avg-content-atomic.witness.json",
+        "field": "data.atoms[2].per_partition[27].chi_lambda_beta",
+        "value": "-2.086964567374911094788103582686744630336761474609375",
+        "real_value": "-2.086964567374911"
+      },
+      {
+        "file": "computations/chirality-avg-content-atomic.witness.json",
+        "field": "data.atoms[2].per_partition[28].chi_lambda_beta",
+        "value": "-1.469883684580037819245035279891453683376312255859375",
+        "real_value": "-1.4698836845800378"
+      },
+      {
+        "file": "computations/chirality-avg-content-atomic.witness.json",
+        "field": "data.atoms[2].per_partition[29].chi_lambda_beta",
+        "value": "-0.7312337075494361737781900956179015338420867919921875",
+        "real_value": "-0.7312337075494362"
+      },
+      {
+        "file": "computations/chirality-avg-content-chiral.witness.json",
+        "field": "data.cases[0].rows[0].chi_lambda_beta",
+        "value": "1.3675518842725498114276660999166779220104217529297",
+        "real_value": "1.3675518842725498"
+      },
+      {
+        "file": "computations/chirality-avg-content-chiral.witness.json",
+        "field": "data.cases[0].rows[1].chi_lambda_beta",
+        "value": "0.63631820202587041634956221969332545995712280273438",
+        "real_value": "0.6363182020258704"
+      },
+      {
+        "file": "computations/chirality-avg-content-chiral.witness.json",
+        "field": "data.cases[0].rows[2].chi_lambda_beta",
+        "value": "-0.73123368224667939507810388022335246205329895019531",
+        "real_value": "-0.7312336822466794"
+      },
+      {
+        "file": "computations/chirality-avg-content-chiral.witness.json",
+        "field": "data.cases[1].rows[0].chi_lambda_beta",
+        "value": "0.73123368224668039427882604286423884332180023193359",
+        "real_value": "0.7312336822466804"
+      },
+      {
+        "file": "computations/chirality-avg-content-chiral.witness.json",
+        "field": "data.cases[1].rows[1].chi_lambda_beta",
+        "value": "-0.63631820202586786283660558183328248560428619384766",
+        "real_value": "-0.6363182020258679"
+      },
+      {
+        "file": "computations/chirality-avg-content-chiral.witness.json",
+        "field": "data.cases[1].rows[2].chi_lambda_beta",
+        "value": "-1.3675518842725482571154316246975213289260864257813",
+        "real_value": "-1.3675518842725483"
+      },
+      {
+        "file": "computations/chirality-avg-content-chiral.witness.json",
+        "field": "data.cases[2].rows[0].chi_lambda_beta",
+        "value": "1.8701981561774017048804807927808724343776702880859",
+        "real_value": "1.8701981561774017"
+      },
+      {
+        "file": "computations/chirality-avg-content-chiral.witness.json",
+        "field": "data.cases[2].rows[1].chi_lambda_beta",
+        "value": "2.0000000000000008881784197001252323389053344726563",
+        "real_value": "2.000000000000001"
+      },
+      {
+        "file": "computations/chirality-avg-content-chiral.witness.json",
+        "field": "data.cases[2].rows[2].chi_lambda_beta",
+        "value": "0.53470269805203773927360089146532118320465087890625",
+        "real_value": "0.5347026980520377"
+      },
+      {
+        "file": "computations/chirality-avg-content-chiral.witness.json",
+        "field": "data.cases[3].rows[0].chi_lambda_beta",
+        "value": "1.2320524825884344721771412878297269344329833984375",
+        "real_value": "1.2320524825884345"
+      },
+      {
+        "file": "computations/chirality-avg-content-chiral.witness.json",
+        "field": "data.cases[3].rows[1].chi_lambda_beta",
+        "value": "2.1825492960528500852035449497634544968605041503906",
+        "real_value": "2.18254929605285"
+      },
+      {
+        "file": "computations/chirality-avg-content-chiral.witness.json",
+        "field": "data.cases[3].rows[2].chi_lambda_beta",
+        "value": "0.81165373564208120882312869071029126644134521484375",
+        "real_value": "0.8116537356420812"
+      },
+      {
+        "file": "computations/compound-shift-nf.witness.json",
+        "field": "data.atoms[0].categorical_mass",
+        "value": "0.29028251154764911357020196192024741321802139282227",
+        "real_value": "0.2902825115476491"
+      },
+      {
+        "file": "computations/compound-shift-nf.witness.json",
+        "field": "data.atoms[1].categorical_mass",
+        "value": "0.71544208592578684147156309336423873901367187500000",
+        "real_value": "0.7154420859257868"
+      },
+      {
+        "file": "computations/compound-shift-nf.witness.json",
+        "field": "data.atoms[2].categorical_mass",
+        "value": "0.37667237093731825714471028732077684253454208374023",
+        "real_value": "0.37667237093731826"
+      },
+      {
+        "file": "computations/compound-shift-nf.witness.json",
+        "field": "data.atoms[3].categorical_mass",
+        "value": "1.4279040131374152178267422641511075198650360107422",
+        "real_value": "1.4279040131374152"
+      },
+      {
+        "file": "computations/compound-shift-nf.witness.json",
+        "field": "data.atoms[4].categorical_mass",
+        "value": "1.7309673661290136958967877944814972579479217529297",
+        "real_value": "1.7309673661290137"
+      },
+      {
+        "file": "computations/compound-shift-nf.witness.json",
+        "field": "data.atoms[5].categorical_mass",
+        "value": "0.71619800760492846603000316463294439017772674560547",
+        "real_value": "0.7161980076049285"
+      },
+      {
+        "file": "computations/cross-check-trM-1ppb.witness.json",
+        "field": "parameters.tolerance_1ppQ_exact_methods",
+        "value": "0.000000000000001000000000000000077705399876661079238307185601195",
+        "real_value": "1e-15"
+      },
+      {
+        "file": "computations/cross-check-trM-1ppb.witness.json",
+        "field": "parameters.tolerance_peel_float_check",
+        "value": "0.00000000000099999999999999997988664762925561536725284350612952",
+        "real_value": "1e-12"
+      },
+      {
+        "file": "computations/figure-eight-kashaev-volume.witness.json",
+        "field": "vol_4_1_target",
+        "value": "2.029883212819307392038581383530981838703155517578125",
+        "real_value": "2.0298832128193074"
+      },
+      {
+        "file": "computations/fr-pullback-cosh-h.witness.json",
+        "field": "data.results.baseline.per_atom.D.B_AME_MeV",
+        "value": "2.22456620000000038217535802687052637338638305664062500000000",
+        "real_value": "2.2245662000000004"
+      },
+      {
+        "file": "computations/fr-pullback-cosh-h.witness.json",
+        "field": "data.results.baseline.per_atom.T.B_AME_MeV",
+        "value": "8.48179620000000156210262503009289503097534179687500000000000",
+        "real_value": "8.481796200000002"
+      },
+      {
+        "file": "computations/fr-pullback-cosh-h.witness.json",
+        "field": "data.results.baseline.per_atom.3He.B_AME_MeV",
+        "value": "7.71804132000000020497054720181040465831756591796875000000000",
+        "real_value": "7.71804132"
+      },
+      {
+        "file": "computations/fr-pullback-cosh-h.witness.json",
+        "field": "data.results.baseline.per_atom.4He.B_AME_MeV",
+        "value": "28.2956624000000012131295079598203301429748535156250000000000",
+        "real_value": "28.2956624"
+      },
+      {
+        "file": "computations/fr-pullback-cosh-h.witness.json",
+        "field": "data.results.v1_alpha_2_x_cosh_h.per_atom.D.B_AME_MeV",
+        "value": "2.22456620000000038217535802687052637338638305664062500000000",
+        "real_value": "2.2245662000000004"
+      },
+      {
+        "file": "computations/fr-pullback-cosh-h.witness.json",
+        "field": "data.results.v1_alpha_2_x_cosh_h.per_atom.T.B_AME_MeV",
+        "value": "8.48179620000000156210262503009289503097534179687500000000000",
+        "real_value": "8.481796200000002"
+      },
+      {
+        "file": "computations/fr-pullback-cosh-h.witness.json",
+        "field": "data.results.v1_alpha_2_x_cosh_h.per_atom.3He.B_AME_MeV",
+        "value": "7.71804132000000020497054720181040465831756591796875000000000",
+        "real_value": "7.71804132"
+      },
+      {
+        "file": "computations/fr-pullback-cosh-h.witness.json",
+        "field": "data.results.v1_alpha_2_x_cosh_h.per_atom.4He.B_AME_MeV",
+        "value": "28.2956624000000012131295079598203301429748535156250000000000",
+        "real_value": "28.2956624"
+      },
+      {
+        "file": "computations/fr-pullback-cosh-h.witness.json",
+        "field": "data.results.v2_alpha_3_x_cosh_h.per_atom.D.B_AME_MeV",
+        "value": "2.22456620000000038217535802687052637338638305664062500000000",
+        "real_value": "2.2245662000000004"
+      },
+      {
+        "file": "computations/fr-pullback-cosh-h.witness.json",
+        "field": "data.results.v2_alpha_3_x_cosh_h.per_atom.T.B_AME_MeV",
+        "value": "8.48179620000000156210262503009289503097534179687500000000000",
+        "real_value": "8.481796200000002"
+      },
+      {
+        "file": "computations/fr-pullback-cosh-h.witness.json",
+        "field": "data.results.v2_alpha_3_x_cosh_h.per_atom.3He.B_AME_MeV",
+        "value": "7.71804132000000020497054720181040465831756591796875000000000",
+        "real_value": "7.71804132"
+      },
+      {
+        "file": "computations/fr-pullback-cosh-h.witness.json",
+        "field": "data.results.v2_alpha_3_x_cosh_h.per_atom.4He.B_AME_MeV",
+        "value": "28.2956624000000012131295079598203301429748535156250000000000",
+        "real_value": "28.2956624"
+      },
+      {
+        "file": "computations/fr-pullback-cosh-h.witness.json",
+        "field": "data.results.v3_alpha_2_and_3_x_cosh_h.per_atom.D.B_AME_MeV",
+        "value": "2.22456620000000038217535802687052637338638305664062500000000",
+        "real_value": "2.2245662000000004"
+      },
+      {
+        "file": "computations/fr-pullback-cosh-h.witness.json",
+        "field": "data.results.v3_alpha_2_and_3_x_cosh_h.per_atom.T.B_AME_MeV",
+        "value": "8.48179620000000156210262503009289503097534179687500000000000",
+        "real_value": "8.481796200000002"
+      },
+      {
+        "file": "computations/fr-pullback-cosh-h.witness.json",
+        "field": "data.results.v3_alpha_2_and_3_x_cosh_h.per_atom.3He.B_AME_MeV",
+        "value": "7.71804132000000020497054720181040465831756591796875000000000",
+        "real_value": "7.71804132"
+      },
+      {
+        "file": "computations/fr-pullback-cosh-h.witness.json",
+        "field": "data.results.v3_alpha_2_and_3_x_cosh_h.per_atom.4He.B_AME_MeV",
+        "value": "28.2956624000000012131295079598203301429748535156250000000000",
+        "real_value": "28.2956624"
+      },
+      {
+        "file": "computations/fr-pullback-cosh-h.witness.json",
+        "field": "data.results.v4_global_cosh_h.per_atom.D.B_AME_MeV",
+        "value": "2.22456620000000038217535802687052637338638305664062500000000",
+        "real_value": "2.2245662000000004"
+      },
+      {
+        "file": "computations/fr-pullback-cosh-h.witness.json",
+        "field": "data.results.v4_global_cosh_h.per_atom.T.B_AME_MeV",
+        "value": "8.48179620000000156210262503009289503097534179687500000000000",
+        "real_value": "8.481796200000002"
+      },
+      {
+        "file": "computations/fr-pullback-cosh-h.witness.json",
+        "field": "data.results.v4_global_cosh_h.per_atom.3He.B_AME_MeV",
+        "value": "7.71804132000000020497054720181040465831756591796875000000000",
+        "real_value": "7.71804132"
+      },
+      {
+        "file": "computations/fr-pullback-cosh-h.witness.json",
+        "field": "data.results.v4_global_cosh_h.per_atom.4He.B_AME_MeV",
+        "value": "28.2956624000000012131295079598203301429748535156250000000000",
+        "real_value": "28.2956624"
+      },
+      {
+        "file": "computations/fr-pullback-cosh-h.witness.json",
+        "field": "data.results.v5_alpha_2_div_cosh_h.per_atom.D.B_AME_MeV",
+        "value": "2.22456620000000038217535802687052637338638305664062500000000",
+        "real_value": "2.2245662000000004"
+      },
+      {
+        "file": "computations/fr-pullback-cosh-h.witness.json",
+        "field": "data.results.v5_alpha_2_div_cosh_h.per_atom.T.B_AME_MeV",
+        "value": "8.48179620000000156210262503009289503097534179687500000000000",
+        "real_value": "8.481796200000002"
+      },
+      {
+        "file": "computations/fr-pullback-cosh-h.witness.json",
+        "field": "data.results.v5_alpha_2_div_cosh_h.per_atom.3He.B_AME_MeV",
+        "value": "7.71804132000000020497054720181040465831756591796875000000000",
+        "real_value": "7.71804132"
+      },
+      {
+        "file": "computations/fr-pullback-cosh-h.witness.json",
+        "field": "data.results.v5_alpha_2_div_cosh_h.per_atom.4He.B_AME_MeV",
+        "value": "28.2956624000000012131295079598203301429748535156250000000000",
+        "real_value": "28.2956624"
+      },
+      {
+        "file": "computations/fr-pullback-cosh-h.witness.json",
+        "field": "data.results.v6_dim_q2_times_cosh_h.per_atom.D.B_AME_MeV",
+        "value": "2.22456620000000038217535802687052637338638305664062500000000",
+        "real_value": "2.2245662000000004"
+      },
+      {
+        "file": "computations/fr-pullback-cosh-h.witness.json",
+        "field": "data.results.v6_dim_q2_times_cosh_h.per_atom.T.B_AME_MeV",
+        "value": "8.48179620000000156210262503009289503097534179687500000000000",
+        "real_value": "8.481796200000002"
+      },
+      {
+        "file": "computations/fr-pullback-cosh-h.witness.json",
+        "field": "data.results.v6_dim_q2_times_cosh_h.per_atom.3He.B_AME_MeV",
+        "value": "7.71804132000000020497054720181040465831756591796875000000000",
+        "real_value": "7.71804132"
+      },
+      {
+        "file": "computations/fr-pullback-cosh-h.witness.json",
+        "field": "data.results.v6_dim_q2_times_cosh_h.per_atom.4He.B_AME_MeV",
+        "value": "28.2956624000000012131295079598203301429748535156250000000000",
+        "real_value": "28.2956624"
+      },
+      {
+        "file": "computations/fr-pullback-k1-k2.witness.json",
+        "field": "data.baseline_K_3_only.per_atom.D.B_AME_MeV",
+        "value": "2.22456620000000038217535802687052637338638305664062500000000",
+        "real_value": "2.2245662000000004"
+      },
+      {
+        "file": "computations/fr-pullback-k1-k2.witness.json",
+        "field": "data.baseline_K_3_only.per_atom.T.B_AME_MeV",
+        "value": "8.48179620000000156210262503009289503097534179687500000000000",
+        "real_value": "8.481796200000002"
+      },
+      {
+        "file": "computations/fr-pullback-k1-k2.witness.json",
+        "field": "data.baseline_K_3_only.per_atom.3He.B_AME_MeV",
+        "value": "7.71804132000000020497054720181040465831756591796875000000000",
+        "real_value": "7.71804132"
+      },
+      {
+        "file": "computations/fr-pullback-k1-k2.witness.json",
+        "field": "data.baseline_K_3_only.per_atom.4He.B_AME_MeV",
+        "value": "28.2956624000000012131295079598203301429748535156250000000000",
+        "real_value": "28.2956624"
+      },
+      {
+        "file": "computations/fr-pullback-k1-k2.witness.json",
+        "field": "data.top_5_full[0].per_atom.D.B_AME_MeV",
+        "value": "2.22456620000000038217535802687052637338638305664062500000000",
+        "real_value": "2.2245662000000004"
+      },
+      {
+        "file": "computations/fr-pullback-k1-k2.witness.json",
+        "field": "data.top_5_full[0].per_atom.T.B_AME_MeV",
+        "value": "8.48179620000000156210262503009289503097534179687500000000000",
+        "real_value": "8.481796200000002"
+      },
+      {
+        "file": "computations/fr-pullback-k1-k2.witness.json",
+        "field": "data.top_5_full[0].per_atom.3He.B_AME_MeV",
+        "value": "7.71804132000000020497054720181040465831756591796875000000000",
+        "real_value": "7.71804132"
+      },
+      {
+        "file": "computations/fr-pullback-k1-k2.witness.json",
+        "field": "data.top_5_full[0].per_atom.4He.B_AME_MeV",
+        "value": "28.2956624000000012131295079598203301429748535156250000000000",
+        "real_value": "28.2956624"
+      },
+      {
+        "file": "computations/fr-pullback-k1-k2.witness.json",
+        "field": "data.top_5_full[1].per_atom.D.B_AME_MeV",
+        "value": "2.22456620000000038217535802687052637338638305664062500000000",
+        "real_value": "2.2245662000000004"
+      },
+      {
+        "file": "computations/fr-pullback-k1-k2.witness.json",
+        "field": "data.top_5_full[1].per_atom.T.B_AME_MeV",
+        "value": "8.48179620000000156210262503009289503097534179687500000000000",
+        "real_value": "8.481796200000002"
+      },
+      {
+        "file": "computations/fr-pullback-k1-k2.witness.json",
+        "field": "data.top_5_full[1].per_atom.3He.B_AME_MeV",
+        "value": "7.71804132000000020497054720181040465831756591796875000000000",
+        "real_value": "7.71804132"
+      },
+      {
+        "file": "computations/fr-pullback-k1-k2.witness.json",
+        "field": "data.top_5_full[1].per_atom.4He.B_AME_MeV",
+        "value": "28.2956624000000012131295079598203301429748535156250000000000",
+        "real_value": "28.2956624"
+      },
+      {
+        "file": "computations/fr-pullback-k1-k2.witness.json",
+        "field": "data.top_5_full[2].per_atom.D.B_AME_MeV",
+        "value": "2.22456620000000038217535802687052637338638305664062500000000",
+        "real_value": "2.2245662000000004"
+      },
+      {
+        "file": "computations/fr-pullback-k1-k2.witness.json",
+        "field": "data.top_5_full[2].per_atom.T.B_AME_MeV",
+        "value": "8.48179620000000156210262503009289503097534179687500000000000",
+        "real_value": "8.481796200000002"
+      },
+      {
+        "file": "computations/fr-pullback-k1-k2.witness.json",
+        "field": "data.top_5_full[2].per_atom.3He.B_AME_MeV",
+        "value": "7.71804132000000020497054720181040465831756591796875000000000",
+        "real_value": "7.71804132"
+      },
+      {
+        "file": "computations/fr-pullback-k1-k2.witness.json",
+        "field": "data.top_5_full[2].per_atom.4He.B_AME_MeV",
+        "value": "28.2956624000000012131295079598203301429748535156250000000000",
+        "real_value": "28.2956624"
+      },
+      {
+        "file": "computations/fr-pullback-k1-k2.witness.json",
+        "field": "data.top_5_full[3].per_atom.D.B_AME_MeV",
+        "value": "2.22456620000000038217535802687052637338638305664062500000000",
+        "real_value": "2.2245662000000004"
+      },
+      {
+        "file": "computations/fr-pullback-k1-k2.witness.json",
+        "field": "data.top_5_full[3].per_atom.T.B_AME_MeV",
+        "value": "8.48179620000000156210262503009289503097534179687500000000000",
+        "real_value": "8.481796200000002"
+      },
+      {
+        "file": "computations/fr-pullback-k1-k2.witness.json",
+        "field": "data.top_5_full[3].per_atom.3He.B_AME_MeV",
+        "value": "7.71804132000000020497054720181040465831756591796875000000000",
+        "real_value": "7.71804132"
+      },
+      {
+        "file": "computations/fr-pullback-k1-k2.witness.json",
+        "field": "data.top_5_full[3].per_atom.4He.B_AME_MeV",
+        "value": "28.2956624000000012131295079598203301429748535156250000000000",
+        "real_value": "28.2956624"
+      },
+      {
+        "file": "computations/fr-pullback-k1-k2.witness.json",
+        "field": "data.top_5_full[4].per_atom.D.B_AME_MeV",
+        "value": "2.22456620000000038217535802687052637338638305664062500000000",
+        "real_value": "2.2245662000000004"
+      },
+      {
+        "file": "computations/fr-pullback-k1-k2.witness.json",
+        "field": "data.top_5_full[4].per_atom.T.B_AME_MeV",
+        "value": "8.48179620000000156210262503009289503097534179687500000000000",
+        "real_value": "8.481796200000002"
+      },
+      {
+        "file": "computations/fr-pullback-k1-k2.witness.json",
+        "field": "data.top_5_full[4].per_atom.3He.B_AME_MeV",
+        "value": "7.71804132000000020497054720181040465831756591796875000000000",
+        "real_value": "7.71804132"
+      },
+      {
+        "file": "computations/fr-pullback-k1-k2.witness.json",
+        "field": "data.top_5_full[4].per_atom.4He.B_AME_MeV",
+        "value": "28.2956624000000012131295079598203301429748535156250000000000",
+        "real_value": "28.2956624"
+      },
+      {
+        "file": "computations/fr-pullback-k3-test.witness.json",
+        "field": "data.per_knot.4_1.per_atom.D.B_AME_MeV",
+        "value": "2.22456606999999983997895469656214118003845214843750000000000",
+        "real_value": "2.22456607"
+      },
+      {
+        "file": "computations/fr-pullback-k3-test.witness.json",
+        "field": "data.per_knot.4_1.per_atom.T.B_AME_MeV",
+        "value": "8.48179620000000156210262503009289503097534179687500000000000",
+        "real_value": "8.481796200000002"
+      },
+      {
+        "file": "computations/fr-pullback-k3-test.witness.json",
+        "field": "data.per_knot.4_1.per_atom.3He.B_AME_MeV",
+        "value": "7.71804280000000009209770723828114569187164306640625000000000",
+        "real_value": "7.7180428"
+      },
+      {
+        "file": "computations/fr-pullback-k3-test.witness.json",
+        "field": "data.per_knot.4_1.per_atom.4He.B_AME_MeV",
+        "value": "28.2956740000000017687398212729021906852722167968750000000000",
+        "real_value": "28.295674"
+      },
+      {
+        "file": "computations/fr-pullback-k3-test.witness.json",
+        "field": "data.per_knot.5_2.per_atom.D.B_AME_MeV",
+        "value": "2.22456606999999983997895469656214118003845214843750000000000",
+        "real_value": "2.22456607"
+      },
+      {
+        "file": "computations/fr-pullback-k3-test.witness.json",
+        "field": "data.per_knot.5_2.per_atom.T.B_AME_MeV",
+        "value": "8.48179620000000156210262503009289503097534179687500000000000",
+        "real_value": "8.481796200000002"
+      },
+      {
+        "file": "computations/fr-pullback-k3-test.witness.json",
+        "field": "data.per_knot.5_2.per_atom.3He.B_AME_MeV",
+        "value": "7.71804280000000009209770723828114569187164306640625000000000",
+        "real_value": "7.7180428"
+      },
+      {
+        "file": "computations/fr-pullback-k3-test.witness.json",
+        "field": "data.per_knot.5_2.per_atom.4He.B_AME_MeV",
+        "value": "28.2956740000000017687398212729021906852722167968750000000000",
+        "real_value": "28.295674"
+      },
+      {
+        "file": "computations/fr-pullback-k3-test.witness.json",
+        "field": "data.per_knot.6_1.per_atom.D.B_AME_MeV",
+        "value": "2.22456606999999983997895469656214118003845214843750000000000",
+        "real_value": "2.22456607"
+      },
+      {
+        "file": "computations/fr-pullback-k3-test.witness.json",
+        "field": "data.per_knot.6_1.per_atom.T.B_AME_MeV",
+        "value": "8.48179620000000156210262503009289503097534179687500000000000",
+        "real_value": "8.481796200000002"
+      },
+      {
+        "file": "computations/fr-pullback-k3-test.witness.json",
+        "field": "data.per_knot.6_1.per_atom.3He.B_AME_MeV",
+        "value": "7.71804280000000009209770723828114569187164306640625000000000",
+        "real_value": "7.7180428"
+      },
+      {
+        "file": "computations/fr-pullback-k3-test.witness.json",
+        "field": "data.per_knot.6_1.per_atom.4He.B_AME_MeV",
+        "value": "28.2956740000000017687398212729021906852722167968750000000000",
+        "real_value": "28.295674"
+      },
+      {
+        "file": "computations/habiro/habiro-coefficients-atomic.witness.json",
+        "field": "results.n (neutron, A=1).tr_M_at_q0",
+        "value": "0.923233229911637143239033775899",
+        "real_value": "0.9232332299116371"
+      },
+      {
+        "file": "computations/habiro/habiro-interpolate-cross-validation.witness.json",
+        "field": "parameters.q_0",
+        "value": "1.1099785955573346907243603709503076970577239990234375",
+        "real_value": "1.1099785955573347"
+      },
+      {
+        "file": "computations/habiro/habiro-interpolate-cross-validation.witness.json",
+        "field": "data.checks[0].interpolate_tr_M_q0",
+        "value": "0.92341345468304625310196342979907058179378509521484375",
+        "real_value": "0.9234134546830463"
+      },
+      {
+        "file": "computations/habiro/habiro-interpolate-cross-validation.witness.json",
+        "field": "data.checks[1].interpolate_tr_M_q0",
+        "value": "1.0654119551574030566598594305105507373809814453125",
+        "real_value": "1.065411955157403"
+      },
+      {
+        "file": "computations/kashaev-state-sum.witness.json",
+        "field": "vol_4_1",
+        "value": "2.029883212819307392038581383530981838703",
+        "real_value": "2.0298832128193074"
+      },
+      {
+        "file": "computations/m-tau-volume-target.witness.json",
+        "field": "data.inputs.m_tau_over_m_e",
+        "value": "3477.23000000000001818989403545856475830078125",
+        "real_value": "3477.23"
+      },
+      {
+        "file": "computations/meson-gen3-eta-phi.witness.json",
+        "field": "constants.m_pi_MeV",
+        "value": "139.570390000000003283275873400270938873291015625",
+        "real_value": "139.57039"
+      },
+      {
+        "file": "computations/option-e-canonical-reeb-v5.witness.json",
+        "field": "scale.mu_0_MeV",
+        "value": "1.6333262863818724941467053213273175060749053955078",
+        "real_value": "1.6333262863818725"
+      },
+      {
+        "file": "computations/option-e-canonical-reeb-v5.witness.json",
+        "field": "scale.h_q",
+        "value": "0.20857190015676929650823012707405723631381988525391",
+        "real_value": "0.2085719001567693"
+      },
+      {
+        "file": "computations/option-e-canonical-reeb-v5.witness.json",
+        "field": "scale.q_0",
+        "value": "1.1097090248999998962631252652499824762344360351563",
+        "real_value": "1.1097090249"
+      },
+      {
+        "file": "computations/option-e-canonical-reeb-v5.witness.json",
+        "field": "results.D.B_target_MeV",
+        "value": "2.2245659999999998213127128110500052571296691894531",
+        "real_value": "2.224566"
+      },
+      {
+        "file": "computations/option-e-canonical-reeb-v5.witness.json",
+        "field": "results.T.B_target_MeV",
+        "value": "8.4817979999999995044390743714757263660430908203125",
+        "real_value": "8.481798"
+      },
+      {
+        "file": "computations/option-e-canonical-reeb-v5.witness.json",
+        "field": "results.3He.B_target_MeV",
+        "value": "7.7180600000000003646505319920834153890609741210938",
+        "real_value": "7.71806"
+      },
+      {
+        "file": "computations/option-e-deuteron-param-free-residual.witness.json",
+        "field": "inputs_provenance.m_e_MeV",
+        "value": "0.51099895069000000891179524842300452291965484619141",
+        "real_value": "0.51099895069"
+      },
+      {
+        "file": "computations/option-e-deuteron-param-free-residual.witness.json",
+        "field": "inputs_provenance.B_D_AME_MeV",
+        "value": "2.2245659999999998213127128110500052571296691894531",
+        "real_value": "2.224566"
+      },
+      {
+        "file": "computations/option-e-deuteron-param-free-residual.witness.json",
+        "field": "inputs_provenance.q_0",
+        "value": "1.1097090248999998962631252652499824762344360351563",
+        "real_value": "1.1097090249"
+      },
+      {
+        "file": "computations/option-e-deuteron-param-free-residual.witness.json",
+        "field": "deuteron_residual.B_AME_MeV",
+        "value": "2.2245659999999998213127128110500052571296691894531",
+        "real_value": "2.224566"
+      },
+      {
+        "file": "computations/option-e-multi-isotope-delta-lambda-probe-v3.witness.json",
+        "field": "leading_order_results.deuteron.B_target_MeV",
+        "value": "2.2245659999999998213127128110500052571296691894531",
+        "real_value": "2.224566"
+      },
+      {
+        "file": "computations/option-e-multi-isotope-delta-lambda-probe-v3.witness.json",
+        "field": "leading_order_results.tritium.B_target_MeV",
+        "value": "8.4817979999999995044390743714757263660430908203125",
+        "real_value": "8.481798"
+      },
+      {
+        "file": "computations/option-e-multi-isotope-delta-lambda-probe-v3.witness.json",
+        "field": "leading_order_results.helium-3.B_target_MeV",
+        "value": "7.7180600000000003646505319920834153890609741210938",
+        "real_value": "7.71806"
+      },
+      {
+        "file": "computations/option-e-multi-isotope-delta-lambda-probe-v3.witness.json",
+        "field": "candidate_offset_results.negated_n_partitions.deuteron.B_target_MeV",
+        "value": "2.2245659999999998213127128110500052571296691894531",
+        "real_value": "2.224566"
+      },
+      {
+        "file": "computations/option-e-multi-isotope-delta-lambda-probe-v3.witness.json",
+        "field": "candidate_offset_results.negated_n_partitions.tritium.B_target_MeV",
+        "value": "8.4817979999999995044390743714757263660430908203125",
+        "real_value": "8.481798"
+      },
+      {
+        "file": "computations/option-e-multi-isotope-delta-lambda-probe-v3.witness.json",
+        "field": "candidate_offset_results.negated_n_partitions.helium-3.B_target_MeV",
+        "value": "7.7180600000000003646505319920834153890609741210938",
+        "real_value": "7.71806"
+      },
+      {
+        "file": "computations/option-e-multi-isotope-delta-lambda-probe-v3.witness.json",
+        "field": "candidate_offset_results.negated_tr_M_inverse.deuteron.B_target_MeV",
+        "value": "2.2245659999999998213127128110500052571296691894531",
+        "real_value": "2.224566"
+      },
+      {
+        "file": "computations/option-e-multi-isotope-delta-lambda-probe-v3.witness.json",
+        "field": "candidate_offset_results.negated_tr_M_inverse.tritium.B_target_MeV",
+        "value": "8.4817979999999995044390743714757263660430908203125",
+        "real_value": "8.481798"
+      },
+      {
+        "file": "computations/option-e-multi-isotope-delta-lambda-probe-v3.witness.json",
+        "field": "candidate_offset_results.negated_tr_M_inverse.helium-3.B_target_MeV",
+        "value": "7.7180600000000003646505319920834153890609741210938",
+        "real_value": "7.71806"
+      },
+      {
+        "file": "computations/option-e-multi-isotope-delta-lambda-probe-v3.witness.json",
+        "field": "candidate_offset_results.minus_dim_max_over_A.deuteron.B_target_MeV",
+        "value": "2.2245659999999998213127128110500052571296691894531",
+        "real_value": "2.224566"
+      },
+      {
+        "file": "computations/option-e-multi-isotope-delta-lambda-probe-v3.witness.json",
+        "field": "candidate_offset_results.minus_dim_max_over_A.tritium.B_target_MeV",
+        "value": "8.4817979999999995044390743714757263660430908203125",
+        "real_value": "8.481798"
+      },
+      {
+        "file": "computations/option-e-multi-isotope-delta-lambda-probe-v3.witness.json",
+        "field": "candidate_offset_results.minus_dim_max_over_A.helium-3.B_target_MeV",
+        "value": "7.7180600000000003646505319920834153890609741210938",
+        "real_value": "7.71806"
+      },
+      {
+        "file": "computations/option-e-multi-isotope-delta-lambda-probe-v3.witness.json",
+        "field": "candidate_offset_results.minus_A_squared.deuteron.B_target_MeV",
+        "value": "2.2245659999999998213127128110500052571296691894531",
+        "real_value": "2.224566"
+      },
+      {
+        "file": "computations/option-e-multi-isotope-delta-lambda-probe-v3.witness.json",
+        "field": "candidate_offset_results.minus_A_squared.tritium.B_target_MeV",
+        "value": "8.4817979999999995044390743714757263660430908203125",
+        "real_value": "8.481798"
+      },
+      {
+        "file": "computations/option-e-multi-isotope-delta-lambda-probe-v3.witness.json",
+        "field": "candidate_offset_results.minus_A_squared.helium-3.B_target_MeV",
+        "value": "7.7180600000000003646505319920834153890609741210938",
+        "real_value": "7.71806"
+      },
+      {
+        "file": "computations/option-e-multi-isotope-delta-lambda-probe-v3.witness.json",
+        "field": "candidate_offset_results.minus_n0_over_2.deuteron.B_target_MeV",
+        "value": "2.2245659999999998213127128110500052571296691894531",
+        "real_value": "2.224566"
+      },
+      {
+        "file": "computations/option-e-multi-isotope-delta-lambda-probe-v3.witness.json",
+        "field": "candidate_offset_results.minus_n0_over_2.tritium.B_target_MeV",
+        "value": "8.4817979999999995044390743714757263660430908203125",
+        "real_value": "8.481798"
+      },
+      {
+        "file": "computations/option-e-multi-isotope-delta-lambda-probe-v3.witness.json",
+        "field": "candidate_offset_results.minus_n0_over_2.helium-3.B_target_MeV",
+        "value": "7.7180600000000003646505319920834153890609741210938",
+        "real_value": "7.71806"
+      },
+      {
+        "file": "computations/option-e-q-reeb-phase-probe-v4.witness.json",
+        "field": "results.variant_A_with_chi.deuteron.B_target_MeV",
+        "value": "2.2245659999999998213127128110500052571296691894531",
+        "real_value": "2.224566"
+      },
+      {
+        "file": "computations/option-e-q-reeb-phase-probe-v4.witness.json",
+        "field": "results.variant_A_with_chi.tritium.B_target_MeV",
+        "value": "8.4817979999999995044390743714757263660430908203125",
+        "real_value": "8.481798"
+      },
+      {
+        "file": "computations/option-e-q-reeb-phase-probe-v4.witness.json",
+        "field": "results.variant_A_with_chi.helium-3.B_target_MeV",
+        "value": "7.7180600000000003646505319920834153890609741210938",
+        "real_value": "7.71806"
+      },
+      {
+        "file": "computations/option-e-q-reeb-phase-probe-v4.witness.json",
+        "field": "results.variant_B_phase_only.deuteron.B_target_MeV",
+        "value": "2.2245659999999998213127128110500052571296691894531",
+        "real_value": "2.224566"
+      },
+      {
+        "file": "computations/option-e-q-reeb-phase-probe-v4.witness.json",
+        "field": "results.variant_B_phase_only.tritium.B_target_MeV",
+        "value": "8.4817979999999995044390743714757263660430908203125",
+        "real_value": "8.481798"
+      },
+      {
+        "file": "computations/option-e-q-reeb-phase-probe-v4.witness.json",
+        "field": "results.variant_B_phase_only.helium-3.B_target_MeV",
+        "value": "7.7180600000000003646505319920834153890609741210938",
+        "real_value": "7.71806"
+      },
+      {
+        "file": "computations/option-e-v6-combined-canonical.witness.json",
+        "field": "derived_scales.mu_0_MeV",
+        "value": "1.6333262863818724941467053213273175060749053955078",
+        "real_value": "1.6333262863818725"
+      },
+      {
+        "file": "computations/option-e-v6-combined-canonical.witness.json",
+        "field": "derived_scales.hbar_q",
+        "value": "0.098862875256769400245104861824074760079383850097656",
+        "real_value": "0.0988628752567694"
+      },
+      {
+        "file": "computations/option-e-v6-combined-canonical.witness.json",
+        "field": "derived_scales.q_0",
+        "value": "1.1097090248999998962631252652499824762344360351563",
+        "real_value": "1.1097090249"
+      },
+      {
+        "file": "computations/option-e-v6-combined-canonical.witness.json",
+        "field": "derived_scales.h",
+        "value": "0.20857190015676929650823012707405723631381988525391",
+        "real_value": "0.2085719001567693"
+      },
+      {
+        "file": "computations/option-e-v6-combined-canonical.witness.json",
+        "field": "canonical_rotational_results.D.B_target_MeV",
+        "value": "2.2245659999999998213127128110500052571296691894531",
+        "real_value": "2.224566"
+      },
+      {
+        "file": "computations/option-e-v6-combined-canonical.witness.json",
+        "field": "canonical_rotational_results.T.B_target_MeV",
+        "value": "8.4817979999999995044390743714757263660430908203125",
+        "real_value": "8.481798"
+      },
+      {
+        "file": "computations/option-e-v6-combined-canonical.witness.json",
+        "field": "canonical_rotational_results.3He.B_target_MeV",
+        "value": "7.7180600000000003646505319920834153890609741210938",
+        "real_value": "7.71806"
+      },
+      {
+        "file": "computations/option-e-v6-combined-canonical.witness.json",
+        "field": "mirror_pair_difference.target_MeV",
+        "value": "0.76373799999999913978854237939231097698211669921875",
+        "real_value": "0.7637379999999991"
+      },
+      {
+        "file": "computations/option-e-v7-involution-aware.witness.json",
+        "field": "scales.m_e",
+        "value": "0.51099895069000000891179524842300452291965484619141",
+        "real_value": "0.51099895069"
+      },
+      {
+        "file": "computations/option-e-v7-involution-aware.witness.json",
+        "field": "scales.\u03bc\u2080",
+        "value": "1.6333262863818724941467053213273175060749053955078",
+        "real_value": "1.6333262863818725"
+      },
+      {
+        "file": "computations/option-e-v7-involution-aware.witness.json",
+        "field": "scales.m_\u03c0",
+        "value": "139.570390000000003283275873400270938873291015625",
+        "real_value": "139.57039"
+      },
+      {
+        "file": "computations/option-e-v8-hecke-involution-isospin-mirror.witness.json",
+        "field": "mirror_target_MeV",
+        "value": "0.76373799999999913978854237939231097698211669921875",
+        "real_value": "0.7637379999999991"
+      },
+      {
+        "file": "computations/option-e-v9-all-symmetries.witness.json",
+        "field": "mirror_target_MeV",
+        "value": "0.76373799999999913978854237939231097698211669921875",
+        "real_value": "0.7637379999999991"
+      },
+      {
+        "file": "computations/probe-k-ud-bring-color-tube-empirical-baseline.witness.json",
+        "field": "data.pdg_md_mu_target",
+        "value": "2.160000000000000142108547152020037174224853515625",
+        "real_value": "2.16"
+      },
+      {
+        "file": "computations/probe-k-ud-bring-color-tube-empirical-baseline.witness.json",
+        "field": "data.pdg_md_mu_err",
+        "value": "0.070000000000000006661338147750939242541790008544921875",
+        "real_value": "0.07"
+      },
+      {
+        "file": "computations/probe-k-ud-fractional-and-alt-ansatz.witness.json",
+        "field": "data.pdg_md_mu_target",
+        "value": "2.160000000000000142108547152020037174224853515625",
+        "real_value": "2.16"
+      },
+      {
+        "file": "computations/probe-k-ud-fractional-and-alt-ansatz.witness.json",
+        "field": "data.pdg_md_mu_err",
+        "value": "0.070000000000000006661338147750939242541790008544921875",
+        "real_value": "0.07"
+      },
+      {
+        "file": "computations/probes/binding-depth-stratified-derived-alpha-probe.witness.json",
+        "field": "data.assignments.production_empirical.per_atom.D.B_AME_MeV",
+        "value": "2.22456606999999983997895469656214118003845214843750000000000",
+        "real_value": "2.22456607"
+      },
+      {
+        "file": "computations/probes/binding-depth-stratified-derived-alpha-probe.witness.json",
+        "field": "data.assignments.production_empirical.per_atom.3He.B_AME_MeV",
+        "value": "7.71804280000000009209770723828114569187164306640625000000000",
+        "real_value": "7.7180428"
+      },
+      {
+        "file": "computations/probes/binding-depth-stratified-derived-alpha-probe.witness.json",
+        "field": "data.assignments.production_empirical.per_atom.4He.B_AME_MeV",
+        "value": "28.2956740000000017687398212729021906852722167968750000000000",
+        "real_value": "28.295674"
+      },
+      {
+        "file": "computations/probes/binding-depth-stratified-derived-alpha-probe.witness.json",
+        "field": "data.assignments.derived_h3_markov_pairing.per_atom.D.B_AME_MeV",
+        "value": "2.22456606999999983997895469656214118003845214843750000000000",
+        "real_value": "2.22456607"
+      },
+      {
+        "file": "computations/probes/binding-depth-stratified-derived-alpha-probe.witness.json",
+        "field": "data.assignments.derived_h3_markov_pairing.per_atom.3He.B_AME_MeV",
+        "value": "7.71804280000000009209770723828114569187164306640625000000000",
+        "real_value": "7.7180428"
+      },
+      {
+        "file": "computations/probes/binding-depth-stratified-derived-alpha-probe.witness.json",
+        "field": "data.assignments.derived_h3_markov_pairing.per_atom.4He.B_AME_MeV",
+        "value": "28.2956740000000017687398212729021906852722167968750000000000",
+        "real_value": "28.295674"
+      },
+      {
+        "file": "computations/probes/difference-knot-volume-prefactor.witness.json",
+        "field": "data.rows[0].B_AME_MeV",
+        "value": "2.224566200000000382175358026870526373386383056640625",
+        "real_value": "2.2245662000000004"
+      },
+      {
+        "file": "computations/probes/difference-knot-volume-prefactor.witness.json",
+        "field": "data.rows[1].B_AME_MeV",
+        "value": "8.481796200000001562102625030092895030975341796875",
+        "real_value": "8.481796200000002"
+      },
+      {
+        "file": "computations/probes/difference-knot-volume-prefactor.witness.json",
+        "field": "data.rows[2].B_AME_MeV",
+        "value": "7.71804132000000020497054720181040465831756591796875",
+        "real_value": "7.71804132"
+      },
+      {
+        "file": "computations/probes/difference-knot-volume-prefactor.witness.json",
+        "field": "data.rows[3].B_AME_MeV",
+        "value": "28.295662400000001213129507959820330142974853515625",
+        "real_value": "28.2956624"
+      },
+      {
+        "file": "computations/probes/gap-a4-T11-klein-J-invariant-probe.witness.json",
+        "field": "data.klein_degrees.f_leading_ratio",
+        "value": "1.0000000000000000000000000000000000000000000000001",
+        "real_value": "1.0"
+      },
+      {
+        "file": "computations/probes/gap-a4-T11-klein-J-invariant-probe.witness.json",
+        "field": "data.klein_degrees.H_leading_ratio",
+        "value": "-0.99999999999999999999999999999999999999999999999772",
+        "real_value": "-1.0"
+      },
+      {
+        "file": "computations/probes/gap-a4-T11-klein-J-invariant-probe.witness.json",
+        "field": "data.klein_degrees.T_leading_ratio",
+        "value": "1.0000000000000000000000000000000000000000000000052",
+        "real_value": "1.0"
+      },
+      {
+        "file": "computations/probes/gap-a4-T6-q-deformed-icosahedral-probe.witness.json",
+        "field": "data.A4_per_irrep_table.h_expansion_coeffs_per_irrep[1].h2",
+        "value": "0.99999999999999999999999999999999999999999999996055",
+        "real_value": "1.0"
+      },
+      {
+        "file": "computations/probes/gap-a4-T6-q-deformed-icosahedral-probe.witness.json",
+        "field": "data.A4_per_irrep_table.h_expansion_coeffs_per_irrep[2].h2",
+        "value": "0.99999999999999999999999999999999999999999999996055",
+        "real_value": "1.0"
+      },
+      {
+        "file": "computations/probes/gap-a4-T6-q-deformed-icosahedral-probe.witness.json",
+        "field": "data.A4_per_irrep_table.h_expansion_coeffs_per_irrep[3].h0",
+        "value": "5.9999999999999999999999999999999999999999999999999",
+        "real_value": "6.0"
+      },
+      {
+        "file": "computations/probes/gap-a4-T6-q-deformed-icosahedral-probe.witness.json",
+        "field": "data.A4_per_irrep_table.h_expansion_coeffs_per_irrep[3].h2",
+        "value": "2.0000000000000000000000000000000000000000000000217",
+        "real_value": "2.0"
+      },
+      {
+        "file": "computations/probes/gap-a4-T6-q-deformed-icosahedral-probe.witness.json",
+        "field": "data.A5_per_irrep_table.h_expansion_coeffs_per_irrep[1].h2",
+        "value": "5.0000000000000000000000000000000000000000000000262",
+        "real_value": "5.0"
+      },
+      {
+        "file": "computations/probes/gap-a4-T6-q-deformed-icosahedral-probe.witness.json",
+        "field": "data.A5_per_irrep_table.h_expansion_coeffs_per_irrep[1].h4",
+        "value": "0.9999999999999999999999999999999999999999999936148",
+        "real_value": "1.0"
+      },
+      {
+        "file": "computations/probes/gap-a4-T6-q-deformed-icosahedral-probe.witness.json",
+        "field": "data.A5_per_irrep_table.h_expansion_coeffs_per_irrep[2].h2",
+        "value": "5.0000000000000000000000000000000000000000000000262",
+        "real_value": "5.0"
+      },
+      {
+        "file": "computations/probes/gap-a4-T6-q-deformed-icosahedral-probe.witness.json",
+        "field": "data.A5_per_irrep_table.h_expansion_coeffs_per_irrep[2].h4",
+        "value": "0.9999999999999999999999999999999999999999999936148",
+        "real_value": "1.0"
+      },
+      {
+        "file": "computations/probes/gap-a4-T6-q-deformed-icosahedral-probe.witness.json",
+        "field": "data.A5_per_irrep_table.h_expansion_coeffs_per_irrep[4].h0",
+        "value": "9.9999999999999999999999999999999999999999999999996",
+        "real_value": "10.0"
+      },
+      {
+        "file": "computations/probes/gap-a4-T6-q-deformed-icosahedral-probe.witness.json",
+        "field": "data.A5_per_irrep_table.h_expansion_coeffs_per_irrep[4].h2",
+        "value": "10.000000000000000000000000000000000000000000000323",
+        "real_value": "10.0"
+      },
+      {
+        "file": "computations/probes/gap-a4-T6-q-deformed-icosahedral-probe.witness.json",
+        "field": "data.A5_per_irrep_table.h_expansion_coeffs_per_irrep[4].h4",
+        "value": "1.9999999999999999999999999999999999999999999423669",
+        "real_value": "2.0"
+      },
+      {
+        "file": "computations/probes/gt-matrix-pslq-probe.witness.json",
+        "field": "inputs.g_A_PDG_err",
+        "value": "0.00012999999999999998861154038021226142518571577966213226318359375",
+        "real_value": "0.00013"
+      },
+      {
+        "file": "computations/probes/markov-stab-trace-axis-probe.witness.json",
+        "field": "data.M1_identity_trace.tr_M_identity_H4_at_q0",
+        "value": "0.99999999999999999999999999999999999999999999999999863",
+        "real_value": "1.0"
+      },
+      {
+        "file": "computations/probes/phi-q-spectral-combiner-probe.witness.json",
+        "field": "data.anchor_q_proton.per_block_\u03c7_\u03bb.(3)",
+        "value": "-0.260387641790120805129760128693305887281894683837890625000000",
+        "real_value": "-0.2603876417901208"
+      },
+      {
+        "file": "computations/probes/phi-q-spectral-combiner-probe.witness.json",
+        "field": "data.anchor_q_proton.per_block_\u03c7_\u03bb.(2,1)",
+        "value": "-0.106814457651578043062556844233768060803413391113281250000000",
+        "real_value": "-0.10681445765157804"
+      },
+      {
+        "file": "computations/probes/phi-q-spectral-combiner-probe.witness.json",
+        "field": "data.anchor_q_proton.per_block_\u03c7_\u03bb.(1,1,1)",
+        "value": "-0.171538643776599497581258901846013031899929046630859375000000",
+        "real_value": "-0.1715386437765995"
+      },
+      {
+        "file": "computations/probes/phi-q-spectral-combiner-probe.witness.json",
+        "field": "data.anchor_q_proton.per_block_y_\u03bb.(3)",
+        "value": "0.415395795360613384605841247321222908794879913330078125000000",
+        "real_value": "0.4153957953606134"
+      },
+      {
+        "file": "computations/probes/phi-q-spectral-combiner-probe.witness.json",
+        "field": "data.anchor_q_proton.per_block_y_\u03bb.(2,1)",
+        "value": "0.280929631031019699793915833652135916054248809814453125000000",
+        "real_value": "0.2809296310310197"
+      },
+      {
+        "file": "computations/probes/phi-q-spectral-combiner-probe.witness.json",
+        "field": "data.anchor_q_proton.per_block_y_\u03bb.(1,1,1)",
+        "value": "0.0227449425773471845813045177919775596819818019866943359375000",
+        "real_value": "0.022744942577347185"
+      },
+      {
+        "file": "computations/probes/qbeta-c3-habiro-3rung-crossanchor-rigidity.witness.json",
+        "field": "data.c3_empirical_proton",
+        "value": "-2.0693000000000001392663762089796364307403564453125",
+        "real_value": "-2.0693"
+      },
+      {
+        "file": "computations/probes/qbeta-c3-habiro-3rung-crossanchor-rigidity.witness.json",
+        "field": "data.c3_empirical_muon",
+        "value": "-2.009700000000000041922021409845910966396331787109375",
+        "real_value": "-2.0097"
+      },
+      {
+        "file": "computations/probes/qbeta-habiro-element-probe.witness.json",
+        "field": "data.subtask_A_habiro_reproduction.n.tr_M_witness",
+        "value": "0.923233297186152879199028120638",
+        "real_value": "0.9232332971861529"
+      },
+      {
+        "file": "computations/probes/su4-1111-markov-trace.witness.json",
+        "field": "data.he4.per_partition[0].chi",
+        "value": "23.61772614707916773113538511097431182861328125",
+        "real_value": "23.617726147079168"
+      },
+      {
+        "file": "computations/probes/su4-1111-markov-trace.witness.json",
+        "field": "data.he4.per_partition[1].chi",
+        "value": "4.6520882167555530628533233539201319217681884765625",
+        "real_value": "4.652088216755553"
+      },
+      {
+        "file": "computations/probes/su4-1111-markov-trace.witness.json",
+        "field": "data.he4.per_partition[2].chi",
+        "value": "-23.129047148680616174942770157940685749053955078125",
+        "real_value": "-23.129047148680616"
+      },
+      {
+        "file": "computations/probes/su4-1111-markov-trace.witness.json",
+        "field": "data.he4.per_partition[3].chi",
+        "value": "63.6238963253553180265953415073454380035400390625",
+        "real_value": "63.62389632535532"
+      },
+      {
+        "file": "computations/probes/su4-1111-markov-trace.witness.json",
+        "field": "data.he4.per_partition[4].chi",
+        "value": "-7.6075111184651458273719981661997735500335693359375",
+        "real_value": "-7.607511118465146"
+      },
+      {
+        "file": "computations/probes/su4-1111-markov-trace.witness.json",
+        "field": "data.he4.per_partition[5].chi",
+        "value": "1.692283115316076447243176517076790332794189453125",
+        "real_value": "1.6922831153160764"
+      },
+      {
+        "file": "computations/probes/su4-1111-markov-trace.witness.json",
+        "field": "data.he4.per_partition[6].chi",
+        "value": "12.77266471825538474149652756750583648681640625",
+        "real_value": "12.772664718255385"
+      },
+      {
+        "file": "computations/probes/su4-1111-markov-trace.witness.json",
+        "field": "data.he4.per_partition[7].chi",
+        "value": "23.624759258339867784570742514915764331817626953125",
+        "real_value": "23.624759258339868"
+      },
+      {
+        "file": "computations/probes/su4-1111-markov-trace.witness.json",
+        "field": "data.he4.per_partition[8].chi",
+        "value": "-3.306439213072767557832776219584047794342041015625",
+        "real_value": "-3.3064392130727676"
+      },
+      {
+        "file": "computations/probes/su4-1111-markov-trace.witness.json",
+        "field": "data.he4.per_partition[9].chi",
+        "value": "20.472734309881179370904646930284798145294189453125",
+        "real_value": "20.47273430988118"
+      },
+      {
+        "file": "computations/qbeta/qbeta-ck-recursion-kernel-constraint-probe.witness.json",
+        "field": "data.c_4_fitted",
+        "value": "-0.971570000000000044693138079310301691293716430664062500000000",
+        "real_value": "-0.97157"
+      },
+      {
+        "file": "computations/qbeta/qbeta-ck-recursion-kernel-constraint-probe.witness.json",
+        "field": "data.c_4_floor",
+        "value": "0.00100000000000000002081668171172168513294309377670288085937500",
+        "real_value": "0.001"
+      },
+      {
+        "file": "computations/qbeta/qbeta-ck-recursion-kernel-constraint-probe.witness.json",
+        "field": "data.anchors[0].c_4_fitted",
+        "value": "-0.971570000000000044693138079310301691293716430664062500000000",
+        "real_value": "-0.97157"
+      },
+      {
+        "file": "computations/qbeta/qbeta-ck-recursion-kernel-constraint-probe.witness.json",
+        "field": "data.anchors[1].c_4_fitted",
+        "value": "-0.971570000000000044693138079310301691293716430664062500000000",
+        "real_value": "-0.97157"
+      },
+      {
+        "file": "computations/qbeta/qbeta-markov-trace-compute-accuracy-diagnostic.witness.json",
+        "field": "data.per_channel_NF_coordinate_deltas.\u03b3",
+        "value": "0.089909500604593697858923917465290287509560585021973",
+        "real_value": "0.0899095006045937"
+      },
+      {
+        "file": "computations/qbeta/qbeta-markov-trace-compute-accuracy-diagnostic.witness.json",
+        "field": "data.per_channel_NF_coordinate_deltas.\u03c3\u2080",
+        "value": "0.048426178786698637068752759660128504037857055664063",
+        "real_value": "0.04842617878669864"
+      },
+      {
+        "file": "computations/qbeta/qbeta-markov-trace-compute-accuracy-diagnostic.witness.json",
+        "field": "data.per_channel_NF_coordinate_deltas.\u03c3\u2081",
+        "value": "0.048426178786698637068752759660128504037857055664063",
+        "real_value": "0.04842617878669864"
+      },
+      {
+        "file": "computations/qbeta/qbeta-markov-trace-compute-accuracy-diagnostic.witness.json",
+        "field": "data.per_channel_NF_coordinate_deltas.L\u208a",
+        "value": "0.024180175767745112208606528270138369407504796981812",
+        "real_value": "0.024180175767745112"
+      },
+      {
+        "file": "computations/qbeta/qbeta-markov-trace-compute-accuracy-diagnostic.witness.json",
+        "field": "data.per_channel_NF_coordinate_deltas.L\u208b",
+        "value": "0.024180175767745112208606528270138369407504796981812",
+        "real_value": "0.024180175767745112"
+      },
+      {
+        "file": "computations/qbeta/qbeta-markov-trace-compute-accuracy-diagnostic.witness.json",
+        "field": "data.per_channel_NF_coordinate_deltas.e\u207b",
+        "value": "0.053481294118475318499772441782624810002744197845459",
+        "real_value": "0.05348129411847532"
+      },
+      {
+        "file": "computations/qbeta/qbeta-markov-trace-compute-accuracy-diagnostic.witness.json",
+        "field": "data.max_per_channel_delta",
+        "value": "0.089909500604593697858923917465290287509560585021973",
+        "real_value": "0.0899095006045937"
+      },
+      {
+        "file": "computations/qbeta/qbeta-markov-trace-norm-probe.witness.json",
+        "field": "data.x_L2_vs_x_M_at_q0.x_L2[0]",
+        "value": "0.096984191281583462251880689564131898805499076843262",
+        "real_value": "0.09698419128158346"
+      },
+      {
+        "file": "computations/qbeta/qbeta-markov-trace-norm-probe.witness.json",
+        "field": "data.x_L2_vs_x_M_at_q0.x_L2[1]",
+        "value": "0.048426178786698637068752759660128504037857055664063",
+        "real_value": "0.04842617878669864"
+      },
+      {
+        "file": "computations/qbeta/qbeta-markov-trace-norm-probe.witness.json",
+        "field": "data.x_L2_vs_x_M_at_q0.x_L2[2]",
+        "value": "0.048426178786698637068752759660128504037857055664063",
+        "real_value": "0.04842617878669864"
+      },
+      {
+        "file": "computations/qbeta/qbeta-markov-trace-norm-probe.witness.json",
+        "field": "data.x_L2_vs_x_M_at_q0.x_L2[3]",
+        "value": "0.024180175767745112208606528270138369407504796981812",
+        "real_value": "0.024180175767745112"
+      },
+      {
+        "file": "computations/qbeta/qbeta-markov-trace-norm-probe.witness.json",
+        "field": "data.x_L2_vs_x_M_at_q0.x_L2[4]",
+        "value": "0.024180175767745112208606528270138369407504796981812",
+        "real_value": "0.024180175767745112"
+      },
+      {
+        "file": "computations/qbeta/qbeta-markov-trace-norm-probe.witness.json",
+        "field": "data.x_L2_vs_x_M_at_q0.x_L2[5]",
+        "value": "0.053481294118475318499772441782624810002744197845459",
+        "real_value": "0.05348129411847532"
+      },
+      {
+        "file": "computations/qbeta/qbeta-markov-trace-norm-probe.witness.json",
+        "field": "data.x_L2_vs_x_M_at_q0.x_M[0]",
+        "value": "0.18689369188617716011080460702942218631505966186523",
+        "real_value": "0.18689369188617716"
+      },
+      {
+        "file": "computations/qbeta/qbeta-markov-trace-norm-probe.witness.json",
+        "field": "data.x_L2_vs_x_M_at_q0.max_abs_diff",
+        "value": "0.089909500604593697858923917465290287509560585021973",
+        "real_value": "0.0899095006045937"
+      },
+      {
+        "file": "computations/qbeta/qbeta-markov-trace-steps-4-5.witness.json",
+        "field": "assertions[1].computed",
+        "value": "0.18689369188617716011080460702942218631505966186523",
+        "real_value": "0.18689369188617716"
+      },
+      {
+        "file": "computations/qbeta/qbeta-markov-trace-steps-4-5.witness.json",
+        "field": "assertions[1].expected",
+        "value": "0.18689369188617716011080460702942218631505966186523",
+        "real_value": "0.18689369188617716"
+      },
+      {
+        "file": "computations/qbeta/qbeta-markov-trace-steps-4-5.witness.json",
+        "field": "data.step_4_pointer.S_at_q0",
+        "value": "0.18689369188617716011080460702942218631505966186523",
+        "real_value": "0.18689369188617716"
+      },
+      {
+        "file": "computations/rho-k-co-casimir-extended.witness.json",
+        "field": "data.per_atom[2].per_lambda[0].chi_lambda_at_q0",
+        "value": "1.559758658103424178165141711360774934291839599609375",
+        "real_value": "1.5597586581034242"
+      },
+      {
+        "file": "computations/rho-k-co-casimir-extended.witness.json",
+        "field": "data.per_atom[2].per_lambda[1].chi_lambda_at_q0",
+        "value": "3.215890878473318448271811575978063046932220458984375",
+        "real_value": "3.2158908784733184"
+      },
+      {
+        "file": "computations/rho-k-co-casimir-extended.witness.json",
+        "field": "data.per_atom[2].per_lambda[2].chi_lambda_at_q0",
+        "value": "1.67374772222473655602925646235235035419464111328125",
+        "real_value": "1.6737477222247366"
+      },
+      {
+        "file": "computations/rho-k-co-casimir-extended.witness.json",
+        "field": "data.per_atom[2].per_lambda[3].chi_lambda_at_q0",
+        "value": "-0.470191710156982745072440366129740141332149505615234375",
+        "real_value": "-0.47019171015698275"
+      },
+      {
+        "file": "computations/rho-k-co-casimir-extended.witness.json",
+        "field": "data.per_atom[2].per_lambda[4].chi_lambda_at_q0",
+        "value": "4.24906940540998956379326045862399041652679443359375",
+        "real_value": "4.24906940540999"
+      },
+      {
+        "file": "computations/rho-k-co-casimir-extended.witness.json",
+        "field": "data.per_atom[2].per_lambda[5].chi_lambda_at_q0",
+        "value": "-1.9728207380214077826252605518675409257411956787109375",
+        "real_value": "-1.9728207380214078"
+      },
+      {
+        "file": "computations/rho-k-co-casimir-extended.witness.json",
+        "field": "data.per_atom[2].per_lambda[6].chi_lambda_at_q0",
+        "value": "-0.4899877712745921432002660367288626730442047119140625",
+        "real_value": "-0.48998777127459214"
+      },
+      {
+        "file": "computations/rho-k-co-casimir-extended.witness.json",
+        "field": "data.per_atom[2].per_lambda[7].chi_lambda_at_q0",
+        "value": "-3.49756389082688468050719166058115661144256591796875",
+        "real_value": "-3.4975638908268847"
+      },
+      {
+        "file": "computations/rho-k-co-casimir-extended.witness.json",
+        "field": "data.per_atom[2].per_lambda[8].chi_lambda_at_q0",
+        "value": "-0.81971565029251658440756500567658804357051849365234375",
+        "real_value": "-0.8197156502925166"
+      },
+      {
+        "file": "computations/rho-k-co-casimir-extended.witness.json",
+        "field": "data.per_atom[2].per_lambda[9].chi_lambda_at_q0",
+        "value": "2.155415711707639569993943950976245105266571044921875",
+        "real_value": "2.1554157117076396"
+      },
+      {
+        "file": "computations/rho-k-co-casimir-extended.witness.json",
+        "field": "data.per_atom[2].per_lambda[10].chi_lambda_at_q0",
+        "value": "-0.676925091699917658161211875267326831817626953125",
+        "real_value": "-0.6769250916999177"
+      },
+      {
+        "file": "computations/rho-k-co-casimir-extended.witness.json",
+        "field": "data.per_atom[3].per_lambda[0].chi_lambda_at_q0",
+        "value": "1.5768014423962970482762102619744837284088134765625",
+        "real_value": "1.576801442396297"
+      },
+      {
+        "file": "computations/rho-k-co-casimir-extended.witness.json",
+        "field": "data.per_atom[3].per_lambda[1].chi_lambda_at_q0",
+        "value": "3.74028053885528510846825156477279961109161376953125",
+        "real_value": "3.740280538855285"
+      },
+      {
+        "file": "computations/rho-k-co-casimir-extended.witness.json",
+        "field": "data.per_atom[3].per_lambda[2].chi_lambda_at_q0",
+        "value": "3.19001878893583512564191551064141094684600830078125",
+        "real_value": "3.190018788935835"
+      },
+      {
+        "file": "computations/rho-k-co-casimir-extended.witness.json",
+        "field": "data.per_atom[3].per_lambda[3].chi_lambda_at_q0",
+        "value": "-0.5793965429530352206910492895985953509807586669921875",
+        "real_value": "-0.5793965429530352"
+      },
+      {
+        "file": "computations/rho-k-co-casimir-extended.witness.json",
+        "field": "data.per_atom[3].per_lambda[4].chi_lambda_at_q0",
+        "value": "10.1674173714875255569722867221571505069732666015625",
+        "real_value": "10.167417371487526"
+      },
+      {
+        "file": "computations/rho-k-co-casimir-extended.witness.json",
+        "field": "data.per_atom[3].per_lambda[5].chi_lambda_at_q0",
+        "value": "-6.34025444928730319560372663545422255992889404296875",
+        "real_value": "-6.340254449287303"
+      },
+      {
+        "file": "computations/rho-k-co-casimir-extended.witness.json",
+        "field": "data.per_atom[3].per_lambda[6].chi_lambda_at_q0",
+        "value": "-1.029276562359493052412062752409838140010833740234375",
+        "real_value": "-1.029276562359493"
+      },
+      {
+        "file": "computations/rho-k-co-casimir-extended.witness.json",
+        "field": "data.per_atom[3].per_lambda[7].chi_lambda_at_q0",
+        "value": "4.42403690936296545288541892659850418567657470703125",
+        "real_value": "4.4240369093629655"
+      },
+      {
+        "file": "computations/rho-k-co-casimir-extended.witness.json",
+        "field": "data.per_atom[3].per_lambda[8].chi_lambda_at_q0",
+        "value": "2.074187912695980795518835293478332459926605224609375",
+        "real_value": "2.074187912695981"
+      },
+      {
+        "file": "computations/rho-k-co-casimir-extended.witness.json",
+        "field": "data.per_atom[3].per_lambda[9].chi_lambda_at_q0",
+        "value": "-9.370716178226611958734793006442487239837646484375",
+        "real_value": "-9.370716178226612"
+      },
+      {
+        "file": "computations/rho-k-co-casimir-extended.witness.json",
+        "field": "data.per_atom[3].per_lambda[10].chi_lambda_at_q0",
+        "value": "-5.97428992522018642574721525306813418865203857421875",
+        "real_value": "-5.974289925220186"
+      },
+      {
+        "file": "computations/rho-k-co-casimir-extended.witness.json",
+        "field": "data.per_atom[3].per_lambda[11].chi_lambda_at_q0",
+        "value": "6.0446970952339409421938398736529052257537841796875",
+        "real_value": "6.044697095233941"
+      },
+      {
+        "file": "computations/rho-k-co-casimir-extended.witness.json",
+        "field": "data.per_atom[3].per_lambda[12].chi_lambda_at_q0",
+        "value": "-2.60783371444177891618210196611471474170684814453125",
+        "real_value": "-2.607833714441779"
+      },
+      {
+        "file": "computations/rho-k-co-casimir-extended.witness.json",
+        "field": "data.per_atom[3].per_lambda[13].chi_lambda_at_q0",
+        "value": "7.0274623472012027747268803068436682224273681640625",
+        "real_value": "7.027462347201203"
+      },
+      {
+        "file": "computations/rho-k-co-casimir-extended.witness.json",
+        "field": "data.per_atom[3].per_lambda[14].chi_lambda_at_q0",
+        "value": "-3.744113246812307949085152358748018741607666015625",
+        "real_value": "-3.744113246812308"
+      },
+      {
+        "file": "computations/rho-k-co-casimir-extended.witness.json",
+        "field": "data.per_atom[3].per_lambda[15].chi_lambda_at_q0",
+        "value": "-2.17031947563668037304296376532875001430511474609375",
+        "real_value": "-2.1703194756366804"
+      },
+      {
+        "file": "computations/rho-k-co-casimir-extended.witness.json",
+        "field": "data.per_atom[3].per_lambda[16].chi_lambda_at_q0",
+        "value": "3.759002640143498386038345415727235376834869384765625",
+        "real_value": "3.7590026401434984"
+      },
+      {
+        "file": "computations/rho-k-co-casimir-extended.witness.json",
+        "field": "data.per_atom[3].per_lambda[17].chi_lambda_at_q0",
+        "value": "-0.311023348071296557026954587854561395943164825439453125",
+        "real_value": "-0.31102334807129656"
+      },
+      {
+        "file": "computations/rho-k-co-casimir-extended.witness.json",
+        "field": "data.per_atom[3].per_lambda[18].chi_lambda_at_q0",
+        "value": "9.4512549852680702855423078290186822414398193359375",
+        "real_value": "9.45125498526807"
+      },
+      {
+        "file": "computations/rho-k-co-casimir-extended.witness.json",
+        "field": "data.per_atom[3].per_lambda[19].chi_lambda_at_q0",
+        "value": "-2.21762081789169673839978713658638298511505126953125",
+        "real_value": "-2.2176208178916967"
+      },
+      {
+        "file": "computations/rho-k-co-casimir-extended.witness.json",
+        "field": "data.per_atom[3].per_lambda[20].chi_lambda_at_q0",
+        "value": "3.37040997202160497181466780602931976318359375",
+        "real_value": "3.370409972021605"
+      },
+      {
+        "file": "computations/rho-k-co-casimir-extended.witness.json",
+        "field": "data.per_atom[3].per_lambda[21].chi_lambda_at_q0",
+        "value": "2.866137847841538910387271243962459266185760498046875",
+        "real_value": "2.866137847841539"
+      },
+      {
+        "file": "computations/rho-k-co-casimir-extended.witness.json",
+        "field": "data.per_atom[3].per_lambda[22].chi_lambda_at_q0",
+        "value": "3.38163577469427156785286570084281265735626220703125",
+        "real_value": "3.3816357746942716"
+      },
+      {
+        "file": "computations/rho-k-co-casimir-extended.witness.json",
+        "field": "data.per_atom[3].per_lambda[23].chi_lambda_at_q0",
+        "value": "-1.0496122821226425703144968792912550270557403564453125",
+        "real_value": "-1.0496122821226426"
+      },
+      {
+        "file": "computations/rho-k-co-casimir-extended.witness.json",
+        "field": "data.per_atom[3].per_lambda[24].chi_lambda_at_q0",
+        "value": "-2.2454397768106364452478374005295336246490478515625",
+        "real_value": "-2.2454397768106364"
+      },
+      {
+        "file": "computations/rho-k-co-casimir-extended.witness.json",
+        "field": "data.per_atom[3].per_lambda[25].chi_lambda_at_q0",
+        "value": "8.6498416379354505778564998763613402843475341796875",
+        "real_value": "8.64984163793545"
+      },
+      {
+        "file": "computations/rho-k-co-casimir-extended.witness.json",
+        "field": "data.per_atom[3].per_lambda[26].chi_lambda_at_q0",
+        "value": "-5.11373707107889519107857267954386770725250244140625",
+        "real_value": "-5.113737071078895"
+      },
+      {
+        "file": "computations/rho-k-co-casimir-extended.witness.json",
+        "field": "data.per_atom[3].per_lambda[27].chi_lambda_at_q0",
+        "value": "-1.88349117169298807539234985597431659698486328125",
+        "real_value": "-1.883491171692988"
+      },
+      {
+        "file": "computations/rho-k-co-casimir-extended.witness.json",
+        "field": "data.per_atom[3].per_lambda[28].chi_lambda_at_q0",
+        "value": "2.6619144751059256037706290953792631626129150390625",
+        "real_value": "2.6619144751059256"
+      },
+      {
+        "file": "computations/rho-k-co-casimir-extended.witness.json",
+        "field": "data.per_atom[3].per_lambda[29].chi_lambda_at_q0",
+        "value": "-0.684321549004603735255614083143882453441619873046875",
+        "real_value": "-0.6843215490046037"
+      },
+      {
+        "file": "computations/rho-k-co-casimir-extended.witness.json",
+        "field": "data.per_atom[4].per_lambda[0].chi_lambda_at_q0",
+        "value": "2.393510873803715188756768839084543287754058837890625",
+        "real_value": "2.393510873803715"
+      },
+      {
+        "file": "computations/rho-k-co-casimir-extended.witness.json",
+        "field": "data.per_atom[4].per_lambda[1].chi_lambda_at_q0",
+        "value": "6.56766248605829527917876475839875638484954833984375",
+        "real_value": "6.567662486058295"
+      },
+      {
+        "file": "computations/rho-k-co-casimir-extended.witness.json",
+        "field": "data.per_atom[4].per_lambda[2].chi_lambda_at_q0",
+        "value": "7.567570361268497691753509570844471454620361328125",
+        "real_value": "7.567570361268498"
+      },
+      {
+        "file": "computations/rho-k-co-casimir-extended.witness.json",
+        "field": "data.per_atom[4].per_lambda[3].chi_lambda_at_q0",
+        "value": "1.670486068672399682100149220786988735198974609375",
+        "real_value": "1.6704860686723997"
+      },
+      {
+        "file": "computations/rho-k-co-casimir-extended.witness.json",
+        "field": "data.per_atom[4].per_lambda[4].chi_lambda_at_q0",
+        "value": "16.064727952000193766934899031184613704681396484375",
+        "real_value": "16.064727952000194"
+      },
+      {
+        "file": "computations/rho-k-co-casimir-extended.witness.json",
+        "field": "data.per_atom[4].per_lambda[5].chi_lambda_at_q0",
+        "value": "-2.896911171314284327849009059718810021877288818359375",
+        "real_value": "-2.8969111713142843"
+      },
+      {
+        "file": "computations/rho-k-co-casimir-extended.witness.json",
+        "field": "data.per_atom[4].per_lambda[6].chi_lambda_at_q0",
+        "value": "-2.050051993234768499263509511365555226802825927734375",
+        "real_value": "-2.0500519932347685"
+      },
+      {
+        "file": "computations/rho-k-co-casimir-extended.witness.json",
+        "field": "data.per_atom[4].per_lambda[7].chi_lambda_at_q0",
+        "value": "7.69523483767688976087129049119539558887481689453125",
+        "real_value": "7.69523483767689"
+      },
+      {
+        "file": "computations/rho-k-co-casimir-extended.witness.json",
+        "field": "data.per_atom[4].per_lambda[8].chi_lambda_at_q0",
+        "value": "6.7818792521486113145101626287214457988739013671875",
+        "real_value": "6.781879252148611"
+      },
+      {
+        "file": "computations/rho-k-co-casimir-extended.witness.json",
+        "field": "data.per_atom[4].per_lambda[9].chi_lambda_at_q0",
+        "value": "-9.99418517967126973644553800113499164581298828125",
+        "real_value": "-9.99418517967127"
+      },
+      {
+        "file": "computations/rho-k-co-casimir-extended.witness.json",
+        "field": "data.per_atom[4].per_lambda[10].chi_lambda_at_q0",
+        "value": "-7.8590733762809126261572600924409925937652587890625",
+        "real_value": "-7.859073376280913"
+      },
+      {
+        "file": "computations/rho-k-co-casimir-extended.witness.json",
+        "field": "data.per_atom[4].per_lambda[11].chi_lambda_at_q0",
+        "value": "5.47903980060880702041004042257554829120635986328125",
+        "real_value": "5.479039800608807"
+      },
+      {
+        "file": "computations/rho-k-co-casimir-extended.witness.json",
+        "field": "data.per_atom[4].per_lambda[12].chi_lambda_at_q0",
+        "value": "-1.7366642469340920484910384402610361576080322265625",
+        "real_value": "-1.736664246934092"
+      },
+      {
+        "file": "computations/rho-k-co-casimir-extended.witness.json",
+        "field": "data.per_atom[4].per_lambda[13].chi_lambda_at_q0",
+        "value": "8.649917708430042040390617330558598041534423828125",
+        "real_value": "8.649917708430042"
+      },
+      {
+        "file": "computations/rho-k-co-casimir-extended.witness.json",
+        "field": "data.per_atom[4].per_lambda[14].chi_lambda_at_q0",
+        "value": "-5.42868394807741605490036818082444369792938232421875",
+        "real_value": "-5.428683948077416"
+      },
+      {
+        "file": "computations/rho-k-co-casimir-extended.witness.json",
+        "field": "data.per_atom[4].per_lambda[15].chi_lambda_at_q0",
+        "value": "-6.52171451012415648307296578423120081424713134765625",
+        "real_value": "-6.5217145101241565"
+      },
+      {
+        "file": "computations/rho-k-co-casimir-extended.witness.json",
+        "field": "data.per_atom[4].per_lambda[16].chi_lambda_at_q0",
+        "value": "3.63380594267557643917143650469370186328887939453125",
+        "real_value": "3.6338059426755764"
+      },
+      {
+        "file": "computations/rho-k-co-casimir-extended.witness.json",
+        "field": "data.per_atom[4].per_lambda[17].chi_lambda_at_q0",
+        "value": "1.07717130009079919972236893954686820507049560546875",
+        "real_value": "1.0771713000907992"
+      },
+      {
+        "file": "computations/rho-k-co-casimir-extended.witness.json",
+        "field": "data.per_atom[4].per_lambda[18].chi_lambda_at_q0",
+        "value": "11.30516256343499748027170426212251186370849609375",
+        "real_value": "11.305162563434997"
+      },
+      {
+        "file": "computations/rho-k-co-casimir-extended.witness.json",
+        "field": "data.per_atom[4].per_lambda[19].chi_lambda_at_q0",
+        "value": "-2.94234503526159851816146328928880393505096435546875",
+        "real_value": "-2.9423450352615985"
+      },
+      {
+        "file": "computations/rho-k-co-casimir-extended.witness.json",
+        "field": "data.per_atom[4].per_lambda[20].chi_lambda_at_q0",
+        "value": "2.15366517230259812976100874948315322399139404296875",
+        "real_value": "2.153665172302598"
+      },
+      {
+        "file": "computations/rho-k-co-casimir-extended.witness.json",
+        "field": "data.per_atom[4].per_lambda[21].chi_lambda_at_q0",
+        "value": "-0.3696749391504050574752682223333977162837982177734375",
+        "real_value": "-0.36967493915040506"
+      },
+      {
+        "file": "computations/rho-k-co-casimir-extended.witness.json",
+        "field": "data.per_atom[4].per_lambda[22].chi_lambda_at_q0",
+        "value": "2.1104708040659421186546751414425671100616455078125",
+        "real_value": "2.110470804065942"
+      },
+      {
+        "file": "computations/rho-k-co-casimir-extended.witness.json",
+        "field": "data.per_atom[4].per_lambda[23].chi_lambda_at_q0",
+        "value": "1.128769559077245077105544623918831348419189453125",
+        "real_value": "1.128769559077245"
+      },
+      {
+        "file": "computations/rho-k-co-casimir-extended.witness.json",
+        "field": "data.per_atom[4].per_lambda[24].chi_lambda_at_q0",
+        "value": "-2.38140300554513562047986852121539413928985595703125",
+        "real_value": "-2.3814030055451356"
+      },
+      {
+        "file": "computations/rho-k-co-casimir-extended.witness.json",
+        "field": "data.per_atom[4].per_lambda[25].chi_lambda_at_q0",
+        "value": "6.6592033798417862300311753642745316028594970703125",
+        "real_value": "6.659203379841786"
+      },
+      {
+        "file": "computations/rho-k-co-casimir-extended.witness.json",
+        "field": "data.per_atom[4].per_lambda[26].chi_lambda_at_q0",
+        "value": "-3.72025799479181262796601004083640873432159423828125",
+        "real_value": "-3.7202579947918126"
+      },
+      {
+        "file": "computations/rho-k-co-casimir-extended.witness.json",
+        "field": "data.per_atom[4].per_lambda[27].chi_lambda_at_q0",
+        "value": "-1.469519889866017781088203264516778290271759033203125",
+        "real_value": "-1.4695198898660178"
+      },
+      {
+        "file": "computations/rho-k-co-casimir-extended.witness.json",
+        "field": "data.per_atom[4].per_lambda[28].chi_lambda_at_q0",
+        "value": "1.8583355139071275896611723510432057082653045654296875",
+        "real_value": "1.8583355139071276"
+      },
+      {
+        "file": "computations/rho-k-co-casimir-extended.witness.json",
+        "field": "data.per_atom[4].per_lambda[29].chi_lambda_at_q0",
+        "value": "-0.450818593449104298986895855705370195209980010986328125",
+        "real_value": "-0.4508185934491043"
+      },
+      {
+        "file": "computations/rho-k-h3a-lp-dual.witness.json",
+        "field": "data.per_lambda[1].Delta_lambda_lp_primary",
+        "value": "-22.959450768922412322581294574774801731109619140625",
+        "real_value": "-22.959450768922412"
+      },
+      {
+        "file": "computations/rho-k-h3a-lp-dual.witness.json",
+        "field": "data.comparison_to_occam.per_partition[1].Delta_lp_dual",
+        "value": "-22.959450768922412322581294574774801731109619140625",
+        "real_value": "-22.959450768922412"
+      },
+      {
+        "file": "computations/su2-spinor-multiplicity-resolution.witness.json",
+        "field": "parameters.q0",
+        "value": "1.1099785955573346907243603709503076970577239990234",
+        "real_value": "1.1099785955573347"
+      },
+      {
+        "file": "computations/tier-2-hyperbolic-bridge3-pslq.witness.json",
+        "field": "basis_values_30dp[11]",
+        "value": "7.68642137471787734170902695041",
+        "real_value": "7.686421374717877"
+      },
+      {
+        "file": "computations/tier-2-hyperbolic-bridge3-pslq.witness.json",
+        "field": "basis_values_30dp[12]",
+        "value": "6.48838803644523220981454869616",
+        "real_value": "6.488388036445232"
+      },
+      {
+        "file": "computations/tier-2-hyperbolic-bridge3-pslq.witness.json",
+        "field": "basis_values_30dp[13]",
+        "value": "9.93543467972065919013857637765",
+        "real_value": "9.93543467972066"
+      },
+      {
+        "file": "computations/tier-2-hyperbolic-bridge3-pslq.witness.json",
+        "field": "basis_values_30dp[14]",
+        "value": "8.65043433544600226525744801620",
+        "real_value": "8.650434335446002"
+      },
+      {
+        "file": "computations/tier-2-hyperbolic-bridge3-pslq.witness.json",
+        "field": "basis_values_30dp[15]",
+        "value": "8.89418304142151150415429583518",
+        "real_value": "8.894183041421512"
+      },
+      {
+        "file": "computations/v-hat-to-delta-lambda-bridge.witness.json",
+        "field": "data.per_atom[0].pair_volumes_summed_at_A1_only.sym",
+        "value": "1.382494463392593075923286960460245609283447265625",
+        "real_value": "1.382494463392593"
+      },
+      {
+        "file": "computations/v-hat-to-delta-lambda-bridge.witness.json",
+        "field": "data.per_atom[0].pair_volumes_summed_at_A1_only.std",
+        "value": "0.7381826440491188190407001457060687243938446044921875",
+        "real_value": "0.7381826440491188"
+      },
+      {
+        "file": "computations/v-hat-to-delta-lambda-bridge.witness.json",
+        "field": "data.per_atom[0].pair_volumes_summed_at_A1_only.alt",
+        "value": "-0.73922357077647482537230416710372082889080047607421875",
+        "real_value": "-0.7392235707764748"
+      },
+      {
+        "file": "computations/v-hat-to-delta-lambda-bridge.witness.json",
+        "field": "data.per_atom[1].pair_volumes_summed_at_A1_only.sym",
+        "value": "1.12210682160247188221546821296215057373046875",
+        "real_value": "1.1221068216024719"
+      },
+      {
+        "file": "computations/v-hat-to-delta-lambda-bridge.witness.json",
+        "field": "data.per_atom[1].pair_volumes_summed_at_A1_only.std",
+        "value": "0.50477618384628464287544602484558708965778350830078125",
+        "real_value": "0.5047761838462846"
+      },
+      {
+        "file": "computations/v-hat-to-delta-lambda-bridge.witness.json",
+        "field": "data.per_atom[1].pair_volumes_summed_at_A1_only.alt",
+        "value": "-0.91076221455307437846471430020756088197231292724609375",
+        "real_value": "-0.9107622145530744"
+      },
+      {
+        "file": "computations/verify-c-color-swap.witness.json",
+        "field": "data.q0",
+        "value": "1.1099785827513808378341764182550832629203796386719",
+        "real_value": "1.1099785827513808"
+      },
+      {
+        "file": "computations/whitehead-kashaev-volume.witness.json",
+        "field": "vol_whitehead_target",
+        "value": "3.6638623767088760452281803736696019768714904785156",
+        "real_value": "3.663862376708876"
+      },
+      {
+        "file": "computations/whitehead-kashaev-volume.witness.json",
+        "field": "vol_4_1_target",
+        "value": "2.0298832128193073920385813835309818387031555175781",
+        "real_value": "2.0298832128193074"
+      },
+      {
+        "file": "computations/xi-ell-phi-q-probe.witness.json",
+        "field": "leptons.electron \u03c3_1\u00b3 T(2,3).V_hat[0]",
+        "value": "0.3164349897485959073328842805494787171483039855957",
+        "real_value": "0.3164349897485959"
+      },
+      {
+        "file": "computations/xi-ell-phi-q-probe.witness.json",
+        "field": "leptons.muon T(2,5) \u03c3_1\u2075.V_hat[0]",
+        "value": "0.54273644309372059968410439978470094501972198486328",
+        "real_value": "0.5427364430937206"
+      },
+      {
+        "file": "computations/xi-ell-phi-q-probe.witness.json",
+        "field": "leptons.muon 4_1 (\u03c3_1\u03c3_2\u207b\u00b9)\u00b2.V_hat[0]",
+        "value": "1.0090188640716333257074666107655502855777740478516",
+        "real_value": "1.0090188640716333"
+      },
+      {
+        "file": "computations/xi-ell-phi-q-probe.witness.json",
+        "field": "leptons.muon 4_1 (\u03c3_1\u03c3_2\u207b\u00b9)\u00b2.V_hat[1]",
+        "value": "1.0090188688597261368329327524406835436820983886719",
+        "real_value": "1.0090188688597261"
+      },
+      {
+        "file": "computations/xi-ell-phi-q-probe.witness.json",
+        "field": "leptons.tau T(2,7) \u03c3_1\u2077.V_hat[0]",
+        "value": "0.79275884859889900191376455040881410241127014160156",
+        "real_value": "0.792758848598899"
+      }
+    ]
+  }
+}
