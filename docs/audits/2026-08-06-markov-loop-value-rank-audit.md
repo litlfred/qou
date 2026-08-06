@@ -40,12 +40,39 @@ the $\mathfrak{gl}_N$ specialisation the loop value is $[N]_{\check q}$ and
 the parameter is $1/[N]_{\check q}$. The corpus writes the $N=2$ member of
 that family and never the family.
 
-**The numerical value is derived, not measured.**
+**The numerical value is derived, not measured — and it is *wrong*.**
 [`q-beta-spectral-bridge-table-data.md`](../../content/quantum-observable-universe/nuclear-interactions/q-beta-spectral-bridge-table-data.md)
 records $z = 0.499320334033598$. Recomputing $1/(q_0^{1/2}+q_0^{-1/2})$ at
-the canonical $q_0 = 1.10997859555733471$ reproduces
-$0.4993203340335\ldots$ — agreement to $\sim 4\times10^{-14}$, which is
-float64 roundoff against a 50-digit $q_0$. It is the same formula, evaluated.
+**65 dps** (repo default) from the canonical 50-digit muon-pinned
+$q_0 = 1.10997859555733471989976322048322502665620840878015368660798114614493$
+gives
+
+$$
+  z_{\text{exact}} = 0.4993203340335612717689664\ldots
+$$
+
+against the committed $0.4993203340335\,\mathbf{98}$ — a relative
+discrepancy of $7.36\times10^{-14}$, i.e. **73.6 ppQ, exceeding the L1
+internal-agreement goal of $\le 1$ ppQ by $\approx74\times$.**
+
+Three candidate explanations, all tested at 65 dps:
+
+| hypothesis | result |
+|---|---|
+| computed at the **proton** pin instead of the muon pin | **rejected** — an 11.5 ppb shift in $q_0$ moves $z$ by $3\times10^{-10}$ relative, ~4000× larger than observed |
+| **float64** evaluation of the same formula | **rejected** — float64 gives $0.49932033403356124$, matching the exact value to $6.4\times10^{-17}$; float64 is *fine* here and does **not** reproduce the committed digits either |
+| computed from a **stale / lower-precision $q_0$** | **consistent** — the $q_0$ that reproduces the committed $z$ exactly is $1.10997859555420\ldots$, differing from canonical at the 12th digit ($2.8\times10^{-12}$ relative) |
+
+So the committed value most likely descends from a superseded or
+under-converged $q_0$ — the q₀-repin staleness class. Filed as a bean; **it
+does not affect this audit's conclusions**, which concern the *form* of $z$,
+not its 14th digit.
+
+**It does, however, sharpen §1's conclusion.** A 74-ppQ error sitting
+uncaught in a committed table is itself evidence that **nothing independently
+constrains $z$**: had any measurement or cross-method check bound it, the
+discrepancy would have surfaced. A quantity that can be wrong at the 14th
+digit without consequence is a quantity nothing is checking.
 
 **Verdict on the bean as posed:** no witness, no normalisation, and no
 computed value in the corpus pins $z$ independently of $N$. Every occurrence
@@ -130,6 +157,8 @@ strictly below a derivation, per the framework's own tiering. The claim that
 $z$ is a definition (§1) is a documentary fact about the notation register,
 verifiable by reading it.
 
-Arithmetic: $z$ recomputed from the canonical $q_0$ and cross-checked against
-the committed witness value (agreement at float64 roundoff); the $N$-family
-table computed exactly at the same $q_0$.
+Arithmetic: all values computed with `mpmath` at **65 dps** (repo default
+compute precision) from the canonical 50-digit muon-pinned $q_0$ — no
+float64 anywhere. The $N$-family table is exact at that precision; the
+committed-value discrepancy of §1 is a genuine 73.6 ppQ disagreement, not a
+rounding artefact, with the three candidate causes tested and two rejected.
