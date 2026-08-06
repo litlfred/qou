@@ -1,7 +1,7 @@
 | quantity | $q_0$ value | role |
 |----------|---------:|------|
-| $z$ | $0.49915..$ | Markov–Jones parameter |
-| $h$ | $0.20874..$ | quantum-integer differential |
+| $z$ | $0.49932..$ | Markov–Jones parameter |
+| $h$ | $0.20906..$ | quantum-integer differential |
 | $\alpha = (z-1)h/2$ | $-0.05234..$ | single-wrap eigenphase |
 | $\cos\alpha$ | $0.99863..$ | resummation factor |
 | $\mathfrak{Q}_\beta^A$ | $0.78365$ MeV | bare Form A |
