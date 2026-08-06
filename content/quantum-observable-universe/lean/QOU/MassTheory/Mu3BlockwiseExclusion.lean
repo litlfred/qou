@@ -42,11 +42,17 @@ trace can open the door, whatever the blocks and factors.
 ## What it sharpens
 
 `submodular_needs_interfering_block` is the contrapositive: a submodular total **forces at
-least one Wedderburn block whose own `Δ²` is negative**.  So the standing open question
-sharpens from the diffuse *"find some submodular 3-body operator"* to the concrete
-*"exhibit a block λ in which two bonds interfere sub-multiplicatively"* — i.e. where the
-joint damping is **weaker** than the product of the individual dampings.  Per-block
-multiplicative damping is exactly the property that must fail.
+least one Wedderburn block whose own `Δ²` is negative**.  The §Fréchet section below then
+pins down *exactly* what such a block must do, and the answer is sharper (and in the
+opposite direction) to the loose reading "sub-multiplicative":
+
+writing a block's values as `c, c·r_a, c·r_b, c·r_ab`, one has `Δ² = c(r_ab − r_a − r_b + 1)`,
+so with `c > 0` the block is submodular **iff `r_ab < r_a + r_b − 1`** — strictly below the
+**Fréchet–Hoeffding lower bound**.  Since `r_a + r_b − 1 ≤ r_a·r_b` whenever `r_a, r_b ≤ 1`
+(gap exactly `(1−r_a)(1−r_b)`), an interfering block must damp **strictly more strongly than
+multiplicatively**: the two bonds together must suppress the block *more* than the product of
+their separate suppressions, and by more than that gap.  Any block whose joint damping obeys
+the Fréchet lower bound — as a genuine joint survival probability must — is supermodular.
 
 Consistent with the FKG epic (`qou-x631`), which found `f^λ` is *not* universally
 log-supermodular: there is no forced invariant, so intra-block interference is not excluded
@@ -128,5 +134,55 @@ theorem submodular_needs_interfering_block (B : Finset ι) (g₀ gₐ g_b gₐ�
   push_neg at hcon
   rw [secondDiff_sum] at hsub
   exact absurd (Finset.sum_nonneg hcon) (not_le.mpr hsub)
+
+/-! ### The Fréchet threshold: exactly how far an interfering block must go
+
+Writing a single block's four values as `c, c·r_a, c·r_b, c·r_ab` (base `c`, single-bond
+damping factors `r_a, r_b`, joint factor `r_ab`), the block's second difference is
+`Δ² = c(r_ab − r_a − r_b + 1)`.  The three lemmas below locate the submodular regime
+exactly, and show it lies strictly beyond multiplicative damping. -/
+
+/-- A block in damping-factor coordinates: `Δ² = c·(r_ab − r_a − r_b + 1)`. -/
+theorem secondDiff_damping (c rₐ r_b rₐᵦ : ℝ) :
+    secondDiff c (c * rₐ) (c * r_b) (c * rₐᵦ) = c * (rₐᵦ - rₐ - r_b + 1) := by
+  unfold secondDiff; ring
+
+/-- **The Fréchet lower bound forces supermodularity.**  If the joint damping factor obeys
+`r_ab ≥ r_a + r_b − 1` — the Fréchet–Hoeffding lower bound, which any genuine joint survival
+probability satisfies — then the block is supermodular (`Δ² ≥ 0`), whatever `r_a, r_b` are.
+
+So an interfering block must **violate the Fréchet lower bound**. -/
+theorem frechet_lower_bound_supermodular {c rₐ r_b rₐᵦ : ℝ} (hc : 0 ≤ c)
+    (hfr : rₐ + r_b - 1 ≤ rₐᵦ) :
+    0 ≤ secondDiff c (c * rₐ) (c * r_b) (c * rₐᵦ) := by
+  rw [secondDiff_damping]
+  exact mul_nonneg hc (by linarith)
+
+/-- **Submodular ⟺ strictly below the Fréchet lower bound** (for a block of positive base).
+This is the exact characterisation of an interfering block. -/
+theorem block_submodular_iff_below_frechet {c rₐ r_b rₐᵦ : ℝ} (hc : 0 < c) :
+    secondDiff c (c * rₐ) (c * r_b) (c * rₐᵦ) < 0 ↔ rₐᵦ < rₐ + r_b - 1 := by
+  rw [secondDiff_damping]
+  constructor
+  · intro h; nlinarith [h]
+  · intro h; nlinarith [mul_pos hc (show (0:ℝ) < rₐ + r_b - 1 - rₐᵦ by linarith)]
+
+/-- **The Fréchet bound is below the multiplicative one**, with gap exactly `(1−r_a)(1−r_b)`.
+Hence "beats multiplicative damping" is *strictly weaker* than "interferes": a block must
+damp more strongly than `r_a·r_b` — by at least that gap — before it can turn submodular. -/
+theorem frechet_le_multiplicative {rₐ r_b : ℝ} (ha : rₐ ≤ 1) (hb : r_b ≤ 1) :
+    rₐ + r_b - 1 ≤ rₐ * r_b := by
+  nlinarith [mul_nonneg (sub_nonneg.mpr ha) (sub_nonneg.mpr hb)]
+
+/-- **The interference threshold, assembled.**  An interfering block (submodular, positive
+base, damping bonds) has joint factor strictly below the multiplicative prediction:
+`r_ab < r_a·r_b`.  The two bonds must jointly suppress the block *more* than the product of
+their separate suppressions — the opposite direction from "weaker than multiplicative". -/
+theorem interfering_block_beats_multiplicative {c rₐ r_b rₐᵦ : ℝ} (hc : 0 < c)
+    (ha : rₐ ≤ 1) (hb : r_b ≤ 1)
+    (hsub : secondDiff c (c * rₐ) (c * r_b) (c * rₐᵦ) < 0) :
+    rₐᵦ < rₐ * r_b :=
+  lt_of_lt_of_le ((block_submodular_iff_below_frechet hc).mp hsub)
+    (frechet_le_multiplicative ha hb)
 
 end QOU.MassTheory.Mu3BlockwiseExclusion
