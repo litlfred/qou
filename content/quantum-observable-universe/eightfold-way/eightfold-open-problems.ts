@@ -11,6 +11,7 @@ export default remark({
   label: "rem:eightfold-open-problems",
   title: "Open problems",
   md: "eightfold-open-problems.md",
+  interprets: "prop:schur-weyl-eightfold",
   uses: [
     "prop:a2-from-three-strands",
     "prop:color-su3-from-g2",

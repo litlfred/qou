@@ -13,6 +13,7 @@ export default remark({
   label: "rem:dictionary-flavor-layer",
   title: "The knot--particle--force dictionary: flavor supplement",
   md: "dictionary-flavor-layer.md",
+  interprets: "prop:schur-weyl-eightfold",
   uses: [
     "rem:knot-particle-dictionary",
     "prop:a2-from-three-strands",

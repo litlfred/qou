@@ -37,11 +37,28 @@ inference withdrawn. What remains is coverage, not accuracy.
    prose now says "not excluded by the Sym² gate" rather than "passed", but the
    file should either encode a real decomposition claim or be demoted.
 
-4. **Chapter `.ts` TODOs** (3, all research-gated): `a2-root-system-proof` +
+4. **`WeylInvarianceQDeformation.lean` hygiene.** Now that the `lean:` refs
+   resolve (they were bare strings, so the schema rejected them and the §7c
+   checker never ran), `qa-sweep` reports `wall-base-ring-minimal` **warn** on
+   `prop:a2-from-three-strands` and `rem:q-deformation-weight-lattice`. The ℚ in
+   `root_angle_ratio_A2` is defensible — an exact rational ratio, and notably
+   *not* ℝ — but two declarations close with `native_decide`
+   (`cartan_A2_offdiag`, `serre_exponent_A2`, `root_angle_ratio_A2`) on goals
+   that are concrete finite matrix lookups. `decide`/`norm_num`/`rfl` would do,
+   and AGENTS.md "Strict Lean Discipline" item 6 discourages `native_decide`.
+   Low risk, but it is kernel-evaluator use where none is needed.
+
+5. **No `def:octonion-algebra` anywhere in the corpus.** §5 uses the octonions
+   and `G_2 = Aut(𝕆)` throughout but neither is defined as a content block. The
+   dangling `uses: ["def:octonion-algebra"]` on `color-su3-from-g2.ts` was
+   removed (it never resolved) and the gap recorded in the §8 ledger. Either
+   author the definition or keep citing the literature explicitly.
+
+6. **Chapter `.ts` TODOs** (3, all research-gated): `a2-root-system-proof` +
    `hexagonal-weight-lattice` (§1), `color-tube-coords-intro` (§5),
    `thurston-relaxation` (§6).
 
-5. **New open problems added to §8** and needing owners: the
+7. **New open problems added to §8** and needing owners: the
    spin–flavour–colour selection rule (the decuplet identification currently
    matches dimensions and weights only), and Gell-Mann–Okubo (asserted as a
    consequence, not derived; the one cross-check gives ≈6% vs ≈3.3%).

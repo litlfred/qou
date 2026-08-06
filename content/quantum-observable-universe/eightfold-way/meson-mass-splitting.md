@@ -11,7 +11,7 @@ phenomenon governed by the Markov trace and the crossing energy.
 **$q$-independent structure.**
 The weight lattice and the state assignments (which meson sits at
 which $(I_3, Y)$) are $q$-independent
-(Proposition~\ref{prop:q-deformation-weight-lattice}).
+(Remark~\ref{rem:q-deformation-weight-lattice}).
 The hexagonal pattern itself --- $\pi^\pm$ at $(\pm 1, 0)$,
 $K^\pm$ at $(\pm 1/2, \pm 1)$, $\pi^0$ and $\eta$ at the origin
 --- is determined entirely by the Cartan matrix $A_2$, which the
