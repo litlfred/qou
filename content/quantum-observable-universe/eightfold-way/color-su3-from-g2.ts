@@ -18,7 +18,9 @@ export default proposition({
   title: "Color $\\mathrm{SU}(3)$ from octonionic stabilization",
   md: "color-su3-from-g2.md",
   uses: [
-    "def:octonion-algebra",
+    // NOTE: there is no `def:octonion-algebra` in the corpus. The octonion
+    // algebra and its automorphism group G_2 are used here but never defined
+    // as a content block — recorded as a gap in §8 and bean qou-8fl1.
   ],
-  lean: "qou:QOU.Eightfold.Sym2Gate",
+  lean: { ref: "qou:QOU.Eightfold.Sym2Gate" },
 });

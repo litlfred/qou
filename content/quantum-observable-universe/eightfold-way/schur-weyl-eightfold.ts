@@ -19,7 +19,7 @@ export default proposition({
   title: "Eightfold-way multiplets via quantum Schur--Weyl duality",
   md: "schur-weyl-eightfold.md",
   uses: [
-    "def:hecke-algebra",
+    "rem:hecke-algebra-from-braiding",
     "prop:a2-from-three-strands",
   ],
   // No Lean sibling: quantum Schur-Weyl duality at (n=3, N=3) is not

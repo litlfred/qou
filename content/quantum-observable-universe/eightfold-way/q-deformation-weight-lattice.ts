@@ -16,9 +16,10 @@ export default remark({
   label: "rem:q-deformation-weight-lattice",
   title: "The $q$-deformation and the invariance of the root datum",
   md: "q-deformation-weight-lattice.md",
+  interprets: "prop:a2-from-three-strands",
   uses: [
     "prop:a2-from-three-strands",
-    "def:hecke-algebra",
+    "rem:hecke-algebra-from-braiding",
   ],
-  lean: "qou:QOU.Eightfold.WeylInvarianceQDeformation",
+  lean: { ref: "qou:QOU.Eightfold.WeylInvarianceQDeformation" },
 });

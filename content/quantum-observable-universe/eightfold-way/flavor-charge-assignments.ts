@@ -16,6 +16,7 @@ export default remark({
   label: "rem:flavor-charge-assignments",
   title: "Flavor charge assignments and the hypercharge gap",
   md: "flavor-charge-assignments.md",
+  interprets: "prop:a2-from-three-strands",
   uses: [
     "prop:a2-from-three-strands",
     "def:coulomb-charge",

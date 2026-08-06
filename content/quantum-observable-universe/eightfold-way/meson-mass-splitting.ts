@@ -15,9 +15,10 @@ export default remark({
   label: "rem:meson-mass-splitting",
   title: "Meson mass splitting from q-deformed dynamics",
   md: "meson-mass-splitting.md",
+  interprets: "prop:meson-octet-decomposition",
   uses: [
     "prop:a2-from-three-strands",
-    "prop:q-deformation-weight-lattice",
+    "rem:q-deformation-weight-lattice",
     "prop:meson-octet-decomposition",
   ],
 });

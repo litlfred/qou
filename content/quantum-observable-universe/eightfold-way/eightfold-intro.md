@@ -18,7 +18,8 @@ about the substrate, and nothing is derived from it.
 
 The $A_2$ that the eightfold way needs is a *different* one: the Lie
 algebra $\mathfrak{sl}_3$ of flavour $\mathrm{SU}(3)$, which in quantum
-Schur--Weyl duality (\S\ref{sec:baryon-multiplets}) is the partner acting
+Schur--Weyl duality \cite{jimbo1986} (\S\ref{sec:baryon-multiplets}) is
+the partner acting
 on the *fibre* $V$, and which appears only when $\dim V = N = 3$.  The two
 $A_2$s coincide in name --- and in this chapter's diagrams --- solely
 because we have set $n = 3$ and would like $N = 3$.  Setting $n = 3$ does
@@ -54,3 +55,26 @@ knot complements.
 \S\ref{sec:knot-particle-force-dictionary} consolidates the complete
 knot--particle--force dictionary.
 \S\ref{sec:eightfold-open-problems} records the open problems.
+
+**Epistemic tiers.**
+Each statement below is marked with one of four tiers, used in the same
+sense as in the Standard-Model appendix
+(Appendix~\ref{chap:appendix-standard-model}):
+*proved* (machine-checked Lean, sorry-free);
+*derived* (obtained from framework structure without fitted parameters);
+*standard* (a theorem of the ambient mathematics --- Coxeter theory,
+Schur--Weyl duality, $\mathrm{SU}(3)$ representation theory --- cited,
+not re-derived here, and carrying no QOU content on its own);
+*conditional* (a rigorous consequence of a named hypothesis, principally
+$N = 3$); and *open* (a precisely identified missing object).
+
+**What this chapter does not do.**
+It does not derive flavour $\mathrm{SU}(3)$.  The eightfold-way
+classification is reproduced *conditionally on $N = 3$*, and $N = 3$ is
+not available: the framework supplies $\dim V = 2$.  Most of the
+representation theory below is tier *standard* --- correct, and correctly
+applied, but true of any $\mathrm{SU}(3)$ and not evidence for the
+framework.  What the chapter contributes is the placement of the braid
+dictionary against that classification, one derived entry ($I_3$ on the
+nucleon doublet), and a sharpened statement of what is missing.  The
+consolidated ledger is \S\ref{sec:eightfold-open-problems}.
