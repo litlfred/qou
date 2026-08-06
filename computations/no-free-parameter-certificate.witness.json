@@ -1,0 +1,52 @@
+{
+  "schema": "witness/v1",
+  "name": "no-free-parameter-certificate",
+  "description": "Static high-recall audit of numeric literals in the canonical prediction path. Candidates only; per-literal verdict is an agent call.",
+  "data": {
+    "entry_modules": [
+      "canonical_mass"
+    ],
+    "modules_in_closure": [
+      "_path_bridge",
+      "_precision",
+      "canonical_mass",
+      "codata_2022_source",
+      "codata_constants",
+      "derived_masses",
+      "experimental_constants",
+      "m_p_substrate_identity_50dps",
+      "q_parameter",
+      "qou_substrate",
+      "witness_base"
+    ],
+    "unresolved_imports": [],
+    "counts": {
+      "modules": 11,
+      "unresolved_imports": 0,
+      "derived_from_witness": 10,
+      "adjudicated_legit": 2,
+      "untraceable": 0
+    },
+    "untraceable": [],
+    "adjudicated": [
+      {
+        "module": "experimental_constants",
+        "line": 53,
+        "value": 3.0,
+        "assigned_to": "KAPPA",
+        "class": "adjudicated",
+        "verdict": "legit \u2014 structural integer as float: the 3 of the three-strand / three-colour structure, giving \u03ba = m_e/3. Traceable to m_e (CAL-1) divided by a combinatorial constant, so it introduces no parameter.",
+        "source": "KAPPA       = M_E_MEV / 3.0   # 0.170333 MeV"
+      },
+      {
+        "module": "experimental_constants",
+        "line": 264,
+        "value": 8.0,
+        "assigned_to": "EIGHT_G",
+        "class": "adjudicated",
+        "verdict": "legit \u2014 structural integer as float. 8\u00b7G = 7.3277247534177521204 is Vol(Borromean rings), a proved hyperbolic-geometry identity (G = Catalan). Verified to 1e-14 against the known volume. Not a fit.",
+        "source": "EIGHT_G     = 8.0 * CATALAN  # \u2248 7.327724753417752"
+      }
+    ]
+  }
+}

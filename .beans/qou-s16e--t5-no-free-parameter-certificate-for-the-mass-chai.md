@@ -1,11 +1,11 @@
 ---
 # qou-s16e
 title: 'T5: no-free-parameter certificate for the mass chain'
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-03T23:27:17Z
-updated_at: 2026-08-03T23:27:57Z
+updated_at: 2026-08-06T22:54:12Z
 parent: qou-8lxd
 ---
 
