@@ -94,11 +94,32 @@ verified to machine precision.
 (`B/A = 0.36169`, `B−A = −0.62027`). A second independent relation is
 needed.
 
-*Identified route.* The Kubert/distribution relation
-`Li₂(zⁿ) = n·Σ_{k<n} Li₂(ζₙᵏ z)` applied to `Li₂(y²) = Li₂((1−y)³)`
-supplies one, at the cost of introducing cube-root-of-unity arguments
-`ω(1−y)`. That is the Bloch-group computation the reduction points at,
-and it is left OPEN.
+*Route survey (2026-08-06) — four tried, none closes.* The line above
+originally named the Kubert/distribution relation as "the identified
+route"; **that was too optimistic and is corrected here.**
+
+The problem reduces exactly (residual 2.7e-51) to one evaluation:
+
+    Σⱼ Li₂(yⱼ) = (2·Re e₂(L) − π²/2) / 3
+
+so (SUM) *is* a dilogarithm-ladder evaluation at the roots, nothing more.
+
+1. **Reflection — exhausted.** It defines `B` in terms of `A`, so it
+   eliminates `B` and constrains `A` not at all. Re-applying it to the
+   `1−y` roots returns the same equation.
+2. **Bloch–Wigner torsion — refuted as the mechanism.** `Σ D(yⱼ) = 0`
+   holds, but *automatically*: `D(z̄) = −D(z)` and `D` vanishes on reals,
+   so every cubic with one real and two conjugate roots gives `0`
+   (verified on both controls). It carries no 5₂ information.
+3. **Landen — adds an unknown.** `z = y/(y−1)` maps the roots exactly
+   onto the roots of `z³ − z² + 1`, a *different* algebraic set: one new
+   equation, one new unknown.
+4. **Kubert/distribution — nets negative.** It introduces `Li₂` at `−yⱼ`
+   and `ω^k(1−yⱼ)`: six new unknown sums for one new relation.
+
+Closing (SUM) needs genuine Bloch-group / K-theory machinery over the 5₂
+trace field, or a ladder identity specific to it. Left OPEN; see bean
+`qou-0yqu` for the full route survey.
 
 Consequence for use
 -------------------

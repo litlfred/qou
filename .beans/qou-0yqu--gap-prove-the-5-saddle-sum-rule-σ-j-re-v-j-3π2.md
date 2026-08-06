@@ -79,3 +79,69 @@ the real blocker on the Lean side.
 - probe: `computations/probes/qbeta_5two_saddle_sum_rule_and_provenance_probe.py`
 - ledger: `docs/coordination/1ppq-qbeta.md`, 2026-08-02 row
 - PR #4624
+
+## Proof attempt 2026-08-06 — NOT CLOSED. Four routes tried; results below.
+
+### The sum rule reduces EXACTLY to one dilogarithm evaluation
+
+Verified to 51 digits (residual 2.7e-51):
+
+    Σⱼ Li₂(yⱼ)  =  (2·Re e₂(L) − π²/2) / 3          where Lⱼ = log yⱼ + bⱼπi
+
+Derivation: `Σ Lⱼ = πi` (branch data) gives `Σ Lⱼ² = −π² − 2·e₂(L)`, and
+substituting into (SUM) leaves exactly this. **So (SUM) is neither more nor
+less than a closed-form evaluation of `A = Σ Li₂(yⱼ)`** — a dilogarithm
+*ladder* at the roots of the 5₂ cubic. That is the whole problem, stated
+minimally.
+
+### Route 1 — Euler reflection: EXHAUSTED, gives no constraint on A
+
+Summing reflection over the roots gives `A + B = π²/2 − Σ log yⱼ log(1−yⱼ)`
+with `B = Σ Li₂(1−yⱼ)`. But reflection *is* the definition of `B` in terms of
+`A`, so it merely eliminates `B`; it places **no** constraint on `A`.
+Re-applying it to the `u = 1−y` roots returns the identical equation (since
+`1−u = y`). Reflection is spent. The Lean `sum_reflection_of_branch` is this
+step and cannot be pushed further.
+
+### Route 2 — Bloch–Wigner / torsion: REFUTED as the mechanism
+
+`Σⱼ D(yⱼ) = 0` exactly (D = Bloch–Wigner). Tempting: vanishing D suggests the
+Bloch-group element is torsion, which would force `Σ L` into `(π²/6)·ℚ`.
+
+**But it is automatic, not 5₂-specific.** `D(z̄) = −D(z)` and `D` vanishes on
+reals in `(0,1)`, so *any* cubic with one real and two conjugate roots gives
+`Σ D = 0`. Verified on both control cubics — both give exactly `0`. So D-
+vanishing carries no 5₂ information and does **not** explain (SUM).
+(Separately, `Σ Rogers L(yⱼ)/(π²/6) = 1.6885…`, not an evident rational, so
+the naive torsion criterion does not apply cleanly either.)
+
+### Route 3 — Landen: adds an unknown
+
+`z = y/(y−1)` maps the roots exactly onto the roots of `z³ − z² + 1` (residual
+0.0 at all three; `z² = 1−y` follows from `y² = (1−y)³`). Landen then relates
+`A` to `Σ Li₂(zⱼ)` over a **different** algebraic set — one new unknown for one
+new equation. Does not close.
+
+### Route 4 — Kubert/distribution: CORRECTION, adds MORE unknowns than relations
+
+An earlier revision of this bean (and of
+`qbeta_5two_saddle_sum_rule_and_provenance_probe.py`) named this "the
+identified route". **That was too optimistic.** Applying
+`Li₂(zⁿ) = n·Σ_{k<n} Li₂(ζₙᵏ z)` to `Li₂(y²) = Li₂((1−y)³)` gives
+
+    2[Li₂(y) + Li₂(−y)] = 3[Li₂(1−y) + Li₂(ω(1−y)) + Li₂(ω²(1−y))]
+
+which introduces `Li₂` at `−yⱼ` and at `ω^k(1−yⱼ)` — **six** new unknown sums
+for **one** new relation. It is a valid identity but nets negative. Do not
+start here expecting it to close.
+
+### Where that leaves it
+
+(SUM) is a genuine dilogarithm-ladder evaluation at algebraic points, not
+reachable by shuffling the standard transformations. Closing it needs real
+Bloch-group / K-theory machinery over the 5₂ trace field, or a specific ladder
+identity for this field. Still **verified to 80 dps, unproved**.
+
+Lean status unchanged: the algebraic skeleton and the reflection reduction are
+sorry-free; `hrefl` remains undischarged at the complex roots pending
+`qou-gkco`. Nothing was stubbed to fake progress.
