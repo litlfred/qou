@@ -49,6 +49,33 @@ jobs:
             echo '```';
           } >> "$GITHUB_STEP_SUMMARY"
 
+      - name: No-free-parameter certificate (strict)
+        # Every number entering a predicted observable must be traceable to a
+        # tagged calibration input, a proved/derived constant, or pure
+        # combinatorics. Anything else is a free parameter, and a free
+        # parameter is a fit. Baseline is CLEAN across all four prediction
+        # entry points, so this goes in STRICT from the start — same posture
+        # as the q0-flip gate above, and for the same reason: an untraceable
+        # literal in a predictor is a correctness error, not a backlog item.
+        #
+        # --self-test first: a detector that never fires is worthless, so the
+        # run asserts the classifier still separates fitted values from
+        # unit/structural ones before its verdict is trusted.
+        #
+        # A failure means either (a) a genuine new free parameter — fix the
+        # code, or (b) a legitimate constant the classifier cannot yet see —
+        # add it to VERDICT_LEDGER in the script with a written justification.
+        # Never widen the bounds to make a red run green.
+        run: |
+          python3 computations/no_free_parameter_certificate.py --self-test
+          python3 computations/no_free_parameter_certificate.py --strict | tee /tmp/nfp.txt
+          {
+            echo '## No-free-parameter certificate (strict)';
+            echo '```';
+            head -20 /tmp/nfp.txt;
+            echo '```';
+          } >> "$GITHUB_STEP_SUMMARY"
+
       - uses: oven-sh/setup-bun@v2
       - name: Author-note Lean-coverage drift gate (strict)
         # The introduction's advertised proved-counts (PR #3490 mechanism:

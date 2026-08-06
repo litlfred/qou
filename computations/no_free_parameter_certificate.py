@@ -71,6 +71,10 @@ STRUCTURAL_INTS = {
     0, 1, 2, 3, 4, 5, 6, 8, 9, 10, 12, 24, 50, 65, 100, 1000,
 }
 
+# Bare integers beyond this are no longer waved through as "an index or
+# exponent": indices and exponents are small, so a large one is a candidate.
+MAX_STRUCTURAL_INT = 64
+
 # Names whose assigned literals are precision / tolerance knobs.
 PRECISION_NAMES = (
     "dps", "prec", "tol", "tolerance", "eps", "epsilon", "atol", "rtol",
@@ -193,15 +197,30 @@ def _is_power_of_ten(v: float) -> bool:
     return abs(lg - round(lg)) < 1e-12
 
 
-def _is_half_integer(v: float) -> bool:
-    """n/2 for a small integer n: formula coefficients such as 1.0, 0.5, 1.5, 2.0.
+# Half-odd-integers (x.5) arise from ONE structural source: differentiating a
+# square root, which yields 1/2 and 3/2 exponents. Nothing in the corpus needs
+# a larger one, so the bound is tight. A fitted value near, say, 12.5 is
+# flagged rather than excused.
+MAX_HALF_ODD = 4.0
 
-    Half-integers are included because they arise structurally from
-    square-root derivatives (d/dq of q^{1/2} gives 1/2, 3/2 exponents).
-    Bounded to |n| <= 24 so a fitted value cannot masquerade as one.
-    """
-    x = float(v) * 2
-    return abs(x - round(x)) < 1e-12 and abs(round(x)) <= 48
+
+def _is_integral_float(v: float) -> bool:
+    """An integer written as a float (2.0, 8.0). Gets EXACTLY the same
+    scrutiny as a bare integer -- it must be in STRUCTURAL_INTS or within the
+    index/exponent range -- so writing `8.0` buys no leniency over `8`."""
+    x = float(v)
+    if abs(x - round(x)) >= 1e-12:
+        return False
+    n = int(round(x))
+    return n in STRUCTURAL_INTS or abs(n) <= MAX_STRUCTURAL_INT
+
+
+def _is_half_odd(v: float) -> bool:
+    """x.5 with |x| <= MAX_HALF_ODD: a square-root derivative coefficient."""
+    x = float(v)
+    if abs(x) > MAX_HALF_ODD:
+        return False
+    return abs(abs(x % 1.0) - 0.5) < 1e-12
 
 
 def _reads_witness(tree: ast.AST) -> bool:
@@ -226,8 +245,32 @@ def audit_module(mod: str) -> list[dict]:
     # Literals in arithmetic position only: operand of a BinOp, or a bare
     # module-level constant assignment.
     arith: set[int] = set()
+    threshold: set[int] = set()
+    precision_arg: set[int] = set()
+
     for n in ast.walk(tree):
-        if isinstance(n, (ast.BinOp, ast.UnaryOp, ast.Compare)):
+        # A literal compared against something is a pass/fail THRESHOLD; it
+        # never flows into an output value.
+        if isinstance(n, ast.Compare):
+            for sub in ast.walk(n):
+                if isinstance(sub, ast.Constant) and isinstance(sub.value, (int, float)):
+                    threshold.add(id(sub))
+        # A literal passed to a precision-setting call is a dps knob.
+        if isinstance(n, ast.Call):
+            fn = n.func
+            nm = getattr(fn, "attr", None) or getattr(fn, "id", "") or ""
+            if any(k in nm.lower() for k in ("dps", "prec", "workdps", "round")):
+                for a in n.args:
+                    if isinstance(a, ast.Constant) and isinstance(a.value, (int, float)):
+                        precision_arg.add(id(a))
+        if isinstance(n, (ast.BinOp, ast.UnaryOp)):
+            # `"=" * 92` is a BinOp but it is string repetition, not
+            # arithmetic on a physical value. Skip when a side is a string.
+            if isinstance(n, ast.BinOp) and any(
+                isinstance(x, ast.Constant) and isinstance(x.value, str)
+                for x in (n.left, n.right)
+            ):
+                continue
             for sub in ast.iter_child_nodes(n):
                 if isinstance(sub, ast.Constant) and isinstance(sub.value, (int, float)):
                     arith.add(id(sub))
@@ -241,20 +284,29 @@ def audit_module(mod: str) -> list[dict]:
         name = _enclosing_assign_name(tree, n)
         lo = name.lower()
 
-        if mod in CALIBRATION_MODULES:
+        if id(n) in threshold:
+            cls = "tolerance"           # pass/fail threshold, never an output value
+        elif id(n) in precision_arg:
+            cls = "precision"           # dps knob passed to a precision call
+        elif mod in CALIBRATION_MODULES:
             cls = "calibration"
         elif any(k in lo for k in PRECISION_NAMES):
             cls = "precision"
+        elif id(n) not in arith:
+            # NOT in arithmetic position (banner width, format arg, default,
+            # string repetition): cannot flow into a predicted value, so its
+            # magnitude is irrelevant. This MUST precede the magnitude rules.
+            cls = "non_arithmetic"
         elif isinstance(val, int) and val in STRUCTURAL_INTS:
             cls = "structural"
         elif isinstance(val, int):
-            cls = "structural"          # remaining ints: indices/exponents
-        elif id(n) not in arith:
-            cls = "precision"           # non-arithmetic float (format, default)
+            # indices / exponents are small; a large bare int is a candidate
+            cls = ("structural" if abs(val) <= MAX_STRUCTURAL_INT
+                   else "UNTRACEABLE")
         elif _is_power_of_ten(val):
             cls = "unit_conversion"     # ppb/ppm/percent scaling; carries no physics
-        elif _is_half_integer(val):
-            cls = "structural_float"    # n/2 formula coefficient written as a float
+        elif _is_integral_float(val) or _is_half_odd(val):
+            cls = "structural_float"    # integer-as-float, or sqrt-derivative n/2
         else:
             key = (mod, float(val), name)
             cls = "adjudicated" if key in VERDICT_LEDGER else "UNTRACEABLE"
@@ -281,10 +333,14 @@ def self_test() -> int:
         (0.5, True), (1.0, True), (1.5, True), (2.0, True), (8.0, True),
         (4.73124891, False),                          # a fitted constant
         (0.1723456, False), (2.718281828, False),     # ditto
+        (12.5, False),                                # half-odd beyond the bound
+        (137.036, False),                             # a plausible-looking fit
+        (23.5, False),                                # would have passed at |n|<=48
     ]
     bad = []
     for v, safe in cases:
-        detected_safe = _is_power_of_ten(v) or _is_half_integer(v)
+        detected_safe = (_is_power_of_ten(v) or _is_integral_float(v)
+                         or _is_half_odd(v))
         if detected_safe != safe:
             bad.append((v, safe, detected_safe))
     if bad:
