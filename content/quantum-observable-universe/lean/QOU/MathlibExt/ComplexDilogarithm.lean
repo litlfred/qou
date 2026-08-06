@@ -49,8 +49,10 @@ next brick, and it needs the continuation first.
 
 This is deliberately written in Mathlib style (series definition, `Summable`
 lemmas, no QOU-specific dependencies beyond Mathlib itself) so it can be
-offered upstream once the continuation and reflection land. That is the
-`qou-mlib` bean.
+offered upstream once the continuation and reflection land. Upstreaming is
+premature until then and has no bean of its own; it is recorded as a follow-on
+inside `qou-gkco`. (An earlier revision of this line cited a bean `qou-mlib`
+that was never created — corrected 2026-08-06.)
 
 -- Ref: [manuscript] bean qou-ph1k; docs/coordination/1ppq-qbeta.md 2026-08-02
 -- Ref: [lewin1981] Polylogarithms and Associated Functions, L. Lewin
