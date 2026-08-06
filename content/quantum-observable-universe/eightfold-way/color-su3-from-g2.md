@@ -40,10 +40,21 @@ $$
 Pinching an $S_4$-invariant 1-cycle on $\Sigma_4$ produces a nodal curve
 of arithmetic genus 4 but geometric genus 3.  The $S_4$ symmetry
 survives the pinch (it fixes the vanishing cycle).  On the
-normalization $\Sigma_3$ of genus 3, the Hurwitz bound forces the
-automorphism group to be at most $\mathrm{PSL}(2,7)$, and since $S_4$
-embeds in $\mathrm{PSL}(2,7)$ as a point stabilizer, the enhancement
-$S_4 \hookrightarrow \mathrm{PSL}(2,7)$ is the unique maximal option.
+normalization $\Sigma_3$ of genus 3, the Hurwitz bound gives
+$|\mathrm{Aut}| \leq 84(3-1) = 168$, which $\mathrm{PSL}(2,7)$ attains.
+
+\textbf{The gap in this argument.}  The Hurwitz bound is an
+\emph{upper} bound; it does not force the automorphism group to be
+$\mathrm{PSL}(2,7)$, and the generic genus-3 curve has small or trivial
+automorphism group.  That $S_4$ embeds in $\mathrm{PSL}(2,7)$ as a point
+stabilizer shows the enhancement is \emph{available}, not that it
+\emph{occurs}: nothing here rules out the normalization being a genus-3
+curve whose automorphism group is exactly $S_4$, or any other group
+containing $S_4$.  An earlier draft called the enhancement ``the unique
+maximal option'' and treated maximality as selection; that inference is
+withdrawn.  Identifying the normalization requires exhibiting the curve
+--- for instance by computing the pinched surface's period matrix and
+matching it against the Klein quartic --- which has not been done.
 
 \textbf{Status:} the $S_4$ bridge mechanism is computationally verified
 (\texttt{s4\_bridge\_verification.py}, \texttt{s4\_fano\_action.py}).

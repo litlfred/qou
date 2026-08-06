@@ -43,11 +43,18 @@ Gell-Mann--Okubo relation
 $$
   4 m_K^2 = 3 m_\eta^2 + m_\pi^2.
 $$
-Within QOU, this relation is a consequence of the crossing-energy
-splitting pattern on the $A_2$ weight lattice, where the kaon
-involves a strange-quark braid word with different writhe than the
-pion.  The precise numerical agreement depends on the substrate
-parameter $q_0$ and is an open cross-check.
+Within QOU this relation is \emph{not} derived.  The conjecture on offer
+is that it should follow from the crossing-energy splitting pattern on
+the $A_2$ weight lattice, the kaon involving a strange-quark braid word
+of different writhe than the pion; but no such derivation exists, and the
+one numerical cross-check run so far does not support it.  Measured
+against experiment the Gell-Mann--Okubo relation is satisfied to
+$\approx 6\%$, whereas the $q$-deformation of the adjoint quantum
+dimension at $q_0 \approx 1.11$ is $\approx 3.3\%$
+(\texttt{gmo\_meson\_crosscheck.py}).  Same order of magnitude, factor
+$\approx 2$ apart, with no mechanism connecting the two numbers.  This is
+an unexplained coincidence of scale, recorded as such; it is neither a
+derivation nor evidence for one, and it must not be cited as agreement.
 
 **Conditional on $N = 3$ and on $Y$.**
 Mass splittings between isospin multiplets (e.g.\ $\pi$ vs.\ $K$)

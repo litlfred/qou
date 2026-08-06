@@ -82,5 +82,17 @@ construction directions are:
   provides a non-self-dual triple from $\mathrm{SU}(3) \subset G_2$
   (Proposition~\ref{prop:color-su3-from-g2}).
 \end{enumerate}
-The second route has passed the $\mathrm{Sym}^2$ gate.  Whether it
-yields \emph{flavour} $\mathrm{SU}(3)$ (not just colour) remains open.
+\textbf{Status of the $\mathrm{Sym}^2$ gate.}  The gate is the
+requirement that $\mathrm{Sym}^2(W)$ contain no singlet.  The Lean file
+\texttt{QOU/Eightfold/Sym2Gate.lean} records the arithmetic of the test
+($\dim \mathrm{Sym}^2(\mathbf{3}) = 6$; the icosahedral triple $T_1$
+decomposes $1 + 5$ and so carries a singlet, while the octonionic
+$\mathbf{3}$ decomposes $6 + 0$ and does not).  What that file
+\emph{proves} is only the arithmetic --- its declarations reduce to
+identities such as $6 = 6 \wedge 0 = 0$, with the representation-theoretic
+content supplied by hand in the statement names, not by the proofs.  So
+the correct reading is: the octonionic $\mathbf{3}$ is \emph{not
+excluded} by the $\mathrm{Sym}^2$ gate, on a decomposition taken from the
+literature.  It is not a machine-checked pass, and the file should not be
+cited as one.  Whether the route yields \emph{flavour} $\mathrm{SU}(3)$
+(not just colour) remains open.

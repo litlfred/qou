@@ -20,5 +20,9 @@ export default proposition({
     "def:braid-group",
     "def:hecke-algebra",
   ],
-  lean: "qou:QOU.Eightfold.A2FromThreeStrands",
+  // The A₂ Cartan data this block states (fixed integer matrix, off-diagonal
+  // −1, Serre exponent, root-angle ratio) is machine-checked in
+  // WeylInvarianceQDeformation. There is no separate A2FromThreeStrands
+  // module — the earlier ref to one did not resolve.
+  lean: "qou:QOU.Eightfold.WeylInvarianceQDeformation",
 });

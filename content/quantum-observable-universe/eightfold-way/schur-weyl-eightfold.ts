@@ -22,5 +22,10 @@ export default proposition({
     "def:hecke-algebra",
     "prop:a2-from-three-strands",
   ],
-  lean: "qou:QOU.Eightfold.WeylInvarianceQDeformation",
+  // No Lean sibling: quantum Schur-Weyl duality at (n=3, N=3) is not
+  // formalised in this corpus, and the N=3 hypothesis it needs is the
+  // chapter's principal open problem. The previous ref pointed at
+  // WeylInvarianceQDeformation, which proves q-independence of the A₂ root
+  // datum -- a different statement -- and is removed rather than left to
+  // imply machine-checked backing this block does not have.
 });

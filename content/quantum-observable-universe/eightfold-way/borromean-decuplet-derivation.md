@@ -7,8 +7,11 @@ The Schur--Weyl decomposition at $N = 3$, $n = 3$ assigns the
 partition $\lambda = (3)$ to the fully symmetric subspace of
 $V^{\otimes 3}$, which has dimension $\binom{N+n-1}{n} = \binom{5}{3}
 = 10$.  The $10$ states correspond to the $10$ elements of the weight
-diagram with vertices at $(3,0,0)$, $(0,3,0)$, $(0,0,3)$
-(the $\Delta^{++}$, $\Sigma^{*0}$, $\Omega^-$ corners):
+diagram, a triangle with vertices at $(3,0,0)$, $(0,3,0)$, $(0,0,3)$ in
+quark-count coordinates $(n_u, n_d, n_s)$ --- that is, the corners
+$\Delta^{++}\ (uuu)$, $\Delta^{-}\ (ddd)$ and $\Omega^{-}\ (sss)$.  The
+remaining seven states fill the edges and the centre, with
+$\Sigma^{*0}\ (uds)$ at the centre:
 
 \begin{center}
 \begin{tabular}{l c c c}
@@ -34,11 +37,31 @@ Each decuplet state is a Borromean baryon: three quark-unknots joined
 by the Borromean link $\mathcal{B}_3$.  The symmetric partition
 $\lambda = (3)$ corresponds to the Hecke symmetrizer
 $e_{(3)} = \sum_{\sigma \in S_3} T_\sigma$, which projects onto the
-subspace where all three strands are interchangeable.  Topologically,
-this is the Borromean property: the three-component Borromean link is
-the simplest Brunnian link, and removing any one component frees the
-other two --- matching the physical property that a baryon's quark
-content is fully symmetric under flavor exchange in the decuplet.
+subspace where all three strands are interchangeable.
+
+\textbf{What the Borromean topology does and does not supply.}
+The Borromean link carries an $S_3$ symmetry permuting its three
+components, so it is a *consistent* carrier for the symmetric channel.
+It does not, however, *select* that channel: the octet $(2,1)$ and the
+singlet $(1^3)$ live on the same three strands and are equally available
+to the same link.  Brunnian-ness --- that removing any one component
+frees the other two --- is a statement about sublink triviality, and no
+argument in this framework connects it to the Young-symmetriser
+decomposition of $V^{\otimes 3}$.  Earlier drafts of this block asserted
+such a connection; it is withdrawn as a non-sequitur.  The channel
+selection is carried entirely by the Hecke projector, not by the
+topology.
+
+\textbf{Missing ingredient: spin and colour.}
+The physical decuplet is spin-$3/2$, and what forces the *flavour*-symmetric
+channel for it is the requirement that the total wavefunction be
+antisymmetric once colour is included: with colour antisymmetric and
+spin symmetric, flavour must be symmetric.  This chapter derives neither
+the spin factor nor the colour antisymmetry, so the identification
+$\lambda = (3) \leftrightarrow$ decuplet is at present a *matching of
+dimensions and weights*, not a derivation of the spin--flavour--colour
+selection rule.  This is recorded as an open item in
+\S\ref{sec:eightfold-open-problems}.
 
 \textbf{Octet vs.\ decuplet.}
 The mixed partition $\lambda = (2,1)$ gives the $8$-dimensional
