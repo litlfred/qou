@@ -16,7 +16,7 @@ Mathlib carries **no polylogarithm** (no `Polylog`, no `dilog` — checked
 revision of this header mentioned only the Mathlib gap, which read as "no
 dilogarithm exists" and is misleading):
 
-* `QOU.Archimedean.LiTwo : ℝ → ℝ`, the series `∑' k, x^(k+1)/(k+1)²`;
+* `QOU.QPochhammer.LiTwo : ℝ → ℝ`, the series `∑' k, x^(k+1)/(k+1)²`;
 * `QOU.Archimedean.LiTwo_reflection'` — **sorry-free** — the Euler reflection
   `LiTwo x + LiTwo (1−x) = π²/6 − log x · log(1−x)` for `0 < x < 1`, together
   with the derivative infra Mathlib lacks.

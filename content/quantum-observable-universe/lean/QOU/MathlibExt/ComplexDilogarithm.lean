@@ -3,7 +3,7 @@
 
 **Mathlib has no polylogarithm at all** (checked 2026-08-06: no `Polylog`, no
 `dilog`, no `Real.dilog`). QOU already carries a *real* one —
-`QOU.Archimedean.LiTwo : ℝ → ℝ` with `LiTwo_reflection'` proved sorry-free on
+`QOU.QPochhammer.LiTwo : ℝ → ℝ` with `LiTwo_reflection'` proved sorry-free on
 `(0,1)` — but the 5₂ saddle sum rule needs `Li₂` at **complex** arguments, and
 that is what this file starts.
 
@@ -31,7 +31,7 @@ That is the whole of it. This is a foundation, not a usable dilogarithm yet.
 
 It does **not** provide:
 
-* agreement with the real `QOU.Archimedean.LiTwo` on ℝ (deliberately: that
+* agreement with the real `QOU.QPochhammer.LiTwo` on ℝ (deliberately: that
   import would tie this file to QOU and defeat the upstreaming goal below);
 * analytic continuation past `|z| = 1` — needed for `y₁` (`|y₁| = 1.52`);
 * the complex Euler reflection `Li₂ z + Li₂ (1−z) = π²/6 − log z · log(1−z)`;
@@ -66,7 +66,7 @@ open Complex
 `Li₂ z = ∑_{k ≥ 0} z^(k+1)/(k+1)²`.
 
 Indexed from `k = 0` with numerator `z^(k+1)` so the `k`-th term is
-`z^(k+1)/(k+1)²`, matching `QOU.Archimedean.LiTwo` term by term. Outside the
+`z^(k+1)/(k+1)²`, matching `QOU.QPochhammer.LiTwo` term by term. Outside the
 closed unit disc the `tsum` is `0` by Mathlib's junk-value convention; the
 lemmas below are all guarded by a disc hypothesis. -/
 noncomputable def cLiTwo (z : ℂ) : ℂ :=
