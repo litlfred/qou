@@ -4,17 +4,34 @@ Iwahori--Hecke algebra $H_n(q)$, and the confinement hierarchy organises
 these configurations into shells.  The question this chapter settles is:
 *why do these particles fall into octets and decuplets?*
 
-The answer lies in the representation theory of three-strand braiding.
-The braid group $B_3$ and its $q$-deformation $H_3(q)$ carry the
-structure of the $A_2$ root system --- the Lie-algebraic skeleton of
-$\mathrm{SU}(3)$.  This is not an imported symmetry: it is a structural
-theorem of the categorical braid representation established in
-Chapter~\ref{chap:braids-and-knots}.  The single-fibre construction
-yields a quantum form of
-$\mathrm{SU}(2)$, whose fundamental representation $V$ is
-$2$-dimensional.  On $V^{\otimes 3}$, the two generators $\sigma_1,
-\sigma_2$ of $B_3$ produce the first non-trivial braid group action, and
-the Hecke relations they satisfy encode the $A_2$ Cartan matrix.
+The candidate answer lies in the representation theory of three-strand
+braiding --- but the chapter must open with a warning about the shape of
+that answer, because the obvious reading of it is wrong.
+
+**Two different $A_2$s.**
+The braid group $B_3$ and its $q$-deformation $H_3(q)$ have Coxeter type
+$A_2$: the Coxeter quotient of $B_3$ is $W(A_2) \cong S_3$, permuting the
+three *strands*.  This is true, but it is true *by construction* --- the
+braid group on $n$ strands has Coxeter type $A_{n-1}$ by definition, so
+choosing $n = 3$ is what puts $A_2$ there.  It is not a structural theorem
+about the substrate, and nothing is derived from it.
+
+The $A_2$ that the eightfold way needs is a *different* one: the Lie
+algebra $\mathfrak{sl}_3$ of flavour $\mathrm{SU}(3)$, which in quantum
+Schur--Weyl duality (\S\ref{sec:baryon-multiplets}) is the partner acting
+on the *fibre* $V$, and which appears only when $\dim V = N = 3$.  The two
+$A_2$s coincide in name --- and in this chapter's diagrams --- solely
+because we have set $n = 3$ and would like $N = 3$.  Setting $n = 3$ does
+not make $N = 3$.
+
+This distinction is the chapter's central honesty constraint, and the
+reason \S\ref{sec:baryon-multiplets} records the $N = 3$ problem as the
+chapter's principal open problem rather than as a solved step: the
+single-fibre construction of
+Chapter~\ref{chap:braids-and-knots} yields a quantum form of
+$\mathrm{SU}(2)$, with $\dim V = 2$, and no choice of $q$ raises it.
+Every flavour-$\mathrm{SU}(3)$ statement below is therefore *conditional
+on $N = 3$*, and is marked as such.
 
 \S\ref{sec:a2-root-system} derives the $A_2$ root system from the Hecke
 relations of $H_3(q)$ and identifies the hexagonal weight lattice.

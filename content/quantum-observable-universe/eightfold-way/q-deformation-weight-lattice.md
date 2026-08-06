@@ -26,18 +26,34 @@ These are two different mathematical objects that coincide numerically
 at $q = 1$: one is a binomial coefficient, the other is a normalization
 constant.
 
-**What is $q$-independent (proved in Lean).**
+**What is $q$-independent — machine-checked.**
+The following are proved sorry-free in
+\texttt{QOU/Eightfold/WeylInvarianceQDeformation.lean}:
 \begin{itemize}
-\item The Cartan matrix $a_{ij}$ (fixed integer data).
+\item The Cartan matrix $a_{ij}$ is fixed integer data, independent of
+  $q$ (\texttt{cartanMatrix\_A2\_q\_independent}, quantified over two
+  arbitrary $q_1, q_2$ in any commutative ring).
+\item The off-diagonal entry $a_{12} = -1$ and the Serre exponent
+  $1 - a_{12} = 2$ (\texttt{cartan\_A2\_offdiag},
+  \texttt{serre\_exponent\_A2}).
+\item The $q$-Serre coefficient $[2]_q$ and the Cartan diagonal
+  $a_{ii} = 2$ are distinct objects, agreeing only at $q = 1$
+  (\texttt{qSerre\_neq\_cartan\_diag},
+  \texttt{qSerre\_eq\_cartan\_at\_classical}) --- the ``two $2$s''
+  separation above.
+\item The root-angle ratio $\cos\theta = a_{ij}/a_{ii} = -1/2$
+  (\texttt{root\_angle\_ratio\_A2}).
+\end{itemize}
+
+**What is $q$-independent — standard, but not formalised here.**
+These follow from the Drinfeld--Jimbo construction and are cited, not
+machine-checked in this corpus:
+\begin{itemize}
 \item The root lattice $\Lambda_R = \mathbb{Z}\alpha_1 \oplus
-  \mathbb{Z}\alpha_2$.
+  \mathbb{Z}\alpha_2$ and the weight lattice $\Lambda_W =
+  \mathbb{Z}\omega_1 \oplus \mathbb{Z}\omega_2$.
 \item The Weyl group $W(A_2) \cong S_3$.
-\item The weight lattice $\Lambda_W = \mathbb{Z}\omega_1 \oplus
-  \mathbb{Z}\omega_2$.
-\item The root angles: $\cos\theta = -1/2$ between adjacent simple
-  roots.
-\item Weight multiplicities: by the Kazhdan--Lusztig theorem, for
-  generic $q$ the representation category
+\item Weight multiplicities: for generic $q$ the representation category
   $\mathrm{Rep}\,\mathcal{U}_q(\mathfrak{g})$ is tensor-equivalent to
   $\mathrm{Rep}\,\mathfrak{g}$.  Crystal bases exist precisely because
   the weight combinatorics is $q$-independent (the $q \to 0$ limit

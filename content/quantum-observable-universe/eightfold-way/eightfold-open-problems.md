@@ -60,6 +60,30 @@ construction of this chapter, each stated with a falsifiable test.
   generation-independent.  Why there are exactly three generations
   of fermions is a separate open problem (T6), not addressed here.
 
+\item \textbf{Spin--flavour--colour selection rule.}
+  The identification $\lambda = (3) \leftrightarrow$ decuplet,
+  $\lambda = (2,1) \leftrightarrow$ octet
+  (Proposition~\ref{prop:borromean-decuplet}) currently matches
+  dimensions and weights only.  What physically forces the symmetric
+  flavour channel for the spin-$3/2$ decuplet is antisymmetry of the
+  total wavefunction once colour is included --- colour antisymmetric
+  and spin symmetric force flavour symmetric.  This chapter derives
+  neither the spin factor nor the colour antisymmetry.  \emph{Open:}
+  produce the spin degree of freedom and the colour-antisymmetry
+  constraint from the braid structure, and show that together they
+  select the Young symmetriser rather than merely being compatible
+  with it.
+
+\item \textbf{Gell-Mann--Okubo.}
+  The meson mass relation $4m_K^2 = 3m_\eta^2 + m_\pi^2$ is not
+  derived (Remark~\ref{rem:meson-mass-splitting}).  The experimental
+  deviation ($\approx 6\%$) and the $q$-deformation of the adjoint
+  quantum dimension at $q_0$ ($\approx 3.3\%$) agree in order of
+  magnitude and differ by a factor $\approx 2$, with no mechanism
+  linking them.  \emph{Open:} either derive the splitting pattern from
+  the crossing energy, or record the numerical proximity as
+  coincidence.  It is currently the latter.
+
 \item \textbf{Ocneanu/Markov trace parameter.}
   The Markov trace $\tau$ on $H_n(q)$ involves a second parameter
   $z$ (the trace parameter).  In QOU, $q$ is the substrate parameter

@@ -29,7 +29,7 @@ $\Delta^{++}$ & symmetric $(uuu)$ & $+\tfrac{3}{2}$ & $+1$ & decuplet \\
 $\Omega^-$    & symmetric $(sss)$ & $0$ & $-2$ & decuplet \\
 \hline
 \multicolumn{5}{c}{\textit{Color charge (orthogonal to flavor)}} \\
-$r, g, b$ & $G_2$ stabilizer (\S\ref{sec:color-algebra}) & --- & --- & Sym$^2$ gate passed \\
+$r, g, b$ & $G_2$ stabilizer (\S\ref{sec:color-algebra}) & --- & --- & not excluded by the Sym$^2$ gate \\
 \hline
 \end{tabular}
 \end{center}
@@ -43,6 +43,16 @@ The quark flavor assignments are \emph{conditional on $N = 3$}
 follow from the octonionic $G_2$ route but remain at the
 discrete-skeleton level pending the continuous $G_2$ completion.
 
-No entry in this table is a fit: each derives from the categorical
-braid structure or is marked as open.  The table will be updated as
-the open problems of \S\ref{sec:eightfold-open-problems} are resolved.
+\textbf{What the $(I_3, Y)$ columns are.}  With one exception they are
+the standard $\mathrm{SU}(3)$ flavour assignments, imported from the
+eightfold-way classification and placed against the braid column to show
+that the dictionary is \emph{consistent} with it.  They are not outputs
+of the braid construction.  The exception is $I_3$ on the nucleon
+doublet, where the writhe difference reproduces $\Delta I_3 = 1$
+scale-free --- that entry is derived.  Every $Y$ entry, and every quark
+row, is either open or conditional on $N = 3$.
+
+No entry in this table is a \emph{fit} --- nothing here was tuned to
+match data --- but neither is the table a derivation of the flavour
+quantum numbers.  It is a consistency ledger, and will be updated as the
+open problems of \S\ref{sec:eightfold-open-problems} are resolved.
