@@ -7,7 +7,22 @@ created_at: 2026-08-05T02:22:18Z
 updated_at: 2026-08-05T03:00:00Z
 ---
 
-## What is open
+## ⚠ CLOSED AGAINST A FALSE GOAL (2026-08-06)
+
+`specht_gram_orthogonal` is **FALSE**. The standard-polytabloid Gram matrix is
+not diagonal: `μ = (2,1)` gives `[[2,1],[1,2]]`, off-diagonal `1 ≠ 0`. Verified
+by enumeration for every `μ ⊢ n`, `n ≤ 5`
+(`computations/specht_gram_orthogonality_refutation.py`).
+
+`sagan_row_col_clash` itself is TRUE — but Sagan §2.4 uses it for
+**triangularity** w.r.t. the dominance order, not orthogonality. This bean was
+marked completed while serving a target that cannot be reached. The lemma has
+been removed from `SpechtIrreducible.lean` (no consumer, proof body did not
+typecheck); recover from git history if a triangularity route needs it.
+
+Superseded by `qou-sgd1`.
+
+## What was open (original text, retained)
 
 `QOU.BraidKnot.SpechtIrreducible.specht_gram_orthogonal` (line 795):
 > For distinct SYT `S ≠ T`: `bilinM μ (standardPolytabloid S) (standardPolytabloid T) = 0`.
