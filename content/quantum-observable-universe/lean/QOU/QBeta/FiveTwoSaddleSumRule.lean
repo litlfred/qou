@@ -73,6 +73,46 @@ theorem cubic_iff_sq_eq_cube {R : Type*} [CommRing R] (y : R) :
     y ^ 3 - 2 * y ^ 2 + 3 * y - 1 = 0 ↔ y ^ 2 = (1 - y) ^ 3 := by
   constructor <;> intro h <;> linear_combination h
 
+/-! ### The branch data is a THEOREM, not an assumption
+
+`sum_reflection_of_branch` below takes the branch relation
+`2·log yⱼ − 3·log(1−yⱼ) = 2πi·εⱼ` as a hypothesis. It need not be assumed:
+it follows from the cubic alone, with no dilogarithm involved. -/
+
+/-- `exp (2·log y − 3·log(1−y)) = 1` whenever `y² = (1−y)³`.
+
+The exponential collapses the logarithms back to `y²/(1−y)³`, which the cubic
+makes `1`. No branch choice is made here — that is the point. -/
+theorem exp_branch_eq_one {y : ℂ} (hy : y ≠ 0) (hy1 : (1 : ℂ) - y ≠ 0)
+    (h : y ^ 2 = (1 - y) ^ 3) :
+    Complex.exp (2 * Complex.log y - 3 * Complex.log (1 - y)) = 1 := by
+  have e1 : Complex.exp (2 * Complex.log y) = y ^ 2 := by
+    rw [show (2 : ℂ) * Complex.log y = Complex.log y + Complex.log y by ring,
+      Complex.exp_add, Complex.exp_log hy]
+    ring
+  have e2 : Complex.exp (3 * Complex.log (1 - y)) = (1 - y) ^ 3 := by
+    rw [show (3 : ℂ) * Complex.log (1 - y)
+        = Complex.log (1 - y) + Complex.log (1 - y) + Complex.log (1 - y) by ring,
+      Complex.exp_add, Complex.exp_add, Complex.exp_log hy1]
+    ring
+  rw [Complex.exp_sub, e1, e2, h]
+  exact div_self (pow_ne_zero 3 hy1)
+
+/-- **The branch data of the 5₂ cubic, derived.**
+
+Every root of `y² = (1−y)³` satisfies `2·log y − 3·log(1−y) = k·(2πi)` for some
+integer `k`. Numerically `k = (+1, −1, 0)` at the three 5₂ roots, and this is
+the sole source of the `π²` in the sum rule.
+
+This discharges the `hbranch` hypothesis of `sum_reflection_of_branch` from the
+cubic alone — no dilogarithm, no analytic input. -/
+theorem branch_data_of_cubic {y : ℂ} (hy : y ≠ 0) (hy1 : (1 : ℂ) - y ≠ 0)
+    (h : y ^ 2 = (1 - y) ^ 3) :
+    ∃ k : ℤ, 2 * Complex.log y - 3 * Complex.log (1 - y)
+      = k * (2 * (Real.pi : ℂ) * I) := by
+  have hexp := exp_branch_eq_one hy hy1 h
+  rwa [Complex.exp_eq_one_iff] at hexp
+
 /-! ### The reflection reduction
 
 The analytic content of the partial derivation. `Li` is abstract: the only
