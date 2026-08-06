@@ -1,7 +1,7 @@
 ---
 # qou-tup9
 title: 'GAP: Sagan 2.4.7 row/col clash lemma for specht_gram_orthogonal'
-status: todo
+status: completed
 type: task
 created_at: 2026-08-05T02:22:18Z
 updated_at: 2026-08-05T03:00:00Z
