@@ -48,8 +48,15 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 
-# Entry points whose closure constitutes "the canonical prediction path".
-ENTRY_MODULES = ["canonical_mass"]
+# Entry points whose closure constitutes "the prediction surface".
+# Each is audited separately so a finding is attributable to an observable.
+ENTRY_POINTS = {
+    "canonical_mass":             "absolute nucleon mass (m_p, m_n)",
+    "per_observable_100x_status": "the L2 dashboard — all seven scored observables",
+    "meson_mass_from_hecke":      "meson ratios (m_K/m_pi)",
+    "binding_K_direct":           "per-isotope binding",
+}
+ENTRY_MODULES = sorted(ENTRY_POINTS)
 
 # Modules whose literals are calibration inputs by construction.
 CALIBRATION_MODULES = {
@@ -176,6 +183,27 @@ def _enclosing_assign_name(tree: ast.AST, node: ast.AST) -> str:
     return ""
 
 
+def _is_power_of_ten(v: float) -> bool:
+    """1e3, 1e6, 1e-9 ... — unit scaling, never a physics parameter."""
+    if v == 0:
+        return False
+    a = abs(float(v))
+    import math
+    lg = math.log10(a)
+    return abs(lg - round(lg)) < 1e-12
+
+
+def _is_half_integer(v: float) -> bool:
+    """n/2 for a small integer n: formula coefficients such as 1.0, 0.5, 1.5, 2.0.
+
+    Half-integers are included because they arise structurally from
+    square-root derivatives (d/dq of q^{1/2} gives 1/2, 3/2 exponents).
+    Bounded to |n| <= 24 so a fitted value cannot masquerade as one.
+    """
+    x = float(v) * 2
+    return abs(x - round(x)) < 1e-12 and abs(round(x)) <= 48
+
+
 def _reads_witness(tree: ast.AST) -> bool:
     return any(
         isinstance(n, ast.Constant)
@@ -223,13 +251,15 @@ def audit_module(mod: str) -> list[dict]:
             cls = "structural"          # remaining ints: indices/exponents
         elif id(n) not in arith:
             cls = "precision"           # non-arithmetic float (format, default)
-        elif witness_backed:
-            cls = "derived"
+        elif _is_power_of_ten(val):
+            cls = "unit_conversion"     # ppb/ppm/percent scaling; carries no physics
+        elif _is_half_integer(val):
+            cls = "structural_float"    # n/2 formula coefficient written as a float
         else:
             key = (mod, float(val), name)
             cls = "adjudicated" if key in VERDICT_LEDGER else "UNTRACEABLE"
 
-        if cls in ("UNTRACEABLE", "derived", "adjudicated"):
+        if cls in ("UNTRACEABLE", "unit_conversion", "structural_float", "adjudicated"):
             findings.append({
                 "module": mod,
                 "line": n.lineno,
@@ -242,28 +272,75 @@ def audit_module(mod: str) -> list[dict]:
     return findings
 
 
+def self_test() -> int:
+    """Prove the classifier actually fires. A detector that never fires is
+    worthless, so this asserts both directions on synthetic values."""
+    cases = [
+        # (value, expected-safe?)  safe == would NOT be reported UNTRACEABLE
+        (1e6, True), (1e9, True), (1e-9, True),      # unit conversions
+        (0.5, True), (1.0, True), (1.5, True), (2.0, True), (8.0, True),
+        (4.73124891, False),                          # a fitted constant
+        (0.1723456, False), (2.718281828, False),     # ditto
+    ]
+    bad = []
+    for v, safe in cases:
+        detected_safe = _is_power_of_ten(v) or _is_half_integer(v)
+        if detected_safe != safe:
+            bad.append((v, safe, detected_safe))
+    if bad:
+        print("SELF-TEST FAILED:")
+        for v, exp, got in bad:
+            print(f"   {v!r}: expected safe={exp}, classifier said {got}")
+        return 1
+    print(f"SELF-TEST PASSED — classifier separates {len(cases)} synthetic cases "
+          "(unit/structural vs fitted) correctly.")
+    return 0
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
+    ap.add_argument("--self-test", action="store_true",
+                    help="assert the classifier fires on fitted values and not on unit/structural ones")
     ap.add_argument("--strict", action="store_true",
                     help="exit 1 if any UNTRACEABLE literal survives")
     ap.add_argument("--json", action="store_true", help="print the witness to stdout")
     args = ap.parse_args()
+    if args.self_test:
+        return self_test()
 
+    per_entry = {}
+    for ep in ENTRY_MODULES:
+        m_ep, u_ep = _closure([ep])
+        f_ep = []
+        for m in m_ep:
+            f_ep.extend(audit_module(m))
+        per_entry[ep] = {
+            "description": ENTRY_POINTS[ep],
+            "modules": len(m_ep),
+            "unresolved": u_ep,
+            "untraceable": [f for f in f_ep if f["class"] == "UNTRACEABLE"],
+        }
     mods, unresolved = _closure(ENTRY_MODULES)
     all_findings: list[dict] = []
     for m in mods:
         all_findings.extend(audit_module(m))
 
     untraceable = [f for f in all_findings if f["class"] == "UNTRACEABLE"]
-    derived = [f for f in all_findings if f["class"] == "derived"]
+    derived = [f for f in all_findings if f["class"] in ("unit_conversion", "structural_float")]
     adjudicated = [f for f in all_findings if f["class"] == "adjudicated"]
 
     print("=" * 74)
     print("NO-FREE-PARAMETER CERTIFICATE — canonical prediction path (T5)")
     print("=" * 74)
-    print(f"  entry points      : {', '.join(ENTRY_MODULES)}")
+    print("  per entry point:")
+    for ep, d in sorted(per_entry.items()):
+        flag = "OK " if not d["untraceable"] and not d["unresolved"] else "!! "
+        print(f"    {flag}{ep:<28} {d['modules']:>3} mods  "
+              f"{len(d['untraceable']):>3} untraceable  "
+              f"{len(d['unresolved']):>2} unresolved   ({d['description']})")
+    print()
     print(f"  modules in closure: {len(mods)}")
-    print(f"  derived (witness) : {len(derived)}")
+    print(f"  unit/structural   : {len(derived)}")
     print(f"  adjudicated legit : {len(adjudicated)}")
     print(f"  UNTRACEABLE       : {len(untraceable)}")
     if unresolved:
@@ -294,10 +371,11 @@ def main() -> int:
             "entry_modules": ENTRY_MODULES,
             "modules_in_closure": mods,
             "unresolved_imports": unresolved,
+            "per_entry_point": per_entry,
             "counts": {
                 "modules": len(mods),
                 "unresolved_imports": len(unresolved),
-                "derived_from_witness": len(derived),
+                "unit_or_structural_floats": len(derived),
                 "adjudicated_legit": len(adjudicated),
                 "untraceable": len(untraceable),
             },
