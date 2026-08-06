@@ -1,5 +1,6 @@
 import QOU.BraidKnot.Specht
 import QOU.BraidKnot.SpechtStandardBasis
+import QOU.BraidKnot.SpechtDominanceCore
 import Mathlib.LinearAlgebra.SesquilinearForm.Basic
 import Mathlib.Algebra.Algebra.Bilinear
 import Mathlib.Tactic.Group
@@ -44,8 +45,10 @@ consume is now proved (§4.x), so the lemma carries no residual `sorry`.
 | `kap_of_mem_line` (column-clash lemma) | **sorry-free** (was: full stub) |
 | `kapL_mem_line` (from the core) | **sorry-free** |
 | `specht_submodule_dichotomy` (James §8) | **sorry-free** (was: full stub) |
-| `specht_form_nondegenerate` (char-0 Gram) | **STUB** `sorry` — `-- Ref: [sagan2001]` §2.4 |
+| `specht_form_nondegenerate` (char-0 Gram) | **STUB** `sorry` — see the corrected two-stage plan in its docstring |
 | `specht_isSimple` (the reduction) | **sorry-free MODULO the single remaining core** |
+| ~~`specht_gram_orthogonal`~~ | **REFUTED — false, do not restate.** `μ=(2,1)` Gram is `[[2,1],[1,2]]` |
+| ~~`specht_gram_diag`~~, ~~`kap_of_clash_eq_zero`~~, ~~`sagan_row_col_clash`~~ | **removed** — true statements, but orphaned by the refutation and left non-typechecking; recover from git history |
 
 `#print axioms` confirms `sorryAx` enters `specht_isSimple` *only* through the one
 remaining core (`specht_form_nondegenerate`); the entire invariant-form + `κ_t`
@@ -711,310 +714,146 @@ entries of the Gram matrix of `bilinM` restricted to the standard-polytabloid ba
   other, producing a sign-canceling transposition in `C_T` that kills the inner product.
 -/
 
-/-- The diagonal Gram entry: `⟨e_T, e_T⟩ = |colStab T|`.
-Follows from the polytabloid double-sum and `colStab ∩ rowStab = {1}`. -/
-private lemma specht_gram_diag {k : Type} [CommRing k] (μ : YoungDiagram)
-    (T : StandardYoungTableau μ) :
-    bilinM (k := k) μ
-      (SpechtStandardBasisCore.standardPolytabloid T)
-      (SpechtStandardBasisCore.standardPolytabloid T) =
-    (Fintype.card (colStab (sytToTableau T)) : k) := by
-  classical
-  set t := sytToTableau T with ht
-  -- standardPolytabloid T = polytabloid t by definition
-  show bilinM (k := k) μ (polytabloid (k := k) t) (polytabloid (k := k) t) = _
-  -- Expand left polytabloid using linearity
-  rw [polytabloid, map_sum]
-  -- Expand right polytabloid using right linearity (each term is a linear map)
-  simp_rw [(bilinM (k := k) μ _).map_sum]
-  -- Pull out integer scalars from both sides
-  simp_rw [bilinM_zsmul_left, bilinM_zsmul_right]
-  -- Reduce to indicator function via bilinM_single_single
-  simp_rw [Mtab.of, bilinM_single_single, mul_one]
-  -- Key lemma: Tabloid.mk(π•t) = Tabloid.mk(σ•t) iff π = σ (as colStab t elements)
-  -- because σ⁻¹π ∈ rowStab(t) ∩ colStab(t) = {1}
-  have hmk_iff : ∀ (π σ : colStab t),
-      (Tabloid.mk ((π : Equiv.Perm (Fin (nOf μ))) • t) =
-       Tabloid.mk ((σ : Equiv.Perm (Fin (nOf μ))) • t)) ↔ π = σ := by
-    intro π σ
-    constructor
-    · intro heq
-      -- Tabloid.mk(π•t) = Tabloid.mk(σ•t) ↔ rowPattern(π•t) = rowPattern(σ•t)
-      rw [Tabloid.mk, Tabloid.mk, Quotient.eq, rowEquiv_iff,
-          rowPattern_smul, rowPattern_smul] at heq
-      -- heq : (π : Perm) • rowPattern t = (σ : Perm) • rowPattern t
-      -- Prove σ⁻¹π ∈ rowStab(t)
-      have hrow : (σ : Equiv.Perm (Fin (nOf μ)))⁻¹ * (π : Equiv.Perm (Fin (nOf μ))) ∈ rowStab t := by
-        rw [mem_rowStab]
-        calc ((σ : Equiv.Perm (Fin (nOf μ)))⁻¹ * (π : Equiv.Perm (Fin (nOf μ)))) • rowPattern t
-            = (σ : Equiv.Perm (Fin (nOf μ)))⁻¹ • ((π : Equiv.Perm (Fin (nOf μ))) • rowPattern t) :=
-                mul_smul _ _ _
-          _ = (σ : Equiv.Perm (Fin (nOf μ)))⁻¹ • ((σ : Equiv.Perm (Fin (nOf μ))) • rowPattern t) := by
-                rw [heq]
-          _ = ((σ : Equiv.Perm (Fin (nOf μ)))⁻¹ * (σ : Equiv.Perm (Fin (nOf μ)))) • rowPattern t :=
-                (mul_smul _ _ _).symm
-          _ = 1 • rowPattern t := by rw [inv_mul_cancel]
-          _ = rowPattern t := one_smul _ _
-      -- σ⁻¹π ∈ colStab(t) since both π, σ ∈ colStab(t)
-      have hcol : (σ : Equiv.Perm (Fin (nOf μ)))⁻¹ * (π : Equiv.Perm (Fin (nOf μ))) ∈ colStab t :=
-        (colStab t).mul_mem (Subgroup.inv_mem _ σ.2) π.2
-      -- By colStab_inf_rowStab_eq_one, σ⁻¹π = 1
-      have h1 : (σ : Equiv.Perm (Fin (nOf μ)))⁻¹ * (π : Equiv.Perm (Fin (nOf μ))) = 1 :=
-        SpechtTriangularCore.colStab_inf_rowStab_eq_one t hcol hrow
-      -- Conclude π = σ: from σ⁻¹ * π = 1 = σ⁻¹ * σ, cancel σ⁻¹
-      apply Subtype.ext
-      exact mul_left_cancel (a := (σ : Equiv.Perm (Fin (nOf μ)))⁻¹)
-        (h1.trans (inv_mul_cancel (σ : Equiv.Perm (Fin (nOf μ)))).symm)
-    · intro heq
-      rw [heq]
-  -- Convert the ifs: mk(π•t) = mk(σ•t) iff π = σ
-  simp_rw [hmk_iff]
-  -- The inner sum has form ∑ σ, (sign σ : ℤ) • if π = σ then 1 else 0
-  -- Distribute smul into the ite, then collapse with sum_ite_eq
-  simp_rw [smul_ite, smul_zero, Finset.sum_ite_eq, Finset.mem_univ, if_true]
-  -- Now ∑ π, (sign π : ℤ) • ((sign π : ℤ) • (1 : k))
-  -- Prove sgn(π)² • 1 = 1 for each π
-  have hsq : ∀ (π : colStab t),
-      (Equiv.Perm.sign (π : Equiv.Perm (Fin (nOf μ))) : ℤ) •
-      (Equiv.Perm.sign (π : Equiv.Perm (Fin (nOf μ))) : ℤ) • (1 : k) = 1 := by
-    intro π
-    have hunit : (Equiv.Perm.sign (π : Equiv.Perm (Fin (nOf μ)))) *
-                 (Equiv.Perm.sign (π : Equiv.Perm (Fin (nOf μ)))) = 1 :=
-      Int.units_mul_self _
-    have hval : ((Equiv.Perm.sign (π : Equiv.Perm (Fin (nOf μ))) : ℤˣ) : ℤ) *
-                ((Equiv.Perm.sign (π : Equiv.Perm (Fin (nOf μ))) : ℤˣ) : ℤ) = (1 : ℤ) :=
-      by exact_mod_cast congrArg Units.val hunit
-    simp only [smul_smul, hval, one_smul]
-  simp_rw [hsq]
-  -- ∑ π : colStab t, (1 : k) = Fintype.card (colStab t)
-  rw [Finset.sum_const, Finset.card_univ, nsmul_eq_mul, mul_one]
+/-! ### `specht_gram_diag` and `kap_of_clash_eq_zero` — removed (broken orphans)
 
-/-- Strengthening of `kap_of_mem_line_clash`: under the same clash hypotheses the
-value is literally `0` (not merely `∈ span {e_t}`).  The proof is the same
-sign-reversing involution; we keep the result as an equality so that callers can
-use it directly in `bilinM` computations without case analysis. -/
-private theorem kap_of_clash_eq_zero (μ : YoungDiagram) (t s : Tableau μ)
-    (a b : Fin (nOf μ)) (hab : a ≠ b)
-    (hcol : colPattern t a = colPattern t b)
-    (hrow : rowPattern s a = rowPattern s b) :
-    kapL (k := k) μ t (Mtab.of s) = 0 := by
-  classical
-  set τ : Equiv.Perm (Fin (nOf μ)) := Equiv.swap a b with hτ
-  have hτcol : τ ∈ colStab t := by
-    rw [mem_colStab]; funext l; show colPattern t (τ.symm l) = colPattern t l
-    rw [hτ, Equiv.symm_swap]
-    rcases eq_or_ne l a with rfl | hla
-    · rw [Equiv.swap_apply_left]; exact hcol.symm
-    · rcases eq_or_ne l b with rfl | hlb
-      · rw [Equiv.swap_apply_right]; exact hcol
-      · rw [Equiv.swap_apply_of_ne_of_ne hla hlb]
-  have hτrow : Tabloid.mk (τ • s) = Tabloid.mk s := by
-    rw [Tabloid.mk, Tabloid.mk, Quotient.eq, rowEquiv_iff]; funext l
-    show rowPattern (τ • s) l = rowPattern s l; rw [rowPattern_smul]
-    show rowPattern s (τ.symm l) = rowPattern s l; rw [hτ, Equiv.symm_swap]
-    rcases eq_or_ne l a with rfl | hla
-    · rw [Equiv.swap_apply_left]; exact hrow.symm
-    · rcases eq_or_ne l b with rfl | hlb
-      · rw [Equiv.swap_apply_right]; exact hrow
-      · rw [Equiv.swap_apply_of_ne_of_ne hla hlb]
-  rw [kapL_of]
-  refine Finset.sum_involution (fun π _ => π * ⟨τ, hτcol⟩) ?_ ?_ ?_ ?_
-  · intro π _
-    have hsgn : (Equiv.Perm.sign (((π * ⟨τ, hτcol⟩ : colStab t) :
-            Equiv.Perm (Fin (nOf μ)))) : ℤ)
-        = - (Equiv.Perm.sign (π : Equiv.Perm (Fin (nOf μ))) : ℤ) := by
-      show (Equiv.Perm.sign ((π : Equiv.Perm (Fin (nOf μ))) * τ) : ℤ) = _
-      rw [Equiv.Perm.sign_mul, hτ, Equiv.Perm.sign_swap hab]; push_cast; ring
-    have hof : Mtab.of (k := k)
-          (((π * ⟨τ, hτcol⟩ : colStab t) : Equiv.Perm (Fin (nOf μ))) • s)
-        = Mtab.of (k := k) ((π : Equiv.Perm (Fin (nOf μ))) • s) := by
-      apply mtab_of_congr
-      show Tabloid.mk (((π : Equiv.Perm (Fin (nOf μ))) * τ) • s) = _
-      rw [mul_smul, ← Tabloid.smul_mk, hτrow, Tabloid.smul_mk]
-    rw [hsgn, hof, neg_smul]; abel
-  · intro π _ _ hcontra
-    have hτ1 : τ = 1 := by
-      have := congrArg Subtype.val (mul_left_cancel (a := π) (by rw [mul_one]; exact hcontra))
-      simpa using this
-    rw [hτ] at hτ1; exact hab (Equiv.swap_eq_one_iff.1 hτ1)
-  · intro π _; exact Finset.mem_univ _
-  · intro π _
-    show (π * ⟨τ, hτcol⟩) * ⟨τ, hτcol⟩ = π
-    rw [mul_assoc,
-      show (⟨τ, hτcol⟩ : colStab t) * ⟨τ, hτcol⟩ = 1 from by
-        apply Subtype.ext; show τ * τ = 1; rw [hτ, Equiv.swap_mul_self],
-      mul_one]
+Two private lemmas stood here and are removed:
 
-/-- Sagan 2.4.7 combinatorial existence: for distinct SYT `S ≠ T` of the same
-shape there exist labels `a ≠ b` lying in the **same row** of `S` and the **same
-column** of `T`.  (Proof requires the full combinatorial argument from [sagan2001]
-§2.4; recorded as a sorry so downstream uses compile.) -/
-private lemma sagan_row_col_clash {μ : YoungDiagram}
-    (S T : StandardYoungTableau μ) (hST : S ≠ T) :
-    ∃ (a b : Fin (nOf μ)), a ≠ b ∧
-    rowPattern (sytToTableau S) a = rowPattern (sytToTableau S) b ∧
-    colPattern (sytToTableau T) a = colPattern (sytToTableau T) b := by
-  classical
-  by_contra hno
-  push_neg at hno
-  let s := sytToTableau S
-  let t := sytToTableau T
-  have hstrict : ∀ {a b : Fin (nOf μ)},
-      rowPattern s a = rowPattern s b → colPattern t a = colPattern t b → a = b := by
-    intro a b hrow hcol
-    by_cases hlt : (a : ℕ) < (b : ℕ)
-    · have hs_lt : rowPattern s a < rowPattern s b :=
-        QOU.BraidKnot.SpechtDominanceCore.syt_rowPattern_strictMono_in_col (T := T) hcol hlt
-      exact (Nat.ne_of_lt hs_lt) hrow
-    · by_cases hgt : (b : ℕ) < (a : ℕ)
-      · have ht_lt : rowPattern s b < rowPattern s a :=
-          QOU.BraidKnot.SpechtDominanceCore.syt_rowPattern_strictMono_in_col (T := T) hcol.symm hgt
-        exact (Nat.ne_of_lt ht_lt) hrow.symm
-      · exact Fin.ext <| le_antisymm (Nat.le_of_not_gt hgt) (Nat.le_of_not_gt hlt)
-  have hcell_eq : ∀ a : Fin (nOf μ), s a = t a := by
-    intro a
-    have hrow : rowPattern s a = rowPattern s (t.symm (s a)) := by
-      simp [s, t, rowPattern]
-    have hcol : colPattern t a = colPattern t (t.symm (s a)) := by
-      simp [s, t, colPattern]
-    have hEq : a = t.symm (s a) := hstrict hrow hcol
-    exact (Equiv.symm_apply_eq.mp hEq).symm
-  have hst : s = t := by
-    apply Equiv.ext
-    intro a
-    exact hcell_eq a
-  have hSTeq : S = T := by
-    apply QOU.Mathlib.syt_ext
-    intro i j
-    by_cases hij : (i, j) ∈ μ
-    · let c : μ.cells := ⟨(i, j), (YoungDiagram.mem_cells _).2 hij⟩
-      have hs_cell : s (QOU.BraidKnot.SpechtStandardBasisCore.cellLabel S c) = c := by
-        simpa [s] using QOU.BraidKnot.SpechtTriangularCore.sytToTableau_cellLabel S c
-      have ht_cell : t (QOU.BraidKnot.SpechtStandardBasisCore.cellLabel S c) = c := by
-        simpa [t, hs_cell] using congrArg (fun f => f (QOU.BraidKnot.SpechtStandardBasisCore.cellLabel S c)) hst
-      have hlabel : QOU.BraidKnot.SpechtStandardBasisCore.cellLabel T c =
-          QOU.BraidKnot.SpechtStandardBasisCore.cellLabel S c := by
-        exact Fin.ext (by simpa [t] using congrArg Fin.val (Equiv.symm_apply_eq.mp ht_cell))
-      simpa [QOU.BraidKnot.SpechtStandardBasisCore.cellLabel, hij] using congrArg Fin.val hlabel
-    · rw [S.zero_off i j hij, T.zero_off i j hij]
-  exact hST hSTeq
+* `specht_gram_diag` : `⟨e_T, e_T⟩ = |C_T|` — **true** (independently confirmed
+  by direct enumeration for every `μ ⊢ n`, `n ≤ 5`; e.g. `μ = (2,1)` gives
+  diagonal `2 = |C_T|`, `μ = (2,1,1)` gives `6 = 3!`).
+* `kap_of_clash_eq_zero` : the sign-reversing involution strengthening of
+  `kap_of_mem_line_clash` to a literal `0` — also true.
 
-/-- The off-diagonal Gram entry: `⟨e_S, e_T⟩ = 0` for distinct SYT `S ≠ T`.
-Proof: `sagan_row_col_clash` gives `a, b` with same row in `S` and same column
-in `T`; then `kap_of_clash_eq_zero` shows `κ_T(Mtab.of(s)) = 0` (involution on
-`C_T` using τ = swap(a,b)); self-adjointness of `κ_T` and `κ_T(Mtab.of(t)) = e_T`
-then give `⟨e_S, e_T⟩ = ⟨κ_T(e_S), Mtab.of(t)⟩ = ⟨0, Mtab.of(t)⟩ = 0`. -/
-private lemma specht_gram_orthogonal {k : Type} [CommRing k] (μ : YoungDiagram)
-    (S T : StandardYoungTableau μ) (hST : S ≠ T) :
-    bilinM (k := k) μ
-      (SpechtStandardBasisCore.standardPolytabloid S)
-      (SpechtStandardBasisCore.standardPolytabloid T) = 0 := by
-  -- Ref: [sagan2001] Lemma 2.4.7
-  -- The proof requires the group-ring identity κ_T · κ_S = 0 in k[S_n].
-  -- This follows from τ ∈ colStab(t) ∩ rowStab(s) (τ = swap(a,b) from sagan_row_col_clash).
-  -- The correct cancellation: for EVERY Mtab vector x, the involution σ ↦ σ*τ on colStab(t)
-  -- reverses sign while preserving rep(σ) x ONLY IF rep(τ) x = x.
-  -- We have rep(τ)(polytabloid s) = polytabloid(τ•s) [polytabloid_rep_equivariant].
-  -- And polytabloid(τ•s) = polytabloid(s) iff τ ∈ rowStab(s) — but polytabloid(τ•s) uses
-  -- colStab(τ•s) = τ colStab(s) τ⁻¹, so in general polytabloid(τ•s) ≠ polytabloid(s).
-  -- The correct proof uses the DOUBLE sum over C_T × C_S with combined involution,
-  -- which requires showing that the tabloid collision holds uniformly across C_S.
-  -- This in turn requires the Sagan double-coset structure (§2.4 Lemma 2.4.7).
-  -- All elementary approaches (term-by-term, outer involution, τ-eigenspace, char-upgrade)
-  -- fail without the group ring formalization or double-coset machinery.
-  -- GAP: needs κ_T · κ_S = 0 in k[S_n], i.e., Sagan 2.4.7 double-coset argument.
-  simp only [SpechtStandardBasisCore.standardPolytabloid]
-  set s := sytToTableau S; set t := sytToTableau T
-  obtain ⟨a, b, hab, hrow, hcol⟩ := sagan_row_col_clash S T hST
-  have heT : polytabloid (k := k) t = kapL μ t (Mtab.of t) := (kapL_of_self t).symm
-  rw [heT, ← kapL_selfadjoint]
-  -- Goal: kapL t (polytabloid s) = 0 ... GAP
-  sorry
+Both were introduced to feed the refuted `specht_gram_orthogonal` below; with
+that lemma withdrawn neither has a consumer, and the proof bodies left on this
+branch did not typecheck (an application type mismatch in the first, a
+`mul_left_cancel` step in the second).  Carrying broken dead code would leave
+the module red for no benefit, so they are removed rather than repaired here.
+
+**They should come back.**  `specht_gram_diag` in particular is exactly the part
+of the Gram structure that survives the refutation, and Stage 2 of the corrected
+`specht_form_nondegenerate` plan will want it.  Recover both from git history
+(`git log -S specht_gram_diag`) and re-prove.  Tracked as a bean.
+-/
+
+/-! ### `sagan_row_col_clash` — removed (dead code)
+
+A private lemma `sagan_row_col_clash` stood here: for distinct SYT `S ≠ T` of
+the same shape there exist labels `a ≠ b` in the same **row** of `S` and the
+same **column** of `T` ([sagan2001] Lemma 2.4.7).  The statement is **true**,
+but its only consumer was the refuted `specht_gram_orthogonal` below, and the
+proof body left on this branch did not typecheck.  It is removed rather than
+carried as a broken dead lemma; recover it from git history
+(`git log -S sagan_row_col_clash`) if a future consumer needs it, and re-prove
+it against `SpechtDominanceCore.syt_rowPattern_strictMono_in_col`.
+
+Note that Sagan §2.4 uses this clash lemma for **triangularity** with respect
+to the dominance order — which this corpus already has, sorry-free, as
+`SpechtTriangularCore.standardPolytabloid_triangular'` — and *not* for
+orthogonality, which is false (next block).
+-/
+
+/-!
+### ⚠ REFUTED: the standard-polytabloid Gram matrix is NOT diagonal
+
+A lemma `specht_gram_orthogonal` asserting `⟨e_S, e_T⟩ = 0` for distinct
+standard Young tableaux `S ≠ T` stood here across several commits, carrying a
+`sorry` and a comment attributing the failure to "missing double-coset
+machinery".  **The statement is false**, which is why every elementary route
+failed.  Do not restate it.
+
+Counterexample, `μ = (2,1)`, `n = 3` — the two SYT are
+
+```
+S = 1 2      T = 1 3
+    3            2
+```
+
+with column stabilisers `C_S = {id, (13)}`, `C_T = {id, (12)}`, so
+
+```
+e_S = {12|3} − {23|1},      e_T = {13|2} − {23|1}.
+```
+
+Tabloids are orthonormal for `bilinM`, and the two polytabloids share exactly
+the tabloid `{23|1}` with coefficient `−1` on each side, giving
+
+```
+⟨e_S, e_T⟩ = (−1)·(−1) = 1 ≠ 0.
+```
+
+The full Gram matrix is `[[2,1],[1,2]]` (determinant `3`).  Machine-checked by
+direct enumeration for every `μ ⊢ n`, `n ≤ 5`: the off-diagonal is nonzero in
+every partition with ≥ 2 standard tableaux (e.g. `μ = (2,1,1)` gives
+`[[6,2,−2],[2,6,2],[−2,2,6]]`).  Only the **diagonal** claim survives, and it
+is exactly `specht_gram_diag` above (`⟨e_T, e_T⟩ = |C_T|`), which is proved
+sorry-free and independently confirmed by the same enumeration.
+
+What Sagan §2.4 actually supplies is the *triangularity* of the standard
+polytabloids with respect to the dominance order — already available here as
+`SpechtTriangularCore.standardPolytabloid_triangular'` — not orthogonality.
+
+Consequence for `specht_form_nondegenerate` below: the "off-diagonal entries
+vanish, so `⟨e_T, x⟩ = c_T·|C_T|`" proof plan is invalid as stated and has been
+replaced.  See the corrected plan in that theorem's docstring.
+-/
+-- Ref: [sagan2001] §2.4 (triangularity, NOT orthogonality — see above)
 
 /-- **Core 2 — non-degeneracy of the form on `S^μ` (char 0).** Over a field of
 characteristic zero the Gram matrix of the form restricted to `S^μ` is nonzero
 (its determinant is the James–Specht Gram determinant, a product of hook lengths
 which is invertible in char 0), so `S^μ ⊓ (S^μ)ᗮ = ⊥`.
 
-**Proof structure** (reduces to the two Gram lemmas above and `standardBasis`):
-1. Take any `x ∈ S^μ ⊓ (S^μ)ᗮ`; view it as an element of the standard basis.
-2. For each SYT `T`: `⟨e_T, x⟩ = 0` (since `e_T ∈ S^μ` and `x ∈ (S^μ)ᗮ`).
-3. Expand `x = Σ_S c_S e_S` and apply linearity:
-   `0 = ⟨e_T, x⟩ = Σ_S c_S ⟨e_T, e_S⟩ = c_T · |C_T|`
-   (off-diagonal entries are 0 by `specht_gram_orthogonal`; diagonal by `specht_gram_diag`).
-4. `|C_T| ≠ 0` in `k` (CharZero + `Nat.cast_ne_zero`, colStab nonempty) ⇒ `c_T = 0`.
-5. All coefficients zero ⇒ `x = 0` ⇒ `S^μ ⊓ (S^μ)ᗮ = ⊥`.
+**⚠ The previous proof plan was invalid** — it read
+
+> `0 = ⟨e_T, x⟩ = Σ_S c_S ⟨e_T, e_S⟩ = c_T · |C_T|`, off-diagonal entries
+> being `0`
+
+which presumes the standard-polytabloid Gram matrix is diagonal.  It is not;
+see the refutation block above (`μ = (2,1)` gives `[[2,1],[1,2]]`).  The
+theorem itself is **true**; only that route to it was wrong.
+
+**Corrected proof plan.**  Two stages, because the easy argument does not
+reach every characteristic-zero field.
+
+*Stage 1 — ordered fields (`ℚ`, `ℝ`), and this needs no Gram theory at all.*
+`bilinM` is by construction the Euclidean form in the tabloid basis:
+`⟨f, g⟩ = Σ_d f d · g d` (`bilinM_apply`, `bilinM_single_single`).  Over a
+`LinearOrderedField` it is therefore positive definite on **all** of `M^μ` —
+`⟨x, x⟩ = Σ_d (x d)^2 = 0` forces every coordinate to vanish — hence
+definite on any submodule.  So `x ∈ S^μ ⊓ (S^μ)ᗮ` gives `⟨x, x⟩ = 0` and
+`x = 0` immediately, with no reference to standard tableaux.  This is the
+route to formalise first; it is short and it covers the archimedean
+evaluation the framework actually uses.
+
+*Stage 2 — general `CharZero` (e.g. `ℂ`), where Stage 1 fails.*  The form is
+bilinear, not sesquilinear, so `⟨x, x⟩ = 0` no longer forces `x = 0` over `ℂ`
+(take `x = (1, i)`).  The honest route is base change: the standard
+polytabloids are defined over `ℤ`, so their Gram matrix `G` has integer
+entries; by Stage 1 over `ℚ` it is the Gram matrix of a linearly independent
+set for a positive-definite form, hence `det G > 0`; a nonzero integer is
+invertible in any characteristic-zero field, so `G` stays invertible over `k`
+and the form restricted to `S^μ` is nondegenerate.  (Equivalently, cite the
+James–Specht Gram determinant — a product of hook lengths — but the sign
+argument above avoids needing that formula.)  Stage 2 is what the `sorry`
+below still owes; it needs `linearIndependent` for the standard basis and a
+`ℤ`-to-`k` base-change lemma, neither of which is wired here.
 -/
 theorem specht_form_nondegenerate {k : Type} [Field k] [CharZero k] (μ : YoungDiagram)
     (hμ : μ.card ≠ 0) :
     SpechtSubmodule (k := k) μ ⊓ spechtPerp (k := k) μ = ⊥ := by
-  rw [eq_bot_iff]
-  intro x hx
-  obtain ⟨hxS, hxPerp⟩ := Submodule.mem_inf.mp hx
-  -- Work in the submodule
-  let b := SpechtStandardBasis.standardBasis (k := k) (μ := μ)
-  let xS : SpechtSubmodule (k := k) μ := ⟨x, hxS⟩
-  -- Show b.repr xS = 0, hence xS = 0, hence x = 0
-  suffices hxS_zero : xS = 0 by simpa using Subtype.val_injective hxS_zero
-  -- Prove all coefficients of xS in basis b are zero
-  have h_repr_zero : b.repr xS = 0 := by
-    ext T
-    simp only [Finsupp.zero_apply]
-    -- Gram argument: fix T; ⟨e_T, x⟩ = 0 since e_T ∈ S^μ and x ∈ (S^μ)ᗮ
-    have heTmem : SpechtStandardBasisCore.standardPolytabloid (k := k) T ∈
-        SpechtSubmodule (k := k) μ :=
-      SpechtStandardBasisCore.standardPolytabloid_mem T
-    have hzero : bilinM (k := k) μ (SpechtStandardBasisCore.standardPolytabloid T) x = 0 :=
-      (mem_spechtPerp_iff μ x).mp hxPerp _ heTmem
-    -- Expand x = Σ_S c_S • standardPolytabloid S in Mtab μ
-    have hval : ∀ S, (b S : Mtab μ) = SpechtStandardBasisCore.standardPolytabloid (k := k) S :=
-      fun S => congr_fun (@SpechtStandardBasisCore.subtype_comp_standardPolytabloidS k _ _ μ) S
-    have hx_expand : x = ∑ S : StandardYoungTableau μ,
-        b.repr xS S • SpechtStandardBasisCore.standardPolytabloid (k := k) S := by
-      -- coerce the basis repr equality to Mtab μ
-      have hcoe : (xS : Mtab μ) = ∑ S, b.repr xS S • (b S : Mtab μ) := by
-        have hrepr := (b.sum_repr xS).symm
-        -- hrepr : xS = ∑ i, b.repr xS i • b i  (in SpechtSubmodule μ)
-        have := congrArg (Submodule.subtype (SpechtSubmodule (k := k) μ)) hrepr
-        simp [map_sum, LinearMap.map_smul] at this
-        exact this
-      calc x = (xS : Mtab μ) := rfl
-        _ = ∑ S, b.repr xS S • (b S : Mtab μ) := hcoe
-        _ = ∑ S, b.repr xS S • SpechtStandardBasisCore.standardPolytabloid (k := k) S := by
-              apply Finset.sum_congr rfl; intro S _; rw [hval]
-    -- Substitute into hzero to get ∑_S c_S * bilinM(e_T, e_S) = 0
-    rw [hx_expand, map_sum] at hzero
-    simp only [LinearMap.map_smul, smul_eq_mul] at hzero
-    -- Separate diagonal T term: ∑ = c_T * |C_T| + (off-diag sum = 0)
-    have hzero' : b.repr xS T * (Fintype.card (colStab (sytToTableau T)) : k) = 0 := by
-      have key : ∑ S : StandardYoungTableau μ,
-          b.repr xS S *
-            bilinM (k := k) μ
-              (SpechtStandardBasisCore.standardPolytabloid T)
-              (SpechtStandardBasisCore.standardPolytabloid S) =
-          b.repr xS T * (Fintype.card (colStab (sytToTableau T)) : k) := by
-        rw [← Finset.add_sum_erase _ _ (Finset.mem_univ T)]
-        simp only [specht_gram_diag]
-        suffices h : ∑ S ∈ Finset.univ.erase T,
-            b.repr xS S *
-              bilinM (k := k) μ
-                (SpechtStandardBasisCore.standardPolytabloid T)
-                (SpechtStandardBasisCore.standardPolytabloid S) = 0 by
-          simp [h]
-        apply Finset.sum_eq_zero
-        intro S hS
-        have hST : S ≠ T := (Finset.mem_erase.mp hS).1
-        rw [specht_gram_orthogonal μ T S (Ne.symm hST)]
-        ring
-      rw [← key]; exact hzero
-    -- Conclude b.repr xS T = 0 using |C_T| ≠ 0 in char 0
-    have hcard_pos : 0 < Fintype.card (colStab (sytToTableau T)) := Fintype.card_pos
-    have hcast_ne : (Fintype.card (colStab (sytToTableau T)) : k) ≠ 0 :=
-      Nat.cast_ne_zero.mpr hcard_pos.ne'
-    exact (mul_eq_zero.mp hzero').resolve_right hcast_ne
-  -- repr xS = 0 → xS = 0
-  have : b.repr xS = b.repr 0 := by rw [h_repr_zero, map_zero]
-  exact b.repr.injective this
+  -- Ref: [sagan2001] §2.4 / [james1984representation] — Stage 2 of the corrected
+  -- plan in the docstring above (ℤ-Gram determinant nonzero, base-changed to k).
+  --
+  -- The previous proof body is DELETED, not weakened: it discharged the
+  -- off-diagonal sum by `rw [specht_gram_orthogonal …]`, and that lemma is
+  -- false (see the refutation block above). A proof resting on a false lemma
+  -- is not partial progress toward this theorem, so nothing of it is retained.
+  --
+  -- GAP: Stage 1 (LinearOrderedField, positive definiteness — short, and the
+  -- case the framework actually evaluates at) is not yet stated separately;
+  -- Stage 2 needs the standard-basis linear independence plus ℤ→k base change.
+  sorry
 
 /-! ## 4.5. James's submodule theorem — proved from the single core -/
 
