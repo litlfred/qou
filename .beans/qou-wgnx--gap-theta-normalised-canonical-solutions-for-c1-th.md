@@ -951,3 +951,45 @@ route (a) is the one with a ready-made explicit answer in the literature.
 
 **Nothing here retracts the closed form** — χ and its divisor stand. What is
 corrected is the expectation that the multipliers follow from them directly.
+
+## 2026-08-07 (twentieth) — Morita read; SAME ramification convention; inversion formula in Lean
+
+Owner uploaded the requested papers (`uploads/`): Morita arXiv:1104.0755v2 and
+1105.1998v3, arXiv:1203.3404v1, 1404.2541v1, Sauloy AIF 2000
+(`AIF_2000__50_4_1021_0.pdf`) and AIF 2009. **RSZ Astérisque 355 was already
+there** as `uploads/0903.0853v3.pdf` — worth knowing the folder is a large
+existing library, not just today's additions.
+
+**Morita uses `q = p²` — our exact ramification convention.** (1105.1998 §2:
+"We assume `q` satisfies `0 < |q| < 1` and `q = p²`.") So his Hahn–Exton
+q-Bessel setting is not merely analogous to C1; it is set up the same way. The
+one mismatch is `|q| < 1` against our `p > 1` — reciprocal.
+
+**His Theorem 1** (Hahn–Exton connection formula, origin ↔ infinity) has exactly
+the structure we found: two terms whose coefficients are **theta quotients with
+sign-flipped arguments**, `θ_p(p^{ν+2}/x)` against `θ_p(−p^{ν+2}/x)`, over
+q-Pochhammer constants. That is the third independent confirmation of the
+`[±α]` pairing, after Lin–Ma–Xu and our own numerics.
+
+**Two identities he records that we did not have:**
+
+1. **Jacobi triple product**, stated outright: `θ(x) = (q, −x, −q/x; q)_∞`.
+   Confirms the product form for the converse of our zero locus. Still not a
+   Lean proof, but it settles what the target statement is.
+2. **Inversion formula** `x·θ(1/x) = θ(x)`. In our normalisation this reads
+
+       θ_P(1/w) = w · θ_P(w)
+
+   — **now proved in Lean**, `qTheta_inversion`, sorry-free and unconditional.
+   Reindex `n ↦ −n` on the left, `n ↦ n−1` on the right; both sides are
+   `∑ P^{−n(n−1)} wⁿ`. It is genuinely new information, not a restatement of
+   the functional equation `θ_P(P²w) = w θ_P(w)`.
+
+**Convention map, for anyone porting his formulas.** With `n ↦ −n`,
+`θ_ours(w) = θ_Morita(1/w)` up to that reindex, and his `|q| < 1` is our
+`p > 1`. So a Morita formula transfers by inverting the argument and the base.
+
+**Still open, unchanged:** the Stokes multipliers need the divergent
+presentation (nineteenth entry). Morita obtains his connection formula by
+q-Borel/q-Laplace resummation following Zhang — i.e. exactly route (a). His
+papers are therefore the worked rank-2 template for it, and are now in-repo.

@@ -35,6 +35,8 @@ and the whole question reduces to: **where does `θ_p` vanish?**
   on the real axis. This is the formal core of the refutation the whole C1 arc
   restarted from: a basis putting them "~17 orders of magnitude apart" is
   impossible, not merely unobserved.
+* `qTheta_inversion` — `θ_P(1/w) = w·θ_P(w)`, Morita's inversion formula
+  (arXiv:1105.1998 §2.1) in our normalisation.
 * `thetaRatio_multiplier` — `θ_P(cz)/θ_P(z)` is a q-character with multiplier
   `c`: the building block of every connection coefficient in the literature
   (the *pseudo-constants* of Ramis–Sauloy–Zhang).
@@ -413,5 +415,35 @@ theorem connRatio_reflect (P : ℝ) (a z : ℂ) :
   rw [map_mul, ← qThetaC_conj, ← qThetaC_conj, map_div₀, map_div₀, map_neg,
       RingHomCompTriple.comp_apply, RingHom.id_apply]
   ring
+
+/-- **Inversion formula** `θ_P(1/w) = w · θ_P(w)`.
+
+Morita (arXiv:1105.1998 §2.1) records it as `x·θ(1/x) = θ(x)` in his
+normalisation; this is the same identity in ours. Reindex `n ↦ −n` on the left
+and `n ↦ n−1` on the right: both sides are `∑ P^{−n(n−1)} wⁿ`. Unconditional. -/
+theorem qTheta_inversion (P w : ℝ) (hw : w ≠ 0) :
+    qTheta P (1 / w) = w * qTheta P w := by
+  have hL : ∀ n : ℤ, qThetaTerm P (1 / w) (-n) = P ^ (-(n * (n - 1))) * w ^ n := by
+    intro n
+    have h1 : ((1:ℝ) / w) ^ (-n) = w ^ n := by
+      rw [one_div, inv_zpow, ← zpow_neg, neg_neg]
+    rw [qThetaTerm, h1, show -(-n * (-n + 1)) = -(n * (n - 1)) by ring]
+  have hR : ∀ n : ℤ, w * qThetaTerm P w (n - 1) = P ^ (-(n * (n - 1))) * w ^ n := by
+    intro n
+    have hww : w * w ^ (n - 1) = w ^ n := by
+      have h := zpow_add₀ hw 1 (n - 1)
+      rw [zpow_one, show (1:ℤ) + (n - 1) = n by ring] at h
+      exact h.symm
+    rw [qThetaTerm, show -((n - 1) * ((n - 1) + 1)) = -(n * (n - 1)) by ring,
+        ← mul_assoc, mul_comm w _, mul_assoc, hww]
+  calc qTheta P (1 / w)
+      = ∑' n : ℤ, qThetaTerm P (1 / w) ((Equiv.neg ℤ) n) :=
+        ((Equiv.neg ℤ).tsum_eq (fun n => qThetaTerm P (1 / w) n)).symm
+    _ = ∑' n : ℤ, P ^ (-(n * (n - 1))) * w ^ n := tsum_congr hL
+    _ = ∑' n : ℤ, w * qThetaTerm P w (n - 1) := (tsum_congr hR).symm
+    _ = w * ∑' n : ℤ, qThetaTerm P w (n - 1) := by rw [tsum_mul_left]
+    _ = w * qTheta P w := by
+        rw [qTheta]; congr 1
+        exact (Equiv.subRight (1:ℤ)).tsum_eq (fun n => qThetaTerm P w n)
 
 end QOU.QBeta.C1Poles
