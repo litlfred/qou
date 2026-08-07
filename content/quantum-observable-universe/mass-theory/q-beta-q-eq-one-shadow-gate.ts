@@ -45,5 +45,20 @@ export default proposition({
         "$c_2 \\to -1$, $c_3 \\to -2$ and the gate on passing / failing " +
         "rational candidates.",
     },
+    {
+      kind: "note",
+      date: "2026-08-07",
+      body:
+        "**§7c base-ring note (archimedean specialisation).** The gate is " +
+        "stated over `ℝ`. The specialisation is intrinsic to what the gate " +
+        "*is*: it evaluates a candidate Habiro element $F(q)$ at the " +
+        "classical limit $q = 1$ and compares the resulting shadows against " +
+        "the integer anchors $c_2 \\to -1$, $c_3 \\to -2$. That evaluation is " +
+        "an archimedean specialisation of a fibre-level object — per the " +
+        "AGENTS.md Im(q) framing, the $c_k$ live in the fibre (formal, " +
+        "possibly complex $q$) while the gate reads them at a real anchor. " +
+        "The generic-`R` markers in the file belong to the candidate's " +
+        "coefficient ring, not to the gate.",
+    },
   ],
 });
