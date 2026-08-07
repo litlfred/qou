@@ -336,3 +336,57 @@ The χ-level reflection law `χ(conj z) = 1/conj(χ(z))` itself stays numerical 
 it needs the full analytic construction (`Y₀`, `Y_∞`, matrix inverse), which is
 not formalised.
 
+## 2026-08-07 (eighth) — χ's shape pinned; an UNRESOLVED CONTRADICTION, recorded not papered over
+
+Chasing χ's divisor turned up a conflict in my own readings that I have **not**
+resolved. Recording it as an open problem rather than picking a story.
+
+**Solid (DPS=200, NG=800, NH=110; two independent routes agreeing to `1e-165`
+— the `Y₀⁻¹` route and an adjugate route that never forms the inverse or
+divides by `det Y₀`):**
+
+- `log10|χ|` is **exactly linear** in `arg z`: `0, −13.693, −27.387, −41.080,
+  −54.773, −68.467` at `arg/π = 0 … 5/12` — perfect multiples. Slope
+  `−2π/log p` per radian.
+- `arg(χ)` is **constant on circles**, taking only `±0.566289281101`.
+- Together these are the signature of `χ = C·z^{i·2π/log p}`: then
+  `|χ| = |C|e^{−λ arg z}` varies with `arg z` while
+  `arg χ = arg C + λ ln|z|` is constant at fixed `|z|` — exactly as measured.
+- The profile is a symmetric **tent** about `arg = ±π/2`, apex `−73.4468`
+  (*not* the linear continuation `−82.16`), and `arg χ` **flips sign** there.
+
+**The contradiction.** These four measurements are jointly impossible:
+
+1. χ is `p`-elliptic (phase check `6.3e-90 … 6.2e-66` at complex `z`);
+2. χ is non-constant (`|χ|` ranges over `10^±73.4`);
+3. `|χ|` is **bounded** (the apex is real, not a cancellation floor — the
+   adjugate route, which has no `det Y₀` division, agrees to `1e-165`);
+4. χ is meromorphic in `z` (it is built from holomorphic `Y₀`, `Y_∞`).
+
+A bounded non-constant elliptic function on the compact torus `ℂ*/p^ℤ` does not
+exist (Liouville). So one of (1)–(4) is wrong.
+
+**Prime suspect: (1), and my checks of it were weak.** `p` is real positive, so
+`pz` has the *same argument* as `z`. Any function of `arg z` alone therefore
+passes `χ(pz) = χ(z)` **trivially** — and `|χ|` is very nearly a function of
+`arg z` alone (spread `3e-9` over a `p`-period). So the ellipticity checks in
+the three earlier entries may carry much less information than claimed. The
+phase part is not vacuous, but it is consistent with `χ = C z^{iλ}` where
+`p^{iλ} = 1` by construction.
+
+**Second suspect: single-valuedness.** `z^{iλ}` is multivalued, and the tent
+plus the sign flip of `arg χ` at `±π/2` looks like branch structure, not a
+meromorphic function's behaviour.
+
+**Consequence for the earlier entries.** Wherever they say "χ is elliptic",
+read "χ passes `χ(pz) = χ(z)`, a check that is weak because `p` is real". The
+committed witnesses' `chi_is_elliptic` check should be read that way too. The
+cross-ratio's *invariance under rebasing* (verified across `c`) is unaffected —
+that was a genuinely different test.
+
+**Next step is to settle (1)–(4), not to hunt the divisor.** Concretely: compute
+the winding number of χ around a closed loop generating the torus (the argument
+principle gives zeros − poles directly), and test single-valuedness by
+continuing `arg χ` around a full circle rather than sampling principal values.
+Until that is done, **χ's divisor and closed form stay open**, and so do the
+Stokes multipliers.
