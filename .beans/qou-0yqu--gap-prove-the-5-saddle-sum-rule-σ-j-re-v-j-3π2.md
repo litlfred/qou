@@ -545,3 +545,40 @@ conclusion **for the sum rule** stands unchanged; only the general clause is
 wrong. Left as-is in the PR body pending owner steer on which vector to push.
 
 **Route count still 6 tried, 6 not closing.**
+
+### Cross-lane check at takeover — the disc −23 headline is NOT new, and the seam it exposes IS unexplored
+
+Two findings from cross-referencing this bean against the GGM/Stokes lane of
+`1ppq-qbeta.md`. Neither closes anything; the first is a correction, the second
+is the first genuinely untried vector since Route 6 died.
+
+**1. `disc = −23` was already Lean-proved on `main`, three weeks earlier.**
+`QOU/QBeta/FiveTwoSaddleCurve.lean` (81 lines, sorry-free, pre-existing on
+`main` — *not* introduced by #4658) contains `u0_cubic_discriminant`: the
+discriminant of `y³ − 2y² + 3y − 1` is `−23`. Ledgered 2026-07-18 as part of
+the GGM §6.1 5₂ port, where it arises as the `x = 1` reduction of the deformed
+saddle curve `x·y³ − (x²+1)·y² + (x²+x+1)·y − x = 0`.
+
+PR #4658 presents this as a new finding and this bean never cross-references
+the file. The mathematics is right and the literature pointers are worth having;
+the novelty framing is wrong. **The two lanes have been working the same cubic
+without citing each other.**
+
+**2. The untried vector: the ambiguity group is `ℂ/2π²ℤ`, not `π²/2`.**
+The same 2026-07-18 entry records, for *these exact* `Vⱼ`, that **`V` is
+`ℂ/2π²ℤ`-valued** — σ3-pair positions being lattice representatives. Route 6
+tested Zagier's enhanced dilogarithm `D̃`, valued in `ℂ/(π²/2)ℤ`, and failed on
+branch bookkeeping — a **factor-4 different modulus** from the one the corpus
+has already established for the objects actually in the sum rule.
+
+Route 6's refutation is scope-(a) and explicitly declines to exclude "a
+formulation at a different covering point or Bloch element". The corpus's own
+`2π²` lattice is exactly such a candidate and **was never tried** — Route 6
+imported Zagier's modulus rather than using the one already documented here.
+Note also `−3π²/2 = −(3/4)·2π²`, i.e. the sum-rule target is a *quarter-lattice*
+point of that modulus, which is the kind of coincidence that is either the
+mechanism or nothing.
+
+**Not attempted, not stubbed, no claim made.** Recording the seam so the next
+session starts here rather than re-deriving disc −23 a third time. Route count
+unchanged: **6 tried, 6 not closing; status verified to 80 dps, unproved.**
