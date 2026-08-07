@@ -321,7 +321,12 @@ structure Triangular {ι : Type*} {α : Type*} {R : Type*} [LinearOrder α] [Com
 /-- **Triangular-independence lever** — the lemma the pinned Mathlib lacks, supplied
 sorry-free. A triangular `Finsupp` family (injective leading map, unit diagonal,
 support bounded above by the leading index) is linearly independent. Maximal-leading-
-index argument; works over any `CommRing`. A natural Mathlib-upstream candidate. -/
+index argument; works over any `CommRing`. A natural Mathlib-upstream candidate.
+
+Declared as `Triangular.linearIndependent` (not bare `linearIndependent`) because both
+call sites consume it by dot-notation on a `Triangular` term (`htri.linearIndependent`,
+in `SpechtStandardBasis` and `SpechtFinrankWired`). The `Triangular.` prefix here is
+load-bearing, not a redundant namespace component. -/
 theorem Triangular.linearIndependent {ι : Type*} {α : Type*} {R : Type*}
     [LinearOrder α] [CommRing R] {v : ι → (α →₀ R)} {lead : ι → α}
     (h : Triangular v lead) : LinearIndependent R v := by
