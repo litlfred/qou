@@ -1132,3 +1132,48 @@ justifies it.
 consume this? — and get a domain owner to rule on (2). Formalising step 1 is
 cheap and safe; formalising toward the triviality claim would be building on the
 least-verified thing here.
+
+## 2026-08-07 (twenty-third) — CORPUS-GREP MISS: the triviality was already known here
+
+**I re-derived a result the corpus already had, because I never ran the
+corpus-grep AGENTS.md mandates.** Owning it plainly.
+
+`conj:qdifference-kernel-prolongation-symbol` (`mass-theory/`), author notes
+dated **2026-07-20**, already records:
+
+- *"(Door-i) analytic q-summation AND ramified pullback both obstructed by
+  **ISOCLINICITY** (**C1 pure isoclinic**, GGM anisoclinic; **RSZ Thm 2.2.1 /
+  2.2.4 / 5.5.7**) — a permanent invariant preserved by every module
+  transform."*
+- *"Door-v: the residual … is **NOT a Stokes datum** (unipotent part trivial,
+  `U → I`; connecting matrix constant on `gr`)."*
+- *"(B) numeric **connection-matrix theta-growth `q^{m²/4}`**"*
+
+So: **C1 pure isoclinic** and **unipotent part trivial** were both already
+established in-corpus, with RSZ theorems cited *by number* — months before this
+session. My twenty-first entry re-derived them from RSZ §5 and flagged the
+integral-vs-non-integral-slope caveat as the weak point. The corpus had already
+crossed that gap and named the theorems.
+
+**What this changes:**
+
+- The triviality conclusion is **confirmed**, and by a prior independent route.
+  It is no longer "a framework reading by a non-expert" (roast item 2) — it is
+  corroborated by existing corpus work citing specific RSZ theorems. Roast item
+  2 is **substantially downgraded**; the remaining question is only whether
+  those theorem numbers say what the note says, which is a cheap check.
+- Roast item 5 sharpens: there **is** a natural home
+  (`conj:qdifference-kernel-prolongation-symbol`), but that block is itself a
+  **leaf** — nothing `uses[]` it. Tracked in `qou-c1wr`.
+- **The process failure is mine.** AGENTS.md requires a corpus-grep before
+  declaring anything open or new. I declared the Stokes multipliers open and
+  chased them for most of a session without checking whether the corpus already
+  knew the answer. It did. The cost was large and entirely avoidable.
+
+**Standing lesson for this bean:** grep the corpus *first*, especially when the
+target is phrased as "open". This arc's other four retractions were all probes
+that could not detect what they looked for; this one is worse — the answer was
+written down and I did not look.
+
+New beans: `qou-c1ln` (discharge the numerics in Lean), `qou-c1wr` (the C1 work
+is invisible to the manifest graph, and its natural home is a leaf).
