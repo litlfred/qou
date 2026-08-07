@@ -3,8 +3,9 @@
 title: 'EPIC: routes to a 3-dimensional fibre / colour SU(3) — assessed and roasted'
 status: in-progress
 type: milestone
+parent: qou-8lxd
 created_at: 2026-08-07T12:40:00Z
-updated_at: 2026-08-07T15:10:00Z
+updated_at: 2026-08-07T14:20:00Z
 ---
 
 Umbrella for every proposed route to colour `SU(3)`, old and new, after the
@@ -254,3 +255,20 @@ scope.
 route subsumes the structural content of this bean") — and that route was
 excluded today, scope-(b). T3g is now the *surviving* direction, not the
 subsumed one, and should be re-prioritised.
+
+
+---
+
+## SIZE/PARENTAGE ROAST on this very bean (2026-08-07)
+
+Two failures of my own, recorded rather than quietly fixed:
+
+1. **Parentage was inverted.** This session epic reached **12.5 KB** while
+   `qou-8lxd` — the real epic it is a child of — is a **176-byte stub**. Now
+   declared `parent: qou-8lxd`.
+2. **Beans are not documents.** I appended findings to beans repeatedly instead
+   of writing them once to an audit doc and pointing. The result: the beans that
+   *closed* things are small (`qou-dwsh` 668 B, `qou-bldy` 723 B) and the open
+   ones are bloated (this one 12.5 KB, `qou-8p1i` 5.9 KB, `qou-8p1e` 5.2 KB).
+   Size is inversely correlated with usefulness across this whole set. The
+   roast table above belongs on `qou-8lxd` or in an audit doc.

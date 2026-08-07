@@ -4,7 +4,7 @@ title: 'qou-8pl1/c: period-matrix route — BLOCKED on infra, requirements recor
 status: todo
 type: task
 created_at: 2026-08-07T00:00:00Z
-updated_at: 2026-08-07T09:20:00Z
+updated_at: 2026-08-07T14:20:00Z
 ---
 
 Parent: `qou-8pl1`. The decisive route, and the expensive one.
@@ -82,3 +82,18 @@ GitHub-only and needs Cython).
 Recorded so the next agent re-tests rather than inheriting a stale blocker
 — the same trap that had `rho_k_co_casimir_extended` written off as
 unverifiable for want of scipy when scipy installs fine.
+
+
+---
+
+## RECORDED BLOCKER IS FALSE (2026-08-07)
+
+This bean says the period-matrix route is blocked because numpy/scipy/sage are
+absent. **`cbefd99be3` on main established that numpy and scipy install fine**
+in a fresh container — the recorded blocker is stale and was never verified
+against a working install.
+
+It does not matter for priority: the route is deprioritised anyway (there is no
+shortlist of candidate targets left to compare, per `qou-8p1a`). But the bean
+should not sit there asserting a false infrastructure claim that a future agent
+might trust.
