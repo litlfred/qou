@@ -3074,3 +3074,27 @@ known published source for this identity.**
    integers and Route 5's integrand is a ℤ-coefficient polynomial.
 
 **Sum-rule status unchanged: verified to 80 dps, unproved.**
+
+**2026-08-07 (PR #4658, takeover) — `cLiTwoExt = Li₂` off the disc is TRUE
+(verified); Lean blocked in-session.**
+
+`elan`/`lake` absent and the environment denies `release.lean-lang.org:443`
+(403 on CONNECT), so no toolchain and no `lake exe cache get`. **No Lean
+written** — deliberately, rather than shipping unverifiable code. Groundwork
+instead (bean `qou-clx8`):
+
+* `cLiTwoExt y = −∫₀¹ Log(1−yz)/z dz` equals `Li₂(y)` to diff **`0.0`** at all
+  three 5₂ roots — including `y₁`, `‖y₁‖ = 1.52` — and on 28/28 grid points off
+  the real axis to `< 1e-25`. **The identification `cLiTwoExt(y₁) = Li₂(y₁)` is
+  true; only its proof is open.**
+* **The current side condition `Re(1−yz) > 0` is sufficient but NOT necessary** —
+  it fails at `1.5+0.3i` and `3+0.001i` where the identity still holds. The right
+  hypothesis: for `Im y ≠ 0`, `Im(1−yz) = −z·Im y` vanishes on `[0,1]` only at
+  `z = 0`, so the path never meets the principal cut and `Log(1−yz)` is
+  continuous along it. Covers `ℂ ∖ ℝ` in one step.
+* The cut is `[1,∞)` and not `|y| ≥ 1` because for real `y > 1` the integrand is
+  singular *inside* the interval, at `z = 1/y ∈ (0,1)`.
+* **Numerical trap:** when `0 < Re(1/y) < 1`, plain `quad([0,1])` is silently
+  wrong (off by `1.15e-2` at `y = 3+0.001i`). Probes must split at `Re(1/y)`.
+
+**Sum-rule status unchanged: verified to 80 dps, unproved.**
