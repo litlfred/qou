@@ -66,6 +66,7 @@ def _schur_principal_at_q(args):
 
 
 _Y_LAMBDA_AT_Q0_WITNESS_CACHE: dict[int, dict[tuple, sp.Expr]] | None = None
+_Y_LAMBDA_AT_Q0_WITNESS_Q0: float | None = None
 
 
 def _load_y_lambda_at_q0_witness() -> dict[int, dict[tuple, sp.Expr]]:
@@ -79,8 +80,12 @@ def _load_y_lambda_at_q0_witness() -> dict[int, dict[tuple, sp.Expr]]:
     Returns `{n: {partition: mpf-or-sympy y_lambda}}` keyed by n,
     or empty dict if witness file missing (caller falls back to
     the slow recompute path).
+
+    Also records, in `_Y_LAMBDA_AT_Q0_WITNESS_Q0`, the q_0 the witness was
+    actually BUILT at.  Callers must gate on that value, not on the package
+    constant — see `y_lambda_at`.
     """
-    global _Y_LAMBDA_AT_Q0_WITNESS_CACHE
+    global _Y_LAMBDA_AT_Q0_WITNESS_CACHE, _Y_LAMBDA_AT_Q0_WITNESS_Q0
     if _Y_LAMBDA_AT_Q0_WITNESS_CACHE is not None:
         return _Y_LAMBDA_AT_Q0_WITNESS_CACHE
     import json
@@ -98,6 +103,13 @@ def _load_y_lambda_at_q0_witness() -> dict[int, dict[tuple, sp.Expr]]:
             shape = tuple(r["partition"])
             d[shape] = sp.Float(r["y_at_q0_50dps"], 50)
         by_n[n_key] = d
+    # Record the q_0 this witness was built at, so the fast path can refuse to
+    # serve it to a caller asking for a DIFFERENT anchor.
+    _q0 = (w.get("parameters", {}) or {}).get("q_0") or w.get("q0Value")
+    try:
+        _Y_LAMBDA_AT_Q0_WITNESS_Q0 = float(_q0) if _q0 is not None else None
+    except (TypeError, ValueError):
+        _Y_LAMBDA_AT_Q0_WITNESS_Q0 = None
     _Y_LAMBDA_AT_Q0_WITNESS_CACHE = by_n
     return by_n
 
@@ -140,11 +152,25 @@ def y_lambda_at(
     if q_val is None:
         return m.solve_y_lambda(n)
 
-    # Fast path 1: numeric q matches q_0 — load from witness.
+    # Fast path 1: serve the cached witness ONLY if the caller is asking for the
+    # very q_0 the witness was BUILT at.
+    #
+    # This gate used to compare against `q_parameter.Q` (the PROTON / experimental
+    # pin) while the witness itself is built at the MUON / ideal-3-CAL pin — 11.54 ppb
+    # apart.  Passing `q_parameter.Q` therefore satisfied the gate TRIVIALLY and the
+    # ideal-layer cache was served to an experimental-layer caller with no signal that
+    # a calibration-layer boundary had been crossed.  See AGENTS.md §"q₀ anchor
+    # convention" (owner directive 2026-08-07: default to the experimental anchor) and
+    # `computations/deltalambda/mu3_anchor_consistency_probe.py`.
+    #
+    # Gating on the witness's own recorded q_0 means a proton-anchored caller now falls
+    # through to fast path 2 (live closed form at the requested q) and gets values at
+    # the anchor it actually asked for.  A caller that genuinely wants the muon cache
+    # still hits it by passing the muon q_0.
     try:
-        from q_parameter import Q as Q_0_FLOAT
-        if abs(float(q_val) - float(Q_0_FLOAT)) < 1e-12:
-            witness_by_n = _load_y_lambda_at_q0_witness()
+        witness_by_n = _load_y_lambda_at_q0_witness()
+        if _Y_LAMBDA_AT_Q0_WITNESS_Q0 is not None and \
+                abs(float(q_val) - _Y_LAMBDA_AT_Q0_WITNESS_Q0) < 1e-12:
             cached = witness_by_n.get(n)
             if cached is not None and len(cached) == len(shapes):
                 return dict(cached)
