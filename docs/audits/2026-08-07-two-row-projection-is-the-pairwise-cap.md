@@ -149,3 +149,63 @@ obviously supply an 83 % deficit, and the two figures are for different isotopes
 different quantities. What is established here is that the discarded sector is the
 right **kind** of object (≥3-row ⟺ super-pairwise) and is **not** negligible — **not**
 that its magnitude closes the gap. Step 1 is what would settle that, and it can fail.
+
+---
+
+## 7. RESOLVED upstream (2026-08-07, `f92a8b15`) — N = 2 is locked in, and that sharpens the conclusion
+
+§3 above reopened bean `qou-fvzm` as *"`N ≥ 3` is a proved necessary condition for the
+missing ≥3-body term, so the N=3-route question is load-bearing for binding."* **Main
+has now settled the N question, and the answer closes that route.**
+
+`compute(T3f): N = 2 is LOCKED IN for the mass pipeline — the soft constraint is hard`
+turns T3f's *"GENUINELY OPEN"* into a **scope-(b)** result, using only objects the
+framework already had:
+
+- `tr_M = Σ_λ y_λ χ_λ` with the `χ_λ` **Hecke characters — N-independent**. All the
+  `N`-dependence sits in the weights, which are **principal specialisations**
+  `y_λ ~ s_λ(1, q, …, q^{N−1})`.
+- **The row cap *is* the weight vanishing.** `y_{(1³)} = 0` at `N = 2` because the cell
+  of content `−2` contributes `[N−2]_q = [0]_q = 0`; nonzero at `N = 3`. So "the row cap
+  kills the singlet at `N=2`" and "the Ocneanu weight vanishes at `N=2`" are **one fact,
+  not two** — and it is the `q → 1` shadow of `RowCapObstruction.lean`'s `weylDimAlt`.
+- **The two traces are not proportional.** `y_{(2,1)}/y_{(3)} = q[2]_q[N−1]_q/[N+2]_q`
+  differs at every `q` tested. Moving to `N = 3` does not merely *add* the singlet
+  channel — it **re-weights the surviving channels**, so `tr_M` changes on elements the
+  mass pipeline already evaluates.
+
+**This confirms the §2–§3 identification and kills the route it suggested.** The
+identification `N = 2 ⟺ ℓ(λ) ≤ 2 ⟺ pairwise ⟺ ρ_A ≤ C(A,2)` is now *mechanically*
+established, not merely algebraic: the two-row restriction and the `N=2` Ocneanu weight
+vanishing are the same phenomenon. But the corollary I drew — "so get the ≥3-body term
+by going to `N ≥ 3`" — is **not available**: `N = 2` is locked for the mass pipeline,
+and switching would move numbers the pipeline already reproduces.
+
+### The sharper conclusion, from combining this with the ℓ¹ ceiling
+
+Two independent results now bracket the missing term:
+
+| result | what it excludes |
+|---|---|
+| **ℓ¹ ceiling** ([this branch](2026-08-07-l1-ceiling-confirms-magnitude-absent-and-he4-two-row-suppression.md)): `ℓ¹/target ∈ [0.36, 0.59] < 1`, all four light isotopes | no **reweighting** of the `N=2` partition sum reaches the target — including any `Δ_λ` re-derivation |
+| **N = 2 locked** (`f92a8b15`, scope-(b)) | no move to a **larger `N`** to obtain the missing `ℓ(λ) ≥ 3` channels |
+
+Together: **the missing additive term is not a Hecke-trace object at all.** Not at
+`N = 2` (the ℓ¹ ceiling forecloses every reweighting), and not by escaping to `N ≥ 3`
+(locked). That is a materially stronger statement than either result alone, and it is
+where the six failed ansätze were always going to end up — every one of them looked for
+the magnitude *inside* `Σ_λ y_λ χ^λ Δ_λ`.
+
+**Consequence for the attack list:** A1–A5 all sought the term inside the trace or its
+normalisation and are correspondingly narrowed. The candidates that survive are the ones
+that were never trace objects — the extended-Bloch/geometric route (`qou-985x`), and
+the untested question of whether the **atomic-braid → nucleus map itself** is the
+defective step (`qou-imcd`, the ROAST's top meta-item).
+
+**Not a contradiction with the eightfold programme.** `f92a8b15` also records the
+*positive* half: the Hecke tower can carry an `N=2` Jones trace (mass) **and** an `N=3`
+HOMFLY trace (flavour) as two functors on one algebra. Flavour is not blocked by this;
+only the attempt to source *binding* magnitude from a larger `N` is.
+
+**Bean `qou-fvzm` → closed**, this time on a proved upstream result rather than my own
+inference.
