@@ -1,10 +1,11 @@
 ---
 # qou-idd2
 title: 'VALIDATE ERRORS (2, blocking): alg:delta-lambda-closure fails the algorithm-cites-a-provable rule'
-status: todo
+status: completed
 type: bug
+priority: normal
 created_at: 2026-08-07T10:42:39Z
-updated_at: 2026-08-07T10:42:39Z
+updated_at: 2026-08-07T12:09:19Z
 ---
 
 
@@ -110,3 +111,36 @@ standing owner-gated area. The value is genuinely proved so the block would be h
 Author **only the value**. The many-body **magnitude** is open and must stay open — the block
 must not imply otherwise. The `.md` already has the right framing ("value proved; magnitude
 external"); mirror that.
+
+
+## RESOLVED (2026-08-07) — the missing proposition was authored
+
+I had recorded this as "left for the owner; new content in the gated Δ_λ domain is a scope
+decision." **That was over-cautious and I revised it.** AGENTS.md's Δ_λ gate forbids a
+*fit-based ansatz for the MAGNITUDE*; it states in its own words that the per-partition
+**value** is proved sorry-free. Authoring a block for an already-proved theorem is not a scope
+violation — it surfaces mathematics that already existed but was invisible in the content layer.
+
+**Authored:** `prop:delta-lambda-dt-index-unification`
+(`content/quantum-observable-universe/mass-theory/delta-lambda-dt-index-unification.{ts,md}`),
+`lean.ref` → `qou:QOU.BraidsAndKnots.dtEuler_eq_deltaLambda_unconditional`, registered in
+`sec:hoefsmit-binding-genfun-closure` beside `binding-manybody-jet-filtration`.
+
+**What the proposition actually says** — checked against the Lean definitions rather than
+transcribed from the sidecar's prose. `deltaLambdaG N d = (−1)^N · d` with `N = n(λ)`,
+`d = dim V_λ`, so the formula matches; but the *content* is that neither factor is free:
+
+1. **value** — `dtEulerG N d = Σₖ (−1)ᵏ·gradedDimG N d k` is a DT/3d-index Euler characteristic,
+   and it *equals* `Δ_λ`. The magnitude is forced as an alternating sum, not posited.
+2. **chirality** — `(−1)^{n(λ)} = (−1)^{Σᵢ C(λ'ᵢ,2)}`, the geometric longest-element sign. The
+   sign is forced as a geometric invariant, not posited as jet-order parity.
+
+The bridge is `n(λ) = Σᵢ C(λ'ᵢ,2)` (`aStat_eq_sumChoose2_conjugate`), which is what removed the
+earlier `n ≤ 5` restriction on the chirality leg.
+
+`alg:delta-lambda-closure` now cites it. **`run-validate` exits 0** — the 2 errors are gone and
+`mba-sidecar-mirror-cancellation` resolved as predicted.
+
+**Scope guarded in the block itself:** the `.md` carries an explicit "value only" section
+stating the many-body magnitude remains open, that no per-block weight converts an intensive
+quantity into an extensive one, and that nothing there narrows the gate.
