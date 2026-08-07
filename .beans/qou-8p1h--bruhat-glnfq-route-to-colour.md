@@ -4,7 +4,7 @@ title: 'qou-8p1x/h: Bruhat / GL_n(F_q) realisation of H_n(q) as a native route t
 status: todo
 type: task
 created_at: 2026-08-07T12:40:00Z
-updated_at: 2026-08-07T12:40:00Z
+updated_at: 2026-08-07T13:20:00Z
 ---
 
 Parent: `qou-8p1x`. The strongest idea on the board, gated on `qou-8p1j`.
@@ -48,3 +48,19 @@ undefined sole foundation (`qou-8fl1`).
 Do not start by computing. Start by asking whether the framework has any
 structural reason to single out characteristic 2 (`qou-8p1j`). If it does not,
 this route should be recorded as attractive-but-numerological and left alone.
+
+
+---
+
+## SUBSUMED FOR FLAVOUR (2026-08-07)
+
+`qou-w5fw` / T3f already establishes that the Ocneanu parameter `a = q^{N-1}`
+is free on the Hecke tower, so `N = 3` is reachable at the **same `q`** via
+`a = q^2` — no characteristic-2 move needed. That is the better-formulated
+version of this bean's instinct (get `N = 3` from the Hecke tower itself), and
+it is already flagged in `qou-dwsh` §2c as the most promising direction.
+
+**What survives here** is the genuinely different *colour* target: the Fano
+plane as `PG(2,F_2)` with `Aut = GL(3,F_2) = PSL(2,7)`. That target really does
+want `q = 2`, and so really does depend on `qou-8p1j`. Keep this bean scoped to
+colour; do not use it to argue about flavour `N = 3`.

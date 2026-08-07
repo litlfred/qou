@@ -4,7 +4,7 @@ title: 'qou-8p1x/j: is there a STRUCTURAL reason the colour sector is characteri
 status: todo
 type: task
 created_at: 2026-08-07T12:40:00Z
-updated_at: 2026-08-07T12:40:00Z
+updated_at: 2026-08-07T13:20:00Z
 ---
 
 Parent: `qou-8p1x`. **The load-bearing unknown for `qou-8p1h`.**
@@ -47,3 +47,18 @@ specialisation — e.g. that the bar-involution's fixed locus does not reduce
 mod 2 compatibly, or that the framework's `q` cannot specialise to a prime
 power without breaking a proved property. That would close `qou-8p1h`
 cleanly and leave `qou-8p1i` as the only live route.
+
+
+---
+
+## DEMOTED (2026-08-07) — not needed for flavour N = 3
+
+Prior work found (`qou-w5fw` / T3f): the Ocneanu trace parameter
+`a = q^{N-1}` is a **free DOF on the Hecke tower**, separate from the
+Descartes-forced `dim V = 2`. Setting `a = q^2` gives a `gl_3`-weighted
+invariant **at the same `q`** — no characteristic-2 specialisation required.
+
+So this gate is **not** on the critical path to flavour `SU(3)`. It remains
+relevant only to the distinct *colour* target `PSL(2,7) = GL(3,F_2)` and the
+Fano plane as the `q = 2` flag geometry (`qou-8p1h`). Priority accordingly
+much lower than when written.

@@ -4,7 +4,7 @@ title: 'EPIC: routes to a 3-dimensional fibre / colour SU(3) — assessed and ro
 status: in-progress
 type: milestone
 created_at: 2026-08-07T12:40:00Z
-updated_at: 2026-08-07T12:40:00Z
+updated_at: 2026-08-07T13:20:00Z
 ---
 
 Umbrella for every proposed route to colour `SU(3)`, old and new, after the
@@ -81,3 +81,87 @@ The two live routes are **#1 (native, weak)** and **#2 (strong, gated on
 #2 collapses into numerology and #1 is all that is left — at which point the
 honest position is that colour is an **imported** symmetry and the corpus
 should say so plainly.
+
+
+---
+
+# CORRECTION (2026-08-07, later the same day) — prior work found, gap re-stated
+
+A corpus-grep for `T3b` turned up an **existing programme I had not seen** when
+this epic was written: epic **`qou-8lxd`** ("eightfold way / SM derived from
+QOU", todo, high priority, 2026-08-03), with `qou-dwsh` (T3b) and `qou-w5fw`
+(T3f) both **completed as assessments**, plus five audit docs
+(`2026-08-03-flavour-su3-schur-weyl-obstruction`,
+`2026-08-04-distinct-fibre-groupoid-assessment`,
+`2026-08-04-ocneanu-trace-parameter-audit`,
+`2026-08-04-tannakian-gerbe-flavor-assessment`,
+`2026-08-04-pgl3-higher-teichmuller-assessment`).
+
+**This epic is a child of `qou-8lxd`, not a rival to it.**
+
+## Correction 1 — the gap statement above is WRONG as written
+
+This epic says: *"the single-fibre construction supplies `dim V = 2`; colour
+needs a 3-dimensional fibre."* That conflates two objects the T3f audit
+explicitly warns must not be conflated:
+
+| Object | Governs | Constrained by |
+|---|---|---|
+| **fibre gauge group** `SU(2)`, `dim V = 2` | the braid rep `V^{tensor n}` | Descartes condition `chi(A) = -6` |
+| **Ocneanu parameter** `a = q^{N-1}` | *which* `gl_N`-weighted invariant the Markov trace computes | **unknown — a separate DOF** |
+
+So "we need a 3-dimensional fibre" is **not** the only way to reach `N = 3`.
+Setting `a = q^2` gives a `gl_3`-weighted invariant **on the same tower at the
+same `q`**, with no new fibre and no new construction. `HnMarkovTrace.lean`
+types `z` as a free class **field** (only `z_pos`), while its docstring pins the
+Jones value — exactly the T3f finding.
+
+## Correction 2 — flavour and colour are different targets
+
+`qou-dwsh` §2a is explicit: the octonionic `G_2` route gives **colour** `SU(3)`,
+**not flavour**. This epic grew out of the Klein exclusion, which is a *colour*
+route, but the gap statement above was written as if it covered both. It does
+not.
+
+* **Flavour `SU(3)`** (the eightfold multiplets, via Schur–Weyl at `N = 3`) —
+  the Ocneanu route, `qou-w5fw` / T3f §2c, already flagged there as *"the most
+  promising direction: it requires no new construction, only a separation of
+  the `N = 2` mass channel from an `N = 3` flavour channel on the same Hecke
+  tower."*
+* **Colour `SU(3)` / `PSL(2,7)` / Fano** — what this epic's routes address.
+
+## Correction 3 — re-ranking, and `qou-8p1j` is demoted
+
+The Ocneanu route is a **better-formulated version of the instinct behind
+`qou-8p1h`** (get `N = 3` from the Hecke tower itself) and it does **not need
+characteristic 2 at all** — it needs `a = q^2` at the same `q`.
+
+* `qou-8p1h` (Bruhat) — **subsumed for flavour.** Survives only for the
+  distinct *colour* target `PSL(2,7) = GL(3,F_2)`, where the `q = 2` flag
+  geometry is genuinely what is wanted.
+* `qou-8p1j` (characteristic-2 gate) — **demoted.** Not needed for flavour
+  `N = 3`. Relevant only to the colour target above, and therefore much lower
+  priority than written.
+* `qou-8p1i` (multi-fibre groupoid) — my roast stands and **matches the prior
+  audit**: `qou-dwsh` says "No construction exists in the corpus", and its §2b
+  asks exactly my questions (what forces exactly 3 fibre types? do the
+  inter-fibre morphisms carry the right tensor structure? is the result
+  non-self-dual?). Not a duplicate finding — an independent confirmation.
+
+## The actual live blocker, already well-posed by T3f
+
+Not "find a 3-dimensional fibre". It is:
+
+> **Is `N = 2` forced, or is the Ocneanu parameter free?** The mass pipeline is
+> structurally tied to `N = 2`: `dim V_{(2,1)}^{gl_2} = 2` but
+> `dim V_{(2,1)}^{gl_3} = 8`, so `N = 3` changes the representation dimension
+> and the operator structure, not merely the weights. T3f calls this a **soft
+> constraint** — "not a theorem, but a structural compatibility".
+
+T3f's own recommendation is the target: **a Lean proof that the mass pipeline
+uniquely selects `N = 2`, or that `N = 3` is compatible.** Note the relevant
+dimension formula is *already* formalised —
+`RowCapObstruction.weylDimMixed N = 2 * (N+1).choose 3 = N(N^2-1)/3`, giving
+2 at `N = 2` and 8 at `N = 3`.
+
+That is where the next effort belongs, and it belongs under `qou-8lxd`.
