@@ -1,8 +1,10 @@
 *The discrete color symmetry $\mathrm{PSL}(2,7)$ arises from the octonionic
 automorphism group $G_2$ via the Fano plane, whose incidence structure
-encodes the octonion multiplication table.  The bridge group
-$S_4 \subset S_5 \cap \mathrm{PSL}(2,7)$ carries the local Fano data
-from the Bring surface to the Klein quartic.*
+encodes the octonion multiplication table.  The octonion algebra is taken
+as an external input: it is not constructed from the categorical substrate,
+and the attempt to connect the two --- the bridge group
+$S_4 \subset S_5 \cap \mathrm{PSL}(2,7)$ carrying local Fano data from the
+Bring surface to the Klein quartic --- is refuted below.*
 
 **The $S_4$ bridge mechanism.**
 The Bring surface $\Sigma_4$ (genus 4) has automorphism group $S_5$.
