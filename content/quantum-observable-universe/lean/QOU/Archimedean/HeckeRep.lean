@@ -76,7 +76,7 @@ noncomputable def HeckeRep.genInv (ρ : HeckeRep n d) (i : Fin (n - 1)) :
 -- Ref: [iwahori1964]
 theorem gen_mul_genInv (ρ : HeckeRep n d) (i : Fin (n - 1)) :
     ρ.gen i * ρ.genInv i = 1 := by
-  unfold genInv
+  unfold HeckeRep.genInv
   rw [mul_sub, mul_smul_comm, mul_one, ρ.hecke_rel i]
   -- goal: HA_t • gen i + 1 - HA_t • gen i = 1
   abel
@@ -185,7 +185,7 @@ noncomputable def HeckeRep.halfBorromeanMat (ρ : HeckeRep n d)
 theorem halfBorromeanMat_eq_eval (ρ : HeckeRep n d)
     (i j : Fin (n - 1)) :
     ρ.halfBorromeanMat i j = ρ.eval (halfBorromeanWord i j) := by
-  simp [halfBorromeanMat, halfBorromeanWord, eval, Matrix.mul_assoc]
+  simp [HeckeRep.halfBorromeanMat, halfBorromeanWord, HeckeRep.eval, Matrix.mul_assoc]
 
 /-- The conjugated half-Borromean `h'_{ij} = σ_i⁻¹ σ_j⁻¹ σ_i σ_j`.
 

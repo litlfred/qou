@@ -128,7 +128,7 @@ def IsInfinitesimal (x : K) : Prop :=
   ∀ ε : ℝ, 0 < ε → |x| < (ofReal ε : K)
 
 /-- An infinitesimal is finite. -/
-theorem isFinite {x : K} (hx : IsInfinitesimal x) :
+theorem IsInfinitesimal.isFinite {x : K} (hx : IsInfinitesimal x) :
     IsFinite x := by
   refine ⟨1, ?_⟩
   have h : |x| < ((ofReal (1 : ℝ) : K)) := hx 1 one_pos
@@ -225,7 +225,7 @@ theorem IsFinite.mul {x y : K} (hx : IsFinite x) (hy : IsFinite y) :
     _ = ((n * m : ℕ) : K)             := by push_cast; ring
 
 /-- Finite × infinitesimal is infinitesimal. -/
-theorem mul_finite {x y : K}
+theorem IsInfinitesimal.mul_finite {x y : K}
     (hx : IsInfinitesimal x) (hy : IsFinite y) :
     IsInfinitesimal (x * y) := by
   obtain ⟨n, hn⟩ := hy

@@ -176,7 +176,7 @@ theorem Matrix.PosSemidef.trace_mul_eq_zero_iff_mul_eq_zero
         · exact absurd h hev0
         · exact h
       have hCij : C i j = 0 :=
-        Matrix.PosSemidef.row_zero_of_diag_zero
+        QOU.MathlibExt.PosSemidefDiagZero.Matrix.PosSemidef.row_zero_of_diag_zero
           hC_psd hCii j
       rw [hCij, mul_zero]
   -- `A * B = U * (D * C) * Uᴴ = 0`.

@@ -137,7 +137,7 @@ theorem PartitionOf5.singleTotalDim_eq_dim (p : PartitionOf5) :
     dim V_λ` (the number of standard Young tableaux).  Hence the ungraded datum
     `dim V_λ` — everything the confinement SDP / `T_w` / `tr_M` read — is SHARED
     between `G_λ` and `H_λ`. -/
-theorem fakeTotalDim_eq_dim (p : PartitionOf5) :
+theorem PartitionOf5.fakeTotalDim_eq_dim (p : PartitionOf5) :
     (p.fakeCoeffs).sum = p.dim := by
   cases p <;> decide
 
@@ -162,7 +162,7 @@ theorem PartitionOf5.single_gradedEuler_eq_deltaLambda (p : PartitionOf5) :
     `f(-1)=0≠-2` observation to the entire `n=5` anchor.  The two dim-1 blocks
     `(5)`, `(1⁵)` are trivially single-degree monomials, so they agree — hence the
     `dim ≠ 1` hypothesis.) -/
-theorem fake_gradedEuler_ne_deltaLambda (p : PartitionOf5)
+theorem PartitionOf5.fake_gradedEuler_ne_deltaLambda (p : PartitionOf5)
     (h : p.dim ≠ 1) : gradedEuler p.fakeCoeffs ≠ p.deltaLambda := by
   revert h; cases p <;> decide
 
