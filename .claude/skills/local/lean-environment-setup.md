@@ -201,36 +201,38 @@ elan / cache hosts are network-restricted.
 > else:
 >
 > ```bash
-> # Derive the cache branch from the pinned toolchain — do NOT hard-code the slug
-> # (works from any subdir; CRLF-safe):
-> ROOT=$(git rev-parse --show-toplevel); TGZ=$(mktemp)
-> SLUG=$(cut -d: -f2 "$ROOT/lean-toolchain" | tr -d '\r' | tr . -)   # v4.24.0 -> v4-24-0
-> BR="lake-cache/qou-$SLUG"
-> git fetch --depth=1 origin "$BR" \
->   && git ls-tree --name-only FETCH_HEAD | grep '^lake-oleans\.tgz\.part' | sort \
->      | while read -r p; do git show "FETCH_HEAD:$p"; done > "$TGZ" \
->   && tar xzf "$TGZ" -C "$ROOT" \
->   && echo "restored .lake oleans from $BR — NO rebuild needed"
+> scripts/lean-cache-restore.sh
 > ```
 >
-> The `SLUG` line derives the branch from the pinned toolchain so it never goes
-> stale (`leanprover/lean4:v4.24.0` → `lake-cache/qou-v4-24-0`); the tarball
-> goes to a `mktemp` file and extracts with `-C "$ROOT"` (repo root), not the
-> current directory. Full restore/seed details (incl. how to **SEED** after a
-> fresh build) are in the **🗄️ PRESERVE THE BUILD** section further down this file.
+> **Run the script — do not hand-roll the fetch/extract.** It derives the cache
+> branch from the pinned toolchain (`leanprover/lean4:v4.24.0` →
+> `lake-cache/qou-v4-24-0`), so it never goes stale across toolchain bumps; it
+> is idempotent (skips when ≥ 2000 mathlib oleans are already present); it
+> extracts to the repo root regardless of your cwd; it lists the available
+> `lake-cache/*` branches when the expected one is missing; and it runs
+> `lean_mathlib_url_fix` afterwards so a later `lake` invocation does not detect
+> a URL change and wipe the restore. Full restore/seed details (incl. how to
+> **SEED** after a fresh build) are in the **🗄️ PRESERVE THE BUILD** section
+> further down this file.
 >
-> **⚠ `FETCH_HEAD` is global — do NOT run another `git fetch` concurrently
-> during the restore.** The recipe resolves the parts via the mutable
-> `FETCH_HEAD` ref. If a second fetch (a background `git fetch origin main`, a
-> parallel agent) repoints `FETCH_HEAD` mid-loop, the `git show FETCH_HEAD:…part0N`
-> calls silently resolve against the wrong commit, the assembled tarball is
-> truncated, and `tar` fails (`gzip: not in gzip format` / `Child returned status
-> 1`) — looking exactly like a corrupt cache (cost a session 2026-06-22). The
-> recipe itself is correct (`git show` and `git cat-file blob` are byte-identical
-> here — the slug/loop are fine). Run the restore **serially**, or make it
-> race-proof by fetching into a private ref: `git fetch --depth=1 origin
-> "$BR:refs/restore-tmp"` then read `refs/restore-tmp:$p` in the loop instead of
-> `FETCH_HEAD:$p`.
+> Two hazards the script already handles, and which is why the previous
+> hand-rolled incantation was removed from this file (2026-08-07):
+>
+> - **`FETCH_HEAD` is global and mutable.** A recipe that resolves the payload
+>   blobs via `FETCH_HEAD` races any concurrent `git fetch` (a background
+>   `fetch origin main`, a parallel agent). The competing fetch repoints
+>   `FETCH_HEAD` mid-read, the blobs resolve against the wrong commit, the
+>   payload is truncated, and `tar` fails with `gzip: not in gzip format` —
+>   looking exactly like a corrupt cache (cost a session 2026-06-22). The script
+>   fetches into the private ref `refs/lean-cache-restore` instead, so it is
+>   safe to run concurrently.
+> - **A ~1 GB temp tarball leaks and doubles peak disk.** Reassembling the parts
+>   into a `mktemp` file before extracting needs room for the tarball *and* the
+>   extracted tree, and orphans that GB whenever the process dies before its
+>   cleanup runs. Ten such `/tmp/tmp.*` tarballs (~9 GB) were found filling a
+>   session container on 2026-08-07 — from agents copy-pasting the old
+>   incantation. The script streams the parts straight into `tar`, so there is
+>   no temp file to leak and no disk spike.
 >
 > Only if the fetch fails (branch unseeded) or the oleans are a
 > toolchain/`lakefile.toml` **miss** do you fall back to the source-clone +
@@ -248,9 +250,13 @@ elan / cache hosts are network-restricted.
 > **after** the base restore above:
 >
 > ```bash
-> ROOT=$(git rev-parse --show-toplevel); T=$(mktemp)
-> git fetch --depth=1 origin lake-cache/qou-v4-24-0-repthy-wedderburn
-> git show FETCH_HEAD:addon-oleans.tgz > "$T"; tar xzf "$T" -C "$ROOT"
+> # Private ref (not FETCH_HEAD) + stream into tar (no temp file) — same two
+> # hazards as the base restore above.
+> ROOT=$(git rev-parse --show-toplevel)
+> git fetch --depth=1 origin \
+>   '+lake-cache/qou-v4-24-0-repthy-wedderburn:refs/lean-cache-addon'
+> git cat-file blob refs/lean-cache-addon:addon-oleans.tgz | tar xz -C "$ROOT"
+> git update-ref -d refs/lean-cache-addon
 > ```
 >
 > This saves the ~5-min from-source rebuild of those 11 modules. (If a future

@@ -23,6 +23,21 @@ BR="lake-cache/qou-$SLUG"
 WORK="$(mktemp -d)"
 LIST="$WORK/files.txt"
 TGZ="$WORK/lake-oleans.tgz"
+
+# Cleanup trap covering BOTH scratch dirs and the seed worktree. Without this the
+# run orphans `$WORK` — which holds a ~1.5 GB `lake-oleans.tgz` — plus the worktree
+# parent, on every invocation. Ten such `/tmp/tmp.*` dirs (~9 GB) were found
+# filling a session container on 2026-08-07, enough to wedge it at 100% disk.
+# Mirrors the trap that `lean-toolchain-cache-seed.sh` already had.
+# `${…:-}` guards are required: `set -u` is on and these are assigned later.
+WTPARENT=""; SEEDWT=""
+cleanup() {
+  [ -n "${SEEDWT:-}" ] && git -C "$ROOT" worktree remove --force "$SEEDWT" 2>/dev/null
+  rm -rf "${WORK:-}" ${WTPARENT:+"$WTPARENT"}
+  git -C "$ROOT" worktree prune 2>/dev/null || true
+  return 0
+}
+trap cleanup EXIT
 PUSH=0; [ "${1:-}" = "--push" ] && PUSH=1
 
 echo "seed branch: $BR"
@@ -88,7 +103,9 @@ fi
 # unique per-run orphan branch + worktree so a prior aborted run can't collide
 git worktree prune 2>/dev/null || true
 TMPBR="seed-tmp-$SLUG-$$"
-WT="$(mktemp -d)/seed-wt"
+WTPARENT="$(mktemp -d)"
+WT="$WTPARENT/seed-wt"
+SEEDWT="$WT"        # registers the worktree with the cleanup trap above
 git worktree add --detach -q "$WT"
 mv lake-oleans.tgz.part* "$WT"/
 push_ok=1

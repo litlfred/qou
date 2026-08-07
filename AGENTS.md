@@ -2545,14 +2545,11 @@ and **SEED the cache branch afterwards**. Full slug/seed rules:
 
 ```bash
 # Step 0 (FASTEST — try before Steps 1–3): restore prebuilt oleans from the
-# lake-cache orphan branch whose slug is DERIVED from the pinned toolchain
-# (future-proof, works from any subdir, CRLF-safe).
-ROOT=$(git rev-parse --show-toplevel); TGZ=$(mktemp)
-SLUG=$(cut -d: -f2 "$ROOT/lean-toolchain" | tr -d '\r' | tr . -)   # v4.24.0 -> v4-24-0
-git fetch --depth=1 origin "lake-cache/qou-$SLUG" \
-  && git ls-tree --name-only FETCH_HEAD | grep '^lake-oleans\.tgz\.part' | sort \
-     | while read -r p; do git show "FETCH_HEAD:$p"; done > "$TGZ" \
-  && tar xzf "$TGZ" -C "$ROOT" && echo "restored from lake-cache/qou-$SLUG — skip Steps 1–3"
+# lake-cache orphan branch. Derives the slug from the pinned toolchain, is
+# idempotent, streams the payload (no ~1 GB temp file), fetches into a private
+# ref (race-proof vs a concurrent fetch), and fixes the mathlib origin URL so a
+# later `lake` run does not wipe the restore.
+scripts/lean-cache-restore.sh && echo "restored — skip Steps 1–3"
 
 # Step 1: Shallow-clone mathlib locally (~144 MB).  [fallback if Step 0 misses]
 cd .. && git clone --depth 1 https://github.com/leanprover-community/mathlib4.git

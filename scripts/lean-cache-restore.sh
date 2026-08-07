@@ -30,7 +30,15 @@ if [ "${existing:-0}" -ge 2000 ]; then
   exit 0
 fi
 
-if ! git -C "$REPO_ROOT" fetch --depth=1 origin "$branch" 2>/dev/null; then
+# Fetch into a PRIVATE ref, not FETCH_HEAD. `FETCH_HEAD` is global and mutable:
+# a concurrent `git fetch` (a background `fetch origin main`, a parallel agent)
+# repoints it mid-read, so the blobs silently resolve against the wrong commit and
+# the assembled tarball is truncated — presenting as a corrupt cache
+# ("gzip: not in gzip format"). Cost a session on 2026-06-22.
+restore_ref="refs/lean-cache-restore"
+trap 'git -C "$REPO_ROOT" update-ref -d "$restore_ref" 2>/dev/null || true' EXIT
+
+if ! git -C "$REPO_ROOT" fetch --depth=1 origin "+$branch:$restore_ref" 2>/dev/null; then
   echo "lean-cache-restore: branch '$branch' not found on origin." >&2
   echo "  available lake-cache branches:" >&2
   git -C "$REPO_ROOT" ls-remote origin 'lake-cache/*' 2>/dev/null \
@@ -38,19 +46,24 @@ if ! git -C "$REPO_ROOT" fetch --depth=1 origin "$branch" 2>/dev/null; then
   exit 1
 fi
 
-tgz="$(mktemp)"
-trap 'rm -f "$tgz"' EXIT
-# The payload is chunked into lake-oleans.tgz.part* blobs; concatenate
-# them in order back into one tarball.
-git -C "$REPO_ROOT" ls-tree --name-only FETCH_HEAD \
-  | grep '^lake-oleans\.tgz\.part' | sort \
-  | while read -r p; do git -C "$REPO_ROOT" show "FETCH_HEAD:$p"; done > "$tgz"
-if [ ! -s "$tgz" ]; then
+# The payload is chunked into lake-oleans.tgz.part* blobs. Stream them straight
+# into `tar` rather than reassembling a temp tarball first: the payload is ~1 GB,
+# so a temp file both doubles peak disk (tarball + extracted tree) and leaks that
+# GB if the process dies before its cleanup trap runs. Ten such orphaned
+# /tmp/tmp.* tarballs (~9 GB) were found on a session container on 2026-08-07.
+mapfile -t parts < <(git -C "$REPO_ROOT" ls-tree --name-only "$restore_ref" \
+  | grep '^lake-oleans\.tgz\.part' | sort)
+if [ "${#parts[@]}" -eq 0 ]; then
   echo "lean-cache-restore: no 'lake-oleans.tgz.part*' blobs on $branch." >&2
   exit 1
 fi
-tar xzf "$tgz" -C "$REPO_ROOT" || {
-  echo "lean-cache-restore: tar extraction failed (exit $?)." >&2
+echo "lean-cache-restore: streaming ${#parts[@]} part(s) into tar (no temp file)"
+# PIPESTATUS is checked so a mid-stream git failure is not masked by tar's exit 0.
+set -o pipefail
+for p in "${parts[@]}"; do
+  git -C "$REPO_ROOT" cat-file blob "$restore_ref:$p"
+done | tar xz -C "$REPO_ROOT" || {
+  echo "lean-cache-restore: extraction failed (exit $?) — truncated or corrupt payload." >&2
   exit 1
 }
 lean_mathlib_url_fix
