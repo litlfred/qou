@@ -41,3 +41,38 @@ is the part worth fanning out across agents; the strip was not.
 
 Blocked in part by qou-wu80 (stale folio-assistant path) and qou-dgkf
 (pyhecke_native has no wheel) -- both hide producers from measurement.
+
+## Measured at the source (PR #4677) — "NOT MECHANIZABLE" was half wrong
+
+The localization IS mechanizable: `computations/float64_entry_tracer.py`
+patches mpmath's `from_float`/`from_npfloat` and reads off the source line
+where a float64 enters. The *judgment* above stays per-file; the hunting does
+not. Re-measured: RE_PADS 19 / 228 fields (was 20/229 — the delta is exactly
+the one gt_matrix fix). 18 traced, `rho_k_co_casimir_extended` (+71) still
+exceeds a 900s budget and is NOT measured.
+
+- **A — float64 really enters (9 producers, 118 fields).** Three idioms, not
+  nine investigations: one shared library downcast
+  (`hecke/hecke_characters.py:214`, hit 527310x by su4), `mpf(<float out of
+  JSON>)` across four producers, and `mpf(<float-valued name>)` — including
+  the `binding_factor_f_sequence.py:76` instance this bean already names.
+  The largest (chirality, 71) is DELIBERATE f64 — Rust kernel called with
+  `precision="f64"`, witness records `kernel_precision: f64` — so the fix is
+  to stop serializing 53 bits at 50 dps. Two sites are comparison tolerances
+  and must not move.
+- **B — no float64 enters at all (9 producers, 39 fields).** Their values are
+  genuine computations of exact integers (tr_M(1) = 1 - 1.4e-51). Flagged
+  because `is_f64_padded` catches anything within 1e-30 of a double, and so is
+  a real padded value truncated at 50 dps (1.56e-50). No static test separates
+  them. These need no producer fix.
+
+**`propagated = 0` is refuted.** qbeta_markov_trace_compute_accuracy_diagnostic
+regenerates a string already committed verbatim in
+qbeta-markov-trace-norm-probe.witness.json. That classifier was never committed
+with its claim, so it was never reproducible — the propagated class is
+unmeasured, not zero, and an exact-string search over the POST-strip corpus is
+biased toward LOCAL by construction.
+
+Next: measure rho_k_co_casimir_extended; re-measure LOCAL vs propagated with a
+committed tool; fix the two library-level Class A idioms (source fix and
+witness regeneration as separate commits — they change numbers).
