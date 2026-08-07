@@ -1,10 +1,10 @@
 ---
 # qou-8p1b
 title: 'qou-8pl1/b: find an invariant separating Klein from the other S_4-admitting genus-3 curves'
-status: todo
+status: completed
 type: task
 created_at: 2026-08-07T00:00:00Z
-updated_at: 2026-08-07T09:20:00Z
+updated_at: 2026-08-07T11:05:00Z
 ---
 
 Parent: `qou-8pl1`. Depends on `qou-8p1a` (know the competitor set first).
@@ -102,3 +102,52 @@ Classify the S_4-invariant 1-cycles on the Bring surface up to the S_5 action
 (`H_1(Sigma_4, Z)` has rank 8, `S_5` acts).  Different invariant cycles may
 pinch to different members — in which case the chain as written is
 under-determined and needs to say WHICH cycle.
+
+
+---
+
+## RESULT (2026-08-07) — the probe ran, and it INVERTS the framing
+
+`computations/s4_marked_pair_obstruction.py`, exact arithmetic, all checks
+pass; witness `computations/s4-marked-pair-obstruction.witness.json`.
+
+The marked-pair sharpening proposed above is **not a separator. It is an
+obstruction, and it excludes the Klein quartic rather than selecting it.**
+
+**S_4 has no orbit of size <= 2 on P^2 at all.** Let `{p,q}` be S_4-stable;
+permuting it gives `S_4 -> S_2` whose kernel has index 1 or 2, hence is `S_4`
+or the unique index-2 subgroup `A_4`. Either way the line through `p` is an
+invariant 1-dimensional subspace. But the 3-dimensional representation of
+`S_4` **and** its restriction to `A_4` are both absolutely irreducible —
+each verified two independent ways (commutant dimension 1, character norm 1) —
+and an absolutely irreducible representation has no invariant line over any
+extension field. So no such pair exists, on any smooth plane quartic.
+
+**Consequence.** Under the chapter's own three premises — (H1) one
+S_4-invariant non-separating cycle, hence one node and an S_4-stable pair of
+preimages; (H2) S_4 faithful on the normalization; (H3) non-hyperelliptic
+normalization, so S_4 sits faithfully in `PGL_3` — the configuration the
+degeneration is supposed to produce **does not exist**. Klein satisfies (H3),
+so it is excluded.
+
+**Scope-(b) STRUCTURAL EXCLUSION**, licensed by a proved invariant (an
+orbit/index count against absolute irreducibility), not a scope-(a) numerical
+near-miss. Note this bears on the **conjecture**, unlike the two earlier
+failures which bore only on arguments for it.
+
+## Surviving escapes — see `qou-8p1e`
+
+Named precisely so this is not over-read:
+* **hyperelliptic** genus-3 targets (canonical map 2:1 onto a conic, so `Aut`
+  does not act through `PGL_3` this way; `y^2 = x^8 + 14x^4 + 1` has
+  `|Aut| = 48` containing `S_4`). Klein is **not** hyperelliptic, so this does
+  not rescue the colour route as written.
+* pinches with several nodes, or of a separating cycle (violates H1).
+* non-faithful action on the normalization (violates H2 — but then
+  "S_4 survives" is false as stated).
+* the Bring surface itself is untouched: this constrains the TARGET, not the
+  source. The `qou-8p1a` prerequisite (classify S_4-invariant 1-cycles on
+  Bring) is still unanswered and still worth doing.
+
+`qou-8p1c` (period matrix) is now clearly **not** worth unblocking for this
+purpose: there is no longer a shortlist of candidate targets to compare.
