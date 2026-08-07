@@ -2968,3 +2968,43 @@ difficulty.
 Probe + witness: `computations/probes/qbeta_5two_route5_branch_data_probe.py`,
 `computations/qbeta-5two-route5-branch-data.witness.json` (8 gates, 60 dps,
 parameter-free). **Sum-rule status unchanged: verified to 80 dps, unproved.**
+
+**2026-08-07 (night, PR #4658) — Route 5's chain is now a theorem; Route 6
+tried and refuted; the hard part is untouched.**
+
+*The chain.* `Σⱼ Re cLiTwoExt(yⱼ) = −∫₀¹ log(1 − 2z + 3z² − z³)/z dz`
+(`sum_re_cLiTwoExt_eq_integral`), sorry-free, assembled from
+`sum_re_log_one_sub_eq_log_recipCubic` (real parts, so no branch data enters) +
+integral linearity + `Re` commuting with the integral. `cLiTwoExt` is the
+integral-defined dilogarithm, the object that makes sense at `‖y₁‖ = 1.52`;
+`cLiTwo_eq_intervalIntegral` proves it agrees with the series on the disc, and
+`intervalIntegrable_log_one_sub_div` discharges its side conditions (needs
+`Re(1 − yz) > 0` on `[0,1]`, true for all three roots).
+
+*Route 6 — Zagier's enhanced dilogarithm — REFUTED, scope-(a).* Owner supplied
+Zagier (2007) as `uploads/fulltext.pdf`. §II.1 B's `D̃ = Li₂(z) + ½uv` on
+`{eᵘ+eᵛ=1}`, valued in `ℂ/(π²/2)ℤ`, looked like our `Vⱼ` exactly: same
+`Li₂ + (log)(log)`-with-branch-data shape, roots on `2u = 3v + 2πik`, and
+`−3π²/2` an exact multiple of the ambiguity. Had it closed, the problem would
+have become a *rationality* statement. It does not: no integer branch offset
+matches, and the residual is exactly `πi(2b+k)u − b²π²`, leaving
+`Σⱼ Re D̃(yⱼ) = π²/2 − (2/3)πθ` with `πθ ∉ π²ℚ`. **Scope-(a)** — this set-up
+fails; nothing excludes a formulation at a different covering point or Bloch
+element. The obvious thing such a formulation must track is already Lean-proved
+here: `d[yⱼ]` is **3-torsion**, not zero (`three_smul_wedge_eq_zero`).
+
+*One summand identified.* `Re V₃ = 3·L(y₃) − π²` with `L` the **Rogers**
+dilogarithm (`re_V_real_root_eq_rogers`) — the real root's contribution is a
+standard object, not an ad-hoc combination. It evaluates nothing:
+`L(y₃)/(π²/6) = 0.441033…` is irrational, as expected for a cubic-field
+argument.
+
+*What is left, exactly two things.* (i) `cLiTwoExt` analytic on `ℂ ∖ [1,∞)` —
+without it "the analytic continuation" is a name, and `cLiTwoExt(y₁)` is not
+*identified* with the sum rule's `Li₂(y₁)`. (ii) **Evaluating
+`−∫₀¹ log P(z)/z dz` in closed form.** Untouched. This is the actual hard part,
+and none of today's eleven theorems approaches it — they make the restatement
+rigorous and demystify the branch data `b` (= `Log(−y)`, forced, not fitted).
+
+**Six routes tried, six not closing. Status unchanged: verified to 80 dps,
+unproved.**
