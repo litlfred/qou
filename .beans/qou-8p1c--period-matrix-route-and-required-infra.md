@@ -4,7 +4,7 @@ title: 'qou-8pl1/c: period-matrix route — BLOCKED on infra, requirements recor
 status: todo
 type: task
 created_at: 2026-08-07T00:00:00Z
-updated_at: 2026-08-07T00:00:00Z
+updated_at: 2026-08-07T09:20:00Z
 ---
 
 Parent: `qou-8pl1`. The decisive route, and the expensive one.
@@ -52,3 +52,16 @@ Roughly in increasing order of effort:
 competitor set turns out to be small and a cheap discrete invariant separates
 it, the period computation may never be necessary. Only escalate here if the
 discrete invariants prove insufficient.
+
+
+---
+
+## NOT THE BOTTLENECK (2026-08-07, from `qou-8p1a`)
+
+`qou-8p1a` closed: the S_4 datum admits an infinite pencil of genus-3 curves.
+So the blocked numpy/scipy/sage infra recorded above is **not what is holding
+`qou-8pl1` up**.  Even with a working period-matrix stack, computing periods of
+two hand-picked curves cannot close an argument whose organising datum is this
+weak.  Deprioritise until `qou-8p1b` has been re-scoped to an invariant the
+pinch determines; the infra requirements below stay recorded for whenever the
+route is genuinely needed.
