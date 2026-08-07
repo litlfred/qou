@@ -40,6 +40,17 @@ problem. This file does not close it and does not claim to.)
   filler, and everything below needs it.
 * `Cl_2_neg`, `Cl_2_add_two_pi` — oddness and `2π`-periodicity, from the
   series.
+* `Cl_2_duplication` — `Cl₂(2θ) = 2Cl₂(θ) − 2Cl₂(π−θ)`, from the Fourier
+  series by a parity split. `sin(nπ − nθ) = −(−1)ⁿ sin(nθ)` puts a factor
+  `1 + (−1)ⁿ` on each term, killing the odd `n` and doubling the even; the
+  surviving half reindexes to `Cl₂(2θ)`.
+* `Cl_2_two_pi_div_three`, `three_Lob_pi_div_three` — **the consistency
+  check.** Duplication at `θ = π/3` forces `Cl₂(2π/3) = (2/3)Cl₂(π/3)`, so
+  the general formula's value at the regular ideal tetrahedron,
+  `3·Λ(π/3) = 3·Cl₂(2π/3)/2`, collapses to exactly `Cl₂(π/3)` — the
+  per-tetrahedron value behind the corpus's `Vol(4₁) = 2·Cl₂(π/3)`. This is
+  not `rfl`: it validates the non-unit-circle definition against a case the
+  corpus already trusts.
 * `tetAngles_sum_eq_pi` — **the substantive theorem**: for `Im z > 0`,
   `arg z + arg(1/(1−z)) + arg(1 − 1/z) = π`. The three quantities really are
   the angles of a tetrahedron. The proof is that the three factors multiply to
@@ -57,25 +68,24 @@ The numerical identity behind this file is
 measured this session at 60 dps and agreeing to 20 digits (the limit being the
 precision of the `Vol(5₂)` literal, not the computation). It is recorded below
 as a **conjecture carrier with no instance** — the honest representation of an
-open statement — and it is open for two independent reasons:
+open statement.
 
-1. **The geometry.** `Vol(5₂) = 3·D(y₊)` needs the fact that the `5₂`
-   complement's ideal triangulation is three tetrahedra *all of the same
-   shape* `y₊`. That is Thurston/SnapPea, nowhere near Mathlib, and it is the
-   actual mathematical content — the division by 3 is bookkeeping. Note that
-   `Vol_figure_8` and `Vol_Borromean` in the filler enter the corpus the same
-   way, as definitions; their accompanying "theorems" are `rfl`.
-2. **The Clausen duplication formula** `Cl₂(2θ) = 2Cl₂(θ) − 2Cl₂(π−θ)`, which
-   is what would let `BlochWigner_lob` be checked against the two unit-circle
-   cases the corpus already trusts (at `θ = π/3` it gives
-   `3·Cl₂(2π/3)/2 = Cl₂(π/3)`, reproducing `Vol(4₁) = 2·Cl₂(π/3)` — a real
-   check, not `rfl`). It is true and provable by the even/odd split of the
-   Fourier series; it is not proved here. Isolated below as
-   `ClausenDuplication`, in the style of `FiveTwoDilogLadder`.
+**The one open reason is geometric.** `Vol(5₂) = 3·D(y₊)` needs the fact that
+the `5₂` complement's ideal triangulation is three tetrahedra *all of the same
+shape* `y₊`. That is Thurston/SnapPea, nowhere near Mathlib, and it is the
+actual mathematical content — the division by 3 is bookkeeping. Note that
+`Vol_figure_8` and `Vol_Borromean` in the filler enter the corpus the same
+way, as definitions; their accompanying "theorems" are `rfl`. This file does
+not repeat that pattern: it names the geometric input instead of hiding it in
+a definition.
 
-Until (2) lands, `BlochWigner_lob` is a *definition* that has been validated
-numerically but not against the corpus's own two knots. Do not cite it as
-though it had been.
+An earlier revision of this header listed the Clausen duplication formula as a
+second open input, isolated as a `ClausenDuplication` carrier. **That is now
+proved** (`Cl_2_duplication`), the carrier is gone, and the consistency check
+it was gating is discharged: `BlochWigner_lob` reproduces the corpus's
+figure-8 per-tetrahedron value at the regular shape. So the general definition
+is no longer merely numerically validated — it agrees with the corpus on a
+case the corpus already trusts.
 
 -- Ref: [thurston1978] The geometry and topology of three-manifolds
 -- Ref: [zagier1986] DOI 10.1007/BFb0084581
@@ -125,6 +135,120 @@ theorem Cl_2_add_two_pi (θ : ℝ) : Cl_2 (θ + 2 * Real.pi) = Cl_2 θ := by
   have h : ((k : ℝ) + 1) * (θ + 2 * Real.pi)
       = ((k : ℝ) + 1) * θ + ((k + 1 : ℤ) : ℝ) * (2 * Real.pi) := by push_cast; ring
   rw [h, Real.sin_add_int_mul_two_pi]
+
+/-! ### The duplication formula
+
+`Cl₂(2θ) = 2·Cl₂(θ) − 2·Cl₂(π−θ)`, proved from the Fourier series. The
+mechanism: `sin(nπ − nθ) = −(−1)ⁿ sin(nθ)`, so the bracket
+`sin(nθ) − sin(n(π−θ))` carries a factor `1 + (−1)ⁿ` — it **vanishes for odd
+`n`** and doubles for even `n`. Splitting the sum on parity and reindexing
+`n = 2m` returns `Cl₂(2θ)`. -/
+
+/-- `cos(nπ) = (−1)ⁿ`, by induction on `n`. -/
+private lemma cos_nat_mul_pi (n : ℕ) :
+    Real.cos ((n : ℝ) * Real.pi) = (-1) ^ n := by
+  induction n with
+  | zero => simp
+  | succ m ih =>
+      have h : ((m + 1 : ℕ) : ℝ) * Real.pi = (m : ℝ) * Real.pi + Real.pi := by
+        push_cast; ring
+      rw [h, Real.cos_add, Real.cos_pi, Real.sin_pi, ih]
+      ring
+
+/-- The reflection `sin(n(π − θ)) = −(−1)ⁿ · sin(nθ)`. This sign alternation is
+the entire content of the duplication formula. -/
+private lemma sin_nat_mul_pi_sub (n : ℕ) (θ : ℝ) :
+    Real.sin ((n : ℝ) * (Real.pi - θ)) = -((-1) ^ n) * Real.sin ((n : ℝ) * θ) := by
+  have h : (n : ℝ) * (Real.pi - θ) = (n : ℝ) * Real.pi - (n : ℝ) * θ := by ring
+  rw [h, Real.sin_sub, Real.sin_nat_mul_pi, cos_nat_mul_pi]
+  ring
+
+/-- The same, in the index shape `Cl_2` actually uses. -/
+private lemma sin_succ_mul_pi_sub (k : ℕ) (θ : ℝ) :
+    Real.sin (((k : ℝ) + 1) * (Real.pi - θ))
+      = -((-1) ^ (k + 1)) * Real.sin (((k : ℝ) + 1) * θ) := by
+  have hc : ((k : ℝ) + 1) = ((k + 1 : ℕ) : ℝ) := by push_cast; ring
+  rw [hc]
+  exact sin_nat_mul_pi_sub (k + 1) θ
+
+/-- The termwise bracket of `2·Cl₂(θ) − 2·Cl₂(π−θ)`. -/
+private noncomputable def dupTerm (θ : ℝ) (k : ℕ) : ℝ :=
+  2 * (1 + (-1) ^ (k + 1)) * Real.sin (((k : ℝ) + 1) * θ) / (((k : ℝ) + 1) ^ 2)
+
+/-- Odd `n = k+1` (i.e. even `k`) kills the term. -/
+private lemma dupTerm_even (θ : ℝ) (m : ℕ) : dupTerm θ (2 * m) = 0 := by
+  unfold dupTerm
+  have h : (-1 : ℝ) ^ (2 * m + 1) = -1 := by
+    rw [pow_succ, pow_mul]; norm_num
+  rw [h]; ring
+
+/-- Even `n = k+1` doubles it, and the reindexing `n = 2(m+1)` turns the term
+into the `Cl₂(2θ)` term at index `m`. -/
+private lemma dupTerm_odd (θ : ℝ) (m : ℕ) :
+    dupTerm θ (2 * m + 1)
+      = Real.sin (((m : ℝ) + 1) * (2 * θ)) / (((m : ℝ) + 1) ^ 2) := by
+  unfold dupTerm
+  have h1 : (-1 : ℝ) ^ (2 * m + 1 + 1) = 1 := by
+    rw [show 2 * m + 1 + 1 = 2 * (m + 1) by ring, pow_mul]; norm_num
+  have h2 : ((2 * m + 1 : ℕ) : ℝ) + 1 = 2 * ((m : ℝ) + 1) := by push_cast; ring
+  rw [h1, h2, show (2 : ℝ) * ((m : ℝ) + 1) * θ = ((m : ℝ) + 1) * (2 * θ) by ring]
+  have hne : ((m : ℝ) + 1) ≠ 0 := by positivity
+  field_simp
+  ring
+
+/-- **The Clausen duplication formula.**
+
+    Cl₂(2θ) = 2·Cl₂(θ) − 2·Cl₂(π − θ)
+
+Proved from the Fourier series by the parity split described above. This is
+what `ClausenDuplication` was isolating; with it in hand the general
+`BlochWigner_lob` can be checked against the corpus's own unit-circle knots
+rather than only against numerics. -/
+-- Ref: [zagier1986]
+theorem Cl_2_duplication (θ : ℝ) :
+    Cl_2 (2 * θ) = 2 * Cl_2 θ - 2 * Cl_2 (Real.pi - θ) := by
+  have hsθ := summable_clausen θ
+  have hsπ := summable_clausen (Real.pi - θ)
+  -- collapse the two series into one, termwise
+  have step1 : 2 * Cl_2 θ - 2 * Cl_2 (Real.pi - θ) = ∑' k, dupTerm θ k := by
+    unfold Cl_2
+    rw [← tsum_mul_left, ← tsum_mul_left,
+      ← Summable.tsum_sub (hsθ.mul_left 2) (hsπ.mul_left 2)]
+    refine tsum_congr fun k => ?_
+    unfold dupTerm
+    rw [sin_succ_mul_pi_sub k θ]
+    ring
+  -- split on parity: the even part is identically zero
+  have hse : Summable (fun m => dupTerm θ (2 * m)) := by
+    simp only [dupTerm_even]; exact summable_zero
+  have hso : Summable (fun m => dupTerm θ (2 * m + 1)) := by
+    simp only [dupTerm_odd]; exact summable_clausen (2 * θ)
+  have hsplit := tsum_even_add_odd hse hso
+  rw [step1, ← hsplit]
+  simp only [dupTerm_even, dupTerm_odd, tsum_zero, zero_add]
+  unfold Cl_2
+  rfl
+
+/-- **Consistency with the corpus's figure-8 value.** The regular ideal
+tetrahedron has all three angles `π/3`, so the general formula gives
+`3·Λ(π/3) = 3·Cl₂(2π/3)/2`, and duplication at `θ = π/3` forces
+`Cl₂(2π/3) = (2/3)·Cl₂(π/3)`, returning exactly `Cl₂(π/3)` — the
+per-tetrahedron value behind `Vol(4₁) = 2·Cl₂(π/3)`.
+
+This is the check that was missing: it is *not* `rfl`, and it validates the
+non-unit-circle definition against a case the corpus already trusts. -/
+theorem Cl_2_two_pi_div_three :
+    Cl_2 (2 * (Real.pi / 3)) = 2 / 3 * Cl_2 (Real.pi / 3) := by
+  have hdup := Cl_2_duplication (Real.pi / 3)
+  have hsub : Real.pi - Real.pi / 3 = 2 * (Real.pi / 3) := by ring
+  rw [hsub] at hdup
+  linarith
+
+/-- The regular ideal tetrahedron's Lobachevsky value **is** the figure-8
+per-tetrahedron Clausen value: `3·Λ(π/3) = Cl₂(π/3)`. -/
+theorem three_Lob_pi_div_three :
+    3 * (Cl_2 (2 * (Real.pi / 3)) / 2) = Cl_2 (Real.pi / 3) := by
+  rw [Cl_2_two_pi_div_three]; ring
 
 /-- The **Lobachevsky function** `Λ(t) = Cl₂(2t)/2`, the standard normalisation
 in which an ideal tetrahedron of dihedral angles `α, β, γ` has volume
@@ -323,29 +447,15 @@ theorem real_shape_has_zero_angles (x : ℝ) (hx : 0 < x) :
   unfold tetAngle₁
   exact Complex.arg_ofReal_of_nonneg hx.le
 
-/-! ## Part 5 — the open inputs
+/-! ## Part 5 — the one open input
 
-Both are stated as content-bearing classes with **no instance**, which is the
-honest representation of an open statement (AGENTS.md §3b). Neither is
-discharged, and no downstream compute is wired to either. -/
+The Clausen duplication formula, which an earlier revision isolated here as a
+second carrier, is now proved above (`Cl_2_duplication`). What remains open is
+geometric, and it is stated as a content-bearing class with **no instance** —
+the honest representation of an open statement (AGENTS.md §3b). Nothing
+downstream is wired to it. -/
 
-/-- **Missing input 1 — the Clausen duplication formula.**
-
-    Cl₂(2θ) = 2·Cl₂(θ) − 2·Cl₂(π − θ)
-
-True, and provable from the Fourier series by splitting into even and odd
-frequencies: `sin(nπ − nθ) = (−1)^{n+1} sin(nθ)`, so the bracket
-`sin(nθ) − sin(nπ − nθ)` is `2 sin(nθ)` for even `n` and `0` for odd `n`, and
-reindexing `n = 2m` returns `Cl₂(2θ)`. Not proved here — it needs the even/odd
-`tsum` split, for which `summable_clausen` above is the prerequisite.
-
-This is what would let `BlochWigner_lob` be checked against the corpus's two
-unit-circle knots. -/
-class ClausenDuplication : Prop where
-  /-- The duplication identity, at every real argument. -/
-  duplication : ∀ θ : ℝ, Cl_2 (2 * θ) = 2 * Cl_2 θ - 2 * Cl_2 (Real.pi - θ)
-
-/-- **Missing input 2 — the `5₂` triangulation.**
+/-- **The open input — the `5₂` triangulation.**
 
 The `5₂` knot complement admits an ideal triangulation by **three** tetrahedra,
 all of the same shape `y₊` (the upper-half-plane root of the saddle cubic), so
