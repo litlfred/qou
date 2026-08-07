@@ -57,6 +57,9 @@ HERE = Path(__file__).resolve().parent
 if str(HERE) not in sys.path:
     sys.path.insert(0, str(HERE))
 
+import _path_bridge  # noqa: F401, E402
+from codata_constants import M_P_MEV_VALIDATION  # noqa: E402
+
 mp.dps = 65
 
 _WITNESS = HERE / "m-p-substrate-identity-50dps.witness.json"
@@ -69,7 +72,17 @@ M_E_SIGMA = mp.mpf("0.00000000016")
 
 # CODATA 2022 proton mass and its 1-sigma, MeV.
 # m_p = 938.27208816(29) MeV
-M_P_CODATA = mp.mpf("938.27208816")
+#
+# P31: sourced from the registry rather than retyped. A hand-typed CODATA
+# literal drifts silently when the registry moves — the same class as the
+# CODATA-2018 U_MEV literal fixed in #4653. Value-identical today
+# (938.27208816), so this changes provenance, not arithmetic.
+#
+# The VALIDATION alias is the correct import: codata_constants deprecates
+# plain M_P_MEV because m_p may be used to CHECK a prediction, never to make
+# one (three-calibration discipline, CAL-1/2/3). See the note at `c_star`
+# below — this file does both, and only one of them is sanctioned.
+M_P_CODATA = M_P_MEV_VALIDATION
 M_P_SIGMA = mp.mpf("0.00000029")
 
 DIM_V21 = 2   # Wedderburn dimension of the (2,1) block of H_3(q)
