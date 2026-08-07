@@ -109,4 +109,36 @@ theorem wedge_five_term_vanishes {A M : Type*} [AddCommGroup A] [AddCommGroup M]
   rw [e a₂ a₁, e a₃ a₂, e a₄ a₃, e a₅ a₄, e a₁ a₅]
   abel
 
+/-! ### The 5₂ saddle element lies in `ker d` — because `y` and `1−y` are
+multiplicatively dependent
+
+This one is specific to 5₂ rather than generic Bloch-group infrastructure.
+
+The saddle cubic says `y² = (1−y)³`, i.e. `y` and `1−y` are multiplicatively
+dependent. In `F^×` written additively that reads `2·(y) = 3·(1−y)`, and then
+
+    3·w(y, 1−y) = w(y, 3·(1−y)) = w(y, 2·(y)) = 2·w(y, y) = 0.
+
+So `d[yⱼ] = (yⱼ) ∧ (1−yⱼ)` is **3-torsion**, hence zero rationally: the 5₂
+saddle element defines a class in `B(F) ⊗ ℚ`.
+
+Note the conclusion is torsion, *not* zero on the nose — which is exactly the
+"delicate 2- and 3-torsion issues" the survey flags in the definition of
+`B(F)` (`uploads/2304.12545v1.pdf` §3). Stating it as `3·w = 0` keeps that
+honest rather than quietly working `⊗ ℚ`. -/
+
+/-- **A multiplicative dependence `2·u = 3·v` forces `w u v` to be 3-torsion.**
+
+Applied with `u = (y)`, `v = (1−y)` in `F^×` (additively), this says the
+`d`-image of a 5₂ saddle root is 3-torsion in `Λ²(F^×)`. -/
+theorem three_smul_wedge_eq_zero {A M : Type*} [AddCommGroup A] [AddCommGroup M]
+    (w : A → A → M)
+    (hadd : ∀ x y z : A, w x (y + z) = w x y + w x z)
+    (hself : ∀ x : A, w x x = 0)
+    {u v : A} (h : u + u = v + v + v) :
+    w u v + w u v + w u v = 0 := by
+  have h3 : w u (v + v + v) = w u v + w u v + w u v := by rw [hadd, hadd]
+  have h2 : w u (u + u) = 0 := by rw [hadd, hself]; abel
+  rw [← h3, ← h, h2]
+
 end QOU.QBeta.Bloch
