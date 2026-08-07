@@ -1,0 +1,44 @@
+{
+  "schema": "witness/v1",
+  "description": "The state space already contains a 3-dimensional object, Sym^2(V), but it fails the Sym^2 gate because all SU(2) reps are self-dual; hence no summand of any V^(tensor n) can pass. Bean qou-8p1i.",
+  "computation": {
+    "script": "computations/state_space_natural_three_sym2_gate.py",
+    "arithmetic": "exact integer weight multisets; no floating point"
+  },
+  "data": {
+    "V_tensor_V": [
+      3,
+      1
+    ],
+    "sym2_of_adjoint": [
+      5,
+      1
+    ],
+    "sym2_of_V": [
+      3
+    ],
+    "alt2_of_V": [
+      1
+    ],
+    "su3_fundamental_self_dual": false,
+    "zero_weight_multiplicity_in_3x3": 0,
+    "verdict": "a 3-dimensional object exists natively (Sym^2(V), the SU(2) adjoint) but fails the Sym^2 gate: Sym^2(3) = 5+1 has a singlet because the adjoint is self-dual, whereas SU(3)'s Sym^2(3) = 6 is irreducible",
+    "generalisation": "every SU(2) representation is self-dual, so every summand of every tensor power of a 2-dimensional fibre is self-dual and none can pass the gate",
+    "scope": "scope-(b) for 'some summand of V^(tensor n) with dim V = 2 passes the Sym^2 gate', excluded by self-duality of all SU(2) representations",
+    "consequence_for_T3b": "'inequivalent fibre objects' cannot mean different summands of V^(tensor n); it must mean genuinely non-isomorphic fibres, a Tannakian gerbe / multi-fibre-functor situation",
+    "not_claimed": [
+      "that no 3-dimensional fibre exists anywhere in the framework -- only that it is not inside the tensor powers of the existing 2-dimensional one",
+      "anything about how to construct inequivalent fibres"
+    ],
+    "all_checks_pass": true,
+    "checks": {
+      "C1_VtensorV_is_3_plus_1": true,
+      "C2_sym2_of_3_has_singlet": true,
+      "C3_sym2_of_V_no_singlet": true,
+      "C3_alt2_of_V_is_singlet": true,
+      "C4_all_su2_irreps_self_dual": true,
+      "C5_su3_fund_not_self_dual": true,
+      "C5_no_zero_weight_in_3x3": true
+    }
+  }
+}
