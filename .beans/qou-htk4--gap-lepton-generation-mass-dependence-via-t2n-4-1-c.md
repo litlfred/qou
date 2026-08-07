@@ -4,5 +4,21 @@ title: 'GAP: lepton generation mass dependence via the T(2,n)-4_1 coupling. The 
 status: todo
 type: task
 created_at: 2026-08-07T17:40:00Z
-updated_at: 2026-08-07T17:40:00Z
+updated_at: 2026-08-07T22:10:00Z
 ---
+
+## Scope sharpened, 2026-08-07 (second pass on qou-lsp9)
+
+Do NOT retry the Markov trace. The exclusion is no longer "the net does
+not work" -- it now covers EVERY positive H_2(q)-linear readout, the
+canonical tr_M included, on a proved invariant (positivity of the
+Morgan-Voyce continuant for q > 1 leaves no node for a ratio to blow up
+at). See `docs/audits/2026-08-07-lepton-linear-readout-rigidity.md`.
+
+The consequence for this bean is a sharper target: a working bridge must
+be NON-LINEAR in H_2(q), or must read from outside H_2(q) altogether.
+Reading any single number off the lepton's own 2-dimensional braid
+algebra is now closed. The linking/satellite coupling to 4_1 qualifies on
+the second count (4_1 is not in H_2); an additive interface term
+qualifies on the first.
+
