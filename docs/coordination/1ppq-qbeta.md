@@ -2878,3 +2878,326 @@ not close; the identified route for the second is the Kubert/distribution
 relation applied to `Li₂(y²) = Li₂((1−y)³)`. Bloch-group work, left OPEN.
 
 auditOnly; nothing wired; no fit.
+
+**2026-08-07 (coordination, PR #4658 ↔ #4666) — the same identity, two routes.**
+`/coordinate` sweep. PR **#4666** ("C1 ramified leading blocks + the general
+Bloch–Wigner D, reaching 5₂") independently derived **`D(y₊) = Vol(5₂)/3`** —
+the identical identity #4658 verified hours earlier by a different route.
+
+| | #4666 | #4658 |
+|---|---|---|
+| route | dihedral angles, `D = Λ(α)+Λ(β)+Λ(γ)` | Broadhurst eq (73), `vol(5₂) = 3·Z₂₃,₃` |
+| digits | 20 (capped by their `Vol(5₂)` *literal*) | 31 (computed from the saddle roots) |
+
+Two independent confirmations of an open result — deliberate parallel work per
+the measured-research-overlap relaxation, not duplication.
+
+**Independently converged negative.** #4666 states these `D` values "contribute
+nothing" to the saddle sum rule, being the imaginary part. That is Route 2 of
+`qou-0yqu` reached from the other side; `qou-0yqu` adds that `Σⱼ D(yⱼ) = 0`
+holds **automatically** for any cubic with one real + one conjugate pair
+(control-verified), so the Bloch–Wigner side is information-free here, not
+merely unhelpful.
+
+**Offered to #4666:** `fivetwo_saddle_values.py::volume()` computes `Vol(5₂)`
+from the roots at arbitrary `dps` — removes their stated precision ceiling;
+Broadhurst's published eq (73); and `disc = −23`, now Lean-proved
+(`disc_eq_neg_23`). **Wanted from them:** `summable_clausen` (the filler
+defines `Cl_2` as a `tsum` proving nothing about convergence — everything
+downstream rested on that), `tetAngles_sum_eq_pi`.
+
+**No file conflict** — disjoint Lean files. No review comments on #4658 to
+triage. Comment: https://github.com/litlfred/qou/pull/4666#issuecomment-5215109956
+
+**2026-08-07 (PR #4658, later) — the branch data `b` is PROVED, not fitted; and
+Route 5 gets a Lean spine.**
+
+Two things landed, both sorry-free with axioms `[propext, Classical.choice,
+Quot.sound]`.
+
+*1. `b = (−1, +1, +1)` carries no free parameters.* The sum rule is stated as
+`Vⱼ = 3·Li₂(yⱼ) + (log yⱼ + bⱼπi)²` with three hand-supplied signs — which
+reads like a fit. It is not:
+
+> **`log yⱼ + bⱼπi = Log(−yⱼ)`, principal branch** —
+> `QOU.QBeta.FiveTwo.branch_shift_eq_log_neg`.
+
+`arg(−z) = arg z − π` above the real axis, `arg z + π` below, `= π` on the
+positive reals. A cubic with one positive real root and one conjugate pair
+therefore *forces* `(−1, +1, +1)`. Probe gate G6 confirms at 60 dps with error
+exactly `0.0`; the Lean proof is unconditional. So `Vⱼ = 3·Li₂(yⱼ) + Log(−yⱼ)²`,
+and `Log(−z)²` is precisely the term in the inversion formula
+`Li₂ z + Li₂(1/z) = −π²/6 − ½Log(−z)²` — which makes the inversion route
+structural rather than opportunistic.
+
+*2. Route 5's integral is now known to converge.* `|log P(z)| ≤ 4z` on `[0,1]`
+(`abs_log_recipCubic_le`) removes the apparent singularity at `z = 0`, so
+`intervalIntegrable_log_recipCubic_div` makes `−∫₀¹ log P(z)/z dz` a real
+number rather than a formal expression. `LiTwo_eq_integral_unit` supplies the
+matching shape `Li₂(y) = −∫₀¹ log(1 − yz)/z dz`.
+
+*Also:* the complex Euler reflection identity is proved on `ball(½,½)`
+(`QOU.Archimedean.cLiTwo_reflection`) by the identity theorem, closing the
+continuation step `qou-gkco` was opened for. It does **not** reach `y₁`
+(`|y₁| = 1.52`); `cLiTwo` is junk-valued outside the closed disc, so the
+inversion formula is not even *stateable* for it without redefining `Li₂` by an
+integral on `ℂ ∖ [1,∞)`.
+
+**One self-refutation, recorded.** Earlier the same day I wrote into
+`qou-0yqu` that `b` is the `2πik` correction in `log ∏ = Σ log`. Probe gate G1
+shows that correction is *identically zero* (`3.1e-61` over 40 points). Struck,
+not deleted; the correct identification is G6 above.
+
+**New exact restatement (G7 + G8), verified to 25 digits, still unproved:**
+
+    Σⱼ Re Li₂(yⱼ) − 2·Σⱼ Re Li₂(1/yⱼ) = −π²/2
+
+*derived*, not merely observed: the per-root inversion rewrite fails as a
+complex identity at `y₃ ∈ (0,1)`, but G8 shows the whole defect is imaginary
+(`Re Dⱼ = 0` for each root separately, `Im D₃ = −10.6009742`). Since the sum
+rule uses only real parts, the rewrite is legitimate. **Lean consequence:** a
+proof needs only the *real part* of inversion on `(0,1)` — weaker and more
+tractable than the complex identity that genuinely fails there.
+
+**Caution.** `∏ⱼ(1 − z/yⱼ) = 1 − 3z + 2z² − z³` *changes sign* on `[0,1]`
+(`−1` at `z = 1`, since `1/y₃ = 2.325 > 1`), so the positivity argument that
+makes the root side a clean real integral does **not** transfer to the
+reciprocal side. That sign change is the honest location of the remaining
+difficulty.
+
+Probe + witness: `computations/probes/qbeta_5two_route5_branch_data_probe.py`,
+`computations/qbeta-5two-route5-branch-data.witness.json` (8 gates, 60 dps,
+parameter-free). **Sum-rule status unchanged: verified to 80 dps, unproved.**
+
+**2026-08-07 (night, PR #4658) — Route 5's chain is now a theorem; Route 6
+tried and refuted; the hard part is untouched.**
+
+*The chain.* `Σⱼ Re cLiTwoExt(yⱼ) = −∫₀¹ log(1 − 2z + 3z² − z³)/z dz`
+(`sum_re_cLiTwoExt_eq_integral`), sorry-free, assembled from
+`sum_re_log_one_sub_eq_log_recipCubic` (real parts, so no branch data enters) +
+integral linearity + `Re` commuting with the integral. `cLiTwoExt` is the
+integral-defined dilogarithm, the object that makes sense at `‖y₁‖ = 1.52`;
+`cLiTwo_eq_intervalIntegral` proves it agrees with the series on the disc, and
+`intervalIntegrable_log_one_sub_div` discharges its side conditions (needs
+`Re(1 − yz) > 0` on `[0,1]`, true for all three roots).
+
+*Route 6 — Zagier's enhanced dilogarithm — REFUTED, scope-(a).* Owner supplied
+Zagier (2007) as `uploads/fulltext.pdf`. §II.1 B's `D̃ = Li₂(z) + ½uv` on
+`{eᵘ+eᵛ=1}`, valued in `ℂ/(π²/2)ℤ`, looked like our `Vⱼ` exactly: same
+`Li₂ + (log)(log)`-with-branch-data shape, roots on `2u = 3v + 2πik`, and
+`−3π²/2` an exact multiple of the ambiguity. Had it closed, the problem would
+have become a *rationality* statement. It does not: no integer branch offset
+matches, and the residual is exactly `πi(2b+k)u − b²π²`, leaving
+`Σⱼ Re D̃(yⱼ) = π²/2 − (2/3)πθ` with `πθ ∉ π²ℚ`. **Scope-(a)** — this set-up
+fails; nothing excludes a formulation at a different covering point or Bloch
+element. The obvious thing such a formulation must track is already Lean-proved
+here: `d[yⱼ]` is **3-torsion**, not zero (`three_smul_wedge_eq_zero`).
+
+*One summand identified.* `Re V₃ = 3·L(y₃) − π²` with `L` the **Rogers**
+dilogarithm (`re_V_real_root_eq_rogers`) — the real root's contribution is a
+standard object, not an ad-hoc combination. It evaluates nothing:
+`L(y₃)/(π²/6) = 0.441033…` is irrational, as expected for a cubic-field
+argument.
+
+*What is left, exactly two things.* (i) `cLiTwoExt` analytic on `ℂ ∖ [1,∞)` —
+without it "the analytic continuation" is a name, and `cLiTwoExt(y₁)` is not
+*identified* with the sum rule's `Li₂(y₁)`. (ii) **Evaluating
+`−∫₀¹ log P(z)/z dz` in closed form.** Untouched. This is the actual hard part,
+and none of today's eleven theorems approaches it — they make the restatement
+rigorous and demystify the branch data `b` (= `Log(−y)`, forced, not fitted).
+
+**Six routes tried, six not closing. Status unchanged: verified to 80 dps,
+unproved.**
+
+**2026-08-07 (PR #4658, takeover) — Route 7 REFUTED scope-(a): the defect in
+Route 6 was branch freedom, not the modulus.**
+
+Route 7 asked whether the corpus's own `ℂ/2π²ℤ` valuedness for these `Vⱼ`
+(2026-07-18 GGM §6.1 port) rescues the enhanced-dilogarithm reading that Route 6
+killed under Zagier's `ℂ/(π²/2)ℤ`. **It does not, and the modulus was never the
+issue** — the branch shift contributes `−2π²aⱼbⱼ`, a multiple of both moduli.
+
+What the probe did find: Route 6's witness gate G3 evaluated `Σⱼ Re D̃` at the
+**principal branch only**. With `u = log y + 2πia`, `v = log(1−y) + 2πib` there
+are two free integers per root and the `θ` obstruction cancels iff
+`3(b₁−b₂) + 2(a₁−a₂) = −2`; Route 6's implicit `a = 0` makes that `3(b₁−b₂) = −2`,
+insoluble over `ℤ` — exactly its reported "no integer branch offset matches".
+With `a` free, exact rationality **is** reachable, so Route 6's conclusion stood
+for the wrong reason.
+
+It is still worthless: reachable set is exactly `Σⱼ Re D̃/π² ∈ 11/6 + 2ℤ`, every
+control `y^p = (1−y)^q` lands in its own `π²ℚ` coset (including `y³−y²+2y−1`,
+which *is* `y³=(1−y)²`), and neither `−1/2` nor `−3/2` is in the coset. Generic
+bookkeeping — the Route-2 failure mode.
+
+Probe + witness:
+`computations/probes/qbeta_5two_route7_enhanced_dilog_branch_freedom_probe.py`,
+`computations/qbeta-5two-route7-enhanced-dilog-branch-freedom.witness.json`
+(8 gates, 60 dps). Beans `qou-r7ml` (completed/refuted), parent `qou-0yqu`.
+**Route count 7 tried, 7 not closing. Sum-rule status unchanged: verified to
+80 dps, unproved.**
+
+**2026-08-07 (PR #4658, takeover) — GGM/GGMW READ IN FULL. They do not contain
+the sum rule. The literature lead is closed.**
+
+`qou-0yqu` named GGM (2012.00062) / GGMW (2111.04763) twice as "the realistic
+direct sources" and neither had been opened. Both now swept end to end
+(bean `qou-g2wr`).
+
+**Negative:** `Σⱼ Vⱼ` appears nowhere in either paper; no `−3π²/2`. **"real
+part" occurs exactly once in GGM and zero times in GGMW** — the single hit is
+the §6.1 σ₃ branch prescription already ledgered 2026-07-26, not a statement
+about `Re V`. No `Bloch`, no `regulator` in either. GGMW's `Rogers` hits are
+**Rogers–Ramanujan**, not the Rogers dilogarithm — flagged as a false lead.
+With the disc −23 ladder literature being the volume side, **there is now no
+known published source for this identity.**
+
+**Positives worth carrying:**
+
+1. GGM eq (234) is the source of the `ℂ/2π²ℤ` modulus, confirmed verbatim; at
+   `x = 1` it is the corpus's `V`, reproducing the sum rule to 50 dps.
+2. `b = (−1,+1,+1)` is **exactly** principal `Log(−yⱼ)` (exact zero at all three
+   roots) — independent confirmation of `branch_shift_eq_log_neg`. GGM writes
+   `(log(−y))²` directly.
+3. **`Re Vⱼ` is only defined mod `2π²`** (the modulus is real). In GGM's own
+   quotient the sum rule reads `Σⱼ Re Vⱼ ≡ π²/2 (mod 2π²)`, so the exact
+   `−3π²/2` is a statement about chosen representatives. **Any proof routed
+   through GGM's `V` alone can only deliver the mod-`2π²` statement** — pinning
+   the representative is exactly `branch_shift_eq_log_neg`, which makes that
+   theorem load-bearing rather than bookkeeping. Consistency: GGMW's
+   `+2π²/3` per root shifts the sum by exactly one lattice step `2π²`, giving
+   `Σⱼ Re V_GGMW = π²/2` exactly; the two published conventions are adjacent
+   representatives.
+4. GGMW §4.1 **states disc −23 outright**, and identifies `σ₁,σ₂,σ₃` with the
+   three embeddings of the trace field. So `Σⱼ Re Vⱼ` is a **trace over all
+   embeddings** — the structural reason the power sums `pₙ` are rational
+   integers and Route 5's integrand is a ℤ-coefficient polynomial.
+
+**Sum-rule status unchanged: verified to 80 dps, unproved.**
+
+**2026-08-07 (PR #4658, takeover) — `cLiTwoExt = Li₂` off the disc is TRUE
+(verified); Lean blocked in-session.**
+
+`elan`/`lake` absent and the environment denies `release.lean-lang.org:443`
+(403 on CONNECT), so no toolchain and no `lake exe cache get`. **No Lean
+written** — deliberately, rather than shipping unverifiable code. Groundwork
+instead (bean `qou-clx8`):
+
+* `cLiTwoExt y = −∫₀¹ Log(1−yz)/z dz` equals `Li₂(y)` to diff **`0.0`** at all
+  three 5₂ roots — including `y₁`, `‖y₁‖ = 1.52` — and on 28/28 grid points off
+  the real axis to `< 1e-25`. **The identification `cLiTwoExt(y₁) = Li₂(y₁)` is
+  true; only its proof is open.**
+* **The current side condition `Re(1−yz) > 0` is sufficient but NOT necessary** —
+  it fails at `1.5+0.3i` and `3+0.001i` where the identity still holds. The right
+  hypothesis: for `Im y ≠ 0`, `Im(1−yz) = −z·Im y` vanishes on `[0,1]` only at
+  `z = 0`, so the path never meets the principal cut and `Log(1−yz)` is
+  continuous along it. Covers `ℂ ∖ ℝ` in one step.
+* The cut is `[1,∞)` and not `|y| ≥ 1` because for real `y > 1` the integrand is
+  singular *inside* the interval, at `z = 1/y ∈ (0,1)`.
+* **Numerical trap:** when `0 < Re(1/y) < 1`, plain `quad([0,1])` is silently
+  wrong (off by `1.15e-2` at `y = 3+0.001i`). Probes must split at `Re(1/y)`.
+
+**Sum-rule status unchanged: verified to 80 dps, unproved.**
+
+**2026-08-07 (PR #4658, takeover) — Route 8: the sum rule TRANSPORTS to a 7th-root-of-unity
+identity at a totally real field. Reduction, not proof.**
+
+First route to move along GGM's deformation instead of attacking at `x = 1`
+(bean `qou-8v3k`).
+
+> `Σⱼ Re Vⱼ = −3π²/2` **⟺** `Σₖ Re[Li₂(yₖ) + 2Li₂(−yₖ) + (log(−yₖ))²] = −π²/2`,
+> `yₖ = −1 − 2cos(2πk/7)`, the **totally real cyclotomic field ℚ(ζ₇)⁺**, disc 49.
+
+Mechanism: (i) `∂V/∂y = 0` **derives** GGM's deformed curve — already Lean-proved
+here as `FiveTwoSaddleCurve.lean` — so `yⱼ(x)` are critical points; (ii) Vieta
+gives `∏ⱼ(1−xyⱼ) = x`, `∏ⱼ(1−yⱼ/x) = 1/x`; (iii) envelope theorem gives
+`d/dx V(x,yⱼ(x)) = (1/x)log[(1−yⱼ/x)/(1−xyⱼ)]`; (iv) summing collapses to
+`S'(x) = −2log x/x`, so **`S(x) = S(1) − log²x`** (verified `<1e-30` on
+`x ∈ [0.2,5]`; palindromy `S(x)=S(1/x)` confirmed, GGM eq 306). The branch term
+`2πik log x` is purely imaginary for real `x>0` so cannot touch `Re`, and on
+`|x|=1` is real with **`k = 0` measured** at eight points to `φ = π`, giving
+`S(−1) = −π²/2`. At `x = −1` the curve degenerates to `y³+2y²−y−1` (disc 49) with
+roots exactly `−1−2cos(2πk/7)`.
+
+**⚠ Not a proof** — `S(1)` is the constant of integration, so this transports the
+unknown. The cyclotomic identity is verified to `9.2e-41`, not proved.
+
+**Why it matters anyway:** every prior route died on *real part vs volume side* —
+at disc −23 the field is complex, `D ≠ 0`, and the classical ladders compute
+`ζ_F(2)` via `D`. At `x = −1` the field is totally real and abelian, `D ≡ 0`
+identically, and Rogers sums there are expected in `π²ℚ` — the Frenkel–Szenes /
+Y-system / Watson regime where `−π²/2` is the natural answer. **The obstruction
+that killed Routes 2, 6 and 7 is structurally absent at the new point.**
+
+Probe + witness: `computations/probes/qbeta_5two_route8_envelope_deformation_cyclotomic_probe.py`,
+`computations/qbeta-5two-route8-envelope-deformation-cyclotomic.witness.json`
+(7 gates, 40 dps). **Route count 8 tried; 7 refuted, 1 reduction. Sum-rule status
+unchanged: verified to 80 dps, unproved.**
+
+**2026-08-07 (PR #4658, takeover) — Route 9: RATIONALITY PROVED. The sum rule is
+one rational number away.**
+
+Bean `qou-b7cy`, building on Route 8. Route 6 hoped the problem would "stop being
+a transcendental evaluation and become a rationality statement" and failed; that
+is achieved here by a different mechanism.
+
+With `w = −y = 1 + 2cos(2πk/7)` (root of `w³ − 2w² − w + 1`), all of `w`, `1−w`,
+`1+w` are **units** of `F = ℚ(ζ₇)⁺` (norms −1, −1, +1), and the **ring identity**
+
+    (1 − w)²(1 + w) = 1 − w − w² + w³ = w²     [w³ = 2w² + w − 1]
+
+gives `δ(2[w] + [−w]) = w ∧ w² = 0`, so `ξ := 2[w] + [−w]` lies in the **Bloch
+group** `B(F)`. `F` totally real ⟹ `r₂ = 0` ⟹ `B(F) ⊗ ℚ = 0` (Borel) ⟹ `ξ` is
+torsion ⟹ Rogers `L(ξ) ∈ π²ℚ`. **That step is elementary + one classical theorem,
+and the algebraic half is a Lean one-liner.**
+
+Measured exactly (26 digits): `Σₖ Re[2L(wₖ) + L(−wₖ)] = π²/2`, and
+`Σₖ Re V = Σₖ Re L(ξₖ) − π²`, recovering Route 8's `−π²/2`.
+
+**Open:** the rational `1/2` itself (verified, not derived — note `π²/2 = 3·L(1)`),
+and the `−π²` branch constant. A per-embedding formula
+`V − L(ξ) = iπ log[(1−w)/w]` was tried and **is FALSE** (fails at two of three
+embeddings); only the sum is exact — recorded to prevent re-derivation.
+
+Probe + witness: `computations/probes/qbeta_5two_route9_bloch_torsion_rationality_probe.py`,
+`computations/qbeta-5two-route9-bloch-torsion-rationality.witness.json`.
+**Route count 9 tried; 7 refuted, 2 reductions. Sum-rule status unchanged:
+verified to 80 dps, unproved.**
+
+**2026-08-07 (PR #4658, takeover) — LEAN IS AVAILABLE HERE (workaround), and the
+algebraic core of Routes 8/9 is now sorry-free. Borel is not formalizable.**
+
+**Environment correction, worth propagating:** `release.lean-lang.org:443` is
+denied by network policy, but the toolchain is **mirrored on github.com**, which
+egresses fine — `github.com/leanprover/lean4/releases/download/v4.24.0/lean-4.24.0-linux.tar.zst`,
+decompressed with python `zstandard` (no `zstd` binary present). Mathlib's olean
+cache (Azure) is still 403, so `lake exe cache get` fails, but Mathlib *source*
+is on github and a **targeted** build works: `lake build Mathlib.Tactic.LinearCombination`
+is 708 jobs, minutes not hours. Do not build all of Mathlib.
+
+**New, sorry-free:** `QOU/QBeta/FiveTwoCyclotomicBloch.lean` — six theorems over
+an arbitrary `CommRing`, axioms `[propext, Classical.choice, Quot.sound]` (two
+need only `propext, Quot.sound`): `bloch_poly` (`(1−w)²(1+w) − w² = w³−2w²−w+1`
+**identically**, so the Bloch condition *is* the minimal polynomial),
+`bloch_key`, `minpoly_one_sub`, `minpoly_one_add`, and Route 8's two Vieta
+products `∏(1−x yⱼ) = x`, `∏(x−yⱼ) = x²` (hypotheses denominator-cleared, so no
+field or `x ≠ 0` needed).
+
+**Composition check (new gate G8):** from the three numerators alone,
+`(Σ mₖ)π²/42 − π² − π² = −3π²/2` with **residual 0.0** — the Route 8 and Route 9
+reductions genuinely compose; no seam was fudged.
+
+**⚠ Measured Mathlib survey (`qou-mlbg`), 6996 files at the pinned rev:** `Bloch`
+0, `Borel regulator` 0, `Polylog`/`polylog` 0, `Rogers` 0, `Steinberg` 0, no
+`KTheory` directory. The single `dilog` hit is a docstring aside — **Mathlib has
+no `Li₂` at all**. `Clausen`/`Lobachevsky` hits are the author *Claus Clausen*
+and *Clausen–Scholze* condensed maths — no Clausen function. Only exterior powers
+exist. **So Route 9's rationality argument is proved on paper and is NOT
+formalizable**; "formalize Borel first" is a multi-year project, not a plan.
+Note two false friends: bean `el8w` is Borel *resummation*, and `cj2d5`
+(`BorelZagierQouVolumes`) is the *volume* side.
+
+**The route that avoids all of it is `qou-fivt`:** prove the three numerators
+`17, 5, −1` by five-term/Abel, needing only a real `Li₂` (QOU has one) and the
+Rogers functional equations. **Sum-rule status unchanged: verified to 80 dps,
+unproved.**

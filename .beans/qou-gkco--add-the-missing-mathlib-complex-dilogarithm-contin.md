@@ -155,3 +155,204 @@ runs where the integrand is regular — now Lean-proved:
 What changed is only its **priority and its dependents**: it is no longer on
 the critical path to `qou-0yqu`. Anyone picking it up for the sum rule's sake
 should read Route 5 first.
+
+## 2026-08-07 — state, and the concrete next brick
+
+### Landed so far (all sorry-free, lean-direct exit 0)
+
+* `QOU/MathlibExt/ComplexDilogarithm.lean` — `cLiTwo` by its power series;
+  `cLiTwo_zero`, `cLiTwo_term_norm_le`, `cLiTwo_summable` (converges on the
+  open unit disc). Mathlib-only, so it stays upstreamable.
+* `QOU/Archimedean/ComplexDilogBridge.lean` — `cLiTwo_ofReal` (unconditional
+  bridge to the real `QOU.QPochhammer.LiTwo`) and `cLiTwo_reflection_ofReal`
+  (the Euler reflection identity **on the real segment `(0,1)`**, in ℂ).
+* `QOU/QBeta/BlochFiveTerm.lean` — the five-term relation's algebraic halves
+  (Lyness period-5; `Σ (zᵢ)∧(1−zᵢ) = 0`) and `three_smul_wedge_eq_zero`.
+
+`cLiTwo_reflection_ofReal` is the *input* to an identity-theorem continuation:
+it establishes the reflection identity on a set with an accumulation point.
+What is missing is analyticity, so the identity theorem cannot yet be applied.
+
+### THE NEXT BRICK — `cLiTwo` is analytic on the open unit disc
+
+Mathlib has the right tool, found 2026-08-07:
+**`FormalMultilinearSeries.ofScalars`** (`Mathlib/Analysis/Analytic/OfScalars.lean`),
+with `ofScalarsSum_eq_tsum : ofScalarsSum c = fun x => ∑' n, c n • x ^ n` and
+the radius lemmas `ofScalars_radius_eq_inv_of_tendsto` /
+`ofScalars_radius_eq_of_tendsto`.
+
+Route:
+
+1. Reindex. `ofScalars` sums `cₙ·xⁿ`; `cLiTwo` is written `z^(k+1)/(k+1)²`.
+   Take `c n = if n = 0 then 0 else (n:ℂ)⁻¹^2` and prove
+   `cLiTwo = ofScalarsSum c`. **Do not redefine `cLiTwo`** — `cLiTwo_ofReal`
+   and the bridge depend on the current indexing; prove the equality instead.
+2. Radius `= 1`, from `|c_{n+1}/c_n| → 1`.
+3. Conclude `AnalyticOnNhd ℂ cLiTwo (Metric.ball 0 1)`.
+
+Then the identity theorem
+(`AnalyticOnNhd.eqOn_of_preconnected_of_frequently_eq`) applies with
+`cLiTwo_reflection_ofReal` as the frequently-equal hypothesis, giving the
+complex reflection identity **on the disc**. Extending past `|z| = 1` still
+needs the inversion formula and is a separate step.
+
+### Literature status — none needed for this bean
+
+The constructions here (power series, radius of convergence, identity theorem,
+inversion formula) are standard textbook material and Mathlib has the tools.
+The literature search was needed for the *sum-rule identity* (`qou-0yqu`), not
+for building `Li₂`. Do not spend search effort here.
+
+### Reminder on priority
+
+Route 5 of `qou-0yqu` took this bean **off the critical path** for the 5₂ sum
+rule. It is worth doing for the general saddle machinery and for upstreaming,
+not because the sum rule is waiting on it.
+
+## 2026-08-07 (b) — steps 1–2 LANDED; step 3 attempted and backed out
+
+**Landed, sorry-free** (`ComplexDilogarithm.lean`):
+
+* step 1 — `cLiTwoCoeff`, `cLiTwoCoeff_summable`, `cLiTwo_eq_tsum_coeff`
+  (reindex to Mathlib's `∑ cₙzⁿ` convention without redefining `cLiTwo`);
+* step 2 — `cLiTwoCoeff_norm_le_one`, `cLiTwo_radius_ge_one`. Note the shortcut:
+  `le_radius_of_bound` at `r = 1` needs only `‖cₙ‖ ≤ 1`, so **no ratio test** —
+  four lines instead of a filter argument. Ignore the
+  `ofScalars_radius_eq_inv_of_tendsto` route suggested in the earlier entry.
+
+New imports required: `Mathlib.Analysis.Analytic.OfScalars` **and**
+`Mathlib.Analysis.Analytic.Basic` (the former does not pull in the latter).
+
+**Step 3: LANDED 2026-08-07 (b, later same day).** The two blockers below were
+both wrong-file / wrong-notation, not mathematical — resolved by grepping
+instead of guessing. Kept here as the record of what they were:
+
+1. **`HasFPowerSeriesOnBall.analyticOnNhd` does not exist** in this Mathlib.
+   `HasFPowerSeriesOnBall.analyticAt` *does* (`Analytic/Basic.lean:135`), so
+   `AnalyticAt ℂ cLiTwo 0` is reachable immediately; `AnalyticOnNhd` over the
+   whole ball needs a different route — look in `Analytic/Within.lean` or
+   `Constructions.lean`, or go via `AnalyticOnNhd` of the series sum.
+2. **Extracting `‖z‖ < 1` from `z ∈ EMetric.ball 0 1`** blew the recursion
+   limit with `simpa [edist_eq_enorm_sub, ← ofReal_norm_eq_enorm]`. Needs the
+   right `enorm`/`ENNReal` coercion lemma; do not guess — grep for
+   `mem_emetric_ball_zero_iff` / `edist_zero_right` first.
+
+The skeleton that *did* elaborate:
+
+```lean
+theorem cLiTwo_hasFPowerSeriesOnBall :
+    HasFPowerSeriesOnBall cLiTwo (FormalMultilinearSeries.ofScalars ℂ cLiTwoCoeff) 0 1 := by
+  have hrad : 0 < (FormalMultilinearSeries.ofScalars ℂ cLiTwoCoeff).radius :=
+    lt_of_lt_of_le (by norm_num) cLiTwo_radius_ge_one
+  refine (((FormalMultilinearSeries.ofScalars ℂ cLiTwoCoeff).hasFPowerSeriesOnBall
+    hrad).mono (by norm_num) cLiTwo_radius_ge_one).congr ?_
+  intro z hz
+  ...   -- blocker 2 here; then `rw [hsum, ← cLiTwo_eq_tsum_coeff hz']`
+```
+
+`FormalMultilinearSeries.hasFPowerSeriesOnBall (p) (0 < p.radius)`,
+`.mono (0 < r') (r' ≤ r)` and `.congr (EqOn f g ball)` are all confirmed
+present with those signatures — the structure is right, only the two coercion
+steps are missing. Backed out rather than left broken; the file on `main` is
+green at steps 1–2.
+
+## STEP 3 LANDED — `cLiTwo` is analytic on the open unit disc
+
+`cLiTwo_hasFPowerSeriesOnBall`, `cLiTwo_analyticOnNhd` — sorry-free,
+lean-direct exit 0, bridge re-verified.
+
+Both earlier blockers were lookup failures, not mathematics:
+
+1. **`HasFPowerSeriesOnBall.analyticOnNhd` does exist** — in
+   `Mathlib/Analysis/Analytic/ChangeOrigin.lean:362`, *not* `Basic.lean`, which
+   is where I looked. Requires `import Mathlib.Analysis.Analytic.ChangeOrigin`.
+2. **`‖z‖ < 1` from `z ∈ EMetric.ball 0 1`**: `mem_emetric_ball_zero_iff`
+   (additive form of `Normed/Group/Basic.lean:934`) gives `‖z‖ₑ < 1`, then
+   `enorm_lt_coe` (`Basic.lean:88`, `‖x‖ₑ < r ↔ ‖x‖₊ < r`, `r : ℝ≥0`) after
+   recasting the `1`, then `exact_mod_cast`.
+   **Trap:** write `(1 : ENNReal)`, *not* `(1 : ℝ≥0∞)` — the `ℝ≥0∞` form is
+   scoped notation and this file opens only `Complex`, so it fails with a bare
+   "expected token" that looks like a Unicode problem and is not one.
+
+Required imports, in full: `Analytic.OfScalars`, `Analytic.Basic`,
+`Analytic.ChangeOrigin` (none pulls in the next).
+
+### What this unlocks, and what it does not
+
+`AnalyticOnNhd ℂ cLiTwo (EMetric.ball 0 1)` is the hypothesis the identity
+theorem `AnalyticOnNhd.eqOn_of_preconnected_of_frequently_eq` needs. With
+`cLiTwo_reflection_ofReal` (reflection already proved on the real segment
+`(0,1)` — a set with an accumulation point) the **complex reflection identity
+on the disc** is now a connect-the-pieces step rather than an open one.
+
+It does **not** reach `y₁` (`|y₁| = 1.52 > 1`). That still needs the inversion
+formula `Li₂ z + Li₂(1/z) = −π²/6 − ½log²(−z)` to cross `|z| = 1`. And the
+priority caveat stands: Route 5 of `qou-0yqu` took all of this off the critical
+path for the 5₂ sum rule.
+
+## 2026-08-07 — step 4 domain: `ball(1/2, 1/2)`, not the unit ball
+
+I had called "connect analyticity to the reflection identity" a
+connect-the-pieces step. That was wrong: **the naive unit-ball statement is
+ill-posed.**
+
+* For `z ∈ ball(0,1)`, `|1 − z|` reaches 2, so `cLiTwo (1 − z)` is *not*
+  given by its power series there.
+* `Complex.log z` has its branch cut running straight through `ball(0,1)`.
+
+The natural domain is `Metric.ball (1/2 : ℂ) (1/2)` — the disc on `[0,1]` as
+diameter. Three lemmas (landed, `lean-direct exit 0`, commit `1030d7daa2`,
+PR #4658) are exactly the three facts that make the reflection statement
+well-posed there:
+
+| lemma | why it is needed |
+|---|---|
+| `norm_lt_one_of_mem_ball_half` | ball ⊆ unit disc ⇒ both `cLiTwo z`, `cLiTwo (1−z)` are their series |
+| `one_sub_mem_ball_half` | `z ↦ 1−z` is reflection through the ball's centre ⇒ the reflected argument stays in range |
+| `re_pos_of_mem_ball_half` | `Re z > 0` on the ball ⇒ `log z`, `log (1−z)` both off the branch cut |
+
+Numerically pre-checked with 200 000 random samples in the ball: 0 violations.
+
+The real segment `(0,1)` lies in this ball, so it is an accumulation set —
+that is the route from the *real* `QOU.Archimedean.LiTwo_reflection'` to the
+complex statement, via
+`AnalyticOnNhd.eqOn_of_preconnected_of_frequently_eq`.
+
+**Next:** state the reflection identity on `ball(1/2,1/2)` and discharge it by
+the identity theorem. Blockers to expect: assembling `AnalyticOnNhd` for the
+composite `z ↦ cLiTwo z + cLiTwo (1−z) + log z * log (1−z)` (the `log` factors
+need `Complex.analyticAt_log` off the cut), and supplying `IsPreconnected` for
+the ball.
+
+## 2026-08-07 — CONTINUATION STEP CLOSED; the gap moved
+
+**`QOU.Archimedean.cLiTwo_reflection` is proved**, sorry-free, axioms
+`[propext, Classical.choice, Quot.sound]`:
+
+    Li₂ z + Li₂ (1 − z) = π²/6 − log z · log (1 − z)    for z ∈ ball(½, ½)
+
+by `AnalyticOnNhd.eqOn_of_preconnected_of_frequently_eq`, with the accumulation
+supplied by the real segment `(0,1)` through `cLiTwo_reflection_ofReal` — itself
+a transport of the sorry-free real `LiTwo_reflection'`.
+
+The only genuinely fiddly piece was `tendsto_ofReal_nhdsNE_half`: the identity
+theorem wants accumulation in the **punctured** neighbourhood of `½` in ℂ, so
+`ℝ → ℂ` has to carry `𝓝[≠]` to `𝓝[≠]` — continuity gives the `𝓝` half,
+injectivity of `ofReal` the puncture.
+
+**This does not reach `y₁`.** `|y₁| = 1.52` and `ball(½,½) ⊂ ball(0,1)`. The
+next brick would be the inversion formula
+`Li₂ z + Li₂ (1/z) = −π²/6 − ½ log(−z)²`, which is what crosses `|z| = 1` — and
+it is **not** provable for `cLiTwo` as currently defined, because outside the
+closed disc the `tsum` is junk-valued `0`. Crossing `|z| = 1` requires
+redefining `Li₂` by its integral `−∫₀¹ log(1−tz)/t dt` on `ℂ ∖ [1,∞)` and
+proving it agrees with the series on the disc.
+
+### Route 5 may make that unnecessary — see `qou-0yqu`
+
+The real integral route does not need the continuation at all for the **sum**:
+`∏ⱼ(1 − yⱼz) = 1 − 2z + 3z² − z³` is a *real polynomial, positive on `[0,1]`*,
+so `Σⱼ Li₂(yⱼ)` collapses to one real convergent integral. Three bricks of that
+landed the same day (`intervalIntegrable_log_recipCubic_div`,
+`LiTwo_eq_integral_unit`). Weigh that against the ℂ∖[1,∞) integral definition
+before picking the next step here.

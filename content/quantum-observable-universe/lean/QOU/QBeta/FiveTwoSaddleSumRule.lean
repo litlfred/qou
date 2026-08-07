@@ -223,4 +223,221 @@ class FiveTwoDilogLadder (Li : ℂ → ℂ) (y : Fin 3 → ℂ) : Prop where
     (α : ℂ) * (∑ j, Li (y j)) + (β : ℂ) * (∑ j, Li (1 - y j))
       = (γ : ℂ) * (Real.pi : ℂ) ^ 2
 
+/-! ### The branch data `b = (−1, +1, +1)` is not free data
+
+The sum rule is stated with `Vⱼ = 3·Li₂(yⱼ) + (log yⱼ + bⱼπi)²` and a
+hand-supplied `b = (−1, +1, +1)`, which reads like three fitted signs. It is
+not: probe `qbeta_5two_route5_branch_data_probe` (gate G6, error `0.0` at
+60 dps) found
+
+    log yⱼ + bⱼπi = Log(−yⱼ)      (principal branch)
+
+and the three lemmas below are the proof. `arg(−z) = arg z − π` above the real
+axis, `arg z + π` below it, and `= π` on the positive real axis — so for a
+cubic with one positive real root and one conjugate pair, `b` is *forced* to be
+`(−1, +1, +1)` with no freedom whatsoever.
+
+Consequence: `Vⱼ = 3·Li₂(yⱼ) + Log(−yⱼ)²`, and `Log(−z)²` is precisely the term
+in the dilogarithm inversion formula `Li₂ z + Li₂ (1/z) = −π²/6 − ½·Log(−z)²`.
+That is what makes the inversion route to the sum rule natural rather than
+opportunistic. See bean `qou-0yqu`.
+-/
+
+/-- Above the real axis, negation *subtracts* `πi` from the principal log. -/
+theorem log_neg_of_im_pos {z : ℂ} (hz : 0 < z.im) :
+    Complex.log (-z) = Complex.log z - (Real.pi : ℂ) * Complex.I := by
+  simp only [Complex.log, norm_neg, Complex.arg_neg_eq_arg_sub_pi_of_im_pos hz]
+  push_cast
+  ring
+
+/-- Below the real axis, negation *adds* `πi`. -/
+theorem log_neg_of_im_neg {z : ℂ} (hz : z.im < 0) :
+    Complex.log (-z) = Complex.log z + (Real.pi : ℂ) * Complex.I := by
+  simp only [Complex.log, norm_neg, Complex.arg_neg_eq_arg_add_pi_of_im_neg hz]
+  push_cast
+  ring
+
+/-- On the positive real axis, negation adds `πi` (`arg` of a negative real is
+`π`, not `−π`: the principal branch is closed from above). -/
+theorem log_neg_of_pos_real {x : ℝ} (hx : 0 < x) :
+    Complex.log (-(x : ℂ)) = Complex.log (x : ℂ) + (Real.pi : ℂ) * Complex.I := by
+  have hneg : ((-x : ℝ) : ℂ) = -(x : ℂ) := by push_cast; ring
+  rw [← hneg]
+  simp only [Complex.log, Complex.norm_real, Complex.arg_ofReal_of_neg (by linarith : (-x : ℝ) < 0),
+    Complex.arg_ofReal_of_nonneg hx.le]
+  rw [norm_neg]
+  push_cast
+  ring
+
+/-- **The three branch shifts at once.** For a positive real `y₃` and a
+conjugate pair `y₁` (upper half-plane), `y₂ = conj y₁`, the shifts
+`(−1, +1, +1)` are exactly `Log(−yⱼ)`.
+
+This is the formal statement that the sum rule's `b` carries no free
+parameters. -/
+theorem branch_shift_eq_log_neg {y₁ y₃ : ℂ} (h₁ : 0 < y₁.im) (h₃im : y₃.im = 0)
+    (h₃re : 0 < y₃.re) :
+    Complex.log y₁ + (-1 : ℤ) * (Real.pi : ℂ) * Complex.I = Complex.log (-y₁)
+      ∧ Complex.log (starRingEnd ℂ y₁) + (1 : ℤ) * (Real.pi : ℂ) * Complex.I
+          = Complex.log (-(starRingEnd ℂ y₁))
+      ∧ Complex.log y₃ + (1 : ℤ) * (Real.pi : ℂ) * Complex.I = Complex.log (-y₃) := by
+  refine ⟨?_, ?_, ?_⟩
+  · rw [log_neg_of_im_pos h₁]; push_cast; ring
+  · rw [log_neg_of_im_neg (by simpa using h₁)]; push_cast; ring
+  · have hy₃ : y₃ = ((y₃.re : ℝ) : ℂ) := by
+      apply Complex.ext <;> simp [h₃im]
+    rw [hy₃, log_neg_of_pos_real h₃re]
+    push_cast
+    ring
+
+/-! ### The `Log²` half of the sum rule, in closed form
+
+With `b` identified as `Log(−yⱼ)` the sum rule reads
+`Σⱼ Re(3·Li₂(yⱼ) + Log(−yⱼ)²) = −3π²/2`, which splits into a dilogarithm part
+and a pure `Log²` part. **The `Log²` part is elementary** — it is what this
+block evaluates — so the whole content of the sum rule sits in the
+dilogarithm part.
+
+For a positive real root `y₃` and a conjugate pair `y₁`, `y₂ = conj y₁` with
+`‖y₁‖² · y₃ = 1` (Vieta `e₃ = 1`, see `real_root_mul_normSq`):
+
+    Σⱼ Re Log(−yⱼ)² = (3/2)·log²y₃ − 2(θ − π)² − π²,     θ = arg y₁.
+
+Subtracting from `−3π²/2` gives the Route 5 closed form for the integral,
+
+    −∫₀¹ log(1 − 2z + 3z² − z³)/z dz = −½·log²y₃ + (2/3)(θ − π)² − π²/6
+
+exactly as recorded in bean `qou-0yqu`. So Route 5's restatement is a
+*consequence* of the sum rule and this algebra — the two are equivalent given
+`Σⱼ Re Li₂(yⱼ) = −∫₀¹ log P(z)/z dz`, which is the one link still open.
+-/
+
+/-- `Re(Log(−z)²)` above the real axis. -/
+theorem re_log_neg_sq_of_im_pos {z : ℂ} (hz : 0 < z.im) :
+    (Complex.log (-z) ^ 2).re
+      = Real.log ‖z‖ ^ 2 - (Complex.arg z - Real.pi) ^ 2 := by
+  have hre : (Complex.log (-z)).re = Real.log ‖z‖ := by
+    rw [Complex.log_re, norm_neg]
+  have him : (Complex.log (-z)).im = Complex.arg z - Real.pi := by
+    rw [Complex.log_im, Complex.arg_neg_eq_arg_sub_pi_of_im_pos hz]
+  rw [pow_two, Complex.mul_re, hre, him]
+  ring
+
+/-- `Re(Log(−z)²)` below the real axis. -/
+theorem re_log_neg_sq_of_im_neg {z : ℂ} (hz : z.im < 0) :
+    (Complex.log (-z) ^ 2).re
+      = Real.log ‖z‖ ^ 2 - (Complex.arg z + Real.pi) ^ 2 := by
+  have hre : (Complex.log (-z)).re = Real.log ‖z‖ := by
+    rw [Complex.log_re, norm_neg]
+  have him : (Complex.log (-z)).im = Complex.arg z + Real.pi := by
+    rw [Complex.log_im, Complex.arg_neg_eq_arg_add_pi_of_im_neg hz]
+  rw [pow_two, Complex.mul_re, hre, him]
+  ring
+
+/-- `Re(Log(−x)²)` on the positive real axis. -/
+theorem re_log_neg_sq_of_pos_real {x : ℝ} (hx : 0 < x) :
+    (Complex.log (-(x : ℂ)) ^ 2).re = Real.log x ^ 2 - Real.pi ^ 2 := by
+  have hcast : (-(x : ℂ)) = ((-x : ℝ) : ℂ) := by push_cast; ring
+  have hre : (Complex.log (-(x : ℂ))).re = Real.log x := by
+    rw [Complex.log_re, norm_neg, Complex.norm_real, Real.norm_eq_abs, abs_of_pos hx]
+  have him : (Complex.log (-(x : ℂ))).im = Real.pi := by
+    rw [Complex.log_im, hcast, Complex.arg_ofReal_of_neg (by linarith : (-x : ℝ) < 0)]
+  rw [pow_two, Complex.mul_re, hre, him]
+  ring
+
+/-- The conjugate of an upper-half-plane point contributes the *same*
+`Re Log(−·)²`: `arg(conj z) = −arg z` there, and `(−θ + π)² = (θ − π)²`. -/
+theorem re_log_neg_sq_conj_of_im_pos {z : ℂ} (hz : 0 < z.im) :
+    (Complex.log (-(starRingEnd ℂ z)) ^ 2).re
+      = Real.log ‖z‖ ^ 2 - (Complex.arg z - Real.pi) ^ 2 := by
+  have harg : Complex.arg (starRingEnd ℂ z) = -Complex.arg z := by
+    rw [Complex.arg_conj, if_neg]
+    intro h
+    exact absurd (Complex.arg_eq_pi_iff.mp h).2 (ne_of_gt hz)
+  rw [re_log_neg_sq_of_im_neg (by simpa using hz), harg, RCLike.norm_conj]
+  ring
+
+/-- **The `Log²` half of the sum rule, evaluated.**
+
+For the 5₂ saddle root configuration — one positive real root `y₃`, one
+conjugate pair `y₁`, `conj y₁` — with the Vieta relation `‖y₁‖² · y₃ = 1`:
+
+    Σⱼ Re Log(−yⱼ)² = (3/2)·log²y₃ − 2(θ − π)² − π²,   θ = arg y₁.
+
+The hypothesis `hnorm` is exactly `real_root_mul_normSq` rearranged; it is what
+eliminates `‖y₁‖` in favour of the single real algebraic number `y₃`. -/
+theorem sum_re_log_neg_sq {y₁ : ℂ} {y₃ : ℝ} (h₁ : 0 < y₁.im) (h₃ : 0 < y₃)
+    (hnorm : ‖y₁‖ ^ 2 * y₃ = 1) :
+    (Complex.log (-y₁) ^ 2).re + (Complex.log (-(starRingEnd ℂ y₁)) ^ 2).re
+        + (Complex.log (-(y₃ : ℂ)) ^ 2).re
+      = 3 / 2 * Real.log y₃ ^ 2 - 2 * (Complex.arg y₁ - Real.pi) ^ 2
+        - Real.pi ^ 2 := by
+  have hy₁ : y₁ ≠ 0 := fun h => absurd (by rw [h]; simp : y₁.im = 0) (ne_of_gt h₁)
+  have hnormpos : 0 < ‖y₁‖ := norm_pos_iff.mpr hy₁
+  -- `‖y₁‖² = 1/y₃` gives `2·log‖y₁‖ = −log y₃`
+  have hlog : 2 * Real.log ‖y₁‖ = -Real.log y₃ := by
+    have hsq : ‖y₁‖ ^ 2 = y₃⁻¹ := by
+      field_simp at hnorm ⊢
+      linarith [hnorm]
+    have := congrArg Real.log hsq
+    rwa [Real.log_pow, Real.log_inv] at this
+  have hlog' : Real.log ‖y₁‖ ^ 2 = Real.log y₃ ^ 2 / 4 := by
+    have hL : Real.log ‖y₁‖ = -Real.log y₃ / 2 := by linarith
+    rw [hL]; ring
+  rw [re_log_neg_sq_of_im_pos h₁, re_log_neg_sq_conj_of_im_pos h₁,
+    re_log_neg_sq_of_pos_real h₃, hlog']
+  ring
+
+/-! ### The real root's contribution is a ROGERS dilogarithm
+
+Zagier's *The Dilogarithm Function* §II.1 A defines the Rogers dilogarithm on
+`(0,1)` as
+
+    L(x) = Li₂(x) + ½·log(x)·log(1 − x)
+
+which takes its values most naturally in `ℝ/(π²/2)ℤ`. The 5₂ saddle's real
+root contributes to the sum rule exactly
+
+    Re V₃ = 3·L(y₃) − π²
+
+— verified to 40 dps with difference `0.0`, and proved below. The whole content
+is the branch relation `2·log y₃ = 3·log(1 − y₃)` (the real-root case `k = 0` of
+`y² = (1−y)³`), which turns `Re Log(−y₃)² = log²y₃ − π²` into
+`(3/2)·log y₃·log(1−y₃) − π²`, i.e. into Rogers' correction term.
+
+**Why record it.** It identifies one of the three summands as a standard object
+with a known functional-equation theory, rather than an ad-hoc combination. It
+does **not** evaluate anything: `L(y₃)/(π²/6) = 0.441033…` is not rational, as
+expected for a cubic-field argument, so no ladder value drops out. The sum rule
+remains a statement about the *combination*, which is exactly what one expects
+if only the Bloch-group class is well defined.
+
+Stated with the dilogarithm value as a free real `L₂`, so the file stays
+Mathlib-only: the identity is purely about the logarithmic terms. Bean
+`qou-0yqu`. -/
+
+/-- **The branch relation converts `Re Log(−y)²` into Rogers' correction.**
+
+Given `2·log y = 3·log(1 − y)` — the real-root case of `y² = (1−y)³` — the
+`Log²` term of `V` is `(3/2)·log y·log(1−y) − π²`. -/
+theorem re_log_neg_sq_of_branch_relation {y : ℝ} (hy : 0 < y)
+    (hrel : 2 * Real.log y = 3 * Real.log (1 - y)) :
+    (Complex.log (-(y : ℂ)) ^ 2).re
+      = 3 / 2 * (Real.log y * Real.log (1 - y)) - Real.pi ^ 2 := by
+  rw [re_log_neg_sq_of_pos_real hy]
+  linear_combination (Real.log y / 2) * hrel
+
+/-- **`Re V₃ = 3·L(y₃) − π²`**, with `L` the Rogers dilogarithm.
+
+`L₂` stands for `Li₂(y)`; the identity is about the logarithmic terms only, so
+no dilogarithm theory is needed and this file stays Mathlib-only. -/
+theorem re_V_real_root_eq_rogers {y L₂ : ℝ} (hy : 0 < y)
+    (hrel : 2 * Real.log y = 3 * Real.log (1 - y)) :
+    (3 * (L₂ : ℂ) + Complex.log (-(y : ℂ)) ^ 2).re
+      = 3 * (L₂ + Real.log y * Real.log (1 - y) / 2) - Real.pi ^ 2 := by
+  rw [Complex.add_re, re_log_neg_sq_of_branch_relation hy hrel]
+  simp only [Complex.mul_re, Complex.ofReal_re, Complex.ofReal_im]
+  norm_num
+  ring
+
 end QOU.QBeta.FiveTwo
