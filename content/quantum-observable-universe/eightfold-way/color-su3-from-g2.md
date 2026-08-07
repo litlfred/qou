@@ -99,25 +99,58 @@ candidate targets.  The decisive version is the period matrix.  None has
 been computed.  This is a scope-(a) negative: the degeneration itself is
 not refuted, only the argument offered for it.
 
-One sharpening is available immediately, and it may carry much of the
-weight.  Pinching a single \emph{non-separating} cycle on a genus-4 curve
-yields a one-node curve of arithmetic genus $4$ whose normalization has
-genus $3$ \emph{together with two marked points} --- the two preimages of
-the node, consistent with $3 + 1 = 4$.  The object the degeneration
-produces is therefore not a bare genus-3 curve but a pair
-$(\Sigma_3, \{p, q\})$ carrying an $S_4$-stable point pair.  That is
-strictly more data than "genus $3$ and admits $S_4$", and unlike an
-invariant chosen after the fact it is supplied by the pinch.  Whether
-requiring an $S_4$-stable pair cuts the pencil down to a finite set ---
-ideally to the Klein quartic alone --- has not been computed, and is the
-natural next probe.
+\textbf{The marked points obstruct the degeneration.}
+There is extra data the pinch does supply, and it settles the question ---
+against the conjecture.  Pinching a single \emph{non-separating} cycle on a
+genus-4 curve yields a one-node curve of arithmetic genus $4$ whose
+normalization has genus $3$ \emph{together with two marked points} --- the
+two preimages of the node, consistent with $3 + 1 = 4$.  Since the pinched
+cycle is $S_4$-invariant, $S_4$ preserves that pair setwise, so the object
+the degeneration produces is a pair $(\Sigma_3, \{p, q\})$ with an
+$S_4$-stable point pair, not a bare genus-3 curve.
+
+No smooth plane quartic admits such a pair.  Let $\{p, q\}$ be $S_4$-stable;
+permuting it gives a homomorphism $S_4 \to S_2$ whose kernel has index $1$ or
+$2$, hence is $S_4$ itself or the unique index-2 subgroup $A_4$.  Either way
+the line through $p$ is an invariant $1$-dimensional subspace of
+$\mathbb{C}^3$.  But the $3$-dimensional representation of $S_4$ is absolutely
+irreducible, and so is its restriction to $A_4$ --- each verified two
+independent ways, by commutant dimension and by character norm
+(\texttt{s4\_marked\_pair\_obstruction.py}).  An absolutely irreducible
+representation has no invariant line over any extension field, so no such
+pair exists: $S_4$ has \emph{no orbit of size $\le 2$} on $\mathbb{P}^2$ at
+all.
+
+Consequently, under the three premises this chain itself asserts --- one
+$S_4$-invariant non-separating cycle (which is what arithmetic genus $4$ and
+geometric genus $3$ mean), $S_4$ acting faithfully on the normalization
+(which is what ``$S_4$ survives'' means), and a non-hyperelliptic
+normalization (which the Klein quartic is) --- the required configuration
+does not exist.  This is a scope-(b) \emph{structural exclusion}, licensed by
+a proved invariant rather than by a numerical near-miss, and unlike the two
+earlier failures it bears on the conjecture rather than merely on an argument
+for it.
+
+The escapes are worth naming precisely, since they are what remains.  A
+\emph{hyperelliptic} genus-3 normalization is not excluded: its canonical map
+is $2$-to-$1$ onto a conic, so its automorphisms do not act through
+$\mathrm{PGL}_3$ in the manner above, and such curves admitting $S_4$ do
+exist.  The Klein quartic is not hyperelliptic, so that escape does not
+recover it.  Nor is a pinch with several nodes or of a separating cycle
+excluded --- but either is a different claim from the one made here.  What
+the argument does not touch at all is the Bring surface: it constrains the
+target, not the source.
 
 \textbf{Status:} the $S_4$ bridge mechanism is computationally verified
-(\texttt{s4\_bridge\_verification.py}, \texttt{s4\_fano\_action.py}).
-The genus degeneration step is a conjecture: whether pinching an
-$S_4$-invariant cycle on Bring actually produces the Klein quartic
-(rather than some other genus-3 curve) requires an algebraic-geometry
-argument not yet provided.
+(\texttt{s4\_bridge\_verification.py}, \texttt{s4\_fano\_action.py}) --- that
+is, $S_4$ does act on the local Fano data as claimed.  The genus degeneration
+step is a different matter, and it is no longer merely unproved: as shown
+above, under its own three premises it is \emph{excluded}.  A pinch of the
+kind described cannot deliver a non-hyperelliptic genus-3 normalization, and
+the Klein quartic is non-hyperelliptic.  Rescuing the colour route therefore
+requires giving up one of the three premises explicitly --- a hyperelliptic
+target, a multi-node or separating pinch, or a non-faithful $S_4$ --- and
+saying which.  Repairing the \emph{argument} is no longer enough.
 
 **$\mathrm{PSL}(2,7)$ representation theory.**
 Computationally verified (\texttt{psl27\_irrep\_verification.py}):
