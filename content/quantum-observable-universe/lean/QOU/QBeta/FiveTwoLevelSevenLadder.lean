@@ -93,6 +93,49 @@ theorem sum_of_numerators
   obtain ⟨h1, h2, h3⟩ := numerators_of_five_term L L1 w2 q r s hrw hrq hrr hrs hA hB hC
   linear_combination h1 + h2 + h3
 
+/-! ### The reduction step, and the full chain
+
+`numerators_of_five_term` starts from the `(0,1)` form. This connects it to the
+**original** quantities `2·L wₖ + L (−wₖ)`, so the Lean covers all of Route 11 and
+not merely its last linear step.
+
+The reduction inputs are the three extension formulas, instantiated at the points
+used (each is a hypothesis here; none is proved in this file):
+
+* inversion at `w₁ > 1`, together with `1/w₁ = 1 − w₂`;
+* Landen at `−w₁ < 0`, `−w₂ < 0`, and `w₃ < 0`, whose images are `q`, `r`,
+  and `1 − w₂` respectively;
+* `s = −w₃`, which already lies in `(0,1)`, so needs no transformation.
+-/
+
+/-- Route 11 end to end: from the original `2·L wₖ + L (−wₖ)` to `mₖ·L1`,
+with the `7` cleared. -/
+theorem numerators_original_form
+    (L : R → R) (L1 w1 w2 w3 q r s : R)
+    -- reduction to (0,1)
+    (hinv1 : L w1 = 2 * L1 - L (1 - w2))
+    (hlan1 : L (-w1) = -L q)
+    (hlan2 : L (-w2) = -L r)
+    (hlan3 : L w3 = -L (1 - w2))
+    (hsw3 : L (-w3) = L s)
+    -- reflection
+    (hrw : L (1 - w2) = L1 - L w2)
+    (hrq : L (1 - q) = L1 - L q)
+    (hrr : L (1 - r) = L1 - L r)
+    (hrs : L (1 - s) = L1 - L s)
+    -- five-term instances
+    (hA : 2 * L w2 - L (1 - q) - 2 * L r = 0)
+    (hB : L (1 - w2) + L q - L (1 - q) - L (1 - s) - L w2 = 0)
+    (hC : L w2 + L s - L (1 - w2) - L (1 - s) - L (1 - r) = 0) :
+    (7 * (2 * L w1 + L (-w1)) = 17 * L1)
+      ∧ (7 * (2 * L w2 + L (-w2)) = 5 * L1)
+      ∧ (7 * (2 * L w3 + L (-w3)) = -L1) := by
+  obtain ⟨h1, h2, h3⟩ := numerators_of_five_term L L1 w2 q r s hrw hrq hrr hrs hA hB hC
+  refine ⟨?_, ?_, ?_⟩
+  · rw [hinv1, hlan1, hrw]; linear_combination h1
+  · rw [hlan2]; linear_combination h2
+  · rw [hlan3, hsw3, hrw]; linear_combination h3
+
 /-! ### What happens in characteristic 7
 
 The cleared statements above hold over *any* `CommRing`, characteristic 7

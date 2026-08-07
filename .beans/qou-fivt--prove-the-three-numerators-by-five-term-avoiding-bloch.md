@@ -321,3 +321,26 @@ everywhere, with content exactly where `7` is invertible.
 Three theorems in `FiveTwoLevelSevenLadder.lean`, all sorry-free, axioms
 `[propext, Classical.choice, Quot.sound]`: `numerators_of_five_term`,
 `sum_of_numerators`, `char_seven_forces`.
+
+### `numerators_original_form` — the Lean now covers Route 11 end to end
+
+The earlier theorem started from the `(0,1)` form, so the reduction itself was
+still only on paper. `numerators_original_form` closes that: from the **original**
+`2·L wₖ + L(−wₖ)` to `mₖ·L1` (with the `7` cleared), taking the three extension
+formulas as hypotheses at the points used —
+
+    inversion at w₁ > 1 (with 1/w₁ = 1 − w₂),
+    Landen at −w₁, −w₂, w₃  (images q, r, 1 − w₂),
+    s = −w₃, already in (0,1)
+
+plus reflection and the three five-term instances.
+
+**Checked for vacuity before committing.** A theorem with unsatisfiable
+hypotheses proves nothing, so all nine were evaluated against the real Rogers `L`
+at the actual `wₖ`: every one holds to `≤ 3.4e-41`, and the conclusions
+`7(2L wₖ + L(−wₖ)) = mₖ·L1` hold to `≤ 5.5e-40`. The hypotheses are satisfiable
+and the statement has content.
+
+Four theorems now, all sorry-free, axioms `[propext, Classical.choice, Quot.sound]`:
+`numerators_of_five_term`, `numerators_original_form`, `sum_of_numerators`,
+`char_seven_forces`.
