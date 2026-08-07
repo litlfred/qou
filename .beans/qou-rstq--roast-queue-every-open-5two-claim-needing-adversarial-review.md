@@ -91,3 +91,35 @@ Worth remembering when judging how much to trust the probes:
 ## Refs
 
 * parent `qou-0yqu`; PRs #4658 (merged), #4701
+
+---
+
+## 2026-08-07 — critical-path clarification, and a correction to `qou-mlbg`
+
+**The `B₂`-Fourier fact is NOT on the critical path.** Worth stating, because two
+beans describe it as the thing to attack first.
+
+Route 10 framed the sum rule as a distribution relation
+`Re[2L(wₖ)+L(−wₖ)] = (7/2)·Re Li₂(ζ₇^k) + π²/4`, which needs
+`Re Li₂(ζ₇^k) = π²B₂(k/7)`. **Route 11 supersedes that framing**: it derives the
+numerators from the five-term relation directly, never touching `Li₂` at roots of
+unity. So the `B₂` fact is *explanatory* — it says why the numerators are a
+Bernoulli polynomial — and **load-bearing for nothing**.
+
+Prioritise `qou-rhyp` (the nine hypotheses) over the `B₂` half. `qou-fivt`'s
+"Next: derive the `Re Li₂(ζ₇^k)` half first" predates Route 11 and is now the
+wrong advice.
+
+**Separately — `qou-mlbg` has been corrected.** Its zero-counts stand, but the
+conclusion drawn from them was too broad: Mathlib *does* carry the `B₂` Fourier
+fact, as `hasSum_one_div_nat_pow_mul_cos` in `NumberTheory/ZetaValues.lean`
+(at `k = 1` the constants collapse to exactly `π²`). **The survey searched for the
+objects it would have named — `Polylog`, `dilog`, `Rogers` — and missed the
+content sitting under a different one.**
+
+**Roast target added:** re-run that survey's logic against the *other* gaps before
+concluding anything is absent. Specifically, `qou-rhyp`'s inversion and Landen
+extensions were called "not in Mathlib" on the same reasoning that just failed
+once. That reasoning is now suspect. Mathlib genuinely has no `Li₂`, so those two
+probably *are* absent — but "probably" is exactly the word the earlier survey did
+not use, and should have.
