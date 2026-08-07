@@ -60,7 +60,7 @@ if str(HERE) not in sys.path:
     sys.path.insert(0, str(HERE))
 
 
-from _precision import set_compute_dps, fmt  # noqa: E402
+from _precision import set_compute_dps, fmt, str_at_true_precision  # noqa: E402
 set_compute_dps()
 
 from witness_base import WitnessBuilder  # noqa: E402
@@ -239,7 +239,13 @@ def test_bridge_for_atom(Z: int, N: int, label: str) -> dict:
         "A": Z + N,
         "chi_lambda": {ch: str(chi[ch]) for ch in chi},
         "product_per_generator_per_channel": {ch: str(products[ch]) for ch in products},
-        "pair_volumes_summed_at_A1_only": {ch: str(pairs[ch]) for ch in pairs},
+        # Pair volumes come from wedderburn_pair_volumes, which is float64 by
+        # construction (numpy, `1.0 / (q0 ** 0.5 + ...)`), so at A=1 the
+        # "sum" is a single 53-bit value and str(<mpf>) would print its
+        # binary64 expansion at 50 dps.
+        "pair_volumes_summed_at_A1_only": {
+            ch: str_at_true_precision(pairs[ch]) for ch in pairs
+        },
         "ratios": {
             "direct (χ^λ / Σ V̂_λ_pair)": {ch: str(r_direct[ch]) for ch in r_direct},
             "dimension_scaled ((χ^λ/d_λ) / Σ V̂_λ_pair)": {
