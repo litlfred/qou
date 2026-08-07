@@ -117,9 +117,41 @@ so (SUM) *is* a dilogarithm-ladder evaluation at the roots, nothing more.
 4. **Kubert/distribution — nets negative.** It introduces `Li₂` at `−yⱼ`
    and `ω^k(1−yⱼ)`: six new unknown sums for one new relation.
 
-Closing (SUM) needs genuine Bloch-group / K-theory machinery over the 5₂
-trace field, or a ladder identity specific to it. Left OPEN; see bean
-`qou-0yqu` for the full route survey.
+*Route 5 (2026-08-06) — RESTATEMENT: the dilogarithms cancel out.*
+Not a proof, but it changes what has to be proved.
+
+The power sums `pₙ = Σⱼ yⱼⁿ` are **integers** (3, 2, −2, −7, −6, 7, 25, …)
+obeying the cubic's recurrence, and `∏ⱼ(1 − yⱼz) = 1 − 2z + 3z² − z³`, so
+
+    A = Σⱼ Li₂(yⱼ) = −∫₀¹ log(1 − 2z + 3z² − z³) / z  dz
+
+exactly (residual 0.0). The integrand is regular on `[0,1]`: the cubic has
+**no root there** (min `0.615`, endpoints both `1`), so this is a genuinely
+convergent real integral even though `|y₁| = 1.52 > 1` makes the defining
+series diverge.
+
+Combining with the reduction, and using `y₁y₂y₃ = 1` (so `log r = −½log y₃`)
+plus `y₁+y₂ = 2−y₃`, **(SUM) becomes an identity with no dilogarithm and no
+complex numbers, in the single real algebraic number `y₃`:**
+
+    −∫₀¹ log(1−2z+3z²−z³)/z dz
+        = −½·log²(y₃) + (2/3)·(θ−π)² − π²/6,
+      θ = arccos( (2−y₃)·√y₃ / 2 )
+
+verified to `1.1e-40`. Control: the same expression on the cubic
+`y³−y²+2y−1` fails by `0.15`, so it is cubic-specific, not an identity of the
+shape.
+
+**Why this matters for the Lean side.** The complex-`Li₂` continuation
+(`qou-gkco`) was the blocker for discharging `hrefl`. This form needs neither
+a complex dilogarithm nor analytic continuation — only a real interval
+integral, `log`, and `arccos`, all of which Mathlib has. The blocker is
+bypassed *for this purpose*.
+
+**It is still not proved.** The restatement is equivalent to the ladder, not a
+solution to it; a closed-form evaluation of this integral is itself
+substantial. What changed is that the target is now elementary and
+formalizable rather than Bloch-group-shaped. Left OPEN; bean `qou-0yqu`.
 
 Consequence for use
 -------------------
