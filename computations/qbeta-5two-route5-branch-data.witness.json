@@ -152,6 +152,19 @@
       "pass": true,
       "defect_is_purely_imaginary": true,
       "consequence_if_pass": "Stronger than anticipated: Re D_j = 0 for EVERY root separately, not merely in the sum. The entire inversion defect at y_3 is imaginary (Im D_3 = -10.6009742). Since the sum rule involves only real parts, the per-root inversion rewrite is legitimate for it, and G7's restatement is DERIVED rather than merely observed. What a Lean proof needs is therefore the REAL PART of the inversion formula on (0,1) -- a weaker and more tractable statement than the complex identity."
+    },
+    {
+      "gate": "G9",
+      "claim": "sum_j Re Log(-y_j)^2 == (3/2)log^2 y_3 - 2(theta-pi)^2 - pi^2",
+      "theta_arg_y1": "1.030019489685363686",
+      "lhs": "-17.71959864603998270563506",
+      "rhs_closed_form": "-17.71959864603998270563506",
+      "abs_difference": "0.0",
+      "route5_A_from_closed_form": "0.9717306814686482591277742",
+      "route5_A_from_integral": "0.9717306814686482591277742",
+      "route5_abs_difference": "2.3336307e-61",
+      "pass": true,
+      "consequence_if_pass": "The Log^2 half of the sum rule is elementary and now Lean-proved, so the entire remaining content sits in the dilogarithm half. Route 5's restatement is EQUIVALENT to the sum rule given the one open link sum_j Re Li2(y_j) = -int_0^1 log P(z)/z dz (gate G2)."
     }
   ],
   "scope": "Numerical verification only. Nothing here proves the sum rule, which remains verified-to-80-dps and unproved. Scope-(a) throughout: no ingredient is structurally excluded by any gate below."

@@ -290,4 +290,102 @@ theorem branch_shift_eq_log_neg {y₁ y₃ : ℂ} (h₁ : 0 < y₁.im) (h₃im :
     push_cast
     ring
 
+/-! ### The `Log²` half of the sum rule, in closed form
+
+With `b` identified as `Log(−yⱼ)` the sum rule reads
+`Σⱼ Re(3·Li₂(yⱼ) + Log(−yⱼ)²) = −3π²/2`, which splits into a dilogarithm part
+and a pure `Log²` part. **The `Log²` part is elementary** — it is what this
+block evaluates — so the whole content of the sum rule sits in the
+dilogarithm part.
+
+For a positive real root `y₃` and a conjugate pair `y₁`, `y₂ = conj y₁` with
+`‖y₁‖² · y₃ = 1` (Vieta `e₃ = 1`, see `real_root_mul_normSq`):
+
+    Σⱼ Re Log(−yⱼ)² = (3/2)·log²y₃ − 2(θ − π)² − π²,     θ = arg y₁.
+
+Subtracting from `−3π²/2` gives the Route 5 closed form for the integral,
+
+    −∫₀¹ log(1 − 2z + 3z² − z³)/z dz = −½·log²y₃ + (2/3)(θ − π)² − π²/6
+
+exactly as recorded in bean `qou-0yqu`. So Route 5's restatement is a
+*consequence* of the sum rule and this algebra — the two are equivalent given
+`Σⱼ Re Li₂(yⱼ) = −∫₀¹ log P(z)/z dz`, which is the one link still open.
+-/
+
+/-- `Re(Log(−z)²)` above the real axis. -/
+theorem re_log_neg_sq_of_im_pos {z : ℂ} (hz : 0 < z.im) :
+    (Complex.log (-z) ^ 2).re
+      = Real.log ‖z‖ ^ 2 - (Complex.arg z - Real.pi) ^ 2 := by
+  have hre : (Complex.log (-z)).re = Real.log ‖z‖ := by
+    rw [Complex.log_re, norm_neg]
+  have him : (Complex.log (-z)).im = Complex.arg z - Real.pi := by
+    rw [Complex.log_im, Complex.arg_neg_eq_arg_sub_pi_of_im_pos hz]
+  rw [pow_two, Complex.mul_re, hre, him]
+  ring
+
+/-- `Re(Log(−z)²)` below the real axis. -/
+theorem re_log_neg_sq_of_im_neg {z : ℂ} (hz : z.im < 0) :
+    (Complex.log (-z) ^ 2).re
+      = Real.log ‖z‖ ^ 2 - (Complex.arg z + Real.pi) ^ 2 := by
+  have hre : (Complex.log (-z)).re = Real.log ‖z‖ := by
+    rw [Complex.log_re, norm_neg]
+  have him : (Complex.log (-z)).im = Complex.arg z + Real.pi := by
+    rw [Complex.log_im, Complex.arg_neg_eq_arg_add_pi_of_im_neg hz]
+  rw [pow_two, Complex.mul_re, hre, him]
+  ring
+
+/-- `Re(Log(−x)²)` on the positive real axis. -/
+theorem re_log_neg_sq_of_pos_real {x : ℝ} (hx : 0 < x) :
+    (Complex.log (-(x : ℂ)) ^ 2).re = Real.log x ^ 2 - Real.pi ^ 2 := by
+  have hcast : (-(x : ℂ)) = ((-x : ℝ) : ℂ) := by push_cast; ring
+  have hre : (Complex.log (-(x : ℂ))).re = Real.log x := by
+    rw [Complex.log_re, norm_neg, Complex.norm_real, Real.norm_eq_abs, abs_of_pos hx]
+  have him : (Complex.log (-(x : ℂ))).im = Real.pi := by
+    rw [Complex.log_im, hcast, Complex.arg_ofReal_of_neg (by linarith : (-x : ℝ) < 0)]
+  rw [pow_two, Complex.mul_re, hre, him]
+  ring
+
+/-- The conjugate of an upper-half-plane point contributes the *same*
+`Re Log(−·)²`: `arg(conj z) = −arg z` there, and `(−θ + π)² = (θ − π)²`. -/
+theorem re_log_neg_sq_conj_of_im_pos {z : ℂ} (hz : 0 < z.im) :
+    (Complex.log (-(starRingEnd ℂ z)) ^ 2).re
+      = Real.log ‖z‖ ^ 2 - (Complex.arg z - Real.pi) ^ 2 := by
+  have harg : Complex.arg (starRingEnd ℂ z) = -Complex.arg z := by
+    rw [Complex.arg_conj, if_neg]
+    intro h
+    exact absurd (Complex.arg_eq_pi_iff.mp h).2 (ne_of_gt hz)
+  rw [re_log_neg_sq_of_im_neg (by simpa using hz), harg, RCLike.norm_conj]
+  ring
+
+/-- **The `Log²` half of the sum rule, evaluated.**
+
+For the 5₂ saddle root configuration — one positive real root `y₃`, one
+conjugate pair `y₁`, `conj y₁` — with the Vieta relation `‖y₁‖² · y₃ = 1`:
+
+    Σⱼ Re Log(−yⱼ)² = (3/2)·log²y₃ − 2(θ − π)² − π²,   θ = arg y₁.
+
+The hypothesis `hnorm` is exactly `real_root_mul_normSq` rearranged; it is what
+eliminates `‖y₁‖` in favour of the single real algebraic number `y₃`. -/
+theorem sum_re_log_neg_sq {y₁ : ℂ} {y₃ : ℝ} (h₁ : 0 < y₁.im) (h₃ : 0 < y₃)
+    (hnorm : ‖y₁‖ ^ 2 * y₃ = 1) :
+    (Complex.log (-y₁) ^ 2).re + (Complex.log (-(starRingEnd ℂ y₁)) ^ 2).re
+        + (Complex.log (-(y₃ : ℂ)) ^ 2).re
+      = 3 / 2 * Real.log y₃ ^ 2 - 2 * (Complex.arg y₁ - Real.pi) ^ 2
+        - Real.pi ^ 2 := by
+  have hy₁ : y₁ ≠ 0 := fun h => absurd (by rw [h]; simp : y₁.im = 0) (ne_of_gt h₁)
+  have hnormpos : 0 < ‖y₁‖ := norm_pos_iff.mpr hy₁
+  -- `‖y₁‖² = 1/y₃` gives `2·log‖y₁‖ = −log y₃`
+  have hlog : 2 * Real.log ‖y₁‖ = -Real.log y₃ := by
+    have hsq : ‖y₁‖ ^ 2 = y₃⁻¹ := by
+      field_simp at hnorm ⊢
+      linarith [hnorm]
+    have := congrArg Real.log hsq
+    rwa [Real.log_pow, Real.log_inv] at this
+  have hlog' : Real.log ‖y₁‖ ^ 2 = Real.log y₃ ^ 2 / 4 := by
+    have hL : Real.log ‖y₁‖ = -Real.log y₃ / 2 := by linarith
+    rw [hL]; ring
+  rw [re_log_neg_sq_of_im_pos h₁, re_log_neg_sq_conj_of_im_pos h₁,
+    re_log_neg_sq_of_pos_real h₃, hlog']
+  ring
+
 end QOU.QBeta.FiveTwo
