@@ -308,10 +308,60 @@ ever appears.
 **The remaining gap, stated precisely.** Three things, in increasing size:
 
 1. `Σⱼ Li₂(yⱼ) = −∫₀¹ log P(z)/z dz`. `LiTwo_eq_integral_unit` gives the `y₃`
-   term. The other two need the complex `Log`, and `log ∏ = Σ log` holds only
-   up to `2πik` — **the branch data `b = (−1,+1,+1)` in `Vⱼ` is exactly that
-   correction.** That is a concrete, checkable conjecture, not a vague hope; it
-   is the cheapest next thing to test numerically.
+   term; the other two need the complex `Log`. ~~The branch data `b` is the
+   `2πik` correction in `log ∏ = Σ log`.~~ **REFUTED same day — see the
+   correction section below.**
 2. The closed-form evaluation of `−∫₀¹ log P(z)/z dz`, i.e. the sum rule.
 3. Nothing here weakens the standing status: **verified to 80 dps, unproved.**
    Routes 1–4 remain dead.
+
+## 2026-08-07 (later) — CORRECTION + what `b` actually is
+
+Probe [`qbeta_5two_route5_branch_data_probe.py`](../computations/probes/qbeta_5two_route5_branch_data_probe.py),
+witness `computations/qbeta-5two-route5-branch-data.witness.json`, 60 dps.
+
+**Struck above (G1/G3).** My claim earlier today that `b = (−1,+1,+1)` is the
+`2πik` correction in `log ∏ = Σ log` is **wrong**: G1 finds that correction is
+*identically zero* (worst deviation `3.1e-61` over 40 sample points, `k = {0}`).
+The conjugate pair's arguments cancel and the real root contributes a positive
+real, so every principal branch is already correct. Struck rather than deleted.
+
+**What `b` actually is (G6, exact — error `0.0`):**
+
+> **`log yⱼ + bⱼπi = Log(−yⱼ)`, the principal branch.**
+
+`b` is not free data and not fitted. `arg(−y) = arg y − π` in the upper
+half-plane, `arg y + π` in the lower, and `= π` for positive real `y` — which
+forces `(−1, +1, +1)` with **zero** remaining freedom. So
+
+    Vⱼ = 3·Li₂(yⱼ) + Log(−yⱼ)²
+
+and `Log(−z)²` is exactly the object appearing in the dilogarithm **inversion**
+formula `Li₂(z) + Li₂(1/z) = −π²/6 − ½Log(−z)²`.
+
+**New exact restatement (G7 + G8).** Applying inversion per root and taking real
+parts, the sum rule becomes
+
+    Σⱼ Re Li₂(yⱼ) − 2·Σⱼ Re Li₂(1/yⱼ) = −π²/2
+
+verified to 25 digits (`0.9717306814686482591277742 − 2×2.95326644100666378427251
+= −4.934802200544679309417245 = −π²/2`, difference `0.0`).
+
+The per-root inversion rewrite fails as a *complex* identity at `y₃` (that form
+needs `z ∉ [0,1]`, and `y₃ = 0.4302`), **but G8 shows the entire defect is
+imaginary**: `Re Dⱼ = 0` for every root separately, with
+`Im D₃ = −10.6009742…`. The sum rule uses only real parts, so the rewrite is
+*derived*, not merely observed.
+
+**Consequence for the Lean route.** What a proof needs is the **real part** of
+the inversion formula on `(0,1)` — strictly weaker, and more tractable, than
+the complex identity that genuinely fails there.
+
+**Caution — the reciprocal side is not free.** `∏ⱼ(1 − z/yⱼ) = 1 − 3z + 2z² − z³`
+*changes sign* on `[0,1]` (it is `−1` at `z = 1`, because `1/y₃ = 2.325 > 1`).
+So the positivity argument that makes the root side a clean real integral does
+**not** transfer to the reciprocal side. That sign change is where genuine
+branch structure lives, and it is the honest location of the remaining
+difficulty.
+
+**Status unchanged: verified to 80 dps, unproved.** Nothing above is a proof.
