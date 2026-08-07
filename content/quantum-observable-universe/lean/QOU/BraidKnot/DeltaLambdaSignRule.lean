@@ -49,6 +49,20 @@ structure Partition (n : ℕ) where
   sum_eq : parts.sum = n
   sorted : parts.Pairwise (· ≥ ·)
 
+/-- **Extensionality.** `parts` is the only data field — `pos`, `sum_eq` and `sorted`
+are `Prop`s — so two partitions of `n` agree as soon as their part lists do.
+
+`QOU.BraidKnot.PartitionNatBridge` has always called this as `Partition.ext'`, but
+no such declaration existed anywhere in the file's history: `Partition` carries no
+`@[ext]` attribute, so nothing generated one. That call site could never have
+elaborated; it went unnoticed only because this module already failed to compile
+(the LWC-2 namespace sweep, repaired in the preceding commit), so nothing
+downstream was ever reached. Declared here under the idiomatic `@[ext]` name, with
+the call site updated to match. -/
+@[ext] theorem Partition.ext {n : ℕ} {Λ Λ' : Partition n}
+    (h : Λ.parts = Λ'.parts) : Λ = Λ' := by
+  cases Λ; cases Λ'; cases h; rfl
+
 /-- The empty partition of 0. -/
 def Partition.empty : Partition 0 where
   parts := []

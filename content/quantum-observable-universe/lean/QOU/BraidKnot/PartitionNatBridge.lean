@@ -49,7 +49,7 @@ noncomputable def partitionEquivNatPartition (n : ℕ) :
         rw [← Multiset.sum_coe, Multiset.sort_eq]; exact p.parts_sum
       sorted := Multiset.sort_sorted (· ≥ ·) p.parts }
   left_inv Λ := by
-    apply Partition.ext'
+    apply Partition.ext
     show ((Λ.parts : Multiset ℕ)).sort (· ≥ ·) = Λ.parts
     rw [Multiset.coe_sort, List.mergeSort_eq_self]
     exact Λ.sorted
