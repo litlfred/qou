@@ -174,18 +174,25 @@ def main() -> int:
             detail.append({"witness": p.relative_to(wt).as_posix(),
                            "padded": len(f), "fields": f[:5]})
 
-        if rc is None:
+        # Padding written is padding written — a producer that dies partway
+        # through can still have emitted a padded witness first, and several
+        # do. So RE_PADS outranks the failure verdicts; scoring exit status
+        # first silently understates the count (it hid 73 fields across
+        # rho_k_co_casimir_extended and rho_k_h3a_lp_dual).
+        incomplete = rc is None or rc != 0
+        if total:
+            verdict = "RE_PADS"
+        elif rc is None:
             verdict = "TIMEOUT"
         elif rc != 0:
             verdict = "EXIT_NONZERO"
         elif not written:
             verdict = "NO_WRITE"
-        elif total:
-            verdict = "RE_PADS"
         else:
             verdict = "CLEAN"
 
         results.append({"producer": prod, "verdict": verdict, "rc": rc,
+                        "incomplete": incomplete,
                         "seconds": round(dur, 1), "written": len(written),
                         "padded_total": total, "detail": detail,
                         "stderr_tail": "" if verdict == "CLEAN" else err})
@@ -201,10 +208,15 @@ def main() -> int:
     for k, v in c.most_common():
         print(f"  {k:<14} {v}")
     measured = c["RE_PADS"] + c["CLEAN"]
+    partial = sum(1 for r in results
+                  if r["verdict"] == "RE_PADS" and r.get("incomplete"))
     if measured:
         print(f"\n{c['RE_PADS']}/{measured} measured producers re-pad "
               f"({100*c['RE_PADS']/measured:.0f}%); "
               f"{sum(r.get('padded_total',0) for r in results)} fields regenerated")
+        if partial:
+            print(f"  ({partial} of those re-padded then died — padding written "
+                  f"before the failure still counts)")
         print(f"{len(results)-measured} untested (could not run) — NOT clean")
     print("\n=== RE-PADDERS ===")
     for r in results:

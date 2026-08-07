@@ -53,15 +53,29 @@ untested — never as clean.
 
 | verdict | producers | meaning |
 |---|---:|---|
-| **`RE_PADS`** | **34** | ran, wrote, regenerated padding |
+| **`RE_PADS`** | **37** | wrote a witness carrying padding |
 | `CLEAN` | 8 | ran, wrote, zero padding |
-| `EXIT_NONZERO` | 9 | could not run — **untested** |
-| `TIMEOUT` | 2 | exceeded budget — **untested** |
+| `EXIT_NONZERO` | 7 | could not run — **untested** |
+| `TIMEOUT` | 1 | exceeded budget — **untested** |
 
-**Of the 42 producers that could actually be measured, 34 (81%) re-pad.**
-They regenerate **299 padded fields** in a single pass — roughly two-thirds
-of the 439 the strip removed — and that is a *lower* bound, since 11
+**Of the 45 producers that could actually be measured, 37 (82%) re-pad.**
+They regenerate **289 padded fields** in a single pass — roughly two-thirds
+of the 439 the strip removed — and that is a *lower* bound, since 8
 producers remain untested.
+
+**A producer that dies partway can still have written padding first**, and
+three do. The first cut of this sweep scored exit status *before* padding
+and therefore filed them as untested, hiding 77 fields:
+
+| producer | fields | how it ended |
+|---|---:|---|
+| `rho_k_co_casimir_extended` | **71** | wall timeout |
+| `habiro_interpolate_cross_validator` | 4 | exit 2 |
+| `rho_k_h3a_lp_dual` | 2 | exit 2 |
+
+`rho_k_co_casimir_extended` is the single largest re-padder in the corpus.
+The tool now ranks `RE_PADS` above the failure verdicts: padding written is
+padding written, regardless of how the run terminated.
 
 **Claim 1 was right; claim 2 was wrong.** The retraction was the error, and
 the stripper's original docstring should stand. The `binding_*` family is
@@ -130,19 +144,23 @@ precision one.
 | cause | count | note |
 |---|---:|---|
 | `pyhecke_native` missing (no wheel) | 3 | bean `qou-dgkf` |
-| wall timeout | 2 | `rho_k_co_casimir_extended`, `su4_1111_markov_trace_probe` |
+| wall timeout, wrote nothing | 1 | `su4_1111_markov_trace_probe` |
 | `snappy` missing | 1 | |
-| stale `folio-assistant` path (residual) | 1 | different missing input |
+| stale `folio-assistant` path (residual) | 1 | `option_e_multi_isotope_…` — a second missing input |
 | `codata_constants` import | 1 | |
 | deliberate q₀-pin guard | 1 | refuses to run off the muon pin — correct behaviour |
-| `mpf.__format__` TypeError | 1 | pre-existing |
-| no stderr | 1 | |
 
 `rho_k_co_casimir_extended` was previously reported as a confirmed
-re-padder, then reverted because the sandbox lacked scipy and the re-run
-was therefore not comparable. scipy 1.17.1 — the version the original
-witness was computed under — installs fine here, so that confound is
-removed; it now times out instead and remains **untested**.
+re-padder, then reverted on the grounds that the sandbox lacked scipy so
+the re-run was not comparable. scipy 1.17.1 — the version the original
+witness was computed under — installs fine here (as do numpy and sympy),
+so that confound is gone. It re-pads **71 fields**, the largest in the
+corpus. The original observation was right and the revert was unnecessary.
+
+Environment note for whoever picks this up: `pip install mpmath numpy
+scipy sympy` all succeed in this sandbox. Earlier sessions recorded these
+as unavailable and scoped work around that; it is worth re-testing rather
+than inheriting. `pyhecke_native` and `snappy` genuinely do not install.
 
 ## Scope of this finding
 

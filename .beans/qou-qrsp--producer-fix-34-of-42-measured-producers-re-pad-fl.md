@@ -1,11 +1,11 @@
 ---
 # qou-qrsp
-title: 'PRODUCER FIX: 34 of 42 measured producers re-pad float64 on re-run (qou-gqt5 follow-up)'
+title: 'PRODUCER FIX: 37 of 45 measured producers re-pad float64 on re-run (qou-gqt5 follow-up)'
 status: todo
 type: task
 priority: high
 created_at: 2026-08-07T09:01:16Z
-updated_at: 2026-08-07T09:01:16Z
+updated_at: 2026-08-07T09:09:03Z
 ---
 
 Follow-up to qou-gqt5 (parent-less: beans disallows task-under-task).
@@ -13,8 +13,8 @@ MEASURED, not assumed -- docs/audits/2026-08-07-producer-repadding-empirical-swe
 Tool: computations/producer_repad_sweep.py (reproducible; detached worktree).
 
 Commit 4aa48b63 stripped 58 witnesses (452 -> 13 padded fields). The strip is
-value-preserving but NOT durable: re-running the producers regenerates 299 of
-those fields in ONE pass. 34/42 measurable producers re-pad (81%); 11 could not
+value-preserving but NOT durable: re-running the producers regenerates 289 of
+those fields in ONE pass. 37/45 measurable producers re-pad (82%); 8 could not
 be measured at all and are NOT clean.
 
 Consequence, and why this is high priority: the strip drains the ratchet BASELINE
