@@ -3098,3 +3098,38 @@ instead (bean `qou-clx8`):
   wrong (off by `1.15e-2` at `y = 3+0.001i`). Probes must split at `Re(1/y)`.
 
 **Sum-rule status unchanged: verified to 80 dps, unproved.**
+
+**2026-08-07 (PR #4658, takeover) — Route 8: the sum rule TRANSPORTS to a 7th-root-of-unity
+identity at a totally real field. Reduction, not proof.**
+
+First route to move along GGM's deformation instead of attacking at `x = 1`
+(bean `qou-8v3k`).
+
+> `Σⱼ Re Vⱼ = −3π²/2` **⟺** `Σₖ Re[Li₂(yₖ) + 2Li₂(−yₖ) + (log(−yₖ))²] = −π²/2`,
+> `yₖ = −1 − 2cos(2πk/7)`, the **totally real cyclotomic field ℚ(ζ₇)⁺**, disc 49.
+
+Mechanism: (i) `∂V/∂y = 0` **derives** GGM's deformed curve — already Lean-proved
+here as `FiveTwoSaddleCurve.lean` — so `yⱼ(x)` are critical points; (ii) Vieta
+gives `∏ⱼ(1−xyⱼ) = x`, `∏ⱼ(1−yⱼ/x) = 1/x`; (iii) envelope theorem gives
+`d/dx V(x,yⱼ(x)) = (1/x)log[(1−yⱼ/x)/(1−xyⱼ)]`; (iv) summing collapses to
+`S'(x) = −2log x/x`, so **`S(x) = S(1) − log²x`** (verified `<1e-30` on
+`x ∈ [0.2,5]`; palindromy `S(x)=S(1/x)` confirmed, GGM eq 306). The branch term
+`2πik log x` is purely imaginary for real `x>0` so cannot touch `Re`, and on
+`|x|=1` is real with **`k = 0` measured** at eight points to `φ = π`, giving
+`S(−1) = −π²/2`. At `x = −1` the curve degenerates to `y³+2y²−y−1` (disc 49) with
+roots exactly `−1−2cos(2πk/7)`.
+
+**⚠ Not a proof** — `S(1)` is the constant of integration, so this transports the
+unknown. The cyclotomic identity is verified to `9.2e-41`, not proved.
+
+**Why it matters anyway:** every prior route died on *real part vs volume side* —
+at disc −23 the field is complex, `D ≠ 0`, and the classical ladders compute
+`ζ_F(2)` via `D`. At `x = −1` the field is totally real and abelian, `D ≡ 0`
+identically, and Rogers sums there are expected in `π²ℚ` — the Frenkel–Szenes /
+Y-system / Watson regime where `−π²/2` is the natural answer. **The obstruction
+that killed Routes 2, 6 and 7 is structurally absent at the new point.**
+
+Probe + witness: `computations/probes/qbeta_5two_route8_envelope_deformation_cyclotomic_probe.py`,
+`computations/qbeta-5two-route8-envelope-deformation-cyclotomic.witness.json`
+(7 gates, 40 dps). **Route count 8 tried; 7 refuted, 1 reduction. Sum-rule status
+unchanged: verified to 80 dps, unproved.**

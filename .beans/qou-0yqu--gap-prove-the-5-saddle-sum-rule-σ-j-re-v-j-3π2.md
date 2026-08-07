@@ -618,3 +618,42 @@ named control `y³−y²+2y−1`, which *is* `y³ = (1−y)²`. Generic to the s
 unproved.** Remaining live work is unchanged and untouched by this: `qou-clx8`
 (`cLiTwoExt` analytic on `ℂ∖[1,∞)`) and the closed-form evaluation of
 `−∫₀¹ log P(z)/z dz`, which is still the actual hard part.
+
+## 2026-08-07 — Route 8: REDUCTION to a 7th-root-of-unity identity. Not a proof.
+
+Full record in child bean **`qou-8v3k`**. Probe
+`qbeta_5two_route8_envelope_deformation_cyclotomic_probe.py`, witness
+`qbeta-5two-route8-envelope-deformation-cyclotomic.witness.json`, 7 gates, all pass.
+
+**First route that moves in `x` instead of attacking at `x = 1`.**
+
+> `Σⱼ Re Vⱼ = −3π²/2` **⟺** `Σₖ Re[Li₂(yₖ) + 2Li₂(−yₖ) + (log(−yₖ))²] = −π²/2`
+> at `yₖ = −1 − 2cos(2πk/7)` — the **totally real cyclotomic field ℚ(ζ₇)⁺**, disc 49.
+
+Mechanism, all elementary and formalizable:
+
+1. `∂V/∂y = 0` **derives** GGM's deformed curve `xy³ −(x²+1)y² +(x²+x+1)y − x = 0`
+   (already Lean-proved here as `FiveTwoSaddleCurve.lean`), so the `yⱼ(x)` are
+   critical points and the envelope theorem applies.
+2. Vieta: `∏ⱼ(1 − xyⱼ) = x` and `∏ⱼ(1 − yⱼ/x) = 1/x`. **This is the collapse.**
+3. Envelope ⟹ `d/dx V(x,yⱼ(x)) = (1/x)log[(1−yⱼ/x)/(1−xyⱼ)]`.
+4. Sum + (2) ⟹ `S'(x) = −2log x/x` ⟹ **`S(x) = S(1) − log²x`** (verified <1e-30
+   on `x ∈ [0.2,5]`). Branch term `2πik log x` is purely imaginary for real
+   `x > 0` — cannot touch `Re` — and on `|x|=1` is real and **measured `k = 0`**
+   at eight points to `φ = π`. Hence `S(−1) = −3π²/2 + π² = −π²/2`.
+5. At `x = −1`: `y³+2y²−y−1`, disc **49**, roots exactly `−1−2cos(2πk/7)`, and
+   `xy = y/x = −y`.
+
+**⚠ Does NOT close it.** `S(1)` is the constant of integration; this transports
+the unknown rather than evaluating it. The cyclotomic identity is verified
+numerically (residual 9.2e-41), not proved.
+
+**Why it is still the best handle found.** Every prior route died on *real part
+vs volume side*: at disc −23 the field is complex, `D ≠ 0`, and all classical
+ladder results compute `ζ_F(2)` via `D`. At `x = −1` the field is **totally real
+and abelian**, so `D ≡ 0` identically and Rogers sums are expected in `π²ℚ` —
+Frenkel–Szenes / Y-system / Watson territory, where `−π²/2` is the natural answer.
+**The obstruction that killed Routes 2, 6 and 7 is structurally absent there.**
+
+**Route count 8 tried; 7 refuted, 1 reduction. Status: verified to 80 dps,
+unproved.**
