@@ -74,3 +74,59 @@ point.
 
 - Convention question on the same objects: bean `qou-8jq2` (non-cyclic perblock vs
   canonical signed trace). These are independent — do not let one block the other.
+
+
+## RESOLVED: the symbol is `cl_k` (owner pick, 2026-08-07)
+
+Full alphabet surveyed. **No single Roman letter is collision-free** — every one is either
+register-claimed or produces a same-domain case-collision:
+
+| letter | uses | why it fails |
+|---|---|---|
+| `Y` | 4 | `y_λ` Jones–Markov weight — same domain, case-collision |
+| `o`/`O` | 3 / 30 | little-o; confusable with zero |
+| `Z` | 64 | proton number — reserved, and isotopes *are* this domain |
+| `X` | 66 | `X_K` = knot object, `End_𝐂(X_K)`, 14 uses in mass-endomorphism |
+| `j` | 66 | `J_K(q)` Jones polynomial |
+| `U` | 89 | `U_q(𝔰𝔩₂)` |
+| `W` | 90 | `W_λ` geometric weight — used in Δ_λ work |
+| `Q` | 92 | `Q_β` |
+| `r,s,t,u,v,b` | 150–340 | all live inside the cluster domain (damping ratio, Schur, LP objective, ladder `u = b·ℏ_q²`, binding block factors) |
+
+Chosen: **`cl_k`** (`\mathrm{cl}_k`) — roman, self-documenting, zero collision, greppable.
+Follows the repo's own precedent: `\mathrm{Sk}` (Skein module, moved off `\mathcal{S}`) and
+`h_\mathrm{A}` (Hecke amplitude, canonized off bare `H_A`).
+
+## DONE
+
+1. `notation-collisions.md` — new `$c_k$ vs $\mathrm{cl}_k$` entry with the rationale.
+2. `ck-dk-canonical-registry.md` §2 — `cl_k` row added; the disambiguation table now covers
+   the cluster sense that was missing.
+3. `2026-08-07-mu3-door-status-consolidated.md` — prose renamed to `cl₃` + a notation banner.
+4. Docstrings of `mu3_frechet_perblock_probe.py` / `mu3_abs_choice_robustness_probe.py` state
+   which sense their `c3` variable carries. Both re-run exit 0.
+
+## DEFERRED — and why this is not foot-dragging
+
+Compute-layer **variable names and witness keys still read `c3`**. That is deliberate:
+`c3_MeV` is a **cross-probe data contract**, not a private local.
+
+- `mu4_rhoF_cluster_derivation_probe.py:119-120` reads
+  `JT["T"]["correlation_c3_MeV"]` out of *another probe's* committed witness.
+- **15 committed witnesses** carry `c3` / `c3_MeV` keys.
+- Renaming keys without migrating every consumer breaks the reads **silently** — a wrong
+  number, not an exception.
+
+The reader-facing ambiguity (which was the actual danger: two coefficient families ~12 %
+apart sharing a glyph) is now **fully resolved** in the register, the registry, and the prose.
+The compute rename is hygiene with real breakage risk and no remaining reader benefit.
+
+### Sweep plan for the compute layer
+
+1. Enumerate every producer emitting a `c3*` key and every consumer reading one (start from
+   the 15 witnesses + the `correlation_c3_MeV` cross-read).
+2. Rename producer + consumer **in the same commit**, per producer.
+3. Re-run each producer; diff the witness to confirm only the key changed, not the value.
+4. Batch ≤ 49 files per PR (Gemini review limit).
+
+Do **not** sed the tree.
