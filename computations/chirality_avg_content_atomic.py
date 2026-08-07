@@ -43,7 +43,7 @@ HERE = Path(__file__).parent
 sys.path.insert(0, str(HERE))
 
 
-from _precision import set_compute_dps, fmt  # noqa: E402
+from _precision import set_compute_dps, fmt, str_at_true_precision  # noqa: E402
 from mpmath import mp, mpf
 
 from hecke_characters import (  # noqa: E402
@@ -217,7 +217,15 @@ def main():
                 "is_self_conjugate": tuple(shape) == transpose(shape),
                 "content_c_lambda": c_lam,
                 "wedderburn_weight": str(w_lam),
-                "chi_lambda_beta": str(chi_val),
+                # chi came out of the f64 kernel above (see the
+                # kernel_precision parameter) and carries 53 bits. It is
+                # promoted to mpf for the downstream arithmetic, but
+                # str(<mpf>) then prints 50 dps of a 53-bit number — the
+                # binary64 expansion, reading as if it had been measured.
+                # fmt() on a float writes its true precision instead;
+                # mpf(float) is exact, so float() recovers the kernel's own
+                # value and nothing moves.
+                "chi_lambda_beta": str_at_true_precision(chi_val),
             })
 
         # Per-pair-symmetric form (sanity check; should equal direct).

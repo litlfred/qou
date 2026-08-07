@@ -288,26 +288,662 @@ play and each file kept its own: nine `option_e`/probe files set
 registry. In every case the module-scope constants above the raise were
 being built at dps=15.
 
-### What the residual 20 are — and why they are NOT the same bug
+### What the residual 20 are — CORRECTED
 
-Every remaining re-padder **reads an upstream witness**
-(`_pb.witness_path(...)`) and faithfully reproduces what it finds there:
+**An earlier revision of this section was wrong and is retained here as a
+correction rather than quietly edited away.** It claimed:
+
+> Every remaining re-padder reads an upstream witness and faithfully
+> reproduces the padding it finds there … the fix has to walk the witness
+> dependency graph upstream-first.
+
+That was inferred, not measured. The producers *do* read upstream
+witnesses — that part is true — and the conclusion that the padding came
+from there was never checked. It is false.
+
+**The test.** Run each producer, take every padded string it writes, and
+search all 1000+ committed witnesses for that exact string. If the digits
+already exist upstream, the producer reproduced its input; if they appear
+nowhere else, it minted them.
+
+**Result: 20 of 20 came back `LOCAL` — `propagated = 0`.** Not one padded
+value exists anywhere else in the corpus. The padding is generated in
+place. `computations/producer_repad_sweep.py`'s companion classifier is the
+tool; the discriminator is a substring search, not a judgement call.
+
+A second over-generalisation followed and is also corrected here: having
+found that `gt_matrix_pslq_probe`'s `PDG_G_A_ERR = mp.mpf(str(G_A_PDG_ERR))`
+was the *same* import-time bug (module scope, before `mp.mp.dps = DPS` on
+the next line — verified: at dps=15 that yields
+`0.00129999999999999994032551242639…`, byte-identical to the witness; at
+dps=50 it yields `0.0013`), the natural conclusion was that all 20 were.
+Applying the fix mechanically found **1 of 20**. The other 18 have no
+module-scope `mpf` before the raise at all.
+
+**So the residual is not one class.** For the 18, float64 enters *during*
+the computation, inside functions — e.g. `markov_stab_trace_axis_probe`
+accumulates `tr_m_identity = mp.mpf(0)` over `contrib` terms built from
+`y4[lam]`, and the sum inherits whatever precision those carry, landing on
+`0.99999999999999999999999999999999…` where the identity trace is exactly
+1. Each needs its own trace from the padded field back to where float64
+enters. That is genuine per-file work and is not mechanizable.
+
+**Lesson recorded, because it is the third time in this arc:** the pattern
+is inferring a mechanism from one or two examples and generalising. It
+produced the original "producers don't re-pad" retraction (4-producer
+sample, 3 from the one clean family), the "upstream propagation" claim
+(4 producers checked for *reading* witnesses, none checked for the values),
+and this one. The fix each time was the same — build the discriminator and
+run it over the whole set.
+
+---
+
+# The residual measured at the source — and it is three classes, not one
+
+**Tool:** [`computations/float64_entry_tracer.py`](../../computations/float64_entry_tracer.py)
+(12-case `--self-test`)
+
+The section above closed by declaring the residual "genuine per-file work
+and … not mechanizable", on the strength of **one** example
+(`markov_stab_trace_axis_probe`). That is the same one-example generalisation
+the paragraph directly above it warns about — the fourth in the arc. Measured,
+it is wrong twice over: the localization **is** mechanizable, and the residual
+is not one class.
+
+mpmath funnels every `float -> mpf` conversion through `from_float` /
+`from_npfloat`. Patching those records the source line where a float64 enters,
+so the entry point is *read off* rather than reasoned about.
+
+## Re-measurement first
+
+Re-running the sweep at `14865d3d`: **`RE_PADS` 19, `CLEAN` 26, 228 fields** —
+the previous 20/229 minus exactly the one `gt_matrix_pslq_probe` fix, which
+independently confirms that fix landed. ("The other 18" was arithmetic
+slippage; 20 − 1 = 19.)
+
+**All 19 are measured**, including `rho_k_co_casimir_extended`, which had
+defeated every earlier attempt (see "the two coverage limits" below).
+
+| class | producers | fields | mechanism |
+|---|---:|---:|---|
+| **A — float64 genuinely enters** | 10 | 189 | a located source line |
+| **B — no float64 enters at all** | 9 | 39 | see below; not one thing |
+
+## Class A: located, and it clusters
+
+Not nine independent investigations — three idioms:
+
+**A shared downcast in a library**, `computations/hecke/hecke_characters.py:214`:
+
+```python
+b = float(mp.sqrt(abs(b_sq)))
+```
+
+reached **527 310** times by `su4_1111_markov_trace_probe`, 11 868 by
+`chirality_avg_content_atomic`, 4 by `chirality_avg_content_chiral`. One line,
+three producers.
+
+**`mpf(<float-valued dict entry>)`** — four producers promote a float pulled
+out of a dict:
+`v_hat_to_delta_lambda_bridge.py:125-127,152-153`, `xi_ell_phi_q_probe.py:181`,
+`phi_q_spectral_combiner_probe.py:107,109`, `rho_k_h3a_lp_dual.py:403,420`.
+
+**Correction — these were called "`mpf(<float out of JSON>)`" here, and only
+half of them are.** The line shape is the same, but the float's *origin*
+differs, and that decides the fix:
+
+| producer | where the float comes from | fix belongs |
+|---|---|---|
+| `phi_q_spectral_combiner_probe` | upstream witness via `builder.add_upstream()` | **upstream** |
+| `rho_k_h3a_lp_dual` | `json.loads` of an occam blob | **upstream** |
+| `v_hat_to_delta_lambda_bridge` | `wedderburn_pair_volumes()`, in-memory | here |
+| `xi_ell_phi_q_probe` | `per_generator_V_hat_general()`, in-memory | here |
+
+Where the value arrives from a **committed witness**, the precision was lost
+when *that* witness was written, and promoting it here only makes the loss
+visible — the fix is upstream and the ordering matters, which is the one place
+the original "upstream propagation" reading was pointing at something real.
+Where it comes from an **in-memory helper**, the helper computes in float and
+the choice is the usual one: make it compute in mpmath, or accept that the
+quantity is f64 and serialize it as such.
+
+Grouping them by the look of the call site rather than by the origin of the
+value is the same shortcut this document keeps recording. It was caught here
+before any of the four was "fixed" on the strength of it.
+
+**`mpf(<float-valued name>)`** — including
+`binding_factor_f_sequence.py:76`, the instance this document already
+documented as live and unreachable by the static detector. It is reachable
+here, which is the tracer's calibration case.
+
+**The largest is deliberate, and the fix is the other one.** The 71 fields of
+`chirality_avg_content_atomic` all come from line 201, `mpf(chi_val_f64)`,
+fed by a Rust kernel invoked as `precision="f64"` under a comment reading
+*"53-bit precision still"* — and the witness itself records
+`"kernel_precision": "f64"`. The quantity **is** float64. So the defect is not
+lost precision to recover; it is serializing 53 bits at 50 dps, contradicting
+the witness's own declaration. Per the scope note above, that is the
+"genuinely float64 ⇒ stop promoting / serialize at true precision" branch.
+
+**Expected residue, not a defect:** `bring_homology_pairing_integration.py:89`
+and `:122` are the comparison tolerances `1e-45` and `1e-10`. Like
+`AGREEMENT_RTOL`, they must not be "fixed".
+
+### The 71-field producer, finally measured
+
+`rho_k_co_casimir_extended` is the corpus's largest re-padder and had never
+been measured by any tool here — it outran the sweep's 150 s, a 240 s
+provenance run and a 900 s trace. It is **one line**:
+
+```python
+# computations/hoefsmit_numpy.py:161
+return mp.mpf(float(np.trace(M)))     # x148, sample 1.5597586581034242
+```
+
+The function accumulates `M` through numpy matmul at C-level BLAS, so the
+trace is f64 by construction — the same shape as `chirality`: a deliberately
+f64 kernel whose result is promoted and then serialized at 50 dps. That makes
+**three** library-level entry points behind Class A (`hecke_characters.py:214`,
+the JSON-read idiom, `hoefsmit_numpy.py:161`), not ten producer-specific bugs.
+
+### The two coverage limits that had hidden it
+
+Both were in the tracer, and both are now flags rather than silent bias.
+
+**Forked workers are invisible.** `rho_k_co_casimir_extended` computes χ^λ
+inside a `multiprocessing.Pool`; children inherit the patches but keep their
+own counters, which die with them. Its earlier `repo_sites = 0` was
+meaningless — the work happened where the instrument was not. `--no-fork`
+reports `cpu_count() == 1` so the producer takes its serial path. Numerics
+unchanged; only the scheduling is.
+
+**Attribution is what made it slow, not the physics.** Walking the stack per
+padding-prone conversion costs more than the computation on a producer doing
+~5e5 of them. `--budget N` removes the patches once spent, restoring native
+speed. With both flags the producer ran to completion, un-truncated, in ~20
+minutes.
+
+Both failures are one-directional — they hide entry sites, never invent them —
+so a non-empty result stands alone, while a zero is only meaningful when
+`truncated` is false and the producer does not fork. That asymmetry is why the
+earlier zero for this producer should never have been read as Class B, and the
+report now carries `truncated` and `no_fork` so it cannot be.
+
+## Class B: no float64 enters — and the detector cannot see this
+
+Nine producers convert no repo float64 at all; their only padding-prone
+conversions are mpmath's own heuristic constants (`functions/zeta.py:483`,
+`if abs(z) >= 1.4`, reached through `clsin`).
+
+Their flagged values are genuine high-precision computations of quantities
+that are **exactly integers**:
+
+| producer | field | value | truth |
+|---|---|---|---|
+| `markov_stab_trace_axis_probe` | `tr_M_identity_H4_at_q0` | `0.999…99863` | 1 |
+| `gap_a4_T11_klein_J_invariant_probe` | `f_leading_ratio` | `1.000…0001` | 1 |
+| `gap_a4_T6_q_deformed_icosahedral_probe` | `…[4].h2` | `10.000…000323` | 10 |
+
+`is_f64_padded` flags a string whose relative distance to the nearest binary64
+is under `1e-30`. A value that is *mathematically* 1 and lands 1.4e-51 short
+by rounding sits that close to `1.0` — so it is flagged, though no float64 was
+ever involved. **The threshold cannot separate the two cases**, because a
+padded value truncated at 50 dps is also non-zero distance:
+
+| string | rel. distance to nearest f64 | flagged |
+|---|---|---|
+| `mpf(0.1)` printed at 55 dps | `0.0` | yes — really is padding |
+| `mpf(0.1)` printed at 50 dps | `1.56e-50` | yes — really is padding |
+| `tr_M(1)`, genuinely computed | `1.37e-51` | yes — **not** padding |
+
+This is a limit of any *static* test, not a bug in the detector: the string
+genuinely does not carry the answer. Only the source does. So some fraction of
+the residual is **not the defect** — and hunting for a float64 entry in those
+producers is looking for something that is not there.
+
+## `propagated = 0` — a retracted refutation, and what is actually true
+
+**An earlier revision of this section claimed `propagated = 0` was refuted.
+That claim was wrong and is retracted here rather than deleted.** It said the
+padded string
 
 ```
-rho_k_co_casimir_extended        +71   reads y-lambda-wenzl-bridge-symbolic
-chirality_avg_content_atomic     +71   reads term7-alpha5-crystal-derivation
-qbeta_markov_trace_norm_probe     +8   reads y-lambda-cyclotomic-factor
-phi_q_spectral_combiner_probe     +6   reads qbeta-per-block-paper-closed-forms
-…
+0.024180175767745112208606528270138369407504796981812
 ```
 
-Two of them account for 142 of the 229 remaining fields. `mpf(str(x))` on a
-value read from a padded witness is *correct behaviour* — it reproduces the
-input exactly. The defect is upstream, so these cannot be fixed in place:
-the fix has to walk the witness dependency graph **upstream-first**, and
-re-running a consumer before its producer is fixed just re-imports the
-padding.
+regenerated by `qbeta_markov_trace_compute_accuracy_diagnostic`, was committed
+verbatim in `qbeta/qbeta-markov-trace-norm-probe.witness.json`. It is not. The
+committed witness holds only the short form `0.024180175767745112`.
 
-That ordering is the next tranche, and it is genuinely different work from
-this one — dependency-ordered regeneration rather than a source edit. It is
-also why the count will not reach zero by editing producers alone.
+The padded string was found in a **worktree contaminated by this session's own
+runs**: `qbeta_markov_trace_norm_probe` is itself one of the 19, it had just
+been re-run there, and its regenerated output was left on disk. Grepping that
+tree found this session's output and reported it as upstream evidence. It is
+the failure `producer_repad_sweep.py`'s docstring warns about in capitals —
+*never point this at a tree you have been running producers in* — committed by
+the same session that was cataloguing the arc's habit of generalising from
+unverified evidence. Checked against `git show HEAD:…`, the claim evaporates.
+
+**So the exact-string `LOCAL` verdict stands.** What does not stand is treating
+it as the whole answer, and that criticism survives the retraction:
+
+> the strip removed padding from upstream witnesses, so an exact-string search
+> over the post-strip corpus cannot see value-level inheritance.
+
+That is now measured rather than argued.
+[`computations/witness_padding_provenance.py`](../../computations/witness_padding_provenance.py)
+asks provenance twice — is the padded **string** upstream (`VERBATIM_UPSTREAM`),
+or is the same float64 **value** upstream in some other spelling
+(`VALUE_UPSTREAM`) — and excludes the producer's own fresh output from its own
+lookup, which is the guard the retracted check lacked.
+
+On the qbeta case the two answers differ, which is the entire point:
+
+| question | answer |
+|---|---|
+| padded string committed elsewhere? | **no** — hence `LOCAL` |
+| same float64 value committed elsewhere? | **yes**, `qbeta-markov-trace-norm-probe.witness.json` |
+
+Run over all 19 re-padders, **218 padded fields**:
+
+| verdict | fields | |
+|---|---:|---|
+| `VERBATIM_UPSTREAM` | **0** | the exact-string result is **confirmed** |
+| `VALUE_UPSTREAM` (distinctive) | **37** | value upstream, invisible to a string search |
+| `VALUE_UPSTREAM_ROUND` | 15 | matched `1.0`/`6.0` — **vacuous** |
+| `LOCAL` | 166 | minted here |
+
+So `propagated = 0` is right about strings and **17 % short** about values. The
+round-number split matters: without it the `gap_a4` near-integers would have
+read as inherited purely because `1.0` is everywhere in the corpus — a
+near-vacuous match dressed as evidence, which is how this section went wrong
+the first time.
+
+**The two tools agree, and were built independently.** Where
+`float64_entry_tracer` finds a local float64 entry, provenance says `LOCAL`
+(`chirality_avg_content_atomic` 71/71, `binding_factor_f_sequence` 2/2); where
+it finds none, the value is upstream (`qbeta_markov_trace_compute_accuracy_
+diagnostic` 7/7, `phi_q_spectral_combiner_probe` 6/6). That cross-check is
+worth more than either result alone: Class B producers do not mint padding,
+which is consistent with their carrying no float64 entry to mint it with.
+
+**The classifier behind the original claim is still not in the repository**, so
+that result remains unreproducible; the tool above is committed so this one
+does not repeat that.
+
+## First Class A fix: the 71-field producer
+
+`chirality_avg_content_atomic` is the largest re-padder in the corpus and all
+71 of its fields are the same one, `per_partition[].chi_lambda_beta`, written
+as `str(<mpf>)`. The mpf promotion is correct — the downstream arithmetic needs
+it — but serializing *that* prints 50 dps of a 53-bit number.
+
+The repo already had the convention. `fmt()`'s own docstring calls out "no
+spurious mpf-promotion noise on a 0.1-style float" and short-circuits floats to
+their natural repr, so the fix is `fmt(float(chi_val))`. `mpf(float)` is exact,
+so `float()` recovers the kernel's own value — value-preserving by
+construction, not by assertion.
+
+Measured before and after in a detached worktree:
+
+| | before | after |
+|---|---:|---:|
+| chi fields | 71 | 71 |
+| **values moved** | — | **0** |
+| **padded fields** | **71** | **0** |
+
+```
+1.2320524541667656759358351337141357362270355224609375
+                              -> 1.2320524541667657        (float-equal)
+```
+
+This is the durable form of what the strip did by hand: 71 of the residual 228
+fields, fixed at the producer.
+
+## Second Class A fix — and the residual 228 is a lower bound
+
+`rho_k_co_casimir_extended` is the other 71-field producer. **It is not 71.**
+A run that completes writes **148** padded `chi_lambda_at_q0` fields; the
+sweep's 71 came from a run that hit the 150 s wall and left a *partial*
+witness, and that number was carried forward as though complete.
+
+The sweep is careful that "untested is not clean". This is the neighbouring
+error — **half-tested is not measured** — and it means **228 is a floor**, at
+least 77 short on this producer alone. Two more (`habiro_interpolate_cross_
+validator`, `rho_k_h3a_lp_dual`) also exited non-zero mid-run, so their counts
+are lower bounds too.
+
+148 is also exactly what the tracer recorded at `hoefsmit_numpy.py:161` —
+`x148` conversions, one per field.
+
+**The chirality fix does not transfer.** `_chi_worker` has two paths:
+
+```python
+try:    from hoefsmit_numpy import chi_numpy   # numpy f64 kernel
+except ImportError:  chi_numeric               # full mpmath precision
+```
+
+so χ is 53-bit only when numpy is importable. Writing `float()` unconditionally
+would discard real digits in the fallback — the *"conceals a real loss"* half of
+the trap this document warns about, where the f64 path is the *"fakes
+precision"* half. The same one-line fix would have been wrong here.
+
+So the decision is made **per value, exactly**: an mpf equal to its own float64
+holds 53 bits and nothing more; one that is not carries more and is written in
+full. A genuine high-precision value that happens to be representable loses
+nothing either — the short form is then exact — so the test cannot misfire in
+that direction.
+
+| | before | after |
+|---|---:|---:|
+| chi fields | 148 | 148 |
+| **values moved** | — | **0** |
+| **padded fields** | **148** | **0** |
+
+Both runs completed (`rc=0`, no timeout), so unlike the sweep's figures these
+counts are complete. **219 fields now fixed at the producer** across the two.
+
+## The `mpf(<float-valued name>)` instance — and it goes the other way
+
+`binding_factor_f_sequence.py:76` is the case this document names above as the
+detector's live blind spot. Closing it turns out to need the **opposite** fix
+from the six before it.
+
+Those found a value that genuinely held 53 bits and stopped printing 50 dps of
+it. Here the input is a decimal **string** from `binding_canonical`, written
+with `mp.nstr(..., mp.dps)`, and builtin `complex()` reads it as binary64 —
+wrong in both regimes the field appears in:
+
+- a 16-digit string becomes the double whose exact value is
+  `0.98352601518469637…`; subtracting two of those and printing at 50 dps gives
+  `0.595239597908215012367350027489` for a datum that is `0.595239597908215` —
+  the number named above;
+- some producers write ~30 digits into `tr_M_free`, and `complex()` discards
+  everything past the 17th. The corpus carries **both** populations.
+
+`mpmathify` parses a decimal as a decimal, faithful in both. The expectation
+going in was that it would *recover* precision; measured, the runtime string is
+16 digits and there is none to recover. Right fix, wrong reason — worth
+recording, because "downcast upstream" and "genuinely f64" are the two branches
+the scope note above says must not be confused, and this case reads like the
+first while behaving like neither.
+
+**This one moves a number**, unlike the six before it:
+
+| | |
+|---|---|
+| padded | 2 → **0** |
+| values moved | **1 of 34** compared |
+| `rows[4].delta_tr` | `1.00105419197756849783442767432` → `1.00105419197756854` |
+| | 4.2e-17 relative — **exactly 1 ulp** |
+
+One ulp is the width of the binary64 rounding that should never have been
+introduced, so it is a correction. Source only; the witness is regenerated
+separately *because* a number moves.
+
+## A fourth mechanism: `mp.dps = 50` that does nothing
+
+`bring_homology_pairing_integration.py` was flagged for 4 padded fields. All
+three sites the tracer reported there are red herrings — `1e-45` and `1e-10`
+are comparison tolerances that must not be touched, and the third is a float
+mpmath computes inside `mp.quad`, which the lexical origin rule files as repo
+because it is not a literal in mpmath's source. The defect was on **line 7**:
+
+```python
+import mpmath as mp
+mp.dps = 50          # sets an attribute on the MODULE — a no-op
+```
+
+Precision lives on the *context*, so under this alias the line has to read
+`mp.mp.dps = 50`. The no-op had been silently in effect: everything was
+computed at mpmath's default ~53 bits and written with `mp.nstr(..., 40)`, so
+the witness claimed 40 digits and carried 16.
+
+This is a **fourth distinct mechanism** — not a serialization choice like the
+six before it, and not a bad parse like `binding_factor`: the precision was
+never raised at all.
+
+It is worth more than its 4 fields. The producer integrates the Euler class
+over the Bring fundamental cycle and asserts the result matches the closed
+forms. At 15 digits it agreed to ~15; at 50, all four match to every digit
+written:
+
+| field | value | equals |
+|---|---|---|
+| `computed_triangle_area` | `0.1570796326794896619231321691639751442099` | π/20 |
+| `computed_total_area` | `37.69911184307751886155172059935403461037` | 12π |
+| `pairing_ratio` | `0.2122065907891937810251783511633524827126` | 2/(3π) |
+| `target_ratio` | same | 2/(3π) |
+
+`|ratio − target|` goes from 6.94e-16 to **exactly 0** at 40 digits, against an
+assertion tolerance of `1e-10` — loose enough to have hidden the shortfall
+indefinitely. Values move ~3.2e-15 relative, which is the 15-vs-50 digit gap:
+a correction.
+
+### The same no-op is in four more producers — now fixed and verified
+
+Swept the corpus for `import mpmath as <alias>` paired with a bare
+`<alias>.dps =`:
+
+```
+computations/qbeta/h5_wedderburn_tension_hp.py:11
+computations/qbeta/qbeta_h4_em_normalization_probe.py:11
+computations/qbeta/qbeta_h4_sign_block_exact.py:11
+computations/qbeta/qbeta_h4_sign_block_proof_search.py:11
+```
+
+All four said `mp.dps = 50` and ran at 15. **None is in the 19 re-padders** —
+they were never in the stripped-witness cohort, so the padding sweep never
+reached them.
+
+They were first recorded here as found-but-unverified, because they died on
+`ModuleNotFoundError: qou_substrate` — they import it directly rather than
+through `_path_bridge`. **That was the container, not the producers.** With
+`PYTHONPATH=tools/qou-substrate/python` all four run clean. Filing them as
+unrunnable would have been wrong, and only trying it settled that; "cannot run
+here" deserves the same suspicion this document gives "untested is not clean".
+
+Verified before/after — all four `rc=0` both ways, and all four change output,
+so the no-op was live in every one (26, 34, 12 and 14 lines respectively).
+The change is recovered precision, not moved results: every value agrees to
+the 15 digits it used to print and then continues.
+
+```
+q0 (anchor) = 1.10997858275138
+           -> 1.1099785827513808075916690956107688798744991218736
+```
+
+— which is exactly `q_parameter.Q_50_DIGIT_STR`, so the anchor is now the
+canonical pin rather than a 15-digit truncation of it.
+
+**Scope:** none of the four emits a witness, so this adds no padded fields and
+does not move the drain count. What it means is that any conclusion drawn from
+their output beyond 15 digits was unsound — these probes print ratios and
+compare them against exact predictions.
+
+### The no-op class is invisible to the padding gate
+
+Completing the sweep found **seven** instances in total, and two more only
+because the first pass matched `^import mpmath as <alias>` at module scope
+while these sit indented inside a `try:`:
+
+```
+computations/bring_homology_pairing_integration.py:7     emits a witness — 4 padded
+computations/e_hartree_round22_arch_bridge.py:69         emits a witness — 0 padded
+computations/e_hartree_round23_normalization.py:68       emits a witness — 0 padded
+computations/qbeta/h5_wedderburn_tension_hp.py:11        no witness
+computations/qbeta/qbeta_h4_em_normalization_probe.py:11 no witness
+computations/qbeta/qbeta_h4_sign_block_exact.py:11       no witness
+computations/qbeta/qbeta_h4_sign_block_proof_search.py:11 no witness
+```
+
+**Only one of the seven produced padding.** The other six were invisible, and
+could not have been otherwise: at `dps=15` a plain `str(<mpf>)` prints ~15
+digits, and `is_f64_padded` requires ≥20 fractional digits before it looks at a
+value at all. The no-op hides itself from the audit that would catch it.
+`bring_homology` surfaced only because it writes `mp.nstr(..., 40)`, forcing 40
+digits out of a 15-digit value.
+
+So the two defects are near-orthogonal:
+
+| | claim | detectable by |
+|---|---|---|
+| float64 padding | value claims **more** precision than it has | `witness_float64_padding_audit` |
+| `mp.dps` no-op | value silently carries **less** than asked for | nothing, today |
+
+The corpus has been swept exhaustively for the first and never for the second.
+The detector is static and cheap — for every alias binding the mpmath
+**module** (not `from mpmath import mp`, where `mp` is the context), a bare
+`<alias>.dps = …` is always a no-op:
+
+```python
+aliases = re.findall(r"^\s*import\s+mpmath(?:\s+as\s+(\w+))?\s*$", src, re.M)
+#   then flag:  ^\s*<alias>\.dps\s*=
+```
+
+Two cautions from running it: match indented imports (two of the seven are
+inside `try:`), and skip docstrings — `qbeta_5two_phi_series_engine_probe.py`
+mentions "at mp.dps = 60" in prose and is a false positive.
+
+## Regenerating a witness silently drops its q₀ provenance
+
+**Source fix committed, witness NOT regenerated — and the reason generalises
+well beyond this producer.** Re-running `chirality_avg_content_atomic` and
+diffing against the committed witness:
+
+```diff
+-  "q0Anchor": "proton",
+-  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+```
+
+Every chi value is byte-identical and no number moves; the run just **loses
+both q₀-pin fields**. That pin exists so a muon/proton value "can never be
+silently misread" (bean `tnjb`), and
+`computations/audits/q0_anchor_consistency_audit.py` enforces it.
+
+**Diagnosed — and it is not a bug in `build()`.** The `q0Anchor` code is inside
+`stamp_staleness_metadata()`, a **separate method a producer must call
+explicitly**. `build()` never touches the pin. Across the corpus:
+
+| | witnesses |
+|---|---:|
+| no q₀ pin at all | 2104 |
+| pin + producer stamps it (safe) | 36 |
+| **pin + producer does NOT stamp** | **557** |
+| unresolved | 3 |
+
+**557 of the 596 pinned witnesses (93 %) carry a pin their own producer cannot
+reproduce** — backfilled once, and dropped by the next re-run. Five of the 19
+re-padders are in that set, including `chirality_avg_content_atomic` and
+`rho_k_co_casimir_extended`, the two 71-field producers.
+
+`save()` already loads the on-disk witness for its drift check, so the fix
+carries a recorded pin forward there — **preserve only**. A witness with no pin
+still gets none: inventing `"proton"` for the 2104 unpinned would assert a pin
+no producer established, and `Q0_ANCHOR_MISSING` is a tolerated state. Two
+regression tests, the first checked to *fail* without the fix rather than only
+to pass with it.
+
+Re-running chirality now keeps `q0Anchor`/`q0Value`, and its diff reduces to
+`commitSha`/`computedAt`/`durationMs`/`scriptHash`/`scriptCommitSha` — ephemeral
+only, nothing substantive, so the witness stays uncommitted. **Regeneration is
+no longer lossy**, which unblocks the drain plan's second half.
+
+## End-to-end re-measurement — same tool, same method
+
+Everything above was verified per producer. This is the corpus-level check
+with `producer_repad_sweep.py`, the tool that set the baseline:
+
+| | baseline (`14865d3d`) | now |
+|---|---:|---:|
+| `RE_PADS` | 19 | **12** |
+| `CLEAN` | 26 | **32** |
+| padded fields regenerated | 228 | **57** |
+
+The seven producers that left the list are exactly the seven witness-emitting
+fixes — `binding_factor_f_sequence`, `bring_homology_pairing_integration`,
+both `chirality_avg_content_*`, `rho_k_co_casimir_extended`,
+`v_hat_to_delta_lambda_bridge`, `xi_ell_phi_q_probe`. Nothing claimed is
+missing and nothing untouched regressed.
+
+**The arithmetic needs one note.** The sweep shows 171 fields drained, the
+per-producer runs 248. The difference is `rho_k_co_casimir_extended`: the
+sweep only ever credited it with 71, the count from a run that hit the 150 s
+wall, while a complete run writes 148. Both numbers are right about what they
+measure — 171 is the drain *as this tool scores it*, 248 is the drain in
+fields that actually exist. The sweep's own baseline was a floor, so its delta
+is one too.
+
+(`TIMEOUT` moves 0 → 1 for the same reason: `rho_k` still exceeds 150 s, but
+now writes no padding, so its verdict falls through to `TIMEOUT` instead of
+being outranked by `RE_PADS`.)
+
+### The remaining 57 split cleanly
+
+| | producers | fields | needs a producer fix? |
+|---|---:|---:|---|
+| **Class B** — no float64 enters | 9 | **39** | **no** |
+| **Class A** — real float64 entry | 3 | **18** | yes |
+
+Class B is the detector's near-integer false positives — `gap_a4_*`,
+`markov_stab`, `qbeta_markov_trace_*`, `habiro_*`, `verify_c_color_swap`.
+Hunting for a float64 entry in them is looking for something that is not
+there; what they need is a decision about the *detector*, not the producers.
+
+Class A is three files and 18 fields:
+
+```
+su4_1111_markov_trace_probe.py   (+10)   hecke_characters.py:214 root
+phi_q_spectral_combiner_probe.py (+6)    reads an upstream witness — fix upstream
+rho_k_h3a_lp_dual.py             (+2)    reads an occam JSON blob — fix upstream
+```
+
+Two of the three take their value from a **committed witness**, so the
+precision was lost when that witness was written: the fix is upstream and the
+ordering matters. Only `su4` is fixable in place, and its count is a floor —
+both runs that measured it timed out.
+
+## What remains
+
+Localization is done: all 19 re-padders are measured and every Class A field
+has a named source line. What is left is the per-file *judgment*, which is
+where this document said the non-mechanizable part lived all along.
+
+- **Regeneration is no longer lossy** — the q₀-pin drop is diagnosed and fixed
+  (section above), so the drain plan's "re-run the producers" half is unblocked.
+  557 witnesses were exposed to it.
+- **Class A — 10 producers, 189 fields, three library-level entry points.**
+  `hecke_characters.py:214`, `hoefsmit_numpy.py:161`, and the
+  `mpf(<float out of JSON>)` idiom. All three are deliberate f64 kernels, so
+  the fix is "serialize at true precision", not "recover lost precision".
+  **219 fields are done** — `chirality_avg_content_atomic` (71) and
+  `rho_k_co_casimir_extended` (148). Neither touches the shared helper: both
+  fix serialization in the producer, which is why `hoefsmit_numpy.py:161`
+  can stay as it is for its other callers.
+  **242 fields are done** — `chirality_avg_content_atomic` (71),
+  `rho_k_co_casimir_extended` (148), `chirality_avg_content_chiral` (12),
+  `v_hat_to_delta_lambda_bridge` (6), `xi_ell_phi_q_probe` (5). The rule they
+  share is `qou_substrate.precision.str_at_true_precision` — an mpf equal to
+  its own float64 holds 53 bits and nothing more. It is a drop-in for
+  `str(<mpf>)` and **not** for `fmt(<mpf>)`: those serialize at `mp.dps` and
+  `OUTPUT_DPS` respectively, which producers set differently, so the wrong
+  fallback silently rewrites every value it was not meant to touch.
+  Remaining: `su4_1111_markov_trace_probe` (10, floor — its measured runs
+  timed out) on the `hecke_characters.py:214` root; `bring_homology_pairing_integration` (2 real, 2 tolerances that must
+  not move); and the two that read the value from a committed witness, where
+  the fix is upstream and ordering matters.
+  Counts for the producers that exit non-zero or time out are floors.
+- **Class B — 9 producers, 39 fields — needs no producer fix.** The values are
+  genuine; the *detector* calls them padding. Either it learns to tell a
+  computed near-integer from a truncated double (it cannot, from the string
+  alone — so this would need producer-side knowledge that the quantity is
+  exact), or these are baselined as known false positives with that reason
+  recorded. What must not happen is someone hunting for a float64 entry in
+  them: it is not there.
+- **Provenance:** 37 fields carry a distinctive value already committed
+  upstream. Those consumers should be checked against their producers before
+  being "fixed" in place.
+- **Two producers still cannot be run at all** here
+  (`habiro_interpolate_cross_validator`, `rho_k_h3a_lp_dual`, both exit 2), so
+  their traces are partial — sites found are real, absence is not evidence.
+
