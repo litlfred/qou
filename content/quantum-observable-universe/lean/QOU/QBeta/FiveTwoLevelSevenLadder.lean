@@ -93,4 +93,33 @@ theorem sum_of_numerators
   obtain ⟨h1, h2, h3⟩ := numerators_of_five_term L L1 w2 q r s hrw hrq hrr hrs hA hB hC
   linear_combination h1 + h2 + h3
 
+/-! ### What happens in characteristic 7
+
+The cleared statements above hold over *any* `CommRing`, characteristic 7
+included — but there they are **degenerate**, and it is worth proving that rather
+than leaving it implicit.
+
+With `(7 : R) = 0` the certificate combination `hA − 4·hB + 2·hC`, which equals
+`−3·L1 + 14·L w₂ − 7·L q` identically, collapses to `−3·L1 = 0`. So the
+hypotheses *force* `3·L1 = 0`; over a field of characteristic 7 that gives
+`L1 = 0` (as `3` is invertible mod `7`), and every target reads `0 = 0`.
+
+So the answer to "can the divided form be made true in characteristic 7" is no,
+and for a sharper reason than "`7⁻¹` does not exist": the hypotheses themselves
+are inconsistent with `L1 ≠ 0` there. The cleared form is the honest statement —
+true everywhere, with content exactly where `7` is invertible. -/
+theorem char_seven_forces (L : R → R) (L1 w2 q r s : R) (h7 : (7 : R) = 0)
+    (hrw : L (1 - w2) = L1 - L w2)
+    (hrq : L (1 - q) = L1 - L q)
+    (hrr : L (1 - r) = L1 - L r)
+    (hrs : L (1 - s) = L1 - L s)
+    (hA : 2 * L w2 - L (1 - q) - 2 * L r = 0)
+    (hB : L (1 - w2) + L q - L (1 - q) - L (1 - s) - L w2 = 0)
+    (hC : L w2 + L s - L (1 - w2) - L (1 - s) - L (1 - r) = 0) :
+    3 * L1 = 0 := by
+  rw [hrw, hrq, hrs] at hB
+  rw [hrq] at hA
+  rw [hrw, hrs, hrr] at hC
+  linear_combination -hA + 4 * hB - 2 * hC + (2 * L w2 - L q) * h7
+
 end QOU.QBeta.FiveTwoLevelSevenLadder

@@ -299,3 +299,25 @@ correctly.
 **Still not proved:** the five-term relation itself, the inversion/Landen
 extensions, and Route 8's transport (`qou-trns`). **Sum rule: verified to 80 dps,
 unproved.**
+
+### Characteristic 7: answered, and Lean-proved
+
+Asked whether the statement can be rewritten to be true in characteristic 7. It
+already is — the cleared form holds over any `CommRing`. But it is **degenerate**
+there, and `char_seven_forces` now proves why rather than leaving it implicit:
+
+> With `(7 : R) = 0`, the certificate combination `hA − 4·hB + 2·hC` — which
+> equals `−3·L1 + 14·L w₂ − 7·L q` identically — collapses to `−3·L1 = 0`.
+> **The hypotheses force `3·L1 = 0`.**
+
+Over a field of characteristic 7 that gives `L1 = 0` (`3` is invertible mod `7`),
+and every target reads `0 = 0`.
+
+So the divided form cannot be rescued in characteristic 7, and for a sharper
+reason than "`7⁻¹` does not exist": **the hypotheses are themselves inconsistent
+with `L1 ≠ 0` there.** The cleared form is the honest statement — true
+everywhere, with content exactly where `7` is invertible.
+
+Three theorems in `FiveTwoLevelSevenLadder.lean`, all sorry-free, axioms
+`[propext, Classical.choice, Quot.sound]`: `numerators_of_five_term`,
+`sum_of_numerators`, `char_seven_forces`.
