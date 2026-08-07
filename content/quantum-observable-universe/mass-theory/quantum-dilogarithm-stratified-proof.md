@@ -99,7 +99,7 @@ $\phi_q^{(k)}(z_i)$ from Step 2 (modulo orthogonal strata) gives
 
 $$
   \Phi_q^{[\leq k]}(z_i) - \Phi_q^{[\leq k-1]}(z_i)
-  \;\equiv\; \phi_q^{(k)}(z_i) ±od{\bigoplus_{\ell \neq k} Z^{(\ell)}(A)}.
+  \;\equiv\; \phi_q^{(k)}(z_i) \pmod{\bigoplus_{\ell \neq k} Z^{(\ell)}(A)}.
 $$
 
 *Step 4 (Frobenius truncation for $T_w$).* For $T_w \in H_n(R, q)$
