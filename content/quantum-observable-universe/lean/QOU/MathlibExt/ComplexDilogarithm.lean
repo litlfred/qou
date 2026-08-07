@@ -38,24 +38,31 @@ Defines `cLiTwo` by its defining power series and proves, all sorry-free:
   form that continues past `‖y‖ = 1`, since the integral converges for every
   `y ∉ [1,∞)` while the series does not.
 
-This is a foundation, not a usable dilogarithm yet. It does **not** provide:
+and finally `cLiTwoExt`, the integral *as a definition*, which is what reaches
+past the disc.
+
+It does **not** provide:
 
 * agreement with the real `QOU.QPochhammer.LiTwo` on ℝ (deliberately: that
   import would tie this file to QOU and defeat the upstreaming goal below —
-  it lives in `QOU.Archimedean.ComplexDilogBridge` instead);
-* analytic continuation past `|z| = 1` — needed for `y₁` (`|y₁| = 1.52`);
-* the complex Euler reflection `Li₂ z + Li₂ (1−z) = π²/6 − log z · log(1−z)`
-  itself — only the analyticity hypotheses an identity-theorem proof of it
-  would consume;
-* the inversion formula `Li₂ z + Li₂ (1/z) = −π²/6 − ½·log(−z)²`, the standard
-  route to `|z| > 1`.
+  it lives in `QOU.Archimedean.ComplexDilogBridge` instead, together with the
+  complex Euler reflection identity `cLiTwo_reflection`, proved there on
+  `ball(½,½)`);
+* **analyticity of `cLiTwoExt` on `ℂ ∖ [1,∞)`** — so calling it "the analytic
+  continuation" is, in this file, a name backed by agreement on the disc plus
+  the standard definition, not a theorem. Needs differentiation under the
+  integral sign;
+* the inversion formula `Li₂ z + Li₂ (1/z) = −π²/6 − ½·log(−z)²`. Note this is
+  **false** for `cLiTwo` at `‖z‖ > 1` (junk-valued `0` there), which is
+  precisely why `cLiTwoExt` exists.
 
 **None of those is stubbed** — no `sorry`, no `True`-valued placeholder, no
-axiom. The file asserts only what it proves. Remaining work: `qou-ph1k`.
+axiom. The file asserts only what it proves. Remaining work: `qou-ph1k`,
+`qou-gkco`.
 
-In particular this does **not** yet discharge `hrefl` in
-`QOU.QBeta.FiveTwo.sum_reflection_of_branch`; the reflection identity is the
-next brick, and it needs the continuation first.
+This still does **not** discharge `hrefl` in
+`QOU.QBeta.FiveTwo.sum_reflection_of_branch`, which needs the reflection
+identity at `y₁` (`‖y₁‖ = 1.52`) — outside `ball(½,½)`.
 
 ## Upstreaming
 
@@ -422,5 +429,40 @@ theorem cLiTwo_eq_intervalIntegral {y : ℂ} (hy : ‖y‖ < 1) :
   have hcli : HasSum (fun k : ℕ => y ^ (k + 1) / ((k : ℂ) + 1) ^ 2) (cLiTwo y) :=
     (cLiTwo_summable hy).hasSum
   rw [hcli.unique hswap, intervalIntegral.integral_neg]
+
+/-! ### Past the disc: the integral as the definition
+
+`cLiTwo` is a `tsum`, so outside the closed unit disc it is junk-valued `0` —
+the *inversion* formula `Li₂ z + Li₂(1/z) = −π²/6 − ½Log(−z)²` is not merely
+unproved for it, it is **false**. Anything that needs `Li₂` at `‖y‖ > 1` (the
+5₂ saddle root `y₁`, `‖y₁‖ = 1.52`) has to use a different object.
+
+`cLiTwoExt` below is that object: the standard integral definition, which makes
+sense for every `y` such that `1 − yz ≠ 0` on `[0,1]` — in particular for all
+`y ∉ [1,∞)` — with no reference to convergence of the series.
+
+**Honest labelling.** `cLiTwoExt` agrees with `cLiTwo` on the open disc
+(`cLiTwoExt_eq_cLiTwo`), which is proved. Calling it *the analytic
+continuation* additionally requires it to be analytic on `ℂ ∖ [1,∞)`, which is
+**not proved here** — that needs differentiation under the integral sign. Until
+then "continuation" is a name backed by agreement-on-the-disc plus the standard
+definition in the literature, not a theorem in this file. Tracked in
+`qou-gkco`. -/
+
+/-- The dilogarithm by its integral definition, valid past the unit disc.
+
+    `Li₂(y) = −∫₀¹ log(1 − yz)/z dz`
+
+Junk-valued (`0`) where the integrand fails to be integrable, per Mathlib's
+convention; every lemma about it carries the relevant hypothesis. -/
+noncomputable def cLiTwoExt (y : ℂ) : ℂ :=
+  -∫ z in (0 : ℝ)..1, Complex.log (1 - y * (z : ℂ)) / (z : ℂ)
+
+/-- On the open unit disc the integral definition and the series agree. -/
+theorem cLiTwoExt_eq_cLiTwo {y : ℂ} (hy : ‖y‖ < 1) : cLiTwoExt y = cLiTwo y :=
+  (cLiTwo_eq_intervalIntegral hy).symm
+
+@[simp] theorem cLiTwoExt_zero : cLiTwoExt 0 = 0 := by
+  rw [cLiTwoExt_eq_cLiTwo (by norm_num), cLiTwo_zero]
 
 end QOU.MathlibExt
