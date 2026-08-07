@@ -709,3 +709,45 @@ zero.
 **Next:** (i) re-confirm the exclusion at `DPS = 300`; (ii) locate `|α|` by a
 radial scan at `θ₀`; (iii) with `α` in hand, fit `C` and verify the closed form
 against χ at a dozen independent points. Then the Stokes multipliers follow.
+
+## 2026-08-07 (fifteenth) — zero LOCALISED in both coordinates; α ≠ t₂ confirmed twice
+
+**(i) The exclusion holds at two precisions.** `D(tgt−1e-5) = 1.0` but
+`D(tgt−1e-7) = D(tgt) = 0`, identical at `DPS=200` and `DPS=300`. The step sits
+strictly below `arg(−t₂)`, so **`α ≠ t₂`** — the five-significant-figure
+agreement is a near-miss, not an identity.
+
+**(ii) A method that could not have worked, and why.** I first tried a radial
+scan at the known angle looking for `|χ|` to dip. It gave a mild 1.2-decade dip
+with its minimum at a non-integer `p^3.68` — useless. The reason is structural:
+with the ray passing within `~1e-6` of the zero, the dip has **radial width
+`~1e-6`**, while my 24 samples were spaced `9e-4` apart. A dip-hunting scan
+needs ~10⁴ points to see anything. Recording so it is not retried.
+
+**(iii) The method that works: winding concentration.** Along a ray at `θ` just
+below the zero's angle, `D(θ) = 1`, and that `2π` is not spread out — it
+accumulates **at the zero's radius**. Tracking cumulative `Δarg` along the ray
+with 40 radial points, one step carries `0.4979` of a turn (the next largest is
+`0.016`), pinning
+
+    zero radius  |z₀| ∈ [0.4010447693, 0.4015681768]     (mod p^ℤ)
+    zero angle   arg(z₀)/π ∈ [0.4469677734, 0.4469726563]
+
+So, with zeros at `−α p^ℤ`, normalising `|α|` into `[|t₂|, |t₂|p)`:
+
+    α ≈ 0.34317 · exp(−i · 0.55303 π)        (mod p^ℤ)
+    t₂ =  0.33163 · exp(−i · 0.5530255 π)
+
+Same angle to `~5e-6`, but `|α|/|t₂| ≈ 1.0348 = p^0.656` — **not** a power of
+`p`, so they differ in modulus too, consistently with the angular exclusion.
+
+**Not identified, and deliberately not guessed.** `|α|` is currently known only
+to `~0.13%` (the radial bracket width), which is far too loose to name.
+`|α|/T ≈ 1.119` is within `0.8%` of `q = 1.10998` — that is *not* an
+identification, and at this precision it would be exactly the kind of claim this
+arc keeps having to retract. Tighten the bracket first.
+
+**Next:** bisect the radial bracket by the same winding-concentration trick
+(each step halves it, ~10 steps gets `|α|` to `1e-6`), then identify `α` against
+`T`, `t_j`, `q` and their `p`-powers, then fit `C` and verify the closed form at
+a dozen independent points.
