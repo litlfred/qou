@@ -67,7 +67,7 @@ def dim_sn(lam):
 def load_chi(repo_root, atom_label):
     """Load free+atom χ_λ from atom-chi-rust-{atom}.witness.json."""
     fn_map = {"D": "d", "T": "t", "3He": "3he"}
-    fn = repo_root / "folio-assistant" / "computations" / f"atom-chi-rust-{fn_map[atom_label]}.witness.json"
+    fn = repo_root / "computations" / f"atom-chi-rust-{fn_map[atom_label]}.witness.json"
     with fn.open() as f:
         data = json.load(f)["data"]
     result = {}
@@ -91,7 +91,7 @@ def load_chi(repo_root, atom_label):
 def load_y_lambda(repo_root, atom_label, n_strands):
     """Load y_λ from chi-{atom}-h{n}-at-q0-50dps.witness.json."""
     name_map = {"D": "deuteron-h6", "T": "tritium-h9", "3He": "helium-3-h9"}
-    fn = repo_root / "folio-assistant" / "computations" / f"chi-{name_map[atom_label]}-at-q0-50dps.witness.json"
+    fn = repo_root / "computations" / f"chi-{name_map[atom_label]}-at-q0-50dps.witness.json"
     with fn.open() as f:
         data = json.load(f)
     y_by_partition = {}
@@ -185,7 +185,7 @@ def compute_binding_candidates(atom_label, free_atom_chi, y_lambda):
 
 def main() -> int:
     mp.dps = 50
-    repo_root = Path(__file__).resolve().parent.parent.parent
+    repo_root = Path(__file__).resolve().parent.parent
 
     atom_n = {"D": 6, "T": 9, "3He": 9}
 
@@ -250,7 +250,7 @@ def main() -> int:
     }
 
     out_path = (
-        repo_root / "folio-assistant" / "computations"
+        repo_root / "computations"
         / "option-e-canonical-reeb-v5.witness.json"
     )
     with out_path.open("w") as f:

@@ -42,7 +42,7 @@ from collections import defaultdict
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
-REPO = HERE.parent.parent
+REPO = HERE.parent
 for p in (str(HERE), str(REPO / "tools" / "qou-substrate" / "python")):
     if p not in sys.path:
         sys.path.insert(0, p)
@@ -133,7 +133,7 @@ def main() -> int:
         f"no_scriptFile(manual)={len(no_script)}")
     if args.plan:
         for s in producers:
-            exists = (REPO / "folio-assistant" / "computations" / s).exists()
+            exists = (REPO / "computations" / s).exists()
             log(f"  {len(by_script[s]):>3}  {s}  {'' if exists else '(MISSING)'}")
         for n in no_script:
             log(f"   ─  {n}  (no scriptFile — manual)")
@@ -147,7 +147,7 @@ def main() -> int:
     t_start = time.time()
 
     for idx, script in enumerate(producers, 1):
-        spath = REPO / "folio-assistant" / "computations" / script
+        spath = REPO / "computations" / script
         targets = by_script[script]
         if not spath.exists():
             log(f"[{idx}/{len(producers)}] SKIP missing {script}")

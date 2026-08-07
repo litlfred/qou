@@ -44,7 +44,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parents[2]
-COMPUTE = REPO / "folio-assistant" / "computations"
+COMPUTE = REPO / "computations"
 
 # ── Triage signatures ────────────────────────────────────────────
 

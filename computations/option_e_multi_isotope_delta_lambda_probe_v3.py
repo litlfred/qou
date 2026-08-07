@@ -41,7 +41,6 @@ def young_contents(partition):
 def load_atom(repo_root, name):
     fn = (
         repo_root
-        / "folio-assistant"
         / "computations"
         / f"chi-{name}-at-q0-50dps.witness.json"
     )
@@ -101,7 +100,7 @@ def evaluate_rule_per_atom(atom_name, rows, rule_fn):
 
 def main() -> int:
     mp.dps = 50
-    repo_root = Path(__file__).resolve().parent.parent.parent
+    repo_root = Path(__file__).resolve().parent.parent
 
     atom_data = {
         "deuteron": parse_rows(load_atom(repo_root, "deuteron-h6")),
@@ -221,7 +220,7 @@ def main() -> int:
     }
 
     out = (
-        repo_root / "folio-assistant" / "computations"
+        repo_root / "computations"
         / "option-e-multi-isotope-delta-lambda-probe-v3.witness.json"
     )
     with out.open("w") as f:
