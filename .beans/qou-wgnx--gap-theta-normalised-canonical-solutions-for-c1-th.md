@@ -1052,3 +1052,83 @@ route was built, and it showed the target is trivial. The deliverable is the
 connection matrix and its invariant, both in closed form, plus nine sorry-free
 Lean theorems. Leaving `in-progress` for the owner to decide, since retiring a
 long-standing target is not mine to call unilaterally.
+
+## 2026-08-07 (twenty-second) — DVRSZ confirms "pure"; Mathlib entry point found; ROAST
+
+### DVRSZ survey confirms the triviality reading, in its own words
+
+`uploads/Equations_aux_q-differences.pdf` (Di Vizio–Ramis–Sauloy–Zhang):
+
+- *"On parle de système ou de module **pur** lorsqu'il y a **une seule pente**"* —
+  pure ⟺ a single slope. Our terminology matches theirs exactly.
+- *"à chaque pente du polygone de Newton une équation caractéristique … dont les
+  racines sont les **exposants** attachés à cette pente"* — exponents belong to a
+  slope. So `T₊, T₋` are two **exponents at one slope**, not two slopes. This is
+  the step the twenty-first entry needed and it is now confirmed from the
+  survey's own definitions, not inferred.
+- *"le module admet une filtration canonique à quotients purs de pentes
+  décroissantes"* — the slope filtration, whose single step (for us) is what
+  makes `Λ_I(M)` trivial.
+
+### Mathlib entry point for step 1 (holomorphy) — FOUND
+
+    TendstoLocallyUniformlyOn.differentiableOn :
+      TendstoLocallyUniformlyOn F f φ U → (∀ᶠ n in φ, DifferentiableOn ℂ (F n) U)
+        → IsOpen U → DifferentiableOn ℂ f U
+
+exists in `Mathlib.Analysis.Complex.LocallyUniformLimit`. So `qThetaC`
+holomorphic on `ℂ*` is reachable: partial sums are finite sums of
+`P^{−n(n+1)} wⁿ`, differentiable off `0`; Weierstrass M-test on a compact
+annulus `r ≤ |w| ≤ R` gives locally uniform convergence (the bound is the same
+completed square already used in `summable_qThetaTerm`). **Not attempted yet** —
+this is the concrete next Lean task and needs no new literature.
+
+Absent, confirmed by search: `DifferentiableOn.tsum`,
+`differentiableOn_tsum_of_summable_norm`. The `TendstoLocallyUniformlyOn` route
+is the one that exists.
+
+### ROAST — critical assessment of this whole arc
+
+Standing red-team license, AGENTS.md. Being blunt because the arc's own history
+justifies it.
+
+1. **The headline is numerics, not a derivation.** `χ = closed form` rests on 12
+   sample points at `5.3e-63`. That is strong evidence and it is *not* a proof.
+   Every "verification" in this arc has been evaluation at chosen points; the
+   arc has never derived the closed form from the recursions.
+
+2. **The triviality conclusion is a framework reading by a non-expert.** I read
+   RSZ's definitions and drew a corollary. I did **not** check that the
+   *ramified* module is the right object to apply it to. RSZ explicitly restrict
+   their constructions to **integral** slopes and point at van der Put–Reversat
+   for the non-integral case — and our slope is non-integral **before**
+   ramification. "Ramify, then apply integral-slope theory" is exactly the step
+   I skipped. This is the weakest load-bearing claim in the arc.
+
+3. **Four retractions in one session.** The degeneracy negative (wrong), `π²`
+   (retired), the angular exclusion of `α = t₂` (retracted), `|χ| bounded`
+   (sampling artifact). The common cause every time: **a null result from a probe
+   that could not have detected the thing**. The closed form is vulnerable to the
+   same failure mode — it is verified where it was sampled.
+
+4. **`α = t₂/T` is clean but thinly pinned.** `|α| = q^{3/4}` landed on
+   `p^{−22.5}` to `3.6e-8`, and the angle was fixed by a dip minimum at one
+   radius. One number, one method. It has not been re-derived independently.
+
+5. **No stated connection to the physics.** This arc is a q-difference
+   connection problem. Whether C1's connection data feeds the mass-binding chain
+   — what the folio is actually about — is nowhere established here. If the
+   multipliers are trivial, then the "Stokes multipliers for C1" thread may have
+   been chasing a non-object from its creation, and the payoff is a closed-form
+   connection matrix **with no stated downstream consumer**. That should be
+   settled before more effort goes in.
+
+6. **The Lean coverage is inverted.** Nine sorry-free theorems, all on the easy
+   algebraic layer (reindexing identities on a bilateral series). **Zero** of
+   them support any claim that would change a conclusion. The Lean work is real
+   and reusable, but it is not load-bearing for anything asserted in this arc.
+
+**Recommendation.** Before further formalisation, settle (5) — does anything
+consume this? — and get a domain owner to rule on (2). Formalising step 1 is
+cheap and safe; formalising toward the triviality claim would be building on the
+least-verified thing here.
