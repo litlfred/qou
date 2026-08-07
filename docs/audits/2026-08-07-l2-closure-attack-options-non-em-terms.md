@@ -79,9 +79,17 @@ Three **independent** classes, not one:
 Per-isotope binding (the `Δ_λ` magnitude wall, `r* ≈ 1.585`) is Subgoal-1 and sits
 underneath Class III: a derived isospin splitting would serve both.
 
-**Consequence for prioritisation:** attacks on the non-EM sector hit Class III
-(3 of the 5 misses) *and* Subgoal-1 binding. Classes I and II are separate
-problems and should not be bundled into this arc.
+> 🛑 **CORRECTION (ROAST §R0.2, bean `qou-40r8`).** An earlier draft of this section
+> claimed non-EM attacks hit Class III *and* Subgoal-1 binding. **That is wrong — a
+> scale conflation.** Closing `Δ_pn` at L2 requires the categorical p/n split (a
+> 1.29 MeV quantity) to **0.0061 eV**; nuclear symmetry energy is a ~20 MeV/nucleon
+> effect — **≈9.1 orders of magnitude apart**. A binding fix accurate to 1 % is
+> still ~10⁹ too coarse to move Class III. Class III's "no flavor-split" and nuclear
+> isospin share the word "isospin" and nothing else.
+>
+> **Correct position: every option A1–A7 below serves Subgoal-1 binding only. None
+> of them closes an L2 dashboard miss.** "Close L2" and "get binding correct" are
+> two different programs; this memo answers the second.
 
 ---
 
@@ -199,17 +207,19 @@ vote.
 
 Changing `N = 2 → N = 3` scales the extensive exponent of §3 by `ln[3]_q / ln[2]_q`:
 
-| quantity | value at `q₀ = 1.10997859555733471` |
-|---|---|
-| `[2]_q = q^{1/2} + q^{−1/2}` | 2.002722364 |
-| `[3]_q = q + 1 + q^{−1}` | 3.010896869 |
-| **`ln[3]_q / ln[2]_q`** | **1.5870788** |
-| classical `log₂3` | 1.5849625 |
-| **corpus `r* = μ₃/c₃`** | **1.5852** |
+| convention | `ln[3]_q / ln[2]_q` at `q₀` | vs `r* = 1.5852` |
+|---|---:|---:|
+| symmetric `[2]_q = q^{1/2}+q^{−1/2}`, `[3]_q = q+1+q^{−1}` | 1.5870788 | **0.12 %** |
+| unsymmetrized `[n]_q = (qⁿ−1)/(q−1)` | 1.6159296 | **2.0 %** |
+| classical `log₂3` (q→1) | 1.5849625 | 0.015 % |
 
-`ln[3]_q/ln[2]_q` vs `r*`: **0.12 %**.
+**Four reasons to distrust it, stated up front:**
 
-**Three reasons to distrust it, stated up front:**
+0. **The convention was shopped.** Both rows above were computed; an earlier draft
+   of this memo reported only the flattering one. The agreement is a **function of
+   an arbitrary convention choice** and therefore currently means nothing. The
+   normalization factor must be *derived from the Markov moves first* and evaluated
+   as it comes out — never selected afterwards. See the ROAST companion §R0.1.
 
 1. **The q-correction moves the wrong way.** Classical `log₂3` (1.58496) is
    *0.015 %* from `r*` — **8× closer** than the q-deformed ratio. If the mechanism
@@ -252,13 +262,18 @@ probe turns out.
 
 ### A3 — Symmetry energy ← isospin/SU(4) Casimir on the Wedderburn partition
 - **Where:** the Wedderburn decomposition step (`λ ⊢ n`).
-- **Axiom source:** `λ` already carries the spin-isospin content; the SU(4) Casimir
-  is a **known polynomial in the partition** (`C₂ = Σλᵢ(λᵢ+n+1−2i)`), and
-  `Δ_λ = (−1)^{n(λ)}·dim V_λ` is **proved sorry-free**. Nothing new is postulated —
-  the Casimir eigenvalue is read off an object already in the pipeline.
-- **Gap closed:** the `(N−Z)²/A` asymmetry term — **and Class III** (`m_n`, `Δ_pn`,
-  `Q_β`), whose gating witness says "no flavor-split". This is the highest-leverage
-  option for the L2 dashboard specifically.
+- **Axiom source:** the SU(4) Casimir is a **known polynomial in the partition**
+  (`C₂ = Σλᵢ(λᵢ+n+1−2i)`), and `Δ_λ = (−1)^{n(λ)}·dim V_λ` is **proved sorry-free**.
+- 🛑 **Blocked — check first (ROAST §R1/A3):** the Descartes condition forces
+  `dim V = 2`, so Schur–Weyl on `V^{⊗n}` gives the **`GL(2)`** commutant, *not*
+  `GL(4)`. Whether `λ ⊢ n` can carry spin-isospin content **at all** is an open
+  structural question. Resolve before any work.
+- **Gap closed:** the `(N−Z)²` asymmetry *numerator* only. ⚠️ **Correction:** an
+  earlier draft claimed the Casimir supplies the `(N−Z)²/A` shape and closes
+  Class III. Both are wrong. The `1/A` is Fermi-gas level density, a separate
+  dynamical input; and closing `Δ_pn` at L2 needs **6 meV** precision on a 1.29 MeV
+  split, ~9.1 orders below the nuclear scale — **no binding attack touches the L2
+  dashboard.** Binding is Subgoal-1 only. See ROAST §R0.2, bean `qou-40r8`.
 - **Existing footing:** `SU4SupermultipletGate.lean` proves the `[1⁴]` trace is
   `C(4,A)`, zero for `A>4` (⁴He locality). The corpus stopped at locality and never
   took the Casimir eigenvalue.
