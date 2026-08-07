@@ -1,8 +1,8 @@
 {
   "engine": "pyhecke_native",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-07T08:32:29.870955+00:00",
-  "commitSha": "df5a49f952e7da0b4f41739f84c60f518bf08229",
+  "computedAt": "2026-08-07T09:48:52.536153+00:00",
+  "commitSha": "c0b759503af0a8bd1bccf25a541b4ccab3ddc056",
   "assertions": [
     {
       "name": "baseline_gate_vs_4404",
@@ -18,11 +18,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 8,
   "computation": "mu3-abs-choice-robustness",
   "scriptFile": "mu3_abs_choice_robustness_probe.py",
-  "scriptHash": "ca5270ffac78",
-  "scriptCommitSha": "df5a49f952e7da0b4f41739f84c60f518bf08229",
+  "scriptHash": "6ddc90dbae6a",
+  "scriptCommitSha": "cca0e9a8574b755e881d1c71a98fdfcb7b0bf19a",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

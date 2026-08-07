@@ -40,6 +40,10 @@ GATES (fail loudly, no fitting):
   * baseline: `c₃ = −E₀·Δ²g` must reproduce #4404's committed −1.769 (T), −1.405 (³He).
 
 No Δ_λ, no μ₃ fitted, nothing wired: this measures signs and reports them either way.
+
+NOTATION.  The `c3` in this file is the **cluster** coefficient `cl₃ = −E₀·Δ²g` (MeV-valued),
+NOT the Q_β precision-ladder `c_k`.  Prose and docs write `cl₃`; the variable names and witness
+keys still read `c3` because they are a cross-probe data contract (see bean `qou-f7je`).
 """
 from __future__ import annotations
 

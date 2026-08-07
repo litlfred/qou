@@ -20,6 +20,9 @@ GATES:
     difference is the transform applied to `χ`.
 
 Reports whichever way it comes out.  Nothing fitted, nothing wired.
+
+NOTATION.  `c3` here is the **cluster** coefficient `cl₃ = −E₀·Δ²g` (MeV), not the Q_β
+precision-ladder `c_k`.  See bean `qou-f7je`.
 """
 from __future__ import annotations
 

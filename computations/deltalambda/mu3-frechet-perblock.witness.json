@@ -1,8 +1,8 @@
 {
   "engine": "pyhecke_native",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-07T08:32:29.340129+00:00",
-  "commitSha": "df5a49f952e7da0b4f41739f84c60f518bf08229",
+  "computedAt": "2026-08-07T09:48:52.111657+00:00",
+  "commitSha": "c0b759503af0a8bd1bccf25a541b4ccab3ddc056",
   "assertions": [
     {
       "name": "linearity_gate",
@@ -21,8 +21,8 @@
   "durationMs": 9,
   "computation": "mu3-frechet-perblock",
   "scriptFile": "mu3_frechet_perblock_probe.py",
-  "scriptHash": "7dd2a6b9e5c7",
-  "scriptCommitSha": "a57498b57eb3e8e986067f6931499f76708205d1",
+  "scriptHash": "9987866e119c",
+  "scriptCommitSha": "cca0e9a8574b755e881d1c71a98fdfcb7b0bf19a",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

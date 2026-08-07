@@ -10,12 +10,22 @@ and the one surviving escape has been identified, given a governing rule, and ha
 proved. It is **not** closed in general, and this document says exactly where the remaining
 freedom lives.
 
+
+> **Notation (2026-08-07).** The three-body cluster coefficient is written **`cl₃`**, not `c₃`.
+> The letter `c_k` is reserved for the **Q_β precision-ladder** coefficients — a different,
+> dimensionless object whose `c₃ = −2` sat within ~12 % of this MeV-valued one with no signal
+> they were unrelated. Renamed per owner directive; see
+> [`notation-collisions.md`](../../content/quantum-observable-universe/notation/notation-collisions.md)
+> and [`ck-dk-canonical-registry.md` §2](../coordination/ck-dk-canonical-registry.md).
+> Compute-layer variable names and witness keys still read `c3` — those are a cross-probe data
+> contract and are being migrated separately under bean `qou-f7je`.
+
 ---
 
 ## 1. What the door is
 
 `Mu3ClusterModularity` ([#4404]) reframed the open μ₃ question as an exact equivalence.
-With `c₃ = −E₀·Δ²g` and
+With `cl₃ = −E₀·Δ²g` and
 
     Δ²g = g_ab − g_a − g_b + g_∅
 
@@ -84,7 +94,7 @@ content there. Independent route, consistent with the above.
 The per-block Fréchet probe ([#4657], `mu3_frechet_perblock_probe.py`) runs the §2.1 criterion
 on the operator [#4404] measured — the adjacent H₉ `|χ|` joint-trace — for both A=3 isotopes.
 Gates: linearity `Σ_λΔ²_λ = Δ²g`, factorisation `Δ²_λ = y_λ·Δ²|χ|_λ`, and the committed
-baseline `c₃ = −1.7688 (T) / −1.4054 (³He)` vs `−1.769 / −1.405`. All pass.
+baseline `cl₃ = −1.7688 (T) / −1.4054 (³He)` vs `−1.769 / −1.405`. All pass.
 
 **Fréchet-violating blocks exist and are named** — the interfering block whose existence
 `submodular_needs_interfering_block` requires is realised in this operator's own spectrum:
@@ -276,14 +286,14 @@ Not *"why `|χ|`"*. The narrower, sharper question:
 
 Both readings are already measured (§4bis) — the door is closed either way, ~5–8 % apart — so
 this is **not** a threat to the §2 exclusions or the §4.2 sign rule. What it does affect is
-*which* `c₃` is the canonical published number:
+*which* `cl₃` is the canonical published number:
 
-| reading | c₃ (T) | c₃ (³He) |
+| reading | cl₃ (T) | cl₃ (³He) |
 |---|---|---|
 | non-cyclic perblock `Σ y_λ\|χ_λ\|` — as published in #4404 | −1.7688 | −1.4054 |
 | signed cyclic `Σ y_λ χ_λ` — the corpus-canonical convention | −1.6325 | −1.3288 |
 
-**Not resolved here, deliberately.** Re-designating the canonical `c₃` is an owner call with
+**Not resolved here, deliberately.** Re-designating the canonical `cl₃` is an owner call with
 downstream reach, and the 2026-06-09 audit is explicit that convention reconciliation is its own
 blocker — doing it as a side effect of a robustness probe is exactly the kind of silent
 convention drift that audit was written to stop. Flagged, measured, and left to the owner.
