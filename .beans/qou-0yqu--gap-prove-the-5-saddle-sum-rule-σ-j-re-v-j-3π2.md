@@ -240,3 +240,46 @@ these `Vⱼ`, and Neumann-style CS-invariant work — not the `ζ_F(2)` ladders.
 
 Still **verified to 80 dps, unproved**. The field identification narrows the
 search enormously but did not itself close the proof.
+
+## 2026-08-07 (b) — Broadhurst READ. The volume side is classical; ours is not.
+
+Owner uploaded the non-paywalled sources (`uploads/9811173v1.pdf`,
+`uploads/2304.12545v1.pdf`, `uploads/fulltext.pdf`; commit `3a551a05`).
+
+**Broadhurst hep-th/9811173 eq (73)** states, for the D = −23 field:
+
+    vol(σ₁σ₂³σ₁σ₂⁷) = vol(5₂) = (3/10)·vol(9₄₉) = (7/3)·vol(7₂₂)
+                    = 3·Z₂₃,₃ ≈ 2.828122
+
+i.e. `Vol(5₂) = 3·Z₂₃,₃`, three times the volume of the closed Weeks manifold
+`m003(−3,1)`. Cross-checked here to **31 digits**:
+
+    Vol(5₂)  = 2.8281220883307831628
+    Vol/3    = 0.94270736277692772092
+    D(y₁)    = 0.94270736277692772092      (Bloch–Wigner at our root)
+    |diff|   = 2.0e-31
+
+So **`D(y₁) = Z₂₃,₃ = Vol(5₂)/3`** — the Bloch–Wigner value at the saddle root
+*is* the Dedekind zeta invariant of the field. Our roots are exactly the
+classical −23 objects; the identification is not approximate.
+
+### What this settles
+
+**The caveat is now literature-confirmed, not merely inferred.** Broadhurst's
+D = −23 result is a statement about **volume** — the Bloch–Wigner / imaginary
+side. That is precisely the side Route 2 showed carries **no** information
+about our sum rule (`Σⱼ D(yⱼ) = 0` automatically, control cubics included).
+
+Broadhurst says nothing about `Σⱼ Re Vⱼ`. Neither does the ζ_F(2) ladder
+literature generally: it computes the volume/regulator, not the
+Chern–Simons/second-regulator combination we need.
+
+### Practical consequence
+
+Do **not** spend further effort mining the ζ_F(2) / Dedekind-zeta ladder
+literature for this identity — it answers the sibling question. The remaining
+realistic sources are **GGM (2012.00062) and GGMW (2111.04763)**, already in
+`uploads/`, which compute these `Vⱼ` directly, and Chern–Simons-invariant work
+in the Neumann line (`uploads/2304.12545v1.pdf`, not yet mined).
+
+Still **verified to 80 dps, unproved.**
