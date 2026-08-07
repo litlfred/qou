@@ -4,7 +4,7 @@ title: 'qou-8p1x/i: multi-fibre groupoid (T3b) — the only untouched native rou
 status: todo
 type: task
 created_at: 2026-08-07T12:40:00Z
-updated_at: 2026-08-07T12:40:00Z
+updated_at: 2026-08-07T15:10:00Z
 ---
 
 Parent: `qou-8p1x`. Direction 1 of the two construction directions already
@@ -38,3 +38,28 @@ objects" is a definition with content or a placeholder. If it is a placeholder,
 say so plainly — that would mean the framework currently has **no** live
 substrate-native route to colour, which is an honest and important thing for
 the corpus to record rather than leave implicit.
+
+
+---
+
+## LIVE SURFACE COLLAPSED (2026-08-07) — see the synthesis audit
+
+`docs/audits/2026-08-07-eightfold-live-surface-collapse.md`.
+
+Three independent threads now terminate on the **same** requirement:
+* the Sym^2-gate result — no summand of any `V^{tensor n}` passes, since all
+  SU(2) reps are self-dual, so "inequivalent fibre objects" must mean genuinely
+  non-isomorphic fibres;
+* the Ocneanu result — an N = 3 channel must be the categorical trace on a
+  genuinely 3-dimensional object, since the parameter is the fibre's quantum
+  dimension;
+* T3g's own question — does the braided category admit inequivalent fibre
+  *functors* (a non-neutral Tannakian gerbe)?
+
+**`qou-8p1i` (T3b) and `qou-y7vg` (T3g) are the same question.** Merge their
+scope.
+
+**And T3g's stand-down is VOID.** It deferred to the S₄/Fano route ("the Fano/S₄
+route subsumes the structural content of this bean") — and that route was
+excluded today, scope-(b). T3g is now the *surviving* direction, not the
+subsumed one, and should be re-prioritised.
