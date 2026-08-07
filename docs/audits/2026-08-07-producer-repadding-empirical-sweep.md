@@ -577,6 +577,49 @@ Measured before and after in a detached worktree:
 This is the durable form of what the strip did by hand: 71 of the residual 228
 fields, fixed at the producer.
 
+## Second Class A fix — and the residual 228 is a lower bound
+
+`rho_k_co_casimir_extended` is the other 71-field producer. **It is not 71.**
+A run that completes writes **148** padded `chi_lambda_at_q0` fields; the
+sweep's 71 came from a run that hit the 150 s wall and left a *partial*
+witness, and that number was carried forward as though complete.
+
+The sweep is careful that "untested is not clean". This is the neighbouring
+error — **half-tested is not measured** — and it means **228 is a floor**, at
+least 77 short on this producer alone. Two more (`habiro_interpolate_cross_
+validator`, `rho_k_h3a_lp_dual`) also exited non-zero mid-run, so their counts
+are lower bounds too.
+
+148 is also exactly what the tracer recorded at `hoefsmit_numpy.py:161` —
+`x148` conversions, one per field.
+
+**The chirality fix does not transfer.** `_chi_worker` has two paths:
+
+```python
+try:    from hoefsmit_numpy import chi_numpy   # numpy f64 kernel
+except ImportError:  chi_numeric               # full mpmath precision
+```
+
+so χ is 53-bit only when numpy is importable. Writing `float()` unconditionally
+would discard real digits in the fallback — the *"conceals a real loss"* half of
+the trap this document warns about, where the f64 path is the *"fakes
+precision"* half. The same one-line fix would have been wrong here.
+
+So the decision is made **per value, exactly**: an mpf equal to its own float64
+holds 53 bits and nothing more; one that is not carries more and is written in
+full. A genuine high-precision value that happens to be representable loses
+nothing either — the short form is then exact — so the test cannot misfire in
+that direction.
+
+| | before | after |
+|---|---:|---:|
+| chi fields | 148 | 148 |
+| **values moved** | — | **0** |
+| **padded fields** | **148** | **0** |
+
+Both runs completed (`rc=0`, no timeout), so unlike the sweep's figures these
+counts are complete. **219 fields now fixed at the producer** across the two.
+
 ## Regenerating a witness silently drops its q₀ provenance
 
 **Source fix committed, witness NOT regenerated — and the reason generalises
@@ -634,10 +677,13 @@ where this document said the non-mechanizable part lived all along.
   `hecke_characters.py:214`, `hoefsmit_numpy.py:161`, and the
   `mpf(<float out of JSON>)` idiom. All three are deliberate f64 kernels, so
   the fix is "serialize at true precision", not "recover lost precision".
-  **71 of the 189 are done** (`chirality_avg_content_atomic`, above).
-  `rho_k_co_casimir_extended` (71) is the same shape one level down, in
-  `hoefsmit_numpy.py:161` — a shared helper, so unlike the chirality fix it
-  needs its callers checked before the return type is touched.
+  **219 fields are done** — `chirality_avg_content_atomic` (71) and
+  `rho_k_co_casimir_extended` (148). Neither touches the shared helper: both
+  fix serialization in the producer, which is why `hoefsmit_numpy.py:161`
+  can stay as it is for its other callers.
+  Remaining: `su4_1111_markov_trace_probe` (10) on the same
+  `hecke_characters.py:214` root, and the four `mpf(<float out of JSON>)`
+  producers. Counts for the two producers that exit non-zero are floors.
 - **Class B — 9 producers, 39 fields — needs no producer fix.** The values are
   genuine; the *detector* calls them padding. Either it learns to tell a
   computed near-integer from a truncated double (it cannot, from the string

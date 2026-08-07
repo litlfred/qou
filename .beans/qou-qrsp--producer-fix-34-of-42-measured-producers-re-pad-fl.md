@@ -176,3 +176,28 @@ was checked to FAIL without the fix, not merely pass with it.
 
 So "re-run the producers" is now safe to do. That was the last thing blocking
 the second half of this bean.
+
+## Second Class A fix — 219 fields done, and 228 was a FLOOR
+
+`rho_k_co_casimir_extended` is not 71 fields, it is **148**. The sweep's 71
+came from a run that hit the 150s wall and left a PARTIAL witness; that count
+was then carried forward as complete. The sweep is careful that "untested is
+not clean" — this is the neighbouring error, half-tested is not measured. So
+the residual 228 is a FLOOR, at least 77 short on this producer alone.
+habiro_interpolate_cross_validator and rho_k_h3a_lp_dual also died mid-run,
+so their counts are lower bounds too.
+
+148 matches the tracer exactly (hoefsmit_numpy.py:161 recorded x148).
+
+The chirality one-liner would have been WRONG here: _chi_worker falls back to
+full-precision mpmath `chi_numeric` when numpy is unavailable, so writing
+float() unconditionally would discard real digits — the "conceals a real
+loss" half of the trap. Decided per value instead: an mpf equal to its own
+float64 holds 53 bits and nothing more; otherwise it is written in full.
+
+Verified before/after, BOTH runs to completion (rc=0): 148 padded -> 0,
+0 values moved. Source only — the committed witness already carries 0.
+
+Running total: 219 of the Class A fields fixed at the producer.
+Next: su4_1111_markov_trace_probe (10, hecke_characters.py:214 root) and the
+four mpf(<float out of JSON>) producers.
