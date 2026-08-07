@@ -720,7 +720,7 @@ assertion tolerance of `1e-10` — loose enough to have hidden the shortfall
 indefinitely. Values move ~3.2e-15 relative, which is the 15-vs-50 digit gap:
 a correction.
 
-### The same no-op is in four more producers — unfixed, and NOT verified here
+### The same no-op is in four more producers — now fixed and verified
 
 Swept the corpus for `import mpmath as <alias>` paired with a bare
 `<alias>.dps =`:
@@ -732,16 +732,34 @@ computations/qbeta/qbeta_h4_sign_block_exact.py:11
 computations/qbeta/qbeta_h4_sign_block_proof_search.py:11
 ```
 
-All four say `mp.dps = 50` and run at 15. **None is in the 19 re-padders** —
+All four said `mp.dps = 50` and ran at 15. **None is in the 19 re-padders** —
 they were never in the stripped-witness cohort, so the padding sweep never
-reached them, and their witnesses have not been checked at all.
+reached them.
 
-They were patched and then **reverted**: none can run in this container
-(`ModuleNotFoundError: qou_substrate` — they lack the `_path_bridge` import),
-so the change could not be verified, and a value-changing edit that has not
-been run is exactly what this document argues against everywhere else. The
-fix is one line each and the finding is certain; the verification is what is
-missing.
+They were first recorded here as found-but-unverified, because they died on
+`ModuleNotFoundError: qou_substrate` — they import it directly rather than
+through `_path_bridge`. **That was the container, not the producers.** With
+`PYTHONPATH=tools/qou-substrate/python` all four run clean. Filing them as
+unrunnable would have been wrong, and only trying it settled that; "cannot run
+here" deserves the same suspicion this document gives "untested is not clean".
+
+Verified before/after — all four `rc=0` both ways, and all four change output,
+so the no-op was live in every one (26, 34, 12 and 14 lines respectively).
+The change is recovered precision, not moved results: every value agrees to
+the 15 digits it used to print and then continues.
+
+```
+q0 (anchor) = 1.10997858275138
+           -> 1.1099785827513808075916690956107688798744991218736
+```
+
+— which is exactly `q_parameter.Q_50_DIGIT_STR`, so the anchor is now the
+canonical pin rather than a 15-digit truncation of it.
+
+**Scope:** none of the four emits a witness, so this adds no padded fields and
+does not move the drain count. What it means is that any conclusion drawn from
+their output beyond 15 digits was unsound — these probes print ratios and
+compare them against exact predictions.
 
 ## Regenerating a witness silently drops its q₀ provenance
 

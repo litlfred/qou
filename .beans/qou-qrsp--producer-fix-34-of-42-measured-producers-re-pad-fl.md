@@ -299,3 +299,21 @@ Patched then REVERTED: none runs in this container (ModuleNotFoundError:
 qou_substrate — they lack _path_bridge), so the change could not be verified,
 and an unverified value-changing edit is what this bean argues against.
 One line each; the finding is certain, the verification is what is missing.
+
+## The four qbeta no-ops: fixed and verified after all
+
+Recorded last round as unrunnable (ModuleNotFoundError: qou_substrate). That
+was the CONTAINER missing the package, not the producers — with
+PYTHONPATH=tools/qou-substrate/python all four run clean. "Cannot run here"
+deserves the same suspicion as "untested is not clean"; only trying it settled
+it.
+
+All four rc=0 before and after, and all four CHANGE OUTPUT, so the no-op was
+live in each (26/34/12/14 lines). Recovered precision, not moved results:
+  q0 (anchor) = 1.10997858275138
+             -> 1.1099785827513808075916690956107688798744991218736
+= exactly Q_50_DIGIT_STR.
+
+NONE emits a witness, so this adds no padded fields and does not move the
+drain count — but any conclusion drawn from their output past 15 digits was
+unsound.
