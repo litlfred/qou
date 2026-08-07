@@ -707,7 +707,7 @@ theorem listToSYT_sytToList (hl : List.Sorted (· ≥ ·) l)
         ((mem_standardFillings_iff l _).mp (sytToList_mem_standardFillings hl T)).1
         ((mem_standardFillings_iff l _).mp (sytToList_mem_standardFillings hl T)).2 = T := by
   -- equality of StandardYoungTableau reduces to equality of toSsyt (bijOn is a Prop)
-  apply StandardYoungTableau.ext_toSsyt
+  apply ext_toSsyt
   apply SemistandardYoungTableau.ext
   intro i j
   show entryFn l (sytToList l T.entry) i j = T.entry i j
