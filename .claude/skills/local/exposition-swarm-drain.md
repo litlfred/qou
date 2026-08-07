@@ -98,7 +98,8 @@ Also flag the deterministic narrative defects (independent of the score):
   fragments into hundreds of PRs and violates the "minimize PR creation"
   rule (AGENTS.md).
 - **Size cap:** ≤ ~40 blocks per batch AND ≤ 49 files per resulting PR
-  (the Gemini review limit). Split big chapters (`mass-theory` ~369,
+  (a review-size discipline; the number came from Gemini's old
+  truncation limit, and is kept now that Gemini is sunset). Split big chapters (`mass-theory` ~369,
   `quantum-observable-universes` ~217, `particle-interactions` ~189,
   `observations`/`predicted-spectra` ~147, `information-theory` ~130) into
   coherent sub-clusters by section or topic stem.
@@ -142,7 +143,7 @@ or any edit that would touch a derivation body — is returned as
 `needs_owner` with a reason, **never** auto-faked or auto-polished.
 
 **The review layer is the backstop, not the gate.** Every swarm PR still
-goes through `/prepare-merge-auto` (Gemini + Copilot) before merge; that
+goes through `/prepare-merge-auto` (Copilot; Gemini is sunset) before merge; that
 layer caught the incident above. Do not merge a content batch on the
 swarm's self-check alone.
 

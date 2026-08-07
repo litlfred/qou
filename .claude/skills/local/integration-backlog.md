@@ -92,10 +92,12 @@ For each resolved axis, run §1 → §6 in order. The loop body in
      rater agent) and confirm `score` rose before closing — the rate→improve
      loop.
 2. Cluster the open list into **batches** with these constraints:
-   - **≤ 49 files changed per batch** (Gemini's review-comment
-     limit — at 50+ files Gemini truncates). The accounting
-     includes `.qa.json` sidecars, since each `.md` edit
-     refreshes one sidecar.
+   - **≤ 49 files changed per batch.** The number originally came
+     from Gemini's review-comment truncation limit; Gemini is sunset
+     (2026-08-07), so the cap is retained as a **review-size
+     discipline** (reviewer comprehension, focused Copilot passes),
+     not a bot constraint. The accounting includes `.qa.json`
+     sidecars, since each `.md` edit refreshes one sidecar.
    - **Single-criterion batches preferred** (one PR = one axis,
      easier review).
    - **Same-chapter / same-file-tree batches preferred** (less
@@ -178,7 +180,7 @@ handles the FULL autonomous merge pipeline:
   - False-positive review comments → polite one-line counter-comment
 - **Phase 3**: Structured user questions (only when genuinely blocked)
 - **Phase 4**: Merge (after all comments resolved + CI green) via
-  `merge_method: "rebase"` per AGENTS.md §Branch + PR workflow rule 7
+  `merge_method: "rebase"` per AGENTS.md §Branch + PR workflow rule 8
 - **Phase 5**: Post-merge sibling notification
 
 See [`.claude/skills/local/prepare-merge-auto.md`](prepare-merge-auto.md)
