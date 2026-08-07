@@ -22,11 +22,13 @@ The remaining glue is `partitionEquivYoungIndex`, whose forward map sends `p` to
 the shape `dimSYT` counts. So `Equiv.sum_comp` transports the `PartitionIndex` sum to the
 `Nat.Partition` sum.
 
-Note this does **not** discharge `DeltaLambdaSignRule.burnside` (`∑_λ (dimIrrep λ)² = n!` over the
-custom `Partition` encoding): that still needs the roadmap's bridge (1), the hook-length identity
-`dimIrrep = numSYT` (`numSYT_mul_hookProduct`, still a `sorry`). The difference is exactly the
+Note this does **not** by itself discharge `DeltaLambdaSignRule.burnside`
+(`∑_λ (dimIrrep λ)² = n!` over the custom `Partition` encoding). The difference is exactly the
 encoding: `dimSYT` is defined as an SYT *count*, while `dimIrrep` is defined by hook-length
-division.
+division. That gap is the roadmap's bridge (1), `dimIrrep = numSYT`, which is **now proved** as
+`QOU.BraidKnot.dimIrrep_eq_numSYT` (`PartitionHookProductBridge`). What remains for `burnside`
+is bridge (2) — the reindexing `List (Partition n)` (complete + `Nodup`) ↔
+`Finset.univ (PartitionIndex n)` — and then wiring the two together.
 
 -- Ref: [sagan2001] Sagan, The Symmetric Group §3.10 (RSK; ∑ (f^λ)² = n!)
 -/
