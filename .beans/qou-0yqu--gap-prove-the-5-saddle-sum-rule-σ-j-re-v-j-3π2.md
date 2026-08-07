@@ -456,3 +456,54 @@ observation, and `b` is demystified.
    case analysis on a general complex `y`.
 
 **Status unchanged: verified to 80 dps, unproved.**
+
+## 2026-08-07 (night) — Route 6 tried and REFUTED (scope-a): Zagier's enhanced dilogarithm
+
+Owner supplied Zagier, *The Dilogarithm Function* (2007) as
+`uploads/fulltext.pdf`. §II.1 B defines the **enhanced dilogarithm**
+
+    D̃(ẑ) = Li₂(z) + ½·u·v    on   X̃ = {(u,v) ∈ ℂ² : eᵘ + eᵛ = 1}
+
+with values in `ℂ/(π²/2)ℤ`, defined only on Bloch-group combinations.
+
+**Why it looked right.** `Vⱼ = 3Li₂(yⱼ) + Log(−yⱼ)²` has exactly the
+`Li₂ + (log)(log)` shape with branch data; the roots satisfy `2u = 3v + 2πik`
+(`k = (1,−1,0)`, G4 of the sibling probe), which collapses `½uv` to `u²/3` plus
+a branch term; and the sum rule's value `−3π²/2` is an exact multiple of the
+ambiguity `π²/2`. Had it closed, the open problem would have stopped being a
+transcendental evaluation and become the **vanishing of a class in
+`ℝ/(π²/2)ℤ`** — a rationality statement.
+
+**It does not close.** Probe
+[`qbeta_5two_enhanced_dilog_probe.py`](../computations/probes/qbeta_5two_enhanced_dilog_probe.py),
+witness `computations/qbeta-5two-enhanced-dilog.witness.json`, 50 dps:
+
+* **G1** — no integer branch offset `(n,m) ∈ [−2,2]²` gives `Vⱼ = 3D̃`. Best
+  errors `6.13, 6.13, 9.87`. MISS.
+* **G4** — but the residual is *exactly* computable, not noise:
+
+      V − 3·D̃ = πi(2b + k)·u − b²π²      (u = Log y, principal branch)
+
+  giving `Re = π·arg(y₁) − π²` for `y₁, y₂` and `−π²` for `y₃`. Verified to
+  `3.2e-50`.
+
+* Summing and imposing the sum rule gives the **exact restatement**
+
+      Σⱼ Re D̃(yⱼ) = π²/2 − (2/3)·π·θ,     θ = arg y₁
+
+  verified to `5.3e-51`. **The `π·θ` term is not in `π²ℚ`**, so the sum rule
+  does *not* reduce to a mod-`π²/2` rationality statement under this
+  identification.
+
+**SCOPE-(a), explicitly.** This *set-up* does not close. It does **not** exclude
+an enhanced-dilogarithm formulation at a different covering point, or on a
+different Bloch element — I have no invariant that forbids one, so no
+scope-(b) claim is made. Note the relevant subtlety is already Lean-proved on
+this branch: `d[yⱼ]` is **3-torsion**, not zero
+(`QOU.QBeta.Bloch.three_smul_wedge_eq_zero`), so `Σⱼ[yⱼ]` lies in the Bloch
+group only after tripling — exactly the "2- and 3-torsion issues" the
+Garoufalidis–Zagier survey flags. A formulation that tracks that carefully is
+the obvious next thing to try.
+
+**Route count is now 6 tried, 6 not closing. Status unchanged: verified to
+80 dps, unproved.**
