@@ -201,4 +201,66 @@ theorem powerSum_eq_pSeq {R : Type*} [CommRing R] {y₁ y₂ y₃ : R}
       push_cast
       ring
 
+/-! ### The field: discriminant −23
+
+The 2026-08-07 finding (bean `qou-0yqu`) is that the 5₂ saddle cubic has
+discriminant `−23`, the **smallest |discriminant| among complex cubic
+fields** — which places the whole problem in the classical Zagier /
+dilogarithm-ladder setting. That was established with `sympy`; it is pure
+algebra, so it is machine-checked here instead.
+
+Note what this does and does not settle. The field identification is exact and
+now proved. But the classical `−23` literature (Broadhurst hep-th/9811173
+eq (73): `vol(5₂) = 3·Z₂₃,₃`) computes the **volume / Bloch–Wigner** side,
+which Route 2 showed carries *no* information about the sum rule. Knowing the
+field is not knowing the identity. -/
+
+/-- The discriminant of a monic cubic, as a symmetric-function identity.
+
+`∏_{i<j}(yᵢ − yⱼ)²` expressed in the elementary symmetric functions. A pure
+`ring` identity over any commutative ring. -/
+theorem disc_eq_symm {R : Type*} [CommRing R] (y₁ y₂ y₃ : R) :
+    ((y₁ - y₂) * (y₁ - y₃) * (y₂ - y₃)) ^ 2
+      = (y₁ + y₂ + y₃) ^ 2 * (y₁ * y₂ + y₁ * y₃ + y₂ * y₃) ^ 2
+        - 4 * (y₁ * y₂ + y₁ * y₃ + y₂ * y₃) ^ 3
+        - 4 * (y₁ + y₂ + y₃) ^ 3 * (y₁ * y₂ * y₃)
+        + 18 * (y₁ + y₂ + y₃) * (y₁ * y₂ + y₁ * y₃ + y₂ * y₃) * (y₁ * y₂ * y₃)
+        - 27 * (y₁ * y₂ * y₃) ^ 2 := by
+  ring
+
+/-- **The 5₂ saddle cubic has discriminant −23.**
+
+Immediate from `disc_eq_symm` and Vieta (`e₁ = 2`, `e₂ = 3`, `e₃ = 1`):
+`4·9 − 4·27 − 4·8 + 18·6 − 27 = −23`.
+
+`−23` is the smallest `|discriminant|` among complex cubic fields. The
+reciprocal cubic `1 − 2z + 3z² − z³` and the Landen image `z³ − z² + 1` share
+it, being related to this one by rational maps. -/
+theorem disc_eq_neg_23 {R : Type*} [CommRing R] {y₁ y₂ y₃ : R}
+    (e1 : y₁ + y₂ + y₃ = 2) (e2 : y₁ * y₂ + y₁ * y₃ + y₂ * y₃ = 3)
+    (e3 : y₁ * y₂ * y₃ = 1) :
+    ((y₁ - y₂) * (y₁ - y₃) * (y₂ - y₃)) ^ 2 = -23 := by
+  rw [disc_eq_symm, e1, e2, e3]; norm_num
+
+/-! ### Landen, the intermediate steps
+
+`landen_image_cubic` proved where the substitution lands. Its two intermediate
+identities were asserted in that proof's docstring; they are recorded here as
+lemmas in their own right, since they are what make the route checkable. -/
+
+/-- `z² = 1 − y` for `z = y/(y−1)`, given `y² = (1−y)³`. -/
+theorem landen_sq {R : Type*} [Field R] {y : R} (hy : y - 1 ≠ 0)
+    (h : y ^ 2 = (1 - y) ^ 3) : (y / (y - 1)) ^ 2 = 1 - y := by
+  field_simp
+  linear_combination h
+
+/-- `z³ = −y` for `z = y/(y−1)`, given `y² = (1−y)³`. -/
+theorem landen_cube {R : Type*} [Field R] {y : R} (hy : y - 1 ≠ 0)
+    (h : y ^ 2 = (1 - y) ^ 3) : (y / (y - 1)) ^ 3 = -y := by
+  have hsq := landen_sq hy h
+  have hsplit : (y / (y - 1)) ^ 3 = (y / (y - 1)) * (y / (y - 1)) ^ 2 := by ring
+  rw [hsplit, hsq]
+  field_simp
+  ring
+
 end QOU.QBeta.FiveTwo
