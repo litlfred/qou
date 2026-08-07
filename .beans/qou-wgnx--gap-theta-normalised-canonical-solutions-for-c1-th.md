@@ -123,3 +123,72 @@ q-modular scale) sits in that band — **observation, not identification**.
 
 **Stokes multipliers: STILL OPEN.** The connection matrix is a prerequisite for
 them, not the same thing. That is the remaining work on this bean.
+
+## 2026-08-07 (later still) — POLE DIVISOR pinned, symbolic + Lean; π² retired
+
+`computations/qbeta/c3_w2_c1_pole_divisor.py`, witness
+`c3-w2-c1-pole-divisor.witness.json` (3/3), Lean
+`QOU/QBeta/C1ConnectionPoles.lean` (**sorry-free, machine-verified**).
+
+**The divisor is symbolic — nothing fitted.** Every pole of `P` sits where some
+`θ_p` vanishes, and `θ_p`'s zero set is a single `p`-orbit: `θ_p(w) = 0 ⟺
+w ∈ −p^ℤ`. With `T = √(q−1)/q^{3/4}`:
+
+| pole on `ℂ*/p^ℤ` | locus | source | intrinsic? |
+|---|---|---|---|
+| `[−1]` | `z ∈ −p^ℤ` | `θ_p(z)`, the **common** numerator of `e_t(z) = θ_p(z)/θ_p(z/t)` | **NO — normalisation artifact** |
+| `[−T]` | `z ∈ −T·p^ℤ` | `θ_p(z/T₊)` | yes |
+| `[+T]` | `z ∈ +T·p^ℤ` | `θ_p(−z/T)` | yes |
+
+So `c₊` has simple poles at `[−1]`, `[−T]`; `c₋` at `[−1]`, `[+T]`. The `[−1]`
+pole sits in **both** columns because it comes from the 0-side character's
+common numerator — it is an artifact of that normalisation, **not** connection
+data. Only `[±T]` carry it.
+
+**Divisor proved COMPLETE by the residue theorem.** On `ℂ*/p^ℤ` the invariant
+differential is `dz/z`, so residues must sum to zero — and an elliptic function
+**cannot have a single simple pole** per fundamental domain, so finding one
+would have proved a pole was still missing. All three poles fall in one
+fundamental annulus (radii ratio `1.0181 < p = 1.0536`), and each entry's two
+residues cancel with a leftover falling **exactly linearly** in `ε` (decay
+factors `10.0, 10.0`) — the `O(ε)` truncation of the limit estimate. Sum is
+exactly zero.
+
+**This resolves the `c₊` puzzle from the previous entry.** Both of `c₊`'s poles
+(`[−1]`, `[−T]`) lie on the **negative** real ray. The positive axis — the only
+region the earlier script sampled — is maximally far from them on the torus,
+so `c₊` is flat there to `1e-27`; the residual wobble is just their tail, and it
+grows with `q` because the torus shortens. **The π² observation is RETIRED** —
+with the mechanism in hand there is no need to posit a modular constant, and no
+evidence for one. (It was recorded as "observation, not identification"; that
+was the right call, and this is the follow-through.)
+
+**Lean, `C1ConnectionPoles.lean` — machine-verified, `lean-verify` exit 0,
+`#print axioms` = `[propext, Classical.choice, Quot.sound]` (no `sorryAx`):**
+
+- `qTheta_neg_zpow_eq_zero` : `θ_P(−P^{2k}) = 0` for **all** `k ∈ ℤ` — the `⊇`
+  direction of the zero locus, which is what places the poles.
+- Proof is an **involution** `n ↦ 2k−1−n`: it fixes the exponent
+  `−n(n+1)+2kn` (pure `ring`) and flips `(−1)ⁿ` (since `n + (2k−1−n) = 2k−1` is
+  odd), so the series is its own negative. **No summability hypothesis needed** —
+  `Equiv.tsum_eq` and `tsum_neg` are both unconditional in Mathlib. That is what
+  made this cheap; the analytic route would have needed bilateral summability.
+- Reparametrised by `p = P²` so the exponent is `−n(n+1)` with no integer
+  division. Nothing mathematical turns on it.
+
+**NOT proved in Lean, and stated in the file:** the **converse** (that `−p^ℤ`
+are the *only* zeros) is the Jacobi triple product; that these zeros are poles
+*of `P`* needs the analytic construction; divisor completeness needs elliptic
+function theory on `ℂ*/p^ℤ`. Whether Mathlib carries JTP was **not** settled —
+the environment had only a partial olean cache and no Mathlib source, so its
+absence there is not evidence either way. Worth checking before anyone scopes it.
+
+**Env note for whoever picks this up:** Lean *does* work in the web sandbox via
+`scripts/lean-toolchain-cache-restore.sh` + `scripts/lean-cache-restore.sh`
+(`release.lean-lang.org` and the GitHub release-asset path both 403; the vendored
+`lake-cache/toolchain-v4-24-0` branch is the only route). `lean` lands in
+`~/.elan/toolchains/…/bin` and is **not** put on `PATH` — export it, then
+`scripts/lean-verify.sh` works.
+
+**Stokes multipliers: STILL OPEN.** Unchanged. The divisor is now known
+symbolically, which is the natural input to extracting them.

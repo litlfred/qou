@@ -80,8 +80,19 @@ connection matrix is a prerequisite for them, not the same thing.
 So: the exponents below are solid, the geometry of the indicial equation is
 settled, and the connection matrix exists. The multipliers are the open work.
 
+### The pole divisor
+
+`c₊` has simple poles at `[−1]` and `[−T]`; `c₋` at `[−1]` and `[+T]`, where
+`T = √(q−1)/q^{3/4}`. All of them are zeros of a `θ_p`, whose zero set is the
+single orbit `−p^ℤ` — see `QOU/QBeta/C1ConnectionPoles.lean` (sorry-free, `⊇`
+direction) and `computations/qbeta/c3_w2_c1_pole_divisor.py`. The `[−1]` pole
+comes from the **common** numerator `θ_p(z)` of the character `e_t` above, so it
+sits in both columns and is an artifact of *this* normalisation, not connection
+data.
+
 -- Ref: [manuscript] computations/qbeta/c3_w2_c1_theta_canonical.py
 -- Ref: [manuscript] computations/qbeta/c3_w2_c1_connection_matrix.py
+-- Ref: [manuscript] computations/qbeta/c3_w2_c1_pole_divisor.py
 -- Ref: [rsz2013] Astérisque 355 §3.3 (Ramis–Sauloy–Zhang)
 -/
 
