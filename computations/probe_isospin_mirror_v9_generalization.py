@@ -50,7 +50,7 @@ AME_MeV = {"D": D("2.224566"), "T": D("8.481798"), "3He": D("7.71806")}
 
 def load_chi_atom(repo_root, atom_label):
     fn_map = {"D": "d", "T": "t", "3He": "3he"}
-    fn = (repo_root / "folio-assistant" / "computations"
+    fn = (repo_root / "computations"
           / f"atom-chi-rust-{fn_map[atom_label]}.witness.json")
     with fn.open() as f:
         data = json.load(f)["data"]
@@ -64,7 +64,7 @@ def load_chi_atom(repo_root, atom_label):
 
 def load_y(repo_root, atom_label):
     name_map = {"D": "deuteron-h6", "T": "tritium-h9", "3He": "helium-3-h9"}
-    fn = (repo_root / "folio-assistant" / "computations"
+    fn = (repo_root / "computations"
           / f"chi-{name_map[atom_label]}-at-q0-50dps.witness.json")
     with fn.open() as f:
         data = json.load(f)
@@ -85,7 +85,7 @@ def sum_y_chi(y, chi_atom):
 
 
 def main() -> int:
-    repo_root = Path(__file__).resolve().parent.parent.parent
+    repo_root = Path(__file__).resolve().parent.parent
 
     base = {}
     for atom in ["D", "T", "3He"]:
@@ -175,7 +175,7 @@ def main() -> int:
         ],
         "allPassed": bool(refuted),
     }
-    out = (repo_root / "folio-assistant" / "computations"
+    out = (repo_root / "computations"
            / "probe-isospin-mirror-v9-generalization.witness.json")
     with out.open("w") as f:
         json.dump(witness, f, indent=2)

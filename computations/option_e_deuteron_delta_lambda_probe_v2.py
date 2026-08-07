@@ -48,10 +48,9 @@ def young_contents(partition):
 def main() -> int:
     mp.dps = 50
 
-    repo_root = Path(__file__).resolve().parent.parent.parent
+    repo_root = Path(__file__).resolve().parent.parent
     chi_path = (
         repo_root
-        / "folio-assistant"
         / "computations"
         / "chi-deuteron-h6-at-q0-50dps.witness.json"
     )
@@ -227,7 +226,6 @@ def main() -> int:
 
     out_path = (
         repo_root
-        / "folio-assistant"
         / "computations"
         / "option-e-deuteron-delta-lambda-probe-v2.witness.json"
     )

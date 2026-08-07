@@ -63,7 +63,7 @@ def longest_element_sign(lam):
 
 
 def load_chi(repo_root):
-    fn = (repo_root / "folio-assistant" / "computations"
+    fn = (repo_root / "computations"
           / "atom-chi-rust-d.witness.json")
     with fn.open() as f:
         data = json.load(f)["data"]
@@ -77,7 +77,7 @@ def load_chi(repo_root):
 
 
 def load_y(repo_root):
-    fn = (repo_root / "folio-assistant" / "computations"
+    fn = (repo_root / "computations"
           / "chi-deuteron-h6-at-q0-50dps.witness.json")
     with fn.open() as f:
         data = json.load(f)
@@ -91,7 +91,7 @@ def load_y(repo_root):
 
 def main() -> int:
     mp.dps = 50
-    repo_root = Path(__file__).resolve().parent.parent.parent
+    repo_root = Path(__file__).resolve().parent.parent
 
     chi_free, chi_atom = load_chi(repo_root)
     y = load_y(repo_root)
@@ -172,7 +172,7 @@ def main() -> int:
         },
         "per_lambda_terms": per_lambda,
     }
-    out = (repo_root / "folio-assistant" / "computations"
+    out = (repo_root / "computations"
            / "option-e-deuteron-param-free-residual.witness.json")
     with out.open("w") as f:
         witness["lean_uniqueness_ref"] = lean_uniqueness_ref("deuteron (²H)")

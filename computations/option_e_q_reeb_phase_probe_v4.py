@@ -117,7 +117,7 @@ def evaluate_variant(name, rows, atom_name, include_chi_factor):
 
 def main() -> int:
     mp.dps = 50
-    repo_root = Path(__file__).resolve().parent.parent.parent
+    repo_root = Path(__file__).resolve().parent.parent
 
     files = {
         "deuteron": "chi-deuteron-h6-at-q0-50dps.witness.json",
@@ -127,7 +127,7 @@ def main() -> int:
 
     atom_rows = {}
     for atom, fn in files.items():
-        with (repo_root / "folio-assistant" / "computations" / fn).open() as f:
+        with (repo_root / "computations" / fn).open() as f:
             atom_rows[atom] = parse_rows(json.load(f))
 
     results = {"variant_A_with_chi": {}, "variant_B_phase_only": {}}
@@ -181,7 +181,7 @@ def main() -> int:
     ]
 
     out = (
-        repo_root / "folio-assistant" / "computations"
+        repo_root / "computations"
         / "option-e-q-reeb-phase-probe-v4.witness.json"
     )
     with out.open("w") as f:

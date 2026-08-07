@@ -531,10 +531,10 @@ def emit_witness(f3_data: dict, f4_data: dict, branch_points: np.ndarray,
 
 
 def main() -> int:
-    repo_root = Path(__file__).resolve().parent.parent.parent
+    repo_root = Path(__file__).resolve().parent.parent
     figures_dir = repo_root / "figures"
     figures_dir.mkdir(exist_ok=True)
-    output_dir = repo_root / "folio-assistant" / "computations"
+    output_dir = repo_root / "computations"
 
     # `time.monotonic()` for WitnessBuilder's `durationMs` computation
     # (WitnessBuilder uses monotonic delta, not wall-clock difference).

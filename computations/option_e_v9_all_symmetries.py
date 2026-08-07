@@ -61,7 +61,7 @@ def transpose(lam):
 
 def load_chi(repo_root, atom_label):
     fn_map = {"T": "t", "3He": "3he"}
-    fn = (repo_root / "folio-assistant" / "computations"
+    fn = (repo_root / "computations"
           / f"atom-chi-rust-{fn_map[atom_label]}.witness.json")
     with fn.open() as f:
         data = json.load(f)["data"]
@@ -77,7 +77,7 @@ def load_chi(repo_root, atom_label):
 
 def load_y(repo_root, atom_label):
     name_map = {"T": "tritium-h9", "3He": "helium-3-h9"}
-    fn = (repo_root / "folio-assistant" / "computations"
+    fn = (repo_root / "computations"
           / f"chi-{name_map[atom_label]}-at-q0-50dps.witness.json")
     with fn.open() as f:
         data = json.load(f)
@@ -92,7 +92,7 @@ def load_y(repo_root, atom_label):
 
 def main() -> int:
     mp.dps = 50
-    repo_root = Path(__file__).resolve().parent.parent.parent
+    repo_root = Path(__file__).resolve().parent.parent
 
     cf_T, ca_T = load_chi(repo_root, "T")
     cf_He3, ca_He3 = load_chi(repo_root, "3He")
@@ -232,7 +232,7 @@ def main() -> int:
             "candidates": {n: {"value": float(v), "err_vs_target_pct": float((v - correction_target) / correction_target * 100)} for n, v in cands},
         },
     }
-    out = (repo_root / "folio-assistant" / "computations"
+    out = (repo_root / "computations"
            / "option-e-v9-all-symmetries.witness.json")
     with out.open("w") as f:
         json.dump(witness, f, indent=2)

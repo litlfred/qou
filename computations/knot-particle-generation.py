@@ -13,10 +13,10 @@ from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Optional
 
-sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "folio-assistant"))
+sys.path.insert(0, str(Path(__file__).resolve().parent))
 import _path_bridge  # noqa: F401, E402
 from codata_constants import M_P_MEV_VALIDATION  # noqa: E402
-from computations.q_parameter import Q, VOL_FIGURE_EIGHT as VOL_4_1_CANONICAL
+from q_parameter import Q, VOL_FIGURE_EIGHT as VOL_4_1_CANONICAL
 
 # ── Substrate parameter (from muon-electron mass ratio) ──────────────
 q = Q

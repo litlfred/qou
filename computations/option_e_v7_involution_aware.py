@@ -76,7 +76,7 @@ def transpose(lam):
 
 def load_chi_free_atom(repo_root, atom_label):
     fn_map = {"D": "d", "T": "t", "3He": "3he"}
-    fn = (repo_root / "folio-assistant" / "computations"
+    fn = (repo_root / "computations"
           / f"atom-chi-rust-{fn_map[atom_label]}.witness.json")
     with fn.open() as f:
         data = json.load(f)["data"]
@@ -94,7 +94,7 @@ def load_chi_free_atom(repo_root, atom_label):
 
 def load_y_lambda(repo_root, atom_label):
     name_map = {"D": "deuteron-h6", "T": "tritium-h9", "3He": "helium-3-h9"}
-    fn = (repo_root / "folio-assistant" / "computations"
+    fn = (repo_root / "computations"
           / f"chi-{name_map[atom_label]}-at-q0-50dps.witness.json")
     with fn.open() as f:
         data = json.load(f)
@@ -190,7 +190,7 @@ def compute_involution_quantities(chi_free, chi_atom, y_lambda):
 
 def main() -> int:
     mp.dps = 50
-    repo_root = Path(__file__).resolve().parent.parent.parent
+    repo_root = Path(__file__).resolve().parent.parent
 
     print(f"=== Scales ===")
     print(f"  m_e   = {float(M_E_MEV):.6f}")
@@ -318,7 +318,7 @@ def main() -> int:
     }
 
     out_path = (
-        repo_root / "folio-assistant" / "computations"
+        repo_root / "computations"
         / "option-e-v7-involution-aware.witness.json"
     )
     with out_path.open("w") as f:
