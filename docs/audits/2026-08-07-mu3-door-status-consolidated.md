@@ -123,7 +123,7 @@ one of two ways —
 | `w_λ < 0` and `Δ²\|χ\|_λ > 0` | a **negative Wedderburn weight** on supermodular geometry — no Fréchet violation at all |
 
 and **the second dominates at A=3**: 7 (T) / 9 (³He) of the submodular pushes are bookkeeping
-sign, not geometry. Conflating the two reports a sign convention as a geometric fact.
+sign, not geometry — though see §4bis, this split is *conditional on the `|χ|` operator*. Conflating the two reports a sign convention as a geometric fact.
 
 ### 4.2 The governing sign is now a proved rule ([#4662])
 
@@ -165,6 +165,36 @@ against a `1e-12` degeneracy guard.
    (`3.6e-4` to `8.4e+1`). It is a *named target*.
 3. **Class membership is not established.** §2 excludes the per-block multiplicatively-damped
    class. Nothing shows the H₉ `|χ|` joint traces lie in it — §3 shows some blocks do not.
+
+## 4bis. Robustness of the operator itself: the `abs()` exposure
+
+The A=3 operator measured in [#4404] and re-measured per-block in [#4657] uses `|χ_λ|`, the
+**absolute value** of the Hecke character. That is a modeling choice, not a derivation — the
+Markov trace is `tr_M = Σ_λ y_λ χ_λ`, with the bare character — and it is not cosmetic: the raw
+`χ_λ` is negative on a substantial fraction of the 30 blocks at `n = 9, q₀`, so `abs()` genuinely
+flips signs. Every `Δ²g` conclusion in §2–§4 was therefore, a priori, at risk of being an
+artifact of that one `abs()`.
+
+Measured directly (`mu3_abs_choice_robustness_probe.py`, identical braid words and identical
+`y_λ`, only the transform on `χ` differing):
+
+| isotope | `Δ²g` with `\|χ\|` | `Δ²g` with raw `χ` | shift | door |
+|---|---|---|---|---|
+| T | +0.422547 | **+0.389988** | 7.71 % | closed both ways |
+| ³He | +0.335746 | **+0.317449** | 5.45 % | closed both ways |
+
+**The verdict is robust.** Supermodular — hence the door closed — under *both* readings, in both
+isotopes; only the magnitude moves. So the arc's headline conclusion does **not** rest on the
+`|χ|` choice.
+
+**The per-block classification is NOT robust.** Because `abs()` flips signs across the spectrum,
+which blocks count as *Fréchet-violating* versus *negative-weight* is specific to the `|χ|`
+reading. In particular the §4.1 finding that the negative-weight mechanism dominates — 7 (T) /
+9 (³He) of the submodular pushes — is **conditional on `|χ|`** and should not be quoted as a
+reading of the bare Markov trace.
+
+Neither result derives which operator is correct. The `|χ|` choice remains underived; this
+section bounds the damage, it does not resolve it.
 
 ## 5. Scope discipline
 
