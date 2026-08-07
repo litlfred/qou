@@ -1,0 +1,131 @@
+{
+  "engine": "snappy",
+  "engineVersion": "snappy 3.3.2",
+  "computedAt": "2026-08-07T16:47:45.731654+00:00",
+  "commitSha": "9d0eb240bfa97088e21b7493ccd9bca64624307d",
+  "computation": "jpsi-boundstate-mass",
+  "scriptFile": "jpsi_boundstate_mass_probe.py",
+  "scriptHash": "598969f4ee5a",
+  "scriptCommitSha": "58d5770487dc286c566c0372b561b11f80893745",
+  "description": "J/ψ = c̄c as a hyperbolic bound-state braid volume. Scale fixed on the proton Borromean mass-knot only. Tests whether a DERIVED c̄c+gluon braid predicts the OBSERVABLE J/ψ (3096.9) / η_c (2983.9); reports entropy and the J/ψ↔η_c single-braid discriminator. Anti-fit (PR #1805).",
+  "consumes": [
+    "conj:complex-mass-constituent-functional",
+    "computations/sm_carrier_vs_mass_knot_map.py"
+  ],
+  "precision": {
+    "mpmath_dps": 70,
+    "snappy_volume_bits_prec": 248,
+    "snappy_chern_simons_bits_prec": 212,
+    "chern_simons_ceiling_note": "SnapPy's chern_simons() takes no bits_prec; the only high-precision route is high_precision() (ManifoldHP), fixed at 212 bits (~63 decimal digits). CS precision therefore does NOT track QOU_COMPUTE_DPS — digits beyond ~63 are not real.",
+    "serialization": "All geometric quantities are mpmath.mpf serialized as decimal strings via _precision.fmt at the canonical output precision. No float64 enters this witness (AGENTS.md precision discipline)."
+  },
+  "results": {
+    "scale_MeV_per_vol": "128.044110767448923202949639670492227443663902439244881611674",
+    "vol_borromean_proton": "7.32772475341775212043682811945907288619319499425337707413198",
+    "vol_4_1_muon": "2.02988321281930725004240510854904057188337861506059958403498",
+    "jpsi_MeV_observed": "3096.90000000000000000000000000000000000000000000000000000000",
+    "etac_MeV_observed": "2983.90000000000000000000000000000000000000000000000000000000",
+    "jpsi_needs_vol": "24.1861963149912142127025137733544247523657378432941444068238",
+    "etac_needs_vol": "23.3036879409416784814760020821829145334315364237157794877204",
+    "proton_family_borromean_pow_k": {
+      "3": {
+        "vol": "7.32772475341775212043682811945907288619319499425337707413198",
+        "mass_MeV": "938.272000000000000000000000000000000000000000000000000000000"
+      },
+      "4": {
+        "vol": "12.3509062091582001747363044384261520141992567041199962806125",
+        "mass_MeV": "1581.46080272382526137504001197981692013185194953172526250212"
+      },
+      "5": {
+        "vol": "17.0857094829828612769009748404836548250383596094306290144362",
+        "mass_MeV": "2187.72447757950996232787117908426321863316185479796289858574"
+      },
+      "6": {
+        "vol": "21.6315986791926589697402486963383730138606009577835325648575",
+        "mass_MeV": "2769.79881735554664981866086877359641410303608413911095124252"
+      },
+      "7": {
+        "vol": "26.0544015072655349676603681235921943115993129893142224279008",
+        "mass_MeV": "3336.11267257589634005619350233739176995672817850728580328729"
+      },
+      "8": {
+        "vol": "30.3942044000537217372818528915914098869416842157990698095589",
+        "mass_MeV": "3891.79887488896219046949139313558772847274687962989030080659"
+      }
+    },
+    "jpsi_between_windings": {
+      "below_k": 6,
+      "above_k": 7,
+      "no_integer_hit": true
+    },
+    "entropy": {
+      "band_vol": [
+        "22.4036879409416784814760020821829145334315364237157794877204",
+        "24.5861963149912142127025137733544247523657378432941444068238"
+      ],
+      "band_mass_MeV": [
+        "2868.66030030929596911734532429655699530070248780467960654949",
+        "3148.11764430697956928117985586819689097746556097569795264467"
+      ],
+      "n_braids_enumerated": 196,
+      "n_hits_in_band": 8,
+      "fraction_in_band": "0.0408163265306122448979591836734693877551020408163265306122449"
+    },
+    "best_braid_jpsi": {
+      "strands": 4,
+      "base": [
+        1,
+        -2,
+        3
+      ],
+      "power": 4,
+      "mass_MeV": "3084.86228699345853364485291089873035953523683182264719137223",
+      "err_pct": "-0.388702024816476681686431240959334833697025030751810152984362",
+      "chern_simons": "-0.0833333333333333333333333333333333333333333333333333333000000",
+      "chern_simons_is_zero_to_ceiling": false
+    },
+    "best_braid_etac": {
+      "strands": 5,
+      "base": [
+        1,
+        -2,
+        3,
+        -4
+      ],
+      "power": 3,
+      "mass_MeV": "2964.44266725019388227113716997203768248712553701908565702826",
+      "err_pct": "-0.652077239512253015478495593952958125703758939003128220508206",
+      "chern_simons": "0.0",
+      "chern_simons_is_zero_to_ceiling": true,
+      "chern_simons_zero_tolerance": "1.00000000000000000000000000000000000000000000000000000000000e-57",
+      "chern_simons_zero_note": "Exactly 0 — the raw SnapPy value is triangulation noise at ~1e-64 and varies per run; the braid is amphichiral."
+    },
+    "same_braid_for_both": false
+  },
+  "assertions": [
+    {
+      "name": "jpsi_not_in_proton_borromean_family",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "J/ψ (3097) falls strictly between winding k=6 (2770. MeV) and k=7 (3336. MeV): the proton's own Borromean family contains no integer-winding J/ψ."
+    },
+    {
+      "name": "jpsi_etac_best_fit_by_different_braids",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "The nearly-degenerate c̄c pair (3.7% split) is best-fit by different-topology braids — a per-state fitting signature, not a single derived c̄c bound-state object."
+    },
+    {
+      "name": "jpsi_scale_in_range_not_volume_excluded",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "Unlike the neutrino (scope-(b) volume-excluded), the J/ψ mass scale is reachable: hyperbolic braids with Vol≈24 give ≈3097 MeV. The mechanism is not excluded; the braid is undefined."
+    }
+  ],
+  "allPassed": true,
+  "verdict": "SHARPENED NEGATIVE. J/ψ is IN-RANGE for the hyperbolic bound-state mass mechanism (positive: distinguishes it from the neutrino's scope-(b) exclusion), but NO parameter-free c̄c braid is derived. Evidence it is a fit, not a derivation: (i) the proton's own (σ₁σ₂⁻¹)^k family misses J/ψ at every integer k (k=6→2770, k=7→3336); (ii) the volume spectrum near the target is dense (4.08% of simple braids — 8 of 196 — land in the 279.5-MeV band); (iii) J/ψ and η_c — the same c̄c system split by only 3.7% hyperfine — are best-fit by DIFFERENT braid topologies, the classic per-state-fit signature. The precise open wall: 'thread c̄c through the gluon T(2,9) color tube' is topologically under-defined (many inequivalent satellite/cable/threading operations → no unique volume). m_c/J/ψ stays OPEN; the volume-density mechanism CLASS is confirmed in-range but the braid remains underived.",
+  "scope": "(a) scope-limited negative: no derived braid found; mechanism in-range."
+}

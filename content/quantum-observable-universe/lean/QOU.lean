@@ -25,6 +25,11 @@ import QOU.MathlibExt.YekutieliIntegration
 import QOU.MathlibExt.SDP
 import QOU.MathlibExt.SDPEmptyConstraints
 import QOU.MathlibExt.SDPRealUniqueness
+-- Weierstrass primary-factor estimate ‖1 - E_p(z)‖ ≤ ‖z‖^{p+1}: the Mathlib-gap
+-- infrastructure that closes PI-2 of QOU.Mathlib.HadamardFactorization.
+-- Sorry-free, so it is wired here for CI type-checking (unlike
+-- HadamardFactorization itself, which still carries PI-3 / the full theorem).
+import QOU.Mathlib.WeierstrassFactorEstimate
 -- Per Copilot review: `QOU.MathlibExt.SDPRankEquality` is kept
 -- OUT of the top-level umbrella while it still has `sorry`
 -- placeholders (rank-nullity Mathlib API + Goldman-Tucker
@@ -49,6 +54,7 @@ import QOU.MathlibExt.OctonionSU3RankSix
 import QOU.MathlibExt.OctonionSU3Stabilizer
 import QOU.MathlibExt.OctonionSU3BracketClosure
 import QOU.MathlibExt.OctonionColourActionBaseModule
+import QOU.MathlibExt.OctonionComplexStructure
 import QOU.StandardModel.ColourStabilizerAction
 -- q-difference operator calculus (missing Mathlib infra for the q-difference D-module
 -- program): q-Leibniz product rule (clean), monomial q-chain rule (q→q^m), and the
@@ -79,6 +85,7 @@ import QOU.Knot.FigureEightVolumeLiterature
 import QOU.Knot.NeumannZagierParity
 import QOU.Knot.PerNeutronLadder
 import QOU.Knot.WhiteheadVolumeConjecture
+import QOU.Knot.WhiteheadSaddleClausen
 import QOU.KnotTheory
 import QOU.KnotTheory.Brunnian
 import QOU.KnotRegistry
@@ -231,6 +238,7 @@ import QOU.Information.MagnitudeAxisBoundary
 import QOU.Information.CountingModuliGrade
 import QOU.Information.PolyGrowthAlgebra
 import QOU.Information.MagnitudeTraceCommutator
+import QOU.Information.CocenterTraceFactor
 import QOU.Information.SkeinGradeConnective
 import QOU.Information.SkeinShadowConjInvariance
 import QOU.Information.PNeqNpWallUnification
@@ -593,6 +601,10 @@ import QOU.MassTheory.BrunnianDeficitLeadingOrderDerived
 import QOU.MassTheory.A4InterfaceMagnitude
 import QOU.MassTheory.BindingSaturationCapA4
 import QOU.MassTheory.BraneGeometricResummation
+-- front-1: the radial handle C_knot = Vol(K)·ρ(K)/ℏ_q² with ρ = tr_M is refuted
+-- under every volume reading — Vol ≡ 0 for the literal mass-braid H₉ closures, and
+-- a 2.37× anti-correlated residual for the corpus-canonical binding links.
+import QOU.MassTheory.VolTHe3RadialHandle
 import QOU.BraidKnot.ColoredJonesRecurrence
 import QOU.BraidKnot.KnotOperatorRecurrence
 -- Resurgent-bridge tranche (Δ_λ sign/magnitude → DT/3d-index unification):

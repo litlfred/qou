@@ -1,0 +1,57 @@
+{
+  "schema": "witness/v1",
+  "description": "The marked-pair data supplied by the pinch does not select the Klein quartic -- it excludes it. S_4 has no orbit of size <= 2 on P^2, so no smooth plane quartic carries an S_4-stable point pair. Bean qou-8p1b (parent qou-8pl1).",
+  "computation": {
+    "script": "computations/s4_marked_pair_obstruction.py",
+    "arithmetic": "exact integer matrices + Fraction linear algebra; no floating point"
+  },
+  "data": {
+    "groups": {
+      "S4_order": 24,
+      "S4_element_order_profile": {
+        "1": 1,
+        "2": 9,
+        "3": 8,
+        "4": 6
+      },
+      "A4_order": 12,
+      "A4_is_derived_subgroup": true,
+      "A4_unique_index_2": true
+    },
+    "invariant": {
+      "S4_commutant_dim": 1,
+      "S4_character_norm": "1",
+      "S4_absolutely_irreducible": true,
+      "A4_commutant_dim": 1,
+      "A4_character_norm": "1",
+      "A4_absolutely_irreducible": true
+    },
+    "conclusion": {
+      "no_S4_orbit_of_size_le_2_on_P2": true,
+      "argument": "an S_4-stable pair {p,q} gives S_4 -> S_2; the kernel has index 1 or 2, so it is S_4 or the unique index-2 subgroup A_4; either way the line through p is an invariant 1-dimensional subspace, contradicting absolute irreducibility",
+      "consequence": "no smooth plane quartic -- no pencil member, and not the Klein quartic -- carries an S_4-stable pair of points"
+    },
+    "premises_under_which_klein_is_excluded": {
+      "H1": "one S_4-invariant non-separating cycle: exactly one node, giving an S_4-stable pair of preimages (the chapter's own g_arith=4 -> g_geom=3)",
+      "H2": "S_4 acts faithfully on the normalization (the chapter's own 'S_4 survives')",
+      "H3": "the normalization is non-hyperelliptic, so Aut acts through PGL_3 -- true of the Klein quartic"
+    },
+    "scope": "scope-(b) STRUCTURAL EXCLUSION, licensed by a proved invariant (absolute irreducibility of the 3-dim rep of S_4 and of its restriction to A_4, each verified two independent ways: commutant dimension and character norm). Not a scope-(a) numerical negative.",
+    "not_excluded": [
+      "hyperelliptic genus-3 targets (canonical map 2:1 onto a conic; e.g. y^2 = x^8 + 14x^4 + 1 with |Aut| = 48 containing S_4). Klein is not hyperelliptic, so this does not rescue it.",
+      "pinches with several nodes, or of a separating cycle (violates H1)",
+      "non-faithful actions on the normalization (violates H2, but then 'S_4 survives' is false as stated)",
+      "anything about the Bring surface itself -- this constrains the target, not the source"
+    ],
+    "all_checks_pass": true,
+    "checks": {
+      "S4_order_24": true,
+      "S4_order_profile": true,
+      "A4_order_12": true,
+      "A4_contains_all_squares": true,
+      "S4_absolutely_irreducible": true,
+      "A4_absolutely_irreducible": true,
+      "no_S4_orbit_of_size_le_2": true
+    }
+  }
+}

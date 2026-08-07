@@ -1,0 +1,112 @@
+{
+  "schema": "witness/v1",
+  "description": "The Ocneanu parameter N is the quantum dimension of the fibre, not a free knob: sum_lambda f^lambda s_lambda(1,q,..,q^{N-1}) = [N]_q^n, the categorical trace of the identity on V^(tensor n). Resolves T3f's 'Unknown' for the mass channel. Beans qou-w5fw, qou-8p1x.",
+  "computation": {
+    "script": "computations/ocneanu_parameter_is_fibre_qdim.py",
+    "arithmetic": "exact Fraction; hook-length + q-hook-content; no floats"
+  },
+  "data": {
+    "identity": "sum_{lambda |- n} f^lambda * s_lambda(1,q,...,q^{N-1}) = [N]_q^n",
+    "provenance": "dual Cauchy identity p_1^n = sum_lambda f^lambda s_lambda, evaluated at the principal specialisation where p_1 = [N]_q",
+    "verified_for": {
+      "n": "1..5",
+      "N": "2..4",
+      "q": [
+        "2",
+        "3",
+        "5/2",
+        "11/10",
+        "7/5"
+      ]
+    },
+    "samples": [
+      {
+        "n": 1,
+        "N": 2,
+        "q": "2",
+        "lhs": "3",
+        "rhs": "3",
+        "ok": true
+      },
+      {
+        "n": 1,
+        "N": 3,
+        "q": "2",
+        "lhs": "7",
+        "rhs": "7",
+        "ok": true
+      },
+      {
+        "n": 1,
+        "N": 4,
+        "q": "2",
+        "lhs": "15",
+        "rhs": "15",
+        "ok": true
+      },
+      {
+        "n": 2,
+        "N": 2,
+        "q": "2",
+        "lhs": "9",
+        "rhs": "9",
+        "ok": true
+      },
+      {
+        "n": 2,
+        "N": 3,
+        "q": "2",
+        "lhs": "49",
+        "rhs": "49",
+        "ok": true
+      },
+      {
+        "n": 2,
+        "N": 4,
+        "q": "2",
+        "lhs": "225",
+        "rhs": "225",
+        "ok": true
+      },
+      {
+        "n": 3,
+        "N": 2,
+        "q": "2",
+        "lhs": "27",
+        "rhs": "27",
+        "ok": true
+      },
+      {
+        "n": 3,
+        "N": 3,
+        "q": "2",
+        "lhs": "343",
+        "rhs": "343",
+        "ok": true
+      },
+      {
+        "n": 3,
+        "N": 4,
+        "q": "2",
+        "lhs": "3375",
+        "rhs": "3375",
+        "ok": true
+      }
+    ],
+    "reading": "[N]_q is the quantum dimension of an N-dimensional fibre, so the total Ocneanu weight at parameter N is the categorical trace of the identity on V^(tensor n) with dim_q V = [N]_q; choosing N is choosing V",
+    "corpus_basis": "feynman-eigenbasis.md defines the mass as the categorical trace summed over irreducible summands of V^(tensor n), and quotes the skein relation at a = q (i.e. a = q^{N-1} with N = 2)",
+    "verdict": "the mass channel is N = 2 because the Descartes condition fixes dim V = 2 and the categorical trace's parameter is slaved to the fibre's quantum dimension; T3f's 'Unknown' is resolved for the mass channel",
+    "sharpens_flavour": "an N = 3 flavour channel cannot be the same trace re-tuned (lock-in probe) and by this identity must be the categorical trace on a genuinely 3-dimensional object -- the same missing 3-dim fibre qou-8p1x identifies. The Ocneanu route restates the need for a 3-dim fibre rather than avoiding it",
+    "not_claimed": [
+      "that the Descartes condition is itself derived -- it is an input",
+      "that no other trace could serve the mass pipeline; the claim is conditional on the corpus's own definition of mass as a categorical trace on V^(tensor n)",
+      "anything about colour SU(3)"
+    ],
+    "all_checks_pass": true,
+    "checks": {
+      "C2_sum_f_squared_eq_n_factorial": true,
+      "C1_total_weight_eq_qdim_power": true,
+      "C3_q1_is_classical_schur_weyl": true
+    }
+  }
+}

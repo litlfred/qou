@@ -49,25 +49,39 @@ structure Partition (n : ℕ) where
   sum_eq : parts.sum = n
   sorted : parts.Pairwise (· ≥ ·)
 
+/-- **Extensionality.** `parts` is the only data field — `pos`, `sum_eq` and `sorted`
+are `Prop`s — so two partitions of `n` agree as soon as their part lists do.
+
+`QOU.BraidKnot.PartitionNatBridge` has always called this as `Partition.ext'`, but
+no such declaration existed anywhere in the file's history: `Partition` carries no
+`@[ext]` attribute, so nothing generated one. That call site could never have
+elaborated; it went unnoticed only because this module already failed to compile
+(the LWC-2 namespace sweep, repaired in the preceding commit), so nothing
+downstream was ever reached. Declared here under the idiomatic `@[ext]` name, with
+the call site updated to match. -/
+@[ext] theorem Partition.ext {n : ℕ} {Λ Λ' : Partition n}
+    (h : Λ.parts = Λ'.parts) : Λ = Λ' := by
+  cases Λ; cases Λ'; cases h; rfl
+
 /-- The empty partition of 0. -/
-def empty : Partition 0 where
+def Partition.empty : Partition 0 where
   parts := []
   pos := by simp
   sum_eq := by simp
   sorted := List.Pairwise.nil
 
 /-- Number of parts (length of the partition). -/
-def length {n : ℕ} (Λ : Partition n) : ℕ := Λ.parts.length
+def Partition.length {n : ℕ} (Λ : Partition n) : ℕ := Λ.parts.length
 
 /-- `n(λ) = Σ_i i × λ_i` — the weighted sum of parts (0-indexed); equivalently the
 sum of row indices of all cells in the Young diagram. -/
-def nStat {n : ℕ} (Λ : Partition n) : ℕ :=
+def Partition.nStat {n : ℕ} (Λ : Partition n) : ℕ :=
   -- `List.zipIdx` yields `(element, index)` pairs (the successor of the removed
   -- `List.enum`, which yielded `(index, element)`), hence the `⟨p, i⟩` order.
   (Λ.parts.zipIdx.map fun ⟨p, i⟩ => i * p).sum
 
 /-- Conjugate partition `λ'` — the `j`-th part counts cells in column `j`. -/
-def conjugate {n : ℕ} (Λ : Partition n) : List ℕ :=
+def Partition.conjugate {n : ℕ} (Λ : Partition n) : List ℕ :=
   match Λ.parts with
   | [] => []
   | (p :: _) => List.range p |>.map fun j => (Λ.parts.filter (· > j)).length
@@ -91,21 +105,21 @@ def sgnLongest (k : ℕ) : ℤ := (-1) ^ choose2 k
 -- ═══════════════════════════════════════════════════════════════
 
 /-- Arm length at cell `(i,j)`: number of cells to the right in row `i`. -/
-def armLength {n : ℕ} (Λ : Partition n) (i j : ℕ) : ℕ :=
+def Partition.armLength {n : ℕ} (Λ : Partition n) (i j : ℕ) : ℕ :=
   match Λ.parts[i]? with
   | some p => if j < p then p - j - 1 else 0
   | none => 0
 
 /-- Leg length at cell `(i,j)`: number of cells below in column `j`. -/
-def legLength {n : ℕ} (Λ : Partition n) (i j : ℕ) : ℕ :=
+def Partition.legLength {n : ℕ} (Λ : Partition n) (i j : ℕ) : ℕ :=
   (Λ.parts.drop (i + 1)).filter (· > j) |>.length
 
 /-- Hook length at cell `(i,j)` = arm + leg + 1. -/
-def hookLength {n : ℕ} (Λ : Partition n) (i j : ℕ) : ℕ :=
+def Partition.hookLength {n : ℕ} (Λ : Partition n) (i j : ℕ) : ℕ :=
   Λ.armLength i j + Λ.legLength i j + 1
 
 /-- Product of all hook lengths in a partition. -/
-def hookProduct {n : ℕ} (Λ : Partition n) : ℕ :=
+def Partition.hookProduct {n : ℕ} (Λ : Partition n) : ℕ :=
   -- `zipIdx` pairs are `(element, index)`; `p` = part, `i` = row index.
   Λ.parts.zipIdx.foldl (fun acc ⟨p, i⟩ =>
     (List.range p).foldl (fun a j => a * Λ.hookLength i j) acc) 1
@@ -113,7 +127,7 @@ def hookProduct {n : ℕ} (Λ : Partition n) : ℕ :=
 /-- `f^λ = n! / (hook product)` — the number of standard Young tableaux, i.e. the
 dimension of the irreducible `S_n`-representation `V_λ` (and its multiplicity in
 the regular representation). -/
-def dimIrrep {n : ℕ} (Λ : Partition n) : ℕ :=
+def Partition.dimIrrep {n : ℕ} (Λ : Partition n) : ℕ :=
   Nat.factorial n / Λ.hookProduct
 
 -- ═══════════════════════════════════════════════════════════════

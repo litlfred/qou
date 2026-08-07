@@ -59,6 +59,7 @@ import Mathlib.Analysis.SpecialFunctions.Pow.Real
 import Mathlib.Topology.Algebra.InfiniteSum.Basic
 import Mathlib.Algebra.Polynomial.Eval.Defs
 import Mathlib.Algebra.Polynomial.Degree.Definitions
+import QOU.Mathlib.WeierstrassFactorEstimate
 
 namespace QOU.Mathlib.HadamardFactorization
 
@@ -125,14 +126,25 @@ def IsGenus (a : ℕ → ℂ) (p : ℕ) : Prop :=
 
 /-- **Weierstrass estimate** (convergence-critical, PI-2). For `‖z‖ ≤ 1`,
     `‖1 - Eₚ(z)‖ ≤ ‖z‖^{p+1}`. This is the bound that makes the canonical
-    product converge; it follows from the nonnegative-coefficient power series
-    `Eₚ(z) = 1 - ∑_{k>p} a_k z^k` with `a_k ≥ 0` and `∑ a_k = 1`.
-    Not elementary; deferred. -/
+    product converge.
+
+    PROVED (2026-08-07), sorry-free, in `QOU.Mathlib.WeierstrassFactorEstimate`.
+
+    Not by the textbook route. Ahlfors/Conway argue from the nonneg-coefficient
+    power series `Eₚ(z) = 1 - ∑_{k>p} a_k z^k`, which needs real power-series
+    machinery. The proof used instead runs through the derivative identity
+    `Eₚ'(z) = -z^p·exp(Sₚ(z))` — the telescoping `(1-z)∑_{k<p} z^k = 1 - z^p`
+    kills the `-1` — giving `1 - Eₚ(z) = ∫₀¹ z^{p+1} t^p exp(Sₚ(tz)) dt`. The
+    constant is exactly `1` because that integral's real total mass is
+    `1 - Eₚ(1) = 1` on the nose; the crude bound `exp(H_p)/(p+1)` exceeds `1`
+    for every `p ≥ 1` and would not suffice. -/
 theorem norm_one_sub_weierstrassFactor_le (p : ℕ) {z : ℂ} (hz : ‖z‖ ≤ 1) :
     ‖1 - weierstrassFactor p z‖ ≤ ‖z‖ ^ (p + 1) := by
   -- Ref: [manuscript] Ahlfors §5.3, Lemma; Conway XI.§2, Lemma 2.6.
-  -- SORRY: needs Weierstrass factor estimate |1 - E_p(z)| <= |z|^(p+1)
-  sorry
+  have hdef : weierstrassFactor p z
+      = QOU.Mathlib.WeierstrassFactorEstimate.weierstrassFactor p z := rfl
+  rw [hdef]
+  exact QOU.Mathlib.WeierstrassFactorEstimate.norm_one_sub_weierstrassFactor_le p hz
 
 /-- **Canonical product convergence** (PI-3). If `∑ₙ ‖aₙ‖^{-(p+1)} < ∞` (i.e.
     genus `≤ p`), the canonical product `∏ₙ Eₚ(z/aₙ)` converges (is multipliable)

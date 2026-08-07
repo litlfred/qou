@@ -6,5 +6,5 @@
 | $\mathfrak{K}_e$ | trefoil | $3_1$ | $e^-$ | $e^+$ |
 | $\mathfrak{K}_\mu$ | cinquefoil | $5_1$ | $\mu^-$ | $\mu^+$ |
 | $\mathfrak{K}_\tau$ | septafoil | $7_1$ | $\tau^-$ | $\tau^+$ |
-| $\mathfrak{K}_c$ | $(2,7)$-torus knot | $7_1$ | charm $c$ | $c^{\sigma}$ |
+| $\mathfrak{K}_c$ | $(2,5)$-torus knot | $5_1$ | charm $c$ | $c^{\sigma}$ |
 | $\mathfrak{K}_H$ | figure-eight | $4_1$ | Higgs $H$ | (self) |
