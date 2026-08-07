@@ -1,11 +1,11 @@
 ---
 # qou-yfsp
 title: circ-anchor-inverted-roundtrip is ~83% false positives — docstring matching + no direction check
-status: todo
+status: completed
 type: bug
 priority: high
 created_at: 2026-08-07T20:54:55Z
-updated_at: 2026-08-07T20:54:55Z
+updated_at: 2026-08-07T21:54:56Z
 ---
 
 MEASURED FROM A FULL DRAIN. Adjudicating all 11 outstanding candidates in the
@@ -53,3 +53,51 @@ whose filename ends `_negative`). Only always-PASSES is the hazard.
 
 ALSO WORTH SCOPING: 2 of the 11 candidates are in computations/_deprecated/.
 Consider excluding that directory, or reporting it in a separate bucket.
+
+
+---
+
+## 2026-08-07 RESOLVED — and the rate is 6/6, not 5/6; the criterion is not mechanizable as specified
+
+**My own ledger verdict on VOL_41 was wrong and is corrected.** Reading the
+dataflow rather than the detector's evidence string:
+
+    VOL_41 -> hbar_q = sqrt(VOL_41/MU_E) -> q0 = 1/(1 - hbar_q)
+
+That is FORWARD derivation from a tagged observational input ([OBS-1] SnapPy) —
+it is the calibration chain, exactly how q0 is meant to be pinned. Nothing
+recovers VOL_41 from q0; the quoted "VERIFY" lines concern Hecke coefficients.
+Not a round-trip. So **6 of 6 false positives, 100%** — and I was misled by the
+detector's own evidence string, which asserts "is inverted to define" for what
+the code shows as plain forward use. That is the defect biting its own reviewer.
+
+### The deeper finding: it cannot be fixed as specified
+
+Compare the two cases:
+  - `VOL_41 -> q0`      forward use of a calibration input — LEGITIMATE
+  - `A_omega -> theta`  forward use of a literature import — CIRCULAR
+
+Syntactically identical. The difference is whether the derived quantity is later
+presented as EVIDENCE FOR the input — a semantic judgement about intent, not a
+dataflow property. No amount of regex narrowing separates them.
+
+### What was actually done
+
+1. **Confirmation language now scanned from `code`, not `raw`** — docstrings and
+   comments no longer count. (Honest note: this did NOT reduce the count; the
+   flagged files have confirmation words in code as well.)
+2. **Evidence text no longer asserts what the script cannot know.** "is inverted
+   to define" -> "is USED TO DEFINE", plus an explicit CANDIDATE ONLY note
+   stating that forward dataflow is legitimate for a calibration input and that
+   an agent must adjudicate.
+3. **Severity downgraded critical -> advisory**, with the measured 6/6 recorded
+   in the source comment.
+
+### Net effect
+
+The `critical` bucket now holds only `circ-vacuous-check` on hardcoded **True**
+(5 findings) — the one criterion that is genuinely mechanical and whose hazard
+(a check that always passes) is real. Everything semantic is advisory. A
+reviewer who reads `critical` can now trust it, which is the whole point: a
+criterion reported at critical with a 100% false-positive rate trains reviewers
+to skim, and skimming is exactly how the T4 circularity would slip through.

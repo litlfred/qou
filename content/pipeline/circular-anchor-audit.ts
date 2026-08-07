@@ -238,8 +238,12 @@ function detect(file: string, src: string): Finding[] {
       }
     }
     if (!derived) continue;
-    // confirmation language anywhere in the file referencing C or the derived var
-    const confirmLine = raw.findIndex(
+    // Confirmation language must come from CODE, not from a docstring or
+    // comment. Measured 2026-08-07 (qou-yfsp): scanning `raw` matched prose —
+    // an mpmath `DPS` knob was "confirmed" by a formula in the module
+    // docstring, a `Q0` by the phrase "the three confirmed atoms". `code` is
+    // index-aligned with `raw`, so the quote below still resolves.
+    const confirmLine = code.findIndex(
       (l) =>
         CONFIRM_WORDS.test(l) &&
         (new RegExp(`\\b${c}\\b`).test(l) ||
@@ -253,11 +257,21 @@ function detect(file: string, src: string): Finding[] {
       line: cline,
       symbol: c,
       evidence:
-        `constant \`${c}\` (line ${cline}) is inverted to define \`${derived.name}\` ` +
-        `(line ${derived.line}); the file then reports a confirmation at line ` +
-        `${confirmLine + 1}: "${raw[confirmLine].trim().slice(0, 110)}". ` +
-        `Recovering \`${c}\` from \`${derived.name}\` is a round-trip, not evidence`,
-      severity: "critical",
+        `constant \`${c}\` (line ${cline}) is USED TO DEFINE \`${derived.name}\` ` +
+        `(line ${derived.line}); the file also reports confirmation language at ` +
+        `line ${confirmLine + 1}: "${raw[confirmLine].trim().slice(0, 110)}". ` +
+        `CANDIDATE ONLY — this is forward dataflow, which is legitimate when ` +
+        `\`${c}\` is a tagged calibration input (VOL_41 -> q0 is exactly how q0 ` +
+        `is meant to be pinned). It is circular only if \`${derived.name}\` is then ` +
+        `presented as EVIDENCE FOR \`${c}\`, which is a semantic judgement this ` +
+        `script cannot make. An agent must adjudicate.`,
+      // Downgraded from `critical` 2026-08-07 (qou-yfsp). Measured 6 of 6 false
+      // positives on the first full drain: the script cannot distinguish a
+      // legitimate forward calibration from a circular round-trip, because the
+      // difference is whether the derived value is later offered as evidence
+      // for the input — semantics, not dataflow. Reporting it as `critical`
+      // trained reviewers to skim, which is worse than not reporting it.
+      severity: "advisory",
     });
   }
 
