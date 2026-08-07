@@ -208,3 +208,49 @@ for building `Li₂`. Do not spend search effort here.
 Route 5 of `qou-0yqu` took this bean **off the critical path** for the 5₂ sum
 rule. It is worth doing for the general saddle machinery and for upstreaming,
 not because the sum rule is waiting on it.
+
+## 2026-08-07 (b) — steps 1–2 LANDED; step 3 attempted and backed out
+
+**Landed, sorry-free** (`ComplexDilogarithm.lean`):
+
+* step 1 — `cLiTwoCoeff`, `cLiTwoCoeff_summable`, `cLiTwo_eq_tsum_coeff`
+  (reindex to Mathlib's `∑ cₙzⁿ` convention without redefining `cLiTwo`);
+* step 2 — `cLiTwoCoeff_norm_le_one`, `cLiTwo_radius_ge_one`. Note the shortcut:
+  `le_radius_of_bound` at `r = 1` needs only `‖cₙ‖ ≤ 1`, so **no ratio test** —
+  four lines instead of a filter argument. Ignore the
+  `ofScalars_radius_eq_inv_of_tendsto` route suggested in the earlier entry.
+
+New imports required: `Mathlib.Analysis.Analytic.OfScalars` **and**
+`Mathlib.Analysis.Analytic.Basic` (the former does not pull in the latter).
+
+**Step 3 attempted, reverted — two concrete blockers, both API-shape, neither
+mathematical:**
+
+1. **`HasFPowerSeriesOnBall.analyticOnNhd` does not exist** in this Mathlib.
+   `HasFPowerSeriesOnBall.analyticAt` *does* (`Analytic/Basic.lean:135`), so
+   `AnalyticAt ℂ cLiTwo 0` is reachable immediately; `AnalyticOnNhd` over the
+   whole ball needs a different route — look in `Analytic/Within.lean` or
+   `Constructions.lean`, or go via `AnalyticOnNhd` of the series sum.
+2. **Extracting `‖z‖ < 1` from `z ∈ EMetric.ball 0 1`** blew the recursion
+   limit with `simpa [edist_eq_enorm_sub, ← ofReal_norm_eq_enorm]`. Needs the
+   right `enorm`/`ENNReal` coercion lemma; do not guess — grep for
+   `mem_emetric_ball_zero_iff` / `edist_zero_right` first.
+
+The skeleton that *did* elaborate:
+
+```lean
+theorem cLiTwo_hasFPowerSeriesOnBall :
+    HasFPowerSeriesOnBall cLiTwo (FormalMultilinearSeries.ofScalars ℂ cLiTwoCoeff) 0 1 := by
+  have hrad : 0 < (FormalMultilinearSeries.ofScalars ℂ cLiTwoCoeff).radius :=
+    lt_of_lt_of_le (by norm_num) cLiTwo_radius_ge_one
+  refine (((FormalMultilinearSeries.ofScalars ℂ cLiTwoCoeff).hasFPowerSeriesOnBall
+    hrad).mono (by norm_num) cLiTwo_radius_ge_one).congr ?_
+  intro z hz
+  ...   -- blocker 2 here; then `rw [hsum, ← cLiTwo_eq_tsum_coeff hz']`
+```
+
+`FormalMultilinearSeries.hasFPowerSeriesOnBall (p) (0 < p.radius)`,
+`.mono (0 < r') (r' ≤ r)` and `.congr (EqOn f g ball)` are all confirmed
+present with those signatures — the structure is right, only the two coercion
+steps are missing. Backed out rather than left broken; the file on `main` is
+green at steps 1–2.
