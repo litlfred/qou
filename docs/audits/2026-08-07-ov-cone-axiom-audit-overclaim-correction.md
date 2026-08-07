@@ -28,15 +28,32 @@ correct**, and my discharge of it did not change that. It moved the dependency, 
 
 ## Why file-level counting was not enough, and why it was still the tell
 
-The import cone of `OVTopAssembly` contains 23 QOU modules, **16 of which contain `sorry`** (377
-occurrences; largest: `SpechtStandardBasisCore` 107, `SpechtDominanceCore` 50, `JucysMurphy` 42,
-`SpechtTriangularCore` 35, `IdentityIContentDecomposition` 33, `OVTopAssembly` itself 28,
-`RegularRepBlockTrace` 1 — the last being the module `sum_numSYT_sq_eq_factorial` specialises).
+**Two hand-rolled `grep sorry` counts of this cone gave two different answers (377/16, then 7/5), so
+neither is used here.** The first matched the phrase "sorry-free" in docstrings, inflating figures
+~50x and inventing a `sorry` in `RegularRepBlockTrace` that does not exist. The table below is
+instead the **compiler's own** `declaration uses 'sorry'` output — the only authoritative screen.
 
-File-level counts are not decisive on their own (a file may carry sorries in declarations a given
-result never touches), which is why the axiom check was needed. But with `RegularRepBlockTrace`
-carrying a `sorry` on the very lemma being specialised, the count was a strong signal that should
-have prompted the axiom check **before** the merges, not after.
+| declaration | module:line | what it is |
+|---|---|---|
+| `sn_isotypic_specht_split` | `SnWedderburnPartitionBridge`:234 | **the Wedderburn split** — what `OVTopAssembly` actually consumes |
+| `numSYT_mul_hookProduct` | `StandardYoungTableau`:149 | the hook-length formula (the corpus' named "brick-1" target) |
+| `specht_finrank_eq_numSYT` | `Specht`:309 | `dim S^μ = #SYT` (Sagan 2.5.2; needs the standard-polytabloid basis) |
+| `specht_isSimple` | `Specht`:320 | Specht modules are irreducible |
+| `spechtIso_imp_dom_both` | `SpechtClassification`:449 | iso ⇒ mutual dominance |
+| `specht_exhausts_irreducibles` | `SpechtClassification`:485 | Specht modules exhaust the irreducibles |
+
+**6 confirmed sorry-carrying declarations.** `JucysMurphy` could not be measured — it needs
+`QOU.BraidKnot.SytAdjacentSwap`'s olean built first; a regex suggested 2 there
+(`rep_mem_spechtSubmodule`, `seminormalVector_base_exists`), unconfirmed. `RegularRepBlockTrace` and
+`OVTopAssembly` carry **none**. `Specht.polytabloid_mem_specht`, which a regex flagged, is
+**complete** — the compiler does not warn on it.
+
+**Honest read of difficulty.** This is neither the 377-sorry swamp of the first count nor "a handful
+of easy lemmas" of the second: it is the standard Specht-module development — basis, simplicity,
+classification, Wedderburn split. Textbook-known, genuinely multi-session in Lean. The one bounded,
+startable item is `JucysMurphy.rep_mem_spechtSubmodule` if it is real (Sₙ-stability of the Specht
+submodule: `σ·polytabloid t = polytabloid (σ·t)`, so `Submodule.span_le` on generators);
+`seminormalVector_base_exists` has sibling intent recorded (#3799 — reuse Hoefsmit, don't duplicate).
 
 ## What survives
 
@@ -61,7 +78,11 @@ What does **not** survive: `RSKBurnsideHolds` as "discharged", and the *exact* `
    should be renamed — "unconditional" is true only of its *hypothesis list*, not its proof term.
 2. **Do not cite** either as settled. In particular `RSKBurnsideTarget`'s "not yet a theorem"
    docstring should stay as-is.
-3. **The real gap** is upstream: `RegularRepBlockTrace`'s sorry (and the Specht-core cone). Closing
-   the RSK identity means closing those, not reindexing around them.
-4. **Process fix:** run `#print axioms` on any keystone before claiming a discharge. File-level
-   `grep sorry` is a screen, not a verdict; the proof term is the verdict.
+3. **The real gap** is upstream and is enumerated above (6 confirmed + `JucysMurphy` pending).
+   Closing the RSK identity means closing those, not reindexing around them. Do **not** triage from
+   either retracted grep count (377/16 or 7/5).
+4. **Process fix:** run `#print axioms` on any keystone before claiming a discharge
+   (`scripts/lean-axiom-guard.py`). File-level `grep sorry` is a screen, not a verdict; the proof
+   term is the verdict. And do not screen with hand-rolled `grep sorry` at all — two attempts here
+   disagreed with each other and both disagreed with the compiler. Use `lean`'s own
+   `declaration uses 'sorry'` warnings.
