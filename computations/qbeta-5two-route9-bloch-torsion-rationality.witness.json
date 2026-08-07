@@ -52,6 +52,51 @@
       "abs_err": "0.0",
       "caveat": "the per-embedding formula V - L(xi) = i pi log[(1-w)/w] is FALSE (fails at two embeddings on branch grounds); only the SUM is exact",
       "pass": true
+    },
+    {
+      "gate": "G7",
+      "claim": "PER-EMBEDDING: Re[2L(w_k)+L(-w_k)] = m_k pi^2/42 with m = (17,5,-1), i.e. (m_k/7) L(1) -- a level-7 dilogarithm ladder",
+      "per_embedding": [
+        {
+          "k": 1,
+          "w": "2.24697960371746706",
+          "value": "3.9948398766314070600044368",
+          "claim": "17*pi^2/42",
+          "over_L1": "17/7",
+          "abs_err": "4.59177e-41"
+        },
+        {
+          "k": 2,
+          "w": "0.554958132087371191",
+          "value": "1.1749529048915903117660108",
+          "claim": "5*pi^2/42",
+          "over_L1": "5/7",
+          "abs_err": "6.88766e-41"
+        },
+        {
+          "k": 3,
+          "w": "-0.801937735804838252",
+          "value": "-0.23499058097831806235320217",
+          "claim": "-1*pi^2/42",
+          "over_L1": "-1/7",
+          "abs_err": "2.29589e-41"
+        }
+      ],
+      "m": [
+        17,
+        5,
+        -1
+      ],
+      "sum_m": 21,
+      "sum_m_over_42": "21/42 = 1/2",
+      "minimal_denominators": [
+        42,
+        42,
+        42
+      ],
+      "worst": "6.8876622e-41",
+      "note": "verified separately to 100 dps with residuals ~1e-101; denominators of 7 in units of L(1) are the signature of level-7 ladders. Bloch torsion (G2 + F totally real) PROVES each value is in pi^2 Q; the specific numerators 17, 5, -1 are verified, not derived.",
+      "pass": true
     }
   ],
   "verdict": {

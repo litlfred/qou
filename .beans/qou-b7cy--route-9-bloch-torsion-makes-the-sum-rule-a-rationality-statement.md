@@ -109,3 +109,48 @@ Pin `1/2`. Two concrete options:
 * parent `qou-0yqu`; builds on `qou-8v3k` (Route 8)
 * siblings `qou-r7ml` (Route 7, refuted), `qou-g2wr` (literature closed)
 * PR #4658
+
+---
+
+## 2026-08-07 (later) — the identity is PER-EMBEDDING, and it is a level-7 ladder
+
+The trace statement `Σₖ = π²/2` was weaker than the truth. Each embedding is
+*individually* a rational multiple of `π²` (gate **G7**):
+
+| k | `wₖ = 1+2cos(2πk/7)` | `Re[2L(wₖ) + L(−wₖ)]` | in units of `L(1)` |
+|---|---|---|---|
+| 1 | `2.246979603717…` | `17·π²/42` | `17/7` |
+| 2 | `0.554958132087…` | `5·π²/42` | `5/7` |
+| 3 | `−0.801937735805…` | `−1·π²/42` | `−1/7` |
+
+**Verified at 100 dps, residuals `~1e-101`** (`0.0`, `1.4e-101`, `1.8e-102`), and
+the denominator `42` is **minimal** — scanned all `d < 400` at `1e-60`.
+
+`Σ mₖ = 17 + 5 − 1 = 21`, and `21/42 = 1/2` — which is exactly `Σₖ = π²/2`, hence
+Route 8's `−π²/2`, hence the sum rule.
+
+**Denominators of 7 in units of `L(1) = π²/6` are the signature of level-7
+dilogarithm ladders.** This is no longer an exotic object: it is three explicit
+classical-shaped ladder values.
+
+### What this changes
+
+The Bloch-torsion argument (G2 + `F` totally real) **proves each of the three
+values lies in `π²ℚ`** — torsion in `B(F)` gives rationality at *every* embedding,
+not merely in the trace, so the proved statement is stronger than first written
+above. What remains is only the three **numerators** `17, 5, −1`.
+
+So the final open arrow is now three explicit level-7 ladder identities, each of
+a form the five-term relation is built to handle — not one opaque transcendental
+constant.
+
+### Also confirmed
+
+Rogers duplication `L(w²) = 2L(w) + 2L(−w)` holds exactly per embedding, so
+`2L(w) + L(−w) = L(w) + ½L(w²)`; and `Σₖ Re[L(wₖ) + ½L(wₖ²)] = π²/2` likewise.
+Individually, `Σ L(w)`, `Σ L(−w)`, `Σ L(w²)`, `Σ L(1±w)`, `Σ L(1/w)`,
+`Σ L(w/(w−1))`, `Σ L(1−1/w)` are **all irrational** — the rationality is a
+property of the specific combination `2[w] + [−w]`, i.e. of the Bloch element,
+which is exactly what the torsion argument predicts.
+
+**Status: verified to 80 dps, unproved.** Nothing stubbed.

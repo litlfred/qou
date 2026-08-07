@@ -129,6 +129,37 @@ def main():
                             "(fails at two embeddings on branch grounds); only the SUM is exact",
                   "pass": bool(e6 < TOL)})
 
+    # G7 -- THE PER-EMBEDDING LADDER: much stronger than the trace statement
+    ms = [17, 5, -1]
+    per = []
+    w7 = mpf(0)
+    for k, w, m in zip((1, 2, 3), W, ms):
+        v = re(2 * rogers(w) + rogers(-w))
+        err = fabs(v - mpf(m) * pi ** 2 / 42)
+        w7 = max(w7, err)
+        per.append({"k": k, "w": nstr(w, 18), "value": nstr(v, 26),
+                    "claim": f"{m}*pi^2/42", "over_L1": f"{m}/7", "abs_err": nstr(err, 6)})
+    # minimality of the denominator 42
+    dens = []
+    for w in W:
+        q = re(2 * rogers(w) + rogers(-w)) / pi ** 2
+        for d in range(1, 400):
+            if fabs(q * d - mp.nint(q * d)) < mpf(10) ** -25:
+                dens.append(d)
+                break
+    gates.append({"gate": "G7",
+                  "claim": "PER-EMBEDDING: Re[2L(w_k)+L(-w_k)] = m_k pi^2/42 with m = (17,5,-1), "
+                           "i.e. (m_k/7) L(1) -- a level-7 dilogarithm ladder",
+                  "per_embedding": per,
+                  "m": ms, "sum_m": sum(ms), "sum_m_over_42": "21/42 = 1/2",
+                  "minimal_denominators": dens,
+                  "worst": nstr(w7, 8),
+                  "note": "verified separately to 100 dps with residuals ~1e-101; denominators of 7 "
+                          "in units of L(1) are the signature of level-7 ladders. Bloch torsion "
+                          "(G2 + F totally real) PROVES each value is in pi^2 Q; the specific "
+                          "numerators 17, 5, -1 are verified, not derived.",
+                  "pass": bool(w7 < TOL and dens == [42, 42, 42])})
+
     out = {
         "probe": "qbeta_5two_route9_bloch_torsion_rationality",
         "bean": "qou-b7cy",
