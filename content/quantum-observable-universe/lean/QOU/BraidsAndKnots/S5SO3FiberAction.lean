@@ -424,7 +424,7 @@ def PartitionOf5.deltaSign : PartitionOf5 → ℤ
 def PartitionOf5.deltaLambda (p : PartitionOf5) : ℤ := p.deltaSign * (p.dim : ℤ)
 
 /-- Chirality is ±1 (deltaSign² = 1). -/
-theorem deltaSign_sq_one (p : PartitionOf5) : p.deltaSign ^ 2 = 1 := by
+theorem PartitionOf5.deltaSign_sq_one (p : PartitionOf5) : p.deltaSign ^ 2 = 1 := by
   cases p <;> decide
 
 /-- **Magnitude = Wedderburn dim**: |Δ_λ| = dim V_λ, i.e. (Δ_λ)² = (dim V_λ)². -/
@@ -478,7 +478,7 @@ def PartitionOf5.nStat (p : PartitionOf5) : ℕ :=
     longest-element sign of `deltaSign`'s definition, for all `λ ⊢ n ≤ 8` per the
     same probe; here proved at `n = 5`.)  See
     `docs/audits/2026-06-23-option-e-probe4-overturning-afunction-sign.md`. -/
-theorem deltaSign_eq_nStat_parity (p : PartitionOf5) :
+theorem PartitionOf5.deltaSign_eq_nStat_parity (p : PartitionOf5) :
     p.deltaSign = (-1 : ℤ) ^ p.nStat := by
   cases p <;> decide
 

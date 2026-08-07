@@ -31,7 +31,7 @@ open DeltaLambdaSignRule
 
 /-- Two custom partitions with equal `parts` lists are equal (the other three fields are
 `Prop`s, so proof-irrelevant). -/
-theorem ext' {n : ℕ} {Λ Λ' : Partition n} (h : Λ.parts = Λ'.parts) : Λ = Λ' := by
+theorem Partition.ext' {n : ℕ} {Λ Λ' : Partition n} (h : Λ.parts = Λ'.parts) : Λ = Λ' := by
   cases Λ; cases Λ'; cases h; rfl
 
 /-- **Custom `Partition n` ≃ `Nat.Partition n`.** The forward map coerces the sorted parts list
