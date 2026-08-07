@@ -197,7 +197,7 @@ def SDPPrimal.dualObjAt (sdp : SDPPrimal n R ι) (y : ι → R) : R :=
     (`tr(A_i · Φ) = b_i`).
 
     PROOF: linearity of trace + feasibility constraints. -/
-theorem dualSlack_trace_eq (sdp : SDPPrimal n R ι)
+theorem SDPPrimal.dualSlack_trace_eq (sdp : SDPPrimal n R ι)
     (y : ι → R) (Φ : Matrix (Fin n) (Fin n) R)
     (h_feas : sdp.IsFeasible Φ) :
     (sdp.dualSlack y * Φ).trace = sdp.objAt Φ - sdp.dualObjAt y := by

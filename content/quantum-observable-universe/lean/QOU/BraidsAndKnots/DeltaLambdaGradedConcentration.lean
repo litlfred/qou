@@ -242,7 +242,7 @@ theorem deltaLambda_realization_is_cancellation_free
 theorem PartitionOf5.single_sum_eq_dim (p : PartitionOf5) :
     (p.singleCoeffs).sum = p.dim := by cases p <;> decide
 
-theorem fake_sum_eq_dim (p : PartitionOf5) :
+theorem PartitionOf5.fake_sum_eq_dim (p : PartitionOf5) :
     (p.fakeCoeffs).sum = p.dim := by cases p <;> decide
 
 /-- `G_λ` realizes `Δ_λ` (the #4553 single-degree collapse). -/

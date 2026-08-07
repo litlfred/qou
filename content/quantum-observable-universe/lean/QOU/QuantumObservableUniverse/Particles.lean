@@ -26,7 +26,7 @@ structure ReebDecomposition (M : Type*) where
   decomp : ∀ (p : M), total p = horizontal p + vertical p
 
 /-- A form is **purely horizontal** iff its vertical component vanishes. -/
-def isPurelyHorizontal {M : Type*}
+def ReebDecomposition.isPurelyHorizontal {M : Type*}
     (rd : ReebDecomposition M) : Prop :=
   ∀ (p : M), rd.vertical p = 0
 

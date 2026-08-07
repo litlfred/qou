@@ -55,7 +55,7 @@ structure BraidWord where
   valid : ∀ g ∈ generators, g.natAbs < nStrands
 
 /-- The number of crossings in a braid word. -/
-def crossings (β : BraidWord) : ℕ := β.generators.length
+def BraidWord.crossings (β : BraidWord) : ℕ := β.generators.length
 
 /-! ## Crossing energy defined via GS normal form -/
 

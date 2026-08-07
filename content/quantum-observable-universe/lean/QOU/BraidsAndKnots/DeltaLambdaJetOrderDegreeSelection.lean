@@ -139,7 +139,7 @@ def valuation : List ℕ → ℕ
 theorem PartitionOf5.single_valuation_eq_nStat (p : PartitionOf5) :
     valuation p.singleCoeffs = p.nStat := by cases p <;> decide
 
-theorem fake_valuation_eq_nStat (p : PartitionOf5) :
+theorem PartitionOf5.fake_valuation_eq_nStat (p : PartitionOf5) :
     valuation p.fakeCoeffs = p.nStat := by cases p <;> decide
 
 theorem PartitionOf5.same_valuation (p : PartitionOf5) :
@@ -157,7 +157,7 @@ theorem PartitionOf5.same_valuation (p : PartitionOf5) :
 
 /-- `H_λ` carries coefficient `1` at the valuation degree `n(λ)` — the monic
     leading term of the fake-degree polynomial. -/
-theorem fakeCoeff_at_valuation_eq_one (p : PartitionOf5) :
+theorem PartitionOf5.fakeCoeff_at_valuation_eq_one (p : PartitionOf5) :
     (p.fakeCoeffs).getD p.nStat 0 = 1 := by cases p <;> decide
 
 /-- `G_λ` carries coefficient `dim V_λ` at the valuation degree `n(λ)`. -/

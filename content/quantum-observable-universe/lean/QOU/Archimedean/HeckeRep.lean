@@ -74,7 +74,7 @@ noncomputable def HeckeRep.genInv (ρ : HeckeRep n d) (i : Fin (n - 1)) :
 
 /-- `σ_i · σ_i⁻¹ = I`: the generator inverse is a right inverse. -/
 -- Ref: [iwahori1964]
-theorem gen_mul_genInv (ρ : HeckeRep n d) (i : Fin (n - 1)) :
+theorem HeckeRep.gen_mul_genInv (ρ : HeckeRep n d) (i : Fin (n - 1)) :
     ρ.gen i * ρ.genInv i = 1 := by
   unfold HeckeRep.genInv
   rw [mul_sub, mul_smul_comm, mul_one, ρ.hecke_rel i]
@@ -83,7 +83,7 @@ theorem gen_mul_genInv (ρ : HeckeRep n d) (i : Fin (n - 1)) :
 
 /-- `σ_i⁻¹ · σ_i = I`: the generator inverse is a left inverse. -/
 -- Ref: [iwahori1964]
-theorem genInv_mul_gen (ρ : HeckeRep n d) (i : Fin (n - 1)) :
+theorem HeckeRep.genInv_mul_gen (ρ : HeckeRep n d) (i : Fin (n - 1)) :
     ρ.genInv i * ρ.gen i = 1 := by
   unfold HeckeRep.genInv
   rw [sub_mul, smul_mul_assoc, one_mul, ρ.hecke_rel i]

@@ -110,7 +110,7 @@ transported physics — the free-field `n³` mode degeneracy and the
 is exactly what the open Yekutieli lift must supply. This constructor
 exhibits the reduction: closing Stage C means producing `f` together
 with these two proofs (no further data). -/
-def ofData
+def PlateModeCountFunctor.ofData
     (f : ℝ → ℝ → ℝ)
     (hext : ∀ A d : ℝ, f A d = A * f 1 d)
     (hscale : ∀ d : ℝ, 0 < d → f 1 d = -(Real.pi ^ 2) / (720 * d ^ 3)) :

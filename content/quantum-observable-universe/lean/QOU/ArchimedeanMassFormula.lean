@@ -80,7 +80,7 @@ structure ArchimedeanMassFormula (M : Type*) extends TopologicalMassDecompositio
     knotVolume * (1 / h_q ^ 2 - 1)
 
 /-- The quantum Planck constant is non-zero when `q > 1`. -/
-theorem h_q_ne_zero {M : Type*}
+theorem ArchimedeanMassFormula.h_q_ne_zero {M : Type*}
     (amf : ArchimedeanMassFormula M) : amf.h_q ≠ 0 := by
   rw [amf.h_q_def]
   have hq := amf.q_gt_one
@@ -95,7 +95,7 @@ theorem h_q_ne_zero {M : Type*}
 
     This is the algebraic consequence of the decomposition identity
     `m = baseline + Σ exceptional` combined with the two evaluations. -/
-theorem mass_eq_vol_div_h_q_sq {M : Type*}
+theorem ArchimedeanMassFormula.mass_eq_vol_div_h_q_sq {M : Type*}
     (amf : ArchimedeanMassFormula M) :
     amf.totalMass = amf.knotVolume / amf.h_q ^ 2 := by
   -- From TopologicalMassDecomposition: totalMass = baseline + Σ exceptional
