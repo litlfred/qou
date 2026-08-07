@@ -7,8 +7,8 @@ Bean `qou-8v3k` (Route 8) and `qou-b7cy` (Route 9), PR #4658.
 
 Everything here is **pure commutative-ring algebra** — no dilogarithm, no
 analysis, no Mathlib gap. These are exactly the steps of Routes 8 and 9 that do
-not depend on the complex `Li₂` blocker (`qou-clx8`), isolated so they can be
-proved today.
+not depend on the complex `Li₂` blocker (`qou-clx8`), isolated so that they are
+provable independently of it.
 
 ## Route 8 — the two Vieta products
 
