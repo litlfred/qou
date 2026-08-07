@@ -5,11 +5,12 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-07T22:20:00Z
-updated_at: 2026-08-07T23:40:00Z
+updated_at: 2026-08-08T01:10:00Z
 ---
 
 **Claimed** by session on branch `pr4672` → `claude/c1-theta-canonical-solutions-2026-08-07`.
-Step 1 **done** (2026-08-07); steps 2–6 open.
+Rows 1 and **3 done**; row 2 rescoped to one missing lemma; row 5 dropped
+(nothing consumes it); rows 4 and 6 open.
 
 Everything load-bearing in the C1 connection arc (bean `qou-wgnx`) rests on
 **numerics**, not derivation. The Lean that exists covers only the easy
@@ -19,7 +20,7 @@ algebraic layer. This bean tracks closing that gap, in dependency order.
 |---|---|---|---|
 | 1 | `qThetaC` holomorphic on `ℂ*` | ✅ **PROVED** `differentiableOn_qThetaC` | done 2026-08-07 — see below |
 | 2 | **exact** zero locus (converse of `qTheta_neg_zpow_eq_zero`) | ⊇ only; **all inputs but one now proved** | ~~JTP~~ **the argument principle, and nothing else** — rescoped 2026-08-07, see below |
-| 3 | 0-side series radius 1; ∞-side entire | not proved | recursion bounds; feasible, tedious |
+| 3 | 0-side series radius 1; ∞-side entire | ✅ **PROVED** (radius `≥ 1`; entire) | done 2026-08-07 — see below |
 | 4 | `Y₀`, `Y_∞`, inverse, meromorphy; `P(pz)=P(z)` | not proved | matrix-valued meromorphic functions; `Analysis/Meromorphic/*` partial |
 | 5 | pole divisor + completeness (residue thm) | numerical | argument principle — same single gap as #2. **But: nothing consumes it** (below) |
 | 6 | `χ` = the closed form, `α = t₂/T`, order 2 | numerical (12 pts, `5.3e-63`) | all of 1–5 |
@@ -174,10 +175,52 @@ them. All three say what is claimed:
 So the session's independent re-derivation agrees with the source and with the
 prior corpus note. Nothing to revise.
 
-**Next**, in order: #3 (0-side radius 1 / ∞-side entire) — the only item
-needing nothing absent from Mathlib, tedious but unblocked; then #2, if and
-only if someone is willing to prove the argument principle. #5 and #6 are not
-worth starting. See `qou-c1wr` for the separate question of whether any of this
-should become authored content in the first place.
+## 2026-08-07 — row 3 done: both series converge where they are used
+
+New file `content/quantum-observable-universe/lean/QOU/QBeta/C1SeriesConvergence.lean`,
+namespace `QOU.QBeta.C1Series`. Five theorems, sorry-free,
+`[propext, Classical.choice, Quot.sound]`.
+
+* `summable_zeroSideCoeff` — the `0`-side `∑ g_k z^k` converges for every
+  `‖z‖ < 1`. The ratio `g_{k+2}/g_k` tends to `1` like `1 + O(‖p‖^{-k})`, so the
+  coefficients are **bounded**, which is all radius `≥ 1` needs.
+* `summable_infSideCoeff` — the `∞`-side is **entire**.
+
+Three of the five are `θ`-free sequence lemmas Mathlib does not have, and are
+the reusable part:
+
+* `norm_le_of_ratio_le_one_add_geometric` — a two-step recursion whose ratio is
+  `1 + O(geometric)` has bounded terms. `∏(1 + Cρᵏ) ≤ exp(C∑ρᵏ) ≤ exp(C/(1−ρ))`.
+* `summable_of_norm_coeff_le` — bounded coefficients ⇒ radius `≥ 1`.
+* `summable_of_two_step_geometric` — a two-step recursion with geometrically
+  vanishing coefficients gives an **entire** series. The majorant is
+  `M ∏_{j<k}(cσʲ)` with **`σ = √ρ`**: the two-step lag costs exactly a square
+  root (the naive `∏(cρʲ)` ansatz provably fails), and `σ² = ρ` is what lets the
+  induction close with a constant `c` rather than a `k`-dependent one.
+
+All three take the recursion hypothesis only for `k ≥ K` and absorb the first
+`K+2` terms into the constant — necessary in both applications, since the
+estimates only hold once the geometric tail overtakes the constant term, and
+for the `∞`-side that is also what keeps the denominator away from zero.
+
+**Not proved, deliberately**: sharpness of the `0`-side radius (proved `≥ 1`,
+not `= 1`). The mirror estimate `‖ratio‖ ≥ 1 − Cρᵏ` plus `1 − x ≥ exp(−2x)`
+would give it; nothing downstream uses it, because the singularity's *location*
+is pinned by the `θ_p` zeros rather than by this radius. Also not proved: that
+these recursions are the ones the operator forces — they are *defined* here to
+match the computation, so the file certifies convergence of the stated
+sequences, not that `Y₀`/`Y_∞` are solutions. That is row 4.
+
+Two `positivity`/`isDefEq` heartbeat timeouts appeared once the majorant
+constants were `set`-bound; `clear_value` on the four definitions plus explicit
+`mul_nonneg`/`div_nonneg` terms fixed it. Worth remembering: `set` leaves a
+let-binding that `positivity` will unfold.
+
+**Next**: row 4 (`Y₀`, `Y_∞`, inverse, meromorphy) is now the only open item
+with a path — and it is the expensive one (matrix-valued meromorphic functions,
+`Analysis/Meromorphic/*` only partial). Row 2 needs the argument principle and
+nothing else. Rows 5 and 6 are not worth starting — see the row-5 note above.
+See `qou-c1wr` for the separate question of whether any of this should become
+authored content in the first place.
 
 Blocks/relates: `qou-wgnx`, `qou-c1wr`.
