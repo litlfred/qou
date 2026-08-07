@@ -196,3 +196,47 @@ Attack the integral directly: `∫₀¹ log P(z)/z dz` for `P` an integer cubic
 with no root in `[0,1]`. Either a parametrised-family/differentiation
 argument, or recognise it as a known ladder for this field. Do **not** expand
 `log P = Σ log(1−yⱼz)` — that just returns `−Σ Li₂(yⱼ)` and is circular.
+
+## 2026-08-07 — THE FIELD IS disc −23. Literature target, with a caveat.
+
+**`y³ − 2y² + 3y − 1` has discriminant `−23`** (sympy; irreducible over ℚ). So
+do its reciprocal `1−2z+3z²−z³` and its Landen image `z³−z²+1` — same field, as
+expected since they are related by rational maps.
+
+`−23` is the **smallest |discriminant| among complex cubic fields**, and it is
+*the* classical worked example in the dilogarithm-ladder / Zagier-conjecture
+literature. This is no longer a search for an unknown identity in an unknown
+field; it is a lookup in a well-trodden one.
+
+### Where to look
+
+- Zagier, *The Dilogarithm Function* (Bonn lecture notes) —
+  https://people.mpim-bonn.mpg.de/zagier/files/doi/10.1007/978-3-540-30308-4_1/fulltext.pdf
+- Zagier, *Polylogarithms, Dedekind Zeta Functions and the Algebraic K-Theory
+  of Fields* — https://link.springer.com/content/pdf/10.1007/978-1-4612-0457-2_19.pdf
+- Zagier–Gangl, *Classical and Elliptic Polylogarithms and Special Values of
+  L-Series* — https://people.mpim-bonn.mpg.de/zagier/files/mpim/00-9/fulltext.pdf
+- Broadhurst, *Determinations of rational Dedekind-zeta invariants of
+  hyperbolic manifolds and Feynman knots and links* — https://arxiv.org/pdf/hep-th/9811173
+- Neumann survey (Bloch group / CS) — https://arxiv.org/pdf/2304.12545
+- Browkin–Gangl on `K₂ O_F` for this field (cited in the above).
+
+### ⚠ THE CAVEAT — do not assume the classical results apply directly
+
+The classical `−23` results evaluate **`ζ_F(2)` via the Bloch–Wigner `D`**,
+i.e. the **imaginary / volume** side. **Our sum rule is the REAL part.**
+
+That distinction is sharp here: `Σⱼ D(yⱼ) = 0` *automatically* for this shape
+(Route 2 above — verified on control cubics too), so the Bloch–Wigner
+invariant carries **no** information about our identity. The real part is the
+Chern–Simons / second-regulator side, a different invariant of the same
+element.
+
+So the literature is **adjacent, not a drop-in**. The realistic direct sources
+are GGM (2012.00062) / GGMW (2111.04763) themselves, which compute precisely
+these `Vⱼ`, and Neumann-style CS-invariant work — not the `ζ_F(2)` ladders.
+
+### Status
+
+Still **verified to 80 dps, unproved**. The field identification narrows the
+search enormously but did not itself close the proof.
