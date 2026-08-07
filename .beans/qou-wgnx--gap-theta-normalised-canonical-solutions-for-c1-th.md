@@ -809,3 +809,40 @@ at a dozen independent points. Note `α = t₂/T` is *dimensionally* the natural
 object: it is the 0-side exponent measured in units of the ∞-side scale, which
 is exactly what a connection coefficient between those two singularities should
 depend on.
+
+## 2026-08-07 (seventeenth) — **CLOSED FORM OBTAINED**; the retraction was right
+
+**χ has a closed form, and the constant is 1.**
+
+    χ(z) = θ_p(z/α) · θ_p(−z/ᾱ) / [ θ_p(−z/α) · θ_p(z/ᾱ) ],    α = t₂/T
+
+i.e. `χ(z) = θ_p(zT/t₂)·θ_p(−zT/t₁) / [θ_p(−zT/t₂)·θ_p(zT/t₁)]`.
+
+**Verification:** fitted `C = 1.0 + 3.7e-73i` (so `C = 1` exactly, no constant
+needed), and worst relative deviation **`5.3e-63`** across **twelve independent
+points** spanning `|z| ∈ [0.29, 0.62]` and `arg/π ∈ [0, 1.83]` — including the
+real axis, the imaginary axis, and generic complex points.
+`|α| = 1.081398964315461 = q^{3/4}` exactly.
+
+**The sixteenth entry's retraction was correct.** With the radius known
+precisely, a fine *angular* scan at that radius resolves the zero, and its
+minimum lands on `arg(−t₂)/π = 0.446974509721015132` with **difference exactly
+`0.0`** (dip to `1e-80`, ~3.5 decades below neighbours at `±2e-6`, symmetric).
+So `α = t₂/T` — the angular "exclusion" of the fifteenth entry was indeed the
+unresolvable-ray artifact, as suspected.
+
+**`α = t₂/T` is the dimensionally natural object:** the 0-side exponent measured
+in units of the ∞-side scale — exactly what a coefficient connecting those two
+singularities should depend on. `|α| = q^{3/4} = |t|/T` follows identically.
+
+**Lean:** `connRatio_elliptic` (sorry-free) proves this closed form is
+`p`-elliptic, division-free (cross-multiplied, so no nonzero hypotheses on the
+theta values), directly from `qTheta_functional_equation`. The four factors
+`z/a, −z/b` over `−z/a, z/b` contribute `−z²/(ab)` to each side and cancel. That
+proves the *shape* is right; that χ **equals** it stays numerical, since it
+needs the analytic construction.
+
+**Stokes multipliers.** With χ in closed form the invariant is fully determined.
+What remains is the (convention-dependent) step from χ to the multipliers
+proper — and the literature to lean on is arXiv:2412.02281, still unread here
+(arxiv is egress-blocked from this sandbox).

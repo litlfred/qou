@@ -35,6 +35,9 @@ and the whole question reduces to: **where does `θ_p` vanish?**
   on the real axis. This is the formal core of the refutation the whole C1 arc
   restarted from: a basis putting them "~17 orders of magnitude apart" is
   impossible, not merely unobserved.
+* `connRatio_elliptic` — the closed form found for the connection invariant
+  (a ratio of four `θ_p`'s) is `p`-elliptic, straight from the functional
+  equation. Proves the *shape* is right; not that χ equals it.
 
 `summable_qThetaTerm` and `qTheta_functional_equation` are the **analytic
 foundation for the converse**. The vanishing
@@ -339,5 +342,41 @@ theorem norm_qThetaC_conj_pair (P : ℝ) (z : ℝ) (t : ℂ) :
   have hz : ((z : ℂ)) / (starRingEnd ℂ) t = (starRingEnd ℂ) ((z : ℂ) / t) := by
     rw [map_div₀, Complex.conj_ofReal]
   rw [hz, qThetaC_conj, RCLike.norm_conj]
+
+/-! ### The connection invariant's closed form
+
+Numerically, the basis-invariant connection datum
+`χ = P₀₀P₁₁/(P₀₁P₁₀)` equals
+
+    χ(z) = θ_p(z/α)·θ_p(−z/ᾱ) / [ θ_p(−z/α)·θ_p(z/ᾱ) ],   α = t₂/T
+
+with constant **exactly 1** and `|α| = q^{3/4}` — worst relative deviation
+`5.3e-63` over twelve independent points
+(`computations/qbeta/c3_w2_c1_connection_invariant.py` and successors). The
+theorem below proves that this *shape* has the required invariance, straight
+from the functional equation. It does not prove that χ equals it — that needs
+the analytic construction, which is not formalised. -/
+
+/-- **The closed form is `p`-elliptic.**
+
+Stated division-free as a cross-multiplied identity, so no hypothesis that the
+theta values are nonzero is needed. The four functional-equation factors are
+`z/a`, `−z/b` upstairs and `−z/a`, `z/b` downstairs; their products are both
+`−z²/(ab)` and cancel. -/
+theorem connRatio_elliptic (P a b z : ℝ) (hP : 0 < P)
+    (ha : a ≠ 0) (hb : b ≠ 0) (hz : z ≠ 0) :
+    qTheta P (P ^ (2:ℤ) * z / a) * qTheta P (-(P ^ (2:ℤ) * z) / b)
+        * (qTheta P (-z / a) * qTheta P (z / b))
+      = qTheta P (-(P ^ (2:ℤ) * z) / a) * qTheta P (P ^ (2:ℤ) * z / b)
+        * (qTheta P (z / a) * qTheta P (-z / b)) := by
+  have e : ∀ w : ℝ, w ≠ 0 → qTheta P (P ^ (2:ℤ) * w) = w * qTheta P w :=
+    fun w hw => qTheta_functional_equation P w hP hw
+  have d1 : P ^ (2:ℤ) * z / a = P ^ (2:ℤ) * (z / a) := by ring
+  have d2 : -(P ^ (2:ℤ) * z) / b = P ^ (2:ℤ) * (-z / b) := by ring
+  have d3 : -(P ^ (2:ℤ) * z) / a = P ^ (2:ℤ) * (-z / a) := by ring
+  have d4 : P ^ (2:ℤ) * z / b = P ^ (2:ℤ) * (z / b) := by ring
+  rw [d1, d2, d3, d4, e _ (div_ne_zero hz ha), e _ (div_ne_zero (neg_ne_zero.mpr hz) hb),
+      e _ (div_ne_zero (neg_ne_zero.mpr hz) ha), e _ (div_ne_zero hz hb)]
+  ring
 
 end QOU.QBeta.C1Poles
