@@ -124,3 +124,34 @@ Reseed the cache branch against current `main` before relying on it.
 
 Upstreaming `cLiTwo` to Mathlib is premature until the continuation and
 reflection land; tracked here rather than as its own bean.
+
+## STATUS CHANGE 2026-08-06 — no longer blocks the 5₂ sum rule
+
+This bean was scoped as *the* blocker for `qou-0yqu` (the 5₂ saddle sum rule):
+the reflection identity was needed at `y₁` with `|y₁| = 1.52 > 1`, hence a
+complex `Li₂` and analytic continuation past the unit disc.
+
+**Route 5 in `qou-0yqu` removes that dependency.** The sum rule restates as
+
+    −∫₀¹ log(1 − 2z + 3z² − z³)/z dz
+        = −½·log²(y₃) + (2/3)·(θ−π)² − π²/6,
+      θ = arccos((2−y₃)√y₃/2)
+
+with **no dilogarithm and no complex numbers**. The series `Σ pₙ/n²` diverges
+(that was the whole reason continuation looked mandatory), but the *integral*
+runs where the integrand is regular — now Lean-proved:
+`QOU.QBeta.FiveTwo.recipCubic_pos`, from `recipCubic_eq`
+(`1−2z+3z²−z³ = (1−z)³+z`). So the sum-rule route needs only
+`intervalIntegral`, `Real.log`, `Real.arccos`.
+
+**Re-scoped, not closed.** This bean stays open on its own merits:
+
+* a complex `Li₂` is still wanted for the *general* saddle machinery (any
+  `Vⱼ` at a non-real root, other knots), independent of 5₂;
+* `QOU.MathlibExt.cLiTwo` exists and is sorry-free on the disc, so the work is
+  started and the upstreaming goal is live;
+* the Clausen precedent and the two traps recorded above still apply.
+
+What changed is only its **priority and its dependents**: it is no longer on
+the critical path to `qou-0yqu`. Anyone picking it up for the sum rule's sake
+should read Route 5 first.
