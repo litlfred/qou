@@ -66,7 +66,9 @@ import sympy as sp
 
 try:
     import mpmath as mp
-    mp.dps = 60
+    # `mp` is the mpmath MODULE, so a bare `mp.dps` is a no-op; the
+    # working precision lives on the context, `mp.mp.dps`.
+    mp.mp.dps = 60
     HAVE_MP = True
 except Exception:
     HAVE_MP = False
