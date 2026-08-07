@@ -185,3 +185,78 @@ was not the one given.
   downstream file quietly upgrades it.
 * **The same junk-value question applies to every other corpus use of `LiTwo`
   off `[−1,1]`.** This lane found it; nobody has swept the rest.
+
+---
+
+## 2026-08-07 (later) — the five-term instances are PROVED genuine, and the gap Route 13 created is closed on paper
+
+### Roast item 1 (`qou-rstq`) — discharged
+
+`hA`, `hB`, `hC` **are** genuine five-term instances. Checked twice, independently:
+
+* **exact arithmetic** in `ℚ(w)` — `qbeta_5two_route14_fiveterm_arguments_exact_probe.py`,
+  `fractions.Fraction` in the power basis, no floating point in the matching;
+* **Lean** — `QOU/QBeta/FiveTwoFiveTermArguments.lean`, over any `Field`,
+  sorry-free, ten theorems.
+
+| | instance | last three arguments |
+|---|---|---|
+| `hA` | **diagonal**, `x = y = w₂` | `{1−q, r, r}` |
+| `hB` | `x = 1−w₂`, `y = q` | `{1−q, 1−s, w₂}` |
+| `hC` | `x = w₂`, `y = s` | `{1−w₂, 1−s, 1−r}` |
+
+`hA` being *diagonal* is what explains its coefficients `(2,−1,−2)` instead of
+the five-term's `(1,1,−1,−1,−1)` — two of the five arguments coincide. Its
+identification `w₂² = 1−q` **is `bloch_key`**, and `bloch_key` shows up a second
+time fixing `hC`'s last argument. Three of the six identities need nothing at all.
+
+Also: `arg_B2`/`arg_C2` were first stated with `x ≠ 1`; they do not need it,
+because `s·x = 1−x` already forces `x ≠ 0` (at `x = 0` it reads `0 = 1`).
+
+### Roast item 4 — the gap Route 13 created — closed on paper
+
+Route 13 repaired `hinv1`/`hlan1` by *defining* the extension, and flagged the
+cost: the Lean object is piecewise, not proved equal to the analytic
+continuation, with agreement checked at only six points.
+
+`qbeta_5two_route15_extension_is_continuation_probe.py` shows the agreement is
+**identical, not coincidental** — confirmed at generic arguments from `1.000001`
+to `1e6` and `−1e-6` to `−1e6` — and gives a two-line derivation per branch:
+
+* `x > 1`: Euler inversion + principal `log(−x) = log x + iπ`, on real parts.
+* `x < 0`: Landen, using `1 − x/(x−1) = 1/(1−x)`.
+
+Both collapse exactly. **`extend` IS `Re` of the principal-branch analytic
+Rogers `L`.**
+
+### Where the work actually went — it did not vanish
+
+**It moved down one level.** This bean originally owed "inversion ×1 and Landen
+×3" for Rogers `L`. Those are now free by construction. But identifying `extend`
+with the analytic continuation owes **`Li₂` inversion and `Li₂` Landen** — the
+same two classical facts, one level down, and Mathlib has no `Li₂` at all
+(`qou-mlbg`).
+
+That is a smaller and far better-defined debt than four unproved hypotheses. It
+is still a debt. **Nothing downstream should read `extend` as "the dilogarithm".**
+
+### A gate that caught its own author
+
+`qbeta_5two_route15`'s first G5 tested `|ext(1+1e-10) − L1| < 1e-9` and **failed
+at 1.25e-9**. The mathematics was fine — near `x = 1` the residual is
+`O(ε log ε)`, so at `ε = 1e-10` it is `~1e-9` *by construction*. A seam is a
+limit statement and has to be gated as one; G5 now tests monotone decrease. Worth
+recording next to the branch-trap note: **a failing gate is not evidence of a
+failing theorem until you have checked the gate.**
+
+### Current state of the twelve hypotheses
+
+| group | count | status |
+|---|---|---|
+| inversion + Landen | 4 | ✅ by construction (`FiveTwoRogersExtend`) |
+| renaming `hsw3` | 1 | trivial |
+| reflection | 4 | proof written; build still unfinished |
+| five-term `hA`,`hB`,`hC` | 3 | ✅ **proved to be genuine instances**; the relation itself ❌ |
+
+**The one open analytic input to the numerators is Abel's five-term relation.**
+**Standing status unchanged: the 5₂ sum rule is verified to 80 dps, unproved.**
