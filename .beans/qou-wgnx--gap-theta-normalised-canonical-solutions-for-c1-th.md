@@ -1,11 +1,11 @@
 ---
 # qou-wgnx
 title: 'GAP: theta-normalised canonical solutions for C1 — the genuine untried route to the Stokes multipliers'
-status: todo
+status: in-progress
 type: task
 priority: high
 created_at: 2026-08-07T08:45:09Z
-updated_at: 2026-08-07T08:45:09Z
+updated_at: 2026-08-07T10:04:33Z
 ---
 
 Two routes are closed with NEGATIVES (steps 3 and 4): the sector data is
