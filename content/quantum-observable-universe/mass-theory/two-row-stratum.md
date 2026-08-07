@@ -21,6 +21,8 @@ $$
 $$
 Partitions with $\ell(\lambda) > 2$ map to zero. They correspond to higher-rank symmetry components absent from the $\mathrm{SU}(2)$ spin-pairing observable. The $q$-deformed spin observables, including the magic-shell coupling of `conj:magic-shell-stabilization`, live strictly in the two-row sector.
 
+**Scope of the two-row dominance: the trace, not the binding sum.** Two-row dominance is a property of the Markov trace $\mathrm{tr}_M = \sum_\lambda y_\lambda \chi^\lambda$, where the Wenzl weight $y_\lambda$ concentrates on short partitions. It does **not** transfer to the binding sum $\sum_\lambda y_\lambda \chi^\lambda \Delta_\lambda$: the factor $\Delta_\lambda = (-1)^{n(\lambda)} f^\lambda$ weights by the standard-tableau count $f^\lambda$, which is largest for balanced many-row diagrams, and this **inverts** the dominance. Measured at $q_0$ across the light isotopes, the $\ell(\lambda) > 2$ share of the binding sum grows from $\approx 26\%$ at $^2\mathrm{H}$ to $\approx 100\%$ at $^4\mathrm{He}$, where the two-row contribution is $\approx 0.02\%$ of the total. The binding formula sums over **all** partitions and does not inherit the restriction described above.
+
 ## Indexing the stratum
 
 We have $|\Lambda^2(n)| = \lfloor n/2 \rfloor + 1$. For the $^4\mathrm{He}$ strand count ($n = 12$), we obtain **7** partitions:

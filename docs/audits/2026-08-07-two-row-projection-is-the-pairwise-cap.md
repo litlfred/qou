@@ -43,9 +43,22 @@ trace is projected to zero**, measured, not estimated.
 | `ℓ(λ) ≤ 2` (two-row stratum) | pairs | **SU(2) spin-pairing** — 2-body |
 | `ℓ(λ) ≥ 3` (projected to **zero**) | triples and up | **irreducibly ≥3-body** |
 
-> **The proved pairwise cap `ρ_A ≤ C(A,2)` is the shadow of the two-row projection.**
-> The missing super-pairwise extensive term is not absent from the theory — it is the
-> **explicitly discarded complement** `(1 − π_{2\text{-row}})·\mathrm{tr}_M`.
+> 🛑 **§2 SUPERSEDED — REFUTED by measurement, 2026-08-07.** See
+> [`2026-08-07-binding-is-three-row-dominated-hypothesis-refuted.md`](2026-08-07-binding-is-three-row-dominated-hypothesis-refuted.md).
+> **The binding formula does not truncate to two rows — it already sums all
+> partitions.** Verified: the probe reproduces the corpus's own
+> `B(D) = 0.380 MeV` (0.3801) and `C_knot = 5.852` (5.8530). So the claim below —
+> that the missing term is a *discarded* stratum — is wrong; nothing was discarded.
+>
+> The measurement did find something better: the binding sum is **≥3-row *dominated***
+> (26 % at D → 62 % at T/³He → **100 % at ⁴He**), *opposite* to `tr_M`, because
+> `Δ_λ = ±f^λ` weights by the SYT count and **inverts** the stratum dominance. The
+> `N=2 ⟺ ℓ(λ)≤2 ⟺ pairwise ⟺ ρ_A ≤ C(A,2)` identification (§3 below) **stands**; only
+> the "binding inherits the truncation" inference is retracted.
+
+**The proved pairwise cap `ρ_A ≤ C(A,2)` is the shadow of the two-row projection.**
+The missing super-pairwise extensive term is not absent from the theory — it is the
+**explicitly discarded complement** `(1 − π_{2\text{-row}})·\mathrm{tr}_M`.
 
 Six ansätze failed because every one of them tried to reweight `Δ_λ` *inside* the
 surviving sector. No reweighting of a two-row sum reaches a three-row object; the
