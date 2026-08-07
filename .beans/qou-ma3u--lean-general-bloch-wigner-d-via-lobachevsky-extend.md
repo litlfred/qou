@@ -1,11 +1,11 @@
 ---
 # qou-ma3u
 title: 'Lean: general Bloch-Wigner D via Lobachevsky — extends the unit-circle filler, reaches 5_2'
-status: in-progress
+status: completed
 type: task
 priority: high
 created_at: 2026-08-07T08:44:25Z
-updated_at: 2026-08-07T08:44:25Z
+updated_at: 2026-08-07T09:11:29Z
 ---
 
 MEASURED THIS SESSION (60 dps, mpmath):
