@@ -1,8 +1,8 @@
 {
   "engine": "pyhecke+numpy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-07T20:36:57.188049+00:00",
-  "commitSha": "9fe53dd6b53856be7e9c3dcd2476a0ba77127495",
+  "computedAt": "2026-08-07T22:09:03.118909+00:00",
+  "commitSha": "5f56a66402e3d982c838d3ce68ed06cbe0cd4979",
   "assertions": [
     {
       "name": "gram_is_lorentzian_at_q0",
@@ -30,11 +30,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 9,
+  "durationMs": 6,
   "computation": "qbeta-lorentzian-gram-offset",
   "scriptFile": "qbeta_lorentzian_gram_offset_probe.py",
-  "scriptHash": "f147041a2d1d",
-  "scriptCommitSha": "9fe53dd6b53856be7e9c3dcd2476a0ba77127495",
+  "scriptHash": "76aeea21ec5c",
+  "scriptCommitSha": "b9bd174a86976d8569e835ea1aea2761fc703140",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -76,7 +76,7 @@
         "neg": 1
       },
       {
-        "q": "1.11020",
+        "q": "1.1099785827",
         "pos": 5,
         "neg": 1
       },
@@ -164,9 +164,9 @@
         "order_inverted_vs_assignment": true,
         "swap_would_be_a_fit": true,
         "swap_does_not_rescue": {
-          "target_theta_mu": "0.05894648",
+          "target_theta_mu": "0.058592016840059722",
           "value_that_would_take_it": "0.01560653385",
-          "factor_off": "3.77704",
+          "factor_off": "3.75433",
           "note": "even under the impermissible swap the smaller value misses its target by ~3.8x, so this is a genuine miss and NOT a signal suppressed by the anchor assignment"
         }
       }

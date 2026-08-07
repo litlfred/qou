@@ -79,6 +79,7 @@ import _path_bridge as _bridge  # noqa: E402, F401
 
 from witness_base import WitnessBuilder  # noqa: E402
 from qou_substrate.precision import set_compute_dps  # noqa: E402
+from qou_substrate.constants import Q_50_DIGIT_STR  # noqa: E402
 
 from borromean_angle_structure_lp_probe import (  # noqa: E402
     gluing, ga_equalities, solve_angle_lp,
@@ -90,7 +91,10 @@ set_compute_dps()
 # T4 inversion used. Consumed for the TEST only; never fitted to.
 S_MUON = mp.mpf("0.00968298")
 S_PROTON = mp.mpf("-0.03945936")
-Q0_T4 = mp.mpf("1.11020")
+# Canonical proton-pinned substrate modulus, READ not typed. The T4 probe's old
+# literal 1.11020 was a unit conflation (it solved 2*ln q = h instead of using
+# q0); fixed 2026-08-07, which moved the derived theta by -0.60% / -0.05%.
+Q0 = mp.mpf(Q_50_DIGIT_STR)
 
 ANCHORS = [("muon", "m004", "4_1 figure-eight"),
            ("proton", "L6a4", "Borromean rings")]
@@ -121,7 +125,7 @@ def main() -> int:
 
     import snappy  # noqa: E402
 
-    lnq = mp.log(Q0_T4)
+    lnq = mp.log(Q0)
     L = lnq**2
     r_target = S_MUON / S_PROTON
     lattice_unit = (mp.sqrt(3) / 2) * lnq

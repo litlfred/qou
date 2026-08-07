@@ -1,8 +1,8 @@
 {
   "engine": "python-exact+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-01T22:00:10.311723+00:00",
-  "commitSha": "c2612eb5873db51b482c72d3d0f019cf33ba19bc",
+  "computedAt": "2026-08-07T22:09:00.134027+00:00",
+  "commitSha": "5f56a66402e3d982c838d3ce68ed06cbe0cd4979",
   "assertions": [
     {
       "name": "map_and_formula_gate",
@@ -30,11 +30,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 15,
+  "durationMs": 10,
   "computation": "qbeta-rdmr-rademacher-winding",
   "scriptFile": "qbeta_rdmr_rademacher_winding_probe.py",
-  "scriptHash": "0bac0214eed6",
-  "scriptCommitSha": "c2612eb5873db51b482c72d3d0f019cf33ba19bc",
+  "scriptHash": "5a077bac31b5",
+  "scriptCommitSha": "b7d608f8d3f41a93c6c401534f54cfbea6625dba",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -77,13 +77,13 @@
       "muon (4_1)": {
         "phi": "0",
         "theta_pred": "0.0",
-        "theta_T4": "0.05894648",
+        "theta_T4": "0.0585920168401",
         "matches": false
       },
       "proton (B_3)": {
         "phi": "0",
         "theta_pred": "0.0",
-        "theta_T4": "0.20323503",
+        "theta_T4": "0.203132507018",
         "matches": false
       }
     },

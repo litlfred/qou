@@ -1,8 +1,8 @@
 {
   "engine": "pyhecke+numpy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-07T17:25:38.538307+00:00",
-  "commitSha": "9bab3420f2fb4b7b5e2a3ab70786d4546482cbd3",
+  "computedAt": "2026-08-07T22:09:02.819791+00:00",
+  "commitSha": "5f56a66402e3d982c838d3ce68ed06cbe0cd4979",
   "assertions": [
     {
       "name": "G0_sigma_inverse_correct",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 8,
+  "durationMs": 6,
   "computation": "qbeta-braid-nf-sdp-offset",
   "scriptFile": "qbeta_braid_nf_sdp_offset_probe.py",
-  "scriptHash": "42313c5309e8",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "377abefbd1e1",
+  "scriptCommitSha": "f7b09c425a832b3ae9b75cd1a454f1432ad3ba1e",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

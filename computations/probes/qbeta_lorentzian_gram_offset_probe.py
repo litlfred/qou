@@ -77,6 +77,7 @@ import _path_bridge as _bridge  # noqa: E402, F401
 
 from witness_base import WitnessBuilder  # noqa: E402
 from qou_substrate.precision import set_compute_dps  # noqa: E402
+from qou_substrate.constants import Q_50_DIGIT_STR  # noqa: E402
 
 _TOOLS = Path(__file__).resolve().parent.parent.parent / "tools" / "pyhecke" / "python"
 if _TOOLS.is_dir() and str(_TOOLS) not in sys.path:
@@ -89,7 +90,10 @@ set_compute_dps()
 
 S_MUON = mp.mpf("0.00968298")
 S_PROTON = mp.mpf("-0.03945936")
-Q0_T4 = mp.mpf("1.11020")
+# Canonical proton-pinned substrate modulus, READ not typed. The T4 probe's old
+# literal 1.11020 was a unit conflation (it solved 2*ln q = h instead of using
+# q0); fixed 2026-08-07, which moved the derived theta by -0.60% / -0.05%.
+Q0 = mp.mpf(Q_50_DIGIT_STR)
 EPS = 1e-12
 
 
@@ -126,7 +130,7 @@ def main() -> int:
     print("\n[C0] control — signature across q (is (5,1) structural or an "
           "accident at q₀?):")
     sig_rows, sig_const = [], True
-    for qs in ["1.02", "1.05", "1.11020", "1.3", "1.7", "2.5"]:
+    for qs in ["1.02", "1.05", Q_50_DIGIT_STR[:12], "1.3", "1.7", "2.5"]:
         q = mp.mpf(qs)
         hv = float(q - 1 / q)
         try:
@@ -147,12 +151,12 @@ def main() -> int:
     stable = [r for r in sig_rows if (r["pos"], r["neg"]) == (pos, neg)]
     qs_stable = [float(r["q"]) for r in stable]
     sig_stable_around_q0 = bool(
-        qs_stable and min(qs_stable) <= float(Q0_T4) <= max(qs_stable)
+        qs_stable and min(qs_stable) <= float(Q0) <= max(qs_stable)
         and all((r["pos"], r["neg"]) == (pos, neg)
                 for r in sig_rows if float(r["q"]) >= min(qs_stable)))
     print(f"\n     ({pos},{neg}) holds for every tested q >= "
           f"{min(qs_stable) if qs_stable else float('nan')}; q₀ = "
-          f"{float(Q0_T4)} is inside that region: {sig_stable_around_q0}")
+          f"{float(Q0)} is inside that region: {sig_stable_around_q0}")
 
     # locate the transition by bisection on the negative-eigenvalue count
     q_lo, q_hi = 1.02, 1.05
@@ -167,7 +171,7 @@ def main() -> int:
     q_c = (q_lo + q_hi) / 2
     print(f"     signature TRANSITION located at q_c ≈ {q_c:.12f} "
           f"(an eigenvalue of the Markov-trace Gram crosses zero there)")
-    print(f"     q₀/q_c = {float(Q0_T4) / q_c:.10f}")
+    print(f"     q₀/q_c = {float(Q0) / q_c:.10f}")
 
     # ---- the Lorentzian frame at q₀ ----
     evals, evecs = np.linalg.eigh(G)
@@ -230,7 +234,7 @@ def main() -> int:
               + (f"{rap:.10g}" if rap is not None else "undefined (spacelike)"))
 
     # ---- the test ----
-    lnq = mp.log(Q0_T4)
+    lnq = mp.log(Q0)
     L = lnq**2
     r_target = S_MUON / S_PROTON
     print(f"\n[T1] A-free test (r = {mp.nstr(r_target, 10)} < 0 ⇒ pair must "
@@ -271,9 +275,9 @@ def main() -> int:
         ir["order_inverted_vs_assignment"] = bool(b_ < lnq < a_)
         ir["swap_would_be_a_fit"] = True
         ir["swap_does_not_rescue"] = {
-            "target_theta_mu": "0.05894648", "value_that_would_take_it":
+            "target_theta_mu": "0.058592016840059722", "value_that_would_take_it":
                 mp.nstr(b_, 10),
-            "factor_off": mp.nstr(mp.mpf("0.05894648") / b_, 6),
+            "factor_off": mp.nstr(mp.mpf("0.058592016840059722") / b_, 6),
             "note": "even under the impermissible swap the smaller value misses "
                     "its target by ~3.8x, so this is a genuine miss and NOT a "
                     "signal suppressed by the anchor assignment"}
@@ -281,8 +285,8 @@ def main() -> int:
               f"SCALE (both O(ln q₀)), but its anchors come out in the OPPOSITE "
               f"order. Swapping them would be a FIT and is not permitted — and "
               f"it would not rescue the match anyway "
-              f"({mp.nstr(b_, 6)} vs target 0.0589, ~"
-              f"{mp.nstr(mp.mpf('0.05894648') / b_, 4)}x off).")
+              f"({mp.nstr(b_, 6)} vs target 0.05859, ~"
+              f"{mp.nstr(mp.mpf('0.058592016840059722') / b_, 4)}x off).")
     hit = any(v.get("matches_r") for v in verdicts.values())
     any_straddle = any(v.get("straddles_lnq0") for v in verdicts.values())
 

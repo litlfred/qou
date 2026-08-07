@@ -42,7 +42,7 @@ Checks performed:
       traversed monotonically by A on [A_crit, ∞).
   T1  qou-rdmr's prediction ϑ_μ = ϑ_p = 0 (Rademacher Φ vanishes on both
       (RL)ⁿ words) tested against (*) — A-free.
-  S1  sensitivity — the T4 probe hardcodes q₀ = 1.11020 while the canonical
+  S1  (RESOLVED 2026-08-07) the T4 probe used to hardcode q₀ = 1.11020 vs canonical
       substrate value is q₀ ≈ 1.10998; r is q₀-free, but the curve is not, so
       both are reported.
 
@@ -76,12 +76,18 @@ S_MUON = mp.mpf("0.00968298")
 S_PROTON = mp.mpf("-0.03945936")
 
 KAPPA = mp.sqrt(3) / 4
-Q0_T4 = mp.mpf("1.11020")        # the value the T4 probe hardcodes
+# The T4 probe now READS the canonical proton-pinned constant. Its old literal
+# 1.11020 was a unit conflation (it solved 2*ln q = h, where h = q - 1/q, rather
+# than using q0); fixed 2026-08-07. There is consequently only ONE grid now —
+# the two-grid comparison this probe used to run is resolved, not merely moot.
+Q0 = None                        # bound to q_at(50) in main()
 A_OMEGA_LIT = 3                  # GGM literature value — used ONLY to reproduce T4
 
 # T4-inverted values, for the C0 control only. A_omega-conditioned.
-THETA_T4_MUON = mp.mpf("0.05894648")
-THETA_T4_PROTON = mp.mpf("0.20323503")
+# T4-inverted values at the CORRECTED q0 (was 0.05894648 / 0.20323503 at the
+# superseded 1.11020). Still A_omega-conditioned; used for the C0 control only.
+THETA_T4_MUON = mp.mpf("0.058592016840059722")
+THETA_T4_PROTON = mp.mpf("0.20313250701827611")
 
 
 def theta_p_sq(theta_mu_sq, L, r):
@@ -99,15 +105,20 @@ def main() -> int:
     print("            depends on NEITHER A_ω NOR q₀ — it is measured data alone.")
 
     q0_canon = q_at(50)
-    grids = {"T4 hardcoded q₀=1.11020": Q0_T4,
-             f"canonical q₀={mp.nstr(q0_canon, 8)}": q0_canon}
+    # ONE grid. Before 2026-08-07 this probe compared the T4 probe's hardcoded
+    # q0 = 1.11020 against the canonical value, and reported the resulting
+    # 4th-digit split in L and A_crit as a live discrepancy. That literal has
+    # since been corrected at the source (a unit conflation: it solved
+    # 2*ln q = h instead of using q0), so the two grids have collapsed into one.
+    GRID = f"canonical q₀={mp.nstr(q0_canon, 8)}"
+    grids = {GRID: q0_canon}
 
     out = {}
     for tag, q0 in grids.items():
         L = mp.log(q0) ** 2
         A_crit = S_MUON / (KAPPA * L)
-        # C0 control: does the T4 pair satisfy (*)?  (only meaningful on the
-        # T4 grid — the canonical grid uses a different q₀ than T4 inverted with)
+        # C0 control: does the T4 pair satisfy (*)? Now meaningful on the single
+        # canonical grid, since T4 inverts at that same q0.
         lhs = (L - THETA_T4_MUON**2) / (L - THETA_T4_PROTON**2)
         resid = abs(lhs - r)
         # T1: the rdmr prediction ϑ_μ = 0 → what does the curve force for ϑ_p?
@@ -122,11 +133,11 @@ def main() -> int:
         print(f"    C0  curve residual at the T4 pair = {mp.nstr(resid, 6)}")
         print(f"    T1  curve forces ϑ_p = {mp.nstr(tp_at_zero, 10)} when ϑ_μ = 0")
 
-    # the control must pass on the T4 grid (definitional)
-    c0_ok = out["T4 hardcoded q₀=1.11020"]["curve_resid_at_T4"] < mp.mpf("1e-6")
+    # the control must pass (definitional — T4 inverts on this grid)
+    c0_ok = out[GRID]["curve_resid_at_T4"] < mp.mpf("1e-6")
 
     # ---- C1: traverse the curve in A, showing it is a genuine 1-parameter family
-    L4 = out["T4 hardcoded q₀=1.11020"]["L"]
+    L4 = out[GRID]["L"]
     print("\n[C1] the admissible family, traversed by A (A-free curve, A shown "
           "only as the parameter):")
     print(f"    {'A':>8}   {'ϑ_μ':>12}   {'ϑ_p':>12}   {'ϑ_p/ϑ_μ':>10}")
@@ -146,7 +157,7 @@ def main() -> int:
           "row — that is the one degree of freedom.")
 
     # ---- T1 verdict: is the rdmr prediction on the curve?
-    tp_forced = out["T4 hardcoded q₀=1.11020"]["theta_p_forced_at_theta_mu_zero"]
+    tp_forced = out[GRID]["theta_p_forced_at_theta_mu_zero"]
     rdmr_on_curve = abs(tp_forced) < mp.mpf("1e-6")
     print(f"\n[T1] qou-rdmr predicts ϑ_μ = ϑ_p = 0 (Rademacher Φ vanishes on both "
           f"(RL)ⁿ words).")
@@ -205,7 +216,7 @@ def main() -> int:
     wb.add_data("admissible_family_sample", table)
     wb.add_data("T1_rdmr_on_curve", bool(rdmr_on_curve))
     wb.add_data("q0_note",
-                "the T4 probe hardcodes q0 = 1.11020 while the canonical "
+                "RESOLVED 2026-08-07: the T4 probe used to hardcode q0 = 1.11020 vs canonical "
                 "substrate value is ~1.10998; r is q0-free but the curve is not, "
                 "so both grids are reported")
     wb.add_data("inputs_taken_as_given",

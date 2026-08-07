@@ -62,7 +62,10 @@ set_compute_dps()
 
 # T4-inverted targets — CONSUMED FOR COMPARISON ONLY, never fitted.
 # They are A_omega-conditioned; see docs/scope/2026-08-01-t4-anchor-circularity.md
-THETA_T4 = {"muon (4_1)": mp.mpf("0.05894648"), "proton (B_3)": mp.mpf("0.20323503")}
+THETA_T4 = {"muon (4_1)": mp.mpf("0.058592016840059722"),
+            "proton (B_3)": mp.mpf("0.20313250701827611")}
+# Refreshed 2026-08-07 after the T4 q0 unit-conflation fix (was 0.05894648 /
+# 0.20323503 at the superseded q0 = 1.11020). Comparison-only, as before.
 
 R = ((1, 1), (0, 1))          # σ₁ ↦ R
 L = ((1, 0), (1, 1))
