@@ -10,7 +10,7 @@ tags:
     - whitehead
     - refuted-needs-repair
 created_at: 2026-08-07T18:40:00Z
-updated_at: 2026-08-07T22:20:00Z
+updated_at: 2026-08-07T22:35:00Z
 ---
 
 ## Why
@@ -254,3 +254,45 @@ rebuilding too.
    ONE-cusped manifolds; the multi-cusp generalisation is Section 4.5
    ("Invariance of the generalized torsion"), which is where any genuine
    c-dependence would actually live.
+
+---
+
+## 2026-08-07 (fifth pass) — impact analysis. A CORRECT implementation is already in-repo.
+
+Full analysis: `docs/audits/2026-08-07-one-loop-fix-impact-analysis.md`.
+
+`computations/probes/one_loop_vs_nu_sdp_probe.py` (bean qou-r307) already
+implements DG/GY Def 2.1 — with the 1/2, the flattening (f+f'+f''=1, edges=2:
+the convention this bean recorded), and the monomial. Tested here over ~19
+retriangulations each:
+
+    4_1  |tau| = 0.866025403784 = sqrt(3)/2   INVARIANT   (= DG's eq 3.2)
+    5_2  |tau| = 1.161162738134               INVARIANT
+    6_2  |tau| = 2.216589930891               INVARIANT
+
+versus 8 and 17 distinct values under the broken construction. So the repair is
+identified and verified — for ONE-CUSPED manifolds.
+
+**The blocker moved.** That implementation swaps ONE edge row for ONE meridian
+row, correct only at c=1. On the links it degenerates: |tau(L5a1)| = 0,
+|tau(L6a4)| = 0. DG Definition 1.2 is itself stated for one-cusped manifolds;
+multi-cusp is their Section 4.5. The whole c_sigma arc is c=2 and c=3, i.e.
+entirely in the regime the correct formula (as implemented) does not cover.
+
+So this is NOT a copy-paste fix. Revised plan on the audit doc; short version:
+fix c=1 first (cheap, gives a trusted base), then implement DG Sec 4.5, and only
+then touch c_sigma.
+
+Blast radius checked, not assumed: no content .ts, no Lean, no production. 5
+probes + 3 audits + 4 beans. #4671's "audit-only" claim HOLDS.
+
+Also surfaced: `borromean_cusp_framing_factor.py` already recorded |det| varying
+over framings ({64,128,256,512}); PR #4691 found the same object varying over
+retriangulations. Two explanations for one phenomenon, and DG says neither is
+the cause. That script is also where the 2^c framing count — the apparent origin
+of the per-cusp factor — comes from.
+
+And: the sqrt(3) calibration target may itself be wrong. This repo's
+value-validated Porti probe gives |T_mu(4_1)| = 3; DG give sqrt(3)/2. sqrt(3) is
+neither. one_loop_vs_nu_sdp_probe.py explicitly warns "Do NOT read the tau
+values here as the adjoint torsion" — which is what the c_sigma script did.
