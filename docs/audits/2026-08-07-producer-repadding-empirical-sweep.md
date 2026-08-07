@@ -247,13 +247,26 @@ detects the class directly: build each module-level literal at `dps=15` and
 again at `dps=60`; if they differ, precision was lost. Exactly-representable
 values (`mpf(0)`, `mpf("0.5")`, dyadic tolerances) are not flagged.
 
-Current count: **1485 sites across 497 witness-emitting scripts** (1570 / 520
-including scripts that emit nothing, `--all`).
+**Correction to a number published earlier in this branch.** The first cut
+of this gate reported *1485 sites / 497 files*. That was wrong, inflated
+about 9x. `scan_file` was purely static: it flagged every module-scope
+`mpf` literal regardless of whether precision had already been raised
+earlier in the module — so it also flagged the 152 producers that do it
+correctly, and it kept flagging the 14 files above *after* they were fixed.
+That is how the error surfaced. The detector now walks module statements in
+order and stops flagging once it sees a raise (`set_compute_dps()`,
+`mp.dps = N`, `workdps`). Position is the whole point: a constant appearing
+after the raise is built at full precision and is correct.
 
-That count is **candidates, not confirmed defects** — a lossy `mpf('0.3')`
-used as a plot bound or grid step misrepresents nothing; it is only a defect
-when the constant reaches a witness as a claimed high-precision datum. So
-`--strict` is deliberately **not** wired into CI: at 1485 findings it would
-be a gate everyone learns to ignore, which is exactly the failure #4653
-avoided by fixing its own findings outright to keep that gate at baseline
-zero. Draining precedes enforcement.
+Corrected count: **164 sites across 63 witness-emitting scripts.**
+
+Even corrected, these are **candidates, not confirmed defects** — a lossy
+`mpf('0.3')` used as a plot bound, or a `1e-12` comparison tolerance,
+misrepresents nothing; it is a defect only when the constant reaches a
+witness as a claimed high-precision datum.
+`habiro_interpolate_cross_validator`'s `AGREEMENT_RTOL = 1e-12` is flagged
+and should **not** be "fixed" — that is the agent-confirm step, and the
+residue is expected. So `--strict` stays out of CI until the real defects
+are drained; a gate with a standing backlog is one everyone learns to
+ignore, which is exactly the failure #4653 avoided by holding its own gate
+at baseline zero. Draining precedes enforcement.
