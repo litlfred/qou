@@ -761,6 +761,50 @@ does not move the drain count. What it means is that any conclusion drawn from
 their output beyond 15 digits was unsound — these probes print ratios and
 compare them against exact predictions.
 
+### The no-op class is invisible to the padding gate
+
+Completing the sweep found **seven** instances in total, and two more only
+because the first pass matched `^import mpmath as <alias>` at module scope
+while these sit indented inside a `try:`:
+
+```
+computations/bring_homology_pairing_integration.py:7     emits a witness — 4 padded
+computations/e_hartree_round22_arch_bridge.py:69         emits a witness — 0 padded
+computations/e_hartree_round23_normalization.py:68       emits a witness — 0 padded
+computations/qbeta/h5_wedderburn_tension_hp.py:11        no witness
+computations/qbeta/qbeta_h4_em_normalization_probe.py:11 no witness
+computations/qbeta/qbeta_h4_sign_block_exact.py:11       no witness
+computations/qbeta/qbeta_h4_sign_block_proof_search.py:11 no witness
+```
+
+**Only one of the seven produced padding.** The other six were invisible, and
+could not have been otherwise: at `dps=15` a plain `str(<mpf>)` prints ~15
+digits, and `is_f64_padded` requires ≥20 fractional digits before it looks at a
+value at all. The no-op hides itself from the audit that would catch it.
+`bring_homology` surfaced only because it writes `mp.nstr(..., 40)`, forcing 40
+digits out of a 15-digit value.
+
+So the two defects are near-orthogonal:
+
+| | claim | detectable by |
+|---|---|---|
+| float64 padding | value claims **more** precision than it has | `witness_float64_padding_audit` |
+| `mp.dps` no-op | value silently carries **less** than asked for | nothing, today |
+
+The corpus has been swept exhaustively for the first and never for the second.
+The detector is static and cheap — for every alias binding the mpmath
+**module** (not `from mpmath import mp`, where `mp` is the context), a bare
+`<alias>.dps = …` is always a no-op:
+
+```python
+aliases = re.findall(r"^\s*import\s+mpmath(?:\s+as\s+(\w+))?\s*$", src, re.M)
+#   then flag:  ^\s*<alias>\.dps\s*=
+```
+
+Two cautions from running it: match indented imports (two of the seven are
+inside `try:`), and skip docstrings — `qbeta_5two_phi_series_engine_probe.py`
+mentions "at mp.dps = 60" in prose and is a false positive.
+
 ## Regenerating a witness silently drops its q₀ provenance
 
 **Source fix committed, witness NOT regenerated — and the reason generalises

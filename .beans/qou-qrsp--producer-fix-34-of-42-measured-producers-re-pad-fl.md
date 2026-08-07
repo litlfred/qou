@@ -317,3 +317,28 @@ live in each (26/34/12/14 lines). Recovered precision, not moved results:
 NONE emits a witness, so this adds no padded fields and does not move the
 drain count — but any conclusion drawn from their output past 15 digits was
 unsound.
+
+## The mp.dps no-op class is INVISIBLE to the padding gate — 7 instances
+
+Completed the sweep: 7 total, 2 found only after matching INDENTED imports
+(inside `try:`). All fixed and verified.
+
+  bring_homology_pairing_integration.py:7      witness, 4 padded
+  e_hartree_round22_arch_bridge.py:69          witness, 0 padded (8 values gained digits)
+  e_hartree_round23_normalization.py:68        witness, 0 padded (no observable change)
+  qbeta/h5_wedderburn_tension_hp.py:11         no witness
+  qbeta/qbeta_h4_em_normalization_probe.py:11  no witness
+  qbeta/qbeta_h4_sign_block_exact.py:11        no witness
+  qbeta/qbeta_h4_sign_block_proof_search.py:11 no witness
+
+ONLY 1 OF 7 PRODUCED PADDING. At dps=15 `str(<mpf>)` prints ~15 digits and
+is_f64_padded needs >=20 fractional digits before it even looks — so the no-op
+hides from the audit that would catch it. bring_homology surfaced only because
+it writes mp.nstr(..., 40).
+
+The two defects are near-orthogonal: padding = claims MORE precision than it
+has; no-op = silently carries LESS than asked. The corpus is swept
+exhaustively for the first and never for the second. WORTH A GATE — the
+detector is static and cheap (see the audit doc for the regex). Match indented
+imports, and skip docstrings (qbeta_5two_phi_series_engine_probe mentions
+"mp.dps = 60" in prose).
