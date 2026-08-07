@@ -114,22 +114,53 @@ at all but vacuous proofs.**
 
 ## Two structural gaps in the criterion
 
-**Gap 1 — nowhere to put the acknowledgement.** 118 of the 159 findings
-(and **11 of these 17**) are library-tree modules with no `.md`/`.ts`
-sibling. The checker looks for the §7c acknowledgement in the block
-`.md` or `.ts` `authorNotes`; a library module referenced by no block
-has no such place. Six of the 17 do have `.md` siblings and can be
-fixed today: `algebraic-quantum-volume`, `q-harmonic-form`,
-`q-torsion-leaf`, `per-braid-mass-tower`, `q-beta-q-eq-one-shadow-gate`,
-`wedderburn-as-noncomm-fourier`.
+**Gap 1 — RETRACTED (2026-08-07, same day).** An earlier revision of
+this document, and PR #4703's description, claimed that the 118
+library-tree findings had *nowhere* to put the acknowledgement, because
+`q-usage-audit.ts` calls `checkWallSide(undefined, file)` with no `md`
+and no `ts`. **That was wrong, and the conclusion drawn from it — that
+only 6 of the 17 were fixable — was wrong too.** Two corrections, both
+read off the checker source rather than inferred:
 
-**Gap 2 — the `Archimedean/` path is already a declaration.** 167
+1. **The library-tree files are reached through a referring block that
+   does have `.md`/`.ts`.** "Library-tree" describes where the `.lean`
+   lives, not whether a block points at it. `qa-sweep` calls
+   `checkWallSide(p.md, p.lean, p.ts)`, where `p.lean` is the resolved
+   library module and `p.md`/`p.ts` are the *referring block's*
+   siblings. Example: `lean/QOU/BraidKnot/ZeqNRhoCorrection.lean` ←
+   `mass-theory/z-eq-n-rho-correction.ts`. So the acknowledgement has a
+   home, and `acknowledged()` is reachable.
+2. **The `checkWallSide(undefined, file)` call cannot produce an
+   unfixable finding.** The archimedean-without-acknowledgement branch
+   is guarded `if (hasRealType && (mdReadable || tsReadable) && …)`, so
+   with neither sibling readable it does not fire at all. That entry
+   point is a standalone file scan, not the source of the 129
+   ARCH-unacked findings.
+
+**Consequence: every ARCH-unacked finding is fixable today** by adding a
+§7c note to the referring block's `.ts` `authorNotes`. This pass drained
+all 11 shortlist blocks that route through a referring manifest —
+verified **10/10 pass** with `scripts/check-wall-side.ts --block`
+(`knot-factor-amphicheiral` excluded from the count, see the caveat
+below). Together with the 6 sibling-mode blocks drained earlier, the
+whole 18-candidate shortlist is now acknowledged or fixed.
+
+*Harness caveat.* `--block` mode resolves `lean.ref` by trying
+progressively shorter decl-path prefixes. For
+`QOU.BraidKnot.knot_factor_amphicheiral` that lands on
+`lean/QOU/BraidKnot.lean` (the module file) rather than
+`lean/QOU/BraidKnot/KnotFactorAmphicheiral.lean`, so that one row checks
+a different file than intended and its PASS should not be relied on. The
+pipeline's own resolver is the authority; this harness approximates it.
+
+**Gap 2 (still open, but no longer a blocker) — the `Archimedean/` path is already a declaration.** 167
 `.lean` files sit under a `QOU/**/Archimedean/**` path. That directory
 *is* the wall-side declaration, yet the criterion still reports them as
 "archimedean but unacknowledged". Treating the path as an implicit
 acknowledgement would remove a large block of the 129 ARCH-unacked
-findings without touching a single file. Recommended before any manual
-drain, so the remaining count reflects real defects.
+findings without touching a single file. With Gap 1 retracted this is a
+convenience, not a prerequisite: the drain works today. Still worth doing
+so the remaining count reflects real defects.
 
 ## What the shortlist actually surfaced
 

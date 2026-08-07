@@ -23,4 +23,16 @@ export default proposition({
     witness: "computations/borromean-axial-coupling.witness.json",
     status: "verified",
   },
+  authorNotes: [
+    {
+      kind: "note",
+      date: "2026-08-07",
+      body:
+        "**§7c base-ring note (archimedean specialisation).** " +
+        "The reciprocity statement carries ordering hypotheses on the " +
+        "confinement gap (`0 < …`) over `ℝ`. The Frobenius pairing itself " +
+        "is algebraic, but the positivity that makes it a *confinement* " +
+        "statement is an archimedean condition and is stated post-wall.",
+    },
+  ],
 });
