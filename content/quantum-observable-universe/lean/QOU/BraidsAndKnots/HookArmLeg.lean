@@ -1,0 +1,78 @@
+import QOU.BraidsAndKnots.YoungDiagramKernelPincer
+
+/-!
+# The arm/leg decomposition of a hook, as reusable lemmas
+
+`YoungDiagramKernelPincer.hookShape_of_hookLen_eq_sum` (the `v = n` carrier lemma) proved its
+arm/leg machinery inline as local `have`s: the hook of `(i,j)` is the disjoint union of its **arm**
+`{(i,j') : j ≤ j' < λᵢ}` and its **strict leg** `{(i',j) : i < i' < λ'ⱼ}`, both inside the cell set,
+with total cardinality `hookLen`.
+
+Depth-1 (`ν_{n−1}`, epic `qou-ec5z`, bean D1) needs the same decomposition but with a *different*
+equality analysis: `hookLen = n − 1` means the union misses exactly one cell, so the classification
+splits on **which** cell is missed rather than collapsing to the corner. That requires the pieces as
+named lemmas rather than as `have`s inside someone else's proof. This file extracts them; the `v = n`
+proof is left as-is (it is merged and green).
+
+Nothing here is new mathematics — it is the merged argument, factored.
+-/
+
+namespace QOU.BraidsAndKnots.HookArmLeg
+
+open QOU.BraidsAndKnots.YoungDiagramKernel
+open QOU.BraidsAndKnots.YoungDiagramTransposeBridge
+open QOU.BraidsAndKnots.YoungDiagramKernelPincer
+
+/-- The **arm** of a cell: the cells to its right in the same row. -/
+def armF (l : List ℕ) (p : ℕ × ℕ) : Finset (ℕ × ℕ) :=
+  (Finset.Ico p.2 (l.getD p.1 0)).image (fun j' => (p.1, j'))
+
+/-- The **strict leg** of a cell: the cells strictly below it in the same column. -/
+def legF (l : List ℕ) (p : ℕ × ℕ) : Finset (ℕ × ℕ) :=
+  (Finset.Ioo p.1 ((conj l).getD p.2 0)).image (fun i' => (i', p.2))
+
+theorem armF_subset (l : List ℕ) (p : ℕ × ℕ) : armF l p ⊆ cells l := by
+  intro q hq
+  obtain ⟨j', hj', rfl⟩ := Finset.mem_image.mp hq
+  rw [mem_cells]
+  exact (Finset.mem_Ico.mp hj').2
+
+theorem legF_subset (l : List ℕ) (hs : l.Sorted (· ≥ ·)) (p : ℕ × ℕ) : legF l p ⊆ cells l := by
+  intro q hq
+  obtain ⟨i', hi', rfl⟩ := Finset.mem_image.mp hq
+  rw [mem_cells]
+  refine (lt_countP_iff l hs p.2 i').mp ?_
+  have h2 := (Finset.mem_Ioo.mp hi').2
+  rwa [conj_getD l hs] at h2
+
+theorem armF_legF_disjoint (l : List ℕ) (p : ℕ × ℕ) : Disjoint (armF l p) (legF l p) := by
+  rw [Finset.disjoint_left]
+  intro q hqa hql
+  obtain ⟨j', _, rfl⟩ := Finset.mem_image.mp hqa
+  obtain ⟨i', hi', h'⟩ := Finset.mem_image.mp hql
+  simp only [Prod.mk.injEq] at h'
+  have h1 := (Finset.mem_Ioo.mp hi').1
+  omega
+
+theorem hookUnion_subset (l : List ℕ) (hs : l.Sorted (· ≥ ·)) (p : ℕ × ℕ) :
+    armF l p ∪ legF l p ⊆ cells l :=
+  Finset.union_subset (armF_subset l p) (legF_subset l hs p)
+
+/-- **The hook's cardinality**: `|arm ∪ strict leg| = hookLen`. -/
+theorem card_hookUnion (l : List ℕ) (hs : l.Sorted (· ≥ ·)) (p : ℕ × ℕ) (hp : p ∈ cells l) :
+    (armF l p ∪ legF l p).card = hookLen l p := by
+  have hinj1 : Function.Injective (fun j' : ℕ => (p.1, j')) := fun a b h => by
+    simpa using congrArg Prod.snd h
+  have hinj2 : Function.Injective (fun i' : ℕ => (i', p.2)) := fun a b h => by
+    simpa using congrArg Prod.fst h
+  rw [mem_cells] at hp
+  have hcol : p.1 < (conj l).getD p.2 0 := by
+    rw [conj_getD l hs]
+    exact (lt_countP_iff l hs p.2 p.1).mpr hp
+  rw [Finset.card_union_of_disjoint (armF_legF_disjoint l p), armF, legF,
+    Finset.card_image_of_injective _ hinj1, Finset.card_image_of_injective _ hinj2,
+    Nat.card_Ico, Nat.card_Ioo]
+  unfold hookLen
+  omega
+
+end QOU.BraidsAndKnots.HookArmLeg
