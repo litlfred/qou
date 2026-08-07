@@ -155,7 +155,7 @@ theorem photon_heckeCost_zero (hp : HeckeParams) :
 /-- A non-trivial braid word has at least one generator. -/
 theorem nontrivial_has_generators (β : BraidWord)
     (h : β.generators ≠ []) : 0 < β.crossings := by
-  unfold crossings
+  unfold BraidWord.crossings
   exact List.length_pos_iff.mpr h
 
 /-- **Key lemma**: a non-trivial braid has strictly positive crossing

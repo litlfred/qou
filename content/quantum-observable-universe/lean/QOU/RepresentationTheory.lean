@@ -131,7 +131,7 @@ theorem meson_or_baryon_or_exotic
     {C : Type u} [CategoryTheory.Category.{v} C]
     [CategoryTheory.MonoidalCategory C] (h : CategoricalHadron C) :
     h.isMeson ∨ h.isBaryon ∨ h.valence ≥ 4 := by
-  unfold isMeson isBaryon
+  unfold CategoricalHadron.isMeson CategoricalHadron.isBaryon
   have hv := h.valence_ge
   omega
 
