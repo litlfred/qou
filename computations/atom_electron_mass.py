@@ -54,6 +54,7 @@ from codata_constants import (  # noqa: E402
     M_E_MEV,
     M_P_MEV_VALIDATION,
     M_N_MEV_VALIDATION,
+    U_MEV as _U_MEV_REGISTRY,
 )
 from hecke_core import E_HARTREE_EV, alpha_em  # noqa: E402
 from q_parameter import Q as _Q  # noqa: E402
@@ -67,7 +68,13 @@ E0 = ME / (Q0 * (Q0 - 1.0))   # α = E₀ (same as the dashboard)
 ALPHA = E0
 E_H_EV = float(E_HARTREE_EV)  # canonical Hartree, ≈ 27.211 eV
 RY_EV = E_H_EV / 2.0          # Rydberg, ≈ 13.606 eV
-U_MEV = 931.49410242          # AME atomic mass unit
+# Atomic mass unit → MeV. Routed to the registry (CODATA-2022,
+# 931.49410372(29)) rather than hand-typed. The previous literal here was the
+# CODATA-**2018** value 931.49410242 — the vintage carried by the AME2020
+# metadata — which the registry deliberately supersedes
+# (`codata_constants.py` §U_MEV). Every other constant in this file was
+# already imported; only this one was typed by hand.
+U_MEV = float(_U_MEV_REGISTRY)
 
 # Low-isotope set, mirroring /dashboard-low plus protium ¹H (A=1 showcase).
 ISOTOPES = [
