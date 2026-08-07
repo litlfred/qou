@@ -65,10 +65,24 @@ The numerical identity behind this file is
 
     D(y₊) = Vol(5₂)/3,   y₊ = 0.7849201454990266… + 1.3071412786820454…i
 
-measured this session at 60 dps and agreeing to 20 digits (the limit being the
-precision of the `Vol(5₂)` literal, not the computation). It is recorded below
-as a **conjecture carrier with no instance** — the honest representation of an
-open statement.
+and it is **published**: Broadhurst [hep-th/9811173] eq (73) records
+`vol(5₂) = 3·Z₂₃,₃`, with `Z₂₃,₃` the Zagier value of the discriminant −23
+cubic field — the smallest `|disc|` among complex cubic fields, which is why
+that particular constant appears.
+
+Checked at 80 dps against a `Vol(5₂)` computed **from the saddle roots**
+(`computations/probes/fivetwo_saddle_values.py::volume()`), so no hardcoded
+constant enters and there is no precision ceiling. Three routes agree:
+
+    Vol(5₂)/3                              0.9427073627769277209212996030922116…
+    Im Li₂(y₊) + arg(1−y₊)·log|y₊|         (same, |Δ| = 1.1e-81)
+    Λ(α) + Λ(β) + Λ(γ)   ← this file       (same, |Δ| = 2.1e-81)
+
+i.e. exact to working precision, and the dihedral-angle route agrees with the
+naive complex-`Li₂` form it is meant to replace. It is recorded below as a
+**conjecture carrier with no instance** — the honest representation of a
+statement that is *numerically settled and published* but not formally derived
+here.
 
 **The one open reason is geometric.** `Vol(5₂) = 3·D(y₊)` needs the fact that
 the `5₂` complement's ideal triangulation is three tetrahedra *all of the same
