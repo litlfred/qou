@@ -319,12 +319,14 @@ theorem burnside [ctx : BurnsideContext] (n : ℕ) (partitions : List (Partition
   --     `∑ i : PartitionIndex n, numSYT i.diagram ^ 2 = n!`
   -- (specialising `RegularRepBlockTrace.sumSq_dim_eq` to the assembled
   -- `snSpectralData ℚ n`). Discharging `burnside` from it needs two further
-  -- bridges, both genuine formalisation work (not yet in Mathlib or the corpus):
-  --   (1) `dimIrrep Λ = numSYT (youngDiagramOf Λ)` — the hook-length formula
-  --       `QOU.BraidKnot.numSYT_mul_hookProduct` (a still-open sorry)
-  --       PLUS `Partition.hookProduct Λ = QOU.BraidKnot.hookProduct
-  --       (youngDiagramOf Λ)` (the custom list-based hookProduct = the cell-based
-  --       one), with `Nat`-division care (`hookProduct ∣ n!`);
+  -- bridges. **Bridge (1) is now PROVED**; bridge (2) remains:
+  --   (1) PROVED — `dimIrrep Λ = numSYT (toYoungDiagram Λ)` is
+  --       `QOU.BraidKnot.dimIrrep_eq_numSYT` (`PartitionHookProductBridge`),
+  --       assembled from the hook-length formula
+  --       `QOU.BraidKnot.HookProductHLF.numSYT_mul_hookProduct` and
+  --       `Partition.hookProduct Λ = QOU.BraidKnot.hookProduct (toYoungDiagram Λ)`
+  --       (`hookProduct_eq_cell`), with the `Nat` division witnessed exactly by
+  --       the FRT product identity (`hookProduct_ne_zero`), not assumed;
   --   (2) the reindexing `List (Partition n)` (complete + `Nodup`) sum ↔
   --       `Finset.univ (PartitionIndex n)` sum, via a custom-`Partition n` ↔
   --       `Nat.Partition n` ↔ `PartitionIndex n` bijection
