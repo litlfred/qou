@@ -18,4 +18,19 @@ export default proposition({
     validation: "not_checked",
   },
   uses: ["prop:lepton-continuant-recurrence"],
+  authorNotes: [
+    {
+      kind: "note",
+      date: "2026-08-07",
+      body:
+        "**§7c base-ring note (archimedean specialisation).** " +
+        "The Lean module " +
+        "`lean/QOU/Archimedean/tau_leptonic_universality.lean` uses " +
+        "`Real.log`. These are real-analytic constructs with no " +
+        "generic-`CommRing` counterpart, so the `ℝ` specialisation is " +
+        "forced by the statement itself rather than chosen. The block " +
+        "therefore sits on the archimedean side of the §7c wall by " +
+        "construction.",
+    },
+  ],
 });

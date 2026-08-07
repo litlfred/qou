@@ -11,7 +11,7 @@
  * Usage:  bun run scripts/check-wall-side.ts <block.lean> [...]
  * Exit 0 iff every named block passes.
  */
-import { existsSync, readFileSync } from "node:fs";
+import { existsSync, readFileSync, readdirSync } from "node:fs";
 import { checkWallSide } from "../folio-assistant/content/pipeline/qa-checkers-voice.ts";
 
 const argv = process.argv.slice(2);
@@ -53,8 +53,40 @@ function resolveLeanFromManifest(tsPath: string): string | undefined {
 }
 
 const targets: { lean: string; md?: string; ts?: string; label: string }[] = [];
+
+/** `--sweep <dir>`: every block manifest under <dir> that carries a
+ *  `lean.ref`, checked the way qa-sweep does. Gives the true current
+ *  failing list rather than a hand-assembled shortlist. */
+function sweep(dir: string) {
+  const out: string[] = [];
+  const walk = (d: string) => {
+    for (const e of readdirSync(d, { withFileTypes: true })) {
+      const p = `${d}/${e.name}`;
+      if (e.isDirectory()) walk(p);
+      else if (e.name.endsWith(".ts") && !e.name.endsWith(".d.ts")) out.push(p);
+    }
+  };
+  walk(dir);
+  for (const tsPath of out) {
+    let src: string;
+    try { src = readFileSync(tsPath, "utf-8"); } catch { continue; }
+    if (!/lean:\s*{/.test(src)) continue;
+    const lean = resolveLeanFromManifest(tsPath);
+    if (!lean) continue;
+    const mdPath = tsPath.replace(/\.ts$/, ".md");
+    targets.push({
+      lean,
+      md: existsSync(mdPath) ? mdPath : undefined,
+      ts: tsPath,
+      label: tsPath,
+    });
+  }
+}
+
 for (let i = 0; i < argv.length; i++) {
-  if (argv[i] === "--block") {
+  if (argv[i] === "--sweep") {
+    sweep(argv[++i]);
+  } else if (argv[i] === "--block") {
     const tsPath = argv[++i];
     const lean = resolveLeanFromManifest(tsPath);
     if (!lean) {
