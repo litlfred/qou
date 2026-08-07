@@ -211,4 +211,46 @@ theorem cLiTwo_analyticOnNhd :
     AnalyticOnNhd ℂ cLiTwo (EMetric.ball (0 : ℂ) 1) :=
   cLiTwo_hasFPowerSeriesOnBall.analyticOnNhd
 
+/-! ### The natural domain of the reflection identity: `ball(½, ½)`
+
+The reflection identity `Li₂ z + Li₂(1−z) = π²/6 − log z·log(1−z)` is **not**
+well-posed on the unit ball: `cLiTwo (1−z)` is not given by its series there
+(`|1−z|` reaches 2), and `Complex.log z` has its branch cut through it.
+
+`Metric.ball (1/2) (1/2)` is the natural domain — the disc on the segment
+`[0,1]` as diameter. On it all four ingredients are simultaneously good, and it
+contains the real segment `(0,1)` where the identity is already proved
+(`QOU.Archimedean.cLiTwo_reflection_ofReal`), so it is also the connected open
+set an identity-theorem continuation needs. -/
+
+/-- `ball(½,½) ⊆ ball(0,1)`, so `cLiTwo` is given by its series there. -/
+theorem norm_lt_one_of_mem_ball_half {z : ℂ}
+    (hz : z ∈ Metric.ball (1 / 2 : ℂ) (1 / 2)) : ‖z‖ < 1 := by
+  rw [Metric.mem_ball, Complex.dist_eq] at hz
+  have h : ‖z‖ ≤ ‖z - 1 / 2‖ + ‖(1 / 2 : ℂ)‖ := by
+    simpa using norm_add_le (z - 1 / 2) (1 / 2 : ℂ)
+  have h2 : ‖(1 / 2 : ℂ)‖ = 1 / 2 := by norm_num
+  linarith
+
+/-- `z ↦ 1 − z` maps `ball(½,½)` to itself, so `cLiTwo (1−z)` is fine too. -/
+theorem one_sub_mem_ball_half {z : ℂ}
+    (hz : z ∈ Metric.ball (1 / 2 : ℂ) (1 / 2)) :
+    1 - z ∈ Metric.ball (1 / 2 : ℂ) (1 / 2) := by
+  rw [Metric.mem_ball, Complex.dist_eq] at hz ⊢
+  have : (1 : ℂ) - z - 1 / 2 = -(z - 1 / 2) := by ring
+  rw [this, norm_neg]
+  exact hz
+
+/-- `Re z > 0` on `ball(½,½)`, so `log z` and `log (1−z)` avoid the branch cut. -/
+theorem re_pos_of_mem_ball_half {z : ℂ}
+    (hz : z ∈ Metric.ball (1 / 2 : ℂ) (1 / 2)) : 0 < z.re := by
+  rw [Metric.mem_ball, Complex.dist_eq] at hz
+  have h : |(z - 1 / 2).re| ≤ ‖z - 1 / 2‖ := by
+    simpa using RCLike.abs_re_le_norm (z - 1 / 2)
+  have hre : (z - 1 / 2).re = z.re - 1 / 2 := by simp
+  rw [hre] at h
+  have hlt : |z.re - 1 / 2| < 1 / 2 := lt_of_le_of_lt h hz
+  have := (abs_lt.mp hlt).1
+  linarith
+
 end QOU.MathlibExt
