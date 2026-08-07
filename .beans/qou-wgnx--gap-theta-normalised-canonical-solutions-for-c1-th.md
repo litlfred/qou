@@ -8,6 +8,61 @@ created_at: 2026-08-07T08:45:09Z
 updated_at: 2026-08-07T10:04:33Z
 ---
 
+---
+
+# STATUS SUMMARY (2026-08-07, current) — read this first
+
+**The connection matrix and its invariant are DONE, in closed form. The Stokes
+multipliers proper are not.**
+
+## Achieved
+
+| result | status |
+|---|---|
+| ∞-side theta-normalised canonical solutions | built, residual `1e-62` |
+| 0-side exponents `t² + (q−1)t + (q−1) = 0`, conjugate pair for `1<q<5` | Lean, sorry-free |
+| Connection matrix `P = Y₀⁻¹Y_∞` | obtained; `[[c₊,c₋],[c̄₊,c̄₋]]`, elliptic per entry |
+| Pole divisor `[−1]`, `[±T]`, all `p`-orbits of `θ_p`'s zero set | symbolic; residue theorem confirms completeness |
+| `θ_p(w)=0` for `w ∈ −p^ℤ` (⊇ direction) | Lean, sorry-free |
+| **Invariant `χ = P₀₀P₁₁/(P₀₁P₁₀)`, order 2** | half-annulus count `= 2.0` exact |
+| **Closed form** `χ = θ_p(z/α)θ_p(−z/ᾱ)/[θ_p(−z/α)θ_p(z/ᾱ)]`, `α = t₂/T`, `C = 1` | verified, worst dev `5.3e-63` over 12 points |
+| Literature confirmation of that shape | Lin–Ma–Xu arXiv:2412.02281 Thm 1.2 |
+
+## Lean (all sorry-free, `[propext, Classical.choice, Quot.sound]`)
+
+`QOU/QBeta/C1ConnectionPoles.lean` — `qTheta_neg_zpow_eq_zero`,
+`summable_qThetaTerm`, `qTheta_functional_equation`, `qThetaC_conj`,
+`norm_qThetaC_conj_pair`, `thetaRatio_multiplier`, `connRatio_reflect`,
+`connRatio_elliptic`.
+`QOU/QBeta/C1ZeroSideExponents.lean` — the 0-side exponent geometry.
+
+## Open
+
+1. **Stokes multipliers proper.** χ is the invariant they are functions of; the
+   remaining step is convention-dependent. Lin–Ma–Xu is the reference and is now
+   **in-repo** at `uploads/2412.02281v1.pdf`.
+2. **Jacobi triple product in Lean** — needed for the *converse* of the zero
+   locus. Mathlib has neither JTP nor the argument principle. Multi-session job;
+   scoped in the twelfth entry.
+3. **`χ = closed form` as a theorem**, not just the shape — needs the analytic
+   construction formalised. Not currently feasible.
+
+## Method notes worth keeping (each cost a wrong turn)
+
+- `P(pz) = P(z)` is an **algebraic identity**, hence a free error meter — check
+  it before believing any off-axis number.
+- `p` is real positive, so `pz` has the **same argument** as `z`: any function of
+  `arg z` alone passes an ellipticity check **trivially**.
+- Agreement across resolutions is **not** convergence if every resolution is
+  equally too coarse to resolve the feature. Cost two retractions.
+- The torus is **thin** (`log p = 0.052`), so `log|χ|` moves ~13.7 decades
+  between angular samples spaced `π/12`. Coarse scans hide everything.
+- To find a zero, use **winding concentration**, never a magnitude dip: the dip
+  has width ~ the miss distance.
+
+---
+
+
 Two routes are closed with NEGATIVES (steps 3 and 4): the sector data is
 simply not visible in b_m asymptotics. Both tried to shortcut past building
 the canonical solutions, and failed for that same underlying reason.

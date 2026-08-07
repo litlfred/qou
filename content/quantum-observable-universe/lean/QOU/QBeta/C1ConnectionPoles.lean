@@ -35,6 +35,11 @@ and the whole question reduces to: **where does `θ_p` vanish?**
   on the real axis. This is the formal core of the refutation the whole C1 arc
   restarted from: a basis putting them "~17 orders of magnitude apart" is
   impossible, not merely unobserved.
+* `thetaRatio_multiplier` — `θ_P(cz)/θ_P(z)` is a q-character with multiplier
+  `c`: the building block of every connection coefficient in the literature
+  (the *pseudo-constants* of Ramis–Sauloy–Zhang).
+* `connRatio_reflect` — numerator and denominator of the closed form swap under
+  conjugation, which is why `|χ| = 1` on `ℝ*` and zeros pair with conjugate poles.
 * `connRatio_elliptic` — the closed form found for the connection invariant
   (a ratio of four `θ_p`'s) is `p`-elliptic, straight from the functional
   equation. Proves the *shape* is right; not that χ equals it.
@@ -377,6 +382,36 @@ theorem connRatio_elliptic (P a b z : ℝ) (hP : 0 < P)
   have d4 : P ^ (2:ℤ) * z / b = P ^ (2:ℤ) * (z / b) := by ring
   rw [d1, d2, d3, d4, e _ (div_ne_zero hz ha), e _ (div_ne_zero (neg_ne_zero.mpr hz) hb),
       e _ (div_ne_zero (neg_ne_zero.mpr hz) ha), e _ (div_ne_zero hz hb)]
+  ring
+
+/-- **The theta quotient `E_c(z) = θ_P(cz)/θ_P(z)` is a q-character with
+multiplier `c`.**
+
+Division-free form of `E_c(P²z) = c · E_c(z)`. This is the building block every
+connection coefficient in the literature is made of: Lin–Ma–Xu
+(arXiv:2412.02281, Thm 1.2) writes them as
+`(constant) · θ_q(−aᵢz)/θ_q(−z) · z^{log_q aᵢ}`, and `θ_q(cz)/θ_q(z)` is the
+q-analogue of the power `z^{log_q c}`. Such coefficients are the
+*pseudo-constants* of Ramis–Sauloy–Zhang. It is also why the cross-ratio χ has
+constant exactly `1`: the constants and the `θ(z)` denominators cancel. -/
+theorem thetaRatio_multiplier (P c z : ℝ) (hP : 0 < P) (hc : c ≠ 0) (hz : z ≠ 0) :
+    qTheta P (P ^ (2:ℤ) * (c * z)) * qTheta P z
+      = c * (qTheta P (c * z) * qTheta P (P ^ (2:ℤ) * z)) := by
+  rw [qTheta_functional_equation P (c * z) hP (mul_ne_zero hc hz),
+      qTheta_functional_equation P z hP hz]
+  ring
+
+/-- **The reflection law behind `|χ| = 1` on the real axis.**
+
+With `ᾱ = conj α`, the numerator and denominator of the closed form swap under
+conjugation: `N(z̄) = conj (D z)`. Hence `χ(z̄) = 1/conj χ(z)`, which forces
+`|χ| = 1` on `ℝ*` and pairs every zero with a conjugate pole — exactly the
+structure measured (reflection law verified numerically to `1e-268`). -/
+theorem connRatio_reflect (P : ℝ) (a z : ℂ) :
+    qThetaC P ((starRingEnd ℂ) z / a) * qThetaC P (-((starRingEnd ℂ) z) / (starRingEnd ℂ) a)
+      = (starRingEnd ℂ) (qThetaC P (-z / a) * qThetaC P (z / (starRingEnd ℂ) a)) := by
+  rw [map_mul, ← qThetaC_conj, ← qThetaC_conj, map_div₀, map_div₀, map_neg,
+      RingHomCompTriple.comp_apply, RingHom.id_apply]
   ring
 
 end QOU.QBeta.C1Poles
