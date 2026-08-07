@@ -85,6 +85,8 @@ def is_f64_padded(s: str) -> bool:
         return False
     if x == 0:
         return False
+    # float64-intentional: measuring the distance to the nearest double
+    # IS the discriminator here — the downcast is the point.
     return abs(x - mpf(float(x))) / abs(x) < F64_GAP
 
 

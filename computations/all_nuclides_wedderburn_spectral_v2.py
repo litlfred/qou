@@ -374,12 +374,12 @@ def main() -> int:
         sf, af, stdf, _T = blocks_fast(Zl, Nl, P_intra=P_intra,
                                        N_intra=N_intra)
         rel = max(
-            abs(sb - sf) / max(abs(sb), mp.mpf(1e-30)),
-            abs(ab - af) / max(abs(ab), mp.mpf(1e-30)),
+            abs(sb - sf) / max(abs(sb), mp.mpf("1e-30")),
+            abs(ab - af) / max(abs(ab), mp.mpf("1e-30")),
             max(abs(stdb[i][j] - stdf[i][j]) for i in (0, 1)
                 for j in (0, 1))
             / max(max(abs(stdb[i][j]) for i in (0, 1) for j in (0, 1)),
-                  mp.mpf(1e-30)),
+                  mp.mpf("1e-30")),
         )
         bf_dev = max(bf_dev, rel)
         if have_f64:

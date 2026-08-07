@@ -49,6 +49,37 @@ jobs:
             echo '```';
           } >> "$GITHUB_STEP_SUMMARY"
 
+      - name: mpf(<float>) source audit (strict — baseline ZERO)
+        # Owner directive: NO FLOAT64. The float64-padding ratchet below
+        # catches fake precision AFTER it reaches a witness; this catches the
+        # same defect where it ORIGINATES:
+        #
+        #   mp.mpf(0.1)     mpmath receives 0.10000000000000000555111512312...
+        #   mp.mpf("0.1")   mpmath receives 0.1 to full precision
+        #
+        # A float literal is parsed to binary64 before mpmath sees it, so no
+        # mp.dps setting can recover it — raising precision only prints more
+        # of the error.
+        #
+        # Unlike the two ratchets, this gate has NO BASELINE: the surface was
+        # small enough (4 defects) to fix outright, so it starts and stays at
+        # zero. A gate with an empty backlog is one nobody learns to ignore —
+        # do not introduce a baseline here, fix the call instead.
+        #
+        # Only non-exactly-representable literals are DEFECTs. mpf(1.0),
+        # mpf(2.5), mpf(1e9) lose nothing. An explicit mpf(float(x)) is
+        # reported as advisory, not failed; mark deliberate ones with a
+        # `# float64-intentional: <reason>` comment.
+        run: |
+          python3 computations/mpf_float_source_audit.py --self-test
+          python3 computations/mpf_float_source_audit.py --strict | tee /tmp/mpfsrc.txt
+          {
+            echo '## mpf(<float>) source audit (baseline zero)';
+            echo '```';
+            head -14 /tmp/mpfsrc.txt;
+            echo '```';
+          } >> "$GITHUB_STEP_SUMMARY"
+
       - name: float64-padding ratchet (strict on NEW fake precision)
         # Owner directive: NO FLOAT64. A value that enters a producer as a
         # Python float carries ~17 significant digits; serializing it at 50

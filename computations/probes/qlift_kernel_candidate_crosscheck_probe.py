@@ -157,7 +157,7 @@ def t2_gauge_comparison():
             for m in range(2, M_MAX_T2):
                 y = [lam ** k * b[k] for k in range(M_MAX_T2 + 1)]
                 res = c2_residual(y, m, q if q != 1 else mpf(1))
-                scale = max(abs(y[m + 1]), abs(y[m]), abs(y[m - 1]), mpf(1e-40))
+                scale = max(abs(y[m + 1]), abs(y[m]), abs(y[m - 1]), mpf("1e-40"))
                 worst = max(worst, abs(res) / scale)
             root_rows.append({"lambda": mp.nstr(lam, 12),
                               "max_rel_residual_m2_to_m11": mp.nstr(worst, 4)})
