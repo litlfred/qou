@@ -2908,3 +2908,63 @@ downstream rested on that), `tetAngles_sum_eq_pi`.
 
 **No file conflict** — disjoint Lean files. No review comments on #4658 to
 triage. Comment: https://github.com/litlfred/qou/pull/4666#issuecomment-5215109956
+
+**2026-08-07 (PR #4658, later) — the branch data `b` is PROVED, not fitted; and
+Route 5 gets a Lean spine.**
+
+Two things landed, both sorry-free with axioms `[propext, Classical.choice,
+Quot.sound]`.
+
+*1. `b = (−1, +1, +1)` carries no free parameters.* The sum rule is stated as
+`Vⱼ = 3·Li₂(yⱼ) + (log yⱼ + bⱼπi)²` with three hand-supplied signs — which
+reads like a fit. It is not:
+
+> **`log yⱼ + bⱼπi = Log(−yⱼ)`, principal branch** —
+> `QOU.QBeta.FiveTwo.branch_shift_eq_log_neg`.
+
+`arg(−z) = arg z − π` above the real axis, `arg z + π` below, `= π` on the
+positive reals. A cubic with one positive real root and one conjugate pair
+therefore *forces* `(−1, +1, +1)`. Probe gate G6 confirms at 60 dps with error
+exactly `0.0`; the Lean proof is unconditional. So `Vⱼ = 3·Li₂(yⱼ) + Log(−yⱼ)²`,
+and `Log(−z)²` is precisely the term in the inversion formula
+`Li₂ z + Li₂(1/z) = −π²/6 − ½Log(−z)²` — which makes the inversion route
+structural rather than opportunistic.
+
+*2. Route 5's integral is now known to converge.* `|log P(z)| ≤ 4z` on `[0,1]`
+(`abs_log_recipCubic_le`) removes the apparent singularity at `z = 0`, so
+`intervalIntegrable_log_recipCubic_div` makes `−∫₀¹ log P(z)/z dz` a real
+number rather than a formal expression. `LiTwo_eq_integral_unit` supplies the
+matching shape `Li₂(y) = −∫₀¹ log(1 − yz)/z dz`.
+
+*Also:* the complex Euler reflection identity is proved on `ball(½,½)`
+(`QOU.Archimedean.cLiTwo_reflection`) by the identity theorem, closing the
+continuation step `qou-gkco` was opened for. It does **not** reach `y₁`
+(`|y₁| = 1.52`); `cLiTwo` is junk-valued outside the closed disc, so the
+inversion formula is not even *stateable* for it without redefining `Li₂` by an
+integral on `ℂ ∖ [1,∞)`.
+
+**One self-refutation, recorded.** Earlier the same day I wrote into
+`qou-0yqu` that `b` is the `2πik` correction in `log ∏ = Σ log`. Probe gate G1
+shows that correction is *identically zero* (`3.1e-61` over 40 points). Struck,
+not deleted; the correct identification is G6 above.
+
+**New exact restatement (G7 + G8), verified to 25 digits, still unproved:**
+
+    Σⱼ Re Li₂(yⱼ) − 2·Σⱼ Re Li₂(1/yⱼ) = −π²/2
+
+*derived*, not merely observed: the per-root inversion rewrite fails as a
+complex identity at `y₃ ∈ (0,1)`, but G8 shows the whole defect is imaginary
+(`Re Dⱼ = 0` for each root separately, `Im D₃ = −10.6009742`). Since the sum
+rule uses only real parts, the rewrite is legitimate. **Lean consequence:** a
+proof needs only the *real part* of inversion on `(0,1)` — weaker and more
+tractable than the complex identity that genuinely fails there.
+
+**Caution.** `∏ⱼ(1 − z/yⱼ) = 1 − 3z + 2z² − z³` *changes sign* on `[0,1]`
+(`−1` at `z = 1`, since `1/y₃ = 2.325 > 1`), so the positivity argument that
+makes the root side a clean real integral does **not** transfer to the
+reciprocal side. That sign change is the honest location of the remaining
+difficulty.
+
+Probe + witness: `computations/probes/qbeta_5two_route5_branch_data_probe.py`,
+`computations/qbeta-5two-route5-branch-data.witness.json` (8 gates, 60 dps,
+parameter-free). **Sum-rule status unchanged: verified to 80 dps, unproved.**
