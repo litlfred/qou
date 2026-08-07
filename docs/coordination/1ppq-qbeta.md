@@ -3133,3 +3133,33 @@ Probe + witness: `computations/probes/qbeta_5two_route8_envelope_deformation_cyc
 `computations/qbeta-5two-route8-envelope-deformation-cyclotomic.witness.json`
 (7 gates, 40 dps). **Route count 8 tried; 7 refuted, 1 reduction. Sum-rule status
 unchanged: verified to 80 dps, unproved.**
+
+**2026-08-07 (PR #4658, takeover) — Route 9: RATIONALITY PROVED. The sum rule is
+one rational number away.**
+
+Bean `qou-b7cy`, building on Route 8. Route 6 hoped the problem would "stop being
+a transcendental evaluation and become a rationality statement" and failed; that
+is achieved here by a different mechanism.
+
+With `w = −y = 1 + 2cos(2πk/7)` (root of `w³ − 2w² − w + 1`), all of `w`, `1−w`,
+`1+w` are **units** of `F = ℚ(ζ₇)⁺` (norms −1, −1, +1), and the **ring identity**
+
+    (1 − w)²(1 + w) = 1 − w − w² + w³ = w²     [w³ = 2w² + w − 1]
+
+gives `δ(2[w] + [−w]) = w ∧ w² = 0`, so `ξ := 2[w] + [−w]` lies in the **Bloch
+group** `B(F)`. `F` totally real ⟹ `r₂ = 0` ⟹ `B(F) ⊗ ℚ = 0` (Borel) ⟹ `ξ` is
+torsion ⟹ Rogers `L(ξ) ∈ π²ℚ`. **That step is elementary + one classical theorem,
+and the algebraic half is a Lean one-liner.**
+
+Measured exactly (26 digits): `Σₖ Re[2L(wₖ) + L(−wₖ)] = π²/2`, and
+`Σₖ Re V = Σₖ Re L(ξₖ) − π²`, recovering Route 8's `−π²/2`.
+
+**Open:** the rational `1/2` itself (verified, not derived — note `π²/2 = 3·L(1)`),
+and the `−π²` branch constant. A per-embedding formula
+`V − L(ξ) = iπ log[(1−w)/w]` was tried and **is FALSE** (fails at two of three
+embeddings); only the sum is exact — recorded to prevent re-derivation.
+
+Probe + witness: `computations/probes/qbeta_5two_route9_bloch_torsion_rationality_probe.py`,
+`computations/qbeta-5two-route9-bloch-torsion-rationality.witness.json`.
+**Route count 9 tried; 7 refuted, 2 reductions. Sum-rule status unchanged:
+verified to 80 dps, unproved.**

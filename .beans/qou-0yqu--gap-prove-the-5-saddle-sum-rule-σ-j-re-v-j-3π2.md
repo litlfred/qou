@@ -657,3 +657,38 @@ Frenkel–Szenes / Y-system / Watson territory, where `−π²/2` is the natural
 
 **Route count 8 tried; 7 refuted, 1 reduction. Status: verified to 80 dps,
 unproved.**
+
+## 2026-08-07 — Route 9: the sum rule is now a RATIONALITY statement. Bloch torsion at ℚ(ζ₇)⁺.
+
+Full record in child bean **`qou-b7cy`**. Probe
+`qbeta_5two_route9_bloch_torsion_rationality_probe.py`, 6 gates, all pass.
+
+**Route 6's stated hope is achieved, by a different mechanism.** Building on
+Route 8's transport, put `w = −y = 1 + 2cos(2πk/7)`, a root of
+`w³ − 2w² − w + 1`. Then `N(w) = −1`, `N(1−w) = −1`, `N(1+w) = +1` — **all three
+are units** — and the ring identity
+
+    (1 − w)²(1 + w) = 1 − w − w² + w³ = w²        [since w³ = 2w² + w − 1]
+
+gives, for `ξ := 2[w] + [−w]`,
+
+    δ(ξ) = w ∧ [(1−w)²(1+w)] = w ∧ w² = 0    in ∧²F* ⊗ ℚ
+
+so **`ξ` lies in the Bloch group `B(F)`, `F = ℚ(ζ₇)⁺`**. `F` is totally real, so
+`r₂ = 0` and `B(F) ⊗ ℚ = 0` by Borel: `ξ` is **torsion**, and Rogers `L` carries
+Bloch torsion into `π²ℚ`. **The rationality is proved.**
+
+Measured: `Σₖ Re[2L(wₖ) + L(−wₖ)] = π²/2` exactly (26 digits), and
+`Σₖ Re V = Σₖ Re L(ξₖ) − π²`, giving `−π²/2` ✓ = Route 8's target = the sum rule.
+
+**Open:** (i) that the rational is exactly `1/2` — verified, not derived (note
+`π²/2 = 3·L(1)`); (ii) the `−π²` branch constant — a per-embedding formula
+`V − L(ξ) = iπ log[(1−w)/w]` was tried and **is FALSE**, failing at two of three
+embeddings; only the sum is exact. Recorded so nobody re-derives it.
+
+The chain is now `sum rule → cyclotomic identity → L(ξ), ξ ∈ B(F) torsion →
+π²ℚ → ??? = π²/2`, and **only the last arrow is open — a rational-number
+question, not a transcendence question.**
+
+**Route count 9 tried; 7 refuted, 2 reductions. Status: verified to 80 dps,
+unproved.**
