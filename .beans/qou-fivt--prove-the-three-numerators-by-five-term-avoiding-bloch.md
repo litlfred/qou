@@ -1,7 +1,7 @@
 ---
 # qou-fivt
 title: 'Prove the three numerators 17, 5, −1 by five-term/Abel — the route that AVOIDS the Bloch group'
-status: todo
+status: in-progress
 type: task
 priority: high
 tags:
@@ -10,7 +10,7 @@ tags:
     - 5two
     - lean
 created_at: 2026-08-07T18:05:00Z
-updated_at: 2026-08-07T18:05:00Z
+updated_at: 2026-08-07T19:20:00Z
 parent: 0yqu
 ---
 
@@ -98,3 +98,60 @@ structure is exactly where the last two attempts broke.
 * parent `qou-0yqu`; `qou-b7cy` (Route 9), `qou-8v3k` (Route 8), `qou-mlbg` (the gap survey)
 * `QOU/QBeta/FiveTwoCyclotomicBloch.lean` — the Lean-proved algebra
 * PR #4658
+
+---
+
+## 2026-08-07 — MECHANISM IDENTIFIED: the numerators are a Bernoulli `B₂`
+
+Probe `computations/probes/qbeta_5two_route10_kubert_distribution_probe.py`,
+witness `computations/qbeta-5two-route10-kubert-distribution.witness.json`,
+6 gates at 60 dps, all pass.
+
+**The three numerators are not three constants.** They are a quadratic in `k`:
+
+    mₖ = 3k² − 21k + 35        (and k ↦ 7−k symmetric, as cos(2πk/7) demands)
+
+and that quadratic is a **Bernoulli polynomial**: `mₖ/7 = 21·B₂(k/7) + 3/2`
+with `B₂(x) = x² − x + 1/6`.
+
+`B₂` is the Fourier signature of the dilogarithm at roots of unity —
+`Σₙ cos(2πnx)/n² = π²B₂(x)`, i.e. **`Re Li₂(ζ₇^k) = π²·B₂(k/7)`** (gate G2,
+verified to 1e-61). And `wₖ = ζ₇^k + ζ₇^{−k} + 1` exactly (G3).
+
+So the entire remaining content of the 5₂ sum rule is one **distribution
+relation**:
+
+> `Re[2·L(wₖ) + L(−wₖ)] = (7/2)·Re Li₂(ζ₇^k) + π²/4`,  `wₖ = ζ₇^k + ζ₇^{−k} + 1`
+
+### Why this reframing is worth more than the numerators themselves
+
+1. **It kills the "fitted" objection.** `17, 5, −1` looked like three lucky
+   integers. They are one Bernoulli polynomial evaluated at `k/7`. Nothing is
+   fitted.
+2. **The hard-looking half is the elementary half.** `Re Li₂(ζ₇^k) = π²B₂(k/7)`
+   is the cosine Fourier series of `B₂` — real analysis and `Cl₂`, **no complex
+   `Li₂` continuation**. So this side does *not* depend on `qou-clx8`/`qou-ph1k`,
+   and the corpus already has the `Cl₂` infrastructure from #4666
+   (`summable_clausen`, `Cl_2_duplication`, `Cl_2_neg`, `Cl_2_add_two_pi` in
+   `QOU/Archimedean/BlochWignerLobachevsky.lean`).
+3. **It names the object.** "Prove three integers" becomes "prove a distribution
+   relation" — Kubert / multiplication-relation territory, with standard
+   technique, rather than a coincidence to be explained.
+
+Note the pleasing symmetry with Route 4: that route *died* on the Kubert relation
+(six new unknowns for one relation, applied at `Li₂(y²) = Li₂((1−y)³)`). The same
+machinery reappears here in a form that nets positive, because Route 8 first
+moved the problem to a field where the roots of unity are the natural arguments.
+
+### ⚠ Still not a proof
+
+The distribution relation is **verified, not derived** — same status as
+everything upstream. **Sum rule: verified to 80 dps, unproved.**
+
+### Next
+
+Derive the relation. The `Re Li₂(ζ₇^k) = π²B₂(k/7)` half is standard and should
+be attacked first, in `Cl₂` terms, since it is both the easier half and the one
+already supported in the corpus. The remaining step then relates `L` at the real
+unit `ζ₇^k + ζₜ^{−k} + 1` to `Li₂` at `ζ₇^k` — which is where the actual
+multiplication relation lives.

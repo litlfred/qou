@@ -1,0 +1,107 @@
+{
+  "probe": "qbeta_5two_route10_kubert_distribution",
+  "bean": "qou-fivt",
+  "parent_bean": "qou-0yqu",
+  "builds_on": "qou-b7cy (Route 9), qou-8v3k (Route 8) -- merged in PR #4658",
+  "dps": 60,
+  "gates": [
+    {
+      "gate": "G1",
+      "claim": "m_k = 3k^2 - 21k + 35 = (17, 5, -1), symmetric under k -> 7-k",
+      "fitted": [
+        17,
+        5,
+        -1
+      ],
+      "target": [
+        17,
+        5,
+        -1
+      ],
+      "mirror_k_6_5_4": [
+        17,
+        5,
+        -1
+      ],
+      "pass": true
+    },
+    {
+      "gate": "G2",
+      "claim": "Re Li2(zeta_7^k) = pi^2 B_2(k/7)  (cosine Fourier series of B_2)",
+      "per_k": [
+        {
+          "k": 1,
+          "Re_Li2_zeta": "0.436411078959733544370233",
+          "pi2_B2": "0.436411078959733544370233"
+        },
+        {
+          "k": 2,
+          "Re_Li2_zeta": "-0.369270912965928383697889",
+          "pi2_B2": "-0.369270912965928383697889"
+        },
+        {
+          "k": 3,
+          "Re_Li2_zeta": "-0.77211190892875934773195",
+          "pi2_B2": "-0.77211190892875934773195"
+        }
+      ],
+      "worst": "1.5557538e-61",
+      "pass": true
+    },
+    {
+      "gate": "G3",
+      "claim": "w_k = zeta_7^k + zeta_7^-k + 1",
+      "worst": "1.6036343e-61",
+      "pass": true
+    },
+    {
+      "gate": "G4",
+      "claim": "Re[2L(w_k)+L(-w_k)] = (7/2) Re Li2(zeta_7^k) + pi^2/4  -- a DISTRIBUTION RELATION",
+      "per_k": [
+        {
+          "k": 1,
+          "lhs": "3.99483987663140706000444",
+          "rhs": "3.99483987663140706000444",
+          "abs_err": "3.11151e-61"
+        },
+        {
+          "k": 2,
+          "lhs": "1.17495290489159031176601",
+          "rhs": "1.17495290489159031176601",
+          "abs_err": "3.11151e-61"
+        },
+        {
+          "k": 3,
+          "lhs": "-0.234990580978318062353202",
+          "rhs": "-0.234990580978318062353202",
+          "abs_err": "6.22302e-61"
+        }
+      ],
+      "worst": "6.2230153e-61",
+      "note": "verified, NOT derived; this is the whole remaining content of the sum rule",
+      "pass": true
+    },
+    {
+      "gate": "G5",
+      "claim": "equivalently = (7 pi^2/2) B_2(k/7) + pi^2/4",
+      "worst": "6.2230153e-61",
+      "pass": true
+    },
+    {
+      "gate": "G6",
+      "claim": "summing over k = 1,2,3 gives pi^2/2, hence Route 8's -pi^2/2",
+      "direct_sum": "4.93480220054467930941725",
+      "via_B2": "4.93480220054467930941725",
+      "target_pi2_over_2": "4.93480220054467930941725",
+      "worst": "6.2230153e-61",
+      "pass": true
+    }
+  ],
+  "verdict": {
+    "route10": "MECHANISM IDENTIFIED -- reduction to one distribution relation. NOT a proof.",
+    "finding": "the three numerators 17, 5, -1 are m_k = 3k^2 - 21k + 35 = 7(21 B_2(k/7) + 3/2)/7, and B_2 is the Fourier signature of Li_2 at roots of unity (Re Li2(zeta_7^k) = pi^2 B_2(k/7)). So the target is the single relation Re[2L(w_k)+L(-w_k)] = (7/2) Re Li2(zeta_7^k) + pi^2/4 with w_k = zeta_7^k + zeta_7^-k + 1.",
+    "why_it_helps": "Re Li2(zeta_7^k) = pi^2 B_2(k/7) is elementary -- the cosine Fourier series of B_2 -- needing only real analysis and Cl_2, NOT the complex Li_2 continuation that blocks qou-clx8/qou-ph1k. The corpus already has Cl_2 from #4666. And it replaces three fitted-looking integers with a named classical object (Kubert / multiplication relations).",
+    "still_open": "the distribution relation itself is verified, not derived.",
+    "sum_rule_status": "verified to 80 dps, unproved -- UNCHANGED"
+  }
+}

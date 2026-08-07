@@ -3201,3 +3201,37 @@ Note two false friends: bean `el8w` is Borel *resummation*, and `cj2d5`
 `17, 5, −1` by five-term/Abel, needing only a real `Li₂` (QOU has one) and the
 Rogers functional equations. **Sum-rule status unchanged: verified to 80 dps,
 unproved.**
+
+**2026-08-07 (post-#4658) — Route 10: the three level-7 numerators are a Bernoulli
+`B₂`. The sum rule is now ONE distribution relation.**
+
+Bean `qou-fivt`. Route 9 left the sum rule equivalent to three explicit rationals
+`Re[2L(wₖ)+L(−wₖ)] = mₖπ²/42`, `m = (17,5,−1)`, verified but underived — three
+integers that looked fitted.
+
+They are not three constants. `mₖ = 3k² − 21k + 35` (symmetric under `k ↦ 7−k`),
+and that quadratic is `mₖ/7 = 21·B₂(k/7) + 3/2` with `B₂(x) = x² − x + 1/6`.
+`B₂` is the Fourier signature of `Li₂` at roots of unity — `Σₙcos(2πnx)/n² =
+π²B₂(x)`, i.e. **`Re Li₂(ζ₇^k) = π²B₂(k/7)`** (verified 1e-61). And
+`wₖ = ζ₇^k + ζ₇^{−k} + 1` exactly. So the whole remaining content is
+
+    Re[2·L(wₖ) + L(−wₖ)] = (7/2)·Re Li₂(ζ₇^k) + π²/4
+
+**Why this is the useful form:** (i) it kills the "fitted" objection — one
+Bernoulli polynomial, not three lucky integers; (ii) `Re Li₂(ζ₇^k) = π²B₂(k/7)`
+is **elementary**, the cosine Fourier series of `B₂`, needing only real analysis
+and `Cl₂` — **not** the complex `Li₂` continuation blocking `qou-clx8`/`qou-ph1k`
+— and the corpus already has `Cl₂` from #4666
+(`QOU/Archimedean/BlochWignerLobachevsky.lean`); (iii) it names the object:
+Kubert / multiplication relations, with standard technique.
+
+Note the symmetry with Route 4, which *died* on the Kubert relation applied at
+`Li₂(y²) = Li₂((1−y)³)` (six new unknowns for one relation). The same machinery
+nets positive here only because Route 8 first moved the problem to a field where
+roots of unity are the natural arguments.
+
+**⚠ Not a proof** — the relation is verified, not derived. Probe + witness:
+`qbeta_5two_route10_kubert_distribution_probe.py`,
+`qbeta-5two-route10-kubert-distribution.witness.json` (6 gates, 60 dps).
+**Route count 10 tried; 7 refuted, 3 reductions. Sum-rule status unchanged:
+verified to 80 dps, unproved.**
