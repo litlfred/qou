@@ -1,10 +1,10 @@
 ---
 # qou-k520
 title: 'VALIDATE WARNINGS (10): 5x missing chap:particle-interactions, 3x no Lean decl, 1 dangling remark, 1 missing rem ref'
-status: in-progress
+status: completed
 type: task
 created_at: 2026-08-07T10:42:40Z
-updated_at: 2026-08-07T14:45:00Z
+updated_at: 2026-08-07T15:05:00Z
 ---
 
 
@@ -126,10 +126,17 @@ Lean) is now 1:
   base ring, sorry-free, standard axioms only. The numerals are DERIVED from it
   (`N=3 → 10`, `N=2 → 4`) and `decuplet_ne_quadruplet` machine-checks the
   block's anti-fitting conditional. Deliberately NOT `Nat.choose 5 3 = 10`.
-- `prop:tm-gs-normal-form` — the one survivor. Substantial rewriting theory;
-  genuinely multi-session. Left as an honest warning.
+- `prop:tm-gs-normal-form` — drained. `GSNormalForm.lean`. Formalises the two
+  things the appendix's proof ARGUES and leaves what it CITES cited: the block
+  step `(cσ+d)(aσ+b) → T(c,d) ⬝ᵥ (a,b)`, derived FROM the Hecke relation
+  (negative control: without it `ring` fails, leaving exactly
+  `a*c*(σ² − qq*σ − 1)`), and normality — a strictly increasing index word
+  contains no leading word of any of the three rule families. Confluence stays
+  cited to Bergman; H_A(q) is not constructed and the global block-locality
+  induction remains prose. All three scope limits recorded in the docstring
+  and the `.ts`.
 
-`run-validate` exits 0 with 1 warning.
+**`run-validate` exits 0 with 0 issues. 10 → 0; definition of done met.**
 
 ## Two PLATFORM defects surfaced while doing this (folio-assistant, not qou)
 
