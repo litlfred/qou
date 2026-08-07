@@ -584,3 +584,73 @@ a ratio of `θ_p`'s up to a constant, which is what the Stokes multipliers need.
 
 Stokes multipliers: still open, but the obstruction is now a bounded search, not
 a contradiction.
+
+## 2026-08-07 (thirteenth) — LITERATURE MATCH for the symbolic form; one guess killed
+
+### The literature gives the shape, and it agrees with the measured order 2
+
+Searched the q-difference connection-problem literature. The relevant family is
+**q-Airy / Ramanujan / Hahn–Exton q-Bessel** — rank-2, regular singular at `0`,
+slope-1 irregular at `∞`, i.e. exactly our C1 setting. Key sources:
+
+- **Morita**, *A connection formula between the Ramanujan function and the
+  q-Airy function*, arXiv:1104.0755 — and *A Connection Formula of the
+  Hahn–Exton q-Bessel Function*, SIGMA 7 (2011) 115, arXiv:1105.1998.
+- **Morita**, *The Stokes phenomenon for the q-difference equation satisfied by
+  the Ramanujan entire function*, Ramanujan J. (2013); and for `₃φ₁`,
+  arXiv:1402.3903.
+- **Ramis–Sauloy–Zhang**, *Local analytic classification of q-difference
+  equations*, Astérisque **355** (2013), arXiv:0903.0853 — the framework
+  (q-analogue of Birkhoff–Malgrange–Sibuya, Stokes sheaf, Zhang's discrete
+  summation).
+- **Explicit evaluation of the q-Stokes matrices for certain confluent
+  hypergeometric q-difference equations**, arXiv:2412.02281 — closest to a
+  ready-made answer; **not read** (arxiv.org is egress-blocked from this
+  sandbox, as are numdam, emis, sigma-journal, even wikipedia — only WebSearch
+  works here).
+
+**Morita's connection formula**, in the form the search surfaced:
+
+    A_{q²}(−q³/x²) = 1/((q,−1;q)_∞) · { θ(x/q)·Ai_q(−x) + θ(−x/q)·Ai_q(x) }
+
+The connection coefficients are **theta functions whose arguments differ by a
+sign** — structurally the same `[±T]` pairing we found. Consequently
+`χ = (A₁B₂)/(A₂B₁)` is a ratio of **four** thetas, hence an elliptic function of
+**order 2** — which is exactly the order measured independently by the
+half-annulus count. Two independent routes to the same order is a genuine
+cross-check, and it makes the expected closed form
+
+    χ(z) = C · θ_p(z/α)·θ_p(−z/ᾱ) / [ θ_p(−z/α)·θ_p(z/ᾱ) ]
+
+(the conjugate pairing forced by `χ(z̄) = 1/conj χ(z)`), with `α` in the lower
+half-plane so that both zeros land in the upper half-annulus, as counted.
+
+### Killed: the guess `α = t₂`
+
+`arg(−t₂)/π = 0.446975` and `arg(t₁)/π = 0.553025` straddle `π/2` and coincide
+with where the tent bends, so `α = t₂` looked compelling. **It is not
+established, and the numbers I first took for confirmation are invalid.**
+
+At `z = −t₂p^k` we have `z/t₂ = −p^k`, so `θ_p(z/t₂) = 0` and the 0-side basis
+element `y₂ = θ_p(z)/θ_p(z/t₂)·g₂(z)` **itself blows up**. χ cannot be evaluated
+there by this construction. The tell: `log10|χ|` at `k = 3,4,5` came out
+`−32.22, −32.45, −31.98` — but χ is `p`-periodic, so those must be **equal**.
+They are not, so they are noise. A 1% step off the point moves the value from
+`−32.4` to `−73.1`; that is the singular basis element, not χ.
+
+So the divisor angles remain **unmeasured**. The bend at `arg(−t₂)` is
+suggestive but is equally explained by the basis singularity sitting there.
+
+### State
+
+- Order 2: **established** (half-annulus count = 2.0 exact, plus literature).
+- Closed form up to `α` and `C`: **predicted**, not verified.
+- `α`: **open**. Must be found by a method that avoids evaluating χ where the
+  0-side basis is singular, i.e. away from `−t_j p^ℤ` and `−p^ℤ`.
+- The `D(θ)` bisection (sector count `= (D(θ₁)−D(θ₂))/2π`, arcs cancelling by
+  periodicity) was launched but had not finished when the session ran out; it
+  is the right method and is cheap per angle. **Re-run it** —
+  `scratchpad/probe_bisect.py`, ~273 evaluations at `DPS=200`.
+
+Stokes multipliers: still open, but the target is now a two-parameter fit
+(`α`, `C`) against a known functional form, not an open-ended search.
