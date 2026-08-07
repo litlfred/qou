@@ -99,4 +99,55 @@ theorem cLiTwo_summable {z : ℂ} (hz : ‖z‖ < 1) :
   · intro k
     exact cLiTwo_term_norm_le z k
 
+/-! ### Standard power-series indexing
+
+`cLiTwo` is written `∑' k, z^(k+1)/(k+1)²` so that it matches
+`QOU.QPochhammer.LiTwo` term by term (which is what makes `cLiTwo_ofReal`
+unconditional). Mathlib's power-series machinery — `FormalMultilinearSeries.
+ofScalars`, whose sum is `∑' n, cₙ • xⁿ` — wants the other indexing.
+
+Rather than redefine `cLiTwo` and break the bridge, the two indexings are
+reconciled here. This is step 1 of the analyticity route recorded in bean
+`qou-gkco`; steps 2–3 (radius `= 1`, hence `AnalyticOnNhd` on the disc) are
+not done. -/
+
+/-- The coefficients of `Li₂` in standard indexing: `c₀ = 0`, `cₙ = 1/n²`. -/
+noncomputable def cLiTwoCoeff (n : ℕ) : ℂ := if n = 0 then 0 else ((n : ℂ) ^ 2)⁻¹
+
+@[simp] theorem cLiTwoCoeff_zero : cLiTwoCoeff 0 = 0 := by simp [cLiTwoCoeff]
+
+theorem cLiTwoCoeff_succ (k : ℕ) :
+    cLiTwoCoeff (k + 1) = (((k : ℂ) + 1) ^ 2)⁻¹ := by
+  simp only [cLiTwoCoeff, Nat.succ_ne_zero, if_false]
+  push_cast
+  ring_nf
+
+/-- The standard-indexed series is summable on the open unit disc. -/
+theorem cLiTwoCoeff_summable {z : ℂ} (hz : ‖z‖ < 1) :
+    Summable fun n : ℕ => cLiTwoCoeff n * z ^ n := by
+  refine Summable.of_norm_bounded (g := fun n : ℕ => ‖z‖ ^ n) ?_ ?_
+  · exact summable_geometric_of_lt_one (norm_nonneg z) hz
+  · intro n
+    rcases Nat.eq_zero_or_pos n with rfl | hn
+    · simp
+    · have hk : (1 : ℝ) ≤ ‖(n : ℂ)‖ ^ 2 := by
+        rw [Complex.norm_natCast]
+        have h1 : (1 : ℝ) ≤ (n : ℝ) := by exact_mod_cast hn
+        nlinarith
+      simp only [cLiTwoCoeff, hn.ne', if_false, norm_mul, norm_inv, norm_pow]
+      calc (‖(n : ℂ)‖ ^ 2)⁻¹ * ‖z‖ ^ n
+          ≤ 1 * ‖z‖ ^ n := by
+            gcongr
+            exact inv_le_one_of_one_le₀ hk
+        _ = ‖z‖ ^ n := one_mul _
+
+/-- **The two indexings agree.** `cLiTwo z = ∑' n, cₙ zⁿ` with `c` as above. -/
+theorem cLiTwo_eq_tsum_coeff {z : ℂ} (hz : ‖z‖ < 1) :
+    cLiTwo z = ∑' n : ℕ, cLiTwoCoeff n * z ^ n := by
+  rw [(cLiTwoCoeff_summable hz).tsum_eq_zero_add]
+  simp only [cLiTwoCoeff_zero, zero_mul, zero_add, cLiTwoCoeff_succ]
+  unfold cLiTwo
+  refine tsum_congr fun k => ?_
+  rw [div_eq_inv_mul]
+
 end QOU.MathlibExt

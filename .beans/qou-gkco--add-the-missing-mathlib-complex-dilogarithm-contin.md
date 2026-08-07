@@ -155,3 +155,56 @@ runs where the integrand is regular — now Lean-proved:
 What changed is only its **priority and its dependents**: it is no longer on
 the critical path to `qou-0yqu`. Anyone picking it up for the sum rule's sake
 should read Route 5 first.
+
+## 2026-08-07 — state, and the concrete next brick
+
+### Landed so far (all sorry-free, lean-direct exit 0)
+
+* `QOU/MathlibExt/ComplexDilogarithm.lean` — `cLiTwo` by its power series;
+  `cLiTwo_zero`, `cLiTwo_term_norm_le`, `cLiTwo_summable` (converges on the
+  open unit disc). Mathlib-only, so it stays upstreamable.
+* `QOU/Archimedean/ComplexDilogBridge.lean` — `cLiTwo_ofReal` (unconditional
+  bridge to the real `QOU.QPochhammer.LiTwo`) and `cLiTwo_reflection_ofReal`
+  (the Euler reflection identity **on the real segment `(0,1)`**, in ℂ).
+* `QOU/QBeta/BlochFiveTerm.lean` — the five-term relation's algebraic halves
+  (Lyness period-5; `Σ (zᵢ)∧(1−zᵢ) = 0`) and `three_smul_wedge_eq_zero`.
+
+`cLiTwo_reflection_ofReal` is the *input* to an identity-theorem continuation:
+it establishes the reflection identity on a set with an accumulation point.
+What is missing is analyticity, so the identity theorem cannot yet be applied.
+
+### THE NEXT BRICK — `cLiTwo` is analytic on the open unit disc
+
+Mathlib has the right tool, found 2026-08-07:
+**`FormalMultilinearSeries.ofScalars`** (`Mathlib/Analysis/Analytic/OfScalars.lean`),
+with `ofScalarsSum_eq_tsum : ofScalarsSum c = fun x => ∑' n, c n • x ^ n` and
+the radius lemmas `ofScalars_radius_eq_inv_of_tendsto` /
+`ofScalars_radius_eq_of_tendsto`.
+
+Route:
+
+1. Reindex. `ofScalars` sums `cₙ·xⁿ`; `cLiTwo` is written `z^(k+1)/(k+1)²`.
+   Take `c n = if n = 0 then 0 else (n:ℂ)⁻¹^2` and prove
+   `cLiTwo = ofScalarsSum c`. **Do not redefine `cLiTwo`** — `cLiTwo_ofReal`
+   and the bridge depend on the current indexing; prove the equality instead.
+2. Radius `= 1`, from `|c_{n+1}/c_n| → 1`.
+3. Conclude `AnalyticOnNhd ℂ cLiTwo (Metric.ball 0 1)`.
+
+Then the identity theorem
+(`AnalyticOnNhd.eqOn_of_preconnected_of_frequently_eq`) applies with
+`cLiTwo_reflection_ofReal` as the frequently-equal hypothesis, giving the
+complex reflection identity **on the disc**. Extending past `|z| = 1` still
+needs the inversion formula and is a separate step.
+
+### Literature status — none needed for this bean
+
+The constructions here (power series, radius of convergence, identity theorem,
+inversion formula) are standard textbook material and Mathlib has the tools.
+The literature search was needed for the *sum-rule identity* (`qou-0yqu`), not
+for building `Li₂`. Do not spend search effort here.
+
+### Reminder on priority
+
+Route 5 of `qou-0yqu` took this bean **off the critical path** for the 5₂ sum
+rule. It is worth doing for the general saddle machinery and for upstreaming,
+not because the sum rule is waiting on it.
