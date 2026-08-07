@@ -1,10 +1,10 @@
 ---
 # qou-k520
 title: 'VALIDATE WARNINGS (10): 5x missing chap:particle-interactions, 3x no Lean decl, 1 dangling remark, 1 missing rem ref'
-status: todo
+status: in-progress
 type: task
 created_at: 2026-08-07T10:42:40Z
-updated_at: 2026-08-07T10:42:40Z
+updated_at: 2026-08-07T14:45:00Z
 ---
 
 
@@ -114,3 +114,52 @@ its label is `rem:fine-structure-observation`. Reference retargeted.
 **G2 (3) — REMAINS.** Three propositions with no Lean declaration:
 `prop:meson-octet-decomposition`, `prop:borromean-decuplet`, `prop:tm-gs-normal-form`. Honest
 warnings; three separate formalization tasks. Do not bundle.
+
+## Progress — 10 → 1 (branch `claude/convention-systematic-audit-2026-08-07`)
+
+G1 (5), G3 (1), G4 (1) resolved earlier in this PR. G2 (3 propositions with no
+Lean) is now 1:
+
+- `prop:meson-octet-decomposition` — drained. `MesonOctetTracelessSplit.lean`.
+- `prop:borromean-decuplet` — drained. `SymmetricChannelDimension.lean`:
+  `dim_K {degree-n forms in N vars} = C(N+n-1, n)`, general in `N`, `n` and the
+  base ring, sorry-free, standard axioms only. The numerals are DERIVED from it
+  (`N=3 → 10`, `N=2 → 4`) and `decuplet_ne_quadruplet` machine-checks the
+  block's anti-fitting conditional. Deliberately NOT `Nat.choose 5 3 = 10`.
+- `prop:tm-gs-normal-form` — the one survivor. Substantial rewriting theory;
+  genuinely multi-session. Left as an honest warning.
+
+`run-validate` exits 0 with 1 warning.
+
+## Two PLATFORM defects surfaced while doing this (folio-assistant, not qou)
+
+Both are why `check-sidecars.sh` cannot be driven to silence here.
+
+1. **`q-usage-audit.ts` discovers 0 blocks under the split-repo layout.** It sets
+   `REPO_ROOT = resolve(SCRIPT_DIR, "..", "..")`, which resolves to the PLATFORM
+   root once the pipeline lives in `folio-assistant/`, so `PAPER_ROOT` points at
+   a directory that does not exist. It then exits 0 having swept nothing —
+   a silent no-op. Consequence: the seven `q-usage-*` criteria are frozen at
+   their pre-split hashes in every sidecar and go stale on any `.md`/`.ts` edit,
+   with no working command to refresh them. `qa-sweep.ts` does not run them
+   (96 criteria, none of them q-usage).
+
+2. **`voice-scholarly-default` reads Lean docstrings but declares
+   `depends_on: ["md"]`.** So a Lean-ONLY edit neither introduces nor clears a
+   finding until the `.md` hash moves. Hit live: a wrapped line beginning
+   "right dimension," tripped `LECTURER_OPENER_RE` (`Right,?\b`) inside the new
+   Lean docstring — a false positive — and reflowing the docstring did not clear
+   the cached `fail` until the entry was dropped by hand and re-swept.
+   Suggest `depends_on: ["md", "lean"]` with the existing prose-only relaxation.
+
+## Also fixed here
+
+- `meson-octet-decomposition.qa.json` was STALE in the committed tree: its
+  sidecar recorded the pre-lean-wiring `.ts` hash and carried no `lean` /
+  `lean_statement` hashes at all, so the previous pass's "sidecar hash in sync"
+  did not hold for it. Re-swept; that surfaced two genuine warns
+  (`uses-editorial-hygiene` redundant edge, `wall-base-ring-minimal`) that had
+  been masked. `uses[]` left alone — editorial relation, owner's call.
+- authors-note Lean coverage was stale at HEAD independently of this work:
+  a refresh on a clean HEAD gives 690/704 (98.0%) against the committed
+  654/698 (93.7%). This branch's own contribution is +1 (→ 691/704, 98.2%).
