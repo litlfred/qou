@@ -1,10 +1,11 @@
 ---
 # qou-1c4y
 title: 'MIGRATION: move the ~840 muon-q0 computations/ witnesses to the experimental (proton) anchor'
-status: todo
+status: in-progress
 type: task
+priority: normal
 created_at: 2026-08-07T08:35:43Z
-updated_at: 2026-08-07T08:35:43Z
+updated_at: 2026-08-07T09:01:57Z
 ---
 
 
