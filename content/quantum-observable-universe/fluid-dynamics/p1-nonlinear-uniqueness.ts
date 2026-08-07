@@ -17,4 +17,19 @@ export default proposition({
     "energy-method",
     "regularity",
   ],
+  authorNotes: [
+    {
+      kind: "note",
+      date: "2026-08-07",
+      body:
+        "**§7c base-ring note (archimedean specialisation).** " +
+        "The Lean module " +
+        "`lean/QOU/FluidDynamics/p1_nonlinear_uniqueness.lean` uses " +
+        "`Real.exp`. These are real-analytic constructs with no " +
+        "generic-`CommRing` counterpart, so the `ℝ` specialisation is " +
+        "forced by the statement itself rather than chosen. The block " +
+        "therefore sits on the archimedean side of the §7c wall by " +
+        "construction.",
+    },
+  ],
 });

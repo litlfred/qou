@@ -23,4 +23,19 @@ export default proposition({
     "volume-conjecture",
     "lepton-channel-rotation",
   ],
+  authorNotes: [
+    {
+      kind: "note",
+      date: "2026-08-07",
+      body:
+        "**§7c base-ring note (archimedean specialisation).** " +
+        "The Lean module " +
+        "`braids-and-knots/figure-eight-reeb-rotation.lean` uses " +
+        "`Complex.*`. These are real-analytic constructs with no " +
+        "generic-`CommRing` counterpart, so the `ℝ` specialisation is " +
+        "forced by the statement itself rather than chosen. The block " +
+        "therefore sits on the archimedean side of the §7c wall by " +
+        "construction.",
+    },
+  ],
 });
