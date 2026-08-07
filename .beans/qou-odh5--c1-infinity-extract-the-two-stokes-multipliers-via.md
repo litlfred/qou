@@ -133,3 +133,68 @@ Turn "two singularities are there" into **two complex numbers**:
 
 Anti-fit gate unchanged: a multiplier obtained by inverting `c₃` against its
 measured value is a fit, must be labelled one, and may not be wired.
+
+
+---
+
+## STEP 4 — theta-normalised route attempted; HONEST NEGATIVE (2026-08-07)
+
+After the step-3 negative (the antipodal pair is two-step decoupling, not
+sectors), the next idea was that the sector-mixing information *is* the
+exponentially suppressed `b_{m+1}` coupling that the two-step asymptotic
+discards. With `(b₀,b₁) = (1,0)` the odd subsequence is generated **purely**
+by that coupling, so it isolates the mixing.
+
+**Measured.** `t_m = b_{m+1}/b_m` obeys the Riccati recurrence
+`t_{m+1} = (1 + 1/t_m)/[m+2]_q`, and
+
+    b_{m+1}/b_m · q^{m/2}  →  C
+
+converges, with `d(log_q t_m)/dm = −0.5` exactly. Stable to **5.5e-15**
+within a branch by m = 800.
+
+**But C is BRANCH-DEPENDENT:**
+
+    C from (1,0) = 0.4227045134950364687
+    C from (0,1) = 0.4228592992974597357
+    relative spread = 3.7e-4
+
+A Stokes multiplier is a property of the module and its connection data, not
+of which solution you happened to start from. **A branch-dependent constant
+cannot be one.** So `C` is not the target, and this route does not reach it
+either.
+
+**Leading-order structure of C.** The Riccati fixed point gives
+`C² = (q − q⁻¹)·q^{−3/2}`, i.e. `C_pred = 0.42281446251`. That sits *between*
+the two measured branch values and agrees with each only to ~2.6e-4 — the
+same scale as the branch spread itself.
+
+**The recurring 3.7e-4.** This same spread has now appeared in three
+independent estimators: the step-2 single-pole ratio test, the step-3 Prony
+blend, and this `C`. It is a real feature of the problem at that scale. What
+it *is* has not been established — and identifying it is probably the actual
+next question, ahead of any further attempt at the multipliers.
+
+## Process note (worth recording)
+
+Three times across steps 2–4 I wrote an interpretive conclusion into the
+probe's output *before* seeing the numbers, and the data contradicted it each
+time: "ratios are NOT settling" (they settled to 10 digits), "same
+singularity ⇒ module invariant" (branches disagreed), "SAME ⇒ module
+invariant" for `C` (branches disagreed again). Each was caught, but only
+because the numbers were printed alongside. **Print the measurement; derive
+the label afterwards.**
+
+## Status
+
+`qou-odh5` remains **open**. Two routes are now closed with scope-(a)
+negatives — Prony/ratio (step 3) and the Riccati mixing constant (step 4).
+Neither touches steps 1–2, which are algebraic and stand:
+`B₁,₂ = ±√(q−1)/q`, and q-Gevrey order = Newton slope = ½.
+
+The untried route remains the genuine one: construct the theta-normalised
+canonical solutions in the ramified single-slope picture (`QBorelKernel`,
+level d=2) and read the connection matrix between them. Nothing attempted so
+far actually builds those solutions — steps 3 and 4 both tried to shortcut
+past them with asymptotics of the raw coefficients, and both failed for the
+same underlying reason: the sector data is not visible in `b_m` asymptotics.
