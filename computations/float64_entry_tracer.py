@@ -44,7 +44,10 @@ out of mpmath to the nearest repo frame attributes that `1.4` to whichever
 line called the special function, which is a false positive: the value is
 mpmath's, it never reaches a witness, and there is nothing to fix.
 
-So each conversion is classified by its **innermost** frame. Only
+Depth cannot separate the two, because `mpf()` is itself an mpmath function:
+the innermost frame is mpmath both for `mpf(tf)` written in a producer and for
+mpmath's own `1.4`. Classification is lexical instead — is the float a
+constant of an mpmath code object on the stack (see `_attribute`). Only
 `origin="repo"` sites are candidates; `mpmath-internal` ones are counted and
 set aside.
 
@@ -59,6 +62,26 @@ a digit count with no tolerance anywhere:
 
 `mpf(0)`, `mpf(1.0)`, `mpf(0.5)` and dyadic tolerances are therefore not
 reported, for the same reason the import-time gate does not flag them.
+
+## Two coverage limits — read these before trusting a zero
+
+**Forked workers are invisible.** Instrumentation lives in the process that
+installs it. A producer that computes inside `multiprocessing.Pool` forks
+children that inherit the patches but keep their own counters, which die with
+them — so those conversions are never reported.
+`rho_k_co_casimir_extended` does exactly this. `--no-fork` makes such a
+producer take its serial path so the work happens where the tracer can see it.
+Without that flag, a zero from a forking producer means nothing.
+
+**`--budget` truncates.** Attribution walks the stack per padding-prone
+conversion, which on a producer doing ~5e5 of them costs more than the
+computation. A budget removes the patches once spent, restoring native speed —
+at the price of making sites a **lower bound**. `truncated` records which
+reading applies: a site found is real, but none found is not evidence of none.
+
+Both failures are one-directional: they can only hide entry sites, never invent
+them. So a non-empty result stands on its own; an empty one is only meaningful
+when `truncated` is false and the producer does not fork.
 
 ## What this tool does NOT decide
 
@@ -122,11 +145,13 @@ def padding_prone(x) -> bool:
 class Tracer:
     """Intercepts float -> mpf conversion and attributes it to a source line."""
 
-    def __init__(self, roots: list[Path]):
+    def __init__(self, roots: list[Path], budget: int | None = None):
         self.roots = [str(r) for r in roots]
         self.sites: "OrderedDict[tuple, dict]" = OrderedDict()
         self.total = 0
         self.prone = 0
+        self.budget = budget
+        self.truncated = False
         self._installed = False
 
     def _attribute(self, x):
@@ -195,6 +220,7 @@ class Tracer:
             return
         self.prone += 1
         if len(self.sites) >= MAX_SITES:
+            self._spend()
             return
         origin, fn, lineno = self._attribute(x)
         key = (origin, fn, lineno)
@@ -216,6 +242,22 @@ class Tracer:
             "sample": repr(float(x)),
             "sample_exact": str(Decimal(float(x)))[:70],
         }
+        self._spend()
+
+    def _spend(self):
+        """Stop tracing once the budget is gone, and take the overhead with it.
+
+        Attribution walks the stack on every padding-prone conversion, which on
+        a producer doing ~5e5 of them costs more than the computation. Removing
+        the patches (rather than early-returning) restores native speed for the
+        rest of the run.
+
+        Sites are then a LOWER BOUND: one found is real, but none found is not
+        evidence of none — `truncated` says which reading applies.
+        """
+        if self.budget is not None and self.prone >= self.budget:
+            self.truncated = True
+            self.uninstall()
 
     def install(self):
         import importlib
@@ -254,6 +296,7 @@ class Tracer:
             "conversions_total": self.total,
             "conversions_padding_prone": self.prone,
             "distinct_sites": len(sites),
+            "truncated": self.truncated,
             "repo_sites": len(repo),
             "mpmath_internal_sites": sum(
                 1 for s in sites if s["origin"] == "mpmath-internal"),
@@ -261,7 +304,8 @@ class Tracer:
         }
 
 
-def trace_producer(script: Path, repo_root: Path, timeout_note: str = "") -> dict:
+def trace_producer(script: Path, repo_root: Path, timeout_note: str = "",
+                   budget: int | None = None, no_fork: bool = False) -> dict:
     """Run one producer in-process with instrumentation; never raises.
 
     A producer that dies before computing anything yields `repo_sites == 0` for
@@ -269,7 +313,16 @@ def trace_producer(script: Path, repo_root: Path, timeout_note: str = "") -> dic
     never measured. Read `status` before reading the site list — "untested" is
     not "clean", exactly as in `producer_repad_sweep.py`.
     """
-    tr = Tracer([repo_root])
+    tr = Tracer([repo_root], budget=budget)
+    forked = None
+    if no_fork:
+        # Producers branch on cpu_count() to decide whether to Pool. Reporting
+        # 1 makes them take the serial path, so the work happens in THIS
+        # process where the patches are live. Numerics are unchanged; only the
+        # scheduling is.
+        import multiprocessing
+        forked = multiprocessing.cpu_count
+        multiprocessing.cpu_count = lambda: 1
     tr.install()
     argv, cwd, path = list(sys.argv), os.getcwd(), list(sys.path)
     status, err = "ok", ""
@@ -289,11 +342,15 @@ def trace_producer(script: Path, repo_root: Path, timeout_note: str = "") -> dic
         err = f"{type(e).__name__}: {e}"[:400]
     finally:
         tr.uninstall()
+        if forked is not None:
+            import multiprocessing
+            multiprocessing.cpu_count = forked
         sys.argv, sys.path = argv, path
         os.chdir(cwd)
 
     rep = tr.report()
-    rep.update({"producer": script.name, "status": status, "error": err})
+    rep.update({"producer": script.name, "status": status, "error": err,
+                "no_fork": no_fork})
     if timeout_note:
         rep["note"] = timeout_note
     return rep
@@ -386,6 +443,12 @@ def main() -> int:
     ap.add_argument("--repo-root", default=str(HERE.parent))
     ap.add_argument("--out")
     ap.add_argument("--quiet", action="store_true")
+    ap.add_argument("--budget", type=int, default=None,
+                    help="stop tracing after N padding-prone conversions; "
+                         "sites then are a LOWER BOUND (see `truncated`)")
+    ap.add_argument("--no-fork", action="store_true",
+                    help="report cpu_count()==1 so a producer takes its serial "
+                         "path; worker-side conversions are otherwise invisible")
     ap.add_argument("--self-test", action="store_true",
                     help="verify the discriminator against known cases")
     a = ap.parse_args()
@@ -405,13 +468,15 @@ def main() -> int:
         if not p.exists():
             out.append({"producer": s, "status": "not_found", "sites": []})
             continue
-        rep = trace_producer(p, repo_root)
+        rep = trace_producer(p, repo_root, budget=a.budget, no_fork=a.no_fork)
         out.append(rep)
         if not a.quiet:
             print(f"\n=== {rep['producer']}  [{rep['status']}] "
                   f"{rep['conversions_padding_prone']}/{rep['conversions_total']} "
                   f"padding-prone · {rep['repo_sites']} repo site(s), "
-                  f"{rep['mpmath_internal_sites']} mpmath-internal")
+                  f"{rep['mpmath_internal_sites']} mpmath-internal"
+                  + ("  [TRUNCATED — sites are a lower bound]"
+                     if rep.get("truncated") else ""))
             if rep.get("error"):
                 print(f"    ! {rep['error']}")
             for st in rep["sites"][:12]:

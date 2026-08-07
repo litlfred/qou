@@ -361,14 +361,13 @@ the previous 20/229 minus exactly the one `gt_matrix_pslq_probe` fix, which
 independently confirms that fix landed. ("The other 18" was arithmetic
 slippage; 20 − 1 = 19.)
 
-Of the 19: **18 traced, 1 not measured** — `rho_k_co_casimir_extended` (+71)
-exceeds a 900 s budget, as it exceeded the sweep's. Untested is not clean.
+**All 19 are measured**, including `rho_k_co_casimir_extended`, which had
+defeated every earlier attempt (see "the two coverage limits" below).
 
 | class | producers | fields | mechanism |
 |---|---:|---:|---|
-| **A — float64 genuinely enters** | 9 | 118 | a located source line |
+| **A — float64 genuinely enters** | 10 | 189 | a located source line |
 | **B — no float64 enters at all** | 9 | 39 | see below; not one thing |
-| unmeasured | 1 | 71 | `rho_k_co_casimir_extended` |
 
 ## Class A: located, and it clusters
 
@@ -406,6 +405,46 @@ the witness's own declaration. Per the scope note above, that is the
 **Expected residue, not a defect:** `bring_homology_pairing_integration.py:89`
 and `:122` are the comparison tolerances `1e-45` and `1e-10`. Like
 `AGREEMENT_RTOL`, they must not be "fixed".
+
+### The 71-field producer, finally measured
+
+`rho_k_co_casimir_extended` is the corpus's largest re-padder and had never
+been measured by any tool here — it outran the sweep's 150 s, a 240 s
+provenance run and a 900 s trace. It is **one line**:
+
+```python
+# computations/hoefsmit_numpy.py:161
+return mp.mpf(float(np.trace(M)))     # x148, sample 1.5597586581034242
+```
+
+The function accumulates `M` through numpy matmul at C-level BLAS, so the
+trace is f64 by construction — the same shape as `chirality`: a deliberately
+f64 kernel whose result is promoted and then serialized at 50 dps. That makes
+**three** library-level entry points behind Class A (`hecke_characters.py:214`,
+the JSON-read idiom, `hoefsmit_numpy.py:161`), not ten producer-specific bugs.
+
+### The two coverage limits that had hidden it
+
+Both were in the tracer, and both are now flags rather than silent bias.
+
+**Forked workers are invisible.** `rho_k_co_casimir_extended` computes χ^λ
+inside a `multiprocessing.Pool`; children inherit the patches but keep their
+own counters, which die with them. Its earlier `repo_sites = 0` was
+meaningless — the work happened where the instrument was not. `--no-fork`
+reports `cpu_count() == 1` so the producer takes its serial path. Numerics
+unchanged; only the scheduling is.
+
+**Attribution is what made it slow, not the physics.** Walking the stack per
+padding-prone conversion costs more than the computation on a producer doing
+~5e5 of them. `--budget N` removes the patches once spent, restoring native
+speed. With both flags the producer ran to completion, un-truncated, in ~20
+minutes.
+
+Both failures are one-directional — they hide entry sites, never invent them —
+so a non-empty result stands alone, while a zero is only meaningful when
+`truncated` is false and the producer does not fork. That asymmetry is why the
+earlier zero for this producer should never have been read as Class B, and the
+report now carries `truncated` and `no_fork` so it cannot be.
 
 ## Class B: no float64 enters — and the detector cannot see this
 
@@ -511,13 +550,28 @@ does not repeat that.
 
 ## What remains
 
-- `rho_k_co_casimir_extended` (+71) — never yet measured by any tool here.
-- Re-measure LOCAL vs propagated with a committed tool. The strip removed the
-  padding from upstream witnesses, so an exact-string search run against the
-  post-strip corpus is biased toward `LOCAL` by construction.
-- Class A is nine producers but three idioms; the two library-level ones
-  (`hecke_characters.py:214`, the JSON-read idiom) change numbers where they
-  are fixed, so source fix and witness regeneration stay separate commits.
-- Class B needs no producer fix. It needs the *detector* to stop claiming
-  these are float64 padding — or the producers to recognise an exact integer.
+Localization is done: all 19 re-padders are measured and every Class A field
+has a named source line. What is left is the per-file *judgment*, which is
+where this document said the non-mechanizable part lived all along.
+
+- **Class A — 10 producers, 189 fields, three library-level entry points.**
+  `hecke_characters.py:214`, `hoefsmit_numpy.py:161`, and the
+  `mpf(<float out of JSON>)` idiom. All three are deliberate f64 kernels, so
+  the fix is "serialize at true precision", not "recover lost precision" —
+  which changes numbers, so source fix and witness regeneration stay separate
+  commits. `chirality_avg_content_atomic` (71) and `rho_k_co_casimir_extended`
+  (71) are 74 % of the class between them and share that one shape.
+- **Class B — 9 producers, 39 fields — needs no producer fix.** The values are
+  genuine; the *detector* calls them padding. Either it learns to tell a
+  computed near-integer from a truncated double (it cannot, from the string
+  alone — so this would need producer-side knowledge that the quantity is
+  exact), or these are baselined as known false positives with that reason
+  recorded. What must not happen is someone hunting for a float64 entry in
+  them: it is not there.
+- **Provenance:** 37 fields carry a distinctive value already committed
+  upstream. Those consumers should be checked against their producers before
+  being "fixed" in place.
+- **Two producers still cannot be run at all** here
+  (`habiro_interpolate_cross_validator`, `rho_k_h3a_lp_dual`, both exit 2), so
+  their traces are partial — sites found are real, absence is not evidence.
 

@@ -103,3 +103,29 @@ inherited only because `1.0` is everywhere.
 The two tools agree and were built independently: where the tracer finds a
 local float64 entry, provenance says LOCAL (chirality 71/71); where it finds
 none, the value is upstream (qbeta diagnostic 7/7).
+
+## All 19 measured — localization is DONE
+
+`rho_k_co_casimir_extended` (+71), which had defeated the sweep (150s), a
+provenance run (240s) and a 900s trace, is one line:
+
+    computations/hoefsmit_numpy.py:161   return mp.mpf(float(np.trace(M)))   x148
+
+numpy matmul at C-level BLAS, trace promoted to mpf, serialized at 50 dps —
+the same shape as chirality. Two tracer limits had hidden it, both now flags:
+forked `multiprocessing.Pool` workers are invisible to in-process
+instrumentation (`--no-fork`), and stack-walking per conversion, not the
+physics, is what made it slow (`--budget`). Both hide sites, never invent
+them, so a zero only counts when `truncated` is false and the producer does
+not fork — the earlier zero for this producer meant nothing.
+
+  A. float64 enters   10 producers  189 fields  THREE library-level sites
+  B. no entry          9 producers   39 fields  detector false positives
+
+Class A is `hecke_characters.py:214`, `hoefsmit_numpy.py:161`, and the
+`mpf(<float out of JSON>)` idiom — not ten producer-specific bugs. All three
+are deliberate f64 kernels, so the fix is "serialize at true precision", which
+changes numbers: source fix and witness regeneration stay separate commits.
+
+Class B needs NO producer fix — the values are genuine, the detector is
+wrong about them. Do not go hunting for a float64 entry there.
