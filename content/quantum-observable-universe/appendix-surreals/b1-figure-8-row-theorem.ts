@@ -19,4 +19,17 @@ export default proposition({
     "theorem-level",
     "graded-mikusinski",
   ],
+  authorNotes: [
+    {
+      kind: "note",
+      date: "2026-08-07",
+      body:
+        "**§7c base-ring note (archimedean specialisation).** " +
+        "`B1Figure8RowContext.bloch_wigner_4_1` is the Bloch–Wigner " +
+        "dilogarithm value `Im D_2(e^{iπ/3})` at the figure-8 shape " +
+        "parameter — the Faddeev volume of `4_1`. That is transcendental, " +
+        "so `ℝ` is forced; the companion `depth_4_1` is a plain `ℕ` " +
+        "filtration index and carries no archimedean content.",
+    },
+  ],
 });

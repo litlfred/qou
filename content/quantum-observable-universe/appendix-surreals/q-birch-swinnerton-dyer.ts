@@ -25,4 +25,18 @@ export default conjecture({
     "projective-line",
   ],
   cites: ["birch1965", "wiles1995", "tate1974"],
+  authorNotes: [
+    {
+      kind: "note",
+      date: "2026-08-07",
+      body:
+        "**§7c base-ring note (archimedean specialisation).** " +
+        "`WeakQBSD` and `FullQBSD_rank_zero` take an L-value, a Reeb " +
+        "period `Ω_q` and a Tamagawa product over `ℝ`. An L-function " +
+        "value at `s = 1` and a period are analytic objects by " +
+        "definition; the categorical Mordell–Weil data the file also " +
+        "carries is generic, and the two coexist deliberately across the " +
+        "wall.",
+    },
+  ],
 });

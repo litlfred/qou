@@ -23,4 +23,17 @@ export default corollary({
     witness: "computations/probes/knot-factor-amphicheiral-BD-probe.witness.json",
     status: "verified",
   },
+  authorNotes: [
+    {
+      kind: "note",
+      date: "2026-08-07",
+      body:
+        "**§7c base-ring note (archimedean specialisation).** " +
+        "`altRatio` and the knot factor `a` are typed over `ℝ` because " +
+        "they are Plancherel-weighted character *ratios* evaluated at the " +
+        "substrate anchor, inherited from `HeckeExpansion` in " +
+        "`KnotFactorSpectralDerivation` (whose `c`, `weight` and " +
+        "`trivial` fields are `List ℕ → ℝ`).",
+    },
+  ],
 });
