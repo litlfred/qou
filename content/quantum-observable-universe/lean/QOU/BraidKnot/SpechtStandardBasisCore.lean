@@ -49,22 +49,24 @@ cited, everything else machine-checked."*
 | `standardPolytabloid` | **sorry-free** (definition) |
 | `standardPolytabloid_mem` | **sorry-free** (lands in `S^μ`) |
 | `standardPolytabloidS` (corestriction) | **sorry-free** |
-| `standardPolytabloid_linearIndependent` | **STUB** `sorry` — `-- Ref: [sagan2001]` Thm 2.5.2 |
+| `standardPolytabloid_linearIndependent` | **sorry-free** (via the proved triangular core; declared in `SpechtStandardBasis`) |
 | `colStab_smul_self`, `polytabloid_colStab_smul` (column-antisymmetry) | **sorry-free** |
 | `domCount'`, `domWeight`, `domBound`, `domCount'_le`, `domWeight_le` (tabloid-dominance measure — **now orphaned**, see note below) | **sorry-free** |
 | `cmajSig`, `colWordNum` (the **column-word measure** — validated straightening measure) | **sorry-free** |
-| `straightening_step_colMax` (Garnir core, **column-word-minimal case**, on `colWordNum`) | **STUB** `sorry` — `-- Ref: [sagan2001]` §2.6 (TRUE statement; residual = column-word-decrease bound) |
-| `straightening_step` (Garnir straightening core) | **sorry-free MODULO `straightening_step_colMax`** (column-sort dichotomy: the `colWordNum`-lowering branch is proved outright via `polytabloid_colStab_smul`) |
-| `standardPolytabloid_straightening` | **sorry-free MODULO `straightening_step_colMax`** (well-founded induction on `colWordNum`, descending) |
-| `standardPolytabloid_span` | **sorry-free MODULO `straightening_step_colMax`** (Garnir relations) |
-| `standardBasis` | **sorry-free MODULO the two stubs** (`Basis.mk` wiring) |
-| `specht_finrank_eq_numSYT` | **sorry-free MODULO the two stubs** (the reduction) |
+| `straightening_step_colMax` (Garnir core, **column-word-minimal case**, on `colWordNum`) | **sorry-free** — row descent + Garnir coset-sum annihilation + `fibre_colWordNum_decrease` |
+| `straightening_step` (Garnir straightening core) | **sorry-free** (column-sort dichotomy: the `colWordNum`-lowering branch via `polytabloid_colStab_smul`) |
+| `standardPolytabloid_straightening` | **sorry-free** (well-founded induction on `colWordNum`, descending) |
+| `standardPolytabloid_span` | **sorry-free** (Garnir relations) |
+| `standardBasis` | **sorry-free** (`Basis.mk` wiring) |
+| `specht_finrank_eq_numSYT` | **sorry-free** (the reduction) |
 
-The reduction (`standardBasis` + `specht_finrank_eq_numSYT`) is **genuinely
-sorry-free**: its only `sorry`-tainted inputs are the two named classical facts
-(`standardPolytabloid_linearIndependent`, and — via
-`standardPolytabloid_straightening` and `straightening_step` — the single Garnir
-core `straightening_step_colMax`). The
+The reduction (`standardBasis` + `specht_finrank_eq_numSYT`) is **sorry-free
+outright** — both former stubs are now discharged, so it has no `sorry`-tainted
+input at all. Machine-checked: `#print axioms` on `specht_finrank_eq_numSYT`,
+`specht_finrank_eq_numSYT_wired`, `standardPolytabloid_span`,
+`standardPolytabloid_straightening`, `straightening_step_colMax` and
+`Triangular.linearIndependent` each yields exactly
+`[propext, Classical.choice, Quot.sound]` — no `sorryAx`. The
 SYT→tableau conversion **and** the `Fintype` instance brick 1 left open are
 *both* proved sorry-free here.
 
@@ -467,7 +469,7 @@ multiplication by `τ`, then the signed sum of basis tabloids
 `{gτ·t} = {g·t}` (`τ` fixes the row pattern) while `sgn(gτ) = -sgn(g)`.
 This is the Mathlib-side realisation of "the full column antisymmetriser of a
 Garnir set annihilates the tabloid" (Sagan §2.6). It is the algebraic ingredient
-the Garnir core (`straightening_step_colMax`, still `sorry`)
+the Garnir core (`straightening_step_colMax`, proved)
 consumes; the pieces still missing on top of it — the coset→polytabloid
 antisymmetriser bridge (needs `CharZero k`), the Garnir-set/row-descent existence
 for a column-word-minimal non-standard tableau, and the **column-word decrease**
