@@ -75,4 +75,24 @@ theorem card_hookUnion (l : List ℕ) (hs : l.Sorted (· ≥ ·)) (p : ℕ × �
   unfold hookLen
   omega
 
+/-! ## Depth-1: the hook misses exactly one cell
+
+The equality analysis `(TAIL)` depth-1 needs (bean `qou-ckyw`). At `hookLen = n − 1` the arm/leg
+union sits inside the `n`-cell set with `n − 1` elements, so its complement is a **singleton** — and
+the depth-1 carrier classification is then a case split on which cell that is. -/
+
+/-- **At `hookLen = n − 1` the complement of the hook is a singleton.** -/
+theorem card_sdiff_hookUnion_eq_one (l : List ℕ) (hs : l.Sorted (· ≥ ·)) (p : ℕ × ℕ)
+    (hp : p ∈ cells l) (heq : hookLen l p + 1 = l.sum) :
+    ((cells l) \ (armF l p ∪ legF l p)).card = 1 := by
+  rw [Finset.card_sdiff, Finset.inter_eq_left.mpr (hookUnion_subset l hs p), card_cells,
+    card_hookUnion l hs p hp]
+  omega
+
+/-- The missed cell, named: at `hookLen = n − 1` there is exactly one cell outside the hook. -/
+theorem exists_unique_missed_cell (l : List ℕ) (hs : l.Sorted (· ≥ ·)) (p : ℕ × ℕ)
+    (hp : p ∈ cells l) (heq : hookLen l p + 1 = l.sum) :
+    ∃ c, (cells l) \ (armF l p ∪ legF l p) = {c} :=
+  Finset.card_eq_one.mp (card_sdiff_hookUnion_eq_one l hs p hp heq)
+
 end QOU.BraidsAndKnots.HookArmLeg
