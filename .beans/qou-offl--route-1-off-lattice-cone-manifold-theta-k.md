@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-07-31T19:30:00Z
-updated_at: 2026-08-01T22:11:44Z
+updated_at: 2026-08-07T15:16:35Z
 ---
 
 Literature anchors:
@@ -83,3 +83,49 @@ guaranteed. **Do not reach for the 2√3 row because it forces A = 2.990.**
 NET REQUIREMENT: supply BOTH ϑ absolutely, normalization fixed in advance.
 
 Probe: computations/probes/qbeta_offl_ratio_candidates_unfalsifiable_probe.py
+
+
+### 2026-08-07 corpus-grep after the 796-commit main catch-up
+
+Ran the corpus-grep that should have preceded the 2026-08-01 re-spec. Two
+pre-existing corpus objects bear directly on this route. **Neither is new (both
+landed 2026-07-27, before that re-spec) — this is a miss, not a new landing.**
+
+**1. WARNING — the obvious construction is already excluded.**
+`QOU/Knot/FigureEightDeformedMeridianWinding.lean` (sorry-free) proves the
+substrate-matched Murakami meridian datum `u = N*t - 2*pi*i*k` has
+`Im u = -2*pi*k`, hence `|u| >= 2*pi` for every `k >= 1` — structurally OUTSIDE
+Murakami's controlled small-|u| neighbourhood where `Vol(4_1; u)` tracks the
+geometric branch.
+
+This bean's stated machinery IS Murakami's continuous-u deformation, so the most
+obvious offl construction is already refuted at scope (a). Not a refutation of
+the whole route — that exclusion was derived under `q_eval = q0` matching (the
+anchor-free-q0 question), which theta_K does not require. But offl must now
+**state which matching it uses and why it escapes |u| >= 2*pi**. New
+precondition; cheap to state, cheap to check.
+
+**2. CANDIDATE — the missing absolute normalization may already exist.**
+`QOU/Knot/CuspShapeBarParity.lean`: 4_1's cusp shape is `omega = e^{i*pi/3}`;
+the bar split gives bar-even `omega + omega^-1 = 1` (Vol / rational side) and
+bar-odd `omega - omega^-1` with `(barOdd omega)^2 = -3` (the sqrt(-3),
+Chern-Simons / Im V axis). It identifies the meridian as the **bar-odd (boost)
+cycle** and puts `q` on the boost hyperbola `barEven q^2 - barOdd q^2 = 4`.
+
+The T4 channel `ln^2 q0 - theta^2` carries exactly that Minkowski signature, and
+the T4 probe's own language is "boost-dominated (theta < ln q0)" /
+"spin-dominated (theta > ln q0)". So the corpus already contains a candidate
+IDENTIFICATION of what theta is — the bar-odd / CS component against ln q0's
+bar-even / Vol component — which is precisely the "normalization fixed in
+advance" this route was told it needs.
+
+**STATED AS A CANDIDATE, NOT A FINDING.** The signature match is suggestive;
+`ln^2 q0 - theta^2` is a quadratic form in (ln q0, theta), not literally
+`barEven^2 - barOdd^2`. The identification is unverified.
+
+**And the obvious reading of it is dead on arrival.** 4_1 cusp field Q(sqrt-3)
+-> angle pi/3; Borromean cusp field Q(i) -> pi/2; ratio 3/2. That is a RATIO,
+which this bean's 2026-08-01 addendum proves unfalsifiable — it merely names
+`A = 10.35` (the rho = 1.5 row of the U2 table) and cannot be tested. Exactly
+the trap: the cusp-shape route must yield theta ABSOLUTELY, per knot, or it
+buys nothing.
