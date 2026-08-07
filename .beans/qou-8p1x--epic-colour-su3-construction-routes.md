@@ -4,7 +4,7 @@ title: 'EPIC: routes to a 3-dimensional fibre / colour SU(3) — assessed and ro
 status: in-progress
 type: milestone
 created_at: 2026-08-07T12:40:00Z
-updated_at: 2026-08-07T13:20:00Z
+updated_at: 2026-08-07T13:50:00Z
 ---
 
 Umbrella for every proposed route to colour `SU(3)`, old and new, after the
@@ -165,3 +165,21 @@ dimension formula is *already* formalised —
 2 at `N = 2` and 8 at `N = 3`.
 
 That is where the next effort belongs, and it belongs under `qou-8lxd`.
+
+
+---
+
+## T3f RESOLVED in one direction (2026-08-07)
+
+`ocneanu_N_lockin_probe.py`: the `N = 2` and `N = 3` Ocneanu traces on `H_3(q)`
+are **not proportional** (`y_(2,1)/y_(3) = q[2][N-1]/[N+2]`), so the mass
+pipeline **cannot** be re-tuned to `N = 3`. T3f's soft constraint is hard.
+
+Consequence for this epic's board: the flavour channel **must** be a separate
+trace on the same tower — which is permitted and already typeable
+(`HnMarkovTrace.lean` has the parameter as a free class field). The remaining
+flavour question is no longer "can we get N = 3" but "**why is the mass channel
+the N = 2 one**", which is open and is the honest successor to T3f.
+
+Colour routes are unaffected: still `qou-8p1h`/`qou-8p1j` (Bruhat, gated) and
+the unearned octonionic status quo (`qou-8fl1`).
