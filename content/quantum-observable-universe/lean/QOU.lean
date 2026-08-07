@@ -25,6 +25,11 @@ import QOU.MathlibExt.YekutieliIntegration
 import QOU.MathlibExt.SDP
 import QOU.MathlibExt.SDPEmptyConstraints
 import QOU.MathlibExt.SDPRealUniqueness
+-- Weierstrass primary-factor estimate ‖1 - E_p(z)‖ ≤ ‖z‖^{p+1}: the Mathlib-gap
+-- infrastructure that closes PI-2 of QOU.Mathlib.HadamardFactorization.
+-- Sorry-free, so it is wired here for CI type-checking (unlike
+-- HadamardFactorization itself, which still carries PI-3 / the full theorem).
+import QOU.Mathlib.WeierstrassFactorEstimate
 -- Per Copilot review: `QOU.MathlibExt.SDPRankEquality` is kept
 -- OUT of the top-level umbrella while it still has `sorry`
 -- placeholders (rank-nullity Mathlib API + Goldman-Tucker
