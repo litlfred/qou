@@ -52,8 +52,17 @@ loudly at insufficient precision — it invents relations:
 
 Spurious, with the large-coefficient signature that is the classic tell. The
 other relation that script finds, `[0, -1, 1, -2, 0, 0]`, survives both because
-it is the genuine identity h² = y − 2. That one did not propagate past
+it is the genuine identity h² = y − 2 — a useful control: the fix removes fake
+relations without destroying real ones. That one did not propagate past
 `scratch/`, but nothing about the defect guaranteed it wouldn't.
+
+**Bounded, not just flagged.** Surveying every PSLQ call site in the corpus —
+52 files — all of them raise working precision, typically to 1000–1500 dps with
+an explicit `tol` and `maxcoeff`. `scratch/pslq_wq.py` was the only
+under-precisioned one, and it is fixed. (A first pass reported three more; all
+three were false positives, because it recognised only integer *literals* and
+those files write `mp.mp.dps = DPS`. Worth stating: the scare was mine, and
+checking it dissolved it.)
 
 Full history: `docs/audits/2026-08-07-producer-repadding-empirical-sweep.md`.
 
