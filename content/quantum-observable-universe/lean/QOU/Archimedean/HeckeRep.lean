@@ -85,7 +85,7 @@ theorem gen_mul_genInv (ρ : HeckeRep n d) (i : Fin (n - 1)) :
 -- Ref: [iwahori1964]
 theorem genInv_mul_gen (ρ : HeckeRep n d) (i : Fin (n - 1)) :
     ρ.genInv i * ρ.gen i = 1 := by
-  unfold genInv
+  unfold HeckeRep.genInv
   rw [sub_mul, smul_mul_assoc, one_mul, ρ.hecke_rel i]
   abel
 

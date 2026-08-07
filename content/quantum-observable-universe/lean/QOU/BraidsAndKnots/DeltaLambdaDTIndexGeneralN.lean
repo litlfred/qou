@@ -162,7 +162,7 @@ theorem PartitionOf5.nStat_eq_nStatList (p : PartitionOf5) :
     corpus `n = 5` data `(nStatList p.parts, p.dim)`, equals the corpus binding
     factor `p.deltaLambda`.  Uses the *general* collapse plus the corpus chirality
     parity `deltaSign_eq_nStat_parity`; no per-partition `decide`. -/
-theorem dtEulerG_eq_deltaLambda (p : PartitionOf5) :
+theorem PartitionOf5.dtEulerG_eq_deltaLambda (p : PartitionOf5) :
     dtEulerG (nStatList p.parts) p.dim = p.deltaLambda := by
   rw [dtEulerG_collapse, ← PartitionOf5.nStat_eq_nStatList,
       PartitionOf5.deltaLambda, PartitionOf5.deltaSign_eq_nStat_parity]

@@ -501,7 +501,7 @@ def sumChoose2 (parts : List ℕ) : ℕ := (parts.map (fun p => p * (p - 1) / 2)
     binomials over the **conjugate** partition's parts (the standard identity,
     here verified at `n = 5`).  Since `Σ_i C(λ'_i,2) = ℓ(w₀^{S_{λ'}})`, this ties
     `nStat` to the conjugate Young subgroup's longest element. -/
-theorem nStat_eq_sumChoose2_conj (p : PartitionOf5) :
+theorem PartitionOf5.nStat_eq_sumChoose2_conj (p : PartitionOf5) :
     p.nStat = sumChoose2 p.conjParts := by
   cases p <;> decide
 

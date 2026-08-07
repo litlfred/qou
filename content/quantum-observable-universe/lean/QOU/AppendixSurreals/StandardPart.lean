@@ -320,7 +320,7 @@ quotient. -/
 def IsClose (x y : K) : Prop := SurrealField.IsInfinitesimal (x - y)
 
 /-- `IsClose` is reflexive. -/
-theorem refl (x : K) : IsClose x x := by
+theorem IsClose.refl (x : K) : IsClose x x := by
   unfold IsClose
   rw [sub_self]
   exact SurrealField.zero_isInfinitesimal

@@ -73,7 +73,7 @@ def QuarkFlavor.conj : QuarkFlavor → QuarkFlavor
   | .dbar => .d
 
 /-- Flavor conjugation is an involution. -/
-theorem conj_involutive (f : QuarkFlavor) : f.conj.conj = f := by
+theorem QuarkFlavor.conj_involutive (f : QuarkFlavor) : f.conj.conj = f := by
   cases f <;> rfl
 
 /-- A nucleon's color-sheet content: the flavor carried on each of the three

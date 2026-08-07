@@ -20,7 +20,7 @@ universe u v
 
 /-- A connection is **irreducible** if its covariant-constant adjoint
     sections are trivial. -/
-def IsIrreducible {cr : CRManifoldData}
+def InstantonConnection.IsIrreducible {cr : CRManifoldData}
     (inst : InstantonConnection cr) : Prop :=
   Subsingleton inst.parallelAdjointSections
 
