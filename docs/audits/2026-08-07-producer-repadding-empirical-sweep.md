@@ -288,26 +288,51 @@ play and each file kept its own: nine `option_e`/probe files set
 registry. In every case the module-scope constants above the raise were
 being built at dps=15.
 
-### What the residual 20 are — and why they are NOT the same bug
+### What the residual 20 are — CORRECTED
 
-Every remaining re-padder **reads an upstream witness**
-(`_pb.witness_path(...)`) and faithfully reproduces what it finds there:
+**An earlier revision of this section was wrong and is retained here as a
+correction rather than quietly edited away.** It claimed:
 
-```
-rho_k_co_casimir_extended        +71   reads y-lambda-wenzl-bridge-symbolic
-chirality_avg_content_atomic     +71   reads term7-alpha5-crystal-derivation
-qbeta_markov_trace_norm_probe     +8   reads y-lambda-cyclotomic-factor
-phi_q_spectral_combiner_probe     +6   reads qbeta-per-block-paper-closed-forms
-…
-```
+> Every remaining re-padder reads an upstream witness and faithfully
+> reproduces the padding it finds there … the fix has to walk the witness
+> dependency graph upstream-first.
 
-Two of them account for 142 of the 229 remaining fields. `mpf(str(x))` on a
-value read from a padded witness is *correct behaviour* — it reproduces the
-input exactly. The defect is upstream, so these cannot be fixed in place:
-the fix has to walk the witness dependency graph **upstream-first**, and
-re-running a consumer before its producer is fixed just re-imports the
-padding.
+That was inferred, not measured. The producers *do* read upstream
+witnesses — that part is true — and the conclusion that the padding came
+from there was never checked. It is false.
 
-That ordering is the next tranche, and it is genuinely different work from
-this one — dependency-ordered regeneration rather than a source edit. It is
-also why the count will not reach zero by editing producers alone.
+**The test.** Run each producer, take every padded string it writes, and
+search all 1000+ committed witnesses for that exact string. If the digits
+already exist upstream, the producer reproduced its input; if they appear
+nowhere else, it minted them.
+
+**Result: 20 of 20 came back `LOCAL` — `propagated = 0`.** Not one padded
+value exists anywhere else in the corpus. The padding is generated in
+place. `computations/producer_repad_sweep.py`'s companion classifier is the
+tool; the discriminator is a substring search, not a judgement call.
+
+A second over-generalisation followed and is also corrected here: having
+found that `gt_matrix_pslq_probe`'s `PDG_G_A_ERR = mp.mpf(str(G_A_PDG_ERR))`
+was the *same* import-time bug (module scope, before `mp.mp.dps = DPS` on
+the next line — verified: at dps=15 that yields
+`0.00129999999999999994032551242639…`, byte-identical to the witness; at
+dps=50 it yields `0.0013`), the natural conclusion was that all 20 were.
+Applying the fix mechanically found **1 of 20**. The other 18 have no
+module-scope `mpf` before the raise at all.
+
+**So the residual is not one class.** For the 18, float64 enters *during*
+the computation, inside functions — e.g. `markov_stab_trace_axis_probe`
+accumulates `tr_m_identity = mp.mpf(0)` over `contrib` terms built from
+`y4[lam]`, and the sum inherits whatever precision those carry, landing on
+`0.99999999999999999999999999999999…` where the identity trace is exactly
+1. Each needs its own trace from the padded field back to where float64
+enters. That is genuine per-file work and is not mechanizable.
+
+**Lesson recorded, because it is the third time in this arc:** the pattern
+is inferring a mechanism from one or two examples and generalising. It
+produced the original "producers don't re-pad" retraction (4-producer
+sample, 3 from the one clean family), the "upstream propagation" claim
+(4 producers checked for *reading* witnesses, none checked for the values),
+and this one. The fix each time was the same — build the discriminator and
+run it over the whole set.
+
